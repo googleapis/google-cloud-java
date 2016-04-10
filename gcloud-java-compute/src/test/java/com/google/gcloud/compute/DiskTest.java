@@ -51,7 +51,7 @@ public class DiskTest {
   private static final SnapshotId SNAPSHOT = SnapshotId.of("project", "snapshot");
   private static final ImageId IMAGE = ImageId.of("project", "image");
   private static final String SNAPSHOT_ID = "snapshotId";
-  private static final String IMAGE_ID = "snapshotId";
+  private static final String IMAGE_ID = "imageId";
   private static final Long LAST_ATTACH_TIMESTAMP = 1453293600000L;
   private static final Long LAST_DETACH_TIMESTAMP = 1453293660000L;
   private static final StandardDiskConfiguration DISK_CONFIGURATION =
@@ -432,6 +432,29 @@ public class DiskTest {
     initializeDisk();
     assertSame(operation,
         disk.createImage(IMAGE.image(), "description", Compute.OperationOption.fields()));
+  }
+
+  @Test
+  public void testResizeOperation() {
+    initializeExpectedDisk(4);
+    expect(compute.options()).andReturn(mockOptions);
+    Operation operation = new Operation.Builder(serviceMockReturnsOptions)
+        .operationId(ZoneOperationId.of("project", "zone", "op"))
+        .build();
+    expect(compute.resize(DISK_ID, 42L)).andReturn(operation);
+    replay(compute);
+    initializeDisk();
+    assertSame(operation, disk.resize(42L));
+  }
+
+  @Test
+  public void testResizeNull() {
+    initializeExpectedDisk(3);
+    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.resize(DISK_ID, 42L)).andReturn(null);
+    replay(compute);
+    initializeDisk();
+    assertNull(disk.resize(42L));
   }
 
   public void compareDisk(Disk expected, Disk value) {

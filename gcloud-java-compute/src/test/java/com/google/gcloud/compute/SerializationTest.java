@@ -22,7 +22,6 @@ import static org.junit.Assert.assertNotSame;
 import com.google.common.collect.ImmutableList;
 import com.google.gcloud.AuthCredentials;
 import com.google.gcloud.RetryParams;
-import com.google.gcloud.compute.Zone.MaintenanceWindow;
 
 import org.junit.Test;
 
@@ -89,20 +88,12 @@ public class SerializationTest {
       .build();
   private static final ZoneId ZONE_ID = ZoneId.of("project", "zone");
   private static final Zone.Status ZONE_STATUS = Zone.Status.DOWN;
-  private static final Long BEGIN_TIME = 1453293420000L;
-  private static final Long END_TIME = 1453293480000L;
-  private static final MaintenanceWindow WINDOW1 = new MaintenanceWindow("NAME1", "DESCRIPTION1",
-      BEGIN_TIME, END_TIME);
-  private static final MaintenanceWindow WINDOW2 = new MaintenanceWindow("NAME2", "DESCRIPTION2",
-      BEGIN_TIME, END_TIME);
-  private static final List<MaintenanceWindow> WINDOWS = ImmutableList.of(WINDOW1, WINDOW2);
   private static final Zone ZONE = Zone.builder()
       .zoneId(ZONE_ID)
       .id(ID)
       .creationTimestamp(CREATION_TIMESTAMP)
       .description(DESCRIPTION)
       .status(ZONE_STATUS)
-      .maintenanceWindows(WINDOWS)
       .region(REGION_ID)
       .build();
   private static final DeprecationStatus<MachineTypeId> DEPRECATION_STATUS =

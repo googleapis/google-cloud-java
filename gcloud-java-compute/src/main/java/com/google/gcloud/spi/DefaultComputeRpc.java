@@ -38,6 +38,7 @@ import com.google.api.services.compute.model.DiskType;
 import com.google.api.services.compute.model.DiskTypeAggregatedList;
 import com.google.api.services.compute.model.DiskTypeList;
 import com.google.api.services.compute.model.DiskTypesScopedList;
+import com.google.api.services.compute.model.DisksResizeRequest;
 import com.google.api.services.compute.model.DisksScopedList;
 import com.google.api.services.compute.model.Image;
 import com.google.api.services.compute.model.ImageList;
@@ -526,7 +527,7 @@ public class DefaultComputeRpc implements ComputeRpc {
           .setFields(FIELDS.getString(options))
           .execute();
     } catch (IOException ex) {
-      return nullForNotFound(ex);
+      throw translate(ex);
     }
   }
 
@@ -710,6 +711,18 @@ public class DefaultComputeRpc implements ComputeRpc {
     try {
       return compute.disks()
           .delete(this.options.projectId(), zone, disk)
+          .setFields(FIELDS.getString(options))
+          .execute();
+    } catch (IOException ex) {
+      return nullForNotFound(ex);
+    }
+  }
+
+  @Override
+  public Operation resizeDisk(String zone, String disk, long sizeGb, Map<Option, ?> options) {
+    try {
+      DisksResizeRequest resizeRequest = new DisksResizeRequest().setSizeGb(sizeGb);
+      return compute.disks().resize(this.options.projectId(), zone, disk, resizeRequest)
           .setFields(FIELDS.getString(options))
           .execute();
     } catch (IOException ex) {

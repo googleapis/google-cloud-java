@@ -431,7 +431,6 @@ public class ITComputeTest {
     assertNull(zone.creationTimestamp());
     assertNull(zone.description());
     assertNull(zone.status());
-    assertNull(zone.maintenanceWindows());
     assertNull(zone.region());
   }
 
@@ -877,7 +876,7 @@ public class ITComputeTest {
   }
 
   @Test
-  public void testCreateGetAndDeleteStandardDisk() throws InterruptedException {
+  public void testCreateGetResizeAndDeleteStandardDisk() throws InterruptedException {
     String name = BASE_RESOURCE_NAME + "create-and-get-standard-disk";
     DiskId diskId = DiskId.of(ZONE, name);
     DiskInfo diskInfo =
@@ -894,21 +893,28 @@ public class ITComputeTest {
     assertNotNull(remoteDisk.creationTimestamp());
     assertNotNull(remoteDisk.id());
     assertTrue(remoteDisk.configuration() instanceof StandardDiskConfiguration);
-    assertEquals(100L, (long) remoteDisk.configuration().sizeGb());
-    assertEquals("pd-ssd", remoteDisk.configuration().diskType().diskType());
+    StandardDiskConfiguration remoteConfiguration = remoteDisk.configuration();
+    assertEquals(100L, (long) remoteConfiguration.sizeGb());
+    assertEquals("pd-ssd", remoteConfiguration.diskType().diskType());
+    assertEquals(DiskConfiguration.Type.STANDARD, remoteConfiguration.type());
     assertNull(remoteDisk.lastAttachTimestamp());
     assertNull(remoteDisk.lastDetachTimestamp());
-    // test get with selected fields
-    remoteDisk = compute.get(diskId, Compute.DiskOption.fields());
+    operation = remoteDisk.resize(200L);
+    while (!operation.isDone()) {
+      Thread.sleep(1000L);
+    }
+    // test resize and get with selected fields
+    remoteDisk = compute.get(diskId, Compute.DiskOption.fields(Compute.DiskField.SIZE_GB));
     assertNotNull(remoteDisk);
     assertEquals(ZONE, remoteDisk.diskId().zone());
     assertEquals(diskId.disk(), remoteDisk.diskId().disk());
     assertNull(remoteDisk.creationTimestamp());
     assertNull(remoteDisk.id());
     assertTrue(remoteDisk.configuration() instanceof StandardDiskConfiguration);
-    assertNull(remoteDisk.configuration().sizeGb());
-    assertEquals("pd-ssd", remoteDisk.configuration().diskType().diskType());
-    assertEquals(DiskConfiguration.Type.STANDARD, remoteDisk.configuration().type());
+    remoteConfiguration = remoteDisk.configuration();
+    assertEquals(200L, (long) remoteConfiguration.sizeGb());
+    assertEquals("pd-ssd", remoteConfiguration.diskType().diskType());
+    assertEquals(DiskConfiguration.Type.STANDARD, remoteConfiguration.type());
     assertNull(remoteDisk.lastAttachTimestamp());
     assertNull(remoteDisk.lastDetachTimestamp());
     operation = remoteDisk.delete();
@@ -936,11 +942,12 @@ public class ITComputeTest {
     assertNotNull(remoteDisk.creationTimestamp());
     assertNotNull(remoteDisk.id());
     assertTrue(remoteDisk.configuration() instanceof ImageDiskConfiguration);
-    assertEquals(IMAGE_ID, remoteDisk.<ImageDiskConfiguration>configuration().sourceImage());
-    assertNotNull(remoteDisk.<ImageDiskConfiguration>configuration().sourceImageId());
-    assertEquals(DiskConfiguration.Type.IMAGE, remoteDisk.configuration().type());
-    assertNotNull(remoteDisk.configuration().sizeGb());
-    assertEquals("pd-standard", remoteDisk.configuration().diskType().diskType());
+    ImageDiskConfiguration remoteConfiguration = remoteDisk.configuration();
+    assertEquals(IMAGE_ID, remoteConfiguration.sourceImage());
+    assertNotNull(remoteConfiguration.sourceImageId());
+    assertEquals(DiskConfiguration.Type.IMAGE, remoteConfiguration.type());
+    assertNotNull(remoteConfiguration.sizeGb());
+    assertEquals("pd-standard", remoteConfiguration.diskType().diskType());
     assertNull(remoteDisk.lastAttachTimestamp());
     assertNull(remoteDisk.lastDetachTimestamp());
     // test get with selected fields
@@ -951,11 +958,12 @@ public class ITComputeTest {
     assertNull(remoteDisk.creationTimestamp());
     assertNull(remoteDisk.id());
     assertTrue(remoteDisk.configuration() instanceof ImageDiskConfiguration);
-    assertEquals(IMAGE_ID, remoteDisk.<ImageDiskConfiguration>configuration().sourceImage());
-    assertNull(remoteDisk.<ImageDiskConfiguration>configuration().sourceImageId());
-    assertEquals(DiskConfiguration.Type.IMAGE, remoteDisk.configuration().type());
-    assertNull(remoteDisk.configuration().sizeGb());
-    assertEquals("pd-standard", remoteDisk.configuration().diskType().diskType());
+    remoteConfiguration = remoteDisk.configuration();
+    assertEquals(IMAGE_ID, remoteConfiguration.sourceImage());
+    assertNull(remoteConfiguration.sourceImageId());
+    assertEquals(DiskConfiguration.Type.IMAGE, remoteConfiguration.type());
+    assertNull(remoteConfiguration.sizeGb());
+    assertEquals("pd-standard", remoteConfiguration.diskType().diskType());
     assertNull(remoteDisk.lastAttachTimestamp());
     assertNull(remoteDisk.lastDetachTimestamp());
     operation = remoteDisk.delete();
@@ -997,7 +1005,6 @@ public class ITComputeTest {
     assertNull(snapshot.sourceDiskId());
     assertNull(snapshot.storageBytes());
     assertNull(snapshot.storageBytesStatus());
-    SnapshotInfo.of(SnapshotId.of(snapshotName), snapshotDiskId);
     // test get snapshot
     snapshot = compute.getSnapshot(snapshotName);
     assertNotNull(snapshot.id());
@@ -1025,12 +1032,12 @@ public class ITComputeTest {
     assertNotNull(remoteDisk.creationTimestamp());
     assertNotNull(remoteDisk.id());
     assertTrue(remoteDisk.configuration() instanceof SnapshotDiskConfiguration);
-    assertEquals(DiskConfiguration.Type.SNAPSHOT, remoteDisk.configuration().type());
-    assertEquals(snapshotName,
-        remoteDisk.<SnapshotDiskConfiguration>configuration().sourceSnapshot().snapshot());
-    assertEquals(100L, (long) remoteDisk.configuration().sizeGb());
-    assertEquals("pd-standard", remoteDisk.configuration().diskType().diskType());
-    assertNotNull(remoteDisk.<SnapshotDiskConfiguration>configuration().sourceSnapshotId());
+    SnapshotDiskConfiguration remoteConfiguration = remoteDisk.configuration();
+    assertEquals(DiskConfiguration.Type.SNAPSHOT, remoteConfiguration.type());
+    assertEquals(snapshotName, remoteConfiguration.sourceSnapshot().snapshot());
+    assertEquals(100L, (long) remoteConfiguration.sizeGb());
+    assertEquals("pd-standard", remoteConfiguration.diskType().diskType());
+    assertNotNull(remoteConfiguration.sourceSnapshotId());
     assertNull(remoteDisk.lastAttachTimestamp());
     assertNull(remoteDisk.lastDetachTimestamp());
     // test get disk with selected fields
@@ -1042,11 +1049,11 @@ public class ITComputeTest {
     assertNull(remoteDisk.creationTimestamp());
     assertNull(remoteDisk.id());
     assertTrue(remoteDisk.configuration() instanceof SnapshotDiskConfiguration);
-    assertEquals(DiskConfiguration.Type.SNAPSHOT, remoteDisk.configuration().type());
-    assertEquals(snapshotName,
-        remoteDisk.<SnapshotDiskConfiguration>configuration().sourceSnapshot().snapshot());
-    assertNull(remoteDisk.configuration().sizeGb());
-    assertEquals("pd-standard", remoteDisk.configuration().diskType().diskType());
+    remoteConfiguration = remoteDisk.configuration();
+    assertEquals(DiskConfiguration.Type.SNAPSHOT, remoteConfiguration.type());
+    assertEquals(snapshotName, remoteConfiguration.sourceSnapshot().snapshot());
+    assertNull(remoteConfiguration.sizeGb());
+    assertEquals("pd-standard", remoteConfiguration.diskType().diskType());
     assertNull(remoteDisk.<SnapshotDiskConfiguration>configuration().sourceSnapshotId());
     assertNull(remoteDisk.lastAttachTimestamp());
     assertNull(remoteDisk.lastDetachTimestamp());
@@ -1093,9 +1100,10 @@ public class ITComputeTest {
       assertNotNull(remoteDisk.creationTimestamp());
       assertNotNull(remoteDisk.id());
       assertTrue(remoteDisk.configuration() instanceof StandardDiskConfiguration);
-      assertEquals(100L, (long) remoteDisk.configuration().sizeGb());
-      assertEquals("pd-ssd", remoteDisk.configuration().diskType().diskType());
-      assertEquals(DiskConfiguration.Type.STANDARD, remoteDisk.configuration().type());
+      StandardDiskConfiguration remoteConfiguration = remoteDisk.configuration();
+      assertEquals(100L, (long) remoteConfiguration.sizeGb());
+      assertEquals("pd-ssd", remoteConfiguration.diskType().diskType());
+      assertEquals(DiskConfiguration.Type.STANDARD, remoteConfiguration.type());
       assertNull(remoteDisk.lastAttachTimestamp());
       assertNull(remoteDisk.lastDetachTimestamp());
       count++;
@@ -1114,9 +1122,10 @@ public class ITComputeTest {
       assertNull(remoteDisk.creationTimestamp());
       assertNull(remoteDisk.id());
       assertTrue(remoteDisk.configuration() instanceof StandardDiskConfiguration);
-      assertNull(remoteDisk.configuration().sizeGb());
-      assertEquals("pd-ssd", remoteDisk.configuration().diskType().diskType());
-      assertEquals(DiskConfiguration.Type.STANDARD, remoteDisk.configuration().type());
+      StandardDiskConfiguration remoteConfiguration = remoteDisk.configuration();
+      assertNull(remoteConfiguration.sizeGb());
+      assertEquals("pd-ssd", remoteConfiguration.diskType().diskType());
+      assertEquals(DiskConfiguration.Type.STANDARD, remoteConfiguration.type());
       assertNull(remoteDisk.lastAttachTimestamp());
       assertNull(remoteDisk.lastDetachTimestamp());
       count++;
@@ -1211,9 +1220,10 @@ public class ITComputeTest {
       assertNotNull(remoteDisk.creationTimestamp());
       assertNotNull(remoteDisk.id());
       assertTrue(remoteDisk.configuration() instanceof StandardDiskConfiguration);
-      assertEquals(100L, (long) remoteDisk.configuration().sizeGb());
-      assertEquals("pd-ssd", remoteDisk.configuration().diskType().diskType());
-      assertEquals(DiskConfiguration.Type.STANDARD, remoteDisk.configuration().type());
+      StandardDiskConfiguration remoteConfiguration = remoteDisk.configuration();
+      assertEquals(100L, (long) remoteConfiguration.sizeGb());
+      assertEquals("pd-ssd", remoteConfiguration.diskType().diskType());
+      assertEquals(DiskConfiguration.Type.STANDARD, remoteConfiguration.type());
       count++;
     }
     assertEquals(2, count);
@@ -1247,9 +1257,10 @@ public class ITComputeTest {
     assertNotNull(image.creationTimestamp());
     assertNull(image.description());
     assertNotNull(image.configuration());
-    assertEquals(ImageConfiguration.Type.DISK, image.configuration().type());
     assertTrue(image.configuration() instanceof DiskImageConfiguration);
-    assertEquals(diskName, image.<DiskImageConfiguration>configuration().sourceDisk().disk());
+    DiskImageConfiguration remoteConfiguration = image.configuration();
+    assertEquals(ImageConfiguration.Type.DISK, remoteConfiguration.type());
+    assertEquals(diskName, remoteConfiguration.sourceDisk().disk());
     assertNull(image.status());
     assertNull(image.diskSizeGb());
     assertNull(image.licenses());
@@ -1260,9 +1271,10 @@ public class ITComputeTest {
     assertNotNull(image.imageId());
     assertNotNull(image.creationTimestamp());
     assertNotNull(image.configuration());
-    assertEquals(ImageConfiguration.Type.DISK, image.configuration().type());
     assertTrue(image.configuration() instanceof DiskImageConfiguration);
-    assertEquals(diskName, image.<DiskImageConfiguration>configuration().sourceDisk().disk());
+    remoteConfiguration = image.configuration();
+    assertEquals(ImageConfiguration.Type.DISK, remoteConfiguration.type());
+    assertEquals(diskName, remoteConfiguration.sourceDisk().disk());
     assertEquals(100L, (long) image.diskSizeGb());
     assertNotNull(image.status());
     assertNull(image.deprecationStatus());
@@ -1289,7 +1301,9 @@ public class ITComputeTest {
   public void testListImages() {
     Page<Image> imagePage = compute.listImages(IMAGE_PROJECT);
     Iterator<Image> imageIterator = imagePage.iterateAll();
+    int count = 0;
     while (imageIterator.hasNext()) {
+      count++;
       Image image = imageIterator.next();
       assertNotNull(image.id());
       assertNotNull(image.imageId());
@@ -1298,6 +1312,7 @@ public class ITComputeTest {
       assertNotNull(image.status());
       assertNotNull(image.diskSizeGb());
     }
+    assertTrue(count > 0);
   }
 
   @Test
@@ -1305,7 +1320,9 @@ public class ITComputeTest {
     Page<Image> imagePage =
         compute.listImages(IMAGE_PROJECT, Compute.ImageListOption.fields(Compute.ImageField.ID));
     Iterator<Image> imageIterator = imagePage.iterateAll();
+    int count = 0;
     while (imageIterator.hasNext()) {
+      count++;
       Image image = imageIterator.next();
       assertNotNull(image.id());
       assertNotNull(image.imageId());
@@ -1316,6 +1333,7 @@ public class ITComputeTest {
       assertNull(image.licenses());
       assertNull(image.deprecationStatus());
     }
+    assertTrue(count > 0);
   }
 
   @Test
@@ -1323,7 +1341,9 @@ public class ITComputeTest {
     Page<Image> imagePage = compute.listImages(IMAGE_PROJECT, Compute.ImageListOption.filter(
         Compute.ImageFilter.equals(Compute.ImageField.ARCHIVE_SIZE_BYTES, 365056004L)));
     Iterator<Image> imageIterator = imagePage.iterateAll();
+    int count = 0;
     while (imageIterator.hasNext()) {
+      count++;
       Image image = imageIterator.next();
       assertNotNull(image.id());
       assertNotNull(image.imageId());
@@ -1334,5 +1354,6 @@ public class ITComputeTest {
       assertEquals(365056004L,
           (long) image.<StorageImageConfiguration>configuration().archiveSizeBytes());
     }
+    assertTrue(count > 0);
   }
 }

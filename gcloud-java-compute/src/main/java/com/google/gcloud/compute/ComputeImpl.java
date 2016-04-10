@@ -1319,6 +1319,23 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
     }
   }
 
+  @Override
+  public Operation resize(final DiskId disk, final long sizeGb, OperationOption... options) {
+    final Map<ComputeRpc.Option, ?> optionsMap = optionMap(options);
+    try {
+      com.google.api.services.compute.model.Operation answer =
+          runWithRetries(new Callable<com.google.api.services.compute.model.Operation>() {
+            @Override
+            public com.google.api.services.compute.model.Operation call() {
+              return computeRpc.resizeDisk(disk.zone(), disk.disk(), sizeGb, optionsMap);
+            }
+          }, options().retryParams(), EXCEPTION_HANDLER);
+      return answer == null ? null : Operation.fromPb(this, answer);
+    } catch (RetryHelper.RetryHelperException e) {
+      throw ComputeException.translateAndThrow(e);
+    }
+  }
+
   private Map<ComputeRpc.Option, ?> optionMap(Option... options) {
     Map<ComputeRpc.Option, Object> optionMap = Maps.newEnumMap(ComputeRpc.Option.class);
     for (Option option : options) {

@@ -18,12 +18,7 @@ package com.google.gcloud.compute;
 
 import static org.junit.Assert.assertEquals;
 
-import com.google.common.collect.ImmutableList;
-import com.google.gcloud.compute.Zone.MaintenanceWindow;
-
 import org.junit.Test;
-
-import java.util.List;
 
 public class ZoneTest {
 
@@ -33,13 +28,6 @@ public class ZoneTest {
   private static final Long CREATION_TIMESTAMP = 1453293540000L;
   private static final String DESCRIPTION = "description";
   private static final Zone.Status STATUS = Zone.Status.DOWN;
-  private static final Long BEGIN_TIME = 1453293420000L;
-  private static final Long END_TIME = 1453293480000L;
-  private static final MaintenanceWindow WINDOW1 = new MaintenanceWindow("NAME1", "DESCRIPTION1",
-      BEGIN_TIME, END_TIME);
-  private static final MaintenanceWindow WINDOW2 = new MaintenanceWindow("NAME2", "DESCRIPTION2",
-      BEGIN_TIME, END_TIME);
-  private static final List<MaintenanceWindow> WINDOWS = ImmutableList.of(WINDOW1, WINDOW2);
   private static final DeprecationStatus<ZoneId> DEPRECATION_STATUS =
       DeprecationStatus.of(DeprecationStatus.Status.DELETED, ZONE_ID);
   private static final Zone ZONE = Zone.builder()
@@ -48,7 +36,6 @@ public class ZoneTest {
       .creationTimestamp(CREATION_TIMESTAMP)
       .description(DESCRIPTION)
       .status(STATUS)
-      .maintenanceWindows(WINDOWS)
       .deprecationStatus(DEPRECATION_STATUS)
       .region(REGION_ID)
       .build();
@@ -60,7 +47,6 @@ public class ZoneTest {
     assertEquals(CREATION_TIMESTAMP, ZONE.creationTimestamp());
     assertEquals(DESCRIPTION, ZONE.description());
     assertEquals(STATUS, ZONE.status());
-    assertEquals(WINDOWS, ZONE.maintenanceWindows());
     assertEquals(REGION_ID, ZONE.region());
     assertEquals(DEPRECATION_STATUS, ZONE.deprecationStatus());
   }
@@ -84,7 +70,6 @@ public class ZoneTest {
     assertEquals(expected.creationTimestamp(), value.creationTimestamp());
     assertEquals(expected.description(), value.description());
     assertEquals(expected.status(), value.status());
-    assertEquals(expected.maintenanceWindows(), value.maintenanceWindows());
     assertEquals(expected.region(), value.region());
     assertEquals(expected.deprecationStatus(), value.deprecationStatus());
     assertEquals(expected.hashCode(), value.hashCode());

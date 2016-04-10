@@ -52,8 +52,6 @@ public class Disk extends DiskInfo {
     Builder(Compute compute, DiskId diskId, DiskConfiguration diskConfiguration) {
       this.compute = compute;
       this.infoBuilder = new DiskInfo.BuilderImpl(diskId, diskConfiguration);
-      this.infoBuilder.diskId(diskId);
-      this.configuration(diskConfiguration);
     }
 
     Builder(Disk disk) {
@@ -168,8 +166,7 @@ public class Disk extends DiskInfo {
   /**
    * Creates a snapshot for this disk given the snapshot's name.
    *
-   * @return a zone operation if the snapshot creation was successfully requested. {@code null} if
-   *     the disk was not found
+   * @return a zone operation for snapshot creation
    * @throws ComputeException upon failure
    */
   public Operation createSnapshot(String snapshot, OperationOption... options) {
@@ -179,8 +176,7 @@ public class Disk extends DiskInfo {
   /**
    * Creates a snapshot for this disk given the snapshot's name and description.
    *
-   * @return a zone operation if the snapshot creation was successfully requested. {@code null} if
-   *     this disk was not found
+   * @return a zone operation for snapshot creation
    * @throws ComputeException upon failure
    */
   public Operation createSnapshot(String snapshot, String description, OperationOption... options) {
@@ -212,6 +208,17 @@ public class Disk extends DiskInfo {
         .description(description)
         .build();
     return compute.create(imageInfo, options);
+  }
+
+  /**
+   * Resizes this disk to the requested size. The new size must be larger than the previous one.
+   *
+   * @return a zone operation if the resize request was issued correctly, {@code null} if this disk
+   *     was not found
+   * @throws ComputeException upon failure or if the new disk size is smaller than the previous one
+   */
+  public Operation resize(long sizeGb, OperationOption... options) {
+    return compute.resize(diskId(), sizeGb, options);
   }
 
   /**

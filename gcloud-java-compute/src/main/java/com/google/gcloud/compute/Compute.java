@@ -161,7 +161,6 @@ public interface Compute extends Service<ComputeOptions> {
     CREATION_TIMESTAMP("creationTimestamp"),
     DESCRIPTION("description"),
     ID("id"),
-    MAINTENANCE_WINDOWS("maintenanceWindows"),
     NAME("name"),
     REGION("region"),
     SELF_LINK("selfLink"),
@@ -1648,8 +1647,9 @@ public interface Compute extends Service<ComputeOptions> {
      * Returns an option to specify the disk's fields to be returned by the RPC call. If this option
      * is not provided, all disk's fields are returned. {@code DiskOption.fields} can be used to
      * specify only the fields of interest. {@link Disk#diskId()},
-     * {@link DiskConfiguration#diskType()} and {@link SnapshotDiskConfiguration#sourceSnapshot()}
-     * or {@link ImageDiskConfiguration#sourceImage()} are always returned, even if not specified.
+     * {@link DiskConfiguration#diskType()} and either
+     * {@link SnapshotDiskConfiguration#sourceSnapshot()} or
+     * {@link ImageDiskConfiguration#sourceImage()} are always returned, even if not specified.
      */
     public static DiskOption fields(DiskField... fields) {
       return new DiskOption(ComputeRpc.Option.FIELDS, DiskField.selector(fields));
@@ -1693,8 +1693,9 @@ public interface Compute extends Service<ComputeOptions> {
      * Returns an option to specify the disk's fields to be returned by the RPC call. If this option
      * is not provided, all disk's fields are returned. {@code DiskListOption.fields} can be used to
      * specify only the fields of interest. {@link Disk#diskId()},
-     * {@link DiskConfiguration#diskType()} and {@link SnapshotDiskConfiguration#sourceSnapshot()}
-     * or {@link ImageDiskConfiguration#sourceImage()} are always returned, even if not specified.
+     * {@link DiskConfiguration#diskType()} and either
+     * {@link SnapshotDiskConfiguration#sourceSnapshot()} or
+     * {@link ImageDiskConfiguration#sourceImage()} are always returned, even if not specified.
      */
     public static DiskListOption fields(DiskField... fields) {
       StringBuilder builder = new StringBuilder();
@@ -1922,8 +1923,7 @@ public interface Compute extends Service<ComputeOptions> {
   /**
    * Creates a new snapshot.
    *
-   * @return a zone operation if the create request was issued correctly, {@code null} if
-   *     {@code snapshot.sourceDisk} was not found
+   * @return a zone operation for snapshot creation
    * @throws ComputeException upon failure
    */
   Operation create(SnapshotInfo snapshot, OperationOption... options);
@@ -2058,4 +2058,13 @@ public interface Compute extends Service<ComputeOptions> {
    * @throws ComputeException upon failure
    */
   Operation delete(DiskId disk, OperationOption... options);
+
+  /**
+   * Resizes the disk to the requested size. The new size must be larger than the previous one.
+   *
+   * @return a zone operation if the request was issued correctly, {@code null} if the disk was not
+   *     found
+   * @throws ComputeException upon failure or if the new disk size is smaller than the previous one
+   */
+  Operation resize(DiskId disk, long sizeGb, OperationOption... options);
 }

@@ -71,7 +71,6 @@ import com.google.gcloud.compute.Compute.ZoneOption;
 import com.google.gcloud.compute.Operation.OperationError;
 import com.google.gcloud.compute.Operation.OperationWarning;
 import com.google.gcloud.compute.Operation.Status;
-import com.google.gcloud.compute.Zone.MaintenanceWindow;
 import com.google.gcloud.spi.ComputeRpc;
 import com.google.gcloud.spi.ComputeRpc.Tuple;
 import com.google.gcloud.spi.ComputeRpcFactory;
@@ -142,18 +141,12 @@ public class ComputeImplTest {
       .build();
   private static final ZoneId ZONE_ID = ZoneId.of("project", "zone");
   private static final Zone.Status ZONE_STATUS = Zone.Status.DOWN;
-  private static final MaintenanceWindow WINDOW1 = new MaintenanceWindow("NAME1", "DESCRIPTION1",
-      1453293420000L, 1453293480000L);
-  private static final MaintenanceWindow WINDOW2 = new MaintenanceWindow("NAME2", "DESCRIPTION2",
-      1453293420000L, 1453293480000L);
-  private static final List<MaintenanceWindow> WINDOWS = ImmutableList.of(WINDOW1, WINDOW2);
   private static final Zone ZONE = Zone.builder()
       .zoneId(ZONE_ID)
       .id(ID)
       .creationTimestamp(CREATION_TIMESTAMP)
       .description(DESCRIPTION)
       .status(ZONE_STATUS)
-      .maintenanceWindows(WINDOWS)
       .region(REGION_ID)
       .build();
   private static final LicenseId LICENSE_ID = LicenseId.of("project", "license");
@@ -2654,6 +2647,40 @@ public class ComputeImplTest {
     assertTrue(selector.contains("description"));
     assertEquals(23, selector.length());
     assertEquals(zoneOperation, operation);
+  }
+
+  @Test
+  public void testResizeDisk_Operation() {
+    EasyMock.expect(computeRpcMock.resizeDisk(DISK_ID.zone(), DISK_ID.disk(), 42L,
+        EMPTY_RPC_OPTIONS)).andReturn(zoneOperation.toPb());
+    EasyMock.replay(computeRpcMock);
+    compute = options.service();
+    assertEquals(zoneOperation, compute.resize(DISK_ID, 42L));
+  }
+
+  @Test
+  public void testResizeDiskWithSelectedFields_Operation() {
+    Capture<Map<ComputeRpc.Option, Object>> capturedOptions = Capture.newInstance();
+    EasyMock.expect(computeRpcMock.resizeDisk(eq(DISK_ID.zone()), eq(DISK_ID.disk()), eq(42L),
+        capture(capturedOptions))).andReturn(zoneOperation.toPb());
+    EasyMock.replay(computeRpcMock);
+    compute = options.service();
+    Operation operation = compute.resize(DISK_ID, 42L, OPERATION_OPTION_FIELDS);
+    String selector = (String) capturedOptions.getValue().get(OPERATION_OPTION_FIELDS.rpcOption());
+    assertTrue(selector.contains("selfLink"));
+    assertTrue(selector.contains("id"));
+    assertTrue(selector.contains("description"));
+    assertEquals(23, selector.length());
+    assertEquals(zoneOperation, operation);
+  }
+
+  @Test
+  public void testResizeDisk_Null() {
+    EasyMock.expect(computeRpcMock.resizeDisk(DISK_ID.zone(), DISK_ID.disk(), 42L,
+        EMPTY_RPC_OPTIONS)).andReturn(null);
+    EasyMock.replay(computeRpcMock);
+    compute = options.service();
+    assertNull(compute.resize(DISK_ID, 42L));
   }
 
   @Test

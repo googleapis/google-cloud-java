@@ -306,8 +306,7 @@ public interface ComputeRpc {
   /**
    * Creates a snapshot for the specified disk.
    *
-   * @return a zone operation if the create request was issued correctly, {@code null} if the disk
-   *     was not found
+   * @return a zone operation for snapshot creation
    * @throws ComputeException upon failure
    */
   Operation createSnapshot(String zone, String disk, String snapshot, String description,
@@ -416,4 +415,13 @@ public interface ComputeRpc {
    * @throws ComputeException upon failure
    */
   Operation deleteDisk(String zone, String disk, Map<Option, ?> options);
+
+  /**
+   * Resizes the disk to the requested size. The new size must be larger than the previous one.
+   *
+   * @return a zone operation if the request was issued correctly, {@code null} if the disk was not
+   *     found
+   * @throws ComputeException upon failure or if the new disk size is smaller than the previous one
+   */
+  Operation resizeDisk(String zone, String disk, long sizeGb, Map<Option, ?> options);
 }
