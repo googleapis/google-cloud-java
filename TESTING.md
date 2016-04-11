@@ -89,8 +89,6 @@ You can test against a temporary local Resource Manager by following these steps
 1. Before running your testing code, start the Resource Manager emulator `LocalResourceManagerHelper`. This can be done as follows:
 
   ```java
-  import com.google.gcloud.resourcemanager.testing.LocalResourceManagerHelper;
-
   LocalResourceManagerHelper helper = LocalResourceManagerHelper.create();
   helper.start();
   ```

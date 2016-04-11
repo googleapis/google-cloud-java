@@ -12,5 +12,5 @@ GCloud Java Datastore: Idiomatic Java Client for Google Cloud Datastore.
   
    	* {{{https://github.com/GoogleCloudPlatform/gcloud-java/tree/master/gcloud-java-datastore}GitHub repository}}
    	
-   	* {{{./apidocs/index.html?com/google/gcloud/datastore/package-summary.html}Javadocs}}
+   	* {{{./apidocs/index.html?com/google/cloud/datastore/package-summary.html}Javadocs}}
 

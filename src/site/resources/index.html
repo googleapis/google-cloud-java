@@ -60,7 +60,7 @@
                     <div class="col col-right">
                         <h2>Quickstart with Maven: Add gcloud to your pom.xml</h2>
                         <pre>&lt;dependency&gt;
-  &lt;groupId&gt;com.google.gcloud&lt;/groupId&gt;
+  &lt;groupId&gt;com.google.cloud&lt;/groupId&gt;
   &lt;artifactId&gt;gcloud-java&lt;/artifactId&gt;
   &lt;version&gt;{{SITE_VERSION}}&lt;/version&gt;
 &lt;/dependency&gt;</pre>
@@ -135,11 +135,11 @@
                     </div>
 
                     <div hljs="" language="java" ng-show="selected == 'compute engine'" class=""><pre>
-<code class="hljs java">import com.google.gcloud.datastore.Datastore;
-import com.google.gcloud.datastore.DatastoreOptions;
-import com.google.gcloud.datastore.Entity;
-import com.google.gcloud.datastore.Key;
-import com.google.gcloud.datastore.KeyFactory;
+<code class="hljs java">import com.google.cloud.datastore.Datastore;
+import com.google.cloud.datastore.DatastoreOptions;
+import com.google.cloud.datastore.Entity;
+import com.google.cloud.datastore.Key;
+import com.google.cloud.datastore.KeyFactory;
 
 // Authentication is automatic inside Google Compute Engine
 // and Google App Engine.
@@ -152,12 +152,12 @@ Entity entity = datastore.get(key);
 </code></pre></div>
 
                     <div hljs="" language="java" ng-show="selected == 'elsewhere'" class=""><pre>
-<code class="hljs java">import com.google.gcloud.AuthCredentials;
-import com.google.gcloud.datastore.Datastore;
-import com.google.gcloud.datastore.DatastoreOptions;
-import com.google.gcloud.datastore.Entity;
-import com.google.gcloud.datastore.Key;
-import com.google.gcloud.datastore.KeyFactory;
+<code class="hljs java">import com.google.cloud.AuthCredentials;
+import com.google.cloud.datastore.Datastore;
+import com.google.cloud.datastore.DatastoreOptions;
+import com.google.cloud.datastore.Entity;
+import com.google.cloud.datastore.Key;
+import com.google.cloud.datastore.KeyFactory;
 
 DatastoreOptions options = DatastoreOptions.builder()
   .projectId(<span class="hljs-string">PROJECT_ID</span>)

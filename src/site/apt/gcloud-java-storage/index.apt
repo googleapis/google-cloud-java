@@ -12,5 +12,5 @@ GCloud Java Storage: Idiomatic Java Client for Google Cloud Storage.
   
    	* {{{https://github.com/GoogleCloudPlatform/gcloud-java/tree/master/gcloud-java-storage}GitHub repository}}
    	
-   	* {{{./apidocs/index.html?com/google/gcloud/storage/package-summary.html}Javadocs}}
+   	* {{{./apidocs/index.html?com/google/cloud/storage/package-summary.html}Javadocs}}
 

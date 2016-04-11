@@ -7,5 +7,5 @@ GCloud Java Examples: Examples using GCloud Java services
   
    	* {{{https://github.com/GoogleCloudPlatform/gcloud-java/tree/master/gcloud-java-examples}GitHub repository}}
    	
-   	* {{{./apidocs/index.html?com/google/gcloud/examples/package-summary.html}Javadocs}}
+   	* {{{./apidocs/index.html?com/google/cloud/examples/package-summary.html}Javadocs}}
 
