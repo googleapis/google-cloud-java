@@ -33,6 +33,7 @@ import java.security.PrivateKey;
 import java.security.Signature;
 import java.security.SignatureException;
 import java.util.Collection;
+import java.util.Date;
 import java.util.Objects;
 
 /**
@@ -58,6 +59,7 @@ public abstract class AuthCredentials implements Restorable<AuthCredentials> {
       private final String account;
       private final Method getAccessToken;
       private final Method getAccessTokenResult;
+      private final Method getExpirationTime;
       private final Method signForApp;
       private final Method getSignature;
       private final Collection<String> scopes;
@@ -74,6 +76,7 @@ public abstract class AuthCredentials implements Restorable<AuthCredentials> {
               "com.google.appengine.api.appidentity.AppIdentityService$GetAccessTokenResult");
           this.getAccessTokenResult = serviceClass.getMethod("getAccessToken", Iterable.class);
           this.getAccessToken = tokenResultClass.getMethod("getAccessToken");
+          this.getExpirationTime = tokenResultClass.getMethod("getExpirationTime");
           this.account = (String) serviceClass.getMethod("getServiceAccountName")
               .invoke(appIdentityService);
           this.signForApp = serviceClass.getMethod("signForApp", byte[].class);
@@ -90,6 +93,7 @@ public abstract class AuthCredentials implements Restorable<AuthCredentials> {
         this.appIdentityService = unscoped.appIdentityService;
         this.getAccessToken = unscoped.getAccessToken;
         this.getAccessTokenResult = unscoped.getAccessTokenResult;
+        this.getExpirationTime = unscoped.getExpirationTime;
         this.account = unscoped.account;
         this.signForApp = unscoped.signForApp;
         this.getSignature = unscoped.getSignature;
@@ -107,7 +111,8 @@ public abstract class AuthCredentials implements Restorable<AuthCredentials> {
         try {
           Object accessTokenResult = getAccessTokenResult.invoke(appIdentityService, scopes);
           String accessToken = (String) getAccessToken.invoke(accessTokenResult);
-          return new AccessToken(accessToken, null);
+          Date expirationTime = (Date) getExpirationTime.invoke(accessTokenResult);
+          return new AccessToken(accessToken, expirationTime);
         } catch (Exception e) {
           throw new IOException("Could not get the access token.", e);
         }
@@ -131,7 +136,7 @@ public abstract class AuthCredentials implements Restorable<AuthCredentials> {
       @Override
       public byte[] sign(byte[] toSign) {
         try {
-          Object signingResult = signForApp.invoke(appIdentityService, (Object) toSign);
+          Object signingResult = signForApp.invoke(appIdentityService, toSign);
           return (byte[]) getSignature.invoke(signingResult);
         } catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException ex) {
           throw new SigningException("Failed to sign the provided bytes", ex);
