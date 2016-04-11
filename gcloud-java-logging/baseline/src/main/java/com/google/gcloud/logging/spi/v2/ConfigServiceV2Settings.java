@@ -33,14 +33,13 @@
 
 package com.google.gcloud.logging.spi.v2;
 
-import com.google.api.gax.core.BackoffParams;
 import com.google.api.gax.core.ConnectionSettings;
-import com.google.api.gax.core.RetryParams;
+import com.google.api.gax.core.RetrySettings;
 import com.google.api.gax.grpc.ApiCallSettings;
-import com.google.api.gax.grpc.ApiCallable.ApiCallableBuilder;
-import com.google.api.gax.grpc.ApiCallable.PageStreamingApiCallableBuilder;
-import com.google.api.gax.grpc.PageDescriptor;
+import com.google.api.gax.grpc.PageStreamingCallSettings;
+import com.google.api.gax.grpc.PageStreamingDescriptor;
 import com.google.api.gax.grpc.ServiceApiSettings;
+import com.google.api.gax.grpc.SimpleCallSettings;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -55,17 +54,17 @@ import com.google.logging.v2.ListSinksResponse;
 import com.google.logging.v2.LogSink;
 import com.google.logging.v2.UpdateSinkRequest;
 import com.google.protobuf.Empty;
+import io.grpc.ManagedChannel;
 import io.grpc.Status;
+import java.io.IOException;
+import java.util.concurrent.ScheduledExecutorService;
+import org.joda.time.Duration;
 
 // Manually-added imports: add custom (non-generated) imports after this point.
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS - see instructions at the top of the file for editing.
 @javax.annotation.Generated("by GAPIC")
 public class ConfigServiceV2Settings extends ServiceApiSettings {
-
-  // =========
-  // Constants
-  // =========
 
   /**
    * The default address of the service.
@@ -95,177 +94,68 @@ public class ConfigServiceV2Settings extends ServiceApiSettings {
           .add("https://www.googleapis.com/auth/cloud-platform")
           .build();
 
-  private static final ImmutableMap<String, ImmutableSet<Status.Code>> RETRYABLE_CODE_DEFINITIONS;
+  private final PageStreamingCallSettings<ListSinksRequest, ListSinksResponse, LogSink>
+      listSinksSettings;
 
-  static {
-    ImmutableMap.Builder<String, ImmutableSet<Status.Code>> definitions = ImmutableMap.builder();
-    definitions.put(
-        "idempotent",
-        Sets.immutableEnumSet(
-            Lists.<Status.Code>newArrayList(
-                Status.Code.DEADLINE_EXCEEDED, Status.Code.UNAVAILABLE)));
-    definitions.put("non_idempotent", Sets.immutableEnumSet(Lists.<Status.Code>newArrayList()));
-    RETRYABLE_CODE_DEFINITIONS = definitions.build();
+  private final SimpleCallSettings<GetSinkRequest, LogSink> getSinkSettings;
+  private final SimpleCallSettings<CreateSinkRequest, LogSink> createSinkSettings;
+  private final SimpleCallSettings<UpdateSinkRequest, LogSink> updateSinkSettings;
+  private final SimpleCallSettings<DeleteSinkRequest, Empty> deleteSinkSettings;
+
+  public PageStreamingCallSettings<ListSinksRequest, ListSinksResponse, LogSink>
+      listSinksSettings() {
+    return listSinksSettings;
   }
 
-  private static final ImmutableMap<String, RetryParams> RETRY_PARAM_DEFINITIONS;
-
-  static {
-    ImmutableMap.Builder<String, RetryParams> definitions = ImmutableMap.builder();
-    RetryParams params = null;
-    params =
-        RetryParams.newBuilder()
-            .setRetryBackoff(
-                BackoffParams.newBuilder()
-                    .setInitialDelayMillis(100L)
-                    .setDelayMultiplier(1.2)
-                    .setMaxDelayMillis(1000L)
-                    .build())
-            .setTimeoutBackoff(
-                BackoffParams.newBuilder()
-                    .setInitialDelayMillis(300L)
-                    .setDelayMultiplier(1.3)
-                    .setMaxDelayMillis(3000L)
-                    .build())
-            .setTotalTimeout(30000L)
-            .build();
-    definitions.put("default", params);
-    RETRY_PARAM_DEFINITIONS = definitions.build();
+  public SimpleCallSettings<GetSinkRequest, LogSink> getSinkSettings() {
+    return getSinkSettings;
   }
 
-  private static class MethodBuilders {
-    private final PageStreamingApiCallableBuilder<ListSinksRequest, ListSinksResponse, LogSink>
-        listSinksMethod;
-    private final ApiCallableBuilder<GetSinkRequest, LogSink> getSinkMethod;
-    private final ApiCallableBuilder<CreateSinkRequest, LogSink> createSinkMethod;
-    private final ApiCallableBuilder<UpdateSinkRequest, LogSink> updateSinkMethod;
-    private final ApiCallableBuilder<DeleteSinkRequest, Empty> deleteSinkMethod;
-    private final ImmutableList<? extends ApiCallSettings> allMethods;
-
-    public MethodBuilders() {
-      listSinksMethod =
-          new PageStreamingApiCallableBuilder<>(
-              ConfigServiceV2Grpc.METHOD_LIST_SINKS, LIST_SINKS_PAGE_STR_DESC);
-      listSinksMethod.setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"));
-      listSinksMethod.setRetryParams(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      getSinkMethod = new ApiCallableBuilder<>(ConfigServiceV2Grpc.METHOD_GET_SINK);
-      getSinkMethod.setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"));
-      getSinkMethod.setRetryParams(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      createSinkMethod = new ApiCallableBuilder<>(ConfigServiceV2Grpc.METHOD_CREATE_SINK);
-      createSinkMethod.setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"));
-      createSinkMethod.setRetryParams(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      updateSinkMethod = new ApiCallableBuilder<>(ConfigServiceV2Grpc.METHOD_UPDATE_SINK);
-      updateSinkMethod.setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"));
-      updateSinkMethod.setRetryParams(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      deleteSinkMethod = new ApiCallableBuilder<>(ConfigServiceV2Grpc.METHOD_DELETE_SINK);
-      deleteSinkMethod.setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"));
-      deleteSinkMethod.setRetryParams(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      allMethods =
-          ImmutableList.<ApiCallSettings>builder()
-              .add(
-                  listSinksMethod,
-                  getSinkMethod,
-                  createSinkMethod,
-                  updateSinkMethod,
-                  deleteSinkMethod)
-              .build();
-    }
+  public SimpleCallSettings<CreateSinkRequest, LogSink> createSinkSettings() {
+    return createSinkSettings;
   }
 
-  private final MethodBuilders methods;
-
-  // ===============
-  // Factory Methods
-  // ===============
-
-  /**
-   * Constructs an instance of ConfigServiceV2Settings with default settings.
-   *
-   * <!-- manual edit -->
-   * <!-- end manual edit -->
-   */
-  public static ConfigServiceV2Settings create() {
-    ConfigServiceV2Settings settings = new ConfigServiceV2Settings(new MethodBuilders());
-    settings.provideChannelWith(
-        ConnectionSettings.builder()
-            .setServiceAddress(DEFAULT_SERVICE_ADDRESS)
-            .setPort(DEFAULT_SERVICE_PORT)
-            .provideCredentialsWith(DEFAULT_SERVICE_SCOPES)
-            .build());
-    return settings;
+  public SimpleCallSettings<UpdateSinkRequest, LogSink> updateSinkSettings() {
+    return updateSinkSettings;
   }
 
-  /**
-   * Constructs an instance of ConfigServiceV2Settings with default settings. This is protected so
-   * that it easy to make a subclass, but otherwise, the static factory methods should be preferred.
-   *
-   * <!-- manual edit -->
-   * <!-- end manual edit -->
-   */
-  protected ConfigServiceV2Settings(MethodBuilders methods) {
-    super(methods.allMethods);
-    this.methods = methods;
+  public SimpleCallSettings<DeleteSinkRequest, Empty> deleteSinkSettings() {
+    return deleteSinkSettings;
   }
 
-  /**
-   * Returns the PageStreamingApiCallableBuilder for the API method listSinks.
-   *
-   * <!-- manual edit -->
-   * <!-- end manual edit -->
-   */
-  public PageStreamingApiCallableBuilder<ListSinksRequest, ListSinksResponse, LogSink>
-      listSinksMethod() {
-    return methods.listSinksMethod;
+  public static ConfigServiceV2Settings defaultInstance() throws IOException {
+    return newBuilder().build();
   }
 
-  /**
-   * Returns the ApiCallableBuilder for the API method getSink.
-   *
-   * <!-- manual edit -->
-   * <!-- end manual edit -->
-   */
-  public ApiCallableBuilder<GetSinkRequest, LogSink> getSinkMethod() {
-    return methods.getSinkMethod;
+  public static Builder newBuilder() {
+    return new Builder();
   }
 
-  /**
-   * Returns the ApiCallableBuilder for the API method createSink.
-   *
-   * <!-- manual edit -->
-   * <!-- end manual edit -->
-   */
-  public ApiCallableBuilder<CreateSinkRequest, LogSink> createSinkMethod() {
-    return methods.createSinkMethod;
+  public Builder toBuilder() {
+    return new Builder(this);
   }
 
-  /**
-   * Returns the ApiCallableBuilder for the API method updateSink.
-   *
-   * <!-- manual edit -->
-   * <!-- end manual edit -->
-   */
-  public ApiCallableBuilder<UpdateSinkRequest, LogSink> updateSinkMethod() {
-    return methods.updateSinkMethod;
+  private ConfigServiceV2Settings(Builder settingsBuilder) throws IOException {
+    super(
+        settingsBuilder.getOrBuildChannel(),
+        settingsBuilder.shouldAutoCloseChannel(),
+        settingsBuilder.getOrBuildExecutor(),
+        settingsBuilder.getConnectionSettings(),
+        settingsBuilder.getGeneratorName(),
+        settingsBuilder.getGeneratorVersion(),
+        settingsBuilder.getClientLibName(),
+        settingsBuilder.getClientLibVersion());
+
+    listSinksSettings = settingsBuilder.listSinksSettings().build();
+    getSinkSettings = settingsBuilder.getSinkSettings().build();
+    createSinkSettings = settingsBuilder.createSinkSettings().build();
+    updateSinkSettings = settingsBuilder.updateSinkSettings().build();
+    deleteSinkSettings = settingsBuilder.deleteSinkSettings().build();
   }
 
-  /**
-   * Returns the ApiCallableBuilder for the API method deleteSink.
-   *
-   * <!-- manual edit -->
-   * <!-- end manual edit -->
-   */
-  public ApiCallableBuilder<DeleteSinkRequest, Empty> deleteSinkMethod() {
-    return methods.deleteSinkMethod;
-  }
-
-  private static PageDescriptor<ListSinksRequest, ListSinksResponse, LogSink>
+  private static PageStreamingDescriptor<ListSinksRequest, ListSinksResponse, LogSink>
       LIST_SINKS_PAGE_STR_DESC =
-          new PageDescriptor<ListSinksRequest, ListSinksResponse, LogSink>() {
+          new PageStreamingDescriptor<ListSinksRequest, ListSinksResponse, LogSink>() {
             @Override
             public Object emptyToken() {
               return "";
@@ -286,4 +176,168 @@ public class ConfigServiceV2Settings extends ServiceApiSettings {
               return payload.getSinksList();
             }
           };
+
+  public static class Builder extends ServiceApiSettings.Builder {
+    private final ImmutableList<ApiCallSettings.Builder> methodSettingsBuilders;
+
+    private PageStreamingCallSettings.Builder<ListSinksRequest, ListSinksResponse, LogSink>
+        listSinksSettings;
+    private SimpleCallSettings.Builder<GetSinkRequest, LogSink> getSinkSettings;
+    private SimpleCallSettings.Builder<CreateSinkRequest, LogSink> createSinkSettings;
+    private SimpleCallSettings.Builder<UpdateSinkRequest, LogSink> updateSinkSettings;
+    private SimpleCallSettings.Builder<DeleteSinkRequest, Empty> deleteSinkSettings;
+
+    private static final ImmutableMap<String, ImmutableSet<Status.Code>> RETRYABLE_CODE_DEFINITIONS;
+
+    static {
+      ImmutableMap.Builder<String, ImmutableSet<Status.Code>> definitions = ImmutableMap.builder();
+      definitions.put(
+          "idempotent",
+          Sets.immutableEnumSet(
+              Lists.<Status.Code>newArrayList(
+                  Status.Code.DEADLINE_EXCEEDED, Status.Code.UNAVAILABLE)));
+      definitions.put("non_idempotent", Sets.immutableEnumSet(Lists.<Status.Code>newArrayList()));
+      RETRYABLE_CODE_DEFINITIONS = definitions.build();
+    }
+
+    private static final ImmutableMap<String, RetrySettings.Builder> RETRY_PARAM_DEFINITIONS;
+
+    static {
+      ImmutableMap.Builder<String, RetrySettings.Builder> definitions = ImmutableMap.builder();
+      RetrySettings.Builder settingsBuilder = null;
+      settingsBuilder =
+          RetrySettings.newBuilder()
+              .setInitialRetryDelay(Duration.millis(100L))
+              .setRetryDelayMultiplier(1.2)
+              .setMaxRetryDelay(Duration.millis(1000L))
+              .setInitialRpcTimeout(Duration.millis(2000L))
+              .setRpcTimeoutMultiplier(1.5)
+              .setMaxRpcTimeout(Duration.millis(30000L))
+              .setTotalTimeout(Duration.millis(45000L));
+      definitions.put("default", settingsBuilder);
+      RETRY_PARAM_DEFINITIONS = definitions.build();
+    }
+
+    private Builder() {
+      super(
+          ConnectionSettings.builder()
+              .setServiceAddress(DEFAULT_SERVICE_ADDRESS)
+              .setPort(DEFAULT_SERVICE_PORT)
+              .provideCredentialsWith(DEFAULT_SERVICE_SCOPES)
+              .build());
+
+      listSinksSettings =
+          PageStreamingCallSettings.newBuilder(
+                  ConfigServiceV2Grpc.METHOD_LIST_SINKS, LIST_SINKS_PAGE_STR_DESC)
+              .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+              .setRetrySettingsBuilder(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      getSinkSettings =
+          SimpleCallSettings.newBuilder(ConfigServiceV2Grpc.METHOD_GET_SINK)
+              .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+              .setRetrySettingsBuilder(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      createSinkSettings =
+          SimpleCallSettings.newBuilder(ConfigServiceV2Grpc.METHOD_CREATE_SINK)
+              .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+              .setRetrySettingsBuilder(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      updateSinkSettings =
+          SimpleCallSettings.newBuilder(ConfigServiceV2Grpc.METHOD_UPDATE_SINK)
+              .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+              .setRetrySettingsBuilder(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      deleteSinkSettings =
+          SimpleCallSettings.newBuilder(ConfigServiceV2Grpc.METHOD_DELETE_SINK)
+              .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+              .setRetrySettingsBuilder(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      methodSettingsBuilders =
+          ImmutableList.<ApiCallSettings.Builder>of(
+              listSinksSettings,
+              getSinkSettings,
+              createSinkSettings,
+              updateSinkSettings,
+              deleteSinkSettings);
+    }
+
+    private Builder(ConfigServiceV2Settings settings) {
+      super(settings);
+
+      listSinksSettings = settings.listSinksSettings.toBuilder();
+      getSinkSettings = settings.getSinkSettings.toBuilder();
+      createSinkSettings = settings.createSinkSettings.toBuilder();
+      updateSinkSettings = settings.updateSinkSettings.toBuilder();
+      deleteSinkSettings = settings.deleteSinkSettings.toBuilder();
+
+      methodSettingsBuilders =
+          ImmutableList.<ApiCallSettings.Builder>of(
+              listSinksSettings,
+              getSinkSettings,
+              createSinkSettings,
+              updateSinkSettings,
+              deleteSinkSettings);
+    }
+
+    @Override
+    public Builder provideChannelWith(ManagedChannel channel, boolean shouldAutoClose) {
+      super.provideChannelWith(channel, shouldAutoClose);
+      return this;
+    }
+
+    @Override
+    public Builder provideChannelWith(ConnectionSettings settings) {
+      super.provideChannelWith(settings);
+      return this;
+    }
+
+    @Override
+    public Builder setExecutor(ScheduledExecutorService executor) {
+      super.setExecutor(executor);
+      return this;
+    }
+
+    @Override
+    public Builder setGeneratorHeader(String name, String version) {
+      super.setGeneratorHeader(name, version);
+      return this;
+    }
+
+    @Override
+    public Builder setClientLibHeader(String name, String version) {
+      super.setClientLibHeader(name, version);
+      return this;
+    }
+
+    public Builder applyToAllApiMethods(ApiCallSettings.Builder apiCallSettings) throws Exception {
+      super.applyToAllApiMethods(methodSettingsBuilders, apiCallSettings);
+      return this;
+    }
+
+    public PageStreamingCallSettings.Builder<ListSinksRequest, ListSinksResponse, LogSink>
+        listSinksSettings() {
+      return listSinksSettings;
+    }
+
+    public SimpleCallSettings.Builder<GetSinkRequest, LogSink> getSinkSettings() {
+      return getSinkSettings;
+    }
+
+    public SimpleCallSettings.Builder<CreateSinkRequest, LogSink> createSinkSettings() {
+      return createSinkSettings;
+    }
+
+    public SimpleCallSettings.Builder<UpdateSinkRequest, LogSink> updateSinkSettings() {
+      return updateSinkSettings;
+    }
+
+    public SimpleCallSettings.Builder<DeleteSinkRequest, Empty> deleteSinkSettings() {
+      return deleteSinkSettings;
+    }
+
+    @Override
+    public ConfigServiceV2Settings build() throws IOException {
+      return new ConfigServiceV2Settings(this);
+    }
+  }
 }

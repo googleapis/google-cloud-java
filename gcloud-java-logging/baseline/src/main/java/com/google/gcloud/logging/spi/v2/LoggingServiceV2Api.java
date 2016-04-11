@@ -43,8 +43,6 @@ import com.google.logging.v2.ListLogEntriesResponse;
 import com.google.logging.v2.ListMonitoredResourceDescriptorsRequest;
 import com.google.logging.v2.ListMonitoredResourceDescriptorsResponse;
 import com.google.logging.v2.LogEntry;
-import com.google.logging.v2.ReadLogEntriesRequest;
-import com.google.logging.v2.ReadLogEntriesResponse;
 import com.google.logging.v2.WriteLogEntriesRequest;
 import com.google.logging.v2.WriteLogEntriesResponse;
 import com.google.protobuf.Empty;
@@ -66,66 +64,6 @@ import java.util.Map;
  */
 @javax.annotation.Generated("by GAPIC")
 public class LoggingServiceV2Api implements AutoCloseable {
-
-  public static class ResourceNames {
-    private ResourceNames() {}
-
-    // =======================
-    // ResourceNames Constants
-    // =======================
-
-    /**
-     * A PathTemplate representing the fully-qualified path to represent
-     * a log resource.
-     *
-     * <!-- manual edit -->
-     * <!-- end manual edit -->
-     */
-    private static final PathTemplate LOG_PATH_TEMPLATE =
-        PathTemplate.create("projects/{project}/logs/{log}");
-
-    // ==============================
-    // Resource Name Helper Functions
-    // ==============================
-
-    /**
-     * Formats a string containing the fully-qualified path to represent
-     * a log resource.
-     *
-     * <!-- manual edit -->
-     * <!-- end manual edit -->
-     */
-    public static final String formatLogPath(String project, String log) {
-      return LOG_PATH_TEMPLATE.instantiate("project", project, "log", log);
-    }
-
-    /**
-     * Parses the project from the given fully-qualified path which
-     * represents a log resource.
-     *
-     * <!-- manual edit -->
-     * <!-- end manual edit -->
-     */
-    public static final String parseProjectFromLogPath(String logPath) {
-      return LOG_PATH_TEMPLATE.parse(logPath).get("project");
-    }
-
-    /**
-     * Parses the log from the given fully-qualified path which
-     * represents a log resource.
-     *
-     * <!-- manual edit -->
-     * <!-- end manual edit -->
-     */
-    public static final String parseLogFromLogPath(String logPath) {
-      return LOG_PATH_TEMPLATE.parse(logPath).get("log");
-    }
-  }
-
-  // ========
-  // Members
-  // ========
-
   private final ManagedChannel channel;
   private final List<AutoCloseable> closeables = new ArrayList<>();
 
@@ -135,9 +73,6 @@ public class LoggingServiceV2Api implements AutoCloseable {
   private final ApiCallable<ListLogEntriesRequest, ListLogEntriesResponse> listLogEntriesCallable;
   private final ApiCallable<ListLogEntriesRequest, Iterable<LogEntry>>
       listLogEntriesIterableCallable;
-  private final ApiCallable<ReadLogEntriesRequest, ReadLogEntriesResponse> readLogEntriesCallable;
-  private final ApiCallable<ReadLogEntriesRequest, Iterable<LogEntry>>
-      readLogEntriesIterableCallable;
   private final ApiCallable<
           ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse>
       listMonitoredResourceDescriptorsCallable;
@@ -145,9 +80,66 @@ public class LoggingServiceV2Api implements AutoCloseable {
           ListMonitoredResourceDescriptorsRequest, Iterable<MonitoredResourceDescriptor>>
       listMonitoredResourceDescriptorsIterableCallable;
 
-  // ===============
-  // Factory Methods
-  // ===============
+  private static final PathTemplate PROJECT_PATH_TEMPLATE =
+      PathTemplate.create("projects/{project}");
+
+  private static final PathTemplate LOG_PATH_TEMPLATE =
+      PathTemplate.create("projects/{project}/logs/{log}");
+
+  /**
+   * Formats a string containing the fully-qualified path to represent
+   * a project resource.
+   *
+   * <!-- manual edit -->
+   * <!-- end manual edit -->
+   */
+  public static final String formatProjectName(String project) {
+    return PROJECT_PATH_TEMPLATE.instantiate("project", project);
+  }
+
+  /**
+   * Formats a string containing the fully-qualified path to represent
+   * a log resource.
+   *
+   * <!-- manual edit -->
+   * <!-- end manual edit -->
+   */
+  public static final String formatLogName(String project, String log) {
+    return LOG_PATH_TEMPLATE.instantiate("project", project, "log", log);
+  }
+
+  /**
+   * Parses the project from the given fully-qualified path which
+   * represents a project resource.
+   *
+   * <!-- manual edit -->
+   * <!-- end manual edit -->
+   */
+  public static final String parseProjectFromProjectName(String projectName) {
+    return PROJECT_PATH_TEMPLATE.parse(projectName).get("project");
+  }
+
+  /**
+   * Parses the project from the given fully-qualified path which
+   * represents a log resource.
+   *
+   * <!-- manual edit -->
+   * <!-- end manual edit -->
+   */
+  public static final String parseProjectFromLogName(String logName) {
+    return LOG_PATH_TEMPLATE.parse(logName).get("project");
+  }
+
+  /**
+   * Parses the log from the given fully-qualified path which
+   * represents a log resource.
+   *
+   * <!-- manual edit -->
+   * <!-- end manual edit -->
+   */
+  public static final String parseLogFromLogName(String logName) {
+    return LOG_PATH_TEMPLATE.parse(logName).get("log");
+  }
 
   /**
    * Constructs an instance of LoggingServiceV2Api with default settings.
@@ -155,24 +147,27 @@ public class LoggingServiceV2Api implements AutoCloseable {
    * <!-- manual edit -->
    * <!-- end manual edit -->
    */
-  public static LoggingServiceV2Api create() throws IOException {
-    return create(LoggingServiceV2Settings.create());
+  public static final LoggingServiceV2Api defaultInstance() throws IOException {
+    return create(LoggingServiceV2Settings.defaultInstance());
   }
 
   /**
-   * Constructs an instance of LoggingServiceV2Api, using the given settings. The channels are
-   * created based on the settings passed in, or defaults for any settings that are not set.
+   * Constructs an instance of LoggingServiceV2Api, using the given settings.
+   * The channels are created based on the settings passed in, or defaults for any
+   * settings that are not set.
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
    */
-  public static LoggingServiceV2Api create(LoggingServiceV2Settings settings) throws IOException {
+  public static final LoggingServiceV2Api create(LoggingServiceV2Settings settings)
+      throws IOException {
     return new LoggingServiceV2Api(settings);
   }
 
   /**
-   * Constructs an instance of LoggingServiceV2Api, using the given settings. This is protected so
-   * that it easy to make a subclass, but otherwise, the static factory methods should be preferred.
+   * Constructs an instance of LoggingServiceV2Api, using the given settings.
+   * This is protected so that it easy to make a subclass, but otherwise, the static
+   * factory methods should be preferred.
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
@@ -180,31 +175,26 @@ public class LoggingServiceV2Api implements AutoCloseable {
   protected LoggingServiceV2Api(LoggingServiceV2Settings settings) throws IOException {
     this.channel = settings.getChannel();
 
-    this.deleteLogCallable = settings.deleteLogMethod().build(settings);
-    this.writeLogEntriesCallable = settings.writeLogEntriesMethod().build(settings);
-    this.listLogEntriesCallable = settings.listLogEntriesMethod().build(settings);
+    this.deleteLogCallable = ApiCallable.create(settings.deleteLogSettings(), settings);
+    this.writeLogEntriesCallable = ApiCallable.create(settings.writeLogEntriesSettings(), settings);
+    this.listLogEntriesCallable = ApiCallable.create(settings.listLogEntriesSettings(), settings);
     this.listLogEntriesIterableCallable =
-        settings.listLogEntriesMethod().buildPageStreaming(settings);
-    this.readLogEntriesCallable = settings.readLogEntriesMethod().build(settings);
-    this.readLogEntriesIterableCallable =
-        settings.readLogEntriesMethod().buildPageStreaming(settings);
+        ApiCallable.createIterable(settings.listLogEntriesSettings(), settings);
     this.listMonitoredResourceDescriptorsCallable =
-        settings.listMonitoredResourceDescriptorsMethod().build(settings);
+        ApiCallable.create(settings.listMonitoredResourceDescriptorsSettings(), settings);
     this.listMonitoredResourceDescriptorsIterableCallable =
-        settings.listMonitoredResourceDescriptorsMethod().buildPageStreaming(settings);
+        ApiCallable.createIterable(settings.listMonitoredResourceDescriptorsSettings(), settings);
 
-    closeables.add(
-        new Closeable() {
-          @Override
-          public void close() throws IOException {
-            channel.shutdown();
-          }
-        });
+    if (settings.shouldAutoCloseChannel()) {
+      closeables.add(
+          new Closeable() {
+            @Override
+            public void close() throws IOException {
+              channel.shutdown();
+            }
+          });
+    }
   }
-
-  // =============
-  // Service Calls
-  // =============
 
   // ----- deleteLog -----
 
@@ -218,8 +208,9 @@ public class LoggingServiceV2Api implements AutoCloseable {
    *
    * @param logName Required. The resource name of the log to delete.  Example:
    * `"projects/my-project/logs/syslog"`.
+   * @throws ApiException if the remote call fails
    */
-  public void deleteLog(String logName) {
+  public final void deleteLog(String logName) {
     DeleteLogRequest request = DeleteLogRequest.newBuilder().setLogName(logName).build();
 
     deleteLog(request);
@@ -234,6 +225,7 @@ public class LoggingServiceV2Api implements AutoCloseable {
    * <!-- end manual edit -->
    *
    * @param request The request object containing all of the parameters for the API call.
+   * @throws ApiException if the remote call fails
    */
   private void deleteLog(DeleteLogRequest request) {
     deleteLogCallable().call(request);
@@ -246,8 +238,9 @@ public class LoggingServiceV2Api implements AutoCloseable {
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
+   * @throws ApiException if the remote call fails
    */
-  public ApiCallable<DeleteLogRequest, Empty> deleteLogCallable() {
+  public final ApiCallable<DeleteLogRequest, Empty> deleteLogCallable() {
     return deleteLogCallable;
   }
 
@@ -269,12 +262,13 @@ public class LoggingServiceV2Api implements AutoCloseable {
    * that do not specify their own `resource`.
    * @param labels Optional. User-defined `key:value` items that are added to
    * the `labels` field of each log entry in `entries`, except when a log
-   * entry specifies its own 'key:value' item with the same key.
+   * entry specifies its own `key:value` item with the same key.
    * Example: `{ "size": "large", "color":"red" }`
    * @param entries Required. The log entries to write. The log entries must have values for
    * all required fields.
+   * @throws ApiException if the remote call fails
    */
-  public WriteLogEntriesResponse writeLogEntries(
+  public final WriteLogEntriesResponse writeLogEntries(
       String logName,
       MonitoredResource resource,
       Map<String, String> labels,
@@ -299,6 +293,7 @@ public class LoggingServiceV2Api implements AutoCloseable {
    * <!-- end manual edit -->
    *
    * @param request The request object containing all of the parameters for the API call.
+   * @throws ApiException if the remote call fails
    */
   public WriteLogEntriesResponse writeLogEntries(WriteLogEntriesRequest request) {
     return writeLogEntriesCallable().call(request);
@@ -311,8 +306,10 @@ public class LoggingServiceV2Api implements AutoCloseable {
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
+   * @throws ApiException if the remote call fails
    */
-  public ApiCallable<WriteLogEntriesRequest, WriteLogEntriesResponse> writeLogEntriesCallable() {
+  public final ApiCallable<WriteLogEntriesRequest, WriteLogEntriesResponse>
+      writeLogEntriesCallable() {
     return writeLogEntriesCallable;
   }
 
@@ -320,15 +317,29 @@ public class LoggingServiceV2Api implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD - see instructions at the top of the file for editing.
   /**
-   * Lists log entries.
-   * Use this method to examine log entries from Cloud Logging.
-   * See [Exporting Logs](/logging/docs/export) for other ways to copy
-   * log entries out of Cloud Logging.
+   * Lists log entries.  Use this method to retrieve log entries from Cloud
+   * Logging.  For ways to export log entries, see
+   * [Exporting Logs](/logging/docs/export).
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
+   *
+   * @param projectIds Required. One or more project IDs or project numbers from which to retrieve
+   * log entries.  Examples of a project ID: `"my-project-1A"`, `"1234567890"`.
+   * @param filter Optional. An [advanced logs filter](/logging/docs/view/advanced_filters).
+   * The filter is compared against all log entries in the projects specified by
+   * `projectIds`.  Only entries that match the filter are retrieved.  An empty
+   * filter matches all log entries.
+   * @param orderBy Optional. How the results should be sorted.  Presently, the only permitted
+   * values are `"timestamp"` (default) and `"timestamp desc"`.  The first
+   * option returns entries in order of increasing values of
+   * `LogEntry.timestamp` (oldest first), and the second option returns entries
+   * in order of decreasing timestamps (newest first).  Entries with equal
+   * timestamps are returned in order of `LogEntry.insertId`.
+   * @throws ApiException if the remote call fails
    */
-  public Iterable<LogEntry> listLogEntries(List<String> projectIds, String filter, String orderBy) {
+  public final Iterable<LogEntry> listLogEntries(
+      List<String> projectIds, String filter, String orderBy) {
     ListLogEntriesRequest request =
         ListLogEntriesRequest.newBuilder()
             .addAllProjectIds(projectIds)
@@ -340,104 +351,47 @@ public class LoggingServiceV2Api implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD - see instructions at the top of the file for editing.
   /**
-   * Lists log entries.
-   * Use this method to examine log entries from Cloud Logging.
-   * See [Exporting Logs](/logging/docs/export) for other ways to copy
-   * log entries out of Cloud Logging.
+   * Lists log entries.  Use this method to retrieve log entries from Cloud
+   * Logging.  For ways to export log entries, see
+   * [Exporting Logs](/logging/docs/export).
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
    *
    * @param request The request object containing all of the parameters for the API call.
+   * @throws ApiException if the remote call fails
    */
-  public Iterable<LogEntry> listLogEntries(ListLogEntriesRequest request) {
+  public final Iterable<LogEntry> listLogEntries(ListLogEntriesRequest request) {
     return listLogEntriesIterableCallable().call(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD - see instructions at the top of the file for editing.
   /**
-   * Lists log entries.
-   * Use this method to examine log entries from Cloud Logging.
-   * See [Exporting Logs](/logging/docs/export) for other ways to copy
-   * log entries out of Cloud Logging.
+   * Lists log entries.  Use this method to retrieve log entries from Cloud
+   * Logging.  For ways to export log entries, see
+   * [Exporting Logs](/logging/docs/export).
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
+   * @throws ApiException if the remote call fails
    */
-  public ApiCallable<ListLogEntriesRequest, Iterable<LogEntry>> listLogEntriesIterableCallable() {
+  public final ApiCallable<ListLogEntriesRequest, Iterable<LogEntry>>
+      listLogEntriesIterableCallable() {
     return listLogEntriesIterableCallable;
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD - see instructions at the top of the file for editing.
   /**
-   * Lists log entries.
-   * Use this method to examine log entries from Cloud Logging.
-   * See [Exporting Logs](/logging/docs/export) for other ways to copy
-   * log entries out of Cloud Logging.
+   * Lists log entries.  Use this method to retrieve log entries from Cloud
+   * Logging.  For ways to export log entries, see
+   * [Exporting Logs](/logging/docs/export).
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
+   * @throws ApiException if the remote call fails
    */
-  public ApiCallable<ListLogEntriesRequest, ListLogEntriesResponse> listLogEntriesCallable() {
+  public final ApiCallable<ListLogEntriesRequest, ListLogEntriesResponse> listLogEntriesCallable() {
     return listLogEntriesCallable;
-  }
-
-  // ----- readLogEntries -----
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD - see instructions at the top of the file for editing.
-  /**
-   * Streaming read of log entries.  Similar to `List`, this method is intended
-   * for a large volume of log entries.
-   *
-   * <!-- manual edit -->
-   * <!-- end manual edit -->
-   */
-  public Iterable<LogEntry> readLogEntries(List<String> projectIds, String filter, String orderBy) {
-    ReadLogEntriesRequest request =
-        ReadLogEntriesRequest.newBuilder()
-            .addAllProjectIds(projectIds)
-            .setFilter(filter)
-            .setOrderBy(orderBy)
-            .build();
-    return readLogEntries(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD - see instructions at the top of the file for editing.
-  /**
-   * Streaming read of log entries.  Similar to `List`, this method is intended
-   * for a large volume of log entries.
-   *
-   * <!-- manual edit -->
-   * <!-- end manual edit -->
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   */
-  public Iterable<LogEntry> readLogEntries(ReadLogEntriesRequest request) {
-    return readLogEntriesIterableCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD - see instructions at the top of the file for editing.
-  /**
-   * Streaming read of log entries.  Similar to `List`, this method is intended
-   * for a large volume of log entries.
-   *
-   * <!-- manual edit -->
-   * <!-- end manual edit -->
-   */
-  public ApiCallable<ReadLogEntriesRequest, Iterable<LogEntry>> readLogEntriesIterableCallable() {
-    return readLogEntriesIterableCallable;
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD - see instructions at the top of the file for editing.
-  /**
-   * Streaming read of log entries.  Similar to `List`, this method is intended
-   * for a large volume of log entries.
-   *
-   * <!-- manual edit -->
-   * <!-- end manual edit -->
-   */
-  public ApiCallable<ReadLogEntriesRequest, ReadLogEntriesResponse> readLogEntriesCallable() {
-    return readLogEntriesCallable;
   }
 
   // ----- listMonitoredResourceDescriptors -----
@@ -450,8 +404,9 @@ public class LoggingServiceV2Api implements AutoCloseable {
    * <!-- end manual edit -->
    *
    * @param request The request object containing all of the parameters for the API call.
+   * @throws ApiException if the remote call fails
    */
-  public Iterable<MonitoredResourceDescriptor> listMonitoredResourceDescriptors(
+  public final Iterable<MonitoredResourceDescriptor> listMonitoredResourceDescriptors(
       ListMonitoredResourceDescriptorsRequest request) {
     return listMonitoredResourceDescriptorsIterableCallable().call(request);
   }
@@ -462,8 +417,10 @@ public class LoggingServiceV2Api implements AutoCloseable {
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
+   * @throws ApiException if the remote call fails
    */
-  public ApiCallable<ListMonitoredResourceDescriptorsRequest, Iterable<MonitoredResourceDescriptor>>
+  public final ApiCallable<
+          ListMonitoredResourceDescriptorsRequest, Iterable<MonitoredResourceDescriptor>>
       listMonitoredResourceDescriptorsIterableCallable() {
     return listMonitoredResourceDescriptorsIterableCallable;
   }
@@ -474,16 +431,13 @@ public class LoggingServiceV2Api implements AutoCloseable {
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
+   * @throws ApiException if the remote call fails
    */
-  public ApiCallable<
+  public final ApiCallable<
           ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse>
       listMonitoredResourceDescriptorsCallable() {
     return listMonitoredResourceDescriptorsCallable;
   }
-
-  // ========
-  // Cleanup
-  // ========
 
   /**
    * Initiates an orderly shutdown in which preexisting calls continue but new calls are immediately
@@ -493,7 +447,7 @@ public class LoggingServiceV2Api implements AutoCloseable {
    * <!-- end manual edit -->
    */
   @Override
-  public void close() throws Exception {
+  public final void close() throws Exception {
     for (AutoCloseable closeable : closeables) {
       closeable.close();
     }

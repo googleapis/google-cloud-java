@@ -53,105 +53,13 @@ import java.util.List;
 
 // AUTO-GENERATED DOCUMENTATION AND SERVICE - see instructions at the top of the file for editing.
 /**
- * Service Description: See src/api/google/logging/v1/logging.proto for documentation
+ * Service Description:
  *
  * <!-- manual edit -->
  * <!-- end manual edit -->
  */
 @javax.annotation.Generated("by GAPIC")
 public class MetricsServiceV2Api implements AutoCloseable {
-
-  public static class ResourceNames {
-    private ResourceNames() {}
-
-    // =======================
-    // ResourceNames Constants
-    // =======================
-
-    /**
-     * A PathTemplate representing the fully-qualified path to represent
-     * a project resource.
-     *
-     * <!-- manual edit -->
-     * <!-- end manual edit -->
-     */
-    private static final PathTemplate PROJECT_PATH_TEMPLATE =
-        PathTemplate.create("projects/{project}");
-
-    /**
-     * A PathTemplate representing the fully-qualified path to represent
-     * a metric resource.
-     *
-     * <!-- manual edit -->
-     * <!-- end manual edit -->
-     */
-    private static final PathTemplate METRIC_PATH_TEMPLATE =
-        PathTemplate.create("projects/{project}/metrics/{metric}");
-
-    // ==============================
-    // Resource Name Helper Functions
-    // ==============================
-
-    /**
-     * Formats a string containing the fully-qualified path to represent
-     * a project resource.
-     *
-     * <!-- manual edit -->
-     * <!-- end manual edit -->
-     */
-    public static final String formatProjectPath(String project) {
-      return PROJECT_PATH_TEMPLATE.instantiate("project", project);
-    }
-
-    /**
-     * Formats a string containing the fully-qualified path to represent
-     * a metric resource.
-     *
-     * <!-- manual edit -->
-     * <!-- end manual edit -->
-     */
-    public static final String formatMetricPath(String project, String metric) {
-      return METRIC_PATH_TEMPLATE.instantiate("project", project, "metric", metric);
-    }
-
-    /**
-     * Parses the project from the given fully-qualified path which
-     * represents a project resource.
-     *
-     * <!-- manual edit -->
-     * <!-- end manual edit -->
-     */
-    public static final String parseProjectFromProjectPath(String projectPath) {
-      return PROJECT_PATH_TEMPLATE.parse(projectPath).get("project");
-    }
-
-    /**
-     * Parses the project from the given fully-qualified path which
-     * represents a metric resource.
-     *
-     * <!-- manual edit -->
-     * <!-- end manual edit -->
-     */
-    public static final String parseProjectFromMetricPath(String metricPath) {
-      return METRIC_PATH_TEMPLATE.parse(metricPath).get("project");
-    }
-
-    /**
-     * Parses the metric from the given fully-qualified path which
-     * represents a metric resource.
-     *
-     * <!-- manual edit -->
-     * <!-- end manual edit -->
-     */
-    public static final String parseMetricFromMetricPath(String metricPath) {
-      return METRIC_PATH_TEMPLATE.parse(metricPath).get("metric");
-    }
-  }
-
-  // ========
-  // Members
-  // ========
-
   private final ManagedChannel channel;
   private final List<AutoCloseable> closeables = new ArrayList<>();
 
@@ -163,9 +71,66 @@ public class MetricsServiceV2Api implements AutoCloseable {
   private final ApiCallable<UpdateLogMetricRequest, LogMetric> updateLogMetricCallable;
   private final ApiCallable<DeleteLogMetricRequest, Empty> deleteLogMetricCallable;
 
-  // ===============
-  // Factory Methods
-  // ===============
+  private static final PathTemplate PROJECT_PATH_TEMPLATE =
+      PathTemplate.create("projects/{project}");
+
+  private static final PathTemplate METRIC_PATH_TEMPLATE =
+      PathTemplate.create("projects/{project}/metrics/{metric}");
+
+  /**
+   * Formats a string containing the fully-qualified path to represent
+   * a project resource.
+   *
+   * <!-- manual edit -->
+   * <!-- end manual edit -->
+   */
+  public static final String formatProjectName(String project) {
+    return PROJECT_PATH_TEMPLATE.instantiate("project", project);
+  }
+
+  /**
+   * Formats a string containing the fully-qualified path to represent
+   * a metric resource.
+   *
+   * <!-- manual edit -->
+   * <!-- end manual edit -->
+   */
+  public static final String formatMetricName(String project, String metric) {
+    return METRIC_PATH_TEMPLATE.instantiate("project", project, "metric", metric);
+  }
+
+  /**
+   * Parses the project from the given fully-qualified path which
+   * represents a project resource.
+   *
+   * <!-- manual edit -->
+   * <!-- end manual edit -->
+   */
+  public static final String parseProjectFromProjectName(String projectName) {
+    return PROJECT_PATH_TEMPLATE.parse(projectName).get("project");
+  }
+
+  /**
+   * Parses the project from the given fully-qualified path which
+   * represents a metric resource.
+   *
+   * <!-- manual edit -->
+   * <!-- end manual edit -->
+   */
+  public static final String parseProjectFromMetricName(String metricName) {
+    return METRIC_PATH_TEMPLATE.parse(metricName).get("project");
+  }
+
+  /**
+   * Parses the metric from the given fully-qualified path which
+   * represents a metric resource.
+   *
+   * <!-- manual edit -->
+   * <!-- end manual edit -->
+   */
+  public static final String parseMetricFromMetricName(String metricName) {
+    return METRIC_PATH_TEMPLATE.parse(metricName).get("metric");
+  }
 
   /**
    * Constructs an instance of MetricsServiceV2Api with default settings.
@@ -173,24 +138,27 @@ public class MetricsServiceV2Api implements AutoCloseable {
    * <!-- manual edit -->
    * <!-- end manual edit -->
    */
-  public static MetricsServiceV2Api create() throws IOException {
-    return create(MetricsServiceV2Settings.create());
+  public static final MetricsServiceV2Api defaultInstance() throws IOException {
+    return create(MetricsServiceV2Settings.defaultInstance());
   }
 
   /**
-   * Constructs an instance of MetricsServiceV2Api, using the given settings. The channels are
-   * created based on the settings passed in, or defaults for any settings that are not set.
+   * Constructs an instance of MetricsServiceV2Api, using the given settings.
+   * The channels are created based on the settings passed in, or defaults for any
+   * settings that are not set.
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
    */
-  public static MetricsServiceV2Api create(MetricsServiceV2Settings settings) throws IOException {
+  public static final MetricsServiceV2Api create(MetricsServiceV2Settings settings)
+      throws IOException {
     return new MetricsServiceV2Api(settings);
   }
 
   /**
-   * Constructs an instance of MetricsServiceV2Api, using the given settings. This is protected so
-   * that it easy to make a subclass, but otherwise, the static factory methods should be preferred.
+   * Constructs an instance of MetricsServiceV2Api, using the given settings.
+   * This is protected so that it easy to make a subclass, but otherwise, the static
+   * factory methods should be preferred.
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
@@ -198,26 +166,24 @@ public class MetricsServiceV2Api implements AutoCloseable {
   protected MetricsServiceV2Api(MetricsServiceV2Settings settings) throws IOException {
     this.channel = settings.getChannel();
 
-    this.listLogMetricsCallable = settings.listLogMetricsMethod().build(settings);
+    this.listLogMetricsCallable = ApiCallable.create(settings.listLogMetricsSettings(), settings);
     this.listLogMetricsIterableCallable =
-        settings.listLogMetricsMethod().buildPageStreaming(settings);
-    this.getLogMetricCallable = settings.getLogMetricMethod().build(settings);
-    this.createLogMetricCallable = settings.createLogMetricMethod().build(settings);
-    this.updateLogMetricCallable = settings.updateLogMetricMethod().build(settings);
-    this.deleteLogMetricCallable = settings.deleteLogMetricMethod().build(settings);
+        ApiCallable.createIterable(settings.listLogMetricsSettings(), settings);
+    this.getLogMetricCallable = ApiCallable.create(settings.getLogMetricSettings(), settings);
+    this.createLogMetricCallable = ApiCallable.create(settings.createLogMetricSettings(), settings);
+    this.updateLogMetricCallable = ApiCallable.create(settings.updateLogMetricSettings(), settings);
+    this.deleteLogMetricCallable = ApiCallable.create(settings.deleteLogMetricSettings(), settings);
 
-    closeables.add(
-        new Closeable() {
-          @Override
-          public void close() throws IOException {
-            channel.shutdown();
-          }
-        });
+    if (settings.shouldAutoCloseChannel()) {
+      closeables.add(
+          new Closeable() {
+            @Override
+            public void close() throws IOException {
+              channel.shutdown();
+            }
+          });
+    }
   }
-
-  // =============
-  // Service Calls
-  // =============
 
   // ----- listLogMetrics -----
 
@@ -227,8 +193,12 @@ public class MetricsServiceV2Api implements AutoCloseable {
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
+   *
+   * @param projectName Required. The resource name of the project containing the metrics.
+   * Example: `"projects/my-project-id"`.
+   * @throws ApiException if the remote call fails
    */
-  public Iterable<LogMetric> listLogMetrics(String projectName) {
+  public final Iterable<LogMetric> listLogMetrics(String projectName) {
     ListLogMetricsRequest request =
         ListLogMetricsRequest.newBuilder().setProjectName(projectName).build();
     return listLogMetrics(request);
@@ -242,8 +212,9 @@ public class MetricsServiceV2Api implements AutoCloseable {
    * <!-- end manual edit -->
    *
    * @param request The request object containing all of the parameters for the API call.
+   * @throws ApiException if the remote call fails
    */
-  public Iterable<LogMetric> listLogMetrics(ListLogMetricsRequest request) {
+  public final Iterable<LogMetric> listLogMetrics(ListLogMetricsRequest request) {
     return listLogMetricsIterableCallable().call(request);
   }
 
@@ -253,8 +224,10 @@ public class MetricsServiceV2Api implements AutoCloseable {
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
+   * @throws ApiException if the remote call fails
    */
-  public ApiCallable<ListLogMetricsRequest, Iterable<LogMetric>> listLogMetricsIterableCallable() {
+  public final ApiCallable<ListLogMetricsRequest, Iterable<LogMetric>>
+      listLogMetricsIterableCallable() {
     return listLogMetricsIterableCallable;
   }
 
@@ -264,8 +237,9 @@ public class MetricsServiceV2Api implements AutoCloseable {
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
+   * @throws ApiException if the remote call fails
    */
-  public ApiCallable<ListLogMetricsRequest, ListLogMetricsResponse> listLogMetricsCallable() {
+  public final ApiCallable<ListLogMetricsRequest, ListLogMetricsResponse> listLogMetricsCallable() {
     return listLogMetricsCallable;
   }
 
@@ -280,8 +254,9 @@ public class MetricsServiceV2Api implements AutoCloseable {
    *
    * @param metricName The resource name of the desired metric.
    * Example: `"projects/my-project-id/metrics/my-metric-id"`.
+   * @throws ApiException if the remote call fails
    */
-  public LogMetric getLogMetric(String metricName) {
+  public final LogMetric getLogMetric(String metricName) {
     GetLogMetricRequest request =
         GetLogMetricRequest.newBuilder().setMetricName(metricName).build();
 
@@ -296,6 +271,7 @@ public class MetricsServiceV2Api implements AutoCloseable {
    * <!-- end manual edit -->
    *
    * @param request The request object containing all of the parameters for the API call.
+   * @throws ApiException if the remote call fails
    */
   private LogMetric getLogMetric(GetLogMetricRequest request) {
     return getLogMetricCallable().call(request);
@@ -307,8 +283,9 @@ public class MetricsServiceV2Api implements AutoCloseable {
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
+   * @throws ApiException if the remote call fails
    */
-  public ApiCallable<GetLogMetricRequest, LogMetric> getLogMetricCallable() {
+  public final ApiCallable<GetLogMetricRequest, LogMetric> getLogMetricCallable() {
     return getLogMetricCallable;
   }
 
@@ -327,8 +304,9 @@ public class MetricsServiceV2Api implements AutoCloseable {
    * The new metric must be provided in the request.
    * @param metric The new logs-based metric, which must not have an identifier that
    * already exists.
+   * @throws ApiException if the remote call fails
    */
-  public LogMetric createLogMetric(String projectName, LogMetric metric) {
+  public final LogMetric createLogMetric(String projectName, LogMetric metric) {
     CreateLogMetricRequest request =
         CreateLogMetricRequest.newBuilder().setProjectName(projectName).setMetric(metric).build();
 
@@ -343,6 +321,7 @@ public class MetricsServiceV2Api implements AutoCloseable {
    * <!-- end manual edit -->
    *
    * @param request The request object containing all of the parameters for the API call.
+   * @throws ApiException if the remote call fails
    */
   public LogMetric createLogMetric(CreateLogMetricRequest request) {
     return createLogMetricCallable().call(request);
@@ -354,8 +333,9 @@ public class MetricsServiceV2Api implements AutoCloseable {
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
+   * @throws ApiException if the remote call fails
    */
-  public ApiCallable<CreateLogMetricRequest, LogMetric> createLogMetricCallable() {
+  public final ApiCallable<CreateLogMetricRequest, LogMetric> createLogMetricCallable() {
     return createLogMetricCallable;
   }
 
@@ -377,8 +357,9 @@ public class MetricsServiceV2Api implements AutoCloseable {
    * @param metric The updated metric, whose name must be the same as the
    * metric identifier in `metricName`. If `metricName` does not
    * exist, then a new metric is created.
+   * @throws ApiException if the remote call fails
    */
-  public LogMetric updateLogMetric(String metricName, LogMetric metric) {
+  public final LogMetric updateLogMetric(String metricName, LogMetric metric) {
     UpdateLogMetricRequest request =
         UpdateLogMetricRequest.newBuilder().setMetricName(metricName).setMetric(metric).build();
 
@@ -393,6 +374,7 @@ public class MetricsServiceV2Api implements AutoCloseable {
    * <!-- end manual edit -->
    *
    * @param request The request object containing all of the parameters for the API call.
+   * @throws ApiException if the remote call fails
    */
   public LogMetric updateLogMetric(UpdateLogMetricRequest request) {
     return updateLogMetricCallable().call(request);
@@ -404,8 +386,9 @@ public class MetricsServiceV2Api implements AutoCloseable {
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
+   * @throws ApiException if the remote call fails
    */
-  public ApiCallable<UpdateLogMetricRequest, LogMetric> updateLogMetricCallable() {
+  public final ApiCallable<UpdateLogMetricRequest, LogMetric> updateLogMetricCallable() {
     return updateLogMetricCallable;
   }
 
@@ -420,8 +403,9 @@ public class MetricsServiceV2Api implements AutoCloseable {
    *
    * @param metricName The resource name of the metric to delete.
    * Example: `"projects/my-project-id/metrics/my-metric-id"`.
+   * @throws ApiException if the remote call fails
    */
-  public void deleteLogMetric(String metricName) {
+  public final void deleteLogMetric(String metricName) {
     DeleteLogMetricRequest request =
         DeleteLogMetricRequest.newBuilder().setMetricName(metricName).build();
 
@@ -436,6 +420,7 @@ public class MetricsServiceV2Api implements AutoCloseable {
    * <!-- end manual edit -->
    *
    * @param request The request object containing all of the parameters for the API call.
+   * @throws ApiException if the remote call fails
    */
   private void deleteLogMetric(DeleteLogMetricRequest request) {
     deleteLogMetricCallable().call(request);
@@ -447,14 +432,11 @@ public class MetricsServiceV2Api implements AutoCloseable {
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
+   * @throws ApiException if the remote call fails
    */
-  public ApiCallable<DeleteLogMetricRequest, Empty> deleteLogMetricCallable() {
+  public final ApiCallable<DeleteLogMetricRequest, Empty> deleteLogMetricCallable() {
     return deleteLogMetricCallable;
   }
-
-  // ========
-  // Cleanup
-  // ========
 
   /**
    * Initiates an orderly shutdown in which preexisting calls continue but new calls are immediately
@@ -464,7 +446,7 @@ public class MetricsServiceV2Api implements AutoCloseable {
    * <!-- end manual edit -->
    */
   @Override
-  public void close() throws Exception {
+  public final void close() throws Exception {
     for (AutoCloseable closeable : closeables) {
       closeable.close();
     }

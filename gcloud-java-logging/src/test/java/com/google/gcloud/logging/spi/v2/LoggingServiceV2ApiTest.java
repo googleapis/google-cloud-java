@@ -49,8 +49,9 @@ public class LoggingServiceV2ApiTest {
   @Before
   public void setUp() throws IOException {
     loggingHelper.reset();
-    LoggingServiceV2Settings settings = LoggingServiceV2Settings.create();
-    settings.provideChannelWith(loggingHelper.createChannel());
+    LoggingServiceV2Settings settings = LoggingServiceV2Settings.newBuilder()
+        .provideChannelWith(loggingHelper.createChannel(), true)
+        .build();
     loggingApi = LoggingServiceV2Api.create(settings);
   }
 
@@ -61,7 +62,7 @@ public class LoggingServiceV2ApiTest {
 
   @Test
   public void testWriteLog() {
-    String logName = LoggingServiceV2Api.ResourceNames.formatLogPath("my-project", "my-log");
+    String logName = LoggingServiceV2Api.formatLogName("my-project", "my-log");
     MonitoredResource resource = MonitoredResource.newBuilder().build();
     List<LogEntry> entries = new ArrayList<>();
     entries.add(LogEntry.newBuilder().setLogName(logName).setTextPayload("foobar").build());
@@ -70,7 +71,7 @@ public class LoggingServiceV2ApiTest {
 
   @Test
   public void testListLog() {
-    String logName = LoggingServiceV2Api.ResourceNames.formatLogPath("my-project", "my-log");
+    String logName = LoggingServiceV2Api.formatLogName("my-project", "my-log");
     MonitoredResource resource = MonitoredResource.newBuilder().build();
     List<LogEntry> entries = new ArrayList<>();
     entries.add(LogEntry.newBuilder().setLogName(logName).setTextPayload("foobar").build());
@@ -90,7 +91,7 @@ public class LoggingServiceV2ApiTest {
 
   @Test
   public void testDeleteLog() {
-    String logName = LoggingServiceV2Api.ResourceNames.formatLogPath("my-project", "my-log");
+    String logName = LoggingServiceV2Api.formatLogName("my-project", "my-log");
     MonitoredResource resource = MonitoredResource.newBuilder().build();
     List<LogEntry> entries = new ArrayList<>();
     entries.add(LogEntry.newBuilder().setLogName(logName).setTextPayload("foobar").build());

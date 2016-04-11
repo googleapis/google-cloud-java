@@ -34,14 +34,13 @@
 package com.google.gcloud.logging.spi.v2;
 
 import com.google.api.MonitoredResourceDescriptor;
-import com.google.api.gax.core.BackoffParams;
 import com.google.api.gax.core.ConnectionSettings;
-import com.google.api.gax.core.RetryParams;
+import com.google.api.gax.core.RetrySettings;
 import com.google.api.gax.grpc.ApiCallSettings;
-import com.google.api.gax.grpc.ApiCallable.ApiCallableBuilder;
-import com.google.api.gax.grpc.ApiCallable.PageStreamingApiCallableBuilder;
-import com.google.api.gax.grpc.PageDescriptor;
+import com.google.api.gax.grpc.PageStreamingCallSettings;
+import com.google.api.gax.grpc.PageStreamingDescriptor;
 import com.google.api.gax.grpc.ServiceApiSettings;
+import com.google.api.gax.grpc.SimpleCallSettings;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -54,23 +53,20 @@ import com.google.logging.v2.ListMonitoredResourceDescriptorsRequest;
 import com.google.logging.v2.ListMonitoredResourceDescriptorsResponse;
 import com.google.logging.v2.LogEntry;
 import com.google.logging.v2.LoggingServiceV2Grpc;
-import com.google.logging.v2.ReadLogEntriesRequest;
-import com.google.logging.v2.ReadLogEntriesResponse;
 import com.google.logging.v2.WriteLogEntriesRequest;
 import com.google.logging.v2.WriteLogEntriesResponse;
 import com.google.protobuf.Empty;
-
+import io.grpc.ManagedChannel;
 import io.grpc.Status;
+import java.io.IOException;
+import java.util.concurrent.ScheduledExecutorService;
+import org.joda.time.Duration;
 
 // Manually-added imports: add custom (non-generated) imports after this point.
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS - see instructions at the top of the file for editing.
 @javax.annotation.Generated("by GAPIC")
 public class LoggingServiceV2Settings extends ServiceApiSettings {
-
-  // =========
-  // Constants
-  // =========
 
   /**
    * The default address of the service.
@@ -100,197 +96,71 @@ public class LoggingServiceV2Settings extends ServiceApiSettings {
           .add("https://www.googleapis.com/auth/cloud-platform")
           .build();
 
-  private static final ImmutableMap<String, ImmutableSet<Status.Code>> RETRYABLE_CODE_DEFINITIONS;
+  private final SimpleCallSettings<DeleteLogRequest, Empty> deleteLogSettings;
+  private final SimpleCallSettings<WriteLogEntriesRequest, WriteLogEntriesResponse>
+      writeLogEntriesSettings;
+  private final PageStreamingCallSettings<ListLogEntriesRequest, ListLogEntriesResponse, LogEntry>
+      listLogEntriesSettings;
 
-  static {
-    ImmutableMap.Builder<String, ImmutableSet<Status.Code>> definitions = ImmutableMap.builder();
-    definitions.put(
-        "idempotent",
-        Sets.immutableEnumSet(
-            Lists.<Status.Code>newArrayList(
-                Status.Code.DEADLINE_EXCEEDED, Status.Code.UNAVAILABLE)));
-    definitions.put("non_idempotent", Sets.immutableEnumSet(Lists.<Status.Code>newArrayList()));
-    RETRYABLE_CODE_DEFINITIONS = definitions.build();
-  }
-
-  private static final ImmutableMap<String, RetryParams> RETRY_PARAM_DEFINITIONS;
-
-  static {
-    ImmutableMap.Builder<String, RetryParams> definitions = ImmutableMap.builder();
-    RetryParams params = null;
-    params =
-        RetryParams.newBuilder()
-            .setRetryBackoff(
-                BackoffParams.newBuilder()
-                    .setInitialDelayMillis(100L)
-                    .setDelayMultiplier(1.2)
-                    .setMaxDelayMillis(1000L)
-                    .build())
-            .setTimeoutBackoff(
-                BackoffParams.newBuilder()
-                    .setInitialDelayMillis(300L)
-                    .setDelayMultiplier(1.3)
-                    .setMaxDelayMillis(3000L)
-                    .build())
-            .setTotalTimeout(30000L)
-            .build();
-    definitions.put("default", params);
-    RETRY_PARAM_DEFINITIONS = definitions.build();
-  }
-
-  private static class MethodBuilders {
-    private final ApiCallableBuilder<DeleteLogRequest, Empty> deleteLogMethod;
-    private final ApiCallableBuilder<WriteLogEntriesRequest, WriteLogEntriesResponse>
-        writeLogEntriesMethod;
-    private final PageStreamingApiCallableBuilder<
-            ListLogEntriesRequest, ListLogEntriesResponse, LogEntry>
-        listLogEntriesMethod;
-    private final PageStreamingApiCallableBuilder<
-            ReadLogEntriesRequest, ReadLogEntriesResponse, LogEntry>
-        readLogEntriesMethod;
-    private final PageStreamingApiCallableBuilder<
-            ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse,
-            MonitoredResourceDescriptor>
-        listMonitoredResourceDescriptorsMethod;
-    private final ImmutableList<? extends ApiCallSettings> allMethods;
-
-    public MethodBuilders() {
-      deleteLogMethod = new ApiCallableBuilder<>(LoggingServiceV2Grpc.METHOD_DELETE_LOG);
-      deleteLogMethod.setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"));
-      deleteLogMethod.setRetryParams(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      writeLogEntriesMethod =
-          new ApiCallableBuilder<>(LoggingServiceV2Grpc.METHOD_WRITE_LOG_ENTRIES);
-      writeLogEntriesMethod.setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"));
-      writeLogEntriesMethod.setRetryParams(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      listLogEntriesMethod =
-          new PageStreamingApiCallableBuilder<>(
-              LoggingServiceV2Grpc.METHOD_LIST_LOG_ENTRIES, LIST_LOG_ENTRIES_PAGE_STR_DESC);
-      listLogEntriesMethod.setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"));
-      listLogEntriesMethod.setRetryParams(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      readLogEntriesMethod =
-          new PageStreamingApiCallableBuilder<>(
-              LoggingServiceV2Grpc.METHOD_READ_LOG_ENTRIES, READ_LOG_ENTRIES_PAGE_STR_DESC);
-      readLogEntriesMethod.setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"));
-      readLogEntriesMethod.setRetryParams(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      listMonitoredResourceDescriptorsMethod =
-          new PageStreamingApiCallableBuilder<>(
-              LoggingServiceV2Grpc.METHOD_LIST_MONITORED_RESOURCE_DESCRIPTORS,
-              LIST_MONITORED_RESOURCE_DESCRIPTORS_PAGE_STR_DESC);
-      listMonitoredResourceDescriptorsMethod.setRetryableCodes(
-          RETRYABLE_CODE_DEFINITIONS.get("idempotent"));
-      listMonitoredResourceDescriptorsMethod.setRetryParams(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      allMethods =
-          ImmutableList.<ApiCallSettings>builder()
-              .add(
-                  deleteLogMethod,
-                  writeLogEntriesMethod,
-                  listLogEntriesMethod,
-                  readLogEntriesMethod,
-                  listMonitoredResourceDescriptorsMethod)
-              .build();
-    }
-  }
-
-  private final MethodBuilders methods;
-
-  // ===============
-  // Factory Methods
-  // ===============
-
-  /**
-   * Constructs an instance of LoggingServiceV2Settings with default settings.
-   *
-   * <!-- manual edit -->
-   * <!-- end manual edit -->
-   */
-  public static LoggingServiceV2Settings create() {
-    LoggingServiceV2Settings settings = new LoggingServiceV2Settings(new MethodBuilders());
-    settings.provideChannelWith(
-        ConnectionSettings.builder()
-            .setServiceAddress(DEFAULT_SERVICE_ADDRESS)
-            .setPort(DEFAULT_SERVICE_PORT)
-            .provideCredentialsWith(DEFAULT_SERVICE_SCOPES)
-            .build());
-    return settings;
-  }
-
-  /**
-   * Constructs an instance of LoggingServiceV2Settings with default settings. This is protected so
-   * that it easy to make a subclass, but otherwise, the static factory methods should be preferred.
-   *
-   * <!-- manual edit -->
-   * <!-- end manual edit -->
-   */
-  protected LoggingServiceV2Settings(MethodBuilders methods) {
-    super(methods.allMethods);
-    this.methods = methods;
-  }
-
-  /**
-   * Returns the ApiCallableBuilder for the API method deleteLog.
-   *
-   * <!-- manual edit -->
-   * <!-- end manual edit -->
-   */
-  public ApiCallableBuilder<DeleteLogRequest, Empty> deleteLogMethod() {
-    return methods.deleteLogMethod;
-  }
-
-  /**
-   * Returns the ApiCallableBuilder for the API method writeLogEntries.
-   *
-   * <!-- manual edit -->
-   * <!-- end manual edit -->
-   */
-  public ApiCallableBuilder<WriteLogEntriesRequest, WriteLogEntriesResponse>
-      writeLogEntriesMethod() {
-    return methods.writeLogEntriesMethod;
-  }
-
-  /**
-   * Returns the PageStreamingApiCallableBuilder for the API method listLogEntries.
-   *
-   * <!-- manual edit -->
-   * <!-- end manual edit -->
-   */
-  public PageStreamingApiCallableBuilder<ListLogEntriesRequest, ListLogEntriesResponse, LogEntry>
-      listLogEntriesMethod() {
-    return methods.listLogEntriesMethod;
-  }
-
-  /**
-   * Returns the PageStreamingApiCallableBuilder for the API method readLogEntries.
-   *
-   * <!-- manual edit -->
-   * <!-- end manual edit -->
-   */
-  public PageStreamingApiCallableBuilder<ReadLogEntriesRequest, ReadLogEntriesResponse, LogEntry>
-      readLogEntriesMethod() {
-    return methods.readLogEntriesMethod;
-  }
-
-  /**
-   * Returns the PageStreamingApiCallableBuilder for the API method
-   * listMonitoredResourceDescriptors.
-   *
-   * <!-- manual edit -->
-   * <!-- end manual edit -->
-   */
-  public PageStreamingApiCallableBuilder<
+  private final PageStreamingCallSettings<
           ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse,
           MonitoredResourceDescriptor>
-      listMonitoredResourceDescriptorsMethod() {
-    return methods.listMonitoredResourceDescriptorsMethod;
+      listMonitoredResourceDescriptorsSettings;
+
+  public SimpleCallSettings<DeleteLogRequest, Empty> deleteLogSettings() {
+    return deleteLogSettings;
   }
 
-  private static PageDescriptor<ListLogEntriesRequest, ListLogEntriesResponse, LogEntry>
+  public SimpleCallSettings<WriteLogEntriesRequest, WriteLogEntriesResponse>
+      writeLogEntriesSettings() {
+    return writeLogEntriesSettings;
+  }
+
+  public PageStreamingCallSettings<ListLogEntriesRequest, ListLogEntriesResponse, LogEntry>
+      listLogEntriesSettings() {
+    return listLogEntriesSettings;
+  }
+
+  public PageStreamingCallSettings<
+          ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse,
+          MonitoredResourceDescriptor>
+      listMonitoredResourceDescriptorsSettings() {
+    return listMonitoredResourceDescriptorsSettings;
+  }
+
+  public static LoggingServiceV2Settings defaultInstance() throws IOException {
+    return newBuilder().build();
+  }
+
+  public static Builder newBuilder() {
+    return new Builder();
+  }
+
+  public Builder toBuilder() {
+    return new Builder(this);
+  }
+
+  private LoggingServiceV2Settings(Builder settingsBuilder) throws IOException {
+    super(
+        settingsBuilder.getOrBuildChannel(),
+        settingsBuilder.shouldAutoCloseChannel(),
+        settingsBuilder.getOrBuildExecutor(),
+        settingsBuilder.getConnectionSettings(),
+        settingsBuilder.getGeneratorName(),
+        settingsBuilder.getGeneratorVersion(),
+        settingsBuilder.getClientLibName(),
+        settingsBuilder.getClientLibVersion());
+
+    deleteLogSettings = settingsBuilder.deleteLogSettings().build();
+    writeLogEntriesSettings = settingsBuilder.writeLogEntriesSettings().build();
+    listLogEntriesSettings = settingsBuilder.listLogEntriesSettings().build();
+    listMonitoredResourceDescriptorsSettings =
+        settingsBuilder.listMonitoredResourceDescriptorsSettings().build();
+  }
+
+  private static PageStreamingDescriptor<ListLogEntriesRequest, ListLogEntriesResponse, LogEntry>
       LIST_LOG_ENTRIES_PAGE_STR_DESC =
-          new PageDescriptor<ListLogEntriesRequest, ListLogEntriesResponse, LogEntry>() {
+          new PageStreamingDescriptor<ListLogEntriesRequest, ListLogEntriesResponse, LogEntry>() {
             @Override
             public Object emptyToken() {
               return "";
@@ -312,37 +182,11 @@ public class LoggingServiceV2Settings extends ServiceApiSettings {
             }
           };
 
-  private static PageDescriptor<ReadLogEntriesRequest, ReadLogEntriesResponse, LogEntry>
-      READ_LOG_ENTRIES_PAGE_STR_DESC =
-          new PageDescriptor<ReadLogEntriesRequest, ReadLogEntriesResponse, LogEntry>() {
-            @Override
-            public Object emptyToken() {
-              return "";
-            }
-
-            @Override
-            public ReadLogEntriesRequest injectToken(ReadLogEntriesRequest payload, Object token) {
-              return ReadLogEntriesRequest.newBuilder(payload)
-                  .setResumeToken((String) token)
-                  .build();
-            }
-
-            @Override
-            public Object extractNextToken(ReadLogEntriesResponse payload) {
-              return payload.getResumeToken();
-            }
-
-            @Override
-            public Iterable<LogEntry> extractResources(ReadLogEntriesResponse payload) {
-              return payload.getEntriesList();
-            }
-          };
-
-  private static PageDescriptor<
+  private static PageStreamingDescriptor<
           ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse,
           MonitoredResourceDescriptor>
       LIST_MONITORED_RESOURCE_DESCRIPTORS_PAGE_STR_DESC =
-          new PageDescriptor<
+          new PageStreamingDescriptor<
               ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse,
               MonitoredResourceDescriptor>() {
             @Override
@@ -369,4 +213,178 @@ public class LoggingServiceV2Settings extends ServiceApiSettings {
               return payload.getResourceDescriptorsList();
             }
           };
+
+  public static class Builder extends ServiceApiSettings.Builder {
+    private final ImmutableList<ApiCallSettings.Builder> methodSettingsBuilders;
+
+    private SimpleCallSettings.Builder<DeleteLogRequest, Empty> deleteLogSettings;
+    private SimpleCallSettings.Builder<WriteLogEntriesRequest, WriteLogEntriesResponse>
+        writeLogEntriesSettings;
+    private PageStreamingCallSettings.Builder<
+            ListLogEntriesRequest, ListLogEntriesResponse, LogEntry>
+        listLogEntriesSettings;
+    private PageStreamingCallSettings.Builder<
+            ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse,
+            MonitoredResourceDescriptor>
+        listMonitoredResourceDescriptorsSettings;
+
+    private static final ImmutableMap<String, ImmutableSet<Status.Code>> RETRYABLE_CODE_DEFINITIONS;
+
+    static {
+      ImmutableMap.Builder<String, ImmutableSet<Status.Code>> definitions = ImmutableMap.builder();
+      definitions.put(
+          "idempotent",
+          Sets.immutableEnumSet(
+              Lists.<Status.Code>newArrayList(
+                  Status.Code.DEADLINE_EXCEEDED, Status.Code.UNAVAILABLE)));
+      definitions.put("non_idempotent", Sets.immutableEnumSet(Lists.<Status.Code>newArrayList()));
+      RETRYABLE_CODE_DEFINITIONS = definitions.build();
+    }
+
+    private static final ImmutableMap<String, RetrySettings.Builder> RETRY_PARAM_DEFINITIONS;
+
+    static {
+      ImmutableMap.Builder<String, RetrySettings.Builder> definitions = ImmutableMap.builder();
+      RetrySettings.Builder settingsBuilder = null;
+      settingsBuilder =
+          RetrySettings.newBuilder()
+              .setInitialRetryDelay(Duration.millis(100L))
+              .setRetryDelayMultiplier(1.2)
+              .setMaxRetryDelay(Duration.millis(1000L))
+              .setInitialRpcTimeout(Duration.millis(2000L))
+              .setRpcTimeoutMultiplier(1.5)
+              .setMaxRpcTimeout(Duration.millis(30000L))
+              .setTotalTimeout(Duration.millis(45000L));
+      definitions.put("default", settingsBuilder);
+      settingsBuilder =
+          RetrySettings.newBuilder()
+              .setInitialRetryDelay(Duration.millis(100L))
+              .setRetryDelayMultiplier(1.2)
+              .setMaxRetryDelay(Duration.millis(1000L))
+              .setInitialRpcTimeout(Duration.millis(7000L))
+              .setRpcTimeoutMultiplier(1.5)
+              .setMaxRpcTimeout(Duration.millis(30000L))
+              .setTotalTimeout(Duration.millis(45000L));
+      definitions.put("list", settingsBuilder);
+      RETRY_PARAM_DEFINITIONS = definitions.build();
+    }
+
+    private Builder() {
+      super(
+          ConnectionSettings.builder()
+              .setServiceAddress(DEFAULT_SERVICE_ADDRESS)
+              .setPort(DEFAULT_SERVICE_PORT)
+              .provideCredentialsWith(DEFAULT_SERVICE_SCOPES)
+              .build());
+
+      deleteLogSettings =
+          SimpleCallSettings.newBuilder(LoggingServiceV2Grpc.METHOD_DELETE_LOG)
+              .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+              .setRetrySettingsBuilder(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      writeLogEntriesSettings =
+          SimpleCallSettings.newBuilder(LoggingServiceV2Grpc.METHOD_WRITE_LOG_ENTRIES)
+              .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+              .setRetrySettingsBuilder(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      listLogEntriesSettings =
+          PageStreamingCallSettings.newBuilder(
+                  LoggingServiceV2Grpc.METHOD_LIST_LOG_ENTRIES, LIST_LOG_ENTRIES_PAGE_STR_DESC)
+              .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+              .setRetrySettingsBuilder(RETRY_PARAM_DEFINITIONS.get("list"));
+
+      listMonitoredResourceDescriptorsSettings =
+          PageStreamingCallSettings.newBuilder(
+                  LoggingServiceV2Grpc.METHOD_LIST_MONITORED_RESOURCE_DESCRIPTORS,
+                  LIST_MONITORED_RESOURCE_DESCRIPTORS_PAGE_STR_DESC)
+              .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+              .setRetrySettingsBuilder(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      methodSettingsBuilders =
+          ImmutableList.<ApiCallSettings.Builder>of(
+              deleteLogSettings,
+              writeLogEntriesSettings,
+              listLogEntriesSettings,
+              listMonitoredResourceDescriptorsSettings);
+    }
+
+    private Builder(LoggingServiceV2Settings settings) {
+      super(settings);
+
+      deleteLogSettings = settings.deleteLogSettings.toBuilder();
+      writeLogEntriesSettings = settings.writeLogEntriesSettings.toBuilder();
+      listLogEntriesSettings = settings.listLogEntriesSettings.toBuilder();
+      listMonitoredResourceDescriptorsSettings =
+          settings.listMonitoredResourceDescriptorsSettings.toBuilder();
+
+      methodSettingsBuilders =
+          ImmutableList.<ApiCallSettings.Builder>of(
+              deleteLogSettings,
+              writeLogEntriesSettings,
+              listLogEntriesSettings,
+              listMonitoredResourceDescriptorsSettings);
+    }
+
+    @Override
+    public Builder provideChannelWith(ManagedChannel channel, boolean shouldAutoClose) {
+      super.provideChannelWith(channel, shouldAutoClose);
+      return this;
+    }
+
+    @Override
+    public Builder provideChannelWith(ConnectionSettings settings) {
+      super.provideChannelWith(settings);
+      return this;
+    }
+
+    @Override
+    public Builder setExecutor(ScheduledExecutorService executor) {
+      super.setExecutor(executor);
+      return this;
+    }
+
+    @Override
+    public Builder setGeneratorHeader(String name, String version) {
+      super.setGeneratorHeader(name, version);
+      return this;
+    }
+
+    @Override
+    public Builder setClientLibHeader(String name, String version) {
+      super.setClientLibHeader(name, version);
+      return this;
+    }
+
+    public Builder applyToAllApiMethods(ApiCallSettings.Builder apiCallSettings) throws Exception {
+      super.applyToAllApiMethods(methodSettingsBuilders, apiCallSettings);
+      return this;
+    }
+
+    public SimpleCallSettings.Builder<DeleteLogRequest, Empty> deleteLogSettings() {
+      return deleteLogSettings;
+    }
+
+    public SimpleCallSettings.Builder<WriteLogEntriesRequest, WriteLogEntriesResponse>
+        writeLogEntriesSettings() {
+      return writeLogEntriesSettings;
+    }
+
+    public PageStreamingCallSettings.Builder<
+            ListLogEntriesRequest, ListLogEntriesResponse, LogEntry>
+        listLogEntriesSettings() {
+      return listLogEntriesSettings;
+    }
+
+    public PageStreamingCallSettings.Builder<
+            ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse,
+            MonitoredResourceDescriptor>
+        listMonitoredResourceDescriptorsSettings() {
+      return listMonitoredResourceDescriptorsSettings;
+    }
+
+    @Override
+    public LoggingServiceV2Settings build() throws IOException {
+      return new LoggingServiceV2Settings(this);
+    }
+  }
 }
