@@ -192,7 +192,10 @@ public class ChangeRequest extends ChangeRequestInfo {
   }
 
   @Override
-  public boolean equals(Object obj) {
+  public final boolean equals(Object obj) {
+    if (this == obj) {
+      return true;
+    }
     if (obj == null || !obj.getClass().equals(ChangeRequest.class)) {
       return false;
     } else {
@@ -204,7 +207,7 @@ public class ChangeRequest extends ChangeRequestInfo {
   }
 
   @Override
-  public int hashCode() {
+  public final int hashCode() {
     return Objects.hash(super.hashCode(), options, zone);
   }
 

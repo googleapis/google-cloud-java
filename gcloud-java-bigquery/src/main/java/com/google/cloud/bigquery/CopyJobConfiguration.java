@@ -31,7 +31,7 @@ import java.util.Objects;
  * Google BigQuery copy job configuration. A copy job copies an existing table to another new or
  * existing table. Copy job configurations have {@link JobConfiguration.Type#COPY} type.
  */
-public final class CopyJobConfiguration extends JobConfiguration {
+public class CopyJobConfiguration extends JobConfiguration {
 
   private static final long serialVersionUID = 1140509641399762967L;
 
@@ -180,12 +180,14 @@ public final class CopyJobConfiguration extends JobConfiguration {
   }
 
   @Override
-  public boolean equals(Object obj) {
-    return obj instanceof CopyJobConfiguration && baseEquals((CopyJobConfiguration) obj);
+  public final boolean equals(Object obj) {
+    return this == obj
+        || obj instanceof CopyJobConfiguration
+        && baseEquals((CopyJobConfiguration) obj);
   }
 
   @Override
-  public int hashCode() {
+  public final int hashCode() {
     return Objects.hash(baseHashCode(), sourceTables, destinationTable, createDisposition,
         writeDisposition);
   }

@@ -30,7 +30,7 @@ import java.util.Objects;
  * table. Data is provided as URIs that point to objects in Google Cloud Storage. Load job
  * configurations have {@link JobConfiguration.Type#LOAD} type.
  */
-public final class LoadJobConfiguration extends JobConfiguration implements LoadConfiguration {
+public class LoadJobConfiguration extends JobConfiguration implements LoadConfiguration {
 
   private static final long serialVersionUID = -2673554846792429829L;
 
@@ -268,12 +268,14 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
   }
 
   @Override
-  public boolean equals(Object obj) {
-    return obj instanceof LoadJobConfiguration && baseEquals((LoadJobConfiguration) obj);
+  public final boolean equals(Object obj) {
+    return this == obj
+        || obj instanceof LoadJobConfiguration
+        && baseEquals((LoadJobConfiguration) obj);
   }
 
   @Override
-  public int hashCode() {
+  public final int hashCode() {
     return Objects.hash(baseHashCode(), sourceUris);
   }
 

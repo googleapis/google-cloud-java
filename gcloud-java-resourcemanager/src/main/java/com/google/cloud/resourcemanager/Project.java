@@ -257,13 +257,15 @@ public class Project extends ProjectInfo {
   }
 
   @Override
-  public boolean equals(Object obj) {
-    return obj instanceof Project && Objects.equals(toPb(), ((Project) obj).toPb())
+  public final boolean equals(Object obj) {
+    return this == obj
+        || obj instanceof Project
+        && Objects.equals(toPb(), ((Project) obj).toPb())
         && Objects.equals(options, ((Project) obj).options);
   }
 
   @Override
-  public int hashCode() {
+  public final int hashCode() {
     return Objects.hash(super.hashCode(), options);
   }
 

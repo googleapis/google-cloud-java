@@ -35,7 +35,7 @@ import java.util.Objects;
  * {@link TableInfo}.
  * </p>
  */
-public final class Table extends TableInfo {
+public class Table extends TableInfo {
 
   private static final long serialVersionUID = 5744556727066570096L;
 
@@ -322,14 +322,15 @@ public final class Table extends TableInfo {
   }
 
   @Override
-  public boolean equals(Object obj) {
-    return obj instanceof Table
+  public final boolean equals(Object obj) {
+    return this == obj
+        || obj instanceof Table
         && Objects.equals(toPb(), ((Table) obj).toPb())
         && Objects.equals(options, ((Table) obj).options);
   }
 
   @Override
-  public int hashCode() {
+  public final int hashCode() {
     return Objects.hash(super.hashCode(), options);
   }
 

@@ -34,7 +34,7 @@ import java.util.Objects;
  * {@link DatasetInfo}.
  * </p>
  */
-public final class Dataset extends DatasetInfo {
+public class Dataset extends DatasetInfo {
 
   private static final long serialVersionUID = -4272921483363065593L;
 
@@ -230,14 +230,15 @@ public final class Dataset extends DatasetInfo {
   }
 
   @Override
-  public boolean equals(Object obj) {
-    return obj instanceof Dataset
+  public final boolean equals(Object obj) {
+    return this == obj
+        || obj instanceof Dataset
         && Objects.equals(toPb(), ((Dataset) obj).toPb())
         && Objects.equals(options, ((Dataset) obj).options);
   }
 
   @Override
-  public int hashCode() {
+  public final int hashCode() {
     return Objects.hash(super.hashCode(), options);
   }
 

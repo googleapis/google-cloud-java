@@ -35,7 +35,7 @@ import java.util.Objects;
  * Google BigQuery Query Job configuration. A Query Job runs a query against BigQuery data. Query
  * job configurations have {@link JobConfiguration.Type#QUERY} type.
  */
-public final class QueryJobConfiguration extends JobConfiguration {
+public class QueryJobConfiguration extends JobConfiguration {
 
   private static final long serialVersionUID = -1108948249081804890L;
 
@@ -449,12 +449,14 @@ public final class QueryJobConfiguration extends JobConfiguration {
   }
 
   @Override
-  public boolean equals(Object obj) {
-    return obj instanceof QueryJobConfiguration && baseEquals((QueryJobConfiguration) obj);
+  public final boolean equals(Object obj) {
+    return this == obj
+        || obj instanceof QueryJobConfiguration
+        && baseEquals((QueryJobConfiguration) obj);
   }
 
   @Override
-  public int hashCode() {
+  public final int hashCode() {
     return Objects.hash(baseHashCode(), allowLargeResults, createDisposition, destinationTable,
         defaultDataset, flattenResults, priority, query, tableDefinitions, useQueryCache,
         userDefinedFunctions, writeDisposition, dryRun);

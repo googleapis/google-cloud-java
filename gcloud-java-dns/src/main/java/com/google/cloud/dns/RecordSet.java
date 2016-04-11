@@ -276,13 +276,15 @@ public class RecordSet implements Serializable {
   }
 
   @Override
-  public int hashCode() {
+  public final int hashCode() {
     return Objects.hash(name, rrdatas, ttl, type);
   }
 
   @Override
-  public boolean equals(Object obj) {
-    return obj instanceof RecordSet && Objects.equals(this.toPb(), ((RecordSet) obj).toPb());
+  public final boolean equals(Object obj) {
+    return this == obj
+        || obj instanceof RecordSet
+        && Objects.equals(this.toPb(), ((RecordSet) obj).toPb());
   }
 
   ResourceRecordSet toPb() {
