@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.gcloud.storage;
+package com.google.gcloud.storage.testing;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -22,8 +22,12 @@ import static org.junit.Assert.assertTrue;
 
 import com.google.common.collect.ImmutableList;
 import com.google.gcloud.Page;
+import com.google.gcloud.storage.Blob;
+import com.google.gcloud.storage.BlobId;
+import com.google.gcloud.storage.Storage;
 import com.google.gcloud.storage.Storage.BlobListOption;
-import com.google.gcloud.storage.testing.RemoteStorageHelper;
+import com.google.gcloud.storage.StorageException;
+import com.google.gcloud.storage.StorageOptions;
 
 import org.easymock.EasyMock;
 import org.junit.Before;
@@ -71,8 +75,11 @@ public class RemoteStorageHelperTest {
   private static final InputStream JSON_KEY_STREAM = new ByteArrayInputStream(JSON_KEY.getBytes());
   private static final StorageException RETRYABLE_EXCEPTION = new StorageException(409, "");
   private static final StorageException FATAL_EXCEPTION = new StorageException(500, "");
+  private static final BlobId BLOB_ID1 = BlobId.of(BUCKET_NAME, "n1");
+  private static final BlobId BLOB_ID2 = BlobId.of(BUCKET_NAME, "n2");
 
-  private static Storage serviceMockReturnsOptions;
+  private Blob blob1;
+  private Blob blob2;
   private List<Blob> blobList;
   private Page<Blob> blobPage;
 
@@ -81,18 +88,9 @@ public class RemoteStorageHelperTest {
 
   @Before
   public void setUp() {
-    serviceMockReturnsOptions = EasyMock.createMock(Storage.class);
-    EasyMock.expect(serviceMockReturnsOptions.options())
-        .andReturn(EasyMock.createMock(StorageOptions.class))
-        .times(2);
-    EasyMock.replay(serviceMockReturnsOptions);
-    blobList = ImmutableList.of(
-        new Blob(
-            serviceMockReturnsOptions,
-            new BlobInfo.BuilderImpl(BlobInfo.builder(BUCKET_NAME, "n1").build())),
-        new Blob(
-            serviceMockReturnsOptions,
-            new BlobInfo.BuilderImpl(BlobInfo.builder(BUCKET_NAME, "n2").build())));
+    blob1 = EasyMock.createMock(Blob.class);
+    blob2 = EasyMock.createMock(Blob.class);
+    blobList = ImmutableList.of(blob1, blob2);
     blobPage = new Page<Blob>() {
       @Override
       public String nextPageCursor() {
@@ -119,27 +117,29 @@ public class RemoteStorageHelperTest {
   @Test
   public void testForceDelete() throws InterruptedException, ExecutionException {
     Storage storageMock = EasyMock.createMock(Storage.class);
+    EasyMock.expect(blob1.blobId()).andReturn(BLOB_ID1);
+    EasyMock.expect(storageMock.delete(BLOB_ID1)).andReturn(true);
+    EasyMock.expect(blob2.blobId()).andReturn(BLOB_ID2);
+    EasyMock.expect(storageMock.delete(BLOB_ID2)).andReturn(true);
     EasyMock.expect(storageMock.list(BUCKET_NAME, BlobListOption.versions(true)))
         .andReturn(blobPage);
-    for (BlobInfo info : blobList) {
-      EasyMock.expect(storageMock.delete(info.blobId())).andReturn(true);
-    }
     EasyMock.expect(storageMock.delete(BUCKET_NAME)).andReturn(true);
-    EasyMock.replay(storageMock);
+    EasyMock.replay(storageMock, blob1, blob2);
     assertTrue(RemoteStorageHelper.forceDelete(storageMock, BUCKET_NAME, 5, TimeUnit.SECONDS));
-    EasyMock.verify(storageMock);
+    EasyMock.verify(storageMock, blob1, blob2);
   }
 
   @Test
   public void testForceDeleteTimeout() throws InterruptedException, ExecutionException {
     Storage storageMock = EasyMock.createMock(Storage.class);
+    EasyMock.expect(blob1.blobId()).andReturn(BLOB_ID1).anyTimes();
+    EasyMock.expect(storageMock.delete(BLOB_ID1)).andReturn(true).anyTimes();
+    EasyMock.expect(blob2.blobId()).andReturn(BLOB_ID2).anyTimes();
+    EasyMock.expect(storageMock.delete(BLOB_ID2)).andReturn(true).anyTimes();
     EasyMock.expect(storageMock.list(BUCKET_NAME, BlobListOption.versions(true)))
         .andReturn(blobPage).anyTimes();
-    for (BlobInfo info : blobList) {
-      EasyMock.expect(storageMock.delete(info.blobId())).andReturn(true).anyTimes();
-    }
     EasyMock.expect(storageMock.delete(BUCKET_NAME)).andThrow(RETRYABLE_EXCEPTION).anyTimes();
-    EasyMock.replay(storageMock);
+    EasyMock.replay(storageMock, blob1, blob2);
     assertFalse(
         RemoteStorageHelper.forceDelete(storageMock, BUCKET_NAME, 50, TimeUnit.MICROSECONDS));
     EasyMock.verify(storageMock);
@@ -148,13 +148,14 @@ public class RemoteStorageHelperTest {
   @Test
   public void testForceDeleteFail() throws InterruptedException, ExecutionException {
     Storage storageMock = EasyMock.createMock(Storage.class);
+    EasyMock.expect(blob1.blobId()).andReturn(BLOB_ID1);
+    EasyMock.expect(storageMock.delete(BLOB_ID1)).andReturn(true);
+    EasyMock.expect(blob2.blobId()).andReturn(BLOB_ID2);
+    EasyMock.expect(storageMock.delete(BLOB_ID2)).andReturn(true);
     EasyMock.expect(storageMock.list(BUCKET_NAME, BlobListOption.versions(true)))
         .andReturn(blobPage);
-    for (BlobInfo info : blobList) {
-      EasyMock.expect(storageMock.delete(info.blobId())).andReturn(true);
-    }
     EasyMock.expect(storageMock.delete(BUCKET_NAME)).andThrow(FATAL_EXCEPTION);
-    EasyMock.replay(storageMock);
+    EasyMock.replay(storageMock, blob1, blob2);
     thrown.expect(ExecutionException.class);
     try {
       RemoteStorageHelper.forceDelete(storageMock, BUCKET_NAME, 5, TimeUnit.SECONDS);
@@ -166,13 +167,14 @@ public class RemoteStorageHelperTest {
   @Test
   public void testForceDeleteNoTimeout() {
     Storage storageMock = EasyMock.createMock(Storage.class);
+    EasyMock.expect(blob1.blobId()).andReturn(BLOB_ID1);
+    EasyMock.expect(storageMock.delete(BLOB_ID1)).andReturn(true);
+    EasyMock.expect(blob2.blobId()).andReturn(BLOB_ID2);
+    EasyMock.expect(storageMock.delete(BLOB_ID2)).andReturn(true);
     EasyMock.expect(storageMock.list(BUCKET_NAME, BlobListOption.versions(true)))
         .andReturn(blobPage);
-    for (BlobInfo info : blobList) {
-      EasyMock.expect(storageMock.delete(info.blobId())).andReturn(true);
-    }
     EasyMock.expect(storageMock.delete(BUCKET_NAME)).andReturn(true);
-    EasyMock.replay(storageMock);
+    EasyMock.replay(storageMock, blob1, blob2);
     RemoteStorageHelper.forceDelete(storageMock, BUCKET_NAME);
     EasyMock.verify(storageMock);
   }
@@ -180,13 +182,14 @@ public class RemoteStorageHelperTest {
   @Test
   public void testForceDeleteNoTimeoutFail() {
     Storage storageMock = EasyMock.createMock(Storage.class);
+    EasyMock.expect(blob1.blobId()).andReturn(BLOB_ID1);
+    EasyMock.expect(storageMock.delete(BLOB_ID1)).andReturn(true);
+    EasyMock.expect(blob2.blobId()).andReturn(BLOB_ID2);
+    EasyMock.expect(storageMock.delete(BLOB_ID2)).andReturn(true);
     EasyMock.expect(storageMock.list(BUCKET_NAME, BlobListOption.versions(true)))
         .andReturn(blobPage);
-    for (BlobInfo info : blobList) {
-      EasyMock.expect(storageMock.delete(info.blobId())).andReturn(true);
-    }
     EasyMock.expect(storageMock.delete(BUCKET_NAME)).andThrow(FATAL_EXCEPTION);
-    EasyMock.replay(storageMock);
+    EasyMock.replay(storageMock, blob1, blob2);
     thrown.expect(StorageException.class);
     try {
       RemoteStorageHelper.forceDelete(storageMock, BUCKET_NAME);

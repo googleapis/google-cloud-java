@@ -1,4 +1,4 @@
-package com.google.gcloud.resourcemanager;
+package com.google.gcloud.resourcemanager.testing;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -11,10 +11,10 @@ import static org.junit.Assert.fail;
 import com.google.api.services.cloudresourcemanager.model.Binding;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
+import com.google.gcloud.resourcemanager.ResourceManagerException;
 import com.google.gcloud.resourcemanager.spi.DefaultResourceManagerRpc;
 import com.google.gcloud.resourcemanager.spi.ResourceManagerRpc;
 import com.google.gcloud.resourcemanager.spi.ResourceManagerRpc.Tuple;
-import com.google.gcloud.resourcemanager.testing.LocalResourceManagerHelper;
 
 import org.junit.AfterClass;
 import org.junit.Before;
