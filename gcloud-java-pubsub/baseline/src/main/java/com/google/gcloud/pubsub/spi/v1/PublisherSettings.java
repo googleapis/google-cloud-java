@@ -33,19 +33,17 @@
 
 package com.google.gcloud.pubsub.spi.v1;
 
-import com.google.api.gax.core.BackoffParams;
 import com.google.api.gax.core.ConnectionSettings;
-import com.google.api.gax.core.RetryParams;
+import com.google.api.gax.core.RetrySettings;
 import com.google.api.gax.grpc.ApiCallSettings;
-import com.google.api.gax.grpc.ApiCallable;
-import com.google.api.gax.grpc.ApiCallable.Builder;
-import com.google.api.gax.grpc.ApiCallable.BundlableBuilder;
-import com.google.api.gax.grpc.ApiCallable.PageStreamingBuilder;
+import com.google.api.gax.grpc.BundlingCallSettings;
 import com.google.api.gax.grpc.BundlingDescriptor;
 import com.google.api.gax.grpc.BundlingSettings;
+import com.google.api.gax.grpc.PageStreamingCallSettings;
 import com.google.api.gax.grpc.PageStreamingDescriptor;
 import com.google.api.gax.grpc.RequestIssuer;
 import com.google.api.gax.grpc.ServiceApiSettings;
+import com.google.api.gax.grpc.SimpleCallSettings;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -63,10 +61,13 @@ import com.google.pubsub.v1.PublishResponse;
 import com.google.pubsub.v1.PublisherGrpc;
 import com.google.pubsub.v1.PubsubMessage;
 import com.google.pubsub.v1.Topic;
+import io.grpc.ManagedChannel;
 import io.grpc.Status;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.concurrent.ScheduledExecutorService;
 import org.joda.time.Duration;
 
 // Manually-added imports: add custom (non-generated) imports after this point.
@@ -100,202 +101,74 @@ public class PublisherSettings extends ServiceApiSettings {
           .add("https://www.googleapis.com/auth/cloud-platform")
           .build();
 
-  private static final ImmutableMap<String, ImmutableSet<Status.Code>> RETRYABLE_CODE_DEFINITIONS;
+  private final SimpleCallSettings<Topic, Topic> createTopicSettings;
+  private final BundlingCallSettings<PublishRequest, PublishResponse> publishSettings;
+  private final SimpleCallSettings<GetTopicRequest, Topic> getTopicSettings;
+  private final PageStreamingCallSettings<ListTopicsRequest, ListTopicsResponse, Topic>
+      listTopicsSettings;
 
-  static {
-    ImmutableMap.Builder<String, ImmutableSet<Status.Code>> definitions = ImmutableMap.builder();
-    definitions.put(
-        "idempotent",
-        Sets.immutableEnumSet(
-            Lists.<Status.Code>newArrayList(
-                Status.Code.DEADLINE_EXCEEDED, Status.Code.UNAVAILABLE)));
-    definitions.put("non_idempotent", Sets.immutableEnumSet(Lists.<Status.Code>newArrayList()));
-    RETRYABLE_CODE_DEFINITIONS = definitions.build();
-  }
-
-  private static final ImmutableMap<String, RetryParams> RETRY_PARAM_DEFINITIONS;
-
-  static {
-    ImmutableMap.Builder<String, RetryParams> definitions = ImmutableMap.builder();
-    RetryParams params = null;
-    params =
-        RetryParams.newBuilder()
-            .setRetryBackoff(
-                BackoffParams.newBuilder()
-                    .setInitialDelay(Duration.millis(100L))
-                    .setDelayMultiplier(1.2)
-                    .setMaxDelay(Duration.millis(1000L))
-                    .build())
-            .setTimeoutBackoff(
-                BackoffParams.newBuilder()
-                    .setInitialDelay(Duration.millis(2000L))
-                    .setDelayMultiplier(1.5)
-                    .setMaxDelay(Duration.millis(30000L))
-                    .build())
-            .setTotalTimeout(Duration.millis(45000L))
-            .build();
-    definitions.put("default", params);
-    RETRY_PARAM_DEFINITIONS = definitions.build();
-  }
-
-  private final MethodBuilders methods;
-
-  private static class MethodBuilders {
-    private final ApiCallable.Builder<Topic, Topic> createTopicMethod;
-    private final ApiCallable.BundlableBuilder<PublishRequest, PublishResponse> publishMethod;
-    private final ApiCallable.Builder<GetTopicRequest, Topic> getTopicMethod;
-    private final ApiCallable.PageStreamingBuilder<ListTopicsRequest, ListTopicsResponse, Topic>
-        listTopicsMethod;
-    private final ApiCallable.PageStreamingBuilder<
-            ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse, String>
-        listTopicSubscriptionsMethod;
-    private final ApiCallable.Builder<DeleteTopicRequest, Empty> deleteTopicMethod;
-    private final ImmutableList<? extends ApiCallSettings> allMethods;
-
-    public MethodBuilders() {
-      createTopicMethod = new Builder<>(PublisherGrpc.METHOD_CREATE_TOPIC);
-      createTopicMethod.setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"));
-      createTopicMethod.setRetryParams(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      BundlingSettings publishBundlingSettings =
-          BundlingSettings.newBuilder()
-              .setElementCountThreshold(800)
-              .setElementCountLimit(1000)
-              .setRequestByteThreshold(8388608)
-              .setRequestByteLimit(10485760)
-              .setDelayThreshold(Duration.millis(100))
-              .setBlockingCallCountThreshold(1)
-              .build();
-      publishMethod =
-          new BundlableBuilder<>(
-              PublisherGrpc.METHOD_PUBLISH, PUBLISH_BUNDLING_DESC, publishBundlingSettings);
-      publishMethod.setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"));
-      publishMethod.setRetryParams(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      getTopicMethod = new Builder<>(PublisherGrpc.METHOD_GET_TOPIC);
-      getTopicMethod.setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"));
-      getTopicMethod.setRetryParams(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      listTopicsMethod =
-          new PageStreamingBuilder<>(PublisherGrpc.METHOD_LIST_TOPICS, LIST_TOPICS_PAGE_STR_DESC);
-      listTopicsMethod.setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"));
-      listTopicsMethod.setRetryParams(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      listTopicSubscriptionsMethod =
-          new PageStreamingBuilder<>(
-              PublisherGrpc.METHOD_LIST_TOPIC_SUBSCRIPTIONS,
-              LIST_TOPIC_SUBSCRIPTIONS_PAGE_STR_DESC);
-      listTopicSubscriptionsMethod.setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"));
-      listTopicSubscriptionsMethod.setRetryParams(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      deleteTopicMethod = new Builder<>(PublisherGrpc.METHOD_DELETE_TOPIC);
-      deleteTopicMethod.setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"));
-      deleteTopicMethod.setRetryParams(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      allMethods =
-          ImmutableList.<ApiCallSettings>builder()
-              .add(
-                  createTopicMethod,
-                  publishMethod,
-                  getTopicMethod,
-                  listTopicsMethod,
-                  listTopicSubscriptionsMethod,
-                  deleteTopicMethod)
-              .build();
-    }
-  }
-
-  /**
-   * Constructs an instance of PublisherSettings with default settings.
-   *
-   * <!-- manual edit -->
-   * <!-- end manual edit -->
-   */
-  public static PublisherSettings create() {
-    PublisherSettings settings = new PublisherSettings(new MethodBuilders());
-    settings.provideChannelWith(
-        ConnectionSettings.builder()
-            .setServiceAddress(DEFAULT_SERVICE_ADDRESS)
-            .setPort(DEFAULT_SERVICE_PORT)
-            .provideCredentialsWith(DEFAULT_SERVICE_SCOPES)
-            .build());
-    return settings;
-  }
-
-  /**
-   * Constructs an instance of PublisherSettings with default settings. This is protected
-   * so that it easy to make a subclass, but otherwise, the static factory methods should be
-   * preferred.
-   *
-   * <!-- manual edit -->
-   * <!-- end manual edit -->
-   */
-  protected PublisherSettings(MethodBuilders methods) {
-    super(methods.allMethods);
-    this.methods = methods;
-  }
-
-  /**
-   * Returns the builder for the API method createTopic.
-   *
-   * <!-- manual edit -->
-   * <!-- end manual edit -->
-   */
-  public final ApiCallable.Builder<Topic, Topic> createTopicMethod() {
-    return methods.createTopicMethod;
-  }
-
-  /**
-   * Returns the builder for the API method publish.
-   *
-   * <!-- manual edit -->
-   * <!-- end manual edit -->
-   */
-  public final ApiCallable.BundlableBuilder<PublishRequest, PublishResponse> publishMethod() {
-    return methods.publishMethod;
-  }
-
-  /**
-   * Returns the builder for the API method getTopic.
-   *
-   * <!-- manual edit -->
-   * <!-- end manual edit -->
-   */
-  public final ApiCallable.Builder<GetTopicRequest, Topic> getTopicMethod() {
-    return methods.getTopicMethod;
-  }
-
-  /**
-   * Returns the builder for the API method listTopics.
-   *
-   * <!-- manual edit -->
-   * <!-- end manual edit -->
-   */
-  public final ApiCallable.PageStreamingBuilder<ListTopicsRequest, ListTopicsResponse, Topic>
-      listTopicsMethod() {
-    return methods.listTopicsMethod;
-  }
-
-  /**
-   * Returns the builder for the API method listTopicSubscriptions.
-   *
-   * <!-- manual edit -->
-   * <!-- end manual edit -->
-   */
-  public final ApiCallable.PageStreamingBuilder<
+  private final PageStreamingCallSettings<
           ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse, String>
-      listTopicSubscriptionsMethod() {
-    return methods.listTopicSubscriptionsMethod;
+      listTopicSubscriptionsSettings;
+
+  private final SimpleCallSettings<DeleteTopicRequest, Empty> deleteTopicSettings;
+
+  public SimpleCallSettings<Topic, Topic> createTopicSettings() {
+    return createTopicSettings;
   }
 
-  /**
-   * Returns the builder for the API method deleteTopic.
-   *
-   * <!-- manual edit -->
-   * <!-- end manual edit -->
-   */
-  public final ApiCallable.Builder<DeleteTopicRequest, Empty> deleteTopicMethod() {
-    return methods.deleteTopicMethod;
+  public BundlingCallSettings<PublishRequest, PublishResponse> publishSettings() {
+    return publishSettings;
+  }
+
+  public SimpleCallSettings<GetTopicRequest, Topic> getTopicSettings() {
+    return getTopicSettings;
+  }
+
+  public PageStreamingCallSettings<ListTopicsRequest, ListTopicsResponse, Topic>
+      listTopicsSettings() {
+    return listTopicsSettings;
+  }
+
+  public PageStreamingCallSettings<
+          ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse, String>
+      listTopicSubscriptionsSettings() {
+    return listTopicSubscriptionsSettings;
+  }
+
+  public SimpleCallSettings<DeleteTopicRequest, Empty> deleteTopicSettings() {
+    return deleteTopicSettings;
+  }
+
+  public static PublisherSettings defaultInstance() throws IOException {
+    return newBuilder().build();
+  }
+
+  public static Builder newBuilder() {
+    return new Builder();
+  }
+
+  public Builder toBuilder() {
+    return new Builder(this);
+  }
+
+  private PublisherSettings(Builder settingsBuilder) throws IOException {
+    super(
+        settingsBuilder.getOrBuildChannel(),
+        settingsBuilder.shouldAutoCloseChannel(),
+        settingsBuilder.getOrBuildExecutor(),
+        settingsBuilder.getConnectionSettings(),
+        settingsBuilder.getGeneratorName(),
+        settingsBuilder.getGeneratorVersion(),
+        settingsBuilder.getClientLibName(),
+        settingsBuilder.getClientLibVersion());
+
+    createTopicSettings = settingsBuilder.createTopicSettings().build();
+    publishSettings = settingsBuilder.publishSettings().build();
+    getTopicSettings = settingsBuilder.getTopicSettings().build();
+    listTopicsSettings = settingsBuilder.listTopicsSettings().build();
+    listTopicSubscriptionsSettings = settingsBuilder.listTopicSubscriptionsSettings().build();
+    deleteTopicSettings = settingsBuilder.deleteTopicSettings().build();
   }
 
   private static PageStreamingDescriptor<ListTopicsRequest, ListTopicsResponse, Topic>
@@ -412,4 +285,196 @@ public class PublisherSettings extends ServiceApiSettings {
           return request.getSerializedSize();
         }
       };
+
+  public static class Builder extends ServiceApiSettings.Builder {
+    private final ImmutableList<ApiCallSettings.Builder> methodSettingsBuilders;
+
+    private SimpleCallSettings.Builder<Topic, Topic> createTopicSettings;
+    private BundlingCallSettings.Builder<PublishRequest, PublishResponse> publishSettings;
+    private SimpleCallSettings.Builder<GetTopicRequest, Topic> getTopicSettings;
+    private PageStreamingCallSettings.Builder<ListTopicsRequest, ListTopicsResponse, Topic>
+        listTopicsSettings;
+    private PageStreamingCallSettings.Builder<
+            ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse, String>
+        listTopicSubscriptionsSettings;
+    private SimpleCallSettings.Builder<DeleteTopicRequest, Empty> deleteTopicSettings;
+
+    private static final ImmutableMap<String, ImmutableSet<Status.Code>> RETRYABLE_CODE_DEFINITIONS;
+
+    static {
+      ImmutableMap.Builder<String, ImmutableSet<Status.Code>> definitions = ImmutableMap.builder();
+      definitions.put(
+          "idempotent",
+          Sets.immutableEnumSet(
+              Lists.<Status.Code>newArrayList(
+                  Status.Code.DEADLINE_EXCEEDED, Status.Code.UNAVAILABLE)));
+      definitions.put("non_idempotent", Sets.immutableEnumSet(Lists.<Status.Code>newArrayList()));
+      RETRYABLE_CODE_DEFINITIONS = definitions.build();
+    }
+
+    private static final ImmutableMap<String, RetrySettings.Builder> RETRY_PARAM_DEFINITIONS;
+
+    static {
+      ImmutableMap.Builder<String, RetrySettings.Builder> definitions = ImmutableMap.builder();
+      RetrySettings.Builder settingsBuilder = null;
+      settingsBuilder =
+          RetrySettings.newBuilder()
+              .setInitialRetryDelay(Duration.millis(100L))
+              .setRetryDelayMultiplier(1.2)
+              .setMaxRetryDelay(Duration.millis(1000L))
+              .setInitialRpcTimeout(Duration.millis(2000L))
+              .setRpcTimeoutMultiplier(1.5)
+              .setMaxRpcTimeout(Duration.millis(30000L))
+              .setTotalTimeout(Duration.millis(45000L));
+      definitions.put("default", settingsBuilder);
+      RETRY_PARAM_DEFINITIONS = definitions.build();
+    }
+
+    private Builder() {
+      super(
+          ConnectionSettings.builder()
+              .setServiceAddress(DEFAULT_SERVICE_ADDRESS)
+              .setPort(DEFAULT_SERVICE_PORT)
+              .provideCredentialsWith(DEFAULT_SERVICE_SCOPES)
+              .build());
+
+      createTopicSettings =
+          SimpleCallSettings.newBuilder(PublisherGrpc.METHOD_CREATE_TOPIC)
+              .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+              .setRetrySettingsBuilder(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      BundlingSettings.Builder publishBundlingSettingsBuilder =
+          BundlingSettings.newBuilder()
+              .setElementCountThreshold(800)
+              .setElementCountLimit(1000)
+              .setRequestByteThreshold(8388608)
+              .setRequestByteLimit(10485760)
+              .setDelayThreshold(Duration.millis(100))
+              .setBlockingCallCountThreshold(1);
+      publishSettings =
+          BundlingCallSettings.newBuilder(PublisherGrpc.METHOD_PUBLISH, PUBLISH_BUNDLING_DESC)
+              .setBundlingSettingsBuilder(publishBundlingSettingsBuilder)
+              .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+              .setRetrySettingsBuilder(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      getTopicSettings =
+          SimpleCallSettings.newBuilder(PublisherGrpc.METHOD_GET_TOPIC)
+              .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+              .setRetrySettingsBuilder(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      listTopicsSettings =
+          PageStreamingCallSettings.newBuilder(
+                  PublisherGrpc.METHOD_LIST_TOPICS, LIST_TOPICS_PAGE_STR_DESC)
+              .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+              .setRetrySettingsBuilder(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      listTopicSubscriptionsSettings =
+          PageStreamingCallSettings.newBuilder(
+                  PublisherGrpc.METHOD_LIST_TOPIC_SUBSCRIPTIONS,
+                  LIST_TOPIC_SUBSCRIPTIONS_PAGE_STR_DESC)
+              .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+              .setRetrySettingsBuilder(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      deleteTopicSettings =
+          SimpleCallSettings.newBuilder(PublisherGrpc.METHOD_DELETE_TOPIC)
+              .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+              .setRetrySettingsBuilder(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      methodSettingsBuilders =
+          ImmutableList.<ApiCallSettings.Builder>of(
+              createTopicSettings,
+              publishSettings,
+              getTopicSettings,
+              listTopicsSettings,
+              listTopicSubscriptionsSettings,
+              deleteTopicSettings);
+    }
+
+    private Builder(PublisherSettings settings) {
+      super(settings);
+
+      createTopicSettings = settings.createTopicSettings.toBuilder();
+      publishSettings = settings.publishSettings.toBuilder();
+      getTopicSettings = settings.getTopicSettings.toBuilder();
+      listTopicsSettings = settings.listTopicsSettings.toBuilder();
+      listTopicSubscriptionsSettings = settings.listTopicSubscriptionsSettings.toBuilder();
+      deleteTopicSettings = settings.deleteTopicSettings.toBuilder();
+
+      methodSettingsBuilders =
+          ImmutableList.<ApiCallSettings.Builder>of(
+              createTopicSettings,
+              publishSettings,
+              getTopicSettings,
+              listTopicsSettings,
+              listTopicSubscriptionsSettings,
+              deleteTopicSettings);
+    }
+
+    @Override
+    public Builder provideChannelWith(ManagedChannel channel, boolean shouldAutoClose) {
+      super.provideChannelWith(channel, shouldAutoClose);
+      return this;
+    }
+
+    @Override
+    public Builder provideChannelWith(ConnectionSettings settings) {
+      super.provideChannelWith(settings);
+      return this;
+    }
+
+    @Override
+    public Builder setExecutor(ScheduledExecutorService executor) {
+      super.setExecutor(executor);
+      return this;
+    }
+
+    @Override
+    public Builder setGeneratorHeader(String name, String version) {
+      super.setGeneratorHeader(name, version);
+      return this;
+    }
+
+    @Override
+    public Builder setClientLibHeader(String name, String version) {
+      super.setClientLibHeader(name, version);
+      return this;
+    }
+
+    public Builder applyToAllApiMethods(ApiCallSettings.Builder apiCallSettings) throws Exception {
+      super.applyToAllApiMethods(methodSettingsBuilders, apiCallSettings);
+      return this;
+    }
+
+    public SimpleCallSettings.Builder<Topic, Topic> createTopicSettings() {
+      return createTopicSettings;
+    }
+
+    public BundlingCallSettings.Builder<PublishRequest, PublishResponse> publishSettings() {
+      return publishSettings;
+    }
+
+    public SimpleCallSettings.Builder<GetTopicRequest, Topic> getTopicSettings() {
+      return getTopicSettings;
+    }
+
+    public PageStreamingCallSettings.Builder<ListTopicsRequest, ListTopicsResponse, Topic>
+        listTopicsSettings() {
+      return listTopicsSettings;
+    }
+
+    public PageStreamingCallSettings.Builder<
+            ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse, String>
+        listTopicSubscriptionsSettings() {
+      return listTopicSubscriptionsSettings;
+    }
+
+    public SimpleCallSettings.Builder<DeleteTopicRequest, Empty> deleteTopicSettings() {
+      return deleteTopicSettings;
+    }
+
+    @Override
+    public PublisherSettings build() throws IOException {
+      return new PublisherSettings(this);
+    }
+  }
 }
