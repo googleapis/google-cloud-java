@@ -16,17 +16,14 @@
 
 package com.google.gcloud.compute;
 
-import com.google.api.services.compute.model.Zone.MaintenanceWindows;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
-import com.google.common.collect.Lists;
 
 import org.joda.time.format.DateTimeFormatter;
 import org.joda.time.format.ISODateTimeFormat;
 
 import java.io.Serializable;
 import java.math.BigInteger;
-import java.util.List;
 import java.util.Objects;
 
 /**
@@ -59,7 +56,6 @@ public class Zone implements Serializable {
   private final Long creationTimestamp;
   private final String description;
   private final Status status;
-  private final List<MaintenanceWindow> maintenanceWindows;
   private final RegionId region;
   private final DeprecationStatus<ZoneId> deprecationStatus;
 
@@ -71,113 +67,6 @@ public class Zone implements Serializable {
     DOWN
   }
 
-  /**
-   * A scheduled maintenance windows for this zone. When a zone is in a maintenance window, all
-   * resources which reside in the zone will be unavailable.
-   *
-   * @see <a href="https://cloud.google.com/compute/docs/robustsystems#maintenance">Maintenance
-   *     Windows</a>
-   */
-  public static final class MaintenanceWindow implements Serializable {
-
-    static final Function<MaintenanceWindows, MaintenanceWindow> FROM_PB_FUNCTION =
-        new Function<MaintenanceWindows, MaintenanceWindow>() {
-          @Override
-          public MaintenanceWindow apply(MaintenanceWindows pb) {
-            return MaintenanceWindow.fromPb(pb);
-          }
-        };
-    static final Function<MaintenanceWindow, MaintenanceWindows> TO_PB_FUNCTION =
-        new Function<MaintenanceWindow, MaintenanceWindows>() {
-          @Override
-          public MaintenanceWindows apply(MaintenanceWindow maintenanceWindow) {
-            return maintenanceWindow.toPb();
-          }
-        };
-
-    private static final long serialVersionUID = 2270641266683329963L;
-
-    private final String name;
-    private final String description;
-    private final Long beginTime;
-    private final Long endTime;
-
-    /**
-     * Returns a zone maintenance window object.
-     */
-    MaintenanceWindow(String name, String description, Long beginTime, Long endTime) {
-      this.name = name;
-      this.description = description;
-      this.beginTime = beginTime;
-      this.endTime = endTime;
-    }
-
-    /**
-     * Returns the name of the maintenance window.
-     */
-    public String name() {
-      return name;
-    }
-
-    /**
-     * Returns a textual description of the maintenance window.
-     */
-    public String description() {
-      return description;
-    }
-
-    /**
-     * Returns the starting time of the maintenance window in milliseconds since epoch.
-     */
-    public Long beginTime() {
-      return beginTime;
-    }
-
-    /**
-     * Returns the ending time of the maintenance window in milliseconds since epoch.
-     */
-    public Long endTime() {
-      return endTime;
-    }
-
-    @Override
-    public String toString() {
-      return MoreObjects.toStringHelper(this)
-          .add("disk", name)
-          .add("description", description)
-          .add("beginTime", beginTime)
-          .add("endTime", endTime)
-          .toString();
-    }
-
-    @Override
-    public int hashCode() {
-      return Objects.hash(name, description, beginTime, endTime);
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-      return obj instanceof MaintenanceWindow
-          && Objects.equals(toPb(), ((MaintenanceWindow) obj).toPb());
-    }
-
-    MaintenanceWindows toPb() {
-      return new MaintenanceWindows()
-          .setName(name)
-          .setDescription(description)
-          .setBeginTime(beginTime != null ? TIMESTAMP_FORMATTER.print(beginTime) : null)
-          .setEndTime(endTime != null ? TIMESTAMP_FORMATTER.print(endTime) : null);
-    }
-
-    static MaintenanceWindow fromPb(MaintenanceWindows windowPb) {
-      return new MaintenanceWindow(windowPb.getName(), windowPb.getDescription(),
-          windowPb.getBeginTime() != null
-              ? TIMESTAMP_FORMATTER.parseMillis(windowPb.getBeginTime()) : null,
-          windowPb.getEndTime() != null
-              ? TIMESTAMP_FORMATTER.parseMillis(windowPb.getEndTime()) : null);
-    }
-  }
-
   static final class Builder {
 
     private ZoneId zoneId;
@@ -186,7 +75,6 @@ public class Zone implements Serializable {
     private String description;
 
     private Status status;
-    private List<MaintenanceWindow> maintenanceWindows;
     private RegionId region;
     private DeprecationStatus<ZoneId> deprecationStatus;
 
@@ -217,11 +105,6 @@ public class Zone implements Serializable {
       return this;
     }
 
-    Builder maintenanceWindows(List<MaintenanceWindow> maintenanceWindows) {
-      this.maintenanceWindows = maintenanceWindows;
-      return this;
-    }
-
     Builder region(RegionId region) {
       this.region = region;
       return this;
@@ -243,7 +126,6 @@ public class Zone implements Serializable {
     this.creationTimestamp = builder.creationTimestamp;
     this.description = builder.description;
     this.status = builder.status;
-    this.maintenanceWindows = builder.maintenanceWindows;
     this.region = builder.region;
     this.deprecationStatus = builder.deprecationStatus;
   }
@@ -284,17 +166,6 @@ public class Zone implements Serializable {
   }
 
   /**
-   * Returns the scheduled maintenance windows for this zone, if any. When the zone is in a
-   * maintenance window, all resources which reside in the zone will be unavailable.
-   *
-   * @see <a href="https://cloud.google.com/compute/docs/robustsystems#maintenance">Maintenance
-   *     Windows</a>
-   */
-  public List<MaintenanceWindow> maintenanceWindows() {
-    return maintenanceWindows;
-  }
-
-  /**
    * Returns the identity of the region that hosts the zone.
    */
   public RegionId region() {
@@ -318,7 +189,6 @@ public class Zone implements Serializable {
         .add("creationTimestamp", creationTimestamp)
         .add("description", description)
         .add("status", status)
-        .add("maintenanceWindows", maintenanceWindows)
         .add("region", region)
         .add("deprecationStatus", deprecationStatus)
         .toString();
@@ -349,10 +219,6 @@ public class Zone implements Serializable {
     if (status != null) {
       zonePb.setStatus(status.name());
     }
-    if (maintenanceWindows != null) {
-      zonePb.setMaintenanceWindows(
-          Lists.transform(maintenanceWindows, MaintenanceWindow.TO_PB_FUNCTION));
-    }
     if (region != null) {
       zonePb.setRegion(region.selfLink());
     }
@@ -378,10 +244,6 @@ public class Zone implements Serializable {
     builder.description(zonePb.getDescription());
     if (zonePb.getStatus() != null) {
       builder.status(Status.valueOf(zonePb.getStatus()));
-    }
-    if (zonePb.getMaintenanceWindows() != null) {
-      builder.maintenanceWindows(
-          Lists.transform(zonePb.getMaintenanceWindows(), MaintenanceWindow.FROM_PB_FUNCTION));
     }
     if (zonePb.getRegion() != null) {
       builder.region(RegionId.fromUrl(zonePb.getRegion()));

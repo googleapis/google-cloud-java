@@ -31,10 +31,15 @@ import com.google.api.services.compute.model.AddressAggregatedList;
 import com.google.api.services.compute.model.AddressList;
 import com.google.api.services.compute.model.AddressesScopedList;
 import com.google.api.services.compute.model.DeprecationStatus;
+import com.google.api.services.compute.model.Disk;
+import com.google.api.services.compute.model.DiskAggregatedList;
+import com.google.api.services.compute.model.DiskList;
 import com.google.api.services.compute.model.DiskType;
 import com.google.api.services.compute.model.DiskTypeAggregatedList;
 import com.google.api.services.compute.model.DiskTypeList;
 import com.google.api.services.compute.model.DiskTypesScopedList;
+import com.google.api.services.compute.model.DisksResizeRequest;
+import com.google.api.services.compute.model.DisksScopedList;
 import com.google.api.services.compute.model.Image;
 import com.google.api.services.compute.model.ImageList;
 import com.google.api.services.compute.model.License;
@@ -522,7 +527,7 @@ public class DefaultComputeRpc implements ComputeRpc {
           .setFields(FIELDS.getString(options))
           .execute();
     } catch (IOException ex) {
-      return nullForNotFound(ex);
+      throw translate(ex);
     }
   }
 
@@ -626,6 +631,98 @@ public class DefaultComputeRpc implements ComputeRpc {
     try {
       return compute.images()
           .deprecate(project, image, deprecationStatus)
+          .setFields(FIELDS.getString(options))
+          .execute();
+    } catch (IOException ex) {
+      return nullForNotFound(ex);
+    }
+  }
+
+  @Override
+  public Disk getDisk(String zone, String disk, Map<Option, ?> options) {
+    try {
+      return compute.disks()
+          .get(this.options.projectId(), zone, disk)
+          .setFields(FIELDS.getString(options))
+          .execute();
+    } catch (IOException ex) {
+      return nullForNotFound(ex);
+    }
+  }
+
+  @Override
+  public Operation createDisk(String zone, Disk disk, Map<Option, ?> options) {
+    try {
+      return compute.disks()
+          .insert(this.options.projectId(), zone, disk)
+          .setFields(FIELDS.getString(options))
+          .execute();
+    } catch (IOException ex) {
+      throw translate(ex);
+    }
+  }
+
+  @Override
+  public Tuple<String, Iterable<Disk>> listDisks(String zone, Map<Option, ?> options) {
+    try {
+      DiskList diskList = compute.disks()
+          .list(this.options.projectId(), zone)
+          .setFilter(FILTER.getString(options))
+          .setMaxResults(MAX_RESULTS.getLong(options))
+          .setPageToken(PAGE_TOKEN.getString(options))
+          .setFields(FIELDS.getString(options))
+          .execute();
+      Iterable<Disk> disks = diskList.getItems();
+      return Tuple.of(diskList.getNextPageToken(), disks);
+    } catch (IOException ex) {
+      throw translate(ex);
+    }
+  }
+
+  @Override
+  public Tuple<String, Iterable<Disk>> listDisks(Map<Option, ?> options) {
+    try {
+      DiskAggregatedList aggregatedList = compute.disks()
+          .aggregatedList(this.options.projectId())
+          .setFilter(FILTER.getString(options))
+          .setMaxResults(MAX_RESULTS.getLong(options))
+          .setPageToken(PAGE_TOKEN.getString(options))
+          // todo(mziccard): uncomment or remove once #711 is closed
+          // .setFields(FIELDS.getString(options))
+          .execute();
+      ImmutableList.Builder<Disk> builder = ImmutableList.builder();
+      Map<String, DisksScopedList> scopedList = aggregatedList.getItems();
+      if (scopedList != null) {
+        for (DisksScopedList disksScopedList : scopedList.values()) {
+          if (disksScopedList.getDisks() != null) {
+            builder.addAll(disksScopedList.getDisks());
+          }
+        }
+      }
+      return Tuple.<String, Iterable<Disk>>of(aggregatedList.getNextPageToken(),
+          builder.build());
+    } catch (IOException ex) {
+      throw translate(ex);
+    }
+  }
+
+  @Override
+  public Operation deleteDisk(String zone, String disk, Map<Option, ?> options) {
+    try {
+      return compute.disks()
+          .delete(this.options.projectId(), zone, disk)
+          .setFields(FIELDS.getString(options))
+          .execute();
+    } catch (IOException ex) {
+      return nullForNotFound(ex);
+    }
+  }
+
+  @Override
+  public Operation resizeDisk(String zone, String disk, long sizeGb, Map<Option, ?> options) {
+    try {
+      DisksResizeRequest resizeRequest = new DisksResizeRequest().setSizeGb(sizeGb);
+      return compute.disks().resize(this.options.projectId(), zone, disk, resizeRequest)
           .setFields(FIELDS.getString(options))
           .execute();
     } catch (IOException ex) {
