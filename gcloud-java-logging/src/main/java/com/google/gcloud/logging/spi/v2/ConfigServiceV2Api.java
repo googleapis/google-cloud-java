@@ -55,105 +55,13 @@ import java.util.List;
 
 // AUTO-GENERATED DOCUMENTATION AND SERVICE - see instructions at the top of the file for editing.
 /**
- * Service Description: See src/api/google/logging/v2/logging.proto for documentation
+ * Service Description:
  *
  * <!-- manual edit -->
  * <!-- end manual edit -->
  */
 @javax.annotation.Generated("by GAPIC")
 public class ConfigServiceV2Api implements AutoCloseable {
-
-  public static class ResourceNames {
-    private ResourceNames() {}
-
-    // =======================
-    // ResourceNames Constants
-    // =======================
-
-    /**
-     * A PathTemplate representing the fully-qualified path to represent
-     * a project resource.
-     *
-     * <!-- manual edit -->
-     * <!-- end manual edit -->
-     */
-    private static final PathTemplate PROJECT_PATH_TEMPLATE =
-        PathTemplate.create("projects/{project}");
-
-    /**
-     * A PathTemplate representing the fully-qualified path to represent
-     * a sink resource.
-     *
-     * <!-- manual edit -->
-     * <!-- end manual edit -->
-     */
-    private static final PathTemplate SINK_PATH_TEMPLATE =
-        PathTemplate.create("projects/{project}/sinks/{sink}");
-
-    // ==============================
-    // Resource Name Helper Functions
-    // ==============================
-
-    /**
-     * Formats a string containing the fully-qualified path to represent
-     * a project resource.
-     *
-     * <!-- manual edit -->
-     * <!-- end manual edit -->
-     */
-    public static final String formatProjectPath(String project) {
-      return PROJECT_PATH_TEMPLATE.instantiate("project", project);
-    }
-
-    /**
-     * Formats a string containing the fully-qualified path to represent
-     * a sink resource.
-     *
-     * <!-- manual edit -->
-     * <!-- end manual edit -->
-     */
-    public static final String formatSinkPath(String project, String sink) {
-      return SINK_PATH_TEMPLATE.instantiate("project", project, "sink", sink);
-    }
-
-    /**
-     * Parses the project from the given fully-qualified path which
-     * represents a project resource.
-     *
-     * <!-- manual edit -->
-     * <!-- end manual edit -->
-     */
-    public static final String parseProjectFromProjectPath(String projectPath) {
-      return PROJECT_PATH_TEMPLATE.parse(projectPath).get("project");
-    }
-
-    /**
-     * Parses the project from the given fully-qualified path which
-     * represents a sink resource.
-     *
-     * <!-- manual edit -->
-     * <!-- end manual edit -->
-     */
-    public static final String parseProjectFromSinkPath(String sinkPath) {
-      return SINK_PATH_TEMPLATE.parse(sinkPath).get("project");
-    }
-
-    /**
-     * Parses the sink from the given fully-qualified path which
-     * represents a sink resource.
-     *
-     * <!-- manual edit -->
-     * <!-- end manual edit -->
-     */
-    public static final String parseSinkFromSinkPath(String sinkPath) {
-      return SINK_PATH_TEMPLATE.parse(sinkPath).get("sink");
-    }
-  }
-
-  // ========
-  // Members
-  // ========
-
   private final ManagedChannel channel;
   private final List<AutoCloseable> closeables = new ArrayList<>();
 
@@ -164,9 +72,66 @@ public class ConfigServiceV2Api implements AutoCloseable {
   private final ApiCallable<UpdateSinkRequest, LogSink> updateSinkCallable;
   private final ApiCallable<DeleteSinkRequest, Empty> deleteSinkCallable;
 
-  // ===============
-  // Factory Methods
-  // ===============
+  private static final PathTemplate PROJECT_PATH_TEMPLATE =
+      PathTemplate.create("projects/{project}");
+
+  private static final PathTemplate SINK_PATH_TEMPLATE =
+      PathTemplate.create("projects/{project}/sinks/{sink}");
+
+  /**
+   * Formats a string containing the fully-qualified path to represent
+   * a project resource.
+   *
+   * <!-- manual edit -->
+   * <!-- end manual edit -->
+   */
+  public static final String formatProjectName(String project) {
+    return PROJECT_PATH_TEMPLATE.instantiate("project", project);
+  }
+
+  /**
+   * Formats a string containing the fully-qualified path to represent
+   * a sink resource.
+   *
+   * <!-- manual edit -->
+   * <!-- end manual edit -->
+   */
+  public static final String formatSinkName(String project, String sink) {
+    return SINK_PATH_TEMPLATE.instantiate("project", project, "sink", sink);
+  }
+
+  /**
+   * Parses the project from the given fully-qualified path which
+   * represents a project resource.
+   *
+   * <!-- manual edit -->
+   * <!-- end manual edit -->
+   */
+  public static final String parseProjectFromProjectName(String projectName) {
+    return PROJECT_PATH_TEMPLATE.parse(projectName).get("project");
+  }
+
+  /**
+   * Parses the project from the given fully-qualified path which
+   * represents a sink resource.
+   *
+   * <!-- manual edit -->
+   * <!-- end manual edit -->
+   */
+  public static final String parseProjectFromSinkName(String sinkName) {
+    return SINK_PATH_TEMPLATE.parse(sinkName).get("project");
+  }
+
+  /**
+   * Parses the sink from the given fully-qualified path which
+   * represents a sink resource.
+   *
+   * <!-- manual edit -->
+   * <!-- end manual edit -->
+   */
+  public static final String parseSinkFromSinkName(String sinkName) {
+    return SINK_PATH_TEMPLATE.parse(sinkName).get("sink");
+  }
 
   /**
    * Constructs an instance of ConfigServiceV2Api with default settings.
@@ -174,24 +139,27 @@ public class ConfigServiceV2Api implements AutoCloseable {
    * <!-- manual edit -->
    * <!-- end manual edit -->
    */
-  public static ConfigServiceV2Api create() throws IOException {
-    return create(ConfigServiceV2Settings.create());
+  public static final ConfigServiceV2Api defaultInstance() throws IOException {
+    return create(ConfigServiceV2Settings.defaultInstance());
   }
 
   /**
-   * Constructs an instance of ConfigServiceV2Api, using the given settings. The channels are
-   * created based on the settings passed in, or defaults for any settings that are not set.
+   * Constructs an instance of ConfigServiceV2Api, using the given settings.
+   * The channels are created based on the settings passed in, or defaults for any
+   * settings that are not set.
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
    */
-  public static ConfigServiceV2Api create(ConfigServiceV2Settings settings) throws IOException {
+  public static final ConfigServiceV2Api create(ConfigServiceV2Settings settings)
+      throws IOException {
     return new ConfigServiceV2Api(settings);
   }
 
   /**
-   * Constructs an instance of ConfigServiceV2Api, using the given settings. This is protected so
-   * that it easy to make a subclass, but otherwise, the static factory methods should be preferred.
+   * Constructs an instance of ConfigServiceV2Api, using the given settings.
+   * This is protected so that it easy to make a subclass, but otherwise, the static
+   * factory methods should be preferred.
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
@@ -199,25 +167,24 @@ public class ConfigServiceV2Api implements AutoCloseable {
   protected ConfigServiceV2Api(ConfigServiceV2Settings settings) throws IOException {
     this.channel = settings.getChannel();
 
-    this.listSinksCallable = settings.listSinksMethod().build(settings);
-    this.listSinksIterableCallable = settings.listSinksMethod().buildPageStreaming(settings);
-    this.getSinkCallable = settings.getSinkMethod().build(settings);
-    this.createSinkCallable = settings.createSinkMethod().build(settings);
-    this.updateSinkCallable = settings.updateSinkMethod().build(settings);
-    this.deleteSinkCallable = settings.deleteSinkMethod().build(settings);
+    this.listSinksCallable = ApiCallable.create(settings.listSinksSettings(), settings);
+    this.listSinksIterableCallable =
+        ApiCallable.createIterable(settings.listSinksSettings(), settings);
+    this.getSinkCallable = ApiCallable.create(settings.getSinkSettings(), settings);
+    this.createSinkCallable = ApiCallable.create(settings.createSinkSettings(), settings);
+    this.updateSinkCallable = ApiCallable.create(settings.updateSinkSettings(), settings);
+    this.deleteSinkCallable = ApiCallable.create(settings.deleteSinkSettings(), settings);
 
-    closeables.add(
-        new Closeable() {
-          @Override
-          public void close() throws IOException {
-            channel.shutdown();
-          }
-        });
+    if (settings.shouldAutoCloseChannel()) {
+      closeables.add(
+          new Closeable() {
+            @Override
+            public void close() throws IOException {
+              channel.shutdown();
+            }
+          });
+    }
   }
-
-  // =============
-  // Service Calls
-  // =============
 
   // ----- listSinks -----
 
@@ -227,8 +194,12 @@ public class ConfigServiceV2Api implements AutoCloseable {
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
+   *
+   * @param projectName Required. The resource name of the project containing the sinks.
+   * Example: `"projects/my-logging-project"`, `"projects/01234567890"`.
+   * @throws ApiException if the remote call fails
    */
-  public Iterable<LogSink> listSinks(String projectName) {
+  public final Iterable<LogSink> listSinks(String projectName) {
     ListSinksRequest request = ListSinksRequest.newBuilder().setProjectName(projectName).build();
     return listSinks(request);
   }
@@ -241,8 +212,9 @@ public class ConfigServiceV2Api implements AutoCloseable {
    * <!-- end manual edit -->
    *
    * @param request The request object containing all of the parameters for the API call.
+   * @throws ApiException if the remote call fails
    */
-  public Iterable<LogSink> listSinks(ListSinksRequest request) {
+  public final Iterable<LogSink> listSinks(ListSinksRequest request) {
     return listSinksIterableCallable().call(request);
   }
 
@@ -252,8 +224,9 @@ public class ConfigServiceV2Api implements AutoCloseable {
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
+   * @throws ApiException if the remote call fails
    */
-  public ApiCallable<ListSinksRequest, Iterable<LogSink>> listSinksIterableCallable() {
+  public final ApiCallable<ListSinksRequest, Iterable<LogSink>> listSinksIterableCallable() {
     return listSinksIterableCallable;
   }
 
@@ -263,8 +236,9 @@ public class ConfigServiceV2Api implements AutoCloseable {
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
+   * @throws ApiException if the remote call fails
    */
-  public ApiCallable<ListSinksRequest, ListSinksResponse> listSinksCallable() {
+  public final ApiCallable<ListSinksRequest, ListSinksResponse> listSinksCallable() {
     return listSinksCallable;
   }
 
@@ -279,8 +253,9 @@ public class ConfigServiceV2Api implements AutoCloseable {
    *
    * @param sinkName The resource name of the sink to return.
    * Example: `"projects/my-project-id/sinks/my-sink-id"`.
+   * @throws ApiException if the remote call fails
    */
-  public LogSink getSink(String sinkName) {
+  public final LogSink getSink(String sinkName) {
     GetSinkRequest request = GetSinkRequest.newBuilder().setSinkName(sinkName).build();
 
     return getSink(request);
@@ -294,6 +269,7 @@ public class ConfigServiceV2Api implements AutoCloseable {
    * <!-- end manual edit -->
    *
    * @param request The request object containing all of the parameters for the API call.
+   * @throws ApiException if the remote call fails
    */
   private LogSink getSink(GetSinkRequest request) {
     return getSinkCallable().call(request);
@@ -305,8 +281,9 @@ public class ConfigServiceV2Api implements AutoCloseable {
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
+   * @throws ApiException if the remote call fails
    */
-  public ApiCallable<GetSinkRequest, LogSink> getSinkCallable() {
+  public final ApiCallable<GetSinkRequest, LogSink> getSinkCallable() {
     return getSinkCallable;
   }
 
@@ -325,8 +302,9 @@ public class ConfigServiceV2Api implements AutoCloseable {
    * The new sink must be provided in the request.
    * @param sink The new sink, which must not have an identifier that already
    * exists.
+   * @throws ApiException if the remote call fails
    */
-  public LogSink createSink(String projectName, LogSink sink) {
+  public final LogSink createSink(String projectName, LogSink sink) {
     CreateSinkRequest request =
         CreateSinkRequest.newBuilder().setProjectName(projectName).setSink(sink).build();
 
@@ -341,6 +319,7 @@ public class ConfigServiceV2Api implements AutoCloseable {
    * <!-- end manual edit -->
    *
    * @param request The request object containing all of the parameters for the API call.
+   * @throws ApiException if the remote call fails
    */
   public LogSink createSink(CreateSinkRequest request) {
     return createSinkCallable().call(request);
@@ -352,8 +331,9 @@ public class ConfigServiceV2Api implements AutoCloseable {
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
+   * @throws ApiException if the remote call fails
    */
-  public ApiCallable<CreateSinkRequest, LogSink> createSinkCallable() {
+  public final ApiCallable<CreateSinkRequest, LogSink> createSinkCallable() {
     return createSinkCallable;
   }
 
@@ -375,8 +355,9 @@ public class ConfigServiceV2Api implements AutoCloseable {
    * @param sink The updated sink, whose name must be the same as the sink
    * identifier in `sinkName`.  If `sinkName` does not exist, then
    * this method creates a new sink.
+   * @throws ApiException if the remote call fails
    */
-  public LogSink updateSink(String sinkName, LogSink sink) {
+  public final LogSink updateSink(String sinkName, LogSink sink) {
     UpdateSinkRequest request =
         UpdateSinkRequest.newBuilder().setSinkName(sinkName).setSink(sink).build();
 
@@ -391,6 +372,7 @@ public class ConfigServiceV2Api implements AutoCloseable {
    * <!-- end manual edit -->
    *
    * @param request The request object containing all of the parameters for the API call.
+   * @throws ApiException if the remote call fails
    */
   public LogSink updateSink(UpdateSinkRequest request) {
     return updateSinkCallable().call(request);
@@ -402,8 +384,9 @@ public class ConfigServiceV2Api implements AutoCloseable {
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
+   * @throws ApiException if the remote call fails
    */
-  public ApiCallable<UpdateSinkRequest, LogSink> updateSinkCallable() {
+  public final ApiCallable<UpdateSinkRequest, LogSink> updateSinkCallable() {
     return updateSinkCallable;
   }
 
@@ -418,8 +401,9 @@ public class ConfigServiceV2Api implements AutoCloseable {
    *
    * @param sinkName The resource name of the sink to delete.
    * Example: `"projects/my-project-id/sinks/my-sink-id"`.
+   * @throws ApiException if the remote call fails
    */
-  public void deleteSink(String sinkName) {
+  public final void deleteSink(String sinkName) {
     DeleteSinkRequest request = DeleteSinkRequest.newBuilder().setSinkName(sinkName).build();
 
     deleteSink(request);
@@ -433,6 +417,7 @@ public class ConfigServiceV2Api implements AutoCloseable {
    * <!-- end manual edit -->
    *
    * @param request The request object containing all of the parameters for the API call.
+   * @throws ApiException if the remote call fails
    */
   private void deleteSink(DeleteSinkRequest request) {
     deleteSinkCallable().call(request);
@@ -444,14 +429,11 @@ public class ConfigServiceV2Api implements AutoCloseable {
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
+   * @throws ApiException if the remote call fails
    */
-  public ApiCallable<DeleteSinkRequest, Empty> deleteSinkCallable() {
+  public final ApiCallable<DeleteSinkRequest, Empty> deleteSinkCallable() {
     return deleteSinkCallable;
   }
-
-  // ========
-  // Cleanup
-  // ========
 
   /**
    * Initiates an orderly shutdown in which preexisting calls continue but new calls are immediately
@@ -461,7 +443,7 @@ public class ConfigServiceV2Api implements AutoCloseable {
    * <!-- end manual edit -->
    */
   @Override
-  public void close() throws Exception {
+  public final void close() throws Exception {
     for (AutoCloseable closeable : closeables) {
       closeable.close();
     }

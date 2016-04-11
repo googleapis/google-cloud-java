@@ -33,14 +33,13 @@
 
 package com.google.gcloud.logging.spi.v2;
 
-import com.google.api.gax.core.BackoffParams;
 import com.google.api.gax.core.ConnectionSettings;
-import com.google.api.gax.core.RetryParams;
+import com.google.api.gax.core.RetrySettings;
 import com.google.api.gax.grpc.ApiCallSettings;
-import com.google.api.gax.grpc.ApiCallable.ApiCallableBuilder;
-import com.google.api.gax.grpc.ApiCallable.PageStreamingApiCallableBuilder;
-import com.google.api.gax.grpc.PageDescriptor;
+import com.google.api.gax.grpc.PageStreamingCallSettings;
+import com.google.api.gax.grpc.PageStreamingDescriptor;
 import com.google.api.gax.grpc.ServiceApiSettings;
+import com.google.api.gax.grpc.SimpleCallSettings;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -55,17 +54,17 @@ import com.google.logging.v2.LogMetric;
 import com.google.logging.v2.MetricsServiceV2Grpc;
 import com.google.logging.v2.UpdateLogMetricRequest;
 import com.google.protobuf.Empty;
+import io.grpc.ManagedChannel;
 import io.grpc.Status;
+import java.io.IOException;
+import java.util.concurrent.ScheduledExecutorService;
+import org.joda.time.Duration;
 
 // Manually-added imports: add custom (non-generated) imports after this point.
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS - see instructions at the top of the file for editing.
 @javax.annotation.Generated("by GAPIC")
 public class MetricsServiceV2Settings extends ServiceApiSettings {
-
-  // =========
-  // Constants
-  // =========
 
   /**
    * The default address of the service.
@@ -95,181 +94,68 @@ public class MetricsServiceV2Settings extends ServiceApiSettings {
           .add("https://www.googleapis.com/auth/cloud-platform")
           .build();
 
-  private static final ImmutableMap<String, ImmutableSet<Status.Code>> RETRYABLE_CODE_DEFINITIONS;
+  private final PageStreamingCallSettings<ListLogMetricsRequest, ListLogMetricsResponse, LogMetric>
+      listLogMetricsSettings;
 
-  static {
-    ImmutableMap.Builder<String, ImmutableSet<Status.Code>> definitions = ImmutableMap.builder();
-    definitions.put(
-        "idempotent",
-        Sets.immutableEnumSet(
-            Lists.<Status.Code>newArrayList(
-                Status.Code.DEADLINE_EXCEEDED, Status.Code.UNAVAILABLE)));
-    definitions.put("non_idempotent", Sets.immutableEnumSet(Lists.<Status.Code>newArrayList()));
-    RETRYABLE_CODE_DEFINITIONS = definitions.build();
+  private final SimpleCallSettings<GetLogMetricRequest, LogMetric> getLogMetricSettings;
+  private final SimpleCallSettings<CreateLogMetricRequest, LogMetric> createLogMetricSettings;
+  private final SimpleCallSettings<UpdateLogMetricRequest, LogMetric> updateLogMetricSettings;
+  private final SimpleCallSettings<DeleteLogMetricRequest, Empty> deleteLogMetricSettings;
+
+  public PageStreamingCallSettings<ListLogMetricsRequest, ListLogMetricsResponse, LogMetric>
+      listLogMetricsSettings() {
+    return listLogMetricsSettings;
   }
 
-  private static final ImmutableMap<String, RetryParams> RETRY_PARAM_DEFINITIONS;
-
-  static {
-    ImmutableMap.Builder<String, RetryParams> definitions = ImmutableMap.builder();
-    RetryParams params = null;
-    params =
-        RetryParams.newBuilder()
-            .setRetryBackoff(
-                BackoffParams.newBuilder()
-                    .setInitialDelayMillis(100L)
-                    .setDelayMultiplier(1.2)
-                    .setMaxDelayMillis(1000L)
-                    .build())
-            .setTimeoutBackoff(
-                BackoffParams.newBuilder()
-                    .setInitialDelayMillis(300L)
-                    .setDelayMultiplier(1.3)
-                    .setMaxDelayMillis(3000L)
-                    .build())
-            .setTotalTimeout(30000L)
-            .build();
-    definitions.put("default", params);
-    RETRY_PARAM_DEFINITIONS = definitions.build();
+  public SimpleCallSettings<GetLogMetricRequest, LogMetric> getLogMetricSettings() {
+    return getLogMetricSettings;
   }
 
-  private static class MethodBuilders {
-    private final PageStreamingApiCallableBuilder<
-            ListLogMetricsRequest, ListLogMetricsResponse, LogMetric>
-        listLogMetricsMethod;
-    private final ApiCallableBuilder<GetLogMetricRequest, LogMetric> getLogMetricMethod;
-    private final ApiCallableBuilder<CreateLogMetricRequest, LogMetric> createLogMetricMethod;
-    private final ApiCallableBuilder<UpdateLogMetricRequest, LogMetric> updateLogMetricMethod;
-    private final ApiCallableBuilder<DeleteLogMetricRequest, Empty> deleteLogMetricMethod;
-    private final ImmutableList<? extends ApiCallSettings> allMethods;
-
-    public MethodBuilders() {
-      listLogMetricsMethod =
-          new PageStreamingApiCallableBuilder<>(
-              MetricsServiceV2Grpc.METHOD_LIST_LOG_METRICS, LIST_LOG_METRICS_PAGE_STR_DESC);
-      listLogMetricsMethod.setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"));
-      listLogMetricsMethod.setRetryParams(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      getLogMetricMethod = new ApiCallableBuilder<>(MetricsServiceV2Grpc.METHOD_GET_LOG_METRIC);
-      getLogMetricMethod.setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"));
-      getLogMetricMethod.setRetryParams(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      createLogMetricMethod =
-          new ApiCallableBuilder<>(MetricsServiceV2Grpc.METHOD_CREATE_LOG_METRIC);
-      createLogMetricMethod.setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"));
-      createLogMetricMethod.setRetryParams(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      updateLogMetricMethod =
-          new ApiCallableBuilder<>(MetricsServiceV2Grpc.METHOD_UPDATE_LOG_METRIC);
-      updateLogMetricMethod.setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"));
-      updateLogMetricMethod.setRetryParams(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      deleteLogMetricMethod =
-          new ApiCallableBuilder<>(MetricsServiceV2Grpc.METHOD_DELETE_LOG_METRIC);
-      deleteLogMetricMethod.setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"));
-      deleteLogMetricMethod.setRetryParams(RETRY_PARAM_DEFINITIONS.get("default"));
-
-      allMethods =
-          ImmutableList.<ApiCallSettings>builder()
-              .add(
-                  listLogMetricsMethod,
-                  getLogMetricMethod,
-                  createLogMetricMethod,
-                  updateLogMetricMethod,
-                  deleteLogMetricMethod)
-              .build();
-    }
+  public SimpleCallSettings<CreateLogMetricRequest, LogMetric> createLogMetricSettings() {
+    return createLogMetricSettings;
   }
 
-  private final MethodBuilders methods;
-
-  // ===============
-  // Factory Methods
-  // ===============
-
-  /**
-   * Constructs an instance of MetricsServiceV2Settings with default settings.
-   *
-   * <!-- manual edit -->
-   * <!-- end manual edit -->
-   */
-  public static MetricsServiceV2Settings create() {
-    MetricsServiceV2Settings settings = new MetricsServiceV2Settings(new MethodBuilders());
-    settings.provideChannelWith(
-        ConnectionSettings.builder()
-            .setServiceAddress(DEFAULT_SERVICE_ADDRESS)
-            .setPort(DEFAULT_SERVICE_PORT)
-            .provideCredentialsWith(DEFAULT_SERVICE_SCOPES)
-            .build());
-    return settings;
+  public SimpleCallSettings<UpdateLogMetricRequest, LogMetric> updateLogMetricSettings() {
+    return updateLogMetricSettings;
   }
 
-  /**
-   * Constructs an instance of MetricsServiceV2Settings with default settings. This is protected so
-   * that it easy to make a subclass, but otherwise, the static factory methods should be preferred.
-   *
-   * <!-- manual edit -->
-   * <!-- end manual edit -->
-   */
-  protected MetricsServiceV2Settings(MethodBuilders methods) {
-    super(methods.allMethods);
-    this.methods = methods;
+  public SimpleCallSettings<DeleteLogMetricRequest, Empty> deleteLogMetricSettings() {
+    return deleteLogMetricSettings;
   }
 
-  /**
-   * Returns the PageStreamingApiCallableBuilder for the API method listLogMetrics.
-   *
-   * <!-- manual edit -->
-   * <!-- end manual edit -->
-   */
-  public PageStreamingApiCallableBuilder<ListLogMetricsRequest, ListLogMetricsResponse, LogMetric>
-      listLogMetricsMethod() {
-    return methods.listLogMetricsMethod;
+  public static MetricsServiceV2Settings defaultInstance() throws IOException {
+    return newBuilder().build();
   }
 
-  /**
-   * Returns the ApiCallableBuilder for the API method getLogMetric.
-   *
-   * <!-- manual edit -->
-   * <!-- end manual edit -->
-   */
-  public ApiCallableBuilder<GetLogMetricRequest, LogMetric> getLogMetricMethod() {
-    return methods.getLogMetricMethod;
+  public static Builder newBuilder() {
+    return new Builder();
   }
 
-  /**
-   * Returns the ApiCallableBuilder for the API method createLogMetric.
-   *
-   * <!-- manual edit -->
-   * <!-- end manual edit -->
-   */
-  public ApiCallableBuilder<CreateLogMetricRequest, LogMetric> createLogMetricMethod() {
-    return methods.createLogMetricMethod;
+  public Builder toBuilder() {
+    return new Builder(this);
   }
 
-  /**
-   * Returns the ApiCallableBuilder for the API method updateLogMetric.
-   *
-   * <!-- manual edit -->
-   * <!-- end manual edit -->
-   */
-  public ApiCallableBuilder<UpdateLogMetricRequest, LogMetric> updateLogMetricMethod() {
-    return methods.updateLogMetricMethod;
+  private MetricsServiceV2Settings(Builder settingsBuilder) throws IOException {
+    super(
+        settingsBuilder.getOrBuildChannel(),
+        settingsBuilder.shouldAutoCloseChannel(),
+        settingsBuilder.getOrBuildExecutor(),
+        settingsBuilder.getConnectionSettings(),
+        settingsBuilder.getGeneratorName(),
+        settingsBuilder.getGeneratorVersion(),
+        settingsBuilder.getClientLibName(),
+        settingsBuilder.getClientLibVersion());
+
+    listLogMetricsSettings = settingsBuilder.listLogMetricsSettings().build();
+    getLogMetricSettings = settingsBuilder.getLogMetricSettings().build();
+    createLogMetricSettings = settingsBuilder.createLogMetricSettings().build();
+    updateLogMetricSettings = settingsBuilder.updateLogMetricSettings().build();
+    deleteLogMetricSettings = settingsBuilder.deleteLogMetricSettings().build();
   }
 
-  /**
-   * Returns the ApiCallableBuilder for the API method deleteLogMetric.
-   *
-   * <!-- manual edit -->
-   * <!-- end manual edit -->
-   */
-  public ApiCallableBuilder<DeleteLogMetricRequest, Empty> deleteLogMetricMethod() {
-    return methods.deleteLogMetricMethod;
-  }
-
-  private static PageDescriptor<ListLogMetricsRequest, ListLogMetricsResponse, LogMetric>
+  private static PageStreamingDescriptor<ListLogMetricsRequest, ListLogMetricsResponse, LogMetric>
       LIST_LOG_METRICS_PAGE_STR_DESC =
-          new PageDescriptor<ListLogMetricsRequest, ListLogMetricsResponse, LogMetric>() {
+          new PageStreamingDescriptor<ListLogMetricsRequest, ListLogMetricsResponse, LogMetric>() {
             @Override
             public Object emptyToken() {
               return "";
@@ -290,4 +176,170 @@ public class MetricsServiceV2Settings extends ServiceApiSettings {
               return payload.getMetricsList();
             }
           };
+
+  public static class Builder extends ServiceApiSettings.Builder {
+    private final ImmutableList<ApiCallSettings.Builder> methodSettingsBuilders;
+
+    private PageStreamingCallSettings.Builder<
+            ListLogMetricsRequest, ListLogMetricsResponse, LogMetric>
+        listLogMetricsSettings;
+    private SimpleCallSettings.Builder<GetLogMetricRequest, LogMetric> getLogMetricSettings;
+    private SimpleCallSettings.Builder<CreateLogMetricRequest, LogMetric> createLogMetricSettings;
+    private SimpleCallSettings.Builder<UpdateLogMetricRequest, LogMetric> updateLogMetricSettings;
+    private SimpleCallSettings.Builder<DeleteLogMetricRequest, Empty> deleteLogMetricSettings;
+
+    private static final ImmutableMap<String, ImmutableSet<Status.Code>> RETRYABLE_CODE_DEFINITIONS;
+
+    static {
+      ImmutableMap.Builder<String, ImmutableSet<Status.Code>> definitions = ImmutableMap.builder();
+      definitions.put(
+          "idempotent",
+          Sets.immutableEnumSet(
+              Lists.<Status.Code>newArrayList(
+                  Status.Code.DEADLINE_EXCEEDED, Status.Code.UNAVAILABLE)));
+      definitions.put("non_idempotent", Sets.immutableEnumSet(Lists.<Status.Code>newArrayList()));
+      RETRYABLE_CODE_DEFINITIONS = definitions.build();
+    }
+
+    private static final ImmutableMap<String, RetrySettings.Builder> RETRY_PARAM_DEFINITIONS;
+
+    static {
+      ImmutableMap.Builder<String, RetrySettings.Builder> definitions = ImmutableMap.builder();
+      RetrySettings.Builder settingsBuilder = null;
+      settingsBuilder =
+          RetrySettings.newBuilder()
+              .setInitialRetryDelay(Duration.millis(100L))
+              .setRetryDelayMultiplier(1.2)
+              .setMaxRetryDelay(Duration.millis(1000L))
+              .setInitialRpcTimeout(Duration.millis(2000L))
+              .setRpcTimeoutMultiplier(1.5)
+              .setMaxRpcTimeout(Duration.millis(30000L))
+              .setTotalTimeout(Duration.millis(45000L));
+      definitions.put("default", settingsBuilder);
+      RETRY_PARAM_DEFINITIONS = definitions.build();
+    }
+
+    private Builder() {
+      super(
+          ConnectionSettings.builder()
+              .setServiceAddress(DEFAULT_SERVICE_ADDRESS)
+              .setPort(DEFAULT_SERVICE_PORT)
+              .provideCredentialsWith(DEFAULT_SERVICE_SCOPES)
+              .build());
+
+      listLogMetricsSettings =
+          PageStreamingCallSettings.newBuilder(
+                  MetricsServiceV2Grpc.METHOD_LIST_LOG_METRICS, LIST_LOG_METRICS_PAGE_STR_DESC)
+              .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+              .setRetrySettingsBuilder(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      getLogMetricSettings =
+          SimpleCallSettings.newBuilder(MetricsServiceV2Grpc.METHOD_GET_LOG_METRIC)
+              .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+              .setRetrySettingsBuilder(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      createLogMetricSettings =
+          SimpleCallSettings.newBuilder(MetricsServiceV2Grpc.METHOD_CREATE_LOG_METRIC)
+              .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+              .setRetrySettingsBuilder(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      updateLogMetricSettings =
+          SimpleCallSettings.newBuilder(MetricsServiceV2Grpc.METHOD_UPDATE_LOG_METRIC)
+              .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+              .setRetrySettingsBuilder(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      deleteLogMetricSettings =
+          SimpleCallSettings.newBuilder(MetricsServiceV2Grpc.METHOD_DELETE_LOG_METRIC)
+              .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+              .setRetrySettingsBuilder(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      methodSettingsBuilders =
+          ImmutableList.<ApiCallSettings.Builder>of(
+              listLogMetricsSettings,
+              getLogMetricSettings,
+              createLogMetricSettings,
+              updateLogMetricSettings,
+              deleteLogMetricSettings);
+    }
+
+    private Builder(MetricsServiceV2Settings settings) {
+      super(settings);
+
+      listLogMetricsSettings = settings.listLogMetricsSettings.toBuilder();
+      getLogMetricSettings = settings.getLogMetricSettings.toBuilder();
+      createLogMetricSettings = settings.createLogMetricSettings.toBuilder();
+      updateLogMetricSettings = settings.updateLogMetricSettings.toBuilder();
+      deleteLogMetricSettings = settings.deleteLogMetricSettings.toBuilder();
+
+      methodSettingsBuilders =
+          ImmutableList.<ApiCallSettings.Builder>of(
+              listLogMetricsSettings,
+              getLogMetricSettings,
+              createLogMetricSettings,
+              updateLogMetricSettings,
+              deleteLogMetricSettings);
+    }
+
+    @Override
+    public Builder provideChannelWith(ManagedChannel channel, boolean shouldAutoClose) {
+      super.provideChannelWith(channel, shouldAutoClose);
+      return this;
+    }
+
+    @Override
+    public Builder provideChannelWith(ConnectionSettings settings) {
+      super.provideChannelWith(settings);
+      return this;
+    }
+
+    @Override
+    public Builder setExecutor(ScheduledExecutorService executor) {
+      super.setExecutor(executor);
+      return this;
+    }
+
+    @Override
+    public Builder setGeneratorHeader(String name, String version) {
+      super.setGeneratorHeader(name, version);
+      return this;
+    }
+
+    @Override
+    public Builder setClientLibHeader(String name, String version) {
+      super.setClientLibHeader(name, version);
+      return this;
+    }
+
+    public Builder applyToAllApiMethods(ApiCallSettings.Builder apiCallSettings) throws Exception {
+      super.applyToAllApiMethods(methodSettingsBuilders, apiCallSettings);
+      return this;
+    }
+
+    public PageStreamingCallSettings.Builder<
+            ListLogMetricsRequest, ListLogMetricsResponse, LogMetric>
+        listLogMetricsSettings() {
+      return listLogMetricsSettings;
+    }
+
+    public SimpleCallSettings.Builder<GetLogMetricRequest, LogMetric> getLogMetricSettings() {
+      return getLogMetricSettings;
+    }
+
+    public SimpleCallSettings.Builder<CreateLogMetricRequest, LogMetric> createLogMetricSettings() {
+      return createLogMetricSettings;
+    }
+
+    public SimpleCallSettings.Builder<UpdateLogMetricRequest, LogMetric> updateLogMetricSettings() {
+      return updateLogMetricSettings;
+    }
+
+    public SimpleCallSettings.Builder<DeleteLogMetricRequest, Empty> deleteLogMetricSettings() {
+      return deleteLogMetricSettings;
+    }
+
+    @Override
+    public MetricsServiceV2Settings build() throws IOException {
+      return new MetricsServiceV2Settings(this);
+    }
+  }
 }
