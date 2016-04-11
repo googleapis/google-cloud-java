@@ -96,7 +96,7 @@ public interface RpcBatch {
   /**
    * Adds a call to "get change request" to the batch with the provided {@code callback} and {@code
    * options}. The change request to be retrieved is identified by {@code changeRequestId} and the
-   * zone to be searched by {@code zoneName}.
+   * zone to which the change request was applied is identified by {@code zoneName}.
    */
   void addGetChangeRequest(String zoneName, String changeRequestId, Callback<Change> callback,
       Map<DnsRpc.Option, ?> options);
