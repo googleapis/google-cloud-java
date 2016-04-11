@@ -84,10 +84,9 @@ public class BaseServiceException extends RuntimeException {
 
     boolean isRetryable(boolean idempotent, Set<Error> retryableErrors) {
       for (Error retryableError : retryableErrors) {
-        boolean match = (retryableError.code() == null || retryableError.code().equals(this.code()))
-            && (retryableError.reason() == null || retryableError.reason().equals(this.reason()));
-        if (match && idempotent || match && retryableError.rejected()) {
-          return true;
+        if ((retryableError.code() == null || retryableError.code().equals(this.code()))
+            && (retryableError.reason() == null || retryableError.reason().equals(this.reason()))) {
+          return idempotent || retryableError.rejected();
         }
       }
       return false;
@@ -134,13 +133,7 @@ public class BaseServiceException extends RuntimeException {
   }
 
   public BaseServiceException(GoogleJsonError error, boolean idempotent) {
-    super(error.getMessage());
-    this.code = error.getCode();
-    this.reason = reason(error);
-    this.idempotent = idempotent;
-    this.retryable = isRetryable(idempotent, error);
-    this.location = null;
-    this.debugInfo = null;
+    this(error.getCode(), error.getMessage(), reason(error), idempotent);
   }
 
   public BaseServiceException(int code, String message, String reason, boolean idempotent) {
@@ -153,7 +146,7 @@ public class BaseServiceException extends RuntimeException {
     this.code = code;
     this.reason = reason;
     this.idempotent = idempotent;
-    this.retryable =  new Error(code, reason).isRetryable(idempotent, retryableErrors());
+    this.retryable = new Error(code, reason).isRetryable(idempotent, retryableErrors());
     this.location = null;
     this.debugInfo = null;
   }
@@ -162,13 +155,15 @@ public class BaseServiceException extends RuntimeException {
     return Collections.emptySet();
   }
 
-  protected boolean isRetryable(boolean idempotent, GoogleJsonError error) {
-    return error != null && error(error).isRetryable(idempotent, retryableErrors());
+  protected boolean isRetryable(boolean idempotent, Error error) {
+    return error != null && error.isRetryable(idempotent, retryableErrors());
   }
 
   protected boolean isRetryable(boolean idempotent, IOException exception) {
     if (exception instanceof GoogleJsonResponseException) {
-      return isRetryable(idempotent, (((GoogleJsonResponseException) exception).getDetails()));
+      GoogleJsonError googleJsonError = ((GoogleJsonResponseException) exception).getDetails();
+      return googleJsonError != null
+          && error(googleJsonError).isRetryable(idempotent, retryableErrors());
     }
     return idempotent && exception instanceof SocketTimeoutException;
   }
