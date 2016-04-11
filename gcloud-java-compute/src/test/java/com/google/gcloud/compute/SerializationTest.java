@@ -22,7 +22,6 @@ import static org.junit.Assert.assertNotSame;
 import com.google.common.collect.ImmutableList;
 import com.google.gcloud.AuthCredentials;
 import com.google.gcloud.RetryParams;
-import com.google.gcloud.compute.Zone.MaintenanceWindow;
 
 import org.junit.Test;
 
@@ -89,20 +88,12 @@ public class SerializationTest {
       .build();
   private static final ZoneId ZONE_ID = ZoneId.of("project", "zone");
   private static final Zone.Status ZONE_STATUS = Zone.Status.DOWN;
-  private static final Long BEGIN_TIME = 1453293420000L;
-  private static final Long END_TIME = 1453293480000L;
-  private static final MaintenanceWindow WINDOW1 = new MaintenanceWindow("NAME1", "DESCRIPTION1",
-      BEGIN_TIME, END_TIME);
-  private static final MaintenanceWindow WINDOW2 = new MaintenanceWindow("NAME2", "DESCRIPTION2",
-      BEGIN_TIME, END_TIME);
-  private static final List<MaintenanceWindow> WINDOWS = ImmutableList.of(WINDOW1, WINDOW2);
   private static final Zone ZONE = Zone.builder()
       .zoneId(ZONE_ID)
       .id(ID)
       .creationTimestamp(CREATION_TIMESTAMP)
       .description(DESCRIPTION)
       .status(ZONE_STATUS)
-      .maintenanceWindows(WINDOWS)
       .region(REGION_ID)
       .build();
   private static final DeprecationStatus<MachineTypeId> DEPRECATION_STATUS =
@@ -163,6 +154,8 @@ public class SerializationTest {
   private static final SnapshotDiskConfiguration SNAPSHOT_DISK_CONFIGURATION =
       SnapshotDiskConfiguration.of(SNAPSHOT_ID);
   private static final DiskInfo DISK_INFO = DiskInfo.of(DISK_ID, STANDARD_DISK_CONFIGURATION);
+  private static final Disk DISK =
+      new Disk.Builder(COMPUTE, DISK_ID, STANDARD_DISK_CONFIGURATION).build();
   private static final Compute.DiskTypeOption DISK_TYPE_OPTION =
       Compute.DiskTypeOption.fields();
   private static final Compute.DiskTypeFilter DISK_TYPE_FILTER =
@@ -212,6 +205,13 @@ public class SerializationTest {
       Compute.ImageFilter.equals(Compute.ImageField.SELF_LINK, "selfLink");
   private static final Compute.ImageListOption IMAGE_LIST_OPTION =
       Compute.ImageListOption.filter(IMAGE_FILTER);
+  private static final Compute.DiskOption DISK_OPTION = Compute.DiskOption.fields();
+  private static final Compute.DiskFilter DISK_FILTER =
+      Compute.DiskFilter.equals(Compute.DiskField.SELF_LINK, "selfLink");
+  private static final Compute.DiskListOption DISK_LIST_OPTION =
+      Compute.DiskListOption.filter(DISK_FILTER);
+  private static final Compute.DiskAggregatedListOption DISK_AGGREGATED_LIST_OPTION =
+      Compute.DiskAggregatedListOption.filter(DISK_FILTER);
 
   @Test
   public void testServiceOptions() throws Exception {
@@ -239,15 +239,16 @@ public class SerializationTest {
         INSTANCE_ID, REGION_FORWARDING_RULE_ID, GLOBAL_FORWARDING_RULE_ID, GLOBAL_ADDRESS_ID,
         REGION_ADDRESS_ID, INSTANCE_USAGE, GLOBAL_FORWARDING_USAGE, REGION_FORWARDING_USAGE,
         ADDRESS_INFO, ADDRESS, DISK_ID, SNAPSHOT_ID, SNAPSHOT_INFO, SNAPSHOT, IMAGE_ID,
-        DISK_IMAGE_CONFIGURATION, STORAGE_IMAGE_CONFIGURATION, IMAGE_INFO,
+        DISK_IMAGE_CONFIGURATION, STORAGE_IMAGE_CONFIGURATION, IMAGE_INFO, IMAGE,
         STANDARD_DISK_CONFIGURATION, IMAGE_DISK_CONFIGURATION, SNAPSHOT_DISK_CONFIGURATION,
-        DISK_INFO, IMAGE, DISK_TYPE_OPTION, DISK_TYPE_FILTER, DISK_TYPE_LIST_OPTION,
+        DISK_INFO, DISK, DISK_TYPE_OPTION, DISK_TYPE_FILTER, DISK_TYPE_LIST_OPTION,
         DISK_TYPE_AGGREGATED_LIST_OPTION, MACHINE_TYPE_OPTION, MACHINE_TYPE_FILTER,
         MACHINE_TYPE_LIST_OPTION, MACHINE_TYPE_AGGREGATED_LIST_OPTION, REGION_OPTION, REGION_FILTER,
         REGION_LIST_OPTION, ZONE_OPTION, ZONE_FILTER, ZONE_LIST_OPTION, LICENSE_OPTION,
         OPERATION_OPTION, OPERATION_FILTER, OPERATION_LIST_OPTION, ADDRESS_OPTION, ADDRESS_FILTER,
         ADDRESS_LIST_OPTION, ADDRESS_AGGREGATED_LIST_OPTION, SNAPSHOT_OPTION, SNAPSHOT_FILTER,
-        SNAPSHOT_LIST_OPTION, IMAGE_OPTION, IMAGE_FILTER, IMAGE_LIST_OPTION};
+        SNAPSHOT_LIST_OPTION, IMAGE_OPTION, IMAGE_FILTER, IMAGE_LIST_OPTION, DISK_OPTION,
+        DISK_FILTER, DISK_LIST_OPTION, DISK_AGGREGATED_LIST_OPTION};
     for (Serializable obj : objects) {
       Object copy = serializeAndDeserialize(obj);
       assertEquals(obj, obj);

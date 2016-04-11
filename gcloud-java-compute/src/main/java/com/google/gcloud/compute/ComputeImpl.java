@@ -313,6 +313,46 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
     }
   }
 
+  private static class DiskPageFetcher implements NextPageFetcher<Disk> {
+
+    private static final long serialVersionUID = 4146589787872718476L;
+    private final Map<ComputeRpc.Option, ?> requestOptions;
+    private final ComputeOptions serviceOptions;
+    private final String zone;
+
+    DiskPageFetcher(String zone, ComputeOptions serviceOptions, String cursor,
+        Map<ComputeRpc.Option, ?> optionMap) {
+      this.requestOptions =
+          PageImpl.nextRequestOptions(ComputeRpc.Option.PAGE_TOKEN, cursor, optionMap);
+      this.serviceOptions = serviceOptions;
+      this.zone = zone;
+    }
+
+    @Override
+    public Page<Disk> nextPage() {
+      return listDisks(zone, serviceOptions, requestOptions);
+    }
+  }
+
+  private static class AggregatedDiskPageFetcher implements NextPageFetcher<Disk> {
+
+    private static final long serialVersionUID = -5240045334115926206L;
+    private final Map<ComputeRpc.Option, ?> requestOptions;
+    private final ComputeOptions serviceOptions;
+
+    AggregatedDiskPageFetcher(ComputeOptions serviceOptions, String cursor,
+        Map<ComputeRpc.Option, ?> optionMap) {
+      this.requestOptions =
+          PageImpl.nextRequestOptions(ComputeRpc.Option.PAGE_TOKEN, cursor, optionMap);
+      this.serviceOptions = serviceOptions;
+    }
+
+    @Override
+    public Page<Disk> nextPage() {
+      return listDisks(serviceOptions, requestOptions);
+    }
+  }
+
   private final ComputeRpc computeRpc;
 
   ComputeImpl(ComputeOptions options) {
@@ -1153,6 +1193,141 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
             public com.google.api.services.compute.model.Operation call() {
               return computeRpc.deprecateImage(completeId.project(), completeId.image(),
                   deprecationStatus.toPb(), optionsMap);
+            }
+          }, options().retryParams(), EXCEPTION_HANDLER);
+      return answer == null ? null : Operation.fromPb(this, answer);
+    } catch (RetryHelper.RetryHelperException e) {
+      throw ComputeException.translateAndThrow(e);
+    }
+  }
+
+  @Override
+  public Disk get(final DiskId diskId, DiskOption... options) {
+    final Map<ComputeRpc.Option, ?> optionsMap = optionMap(options);
+    try {
+      com.google.api.services.compute.model.Disk answer =
+          runWithRetries(new Callable<com.google.api.services.compute.model.Disk>() {
+            @Override
+            public com.google.api.services.compute.model.Disk call() {
+              return computeRpc.getDisk(diskId.zone(), diskId.disk(), optionsMap);
+            }
+          }, options().retryParams(), EXCEPTION_HANDLER);
+      return answer == null ? null : Disk.fromPb(this, answer);
+    } catch (RetryHelper.RetryHelperException e) {
+      throw ComputeException.translateAndThrow(e);
+    }
+  }
+
+  @Override
+  public Operation create(final DiskInfo disk, OperationOption... options) {
+    final com.google.api.services.compute.model.Disk diskPb =
+        disk.setProjectId(options().projectId()).toPb();
+    final Map<ComputeRpc.Option, ?> optionsMap = optionMap(options);
+    try {
+      return Operation.fromPb(this,
+          runWithRetries(new Callable<com.google.api.services.compute.model.Operation>() {
+            @Override
+            public com.google.api.services.compute.model.Operation call() {
+              return computeRpc.createDisk(disk.diskId().zone(), diskPb, optionsMap);
+            }
+          }, options().retryParams(), EXCEPTION_HANDLER));
+    } catch (RetryHelper.RetryHelperException e) {
+      throw ComputeException.translateAndThrow(e);
+    }
+  }
+
+  private static Function<com.google.api.services.compute.model.Disk, Disk> diskFromPb(
+      final ComputeOptions serviceOptions) {
+    return new Function<com.google.api.services.compute.model.Disk, Disk>() {
+      @Override
+      public Disk apply(com.google.api.services.compute.model.Disk disk) {
+        return Disk.fromPb(serviceOptions.service(), disk);
+      }
+    };
+  }
+
+  @Override
+  public Page<Disk> listDisks(String zone, DiskListOption... options) {
+    return listDisks(zone, options(), optionMap(options));
+  }
+
+  private static Page<Disk> listDisks(final String zone, final ComputeOptions serviceOptions,
+      final Map<ComputeRpc.Option, ?> optionsMap) {
+    try {
+      ComputeRpc.Tuple<String, Iterable<com.google.api.services.compute.model.Disk>> result =
+          runWithRetries(new Callable<ComputeRpc.Tuple<String,
+              Iterable<com.google.api.services.compute.model.Disk>>>() {
+            @Override
+            public ComputeRpc.Tuple<String,
+                Iterable<com.google.api.services.compute.model.Disk>> call() {
+              return serviceOptions.rpc().listDisks(zone, optionsMap);
+            }
+          }, serviceOptions.retryParams(), EXCEPTION_HANDLER);
+      String cursor = result.x();
+      Iterable<Disk> disks = Iterables.transform(
+          result.y() == null ? ImmutableList.<com.google.api.services.compute.model.Disk>of()
+              : result.y(), diskFromPb(serviceOptions));
+      return new PageImpl<>(new DiskPageFetcher(zone, serviceOptions, cursor, optionsMap),
+          cursor, disks);
+    } catch (RetryHelper.RetryHelperException e) {
+      throw ComputeException.translateAndThrow(e);
+    }
+  }
+
+  @Override
+  public Page<Disk> listDisks(DiskAggregatedListOption... options) {
+    return listDisks(options(), optionMap(options));
+  }
+
+  private static Page<Disk> listDisks(final ComputeOptions serviceOptions,
+      final Map<ComputeRpc.Option, ?> optionsMap) {
+    try {
+      ComputeRpc.Tuple<String, Iterable<com.google.api.services.compute.model.Disk>> result =
+          runWithRetries(new Callable<ComputeRpc.Tuple<String,
+              Iterable<com.google.api.services.compute.model.Disk>>>() {
+            @Override
+            public ComputeRpc.Tuple<String,
+                Iterable<com.google.api.services.compute.model.Disk>> call() {
+              return serviceOptions.rpc().listDisks(optionsMap);
+            }
+          }, serviceOptions.retryParams(), EXCEPTION_HANDLER);
+      String cursor = result.x();
+      Iterable<Disk> disks = Iterables.transform(
+          result.y() == null ? ImmutableList.<com.google.api.services.compute.model.Disk>of()
+              : result.y(), diskFromPb(serviceOptions));
+      return new PageImpl<>(new AggregatedDiskPageFetcher(serviceOptions, cursor, optionsMap),
+          cursor, disks);
+    } catch (RetryHelper.RetryHelperException e) {
+      throw ComputeException.translateAndThrow(e);
+    }
+  }
+
+  @Override
+  public Operation delete(final DiskId disk, OperationOption... options) {
+    final Map<ComputeRpc.Option, ?> optionsMap = optionMap(options);
+    try {
+      com.google.api.services.compute.model.Operation answer =
+          runWithRetries(new Callable<com.google.api.services.compute.model.Operation>() {
+            @Override
+            public com.google.api.services.compute.model.Operation call() {
+              return computeRpc.deleteDisk(disk.zone(), disk.disk(), optionsMap);
+            }
+          }, options().retryParams(), EXCEPTION_HANDLER);
+      return answer == null ? null : Operation.fromPb(this, answer);
+    } catch (RetryHelper.RetryHelperException e) {
+      throw ComputeException.translateAndThrow(e);
+    }
+  }
+
+  @Override
+  public Operation resize(final DiskId disk, final long sizeGb, OperationOption... options) {
+    final Map<ComputeRpc.Option, ?> optionsMap = optionMap(options);
+    try {
+      com.google.api.services.compute.model.Operation answer =
+          runWithRetries(new Callable<com.google.api.services.compute.model.Operation>() {
+            @Override
+            public com.google.api.services.compute.model.Operation call() {
+              return computeRpc.resizeDisk(disk.zone(), disk.disk(), sizeGb, optionsMap);
             }
           }, options().retryParams(), EXCEPTION_HANDLER);
       return answer == null ? null : Operation.fromPb(this, answer);
