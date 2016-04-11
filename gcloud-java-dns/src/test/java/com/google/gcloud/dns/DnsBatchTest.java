@@ -41,7 +41,6 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.io.IOException;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -95,6 +94,7 @@ public class DnsBatchTest {
       CHANGE_REQUEST_COMPLETE.toPb(), CHANGE_REQUEST_COMPLETE.toPb());
   private static final List<ManagedZone> ZONE_LIST = ImmutableList.of(ZONE_INFO.toPb(),
       ZONE_INFO.toPb());
+  private final GoogleJsonError GOOGLE_JSON_ERROR = new GoogleJsonError();
 
   private DnsOptions optionsMock;
   private DnsRpc dnsRpcMock;
@@ -148,7 +148,7 @@ public class DnsBatchTest {
       // expected
     }
     RpcBatch.Callback<ManagedZonesListResponse> capturedCallback = callback.getValue();
-    capturedCallback.onFailure(new GoogleJsonError());
+    capturedCallback.onFailure(GOOGLE_JSON_ERROR);
     try {
       batchResult.get();
       fail("Should throw a DnsException on error.");
@@ -223,7 +223,7 @@ public class DnsBatchTest {
     }
     // testing error here, success is tested with options
     RpcBatch.Callback<ManagedZone> capturedCallback = callback.getValue();
-    capturedCallback.onFailure(new GoogleJsonError());
+    capturedCallback.onFailure(GOOGLE_JSON_ERROR);
     try {
       batchResult.get();
       fail("Should throw a DnsException on error.");
@@ -278,7 +278,7 @@ public class DnsBatchTest {
     }
     // testing error here, success is tested with options
     RpcBatch.Callback<ManagedZone> capturedCallback = callback.getValue();
-    capturedCallback.onFailure(new GoogleJsonError());
+    capturedCallback.onFailure(GOOGLE_JSON_ERROR);
     try {
       batchResult.get();
       fail("Should throw a DnsException on error.");
@@ -328,7 +328,7 @@ public class DnsBatchTest {
     }
     // testing error here, success is tested with options
     RpcBatch.Callback<Void> capturedCallback = callback.getValue();
-    capturedCallback.onFailure(new GoogleJsonError());
+    capturedCallback.onFailure(GOOGLE_JSON_ERROR);
     try {
       batchResult.get();
       fail("Should throw a DnsException on error.");
@@ -369,7 +369,7 @@ public class DnsBatchTest {
     }
     // testing error here, success is tested with options
     RpcBatch.Callback<Project> capturedCallback = callback.getValue();
-    capturedCallback.onFailure(new GoogleJsonError());
+    capturedCallback.onFailure(GOOGLE_JSON_ERROR);
     try {
       batchResult.get();
       fail("Should throw a DnsException on error.");
@@ -413,7 +413,7 @@ public class DnsBatchTest {
       // expected
     }
     RpcBatch.Callback<ResourceRecordSetsListResponse> capturedCallback = callback.getValue();
-    capturedCallback.onFailure(new GoogleJsonError());
+    capturedCallback.onFailure(GOOGLE_JSON_ERROR);
     try {
       batchResult.get();
       fail("Should throw a DnsException on error.");
@@ -480,7 +480,7 @@ public class DnsBatchTest {
       // expected
     }
     RpcBatch.Callback<ChangesListResponse> capturedCallback = callback.getValue();
-    capturedCallback.onFailure(new GoogleJsonError());
+    capturedCallback.onFailure(GOOGLE_JSON_ERROR);
     try {
       batchResult.get();
       fail("Should throw a DnsException on error.");
@@ -555,7 +555,7 @@ public class DnsBatchTest {
     }
     // testing error here, success is tested with options
     RpcBatch.Callback<Change> capturedCallback = callback.getValue();
-    capturedCallback.onFailure(new GoogleJsonError());
+    capturedCallback.onFailure(GOOGLE_JSON_ERROR);
     try {
       batchResult.get();
       fail("Should throw a DnsException on error.");
@@ -612,7 +612,7 @@ public class DnsBatchTest {
     }
     // testing error here, success is tested with options
     RpcBatch.Callback<Change> capturedCallback = callback.getValue();
-    capturedCallback.onFailure(new GoogleJsonError());
+    capturedCallback.onFailure(GOOGLE_JSON_ERROR);
     try {
       batchResult.get();
       fail("Should throw a DnsException on error.");
