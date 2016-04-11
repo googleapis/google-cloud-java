@@ -14,13 +14,14 @@
  * limitations under the License.
  */
 
-package com.google.gcloud.bigquery;
+package com.google.gcloud.bigquery.testing;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
+import com.google.gcloud.bigquery.BigQuery;
 import com.google.gcloud.bigquery.BigQuery.DatasetDeleteOption;
-import com.google.gcloud.bigquery.testing.RemoteBigQueryHelper;
+import com.google.gcloud.bigquery.BigQueryOptions;
 
 import org.easymock.EasyMock;
 import org.junit.Rule;

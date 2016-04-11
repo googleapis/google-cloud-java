@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-package com.google.gcloud.datastore;
+package com.google.gcloud.datastore.testing;
 
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
 import com.google.gcloud.AuthCredentials;
-import com.google.gcloud.datastore.testing.LocalDatastoreHelper;
+import com.google.gcloud.datastore.DatastoreOptions;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

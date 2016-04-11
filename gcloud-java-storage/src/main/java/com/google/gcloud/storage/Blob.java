@@ -526,7 +526,9 @@ public class Blob extends BlobInfo {
 
   @Override
   public final boolean equals(Object obj) {
-    return obj instanceof Blob && Objects.equals(toPb(), ((Blob) obj).toPb())
+    return this == obj
+        || obj instanceof Blob
+        && Objects.equals(toPb(), ((Blob) obj).toPb())
         && Objects.equals(options, ((Blob) obj).options);
   }
 
