@@ -55,8 +55,8 @@ public class CloudStorageConfigurationTest {
   public void testFromMap() {
     CloudStorageConfiguration config =
         CloudStorageConfiguration.fromMap(
+            "/omg",
             new ImmutableMap.Builder<String, Object>()
-                .put("workingDirectory", "/omg")
                 .put("permitEmptyPathComponents", true)
                 .put("stripPrefixSlash", false)
                 .put("usePseudoDirectories", false)
@@ -72,6 +72,6 @@ public class CloudStorageConfigurationTest {
   @Test
   public void testFromMap_badKey_throwsIae() {
     thrown.expect(IllegalArgumentException.class);
-    CloudStorageConfiguration.fromMap(ImmutableMap.of("lol", "/omg"));
+    CloudStorageConfiguration.fromMap(null, ImmutableMap.of("lol", "/omg"));
   }
 }

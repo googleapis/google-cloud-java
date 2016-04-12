@@ -26,9 +26,7 @@ import static com.google.gcloud.storage.contrib.nio.CloudStorageUtil.checkPath;
 import static com.google.gcloud.storage.contrib.nio.CloudStorageUtil.stripPathFromUri;
 
 import com.google.auto.service.AutoService;
-import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.MoreObjects;
-import com.google.common.base.Throwables;
 import com.google.common.primitives.Ints;
 import com.google.gcloud.storage.Acl;
 import com.google.gcloud.storage.BlobId;
@@ -69,50 +67,37 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
 
-import javax.annotation.Nullable;
 import javax.annotation.concurrent.ThreadSafe;
+import javax.inject.Inject;
+import javax.inject.Singleton;
 
 /**
  * Google Cloud Storage {@link FileSystemProvider} implementation.
+ *
+ * <p><b>Note:</b> This class should never be used directly. This class is instantiated by the
+ * service loader and called through a standardized API, e.g. {@link java.nio.file.Files}. However
+ * the javadocs in this class serve as useful documentation for the behavior of the GCS NIO library.
  */
+@Singleton
 @ThreadSafe
 @AutoService(FileSystemProvider.class)
 public final class CloudStorageFileSystemProvider extends FileSystemProvider {
 
   private final Storage storage;
 
-  // used only when we create a new instance of CloudStorageFileSystemProvider.
-  private static StorageOptions defaultStorageOptions;
-
-  /**
-   * Sets default options that are only used by the constructor.
-   */
-  @VisibleForTesting
-  public static void setGCloudOptions(StorageOptions newStorageOptions) {
-    defaultStorageOptions = newStorageOptions;
+  @Inject
+  CloudStorageFileSystemProvider(Storage storage) {
+    this.storage = storage;
   }
 
   /**
-   * Default constructor which should only be called by Java SPI.
+   * Constructs a new instance with the default options.
    *
-   * @see java.nio.file.FileSystems#getFileSystem(URI)
-   * @see CloudStorageFileSystem#forBucket(String)
+   * <p><b>Note:</b> This should <i>only</i> be called by the Java service loader. Please use
+   * {@link CloudStorageFileSystem#forBucket(String, CloudStorageConfiguration)} instead.
    */
   public CloudStorageFileSystemProvider() {
-    this(defaultStorageOptions);
-  }
-
-  CloudStorageFileSystemProvider(@Nullable StorageOptions explicitOptions) {
-    // explicit options have priority over default options.
-    if (explicitOptions == null) {
-      if (defaultStorageOptions == null) {
-        this.storage = StorageOptions.defaultInstance().service();
-      } else {
-        this.storage = defaultStorageOptions.service();
-      }
-    } else {
-      this.storage = explicitOptions.service();
-    }
+    this(StorageOptions.defaultInstance().service());
   }
 
   @Override
@@ -121,7 +106,7 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
   }
 
   /**
-   * Returns Cloud Storage file system, provided a URI with no path, e.g. {@code gs://bucket}.
+   * Calls {@link #newFileSystem(URI, Map)} with an empty configuration map.
    */
   @Override
   public CloudStorageFileSystem getFileSystem(URI uri) {
@@ -129,7 +114,21 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
   }
 
   /**
-   * Returns Cloud Storage file system, provided a URI with no path, e.g. {@code gs://bucket}.
+   * Returns Cloud Storage file system, provided a URI with no path.
+   *
+   * <p><b>Note:</b> This method should be invoked indirectly via the service provider by calling
+   * {@link java.nio.file.FileSystems#newFileSystem(URI, Map) FileSystems.newFileSystem()}; however,
+   * we recommend that you don't use the API if possible. The recommended approach is to write a
+   * dependency injection module that calls the statically-linked, type-safe version of this method:
+   * {@link CloudStorageFileSystem#forBucket(String, CloudStorageConfiguration)}. Please see that
+   * method for further documentation on creating GCS file systems.
+   *
+   * @param uri bucket and current working directory, e.g. {@code gs://bucket}
+   * @param env map of configuration options, whose keys correspond to the method names of
+   *     {@link CloudStorageConfiguration.Builder}. However you are not allowed to set the working
+   *     directory, as that should be provided in the {@code uri}
+   * @throws IllegalArgumentException if {@code uri} specifies a user, query, fragment, or scheme is
+   *     not {@value CloudStorageFileSystem#URI_SCHEME}
    */
   @Override
   public CloudStorageFileSystem newFileSystem(URI uri, Map<String, ?> env) {
@@ -142,14 +141,14 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
         !isNullOrEmpty(uri.getHost()), "%s:// URIs must have a host: %s", URI_SCHEME, uri);
     checkArgument(
         uri.getPort() == -1
-            && isNullOrEmpty(uri.getPath())
             && isNullOrEmpty(uri.getQuery())
             && isNullOrEmpty(uri.getFragment())
             && isNullOrEmpty(uri.getUserInfo()),
         "GCS FileSystem URIs mustn't have: port, userinfo, path, query, or fragment: %s",
         uri);
     checkBucket(uri.getHost());
-    return new CloudStorageFileSystem(this, uri.getHost(), CloudStorageConfiguration.fromMap(env));
+    return new CloudStorageFileSystem(
+        this, CloudStorageConfiguration.fromMap(uri.getPath(), env), uri.getHost());
   }
 
   @Override
@@ -503,9 +502,9 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
 
   @Override
   public Map<String, Object> readAttributes(Path path, String attributes, LinkOption... options) {
-    // Java 7 NIO defines at least eleven string attributes we'd want to support
-    // (eg. BasicFileAttributeView and PosixFileAttributeView), so rather than a partial
-    // implementation we rely on the other overload for now.
+    // TODO(#811): Java 7 NIO defines at least eleven string attributes we'd want to support (eg.
+    //             BasicFileAttributeView and PosixFileAttributeView), so rather than a partial
+    //             implementation we rely on the other overload for now.
     throw new UnsupportedOperationException();
   }
 
@@ -537,7 +536,7 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
    */
   @Override
   public DirectoryStream<Path> newDirectoryStream(Path dir, Filter<? super Path> filter) {
-    // TODO: Implement me.
+    // TODO(#813): Implement me.
     throw new UnsupportedOperationException();
   }
 
@@ -546,6 +545,7 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
    */
   @Override
   public void setAttribute(Path path, String attribute, Object value, LinkOption... options) {
+    // TODO(#811): Implement me.
     throw new CloudStorageObjectImmutableException();
   }
 
@@ -575,23 +575,16 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
   }
 
   private IOException asIOException(StorageException oops) {
+    // RPC API can only throw StorageException, but CloudStorageFileSystemProvider
+    // can only throw IOException. Square peg, round hole.
+    // TODO(#810): Research if other codes should be translated similarly.
     if (oops.code() == 404) {
       return new NoSuchFileException(oops.reason());
     }
-    // TODO: research if other codes should be translated to IOException.
-
-    // RPC API can only throw StorageException, but CloudStorageFileSystemProvider
-    // can only throw IOException. Square peg, round hole.
     Throwable cause = oops.getCause();
-    try {
-      if (cause instanceof FileAlreadyExistsException) {
-        throw new FileAlreadyExistsException(((FileAlreadyExistsException) cause).getReason());
-      }
-      // fallback
-      Throwables.propagateIfInstanceOf(oops.getCause(), IOException.class);
-    } catch (IOException okEx) {
-      return okEx;
+    if (cause instanceof FileAlreadyExistsException) {
+      return (FileAlreadyExistsException) cause;
     }
-    return new IOException(oops.getMessage(), oops);
+    return new IOException("Storage operation failed", oops);
   }
 }

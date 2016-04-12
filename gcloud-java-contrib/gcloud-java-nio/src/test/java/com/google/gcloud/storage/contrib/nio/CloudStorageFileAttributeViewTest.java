@@ -22,9 +22,8 @@ import static java.nio.charset.StandardCharsets.UTF_8;
 
 import com.google.common.testing.EqualsTester;
 import com.google.common.testing.NullPointerTester;
-import com.google.gcloud.storage.testing.LocalGcsHelper;
+import com.google.gcloud.storage.testing.FakeStorageRpc;
 
-import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
@@ -32,11 +31,10 @@ import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
 import java.io.IOException;
-import java.net.URI;
+import java.nio.file.FileSystem;
 import java.nio.file.Files;
 import java.nio.file.NoSuchFileException;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.nio.file.attribute.FileTime;
 
 /**
@@ -49,67 +47,76 @@ public class CloudStorageFileAttributeViewTest {
 
   @Rule public final ExpectedException thrown = ExpectedException.none();
 
-  private Path path;
-
-  @Before
-  public void before() {
-    CloudStorageFileSystemProvider.setGCloudOptions(LocalGcsHelper.options());
-    path = Paths.get(URI.create("gs://red/water"));
-  }
+  private final FakeStorageRpc storage = new FakeStorageRpc(true);
+  private final NioTestHelper helper = new NioTestHelper(storage);
 
   @Test
   public void testReadAttributes() throws IOException {
-    Files.write(path, HAPPY, withCacheControl("potato"));
-    CloudStorageFileAttributeView lazyAttributes =
-        Files.getFileAttributeView(path, CloudStorageFileAttributeView.class);
-    assertThat(lazyAttributes.readAttributes().cacheControl().get()).isEqualTo("potato");
+    try (FileSystem fs = helper.forBucket("red")) {
+      Path path = fs.getPath("/water");
+      Files.write(path, HAPPY, withCacheControl("potato"));
+      CloudStorageFileAttributeView lazyAttributes =
+          Files.getFileAttributeView(path, CloudStorageFileAttributeView.class);
+      assertThat(lazyAttributes.readAttributes().cacheControl().get()).isEqualTo("potato");
+    }
   }
 
   @Test
   public void testReadAttributes_notFound_throwsNoSuchFileException() throws IOException {
-    CloudStorageFileAttributeView lazyAttributes =
-        Files.getFileAttributeView(path, CloudStorageFileAttributeView.class);
-    thrown.expect(NoSuchFileException.class);
-    lazyAttributes.readAttributes();
+    try (FileSystem fs = helper.forBucket("red")) {
+      Path path = fs.getPath("/water");
+      CloudStorageFileAttributeView lazyAttributes =
+          Files.getFileAttributeView(path, CloudStorageFileAttributeView.class);
+      thrown.expect(NoSuchFileException.class);
+      lazyAttributes.readAttributes();
+    }
   }
 
   @Test
   public void testReadAttributes_pseudoDirectory() throws IOException {
-    Path dir = Paths.get(URI.create("gs://red/rum/"));
-    CloudStorageFileAttributeView lazyAttributes =
-        Files.getFileAttributeView(dir, CloudStorageFileAttributeView.class);
-    assertThat(lazyAttributes.readAttributes())
-        .isInstanceOf(CloudStoragePseudoDirectoryAttributes.class);
+    try (FileSystem fs = helper.forBucket("red")) {
+      Path dir = fs.getPath("/rum/");
+      CloudStorageFileAttributeView lazyAttributes =
+          Files.getFileAttributeView(dir, CloudStorageFileAttributeView.class);
+      assertThat(lazyAttributes.readAttributes())
+          .isInstanceOf(CloudStoragePseudoDirectoryAttributes.class);
+    }
   }
 
   @Test
   public void testName() throws IOException {
-    Files.write(path, HAPPY, withCacheControl("potato"));
-    CloudStorageFileAttributeView lazyAttributes =
-        Files.getFileAttributeView(path, CloudStorageFileAttributeView.class);
-    assertThat(lazyAttributes.name()).isEqualTo("gcs");
+    try (FileSystem fs = helper.forBucket("red")) {
+      Path path = fs.getPath("/water");
+      Files.write(path, HAPPY, withCacheControl("potato"));
+      CloudStorageFileAttributeView lazyAttributes =
+          Files.getFileAttributeView(path, CloudStorageFileAttributeView.class);
+      assertThat(lazyAttributes.name()).isEqualTo("gcs");
+    }
   }
 
   @Test
-  public void testEquals_equalsTester() {
-    new EqualsTester()
-        .addEqualityGroup(
-            Files.getFileAttributeView(
-                Paths.get(URI.create("gs://red/rum")), CloudStorageFileAttributeView.class),
-            Files.getFileAttributeView(
-                Paths.get(URI.create("gs://red/rum")), CloudStorageFileAttributeView.class))
-        .addEqualityGroup(
-            Files.getFileAttributeView(
-                Paths.get(URI.create("gs://red/lol/dog")), CloudStorageFileAttributeView.class))
-        .testEquals();
+  public void testEquals_equalsTester() throws IOException {
+    try (FileSystem fs = helper.forBucket("red")) {
+      new EqualsTester()
+          .addEqualityGroup(
+              Files.getFileAttributeView(fs.getPath("/rum"), CloudStorageFileAttributeView.class),
+              Files.getFileAttributeView(fs.getPath("/rum"), CloudStorageFileAttributeView.class))
+          .addEqualityGroup(
+              Files.getFileAttributeView(
+                  fs.getPath("/lol/dog"), CloudStorageFileAttributeView.class))
+          .testEquals();
+    }
   }
 
   @Test
-  public void testNullness() throws NoSuchMethodException, SecurityException {
-    new NullPointerTester()
-        .ignore(CloudStorageFileAttributeView.class.getMethod("equals", Object.class))
-        .setDefault(FileTime.class, FileTime.fromMillis(0))
-        .testAllPublicInstanceMethods(
-            Files.getFileAttributeView(path, CloudStorageFileAttributeView.class));
+  public void testNullness() throws NoSuchMethodException, SecurityException, IOException {
+    try (FileSystem fs = helper.forBucket("red")) {
+      Path path = fs.getPath("/water");
+      new NullPointerTester()
+          .ignore(CloudStorageFileAttributeView.class.getMethod("equals", Object.class))
+          .setDefault(FileTime.class, FileTime.fromMillis(0))
+          .testAllPublicInstanceMethods(
+              Files.getFileAttributeView(path, CloudStorageFileAttributeView.class));
+    }
   }
 }

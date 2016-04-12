@@ -28,18 +28,16 @@ import static java.nio.charset.StandardCharsets.UTF_8;
 
 import com.google.common.testing.NullPointerTester;
 import com.google.gcloud.storage.Acl;
-import com.google.gcloud.storage.testing.LocalGcsHelper;
+import com.google.gcloud.storage.testing.FakeStorageRpc;
 
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
 import java.io.IOException;
-import java.net.URI;
+import java.nio.file.FileSystem;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 
 /**
  * Unit tests for {@link CloudStorageOptions}.
@@ -47,77 +45,94 @@ import java.nio.file.Paths;
 @RunWith(JUnit4.class)
 public class CloudStorageOptionsTest {
 
-  @Before
-  public void before() {
-    CloudStorageFileSystemProvider.setGCloudOptions(LocalGcsHelper.options());
-  }
+  private final FakeStorageRpc storage = new FakeStorageRpc(true);
+  private final NioTestHelper helper = new NioTestHelper(storage);
 
   @Test
   public void testWithoutCaching() throws IOException {
-    Path path = Paths.get(URI.create("gs://bucket/path"));
-    Files.write(path, "(✿◕ ‿◕ )ノ".getBytes(UTF_8), withoutCaching());
-    assertThat(Files.readAttributes(path, CloudStorageFileAttributes.class).cacheControl().get())
-        .isEqualTo("no-cache");
+    try (FileSystem fs = helper.forBucket("bucket")) {
+      Path path = fs.getPath("/path");
+      Files.write(path, "(✿◕ ‿◕ )ノ".getBytes(UTF_8), withoutCaching());
+      assertThat(Files.readAttributes(path, CloudStorageFileAttributes.class).cacheControl().get())
+          .isEqualTo("no-cache");
+    }
   }
 
   @Test
   public void testCacheControl() throws IOException {
-    Path path = Paths.get(URI.create("gs://bucket/path"));
-    Files.write(path, "(✿◕ ‿◕ )ノ".getBytes(UTF_8), withCacheControl("potato"));
-    assertThat(Files.readAttributes(path, CloudStorageFileAttributes.class).cacheControl().get())
-        .isEqualTo("potato");
+    try (FileSystem fs = helper.forBucket("bucket")) {
+      Path path = fs.getPath("/path");
+      Files.write(path, "(✿◕ ‿◕ )ノ".getBytes(UTF_8), withCacheControl("potato"));
+      assertThat(Files.readAttributes(path, CloudStorageFileAttributes.class).cacheControl().get())
+          .isEqualTo("potato");
+    }
   }
 
   @Test
   public void testWithAcl() throws IOException {
-    Path path = Paths.get(URI.create("gs://bucket/path"));
-    Acl acl = Acl.of(new Acl.User("king@example.com"), Acl.Role.OWNER);
-    Files.write(path, "(✿◕ ‿◕ )ノ".getBytes(UTF_8), withAcl(acl));
-    assertThat(Files.readAttributes(path, CloudStorageFileAttributes.class).acl().get())
-        .contains(acl);
+    try (FileSystem fs = helper.forBucket("bucket")) {
+      Path path = fs.getPath("/path");
+      Acl acl = Acl.of(new Acl.User("king@example.com"), Acl.Role.OWNER);
+      Files.write(path, "(✿◕ ‿◕ )ノ".getBytes(UTF_8), withAcl(acl));
+      assertThat(Files.readAttributes(path, CloudStorageFileAttributes.class).acl().get())
+          .contains(acl);
+    }
   }
 
   @Test
   public void testWithContentDisposition() throws IOException {
-    Path path = Paths.get(URI.create("gs://bucket/path"));
-    Files.write(path, "(✿◕ ‿◕ )ノ".getBytes(UTF_8), withContentDisposition("bubbly fun"));
-    assertThat(
-            Files.readAttributes(path, CloudStorageFileAttributes.class).contentDisposition().get())
-        .isEqualTo("bubbly fun");
+    try (FileSystem fs = helper.forBucket("bucket")) {
+      Path path = fs.getPath("/path");
+      Files.write(path, "(✿◕ ‿◕ )ノ".getBytes(UTF_8), withContentDisposition("bubbly fun"));
+      assertThat(
+              Files.readAttributes(path, CloudStorageFileAttributes.class)
+                  .contentDisposition()
+                  .get())
+          .isEqualTo("bubbly fun");
+    }
   }
 
   @Test
   public void testWithContentEncoding() throws IOException {
-    Path path = Paths.get(URI.create("gs://bucket/path"));
-    Files.write(path, "(✿◕ ‿◕ )ノ".getBytes(UTF_8), withContentEncoding("gzip"));
-    assertThat(Files.readAttributes(path, CloudStorageFileAttributes.class).contentEncoding().get())
-        .isEqualTo("gzip");
+    try (FileSystem fs = helper.forBucket("bucket")) {
+      Path path = fs.getPath("/path");
+      Files.write(path, "(✿◕ ‿◕ )ノ".getBytes(UTF_8), withContentEncoding("gzip"));
+      assertThat(
+              Files.readAttributes(path, CloudStorageFileAttributes.class).contentEncoding().get())
+          .isEqualTo("gzip");
+    }
   }
 
   @Test
   public void testWithUserMetadata() throws IOException {
-    Path path = Paths.get(URI.create("gs://bucket/path"));
-    Files.write(
-        path,
-        "(✿◕ ‿◕ )ノ".getBytes(UTF_8),
-        withUserMetadata("nolo", "contendere"),
-        withUserMetadata("eternal", "sadness"));
-    assertThat(
-            Files.readAttributes(path, CloudStorageFileAttributes.class).userMetadata().get("nolo"))
-        .isEqualTo("contendere");
-    assertThat(
-            Files.readAttributes(path, CloudStorageFileAttributes.class)
-                .userMetadata()
-                .get("eternal"))
-        .isEqualTo("sadness");
+    try (FileSystem fs = helper.forBucket("bucket")) {
+      Path path = fs.getPath("/path");
+      Files.write(
+          path,
+          "(✿◕ ‿◕ )ノ".getBytes(UTF_8),
+          withUserMetadata("nolo", "contendere"),
+          withUserMetadata("eternal", "sadness"));
+      assertThat(
+              Files.readAttributes(path, CloudStorageFileAttributes.class)
+                  .userMetadata()
+                  .get("nolo"))
+          .isEqualTo("contendere");
+      assertThat(
+              Files.readAttributes(path, CloudStorageFileAttributes.class)
+                  .userMetadata()
+                  .get("eternal"))
+          .isEqualTo("sadness");
+    }
   }
 
   @Test
   public void testWithMimeType_string() throws IOException {
-    Path path = Paths.get(URI.create("gs://bucket/path"));
-    Files.write(path, "(✿◕ ‿◕ )ノ".getBytes(UTF_8), withMimeType("text/plain"));
-    assertThat(Files.readAttributes(path, CloudStorageFileAttributes.class).mimeType().get())
-        .isEqualTo("text/plain");
+    try (FileSystem fs = helper.forBucket("bucket")) {
+      Path path = fs.getPath("/path");
+      Files.write(path, "(✿◕ ‿◕ )ノ".getBytes(UTF_8), withMimeType("text/plain"));
+      assertThat(Files.readAttributes(path, CloudStorageFileAttributes.class).mimeType().get())
+          .isEqualTo("text/plain");
+    }
   }
 
   @Test

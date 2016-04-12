@@ -8,7 +8,6 @@ import com.google.gcloud.storage.BlobInfo;
 import com.google.gcloud.storage.BucketInfo;
 import com.google.gcloud.storage.Storage;
 import com.google.gcloud.storage.StorageOptions;
-import com.google.gcloud.storage.contrib.nio.CloudStorageConfiguration;
 import com.google.gcloud.storage.contrib.nio.CloudStorageFileSystem;
 import com.google.gcloud.storage.testing.RemoteGcsHelper;
 
@@ -24,12 +23,14 @@ import java.io.EOFException;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
+import java.net.URI;
 import java.nio.ByteBuffer;
 import java.nio.channels.ReadableByteChannel;
 import java.nio.channels.SeekableByteChannel;
 import java.nio.file.Files;
 import java.nio.file.NoSuchFileException;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.Arrays;
 import java.util.List;
@@ -39,64 +40,63 @@ import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-
 /**
- * Integration test for gcloud-nio. This test actually talks to GCS (you need an account).
- * Tests both reading and writing.
+ * Integration test for gcloud-nio.
  *
- * You *must* set the GOOGLE_APPLICATION_CREDENTIALS environment variable
- * for this test to work. It must contain the name of a local file that contains
- * your Service Account JSON Key.
+ * <p>This test actually talks to GCS (you need an account) and tests both reading and writing. You
+ * *must* set the {@code GOOGLE_APPLICATION_CREDENTIALS} environment variable for this test to work.
+ * It must contain the name of a local file that contains your Service Account JSON Key.
  *
- * The instructions for how to get the Service Account JSON Key are
- * at https://cloud.google.com/storage/docs/authentication?hl=en#service_accounts
+ * <p>The instructions for how to get the Service Account JSON Key are
+ * <a href="https://cloud.google.com/storage/docs/authentication?hl=en#service_accounts">here</a>.
  *
- * The short version is this: go to cloud.google.com/console,
- * select your project, search for "API manager", click "Credentials",
- * click "create credentials/service account key", new service account,
- * JSON. The contents of the file that's sent to your browsers is your
- * "Service Account JSON Key".
- *
+ * <p>The short version is this: go to <a href="https://cloud.google.com/console">Cloud Console</a>,
+ * select your project, search for "API manager", click "Credentials", click "create
+ * credentials/service account key", new service account, JSON. The contents of the file that's sent
+ * to your browsers is your "Service Account JSON Key".
  */
 @RunWith(JUnit4.class)
+@SuppressWarnings("resource")
 public class ITGcsNio {
 
-  private static final List<String> FILE_CONTENTS = ImmutableList.of(
-      "Tous les êtres humains naissent libres et égaux en dignité et en droits.",
-      "Ils sont doués de raison et de conscience et doivent agir ",
-      "les uns envers les autres dans un esprit de fraternité.");
+  private static final List<String> FILE_CONTENTS =
+      ImmutableList.of(
+          "Tous les êtres humains naissent libres et égaux en dignité et en droits.",
+          "Ils sont doués de raison et de conscience et doivent agir ",
+          "les uns envers les autres dans un esprit de fraternité.");
 
-  private static final Logger log = Logger.getLogger(ITGcsNio.class.getName());
-  private static final String BUCKET = RemoteGcsHelper.generateBucketName();
   private static final String SML_FILE = "tmp-test-small-file.txt";
   private static final int SML_SIZE = 100;
-  // it's big, relatively speaking.
-  private static final String BIG_FILE = "tmp-test-big-file.txt";
-  // arbitrary size that's not too round.
-  private static final int BIG_SIZE = 2 * 1024 * 1024 - 50;
+  private static final String BIG_FILE = "tmp-test-big-file.txt"; // it's big, relatively speaking.
+  private static final int BIG_SIZE = 2 * 1024 * 1024 - 50; // arbitrary size that's not too round.
   private static final String PREFIX = "tmp-test-file";
+
+  private static final Logger logger = Logger.getLogger(ITGcsNio.class.getName());
+  private static final Random random = new Random();
+
+  private static String bucket;
   private static Storage storage;
   private static StorageOptions storageOptions;
 
-  private final Random rnd = new Random();
-
   @BeforeClass
-  public static void beforeClass() throws IOException {
+  public static void beforeClass() {
+    bucket = RemoteGcsHelper.generateBucketName();
     // loads the credentials from local disk as par README
     RemoteGcsHelper gcsHelper = RemoteGcsHelper.create();
     storageOptions = gcsHelper.options();
     storage = storageOptions.service();
     // create and populate test bucket
-    storage.create(BucketInfo.of(BUCKET));
+    storage.create(BucketInfo.of(bucket));
     fillFile(storage, SML_FILE, SML_SIZE);
     fillFile(storage, BIG_FILE, BIG_SIZE);
   }
 
   @AfterClass
   public static void afterClass() throws ExecutionException, InterruptedException {
-    if (storage != null && !RemoteGcsHelper.forceDelete(storage, BUCKET, 5, TimeUnit.SECONDS) &&
-      log.isLoggable(Level.WARNING)) {
-        log.log(Level.WARNING, "Deletion of bucket {0} timed out, bucket is not empty", BUCKET);
+    if (storage != null
+        && !RemoteGcsHelper.forceDelete(storage, bucket, 5, TimeUnit.SECONDS)
+        && logger.isLoggable(Level.WARNING)) {
+      logger.log(Level.WARNING, "Deletion of bucket {0} timed out, bucket is not empty", bucket);
     }
   }
 
@@ -106,27 +106,33 @@ public class ITGcsNio {
     return bytes;
   }
 
-  private static void fillFile(Storage storage, String fname, int size) throws IOException {
-    storage.create(BlobInfo.builder(BUCKET, fname).build(), randomContents(size));
+  private static void fillFile(Storage storage, String fname, int size) {
+    storage.create(BlobInfo.builder(bucket, fname).build(), randomContents(size));
   }
 
   @Test
-  public void testFileExists() throws IOException {
-    CloudStorageFileSystem testBucket = getTestBucket();
+  public void testFileExists() {
+    CloudStorageFileSystem testBucket = CloudStorageFileSystem.forBucket(bucket);
     Path path = testBucket.getPath(SML_FILE);
     assertThat(Files.exists(path)).isTrue();
   }
 
   @Test
+  public void testFileExistsUsingSpi() {
+    Path path = Paths.get(URI.create(String.format("gs://%s/%s", bucket, SML_FILE)));
+    assertThat(Files.exists(path)).isTrue();
+  }
+
+  @Test
   public void testFileSize() throws IOException {
-    CloudStorageFileSystem testBucket = getTestBucket();
+    CloudStorageFileSystem testBucket = CloudStorageFileSystem.forBucket(bucket);
     Path path = testBucket.getPath(SML_FILE);
     assertThat(Files.size(path)).isEqualTo(SML_SIZE);
   }
 
   @Test(timeout = 60_000)
   public void testReadByteChannel() throws IOException {
-    CloudStorageFileSystem testBucket = getTestBucket();
+    CloudStorageFileSystem testBucket = CloudStorageFileSystem.forBucket(bucket);
     Path path = testBucket.getPath(SML_FILE);
     long size = Files.size(path);
     SeekableByteChannel chan = Files.newByteChannel(path, StandardOpenOption.READ);
@@ -152,7 +158,7 @@ public class ITGcsNio {
 
   @Test
   public void testSeek() throws IOException {
-    CloudStorageFileSystem testBucket = getTestBucket();
+    CloudStorageFileSystem testBucket = CloudStorageFileSystem.forBucket(bucket);
     Path path = testBucket.getPath(BIG_FILE);
     int size = BIG_SIZE;
     byte[] contents = randomContents(size);
@@ -181,7 +187,7 @@ public class ITGcsNio {
 
   @Test
   public void testCreate() throws IOException {
-    CloudStorageFileSystem testBucket = getTestBucket();
+    CloudStorageFileSystem testBucket = CloudStorageFileSystem.forBucket(bucket);
     Path path = testBucket.getPath(PREFIX + randomSuffix());
     // file shouldn't exist initially. If it does it's either because it's a leftover
     // from a previous run (so we should delete the file)
@@ -203,7 +209,7 @@ public class ITGcsNio {
 
   @Test
   public void testWrite() throws IOException {
-    CloudStorageFileSystem testBucket = getTestBucket();
+    CloudStorageFileSystem testBucket = CloudStorageFileSystem.forBucket(bucket);
     Path path = testBucket.getPath(PREFIX + randomSuffix());
     // file shouldn't exist initially. If it does it's either because it's a leftover
     // from a previous run (so we should delete the file)
@@ -235,7 +241,7 @@ public class ITGcsNio {
 
   @Test
   public void testCreateAndWrite() throws IOException {
-    CloudStorageFileSystem testBucket = getTestBucket();
+    CloudStorageFileSystem testBucket = CloudStorageFileSystem.forBucket(bucket);
     Path path = testBucket.getPath(PREFIX + randomSuffix());
     // file shouldn't exist initially (see above).
     assertThat(Files.exists(path)).isFalse();
@@ -264,7 +270,7 @@ public class ITGcsNio {
 
   @Test
   public void testWriteOnClose() throws Exception {
-    CloudStorageFileSystem testBucket = getTestBucket();
+    CloudStorageFileSystem testBucket = CloudStorageFileSystem.forBucket(bucket);
     Path path = testBucket.getPath(PREFIX + randomSuffix());
     // file shouldn't exist initially (see above)
     assertThat(Files.exists(path)).isFalse();
@@ -298,7 +304,7 @@ public class ITGcsNio {
 
   @Test
   public void testCopy() throws IOException {
-    CloudStorageFileSystem testBucket = getTestBucket();
+    CloudStorageFileSystem testBucket = CloudStorageFileSystem.forBucket(bucket);
     Path src = testBucket.getPath(SML_FILE);
     Path dst = testBucket.getPath(PREFIX + randomSuffix());
     // file shouldn't exist initially (see above).
@@ -332,21 +338,6 @@ public class ITGcsNio {
   }
 
   private String randomSuffix() {
-    return "-" + rnd.nextInt(99999);
+    return "-" + random.nextInt(99999);
   }
-
-
-  private CloudStorageFileSystem getTestBucket() throws IOException {
-    // in typical usage we use the single-argument version of forBucket
-    // and rely on the user being logged into their project with the
-    // gcloud tool, and then everything authenticates automagically
-    // (or we just use paths that start with "gs://" and rely on NIO's magic).
-    //
-    // However for the tests we want to be able to run in automated environments
-    // where we can set environment variables but not necessarily install gcloud
-    // or run it. That's why we're setting the credentials programmatically.
-    return CloudStorageFileSystem.forBucket(
-        BUCKET, CloudStorageConfiguration.DEFAULT, storageOptions);
-  }
-
 }
