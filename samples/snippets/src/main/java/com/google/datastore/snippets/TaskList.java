@@ -16,16 +16,16 @@
 
 package com.google.datastore.snippets;
 
-import com.google.gcloud.datastore.Datastore;
-import com.google.gcloud.datastore.DatastoreOptions;
-import com.google.gcloud.datastore.DateTime;
-import com.google.gcloud.datastore.Entity;
-import com.google.gcloud.datastore.Key;
-import com.google.gcloud.datastore.KeyFactory;
-import com.google.gcloud.datastore.Query;
-import com.google.gcloud.datastore.StringValue;
-import com.google.gcloud.datastore.StructuredQuery.OrderBy;
-import com.google.gcloud.datastore.Transaction;
+import com.google.cloud.datastore.Datastore;
+import com.google.cloud.datastore.DatastoreOptions;
+import com.google.cloud.datastore.DateTime;
+import com.google.cloud.datastore.Entity;
+import com.google.cloud.datastore.Key;
+import com.google.cloud.datastore.KeyFactory;
+import com.google.cloud.datastore.Query;
+import com.google.cloud.datastore.StringValue;
+import com.google.cloud.datastore.StructuredQuery.OrderBy;
+import com.google.cloud.datastore.Transaction;
 
 import java.util.ArrayList;
 import java.util.Iterator;
