@@ -19,7 +19,7 @@ if [ "${TRAVIS_JDK_VERSION}" == "oraclejdk7" ]; then
         fi
         if [ "${SITE_VERSION##*-}" != "SNAPSHOT" ]; then
             # Deploy Maven artifacts (if they don't exist yet) and update artifact version in READMEs.
-            URL=https://oss.sonatype.org/content/repositories/releases/com/google/gcloud/gcloud-java/$SITE_VERSION/
+            URL=https://oss.sonatype.org/content/repositories/releases/com/google/cloud/gcloud-java/$SITE_VERSION/
             if curl --output /dev/null --silent --head --fail "$URL"; then
                 echo "Not deploying artifacts because it seems like they already exist."
                 echo "Existence was checked using the url $URL"

@@ -8,7 +8,7 @@
     Core module for the gcloud-java.
   </description>
   <parent>
-    <groupId>com.google.gcloud</groupId>
+    <groupId>com.google.cloud</groupId>
     <artifactId>gcloud-java-pom</artifactId>
     <version>0.1.8-SNAPSHOT</version>
   </parent>

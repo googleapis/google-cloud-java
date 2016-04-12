@@ -5,30 +5,30 @@ This module provides common functionality required by service-specific modules o
 
 [![Build Status](https://travis-ci.org/GoogleCloudPlatform/gcloud-java.svg?branch=master)](https://travis-ci.org/GoogleCloudPlatform/gcloud-java)
 [![Coverage Status](https://coveralls.io/repos/GoogleCloudPlatform/gcloud-java/badge.svg?branch=master)](https://coveralls.io/r/GoogleCloudPlatform/gcloud-java?branch=master)
-[![Maven](https://img.shields.io/maven-central/v/com.google.gcloud/gcloud-java-core.svg)](https://img.shields.io/maven-central/v/com.google.gcloud/gcloud-java-core.svg)
+[![Maven](https://img.shields.io/maven-central/v/com.google.cloud/gcloud-java-core.svg)](https://img.shields.io/maven-central/v/com.google.cloud/gcloud-java-core.svg)
 [![Codacy Badge](https://api.codacy.com/project/badge/grade/9da006ad7c3a4fe1abd142e77c003917)](https://www.codacy.com/app/mziccard/gcloud-java)
 [![Dependency Status](https://www.versioneye.com/user/projects/56bd8ee72a29ed002d2b0969/badge.svg?style=flat)](https://www.versioneye.com/user/projects/56bd8ee72a29ed002d2b0969)
 
 -  [Homepage] (https://googlecloudplatform.github.io/gcloud-java/)
--  [API Documentation] (http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/gcloud/package-summary.html)
+-  [API Documentation] (http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/cloud/package-summary.html)
 
 Quickstart
 ----------
 If you are using Maven, add this to your pom.xml file
 ```xml
 <dependency>
-  <groupId>com.google.gcloud</groupId>
+  <groupId>com.google.cloud</groupId>
   <artifactId>gcloud-java-core</artifactId>
   <version>0.1.7</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.gcloud:gcloud-java-core:0.1.7'
+compile 'com.google.cloud:gcloud-java-core:0.1.7'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.gcloud" % "gcloud-java-core" % "0.1.7"
+libraryDependencies += "com.google.cloud" % "gcloud-java-core" % "0.1.7"
 ```
 
 Troubleshooting
