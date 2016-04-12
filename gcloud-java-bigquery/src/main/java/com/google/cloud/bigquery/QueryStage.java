@@ -373,8 +373,9 @@ public class QueryStage implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(computeRatioAvg, computeRatioMax, generatedId, name, readRatioAvg, readRatioMax,
-        recordsRead, recordsWritten, steps, waitRatioAvg, waitRatioMax, writeRatioAvg);
+    return Objects.hash(computeRatioAvg, computeRatioMax, generatedId, name, readRatioAvg,
+        readRatioMax, recordsRead, recordsWritten, steps, waitRatioAvg, waitRatioMax,
+        writeRatioAvg);
   }
 
   @Override
