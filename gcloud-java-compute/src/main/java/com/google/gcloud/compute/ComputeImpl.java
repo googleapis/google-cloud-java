@@ -28,7 +28,7 @@ import com.google.gcloud.Page;
 import com.google.gcloud.PageImpl;
 import com.google.gcloud.PageImpl.NextPageFetcher;
 import com.google.gcloud.RetryHelper;
-import com.google.gcloud.spi.ComputeRpc;
+import com.google.gcloud.compute.spi.ComputeRpc;
 
 import java.util.Map;
 import java.util.concurrent.Callable;

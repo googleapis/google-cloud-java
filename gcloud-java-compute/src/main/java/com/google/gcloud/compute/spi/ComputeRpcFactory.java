@@ -14,9 +14,10 @@
  * limitations under the License.
  */
 
-package com.google.gcloud.spi;
+package com.google.gcloud.compute.spi;
 
 import com.google.gcloud.compute.ComputeOptions;
+import com.google.gcloud.spi.ServiceRpcFactory;
 
 /**
  * An interface for Compute RPC factory.

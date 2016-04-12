@@ -16,9 +16,9 @@
 
 package com.google.gcloud.compute;
 
-import static com.google.gcloud.spi.ComputeRpc.Option.FILTER;
-import static com.google.gcloud.spi.ComputeRpc.Option.MAX_RESULTS;
-import static com.google.gcloud.spi.ComputeRpc.Option.PAGE_TOKEN;
+import static com.google.gcloud.compute.spi.ComputeRpc.Option.FILTER;
+import static com.google.gcloud.compute.spi.ComputeRpc.Option.MAX_RESULTS;
+import static com.google.gcloud.compute.spi.ComputeRpc.Option.PAGE_TOKEN;
 import static org.easymock.EasyMock.capture;
 import static org.easymock.EasyMock.eq;
 import static org.junit.Assert.assertArrayEquals;
@@ -71,9 +71,9 @@ import com.google.gcloud.compute.Compute.ZoneOption;
 import com.google.gcloud.compute.Operation.OperationError;
 import com.google.gcloud.compute.Operation.OperationWarning;
 import com.google.gcloud.compute.Operation.Status;
-import com.google.gcloud.spi.ComputeRpc;
-import com.google.gcloud.spi.ComputeRpc.Tuple;
-import com.google.gcloud.spi.ComputeRpcFactory;
+import com.google.gcloud.compute.spi.ComputeRpc;
+import com.google.gcloud.compute.spi.ComputeRpc.Tuple;
+import com.google.gcloud.compute.spi.ComputeRpcFactory;
 
 import org.easymock.Capture;
 import org.easymock.EasyMock;

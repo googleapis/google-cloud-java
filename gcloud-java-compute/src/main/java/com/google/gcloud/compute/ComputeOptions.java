@@ -18,9 +18,9 @@ package com.google.gcloud.compute;
 
 import com.google.common.collect.ImmutableSet;
 import com.google.gcloud.ServiceOptions;
-import com.google.gcloud.spi.ComputeRpc;
-import com.google.gcloud.spi.ComputeRpcFactory;
-import com.google.gcloud.spi.DefaultComputeRpc;
+import com.google.gcloud.compute.spi.ComputeRpc;
+import com.google.gcloud.compute.spi.ComputeRpcFactory;
+import com.google.gcloud.compute.spi.DefaultComputeRpc;
 
 import java.util.Set;
 
