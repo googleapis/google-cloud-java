@@ -25,6 +25,9 @@ This client supports the following Google Cloud Platform services:
 
 Quickstart
 ----------
+
+> As of April 12th, 2016, `gcloud-java`'s group ID and base package were renamed to `com.google.cloud`. If you haven't already, please update your dependencies.
+
 If you are using Maven, add this to your pom.xml file
 ```xml
 <dependency>
