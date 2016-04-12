@@ -34,9 +34,9 @@ if [ "${TRAVIS_JDK_VERSION}" == "oraclejdk7" ]; then
 
             cd ..
             utilities/update_docs_version.sh # Update version in READMEs
-            mvn clean deploy --settings ~/.m2/settings.xml -P sign-deploy
+            mvn clean deploy --settings ~/.m2/settings.xml -P sign-deploy,release
         else
-            mvn clean deploy -DskipTests=true -Dgpg.skip=true --settings ~/.m2/settings.xml
+            mvn clean deploy -DskipTests=true -Dgpg.skip=true --settings ~/.m2/settings.xml -P release
         fi
     else
         echo "Not deploying artifacts. This is only done with non-pull-request commits to master branch with Oracle Java 7 builds."
