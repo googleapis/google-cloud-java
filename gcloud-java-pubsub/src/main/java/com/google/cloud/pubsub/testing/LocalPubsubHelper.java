@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.gcloud.pubsub.testing;
+package com.google.cloud.pubsub.testing;
 
 import com.google.api.gax.testing.DownloadableEmulatorRunner;
 import com.google.api.gax.testing.GCloudEmulatorRunner;
