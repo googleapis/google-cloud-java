@@ -31,7 +31,7 @@
  * Happy editing!
  */
 
-package com.google.gcloud.logging.spi.v2;
+package com.google.cloud.logging.spi.v2;
 
 import com.google.api.MonitoredResource;
 import com.google.api.MonitoredResourceDescriptor;

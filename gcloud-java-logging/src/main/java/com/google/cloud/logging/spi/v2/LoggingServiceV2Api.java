@@ -31,7 +31,7 @@
  * Happy editing!
  */
 
-package com.google.gcloud.logging.spi.v2;
+package com.google.cloud.logging.spi.v2;
 
 import com.google.api.MonitoredResource;
 import com.google.api.MonitoredResourceDescriptor;
@@ -46,9 +46,7 @@ import com.google.logging.v2.LogEntry;
 import com.google.logging.v2.WriteLogEntriesRequest;
 import com.google.logging.v2.WriteLogEntriesResponse;
 import com.google.protobuf.Empty;
-
 import io.grpc.ManagedChannel;
-
 import java.io.Closeable;
 import java.io.IOException;
 import java.util.ArrayList;
