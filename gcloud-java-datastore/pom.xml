@@ -4,6 +4,7 @@
   <artifactId>gcloud-java-datastore</artifactId>
   <packaging>jar</packaging>
   <name>GCloud Java datastore</name>
+  <url>https://github.com/GoogleCloudPlatform/gcloud-java/tree/master/gcloud-java-datastore</url>
   <description>
     Java idiomatic client for Google Cloud Datastore.
   </description>

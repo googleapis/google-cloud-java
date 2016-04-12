@@ -4,6 +4,7 @@
   <artifactId>gcloud-java-bigquery</artifactId>
   <packaging>jar</packaging>
   <name>GCloud Java bigquery</name>
+  <url>https://github.com/GoogleCloudPlatform/gcloud-java/tree/master/gcloud-java-bigquery</url>
   <description>
     Java idiomatic client for Google Cloud BigQuery.
   </description>

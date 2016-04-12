@@ -6,6 +6,7 @@
   <artifactId>gcloud-java-dns</artifactId>
   <packaging>jar</packaging>
   <name>GCloud Java DNS</name>
+  <url>https://github.com/GoogleCloudPlatform/gcloud-java/tree/master/gcloud-java-dns</url>
   <description>
     Java idiomatic client for Google Cloud DNS.
   </description>
