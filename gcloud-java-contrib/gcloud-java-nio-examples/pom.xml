@@ -3,7 +3,8 @@
   <modelVersion>4.0.0</modelVersion>
   <artifactId>gcloud-java-nio-examples</artifactId>
   <packaging>jar</packaging>
-  <name>GCloud Java NIO example</name>
+  <name>GCloud Java NIO examples</name>
+  <url>https://github.com/GoogleCloudPlatform/gcloud-java/tree/master/gcloud-java-contrib/gcloud-java-nio-examples</url>
   <description>
     Demonstrates how to use the gcloud-java-nio jar to add GCS functionality to legacy code.
   </description>

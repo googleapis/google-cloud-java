@@ -4,6 +4,7 @@
   <artifactId>gcloud-java-contrib</artifactId>
   <packaging>pom</packaging>
   <name>GCloud Java contributions</name>
+  <url>https://github.com/GoogleCloudPlatform/gcloud-java/tree/master/gcloud-java-contrib</url>
   <description>
     Contains packages that provide higher-level abstraction/functionality for common gcloud-java use cases.
   </description>
