@@ -5,7 +5,7 @@ Java idiomatic client for [Google Cloud DNS] (https://cloud.google.com/dns/).
 
 [![Build Status](https://travis-ci.org/GoogleCloudPlatform/gcloud-java.svg?branch=master)](https://travis-ci.org/GoogleCloudPlatform/gcloud-java)
 [![Coverage Status](https://coveralls.io/repos/GoogleCloudPlatform/gcloud-java/badge.svg?branch=master)](https://coveralls.io/r/GoogleCloudPlatform/gcloud-java?branch=master)
-[![Maven](https://img.shields.io/maven-central/v/com.google.gcloud/gcloud-java-dns.svg)]( https://img.shields.io/maven-central/v/com.google.gcloud/gcloud-java-dns.svg)
+[![Maven](https://img.shields.io/maven-central/v/com.google.cloud/gcloud-java-dns.svg)]( https://img.shields.io/maven-central/v/com.google.cloud/gcloud-java-dns.svg)
 [![Codacy Badge](https://api.codacy.com/project/badge/grade/9da006ad7c3a4fe1abd142e77c003917)](https://www.codacy.com/app/mziccard/gcloud-java)
 [![Dependency Status](https://www.versioneye.com/user/projects/56bd8ee72a29ed002d2b0969/badge.svg?style=flat)](https://www.versioneye.com/user/projects/56bd8ee72a29ed002d2b0969)
 
@@ -20,18 +20,18 @@ Quickstart
 If you are using Maven, add this to your pom.xml file
 ```xml
 <dependency>
-  <groupId>com.google.gcloud</groupId>
+  <groupId>com.google.cloud</groupId>
   <artifactId>gcloud-java-dns</artifactId>
   <version>0.1.7</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.gcloud:gcloud-java-dns:0.1.7'
+compile 'com.google.cloud:gcloud-java-dns:0.1.7'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.gcloud" % "gcloud-java-dns" % "0.1.7"
+libraryDependencies += "com.google.cloud" % "gcloud-java-dns" % "0.1.7"
 ```
 
 Example Application
@@ -83,8 +83,8 @@ These credentials are automatically inferred from your environment, so you only 
 code to create your service object:
 
 ```java
-import com.google.gcloud.dns.Dns;
-import com.google.gcloud.dns.DnsOptions;
+import com.google.cloud.dns.Dns;
+import com.google.cloud.dns.DnsOptions;
 
 Dns dns = DnsOptions.defaultInstance().service();
 ```
@@ -110,8 +110,8 @@ requires fully qualified domain names which must end with a period.*
 Add the following imports at the top of your file:
 
 ```java
-import com.google.gcloud.dns.Zone;
-import com.google.gcloud.dns.ZoneInfo;
+import com.google.cloud.dns.Zone;
+import com.google.cloud.dns.ZoneInfo;
 ```
 
 Then add the following code to create a zone.
@@ -159,8 +159,8 @@ our zone that creates a record set of type A and points URL www.someexampledomai
 IP address 12.13.14.15. Start by adding
 
 ```java
-import com.google.gcloud.dns.ChangeRequestInfo;
-import com.google.gcloud.dns.RecordSet;
+import com.google.cloud.dns.ChangeRequestInfo;
+import com.google.cloud.dns.RecordSet;
 
 import java.util.concurrent.TimeUnit;
 ```

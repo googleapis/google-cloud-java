@@ -5,7 +5,7 @@ Java idiomatic client for [Google Cloud Storage] (https://cloud.google.com/stora
 
 [![Build Status](https://travis-ci.org/GoogleCloudPlatform/gcloud-java.svg?branch=master)](https://travis-ci.org/GoogleCloudPlatform/gcloud-java)
 [![Coverage Status](https://coveralls.io/repos/GoogleCloudPlatform/gcloud-java/badge.svg?branch=master)](https://coveralls.io/r/GoogleCloudPlatform/gcloud-java?branch=master)
-[![Maven](https://img.shields.io/maven-central/v/com.google.gcloud/gcloud-java-storage.svg)]( https://img.shields.io/maven-central/v/com.google.gcloud/gcloud-java-storage.svg)
+[![Maven](https://img.shields.io/maven-central/v/com.google.cloud/gcloud-java-storage.svg)]( https://img.shields.io/maven-central/v/com.google.cloud/gcloud-java-storage.svg)
 [![Codacy Badge](https://api.codacy.com/project/badge/grade/9da006ad7c3a4fe1abd142e77c003917)](https://www.codacy.com/app/mziccard/gcloud-java)
 [![Dependency Status](https://www.versioneye.com/user/projects/56bd8ee72a29ed002d2b0969/badge.svg?style=flat)](https://www.versioneye.com/user/projects/56bd8ee72a29ed002d2b0969)
 
@@ -20,18 +20,18 @@ Quickstart
 If you are using Maven, add this to your pom.xml file
 ```xml
 <dependency>
-  <groupId>com.google.gcloud</groupId>
+  <groupId>com.google.cloud</groupId>
   <artifactId>gcloud-java-storage</artifactId>
   <version>0.1.7</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.gcloud:gcloud-java-storage:0.1.7'
+compile 'com.google.cloud:gcloud-java-storage:0.1.7'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.gcloud" % "gcloud-java-storage" % "0.1.7"
+libraryDependencies += "com.google.cloud" % "gcloud-java-storage" % "0.1.7"
 ```
 
 Example Application
@@ -70,8 +70,8 @@ You'll need to obtain the `gcloud-java-storage` library.  See the [Quickstart](#
 To make authenticated requests to Google Cloud Storage, you must create a service object with credentials. You can then make API calls by calling methods on the Storage service object. The simplest way to authenticate is to use [Application Default Credentials](https://developers.google.com/identity/protocols/application-default-credentials). These credentials are automatically inferred from your environment, so you only need the following code to create your service object:
 
 ```java
-import com.google.gcloud.storage.Storage;
-import com.google.gcloud.storage.StorageOptions;
+import com.google.cloud.storage.Storage;
+import com.google.cloud.storage.StorageOptions;
 
 Storage storage = StorageOptions.defaultInstance().service();
 ```
@@ -86,9 +86,9 @@ Add the following imports at the top of your file:
 ```java
 import static java.nio.charset.StandardCharsets.UTF_8;
 
-import com.google.gcloud.storage.Blob;
-import com.google.gcloud.storage.Bucket;
-import com.google.gcloud.storage.BucketInfo;
+import com.google.cloud.storage.Blob;
+import com.google.cloud.storage.Bucket;
+import com.google.cloud.storage.BucketInfo;
 ```
 
 Then add the following code to create a bucket and upload a simple blob.

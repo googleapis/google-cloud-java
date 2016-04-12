@@ -5,7 +5,7 @@ Java idiomatic client for [Google Cloud Platform][cloud-platform] services.
 
 [![Build Status](https://travis-ci.org/GoogleCloudPlatform/gcloud-java.svg?branch=master)](https://travis-ci.org/GoogleCloudPlatform/gcloud-java)
 [![Coverage Status](https://coveralls.io/repos/GoogleCloudPlatform/gcloud-java/badge.svg?branch=master)](https://coveralls.io/r/GoogleCloudPlatform/gcloud-java?branch=master)
-[![Maven](https://img.shields.io/maven-central/v/com.google.gcloud/gcloud-java.svg)]( https://img.shields.io/maven-central/v/com.google.gcloud/gcloud-java.svg)
+[![Maven](https://img.shields.io/maven-central/v/com.google.cloud/gcloud-java.svg)]( https://img.shields.io/maven-central/v/com.google.cloud/gcloud-java.svg)
 [![Codacy Badge](https://api.codacy.com/project/badge/grade/9da006ad7c3a4fe1abd142e77c003917)](https://www.codacy.com/app/mziccard/gcloud-java)
 [![Dependency Status](https://www.versioneye.com/user/projects/56bd8ee72a29ed002d2b0969/badge.svg?style=flat)](https://www.versioneye.com/user/projects/56bd8ee72a29ed002d2b0969)
 
@@ -28,18 +28,18 @@ Quickstart
 If you are using Maven, add this to your pom.xml file
 ```xml
 <dependency>
-  <groupId>com.google.gcloud</groupId>
+  <groupId>com.google.cloud</groupId>
   <artifactId>gcloud-java</artifactId>
   <version>0.1.7</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.gcloud:gcloud-java:0.1.7'
+compile 'com.google.cloud:gcloud-java:0.1.7'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.gcloud" % "gcloud-java" % "0.1.7"
+libraryDependencies += "com.google.cloud" % "gcloud-java" % "0.1.7"
 ```
 
 Example Applications
@@ -138,16 +138,16 @@ Complete source code can be found at
 [CreateTableAndLoadData.java](./gcloud-java-examples/src/main/java/com/google/gcloud/examples/bigquery/snippets/CreateTableAndLoadData.java).
 
 ```java
-import com.google.gcloud.bigquery.BigQuery;
-import com.google.gcloud.bigquery.BigQueryOptions;
-import com.google.gcloud.bigquery.Field;
-import com.google.gcloud.bigquery.FormatOptions;
-import com.google.gcloud.bigquery.Job;
-import com.google.gcloud.bigquery.Schema;
-import com.google.gcloud.bigquery.StandardTableDefinition;
-import com.google.gcloud.bigquery.Table;
-import com.google.gcloud.bigquery.TableId;
-import com.google.gcloud.bigquery.TableInfo;
+import com.google.cloud.bigquery.BigQuery;
+import com.google.cloud.bigquery.BigQueryOptions;
+import com.google.cloud.bigquery.Field;
+import com.google.cloud.bigquery.FormatOptions;
+import com.google.cloud.bigquery.Job;
+import com.google.cloud.bigquery.Schema;
+import com.google.cloud.bigquery.StandardTableDefinition;
+import com.google.cloud.bigquery.Table;
+import com.google.cloud.bigquery.TableId;
+import com.google.cloud.bigquery.TableInfo;
 
 BigQuery bigquery = BigQueryOptions.defaultInstance().service();
 TableId tableId = TableId.of("dataset", "table");
@@ -186,12 +186,12 @@ The first snippet shows how to create a Datastore entity. Complete source code c
 [CreateEntity.java](./gcloud-java-examples/src/main/java/com/google/gcloud/examples/datastore/snippets/CreateEntity.java).
 
 ```java
-import com.google.gcloud.datastore.Datastore;
-import com.google.gcloud.datastore.DatastoreOptions;
-import com.google.gcloud.datastore.DateTime;
-import com.google.gcloud.datastore.Entity;
-import com.google.gcloud.datastore.Key;
-import com.google.gcloud.datastore.KeyFactory;
+import com.google.cloud.datastore.Datastore;
+import com.google.cloud.datastore.DatastoreOptions;
+import com.google.cloud.datastore.DateTime;
+import com.google.cloud.datastore.Entity;
+import com.google.cloud.datastore.Key;
+import com.google.cloud.datastore.KeyFactory;
 
 Datastore datastore = DatastoreOptions.defaultInstance().service();
 KeyFactory keyFactory = datastore.newKeyFactory().kind("keyKind");
@@ -207,12 +207,12 @@ The second snippet shows how to update a Datastore entity if it exists. Complete
 found at
 [UpdateEntity.java](./gcloud-java-examples/src/main/java/com/google/gcloud/examples/datastore/snippets/UpdateEntity.java).
 ```java
-import com.google.gcloud.datastore.Datastore;
-import com.google.gcloud.datastore.DatastoreOptions;
-import com.google.gcloud.datastore.DateTime;
-import com.google.gcloud.datastore.Entity;
-import com.google.gcloud.datastore.Key;
-import com.google.gcloud.datastore.KeyFactory;
+import com.google.cloud.datastore.Datastore;
+import com.google.cloud.datastore.DatastoreOptions;
+import com.google.cloud.datastore.DateTime;
+import com.google.cloud.datastore.Entity;
+import com.google.cloud.datastore.Key;
+import com.google.cloud.datastore.KeyFactory;
 
 Datastore datastore = DatastoreOptions.defaultInstance().service();
 KeyFactory keyFactory = datastore.newKeyFactory().kind("keyKind");
@@ -242,10 +242,10 @@ The first snippet shows how to create a zone resource. Complete source code can 
 [CreateZone.java](./gcloud-java-examples/src/main/java/com/google/gcloud/examples/dns/snippets/CreateZone.java).
 
 ```java
-import com.google.gcloud.dns.Dns;
-import com.google.gcloud.dns.DnsOptions;
-import com.google.gcloud.dns.Zone;
-import com.google.gcloud.dns.ZoneInfo;
+import com.google.cloud.dns.Dns;
+import com.google.cloud.dns.DnsOptions;
+import com.google.cloud.dns.Zone;
+import com.google.cloud.dns.ZoneInfo;
 
 Dns dns = DnsOptions.defaultInstance().service();
 String zoneName = "my-unique-zone";
@@ -258,11 +258,11 @@ Zone zone = dns.create(zoneInfo);
 The second snippet shows how to create records inside a zone. The complete code can be found on [CreateOrUpdateRecordSets.java](./gcloud-java-examples/src/main/java/com/google/gcloud/examples/dns/snippets/CreateOrUpdateRecordSets.java).
 
 ```java
-import com.google.gcloud.dns.ChangeRequestInfo;
-import com.google.gcloud.dns.Dns;
-import com.google.gcloud.dns.DnsOptions;
-import com.google.gcloud.dns.RecordSet;
-import com.google.gcloud.dns.Zone;
+import com.google.cloud.dns.ChangeRequestInfo;
+import com.google.cloud.dns.Dns;
+import com.google.cloud.dns.DnsOptions;
+import com.google.cloud.dns.RecordSet;
+import com.google.cloud.dns.Zone;
 
 import java.util.Iterator;
 import java.util.concurrent.TimeUnit;
@@ -304,9 +304,9 @@ Here is a code snippet showing a simple usage example. Note that you must supply
 Complete source code can be found at
 [UpdateAndListProjects.java](./gcloud-java-examples/src/main/java/com/google/gcloud/examples/resourcemanager/snippets/UpdateAndListProjects.java).
 ```java
-import com.google.gcloud.resourcemanager.Project;
-import com.google.gcloud.resourcemanager.ResourceManager;
-import com.google.gcloud.resourcemanager.ResourceManagerOptions;
+import com.google.cloud.resourcemanager.Project;
+import com.google.cloud.resourcemanager.ResourceManager;
+import com.google.cloud.resourcemanager.ResourceManagerOptions;
 
 import java.util.Iterator;
 
@@ -345,11 +345,11 @@ The first snippet shows how to create a Storage blob. Complete source code can b
 ```java
 import static java.nio.charset.StandardCharsets.UTF_8;
 
-import com.google.gcloud.storage.Blob;
-import com.google.gcloud.storage.BlobId;
-import com.google.gcloud.storage.BlobInfo;
-import com.google.gcloud.storage.Storage;
-import com.google.gcloud.storage.StorageOptions;
+import com.google.cloud.storage.Blob;
+import com.google.cloud.storage.BlobId;
+import com.google.cloud.storage.BlobInfo;
+import com.google.cloud.storage.Storage;
+import com.google.cloud.storage.StorageOptions;
 
 Storage storage = StorageOptions.defaultInstance().service();
 BlobId blobId = BlobId.of("bucket", "blob_name");
@@ -362,10 +362,10 @@ found at
 ```java
 import static java.nio.charset.StandardCharsets.UTF_8;
 
-import com.google.gcloud.storage.Blob;
-import com.google.gcloud.storage.BlobId;
-import com.google.gcloud.storage.Storage;
-import com.google.gcloud.storage.StorageOptions;
+import com.google.cloud.storage.Blob;
+import com.google.cloud.storage.BlobId;
+import com.google.cloud.storage.Storage;
+import com.google.cloud.storage.StorageOptions;
 
 import java.nio.ByteBuffer;
 import java.nio.channels.WritableByteChannel;

@@ -5,7 +5,7 @@ Java idiomatic client for [Google Cloud Datastore] (https://cloud.google.com/dat
 
 [![Build Status](https://travis-ci.org/GoogleCloudPlatform/gcloud-java.svg?branch=master)](https://travis-ci.org/GoogleCloudPlatform/gcloud-java)
 [![Coverage Status](https://coveralls.io/repos/GoogleCloudPlatform/gcloud-java/badge.svg?branch=master)](https://coveralls.io/r/GoogleCloudPlatform/gcloud-java?branch=master)
-[![Maven](https://img.shields.io/maven-central/v/com.google.gcloud/gcloud-java-datastore.svg)]( https://img.shields.io/maven-central/v/com.google.gcloud/gcloud-java-datastore.svg)
+[![Maven](https://img.shields.io/maven-central/v/com.google.cloud/gcloud-java-datastore.svg)]( https://img.shields.io/maven-central/v/com.google.cloud/gcloud-java-datastore.svg)
 [![Codacy Badge](https://api.codacy.com/project/badge/grade/9da006ad7c3a4fe1abd142e77c003917)](https://www.codacy.com/app/mziccard/gcloud-java)
 [![Dependency Status](https://www.versioneye.com/user/projects/56bd8ee72a29ed002d2b0969/badge.svg?style=flat)](https://www.versioneye.com/user/projects/56bd8ee72a29ed002d2b0969)
 
@@ -20,18 +20,18 @@ Quickstart
 If you are using Maven, add this to your pom.xml file
 ```xml
 <dependency>
-  <groupId>com.google.gcloud</groupId>
+  <groupId>com.google.cloud</groupId>
   <artifactId>gcloud-java-datastore</artifactId>
   <version>0.1.7</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.gcloud:gcloud-java-datastore:0.1.7'
+compile 'com.google.cloud:gcloud-java-datastore:0.1.7'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.gcloud" % "gcloud-java-datastore" % "0.1.7"
+libraryDependencies += "com.google.cloud" % "gcloud-java-datastore" % "0.1.7"
 ```
 
 Example Application
@@ -70,8 +70,8 @@ You'll need to obtain the `gcloud-java-datastore` library.  See the [Quickstart]
 To make authenticated requests to Google Cloud Datastore, you must create a service object with credentials. You can then make API calls by calling methods on the Datastore service object. The simplest way to authenticate is to use [Application Default Credentials](https://developers.google.com/identity/protocols/application-default-credentials). These credentials are automatically inferred from your environment, so you only need the following code to create your service object:
 
 ```java
-import com.google.gcloud.datastore.Datastore;
-import com.google.gcloud.datastore.DatastoreOptions;
+import com.google.cloud.datastore.Datastore;
+import com.google.cloud.datastore.DatastoreOptions;
 
 Datastore datastore = DatastoreOptions.defaultInstance().service();
 ```
@@ -82,9 +82,9 @@ For other authentication options, see the [Authentication](https://github.com/Go
 Objects in Datastore are known as entities. Entities are grouped by "kind" and have keys for easy access. In this code snippet, we will create a new entity representing a person and store that data by the person's email.  First, add the following imports at the top of your file:
 
 ```java
-import com.google.gcloud.datastore.Entity;
-import com.google.gcloud.datastore.Key;
-import com.google.gcloud.datastore.KeyFactory;
+import com.google.cloud.datastore.Entity;
+import com.google.cloud.datastore.Key;
+import com.google.cloud.datastore.KeyFactory;
 ```
 
 Then add the following code to put an entity in Datastore.
@@ -112,10 +112,10 @@ In addition to retrieving entities by their keys, you can perform queries to ret
 Suppose that you've added more people to Datastore, and now you want to find all people whose favorite food is pizza. Import the following:
 
 ```java
-import com.google.gcloud.datastore.Query;
-import com.google.gcloud.datastore.QueryResults;
-import com.google.gcloud.datastore.StructuredQuery;
-import com.google.gcloud.datastore.StructuredQuery.PropertyFilter;
+import com.google.cloud.datastore.Query;
+import com.google.cloud.datastore.QueryResults;
+import com.google.cloud.datastore.StructuredQuery;
+import com.google.cloud.datastore.StructuredQuery.PropertyFilter;
 ```
 
 Then add the following code to your program:
