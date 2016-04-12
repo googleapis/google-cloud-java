@@ -14,15 +14,15 @@
  * limitations under the License.
  */
 
-package com.google.gcloud.pubsub;
+package com.google.cloud.pubsub;
 
-import static com.google.gcloud.BaseServiceException.UNKNOWN_CODE;
+import static com.google.cloud.BaseServiceException.UNKNOWN_CODE;
 
+import com.google.cloud.ServiceOptions;
+import com.google.cloud.pubsub.spi.DefaultPubSubRpc;
+import com.google.cloud.pubsub.spi.PubSubRpc;
+import com.google.cloud.pubsub.spi.PubSubRpcFactory;
 import com.google.common.collect.ImmutableSet;
-import com.google.gcloud.ServiceOptions;
-import com.google.gcloud.pubsub.spi.DefaultPubSubRpc;
-import com.google.gcloud.pubsub.spi.PubSubRpc;
-import com.google.gcloud.pubsub.spi.PubSubRpcFactory;
 
 import java.io.IOException;
 import java.util.Set;

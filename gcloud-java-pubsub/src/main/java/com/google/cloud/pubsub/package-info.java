@@ -14,12 +14,16 @@
  * limitations under the License.
  */
 
-package com.google.gcloud.pubsub;
-
-import com.google.gcloud.ServiceFactory;
-
 /**
- * An interface for Pub/Sub factories.
+ * A client to Google Cloud Pub/Sub.
+ *
+ * <p>Here's a simple usage example for using gcloud-pubsub:
+ * todo: add example
+ * <pre> {@code
+ * PubSub pubsub = PubSubOptions.defaultInstance().service();
+ * }</pre>
+ *
+ * @see <a href="https://cloud.google.com/pubsub/">Google Cloud Pub/Sub</a>
  */
-public interface PubSubFactory
-    extends ServiceFactory<PubSub, PubSubOptions> {}
+
+package com.google.cloud.pubsub;

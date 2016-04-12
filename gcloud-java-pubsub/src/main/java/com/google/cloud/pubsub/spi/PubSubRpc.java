@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.gcloud.pubsub.spi;
+package com.google.cloud.pubsub.spi;
 
 import com.google.protobuf.Empty;
 import com.google.pubsub.v1.AcknowledgeRequest;

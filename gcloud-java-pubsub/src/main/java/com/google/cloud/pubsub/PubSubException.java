@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-package com.google.gcloud.pubsub;
+package com.google.cloud.pubsub;
 
+import com.google.cloud.BaseServiceException;
+import com.google.cloud.RetryHelper.RetryHelperException;
+import com.google.cloud.RetryHelper.RetryInterruptedException;
 import com.google.common.collect.ImmutableSet;
-import com.google.gcloud.BaseServiceException;
-import com.google.gcloud.RetryHelper.RetryHelperException;
-import com.google.gcloud.RetryHelper.RetryInterruptedException;
 
 import java.util.Set;
 

@@ -14,17 +14,17 @@
  * limitations under the License.
  */
 
-package com.google.gcloud.pubsub;
+package com.google.cloud.pubsub;
 
 import static com.google.common.util.concurrent.Futures.lazyTransform;
 
+import com.google.cloud.AsyncPage;
+import com.google.cloud.BaseService;
+import com.google.cloud.Page;
+import com.google.cloud.pubsub.spi.PubSubRpc;
 import com.google.common.base.Function;
 import com.google.common.base.Throwables;
 import com.google.common.util.concurrent.Uninterruptibles;
-import com.google.gcloud.AsyncPage;
-import com.google.gcloud.BaseService;
-import com.google.gcloud.Page;
-import com.google.gcloud.pubsub.spi.PubSubRpc;
 import com.google.protobuf.Empty;
 import com.google.pubsub.v1.DeleteTopicRequest;
 import com.google.pubsub.v1.GetTopicRequest;

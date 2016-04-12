@@ -14,16 +14,17 @@
  * limitations under the License.
  */
 
-package com.google.gcloud.pubsub.spi;
+package com.google.cloud.pubsub.spi;
 
-import com.google.api.gax.core.BackoffParams;
 import com.google.api.gax.core.ConnectionSettings;
-import com.google.api.gax.core.RetryParams;
-import com.google.gcloud.pubsub.PubSubOptions;
-import com.google.gcloud.pubsub.spi.v1.PublisherApi;
-import com.google.gcloud.pubsub.spi.v1.PublisherSettings;
-import com.google.gcloud.pubsub.spi.v1.SubscriberApi;
-import com.google.gcloud.pubsub.spi.v1.SubscriberSettings;
+import com.google.api.gax.core.RetrySettings;
+import com.google.api.gax.grpc.ApiCallSettings;
+import com.google.cloud.RetryParams;
+import com.google.cloud.pubsub.PubSubOptions;
+import com.google.cloud.pubsub.spi.v1.PublisherApi;
+import com.google.cloud.pubsub.spi.v1.PublisherSettings;
+import com.google.cloud.pubsub.spi.v1.SubscriberApi;
+import com.google.cloud.pubsub.spi.v1.SubscriberSettings;
 import com.google.protobuf.Empty;
 import com.google.pubsub.v1.AcknowledgeRequest;
 import com.google.pubsub.v1.DeleteSubscriptionRequest;
@@ -58,35 +59,48 @@ public class DefaultPubSubRpc implements PubSubRpc {
 
   public DefaultPubSubRpc(PubSubOptions options) throws IOException {
     this.options = options;
-    PublisherSettings pSettings = PublisherSettings.create();
-    pSettings.provideChannelWith(ConnectionSettings.builder()
-        .provideCredentialsWith(options.authCredentials().credentials()).build());
-    pSettings.setRetryParamsOnAllMethods(retryParams(options));
-    publisherApi = PublisherApi.create(pSettings);
-    SubscriberSettings sSettings = SubscriberSettings.create();
-    sSettings.provideChannelWith(ConnectionSettings.builder()
-        .provideCredentialsWith(options.authCredentials().credentials()).build());
-    sSettings.setRetryParamsOnAllMethods(retryParams(options));
-    subscriberApi = SubscriberApi.create(sSettings);
+    try {
+      PublisherSettings.Builder pbuilder = PublisherSettings.defaultInstance().toBuilder();
+      pbuilder.provideChannelWith(ConnectionSettings.builder()
+          .provideCredentialsWith(options.authCredentials().credentials()).build());
+      pbuilder.applyToAllApiMethods(apiCallSettings(options));
+      publisherApi = PublisherApi.create(pbuilder.build());
+      SubscriberSettings.Builder sBuilder = SubscriberSettings.defaultInstance().toBuilder();
+      sBuilder.provideChannelWith(ConnectionSettings.builder()
+          .provideCredentialsWith(options.authCredentials().credentials()).build());
+      sBuilder.applyToAllApiMethods(apiCallSettings(options));
+      subscriberApi = SubscriberApi.create(sBuilder.build());
+    } catch (Exception ex) {
+      throw new IOException(ex);
+    }
   }
 
-  private static RetryParams retryParams(PubSubOptions options) {
+  private static ApiCallSettings.Builder apiCallSettings(PubSubOptions options) {
     // TODO: figure out how to specify timeout these settings
     // retryParams.retryMaxAttempts(), retryParams.retryMinAttempts()
-    com.google.gcloud.RetryParams retryParams = options.retryParams();
-    return RetryParams.newBuilder()
+    RetryParams retryParams = options.retryParams();
+    final RetrySettings.Builder builder = RetrySettings.newBuilder()
         .setTotalTimeout(Duration.millis(retryParams.totalRetryPeriodMillis()))
-        .setTimeoutBackoff(BackoffParams.newBuilder()
-            .setInitialDelay(Duration.millis(options.connectTimeout()))
-            .setDelayMultiplier(1.5)
-            .setMaxDelay(Duration.millis(options.connectTimeout() + options.readTimeout()))
-            .build())
-        .setRetryBackoff(BackoffParams.newBuilder()
-            .setInitialDelay(Duration.millis(retryParams.initialRetryDelayMillis()))
-            .setDelayMultiplier(retryParams.retryDelayBackoffFactor())
-            .setMaxDelay(Duration.millis(retryParams.maxRetryDelayMillis()))
-            .build())
-        .build();
+        .setInitialRpcTimeout(Duration.millis(options.connectTimeout()))
+        .setRpcTimeoutMultiplier(1.5)
+        .setMaxRpcTimeout((Duration.millis(options.connectTimeout() + options.readTimeout())))
+        .setInitialRetryDelay(Duration.millis(retryParams.initialRetryDelayMillis()))
+        .setRetryDelayMultiplier(retryParams.retryDelayBackoffFactor())
+        .setMaxRetryDelay(Duration.millis(retryParams.maxRetryDelayMillis()));
+    // TODO: this needs to be replaced with something like ApiCallSettings.of(null, retrySettings)
+    // once the gax supports it
+    return new ApiCallSettings.Builder() {
+
+      @Override
+      public RetrySettings.Builder getRetrySettingsBuilder() {
+        return builder;
+      }
+
+      @Override
+      public ApiCallSettings build() {
+        return null;
+      }
+    };
   }
 
   @Override

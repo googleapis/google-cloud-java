@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-package com.google.gcloud.pubsub;
+package com.google.cloud.pubsub;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
-import com.google.gcloud.pubsub.PubSub.PullOption;
+import com.google.cloud.pubsub.PubSub.PullOption;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;

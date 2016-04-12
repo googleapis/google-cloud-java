@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.gcloud.pubsub;
+package com.google.cloud.pubsub;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
@@ -161,7 +161,7 @@ public class ReceivedMessage extends Message {
 
   static ReceivedMessage fromPb(PubSub storage, String subscription,
       com.google.pubsub.v1.ReceivedMessage msgPb) {
-    Message message = Message.fromPb(msgPb.getMessage());
+    Message message = fromPb(msgPb.getMessage());
     String ackId = msgPb.getAckId();
     return new Builder(subscription, ackId, storage, new BuilderImpl(message)).build();
   }

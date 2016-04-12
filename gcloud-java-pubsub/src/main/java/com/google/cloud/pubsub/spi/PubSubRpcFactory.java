@@ -14,16 +14,14 @@
  * limitations under the License.
  */
 
-/**
- * A client to Google Cloud Pub/Sub.
- *
- * <p>Here's a simple usage example for using gcloud-pubsub:
- * todo: add example
- * <pre> {@code
- * PubSub pubsub = PubSubOptions.defaultInstance().service();
- * }</pre>
- *
- * @see <a href="https://cloud.google.com/pubsub/">Google Cloud Pub/Sub</a>
- */
+package com.google.cloud.pubsub.spi;
 
-package com.google.gcloud.pubsub;
+import com.google.cloud.pubsub.PubSubOptions;
+import com.google.cloud.spi.ServiceRpcFactory;
+
+/**
+ * An interface for Pub/Sub RPC factory.
+ * Implementation will be loaded via {@link java.util.ServiceLoader}.
+ */
+public interface PubSubRpcFactory extends ServiceRpcFactory<PubSubRpc, PubSubOptions> {
+}

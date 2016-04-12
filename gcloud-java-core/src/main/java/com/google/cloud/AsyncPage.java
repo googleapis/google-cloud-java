@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.gcloud;
+package com.google.cloud;
 
 import java.util.concurrent.Future;
 

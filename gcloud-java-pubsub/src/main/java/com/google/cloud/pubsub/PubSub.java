@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-package com.google.gcloud.pubsub;
+package com.google.cloud.pubsub;
 
-import com.google.gcloud.AsyncPage;
-import com.google.gcloud.Page;
-import com.google.gcloud.Service;
+import com.google.cloud.AsyncPage;
+import com.google.cloud.Page;
+import com.google.cloud.Service;
 
 import java.io.Serializable;
 import java.util.List;
