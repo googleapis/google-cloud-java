@@ -16,11 +16,11 @@
 
 package com.google.cloud.bigquery;
 
-import com.google.common.collect.ImmutableSet;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.bigquery.spi.BigQueryRpc;
 import com.google.cloud.bigquery.spi.BigQueryRpcFactory;
 import com.google.cloud.bigquery.spi.DefaultBigQueryRpc;
+import com.google.common.collect.ImmutableSet;
 
 import java.util.Set;
 

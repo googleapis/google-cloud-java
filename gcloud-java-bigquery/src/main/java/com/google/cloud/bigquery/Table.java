@@ -18,8 +18,8 @@ package com.google.cloud.bigquery;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
-import com.google.common.collect.ImmutableList;
 import com.google.cloud.Page;
+import com.google.common.collect.ImmutableList;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;

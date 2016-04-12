@@ -14,7 +14,6 @@
 
 package com.google.cloud.storage.spi;
 
-import static com.google.common.base.MoreObjects.firstNonNull;
 import static com.google.cloud.storage.spi.StorageRpc.Option.DELIMITER;
 import static com.google.cloud.storage.spi.StorageRpc.Option.FIELDS;
 import static com.google.cloud.storage.spi.StorageRpc.Option.IF_GENERATION_MATCH;
@@ -31,6 +30,7 @@ import static com.google.cloud.storage.spi.StorageRpc.Option.PREDEFINED_ACL;
 import static com.google.cloud.storage.spi.StorageRpc.Option.PREDEFINED_DEFAULT_OBJECT_ACL;
 import static com.google.cloud.storage.spi.StorageRpc.Option.PREFIX;
 import static com.google.cloud.storage.spi.StorageRpc.Option.VERSIONS;
+import static com.google.common.base.MoreObjects.firstNonNull;
 import static java.net.HttpURLConnection.HTTP_NOT_FOUND;
 import static javax.servlet.http.HttpServletResponse.SC_REQUESTED_RANGE_NOT_SATISFIABLE;
 
@@ -58,13 +58,13 @@ import com.google.api.services.storage.model.ComposeRequest;
 import com.google.api.services.storage.model.ComposeRequest.SourceObjects.ObjectPreconditions;
 import com.google.api.services.storage.model.Objects;
 import com.google.api.services.storage.model.StorageObject;
+import com.google.cloud.storage.StorageException;
+import com.google.cloud.storage.StorageOptions;
 import com.google.common.base.Function;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
-import com.google.cloud.storage.StorageException;
-import com.google.cloud.storage.StorageOptions;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;

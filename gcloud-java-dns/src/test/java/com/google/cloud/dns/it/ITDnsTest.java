@@ -23,7 +23,6 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
-import com.google.common.collect.ImmutableList;
 import com.google.cloud.Page;
 import com.google.cloud.dns.ChangeRequest;
 import com.google.cloud.dns.ChangeRequestInfo;
@@ -34,6 +33,7 @@ import com.google.cloud.dns.ProjectInfo;
 import com.google.cloud.dns.RecordSet;
 import com.google.cloud.dns.Zone;
 import com.google.cloud.dns.ZoneInfo;
+import com.google.common.collect.ImmutableList;
 
 import org.junit.AfterClass;
 import org.junit.BeforeClass;

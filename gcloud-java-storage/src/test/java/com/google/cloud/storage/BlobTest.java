@@ -33,12 +33,12 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import com.google.cloud.ReadChannel;
 import com.google.cloud.storage.Acl.Project;
 import com.google.cloud.storage.Acl.User;
 import com.google.cloud.storage.Storage.CopyRequest;
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
 
 import org.easymock.Capture;
 import org.junit.After;

@@ -16,12 +16,11 @@
 
 package com.google.cloud.storage;
 
-import static com.google.common.base.Preconditions.checkNotNull;
 import static com.google.cloud.storage.Blob.BlobSourceOption.toGetOptions;
 import static com.google.cloud.storage.Blob.BlobSourceOption.toSourceOptions;
+import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.api.services.storage.model.StorageObject;
-import com.google.common.base.Function;
 import com.google.cloud.AuthCredentials;
 import com.google.cloud.AuthCredentials.AppEngineAuthCredentials;
 import com.google.cloud.AuthCredentials.ServiceAccountAuthCredentials;
@@ -35,6 +34,7 @@ import com.google.cloud.storage.Storage.CopyRequest;
 import com.google.cloud.storage.Storage.SignUrlOption;
 import com.google.cloud.storage.spi.StorageRpc;
 import com.google.cloud.storage.spi.StorageRpc.Tuple;
+import com.google.common.base.Function;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;

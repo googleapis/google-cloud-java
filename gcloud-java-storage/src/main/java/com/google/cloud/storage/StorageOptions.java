@@ -16,11 +16,11 @@
 
 package com.google.cloud.storage;
 
-import com.google.common.collect.ImmutableSet;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.storage.spi.DefaultStorageRpc;
 import com.google.cloud.storage.spi.StorageRpc;
 import com.google.cloud.storage.spi.StorageRpcFactory;
+import com.google.common.collect.ImmutableSet;
 
 import java.util.Set;
 

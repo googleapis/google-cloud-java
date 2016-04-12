@@ -16,8 +16,8 @@
 
 package com.google.cloud.datastore;
 
-import static com.google.common.base.Preconditions.checkNotNull;
 import static com.google.cloud.datastore.Validator.validateNamespace;
+import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;

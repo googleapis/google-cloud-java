@@ -16,11 +16,11 @@
 
 package com.google.cloud.storage;
 
-import com.google.common.collect.ImmutableMap;
-import com.google.common.collect.Lists;
 import com.google.cloud.storage.Storage.BlobGetOption;
 import com.google.cloud.storage.Storage.BlobSourceOption;
 import com.google.cloud.storage.Storage.BlobTargetOption;
+import com.google.common.collect.ImmutableMap;
+import com.google.common.collect.Lists;
 
 import java.io.Serializable;
 import java.util.LinkedHashMap;

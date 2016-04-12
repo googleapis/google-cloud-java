@@ -25,11 +25,11 @@ import static org.easymock.EasyMock.verify;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import com.google.cloud.Identity;
 import com.google.cloud.resourcemanager.Policy.ProjectRole;
 import com.google.cloud.resourcemanager.ProjectInfo.ResourceId;
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
 
 import org.junit.After;
 import org.junit.Before;

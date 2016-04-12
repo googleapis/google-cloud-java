@@ -16,10 +16,10 @@
 
 package com.google.cloud.bigquery;
 
-import com.google.common.collect.ImmutableSet;
 import com.google.cloud.BaseServiceException;
 import com.google.cloud.RetryHelper.RetryHelperException;
 import com.google.cloud.RetryHelper.RetryInterruptedException;
+import com.google.common.collect.ImmutableSet;
 
 import java.io.IOException;
 import java.util.Objects;

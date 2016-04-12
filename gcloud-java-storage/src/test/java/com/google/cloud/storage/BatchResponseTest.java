@@ -19,8 +19,8 @@ package com.google.cloud.storage;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 
-import com.google.common.collect.ImmutableList;
 import com.google.cloud.storage.BatchResponse.Result;
+import com.google.common.collect.ImmutableList;
 
 import org.easymock.EasyMock;
 import org.junit.Before;

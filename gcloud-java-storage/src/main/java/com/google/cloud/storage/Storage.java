@@ -19,9 +19,6 @@ package com.google.cloud.storage;
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.Iterables;
-import com.google.common.collect.Lists;
 import com.google.cloud.AuthCredentials;
 import com.google.cloud.AuthCredentials.AppEngineAuthCredentials;
 import com.google.cloud.AuthCredentials.ServiceAccountAuthCredentials;
@@ -35,6 +32,9 @@ import com.google.cloud.ServiceAccountSigner.SigningException;
 import com.google.cloud.WriteChannel;
 import com.google.cloud.storage.spi.StorageRpc;
 import com.google.cloud.storage.spi.StorageRpc.Tuple;
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.Iterables;
+import com.google.common.collect.Lists;
 
 import java.io.InputStream;
 import java.io.Serializable;

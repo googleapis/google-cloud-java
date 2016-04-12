@@ -17,10 +17,10 @@
 package com.google.cloud.storage;
 
 import com.google.api.client.googleapis.json.GoogleJsonError;
-import com.google.common.collect.ImmutableSet;
 import com.google.cloud.BaseServiceException;
 import com.google.cloud.RetryHelper.RetryHelperException;
 import com.google.cloud.RetryHelper.RetryInterruptedException;
+import com.google.common.collect.ImmutableSet;
 
 import java.io.IOException;
 import java.util.Set;
