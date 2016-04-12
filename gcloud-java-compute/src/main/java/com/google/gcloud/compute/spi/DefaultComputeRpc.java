@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-package com.google.gcloud.spi;
+package com.google.gcloud.compute.spi;
 
-import static com.google.gcloud.spi.ComputeRpc.Option.FIELDS;
-import static com.google.gcloud.spi.ComputeRpc.Option.FILTER;
-import static com.google.gcloud.spi.ComputeRpc.Option.MAX_RESULTS;
-import static com.google.gcloud.spi.ComputeRpc.Option.PAGE_TOKEN;
+import static com.google.gcloud.compute.spi.ComputeRpc.Option.FIELDS;
+import static com.google.gcloud.compute.spi.ComputeRpc.Option.FILTER;
+import static com.google.gcloud.compute.spi.ComputeRpc.Option.MAX_RESULTS;
+import static com.google.gcloud.compute.spi.ComputeRpc.Option.PAGE_TOKEN;
 import static java.net.HttpURLConnection.HTTP_NOT_FOUND;
 
 import com.google.api.client.http.HttpRequestInitializer;

@@ -23,7 +23,7 @@ import com.google.common.base.MoreObjects;
 import com.google.common.collect.Sets;
 import com.google.gcloud.Page;
 import com.google.gcloud.Service;
-import com.google.gcloud.spi.ComputeRpc;
+import com.google.gcloud.compute.spi.ComputeRpc;
 
 import java.io.Serializable;
 import java.util.Objects;

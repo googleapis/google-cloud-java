@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.gcloud.spi;
+package com.google.gcloud.compute.spi;
 
 import com.google.api.services.compute.model.Address;
 import com.google.api.services.compute.model.DeprecationStatus;
