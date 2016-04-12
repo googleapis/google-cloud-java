@@ -31,7 +31,7 @@ import java.util.Objects;
 /**
  * This class represents the schema for a Google BigQuery Table or data source.
  */
-public class Schema implements Serializable {
+public final class Schema implements Serializable {
 
   static final Function<com.google.api.services.bigquery.model.TableSchema, Schema>
       FROM_PB_FUNCTION = new Function<com.google.api.services.bigquery.model.TableSchema,
@@ -128,7 +128,9 @@ public class Schema implements Serializable {
 
   @Override
   public boolean equals(Object obj) {
-    return obj instanceof Schema && Objects.equals(toPb(), ((Schema) obj).toPb());
+    return obj == this
+        || obj instanceof Schema
+        && Objects.equals(toPb(), ((Schema) obj).toPb());
   }
 
   com.google.api.services.bigquery.model.TableSchema toPb() {

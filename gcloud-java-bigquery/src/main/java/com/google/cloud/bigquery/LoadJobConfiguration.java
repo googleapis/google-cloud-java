@@ -269,8 +269,9 @@ public class LoadJobConfiguration extends JobConfiguration implements LoadConfig
 
   @Override
   public final boolean equals(Object obj) {
-    return this == obj
-        || obj instanceof LoadJobConfiguration
+    return obj == this
+        || obj != null
+        && obj.getClass().equals(LoadJobConfiguration.class)
         && baseEquals((LoadJobConfiguration) obj);
   }
 

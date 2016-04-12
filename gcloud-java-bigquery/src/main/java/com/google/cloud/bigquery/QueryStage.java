@@ -372,15 +372,18 @@ public class QueryStage implements Serializable {
   }
 
   @Override
-  public int hashCode() {
+  public final int hashCode() {
     return Objects.hash(computeRatioAvg, computeRatioMax, generatedId, name, readRatioAvg,
         readRatioMax, recordsRead, recordsWritten, steps, waitRatioAvg, waitRatioMax,
         writeRatioAvg);
   }
 
   @Override
-  public boolean equals(Object obj) {
-    if (!(obj instanceof QueryStage)) {
+  public final boolean equals(Object obj) {
+    if (obj == this) {
+      return true;
+    }
+    if (obj == null || !obj.getClass().equals(QueryStage.class)) {
       return false;
     }
     QueryStage other = (QueryStage) obj;

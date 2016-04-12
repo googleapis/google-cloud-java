@@ -268,12 +268,15 @@ public class ProjectInfo implements Serializable {
   }
 
   @Override
-  public boolean equals(Object other) {
-    return (other instanceof ProjectInfo) && toPb().equals(((ProjectInfo) other).toPb());
+  public final boolean equals(Object obj) {
+    return obj == this
+        || obj != null
+        && obj.getClass().equals(ProjectInfo.class)
+        && toPb().equals(((ProjectInfo) obj).toPb());
   }
 
   @Override
-  public int hashCode() {
+  public final int hashCode() {
     return Objects.hash(id, number, quota);
   }
 

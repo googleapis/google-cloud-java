@@ -37,7 +37,7 @@ import java.util.Objects;
  * @see <a href="https://cloud.google.com/bigquery/streaming-data-into-bigquery">Streaming Data into
  *     BigQuery</a>
  */
-public class InsertAllRequest implements Serializable {
+public final class InsertAllRequest implements Serializable {
 
   private static final long serialVersionUID = 211200307773853078L;
 
@@ -443,6 +443,9 @@ public class InsertAllRequest implements Serializable {
 
   @Override
   public boolean equals(Object obj) {
+    if (obj == this) {
+      return true;
+    }
     if (!(obj instanceof InsertAllRequest)) {
       return false;
     }

@@ -231,10 +231,15 @@ public class Dataset extends DatasetInfo {
 
   @Override
   public final boolean equals(Object obj) {
-    return this == obj
-        || obj instanceof Dataset
-        && Objects.equals(toPb(), ((Dataset) obj).toPb())
-        && Objects.equals(options, ((Dataset) obj).options);
+    if (obj == this) {
+      return true;
+    }
+    if (obj == null || !obj.getClass().equals(Dataset.class)) {
+      return false;
+    }
+    Dataset other = (Dataset) obj;
+    return Objects.equals(toPb(), other.toPb())
+        && Objects.equals(options, other.options);
   }
 
   @Override

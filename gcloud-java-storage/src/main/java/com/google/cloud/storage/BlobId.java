@@ -79,9 +79,16 @@ public final class BlobId implements Serializable {
 
   @Override
   public boolean equals(Object obj) {
-    return obj instanceof BlobId && Objects.equals(bucket, ((BlobId) obj).bucket)
-        && Objects.equals(name, ((BlobId) obj).name)
-        && Objects.equals(generation, ((BlobId) obj).generation);
+    if (obj == this) {
+      return true;
+    }
+    if (obj == null || !obj.getClass().equals(BlobId.class)) {
+      return false;
+    }
+    BlobId other = (BlobId) obj;
+    return Objects.equals(bucket, other.bucket)
+        && Objects.equals(name, other.name)
+        && Objects.equals(generation, other.generation);
   }
 
   StorageObject toPb() {

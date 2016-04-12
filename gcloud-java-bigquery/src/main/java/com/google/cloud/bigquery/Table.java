@@ -323,10 +323,15 @@ public class Table extends TableInfo {
 
   @Override
   public final boolean equals(Object obj) {
-    return this == obj
-        || obj instanceof Table
-        && Objects.equals(toPb(), ((Table) obj).toPb())
-        && Objects.equals(options, ((Table) obj).options);
+    if (obj == this) {
+      return true;
+    }
+    if (obj == null || !obj.getClass().equals(Table.class)) {
+      return false;
+    }
+    Table other = (Table) obj;
+    return Objects.equals(toPb(), other.toPb())
+        && Objects.equals(options, other.options);
   }
 
   @Override

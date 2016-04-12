@@ -450,8 +450,9 @@ public class QueryJobConfiguration extends JobConfiguration {
 
   @Override
   public final boolean equals(Object obj) {
-    return this == obj
-        || obj instanceof QueryJobConfiguration
+    return obj == this
+        || obj != null
+        && obj.getClass().equals(QueryJobConfiguration.class)
         && baseEquals((QueryJobConfiguration) obj);
   }
 

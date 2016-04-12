@@ -26,7 +26,7 @@ import java.util.Objects;
 /**
  * Google BigQuery Dataset identity.
  */
-public class DatasetId implements Serializable {
+public final class DatasetId implements Serializable {
 
   private static final long serialVersionUID = -6186254820908152300L;
 
@@ -68,7 +68,9 @@ public class DatasetId implements Serializable {
 
   @Override
   public boolean equals(Object obj) {
-    return obj instanceof DatasetId && Objects.equals(toPb(), ((DatasetId) obj).toPb());
+    return obj == this
+        || obj instanceof DatasetId
+        && Objects.equals(toPb(), ((DatasetId) obj).toPb());
   }
 
   @Override

@@ -179,10 +179,15 @@ public class Job extends JobInfo {
 
   @Override
   public final boolean equals(Object obj) {
-    return this == obj
-        || obj instanceof Job
-        && Objects.equals(toPb(), ((Job) obj).toPb())
-        && Objects.equals(options, ((Job) obj).options);
+    if (obj == this) {
+      return true;
+    }
+    if (obj == null || !obj.getClass().equals(Job.class)) {
+      return false;
+    }
+    Job other = (Job) obj;
+    return Objects.equals(toPb(), other.toPb())
+        && Objects.equals(options, other.options);
   }
 
   @Override

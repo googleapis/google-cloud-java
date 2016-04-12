@@ -715,10 +715,15 @@ public class Bucket extends BucketInfo {
 
   @Override
   public final boolean equals(Object obj) {
-    return this == obj
-        || obj instanceof Bucket
-        && Objects.equals(toPb(), ((Bucket) obj).toPb())
-        && Objects.equals(options, ((Bucket) obj).options);
+    if (obj == this) {
+      return true;
+    }
+    if (obj != null && !obj.getClass().equals(Bucket.class)) {
+      return false;
+    }
+    Bucket other = (Bucket) obj;
+    return Objects.equals(toPb(), other.toPb())
+        && Objects.equals(options, other.options);
   }
 
   @Override

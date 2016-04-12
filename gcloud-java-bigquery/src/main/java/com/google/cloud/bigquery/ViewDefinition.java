@@ -147,8 +147,9 @@ public class ViewDefinition extends TableDefinition {
 
   @Override
   public final boolean equals(Object obj) {
-    return this == obj
-        || obj instanceof ViewDefinition
+    return obj == this
+        || obj != null
+        && obj.getClass().equals(ViewDefinition.class)
         && baseEquals((ViewDefinition) obj);
   }
 

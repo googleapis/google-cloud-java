@@ -336,7 +336,9 @@ public class ProjectInfo implements Serializable {
 
   @Override
   public boolean equals(Object obj) {
-    return obj != null && obj.getClass().equals(ProjectInfo.class)
+    return obj == this
+        || obj != null
+        && obj.getClass().equals(ProjectInfo.class)
         && Objects.equals(toPb(), ((ProjectInfo) obj).toPb());
   }
 

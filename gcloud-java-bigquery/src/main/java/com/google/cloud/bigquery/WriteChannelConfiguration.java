@@ -33,7 +33,7 @@ import java.util.Objects;
  * into a table with a {@link com.google.cloud.WriteChannel}
  * ({@link BigQuery#writer(WriteChannelConfiguration)}).
  */
-public class WriteChannelConfiguration implements LoadConfiguration, Serializable {
+public final class WriteChannelConfiguration implements LoadConfiguration, Serializable {
 
   private static final long serialVersionUID = 470267591917413578L;
 
@@ -241,7 +241,8 @@ public class WriteChannelConfiguration implements LoadConfiguration, Serializabl
 
   @Override
   public boolean equals(Object obj) {
-    return obj instanceof WriteChannelConfiguration
+    return obj == this
+        || obj instanceof WriteChannelConfiguration
         && Objects.equals(toPb(), ((WriteChannelConfiguration) obj).toPb());
   }
 

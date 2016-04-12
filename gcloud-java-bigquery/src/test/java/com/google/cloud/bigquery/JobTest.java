@@ -27,6 +27,8 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
+import com.google.cloud.bigquery.JobStatistics.CopyStatistics;
+
 import org.junit.After;
 import org.junit.Test;
 
@@ -40,7 +42,7 @@ public class JobTest {
   private static final String SELF_LINK = "selfLink";
   private static final String EMAIL = "email";
   private static final JobStatus JOB_STATUS = new JobStatus(JobStatus.State.DONE);
-  private static final JobStatistics COPY_JOB_STATISTICS = JobStatistics.builder()
+  private static final JobStatistics COPY_JOB_STATISTICS = CopyStatistics.builder()
       .creationTime(1L)
       .endTime(3L)
       .startTime(2L)
