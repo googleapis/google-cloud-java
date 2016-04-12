@@ -4,6 +4,7 @@
   <artifactId>gcloud-java-nio</artifactId>
   <packaging>jar</packaging>
   <name>GCloud Java NIO</name>
+  <url>https://github.com/GoogleCloudPlatform/gcloud-java/tree/master/gcloud-java-contrib/gcloud-java-nio</url>
   <description>
     FileSystemProvider for Java NIO to access GCS transparently.
   </description>
