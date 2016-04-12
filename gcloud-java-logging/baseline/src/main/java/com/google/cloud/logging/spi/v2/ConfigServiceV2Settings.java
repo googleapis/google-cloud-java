@@ -15,7 +15,7 @@
 /*
  * EDITING INSTRUCTIONS
  * This file was generated from the file
- * https://github.com/google/googleapis/blob/master/google/logging/v2/logging_metrics.proto
+ * https://github.com/google/googleapis/blob/master/google/logging/v2/logging_config.proto
  * and updates to that file get reflected here through a refresh process.
  * For the short term, the refresh process will only be runnable by Google engineers.
  * Manual additions are allowed because the refresh process performs
@@ -31,7 +31,7 @@
  * Happy editing!
  */
 
-package com.google.gcloud.logging.spi.v2;
+package com.google.cloud.logging.spi.v2;
 
 import com.google.api.gax.core.ConnectionSettings;
 import com.google.api.gax.core.RetrySettings;
@@ -45,14 +45,14 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
-import com.google.logging.v2.CreateLogMetricRequest;
-import com.google.logging.v2.DeleteLogMetricRequest;
-import com.google.logging.v2.GetLogMetricRequest;
-import com.google.logging.v2.ListLogMetricsRequest;
-import com.google.logging.v2.ListLogMetricsResponse;
-import com.google.logging.v2.LogMetric;
-import com.google.logging.v2.MetricsServiceV2Grpc;
-import com.google.logging.v2.UpdateLogMetricRequest;
+import com.google.logging.v2.ConfigServiceV2Grpc;
+import com.google.logging.v2.CreateSinkRequest;
+import com.google.logging.v2.DeleteSinkRequest;
+import com.google.logging.v2.GetSinkRequest;
+import com.google.logging.v2.ListSinksRequest;
+import com.google.logging.v2.ListSinksResponse;
+import com.google.logging.v2.LogSink;
+import com.google.logging.v2.UpdateSinkRequest;
 import com.google.protobuf.Empty;
 import io.grpc.ManagedChannel;
 import io.grpc.Status;
@@ -64,7 +64,7 @@ import org.joda.time.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS - see instructions at the top of the file for editing.
 @javax.annotation.Generated("by GAPIC")
-public class MetricsServiceV2Settings extends ServiceApiSettings {
+public class ConfigServiceV2Settings extends ServiceApiSettings {
 
   /**
    * The default address of the service.
@@ -94,36 +94,36 @@ public class MetricsServiceV2Settings extends ServiceApiSettings {
           .add("https://www.googleapis.com/auth/cloud-platform")
           .build();
 
-  private final PageStreamingCallSettings<ListLogMetricsRequest, ListLogMetricsResponse, LogMetric>
-      listLogMetricsSettings;
+  private final PageStreamingCallSettings<ListSinksRequest, ListSinksResponse, LogSink>
+      listSinksSettings;
 
-  private final SimpleCallSettings<GetLogMetricRequest, LogMetric> getLogMetricSettings;
-  private final SimpleCallSettings<CreateLogMetricRequest, LogMetric> createLogMetricSettings;
-  private final SimpleCallSettings<UpdateLogMetricRequest, LogMetric> updateLogMetricSettings;
-  private final SimpleCallSettings<DeleteLogMetricRequest, Empty> deleteLogMetricSettings;
+  private final SimpleCallSettings<GetSinkRequest, LogSink> getSinkSettings;
+  private final SimpleCallSettings<CreateSinkRequest, LogSink> createSinkSettings;
+  private final SimpleCallSettings<UpdateSinkRequest, LogSink> updateSinkSettings;
+  private final SimpleCallSettings<DeleteSinkRequest, Empty> deleteSinkSettings;
 
-  public PageStreamingCallSettings<ListLogMetricsRequest, ListLogMetricsResponse, LogMetric>
-      listLogMetricsSettings() {
-    return listLogMetricsSettings;
+  public PageStreamingCallSettings<ListSinksRequest, ListSinksResponse, LogSink>
+      listSinksSettings() {
+    return listSinksSettings;
   }
 
-  public SimpleCallSettings<GetLogMetricRequest, LogMetric> getLogMetricSettings() {
-    return getLogMetricSettings;
+  public SimpleCallSettings<GetSinkRequest, LogSink> getSinkSettings() {
+    return getSinkSettings;
   }
 
-  public SimpleCallSettings<CreateLogMetricRequest, LogMetric> createLogMetricSettings() {
-    return createLogMetricSettings;
+  public SimpleCallSettings<CreateSinkRequest, LogSink> createSinkSettings() {
+    return createSinkSettings;
   }
 
-  public SimpleCallSettings<UpdateLogMetricRequest, LogMetric> updateLogMetricSettings() {
-    return updateLogMetricSettings;
+  public SimpleCallSettings<UpdateSinkRequest, LogSink> updateSinkSettings() {
+    return updateSinkSettings;
   }
 
-  public SimpleCallSettings<DeleteLogMetricRequest, Empty> deleteLogMetricSettings() {
-    return deleteLogMetricSettings;
+  public SimpleCallSettings<DeleteSinkRequest, Empty> deleteSinkSettings() {
+    return deleteSinkSettings;
   }
 
-  public static MetricsServiceV2Settings defaultInstance() throws IOException {
+  public static ConfigServiceV2Settings defaultInstance() throws IOException {
     return newBuilder().build();
   }
 
@@ -135,7 +135,7 @@ public class MetricsServiceV2Settings extends ServiceApiSettings {
     return new Builder(this);
   }
 
-  private MetricsServiceV2Settings(Builder settingsBuilder) throws IOException {
+  private ConfigServiceV2Settings(Builder settingsBuilder) throws IOException {
     super(
         settingsBuilder.getOrBuildChannel(),
         settingsBuilder.shouldAutoCloseChannel(),
@@ -146,47 +146,46 @@ public class MetricsServiceV2Settings extends ServiceApiSettings {
         settingsBuilder.getClientLibName(),
         settingsBuilder.getClientLibVersion());
 
-    listLogMetricsSettings = settingsBuilder.listLogMetricsSettings().build();
-    getLogMetricSettings = settingsBuilder.getLogMetricSettings().build();
-    createLogMetricSettings = settingsBuilder.createLogMetricSettings().build();
-    updateLogMetricSettings = settingsBuilder.updateLogMetricSettings().build();
-    deleteLogMetricSettings = settingsBuilder.deleteLogMetricSettings().build();
+    listSinksSettings = settingsBuilder.listSinksSettings().build();
+    getSinkSettings = settingsBuilder.getSinkSettings().build();
+    createSinkSettings = settingsBuilder.createSinkSettings().build();
+    updateSinkSettings = settingsBuilder.updateSinkSettings().build();
+    deleteSinkSettings = settingsBuilder.deleteSinkSettings().build();
   }
 
-  private static PageStreamingDescriptor<ListLogMetricsRequest, ListLogMetricsResponse, LogMetric>
-      LIST_LOG_METRICS_PAGE_STR_DESC =
-          new PageStreamingDescriptor<ListLogMetricsRequest, ListLogMetricsResponse, LogMetric>() {
+  private static PageStreamingDescriptor<ListSinksRequest, ListSinksResponse, LogSink>
+      LIST_SINKS_PAGE_STR_DESC =
+          new PageStreamingDescriptor<ListSinksRequest, ListSinksResponse, LogSink>() {
             @Override
             public Object emptyToken() {
               return "";
             }
 
             @Override
-            public ListLogMetricsRequest injectToken(ListLogMetricsRequest payload, Object token) {
-              return ListLogMetricsRequest.newBuilder(payload).setPageToken((String) token).build();
+            public ListSinksRequest injectToken(ListSinksRequest payload, Object token) {
+              return ListSinksRequest.newBuilder(payload).setPageToken((String) token).build();
             }
 
             @Override
-            public Object extractNextToken(ListLogMetricsResponse payload) {
+            public Object extractNextToken(ListSinksResponse payload) {
               return payload.getNextPageToken();
             }
 
             @Override
-            public Iterable<LogMetric> extractResources(ListLogMetricsResponse payload) {
-              return payload.getMetricsList();
+            public Iterable<LogSink> extractResources(ListSinksResponse payload) {
+              return payload.getSinksList();
             }
           };
 
   public static class Builder extends ServiceApiSettings.Builder {
     private final ImmutableList<ApiCallSettings.Builder> methodSettingsBuilders;
 
-    private PageStreamingCallSettings.Builder<
-            ListLogMetricsRequest, ListLogMetricsResponse, LogMetric>
-        listLogMetricsSettings;
-    private SimpleCallSettings.Builder<GetLogMetricRequest, LogMetric> getLogMetricSettings;
-    private SimpleCallSettings.Builder<CreateLogMetricRequest, LogMetric> createLogMetricSettings;
-    private SimpleCallSettings.Builder<UpdateLogMetricRequest, LogMetric> updateLogMetricSettings;
-    private SimpleCallSettings.Builder<DeleteLogMetricRequest, Empty> deleteLogMetricSettings;
+    private PageStreamingCallSettings.Builder<ListSinksRequest, ListSinksResponse, LogSink>
+        listSinksSettings;
+    private SimpleCallSettings.Builder<GetSinkRequest, LogSink> getSinkSettings;
+    private SimpleCallSettings.Builder<CreateSinkRequest, LogSink> createSinkSettings;
+    private SimpleCallSettings.Builder<UpdateSinkRequest, LogSink> updateSinkSettings;
+    private SimpleCallSettings.Builder<DeleteSinkRequest, Empty> deleteSinkSettings;
 
     private static final ImmutableMap<String, ImmutableSet<Status.Code>> RETRYABLE_CODE_DEFINITIONS;
 
@@ -227,57 +226,57 @@ public class MetricsServiceV2Settings extends ServiceApiSettings {
               .provideCredentialsWith(DEFAULT_SERVICE_SCOPES)
               .build());
 
-      listLogMetricsSettings =
+      listSinksSettings =
           PageStreamingCallSettings.newBuilder(
-                  MetricsServiceV2Grpc.METHOD_LIST_LOG_METRICS, LIST_LOG_METRICS_PAGE_STR_DESC)
+                  ConfigServiceV2Grpc.METHOD_LIST_SINKS, LIST_SINKS_PAGE_STR_DESC)
               .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
               .setRetrySettingsBuilder(RETRY_PARAM_DEFINITIONS.get("default"));
 
-      getLogMetricSettings =
-          SimpleCallSettings.newBuilder(MetricsServiceV2Grpc.METHOD_GET_LOG_METRIC)
+      getSinkSettings =
+          SimpleCallSettings.newBuilder(ConfigServiceV2Grpc.METHOD_GET_SINK)
               .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
               .setRetrySettingsBuilder(RETRY_PARAM_DEFINITIONS.get("default"));
 
-      createLogMetricSettings =
-          SimpleCallSettings.newBuilder(MetricsServiceV2Grpc.METHOD_CREATE_LOG_METRIC)
+      createSinkSettings =
+          SimpleCallSettings.newBuilder(ConfigServiceV2Grpc.METHOD_CREATE_SINK)
               .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
               .setRetrySettingsBuilder(RETRY_PARAM_DEFINITIONS.get("default"));
 
-      updateLogMetricSettings =
-          SimpleCallSettings.newBuilder(MetricsServiceV2Grpc.METHOD_UPDATE_LOG_METRIC)
+      updateSinkSettings =
+          SimpleCallSettings.newBuilder(ConfigServiceV2Grpc.METHOD_UPDATE_SINK)
               .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
               .setRetrySettingsBuilder(RETRY_PARAM_DEFINITIONS.get("default"));
 
-      deleteLogMetricSettings =
-          SimpleCallSettings.newBuilder(MetricsServiceV2Grpc.METHOD_DELETE_LOG_METRIC)
+      deleteSinkSettings =
+          SimpleCallSettings.newBuilder(ConfigServiceV2Grpc.METHOD_DELETE_SINK)
               .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
               .setRetrySettingsBuilder(RETRY_PARAM_DEFINITIONS.get("default"));
 
       methodSettingsBuilders =
           ImmutableList.<ApiCallSettings.Builder>of(
-              listLogMetricsSettings,
-              getLogMetricSettings,
-              createLogMetricSettings,
-              updateLogMetricSettings,
-              deleteLogMetricSettings);
+              listSinksSettings,
+              getSinkSettings,
+              createSinkSettings,
+              updateSinkSettings,
+              deleteSinkSettings);
     }
 
-    private Builder(MetricsServiceV2Settings settings) {
+    private Builder(ConfigServiceV2Settings settings) {
       super(settings);
 
-      listLogMetricsSettings = settings.listLogMetricsSettings.toBuilder();
-      getLogMetricSettings = settings.getLogMetricSettings.toBuilder();
-      createLogMetricSettings = settings.createLogMetricSettings.toBuilder();
-      updateLogMetricSettings = settings.updateLogMetricSettings.toBuilder();
-      deleteLogMetricSettings = settings.deleteLogMetricSettings.toBuilder();
+      listSinksSettings = settings.listSinksSettings.toBuilder();
+      getSinkSettings = settings.getSinkSettings.toBuilder();
+      createSinkSettings = settings.createSinkSettings.toBuilder();
+      updateSinkSettings = settings.updateSinkSettings.toBuilder();
+      deleteSinkSettings = settings.deleteSinkSettings.toBuilder();
 
       methodSettingsBuilders =
           ImmutableList.<ApiCallSettings.Builder>of(
-              listLogMetricsSettings,
-              getLogMetricSettings,
-              createLogMetricSettings,
-              updateLogMetricSettings,
-              deleteLogMetricSettings);
+              listSinksSettings,
+              getSinkSettings,
+              createSinkSettings,
+              updateSinkSettings,
+              deleteSinkSettings);
     }
 
     @Override
@@ -315,31 +314,30 @@ public class MetricsServiceV2Settings extends ServiceApiSettings {
       return this;
     }
 
-    public PageStreamingCallSettings.Builder<
-            ListLogMetricsRequest, ListLogMetricsResponse, LogMetric>
-        listLogMetricsSettings() {
-      return listLogMetricsSettings;
+    public PageStreamingCallSettings.Builder<ListSinksRequest, ListSinksResponse, LogSink>
+        listSinksSettings() {
+      return listSinksSettings;
     }
 
-    public SimpleCallSettings.Builder<GetLogMetricRequest, LogMetric> getLogMetricSettings() {
-      return getLogMetricSettings;
+    public SimpleCallSettings.Builder<GetSinkRequest, LogSink> getSinkSettings() {
+      return getSinkSettings;
     }
 
-    public SimpleCallSettings.Builder<CreateLogMetricRequest, LogMetric> createLogMetricSettings() {
-      return createLogMetricSettings;
+    public SimpleCallSettings.Builder<CreateSinkRequest, LogSink> createSinkSettings() {
+      return createSinkSettings;
     }
 
-    public SimpleCallSettings.Builder<UpdateLogMetricRequest, LogMetric> updateLogMetricSettings() {
-      return updateLogMetricSettings;
+    public SimpleCallSettings.Builder<UpdateSinkRequest, LogSink> updateSinkSettings() {
+      return updateSinkSettings;
     }
 
-    public SimpleCallSettings.Builder<DeleteLogMetricRequest, Empty> deleteLogMetricSettings() {
-      return deleteLogMetricSettings;
+    public SimpleCallSettings.Builder<DeleteSinkRequest, Empty> deleteSinkSettings() {
+      return deleteSinkSettings;
     }
 
     @Override
-    public MetricsServiceV2Settings build() throws IOException {
-      return new MetricsServiceV2Settings(this);
+    public ConfigServiceV2Settings build() throws IOException {
+      return new ConfigServiceV2Settings(this);
     }
   }
 }

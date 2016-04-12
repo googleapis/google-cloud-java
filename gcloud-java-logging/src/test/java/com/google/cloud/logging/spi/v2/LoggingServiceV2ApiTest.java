@@ -12,11 +12,11 @@
  * the License.
  */
 
-package com.google.gcloud.logging.spi.v2;
+package com.google.cloud.logging.spi.v2;
 
 import com.google.api.MonitoredResource;
 import com.google.common.collect.Iterables;
-import com.google.gcloud.logging.spi.v2.testing.LocalLoggingHelper;
+import com.google.cloud.logging.spi.v2.testing.LocalLoggingHelper;
 import com.google.logging.v2.LogEntry;
 
 import org.junit.After;
