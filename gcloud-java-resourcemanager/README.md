@@ -10,7 +10,7 @@ Java idiomatic client for [Google Cloud Resource Manager] (https://cloud.google.
 [![Dependency Status](https://www.versioneye.com/user/projects/56bd8ee72a29ed002d2b0969/badge.svg?style=flat)](https://www.versioneye.com/user/projects/56bd8ee72a29ed002d2b0969)
 
 -  [Homepage] (https://googlecloudplatform.github.io/gcloud-java/)
--  [API Documentation] (http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/gcloud/resourcemanager/package-summary.html)
+-  [API Documentation] (http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/cloud/resourcemanager/package-summary.html)
 
 > Note: This client is a work-in-progress, and may occasionally
 > make backwards-incompatible changes.
@@ -36,7 +36,7 @@ libraryDependencies += "com.google.cloud" % "gcloud-java-resourcemanager" % "0.1
 
 Example Application
 --------------------
-[`ResourceManagerExample`](../gcloud-java-examples/src/main/java/com/google/gcloud/examples/resourcemanager/ResourceManagerExample.java) is a simple command line interface for the Cloud Resource Manager.  Read more about using the application on the [`ResourceManagerExample` docs page](http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/gcloud/examples/resourcemanager/ResourceManagerExample.html).
+[`ResourceManagerExample`](../gcloud-java-examples/src/main/java/com/google/cloud/examples/resourcemanager/ResourceManagerExample.java) is a simple command line interface for the Cloud Resource Manager.  Read more about using the application on the [`ResourceManagerExample` docs page](http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/cloud/examples/resourcemanager/ResourceManagerExample.html).
 
 Authentication
 --------------
@@ -206,15 +206,15 @@ We put together all the code shown above into three programs. The programs assum
 running from your own desktop and used the Google Cloud SDK to authenticate yourself.
 
 The first program creates a project if it does not exist. Complete source code can be found at
-[GetOrCreateProject.java](../gcloud-java-examples/src/main/java/com/google/gcloud/examples/resourcemanager/snippets/GetOrCreateProject.java).
+[GetOrCreateProject.java](../gcloud-java-examples/src/main/java/com/google/cloud/examples/resourcemanager/snippets/GetOrCreateProject.java).
 
 The second program updates a project if it exists and lists all projects the user has permission to
 view. Complete source code can be found at
-[UpdateAndListProjects.java](../gcloud-java-examples/src/main/java/com/google/gcloud/examples/resourcemanager/snippets/UpdateAndListProjects.java).
+[UpdateAndListProjects.java](../gcloud-java-examples/src/main/java/com/google/cloud/examples/resourcemanager/snippets/UpdateAndListProjects.java).
 
 The third program modifies the IAM policy associated with a project using the read-modify-write
 pattern.  Complete source code can be found at
-[ModifyPolicy.java](../gcloud-java-examples/src/main/java/com/google/gcloud/examples/resourcemanager/snippets/ModifyPolicy.java)
+[ModifyPolicy.java](../gcloud-java-examples/src/main/java/com/google/cloud/examples/resourcemanager/snippets/ModifyPolicy.java)
 
 Java Versions
 -------------
@@ -255,5 +255,5 @@ Apache 2.0 - See [LICENSE] for more information.
 [TESTING]: https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/TESTING.md#testing-code-that-uses-resource-manager
 [cloud-platform]: https://cloud.google.com/
 [cloud-resourcemanager]: https://cloud.google.com/resource-manager/docs
-[resourcemanager-api]: http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/gcloud/resourcemanager/package-summary.html
+[resourcemanager-api]: http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/cloud/resourcemanager/package-summary.html
 

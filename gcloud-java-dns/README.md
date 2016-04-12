@@ -10,7 +10,7 @@ Java idiomatic client for [Google Cloud DNS] (https://cloud.google.com/dns/).
 [![Dependency Status](https://www.versioneye.com/user/projects/56bd8ee72a29ed002d2b0969/badge.svg?style=flat)](https://www.versioneye.com/user/projects/56bd8ee72a29ed002d2b0969)
 
 -  [Homepage] (https://googlecloudplatform.github.io/gcloud-java/)
--  [API Documentation] (http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/gcloud/dns/package-summary.html)
+-  [API Documentation] (http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/cloud/dns/package-summary.html)
 
 > Note: This client is a work-in-progress, and may occasionally
 > make backwards-incompatible changes.
@@ -37,10 +37,10 @@ libraryDependencies += "com.google.cloud" % "gcloud-java-dns" % "0.1.7"
 Example Application
 -------------------
 
-[`DnsExample`](../gcloud-java-examples/src/main/java/com/google/gcloud/examples/dns/DnsExample.java)
+[`DnsExample`](../gcloud-java-examples/src/main/java/com/google/cloud/examples/dns/DnsExample.java)
 is a simple command line interface that provides some of Google Cloud DNS's functionality.  Read
 more about using the application on the
-[`DnsExample` docs page](http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/gcloud/examples/dns/DnsExample.html).
+[`DnsExample` docs page](http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/cloud/examples/dns/DnsExample.html).
 
 Authentication
 --------------
@@ -325,11 +325,11 @@ if (result) {
 #### Complete Source Code
 
 We composed some of the aforementioned snippets into complete executable code samples. In
-[CreateZones.java](../gcloud-java-examples/src/main/java/com/google/gcloud/examples/dns/snippets/CreateZone.java)
-we create a zone. In [CreateOrUpdateRecordSets.java](../gcloud-java-examples/src/main/java/com/google/gcloud/examples/dns/snippets/CreateOrUpdateRecordSets.java)
+[CreateZones.java](../gcloud-java-examples/src/main/java/com/google/cloud/examples/dns/snippets/CreateZone.java)
+we create a zone. In [CreateOrUpdateRecordSets.java](../gcloud-java-examples/src/main/java/com/google/cloud/examples/dns/snippets/CreateOrUpdateRecordSets.java)
 we create a type A record set for a zone, or update an existing type A record set to a new IP address. We
-demonstrate how to delete a zone in [DeleteZone.java](../gcloud-java-examples/src/main/java/com/google/gcloud/examples/dns/snippets/DeleteZone.java).
-Finally, in [ManipulateZonesAndRecordSets.java](../gcloud-java-examples/src/main/java/com/google/gcloud/examples/dns/snippets/ManipulateZonesAndRecordSets.java)
+demonstrate how to delete a zone in [DeleteZone.java](../gcloud-java-examples/src/main/java/com/google/cloud/examples/dns/snippets/DeleteZone.java).
+Finally, in [ManipulateZonesAndRecordSets.java](../gcloud-java-examples/src/main/java/com/google/cloud/examples/dns/snippets/ManipulateZonesAndRecordSets.java)
 we assemble all the code snippets together and create zone, create or update a record set, list zones, list record sets, list changes, and
 delete a zone. The applications assume that they are running on Compute Engine or from your own desktop. To run any of these examples on App
 Engine, simply move the code from the main method to your application's servlet class and change the
@@ -383,5 +383,5 @@ Apache 2.0 - See [LICENSE] for more information.
 [cloud-platform]: https://cloud.google.com/
 
 [cloud-dns]: https://cloud.google.com/dns/
-[dns-api]: http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/gcloud/dns/package-summary.html
+[dns-api]: http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/cloud/dns/package-summary.html
 [dns-activate]:https://cloud.google.com/dns/getting-started#prerequisites

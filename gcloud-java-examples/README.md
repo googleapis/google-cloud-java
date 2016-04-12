@@ -10,7 +10,7 @@ Examples for gcloud-java (Java idiomatic client for [Google Cloud Platform][clou
 [![Dependency Status](https://www.versioneye.com/user/projects/56bd8ee72a29ed002d2b0969/badge.svg?style=flat)](https://www.versioneye.com/user/projects/56bd8ee72a29ed002d2b0969)
 
 -  [Homepage] (https://googlecloudplatform.github.io/gcloud-java/)
--  [Examples] (http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/gcloud/examples/package-summary.html)
+-  [Examples] (http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/cloud/examples/package-summary.html)
 
 Quickstart
 ----------

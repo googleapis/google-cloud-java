@@ -10,7 +10,7 @@ Java idiomatic client for [Google Cloud Storage] (https://cloud.google.com/stora
 [![Dependency Status](https://www.versioneye.com/user/projects/56bd8ee72a29ed002d2b0969/badge.svg?style=flat)](https://www.versioneye.com/user/projects/56bd8ee72a29ed002d2b0969)
 
 -  [Homepage] (https://googlecloudplatform.github.io/gcloud-java/)
--  [API Documentation] (http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/gcloud/storage/package-summary.html)
+-  [API Documentation] (http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/cloud/storage/package-summary.html)
 
 > Note: This client is a work-in-progress, and may occasionally
 > make backwards-incompatible changes.
@@ -37,7 +37,7 @@ libraryDependencies += "com.google.cloud" % "gcloud-java-storage" % "0.1.7"
 Example Application
 -------------------
 
-[`StorageExample`](../gcloud-java-examples/src/main/java/com/google/gcloud/examples/storage/StorageExample.java) is a simple command line interface that provides some of Cloud Storage's functionality.  Read more about using the application on the [`StorageExample` docs page](http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/gcloud/examples/storage/StorageExample.html).
+[`StorageExample`](../gcloud-java-examples/src/main/java/com/google/cloud/examples/storage/StorageExample.java) is a simple command line interface that provides some of Cloud Storage's functionality.  Read more about using the application on the [`StorageExample` docs page](http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/cloud/examples/storage/StorageExample.html).
 
 Authentication
 --------------
@@ -143,7 +143,7 @@ while (blobIterator.hasNext()) {
 #### Complete source code
 
 In
-[CreateAndListBucketsAndBlobs.java](../gcloud-java-examples/src/main/java/com/google/gcloud/examples/storage/snippets/CreateAndListBucketsAndBlobs.java)
+[CreateAndListBucketsAndBlobs.java](../gcloud-java-examples/src/main/java/com/google/cloud/examples/storage/snippets/CreateAndListBucketsAndBlobs.java)
 we put together all the code shown above into one program. The program assumes that you are
 running on Compute Engine or from your own desktop. To run the example on App Engine, simply move
 the code from the main method to your application's servlet class and change the print statements to
@@ -199,5 +199,5 @@ Apache 2.0 - See [LICENSE] for more information.
 [cloud-storage]: https://cloud.google.com/storage/
 [cloud-storage-docs]: https://cloud.google.com/storage/docs/overview
 [cloud-storage-create-bucket]: https://cloud.google.com/storage/docs/cloud-console#_creatingbuckets
-[storage-api]: http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/gcloud/storage/package-summary.html
+[storage-api]: http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/cloud/storage/package-summary.html
 [cloud-storage-activation]:https://cloud.google.com/storage/docs/signup?hl=en

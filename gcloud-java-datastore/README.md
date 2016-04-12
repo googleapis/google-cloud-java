@@ -10,7 +10,7 @@ Java idiomatic client for [Google Cloud Datastore] (https://cloud.google.com/dat
 [![Dependency Status](https://www.versioneye.com/user/projects/56bd8ee72a29ed002d2b0969/badge.svg?style=flat)](https://www.versioneye.com/user/projects/56bd8ee72a29ed002d2b0969)
 
 -  [Homepage] (https://googlecloudplatform.github.io/gcloud-java/)
--  [API Documentation] (http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/gcloud/datastore/package-summary.html)
+-  [API Documentation] (http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/cloud/datastore/package-summary.html)
 
 > Note: This client is a work-in-progress, and may occasionally
 > make backwards-incompatible changes.
@@ -36,7 +36,7 @@ libraryDependencies += "com.google.cloud" % "gcloud-java-datastore" % "0.1.7"
 
 Example Application
 --------------------
-[`DatastoreExample`](../gcloud-java-examples/src/main/java/com/google/gcloud/examples/datastore/DatastoreExample.java) is a simple command line interface for the Cloud Datastore.  Read more about using the application on the [`DatastoreExample` docs page](http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/gcloud/examples/datastore/DatastoreExample.html).
+[`DatastoreExample`](../gcloud-java-examples/src/main/java/com/google/cloud/examples/datastore/DatastoreExample.java) is a simple command line interface for the Cloud Datastore.  Read more about using the application on the [`DatastoreExample` docs page](http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/cloud/examples/datastore/DatastoreExample.html).
 
 Authentication
 --------------
@@ -137,7 +137,7 @@ Cloud Datastore relies on indexing to run queries. Indexing is turned on by defa
 #### Complete source code
 
 In
-[AddEntitiesAndRunQuery.java](../gcloud-java-examples/src/main/java/com/google/gcloud/examples/datastore/snippets/AddEntitiesAndRunQuery.java)
+[AddEntitiesAndRunQuery.java](../gcloud-java-examples/src/main/java/com/google/cloud/examples/datastore/snippets/AddEntitiesAndRunQuery.java)
 we put together all the code shown above into one program. The program assumes that you are
 running on Compute Engine or from your own desktop. To run the example on App Engine, simply move
 the code from the main method to your application's servlet class and change the print statements to
@@ -191,4 +191,4 @@ Apache 2.0 - See [LICENSE] for more information.
 [cloud-platform]: https://cloud.google.com/
 [cloud-datastore-docs]: https://cloud.google.com/datastore/docs
 [cloud-datastore-activation]: https://cloud.google.com/datastore/docs/activate
-[datastore-api]: http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/gcloud/datastore/package-summary.html
+[datastore-api]: http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/cloud/datastore/package-summary.html

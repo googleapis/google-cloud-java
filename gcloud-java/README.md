@@ -80,7 +80,7 @@ Apache 2.0 - See [LICENSE] for more information.
 [cloud-datastore]: https://cloud.google.com/datastore/docs
 [cloud-datastore-docs]: https://cloud.google.com/datastore/docs
 [cloud-datastore-activation]: https://cloud.google.com/datastore/docs/activate
-[datastore-api]: http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/gcloud/datastore/package-summary.html
+[datastore-api]: http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/cloud/datastore/package-summary.html
 
 [cloud-pubsub]: https://cloud.google.com/pubsub/
 [cloud-pubsub-docs]: https://cloud.google.com/pubsub/docs
@@ -88,4 +88,4 @@ Apache 2.0 - See [LICENSE] for more information.
 [cloud-storage]: https://cloud.google.com/storage/
 [cloud-storage-docs]: https://cloud.google.com/storage/docs/overview
 [cloud-storage-create-bucket]: https://cloud.google.com/storage/docs/cloud-console#_creatingbuckets
-[storage-api]: http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/gcloud/storage/package-summary.html
+[storage-api]: http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/cloud/storage/package-summary.html

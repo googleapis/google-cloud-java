@@ -45,23 +45,23 @@ libraryDependencies += "com.google.cloud" % "gcloud-java" % "0.1.7"
 Example Applications
 --------------------
 
-- [`BigQueryExample`](./gcloud-java-examples/src/main/java/com/google/gcloud/examples/bigquery/BigQueryExample.java) - A simple command line interface providing some of Cloud BigQuery's functionality
-  - Read more about using this application on the [`BigQueryExample` docs page](http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/gcloud/examples/bigquery/BigQueryExample.html).
+- [`BigQueryExample`](./gcloud-java-examples/src/main/java/com/google/cloud/examples/bigquery/BigQueryExample.java) - A simple command line interface providing some of Cloud BigQuery's functionality
+  - Read more about using this application on the [`BigQueryExample` docs page](http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/cloud/examples/bigquery/BigQueryExample.html).
 - [`Bookshelf`](https://github.com/GoogleCloudPlatform/getting-started-java/tree/master/bookshelf) - An App Engine app that manages a virtual bookshelf.
   - This app uses `gcloud-java` to interface with Cloud Datastore and Cloud Storage. It also uses Cloud SQL, another Google Cloud Platform service.
-- [`DatastoreExample`](./gcloud-java-examples/src/main/java/com/google/gcloud/examples/datastore/DatastoreExample.java) - A simple command line interface for Cloud Datastore
-  - Read more about using this application on the [`DatastoreExample` docs page](http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/gcloud/examples/datastore/DatastoreExample.html).
-- [`DnsExample`](./gcloud-java-examples/src/main/java/com/google/gcloud/examples/dns/DnsExample.java) - A simple command line interface for Cloud DNS
-  - Read more about using this application on the [`DnsExample` docs page](http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/gcloud/examples/dns/DnsExample.html).
+- [`DatastoreExample`](./gcloud-java-examples/src/main/java/com/google/cloud/examples/datastore/DatastoreExample.java) - A simple command line interface for Cloud Datastore
+  - Read more about using this application on the [`DatastoreExample` docs page](http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/cloud/examples/datastore/DatastoreExample.html).
+- [`DnsExample`](./gcloud-java-examples/src/main/java/com/google/cloud/examples/dns/DnsExample.java) - A simple command line interface for Cloud DNS
+  - Read more about using this application on the [`DnsExample` docs page](http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/cloud/examples/dns/DnsExample.html).
 - [`Flexible Environment/Datastore example`](https://github.com/GoogleCloudPlatform/java-docs-samples/tree/master/managed_vms/datastore) - A simple app that uses Cloud Datastore to list the last 10 IP addresses that visited your site.
   - Read about how to run the application [here](https://github.com/GoogleCloudPlatform/java-docs-samples/blob/master/managed_vms/README.md).
 - [`Flexible Environment/Storage example`](https://github.com/GoogleCloudPlatform/java-docs-samples/tree/master/managed_vms/cloudstorage) - An app that uploads files to a public Cloud Storage bucket on the App Engine Flexible Environment runtime.
-- [`ResourceManagerExample`](./gcloud-java-examples/src/main/java/com/google/gcloud/examples/resourcemanager/ResourceManagerExample.java) - A simple command line interface providing some of Cloud Resource Manager's functionality
-  - Read more about using this application on the [`ResourceManagerExample` docs page](http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/gcloud/examples/resourcemanager/ResourceManagerExample.html).
+- [`ResourceManagerExample`](./gcloud-java-examples/src/main/java/com/google/cloud/examples/resourcemanager/ResourceManagerExample.java) - A simple command line interface providing some of Cloud Resource Manager's functionality
+  - Read more about using this application on the [`ResourceManagerExample` docs page](http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/cloud/examples/resourcemanager/ResourceManagerExample.html).
 - [`SparkDemo`](https://github.com/GoogleCloudPlatform/java-docs-samples/blob/master/managed_vms/sparkjava) - An example of using `gcloud-java-datastore` from within the SparkJava and App Engine Flexible Environment frameworks.
   - Read about how it works on the example's [README page](https://github.com/GoogleCloudPlatform/java-docs-samples/tree/master/managed_vms/sparkjava#how-does-it-work).
-- [`StorageExample`](./gcloud-java-examples/src/main/java/com/google/gcloud/examples/storage/StorageExample.java) - A simple command line interface providing some of Cloud Storage's functionality
-  - Read more about using this application on the [`StorageExample` docs page](http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/gcloud/examples/storage/StorageExample.html).
+- [`StorageExample`](./gcloud-java-examples/src/main/java/com/google/cloud/examples/storage/StorageExample.java) - A simple command line interface providing some of Cloud Storage's functionality
+  - Read more about using this application on the [`StorageExample` docs page](http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/cloud/examples/storage/StorageExample.html).
 - [`TaskList`](https://github.com/GoogleCloudPlatform/java-docs-samples/blob/master/datastore/src/main/java/com/google/datastore/snippets/TaskList.java) - A command line application that uses Cloud Datastore to manage a to-do list.
   - Read about how to run the application on its [README page](https://github.com/GoogleCloudPlatform/java-docs-samples/tree/master/datastore).
 
@@ -135,7 +135,7 @@ Google Cloud BigQuery (Alpha)
 Here is a code snippet showing a simple usage example from within Compute/App Engine. Note that you
 must [supply credentials](#authentication) and a project ID if running this snippet elsewhere.
 Complete source code can be found at
-[CreateTableAndLoadData.java](./gcloud-java-examples/src/main/java/com/google/gcloud/examples/bigquery/snippets/CreateTableAndLoadData.java).
+[CreateTableAndLoadData.java](./gcloud-java-examples/src/main/java/com/google/cloud/examples/bigquery/snippets/CreateTableAndLoadData.java).
 
 ```java
 import com.google.cloud.bigquery.BigQuery;
@@ -183,7 +183,7 @@ Google Cloud Datastore
 Here are two code snippets showing simple usage examples from within Compute/App Engine. Note that you must [supply credentials](#authentication) and a project ID if running this snippet elsewhere.
 
 The first snippet shows how to create a Datastore entity. Complete source code can be found at
-[CreateEntity.java](./gcloud-java-examples/src/main/java/com/google/gcloud/examples/datastore/snippets/CreateEntity.java).
+[CreateEntity.java](./gcloud-java-examples/src/main/java/com/google/cloud/examples/datastore/snippets/CreateEntity.java).
 
 ```java
 import com.google.cloud.datastore.Datastore;
@@ -205,7 +205,7 @@ datastore.put(entity);
 ```
 The second snippet shows how to update a Datastore entity if it exists. Complete source code can be
 found at
-[UpdateEntity.java](./gcloud-java-examples/src/main/java/com/google/gcloud/examples/datastore/snippets/UpdateEntity.java).
+[UpdateEntity.java](./gcloud-java-examples/src/main/java/com/google/cloud/examples/datastore/snippets/UpdateEntity.java).
 ```java
 import com.google.cloud.datastore.Datastore;
 import com.google.cloud.datastore.DatastoreOptions;
@@ -239,7 +239,7 @@ Google Cloud DNS (Alpha)
 Here are two code snippets showing simple usage examples from within Compute/App Engine. Note that you must [supply credentials](#authentication) and a project ID if running this snippet elsewhere.
 
 The first snippet shows how to create a zone resource. Complete source code can be found on
-[CreateZone.java](./gcloud-java-examples/src/main/java/com/google/gcloud/examples/dns/snippets/CreateZone.java).
+[CreateZone.java](./gcloud-java-examples/src/main/java/com/google/cloud/examples/dns/snippets/CreateZone.java).
 
 ```java
 import com.google.cloud.dns.Dns;
@@ -255,7 +255,7 @@ ZoneInfo zoneInfo = ZoneInfo.of(zoneName, domainName, description);
 Zone zone = dns.create(zoneInfo);
 ```
 
-The second snippet shows how to create records inside a zone. The complete code can be found on [CreateOrUpdateRecordSets.java](./gcloud-java-examples/src/main/java/com/google/gcloud/examples/dns/snippets/CreateOrUpdateRecordSets.java).
+The second snippet shows how to create records inside a zone. The complete code can be found on [CreateOrUpdateRecordSets.java](./gcloud-java-examples/src/main/java/com/google/cloud/examples/dns/snippets/CreateOrUpdateRecordSets.java).
 
 ```java
 import com.google.cloud.dns.ChangeRequestInfo;
@@ -302,7 +302,7 @@ Google Cloud Resource Manager (Alpha)
 
 Here is a code snippet showing a simple usage example. Note that you must supply Google SDK credentials for this service, not other forms of authentication listed in the [Authentication section](#authentication).
 Complete source code can be found at
-[UpdateAndListProjects.java](./gcloud-java-examples/src/main/java/com/google/gcloud/examples/resourcemanager/snippets/UpdateAndListProjects.java).
+[UpdateAndListProjects.java](./gcloud-java-examples/src/main/java/com/google/cloud/examples/resourcemanager/snippets/UpdateAndListProjects.java).
 ```java
 import com.google.cloud.resourcemanager.Project;
 import com.google.cloud.resourcemanager.ResourceManager;
@@ -340,7 +340,7 @@ Google Cloud Storage
 Here are two code snippets showing simple usage examples from within Compute/App Engine.  Note that you must [supply credentials](#authentication) and a project ID if running this snippet elsewhere.
 
 The first snippet shows how to create a Storage blob. Complete source code can be found at
-[CreateBlob.java](./gcloud-java-examples/src/main/java/com/google/gcloud/examples/storage/snippets/CreateBlob.java).
+[CreateBlob.java](./gcloud-java-examples/src/main/java/com/google/cloud/examples/storage/snippets/CreateBlob.java).
 
 ```java
 import static java.nio.charset.StandardCharsets.UTF_8;
@@ -358,7 +358,7 @@ Blob blob = storage.create(blobInfo, "Hello, Cloud Storage!".getBytes(UTF_8));
 ```
 The second snippet shows how to update a Storage blob if it exists. Complete source code can be
 found at
-[UpdateBlob.java](./gcloud-java-examples/src/main/java/com/google/gcloud/examples/storage/snippets/UpdateBlob.java).
+[UpdateBlob.java](./gcloud-java-examples/src/main/java/com/google/cloud/examples/storage/snippets/UpdateBlob.java).
 ```java
 import static java.nio.charset.StandardCharsets.UTF_8;
 
@@ -431,9 +431,9 @@ Apache 2.0 - See [LICENSE] for more information.
 [cloud-datastore]: https://cloud.google.com/datastore/docs
 [cloud-datastore-docs]: https://cloud.google.com/datastore/docs
 [cloud-datastore-activation]: https://cloud.google.com/datastore/docs/activate
-[datastore-api]: http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/gcloud/datastore/package-summary.html
+[datastore-api]: http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/cloud/datastore/package-summary.html
 
-[dns-api]: http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/gcloud/dns/package-summary.html
+[dns-api]: http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/cloud/dns/package-summary.html
 [cloud-dns-docs]: https://cloud.google.com/dns/docs
 [cloud-dns-activation]: https://console.cloud.google.com/start/api?id=dns
 
@@ -444,11 +444,11 @@ Apache 2.0 - See [LICENSE] for more information.
 [cloud-storage-docs]: https://cloud.google.com/storage/docs/overview
 [cloud-storage-create-bucket]: https://cloud.google.com/storage/docs/cloud-console#_creatingbuckets
 [cloud-storage-activation]: https://cloud.google.com/storage/docs/signup
-[storage-api]: http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/gcloud/storage/package-summary.html
+[storage-api]: http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/cloud/storage/package-summary.html
 
-[resourcemanager-api]:http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/gcloud/resourcemanager/package-summary.html
+[resourcemanager-api]:http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/cloud/resourcemanager/package-summary.html
 [cloud-resourcemanager-docs]:https://cloud.google.com/resource-manager/
 
 [cloud-bigquery]: https://cloud.google.com/bigquery/
 [cloud-bigquery-docs]: https://cloud.google.com/bigquery/docs/overview
-[bigquery-api]: http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/gcloud/bigquery/package-summary.html
+[bigquery-api]: http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/cloud/bigquery/package-summary.html
