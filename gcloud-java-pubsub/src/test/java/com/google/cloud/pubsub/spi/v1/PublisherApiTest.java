@@ -12,10 +12,10 @@
  * the License.
  */
 
-package com.google.gcloud.pubsub.spi.v1;
+package com.google.cloud.pubsub.spi.v1;
 
 import com.google.api.gax.grpc.BundlingSettings;
-import com.google.gcloud.pubsub.testing.LocalPubsubHelper;
+import com.google.cloud.pubsub.testing.LocalPubsubHelper;
 import com.google.protobuf.ByteString;
 import com.google.pubsub.v1.PubsubMessage;
 import com.google.pubsub.v1.PullResponse;
