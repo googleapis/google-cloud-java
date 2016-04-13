@@ -16,7 +16,6 @@
 
 package com.google.cloud;
 
-import static org.easymock.EasyMock.expect;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;

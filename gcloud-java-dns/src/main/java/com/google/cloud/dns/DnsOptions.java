@@ -16,11 +16,11 @@
 
 package com.google.cloud.dns;
 
-import com.google.common.collect.ImmutableSet;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.dns.spi.DefaultDnsRpc;
 import com.google.cloud.dns.spi.DnsRpc;
 import com.google.cloud.dns.spi.DnsRpcFactory;
+import com.google.common.collect.ImmutableSet;
 
 import java.util.Set;
 

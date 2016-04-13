@@ -21,8 +21,6 @@ import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
-import com.google.cloud.dns.DnsBatchResult;
-
 import org.junit.Before;
 import org.junit.Test;
 

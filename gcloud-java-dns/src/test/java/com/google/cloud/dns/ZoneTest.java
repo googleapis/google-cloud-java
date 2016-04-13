@@ -30,8 +30,8 @@ import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
-import com.google.common.collect.ImmutableList;
 import com.google.cloud.Page;
+import com.google.common.collect.ImmutableList;
 
 import org.junit.After;
 import org.junit.Before;
