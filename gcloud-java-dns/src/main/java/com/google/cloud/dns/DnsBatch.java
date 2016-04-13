@@ -30,9 +30,9 @@ import com.google.cloud.Page;
 import com.google.cloud.PageImpl;
 import com.google.cloud.dns.spi.DnsRpc;
 import com.google.cloud.dns.spi.RpcBatch;
+import com.google.common.annotations.VisibleForTesting;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterables;
-
 
 import java.util.List;
 import java.util.Map;
@@ -52,14 +52,17 @@ public class DnsBatch {
     this.batch = dnsRpc.createBatch();
   }
 
+  @VisibleForTesting
   Object batch() {
     return batch;
   }
 
+  @VisibleForTesting
   DnsRpc dnsRpc() {
     return dnsRpc;
   }
 
+  @VisibleForTesting
   DnsOptions options() {
     return options;
   }
@@ -74,8 +77,8 @@ public class DnsBatch {
   public DnsBatchResult<Page<Zone>> listZones(Dns.ZoneListOption... options) {
     DnsBatchResult<Page<Zone>> result = new DnsBatchResult<>();
     Map<DnsRpc.Option, ?> optionMap = DnsImpl.optionMap(options);
-    RpcBatch.Callback<ManagedZonesListResponse> callback = createListZonesCallback(result,
-        optionMap);
+    RpcBatch.Callback<ManagedZonesListResponse> callback =
+        createListZonesCallback(result, optionMap);
     batch.addListZones(callback, optionMap);
     return result;
   }
