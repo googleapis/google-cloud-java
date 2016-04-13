@@ -967,19 +967,162 @@ public class ITDnsTest {
   }
 
   @Test
-  public void testListZoneBatch() {
-    DNS.create(ZONE1);
-    DNS.create(ZONE_EMPTY_DESCRIPTION);
+  public void testListZonesBatch() {
     try {
       DnsBatch batch = DNS.batch();
-      DnsBatchResult<Page<Zone>> batchResult = batch.listZones();
+      DnsBatchResult<Page<Zone>> result = batch.listZones();
       batch.submit();
-      assertTrue(batchResult.completed());
-      Iterator<Zone> iteratorBatch = batchResult.get().iterateAll();
-      Iterator<Zone> iteratorList = DNS.listZones().iterateAll();
-      assertEquals(Iterators.size(iteratorList), Iterators.size(iteratorBatch));
-      while (iteratorBatch.hasNext()) {
-        assertTrue(Iterators.contains(iteratorList, iteratorBatch.next()));
+      List<Zone> zones = filter(result.get().iterateAll());
+      assertEquals(0, zones.size());
+      // some zones exists
+      Zone created = DNS.create(ZONE1);
+      batch = DNS.batch();
+      result = batch.listZones();
+      batch.submit();
+      zones = filter(result.get().iterateAll());
+      assertEquals(created, zones.get(0));
+      assertEquals(1, zones.size());
+      created = DNS.create(ZONE_EMPTY_DESCRIPTION);
+      batch = DNS.batch();
+      result = batch.listZones();
+      DnsBatchResult<Page<Zone>> zeroSizeError =
+          batch.listZones(Dns.ZoneListOption.pageSize(0));
+      DnsBatchResult<Page<Zone>> negativeSizeError =
+          batch.listZones(Dns.ZoneListOption.pageSize(-1));
+      DnsBatchResult<Page<Zone>> okSize = batch.listZones(Dns.ZoneListOption.pageSize(1000));
+      DnsBatchResult<Page<Zone>> nameError = batch.listZones(Dns.ZoneListOption.dnsName("aaaaa"));
+      DnsBatchResult<Page<Zone>> okName =
+          batch.listZones(Dns.ZoneListOption.dnsName(ZONE1.dnsName()));
+      DnsBatchResult<Page<Zone>> idResult =
+          batch.listZones(Dns.ZoneListOption.dnsName(ZONE1.dnsName()),
+              Dns.ZoneListOption.fields(Dns.ZoneField.ZONE_ID));
+      DnsBatchResult<Page<Zone>> timeResult =
+          batch.listZones(Dns.ZoneListOption.dnsName(ZONE1.dnsName()),
+              Dns.ZoneListOption.fields(Dns.ZoneField.CREATION_TIME));
+      DnsBatchResult<Page<Zone>> dnsNameResult =
+          batch.listZones(Dns.ZoneListOption.dnsName(ZONE1.dnsName()),
+              Dns.ZoneListOption.fields(Dns.ZoneField.DNS_NAME));
+      DnsBatchResult<Page<Zone>> descriptionResult =
+          batch.listZones(Dns.ZoneListOption.dnsName(ZONE1.dnsName()),
+              Dns.ZoneListOption.fields(Dns.ZoneField.DESCRIPTION));
+      DnsBatchResult<Page<Zone>> nameServersResult =
+          batch.listZones(Dns.ZoneListOption.dnsName(ZONE1.dnsName()),
+              Dns.ZoneListOption.fields(Dns.ZoneField.NAME_SERVERS));
+      DnsBatchResult<Page<Zone>> nameServerSetResult =
+          batch.listZones(Dns.ZoneListOption.dnsName(ZONE1.dnsName()),
+              Dns.ZoneListOption.fields(Dns.ZoneField.NAME_SERVER_SET));
+      DnsBatchResult<Page<Zone>> combinationResult =
+          batch.listZones(Dns.ZoneListOption.fields(Dns.ZoneField.ZONE_ID,
+              Dns.ZoneField.DESCRIPTION),
+              Dns.ZoneListOption.pageSize(1));
+      batch.submit();
+      zones = filter(result.get().iterateAll());
+      assertEquals(2, zones.size());
+      assertTrue(zones.contains(created));
+      // error in options
+      try {
+        zeroSizeError.get();
+        fail();
+      } catch (DnsException ex) {
+        // expected
+        assertEquals(400, ex.code());
+        assertFalse(ex.retryable());
+      }
+      try {
+        negativeSizeError.get();
+        fail();
+      } catch (DnsException ex) {
+        // expected
+        assertEquals(400, ex.code());
+        assertFalse(ex.retryable());
+      }
+      // ok size
+      zones = filter(okSize.get().iterateAll());
+      assertEquals(2, zones.size()); // we still have only 2 zones
+      // dns name problems
+      try {
+        nameError.get();
+        fail();
+      } catch (DnsException ex) {
+        // expected
+        assertEquals(400, ex.code());
+        assertFalse(ex.retryable());
+      }
+      // ok name
+      zones = filter(okName.get().iterateAll());
+      assertEquals(1, zones.size());
+      // field options
+      Iterator<Zone> zoneIterator = idResult.get().iterateAll();
+      Zone zone = zoneIterator.next();
+      assertNull(zone.creationTimeMillis());
+      assertNotNull(zone.name());
+      assertNull(zone.dnsName());
+      assertNull(zone.description());
+      assertNull(zone.nameServerSet());
+      assertTrue(zone.nameServers().isEmpty());
+      assertNotNull(zone.generatedId());
+      assertFalse(zoneIterator.hasNext());
+      zoneIterator = timeResult.get().iterateAll();
+      zone = zoneIterator.next();
+      assertNotNull(zone.creationTimeMillis());
+      assertNotNull(zone.name());
+      assertNull(zone.dnsName());
+      assertNull(zone.description());
+      assertNull(zone.nameServerSet());
+      assertTrue(zone.nameServers().isEmpty());
+      assertNull(zone.generatedId());
+      assertFalse(zoneIterator.hasNext());
+      zoneIterator = dnsNameResult.get().iterateAll();
+      zone = zoneIterator.next();
+      assertNull(zone.creationTimeMillis());
+      assertNotNull(zone.name());
+      assertNotNull(zone.dnsName());
+      assertNull(zone.description());
+      assertNull(zone.nameServerSet());
+      assertTrue(zone.nameServers().isEmpty());
+      assertNull(zone.generatedId());
+      assertFalse(zoneIterator.hasNext());
+      zoneIterator = descriptionResult.get().iterateAll();
+      zone = zoneIterator.next();
+      assertNull(zone.creationTimeMillis());
+      assertNotNull(zone.name());
+      assertNull(zone.dnsName());
+      assertNotNull(zone.description());
+      assertNull(zone.nameServerSet());
+      assertTrue(zone.nameServers().isEmpty());
+      assertNull(zone.generatedId());
+      assertFalse(zoneIterator.hasNext());
+      zoneIterator = nameServersResult.get().iterateAll();
+      zone = zoneIterator.next();
+      assertNull(zone.creationTimeMillis());
+      assertNotNull(zone.name());
+      assertNull(zone.dnsName());
+      assertNull(zone.description());
+      assertNull(zone.nameServerSet());
+      assertFalse(zone.nameServers().isEmpty());
+      assertNull(zone.generatedId());
+      assertFalse(zoneIterator.hasNext());
+      zoneIterator = nameServerSetResult.get().iterateAll();
+      zone = zoneIterator.next();
+      assertNull(zone.creationTimeMillis());
+      assertNotNull(zone.name());
+      assertNull(zone.dnsName());
+      assertNull(zone.description());
+      assertNull(zone.nameServerSet()); // we cannot set it using gcloud java
+      assertTrue(zone.nameServers().isEmpty());
+      assertNull(zone.generatedId());
+      assertFalse(zoneIterator.hasNext());
+      // several combined
+      zones = filter(combinationResult.get().iterateAll());
+      assertEquals(2, zones.size());
+      for (Zone current : zones) {
+        assertNull(current.creationTimeMillis());
+        assertNotNull(current.name());
+        assertNull(current.dnsName());
+        assertNotNull(current.description());
+        assertNull(current.nameServerSet());
+        assertTrue(zone.nameServers().isEmpty());
+        assertNotNull(current.generatedId());
       }
     } finally {
       DNS.delete(ZONE1.name());
@@ -987,5 +1130,757 @@ public class ITDnsTest {
     }
   }
 
-  // todo(mderka) implement tests for other batch calls, issue #874
+  @Test
+  public void testCreateValidZoneBatch() {
+    try {
+      DnsBatch batch = DNS.batch();
+      DnsBatchResult<Zone> completeZoneResult = batch.createZone(ZONE1);
+      DnsBatchResult<Zone> partialZoneResult = batch.createZone(ZONE_EMPTY_DESCRIPTION);
+      batch.submit();
+      Zone created = completeZoneResult.get();
+      assertEquals(ZONE1.description(), created.description());
+      assertEquals(ZONE1.dnsName(), created.dnsName());
+      assertEquals(ZONE1.name(), created.name());
+      assertNotNull(created.creationTimeMillis());
+      assertNotNull(created.nameServers());
+      assertNull(created.nameServerSet());
+      assertNotNull(created.generatedId());
+      Zone retrieved = DNS.getZone(ZONE1.name());
+      assertEquals(created, retrieved);
+      created = partialZoneResult.get();
+      assertEquals(ZONE_EMPTY_DESCRIPTION.description(), created.description());
+      assertEquals(ZONE_EMPTY_DESCRIPTION.dnsName(), created.dnsName());
+      assertEquals(ZONE_EMPTY_DESCRIPTION.name(), created.name());
+      assertNotNull(created.creationTimeMillis());
+      assertNotNull(created.nameServers());
+      assertNull(created.nameServerSet());
+      assertNotNull(created.generatedId());
+      retrieved = DNS.getZone(ZONE_EMPTY_DESCRIPTION.name());
+      assertEquals(created, retrieved);
+    } finally {
+      DNS.delete(ZONE1.name());
+      DNS.delete(ZONE_EMPTY_DESCRIPTION.name());
+    }
+  }
+
+  @Test
+  public void testCreateZoneWithErrorsBatch() {
+    try {
+      DnsBatch batch = DNS.batch();
+      DnsBatchResult<Zone> nameErrorResult = batch.createZone(ZONE_NAME_ERROR);
+      DnsBatchResult<Zone> noPeriodResult = batch.createZone(ZONE_DNS_NO_PERIOD);
+      batch.submit();
+      try {
+        nameErrorResult.get();
+        fail("Zone name is missing a period. The service returns an error.");
+      } catch (DnsException ex) {
+        // expected
+        assertFalse(ex.retryable());
+      }
+      try {
+        noPeriodResult.get();
+        fail("Zone name is missing a period. The service returns an error.");
+      } catch (DnsException ex) {
+        // expected
+        assertFalse(ex.retryable());
+      }
+    } finally {
+      DNS.delete(ZONE_NAME_ERROR.name());
+      DNS.delete(ZONE_DNS_NO_PERIOD.name());
+    }
+  }
+
+  @Test
+  public void testCreateZoneWithOptionsBatch() {
+    try {
+      DnsBatch batch = DNS.batch();
+      DnsBatchResult<Zone> batchResult =
+          batch.createZone(ZONE1, Dns.ZoneOption.fields(Dns.ZoneField.CREATION_TIME));
+      batch.submit();
+      Zone created = batchResult.get();
+      assertEquals(ZONE1.name(), created.name()); // always returned
+      assertNotNull(created.creationTimeMillis());
+      assertNull(created.description());
+      assertNull(created.dnsName());
+      assertTrue(created.nameServers().isEmpty()); // never returns null
+      assertNull(created.nameServerSet());
+      assertNull(created.generatedId());
+      created.delete();
+      batch = DNS.batch();
+      batchResult = batch.createZone(ZONE1, Dns.ZoneOption.fields(Dns.ZoneField.DESCRIPTION));
+      batch.submit();
+      created = batchResult.get();
+      assertEquals(ZONE1.name(), created.name()); // always returned
+      assertNull(created.creationTimeMillis());
+      assertEquals(ZONE1.description(), created.description());
+      assertNull(created.dnsName());
+      assertTrue(created.nameServers().isEmpty()); // never returns null
+      assertNull(created.nameServerSet());
+      assertNull(created.generatedId());
+      created.delete();
+      batch = DNS.batch();
+      batchResult = batch.createZone(ZONE1, Dns.ZoneOption.fields(Dns.ZoneField.DNS_NAME));
+      batch.submit();
+      created = batchResult.get();
+      assertEquals(ZONE1.name(), created.name()); // always returned
+      assertNull(created.creationTimeMillis());
+      assertEquals(ZONE1.dnsName(), created.dnsName());
+      assertNull(created.description());
+      assertTrue(created.nameServers().isEmpty()); // never returns null
+      assertNull(created.nameServerSet());
+      assertNull(created.generatedId());
+      created.delete();
+      batch = DNS.batch();
+      batchResult = batch.createZone(ZONE1, Dns.ZoneOption.fields(Dns.ZoneField.NAME));
+      batch.submit();
+      created = batchResult.get();
+      assertEquals(ZONE1.name(), created.name()); // always returned
+      assertNull(created.creationTimeMillis());
+      assertNull(created.dnsName());
+      assertNull(created.description());
+      assertTrue(created.nameServers().isEmpty()); // never returns null
+      assertNull(created.nameServerSet());
+      assertNull(created.generatedId());
+      created.delete();
+      batch = DNS.batch();
+      batchResult = batch.createZone(ZONE1, Dns.ZoneOption.fields(Dns.ZoneField.NAME_SERVER_SET));
+      batch.submit();
+      created = batchResult.get();
+      assertEquals(ZONE1.name(), created.name()); // always returned
+      assertNull(created.creationTimeMillis());
+      assertNull(created.dnsName());
+      assertNull(created.description());
+      assertTrue(created.nameServers().isEmpty()); // never returns null
+      assertNull(created.nameServerSet()); // we did not set it
+      assertNull(created.generatedId());
+      created.delete();
+      batch = DNS.batch();
+      batchResult = batch.createZone(ZONE1, Dns.ZoneOption.fields(Dns.ZoneField.NAME_SERVERS));
+      batch.submit();
+      created = batchResult.get();
+      assertEquals(ZONE1.name(), created.name()); // always returned
+      assertNull(created.creationTimeMillis());
+      assertNull(created.dnsName());
+      assertNull(created.description());
+      assertFalse(created.nameServers().isEmpty());
+      assertNull(created.nameServerSet());
+      assertNull(created.generatedId());
+      created.delete();
+      batch = DNS.batch();
+      batchResult = batch.createZone(ZONE1, Dns.ZoneOption.fields(Dns.ZoneField.ZONE_ID));
+      batch.submit();
+      created = batchResult.get();
+      assertEquals(ZONE1.name(), created.name()); // always returned
+      assertNull(created.creationTimeMillis());
+      assertNull(created.dnsName());
+      assertNull(created.description());
+      assertNotNull(created.nameServers());
+      assertTrue(created.nameServers().isEmpty()); // never returns null
+      assertNotNull(created.generatedId());
+      created.delete();
+      batch = DNS.batch();
+      batchResult = batch.createZone(ZONE1, Dns.ZoneOption.fields(Dns.ZoneField.ZONE_ID,
+          Dns.ZoneField.NAME_SERVERS, Dns.ZoneField.NAME_SERVER_SET, Dns.ZoneField.DESCRIPTION));
+      batch.submit();
+      // combination of multiple things
+      created = batchResult.get();
+      assertEquals(ZONE1.name(), created.name()); // always returned
+      assertNull(created.creationTimeMillis());
+      assertNull(created.dnsName());
+      assertEquals(ZONE1.description(), created.description());
+      assertFalse(created.nameServers().isEmpty());
+      assertNull(created.nameServerSet()); // we did not set it
+      assertNotNull(created.generatedId());
+    } finally {
+      DNS.delete(ZONE1.name());
+    }
+  }
+
+  @Test
+  public void testGetZoneBatch() {
+    try {
+      DNS.create(ZONE1, Dns.ZoneOption.fields(Dns.ZoneField.NAME));
+      DnsBatch batch = DNS.batch();
+      DnsBatchResult<Zone> timeResult =
+          batch.getZone(ZONE1.name(), Dns.ZoneOption.fields(Dns.ZoneField.CREATION_TIME));
+      DnsBatchResult<Zone> descriptionResult =
+          batch.getZone(ZONE1.name(), Dns.ZoneOption.fields(Dns.ZoneField.DESCRIPTION));
+      DnsBatchResult<Zone> dnsNameResult =
+          batch.getZone(ZONE1.name(), Dns.ZoneOption.fields(Dns.ZoneField.DNS_NAME));
+      DnsBatchResult<Zone> nameResult =
+          batch.getZone(ZONE1.name(), Dns.ZoneOption.fields(Dns.ZoneField.NAME));
+      DnsBatchResult<Zone> nameServerSetResult =
+          batch.getZone(ZONE1.name(), Dns.ZoneOption.fields(Dns.ZoneField.NAME_SERVER_SET));
+      DnsBatchResult<Zone> nameServersResult =
+          batch.getZone(ZONE1.name(), Dns.ZoneOption.fields(Dns.ZoneField.NAME_SERVERS));
+      DnsBatchResult<Zone> idResult =
+          batch.getZone(ZONE1.name(), Dns.ZoneOption.fields(Dns.ZoneField.ZONE_ID));
+      DnsBatchResult<Zone> combinationResult = batch.getZone(ZONE1.name(),
+          Dns.ZoneOption.fields(Dns.ZoneField.ZONE_ID, Dns.ZoneField.NAME_SERVERS,
+              Dns.ZoneField.NAME_SERVER_SET, Dns.ZoneField.DESCRIPTION));
+      batch.submit();
+      Zone created = timeResult.get();
+      assertEquals(ZONE1.name(), created.name()); // always returned
+      assertNotNull(created.creationTimeMillis());
+      assertNull(created.description());
+      assertNull(created.dnsName());
+      assertTrue(created.nameServers().isEmpty()); // never returns null
+      assertNull(created.nameServerSet());
+      assertNull(created.generatedId());
+      created = descriptionResult.get();
+      assertEquals(ZONE1.name(), created.name()); // always returned
+      assertNull(created.creationTimeMillis());
+      assertEquals(ZONE1.description(), created.description());
+      assertNull(created.dnsName());
+      assertTrue(created.nameServers().isEmpty()); // never returns null
+      assertNull(created.nameServerSet());
+      assertNull(created.generatedId());
+      created = dnsNameResult.get();
+      assertEquals(ZONE1.name(), created.name()); // always returned
+      assertNull(created.creationTimeMillis());
+      assertEquals(ZONE1.dnsName(), created.dnsName());
+      assertNull(created.description());
+      assertTrue(created.nameServers().isEmpty()); // never returns null
+      assertNull(created.nameServerSet());
+      assertNull(created.generatedId());
+      created = nameResult.get();
+      assertEquals(ZONE1.name(), created.name()); // always returned
+      assertNull(created.creationTimeMillis());
+      assertNull(created.dnsName());
+      assertNull(created.description());
+      assertTrue(created.nameServers().isEmpty()); // never returns null
+      assertNull(created.nameServerSet());
+      assertNull(created.generatedId());
+      created = nameServerSetResult.get();
+      assertEquals(ZONE1.name(), created.name()); // always returned
+      assertNull(created.creationTimeMillis());
+      assertNull(created.dnsName());
+      assertNull(created.description());
+      assertTrue(created.nameServers().isEmpty()); // never returns null
+      assertNull(created.nameServerSet()); // we did not set it
+      assertNull(created.generatedId());
+      created = nameServersResult.get();
+      assertEquals(ZONE1.name(), created.name()); // always returned
+      assertNull(created.creationTimeMillis());
+      assertNull(created.dnsName());
+      assertNull(created.description());
+      assertFalse(created.nameServers().isEmpty());
+      assertNull(created.nameServerSet());
+      assertNull(created.generatedId());
+      created = idResult.get();
+      assertEquals(ZONE1.name(), created.name()); // always returned
+      assertNull(created.creationTimeMillis());
+      assertNull(created.dnsName());
+      assertNull(created.description());
+      assertNotNull(created.nameServers());
+      assertTrue(created.nameServers().isEmpty()); // never returns null
+      assertNotNull(created.generatedId());
+      // combination of multiple things
+      created = combinationResult.get();
+      assertEquals(ZONE1.name(), created.name()); // always returned
+      assertNull(created.creationTimeMillis());
+      assertNull(created.dnsName());
+      assertEquals(ZONE1.description(), created.description());
+      assertFalse(created.nameServers().isEmpty());
+      assertNull(created.nameServerSet()); // we did not set it
+      assertNotNull(created.generatedId());
+    } finally {
+      DNS.delete(ZONE1.name());
+    }
+  }
+
+  @Test
+  public void testDeleteZoneBatch() {
+    try {
+      Zone created = DNS.create(ZONE1);
+      assertEquals(created, DNS.getZone(ZONE1.name()));
+      DnsBatch batch = DNS.batch();
+      DnsBatchResult<Boolean> result = batch.deleteZone(ZONE1.name());
+      batch.submit();
+      assertNull(DNS.getZone(ZONE1.name()));
+      assertTrue(result.get());
+    } finally {
+      DNS.delete(ZONE1.name());
+    }
+  }
+
+  @Test
+  public void testGetProjectBatch() {
+    // fetches all fields
+    DnsBatch batch = DNS.batch();
+    DnsBatchResult<ProjectInfo> result = batch.getProject();
+    DnsBatchResult<ProjectInfo> resultQuota =
+        batch.getProject(Dns.ProjectOption.fields(Dns.ProjectField.QUOTA));
+    DnsBatchResult<ProjectInfo> resultId =
+        batch.getProject(Dns.ProjectOption.fields(Dns.ProjectField.PROJECT_ID));
+    DnsBatchResult<ProjectInfo> resultNumber =
+        batch.getProject(Dns.ProjectOption.fields(Dns.ProjectField.PROJECT_NUMBER));
+    DnsBatchResult<ProjectInfo> resultCombination =
+        batch.getProject(Dns.ProjectOption.fields(Dns.ProjectField.PROJECT_NUMBER,
+            Dns.ProjectField.QUOTA, Dns.ProjectField.PROJECT_ID));
+    batch.submit();
+    assertNotNull(result.get().quota());
+    assertNotNull(resultQuota.get().quota());
+    assertNull(resultId.get().quota());
+    assertNull(resultNumber.get().quota());
+    assertNotNull(resultCombination.get().quota());
+  }
+
+  @Test
+  public void testCreateChangeBatch() {
+    try {
+      DNS.create(ZONE1, Dns.ZoneOption.fields(Dns.ZoneField.NAME));
+      DnsBatch batch = DNS.batch();
+      DnsBatchResult<ChangeRequest> result =
+          batch.applyChangeRequest(ZONE1.name(), CHANGE_ADD_ZONE1);
+      batch.submit();
+      ChangeRequest created = result.get();
+      assertEquals(CHANGE_ADD_ZONE1.additions(), created.additions());
+      assertNotNull(created.startTimeMillis());
+      assertTrue(created.deletions().isEmpty());
+      assertEquals("1", created.generatedId());
+      assertTrue(ImmutableList.of(ChangeRequest.Status.PENDING, ChangeRequest.Status.DONE)
+          .contains(created.status()));
+      assertEqChangesIgnoreStatus(created, DNS.getChangeRequest(ZONE1.name(), "1"));
+      waitForChangeToComplete(created);
+      created = DNS.applyChangeRequest(ZONE1.name(), CHANGE_DELETE_ZONE1);
+      waitForChangeToComplete(created);
+      // with options
+      batch = DNS.batch();
+      result = batch.applyChangeRequest(ZONE1.name(), CHANGE_ADD_ZONE1,
+          Dns.ChangeRequestOption.fields(Dns.ChangeRequestField.ID));
+      batch.submit();
+      created = result.get();
+      assertTrue(created.additions().isEmpty());
+      assertNull(created.startTimeMillis());
+      assertTrue(created.deletions().isEmpty());
+      assertEquals("3", created.generatedId());
+      assertNull(created.status());
+      waitForChangeToComplete(created);
+      created = DNS.applyChangeRequest(ZONE1.name(), CHANGE_DELETE_ZONE1);
+      waitForChangeToComplete(created);
+      batch = DNS.batch();
+      result = batch.applyChangeRequest(ZONE1.name(), CHANGE_ADD_ZONE1,
+          Dns.ChangeRequestOption.fields(Dns.ChangeRequestField.STATUS));
+      batch.submit();
+      created = result.get();
+      assertTrue(created.additions().isEmpty());
+      assertNull(created.startTimeMillis());
+      assertTrue(created.deletions().isEmpty());
+      assertEquals("5", created.generatedId());
+      assertNotNull(created.status());
+      waitForChangeToComplete(created);
+      created = DNS.applyChangeRequest(ZONE1.name(), CHANGE_DELETE_ZONE1);
+      waitForChangeToComplete(created);
+      batch = DNS.batch();
+      result = batch.applyChangeRequest(ZONE1.name(), CHANGE_ADD_ZONE1,
+          Dns.ChangeRequestOption.fields(Dns.ChangeRequestField.START_TIME));
+      batch.submit();
+      created = result.get();
+      assertTrue(created.additions().isEmpty());
+      assertNotNull(created.startTimeMillis());
+      assertTrue(created.deletions().isEmpty());
+      assertEquals("7", created.generatedId());
+      assertNull(created.status());
+      waitForChangeToComplete(created);
+      created = DNS.applyChangeRequest(ZONE1.name(), CHANGE_DELETE_ZONE1);
+      waitForChangeToComplete(created);
+      batch = DNS.batch();
+      result = batch.applyChangeRequest(ZONE1.name(), CHANGE_ADD_ZONE1,
+          Dns.ChangeRequestOption.fields(Dns.ChangeRequestField.ADDITIONS));
+      batch.submit();
+      created = result.get();
+      assertEquals(CHANGE_ADD_ZONE1.additions(), created.additions());
+      assertNull(created.startTimeMillis());
+      assertTrue(created.deletions().isEmpty());
+      assertEquals("9", created.generatedId());
+      assertNull(created.status());
+      // finishes with delete otherwise we cannot delete the zone
+      waitForChangeToComplete(created);
+      batch = DNS.batch();
+      result = batch.applyChangeRequest(ZONE1.name(), CHANGE_DELETE_ZONE1,
+          Dns.ChangeRequestOption.fields(Dns.ChangeRequestField.DELETIONS));
+      batch.submit();
+      created = result.get();
+      waitForChangeToComplete(created);
+      assertEquals(CHANGE_DELETE_ZONE1.deletions(), created.deletions());
+      assertNull(created.startTimeMillis());
+      assertTrue(created.additions().isEmpty());
+      assertEquals("10", created.generatedId());
+      assertNull(created.status());
+      waitForChangeToComplete(created);
+    } finally {
+      clear();
+    }
+  }
+
+  @Test
+  public void testGetChangeBatch() {
+    try {
+      Zone zone = DNS.create(ZONE1, Dns.ZoneOption.fields(Dns.ZoneField.NAME));
+      ChangeRequest created = zone.applyChangeRequest(CHANGE_ADD_ZONE1);
+      DnsBatch batch = DNS.batch();
+      DnsBatchResult<ChangeRequest> result =
+          batch.getChangeRequest(zone.name(), created.generatedId());
+      batch.submit();
+      assertEqChangesIgnoreStatus(created, result.get());
+      waitForChangeToComplete(zone.name(), created.generatedId());
+      zone.applyChangeRequest(CHANGE_DELETE_ZONE1);
+      // with options
+      created = zone.applyChangeRequest(CHANGE_ADD_ZONE1,
+          Dns.ChangeRequestOption.fields(Dns.ChangeRequestField.ID));
+      batch = DNS.batch();
+      result = batch.getChangeRequest(zone.name(), created.generatedId(),
+          Dns.ChangeRequestOption.fields(Dns.ChangeRequestField.ID));
+      batch.submit();
+      assertEqChangesIgnoreStatus(created, result.get());
+      waitForChangeToComplete(zone.name(), created.generatedId());
+      zone.applyChangeRequest(CHANGE_DELETE_ZONE1);
+      created = zone.applyChangeRequest(CHANGE_ADD_ZONE1,
+          Dns.ChangeRequestOption.fields(Dns.ChangeRequestField.STATUS));
+      batch = DNS.batch();
+      result = batch.getChangeRequest(zone.name(), created.generatedId(),
+          Dns.ChangeRequestOption.fields(Dns.ChangeRequestField.STATUS));
+      batch.submit();
+      assertEqChangesIgnoreStatus(created, result.get());
+      waitForChangeToComplete(zone.name(), created.generatedId());
+      zone.applyChangeRequest(CHANGE_DELETE_ZONE1);
+      created = zone.applyChangeRequest(CHANGE_ADD_ZONE1,
+          Dns.ChangeRequestOption.fields(Dns.ChangeRequestField.START_TIME));
+      batch = DNS.batch();
+      result = batch.getChangeRequest(zone.name(), created.generatedId(),
+          Dns.ChangeRequestOption.fields(Dns.ChangeRequestField.START_TIME));
+      batch.submit();
+      assertEqChangesIgnoreStatus(created, result.get());
+      waitForChangeToComplete(zone.name(), created.generatedId());
+      zone.applyChangeRequest(CHANGE_DELETE_ZONE1);
+      created = zone.applyChangeRequest(CHANGE_ADD_ZONE1,
+          Dns.ChangeRequestOption.fields(Dns.ChangeRequestField.ADDITIONS));
+      batch = DNS.batch();
+      result = batch.getChangeRequest(zone.name(), created.generatedId(),
+          Dns.ChangeRequestOption.fields(Dns.ChangeRequestField.ADDITIONS));
+      batch.submit();
+      assertEqChangesIgnoreStatus(created, result.get());
+      waitForChangeToComplete(zone.name(), created.generatedId());
+      // finishes with delete otherwise we cannot delete the zone
+      created = zone.applyChangeRequest(CHANGE_DELETE_ZONE1,
+          Dns.ChangeRequestOption.fields(Dns.ChangeRequestField.DELETIONS));
+      batch = DNS.batch();
+      result = batch.getChangeRequest(zone.name(), created.generatedId(),
+          Dns.ChangeRequestOption.fields(Dns.ChangeRequestField.DELETIONS));
+      batch.submit();
+      assertEqChangesIgnoreStatus(created, result.get());
+      waitForChangeToComplete(zone.name(), created.generatedId());
+    } finally {
+      clear();
+    }
+  }
+
+  @Test
+  public void testListChangesBatch() {
+    try {
+      DnsBatch batch = DNS.batch();
+      DnsBatchResult<Page<ChangeRequest>> result = batch.listChangeRequests(ZONE1.name());
+      batch.submit();
+      try {
+        result.get();
+        fail("Zone does not exist yet");
+      } catch (DnsException ex) {
+        // expected
+        assertEquals(404, ex.code());
+        assertFalse(ex.retryable());
+      }
+      // zone exists but has no changes
+      DNS.create(ZONE1);
+      batch = DNS.batch();
+      result = batch.listChangeRequests(ZONE1.name());
+      batch.submit();
+      ImmutableList<ChangeRequest> changes = ImmutableList.copyOf(result.get().iterateAll());
+      assertEquals(1, changes.size()); // default change creating SOA and NS
+      // zone has changes
+      ChangeRequest change = DNS.applyChangeRequest(ZONE1.name(), CHANGE_ADD_ZONE1);
+      waitForChangeToComplete(ZONE1.name(), change.generatedId());
+      change = DNS.applyChangeRequest(ZONE1.name(), CHANGE_DELETE_ZONE1);
+      waitForChangeToComplete(ZONE1.name(), change.generatedId());
+      change = DNS.applyChangeRequest(ZONE1.name(), CHANGE_ADD_ZONE1);
+      waitForChangeToComplete(ZONE1.name(), change.generatedId());
+      change = DNS.applyChangeRequest(ZONE1.name(), CHANGE_DELETE_ZONE1);
+      waitForChangeToComplete(ZONE1.name(), change.generatedId());
+      batch = DNS.batch();
+      result = batch.listChangeRequests(ZONE1.name());
+      DnsBatchResult<Page<ChangeRequest>> errorPageSize = batch.listChangeRequests(ZONE1.name(),
+          Dns.ChangeRequestListOption.pageSize(0));
+      DnsBatchResult<Page<ChangeRequest>> errorPageNegative = batch.listChangeRequests(ZONE1.name(),
+          Dns.ChangeRequestListOption.pageSize(-1));
+      DnsBatchResult<Page<ChangeRequest>> resultAscending = batch.listChangeRequests(ZONE1.name(),
+          Dns.ChangeRequestListOption.sortOrder(Dns.SortingOrder.ASCENDING));
+      DnsBatchResult<Page<ChangeRequest>> resultDescending = batch.listChangeRequests(ZONE1.name(),
+          Dns.ChangeRequestListOption.sortOrder(Dns.SortingOrder.DESCENDING));
+      DnsBatchResult<Page<ChangeRequest>> resultAdditions = batch.listChangeRequests(ZONE1.name(),
+          Dns.ChangeRequestListOption.sortOrder(Dns.SortingOrder.ASCENDING),
+          Dns.ChangeRequestListOption.fields(Dns.ChangeRequestField.ADDITIONS));
+      DnsBatchResult<Page<ChangeRequest>> resultDeletions = batch.listChangeRequests(ZONE1.name(),
+          Dns.ChangeRequestListOption.sortOrder(Dns.SortingOrder.ASCENDING),
+          Dns.ChangeRequestListOption.fields(Dns.ChangeRequestField.DELETIONS));
+      DnsBatchResult<Page<ChangeRequest>> resultId = batch.listChangeRequests(ZONE1.name(),
+          Dns.ChangeRequestListOption.sortOrder(Dns.SortingOrder.ASCENDING),
+          Dns.ChangeRequestListOption.fields(Dns.ChangeRequestField.ID));
+      DnsBatchResult<Page<ChangeRequest>> resultTime = batch.listChangeRequests(ZONE1.name(),
+          Dns.ChangeRequestListOption.sortOrder(Dns.SortingOrder.ASCENDING),
+          Dns.ChangeRequestListOption.fields(Dns.ChangeRequestField.START_TIME));
+      DnsBatchResult<Page<ChangeRequest>> resultStatus = batch.listChangeRequests(ZONE1.name(),
+          Dns.ChangeRequestListOption.sortOrder(Dns.SortingOrder.ASCENDING),
+          Dns.ChangeRequestListOption.fields(Dns.ChangeRequestField.STATUS));
+      batch.submit();
+      changes = ImmutableList.copyOf(result.get().iterateAll());
+      assertEquals(5, changes.size());
+      // error in options
+      try {
+        errorPageSize.get();
+        fail();
+      } catch (DnsException ex) {
+        // expected
+        assertEquals(400, ex.code());
+        assertFalse(ex.retryable());
+      }
+      try {
+        errorPageNegative.get();
+        fail();
+      } catch (DnsException ex) {
+        // expected
+        assertEquals(400, ex.code());
+        assertFalse(ex.retryable());
+      }
+      // sorting order
+      ImmutableList<ChangeRequest> ascending =
+          ImmutableList.copyOf(resultAscending.get().iterateAll());
+      ImmutableList<ChangeRequest> descending =
+          ImmutableList.copyOf(resultDescending.get().iterateAll());
+      int size = 5;
+      assertEquals(size, descending.size());
+      assertEquals(size, ascending.size());
+      for (int i = 0; i < size; i++) {
+        assertEquals(descending.get(i), ascending.get(size - i - 1));
+      }
+      // field options
+      changes = ImmutableList.copyOf(resultAdditions.get().iterateAll());
+      change = changes.get(1);
+      assertEquals(CHANGE_ADD_ZONE1.additions(), change.additions());
+      assertTrue(change.deletions().isEmpty());
+      assertEquals("1", change.generatedId());
+      assertNull(change.startTimeMillis());
+      assertNull(change.status());
+      changes = ImmutableList.copyOf(resultDeletions.get().iterateAll());
+      change = changes.get(2);
+      assertTrue(change.additions().isEmpty());
+      assertNotNull(change.deletions());
+      assertEquals("2", change.generatedId());
+      assertNull(change.startTimeMillis());
+      assertNull(change.status());
+      changes = ImmutableList.copyOf(resultId.get().iterateAll());
+      change = changes.get(1);
+      assertTrue(change.additions().isEmpty());
+      assertTrue(change.deletions().isEmpty());
+      assertEquals("1", change.generatedId());
+      assertNull(change.startTimeMillis());
+      assertNull(change.status());
+      changes = ImmutableList.copyOf(resultTime.get().iterateAll());
+      change = changes.get(1);
+      assertTrue(change.additions().isEmpty());
+      assertTrue(change.deletions().isEmpty());
+      assertEquals("1", change.generatedId());
+      assertNotNull(change.startTimeMillis());
+      assertNull(change.status());
+      changes = ImmutableList.copyOf(resultStatus.get().iterateAll());
+      change = changes.get(1);
+      assertTrue(change.additions().isEmpty());
+      assertTrue(change.deletions().isEmpty());
+      assertEquals("1", change.generatedId());
+      assertNull(change.startTimeMillis());
+      assertEquals(ChangeRequest.Status.DONE, change.status());
+    } finally {
+      clear();
+    }
+  }
+
+  @Test
+  public void testListDnsRecordSetsBatch() {
+    try {
+      Zone zone = DNS.create(ZONE1);
+      DnsBatch batch = DNS.batch();
+      DnsBatchResult<Page<RecordSet>> result = batch.listRecordSets(zone.name());
+      batch.submit();
+      ImmutableList<RecordSet> recordSets = ImmutableList.copyOf(result.get().iterateAll());
+      assertEquals(2, recordSets.size());
+      ImmutableList<RecordSet.Type> defaultRecords =
+          ImmutableList.of(RecordSet.Type.NS, RecordSet.Type.SOA);
+      for (RecordSet recordSet : recordSets) {
+        assertTrue(defaultRecords.contains(recordSet.type()));
+      }
+      // field options
+      batch = DNS.batch();
+      DnsBatchResult<Page<RecordSet>> ttlResult = batch.listRecordSets(zone.name(),
+          Dns.RecordSetListOption.fields(Dns.RecordSetField.TTL));
+      DnsBatchResult<Page<RecordSet>> nameResult = batch.listRecordSets(zone.name(),
+          Dns.RecordSetListOption.fields(Dns.RecordSetField.NAME));
+      DnsBatchResult<Page<RecordSet>> recordsResult = batch.listRecordSets(zone.name(),
+          Dns.RecordSetListOption.fields(Dns.RecordSetField.DNS_RECORDS));
+      DnsBatchResult<Page<RecordSet>> typeResult = batch.listRecordSets(zone.name(),
+          Dns.RecordSetListOption.fields(Dns.RecordSetField.TYPE),
+          Dns.RecordSetListOption.pageSize(1)); // also paging
+      DnsBatchResult<Page<RecordSet>> pageSizeResult = batch.listRecordSets(zone.name(),
+          Dns.RecordSetListOption.fields(Dns.RecordSetField.TYPE),
+          Dns.RecordSetListOption.pageSize(1));
+      batch.submit();
+      Iterator<RecordSet> recordSetIterator = ttlResult.get().iterateAll();
+      int counter = 0;
+      while (recordSetIterator.hasNext()) {
+        RecordSet recordSet = recordSetIterator.next();
+        assertEquals(recordSets.get(counter).ttl(), recordSet.ttl());
+        assertEquals(recordSets.get(counter).name(), recordSet.name());
+        assertEquals(recordSets.get(counter).type(), recordSet.type());
+        assertTrue(recordSet.records().isEmpty());
+        counter++;
+      }
+      assertEquals(2, counter);
+      recordSetIterator = nameResult.get().iterateAll();
+      counter = 0;
+      while (recordSetIterator.hasNext()) {
+        RecordSet recordSet = recordSetIterator.next();
+        assertEquals(recordSets.get(counter).name(), recordSet.name());
+        assertEquals(recordSets.get(counter).type(), recordSet.type());
+        assertTrue(recordSet.records().isEmpty());
+        assertNull(recordSet.ttl());
+        counter++;
+      }
+      assertEquals(2, counter);
+      recordSetIterator = recordsResult.get().iterateAll();
+      counter = 0;
+      while (recordSetIterator.hasNext()) {
+        RecordSet recordSet = recordSetIterator.next();
+        assertEquals(recordSets.get(counter).records(), recordSet.records());
+        assertEquals(recordSets.get(counter).name(), recordSet.name());
+        assertEquals(recordSets.get(counter).type(), recordSet.type());
+        assertNull(recordSet.ttl());
+        counter++;
+      }
+      assertEquals(2, counter);
+      recordSetIterator = typeResult.get().iterateAll(); // also test paging
+      counter = 0;
+      while (recordSetIterator.hasNext()) {
+        RecordSet recordSet = recordSetIterator.next();
+        assertEquals(recordSets.get(counter).type(), recordSet.type());
+        assertEquals(recordSets.get(counter).name(), recordSet.name());
+        assertTrue(recordSet.records().isEmpty());
+        assertNull(recordSet.ttl());
+        counter++;
+      }
+      assertEquals(2, counter);
+      // test page size
+      Page<RecordSet> recordSetPage = pageSizeResult.get();
+      assertEquals(1, ImmutableList.copyOf(recordSetPage.values().iterator()).size());
+      // test name filter
+      ChangeRequest change = DNS.applyChangeRequest(ZONE1.name(), CHANGE_ADD_ZONE1);
+      waitForChangeToComplete(ZONE1.name(), change.generatedId());
+      batch = DNS.batch();
+      result = batch.listRecordSets(ZONE1.name(),
+          Dns.RecordSetListOption.dnsName(A_RECORD_ZONE1.name()));
+      batch.submit();
+      recordSetIterator = result.get().iterateAll();
+      counter = 0;
+      while (recordSetIterator.hasNext()) {
+        RecordSet recordSet = recordSetIterator.next();
+        assertTrue(ImmutableList.of(A_RECORD_ZONE1.type(), AAAA_RECORD_ZONE1.type())
+            .contains(recordSet.type()));
+        counter++;
+      }
+      assertEquals(2, counter);
+      // test type filter
+      waitForChangeToComplete(ZONE1.name(), change.generatedId());
+      batch = DNS.batch();
+      result = batch.listRecordSets(ZONE1.name(),
+          Dns.RecordSetListOption.dnsName(A_RECORD_ZONE1.name()),
+          Dns.RecordSetListOption.type(A_RECORD_ZONE1.type()));
+      batch.submit();
+      recordSetIterator = result.get().iterateAll();
+      counter = 0;
+      while (recordSetIterator.hasNext()) {
+        RecordSet recordSet = recordSetIterator.next();
+        assertEquals(A_RECORD_ZONE1, recordSet);
+        counter++;
+      }
+      assertEquals(1, counter);
+      change = zone.applyChangeRequest(CHANGE_DELETE_ZONE1);
+      batch = DNS.batch();
+      DnsBatchResult<Page<RecordSet>> noNameError = batch.listRecordSets(ZONE1.name(),
+          Dns.RecordSetListOption.type(A_RECORD_ZONE1.type()));
+      DnsBatchResult<Page<RecordSet>> zeroSizeError =
+          batch.listRecordSets(ZONE1.name(), Dns.RecordSetListOption.pageSize(0));
+      DnsBatchResult<Page<RecordSet>> negativeSizeError =
+          batch.listRecordSets(ZONE1.name(), Dns.RecordSetListOption.pageSize(-1));
+      batch.submit();
+      // check wrong arguments
+      try {
+        // name is not set
+        noNameError.get();
+        fail();
+      } catch (DnsException ex) {
+        // expected
+        assertEquals(400, ex.code());
+        assertFalse(ex.retryable());
+      }
+      try {
+        zeroSizeError.get();
+        fail();
+      } catch (DnsException ex) {
+        // expected
+        assertEquals(400, ex.code());
+        assertFalse(ex.retryable());
+      }
+      try {
+        negativeSizeError.get();
+        fail();
+      } catch (DnsException ex) {
+        // expected
+        assertEquals(400, ex.code());
+        assertFalse(ex.retryable());
+      }
+      waitForChangeToComplete(ZONE1.name(), change.generatedId());
+    } finally {
+      clear();
+    }
+  }
+
+  @Test
+  public void testBatchCombined() {
+    // only testing that the combination is possible
+    // the results are validated in the other test methods
+    try {
+      DNS.create(ZONE1);
+      DnsBatch batch = DNS.batch();
+      DnsBatchResult<Zone> zoneResult = batch.getZone(ZONE_NAME1);
+      DnsBatchResult<ChangeRequest> changeRequestResult = batch.getChangeRequest(ZONE_NAME1, "0");
+      DnsBatchResult<Page<RecordSet>> pageResult = batch.listRecordSets(ZONE_NAME1);
+      DnsBatchResult<ProjectInfo> projectResult = batch.getProject();
+      assertFalse(zoneResult.completed());
+      try {
+        zoneResult.get();
+        fail("this should be submitted first");
+      } catch (IllegalStateException ex) {
+        // expected
+      }
+      batch.submit();
+      assertNotNull(zoneResult.get().creationTimeMillis());
+      assertEquals(ZONE1.dnsName(), zoneResult.get().dnsName());
+      assertEquals(ZONE1.description(), zoneResult.get().description());
+      assertFalse(zoneResult.get().nameServers().isEmpty());
+      assertNull(zoneResult.get().nameServerSet()); // we did not set it
+      assertNotNull(zoneResult.get().generatedId());
+      assertNotNull(projectResult.get().quota());
+      assertEquals(2, Iterators.size(pageResult.get().iterateAll()));
+      assertNotNull(changeRequestResult.get());
+    } finally {
+      DNS.delete(ZONE1.name());
+    }
+  }
 }
