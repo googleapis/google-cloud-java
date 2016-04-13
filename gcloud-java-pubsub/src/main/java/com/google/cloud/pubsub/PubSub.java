@@ -98,6 +98,14 @@ public interface PubSub extends Service<PubSubOptions> {
     }
   }
 
+  /**
+   * A callback to process pulled messages.
+   * The message will be ack'ed upon successful return or nack'ed if exception is thrown.
+   */
+  interface PullCallback {
+    void process(Message message) throws Exception;
+  }
+
   Topic create(TopicInfo topic);
 
   Future<Topic> createAsync(TopicInfo topic);
@@ -154,22 +162,29 @@ public interface PubSub extends Service<PubSubOptions> {
 
   Future<AsyncPage<Subscription>> listSubscriptionsAsync(String topic, ListOption... options);
 
-  // Possible Ack options:
-  // 1) return a "special" iterator with "ack-iterated-messages"
-  // 2) provide a way to pull with callback(Message) - ask messages that were called successfully
-  //
-  // Also, consider auto-renewable for all messages that were pulled and not acked.
   List<ReceivedMessage> pull(String subscription, PullOption... options);
 
-  Future<List<Message>> pullAsync(String subscription, PullOption... options);
+  Future<List<ReceivedMessage>> pullAsync(String subscription, PullOption... options);
 
-  void acknowledge(String subscription, String ackId, String... ackIds);
+  void pull(String subscription, PullCallback callback, PullOption... options);
 
-  Future<Void> acknowledgeAsync(String subscription, String ackId, String... ackIds);
+  void pullAsync(String subscription, PullCallback callback, PullOption... options);
 
-  void acknowledge(String subscription, Iterable<String> ackIds);
+  void ack(String subscription, String ackId, String... ackIds);
 
-  Future<Void> acknowledgeAsync(String subscription, Iterable<String> ackIds);
+  Future<Void> ackAsync(String subscription, String ackId, String... ackIds);
+
+  void ack(String subscription, Iterable<String> ackIds);
+
+  Future<Void> ackAsync(String subscription, Iterable<String> ackIds);
+
+  void nack(String subscription, String ackId, String... ackIds);
+
+  Future<Void> nackAsync(String subscription, String ackId, String... ackIds);
+
+  void nack(String subscription, Iterable<String> ackIds);
+
+  Future<Void> nackAsync(String subscription, Iterable<String> ackIds);
 
   void modifyAckDeadline(String subscription, int deadline, TimeUnit unit, String ackId,
       String... ackIds);
@@ -181,12 +196,6 @@ public interface PubSub extends Service<PubSubOptions> {
 
   Future<Void> modifyAckDeadlineAsync(String subscription, int deadline, TimeUnit unit,
       Iterable<String> ackIds);
-
-  // Note regarding Data types:
-  // 1) No field selection
-  //  --- This is why there are no options for getters
-  // 2) Never null for primitive values or collections
-  //  --- should we replace default "" with null (e.g. id when not populated)?
 
   // IAM Policy operations:  getPolicy, replacePolicy, testPermissions
   // Not sure if ready (docs is not up-to-date)

@@ -18,6 +18,7 @@ package com.google.cloud.pubsub;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import com.google.cloud.pubsub.PubSub.PullCallback;
 import com.google.cloud.pubsub.PubSub.PullOption;
 
 import java.io.IOException;
@@ -136,8 +137,16 @@ public class Subscription extends SubscriptionInfo {
     return pubsub.pull(name(), options);
   }
 
-  public Future<List<Message>> pullAsync(PullOption... options) {
+  public Future<List<ReceivedMessage>> pullAsync(PullOption... options) {
     return pubsub.pullAsync(name(), options);
+  }
+
+  public void pull(PullCallback callback, PullOption... options) {
+    pubsub.pull(name(), callback, options);
+  }
+
+  public void pullAsync(PullCallback callback, PullOption... options) {
+    pubsub.pull(name(), callback, options);
   }
 
   private void readObject(ObjectInputStream input) throws IOException, ClassNotFoundException {

@@ -16,11 +16,11 @@ package com.google.cloud.pubsub;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
-import com.google.api.client.util.Strings;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableMap;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Timestamp;
+import com.google.pubsub.v1.PubsubMessage;
 
 import java.io.Serializable;
 import java.util.HashMap;
@@ -58,14 +58,14 @@ public class Message implements Serializable {
 
     public abstract Builder clearAttributes();
 
-    abstract Builder publishTime(Long publishTime);
+    abstract Builder publishTime(long publishTime);
 
     public abstract Message build();
   }
 
   static final class BuilderImpl extends Builder {
 
-    private String id;
+    private String id = "";
     private byte[] payload;
     private Map<String, String> attributes = new HashMap<>();
     private Long publishTime;
@@ -81,7 +81,7 @@ public class Message implements Serializable {
 
     @Override
     BuilderImpl id(String id) {
-      this.id = id;
+      this.id = checkNotNull(id);
       return this;
     }
 
@@ -116,7 +116,7 @@ public class Message implements Serializable {
     }
 
     @Override
-    Builder publishTime(Long publishTime) {
+    Builder publishTime(long publishTime) {
       this.publishTime = publishTime;
       return this;
     }
@@ -176,33 +176,28 @@ public class Message implements Serializable {
         .toString();
   }
 
-  com.google.pubsub.v1.PubsubMessage toPb() {
-    com.google.pubsub.v1.PubsubMessage.Builder builder =
-        com.google.pubsub.v1.PubsubMessage.newBuilder();
+  PubsubMessage toPb() {
+    PubsubMessage.Builder builder = PubsubMessage.newBuilder();
     if (id != null) {
       builder.setMessageId(id);
     }
     builder.setData(payload);
     builder.getAttributes().putAll(attributes);
-    if (publishTime != null) {
-      Timestamp.Builder tsBuilder = Timestamp.newBuilder();
-      tsBuilder.setSeconds(publishTime / MILLIS_PER_SECOND);
-      tsBuilder.setNanos((int) (publishTime % MILLIS_PER_SECOND * NANOS_PER_MILLISECOND));
-      builder.setPublishTime(tsBuilder);
-    }
+    Timestamp.Builder tsBuilder = Timestamp.newBuilder();
+    tsBuilder.setSeconds(publishTime / MILLIS_PER_SECOND);
+    tsBuilder.setNanos((int) (publishTime % MILLIS_PER_SECOND * NANOS_PER_MILLISECOND));
+    builder.setPublishTime(tsBuilder);
     return builder.build();
   }
 
-  static Message fromPb(com.google.pubsub.v1.PubsubMessage messagePb) {
+  static Message fromPb(PubsubMessage messagePb) {
     Builder builder = builder(messagePb.getData().toByteArray());
     if (messagePb.hasPublishTime()) {
       Timestamp ts = messagePb.getPublishTime();
       builder.publishTime(
           ts.getSeconds() * MILLIS_PER_SECOND + ts.getNanos() / NANOS_PER_MILLISECOND);
     }
-    if (Strings.isNullOrEmpty(messagePb.getMessageId())) {
-      builder.id(messagePb.getMessageId());
-    }
+    builder.id(messagePb.getMessageId());
     for (Map.Entry<String, String> entry : messagePb.getAttributes().entrySet()) {
       builder.addAttribute(entry.getKey(), entry.getValue());
     }
