@@ -110,7 +110,7 @@ final class DnsImpl extends BaseService<DnsOptions> implements Dns {
     dnsRpc = options.rpc();
   }
 
-  static Function<ManagedZone, Zone> pbToZoneFunction(final DnsOptions options) {
+  static Function<ManagedZone, Zone> zoneFromPb(final DnsOptions options) {
     return new Function<ManagedZone, Zone>() {
       @Override
       public Zone apply(
@@ -127,8 +127,6 @@ final class DnsImpl extends BaseService<DnsOptions> implements Dns {
 
   private static Page<Zone> listZones(final DnsOptions serviceOptions,
       final Map<DnsRpc.Option, ?> optionsMap) {
-    // define transformation function
-    // this differs from the other list operations since zone is functional and requires dns service
     try {
       // get a list of managed zones
       final DnsRpc rpc = serviceOptions.rpc();
@@ -142,7 +140,7 @@ final class DnsImpl extends BaseService<DnsOptions> implements Dns {
       String cursor = result.pageToken();
       // transform that list into zone objects
       Iterable<Zone> zones = result.results() == null ? ImmutableList.<Zone>of()
-          : Iterables.transform(result.results(), pbToZoneFunction(serviceOptions));
+          : Iterables.transform(result.results(), zoneFromPb(serviceOptions));
       return new PageImpl<>(new ZonePageFetcher(serviceOptions, cursor, optionsMap),
           cursor, zones);
     } catch (RetryHelper.RetryHelperException e) {

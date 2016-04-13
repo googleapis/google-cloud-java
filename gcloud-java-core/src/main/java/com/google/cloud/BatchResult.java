@@ -24,31 +24,31 @@ import java.util.List;
 
 /**
  * This class holds a single result of a batch call. {@code T} is the type of the result and {@code
- * E} is the type of the service-dependent exception thrown when processing error occurs.
+ * E} is the type of the service-dependent exception thrown when a processing error occurs.
  */
 public abstract class BatchResult<T, E extends BaseServiceException> {
 
   private T result;
-  private boolean submitted = false;
+  private boolean completed = false;
   private E error;
   private List<Callback<T, E>> toBeNotified = new LinkedList<>();
 
   /**
-   * Returns {@code true} if the batch has been submitted and the result is available; {@code false}
+   * Returns {@code true} if the batch has been completed and the result is available; {@code false}
    * otherwise.
    */
   public boolean submitted() {
-    return submitted;
+    return completed;
   }
 
   /**
-   * Returns result of this call.
+   * Returns the result of this call.
    *
-   * @throws IllegalStateException if the batch has not been submitted yet
+   * @throws IllegalStateException if the batch has not been completed yet
    * @throws E if an error occurred when processing this request
    */
   public T get() throws E {
-    checkState(submitted(), "Batch has not been submitted yet");
+    checkState(submitted(), "Batch has not been completed yet");
     if (error != null) {
       throw error;
     }
@@ -60,7 +60,7 @@ public abstract class BatchResult<T, E extends BaseServiceException> {
    * will be invoked immediately.
    */
   public void notify(Callback<T, E> callback) {
-    if (!submitted) {
+    if (!completed) {
       toBeNotified.add(callback);
     } else if (error != null) {
       callback.error(error);
@@ -70,22 +70,22 @@ public abstract class BatchResult<T, E extends BaseServiceException> {
   }
 
   /**
-   * Sets an error and makes this submitted. Notifies all callbacks.
+   * Sets an error and status as completed. Notifies all callbacks.
    */
   protected void error(E error) {
     this.error = checkNotNull(error);
-    this.submitted = true;
+    this.completed = true;
     for (Callback<T, E> callback : toBeNotified) {
       callback.error(error);
     }
   }
 
   /**
-   * Sets a result and makes this submitted. Notifies all callbacks.
+   * Sets a result and status as completed. Notifies all callbacks.
    */
   protected void success(T result) {
     this.result = checkNotNull(result);
-    this.submitted = true;
+    this.completed = true;
     for (Callback<T, E> callback : toBeNotified) {
       callback.success(result);
     }

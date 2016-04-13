@@ -73,8 +73,8 @@ public interface RpcBatch {
   void addGetProject(Callback<Project> callback, Map<DnsRpc.Option, ?> options);
 
   /**
-   * Adds a call to "delete zone" to the batch with the provided {@code callback} and {@code
-   * options}.
+   * Adds a call to "delete zone" to the batch with the provided {@code callback}. The zone to be
+   * deleted is identified by {@code zoneName}.
    */
   void addDeleteZone(String zoneName, Callback<Void> callback);
 
@@ -95,16 +95,16 @@ public interface RpcBatch {
 
   /**
    * Adds a call to "get change request" to the batch with the provided {@code callback} and {@code
-   * options}. The change request to be retrieved is identified by {@code changeRequestId} and the
-   * zone to which the change request was applied is identified by {@code zoneName}.
+   * options}. The change request to be retrieved is identified by {@code changeRequestId}. The zone
+   * to which the change request was applied is identified by {@code zoneName}.
    */
   void addGetChangeRequest(String zoneName, String changeRequestId, Callback<Change> callback,
       Map<DnsRpc.Option, ?> options);
 
   /**
    * Adds a call to "apply change request" to the batch with the provided {@code callback} and
-   * {@code options}. The zone to which the change request should be applied is identified by {@code
-   * zoneName}.
+   * {@code options}. The parameter {@code change} is the change request to be applied. The zone to
+   * which the change request should be applied is identified by {@code zoneName}.
    */
   void addApplyChangeRequest(String zoneName, Change change, Callback<Change> callback,
       Map<DnsRpc.Option, ?> options);

@@ -36,6 +36,7 @@ import com.google.cloud.dns.RecordSet;
 import com.google.cloud.dns.Zone;
 import com.google.cloud.dns.ZoneInfo;
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.Iterators;
 
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
@@ -977,7 +978,7 @@ public class ITDnsTest {
       Iterator<Zone> iteratorBatch = batchResult.get().iterateAll();
       Iterator<Zone> iteratorList = DNS.listZones().iterateAll();
       while (iteratorBatch.hasNext()) {
-        assertEquals(iteratorList.next(), iteratorBatch.next());
+        assertTrue(Iterators.contains(iteratorList, iteratorBatch.next()));
       }
     } finally {
       DNS.delete(ZONE1.name());

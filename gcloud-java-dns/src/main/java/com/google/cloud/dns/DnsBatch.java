@@ -70,9 +70,8 @@ public class DnsBatch {
   /**
    * Adds a request representing the "list zones" operation to this batch. The {@code options} can
    * be used to restrict the fields returned or provide page size limits in the same way as for
-   * {@link Dns#listZones(Dns.ZoneListOption...)}. The returned {@link DnsBatchResult} will return a
-   * page of zones upon calling {@link DnsBatchResult#get()} on successful completion, or it will
-   * throw a {@link DnsException} if the operation failed.
+   * {@link Dns#listZones(Dns.ZoneListOption...)}. Calling {@link DnsBatchResult#get()} on the
+   * return value yields a page of zones if successful and throws a {@link DnsException} otherwise.
    */
   public DnsBatchResult<Page<Zone>> listZones(Dns.ZoneListOption... options) {
     DnsBatchResult<Page<Zone>> result = new DnsBatchResult<>();
@@ -86,9 +85,8 @@ public class DnsBatch {
   /**
    * Adds a request representing the "create zone" operation to this batch. The {@code options} can
    * be used to restrict the fields returned in the same way as for {@link Dns#create(ZoneInfo,
-   * Dns.ZoneOption...)}. The returned {@link DnsBatchResult} will return the created {@link Zone}
-   * upon calling {@link DnsBatchResult#get()} on successful completion, or it will throw a {@link
-   * DnsException} if the operation failed.
+   * Dns.ZoneOption...)}. Calling {@link DnsBatchResult#get()} on the return value yields the
+   * created {@link Zone} if successful and throws a {@link DnsException} otherwise.
    */
   public DnsBatchResult<Zone> createZone(ZoneInfo zone, Dns.ZoneOption... options) {
     DnsBatchResult<Zone> result = new DnsBatchResult<>();
@@ -99,10 +97,9 @@ public class DnsBatch {
   }
 
   /**
-   * Adds a request representing the "delete zone" operation to this batch. The returned {@link
-   * DnsBatchResult} will return {@code true} upon calling {@link DnsBatchResult#get()} on
-   * successful deletion, {@code false} if the zone was not found, or it will throw a {@link
-   * DnsException} if the operation failed.
+   * Adds a request representing the "delete zone" operation to this batch. Calling {@link
+   * DnsBatchResult#get()} on the return value yields {@code true} upon successful deletion, {@code
+   * false} if the zone was not found, or throws a {@link DnsException} if the operation failed.
    */
   public DnsBatchResult<Boolean> deleteZone(String zoneName) {
     DnsBatchResult<Boolean> result = new DnsBatchResult<>();
@@ -114,9 +111,9 @@ public class DnsBatch {
   /**
    * Adds a request representing the "get zone" operation to this batch. The {@code options} can be
    * used to restrict the fields returned in the same way as for {@link Dns#getZone(String,
-   * Dns.ZoneOption...)}. The returned {@link DnsBatchResult} will return the requested {@link Zone}
-   * upon calling {@link DnsBatchResult#get()} on successful completion, {@code null} if no such
-   * zone exists, or it will throw a {@link DnsException} if the operation failed.
+   * Dns.ZoneOption...)}. Calling {@link DnsBatchResult#get()} on the return value yields the
+   * requested {@link Zone} if successful, {@code null} if no such zone exists, or throws a
+   * {@link DnsException} if the operation failed.
    */
   public DnsBatchResult<Zone> getZone(String zoneName, Dns.ZoneOption... options) {
     DnsBatchResult<Zone> result = new DnsBatchResult<>();
@@ -129,9 +126,9 @@ public class DnsBatch {
   /**
    * Adds a request representing the "get project" operation to this batch. The {@code options} can
    * be used to restrict the fields returned in the same way as for {@link
-   * Dns#getProject(Dns.ProjectOption...)}. The returned {@link DnsBatchResult} will return the
-   * requested {@link ProjectInfo} upon calling {@link DnsBatchResult#get()} on successful
-   * completion, or it will throw a {@link DnsException} if the operation failed.
+   * Dns#getProject(Dns.ProjectOption...)}. Calling {@link DnsBatchResult#get()} on the return value
+   * yields the created {@link ProjectInfo} if successful and throws a {@link DnsException} if the
+   * operation failed.
    */
   public DnsBatchResult<ProjectInfo> getProject(Dns.ProjectOption... options) {
     DnsBatchResult<ProjectInfo> result = new DnsBatchResult<>();
@@ -145,9 +142,9 @@ public class DnsBatch {
    * Adds a request representing the "list record sets" operation in the zone specified by {@code
    * zoneName} to this batch. The {@code options} can be used to restrict the fields returned or
    * provide page size limits in the same way as for {@link Dns#listRecordSets(String,
-   * Dns.RecordSetListOption...)}. The returned {@link DnsBatchResult} will return a page of record
-   * sets upon calling {@link DnsBatchResult#get()} on successful completion, or it will throw a
-   * {@link DnsException} if the operation failed or the zone does not exist.
+   * Dns.RecordSetListOption...)}. Calling {@link DnsBatchResult#get()} on the return value yields a
+   * page of record sets if successful and throws a {@link DnsException} if the operation failed or
+   * the zone does not exist.
    */
   public DnsBatchResult<Page<RecordSet>> listRecordSets(String zoneName,
       Dns.RecordSetListOption... options) {
@@ -163,9 +160,9 @@ public class DnsBatch {
    * Adds a request representing the "list change requests" operation in the zone specified by
    * {@code zoneName} to this batch. The {@code options} can be used to restrict the fields returned
    * or provide page size limits in the same way as for {@link Dns#listChangeRequests(String,
-   * Dns.ChangeRequestListOption...)}. The returned {@link DnsBatchResult} will return a page of
-   * change requests upon calling {@link DnsBatchResult#get()} on successful completion, or it will
-   * throw a {@link DnsException} if the operation failed or the zone does not exist.
+   * Dns.ChangeRequestListOption...)}. Calling {@link DnsBatchResult#get()} on the return value
+   * yields a page of change requests if successful and throws a {@link DnsException} if the
+   * operation failed or the zone does not exist.
    */
   public DnsBatchResult<Page<ChangeRequest>> listChangeRequests(String zoneName,
       Dns.ChangeRequestListOption... options) {
@@ -180,11 +177,10 @@ public class DnsBatch {
   /**
    * Adds a request representing the "get change request" operation for the zone specified by {@code
    * zoneName} to this batch. The {@code options} can be used to restrict the fields returned in the
-   * same way as for {@link Dns#getChangeRequest(String, String, Dns.ChangeRequestOption...)}. The
-   * returned {@link DnsBatchResult} will return the requested {@link ChangeRequest} upon calling
-   * {@link DnsBatchResult#get()} on successful completion, {@code null} if the change request does
-   * not exist, or it will throw a {@link DnsException} if the operation failed or the zone does not
-   * exist.
+   * same way as for {@link Dns#getChangeRequest(String, String, Dns.ChangeRequestOption...)}.
+   * Calling {@link DnsBatchResult#get()} on the return value yields the requested {@link
+   * ChangeRequest} if successful, {@code null} if the change request does not exist, or throws a
+   * {@link DnsException} if the operation failed or the zone does not exist.
    */
   public DnsBatchResult<ChangeRequest> getChangeRequest(String zoneName, String changeRequestId,
       Dns.ChangeRequestOption... options) {
@@ -199,9 +195,9 @@ public class DnsBatch {
    * Adds a request representing the "apply change request" operation to the zone specified by
    * {@code zoneName} to this batch. The {@code options} can be used to restrict the fields returned
    * in the same way as for {@link Dns#applyChangeRequest(String, ChangeRequestInfo,
-   * Dns.ChangeRequestOption...)}. The returned {@link DnsBatchResult} will return the requested
-   * {@link ChangeRequest} upon calling {@link DnsBatchResult#get()} on successful completion, or it
-   * will throw a {@link DnsException} if the operation failed or the zone does not exist.
+   * Dns.ChangeRequestOption...)}. Calling {@link DnsBatchResult#get()} on the return value yields
+   * the created {@link ChangeRequest} if successful, {@code null} if the change request does not
+   * exist, or throws a {@link DnsException} if the operation failed or the zone does not exist.
    */
   public DnsBatchResult<ChangeRequest> applyChangeRequest(String zoneName,
       ChangeRequestInfo changeRequest, Dns.ChangeRequestOption... options) {
@@ -228,7 +224,7 @@ public class DnsBatch {
         Page<Zone> zonePage = new PageImpl<>(
             new DnsImpl.ZonePageFetcher(options, response.getNextPageToken(), optionMap),
             response.getNextPageToken(), zones == null ? ImmutableList.<Zone>of()
-            : Iterables.transform(zones, DnsImpl.pbToZoneFunction(options)));
+            : Iterables.transform(zones, DnsImpl.zoneFromPb(options)));
         result.success(zonePage);
       }
 
@@ -259,7 +255,7 @@ public class DnsBatch {
   }
 
   /**
-   * A joint callback for both "get zone" and "create zone" operation.
+   * A joint callback for both "get zone" and "create zone" operations.
    */
   private RpcBatch.Callback<ManagedZone> createZoneCallback(final DnsOptions serviceOptions,
       final DnsBatchResult result) {
@@ -335,7 +331,7 @@ public class DnsBatch {
   }
 
   /**
-   * A joint callback for both "get change request" and "create change request" operation.
+   * A joint callback for both "get change request" and "create change request" operations.
    */
   private RpcBatch.Callback<Change> createChangeRequestCallback(final String zoneName,
       final DnsBatchResult result) {

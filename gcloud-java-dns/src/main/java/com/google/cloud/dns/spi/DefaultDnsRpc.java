@@ -68,7 +68,7 @@ public class DefaultDnsRpc implements DnsRpc {
     public void addListZones(RpcBatch.Callback<ManagedZonesListResponse> callback,
         Map<DnsRpc.Option, ?> options) {
       try {
-        zoneListCall(options).queue(batch, toJsonCallback(callback));
+        listZonesCall(options).queue(batch, toJsonCallback(callback));
       } catch (IOException ex) {
         throw translate(ex);
       }
@@ -237,14 +237,14 @@ public class DefaultDnsRpc implements DnsRpc {
   public ListResult<ManagedZone> listZones(Map<Option, ?> options) throws DnsException {
     // fields, page token, page size
     try {
-      ManagedZonesListResponse zoneList = zoneListCall(options).execute();
+      ManagedZonesListResponse zoneList = listZonesCall(options).execute();
       return of(zoneList.getNextPageToken(), zoneList.getManagedZones());
     } catch (IOException ex) {
       throw translate(ex);
     }
   }
 
-  private Dns.ManagedZones.List zoneListCall(Map<DnsRpc.Option, ?> options) throws IOException {
+  private Dns.ManagedZones.List listZonesCall(Map<DnsRpc.Option, ?> options) throws IOException {
     return dns.managedZones().list(this.options.projectId())
         .setFields(FIELDS.getString(options))
         .setMaxResults(PAGE_SIZE.getInt(options))
@@ -273,7 +273,6 @@ public class DefaultDnsRpc implements DnsRpc {
   @Override
   public ListResult<ResourceRecordSet> listRecordSets(String zoneName, Map<Option, ?> options)
       throws DnsException {
-
     try {
       ResourceRecordSetsListResponse response = listRecordSetsCall(zoneName, options).execute();
       return of(response.getNextPageToken(), response.getRrsets());

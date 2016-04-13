@@ -94,7 +94,7 @@ public class DnsBatchTest {
       CHANGE_REQUEST_COMPLETE.toPb(), CHANGE_REQUEST_COMPLETE.toPb());
   private static final List<ManagedZone> ZONE_LIST = ImmutableList.of(ZONE_INFO.toPb(),
       ZONE_INFO.toPb());
-  private final GoogleJsonError GOOGLE_JSON_ERROR = new GoogleJsonError();
+  private static final GoogleJsonError GOOGLE_JSON_ERROR = new GoogleJsonError();
 
   private DnsOptions optionsMock;
   private DnsRpc dnsRpcMock;
@@ -175,7 +175,6 @@ public class DnsBatchTest {
     assertTrue(selector.contains(Dns.ZoneField.NAME.selector()));
     selector = (String) capturedOptions.getValue().get(ZONE_LIST_OPTIONS[3].rpcOption());
     assertEquals(DNS_NAME, selector);
-    // check the callback and result
     // check the callback
     ManagedZonesListResponse response = new ManagedZonesListResponse()
         .setManagedZones(ZONE_LIST)
@@ -235,19 +234,15 @@ public class DnsBatchTest {
   @Test
   public void testCreateZoneWithOptions() {
     EasyMock.verify(dns);
-    EasyMock.reset(dns);
+    EasyMock.reset(dns, batchMock, optionsMock);
     EasyMock.expect(dns.options()).andReturn(optionsMock);
-    EasyMock.replay(dns);
-    EasyMock.reset(batchMock);
-    EasyMock.reset(optionsMock);
     EasyMock.expect(optionsMock.service()).andReturn(dns);
-    EasyMock.replay(optionsMock);
     Capture<RpcBatch.Callback<ManagedZone>> callback = Capture.newInstance();
     Capture<Map<DnsRpc.Option, Object>> capturedOptions = Capture.newInstance();
     Capture<ManagedZone> capturedZone = Capture.newInstance();
     batchMock.addCreateZone(EasyMock.capture(capturedZone), EasyMock.capture(callback),
         EasyMock.capture(capturedOptions));
-    EasyMock.replay(batchMock);
+    EasyMock.replay(dns, batchMock, optionsMock);
     DnsBatchResult<Zone> batchResult = dnsBatch.createZone(ZONE_INFO, ZONE_FIELDS);
     assertEquals(ZONE_INFO.toPb(), capturedZone.getValue());
     assertNotNull(callback.getValue());
@@ -290,24 +285,20 @@ public class DnsBatchTest {
   @Test
   public void testGetZoneWithOptions() {
     EasyMock.verify(dns);
-    EasyMock.reset(dns);
+    EasyMock.reset(dns, batchMock, optionsMock);
     EasyMock.expect(dns.options()).andReturn(optionsMock);
-    EasyMock.replay(dns);
-    EasyMock.reset(batchMock);
-    EasyMock.reset(optionsMock);
     Capture<RpcBatch.Callback<ManagedZone>> callback = Capture.newInstance();
     Capture<Map<DnsRpc.Option, Object>> capturedOptions = Capture.newInstance();
     batchMock.addGetZone(EasyMock.eq(ZONE_NAME), EasyMock.capture(callback),
         EasyMock.capture(capturedOptions));
-    EasyMock.replay(batchMock);
+    EasyMock.expect(optionsMock.service()).andReturn(dns);
+    EasyMock.replay(dns, batchMock, optionsMock);
     DnsBatchResult<Zone> batchResult = dnsBatch.getZone(ZONE_NAME, ZONE_FIELDS);
     assertNotNull(callback.getValue());
     String selector = (String) capturedOptions.getValue().get(ZONE_FIELDS.rpcOption());
     assertTrue(selector.contains(Dns.ZoneField.CREATION_TIME.selector()));
     assertTrue(selector.contains(Dns.ZoneField.NAME.selector()));
     RpcBatch.Callback<ManagedZone> capturedCallback = callback.getValue();
-    EasyMock.expect(optionsMock.service()).andReturn(dns);
-    EasyMock.replay(optionsMock);
     capturedCallback.onSuccess(ZONE_INFO.toPb());
     assertEquals(ZONE_INFO.toPb(), batchResult.get().toPb());
   }
@@ -567,17 +558,15 @@ public class DnsBatchTest {
   @Test
   public void testGetChangeRequestWithOptions() {
     EasyMock.verify(dns);
-    EasyMock.reset(dns);
+    EasyMock.reset(dns, batchMock, optionsMock);
     EasyMock.expect(dns.options()).andReturn(optionsMock);
-    EasyMock.replay(dns);
-    EasyMock.reset(batchMock);
-    EasyMock.reset(optionsMock);
+    EasyMock.expect(optionsMock.service()).andReturn(dns);
     Capture<RpcBatch.Callback<Change>> callback = Capture.newInstance();
     Capture<Map<DnsRpc.Option, Object>> capturedOptions = Capture.newInstance();
     batchMock.addGetChangeRequest(EasyMock.eq(ZONE_NAME),
         EasyMock.eq(CHANGE_REQUEST_COMPLETE.generatedId()), EasyMock.capture(callback),
         EasyMock.capture(capturedOptions));
-    EasyMock.replay(batchMock);
+    EasyMock.replay(dns, batchMock, optionsMock);
     DnsBatchResult<ChangeRequest> batchResult = dnsBatch.getChangeRequest(ZONE_NAME,
         CHANGE_REQUEST_COMPLETE.generatedId(), CHANGE_GET_FIELDS);
     assertNotNull(callback.getValue());
@@ -585,8 +574,6 @@ public class DnsBatchTest {
     assertTrue(selector.contains(Dns.ChangeRequestField.STATUS.selector()));
     assertTrue(selector.contains(Dns.ChangeRequestField.ID.selector()));
     RpcBatch.Callback<Change> capturedCallback = callback.getValue();
-    EasyMock.expect(optionsMock.service()).andReturn(dns);
-    EasyMock.replay(optionsMock);
     capturedCallback.onSuccess(CHANGE_REQUEST_COMPLETE.toPb());
     assertEquals(CHANGE_REQUEST_COMPLETE.toPb(), batchResult.get().toPb());
   }
@@ -624,24 +611,20 @@ public class DnsBatchTest {
   @Test
   public void testApplyChangeRequestWithOptions() {
     EasyMock.verify(dns);
-    EasyMock.reset(dns);
+    EasyMock.reset(dns, batchMock, optionsMock);
     EasyMock.expect(dns.options()).andReturn(optionsMock);
-    EasyMock.replay(dns);
-    EasyMock.reset(batchMock);
-    EasyMock.reset(optionsMock);
     Capture<RpcBatch.Callback<Change>> callback = Capture.newInstance();
     Capture<Map<DnsRpc.Option, Object>> capturedOptions = Capture.newInstance();
     batchMock.addApplyChangeRequest(EasyMock.eq(ZONE_NAME),
         EasyMock.eq(CHANGE_REQUEST_PARTIAL.toPb()), EasyMock.capture(callback),
         EasyMock.capture(capturedOptions));
-    EasyMock.replay(batchMock);
+    EasyMock.expect(optionsMock.service()).andReturn(dns);
+    EasyMock.replay(dns, batchMock, optionsMock);
     DnsBatchResult<ChangeRequest> batchResult = dnsBatch.applyChangeRequest(ZONE_INFO.name(),
         CHANGE_REQUEST_PARTIAL, CHANGE_GET_FIELDS);
     String selector = (String) capturedOptions.getValue().get(CHANGE_GET_FIELDS.rpcOption());
     assertTrue(selector.contains(Dns.ChangeRequestField.STATUS.selector()));
     assertTrue(selector.contains(Dns.ChangeRequestField.ID.selector()));
-    EasyMock.expect(optionsMock.service()).andReturn(dns);
-    EasyMock.replay(optionsMock);
     RpcBatch.Callback<Change> capturedCallback = callback.getValue();
     capturedCallback.onSuccess(CHANGE_REQUEST_COMPLETE.toPb());
     assertEquals(CHANGE_REQUEST_COMPLETE.toPb(), batchResult.get().toPb());

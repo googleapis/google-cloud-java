@@ -27,39 +27,39 @@ import org.junit.Test;
 
 public class BatchResultTest {
 
-  private BatchResult<Boolean, BaseServiceException> RESULT;
+  private BatchResult<Boolean, BaseServiceException> result;
 
   @Before
   public void setUp() {
-    RESULT = new BatchResult<Boolean, BaseServiceException>() {};
+    result = new BatchResult<Boolean, BaseServiceException>() {};
   }
 
   @Test
   public void testSuccess() {
-    assertFalse(RESULT.submitted());
+    assertFalse(result.submitted());
     try {
-      RESULT.get();
+      result.get();
       fail("This was not submitted yet.");
     } catch (IllegalStateException ex) {
       // expected
     }
-    RESULT.success(true);
-    assertTrue(RESULT.get());
+    result.success(true);
+    assertTrue(result.get());
   }
 
   @Test
   public void testError() {
-    assertFalse(RESULT.submitted());
+    assertFalse(result.submitted());
     try {
-      RESULT.get();
+      result.get();
       fail("This was not submitted yet.");
     } catch (IllegalStateException ex) {
       // expected
     }
     BaseServiceException ex = new BaseServiceException(0, "message", "reason", false);
-    RESULT.error(ex);
+    result.error(ex);
     try {
-      RESULT.get();
+      result.get();
       fail("This is a failed operation and should have thrown a DnsException.");
     } catch (BaseServiceException real) {
       assertSame(ex, real);
@@ -69,29 +69,29 @@ public class BatchResultTest {
   @Test
   public void testNotifyError() {
     final BaseServiceException ex = new BaseServiceException(0, "message", "reason", false);
-    assertFalse(RESULT.submitted());
+    assertFalse(result.submitted());
     BatchResult.Callback<Boolean, BaseServiceException> callback =
         EasyMock.createStrictMock(BatchResult.Callback.class);
     callback.error(ex);
     callback.error(ex);
     EasyMock.replay(callback);
-    RESULT.notify(callback);
-    RESULT.error(ex);
-    RESULT.notify(callback);
+    result.notify(callback);
+    result.error(ex);
+    result.notify(callback);
     EasyMock.verify(callback);
   }
 
   @Test
   public void testNotifySuccess() {
-    assertFalse(RESULT.submitted());
+    assertFalse(result.submitted());
     BatchResult.Callback<Boolean, BaseServiceException> callback =
         EasyMock.createStrictMock(BatchResult.Callback.class);
     callback.success(true);
     callback.success(true);
     EasyMock.replay(callback);
-    RESULT.notify(callback);
-    RESULT.success(true);
-    RESULT.notify(callback);
+    result.notify(callback);
+    result.success(true);
+    result.notify(callback);
     EasyMock.verify(callback);
   }
 }
