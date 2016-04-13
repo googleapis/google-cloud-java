@@ -45,6 +45,8 @@ public class BatchResultTest {
     }
     result.success(true);
     assertTrue(result.get());
+    // test that null is allowed
+    result.success(null);
   }
 
   @Test
