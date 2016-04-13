@@ -154,7 +154,7 @@ public final class RecordSet implements Serializable {
      * RFC 1034 (section 3.6.1). Examples of records are available in Google DNS documentation.
      *
      * @see <a href="https://cloud.google.com/dns/what-is-cloud-dns#supported_record_types">Google
-     * DNS documentation </a>.
+     *     DNS documentation</a>
      */
     public Builder addRecord(String record) {
       this.rrdatas.add(checkNotNull(record));

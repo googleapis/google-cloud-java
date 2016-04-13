@@ -27,6 +27,8 @@ import com.google.cloud.Page;
 import com.google.cloud.dns.ChangeRequest;
 import com.google.cloud.dns.ChangeRequestInfo;
 import com.google.cloud.dns.Dns;
+import com.google.cloud.dns.DnsBatch;
+import com.google.cloud.dns.DnsBatchResult;
 import com.google.cloud.dns.DnsException;
 import com.google.cloud.dns.DnsOptions;
 import com.google.cloud.dns.ProjectInfo;
@@ -34,6 +36,7 @@ import com.google.cloud.dns.RecordSet;
 import com.google.cloud.dns.Zone;
 import com.google.cloud.dns.ZoneInfo;
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.Iterators;
 
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
@@ -87,7 +90,7 @@ public class ITDnsTest {
       .build();
   private static final List<String> ZONE_NAMES = ImmutableList.of(ZONE_NAME1,
       ZONE_NAME_EMPTY_DESCRIPTION);
-  
+
   @Rule
   public Timeout globalTimeout = Timeout.seconds(300);
 
@@ -962,4 +965,27 @@ public class ITDnsTest {
       clear();
     }
   }
+
+  @Test
+  public void testListZoneBatch() {
+    DNS.create(ZONE1);
+    DNS.create(ZONE_EMPTY_DESCRIPTION);
+    try {
+      DnsBatch batch = DNS.batch();
+      DnsBatchResult<Page<Zone>> batchResult = batch.listZones();
+      batch.submit();
+      assertTrue(batchResult.completed());
+      Iterator<Zone> iteratorBatch = batchResult.get().iterateAll();
+      Iterator<Zone> iteratorList = DNS.listZones().iterateAll();
+      assertEquals(Iterators.size(iteratorList), Iterators.size(iteratorBatch));
+      while (iteratorBatch.hasNext()) {
+        assertTrue(Iterators.contains(iteratorList, iteratorBatch.next()));
+      }
+    } finally {
+      DNS.delete(ZONE1.name());
+      DNS.delete(ZONE_EMPTY_DESCRIPTION.name());
+    }
+  }
+
+  // todo(mderka) implement tests for other batch calls, issue #874
 }
