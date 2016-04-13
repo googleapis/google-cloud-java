@@ -41,10 +41,10 @@ public class DnsBatchResultTest {
 
   @Test
   public void testSuccess() {
-    assertFalse(result.submitted());
+    assertFalse(result.completed());
     try {
       result.get();
-      fail("This was not submitted yet.");
+      fail("This was not completed yet.");
     } catch (IllegalStateException ex) {
       // expected
     }
@@ -54,10 +54,10 @@ public class DnsBatchResultTest {
 
   @Test
   public void testError() {
-    assertFalse(result.submitted());
+    assertFalse(result.completed());
     try {
       result.get();
-      fail("This was not submitted yet.");
+      fail("This was not completed yet.");
     } catch (IllegalStateException ex) {
       // expected
     }
@@ -74,29 +74,37 @@ public class DnsBatchResultTest {
   @Test
   public void testNotifyError() {
     DnsException ex = new DnsException(new IOException("some error"));
-    assertFalse(result.submitted());
+    assertFalse(result.completed());
     BatchResult.Callback<Boolean, DnsException> callback =
         EasyMock.createStrictMock(BatchResult.Callback.class);
-    callback.error(ex);
     callback.error(ex);
     EasyMock.replay(callback);
     result.notify(callback);
     result.error(ex);
-    result.notify(callback);
+    try {
+      result.notify(callback);
+      fail("The batch has been completed.");
+    } catch (IllegalStateException exception) {
+      // expected
+    }
     EasyMock.verify(callback);
   }
 
   @Test
   public void testNotifySuccess() {
-    assertFalse(result.submitted());
+    assertFalse(result.completed());
     BatchResult.Callback<Boolean, DnsException> callback =
         EasyMock.createStrictMock(BatchResult.Callback.class);
-    callback.success(true);
     callback.success(true);
     EasyMock.replay(callback);
     result.notify(callback);
     result.success(true);
-    result.notify(callback);
+    try {
+      result.notify(callback);
+      fail("The batch has been completed.");
+    } catch (IllegalStateException exception) {
+      // expected
+    }
     EasyMock.verify(callback);
   }
 }

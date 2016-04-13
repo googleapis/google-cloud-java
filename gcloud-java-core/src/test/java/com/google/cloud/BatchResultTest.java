@@ -73,11 +73,15 @@ public class BatchResultTest {
     BatchResult.Callback<Boolean, BaseServiceException> callback =
         EasyMock.createStrictMock(BatchResult.Callback.class);
     callback.error(ex);
-    callback.error(ex);
     EasyMock.replay(callback);
     result.notify(callback);
     result.error(ex);
-    result.notify(callback);
+    try {
+      result.notify(callback);
+      fail("The batch has been completed.");
+    } catch (IllegalStateException exception) {
+      // expected
+    }
     EasyMock.verify(callback);
   }
 
@@ -87,11 +91,15 @@ public class BatchResultTest {
     BatchResult.Callback<Boolean, BaseServiceException> callback =
         EasyMock.createStrictMock(BatchResult.Callback.class);
     callback.success(true);
-    callback.success(true);
     EasyMock.replay(callback);
     result.notify(callback);
     result.success(true);
-    result.notify(callback);
+    try {
+      result.notify(callback);
+      fail("The batch has been completed.");
+    } catch (IllegalStateException exception) {
+      // expected
+    }
     EasyMock.verify(callback);
   }
 }

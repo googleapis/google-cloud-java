@@ -56,24 +56,23 @@ public abstract class BatchResult<T, E extends BaseServiceException> {
   }
 
   /**
-   * Adds a callback for the batch operation. If the batch has been completed already, the callback
-   * will be invoked immediately.
+   * Adds a callback for the batch operation.
+   *
+   * @throws IllegalStateException if the batch has been completed already
    */
   public void notify(Callback<T, E> callback) {
-    if (!completed) {
-      toBeNotified.add(callback);
-    } else if (error != null) {
-      callback.error(error);
-    } else {
-      callback.success(result);
+    if (completed) {
+      throw new IllegalStateException("The batch has been completed. All the calls to the notify()"
+          + " method should be done prior to submitting the batch.");
     }
+    toBeNotified.add(callback);
   }
 
   /**
    * Sets an error and status as completed. Notifies all callbacks.
    */
   protected void error(E error) {
-    this.error = checkNotNull(error);
+    this.error = error;
     this.completed = true;
     for (Callback<T, E> callback : toBeNotified) {
       callback.error(error);
@@ -84,7 +83,7 @@ public abstract class BatchResult<T, E extends BaseServiceException> {
    * Sets a result and status as completed. Notifies all callbacks.
    */
   protected void success(T result) {
-    this.result = checkNotNull(result);
+    this.result = result;
     this.completed = true;
     for (Callback<T, E> callback : toBeNotified) {
       callback.success(result);

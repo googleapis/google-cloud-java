@@ -109,19 +109,13 @@ public class DnsBatchTest {
     batchMock = EasyMock.createMock(RpcBatch.class);
     EasyMock.expect(optionsMock.rpc()).andReturn(dnsRpcMock);
     EasyMock.expect(dnsRpcMock.createBatch()).andReturn(batchMock);
-    EasyMock.replay(optionsMock);
-    EasyMock.replay(dnsRpcMock);
-    EasyMock.replay(batchMock);
-    EasyMock.replay(dns);
+    EasyMock.replay(optionsMock, dnsRpcMock, batchMock, dns);
     dnsBatch = new DnsBatch(optionsMock);
   }
 
   @After
   public void tearDown() {
-    EasyMock.verify(batchMock);
-    EasyMock.verify(dnsRpcMock);
-    EasyMock.verify(optionsMock);
-    EasyMock.verify(dns);
+    EasyMock.verify(batchMock, dnsRpcMock, optionsMock, dns);
   }
 
   @Test
@@ -233,7 +227,6 @@ public class DnsBatchTest {
 
   @Test
   public void testCreateZoneWithOptions() {
-    EasyMock.verify(dns);
     EasyMock.reset(dns, batchMock, optionsMock);
     EasyMock.expect(dns.options()).andReturn(optionsMock);
     EasyMock.expect(optionsMock.service()).andReturn(dns);
@@ -284,7 +277,6 @@ public class DnsBatchTest {
 
   @Test
   public void testGetZoneWithOptions() {
-    EasyMock.verify(dns);
     EasyMock.reset(dns, batchMock, optionsMock);
     EasyMock.expect(dns.options()).andReturn(optionsMock);
     Capture<RpcBatch.Callback<ManagedZone>> callback = Capture.newInstance();
@@ -557,7 +549,6 @@ public class DnsBatchTest {
 
   @Test
   public void testGetChangeRequestWithOptions() {
-    EasyMock.verify(dns);
     EasyMock.reset(dns, batchMock, optionsMock);
     EasyMock.expect(dns.options()).andReturn(optionsMock);
     EasyMock.expect(optionsMock.service()).andReturn(dns);
@@ -610,7 +601,6 @@ public class DnsBatchTest {
 
   @Test
   public void testApplyChangeRequestWithOptions() {
-    EasyMock.verify(dns);
     EasyMock.reset(dns, batchMock, optionsMock);
     EasyMock.expect(dns.options()).andReturn(optionsMock);
     Capture<RpcBatch.Callback<Change>> callback = Capture.newInstance();

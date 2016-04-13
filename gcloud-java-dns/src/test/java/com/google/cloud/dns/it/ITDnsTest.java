@@ -974,9 +974,10 @@ public class ITDnsTest {
       DnsBatch batch = DNS.batch();
       DnsBatchResult<Page<Zone>> batchResult = batch.listZones();
       batch.submit();
-      assertTrue(batchResult.submitted());
+      assertTrue(batchResult.completed());
       Iterator<Zone> iteratorBatch = batchResult.get().iterateAll();
       Iterator<Zone> iteratorList = DNS.listZones().iterateAll();
+      assertEquals(Iterators.size(iteratorList), Iterators.size(iteratorBatch));
       while (iteratorBatch.hasNext()) {
         assertTrue(Iterators.contains(iteratorList, iteratorBatch.next()));
       }
