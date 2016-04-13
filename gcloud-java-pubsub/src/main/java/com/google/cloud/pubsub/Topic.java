@@ -141,8 +141,8 @@ public class Topic extends TopicInfo {
     return pubsub.listSubscriptionsAsync(name(), options);
   }
 
-  private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
-    in.defaultReadObject();
+  private void readObject(ObjectInputStream input) throws IOException, ClassNotFoundException {
+    input.defaultReadObject();
     this.pubsub = options.service();
   }
 

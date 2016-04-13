@@ -85,7 +85,7 @@ public class ReceivedMessage extends Message {
     }
 
     @Override
-    Builder publishTime(Long publishTime) {
+    Builder publishTime(long publishTime) {
       delegate.publishTime(publishTime);
       return this;
     }
@@ -138,12 +138,20 @@ public class ReceivedMessage extends Message {
     return ackId;
   }
 
-  public void acknowledge() {
-    pubsub.acknowledge(subscription, ackId);
+  public void ack() {
+    pubsub.ack(subscription, ackId);
   }
 
-  public Future<Void> acknowledgeAsync() {
-    return pubsub.acknowledgeAsync(subscription, ackId);
+  public Future<Void> ackAsync() {
+    return pubsub.ackAsync(subscription, ackId);
+  }
+
+  public void nack() {
+    pubsub.nack(subscription, ackId);
+  }
+
+  public Future<Void> nackAsync() {
+    return pubsub.nackAsync(subscription, ackId);
   }
 
   public void modifyAckDeadline(int deadline, TimeUnit unit) {
@@ -154,8 +162,8 @@ public class ReceivedMessage extends Message {
     return pubsub.modifyAckDeadlineAsync(subscription, deadline, unit, ackId);
   }
 
-  private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
-    in.defaultReadObject();
+  private void readObject(ObjectInputStream input) throws IOException, ClassNotFoundException {
+    input.defaultReadObject();
     this.pubsub = options.service();
   }
 

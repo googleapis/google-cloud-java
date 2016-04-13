@@ -83,7 +83,7 @@ public class DefaultPubSubRpc implements PubSubRpc {
         .setTotalTimeout(Duration.millis(retryParams.totalRetryPeriodMillis()))
         .setInitialRpcTimeout(Duration.millis(options.connectTimeout()))
         .setRpcTimeoutMultiplier(1.5)
-        .setMaxRpcTimeout((Duration.millis(options.connectTimeout() + options.readTimeout())))
+        .setMaxRpcTimeout(Duration.millis(options.connectTimeout() + options.readTimeout()))
         .setInitialRetryDelay(Duration.millis(retryParams.initialRetryDelayMillis()))
         .setRetryDelayMultiplier(retryParams.retryDelayBackoffFactor())
         .setMaxRetryDelay(Duration.millis(retryParams.maxRetryDelayMillis()));

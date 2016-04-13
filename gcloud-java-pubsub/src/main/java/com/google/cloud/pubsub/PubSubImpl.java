@@ -196,27 +196,55 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
   }
 
   @Override
-  public Future<List<Message>> pullAsync(String subscription, PullOption... options) {
+  public Future<List<ReceivedMessage>> pullAsync(String subscription, PullOption... options) {
     return null;
   }
 
   @Override
-  public void acknowledge(String subscription, String ackId, String... ackIds) {
+  public void pull(String subscription, PullCallback callback, PullOption... options) {
 
   }
 
   @Override
-  public Future<Void> acknowledgeAsync(String subscription, String ackId, String... ackIds) {
+  public void pullAsync(String subscription, PullCallback callback, PullOption... options) {
+
+  }
+
+  @Override
+  public void ack(String subscription, String ackId, String... ackIds) {
+  }
+
+  @Override
+  public Future<Void> ackAsync(String subscription, String ackId, String... ackIds) {
     return null;
   }
 
   @Override
-  public void acknowledge(String subscription, Iterable<String> ackIds) {
+  public void ack(String subscription, Iterable<String> ackIds) {
 
   }
 
   @Override
-  public Future<Void> acknowledgeAsync(String subscription, Iterable<String> ackIds) {
+  public Future<Void> ackAsync(String subscription, Iterable<String> ackIds) {
+    return null;
+  }
+
+  @Override
+  public void nack(String subscription, String ackId, String... ackIds) {
+  }
+
+  @Override
+  public Future<Void> nackAsync(String subscription, String ackId, String... ackIds) {
+    return null;
+  }
+
+  @Override
+  public void nack(String subscription, Iterable<String> ackIds) {
+
+  }
+
+  @Override
+  public Future<Void> nackAsync(String subscription, Iterable<String> ackIds) {
     return null;
   }
 
