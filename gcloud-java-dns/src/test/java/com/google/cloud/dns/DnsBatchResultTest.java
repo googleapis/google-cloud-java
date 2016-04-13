@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google Inc. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,57 +14,60 @@
  * limitations under the License.
  */
 
-package com.google.gcloud;
+package com.google.cloud.dns;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
+import com.google.cloud.dns.DnsBatchResult;
+
 import org.junit.Before;
 import org.junit.Test;
 
-public class BatchResultTest {
+import java.io.IOException;
 
-  private BatchResult<Boolean, BaseServiceException> RESULT;
+public class DnsBatchResultTest {
+
+  private DnsBatchResult<Boolean> result;
 
   @Before
   public void setUp() {
-    RESULT = new BatchResult<Boolean, BaseServiceException>() {};
+    result = new DnsBatchResult<>();
   }
 
   @Test
   public void testSuccess() {
-    assertFalse(RESULT.submitted());
+    assertFalse(result.submitted());
     try {
-      RESULT.get();
+      result.get();
       fail("This was not submitted yet.");
     } catch (IllegalStateException ex) {
       // expected
     }
-    RESULT.success(true);
-    assertTrue(RESULT.get());
+    result.success(true);
+    assertTrue(result.get());
   }
 
   @Test
   public void testError() {
-    assertFalse(RESULT.submitted());
+    assertFalse(result.submitted());
     try {
-      RESULT.get();
+      result.get();
       fail("This was not submitted yet.");
     } catch (IllegalStateException ex) {
       // expected
     }
-    BaseServiceException ex = new BaseServiceException(0, "message", "reason", false);
-    RESULT.error(ex);
+    DnsException ex = new DnsException(new IOException("some error"));
+    result.error(ex);
     try {
-      RESULT.get();
+      result.get();
       fail("This is a failed operation and should have thrown a DnsException.");
-    } catch (BaseServiceException real) {
+    } catch (DnsException real) {
       assertSame(ex, real);
     }
   }
 
   // todo(mderka) test notify when implemented
-
 }

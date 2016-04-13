@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.gcloud.dns;
+package com.google.cloud.dns;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
@@ -30,10 +30,12 @@ import com.google.api.services.dns.model.ManagedZonesListResponse;
 import com.google.api.services.dns.model.Project;
 import com.google.api.services.dns.model.ResourceRecordSet;
 import com.google.api.services.dns.model.ResourceRecordSetsListResponse;
+import com.google.cloud.dns.DnsBatch;
+import com.google.cloud.dns.DnsBatchResult;
 import com.google.common.collect.ImmutableList;
-import com.google.gcloud.Page;
-import com.google.gcloud.dns.spi.DnsRpc;
-import com.google.gcloud.dns.spi.RpcBatch;
+import com.google.cloud.Page;
+import com.google.cloud.dns.spi.DnsRpc;
+import com.google.cloud.dns.spi.RpcBatch;
 
 import org.easymock.Capture;
 import org.easymock.EasyMock;

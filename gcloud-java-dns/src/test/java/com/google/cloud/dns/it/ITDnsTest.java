@@ -27,12 +27,15 @@ import com.google.cloud.Page;
 import com.google.cloud.dns.ChangeRequest;
 import com.google.cloud.dns.ChangeRequestInfo;
 import com.google.cloud.dns.Dns;
+import com.google.cloud.dns.DnsBatch;
+import com.google.cloud.dns.DnsBatchResult;
 import com.google.cloud.dns.DnsException;
 import com.google.cloud.dns.DnsOptions;
 import com.google.cloud.dns.ProjectInfo;
 import com.google.cloud.dns.RecordSet;
 import com.google.cloud.dns.Zone;
 import com.google.cloud.dns.ZoneInfo;
+import com.google.common.collect.ImmutableList;
 
 import org.junit.AfterClass;
 import org.junit.BeforeClass;

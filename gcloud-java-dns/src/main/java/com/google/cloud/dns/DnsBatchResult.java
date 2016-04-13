@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-package com.google.gcloud.dns;
+package com.google.cloud.dns;
 
-import com.google.gcloud.BatchResult;
+import com.google.cloud.BatchResult;
 
 /**
  * This class holds a single result of a batch call to the Cloud DNS.

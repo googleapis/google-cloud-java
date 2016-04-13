@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.gcloud.dns;
+package com.google.cloud.dns;
 
 import static java.net.HttpURLConnection.HTTP_NOT_FOUND;
 
@@ -28,10 +28,10 @@ import com.google.api.services.dns.model.ResourceRecordSet;
 import com.google.api.services.dns.model.ResourceRecordSetsListResponse;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterables;
-import com.google.gcloud.Page;
-import com.google.gcloud.PageImpl;
-import com.google.gcloud.dns.spi.DnsRpc;
-import com.google.gcloud.dns.spi.RpcBatch;
+import com.google.cloud.Page;
+import com.google.cloud.PageImpl;
+import com.google.cloud.dns.spi.DnsRpc;
+import com.google.cloud.dns.spi.RpcBatch;
 
 import java.util.List;
 import java.util.Map;

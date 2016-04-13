@@ -14,19 +14,24 @@
  * limitations under the License.
  */
 
-package com.google.gcloud;
+package com.google.cloud;
 
+import static com.google.common.base.Preconditions.checkNotNull;
 import static com.google.common.base.Preconditions.checkState;
 
+import java.util.LinkedList;
+import java.util.List;
+
 /**
- * This class holds a single result of a batch call. {@code T} is the type of the result and
- * {@code E} is the type of the service-dependent exception thrown when processing error occurs.
+ * This class holds a single result of a batch call. {@code T} is the type of the result and {@code
+ * E} is the type of the service-dependent exception thrown when processing error occurs.
  */
 public abstract class BatchResult<T, E extends BaseServiceException> {
 
   private T result;
   private boolean submitted = false;
   private E error;
+  private List<Callback<T, E>> toBeNotified = new LinkedList<>();
 
   /**
    * Returns {@code true} if the batch has been submitted and the result is available; {@code false}
@@ -51,27 +56,39 @@ public abstract class BatchResult<T, E extends BaseServiceException> {
   }
 
   /**
-   * Registers a callback for the batch operation.
+   * Adds a callback for the batch operation. If the batch has been completed already, the callback
+   * will be invoked immediately.
    */
   public void notify(Callback<T, E> callback) {
-    // todo(mderka) implement
-    throw new UnsupportedOperationException("Not implemented yet");
+    if (!submitted) {
+      toBeNotified.add(callback);
+    } else if (error != null) {
+      callback.error(error);
+    } else {
+      callback.success(result);
+    }
   }
 
   /**
-   * Sets an error and makes this submitted.
+   * Sets an error and makes this submitted. Notifies all callbacks.
    */
   protected void error(E error) {
-    this.error = error;
+    this.error = checkNotNull(error);
     this.submitted = true;
+    for (Callback<T, E> callback : toBeNotified) {
+      callback.error(error);
+    }
   }
 
   /**
-   * Sets a result and makes this submitted.
+   * Sets a result and makes this submitted. Notifies all callbacks.
    */
   protected void success(T result) {
-    this.result = result;
+    this.result = checkNotNull(result);
     this.submitted = true;
+    for (Callback<T, E> callback : toBeNotified) {
+      callback.success(result);
+    }
   }
 
   /**

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.gcloud.dns.spi;
+package com.google.cloud.dns.spi;
 
 import com.google.api.client.googleapis.json.GoogleJsonError;
 import com.google.api.services.dns.model.Change;
