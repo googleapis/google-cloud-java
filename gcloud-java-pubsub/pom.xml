@@ -1,8 +1,6 @@
 <?xml version="1.0"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>com.google.gcloud</groupId>
-  <version>0.1.5</version>
   <artifactId>gcloud-java-pubsub</artifactId>
   <packaging>jar</packaging>
   <name>GCloud Java Pub/Sub</name>
@@ -10,9 +8,9 @@
     Java idiomatic client for Google Cloud Pub/Sub.
   </description>
   <parent>
-    <groupId>com.google.gcloud</groupId>
+    <groupId>com.google.cloud</groupId>
     <artifactId>gcloud-java-pom</artifactId>
-    <version>0.1.5</version>
+    <version>0.2.1-SNAPSHOT</version>
   </parent>
   <properties>
     <site.installationModule>gcloud-java-pubsub</site.installationModule>
