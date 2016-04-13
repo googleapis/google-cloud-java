@@ -26,9 +26,9 @@ import com.google.api.client.http.HttpRequestInitializer;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.auth.http.HttpCredentialsAdapter;
+import com.google.cloud.spi.ServiceRpcFactory;
 import com.google.common.collect.Iterables;
 import com.google.common.io.Files;
-import com.google.cloud.spi.ServiceRpcFactory;
 
 import org.json.JSONException;
 import org.json.JSONObject;

@@ -16,8 +16,8 @@
 
 package com.google.cloud;
 
-import com.google.common.collect.ImmutableList;
 import com.google.cloud.ServiceAccountSigner.SigningException;
+import com.google.common.collect.ImmutableList;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;

@@ -19,8 +19,8 @@ package com.google.cloud;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-import com.google.common.collect.ImmutableList;
 import com.google.cloud.FieldSelector.Helper;
+import com.google.common.collect.ImmutableList;
 
 import org.junit.Test;
 
