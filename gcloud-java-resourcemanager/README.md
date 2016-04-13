@@ -5,12 +5,12 @@ Java idiomatic client for [Google Cloud Resource Manager] (https://cloud.google.
 
 [![Build Status](https://travis-ci.org/GoogleCloudPlatform/gcloud-java.svg?branch=master)](https://travis-ci.org/GoogleCloudPlatform/gcloud-java)
 [![Coverage Status](https://coveralls.io/repos/GoogleCloudPlatform/gcloud-java/badge.svg?branch=master)](https://coveralls.io/r/GoogleCloudPlatform/gcloud-java?branch=master)
-[![Maven](https://img.shields.io/maven-central/v/com.google.gcloud/gcloud-java-resourcemanager.svg)]( https://img.shields.io/maven-central/v/com.google.gcloud/gcloud-java-resourcemanager.svg)
+[![Maven](https://img.shields.io/maven-central/v/com.google.cloud/gcloud-java-resourcemanager.svg)]( https://img.shields.io/maven-central/v/com.google.cloud/gcloud-java-resourcemanager.svg)
 [![Codacy Badge](https://api.codacy.com/project/badge/grade/9da006ad7c3a4fe1abd142e77c003917)](https://www.codacy.com/app/mziccard/gcloud-java)
 [![Dependency Status](https://www.versioneye.com/user/projects/56bd8ee72a29ed002d2b0969/badge.svg?style=flat)](https://www.versioneye.com/user/projects/56bd8ee72a29ed002d2b0969)
 
 -  [Homepage] (https://googlecloudplatform.github.io/gcloud-java/)
--  [API Documentation] (http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/gcloud/resourcemanager/package-summary.html)
+-  [API Documentation] (http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/cloud/resourcemanager/package-summary.html)
 
 > Note: This client is a work-in-progress, and may occasionally
 > make backwards-incompatible changes.
@@ -20,23 +20,23 @@ Quickstart
 If you are using Maven, add this to your pom.xml file
 ```xml
 <dependency>
-  <groupId>com.google.gcloud</groupId>
+  <groupId>com.google.cloud</groupId>
   <artifactId>gcloud-java-resourcemanager</artifactId>
-  <version>0.1.5</version>
+  <version>0.2.0</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.gcloud:gcloud-java-resourcemanager:0.1.5'
+compile 'com.google.cloud:gcloud-java-resourcemanager:0.2.0'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.gcloud" % "gcloud-java-resourcemanager" % "0.1.5"
+libraryDependencies += "com.google.cloud" % "gcloud-java-resourcemanager" % "0.2.0"
 ```
 
 Example Application
 --------------------
-[`ResourceManagerExample`](../gcloud-java-examples/src/main/java/com/google/gcloud/examples/resourcemanager/ResourceManagerExample.java) is a simple command line interface for the Cloud Resource Manager.  Read more about using the application on the [`ResourceManagerExample` docs page](http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/gcloud/examples/resourcemanager/ResourceManagerExample.html).
+[`ResourceManagerExample`](../gcloud-java-examples/src/main/java/com/google/cloud/examples/resourcemanager/ResourceManagerExample.java) is a simple command line interface for the Cloud Resource Manager.  Read more about using the application on the [`ResourceManagerExample` docs page](http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/cloud/examples/resourcemanager/ResourceManagerExample.html).
 
 Authentication
 --------------
@@ -80,8 +80,8 @@ These credentials are automatically inferred from your environment, so you only 
 code to create your service object:
 
 ```java
-import com.google.gcloud.resourcemanager.ResourceManager;
-import com.google.gcloud.resourcemanager.ResourceManagerOptions;
+import com.google.cloud.resourcemanager.ResourceManager;
+import com.google.cloud.resourcemanager.ResourceManagerOptions;
 
 ResourceManager resourceManager = ResourceManagerOptions.defaultInstance().service();
 ```
@@ -91,7 +91,7 @@ You can load a project if you know it's project ID and have read permissions to 
 To get a project, add the following import at the top of your file:
 
 ```java
-import com.google.gcloud.resourcemanager.Project;
+import com.google.cloud.resourcemanager.Project;
 ```
 
 Then use the following code to get the project:
@@ -108,8 +108,8 @@ names, and labels [here](https://cloud.google.com/resource-manager/reference/res
 To create a project, add the following imports at the top of your file:
 
 ```java
-import com.google.gcloud.resourcemanager.Project;
-import com.google.gcloud.resourcemanager.ProjectInfo;
+import com.google.cloud.resourcemanager.Project;
+import com.google.cloud.resourcemanager.ProjectInfo;
 ```
 
 Then add the following code to create a project (be sure to change `projectId` to your own unique
@@ -171,9 +171,9 @@ locally, and then sending the modified policy for writing, as shown in the snipp
 add these imports:
 
 ```java
-import com.google.gcloud.Identity;
-import com.google.gcloud.resourcemanager.Policy;
-import com.google.gcloud.resourcemanager.Policy.Role;
+import com.google.cloud.Identity;
+import com.google.cloud.resourcemanager.Policy;
+import com.google.cloud.resourcemanager.Policy.Role;
 ```
 
 Assuming you have completed the steps above to create the `ResourceManager` service object and load
@@ -206,15 +206,15 @@ We put together all the code shown above into three programs. The programs assum
 running from your own desktop and used the Google Cloud SDK to authenticate yourself.
 
 The first program creates a project if it does not exist. Complete source code can be found at
-[GetOrCreateProject.java](../gcloud-java-examples/src/main/java/com/google/gcloud/examples/resourcemanager/snippets/GetOrCreateProject.java).
+[GetOrCreateProject.java](../gcloud-java-examples/src/main/java/com/google/cloud/examples/resourcemanager/snippets/GetOrCreateProject.java).
 
 The second program updates a project if it exists and lists all projects the user has permission to
 view. Complete source code can be found at
-[UpdateAndListProjects.java](../gcloud-java-examples/src/main/java/com/google/gcloud/examples/resourcemanager/snippets/UpdateAndListProjects.java).
+[UpdateAndListProjects.java](../gcloud-java-examples/src/main/java/com/google/cloud/examples/resourcemanager/snippets/UpdateAndListProjects.java).
 
 The third program modifies the IAM policy associated with a project using the read-modify-write
 pattern.  Complete source code can be found at
-[ModifyPolicy.java](../gcloud-java-examples/src/main/java/com/google/gcloud/examples/resourcemanager/snippets/ModifyPolicy.java)
+[ModifyPolicy.java](../gcloud-java-examples/src/main/java/com/google/cloud/examples/resourcemanager/snippets/ModifyPolicy.java)
 
 Java Versions
 -------------
@@ -255,5 +255,5 @@ Apache 2.0 - See [LICENSE] for more information.
 [TESTING]: https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/TESTING.md#testing-code-that-uses-resource-manager
 [cloud-platform]: https://cloud.google.com/
 [cloud-resourcemanager]: https://cloud.google.com/resource-manager/docs
-[resourcemanager-api]: http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/gcloud/resourcemanager/package-summary.html
+[resourcemanager-api]: http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/cloud/resourcemanager/package-summary.html
 

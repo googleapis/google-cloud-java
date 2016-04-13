@@ -5,12 +5,12 @@ Java idiomatic client for [Google Cloud Datastore] (https://cloud.google.com/dat
 
 [![Build Status](https://travis-ci.org/GoogleCloudPlatform/gcloud-java.svg?branch=master)](https://travis-ci.org/GoogleCloudPlatform/gcloud-java)
 [![Coverage Status](https://coveralls.io/repos/GoogleCloudPlatform/gcloud-java/badge.svg?branch=master)](https://coveralls.io/r/GoogleCloudPlatform/gcloud-java?branch=master)
-[![Maven](https://img.shields.io/maven-central/v/com.google.gcloud/gcloud-java-datastore.svg)]( https://img.shields.io/maven-central/v/com.google.gcloud/gcloud-java-datastore.svg)
+[![Maven](https://img.shields.io/maven-central/v/com.google.cloud/gcloud-java-datastore.svg)]( https://img.shields.io/maven-central/v/com.google.cloud/gcloud-java-datastore.svg)
 [![Codacy Badge](https://api.codacy.com/project/badge/grade/9da006ad7c3a4fe1abd142e77c003917)](https://www.codacy.com/app/mziccard/gcloud-java)
 [![Dependency Status](https://www.versioneye.com/user/projects/56bd8ee72a29ed002d2b0969/badge.svg?style=flat)](https://www.versioneye.com/user/projects/56bd8ee72a29ed002d2b0969)
 
 -  [Homepage] (https://googlecloudplatform.github.io/gcloud-java/)
--  [API Documentation] (http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/gcloud/datastore/package-summary.html)
+-  [API Documentation] (http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/cloud/datastore/package-summary.html)
 
 > Note: This client is a work-in-progress, and may occasionally
 > make backwards-incompatible changes.
@@ -20,23 +20,23 @@ Quickstart
 If you are using Maven, add this to your pom.xml file
 ```xml
 <dependency>
-  <groupId>com.google.gcloud</groupId>
+  <groupId>com.google.cloud</groupId>
   <artifactId>gcloud-java-datastore</artifactId>
-  <version>0.1.5</version>
+  <version>0.2.0</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.gcloud:gcloud-java-datastore:0.1.5'
+compile 'com.google.cloud:gcloud-java-datastore:0.2.0'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.gcloud" % "gcloud-java-datastore" % "0.1.5"
+libraryDependencies += "com.google.cloud" % "gcloud-java-datastore" % "0.2.0"
 ```
 
 Example Application
 --------------------
-[`DatastoreExample`](../gcloud-java-examples/src/main/java/com/google/gcloud/examples/datastore/DatastoreExample.java) is a simple command line interface for the Cloud Datastore.  Read more about using the application on the [`DatastoreExample` docs page](http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/gcloud/examples/datastore/DatastoreExample.html).
+[`DatastoreExample`](../gcloud-java-examples/src/main/java/com/google/cloud/examples/datastore/DatastoreExample.java) is a simple command line interface for the Cloud Datastore.  Read more about using the application on the [`DatastoreExample` docs page](http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/cloud/examples/datastore/DatastoreExample.html).
 
 Authentication
 --------------
@@ -70,8 +70,8 @@ You'll need to obtain the `gcloud-java-datastore` library.  See the [Quickstart]
 To make authenticated requests to Google Cloud Datastore, you must create a service object with credentials. You can then make API calls by calling methods on the Datastore service object. The simplest way to authenticate is to use [Application Default Credentials](https://developers.google.com/identity/protocols/application-default-credentials). These credentials are automatically inferred from your environment, so you only need the following code to create your service object:
 
 ```java
-import com.google.gcloud.datastore.Datastore;
-import com.google.gcloud.datastore.DatastoreOptions;
+import com.google.cloud.datastore.Datastore;
+import com.google.cloud.datastore.DatastoreOptions;
 
 Datastore datastore = DatastoreOptions.defaultInstance().service();
 ```
@@ -82,9 +82,9 @@ For other authentication options, see the [Authentication](https://github.com/Go
 Objects in Datastore are known as entities. Entities are grouped by "kind" and have keys for easy access. In this code snippet, we will create a new entity representing a person and store that data by the person's email.  First, add the following imports at the top of your file:
 
 ```java
-import com.google.gcloud.datastore.Entity;
-import com.google.gcloud.datastore.Key;
-import com.google.gcloud.datastore.KeyFactory;
+import com.google.cloud.datastore.Entity;
+import com.google.cloud.datastore.Key;
+import com.google.cloud.datastore.KeyFactory;
 ```
 
 Then add the following code to put an entity in Datastore.
@@ -112,10 +112,10 @@ In addition to retrieving entities by their keys, you can perform queries to ret
 Suppose that you've added more people to Datastore, and now you want to find all people whose favorite food is pizza. Import the following:
 
 ```java
-import com.google.gcloud.datastore.Query;
-import com.google.gcloud.datastore.QueryResults;
-import com.google.gcloud.datastore.StructuredQuery;
-import com.google.gcloud.datastore.StructuredQuery.PropertyFilter;
+import com.google.cloud.datastore.Query;
+import com.google.cloud.datastore.QueryResults;
+import com.google.cloud.datastore.StructuredQuery;
+import com.google.cloud.datastore.StructuredQuery.PropertyFilter;
 ```
 
 Then add the following code to your program:
@@ -137,7 +137,7 @@ Cloud Datastore relies on indexing to run queries. Indexing is turned on by defa
 #### Complete source code
 
 In
-[AddEntitiesAndRunQuery.java](../gcloud-java-examples/src/main/java/com/google/gcloud/examples/datastore/snippets/AddEntitiesAndRunQuery.java)
+[AddEntitiesAndRunQuery.java](../gcloud-java-examples/src/main/java/com/google/cloud/examples/datastore/snippets/AddEntitiesAndRunQuery.java)
 we put together all the code shown above into one program. The program assumes that you are
 running on Compute Engine or from your own desktop. To run the example on App Engine, simply move
 the code from the main method to your application's servlet class and change the print statements to
@@ -191,4 +191,4 @@ Apache 2.0 - See [LICENSE] for more information.
 [cloud-platform]: https://cloud.google.com/
 [cloud-datastore-docs]: https://cloud.google.com/datastore/docs
 [cloud-datastore-activation]: https://cloud.google.com/datastore/docs/activate
-[datastore-api]: http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/gcloud/datastore/package-summary.html
+[datastore-api]: http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/cloud/datastore/package-summary.html
