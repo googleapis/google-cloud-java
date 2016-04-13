@@ -36,10 +36,10 @@ public class BatchResultTest {
 
   @Test
   public void testSuccess() {
-    assertFalse(result.submitted());
+    assertFalse(result.completed());
     try {
       result.get();
-      fail("This was not submitted yet.");
+      fail("This was not completed yet.");
     } catch (IllegalStateException ex) {
       // expected
     }
@@ -49,10 +49,10 @@ public class BatchResultTest {
 
   @Test
   public void testError() {
-    assertFalse(result.submitted());
+    assertFalse(result.completed());
     try {
       result.get();
-      fail("This was not submitted yet.");
+      fail("This was not completed yet.");
     } catch (IllegalStateException ex) {
       // expected
     }
@@ -69,7 +69,7 @@ public class BatchResultTest {
   @Test
   public void testNotifyError() {
     final BaseServiceException ex = new BaseServiceException(0, "message", "reason", false);
-    assertFalse(result.submitted());
+    assertFalse(result.completed());
     BatchResult.Callback<Boolean, BaseServiceException> callback =
         EasyMock.createStrictMock(BatchResult.Callback.class);
     callback.error(ex);
@@ -83,7 +83,7 @@ public class BatchResultTest {
 
   @Test
   public void testNotifySuccess() {
-    assertFalse(result.submitted());
+    assertFalse(result.completed());
     BatchResult.Callback<Boolean, BaseServiceException> callback =
         EasyMock.createStrictMock(BatchResult.Callback.class);
     callback.success(true);

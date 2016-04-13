@@ -37,7 +37,7 @@ public abstract class BatchResult<T, E extends BaseServiceException> {
    * Returns {@code true} if the batch has been completed and the result is available; {@code false}
    * otherwise.
    */
-  public boolean submitted() {
+  public boolean completed() {
     return completed;
   }
 
@@ -48,7 +48,7 @@ public abstract class BatchResult<T, E extends BaseServiceException> {
    * @throws E if an error occurred when processing this request
    */
   public T get() throws E {
-    checkState(submitted(), "Batch has not been completed yet");
+    checkState(completed(), "Batch has not been completed yet");
     if (error != null) {
       throw error;
     }
