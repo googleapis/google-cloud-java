@@ -352,7 +352,7 @@ public class OperationTest {
     expect(compute.get(GLOBAL_OPERATION_ID, expectedOptions)).andReturn(null);
     replay(compute);
     initializeOperation();
-    assertFalse(operation.isDone());
+    assertTrue(operation.isDone());
     verify(compute);
   }
 

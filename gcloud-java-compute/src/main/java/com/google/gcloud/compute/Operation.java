@@ -640,23 +640,21 @@ public class Operation implements Serializable {
 
   /**
    * Checks if this operation has completed its execution, either failing or succeeding. If the
-   * operation does not exist this method returns {@code false}. To correctly wait for operation's
-   * completion, check that the operation exists first using {@link #exists()}:
+   * operation does not exist this method returns {@code true}. You can wait for operation
+   * completion with:
    * <pre> {@code
-   * if (operation.exists()) {
-   *   while(!operation.isDone()) {
-   *     Thread.sleep(1000L);
-   *   }
+   * while(!operation.isDone()) {
+   *   Thread.sleep(1000L);
    * }}</pre>
    *
-   * @return {@code true} if this operation is in {@link Operation.Status#DONE} state, {@code false}
-   *     if the state is not {@link Operation.Status#DONE} or the operation does not exist
+   * @return {@code true} if this operation is in {@link Operation.Status#DONE} state or if it does
+   *     not exist, {@code false} if the state is not {@link Operation.Status#DONE}
    * @throws ComputeException upon failure
    */
   public boolean isDone() throws ComputeException {
     Operation operation =
         compute.get(operationId, Compute.OperationOption.fields(Compute.OperationField.STATUS));
-    return operation != null && operation.status() == Status.DONE;
+    return operation == null || operation.status() == Status.DONE;
   }
 
   /**
