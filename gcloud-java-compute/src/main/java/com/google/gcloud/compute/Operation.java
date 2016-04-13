@@ -52,7 +52,6 @@ public class Operation implements Serializable {
   private final ComputeOptions options;
   private final String id;
   private final OperationId operationId;
-  private final Long creationTimestamp;
   private final String clientOperationId;
   private final String operationType;
   private final String targetLink;
@@ -296,7 +295,6 @@ public class Operation implements Serializable {
 
     private Compute compute;
     private String id;
-    private Long creationTimestamp;
     private OperationId operationId;
     private String clientOperationId;
     private String operationType;
@@ -323,9 +321,6 @@ public class Operation implements Serializable {
       this.compute = compute;
       if (operationPb.getId() != null) {
         id = operationPb.getId().toString();
-      }
-      if (operationPb.getCreationTimestamp() != null) {
-        creationTimestamp = TIMESTAMP_FORMATTER.parseMillis(operationPb.getCreationTimestamp());
       }
       if (RegionOperationId.matchesUrl(operationPb.getSelfLink())) {
         operationId = RegionOperationId.fromUrl(operationPb.getSelfLink());
@@ -369,11 +364,6 @@ public class Operation implements Serializable {
 
     Builder id(String id) {
       this.id = id;
-      return this;
-    }
-
-    Builder creationTimestamp(Long creationTimestamp) {
-      this.creationTimestamp = creationTimestamp;
       return this;
     }
 
@@ -471,7 +461,6 @@ public class Operation implements Serializable {
     this.compute = checkNotNull(builder.compute);
     this.options = compute.options();
     this.id = builder.id;
-    this.creationTimestamp = builder.creationTimestamp;
     this.operationId = checkNotNull(builder.operationId);
     this.clientOperationId = builder.clientOperationId;
     this.operationType = builder.operationType;
@@ -503,13 +492,6 @@ public class Operation implements Serializable {
    */
   public String id() {
     return id;
-  }
-
-  /**
-   * Returns the creation timestamp in milliseconds since epoch.
-   */
-  public Long creationTimestamp() {
-    return creationTimestamp;
   }
 
   /**
@@ -705,7 +687,6 @@ public class Operation implements Serializable {
     return MoreObjects.toStringHelper(this)
         .add("id", id)
         .add("operationsId", operationId)
-        .add("creationTimestamp", creationTimestamp)
         .add("clientOperationId", clientOperationId)
         .add("operationType", operationType)
         .add("targetLink", targetLink)
@@ -742,9 +723,6 @@ public class Operation implements Serializable {
         new com.google.api.services.compute.model.Operation();
     if (id != null) {
       operationPb.setId(new BigInteger(id));
-    }
-    if (creationTimestamp != null) {
-      operationPb.setCreationTimestamp(TIMESTAMP_FORMATTER.print(creationTimestamp));
     }
     operationPb.setName(operationId.operation());
     operationPb.setClientOperationId(clientOperationId);
