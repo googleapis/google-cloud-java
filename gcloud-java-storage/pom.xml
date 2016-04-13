@@ -4,13 +4,14 @@
   <artifactId>gcloud-java-storage</artifactId>
   <packaging>jar</packaging>
   <name>GCloud Java storage</name>
+  <url>https://github.com/GoogleCloudPlatform/gcloud-java/tree/master/gcloud-java-storage</url>
   <description>
     Java idiomatic client for Google Cloud Storage.
   </description>
   <parent>
-    <groupId>com.google.gcloud</groupId>
+    <groupId>com.google.cloud</groupId>
     <artifactId>gcloud-java-pom</artifactId>
-    <version>0.1.8-SNAPSHOT</version>
+    <version>0.2.1-SNAPSHOT</version>
   </parent>
   <properties>
     <site.installationModule>gcloud-java-storage</site.installationModule>

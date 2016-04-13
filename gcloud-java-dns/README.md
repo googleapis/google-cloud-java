@@ -5,12 +5,12 @@ Java idiomatic client for [Google Cloud DNS] (https://cloud.google.com/dns/).
 
 [![Build Status](https://travis-ci.org/GoogleCloudPlatform/gcloud-java.svg?branch=master)](https://travis-ci.org/GoogleCloudPlatform/gcloud-java)
 [![Coverage Status](https://coveralls.io/repos/GoogleCloudPlatform/gcloud-java/badge.svg?branch=master)](https://coveralls.io/r/GoogleCloudPlatform/gcloud-java?branch=master)
-[![Maven](https://img.shields.io/maven-central/v/com.google.gcloud/gcloud-java-dns.svg)]( https://img.shields.io/maven-central/v/com.google.gcloud/gcloud-java-dns.svg)
+[![Maven](https://img.shields.io/maven-central/v/com.google.cloud/gcloud-java-dns.svg)]( https://img.shields.io/maven-central/v/com.google.cloud/gcloud-java-dns.svg)
 [![Codacy Badge](https://api.codacy.com/project/badge/grade/9da006ad7c3a4fe1abd142e77c003917)](https://www.codacy.com/app/mziccard/gcloud-java)
 [![Dependency Status](https://www.versioneye.com/user/projects/56bd8ee72a29ed002d2b0969/badge.svg?style=flat)](https://www.versioneye.com/user/projects/56bd8ee72a29ed002d2b0969)
 
 -  [Homepage] (https://googlecloudplatform.github.io/gcloud-java/)
--  [API Documentation] (http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/gcloud/dns/package-summary.html)
+-  [API Documentation] (http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/cloud/dns/package-summary.html)
 
 > Note: This client is a work-in-progress, and may occasionally
 > make backwards-incompatible changes.
@@ -20,27 +20,27 @@ Quickstart
 If you are using Maven, add this to your pom.xml file
 ```xml
 <dependency>
-  <groupId>com.google.gcloud</groupId>
+  <groupId>com.google.cloud</groupId>
   <artifactId>gcloud-java-dns</artifactId>
-  <version>0.1.7</version>
+  <version>0.2.0</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.gcloud:gcloud-java-dns:0.1.7'
+compile 'com.google.cloud:gcloud-java-dns:0.2.0'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.gcloud" % "gcloud-java-dns" % "0.1.7"
+libraryDependencies += "com.google.cloud" % "gcloud-java-dns" % "0.2.0"
 ```
 
 Example Application
 -------------------
 
-[`DnsExample`](../gcloud-java-examples/src/main/java/com/google/gcloud/examples/dns/DnsExample.java)
+[`DnsExample`](../gcloud-java-examples/src/main/java/com/google/cloud/examples/dns/DnsExample.java)
 is a simple command line interface that provides some of Google Cloud DNS's functionality.  Read
 more about using the application on the
-[`DnsExample` docs page](http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/gcloud/examples/dns/DnsExample.html).
+[`DnsExample` docs page](http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/cloud/examples/dns/DnsExample.html).
 
 Authentication
 --------------
@@ -83,8 +83,8 @@ These credentials are automatically inferred from your environment, so you only 
 code to create your service object:
 
 ```java
-import com.google.gcloud.dns.Dns;
-import com.google.gcloud.dns.DnsOptions;
+import com.google.cloud.dns.Dns;
+import com.google.cloud.dns.DnsOptions;
 
 Dns dns = DnsOptions.defaultInstance().service();
 ```
@@ -110,8 +110,8 @@ requires fully qualified domain names which must end with a period.*
 Add the following imports at the top of your file:
 
 ```java
-import com.google.gcloud.dns.Zone;
-import com.google.gcloud.dns.ZoneInfo;
+import com.google.cloud.dns.Zone;
+import com.google.cloud.dns.ZoneInfo;
 ```
 
 Then add the following code to create a zone.
@@ -159,8 +159,8 @@ our zone that creates a record set of type A and points URL www.someexampledomai
 IP address 12.13.14.15. Start by adding
 
 ```java
-import com.google.gcloud.dns.ChangeRequestInfo;
-import com.google.gcloud.dns.RecordSet;
+import com.google.cloud.dns.ChangeRequestInfo;
+import com.google.cloud.dns.RecordSet;
 
 import java.util.concurrent.TimeUnit;
 ```
@@ -325,11 +325,11 @@ if (result) {
 #### Complete Source Code
 
 We composed some of the aforementioned snippets into complete executable code samples. In
-[CreateZones.java](../gcloud-java-examples/src/main/java/com/google/gcloud/examples/dns/snippets/CreateZone.java)
-we create a zone. In [CreateOrUpdateRecordSets.java](../gcloud-java-examples/src/main/java/com/google/gcloud/examples/dns/snippets/CreateOrUpdateRecordSets.java)
+[CreateZones.java](../gcloud-java-examples/src/main/java/com/google/cloud/examples/dns/snippets/CreateZone.java)
+we create a zone. In [CreateOrUpdateRecordSets.java](../gcloud-java-examples/src/main/java/com/google/cloud/examples/dns/snippets/CreateOrUpdateRecordSets.java)
 we create a type A record set for a zone, or update an existing type A record set to a new IP address. We
-demonstrate how to delete a zone in [DeleteZone.java](../gcloud-java-examples/src/main/java/com/google/gcloud/examples/dns/snippets/DeleteZone.java).
-Finally, in [ManipulateZonesAndRecordSets.java](../gcloud-java-examples/src/main/java/com/google/gcloud/examples/dns/snippets/ManipulateZonesAndRecordSets.java)
+demonstrate how to delete a zone in [DeleteZone.java](../gcloud-java-examples/src/main/java/com/google/cloud/examples/dns/snippets/DeleteZone.java).
+Finally, in [ManipulateZonesAndRecordSets.java](../gcloud-java-examples/src/main/java/com/google/cloud/examples/dns/snippets/ManipulateZonesAndRecordSets.java)
 we assemble all the code snippets together and create zone, create or update a record set, list zones, list record sets, list changes, and
 delete a zone. The applications assume that they are running on Compute Engine or from your own desktop. To run any of these examples on App
 Engine, simply move the code from the main method to your application's servlet class and change the
@@ -383,5 +383,5 @@ Apache 2.0 - See [LICENSE] for more information.
 [cloud-platform]: https://cloud.google.com/
 
 [cloud-dns]: https://cloud.google.com/dns/
-[dns-api]: http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/gcloud/dns/package-summary.html
+[dns-api]: http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/cloud/dns/package-summary.html
 [dns-activate]:https://cloud.google.com/dns/getting-started#prerequisites

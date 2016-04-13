@@ -4,13 +4,14 @@
   <artifactId>gcloud-java</artifactId>
   <packaging>jar</packaging>
   <name>GCloud Java</name>
+  <url>https://github.com/GoogleCloudPlatform/gcloud-java/tree/master/gcloud-java</url>
   <description>
     Java idiomatic client for Google Cloud Platform services.
   </description>
   <parent>
-    <groupId>com.google.gcloud</groupId>
+    <groupId>com.google.cloud</groupId>
     <artifactId>gcloud-java-pom</artifactId>
-    <version>0.1.8-SNAPSHOT</version>
+    <version>0.2.1-SNAPSHOT</version>
   </parent>
   <dependencies>
     <dependency>
