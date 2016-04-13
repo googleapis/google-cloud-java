@@ -16,12 +16,12 @@
 
 package com.google.cloud.resourcemanager;
 
+import com.google.cloud.IamPolicy;
+import com.google.cloud.Identity;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Function;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
-import com.google.cloud.IamPolicy;
-import com.google.cloud.Identity;
 
 import java.util.ArrayList;
 import java.util.HashMap;

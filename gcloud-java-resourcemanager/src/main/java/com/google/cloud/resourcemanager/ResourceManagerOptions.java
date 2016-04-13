@@ -16,11 +16,11 @@
 
 package com.google.cloud.resourcemanager;
 
-import com.google.common.collect.ImmutableSet;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.resourcemanager.spi.DefaultResourceManagerRpc;
 import com.google.cloud.resourcemanager.spi.ResourceManagerRpc;
 import com.google.cloud.resourcemanager.spi.ResourceManagerRpcFactory;
+import com.google.common.collect.ImmutableSet;
 
 import java.util.Set;
 

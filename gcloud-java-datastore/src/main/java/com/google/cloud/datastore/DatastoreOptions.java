@@ -18,12 +18,12 @@ package com.google.cloud.datastore;
 
 import static com.google.cloud.datastore.Validator.validateNamespace;
 
-import com.google.common.base.MoreObjects;
-import com.google.common.collect.ImmutableSet;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.datastore.spi.DatastoreRpc;
 import com.google.cloud.datastore.spi.DatastoreRpcFactory;
 import com.google.cloud.datastore.spi.DefaultDatastoreRpc;
+import com.google.common.base.MoreObjects;
+import com.google.common.collect.ImmutableSet;
 
 import java.lang.reflect.Method;
 import java.util.Objects;

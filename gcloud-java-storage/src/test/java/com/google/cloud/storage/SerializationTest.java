@@ -16,7 +16,6 @@
 
 package com.google.cloud.storage;
 
-import com.google.common.collect.ImmutableMap;
 import com.google.cloud.AuthCredentials;
 import com.google.cloud.BaseSerializationTest;
 import com.google.cloud.PageImpl;
@@ -24,6 +23,7 @@ import com.google.cloud.ReadChannel;
 import com.google.cloud.Restorable;
 import com.google.cloud.storage.Acl.Project.ProjectRole;
 import com.google.cloud.storage.spi.StorageRpc;
+import com.google.common.collect.ImmutableMap;
 
 import java.io.Serializable;
 import java.util.Collections;

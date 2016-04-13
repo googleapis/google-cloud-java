@@ -16,11 +16,11 @@
 
 package com.google.cloud.dns;
 
-import com.google.common.collect.ImmutableList;
 import com.google.cloud.AuthCredentials;
 import com.google.cloud.BaseSerializationTest;
 import com.google.cloud.Restorable;
 import com.google.cloud.RetryParams;
+import com.google.common.collect.ImmutableList;
 
 import java.io.Serializable;
 import java.math.BigInteger;

@@ -30,7 +30,6 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
-import com.google.common.collect.ImmutableList;
 import com.google.cloud.Page;
 import com.google.cloud.PageImpl;
 import com.google.cloud.storage.Acl.Project;
@@ -38,6 +37,7 @@ import com.google.cloud.storage.Acl.User;
 import com.google.cloud.storage.BatchResponse.Result;
 import com.google.cloud.storage.BucketInfo.AgeDeleteRule;
 import com.google.cloud.storage.BucketInfo.DeleteRule;
+import com.google.common.collect.ImmutableList;
 
 import org.easymock.Capture;
 import org.junit.After;

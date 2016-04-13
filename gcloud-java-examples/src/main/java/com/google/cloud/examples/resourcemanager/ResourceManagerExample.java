@@ -16,11 +16,11 @@
 
 package com.google.cloud.examples.resourcemanager;
 
-import com.google.common.base.Joiner;
 import com.google.cloud.resourcemanager.Project;
 import com.google.cloud.resourcemanager.ProjectInfo;
 import com.google.cloud.resourcemanager.ResourceManager;
 import com.google.cloud.resourcemanager.ResourceManagerOptions;
+import com.google.common.base.Joiner;
 
 import java.util.Arrays;
 import java.util.HashMap;

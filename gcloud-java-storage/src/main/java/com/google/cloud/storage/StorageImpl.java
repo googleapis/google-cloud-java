@@ -16,9 +16,6 @@
 
 package com.google.cloud.storage;
 
-import static com.google.common.base.MoreObjects.firstNonNull;
-import static com.google.common.base.Preconditions.checkArgument;
-import static com.google.common.base.Preconditions.checkState;
 import static com.google.cloud.RetryHelper.runWithRetries;
 import static com.google.cloud.storage.spi.StorageRpc.Option.DELIMITER;
 import static com.google.cloud.storage.spi.StorageRpc.Option.IF_GENERATION_MATCH;
@@ -29,18 +26,12 @@ import static com.google.cloud.storage.spi.StorageRpc.Option.IF_SOURCE_GENERATIO
 import static com.google.cloud.storage.spi.StorageRpc.Option.IF_SOURCE_GENERATION_NOT_MATCH;
 import static com.google.cloud.storage.spi.StorageRpc.Option.IF_SOURCE_METAGENERATION_MATCH;
 import static com.google.cloud.storage.spi.StorageRpc.Option.IF_SOURCE_METAGENERATION_NOT_MATCH;
+import static com.google.common.base.MoreObjects.firstNonNull;
+import static com.google.common.base.Preconditions.checkArgument;
+import static com.google.common.base.Preconditions.checkState;
 import static java.nio.charset.StandardCharsets.UTF_8;
 
 import com.google.api.services.storage.model.StorageObject;
-import com.google.common.base.Function;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import com.google.common.collect.Iterables;
-import com.google.common.collect.Lists;
-import com.google.common.collect.Maps;
-import com.google.common.hash.Hashing;
-import com.google.common.io.BaseEncoding;
-import com.google.common.primitives.Ints;
 import com.google.cloud.BaseService;
 import com.google.cloud.Page;
 import com.google.cloud.PageImpl;
@@ -51,6 +42,15 @@ import com.google.cloud.ServiceAccountSigner;
 import com.google.cloud.storage.spi.StorageRpc;
 import com.google.cloud.storage.spi.StorageRpc.RewriteResponse;
 import com.google.cloud.storage.spi.StorageRpc.Tuple;
+import com.google.common.base.Function;
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
+import com.google.common.collect.Iterables;
+import com.google.common.collect.Lists;
+import com.google.common.collect.Maps;
+import com.google.common.hash.Hashing;
+import com.google.common.io.BaseEncoding;
+import com.google.common.primitives.Ints;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;

@@ -20,9 +20,9 @@ import static com.google.common.base.MoreObjects.firstNonNull;
 
 import com.google.api.services.storage.model.Bucket;
 import com.google.api.services.storage.model.StorageObject;
+import com.google.cloud.storage.StorageException;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
-import com.google.cloud.storage.StorageException;
 
 import java.io.InputStream;
 import java.util.List;

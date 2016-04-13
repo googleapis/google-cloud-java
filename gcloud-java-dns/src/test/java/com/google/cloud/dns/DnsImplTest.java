@@ -22,14 +22,14 @@ import static org.junit.Assert.assertTrue;
 import com.google.api.services.dns.model.Change;
 import com.google.api.services.dns.model.ManagedZone;
 import com.google.api.services.dns.model.ResourceRecordSet;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import com.google.common.collect.Lists;
 import com.google.cloud.Page;
 import com.google.cloud.RetryParams;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.dns.spi.DnsRpc;
 import com.google.cloud.dns.spi.DnsRpcFactory;
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
+import com.google.common.collect.Lists;
 
 import org.easymock.Capture;
 import org.easymock.EasyMock;

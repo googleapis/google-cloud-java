@@ -16,6 +16,12 @@
 
 package com.google.cloud.datastore;
 
+import com.google.cloud.BaseService;
+import com.google.cloud.RetryHelper;
+import com.google.cloud.RetryHelper.RetryHelperException;
+import com.google.cloud.RetryParams;
+import com.google.cloud.datastore.ReadOption.EventualConsistency;
+import com.google.cloud.datastore.spi.DatastoreRpc;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.AbstractIterator;
@@ -23,12 +29,6 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Sets;
 import com.google.datastore.v1beta3.ReadOptions.ReadConsistency;
-import com.google.cloud.BaseService;
-import com.google.cloud.RetryHelper;
-import com.google.cloud.RetryHelper.RetryHelperException;
-import com.google.cloud.RetryParams;
-import com.google.cloud.datastore.ReadOption.EventualConsistency;
-import com.google.cloud.datastore.spi.DatastoreRpc;
 import com.google.protobuf.ByteString;
 
 import java.util.ArrayList;

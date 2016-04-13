@@ -30,10 +30,10 @@ import com.google.api.services.storage.model.Bucket.Versioning;
 import com.google.api.services.storage.model.Bucket.Website;
 import com.google.api.services.storage.model.BucketAccessControl;
 import com.google.api.services.storage.model.ObjectAccessControl;
+import com.google.cloud.storage.Acl.Entity;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
-import com.google.cloud.storage.Acl.Entity;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;

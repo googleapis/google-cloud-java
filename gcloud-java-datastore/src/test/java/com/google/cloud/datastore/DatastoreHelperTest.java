@@ -27,9 +27,9 @@ import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
+import com.google.cloud.datastore.Datastore.TransactionCallable;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterators;
-import com.google.cloud.datastore.Datastore.TransactionCallable;
 
 import org.easymock.EasyMock;
 import org.junit.Test;

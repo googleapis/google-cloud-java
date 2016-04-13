@@ -19,10 +19,10 @@ package com.google.cloud.bigquery;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.api.services.bigquery.model.JobConfigurationLoad;
-import com.google.common.base.MoreObjects;
-import com.google.common.collect.ImmutableList;
 import com.google.cloud.bigquery.JobInfo.CreateDisposition;
 import com.google.cloud.bigquery.JobInfo.WriteDisposition;
+import com.google.common.base.MoreObjects;
+import com.google.common.collect.ImmutableList;
 
 import java.io.Serializable;
 import java.util.List;

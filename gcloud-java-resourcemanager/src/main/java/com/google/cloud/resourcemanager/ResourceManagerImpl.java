@@ -16,14 +16,9 @@
 
 package com.google.cloud.resourcemanager;
 
-import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.cloud.RetryHelper.runWithRetries;
+import static com.google.common.base.Preconditions.checkArgument;
 
-import com.google.common.base.Function;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import com.google.common.collect.Iterables;
-import com.google.common.collect.Maps;
 import com.google.cloud.BaseService;
 import com.google.cloud.Page;
 import com.google.cloud.PageImpl;
@@ -31,6 +26,11 @@ import com.google.cloud.PageImpl.NextPageFetcher;
 import com.google.cloud.RetryHelper.RetryHelperException;
 import com.google.cloud.resourcemanager.spi.ResourceManagerRpc;
 import com.google.cloud.resourcemanager.spi.ResourceManagerRpc.Tuple;
+import com.google.common.base.Function;
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
+import com.google.common.collect.Iterables;
+import com.google.common.collect.Maps;
 
 import java.util.List;
 import java.util.Map;

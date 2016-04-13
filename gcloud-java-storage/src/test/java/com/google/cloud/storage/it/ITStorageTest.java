@@ -25,11 +25,6 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import com.google.common.collect.ImmutableSet;
-import com.google.common.collect.Iterators;
-import com.google.common.collect.Lists;
 import com.google.cloud.Page;
 import com.google.cloud.ReadChannel;
 import com.google.cloud.RestorableState;
@@ -48,6 +43,11 @@ import com.google.cloud.storage.Storage.BlobField;
 import com.google.cloud.storage.Storage.BucketField;
 import com.google.cloud.storage.StorageException;
 import com.google.cloud.storage.testing.RemoteStorageHelper;
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
+import com.google.common.collect.ImmutableSet;
+import com.google.common.collect.Iterators;
+import com.google.common.collect.Lists;
 
 import org.junit.AfterClass;
 import org.junit.BeforeClass;

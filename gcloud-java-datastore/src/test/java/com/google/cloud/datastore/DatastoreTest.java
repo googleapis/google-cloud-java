@@ -25,6 +25,13 @@ import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
+import com.google.cloud.RetryParams;
+import com.google.cloud.datastore.Query.ResultType;
+import com.google.cloud.datastore.StructuredQuery.OrderBy;
+import com.google.cloud.datastore.StructuredQuery.PropertyFilter;
+import com.google.cloud.datastore.spi.DatastoreRpc;
+import com.google.cloud.datastore.spi.DatastoreRpcFactory;
+import com.google.cloud.datastore.testing.LocalDatastoreHelper;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterators;
 import com.google.common.collect.Lists;
@@ -37,13 +44,6 @@ import com.google.datastore.v1beta3.ReadOptions;
 import com.google.datastore.v1beta3.ReadOptions.ReadConsistency;
 import com.google.datastore.v1beta3.RunQueryRequest;
 import com.google.datastore.v1beta3.RunQueryResponse;
-import com.google.cloud.RetryParams;
-import com.google.cloud.datastore.Query.ResultType;
-import com.google.cloud.datastore.StructuredQuery.OrderBy;
-import com.google.cloud.datastore.StructuredQuery.PropertyFilter;
-import com.google.cloud.datastore.spi.DatastoreRpc;
-import com.google.cloud.datastore.spi.DatastoreRpcFactory;
-import com.google.cloud.datastore.testing.LocalDatastoreHelper;
 import com.google.protobuf.ByteString;
 
 import org.easymock.EasyMock;

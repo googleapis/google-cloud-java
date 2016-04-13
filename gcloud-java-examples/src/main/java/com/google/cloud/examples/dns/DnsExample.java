@@ -16,8 +16,6 @@
 
 package com.google.cloud.examples.dns;
 
-import com.google.common.base.Joiner;
-import com.google.common.collect.ImmutableList;
 import com.google.cloud.dns.ChangeRequest;
 import com.google.cloud.dns.ChangeRequestInfo;
 import com.google.cloud.dns.Dns;
@@ -26,6 +24,8 @@ import com.google.cloud.dns.ProjectInfo;
 import com.google.cloud.dns.RecordSet;
 import com.google.cloud.dns.Zone;
 import com.google.cloud.dns.ZoneInfo;
+import com.google.common.base.Joiner;
+import com.google.common.collect.ImmutableList;
 
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;

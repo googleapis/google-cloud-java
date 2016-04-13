@@ -25,12 +25,6 @@ import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
 import com.google.api.services.storage.model.StorageObject;
-import com.google.common.base.Function;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import com.google.common.collect.Iterables;
-import com.google.common.collect.Maps;
-import com.google.common.io.BaseEncoding;
 import com.google.cloud.AuthCredentials.ServiceAccountAuthCredentials;
 import com.google.cloud.Page;
 import com.google.cloud.ReadChannel;
@@ -41,6 +35,12 @@ import com.google.cloud.storage.Storage.CopyRequest;
 import com.google.cloud.storage.spi.StorageRpc;
 import com.google.cloud.storage.spi.StorageRpc.Tuple;
 import com.google.cloud.storage.spi.StorageRpcFactory;
+import com.google.common.base.Function;
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
+import com.google.common.collect.Iterables;
+import com.google.common.collect.Maps;
+import com.google.common.io.BaseEncoding;
 
 import org.easymock.Capture;
 import org.easymock.EasyMock;

@@ -16,9 +16,9 @@
 
 package com.google.cloud.bigquery;
 
+import com.google.cloud.PageImpl;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
-import com.google.cloud.PageImpl;
 
 import java.util.List;
 import java.util.Objects;

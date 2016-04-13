@@ -23,8 +23,6 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import com.google.cloud.Page;
 import com.google.cloud.WriteChannel;
 import com.google.cloud.bigquery.BigQuery;
@@ -68,6 +66,8 @@ import com.google.cloud.storage.BlobInfo;
 import com.google.cloud.storage.BucketInfo;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.testing.RemoteStorageHelper;
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
 
 import org.junit.AfterClass;
 import org.junit.BeforeClass;

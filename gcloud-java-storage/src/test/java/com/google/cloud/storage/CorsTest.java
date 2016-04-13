@@ -18,8 +18,8 @@ package com.google.cloud.storage;
 
 import static org.junit.Assert.assertEquals;
 
-import com.google.common.collect.ImmutableList;
 import com.google.cloud.storage.Cors.Origin;
+import com.google.common.collect.ImmutableList;
 
 import org.junit.Test;
 

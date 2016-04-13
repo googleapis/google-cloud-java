@@ -19,10 +19,10 @@ package com.google.cloud.datastore.testing;
 import static com.google.common.base.MoreObjects.firstNonNull;
 import static com.google.common.base.Preconditions.checkArgument;
 
-import com.google.common.base.Strings;
 import com.google.cloud.AuthCredentials;
 import com.google.cloud.RetryParams;
 import com.google.cloud.datastore.DatastoreOptions;
+import com.google.common.base.Strings;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;

@@ -22,10 +22,10 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
-import com.google.common.base.Stopwatch;
-import com.google.common.base.Ticker;
 import com.google.cloud.RetryHelper.NonRetriableException;
 import com.google.cloud.RetryHelper.RetriesExhaustedException;
+import com.google.common.base.Stopwatch;
+import com.google.common.base.Ticker;
 
 import org.junit.Test;
 

@@ -16,12 +16,12 @@
 
 package com.google.cloud.resourcemanager;
 
-import com.google.common.collect.ImmutableMap;
 import com.google.cloud.BaseSerializationTest;
 import com.google.cloud.Identity;
 import com.google.cloud.PageImpl;
 import com.google.cloud.Restorable;
 import com.google.cloud.resourcemanager.Policy.ProjectRole;
+import com.google.common.collect.ImmutableMap;
 
 import java.io.Serializable;
 import java.util.Collections;
