@@ -21,6 +21,10 @@ import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
+import com.google.cloud.BaseServiceException;
+import com.google.cloud.BatchResult;
+
+import org.easymock.EasyMock;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -67,5 +71,32 @@ public class DnsBatchResultTest {
     }
   }
 
-  // todo(mderka) test notify when implemented
+  @Test
+  public void testNotifyError() {
+    DnsException ex = new DnsException(new IOException("some error"));
+    assertFalse(result.submitted());
+    BatchResult.Callback<Boolean, DnsException> callback =
+        EasyMock.createStrictMock(BatchResult.Callback.class);
+    callback.error(ex);
+    callback.error(ex);
+    EasyMock.replay(callback);
+    result.notify(callback);
+    result.error(ex);
+    result.notify(callback);
+    EasyMock.verify(callback);
+  }
+
+  @Test
+  public void testNotifySuccess() {
+    assertFalse(result.submitted());
+    BatchResult.Callback<Boolean, DnsException> callback =
+        EasyMock.createStrictMock(BatchResult.Callback.class);
+    callback.success(true);
+    callback.success(true);
+    EasyMock.replay(callback);
+    result.notify(callback);
+    result.success(true);
+    result.notify(callback);
+    EasyMock.verify(callback);
+  }
 }
