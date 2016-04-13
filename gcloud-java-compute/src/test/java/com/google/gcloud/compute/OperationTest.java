@@ -89,7 +89,6 @@ public class OperationTest {
     replay(serviceMockReturnsOptions);
     globalOperation = new Operation.Builder(serviceMockReturnsOptions)
         .id(ID)
-        .creationTimestamp(CREATION_TIMESTAMP)
         .operationId(GLOBAL_OPERATION_ID)
         .clientOperationId(CLIENT_OPERATION_ID)
         .operationType(OPERATION_TYPE)
@@ -110,7 +109,6 @@ public class OperationTest {
         .build();
     zoneOperation = new Operation.Builder(serviceMockReturnsOptions)
         .id(ID)
-        .creationTimestamp(CREATION_TIMESTAMP)
         .operationId(ZONE_OPERATION_ID)
         .clientOperationId(CLIENT_OPERATION_ID)
         .operationType(OPERATION_TYPE)
@@ -131,7 +129,6 @@ public class OperationTest {
         .build();
     regionOperation = new Operation.Builder(serviceMockReturnsOptions)
         .id(ID)
-        .creationTimestamp(CREATION_TIMESTAMP)
         .operationId(REGION_OPERATION_ID)
         .clientOperationId(CLIENT_OPERATION_ID)
         .operationType(OPERATION_TYPE)
@@ -157,7 +154,6 @@ public class OperationTest {
     operation = new Operation.Builder(compute)
         .id(ID)
         .operationId(GLOBAL_OPERATION_ID)
-        .creationTimestamp(CREATION_TIMESTAMP)
         .clientOperationId(CLIENT_OPERATION_ID)
         .operationType(OPERATION_TYPE)
         .targetLink(TARGET_LINK)
@@ -183,7 +179,6 @@ public class OperationTest {
   }
 
   private void assertEqualsCommonFields(Operation operation) {
-    assertEquals(CREATION_TIMESTAMP, operation.creationTimestamp());
     assertEquals(ID, operation.id());
     assertEquals(CLIENT_OPERATION_ID, operation.clientOperationId());
     assertEquals(OPERATION_TYPE, operation.operationType());
@@ -205,7 +200,6 @@ public class OperationTest {
   }
 
   private void assertNullCommonFields(Operation operation) {
-    assertNull(operation.creationTimestamp());
     assertNull(operation.id());
     assertNull(operation.clientOperationId());
     assertNull(operation.operationType());
@@ -358,7 +352,7 @@ public class OperationTest {
     expect(compute.get(GLOBAL_OPERATION_ID, expectedOptions)).andReturn(null);
     replay(compute);
     initializeOperation();
-    assertFalse(operation.isDone());
+    assertTrue(operation.isDone());
     verify(compute);
   }
 
@@ -401,7 +395,6 @@ public class OperationTest {
   private void compareOperation(Operation expected, Operation value) {
     assertEquals(expected, value);
     assertEquals(expected.compute().options(), value.compute().options());
-    assertEquals(expected.creationTimestamp(), value.creationTimestamp());
     assertEquals(expected.operationId(), value.operationId());
     assertEquals(expected.clientOperationId(), value.clientOperationId());
     assertEquals(expected.operationType(), value.operationType());

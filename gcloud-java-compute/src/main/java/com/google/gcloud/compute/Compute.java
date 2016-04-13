@@ -232,7 +232,6 @@ public interface Compute extends Service<ComputeOptions> {
    */
   enum OperationField {
     CLIENT_OPERATION_ID("clientOperationId"),
-    CREATION_TIMESTAMP("creationTimestamp"),
     DESCRIPTION("description"),
     END_TIME("endTime"),
     ERROR("error"),

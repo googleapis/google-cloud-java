@@ -52,7 +52,6 @@ public class Operation implements Serializable {
   private final ComputeOptions options;
   private final String id;
   private final OperationId operationId;
-  private final Long creationTimestamp;
   private final String clientOperationId;
   private final String operationType;
   private final String targetLink;
@@ -296,7 +295,6 @@ public class Operation implements Serializable {
 
     private Compute compute;
     private String id;
-    private Long creationTimestamp;
     private OperationId operationId;
     private String clientOperationId;
     private String operationType;
@@ -323,9 +321,6 @@ public class Operation implements Serializable {
       this.compute = compute;
       if (operationPb.getId() != null) {
         id = operationPb.getId().toString();
-      }
-      if (operationPb.getCreationTimestamp() != null) {
-        creationTimestamp = TIMESTAMP_FORMATTER.parseMillis(operationPb.getCreationTimestamp());
       }
       if (RegionOperationId.matchesUrl(operationPb.getSelfLink())) {
         operationId = RegionOperationId.fromUrl(operationPb.getSelfLink());
@@ -369,11 +364,6 @@ public class Operation implements Serializable {
 
     Builder id(String id) {
       this.id = id;
-      return this;
-    }
-
-    Builder creationTimestamp(Long creationTimestamp) {
-      this.creationTimestamp = creationTimestamp;
       return this;
     }
 
@@ -471,7 +461,6 @@ public class Operation implements Serializable {
     this.compute = checkNotNull(builder.compute);
     this.options = compute.options();
     this.id = builder.id;
-    this.creationTimestamp = builder.creationTimestamp;
     this.operationId = checkNotNull(builder.operationId);
     this.clientOperationId = builder.clientOperationId;
     this.operationType = builder.operationType;
@@ -503,13 +492,6 @@ public class Operation implements Serializable {
    */
   public String id() {
     return id;
-  }
-
-  /**
-   * Returns the creation timestamp in milliseconds since epoch.
-   */
-  public Long creationTimestamp() {
-    return creationTimestamp;
   }
 
   /**
@@ -658,23 +640,21 @@ public class Operation implements Serializable {
 
   /**
    * Checks if this operation has completed its execution, either failing or succeeding. If the
-   * operation does not exist this method returns {@code false}. To correctly wait for operation's
-   * completion, check that the operation exists first using {@link #exists()}:
+   * operation does not exist this method returns {@code true}. You can wait for operation
+   * completion with:
    * <pre> {@code
-   * if (operation.exists()) {
-   *   while(!operation.isDone()) {
-   *     Thread.sleep(1000L);
-   *   }
+   * while(!operation.isDone()) {
+   *   Thread.sleep(1000L);
    * }}</pre>
    *
-   * @return {@code true} if this operation is in {@link Operation.Status#DONE} state, {@code false}
-   *     if the state is not {@link Operation.Status#DONE} or the operation does not exist
+   * @return {@code true} if this operation is in {@link Operation.Status#DONE} state or if it does
+   *     not exist, {@code false} if the state is not {@link Operation.Status#DONE}
    * @throws ComputeException upon failure
    */
   public boolean isDone() throws ComputeException {
     Operation operation =
         compute.get(operationId, Compute.OperationOption.fields(Compute.OperationField.STATUS));
-    return operation != null && operation.status() == Status.DONE;
+    return operation == null || operation.status() == Status.DONE;
   }
 
   /**
@@ -705,7 +685,6 @@ public class Operation implements Serializable {
     return MoreObjects.toStringHelper(this)
         .add("id", id)
         .add("operationsId", operationId)
-        .add("creationTimestamp", creationTimestamp)
         .add("clientOperationId", clientOperationId)
         .add("operationType", operationType)
         .add("targetLink", targetLink)
@@ -742,9 +721,6 @@ public class Operation implements Serializable {
         new com.google.api.services.compute.model.Operation();
     if (id != null) {
       operationPb.setId(new BigInteger(id));
-    }
-    if (creationTimestamp != null) {
-      operationPb.setCreationTimestamp(TIMESTAMP_FORMATTER.print(creationTimestamp));
     }
     operationPb.setName(operationId.operation());
     operationPb.setClientOperationId(clientOperationId);

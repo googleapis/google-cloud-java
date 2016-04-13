@@ -502,7 +502,6 @@ public class ITComputeTest {
       assertNull(operation.operationType());
       assertNull(operation.targetLink());
       assertNull(operation.targetId());
-      assertNull(operation.creationTimestamp());
       assertNull(operation.operationType());
       assertNull(operation.status());
       assertNull(operation.statusMessage());
@@ -564,7 +563,6 @@ public class ITComputeTest {
       assertNull(operation.operationType());
       assertNull(operation.targetLink());
       assertNull(operation.targetId());
-      assertNull(operation.creationTimestamp());
       assertNull(operation.operationType());
       assertNull(operation.status());
       assertNull(operation.statusMessage());
@@ -628,7 +626,6 @@ public class ITComputeTest {
       assertNull(operation.operationType());
       assertNull(operation.targetLink());
       assertNull(operation.targetId());
-      assertNull(operation.creationTimestamp());
       assertNull(operation.operationType());
       assertNull(operation.status());
       assertNull(operation.statusMessage());
