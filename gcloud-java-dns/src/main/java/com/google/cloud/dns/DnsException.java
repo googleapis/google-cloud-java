@@ -16,10 +16,11 @@
 
 package com.google.cloud.dns;
 
-import com.google.common.collect.ImmutableSet;
+import com.google.api.client.googleapis.json.GoogleJsonError;
 import com.google.cloud.BaseServiceException;
 import com.google.cloud.RetryHelper.RetryHelperException;
 import com.google.cloud.RetryHelper.RetryInterruptedException;
+import com.google.common.collect.ImmutableSet;
 
 import java.io.IOException;
 import java.util.Set;
@@ -38,6 +39,10 @@ public class DnsException extends BaseServiceException {
       new Error(null, "userRateLimitExceeded"),
       new Error(null, "rateLimitExceeded"));
   private static final long serialVersionUID = 490302380416260252L;
+
+  public DnsException(GoogleJsonError error) {
+    super(error, true);
+  }
 
   public DnsException(IOException exception) {
     super(exception, true);

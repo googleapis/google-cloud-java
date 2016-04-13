@@ -16,23 +16,23 @@
 
 package com.google.cloud.dns;
 
-import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.cloud.RetryHelper.runWithRetries;
+import static com.google.common.base.Preconditions.checkArgument;
 
 import com.google.api.services.dns.model.Change;
 import com.google.api.services.dns.model.ManagedZone;
 import com.google.api.services.dns.model.Project;
 import com.google.api.services.dns.model.ResourceRecordSet;
-import com.google.common.base.Function;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import com.google.common.collect.Iterables;
-import com.google.common.collect.Maps;
 import com.google.cloud.BaseService;
 import com.google.cloud.Page;
 import com.google.cloud.PageImpl;
 import com.google.cloud.RetryHelper;
 import com.google.cloud.dns.spi.DnsRpc;
+import com.google.common.base.Function;
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
+import com.google.common.collect.Iterables;
+import com.google.common.collect.Maps;
 
 import java.util.Map;
 import java.util.concurrent.Callable;
@@ -44,7 +44,7 @@ final class DnsImpl extends BaseService<DnsOptions> implements Dns {
 
   private final DnsRpc dnsRpc;
 
-  private static class ZonePageFetcher implements PageImpl.NextPageFetcher<Zone> {
+  static class ZonePageFetcher implements PageImpl.NextPageFetcher<Zone> {
 
     private static final long serialVersionUID = 2158209410430566961L;
     private final Map<DnsRpc.Option, ?> requestOptions;
@@ -63,7 +63,7 @@ final class DnsImpl extends BaseService<DnsOptions> implements Dns {
     }
   }
 
-  private static class ChangeRequestPageFetcher implements PageImpl.NextPageFetcher<ChangeRequest> {
+  static class ChangeRequestPageFetcher implements PageImpl.NextPageFetcher<ChangeRequest> {
 
     private static final long serialVersionUID = 4473265130673029139L;
     private final String zoneName;
@@ -84,14 +84,14 @@ final class DnsImpl extends BaseService<DnsOptions> implements Dns {
     }
   }
 
-  private static class DnsRecordPageFetcher implements PageImpl.NextPageFetcher<RecordSet> {
+  static class RecordSetPageFetcher implements PageImpl.NextPageFetcher<RecordSet> {
 
     private static final long serialVersionUID = -6039369212511530846L;
     private final Map<DnsRpc.Option, ?> requestOptions;
     private final DnsOptions serviceOptions;
     private final String zoneName;
 
-    DnsRecordPageFetcher(String zoneName, DnsOptions serviceOptions, String cursor,
+    RecordSetPageFetcher(String zoneName, DnsOptions serviceOptions, String cursor,
         Map<DnsRpc.Option, ?> optionMap) {
       this.zoneName = zoneName;
       this.requestOptions =
@@ -110,6 +110,16 @@ final class DnsImpl extends BaseService<DnsOptions> implements Dns {
     dnsRpc = options.rpc();
   }
 
+  static Function<ManagedZone, Zone> zoneFromPb(final DnsOptions options) {
+    return new Function<ManagedZone, Zone>() {
+      @Override
+      public Zone apply(
+          com.google.api.services.dns.model.ManagedZone zonePb) {
+        return Zone.fromPb(options.service(), zonePb);
+      }
+    };
+  }
+
   @Override
   public Page<Zone> listZones(ZoneListOption... options) {
     return listZones(options(), optionMap(options));
@@ -117,14 +127,6 @@ final class DnsImpl extends BaseService<DnsOptions> implements Dns {
 
   private static Page<Zone> listZones(final DnsOptions serviceOptions,
       final Map<DnsRpc.Option, ?> optionsMap) {
-    // define transformation function
-    // this differs from the other list operations since zone is functional and requires dns service
-    Function<ManagedZone, Zone> pbToZoneFunction = new Function<ManagedZone, Zone>() {
-      @Override
-      public Zone apply(ManagedZone zonePb) {
-        return Zone.fromPb(serviceOptions.service(), zonePb);
-      }
-    };
     try {
       // get a list of managed zones
       final DnsRpc rpc = serviceOptions.rpc();
@@ -137,8 +139,8 @@ final class DnsImpl extends BaseService<DnsOptions> implements Dns {
           }, serviceOptions.retryParams(), EXCEPTION_HANDLER);
       String cursor = result.pageToken();
       // transform that list into zone objects
-      Iterable<Zone> zones = result.results() == null
-          ? ImmutableList.<Zone>of() : Iterables.transform(result.results(), pbToZoneFunction);
+      Iterable<Zone> zones = result.results() == null ? ImmutableList.<Zone>of()
+          : Iterables.transform(result.results(), zoneFromPb(serviceOptions));
       return new PageImpl<>(new ZonePageFetcher(serviceOptions, cursor, optionsMap),
           cursor, zones);
     } catch (RetryHelper.RetryHelperException e) {
@@ -198,7 +200,7 @@ final class DnsImpl extends BaseService<DnsOptions> implements Dns {
       Iterable<RecordSet> recordSets = result.results() == null
           ? ImmutableList.<RecordSet>of()
           : Iterables.transform(result.results(), RecordSet.FROM_PB_FUNCTION);
-      return new PageImpl<>(new DnsRecordPageFetcher(zoneName, serviceOptions, cursor, optionsMap),
+      return new PageImpl<>(new RecordSetPageFetcher(zoneName, serviceOptions, cursor, optionsMap),
           cursor, recordSets);
     } catch (RetryHelper.RetryHelperException e) {
       throw DnsException.translateAndThrow(e);
@@ -306,7 +308,12 @@ final class DnsImpl extends BaseService<DnsOptions> implements Dns {
     }
   }
 
-  private Map<DnsRpc.Option, ?> optionMap(Option... options) {
+  @Override
+  public DnsBatch batch() {
+    return new DnsBatch(this.options());
+  }
+
+  static Map<DnsRpc.Option, ?> optionMap(Option... options) {
     Map<DnsRpc.Option, Object> temp = Maps.newEnumMap(DnsRpc.Option.class);
     for (Option option : options) {
       Object prev = temp.put(option.rpcOption(), option.value());
