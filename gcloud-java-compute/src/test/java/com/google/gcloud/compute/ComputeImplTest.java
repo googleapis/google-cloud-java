@@ -427,7 +427,6 @@ public class ComputeImplTest {
     Compute otherService = options.toBuilder().build().service();
     globalOperation = new Operation.Builder(otherService)
         .id(ID)
-        .creationTimestamp(CREATION_TIMESTAMP)
         .operationId(GLOBAL_OPERATION_ID)
         .clientOperationId(CLIENT_OPERATION_ID)
         .operationType(OPERATION_TYPE)
@@ -448,7 +447,6 @@ public class ComputeImplTest {
         .build();
     zoneOperation = new Operation.Builder(otherService)
         .id(ID)
-        .creationTimestamp(CREATION_TIMESTAMP)
         .operationId(ZONE_OPERATION_ID)
         .clientOperationId(CLIENT_OPERATION_ID)
         .operationType(OPERATION_TYPE)
@@ -469,7 +467,6 @@ public class ComputeImplTest {
         .build();
     regionOperation = new Operation.Builder(otherService)
         .id(ID)
-        .creationTimestamp(CREATION_TIMESTAMP)
         .operationId(REGION_OPERATION_ID)
         .clientOperationId(CLIENT_OPERATION_ID)
         .operationType(OPERATION_TYPE)
