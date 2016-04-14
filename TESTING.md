@@ -72,7 +72,7 @@ You can test against an in-memory local DNS by following these steps:
   The `delay` parameter determines if change requests should be processed synchronously
   (value `0`) or in a separate thread with a minimum of delay of `delay` milliseconds.
 
-2. In your program, create the DNS service by using helper's `options()` method.  For example:
+2. In your program, create the DNS service by using the helper's `options()` method.  For example:
 
   ```java
   Dns dns = LocalDnsHelper.options().service();
