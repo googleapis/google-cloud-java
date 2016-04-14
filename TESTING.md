@@ -54,6 +54,40 @@ We recommend that you start the emulator on the remote machine using the [Google
 gcloud beta emulators datastore start --host-port <hostname of machine>:<port>
 ```
 
+### Testing code that uses DNS
+
+#### On your machine
+
+You can test against a temporary local DNS by following these steps:
+
+1. Before running your testing code, start the DNS emulator `LocalDnsHelper`. This can be done as follows:
+
+  ```java
+  long delay = 0;
+  LocalDnsHelper helper = LocalDnsHelper.create(delay);
+  helper.start();
+  ```
+
+  This will spawn a server thread that listens to `localhost` at an ephemeral port for DNS requests.
+  The `delay` parameter determines if change requests should be processed synchronously
+  (value `0`) or in a separate thread with a delay of `delay` milliseconds.
+
+2. In your program, create and use a DNS service object whose host is set to `localhost` at the appropriate port.  For example:
+
+  ```java
+  Dns dns = LocalDnsHelper.options().service();
+  ```
+
+3. Run your tests.
+
+4. Stop the DNS emulator.
+
+  ```java
+  helper.stop();
+  ```
+
+  This method will block until the server thread has been terminated.
+
 ### Testing code that uses Storage
 
 Currently, there isn't an emulator for Google Cloud Storage, so an alternative is to create a test project.  `RemoteStorageHelper` contains convenience methods to make setting up and cleaning up the test project easier.  To use this class, follow the steps below:
