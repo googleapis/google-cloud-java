@@ -40,6 +40,7 @@ import com.google.cloud.dns.RecordSet;
 import com.google.cloud.dns.Zone;
 import com.google.cloud.dns.ZoneInfo;
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.Iterables;
 import com.google.common.collect.Iterators;
 
 import org.junit.AfterClass;
@@ -982,8 +983,8 @@ public class ITDnsTest {
       result = batch.listZones();
       batch.submit();
       zones = filter(result.get().iterateAll());
-      assertEquals(firstZone, zones.get(0));
       assertEquals(1, zones.size());
+      assertEquals(firstZone, zones.get(0));
       Zone created = DNS.create(ZONE_EMPTY_DESCRIPTION);
       batch = DNS.batch();
       result = batch.listZones();
@@ -1039,7 +1040,7 @@ public class ITDnsTest {
         assertFalse(ex.retryable());
       }
       // ok size
-      assertEquals(1, Iterators.size(okSize.get().values().iterator()));
+      assertEquals(1, Iterables.size(okSize.get().values()));
       // dns name problems
       try {
         nameError.get();
@@ -1606,8 +1607,7 @@ public class ITDnsTest {
       batch = DNS.batch();
       result = batch.listChangeRequests(ZONE1.name());
       batch.submit();
-      ImmutableList<ChangeRequest> changes = ImmutableList.copyOf(result.get().iterateAll());
-      assertEquals(1, changes.size()); // default change creating SOA and NS
+      assertEquals(1, Iterables.size(result.get().values())); // default change creating SOA and NS
       // zone has changes
       ChangeRequest change = DNS.applyChangeRequest(ZONE1.name(), CHANGE_ADD_ZONE1);
       waitForChangeToComplete(ZONE1.name(), change.generatedId());
@@ -1639,8 +1639,7 @@ public class ITDnsTest {
           Dns.ChangeRequestListOption.sortOrder(Dns.SortingOrder.ASCENDING),
           Dns.ChangeRequestListOption.fields(ChangeRequestField.STATUS));
       batch.submit();
-      changes = ImmutableList.copyOf(result.get().iterateAll());
-      assertEquals(3, changes.size());
+      assertEquals(3, Iterables.size(result.get().values()));
       // error in options
       try {
         errorPageSize.get();
@@ -1670,36 +1669,31 @@ public class ITDnsTest {
         assertEquals(descending.get(i), ascending.get(size - i - 1));
       }
       // field options
-      changes = ImmutableList.copyOf(resultAdditions.get().iterateAll());
-      change = changes.get(1);
+      change = Iterables.get(resultAdditions.get().values(), 1);
       assertEquals(CHANGE_ADD_ZONE1.additions(), change.additions());
       assertTrue(change.deletions().isEmpty());
       assertEquals("1", change.generatedId());
       assertNull(change.startTimeMillis());
       assertNull(change.status());
-      changes = ImmutableList.copyOf(resultDeletions.get().iterateAll());
-      change = changes.get(2);
+      change = Iterables.get(resultDeletions.get().values(), 2);
       assertTrue(change.additions().isEmpty());
       assertNotNull(change.deletions());
       assertEquals("2", change.generatedId());
       assertNull(change.startTimeMillis());
       assertNull(change.status());
-      changes = ImmutableList.copyOf(resultId.get().iterateAll());
-      change = changes.get(1);
+      change = Iterables.get(resultId.get().values(), 1);
       assertTrue(change.additions().isEmpty());
       assertTrue(change.deletions().isEmpty());
       assertEquals("1", change.generatedId());
       assertNull(change.startTimeMillis());
       assertNull(change.status());
-      changes = ImmutableList.copyOf(resultTime.get().iterateAll());
-      change = changes.get(1);
+      change = Iterables.get(resultTime.get().values(), 1);
       assertTrue(change.additions().isEmpty());
       assertTrue(change.deletions().isEmpty());
       assertEquals("1", change.generatedId());
       assertNotNull(change.startTimeMillis());
       assertNull(change.status());
-      changes = ImmutableList.copyOf(resultStatus.get().iterateAll());
-      change = changes.get(1);
+      change = Iterables.get(resultStatus.get().values(), 1);
       assertTrue(change.additions().isEmpty());
       assertTrue(change.deletions().isEmpty());
       assertEquals("1", change.generatedId());
@@ -1879,7 +1873,7 @@ public class ITDnsTest {
       assertNull(zoneResult.get().nameServerSet()); // we did not set it
       assertNotNull(zoneResult.get().generatedId());
       assertNotNull(projectResult.get().quota());
-      assertEquals(2, Iterators.size(pageResult.get().iterateAll()));
+      assertEquals(2, Iterables.size(pageResult.get().values()));
       assertNotNull(changeRequestResult.get());
     } finally {
       DNS.delete(ZONE1.name());
