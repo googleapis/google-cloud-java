@@ -41,7 +41,6 @@ import com.google.cloud.dns.Zone;
 import com.google.cloud.dns.ZoneInfo;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterables;
-import com.google.common.collect.Iterators;
 
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
