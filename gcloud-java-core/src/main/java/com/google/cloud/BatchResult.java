@@ -16,14 +16,18 @@
 
 package com.google.cloud;
 
+import static com.google.common.base.Preconditions.checkNotNull;
 import static com.google.common.base.Preconditions.checkState;
 
 import java.util.LinkedList;
 import java.util.List;
 
 /**
- * This class holds a single result of a batch call. {@code T} is the type of the result and {@code
- * E} is the type of the service-dependent exception thrown when a processing error occurs.
+ * This class holds a single result of a batch call. The class is not thread-safe.
+ *
+ * @param <T> the type of the result
+ * @param <E> the type of the service-dependent exception thrown when a processing error occurs
+ *
  */
 public abstract class BatchResult<T, E extends BaseServiceException> {
 
@@ -44,7 +48,7 @@ public abstract class BatchResult<T, E extends BaseServiceException> {
    * Returns the result of this call.
    *
    * @throws IllegalStateException if the batch has not been completed yet
-   * @throws E if an error occurred when processing this request
+   * @throws E if an error occurred when processing the batch request
    */
   public T get() throws E {
     checkState(completed(), "Batch has not been completed yet");
@@ -60,10 +64,8 @@ public abstract class BatchResult<T, E extends BaseServiceException> {
    * @throws IllegalStateException if the batch has been completed already
    */
   public void notify(Callback<T, E> callback) {
-    if (completed) {
-      throw new IllegalStateException("The batch has been completed. All the calls to the notify()"
+    checkState(!completed, "The batch has been completed. All the calls to the notify()"
           + " method should be done prior to submitting the batch.");
-    }
     toBeNotified.add(callback);
   }
 
@@ -71,7 +73,7 @@ public abstract class BatchResult<T, E extends BaseServiceException> {
    * Sets an error and status as completed. Notifies all callbacks.
    */
   protected void error(E error) {
-    this.error = error;
+    this.error = checkNotNull(error);
     this.completed = true;
     for (Callback<T, E> callback : toBeNotified) {
       callback.error(error);
