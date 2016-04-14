@@ -58,7 +58,7 @@ gcloud beta emulators datastore start --host-port <hostname of machine>:<port>
 
 #### On your machine
 
-You can test against a temporary local DNS by following these steps:
+You can test against a in-memory local DNS by following these steps:
 
 1. Before running your testing code, start the DNS emulator `LocalDnsHelper`. This can be done as follows:
 
@@ -72,7 +72,7 @@ You can test against a temporary local DNS by following these steps:
   The `delay` parameter determines if change requests should be processed synchronously
   (value `0`) or in a separate thread with a delay of `delay` milliseconds.
 
-2. In your program, create and use a DNS service object whose host is set to `localhost` at the appropriate port.  For example:
+2. In your program, create and use a DNS service object by using the `options()` of `LocalDnsHelper`.  For example:
 
   ```java
   Dns dns = LocalDnsHelper.options().service();
@@ -118,7 +118,7 @@ Here is an example that clears the bucket created in Step 3 with a timeout of 5 
 
 #### On your machine
 
-You can test against a temporary local Resource Manager by following these steps:
+You can test against a in-memory local Resource Manager by following these steps:
 
 1. Before running your testing code, start the Resource Manager emulator `LocalResourceManagerHelper`. This can be done as follows:
 
