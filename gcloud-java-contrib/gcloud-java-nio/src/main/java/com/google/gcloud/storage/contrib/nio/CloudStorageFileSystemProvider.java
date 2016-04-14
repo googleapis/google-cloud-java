@@ -29,8 +29,10 @@ import com.google.auto.service.AutoService;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Throwables;
+import com.google.common.collect.AbstractIterator;
 import com.google.common.primitives.Ints;
 import com.google.gcloud.storage.Acl;
+import com.google.gcloud.storage.Blob;
 import com.google.gcloud.storage.BlobId;
 import com.google.gcloud.storage.BlobInfo;
 import com.google.gcloud.storage.CopyWriter;
@@ -46,6 +48,7 @@ import java.nio.channels.SeekableByteChannel;
 import java.nio.file.AccessMode;
 import java.nio.file.AtomicMoveNotSupportedException;
 import java.nio.file.CopyOption;
+import java.nio.file.DirectoryIteratorException;
 import java.nio.file.DirectoryStream;
 import java.nio.file.DirectoryStream.Filter;
 import java.nio.file.FileAlreadyExistsException;
@@ -64,11 +67,11 @@ import java.nio.file.spi.FileSystemProvider;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
-
 import javax.annotation.Nullable;
 import javax.annotation.concurrent.ThreadSafe;
 
@@ -83,6 +86,33 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
 
   // used only when we create a new instance of CloudStorageFileSystemProvider.
   private static StorageOptions defaultStorageOptions;
+
+  private static class LazyPathIterator extends AbstractIterator<Path> {
+    private final Iterator<Blob> blobIterator;
+    private final Filter<? super Path> filter;
+    private final CloudStorageFileSystem fileSystem;
+
+    LazyPathIterator(CloudStorageFileSystem fileSystem, Iterator<Blob> blobIterator, Filter<? super Path> filter) {
+      this.blobIterator = blobIterator;
+      this.filter = filter;
+      this.fileSystem = fileSystem;
+    }
+
+    @Override
+    protected Path computeNext() {
+      while (blobIterator.hasNext()) {
+        Path path = fileSystem.getPath(blobIterator.next().name());
+        try {
+          if (filter.accept(path)) {
+            return path;
+          }
+        } catch (IOException ex) {
+          throw new DirectoryIteratorException(ex);
+        }
+      }
+      return endOfData();
+    }
+  }
 
   /**
    * Sets default options that are only used by the constructor.
@@ -532,13 +562,23 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
     checkNotNullArray(attrs);
   }
 
-  /**
-   * Throws {@link UnsupportedOperationException} because this feature hasn't been implemented yet.
-   */
   @Override
-  public DirectoryStream<Path> newDirectoryStream(Path dir, Filter<? super Path> filter) {
-    // TODO: Implement me.
-    throw new UnsupportedOperationException();
+  public DirectoryStream<Path> newDirectoryStream(Path dir, final Filter<? super Path> filter) {
+    final CloudStoragePath cloudPath = checkPath(dir);
+    checkNotNull(filter);
+    String prefix = cloudPath.toString();
+    final Iterator<Blob> blobIterator = storage.list(cloudPath.bucket(), Storage.BlobListOption.prefix(prefix), Storage.BlobListOption.fields()).iterateAll();
+    return new DirectoryStream<Path>() {
+      @Override
+      public Iterator<Path> iterator() {
+        return new LazyPathIterator(cloudPath.getFileSystem(), blobIterator, filter);
+      }
+
+      @Override
+      public void close() throws IOException {
+        // Does nothing since there's nothing to close. Commenting this method to quiet codacy.
+      }
+    };
   }
 
   /**

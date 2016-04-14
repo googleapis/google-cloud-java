@@ -34,7 +34,10 @@ import java.net.URI;
 import java.nio.file.FileSystem;
 import java.nio.file.FileSystems;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Unit tests for {@link CloudStorageFileSystem}.
@@ -132,6 +135,29 @@ public class CloudStorageFileSystemTest {
               .setDefault(StorageOptions.class, LocalGcsHelper.options());
       tester.testAllPublicStaticMethods(CloudStorageFileSystem.class);
       tester.testAllPublicInstanceMethods(fs);
+    }
+  }
+
+  @Test
+  public void testListFiles() throws IOException {
+    try (FileSystem fs = CloudStorageFileSystem.forBucket("bucket")) {
+      List<Path> goodPaths = new ArrayList<>();
+      List<Path> paths = new ArrayList<>();
+      goodPaths.add(fs.getPath("dir/angel"));
+      goodPaths.add(fs.getPath("dir/alone"));
+      paths.add(fs.getPath("dir/dir2/another_angel"));
+      paths.add(fs.getPath("atroot"));
+      paths.addAll(goodPaths);
+      goodPaths.add(fs.getPath("dir/dir2/"));
+      for (Path path : paths) {
+        Files.write(path, ALONE.getBytes(UTF_8));
+      }
+
+      List<Path> got = new ArrayList<>();
+      for (Path path : Files.newDirectoryStream(fs.getPath("/dir/"))) {
+        got.add(path);
+      }
+      assertThat(got).containsExactlyElementsIn(goodPaths);
     }
   }
 }
