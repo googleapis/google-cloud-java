@@ -43,9 +43,9 @@ The feature must work fully on Java 7 and above.
 The feature must not add unnecessary dependencies (where "unnecessary" is of course subjective,
 but new dependencies should be discussed).
 
-Adding a New Client Library
----------------------------
-See [ADDING_NEW_CLIENTS](./ADDING_NEW_CLIENTS.md) for guidelines on how to add a new client library to `gcloud-java`.
+Adding Support for a New Service
+--------------------------------
+See [SUPPORTING_NEW_SERVICES](./SUPPORT_NEW_SERVICES.md) for guidelines on how to add a new client library to `gcloud-java`.
 
 Coding Style
 ------------
