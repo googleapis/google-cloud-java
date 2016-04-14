@@ -31,16 +31,16 @@ public class DnsException extends BaseServiceException {
 
   // see: https://cloud.google.com/dns/troubleshooting
   private static final Set<Error> RETRYABLE_ERRORS = ImmutableSet.of(
-      new Error(429, null),
-      new Error(500, null),
-      new Error(502, null),
-      new Error(503, null),
-      new Error(null, "userRateLimitExceeded"),
-      new Error(null, "rateLimitExceeded"));
+      new Error(429, null, true),
+      new Error(500, null, false),
+      new Error(502, null, false),
+      new Error(503, null, false),
+      new Error(null, "userRateLimitExceeded", true),
+      new Error(null, "rateLimitExceeded", true));
   private static final long serialVersionUID = 490302380416260252L;
 
-  public DnsException(IOException exception) {
-    super(exception, true);
+  public DnsException(IOException exception, boolean idempotent) {
+    super(exception, idempotent);
   }
 
   private DnsException(int code, String message) {
