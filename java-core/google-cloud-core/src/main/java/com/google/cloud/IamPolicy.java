@@ -219,7 +219,10 @@ public abstract class IamPolicy<R> implements Serializable {
 
   @Override
   public final boolean equals(Object obj) {
-    if (obj == null || !getClass().equals(obj.getClass())) {
+    if (obj == this) {
+      return true;
+    }
+    if (obj == null || !obj.getClass().equals(getClass())) {
       return false;
     }
     @SuppressWarnings("rawtypes")
