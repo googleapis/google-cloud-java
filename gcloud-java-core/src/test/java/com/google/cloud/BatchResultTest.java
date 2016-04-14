@@ -58,6 +58,12 @@ public class BatchResultTest {
     } catch (IllegalStateException ex) {
       // expected
     }
+    try {
+      result.error(null);
+      fail();
+    } catch (NullPointerException exc) {
+      // expected
+    }
     BaseServiceException ex = new BaseServiceException(0, "message", "reason", false);
     result.error(ex);
     try {
