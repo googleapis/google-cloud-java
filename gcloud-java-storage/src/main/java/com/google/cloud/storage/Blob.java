@@ -526,10 +526,15 @@ public class Blob extends BlobInfo {
 
   @Override
   public final boolean equals(Object obj) {
-    return this == obj
-        || obj instanceof Blob
-        && Objects.equals(toPb(), ((Blob) obj).toPb())
-        && Objects.equals(options, ((Blob) obj).options);
+    if (obj == this) {
+      return true;
+    }
+    if (obj == null || !obj.getClass().equals(Blob.class)) {
+      return false;
+    }
+    Blob other = (Blob) obj;
+    return Objects.equals(toPb(), other.toPb())
+        && Objects.equals(options, other.options);
   }
 
   @Override

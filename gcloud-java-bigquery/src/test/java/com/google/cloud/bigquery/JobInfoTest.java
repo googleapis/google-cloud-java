@@ -23,6 +23,7 @@ import static org.junit.Assert.assertTrue;
 
 import com.google.cloud.bigquery.JobInfo.CreateDisposition;
 import com.google.cloud.bigquery.JobInfo.WriteDisposition;
+import com.google.cloud.bigquery.JobStatistics.CopyStatistics;
 import com.google.cloud.bigquery.JobStatistics.ExtractStatistics;
 import com.google.cloud.bigquery.JobStatistics.LoadStatistics;
 import com.google.cloud.bigquery.JobStatistics.QueryStatistics;
@@ -42,7 +43,7 @@ public class JobInfoTest {
   private static final String EMAIL = "email";
   private static final JobId JOB_ID = JobId.of("job");
   private static final JobStatus JOB_STATUS = new JobStatus(JobStatus.State.DONE);
-  private static final JobStatistics COPY_JOB_STATISTICS = JobStatistics.builder()
+  private static final CopyStatistics COPY_JOB_STATISTICS = CopyStatistics.builder()
       .creationTime(1L)
       .endTime(3L)
       .startTime(2L)

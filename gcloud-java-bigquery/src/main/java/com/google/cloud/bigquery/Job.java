@@ -30,7 +30,7 @@ import java.util.Objects;
  * {@link JobInfo}.
  * </p>
  */
-public final class Job extends JobInfo {
+public class Job extends JobInfo {
 
   private static final long serialVersionUID = -4324100991693024704L;
 
@@ -178,14 +178,20 @@ public final class Job extends JobInfo {
   }
 
   @Override
-  public boolean equals(Object obj) {
-    return obj instanceof Job
-        && Objects.equals(toPb(), ((Job) obj).toPb())
-        && Objects.equals(options, ((Job) obj).options);
+  public final boolean equals(Object obj) {
+    if (obj == this) {
+      return true;
+    }
+    if (obj == null || !obj.getClass().equals(Job.class)) {
+      return false;
+    }
+    Job other = (Job) obj;
+    return Objects.equals(toPb(), other.toPb())
+        && Objects.equals(options, other.options);
   }
 
   @Override
-  public int hashCode() {
+  public final int hashCode() {
     return Objects.hash(super.hashCode(), options);
   }
 

@@ -39,6 +39,19 @@ public final class QueryJobConfiguration extends JobConfiguration {
 
   private static final long serialVersionUID = -1108948249081804890L;
 
+  private final String query;
+  private final TableId destinationTable;
+  private final Map<String, ExternalTableDefinition> tableDefinitions;
+  private final List<UserDefinedFunction> userDefinedFunctions;
+  private final CreateDisposition createDisposition;
+  private final WriteDisposition writeDisposition;
+  private final DatasetId defaultDataset;
+  private final Priority priority;
+  private final Boolean allowLargeResults;
+  private final Boolean useQueryCache;
+  private final Boolean flattenResults;
+  private final Boolean dryRun;
+
   /**
    * Priority levels for a query. If not specified the priority is assumed to be
    * {@link Priority#INTERACTIVE}.
@@ -58,19 +71,6 @@ public final class QueryJobConfiguration extends JobConfiguration {
      */
     BATCH
   }
-
-  private final String query;
-  private final TableId destinationTable;
-  private final Map<String, ExternalTableDefinition> tableDefinitions;
-  private final List<UserDefinedFunction> userDefinedFunctions;
-  private final CreateDisposition createDisposition;
-  private final WriteDisposition writeDisposition;
-  private final DatasetId defaultDataset;
-  private final Priority priority;
-  private final Boolean allowLargeResults;
-  private final Boolean useQueryCache;
-  private final Boolean flattenResults;
-  private final Boolean dryRun;
 
   public static final class Builder
       extends JobConfiguration.Builder<QueryJobConfiguration, Builder> {
@@ -450,7 +450,9 @@ public final class QueryJobConfiguration extends JobConfiguration {
 
   @Override
   public boolean equals(Object obj) {
-    return obj instanceof QueryJobConfiguration && baseEquals((QueryJobConfiguration) obj);
+    return obj == this
+        || obj instanceof QueryJobConfiguration
+        && baseEquals((QueryJobConfiguration) obj);
   }
 
   @Override

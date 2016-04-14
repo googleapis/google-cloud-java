@@ -26,7 +26,7 @@ import java.util.Objects;
 /**
  * Google Storage batch response.
  */
-public final class BatchResponse implements Serializable {
+public class BatchResponse implements Serializable {
 
   private static final long serialVersionUID = 1057416839397037706L;
 
@@ -121,13 +121,16 @@ public final class BatchResponse implements Serializable {
   }
 
   @Override
-  public int hashCode() {
+  public final int hashCode() {
     return Objects.hash(deleteResult, updateResult, getResult);
   }
 
   @Override
-  public boolean equals(Object obj) {
-    if (!(obj instanceof BatchResponse)) {
+  public final boolean equals(Object obj) {
+    if (obj == this) {
+      return true;
+    }
+    if (obj == null || !obj.getClass().equals(BatchResponse.class)) {
       return false;
     }
     BatchResponse other = (BatchResponse) obj;

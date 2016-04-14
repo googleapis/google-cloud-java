@@ -196,13 +196,20 @@ public class Zone extends ZoneInfo {
   }
 
   @Override
-  public boolean equals(Object obj) {
-    return obj instanceof Zone && Objects.equals(toPb(), ((Zone) obj).toPb())
-        && Objects.equals(options, ((Zone) obj).options);
+  public final boolean equals(Object obj) {
+    if (obj == this) {
+      return true;
+    }
+    if (obj == null || !obj.getClass().equals(Zone.class)) {
+      return false;
+    }
+    Zone other = (Zone) obj;
+    return Objects.equals(toPb(), other.toPb())
+        && Objects.equals(options, other.options);
   }
 
   @Override
-  public int hashCode() {
+  public final int hashCode() {
     return Objects.hash(super.hashCode(), options);
   }
 

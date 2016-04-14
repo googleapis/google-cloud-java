@@ -40,7 +40,7 @@ import java.util.Set;
  *
  * @see <a href="https://cloud.google.com/iam/reference/rest/v1/Policy">Policy</a>
  */
-public class Policy extends IamPolicy<String> {
+public final class Policy extends IamPolicy<String> {
 
   private static final long serialVersionUID = -5573557282693961850L;
 

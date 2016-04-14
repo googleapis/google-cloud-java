@@ -25,7 +25,7 @@ import java.util.Objects;
  * Google BigQuery options for CSV format. This class wraps some properties of CSV files used by
  * BigQuery to parse external data.
  */
-public class CsvOptions extends FormatOptions {
+public final class CsvOptions extends FormatOptions {
 
   private static final long serialVersionUID = 2193570529308612708L;
 
@@ -224,7 +224,9 @@ public class CsvOptions extends FormatOptions {
 
   @Override
   public boolean equals(Object obj) {
-    return obj instanceof CsvOptions && Objects.equals(toPb(), ((CsvOptions) obj).toPb());
+    return obj == this
+        || obj instanceof CsvOptions
+        && Objects.equals(toPb(), ((CsvOptions) obj).toPb());
   }
 
   com.google.api.services.bigquery.model.CsvOptions toPb() {

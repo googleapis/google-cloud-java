@@ -49,7 +49,7 @@ import java.util.Set;
  * {@link BucketInfo}.
  * </p>
  */
-public final class Bucket extends BucketInfo {
+public class Bucket extends BucketInfo {
 
   private static final long serialVersionUID = 8574601739542252586L;
 
@@ -714,13 +714,20 @@ public final class Bucket extends BucketInfo {
   }
 
   @Override
-  public boolean equals(Object obj) {
-    return obj instanceof Bucket && Objects.equals(toPb(), ((Bucket) obj).toPb())
-        && Objects.equals(options, ((Bucket) obj).options);
+  public final boolean equals(Object obj) {
+    if (obj == this) {
+      return true;
+    }
+    if (obj != null && !obj.getClass().equals(Bucket.class)) {
+      return false;
+    }
+    Bucket other = (Bucket) obj;
+    return Objects.equals(toPb(), other.toPb())
+        && Objects.equals(options, other.options);
   }
 
   @Override
-  public int hashCode() {
+  public final int hashCode() {
     return Objects.hash(super.hashCode(), options);
   }
 

@@ -192,19 +192,21 @@ public class ChangeRequest extends ChangeRequestInfo {
   }
 
   @Override
-  public boolean equals(Object obj) {
+  public final boolean equals(Object obj) {
+    if (obj == this) {
+      return true;
+    }
     if (obj == null || !obj.getClass().equals(ChangeRequest.class)) {
       return false;
-    } else {
-      ChangeRequest other = (ChangeRequest) obj;
-      return Objects.equals(options, other.options)
-          && Objects.equals(zone, other.zone)
-          && Objects.equals(toPb(), other.toPb());
     }
+    ChangeRequest other = (ChangeRequest) obj;
+    return Objects.equals(toPb(), other.toPb())
+        && Objects.equals(options, other.options)
+        && Objects.equals(zone, other.zone);
   }
 
   @Override
-  public int hashCode() {
+  public final int hashCode() {
     return Objects.hash(super.hashCode(), options, zone);
   }
 

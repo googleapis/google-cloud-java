@@ -211,7 +211,9 @@ public final class ExtractJobConfiguration extends JobConfiguration {
 
   @Override
   public boolean equals(Object obj) {
-    return obj instanceof ExtractJobConfiguration && baseEquals((ExtractJobConfiguration) obj);
+    return obj == this
+        || obj instanceof ExtractJobConfiguration
+        && baseEquals((ExtractJobConfiguration) obj);
   }
 
   @Override

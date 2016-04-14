@@ -32,12 +32,12 @@ import java.util.List;
 import java.util.Objects;
 
 /**
- * Google BigQuery Table field. A table field has a name, a value, a mode and possibly a
- * description. Supported types are: {@link Type#integer()}, {@link Type#bool()},
- * {@link Type#string()}, {@link Type#floatingPoint()}, {@link Type#timestamp()} and
- * {@link Type#record(Field...)}. One or more fields form a table's schema.
+ * Google BigQuery Table field. A table field has a name, a type, a mode and possibly a description.
+ * Supported types are: {@link Type#integer()}, {@link Type#bool()}, {@link Type#string()},
+ * {@link Type#floatingPoint()}, {@link Type#timestamp()} and {@link Type#record(Field...)}. One or
+ * more fields form a table's schema.
  */
-public class Field implements Serializable {
+public final class Field implements Serializable {
 
   static final Function<TableFieldSchema, Field> FROM_PB_FUNCTION =
       new Function<TableFieldSchema, Field>() {
@@ -55,6 +55,11 @@ public class Field implements Serializable {
       };
 
   private static final long serialVersionUID = -8154262932305199256L;
+
+  private final String name;
+  private final Type type;
+  private final String mode;
+  private final String description;
 
   /**
    * Data Types for a BigQuery Table field. This class provides factory methods for all BigQuery
@@ -184,11 +189,6 @@ public class Field implements Serializable {
   public enum Mode {
     NULLABLE, REQUIRED, REPEATED
   }
-
-  private final String name;
-  private final Type type;
-  private final String mode;
-  private final String description;
 
   public static final class Builder {
 

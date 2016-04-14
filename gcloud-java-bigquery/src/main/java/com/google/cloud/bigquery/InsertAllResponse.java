@@ -74,13 +74,15 @@ public class InsertAllResponse implements Serializable {
   }
 
   @Override
-  public int hashCode() {
+  public final int hashCode() {
     return Objects.hash(insertErrors);
   }
 
   @Override
-  public boolean equals(Object obj) {
-    return obj instanceof InsertAllResponse
+  public final boolean equals(Object obj) {
+    return obj == this
+        || obj != null
+        && obj.getClass().equals(InsertAllResponse.class)
         && Objects.equals(insertErrors, ((InsertAllResponse) obj).insertErrors);
   }
 

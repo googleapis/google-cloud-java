@@ -293,7 +293,9 @@ public class ZoneInfo implements Serializable {
 
   @Override
   public boolean equals(Object obj) {
-    return obj != null && obj.getClass().equals(ZoneInfo.class)
+    return obj == this
+        || obj != null
+        && obj.getClass().equals(ZoneInfo.class)
         && Objects.equals(toPb(), ((ZoneInfo) obj).toPb());
   }
 

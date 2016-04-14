@@ -14,13 +14,62 @@ import java.util.Objects;
 /**
  * A Google BigQuery Job statistics.
  */
-public class JobStatistics implements Serializable {
+public abstract class JobStatistics implements Serializable {
 
   private static final long serialVersionUID = 1433024714741660399L;
 
   private final Long creationTime;
   private final Long endTime;
   private final Long startTime;
+
+  /**
+   * A Google BigQuery Copy Job statistics.
+   */
+  public static class CopyStatistics extends JobStatistics {
+
+    private static final long serialVersionUID = 8218325588441660938L;
+
+    static final class Builder extends JobStatistics.Builder<CopyStatistics, Builder> {
+
+      private Builder() {}
+
+      private Builder(com.google.api.services.bigquery.model.JobStatistics statisticsPb) {
+        super(statisticsPb);
+      }
+
+      @Override
+      CopyStatistics build() {
+        return new CopyStatistics(this);
+      }
+    }
+
+    private CopyStatistics(Builder builder) {
+      super(builder);
+    }
+
+    @Override
+    public final boolean equals(Object obj) {
+      return obj == this
+          || obj != null
+          && obj.getClass().equals(CopyStatistics.class)
+          && baseEquals((CopyStatistics) obj);
+    }
+
+    @Override
+    public final int hashCode() {
+      return baseHashCode();
+    }
+
+    static Builder builder() {
+      return new Builder();
+    }
+
+    @SuppressWarnings("unchecked")
+    static CopyStatistics fromPb(
+        com.google.api.services.bigquery.model.JobStatistics statisticPb) {
+      return new Builder(statisticPb).build();
+    }
+  }
 
   /**
    * A Google BigQuery Extract Job statistics.
@@ -73,14 +122,16 @@ public class JobStatistics implements Serializable {
     }
 
     @Override
-    public boolean equals(Object obj) {
-      return obj instanceof ExtractStatistics
-          && Objects.equals(toPb(), ((ExtractStatistics) obj).toPb());
+    public final boolean equals(Object obj) {
+      return obj == this
+          || obj != null
+          && obj.getClass().equals(ExtractStatistics.class)
+          && baseEquals((ExtractStatistics) obj);
     }
 
     @Override
-    public int hashCode() {
-      return Objects.hash(super.hashCode(), destinationUriFileCounts);
+    public final int hashCode() {
+      return Objects.hash(baseHashCode(), destinationUriFileCounts);
     }
 
     @Override
@@ -203,13 +254,16 @@ public class JobStatistics implements Serializable {
     }
 
     @Override
-    public boolean equals(Object obj) {
-      return obj instanceof LoadStatistics && Objects.equals(toPb(), ((LoadStatistics) obj).toPb());
+    public final boolean equals(Object obj) {
+      return obj == this
+          || obj != null
+          && obj.getClass().equals(LoadStatistics.class)
+          && baseEquals((LoadStatistics) obj);
     }
 
     @Override
-    public int hashCode() {
-      return Objects.hash(super.hashCode(), inputBytes, inputFiles, outputBytes, outputRows);
+    public final int hashCode() {
+      return Objects.hash(baseHashCode(), inputBytes, inputFiles, outputBytes, outputRows);
     }
 
     @Override
@@ -361,14 +415,16 @@ public class JobStatistics implements Serializable {
     }
 
     @Override
-    public boolean equals(Object obj) {
-      return obj instanceof QueryStatistics
-          && Objects.equals(toPb(), ((QueryStatistics) obj).toPb());
+    public final boolean equals(Object obj) {
+      return obj == this
+          || obj != null
+          && obj.getClass().equals(QueryStatistics.class)
+          && baseEquals((QueryStatistics) obj);
     }
 
     @Override
-    public int hashCode() {
-      return Objects.hash(super.hashCode(), billingTier, cacheHit, totalBytesBilled,
+    public final int hashCode() {
+      return Objects.hash(baseHashCode(), billingTier, cacheHit, totalBytesBilled,
           totalBytesProcessed, queryPlan);
     }
 
@@ -396,7 +452,7 @@ public class JobStatistics implements Serializable {
     }
   }
 
-  static class Builder<T extends JobStatistics, B extends Builder<T, B>> {
+  abstract static class Builder<T extends JobStatistics, B extends Builder<T, B>> {
 
     private Long creationTime;
     private Long endTime;
@@ -430,10 +486,7 @@ public class JobStatistics implements Serializable {
       return self();
     }
 
-    @SuppressWarnings("unchecked")
-    T build() {
-      return (T) new JobStatistics(this);
-    }
+    abstract T build();
   }
 
   protected JobStatistics(Builder builder) {
@@ -477,14 +530,12 @@ public class JobStatistics implements Serializable {
     return toStringHelper().toString();
   }
 
-  @Override
-  public int hashCode() {
+  final int baseHashCode() {
     return Objects.hash(creationTime, endTime, startTime);
   }
 
-  @Override
-  public boolean equals(Object obj) {
-    return obj instanceof JobStatistics && Objects.equals(toPb(), ((JobStatistics) obj).toPb());
+  final boolean baseEquals(JobStatistics jobStatistics) {
+    return Objects.equals(toPb(), jobStatistics.toPb());
   }
 
   com.google.api.services.bigquery.model.JobStatistics toPb() {
@@ -494,10 +545,6 @@ public class JobStatistics implements Serializable {
     statistics.setEndTime(endTime);
     statistics.setStartTime(startTime);
     return statistics;
-  }
-
-  static Builder builder() {
-    return new Builder();
   }
 
   @SuppressWarnings("unchecked")
@@ -510,7 +557,7 @@ public class JobStatistics implements Serializable {
     } else if (statisticPb.getQuery() != null) {
       return (T) QueryStatistics.fromPb(statisticPb);
     } else {
-      return (T) new Builder(statisticPb).build();
+      return (T) CopyStatistics.fromPb(statisticPb);
     }
   }
 }

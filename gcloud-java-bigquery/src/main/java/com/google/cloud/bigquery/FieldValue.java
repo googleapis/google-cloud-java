@@ -216,13 +216,16 @@ public class FieldValue implements Serializable {
   }
 
   @Override
-  public int hashCode() {
+  public final int hashCode() {
     return Objects.hash(attribute, value);
   }
 
   @Override
-  public boolean equals(Object obj) {
-    if (!(obj instanceof FieldValue)) {
+  public final boolean equals(Object obj) {
+    if (obj == this) {
+      return true;
+    }
+    if (obj == null || !obj.getClass().equals(FieldValue.class)) {
       return false;
     }
     FieldValue other = (FieldValue) obj;

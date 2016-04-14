@@ -719,7 +719,9 @@ public class BucketInfo implements Serializable {
 
   @Override
   public boolean equals(Object obj) {
-    return obj != null && obj.getClass().equals(BucketInfo.class)
+    return obj == this
+        || obj != null
+        && obj.getClass().equals(BucketInfo.class)
         && Objects.equals(toPb(), ((BucketInfo) obj).toPb());
   }
 

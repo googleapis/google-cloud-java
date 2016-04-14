@@ -638,7 +638,9 @@ public class BlobInfo implements Serializable {
 
   @Override
   public boolean equals(Object obj) {
-    return obj != null && obj.getClass().equals(BlobInfo.class)
+    return obj == this
+        || obj != null
+        && obj.getClass().equals(BlobInfo.class)
         && Objects.equals(toPb(), ((BlobInfo) obj).toPb());
   }
 
