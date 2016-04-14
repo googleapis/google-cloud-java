@@ -30,7 +30,7 @@ import java.util.Objects;
  * Cloud Storage. The extract destination provided as URIs that point to objects in Google Cloud
  * Storage. Extract job configurations have {@link JobConfiguration.Type#EXTRACT} type.
  */
-public class ExtractJobConfiguration extends JobConfiguration {
+public final class ExtractJobConfiguration extends JobConfiguration {
 
   private static final long serialVersionUID = 4147749733166593761L;
 
@@ -210,15 +210,14 @@ public class ExtractJobConfiguration extends JobConfiguration {
   }
 
   @Override
-  public final boolean equals(Object obj) {
+  public boolean equals(Object obj) {
     return obj == this
-        || obj != null
-        && obj.getClass().equals(ExtractJobConfiguration.class)
+        || obj instanceof ExtractJobConfiguration
         && baseEquals((ExtractJobConfiguration) obj);
   }
 
   @Override
-  public final int hashCode() {
+  public int hashCode() {
     return Objects.hash(baseHashCode(), sourceTable, destinationUris, printHeader, fieldDelimiter,
         format, compression);
   }
