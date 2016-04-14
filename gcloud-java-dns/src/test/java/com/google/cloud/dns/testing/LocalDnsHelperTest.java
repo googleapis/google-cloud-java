@@ -2857,4 +2857,69 @@ public class LocalDnsHelperTest {
         DnsRpc.Option.SORTING_ORDER, "descending"));
     batch.submit();
   }
+
+  @Test
+  public void testCombined() {
+    final ManagedZone created = RPC.create(ZONE1, EMPTY_RPC_OPTIONS);
+    RpcBatch batch = RPC.createBatch();
+    batch.addListZones(new RpcBatch.Callback<ManagedZonesListResponse>() {
+      @Override
+      public void onSuccess(ManagedZonesListResponse response) {
+        assertEquals(1, response.getManagedZones().size());
+        assertEquals(created, response.getManagedZones().get(0));
+      }
+
+      @Override
+      public void onFailure(GoogleJsonError googleJsonError) {
+        fail();
+      }
+    }, EMPTY_RPC_OPTIONS);
+    batch.addGetZone(created.getName(), new RpcBatch.Callback<ManagedZone>() {
+      @Override
+      public void onSuccess(ManagedZone response) {
+        assertEquals(created, response);
+      }
+
+      @Override
+      public void onFailure(GoogleJsonError googleJsonError) {
+        fail();
+      }
+    }, EMPTY_RPC_OPTIONS);
+    batch.addListChangeRequests(created.getName(), new RpcBatch.Callback<ChangesListResponse>() {
+      @Override
+      public void onSuccess(ChangesListResponse response) {
+        assertEquals(1, response.getChanges().size());
+        assertEquals(RPC.getChangeRequest(created.getName(), "0", EMPTY_RPC_OPTIONS),
+            response.getChanges().get(0).getId());
+      }
+
+      @Override
+      public void onFailure(GoogleJsonError googleJsonError) {
+        fail();
+      }
+    }, EMPTY_RPC_OPTIONS);
+    batch.addListRecordSets(created.getName(),
+        new RpcBatch.Callback<ResourceRecordSetsListResponse>() {
+          @Override
+          public void onSuccess(ResourceRecordSetsListResponse response) {
+            assertEquals(2, response.getRrsets().size());
+          }
+
+          @Override
+          public void onFailure(GoogleJsonError googleJsonError) {
+            fail();
+          }
+        }, EMPTY_RPC_OPTIONS);
+    batch.addGetChangeRequest(created.getName(), "0", new RpcBatch.Callback<Change>() {
+      @Override
+      public void onSuccess(Change response) {
+        assertEquals(RPC.getChangeRequest(created.getName(), "0", EMPTY_RPC_OPTIONS),response);
+      }
+
+      @Override
+      public void onFailure(GoogleJsonError googleJsonError) {
+        fail();
+      }
+    }, EMPTY_RPC_OPTIONS);
+  }
 }
