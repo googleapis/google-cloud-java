@@ -28,8 +28,10 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.math.BigInteger;
 import java.nio.file.FileAlreadyExistsException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.annotation.concurrent.NotThreadSafe;
@@ -93,8 +95,49 @@ public class FakeStorageRpc implements StorageRpc {
   @Override
   public Tuple<String, Iterable<StorageObject>> list(String bucket, Map<Option, ?> options)
       throws StorageException {
-    potentiallyThrow(options);
-    return null;
+    String preprefix = "";
+    for (Map.Entry<Option, ?> e : options.entrySet()) {
+      switch (e.getKey()) {
+        case PREFIX:
+          preprefix = (String) e.getValue();
+          if (preprefix.startsWith("/")) {
+            preprefix = preprefix.substring(1);
+          }
+          break;
+        case FIELDS:
+          // ignore and return all the fields
+          break;
+        default:
+          throw new UnsupportedOperationException("Unknown option: " + e.getKey());
+      }
+    }
+    final String prefix = preprefix;
+
+    List<StorageObject> values = new ArrayList<>();
+    Map<String, StorageObject> folders = new HashMap<>();
+    for (StorageObject so : stuff.values()) {
+      if (!so.getName().startsWith(prefix)) {
+        continue;
+      }
+      int nextSlash = so.getName().indexOf("/", prefix.length());
+      if (nextSlash >= 0) {
+        String folderName = so.getName().substring(0, nextSlash + 1);
+        if (folders.containsKey(folderName)) {
+          continue;
+        }
+        StorageObject fakeFolder = new StorageObject();
+        fakeFolder.setName(folderName);
+        fakeFolder.setBucket(so.getBucket());
+        fakeFolder.setGeneration(so.getGeneration());
+        folders.put(folderName, fakeFolder);
+        continue;
+      }
+      values.add(so);
+    }
+    values.addAll(folders.values());
+    // null cursor to indicate there is no more data (empty string would cause us to be called again).
+    // The type cast seems to be necessary to help Java's typesystem remember that collections are iterable.
+    return Tuple.of(null, (Iterable<StorageObject>) values);
   }
 
   /**
@@ -113,7 +156,7 @@ public class FakeStorageRpc implements StorageRpc {
   public StorageObject get(StorageObject object, Map<Option, ?> options) throws StorageException {
     // we allow the "ID" option because we need to, but then we give a whole answer anyways
     // because the caller won't mind the extra fields.
-    if (throwIfOption && !options.isEmpty() && options.size()>1
+    if (throwIfOption && !options.isEmpty() && options.size() > 1
         && options.keySet().toArray()[0] != Storage.BlobGetOption.fields(Storage.BlobField.ID)) {
       throw new UnsupportedOperationException();
     }
