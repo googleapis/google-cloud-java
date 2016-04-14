@@ -110,12 +110,11 @@ public class BaseServiceException extends RuntimeException {
     String reason = null;
     String location = null;
     String debugInfo = null;
-    Error error = null;
     Boolean retryable = null;
     if (exception instanceof GoogleJsonResponseException) {
       GoogleJsonError jsonError = ((GoogleJsonResponseException) exception).getDetails();
       if (jsonError != null) {
-        error = new Error(jsonError.getCode(), reason(jsonError));
+        Error error = new Error(jsonError.getCode(), reason(jsonError));
         code = error.code;
         reason = error.reason;
         retryable = isRetryable(idempotent, error);

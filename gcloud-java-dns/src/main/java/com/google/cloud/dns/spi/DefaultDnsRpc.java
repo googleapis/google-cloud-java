@@ -61,7 +61,8 @@ public class DefaultDnsRpc implements DnsRpc {
           .setFields(FIELDS.getString(options))
           .execute();
     } catch (IOException ex) {
-      throw translate(ex, false);
+      // todo this can cause misleading report of a failure, intended to be fixed within #924
+      throw translate(ex, true);
     }
   }
 
