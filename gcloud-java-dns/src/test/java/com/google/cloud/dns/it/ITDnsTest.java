@@ -532,7 +532,7 @@ public class ITDnsTest {
       assertEquals(CHANGE_ADD_ZONE1.additions(), created.additions());
       assertNotNull(created.startTimeMillis());
       assertTrue(created.deletions().isEmpty());
-      assertEquals("1", created.generatedId());
+      assertNotNull(created.generatedId());
       assertTrue(ImmutableList.of(ChangeRequest.Status.PENDING, ChangeRequest.Status.DONE)
           .contains(created.status()));
       assertEqChangesIgnoreStatus(created, DNS.getChangeRequest(ZONE1.name(), "1"));
@@ -545,7 +545,7 @@ public class ITDnsTest {
       assertTrue(created.additions().isEmpty());
       assertNull(created.startTimeMillis());
       assertTrue(created.deletions().isEmpty());
-      assertEquals("3", created.generatedId());
+      assertNotNull(created.generatedId());
       assertNull(created.status());
       waitForChangeToComplete(created);
       created = DNS.applyChangeRequest(ZONE1.name(), CHANGE_DELETE_ZONE1);
@@ -555,7 +555,7 @@ public class ITDnsTest {
       assertTrue(created.additions().isEmpty());
       assertNull(created.startTimeMillis());
       assertTrue(created.deletions().isEmpty());
-      assertEquals("5", created.generatedId());
+      assertNotNull(created.generatedId());
       assertNotNull(created.status());
       waitForChangeToComplete(created);
       created = DNS.applyChangeRequest(ZONE1.name(), CHANGE_DELETE_ZONE1);
@@ -565,7 +565,7 @@ public class ITDnsTest {
       assertTrue(created.additions().isEmpty());
       assertNotNull(created.startTimeMillis());
       assertTrue(created.deletions().isEmpty());
-      assertEquals("7", created.generatedId());
+      assertNotNull(created.generatedId());
       assertNull(created.status());
       waitForChangeToComplete(created);
       created = DNS.applyChangeRequest(ZONE1.name(), CHANGE_DELETE_ZONE1);
@@ -575,7 +575,7 @@ public class ITDnsTest {
       assertEquals(CHANGE_ADD_ZONE1.additions(), created.additions());
       assertNull(created.startTimeMillis());
       assertTrue(created.deletions().isEmpty());
-      assertEquals("9", created.generatedId());
+      assertNotNull(created.generatedId());
       assertNull(created.status());
       // finishes with delete otherwise we cannot delete the zone
       waitForChangeToComplete(created);
@@ -585,7 +585,7 @@ public class ITDnsTest {
       assertEquals(CHANGE_DELETE_ZONE1.deletions(), created.deletions());
       assertNull(created.startTimeMillis());
       assertTrue(created.additions().isEmpty());
-      assertEquals("10", created.generatedId());
+      assertNotNull(created.generatedId());
       assertNull(created.status());
       waitForChangeToComplete(created);
     } finally {
@@ -731,7 +731,7 @@ public class ITDnsTest {
       change = changes.get(1);
       assertEquals(CHANGE_ADD_ZONE1.additions(), change.additions());
       assertTrue(change.deletions().isEmpty());
-      assertEquals("1", change.generatedId());
+      assertNotNull(change.generatedId());
       assertNull(change.startTimeMillis());
       assertNull(change.status());
       changes = ImmutableList.copyOf(DNS.listChangeRequests(ZONE1.name(),
@@ -740,7 +740,7 @@ public class ITDnsTest {
       change = changes.get(2);
       assertTrue(change.additions().isEmpty());
       assertNotNull(change.deletions());
-      assertEquals("2", change.generatedId());
+      assertNotNull(change.generatedId());
       assertNull(change.startTimeMillis());
       assertNull(change.status());
       changes = ImmutableList.copyOf(DNS.listChangeRequests(ZONE1.name(),
@@ -749,7 +749,7 @@ public class ITDnsTest {
       change = changes.get(1);
       assertTrue(change.additions().isEmpty());
       assertTrue(change.deletions().isEmpty());
-      assertEquals("1", change.generatedId());
+      assertNotNull(change.generatedId());
       assertNull(change.startTimeMillis());
       assertNull(change.status());
       changes = ImmutableList.copyOf(DNS.listChangeRequests(ZONE1.name(),
@@ -758,7 +758,7 @@ public class ITDnsTest {
       change = changes.get(1);
       assertTrue(change.additions().isEmpty());
       assertTrue(change.deletions().isEmpty());
-      assertEquals("1", change.generatedId());
+      assertNotNull(change.generatedId());
       assertNotNull(change.startTimeMillis());
       assertNull(change.status());
       changes = ImmutableList.copyOf(DNS.listChangeRequests(ZONE1.name(),
@@ -767,7 +767,7 @@ public class ITDnsTest {
       change = changes.get(1);
       assertTrue(change.additions().isEmpty());
       assertTrue(change.deletions().isEmpty());
-      assertEquals("1", change.generatedId());
+      assertNotNull(change.generatedId());
       assertNull(change.startTimeMillis());
       assertEquals(ChangeRequest.Status.DONE, change.status());
     } finally {
@@ -1439,7 +1439,7 @@ public class ITDnsTest {
       assertEquals(CHANGE_ADD_ZONE1.additions(), created.additions());
       assertNotNull(created.startTimeMillis());
       assertTrue(created.deletions().isEmpty());
-      assertEquals("1", created.generatedId());
+      assertNotNull(created.generatedId());
       assertTrue(ImmutableList.of(ChangeRequest.Status.PENDING, ChangeRequest.Status.DONE)
           .contains(created.status()));
       assertEqChangesIgnoreStatus(created, DNS.getChangeRequest(ZONE1.name(), "1"));
@@ -1455,7 +1455,7 @@ public class ITDnsTest {
       assertTrue(created.additions().isEmpty());
       assertNull(created.startTimeMillis());
       assertTrue(created.deletions().isEmpty());
-      assertEquals("3", created.generatedId());
+      assertNotNull(created.generatedId());
       assertNull(created.status());
       waitForChangeToComplete(created);
       created = DNS.applyChangeRequest(ZONE1.name(), CHANGE_DELETE_ZONE1);
@@ -1468,7 +1468,7 @@ public class ITDnsTest {
       assertTrue(created.additions().isEmpty());
       assertNull(created.startTimeMillis());
       assertTrue(created.deletions().isEmpty());
-      assertEquals("5", created.generatedId());
+      assertNotNull(created.generatedId());
       assertNotNull(created.status());
       waitForChangeToComplete(created);
       created = DNS.applyChangeRequest(ZONE1.name(), CHANGE_DELETE_ZONE1);
@@ -1481,7 +1481,7 @@ public class ITDnsTest {
       assertTrue(created.additions().isEmpty());
       assertNotNull(created.startTimeMillis());
       assertTrue(created.deletions().isEmpty());
-      assertEquals("7", created.generatedId());
+      assertNotNull(created.generatedId());
       assertNull(created.status());
       waitForChangeToComplete(created);
       created = DNS.applyChangeRequest(ZONE1.name(), CHANGE_DELETE_ZONE1);
@@ -1494,7 +1494,7 @@ public class ITDnsTest {
       assertEquals(CHANGE_ADD_ZONE1.additions(), created.additions());
       assertNull(created.startTimeMillis());
       assertTrue(created.deletions().isEmpty());
-      assertEquals("9", created.generatedId());
+      assertNotNull(created.generatedId());
       assertNull(created.status());
       // finishes with delete otherwise we cannot delete the zone
       waitForChangeToComplete(created);
@@ -1507,7 +1507,7 @@ public class ITDnsTest {
       assertEquals(CHANGE_DELETE_ZONE1.deletions(), created.deletions());
       assertNull(created.startTimeMillis());
       assertTrue(created.additions().isEmpty());
-      assertEquals("10", created.generatedId());
+      assertNotNull(created.generatedId());
       assertNull(created.status());
       waitForChangeToComplete(created);
     } finally {
@@ -1671,31 +1671,31 @@ public class ITDnsTest {
       change = Iterables.get(resultAdditions.get().values(), 1);
       assertEquals(CHANGE_ADD_ZONE1.additions(), change.additions());
       assertTrue(change.deletions().isEmpty());
-      assertEquals("1", change.generatedId());
+      assertNotNull(change.generatedId());
       assertNull(change.startTimeMillis());
       assertNull(change.status());
       change = Iterables.get(resultDeletions.get().values(), 2);
       assertTrue(change.additions().isEmpty());
       assertNotNull(change.deletions());
-      assertEquals("2", change.generatedId());
+      assertNotNull(change.generatedId());
       assertNull(change.startTimeMillis());
       assertNull(change.status());
       change = Iterables.get(resultId.get().values(), 1);
       assertTrue(change.additions().isEmpty());
       assertTrue(change.deletions().isEmpty());
-      assertEquals("1", change.generatedId());
+      assertNotNull(change.generatedId());
       assertNull(change.startTimeMillis());
       assertNull(change.status());
       change = Iterables.get(resultTime.get().values(), 1);
       assertTrue(change.additions().isEmpty());
       assertTrue(change.deletions().isEmpty());
-      assertEquals("1", change.generatedId());
+      assertNotNull(change.generatedId());
       assertNotNull(change.startTimeMillis());
       assertNull(change.status());
       change = Iterables.get(resultStatus.get().values(), 1);
       assertTrue(change.additions().isEmpty());
       assertTrue(change.deletions().isEmpty());
-      assertEquals("1", change.generatedId());
+      assertNotNull(change.generatedId());
       assertNull(change.startTimeMillis());
       assertEquals(ChangeRequest.Status.DONE, change.status());
     } finally {
