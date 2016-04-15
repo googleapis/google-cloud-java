@@ -78,6 +78,24 @@ public class LocalDnsHelperTest {
   private static final String REAL_PROJECT_ID = LOCAL_DNS_HELPER.options().projectId();
   private Map<String, Object> optionsMap;
 
+  private static abstract class FailExpectedCallback<T> implements RpcBatch.Callback<T> {
+    @Override
+    public void onSuccess(T t) {
+      fail();
+    }
+
+    public abstract void onFailure(GoogleJsonError e);
+  }
+
+  private static abstract class SuccessExpectedCallback<T> implements RpcBatch.Callback<T> {
+    public abstract void onSuccess(T t);
+
+    @Override
+    public void onFailure(GoogleJsonError e) {
+      fail();
+    }
+  }
+
   @BeforeClass
   public static void before() {
     ZONE1.setName(ZONE_NAME1);
@@ -1458,55 +1476,35 @@ public class LocalDnsHelperTest {
     assertNotNull(LOCAL_DNS_HELPER.getProject(PROJECT_ID1, null));
     assertNotNull(LOCAL_DNS_HELPER.getProject(PROJECT_ID2, null));
     RpcBatch batch = RPC.createBatch();
-    batch.addGetProject(new RpcBatch.Callback<Project>() {
+    batch.addGetProject(new SuccessExpectedCallback<Project>() {
       @Override
       public void onSuccess(Project project) {
         assertNotNull(project.getQuota());
         assertEquals(REAL_PROJECT_ID, project.getId());
       }
-
-      @Override
-      public void onFailure(GoogleJsonError googleJsonError) {
-        fail("Every get project is successful");
-      }
     }, EMPTY_RPC_OPTIONS);
-    batch.addGetProject(new RpcBatch.Callback<Project>() {
+    batch.addGetProject(new SuccessExpectedCallback<Project>() {
       @Override
       public void onSuccess(Project project) {
         assertNull(project.getId());
         assertNotNull(project.getNumber());
         assertNull(project.getQuota());
       }
-
-      @Override
-      public void onFailure(GoogleJsonError googleJsonError) {
-        fail("Every get project is successful");
-      }
     }, ImmutableMap.of(DnsRpc.Option.FIELDS, "number"));
-    batch.addGetProject(new RpcBatch.Callback<Project>() {
+    batch.addGetProject(new SuccessExpectedCallback<Project>() {
       @Override
       public void onSuccess(Project project) {
         assertNotNull(project.getId());
         assertNull(project.getNumber());
         assertNull(project.getQuota());
       }
-
-      @Override
-      public void onFailure(GoogleJsonError googleJsonError) {
-        fail("Every get project is successful");
-      }
     }, ImmutableMap.of(DnsRpc.Option.FIELDS, "id"));
-    batch.addGetProject(new RpcBatch.Callback<Project>() {
+    batch.addGetProject(new SuccessExpectedCallback<Project>() {
       @Override
       public void onSuccess(Project project) {
         assertNull(project.getId());
         assertNull(project.getNumber());
         assertNotNull(project.getQuota());
-      }
-
-      @Override
-      public void onFailure(GoogleJsonError googleJsonError) {
-        fail("Every get project is successful");
       }
     }, ImmutableMap.of(DnsRpc.Option.FIELDS, "quota"));
     batch.submit();
@@ -1515,7 +1513,7 @@ public class LocalDnsHelperTest {
   @Test
   public void testCreateZoneBatch() {
     RpcBatch batch = RPC.createBatch();
-    batch.addCreateZone(ZONE1, new RpcBatch.Callback<ManagedZone>() {
+    batch.addCreateZone(ZONE1, new SuccessExpectedCallback<ManagedZone>() {
       @Override
       public void onSuccess(ManagedZone created) {
         // check that default records were created
@@ -1530,32 +1528,17 @@ public class LocalDnsHelperTest {
         ManagedZone zone = RPC.getZone(ZONE_NAME1, EMPTY_RPC_OPTIONS);
         assertEquals(created, zone);
       }
-
-      @Override
-      public void onFailure(GoogleJsonError googleJsonError) {
-        fail();
-      }
     }, EMPTY_RPC_OPTIONS);
     batch.submit();
     batch = RPC.createBatch();
-    batch.addCreateZone(null, new RpcBatch.Callback<ManagedZone>() {
-      @Override
-      public void onSuccess(ManagedZone response) {
-        fail("Nothing to create");
-      }
-
+    batch.addCreateZone(null, new FailExpectedCallback<ManagedZone>() {
       @Override
       public void onFailure(GoogleJsonError googleJsonError) {
         assertEquals(400, googleJsonError.getCode());
         assertTrue(googleJsonError.getMessage().contains("entity.managedZone"));
       }
     }, EMPTY_RPC_OPTIONS);
-    batch.addCreateZone(ZONE1, new RpcBatch.Callback<ManagedZone>() {
-      @Override
-      public void onSuccess(ManagedZone response) {
-        fail("Zone already exists.");
-      }
-
+    batch.addCreateZone(ZONE1, new FailExpectedCallback<ManagedZone>() {
       @Override
       public void onFailure(GoogleJsonError ex) {
         assertEquals(409, ex.getCode());
@@ -1567,7 +1550,7 @@ public class LocalDnsHelperTest {
     resetProjects();
     batch = RPC.createBatch();
     batch.addCreateZone(copyZoneNewName(ZONE1, "z1"),
-        new RpcBatch.Callback<ManagedZone>() {
+        new SuccessExpectedCallback<ManagedZone>() {
           @Override
           public void onSuccess(ManagedZone zone) {
             assertNull(zone.getCreationTime());
@@ -1578,14 +1561,9 @@ public class LocalDnsHelperTest {
             assertNull(zone.getNameServerSet());
             assertNotNull(zone.getId());
           }
-
-          @Override
-          public void onFailure(GoogleJsonError googleJsonError) {
-            fail();
-          }
         }, ImmutableMap.of(DnsRpc.Option.FIELDS, "id"));
     batch.addCreateZone(copyZoneNewName(ZONE1, "z2"),
-        new RpcBatch.Callback<ManagedZone>() {
+        new SuccessExpectedCallback<ManagedZone>() {
           @Override
           public void onSuccess(ManagedZone zone) {
             assertNotNull(zone.getCreationTime());
@@ -1596,14 +1574,9 @@ public class LocalDnsHelperTest {
             assertNull(zone.getNameServerSet());
             assertNull(zone.getId());
           }
-
-          @Override
-          public void onFailure(GoogleJsonError googleJsonError) {
-            fail();
-          }
         }, ImmutableMap.of(DnsRpc.Option.FIELDS, "creationTime"));
     batch.addCreateZone(copyZoneNewName(ZONE1, "z3"),
-        new RpcBatch.Callback<ManagedZone>() {
+        new SuccessExpectedCallback<ManagedZone>() {
           @Override
           public void onSuccess(ManagedZone zone) {
             assertNull(zone.getCreationTime());
@@ -1614,14 +1587,9 @@ public class LocalDnsHelperTest {
             assertNull(zone.getNameServerSet());
             assertNull(zone.getId());
           }
-
-          @Override
-          public void onFailure(GoogleJsonError googleJsonError) {
-            fail();
-          }
         }, ImmutableMap.of(DnsRpc.Option.FIELDS, "dnsName"));
     batch.addCreateZone(copyZoneNewName(ZONE1, "z4"),
-        new RpcBatch.Callback<ManagedZone>() {
+        new SuccessExpectedCallback<ManagedZone>() {
           @Override
           public void onSuccess(ManagedZone zone) {
             assertNull(zone.getCreationTime());
@@ -1632,14 +1600,9 @@ public class LocalDnsHelperTest {
             assertNull(zone.getNameServerSet());
             assertNull(zone.getId());
           }
-
-          @Override
-          public void onFailure(GoogleJsonError googleJsonError) {
-            fail();
-          }
         }, ImmutableMap.of(DnsRpc.Option.FIELDS, "description"));
     batch.addCreateZone(copyZoneNewName(ZONE1, "z5"),
-        new RpcBatch.Callback<ManagedZone>() {
+        new SuccessExpectedCallback<ManagedZone>() {
           @Override
           public void onSuccess(ManagedZone zone) {
             assertNull(zone.getCreationTime());
@@ -1650,14 +1613,9 @@ public class LocalDnsHelperTest {
             assertNull(zone.getNameServerSet());
             assertNull(zone.getId());
           }
-
-          @Override
-          public void onFailure(GoogleJsonError googleJsonError) {
-            fail();
-          }
         }, ImmutableMap.of(DnsRpc.Option.FIELDS, "nameServers"));
     batch.addCreateZone(copyZoneNewName(ZONE1, "z6"),
-        new RpcBatch.Callback<ManagedZone>() {
+        new SuccessExpectedCallback<ManagedZone>() {
           @Override
           public void onSuccess(ManagedZone zone) {
             assertNull(zone.getCreationTime());
@@ -1668,14 +1626,9 @@ public class LocalDnsHelperTest {
             assertNotNull(zone.getNameServerSet());
             assertNull(zone.getId());
           }
-
-          @Override
-          public void onFailure(GoogleJsonError googleJsonError) {
-            fail();
-          }
         }, ImmutableMap.of(DnsRpc.Option.FIELDS, "nameServerSet"));
     batch.addCreateZone(copyZoneNewName(ZONE1, "z7"),
-        new RpcBatch.Callback<ManagedZone>() {
+        new SuccessExpectedCallback<ManagedZone>() {
           @Override
           public void onSuccess(ManagedZone zone) {
             assertNull(zone.getCreationTime());
@@ -1685,11 +1638,6 @@ public class LocalDnsHelperTest {
             assertNull(zone.getNameServers());
             assertNotNull(zone.getNameServerSet());
             assertNotNull(zone.getId());
-          }
-
-          @Override
-          public void onFailure(GoogleJsonError googleJsonError) {
-            fail();
           }
         }, ImmutableMap.of(DnsRpc.Option.FIELDS, "nameServerSet,description,id,name"));
     batch.submit();
@@ -1707,7 +1655,7 @@ public class LocalDnsHelperTest {
     // field options
     RpcBatch batch = RPC.createBatch();
     batch.addGetZone(ZONE1.getName(),
-        new RpcBatch.Callback<ManagedZone>() {
+        new SuccessExpectedCallback<ManagedZone>() {
           @Override
           public void onSuccess(ManagedZone zone) {
             assertNull(zone.getCreationTime());
@@ -1718,14 +1666,9 @@ public class LocalDnsHelperTest {
             assertNull(zone.getNameServerSet());
             assertEquals(created.getId(), zone.getId());
           }
-
-          @Override
-          public void onFailure(GoogleJsonError googleJsonError) {
-            fail();
-          }
         }, ImmutableMap.of(DnsRpc.Option.FIELDS, "id"));
     batch.addGetZone(ZONE1.getName(),
-        new RpcBatch.Callback<ManagedZone>() {
+        new SuccessExpectedCallback<ManagedZone>() {
           @Override
           public void onSuccess(ManagedZone zone) {
             assertEquals(created.getCreationTime(), zone.getCreationTime());
@@ -1736,14 +1679,9 @@ public class LocalDnsHelperTest {
             assertNull(zone.getNameServerSet());
             assertNull(zone.getId());
           }
-
-          @Override
-          public void onFailure(GoogleJsonError googleJsonError) {
-            fail();
-          }
         }, ImmutableMap.of(DnsRpc.Option.FIELDS, "creationTime"));
     batch.addGetZone(ZONE1.getName(),
-        new RpcBatch.Callback<ManagedZone>() {
+        new SuccessExpectedCallback<ManagedZone>() {
           @Override
           public void onSuccess(ManagedZone zone) {
             assertNull(zone.getCreationTime());
@@ -1754,14 +1692,9 @@ public class LocalDnsHelperTest {
             assertNull(zone.getNameServerSet());
             assertNull(zone.getId());
           }
-
-          @Override
-          public void onFailure(GoogleJsonError googleJsonError) {
-            fail();
-          }
         }, ImmutableMap.of(DnsRpc.Option.FIELDS, "dnsName"));
     batch.addGetZone(ZONE1.getName(),
-        new RpcBatch.Callback<ManagedZone>() {
+        new SuccessExpectedCallback<ManagedZone>() {
           @Override
           public void onSuccess(ManagedZone zone) {
             assertNull(zone.getCreationTime());
@@ -1772,14 +1705,9 @@ public class LocalDnsHelperTest {
             assertNull(zone.getNameServerSet());
             assertNull(zone.getId());
           }
-
-          @Override
-          public void onFailure(GoogleJsonError googleJsonError) {
-            fail();
-          }
         }, ImmutableMap.of(DnsRpc.Option.FIELDS, "description"));
     batch.addGetZone(ZONE1.getName(),
-        new RpcBatch.Callback<ManagedZone>() {
+        new SuccessExpectedCallback<ManagedZone>() {
           @Override
           public void onSuccess(ManagedZone zone) {
             assertNull(zone.getCreationTime());
@@ -1790,14 +1718,9 @@ public class LocalDnsHelperTest {
             assertNull(zone.getNameServerSet());
             assertNull(zone.getId());
           }
-
-          @Override
-          public void onFailure(GoogleJsonError googleJsonError) {
-            fail();
-          }
         }, ImmutableMap.of(DnsRpc.Option.FIELDS, "nameServers"));
     batch.addGetZone(ZONE1.getName(),
-        new RpcBatch.Callback<ManagedZone>() {
+        new SuccessExpectedCallback<ManagedZone>() {
           @Override
           public void onSuccess(ManagedZone zone) {
             assertNull(zone.getCreationTime());
@@ -1808,14 +1731,9 @@ public class LocalDnsHelperTest {
             assertEquals(created.getNameServerSet(), zone.getNameServerSet());
             assertNull(zone.getId());
           }
-
-          @Override
-          public void onFailure(GoogleJsonError googleJsonError) {
-            fail();
-          }
         }, ImmutableMap.of(DnsRpc.Option.FIELDS, "nameServerSet"));
     batch.addGetZone(ZONE1.getName(),
-        new RpcBatch.Callback<ManagedZone>() {
+        new SuccessExpectedCallback<ManagedZone>() {
           @Override
           public void onSuccess(ManagedZone zone) {
             assertNull(zone.getCreationTime());
@@ -1826,11 +1744,6 @@ public class LocalDnsHelperTest {
             assertEquals(created.getNameServerSet(), zone.getNameServerSet());
             assertEquals(created.getId(), zone.getId());
           }
-
-          @Override
-          public void onFailure(GoogleJsonError googleJsonError) {
-            fail();
-          }
         }, ImmutableMap.of(DnsRpc.Option.FIELDS, "nameServerSet,description,id,name"));
     batch.submit();
   }
@@ -1839,27 +1752,17 @@ public class LocalDnsHelperTest {
   public void testDeleteZoneBatch() {
     RPC.create(ZONE1, EMPTY_RPC_OPTIONS);
     RpcBatch batch = RPC.createBatch();
-    batch.addDeleteZone(ZONE1.getName(), new RpcBatch.Callback<Void>() {
+    batch.addDeleteZone(ZONE1.getName(), new SuccessExpectedCallback<Void>() {
       @Override
       public void onSuccess(Void response) {
         assertNull(RPC.getZone(ZONE1.getName(), EMPTY_RPC_OPTIONS));
-      }
-
-      @Override
-      public void onFailure(GoogleJsonError googleJsonError) {
-        fail();
       }
     });
     batch.submit();
     batch = RPC.createBatch();
     assertNull(RPC.getZone(ZONE1.getName(), EMPTY_RPC_OPTIONS));
     // deleting non-existent zone
-    batch.addDeleteZone(ZONE1.getName(), new RpcBatch.Callback<Void>() {
-      @Override
-      public void onSuccess(Void response) {
-        fail("The zone does not exist");
-      }
-
+    batch.addDeleteZone(ZONE1.getName(), new FailExpectedCallback<Void>() {
       @Override
       public void onFailure(GoogleJsonError ex) {
         // expected
@@ -1873,38 +1776,23 @@ public class LocalDnsHelperTest {
     assertNotNull(RPC.getZone(ZONE2.getName(), EMPTY_RPC_OPTIONS));
     // delete mutiple
     batch = RPC.createBatch();
-    batch.addDeleteZone(ZONE2.getName(), new RpcBatch.Callback<Void>() {
+    batch.addDeleteZone(ZONE2.getName(), new SuccessExpectedCallback<Void>() {
       @Override
       public void onSuccess(Void response) {
         assertNull(RPC.getZone(ZONE2.getName(), EMPTY_RPC_OPTIONS));
       }
-
-      @Override
-      public void onFailure(GoogleJsonError googleJsonError) {
-        fail();
-      }
     });
-    batch.addDeleteZone(ZONE1.getName(), new RpcBatch.Callback<Void>() {
+    batch.addDeleteZone(ZONE1.getName(), new SuccessExpectedCallback<Void>() {
       @Override
       public void onSuccess(Void response) {
         assertNull(RPC.getZone(ZONE1.getName(), EMPTY_RPC_OPTIONS));
-      }
-
-      @Override
-      public void onFailure(GoogleJsonError googleJsonError) {
-        fail();
       }
     });
     batch.submit();
     RPC.create(ZONE1, EMPTY_RPC_OPTIONS);
     RPC.applyChangeRequest(ZONE1.getName(), CHANGE_KEEP, EMPTY_RPC_OPTIONS);
     batch = RPC.createBatch();
-    batch.addDeleteZone(ZONE1.getName(), new RpcBatch.Callback<Void>() {
-      @Override
-      public void onSuccess(Void response) {
-        fail("The zone is not empty");
-      }
-
+    batch.addDeleteZone(ZONE1.getName(), new FailExpectedCallback<Void>() {
       @Override
       public void onFailure(GoogleJsonError ex) {
         // expected
@@ -1927,15 +1815,10 @@ public class LocalDnsHelperTest {
   @Test
   public void testListZonesBatch() {
     RpcBatch batch = RPC.createBatch();
-    batch.addListZones(new RpcBatch.Callback<ManagedZonesListResponse>() {
+    batch.addListZones(new SuccessExpectedCallback<ManagedZonesListResponse>() {
       @Override
       public void onSuccess(ManagedZonesListResponse zones) {
         assertEquals(0, zones.getManagedZones().size());
-      }
-
-      @Override
-      public void onFailure(GoogleJsonError googleJsonError) {
-        fail();
       }
     }, EMPTY_RPC_OPTIONS);
     batch.submit();
@@ -1944,7 +1827,7 @@ public class LocalDnsHelperTest {
     final ManagedZone first = RPC.create(ZONE1, EMPTY_RPC_OPTIONS);
     final ManagedZone second = RPC.create(ZONE2, EMPTY_RPC_OPTIONS);
     batch = RPC.createBatch();
-    batch.addListZones(new RpcBatch.Callback<ManagedZonesListResponse>() {
+    batch.addListZones(new SuccessExpectedCallback<ManagedZonesListResponse>() {
       @Override
       public void onSuccess(ManagedZonesListResponse zones) {
         List<ManagedZone> results = zones.getManagedZones();
@@ -1952,19 +1835,9 @@ public class LocalDnsHelperTest {
         assertTrue(results.contains(first));
         assertTrue(results.contains(second));
       }
-
-      @Override
-      public void onFailure(GoogleJsonError googleJsonError) {
-        fail();
-      }
     }, EMPTY_RPC_OPTIONS);
     // error in options
-    batch.addListZones(new RpcBatch.Callback<ManagedZonesListResponse>() {
-      @Override
-      public void onSuccess(ManagedZonesListResponse response) {
-        fail();
-      }
-
+    batch.addListZones(new FailExpectedCallback<ManagedZonesListResponse>() {
       @Override
       public void onFailure(GoogleJsonError ex) {
         // expected
@@ -1972,12 +1845,7 @@ public class LocalDnsHelperTest {
         assertTrue(ex.getMessage().contains("parameters.maxResults"));
       }
     }, ImmutableMap.of(DnsRpc.Option.PAGE_SIZE, 0));
-    batch.addListZones(new RpcBatch.Callback<ManagedZonesListResponse>() {
-      @Override
-      public void onSuccess(ManagedZonesListResponse response) {
-        fail();
-      }
-
+    batch.addListZones(new FailExpectedCallback<ManagedZonesListResponse>() {
       @Override
       public void onFailure(GoogleJsonError ex) {
         // expected
@@ -1998,12 +1866,7 @@ public class LocalDnsHelperTest {
       }
     }, ImmutableMap.of(DnsRpc.Option.PAGE_SIZE, 1));
     // dns name problems
-    batch.addListZones(new RpcBatch.Callback<ManagedZonesListResponse>() {
-      @Override
-      public void onSuccess(ManagedZonesListResponse response) {
-        fail();
-      }
-
+    batch.addListZones(new FailExpectedCallback<ManagedZonesListResponse>() {
       @Override
       public void onFailure(GoogleJsonError ex) {
         // expected
@@ -2012,19 +1875,14 @@ public class LocalDnsHelperTest {
       }
     }, ImmutableMap.of(DnsRpc.Option.DNS_NAME, "aaa"));
     // ok name
-    batch.addListZones(new RpcBatch.Callback<ManagedZonesListResponse>() {
+    batch.addListZones(new SuccessExpectedCallback<ManagedZonesListResponse>() {
       @Override
       public void onSuccess(ManagedZonesListResponse response) {
         assertEquals(0, response.getManagedZones().size());
       }
-
-      @Override
-      public void onFailure(GoogleJsonError googleJsonError) {
-        fail();
-      }
     }, ImmutableMap.of(DnsRpc.Option.DNS_NAME, "aaaa."));
     // field options
-    batch.addListZones(new RpcBatch.Callback<ManagedZonesListResponse>() {
+    batch.addListZones(new SuccessExpectedCallback<ManagedZonesListResponse>() {
       @Override
       public void onSuccess(ManagedZonesListResponse response) {
         ManagedZone zone = response.getManagedZones().get(0);
@@ -2036,13 +1894,8 @@ public class LocalDnsHelperTest {
         assertNull(zone.getNameServerSet());
         assertNotNull(zone.getId());
       }
-
-      @Override
-      public void onFailure(GoogleJsonError googleJsonError) {
-        fail();
-      }
     }, ImmutableMap.of(DnsRpc.Option.FIELDS, "managedZones(id)"));
-    batch.addListZones(new RpcBatch.Callback<ManagedZonesListResponse>() {
+    batch.addListZones(new SuccessExpectedCallback<ManagedZonesListResponse>() {
       @Override
       public void onSuccess(ManagedZonesListResponse response) {
         ManagedZone zone = response.getManagedZones().get(0);
@@ -2054,13 +1907,8 @@ public class LocalDnsHelperTest {
         assertNull(zone.getNameServerSet());
         assertNull(zone.getId());
       }
-
-      @Override
-      public void onFailure(GoogleJsonError googleJsonError) {
-        fail();
-      }
     }, ImmutableMap.of(DnsRpc.Option.FIELDS, "managedZones(creationTime)"));
-    batch.addListZones(new RpcBatch.Callback<ManagedZonesListResponse>() {
+    batch.addListZones(new SuccessExpectedCallback<ManagedZonesListResponse>() {
       @Override
       public void onSuccess(ManagedZonesListResponse response) {
         ManagedZone zone = response.getManagedZones().get(0);
@@ -2072,13 +1920,8 @@ public class LocalDnsHelperTest {
         assertNull(zone.getNameServerSet());
         assertNull(zone.getId());
       }
-
-      @Override
-      public void onFailure(GoogleJsonError googleJsonError) {
-        fail();
-      }
     }, ImmutableMap.of(DnsRpc.Option.FIELDS, "managedZones(dnsName)"));
-    batch.addListZones(new RpcBatch.Callback<ManagedZonesListResponse>() {
+    batch.addListZones(new SuccessExpectedCallback<ManagedZonesListResponse>() {
       @Override
       public void onSuccess(ManagedZonesListResponse response) {
         ManagedZone zone = response.getManagedZones().get(0);
@@ -2090,13 +1933,8 @@ public class LocalDnsHelperTest {
         assertNull(zone.getNameServerSet());
         assertNull(zone.getId());
       }
-
-      @Override
-      public void onFailure(GoogleJsonError googleJsonError) {
-        fail();
-      }
     }, ImmutableMap.of(DnsRpc.Option.FIELDS, "managedZones(description)"));
-    batch.addListZones(new RpcBatch.Callback<ManagedZonesListResponse>() {
+    batch.addListZones(new SuccessExpectedCallback<ManagedZonesListResponse>() {
       @Override
       public void onSuccess(ManagedZonesListResponse response) {
         ManagedZone zone = response.getManagedZones().get(0);
@@ -2108,13 +1946,8 @@ public class LocalDnsHelperTest {
         assertNull(zone.getNameServerSet());
         assertNull(zone.getId());
       }
-
-      @Override
-      public void onFailure(GoogleJsonError googleJsonError) {
-        fail();
-      }
     }, ImmutableMap.of(DnsRpc.Option.FIELDS, "managedZones(nameServers)"));
-    batch.addListZones(new RpcBatch.Callback<ManagedZonesListResponse>() {
+    batch.addListZones(new SuccessExpectedCallback<ManagedZonesListResponse>() {
       @Override
       public void onSuccess(ManagedZonesListResponse response) {
         ManagedZone zone = response.getManagedZones().get(0);
@@ -2127,13 +1960,8 @@ public class LocalDnsHelperTest {
         assertNotNull(zone.getNameServerSet());
         assertNull(zone.getId());
       }
-
-      @Override
-      public void onFailure(GoogleJsonError googleJsonError) {
-        fail();
-      }
     }, ImmutableMap.of(DnsRpc.Option.FIELDS, "managedZones(nameServerSet)"));
-    batch.addListZones(new RpcBatch.Callback<ManagedZonesListResponse>() {
+    batch.addListZones(new SuccessExpectedCallback<ManagedZonesListResponse>() {
       @Override
       public void onSuccess(ManagedZonesListResponse response) {
         ManagedZone zone = response.getManagedZones().get(0);
@@ -2146,11 +1974,6 @@ public class LocalDnsHelperTest {
         assertNotNull(zone.getId());
         assertEquals(zone.getName(), response.getNextPageToken());
       }
-
-      @Override
-      public void onFailure(GoogleJsonError googleJsonError) {
-        fail();
-      }
     }, ImmutableMap.of(DnsRpc.Option.FIELDS,
         "managedZones(nameServerSet,description,id,name),nextPageToken",
         DnsRpc.Option.PAGE_SIZE, 1));
@@ -2161,12 +1984,7 @@ public class LocalDnsHelperTest {
   public void testListRecordSetsBatch() {
     // no zone exists
     RpcBatch batch = RPC.createBatch();
-    batch.addListRecordSets(ZONE_NAME1, new RpcBatch.Callback<ResourceRecordSetsListResponse>() {
-      @Override
-      public void onSuccess(ResourceRecordSetsListResponse response) {
-        fail();
-      }
-
+    batch.addListRecordSets(ZONE_NAME1, new FailExpectedCallback<ResourceRecordSetsListResponse>() {
       @Override
       public void onFailure(GoogleJsonError ex) {
         // expected
@@ -2178,38 +1996,25 @@ public class LocalDnsHelperTest {
     // zone exists but has no records
     batch = RPC.createBatch();
     RPC.create(ZONE1, EMPTY_RPC_OPTIONS);
-    batch.addListRecordSets(ZONE_NAME1, new RpcBatch.Callback<ResourceRecordSetsListResponse>() {
-      @Override
-      public void onSuccess(ResourceRecordSetsListResponse response) {
-        assertEquals(2, response.getRrsets().size()); // contains default NS and SOA
-      }
-
-      @Override
-      public void onFailure(GoogleJsonError ex) {
-        fail();
-      }
-    }, EMPTY_RPC_OPTIONS);
+    batch.addListRecordSets(ZONE_NAME1,
+        new SuccessExpectedCallback<ResourceRecordSetsListResponse>() {
+          @Override
+          public void onSuccess(ResourceRecordSetsListResponse response) {
+            assertEquals(2, response.getRrsets().size()); // contains default NS and SOA
+          }
+        }, EMPTY_RPC_OPTIONS);
     batch.submit();
     // zone has records
     RPC.applyChangeRequest(ZONE_NAME1, CHANGE_KEEP, EMPTY_RPC_OPTIONS);
     batch = RPC.createBatch();
-    batch.addListRecordSets(ZONE_NAME1, new RpcBatch.Callback<ResourceRecordSetsListResponse>() {
-      @Override
-      public void onSuccess(ResourceRecordSetsListResponse response) {
-        assertEquals(3, response.getRrsets().size());
-      }
-
-      @Override
-      public void onFailure(GoogleJsonError googleJsonError) {
-        fail();
-      }
-    }, EMPTY_RPC_OPTIONS);
-    batch.addListRecordSets(ZONE_NAME1, new RpcBatch.Callback<ResourceRecordSetsListResponse>() {
-      @Override
-      public void onSuccess(ResourceRecordSetsListResponse response) {
-        fail();
-      }
-
+    batch.addListRecordSets(ZONE_NAME1,
+        new SuccessExpectedCallback<ResourceRecordSetsListResponse>() {
+          @Override
+          public void onSuccess(ResourceRecordSetsListResponse response) {
+            assertEquals(3, response.getRrsets().size());
+          }
+        }, EMPTY_RPC_OPTIONS);
+    batch.addListRecordSets(ZONE_NAME1, new FailExpectedCallback<ResourceRecordSetsListResponse>() {
       @Override
       public void onFailure(GoogleJsonError ex) {
         // expected
@@ -2217,12 +2022,7 @@ public class LocalDnsHelperTest {
         assertTrue(ex.getMessage().contains("parameters.maxResults"));
       }
     }, ImmutableMap.of(DnsRpc.Option.PAGE_SIZE, 0));
-    batch.addListRecordSets(ZONE_NAME1, new RpcBatch.Callback<ResourceRecordSetsListResponse>() {
-      @Override
-      public void onSuccess(ResourceRecordSetsListResponse response) {
-        fail();
-      }
-
+    batch.addListRecordSets(ZONE_NAME1, new FailExpectedCallback<ResourceRecordSetsListResponse>() {
       @Override
       public void onFailure(GoogleJsonError ex) {
         // expected
@@ -2231,24 +2031,15 @@ public class LocalDnsHelperTest {
       }
     }, ImmutableMap.of(DnsRpc.Option.PAGE_SIZE, -1));
     // ok size
-    batch.addListRecordSets(ZONE_NAME1, new RpcBatch.Callback<ResourceRecordSetsListResponse>() {
-      @Override
-      public void onSuccess(ResourceRecordSetsListResponse response) {
-        assertEquals(2, response.getRrsets().size());
-      }
-
-      @Override
-      public void onFailure(GoogleJsonError ex) {
-        fail();
-      }
-    }, ImmutableMap.of(DnsRpc.Option.PAGE_SIZE, 2));
+    batch.addListRecordSets(ZONE_NAME1,
+        new SuccessExpectedCallback<ResourceRecordSetsListResponse>() {
+          @Override
+          public void onSuccess(ResourceRecordSetsListResponse response) {
+            assertEquals(2, response.getRrsets().size());
+          }
+        }, ImmutableMap.of(DnsRpc.Option.PAGE_SIZE, 2));
     // dns name filter
-    batch.addListRecordSets(ZONE_NAME1, new RpcBatch.Callback<ResourceRecordSetsListResponse>() {
-      @Override
-      public void onSuccess(ResourceRecordSetsListResponse response) {
-        fail();
-      }
-
+    batch.addListRecordSets(ZONE_NAME1, new FailExpectedCallback<ResourceRecordSetsListResponse>() {
       @Override
       public void onFailure(GoogleJsonError ex) {
         // expected
@@ -2257,24 +2048,15 @@ public class LocalDnsHelperTest {
       }
     }, ImmutableMap.of(DnsRpc.Option.NAME, "aaa"));
     // dns name filter
-    batch.addListRecordSets(ZONE_NAME1, new RpcBatch.Callback<ResourceRecordSetsListResponse>() {
-      @Override
-      public void onSuccess(ResourceRecordSetsListResponse response) {
-        assertEquals(0, response.getRrsets().size());
-      }
-
-      @Override
-      public void onFailure(GoogleJsonError ex) {
-        fail();
-      }
-    }, ImmutableMap.of(DnsRpc.Option.NAME, "aaa."));
+    batch.addListRecordSets(ZONE_NAME1,
+        new SuccessExpectedCallback<ResourceRecordSetsListResponse>() {
+          @Override
+          public void onSuccess(ResourceRecordSetsListResponse response) {
+            assertEquals(0, response.getRrsets().size());
+          }
+        }, ImmutableMap.of(DnsRpc.Option.NAME, "aaa."));
     // filter type but no name
-    batch.addListRecordSets(ZONE_NAME1, new RpcBatch.Callback<ResourceRecordSetsListResponse>() {
-      @Override
-      public void onSuccess(ResourceRecordSetsListResponse response) {
-        fail();
-      }
-
+    batch.addListRecordSets(ZONE_NAME1, new FailExpectedCallback<ResourceRecordSetsListResponse>() {
       @Override
       public void onFailure(GoogleJsonError ex) {
         // expected
@@ -2282,117 +2064,88 @@ public class LocalDnsHelperTest {
         assertTrue(ex.getMessage().contains("parameters.name"));
       }
     }, ImmutableMap.of(DnsRpc.Option.DNS_TYPE, "A"));
-    batch.addListRecordSets(ZONE_NAME1, new RpcBatch.Callback<ResourceRecordSetsListResponse>() {
-      @Override
-      public void onSuccess(ResourceRecordSetsListResponse response) {
-        assertEquals(1, response.getRrsets().size());
-      }
-
-      @Override
-      public void onFailure(GoogleJsonError ex) {
-        // expected
-        fail();
-      }
-    }, ImmutableMap.of(DnsRpc.Option.NAME, ZONE1.getDnsName(), DnsRpc.Option.DNS_TYPE, "SOA"));
+    batch.addListRecordSets(ZONE_NAME1,
+        new SuccessExpectedCallback<ResourceRecordSetsListResponse>() {
+          @Override
+          public void onSuccess(ResourceRecordSetsListResponse response) {
+            assertEquals(1, response.getRrsets().size());
+          }
+        }, ImmutableMap.of(DnsRpc.Option.NAME, ZONE1.getDnsName(), DnsRpc.Option.DNS_TYPE, "SOA"));
     // field options
-    batch.addListRecordSets(ZONE_NAME1, new RpcBatch.Callback<ResourceRecordSetsListResponse>() {
-      @Override
-      public void onSuccess(ResourceRecordSetsListResponse response) {
-        ResourceRecordSet record = response.getRrsets().get(0);
-        assertNotNull(record.getName());
-        assertNull(record.getRrdatas());
-        assertNull(record.getType());
-        assertNull(record.getTtl());
-        assertNull(response.getNextPageToken());
-      }
-
-      @Override
-      public void onFailure(GoogleJsonError googleJsonError) {
-        fail();
-      }
-    }, ImmutableMap.of(DnsRpc.Option.FIELDS, "rrsets(name)"));
-    batch.addListRecordSets(ZONE_NAME1, new RpcBatch.Callback<ResourceRecordSetsListResponse>() {
-      @Override
-      public void onSuccess(ResourceRecordSetsListResponse response) {
-        ResourceRecordSet record = response.getRrsets().get(0);
-        assertNull(record.getName());
-        assertNotNull(record.getRrdatas());
-        assertNull(record.getType());
-        assertNull(record.getTtl());
-        assertNull(response.getNextPageToken());
-      }
-
-      @Override
-      public void onFailure(GoogleJsonError googleJsonError) {
-        fail();
-      }
-    }, ImmutableMap.of(DnsRpc.Option.FIELDS, "rrsets(rrdatas)"));
-    batch.addListRecordSets(ZONE_NAME1, new RpcBatch.Callback<ResourceRecordSetsListResponse>() {
-      @Override
-      public void onSuccess(ResourceRecordSetsListResponse response) {
-        ResourceRecordSet record = response.getRrsets().get(0);
-        assertNull(record.getName());
-        assertNull(record.getRrdatas());
-        assertNull(record.getType());
-        assertNotNull(record.getTtl());
-        assertNull(response.getNextPageToken());
-      }
-
-      @Override
-      public void onFailure(GoogleJsonError googleJsonError) {
-        fail();
-      }
-    }, ImmutableMap.of(DnsRpc.Option.FIELDS, "rrsets(ttl)"));
-    batch.addListRecordSets(ZONE_NAME1, new RpcBatch.Callback<ResourceRecordSetsListResponse>() {
-      @Override
-      public void onSuccess(ResourceRecordSetsListResponse response) {
-        ResourceRecordSet record = response.getRrsets().get(0);
-        assertNull(record.getName());
-        assertNull(record.getRrdatas());
-        assertNotNull(record.getType());
-        assertNull(record.getTtl());
-        assertNull(response.getNextPageToken());
-      }
-
-      @Override
-      public void onFailure(GoogleJsonError googleJsonError) {
-        fail();
-      }
-    }, ImmutableMap.of(DnsRpc.Option.FIELDS, "rrsets(type)"));
-    batch.addListRecordSets(ZONE_NAME1, new RpcBatch.Callback<ResourceRecordSetsListResponse>() {
-      @Override
-      public void onSuccess(ResourceRecordSetsListResponse response) {
-        ResourceRecordSet record = response.getRrsets().get(0);
-        assertNull(record.getName());
-        assertNull(record.getRrdatas());
-        assertNull(record.getType());
-        assertNull(record.getTtl());
-        assertNull(response.getNextPageToken());
-      }
-
-      @Override
-      public void onFailure(GoogleJsonError googleJsonError) {
-        fail();
-      }
-    }, ImmutableMap.of(DnsRpc.Option.FIELDS, "nextPageToken"));
-    batch.addListRecordSets(ZONE_NAME1, new RpcBatch.Callback<ResourceRecordSetsListResponse>() {
-      @Override
-      public void onSuccess(ResourceRecordSetsListResponse response) {
-        assertEquals(1, response.getRrsets().size());
-        ResourceRecordSet record = response.getRrsets().get(0);
-        assertNotNull(record.getName());
-        assertNotNull(record.getRrdatas());
-        assertNull(record.getType());
-        assertNull(record.getTtl());
-        assertNotNull(response.getNextPageToken());
-      }
-
-      @Override
-      public void onFailure(GoogleJsonError googleJsonError) {
-        fail();
-      }
-    }, ImmutableMap.of(DnsRpc.Option.FIELDS, "nextPageToken,rrsets(name,rrdatas)",
-        DnsRpc.Option.PAGE_SIZE, 1));
+    batch.addListRecordSets(ZONE_NAME1,
+        new SuccessExpectedCallback<ResourceRecordSetsListResponse>() {
+          @Override
+          public void onSuccess(ResourceRecordSetsListResponse response) {
+            ResourceRecordSet record = response.getRrsets().get(0);
+            assertNotNull(record.getName());
+            assertNull(record.getRrdatas());
+            assertNull(record.getType());
+            assertNull(record.getTtl());
+            assertNull(response.getNextPageToken());
+          }
+        }, ImmutableMap.of(DnsRpc.Option.FIELDS, "rrsets(name)"));
+    batch.addListRecordSets(ZONE_NAME1,
+        new SuccessExpectedCallback<ResourceRecordSetsListResponse>() {
+          @Override
+          public void onSuccess(ResourceRecordSetsListResponse response) {
+            ResourceRecordSet record = response.getRrsets().get(0);
+            assertNull(record.getName());
+            assertNotNull(record.getRrdatas());
+            assertNull(record.getType());
+            assertNull(record.getTtl());
+            assertNull(response.getNextPageToken());
+          }
+        }, ImmutableMap.of(DnsRpc.Option.FIELDS, "rrsets(rrdatas)"));
+    batch.addListRecordSets(ZONE_NAME1,
+        new SuccessExpectedCallback<ResourceRecordSetsListResponse>() {
+          @Override
+          public void onSuccess(ResourceRecordSetsListResponse response) {
+            ResourceRecordSet record = response.getRrsets().get(0);
+            assertNull(record.getName());
+            assertNull(record.getRrdatas());
+            assertNull(record.getType());
+            assertNotNull(record.getTtl());
+            assertNull(response.getNextPageToken());
+          }
+        }, ImmutableMap.of(DnsRpc.Option.FIELDS, "rrsets(ttl)"));
+    batch.addListRecordSets(ZONE_NAME1,
+        new SuccessExpectedCallback<ResourceRecordSetsListResponse>() {
+          @Override
+          public void onSuccess(ResourceRecordSetsListResponse response) {
+            ResourceRecordSet record = response.getRrsets().get(0);
+            assertNull(record.getName());
+            assertNull(record.getRrdatas());
+            assertNotNull(record.getType());
+            assertNull(record.getTtl());
+            assertNull(response.getNextPageToken());
+          }
+        }, ImmutableMap.of(DnsRpc.Option.FIELDS, "rrsets(type)"));
+    batch.addListRecordSets(ZONE_NAME1,
+        new SuccessExpectedCallback<ResourceRecordSetsListResponse>() {
+          @Override
+          public void onSuccess(ResourceRecordSetsListResponse response) {
+            ResourceRecordSet record = response.getRrsets().get(0);
+            assertNull(record.getName());
+            assertNull(record.getRrdatas());
+            assertNull(record.getType());
+            assertNull(record.getTtl());
+            assertNull(response.getNextPageToken());
+          }
+        }, ImmutableMap.of(DnsRpc.Option.FIELDS, "nextPageToken"));
+    batch.addListRecordSets(ZONE_NAME1,
+        new SuccessExpectedCallback<ResourceRecordSetsListResponse>() {
+          @Override
+          public void onSuccess(ResourceRecordSetsListResponse response) {
+            assertEquals(1, response.getRrsets().size());
+            ResourceRecordSet record = response.getRrsets().get(0);
+            assertNotNull(record.getName());
+            assertNotNull(record.getRrdatas());
+            assertNull(record.getType());
+            assertNull(record.getTtl());
+            assertNotNull(response.getNextPageToken());
+          }
+        }, ImmutableMap.of(DnsRpc.Option.FIELDS, "nextPageToken,rrsets(name,rrdatas)",
+            DnsRpc.Option.PAGE_SIZE, 1));
     batch.submit();
   }
 
@@ -2400,12 +2153,7 @@ public class LocalDnsHelperTest {
   public void testCreateChangeBatch() {
     // non-existent zone
     RpcBatch batch = RPC.createBatch();
-    batch.addApplyChangeRequest(ZONE_NAME1, CHANGE1, new RpcBatch.Callback<Change>() {
-      @Override
-      public void onSuccess(Change response) {
-        fail();
-      }
-
+    batch.addApplyChangeRequest(ZONE_NAME1, CHANGE1, new FailExpectedCallback<Change>() {
       @Override
       public void onFailure(GoogleJsonError ex) {
         // expected
@@ -2417,96 +2165,71 @@ public class LocalDnsHelperTest {
     RPC.create(ZONE1, EMPTY_RPC_OPTIONS);
     assertNull(RPC.getChangeRequest(ZONE_NAME1, "1", EMPTY_RPC_OPTIONS));
     batch = RPC.createBatch();
-    batch.addApplyChangeRequest(ZONE_NAME1, CHANGE1, new RpcBatch.Callback<Change>() {
+    batch.addApplyChangeRequest(ZONE_NAME1, CHANGE1, new SuccessExpectedCallback<Change>() {
       @Override
       public void onSuccess(Change response) {
         assertEquals(RPC.getChangeRequest(ZONE_NAME1, "1", EMPTY_RPC_OPTIONS), response);
-      }
-
-      @Override
-      public void onFailure(GoogleJsonError googleJsonError) {
-
       }
     }, EMPTY_RPC_OPTIONS);
     batch.submit();
     // field options
     RPC.applyChangeRequest(ZONE1.getName(), CHANGE_KEEP, EMPTY_RPC_OPTIONS);
     batch = RPC.createBatch();
-    batch.addApplyChangeRequest(ZONE1.getName(), CHANGE_COMPLEX, new RpcBatch.Callback<Change>() {
-      @Override
-      public void onSuccess(Change complex) {
-        assertNotNull(complex.getAdditions());
-        assertNull(complex.getDeletions());
-        assertNull(complex.getId());
-        assertNull(complex.getStartTime());
-        assertNull(complex.getStatus());
-      }
-
-      @Override
-      public void onFailure(GoogleJsonError googleJsonError) {
-        fail();
-      }
-    }, ImmutableMap.of(DnsRpc.Option.FIELDS, "additions"));
-    batch.addApplyChangeRequest(ZONE1.getName(), CHANGE_COMPLEX, new RpcBatch.Callback<Change>() {
-      @Override
-      public void onSuccess(Change complex) {
-        assertNull(complex.getAdditions());
-        assertNotNull(complex.getDeletions());
-        assertNull(complex.getId());
-        assertNull(complex.getStartTime());
-        assertNull(complex.getStatus());
-      }
-
-      @Override
-      public void onFailure(GoogleJsonError googleJsonError) {
-        fail();
-      }
-    }, ImmutableMap.of(DnsRpc.Option.FIELDS, "deletions"));
-    batch.addApplyChangeRequest(ZONE1.getName(), CHANGE_COMPLEX, new RpcBatch.Callback<Change>() {
-      @Override
-      public void onSuccess(Change complex) {
-        assertNull(complex.getAdditions());
-        assertNull(complex.getDeletions());
-        assertNotNull(complex.getId());
-        assertNull(complex.getStartTime());
-        assertNull(complex.getStatus());
-      }
-
-      @Override
-      public void onFailure(GoogleJsonError googleJsonError) {
-        fail();
-      }
-    }, ImmutableMap.of(DnsRpc.Option.FIELDS, "id"));
-    batch.addApplyChangeRequest(ZONE1.getName(), CHANGE_COMPLEX, new RpcBatch.Callback<Change>() {
-      @Override
-      public void onSuccess(Change complex) {
-        assertNull(complex.getAdditions());
-        assertNull(complex.getDeletions());
-        assertNull(complex.getId());
-        assertNotNull(complex.getStartTime());
-        assertNull(complex.getStatus());
-      }
-
-      @Override
-      public void onFailure(GoogleJsonError googleJsonError) {
-        fail();
-      }
-    }, ImmutableMap.of(DnsRpc.Option.FIELDS, "startTime"));
-    batch.addApplyChangeRequest(ZONE1.getName(), CHANGE_COMPLEX, new RpcBatch.Callback<Change>() {
-      @Override
-      public void onSuccess(Change complex) {
-        assertNull(complex.getAdditions());
-        assertNull(complex.getDeletions());
-        assertNull(complex.getId());
-        assertNull(complex.getStartTime());
-        assertNotNull(complex.getStatus());
-      }
-
-      @Override
-      public void onFailure(GoogleJsonError googleJsonError) {
-        fail();
-      }
-    }, ImmutableMap.of(DnsRpc.Option.FIELDS, "status"));
+    batch.addApplyChangeRequest(ZONE1.getName(), CHANGE_COMPLEX,
+        new SuccessExpectedCallback<Change>() {
+          @Override
+          public void onSuccess(Change complex) {
+            assertNotNull(complex.getAdditions());
+            assertNull(complex.getDeletions());
+            assertNull(complex.getId());
+            assertNull(complex.getStartTime());
+            assertNull(complex.getStatus());
+          }
+        }, ImmutableMap.of(DnsRpc.Option.FIELDS, "additions"));
+    batch.addApplyChangeRequest(ZONE1.getName(), CHANGE_COMPLEX,
+        new SuccessExpectedCallback<Change>() {
+          @Override
+          public void onSuccess(Change complex) {
+            assertNull(complex.getAdditions());
+            assertNotNull(complex.getDeletions());
+            assertNull(complex.getId());
+            assertNull(complex.getStartTime());
+            assertNull(complex.getStatus());
+          }
+        }, ImmutableMap.of(DnsRpc.Option.FIELDS, "deletions"));
+    batch.addApplyChangeRequest(ZONE1.getName(), CHANGE_COMPLEX,
+        new SuccessExpectedCallback<Change>() {
+          @Override
+          public void onSuccess(Change complex) {
+            assertNull(complex.getAdditions());
+            assertNull(complex.getDeletions());
+            assertNotNull(complex.getId());
+            assertNull(complex.getStartTime());
+            assertNull(complex.getStatus());
+          }
+        }, ImmutableMap.of(DnsRpc.Option.FIELDS, "id"));
+    batch.addApplyChangeRequest(ZONE1.getName(), CHANGE_COMPLEX,
+        new SuccessExpectedCallback<Change>() {
+          @Override
+          public void onSuccess(Change complex) {
+            assertNull(complex.getAdditions());
+            assertNull(complex.getDeletions());
+            assertNull(complex.getId());
+            assertNotNull(complex.getStartTime());
+            assertNull(complex.getStatus());
+          }
+        }, ImmutableMap.of(DnsRpc.Option.FIELDS, "startTime"));
+    batch.addApplyChangeRequest(ZONE1.getName(), CHANGE_COMPLEX,
+        new SuccessExpectedCallback<Change>() {
+          @Override
+          public void onSuccess(Change complex) {
+            assertNull(complex.getAdditions());
+            assertNull(complex.getDeletions());
+            assertNull(complex.getId());
+            assertNull(complex.getStartTime());
+            assertNotNull(complex.getStatus());
+          }
+        }, ImmutableMap.of(DnsRpc.Option.FIELDS, "status"));
     batch.submit();
   }
 
@@ -2516,24 +2239,14 @@ public class LocalDnsHelperTest {
     RPC.create(ZONE1, EMPTY_RPC_OPTIONS);
     final Change created = RPC.applyChangeRequest(ZONE1.getName(), CHANGE1, EMPTY_RPC_OPTIONS);
     RpcBatch batch = RPC.createBatch();
-    batch.addGetChangeRequest(ZONE1.getName(), "1", new RpcBatch.Callback<Change>() {
+    batch.addGetChangeRequest(ZONE1.getName(), "1", new SuccessExpectedCallback<Change>() {
       @Override
       public void onSuccess(Change retrieved) {
         assertEquals(created, retrieved);
       }
-
-      @Override
-      public void onFailure(GoogleJsonError googleJsonError) {
-        fail();
-      }
     }, EMPTY_RPC_OPTIONS);
     // non-existent
-    batch.addGetChangeRequest(ZONE1.getName(), "2", new RpcBatch.Callback<Change>() {
-      @Override
-      public void onSuccess(Change retrieved) {
-        fail();
-      }
-
+    batch.addGetChangeRequest(ZONE1.getName(), "2", new FailExpectedCallback<Change>() {
       @Override
       public void onFailure(GoogleJsonError googleJsonError) {
         // expected
@@ -2541,12 +2254,7 @@ public class LocalDnsHelperTest {
       }
     }, EMPTY_RPC_OPTIONS);
     // non-existent zone
-    batch.addGetChangeRequest(ZONE_NAME2, "1", new RpcBatch.Callback<Change>() {
-      @Override
-      public void onSuccess(Change retrieved) {
-        fail();
-      }
-
+    batch.addGetChangeRequest(ZONE_NAME2, "1", new FailExpectedCallback<Change>() {
       @Override
       public void onFailure(GoogleJsonError ex) {
         // expected
@@ -2559,7 +2267,7 @@ public class LocalDnsHelperTest {
     RPC.applyChangeRequest(ZONE1.getName(), CHANGE_KEEP, EMPTY_RPC_OPTIONS);
     Change keep = RPC.applyChangeRequest(ZONE1.getName(), CHANGE_COMPLEX, EMPTY_RPC_OPTIONS);
     batch = RPC.createBatch();
-    batch.addGetChangeRequest(ZONE1.getName(), keep.getId(), new RpcBatch.Callback<Change>() {
+    batch.addGetChangeRequest(ZONE1.getName(), keep.getId(), new SuccessExpectedCallback<Change>() {
       @Override
       public void onSuccess(Change complex) {
         assertNotNull(complex.getAdditions());
@@ -2568,13 +2276,8 @@ public class LocalDnsHelperTest {
         assertNull(complex.getStartTime());
         assertNull(complex.getStatus());
       }
-
-      @Override
-      public void onFailure(GoogleJsonError googleJsonError) {
-        fail();
-      }
     }, ImmutableMap.of(DnsRpc.Option.FIELDS, "additions"));
-    batch.addGetChangeRequest(ZONE1.getName(), keep.getId(), new RpcBatch.Callback<Change>() {
+    batch.addGetChangeRequest(ZONE1.getName(), keep.getId(), new SuccessExpectedCallback<Change>() {
       @Override
       public void onSuccess(Change complex) {
         assertNull(complex.getAdditions());
@@ -2583,13 +2286,8 @@ public class LocalDnsHelperTest {
         assertNull(complex.getStartTime());
         assertNull(complex.getStatus());
       }
-
-      @Override
-      public void onFailure(GoogleJsonError googleJsonError) {
-        fail();
-      }
     }, ImmutableMap.of(DnsRpc.Option.FIELDS, "deletions"));
-    batch.addGetChangeRequest(ZONE1.getName(), keep.getId(), new RpcBatch.Callback<Change>() {
+    batch.addGetChangeRequest(ZONE1.getName(), keep.getId(), new SuccessExpectedCallback<Change>() {
       @Override
       public void onSuccess(Change complex) {
         assertNull(complex.getAdditions());
@@ -2598,13 +2296,8 @@ public class LocalDnsHelperTest {
         assertNull(complex.getStartTime());
         assertNull(complex.getStatus());
       }
-
-      @Override
-      public void onFailure(GoogleJsonError googleJsonError) {
-        fail();
-      }
     }, ImmutableMap.of(DnsRpc.Option.FIELDS, "id"));
-    batch.addGetChangeRequest(ZONE1.getName(), keep.getId(), new RpcBatch.Callback<Change>() {
+    batch.addGetChangeRequest(ZONE1.getName(), keep.getId(), new SuccessExpectedCallback<Change>() {
       @Override
       public void onSuccess(Change complex) {
         assertNull(complex.getAdditions());
@@ -2613,13 +2306,8 @@ public class LocalDnsHelperTest {
         assertNotNull(complex.getStartTime());
         assertNull(complex.getStatus());
       }
-
-      @Override
-      public void onFailure(GoogleJsonError googleJsonError) {
-        fail();
-      }
     }, ImmutableMap.of(DnsRpc.Option.FIELDS, "startTime"));
-    batch.addGetChangeRequest(ZONE1.getName(), keep.getId(), new RpcBatch.Callback<Change>() {
+    batch.addGetChangeRequest(ZONE1.getName(), keep.getId(), new SuccessExpectedCallback<Change>() {
       @Override
       public void onSuccess(Change complex) {
         assertNull(complex.getAdditions());
@@ -2628,11 +2316,6 @@ public class LocalDnsHelperTest {
         assertNull(complex.getStartTime());
         assertNotNull(complex.getStatus());
       }
-
-      @Override
-      public void onFailure(GoogleJsonError googleJsonError) {
-        fail();
-      }
     }, ImmutableMap.of(DnsRpc.Option.FIELDS, "status"));
     batch.submit();
   }
@@ -2640,12 +2323,7 @@ public class LocalDnsHelperTest {
   @Test
   public void testListChangesBatch() {
     RpcBatch batch = RPC.createBatch();
-    batch.addListChangeRequests(ZONE_NAME1, new RpcBatch.Callback<ChangesListResponse>() {
-      @Override
-      public void onSuccess(ChangesListResponse response) {
-        fail("Zone does not exist");
-      }
-
+    batch.addListChangeRequests(ZONE_NAME1, new FailExpectedCallback<ChangesListResponse>() {
       @Override
       public void onFailure(GoogleJsonError ex) {
         // expected
@@ -2658,15 +2336,10 @@ public class LocalDnsHelperTest {
     // zone exists but has no changes bu the default
     batch = RPC.createBatch();
     RPC.create(ZONE1, EMPTY_RPC_OPTIONS);
-    batch.addListChangeRequests(ZONE_NAME1, new RpcBatch.Callback<ChangesListResponse>() {
+    batch.addListChangeRequests(ZONE_NAME1, new SuccessExpectedCallback<ChangesListResponse>() {
       @Override
       public void onSuccess(ChangesListResponse response) {
         assertEquals(1, response.getChanges().size());
-      }
-
-      @Override
-      public void onFailure(GoogleJsonError ex) {
-        fail();
       }
     }, EMPTY_RPC_OPTIONS);
     batch.submit();
@@ -2675,36 +2348,21 @@ public class LocalDnsHelperTest {
     RPC.applyChangeRequest(ZONE1.getName(), CHANGE2, EMPTY_RPC_OPTIONS);
     RPC.applyChangeRequest(ZONE1.getName(), CHANGE_KEEP, EMPTY_RPC_OPTIONS);
     batch = RPC.createBatch();
-    batch.addListChangeRequests(ZONE_NAME1, new RpcBatch.Callback<ChangesListResponse>() {
+    batch.addListChangeRequests(ZONE_NAME1, new SuccessExpectedCallback<ChangesListResponse>() {
       @Override
       public void onSuccess(ChangesListResponse response) {
         assertEquals(4, response.getChanges().size());
       }
-
-      @Override
-      public void onFailure(GoogleJsonError ex) {
-        fail();
-      }
     }, EMPTY_RPC_OPTIONS);
     // error in options
-    batch.addListChangeRequests(ZONE_NAME1, new RpcBatch.Callback<ChangesListResponse>() {
-      @Override
-      public void onSuccess(ChangesListResponse response) {
-        fail("Page size is 0");
-      }
-
+    batch.addListChangeRequests(ZONE_NAME1, new FailExpectedCallback<ChangesListResponse>() {
       @Override
       public void onFailure(GoogleJsonError ex) {
         assertEquals(400, ex.getCode());
         assertTrue(ex.getMessage().contains("parameters.maxResults"));
       }
     }, ImmutableMap.of(DnsRpc.Option.PAGE_SIZE, 0));
-    batch.addListChangeRequests(ZONE_NAME1, new RpcBatch.Callback<ChangesListResponse>() {
-      @Override
-      public void onSuccess(ChangesListResponse response) {
-        fail("Page size is negative");
-      }
-
+    batch.addListChangeRequests(ZONE_NAME1, new FailExpectedCallback<ChangesListResponse>() {
       @Override
       public void onFailure(GoogleJsonError ex) {
         assertEquals(400, ex.getCode());
@@ -2712,21 +2370,16 @@ public class LocalDnsHelperTest {
       }
     }, ImmutableMap.of(DnsRpc.Option.PAGE_SIZE, -1));
     // ok size
-    batch.addListChangeRequests(ZONE_NAME1, new RpcBatch.Callback<ChangesListResponse>() {
+    batch.addListChangeRequests(ZONE_NAME1, new SuccessExpectedCallback<ChangesListResponse>() {
       @Override
       public void onSuccess(ChangesListResponse response) {
         assertEquals(2, response.getChanges().size());
-      }
-
-      @Override
-      public void onFailure(GoogleJsonError ex) {
-        fail();
       }
     }, ImmutableMap.of(DnsRpc.Option.PAGE_SIZE, 2));
     final Iterable<Change> descending = RPC.listChangeRequests(ZONE1.getName(),
         ImmutableMap.of(DnsRpc.Option.SORTING_ORDER, "descending")).results();
     final int size = 4;
-    batch.addListChangeRequests(ZONE_NAME1, new RpcBatch.Callback<ChangesListResponse>() {
+    batch.addListChangeRequests(ZONE_NAME1, new SuccessExpectedCallback<ChangesListResponse>() {
       @Override
       public void onSuccess(ChangesListResponse response) {
         List<Change> changes = response.getChanges();
@@ -2734,13 +2387,8 @@ public class LocalDnsHelperTest {
           assertEquals(Iterables.get(descending, i), changes.get(i));
         }
       }
-
-      @Override
-      public void onFailure(GoogleJsonError ex) {
-        fail();
-      }
     }, ImmutableMap.of(DnsRpc.Option.SORTING_ORDER, "descending"));
-    batch.addListChangeRequests(ZONE_NAME1, new RpcBatch.Callback<ChangesListResponse>() {
+    batch.addListChangeRequests(ZONE_NAME1, new SuccessExpectedCallback<ChangesListResponse>() {
       @Override
       public void onSuccess(ChangesListResponse response) {
         List<Change> changes = response.getChanges();
@@ -2748,18 +2396,8 @@ public class LocalDnsHelperTest {
           assertEquals(Iterables.get(descending, i), changes.get(size - i - 1));
         }
       }
-
-      @Override
-      public void onFailure(GoogleJsonError ex) {
-        fail();
-      }
     }, ImmutableMap.of(DnsRpc.Option.SORTING_ORDER, "ascending"));
-    batch.addListChangeRequests(ZONE_NAME1, new RpcBatch.Callback<ChangesListResponse>() {
-      @Override
-      public void onSuccess(ChangesListResponse response) {
-        fail();
-      }
-
+    batch.addListChangeRequests(ZONE_NAME1, new FailExpectedCallback<ChangesListResponse>() {
       @Override
       public void onFailure(GoogleJsonError ex) {
         // expected
@@ -2771,91 +2409,71 @@ public class LocalDnsHelperTest {
     // field options
     batch = RPC.createBatch();
     RPC.applyChangeRequest(ZONE1.getName(), CHANGE_COMPLEX, EMPTY_RPC_OPTIONS);
-    batch.addListChangeRequests(ZONE1.getName(), new RpcBatch.Callback<ChangesListResponse>() {
-      @Override
-      public void onSuccess(ChangesListResponse response) {
-        Change complex = response.getChanges().get(0);
-        assertNotNull(complex.getAdditions());
-        assertNull(complex.getDeletions());
-        assertNull(complex.getId());
-        assertNull(complex.getStartTime());
-        assertNull(complex.getStatus());
-      }
-
-      @Override
-      public void onFailure(GoogleJsonError googleJsonError) {
-        fail();
-      }
-    }, ImmutableMap.of(DnsRpc.Option.FIELDS, "additions",
-        DnsRpc.Option.SORTING_ORDER, "descending"));
-    batch.addListChangeRequests(ZONE1.getName(), new RpcBatch.Callback<ChangesListResponse>() {
-      @Override
-      public void onSuccess(ChangesListResponse response) {
-        Change complex = response.getChanges().get(0);
-        assertNull(complex.getAdditions());
-        assertNotNull(complex.getDeletions());
-        assertNull(complex.getId());
-        assertNull(complex.getStartTime());
-        assertNull(complex.getStatus());
-      }
-
-      @Override
-      public void onFailure(GoogleJsonError googleJsonError) {
-        fail();
-      }
-    }, ImmutableMap.of(DnsRpc.Option.FIELDS, "deletions",
-        DnsRpc.Option.SORTING_ORDER, "descending"));
-    batch.addListChangeRequests(ZONE1.getName(), new RpcBatch.Callback<ChangesListResponse>() {
-      @Override
-      public void onSuccess(ChangesListResponse response) {
-        Change complex = response.getChanges().get(0);
-        assertNull(complex.getAdditions());
-        assertNull(complex.getDeletions());
-        assertNotNull(complex.getId());
-        assertNull(complex.getStartTime());
-        assertNull(complex.getStatus());
-      }
-
-      @Override
-      public void onFailure(GoogleJsonError googleJsonError) {
-        fail();
-      }
-    }, ImmutableMap.of(DnsRpc.Option.FIELDS, "id",
-        DnsRpc.Option.SORTING_ORDER, "descending"));
-    batch.addListChangeRequests(ZONE1.getName(), new RpcBatch.Callback<ChangesListResponse>() {
-      @Override
-      public void onSuccess(ChangesListResponse response) {
-        Change complex = response.getChanges().get(0);
-        assertNull(complex.getAdditions());
-        assertNull(complex.getDeletions());
-        assertNull(complex.getId());
-        assertNotNull(complex.getStartTime());
-        assertNull(complex.getStatus());
-      }
-
-      @Override
-      public void onFailure(GoogleJsonError googleJsonError) {
-        fail();
-      }
-    }, ImmutableMap.of(DnsRpc.Option.FIELDS, "startTime",
-        DnsRpc.Option.SORTING_ORDER, "descending"));
-    batch.addListChangeRequests(ZONE1.getName(), new RpcBatch.Callback<ChangesListResponse>() {
-      @Override
-      public void onSuccess(ChangesListResponse response) {
-        Change complex = response.getChanges().get(0);
-        assertNull(complex.getAdditions());
-        assertNull(complex.getDeletions());
-        assertNull(complex.getId());
-        assertNull(complex.getStartTime());
-        assertNotNull(complex.getStatus());
-      }
-
-      @Override
-      public void onFailure(GoogleJsonError googleJsonError) {
-        fail();
-      }
-    }, ImmutableMap.of(DnsRpc.Option.FIELDS, "status",
-        DnsRpc.Option.SORTING_ORDER, "descending"));
+    batch.addListChangeRequests(ZONE1.getName(),
+        new SuccessExpectedCallback<ChangesListResponse>() {
+          @Override
+          public void onSuccess(ChangesListResponse response) {
+            Change complex = response.getChanges().get(0);
+            assertNotNull(complex.getAdditions());
+            assertNull(complex.getDeletions());
+            assertNull(complex.getId());
+            assertNull(complex.getStartTime());
+            assertNull(complex.getStatus());
+          }
+        }, ImmutableMap.of(DnsRpc.Option.FIELDS, "additions",
+            DnsRpc.Option.SORTING_ORDER, "descending"));
+    batch.addListChangeRequests(ZONE1.getName(),
+        new SuccessExpectedCallback<ChangesListResponse>() {
+          @Override
+          public void onSuccess(ChangesListResponse response) {
+            Change complex = response.getChanges().get(0);
+            assertNull(complex.getAdditions());
+            assertNotNull(complex.getDeletions());
+            assertNull(complex.getId());
+            assertNull(complex.getStartTime());
+            assertNull(complex.getStatus());
+          }
+        }, ImmutableMap.of(DnsRpc.Option.FIELDS, "deletions",
+            DnsRpc.Option.SORTING_ORDER, "descending"));
+    batch.addListChangeRequests(ZONE1.getName(),
+        new SuccessExpectedCallback<ChangesListResponse>() {
+          @Override
+          public void onSuccess(ChangesListResponse response) {
+            Change complex = response.getChanges().get(0);
+            assertNull(complex.getAdditions());
+            assertNull(complex.getDeletions());
+            assertNotNull(complex.getId());
+            assertNull(complex.getStartTime());
+            assertNull(complex.getStatus());
+          }
+        }, ImmutableMap.of(DnsRpc.Option.FIELDS, "id",
+            DnsRpc.Option.SORTING_ORDER, "descending"));
+    batch.addListChangeRequests(ZONE1.getName(),
+        new SuccessExpectedCallback<ChangesListResponse>() {
+          @Override
+          public void onSuccess(ChangesListResponse response) {
+            Change complex = response.getChanges().get(0);
+            assertNull(complex.getAdditions());
+            assertNull(complex.getDeletions());
+            assertNull(complex.getId());
+            assertNotNull(complex.getStartTime());
+            assertNull(complex.getStatus());
+          }
+        }, ImmutableMap.of(DnsRpc.Option.FIELDS, "startTime",
+            DnsRpc.Option.SORTING_ORDER, "descending"));
+    batch.addListChangeRequests(ZONE1.getName(),
+        new SuccessExpectedCallback<ChangesListResponse>() {
+          @Override
+          public void onSuccess(ChangesListResponse response) {
+            Change complex = response.getChanges().get(0);
+            assertNull(complex.getAdditions());
+            assertNull(complex.getDeletions());
+            assertNull(complex.getId());
+            assertNull(complex.getStartTime());
+            assertNotNull(complex.getStatus());
+          }
+        }, ImmutableMap.of(DnsRpc.Option.FIELDS, "status",
+            DnsRpc.Option.SORTING_ORDER, "descending"));
     batch.submit();
   }
 
@@ -2863,63 +2481,39 @@ public class LocalDnsHelperTest {
   public void testCombined() {
     final ManagedZone created = RPC.create(ZONE1, EMPTY_RPC_OPTIONS);
     RpcBatch batch = RPC.createBatch();
-    batch.addListZones(new RpcBatch.Callback<ManagedZonesListResponse>() {
+    batch.addListZones(new SuccessExpectedCallback<ManagedZonesListResponse>() {
       @Override
       public void onSuccess(ManagedZonesListResponse response) {
         assertEquals(1, response.getManagedZones().size());
         assertEquals(created, response.getManagedZones().get(0));
       }
-
-      @Override
-      public void onFailure(GoogleJsonError googleJsonError) {
-        fail();
-      }
     }, EMPTY_RPC_OPTIONS);
-    batch.addGetZone(created.getName(), new RpcBatch.Callback<ManagedZone>() {
+    batch.addGetZone(created.getName(), new SuccessExpectedCallback<ManagedZone>() {
       @Override
       public void onSuccess(ManagedZone response) {
         assertEquals(created, response);
       }
-
-      @Override
-      public void onFailure(GoogleJsonError googleJsonError) {
-        fail();
-      }
     }, EMPTY_RPC_OPTIONS);
-    batch.addListChangeRequests(created.getName(), new RpcBatch.Callback<ChangesListResponse>() {
-      @Override
-      public void onSuccess(ChangesListResponse response) {
-        assertEquals(1, response.getChanges().size());
-        assertEquals(RPC.getChangeRequest(created.getName(), "0", EMPTY_RPC_OPTIONS),
-            response.getChanges().get(0));
-      }
-
-      @Override
-      public void onFailure(GoogleJsonError googleJsonError) {
-        fail();
-      }
-    }, EMPTY_RPC_OPTIONS);
+    batch.addListChangeRequests(created.getName(),
+        new SuccessExpectedCallback<ChangesListResponse>() {
+          @Override
+          public void onSuccess(ChangesListResponse response) {
+            assertEquals(1, response.getChanges().size());
+            assertEquals(RPC.getChangeRequest(created.getName(), "0", EMPTY_RPC_OPTIONS),
+                response.getChanges().get(0));
+          }
+        }, EMPTY_RPC_OPTIONS);
     batch.addListRecordSets(created.getName(),
-        new RpcBatch.Callback<ResourceRecordSetsListResponse>() {
+        new SuccessExpectedCallback<ResourceRecordSetsListResponse>() {
           @Override
           public void onSuccess(ResourceRecordSetsListResponse response) {
             assertEquals(2, response.getRrsets().size());
           }
-
-          @Override
-          public void onFailure(GoogleJsonError googleJsonError) {
-            fail();
-          }
         }, EMPTY_RPC_OPTIONS);
-    batch.addGetChangeRequest(created.getName(), "0", new RpcBatch.Callback<Change>() {
+    batch.addGetChangeRequest(created.getName(), "0", new SuccessExpectedCallback<Change>() {
       @Override
       public void onSuccess(Change response) {
         assertEquals(RPC.getChangeRequest(created.getName(), "0", EMPTY_RPC_OPTIONS), response);
-      }
-
-      @Override
-      public void onFailure(GoogleJsonError googleJsonError) {
-        fail();
       }
     }, EMPTY_RPC_OPTIONS);
     batch.submit();
