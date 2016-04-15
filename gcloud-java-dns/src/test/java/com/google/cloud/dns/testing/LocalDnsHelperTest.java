@@ -2913,7 +2913,7 @@ public class LocalDnsHelperTest {
     batch.addGetChangeRequest(created.getName(), "0", new RpcBatch.Callback<Change>() {
       @Override
       public void onSuccess(Change response) {
-        assertEquals(RPC.getChangeRequest(created.getName(), "0", EMPTY_RPC_OPTIONS),response);
+        assertEquals(RPC.getChangeRequest(created.getName(), "0", EMPTY_RPC_OPTIONS), response);
       }
 
       @Override

@@ -119,6 +119,15 @@ public class LocalDnsHelper {
   private static final ScheduledExecutorService EXECUTORS =
       Executors.newScheduledThreadPool(2, Executors.defaultThreadFactory());
   private static final String PROJECT_ID = "dummyprojectid";
+  private static final String responseBoundary = "____THIS_IS_HELPERS_BOUNDARY____";
+  private static final String responseSeparator = new StringBuilder("--")
+      .append(responseBoundary)
+      .append("\r\n")
+      .toString();
+  private static final String responseEnd = new StringBuilder("--")
+      .append(responseBoundary)
+      .append("--\r\n\r\n")
+      .toString();
 
   static {
     try {
@@ -356,15 +365,6 @@ public class LocalDnsHelper {
       String contentType = exchange.getRequestHeaders().getFirst("Content-type");
       if (contentType != null) {
         int port = server.getAddress().getPort();
-        String responseBoundary = "____THIS_IS_HELPERS_BOUNDARY____";
-        String responseSeparator = new StringBuilder("--")
-            .append(responseBoundary)
-            .append("\r\n")
-            .toString();
-        String responseEnd = new StringBuilder("--")
-            .append(responseBoundary)
-            .append("--\r\n\r\n")
-            .toString();
         HttpMediaType httpMediaType = new HttpMediaType(contentType);
         String boundary = httpMediaType.getParameter("boundary");
         MultipartStream multipartStream =
@@ -412,7 +412,7 @@ public class LocalDnsHelper {
           }
         }
         out.write(responseEnd.getBytes());
-        writeBatchResponse(exchange, out, responseBoundary);
+        writeBatchResponse(exchange, out);
       }
       return null;
     }
@@ -520,11 +520,10 @@ public class LocalDnsHelper {
     }
   }
 
-  private static void writeBatchResponse(HttpExchange exchange, ByteArrayOutputStream out,
-      String boundary) {
-    exchange.getResponseHeaders().set("Content-type", "multipart/mixed; boundary=" + boundary);
+  private static void writeBatchResponse(HttpExchange exchange, ByteArrayOutputStream out) {
+    exchange.getResponseHeaders().set(
+        "Content-type", "multipart/mixed; boundary=" + responseBoundary);
     try {
-      exchange.getResponseHeaders().add("Connection", "close");
       exchange.getResponseHeaders().add("Connection", "close");
       exchange.sendResponseHeaders(200, out.toByteArray().length);
       OutputStream responseBody = exchange.getResponseBody();
