@@ -1940,6 +1940,7 @@ public class LocalDnsHelperTest {
     }, EMPTY_RPC_OPTIONS);
     batch.submit();
     // some zones exists
+
     final ManagedZone first = RPC.create(ZONE1, EMPTY_RPC_OPTIONS);
     final ManagedZone second = RPC.create(ZONE2, EMPTY_RPC_OPTIONS);
     batch = RPC.createBatch();
@@ -1948,8 +1949,8 @@ public class LocalDnsHelperTest {
       public void onSuccess(ManagedZonesListResponse zones) {
         List<ManagedZone> results = zones.getManagedZones();
         assertEquals(2, results.size());
-        assertEquals(first, results.get(1));
-        assertEquals(second, results.get(0));
+        assertTrue(results.contains(first));
+        assertTrue(results.contains(second));
       }
 
       @Override
@@ -2890,7 +2891,7 @@ public class LocalDnsHelperTest {
       public void onSuccess(ChangesListResponse response) {
         assertEquals(1, response.getChanges().size());
         assertEquals(RPC.getChangeRequest(created.getName(), "0", EMPTY_RPC_OPTIONS),
-            response.getChanges().get(0).getId());
+            response.getChanges().get(0));
       }
 
       @Override
@@ -2921,5 +2922,6 @@ public class LocalDnsHelperTest {
         fail();
       }
     }, EMPTY_RPC_OPTIONS);
+    batch.submit();
   }
 }

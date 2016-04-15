@@ -47,12 +47,9 @@ import com.sun.net.httpserver.HttpServer;
 import org.apache.commons.fileupload.MultipartStream;
 import org.joda.time.format.ISODateTimeFormat;
 
-import java.io.BufferedReader;
-import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.math.BigInteger;
 import java.net.InetSocketAddress;
@@ -69,6 +66,7 @@ import java.util.Map;
 import java.util.NavigableMap;
 import java.util.NavigableSet;
 import java.util.Random;
+import java.util.Scanner;
 import java.util.Set;
 import java.util.SortedMap;
 import java.util.TreeMap;
@@ -119,15 +117,9 @@ public class LocalDnsHelper {
   private static final ScheduledExecutorService EXECUTORS =
       Executors.newScheduledThreadPool(2, Executors.defaultThreadFactory());
   private static final String PROJECT_ID = "dummyprojectid";
-  private static final String responseBoundary = "____THIS_IS_HELPERS_BOUNDARY____";
-  private static final String responseSeparator = new StringBuilder("--")
-      .append(responseBoundary)
-      .append("\r\n")
-      .toString();
-  private static final String responseEnd = new StringBuilder("--")
-      .append(responseBoundary)
-      .append("--\r\n\r\n")
-      .toString();
+  private static final String RESPONSE_BOUNDARY = "____THIS_IS_HELPERS_BOUNDARY____";
+  private static final String RESPONSE_SEPARATOR = "--" + RESPONSE_BOUNDARY + "\r\n";
+  private static final String RESPONSE_END = "--" + RESPONSE_BOUNDARY + "--\r\n\r\n";
 
   static {
     try {
@@ -333,7 +325,6 @@ public class LocalDnsHelper {
           try {
             return handleBatch(exchange);
           } catch (IOException ex) {
-            ex.printStackTrace();
             return Error.BAD_REQUEST.response(ex.getMessage());
           }
         default:
@@ -377,19 +368,22 @@ public class LocalDnsHelper {
           OutputStream socketOutput = socket.getOutputStream();
           ByteArrayOutputStream section = new ByteArrayOutputStream();
           multipartStream.readBodyData(section);
-          BufferedReader reader = new BufferedReader(
-              new InputStreamReader(new ByteArrayInputStream(section.toByteArray())));
           String line;
           String contentId = null;
-          while (!(line = reader.readLine()).isEmpty()) {
-            if (line.toLowerCase().startsWith("content-id")) {
+          Scanner scanner = new Scanner(new String(section.toByteArray()));
+          while (scanner.hasNextLine()) {
+            line = scanner.nextLine();
+            if(line.isEmpty()) {
+              break;
+            } else if (line.toLowerCase().startsWith("content-id")) {
               contentId = line.split(":")[1].trim();
             }
           }
-          String requestLine = reader.readLine();
+          String requestLine = scanner.nextLine();
           socketOutput.write((requestLine + "  \r\n").getBytes());
           socketOutput.write("Connection: close \r\n".getBytes());
-          while ((line = reader.readLine()) != null) {
+          while(scanner.hasNextLine()) {
+            line = scanner.nextLine();
             socketOutput.write(line.getBytes());
             if (!line.isEmpty()) {
               socketOutput.write(" \r\n".getBytes());
@@ -400,7 +394,7 @@ public class LocalDnsHelper {
           socketOutput.flush();
           InputStream in = socket.getInputStream();
           int length;
-          out.write(responseSeparator.getBytes());
+          out.write(RESPONSE_SEPARATOR.getBytes());
           out.write("Content-Type: application/http \r\n".getBytes());
           out.write(("Content-ID: " + contentId + " \r\n\r\n").getBytes());
           try {
@@ -411,8 +405,10 @@ public class LocalDnsHelper {
             // this handles connection reset error
           }
         }
-        out.write(responseEnd.getBytes());
+        out.write(RESPONSE_END.getBytes());
         writeBatchResponse(exchange, out);
+      } else {
+        return Error.BAD_REQUEST.response("Content-type header was not provided for batch.");
       }
       return null;
     }
@@ -520,14 +516,14 @@ public class LocalDnsHelper {
     }
   }
 
-  private static void writeBatchResponse(HttpExchange exchange, ByteArrayOutputStream out) {
+  private static void writeBatchResponse(HttpExchange exchange, ByteArrayOutputStream output) {
     exchange.getResponseHeaders().set(
-        "Content-type", "multipart/mixed; boundary=" + responseBoundary);
+        "Content-type", "multipart/mixed; boundary=" + RESPONSE_BOUNDARY);
     try {
       exchange.getResponseHeaders().add("Connection", "close");
-      exchange.sendResponseHeaders(200, out.toByteArray().length);
+      exchange.sendResponseHeaders(200, output.toByteArray().length);
       OutputStream responseBody = exchange.getResponseBody();
-      out.writeTo(responseBody);
+      output.writeTo(responseBody);
       responseBody.close();
     } catch (IOException e) {
       log.log(Level.WARNING, "IOException encountered when sending response.", e);
