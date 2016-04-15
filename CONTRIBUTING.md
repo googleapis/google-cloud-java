@@ -45,7 +45,7 @@ but new dependencies should be discussed).
 
 Adding Support for a New Service
 --------------------------------
-See [SUPPORTING_NEW_SERVICES](./SUPPORT_NEW_SERVICES.md) for guidelines on how to add a new client library to `gcloud-java`.
+See [SUPPORTING_NEW_SERVICES](./SUPPORTING_NEW_SERVICES.md) for guidelines on how to add support for a new Google Cloud service to `gcloud-java`.
 
 Coding Style
 ------------
