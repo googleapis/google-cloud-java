@@ -46,6 +46,7 @@ public class FieldSelectorHelperTest {
       return "field3";
     }
   };
+  private static final String[] FIRST_LEVEL_FIELDS = {"firstLevel1", "firstLevel2"};
   private static final List<FieldSelector> REQUIRED_FIELDS = ImmutableList.of(FIELD1, FIELD2);
   private static final String CONTAINER = "container";
 
@@ -80,5 +81,21 @@ public class FieldSelectorHelperTest {
     assertTrue(selector.contains("field4"));
     assertTrue(selector.endsWith(")"));
     assertEquals(52, selector.length());
+  }
+
+  @Test
+  public void testListSelectorWithFirstLevelFields() {
+    String selector = Helper.listSelector(FIRST_LEVEL_FIELDS, CONTAINER, REQUIRED_FIELDS,
+        new FieldSelector[]{FIELD3}, "field4");
+    assertTrue(selector.contains("firstLevel1"));
+    assertTrue(selector.contains("firstLevel2"));
+    assertTrue(selector.contains("nextPageToken"));
+    assertTrue(selector.contains("container("));
+    assertTrue(selector.contains("field1"));
+    assertTrue(selector.contains("field2"));
+    assertTrue(selector.contains("field3"));
+    assertTrue(selector.contains("field4"));
+    assertTrue(selector.endsWith(")"));
+    assertEquals(76, selector.length());
   }
 }
