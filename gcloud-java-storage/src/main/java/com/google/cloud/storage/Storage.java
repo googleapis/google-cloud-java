@@ -654,6 +654,7 @@ public interface Storage extends Service<StorageOptions> {
    */
   class BlobListOption extends Option {
 
+    private static final String[] TOP_LEVEL_FIELDS = {"prefixes"};
     private static final long serialVersionUID = 9083383524788661294L;
 
     private BlobListOption(StorageRpc.Option option, Object value) {
@@ -713,7 +714,7 @@ public interface Storage extends Service<StorageOptions> {
      */
     public static BlobListOption fields(BlobField... fields) {
       return new BlobListOption(StorageRpc.Option.FIELDS,
-          Helper.listSelector("items", BlobField.REQUIRED_FIELDS, fields));
+          Helper.listSelector(TOP_LEVEL_FIELDS, "items", BlobField.REQUIRED_FIELDS, fields));
     }
   }
 
