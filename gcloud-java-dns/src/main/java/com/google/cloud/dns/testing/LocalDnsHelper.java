@@ -20,6 +20,7 @@ import static com.google.common.net.InetAddresses.isInetAddress;
 import static java.net.HttpURLConnection.HTTP_NO_CONTENT;
 import static java.net.HttpURLConnection.HTTP_OK;
 
+import com.google.api.client.http.HttpMediaType;
 import com.google.api.client.json.JsonFactory;
 import com.google.api.client.json.jackson.JacksonFactory;
 import com.google.api.services.dns.model.Change;
@@ -43,13 +44,16 @@ import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 import com.sun.net.httpserver.HttpServer;
 
+import org.apache.commons.fileupload.MultipartStream;
 import org.joda.time.format.ISODateTimeFormat;
 
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.math.BigInteger;
 import java.net.InetSocketAddress;
+import java.net.Socket;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.nio.charset.StandardCharsets;
@@ -62,6 +66,7 @@ import java.util.Map;
 import java.util.NavigableMap;
 import java.util.NavigableSet;
 import java.util.Random;
+import java.util.Scanner;
 import java.util.Set;
 import java.util.SortedMap;
 import java.util.TreeMap;
@@ -112,6 +117,9 @@ public class LocalDnsHelper {
   private static final ScheduledExecutorService EXECUTORS =
       Executors.newScheduledThreadPool(2, Executors.defaultThreadFactory());
   private static final String PROJECT_ID = "dummyprojectid";
+  private static final String RESPONSE_BOUNDARY = "____THIS_IS_HELPERS_BOUNDARY____";
+  private static final String RESPONSE_SEPARATOR = "--" + RESPONSE_BOUNDARY + "\r\n";
+  private static final String RESPONSE_END = "--" + RESPONSE_BOUNDARY + "--\r\n\r\n";
 
   static {
     try {
@@ -138,7 +146,8 @@ public class LocalDnsHelper {
     ZONE_GET("GET", CONTEXT + "/[^/]+/managedZones/[^/]+"),
     ZONE_LIST("GET", CONTEXT + "/[^/]+/managedZones"),
     PROJECT_GET("GET", CONTEXT + "/[^/]+"),
-    RECORD_LIST("GET", CONTEXT + "/[^/]+/managedZones/[^/]+/rrsets");
+    RECORD_LIST("GET", CONTEXT + "/[^/]+/managedZones/[^/]+/rrsets"),
+    BATCH("POST", "/batch");
 
     private final String method;
     private final String pathRegex;
@@ -273,13 +282,18 @@ public class LocalDnsHelper {
   private class RequestHandler implements HttpHandler {
 
     private Response pickHandler(HttpExchange exchange, CallRegex regex) {
-      URI relative = BASE_CONTEXT.relativize(exchange.getRequestURI());
+      URI relative = null;
+      try {
+        relative = BASE_CONTEXT.relativize(new URI(exchange.getRequestURI().getRawPath()));
+      } catch (URISyntaxException e) {
+        return Error.INTERNAL_ERROR.response("Parsing URI failed.");
+      }
       String path = relative.getPath();
       String[] tokens = path.split("/");
       String projectId = tokens.length > 0 ? tokens[0] : null;
       String zoneName = tokens.length > 2 ? tokens[2] : null;
       String changeId = tokens.length > 4 ? tokens[4] : null;
-      String query = relative.getQuery();
+      String query = exchange.getRequestURI().getQuery();
       switch (regex) {
         case CHANGE_GET:
           return getChange(projectId, zoneName, changeId, query);
@@ -307,6 +321,12 @@ public class LocalDnsHelper {
           } catch (IOException ex) {
             return Error.BAD_REQUEST.response(ex.getMessage());
           }
+        case BATCH:
+          try {
+            return handleBatch(exchange);
+          } catch (IOException ex) {
+            return Error.BAD_REQUEST.response(ex.getMessage());
+          }
         default:
           return Error.INTERNAL_ERROR.response("Operation without a handler.");
       }
@@ -319,13 +339,78 @@ public class LocalDnsHelper {
       for (CallRegex regex : CallRegex.values()) {
         if (requestMethod.equals(regex.method) && rawPath.matches(regex.pathRegex)) {
           Response response = pickHandler(exchange, regex);
-          writeResponse(exchange, response);
+          if (response != null) {
+            /* null response is returned by batch request, because it handles writing
+               the response on its own */
+            writeResponse(exchange, response);
+          }
           return;
         }
       }
       writeResponse(exchange, Error.NOT_FOUND.response(String.format(
           "The url %s for %s method does not match any API call.",
           requestMethod, exchange.getRequestURI())));
+    }
+
+    private Response handleBatch(final HttpExchange exchange) throws IOException {
+      String contentType = exchange.getRequestHeaders().getFirst("Content-type");
+      if (contentType != null) {
+        int port = server.getAddress().getPort();
+        HttpMediaType httpMediaType = new HttpMediaType(contentType);
+        String boundary = httpMediaType.getParameter("boundary");
+        MultipartStream multipartStream =
+            new MultipartStream(exchange.getRequestBody(), boundary.getBytes(), 1024, null);
+        ByteArrayOutputStream out = new ByteArrayOutputStream();
+        byte[] bytes = new byte[1024];
+        multipartStream.skipPreamble();
+        while (multipartStream.readBoundary()) {
+          Socket socket = new Socket("localhost", port);
+          OutputStream socketOutput = socket.getOutputStream();
+          ByteArrayOutputStream section = new ByteArrayOutputStream();
+          multipartStream.readBodyData(section);
+          String line;
+          String contentId = null;
+          Scanner scanner = new Scanner(new String(section.toByteArray()));
+          while (scanner.hasNextLine()) {
+            line = scanner.nextLine();
+            if(line.isEmpty()) {
+              break;
+            } else if (line.toLowerCase().startsWith("content-id")) {
+              contentId = line.split(":")[1].trim();
+            }
+          }
+          String requestLine = scanner.nextLine();
+          socketOutput.write((requestLine + "  \r\n").getBytes());
+          socketOutput.write("Connection: close \r\n".getBytes());
+          while(scanner.hasNextLine()) {
+            line = scanner.nextLine();
+            socketOutput.write(line.getBytes());
+            if (!line.isEmpty()) {
+              socketOutput.write(" \r\n".getBytes());
+            } else {
+              socketOutput.write("\r\n".getBytes());
+            }
+          }
+          socketOutput.flush();
+          InputStream in = socket.getInputStream();
+          int length;
+          out.write(RESPONSE_SEPARATOR.getBytes());
+          out.write("Content-Type: application/http \r\n".getBytes());
+          out.write(("Content-ID: " + contentId + " \r\n\r\n").getBytes());
+          try {
+            while ((length = in.read(bytes)) != -1) {
+              out.write(bytes, 0, length);
+            }
+          } catch (IOException ex) {
+            // this handles connection reset error
+          }
+        }
+        out.write(RESPONSE_END.getBytes());
+        writeBatchResponse(exchange, out);
+      } else {
+        return Error.BAD_REQUEST.response("Content-type header was not provided for batch.");
+      }
+      return null;
     }
 
     /**
@@ -368,7 +453,8 @@ public class LocalDnsHelper {
     try {
       server = HttpServer.create(new InetSocketAddress(0), 0);
       port = server.getAddress().getPort();
-      server.createContext(CONTEXT, new RequestHandler());
+      server.setExecutor(Executors.newCachedThreadPool());
+      server.createContext("/", new RequestHandler());
     } catch (IOException e) {
       throw new RuntimeException("Could not bind the mock DNS server.", e);
     }
@@ -425,6 +511,20 @@ public class LocalDnsHelper {
         outputStream.write(response.body().getBytes(StandardCharsets.UTF_8));
       }
       outputStream.close();
+    } catch (IOException e) {
+      log.log(Level.WARNING, "IOException encountered when sending response.", e);
+    }
+  }
+
+  private static void writeBatchResponse(HttpExchange exchange, ByteArrayOutputStream output) {
+    exchange.getResponseHeaders().set(
+        "Content-type", "multipart/mixed; boundary=" + RESPONSE_BOUNDARY);
+    try {
+      exchange.getResponseHeaders().add("Connection", "close");
+      exchange.sendResponseHeaders(200, output.toByteArray().length);
+      OutputStream responseBody = exchange.getResponseBody();
+      output.writeTo(responseBody);
+      responseBody.close();
     } catch (IOException e) {
       log.log(Level.WARNING, "IOException encountered when sending response.", e);
     }
