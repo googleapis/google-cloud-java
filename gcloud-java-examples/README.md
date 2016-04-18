@@ -5,30 +5,30 @@ Examples for gcloud-java (Java idiomatic client for [Google Cloud Platform][clou
 
 [![Build Status](https://travis-ci.org/GoogleCloudPlatform/gcloud-java.svg?branch=master)](https://travis-ci.org/GoogleCloudPlatform/gcloud-java)
 [![Coverage Status](https://coveralls.io/repos/GoogleCloudPlatform/gcloud-java/badge.svg?branch=master)](https://coveralls.io/r/GoogleCloudPlatform/gcloud-java?branch=master)
-[![Maven](https://img.shields.io/maven-central/v/com.google.gcloud/gcloud-java-examples.svg)]( https://img.shields.io/maven-central/v/com.google.gcloud/gcloud-java-examples.svg)
+[![Maven](https://img.shields.io/maven-central/v/com.google.cloud/gcloud-java-examples.svg)]( https://img.shields.io/maven-central/v/com.google.cloud/gcloud-java-examples.svg)
 [![Codacy Badge](https://api.codacy.com/project/badge/grade/9da006ad7c3a4fe1abd142e77c003917)](https://www.codacy.com/app/mziccard/gcloud-java)
 [![Dependency Status](https://www.versioneye.com/user/projects/56bd8ee72a29ed002d2b0969/badge.svg?style=flat)](https://www.versioneye.com/user/projects/56bd8ee72a29ed002d2b0969)
 
 -  [Homepage] (https://googlecloudplatform.github.io/gcloud-java/)
--  [Examples] (http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/gcloud/examples/package-summary.html)
+-  [Examples] (http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/cloud/examples/package-summary.html)
 
 Quickstart
 ----------
 If you are using Maven, add this to your pom.xml file
 ```xml
 <dependency>
-  <groupId>com.google.gcloud</groupId>
+  <groupId>com.google.cloud</groupId>
   <artifactId>gcloud-java-examples</artifactId>
-  <version>0.1.5</version>
+  <version>0.2.0</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.gcloud:gcloud-java-examples:0.1.5'
+compile 'com.google.cloud:gcloud-java-examples:0.2.0'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.gcloud" % "gcloud-java-examples" % "0.1.5"
+libraryDependencies += "com.google.cloud" % "gcloud-java-examples" % "0.2.0"
 ```
 
 To run examples from your command line:
@@ -63,12 +63,27 @@ To run examples from your command line:
     ```
 
   * Here's an example run of `DatastoreExample`.
-  
+
     Be sure to change the placeholder project ID "your-project-id" with your own project ID. Also note that you have to enable the Google Cloud Datastore API on the [Google Developers Console][developers-console] before running the following commands.
     ```
     target/appassembler/bin/DatastoreExample your-project-id my_name add my\ comment
     target/appassembler/bin/DatastoreExample your-project-id my_name display
     target/appassembler/bin/DatastoreExample your-project-id my_name delete
+
+  * Here's an example run of `DnsExample`.
+
+    Note that you have to enable the Google Cloud DNS API on the [Google Developers Console][developers-console] before running the following commands.
+    You will need to replace the domain name `elaborateexample.com` with your own domain name with [verified ownership] (https://www.google.com/webmasters/verification/home).
+    Also, note that the example creates and deletes record sets of type A only. Operations with other record types are not implemented in the example.
+    ```
+    mvn exec:java -Dexec.mainClass="com.google.cloud.examples.dns.DnsExample" -Dexec.args="create some-sample-zone elaborateexample.com. description"
+    mvn exec:java -Dexec.mainClass="com.google.cloud.examples.dns.DnsExample" -Dexec.args="list"
+    mvn exec:java -Dexec.mainClass="com.google.cloud.examples.dns.DnsExample" -Dexec.args="list some-sample-zone records"
+    mvn exec:java -Dexec.mainClass="com.google.cloud.examples.dns.DnsExample" -Dexec.args="add-record some-sample-zone www.elaborateexample.com. 12.13.14.15 69"
+    mvn exec:java -Dexec.mainClass="com.google.cloud.examples.dns.DnsExample" -Dexec.args="get some-sample-zone"
+    mvn exec:java -Dexec.mainClass="com.google.cloud.examples.dns.DnsExample" -Dexec.args="delete-record some-sample-zone www.elaborateexample.com. 12.13.14.15 69"
+    mvn exec:java -Dexec.mainClass="com.google.cloud.examples.dns.DnsExample" -Dexec.args="list some-sample-zone changes ascending"
+    mvn exec:java -Dexec.mainClass="com.google.cloud.examples.dns.DnsExample" -Dexec.args="delete some-sample-zone"
     ```
 
   * Here's an example run of `ResourceManagerExample`.
