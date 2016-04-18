@@ -18,9 +18,9 @@ package com.google.cloud.storage.contrib.nio;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
-import com.google.common.base.MoreObjects;
 import com.google.cloud.storage.BlobInfo;
 import com.google.cloud.storage.Storage;
+import com.google.common.base.MoreObjects;
 
 import java.io.IOException;
 import java.nio.file.NoSuchFileException;

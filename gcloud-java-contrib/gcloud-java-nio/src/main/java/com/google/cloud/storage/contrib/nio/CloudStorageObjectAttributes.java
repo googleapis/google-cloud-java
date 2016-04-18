@@ -16,14 +16,14 @@
 
 package com.google.cloud.storage.contrib.nio;
 
-import static com.google.common.base.Preconditions.checkNotNull;
 import static com.google.cloud.storage.contrib.nio.CloudStorageFileSystem.FILE_TIME_UNKNOWN;
+import static com.google.common.base.Preconditions.checkNotNull;
 
+import com.google.cloud.storage.Acl;
+import com.google.cloud.storage.BlobInfo;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Optional;
 import com.google.common.collect.ImmutableMap;
-import com.google.cloud.storage.Acl;
-import com.google.cloud.storage.BlobInfo;
 
 import java.nio.file.attribute.FileTime;
 import java.util.List;

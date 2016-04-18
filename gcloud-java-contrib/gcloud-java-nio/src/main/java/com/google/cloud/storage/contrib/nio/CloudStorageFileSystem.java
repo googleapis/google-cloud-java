@@ -19,8 +19,8 @@ package com.google.cloud.storage.contrib.nio;
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 
-import com.google.common.collect.ImmutableSet;
 import com.google.cloud.storage.StorageOptions;
+import com.google.common.collect.ImmutableSet;
 
 import java.io.IOException;
 import java.net.URI;

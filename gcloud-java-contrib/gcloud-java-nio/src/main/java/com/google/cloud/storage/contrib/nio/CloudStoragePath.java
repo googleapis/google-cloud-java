@@ -19,8 +19,8 @@ package com.google.cloud.storage.contrib.nio;
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 
-import com.google.common.collect.UnmodifiableIterator;
 import com.google.cloud.storage.BlobId;
+import com.google.common.collect.UnmodifiableIterator;
 
 import java.io.File;
 import java.net.URI;
