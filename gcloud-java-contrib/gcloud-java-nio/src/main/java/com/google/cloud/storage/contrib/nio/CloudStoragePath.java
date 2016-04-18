@@ -16,8 +16,6 @@
 
 package com.google.cloud.storage.contrib.nio;
 
-import static com.google.cloud.storage.contrib.nio.CloudStorageUtil.checkNotNullArray;
-import static com.google.cloud.storage.contrib.nio.CloudStorageUtil.checkPath;
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 
@@ -125,7 +123,7 @@ public final class CloudStoragePath implements Path {
    */
   @Override
   public CloudStoragePath toRealPath(LinkOption... options) {
-    checkNotNullArray(options);
+    CloudStorageUtil.checkNotNullArray(options);
     return newPath(toRealPathInternal(true));
   }
 
@@ -155,7 +153,7 @@ public final class CloudStoragePath implements Path {
 
   @Override
   public CloudStoragePath resolve(Path object) {
-    return newPath(path.resolve(checkPath(object).path));
+    return newPath(path.resolve(CloudStorageUtil.checkPath(object).path));
   }
 
   @Override
@@ -165,7 +163,7 @@ public final class CloudStoragePath implements Path {
 
   @Override
   public CloudStoragePath resolveSibling(Path other) {
-    return newPath(path.resolveSibling(checkPath(other).path));
+    return newPath(path.resolveSibling(CloudStorageUtil.checkPath(other).path));
   }
 
   @Override
@@ -175,7 +173,7 @@ public final class CloudStoragePath implements Path {
 
   @Override
   public CloudStoragePath relativize(Path object) {
-    return newPath(path.relativize(checkPath(object).path));
+    return newPath(path.relativize(CloudStorageUtil.checkPath(object).path));
   }
 
   @Nullable

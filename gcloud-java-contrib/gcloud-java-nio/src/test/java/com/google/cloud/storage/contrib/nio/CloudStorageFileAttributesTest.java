@@ -16,12 +16,6 @@
 
 package com.google.cloud.storage.contrib.nio;
 
-import static com.google.cloud.storage.contrib.nio.CloudStorageOptions.withAcl;
-import static com.google.cloud.storage.contrib.nio.CloudStorageOptions.withCacheControl;
-import static com.google.cloud.storage.contrib.nio.CloudStorageOptions.withContentDisposition;
-import static com.google.cloud.storage.contrib.nio.CloudStorageOptions.withContentEncoding;
-import static com.google.cloud.storage.contrib.nio.CloudStorageOptions.withMimeType;
-import static com.google.cloud.storage.contrib.nio.CloudStorageOptions.withUserMetadata;
 import static com.google.common.truth.Truth.assertThat;
 import static java.nio.charset.StandardCharsets.UTF_8;
 
@@ -61,14 +55,14 @@ public class CloudStorageFileAttributesTest {
 
   @Test
   public void testCacheControl() throws IOException {
-    Files.write(path, HAPPY, withCacheControl("potato"));
+    Files.write(path, HAPPY, CloudStorageOptions.withCacheControl("potato"));
     assertThat(Files.readAttributes(path, CloudStorageFileAttributes.class).cacheControl().get())
         .isEqualTo("potato");
   }
 
   @Test
   public void testMimeType() throws IOException {
-    Files.write(path, HAPPY, withMimeType("text/potato"));
+    Files.write(path, HAPPY, CloudStorageOptions.withMimeType("text/potato"));
     assertThat(Files.readAttributes(path, CloudStorageFileAttributes.class).mimeType().get())
         .isEqualTo("text/potato");
   }
@@ -76,14 +70,14 @@ public class CloudStorageFileAttributesTest {
   @Test
   public void testAcl() throws IOException {
     Acl acl = Acl.of(new Acl.User("serf@example.com"), Acl.Role.READER);
-    Files.write(path, HAPPY, withAcl(acl));
+    Files.write(path, HAPPY, CloudStorageOptions.withAcl(acl));
     assertThat(Files.readAttributes(path, CloudStorageFileAttributes.class).acl().get())
         .contains(acl);
   }
 
   @Test
   public void testContentDisposition() throws IOException {
-    Files.write(path, HAPPY, withContentDisposition("crash call"));
+    Files.write(path, HAPPY, CloudStorageOptions.withContentDisposition("crash call"));
     assertThat(
             Files.readAttributes(path, CloudStorageFileAttributes.class).contentDisposition().get())
         .isEqualTo("crash call");
@@ -91,14 +85,14 @@ public class CloudStorageFileAttributesTest {
 
   @Test
   public void testContentEncoding() throws IOException {
-    Files.write(path, HAPPY, withContentEncoding("my content encoding"));
+    Files.write(path, HAPPY, CloudStorageOptions.withContentEncoding("my content encoding"));
     assertThat(Files.readAttributes(path, CloudStorageFileAttributes.class).contentEncoding().get())
         .isEqualTo("my content encoding");
   }
 
   @Test
   public void testUserMetadata() throws IOException {
-    Files.write(path, HAPPY, withUserMetadata("green", "bean"));
+    Files.write(path, HAPPY, CloudStorageOptions.withUserMetadata("green", "bean"));
     assertThat(
             Files.readAttributes(path, CloudStorageFileAttributes.class)
                 .userMetadata()
@@ -141,10 +135,10 @@ public class CloudStorageFileAttributesTest {
 
   @Test
   public void testEquals_equalsTester() throws IOException {
-    Files.write(path, HAPPY, withMimeType("text/plain"));
+    Files.write(path, HAPPY, CloudStorageOptions.withMimeType("text/plain"));
     CloudStorageFileAttributes a1 = Files.readAttributes(path, CloudStorageFileAttributes.class);
     CloudStorageFileAttributes a2 = Files.readAttributes(path, CloudStorageFileAttributes.class);
-    Files.write(path, HAPPY, withMimeType("text/potato"));
+    Files.write(path, HAPPY, CloudStorageOptions.withMimeType("text/potato"));
     CloudStorageFileAttributes b1 = Files.readAttributes(path, CloudStorageFileAttributes.class);
     CloudStorageFileAttributes b2 = Files.readAttributes(path, CloudStorageFileAttributes.class);
     new EqualsTester().addEqualityGroup(a1, a2).addEqualityGroup(b1, b2).testEquals();
@@ -152,9 +146,9 @@ public class CloudStorageFileAttributesTest {
 
   @Test
   public void testFilekey() throws IOException {
-    Files.write(path, HAPPY, withMimeType("text/plain"));
+    Files.write(path, HAPPY, CloudStorageOptions.withMimeType("text/plain"));
     Path path2 = Paths.get(URI.create("gs://bucket/anotherrandompath"));
-    Files.write(path2, HAPPY, withMimeType("text/plain"));
+    Files.write(path2, HAPPY, CloudStorageOptions.withMimeType("text/plain"));
 
     // diff files cannot have same filekey
     CloudStorageFileAttributes a1 = Files.readAttributes(path, CloudStorageFileAttributes.class);

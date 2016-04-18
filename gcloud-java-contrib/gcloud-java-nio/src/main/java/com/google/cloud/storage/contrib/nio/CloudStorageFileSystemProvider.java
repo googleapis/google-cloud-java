@@ -16,10 +16,6 @@
 
 package com.google.cloud.storage.contrib.nio;
 
-import static com.google.cloud.storage.contrib.nio.CloudStorageUtil.checkBucket;
-import static com.google.cloud.storage.contrib.nio.CloudStorageUtil.checkNotNullArray;
-import static com.google.cloud.storage.contrib.nio.CloudStorageUtil.checkPath;
-import static com.google.cloud.storage.contrib.nio.CloudStorageUtil.stripPathFromUri;
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 import static com.google.common.base.Strings.isNullOrEmpty;
@@ -71,6 +67,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
+
 import javax.annotation.Nullable;
 import javax.annotation.concurrent.ThreadSafe;
 
@@ -173,20 +170,20 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
             && isNullOrEmpty(uri.getUserInfo()),
         "GCS FileSystem URIs mustn't have: port, userinfo, path, query, or fragment: %s",
         uri);
-    checkBucket(uri.getHost());
+    CloudStorageUtil.checkBucket(uri.getHost());
     return new CloudStorageFileSystem(this, uri.getHost(), CloudStorageConfiguration.fromMap(env));
   }
 
   @Override
   public CloudStoragePath getPath(URI uri) {
-    return CloudStoragePath.getPath(getFileSystem(stripPathFromUri(uri)), uri.getPath());
+    return CloudStoragePath.getPath(getFileSystem(CloudStorageUtil.stripPathFromUri(uri)), uri.getPath());
   }
 
   @Override
   public SeekableByteChannel newByteChannel(
       Path path, Set<? extends OpenOption> options, FileAttribute<?>... attrs) throws IOException {
     checkNotNull(path);
-    checkNotNullArray(attrs);
+    CloudStorageUtil.checkNotNullArray(attrs);
     if (options.contains(StandardOpenOption.WRITE)) {
       // TODO: Make our OpenOptions implement FileAttribute. Also remove buffer option.
       return newWriteChannel(path, options);
@@ -222,7 +219,7 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
         throw new UnsupportedOperationException(option.toString());
       }
     }
-    CloudStoragePath cloudPath = checkPath(path);
+    CloudStoragePath cloudPath = CloudStorageUtil.checkPath(path);
     if (cloudPath.seemsLikeADirectoryAndUsePseudoDirectories()) {
       throw new CloudStoragePseudoDirectoryException(cloudPath);
     }
@@ -232,7 +229,7 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
   private SeekableByteChannel newWriteChannel(Path path, Set<? extends OpenOption> options)
       throws IOException {
 
-    CloudStoragePath cloudPath = checkPath(path);
+    CloudStoragePath cloudPath = CloudStorageUtil.checkPath(path);
     if (cloudPath.seemsLikeADirectoryAndUsePseudoDirectories()) {
       throw new CloudStoragePseudoDirectoryException(cloudPath);
     }
@@ -306,7 +303,7 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
   @Override
   public InputStream newInputStream(Path path, OpenOption... options) throws IOException {
     InputStream result = super.newInputStream(path, options);
-    CloudStoragePath cloudPath = checkPath(path);
+    CloudStoragePath cloudPath = CloudStorageUtil.checkPath(path);
     int blockSize = cloudPath.getFileSystem().config().blockSize();
     for (OpenOption option : options) {
       if (option instanceof OptionBlockSize) {
@@ -318,7 +315,7 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
 
   @Override
   public boolean deleteIfExists(Path path) throws IOException {
-    CloudStoragePath cloudPath = checkPath(path);
+    CloudStoragePath cloudPath = CloudStorageUtil.checkPath(path);
     if (cloudPath.seemsLikeADirectoryAndUsePseudoDirectories()) {
       throw new CloudStoragePseudoDirectoryException(cloudPath);
     }
@@ -327,7 +324,7 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
 
   @Override
   public void delete(Path path) throws IOException {
-    CloudStoragePath cloudPath = checkPath(path);
+    CloudStoragePath cloudPath = CloudStorageUtil.checkPath(path);
     if (!deleteIfExists(cloudPath)) {
       throw new NoSuchFileException(cloudPath.toString());
     }
@@ -356,7 +353,7 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
     boolean setContentEncoding = false;
     boolean setContentDisposition = false;
 
-    CloudStoragePath toPath = checkPath(target);
+    CloudStoragePath toPath = CloudStorageUtil.checkPath(target);
     BlobInfo.Builder tgtInfoBuilder = BlobInfo.builder(toPath.getBlobId()).contentType("");
 
     int blockSize = -1;
@@ -397,7 +394,7 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
       }
     }
 
-    CloudStoragePath fromPath = checkPath(source);
+    CloudStoragePath fromPath = CloudStorageUtil.checkPath(source);
 
     blockSize =
         blockSize != -1
@@ -465,7 +462,7 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
 
   @Override
   public boolean isSameFile(Path path, Path path2) {
-    return checkPath(path).equals(checkPath(path2));
+    return CloudStorageUtil.checkPath(path).equals(CloudStorageUtil.checkPath(path2));
   }
 
   /**
@@ -473,7 +470,7 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
    */
   @Override
   public boolean isHidden(Path path) {
-    checkPath(path);
+    CloudStorageUtil.checkPath(path);
     return false;
   }
 
@@ -489,7 +486,7 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
           throw new UnsupportedOperationException(mode.toString());
       }
     }
-    CloudStoragePath cloudPath = checkPath(path);
+    CloudStoragePath cloudPath = CloudStorageUtil.checkPath(path);
     if (cloudPath.seemsLikeADirectoryAndUsePseudoDirectories()) {
       return;
     }
@@ -503,11 +500,11 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
   public <A extends BasicFileAttributes> A readAttributes(
       Path path, Class<A> type, LinkOption... options) throws IOException {
     checkNotNull(type);
-    checkNotNullArray(options);
+    CloudStorageUtil.checkNotNullArray(options);
     if (type != CloudStorageFileAttributes.class && type != BasicFileAttributes.class) {
       throw new UnsupportedOperationException(type.getSimpleName());
     }
-    CloudStoragePath cloudPath = checkPath(path);
+    CloudStoragePath cloudPath = CloudStorageUtil.checkPath(path);
     if (cloudPath.seemsLikeADirectoryAndUsePseudoDirectories()) {
       @SuppressWarnings("unchecked")
       A result = (A) new CloudStoragePseudoDirectoryAttributes(cloudPath);
@@ -538,11 +535,11 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
   public <V extends FileAttributeView> V getFileAttributeView(
       Path path, Class<V> type, LinkOption... options) {
     checkNotNull(type);
-    checkNotNullArray(options);
+    CloudStorageUtil.checkNotNullArray(options);
     if (type != CloudStorageFileAttributeView.class && type != BasicFileAttributeView.class) {
       throw new UnsupportedOperationException(type.getSimpleName());
     }
-    CloudStoragePath cloudPath = checkPath(path);
+    CloudStoragePath cloudPath = CloudStorageUtil.checkPath(path);
     @SuppressWarnings("unchecked")
     V result = (V) new CloudStorageFileAttributeView(storage, cloudPath);
     return result;
@@ -553,13 +550,13 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
    */
   @Override
   public void createDirectory(Path dir, FileAttribute<?>... attrs) {
-    checkPath(dir);
-    checkNotNullArray(attrs);
+    CloudStorageUtil.checkPath(dir);
+    CloudStorageUtil.checkNotNullArray(attrs);
   }
 
   @Override
   public DirectoryStream<Path> newDirectoryStream(Path dir, final Filter<? super Path> filter) {
-    final CloudStoragePath cloudPath = checkPath(dir);
+    final CloudStoragePath cloudPath = CloudStorageUtil.checkPath(dir);
     checkNotNull(filter);
     String prefix = cloudPath.toString();
     final Iterator<Blob> blobIterator = storage.list(cloudPath.bucket(), Storage.BlobListOption.prefix(prefix), Storage.BlobListOption.fields()).iterateAll();

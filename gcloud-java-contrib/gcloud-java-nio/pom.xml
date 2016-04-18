@@ -102,18 +102,18 @@
           <relocations>
             <relocation>
               <pattern>com</pattern>
-              <shadedPattern>shaded.gcloud-nio.com</shadedPattern>
+              <shadedPattern>shaded.cloud-nio.com</shadedPattern>
               <excludes>
-                <exclude>com.google.gcloud.**</exclude>
+                <exclude>com.google.cloud.**</exclude>
               </excludes>
             </relocation>
             <relocation>
               <pattern>org</pattern>
-              <shadedPattern>shaded.gcloud-nio.org</shadedPattern>
+              <shadedPattern>shaded.cloud-nio.org</shadedPattern>
             </relocation>
             <relocation>
               <pattern>google</pattern>
-              <shadedPattern>shaded.gcloud-nio.google</shadedPattern>
+              <shadedPattern>shaded.cloud-nio.google</shadedPattern>
             </relocation>
           </relocations>
         </configuration>

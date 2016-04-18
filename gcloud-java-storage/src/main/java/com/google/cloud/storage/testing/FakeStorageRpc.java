@@ -18,11 +18,10 @@ package com.google.cloud.storage.testing;
 
 import com.google.api.services.storage.model.Bucket;
 import com.google.api.services.storage.model.StorageObject;
-import com.google.cloud.storage.StorageBatch;
-import com.google.cloud.storage.spi.RpcBatch;
-import com.google.cloud.storage.spi.StorageRpc;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageException;
+import com.google.cloud.storage.spi.RpcBatch;
+import com.google.cloud.storage.spi.StorageRpc;
 
 import java.io.IOException;
 import java.io.InputStream;

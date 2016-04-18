@@ -19,9 +19,9 @@ package com.google.cloud.storage.contrib.nio;
 import static com.google.common.truth.Truth.assertThat;
 import static java.nio.charset.StandardCharsets.UTF_8;
 
+import com.google.cloud.storage.testing.LocalGcsHelper;
 import com.google.common.testing.EqualsTester;
 import com.google.common.testing.NullPointerTester;
-import com.google.cloud.storage.testing.LocalGcsHelper;
 
 import org.junit.Before;
 import org.junit.Test;

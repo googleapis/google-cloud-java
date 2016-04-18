@@ -52,25 +52,25 @@
         <configuration>
           <programs>
             <program>
-              <mainClass>com.google.gcloud.examples.bigquery.BigQueryExample</mainClass>
+              <mainClass>com.google.cloud.examples.bigquery.BigQueryExample</mainClass>
               <name>BigQueryExample</name>
             </program>
             <program>
-              <mainClass>com.google.gcloud.examples.datastore.DatastoreExample</mainClass>
+              <mainClass>com.google.cloud.examples.datastore.DatastoreExample</mainClass>
               <name>DatastoreExample</name>
             </program>
             <program>
-              <mainClass>com.google.gcloud.examples.nio.Stat</mainClass>
+              <mainClass>com.google.cloud.examples.nio.Stat</mainClass>
               <name>Stat</name>
             </program>
             <program>
               <mainClass>
-                com.google.gcloud.examples.resourcemanager.ResourceManagerExample
+                com.google.cloud.examples.resourcemanager.ResourceManagerExample
               </mainClass>
               <name>ResourceManagerExample</name>
             </program>
             <program>
-              <mainClass>com.google.gcloud.examples.storage.StorageExample</mainClass>
+              <mainClass>com.google.cloud.examples.storage.StorageExample</mainClass>
               <name>StorageExample</name>
             </program>
           </programs>

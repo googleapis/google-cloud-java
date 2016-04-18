@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.gcloud.nio.examples;
+package com.google.cloud.nio.examples;
 
 import java.io.IOException;
 import java.net.URI;

@@ -16,8 +16,6 @@
 
 package com.google.cloud.storage.contrib.nio;
 
-import static com.google.cloud.storage.contrib.nio.CloudStorageFileSystem.FILE_TIME_UNKNOWN;
-
 import com.google.cloud.storage.Acl;
 import com.google.common.base.Optional;
 import com.google.common.collect.ImmutableMap;
@@ -68,17 +66,17 @@ final class CloudStoragePseudoDirectoryAttributes implements CloudStorageFileAtt
 
   @Override
   public FileTime lastModifiedTime() {
-    return FILE_TIME_UNKNOWN;
+    return CloudStorageFileSystem.FILE_TIME_UNKNOWN;
   }
 
   @Override
   public FileTime creationTime() {
-    return FILE_TIME_UNKNOWN;
+    return CloudStorageFileSystem.FILE_TIME_UNKNOWN;
   }
 
   @Override
   public FileTime lastAccessTime() {
-    return FILE_TIME_UNKNOWN;
+    return CloudStorageFileSystem.FILE_TIME_UNKNOWN;
   }
 
   @Override

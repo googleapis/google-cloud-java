@@ -17,11 +17,6 @@
 package com.google.cloud.storage.contrib.nio;
 
 import static com.google.cloud.storage.contrib.nio.CloudStorageFileSystem.forBucket;
-import static com.google.cloud.storage.contrib.nio.CloudStorageOptions.withCacheControl;
-import static com.google.cloud.storage.contrib.nio.CloudStorageOptions.withContentDisposition;
-import static com.google.cloud.storage.contrib.nio.CloudStorageOptions.withContentEncoding;
-import static com.google.cloud.storage.contrib.nio.CloudStorageOptions.withMimeType;
-import static com.google.cloud.storage.contrib.nio.CloudStorageOptions.withUserMetadata;
 import static com.google.common.truth.Truth.assertThat;
 import static java.nio.charset.StandardCharsets.UTF_8;
 import static java.nio.file.StandardCopyOption.ATOMIC_MOVE;
@@ -565,11 +560,11 @@ public class CloudStorageFileSystemProviderTest {
     Files.write(
         source,
         "(✿◕ ‿◕ )ノ".getBytes(UTF_8),
-        withMimeType("text/lolcat"),
-        withCacheControl("public; max-age=666"),
-        withContentEncoding("foobar"),
-        withContentDisposition("my-content-disposition"),
-        withUserMetadata("answer", "42"));
+        CloudStorageOptions.withMimeType("text/lolcat"),
+        CloudStorageOptions.withCacheControl("public; max-age=666"),
+        CloudStorageOptions.withContentEncoding("foobar"),
+        CloudStorageOptions.withContentDisposition("my-content-disposition"),
+        CloudStorageOptions.withUserMetadata("answer", "42"));
     Files.copy(source, target, COPY_ATTRIBUTES);
 
     CloudStorageFileAttributes attributes =
@@ -589,9 +584,9 @@ public class CloudStorageFileSystemProviderTest {
     Files.write(
         source,
         "(✿◕ ‿◕ )ノ".getBytes(UTF_8),
-        withMimeType("text/lolcat"),
-        withCacheControl("public; max-age=666"),
-        withUserMetadata("answer", "42"));
+        CloudStorageOptions.withMimeType("text/lolcat"),
+        CloudStorageOptions.withCacheControl("public; max-age=666"),
+        CloudStorageOptions.withUserMetadata("answer", "42"));
     Files.copy(source, target);
 
     CloudStorageFileAttributes attributes =
@@ -611,10 +606,10 @@ public class CloudStorageFileSystemProviderTest {
     Files.write(
         source,
         "(✿◕ ‿◕ )ノ".getBytes(UTF_8),
-        withMimeType("text/lolcat"),
-        withCacheControl("public; max-age=666"));
+        CloudStorageOptions.withMimeType("text/lolcat"),
+        CloudStorageOptions.withCacheControl("public; max-age=666"));
     Files.copy(source, target1, COPY_ATTRIBUTES);
-    Files.copy(source, target2, COPY_ATTRIBUTES, withMimeType("text/palfun"));
+    Files.copy(source, target2, COPY_ATTRIBUTES, CloudStorageOptions.withMimeType("text/palfun"));
 
     CloudStorageFileAttributes attributes =
         Files.readAttributes(target1, CloudStorageFileAttributes.class);
