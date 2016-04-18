@@ -570,6 +570,20 @@ public class LocalDatastoreHelper {
   }
 
   /**
+   * Returns a {@link DatastoreOptions} instance that sets the host to use the Datastore emulator on
+   * localhost. The default namespace is set to {@code namespace}.
+   */
+  public DatastoreOptions options(String namespace) {
+    return DatastoreOptions.builder()
+        .projectId(projectId)
+        .host("localhost:" + Integer.toString(port))
+        .authCredentials(AuthCredentials.noAuth())
+        .retryParams(RetryParams.noRetries())
+        .namespace(namespace)
+        .build();
+  }
+
+  /**
    * Returns the project ID associated with this local Datastore emulator.
    */
   public String projectId() {
