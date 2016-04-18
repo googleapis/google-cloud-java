@@ -562,7 +562,13 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
     final CloudStoragePath cloudPath = CloudStorageUtil.checkPath(dir);
     checkNotNull(filter);
     String prefix = cloudPath.toString();
-    final Iterator<Blob> blobIterator = storage.list(cloudPath.bucket(), Storage.BlobListOption.prefix(prefix), Storage.BlobListOption.fields()).iterateAll();
+    final Iterator<Blob> blobIterator = storage.list(
+        cloudPath.bucket(),
+        Storage.BlobListOption.prefix(prefix),
+        Storage.BlobListOption.currentDirectory()
+        // this breaks the listing (bug?)
+        //Storage.BlobListOption.fields()
+        ).iterateAll();
     return new DirectoryStream<Path>() {
       @Override
       public Iterator<Path> iterator() {
