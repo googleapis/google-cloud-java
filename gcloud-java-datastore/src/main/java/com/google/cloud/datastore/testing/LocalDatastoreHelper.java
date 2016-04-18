@@ -556,17 +556,28 @@ public class LocalDatastoreHelper {
     }
   }
 
+  private DatastoreOptions.Builder optionsBuilder() {
+    return DatastoreOptions.builder()
+        .projectId(projectId)
+        .host("localhost:" + Integer.toString(port))
+        .authCredentials(AuthCredentials.noAuth())
+        .retryParams(RetryParams.noRetries());
+  }
+
   /**
    * Returns a {@link DatastoreOptions} instance that sets the host to use the Datastore emulator on
    * localhost.
    */
   public DatastoreOptions options() {
-    return DatastoreOptions.builder()
-        .projectId(projectId)
-        .host("localhost:" + Integer.toString(port))
-        .authCredentials(AuthCredentials.noAuth())
-        .retryParams(RetryParams.noRetries())
-        .build();
+    return optionsBuilder().build();
+  }
+
+  /**
+   * Returns a {@link DatastoreOptions} instance that sets the host to use the Datastore emulator on
+   * localhost. The default namespace is set to {@code namespace}.
+   */
+  public DatastoreOptions options(String namespace) {
+    return optionsBuilder().namespace(namespace).build();
   }
 
   /**
