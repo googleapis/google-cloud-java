@@ -329,7 +329,7 @@ public class FakeStorageRpc implements StorageRpc {
   }
   
   // Returns true if this is a folder. Adds it to folders if it isn't already there.
-  private boolean processedAsFolder(StorageObject so, String delimiter, String prefix, /* inout */ Map<String, StorageObject> folders) {
+  private static boolean processedAsFolder(StorageObject so, String delimiter, String prefix, /* inout */ Map<String, StorageObject> folders) {
     if (delimiter == null) {
       return false;
     }

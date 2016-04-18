@@ -565,9 +565,8 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
     final Iterator<Blob> blobIterator = storage.list(
         cloudPath.bucket(),
         Storage.BlobListOption.prefix(prefix),
-        Storage.BlobListOption.currentDirectory()
-        // this breaks the listing (bug?)
-        //Storage.BlobListOption.fields()
+        Storage.BlobListOption.currentDirectory(),
+        Storage.BlobListOption.fields()
         ).iterateAll();
     return new DirectoryStream<Path>() {
       @Override
