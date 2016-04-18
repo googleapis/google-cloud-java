@@ -28,6 +28,7 @@ import com.google.api.services.dns.model.ManagedZone;
 import com.google.api.services.dns.model.Project;
 import com.google.api.services.dns.model.Quota;
 import com.google.api.services.dns.model.ResourceRecordSet;
+import com.google.cloud.AuthCredentials;
 import com.google.cloud.dns.DnsOptions;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Joiner;
@@ -38,7 +39,6 @@ import com.google.common.collect.ImmutableSortedMap;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
 import com.google.common.io.ByteStreams;
-
 import com.sun.net.httpserver.Headers;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
@@ -282,18 +282,13 @@ public class LocalDnsHelper {
   private class RequestHandler implements HttpHandler {
 
     private Response pickHandler(HttpExchange exchange, CallRegex regex) {
-      URI relative = null;
-      try {
-        relative = BASE_CONTEXT.relativize(new URI(exchange.getRequestURI().getRawPath()));
-      } catch (URISyntaxException e) {
-        return Error.INTERNAL_ERROR.response("Parsing URI failed.");
-      }
+      URI relative = BASE_CONTEXT.relativize(exchange.getRequestURI());
       String path = relative.getPath();
       String[] tokens = path.split("/");
       String projectId = tokens.length > 0 ? tokens[0] : null;
       String zoneName = tokens.length > 2 ? tokens[2] : null;
       String changeId = tokens.length > 4 ? tokens[4] : null;
-      String query = exchange.getRequestURI().getQuery();
+      String query = relative.getQuery();
       switch (regex) {
         case CHANGE_GET:
           return getChange(projectId, zoneName, changeId, query);
@@ -324,7 +319,7 @@ public class LocalDnsHelper {
         case BATCH:
           try {
             return handleBatch(exchange);
-          } catch (IOException ex) {
+          } catch (IOException | URISyntaxException ex) {
             return Error.BAD_REQUEST.response(ex.getMessage());
           }
         default:
@@ -352,58 +347,75 @@ public class LocalDnsHelper {
           requestMethod, exchange.getRequestURI())));
     }
 
-    private Response handleBatch(final HttpExchange exchange) throws IOException {
+    private Response handleBatch(final HttpExchange exchange) throws IOException,
+        URISyntaxException {
       String contentType = exchange.getRequestHeaders().getFirst("Content-type");
       if (contentType != null) {
-        int port = server.getAddress().getPort();
         HttpMediaType httpMediaType = new HttpMediaType(contentType);
         String boundary = httpMediaType.getParameter("boundary");
         MultipartStream multipartStream =
             new MultipartStream(exchange.getRequestBody(), boundary.getBytes(), 1024, null);
         ByteArrayOutputStream out = new ByteArrayOutputStream();
         byte[] bytes = new byte[1024];
-        multipartStream.skipPreamble();
-        while (multipartStream.readBoundary()) {
-          Socket socket = new Socket("localhost", port);
-          OutputStream socketOutput = socket.getOutputStream();
-          ByteArrayOutputStream section = new ByteArrayOutputStream();
-          multipartStream.readBodyData(section);
+        boolean nextPart = multipartStream.skipPreamble();
+        while (nextPart) {
           String line;
           String contentId = null;
-          Scanner scanner = new Scanner(new String(section.toByteArray()));
+          String headers = multipartStream.readHeaders();
+          Scanner scanner = new Scanner(headers);
           while (scanner.hasNextLine()) {
             line = scanner.nextLine();
-            if(line.isEmpty()) {
-              break;
-            } else if (line.toLowerCase().startsWith("content-id")) {
+            if (line.toLowerCase().startsWith("content-id")) {
               contentId = line.split(":")[1].trim();
             }
           }
-          String requestLine = scanner.nextLine();
-          socketOutput.write((requestLine + "  \r\n").getBytes());
-          socketOutput.write("Connection: close \r\n".getBytes());
-          while(scanner.hasNextLine()) {
-            line = scanner.nextLine();
-            socketOutput.write(line.getBytes());
-            if (!line.isEmpty()) {
-              socketOutput.write(" \r\n".getBytes());
-            } else {
-              socketOutput.write("\r\n".getBytes());
+          // TODO: remove and write directly to socket once api client provides a complete
+          // location line (e.g. GET /aaa/bbb HTTP/1.0)
+          // and uses a request path for location instead of a complete URL.
+          ByteArrayOutputStream bouts = new ByteArrayOutputStream();
+          multipartStream.readBodyData(bouts);
+          byte[] contentBytes = bouts.toByteArray();
+          int indexOfCr = -1;
+          for (int i = 0; i < contentBytes.length; i++) {
+            if (contentBytes[i] == '\r') {
+              indexOfCr = i;
+              break;
             }
+          }
+          Socket socket = new Socket("127.0.0.1", server.getAddress().getPort());
+          OutputStream socketOutput = socket.getOutputStream();
+          InputStream socketInput = socket.getInputStream();
+          //multipartStream.readBodyData(socketOutput);
+          if (indexOfCr < 0) {
+            socketOutput.write(contentBytes);
+          } else {
+            String[] requestLine =
+                new String(contentBytes, 0, indexOfCr, StandardCharsets.UTF_8).split(" ");
+            socketOutput.write(requestLine[0].getBytes());
+            socketOutput.write(' ');
+            URI uri = new URI(requestLine[1]);
+            socketOutput.write(uri.getRawPath().getBytes());
+            if (uri.getRawQuery() != null) {
+              socketOutput.write('?');
+              socketOutput.write(uri.getRawQuery().getBytes());
+            }
+            if (uri.getRawFragment() != null) {
+              socketOutput.write('#');
+              socketOutput.write(uri.getRawFragment().getBytes());
+            }
+            socketOutput.write(" HTTP/1.0".getBytes());
+            socketOutput.write(contentBytes, indexOfCr, contentBytes.length - indexOfCr);
           }
           socketOutput.flush();
-          InputStream in = socket.getInputStream();
-          int length;
           out.write(RESPONSE_SEPARATOR.getBytes());
-          out.write("Content-Type: application/http \r\n".getBytes());
-          out.write(("Content-ID: " + contentId + " \r\n\r\n").getBytes());
-          try {
-            while ((length = in.read(bytes)) != -1) {
-              out.write(bytes, 0, length);
-            }
-          } catch (IOException ex) {
-            // this handles connection reset error
+          out.write("Content-Type: application/http\r\n".getBytes());
+          out.write(("Content-ID: " + contentId + "\r\n\r\n").getBytes());
+          int length;
+          while ((length = socketInput.read(bytes)) != -1) {
+            out.write(bytes, 0, length);
           }
+          socket.close();
+          nextPart = multipartStream.skipPreamble();
         }
         out.write(RESPONSE_END.getBytes());
         writeBatchResponse(exchange, out);
@@ -483,7 +495,11 @@ public class LocalDnsHelper {
    * Returns a {@link DnsOptions} instance that sets the host to use the mock server.
    */
   public DnsOptions options() {
-    return DnsOptions.builder().projectId(PROJECT_ID).host("http://localhost:" + port).build();
+    return DnsOptions.builder()
+        .projectId(PROJECT_ID)
+        .host("http://localhost:" + port)
+        .authCredentials(AuthCredentials.noAuth())
+        .build();
   }
 
   /**
