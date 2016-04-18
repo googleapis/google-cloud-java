@@ -60,20 +60,12 @@ import java.util.Map;
  *
  * <p>Steps needed for running the example:
  * <ol>
-<<<<<<< HEAD:gcloud-java-examples/src/main/java/com/google/gcloud/examples/bigquery/BigQueryExample.java
  * <li>log in using gcloud SDK - {@code gcloud auth login}.</li>
  * <li>compile using maven - {@code cd gcloud-java-examples;
  * mvn package appassembler:assemble -DskipTests -Dmaven.javadoc.skip=true -Dmaven.source.skip=true}
  * </li>
  * <li>run -
  * <pre>{@code target/appassembler/bin/BigQueryExample [<project_id>]
-=======
- * <li>login using gcloud SDK - {@code gcloud auth login}.</li>
- * <li>compile using maven - {@code mvn compile}</li>
- * <li>run using maven -
- * <pre>{@code mvn exec:java -Dexec.mainClass="com.google.cloud.examples.bigquery.BigQueryExample"
- *  -Dexec.args="[<project_id>]
->>>>>>> upstream/master:gcloud-java-examples/src/main/java/com/google/cloud/examples/bigquery/BigQueryExample.java
  *  list datasets |
  *  list tables <dataset> |
  *  list jobs |

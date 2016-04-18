@@ -1,4 +1,4 @@
-package com.google.gcloud.examples.nio;
+package com.google.cloud.examples.nio;
 
 import java.io.IOException;
 import java.net.URI;
