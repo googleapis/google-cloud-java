@@ -92,7 +92,7 @@ public class LocalDatastoreHelper {
       GCD_URL = null;
     } else {
       try {
-        GCD_URL = new URL("http://storage.googleapis.com/gcd/tools/" + GCD_FILENAME);
+        GCD_URL = new URL("https://storage.googleapis.com/gcd/tools/" + GCD_FILENAME);
       } catch (MalformedURLException e) {
         throw new RuntimeException(e);
       }
