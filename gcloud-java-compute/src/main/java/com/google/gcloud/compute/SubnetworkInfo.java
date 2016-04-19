@@ -67,7 +67,7 @@ public class SubnetworkInfo implements Serializable {
   /**
    * A builder for {@code SubnetworkInfo} objects.
    */
-  public static abstract class Builder {
+  public abstract static class Builder {
 
     abstract Builder id(String id);
 
@@ -81,7 +81,7 @@ public class SubnetworkInfo implements Serializable {
     /**
      * Sets an optional textual description of the subnetwork.
      */
-    abstract public Builder description(String description);
+    public abstract Builder description(String description);
 
     abstract Builder gatewayAddress(String gatewayAddress);
 
@@ -89,7 +89,7 @@ public class SubnetworkInfo implements Serializable {
      * Sets the identity of the network to which this subnetwork belongs. Only networks that are in
      * subnet mode can have subnetworks.
      */
-    abstract public Builder network(NetworkId network);
+    public abstract Builder network(NetworkId network);
 
     /**
      * Sets the range of internal IPv4 addresses that are owned by this subnetwork. This range must
@@ -98,12 +98,12 @@ public class SubnetworkInfo implements Serializable {
      *
      * @see <a href="https://wikipedia.org/wiki/Classless_Inter-Domain_Routing">CIDR</a>
      */
-    abstract public Builder ipRange(String ipRange);
+    public abstract Builder ipRange(String ipRange);
 
     /**
      * Creates a {@code SubnetworkInfo} object.
      */
-    abstract public SubnetworkInfo build();
+    public abstract SubnetworkInfo build();
   }
 
   static final class BuilderImpl extends Builder {

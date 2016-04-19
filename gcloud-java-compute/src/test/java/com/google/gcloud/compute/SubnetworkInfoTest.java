@@ -30,9 +30,9 @@ public class SubnetworkInfoTest {
       SubnetworkId.of("project", "region", "subnetwork");
   private static final String GATEWAY_ADDRESS = "192.168.1.1";
   private static final NetworkId NETWORK_ID = NetworkId.of("project", "network");
-  private static final String IP_CIDR_RANGE = "192.168.0.0/16";
+  private static final String IP_RANGE = "192.168.0.0/16";
   private static final SubnetworkInfo SUBNETWORK_INFO =
-      SubnetworkInfo.builder(SUBNETWORK_ID, NETWORK_ID, IP_CIDR_RANGE)
+      SubnetworkInfo.builder(SUBNETWORK_ID, NETWORK_ID, IP_RANGE)
           .id(ID)
           .creationTimestamp(CREATION_TIMESTAMP)
           .description(DESCRIPTION)
@@ -51,7 +51,7 @@ public class SubnetworkInfoTest {
 
   @Test
   public void testToBuilderIncomplete() {
-    SubnetworkInfo subnetworkInfo = SubnetworkInfo.of(SUBNETWORK_ID, NETWORK_ID, IP_CIDR_RANGE);
+    SubnetworkInfo subnetworkInfo = SubnetworkInfo.of(SUBNETWORK_ID, NETWORK_ID, IP_RANGE);
     assertEquals(subnetworkInfo, subnetworkInfo.toBuilder().build());
   }
 
@@ -63,25 +63,25 @@ public class SubnetworkInfoTest {
     assertEquals(DESCRIPTION, SUBNETWORK_INFO.description());
     assertEquals(GATEWAY_ADDRESS, SUBNETWORK_INFO.gatewayAddress());
     assertEquals(NETWORK_ID, SUBNETWORK_INFO.network());
-    assertEquals(IP_CIDR_RANGE, SUBNETWORK_INFO.ipRange());
+    assertEquals(IP_RANGE, SUBNETWORK_INFO.ipRange());
   }
 
   @Test
   public void testOf() {
-    SubnetworkInfo subnetworkInfo = SubnetworkInfo.of(SUBNETWORK_ID, NETWORK_ID, IP_CIDR_RANGE);
+    SubnetworkInfo subnetworkInfo = SubnetworkInfo.of(SUBNETWORK_ID, NETWORK_ID, IP_RANGE);
     assertNull(subnetworkInfo.id());
     assertEquals(SUBNETWORK_ID, subnetworkInfo.subnetworkId());
     assertNull(subnetworkInfo.creationTimestamp());
     assertNull(subnetworkInfo.description());
     assertNull(subnetworkInfo.gatewayAddress());
     assertEquals(NETWORK_ID, subnetworkInfo.network());
-    assertEquals(IP_CIDR_RANGE, subnetworkInfo.ipRange());
+    assertEquals(IP_RANGE, subnetworkInfo.ipRange());
   }
 
   @Test
   public void testToAndFromPb() {
     compareSubnetworkInfo(SUBNETWORK_INFO, SubnetworkInfo.fromPb(SUBNETWORK_INFO.toPb()));
-    SubnetworkInfo subnetworkInfo = SubnetworkInfo.of(SUBNETWORK_ID, NETWORK_ID, IP_CIDR_RANGE);
+    SubnetworkInfo subnetworkInfo = SubnetworkInfo.of(SUBNETWORK_ID, NETWORK_ID, IP_RANGE);
     compareSubnetworkInfo(subnetworkInfo, SubnetworkInfo.fromPb(subnetworkInfo.toPb()));
   }
 
