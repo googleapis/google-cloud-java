@@ -21,11 +21,6 @@ import static com.google.common.base.Preconditions.checkNotNull;
 import static com.google.common.base.Strings.isNullOrEmpty;
 
 import com.google.auto.service.AutoService;
-import com.google.common.annotations.VisibleForTesting;
-import com.google.common.base.MoreObjects;
-import com.google.common.base.Throwables;
-import com.google.common.collect.AbstractIterator;
-import com.google.common.primitives.Ints;
 import com.google.cloud.storage.Acl;
 import com.google.cloud.storage.Blob;
 import com.google.cloud.storage.BlobId;
@@ -34,6 +29,11 @@ import com.google.cloud.storage.CopyWriter;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageException;
 import com.google.cloud.storage.StorageOptions;
+import com.google.common.annotations.VisibleForTesting;
+import com.google.common.base.MoreObjects;
+import com.google.common.base.Throwables;
+import com.google.common.collect.AbstractIterator;
+import com.google.common.primitives.Ints;
 
 import java.io.BufferedInputStream;
 import java.io.IOException;
@@ -87,7 +87,8 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
     private final Filter<? super Path> filter;
     private final CloudStorageFileSystem fileSystem;
 
-    LazyPathIterator(CloudStorageFileSystem fileSystem, Iterator<Blob> blobIterator, Filter<? super Path> filter) {
+    LazyPathIterator(CloudStorageFileSystem fileSystem, Iterator<Blob> blobIterator,
+                     Filter<? super Path> filter) {
       this.blobIterator = blobIterator;
       this.filter = filter;
       this.fileSystem = fileSystem;
@@ -164,7 +165,8 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
         CloudStorageFileSystem.URI_SCHEME,
         uri);
     checkArgument(
-        !isNullOrEmpty(uri.getHost()), "%s:// URIs must have a host: %s", CloudStorageFileSystem.URI_SCHEME, uri);
+        !isNullOrEmpty(uri.getHost()), "%s:// URIs must have a host: %s",
+        CloudStorageFileSystem.URI_SCHEME, uri);
     checkArgument(
         uri.getPort() == -1
             && isNullOrEmpty(uri.getPath())
@@ -179,7 +181,8 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
 
   @Override
   public CloudStoragePath getPath(URI uri) {
-    return CloudStoragePath.getPath(getFileSystem(CloudStorageUtil.stripPathFromUri(uri)), uri.getPath());
+    return CloudStoragePath.getPath(
+        getFileSystem(CloudStorageUtil.stripPathFromUri(uri)), uri.getPath());
   }
 
   @Override
@@ -562,7 +565,9 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
     final CloudStoragePath cloudPath = CloudStorageUtil.checkPath(dir);
     checkNotNull(filter);
     String prefix = cloudPath.toString();
-    final Iterator<Blob> blobIterator = storage.list(cloudPath.bucket(), Storage.BlobListOption.prefix(prefix), Storage.BlobListOption.fields()).iterateAll();
+    final Iterator<Blob> blobIterator = storage.list(cloudPath.bucket(),
+        Storage.BlobListOption.prefix(prefix), Storage.BlobListOption.currentDirectory(),
+        Storage.BlobListOption.fields()).iterateAll();
     return new DirectoryStream<Path>() {
       @Override
       public Iterator<Path> iterator() {

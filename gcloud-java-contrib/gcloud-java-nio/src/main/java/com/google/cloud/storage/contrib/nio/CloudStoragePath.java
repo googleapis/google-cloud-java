@@ -19,8 +19,8 @@ package com.google.cloud.storage.contrib.nio;
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 
-import com.google.common.collect.UnmodifiableIterator;
 import com.google.cloud.storage.BlobId;
+import com.google.common.collect.UnmodifiableIterator;
 
 import java.io.File;
 import java.net.URI;
@@ -308,7 +308,8 @@ public final class CloudStoragePath implements Path {
   @Override
   public URI toUri() {
     try {
-      return new URI(CloudStorageFileSystem.URI_SCHEME, bucket(), path.toAbsolutePath().toString(), null);
+      return new URI(
+          CloudStorageFileSystem.URI_SCHEME, bucket(), path.toAbsolutePath().toString(), null);
     } catch (URISyntaxException e) {
       throw new AssertionError(e);
     }
