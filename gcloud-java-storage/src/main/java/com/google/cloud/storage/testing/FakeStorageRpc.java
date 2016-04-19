@@ -94,6 +94,7 @@ public class FakeStorageRpc implements StorageRpc {
   @Override
   public Tuple<String, Iterable<StorageObject>> list(String bucket, Map<Option, ?> options)
       throws StorageException {
+    String delimiter = null;
     String preprefix = "";
     for (Map.Entry<Option, ?> e : options.entrySet()) {
       switch (e.getKey()) {
@@ -102,6 +103,9 @@ public class FakeStorageRpc implements StorageRpc {
           if (preprefix.startsWith("/")) {
             preprefix = preprefix.substring(1);
           }
+          break;
+        case DELIMITER:
+          delimiter = (String) e.getValue();
           break;
         case FIELDS:
           // ignore and return all the fields
@@ -118,17 +122,7 @@ public class FakeStorageRpc implements StorageRpc {
       if (!so.getName().startsWith(prefix)) {
         continue;
       }
-      int nextSlash = so.getName().indexOf("/", prefix.length());
-      if (nextSlash >= 0) {
-        String folderName = so.getName().substring(0, nextSlash + 1);
-        if (folders.containsKey(folderName)) {
-          continue;
-        }
-        StorageObject fakeFolder = new StorageObject();
-        fakeFolder.setName(folderName);
-        fakeFolder.setBucket(so.getBucket());
-        fakeFolder.setGeneration(so.getGeneration());
-        folders.put(folderName, fakeFolder);
+      if (processedAsFolder(so, delimiter, prefix, folders)) {
         continue;
       }
       values.add(so);
@@ -333,5 +327,26 @@ public class FakeStorageRpc implements StorageRpc {
     if (throwIfOption && !options.isEmpty()) {
       throw new UnsupportedOperationException();
     }
+  }
+  
+  // Returns true if this is a folder. Adds it to folders if it isn't already there.
+  private static boolean processedAsFolder(StorageObject so, String delimiter, String prefix, /* inout */ Map<String, StorageObject> folders) {
+    if (delimiter == null) {
+      return false;
+    }
+    int nextSlash = so.getName().indexOf(delimiter, prefix.length());
+    if (nextSlash < 0) {
+      return false;
+    }
+    String folderName = so.getName().substring(0, nextSlash + 1);
+    if (folders.containsKey(folderName)) {
+      return true;
+    }
+    StorageObject fakeFolder = new StorageObject();
+    fakeFolder.setName(folderName);
+    fakeFolder.setBucket(so.getBucket());
+    fakeFolder.setGeneration(so.getGeneration());
+    folders.put(folderName, fakeFolder);
+    return true;
   }
 }

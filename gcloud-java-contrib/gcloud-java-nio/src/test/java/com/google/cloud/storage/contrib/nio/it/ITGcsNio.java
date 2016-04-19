@@ -27,10 +27,12 @@ import java.io.PrintWriter;
 import java.nio.ByteBuffer;
 import java.nio.channels.ReadableByteChannel;
 import java.nio.channels.SeekableByteChannel;
+import java.nio.file.FileSystem;
 import java.nio.file.Files;
 import java.nio.file.NoSuchFileException;
 import java.nio.file.Path;
 import java.nio.file.StandardOpenOption;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
@@ -313,6 +315,29 @@ public class ITGcsNio {
     } finally {
       // let's not leave files around
       Files.deleteIfExists(dst);
+    }
+  }
+
+  @Test
+  public void testListFiles() throws IOException {
+    try (FileSystem fs = getTestBucket()) {
+      List<Path> goodPaths = new ArrayList<>();
+      List<Path> paths = new ArrayList<>();
+      goodPaths.add(fs.getPath("dir/angel"));
+      goodPaths.add(fs.getPath("dir/alone"));
+      paths.add(fs.getPath("dir/dir2/another_angel"));
+      paths.add(fs.getPath("atroot"));
+      paths.addAll(goodPaths);
+      goodPaths.add(fs.getPath("dir/dir2/"));
+      for (Path path : paths) {
+        fillFile(storage, path.toString(), SML_SIZE);
+      }
+
+      List<Path> got = new ArrayList<>();
+      for (Path path : Files.newDirectoryStream(fs.getPath("dir/"))) {
+        got.add(path);
+      }
+      assertThat(got).containsExactlyElementsIn(goodPaths);
     }
   }
 
