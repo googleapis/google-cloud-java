@@ -58,7 +58,7 @@ public class DefaultDnsRpc implements DnsRpc {
 
   private class DefaultRpcBatch implements RpcBatch {
 
-    private BatchRequest batch;
+    private final BatchRequest batch;
 
     private DefaultRpcBatch(BatchRequest batch) {
       this.batch = batch;

@@ -2378,12 +2378,11 @@ public class LocalDnsHelperTest {
     }, ImmutableMap.of(DnsRpc.Option.PAGE_SIZE, 2));
     final Iterable<Change> descending = RPC.listChangeRequests(ZONE1.getName(),
         ImmutableMap.of(DnsRpc.Option.SORTING_ORDER, "descending")).results();
-    final int size = 4;
     batch.addListChangeRequests(ZONE_NAME1, new SuccessExpectedCallback<ChangesListResponse>() {
       @Override
       public void onSuccess(ChangesListResponse response) {
         List<Change> changes = response.getChanges();
-        for (int i = 0; i < size; i++) {
+        for (int i = 0; i < 4; i++) {
           assertEquals(Iterables.get(descending, i), changes.get(i));
         }
       }
@@ -2392,8 +2391,8 @@ public class LocalDnsHelperTest {
       @Override
       public void onSuccess(ChangesListResponse response) {
         List<Change> changes = response.getChanges();
-        for (int i = 0; i < size; i++) {
-          assertEquals(Iterables.get(descending, i), changes.get(size - i - 1));
+        for (int i = 0; i < 4; i++) {
+          assertEquals(Iterables.get(descending, i), changes.get(3 - i));
         }
       }
     }, ImmutableMap.of(DnsRpc.Option.SORTING_ORDER, "ascending"));

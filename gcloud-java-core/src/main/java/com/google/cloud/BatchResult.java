@@ -34,7 +34,7 @@ public abstract class BatchResult<T, E extends BaseServiceException> {
   private T result;
   private boolean completed = false;
   private E error;
-  private List<Callback<T, E>> toBeNotified = new LinkedList<>();
+  private final List<Callback<T, E>> toBeNotified = new LinkedList<>();
 
   /**
    * Returns {@code true} if the batch has been completed and the result is available; {@code false}

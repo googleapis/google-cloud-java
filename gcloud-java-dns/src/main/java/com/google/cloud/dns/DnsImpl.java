@@ -113,8 +113,7 @@ final class DnsImpl extends BaseService<DnsOptions> implements Dns {
   static Function<ManagedZone, Zone> zoneFromPb(final DnsOptions options) {
     return new Function<ManagedZone, Zone>() {
       @Override
-      public Zone apply(
-          com.google.api.services.dns.model.ManagedZone zonePb) {
+      public Zone apply(ManagedZone zonePb) {
         return Zone.fromPb(options.service(), zonePb);
       }
     };

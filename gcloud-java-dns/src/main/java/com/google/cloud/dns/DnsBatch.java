@@ -42,7 +42,7 @@ import java.util.Map;
  */
 public class DnsBatch {
 
-  private RpcBatch batch;
+  private final RpcBatch batch;
   private final DnsRpc dnsRpc;
   private final DnsOptions options;
 

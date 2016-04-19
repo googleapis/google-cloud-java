@@ -101,7 +101,7 @@ public class DnsBatchTest {
   private DnsRpc dnsRpcMock;
   private RpcBatch batchMock;
   private DnsBatch dnsBatch;
-  private Dns dns = EasyMock.createStrictMock(Dns.class);
+  private final Dns dns = EasyMock.createStrictMock(Dns.class);
 
   @Before
   public void setUp() {
