@@ -87,7 +87,8 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
     private final Filter<? super Path> filter;
     private final CloudStorageFileSystem fileSystem;
 
-    LazyPathIterator(CloudStorageFileSystem fileSystem, Iterator<Blob> blobIterator, Filter<? super Path> filter) {
+    LazyPathIterator(CloudStorageFileSystem fileSystem, Iterator<Blob> blobIterator,
+                     Filter<? super Path> filter) {
       this.blobIterator = blobIterator;
       this.filter = filter;
       this.fileSystem = fileSystem;
@@ -164,7 +165,8 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
         CloudStorageFileSystem.URI_SCHEME,
         uri);
     checkArgument(
-        !isNullOrEmpty(uri.getHost()), "%s:// URIs must have a host: %s", CloudStorageFileSystem.URI_SCHEME, uri);
+        !isNullOrEmpty(uri.getHost()), "%s:// URIs must have a host: %s",
+        CloudStorageFileSystem.URI_SCHEME, uri);
     checkArgument(
         uri.getPort() == -1
             && isNullOrEmpty(uri.getPath())
@@ -179,7 +181,8 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
 
   @Override
   public CloudStoragePath getPath(URI uri) {
-    return CloudStoragePath.getPath(getFileSystem(CloudStorageUtil.stripPathFromUri(uri)), uri.getPath());
+    return CloudStoragePath.getPath(
+        getFileSystem(CloudStorageUtil.stripPathFromUri(uri)), uri.getPath());
   }
 
   @Override
@@ -563,7 +566,8 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
     checkNotNull(filter);
     String prefix = cloudPath.toString();
     final Iterator<Blob> blobIterator = storage.list(cloudPath.bucket(),
-        Storage.BlobListOption.prefix(prefix), Storage.BlobListOption.currentDirectory(), Storage.BlobListOption.fields()).iterateAll();
+        Storage.BlobListOption.prefix(prefix), Storage.BlobListOption.currentDirectory(),
+        Storage.BlobListOption.fields()).iterateAll();
     return new DirectoryStream<Path>() {
       @Override
       public Iterator<Path> iterator() {
