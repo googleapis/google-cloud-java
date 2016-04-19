@@ -23,9 +23,11 @@ import com.google.api.services.compute.model.DiskType;
 import com.google.api.services.compute.model.Image;
 import com.google.api.services.compute.model.License;
 import com.google.api.services.compute.model.MachineType;
+import com.google.api.services.compute.model.Network;
 import com.google.api.services.compute.model.Operation;
 import com.google.api.services.compute.model.Region;
 import com.google.api.services.compute.model.Snapshot;
+import com.google.api.services.compute.model.Subnetwork;
 import com.google.api.services.compute.model.Zone;
 import com.google.gcloud.compute.ComputeException;
 
@@ -424,4 +426,74 @@ public interface ComputeRpc {
    * @throws ComputeException upon failure or if the new disk size is smaller than the previous one
    */
   Operation resizeDisk(String zone, String disk, long sizeGb, Map<Option, ?> options);
+
+  /*
+   * Creates a new subnetwork.
+   *
+   * @return a region operation for subnetwork's creation
+   * @throws ComputeException upon failure
+   */
+  Operation createSubnetwork(String region, Subnetwork subnetwork, Map<Option, ?> options);
+
+  /**
+   * Returns the requested subnetwork or {@code null} if not found.
+   *
+   * @throws ComputeException upon failure
+   */
+  Subnetwork getSubnetwork(String region, String subnetwork, Map<Option, ?> options);
+
+  /**
+   * Lists subnetworks for the provided region.
+   *
+   * @throws ComputeException upon failure
+   */
+  Tuple<String, Iterable<Subnetwork>> listSubnetworks(String region, Map<Option, ?> options);
+
+  /**
+   * Lists subnetworks.
+   *
+   * @throws ComputeException upon failure
+   */
+  Tuple<String, Iterable<Subnetwork>> listSubnetworks(Map<Option, ?> options);
+
+  /**
+   * Deletes the requested subnetwork. Any attempt to delete an automatically created subnetwork
+   * will fail.
+   *
+   * @return a region operation if the delete request was issued correctly, {@code null} if the
+   *     subnetwork was not found
+   * @throws ComputeException upon failure
+   */
+  Operation deleteSubnetwork(String region, String subnetwork, Map<Option, ?> options);
+
+  /**
+   * Creates a new network.
+   *
+   * @return a global operation for network's creation
+   * @throws ComputeException upon failure
+   */
+  Operation createNetwork(Network network, Map<Option, ?> options);
+
+  /**
+   * Returns the requested network or {@code null} if not found.
+   *
+   * @throws ComputeException upon failure
+   */
+  Network getNetwork(String network, Map<Option, ?> options);
+
+  /**
+   * Lists networks.
+   *
+   * @throws ComputeException upon failure
+   */
+  Tuple<String, Iterable<Network>> listNetworks(Map<Option, ?> options);
+
+  /**
+   * Deletes the requested network.
+   *
+   * @return a global operation if the delete request was issued correctly, {@code null} if the
+   *     network was not found
+   * @throws ComputeException upon failure
+   */
+  Operation deleteNetwork(String network, Map<Option, ?> options);
 }

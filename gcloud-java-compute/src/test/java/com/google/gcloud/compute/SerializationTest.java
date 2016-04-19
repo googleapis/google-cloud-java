@@ -161,6 +161,16 @@ public class SerializationTest {
   private static final NetworkId NETWORK_ID = NetworkId.of("project", "network");
   private static final SubnetworkInfo SUBNETWORK_INFO =
       SubnetworkInfo.of(SUBNETWORK_ID, NETWORK_ID, "192.168.0.0/16");
+  private static final Subnetwork SUBNETWORK =
+      new Subnetwork.Builder(COMPUTE, SUBNETWORK_ID, NETWORK_ID, "192.168.0.0/16").build();
+  private static final StandardNetworkConfiguration STANDARD_NETWORK_CONFIGURATION =
+      StandardNetworkConfiguration.of("192.168.0.0/16");
+  private static final SubnetNetworkConfiguration SUBNET_NETWORK_CONFIGURATION =
+      SubnetNetworkConfiguration.of(false);
+  private static final NetworkInfo NETWORK_INFO =
+      NetworkInfo.of(NETWORK_ID, STANDARD_NETWORK_CONFIGURATION);
+  private static final Network NETWORK =
+      new Network.Builder(COMPUTE, NETWORK_ID, STANDARD_NETWORK_CONFIGURATION).build();
   private static final Compute.DiskTypeOption DISK_TYPE_OPTION =
       Compute.DiskTypeOption.fields();
   private static final Compute.DiskTypeFilter DISK_TYPE_FILTER =
@@ -217,6 +227,20 @@ public class SerializationTest {
       Compute.DiskListOption.filter(DISK_FILTER);
   private static final Compute.DiskAggregatedListOption DISK_AGGREGATED_LIST_OPTION =
       Compute.DiskAggregatedListOption.filter(DISK_FILTER);
+  private static final Compute.SubnetworkOption SUBNETWORK_OPTION =
+      Compute.SubnetworkOption.fields();
+  private static final Compute.SubnetworkFilter SUBNETWORK_FILTER =
+      Compute.SubnetworkFilter.equals(Compute.SubnetworkField.SELF_LINK, "selfLink");
+  private static final Compute.SubnetworkListOption SUBNETWORK_LIST_OPTION =
+      Compute.SubnetworkListOption.filter(SUBNETWORK_FILTER);
+  private static final Compute.SubnetworkAggregatedListOption SUBNETWORK_AGGREGATED_LIST_OPTION =
+      Compute.SubnetworkAggregatedListOption.filter(SUBNETWORK_FILTER);
+  private static final Compute.NetworkOption NETWORK_OPTION =
+      Compute.NetworkOption.fields();
+  private static final Compute.NetworkFilter NETWORK_FILTER =
+      Compute.NetworkFilter.equals(Compute.NetworkField.SELF_LINK, "selfLink");
+  private static final Compute.NetworkListOption NETWORK_LIST_OPTION =
+      Compute.NetworkListOption.filter(NETWORK_FILTER);
 
   @Test
   public void testServiceOptions() throws Exception {
@@ -246,15 +270,18 @@ public class SerializationTest {
         ADDRESS_INFO, ADDRESS, DISK_ID, SNAPSHOT_ID, SNAPSHOT_INFO, SNAPSHOT, IMAGE_ID,
         DISK_IMAGE_CONFIGURATION, STORAGE_IMAGE_CONFIGURATION, IMAGE_INFO, IMAGE,
         STANDARD_DISK_CONFIGURATION, IMAGE_DISK_CONFIGURATION, SNAPSHOT_DISK_CONFIGURATION,
-        DISK_INFO, DISK, SUBNETWORK_ID, NETWORK_ID, SUBNETWORK_INFO, DISK_TYPE_OPTION,
-        DISK_TYPE_FILTER, DISK_TYPE_LIST_OPTION, DISK_TYPE_AGGREGATED_LIST_OPTION,
+        DISK_INFO, DISK, SUBNETWORK_ID, NETWORK_ID, SUBNETWORK_INFO, SUBNETWORK,
+        STANDARD_NETWORK_CONFIGURATION, SUBNET_NETWORK_CONFIGURATION, NETWORK_INFO, NETWORK,
+        DISK_TYPE_OPTION, DISK_TYPE_FILTER, DISK_TYPE_LIST_OPTION, DISK_TYPE_AGGREGATED_LIST_OPTION,
         MACHINE_TYPE_OPTION, MACHINE_TYPE_FILTER, MACHINE_TYPE_LIST_OPTION,
         MACHINE_TYPE_AGGREGATED_LIST_OPTION, REGION_OPTION, REGION_FILTER, REGION_LIST_OPTION,
         ZONE_OPTION, ZONE_FILTER, ZONE_LIST_OPTION, LICENSE_OPTION,  OPERATION_OPTION,
         OPERATION_FILTER, OPERATION_LIST_OPTION, ADDRESS_OPTION, ADDRESS_FILTER,
         ADDRESS_LIST_OPTION, ADDRESS_AGGREGATED_LIST_OPTION, SNAPSHOT_OPTION, SNAPSHOT_FILTER,
         SNAPSHOT_LIST_OPTION, IMAGE_OPTION, IMAGE_FILTER, IMAGE_LIST_OPTION, DISK_OPTION,
-        DISK_FILTER, DISK_LIST_OPTION, DISK_AGGREGATED_LIST_OPTION};
+        DISK_FILTER, DISK_LIST_OPTION, DISK_AGGREGATED_LIST_OPTION, SUBNETWORK_OPTION,
+        SUBNETWORK_FILTER, SUBNETWORK_LIST_OPTION, SUBNETWORK_AGGREGATED_LIST_OPTION,
+        NETWORK_OPTION, NETWORK_FILTER, NETWORK_LIST_OPTION};
     for (Serializable obj : objects) {
       Object copy = serializeAndDeserialize(obj);
       assertEquals(obj, obj);

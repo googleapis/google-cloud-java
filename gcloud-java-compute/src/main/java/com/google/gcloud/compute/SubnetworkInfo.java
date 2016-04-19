@@ -289,7 +289,8 @@ public class SubnetworkInfo implements Serializable {
 
   @Override
   public boolean equals(Object obj) {
-    return obj != null
+    return obj == this
+        || obj != null
         && obj.getClass().equals(SubnetworkInfo.class)
         && Objects.equals(toPb(), ((SubnetworkInfo) obj).toPb());
   }

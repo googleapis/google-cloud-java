@@ -56,6 +56,10 @@ import com.google.gcloud.compute.Compute.MachineTypeAggregatedListOption;
 import com.google.gcloud.compute.Compute.MachineTypeFilter;
 import com.google.gcloud.compute.Compute.MachineTypeListOption;
 import com.google.gcloud.compute.Compute.MachineTypeOption;
+import com.google.gcloud.compute.Compute.NetworkField;
+import com.google.gcloud.compute.Compute.NetworkFilter;
+import com.google.gcloud.compute.Compute.NetworkListOption;
+import com.google.gcloud.compute.Compute.NetworkOption;
 import com.google.gcloud.compute.Compute.OperationFilter;
 import com.google.gcloud.compute.Compute.OperationListOption;
 import com.google.gcloud.compute.Compute.OperationOption;
@@ -65,6 +69,11 @@ import com.google.gcloud.compute.Compute.RegionOption;
 import com.google.gcloud.compute.Compute.SnapshotFilter;
 import com.google.gcloud.compute.Compute.SnapshotListOption;
 import com.google.gcloud.compute.Compute.SnapshotOption;
+import com.google.gcloud.compute.Compute.SubnetworkAggregatedListOption;
+import com.google.gcloud.compute.Compute.SubnetworkField;
+import com.google.gcloud.compute.Compute.SubnetworkFilter;
+import com.google.gcloud.compute.Compute.SubnetworkListOption;
+import com.google.gcloud.compute.Compute.SubnetworkOption;
 import com.google.gcloud.compute.Compute.ZoneFilter;
 import com.google.gcloud.compute.Compute.ZoneListOption;
 import com.google.gcloud.compute.Compute.ZoneOption;
@@ -198,6 +207,12 @@ public class ComputeImplTest {
       DeprecationStatus.builder(DeprecationStatus.Status.DEPRECATED, IMAGE_ID).build();
   private static final DiskInfo DISK =
       DiskInfo.of(DISK_ID, StandardDiskConfiguration.of(DISK_TYPE_ID));
+  private static final NetworkId NETWORK_ID = NetworkId.of("project", "network");
+  private static final SubnetworkId SUBNETWORK_ID = SubnetworkId.of("project", "region", "network");
+  private static final SubnetworkInfo SUBNETWORK =
+      SubnetworkInfo.of(SUBNETWORK_ID, NETWORK_ID, "192.168.0.0/16");
+  private static final NetworkInfo NETWORK =
+      NetworkInfo.of(NETWORK_ID, StandardNetworkConfiguration.of("192.168.0.0/16"));
 
   // Empty ComputeRpc options
   private static final Map<ComputeRpc.Option, ?> EMPTY_RPC_OPTIONS = ImmutableMap.of();
@@ -390,6 +405,50 @@ public class ComputeImplTest {
       DiskAggregatedListOption.pageSize(42L);
   private static final DiskAggregatedListOption DISK_AGGREGATED_LIST_FILTER =
       DiskAggregatedListOption.filter(DISK_FILTER);
+
+  // Subnetwork options
+  private static final SubnetworkOption SUBNETWORK_OPTION_FIELDS =
+      SubnetworkOption.fields(SubnetworkField.ID, SubnetworkField.DESCRIPTION);
+
+  // Subnetwork list options
+  private static final SubnetworkFilter SUBNETWORK_FILTER =
+      SubnetworkFilter.equals(SubnetworkField.IP_CIDR_RANGE, "192.168.0.0/16");
+  private static final SubnetworkListOption SUBNETWORK_LIST_PAGE_TOKEN =
+      SubnetworkListOption.pageToken("cursor");
+  private static final SubnetworkListOption SUBNETWORK_LIST_PAGE_SIZE =
+      SubnetworkListOption.pageSize(42L);
+  private static final SubnetworkListOption SUBNETWORK_LIST_FILTER =
+      SubnetworkListOption.filter(SUBNETWORK_FILTER);
+  private static final Map<ComputeRpc.Option, ?> SUBNETWORK_LIST_OPTIONS = ImmutableMap.of(
+      PAGE_TOKEN, "cursor",
+      MAX_RESULTS, 42L,
+      FILTER, "ipCidrRange eq 192.168.0.0/16");
+
+  // Subnetwork aggregated list options
+  private static final SubnetworkAggregatedListOption SUBNETWORK_AGGREGATED_LIST_PAGE_TOKEN =
+      SubnetworkAggregatedListOption.pageToken("cursor");
+  private static final SubnetworkAggregatedListOption SUBNETWORK_AGGREGATED_LIST_PAGE_SIZE =
+      SubnetworkAggregatedListOption.pageSize(42L);
+  private static final SubnetworkAggregatedListOption SUBNETWORK_AGGREGATED_LIST_FILTER =
+      SubnetworkAggregatedListOption.filter(SUBNETWORK_FILTER);
+
+  // Network options
+  private static final NetworkOption NETWORK_OPTION_FIELDS =
+      NetworkOption.fields(NetworkField.ID, NetworkField.DESCRIPTION);
+
+  // Network list options
+  private static final NetworkFilter NETWORK_FILTER =
+      NetworkFilter.equals(NetworkField.IPV4_RANGE, "192.168.0.0/16");
+  private static final NetworkListOption NETWORK_LIST_PAGE_TOKEN =
+      NetworkListOption.pageToken("cursor");
+  private static final NetworkListOption NETWORK_LIST_PAGE_SIZE =
+      NetworkListOption.pageSize(42L);
+  private static final NetworkListOption NETWORK_LIST_FILTER =
+      NetworkListOption.filter(NETWORK_FILTER);
+  private static final Map<ComputeRpc.Option, ?> NETWORK_LIST_OPTIONS = ImmutableMap.of(
+      PAGE_TOKEN, "cursor",
+      MAX_RESULTS, 42L,
+      FILTER, "IPv4Range eq 192.168.0.0/16");
 
   private static final Function<Operation, com.google.api.services.compute.model.Operation>
       OPERATION_TO_PB_FUNCTION = new Function<Operation,
@@ -2678,6 +2737,433 @@ public class ComputeImplTest {
     EasyMock.replay(computeRpcMock);
     compute = options.service();
     assertNull(compute.resize(DISK_ID, 42L));
+  }
+
+  @Test
+  public void testGetSubnetwork() {
+    EasyMock.expect(computeRpcMock.getSubnetwork(SUBNETWORK_ID.region(), SUBNETWORK_ID.subnetwork(),
+        EMPTY_RPC_OPTIONS)).andReturn(SUBNETWORK.toPb());
+    EasyMock.replay(computeRpcMock);
+    compute = options.service();
+    Subnetwork subnetwork = compute.get(SUBNETWORK_ID);
+    assertEquals(new Subnetwork(compute, new SubnetworkInfo.BuilderImpl(SUBNETWORK)), subnetwork);
+  }
+
+  @Test
+  public void testGetSubnetwork_Null() {
+    EasyMock.expect(computeRpcMock.getSubnetwork(SUBNETWORK_ID.region(), SUBNETWORK_ID.subnetwork(),
+        EMPTY_RPC_OPTIONS)).andReturn(null);
+    EasyMock.replay(computeRpcMock);
+    compute = options.service();
+    assertNull(compute.get(SUBNETWORK_ID));
+  }
+
+  @Test
+  public void testGetSubnetworkWithSelectedFields() {
+    Capture<Map<ComputeRpc.Option, Object>> capturedOptions = Capture.newInstance();
+    EasyMock.expect(computeRpcMock.getSubnetwork(eq(SUBNETWORK_ID.region()),
+        eq(SUBNETWORK_ID.subnetwork()), capture(capturedOptions))).andReturn(SUBNETWORK.toPb());
+    EasyMock.replay(computeRpcMock);
+    compute = options.service();
+    Subnetwork subnetwork = compute.get(SUBNETWORK_ID, SUBNETWORK_OPTION_FIELDS);
+    String selector = (String) capturedOptions.getValue().get(SUBNETWORK_OPTION_FIELDS.rpcOption());
+    assertTrue(selector.contains("selfLink"));
+    assertTrue(selector.contains("id"));
+    assertTrue(selector.contains("description"));
+    assertEquals(23, selector.length());
+    assertEquals(new Subnetwork(compute, new SubnetworkInfo.BuilderImpl(SUBNETWORK)), subnetwork);
+  }
+
+  @Test
+  public void testDeleteSubnetwork_Operation() {
+    EasyMock.expect(computeRpcMock.deleteSubnetwork(SUBNETWORK_ID.region(),
+        SUBNETWORK_ID.subnetwork(), EMPTY_RPC_OPTIONS)).andReturn(regionOperation.toPb());
+    EasyMock.replay(computeRpcMock);
+    compute = options.service();
+    assertEquals(regionOperation, compute.delete(SUBNETWORK_ID));
+  }
+
+  @Test
+  public void testDeleteSubnetworkWithSelectedFields_Operation() {
+    Capture<Map<ComputeRpc.Option, Object>> capturedOptions = Capture.newInstance();
+    EasyMock.expect(computeRpcMock.deleteSubnetwork(eq(SUBNETWORK_ID.region()),
+        eq(SUBNETWORK_ID.subnetwork()), capture(capturedOptions)))
+        .andReturn(regionOperation.toPb());
+    EasyMock.replay(computeRpcMock);
+    compute = options.service();
+    Operation operation = compute.delete(SUBNETWORK_ID, OPERATION_OPTION_FIELDS);
+    String selector = (String) capturedOptions.getValue().get(OPERATION_OPTION_FIELDS.rpcOption());
+    assertTrue(selector.contains("selfLink"));
+    assertTrue(selector.contains("id"));
+    assertTrue(selector.contains("description"));
+    assertEquals(23, selector.length());
+    assertEquals(regionOperation, operation);
+  }
+
+  @Test
+  public void testDeleteSubnetwork_Null() {
+    EasyMock.expect(computeRpcMock.deleteSubnetwork(SUBNETWORK_ID.region(),
+        SUBNETWORK_ID.subnetwork(), EMPTY_RPC_OPTIONS)).andReturn(null);
+    EasyMock.replay(computeRpcMock);
+    compute = options.service();
+    assertNull(compute.delete(SUBNETWORK_ID));
+  }
+
+  @Test
+  public void testListSubnetworks() {
+    String cursor = "cursor";
+    compute = options.service();
+    ImmutableList<Subnetwork> subnetworkList = ImmutableList.of(
+        new Subnetwork(compute, new SubnetworkInfo.BuilderImpl(SUBNETWORK)),
+        new Subnetwork(compute, new SubnetworkInfo.BuilderImpl(SUBNETWORK)));
+    Tuple<String, Iterable<com.google.api.services.compute.model.Subnetwork>> result =
+        Tuple.of(cursor, Iterables.transform(subnetworkList, SubnetworkInfo.TO_PB_FUNCTION));
+    EasyMock.expect(computeRpcMock.listSubnetworks(SUBNETWORK_ID.region(), EMPTY_RPC_OPTIONS))
+        .andReturn(result);
+    EasyMock.replay(computeRpcMock);
+    Page<Subnetwork> page = compute.listSubnetworks(SUBNETWORK_ID.region());
+    assertEquals(cursor, page.nextPageCursor());
+    assertArrayEquals(subnetworkList.toArray(), Iterables.toArray(page.values(), Subnetwork.class));
+  }
+
+  @Test
+  public void testListSubnetworksNextPage() {
+    String cursor = "cursor";
+    String nextCursor = "nextCursor";
+    compute = options.service();
+    ImmutableList<Subnetwork> subnetworkList = ImmutableList.of(
+        new Subnetwork(compute, new SubnetworkInfo.BuilderImpl(SUBNETWORK)),
+        new Subnetwork(compute, new SubnetworkInfo.BuilderImpl(SUBNETWORK)));
+    ImmutableList<Subnetwork> nextSubnetworkList = ImmutableList.of(
+        new Subnetwork(compute, new SubnetworkInfo.BuilderImpl(SUBNETWORK)));
+    Tuple<String, Iterable<com.google.api.services.compute.model.Subnetwork>> result =
+        Tuple.of(cursor, Iterables.transform(subnetworkList, SubnetworkInfo.TO_PB_FUNCTION));
+    Tuple<String, Iterable<com.google.api.services.compute.model.Subnetwork>> nextResult =
+        Tuple.of(nextCursor,
+            Iterables.transform(nextSubnetworkList, SubnetworkInfo.TO_PB_FUNCTION));
+    Map<ComputeRpc.Option, ?> nextOptions = ImmutableMap.of(PAGE_TOKEN, cursor);
+    EasyMock.expect(computeRpcMock.listSubnetworks(SUBNETWORK_ID.region(), EMPTY_RPC_OPTIONS))
+        .andReturn(result);
+    EasyMock.expect(computeRpcMock.listSubnetworks(SUBNETWORK_ID.region(), nextOptions))
+        .andReturn(nextResult);
+    EasyMock.replay(computeRpcMock);
+    Page<Subnetwork> page = compute.listSubnetworks(SUBNETWORK_ID.region());
+    assertEquals(cursor, page.nextPageCursor());
+    assertArrayEquals(subnetworkList.toArray(), Iterables.toArray(page.values(), Subnetwork.class));
+    page = page.nextPage();
+    assertEquals(nextCursor, page.nextPageCursor());
+    assertArrayEquals(nextSubnetworkList.toArray(),
+        Iterables.toArray(page.values(), Subnetwork.class));
+  }
+
+  @Test
+  public void testListEmptySubnetworks() {
+    compute = options.service();
+    ImmutableList<com.google.api.services.compute.model.Subnetwork> subnetworks =
+        ImmutableList.of();
+    Tuple<String, Iterable<com.google.api.services.compute.model.Subnetwork>> result =
+        Tuple.<String, Iterable<com.google.api.services.compute.model.Subnetwork>>of(null,
+            subnetworks);
+    EasyMock.expect(computeRpcMock.listSubnetworks(SUBNETWORK_ID.region(), EMPTY_RPC_OPTIONS))
+        .andReturn(result);
+    EasyMock.replay(computeRpcMock);
+    Page<Subnetwork> page = compute.listSubnetworks(SUBNETWORK_ID.region());
+    assertNull(page.nextPageCursor());
+    assertArrayEquals(subnetworks.toArray(), Iterables.toArray(page.values(), Subnetwork.class));
+  }
+
+  @Test
+  public void testListSubnetworksWithOptions() {
+    String cursor = "cursor";
+    compute = options.service();
+    ImmutableList<Subnetwork> subnetworkList = ImmutableList.of(
+        new Subnetwork(compute, new SubnetworkInfo.BuilderImpl(SUBNETWORK)),
+        new Subnetwork(compute, new SubnetworkInfo.BuilderImpl(SUBNETWORK)));
+    Tuple<String, Iterable<com.google.api.services.compute.model.Subnetwork>> result =
+        Tuple.of(cursor, Iterables.transform(subnetworkList, SubnetworkInfo.TO_PB_FUNCTION));
+    EasyMock.expect(computeRpcMock.listSubnetworks(SUBNETWORK_ID.region(), SUBNETWORK_LIST_OPTIONS))
+        .andReturn(result);
+    EasyMock.replay(computeRpcMock);
+    Page<Subnetwork> page = compute.listSubnetworks(SUBNETWORK_ID.region(),
+        SUBNETWORK_LIST_PAGE_SIZE, SUBNETWORK_LIST_PAGE_TOKEN, SUBNETWORK_LIST_FILTER);
+    assertEquals(cursor, page.nextPageCursor());
+    assertArrayEquals(subnetworkList.toArray(), Iterables.toArray(page.values(), Subnetwork.class));
+  }
+
+  @Test
+  public void testAggregatedListSubnetworks() {
+    String cursor = "cursor";
+    compute = options.service();
+    ImmutableList<Subnetwork> subnetworkList = ImmutableList.of(
+        new Subnetwork(compute, new SubnetworkInfo.BuilderImpl(SUBNETWORK)),
+        new Subnetwork(compute, new SubnetworkInfo.BuilderImpl(SUBNETWORK)));
+    Tuple<String, Iterable<com.google.api.services.compute.model.Subnetwork>> result =
+        Tuple.of(cursor, Iterables.transform(subnetworkList, SubnetworkInfo.TO_PB_FUNCTION));
+    EasyMock.expect(computeRpcMock.listSubnetworks(EMPTY_RPC_OPTIONS)).andReturn(result);
+    EasyMock.replay(computeRpcMock);
+    Page<Subnetwork> page = compute.listSubnetworks();
+    assertEquals(cursor, page.nextPageCursor());
+    assertArrayEquals(subnetworkList.toArray(), Iterables.toArray(page.values(), Subnetwork.class));
+  }
+
+  @Test
+  public void testAggregatedListSubnetworksNextPage() {
+    String cursor = "cursor";
+    String nextCursor = "nextCursor";
+    compute = options.service();
+    ImmutableList<Subnetwork> subnetworkList = ImmutableList.of(
+        new Subnetwork(compute, new SubnetworkInfo.BuilderImpl(SUBNETWORK)),
+        new Subnetwork(compute, new SubnetworkInfo.BuilderImpl(SUBNETWORK)));
+    ImmutableList<Subnetwork> nextSubnetworkList = ImmutableList.of(
+        new Subnetwork(compute, new SubnetworkInfo.BuilderImpl(SUBNETWORK)));
+    Tuple<String, Iterable<com.google.api.services.compute.model.Subnetwork>> result =
+        Tuple.of(cursor, Iterables.transform(subnetworkList, SubnetworkInfo.TO_PB_FUNCTION));
+    Tuple<String, Iterable<com.google.api.services.compute.model.Subnetwork>> nextResult =
+        Tuple.of(nextCursor,
+            Iterables.transform(nextSubnetworkList, SubnetworkInfo.TO_PB_FUNCTION));
+    Map<ComputeRpc.Option, ?> nextOptions = ImmutableMap.of(PAGE_TOKEN, cursor);
+    EasyMock.expect(computeRpcMock.listSubnetworks(EMPTY_RPC_OPTIONS)).andReturn(result);
+    EasyMock.expect(computeRpcMock.listSubnetworks(nextOptions)).andReturn(nextResult);
+    EasyMock.replay(computeRpcMock);
+    Page<Subnetwork> page = compute.listSubnetworks();
+    assertEquals(cursor, page.nextPageCursor());
+    assertArrayEquals(subnetworkList.toArray(), Iterables.toArray(page.values(), Subnetwork.class));
+    page = page.nextPage();
+    assertEquals(nextCursor, page.nextPageCursor());
+    assertArrayEquals(nextSubnetworkList.toArray(),
+        Iterables.toArray(page.values(), Subnetwork.class));
+  }
+
+  @Test
+  public void testAggregatedListEmptySubnetworks() {
+    compute = options.service();
+    ImmutableList<com.google.api.services.compute.model.Subnetwork> subnetworks =
+        ImmutableList.of();
+    Tuple<String, Iterable<com.google.api.services.compute.model.Subnetwork>> result =
+        Tuple.<String, Iterable<com.google.api.services.compute.model.Subnetwork>>of(null,
+            subnetworks);
+    EasyMock.expect(computeRpcMock.listSubnetworks(EMPTY_RPC_OPTIONS)).andReturn(result);
+    EasyMock.replay(computeRpcMock);
+    Page<Subnetwork> page = compute.listSubnetworks();
+    assertNull(page.nextPageCursor());
+    assertArrayEquals(subnetworks.toArray(), Iterables.toArray(page.values(), Subnetwork.class));
+  }
+
+  @Test
+  public void testAggregatedListSubnetworksWithOptions() {
+    String cursor = "cursor";
+    compute = options.service();
+    ImmutableList<Subnetwork> subnetworkList = ImmutableList.of(
+        new Subnetwork(compute, new SubnetworkInfo.BuilderImpl(SUBNETWORK)),
+        new Subnetwork(compute, new SubnetworkInfo.BuilderImpl(SUBNETWORK)));
+    Tuple<String, Iterable<com.google.api.services.compute.model.Subnetwork>> result =
+        Tuple.of(cursor, Iterables.transform(subnetworkList, SubnetworkInfo.TO_PB_FUNCTION));
+    EasyMock.expect(computeRpcMock.listSubnetworks(SUBNETWORK_LIST_OPTIONS)).andReturn(result);
+    EasyMock.replay(computeRpcMock);
+    Page<Subnetwork> page = compute.listSubnetworks(SUBNETWORK_AGGREGATED_LIST_PAGE_SIZE,
+        SUBNETWORK_AGGREGATED_LIST_PAGE_TOKEN, SUBNETWORK_AGGREGATED_LIST_FILTER);
+    assertEquals(cursor, page.nextPageCursor());
+    assertArrayEquals(subnetworkList.toArray(), Iterables.toArray(page.values(), Subnetwork.class));
+  }
+
+  @Test
+  public void testCreateSubnetwork() {
+    EasyMock.expect(computeRpcMock.createSubnetwork(SUBNETWORK_ID.region(), SUBNETWORK.toPb(),
+        EMPTY_RPC_OPTIONS)).andReturn(regionOperation.toPb());
+    EasyMock.replay(computeRpcMock);
+    compute = options.service();
+    SubnetworkId subnetworkId = SubnetworkId.of("region", "network");
+    NetworkId networkId = NetworkId.of("network");
+    SubnetworkInfo subnetwork = SubnetworkInfo.of(subnetworkId, networkId, "192.168.0.0/16");
+    Operation operation = compute.create(subnetwork);
+    assertEquals(regionOperation, operation);
+  }
+
+  @Test
+  public void testCreateSubnetworkWithOptions() {
+    Capture<Map<ComputeRpc.Option, Object>> capturedOptions = Capture.newInstance();
+    EasyMock.expect(computeRpcMock.createSubnetwork(eq(SUBNETWORK_ID.region()),
+        eq(SUBNETWORK.toPb()), capture(capturedOptions))).andReturn(regionOperation.toPb());
+    EasyMock.replay(computeRpcMock);
+    compute = options.service();
+    Operation operation = compute.create(SUBNETWORK, OPERATION_OPTION_FIELDS);
+    String selector = (String) capturedOptions.getValue().get(OPERATION_OPTION_FIELDS.rpcOption());
+    assertTrue(selector.contains("selfLink"));
+    assertTrue(selector.contains("id"));
+    assertTrue(selector.contains("description"));
+    assertEquals(23, selector.length());
+    assertEquals(regionOperation, operation);
+  }
+
+  @Test
+  public void testGetNetwork() {
+    EasyMock.expect(computeRpcMock.getNetwork(NETWORK_ID.network(), EMPTY_RPC_OPTIONS))
+        .andReturn(NETWORK.toPb());
+    EasyMock.replay(computeRpcMock);
+    compute = options.service();
+    Network network = compute.getNetwork(NETWORK_ID.network());
+    assertEquals(new Network(compute, new NetworkInfo.BuilderImpl(NETWORK)), network);
+  }
+
+  @Test
+  public void testGetNetwork_Null() {
+    EasyMock.expect(computeRpcMock.getNetwork(NETWORK_ID.network(), EMPTY_RPC_OPTIONS))
+        .andReturn(null);
+    EasyMock.replay(computeRpcMock);
+    compute = options.service();
+    assertNull(compute.getNetwork(NETWORK_ID.network()));
+  }
+
+  @Test
+  public void testGetNetworkWithSelectedFields() {
+    Capture<Map<ComputeRpc.Option, Object>> capturedOptions = Capture.newInstance();
+    EasyMock.expect(computeRpcMock.getNetwork(eq(NETWORK_ID.network()), capture(capturedOptions)))
+        .andReturn(NETWORK.toPb());
+    EasyMock.replay(computeRpcMock);
+    compute = options.service();
+    Network network = compute.getNetwork(NETWORK_ID.network(), NETWORK_OPTION_FIELDS);
+    String selector = (String) capturedOptions.getValue().get(NETWORK_OPTION_FIELDS.rpcOption());
+    assertTrue(selector.contains("selfLink"));
+    assertTrue(selector.contains("id"));
+    assertTrue(selector.contains("description"));
+    assertTrue(selector.contains("IPv4Range"));
+    assertTrue(selector.contains("autoCreateSubnetworks"));
+    assertEquals(55, selector.length());
+    assertEquals(new Network(compute, new NetworkInfo.BuilderImpl(NETWORK)), network);
+  }
+
+  @Test
+  public void testDeleteNetwork_Operation() {
+    EasyMock.expect(computeRpcMock.deleteNetwork(NETWORK_ID.network(), EMPTY_RPC_OPTIONS))
+        .andReturn(globalOperation.toPb());
+    EasyMock.replay(computeRpcMock);
+    compute = options.service();
+    assertEquals(globalOperation, compute.deleteNetwork(NETWORK_ID));
+  }
+
+  @Test
+  public void testDeleteNetworkWithSelectedFields_Operation() {
+    Capture<Map<ComputeRpc.Option, Object>> capturedOptions = Capture.newInstance();
+    EasyMock.expect(computeRpcMock.deleteNetwork(eq(NETWORK_ID.network()),
+        capture(capturedOptions))).andReturn(globalOperation.toPb());
+    EasyMock.replay(computeRpcMock);
+    compute = options.service();
+    Operation operation = compute.deleteNetwork(NETWORK_ID, OPERATION_OPTION_FIELDS);
+    String selector = (String) capturedOptions.getValue().get(OPERATION_OPTION_FIELDS.rpcOption());
+    assertTrue(selector.contains("selfLink"));
+    assertTrue(selector.contains("id"));
+    assertTrue(selector.contains("description"));
+    assertEquals(23, selector.length());
+    assertEquals(globalOperation, operation);
+  }
+
+  @Test
+  public void testDeleteNetwork_Null() {
+    EasyMock.expect(computeRpcMock.deleteNetwork(NETWORK_ID.network(), EMPTY_RPC_OPTIONS))
+        .andReturn(null);
+    EasyMock.replay(computeRpcMock);
+    compute = options.service();
+    assertNull(compute.deleteNetwork(NETWORK_ID));
+  }
+
+  @Test
+  public void testListNetworks() {
+    String cursor = "cursor";
+    compute = options.service();
+    ImmutableList<Network> networkList = ImmutableList.of(
+        new Network(compute, new NetworkInfo.BuilderImpl(NETWORK)),
+        new Network(compute, new NetworkInfo.BuilderImpl(NETWORK)));
+    Tuple<String, Iterable<com.google.api.services.compute.model.Network>> result =
+        Tuple.of(cursor, Iterables.transform(networkList, NetworkInfo.TO_PB_FUNCTION));
+    EasyMock.expect(computeRpcMock.listNetworks(EMPTY_RPC_OPTIONS)).andReturn(result);
+    EasyMock.replay(computeRpcMock);
+    Page<Network> page = compute.listNetworks();
+    assertEquals(cursor, page.nextPageCursor());
+    assertArrayEquals(networkList.toArray(), Iterables.toArray(page.values(), Network.class));
+  }
+
+  @Test
+  public void testListNetworksNextPage() {
+    String cursor = "cursor";
+    String nextCursor = "nextCursor";
+    compute = options.service();
+    ImmutableList<Network> networkList = ImmutableList.of(
+        new Network(compute, new NetworkInfo.BuilderImpl(NETWORK)),
+        new Network(compute, new NetworkInfo.BuilderImpl(NETWORK)));
+    ImmutableList<Network> nextNetworkList = ImmutableList.of(
+        new Network(compute, new NetworkInfo.BuilderImpl(NETWORK)));
+    Tuple<String, Iterable<com.google.api.services.compute.model.Network>> result =
+        Tuple.of(cursor, Iterables.transform(networkList, NetworkInfo.TO_PB_FUNCTION));
+    Tuple<String, Iterable<com.google.api.services.compute.model.Network>> nextResult =
+        Tuple.of(nextCursor, Iterables.transform(nextNetworkList, NetworkInfo.TO_PB_FUNCTION));
+    Map<ComputeRpc.Option, ?> nextOptions = ImmutableMap.of(PAGE_TOKEN, cursor);
+    EasyMock.expect(computeRpcMock.listNetworks(EMPTY_RPC_OPTIONS)).andReturn(result);
+    EasyMock.expect(computeRpcMock.listNetworks(nextOptions)).andReturn(nextResult);
+    EasyMock.replay(computeRpcMock);
+    Page<Network> page = compute.listNetworks();
+    assertEquals(cursor, page.nextPageCursor());
+    assertArrayEquals(networkList.toArray(), Iterables.toArray(page.values(), Network.class));
+    page = page.nextPage();
+    assertEquals(nextCursor, page.nextPageCursor());
+    assertArrayEquals(nextNetworkList.toArray(), Iterables.toArray(page.values(), Network.class));
+  }
+
+  @Test
+  public void testListEmptyNetworks() {
+    compute = options.service();
+    ImmutableList<com.google.api.services.compute.model.Network> networks = ImmutableList.of();
+    Tuple<String, Iterable<com.google.api.services.compute.model.Network>> result =
+        Tuple.<String, Iterable<com.google.api.services.compute.model.Network>>of(null, networks);
+    EasyMock.expect(computeRpcMock.listNetworks(EMPTY_RPC_OPTIONS)).andReturn(result);
+    EasyMock.replay(computeRpcMock);
+    Page<Network> page = compute.listNetworks();
+    assertNull(page.nextPageCursor());
+    assertArrayEquals(networks.toArray(), Iterables.toArray(page.values(), Network.class));
+  }
+
+  @Test
+  public void testListNetworksWithOptions() {
+    String cursor = "cursor";
+    compute = options.service();
+    ImmutableList<Network> networkList = ImmutableList.of(
+        new Network(compute, new NetworkInfo.BuilderImpl(NETWORK)),
+        new Network(compute, new NetworkInfo.BuilderImpl(NETWORK)));
+    Tuple<String, Iterable<com.google.api.services.compute.model.Network>> result =
+        Tuple.of(cursor, Iterables.transform(networkList, NetworkInfo.TO_PB_FUNCTION));
+    EasyMock.expect(computeRpcMock.listNetworks(NETWORK_LIST_OPTIONS)).andReturn(result);
+    EasyMock.replay(computeRpcMock);
+    Page<Network> page = compute.listNetworks(NETWORK_LIST_PAGE_SIZE, NETWORK_LIST_PAGE_TOKEN,
+        NETWORK_LIST_FILTER);
+    assertEquals(cursor, page.nextPageCursor());
+    assertArrayEquals(networkList.toArray(), Iterables.toArray(page.values(), Network.class));
+  }
+
+  @Test
+  public void testCreateNetwork() {
+    EasyMock.expect(computeRpcMock.createNetwork(NETWORK.toPb(), EMPTY_RPC_OPTIONS))
+        .andReturn(globalOperation.toPb());
+    EasyMock.replay(computeRpcMock);
+    compute = options.service();
+    NetworkInfo network =
+        NetworkInfo.of(NetworkId.of("network"), StandardNetworkConfiguration.of("192.168.0.0/16"));
+    Operation operation = compute.create(network);
+    assertEquals(globalOperation, operation);
+  }
+
+  @Test
+  public void testCreateNetworkWithOptions() {
+    Capture<Map<ComputeRpc.Option, Object>> capturedOptions = Capture.newInstance();
+    EasyMock.expect(computeRpcMock.createNetwork(eq(NETWORK.toPb()), capture(capturedOptions)))
+        .andReturn(globalOperation.toPb());
+    EasyMock.replay(computeRpcMock);
+    compute = options.service();
+    Operation operation = compute.create(NETWORK, OPERATION_OPTION_FIELDS);
+    String selector = (String) capturedOptions.getValue().get(OPERATION_OPTION_FIELDS.rpcOption());
+    assertTrue(selector.contains("selfLink"));
+    assertTrue(selector.contains("id"));
+    assertTrue(selector.contains("description"));
+    assertEquals(23, selector.length());
+    assertEquals(globalOperation, operation);
   }
 
   @Test
