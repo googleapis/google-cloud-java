@@ -46,8 +46,7 @@ public class AttachedDisk implements Serializable {
       };
   static final Function<AttachedDisk, com.google.api.services.compute.model.AttachedDisk>
       TO_PB_FUNCTION =
-      new Function<AttachedDisk,
-          com.google.api.services.compute.model.AttachedDisk>() {
+      new Function<AttachedDisk, com.google.api.services.compute.model.AttachedDisk>() {
         @Override
         public com.google.api.services.compute.model.AttachedDisk apply(
             AttachedDisk attachedDisk) {
@@ -233,7 +232,9 @@ public class AttachedDisk implements Serializable {
       private Boolean boot;
       private Boolean autoDelete;
 
-      private Builder() {}
+      private Builder(DiskId sourceDisk) {
+        this.sourceDisk = checkNotNull(sourceDisk);
+      }
 
       private Builder(PersistentDiskConfiguration configuration) {
         sourceDisk = configuration.sourceDisk;
@@ -261,8 +262,8 @@ public class AttachedDisk implements Serializable {
 
       /**
        * Sets whether to use the attached disk as a boot disk. If {@code true} the virtual machine
-       * will use the first partition of the disk for its root filesystem. If not specified, the
-       * disk is not used as a boot disk.
+       * instance will use the first partition of the disk for its root filesystem. If not
+       * specified, the isk is not used as a boot disk.
        */
       public Builder boot(boolean boot) {
         this.boot = boot;
@@ -286,9 +287,9 @@ public class AttachedDisk implements Serializable {
       }
     }
 
-    PersistentDiskConfiguration(Builder builder) {
+    private PersistentDiskConfiguration(Builder builder) {
       super(Type.PERSISTENT, null, builder.boot, builder.autoDelete);
-      this.sourceDisk = checkNotNull(builder.sourceDisk);
+      this.sourceDisk = builder.sourceDisk;
       this.mode = builder.mode;
     }
 
@@ -353,7 +354,7 @@ public class AttachedDisk implements Serializable {
      * persistent disk to attach.
      */
     public static Builder builder(DiskId sourceDisk) {
-      return new Builder().sourceDisk(sourceDisk);
+      return new Builder(sourceDisk);
     }
 
     /**
@@ -367,8 +368,7 @@ public class AttachedDisk implements Serializable {
     @SuppressWarnings("unchecked")
     static PersistentDiskConfiguration fromPb(
         com.google.api.services.compute.model.AttachedDisk diskPb) {
-      Builder builder = new Builder();
-      builder.sourceDisk(DiskId.fromUrl(diskPb.getSource()));
+      Builder builder = new Builder(DiskId.fromUrl(diskPb.getSource()));
       if (diskPb.getMode() != null) {
         builder.mode(Mode.valueOf(diskPb.getMode()));
       }
@@ -385,7 +385,9 @@ public class AttachedDisk implements Serializable {
   /**
    * An attached disk configuration for bootable persistent disks that must be created with the
    * instance they are attached to. Attached disks that use this configuration can only be attached
-   * to an instance upon creation.
+   * to an instance upon creation. A {@code CreateDiskConfiguration} object is never returned by the
+   * service: after the instance is created the corresponding attached disk will be returned with a
+   * {@link PersistentDiskConfiguration}.
    */
   public static final class CreateDiskConfiguration extends AttachedDiskConfiguration {
 
@@ -407,7 +409,9 @@ public class AttachedDisk implements Serializable {
       private ImageId sourceImage;
       private Boolean autoDelete;
 
-      private Builder() {}
+      private Builder(ImageId sourceImage) {
+        this.sourceImage = checkNotNull(sourceImage);
+      }
 
       private Builder(CreateDiskConfiguration configuration) {
         this.diskName = configuration.diskName;
@@ -436,8 +440,8 @@ public class AttachedDisk implements Serializable {
 
       /**
        * Sets the size of the persistent disk, in GB. If not set the disk will have the size of the
-       * image. This value can be larger than the image's size. If the provided size is smaller than
-       * the image's size then instance creation will fail.
+       * source image. This value can be larger than the image's size. If the provided size is
+       * smaller than the image's size, then instance creation will fail.
        */
       public Builder diskSizeGb(Long diskSizeGb) {
         this.diskSizeGb = diskSizeGb;
@@ -469,12 +473,12 @@ public class AttachedDisk implements Serializable {
       }
     }
 
-    CreateDiskConfiguration(Builder builder) {
+    private CreateDiskConfiguration(Builder builder) {
       super(Type.PERSISTENT, null, true, builder.autoDelete);
       this.diskName = builder.diskName;
       this.diskType = builder.diskType;
       this.diskSizeGb = builder.diskSizeGb;
-      this.sourceImage = checkNotNull(builder.sourceImage);
+      this.sourceImage = builder.sourceImage;
     }
 
     /**
@@ -494,8 +498,8 @@ public class AttachedDisk implements Serializable {
 
     /**
      * Returns the size of the persistent disk, in GB. If not set the disk will have the size of the
-     * image. This value can be larger than the image's size. If the provided size is smaller than
-     * the image's size then instance creation will fail.
+     * source image. This value can be larger than the image's size. If the provided size is smaller
+     * than the image's size then instance creation will fail.
      */
     public Long diskSizeGb() {
       return diskSizeGb;
@@ -568,7 +572,7 @@ public class AttachedDisk implements Serializable {
      * will be used to create the disk.
      */
     public static Builder builder(ImageId sourceImage) {
-      return new Builder().sourceImage(sourceImage);
+      return new Builder(sourceImage);
     }
 
     /**
@@ -623,7 +627,7 @@ public class AttachedDisk implements Serializable {
       }
 
       /**
-       * Sets the identity of the disk type.
+       * Sets the identity of the disk type for the scratch disk to attach.
        */
       public Builder diskType(DiskTypeId diskType) {
         this.diskType = diskType;
@@ -646,7 +650,7 @@ public class AttachedDisk implements Serializable {
       }
     }
 
-    ScratchDiskConfiguration(Builder builder) {
+    private ScratchDiskConfiguration(Builder builder) {
       super(Type.SCRATCH, builder.interfaceType, false, true);
       this.diskType = builder.diskType;
     }
@@ -827,7 +831,7 @@ public class AttachedDisk implements Serializable {
   }
 
   /**
-   * Sets the attached disk configuration. Returns {@link ScratchDiskConfiguration} to attach a
+   * Returns the attached disk configuration. Returns {@link ScratchDiskConfiguration} to attach a
    * scratch disk to the instance. Returns {@link PersistentDiskConfiguration} to attach a
    * persistent disk to the instance. Returns {@link CreateDiskConfiguration} to create and attach
    * a new persistent disk.
@@ -838,7 +842,7 @@ public class AttachedDisk implements Serializable {
   }
 
   /**
-   * Returns a list of publicly accessible licenses.
+   * Returns a list of publicly accessible licenses for the attached disk.
    */
   public List<LicenseId> licenses() {
     return licenses;
@@ -903,7 +907,7 @@ public class AttachedDisk implements Serializable {
   }
 
   /**
-   * Returns an {@code AttachedDisk} object given its configuration and the device name.
+   * Returns an {@code AttachedDisk} object given the device name and its configuration.
    */
   public static AttachedDisk of(String deviceName, AttachedDiskConfiguration configuration) {
     return builder(configuration).deviceName(deviceName).build();
