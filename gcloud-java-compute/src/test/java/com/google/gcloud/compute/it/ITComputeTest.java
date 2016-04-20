@@ -46,6 +46,10 @@ import com.google.gcloud.compute.ImageInfo;
 import com.google.gcloud.compute.License;
 import com.google.gcloud.compute.LicenseId;
 import com.google.gcloud.compute.MachineType;
+import com.google.gcloud.compute.Network;
+import com.google.gcloud.compute.NetworkConfiguration;
+import com.google.gcloud.compute.NetworkId;
+import com.google.gcloud.compute.NetworkInfo;
 import com.google.gcloud.compute.Operation;
 import com.google.gcloud.compute.Region;
 import com.google.gcloud.compute.RegionAddressId;
@@ -55,7 +59,12 @@ import com.google.gcloud.compute.SnapshotDiskConfiguration;
 import com.google.gcloud.compute.SnapshotId;
 import com.google.gcloud.compute.SnapshotInfo;
 import com.google.gcloud.compute.StandardDiskConfiguration;
+import com.google.gcloud.compute.StandardNetworkConfiguration;
 import com.google.gcloud.compute.StorageImageConfiguration;
+import com.google.gcloud.compute.SubnetNetworkConfiguration;
+import com.google.gcloud.compute.Subnetwork;
+import com.google.gcloud.compute.SubnetworkId;
+import com.google.gcloud.compute.SubnetworkInfo;
 import com.google.gcloud.compute.Zone;
 import com.google.gcloud.compute.ZoneOperationId;
 import com.google.gcloud.compute.testing.RemoteComputeHelper;
@@ -1352,5 +1361,242 @@ public class ITComputeTest {
           (long) image.<StorageImageConfiguration>configuration().archiveSizeBytes());
     }
     assertTrue(count > 0);
+  }
+
+  @Test
+  public void testCreateAndGetNetwork() throws InterruptedException {
+    String name = BASE_RESOURCE_NAME + "create-and-get-network";
+    NetworkId networkId = NetworkId.of(name);
+    NetworkInfo networkInfo =
+        NetworkInfo.of(networkId, StandardNetworkConfiguration.of("192.168.0.0/16"));
+    Operation operation = compute.create(networkInfo);
+    while (!operation.isDone()) {
+      Thread.sleep(1000L);
+    }
+    // test get network with selected fields
+    Network network = compute.getNetwork(networkId.network(),
+        Compute.NetworkOption.fields(Compute.NetworkField.CREATION_TIMESTAMP));
+    assertEquals(networkId.network(), network.networkId().network());
+    assertNull(network.id());
+    assertNotNull(network.creationTimestamp());
+    assertNull(network.description());
+    assertEquals(NetworkConfiguration.Type.STANDARD, network.configuration().type());
+    StandardNetworkConfiguration remoteConfiguration = network.configuration();
+    assertEquals("192.168.0.0/16", remoteConfiguration.ipRange());
+    // test get network
+    network = compute.getNetwork(networkId.network());
+    assertEquals(networkId.network(), network.networkId().network());
+    assertNotNull(network.id());
+    assertNotNull(network.creationTimestamp());
+    assertEquals(NetworkConfiguration.Type.STANDARD, network.configuration().type());
+    remoteConfiguration = network.configuration();
+    assertEquals("192.168.0.0/16", remoteConfiguration.ipRange());
+    operation = network.delete();
+    while (!operation.isDone()) {
+      Thread.sleep(1000L);
+    }
+    assertNull(compute.getNetwork(name));
+  }
+
+  @Test
+  public void testListNetworks() throws InterruptedException {
+    String name = BASE_RESOURCE_NAME + "list-network";
+    NetworkId networkId = NetworkId.of(name);
+    NetworkInfo networkInfo =
+        NetworkInfo.of(networkId, StandardNetworkConfiguration.of("192.168.0.0/16"));
+    Operation operation = compute.create(networkInfo);
+    while (!operation.isDone()) {
+      Thread.sleep(1000L);
+    }
+    // test list
+    Compute.NetworkFilter filter = Compute.NetworkFilter.equals(Compute.NetworkField.NAME, name);
+    Page<Network> networkPage = compute.listNetworks(Compute.NetworkListOption.filter(filter));
+    Iterator<Network> networkIterator = networkPage.iterateAll();
+    int count = 0;
+    while (networkIterator.hasNext()) {
+      Network network = networkIterator.next();
+      assertEquals(networkId.network(), network.networkId().network());
+      assertNotNull(network.id());
+      assertNotNull(network.creationTimestamp());
+      assertEquals(NetworkConfiguration.Type.STANDARD, network.configuration().type());
+      StandardNetworkConfiguration remoteConfiguration = network.configuration();
+      assertEquals("192.168.0.0/16", remoteConfiguration.ipRange());
+      count++;
+    }
+    assertEquals(1, count);
+    // test list with selected fields
+    count = 0;
+    networkPage = compute.listNetworks(Compute.NetworkListOption.filter(filter),
+        Compute.NetworkListOption.fields(Compute.NetworkField.CREATION_TIMESTAMP));
+    networkIterator = networkPage.iterateAll();
+    while (networkIterator.hasNext()) {
+      Network network = networkIterator.next();
+      assertEquals(networkId.network(), network.networkId().network());
+      assertNull(network.id());
+      assertNotNull(network.creationTimestamp());
+      assertNull(network.description());
+      assertEquals(NetworkConfiguration.Type.STANDARD, network.configuration().type());
+      StandardNetworkConfiguration remoteConfiguration = network.configuration();
+      assertEquals("192.168.0.0/16", remoteConfiguration.ipRange());
+      count++;
+    }
+    assertEquals(1, count);
+    operation = compute.deleteNetwork(networkId);
+    while (!operation.isDone()) {
+      Thread.sleep(1000L);
+    }
+    assertNull(compute.getNetwork(name));
+  }
+
+  @Test
+  public void testCreateNetworkAndSubnetwork() throws InterruptedException {
+    String networkName = BASE_RESOURCE_NAME + "create-subnetwork-network";
+    NetworkId networkId = NetworkId.of(networkName);
+    NetworkInfo networkInfo = NetworkInfo.of(networkId, SubnetNetworkConfiguration.of(false));
+    Operation operation = compute.create(networkInfo);
+    while (!operation.isDone()) {
+      Thread.sleep(1000L);
+    }
+    // test get network
+    Network network = compute.getNetwork(networkId.network());
+    assertEquals(networkId.network(), network.networkId().network());
+    assertNotNull(network.id());
+    assertNotNull(network.creationTimestamp());
+    assertEquals(NetworkConfiguration.Type.SUBNET, network.configuration().type());
+    assertTrue(network.configuration() instanceof SubnetNetworkConfiguration);
+    assertFalse(network.<SubnetNetworkConfiguration>configuration().autoCreateSubnetworks());
+    String subnetworkName = BASE_RESOURCE_NAME + "create-subnetwork-subnetwork";
+    SubnetworkId subnetworkId = SubnetworkId.of(REGION, subnetworkName);
+    SubnetworkInfo subnetworkInfo = SubnetworkInfo.of(subnetworkId, networkId, "192.168.0.0/16");
+    operation = compute.create(subnetworkInfo);
+    while (!operation.isDone()) {
+      Thread.sleep(1000L);
+    }
+    // test get subnetwork with selected fields
+    Subnetwork subnetwork = compute.get(subnetworkId,
+        Compute.SubnetworkOption.fields(Compute.SubnetworkField.CREATION_TIMESTAMP));
+    assertNull(subnetwork.id());
+    assertEquals(subnetworkId.subnetwork(), subnetwork.subnetworkId().subnetwork());
+    assertNotNull(subnetwork.creationTimestamp());
+    assertNull(subnetwork.description());
+    assertNull(subnetwork.gatewayAddress());
+    assertNull(subnetwork.network());
+    assertNull(subnetwork.ipRange());
+    // test get subnetwork
+    subnetwork = compute.get(subnetworkId);
+    assertNotNull(subnetwork.id());
+    assertEquals(subnetworkId.subnetwork(), subnetwork.subnetworkId().subnetwork());
+    assertNotNull(subnetwork.creationTimestamp());
+    assertNotNull(subnetwork.gatewayAddress());
+    assertEquals(networkId.network(), subnetwork.network().network());
+    assertEquals("192.168.0.0/16", subnetwork.ipRange());
+    // test list subnetworks
+    Compute.SubnetworkFilter filter =
+        Compute.SubnetworkFilter.equals(Compute.SubnetworkField.NAME, subnetworkName);
+    Page<Subnetwork> subnetworkPage =
+        compute.listSubnetworks(REGION, Compute.SubnetworkListOption.filter(filter));
+    Iterator<Subnetwork> subnetworkIterator = subnetworkPage.iterateAll();
+    int count = 0;
+    while (subnetworkIterator.hasNext()) {
+      Subnetwork remoteSubnetwork = subnetworkIterator.next();
+      assertNotNull(remoteSubnetwork.id());
+      assertEquals(subnetworkId.subnetwork(), remoteSubnetwork.subnetworkId().subnetwork());
+      assertNotNull(remoteSubnetwork.creationTimestamp());
+      assertNotNull(remoteSubnetwork.gatewayAddress());
+      assertEquals(networkId.network(), remoteSubnetwork.network().network());
+      assertEquals("192.168.0.0/16", remoteSubnetwork.ipRange());
+      count++;
+    }
+    assertEquals(1, count);
+    // test list subnetworks with selected fields
+    subnetworkPage = compute.listSubnetworks(REGION, Compute.SubnetworkListOption.filter(filter),
+        Compute.SubnetworkListOption.fields(Compute.SubnetworkField.CREATION_TIMESTAMP));
+    subnetworkIterator = subnetworkPage.iterateAll();
+    count = 0;
+    while (subnetworkIterator.hasNext()) {
+      Subnetwork remoteSubnetwork = subnetworkIterator.next();
+      assertNull(remoteSubnetwork.id());
+      assertEquals(subnetworkId.subnetwork(), remoteSubnetwork.subnetworkId().subnetwork());
+      assertNotNull(remoteSubnetwork.creationTimestamp());
+      assertNull(remoteSubnetwork.description());
+      assertNull(remoteSubnetwork.gatewayAddress());
+      assertNull(remoteSubnetwork.network());
+      assertNull(remoteSubnetwork.ipRange());
+      count++;
+    }
+    assertEquals(1, count);
+    operation = subnetwork.delete();
+    while (!operation.isDone()) {
+      Thread.sleep(1000L);
+    }
+    operation = compute.deleteNetwork(networkId);
+    while (!operation.isDone()) {
+      Thread.sleep(1000L);
+    }
+    assertNull(compute.get(subnetworkId));
+    assertNull(compute.getNetwork(networkName));
+  }
+
+  @Test
+  public void testAggregatedListSubnetworks() throws InterruptedException {
+    String networkName = BASE_RESOURCE_NAME + "list-subnetwork-network";
+    NetworkId networkId = NetworkId.of(networkName);
+    NetworkInfo networkInfo = NetworkInfo.of(networkId, SubnetNetworkConfiguration.of(false));
+    Operation operation = compute.create(networkInfo);
+    while (!operation.isDone()) {
+      Thread.sleep(1000L);
+    }
+    String prefix = BASE_RESOURCE_NAME + "list-subnetwork";
+    String[] regionNames = {"us-central1", "us-east1"};
+    String[] subnetworkNames = {prefix + "1", prefix + "2"};
+    String[] ipRanges = {"10.128.0.0/20", "10.132.0.0/20"};
+    SubnetworkId firstSubnetworkId = SubnetworkId.of(regionNames[0], subnetworkNames[0]);
+    SubnetworkId secondSubnetworkId = SubnetworkId.of(regionNames[1], subnetworkNames[1]);
+    SubnetworkInfo firstSubnetworkInfo =
+        SubnetworkInfo.of(firstSubnetworkId, networkId, ipRanges[0]);
+    SubnetworkInfo secondSubnetworkInfo =
+        SubnetworkInfo.of(secondSubnetworkId, networkId, ipRanges[1]);
+    Operation firstOperation = compute.create(firstSubnetworkInfo);
+    Operation secondOperation = compute.create(secondSubnetworkInfo);
+    while (!firstOperation.isDone()) {
+      Thread.sleep(1000L);
+    }
+    while (!secondOperation.isDone()) {
+      Thread.sleep(1000L);
+    }
+    Set<String> regionSet = ImmutableSet.copyOf(regionNames);
+    Set<String> subnetworkSet = ImmutableSet.copyOf(subnetworkNames);
+    Set<String> rangeSet = ImmutableSet.copyOf(ipRanges);
+    Compute.SubnetworkFilter subnetworkFilter =
+        Compute.SubnetworkFilter.equals(Compute.SubnetworkField.NAME, prefix + "\\d");
+    Page<Subnetwork> subnetworkPage =
+        compute.listSubnetworks(Compute.SubnetworkAggregatedListOption.filter(subnetworkFilter));
+    Iterator<Subnetwork> subnetworkIterator = subnetworkPage.iterateAll();
+    int count = 0;
+    while (subnetworkIterator.hasNext()) {
+      Subnetwork remoteSubnetwork = subnetworkIterator.next();
+      assertNotNull(remoteSubnetwork.id());
+      assertTrue(regionSet.contains(remoteSubnetwork.subnetworkId().region()));
+      assertTrue(subnetworkSet.contains(remoteSubnetwork.subnetworkId().subnetwork()));
+      assertNotNull(remoteSubnetwork.creationTimestamp());
+      assertNotNull(remoteSubnetwork.gatewayAddress());
+      assertEquals(networkId.network(), remoteSubnetwork.network().network());
+      assertTrue(rangeSet.contains(remoteSubnetwork.ipRange()));
+      count++;
+    }
+    assertEquals(2, count);
+    firstOperation = compute.delete(firstSubnetworkId);
+    secondOperation = compute.delete(secondSubnetworkId);
+    while (!firstOperation.isDone()) {
+      Thread.sleep(1000L);
+    }
+    while (!secondOperation.isDone()) {
+      Thread.sleep(1000L);
+    }
+    operation = compute.deleteNetwork(networkId);
+    while (!operation.isDone()) {
+      Thread.sleep(1000L);
+    }
+    assertNull(compute.getNetwork(networkName));
   }
 }
