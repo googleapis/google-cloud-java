@@ -21,6 +21,7 @@ import com.google.cloud.Page;
 import com.google.cloud.Service;
 
 import java.io.Serializable;
+import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
@@ -89,7 +90,7 @@ public interface PubSub extends Service<PubSubOptions> {
       return value;
     }
 
-    public static PullOption returnImmediatly() {
+    public static PullOption returnImmediately() {
       return new PullOption(Option.RETURN_IMMEDIATELY, true);
     }
 
@@ -102,8 +103,18 @@ public interface PubSub extends Service<PubSubOptions> {
    * A callback to process pulled messages.
    * The message will be ack'ed upon successful return or nack'ed if exception is thrown.
    */
-  interface PullCallback {
+  interface MessageProcessor {
     void process(Message message) throws Exception;
+  }
+
+  /**
+   * An interface to control asynchronous pulling.
+   */
+  interface MessageConsumer extends AutoCloseable {
+
+    void start();
+
+    void stop();
   }
 
   Topic create(TopicInfo topic);
@@ -162,13 +173,11 @@ public interface PubSub extends Service<PubSubOptions> {
 
   Future<AsyncPage<Subscription>> listSubscriptionsAsync(String topic, ListOption... options);
 
-  List<ReceivedMessage> pull(String subscription, PullOption... options);
+  Iterator<ReceivedMessage> pull(String subscription, PullOption... options);
 
-  Future<List<ReceivedMessage>> pullAsync(String subscription, PullOption... options);
+  Future<Iterator<ReceivedMessage>> pullAsync(String subscription, PullOption... options);
 
-  void pull(String subscription, PullCallback callback, PullOption... options);
-
-  void pullAsync(String subscription, PullCallback callback, PullOption... options);
+  MessageConsumer pullAsync(String subscription, MessageProcessor callback);
 
   void ack(String subscription, String ackId, String... ackIds);
 

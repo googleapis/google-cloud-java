@@ -18,12 +18,13 @@ package com.google.cloud.pubsub;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
-import com.google.cloud.pubsub.PubSub.PullCallback;
+import com.google.cloud.pubsub.PubSub.MessageConsumer;
+import com.google.cloud.pubsub.PubSub.MessageProcessor;
 import com.google.cloud.pubsub.PubSub.PullOption;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
-import java.util.List;
+import java.util.Iterator;
 import java.util.Objects;
 import java.util.concurrent.Future;
 
@@ -133,20 +134,16 @@ public class Subscription extends SubscriptionInfo {
     return pubsub.replacePushConfigAsync(name(), pushConfig);
   }
 
-  public List<ReceivedMessage> pull(PullOption... options) {
+  public Iterator<ReceivedMessage> pull(PullOption... options) {
     return pubsub.pull(name(), options);
   }
 
-  public Future<List<ReceivedMessage>> pullAsync(PullOption... options) {
+  public Future<Iterator<ReceivedMessage>> pullAsync(PullOption... options) {
     return pubsub.pullAsync(name(), options);
   }
 
-  public void pull(PullCallback callback, PullOption... options) {
-    pubsub.pull(name(), callback, options);
-  }
-
-  public void pullAsync(PullCallback callback, PullOption... options) {
-    pubsub.pull(name(), callback, options);
+  public MessageConsumer pullAsync(MessageProcessor callback) {
+    return pubsub.pullAsync(name(), callback);
   }
 
   private void readObject(ObjectInputStream input) throws IOException, ClassNotFoundException {
