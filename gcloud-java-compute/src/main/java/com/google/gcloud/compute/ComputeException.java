@@ -32,11 +32,11 @@ public class ComputeException extends BaseServiceException {
   private static final Set<Error> RETRYABLE_ERRORS = ImmutableSet.of(new Error(500, null));
   private static final long serialVersionUID = -8039359778707845810L;
 
-  public ComputeException(int code, String message) {
+  ComputeException(int code, String message) {
     super(code, message, null, true, null);
   }
 
-  private ComputeException(int code, String message, Throwable cause) {
+  ComputeException(int code, String message, Throwable cause) {
     super(code, message, null, true, cause);
   }
 
