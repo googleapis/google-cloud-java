@@ -353,6 +353,65 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
     }
   }
 
+  private static class SubnetworkPageFetcher implements NextPageFetcher<Subnetwork> {
+
+    private static final long serialVersionUID = 3674038457884412651L;
+    private final Map<ComputeRpc.Option, ?> requestOptions;
+    private final ComputeOptions serviceOptions;
+    private final String region;
+
+    SubnetworkPageFetcher(String region, ComputeOptions serviceOptions, String cursor,
+        Map<ComputeRpc.Option, ?> optionMap) {
+      this.requestOptions =
+          PageImpl.nextRequestOptions(ComputeRpc.Option.PAGE_TOKEN, cursor, optionMap);
+      this.serviceOptions = serviceOptions;
+      this.region = region;
+    }
+
+    @Override
+    public Page<Subnetwork> nextPage() {
+      return listSubnetworks(region, serviceOptions, requestOptions);
+    }
+  }
+
+  private static class AggregatedSubnetworkPageFetcher implements NextPageFetcher<Subnetwork> {
+
+    private static final long serialVersionUID = 771343548833894551L;
+    private final Map<ComputeRpc.Option, ?> requestOptions;
+    private final ComputeOptions serviceOptions;
+
+    AggregatedSubnetworkPageFetcher(ComputeOptions serviceOptions, String cursor,
+        Map<ComputeRpc.Option, ?> optionMap) {
+      this.requestOptions =
+          PageImpl.nextRequestOptions(ComputeRpc.Option.PAGE_TOKEN, cursor, optionMap);
+      this.serviceOptions = serviceOptions;
+    }
+
+    @Override
+    public Page<Subnetwork> nextPage() {
+      return listSubnetworks(serviceOptions, requestOptions);
+    }
+  }
+
+  private static class NetworkPageFetcher implements NextPageFetcher<Network> {
+
+    private static final long serialVersionUID = 5580210850353114531L;
+    private final Map<ComputeRpc.Option, ?> requestOptions;
+    private final ComputeOptions serviceOptions;
+
+    NetworkPageFetcher(ComputeOptions serviceOptions, String cursor,
+        Map<ComputeRpc.Option, ?> optionMap) {
+      this.requestOptions =
+          PageImpl.nextRequestOptions(ComputeRpc.Option.PAGE_TOKEN, cursor, optionMap);
+      this.serviceOptions = serviceOptions;
+    }
+
+    @Override
+    public Page<Network> nextPage() {
+      return listNetworks(serviceOptions, requestOptions);
+    }
+  }
+
   private final ComputeRpc computeRpc;
 
   ComputeImpl(ComputeOptions options) {
@@ -1334,6 +1393,217 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
     } catch (RetryHelper.RetryHelperException e) {
       throw ComputeException.translateAndThrow(e);
     }
+  }
+
+  public Operation create(SubnetworkInfo subnetwork, OperationOption... options) {
+    final SubnetworkInfo completeSubnetwork = subnetwork.setProjectId(options().projectId());
+    final Map<ComputeRpc.Option, ?> optionsMap = optionMap(options);
+    try {
+      com.google.api.services.compute.model.Operation answer =
+          runWithRetries(new Callable<com.google.api.services.compute.model.Operation>() {
+            @Override
+            public com.google.api.services.compute.model.Operation call() {
+              return computeRpc.createSubnetwork(completeSubnetwork.subnetworkId().region(),
+                  completeSubnetwork.toPb(), optionsMap);
+            }
+          }, options().retryParams(), EXCEPTION_HANDLER);
+      return answer == null ? null : Operation.fromPb(this, answer);
+    } catch (RetryHelper.RetryHelperException e) {
+      throw ComputeException.translateAndThrow(e);
+    }
+  }
+
+  @Override
+  public Subnetwork get(final SubnetworkId subnetworkId, SubnetworkOption... options) {
+    final Map<ComputeRpc.Option, ?> optionsMap = optionMap(options);
+    try {
+      com.google.api.services.compute.model.Subnetwork answer =
+          runWithRetries(new Callable<com.google.api.services.compute.model.Subnetwork>() {
+            @Override
+            public com.google.api.services.compute.model.Subnetwork call() {
+              return computeRpc.getSubnetwork(subnetworkId.region(), subnetworkId.subnetwork(),
+                  optionsMap);
+            }
+          }, options().retryParams(), EXCEPTION_HANDLER);
+      return answer == null ? null : Subnetwork.fromPb(this, answer);
+    } catch (RetryHelper.RetryHelperException e) {
+      throw ComputeException.translateAndThrow(e);
+    }
+  }
+
+  private static Function<com.google.api.services.compute.model.Subnetwork, Subnetwork>
+        subnetworkFromPb(final ComputeOptions serviceOptions) {
+    return new Function<com.google.api.services.compute.model.Subnetwork, Subnetwork>() {
+      @Override
+      public Subnetwork apply(com.google.api.services.compute.model.Subnetwork subnetwork) {
+        return Subnetwork.fromPb(serviceOptions.service(), subnetwork);
+      }
+    };
+  }
+
+  @Override
+  public Page<Subnetwork> listSubnetworks(String region, SubnetworkListOption... options) {
+    return listSubnetworks(region, options(), optionMap(options));
+  }
+
+  private static Page<Subnetwork> listSubnetworks(final String region,
+      final ComputeOptions serviceOptions, final Map<ComputeRpc.Option, ?> optionsMap) {
+    try {
+      ComputeRpc.Tuple<String, Iterable<com.google.api.services.compute.model.Subnetwork>> result =
+          runWithRetries(new Callable<ComputeRpc.Tuple<String,
+              Iterable<com.google.api.services.compute.model.Subnetwork>>>() {
+            @Override
+            public ComputeRpc.Tuple<String,
+                Iterable<com.google.api.services.compute.model.Subnetwork>> call() {
+              return serviceOptions.rpc().listSubnetworks(region, optionsMap);
+            }
+          }, serviceOptions.retryParams(), EXCEPTION_HANDLER);
+      String cursor = result.x();
+      Iterable<Subnetwork> subnetworks = Iterables.transform(
+          result.y() == null ? ImmutableList.<com.google.api.services.compute.model.Subnetwork>of()
+              : result.y(), subnetworkFromPb(serviceOptions));
+      return new PageImpl<>(new SubnetworkPageFetcher(region, serviceOptions, cursor, optionsMap),
+          cursor, subnetworks);
+    } catch (RetryHelper.RetryHelperException e) {
+      throw ComputeException.translateAndThrow(e);
+    }
+  }
+
+  @Override
+  public Page<Subnetwork> listSubnetworks(SubnetworkAggregatedListOption... options) {
+    return listSubnetworks(options(), optionMap(options));
+  }
+
+  private static Page<Subnetwork> listSubnetworks(final ComputeOptions serviceOptions,
+      final Map<ComputeRpc.Option, ?> optionsMap) {
+    try {
+      ComputeRpc.Tuple<String, Iterable<com.google.api.services.compute.model.Subnetwork>> result =
+          runWithRetries(new Callable<ComputeRpc.Tuple<String,
+              Iterable<com.google.api.services.compute.model.Subnetwork>>>() {
+            @Override
+            public ComputeRpc.Tuple<String,
+                Iterable<com.google.api.services.compute.model.Subnetwork>> call() {
+              return serviceOptions.rpc().listSubnetworks(optionsMap);
+            }
+          }, serviceOptions.retryParams(), EXCEPTION_HANDLER);
+      String cursor = result.x();
+      Iterable<Subnetwork> subnetworks = Iterables.transform(
+          result.y() == null ? ImmutableList.<com.google.api.services.compute.model.Subnetwork>of()
+              : result.y(), subnetworkFromPb(serviceOptions));
+      return new PageImpl<>(new AggregatedSubnetworkPageFetcher(serviceOptions, cursor, optionsMap),
+          cursor, subnetworks);
+    } catch (RetryHelper.RetryHelperException e) {
+      throw ComputeException.translateAndThrow(e);
+    }
+  }
+
+  @Override
+  public Operation delete(final SubnetworkId subnetwork, OperationOption... options) {
+    final Map<ComputeRpc.Option, ?> optionsMap = optionMap(options);
+    try {
+      com.google.api.services.compute.model.Operation answer =
+          runWithRetries(new Callable<com.google.api.services.compute.model.Operation>() {
+            @Override
+            public com.google.api.services.compute.model.Operation call() {
+              return computeRpc.deleteSubnetwork(subnetwork.region(), subnetwork.subnetwork(),
+                  optionsMap);
+            }
+          }, options().retryParams(), EXCEPTION_HANDLER);
+      return answer == null ? null : Operation.fromPb(this, answer);
+    } catch (RetryHelper.RetryHelperException e) {
+      throw ComputeException.translateAndThrow(e);
+    }
+  }
+
+  @Override
+  public Operation create(NetworkInfo network, OperationOption... options) {
+    final NetworkInfo completeNetwork = network.setProjectId(options().projectId());
+    final Map<ComputeRpc.Option, ?> optionsMap = optionMap(options);
+    try {
+      com.google.api.services.compute.model.Operation answer =
+          runWithRetries(new Callable<com.google.api.services.compute.model.Operation>() {
+            @Override
+            public com.google.api.services.compute.model.Operation call() {
+              return computeRpc.createNetwork(completeNetwork.toPb(), optionsMap);
+            }
+          }, options().retryParams(), EXCEPTION_HANDLER);
+      return answer == null ? null : Operation.fromPb(this, answer);
+    } catch (RetryHelper.RetryHelperException e) {
+      throw ComputeException.translateAndThrow(e);
+    }
+  }
+
+  @Override
+  public Network getNetwork(final String network, NetworkOption... options) {
+    final Map<ComputeRpc.Option, ?> optionsMap = optionMap(options);
+    try {
+      com.google.api.services.compute.model.Network answer =
+          runWithRetries(new Callable<com.google.api.services.compute.model.Network>() {
+            @Override
+            public com.google.api.services.compute.model.Network call() {
+              return computeRpc.getNetwork(network, optionsMap);
+            }
+          }, options().retryParams(), EXCEPTION_HANDLER);
+      return answer == null ? null : Network.fromPb(this, answer);
+    } catch (RetryHelper.RetryHelperException e) {
+      throw ComputeException.translateAndThrow(e);
+    }
+  }
+
+  @Override
+  public Page<Network> listNetworks(NetworkListOption... options) {
+    return listNetworks(options(), optionMap(options));
+  }
+
+  private static Page<Network> listNetworks(final ComputeOptions serviceOptions,
+      final Map<ComputeRpc.Option, ?> optionsMap) {
+    try {
+      ComputeRpc.Tuple<String, Iterable<com.google.api.services.compute.model.Network>> result =
+          runWithRetries(new Callable<ComputeRpc.Tuple<String,
+              Iterable<com.google.api.services.compute.model.Network>>>() {
+            @Override
+            public ComputeRpc.Tuple<String,
+                Iterable<com.google.api.services.compute.model.Network>> call() {
+              return serviceOptions.rpc().listNetworks(optionsMap);
+            }
+          }, serviceOptions.retryParams(), EXCEPTION_HANDLER);
+      String cursor = result.x();
+      Iterable<Network> networks = Iterables.transform(
+          result.y() == null ? ImmutableList.<com.google.api.services.compute.model.Network>of()
+              : result.y(),
+          new Function<com.google.api.services.compute.model.Network, Network>() {
+            @Override
+            public Network apply(com.google.api.services.compute.model.Network network) {
+              return Network.fromPb(serviceOptions.service(), network);
+            }
+          });
+      return new PageImpl<>(new NetworkPageFetcher(serviceOptions, cursor, optionsMap),
+          cursor, networks);
+    } catch (RetryHelper.RetryHelperException e) {
+      throw ComputeException.translateAndThrow(e);
+    }
+  }
+
+  @Override
+  public Operation deleteNetwork(final NetworkId network, OperationOption... options) {
+    final Map<ComputeRpc.Option, ?> optionsMap = optionMap(options);
+    try {
+      com.google.api.services.compute.model.Operation answer =
+          runWithRetries(new Callable<com.google.api.services.compute.model.Operation>() {
+            @Override
+            public com.google.api.services.compute.model.Operation call() {
+              return computeRpc.deleteNetwork(network.network(), optionsMap);
+            }
+          }, options().retryParams(), EXCEPTION_HANDLER);
+      return answer == null ? null : Operation.fromPb(this, answer);
+    } catch (RetryHelper.RetryHelperException e) {
+      throw ComputeException.translateAndThrow(e);
+    }
+  }
+
+  @Override
+  public Operation deleteNetwork(String network, OperationOption... options) {
+    return deleteNetwork(NetworkId.of(network));
   }
 
   private Map<ComputeRpc.Option, ?> optionMap(Option... options) {

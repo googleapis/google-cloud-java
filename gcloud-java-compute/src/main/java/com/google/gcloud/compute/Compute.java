@@ -964,6 +964,88 @@ public interface Compute extends Service<ComputeOptions> {
   }
 
   /**
+   * Class for filtering subnetwork lists.
+   */
+  class SubnetworkFilter extends ListFilter {
+
+    private static final long serialVersionUID = 979448583739105481L;
+
+    private SubnetworkFilter(SubnetworkField field, ComparisonOperator operator, Object value) {
+      super(field.selector(), operator, value);
+    }
+
+    /**
+     * Returns an equals filter for the given field and string value. For string fields,
+     * {@code value} is interpreted as a regular expression using RE2 syntax. {@code value} must
+     * match the entire field.
+     *
+     * @see <a href="https://github.com/google/re2/wiki/Syntax">RE2</a>
+     */
+    public static SubnetworkFilter equals(SubnetworkField field, String value) {
+      return new SubnetworkFilter(checkNotNull(field), ComparisonOperator.EQ, checkNotNull(value));
+    }
+
+    /**
+     * Returns a not-equals filter for the given field and string value. For string fields,
+     * {@code value} is interpreted as a regular expression using RE2 syntax. {@code value} must
+     * match the entire field.
+     *
+     * @see <a href="https://github.com/google/re2/wiki/Syntax">RE2</a>
+     */
+    public static SubnetworkFilter notEquals(SubnetworkField field, String value) {
+      return new SubnetworkFilter(checkNotNull(field), ComparisonOperator.NE, checkNotNull(value));
+    }
+  }
+
+  /**
+   * Class for filtering network lists.
+   */
+  class NetworkFilter extends ListFilter {
+
+    private static final long serialVersionUID = 7921406498804130930L;
+
+    private NetworkFilter(NetworkField field, ComparisonOperator operator, Object value) {
+      super(field.selector(), operator, value);
+    }
+
+    /**
+     * Returns an equals filter for the given field and string value. For string fields,
+     * {@code value} is interpreted as a regular expression using RE2 syntax. {@code value} must
+     * match the entire field.
+     *
+     * @see <a href="https://github.com/google/re2/wiki/Syntax">RE2</a>
+     */
+    public static NetworkFilter equals(NetworkField field, String value) {
+      return new NetworkFilter(checkNotNull(field), ComparisonOperator.EQ, checkNotNull(value));
+    }
+
+    /**
+     * Returns a not-equals filter for the given field and string value. For string fields,
+     * {@code value} is interpreted as a regular expression using RE2 syntax. {@code value} must
+     * match the entire field.
+     *
+     * @see <a href="https://github.com/google/re2/wiki/Syntax">RE2</a>
+     */
+    public static NetworkFilter notEquals(NetworkField field, String value) {
+      return new NetworkFilter(checkNotNull(field), ComparisonOperator.NE, checkNotNull(value));
+    }
+
+    /**
+     * Returns a equals filter for the given field and boolean value.
+     */
+    public static NetworkFilter equals(NetworkField field, boolean value) {
+      return new NetworkFilter(checkNotNull(field), ComparisonOperator.EQ, value);
+    }
+
+    /**
+     * Returns a not-equals filter for the given field and boolean value.
+     */
+    public static NetworkFilter notEquals(NetworkField field, boolean value) {
+      return new NetworkFilter(checkNotNull(field), ComparisonOperator.NE, value);
+    }
+  }
+
+  /**
    * Class for specifying disk type get options.
    */
   class DiskTypeOption extends Option {
@@ -1738,6 +1820,176 @@ public interface Compute extends Service<ComputeOptions> {
   }
 
   /**
+   * Class for specifying subnetwork get options.
+   */
+  class SubnetworkOption extends Option {
+
+    private static final long serialVersionUID = 1994416967962074717L;
+
+    private SubnetworkOption(ComputeRpc.Option option, Object value) {
+      super(option, value);
+    }
+
+    /**
+     * Returns an option to specify the subnetwork's fields to be returned by the RPC call. If this
+     * option is not provided, all subnetwork's fields are returned. {@code SubnetworkOption.fields}
+     * can be used to specify only the fields of interest. {@link Subnetwork#subnetworkId()} is
+     * always returned, even if not specified.
+     */
+    public static SubnetworkOption fields(SubnetworkField... fields) {
+      return new SubnetworkOption(ComputeRpc.Option.FIELDS, SubnetworkField.selector(fields));
+    }
+  }
+
+  /**
+   * Class for specifying subnetwork list options.
+   */
+  class SubnetworkListOption extends Option {
+
+    private static final long serialVersionUID = -2978666213373829606L;
+
+    private SubnetworkListOption(ComputeRpc.Option option, Object value) {
+      super(option, value);
+    }
+
+    /**
+     * Returns an option to specify a filter on the subnetworks being listed.
+     */
+    public static SubnetworkListOption filter(SubnetworkFilter filter) {
+      return new SubnetworkListOption(ComputeRpc.Option.FILTER, filter.toPb());
+    }
+
+    /**
+     * Returns an option to specify the maximum number of subnetworks returned per page.
+     * {@code pageSize} must be between 0 and 500 (inclusive). If not specified 500 is used.
+     */
+    public static SubnetworkListOption pageSize(long pageSize) {
+      return new SubnetworkListOption(ComputeRpc.Option.MAX_RESULTS, pageSize);
+    }
+
+    /**
+     * Returns an option to specify the page token from which to start listing subnetworks.
+     */
+    public static SubnetworkListOption pageToken(String pageToken) {
+      return new SubnetworkListOption(ComputeRpc.Option.PAGE_TOKEN, pageToken);
+    }
+
+    /**
+     * Returns an option to specify the subnetwork's fields to be returned by the RPC call. If this
+     * option is not provided, all subnetwork's fields are returned.
+     * {@code SubnetworListkOption.fields} can be used to specify only the fields of interest.
+     * {@link Subnetwork#subnetworkId()} is always returned, even if not specified.
+     */
+    public static SubnetworkListOption fields(SubnetworkField... fields) {
+      StringBuilder builder = new StringBuilder();
+      builder.append("items(").append(SubnetworkField.selector(fields)).append("),nextPageToken");
+      return new SubnetworkListOption(ComputeRpc.Option.FIELDS, builder.toString());
+    }
+  }
+
+  /**
+   * Class for specifying subnetwork aggregated list options.
+   */
+  class SubnetworkAggregatedListOption extends Option {
+
+    private static final long serialVersionUID = -4033514850525545027L;
+
+    private SubnetworkAggregatedListOption(ComputeRpc.Option option, Object value) {
+      super(option, value);
+    }
+
+    /**
+     * Returns an option to specify a filter on the subnetworks being listed.
+     */
+    public static SubnetworkAggregatedListOption filter(SubnetworkFilter filter) {
+      return new SubnetworkAggregatedListOption(ComputeRpc.Option.FILTER, filter.toPb());
+    }
+
+    /**
+     * Returns an option to specify the maximum number of subnetworks returned per page.
+     * {@code pageSize} must be between 0 and 500 (inclusive). If not specified 500 is used.
+     */
+    public static SubnetworkAggregatedListOption pageSize(long pageSize) {
+      return new SubnetworkAggregatedListOption(ComputeRpc.Option.MAX_RESULTS, pageSize);
+    }
+
+    /**
+     * Returns an option to specify the page token from which to start listing subnetworks.
+     */
+    public static SubnetworkAggregatedListOption pageToken(String pageToken) {
+      return new SubnetworkAggregatedListOption(ComputeRpc.Option.PAGE_TOKEN, pageToken);
+    }
+  }
+
+  /**
+   * Class for specifying network get options.
+   */
+  class NetworkOption extends Option {
+
+    private static final long serialVersionUID = 5346750551643875754L;
+
+    private NetworkOption(ComputeRpc.Option option, Object value) {
+      super(option, value);
+    }
+
+    /**
+     * Returns an option to specify the network's fields to be returned by the RPC call. If this
+     * option is not provided, all network's fields are returned. {@code NetworkOption.fields}
+     * can be used to specify only the fields of interest. {@link Network#networkId()} and
+     * {@link Network#configuration()} are always returned, even if not specified.
+     */
+    public static NetworkOption fields(NetworkField... fields) {
+      return new NetworkOption(ComputeRpc.Option.FIELDS, NetworkField.selector(fields));
+    }
+  }
+
+  /**
+   * Class for specifying network list options.
+   */
+  class NetworkListOption extends Option {
+
+    private static final long serialVersionUID = -4291731916527773896L;
+
+    private NetworkListOption(ComputeRpc.Option option, Object value) {
+      super(option, value);
+    }
+
+    /**
+     * Returns an option to specify a filter on the networks being listed.
+     */
+    public static NetworkListOption filter(NetworkFilter filter) {
+      return new NetworkListOption(ComputeRpc.Option.FILTER, filter.toPb());
+    }
+
+    /**
+     * Returns an option to specify the maximum number of networks returned per page.
+     * {@code pageSize} must be between 0 and 500 (inclusive). If not specified 500 is used.
+     */
+    public static NetworkListOption pageSize(long pageSize) {
+      return new NetworkListOption(ComputeRpc.Option.MAX_RESULTS, pageSize);
+    }
+
+    /**
+     * Returns an option to specify the page token from which to start listing networks.
+     */
+    public static NetworkListOption pageToken(String pageToken) {
+      return new NetworkListOption(ComputeRpc.Option.PAGE_TOKEN, pageToken);
+    }
+
+    /**
+     * Returns an option to specify the network's fields to be returned by the RPC call. If this
+     * option is not provided, all network's fields are returned. {@code NetworkListOption.fields}
+     * can be used to specify only the fields of interest. {@link Network#networkId()} and
+     * {@link Network#configuration()} are always returned, even if not specified.
+     */
+    public static NetworkListOption fields(NetworkField... fields) {
+      StringBuilder builder = new StringBuilder();
+      builder.append("items(").append(NetworkField.selector(fields)).append("),nextPageToken");
+      return new NetworkListOption(ComputeRpc.Option.FIELDS, builder.toString());
+    }
+  }
+
+  /**
    * Returns the requested disk type or {@code null} if not found.
    *
    * @throws ComputeException upon failure
@@ -2066,4 +2318,83 @@ public interface Compute extends Service<ComputeOptions> {
    * @throws ComputeException upon failure or if the new disk size is smaller than the previous one
    */
   Operation resize(DiskId disk, long sizeGb, OperationOption... options);
+
+  /*
+   * Creates a new subnetwork.
+   *
+   * @return a region operation for subnetwork's creation
+   * @throws ComputeException upon failure
+   */
+  Operation create(SubnetworkInfo subnetwork, OperationOption... options);
+
+  /**
+   * Returns the requested subnetwork or {@code null} if not found.
+   *
+   * @throws ComputeException upon failure
+   */
+  Subnetwork get(SubnetworkId subnetworkId, SubnetworkOption... options);
+
+  /**
+   * Lists subnetworks for the provided region.
+   *
+   * @throws ComputeException upon failure
+   */
+  Page<Subnetwork> listSubnetworks(String project, SubnetworkListOption... options);
+
+  /**
+   * Lists subnetworks for all regions.
+   *
+   * @throws ComputeException upon failure
+   */
+  Page<Subnetwork> listSubnetworks(SubnetworkAggregatedListOption... options);
+
+  /**
+   * Deletes the requested subnetwork. Any attempt to delete an automatically created subnetwork
+   * will fail.
+   *
+   * @return a region operation if the delete request was issued correctly, {@code null} if the
+   *     subnetwork was not found
+   * @throws ComputeException upon failure
+   */
+  Operation delete(SubnetworkId subnetwork, OperationOption... options);
+
+  /**
+   * Creates a new network.
+   *
+   * @return a global operation for network's creation
+   * @throws ComputeException upon failure
+   */
+  Operation create(NetworkInfo network, OperationOption... options);
+
+  /**
+   * Returns the requested network or {@code null} if not found.
+   *
+   * @throws ComputeException upon failure
+   */
+  Network getNetwork(String network, NetworkOption... options);
+
+  /**
+   * Lists networks.
+   *
+   * @throws ComputeException upon failure
+   */
+  Page<Network> listNetworks(NetworkListOption... options);
+
+  /**
+   * Deletes the requested network.
+   *
+   * @return a global operation if the delete request was issued correctly, {@code null} if the
+   *     network was not found
+   * @throws ComputeException upon failure
+   */
+  Operation deleteNetwork(String network, OperationOption... options);
+
+  /**
+   * Deletes the requested network.
+   *
+   * @return a global operation if the delete request was issued correctly, {@code null} if the
+   *     network was not found
+   * @throws ComputeException upon failure
+   */
+  Operation deleteNetwork(NetworkId network, OperationOption... options);
 }

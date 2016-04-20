@@ -47,12 +47,18 @@ import com.google.api.services.compute.model.MachineType;
 import com.google.api.services.compute.model.MachineTypeAggregatedList;
 import com.google.api.services.compute.model.MachineTypeList;
 import com.google.api.services.compute.model.MachineTypesScopedList;
+import com.google.api.services.compute.model.Network;
+import com.google.api.services.compute.model.NetworkList;
 import com.google.api.services.compute.model.Operation;
 import com.google.api.services.compute.model.OperationList;
 import com.google.api.services.compute.model.Region;
 import com.google.api.services.compute.model.RegionList;
 import com.google.api.services.compute.model.Snapshot;
 import com.google.api.services.compute.model.SnapshotList;
+import com.google.api.services.compute.model.Subnetwork;
+import com.google.api.services.compute.model.SubnetworkAggregatedList;
+import com.google.api.services.compute.model.SubnetworkList;
+import com.google.api.services.compute.model.SubnetworksScopedList;
 import com.google.api.services.compute.model.Zone;
 import com.google.api.services.compute.model.ZoneList;
 import com.google.common.collect.ImmutableList;
@@ -723,6 +729,139 @@ public class DefaultComputeRpc implements ComputeRpc {
     try {
       DisksResizeRequest resizeRequest = new DisksResizeRequest().setSizeGb(sizeGb);
       return compute.disks().resize(this.options.projectId(), zone, disk, resizeRequest)
+          .setFields(FIELDS.getString(options))
+          .execute();
+    } catch (IOException ex) {
+      return nullForNotFound(ex);
+    }
+  }
+
+  public Operation createSubnetwork(String region, Subnetwork subnetwork, Map<Option, ?> options) {
+    try {
+      return compute.subnetworks()
+          .insert(this.options.projectId(), region, subnetwork)
+          .setFields(FIELDS.getString(options))
+          .execute();
+    } catch (IOException ex) {
+      throw translate(ex);
+    }
+  }
+
+  @Override
+  public Subnetwork getSubnetwork(String region, String subnetwork, Map<Option, ?> options) {
+    try {
+      return compute.subnetworks()
+          .get(this.options.projectId(), region, subnetwork)
+          .setFields(FIELDS.getString(options))
+          .execute();
+    } catch (IOException ex) {
+      return nullForNotFound(ex);
+    }
+  }
+
+  @Override
+  public Tuple<String, Iterable<Subnetwork>> listSubnetworks(String region,
+      Map<Option, ?> options) {
+    try {
+      SubnetworkList subnetworkList = compute.subnetworks()
+          .list(this.options.projectId(), region)
+          .setFilter(FILTER.getString(options))
+          .setMaxResults(MAX_RESULTS.getLong(options))
+          .setPageToken(PAGE_TOKEN.getString(options))
+          .setFields(FIELDS.getString(options))
+          .execute();
+      Iterable<Subnetwork> subnetworks = subnetworkList.getItems();
+      return Tuple.of(subnetworkList.getNextPageToken(), subnetworks);
+    } catch (IOException ex) {
+      throw translate(ex);
+    }
+  }
+
+  @Override
+  public Tuple<String, Iterable<Subnetwork>> listSubnetworks(Map<Option, ?> options) {
+    try {
+      SubnetworkAggregatedList aggregatedList = compute.subnetworks()
+          .aggregatedList(this.options.projectId())
+          .setFilter(FILTER.getString(options))
+          .setMaxResults(MAX_RESULTS.getLong(options))
+          .setPageToken(PAGE_TOKEN.getString(options))
+          // todo(mziccard): uncomment or remove once #711 is closed
+          // .setFields(FIELDS.getString(options))
+          .execute();
+      ImmutableList.Builder<Subnetwork> builder = ImmutableList.builder();
+      Map<String, SubnetworksScopedList> scopedList = aggregatedList.getItems();
+      if (scopedList != null) {
+        for (SubnetworksScopedList subnetworksScopedList : scopedList.values()) {
+          if (subnetworksScopedList.getSubnetworks() != null) {
+            builder.addAll(subnetworksScopedList.getSubnetworks());
+          }
+        }
+      }
+      return Tuple.<String, Iterable<Subnetwork>>of(aggregatedList.getNextPageToken(),
+          builder.build());
+    } catch (IOException ex) {
+      throw translate(ex);
+    }
+  }
+
+  @Override
+  public Operation deleteSubnetwork(String region, String subnetwork, Map<Option, ?> options) {
+    try {
+      return compute.subnetworks()
+          .delete(this.options.projectId(), region, subnetwork)
+          .setFields(FIELDS.getString(options))
+          .execute();
+    } catch (IOException ex) {
+      return nullForNotFound(ex);
+    }
+  }
+
+  @Override
+  public Operation createNetwork(Network network, Map<Option, ?> options) {
+    try {
+      return compute.networks()
+          .insert(this.options.projectId(), network)
+          .setFields(FIELDS.getString(options))
+          .execute();
+    } catch (IOException ex) {
+      throw translate(ex);
+    }
+  }
+
+  @Override
+  public Network getNetwork(String network, Map<Option, ?> options) {
+    try {
+      return compute.networks()
+          .get(this.options.projectId(), network)
+          .setFields(FIELDS.getString(options))
+          .execute();
+    } catch (IOException ex) {
+      return nullForNotFound(ex);
+    }
+  }
+
+  @Override
+  public Tuple<String, Iterable<Network>> listNetworks(Map<Option, ?> options) {
+    try {
+      NetworkList networkList = compute.networks()
+          .list(this.options.projectId())
+          .setFilter(FILTER.getString(options))
+          .setMaxResults(MAX_RESULTS.getLong(options))
+          .setPageToken(PAGE_TOKEN.getString(options))
+          .setFields(FIELDS.getString(options))
+          .execute();
+      Iterable<Network> networks = networkList.getItems();
+      return Tuple.of(networkList.getNextPageToken(), networks);
+    } catch (IOException ex) {
+      throw translate(ex);
+    }
+  }
+
+  @Override
+  public Operation deleteNetwork(String network, Map<Option, ?> options) {
+    try {
+      return compute.networks()
+          .delete(this.options.projectId(), network)
           .setFields(FIELDS.getString(options))
           .execute();
     } catch (IOException ex) {
