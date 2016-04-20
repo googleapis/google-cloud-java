@@ -28,7 +28,7 @@ import java.util.Set;
 /**
  * DNS service exception.
  */
-public class DnsException extends BaseServiceException {
+public final class DnsException extends BaseServiceException {
 
   // see: https://cloud.google.com/dns/troubleshooting
   private static final Set<Error> RETRYABLE_ERRORS = ImmutableSet.of(
@@ -48,7 +48,7 @@ public class DnsException extends BaseServiceException {
     super(error, idempotent);
   }
 
-  DnsException(int code, String message, Throwable cause) {
+  public DnsException(int code, String message, Throwable cause) {
     super(code, message, null, true, cause);
   }
 

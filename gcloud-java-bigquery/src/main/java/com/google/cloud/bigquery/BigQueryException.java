@@ -31,7 +31,7 @@ import java.util.Set;
  * @see <a href="https://cloud.google.com/bigquery/troubleshooting-errors">Google Cloud
  *      BigQuery error codes</a>
  */
-public class BigQueryException extends BaseServiceException {
+public final class BigQueryException extends BaseServiceException {
 
   // see: https://cloud.google.com/bigquery/troubleshooting-errors
   private static final Set<Error> RETRYABLE_ERRORS = ImmutableSet.of(
@@ -47,12 +47,12 @@ public class BigQueryException extends BaseServiceException {
     this(code, message, (Throwable) null);
   }
 
-  BigQueryException(int code, String message, Throwable cause) {
+  public BigQueryException(int code, String message, Throwable cause) {
     super(code, message, null, true, cause);
     this.error = null;
   }
 
-  BigQueryException(int code, String message, BigQueryError error) {
+  public BigQueryException(int code, String message, BigQueryError error) {
     super(code, message, error != null ? error.reason() : null, true);
     this.error = error;
   }

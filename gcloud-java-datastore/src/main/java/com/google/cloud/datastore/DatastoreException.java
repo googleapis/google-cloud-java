@@ -30,14 +30,14 @@ import java.util.Set;
  * @see <a href="https://cloud.google.com/datastore/docs/concepts/errors#Error_Codes">Google Cloud
  *      Datastore error codes</a>
  */
-public class DatastoreException extends BaseServiceException {
+public final class DatastoreException extends BaseServiceException {
 
   // see https://cloud.google.com/datastore/docs/concepts/errors#Error_Codes"
   private static final Set<Error> RETRYABLE_ERRORS = ImmutableSet.of(
       new Error(10, "ABORTED"), new Error(4, "DEADLINE_EXCEEDED"), new Error(14, "UNAVAILABLE"));
   private static final long serialVersionUID = 2663750991205874435L;
 
-  DatastoreException(int code, String message, String reason) {
+  public DatastoreException(int code, String message, String reason) {
     this(code, message, reason, null);
   }
 

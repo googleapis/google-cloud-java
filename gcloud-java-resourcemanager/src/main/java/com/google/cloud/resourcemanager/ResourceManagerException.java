@@ -30,7 +30,7 @@ import java.util.Set;
  * @see <a href="https://cloud.google.com/resource-manager/v1/errors/core_errors">Google Cloud
  *      Resource Manager error codes</a>
  */
-public class ResourceManagerException extends BaseServiceException {
+public final class ResourceManagerException extends BaseServiceException {
 
   // see https://cloud.google.com/resource-manager/v1/errors/core_errors
   private static final Set<Error> RETRYABLE_ERRORS = ImmutableSet.of(
@@ -47,11 +47,11 @@ public class ResourceManagerException extends BaseServiceException {
       new Error(403, "variableTermLimitExceeded"));
   private static final long serialVersionUID = -9207194488966554136L;
 
-  ResourceManagerException(int code, String message) {
+  public ResourceManagerException(int code, String message) {
     this(code, message, null);
   }
 
-  ResourceManagerException(int code, String message, Throwable cause) {
+  public ResourceManagerException(int code, String message, Throwable cause) {
     super(code, message, null, true, cause);
   }
 
