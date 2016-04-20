@@ -46,7 +46,11 @@ public class StorageException extends BaseServiceException {
   private static final long serialVersionUID = -4168430271327813063L;
 
   public StorageException(int code, String message) {
-    super(code, message, null, true);
+    this(code, message, null);
+  }
+
+  private StorageException(int code, String message, Throwable cause) {
+    super(code, message, null, true, cause);
   }
 
   public StorageException(IOException exception) {
@@ -71,6 +75,6 @@ public class StorageException extends BaseServiceException {
    */
   static StorageException translateAndThrow(RetryHelperException ex) {
     BaseServiceException.translateAndPropagateIfPossible(ex);
-    throw new StorageException(UNKNOWN_CODE, ex.getMessage());
+    throw new StorageException(UNKNOWN_CODE, ex.getMessage(), ex.getCause());
   }
 }

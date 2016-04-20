@@ -97,7 +97,7 @@ public class BigQueryExceptionTest {
 
   @Test
   public void testTranslateAndThrow() throws Exception {
-    BigQueryException cause = new BigQueryException(503, "message");
+    Exception cause = new BigQueryException(503, "message");
     RetryHelperException exceptionMock = createMock(RetryHelperException.class);
     expect(exceptionMock.getCause()).andReturn(cause).times(2);
     replay(exceptionMock);
@@ -108,6 +108,22 @@ public class BigQueryExceptionTest {
       assertEquals("message", ex.getMessage());
       assertTrue(ex.retryable());
       assertTrue(ex.idempotent());
+    } finally {
+      verify(exceptionMock);
+    }
+    cause = new IllegalArgumentException("message");
+    exceptionMock = createMock(RetryHelperException.class);
+    expect(exceptionMock.getMessage()).andReturn("message").times(1);
+    expect(exceptionMock.getCause()).andReturn(cause).times(2);
+    replay(exceptionMock);
+    try {
+      BigQueryException.translateAndThrow(exceptionMock);
+    } catch (BaseServiceException ex) {
+      assertEquals(BigQueryException.UNKNOWN_CODE, ex.code());
+      assertEquals("message", ex.getMessage());
+      assertFalse(ex.retryable());
+      assertTrue(ex.idempotent());
+      assertEquals(cause, ex.getCause());
     } finally {
       verify(exceptionMock);
     }

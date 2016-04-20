@@ -107,7 +107,7 @@ public class StorageExceptionTest {
 
   @Test
   public void testTranslateAndThrow() throws Exception {
-    StorageException cause = new StorageException(503, "message");
+    Exception cause = new StorageException(503, "message");
     RetryHelperException exceptionMock = createMock(RetryHelperException.class);
     expect(exceptionMock.getCause()).andReturn(cause).times(2);
     replay(exceptionMock);
@@ -118,6 +118,22 @@ public class StorageExceptionTest {
       assertEquals("message", ex.getMessage());
       assertTrue(ex.retryable());
       assertTrue(ex.idempotent());
+    } finally {
+      verify(exceptionMock);
+    }
+    cause = new IllegalArgumentException("message");
+    exceptionMock = createMock(RetryHelperException.class);
+    expect(exceptionMock.getMessage()).andReturn("message").times(1);
+    expect(exceptionMock.getCause()).andReturn(cause).times(2);
+    replay(exceptionMock);
+    try {
+      StorageException.translateAndThrow(exceptionMock);
+    } catch (BaseServiceException ex) {
+      assertEquals(StorageException.UNKNOWN_CODE, ex.code());
+      assertEquals("message", ex.getMessage());
+      assertFalse(ex.retryable());
+      assertTrue(ex.idempotent());
+      assertEquals(cause, ex.getCause());
     } finally {
       verify(exceptionMock);
     }

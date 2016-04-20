@@ -44,7 +44,12 @@ public class BigQueryException extends BaseServiceException {
   private final BigQueryError error;
 
   public BigQueryException(int code, String message) {
-    this(code, message, null);
+    this(code, message, (Throwable) null);
+  }
+
+  private BigQueryException(int code, String message, Throwable cause) {
+    super(code, message, null, true, cause);
+    this.error = null;
   }
 
   public BigQueryException(int code, String message, BigQueryError error) {
@@ -100,6 +105,6 @@ public class BigQueryException extends BaseServiceException {
    */
   static BaseServiceException translateAndThrow(RetryHelperException ex) {
     BaseServiceException.translateAndPropagateIfPossible(ex);
-    throw new BigQueryException(UNKNOWN_CODE, ex.getMessage());
+    throw new BigQueryException(UNKNOWN_CODE, ex.getMessage(), ex.getCause());
   }
 }

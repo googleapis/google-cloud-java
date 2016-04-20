@@ -72,12 +72,11 @@ public class DatastoreExceptionTest {
     assertNull(exception.getMessage());
     assertTrue(exception.retryable());
     assertTrue(exception.idempotent());
-
   }
 
   @Test
   public void testTranslateAndThrow() throws Exception {
-    DatastoreException cause = new DatastoreException(14, "message", "UNAVAILABLE");
+    Exception cause = new DatastoreException(14, "message", "UNAVAILABLE");
     RetryHelper.RetryHelperException exceptionMock =
         createMock(RetryHelper.RetryHelperException.class);
     expect(exceptionMock.getCause()).andReturn(cause).times(2);
@@ -89,6 +88,22 @@ public class DatastoreExceptionTest {
       assertEquals("message", ex.getMessage());
       assertTrue(ex.retryable());
       assertTrue(ex.idempotent());
+    } finally {
+      verify(exceptionMock);
+    }
+    cause = new IllegalArgumentException("message");
+    exceptionMock = createMock(RetryHelper.RetryHelperException.class);
+    expect(exceptionMock.getMessage()).andReturn("message").times(1);
+    expect(exceptionMock.getCause()).andReturn(cause).times(2);
+    replay(exceptionMock);
+    try {
+      DatastoreException.translateAndThrow(exceptionMock);
+    } catch (BaseServiceException ex) {
+      assertEquals(DatastoreException.UNKNOWN_CODE, ex.code());
+      assertEquals("message", ex.getMessage());
+      assertFalse(ex.retryable());
+      assertTrue(ex.idempotent());
+      assertEquals(cause, ex.getCause());
     } finally {
       verify(exceptionMock);
     }

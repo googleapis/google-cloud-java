@@ -48,8 +48,8 @@ public class DnsException extends BaseServiceException {
     super(error, idempotent);
   }
 
-  private DnsException(int code, String message) {
-    super(code, message, null, true);
+  DnsException(int code, String message, Throwable cause) {
+    super(code, message, null, true, cause);
   }
 
   @Override
@@ -66,6 +66,6 @@ public class DnsException extends BaseServiceException {
    */
   static DnsException translateAndThrow(RetryHelperException ex) {
     BaseServiceException.translateAndPropagateIfPossible(ex);
-    throw new DnsException(UNKNOWN_CODE, ex.getMessage());
+    throw new DnsException(UNKNOWN_CODE, ex.getMessage(), ex.getCause());
   }
 }

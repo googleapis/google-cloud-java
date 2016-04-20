@@ -37,12 +37,12 @@ public class DatastoreException extends BaseServiceException {
       new Error(10, "ABORTED"), new Error(4, "DEADLINE_EXCEEDED"), new Error(14, "UNAVAILABLE"));
   private static final long serialVersionUID = 2663750991205874435L;
 
-  public DatastoreException(int code, String message, String reason, Throwable cause) {
-    super(code, message, reason, true, cause);
+  public DatastoreException(int code, String message, String reason) {
+    this(code, message, reason, null);
   }
 
-  public DatastoreException(int code, String message, String reason) {
-    super(code, message, reason, true);
+  public DatastoreException(int code, String message, String reason, Throwable cause) {
+    super(code, message, reason, true, cause);
   }
 
   public DatastoreException(IOException exception) {
@@ -63,7 +63,7 @@ public class DatastoreException extends BaseServiceException {
    */
   static DatastoreException translateAndThrow(RetryHelperException ex) {
     BaseServiceException.translateAndPropagateIfPossible(ex);
-    throw new DatastoreException(UNKNOWN_CODE, ex.getMessage(), null);
+    throw new DatastoreException(UNKNOWN_CODE, ex.getMessage(), null, ex.getCause());
   }
 
   /**
