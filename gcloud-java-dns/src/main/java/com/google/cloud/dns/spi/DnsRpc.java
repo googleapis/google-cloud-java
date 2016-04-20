@@ -171,4 +171,9 @@ public interface DnsRpc {
    */
   ListResult<Change> listChangeRequests(String zoneName, Map<Option, ?> options)
       throws DnsException;
+
+  /**
+   * Creates an empty batch.
+   */
+  RpcBatch createBatch();
 }

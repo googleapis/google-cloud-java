@@ -16,6 +16,7 @@
 
 package com.google.cloud.dns;
 
+import com.google.api.client.googleapis.json.GoogleJsonError;
 import com.google.cloud.BaseServiceException;
 import com.google.cloud.RetryHelper.RetryHelperException;
 import com.google.cloud.RetryHelper.RetryInterruptedException;
@@ -41,6 +42,10 @@ public class DnsException extends BaseServiceException {
 
   public DnsException(IOException exception, boolean idempotent) {
     super(exception, idempotent);
+  }
+
+  public DnsException(GoogleJsonError error, boolean idempotent) {
+    super(error, idempotent);
   }
 
   private DnsException(int code, String message) {
