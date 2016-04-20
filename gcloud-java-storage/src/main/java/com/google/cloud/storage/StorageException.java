@@ -49,7 +49,7 @@ public class StorageException extends BaseServiceException {
     this(code, message, null);
   }
 
-  private StorageException(int code, String message, Throwable cause) {
+  StorageException(int code, String message, Throwable cause) {
     super(code, message, null, true, cause);
   }
 

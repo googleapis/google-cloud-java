@@ -23,6 +23,7 @@ import static org.easymock.EasyMock.verify;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
 import com.google.api.client.googleapis.json.GoogleJsonError;
@@ -93,7 +94,7 @@ public class StorageExceptionTest {
     assertNull(exception.getMessage());
     assertTrue(exception.retryable());
     assertTrue(exception.idempotent());
-    assertEquals(cause, exception.getCause());
+    assertSame(cause, exception.getCause());
 
     GoogleJsonError error = new GoogleJsonError();
     error.setCode(503);
@@ -103,6 +104,14 @@ public class StorageExceptionTest {
     assertEquals("message", exception.getMessage());
     assertTrue(exception.retryable());
     assertTrue(exception.idempotent());
+
+    exception = new StorageException(400, "message", cause);
+    assertEquals(400, exception.code());
+    assertEquals("message", exception.getMessage());
+    assertNull(exception.reason());
+    assertFalse(exception.retryable());
+    assertTrue(exception.idempotent());
+    assertSame(cause, exception.getCause());
   }
 
   @Test
@@ -133,7 +142,7 @@ public class StorageExceptionTest {
       assertEquals("message", ex.getMessage());
       assertFalse(ex.retryable());
       assertTrue(ex.idempotent());
-      assertEquals(cause, ex.getCause());
+      assertSame(cause, ex.getCause());
     } finally {
       verify(exceptionMock);
     }

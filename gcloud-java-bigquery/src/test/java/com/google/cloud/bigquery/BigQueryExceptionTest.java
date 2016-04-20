@@ -23,6 +23,7 @@ import static org.easymock.EasyMock.verify;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
 import com.google.cloud.BaseServiceException;
@@ -86,13 +87,24 @@ public class BigQueryExceptionTest {
     assertTrue(exception.retryable());
     assertTrue(exception.idempotent());
 
-    IOException cause = new SocketTimeoutException();
+    IOException cause = new SocketTimeoutException("socketTimeoutMessage");
     exception = new BigQueryException(cause);
+    assertEquals(BigQueryException.UNKNOWN_CODE, exception.code());
     assertNull(exception.reason());
-    assertNull(exception.getMessage());
+    assertEquals("socketTimeoutMessage", exception.getMessage());
+    assertEquals(cause, exception.getCause());
     assertTrue(exception.retryable());
     assertTrue(exception.idempotent());
-    assertEquals(cause, exception.getCause());
+    assertSame(cause, exception.getCause());
+
+    exception = new BigQueryException(504, "message", cause);
+    assertEquals(504, exception.code());
+    assertEquals("message", exception.getMessage());
+    assertNull(exception.reason());
+    assertNull(exception.error());
+    assertTrue(exception.retryable());
+    assertTrue(exception.idempotent());
+    assertSame(cause, exception.getCause());
   }
 
   @Test
@@ -123,7 +135,7 @@ public class BigQueryExceptionTest {
       assertEquals("message", ex.getMessage());
       assertFalse(ex.retryable());
       assertTrue(ex.idempotent());
-      assertEquals(cause, ex.getCause());
+      assertSame(cause, ex.getCause());
     } finally {
       verify(exceptionMock);
     }

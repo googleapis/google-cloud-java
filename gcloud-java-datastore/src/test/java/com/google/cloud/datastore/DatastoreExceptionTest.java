@@ -23,6 +23,7 @@ import static org.easymock.EasyMock.verify;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
@@ -66,12 +67,23 @@ public class DatastoreExceptionTest {
     assertFalse(exception.retryable());
     assertTrue(exception.idempotent());
 
-    IOException cause = new SocketTimeoutException();
+    IOException cause = new SocketTimeoutException("socketTimeoutMessage");
     exception = new DatastoreException(cause);
+    assertEquals(DatastoreException.UNKNOWN_CODE, exception.code());
     assertNull(exception.reason());
-    assertNull(exception.getMessage());
+    assertEquals("socketTimeoutMessage", exception.getMessage());
+    assertEquals(cause, exception.getCause());
     assertTrue(exception.retryable());
     assertTrue(exception.idempotent());
+    assertSame(cause, exception.getCause());
+
+    exception = new DatastoreException(2, "message", "INTERNAL", cause);
+    assertEquals(2, exception.code());
+    assertEquals("INTERNAL", exception.reason());
+    assertEquals("message", exception.getMessage());
+    assertFalse(exception.retryable());
+    assertTrue(exception.idempotent());
+    assertSame(cause, exception.getCause());
   }
 
   @Test
@@ -103,7 +115,7 @@ public class DatastoreExceptionTest {
       assertEquals("message", ex.getMessage());
       assertFalse(ex.retryable());
       assertTrue(ex.idempotent());
-      assertEquals(cause, ex.getCause());
+      assertSame(cause, ex.getCause());
     } finally {
       verify(exceptionMock);
     }

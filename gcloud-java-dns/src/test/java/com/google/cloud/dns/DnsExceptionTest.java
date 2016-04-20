@@ -16,6 +16,17 @@
 
 package com.google.cloud.dns;
 
+import static org.easymock.EasyMock.createMock;
+import static org.easymock.EasyMock.expect;
+import static org.easymock.EasyMock.replay;
+import static org.easymock.EasyMock.verify;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertSame;
+import static org.junit.Assert.assertTrue;
+
+import com.google.api.client.googleapis.json.GoogleJsonError;
 import com.google.cloud.BaseServiceException;
 import com.google.cloud.RetryHelper.RetryHelperException;
 
@@ -24,25 +35,66 @@ import org.junit.Test;
 import java.io.IOException;
 import java.net.SocketTimeoutException;
 
-import static org.easymock.EasyMock.createMock;
-import static org.easymock.EasyMock.expect;
-import static org.easymock.EasyMock.replay;
-import static org.easymock.EasyMock.verify;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertTrue;
-
 public class DnsExceptionTest {
 
   @Test
   public void testDnsException() throws Exception {
-    IOException cause = new SocketTimeoutException("message");
-    DnsException exception = new DnsException(cause, true);
+    IOException cause = new SocketTimeoutException("socketTimeoutMessage");
+    DnsException exception = new DnsException(500, "message", cause);
+    assertEquals(500, exception.code());
+    assertEquals("message", exception.getMessage());
+    assertNull(exception.reason());
+    assertTrue(exception.retryable());
+    assertTrue(exception.idempotent());
+    assertSame(cause, exception.getCause());
+
+    exception = new DnsException(502, "message", cause);
+    assertEquals(502, exception.code());
+    assertEquals("message", exception.getMessage());
+    assertNull(exception.reason());
+    assertTrue(exception.retryable());
+    assertTrue(exception.idempotent());
+    assertSame(cause, exception.getCause());
+
+    exception = new DnsException(503, "message", cause);
+    assertEquals(503, exception.code());
+    assertEquals("message", exception.getMessage());
+    assertNull(exception.reason());
+    assertTrue(exception.retryable());
+    assertTrue(exception.idempotent());
+    assertSame(cause, exception.getCause());
+
+    exception = new DnsException(429, "message", cause);
+    assertEquals(429, exception.code());
+    assertEquals("message", exception.getMessage());
+    assertNull(exception.reason());
+    assertTrue(exception.retryable());
+    assertTrue(exception.idempotent());
+    assertSame(cause, exception.getCause());
+
+    exception = new DnsException(404, "message", cause);
+    assertEquals(404, exception.code());
+    assertEquals("message", exception.getMessage());
+    assertNull(exception.reason());
+    assertFalse(exception.retryable());
+    assertTrue(exception.idempotent());
+    assertSame(cause, exception.getCause());
+
+    exception = new DnsException(cause, true);
     assertEquals(DnsException.UNKNOWN_CODE, exception.code());
     assertNull(exception.reason());
-    assertEquals("message", exception.getMessage());
+    assertEquals("socketTimeoutMessage", exception.getMessage());
     assertEquals(cause, exception.getCause());
+    assertTrue(exception.retryable());
+    assertTrue(exception.idempotent());
+    assertSame(cause, exception.getCause());
+
+    GoogleJsonError error = new GoogleJsonError();
+    error.setCode(503);
+    error.setMessage("message");
+    exception = new DnsException(error, true);
+    assertEquals(503, exception.code());
+    assertEquals("message", exception.getMessage());
     assertTrue(exception.retryable());
     assertTrue(exception.idempotent());
   }
@@ -78,7 +130,7 @@ public class DnsExceptionTest {
       assertEquals("message", ex.getMessage());
       assertFalse(ex.retryable());
       assertTrue(ex.idempotent());
-      assertEquals(cause, ex.getCause());
+      assertSame(cause, ex.getCause());
     } finally {
       verify(exceptionMock);
     }

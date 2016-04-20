@@ -37,7 +37,7 @@ public class DatastoreException extends BaseServiceException {
       new Error(10, "ABORTED"), new Error(4, "DEADLINE_EXCEEDED"), new Error(14, "UNAVAILABLE"));
   private static final long serialVersionUID = 2663750991205874435L;
 
-  public DatastoreException(int code, String message, String reason) {
+  DatastoreException(int code, String message, String reason) {
     this(code, message, reason, null);
   }
 

@@ -47,11 +47,11 @@ public class ResourceManagerException extends BaseServiceException {
       new Error(403, "variableTermLimitExceeded"));
   private static final long serialVersionUID = -9207194488966554136L;
 
-  public ResourceManagerException(int code, String message) {
+  ResourceManagerException(int code, String message) {
     this(code, message, null);
   }
 
-  private ResourceManagerException(int code, String message, Throwable cause) {
+  ResourceManagerException(int code, String message, Throwable cause) {
     super(code, message, null, true, cause);
   }
 

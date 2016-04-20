@@ -47,12 +47,12 @@ public class BigQueryException extends BaseServiceException {
     this(code, message, (Throwable) null);
   }
 
-  private BigQueryException(int code, String message, Throwable cause) {
+  BigQueryException(int code, String message, Throwable cause) {
     super(code, message, null, true, cause);
     this.error = null;
   }
 
-  public BigQueryException(int code, String message, BigQueryError error) {
+  BigQueryException(int code, String message, BigQueryError error) {
     super(code, message, error != null ? error.reason() : null, true);
     this.error = error;
   }
