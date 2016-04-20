@@ -29,6 +29,7 @@ import com.google.protobuf.Empty;
 import com.google.pubsub.v1.DeleteTopicRequest;
 import com.google.pubsub.v1.GetTopicRequest;
 
+import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
@@ -191,23 +192,18 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
   }
 
   @Override
-  public List<ReceivedMessage> pull(String subscription, PullOption... options) {
+  public Iterator<ReceivedMessage> pull(String subscription, PullOption... options) {
     return null;
   }
 
   @Override
-  public Future<List<ReceivedMessage>> pullAsync(String subscription, PullOption... options) {
+  public Future<Iterator<ReceivedMessage>> pullAsync(String subscription, PullOption... options) {
     return null;
   }
 
   @Override
-  public void pull(String subscription, PullCallback callback, PullOption... options) {
-
-  }
-
-  @Override
-  public void pullAsync(String subscription, PullCallback callback, PullOption... options) {
-
+  public MessageConsumer pullAsync(String subscription, MessageProcessor callback) {
+    return null;
   }
 
   @Override
