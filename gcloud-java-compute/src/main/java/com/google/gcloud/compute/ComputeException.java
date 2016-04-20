@@ -33,7 +33,11 @@ public class ComputeException extends BaseServiceException {
   private static final long serialVersionUID = -8039359778707845810L;
 
   public ComputeException(int code, String message) {
-    super(code, message, null, true);
+    super(code, message, null, true, null);
+  }
+
+  private ComputeException(int code, String message, Throwable cause) {
+    super(code, message, null, true, cause);
   }
 
   public ComputeException(IOException exception) {
@@ -54,6 +58,6 @@ public class ComputeException extends BaseServiceException {
    */
   static BaseServiceException translateAndThrow(RetryHelperException ex) {
     BaseServiceException.translateAndPropagateIfPossible(ex);
-    throw new ComputeException(UNKNOWN_CODE, ex.getMessage());
+    throw new ComputeException(UNKNOWN_CODE, ex.getMessage(), ex.getCause());
   }
 }
