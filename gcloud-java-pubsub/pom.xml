@@ -25,7 +25,7 @@
     <dependency>
       <groupId>com.google.api</groupId>
       <artifactId>gax</artifactId>
-      <version>0.0.9</version>
+      <version>0.0.11</version>
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>

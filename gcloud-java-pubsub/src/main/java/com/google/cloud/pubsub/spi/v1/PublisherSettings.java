@@ -73,6 +73,32 @@ import org.joda.time.Duration;
 // Manually-added imports: add custom (non-generated) imports after this point.
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS - see instructions at the top of the file for editing.
+/**
+ * Settings class to configure an instance of {@link PublisherApi}.
+ *
+ * <p>The default instance has everything set to sensible defaults:
+ *
+ * <ul>
+ * <li>The default service address (pubsub-experimental.googleapis.com) and default port (443)
+ * are used.
+ * <li>Credentials are acquired automatically through Application Default Credentials.
+ * <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ * </ul>
+ *
+ * <p>The builder of this class is recursive, so contained classes are themselves builders.
+ * When build() is called, the tree of builders is called to create the complete settings
+ * object. For example, to set the total timeout of CreateTopic to 30 seconds:
+ *
+ * <pre>
+ * <code>
+ * PublisherSettings.Builder publisherSettingsBuilder =
+ *     PublisherSettings.defaultInstance().toBuilder();
+ * publisherSettingsBuilder.CreateTopicSettings().getRetrySettingsBuilder()
+ *     .setTotalTimeout(Duration.standardSeconds(30));
+ * PublisherSettings publisherSettings = publisherSettingsBuilder.build();
+ * </code>
+ * </pre>
+ */
 @javax.annotation.Generated("by GAPIC")
 public class PublisherSettings extends ServiceApiSettings {
 
@@ -113,41 +139,68 @@ public class PublisherSettings extends ServiceApiSettings {
 
   private final SimpleCallSettings<DeleteTopicRequest, Empty> deleteTopicSettings;
 
+  /**
+   * Returns the object with the settings used for calls to createTopic.
+   */
   public SimpleCallSettings<Topic, Topic> createTopicSettings() {
     return createTopicSettings;
   }
 
+  /**
+   * Returns the object with the settings used for calls to publish.
+   */
   public BundlingCallSettings<PublishRequest, PublishResponse> publishSettings() {
     return publishSettings;
   }
 
+  /**
+   * Returns the object with the settings used for calls to getTopic.
+   */
   public SimpleCallSettings<GetTopicRequest, Topic> getTopicSettings() {
     return getTopicSettings;
   }
 
+  /**
+   * Returns the object with the settings used for calls to listTopics.
+   */
   public PageStreamingCallSettings<ListTopicsRequest, ListTopicsResponse, Topic>
       listTopicsSettings() {
     return listTopicsSettings;
   }
 
+  /**
+   * Returns the object with the settings used for calls to listTopicSubscriptions.
+   */
   public PageStreamingCallSettings<
           ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse, String>
       listTopicSubscriptionsSettings() {
     return listTopicSubscriptionsSettings;
   }
 
+  /**
+   * Returns the object with the settings used for calls to deleteTopic.
+   */
   public SimpleCallSettings<DeleteTopicRequest, Empty> deleteTopicSettings() {
     return deleteTopicSettings;
   }
 
+  /**
+   * Returns an instance of this class with recommended defaults.
+   */
   public static PublisherSettings defaultInstance() throws IOException {
     return newBuilder().build();
   }
 
+  /**
+   * Returns a new builder for this class.
+   */
   public static Builder newBuilder() {
     return new Builder();
   }
 
+  /**
+   * Returns a builder containing all the values of this settings class.
+   */
   public Builder toBuilder() {
     return new Builder(this);
   }
@@ -286,6 +339,9 @@ public class PublisherSettings extends ServiceApiSettings {
         }
       };
 
+  /**
+   * Builder for PublisherSettings.
+   */
   public static class Builder extends ServiceApiSettings.Builder {
     private final ImmutableList<ApiCallSettings.Builder> methodSettingsBuilders;
 
@@ -332,7 +388,7 @@ public class PublisherSettings extends ServiceApiSettings {
 
     private Builder() {
       super(
-          ConnectionSettings.builder()
+          ConnectionSettings.newBuilder()
               .setServiceAddress(DEFAULT_SERVICE_ADDRESS)
               .setPort(DEFAULT_SERVICE_PORT)
               .provideCredentialsWith(DEFAULT_SERVICE_SCOPES)
@@ -440,34 +496,57 @@ public class PublisherSettings extends ServiceApiSettings {
       return this;
     }
 
+    /**
+     * Applies the given settings to all of the API methods in this service. Only
+     * values that are non-null will be applied, so this method is not capable
+     * of un-setting any values.
+     */
     public Builder applyToAllApiMethods(ApiCallSettings.Builder apiCallSettings) throws Exception {
       super.applyToAllApiMethods(methodSettingsBuilders, apiCallSettings);
       return this;
     }
 
+    /**
+     * Returns the builder for the settings used for calls to createTopic.
+     */
     public SimpleCallSettings.Builder<Topic, Topic> createTopicSettings() {
       return createTopicSettings;
     }
 
+    /**
+     * Returns the builder for the settings used for calls to publish.
+     */
     public BundlingCallSettings.Builder<PublishRequest, PublishResponse> publishSettings() {
       return publishSettings;
     }
 
+    /**
+     * Returns the builder for the settings used for calls to getTopic.
+     */
     public SimpleCallSettings.Builder<GetTopicRequest, Topic> getTopicSettings() {
       return getTopicSettings;
     }
 
+    /**
+     * Returns the builder for the settings used for calls to listTopics.
+     */
     public PageStreamingCallSettings.Builder<ListTopicsRequest, ListTopicsResponse, Topic>
         listTopicsSettings() {
       return listTopicsSettings;
     }
 
+    /**
+     * Returns the builder for the settings used for calls to listTopicSubscriptions.
+     */
     public PageStreamingCallSettings.Builder<
             ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse, String>
         listTopicSubscriptionsSettings() {
       return listTopicSubscriptionsSettings;
     }
 
+    /**
+     * Returns the builder for the settings used for calls to deleteTopic.
+     */
     public SimpleCallSettings.Builder<DeleteTopicRequest, Empty> deleteTopicSettings() {
       return deleteTopicSettings;
     }
