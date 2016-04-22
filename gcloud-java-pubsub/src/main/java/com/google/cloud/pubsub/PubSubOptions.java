@@ -16,8 +16,6 @@
 
 package com.google.cloud.pubsub;
 
-import static com.google.cloud.BaseServiceException.UNKNOWN_CODE;
-
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.pubsub.spi.DefaultPubSubRpc;
 import com.google.cloud.pubsub.spi.PubSubRpc;
@@ -51,17 +49,14 @@ public class PubSubOptions extends ServiceOptions<PubSub, PubSubRpc, PubSubOptio
   }
 
   public static class DefaultPubSubRpcFactory implements PubSubRpcFactory {
-    private static final PubSubRpcFactory INSTANCE =
-        new DefaultPubSubRpcFactory();
+    private static final PubSubRpcFactory INSTANCE = new DefaultPubSubRpcFactory();
 
     @Override
     public PubSubRpc create(PubSubOptions options) {
       try {
         return new DefaultPubSubRpc(options);
       } catch (IOException e) {
-        PubSubException exception = new PubSubException(UNKNOWN_CODE, e.getMessage());
-        exception.initCause(e);
-        throw exception;
+        throw new PubSubException(e, true);
       }
     }
   }

@@ -19,12 +19,17 @@ package com.google.cloud.pubsub.spi;
 import com.google.api.gax.core.ConnectionSettings;
 import com.google.api.gax.core.RetrySettings;
 import com.google.api.gax.grpc.ApiCallSettings;
+import com.google.api.gax.grpc.ApiException;
 import com.google.cloud.RetryParams;
+import com.google.cloud.pubsub.PubSubException;
 import com.google.cloud.pubsub.PubSubOptions;
 import com.google.cloud.pubsub.spi.v1.PublisherApi;
 import com.google.cloud.pubsub.spi.v1.PublisherSettings;
 import com.google.cloud.pubsub.spi.v1.SubscriberApi;
 import com.google.cloud.pubsub.spi.v1.SubscriberSettings;
+import com.google.common.base.Function;
+import com.google.common.util.concurrent.Futures;
+import com.google.common.util.concurrent.ListenableFuture;
 import com.google.protobuf.Empty;
 import com.google.pubsub.v1.AcknowledgeRequest;
 import com.google.pubsub.v1.DeleteSubscriptionRequest;
@@ -51,22 +56,24 @@ import org.joda.time.Duration;
 import java.io.IOException;
 import java.util.concurrent.Future;
 
+import io.grpc.Status.Code;
+
 public class DefaultPubSubRpc implements PubSubRpc {
 
-  private final PubSubOptions options;
   private final PublisherApi publisherApi;
   private final SubscriberApi subscriberApi;
 
   public DefaultPubSubRpc(PubSubOptions options) throws IOException {
-    this.options = options;
     try {
+      // Provide (and use a common thread-pool).
+      // This depends on https://github.com/googleapis/gax-java/issues/73
       PublisherSettings.Builder pbuilder = PublisherSettings.defaultInstance().toBuilder();
-      pbuilder.provideChannelWith(ConnectionSettings.builder()
+      pbuilder.provideChannelWith(ConnectionSettings.newBuilder()
           .provideCredentialsWith(options.authCredentials().credentials()).build());
       pbuilder.applyToAllApiMethods(apiCallSettings(options));
       publisherApi = PublisherApi.create(pbuilder.build());
       SubscriberSettings.Builder sBuilder = SubscriberSettings.defaultInstance().toBuilder();
-      sBuilder.provideChannelWith(ConnectionSettings.builder()
+      sBuilder.provideChannelWith(ConnectionSettings.newBuilder()
           .provideCredentialsWith(options.authCredentials().credentials()).build());
       sBuilder.applyToAllApiMethods(apiCallSettings(options));
       subscriberApi = SubscriberApi.create(sBuilder.build());
@@ -76,7 +83,7 @@ public class DefaultPubSubRpc implements PubSubRpc {
   }
 
   private static ApiCallSettings.Builder apiCallSettings(PubSubOptions options) {
-    // TODO: figure out how to specify timeout these settings
+    // TODO: specify timeout these settings:
     // retryParams.retryMaxAttempts(), retryParams.retryMinAttempts()
     RetryParams retryParams = options.retryParams();
     final RetrySettings.Builder builder = RetrySettings.newBuilder()
@@ -87,91 +94,97 @@ public class DefaultPubSubRpc implements PubSubRpc {
         .setInitialRetryDelay(Duration.millis(retryParams.initialRetryDelayMillis()))
         .setRetryDelayMultiplier(retryParams.retryDelayBackoffFactor())
         .setMaxRetryDelay(Duration.millis(retryParams.maxRetryDelayMillis()));
-    // TODO: this needs to be replaced with something like ApiCallSettings.of(null, retrySettings)
-    // once the gax supports it
-    return new ApiCallSettings.Builder() {
+    return ApiCallSettings.newBuilder().setRetrySettingsBuilder(builder);
+  }
 
+  private static <V> Future<V> translate(ListenableFuture<V> from, final boolean idempotent,
+      final int... returnNullOn) {
+    return  Futures.catching(from, ApiException.class, new Function<ApiException, V>() {
       @Override
-      public RetrySettings.Builder getRetrySettingsBuilder() {
-        return builder;
+      public V apply(ApiException exception) {
+        throw new PubSubException(exception, idempotent);
       }
-
-      @Override
-      public ApiCallSettings build() {
-        return null;
-      }
-    };
+    });
   }
 
   @Override
   public Future<Topic> create(Topic topic) {
-    // TODO: understand what the exception that could be thrown
-    // and how to get either retriable and/or the service error codes
-    return publisherApi.createTopicCallable().futureCall(topic);
+    // TODO: it would be nice if we can get the idempotent inforamtion from the ApiCallSettings
+    // or from the exception
+    return translate(publisherApi.createTopicCallable().futureCall(topic), true);
   }
 
   @Override
   public Future<PublishResponse> publish(PublishRequest request) {
-    return publisherApi.publishCallable().futureCall(request);
+    return translate(publisherApi.publishCallable().futureCall(request), false);
   }
 
   @Override
   public Future<Topic> get(GetTopicRequest request) {
-    return publisherApi.getTopicCallable().futureCall(request);
+    return translate(publisherApi.getTopicCallable().futureCall(request), true,
+        Code.NOT_FOUND.value());
   }
 
   @Override
   public Future<ListTopicsResponse> list(ListTopicsRequest request) {
-    return publisherApi.listTopicsCallable().futureCall(request);
+    // we should consider using gax PageAccessor once
+    // https://github.com/googleapis/gax-java/issues/74 is fixed
+    // Though it is a cleaner SPI without it, but PageAccessor is an interface
+    // and if it saves code we should not easily dismiss it.
+    return translate(publisherApi.listTopicsCallable().futureCall(request), true);
   }
 
   @Override
   public Future<ListTopicSubscriptionsResponse> list(ListTopicSubscriptionsRequest request) {
-    return publisherApi.listTopicSubscriptionsCallable().futureCall(request);
+    return translate(publisherApi.listTopicSubscriptionsCallable().futureCall(request), true);
   }
 
   @Override
   public Future<Empty> delete(DeleteTopicRequest request) {
-    return publisherApi.deleteTopicCallable().futureCall(request);
+    // TODO: check if null is not going to work for Empty
+    return translate(publisherApi.deleteTopicCallable().futureCall(request), true,
+        Code.NOT_FOUND.value());
   }
 
   @Override
   public Future<Subscription> create(Subscription subscription) {
-    return subscriberApi.createSubscriptionCallable().futureCall(subscription);
+    return translate(subscriberApi.createSubscriptionCallable().futureCall(subscription), false);
   }
 
   @Override
   public Future<Subscription> get(GetSubscriptionRequest request) {
-    return subscriberApi.getSubscriptionCallable().futureCall(request);
+    return translate(subscriberApi.getSubscriptionCallable().futureCall(request), true,
+        Code.NOT_FOUND.value());
   }
 
   @Override
   public Future<ListSubscriptionsResponse> list(ListSubscriptionsRequest request) {
-    return subscriberApi.listSubscriptionsCallable().futureCall(request);
+    return translate(subscriberApi.listSubscriptionsCallable().futureCall(request), true);
   }
 
   @Override
   public Future<Empty> delete(DeleteSubscriptionRequest request) {
-    return subscriberApi.deleteSubscriptionCallable().futureCall(request);
+    return translate(subscriberApi.deleteSubscriptionCallable().futureCall(request), true,
+        Code.NOT_FOUND.value());
   }
 
   @Override
   public Future<Empty> modify(ModifyAckDeadlineRequest request) {
-    return subscriberApi.modifyAckDeadlineCallable().futureCall(request);
+    return translate(subscriberApi.modifyAckDeadlineCallable().futureCall(request), false);
   }
 
   @Override
   public Future<Empty> acknowledge(AcknowledgeRequest request) {
-    return subscriberApi.acknowledgeCallable().futureCall(request);
+    return translate(subscriberApi.acknowledgeCallable().futureCall(request), false);
   }
 
   @Override
   public Future<PullResponse> pull(PullRequest request) {
-    return subscriberApi.pullCallable().futureCall(request);
+    return translate(subscriberApi.pullCallable().futureCall(request), false);
   }
 
   @Override
   public Future<Empty> modify(ModifyPushConfigRequest request) {
-    return subscriberApi.modifyPushConfigCallable().futureCall(request);
+    return translate(subscriberApi.modifyPushConfigCallable().futureCall(request), false);
   }
 }

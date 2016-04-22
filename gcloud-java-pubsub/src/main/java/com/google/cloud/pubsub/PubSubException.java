@@ -16,11 +16,10 @@
 
 package com.google.cloud.pubsub;
 
+import com.google.api.gax.grpc.ApiException;
 import com.google.cloud.BaseServiceException;
-import com.google.cloud.RetryHelper.RetryHelperException;
-import com.google.cloud.RetryHelper.RetryInterruptedException;
-import com.google.common.collect.ImmutableSet;
 
+import java.io.IOException;
 import java.util.Set;
 
 /**
@@ -28,35 +27,20 @@ import java.util.Set;
  *
  * @see <a href="https://cloud.google.com/pubsub/error-codes">Google Cloud Pub/Sub error codes</a>
  */
-public class PubSubException extends BaseServiceException {
+public final class PubSubException extends BaseServiceException {
 
   private static final long serialVersionUID = 6434989638600001226L;
-  private static final Set<Error> RETRYABLE_ERRORS = ImmutableSet.of(
-      new Error(499, null),
-      new Error(503, null),
-      new Error(429, null),
-      new Error(500, null),
-      new Error(504, null));
 
-  public PubSubException(int code, String message) {
-    super(code, message, null, true);
+  public PubSubException(IOException ex, boolean idempotent) {
+    super(ex, idempotent);
+  }
+
+  public PubSubException(ApiException apiException, boolean idempotent) {
+    super(apiException, idempotent);
   }
 
   @Override
   protected Set<Error> retryableErrors() {
-    return RETRYABLE_ERRORS;
-  }
-
-  /**
-   * Translate RetryHelperException to the ResourceManagerException that caused the error. This
-   * method will always throw an exception.
-   *
-   * @throws PubSubException when {@code ex} was caused by a {@code
-   * ResourceManagerException}
-   * @throws RetryInterruptedException when {@code ex} is a {@code RetryInterruptedException}
-   */
-  static PubSubException translateAndThrow(RetryHelperException ex) {
-    BaseServiceException.translateAndPropagateIfPossible(ex);
-    throw new PubSubException(UNKNOWN_CODE, ex.getMessage());
+    return null;
   }
 }
