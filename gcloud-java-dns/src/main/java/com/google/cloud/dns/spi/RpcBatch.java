@@ -110,7 +110,7 @@ public interface RpcBatch {
       Map<DnsRpc.Option, ?> options);
 
   /**
-   * Submits a batch of requests for processing using a single HTTP request to Cloud DNS.
+   * Submits a batch of requests for processing using a single RPC request to Cloud DNS.
    */
   void submit();
 }
