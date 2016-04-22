@@ -34,6 +34,7 @@ import static com.google.common.base.MoreObjects.firstNonNull;
 import static java.net.HttpURLConnection.HTTP_NOT_FOUND;
 import static javax.servlet.http.HttpServletResponse.SC_REQUESTED_RANGE_NOT_SATISFIABLE;
 
+import com.google.api.client.googleapis.batch.BatchRequest;
 import com.google.api.client.googleapis.batch.json.JsonBatchCallback;
 import com.google.api.client.googleapis.json.GoogleJsonError;
 import com.google.api.client.http.ByteArrayContent;
@@ -64,14 +65,13 @@ import com.google.common.base.Function;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
-import com.google.common.collect.Maps;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.math.BigInteger;
 import java.util.ArrayList;
-import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
@@ -82,7 +82,6 @@ public class DefaultStorageRpc implements StorageRpc {
   private final Storage storage;
 
   private static final long MEGABYTE = 1024L * 1024L;
-  private static final int MAX_BATCH_DELETES = 100;
 
   public DefaultStorageRpc(StorageOptions options) {
     HttpTransport transport = options.httpTransportFactory().create();
@@ -92,6 +91,82 @@ public class DefaultStorageRpc implements StorageRpc {
         .setRootUrl(options.host())
         .setApplicationName(options.applicationName())
         .build();
+  }
+
+  private class DefaultRpcBatch implements RpcBatch {
+
+    private static final int MAX_BATCH_DELETES = 100;
+
+    private final Storage storage;
+    private final LinkedList<BatchRequest> batches;
+    private int deleteCount;
+
+    private DefaultRpcBatch(Storage storage) {
+      this.storage = storage;
+      batches = new LinkedList<>();
+      batches.add(storage.batch());
+    }
+
+    @Override
+    public void addDelete(StorageObject storageObject, RpcBatch.Callback<Void> callback,
+        Map<Option, ?> options) {
+      try {
+        if (deleteCount == MAX_BATCH_DELETES) {
+          batches.add(storage.batch());
+          deleteCount = 0;
+        }
+        deleteCall(storageObject, options).queue(batches.getLast(), toJsonCallback(callback));
+        deleteCount++;
+      } catch (IOException ex) {
+        throw translate(ex);
+      }
+    }
+
+    @Override
+    public void addPatch(StorageObject storageObject, RpcBatch.Callback<StorageObject> callback,
+        Map<Option, ?> options) {
+      try {
+        patchCall(storageObject, options).queue(batches.getFirst(), toJsonCallback(callback));
+      } catch (IOException ex) {
+        throw translate(ex);
+      }
+    }
+
+    @Override
+    public void addGet(StorageObject storageObject, RpcBatch.Callback<StorageObject> callback,
+        Map<Option, ?> options) {
+      try {
+        getCall(storageObject, options).queue(batches.getFirst(), toJsonCallback(callback));
+      } catch (IOException ex) {
+        throw translate(ex);
+      }
+    }
+
+    @Override
+    public void submit() {
+      try {
+        for (BatchRequest batch : batches) {
+          batch.execute();
+        }
+      } catch (IOException ex) {
+        throw translate(ex);
+      }
+    }
+  }
+
+  private static <T> JsonBatchCallback<T> toJsonCallback(final RpcBatch.Callback<T> callback) {
+    return new JsonBatchCallback<T>() {
+      @Override
+      public void onSuccess(T response, HttpHeaders httpHeaders) throws IOException {
+        callback.onSuccess(response);
+      }
+
+      @Override
+      public void onFailure(GoogleJsonError googleJsonError, HttpHeaders httpHeaders)
+          throws IOException {
+        callback.onFailure(googleJsonError);
+      }
+    };
   }
 
   private static StorageException translate(IOException exception) {
@@ -209,20 +284,7 @@ public class DefaultStorageRpc implements StorageRpc {
     }
   }
 
-  @Override
-  public StorageObject get(StorageObject object, Map<Option, ?> options) {
-    try {
-      return getRequest(object, options).execute();
-    } catch (IOException ex) {
-      StorageException serviceException = translate(ex);
-      if (serviceException.code() == HTTP_NOT_FOUND) {
-        return null;
-      }
-      throw serviceException;
-    }
-  }
-
-  private Storage.Objects.Get getRequest(StorageObject object, Map<Option, ?> options)
+  private Storage.Objects.Get getCall(StorageObject object, Map<Option, ?> options)
       throws IOException {
     return storage.objects()
         .get(object.getBucket(), object.getName())
@@ -233,6 +295,19 @@ public class DefaultStorageRpc implements StorageRpc {
         .setIfGenerationMatch(IF_GENERATION_MATCH.getLong(options))
         .setIfGenerationNotMatch(IF_GENERATION_NOT_MATCH.getLong(options))
         .setFields(FIELDS.getString(options));
+  }
+
+  @Override
+  public StorageObject get(StorageObject object, Map<Option, ?> options) {
+    try {
+      return getCall(object, options).execute();
+    } catch (IOException ex) {
+      StorageException serviceException = translate(ex);
+      if (serviceException.code() == HTTP_NOT_FOUND) {
+        return null;
+      }
+      throw serviceException;
+    }
   }
 
   @Override
@@ -251,16 +326,7 @@ public class DefaultStorageRpc implements StorageRpc {
     }
   }
 
-  @Override
-  public StorageObject patch(StorageObject storageObject, Map<Option, ?> options) {
-    try {
-      return patchRequest(storageObject, options).execute();
-    } catch (IOException ex) {
-      throw translate(ex);
-    }
-  }
-
-  private Storage.Objects.Patch patchRequest(StorageObject storageObject, Map<Option, ?> options)
+  private Storage.Objects.Patch patchCall(StorageObject storageObject, Map<Option, ?> options)
       throws IOException {
     return storage.objects()
         .patch(storageObject.getBucket(), storageObject.getName(), storageObject)
@@ -270,6 +336,15 @@ public class DefaultStorageRpc implements StorageRpc {
         .setIfMetagenerationNotMatch(IF_METAGENERATION_NOT_MATCH.getLong(options))
         .setIfGenerationMatch(IF_GENERATION_MATCH.getLong(options))
         .setIfGenerationNotMatch(IF_GENERATION_NOT_MATCH.getLong(options));
+  }
+
+  @Override
+  public StorageObject patch(StorageObject storageObject, Map<Option, ?> options) {
+    try {
+      return patchCall(storageObject, options).execute();
+    } catch (IOException ex) {
+      throw translate(ex);
+    }
   }
 
   @Override
@@ -290,21 +365,7 @@ public class DefaultStorageRpc implements StorageRpc {
     }
   }
 
-  @Override
-  public boolean delete(StorageObject blob, Map<Option, ?> options) {
-    try {
-      deleteRequest(blob, options).execute();
-      return true;
-    } catch (IOException ex) {
-      StorageException serviceException = translate(ex);
-      if (serviceException.code() == HTTP_NOT_FOUND) {
-        return false;
-      }
-      throw serviceException;
-    }
-  }
-
-  private Storage.Objects.Delete deleteRequest(StorageObject blob, Map<Option, ?> options)
+  private Storage.Objects.Delete deleteCall(StorageObject blob, Map<Option, ?> options)
       throws IOException {
     return storage.objects()
         .delete(blob.getBucket(), blob.getName())
@@ -313,6 +374,20 @@ public class DefaultStorageRpc implements StorageRpc {
         .setIfMetagenerationNotMatch(IF_METAGENERATION_NOT_MATCH.getLong(options))
         .setIfGenerationMatch(IF_GENERATION_MATCH.getLong(options))
         .setIfGenerationNotMatch(IF_GENERATION_NOT_MATCH.getLong(options));
+  }
+
+  @Override
+  public boolean delete(StorageObject blob, Map<Option, ?> options) {
+    try {
+      deleteCall(blob, options).execute();
+      return true;
+    } catch (IOException ex) {
+      StorageException serviceException = translate(ex);
+      if (serviceException.code() == HTTP_NOT_FOUND) {
+        return false;
+      }
+      throw serviceException;
+    }
   }
 
   @Override
@@ -364,92 +439,8 @@ public class DefaultStorageRpc implements StorageRpc {
   }
 
   @Override
-  public BatchResponse batch(BatchRequest request) {
-    List<List<Tuple<StorageObject, Map<Option, ?>>>> partitionedToDelete =
-        Lists.partition(request.toDelete, MAX_BATCH_DELETES);
-    Iterator<List<Tuple<StorageObject, Map<Option, ?>>>> iterator = partitionedToDelete.iterator();
-    BatchRequest chunkRequest = new BatchRequest(
-        iterator.hasNext()
-            ? iterator.next() : ImmutableList.<Tuple<StorageObject, Map<Option, ?>>>of(),
-        request.toUpdate, request.toGet);
-    BatchResponse response = batchChunk(chunkRequest);
-    Map<StorageObject, Tuple<Boolean, StorageException>> deletes =
-        Maps.newHashMapWithExpectedSize(request.toDelete.size());
-    deletes.putAll(response.deletes);
-    while (iterator.hasNext()) {
-      chunkRequest = new BatchRequest(iterator.next(), null, null);
-      BatchResponse deleteBatchResponse = batchChunk(chunkRequest);
-      deletes.putAll(deleteBatchResponse.deletes);
-    }
-    return new BatchResponse(deletes, response.updates, response.gets);
-  }
-
-  private BatchResponse batchChunk(BatchRequest request) {
-    com.google.api.client.googleapis.batch.BatchRequest batch = storage.batch();
-    final Map<StorageObject, Tuple<Boolean, StorageException>> deletes =
-        Maps.newConcurrentMap();
-    final Map<StorageObject, Tuple<StorageObject, StorageException>> updates =
-        Maps.newConcurrentMap();
-    final Map<StorageObject, Tuple<StorageObject, StorageException>> gets =
-        Maps.newConcurrentMap();
-    try {
-      for (final Tuple<StorageObject, Map<Option, ?>> tuple : request.toDelete) {
-        deleteRequest(tuple.x(), tuple.y()).queue(batch, new JsonBatchCallback<Void>() {
-          @Override
-          public void onSuccess(Void ignore, HttpHeaders responseHeaders) {
-            deletes.put(tuple.x(), Tuple.<Boolean, StorageException>of(Boolean.TRUE, null));
-          }
-
-          @Override
-          public void onFailure(GoogleJsonError e, HttpHeaders responseHeaders) {
-            if (e.getCode() == HTTP_NOT_FOUND) {
-              deletes.put(tuple.x(), Tuple.<Boolean, StorageException>of(Boolean.FALSE, null));
-            } else {
-              deletes.put(tuple.x(), Tuple.<Boolean, StorageException>of(null, translate(e)));
-            }
-          }
-        });
-      }
-      for (final Tuple<StorageObject, Map<Option, ?>> tuple : request.toUpdate) {
-        patchRequest(tuple.x(), tuple.y()).queue(batch, new JsonBatchCallback<StorageObject>() {
-          @Override
-          public void onSuccess(StorageObject storageObject, HttpHeaders responseHeaders) {
-            updates.put(tuple.x(),
-                Tuple.<StorageObject, StorageException>of(storageObject, null));
-          }
-
-          @Override
-          public void onFailure(GoogleJsonError e, HttpHeaders responseHeaders) {
-            updates.put(tuple.x(),
-                Tuple.<StorageObject, StorageException>of(null, translate(e)));
-          }
-        });
-      }
-      for (final Tuple<StorageObject, Map<Option, ?>> tuple : request.toGet) {
-        getRequest(tuple.x(), tuple.y()).queue(batch, new JsonBatchCallback<StorageObject>() {
-          @Override
-          public void onSuccess(StorageObject storageObject, HttpHeaders responseHeaders) {
-            gets.put(tuple.x(),
-                Tuple.<StorageObject, StorageException>of(storageObject, null));
-          }
-
-          @Override
-          public void onFailure(GoogleJsonError e, HttpHeaders responseHeaders) {
-            if (e.getCode() == HTTP_NOT_FOUND) {
-              gets.put(tuple.x(),
-                  Tuple.<StorageObject, StorageException>of(null, null));
-            } else {
-              gets.put(tuple.x(),
-                  Tuple.<StorageObject, StorageException>of(null, translate(e)));
-            }
-          }
-        });
-      }
-      batch.execute();
-    } catch (IOException ex) {
-      throw translate(ex);
-    }
-    return new BatchResponse(deletes, updates, gets);
+  public RpcBatch createBatch() {
+    return new DefaultRpcBatch(storage);
   }
 
   @Override
