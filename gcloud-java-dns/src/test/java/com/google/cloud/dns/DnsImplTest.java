@@ -22,9 +22,9 @@ import static org.junit.Assert.assertTrue;
 import com.google.api.services.dns.model.Change;
 import com.google.api.services.dns.model.ManagedZone;
 import com.google.api.services.dns.model.ResourceRecordSet;
+import com.google.cloud.Clock;
 import com.google.cloud.Page;
 import com.google.cloud.RetryParams;
-import com.google.cloud.ServiceOptions;
 import com.google.cloud.dns.spi.DnsRpc;
 import com.google.cloud.dns.spi.DnsRpcFactory;
 import com.google.common.collect.ImmutableList;
@@ -100,7 +100,7 @@ public class DnsImplTest {
 
   // Other
   private static final Map<DnsRpc.Option, ?> EMPTY_RPC_OPTIONS = ImmutableMap.of();
-  private static final ServiceOptions.Clock TIME_SOURCE = new ServiceOptions.Clock() {
+  private static final Clock TIME_SOURCE = new Clock() {
     @Override
     public long millis() {
       return 42000L;

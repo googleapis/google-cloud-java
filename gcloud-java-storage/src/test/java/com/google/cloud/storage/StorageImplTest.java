@@ -26,10 +26,10 @@ import static org.junit.Assert.assertTrue;
 
 import com.google.api.services.storage.model.StorageObject;
 import com.google.cloud.AuthCredentials.ServiceAccountAuthCredentials;
+import com.google.cloud.Clock;
 import com.google.cloud.Page;
 import com.google.cloud.ReadChannel;
 import com.google.cloud.RetryParams;
-import com.google.cloud.ServiceOptions;
 import com.google.cloud.WriteChannel;
 import com.google.cloud.storage.Storage.CopyRequest;
 import com.google.cloud.storage.spi.StorageRpc;
@@ -225,7 +225,7 @@ public class StorageImplTest {
           + "EkPPhszldvQTY486uPxyD/D7HdfnGW/Nbw5JUhfvecAdudDEhNAQ3PNabyDMI+TpiHy4NTWOrgdcWrzj6VXcdc"
           + "+uuABnPwRCdcyJ1xl2kOrPksRnp1auNGMLOe4IpEBjGY7baX9UG8+A45MbG0aHmkR59Op/aR9XowIDAQAB";
 
-  private static final ServiceOptions.Clock TIME_SOURCE = new ServiceOptions.Clock() {
+  private static final Clock TIME_SOURCE = new Clock() {
     @Override
     public long millis() {
       return 42000L;
