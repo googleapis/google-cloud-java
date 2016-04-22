@@ -48,7 +48,6 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
     try {
       return Uninterruptibles.getUninterruptibly(future);
     } catch (ExecutionException ex) {
-      // TODO: we should propagate PubSubException
       throw Throwables.propagate(ex.getCause());
     }
   }
@@ -193,16 +192,22 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
 
   @Override
   public Iterator<ReceivedMessage> pull(String subscription, PullOption... options) {
+    // this should set return_immediately to true
     return null;
   }
 
   @Override
   public Future<Iterator<ReceivedMessage>> pullAsync(String subscription, PullOption... options) {
+    // though this method can set return_immediately to false (as future can be canceled) I
+    // suggest to keep it false so sync could delegate to asyc and use the same options
+    // this method also should use the VTKIT thread-pool to renew ack deadline for non consumed
+    // messages
     return null;
   }
 
   @Override
   public MessageConsumer pullAsync(String subscription, MessageProcessor callback) {
+    // this method should use the VTKIT thread-pool (maybe getting it should be part of the spi)
     return null;
   }
 

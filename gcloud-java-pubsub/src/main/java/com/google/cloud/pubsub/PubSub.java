@@ -74,7 +74,7 @@ public interface PubSub extends Service<PubSubOptions> {
     private final Object value;
 
     enum Option {
-      RETURN_IMMEDIATELY, MAX_MESSAGES
+      MAX_MESSAGES
     }
 
     private PullOption(Option option, Object value) {
@@ -88,10 +88,6 @@ public interface PubSub extends Service<PubSubOptions> {
 
     Object value() {
       return value;
-    }
-
-    public static PullOption returnImmediately() {
-      return new PullOption(Option.RETURN_IMMEDIATELY, true);
     }
 
     public static PullOption maxMessages(int maxMessages) {
@@ -108,11 +104,38 @@ public interface PubSub extends Service<PubSubOptions> {
   }
 
   /**
-   * An interface to control asynchronous pulling.
+   * An interface to control message consumer settings.
    */
   interface MessageConsumer extends AutoCloseable {
 
-    void start();
+    final class PullOption implements Serializable {
+
+      private final Option option;
+      private final Object value;
+
+      enum Option {
+        MAX_CONCURRENT_CALLBACKS
+      }
+
+      private PullOption(Option option, Object value) {
+        this.option = option;
+        this.value = value;
+      }
+
+      Option option() {
+        return option;
+      }
+
+      Object value() {
+        return value;
+      }
+
+      public static PullOption maxConcurrentCallbacks(int maxConcurrency) {
+        return new PullOption(Option.MAX_CONCURRENT_CALLBACKS, maxConcurrency);
+      }
+    }
+
+    void start(MessageConsumer.PullOption... options);
 
     void stop();
   }

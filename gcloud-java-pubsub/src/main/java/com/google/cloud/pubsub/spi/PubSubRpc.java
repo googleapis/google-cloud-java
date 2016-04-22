@@ -41,6 +41,7 @@ import java.util.concurrent.Future;
 
 public interface PubSubRpc {
 
+  // in all cases root cause of ExecutionException is PubSubException
   Future<Topic> create(Topic topic);
 
   Future<PublishResponse> publish(PublishRequest request);
