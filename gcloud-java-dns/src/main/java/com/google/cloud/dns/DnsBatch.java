@@ -91,7 +91,7 @@ public class DnsBatch {
   public DnsBatchResult<Zone> createZone(ZoneInfo zone, Dns.ZoneOption... options) {
     DnsBatchResult<Zone> result = new DnsBatchResult<>();
     // todo this can cause misleading report of a failure, intended to be fixed within #924
-    RpcBatch.Callback<ManagedZone> callback = createZoneCallback(this.options, result, true);
+    RpcBatch.Callback<ManagedZone> callback = createZoneCallback(this.options, result, false, true);
     Map<DnsRpc.Option, ?> optionMap = DnsImpl.optionMap(options);
     batch.addCreateZone(zone.toPb(), callback, optionMap);
     return result;
@@ -118,7 +118,7 @@ public class DnsBatch {
    */
   public DnsBatchResult<Zone> getZone(String zoneName, Dns.ZoneOption... options) {
     DnsBatchResult<Zone> result = new DnsBatchResult<>();
-    RpcBatch.Callback<ManagedZone> callback = createZoneCallback(this.options, result, true);
+    RpcBatch.Callback<ManagedZone> callback = createZoneCallback(this.options, result, true, true);
     Map<DnsRpc.Option, ?> optionMap = DnsImpl.optionMap(options);
     batch.addGetZone(zoneName, callback, optionMap);
     return result;
@@ -186,7 +186,7 @@ public class DnsBatch {
   public DnsBatchResult<ChangeRequest> getChangeRequest(String zoneName, String changeRequestId,
       Dns.ChangeRequestOption... options) {
     DnsBatchResult<ChangeRequest> result = new DnsBatchResult<>();
-    RpcBatch.Callback<Change> callback = createChangeRequestCallback(zoneName, result, true);
+    RpcBatch.Callback<Change> callback = createChangeRequestCallback(zoneName, result, true, true);
     Map<DnsRpc.Option, ?> optionMap = DnsImpl.optionMap(options);
     batch.addGetChangeRequest(zoneName, changeRequestId, callback, optionMap);
     return result;
@@ -197,20 +197,21 @@ public class DnsBatch {
    * {@code zoneName} to this batch. The {@code options} can be used to restrict the fields returned
    * in the same way as for {@link Dns#applyChangeRequest(String, ChangeRequestInfo,
    * Dns.ChangeRequestOption...)}. Calling {@link DnsBatchResult#get()} on the return value yields
-   * the created {@link ChangeRequest} if successful, {@code null} if the change request does not
-   * exist, or throws a {@link DnsException} if the operation failed or the zone does not exist.
+   * the created {@link ChangeRequest} if successful or throws a {@link DnsException} if the
+   * operation failed or the zone does not exist.
    */
   public DnsBatchResult<ChangeRequest> applyChangeRequest(String zoneName,
       ChangeRequestInfo changeRequest, Dns.ChangeRequestOption... options) {
     DnsBatchResult<ChangeRequest> result = new DnsBatchResult<>();
-    RpcBatch.Callback<Change> callback = createChangeRequestCallback(zoneName, result, false);
+    RpcBatch.Callback<Change> callback =
+        createChangeRequestCallback(zoneName, result, false, false);
     Map<DnsRpc.Option, ?> optionMap = DnsImpl.optionMap(options);
     batch.addApplyChangeRequest(zoneName, changeRequest.toPb(), callback, optionMap);
     return result;
   }
 
   /**
-   * Submits this batch for processing using a single HTTP request.
+   * Submits this batch for processing using a single RPC request.
    */
   public void submit() {
     batch.submit();
@@ -259,7 +260,7 @@ public class DnsBatch {
    * A joint callback for both "get zone" and "create zone" operations.
    */
   private RpcBatch.Callback<ManagedZone> createZoneCallback(final DnsOptions serviceOptions,
-      final DnsBatchResult<Zone> result, final boolean idempotent) {
+      final DnsBatchResult<Zone> result, final boolean nullForNotFound, final boolean idempotent) {
     return new RpcBatch.Callback<ManagedZone>() {
       @Override
       public void onSuccess(ManagedZone response) {
@@ -268,7 +269,12 @@ public class DnsBatch {
 
       @Override
       public void onFailure(GoogleJsonError googleJsonError) {
-        result.error(new DnsException(googleJsonError, idempotent));
+        DnsException serviceException = new DnsException(googleJsonError, idempotent);
+        if (nullForNotFound && serviceException.code() == HTTP_NOT_FOUND) {
+          result.success(null);
+        } else {
+          result.error(serviceException);
+        }
       }
     };
   }
@@ -337,17 +343,29 @@ public class DnsBatch {
    * A joint callback for both "get change request" and "create change request" operations.
    */
   private RpcBatch.Callback<Change> createChangeRequestCallback(final String zoneName,
-      final DnsBatchResult<ChangeRequest> result, final boolean idempotent) {
+      final DnsBatchResult<ChangeRequest> result, final boolean nullForNotFound,
+      final boolean idempotent) {
     return new RpcBatch.Callback<Change>() {
       @Override
       public void onSuccess(Change response) {
-        result.success(response == null ? null : ChangeRequest.fromPb(options.service(),
-            zoneName, response));
+        result.success(response == null ? null : ChangeRequest.fromPb(options.service(), zoneName,
+            response));
       }
 
       @Override
       public void onFailure(GoogleJsonError googleJsonError) {
-        result.error(new DnsException(googleJsonError, idempotent));
+        DnsException serviceException = new DnsException(googleJsonError, idempotent);
+        if (serviceException.code() == HTTP_NOT_FOUND) {
+          if ("entity.parameters.changeId".equals(serviceException.location())
+              || (serviceException.getMessage() != null
+              && serviceException.getMessage().contains("parameters.changeId"))) {
+            // the change id was not found, but the zone exists
+            result.success(null);
+            return;
+          }
+          // the zone does not exist, so throw an exception
+        }
+        result.error(serviceException);
       }
     };
   }

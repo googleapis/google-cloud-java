@@ -19,6 +19,7 @@ package com.google.cloud.dns;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
@@ -218,7 +219,9 @@ public class DnsBatchTest {
     }
     // testing error here, success is tested with options
     RpcBatch.Callback<ManagedZone> capturedCallback = callback.getValue();
-    capturedCallback.onFailure(GOOGLE_JSON_ERROR);
+    GoogleJsonError error = new GoogleJsonError();
+    error.setCode(404);
+    capturedCallback.onFailure(error);
     try {
       batchResult.get();
       fail("Should throw a DnsException on error.");
@@ -277,6 +280,23 @@ public class DnsBatchTest {
       // expected
       assertTrue(ex.idempotent());
     }
+  }
+
+  @Test
+  public void testGetZoneNotFound() {
+    EasyMock.reset(batchMock);
+    Capture<RpcBatch.Callback<ManagedZone>> callback = Capture.newInstance();
+    Capture<Map<DnsRpc.Option, Object>> capturedOptions = Capture.newInstance();
+    batchMock.addGetZone(EasyMock.eq(ZONE_NAME), EasyMock.capture(callback),
+        EasyMock.capture(capturedOptions));
+    EasyMock.replay(batchMock);
+    DnsBatchResult<Zone> batchResult = dnsBatch.getZone(ZONE_NAME);
+    assertEquals(0, capturedOptions.getValue().size());
+    GoogleJsonError error = new GoogleJsonError();
+    error.setCode(404);
+    RpcBatch.Callback<ManagedZone> capturedCallback = callback.getValue();
+    capturedCallback.onFailure(error);
+    assertNull(batchResult.get());
   }
 
   @Test
@@ -557,6 +577,29 @@ public class DnsBatchTest {
   }
 
   @Test
+  public void testGetChangeRequestNotFound() {
+    EasyMock.reset(batchMock);
+    Capture<RpcBatch.Callback<Change>> callback = Capture.newInstance();
+    Capture<Map<DnsRpc.Option, Object>> capturedOptions = Capture.newInstance();
+    batchMock.addGetChangeRequest(EasyMock.eq(ZONE_NAME),
+        EasyMock.eq(CHANGE_REQUEST_COMPLETE.generatedId()), EasyMock.capture(callback),
+        EasyMock.capture(capturedOptions));
+    EasyMock.replay(batchMock);
+    DnsBatchResult<ChangeRequest> batchResult = dnsBatch.getChangeRequest(ZONE_NAME,
+        CHANGE_REQUEST_COMPLETE.generatedId());
+    assertEquals(0, capturedOptions.getValue().size());
+    RpcBatch.Callback<Change> capturedCallback = callback.getValue();
+    GoogleJsonError error = new GoogleJsonError();
+    GoogleJsonError.ErrorInfo errorInfo = new GoogleJsonError.ErrorInfo();
+    errorInfo.setReason("reason");
+    errorInfo.setLocation("entity.parameters.changeId");
+    error.setCode(404);
+    error.setErrors(ImmutableList.of(errorInfo));
+    capturedCallback.onFailure(error);
+    assertNull(batchResult.get());
+  }
+
+  @Test
   public void testGetChangeRequestWithOptions() {
     EasyMock.reset(dns, batchMock, optionsMock);
     EasyMock.expect(dns.options()).andReturn(optionsMock);
@@ -599,7 +642,9 @@ public class DnsBatchTest {
     }
     // testing error here, success is tested with options
     RpcBatch.Callback<Change> capturedCallback = callback.getValue();
-    capturedCallback.onFailure(GOOGLE_JSON_ERROR);
+    GoogleJsonError error = new GoogleJsonError();
+    error.setCode(404);
+    capturedCallback.onFailure(error);
     try {
       batchResult.get();
       fail("Should throw a DnsException on error.");
