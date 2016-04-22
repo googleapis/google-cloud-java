@@ -18,6 +18,8 @@ package com.google.cloud.pubsub;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import com.google.cloud.ByteArray;
+
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.util.Map;
@@ -55,7 +57,13 @@ public class ReceivedMessage extends Message {
     }
 
     @Override
-    public Builder payload(byte[] payload) {
+    public Builder payload(String payload) {
+      delegate.payload(payload);
+      return this;
+    }
+
+    @Override
+    public Builder payload(ByteArray payload) {
       delegate.payload(payload);
       return this;
     }

@@ -16,6 +16,7 @@ package com.google.cloud.pubsub;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import com.google.cloud.ByteArray;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableMap;
 import com.google.protobuf.ByteString;
@@ -37,9 +38,26 @@ public class Message implements Serializable {
   private static final long MILLIS_PER_SECOND = 1000;
 
   private final String id;
-  private final ByteString payload;
+  private final InternalByteArray payload;
   private final ImmutableMap<String, String> attributes;
   private final Long publishTime;
+
+  private static final class InternalByteArray extends ByteArray {
+
+    private static final long serialVersionUID = -3330181485911805428L;
+
+    protected InternalByteArray(ByteString byteString) {
+      super(byteString);
+    }
+
+    protected InternalByteArray(ByteArray byteArray) {
+      super(byteArray);
+    }
+
+    protected ByteString byteString() {
+      return super.byteString();
+    }
+  }
 
   /**
    * Builder for Message.
@@ -48,7 +66,9 @@ public class Message implements Serializable {
 
     abstract Builder id(String id);
 
-    public abstract Builder payload(byte[] payload);
+    public abstract Builder payload(String payload);
+
+    public abstract Builder payload(ByteArray payload);
 
     public abstract Builder attributes(Map<String, String> attributes);
 
@@ -66,7 +86,7 @@ public class Message implements Serializable {
   static final class BuilderImpl extends Builder {
 
     private String id = "";
-    private byte[] payload;
+    private ByteArray payload;
     private Map<String, String> attributes = new HashMap<>();
     private Long publishTime;
 
@@ -74,7 +94,7 @@ public class Message implements Serializable {
 
     BuilderImpl(Message message) {
       id = message.id;
-      payload = message.payload.toByteArray();
+      payload = message.payload;
       attributes = new HashMap<>(message.attributes);
       publishTime = message.publishTime;
     }
@@ -86,8 +106,13 @@ public class Message implements Serializable {
     }
 
     @Override
-    public Builder payload(byte[] payload) {
-      this.payload = checkNotNull(payload);
+    public Builder payload(String payload) {
+      return payload(ByteArray.copyFrom(payload));
+    }
+
+    @Override
+    public Builder payload(ByteArray payload) {
+      this.payload = payload;
       return this;
     }
 
@@ -129,7 +154,7 @@ public class Message implements Serializable {
 
   Message(BuilderImpl builder) {
     id = builder.id;
-    payload = ByteString.copyFrom(checkNotNull(builder.payload));
+    payload = new InternalByteArray(checkNotNull(builder.payload));
     attributes = ImmutableMap.copyOf(builder.attributes);
     publishTime = builder.publishTime;
   }
@@ -146,8 +171,12 @@ public class Message implements Serializable {
     return id;
   }
 
-  public byte[] payload() {
-    return payload.toByteArray();
+  public String payloadAsString() {
+    return payload.toStringUtf8();
+  }
+
+  public ByteArray payload() {
+    return payload;
   }
 
   @Override
@@ -181,7 +210,7 @@ public class Message implements Serializable {
     if (id != null) {
       builder.setMessageId(id);
     }
-    builder.setData(payload);
+    builder.setData(payload.byteString());
     builder.getAttributes().putAll(attributes);
     Timestamp.Builder tsBuilder = Timestamp.newBuilder();
     tsBuilder.setSeconds(publishTime / MILLIS_PER_SECOND);
@@ -191,7 +220,7 @@ public class Message implements Serializable {
   }
 
   static Message fromPb(PubsubMessage messagePb) {
-    Builder builder = builder(messagePb.getData().toByteArray());
+    Builder builder = builder(new InternalByteArray(messagePb.getData()));
     if (messagePb.hasPublishTime()) {
       Timestamp ts = messagePb.getPublishTime();
       builder.publishTime(
@@ -208,11 +237,15 @@ public class Message implements Serializable {
     return new BuilderImpl(this);
   }
 
-  public static Message of(byte[] payload) {
+  public static Message of(String payload) {
     return builder(payload).build();
   }
 
-  public static Builder builder(byte[] payload) {
+  public static Builder builder(String payload) {
+    return new BuilderImpl().payload(payload);
+  }
+
+  public static Builder builder(ByteArray payload) {
     return new BuilderImpl().payload(payload);
   }
 }
