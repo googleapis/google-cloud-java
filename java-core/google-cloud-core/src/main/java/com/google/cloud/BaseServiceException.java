@@ -135,8 +135,21 @@ public class BaseServiceException extends RuntimeException {
     this.debugInfo = debugInfo;
   }
 
-  public BaseServiceException(GoogleJsonError error, boolean idempotent) {
-    this(error.getCode(), error.getMessage(), reason(error), idempotent);
+  public BaseServiceException(GoogleJsonError googleJsonError, boolean idempotent) {
+    super(googleJsonError.getMessage());
+    Error error = new Error(googleJsonError.getCode(), reason(googleJsonError));
+    this.code = error.code;
+    this.reason = error.reason;
+    this.retryable = isRetryable(idempotent, error);
+    if (this.reason != null) {
+      GoogleJsonError.ErrorInfo errorInfo = googleJsonError.getErrors().get(0);
+      this.location = errorInfo.getLocation();
+      this.debugInfo = (String) errorInfo.get("debugInfo");
+    } else {
+      this.location = null;
+      this.debugInfo = null;
+    }
+    this.idempotent = idempotent;
   }
 
   public BaseServiceException(int code, String message, String reason, boolean idempotent) {
