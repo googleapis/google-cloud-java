@@ -33,6 +33,7 @@
 
 package com.google.cloud.pubsub.spi.v1;
 
+import com.google.api.gax.core.PageAccessor;
 import com.google.api.gax.grpc.ApiCallable;
 import com.google.api.gax.protobuf.PathTemplate;
 import com.google.protobuf.Empty;
@@ -59,6 +60,60 @@ import java.util.List;
  * Service Description: The service that an application uses to manipulate topics, and to send
  * messages to a topic.
  *
+ * <p>This class provides the ability to make remote calls to the backing service through method
+ * calls that map to API methods. Sample code to get started:
+ *
+ * <pre>
+ * <code>
+ * try (PublisherApi publisherApi = PublisherApi.defaultInstance()) {
+ *   // make calls here
+ * String name = "";
+ * Topic callResult = createTopic(name);
+ * }
+ * </code>
+ * </pre>
+ *
+ * <p>Note: close() needs to be called on the publisherApi object to clean up resources such
+ * as threads. In the example above, try-with-resources is used, which automatically calls
+ * close().
+ *
+ * <p>The surface of this class includes several types of Java methods for each of the API's methods:
+ *
+ * <ol>
+ * <li> A "flattened" method. With this type of method, the fields of the request type have been
+ * converted into function parameters. It may be the case that not all fields are available
+ * as parameters, and not every API method will have a flattened method entry point.
+ * <li> A "request object" method. This type of method only takes one parameter, a request
+ * object, which must be constructed before the call. Not every API method will have a request
+ * object method.
+ * <li> A "callable" method. This type of method takes no parameters and returns an immutable
+ * ApiCallable object, which can be used to initiate calls to the service.
+ * </ol>
+ *
+ * <p>See the individual methods for example code.
+ *
+ * <p>Many parameters require resource names to be formatted in a particular way. To assist
+ * with these names, this class includes a format method for each type of name, and additionally
+ * a parse method to extract the individual identifiers contained within names that are
+ * returned.
+ *
+ * <p>This class can be customized by passing in a custom instance of PublisherSettings to
+ * create(). For example:
+ *
+ * <!-- TODO(garrettjones) refactor code to make this simpler -->
+ * <pre>
+ * <code>
+ * ConnectionSettings defaultConnectionSettings =
+ *     PublisherSettings.defaultInstance().toBuilder().getConnectionSettings();
+ * ConnectionSettings updatedConnectionSettings =
+ *     defaultConnectionSettings.toBuilder().provideCredentialsWith(myCredentials).build();
+ * PublisherSettings publisherSettings = PublisherSettings.defaultInstance().toBuilder().
+ *     provideChannelWith(updatedConnectionSettings)
+ *     .build();
+ * PublisherApi publisherApi = PublisherApi.create(publisherSettings);
+ * </code>
+ * </pre>
+ *
  * <!-- manual edit -->
  * <!-- end manual edit -->
  */
@@ -71,11 +126,11 @@ public class PublisherApi implements AutoCloseable {
   private final ApiCallable<PublishRequest, PublishResponse> publishCallable;
   private final ApiCallable<GetTopicRequest, Topic> getTopicCallable;
   private final ApiCallable<ListTopicsRequest, ListTopicsResponse> listTopicsCallable;
-  private final ApiCallable<ListTopicsRequest, Iterable<Topic>> listTopicsIterableCallable;
+  private final ApiCallable<ListTopicsRequest, PageAccessor<Topic>> listTopicsPagedCallable;
   private final ApiCallable<ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse>
       listTopicSubscriptionsCallable;
-  private final ApiCallable<ListTopicSubscriptionsRequest, Iterable<String>>
-      listTopicSubscriptionsIterableCallable;
+  private final ApiCallable<ListTopicSubscriptionsRequest, PageAccessor<String>>
+      listTopicSubscriptionsPagedCallable;
   private final ApiCallable<DeleteTopicRequest, Empty> deleteTopicCallable;
 
   private static final PathTemplate PROJECT_PATH_TEMPLATE =
@@ -179,12 +234,12 @@ public class PublisherApi implements AutoCloseable {
     }
     this.getTopicCallable = ApiCallable.create(settings.getTopicSettings(), settings);
     this.listTopicsCallable = ApiCallable.create(settings.listTopicsSettings(), settings);
-    this.listTopicsIterableCallable =
-        ApiCallable.createIterable(settings.listTopicsSettings(), settings);
+    this.listTopicsPagedCallable =
+        ApiCallable.createPagedVariant(settings.listTopicsSettings(), settings);
     this.listTopicSubscriptionsCallable =
         ApiCallable.create(settings.listTopicSubscriptionsSettings(), settings);
-    this.listTopicSubscriptionsIterableCallable =
-        ApiCallable.createIterable(settings.listTopicSubscriptionsSettings(), settings);
+    this.listTopicSubscriptionsPagedCallable =
+        ApiCallable.createPagedVariant(settings.listTopicSubscriptionsSettings(), settings);
     this.deleteTopicCallable = ApiCallable.create(settings.deleteTopicSettings(), settings);
 
     if (settings.shouldAutoCloseChannel()) {
@@ -213,7 +268,7 @@ public class PublisherApi implements AutoCloseable {
    * underscores (`_`), periods (`.`), tildes (`~`), plus (`+`) or percent
    * signs (`%`). It must be between 3 and 255 characters in length, and it
    * must not start with `"goog"`.
-   * @throws ApiException if the remote call fails
+   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final Topic createTopic(String name) {
     Topic request = Topic.newBuilder().setName(name).build();
@@ -229,7 +284,7 @@ public class PublisherApi implements AutoCloseable {
    * <!-- end manual edit -->
    *
    * @param request The request object containing all of the parameters for the API call.
-   * @throws ApiException if the remote call fails
+   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   private Topic createTopic(Topic request) {
     return createTopicCallable().call(request);
@@ -241,7 +296,7 @@ public class PublisherApi implements AutoCloseable {
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
-   * @throws ApiException if the remote call fails
+   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final ApiCallable<Topic, Topic> createTopicCallable() {
     return createTopicCallable;
@@ -260,7 +315,7 @@ public class PublisherApi implements AutoCloseable {
    *
    * @param topic The messages in the request will be published on this topic.
    * @param messages The messages to publish.
-   * @throws ApiException if the remote call fails
+   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final PublishResponse publish(String topic, List<PubsubMessage> messages) {
     PublishRequest request =
@@ -279,7 +334,7 @@ public class PublisherApi implements AutoCloseable {
    * <!-- end manual edit -->
    *
    * @param request The request object containing all of the parameters for the API call.
-   * @throws ApiException if the remote call fails
+   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public PublishResponse publish(PublishRequest request) {
     return publishCallable().call(request);
@@ -293,7 +348,7 @@ public class PublisherApi implements AutoCloseable {
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
-   * @throws ApiException if the remote call fails
+   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final ApiCallable<PublishRequest, PublishResponse> publishCallable() {
     return publishCallable;
@@ -309,7 +364,7 @@ public class PublisherApi implements AutoCloseable {
    * <!-- end manual edit -->
    *
    * @param topic The name of the topic to get.
-   * @throws ApiException if the remote call fails
+   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final Topic getTopic(String topic) {
     GetTopicRequest request = GetTopicRequest.newBuilder().setTopic(topic).build();
@@ -325,7 +380,7 @@ public class PublisherApi implements AutoCloseable {
    * <!-- end manual edit -->
    *
    * @param request The request object containing all of the parameters for the API call.
-   * @throws ApiException if the remote call fails
+   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   private Topic getTopic(GetTopicRequest request) {
     return getTopicCallable().call(request);
@@ -337,7 +392,7 @@ public class PublisherApi implements AutoCloseable {
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
-   * @throws ApiException if the remote call fails
+   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final ApiCallable<GetTopicRequest, Topic> getTopicCallable() {
     return getTopicCallable;
@@ -353,9 +408,9 @@ public class PublisherApi implements AutoCloseable {
    * <!-- end manual edit -->
    *
    * @param project The name of the cloud project that topics belong to.
-   * @throws ApiException if the remote call fails
+   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  public final Iterable<Topic> listTopics(String project) {
+  public final PageAccessor<Topic> listTopics(String project) {
     ListTopicsRequest request = ListTopicsRequest.newBuilder().setProject(project).build();
     return listTopics(request);
   }
@@ -368,10 +423,10 @@ public class PublisherApi implements AutoCloseable {
    * <!-- end manual edit -->
    *
    * @param request The request object containing all of the parameters for the API call.
-   * @throws ApiException if the remote call fails
+   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  public final Iterable<Topic> listTopics(ListTopicsRequest request) {
-    return listTopicsIterableCallable().call(request);
+  public final PageAccessor<Topic> listTopics(ListTopicsRequest request) {
+    return listTopicsPagedCallable().call(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD - see instructions at the top of the file for editing.
@@ -380,10 +435,10 @@ public class PublisherApi implements AutoCloseable {
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
-   * @throws ApiException if the remote call fails
+   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  public final ApiCallable<ListTopicsRequest, Iterable<Topic>> listTopicsIterableCallable() {
-    return listTopicsIterableCallable;
+  public final ApiCallable<ListTopicsRequest, PageAccessor<Topic>> listTopicsPagedCallable() {
+    return listTopicsPagedCallable;
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD - see instructions at the top of the file for editing.
@@ -392,7 +447,7 @@ public class PublisherApi implements AutoCloseable {
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
-   * @throws ApiException if the remote call fails
+   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final ApiCallable<ListTopicsRequest, ListTopicsResponse> listTopicsCallable() {
     return listTopicsCallable;
@@ -408,9 +463,9 @@ public class PublisherApi implements AutoCloseable {
    * <!-- end manual edit -->
    *
    * @param topic The name of the topic that subscriptions are attached to.
-   * @throws ApiException if the remote call fails
+   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  public final Iterable<String> listTopicSubscriptions(String topic) {
+  public final PageAccessor<String> listTopicSubscriptions(String topic) {
     ListTopicSubscriptionsRequest request =
         ListTopicSubscriptionsRequest.newBuilder().setTopic(topic).build();
     return listTopicSubscriptions(request);
@@ -424,10 +479,10 @@ public class PublisherApi implements AutoCloseable {
    * <!-- end manual edit -->
    *
    * @param request The request object containing all of the parameters for the API call.
-   * @throws ApiException if the remote call fails
+   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  public final Iterable<String> listTopicSubscriptions(ListTopicSubscriptionsRequest request) {
-    return listTopicSubscriptionsIterableCallable().call(request);
+  public final PageAccessor<String> listTopicSubscriptions(ListTopicSubscriptionsRequest request) {
+    return listTopicSubscriptionsPagedCallable().call(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD - see instructions at the top of the file for editing.
@@ -436,11 +491,11 @@ public class PublisherApi implements AutoCloseable {
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
-   * @throws ApiException if the remote call fails
+   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  public final ApiCallable<ListTopicSubscriptionsRequest, Iterable<String>>
-      listTopicSubscriptionsIterableCallable() {
-    return listTopicSubscriptionsIterableCallable;
+  public final ApiCallable<ListTopicSubscriptionsRequest, PageAccessor<String>>
+      listTopicSubscriptionsPagedCallable() {
+    return listTopicSubscriptionsPagedCallable;
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD - see instructions at the top of the file for editing.
@@ -449,7 +504,7 @@ public class PublisherApi implements AutoCloseable {
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
-   * @throws ApiException if the remote call fails
+   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final ApiCallable<ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse>
       listTopicSubscriptionsCallable() {
@@ -470,7 +525,7 @@ public class PublisherApi implements AutoCloseable {
    * <!-- end manual edit -->
    *
    * @param topic Name of the topic to delete.
-   * @throws ApiException if the remote call fails
+   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final void deleteTopic(String topic) {
     DeleteTopicRequest request = DeleteTopicRequest.newBuilder().setTopic(topic).build();
@@ -490,7 +545,7 @@ public class PublisherApi implements AutoCloseable {
    * <!-- end manual edit -->
    *
    * @param request The request object containing all of the parameters for the API call.
-   * @throws ApiException if the remote call fails
+   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   private void deleteTopic(DeleteTopicRequest request) {
     deleteTopicCallable().call(request);
@@ -506,7 +561,7 @@ public class PublisherApi implements AutoCloseable {
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
-   * @throws ApiException if the remote call fails
+   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final ApiCallable<DeleteTopicRequest, Empty> deleteTopicCallable() {
     return deleteTopicCallable;

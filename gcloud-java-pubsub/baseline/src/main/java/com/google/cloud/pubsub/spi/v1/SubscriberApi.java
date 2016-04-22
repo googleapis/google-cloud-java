@@ -33,6 +33,7 @@
 
 package com.google.cloud.pubsub.spi.v1;
 
+import com.google.api.gax.core.PageAccessor;
 import com.google.api.gax.grpc.ApiCallable;
 import com.google.api.gax.protobuf.PathTemplate;
 import com.google.protobuf.Empty;
@@ -60,6 +61,63 @@ import java.util.List;
  * Service Description: The service that an application uses to manipulate subscriptions and to
  * consume messages from a subscription via the `Pull` method.
  *
+ * <p>This class provides the ability to make remote calls to the backing service through method
+ * calls that map to API methods. Sample code to get started:
+ *
+ * <pre>
+ * <code>
+ * try (SubscriberApi subscriberApi = SubscriberApi.defaultInstance()) {
+ *   // make calls here
+ * String name = "";
+ * String topic = "";
+ * PushConfig pushConfig = PushConfig.newBuilder().build();
+ * int ackDeadlineSeconds = 0;
+ * Subscription callResult = createSubscription(name, topic, pushConfig, ackDeadlineSeconds);
+ * }
+ * </code>
+ * </pre>
+ *
+ * <p>Note: close() needs to be called on the subscriberApi object to clean up resources such
+ * as threads. In the example above, try-with-resources is used, which automatically calls
+ * close().
+ *
+ * <p>The surface of this class includes several types of Java methods for each of the API's methods:
+ *
+ * <ol>
+ * <li> A "flattened" method. With this type of method, the fields of the request type have been
+ * converted into function parameters. It may be the case that not all fields are available
+ * as parameters, and not every API method will have a flattened method entry point.
+ * <li> A "request object" method. This type of method only takes one parameter, a request
+ * object, which must be constructed before the call. Not every API method will have a request
+ * object method.
+ * <li> A "callable" method. This type of method takes no parameters and returns an immutable
+ * ApiCallable object, which can be used to initiate calls to the service.
+ * </ol>
+ *
+ * <p>See the individual methods for example code.
+ *
+ * <p>Many parameters require resource names to be formatted in a particular way. To assist
+ * with these names, this class includes a format method for each type of name, and additionally
+ * a parse method to extract the individual identifiers contained within names that are
+ * returned.
+ *
+ * <p>This class can be customized by passing in a custom instance of SubscriberSettings to
+ * create(). For example:
+ *
+ * <!-- TODO(garrettjones) refactor code to make this simpler -->
+ * <pre>
+ * <code>
+ * ConnectionSettings defaultConnectionSettings =
+ *     SubscriberSettings.defaultInstance().toBuilder().getConnectionSettings();
+ * ConnectionSettings updatedConnectionSettings =
+ *     defaultConnectionSettings.toBuilder().provideCredentialsWith(myCredentials).build();
+ * SubscriberSettings subscriberSettings = SubscriberSettings.defaultInstance().toBuilder().
+ *     provideChannelWith(updatedConnectionSettings)
+ *     .build();
+ * SubscriberApi subscriberApi = SubscriberApi.create(subscriberSettings);
+ * </code>
+ * </pre>
+ *
  * <!-- manual edit -->
  * <!-- end manual edit -->
  */
@@ -72,8 +130,8 @@ public class SubscriberApi implements AutoCloseable {
   private final ApiCallable<GetSubscriptionRequest, Subscription> getSubscriptionCallable;
   private final ApiCallable<ListSubscriptionsRequest, ListSubscriptionsResponse>
       listSubscriptionsCallable;
-  private final ApiCallable<ListSubscriptionsRequest, Iterable<Subscription>>
-      listSubscriptionsIterableCallable;
+  private final ApiCallable<ListSubscriptionsRequest, PageAccessor<Subscription>>
+      listSubscriptionsPagedCallable;
   private final ApiCallable<DeleteSubscriptionRequest, Empty> deleteSubscriptionCallable;
   private final ApiCallable<ModifyAckDeadlineRequest, Empty> modifyAckDeadlineCallable;
   private final ApiCallable<AcknowledgeRequest, Empty> acknowledgeCallable;
@@ -179,8 +237,8 @@ public class SubscriberApi implements AutoCloseable {
     this.getSubscriptionCallable = ApiCallable.create(settings.getSubscriptionSettings(), settings);
     this.listSubscriptionsCallable =
         ApiCallable.create(settings.listSubscriptionsSettings(), settings);
-    this.listSubscriptionsIterableCallable =
-        ApiCallable.createIterable(settings.listSubscriptionsSettings(), settings);
+    this.listSubscriptionsPagedCallable =
+        ApiCallable.createPagedVariant(settings.listSubscriptionsSettings(), settings);
     this.deleteSubscriptionCallable =
         ApiCallable.create(settings.deleteSubscriptionSettings(), settings);
     this.modifyAckDeadlineCallable =
@@ -243,7 +301,7 @@ public class SubscriberApi implements AutoCloseable {
    * system will eventually redeliver the message.
    *
    * If this parameter is not set, the default value of 10 seconds is used.
-   * @throws ApiException if the remote call fails
+   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final Subscription createSubscription(
       String name, String topic, PushConfig pushConfig, int ackDeadlineSeconds) {
@@ -271,7 +329,7 @@ public class SubscriberApi implements AutoCloseable {
    * <!-- end manual edit -->
    *
    * @param request The request object containing all of the parameters for the API call.
-   * @throws ApiException if the remote call fails
+   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public Subscription createSubscription(Subscription request) {
     return createSubscriptionCallable().call(request);
@@ -288,7 +346,7 @@ public class SubscriberApi implements AutoCloseable {
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
-   * @throws ApiException if the remote call fails
+   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final ApiCallable<Subscription, Subscription> createSubscriptionCallable() {
     return createSubscriptionCallable;
@@ -307,7 +365,7 @@ public class SubscriberApi implements AutoCloseable {
    * <!-- end manual edit -->
    *
    * @param subscription The name of the subscription to get.
-   * @throws ApiException if the remote call fails
+   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final Subscription getSubscription(String subscription) {
     GetSubscriptionRequest request =
@@ -327,7 +385,7 @@ public class SubscriberApi implements AutoCloseable {
    * <!-- end manual edit -->
    *
    * @param request The request object containing all of the parameters for the API call.
-   * @throws ApiException if the remote call fails
+   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   private Subscription getSubscription(GetSubscriptionRequest request) {
     return getSubscriptionCallable().call(request);
@@ -342,7 +400,7 @@ public class SubscriberApi implements AutoCloseable {
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
-   * @throws ApiException if the remote call fails
+   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final ApiCallable<GetSubscriptionRequest, Subscription> getSubscriptionCallable() {
     return getSubscriptionCallable;
@@ -361,9 +419,9 @@ public class SubscriberApi implements AutoCloseable {
    * <!-- end manual edit -->
    *
    * @param project The name of the cloud project that subscriptions belong to.
-   * @throws ApiException if the remote call fails
+   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  public final Iterable<Subscription> listSubscriptions(String project) {
+  public final PageAccessor<Subscription> listSubscriptions(String project) {
     ListSubscriptionsRequest request =
         ListSubscriptionsRequest.newBuilder().setProject(project).build();
     return listSubscriptions(request);
@@ -380,10 +438,10 @@ public class SubscriberApi implements AutoCloseable {
    * <!-- end manual edit -->
    *
    * @param request The request object containing all of the parameters for the API call.
-   * @throws ApiException if the remote call fails
+   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  public final Iterable<Subscription> listSubscriptions(ListSubscriptionsRequest request) {
-    return listSubscriptionsIterableCallable().call(request);
+  public final PageAccessor<Subscription> listSubscriptions(ListSubscriptionsRequest request) {
+    return listSubscriptionsPagedCallable().call(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD - see instructions at the top of the file for editing.
@@ -395,11 +453,11 @@ public class SubscriberApi implements AutoCloseable {
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
-   * @throws ApiException if the remote call fails
+   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  public final ApiCallable<ListSubscriptionsRequest, Iterable<Subscription>>
-      listSubscriptionsIterableCallable() {
-    return listSubscriptionsIterableCallable;
+  public final ApiCallable<ListSubscriptionsRequest, PageAccessor<Subscription>>
+      listSubscriptionsPagedCallable() {
+    return listSubscriptionsPagedCallable;
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD - see instructions at the top of the file for editing.
@@ -411,7 +469,7 @@ public class SubscriberApi implements AutoCloseable {
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
-   * @throws ApiException if the remote call fails
+   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final ApiCallable<ListSubscriptionsRequest, ListSubscriptionsResponse>
       listSubscriptionsCallable() {
@@ -432,7 +490,7 @@ public class SubscriberApi implements AutoCloseable {
    * <!-- end manual edit -->
    *
    * @param subscription The subscription to delete.
-   * @throws ApiException if the remote call fails
+   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final void deleteSubscription(String subscription) {
     DeleteSubscriptionRequest request =
@@ -453,7 +511,7 @@ public class SubscriberApi implements AutoCloseable {
    * <!-- end manual edit -->
    *
    * @param request The request object containing all of the parameters for the API call.
-   * @throws ApiException if the remote call fails
+   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   private void deleteSubscription(DeleteSubscriptionRequest request) {
     deleteSubscriptionCallable().call(request);
@@ -469,7 +527,7 @@ public class SubscriberApi implements AutoCloseable {
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
-   * @throws ApiException if the remote call fails
+   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final ApiCallable<DeleteSubscriptionRequest, Empty> deleteSubscriptionCallable() {
     return deleteSubscriptionCallable;
@@ -494,7 +552,7 @@ public class SubscriberApi implements AutoCloseable {
    * ack deadline will expire 10 seconds after the `ModifyAckDeadline` call
    * was made. Specifying zero may immediately make the message available for
    * another pull request.
-   * @throws ApiException if the remote call fails
+   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final void modifyAckDeadline(
       String subscription, List<String> ackIds, int ackDeadlineSeconds) {
@@ -519,7 +577,7 @@ public class SubscriberApi implements AutoCloseable {
    * <!-- end manual edit -->
    *
    * @param request The request object containing all of the parameters for the API call.
-   * @throws ApiException if the remote call fails
+   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public void modifyAckDeadline(ModifyAckDeadlineRequest request) {
     modifyAckDeadlineCallable().call(request);
@@ -534,7 +592,7 @@ public class SubscriberApi implements AutoCloseable {
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
-   * @throws ApiException if the remote call fails
+   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final ApiCallable<ModifyAckDeadlineRequest, Empty> modifyAckDeadlineCallable() {
     return modifyAckDeadlineCallable;
@@ -558,7 +616,7 @@ public class SubscriberApi implements AutoCloseable {
    * @param subscription The subscription whose message is being acknowledged.
    * @param ackIds The acknowledgment ID for the messages being acknowledged that was returned
    * by the Pub/Sub system in the `Pull` response. Must not be empty.
-   * @throws ApiException if the remote call fails
+   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final void acknowledge(String subscription, List<String> ackIds) {
     AcknowledgeRequest request =
@@ -581,7 +639,7 @@ public class SubscriberApi implements AutoCloseable {
    * <!-- end manual edit -->
    *
    * @param request The request object containing all of the parameters for the API call.
-   * @throws ApiException if the remote call fails
+   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public void acknowledge(AcknowledgeRequest request) {
     acknowledgeCallable().call(request);
@@ -599,7 +657,7 @@ public class SubscriberApi implements AutoCloseable {
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
-   * @throws ApiException if the remote call fails
+   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final ApiCallable<AcknowledgeRequest, Empty> acknowledgeCallable() {
     return acknowledgeCallable;
@@ -624,7 +682,7 @@ public class SubscriberApi implements AutoCloseable {
    * than returning no messages.
    * @param maxMessages The maximum number of messages returned for this request. The Pub/Sub
    * system may return fewer than the number specified.
-   * @throws ApiException if the remote call fails
+   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final PullResponse pull(String subscription, boolean returnImmediately, int maxMessages) {
     PullRequest request =
@@ -648,7 +706,7 @@ public class SubscriberApi implements AutoCloseable {
    * <!-- end manual edit -->
    *
    * @param request The request object containing all of the parameters for the API call.
-   * @throws ApiException if the remote call fails
+   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public PullResponse pull(PullRequest request) {
     return pullCallable().call(request);
@@ -663,7 +721,7 @@ public class SubscriberApi implements AutoCloseable {
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
-   * @throws ApiException if the remote call fails
+   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final ApiCallable<PullRequest, PullResponse> pullCallable() {
     return pullCallable;
@@ -690,7 +748,7 @@ public class SubscriberApi implements AutoCloseable {
    * stop pushing messages from the given subscription and allow
    * messages to be pulled and acknowledged - effectively pausing
    * the subscription if `Pull` is not called.
-   * @throws ApiException if the remote call fails
+   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final void modifyPushConfig(String subscription, PushConfig pushConfig) {
     ModifyPushConfigRequest request =
@@ -715,7 +773,7 @@ public class SubscriberApi implements AutoCloseable {
    * <!-- end manual edit -->
    *
    * @param request The request object containing all of the parameters for the API call.
-   * @throws ApiException if the remote call fails
+   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public void modifyPushConfig(ModifyPushConfigRequest request) {
     modifyPushConfigCallable().call(request);
@@ -732,7 +790,7 @@ public class SubscriberApi implements AutoCloseable {
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
-   * @throws ApiException if the remote call fails
+   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final ApiCallable<ModifyPushConfigRequest, Empty> modifyPushConfigCallable() {
     return modifyPushConfigCallable;

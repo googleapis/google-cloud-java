@@ -66,6 +66,32 @@ import org.joda.time.Duration;
 // Manually-added imports: add custom (non-generated) imports after this point.
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS - see instructions at the top of the file for editing.
+/**
+ * Settings class to configure an instance of {@link SubscriberApi}.
+ *
+ * <p>The default instance has everything set to sensible defaults:
+ *
+ * <ul>
+ * <li>The default service address (pubsub-experimental.googleapis.com) and default port (443)
+ * are used.
+ * <li>Credentials are acquired automatically through Application Default Credentials.
+ * <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ * </ul>
+ *
+ * <p>The builder of this class is recursive, so contained classes are themselves builders.
+ * When build() is called, the tree of builders is called to create the complete settings
+ * object. For example, to set the total timeout of CreateSubscription to 30 seconds:
+ *
+ * <pre>
+ * <code>
+ * SubscriberSettings.Builder subscriberSettingsBuilder =
+ *     SubscriberSettings.defaultInstance().toBuilder();
+ * subscriberSettingsBuilder.CreateSubscriptionSettings().getRetrySettingsBuilder()
+ *     .setTotalTimeout(Duration.standardSeconds(30));
+ * SubscriberSettings subscriberSettings = subscriberSettingsBuilder.build();
+ * </code>
+ * </pre>
+ */
 @javax.annotation.Generated("by GAPIC")
 public class SubscriberSettings extends ServiceApiSettings {
 
@@ -106,48 +132,81 @@ public class SubscriberSettings extends ServiceApiSettings {
   private final SimpleCallSettings<PullRequest, PullResponse> pullSettings;
   private final SimpleCallSettings<ModifyPushConfigRequest, Empty> modifyPushConfigSettings;
 
+  /**
+   * Returns the object with the settings used for calls to createSubscription.
+   */
   public SimpleCallSettings<Subscription, Subscription> createSubscriptionSettings() {
     return createSubscriptionSettings;
   }
 
+  /**
+   * Returns the object with the settings used for calls to getSubscription.
+   */
   public SimpleCallSettings<GetSubscriptionRequest, Subscription> getSubscriptionSettings() {
     return getSubscriptionSettings;
   }
 
+  /**
+   * Returns the object with the settings used for calls to listSubscriptions.
+   */
   public PageStreamingCallSettings<
           ListSubscriptionsRequest, ListSubscriptionsResponse, Subscription>
       listSubscriptionsSettings() {
     return listSubscriptionsSettings;
   }
 
+  /**
+   * Returns the object with the settings used for calls to deleteSubscription.
+   */
   public SimpleCallSettings<DeleteSubscriptionRequest, Empty> deleteSubscriptionSettings() {
     return deleteSubscriptionSettings;
   }
 
+  /**
+   * Returns the object with the settings used for calls to modifyAckDeadline.
+   */
   public SimpleCallSettings<ModifyAckDeadlineRequest, Empty> modifyAckDeadlineSettings() {
     return modifyAckDeadlineSettings;
   }
 
+  /**
+   * Returns the object with the settings used for calls to acknowledge.
+   */
   public SimpleCallSettings<AcknowledgeRequest, Empty> acknowledgeSettings() {
     return acknowledgeSettings;
   }
 
+  /**
+   * Returns the object with the settings used for calls to pull.
+   */
   public SimpleCallSettings<PullRequest, PullResponse> pullSettings() {
     return pullSettings;
   }
 
+  /**
+   * Returns the object with the settings used for calls to modifyPushConfig.
+   */
   public SimpleCallSettings<ModifyPushConfigRequest, Empty> modifyPushConfigSettings() {
     return modifyPushConfigSettings;
   }
 
+  /**
+   * Returns an instance of this class with recommended defaults.
+   */
   public static SubscriberSettings defaultInstance() throws IOException {
     return newBuilder().build();
   }
 
+  /**
+   * Returns a new builder for this class.
+   */
   public static Builder newBuilder() {
     return new Builder();
   }
 
+  /**
+   * Returns a builder containing all the values of this settings class.
+   */
   public Builder toBuilder() {
     return new Builder(this);
   }
@@ -202,6 +261,9 @@ public class SubscriberSettings extends ServiceApiSettings {
             }
           };
 
+  /**
+   * Builder for SubscriberSettings.
+   */
   public static class Builder extends ServiceApiSettings.Builder {
     private final ImmutableList<ApiCallSettings.Builder> methodSettingsBuilders;
 
@@ -250,7 +312,7 @@ public class SubscriberSettings extends ServiceApiSettings {
 
     private Builder() {
       super(
-          ConnectionSettings.builder()
+          ConnectionSettings.newBuilder()
               .setServiceAddress(DEFAULT_SERVICE_ADDRESS)
               .setPort(DEFAULT_SERVICE_PORT)
               .provideCredentialsWith(DEFAULT_SERVICE_SCOPES)
@@ -363,43 +425,72 @@ public class SubscriberSettings extends ServiceApiSettings {
       return this;
     }
 
+    /**
+     * Applies the given settings to all of the API methods in this service. Only
+     * values that are non-null will be applied, so this method is not capable
+     * of un-setting any values.
+     */
     public Builder applyToAllApiMethods(ApiCallSettings.Builder apiCallSettings) throws Exception {
       super.applyToAllApiMethods(methodSettingsBuilders, apiCallSettings);
       return this;
     }
 
+    /**
+     * Returns the builder for the settings used for calls to createSubscription.
+     */
     public SimpleCallSettings.Builder<Subscription, Subscription> createSubscriptionSettings() {
       return createSubscriptionSettings;
     }
 
+    /**
+     * Returns the builder for the settings used for calls to getSubscription.
+     */
     public SimpleCallSettings.Builder<GetSubscriptionRequest, Subscription>
         getSubscriptionSettings() {
       return getSubscriptionSettings;
     }
 
+    /**
+     * Returns the builder for the settings used for calls to listSubscriptions.
+     */
     public PageStreamingCallSettings.Builder<
             ListSubscriptionsRequest, ListSubscriptionsResponse, Subscription>
         listSubscriptionsSettings() {
       return listSubscriptionsSettings;
     }
 
+    /**
+     * Returns the builder for the settings used for calls to deleteSubscription.
+     */
     public SimpleCallSettings.Builder<DeleteSubscriptionRequest, Empty>
         deleteSubscriptionSettings() {
       return deleteSubscriptionSettings;
     }
 
+    /**
+     * Returns the builder for the settings used for calls to modifyAckDeadline.
+     */
     public SimpleCallSettings.Builder<ModifyAckDeadlineRequest, Empty> modifyAckDeadlineSettings() {
       return modifyAckDeadlineSettings;
     }
 
+    /**
+     * Returns the builder for the settings used for calls to acknowledge.
+     */
     public SimpleCallSettings.Builder<AcknowledgeRequest, Empty> acknowledgeSettings() {
       return acknowledgeSettings;
     }
 
+    /**
+     * Returns the builder for the settings used for calls to pull.
+     */
     public SimpleCallSettings.Builder<PullRequest, PullResponse> pullSettings() {
       return pullSettings;
     }
 
+    /**
+     * Returns the builder for the settings used for calls to modifyPushConfig.
+     */
     public SimpleCallSettings.Builder<ModifyPushConfigRequest, Empty> modifyPushConfigSettings() {
       return modifyPushConfigSettings;
     }
