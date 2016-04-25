@@ -35,63 +35,76 @@ import java.util.List;
  * A class that runs a Pubsub emulator instance for use in tests.
  */
 public class LocalPubsubHelper {
+
+  private final int port;
   private final LocalServiceHelper serviceHelper;
-  private final List<String> gcloudCommand;
-  private final URL emulatorUrl;
 
   // Local server settings
   private static final int DEFAULT_PORT = 8080;
   private static final String DEFAULT_HOST = "localhost";
+  private static final URL EMULATOR_URL;
 
   // GCloud emulator settings
-  private static final String GCLOUD_CMD_TEXT = "gcloud beta emulators pubsub start --host-port";
+  private static final String GCLOUD_CMD_TEXT = "gcloud beta emulators pubsub start";
+  private static final String GCLOUD_CMD_PORT_FLAG = "--host-port=";
   private static final String VERSION_PREFIX = "pubsub-emulator";
   private static final String MIN_VERSION = "2016.01.13";
+  private static final String BIN_CMD_PORT_FLAG = "--port=";
 
   // Downloadable emulator settings
   private static final String FILENAME = "pubsub-emulator-20160113-2.zip";
   private static final String BIN_NAME = "pubsub-emulator/bin/cloud-pubsub-fake";
   private static final String MD5_CHECKSUM = "20943e9defa300f2de101568459c133d";
 
+  static {
+    try {
+      EMULATOR_URL = new URL("http://storage.googleapis.com/pubsub/tools/" + FILENAME);
+    } catch (MalformedURLException ex) {
+      throw new IllegalStateException(ex);
+    }
+  }
+
   /**
    * Constructs a new LocalPubsubHelper. The method start() must
    * be called before it is used.
-   * @throws MalformedURLException
    */
-  public LocalPubsubHelper() throws MalformedURLException {
-    gcloudCommand = new ArrayList<>(Arrays.asList(GCLOUD_CMD_TEXT.split(" ")));
-    gcloudCommand.add(DEFAULT_HOST);
-    emulatorUrl = new URL("http://storage.googleapis.com/pubsub/tools/" + FILENAME);
+  public LocalPubsubHelper() {
+    port = LocalServiceHelper.findAvailablePort(DEFAULT_PORT);
+    List<String> gcloudCommand = new ArrayList<>(Arrays.asList(GCLOUD_CMD_TEXT.split(" ")));
+    gcloudCommand.add(GCLOUD_CMD_PORT_FLAG + port);
     GCloudEmulatorRunner gcloudRunner =
         new GCloudEmulatorRunner(gcloudCommand, VERSION_PREFIX, MIN_VERSION);
     DownloadableEmulatorRunner downloadRunner =
-        new DownloadableEmulatorRunner(Arrays.asList(BIN_NAME), emulatorUrl, MD5_CHECKSUM);
+        new DownloadableEmulatorRunner(Arrays.asList(BIN_NAME, BIN_CMD_PORT_FLAG + port),
+            EMULATOR_URL, MD5_CHECKSUM);
     serviceHelper =
-        new LocalServiceHelper(Arrays.asList(gcloudRunner, downloadRunner), DEFAULT_PORT);
+        new LocalServiceHelper(Arrays.asList(gcloudRunner, downloadRunner), port);
   }
 
   /**
    * Start the local pubsub emulator through gcloud, download the zip file if user does not have
    * gcloud installed.
+   *
    * @throws InterruptedException
    * @throws IOException
    */
   public void start() throws IOException, InterruptedException {
-    String blockUntilOutput = Integer.toString(DEFAULT_PORT);
+    String blockUntilOutput = Integer.toString(port);
     serviceHelper.start(blockUntilOutput);
   }
 
   /**
    * Reset the internal state of the emulator.
-   * @throws InterruptedException
+   *
    * @throws IOException
    */
-  public void reset() throws IOException, InterruptedException {
+  public void reset() throws IOException {
     this.serviceHelper.sendPostRequest("/reset");
   }
 
   /**
    * Quit the local emulator and related local service.
+   *
    * @throws InterruptedException
    * @throws IOException
    */
@@ -104,7 +117,7 @@ public class LocalPubsubHelper {
    * Creates a channel for making requests to the in-memory service.
    */
   public ManagedChannel createChannel() {
-    return NettyChannelBuilder.forAddress(DEFAULT_HOST, DEFAULT_PORT)
+    return NettyChannelBuilder.forAddress(DEFAULT_HOST, port)
         .negotiationType(NegotiationType.PLAINTEXT)
         .build();
   }
