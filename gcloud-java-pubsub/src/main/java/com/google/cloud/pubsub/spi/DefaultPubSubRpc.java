@@ -54,8 +54,10 @@ import com.google.pubsub.v1.Topic;
 import org.joda.time.Duration;
 
 import java.io.IOException;
+import java.util.Set;
 import java.util.concurrent.Future;
 
+import autovalue.shaded.com.google.common.common.collect.Sets;
 import io.grpc.Status.Code;
 
 public class DefaultPubSubRpc implements PubSubRpc {
@@ -98,10 +100,17 @@ public class DefaultPubSubRpc implements PubSubRpc {
   }
 
   private static <V> Future<V> translate(ListenableFuture<V> from, final boolean idempotent,
-      final int... returnNullOn) {
+      int... returnNullOn) {
+    final Set<Integer> returnNullOnSet = Sets.newHashSetWithExpectedSize(returnNullOn.length);
+    for (int value : returnNullOn) {
+      returnNullOnSet.add(value);
+    }
     return  Futures.catching(from, ApiException.class, new Function<ApiException, V>() {
       @Override
       public V apply(ApiException exception) {
+        if (returnNullOnSet.contains(exception.getStatusCode().value())) {
+          return null;
+        }
         throw new PubSubException(exception, idempotent);
       }
     });
