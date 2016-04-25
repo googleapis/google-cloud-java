@@ -39,11 +39,10 @@ public class LocalPubsubHelper {
   private final int port;
   private final LocalServiceHelper serviceHelper;
 
-
   // Local server settings
   private static final int DEFAULT_PORT = 8080;
   private static final String DEFAULT_HOST = "localhost";
-  private static final URL EMULATE_URL;
+  private static final URL EMULATOR_URL;
 
   // GCloud emulator settings
   private static final String GCLOUD_CMD_TEXT = "gcloud beta emulators pubsub start";
@@ -59,7 +58,7 @@ public class LocalPubsubHelper {
 
   static {
     try {
-      EMULATE_URL = new URL("http://storage.googleapis.com/pubsub/tools/" + FILENAME);
+      EMULATOR_URL = new URL("http://storage.googleapis.com/pubsub/tools/" + FILENAME);
     } catch (MalformedURLException ex) {
       throw new IllegalStateException(ex);
     }
@@ -77,8 +76,7 @@ public class LocalPubsubHelper {
         new GCloudEmulatorRunner(gcloudCommand, VERSION_PREFIX, MIN_VERSION);
     DownloadableEmulatorRunner downloadRunner =
         new DownloadableEmulatorRunner(Arrays.asList(BIN_NAME, BIN_CMD_PORT_FLAG + port),
-                                       EMULATE_URL,
-                                       MD5_CHECKSUM);
+            EMULATOR_URL, MD5_CHECKSUM);
     serviceHelper =
         new LocalServiceHelper(Arrays.asList(gcloudRunner, downloadRunner), port);
   }
