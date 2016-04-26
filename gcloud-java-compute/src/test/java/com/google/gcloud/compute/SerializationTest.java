@@ -20,6 +20,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotSame;
 
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
 import com.google.gcloud.AuthCredentials;
 import com.google.gcloud.RetryParams;
 import com.google.gcloud.compute.AttachedDisk.CreateDiskConfiguration;
@@ -186,6 +187,12 @@ public class SerializationTest {
   private static final ScratchDiskConfiguration SCRATCH_DISK_CONFIGURATION =
       ScratchDiskConfiguration.of(DISK_TYPE_ID);
   private static final AttachedDisk ATTACHED_DISK = AttachedDisk.of(CREATE_DISK_CONFIGURATION);
+  private static final Tags TAGS = Tags.of("tag1", "tag2");
+  private static final Metadata METADATA = Metadata.of(ImmutableMap.of("key1", "val1"));
+  private static final ServiceAccount SERVICE_ACCOUNT = ServiceAccount.of("email");
+  private static final SchedulingOptions SCHEDULING_OPTIONS = SchedulingOptions.preemptible();
+  private static final InstanceInfo INSTANCE_INFO =
+      InstanceInfo.of(INSTANCE_ID, MACHINE_TYPE_ID, ATTACHED_DISK, NETWORK_INTERFACE);
   private static final Compute.DiskTypeOption DISK_TYPE_OPTION =
       Compute.DiskTypeOption.fields();
   private static final Compute.DiskTypeFilter DISK_TYPE_FILTER =
@@ -288,7 +295,8 @@ public class SerializationTest {
         DISK_INFO, DISK, SUBNETWORK_ID, NETWORK_ID, SUBNETWORK_INFO, SUBNETWORK,
         STANDARD_NETWORK_CONFIGURATION, SUBNET_NETWORK_CONFIGURATION, NETWORK_INFO, NETWORK,
         ACCESS_CONFIG, NETWORK_INTERFACE, CREATE_DISK_CONFIGURATION, PERSISTENT_DISK_CONFIGURATION,
-        SCRATCH_DISK_CONFIGURATION, ATTACHED_DISK, DISK_TYPE_OPTION, DISK_TYPE_FILTER,
+        SCRATCH_DISK_CONFIGURATION, ATTACHED_DISK, TAGS, METADATA, SERVICE_ACCOUNT,
+        SCHEDULING_OPTIONS, INSTANCE_INFO, DISK_TYPE_OPTION, DISK_TYPE_FILTER,
         DISK_TYPE_LIST_OPTION, DISK_TYPE_AGGREGATED_LIST_OPTION, MACHINE_TYPE_OPTION,
         MACHINE_TYPE_FILTER, MACHINE_TYPE_LIST_OPTION, MACHINE_TYPE_AGGREGATED_LIST_OPTION,
         REGION_OPTION, REGION_FILTER, REGION_LIST_OPTION, ZONE_OPTION, ZONE_FILTER,

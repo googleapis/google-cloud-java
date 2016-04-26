@@ -35,6 +35,9 @@ import java.util.Objects;
  * networks, use firewall rules to restrict access to instances, and create static routes to forward
  * traffic to specific destinations.
  *
+ * <p>A network lives in a project and is isolated from other networks in the project. A project can
+ * have up to five different networks.
+ *
  * @see <a href="https://cloud.google.com/compute/docs/networking">Using Networks and Firewalls</a>
  */
 public class NetworkInfo implements Serializable {
