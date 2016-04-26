@@ -748,12 +748,12 @@ public class ComputeImplTest {
   public void testGetMachineType() {
     EasyMock.expect(
         computeRpcMock.getMachineType(
-            MACHINE_TYPE_ID.zone(), MACHINE_TYPE_ID.machineType(), EMPTY_RPC_OPTIONS))
+            MACHINE_TYPE_ID.zone(), MACHINE_TYPE_ID.type(), EMPTY_RPC_OPTIONS))
         .andReturn(MACHINE_TYPE.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.service();
     MachineType machineType =
-        compute.getMachineType(MACHINE_TYPE_ID.zone(), MACHINE_TYPE_ID.machineType());
+        compute.getMachineType(MACHINE_TYPE_ID.zone(), MACHINE_TYPE_ID.type());
     assertEquals(MACHINE_TYPE, machineType);
   }
 
@@ -761,17 +761,17 @@ public class ComputeImplTest {
   public void testGetMachineType_Null() {
     EasyMock.expect(
         computeRpcMock.getMachineType(
-            MACHINE_TYPE_ID.zone(), MACHINE_TYPE_ID.machineType(), EMPTY_RPC_OPTIONS))
+            MACHINE_TYPE_ID.zone(), MACHINE_TYPE_ID.type(), EMPTY_RPC_OPTIONS))
         .andReturn(null);
     EasyMock.replay(computeRpcMock);
     compute = options.service();
-    assertNull(compute.getMachineType(MACHINE_TYPE_ID.zone(), MACHINE_TYPE_ID.machineType()));
+    assertNull(compute.getMachineType(MACHINE_TYPE_ID.zone(), MACHINE_TYPE_ID.type()));
   }
 
   @Test
   public void testGetMachineTypeFromMachineTypeId() {
     EasyMock.expect(computeRpcMock.getMachineType(
-            MACHINE_TYPE_ID.zone(), MACHINE_TYPE_ID.machineType(), EMPTY_RPC_OPTIONS))
+            MACHINE_TYPE_ID.zone(), MACHINE_TYPE_ID.type(), EMPTY_RPC_OPTIONS))
         .andReturn(MACHINE_TYPE.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.service();
@@ -783,13 +783,13 @@ public class ComputeImplTest {
   public void testGetMachineTypeWithSelectedFields() {
     Capture<Map<ComputeRpc.Option, Object>> capturedOptions = Capture.newInstance();
     EasyMock.expect(
-        computeRpcMock.getMachineType(eq(MACHINE_TYPE_ID.zone()), eq(MACHINE_TYPE_ID.machineType()),
+        computeRpcMock.getMachineType(eq(MACHINE_TYPE_ID.zone()), eq(MACHINE_TYPE_ID.type()),
             capture(capturedOptions)))
         .andReturn(MACHINE_TYPE.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.service();
     MachineType machineType = compute.getMachineType(MACHINE_TYPE_ID.zone(),
-        MACHINE_TYPE_ID.machineType(), MACHINE_TYPE_OPTION_FIELDS);
+        MACHINE_TYPE_ID.type(), MACHINE_TYPE_OPTION_FIELDS);
     String selector = (String) capturedOptions.getValue().get(DISK_TYPE_OPTION_FIELDS.rpcOption());
     assertTrue(selector.contains("selfLink"));
     assertTrue(selector.contains("id"));

@@ -216,7 +216,7 @@ public class ITComputeTest {
   public void testGetMachineType() {
     MachineType machineType = compute.getMachineType(ZONE, MACHINE_TYPE);
     assertEquals(ZONE, machineType.machineTypeId().zone());
-    assertEquals(MACHINE_TYPE, machineType.machineTypeId().machineType());
+    assertEquals(MACHINE_TYPE, machineType.machineTypeId().type());
     assertNotNull(machineType.id());
     assertNotNull(machineType.creationTimestamp());
     assertNotNull(machineType.description());
@@ -231,7 +231,7 @@ public class ITComputeTest {
     MachineType machineType = compute.getMachineType(ZONE, MACHINE_TYPE,
         Compute.MachineTypeOption.fields(Compute.MachineTypeField.ID));
     assertEquals(ZONE, machineType.machineTypeId().zone());
-    assertEquals(MACHINE_TYPE, machineType.machineTypeId().machineType());
+    assertEquals(MACHINE_TYPE, machineType.machineTypeId().type());
     assertNotNull(machineType.id());
     assertNull(machineType.creationTimestamp());
     assertNull(machineType.description());

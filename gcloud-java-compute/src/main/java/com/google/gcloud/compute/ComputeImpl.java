@@ -515,8 +515,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
           runWithRetries(new Callable<com.google.api.services.compute.model.MachineType>() {
             @Override
             public com.google.api.services.compute.model.MachineType call() {
-              return computeRpc.getMachineType(machineType.zone(), machineType.machineType(),
-                  optionsMap);
+              return computeRpc.getMachineType(machineType.zone(), machineType.type(), optionsMap);
             }
           }, options().retryParams(), EXCEPTION_HANDLER);
       return answer == null ? null : MachineType.fromPb(answer);
