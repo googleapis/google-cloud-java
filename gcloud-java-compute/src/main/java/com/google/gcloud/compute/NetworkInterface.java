@@ -493,7 +493,7 @@ public class NetworkInterface implements Serializable {
       com.google.api.services.compute.model.NetworkInterface interfacePb) {
     Builder builder = builder(NetworkId.fromUrl(interfacePb.getNetwork()))
         .name(interfacePb.getName());
-    if (interfacePb.getSubnetwork() != null){
+    if (interfacePb.getSubnetwork() != null) {
       builder.subnetwork(SubnetworkId.fromUrl(interfacePb.getSubnetwork()));
     }
     builder.networkIp(interfacePb.getNetworkIP());

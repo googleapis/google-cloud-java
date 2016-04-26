@@ -26,10 +26,6 @@ import com.google.gcloud.RetryParams;
 import com.google.gcloud.compute.AttachedDisk.CreateDiskConfiguration;
 import com.google.gcloud.compute.AttachedDisk.PersistentDiskConfiguration;
 import com.google.gcloud.compute.AttachedDisk.ScratchDiskConfiguration;
-import com.google.gcloud.compute.InstanceInfo.Metadata;
-import com.google.gcloud.compute.InstanceInfo.SchedulingOptions;
-import com.google.gcloud.compute.InstanceInfo.ServiceAccount;
-import com.google.gcloud.compute.InstanceInfo.Tags;
 import com.google.gcloud.compute.NetworkInterface.AccessConfig;
 
 import org.junit.Test;
