@@ -23,11 +23,18 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.gcloud.Page;
 import com.google.gcloud.compute.Address;
 import com.google.gcloud.compute.AddressId;
 import com.google.gcloud.compute.AddressInfo;
+import com.google.gcloud.compute.AttachedDisk;
+import com.google.gcloud.compute.AttachedDisk.AttachedDiskConfiguration;
+import com.google.gcloud.compute.AttachedDisk.CreateDiskConfiguration;
+import com.google.gcloud.compute.AttachedDisk.PersistentDiskConfiguration;
+import com.google.gcloud.compute.AttachedDisk.ScratchDiskConfiguration;
 import com.google.gcloud.compute.Compute;
 import com.google.gcloud.compute.DeprecationStatus;
 import com.google.gcloud.compute.Disk;
@@ -43,17 +50,25 @@ import com.google.gcloud.compute.ImageConfiguration;
 import com.google.gcloud.compute.ImageDiskConfiguration;
 import com.google.gcloud.compute.ImageId;
 import com.google.gcloud.compute.ImageInfo;
+import com.google.gcloud.compute.Instance;
+import com.google.gcloud.compute.InstanceId;
+import com.google.gcloud.compute.InstanceInfo;
 import com.google.gcloud.compute.License;
 import com.google.gcloud.compute.LicenseId;
 import com.google.gcloud.compute.MachineType;
+import com.google.gcloud.compute.MachineTypeId;
 import com.google.gcloud.compute.Network;
 import com.google.gcloud.compute.NetworkConfiguration;
 import com.google.gcloud.compute.NetworkId;
 import com.google.gcloud.compute.NetworkInfo;
+import com.google.gcloud.compute.NetworkInterface;
+import com.google.gcloud.compute.NetworkInterface.AccessConfig;
 import com.google.gcloud.compute.Operation;
 import com.google.gcloud.compute.Region;
 import com.google.gcloud.compute.RegionAddressId;
 import com.google.gcloud.compute.RegionOperationId;
+import com.google.gcloud.compute.SchedulingOptions;
+import com.google.gcloud.compute.SchedulingOptions.Maintenance;
 import com.google.gcloud.compute.Snapshot;
 import com.google.gcloud.compute.SnapshotDiskConfiguration;
 import com.google.gcloud.compute.SnapshotId;
@@ -75,6 +90,8 @@ import org.junit.Test;
 import org.junit.rules.Timeout;
 
 import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 public class ITComputeTest {
@@ -1598,5 +1615,308 @@ public class ITComputeTest {
       Thread.sleep(1000L);
     }
     assertNull(compute.getNetwork(networkName));
+  }
+
+  @Test
+  public void testCreateGetAndDeleteInstance() throws InterruptedException {
+    String instanceName = BASE_RESOURCE_NAME + "create-and-get-instance";
+    String addressName = BASE_RESOURCE_NAME + "create-and-get-instance-address";
+    // Create an address to assign to the instance
+    AddressId addressId = RegionAddressId.of(REGION, addressName);
+    AddressInfo addressInfo = AddressInfo.of(addressId);
+    Operation operation = compute.create(addressInfo);
+    while (!operation.isDone()) {
+      Thread.sleep(1000L);
+    }
+    Address address = compute.get(addressId);
+    // Create an instance
+    InstanceId instanceId = InstanceId.of(ZONE, instanceName);
+    NetworkId networkId = NetworkId.of("default");
+    NetworkInterface networkInterface = NetworkInterface.builder(networkId)
+        .accessConfigurations(AccessConfig.builder().name("NAT").natIp(address.address()).build())
+        .build();
+    AttachedDisk disk1 = AttachedDisk.of("dev0",
+        CreateDiskConfiguration.builder(IMAGE_ID).autoDelete(true).build());
+    AttachedDisk disk2 =
+        AttachedDisk.of("dev1", ScratchDiskConfiguration.of(DiskTypeId.of(ZONE, DISK_TYPE)));
+    InstanceInfo instanceInfo =
+        InstanceInfo.builder(instanceId, MachineTypeId.of(ZONE, "n1-standard-1"))
+            .attachedDisks(disk1, disk2)
+            .networkInterfaces(networkInterface)
+            .build();
+    operation = compute.create(instanceInfo);
+    while (!operation.isDone()) {
+      Thread.sleep(1000L);
+    }
+    // test get
+    Instance remoteInstance = compute.get(instanceId);
+    assertEquals(instanceName, remoteInstance.instanceId().instance());
+    assertEquals(ZONE, remoteInstance.instanceId().zone());
+    assertEquals(InstanceInfo.Status.RUNNING, remoteInstance.status());
+    assertEquals("n1-standard-1", remoteInstance.machineType().type());
+    assertEquals(ZONE, remoteInstance.machineType().zone());
+    assertNotNull(remoteInstance.creationTimestamp());
+    Set<String> deviceSet = ImmutableSet.of("dev0", "dev1");
+    assertEquals(2, remoteInstance.attachedDisks().size());
+    for (AttachedDisk remoteAttachedDisk : remoteInstance.attachedDisks()) {
+      assertTrue(deviceSet.contains(remoteAttachedDisk.deviceName()));
+    }
+    assertEquals(AttachedDiskConfiguration.Type.PERSISTENT,
+        remoteInstance.attachedDisks().get(0).configuration().type());
+    PersistentDiskConfiguration remoteConfiguration =
+        remoteInstance.attachedDisks().get(0).configuration();
+    assertEquals(instanceName, remoteConfiguration.sourceDisk().disk());
+    assertEquals(ZONE, remoteConfiguration.sourceDisk().zone());
+    assertTrue(remoteConfiguration.boot());
+    assertTrue(remoteConfiguration.autoDelete());
+    assertEquals(1, remoteInstance.networkInterfaces().size());
+    NetworkInterface remoteNetworkInterface = remoteInstance.networkInterfaces().get(0);
+    assertNotNull(remoteNetworkInterface.name());
+    assertEquals("default", remoteNetworkInterface.network().network());
+    List<AccessConfig> remoteAccessConfigurations = remoteNetworkInterface.accessConfigurations();
+    assertNotNull(remoteAccessConfigurations);
+    assertEquals(1, remoteAccessConfigurations.size());
+    AccessConfig remoteAccessConfig = remoteAccessConfigurations.get(0);
+    assertEquals(address.address(), remoteAccessConfig.natIp());
+    assertEquals("NAT", remoteAccessConfig.name());
+    assertNotNull(remoteInstance.metadata());
+    assertNotNull(remoteInstance.tags());
+    // test get with selected fields
+    remoteInstance = compute.get(instanceId,
+        Compute.InstanceOption.fields(Compute.InstanceField.CREATION_TIMESTAMP));
+    assertEquals(instanceName, remoteInstance.instanceId().instance());
+    assertEquals(ZONE, remoteInstance.instanceId().zone());
+    assertNull(remoteInstance.machineType());
+    assertNotNull(remoteInstance.creationTimestamp());
+    assertNull(remoteInstance.attachedDisks());
+    assertNull(remoteInstance.networkInterfaces());
+    assertNull(remoteInstance.metadata());
+    assertNull(remoteInstance.tags());
+    // test get default serial port output
+    String serialPortOutput = remoteInstance.getSerialPortOutput();
+    assertNotNull(serialPortOutput);
+    // test get serial port output by number
+    String newSerialPortOutput = remoteInstance.getSerialPortOutput(1);
+    assertTrue(newSerialPortOutput.contains(serialPortOutput));
+    operation = remoteInstance.delete();
+    while (!operation.isDone()) {
+      Thread.sleep(1000L);
+    }
+    assertNull(compute.get(instanceId));
+    address.delete();
+  }
+
+  @Test
+  public void testStartStopAndResetInstance() throws InterruptedException {
+    String instanceName = BASE_RESOURCE_NAME + "start-stop-reset-instance";
+    InstanceId instanceId = InstanceId.of(ZONE, instanceName);
+    NetworkId networkId = NetworkId.of("default");
+    NetworkInterface networkInterface = NetworkInterface.builder(networkId).build();
+    AttachedDisk disk = AttachedDisk.of("dev0",
+        CreateDiskConfiguration.builder(IMAGE_ID).autoDelete(true).build());
+    InstanceInfo instanceInfo =
+        InstanceInfo.builder(instanceId, MachineTypeId.of(ZONE, MACHINE_TYPE))
+            .attachedDisks(disk)
+            .networkInterfaces(networkInterface)
+            .build();
+    Operation operation = compute.create(instanceInfo);
+    while (!operation.isDone()) {
+      Thread.sleep(1000L);
+    }
+    Instance remoteInstance =
+        compute.get(instanceId, Compute.InstanceOption.fields(Compute.InstanceField.STATUS));
+    assertEquals(InstanceInfo.Status.RUNNING, remoteInstance.status());
+    operation = remoteInstance.stop();
+    while (!operation.isDone()) {
+      Thread.sleep(1000L);
+    }
+    remoteInstance =
+        compute.get(instanceId, Compute.InstanceOption.fields(Compute.InstanceField.STATUS));
+    assertEquals(InstanceInfo.Status.TERMINATED, remoteInstance.status());
+    operation = remoteInstance.start();
+    while (!operation.isDone()) {
+      Thread.sleep(1000L);
+    }
+    remoteInstance =
+        compute.get(instanceId, Compute.InstanceOption.fields(Compute.InstanceField.STATUS));
+    assertEquals(InstanceInfo.Status.RUNNING, remoteInstance.status());
+    operation = remoteInstance.reset();
+    while (!operation.isDone()) {
+      Thread.sleep(1000L);
+    }
+    remoteInstance =
+        compute.get(instanceId, Compute.InstanceOption.fields(Compute.InstanceField.STATUS));
+    assertEquals(InstanceInfo.Status.RUNNING, remoteInstance.status());
+    remoteInstance.delete();
+  }
+
+  @Test
+  public void testSetInstanceProperties() throws InterruptedException {
+    String instanceName = BASE_RESOURCE_NAME + "set-properties-instance";
+    InstanceId instanceId = InstanceId.of(ZONE, instanceName);
+    NetworkId networkId = NetworkId.of("default");
+    NetworkInterface networkInterface = NetworkInterface.builder(networkId).build();
+    AttachedDisk disk = AttachedDisk.of("dev0",
+        CreateDiskConfiguration.builder(IMAGE_ID).autoDelete(true).build());
+    InstanceInfo instanceInfo =
+        InstanceInfo.builder(instanceId, MachineTypeId.of(ZONE, MACHINE_TYPE))
+            .attachedDisks(disk)
+            .networkInterfaces(networkInterface)
+            .build();
+    Operation operation = compute.create(instanceInfo);
+    while (!operation.isDone()) {
+      Thread.sleep(1000L);
+    }
+    Instance remoteInstance = compute.get(instanceId);
+    // test set tags
+    List<String> tags = ImmutableList.of("tag1", "tag2");
+    operation = remoteInstance.setTags(tags);
+    while (!operation.isDone()) {
+      Thread.sleep(1000L);
+    }
+    remoteInstance = compute.get(instanceId);
+    assertEquals(tags, remoteInstance.tags().values());
+    // test set metadata
+    Map<String, String> metadata = ImmutableMap.of("key", "value");
+    operation = remoteInstance.setMetadata(metadata);
+    while (!operation.isDone()) {
+      Thread.sleep(1000L);
+    }
+    remoteInstance = compute.get(instanceId);
+    assertEquals(metadata, remoteInstance.metadata().values());
+    // test set machine type
+    operation = remoteInstance.stop();
+    while (!operation.isDone()) {
+      Thread.sleep(1000L);
+    }
+    operation = remoteInstance.setMachineType(MachineTypeId.of(ZONE, "n1-standard-1"));
+    while (!operation.isDone()) {
+      Thread.sleep(1000L);
+    }
+    remoteInstance = compute.get(instanceId);
+    assertEquals("n1-standard-1", remoteInstance.machineType().type());
+    assertEquals(ZONE, remoteInstance.machineType().zone());
+    // test set scheduling options
+    SchedulingOptions options = SchedulingOptions.standard(false, Maintenance.TERMINATE);
+    operation = remoteInstance.setSchedulingOptions(options);
+    while (!operation.isDone()) {
+      Thread.sleep(1000L);
+    }
+    remoteInstance = compute.get(instanceId);
+    assertEquals(options, remoteInstance.schedulingOptions());
+    remoteInstance.delete();
+  }
+
+  @Test
+  public void testAttachAndDetachDisk() throws InterruptedException {
+    String instanceName = BASE_RESOURCE_NAME + "attach-and-detach-disk-instance";
+    String diskName = BASE_RESOURCE_NAME + "attach-and-detach-disk";
+    InstanceId instanceId = InstanceId.of(ZONE, instanceName);
+    NetworkId networkId = NetworkId.of("default");
+    NetworkInterface networkInterface = NetworkInterface.builder(networkId).build();
+    AttachedDisk disk = AttachedDisk.of("dev0",
+        CreateDiskConfiguration.builder(IMAGE_ID).autoDelete(true).build());
+    InstanceInfo instanceInfo =
+        InstanceInfo.builder(instanceId, MachineTypeId.of(ZONE, MACHINE_TYPE))
+            .attachedDisks(disk)
+            .networkInterfaces(networkInterface)
+            .build();
+    Operation instanceOperation = compute.create(instanceInfo);
+    DiskId diskId = DiskId.of(ZONE, diskName);
+    Operation diskOperation = compute.create(DiskInfo.of(diskId,
+            StandardDiskConfiguration.of(DiskTypeId.of(ZONE, "pd-ssd"))));
+    while (!instanceOperation.isDone()) {
+      Thread.sleep(1000L);
+    }
+    while (!diskOperation.isDone()) {
+      Thread.sleep(1000L);
+    }
+    Instance remoteInstance = compute.get(instanceId);
+    // test attach disk
+    instanceOperation = remoteInstance.attachDisk("dev1",
+        PersistentDiskConfiguration.builder(diskId).build());
+    while (!instanceOperation.isDone()) {
+      Thread.sleep(1000L);
+    }
+    remoteInstance = compute.get(instanceId);
+    Set<String> deviceSet = ImmutableSet.of("dev0", "dev1");
+    assertEquals(2, remoteInstance.attachedDisks().size());
+    for (AttachedDisk remoteAttachedDisk : remoteInstance.attachedDisks()) {
+      assertTrue(deviceSet.contains(remoteAttachedDisk.deviceName()));
+    }
+    // test set disk auto-delete
+    instanceOperation = remoteInstance.setDiskAutoDelete("dev1", true);
+    while (!instanceOperation.isDone()) {
+      Thread.sleep(1000L);
+    }
+    remoteInstance = compute.get(instanceId);
+    for (AttachedDisk remoteAttachedDisk : remoteInstance.attachedDisks()) {
+      assertTrue(deviceSet.contains(remoteAttachedDisk.deviceName()));
+      assertTrue(remoteAttachedDisk.configuration().autoDelete());
+    }
+    // test detach disk
+    instanceOperation = remoteInstance.detachDisk("dev1");
+    while (!instanceOperation.isDone()) {
+      Thread.sleep(1000L);
+    }
+    remoteInstance = compute.get(instanceId);
+    assertEquals(1, remoteInstance.attachedDisks().size());
+    assertEquals("dev0", remoteInstance.attachedDisks().get(0).deviceName());
+    remoteInstance.delete();
+  }
+
+  @Test
+  public void testAddAndRemoveAccessConfig() throws InterruptedException {
+    String instanceName = BASE_RESOURCE_NAME + "add-and-remove-access-instance";
+    String addressName = BASE_RESOURCE_NAME + "add-and-remove-access-address";
+    InstanceId instanceId = InstanceId.of(ZONE, instanceName);
+    NetworkId networkId = NetworkId.of("default");
+    NetworkInterface networkInterface = NetworkInterface.builder(networkId).build();
+    AttachedDisk disk = AttachedDisk.of("dev0",
+        CreateDiskConfiguration.builder(IMAGE_ID).autoDelete(true).build());
+    InstanceInfo instanceInfo =
+        InstanceInfo.builder(instanceId, MachineTypeId.of(ZONE, MACHINE_TYPE))
+            .attachedDisks(disk)
+            .networkInterfaces(networkInterface)
+            .build();
+    Operation instanceOperation = compute.create(instanceInfo);
+    AddressId addressId = RegionAddressId.of(REGION, addressName);
+    AddressInfo addressInfo = AddressInfo.of(addressId);
+    Operation addressOperation = compute.create(addressInfo);
+    while (!addressOperation.isDone()) {
+      Thread.sleep(1000L);
+    }
+    while (!instanceOperation.isDone()) {
+      Thread.sleep(1000L);
+    }
+    while (!addressOperation.isDone()) {
+      Thread.sleep(1000L);
+    }
+    Address remoteAddress = compute.get(addressId);
+    Instance remoteInstance = compute.get(instanceId);
+    String networkInterfaceName = remoteInstance.networkInterfaces().get(0).name();
+    // test add access config
+    AccessConfig accessConfig = AccessConfig.builder()
+        .natIp(remoteAddress.address())
+        .name("NAT")
+        .build();
+    instanceOperation = remoteInstance.addAccessConfig(networkInterfaceName, accessConfig);
+    while (!instanceOperation.isDone()) {
+      Thread.sleep(1000L);
+    }
+    remoteInstance = compute.get(instanceId);
+    List<AccessConfig> accessConfigurations =
+        remoteInstance.networkInterfaces().get(0).accessConfigurations();
+    assertEquals(1, accessConfigurations.size());
+    assertEquals("NAT", accessConfigurations.get(0).name());
+    // test delete access config
+    instanceOperation = remoteInstance.deleteAccessConfig(networkInterfaceName, "NAT");
+    while (!instanceOperation.isDone()) {
+      Thread.sleep(1000L);
+    }
+    remoteInstance = compute.get(instanceId);
+    assertTrue(remoteInstance.networkInterfaces().get(0).accessConfigurations().isEmpty());
+    remoteInstance.delete();
+    remoteAddress.delete();
   }
 }
