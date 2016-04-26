@@ -561,28 +561,28 @@ public class ComputeImplTest {
   @Test
   public void testGetDiskType() {
     EasyMock.expect(
-        computeRpcMock.getDiskType(DISK_TYPE_ID.zone(), DISK_TYPE_ID.diskType(), EMPTY_RPC_OPTIONS))
+        computeRpcMock.getDiskType(DISK_TYPE_ID.zone(), DISK_TYPE_ID.type(), EMPTY_RPC_OPTIONS))
         .andReturn(DISK_TYPE.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.service();
-    DiskType diskType = compute.getDiskType(DISK_TYPE_ID.zone(), DISK_TYPE_ID.diskType());
+    DiskType diskType = compute.getDiskType(DISK_TYPE_ID.zone(), DISK_TYPE_ID.type());
     assertEquals(DISK_TYPE, diskType);
   }
 
   @Test
   public void testGetDiskType_Null() {
     EasyMock.expect(
-        computeRpcMock.getDiskType(DISK_TYPE_ID.zone(), DISK_TYPE_ID.diskType(), EMPTY_RPC_OPTIONS))
+        computeRpcMock.getDiskType(DISK_TYPE_ID.zone(), DISK_TYPE_ID.type(), EMPTY_RPC_OPTIONS))
         .andReturn(null);
     EasyMock.replay(computeRpcMock);
     compute = options.service();
-    assertNull(compute.getDiskType(DISK_TYPE_ID.zone(), DISK_TYPE_ID.diskType()));
+    assertNull(compute.getDiskType(DISK_TYPE_ID.zone(), DISK_TYPE_ID.type()));
   }
 
   @Test
   public void testGetDiskTypeFromDiskTypeId() {
     EasyMock.expect(
-        computeRpcMock.getDiskType(DISK_TYPE_ID.zone(), DISK_TYPE_ID.diskType(), EMPTY_RPC_OPTIONS))
+        computeRpcMock.getDiskType(DISK_TYPE_ID.zone(), DISK_TYPE_ID.type(), EMPTY_RPC_OPTIONS))
         .andReturn(DISK_TYPE.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.service();
@@ -595,12 +595,12 @@ public class ComputeImplTest {
     Capture<Map<ComputeRpc.Option, Object>> capturedOptions = Capture.newInstance();
     EasyMock.expect(
         computeRpcMock.getDiskType(
-            eq(DISK_TYPE_ID.zone()), eq(DISK_TYPE_ID.diskType()), capture(capturedOptions)))
+            eq(DISK_TYPE_ID.zone()), eq(DISK_TYPE_ID.type()), capture(capturedOptions)))
         .andReturn(DISK_TYPE.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.service();
     DiskType diskType =
-        compute.getDiskType(DISK_TYPE_ID.zone(), DISK_TYPE_ID.diskType(), DISK_TYPE_OPTION_FIELDS);
+        compute.getDiskType(DISK_TYPE_ID.zone(), DISK_TYPE_ID.type(), DISK_TYPE_OPTION_FIELDS);
     String selector = (String) capturedOptions.getValue().get(DISK_TYPE_OPTION_FIELDS.rpcOption());
     assertTrue(selector.contains("selfLink"));
     assertTrue(selector.contains("id"));
@@ -3169,7 +3169,7 @@ public class ComputeImplTest {
   @Test
   public void testRetryableException() {
     EasyMock.expect(
-        computeRpcMock.getDiskType(DISK_TYPE_ID.zone(), DISK_TYPE_ID.diskType(), EMPTY_RPC_OPTIONS))
+        computeRpcMock.getDiskType(DISK_TYPE_ID.zone(), DISK_TYPE_ID.type(), EMPTY_RPC_OPTIONS))
         .andThrow(new ComputeException(500, "InternalError"))
         .andReturn(DISK_TYPE.toPb());
     EasyMock.replay(computeRpcMock);
@@ -3182,7 +3182,7 @@ public class ComputeImplTest {
   public void testNonRetryableException() {
     String exceptionMessage = "Not Implemented";
     EasyMock.expect(
-        computeRpcMock.getDiskType(DISK_TYPE_ID.zone(), DISK_TYPE_ID.diskType(), EMPTY_RPC_OPTIONS))
+        computeRpcMock.getDiskType(DISK_TYPE_ID.zone(), DISK_TYPE_ID.type(), EMPTY_RPC_OPTIONS))
         .andThrow(new ComputeException(501, exceptionMessage));
     EasyMock.replay(computeRpcMock);
     compute = options.toBuilder().retryParams(RetryParams.defaultInstance()).build().service();
@@ -3195,7 +3195,7 @@ public class ComputeImplTest {
   public void testRuntimeException() {
     String exceptionMessage = "Artificial runtime exception";
     EasyMock.expect(
-        computeRpcMock.getDiskType(DISK_TYPE_ID.zone(), DISK_TYPE_ID.diskType(), EMPTY_RPC_OPTIONS))
+        computeRpcMock.getDiskType(DISK_TYPE_ID.zone(), DISK_TYPE_ID.type(), EMPTY_RPC_OPTIONS))
         .andThrow(new RuntimeException(exceptionMessage));
     EasyMock.replay(computeRpcMock);
     compute = options.toBuilder().retryParams(RetryParams.defaultInstance()).build().service();

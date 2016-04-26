@@ -93,7 +93,7 @@ public class SnapshotDiskConfigurationTest {
   @Test
   public void testSetProjectId() {
     SnapshotDiskConfiguration configuration = DISK_CONFIGURATION.toBuilder()
-        .diskType(DiskTypeId.of(DISK_TYPE.zone(), DISK_TYPE.diskType()))
+        .diskType(DiskTypeId.of(DISK_TYPE.zone(), DISK_TYPE.type()))
         .sourceSnapshot(SnapshotId.of(SNAPSHOT.snapshot()))
         .build();
     compareSnapshotDiskConfiguration(DISK_CONFIGURATION, configuration.setProjectId("project"));

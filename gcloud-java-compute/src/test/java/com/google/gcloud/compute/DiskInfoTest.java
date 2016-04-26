@@ -224,7 +224,7 @@ public class DiskInfoTest {
   @Test
   public void testSetProjectId() {
     StandardDiskConfiguration standardDiskConfiguration = DISK_CONFIGURATION.toBuilder()
-        .diskType(DiskTypeId.of(TYPE.zone(), TYPE.diskType()))
+        .diskType(DiskTypeId.of(TYPE.zone(), TYPE.type()))
         .build();
     DiskInfo diskInfo = DISK_INFO.toBuilder()
         .diskId(DiskId.of(DISK_ID.zone(), DISK_ID.disk()))
@@ -232,7 +232,7 @@ public class DiskInfoTest {
         .build();
     compareDiskInfo(DISK_INFO, diskInfo.setProjectId("project"));
     SnapshotDiskConfiguration snapshotDiskConfiguration = SNAPSHOT_DISK_CONFIGURATION.toBuilder()
-        .diskType(DiskTypeId.of(TYPE.zone(), TYPE.diskType()))
+        .diskType(DiskTypeId.of(TYPE.zone(), TYPE.type()))
         .sourceSnapshot(SnapshotId.of(SNAPSHOT.snapshot()))
         .build();
     diskInfo = SNAPSHOT_DISK_INFO.toBuilder()
@@ -241,7 +241,7 @@ public class DiskInfoTest {
         .build();
     compareDiskInfo(SNAPSHOT_DISK_INFO, diskInfo.setProjectId("project"));
     ImageDiskConfiguration imageDiskConfiguration = IMAGE_DISK_CONFIGURATION.toBuilder()
-        .diskType(DiskTypeId.of(TYPE.zone(), TYPE.diskType()))
+        .diskType(DiskTypeId.of(TYPE.zone(), TYPE.type()))
         .sourceImage(ImageId.of(IMAGE.image()))
         .build();
     diskInfo = IMAGE_DISK_INFO.toBuilder()
