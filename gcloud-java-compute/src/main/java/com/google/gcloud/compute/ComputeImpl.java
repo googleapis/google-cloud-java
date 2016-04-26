@@ -427,7 +427,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
           runWithRetries(new Callable<com.google.api.services.compute.model.DiskType>() {
             @Override
             public com.google.api.services.compute.model.DiskType call() {
-              return computeRpc.getDiskType(diskTypeId.zone(), diskTypeId.diskType(), optionsMap);
+              return computeRpc.getDiskType(diskTypeId.zone(), diskTypeId.type(), optionsMap);
             }
           }, options().retryParams(), EXCEPTION_HANDLER);
       return answer == null ? null : DiskType.fromPb(answer);
@@ -515,8 +515,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
           runWithRetries(new Callable<com.google.api.services.compute.model.MachineType>() {
             @Override
             public com.google.api.services.compute.model.MachineType call() {
-              return computeRpc.getMachineType(machineType.zone(), machineType.machineType(),
-                  optionsMap);
+              return computeRpc.getMachineType(machineType.zone(), machineType.type(), optionsMap);
             }
           }, options().retryParams(), EXCEPTION_HANDLER);
       return answer == null ? null : MachineType.fromPb(answer);

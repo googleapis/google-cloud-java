@@ -87,7 +87,7 @@ public class StandardDiskConfigurationTest {
   @Test
   public void testSetProjectId() {
     StandardDiskConfiguration configuration = DISK_CONFIGURATION.toBuilder()
-        .diskType(DiskTypeId.of(DISK_TYPE.zone(), DISK_TYPE.diskType()))
+        .diskType(DiskTypeId.of(DISK_TYPE.zone(), DISK_TYPE.type()))
         .build();
     compareStandardDiskConfiguration(DISK_CONFIGURATION, configuration.setProjectId("project"));
   }

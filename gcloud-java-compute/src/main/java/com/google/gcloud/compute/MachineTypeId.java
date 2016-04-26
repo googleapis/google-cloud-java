@@ -50,19 +50,19 @@ public final class MachineTypeId extends ResourceId {
   private static final long serialVersionUID = -5819598544478859608L;
 
   private final String zone;
-  private final String machineType;
+  private final String type;
 
-  private MachineTypeId(String project, String zone, String machineType) {
+  private MachineTypeId(String project, String zone, String type) {
     super(project);
     this.zone = checkNotNull(zone);
-    this.machineType = checkNotNull(machineType);
+    this.type = checkNotNull(type);
   }
 
   /**
    * Returns the name of the machine type.
    */
-  public String machineType() {
-    return machineType;
+  public String type() {
+    return type;
   }
 
   /**
@@ -81,17 +81,17 @@ public final class MachineTypeId extends ResourceId {
 
   @Override
   public String selfLink() {
-    return super.selfLink() + "/zones/" + zone + "/machineTypes/" + machineType;
+    return super.selfLink() + "/zones/" + zone + "/machineTypes/" + type;
   }
 
   @Override
   MoreObjects.ToStringHelper toStringHelper() {
-    return super.toStringHelper().add("zone", zone).add("machineType", machineType);
+    return super.toStringHelper().add("zone", zone).add("type", type);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(baseHashCode(), zone, machineType);
+    return Objects.hash(baseHashCode(), zone, type);
   }
 
   @Override
@@ -105,7 +105,7 @@ public final class MachineTypeId extends ResourceId {
     MachineTypeId other = (MachineTypeId) obj;
     return baseEquals(other)
         && Objects.equals(zone, other.zone)
-        && Objects.equals(machineType, other.machineType);
+        && Objects.equals(type, other.type);
   }
 
   @Override
@@ -113,21 +113,21 @@ public final class MachineTypeId extends ResourceId {
     if (project() != null) {
       return this;
     }
-    return MachineTypeId.of(projectId, zone, machineType);
+    return MachineTypeId.of(projectId, zone, type);
   }
 
   /**
    * Returns a machine type identity given the zone and type names.
    */
-  public static MachineTypeId of(String zone, String machineType) {
-    return new MachineTypeId(null, zone, machineType);
+  public static MachineTypeId of(String zone, String type) {
+    return new MachineTypeId(null, zone, type);
   }
 
   /**
    * Returns a machine type identity given project, zone and type names.
    */
-  public static MachineTypeId of(String project, String zone, String machineType) {
-    return new MachineTypeId(project, zone, machineType);
+  public static MachineTypeId of(String project, String zone, String type) {
+    return new MachineTypeId(project, zone, type);
   }
 
   /**

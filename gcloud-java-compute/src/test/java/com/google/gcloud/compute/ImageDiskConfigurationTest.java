@@ -93,7 +93,7 @@ public class ImageDiskConfigurationTest {
   @Test
   public void testSetProjectId() {
     ImageDiskConfiguration diskConfiguration = DISK_CONFIGURATION.toBuilder()
-        .diskType(DiskTypeId.of(DISK_TYPE.zone(), DISK_TYPE.diskType()))
+        .diskType(DiskTypeId.of(DISK_TYPE.zone(), DISK_TYPE.type()))
         .sourceImage(ImageId.of(IMAGE.image()))
         .build();
     compareImageDiskConfiguration(DISK_CONFIGURATION, diskConfiguration.setProjectId("project"));

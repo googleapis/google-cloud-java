@@ -260,7 +260,7 @@ public class MachineType implements Serializable {
     if (creationTimestamp != null) {
       machineTypePb.setCreationTimestamp(TIMESTAMP_FORMATTER.print(creationTimestamp));
     }
-    machineTypePb.setName(machineTypeId.machineType());
+    machineTypePb.setName(machineTypeId.type());
     machineTypePb.setDescription(description);
     machineTypePb.setSelfLink(machineTypeId.selfLink());
     machineTypePb.setGuestCpus(cpus);
