@@ -42,12 +42,12 @@ public class DiskTypeIdTest {
     DiskTypeId diskTypeId = DiskTypeId.of(PROJECT, ZONE, DISK_TYPE);
     assertEquals(PROJECT, diskTypeId.project());
     assertEquals(ZONE, diskTypeId.zone());
-    assertEquals(DISK_TYPE, diskTypeId.diskType());
+    assertEquals(DISK_TYPE, diskTypeId.type());
     assertEquals(URL, diskTypeId.selfLink());
     diskTypeId = DiskTypeId.of(ZONE, DISK_TYPE);
     assertNull(diskTypeId.project());
     assertEquals(ZONE, diskTypeId.zone());
-    assertEquals(DISK_TYPE, diskTypeId.diskType());
+    assertEquals(DISK_TYPE, diskTypeId.type());
   }
 
   @Test
@@ -77,7 +77,7 @@ public class DiskTypeIdTest {
     assertEquals(expected, value);
     assertEquals(expected.project(), expected.project());
     assertEquals(expected.zone(), expected.zone());
-    assertEquals(expected.diskType(), expected.diskType());
+    assertEquals(expected.type(), expected.type());
     assertEquals(expected.selfLink(), expected.selfLink());
     assertEquals(expected.hashCode(), expected.hashCode());
   }

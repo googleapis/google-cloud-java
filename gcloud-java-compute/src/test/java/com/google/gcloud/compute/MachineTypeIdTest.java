@@ -42,12 +42,12 @@ public class MachineTypeIdTest {
     MachineTypeId machineTypeId = MachineTypeId.of(PROJECT, ZONE, TYPE);
     assertEquals(PROJECT, machineTypeId.project());
     assertEquals(ZONE, machineTypeId.zone());
-    assertEquals(TYPE, machineTypeId.machineType());
+    assertEquals(TYPE, machineTypeId.type());
     assertEquals(URL, machineTypeId.selfLink());
     machineTypeId = MachineTypeId.of(ZONE, TYPE);
     assertNull(machineTypeId.project());
     assertEquals(ZONE, machineTypeId.zone());
-    assertEquals(TYPE, machineTypeId.machineType());
+    assertEquals(TYPE, machineTypeId.type());
   }
 
   @Test
@@ -76,7 +76,7 @@ public class MachineTypeIdTest {
     assertEquals(expected, value);
     assertEquals(expected.project(), expected.project());
     assertEquals(expected.zone(), expected.zone());
-    assertEquals(expected.machineType(), expected.machineType());
+    assertEquals(expected.type(), expected.type());
     assertEquals(expected.selfLink(), expected.selfLink());
     assertEquals(expected.hashCode(), expected.hashCode());
   }
