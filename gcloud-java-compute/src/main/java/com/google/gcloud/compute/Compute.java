@@ -2339,7 +2339,7 @@ public interface Compute extends Service<ComputeOptions> {
    *
    * @throws ComputeException upon failure
    */
-  Page<Subnetwork> listSubnetworks(String project, SubnetworkListOption... options);
+  Page<Subnetwork> listSubnetworks(String region, SubnetworkListOption... options);
 
   /**
    * Lists subnetworks for all regions.
