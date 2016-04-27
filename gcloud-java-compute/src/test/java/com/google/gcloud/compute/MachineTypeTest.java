@@ -26,7 +26,7 @@ import java.util.List;
 
 public class MachineTypeTest {
 
-  private static final String ID = "42";
+  private static final String GENERATED_ID = "42";
   private static final Long CREATION_TIMESTAMP = 1453293540000L;
   private static final String DESCRIPTION = "description";
   private static final MachineTypeId MACHINE_TYPE_ID = MachineTypeId.of("project", "zone", "type");
@@ -38,7 +38,7 @@ public class MachineTypeTest {
   private static final DeprecationStatus<MachineTypeId> DEPRECATION_STATUS =
       DeprecationStatus.of(DeprecationStatus.Status.DELETED, MACHINE_TYPE_ID);
   private static final MachineType MACHINE_TYPE = MachineType.builder()
-      .id(ID)
+      .generatedId(GENERATED_ID)
       .machineTypeId(MACHINE_TYPE_ID)
       .creationTimestamp(CREATION_TIMESTAMP)
       .description(DESCRIPTION)
@@ -52,7 +52,7 @@ public class MachineTypeTest {
 
   @Test
   public void testBuilder() {
-    assertEquals(ID, MACHINE_TYPE.id());
+    assertEquals(GENERATED_ID, MACHINE_TYPE.generatedId());
     assertEquals(MACHINE_TYPE_ID, MACHINE_TYPE.machineTypeId());
     assertEquals(CREATION_TIMESTAMP, MACHINE_TYPE.creationTimestamp());
     assertEquals(DESCRIPTION, MACHINE_TYPE.description());
@@ -74,7 +74,7 @@ public class MachineTypeTest {
   private void compareMachineTypes(MachineType expected, MachineType value) {
     assertEquals(expected, value);
     assertEquals(expected.machineTypeId(), value.machineTypeId());
-    assertEquals(expected.id(), value.id());
+    assertEquals(expected.generatedId(), value.generatedId());
     assertEquals(expected.creationTimestamp(), value.creationTimestamp());
     assertEquals(expected.description(), value.description());
     assertEquals(expected.cpus(), value.cpus());

@@ -29,7 +29,7 @@ import java.util.List;
 
 public class SnapshotInfoTest {
 
-  private static final String ID = "42";
+  private static final String GENERATED_ID = "42";
   private static final DiskId SOURCE_DISK = DiskId.of("project", "zone", "disk");
   private static final Long CREATION_TIMESTAMP = 1453293540000L;
   private static final String DESCRIPTION = "description";
@@ -42,7 +42,7 @@ public class SnapshotInfoTest {
   private static final Long STORAGE_BYTES = 24L;
   private static final StorageBytesStatus STORAGE_BYTES_STATUS = StorageBytesStatus.UP_TO_DATE;
   private static final SnapshotInfo SNAPSHOT_INFO = SnapshotInfo.builder(SNAPSHOT_ID, SOURCE_DISK)
-      .id(ID)
+      .generatedId(GENERATED_ID)
       .creationTimestamp(CREATION_TIMESTAMP)
       .description(DESCRIPTION)
       .status(STATUS)
@@ -70,7 +70,7 @@ public class SnapshotInfoTest {
 
   @Test
   public void testBuilder() {
-    assertEquals(ID, SNAPSHOT_INFO.id());
+    assertEquals(GENERATED_ID, SNAPSHOT_INFO.generatedId());
     assertEquals(SNAPSHOT_ID, SNAPSHOT_INFO.snapshotId());
     assertEquals(CREATION_TIMESTAMP, SNAPSHOT_INFO.creationTimestamp());
     assertEquals(DESCRIPTION, SNAPSHOT_INFO.description());
@@ -86,7 +86,7 @@ public class SnapshotInfoTest {
   @Test
   public void testOf() {
     SnapshotInfo snapshotInfo = SnapshotInfo.of(SNAPSHOT_ID, SOURCE_DISK);
-    assertNull(snapshotInfo.id());
+    assertNull(snapshotInfo.generatedId());
     assertEquals(SNAPSHOT_ID, snapshotInfo.snapshotId());
     assertNull(snapshotInfo.creationTimestamp());
     assertNull(snapshotInfo.description());
@@ -119,7 +119,7 @@ public class SnapshotInfoTest {
 
   public void compareSnapshotInfo(SnapshotInfo expected, SnapshotInfo value) {
     assertEquals(expected, value);
-    assertEquals(expected.id(), value.id());
+    assertEquals(expected.generatedId(), value.generatedId());
     assertEquals(expected.snapshotId(), value.snapshotId());
     assertEquals(expected.creationTimestamp(), value.creationTimestamp());
     assertEquals(expected.description(), value.description());

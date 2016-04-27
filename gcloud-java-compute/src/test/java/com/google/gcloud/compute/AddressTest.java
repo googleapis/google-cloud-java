@@ -39,7 +39,7 @@ public class AddressTest {
   private static final String ADDRESS = "192.168.1.1";
   private static final Long CREATION_TIMESTAMP = 1452602400000L;
   private static final String DESCRIPTION = "description";
-  private static final String ID = "42";
+  private static final String GENERATED_ID = "42";
   private static final GlobalAddressId GLOBAL_ADDRESS_ID = GlobalAddressId.of("project", "address");
   private static final RegionAddressId REGION_ADDRESS_ID =
       RegionAddressId.of("project", "region", "address");
@@ -72,7 +72,7 @@ public class AddressTest {
         .address(ADDRESS)
         .creationTimestamp(CREATION_TIMESTAMP)
         .description(DESCRIPTION)
-        .id(ID)
+        .generatedId(GENERATED_ID)
         .status(STATUS)
         .usage(INSTANCE_USAGE)
         .build();
@@ -80,7 +80,7 @@ public class AddressTest {
         .address(ADDRESS)
         .creationTimestamp(CREATION_TIMESTAMP)
         .description(DESCRIPTION)
-        .id(ID)
+        .generatedId(GENERATED_ID)
         .status(STATUS)
         .usage(GLOBAL_FORWARDING_USAGE)
         .build();
@@ -88,7 +88,7 @@ public class AddressTest {
         .address(ADDRESS)
         .creationTimestamp(CREATION_TIMESTAMP)
         .description(DESCRIPTION)
-        .id(ID)
+        .generatedId(GENERATED_ID)
         .status(STATUS)
         .usage(REGION_FORWARDING_USAGE)
         .build();
@@ -100,7 +100,7 @@ public class AddressTest {
         .address(ADDRESS)
         .creationTimestamp(CREATION_TIMESTAMP)
         .description(DESCRIPTION)
-        .id(ID)
+        .generatedId(GENERATED_ID)
         .status(STATUS)
         .usage(REGION_FORWARDING_USAGE)
         .build();
@@ -117,7 +117,7 @@ public class AddressTest {
     assertEquals(ADDRESS, instanceAddress.address());
     assertEquals(CREATION_TIMESTAMP, instanceAddress.creationTimestamp());
     assertEquals(DESCRIPTION, instanceAddress.description());
-    assertEquals(ID, instanceAddress.id());
+    assertEquals(GENERATED_ID, instanceAddress.generatedId());
     assertEquals(REGION_ADDRESS_ID, instanceAddress.addressId());
     assertEquals(STATUS, instanceAddress.status());
     assertEquals(INSTANCE_USAGE, instanceAddress.usage());
@@ -125,7 +125,7 @@ public class AddressTest {
     assertEquals(ADDRESS, regionForwardingAddress.address());
     assertEquals(CREATION_TIMESTAMP, regionForwardingAddress.creationTimestamp());
     assertEquals(DESCRIPTION, regionForwardingAddress.description());
-    assertEquals(ID, regionForwardingAddress.id());
+    assertEquals(GENERATED_ID, regionForwardingAddress.generatedId());
     assertEquals(REGION_ADDRESS_ID, regionForwardingAddress.addressId());
     assertEquals(STATUS, regionForwardingAddress.status());
     assertEquals(REGION_FORWARDING_USAGE, regionForwardingAddress.usage());
@@ -133,7 +133,7 @@ public class AddressTest {
     assertEquals(ADDRESS, globalForwardingAddress.address());
     assertEquals(CREATION_TIMESTAMP, globalForwardingAddress.creationTimestamp());
     assertEquals(DESCRIPTION, globalForwardingAddress.description());
-    assertEquals(ID, globalForwardingAddress.id());
+    assertEquals(GENERATED_ID, globalForwardingAddress.generatedId());
     assertEquals(GLOBAL_ADDRESS_ID, globalForwardingAddress.addressId());
     assertEquals(STATUS, globalForwardingAddress.status());
     assertEquals(GLOBAL_FORWARDING_USAGE, globalForwardingAddress.usage());
@@ -144,7 +144,7 @@ public class AddressTest {
     assertNull(address.address());
     assertNull(address.creationTimestamp());
     assertNull(address.description());
-    assertNull(address.id());
+    assertNull(address.generatedId());
     assertNull(address.status());
     assertNull(address.usage());
     address = new Address.Builder(serviceMockReturnsOptions, REGION_ADDRESS_ID).build();
@@ -153,7 +153,7 @@ public class AddressTest {
     assertNull(address.address());
     assertNull(address.creationTimestamp());
     assertNull(address.description());
-    assertNull(address.id());
+    assertNull(address.generatedId());
     assertNull(address.status());
     assertNull(address.usage());
     address = new Address.Builder(serviceMockReturnsOptions, REGION_ADDRESS_ID)
@@ -164,7 +164,7 @@ public class AddressTest {
     assertNull(address.address());
     assertNull(address.creationTimestamp());
     assertNull(address.description());
-    assertNull(address.id());
+    assertNull(address.generatedId());
     assertNull(address.status());
     assertNull(address.usage());
   }
@@ -285,7 +285,7 @@ public class AddressTest {
     assertEquals(expected.address(), value.address());
     assertEquals(expected.creationTimestamp(), value.creationTimestamp());
     assertEquals(expected.description(), value.description());
-    assertEquals(expected.id(), value.id());
+    assertEquals(expected.generatedId(), value.generatedId());
     assertEquals(expected.addressId(), value.addressId());
     assertEquals(expected.usage(), value.usage());
     assertEquals(expected.status(), value.status());

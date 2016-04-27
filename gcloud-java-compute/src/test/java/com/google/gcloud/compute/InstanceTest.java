@@ -42,7 +42,7 @@ import java.util.Map;
 
 public class InstanceTest {
 
-  private static final String ID = "42";
+  private static final String GENERATED_ID = "42";
   private static final Long CREATION_TIMESTAMP = 1453293540000L;
   private static final String DESCRIPTION = "description";
   private static final InstanceId INSTANCE_ID = InstanceId.of("project", "zone", "instance");
@@ -85,7 +85,7 @@ public class InstanceTest {
     replay(serviceMockReturnsOptions);
     expectedInstance = new Instance.Builder(serviceMockReturnsOptions, INSTANCE_ID, MACHINE_TYPE,
         ATTACHED_DISK, NETWORK_INTERFACE)
-            .id(ID)
+            .generatedId(GENERATED_ID)
             .creationTimestamp(CREATION_TIMESTAMP)
             .description(DESCRIPTION)
             .status(STATUS)
@@ -103,7 +103,7 @@ public class InstanceTest {
   private void initializeInstance() {
     instance = new Instance.Builder(compute, INSTANCE_ID, MACHINE_TYPE,
         ATTACHED_DISK, NETWORK_INTERFACE)
-            .id(ID)
+            .generatedId(GENERATED_ID)
             .creationTimestamp(CREATION_TIMESTAMP)
             .description(DESCRIPTION)
             .status(STATUS)
@@ -140,7 +140,7 @@ public class InstanceTest {
   @Test
   public void testBuilder() {
     initializeExpectedInstance(2);
-    assertEquals(ID, expectedInstance.id());
+    assertEquals(GENERATED_ID, expectedInstance.generatedId());
     assertEquals(INSTANCE_ID, expectedInstance.instanceId());
     assertEquals(CREATION_TIMESTAMP, expectedInstance.creationTimestamp());
     assertEquals(DESCRIPTION, expectedInstance.description());
@@ -160,7 +160,7 @@ public class InstanceTest {
         InstanceInfo.of(INSTANCE_ID, MACHINE_TYPE, ATTACHED_DISK, NETWORK_INTERFACE);
     Instance instance =
         new Instance(serviceMockReturnsOptions, new InstanceInfo.BuilderImpl(instanceInfo));
-    assertNull(instance.id());
+    assertNull(instance.generatedId());
     assertEquals(INSTANCE_ID, instance.instanceId());
     assertNull(instance.creationTimestamp());
     assertNull(instance.description());
@@ -875,7 +875,7 @@ public class InstanceTest {
   public void compareInstance(Instance expected, Instance value) {
     assertEquals(expected, value);
     assertEquals(expected.compute().options(), value.compute().options());
-    assertEquals(expected.id(), value.id());
+    assertEquals(expected.generatedId(), value.generatedId());
     assertEquals(expected.instanceId(), value.instanceId());
     assertEquals(expected.creationTimestamp(), value.creationTimestamp());
     assertEquals(expected.description(), value.description());

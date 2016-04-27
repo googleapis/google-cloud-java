@@ -58,7 +58,7 @@ public class DiskInfo implements Serializable {
   private static final long serialVersionUID = -7173418340679279619L;
   private static final DateTimeFormatter TIMESTAMP_FORMATTER = ISODateTimeFormat.dateTime();
 
-  private final String id;
+  private final String generatedId;
   private final DiskId diskId;
   private final DiskConfiguration configuration;
   private final Long creationTimestamp;
@@ -99,7 +99,7 @@ public class DiskInfo implements Serializable {
    */
   public abstract static class Builder {
 
-    abstract Builder id(String id);
+    abstract Builder generatedId(String generatedId);
 
     /**
      * Sets the disk configuration.
@@ -136,7 +136,7 @@ public class DiskInfo implements Serializable {
 
   static final class BuilderImpl extends Builder {
 
-    private String id;
+    private String generatedId;
     private DiskId diskId;
     private DiskConfiguration configuration;
     private Long creationTimestamp;
@@ -153,7 +153,7 @@ public class DiskInfo implements Serializable {
     }
 
     BuilderImpl(DiskInfo diskInfo) {
-      this.id = diskInfo.id;
+      this.generatedId = diskInfo.generatedId;
       this.configuration = diskInfo.configuration;
       this.creationTimestamp = diskInfo.creationTimestamp;
       this.creationStatus = diskInfo.creationStatus;
@@ -167,7 +167,7 @@ public class DiskInfo implements Serializable {
 
     BuilderImpl(Disk diskPb) {
       if (diskPb.getId() != null) {
-        this.id = diskPb.getId().toString();
+        this.generatedId = diskPb.getId().toString();
       }
       this.configuration = DiskConfiguration.fromPb(diskPb);
       if (diskPb.getCreationTimestamp() != null) {
@@ -193,8 +193,8 @@ public class DiskInfo implements Serializable {
     }
 
     @Override
-    BuilderImpl id(String id) {
-      this.id = id;
+    BuilderImpl generatedId(String generatedId) {
+      this.generatedId = generatedId;
       return this;
     }
 
@@ -260,7 +260,7 @@ public class DiskInfo implements Serializable {
   }
 
   DiskInfo(BuilderImpl builder) {
-    this.id = builder.id;
+    this.generatedId = builder.generatedId;
     this.configuration = builder.configuration;
     this.creationTimestamp = builder.creationTimestamp;
     this.creationStatus = builder.creationStatus;
@@ -280,10 +280,10 @@ public class DiskInfo implements Serializable {
   }
 
   /**
-   * Returns the unique identifier for the disk; defined by the service.
+   * Returns the service-generated unique identifier for the disk.
    */
-  public String id() {
-    return id;
+  public String generatedId() {
+    return generatedId;
   }
 
   /**
@@ -353,7 +353,7 @@ public class DiskInfo implements Serializable {
   @Override
   public String toString() {
     return MoreObjects.toStringHelper(this)
-        .add("id", id)
+        .add("generatedId", generatedId)
         .add("diskId", diskId)
         .add("configuration", configuration)
         .add("creationTimestamp", creationTimestamp)
@@ -408,8 +408,8 @@ public class DiskInfo implements Serializable {
 
   Disk toPb() {
     Disk diskPb = configuration.toPb();
-    if (id != null) {
-      diskPb.setId(new BigInteger(id));
+    if (generatedId != null) {
+      diskPb.setId(new BigInteger(generatedId));
     }
     if (creationTimestamp != null) {
       diskPb.setCreationTimestamp(TIMESTAMP_FORMATTER.print(creationTimestamp));

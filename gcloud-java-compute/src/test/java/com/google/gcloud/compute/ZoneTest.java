@@ -24,7 +24,7 @@ public class ZoneTest {
 
   private static final ZoneId ZONE_ID = ZoneId.of("project", "zone");
   private static final RegionId REGION_ID = RegionId.of("project", "region");
-  private static final String ID = "42";
+  private static final String GENERATED_ID = "42";
   private static final Long CREATION_TIMESTAMP = 1453293540000L;
   private static final String DESCRIPTION = "description";
   private static final Zone.Status STATUS = Zone.Status.DOWN;
@@ -32,7 +32,7 @@ public class ZoneTest {
       DeprecationStatus.of(DeprecationStatus.Status.DELETED, ZONE_ID);
   private static final Zone ZONE = Zone.builder()
       .zoneId(ZONE_ID)
-      .id(ID)
+      .generatedId(GENERATED_ID)
       .creationTimestamp(CREATION_TIMESTAMP)
       .description(DESCRIPTION)
       .status(STATUS)
@@ -43,7 +43,7 @@ public class ZoneTest {
   @Test
   public void testBuilder() {
     assertEquals(REGION_ID, ZONE.region());
-    assertEquals(ID, ZONE.id());
+    assertEquals(GENERATED_ID, ZONE.generatedId());
     assertEquals(CREATION_TIMESTAMP, ZONE.creationTimestamp());
     assertEquals(DESCRIPTION, ZONE.description());
     assertEquals(STATUS, ZONE.status());
@@ -66,7 +66,7 @@ public class ZoneTest {
   private void compareZones(Zone expected, Zone value) {
     assertEquals(expected, value);
     assertEquals(expected.zoneId(), value.zoneId());
-    assertEquals(expected.id(), value.id());
+    assertEquals(expected.generatedId(), value.generatedId());
     assertEquals(expected.creationTimestamp(), value.creationTimestamp());
     assertEquals(expected.description(), value.description());
     assertEquals(expected.status(), value.status());

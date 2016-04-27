@@ -68,7 +68,7 @@ public class AddressInfo implements Serializable {
   private final String address;
   private final Long creationTimestamp;
   private final String description;
-  private final String id;
+  private final String generatedId;
   private final AddressId addressId;
   private final Status status;
   private final Usage usage;
@@ -296,7 +296,7 @@ public class AddressInfo implements Serializable {
      */
     public abstract Builder description(String description);
 
-    abstract Builder id(String id);
+    abstract Builder generatedId(String generatedId);
 
     public abstract Builder addressId(AddressId addressId);
 
@@ -315,7 +315,7 @@ public class AddressInfo implements Serializable {
     private String address;
     private Long creationTimestamp;
     private String description;
-    private String id;
+    private String generatedId;
     private AddressId addressId;
     private Status status;
     private Usage usage;
@@ -326,7 +326,7 @@ public class AddressInfo implements Serializable {
       this.address = addressInfo.address;
       this.creationTimestamp = addressInfo.creationTimestamp;
       this.description = addressInfo.description;
-      this.id = addressInfo.id;
+      this.generatedId = addressInfo.generatedId;
       this.addressId = addressInfo.addressId;
       this.status = addressInfo.status;
       this.usage = addressInfo.usage;
@@ -344,7 +344,7 @@ public class AddressInfo implements Serializable {
       }
       description = addressPb.getDescription();
       if (addressPb.getId() != null) {
-        id = addressPb.getId().toString();
+        generatedId = addressPb.getId().toString();
       }
       if (addressPb.getStatus() != null) {
         status = Status.valueOf(addressPb.getStatus());
@@ -373,8 +373,8 @@ public class AddressInfo implements Serializable {
     }
 
     @Override
-    BuilderImpl id(String id) {
-      this.id = id;
+    BuilderImpl generatedId(String generatedId) {
+      this.generatedId = generatedId;
       return this;
     }
 
@@ -406,7 +406,7 @@ public class AddressInfo implements Serializable {
     address = builder.address;
     creationTimestamp = builder.creationTimestamp;
     description = builder.description;
-    id = builder.id;
+    generatedId = builder.generatedId;
     addressId = checkNotNull(builder.addressId);
     status = builder.status;
     usage = builder.usage;
@@ -434,10 +434,10 @@ public class AddressInfo implements Serializable {
   }
 
   /**
-   * Returns the unique identifier for the address; defined by the service.
+   * Returns the service-generated unique identifier for the address.
    */
-  public String id() {
-    return id;
+  public String generatedId() {
+    return generatedId;
   }
 
   /**
@@ -481,7 +481,7 @@ public class AddressInfo implements Serializable {
         .add("address", address)
         .add("creationTimestamp", creationTimestamp)
         .add("description", description)
-        .add("id", id)
+        .add("generatedId", generatedId)
         .add("addressId", addressId)
         .add("status", status)
         .add("usage", usage)
@@ -490,7 +490,8 @@ public class AddressInfo implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(address, creationTimestamp, description, id, addressId, status, usage);
+    return Objects.hash(address, creationTimestamp, description, generatedId, addressId, status,
+        usage);
   }
 
   @Override
@@ -514,8 +515,8 @@ public class AddressInfo implements Serializable {
       addressPb.setCreationTimestamp(TIMESTAMP_FORMATTER.print(creationTimestamp));
     }
     addressPb.setDescription(description);
-    if (id != null) {
-      addressPb.setId(new BigInteger(id));
+    if (generatedId != null) {
+      addressPb.setId(new BigInteger(generatedId));
     }
     addressPb.setName(addressId.address());
     if (addressId.type() == AddressId.Type.REGION) {

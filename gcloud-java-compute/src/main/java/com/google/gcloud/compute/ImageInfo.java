@@ -63,7 +63,7 @@ public class ImageInfo implements Serializable {
   private static final long serialVersionUID = -1061916352807358977L;
   private static final DateTimeFormatter TIMESTAMP_FORMATTER = ISODateTimeFormat.dateTime();
 
-  private final String id;
+  private final String generatedId;
   private final ImageId imageId;
   private final Long creationTimestamp;
   private final String description;
@@ -99,7 +99,7 @@ public class ImageInfo implements Serializable {
    */
   public abstract static class Builder {
 
-    abstract Builder id(String id);
+    abstract Builder generatedId(String generatedId);
 
     abstract Builder creationTimestamp(Long creationTimestamp);
 
@@ -136,7 +136,7 @@ public class ImageInfo implements Serializable {
 
   static final class BuilderImpl extends Builder {
 
-    private String id;
+    private String generatedId;
     private Long creationTimestamp;
     private ImageId imageId;
     private String description;
@@ -149,7 +149,7 @@ public class ImageInfo implements Serializable {
     BuilderImpl() {}
 
     BuilderImpl(ImageInfo imageInfo) {
-      this.id = imageInfo.id;
+      this.generatedId = imageInfo.generatedId;
       this.creationTimestamp = imageInfo.creationTimestamp;
       this.imageId = imageInfo.imageId;
       this.description = imageInfo.description;
@@ -162,7 +162,7 @@ public class ImageInfo implements Serializable {
 
     BuilderImpl(Image imagePb) {
       if (imagePb.getId() != null) {
-        this.id = imagePb.getId().toString();
+        this.generatedId = imagePb.getId().toString();
       }
       if (imagePb.getCreationTimestamp() != null) {
         this.creationTimestamp = TIMESTAMP_FORMATTER.parseMillis(imagePb.getCreationTimestamp());
@@ -184,8 +184,8 @@ public class ImageInfo implements Serializable {
     }
 
     @Override
-    BuilderImpl id(String id) {
-      this.id = id;
+    BuilderImpl generatedId(String generatedId) {
+      this.generatedId = generatedId;
       return this;
     }
 
@@ -244,7 +244,7 @@ public class ImageInfo implements Serializable {
   }
 
   ImageInfo(BuilderImpl builder) {
-    this.id = builder.id;
+    this.generatedId = builder.generatedId;
     this.creationTimestamp = builder.creationTimestamp;
     this.imageId = checkNotNull(builder.imageId);
     this.description = builder.description;
@@ -256,10 +256,10 @@ public class ImageInfo implements Serializable {
   }
 
   /**
-   * Returns the unique identifier for the image; defined by the service.
+   * Returns the service-generated unique identifier for the image.
    */
-  public String id() {
-    return id;
+  public String generatedId() {
+    return generatedId;
   }
 
   /**
@@ -335,7 +335,7 @@ public class ImageInfo implements Serializable {
   @Override
   public String toString() {
     return MoreObjects.toStringHelper(this)
-        .add("id", id)
+        .add("generatedId", generatedId)
         .add("creationTimestamp", creationTimestamp)
         .add("imageId", imageId)
         .add("description", description)
@@ -348,7 +348,7 @@ public class ImageInfo implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, creationTimestamp, imageId, description, configuration, status,
+    return Objects.hash(generatedId, creationTimestamp, imageId, description, configuration, status,
         diskSizeGb, licenses);
   }
 
@@ -368,8 +368,8 @@ public class ImageInfo implements Serializable {
 
   Image toPb() {
     Image imagePb = configuration.toPb();
-    if (id != null) {
-      imagePb.setId(new BigInteger(id));
+    if (generatedId != null) {
+      imagePb.setId(new BigInteger(generatedId));
     }
     if (creationTimestamp != null) {
       imagePb.setCreationTimestamp(TIMESTAMP_FORMATTER.print(creationTimestamp));

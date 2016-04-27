@@ -31,7 +31,7 @@ import org.junit.Test;
 
 public class SubnetworkTest {
 
-  private static final String ID = "42";
+  private static final String GENERATED_ID = "42";
   private static final Long CREATION_TIMESTAMP = 1453293540000L;
   private static final String DESCRIPTION = "description";
   private static final SubnetworkId SUBNETWORK_ID = SubnetworkId.of("project", "region", "network");
@@ -50,7 +50,7 @@ public class SubnetworkTest {
     replay(serviceMockReturnsOptions);
     expectedSubnetwork =
         new Subnetwork.Builder(serviceMockReturnsOptions, SUBNETWORK_ID, NETWORK_ID, IP_RANGE)
-            .id(ID)
+            .generatedId(GENERATED_ID)
             .creationTimestamp(CREATION_TIMESTAMP)
             .description(DESCRIPTION)
             .gatewayAddress(GATEWAY_ADDRESS)
@@ -61,7 +61,7 @@ public class SubnetworkTest {
   private void initializeSubnetwork() {
     subnetwork =
         new Subnetwork.Builder(compute, SUBNETWORK_ID, NETWORK_ID, IP_RANGE)
-            .id(ID)
+            .generatedId(GENERATED_ID)
             .creationTimestamp(CREATION_TIMESTAMP)
             .description(DESCRIPTION)
             .gatewayAddress(GATEWAY_ADDRESS)
@@ -90,7 +90,7 @@ public class SubnetworkTest {
   @Test
   public void testBuilder() {
     initializeExpectedSubnetwork(1);
-    assertEquals(ID, expectedSubnetwork.id());
+    assertEquals(GENERATED_ID, expectedSubnetwork.generatedId());
     assertEquals(SUBNETWORK_ID, expectedSubnetwork.subnetworkId());
     assertEquals(CREATION_TIMESTAMP, expectedSubnetwork.creationTimestamp());
     assertEquals(DESCRIPTION, expectedSubnetwork.description());
@@ -198,7 +198,7 @@ public class SubnetworkTest {
   public void compareSubnetwork(Subnetwork expected, Subnetwork value) {
     assertEquals(expected, value);
     assertEquals(expected.compute().options(), value.compute().options());
-    assertEquals(expected.id(), value.id());
+    assertEquals(expected.generatedId(), value.generatedId());
     assertEquals(expected.subnetworkId(), value.subnetworkId());
     assertEquals(expected.creationTimestamp(), value.creationTimestamp());
     assertEquals(expected.description(), value.description());

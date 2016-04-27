@@ -22,7 +22,7 @@ import org.junit.Test;
 
 public class DiskTypeTest {
 
-  private static final String ID = "42";
+  private static final String GENERATED_ID = "42";
   private static final Long CREATION_TIMESTAMP = 1453293540000L;
   private static final String DESCRIPTION = "description";
   private static final String VALID_DISK_SIZE = "10GB-10TB";
@@ -31,7 +31,7 @@ public class DiskTypeTest {
   private static final DeprecationStatus<DiskTypeId> DEPRECATION_STATUS =
       DeprecationStatus.of(DeprecationStatus.Status.DELETED, DISK_TYPE_ID);
   private static final DiskType DISK_TYPE = DiskType.builder()
-      .id(ID)
+      .generatedId(GENERATED_ID)
       .diskTypeId(DISK_TYPE_ID)
       .creationTimestamp(CREATION_TIMESTAMP)
       .description(DESCRIPTION)
@@ -42,7 +42,7 @@ public class DiskTypeTest {
 
   @Test
   public void testBuilder() {
-    assertEquals(ID, DISK_TYPE.id());
+    assertEquals(GENERATED_ID, DISK_TYPE.generatedId());
     assertEquals(DISK_TYPE_ID, DISK_TYPE.diskTypeId());
     assertEquals(CREATION_TIMESTAMP, DISK_TYPE.creationTimestamp());
     assertEquals(DESCRIPTION, DISK_TYPE.description());
@@ -60,7 +60,7 @@ public class DiskTypeTest {
 
   private void compareDiskTypes(DiskType expected, DiskType value) {
     assertEquals(expected, value);
-    assertEquals(expected.id(), value.id());
+    assertEquals(expected.generatedId(), value.generatedId());
     assertEquals(expected.diskTypeId(), value.diskTypeId());
     assertEquals(expected.creationTimestamp(), value.creationTimestamp());
     assertEquals(expected.description(), value.description());

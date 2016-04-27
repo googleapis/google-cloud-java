@@ -28,7 +28,7 @@ import java.util.List;
 
 public class InstanceInfoTest {
 
-  private static final String ID = "42";
+  private static final String GENERATED_ID = "42";
   private static final Long CREATION_TIMESTAMP = 1453293540000L;
   private static final String DESCRIPTION = "description";
   private static final InstanceId INSTANCE_ID = InstanceId.of("project", "zone", "instance");
@@ -55,7 +55,7 @@ public class InstanceInfoTest {
   private static final SchedulingOptions SCHEDULING_OPTIONS = SchedulingOptions.preemptible();
   private static final String CPU_PLATFORM = "cpuPlatform";
   private static final InstanceInfo INSTANCE_INFO = InstanceInfo.builder(INSTANCE_ID, MACHINE_TYPE)
-      .id(ID)
+      .generatedId(GENERATED_ID)
       .creationTimestamp(CREATION_TIMESTAMP)
       .description(DESCRIPTION)
       .status(STATUS)
@@ -88,7 +88,7 @@ public class InstanceInfoTest {
 
   @Test
   public void testBuilder() {
-    assertEquals(ID, INSTANCE_INFO.id());
+    assertEquals(GENERATED_ID, INSTANCE_INFO.generatedId());
     assertEquals(INSTANCE_ID, INSTANCE_INFO.instanceId());
     assertEquals(CREATION_TIMESTAMP, INSTANCE_INFO.creationTimestamp());
     assertEquals(DESCRIPTION, INSTANCE_INFO.description());
@@ -104,7 +104,7 @@ public class InstanceInfoTest {
     assertEquals(SCHEDULING_OPTIONS, INSTANCE_INFO.schedulingOptions());
     assertEquals(CPU_PLATFORM, INSTANCE_INFO.cpuPlatform());
     InstanceInfo instanceInfo = InstanceInfo.builder(INSTANCE_ID, MACHINE_TYPE)
-        .id(ID)
+        .generatedId(GENERATED_ID)
         .creationTimestamp(CREATION_TIMESTAMP)
         .description(DESCRIPTION)
         .status(STATUS)
@@ -125,7 +125,7 @@ public class InstanceInfoTest {
   public void testOf() {
     InstanceInfo instance =
         InstanceInfo.of(INSTANCE_ID, MACHINE_TYPE, ATTACHED_DISK, NETWORK_INTERFACE);
-    assertNull(instance.id());
+    assertNull(instance.generatedId());
     assertEquals(INSTANCE_ID, instance.instanceId());
     assertNull(instance.creationTimestamp());
     assertNull(instance.description());
@@ -164,7 +164,7 @@ public class InstanceInfoTest {
 
   public void compareInstanceInfo(InstanceInfo expected, InstanceInfo value) {
     assertEquals(expected, value);
-    assertEquals(expected.id(), value.id());
+    assertEquals(expected.generatedId(), value.generatedId());
     assertEquals(expected.instanceId(), value.instanceId());
     assertEquals(expected.creationTimestamp(), value.creationTimestamp());
     assertEquals(expected.description(), value.description());

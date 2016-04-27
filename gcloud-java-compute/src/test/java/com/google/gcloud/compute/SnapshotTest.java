@@ -35,7 +35,7 @@ import java.util.List;
 
 public class SnapshotTest {
 
-  private static final String ID = "42";
+  private static final String GENERATED_ID = "42";
   private static final DiskId SOURCE_DISK = DiskId.of("project", "zone", "disk");
   private static final Long CREATION_TIMESTAMP = 1453293540000L;
   private static final String DESCRIPTION = "description";
@@ -59,7 +59,7 @@ public class SnapshotTest {
     expect(serviceMockReturnsOptions.options()).andReturn(mockOptions).times(optionsCalls);
     replay(serviceMockReturnsOptions);
     expectedSnapshot = new Snapshot.Builder(serviceMockReturnsOptions, SNAPSHOT_ID, SOURCE_DISK)
-        .id(ID)
+        .generatedId(GENERATED_ID)
         .creationTimestamp(CREATION_TIMESTAMP)
         .description(DESCRIPTION)
         .status(STATUS)
@@ -74,7 +74,7 @@ public class SnapshotTest {
 
   private void initializeSnapshot() {
     snapshot = new Snapshot.Builder(compute, SNAPSHOT_ID, SOURCE_DISK)
-        .id(ID)
+        .generatedId(GENERATED_ID)
         .creationTimestamp(CREATION_TIMESTAMP)
         .description(DESCRIPTION)
         .status(STATUS)
@@ -108,7 +108,7 @@ public class SnapshotTest {
   @Test
   public void testBuilder() {
     initializeExpectedSnapshot(2);
-    assertEquals(ID, expectedSnapshot.id());
+    assertEquals(GENERATED_ID, expectedSnapshot.generatedId());
     assertEquals(SNAPSHOT_ID, expectedSnapshot.snapshotId());
     assertEquals(CREATION_TIMESTAMP, expectedSnapshot.creationTimestamp());
     assertEquals(DESCRIPTION, expectedSnapshot.description());
@@ -126,7 +126,7 @@ public class SnapshotTest {
         .snapshotId(otherSnapshotId)
         .sourceDisk(otherSourceDisk)
         .build();
-    assertNull(snapshot.id());
+    assertNull(snapshot.generatedId());
     assertEquals(otherSnapshotId, snapshot.snapshotId());
     assertNull(snapshot.creationTimestamp());
     assertNull(snapshot.description());
@@ -237,7 +237,7 @@ public class SnapshotTest {
   public void compareSnapshot(Snapshot expected, Snapshot value) {
     assertEquals(expected, value);
     assertEquals(expected.compute().options(), value.compute().options());
-    assertEquals(expected.id(), value.id());
+    assertEquals(expected.generatedId(), value.generatedId());
     assertEquals(expected.snapshotId(), value.snapshotId());
     assertEquals(expected.creationTimestamp(), value.creationTimestamp());
     assertEquals(expected.description(), value.description());
