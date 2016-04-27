@@ -95,11 +95,15 @@ public class DefaultStorageRpc implements StorageRpc {
 
   private class DefaultRpcBatch implements RpcBatch {
 
-    private static final int MAX_BATCH_DELETES = 100;
+    // Batch size is limited as, due to some current service implementation details, the service
+    // performs better if the batches are split for better distribution. See
+    // https://github.com/GoogleCloudPlatform/gcloud-java/pull/952#issuecomment-213466772 for
+    // background.
+    private static final int MAX_BATCH_SIZE = 100;
 
     private final Storage storage;
     private final LinkedList<BatchRequest> batches;
-    private int deleteCount;
+    private int currentBatchSize;
 
     private DefaultRpcBatch(Storage storage) {
       this.storage = storage;
@@ -111,12 +115,12 @@ public class DefaultStorageRpc implements StorageRpc {
     public void addDelete(StorageObject storageObject, RpcBatch.Callback<Void> callback,
         Map<Option, ?> options) {
       try {
-        if (deleteCount == MAX_BATCH_DELETES) {
+        if (currentBatchSize == MAX_BATCH_SIZE) {
           batches.add(storage.batch());
-          deleteCount = 0;
+          currentBatchSize = 0;
         }
         deleteCall(storageObject, options).queue(batches.getLast(), toJsonCallback(callback));
-        deleteCount++;
+        currentBatchSize++;
       } catch (IOException ex) {
         throw translate(ex);
       }
@@ -126,7 +130,12 @@ public class DefaultStorageRpc implements StorageRpc {
     public void addPatch(StorageObject storageObject, RpcBatch.Callback<StorageObject> callback,
         Map<Option, ?> options) {
       try {
-        patchCall(storageObject, options).queue(batches.getFirst(), toJsonCallback(callback));
+        if (currentBatchSize == MAX_BATCH_SIZE) {
+          batches.add(storage.batch());
+          currentBatchSize = 0;
+        }
+        patchCall(storageObject, options).queue(batches.getLast(), toJsonCallback(callback));
+        currentBatchSize++;
       } catch (IOException ex) {
         throw translate(ex);
       }
@@ -136,7 +145,12 @@ public class DefaultStorageRpc implements StorageRpc {
     public void addGet(StorageObject storageObject, RpcBatch.Callback<StorageObject> callback,
         Map<Option, ?> options) {
       try {
-        getCall(storageObject, options).queue(batches.getFirst(), toJsonCallback(callback));
+        if (currentBatchSize == MAX_BATCH_SIZE) {
+          batches.add(storage.batch());
+          currentBatchSize = 0;
+        }
+        getCall(storageObject, options).queue(batches.getLast(), toJsonCallback(callback));
+        currentBatchSize++;
       } catch (IOException ex) {
         throw translate(ex);
       }

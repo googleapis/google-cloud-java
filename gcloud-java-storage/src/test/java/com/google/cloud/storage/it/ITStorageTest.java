@@ -81,7 +81,7 @@ public class ITStorageTest {
   private static final String CONTENT_TYPE = "text/plain";
   private static final byte[] BLOB_BYTE_CONTENT = {0xD, 0xE, 0xA, 0xD};
   private static final String BLOB_STRING_CONTENT = "Hello Google Cloud Storage!";
-  private static final int MAX_BATCH_DELETES = 100;
+  private static final int MAX_BATCH_SIZE = 100;
 
   @BeforeClass
   public static void beforeClass() {
@@ -811,19 +811,31 @@ public class ITStorageTest {
   }
 
   @Test
-  public void testBatchRequestManyDeletes() {
-    List<BlobId> blobsToDelete = Lists.newArrayListWithCapacity(2 * MAX_BATCH_DELETES);
+  public void testBatchRequestManyOperations() {
     List<StorageBatchResult<Boolean>> deleteResults =
-        Lists.newArrayListWithCapacity(2 * MAX_BATCH_DELETES);
-    for (int i = 0; i < 2 * MAX_BATCH_DELETES; i++) {
-      blobsToDelete.add(BlobId.of(BUCKET, "test-batch-request-many-deletes-blob-" + i));
-    }
+        Lists.newArrayListWithCapacity(MAX_BATCH_SIZE);
+    List<StorageBatchResult<Blob>> getResults =
+        Lists.newArrayListWithCapacity(MAX_BATCH_SIZE / 2);
+    List<StorageBatchResult<Blob>> updateResults =
+        Lists.newArrayListWithCapacity(MAX_BATCH_SIZE / 2);
     StorageBatch batch = storage.batch();
-    for (BlobId blob : blobsToDelete) {
-      deleteResults.add(batch.delete(blob));
+    for (int i = 0; i < MAX_BATCH_SIZE; i++) {
+      BlobId blobId = BlobId.of(BUCKET, "test-batch-request-many-operations-blob-" + i);
+      deleteResults.add(batch.delete(blobId));
     }
-    String sourceBlobName1 = "test-batch-request-many-deletes-source-blob-1";
-    String sourceBlobName2 = "test-batch-request-many-deletes-source-blob-2";
+    for (int i = 0; i < MAX_BATCH_SIZE / 2; i++) {
+      BlobId blobId = BlobId.of(BUCKET, "test-batch-request-many-operations-blob-" + i);
+      getResults.add(batch.get(blobId));
+    }
+    for (int i = 0; i < MAX_BATCH_SIZE / 2; i++) {
+      BlobInfo blob =
+          BlobInfo.builder(BlobId.of(BUCKET, "test-batch-request-many-operations-blob-" + i))
+              .build();
+      updateResults.add(batch.update(blob));
+    }
+
+    String sourceBlobName1 = "test-batch-request-many-operations-source-blob-1";
+    String sourceBlobName2 = "test-batch-request-many-operations-source-blob-2";
     BlobInfo sourceBlob1 = BlobInfo.builder(BUCKET, sourceBlobName1).build();
     BlobInfo sourceBlob2 = BlobInfo.builder(BUCKET, sourceBlobName2).build();
     assertNotNull(storage.create(sourceBlob1));
@@ -836,20 +848,31 @@ public class ITStorageTest {
     batch.submit();
 
     // Check deletes
-    for (StorageBatchResult<Boolean> deleteResult : deleteResults) {
-      assertFalse(deleteResult.get());
+    for (StorageBatchResult<Boolean> failedDeleteResult : deleteResults) {
+      assertFalse(failedDeleteResult.get());
     }
 
+    // Check gets
+    for (StorageBatchResult<Blob> failedGetResult : getResults) {
+      assertNull(failedGetResult.get());
+    }
+    Blob remoteBlob1 = getResult.get();
+    assertEquals(sourceBlob1.bucket(), remoteBlob1.bucket());
+    assertEquals(sourceBlob1.name(), remoteBlob1.name());
+
     // Check updates
+    for (StorageBatchResult<Blob> failedUpdateResult : updateResults) {
+      try {
+        failedUpdateResult.get();
+        fail("Expected StorageException");
+      } catch (StorageException ex) {
+        // expected
+      }
+    }
     Blob remoteUpdatedBlob2 = updateResult.get();
     assertEquals(sourceBlob2.bucket(), remoteUpdatedBlob2.bucket());
     assertEquals(sourceBlob2.name(), remoteUpdatedBlob2.name());
     assertEquals(updatedBlob2.contentType(), remoteUpdatedBlob2.contentType());
-
-    // Check gets
-    Blob remoteBlob1 = getResult.get();
-    assertEquals(sourceBlob1.bucket(), remoteBlob1.bucket());
-    assertEquals(sourceBlob1.name(), remoteBlob1.name());
 
     assertTrue(remoteBlob1.delete());
     assertTrue(remoteUpdatedBlob2.delete());
