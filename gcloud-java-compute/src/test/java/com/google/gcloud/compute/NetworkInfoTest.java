@@ -27,7 +27,7 @@ import java.util.List;
 
 public class NetworkInfoTest {
 
-  private static final String ID = "42";
+  private static final String GENERATED_ID = "42";
   private static final Long CREATION_TIMESTAMP = 1453293540000L;
   private static final String DESCRIPTION = "description";
   private static final SubnetworkId SUBNETWORK1 = SubnetworkId.of("project", "region1", "network1");
@@ -43,13 +43,13 @@ public class NetworkInfoTest {
       new SubnetNetworkConfiguration(AUTO_CREATE_SUBNETWORKS, SUBNETWORKS);
   private static final NetworkInfo NETWORK_INFO =
       NetworkInfo.builder(NETWORK_ID, NETWORK_CONFIGURATION)
-          .id(ID)
+          .generatedId(GENERATED_ID)
           .creationTimestamp(CREATION_TIMESTAMP)
           .description(DESCRIPTION)
           .build();
   private static final NetworkInfo SUBNET_NETWORK_INFO =
       NetworkInfo.builder(NETWORK_ID, SUBNET_NETWORK_CONFIGURATION)
-          .id(ID)
+          .generatedId(GENERATED_ID)
           .creationTimestamp(CREATION_TIMESTAMP)
           .description(DESCRIPTION)
           .build();
@@ -76,12 +76,12 @@ public class NetworkInfoTest {
 
   @Test
   public void testBuilder() {
-    assertEquals(ID, NETWORK_INFO.id());
+    assertEquals(GENERATED_ID, NETWORK_INFO.generatedId());
     assertEquals(NETWORK_ID, NETWORK_INFO.networkId());
     assertEquals(CREATION_TIMESTAMP, NETWORK_INFO.creationTimestamp());
     assertEquals(DESCRIPTION, NETWORK_INFO.description());
     assertEquals(NETWORK_CONFIGURATION, NETWORK_INFO.configuration());
-    assertEquals(ID, SUBNET_NETWORK_INFO.id());
+    assertEquals(GENERATED_ID, SUBNET_NETWORK_INFO.generatedId());
     assertEquals(NETWORK_ID, SUBNET_NETWORK_INFO.networkId());
     assertEquals(CREATION_TIMESTAMP, SUBNET_NETWORK_INFO.creationTimestamp());
     assertEquals(DESCRIPTION, SUBNET_NETWORK_INFO.description());
@@ -91,7 +91,7 @@ public class NetworkInfoTest {
   @Test
   public void testOf() {
     NetworkInfo networkInfo = NetworkInfo.of(NETWORK_ID, NETWORK_CONFIGURATION);
-    assertNull(networkInfo.id());
+    assertNull(networkInfo.generatedId());
     assertEquals(NETWORK_ID, NETWORK_INFO.networkId());
     assertEquals(NETWORK_CONFIGURATION, NETWORK_INFO.configuration());
     assertNull(networkInfo.creationTimestamp());
@@ -116,7 +116,7 @@ public class NetworkInfoTest {
 
   public void compareNetworkInfo(NetworkInfo expected, NetworkInfo value) {
     assertEquals(expected, value);
-    assertEquals(expected.id(), value.id());
+    assertEquals(expected.generatedId(), value.generatedId());
     assertEquals(expected.networkId(), value.networkId());
     assertEquals(expected.creationTimestamp(), value.creationTimestamp());
     assertEquals(expected.description(), value.description());

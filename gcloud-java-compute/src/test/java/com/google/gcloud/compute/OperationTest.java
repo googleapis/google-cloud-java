@@ -49,8 +49,7 @@ public class OperationTest {
       new OperationWarning("code1", "message1", ImmutableMap.of("k1", "v1"));
   private static final OperationWarning OPERATION_WARNING2 =
       new OperationWarning("code2", "location2", ImmutableMap.of("k2", "v2"));
-  private static final String ID = "1";
-  private static final Long CREATION_TIMESTAMP = 1453293540000L;
+  private static final String GENERATED_ID = "1";
   private static final String CLIENT_OPERATION_ID = "clientOperationId";
   private static final String OPERATION_TYPE = "delete";
   private static final String TARGET_LINK = "targetLink";
@@ -88,7 +87,7 @@ public class OperationTest {
     expect(serviceMockReturnsOptions.options()).andReturn(mockOptions).times(optionsCalls);
     replay(serviceMockReturnsOptions);
     globalOperation = new Operation.Builder(serviceMockReturnsOptions)
-        .id(ID)
+        .generatedId(GENERATED_ID)
         .operationId(GLOBAL_OPERATION_ID)
         .clientOperationId(CLIENT_OPERATION_ID)
         .operationType(OPERATION_TYPE)
@@ -108,7 +107,7 @@ public class OperationTest {
         .description(DESCRIPTION)
         .build();
     zoneOperation = new Operation.Builder(serviceMockReturnsOptions)
-        .id(ID)
+        .generatedId(GENERATED_ID)
         .operationId(ZONE_OPERATION_ID)
         .clientOperationId(CLIENT_OPERATION_ID)
         .operationType(OPERATION_TYPE)
@@ -128,7 +127,7 @@ public class OperationTest {
         .description(DESCRIPTION)
         .build();
     regionOperation = new Operation.Builder(serviceMockReturnsOptions)
-        .id(ID)
+        .generatedId(GENERATED_ID)
         .operationId(REGION_OPERATION_ID)
         .clientOperationId(CLIENT_OPERATION_ID)
         .operationType(OPERATION_TYPE)
@@ -152,7 +151,7 @@ public class OperationTest {
 
   private void initializeOperation() {
     operation = new Operation.Builder(compute)
-        .id(ID)
+        .generatedId(GENERATED_ID)
         .operationId(GLOBAL_OPERATION_ID)
         .clientOperationId(CLIENT_OPERATION_ID)
         .operationType(OPERATION_TYPE)
@@ -179,7 +178,7 @@ public class OperationTest {
   }
 
   private void assertEqualsCommonFields(Operation operation) {
-    assertEquals(ID, operation.id());
+    assertEquals(GENERATED_ID, operation.generatedId());
     assertEquals(CLIENT_OPERATION_ID, operation.clientOperationId());
     assertEquals(OPERATION_TYPE, operation.operationType());
     assertEquals(TARGET_LINK, operation.targetLink());
@@ -200,7 +199,7 @@ public class OperationTest {
   }
 
   private void assertNullCommonFields(Operation operation) {
-    assertNull(operation.id());
+    assertNull(operation.generatedId());
     assertNull(operation.clientOperationId());
     assertNull(operation.operationType());
     assertNull(operation.targetLink());

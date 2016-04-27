@@ -61,7 +61,7 @@ public class SnapshotInfo implements Serializable {
   private static final long serialVersionUID = 1065513502131159769L;
   private static final DateTimeFormatter TIMESTAMP_FORMATTER = ISODateTimeFormat.dateTime();
 
-  private final String id;
+  private final String generatedId;
   private final SnapshotId snapshotId;
   private final Long creationTimestamp;
   private final String description;
@@ -125,7 +125,7 @@ public class SnapshotInfo implements Serializable {
    */
   public abstract static class Builder {
 
-    abstract Builder id(String id);
+    abstract Builder generatedId(String generatedId);
 
     abstract Builder creationTimestamp(Long creationTimestamp);
 
@@ -164,7 +164,7 @@ public class SnapshotInfo implements Serializable {
 
   static final class BuilderImpl extends Builder {
 
-    private String id;
+    private String generatedId;
     private Long creationTimestamp;
     private SnapshotId snapshotId;
     private String description;
@@ -179,7 +179,7 @@ public class SnapshotInfo implements Serializable {
     BuilderImpl() {}
 
     BuilderImpl(SnapshotInfo snapshotInfo) {
-      this.id = snapshotInfo.id;
+      this.generatedId = snapshotInfo.generatedId;
       this.creationTimestamp = snapshotInfo.creationTimestamp;
       this.snapshotId = snapshotInfo.snapshotId;
       this.description = snapshotInfo.description;
@@ -194,7 +194,7 @@ public class SnapshotInfo implements Serializable {
 
     BuilderImpl(Snapshot snapshotPb) {
       if (snapshotPb.getId() != null) {
-        this.id = snapshotPb.getId().toString();
+        this.generatedId = snapshotPb.getId().toString();
       }
       if (snapshotPb.getCreationTimestamp() != null) {
         this.creationTimestamp = TIMESTAMP_FORMATTER.parseMillis(snapshotPb.getCreationTimestamp());
@@ -219,8 +219,8 @@ public class SnapshotInfo implements Serializable {
     }
 
     @Override
-    BuilderImpl id(String id) {
-      this.id = id;
+    BuilderImpl generatedId(String generatedId) {
+      this.generatedId = generatedId;
       return this;
     }
 
@@ -291,7 +291,7 @@ public class SnapshotInfo implements Serializable {
   }
 
   SnapshotInfo(BuilderImpl builder) {
-    this.id = builder.id;
+    this.generatedId = builder.generatedId;
     this.creationTimestamp = builder.creationTimestamp;
     this.snapshotId = checkNotNull(builder.snapshotId);
     this.description = builder.description;
@@ -305,10 +305,10 @@ public class SnapshotInfo implements Serializable {
   }
 
   /**
-   * Returns the unique identifier for the snapshot; defined by the service.
+   * Returns the service-generated unique identifier for the snapshot.
    */
-  public String id() {
-    return id;
+  public String generatedId() {
+    return generatedId;
   }
 
   /**
@@ -363,9 +363,9 @@ public class SnapshotInfo implements Serializable {
   }
 
   /**
-   * Returns the id value of the disk used to create this snapshot. This value may be used to
-   * determine whether the snapshot was taken from the current or a previous instance of a given
-   * disk name.
+   * Returns the service-generated unique id of the disk used to create this snapshot. This value
+   * may be used to determine whether the snapshot was taken from the current or a previous instance
+   * of a given disk name.
    */
   public String sourceDiskId() {
     return sourceDiskId;
@@ -399,7 +399,7 @@ public class SnapshotInfo implements Serializable {
   @Override
   public String toString() {
     return MoreObjects.toStringHelper(this)
-        .add("id", id)
+        .add("generatedId", generatedId)
         .add("creationTimestamp", creationTimestamp)
         .add("snapshotId", snapshotId)
         .add("description", description)
@@ -415,7 +415,7 @@ public class SnapshotInfo implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, creationTimestamp, snapshotId, description, status, diskSizeGb,
+    return Objects.hash(generatedId, creationTimestamp, snapshotId, description, status, diskSizeGb,
         licenses, sourceDisk, sourceDiskId, storageBytes, storageBytesStatus);
   }
 
@@ -435,8 +435,8 @@ public class SnapshotInfo implements Serializable {
 
   Snapshot toPb() {
     Snapshot snapshotPb = new Snapshot();
-    if (id != null) {
-      snapshotPb.setId(new BigInteger(id));
+    if (generatedId != null) {
+      snapshotPb.setId(new BigInteger(generatedId));
     }
     if (creationTimestamp != null) {
       snapshotPb.setCreationTimestamp(TIMESTAMP_FORMATTER.print(creationTimestamp));

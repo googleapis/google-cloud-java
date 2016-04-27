@@ -27,7 +27,7 @@ import java.util.List;
 public class RegionTest {
 
   private static final RegionId REGION_ID = RegionId.of("project", "region");
-  private static final String ID = "42";
+  private static final String GENERATED_ID = "42";
   private static final Long CREATION_TIMESTAMP = 1453293540000L;
   private static final String DESCRIPTION = "description";
   private static final Region.Status STATUS = Region.Status.DOWN;
@@ -43,7 +43,7 @@ public class RegionTest {
       DeprecationStatus.of(DeprecationStatus.Status.DELETED, REGION_ID);
   private static final Region REGION = Region.builder()
       .regionId(REGION_ID)
-      .id(ID)
+      .generatedId(GENERATED_ID)
       .creationTimestamp(CREATION_TIMESTAMP)
       .description(DESCRIPTION)
       .status(STATUS)
@@ -55,7 +55,7 @@ public class RegionTest {
   @Test
   public void testBuilder() {
     assertEquals(REGION_ID, REGION.regionId());
-    assertEquals(ID, REGION.id());
+    assertEquals(GENERATED_ID, REGION.generatedId());
     assertEquals(CREATION_TIMESTAMP, REGION.creationTimestamp());
     assertEquals(DESCRIPTION, REGION.description());
     assertEquals(STATUS, REGION.status());
@@ -77,7 +77,7 @@ public class RegionTest {
   private void compareRegions(Region expected, Region value) {
     assertEquals(expected, value);
     assertEquals(expected.regionId(), value.regionId());
-    assertEquals(expected.id(), value.id());
+    assertEquals(expected.generatedId(), value.generatedId());
     assertEquals(expected.creationTimestamp(), value.creationTimestamp());
     assertEquals(expected.description(), value.description());
     assertEquals(expected.status(), value.status());

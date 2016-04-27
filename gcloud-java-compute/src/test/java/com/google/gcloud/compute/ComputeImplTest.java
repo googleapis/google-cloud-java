@@ -105,14 +105,14 @@ import java.util.Map;
 public class ComputeImplTest {
 
   private static final String PROJECT = "project";
-  private static final String ID = "42";
+  private static final String GENERATED_ID = "42";
   private static final Long CREATION_TIMESTAMP = 1453293540000L;
   private static final String DESCRIPTION = "description";
   private static final String VALID_DISK_SIZE = "10GB-10TB";
   private static final Long DEFAULT_DISK_SIZE_GB = 10L;
   private static final DiskTypeId DISK_TYPE_ID = DiskTypeId.of("project", "zone", "diskType");
   private static final DiskType DISK_TYPE = DiskType.builder()
-      .id(ID)
+      .generatedId(GENERATED_ID)
       .diskTypeId(DISK_TYPE_ID)
       .creationTimestamp(CREATION_TIMESTAMP)
       .description(DESCRIPTION)
@@ -126,7 +126,7 @@ public class ComputeImplTest {
   private static final Integer MAXIMUM_PERSISTENT_DISKS = 4;
   private static final Long MAXIMUM_PERSISTENT_DISKS_SIZE_GB = 5L;
   private static final MachineType MACHINE_TYPE = MachineType.builder()
-      .id(ID)
+      .generatedId(GENERATED_ID)
       .machineTypeId(MACHINE_TYPE_ID)
       .creationTimestamp(CREATION_TIMESTAMP)
       .description(DESCRIPTION)
@@ -148,7 +148,7 @@ public class ComputeImplTest {
   private static final List<Region.Quota> QUOTAS = ImmutableList.of(QUOTA1, QUOTA2);
   private static final Region REGION = Region.builder()
       .regionId(REGION_ID)
-      .id(ID)
+      .generatedId(GENERATED_ID)
       .creationTimestamp(CREATION_TIMESTAMP)
       .description(DESCRIPTION)
       .status(REGION_STATUS)
@@ -159,7 +159,7 @@ public class ComputeImplTest {
   private static final Zone.Status ZONE_STATUS = Zone.Status.DOWN;
   private static final Zone ZONE = Zone.builder()
       .zoneId(ZONE_ID)
-      .id(ID)
+      .generatedId(GENERATED_ID)
       .creationTimestamp(CREATION_TIMESTAMP)
       .description(DESCRIPTION)
       .status(ZONE_STATUS)
@@ -526,7 +526,7 @@ public class ComputeImplTest {
         .build();
     Compute otherService = options.toBuilder().build().service();
     globalOperation = new Operation.Builder(otherService)
-        .id(ID)
+        .generatedId(GENERATED_ID)
         .operationId(GLOBAL_OPERATION_ID)
         .clientOperationId(CLIENT_OPERATION_ID)
         .operationType(OPERATION_TYPE)
@@ -546,7 +546,7 @@ public class ComputeImplTest {
         .description(DESCRIPTION)
         .build();
     zoneOperation = new Operation.Builder(otherService)
-        .id(ID)
+        .generatedId(GENERATED_ID)
         .operationId(ZONE_OPERATION_ID)
         .clientOperationId(CLIENT_OPERATION_ID)
         .operationType(OPERATION_TYPE)
@@ -566,7 +566,7 @@ public class ComputeImplTest {
         .description(DESCRIPTION)
         .build();
     regionOperation = new Operation.Builder(otherService)
-        .id(ID)
+        .generatedId(GENERATED_ID)
         .operationId(REGION_OPERATION_ID)
         .clientOperationId(CLIENT_OPERATION_ID)
         .operationType(OPERATION_TYPE)

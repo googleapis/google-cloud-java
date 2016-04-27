@@ -23,7 +23,7 @@ import org.junit.Test;
 
 public class SubnetworkInfoTest {
 
-  private static final String ID = "42";
+  private static final String GENERATED_ID = "42";
   private static final Long CREATION_TIMESTAMP = 1453293540000L;
   private static final String DESCRIPTION = "description";
   private static final SubnetworkId SUBNETWORK_ID =
@@ -33,7 +33,7 @@ public class SubnetworkInfoTest {
   private static final String IP_RANGE = "192.168.0.0/16";
   private static final SubnetworkInfo SUBNETWORK_INFO =
       SubnetworkInfo.builder(SUBNETWORK_ID, NETWORK_ID, IP_RANGE)
-          .id(ID)
+          .generatedId(GENERATED_ID)
           .creationTimestamp(CREATION_TIMESTAMP)
           .description(DESCRIPTION)
           .gatewayAddress(GATEWAY_ADDRESS)
@@ -57,7 +57,7 @@ public class SubnetworkInfoTest {
 
   @Test
   public void testBuilder() {
-    assertEquals(ID, SUBNETWORK_INFO.id());
+    assertEquals(GENERATED_ID, SUBNETWORK_INFO.generatedId());
     assertEquals(SUBNETWORK_ID, SUBNETWORK_INFO.subnetworkId());
     assertEquals(CREATION_TIMESTAMP, SUBNETWORK_INFO.creationTimestamp());
     assertEquals(DESCRIPTION, SUBNETWORK_INFO.description());
@@ -69,7 +69,7 @@ public class SubnetworkInfoTest {
   @Test
   public void testOf() {
     SubnetworkInfo subnetworkInfo = SubnetworkInfo.of(SUBNETWORK_ID, NETWORK_ID, IP_RANGE);
-    assertNull(subnetworkInfo.id());
+    assertNull(subnetworkInfo.generatedId());
     assertEquals(SUBNETWORK_ID, subnetworkInfo.subnetworkId());
     assertNull(subnetworkInfo.creationTimestamp());
     assertNull(subnetworkInfo.description());
@@ -96,7 +96,7 @@ public class SubnetworkInfoTest {
 
   public void compareSubnetworkInfo(SubnetworkInfo expected, SubnetworkInfo value) {
     assertEquals(expected, value);
-    assertEquals(expected.id(), value.id());
+    assertEquals(expected.generatedId(), value.generatedId());
     assertEquals(expected.subnetworkId(), value.subnetworkId());
     assertEquals(expected.creationTimestamp(), value.creationTimestamp());
     assertEquals(expected.description(), value.description());

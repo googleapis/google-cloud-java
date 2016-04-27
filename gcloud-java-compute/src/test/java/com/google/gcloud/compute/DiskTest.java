@@ -36,7 +36,7 @@ import java.util.List;
 
 public class DiskTest {
 
-  private static final String ID = "42";
+  private static final String GENERATED_ID = "42";
   private static final DiskId DISK_ID = DiskId.of("project", "zone", "disk");
   private static final Long CREATION_TIMESTAMP = 1453293540000L;
   private static final CreationStatus CREATION_STATUS = CreationStatus.READY;
@@ -84,7 +84,7 @@ public class DiskTest {
     expect(serviceMockReturnsOptions.options()).andReturn(mockOptions).times(optionsCalls);
     replay(serviceMockReturnsOptions);
     standardDisk = new Disk.Builder(serviceMockReturnsOptions, DISK_ID, DISK_CONFIGURATION)
-        .id(ID)
+        .generatedId(GENERATED_ID)
         .creationTimestamp(CREATION_TIMESTAMP)
         .creationStatus(CREATION_STATUS)
         .description(DESCRIPTION)
@@ -94,7 +94,7 @@ public class DiskTest {
         .lastDetachTimestamp(LAST_DETACH_TIMESTAMP)
         .build();
     snapshotDisk = new Disk.Builder(serviceMockReturnsOptions, DISK_ID, SNAPSHOT_DISK_CONFIGURATION)
-        .id(ID)
+        .generatedId(GENERATED_ID)
         .creationTimestamp(CREATION_TIMESTAMP)
         .creationStatus(CREATION_STATUS)
         .description(DESCRIPTION)
@@ -104,7 +104,7 @@ public class DiskTest {
         .lastDetachTimestamp(LAST_DETACH_TIMESTAMP)
         .build();
     imageDisk = new Disk.Builder(serviceMockReturnsOptions, DISK_ID, IMAGE_DISK_CONFIGURATION)
-        .id(ID)
+        .generatedId(GENERATED_ID)
         .creationTimestamp(CREATION_TIMESTAMP)
         .creationStatus(CREATION_STATUS)
         .description(DESCRIPTION)
@@ -118,7 +118,7 @@ public class DiskTest {
 
   private void initializeDisk() {
     disk = new Disk.Builder(compute, DISK_ID, DISK_CONFIGURATION)
-        .id(ID)
+        .generatedId(GENERATED_ID)
         .creationTimestamp(CREATION_TIMESTAMP)
         .creationStatus(CREATION_STATUS)
         .description(DESCRIPTION)
@@ -157,7 +157,7 @@ public class DiskTest {
   public void testBuilder() {
     initializeExpectedDisk(4);
     assertEquals(DISK_ID, standardDisk.diskId());
-    assertEquals(ID, standardDisk.id());
+    assertEquals(GENERATED_ID, standardDisk.generatedId());
     assertEquals(DISK_CONFIGURATION, standardDisk.configuration());
     assertEquals(CREATION_TIMESTAMP, standardDisk.creationTimestamp());
     assertEquals(CREATION_STATUS, standardDisk.creationStatus());
@@ -168,7 +168,7 @@ public class DiskTest {
     assertEquals(LAST_DETACH_TIMESTAMP, standardDisk.lastDetachTimestamp());
     assertSame(serviceMockReturnsOptions, standardDisk.compute());
     assertEquals(DISK_ID, imageDisk.diskId());
-    assertEquals(ID, imageDisk.id());
+    assertEquals(GENERATED_ID, imageDisk.generatedId());
     assertEquals(IMAGE_DISK_CONFIGURATION, imageDisk.configuration());
     assertEquals(CREATION_TIMESTAMP, imageDisk.creationTimestamp());
     assertEquals(CREATION_STATUS, imageDisk.creationStatus());
@@ -179,7 +179,7 @@ public class DiskTest {
     assertEquals(LAST_DETACH_TIMESTAMP, imageDisk.lastDetachTimestamp());
     assertSame(serviceMockReturnsOptions, imageDisk.compute());
     assertEquals(DISK_ID, snapshotDisk.diskId());
-    assertEquals(ID, snapshotDisk.id());
+    assertEquals(GENERATED_ID, snapshotDisk.generatedId());
     assertEquals(SNAPSHOT_DISK_CONFIGURATION, snapshotDisk.configuration());
     assertEquals(CREATION_TIMESTAMP, snapshotDisk.creationTimestamp());
     assertEquals(CREATION_STATUS, snapshotDisk.creationStatus());
@@ -194,7 +194,7 @@ public class DiskTest {
         .configuration(SNAPSHOT_DISK_CONFIGURATION)
         .build();
     assertEquals(DiskId.of("newProject", "newZone"), disk.diskId());
-    assertNull(disk.id());
+    assertNull(disk.generatedId());
     assertEquals(SNAPSHOT_DISK_CONFIGURATION, disk.configuration());
     assertNull(disk.creationTimestamp());
     assertNull(disk.creationStatus());
@@ -462,7 +462,7 @@ public class DiskTest {
     assertEquals(expected.compute().options(), value.compute().options());
     assertEquals(expected.diskId(), value.diskId());
     assertEquals(expected.configuration(), value.configuration());
-    assertEquals(expected.id(), value.id());
+    assertEquals(expected.generatedId(), value.generatedId());
     assertEquals(expected.creationTimestamp(), value.creationTimestamp());
     assertEquals(expected.creationStatus(), value.creationStatus());
     assertEquals(expected.description(), value.description());

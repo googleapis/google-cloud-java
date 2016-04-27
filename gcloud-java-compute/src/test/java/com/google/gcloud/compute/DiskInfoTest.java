@@ -29,7 +29,7 @@ import java.util.List;
 
 public class DiskInfoTest {
 
-  private static final String ID = "42";
+  private static final String GENERATED_ID = "42";
   private static final DiskId DISK_ID = DiskId.of("project", "zone", "disk");
   private static final Long CREATION_TIMESTAMP = 1453293540000L;
   private static final CreationStatus CREATION_STATUS = CreationStatus.READY;
@@ -65,7 +65,7 @@ public class DiskInfoTest {
           .sourceImageId(IMAGE_ID)
           .build();
   private static final DiskInfo DISK_INFO = DiskInfo.builder(DISK_ID, DISK_CONFIGURATION)
-      .id(ID)
+      .generatedId(GENERATED_ID)
       .creationTimestamp(CREATION_TIMESTAMP)
       .creationStatus(CREATION_STATUS)
       .description(DESCRIPTION)
@@ -76,7 +76,7 @@ public class DiskInfoTest {
       .build();
   private static final DiskInfo SNAPSHOT_DISK_INFO =
       DiskInfo.builder(DISK_ID, SNAPSHOT_DISK_CONFIGURATION)
-          .id(ID)
+          .generatedId(GENERATED_ID)
           .creationTimestamp(CREATION_TIMESTAMP)
           .creationStatus(CREATION_STATUS)
           .description(DESCRIPTION)
@@ -87,7 +87,7 @@ public class DiskInfoTest {
           .build();
   private static final DiskInfo IMAGE_DISK_INFO =
       DiskInfo.builder(DISK_ID, IMAGE_DISK_CONFIGURATION)
-          .id(ID)
+          .generatedId(GENERATED_ID)
           .creationTimestamp(CREATION_TIMESTAMP)
           .creationStatus(CREATION_STATUS)
           .description(DESCRIPTION)
@@ -120,7 +120,7 @@ public class DiskInfoTest {
 
   @Test
   public void testBuilder() {
-    assertEquals(ID, DISK_INFO.id());
+    assertEquals(GENERATED_ID, DISK_INFO.generatedId());
     assertEquals(DISK_ID, DISK_INFO.diskId());
     assertEquals(DISK_CONFIGURATION, DISK_INFO.configuration());
     assertEquals(CREATION_TIMESTAMP, DISK_INFO.creationTimestamp());
@@ -130,7 +130,7 @@ public class DiskInfoTest {
     assertEquals(ATTACHED_INSTANCES, DISK_INFO.attachedInstances());
     assertEquals(LAST_ATTACH_TIMESTAMP, DISK_INFO.lastAttachTimestamp());
     assertEquals(LAST_DETACH_TIMESTAMP, DISK_INFO.lastDetachTimestamp());
-    assertEquals(ID, IMAGE_DISK_INFO.id());
+    assertEquals(GENERATED_ID, IMAGE_DISK_INFO.generatedId());
     assertEquals(DISK_ID, IMAGE_DISK_INFO.diskId());
     assertEquals(IMAGE_DISK_CONFIGURATION, IMAGE_DISK_INFO.configuration());
     assertEquals(CREATION_TIMESTAMP, IMAGE_DISK_INFO.creationTimestamp());
@@ -140,7 +140,7 @@ public class DiskInfoTest {
     assertEquals(ATTACHED_INSTANCES, IMAGE_DISK_INFO.attachedInstances());
     assertEquals(LAST_ATTACH_TIMESTAMP, IMAGE_DISK_INFO.lastAttachTimestamp());
     assertEquals(LAST_DETACH_TIMESTAMP, IMAGE_DISK_INFO.lastDetachTimestamp());
-    assertEquals(ID, SNAPSHOT_DISK_INFO.id());
+    assertEquals(GENERATED_ID, SNAPSHOT_DISK_INFO.generatedId());
     assertEquals(DISK_ID, SNAPSHOT_DISK_INFO.diskId());
     assertEquals(SNAPSHOT_DISK_CONFIGURATION, SNAPSHOT_DISK_INFO.configuration());
     assertEquals(CREATION_TIMESTAMP, SNAPSHOT_DISK_INFO.creationTimestamp());
@@ -155,7 +155,7 @@ public class DiskInfoTest {
   @Test
   public void testOf() {
     DiskInfo diskInfo = DiskInfo.of(DISK_ID, DISK_CONFIGURATION);
-    assertNull(diskInfo.id());
+    assertNull(diskInfo.generatedId());
     assertEquals(DISK_ID, diskInfo.diskId());
     assertEquals(DISK_CONFIGURATION, diskInfo.configuration());
     assertNull(diskInfo.creationTimestamp());
@@ -166,7 +166,7 @@ public class DiskInfoTest {
     assertNull(diskInfo.lastAttachTimestamp());
     assertNull(diskInfo.lastDetachTimestamp());
     diskInfo = DiskInfo.of(DISK_ID, IMAGE_DISK_CONFIGURATION);
-    assertNull(diskInfo.id());
+    assertNull(diskInfo.generatedId());
     assertEquals(DISK_ID, diskInfo.diskId());
     assertEquals(IMAGE_DISK_CONFIGURATION, diskInfo.configuration());
     assertNull(diskInfo.creationTimestamp());
@@ -177,7 +177,7 @@ public class DiskInfoTest {
     assertNull(diskInfo.lastAttachTimestamp());
     assertNull(diskInfo.lastDetachTimestamp());
     diskInfo = DiskInfo.of(DISK_ID, SNAPSHOT_DISK_CONFIGURATION);
-    assertNull(diskInfo.id());
+    assertNull(diskInfo.generatedId());
     assertEquals(DISK_ID, diskInfo.diskId());
     assertEquals(SNAPSHOT_DISK_CONFIGURATION, diskInfo.configuration());
     assertNull(diskInfo.creationTimestamp());
@@ -254,7 +254,7 @@ public class DiskInfoTest {
   public void compareDiskInfo(DiskInfo expected, DiskInfo value) {
     assertEquals(expected, value);
     assertEquals(expected.configuration(), value.configuration());
-    assertEquals(expected.id(), value.id());
+    assertEquals(expected.generatedId(), value.generatedId());
     assertEquals(expected.diskId(), value.diskId());
     assertEquals(expected.creationTimestamp(), value.creationTimestamp());
     assertEquals(expected.creationStatus(), value.creationStatus());

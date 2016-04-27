@@ -41,14 +41,12 @@ import java.util.List;
 public class SerializationTest {
 
   private static final Compute COMPUTE = ComputeOptions.builder().projectId("p").build().service();
-  private static final String ID = "42";
   private static final Long CREATION_TIMESTAMP = 1453293540000L;
   private static final String DESCRIPTION = "description";
   private static final String VALID_DISK_SIZE = "10GB-10TB";
   private static final Long DEFAULT_DISK_SIZE_GB = 10L;
   private static final DiskTypeId DISK_TYPE_ID = DiskTypeId.of("project", "zone", "diskType");
   private static final DiskType DISK_TYPE = DiskType.builder()
-      .id(ID)
       .diskTypeId(DISK_TYPE_ID)
       .creationTimestamp(CREATION_TIMESTAMP)
       .description(DESCRIPTION)
@@ -62,7 +60,6 @@ public class SerializationTest {
   private static final Integer MAXIMUM_PERSISTENT_DISKS = 4;
   private static final Long MAXIMUM_PERSISTENT_DISKS_SIZE_GB = 5L;
   private static final MachineType MACHINE_TYPE = MachineType.builder()
-      .id(ID)
       .machineTypeId(MACHINE_TYPE_ID)
       .creationTimestamp(CREATION_TIMESTAMP)
       .description(DESCRIPTION)
@@ -84,7 +81,6 @@ public class SerializationTest {
   private static final List<Region.Quota> QUOTAS = ImmutableList.of(QUOTA1, QUOTA2);
   private static final Region REGION = Region.builder()
       .regionId(REGION_ID)
-      .id(ID)
       .creationTimestamp(CREATION_TIMESTAMP)
       .description(DESCRIPTION)
       .status(REGION_STATUS)
@@ -95,7 +91,6 @@ public class SerializationTest {
   private static final Zone.Status ZONE_STATUS = Zone.Status.DOWN;
   private static final Zone ZONE = Zone.builder()
       .zoneId(ZONE_ID)
-      .id(ID)
       .creationTimestamp(CREATION_TIMESTAMP)
       .description(DESCRIPTION)
       .status(ZONE_STATUS)
@@ -135,7 +130,6 @@ public class SerializationTest {
   private static final AddressInfo ADDRESS_INFO = AddressInfo.builder(REGION_ADDRESS_ID)
       .creationTimestamp(CREATION_TIMESTAMP)
       .description(DESCRIPTION)
-      .id(ID)
       .usage(INSTANCE_USAGE)
       .build();
   private static final Address ADDRESS = new Address.Builder(COMPUTE, REGION_ADDRESS_ID).build();

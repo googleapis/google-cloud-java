@@ -52,7 +52,7 @@ public class Zone implements Serializable {
   private static final DateTimeFormatter TIMESTAMP_FORMATTER = ISODateTimeFormat.dateTime();
 
   private final ZoneId zoneId;
-  private final String id;
+  private final String generatedId;
   private final Long creationTimestamp;
   private final String description;
   private final Status status;
@@ -70,7 +70,7 @@ public class Zone implements Serializable {
   static final class Builder {
 
     private ZoneId zoneId;
-    private String id;
+    private String generatedId;
     private Long creationTimestamp;
     private String description;
 
@@ -85,8 +85,8 @@ public class Zone implements Serializable {
       return this;
     }
 
-    Builder id(String id) {
-      this.id = id;
+    Builder generatedId(String generatedId) {
+      this.generatedId = generatedId;
       return this;
     }
 
@@ -122,7 +122,7 @@ public class Zone implements Serializable {
 
   private Zone(Builder builder) {
     this.zoneId = builder.zoneId;
-    this.id = builder.id;
+    this.generatedId = builder.generatedId;
     this.creationTimestamp = builder.creationTimestamp;
     this.description = builder.description;
     this.status = builder.status;
@@ -152,10 +152,10 @@ public class Zone implements Serializable {
   }
 
   /**
-   * Returns the unique identifier for the zone; defined by the service.
+   * Returns the service-generated unique identifier for the zone.
    */
-  public String id() {
-    return id;
+  public String generatedId() {
+    return generatedId;
   }
 
   /**
@@ -185,7 +185,7 @@ public class Zone implements Serializable {
   public String toString() {
     return MoreObjects.toStringHelper(this)
         .add("zoneId", zoneId)
-        .add("id", id)
+        .add("generatedId", generatedId)
         .add("creationTimestamp", creationTimestamp)
         .add("description", description)
         .add("status", status)
@@ -207,8 +207,8 @@ public class Zone implements Serializable {
   com.google.api.services.compute.model.Zone toPb() {
     com.google.api.services.compute.model.Zone zonePb =
         new com.google.api.services.compute.model.Zone();
-    if (id != null) {
-      zonePb.setId(new BigInteger(id));
+    if (generatedId != null) {
+      zonePb.setId(new BigInteger(generatedId));
     }
     if (creationTimestamp != null) {
       zonePb.setCreationTimestamp(TIMESTAMP_FORMATTER.print(creationTimestamp));
@@ -236,7 +236,7 @@ public class Zone implements Serializable {
     Builder builder = builder();
     builder.zoneId(ZoneId.fromUrl(zonePb.getSelfLink()));
     if (zonePb.getId() != null) {
-      builder.id(zonePb.getId().toString());
+      builder.generatedId(zonePb.getId().toString());
     }
     if (zonePb.getCreationTimestamp() != null) {
       builder.creationTimestamp(TIMESTAMP_FORMATTER.parseMillis(zonePb.getCreationTimestamp()));
