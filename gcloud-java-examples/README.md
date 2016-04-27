@@ -9,8 +9,8 @@ Examples for gcloud-java (Java idiomatic client for [Google Cloud Platform][clou
 [![Codacy Badge](https://api.codacy.com/project/badge/grade/9da006ad7c3a4fe1abd142e77c003917)](https://www.codacy.com/app/mziccard/gcloud-java)
 [![Dependency Status](https://www.versioneye.com/user/projects/56bd8ee72a29ed002d2b0969/badge.svg?style=flat)](https://www.versioneye.com/user/projects/56bd8ee72a29ed002d2b0969)
 
--  [Homepage] (https://googlecloudplatform.github.io/gcloud-java/)
--  [Examples] (http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/cloud/examples/package-summary.html)
+-  [Homepage](https://googlecloudplatform.github.io/gcloud-java/)
+-  [Examples](http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/cloud/examples/package-summary.html)
 
 Quickstart
 ----------
@@ -37,8 +37,8 @@ To run examples from your command line:
 
 2. Set your current project using `gcloud config set project PROJECT_ID`. This step is not necessary for `ResourceManagerExample`.
 
-3. Compile using Maven: `mvn install -DskipTests -Dmaven.javadoc.skip=true -Dmaven.source.skip=true` in command line from your base project directory
-   then `cd gcloud-java-examples` and finally `mvn package appassembler:assemble -DskipTests -Dmaven.javadoc.skip=true -Dmaven.source.skip=true`.
+3. Compile using Maven: `mvn install -DskipTests` in command line from your base project directory
+   then `cd gcloud-java-examples` and finally `mvn package appassembler:assemble -DskipTests`.
 
 4. Run an example from the command line using the Maven-generated scripts.
 
@@ -159,7 +159,7 @@ Java 7 or above is required for using this client.
 Versioning
 ----------
 
-This library follows [Semantic Versioning] (http://semver.org/).
+This library follows [Semantic Versioning](http://semver.org/).
 
 It is currently in major version zero (``0.y.z``), which means that anything
 may change at any time and the public API should not be considered
