@@ -193,6 +193,9 @@ public class SerializationTest {
   private static final SchedulingOptions SCHEDULING_OPTIONS = SchedulingOptions.preemptible();
   private static final InstanceInfo INSTANCE_INFO =
       InstanceInfo.of(INSTANCE_ID, MACHINE_TYPE_ID, ATTACHED_DISK, NETWORK_INTERFACE);
+  private static final Instance INSTANCE =
+      new Instance.Builder(COMPUTE, INSTANCE_ID, MACHINE_TYPE_ID, ATTACHED_DISK, NETWORK_INTERFACE)
+          .build();
   private static final Compute.DiskTypeOption DISK_TYPE_OPTION =
       Compute.DiskTypeOption.fields();
   private static final Compute.DiskTypeFilter DISK_TYPE_FILTER =
@@ -263,6 +266,14 @@ public class SerializationTest {
       Compute.NetworkFilter.equals(Compute.NetworkField.SELF_LINK, "selfLink");
   private static final Compute.NetworkListOption NETWORK_LIST_OPTION =
       Compute.NetworkListOption.filter(NETWORK_FILTER);
+  private static final Compute.InstanceOption INSTANCE_OPTION =
+      Compute.InstanceOption.fields();
+  private static final Compute.InstanceFilter INSTANCE_FILTER =
+      Compute.InstanceFilter.equals(Compute.InstanceField.SELF_LINK, "selfLink");
+  private static final Compute.InstanceListOption INSTANCE_LIST_OPTION =
+      Compute.InstanceListOption.filter(INSTANCE_FILTER);
+  private static final Compute.InstanceAggregatedListOption INSTANCE_AGGREGATED_LIST_OPTION =
+      Compute.InstanceAggregatedListOption.filter(INSTANCE_FILTER);
 
   @Test
   public void testServiceOptions() throws Exception {
@@ -296,7 +307,7 @@ public class SerializationTest {
         STANDARD_NETWORK_CONFIGURATION, SUBNET_NETWORK_CONFIGURATION, NETWORK_INFO, NETWORK,
         ACCESS_CONFIG, NETWORK_INTERFACE, CREATE_DISK_CONFIGURATION, PERSISTENT_DISK_CONFIGURATION,
         SCRATCH_DISK_CONFIGURATION, ATTACHED_DISK, TAGS, METADATA, SERVICE_ACCOUNT,
-        SCHEDULING_OPTIONS, INSTANCE_INFO, DISK_TYPE_OPTION, DISK_TYPE_FILTER,
+        SCHEDULING_OPTIONS, INSTANCE_INFO, INSTANCE, DISK_TYPE_OPTION, DISK_TYPE_FILTER,
         DISK_TYPE_LIST_OPTION, DISK_TYPE_AGGREGATED_LIST_OPTION, MACHINE_TYPE_OPTION,
         MACHINE_TYPE_FILTER, MACHINE_TYPE_LIST_OPTION, MACHINE_TYPE_AGGREGATED_LIST_OPTION,
         REGION_OPTION, REGION_FILTER, REGION_LIST_OPTION, ZONE_OPTION, ZONE_FILTER,
@@ -305,7 +316,8 @@ public class SerializationTest {
         SNAPSHOT_OPTION, SNAPSHOT_FILTER, SNAPSHOT_LIST_OPTION, IMAGE_OPTION, IMAGE_FILTER,
         IMAGE_LIST_OPTION, DISK_OPTION, DISK_FILTER, DISK_LIST_OPTION, DISK_AGGREGATED_LIST_OPTION,
         SUBNETWORK_OPTION, SUBNETWORK_FILTER, SUBNETWORK_LIST_OPTION,
-        SUBNETWORK_AGGREGATED_LIST_OPTION, NETWORK_OPTION, NETWORK_FILTER, NETWORK_LIST_OPTION};
+        SUBNETWORK_AGGREGATED_LIST_OPTION, NETWORK_OPTION, NETWORK_FILTER, NETWORK_LIST_OPTION,
+        INSTANCE_OPTION, INSTANCE_FILTER, INSTANCE_LIST_OPTION, INSTANCE_AGGREGATED_LIST_OPTION};
     for (Serializable obj : objects) {
       Object copy = serializeAndDeserialize(obj);
       assertEquals(obj, obj);

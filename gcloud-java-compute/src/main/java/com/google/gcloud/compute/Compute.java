@@ -23,6 +23,8 @@ import com.google.common.base.MoreObjects;
 import com.google.common.collect.Sets;
 import com.google.gcloud.Page;
 import com.google.gcloud.Service;
+import com.google.gcloud.compute.AttachedDisk.PersistentDiskConfiguration;
+import com.google.gcloud.compute.NetworkInterface.AccessConfig;
 import com.google.gcloud.compute.spi.ComputeRpc;
 
 import java.io.Serializable;
@@ -514,6 +516,51 @@ public interface Compute extends Service<ComputeOptions> {
       fieldStrings.add(IPV4_RANGE.selector());
       fieldStrings.add(AUTO_CREATE_SUBNETWORKS.selector());
       for (NetworkField field : fields) {
+        fieldStrings.add(field.selector());
+      }
+      return Joiner.on(',').join(fieldStrings);
+    }
+  }
+
+  /**
+   * Fields of a Compute Engine Instance resource.
+   *
+   * @see <a href="https://cloud.google.com/compute/docs/reference/latest/instances#resource">
+   *     Network Resource</a>
+   */
+  enum InstanceField {
+    CAN_IP_FORWARD("canIpForward"),
+    CPU_PLATFORM("cpuPlatform"),
+    CREATION_TIMESTAMP("creationTimestamp"),
+    DESCRIPTION("description"),
+    DISKS("disks"),
+    ID("id"),
+    MACHINE_TYPE("machineType"),
+    METADATA("metadata"),
+    NAME("name"),
+    NETWORK_INTERFACES("networkInterfaces"),
+    SCHEDULING("scheduling"),
+    SELF_LINK("selfLink"),
+    SERVICE_ACCOUNTS("serviceAccounts"),
+    STATUS("status"),
+    STATUS_MESSAGE("statusMessage"),
+    TAGS("tags"),
+    ZONE("zone");
+
+    private final String selector;
+
+    InstanceField(String selector) {
+      this.selector = selector;
+    }
+
+    public String selector() {
+      return selector;
+    }
+
+    static String selector(InstanceField... fields) {
+      Set<String> fieldStrings = Sets.newHashSetWithExpectedSize(fields.length + 1);
+      fieldStrings.add(SELF_LINK.selector());
+      for (InstanceField field : fields) {
         fieldStrings.add(field.selector());
       }
       return Joiner.on(',').join(fieldStrings);
@@ -1042,6 +1089,54 @@ public interface Compute extends Service<ComputeOptions> {
      */
     public static NetworkFilter notEquals(NetworkField field, boolean value) {
       return new NetworkFilter(checkNotNull(field), ComparisonOperator.NE, value);
+    }
+  }
+
+  /**
+   * Class for filtering instance lists.
+   */
+  class InstanceFilter extends ListFilter {
+
+    private static final long serialVersionUID = 679008888882025686L;
+
+    private InstanceFilter(InstanceField field, ComparisonOperator operator, Object value) {
+      super(field.selector(), operator, value);
+    }
+
+    /**
+     * Returns an equals filter for the given field and string value. For string fields,
+     * {@code value} is interpreted as a regular expression using RE2 syntax. {@code value} must
+     * match the entire field.
+     *
+     * @see <a href="https://github.com/google/re2/wiki/Syntax">RE2</a>
+     */
+    public static InstanceFilter equals(InstanceField field, String value) {
+      return new InstanceFilter(checkNotNull(field), ComparisonOperator.EQ, checkNotNull(value));
+    }
+
+    /**
+     * Returns a not-equals filter for the given field and string value. For string fields,
+     * {@code value} is interpreted as a regular expression using RE2 syntax. {@code value} must
+     * match the entire field.
+     *
+     * @see <a href="https://github.com/google/re2/wiki/Syntax">RE2</a>
+     */
+    public static InstanceFilter notEquals(InstanceField field, String value) {
+      return new InstanceFilter(checkNotNull(field), ComparisonOperator.NE, checkNotNull(value));
+    }
+
+    /**
+     * Returns a equals filter for the given field and boolean value.
+     */
+    public static InstanceFilter equals(InstanceField field, boolean value) {
+      return new InstanceFilter(checkNotNull(field), ComparisonOperator.EQ, value);
+    }
+
+    /**
+     * Returns a not-equals filter for the given field and boolean value.
+     */
+    public static InstanceFilter notEquals(InstanceField field, boolean value) {
+      return new InstanceFilter(checkNotNull(field), ComparisonOperator.EQ, value);
     }
   }
 
@@ -1990,6 +2085,108 @@ public interface Compute extends Service<ComputeOptions> {
   }
 
   /**
+   * Class for specifying instance get options.
+   */
+  class InstanceOption extends Option {
+
+    private static final long serialVersionUID = -5277658025892081493L;
+
+    private InstanceOption(ComputeRpc.Option option, Object value) {
+      super(option, value);
+    }
+
+    /**
+     * Returns an option to specify the instance's fields to be returned by the RPC call. If this
+     * option is not provided, all instance's fields are returned. {@code InstanceOption.fields}
+     * can be used to specify only the fields of interest. {@link Instance#instanceId()} is always
+     * returned, even if not specified.
+     */
+    public static InstanceOption fields(InstanceField... fields) {
+      return new InstanceOption(ComputeRpc.Option.FIELDS, InstanceField.selector(fields));
+    }
+  }
+
+  /**
+   * Class for specifying instance list options.
+   */
+  class InstanceListOption extends Option {
+
+    private static final long serialVersionUID = -1096684312959047430L;
+
+    private InstanceListOption(ComputeRpc.Option option, Object value) {
+      super(option, value);
+    }
+
+    /**
+     * Returns an option to specify a filter on the instances being listed.
+     */
+    public static InstanceListOption filter(InstanceFilter filter) {
+      return new InstanceListOption(ComputeRpc.Option.FILTER, filter.toPb());
+    }
+
+    /**
+     * Returns an option to specify the maximum number of instances returned per page.
+     * {@code pageSize} must be between 0 and 500 (inclusive). If not specified 500 is used.
+     */
+    public static InstanceListOption pageSize(long pageSize) {
+      return new InstanceListOption(ComputeRpc.Option.MAX_RESULTS, pageSize);
+    }
+
+    /**
+     * Returns an option to specify the page token from which to start listing instances.
+     */
+    public static InstanceListOption pageToken(String pageToken) {
+      return new InstanceListOption(ComputeRpc.Option.PAGE_TOKEN, pageToken);
+    }
+
+    /**
+     * Returns an option to specify the instance's fields to be returned by the RPC call. If this
+     * option is not provided, all instance's fields are returned. {@code InstanceListOption.fields}
+     * can be used to specify only the fields of interest. {@link Instance#instanceId()} is always
+     * returned, even if not specified.
+     */
+    public static InstanceListOption fields(InstanceField... fields) {
+      StringBuilder builder = new StringBuilder();
+      builder.append("items(").append(InstanceField.selector(fields)).append("),nextPageToken");
+      return new InstanceListOption(ComputeRpc.Option.FIELDS, builder.toString());
+    }
+  }
+
+  /**
+   * Class for specifying instance aggregated list options.
+   */
+  class InstanceAggregatedListOption extends Option {
+
+    private static final long serialVersionUID = -2020005298975967713L;
+
+    private InstanceAggregatedListOption(ComputeRpc.Option option, Object value) {
+      super(option, value);
+    }
+
+    /**
+     * Returns an option to specify a filter on the instances being listed.
+     */
+    public static InstanceAggregatedListOption filter(InstanceFilter filter) {
+      return new InstanceAggregatedListOption(ComputeRpc.Option.FILTER, filter.toPb());
+    }
+
+    /**
+     * Returns an option to specify the maximum number of instances returned per page.
+     * {@code pageSize} must be between 0 and 500 (inclusive). If not specified 500 is used.
+     */
+    public static InstanceAggregatedListOption pageSize(long pageSize) {
+      return new InstanceAggregatedListOption(ComputeRpc.Option.MAX_RESULTS, pageSize);
+    }
+
+    /**
+     * Returns an option to specify the page token from which to start listing instances.
+     */
+    public static InstanceAggregatedListOption pageToken(String pageToken) {
+      return new InstanceAggregatedListOption(ComputeRpc.Option.PAGE_TOKEN, pageToken);
+    }
+  }
+
+  /**
    * Returns the requested disk type or {@code null} if not found.
    *
    * @throws ComputeException upon failure
@@ -2397,4 +2594,196 @@ public interface Compute extends Service<ComputeOptions> {
    * @throws ComputeException upon failure
    */
   Operation deleteNetwork(NetworkId network, OperationOption... options);
+
+  /**
+   * Creates a new instance.
+   *
+   * @return a zone operation for instance's creation
+   * @throws ComputeException upon failure
+   */
+  Operation create(InstanceInfo instance, OperationOption... options);
+
+  /**
+   * Returns the requested instance or {@code null} if not found.
+   *
+   * @throws ComputeException upon failure
+   */
+  Instance get(InstanceId instance, InstanceOption... options);
+
+  /**
+   * Lists instances for the provided zone.
+   *
+   * @throws ComputeException upon failure
+   */
+  Page<Instance> listInstances(String zone, InstanceListOption... options);
+
+  /**
+   * Lists instances for all zones.
+   *
+   * @throws ComputeException upon failure
+   */
+  Page<Instance> listInstances(InstanceAggregatedListOption... options);
+
+  /**
+   * Deletes the requested instance.
+   *
+   * @return a zone operation if the delete request was issued correctly, {@code null} if the
+   *     instance was not found
+   * @throws ComputeException upon failure
+   */
+  Operation delete(InstanceId instance, OperationOption... options);
+
+  /**
+   * Adds an access configuration to an instance's network interface.
+   *
+   * @return a zone operation if the add request was issued correctly, {@code null} if the instance
+   *     was not found
+   * @throws ComputeException upon failure
+   */
+  Operation addAccessConfig(InstanceId instance, String networkInterface, AccessConfig accessConfig,
+      OperationOption... options);
+
+  /**
+   * Attaches a persistent disk to an instance given its configuration.
+   *
+   * @return a zone operation if the attach request was issued correctly, {@code null} if the
+   *     instance was not found
+   * @throws ComputeException upon failure
+   */
+  Operation attachDisk(InstanceId instance, PersistentDiskConfiguration configuration,
+      OperationOption... options);
+
+  /**
+   * Attaches a persistent disk to an instance given the device name and its configuration.
+   *
+   * @return a zone operation if the attach request was issued correctly, {@code null} if the
+   *     instance was not found
+   * @throws ComputeException upon failure
+   */
+  Operation attachDisk(InstanceId instance, String deviceName,
+      PersistentDiskConfiguration configuration, OperationOption... options);
+
+  /**
+   * Attaches a persistent disk to an instance given the device name, its configuration and the
+   * device index.
+   *
+   * @return a zone operation if the attach request was issued correctly, {@code null} if the
+   *     instance was not found
+   * @throws ComputeException upon failure
+   */
+  Operation attachDisk(InstanceId instance, String deviceName,
+      PersistentDiskConfiguration configuration, int index, OperationOption... options);
+
+  /**
+   * Deletes an access configuration from an instance's network interface.
+   *
+   * @return a zone operation if the delete request was issued correctly, {@code null} if the
+   *     instance was not found
+   * @throws ComputeException upon failure
+   */
+  Operation deleteAccessConfig(InstanceId instance, String networkInterface, String accessConfig,
+      OperationOption... options);
+
+  /**
+   * Detaches a disk from an instance.
+   *
+   * @return a zone operation if the detach request was issued correctly, {@code null} if the
+   *     instance was not found
+   * @throws ComputeException upon failure
+   */
+  Operation detachDisk(InstanceId instance, String deviceName, OperationOption... options);
+
+  /**
+   * Returns the serial port output for the provided instance and port number. {@code port} must be
+   * between 1 and 4 (inclusive).
+   *
+   * @return the serial port output or {@code null} if the instance was not found
+   * @throws ComputeException upon failure
+   */
+  String getSerialPortOutput(InstanceId instance, int port);
+
+  /**
+   * Returns the default serial port output for the provided instance. Default serial port
+   * corresponds to port number 1.
+   *
+   * @return the serial port output or {@code null} if the instance was not found
+   * @throws ComputeException upon failure
+   */
+  String getSerialPortOutput(InstanceId instance);
+
+  /**
+   * Resets the provided instance.
+   *
+   * @return a zone operation if the reset request was issued correctly, {@code null} if the
+   *     instance was not found
+   * @throws ComputeException upon failure
+   */
+  Operation reset(InstanceId instance, OperationOption... options);
+
+  /**
+   * Sets the auto-delete flag for a disk attached to the provided instance.
+   *
+   * @return a zone operation if the flag setting request was issued correctly, {@code null} if the
+   *     instance was not found
+   * @throws ComputeException upon failure
+   */
+  Operation setDiskAutoDelete(InstanceId instance, String deviceName, boolean autoDelete,
+      OperationOption... options);
+
+  /**
+   * Sets the machine type for the provided instance. Instance must be in
+   * {@link InstanceInfo.Status#TERMINATED} state to be able to set its machine type.
+   *
+   * @return a zone operation if the set request was issued correctly, {@code null} if the instance
+   *     was not found
+   * @throws ComputeException upon failure
+   */
+  Operation setMachineType(InstanceId instance, MachineTypeId machineType,
+      OperationOption... options);
+
+  /**
+   * Sets the metadata for the provided instance.
+   *
+   * @return a zone operation if the set request was issued correctly, {@code null} if the instance
+   *     was not found
+   * @throws ComputeException upon failure
+   */
+  Operation setMetadata(InstanceId instance, Metadata metadata, OperationOption... options);
+
+  /**
+   * Sets the scheduling options for the provided instance.
+   *
+   * @return a zone operation if the set request was issued correctly, {@code null} if the instance
+   *     was not found
+   * @throws ComputeException upon failure
+   */
+  Operation setSchedulingOptions(InstanceId instance, SchedulingOptions scheduling,
+      OperationOption... options);
+
+  /**
+   * Sets the tags for the provided instance.
+   *
+   * @return a zone operation if the set request was issued correctly, {@code null} if the instance
+   *     was not found
+   * @throws ComputeException upon failure
+   */
+  Operation setTags(InstanceId instance, Tags tags, OperationOption... options);
+
+  /**
+   * Starts the provided instance.
+   *
+   * @return a zone operation if the start request was issued correctly, {@code null} if the
+   *     instance was not found
+   * @throws ComputeException upon failure
+   */
+  Operation start(InstanceId instance, OperationOption... options);
+
+  /**
+   * Stops the provided instance.
+   *
+   * @return a zone operation if the stop request was issued correctly, {@code null} if the instance
+   *     was not found
+   * @throws ComputeException upon failure
+   */
+  Operation stop(InstanceId instance, OperationOption... options);
 }

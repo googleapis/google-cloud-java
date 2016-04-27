@@ -16,18 +16,24 @@
 
 package com.google.gcloud.compute.spi;
 
+import com.google.api.services.compute.model.AccessConfig;
 import com.google.api.services.compute.model.Address;
+import com.google.api.services.compute.model.AttachedDisk;
 import com.google.api.services.compute.model.DeprecationStatus;
 import com.google.api.services.compute.model.Disk;
 import com.google.api.services.compute.model.DiskType;
 import com.google.api.services.compute.model.Image;
+import com.google.api.services.compute.model.Instance;
 import com.google.api.services.compute.model.License;
 import com.google.api.services.compute.model.MachineType;
+import com.google.api.services.compute.model.Metadata;
 import com.google.api.services.compute.model.Network;
 import com.google.api.services.compute.model.Operation;
 import com.google.api.services.compute.model.Region;
+import com.google.api.services.compute.model.Scheduling;
 import com.google.api.services.compute.model.Snapshot;
 import com.google.api.services.compute.model.Subnetwork;
+import com.google.api.services.compute.model.Tags;
 import com.google.api.services.compute.model.Zone;
 import com.google.gcloud.compute.ComputeException;
 
@@ -496,4 +502,171 @@ public interface ComputeRpc {
    * @throws ComputeException upon failure
    */
   Operation deleteNetwork(String network, Map<Option, ?> options);
+
+  /**
+   * Creates a new instance.
+   *
+   * @return a zone operation for instance's creation
+   * @throws ComputeException upon failure or if the zone does not exist
+   */
+  Operation createInstance(String zone, Instance instance, Map<Option, ?> options);
+
+  /**
+   * Returns the requested instance or {@code null} if not found.
+   *
+   * @throws ComputeException upon failure or if the zone does not exist
+   */
+  Instance getInstance(String zone, String instance, Map<Option, ?> options);
+
+  /**
+   * Lists instances for the provided zone.
+   *
+   * @throws ComputeException upon failure or if the zone does not exist
+   */
+  Tuple<String, Iterable<Instance>> listInstances(String zone, Map<Option, ?> options);
+
+  /**
+   * Lists instances.
+   *
+   * @throws ComputeException upon failure
+   */
+  Tuple<String, Iterable<Instance>> listInstances(Map<Option, ?> options);
+
+  /**
+   * Deletes the requested instance.
+   *
+   * @return a zone operation if the delete request was issued correctly, {@code null} if the
+   *     instance was not found
+   * @throws ComputeException upon failure or if the zone does not exist
+   */
+  Operation deleteInstance(String zone, String instance, Map<Option, ?> options);
+
+  /**
+   * Adds an access configuration to an instance's network interface.
+   *
+   * @return a zone operation if the add request was issued correctly, {@code null} if the instance
+   *     was not found
+   * @throws ComputeException upon failure
+   */
+  Operation addAccessConfig(String zone, String instance, String networkInterface,
+      AccessConfig accessConfig, Map<Option, ?> options);
+
+  /**
+   * Attaches a disk to an instance.
+   *
+   * @return a zone operation if the attach request was issued correctly, {@code null} if the
+   *     instance was not found
+   * @throws ComputeException upon failure
+   */
+  Operation attachDisk(String zone, String instance, AttachedDisk attachedDisk,
+      Map<Option, ?> options);
+
+  /**
+   * Deletes an access configuration from an instance's network interface.
+   *
+   * @return a zone operation if the delete request was issued correctly, {@code null} if the
+   *     instance was not found
+   * @throws ComputeException upon failure
+   */
+  Operation deleteAccessConfig(String zone, String instance, String networkInterface,
+      String accessConfig, Map<Option, ?> options);
+
+  /**
+   * Detaches a disk from an instance.
+   *
+   * @return a zone operation if the detach request was issued correctly, {@code null} if the
+   *     instance was not found
+   * @throws ComputeException upon failure
+   */
+  Operation detachDisk(String zone, String instance, String deviceName, Map<Option, ?> options);
+
+  /**
+   * Returns the serial port output for the provided instance and port number. {@code port} must be
+   * between 1 and 4 (inclusive). If {@code port} is {@code null} output for the default port (1) is
+   * returned.
+   *
+   * @return the serial port output or {@code null} if the instance was not found
+   * @throws ComputeException upon failure
+   */
+  String getSerialPortOutput(String zone, String instance, Integer port, Map<Option, ?> options);
+
+  /**
+   * Resets the provided instance.
+   *
+   * @return a zone operation if the reset request was issued correctly, {@code null} if the
+   *     instance was not found
+   * @throws ComputeException upon failure
+   */
+  Operation reset(String zone, String instance, Map<Option, ?> options);
+
+  /**
+   * Sets the auto-delete flag for a disk attached to the provided instance.
+   *
+   * @return a zone operation if the flag setting request was issued correctly, {@code null} if the
+   *     instance was not found
+   * @throws ComputeException upon failure
+   */
+  Operation setDiskAutoDelete(String zone, String instance, String deviceName, boolean autoDelete,
+      Map<Option, ?> options);
+
+  /**
+   * Sets the machine type for the provided instance. Instance must be in {@code TERMINATED} state
+   * to be able to set its machine type.
+   *
+   * @param zone name of the zone in which the instance resides
+   * @param instance name of the instance
+   * @param machineTypeUrl full or partial URL of the machine type resource. For example
+   *     {@code zones/us-central1-f/machineTypes/n1-standard-1}.
+   * @return a zone operation if the set request was issued correctly, {@code null} if the instance
+   *     was not found
+   * @throws ComputeException upon failure
+   */
+  Operation setMachineType(String zone, String instance, String machineTypeUrl,
+      Map<Option, ?> options);
+
+  /**
+   * Sets the metadata for the provided instance.
+   *
+   * @return a zone operation if the set request was issued correctly, {@code null} if the instance
+   *     was not found
+   * @throws ComputeException upon failure
+   */
+  Operation setMetadata(String zone, String instance, Metadata metadata, Map<Option, ?> options);
+
+  /**
+   * Sets the scheduling options for the provided instance.
+   *
+   * @return a zone operation if the set request was issued correctly, {@code null} if the instance
+   *     was not found
+   * @throws ComputeException upon failure
+   */
+  Operation setScheduling(String zone, String instance, Scheduling scheduling,
+      Map<Option, ?> options);
+
+  /**
+   * Sets the tags for the provided instance.
+   *
+   * @return a zone operation if the set request was issued correctly, {@code null} if the instance
+   *     was not found
+   * @throws ComputeException upon failure
+   */
+  Operation setTags(String zone, String instance, Tags tags, Map<Option, ?> options);
+
+  /**
+   * Starts the provided instance.
+   *
+   * @return a zone operation if the start request was issued correctly, {@code null} if the
+   *     instance was not found
+   * @throws ComputeException upon failure
+   */
+  Operation start(String zone, String instance, Map<Option, ?> options);
+
+  /**
+   * Stops the provided instance.
+   *
+   * @return a zone operation if the stop request was issued correctly, {@code null} if the instance
+   *     was not found
+   * @throws ComputeException upon failure
+   */
+  Operation stop(String zone, String instance, Map<Option, ?> options);
 }
