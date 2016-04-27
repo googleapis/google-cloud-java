@@ -37,8 +37,8 @@ To run examples from your command line:
 
 2. Set your current project using `gcloud config set project PROJECT_ID`. This step is not necessary for `ResourceManagerExample`.
 
-3. Compile using Maven: `mvn install -DskipTests -Dmaven.javadoc.skip=true -Dmaven.source.skip=true` in command line from your base project directory
-   then `cd gcloud-java-examples` and finally `mvn package appassembler:assemble -DskipTests -Dmaven.javadoc.skip=true -Dmaven.source.skip=true`.
+3. Compile using Maven: `mvn install -DskipTests` in command line from your base project directory
+   then `cd gcloud-java-examples` and finally `mvn package appassembler:assemble -DskipTests`.
 
 4. Run an example from the command line using the Maven-generated scripts.
 
