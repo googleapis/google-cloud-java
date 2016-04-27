@@ -59,7 +59,7 @@ public class MachineType implements Serializable {
   private static final long serialVersionUID = -4210962597502860450L;
 
   private final MachineTypeId machineTypeId;
-  private final String id;
+  private final String generatedId;
   private final Long creationTimestamp;
   private final String description;
   private final Integer cpus;
@@ -72,7 +72,7 @@ public class MachineType implements Serializable {
   static final class Builder {
 
     private MachineTypeId machineTypeId;
-    private String id;
+    private String generatedId;
     private Long creationTimestamp;
     private String description;
     private Integer cpus;
@@ -89,8 +89,8 @@ public class MachineType implements Serializable {
       return this;
     }
 
-    Builder id(String id) {
-      this.id = id;
+    Builder generatedId(String generatedId) {
+      this.generatedId = generatedId;
       return this;
     }
 
@@ -141,7 +141,7 @@ public class MachineType implements Serializable {
 
   private MachineType(Builder builder) {
     this.machineTypeId = builder.machineTypeId;
-    this.id = builder.id;
+    this.generatedId = builder.generatedId;
     this.creationTimestamp = builder.creationTimestamp;
     this.description = builder.description;
     this.cpus = builder.cpus;
@@ -160,10 +160,10 @@ public class MachineType implements Serializable {
   }
 
   /**
-   * Returns the unique identifier for the machine type; defined by the service.
+   * Returns the service-generated unique identifier for the machine type.
    */
-  public String id() {
-    return id;
+  public String generatedId() {
+    return generatedId;
   }
 
   /**
@@ -229,7 +229,7 @@ public class MachineType implements Serializable {
   public String toString() {
     return MoreObjects.toStringHelper(this)
         .add("machineTypeId", machineTypeId)
-        .add("id", id)
+        .add("generatedId", generatedId)
         .add("creationTimestamp", creationTimestamp)
         .add("description", description)
         .add("cpus", cpus)
@@ -254,8 +254,8 @@ public class MachineType implements Serializable {
   com.google.api.services.compute.model.MachineType toPb() {
     com.google.api.services.compute.model.MachineType machineTypePb =
         new com.google.api.services.compute.model.MachineType();
-    if (id != null) {
-      machineTypePb.setId(new BigInteger(id));
+    if (generatedId != null) {
+      machineTypePb.setId(new BigInteger(generatedId));
     }
     if (creationTimestamp != null) {
       machineTypePb.setCreationTimestamp(TIMESTAMP_FORMATTER.print(creationTimestamp));
@@ -291,7 +291,7 @@ public class MachineType implements Serializable {
     Builder builder = builder();
     builder.machineTypeId(MachineTypeId.fromUrl(machineTypePb.getSelfLink()));
     if (machineTypePb.getId() != null) {
-      builder.id(machineTypePb.getId().toString());
+      builder.generatedId(machineTypePb.getId().toString());
     }
     if (machineTypePb.getCreationTimestamp() != null) {
       builder.creationTimestamp(

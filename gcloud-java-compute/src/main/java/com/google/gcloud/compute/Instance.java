@@ -70,8 +70,8 @@ public class Instance extends InstanceInfo {
     }
 
     @Override
-    Builder id(String id) {
-      this.infoBuilder.id(id);
+    Builder generatedId(String generatedId) {
+      this.infoBuilder.generatedId(generatedId);
       return this;
     }
 

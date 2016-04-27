@@ -60,7 +60,7 @@ public class NetworkInfo implements Serializable {
   private static final long serialVersionUID = 4336912581538114026L;
   private static final DateTimeFormatter TIMESTAMP_FORMATTER = ISODateTimeFormat.dateTime();
 
-  private final String id;
+  private final String generatedId;
   private final NetworkId networkId;
   private final Long creationTimestamp;
   private final String description;
@@ -71,7 +71,7 @@ public class NetworkInfo implements Serializable {
    */
   public abstract static class Builder {
 
-    abstract Builder id(String id);
+    abstract Builder generatedId(String generatedId);
 
     abstract Builder creationTimestamp(Long creationTimestamp);
 
@@ -101,7 +101,7 @@ public class NetworkInfo implements Serializable {
 
   static final class BuilderImpl extends Builder {
 
-    private String id;
+    private String generatedId;
     private NetworkId networkId;
     private Long creationTimestamp;
     private String description;
@@ -113,7 +113,7 @@ public class NetworkInfo implements Serializable {
     }
 
     BuilderImpl(NetworkInfo networkInfo) {
-      this.id = networkInfo.id;
+      this.generatedId = networkInfo.generatedId;
       this.creationTimestamp = networkInfo.creationTimestamp;
       this.networkId = networkInfo.networkId;
       this.description = networkInfo.description;
@@ -122,7 +122,7 @@ public class NetworkInfo implements Serializable {
 
     BuilderImpl(Network networkPb) {
       if (networkPb.getId() != null) {
-        this.id = networkPb.getId().toString();
+        this.generatedId = networkPb.getId().toString();
       }
       if (networkPb.getCreationTimestamp() != null) {
         this.creationTimestamp = TIMESTAMP_FORMATTER.parseMillis(networkPb.getCreationTimestamp());
@@ -133,8 +133,8 @@ public class NetworkInfo implements Serializable {
     }
 
     @Override
-    BuilderImpl id(String id) {
-      this.id = id;
+    BuilderImpl generatedId(String generatedId) {
+      this.generatedId = generatedId;
       return this;
     }
 
@@ -169,7 +169,7 @@ public class NetworkInfo implements Serializable {
   }
 
   NetworkInfo(BuilderImpl builder) {
-    this.id = builder.id;
+    this.generatedId = builder.generatedId;
     this.creationTimestamp = builder.creationTimestamp;
     this.networkId = builder.networkId;
     this.description = builder.description;
@@ -177,10 +177,10 @@ public class NetworkInfo implements Serializable {
   }
 
   /**
-   * Returns the unique identifier for the subnetwork; defined by the service.
+   * Returns the service-generated unique identifier for the network.
    */
-  public String id() {
-    return id;
+  public String generatedId() {
+    return generatedId;
   }
 
   /**
@@ -224,7 +224,7 @@ public class NetworkInfo implements Serializable {
   @Override
   public String toString() {
     return MoreObjects.toStringHelper(this)
-        .add("id", id)
+        .add("generatedId", generatedId)
         .add("creationTimestamp", creationTimestamp)
         .add("networkId", networkId)
         .add("description", description)
@@ -234,7 +234,7 @@ public class NetworkInfo implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, networkId, creationTimestamp, description, configuration);
+    return Objects.hash(generatedId, networkId, creationTimestamp, description, configuration);
   }
 
   @Override
@@ -253,8 +253,8 @@ public class NetworkInfo implements Serializable {
 
   Network toPb() {
     Network networkPb = configuration.toPb();
-    if (id != null) {
-      networkPb.setId(new BigInteger(id));
+    if (generatedId != null) {
+      networkPb.setId(new BigInteger(generatedId));
     }
     if (creationTimestamp != null) {
       networkPb.setCreationTimestamp(TIMESTAMP_FORMATTER.print(creationTimestamp));

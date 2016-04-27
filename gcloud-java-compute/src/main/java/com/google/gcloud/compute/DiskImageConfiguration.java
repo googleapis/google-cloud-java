@@ -95,8 +95,9 @@ public class DiskImageConfiguration extends ImageConfiguration {
   }
 
   /**
-   * Returns the id of the disk used to create this image. This value may be used to determine
-   * whether the image was taken from the current or a previous instance of a given disk name.
+   * Returns the service-generated unique id of the disk used to create this image. This value may
+   * be used to determine whether the image was taken from the current or a previous instance of a
+   * given disk name.
    */
   public String sourceDiskId() {
     return sourceDiskId;

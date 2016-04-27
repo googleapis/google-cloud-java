@@ -35,7 +35,7 @@ import java.util.List;
 
 public class NetworkTest {
 
-  private static final String ID = "42";
+  private static final String GENERATED_ID = "42";
   private static final Long CREATION_TIMESTAMP = 1453293540000L;
   private static final String DESCRIPTION = "description";
   private static final SubnetworkId SUBNETWORK1 = SubnetworkId.of("project", "region1", "network1");
@@ -62,13 +62,13 @@ public class NetworkTest {
     replay(serviceMockReturnsOptions);
     standardNetwork =
         new Network.Builder(serviceMockReturnsOptions, NETWORK_ID, NETWORK_CONFIGURATION)
-            .id(ID)
+            .generatedId(GENERATED_ID)
             .creationTimestamp(CREATION_TIMESTAMP)
             .description(DESCRIPTION)
             .build();
     subnetNetwork =
         new Network.Builder(serviceMockReturnsOptions, NETWORK_ID, SUBNET_NETWORK_CONFIGURATION)
-            .id(ID)
+            .generatedId(GENERATED_ID)
             .creationTimestamp(CREATION_TIMESTAMP)
             .description(DESCRIPTION)
             .build();
@@ -77,7 +77,7 @@ public class NetworkTest {
 
   private void initializeNetwork() {
     network = new Network.Builder(compute, NETWORK_ID, NETWORK_CONFIGURATION)
-        .id(ID)
+        .generatedId(GENERATED_ID)
         .creationTimestamp(CREATION_TIMESTAMP)
         .description(DESCRIPTION)
         .build();
@@ -105,13 +105,13 @@ public class NetworkTest {
   @Test
   public void testBuilder() {
     initializeExpectedNetwork(2);
-    assertEquals(ID, standardNetwork.id());
+    assertEquals(GENERATED_ID, standardNetwork.generatedId());
     assertEquals(NETWORK_ID, standardNetwork.networkId());
     assertEquals(CREATION_TIMESTAMP, standardNetwork.creationTimestamp());
     assertEquals(DESCRIPTION, standardNetwork.description());
     assertEquals(NETWORK_CONFIGURATION, standardNetwork.configuration());
     assertSame(serviceMockReturnsOptions, standardNetwork.compute());
-    assertEquals(ID, subnetNetwork.id());
+    assertEquals(GENERATED_ID, subnetNetwork.generatedId());
     assertEquals(NETWORK_ID, subnetNetwork.networkId());
     assertEquals(CREATION_TIMESTAMP, subnetNetwork.creationTimestamp());
     assertEquals(DESCRIPTION, subnetNetwork.description());
@@ -249,7 +249,7 @@ public class NetworkTest {
   public void compareNetwork(Network expected, Network value) {
     assertEquals(expected, value);
     assertEquals(expected.compute().options(), value.compute().options());
-    assertEquals(expected.id(), value.id());
+    assertEquals(expected.generatedId(), value.generatedId());
     assertEquals(expected.networkId(), value.networkId());
     assertEquals(expected.creationTimestamp(), value.creationTimestamp());
     assertEquals(expected.description(), value.description());

@@ -119,7 +119,7 @@ public class ITComputeTest {
   @Test
   public void testGetDiskType() {
     DiskType diskType = compute.getDiskType(ZONE, DISK_TYPE);
-    // assertNotNull(diskType.id());
+    // assertNotNull(diskType.generatedId());
     assertEquals(ZONE, diskType.diskTypeId().zone());
     assertEquals(DISK_TYPE, diskType.diskTypeId().type());
     assertNotNull(diskType.creationTimestamp());
@@ -132,7 +132,7 @@ public class ITComputeTest {
   public void testGetDiskTypeWithSelectedFields() {
     DiskType diskType = compute.getDiskType(ZONE, DISK_TYPE,
         Compute.DiskTypeOption.fields(Compute.DiskTypeField.CREATION_TIMESTAMP));
-    // assertNotNull(diskType.id());
+    // assertNotNull(diskType.generatedId());
     assertEquals(ZONE, diskType.diskTypeId().zone());
     assertEquals(DISK_TYPE, diskType.diskTypeId().type());
     assertNotNull(diskType.creationTimestamp());
@@ -148,7 +148,7 @@ public class ITComputeTest {
     assertTrue(diskTypeIterator.hasNext());
     while (diskTypeIterator.hasNext()) {
       DiskType diskType = diskTypeIterator.next();
-      // assertNotNull(diskType.id());
+      // assertNotNull(diskType.generatedId());
       assertNotNull(diskType.diskTypeId());
       assertEquals(ZONE, diskType.diskTypeId().zone());
       assertNotNull(diskType.creationTimestamp());
@@ -166,7 +166,7 @@ public class ITComputeTest {
     assertTrue(diskTypeIterator.hasNext());
     while (diskTypeIterator.hasNext()) {
       DiskType diskType = diskTypeIterator.next();
-      assertNull(diskType.id());
+      assertNull(diskType.generatedId());
       assertNotNull(diskType.diskTypeId());
       assertEquals(ZONE, diskType.diskTypeId().zone());
       assertNotNull(diskType.creationTimestamp());
@@ -185,7 +185,7 @@ public class ITComputeTest {
     while (diskTypeIterator.hasNext()) {
       DiskType diskType = diskTypeIterator.next();
       // todo(mziccard): uncomment or remove once #695 is closed
-      // assertNotNull(diskType.id());
+      // assertNotNull(diskType.generatedId());
       assertNotNull(diskType.diskTypeId());
       assertEquals(ZONE, diskType.diskTypeId().zone());
       assertNotNull(diskType.creationTimestamp());
@@ -202,7 +202,7 @@ public class ITComputeTest {
     assertTrue(diskTypeIterator.hasNext());
     while (diskTypeIterator.hasNext()) {
       DiskType diskType = diskTypeIterator.next();
-      // assertNotNull(diskType.id());
+      // assertNotNull(diskType.generatedId());
       assertNotNull(diskType.diskTypeId());
       assertNotNull(diskType.creationTimestamp());
       assertNotNull(diskType.description());
@@ -220,7 +220,7 @@ public class ITComputeTest {
     while (diskTypeIterator.hasNext()) {
       DiskType diskType = diskTypeIterator.next();
       // todo(mziccard): uncomment or remove once #695 is closed
-      // assertNotNull(diskType.id());
+      // assertNotNull(diskType.generatedId());
       assertNotNull(diskType.diskTypeId());
       assertNotNull(diskType.creationTimestamp());
       assertNotNull(diskType.description());
@@ -234,7 +234,7 @@ public class ITComputeTest {
     MachineType machineType = compute.getMachineType(ZONE, MACHINE_TYPE);
     assertEquals(ZONE, machineType.machineTypeId().zone());
     assertEquals(MACHINE_TYPE, machineType.machineTypeId().type());
-    assertNotNull(machineType.id());
+    assertNotNull(machineType.generatedId());
     assertNotNull(machineType.creationTimestamp());
     assertNotNull(machineType.description());
     assertNotNull(machineType.cpus());
@@ -249,7 +249,7 @@ public class ITComputeTest {
         Compute.MachineTypeOption.fields(Compute.MachineTypeField.ID));
     assertEquals(ZONE, machineType.machineTypeId().zone());
     assertEquals(MACHINE_TYPE, machineType.machineTypeId().type());
-    assertNotNull(machineType.id());
+    assertNotNull(machineType.generatedId());
     assertNull(machineType.creationTimestamp());
     assertNull(machineType.description());
     assertNull(machineType.cpus());
@@ -267,7 +267,7 @@ public class ITComputeTest {
       MachineType machineType = machineTypeIterator.next();
       assertNotNull(machineType.machineTypeId());
       assertEquals(ZONE, machineType.machineTypeId().zone());
-      assertNotNull(machineType.id());
+      assertNotNull(machineType.generatedId());
       assertNotNull(machineType.creationTimestamp());
       assertNotNull(machineType.description());
       assertNotNull(machineType.cpus());
@@ -287,7 +287,7 @@ public class ITComputeTest {
       MachineType machineType = machineTypeIterator.next();
       assertNotNull(machineType.machineTypeId());
       assertEquals(ZONE, machineType.machineTypeId().zone());
-      assertNull(machineType.id());
+      assertNull(machineType.generatedId());
       assertNotNull(machineType.creationTimestamp());
       assertNull(machineType.description());
       assertNull(machineType.cpus());
@@ -308,7 +308,7 @@ public class ITComputeTest {
       MachineType machineType = machineTypeIterator.next();
       assertNotNull(machineType.machineTypeId());
       assertEquals(ZONE, machineType.machineTypeId().zone());
-      assertNotNull(machineType.id());
+      assertNotNull(machineType.generatedId());
       assertNotNull(machineType.creationTimestamp());
       assertNotNull(machineType.description());
       assertNotNull(machineType.cpus());
@@ -327,7 +327,7 @@ public class ITComputeTest {
     while (machineTypeIterator.hasNext()) {
       MachineType machineType = machineTypeIterator.next();
       assertNotNull(machineType.machineTypeId());
-      assertNotNull(machineType.id());
+      assertNotNull(machineType.generatedId());
       assertNotNull(machineType.creationTimestamp());
       assertNotNull(machineType.description());
       assertNotNull(machineType.cpus());
@@ -347,7 +347,7 @@ public class ITComputeTest {
     while (machineTypeIterator.hasNext()) {
       MachineType machineType = machineTypeIterator.next();
       assertNotNull(machineType.machineTypeId());
-      assertNotNull(machineType.id());
+      assertNotNull(machineType.generatedId());
       assertNotNull(machineType.creationTimestamp());
       assertNotNull(machineType.description());
       assertNotNull(machineType.cpus());
@@ -378,7 +378,7 @@ public class ITComputeTest {
     assertEquals(REGION, region.regionId().region());
     assertNotNull(region.description());
     assertNotNull(region.creationTimestamp());
-    assertNotNull(region.id());
+    assertNotNull(region.generatedId());
     assertNotNull(region.quotas());
     assertNotNull(region.status());
     assertNotNull(region.zones());
@@ -388,7 +388,7 @@ public class ITComputeTest {
   public void testGetRegionWithSelectedFields() {
     Region region = compute.getRegion(REGION, Compute.RegionOption.fields(Compute.RegionField.ID));
     assertEquals(REGION, region.regionId().region());
-    assertNotNull(region.id());
+    assertNotNull(region.generatedId());
     assertNull(region.description());
     assertNull(region.creationTimestamp());
     assertNull(region.quotas());
@@ -405,7 +405,7 @@ public class ITComputeTest {
       assertNotNull(region.regionId());
       assertNotNull(region.description());
       assertNotNull(region.creationTimestamp());
-      assertNotNull(region.id());
+      assertNotNull(region.generatedId());
       assertNotNull(region.quotas());
       assertNotNull(region.status());
       assertNotNull(region.zones());
@@ -422,7 +422,7 @@ public class ITComputeTest {
       assertNotNull(region.regionId());
       assertNull(region.description());
       assertNull(region.creationTimestamp());
-      assertNotNull(region.id());
+      assertNotNull(region.generatedId());
       assertNull(region.quotas());
       assertNull(region.status());
       assertNull(region.zones());
@@ -442,7 +442,7 @@ public class ITComputeTest {
   public void testGetZone() {
     Zone zone = compute.getZone(ZONE);
     assertEquals(ZONE, zone.zoneId().zone());
-    assertNotNull(zone.id());
+    assertNotNull(zone.generatedId());
     assertNotNull(zone.creationTimestamp());
     assertNotNull(zone.description());
     assertNotNull(zone.status());
@@ -453,7 +453,7 @@ public class ITComputeTest {
   public void testGetZoneWithSelectedFields() {
     Zone zone = compute.getZone(ZONE, Compute.ZoneOption.fields(Compute.ZoneField.ID));
     assertEquals(ZONE, zone.zoneId().zone());
-    assertNotNull(zone.id());
+    assertNotNull(zone.generatedId());
     assertNull(zone.creationTimestamp());
     assertNull(zone.description());
     assertNull(zone.status());
@@ -467,7 +467,7 @@ public class ITComputeTest {
     while (zoneIterator.hasNext()) {
       Zone zone = zoneIterator.next();
       assertNotNull(zone.zoneId());
-      assertNotNull(zone.id());
+      assertNotNull(zone.generatedId());
       assertNotNull(zone.creationTimestamp());
       assertNotNull(zone.description());
       assertNotNull(zone.status());
@@ -483,7 +483,7 @@ public class ITComputeTest {
     while (zoneIterator.hasNext()) {
       Zone zone = zoneIterator.next();
       assertNotNull(zone.zoneId());
-      assertNull(zone.id());
+      assertNull(zone.generatedId());
       assertNotNull(zone.creationTimestamp());
       assertNull(zone.description());
       assertNull(zone.status());
@@ -506,7 +506,7 @@ public class ITComputeTest {
     Iterator<Operation> operationIterator = operationPage.iterateAll();
     while (operationIterator.hasNext()) {
       Operation operation = operationIterator.next();
-      assertNotNull(operation.id());
+      assertNotNull(operation.generatedId());
       assertNotNull(operation.operationId());
       // todo(mziccard): uncomment or remove once #727 is closed
       // assertNotNull(operation.creationTimestamp());
@@ -523,7 +523,7 @@ public class ITComputeTest {
     Iterator<Operation> operationIterator = operationPage.iterateAll();
     while (operationIterator.hasNext()) {
       Operation operation = operationIterator.next();
-      assertNotNull(operation.id());
+      assertNotNull(operation.generatedId());
       assertNotNull(operation.operationId());
       assertNull(operation.operationType());
       assertNull(operation.targetLink());
@@ -549,7 +549,7 @@ public class ITComputeTest {
     Iterator<Operation> operationIterator = operationPage.iterateAll();
     while (operationIterator.hasNext()) {
       Operation operation = operationIterator.next();
-      assertNotNull(operation.id());
+      assertNotNull(operation.generatedId());
       assertNotNull(operation.operationId());
       // todo(mziccard): uncomment or remove once #727 is closed
       // assertNotNull(operation.creationTimestamp());
@@ -565,7 +565,7 @@ public class ITComputeTest {
     Iterator<Operation> operationIterator = operationPage.iterateAll();
     while (operationIterator.hasNext()) {
       Operation operation = operationIterator.next();
-      assertNotNull(operation.id());
+      assertNotNull(operation.generatedId());
       assertNotNull(operation.operationId());
       assertEquals(REGION, operation.<RegionOperationId>operationId().region());
       // todo(mziccard): uncomment or remove once #727 is closed
@@ -583,7 +583,7 @@ public class ITComputeTest {
     Iterator<Operation> operationIterator = operationPage.iterateAll();
     while (operationIterator.hasNext()) {
       Operation operation = operationIterator.next();
-      assertNotNull(operation.id());
+      assertNotNull(operation.generatedId());
       assertNotNull(operation.operationId());
       assertEquals(REGION, operation.<RegionOperationId>operationId().region());
       assertNull(operation.operationType());
@@ -611,7 +611,7 @@ public class ITComputeTest {
     Iterator<Operation> operationIterator = operationPage.iterateAll();
     while (operationIterator.hasNext()) {
       Operation operation = operationIterator.next();
-      assertNotNull(operation.id());
+      assertNotNull(operation.generatedId());
       assertNotNull(operation.operationId());
       assertEquals(REGION, operation.<RegionOperationId>operationId().region());
       // todo(mziccard): uncomment or remove once #727 is closed
@@ -628,7 +628,7 @@ public class ITComputeTest {
     Iterator<Operation> operationIterator = operationPage.iterateAll();
     while (operationIterator.hasNext()) {
       Operation operation = operationIterator.next();
-      assertNotNull(operation.id());
+      assertNotNull(operation.generatedId());
       assertNotNull(operation.operationId());
       assertEquals(ZONE, operation.<ZoneOperationId>operationId().zone());
       // todo(mziccard): uncomment or remove once #727 is closed
@@ -646,7 +646,7 @@ public class ITComputeTest {
     Iterator<Operation> operationIterator = operationPage.iterateAll();
     while (operationIterator.hasNext()) {
       Operation operation = operationIterator.next();
-      assertNotNull(operation.id());
+      assertNotNull(operation.generatedId());
       assertNotNull(operation.operationId());
       assertEquals(ZONE, operation.<ZoneOperationId>operationId().zone());
       assertNull(operation.operationType());
@@ -674,7 +674,7 @@ public class ITComputeTest {
     Iterator<Operation> operationIterator = operationPage.iterateAll();
     while (operationIterator.hasNext()) {
       Operation operation = operationIterator.next();
-      assertNotNull(operation.id());
+      assertNotNull(operation.generatedId());
       assertNotNull(operation.operationId());
       assertEquals(ZONE, operation.<ZoneOperationId>operationId().zone());
       // todo(mziccard): uncomment or remove once #727 is closed
@@ -702,7 +702,7 @@ public class ITComputeTest {
     assertEquals(addressId.address(), remoteAddress.addressId().address());
     assertNotNull(remoteAddress.address());
     assertNotNull(remoteAddress.creationTimestamp());
-    assertNotNull(remoteAddress.id());
+    assertNotNull(remoteAddress.generatedId());
     assertNotNull(remoteAddress.status());
     // test get with selected fields
     remoteAddress = compute.get(addressId, Compute.AddressOption.fields());
@@ -712,7 +712,7 @@ public class ITComputeTest {
     assertEquals(addressId.address(), remoteAddress.addressId().address());
     assertNull(remoteAddress.address());
     assertNull(remoteAddress.creationTimestamp());
-    assertNull(remoteAddress.id());
+    assertNull(remoteAddress.generatedId());
     operation = remoteAddress.delete();
     while (!operation.isDone()) {
       Thread.sleep(1000L);
@@ -750,7 +750,7 @@ public class ITComputeTest {
       assertTrue(addressSet.contains(address.addressId().address()));
       assertNotNull(address.address());
       assertNotNull(address.creationTimestamp());
-      assertNotNull(address.id());
+      assertNotNull(address.generatedId());
       count++;
     }
     assertEquals(2, count);
@@ -766,7 +766,7 @@ public class ITComputeTest {
       assertTrue(addressSet.contains(address.addressId().address()));
       assertNotNull(address.address());
       assertNull(address.creationTimestamp());
-      assertNull(address.id());
+      assertNull(address.generatedId());
       assertNull(address.status());
       assertNull(address.usage());
       count++;
@@ -803,7 +803,7 @@ public class ITComputeTest {
       assertTrue(addressSet.contains(address.addressId().address()));
       assertNotNull(address.address());
       assertNotNull(address.creationTimestamp());
-      assertNotNull(address.id());
+      assertNotNull(address.generatedId());
       count++;
     }
     assertEquals(2, count);
@@ -827,7 +827,7 @@ public class ITComputeTest {
     assertEquals(addressId.address(), remoteAddress.addressId().address());
     assertNotNull(remoteAddress.address());
     assertNotNull(remoteAddress.creationTimestamp());
-    assertNotNull(remoteAddress.id());
+    assertNotNull(remoteAddress.generatedId());
     assertNotNull(remoteAddress.status());
     // test get with selected fields
     remoteAddress = compute.get(addressId, Compute.AddressOption.fields());
@@ -836,7 +836,7 @@ public class ITComputeTest {
     assertEquals(addressId.address(), remoteAddress.addressId().address());
     assertNull(remoteAddress.address());
     assertNull(remoteAddress.creationTimestamp());
-    assertNull(remoteAddress.id());
+    assertNull(remoteAddress.generatedId());
     operation = remoteAddress.delete();
     while (!operation.isDone()) {
       Thread.sleep(1000L);
@@ -873,7 +873,7 @@ public class ITComputeTest {
       assertTrue(addressSet.contains(address.addressId().address()));
       assertNotNull(address.address());
       assertNotNull(address.creationTimestamp());
-      assertNotNull(address.id());
+      assertNotNull(address.generatedId());
       count++;
     }
     assertEquals(2, count);
@@ -888,7 +888,7 @@ public class ITComputeTest {
       assertTrue(addressSet.contains(address.addressId().address()));
       assertNotNull(address.address());
       assertNull(address.creationTimestamp());
-      assertNull(address.id());
+      assertNull(address.generatedId());
       assertNull(address.status());
       assertNull(address.usage());
       count++;
@@ -914,7 +914,7 @@ public class ITComputeTest {
     assertEquals(ZONE, remoteDisk.diskId().zone());
     assertEquals(diskId.disk(), remoteDisk.diskId().disk());
     assertNotNull(remoteDisk.creationTimestamp());
-    assertNotNull(remoteDisk.id());
+    assertNotNull(remoteDisk.generatedId());
     assertTrue(remoteDisk.configuration() instanceof StandardDiskConfiguration);
     StandardDiskConfiguration remoteConfiguration = remoteDisk.configuration();
     assertEquals(100L, (long) remoteConfiguration.sizeGb());
@@ -932,7 +932,7 @@ public class ITComputeTest {
     assertEquals(ZONE, remoteDisk.diskId().zone());
     assertEquals(diskId.disk(), remoteDisk.diskId().disk());
     assertNull(remoteDisk.creationTimestamp());
-    assertNull(remoteDisk.id());
+    assertNull(remoteDisk.generatedId());
     assertTrue(remoteDisk.configuration() instanceof StandardDiskConfiguration);
     remoteConfiguration = remoteDisk.configuration();
     assertEquals(200L, (long) remoteConfiguration.sizeGb());
@@ -963,7 +963,7 @@ public class ITComputeTest {
     assertEquals(diskId.disk(), remoteDisk.diskId().disk());
     assertEquals(DiskInfo.CreationStatus.READY, remoteDisk.creationStatus());
     assertNotNull(remoteDisk.creationTimestamp());
-    assertNotNull(remoteDisk.id());
+    assertNotNull(remoteDisk.generatedId());
     assertTrue(remoteDisk.configuration() instanceof ImageDiskConfiguration);
     ImageDiskConfiguration remoteConfiguration = remoteDisk.configuration();
     assertEquals(IMAGE_ID, remoteConfiguration.sourceImage());
@@ -979,7 +979,7 @@ public class ITComputeTest {
     assertEquals(ZONE, remoteDisk.diskId().zone());
     assertEquals(diskId.disk(), remoteDisk.diskId().disk());
     assertNull(remoteDisk.creationTimestamp());
-    assertNull(remoteDisk.id());
+    assertNull(remoteDisk.generatedId());
     assertTrue(remoteDisk.configuration() instanceof ImageDiskConfiguration);
     remoteConfiguration = remoteDisk.configuration();
     assertEquals(IMAGE_ID, remoteConfiguration.sourceImage());
@@ -1017,7 +1017,7 @@ public class ITComputeTest {
     // test get snapshot with selected fields
     Snapshot snapshot = compute.getSnapshot(snapshotName,
         Compute.SnapshotOption.fields(Compute.SnapshotField.CREATION_TIMESTAMP));
-    assertNull(snapshot.id());
+    assertNull(snapshot.generatedId());
     assertNotNull(snapshot.snapshotId());
     assertNotNull(snapshot.creationTimestamp());
     assertNull(snapshot.description());
@@ -1030,7 +1030,7 @@ public class ITComputeTest {
     assertNull(snapshot.storageBytesStatus());
     // test get snapshot
     snapshot = compute.getSnapshot(snapshotName);
-    assertNotNull(snapshot.id());
+    assertNotNull(snapshot.generatedId());
     assertNotNull(snapshot.snapshotId());
     assertNotNull(snapshot.creationTimestamp());
     assertNotNull(snapshot.status());
@@ -1053,7 +1053,7 @@ public class ITComputeTest {
     assertEquals(snapshotDiskId.disk(), remoteDisk.diskId().disk());
     assertEquals(DiskInfo.CreationStatus.READY, remoteDisk.creationStatus());
     assertNotNull(remoteDisk.creationTimestamp());
-    assertNotNull(remoteDisk.id());
+    assertNotNull(remoteDisk.generatedId());
     assertTrue(remoteDisk.configuration() instanceof SnapshotDiskConfiguration);
     SnapshotDiskConfiguration remoteConfiguration = remoteDisk.configuration();
     assertEquals(DiskConfiguration.Type.SNAPSHOT, remoteConfiguration.type());
@@ -1070,7 +1070,7 @@ public class ITComputeTest {
     assertEquals(snapshotDiskId.disk(), remoteDisk.diskId().disk());
     assertNull(remoteDisk.creationStatus());
     assertNull(remoteDisk.creationTimestamp());
-    assertNull(remoteDisk.id());
+    assertNull(remoteDisk.generatedId());
     assertTrue(remoteDisk.configuration() instanceof SnapshotDiskConfiguration);
     remoteConfiguration = remoteDisk.configuration();
     assertEquals(DiskConfiguration.Type.SNAPSHOT, remoteConfiguration.type());
@@ -1121,7 +1121,7 @@ public class ITComputeTest {
       assertTrue(diskSet.contains(remoteDisk.diskId().disk()));
       assertEquals(DiskInfo.CreationStatus.READY, remoteDisk.creationStatus());
       assertNotNull(remoteDisk.creationTimestamp());
-      assertNotNull(remoteDisk.id());
+      assertNotNull(remoteDisk.generatedId());
       assertTrue(remoteDisk.configuration() instanceof StandardDiskConfiguration);
       StandardDiskConfiguration remoteConfiguration = remoteDisk.configuration();
       assertEquals(100L, (long) remoteConfiguration.sizeGb());
@@ -1143,7 +1143,7 @@ public class ITComputeTest {
       assertTrue(diskSet.contains(remoteDisk.diskId().disk()));
       assertEquals(DiskInfo.CreationStatus.READY, remoteDisk.creationStatus());
       assertNull(remoteDisk.creationTimestamp());
-      assertNull(remoteDisk.id());
+      assertNull(remoteDisk.generatedId());
       assertTrue(remoteDisk.configuration() instanceof StandardDiskConfiguration);
       StandardDiskConfiguration remoteConfiguration = remoteDisk.configuration();
       assertNull(remoteConfiguration.sizeGb());
@@ -1174,7 +1174,7 @@ public class ITComputeTest {
     count = 0;
     while (snapshotIterator.hasNext()) {
       Snapshot remoteSnapshot = snapshotIterator.next();
-      assertNotNull(remoteSnapshot.id());
+      assertNotNull(remoteSnapshot.generatedId());
       assertTrue(diskSet.contains(remoteSnapshot.snapshotId().snapshot()));
       assertNotNull(remoteSnapshot.creationTimestamp());
       assertNotNull(remoteSnapshot.status());
@@ -1193,7 +1193,7 @@ public class ITComputeTest {
     count = 0;
     while (snapshotIterator.hasNext()) {
       Snapshot remoteSnapshot = snapshotIterator.next();
-      assertNull(remoteSnapshot.id());
+      assertNull(remoteSnapshot.generatedId());
       assertTrue(diskSet.contains(remoteSnapshot.snapshotId().snapshot()));
       assertNotNull(remoteSnapshot.creationTimestamp());
       assertNull(remoteSnapshot.status());
@@ -1241,7 +1241,7 @@ public class ITComputeTest {
       assertTrue(diskSet.contains(remoteDisk.diskId().disk()));
       assertEquals(DiskInfo.CreationStatus.READY, remoteDisk.creationStatus());
       assertNotNull(remoteDisk.creationTimestamp());
-      assertNotNull(remoteDisk.id());
+      assertNotNull(remoteDisk.generatedId());
       assertTrue(remoteDisk.configuration() instanceof StandardDiskConfiguration);
       StandardDiskConfiguration remoteConfiguration = remoteDisk.configuration();
       assertEquals(100L, (long) remoteConfiguration.sizeGb());
@@ -1275,7 +1275,7 @@ public class ITComputeTest {
     // test get image with selected fields
     Image image = compute.get(imageId,
         Compute.ImageOption.fields(Compute.ImageField.CREATION_TIMESTAMP));
-    assertNull(image.id());
+    assertNull(image.generatedId());
     assertNotNull(image.imageId());
     assertNotNull(image.creationTimestamp());
     assertNull(image.description());
@@ -1290,7 +1290,7 @@ public class ITComputeTest {
     assertNull(image.deprecationStatus());
     // test get image
     image = compute.get(imageId);
-    assertNotNull(image.id());
+    assertNotNull(image.generatedId());
     assertNotNull(image.imageId());
     assertNotNull(image.creationTimestamp());
     assertNotNull(image.configuration());
@@ -1328,7 +1328,7 @@ public class ITComputeTest {
     while (imageIterator.hasNext()) {
       count++;
       Image image = imageIterator.next();
-      assertNotNull(image.id());
+      assertNotNull(image.generatedId());
       assertNotNull(image.imageId());
       assertNotNull(image.creationTimestamp());
       assertNotNull(image.configuration());
@@ -1347,7 +1347,7 @@ public class ITComputeTest {
     while (imageIterator.hasNext()) {
       count++;
       Image image = imageIterator.next();
-      assertNotNull(image.id());
+      assertNotNull(image.generatedId());
       assertNotNull(image.imageId());
       assertNull(image.creationTimestamp());
       assertNotNull(image.configuration());
@@ -1368,7 +1368,7 @@ public class ITComputeTest {
     while (imageIterator.hasNext()) {
       count++;
       Image image = imageIterator.next();
-      assertNotNull(image.id());
+      assertNotNull(image.generatedId());
       assertNotNull(image.imageId());
       assertNotNull(image.creationTimestamp());
       assertNotNull(image.configuration());
@@ -1394,7 +1394,7 @@ public class ITComputeTest {
     Network network = compute.getNetwork(networkId.network(),
         Compute.NetworkOption.fields(Compute.NetworkField.CREATION_TIMESTAMP));
     assertEquals(networkId.network(), network.networkId().network());
-    assertNull(network.id());
+    assertNull(network.generatedId());
     assertNotNull(network.creationTimestamp());
     assertNull(network.description());
     assertEquals(NetworkConfiguration.Type.STANDARD, network.configuration().type());
@@ -1403,7 +1403,7 @@ public class ITComputeTest {
     // test get network
     network = compute.getNetwork(networkId.network());
     assertEquals(networkId.network(), network.networkId().network());
-    assertNotNull(network.id());
+    assertNotNull(network.generatedId());
     assertNotNull(network.creationTimestamp());
     assertEquals(NetworkConfiguration.Type.STANDARD, network.configuration().type());
     remoteConfiguration = network.configuration();
@@ -1433,7 +1433,7 @@ public class ITComputeTest {
     while (networkIterator.hasNext()) {
       Network network = networkIterator.next();
       assertEquals(networkId.network(), network.networkId().network());
-      assertNotNull(network.id());
+      assertNotNull(network.generatedId());
       assertNotNull(network.creationTimestamp());
       assertEquals(NetworkConfiguration.Type.STANDARD, network.configuration().type());
       StandardNetworkConfiguration remoteConfiguration = network.configuration();
@@ -1449,7 +1449,7 @@ public class ITComputeTest {
     while (networkIterator.hasNext()) {
       Network network = networkIterator.next();
       assertEquals(networkId.network(), network.networkId().network());
-      assertNull(network.id());
+      assertNull(network.generatedId());
       assertNotNull(network.creationTimestamp());
       assertNull(network.description());
       assertEquals(NetworkConfiguration.Type.STANDARD, network.configuration().type());
@@ -1477,7 +1477,7 @@ public class ITComputeTest {
     // test get network
     Network network = compute.getNetwork(networkId.network());
     assertEquals(networkId.network(), network.networkId().network());
-    assertNotNull(network.id());
+    assertNotNull(network.generatedId());
     assertNotNull(network.creationTimestamp());
     assertEquals(NetworkConfiguration.Type.SUBNET, network.configuration().type());
     assertTrue(network.configuration() instanceof SubnetNetworkConfiguration);
@@ -1492,7 +1492,7 @@ public class ITComputeTest {
     // test get subnetwork with selected fields
     Subnetwork subnetwork = compute.get(subnetworkId,
         Compute.SubnetworkOption.fields(Compute.SubnetworkField.CREATION_TIMESTAMP));
-    assertNull(subnetwork.id());
+    assertNull(subnetwork.generatedId());
     assertEquals(subnetworkId.subnetwork(), subnetwork.subnetworkId().subnetwork());
     assertNotNull(subnetwork.creationTimestamp());
     assertNull(subnetwork.description());
@@ -1501,7 +1501,7 @@ public class ITComputeTest {
     assertNull(subnetwork.ipRange());
     // test get subnetwork
     subnetwork = compute.get(subnetworkId);
-    assertNotNull(subnetwork.id());
+    assertNotNull(subnetwork.generatedId());
     assertEquals(subnetworkId.subnetwork(), subnetwork.subnetworkId().subnetwork());
     assertNotNull(subnetwork.creationTimestamp());
     assertNotNull(subnetwork.gatewayAddress());
@@ -1516,7 +1516,7 @@ public class ITComputeTest {
     int count = 0;
     while (subnetworkIterator.hasNext()) {
       Subnetwork remoteSubnetwork = subnetworkIterator.next();
-      assertNotNull(remoteSubnetwork.id());
+      assertNotNull(remoteSubnetwork.generatedId());
       assertEquals(subnetworkId.subnetwork(), remoteSubnetwork.subnetworkId().subnetwork());
       assertNotNull(remoteSubnetwork.creationTimestamp());
       assertNotNull(remoteSubnetwork.gatewayAddress());
@@ -1532,7 +1532,7 @@ public class ITComputeTest {
     count = 0;
     while (subnetworkIterator.hasNext()) {
       Subnetwork remoteSubnetwork = subnetworkIterator.next();
-      assertNull(remoteSubnetwork.id());
+      assertNull(remoteSubnetwork.generatedId());
       assertEquals(subnetworkId.subnetwork(), remoteSubnetwork.subnetworkId().subnetwork());
       assertNotNull(remoteSubnetwork.creationTimestamp());
       assertNull(remoteSubnetwork.description());
@@ -1592,7 +1592,7 @@ public class ITComputeTest {
     int count = 0;
     while (subnetworkIterator.hasNext()) {
       Subnetwork remoteSubnetwork = subnetworkIterator.next();
-      assertNotNull(remoteSubnetwork.id());
+      assertNotNull(remoteSubnetwork.generatedId());
       assertTrue(regionSet.contains(remoteSubnetwork.subnetworkId().region()));
       assertTrue(subnetworkSet.contains(remoteSubnetwork.subnetworkId().subnetwork()));
       assertNotNull(remoteSubnetwork.creationTimestamp());

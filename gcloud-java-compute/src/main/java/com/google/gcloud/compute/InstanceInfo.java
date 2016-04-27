@@ -71,7 +71,7 @@ public class InstanceInfo implements Serializable {
   private static final long serialVersionUID = -6601223112628977168L;
   private static final DateTimeFormatter TIMESTAMP_FORMATTER = ISODateTimeFormat.dateTime();
 
-  private final String id;
+  private final String generatedId;
   private final InstanceId instanceId;
   private final Long creationTimestamp;
   private final String description;
@@ -125,7 +125,7 @@ public class InstanceInfo implements Serializable {
    */
   public abstract static class Builder {
 
-    abstract Builder id(String id);
+    abstract Builder generatedId(String generatedId);
 
     /**
      * Sets the identity of the virtual machine instance.
@@ -219,7 +219,7 @@ public class InstanceInfo implements Serializable {
 
   public static final class BuilderImpl extends Builder {
 
-    private String id;
+    private String generatedId;
     private InstanceId instanceId;
     private Long creationTimestamp;
     private String description;
@@ -240,7 +240,7 @@ public class InstanceInfo implements Serializable {
     }
 
     BuilderImpl(InstanceInfo instance) {
-      this.id = instance.id;
+      this.generatedId = instance.generatedId;
       this.instanceId = instance.instanceId;
       this.creationTimestamp = instance.creationTimestamp;
       this.description = instance.description;
@@ -259,7 +259,7 @@ public class InstanceInfo implements Serializable {
 
     BuilderImpl(Instance instancePb) {
       if (instancePb.getId() != null) {
-        this.id = instancePb.getId().toString();
+        this.generatedId = instancePb.getId().toString();
       }
       this.instanceId = InstanceId.fromUrl(instancePb.getSelfLink());
       if (instancePb.getCreationTimestamp() != null) {
@@ -298,8 +298,8 @@ public class InstanceInfo implements Serializable {
     }
 
     @Override
-    Builder id(String id) {
-      this.id = id;
+    Builder generatedId(String generatedId) {
+      this.generatedId = generatedId;
       return this;
     }
 
@@ -408,7 +408,7 @@ public class InstanceInfo implements Serializable {
   }
 
   InstanceInfo(BuilderImpl builder) {
-    this.id = builder.id;
+    this.generatedId = builder.generatedId;
     this.instanceId = builder.instanceId;
     this.creationTimestamp = builder.creationTimestamp;
     this.description = builder.description;
@@ -426,10 +426,10 @@ public class InstanceInfo implements Serializable {
   }
 
   /**
-   * Returns the unique identifier for the instance; defined by the service.
+   * Returns the service-generated unique identifier for the instance.
    */
-  public String id() {
-    return id;
+  public String generatedId() {
+    return generatedId;
   }
 
   /**
@@ -551,7 +551,7 @@ public class InstanceInfo implements Serializable {
   @Override
   public String toString() {
     return MoreObjects.toStringHelper(this)
-        .add("id", id)
+        .add("generatedId", generatedId)
         .add("instanceId", instanceId)
         .add("creationTimestamp", creationTimestamp)
         .add("description", description)
@@ -571,9 +571,9 @@ public class InstanceInfo implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, instanceId, creationTimestamp, description, status, statusMessage, tags,
-        machineType, canIpForward, networkInterfaces, attachedDisks, metadata, serviceAccounts,
-        schedulingOptions, cpuPlatform);
+    return Objects.hash(generatedId, instanceId, creationTimestamp, description, status,
+        statusMessage, tags, machineType, canIpForward, networkInterfaces, attachedDisks, metadata,
+        serviceAccounts, schedulingOptions, cpuPlatform);
   }
 
   @Override
@@ -605,8 +605,8 @@ public class InstanceInfo implements Serializable {
 
   Instance toPb() {
     Instance instancePb = new Instance();
-    if (id != null) {
-      instancePb.setId(new BigInteger(id));
+    if (generatedId != null) {
+      instancePb.setId(new BigInteger(generatedId));
     }
     if (creationTimestamp != null) {
       instancePb.setCreationTimestamp(TIMESTAMP_FORMATTER.print(creationTimestamp));

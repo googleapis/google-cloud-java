@@ -56,7 +56,7 @@ public class SubnetworkInfo implements Serializable {
   private static final long serialVersionUID = 7491176262675441579L;
   private static final DateTimeFormatter TIMESTAMP_FORMATTER = ISODateTimeFormat.dateTime();
 
-  private final String id;
+  private final String generatedId;
   private final SubnetworkId subnetworkId;
   private final Long creationTimestamp;
   private final String description;
@@ -69,7 +69,7 @@ public class SubnetworkInfo implements Serializable {
    */
   public abstract static class Builder {
 
-    abstract Builder id(String id);
+    abstract Builder generatedId(String generatedId);
 
     abstract Builder creationTimestamp(Long creationTimestamp);
 
@@ -108,7 +108,7 @@ public class SubnetworkInfo implements Serializable {
 
   static final class BuilderImpl extends Builder {
 
-    private String id;
+    private String generatedId;
     private SubnetworkId subnetworkId;
     private Long creationTimestamp;
     private String description;
@@ -123,7 +123,7 @@ public class SubnetworkInfo implements Serializable {
     }
 
     BuilderImpl(SubnetworkInfo subnetworkInfo) {
-      this.id = subnetworkInfo.id;
+      this.generatedId = subnetworkInfo.generatedId;
       this.creationTimestamp = subnetworkInfo.creationTimestamp;
       this.subnetworkId = subnetworkInfo.subnetworkId;
       this.description = subnetworkInfo.description;
@@ -134,7 +134,7 @@ public class SubnetworkInfo implements Serializable {
 
     BuilderImpl(Subnetwork subnetworkPb) {
       if (subnetworkPb.getId() != null) {
-        this.id = subnetworkPb.getId().toString();
+        this.generatedId = subnetworkPb.getId().toString();
       }
       if (subnetworkPb.getCreationTimestamp() != null) {
         this.creationTimestamp =
@@ -150,8 +150,8 @@ public class SubnetworkInfo implements Serializable {
     }
 
     @Override
-    BuilderImpl id(String id) {
-      this.id = id;
+    BuilderImpl generatedId(String generatedId) {
+      this.generatedId = generatedId;
       return this;
     }
 
@@ -198,7 +198,7 @@ public class SubnetworkInfo implements Serializable {
   }
 
   SubnetworkInfo(BuilderImpl builder) {
-    this.id = builder.id;
+    this.generatedId = builder.generatedId;
     this.creationTimestamp = builder.creationTimestamp;
     this.subnetworkId = checkNotNull(builder.subnetworkId);
     this.description = builder.description;
@@ -208,10 +208,10 @@ public class SubnetworkInfo implements Serializable {
   }
 
   /**
-   * Returns the unique identifier for the subnetwork; defined by the service.
+   * Returns the service-generated unique identifier for the subnetwork.
    */
-  public String id() {
-    return id;
+  public String generatedId() {
+    return generatedId;
   }
 
   /**
@@ -271,7 +271,7 @@ public class SubnetworkInfo implements Serializable {
   @Override
   public String toString() {
     return MoreObjects.toStringHelper(this)
-        .add("id", id)
+        .add("generatedId", generatedId)
         .add("creationTimestamp", creationTimestamp)
         .add("subnetworkId", subnetworkId)
         .add("description", description)
@@ -283,8 +283,8 @@ public class SubnetworkInfo implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, creationTimestamp, subnetworkId, description, gatewayAddress, network,
-        ipRange);
+    return Objects.hash(generatedId, creationTimestamp, subnetworkId, description, gatewayAddress,
+        network, ipRange);
   }
 
   @Override
@@ -304,8 +304,8 @@ public class SubnetworkInfo implements Serializable {
 
   Subnetwork toPb() {
     Subnetwork subnetworkPb = new Subnetwork();
-    if (id != null) {
-      subnetworkPb.setId(new BigInteger(id));
+    if (generatedId != null) {
+      subnetworkPb.setId(new BigInteger(generatedId));
     }
     if (creationTimestamp != null) {
       subnetworkPb.setCreationTimestamp(TIMESTAMP_FORMATTER.print(creationTimestamp));

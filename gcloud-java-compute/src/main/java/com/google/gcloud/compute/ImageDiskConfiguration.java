@@ -108,10 +108,11 @@ public class ImageDiskConfiguration extends DiskConfiguration {
   }
 
   /**
-   * Returns the ID value of the image used to create this disk. This value identifies the exact
-   * image that was used to create this persistent disk. For example, if you created the persistent
-   * disk from an image that was later deleted and recreated under the same name, the source image
-   * ID would identify the exact version of the image that was used.
+   * Returns the service-generated unique id of the image used to create this disk. This value
+   * identifies the exact image that was used to create this persistent disk. For example, if you
+   * created the persistent disk from an image that was later deleted and recreated under the same
+   * name, the source image service-generated id would identify the exact version of the image that
+   * was used.
    */
   public String sourceImageId() {
     return sourceImageId;

@@ -113,10 +113,10 @@ public class SnapshotDiskConfiguration extends DiskConfiguration {
   }
 
   /**
-   * Returns the unique ID of the snapshot used to create this disk. This value identifies the exact
-   * snapshot that was used to create the persistent disk. For example, if you created the
-   * persistent disk from a snapshot that was later deleted and recreated under the same name, the
-   * source snapshot ID would identify the exact version of the snapshot that was used.
+   * Returns the service-generated unique id of the snapshot used to create this disk. This value
+   * identifies the exact snapshot that was used to create the persistent disk. For example, if you
+   * created the persistent disk from a snapshot that was later deleted and recreated under the same
+   * name, the source snapshot ID would identify the exact version of the snapshot that was used.
    */
   public String sourceSnapshotId() {
     return sourceSnapshotId;

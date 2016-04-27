@@ -55,7 +55,7 @@ public class Region implements Serializable {
   private static final DateTimeFormatter TIMESTAMP_FORMATTER = ISODateTimeFormat.dateTime();
 
   private final RegionId regionId;
-  private final String id;
+  private final String generatedId;
   private final Long creationTimestamp;
   private final String description;
   private final Status status;
@@ -166,7 +166,7 @@ public class Region implements Serializable {
   static final class Builder {
 
     private RegionId regionId;
-    private String id;
+    private String generatedId;
     private Long creationTimestamp;
     private String description;
 
@@ -182,8 +182,8 @@ public class Region implements Serializable {
       return this;
     }
 
-    Builder id(String id) {
-      this.id = id;
+    Builder generatedId(String generatedId) {
+      this.generatedId = generatedId;
       return this;
     }
 
@@ -224,7 +224,7 @@ public class Region implements Serializable {
 
   private Region(Builder builder) {
     this.regionId = builder.regionId;
-    this.id = builder.id;
+    this.generatedId = builder.generatedId;
     this.creationTimestamp = builder.creationTimestamp;
     this.description = builder.description;
     this.status = builder.status;
@@ -241,10 +241,10 @@ public class Region implements Serializable {
   }
 
   /**
-   * Returns the unique identifier for the region; defined by the service.
+   * Returns the service-generated unique identifier for the region.
    */
-  public String id() {
-    return id;
+  public String generatedId() {
+    return generatedId;
   }
 
   /**
@@ -295,7 +295,7 @@ public class Region implements Serializable {
   public String toString() {
     return MoreObjects.toStringHelper(this)
         .add("regionId", regionId)
-        .add("id", id)
+        .add("generatedId", generatedId)
         .add("creationTimestamp", creationTimestamp)
         .add("description", description)
         .add("status", status)
@@ -318,8 +318,8 @@ public class Region implements Serializable {
   com.google.api.services.compute.model.Region toPb() {
     com.google.api.services.compute.model.Region regionPb =
         new com.google.api.services.compute.model.Region();
-    if (id != null) {
-      regionPb.setId(new BigInteger(id));
+    if (generatedId != null) {
+      regionPb.setId(new BigInteger(generatedId));
     }
     if (creationTimestamp != null) {
       regionPb.setCreationTimestamp(TIMESTAMP_FORMATTER.print(creationTimestamp));
@@ -350,7 +350,7 @@ public class Region implements Serializable {
     Builder builder = builder();
     builder.regionId(RegionId.fromUrl(regionPb.getSelfLink()));
     if (regionPb.getId() != null) {
-      builder.id(regionPb.getId().toString());
+      builder.generatedId(regionPb.getId().toString());
     }
     if (regionPb.getCreationTimestamp() != null) {
       builder.creationTimestamp(TIMESTAMP_FORMATTER.parseMillis(regionPb.getCreationTimestamp()));

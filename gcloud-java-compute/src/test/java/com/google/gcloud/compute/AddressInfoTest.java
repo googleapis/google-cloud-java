@@ -33,7 +33,7 @@ public class AddressInfoTest {
   private static final String ADDRESS = "192.168.1.1";
   private static final Long CREATION_TIMESTAMP = 1452602400000L;
   private static final String DESCRIPTION = "description";
-  private static final String ID = "42";
+  private static final String GENERATED_ID = "42";
   private static final GlobalAddressId GLOBAL_ADDRESS_ID = GlobalAddressId.of("project", "address");
   private static final RegionAddressId REGION_ADDRESS_ID =
       RegionAddressId.of("project", "region", "address");
@@ -54,7 +54,7 @@ public class AddressInfoTest {
       .address(ADDRESS)
       .creationTimestamp(CREATION_TIMESTAMP)
       .description(DESCRIPTION)
-      .id(ID)
+      .generatedId(GENERATED_ID)
       .status(STATUS)
       .usage(INSTANCE_USAGE)
       .build();
@@ -63,7 +63,7 @@ public class AddressInfoTest {
           .address(ADDRESS)
           .creationTimestamp(CREATION_TIMESTAMP)
           .description(DESCRIPTION)
-          .id(ID)
+          .generatedId(GENERATED_ID)
           .status(STATUS)
           .usage(GLOBAL_FORWARDING_USAGE)
           .build();
@@ -72,7 +72,7 @@ public class AddressInfoTest {
           .address(ADDRESS)
           .creationTimestamp(CREATION_TIMESTAMP)
           .description(DESCRIPTION)
-          .id(ID)
+          .generatedId(GENERATED_ID)
           .status(STATUS)
           .usage(REGION_FORWARDING_USAGE)
           .build();
@@ -106,7 +106,7 @@ public class AddressInfoTest {
     assertEquals(ADDRESS, INSTANCE_ADDRESS_INFO.address());
     assertEquals(CREATION_TIMESTAMP, INSTANCE_ADDRESS_INFO.creationTimestamp());
     assertEquals(DESCRIPTION, INSTANCE_ADDRESS_INFO.description());
-    assertEquals(ID, INSTANCE_ADDRESS_INFO.id());
+    assertEquals(GENERATED_ID, INSTANCE_ADDRESS_INFO.generatedId());
     assertEquals(REGION_ADDRESS_ID, INSTANCE_ADDRESS_INFO.addressId());
     assertEquals(STATUS, INSTANCE_ADDRESS_INFO.status());
     assertEquals(INSTANCE_USAGE, INSTANCE_ADDRESS_INFO.usage());
@@ -115,7 +115,7 @@ public class AddressInfoTest {
     assertEquals(ADDRESS, REGION_FORWARDING_ADDRESS_INFO.address());
     assertEquals(CREATION_TIMESTAMP, REGION_FORWARDING_ADDRESS_INFO.creationTimestamp());
     assertEquals(DESCRIPTION, REGION_FORWARDING_ADDRESS_INFO.description());
-    assertEquals(ID, REGION_FORWARDING_ADDRESS_INFO.id());
+    assertEquals(GENERATED_ID, REGION_FORWARDING_ADDRESS_INFO.generatedId());
     assertEquals(REGION_ADDRESS_ID, REGION_FORWARDING_ADDRESS_INFO.addressId());
     assertEquals(STATUS, REGION_FORWARDING_ADDRESS_INFO.status());
     assertEquals(REGION_FORWARDING_USAGE, REGION_FORWARDING_ADDRESS_INFO.usage());
@@ -124,7 +124,7 @@ public class AddressInfoTest {
     assertEquals(ADDRESS, GLOBAL_FORWARDING_ADDRESS_INFO.address());
     assertEquals(CREATION_TIMESTAMP, GLOBAL_FORWARDING_ADDRESS_INFO.creationTimestamp());
     assertEquals(DESCRIPTION, GLOBAL_FORWARDING_ADDRESS_INFO.description());
-    assertEquals(ID, GLOBAL_FORWARDING_ADDRESS_INFO.id());
+    assertEquals(GENERATED_ID, GLOBAL_FORWARDING_ADDRESS_INFO.generatedId());
     assertEquals(GLOBAL_ADDRESS_ID, GLOBAL_FORWARDING_ADDRESS_INFO.addressId());
     assertEquals(STATUS, GLOBAL_FORWARDING_ADDRESS_INFO.status());
     assertEquals(GLOBAL_FORWARDING_USAGE, GLOBAL_FORWARDING_ADDRESS_INFO.usage());
@@ -139,7 +139,7 @@ public class AddressInfoTest {
     assertNull(addressInfo.address());
     assertNull(addressInfo.creationTimestamp());
     assertNull(addressInfo.description());
-    assertNull(addressInfo.id());
+    assertNull(addressInfo.generatedId());
     assertNull(addressInfo.status());
     assertNull(addressInfo.usage());
     addressInfo = AddressInfo.of(GLOBAL_ADDRESS_ID);
@@ -147,7 +147,7 @@ public class AddressInfoTest {
     assertNull(addressInfo.address());
     assertNull(addressInfo.creationTimestamp());
     assertNull(addressInfo.description());
-    assertNull(addressInfo.id());
+    assertNull(addressInfo.generatedId());
     assertNull(addressInfo.status());
     assertNull(addressInfo.usage());
     addressInfo = AddressInfo.of("region", "address");
@@ -155,7 +155,7 @@ public class AddressInfoTest {
     assertNull(addressInfo.address());
     assertNull(addressInfo.creationTimestamp());
     assertNull(addressInfo.description());
-    assertNull(addressInfo.id());
+    assertNull(addressInfo.generatedId());
     assertNull(addressInfo.status());
     assertNull(addressInfo.usage());
     addressInfo = AddressInfo.of(RegionId.of("region"), "address");
@@ -163,7 +163,7 @@ public class AddressInfoTest {
     assertNull(addressInfo.address());
     assertNull(addressInfo.creationTimestamp());
     assertNull(addressInfo.description());
-    assertNull(addressInfo.id());
+    assertNull(addressInfo.generatedId());
     assertNull(addressInfo.status());
     assertNull(addressInfo.usage());
   }
@@ -192,7 +192,7 @@ public class AddressInfoTest {
     assertEquals(expected.address(), value.address());
     assertEquals(expected.creationTimestamp(), value.creationTimestamp());
     assertEquals(expected.description(), value.description());
-    assertEquals(expected.id(), value.id());
+    assertEquals(expected.generatedId(), value.generatedId());
     assertEquals(expected.addressId(), value.addressId());
     assertEquals(expected.usage(), value.usage());
     assertEquals(expected.status(), value.status());

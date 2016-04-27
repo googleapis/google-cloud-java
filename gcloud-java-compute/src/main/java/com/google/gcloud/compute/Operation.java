@@ -50,7 +50,7 @@ public class Operation implements Serializable {
 
   private transient Compute compute;
   private final ComputeOptions options;
-  private final String id;
+  private final String generatedId;
   private final OperationId operationId;
   private final String clientOperationId;
   private final String operationType;
@@ -294,7 +294,7 @@ public class Operation implements Serializable {
   static final class Builder {
 
     private Compute compute;
-    private String id;
+    private String generatedId;
     private OperationId operationId;
     private String clientOperationId;
     private String operationType;
@@ -320,7 +320,7 @@ public class Operation implements Serializable {
     Builder(Compute compute, com.google.api.services.compute.model.Operation operationPb) {
       this.compute = compute;
       if (operationPb.getId() != null) {
-        id = operationPb.getId().toString();
+        generatedId = operationPb.getId().toString();
       }
       if (RegionOperationId.matchesUrl(operationPb.getSelfLink())) {
         operationId = RegionOperationId.fromUrl(operationPb.getSelfLink());
@@ -362,8 +362,8 @@ public class Operation implements Serializable {
       description = operationPb.getDescription();
     }
 
-    Builder id(String id) {
-      this.id = id;
+    Builder generatedId(String generatedId) {
+      this.generatedId = generatedId;
       return this;
     }
 
@@ -460,7 +460,7 @@ public class Operation implements Serializable {
   private Operation(Builder builder) {
     this.compute = checkNotNull(builder.compute);
     this.options = compute.options();
-    this.id = builder.id;
+    this.generatedId = builder.generatedId;
     this.operationId = checkNotNull(builder.operationId);
     this.clientOperationId = builder.clientOperationId;
     this.operationType = builder.operationType;
@@ -488,10 +488,10 @@ public class Operation implements Serializable {
   }
 
   /**
-   * Returns the service-defined unique identifier for the operation.
+   * Returns the service-generated unique identifier for the operation.
    */
-  public String id() {
-    return id;
+  public String generatedId() {
+    return generatedId;
   }
 
   /**
@@ -683,7 +683,7 @@ public class Operation implements Serializable {
   @Override
   public String toString() {
     return MoreObjects.toStringHelper(this)
-        .add("id", id)
+        .add("generatedId", generatedId)
         .add("operationsId", operationId)
         .add("clientOperationId", clientOperationId)
         .add("operationType", operationType)
@@ -706,7 +706,7 @@ public class Operation implements Serializable {
 
   @Override
   public final int hashCode() {
-    return Objects.hash(id);
+    return Objects.hash(operationId);
   }
 
   @Override
@@ -719,8 +719,8 @@ public class Operation implements Serializable {
   com.google.api.services.compute.model.Operation toPb() {
     com.google.api.services.compute.model.Operation operationPb =
         new com.google.api.services.compute.model.Operation();
-    if (id != null) {
-      operationPb.setId(new BigInteger(id));
+    if (generatedId != null) {
+      operationPb.setId(new BigInteger(generatedId));
     }
     operationPb.setName(operationId.operation());
     operationPb.setClientOperationId(clientOperationId);

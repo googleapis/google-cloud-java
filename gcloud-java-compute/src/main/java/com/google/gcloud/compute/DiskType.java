@@ -52,7 +52,7 @@ public class DiskType implements Serializable {
   private static final long serialVersionUID = -944042261695072026L;
   private static final DateTimeFormatter TIMESTAMP_FORMATTER = ISODateTimeFormat.dateTime();
 
-  private final String id;
+  private final String generatedId;
   private final DiskTypeId diskTypeId;
   private final Long creationTimestamp;
   private final String description;
@@ -62,7 +62,7 @@ public class DiskType implements Serializable {
 
   static final class Builder {
 
-    private String id;
+    private String generatedId;
     private DiskTypeId diskTypeId;
     private Long creationTimestamp;
     private String description;
@@ -72,8 +72,8 @@ public class DiskType implements Serializable {
 
     private Builder() {}
 
-    Builder id(String id) {
-      this.id = id;
+    Builder generatedId(String generatedId) {
+      this.generatedId = generatedId;
       return this;
     }
 
@@ -113,7 +113,7 @@ public class DiskType implements Serializable {
   }
 
   private DiskType(Builder builder) {
-    this.id = builder.id;
+    this.generatedId = builder.generatedId;
     this.creationTimestamp = builder.creationTimestamp;
     this.diskTypeId = builder.diskTypeId;
     this.description = builder.description;
@@ -137,10 +137,10 @@ public class DiskType implements Serializable {
   }
 
   /**
-   * Returns the unique identifier for the disk type; defined by the service.
+   * Returns the service-generated unique identifier for the disk type.
    */
-  public String id() {
-    return id;
+  public String generatedId() {
+    return generatedId;
   }
 
   /**
@@ -176,7 +176,7 @@ public class DiskType implements Serializable {
   @Override
   public String toString() {
     return MoreObjects.toStringHelper(this)
-        .add("id", id)
+        .add("generatedId", generatedId)
         .add("creationTimestamp", creationTimestamp)
         .add("description", description)
         .add("validDiskSize", validDiskSize)
@@ -198,8 +198,8 @@ public class DiskType implements Serializable {
   com.google.api.services.compute.model.DiskType toPb() {
     com.google.api.services.compute.model.DiskType diskTypePb =
         new com.google.api.services.compute.model.DiskType();
-    if (id != null) {
-      diskTypePb.setId(new BigInteger(id));
+    if (generatedId != null) {
+      diskTypePb.setId(new BigInteger(generatedId));
     }
     if (creationTimestamp != null) {
       diskTypePb.setCreationTimestamp(TIMESTAMP_FORMATTER.print(creationTimestamp));
@@ -222,7 +222,7 @@ public class DiskType implements Serializable {
   static DiskType fromPb(com.google.api.services.compute.model.DiskType diskTypePb) {
     Builder builder = builder();
     if (diskTypePb.getId() != null) {
-      builder.id(diskTypePb.getId().toString());
+      builder.generatedId(diskTypePb.getId().toString());
     }
     if (diskTypePb.getCreationTimestamp() != null) {
       builder.creationTimestamp(TIMESTAMP_FORMATTER.parseMillis(diskTypePb.getCreationTimestamp()));

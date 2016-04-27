@@ -29,7 +29,7 @@ import java.util.List;
 public class ImageInfoTest {
 
   private static final ImageId IMAGE_ID = ImageId.of("project", "image");
-  private static final String ID = "42";
+  private static final String GENERATED_ID = "42";
   private static final Long CREATION_TIMESTAMP = 1453293540000L;
   private static final String DESCRIPTION = "description";
   private static final ImageInfo.Status STATUS = ImageInfo.Status.READY;
@@ -58,7 +58,7 @@ public class ImageInfoTest {
   private static final DeprecationStatus<ImageId> DEPRECATION_STATUS =
       DeprecationStatus.of(DeprecationStatus.Status.DELETED, IMAGE_ID);
   private static final ImageInfo STORAGE_IMAGE = ImageInfo.builder(IMAGE_ID, STORAGE_CONFIGURATION)
-      .id(ID)
+      .generatedId(GENERATED_ID)
       .creationTimestamp(CREATION_TIMESTAMP)
       .description(DESCRIPTION)
       .status(STATUS)
@@ -67,7 +67,7 @@ public class ImageInfoTest {
       .deprecationStatus(DEPRECATION_STATUS)
       .build();
   private static final ImageInfo DISK_IMAGE = ImageInfo.builder(IMAGE_ID, DISK_CONFIGURATION)
-      .id(ID)
+      .generatedId(GENERATED_ID)
       .creationTimestamp(CREATION_TIMESTAMP)
       .description(DESCRIPTION)
       .status(STATUS)
@@ -96,7 +96,7 @@ public class ImageInfoTest {
 
   @Test
   public void testBuilder() {
-    assertEquals(ID, STORAGE_IMAGE.id());
+    assertEquals(GENERATED_ID, STORAGE_IMAGE.generatedId());
     assertEquals(IMAGE_ID, STORAGE_IMAGE.imageId());
     assertEquals(CREATION_TIMESTAMP, STORAGE_IMAGE.creationTimestamp());
     assertEquals(DESCRIPTION, STORAGE_IMAGE.description());
@@ -105,7 +105,7 @@ public class ImageInfoTest {
     assertEquals(DISK_SIZE_GB, STORAGE_IMAGE.diskSizeGb());
     assertEquals(LICENSES, STORAGE_IMAGE.licenses());
     assertEquals(DEPRECATION_STATUS, STORAGE_IMAGE.deprecationStatus());
-    assertEquals(ID, DISK_IMAGE.id());
+    assertEquals(GENERATED_ID, DISK_IMAGE.generatedId());
     assertEquals(IMAGE_ID, DISK_IMAGE.imageId());
     assertEquals(CREATION_TIMESTAMP, DISK_IMAGE.creationTimestamp());
     assertEquals(DESCRIPTION, DISK_IMAGE.description());
@@ -121,7 +121,7 @@ public class ImageInfoTest {
     ImageInfo imageInfo = ImageInfo.of(IMAGE_ID, STORAGE_CONFIGURATION);
     assertEquals(IMAGE_ID, imageInfo.imageId());
     assertEquals(STORAGE_CONFIGURATION, imageInfo.configuration());
-    assertNull(imageInfo.id());
+    assertNull(imageInfo.generatedId());
     assertNull(imageInfo.creationTimestamp());
     assertNull(imageInfo.description());
     assertNull(imageInfo.status());
@@ -131,7 +131,7 @@ public class ImageInfoTest {
     imageInfo = ImageInfo.of(IMAGE_ID, DISK_CONFIGURATION);
     assertEquals(IMAGE_ID, imageInfo.imageId());
     assertEquals(DISK_CONFIGURATION, imageInfo.configuration());
-    assertNull(imageInfo.id());
+    assertNull(imageInfo.generatedId());
     assertNull(imageInfo.creationTimestamp());
     assertNull(imageInfo.description());
     assertNull(imageInfo.status());
@@ -161,7 +161,7 @@ public class ImageInfoTest {
 
   public void compareImageInfo(ImageInfo expected, ImageInfo value) {
     assertEquals(expected, value);
-    assertEquals(expected.id(), value.id());
+    assertEquals(expected.generatedId(), value.generatedId());
     assertEquals(expected.imageId(), value.imageId());
     assertEquals(expected.creationTimestamp(), value.creationTimestamp());
     assertEquals(expected.description(), value.description());

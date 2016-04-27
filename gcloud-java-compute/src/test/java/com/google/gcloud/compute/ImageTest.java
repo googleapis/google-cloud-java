@@ -38,7 +38,7 @@ import java.util.List;
 public class ImageTest {
 
   private static final ImageId IMAGE_ID = ImageId.of("project", "image");
-  private static final String ID = "42";
+  private static final String GENERATED_ID = "42";
   private static final Long CREATION_TIMESTAMP = 1453293540000L;
   private static final String DESCRIPTION = "description";
   private static final ImageInfo.Status STATUS = ImageInfo.Status.READY;
@@ -78,7 +78,7 @@ public class ImageTest {
     expect(serviceMockReturnsOptions.options()).andReturn(mockOptions).times(optionsCalls);
     replay(serviceMockReturnsOptions);
     diskImage = new Image.Builder(serviceMockReturnsOptions, IMAGE_ID, DISK_CONFIGURATION)
-        .id(ID)
+        .generatedId(GENERATED_ID)
         .creationTimestamp(CREATION_TIMESTAMP)
         .description(DESCRIPTION)
         .status(STATUS)
@@ -87,7 +87,7 @@ public class ImageTest {
         .deprecationStatus(DEPRECATION_STATUS)
         .build();
     storageImage = new Image.Builder(serviceMockReturnsOptions, IMAGE_ID, STORAGE_CONFIGURATION)
-        .id(ID)
+        .generatedId(GENERATED_ID)
         .creationTimestamp(CREATION_TIMESTAMP)
         .description(DESCRIPTION)
         .status(STATUS)
@@ -100,7 +100,7 @@ public class ImageTest {
 
   private void initializeImage() {
     image = new Image.Builder(compute, IMAGE_ID, DISK_CONFIGURATION)
-        .id(ID)
+        .generatedId(GENERATED_ID)
         .creationTimestamp(CREATION_TIMESTAMP)
         .description(DESCRIPTION)
         .status(STATUS)
@@ -133,7 +133,7 @@ public class ImageTest {
   @Test
   public void testBuilder() {
     initializeExpectedImage(3);
-    assertEquals(ID, diskImage.id());
+    assertEquals(GENERATED_ID, diskImage.generatedId());
     assertEquals(IMAGE_ID, diskImage.imageId());
     assertEquals(CREATION_TIMESTAMP, diskImage.creationTimestamp());
     assertEquals(DESCRIPTION, diskImage.description());
@@ -143,7 +143,7 @@ public class ImageTest {
     assertEquals(LICENSES, diskImage.licenses());
     assertEquals(DEPRECATION_STATUS, diskImage.deprecationStatus());
     assertSame(serviceMockReturnsOptions, diskImage.compute());
-    assertEquals(ID, storageImage.id());
+    assertEquals(GENERATED_ID, storageImage.generatedId());
     assertEquals(IMAGE_ID, storageImage.imageId());
     assertEquals(CREATION_TIMESTAMP, storageImage.creationTimestamp());
     assertEquals(DESCRIPTION, storageImage.description());
@@ -158,7 +158,7 @@ public class ImageTest {
         .imageId(imageId)
         .configuration(DISK_CONFIGURATION)
         .build();
-    assertNull(image.id());
+    assertNull(image.generatedId());
     assertEquals(imageId, image.imageId());
     assertNull(image.creationTimestamp());
     assertNull(image.description());
@@ -292,7 +292,7 @@ public class ImageTest {
   public void compareImage(Image expected, Image value) {
     assertEquals(expected, value);
     assertEquals(expected.compute().options(), value.compute().options());
-    assertEquals(expected.id(), value.id());
+    assertEquals(expected.generatedId(), value.generatedId());
     assertEquals(expected.imageId(), value.imageId());
     assertEquals(expected.creationTimestamp(), value.creationTimestamp());
     assertEquals(expected.description(), value.description());
