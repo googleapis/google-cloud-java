@@ -28,6 +28,8 @@ import com.google.gcloud.Page;
 import com.google.gcloud.PageImpl;
 import com.google.gcloud.PageImpl.NextPageFetcher;
 import com.google.gcloud.RetryHelper;
+import com.google.gcloud.compute.AttachedDisk.PersistentDiskConfiguration;
+import com.google.gcloud.compute.NetworkInterface.AccessConfig;
 import com.google.gcloud.compute.spi.ComputeRpc;
 
 import java.util.Map;
@@ -409,6 +411,46 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
     @Override
     public Page<Network> nextPage() {
       return listNetworks(serviceOptions, requestOptions);
+    }
+  }
+
+  private static class InstancePageFetcher implements NextPageFetcher<Instance> {
+
+    private static final long serialVersionUID = 7563769742657453865L;
+    private final Map<ComputeRpc.Option, ?> requestOptions;
+    private final ComputeOptions serviceOptions;
+    private final String zone;
+
+    InstancePageFetcher(String zone, ComputeOptions serviceOptions, String cursor,
+        Map<ComputeRpc.Option, ?> optionMap) {
+      this.requestOptions =
+          PageImpl.nextRequestOptions(ComputeRpc.Option.PAGE_TOKEN, cursor, optionMap);
+      this.serviceOptions = serviceOptions;
+      this.zone = zone;
+    }
+
+    @Override
+    public Page<Instance> nextPage() {
+      return listInstances(zone, serviceOptions, requestOptions);
+    }
+  }
+
+  private static class AggregatedInstancePageFetcher implements NextPageFetcher<Instance> {
+
+    private static final long serialVersionUID = 1863059389783095681L;
+    private final Map<ComputeRpc.Option, ?> requestOptions;
+    private final ComputeOptions serviceOptions;
+
+    AggregatedInstancePageFetcher(ComputeOptions serviceOptions, String cursor,
+        Map<ComputeRpc.Option, ?> optionMap) {
+      this.requestOptions =
+          PageImpl.nextRequestOptions(ComputeRpc.Option.PAGE_TOKEN, cursor, optionMap);
+      this.serviceOptions = serviceOptions;
+    }
+
+    @Override
+    public Page<Instance> nextPage() {
+      return listInstances(serviceOptions, requestOptions);
     }
   }
 
@@ -1431,7 +1473,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
   }
 
   private static Function<com.google.api.services.compute.model.Subnetwork, Subnetwork>
-        subnetworkFromPb(final ComputeOptions serviceOptions) {
+      subnetworkFromPb(final ComputeOptions serviceOptions) {
     return new Function<com.google.api.services.compute.model.Subnetwork, Subnetwork>() {
       @Override
       public Subnetwork apply(com.google.api.services.compute.model.Subnetwork subnetwork) {
@@ -1603,6 +1645,399 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
   @Override
   public Operation deleteNetwork(String network, OperationOption... options) {
     return deleteNetwork(NetworkId.of(network));
+  }
+
+  @Override
+  public Operation create(InstanceInfo instance, OperationOption... options) {
+    final InstanceInfo completeInstance = instance.setProjectId(options().projectId());
+    final Map<ComputeRpc.Option, ?> optionsMap = optionMap(options);
+    try {
+      com.google.api.services.compute.model.Operation answer =
+          runWithRetries(new Callable<com.google.api.services.compute.model.Operation>() {
+            @Override
+            public com.google.api.services.compute.model.Operation call() {
+              return computeRpc.createInstance(completeInstance.instanceId().zone(),
+                  completeInstance.toPb(), optionsMap);
+            }
+          }, options().retryParams(), EXCEPTION_HANDLER);
+      return answer == null ? null : Operation.fromPb(this, answer);
+    } catch (RetryHelper.RetryHelperException e) {
+      throw ComputeException.translateAndThrow(e);
+    }
+  }
+
+  @Override
+  public Instance get(final InstanceId instance, InstanceOption... options) {
+    final Map<ComputeRpc.Option, ?> optionsMap = optionMap(options);
+    try {
+      com.google.api.services.compute.model.Instance answer =
+          runWithRetries(new Callable<com.google.api.services.compute.model.Instance>() {
+            @Override
+            public com.google.api.services.compute.model.Instance call() {
+              return computeRpc.getInstance(instance.zone(), instance.instance(), optionsMap);
+            }
+          }, options().retryParams(), EXCEPTION_HANDLER);
+      return answer == null ? null : Instance.fromPb(this, answer);
+    } catch (RetryHelper.RetryHelperException e) {
+      throw ComputeException.translateAndThrow(e);
+    }
+  }
+
+  private static Function<com.google.api.services.compute.model.Instance, Instance>
+      instanceFromPb(final ComputeOptions serviceOptions) {
+    return new Function<com.google.api.services.compute.model.Instance, Instance>() {
+      @Override
+      public Instance apply(com.google.api.services.compute.model.Instance instance) {
+        return Instance.fromPb(serviceOptions.service(), instance);
+      }
+    };
+  }
+
+  @Override
+  public Page<Instance> listInstances(String zone, InstanceListOption... options) {
+    return listInstances(zone, options(), optionMap(options));
+  }
+
+  private static Page<Instance> listInstances(final String zone,
+      final ComputeOptions serviceOptions, final Map<ComputeRpc.Option, ?> optionsMap) {
+    try {
+      ComputeRpc.Tuple<String, Iterable<com.google.api.services.compute.model.Instance>> result =
+          runWithRetries(new Callable<ComputeRpc.Tuple<String,
+              Iterable<com.google.api.services.compute.model.Instance>>>() {
+            @Override
+            public ComputeRpc.Tuple<String,
+                Iterable<com.google.api.services.compute.model.Instance>> call() {
+              return serviceOptions.rpc().listInstances(zone, optionsMap);
+            }
+          }, serviceOptions.retryParams(), EXCEPTION_HANDLER);
+      String cursor = result.x();
+      Iterable<Instance> instances = Iterables.transform(
+          result.y() == null ? ImmutableList.<com.google.api.services.compute.model.Instance>of()
+              : result.y(), instanceFromPb(serviceOptions));
+      return new PageImpl<>(new InstancePageFetcher(zone, serviceOptions, cursor, optionsMap),
+          cursor, instances);
+    } catch (RetryHelper.RetryHelperException e) {
+      throw ComputeException.translateAndThrow(e);
+    }
+  }
+
+  @Override
+  public Page<Instance> listInstances(InstanceAggregatedListOption... options) {
+    return listInstances(options(), optionMap(options));
+  }
+
+  private static Page<Instance> listInstances(final ComputeOptions serviceOptions,
+      final Map<ComputeRpc.Option, ?> optionsMap) {
+    try {
+      ComputeRpc.Tuple<String, Iterable<com.google.api.services.compute.model.Instance>> result =
+          runWithRetries(new Callable<ComputeRpc.Tuple<String,
+              Iterable<com.google.api.services.compute.model.Instance>>>() {
+            @Override
+            public ComputeRpc.Tuple<String,
+                Iterable<com.google.api.services.compute.model.Instance>> call() {
+              return serviceOptions.rpc().listInstances(optionsMap);
+            }
+          }, serviceOptions.retryParams(), EXCEPTION_HANDLER);
+      String cursor = result.x();
+      Iterable<Instance> instances = Iterables.transform(
+          result.y() == null ? ImmutableList.<com.google.api.services.compute.model.Instance>of()
+              : result.y(), instanceFromPb(serviceOptions));
+      return new PageImpl<>(new AggregatedInstancePageFetcher(serviceOptions, cursor, optionsMap),
+          cursor, instances);
+    } catch (RetryHelper.RetryHelperException e) {
+      throw ComputeException.translateAndThrow(e);
+    }
+  }
+
+  @Override
+  public Operation delete(final InstanceId instance, OperationOption... options) {
+    final Map<ComputeRpc.Option, ?> optionsMap = optionMap(options);
+    try {
+      com.google.api.services.compute.model.Operation answer =
+          runWithRetries(new Callable<com.google.api.services.compute.model.Operation>() {
+            @Override
+            public com.google.api.services.compute.model.Operation call() {
+              return computeRpc.deleteInstance(instance.zone(), instance.instance(), optionsMap);
+            }
+          }, options().retryParams(), EXCEPTION_HANDLER);
+      return answer == null ? null : Operation.fromPb(this, answer);
+    } catch (RetryHelper.RetryHelperException e) {
+      throw ComputeException.translateAndThrow(e);
+    }
+  }
+
+  @Override
+  public Operation addAccessConfig(final InstanceId instance, final String networkInterface,
+      final AccessConfig accessConfig, OperationOption... options) {
+    final Map<ComputeRpc.Option, ?> optionsMap = optionMap(options);
+    try {
+      com.google.api.services.compute.model.Operation answer =
+          runWithRetries(new Callable<com.google.api.services.compute.model.Operation>() {
+            @Override
+            public com.google.api.services.compute.model.Operation call() {
+              return computeRpc.addAccessConfig(instance.zone(), instance.instance(),
+                  networkInterface, accessConfig.toPb(), optionsMap);
+            }
+          }, options().retryParams(), EXCEPTION_HANDLER);
+      return answer == null ? null : Operation.fromPb(this, answer);
+    } catch (RetryHelper.RetryHelperException e) {
+      throw ComputeException.translateAndThrow(e);
+    }
+  }
+
+  private Operation attachDisk(final InstanceId instance, AttachedDisk diskToAttach,
+      OperationOption... options) {
+    final AttachedDisk completeDisk = diskToAttach.setProjectId(options().projectId());
+    final Map<ComputeRpc.Option, ?> optionsMap = optionMap(options);
+    try {
+      com.google.api.services.compute.model.Operation answer =
+          runWithRetries(new Callable<com.google.api.services.compute.model.Operation>() {
+            @Override
+            public com.google.api.services.compute.model.Operation call() {
+              return computeRpc.attachDisk(instance.zone(), instance.instance(),
+                  completeDisk.toPb(), optionsMap);
+            }
+          }, options().retryParams(), EXCEPTION_HANDLER);
+      return answer == null ? null : Operation.fromPb(this, answer);
+    } catch (RetryHelper.RetryHelperException e) {
+      throw ComputeException.translateAndThrow(e);
+    }
+  }
+
+  @Override
+  public Operation attachDisk(InstanceId instance, PersistentDiskConfiguration configuration,
+      OperationOption... options) {
+    return attachDisk(instance, AttachedDisk.of(configuration), options);
+  }
+
+  @Override
+  public Operation attachDisk(InstanceId instance, String deviceName,
+      PersistentDiskConfiguration configuration, OperationOption... options) {
+    return attachDisk(instance, AttachedDisk.of(deviceName, configuration), options);
+  }
+
+  @Override
+  public Operation attachDisk(InstanceId instance, String deviceName,
+      PersistentDiskConfiguration configuration, int index, OperationOption... options) {
+    AttachedDisk attachedDisk = AttachedDisk.builder(configuration)
+        .deviceName(deviceName)
+        .index(index)
+        .build();
+    return attachDisk(instance, attachedDisk, options);
+  }
+
+  @Override
+  public Operation deleteAccessConfig(final InstanceId instance, final String networkInterface,
+      final String accessConfig, OperationOption... options) {
+    final Map<ComputeRpc.Option, ?> optionsMap = optionMap(options);
+    try {
+      com.google.api.services.compute.model.Operation answer =
+          runWithRetries(new Callable<com.google.api.services.compute.model.Operation>() {
+            @Override
+            public com.google.api.services.compute.model.Operation call() {
+              return computeRpc.deleteAccessConfig(instance.zone(), instance.instance(),
+                  networkInterface, accessConfig, optionsMap);
+            }
+          }, options().retryParams(), EXCEPTION_HANDLER);
+      return answer == null ? null : Operation.fromPb(this, answer);
+    } catch (RetryHelper.RetryHelperException e) {
+      throw ComputeException.translateAndThrow(e);
+    }
+  }
+
+  @Override
+  public Operation detachDisk(final InstanceId instance, final String deviceName,
+      OperationOption... options) {
+    final Map<ComputeRpc.Option, ?> optionsMap = optionMap(options);
+    try {
+      com.google.api.services.compute.model.Operation answer =
+          runWithRetries(new Callable<com.google.api.services.compute.model.Operation>() {
+            @Override
+            public com.google.api.services.compute.model.Operation call() {
+              return computeRpc.detachDisk(instance.zone(), instance.instance(), deviceName,
+                  optionsMap);
+            }
+          }, options().retryParams(), EXCEPTION_HANDLER);
+      return answer == null ? null : Operation.fromPb(this, answer);
+    } catch (RetryHelper.RetryHelperException e) {
+      throw ComputeException.translateAndThrow(e);
+    }
+  }
+
+  @Override
+  public String getSerialPortOutput(final InstanceId instance, final int port) {
+    try {
+      return runWithRetries(new Callable<String>() {
+        @Override
+        public String call() {
+          return computeRpc.getSerialPortOutput(instance.zone(), instance.instance(), port,
+              optionMap());
+        }
+      }, options().retryParams(), EXCEPTION_HANDLER);
+    } catch (RetryHelper.RetryHelperException e) {
+      throw ComputeException.translateAndThrow(e);
+    }
+  }
+
+  @Override
+  public String getSerialPortOutput(final InstanceId instance) {
+    try {
+      return runWithRetries(new Callable<String>() {
+        @Override
+        public String call() {
+          return computeRpc.getSerialPortOutput(instance.zone(), instance.instance(), null,
+              optionMap());
+        }
+      }, options().retryParams(), EXCEPTION_HANDLER);
+    } catch (RetryHelper.RetryHelperException e) {
+      throw ComputeException.translateAndThrow(e);
+    }
+  }
+
+  @Override
+  public Operation reset(final InstanceId instance, OperationOption... options) {
+    final Map<ComputeRpc.Option, ?> optionsMap = optionMap(options);
+    try {
+      com.google.api.services.compute.model.Operation answer =
+          runWithRetries(new Callable<com.google.api.services.compute.model.Operation>() {
+            @Override
+            public com.google.api.services.compute.model.Operation call() {
+              return computeRpc.reset(instance.zone(), instance.instance(), optionsMap);
+            }
+          }, options().retryParams(), EXCEPTION_HANDLER);
+      return answer == null ? null : Operation.fromPb(this, answer);
+    } catch (RetryHelper.RetryHelperException e) {
+      throw ComputeException.translateAndThrow(e);
+    }
+  }
+
+  @Override
+  public Operation setDiskAutoDelete(final InstanceId instance, final String deviceName,
+      final boolean autoDelete, OperationOption... options) {
+    final Map<ComputeRpc.Option, ?> optionsMap = optionMap(options);
+    try {
+      com.google.api.services.compute.model.Operation answer =
+          runWithRetries(new Callable<com.google.api.services.compute.model.Operation>() {
+            @Override
+            public com.google.api.services.compute.model.Operation call() {
+              return computeRpc.setDiskAutoDelete(instance.zone(), instance.instance(), deviceName,
+                  autoDelete, optionsMap);
+            }
+          }, options().retryParams(), EXCEPTION_HANDLER);
+      return answer == null ? null : Operation.fromPb(this, answer);
+    } catch (RetryHelper.RetryHelperException e) {
+      throw ComputeException.translateAndThrow(e);
+    }
+  }
+
+  @Override
+  public Operation setMachineType(final InstanceId instance, final MachineTypeId machineType,
+      OperationOption... options) {
+    final String machineTypeUrl = machineType.setProjectId(options().projectId()).selfLink();
+    final Map<ComputeRpc.Option, ?> optionsMap = optionMap(options);
+    try {
+      com.google.api.services.compute.model.Operation answer =
+          runWithRetries(new Callable<com.google.api.services.compute.model.Operation>() {
+            @Override
+            public com.google.api.services.compute.model.Operation call() {
+              return computeRpc.setMachineType(instance.zone(), instance.instance(), machineTypeUrl,
+                  optionsMap);
+            }
+          }, options().retryParams(), EXCEPTION_HANDLER);
+      return answer == null ? null : Operation.fromPb(this, answer);
+    } catch (RetryHelper.RetryHelperException e) {
+      throw ComputeException.translateAndThrow(e);
+    }
+  }
+
+  @Override
+  public Operation setMetadata(final InstanceId instance, final Metadata metadata,
+      OperationOption... options) {
+    final Map<ComputeRpc.Option, ?> optionsMap = optionMap(options);
+    try {
+      com.google.api.services.compute.model.Operation answer =
+          runWithRetries(new Callable<com.google.api.services.compute.model.Operation>() {
+            @Override
+            public com.google.api.services.compute.model.Operation call() {
+              return computeRpc.setMetadata(instance.zone(), instance.instance(), metadata.toPb(),
+                  optionsMap);
+            }
+          }, options().retryParams(), EXCEPTION_HANDLER);
+      return answer == null ? null : Operation.fromPb(this, answer);
+    } catch (RetryHelper.RetryHelperException e) {
+      throw ComputeException.translateAndThrow(e);
+    }
+  }
+
+  @Override
+  public Operation setSchedulingOptions(final InstanceId instance,
+      final SchedulingOptions schedulingOptions, OperationOption... options) {
+    final Map<ComputeRpc.Option, ?> optionsMap = optionMap(options);
+    try {
+      com.google.api.services.compute.model.Operation answer =
+          runWithRetries(new Callable<com.google.api.services.compute.model.Operation>() {
+            @Override
+            public com.google.api.services.compute.model.Operation call() {
+              return computeRpc.setScheduling(instance.zone(), instance.instance(),
+                  schedulingOptions.toPb(), optionsMap);
+            }
+          }, options().retryParams(), EXCEPTION_HANDLER);
+      return answer == null ? null : Operation.fromPb(this, answer);
+    } catch (RetryHelper.RetryHelperException e) {
+      throw ComputeException.translateAndThrow(e);
+    }
+  }
+
+  @Override
+  public Operation setTags(final InstanceId instance, final Tags tags, OperationOption... options) {
+    final Map<ComputeRpc.Option, ?> optionsMap = optionMap(options);
+    try {
+      com.google.api.services.compute.model.Operation answer =
+          runWithRetries(new Callable<com.google.api.services.compute.model.Operation>() {
+            @Override
+            public com.google.api.services.compute.model.Operation call() {
+              return computeRpc.setTags(instance.zone(), instance.instance(), tags.toPb(),
+                  optionsMap);
+            }
+          }, options().retryParams(), EXCEPTION_HANDLER);
+      return answer == null ? null : Operation.fromPb(this, answer);
+    } catch (RetryHelper.RetryHelperException e) {
+      throw ComputeException.translateAndThrow(e);
+    }
+  }
+
+  @Override
+  public Operation start(final InstanceId instance, OperationOption... options) {
+    final Map<ComputeRpc.Option, ?> optionsMap = optionMap(options);
+    try {
+      com.google.api.services.compute.model.Operation answer =
+          runWithRetries(new Callable<com.google.api.services.compute.model.Operation>() {
+            @Override
+            public com.google.api.services.compute.model.Operation call() {
+              return computeRpc.start(instance.zone(), instance.instance(), optionsMap);
+            }
+          }, options().retryParams(), EXCEPTION_HANDLER);
+      return answer == null ? null : Operation.fromPb(this, answer);
+    } catch (RetryHelper.RetryHelperException e) {
+      throw ComputeException.translateAndThrow(e);
+    }
+  }
+
+  @Override
+  public Operation stop(final InstanceId instance, OperationOption... options) {
+    final Map<ComputeRpc.Option, ?> optionsMap = optionMap(options);
+    try {
+      com.google.api.services.compute.model.Operation answer =
+          runWithRetries(new Callable<com.google.api.services.compute.model.Operation>() {
+            @Override
+            public com.google.api.services.compute.model.Operation call() {
+              return computeRpc.stop(instance.zone(), instance.instance(), optionsMap);
+            }
+          }, options().retryParams(), EXCEPTION_HANDLER);
+      return answer == null ? null : Operation.fromPb(this, answer);
+    } catch (RetryHelper.RetryHelperException e) {
+      throw ComputeException.translateAndThrow(e);
+    }
   }
 
   private Map<ComputeRpc.Option, ?> optionMap(Option... options) {

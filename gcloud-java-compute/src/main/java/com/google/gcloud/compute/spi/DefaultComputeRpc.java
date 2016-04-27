@@ -26,10 +26,12 @@ import com.google.api.client.http.HttpRequestInitializer;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.json.jackson.JacksonFactory;
 import com.google.api.services.compute.Compute;
+import com.google.api.services.compute.model.AccessConfig;
 import com.google.api.services.compute.model.Address;
 import com.google.api.services.compute.model.AddressAggregatedList;
 import com.google.api.services.compute.model.AddressList;
 import com.google.api.services.compute.model.AddressesScopedList;
+import com.google.api.services.compute.model.AttachedDisk;
 import com.google.api.services.compute.model.DeprecationStatus;
 import com.google.api.services.compute.model.Disk;
 import com.google.api.services.compute.model.DiskAggregatedList;
@@ -42,23 +44,32 @@ import com.google.api.services.compute.model.DisksResizeRequest;
 import com.google.api.services.compute.model.DisksScopedList;
 import com.google.api.services.compute.model.Image;
 import com.google.api.services.compute.model.ImageList;
+import com.google.api.services.compute.model.Instance;
+import com.google.api.services.compute.model.InstanceAggregatedList;
+import com.google.api.services.compute.model.InstanceList;
+import com.google.api.services.compute.model.InstancesScopedList;
+import com.google.api.services.compute.model.InstancesSetMachineTypeRequest;
 import com.google.api.services.compute.model.License;
 import com.google.api.services.compute.model.MachineType;
 import com.google.api.services.compute.model.MachineTypeAggregatedList;
 import com.google.api.services.compute.model.MachineTypeList;
 import com.google.api.services.compute.model.MachineTypesScopedList;
+import com.google.api.services.compute.model.Metadata;
 import com.google.api.services.compute.model.Network;
 import com.google.api.services.compute.model.NetworkList;
 import com.google.api.services.compute.model.Operation;
 import com.google.api.services.compute.model.OperationList;
 import com.google.api.services.compute.model.Region;
 import com.google.api.services.compute.model.RegionList;
+import com.google.api.services.compute.model.Scheduling;
+import com.google.api.services.compute.model.SerialPortOutput;
 import com.google.api.services.compute.model.Snapshot;
 import com.google.api.services.compute.model.SnapshotList;
 import com.google.api.services.compute.model.Subnetwork;
 import com.google.api.services.compute.model.SubnetworkAggregatedList;
 import com.google.api.services.compute.model.SubnetworkList;
 import com.google.api.services.compute.model.SubnetworksScopedList;
+import com.google.api.services.compute.model.Tags;
 import com.google.api.services.compute.model.Zone;
 import com.google.api.services.compute.model.ZoneList;
 import com.google.common.collect.ImmutableList;
@@ -862,6 +873,256 @@ public class DefaultComputeRpc implements ComputeRpc {
     try {
       return compute.networks()
           .delete(this.options.projectId(), network)
+          .setFields(FIELDS.getString(options))
+          .execute();
+    } catch (IOException ex) {
+      return nullForNotFound(ex);
+    }
+  }
+
+  @Override
+  public Operation createInstance(String zone, Instance instance, Map<Option, ?> options) {
+    try {
+      return compute.instances()
+          .insert(this.options.projectId(), zone, instance)
+          .setFields(FIELDS.getString(options))
+          .execute();
+    } catch (IOException ex) {
+      throw translate(ex);
+    }
+  }
+
+  @Override
+  public Instance getInstance(String zone, String instance, Map<Option, ?> options) {
+    try {
+      return compute.instances()
+          .get(this.options.projectId(), zone, instance)
+          .setFields(FIELDS.getString(options))
+          .execute();
+    } catch (IOException ex) {
+      return nullForNotFound(ex);
+    }
+  }
+
+  @Override
+  public Tuple<String, Iterable<Instance>> listInstances(String zone, Map<Option, ?> options) {
+    try {
+      InstanceList instanceList = compute.instances()
+          .list(this.options.projectId(), zone)
+          .setFilter(FILTER.getString(options))
+          .setMaxResults(MAX_RESULTS.getLong(options))
+          .setPageToken(PAGE_TOKEN.getString(options))
+          .setFields(FIELDS.getString(options))
+          .execute();
+      Iterable<Instance> instances = instanceList.getItems();
+      return Tuple.of(instanceList.getNextPageToken(), instances);
+    } catch (IOException ex) {
+      throw translate(ex);
+    }
+  }
+
+  @Override
+  public Tuple<String, Iterable<Instance>> listInstances(Map<Option, ?> options) {
+    try {
+      InstanceAggregatedList aggregatedList = compute.instances()
+          .aggregatedList(this.options.projectId())
+          .setFilter(FILTER.getString(options))
+          .setMaxResults(MAX_RESULTS.getLong(options))
+          .setPageToken(PAGE_TOKEN.getString(options))
+          // todo(mziccard): uncomment or remove once #711 is closed
+          // .setFields(FIELDS.getString(options))
+          .execute();
+      ImmutableList.Builder<Instance> builder = ImmutableList.builder();
+      Map<String, InstancesScopedList> scopedList = aggregatedList.getItems();
+      if (scopedList != null) {
+        for (InstancesScopedList instancesScopedList : scopedList.values()) {
+          if (instancesScopedList.getInstances() != null) {
+            builder.addAll(instancesScopedList.getInstances());
+          }
+        }
+      }
+      return Tuple.<String, Iterable<Instance>>of(aggregatedList.getNextPageToken(),
+          builder.build());
+    } catch (IOException ex) {
+      throw translate(ex);
+    }
+  }
+
+  @Override
+  public Operation deleteInstance(String zone, String instance, Map<Option, ?> options) {
+    try {
+      return compute.instances()
+          .delete(this.options.projectId(), zone, instance)
+          .setFields(FIELDS.getString(options))
+          .execute();
+    } catch (IOException ex) {
+      return nullForNotFound(ex);
+    }
+  }
+
+  @Override
+  public Operation addAccessConfig(String zone, String instance, String networkInterface,
+      AccessConfig accessConfig, Map<Option, ?> options) {
+    try {
+      return compute.instances()
+          .addAccessConfig(this.options.projectId(), zone, instance, networkInterface, accessConfig)
+          .setFields(FIELDS.getString(options))
+          .execute();
+    } catch (IOException ex) {
+      throw translate(ex);
+    }
+  }
+
+  @Override
+  public Operation attachDisk(String zone, String instance, AttachedDisk attachedDisk,
+      Map<Option, ?> options) {
+    try {
+      return compute.instances()
+          .attachDisk(this.options.projectId(), zone, instance, attachedDisk)
+          .setFields(FIELDS.getString(options))
+          .execute();
+    } catch (IOException ex) {
+      throw translate(ex);
+    }
+  }
+
+  @Override
+  public Operation deleteAccessConfig(String zone, String instance, String networkInterface,
+      String accessConfig, Map<Option, ?> options) {
+    try {
+      return compute.instances()
+          .deleteAccessConfig(this.options.projectId(), zone, instance, accessConfig,
+              networkInterface)
+          .setFields(FIELDS.getString(options))
+          .execute();
+    } catch (IOException ex) {
+      return nullForNotFound(ex);
+    }
+  }
+
+  @Override
+  public Operation detachDisk(String zone, String instance, String deviceName,
+      Map<Option, ?> options) {
+    try {
+      return compute.instances()
+          .detachDisk(this.options.projectId(), zone, instance, deviceName)
+          .setFields(FIELDS.getString(options))
+          .execute();
+    } catch (IOException ex) {
+      return nullForNotFound(ex);
+    }
+  }
+
+  @Override
+  public String getSerialPortOutput(String zone, String instance, Integer port,
+      Map<Option, ?> options) {
+    try {
+      SerialPortOutput portOutput = compute.instances()
+          .getSerialPortOutput(this.options.projectId(), zone, instance)
+          .setPort(port)
+          .setFields(FIELDS.getString(options))
+          .execute();
+      return portOutput != null ? portOutput.getContents() : null;
+    } catch (IOException ex) {
+      return nullForNotFound(ex);
+    }
+  }
+
+  @Override
+  public Operation reset(String zone, String instance, Map<Option, ?> options) {
+    try {
+      return compute.instances()
+          .reset(this.options.projectId(), zone, instance)
+          .setFields(FIELDS.getString(options))
+          .execute();
+    } catch (IOException ex) {
+      return nullForNotFound(ex);
+    }
+  }
+
+  @Override
+  public Operation setDiskAutoDelete(String zone, String instance, String deviceName,
+      boolean autoDelete, Map<Option, ?> options) {
+    try {
+      return compute.instances()
+          .setDiskAutoDelete(this.options.projectId(), zone, instance, autoDelete, deviceName)
+          .setFields(FIELDS.getString(options))
+          .execute();
+    } catch (IOException ex) {
+      return nullForNotFound(ex);
+    }
+  }
+
+  @Override
+  public Operation setMachineType(String zone, String instance, String machineTypeUrl,
+      Map<Option, ?> options) {
+    try {
+      InstancesSetMachineTypeRequest request =
+          new InstancesSetMachineTypeRequest().setMachineType(machineTypeUrl);
+      return compute.instances()
+          .setMachineType(this.options.projectId(), zone, instance, request)
+          .setFields(FIELDS.getString(options))
+          .execute();
+    } catch (IOException ex) {
+      return nullForNotFound(ex);
+    }
+  }
+
+  @Override
+  public Operation setMetadata(String zone, String instance, Metadata metadata,
+      Map<Option, ?> options) {
+    try {
+      return compute.instances()
+          .setMetadata(this.options.projectId(), zone, instance, metadata)
+          .setFields(FIELDS.getString(options))
+          .execute();
+    } catch (IOException ex) {
+      return nullForNotFound(ex);
+    }
+  }
+
+  @Override
+  public Operation setScheduling(String zone, String instance, Scheduling scheduling,
+      Map<Option, ?> options) {
+    try {
+      return compute.instances()
+          .setScheduling(this.options.projectId(), zone, instance, scheduling)
+          .setFields(FIELDS.getString(options))
+          .execute();
+    } catch (IOException ex) {
+      return nullForNotFound(ex);
+    }
+  }
+
+  @Override
+  public Operation setTags(String zone, String instance, Tags tags, Map<Option, ?> options) {
+    try {
+      return compute.instances()
+          .setTags(this.options.projectId(), zone, instance, tags)
+          .setFields(FIELDS.getString(options))
+          .execute();
+    } catch (IOException ex) {
+      return nullForNotFound(ex);
+    }
+  }
+
+  @Override
+  public Operation start(String zone, String instance, Map<Option, ?> options) {
+    try {
+      return compute.instances()
+          .start(this.options.projectId(), zone, instance)
+          .setFields(FIELDS.getString(options))
+          .execute();
+    } catch (IOException ex) {
+      return nullForNotFound(ex);
+    }
+  }
+
+  @Override
+  public Operation stop(String zone, String instance, Map<Option, ?> options) {
+    try {
+      return compute.instances()
+          .stop(this.options.projectId(), zone, instance)
           .setFields(FIELDS.getString(options))
           .execute();
     } catch (IOException ex) {
