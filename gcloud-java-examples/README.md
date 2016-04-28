@@ -62,6 +62,18 @@ To run examples from your command line:
     mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.bigquery.BigQueryExample" -Dexec.args="query 'select * from new_dataset_id.new_table_id'"
     ```
 
+  * Here's an example run of `ComputeExample`.
+
+    Before running the example, go to the [Google Developers Console][developers-console] to ensure
+    that Compute API is enabled.
+    ```
+    mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.compute.ComputeExample" -Dexec.args="create image-disk us-central1-a test-disk debian-cloud debian-8-jessie-v20160329"
+    mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.compute.ComputeExample" -Dexec.args="create instance us-central1-a test-instance n1-standard-1 test-disk default"
+    mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.compute.ComputeExample" -Dexec.args="add-access-config us-central1-a test-instance nic0 NAT"
+    mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.compute.ComputeExample" -Dexec.args="delete instance us-central1-a test-instance"
+    mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.compute.ComputeExample" -Dexec.args="delete disk us-central1-a test-disk"
+    ```
+
   * Here's an example run of `DatastoreExample`.
   
     Be sure to change the placeholder project ID "your-project-id" with your own project ID. Also note that you have to enable the Google Cloud Datastore API on the [Google Developers Console][developers-console] before running the following commands.
