@@ -149,7 +149,7 @@ public class Disk extends DiskInfo {
    * @throws ComputeException upon failure
    */
   public Disk reload(DiskOption... options) {
-    return compute.get(diskId(), options);
+    return compute.getDisk(diskId(), options);
   }
 
   /**
@@ -160,7 +160,7 @@ public class Disk extends DiskInfo {
    * @throws ComputeException upon failure
    */
   public Operation delete(OperationOption... options) {
-    return compute.delete(diskId(), options);
+    return compute.deleteDisk(diskId(), options);
   }
 
   /**

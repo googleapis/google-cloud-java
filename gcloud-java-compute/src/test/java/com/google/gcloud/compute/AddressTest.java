@@ -203,7 +203,7 @@ public class AddressTest {
     Operation operation = new Operation.Builder(serviceMockReturnsOptions)
         .operationId(GlobalOperationId.of("project", "op"))
         .build();
-    expect(compute.delete(REGION_ADDRESS_ID)).andReturn(operation);
+    expect(compute.deleteAddress(REGION_ADDRESS_ID)).andReturn(operation);
     replay(compute);
     initializeAddress();
     assertSame(operation, address.delete());
@@ -213,7 +213,7 @@ public class AddressTest {
   public void testDeleteNull() {
     initializeExpectedAddress(3);
     expect(compute.options()).andReturn(mockOptions);
-    expect(compute.delete(REGION_ADDRESS_ID)).andReturn(null);
+    expect(compute.deleteAddress(REGION_ADDRESS_ID)).andReturn(null);
     replay(compute);
     initializeAddress();
     assertNull(address.delete());
@@ -224,7 +224,7 @@ public class AddressTest {
     initializeExpectedAddress(3);
     Compute.AddressOption[] expectedOptions = {Compute.AddressOption.fields()};
     expect(compute.options()).andReturn(mockOptions);
-    expect(compute.get(REGION_ADDRESS_ID, expectedOptions)).andReturn(regionForwardingAddress);
+    expect(compute.getAddress(REGION_ADDRESS_ID, expectedOptions)).andReturn(regionForwardingAddress);
     replay(compute);
     initializeAddress();
     assertTrue(address.exists());
@@ -236,7 +236,7 @@ public class AddressTest {
     initializeExpectedAddress(3);
     Compute.AddressOption[] expectedOptions = {Compute.AddressOption.fields()};
     expect(compute.options()).andReturn(mockOptions);
-    expect(compute.get(REGION_ADDRESS_ID, expectedOptions)).andReturn(null);
+    expect(compute.getAddress(REGION_ADDRESS_ID, expectedOptions)).andReturn(null);
     replay(compute);
     initializeAddress();
     assertFalse(address.exists());
@@ -247,7 +247,7 @@ public class AddressTest {
   public void testReload() throws Exception {
     initializeExpectedAddress(5);
     expect(compute.options()).andReturn(mockOptions);
-    expect(compute.get(REGION_ADDRESS_ID)).andReturn(regionForwardingAddress);
+    expect(compute.getAddress(REGION_ADDRESS_ID)).andReturn(regionForwardingAddress);
     replay(compute);
     initializeAddress();
     Address updatedAddress = address.reload();
@@ -259,7 +259,7 @@ public class AddressTest {
   public void testReloadNull() throws Exception {
     initializeExpectedAddress(3);
     expect(compute.options()).andReturn(mockOptions);
-    expect(compute.get(REGION_ADDRESS_ID)).andReturn(null);
+    expect(compute.getAddress(REGION_ADDRESS_ID)).andReturn(null);
     replay(compute);
     initializeAddress();
     assertNull(address.reload());
@@ -270,7 +270,7 @@ public class AddressTest {
   public void testReloadWithOptions() throws Exception {
     initializeExpectedAddress(5);
     expect(compute.options()).andReturn(mockOptions);
-    expect(compute.get(REGION_ADDRESS_ID, Compute.AddressOption.fields()))
+    expect(compute.getAddress(REGION_ADDRESS_ID, Compute.AddressOption.fields()))
         .andReturn(regionForwardingAddress);
     replay(compute);
     initializeAddress();

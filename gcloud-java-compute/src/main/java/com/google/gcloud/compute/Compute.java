@@ -2289,7 +2289,7 @@ public interface Compute extends Service<ComputeOptions> {
    *
    * @throws ComputeException upon failure
    */
-  Operation get(OperationId operationId, OperationOption... options);
+  Operation getOperation(OperationId operationId, OperationOption... options);
 
   /**
    * Lists the global operations.
@@ -2321,14 +2321,14 @@ public interface Compute extends Service<ComputeOptions> {
    * @return {@code true} if operation was deleted, {@code false} if it was not found
    * @throws ComputeException upon failure
    */
-  boolean delete(OperationId operation);
+  boolean deleteOperation(OperationId operation);
 
   /**
    * Returns the requested address or {@code null} if not found.
    *
    * @throws ComputeException upon failure
    */
-  Address get(AddressId addressId, AddressOption... options);
+  Address getAddress(AddressId addressId, AddressOption... options);
 
   /**
    * Creates a new address.
@@ -2366,7 +2366,7 @@ public interface Compute extends Service<ComputeOptions> {
    *     found
    * @throws ComputeException upon failure
    */
-  Operation delete(AddressId addressId, OperationOption... options);
+  Operation deleteAddress(AddressId addressId, OperationOption... options);
 
   /**
    * Creates a new snapshot.
@@ -2429,7 +2429,7 @@ public interface Compute extends Service<ComputeOptions> {
    *
    * @throws ComputeException upon failure
    */
-  Image get(ImageId imageId, ImageOption... options);
+  Image getImage(ImageId imageId, ImageOption... options);
 
   /**
    * Lists images in the provided project that are available to the current user. This method can be
@@ -2457,7 +2457,7 @@ public interface Compute extends Service<ComputeOptions> {
    *     image was not found
    * @throws ComputeException upon failure or if {@code image} is a publicly-available image
    */
-  Operation delete(ImageId image, OperationOption... options);
+  Operation deleteImage(ImageId image, OperationOption... options);
 
   /**
    * Deprecates the requested image.
@@ -2474,7 +2474,7 @@ public interface Compute extends Service<ComputeOptions> {
    *
    * @throws ComputeException upon failure
    */
-  Disk get(DiskId diskId, DiskOption... options);
+  Disk getDisk(DiskId diskId, DiskOption... options);
 
   /**
    * Creates a new disk.
@@ -2505,7 +2505,7 @@ public interface Compute extends Service<ComputeOptions> {
    *     found
    * @throws ComputeException upon failure
    */
-  Operation delete(DiskId disk, OperationOption... options);
+  Operation deleteDisk(DiskId disk, OperationOption... options);
 
   /**
    * Resizes the disk to the requested size. The new size must be larger than the previous one.
@@ -2529,7 +2529,7 @@ public interface Compute extends Service<ComputeOptions> {
    *
    * @throws ComputeException upon failure
    */
-  Subnetwork get(SubnetworkId subnetworkId, SubnetworkOption... options);
+  Subnetwork getSubnetwork(SubnetworkId subnetworkId, SubnetworkOption... options);
 
   /**
    * Lists subnetworks for the provided region.
@@ -2553,7 +2553,7 @@ public interface Compute extends Service<ComputeOptions> {
    *     subnetwork was not found
    * @throws ComputeException upon failure
    */
-  Operation delete(SubnetworkId subnetwork, OperationOption... options);
+  Operation deleteSubnetwork(SubnetworkId subnetwork, OperationOption... options);
 
   /**
    * Creates a new network.
@@ -2608,7 +2608,7 @@ public interface Compute extends Service<ComputeOptions> {
    *
    * @throws ComputeException upon failure
    */
-  Instance get(InstanceId instance, InstanceOption... options);
+  Instance getInstance(InstanceId instance, InstanceOption... options);
 
   /**
    * Lists instances for the provided zone.
@@ -2631,7 +2631,7 @@ public interface Compute extends Service<ComputeOptions> {
    *     instance was not found
    * @throws ComputeException upon failure
    */
-  Operation delete(InstanceId instance, OperationOption... options);
+  Operation deleteInstance(InstanceId instance, OperationOption... options);
 
   /**
    * Adds an access configuration to an instance's network interface.

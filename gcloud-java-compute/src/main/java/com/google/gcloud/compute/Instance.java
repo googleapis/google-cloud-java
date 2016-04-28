@@ -202,7 +202,7 @@ public class Instance extends InstanceInfo {
    * @throws ComputeException upon failure
    */
   public Instance reload(InstanceOption... options) {
-    return compute.get(instanceId(), options);
+    return compute.getInstance(instanceId(), options);
   }
 
   /**
@@ -213,7 +213,7 @@ public class Instance extends InstanceInfo {
    * @throws ComputeException upon failure
    */
   public Operation delete(OperationOption... options) {
-    return compute.delete(instanceId(), options);
+    return compute.deleteInstance(instanceId(), options);
   }
 
   /**

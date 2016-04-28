@@ -135,7 +135,7 @@ public class Subnetwork extends SubnetworkInfo {
    * @throws ComputeException upon failure
    */
   public Subnetwork reload(SubnetworkOption... options) {
-    return compute.get(subnetworkId(), options);
+    return compute.getSubnetwork(subnetworkId(), options);
   }
 
   /**
@@ -146,7 +146,7 @@ public class Subnetwork extends SubnetworkInfo {
    * @throws ComputeException upon failure
    */
   public Operation delete(OperationOption... options) {
-    return compute.delete(subnetworkId(), options);
+    return compute.deleteSubnetwork(subnetworkId(), options);
   }
 
   /**

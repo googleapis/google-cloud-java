@@ -1272,7 +1272,7 @@ public class ComputeImplTest {
         .andReturn(globalOperation.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.service();
-    assertEquals(globalOperation, compute.get(GLOBAL_OPERATION_ID));
+    assertEquals(globalOperation, compute.getOperation(GLOBAL_OPERATION_ID));
   }
 
   @Test
@@ -1282,7 +1282,7 @@ public class ComputeImplTest {
         .andReturn(null);
     EasyMock.replay(computeRpcMock);
     compute = options.service();
-    assertNull(compute.get(GLOBAL_OPERATION_ID));
+    assertNull(compute.getOperation(GLOBAL_OPERATION_ID));
   }
 
   @Test
@@ -1293,7 +1293,7 @@ public class ComputeImplTest {
         .andReturn(globalOperation.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.service();
-    Operation operation = compute.get(GLOBAL_OPERATION_ID, OPERATION_OPTION_FIELDS);
+    Operation operation = compute.getOperation(GLOBAL_OPERATION_ID, OPERATION_OPTION_FIELDS);
     String selector = (String) capturedOptions.getValue().get(OPERATION_OPTION_FIELDS.rpcOption());
     assertTrue(selector.contains("selfLink"));
     assertTrue(selector.contains("id"));
@@ -1375,7 +1375,7 @@ public class ComputeImplTest {
         .andReturn(true);
     EasyMock.replay(computeRpcMock);
     compute = options.service();
-    assertTrue(compute.delete(GLOBAL_OPERATION_ID));
+    assertTrue(compute.deleteOperation(GLOBAL_OPERATION_ID));
   }
 
   @Test
@@ -1384,7 +1384,7 @@ public class ComputeImplTest {
         .andReturn(false);
     EasyMock.replay(computeRpcMock);
     compute = options.service();
-    assertFalse(compute.delete(GLOBAL_OPERATION_ID));
+    assertFalse(compute.deleteOperation(GLOBAL_OPERATION_ID));
   }
 
   @Test
@@ -1394,7 +1394,7 @@ public class ComputeImplTest {
         .andReturn(regionOperation.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.service();
-    Operation operation = compute.get(REGION_OPERATION_ID);
+    Operation operation = compute.getOperation(REGION_OPERATION_ID);
     assertEquals(regionOperation, operation);
   }
 
@@ -1405,7 +1405,7 @@ public class ComputeImplTest {
         .andReturn(regionOperation.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.service();
-    Operation operation = compute.get(REGION_OPERATION_ID);
+    Operation operation = compute.getOperation(REGION_OPERATION_ID);
     assertEquals(regionOperation, operation);
   }
 
@@ -1417,7 +1417,7 @@ public class ComputeImplTest {
         .andReturn(regionOperation.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.service();
-    Operation operation = compute.get(REGION_OPERATION_ID, OPERATION_OPTION_FIELDS);
+    Operation operation = compute.getOperation(REGION_OPERATION_ID, OPERATION_OPTION_FIELDS);
     String selector = (String) capturedOptions.getValue().get(OPERATION_OPTION_FIELDS.rpcOption());
     assertTrue(selector.contains("selfLink"));
     assertTrue(selector.contains("id"));
@@ -1507,7 +1507,7 @@ public class ComputeImplTest {
         REGION_OPERATION_ID.operation())).andReturn(true);
     EasyMock.replay(computeRpcMock);
     compute = options.service();
-    assertTrue(compute.delete(REGION_OPERATION_ID));
+    assertTrue(compute.deleteOperation(REGION_OPERATION_ID));
   }
 
   @Test
@@ -1516,7 +1516,7 @@ public class ComputeImplTest {
         REGION_OPERATION_ID.operation())).andReturn(false);
     EasyMock.replay(computeRpcMock);
     compute = options.service();
-    assertFalse(compute.delete(REGION_OPERATION_ID));
+    assertFalse(compute.deleteOperation(REGION_OPERATION_ID));
   }
 
   @Test
@@ -1525,7 +1525,7 @@ public class ComputeImplTest {
         ZONE_OPERATION_ID.operation(), EMPTY_RPC_OPTIONS)).andReturn(zoneOperation.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.service();
-    Operation operation = compute.get(ZONE_OPERATION_ID);
+    Operation operation = compute.getOperation(ZONE_OPERATION_ID);
     assertEquals(zoneOperation, operation);
   }
 
@@ -1535,7 +1535,7 @@ public class ComputeImplTest {
         ZONE_OPERATION_ID.operation(), EMPTY_RPC_OPTIONS)).andReturn(null);
     EasyMock.replay(computeRpcMock);
     compute = options.service();
-    assertNull(compute.get(ZONE_OPERATION_ID));
+    assertNull(compute.getOperation(ZONE_OPERATION_ID));
   }
 
   @Test
@@ -1546,7 +1546,7 @@ public class ComputeImplTest {
         .andReturn(zoneOperation.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.service();
-    Operation operation = compute.get(ZONE_OPERATION_ID, OPERATION_OPTION_FIELDS);
+    Operation operation = compute.getOperation(ZONE_OPERATION_ID, OPERATION_OPTION_FIELDS);
     String selector = (String) capturedOptions.getValue().get(OPERATION_OPTION_FIELDS.rpcOption());
     assertTrue(selector.contains("selfLink"));
     assertTrue(selector.contains("id"));
@@ -1636,7 +1636,7 @@ public class ComputeImplTest {
         ZONE_OPERATION_ID.operation())).andReturn(true);
     EasyMock.replay(computeRpcMock);
     compute = options.service();
-    assertTrue(compute.delete(ZONE_OPERATION_ID));
+    assertTrue(compute.deleteOperation(ZONE_OPERATION_ID));
   }
 
   @Test
@@ -1645,7 +1645,7 @@ public class ComputeImplTest {
         ZONE_OPERATION_ID.operation())).andReturn(false);
     EasyMock.replay(computeRpcMock);
     compute = options.service();
-    assertFalse(compute.delete(ZONE_OPERATION_ID));
+    assertFalse(compute.deleteOperation(ZONE_OPERATION_ID));
   }
 
   @Test
@@ -1654,7 +1654,7 @@ public class ComputeImplTest {
         .andReturn(GLOBAL_ADDRESS.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.service();
-    Address address = compute.get(GLOBAL_ADDRESS_ID);
+    Address address = compute.getAddress(GLOBAL_ADDRESS_ID);
     assertEquals(new Address(compute, new AddressInfo.BuilderImpl(GLOBAL_ADDRESS)), address);
   }
 
@@ -1664,7 +1664,7 @@ public class ComputeImplTest {
         .andReturn(null);
     EasyMock.replay(computeRpcMock);
     compute = options.service();
-    assertNull(compute.get(GLOBAL_ADDRESS_ID));
+    assertNull(compute.getAddress(GLOBAL_ADDRESS_ID));
   }
 
   @Test
@@ -1675,7 +1675,7 @@ public class ComputeImplTest {
         .andReturn(GLOBAL_ADDRESS.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.service();
-    Address address = compute.get(GLOBAL_ADDRESS_ID, ADDRESS_OPTION_FIELDS);
+    Address address = compute.getAddress(GLOBAL_ADDRESS_ID, ADDRESS_OPTION_FIELDS);
     String selector = (String) capturedOptions.getValue().get(ADDRESS_OPTION_FIELDS.rpcOption());
     assertTrue(selector.contains("selfLink"));
     assertTrue(selector.contains("id"));
@@ -1690,7 +1690,7 @@ public class ComputeImplTest {
         REGION_ADDRESS_ID.address(), EMPTY_RPC_OPTIONS)).andReturn(REGION_ADDRESS.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.service();
-    Address address = compute.get(REGION_ADDRESS_ID);
+    Address address = compute.getAddress(REGION_ADDRESS_ID);
     assertEquals(new Address(compute, new AddressInfo.BuilderImpl(REGION_ADDRESS)), address);
   }
 
@@ -1700,7 +1700,7 @@ public class ComputeImplTest {
         REGION_ADDRESS_ID.address(), EMPTY_RPC_OPTIONS)).andReturn(REGION_ADDRESS.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.service();
-    Address address = compute.get(REGION_ADDRESS_ID);
+    Address address = compute.getAddress(REGION_ADDRESS_ID);
     assertEquals(new Address(compute, new AddressInfo.BuilderImpl(REGION_ADDRESS)), address);
   }
 
@@ -1712,7 +1712,7 @@ public class ComputeImplTest {
         .andReturn(REGION_ADDRESS.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.service();
-    Address address = compute.get(REGION_ADDRESS_ID, ADDRESS_OPTION_FIELDS);
+    Address address = compute.getAddress(REGION_ADDRESS_ID, ADDRESS_OPTION_FIELDS);
     String selector = (String) capturedOptions.getValue().get(ADDRESS_OPTION_FIELDS.rpcOption());
     assertTrue(selector.contains("selfLink"));
     assertTrue(selector.contains("id"));
@@ -1728,7 +1728,7 @@ public class ComputeImplTest {
         .andReturn(globalOperation.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.service();
-    assertEquals(globalOperation, compute.delete(GLOBAL_ADDRESS_ID));
+    assertEquals(globalOperation, compute.deleteAddress(GLOBAL_ADDRESS_ID));
   }
 
   @Test
@@ -1738,7 +1738,7 @@ public class ComputeImplTest {
         capture(capturedOptions))).andReturn(globalOperation.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.service();
-    Operation operation = compute.delete(GLOBAL_ADDRESS_ID, OPERATION_OPTION_FIELDS);
+    Operation operation = compute.deleteAddress(GLOBAL_ADDRESS_ID, OPERATION_OPTION_FIELDS);
     String selector = (String) capturedOptions.getValue().get(OPERATION_OPTION_FIELDS.rpcOption());
     assertTrue(selector.contains("selfLink"));
     assertTrue(selector.contains("id"));
@@ -1754,7 +1754,7 @@ public class ComputeImplTest {
         .andReturn(null);
     EasyMock.replay(computeRpcMock);
     compute = options.service();
-    assertNull(compute.delete(GLOBAL_ADDRESS_ID));
+    assertNull(compute.deleteAddress(GLOBAL_ADDRESS_ID));
   }
 
   @Test
@@ -1763,7 +1763,7 @@ public class ComputeImplTest {
         REGION_ADDRESS_ID.address(), EMPTY_RPC_OPTIONS)).andReturn(regionOperation.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.service();
-    assertEquals(regionOperation, compute.delete(REGION_ADDRESS_ID));
+    assertEquals(regionOperation, compute.deleteAddress(REGION_ADDRESS_ID));
   }
 
   @Test
@@ -1774,7 +1774,7 @@ public class ComputeImplTest {
         .andReturn(globalOperation.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.service();
-    Operation operation = compute.delete(REGION_ADDRESS_ID, OPERATION_OPTION_FIELDS);
+    Operation operation = compute.deleteAddress(REGION_ADDRESS_ID, OPERATION_OPTION_FIELDS);
     String selector = (String) capturedOptions.getValue().get(OPERATION_OPTION_FIELDS.rpcOption());
     assertTrue(selector.contains("selfLink"));
     assertTrue(selector.contains("id"));
@@ -1789,7 +1789,7 @@ public class ComputeImplTest {
         REGION_ADDRESS_ID.address(), EMPTY_RPC_OPTIONS)).andReturn(null);
     EasyMock.replay(computeRpcMock);
     compute = options.service();
-    assertNull(compute.delete(REGION_ADDRESS_ID));
+    assertNull(compute.deleteAddress(REGION_ADDRESS_ID));
   }
 
   @Test
@@ -2276,7 +2276,7 @@ public class ComputeImplTest {
             .andReturn(IMAGE.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.service();
-    Image image = compute.get(IMAGE_ID);
+    Image image = compute.getImage(IMAGE_ID);
     assertEquals(new Image(compute, new ImageInfo.BuilderImpl(IMAGE)), image);
   }
 
@@ -2287,7 +2287,7 @@ public class ComputeImplTest {
         .andReturn(null);
     EasyMock.replay(computeRpcMock);
     compute = options.service();
-    assertNull(compute.get(IMAGE_ID));
+    assertNull(compute.getImage(IMAGE_ID));
   }
 
   @Test
@@ -2297,7 +2297,7 @@ public class ComputeImplTest {
         capture(capturedOptions))).andReturn(IMAGE.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.service();
-    Image image = compute.get(IMAGE_ID, IMAGE_OPTION_FIELDS);
+    Image image = compute.getImage(IMAGE_ID, IMAGE_OPTION_FIELDS);
     String selector = (String) capturedOptions.getValue().get(IMAGE_OPTION_FIELDS.rpcOption());
     assertTrue(selector.contains("selfLink"));
     assertTrue(selector.contains("id"));
@@ -2314,7 +2314,7 @@ public class ComputeImplTest {
         EMPTY_RPC_OPTIONS)).andReturn(globalOperation.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.service();
-    assertEquals(globalOperation, compute.delete(IMAGE_ID));
+    assertEquals(globalOperation, compute.deleteImage(IMAGE_ID));
   }
 
   @Test
@@ -2324,7 +2324,7 @@ public class ComputeImplTest {
         capture(capturedOptions))).andReturn(globalOperation.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.service();
-    Operation operation = compute.delete(ImageId.of("image"), OPERATION_OPTION_FIELDS);
+    Operation operation = compute.deleteImage(ImageId.of("image"), OPERATION_OPTION_FIELDS);
     String selector = (String) capturedOptions.getValue().get(OPERATION_OPTION_FIELDS.rpcOption());
     assertTrue(selector.contains("selfLink"));
     assertTrue(selector.contains("id"));
@@ -2339,7 +2339,7 @@ public class ComputeImplTest {
         EMPTY_RPC_OPTIONS)).andReturn(null);
     EasyMock.replay(computeRpcMock);
     compute = options.service();
-    assertNull(compute.delete(IMAGE_ID));
+    assertNull(compute.deleteImage(IMAGE_ID));
   }
 
   @Test
@@ -2501,7 +2501,7 @@ public class ComputeImplTest {
         .andReturn(DISK.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.service();
-    Disk disk = compute.get(DISK_ID);
+    Disk disk = compute.getDisk(DISK_ID);
     assertEquals(new Disk(compute, new DiskInfo.BuilderImpl(DISK)), disk);
   }
 
@@ -2511,7 +2511,7 @@ public class ComputeImplTest {
         .andReturn(null);
     EasyMock.replay(computeRpcMock);
     compute = options.service();
-    assertNull(compute.get(DISK_ID));
+    assertNull(compute.getDisk(DISK_ID));
   }
 
   @Test
@@ -2521,7 +2521,7 @@ public class ComputeImplTest {
         capture(capturedOptions))).andReturn(DISK.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.service();
-    Disk disk = compute.get(DISK_ID, DISK_OPTION_FIELDS);
+    Disk disk = compute.getDisk(DISK_ID, DISK_OPTION_FIELDS);
     String selector = (String) capturedOptions.getValue().get(DISK_OPTION_FIELDS.rpcOption());
     assertTrue(selector.contains("selfLink"));
     assertTrue(selector.contains("type"));
@@ -2539,7 +2539,7 @@ public class ComputeImplTest {
         .andReturn(zoneOperation.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.service();
-    assertEquals(zoneOperation, compute.delete(DISK_ID));
+    assertEquals(zoneOperation, compute.deleteDisk(DISK_ID));
   }
 
   @Test
@@ -2549,7 +2549,7 @@ public class ComputeImplTest {
         capture(capturedOptions))).andReturn(zoneOperation.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.service();
-    Operation operation = compute.delete(DISK_ID, OPERATION_OPTION_FIELDS);
+    Operation operation = compute.deleteDisk(DISK_ID, OPERATION_OPTION_FIELDS);
     String selector = (String) capturedOptions.getValue().get(OPERATION_OPTION_FIELDS.rpcOption());
     assertTrue(selector.contains("selfLink"));
     assertTrue(selector.contains("id"));
@@ -2564,7 +2564,7 @@ public class ComputeImplTest {
         .andReturn(null);
     EasyMock.replay(computeRpcMock);
     compute = options.service();
-    assertNull(compute.delete(DISK_ID));
+    assertNull(compute.deleteDisk(DISK_ID));
   }
 
   @Test
@@ -2786,7 +2786,7 @@ public class ComputeImplTest {
         EMPTY_RPC_OPTIONS)).andReturn(SUBNETWORK.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.service();
-    Subnetwork subnetwork = compute.get(SUBNETWORK_ID);
+    Subnetwork subnetwork = compute.getSubnetwork(SUBNETWORK_ID);
     assertEquals(new Subnetwork(compute, new SubnetworkInfo.BuilderImpl(SUBNETWORK)), subnetwork);
   }
 
@@ -2796,7 +2796,7 @@ public class ComputeImplTest {
         EMPTY_RPC_OPTIONS)).andReturn(null);
     EasyMock.replay(computeRpcMock);
     compute = options.service();
-    assertNull(compute.get(SUBNETWORK_ID));
+    assertNull(compute.getSubnetwork(SUBNETWORK_ID));
   }
 
   @Test
@@ -2806,7 +2806,7 @@ public class ComputeImplTest {
         eq(SUBNETWORK_ID.subnetwork()), capture(capturedOptions))).andReturn(SUBNETWORK.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.service();
-    Subnetwork subnetwork = compute.get(SUBNETWORK_ID, SUBNETWORK_OPTION_FIELDS);
+    Subnetwork subnetwork = compute.getSubnetwork(SUBNETWORK_ID, SUBNETWORK_OPTION_FIELDS);
     String selector = (String) capturedOptions.getValue().get(SUBNETWORK_OPTION_FIELDS.rpcOption());
     assertTrue(selector.contains("selfLink"));
     assertTrue(selector.contains("id"));
@@ -2821,7 +2821,7 @@ public class ComputeImplTest {
         SUBNETWORK_ID.subnetwork(), EMPTY_RPC_OPTIONS)).andReturn(regionOperation.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.service();
-    assertEquals(regionOperation, compute.delete(SUBNETWORK_ID));
+    assertEquals(regionOperation, compute.deleteSubnetwork(SUBNETWORK_ID));
   }
 
   @Test
@@ -2832,7 +2832,7 @@ public class ComputeImplTest {
         .andReturn(regionOperation.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.service();
-    Operation operation = compute.delete(SUBNETWORK_ID, OPERATION_OPTION_FIELDS);
+    Operation operation = compute.deleteSubnetwork(SUBNETWORK_ID, OPERATION_OPTION_FIELDS);
     String selector = (String) capturedOptions.getValue().get(OPERATION_OPTION_FIELDS.rpcOption());
     assertTrue(selector.contains("selfLink"));
     assertTrue(selector.contains("id"));
@@ -2847,7 +2847,7 @@ public class ComputeImplTest {
         SUBNETWORK_ID.subnetwork(), EMPTY_RPC_OPTIONS)).andReturn(null);
     EasyMock.replay(computeRpcMock);
     compute = options.service();
-    assertNull(compute.delete(SUBNETWORK_ID));
+    assertNull(compute.deleteSubnetwork(SUBNETWORK_ID));
   }
 
   @Test
@@ -3213,7 +3213,7 @@ public class ComputeImplTest {
         EMPTY_RPC_OPTIONS)).andReturn(INSTANCE.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.service();
-    Instance instance = compute.get(INSTANCE_ID);
+    Instance instance = compute.getInstance(INSTANCE_ID);
     assertEquals(new Instance(compute, new InstanceInfo.BuilderImpl(INSTANCE)), instance);
   }
 
@@ -3223,7 +3223,7 @@ public class ComputeImplTest {
         EMPTY_RPC_OPTIONS)).andReturn(null);
     EasyMock.replay(computeRpcMock);
     compute = options.service();
-    assertNull(compute.get(INSTANCE_ID));
+    assertNull(compute.getInstance(INSTANCE_ID));
   }
 
   @Test
@@ -3233,7 +3233,7 @@ public class ComputeImplTest {
         capture(capturedOptions))).andReturn(INSTANCE.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.service();
-    Instance instance = compute.get(INSTANCE_ID, INSTANCE_OPTION_FIELDS);
+    Instance instance = compute.getInstance(INSTANCE_ID, INSTANCE_OPTION_FIELDS);
     String selector = (String) capturedOptions.getValue().get(INSTANCE_OPTION_FIELDS.rpcOption());
     assertTrue(selector.contains("selfLink"));
     assertTrue(selector.contains("id"));
@@ -3248,7 +3248,7 @@ public class ComputeImplTest {
         EMPTY_RPC_OPTIONS)).andReturn(zoneOperation.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.service();
-    assertEquals(zoneOperation, compute.delete(INSTANCE_ID));
+    assertEquals(zoneOperation, compute.deleteInstance(INSTANCE_ID));
   }
 
   @Test
@@ -3258,7 +3258,7 @@ public class ComputeImplTest {
         eq(INSTANCE_ID.instance()), capture(capturedOptions))).andReturn(zoneOperation.toPb());
     EasyMock.replay(computeRpcMock);
     compute = options.service();
-    Operation operation = compute.delete(INSTANCE_ID, OPERATION_OPTION_FIELDS);
+    Operation operation = compute.deleteInstance(INSTANCE_ID, OPERATION_OPTION_FIELDS);
     String selector = (String) capturedOptions.getValue().get(OPERATION_OPTION_FIELDS.rpcOption());
     assertTrue(selector.contains("selfLink"));
     assertTrue(selector.contains("id"));
@@ -3273,7 +3273,7 @@ public class ComputeImplTest {
         EMPTY_RPC_OPTIONS)).andReturn(null);
     EasyMock.replay(computeRpcMock);
     compute = options.service();
-    assertNull(compute.delete(INSTANCE_ID));
+    assertNull(compute.deleteInstance(INSTANCE_ID));
   }
 
   @Test

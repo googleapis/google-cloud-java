@@ -195,7 +195,7 @@ public class InstanceTest {
     Operation operation = new Operation.Builder(serviceMockReturnsOptions)
         .operationId(ZoneOperationId.of("project", "op"))
         .build();
-    expect(compute.delete(INSTANCE_ID)).andReturn(operation);
+    expect(compute.deleteInstance(INSTANCE_ID)).andReturn(operation);
     replay(compute);
     initializeInstance();
     assertSame(operation, instance.delete());
@@ -205,7 +205,7 @@ public class InstanceTest {
   public void testDeleteNull() {
     initializeExpectedInstance(1);
     expect(compute.options()).andReturn(mockOptions);
-    expect(compute.delete(INSTANCE_ID)).andReturn(null);
+    expect(compute.deleteInstance(INSTANCE_ID)).andReturn(null);
     replay(compute);
     initializeInstance();
     assertNull(instance.delete());
@@ -216,7 +216,7 @@ public class InstanceTest {
     initializeExpectedInstance(1);
     InstanceOption[] expectedOptions = {InstanceOption.fields()};
     expect(compute.options()).andReturn(mockOptions);
-    expect(compute.get(INSTANCE_ID, expectedOptions)).andReturn(expectedInstance);
+    expect(compute.getInstance(INSTANCE_ID, expectedOptions)).andReturn(expectedInstance);
     replay(compute);
     initializeInstance();
     assertTrue(instance.exists());
@@ -228,7 +228,7 @@ public class InstanceTest {
     initializeExpectedInstance(1);
     InstanceOption[] expectedOptions = {InstanceOption.fields()};
     expect(compute.options()).andReturn(mockOptions);
-    expect(compute.get(INSTANCE_ID, expectedOptions)).andReturn(null);
+    expect(compute.getInstance(INSTANCE_ID, expectedOptions)).andReturn(null);
     replay(compute);
     initializeInstance();
     assertFalse(instance.exists());
@@ -239,7 +239,7 @@ public class InstanceTest {
   public void testReload() throws Exception {
     initializeExpectedInstance(3);
     expect(compute.options()).andReturn(mockOptions);
-    expect(compute.get(INSTANCE_ID)).andReturn(expectedInstance);
+    expect(compute.getInstance(INSTANCE_ID)).andReturn(expectedInstance);
     replay(compute);
     initializeInstance();
     Instance updatedInstance = instance.reload();
@@ -251,7 +251,7 @@ public class InstanceTest {
   public void testReloadNull() throws Exception {
     initializeExpectedInstance(1);
     expect(compute.options()).andReturn(mockOptions);
-    expect(compute.get(INSTANCE_ID)).andReturn(null);
+    expect(compute.getInstance(INSTANCE_ID)).andReturn(null);
     replay(compute);
     initializeInstance();
     assertNull(instance.reload());
@@ -262,7 +262,7 @@ public class InstanceTest {
   public void testReloadWithOptions() throws Exception {
     initializeExpectedInstance(3);
     expect(compute.options()).andReturn(mockOptions);
-    expect(compute.get(INSTANCE_ID, InstanceOption.fields())).andReturn(expectedInstance);
+    expect(compute.getInstance(INSTANCE_ID, InstanceOption.fields())).andReturn(expectedInstance);
     replay(compute);
     initializeInstance();
     Instance updateInstance = instance.reload(InstanceOption.fields());
