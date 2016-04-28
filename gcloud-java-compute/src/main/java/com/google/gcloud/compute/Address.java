@@ -134,7 +134,7 @@ public class Address extends AddressInfo {
    * @throws ComputeException upon failure
    */
   public Address reload(Compute.AddressOption... options) {
-    return compute.get(addressId(), options);
+    return compute.getAddress(addressId(), options);
   }
 
   /**
@@ -145,7 +145,7 @@ public class Address extends AddressInfo {
    * @throws ComputeException upon failure
    */
   public Operation delete(Compute.OperationOption... options) {
-    return compute.delete(addressId(), options);
+    return compute.deleteAddress(addressId(), options);
   }
 
   /**

@@ -695,7 +695,7 @@ public class ITComputeTest {
       Thread.sleep(1000L);
     }
     // test get
-    Address remoteAddress = compute.get(addressId);
+    Address remoteAddress = compute.getAddress(addressId);
     assertNotNull(remoteAddress);
     assertTrue(remoteAddress.addressId() instanceof RegionAddressId);
     assertEquals(REGION, remoteAddress.<RegionAddressId>addressId().region());
@@ -705,7 +705,7 @@ public class ITComputeTest {
     assertNotNull(remoteAddress.generatedId());
     assertNotNull(remoteAddress.status());
     // test get with selected fields
-    remoteAddress = compute.get(addressId, Compute.AddressOption.fields());
+    remoteAddress = compute.getAddress(addressId, Compute.AddressOption.fields());
     assertNotNull(remoteAddress);
     assertTrue(remoteAddress.addressId() instanceof RegionAddressId);
     assertEquals(REGION, remoteAddress.<RegionAddressId>addressId().region());
@@ -717,7 +717,7 @@ public class ITComputeTest {
     while (!operation.isDone()) {
       Thread.sleep(1000L);
     }
-    assertNull(compute.get(addressId));
+    assertNull(compute.getAddress(addressId));
   }
 
   @Test
@@ -772,8 +772,8 @@ public class ITComputeTest {
       count++;
     }
     assertEquals(2, count);
-    compute.delete(firstAddressId);
-    compute.delete(secondAddressId);
+    compute.deleteAddress(firstAddressId);
+    compute.deleteAddress(secondAddressId);
   }
 
   @Test
@@ -807,8 +807,8 @@ public class ITComputeTest {
       count++;
     }
     assertEquals(2, count);
-    compute.delete(firstAddressId);
-    compute.delete(secondAddressId);
+    compute.deleteAddress(firstAddressId);
+    compute.deleteAddress(secondAddressId);
   }
 
   @Test
@@ -821,7 +821,7 @@ public class ITComputeTest {
       Thread.sleep(1000L);
     }
     // test get
-    Address remoteAddress = compute.get(addressId);
+    Address remoteAddress = compute.getAddress(addressId);
     assertNotNull(remoteAddress);
     assertTrue(remoteAddress.addressId() instanceof GlobalAddressId);
     assertEquals(addressId.address(), remoteAddress.addressId().address());
@@ -830,7 +830,7 @@ public class ITComputeTest {
     assertNotNull(remoteAddress.generatedId());
     assertNotNull(remoteAddress.status());
     // test get with selected fields
-    remoteAddress = compute.get(addressId, Compute.AddressOption.fields());
+    remoteAddress = compute.getAddress(addressId, Compute.AddressOption.fields());
     assertNotNull(remoteAddress);
     assertTrue(remoteAddress.addressId() instanceof GlobalAddressId);
     assertEquals(addressId.address(), remoteAddress.addressId().address());
@@ -841,7 +841,7 @@ public class ITComputeTest {
     while (!operation.isDone()) {
       Thread.sleep(1000L);
     }
-    assertNull(compute.get(addressId));
+    assertNull(compute.getAddress(addressId));
   }
 
   @Test
@@ -894,8 +894,8 @@ public class ITComputeTest {
       count++;
     }
     assertEquals(2, count);
-    compute.delete(firstAddressId);
-    compute.delete(secondAddressId);
+    compute.deleteAddress(firstAddressId);
+    compute.deleteAddress(secondAddressId);
   }
 
   @Test
@@ -909,7 +909,7 @@ public class ITComputeTest {
       Thread.sleep(1000L);
     }
     // test get
-    Disk remoteDisk = compute.get(diskId);
+    Disk remoteDisk = compute.getDisk(diskId);
     assertNotNull(remoteDisk);
     assertEquals(ZONE, remoteDisk.diskId().zone());
     assertEquals(diskId.disk(), remoteDisk.diskId().disk());
@@ -927,7 +927,7 @@ public class ITComputeTest {
       Thread.sleep(1000L);
     }
     // test resize and get with selected fields
-    remoteDisk = compute.get(diskId, Compute.DiskOption.fields(Compute.DiskField.SIZE_GB));
+    remoteDisk = compute.getDisk(diskId, Compute.DiskOption.fields(Compute.DiskField.SIZE_GB));
     assertNotNull(remoteDisk);
     assertEquals(ZONE, remoteDisk.diskId().zone());
     assertEquals(diskId.disk(), remoteDisk.diskId().disk());
@@ -944,7 +944,7 @@ public class ITComputeTest {
     while (!operation.isDone()) {
       Thread.sleep(1000L);
     }
-    assertNull(compute.get(diskId));
+    assertNull(compute.getDisk(diskId));
   }
 
   @Test
@@ -957,7 +957,7 @@ public class ITComputeTest {
       Thread.sleep(1000L);
     }
     // test get
-    Disk remoteDisk = compute.get(diskId);
+    Disk remoteDisk = compute.getDisk(diskId);
     assertNotNull(remoteDisk);
     assertEquals(ZONE, remoteDisk.diskId().zone());
     assertEquals(diskId.disk(), remoteDisk.diskId().disk());
@@ -974,7 +974,7 @@ public class ITComputeTest {
     assertNull(remoteDisk.lastAttachTimestamp());
     assertNull(remoteDisk.lastDetachTimestamp());
     // test get with selected fields
-    remoteDisk = compute.get(diskId, Compute.DiskOption.fields());
+    remoteDisk = compute.getDisk(diskId, Compute.DiskOption.fields());
     assertNotNull(remoteDisk);
     assertEquals(ZONE, remoteDisk.diskId().zone());
     assertEquals(diskId.disk(), remoteDisk.diskId().disk());
@@ -993,7 +993,7 @@ public class ITComputeTest {
     while (!operation.isDone()) {
       Thread.sleep(1000L);
     }
-    assertNull(compute.get(diskId));
+    assertNull(compute.getDisk(diskId));
   }
 
   @Test
@@ -1009,7 +1009,7 @@ public class ITComputeTest {
     while (!operation.isDone()) {
       Thread.sleep(1000L);
     }
-    Disk remoteDisk = compute.get(diskId);
+    Disk remoteDisk = compute.getDisk(diskId);
     operation = remoteDisk.createSnapshot(snapshotName);
     while (!operation.isDone()) {
       Thread.sleep(1000L);
@@ -1047,7 +1047,7 @@ public class ITComputeTest {
       Thread.sleep(1000L);
     }
     // test get disk
-    remoteDisk = compute.get(snapshotDiskId);
+    remoteDisk = compute.getDisk(snapshotDiskId);
     assertNotNull(remoteDisk);
     assertEquals(ZONE, remoteDisk.diskId().zone());
     assertEquals(snapshotDiskId.disk(), remoteDisk.diskId().disk());
@@ -1064,7 +1064,7 @@ public class ITComputeTest {
     assertNull(remoteDisk.lastAttachTimestamp());
     assertNull(remoteDisk.lastDetachTimestamp());
     // test get disk with selected fields
-    remoteDisk = compute.get(snapshotDiskId, Compute.DiskOption.fields());
+    remoteDisk = compute.getDisk(snapshotDiskId, Compute.DiskOption.fields());
     assertNotNull(remoteDisk);
     assertEquals(ZONE, remoteDisk.diskId().zone());
     assertEquals(snapshotDiskId.disk(), remoteDisk.diskId().disk());
@@ -1084,7 +1084,7 @@ public class ITComputeTest {
     while (!operation.isDone()) {
       Thread.sleep(1000L);
     }
-    assertNull(compute.get(snapshotDiskId));
+    assertNull(compute.getDisk(snapshotDiskId));
     operation = snapshot.delete();
     while (!operation.isDone()) {
       Thread.sleep(1000L);
@@ -1205,8 +1205,8 @@ public class ITComputeTest {
       count++;
     }
     assertEquals(2, count);
-    compute.delete(firstDiskId);
-    compute.delete(secondDiskId);
+    compute.deleteDisk(firstDiskId);
+    compute.deleteDisk(secondDiskId);
     compute.deleteSnapshot(firstSnapshotId);
     compute.deleteSnapshot(secondSnapshotId);
   }
@@ -1250,8 +1250,8 @@ public class ITComputeTest {
       count++;
     }
     assertEquals(2, count);
-    compute.delete(firstDiskId);
-    compute.delete(secondDiskId);
+    compute.deleteDisk(firstDiskId);
+    compute.deleteDisk(secondDiskId);
   }
 
   @Test
@@ -1266,14 +1266,14 @@ public class ITComputeTest {
     while (!operation.isDone()) {
       Thread.sleep(1000L);
     }
-    Disk remoteDisk = compute.get(diskId);
+    Disk remoteDisk = compute.getDisk(diskId);
     ImageInfo imageInfo = ImageInfo.of(imageId, DiskImageConfiguration.of(diskId));
     operation = compute.create(imageInfo);
     while (!operation.isDone()) {
       Thread.sleep(1000L);
     }
     // test get image with selected fields
-    Image image = compute.get(imageId,
+    Image image = compute.getImage(imageId,
         Compute.ImageOption.fields(Compute.ImageField.CREATION_TIMESTAMP));
     assertNull(image.generatedId());
     assertNotNull(image.imageId());
@@ -1289,7 +1289,7 @@ public class ITComputeTest {
     assertNull(image.licenses());
     assertNull(image.deprecationStatus());
     // test get image
-    image = compute.get(imageId);
+    image = compute.getImage(imageId);
     assertNotNull(image.generatedId());
     assertNotNull(image.imageId());
     assertNotNull(image.creationTimestamp());
@@ -1310,14 +1310,14 @@ public class ITComputeTest {
     while (!operation.isDone()) {
       Thread.sleep(1000L);
     }
-    image = compute.get(imageId);
+    image = compute.getImage(imageId);
     assertEquals(deprecationStatus, image.deprecationStatus());
     remoteDisk.delete();
     operation = image.delete();
     while (!operation.isDone()) {
       Thread.sleep(1000L);
     }
-    assertNull(compute.get(imageId));
+    assertNull(compute.getImage(imageId));
   }
 
   @Test
@@ -1490,7 +1490,7 @@ public class ITComputeTest {
       Thread.sleep(1000L);
     }
     // test get subnetwork with selected fields
-    Subnetwork subnetwork = compute.get(subnetworkId,
+    Subnetwork subnetwork = compute.getSubnetwork(subnetworkId,
         Compute.SubnetworkOption.fields(Compute.SubnetworkField.CREATION_TIMESTAMP));
     assertNull(subnetwork.generatedId());
     assertEquals(subnetworkId.subnetwork(), subnetwork.subnetworkId().subnetwork());
@@ -1500,7 +1500,7 @@ public class ITComputeTest {
     assertNull(subnetwork.network());
     assertNull(subnetwork.ipRange());
     // test get subnetwork
-    subnetwork = compute.get(subnetworkId);
+    subnetwork = compute.getSubnetwork(subnetworkId);
     assertNotNull(subnetwork.generatedId());
     assertEquals(subnetworkId.subnetwork(), subnetwork.subnetworkId().subnetwork());
     assertNotNull(subnetwork.creationTimestamp());
@@ -1550,7 +1550,7 @@ public class ITComputeTest {
     while (!operation.isDone()) {
       Thread.sleep(1000L);
     }
-    assertNull(compute.get(subnetworkId));
+    assertNull(compute.getSubnetwork(subnetworkId));
     assertNull(compute.getNetwork(networkName));
   }
 
@@ -1602,8 +1602,8 @@ public class ITComputeTest {
       count++;
     }
     assertEquals(2, count);
-    firstOperation = compute.delete(firstSubnetworkId);
-    secondOperation = compute.delete(secondSubnetworkId);
+    firstOperation = compute.deleteSubnetwork(firstSubnetworkId);
+    secondOperation = compute.deleteSubnetwork(secondSubnetworkId);
     while (!firstOperation.isDone()) {
       Thread.sleep(1000L);
     }
@@ -1628,7 +1628,7 @@ public class ITComputeTest {
     while (!operation.isDone()) {
       Thread.sleep(1000L);
     }
-    Address address = compute.get(addressId);
+    Address address = compute.getAddress(addressId);
     // Create an instance
     InstanceId instanceId = InstanceId.of(ZONE, instanceName);
     NetworkId networkId = NetworkId.of("default");
@@ -1649,7 +1649,7 @@ public class ITComputeTest {
       Thread.sleep(1000L);
     }
     // test get
-    Instance remoteInstance = compute.get(instanceId);
+    Instance remoteInstance = compute.getInstance(instanceId);
     assertEquals(instanceName, remoteInstance.instanceId().instance());
     assertEquals(ZONE, remoteInstance.instanceId().zone());
     assertEquals(InstanceInfo.Status.RUNNING, remoteInstance.status());
@@ -1682,7 +1682,7 @@ public class ITComputeTest {
     assertNotNull(remoteInstance.metadata());
     assertNotNull(remoteInstance.tags());
     // test get with selected fields
-    remoteInstance = compute.get(instanceId,
+    remoteInstance = compute.getInstance(instanceId,
         Compute.InstanceOption.fields(Compute.InstanceField.CREATION_TIMESTAMP));
     assertEquals(instanceName, remoteInstance.instanceId().instance());
     assertEquals(ZONE, remoteInstance.instanceId().zone());
@@ -1702,7 +1702,7 @@ public class ITComputeTest {
     while (!operation.isDone()) {
       Thread.sleep(1000L);
     }
-    assertNull(compute.get(instanceId));
+    assertNull(compute.getInstance(instanceId));
     address.delete();
   }
 
@@ -1723,29 +1723,29 @@ public class ITComputeTest {
     while (!operation.isDone()) {
       Thread.sleep(1000L);
     }
-    Instance remoteInstance =
-        compute.get(instanceId, Compute.InstanceOption.fields(Compute.InstanceField.STATUS));
+    Instance remoteInstance = compute.getInstance(instanceId,
+        Compute.InstanceOption.fields(Compute.InstanceField.STATUS));
     assertEquals(InstanceInfo.Status.RUNNING, remoteInstance.status());
     operation = remoteInstance.stop();
     while (!operation.isDone()) {
       Thread.sleep(1000L);
     }
-    remoteInstance =
-        compute.get(instanceId, Compute.InstanceOption.fields(Compute.InstanceField.STATUS));
+    remoteInstance = compute.getInstance(instanceId,
+        Compute.InstanceOption.fields(Compute.InstanceField.STATUS));
     assertEquals(InstanceInfo.Status.TERMINATED, remoteInstance.status());
     operation = remoteInstance.start();
     while (!operation.isDone()) {
       Thread.sleep(1000L);
     }
-    remoteInstance =
-        compute.get(instanceId, Compute.InstanceOption.fields(Compute.InstanceField.STATUS));
+    remoteInstance = compute.getInstance(instanceId,
+        Compute.InstanceOption.fields(Compute.InstanceField.STATUS));
     assertEquals(InstanceInfo.Status.RUNNING, remoteInstance.status());
     operation = remoteInstance.reset();
     while (!operation.isDone()) {
       Thread.sleep(1000L);
     }
-    remoteInstance =
-        compute.get(instanceId, Compute.InstanceOption.fields(Compute.InstanceField.STATUS));
+    remoteInstance = compute.getInstance(instanceId,
+        Compute.InstanceOption.fields(Compute.InstanceField.STATUS));
     assertEquals(InstanceInfo.Status.RUNNING, remoteInstance.status());
     remoteInstance.delete();
   }
@@ -1767,14 +1767,14 @@ public class ITComputeTest {
     while (!operation.isDone()) {
       Thread.sleep(1000L);
     }
-    Instance remoteInstance = compute.get(instanceId);
+    Instance remoteInstance = compute.getInstance(instanceId);
     // test set tags
     List<String> tags = ImmutableList.of("tag1", "tag2");
     operation = remoteInstance.setTags(tags);
     while (!operation.isDone()) {
       Thread.sleep(1000L);
     }
-    remoteInstance = compute.get(instanceId);
+    remoteInstance = compute.getInstance(instanceId);
     assertEquals(tags, remoteInstance.tags().values());
     // test set metadata
     Map<String, String> metadata = ImmutableMap.of("key", "value");
@@ -1782,7 +1782,7 @@ public class ITComputeTest {
     while (!operation.isDone()) {
       Thread.sleep(1000L);
     }
-    remoteInstance = compute.get(instanceId);
+    remoteInstance = compute.getInstance(instanceId);
     assertEquals(metadata, remoteInstance.metadata().values());
     // test set machine type
     operation = remoteInstance.stop();
@@ -1793,7 +1793,7 @@ public class ITComputeTest {
     while (!operation.isDone()) {
       Thread.sleep(1000L);
     }
-    remoteInstance = compute.get(instanceId);
+    remoteInstance = compute.getInstance(instanceId);
     assertEquals("n1-standard-1", remoteInstance.machineType().type());
     assertEquals(ZONE, remoteInstance.machineType().zone());
     // test set scheduling options
@@ -1802,7 +1802,7 @@ public class ITComputeTest {
     while (!operation.isDone()) {
       Thread.sleep(1000L);
     }
-    remoteInstance = compute.get(instanceId);
+    remoteInstance = compute.getInstance(instanceId);
     assertEquals(options, remoteInstance.schedulingOptions());
     remoteInstance.delete();
   }
@@ -1831,14 +1831,14 @@ public class ITComputeTest {
     while (!diskOperation.isDone()) {
       Thread.sleep(1000L);
     }
-    Instance remoteInstance = compute.get(instanceId);
+    Instance remoteInstance = compute.getInstance(instanceId);
     // test attach disk
     instanceOperation = remoteInstance.attachDisk("dev1",
         PersistentDiskConfiguration.builder(diskId).build());
     while (!instanceOperation.isDone()) {
       Thread.sleep(1000L);
     }
-    remoteInstance = compute.get(instanceId);
+    remoteInstance = compute.getInstance(instanceId);
     Set<String> deviceSet = ImmutableSet.of("dev0", "dev1");
     assertEquals(2, remoteInstance.attachedDisks().size());
     for (AttachedDisk remoteAttachedDisk : remoteInstance.attachedDisks()) {
@@ -1849,7 +1849,8 @@ public class ITComputeTest {
     while (!instanceOperation.isDone()) {
       Thread.sleep(1000L);
     }
-    remoteInstance = compute.get(instanceId);
+    remoteInstance = compute.getInstance(instanceId);
+    assertEquals(2, remoteInstance.attachedDisks().size());
     for (AttachedDisk remoteAttachedDisk : remoteInstance.attachedDisks()) {
       assertTrue(deviceSet.contains(remoteAttachedDisk.deviceName()));
       assertTrue(remoteAttachedDisk.configuration().autoDelete());
@@ -1859,10 +1860,11 @@ public class ITComputeTest {
     while (!instanceOperation.isDone()) {
       Thread.sleep(1000L);
     }
-    remoteInstance = compute.get(instanceId);
+    remoteInstance = compute.getInstance(instanceId);
     assertEquals(1, remoteInstance.attachedDisks().size());
     assertEquals("dev0", remoteInstance.attachedDisks().get(0).deviceName());
     remoteInstance.delete();
+    compute.deleteDisk(diskId);
   }
 
   @Test
@@ -1892,8 +1894,8 @@ public class ITComputeTest {
     while (!addressOperation.isDone()) {
       Thread.sleep(1000L);
     }
-    Address remoteAddress = compute.get(addressId);
-    Instance remoteInstance = compute.get(instanceId);
+    Address remoteAddress = compute.getAddress(addressId);
+    Instance remoteInstance = compute.getInstance(instanceId);
     String networkInterfaceName = remoteInstance.networkInterfaces().get(0).name();
     // test add access config
     AccessConfig accessConfig = AccessConfig.builder()
@@ -1904,7 +1906,7 @@ public class ITComputeTest {
     while (!instanceOperation.isDone()) {
       Thread.sleep(1000L);
     }
-    remoteInstance = compute.get(instanceId);
+    remoteInstance = compute.getInstance(instanceId);
     List<AccessConfig> accessConfigurations =
         remoteInstance.networkInterfaces().get(0).accessConfigurations();
     assertEquals(1, accessConfigurations.size());
@@ -1914,7 +1916,7 @@ public class ITComputeTest {
     while (!instanceOperation.isDone()) {
       Thread.sleep(1000L);
     }
-    remoteInstance = compute.get(instanceId);
+    remoteInstance = compute.getInstance(instanceId);
     assertTrue(remoteInstance.networkInterfaces().get(0).accessConfigurations().isEmpty());
     remoteInstance.delete();
     remoteAddress.delete();

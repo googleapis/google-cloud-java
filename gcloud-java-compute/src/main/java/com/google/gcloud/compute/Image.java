@@ -148,7 +148,7 @@ public class Image extends ImageInfo {
    * @throws ComputeException upon failure
    */
   public Image reload(ImageOption... options) {
-    return compute.get(imageId(), options);
+    return compute.getImage(imageId(), options);
   }
 
   /**
@@ -159,7 +159,7 @@ public class Image extends ImageInfo {
    * @throws ComputeException upon failure or if this image is a publicly-available image
    */
   public Operation delete(OperationOption... options) {
-    return compute.delete(imageId(), options);
+    return compute.deleteImage(imageId(), options);
   }
 
   /**
