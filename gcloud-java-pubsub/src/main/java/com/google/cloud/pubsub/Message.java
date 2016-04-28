@@ -54,6 +54,7 @@ public class Message implements Serializable {
       super(byteArray);
     }
 
+    @Override
     protected ByteString byteString() {
       return super.byteString();
     }

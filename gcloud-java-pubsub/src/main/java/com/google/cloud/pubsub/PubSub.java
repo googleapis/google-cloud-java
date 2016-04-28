@@ -110,6 +110,8 @@ public interface PubSub extends Service<PubSubOptions> {
 
     final class PullOption implements Serializable {
 
+      private static final long serialVersionUID = 4792164134340316582L;
+
       private final Option option;
       private final Object value;
 
