@@ -18,6 +18,7 @@ package com.google.cloud;
 
 import com.google.api.client.googleapis.json.GoogleJsonError;
 import com.google.api.client.googleapis.json.GoogleJsonResponseException;
+import com.google.api.gax.grpc.ApiException;
 import com.google.common.base.MoreObjects;
 
 import java.io.IOException;
@@ -163,6 +164,16 @@ public class BaseServiceException extends RuntimeException {
     this.reason = reason;
     this.idempotent = idempotent;
     this.retryable = isRetryable(idempotent, new Error(code, reason));
+    this.location = null;
+    this.debugInfo = null;
+  }
+
+  public BaseServiceException(ApiException apiException, boolean idempotent) {
+    super(apiException.getMessage(), apiException);
+    this.code = apiException.getStatusCode().value();
+    this.reason = apiException.getStatusCode().name();
+    this.idempotent = idempotent;
+    this.retryable = apiException.isRetryable();
     this.location = null;
     this.debugInfo = null;
   }
