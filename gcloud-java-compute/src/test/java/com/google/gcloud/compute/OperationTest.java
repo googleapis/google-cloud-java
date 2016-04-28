@@ -274,7 +274,7 @@ public class OperationTest {
   public void testDeleteTrue() {
     initializeExpectedOperation(3);
     expect(compute.options()).andReturn(mockOptions);
-    expect(compute.delete(GLOBAL_OPERATION_ID)).andReturn(true);
+    expect(compute.deleteOperation(GLOBAL_OPERATION_ID)).andReturn(true);
     replay(compute);
     initializeOperation();
     assertTrue(operation.delete());
@@ -285,7 +285,7 @@ public class OperationTest {
   public void testDeleteFalse() {
     initializeExpectedOperation(3);
     expect(compute.options()).andReturn(mockOptions);
-    expect(compute.delete(GLOBAL_OPERATION_ID)).andReturn(false);
+    expect(compute.deleteOperation(GLOBAL_OPERATION_ID)).andReturn(false);
     replay(compute);
     initializeOperation();
     assertFalse(operation.delete());
@@ -297,7 +297,7 @@ public class OperationTest {
     initializeExpectedOperation(3);
     Compute.OperationOption[] expectedOptions = {Compute.OperationOption.fields()};
     expect(compute.options()).andReturn(mockOptions);
-    expect(compute.get(GLOBAL_OPERATION_ID, expectedOptions)).andReturn(globalOperation);
+    expect(compute.getOperation(GLOBAL_OPERATION_ID, expectedOptions)).andReturn(globalOperation);
     replay(compute);
     initializeOperation();
     assertTrue(operation.exists());
@@ -309,7 +309,7 @@ public class OperationTest {
     initializeExpectedOperation(3);
     Compute.OperationOption[] expectedOptions = {Compute.OperationOption.fields()};
     expect(compute.options()).andReturn(mockOptions);
-    expect(compute.get(GLOBAL_OPERATION_ID, expectedOptions)).andReturn(null);
+    expect(compute.getOperation(GLOBAL_OPERATION_ID, expectedOptions)).andReturn(null);
     replay(compute);
     initializeOperation();
     assertFalse(operation.exists());
@@ -322,7 +322,7 @@ public class OperationTest {
     Compute.OperationOption[] expectedOptions =
         {Compute.OperationOption.fields(Compute.OperationField.STATUS)};
     expect(compute.options()).andReturn(mockOptions);
-    expect(compute.get(GLOBAL_OPERATION_ID, expectedOptions)).andReturn(globalOperation);
+    expect(compute.getOperation(GLOBAL_OPERATION_ID, expectedOptions)).andReturn(globalOperation);
     replay(compute);
     initializeOperation();
     assertTrue(operation.isDone());
@@ -335,7 +335,7 @@ public class OperationTest {
     Compute.OperationOption[] expectedOptions =
         {Compute.OperationOption.fields(Compute.OperationField.STATUS)};
     expect(compute.options()).andReturn(mockOptions);
-    expect(compute.get(GLOBAL_OPERATION_ID, expectedOptions)).andReturn(
+    expect(compute.getOperation(GLOBAL_OPERATION_ID, expectedOptions)).andReturn(
         Operation.fromPb(serviceMockReturnsOptions, globalOperation.toPb().setStatus("PENDING")));
     replay(compute);
     initializeOperation();
@@ -348,7 +348,7 @@ public class OperationTest {
     Compute.OperationOption[] expectedOptions =
         {Compute.OperationOption.fields(Compute.OperationField.STATUS)};
     expect(compute.options()).andReturn(mockOptions);
-    expect(compute.get(GLOBAL_OPERATION_ID, expectedOptions)).andReturn(null);
+    expect(compute.getOperation(GLOBAL_OPERATION_ID, expectedOptions)).andReturn(null);
     replay(compute);
     initializeOperation();
     assertTrue(operation.isDone());
@@ -359,7 +359,7 @@ public class OperationTest {
   public void testReload() throws Exception {
     initializeExpectedOperation(5);
     expect(compute.options()).andReturn(mockOptions);
-    expect(compute.get(GLOBAL_OPERATION_ID)).andReturn(globalOperation);
+    expect(compute.getOperation(GLOBAL_OPERATION_ID)).andReturn(globalOperation);
     replay(compute);
     initializeOperation();
     Operation updatedOperation = operation.reload();
@@ -371,7 +371,7 @@ public class OperationTest {
   public void testReloadNull() throws Exception {
     initializeExpectedOperation(3);
     expect(compute.options()).andReturn(mockOptions);
-    expect(compute.get(GLOBAL_OPERATION_ID)).andReturn(null);
+    expect(compute.getOperation(GLOBAL_OPERATION_ID)).andReturn(null);
     replay(compute);
     initializeOperation();
     assertNull(operation.reload());
@@ -382,7 +382,7 @@ public class OperationTest {
   public void testReloadWithOptions() throws Exception {
     initializeExpectedOperation(5);
     expect(compute.options()).andReturn(mockOptions);
-    expect(compute.get(GLOBAL_OPERATION_ID, Compute.OperationOption.fields()))
+    expect(compute.getOperation(GLOBAL_OPERATION_ID, Compute.OperationOption.fields()))
         .andReturn(globalOperation);
     replay(compute);
     initializeOperation();

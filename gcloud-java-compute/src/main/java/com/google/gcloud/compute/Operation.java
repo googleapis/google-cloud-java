@@ -652,8 +652,8 @@ public class Operation implements Serializable {
    * @throws ComputeException upon failure
    */
   public boolean isDone() throws ComputeException {
-    Operation operation =
-        compute.get(operationId, Compute.OperationOption.fields(Compute.OperationField.STATUS));
+    Operation operation = compute.getOperation(operationId,
+        Compute.OperationOption.fields(Compute.OperationField.STATUS));
     return operation == null || operation.status() == Status.DONE;
   }
 
@@ -666,7 +666,7 @@ public class Operation implements Serializable {
    * @throws ComputeException upon failure
    */
   public Operation reload(Compute.OperationOption... options) throws ComputeException  {
-    return compute.get(operationId, options);
+    return compute.getOperation(operationId, options);
   }
 
   /**
@@ -677,7 +677,7 @@ public class Operation implements Serializable {
    * @throws ComputeException upon failure
    */
   public boolean delete() throws ComputeException {
-    return compute.delete(operationId);
+    return compute.deleteOperation(operationId);
   }
 
   @Override

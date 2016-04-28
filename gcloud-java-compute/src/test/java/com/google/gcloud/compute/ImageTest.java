@@ -189,7 +189,7 @@ public class ImageTest {
     Operation operation = new Operation.Builder(serviceMockReturnsOptions)
         .operationId(GlobalOperationId.of("project", "op"))
         .build();
-    expect(compute.delete(IMAGE_ID)).andReturn(operation);
+    expect(compute.deleteImage(IMAGE_ID)).andReturn(operation);
     replay(compute);
     initializeImage();
     assertSame(operation, image.delete());
@@ -199,7 +199,7 @@ public class ImageTest {
   public void testDeleteNull() {
     initializeExpectedImage(2);
     expect(compute.options()).andReturn(mockOptions);
-    expect(compute.delete(IMAGE_ID)).andReturn(null);
+    expect(compute.deleteImage(IMAGE_ID)).andReturn(null);
     replay(compute);
     initializeImage();
     assertNull(image.delete());
@@ -210,7 +210,7 @@ public class ImageTest {
     initializeExpectedImage(2);
     Compute.ImageOption[] expectedOptions = {Compute.ImageOption.fields()};
     expect(compute.options()).andReturn(mockOptions);
-    expect(compute.get(IMAGE_ID, expectedOptions)).andReturn(diskImage);
+    expect(compute.getImage(IMAGE_ID, expectedOptions)).andReturn(diskImage);
     replay(compute);
     initializeImage();
     assertTrue(image.exists());
@@ -222,7 +222,7 @@ public class ImageTest {
     initializeExpectedImage(2);
     Compute.ImageOption[] expectedOptions = {Compute.ImageOption.fields()};
     expect(compute.options()).andReturn(mockOptions);
-    expect(compute.get(IMAGE_ID, expectedOptions)).andReturn(null);
+    expect(compute.getImage(IMAGE_ID, expectedOptions)).andReturn(null);
     replay(compute);
     initializeImage();
     assertFalse(image.exists());
@@ -233,7 +233,7 @@ public class ImageTest {
   public void testReload() throws Exception {
     initializeExpectedImage(5);
     expect(compute.options()).andReturn(mockOptions);
-    expect(compute.get(IMAGE_ID)).andReturn(storageImage);
+    expect(compute.getImage(IMAGE_ID)).andReturn(storageImage);
     replay(compute);
     initializeImage();
     Image updateImage = image.reload();
@@ -245,7 +245,7 @@ public class ImageTest {
   public void testReloadNull() throws Exception {
     initializeExpectedImage(2);
     expect(compute.options()).andReturn(mockOptions);
-    expect(compute.get(IMAGE_ID)).andReturn(null);
+    expect(compute.getImage(IMAGE_ID)).andReturn(null);
     replay(compute);
     initializeImage();
     assertNull(image.reload());
@@ -256,7 +256,7 @@ public class ImageTest {
   public void testReloadWithOptions() throws Exception {
     initializeExpectedImage(5);
     expect(compute.options()).andReturn(mockOptions);
-    expect(compute.get(IMAGE_ID, Compute.ImageOption.fields())).andReturn(storageImage);
+    expect(compute.getImage(IMAGE_ID, Compute.ImageOption.fields())).andReturn(storageImage);
     replay(compute);
     initializeImage();
     Image updateImage = image.reload(Compute.ImageOption.fields());

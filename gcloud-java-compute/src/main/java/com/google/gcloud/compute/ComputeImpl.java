@@ -765,7 +765,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
   }
 
   @Override
-  public Operation get(final OperationId operationId, OperationOption... options) {
+  public Operation getOperation(final OperationId operationId, OperationOption... options) {
     final Map<ComputeRpc.Option, ?> optionsMap = optionMap(options);
     try {
       com.google.api.services.compute.model.Operation answer =
@@ -889,7 +889,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
   }
 
   @Override
-  public boolean delete(final OperationId operation) {
+  public boolean deleteOperation(final OperationId operation) {
     try {
       return runWithRetries(new Callable<Boolean>() {
         @Override
@@ -916,7 +916,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
   }
 
   @Override
-  public Address get(final AddressId addressId, AddressOption... options) {
+  public Address getAddress(final AddressId addressId, AddressOption... options) {
     final Map<ComputeRpc.Option, ?> optionsMap = optionMap(options);
     try {
       com.google.api.services.compute.model.Address answer =
@@ -1069,7 +1069,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
   }
 
   @Override
-  public Operation delete(final AddressId addressId, OperationOption... options) {
+  public Operation deleteAddress(final AddressId addressId, OperationOption... options) {
     final Map<ComputeRpc.Option, ?> optionsMap = optionMap(options);
     try {
       com.google.api.services.compute.model.Operation answer =
@@ -1206,7 +1206,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
   }
 
   @Override
-  public Image get(ImageId imageId, ImageOption... options) {
+  public Image getImage(ImageId imageId, ImageOption... options) {
     final ImageId completeImageId = imageId.setProjectId(options().projectId());
     final Map<ComputeRpc.Option, ?> optionsMap = optionMap(options);
     try {
@@ -1264,7 +1264,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
   }
 
   @Override
-  public Operation delete(ImageId image, OperationOption... options) {
+  public Operation deleteImage(ImageId image, OperationOption... options) {
     final ImageId completeId = image.setProjectId(options().projectId());
     final Map<ComputeRpc.Option, ?> optionsMap = optionMap(options);
     try {
@@ -1302,7 +1302,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
   }
 
   @Override
-  public Disk get(final DiskId diskId, DiskOption... options) {
+  public Disk getDisk(final DiskId diskId, DiskOption... options) {
     final Map<ComputeRpc.Option, ?> optionsMap = optionMap(options);
     try {
       com.google.api.services.compute.model.Disk answer =
@@ -1403,7 +1403,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
   }
 
   @Override
-  public Operation delete(final DiskId disk, OperationOption... options) {
+  public Operation deleteDisk(final DiskId disk, OperationOption... options) {
     final Map<ComputeRpc.Option, ?> optionsMap = optionMap(options);
     try {
       com.google.api.services.compute.model.Operation answer =
@@ -1455,7 +1455,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
   }
 
   @Override
-  public Subnetwork get(final SubnetworkId subnetworkId, SubnetworkOption... options) {
+  public Subnetwork getSubnetwork(final SubnetworkId subnetworkId, SubnetworkOption... options) {
     final Map<ComputeRpc.Option, ?> optionsMap = optionMap(options);
     try {
       com.google.api.services.compute.model.Subnetwork answer =
@@ -1539,7 +1539,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
   }
 
   @Override
-  public Operation delete(final SubnetworkId subnetwork, OperationOption... options) {
+  public Operation deleteSubnetwork(final SubnetworkId subnetwork, OperationOption... options) {
     final Map<ComputeRpc.Option, ?> optionsMap = optionMap(options);
     try {
       com.google.api.services.compute.model.Operation answer =
@@ -1667,7 +1667,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
   }
 
   @Override
-  public Instance get(final InstanceId instance, InstanceOption... options) {
+  public Instance getInstance(final InstanceId instance, InstanceOption... options) {
     final Map<ComputeRpc.Option, ?> optionsMap = optionMap(options);
     try {
       com.google.api.services.compute.model.Instance answer =
@@ -1750,7 +1750,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
   }
 
   @Override
-  public Operation delete(final InstanceId instance, OperationOption... options) {
+  public Operation deleteInstance(final InstanceId instance, OperationOption... options) {
     final Map<ComputeRpc.Option, ?> optionsMap = optionMap(options);
     try {
       com.google.api.services.compute.model.Operation answer =

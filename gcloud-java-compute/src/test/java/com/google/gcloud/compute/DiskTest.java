@@ -228,7 +228,7 @@ public class DiskTest {
     Operation operation = new Operation.Builder(serviceMockReturnsOptions)
         .operationId(ZoneOperationId.of("project", "zone", "op"))
         .build();
-    expect(compute.delete(DISK_ID)).andReturn(operation);
+    expect(compute.deleteDisk(DISK_ID)).andReturn(operation);
     replay(compute);
     initializeDisk();
     assertSame(operation, disk.delete());
@@ -238,7 +238,7 @@ public class DiskTest {
   public void testDeleteNull() {
     initializeExpectedDisk(3);
     expect(compute.options()).andReturn(mockOptions);
-    expect(compute.delete(DISK_ID)).andReturn(null);
+    expect(compute.deleteDisk(DISK_ID)).andReturn(null);
     replay(compute);
     initializeDisk();
     assertNull(disk.delete());
@@ -249,7 +249,7 @@ public class DiskTest {
     initializeExpectedDisk(3);
     Compute.DiskOption[] expectedOptions = {Compute.DiskOption.fields()};
     expect(compute.options()).andReturn(mockOptions);
-    expect(compute.get(DISK_ID, expectedOptions)).andReturn(imageDisk);
+    expect(compute.getDisk(DISK_ID, expectedOptions)).andReturn(imageDisk);
     replay(compute);
     initializeDisk();
     assertTrue(disk.exists());
@@ -261,7 +261,7 @@ public class DiskTest {
     initializeExpectedDisk(3);
     Compute.DiskOption[] expectedOptions = {Compute.DiskOption.fields()};
     expect(compute.options()).andReturn(mockOptions);
-    expect(compute.get(DISK_ID, expectedOptions)).andReturn(null);
+    expect(compute.getDisk(DISK_ID, expectedOptions)).andReturn(null);
     replay(compute);
     initializeDisk();
     assertFalse(disk.exists());
@@ -272,7 +272,7 @@ public class DiskTest {
   public void testReload() throws Exception {
     initializeExpectedDisk(5);
     expect(compute.options()).andReturn(mockOptions);
-    expect(compute.get(DISK_ID)).andReturn(imageDisk);
+    expect(compute.getDisk(DISK_ID)).andReturn(imageDisk);
     replay(compute);
     initializeDisk();
     Disk updatedDisk = disk.reload();
@@ -284,7 +284,7 @@ public class DiskTest {
   public void testReloadNull() throws Exception {
     initializeExpectedDisk(3);
     expect(compute.options()).andReturn(mockOptions);
-    expect(compute.get(DISK_ID)).andReturn(null);
+    expect(compute.getDisk(DISK_ID)).andReturn(null);
     replay(compute);
     initializeDisk();
     assertNull(disk.reload());
@@ -295,7 +295,7 @@ public class DiskTest {
   public void testReloadWithOptions() throws Exception {
     initializeExpectedDisk(5);
     expect(compute.options()).andReturn(mockOptions);
-    expect(compute.get(DISK_ID, Compute.DiskOption.fields())).andReturn(imageDisk);
+    expect(compute.getDisk(DISK_ID, Compute.DiskOption.fields())).andReturn(imageDisk);
     replay(compute);
     initializeDisk();
     Disk updatedDisk = disk.reload(Compute.DiskOption.fields());
