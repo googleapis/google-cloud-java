@@ -21,6 +21,11 @@
     </dependency>
     <dependency>
       <groupId>${project.groupId}</groupId>
+      <artifactId>gcloud-java-compute</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>${project.groupId}</groupId>
       <artifactId>gcloud-java-core</artifactId>
       <version>${project.version}</version>
     </dependency>
