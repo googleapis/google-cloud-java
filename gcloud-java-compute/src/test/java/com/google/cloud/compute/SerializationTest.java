@@ -16,10 +16,9 @@
 
 package com.google.cloud.compute;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotSame;
-
 import com.google.cloud.AuthCredentials;
+import com.google.cloud.BaseSerializationTest;
+import com.google.cloud.Restorable;
 import com.google.cloud.RetryParams;
 import com.google.cloud.compute.AttachedDisk.CreateDiskConfiguration;
 import com.google.cloud.compute.AttachedDisk.PersistentDiskConfiguration;
@@ -28,17 +27,10 @@ import com.google.cloud.compute.NetworkInterface.AccessConfig;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 
-import org.junit.Test;
-
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.List;
 
-public class SerializationTest {
+public class SerializationTest extends BaseSerializationTest {
 
   private static final Compute COMPUTE = ComputeOptions.builder().projectId("p").build().service();
   private static final Long CREATION_TIMESTAMP = 1453293540000L;
@@ -269,27 +261,18 @@ public class SerializationTest {
   private static final Compute.InstanceAggregatedListOption INSTANCE_AGGREGATED_LIST_OPTION =
       Compute.InstanceAggregatedListOption.filter(INSTANCE_FILTER);
 
-  @Test
-  public void testServiceOptions() throws Exception {
+  @Override
+  protected Serializable[] serializableObjects() {
     ComputeOptions options = ComputeOptions.builder()
         .projectId("p1")
         .authCredentials(AuthCredentials.createForAppEngine())
         .build();
-    ComputeOptions serializedCopy = serializeAndDeserialize(options);
-    assertEquals(options, serializedCopy);
-
-    options = options.toBuilder()
+    ComputeOptions otherOptions = options.toBuilder()
         .projectId("p2")
         .retryParams(RetryParams.defaultInstance())
         .authCredentials(null)
         .build();
-    serializedCopy = serializeAndDeserialize(options);
-    assertEquals(options, serializedCopy);
-  }
-
-  @Test
-  public void testModelAndRequests() throws Exception {
-    Serializable[] objects = {DISK_TYPE_ID, DISK_TYPE, MACHINE_TYPE_ID, MACHINE_TYPE, REGION_ID,
+    return new Serializable[]{DISK_TYPE_ID, DISK_TYPE, MACHINE_TYPE_ID, MACHINE_TYPE, REGION_ID,
         REGION, ZONE_ID, ZONE, LICENSE_ID, LICENSE, DEPRECATION_STATUS, GLOBAL_OPERATION_ID,
         REGION_OPERATION_ID, ZONE_OPERATION_ID, GLOBAL_OPERATION, REGION_OPERATION, ZONE_OPERATION,
         INSTANCE_ID, REGION_FORWARDING_RULE_ID, GLOBAL_FORWARDING_RULE_ID, GLOBAL_ADDRESS_ID,
@@ -311,26 +294,12 @@ public class SerializationTest {
         IMAGE_LIST_OPTION, DISK_OPTION, DISK_FILTER, DISK_LIST_OPTION, DISK_AGGREGATED_LIST_OPTION,
         SUBNETWORK_OPTION, SUBNETWORK_FILTER, SUBNETWORK_LIST_OPTION,
         SUBNETWORK_AGGREGATED_LIST_OPTION, NETWORK_OPTION, NETWORK_FILTER, NETWORK_LIST_OPTION,
-        INSTANCE_OPTION, INSTANCE_FILTER, INSTANCE_LIST_OPTION, INSTANCE_AGGREGATED_LIST_OPTION};
-    for (Serializable obj : objects) {
-      Object copy = serializeAndDeserialize(obj);
-      assertEquals(obj, obj);
-      assertEquals(obj, copy);
-      assertNotSame(obj, copy);
-      assertEquals(copy, copy);
-    }
+        INSTANCE_OPTION, INSTANCE_FILTER, INSTANCE_LIST_OPTION, INSTANCE_AGGREGATED_LIST_OPTION,
+        options, otherOptions};
   }
 
-  @SuppressWarnings("unchecked")
-  private <T> T serializeAndDeserialize(T obj)
-      throws IOException, ClassNotFoundException {
-    ByteArrayOutputStream bytes = new ByteArrayOutputStream();
-    try (ObjectOutputStream output = new ObjectOutputStream(bytes)) {
-      output.writeObject(obj);
-    }
-    try (ObjectInputStream input =
-             new ObjectInputStream(new ByteArrayInputStream(bytes.toByteArray()))) {
-      return (T) input.readObject();
-    }
+  @Override
+  protected Restorable<?>[] restorableObjects() {
+    return null;
   }
 }
