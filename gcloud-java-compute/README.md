@@ -1,17 +1,16 @@
 Google Cloud Java Client for Compute (Alpha)
 ====================================
 
-Java idiomatic client for [Google Cloud Compute] (https://cloud.google.com/compute).
+Java idiomatic client for [Google Cloud Compute](https://cloud.google.com/compute).
 
 [![Build Status](https://travis-ci.org/GoogleCloudPlatform/gcloud-java.svg?branch=master)](https://travis-ci.org/GoogleCloudPlatform/gcloud-java)
 [![Coverage Status](https://coveralls.io/repos/GoogleCloudPlatform/gcloud-java/badge.svg?branch=master)](https://coveralls.io/r/GoogleCloudPlatform/gcloud-java?branch=master)
-<!-- TODO(mziccard): add in the maven shield once the artifact is pushed to maven -->
+[![Maven](https://img.shields.io/maven-central/v/com.google.cloud/gcloud-java-compute.svg)]( https://img.shields.io/maven-central/v/com.google.cloud/gcloud-java-compute.svg)
 [![Codacy Badge](https://api.codacy.com/project/badge/grade/9da006ad7c3a4fe1abd142e77c003917)](https://www.codacy.com/app/mziccard/gcloud-java)
 [![Dependency Status](https://www.versioneye.com/user/projects/56bd8ee72a29ed002d2b0969/badge.svg?style=flat)](https://www.versioneye.com/user/projects/56bd8ee72a29ed002d2b0969)
 
--  [Homepage] (https://googlecloudplatform.github.io/gcloud-java/)
-
-<!-- TODO(mziccard): add link to API documentation -->
+-  [Homepage](https://googlecloudplatform.github.io/gcloud-java/)
+-  [API Documentation](http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/gcloud/compute/package-summary.html)
 
 > Note: This client is a work-in-progress, and may occasionally
 > make backwards-incompatible changes.
@@ -27,7 +26,11 @@ If you are using SBT, add this to your dependencies
 
 Example Application
 -------------------
-<!-- TODO(mziccard): add example application -->
+
+[`ComputeExample`](../gcloud-java-examples/src/main/java/com/google/gcloud/examples/compute/ComputeExample.java)
+is a simple command line interface that provides some of Google Cloud Compute Engine's
+functionality. Read more about using the application on the
+[`ComputeExample` docs page](http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/gcloud/examples/compute/ComputeExample.html).
 
 Authentication
 --------------
@@ -51,7 +54,160 @@ with Google Cloud Compute using this Client Library.
 
 Getting Started
 ---------------
-<!-- TODO(mziccard): add code snippet -->
+
+#### Prerequisites
+For this tutorial, you will need a [Google Developers Console](https://console.developers.google.com/)
+project with the Compute Engine API enabled. You will need to [enable billing](https://support.google.com/cloud/answer/6158867?hl=en)
+to use Google Cloud DNS. [Follow these instructions](https://cloud.google.com/docs/authentication#preparation)
+to get your project set up. You will also need to set up the local development environment by
+[installing the Google Cloud SDK](https://cloud.google.com/sdk/) and running the following commands
+in command line: `gcloud auth login` and `gcloud config set project [YOUR PROJECT ID]`.
+
+#### Installation and setup
+You'll need to obtain the `gcloud-java-compute` library.  See the [Quickstart](#quickstart) section
+to add `gcloud-java-compute` as a dependency in your code.
+
+#### Creating an authorized service object
+To make authenticated requests to Google Cloud Compute Engine, you must create a service object with
+credentials. You can then make API calls by calling methods on the Compute service object. The
+simplest way to authenticate is to use [Application Default Credentials](https://developers.google.com/identity/protocols/application-default-credentials).
+These credentials are automatically inferred from your environment, so you only need the following
+code to create your service object:
+
+```java
+import com.google.gcloud.compute.Compute;
+import com.google.gcloud.compute.ComputeOptions;
+
+Compute compute = ComputeOptions.defaultInstance().service();
+```
+
+For other authentication options, see the [Authentication](https://github.com/GoogleCloudPlatform/gcloud-java#authentication)
+page.
+
+#### Creating a region IP address
+An external region IP address can be associated to a Google Compute Engine instance to communicate
+with instances in different regions or to communicate with the instance from ouside of Compute
+Engine. In this code snippet, we will create a new external region address.
+
+Add the following imports at the top of your file:
+
+```java
+import com.google.gcloud.compute.AddressInfo;
+import com.google.gcloud.compute.Operation;
+import com.google.gcloud.compute.RegionAddressId;
+```
+
+Then add the following code to create an address. Most Compute Engine calls return an `Operation`
+object that can be used to wait for operation completion and to check whether operation failed or
+succeeded:
+
+```java
+RegionAddressId addressId = RegionAddressId.of("us-central1", "test-address");
+Operation operation = compute.create(AddressInfo.of(addressId));
+while (!operation.isDone()) {
+  Thread.sleep(1000L);
+}
+operation = operation.reload();
+if (operation.errors() == null) {
+  System.out.println("Address " + addressId + " was successfully created");
+} else {
+  // inspect operation.errors()
+  throw new RuntimeException("Address creation failed");
+}
+```
+
+#### Creating a persistent disk
+A persistent disk can be used as primary storage for your virtual machine instances. Persistent
+disks can be created empty, from a disk image or from a disk snapshot. Compute Engine offers
+[publicly-available images](https://cloud.google.com/compute/docs/operating-systems/) of certain
+operating systems that you can use. In this code snippet, we will create a new persistent disk from
+a publicly-available image.
+
+Add the following imports at the top of your file:
+
+```java
+import com.google.gcloud.compute.DiskInfo;
+import com.google.gcloud.compute.DiskId;
+import com.google.gcloud.compute.ImageDiskConfiguration;
+import com.google.gcloud.compute.ImageId;
+```
+
+Then add the following code to create a disk and wait for disk creation to terminate.
+
+```java
+ImageId imageId = ImageId.of("debian-cloud", "debian-8-jessie-v20160329");
+DiskId diskId = DiskId.of("us-central1-a", "test-disk");
+ImageDiskConfiguration diskConfiguration = ImageDiskConfiguration.of(imageId);
+DiskInfo disk = DiskInfo.of(diskId, diskConfiguration);
+Operation operation = compute.create(disk);
+while (!operation.isDone()) {
+  Thread.sleep(1000L);
+}
+operation = operation.reload();
+if (operation.errors() == null) {
+  System.out.println("Disk " + diskId + " was successfully created");
+} else {
+  // inspect operation.errors()
+  throw new RuntimeException("Disk creation failed");
+}
+```
+
+#### Creating a virtual machine instance
+An Google Compute Engine instance is a virtual machine (VM) hosted on Google's infrastructure. An
+instance can be created given it's identity, a machine type, one boot disk and a network interface.
+In this code snippet, we will create a virtual machine instance in the default network using as a
+boot disk the disk we have just created and assigning to it the just created IP address.
+
+Add the following imports at the top of your file:
+
+```java
+import com.google.gcloud.compute.AttachedDisk;
+import com.google.gcloud.compute.AttachedDisk.PersistentDiskConfiguration;
+import com.google.gcloud.compute.InstanceId;
+import com.google.gcloud.compute.InstanceInfo;
+import com.google.gcloud.compute.MachineTypeId;
+import com.google.gcloud.compute.NetworkConfiguration;
+import com.google.gcloud.compute.NetworkConfiguration.AccessConfig;
+import com.google.gcloud.compute.NetworkId;
+import com.google.gcloud.compute.NetworkInterface;
+```
+
+Then add the following code to create an instance and wait for instance creation to terminate.
+
+```java
+Address externalIp = compute.getAddress(addressId);
+InstanceId instanceId = InstanceId.of("us-central1-a", "test-instance");
+NetworkId networkId = NetworkId.of("default");
+PersistentDiskConfiguration attachConfiguration =
+    PersistentDiskConfiguration.builder(diskId).boot(true).build();
+AttachedDisk attachedDisk = AttachedDisk.of("dev0", attachConfiguration);
+NetworkInterface networkInterface = NetworkInterface.builder(networkId)
+    .accessConfigurations(AccessConfig.of(externalIp.address()))
+    .build();
+MachineTypeId machineTypeId = MachineTypeId.of("us-central1-a", "n1-standard-1");
+InstanceInfo instance =
+    InstanceInfo.of(instanceId, machineTypeId, attachedDisk, networkInterface);
+Operation operation = compute.create(instance);
+while (!operation.isDone()) {
+  Thread.sleep(1000L);
+}
+operation = operation.reload();
+if (operation.errors() == null) {
+  System.out.println("Instance " + instanceId + " was successfully created");
+} else {
+  // inspect operation.errors()
+  throw new RuntimeException("Instance creation failed");
+}
+```
+
+#### Complete source code
+
+In
+[CreateAddressDiskAndInstance.java](../gcloud-java-examples/src/main/java/com/google/gcloud/examples/compute/snippets/CreateAddressDiskAndInstance.java)
+we put together all the code shown above into one program. The program assumes that you are
+running on Compute Engine or from your own desktop. To run the example on App Engine, simply move
+the code from the main method to your application's servlet class and change the print statements to
+display on your webpage.
 
 Troubleshooting
 ---------------
@@ -73,7 +229,7 @@ See [TESTING] to read more about testing.
 Versioning
 ----------
 
-This library follows [Semantic Versioning] (http://semver.org/).
+This library follows [Semantic Versioning](http://semver.org/).
 
 It is currently in major version zero (``0.y.z``), which means that anything
 may change at any time and the public API should not be considered

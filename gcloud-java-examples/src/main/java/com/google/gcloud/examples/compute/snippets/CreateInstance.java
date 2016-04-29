@@ -1,0 +1,54 @@
+/*
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *       http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package com.google.gcloud.examples.compute.snippets;
+
+import com.google.gcloud.compute.AttachedDisk;
+import com.google.gcloud.compute.Compute;
+import com.google.gcloud.compute.ComputeOptions;
+import com.google.gcloud.compute.ImageId;
+import com.google.gcloud.compute.Instance;
+import com.google.gcloud.compute.InstanceId;
+import com.google.gcloud.compute.InstanceInfo;
+import com.google.gcloud.compute.MachineTypeId;
+import com.google.gcloud.compute.NetworkId;
+import com.google.gcloud.compute.NetworkInterface;
+import com.google.gcloud.compute.Operation;
+
+/**
+ * A snippet for Google Cloud Compute Engine showing how to create a virtual machine instance.
+ */
+public class CreateInstance {
+
+  public static void main(String... args) throws InterruptedException {
+    Compute compute = ComputeOptions.defaultInstance().service();
+    ImageId imageId = ImageId.of("debian-cloud", "debian-8-jessie-v20160329");
+    NetworkId networkId = NetworkId.of("default");
+    AttachedDisk attachedDisk = AttachedDisk.of(AttachedDisk.CreateDiskConfiguration.of(imageId));
+    NetworkInterface networkInterface = NetworkInterface.of(networkId);
+    InstanceId instanceId = InstanceId.of("us-central1-a", "instance-name");
+    MachineTypeId machineTypeId = MachineTypeId.of("us-central1-a", "n1-standard-1");
+    Operation operation =
+        compute.create(InstanceInfo.of(instanceId, machineTypeId, attachedDisk, networkInterface));
+    while (!operation.isDone()) {
+      Thread.sleep(1000L);
+    }
+    if (operation.errors() == null) {
+      // use instance
+      Instance instance = compute.getInstance(instanceId);
+    }
+  }
+}
