@@ -18,18 +18,19 @@ package com.google.cloud.compute;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import com.google.cloud.FieldSelector;
+import com.google.cloud.FieldSelector.Helper;
 import com.google.cloud.Page;
 import com.google.cloud.Service;
 import com.google.cloud.compute.AttachedDisk.PersistentDiskConfiguration;
 import com.google.cloud.compute.NetworkInterface.AccessConfig;
 import com.google.cloud.compute.spi.ComputeRpc;
-import com.google.common.base.Joiner;
 import com.google.common.base.MoreObjects;
-import com.google.common.collect.Sets;
+import com.google.common.collect.ImmutableList;
 
 import java.io.Serializable;
+import java.util.List;
 import java.util.Objects;
-import java.util.Set;
 
 /**
  * An interface for Google Cloud Compute Engine.
@@ -44,7 +45,7 @@ public interface Compute extends Service<ComputeOptions> {
    * @see <a href="https://cloud.google.com/compute/docs/reference/latest/diskTypes#resource">Disk
    *     Type Resource</a>
    */
-  enum DiskTypeField {
+  enum DiskTypeField implements FieldSelector {
     CREATION_TIMESTAMP("creationTimestamp"),
     DEFAULT_DISK_SIZE_GB("defaultDiskSizeGb"),
     DESCRIPTION("description"),
@@ -55,23 +56,17 @@ public interface Compute extends Service<ComputeOptions> {
     ZONE("zone"),
     DEPRECATED("deprecated");
 
+    static final List<? extends FieldSelector> REQUIRED_FIELDS = ImmutableList.of(SELF_LINK);
+
     private final String selector;
 
     DiskTypeField(String selector) {
       this.selector = selector;
     }
 
+    @Override
     public String selector() {
       return selector;
-    }
-
-    static String selector(DiskTypeField... fields) {
-      Set<String> fieldStrings = Sets.newHashSetWithExpectedSize(fields.length + 1);
-      fieldStrings.add(SELF_LINK.selector());
-      for (DiskTypeField field : fields) {
-        fieldStrings.add(field.selector());
-      }
-      return Joiner.on(',').join(fieldStrings);
     }
   }
 
@@ -81,7 +76,7 @@ public interface Compute extends Service<ComputeOptions> {
    * @see <a href="https://cloud.google.com/compute/docs/reference/latest/machineTypes#resource">
    *     Machine Type Resource</a>
    */
-  enum MachineTypeField {
+  enum MachineTypeField implements FieldSelector {
     CREATION_TIMESTAMP("creationTimestamp"),
     DESCRIPTION("description"),
     GUEST_CPUS("guestCpus"),
@@ -96,23 +91,17 @@ public interface Compute extends Service<ComputeOptions> {
     ZONE("zone"),
     DEPRECATED("deprecated");
 
+    static final List<? extends FieldSelector> REQUIRED_FIELDS = ImmutableList.of(SELF_LINK);
+
     private final String selector;
 
     MachineTypeField(String selector) {
       this.selector = selector;
     }
 
+    @Override
     public String selector() {
       return selector;
-    }
-
-    static String selector(MachineTypeField... fields) {
-      Set<String> fieldStrings = Sets.newHashSetWithExpectedSize(fields.length + 1);
-      fieldStrings.add(SELF_LINK.selector());
-      for (MachineTypeField field : fields) {
-        fieldStrings.add(field.selector());
-      }
-      return Joiner.on(',').join(fieldStrings);
     }
   }
 
@@ -122,7 +111,7 @@ public interface Compute extends Service<ComputeOptions> {
    * @see <a href="https://cloud.google.com/compute/docs/reference/latest/regions#resource">
    *     Region Resource</a>
    */
-  enum RegionField {
+  enum RegionField implements FieldSelector {
     CREATION_TIMESTAMP("creationTimestamp"),
     DESCRIPTION("description"),
     ID("id"),
@@ -133,23 +122,17 @@ public interface Compute extends Service<ComputeOptions> {
     ZONES("zones"),
     DEPRECATED("deprecated");
 
+    static final List<? extends FieldSelector> REQUIRED_FIELDS = ImmutableList.of(SELF_LINK);
+
     private final String selector;
 
     RegionField(String selector) {
       this.selector = selector;
     }
 
+    @Override
     public String selector() {
       return selector;
-    }
-
-    static String selector(RegionField... fields) {
-      Set<String> fieldStrings = Sets.newHashSetWithExpectedSize(fields.length + 1);
-      fieldStrings.add(SELF_LINK.selector());
-      for (RegionField field : fields) {
-        fieldStrings.add(field.selector());
-      }
-      return Joiner.on(',').join(fieldStrings);
     }
   }
 
@@ -159,7 +142,7 @@ public interface Compute extends Service<ComputeOptions> {
    * @see <a href="https://cloud.google.com/compute/docs/reference/latest/zones#resource">Zone
    *     Resource</a>
    */
-  enum ZoneField {
+  enum ZoneField implements FieldSelector {
     CREATION_TIMESTAMP("creationTimestamp"),
     DESCRIPTION("description"),
     ID("id"),
@@ -169,23 +152,17 @@ public interface Compute extends Service<ComputeOptions> {
     STATUS("status"),
     DEPRECATED("deprecated");
 
+    static final List<? extends FieldSelector> REQUIRED_FIELDS = ImmutableList.of(SELF_LINK);
+
     private final String selector;
 
     ZoneField(String selector) {
       this.selector = selector;
     }
 
+    @Override
     public String selector() {
       return selector;
-    }
-
-    static String selector(ZoneField... fields) {
-      Set<String> fieldStrings = Sets.newHashSetWithExpectedSize(fields.length + 1);
-      fieldStrings.add(SELF_LINK.selector());
-      for (ZoneField field : fields) {
-        fieldStrings.add(field.selector());
-      }
-      return Joiner.on(',').join(fieldStrings);
     }
   }
 
@@ -195,10 +172,12 @@ public interface Compute extends Service<ComputeOptions> {
    * @see <a href="https://cloud.google.com/compute/docs/reference/latest/licenses#resource">License
    *     Resource</a>
    */
-  enum LicenseField {
+  enum LicenseField implements FieldSelector {
     CHARGES_USE_FEE("chargesUseFee"),
     NAME("name"),
     SELF_LINK("selfLink");
+
+    static final List<? extends FieldSelector> REQUIRED_FIELDS = ImmutableList.of(SELF_LINK);
 
     private final String selector;
 
@@ -206,17 +185,9 @@ public interface Compute extends Service<ComputeOptions> {
       this.selector = selector;
     }
 
+    @Override
     public String selector() {
       return selector;
-    }
-
-    static String selector(LicenseField... fields) {
-      Set<String> fieldStrings = Sets.newHashSetWithExpectedSize(fields.length + 1);
-      fieldStrings.add(SELF_LINK.selector());
-      for (LicenseField field : fields) {
-        fieldStrings.add(field.selector());
-      }
-      return Joiner.on(',').join(fieldStrings);
     }
   }
 
@@ -232,7 +203,7 @@ public interface Compute extends Service<ComputeOptions> {
    * @see <a href="https://cloud.google.com/compute/docs/reference/latest/zoneOperations#resource">
    *     ZoneOperation Resource</a>
    */
-  enum OperationField {
+  enum OperationField implements FieldSelector {
     CLIENT_OPERATION_ID("clientOperationId"),
     DESCRIPTION("description"),
     END_TIME("endTime"),
@@ -255,23 +226,17 @@ public interface Compute extends Service<ComputeOptions> {
     WARNINGS("warnings"),
     ZONE("zone");
 
+    static final List<? extends FieldSelector> REQUIRED_FIELDS = ImmutableList.of(SELF_LINK);
+
     private final String selector;
 
     OperationField(String selector) {
       this.selector = selector;
     }
 
+    @Override
     public String selector() {
       return selector;
-    }
-
-    static String selector(OperationField... fields) {
-      Set<String> fieldStrings = Sets.newHashSetWithExpectedSize(fields.length + 1);
-      fieldStrings.add(SELF_LINK.selector());
-      for (OperationField field : fields) {
-        fieldStrings.add(field.selector());
-      }
-      return Joiner.on(',').join(fieldStrings);
     }
   }
 
@@ -283,7 +248,7 @@ public interface Compute extends Service<ComputeOptions> {
    * @see <a href="https://cloud.google.com/compute/docs/reference/latest/globalAddresses#resource">
    *     Global Address Resource</a>
    */
-  enum AddressField {
+  enum AddressField implements FieldSelector {
     ADDRESS("address"),
     CREATION_TIMESTAMP("creationTimestamp"),
     DESCRIPTION("description"),
@@ -294,23 +259,17 @@ public interface Compute extends Service<ComputeOptions> {
     STATUS("status"),
     USERS("users");
 
+    static final List<? extends FieldSelector> REQUIRED_FIELDS = ImmutableList.of(SELF_LINK);
+
     private final String selector;
 
     AddressField(String selector) {
       this.selector = selector;
     }
 
+    @Override
     public String selector() {
       return selector;
-    }
-
-    static String selector(AddressField... fields) {
-      Set<String> fieldStrings = Sets.newHashSetWithExpectedSize(fields.length + 1);
-      fieldStrings.add(SELF_LINK.selector());
-      for (AddressField field : fields) {
-        fieldStrings.add(field.selector());
-      }
-      return Joiner.on(',').join(fieldStrings);
     }
   }
 
@@ -320,7 +279,7 @@ public interface Compute extends Service<ComputeOptions> {
    * @see <a href="https://cloud.google.com/compute/docs/reference/latest/disks#resource">Disk
    *     Resource</a>
    */
-  enum DiskField {
+  enum DiskField implements FieldSelector {
     CREATION_TIMESTAMP("creationTimestamp"),
     DESCRIPTION("description"),
     ID("id"),
@@ -340,26 +299,18 @@ public interface Compute extends Service<ComputeOptions> {
     USERS("users"),
     ZONE("zone");
 
+    static final List<? extends FieldSelector> REQUIRED_FIELDS =
+        ImmutableList.of(SELF_LINK, TYPE, SOURCE_IMAGE, SOURCE_SNAPSHOT);
+
     private final String selector;
 
     DiskField(String selector) {
       this.selector = selector;
     }
 
+    @Override
     public String selector() {
       return selector;
-    }
-
-    static String selector(DiskField... fields) {
-      Set<String> fieldStrings = Sets.newHashSetWithExpectedSize(fields.length + 4);
-      fieldStrings.add(SELF_LINK.selector());
-      fieldStrings.add(TYPE.selector());
-      fieldStrings.add(SOURCE_IMAGE.selector());
-      fieldStrings.add(SOURCE_SNAPSHOT.selector());
-      for (DiskField field : fields) {
-        fieldStrings.add(field.selector());
-      }
-      return Joiner.on(',').join(fieldStrings);
     }
   }
 
@@ -369,7 +320,7 @@ public interface Compute extends Service<ComputeOptions> {
    * @see <a href="https://cloud.google.com/compute/docs/reference/latest/snapshots#resource">
    *     Snapshot Resource</a>
    */
-  enum SnapshotField {
+  enum SnapshotField implements FieldSelector {
     CREATION_TIMESTAMP("creationTimestamp"),
     DESCRIPTION("description"),
     DISK_SIZE_GB("diskSizeGb"),
@@ -383,23 +334,17 @@ public interface Compute extends Service<ComputeOptions> {
     STORAGE_BYTES("storageBytes"),
     STORAGE_BYTES_STATUS("storageBytesStatus");
 
+    static final List<? extends FieldSelector> REQUIRED_FIELDS = ImmutableList.of(SELF_LINK);
+
     private final String selector;
 
     SnapshotField(String selector) {
       this.selector = selector;
     }
 
+    @Override
     public String selector() {
       return selector;
-    }
-
-    static String selector(SnapshotField... fields) {
-      Set<String> fieldStrings = Sets.newHashSetWithExpectedSize(fields.length + 1);
-      fieldStrings.add(SELF_LINK.selector());
-      for (SnapshotField field : fields) {
-        fieldStrings.add(field.selector());
-      }
-      return Joiner.on(',').join(fieldStrings);
     }
   }
 
@@ -409,7 +354,7 @@ public interface Compute extends Service<ComputeOptions> {
    * @see <a href="https://cloud.google.com/compute/docs/reference/latest/images#resource">Image
    *     Resource</a>
    */
-  enum ImageField {
+  enum ImageField implements FieldSelector {
     ARCHIVE_SIZE_BYTES("archiveSizeBytes"),
     CREATION_TIMESTAMP("creationTimestamp"),
     DEPRECATED("deprecated"),
@@ -424,25 +369,18 @@ public interface Compute extends Service<ComputeOptions> {
     SOURCE_DISK_ID("sourceDiskId"),
     SOURCE_TYPE("sourceType");
 
+    static final List<? extends FieldSelector> REQUIRED_FIELDS =
+        ImmutableList.of(SELF_LINK, SOURCE_DISK, RAW_DISK);
+
     private final String selector;
 
     ImageField(String selector) {
       this.selector = selector;
     }
 
+    @Override
     public String selector() {
       return selector;
-    }
-
-    static String selector(ImageField... fields) {
-      Set<String> fieldStrings = Sets.newHashSetWithExpectedSize(fields.length + 3);
-      fieldStrings.add(SELF_LINK.selector());
-      fieldStrings.add(SOURCE_DISK.selector());
-      fieldStrings.add(RAW_DISK.selector());
-      for (ImageField field : fields) {
-        fieldStrings.add(field.selector());
-      }
-      return Joiner.on(',').join(fieldStrings);
     }
   }
 
@@ -452,7 +390,7 @@ public interface Compute extends Service<ComputeOptions> {
    * @see <a href="https://cloud.google.com/compute/docs/reference/latest/subnetworks#resource">
    *     Subnetwork Resource</a>
    */
-  enum SubnetworkField {
+  enum SubnetworkField implements FieldSelector {
     CREATION_TIMESTAMP("creationTimestamp"),
     DESCRIPTION("description"),
     GATEWAY_ADDRESS("gatewayAddress"),
@@ -463,23 +401,17 @@ public interface Compute extends Service<ComputeOptions> {
     REGION("region"),
     SELF_LINK("selfLink");
 
+    static final List<? extends FieldSelector> REQUIRED_FIELDS = ImmutableList.of(SELF_LINK);
+
     private final String selector;
 
     SubnetworkField(String selector) {
       this.selector = selector;
     }
 
+    @Override
     public String selector() {
       return selector;
-    }
-
-    static String selector(SubnetworkField... fields) {
-      Set<String> fieldStrings = Sets.newHashSetWithExpectedSize(fields.length + 1);
-      fieldStrings.add(SELF_LINK.selector());
-      for (SubnetworkField field : fields) {
-        fieldStrings.add(field.selector());
-      }
-      return Joiner.on(',').join(fieldStrings);
     }
   }
 
@@ -489,7 +421,7 @@ public interface Compute extends Service<ComputeOptions> {
    * @see <a href="https://cloud.google.com/compute/docs/reference/latest/networks#resource">
    *     Network Resource</a>
    */
-  enum NetworkField {
+  enum NetworkField implements FieldSelector {
     IPV4_RANGE("IPv4Range"),
     AUTO_CREATE_SUBNETWORKS("autoCreateSubnetworks"),
     CREATION_TIMESTAMP("creationTimestamp"),
@@ -500,25 +432,18 @@ public interface Compute extends Service<ComputeOptions> {
     SELF_LINK("selfLink"),
     SUBNETWORKS("subnetworks");
 
+    static final List<? extends FieldSelector> REQUIRED_FIELDS =
+        ImmutableList.of(SELF_LINK, IPV4_RANGE, AUTO_CREATE_SUBNETWORKS);
+
     private final String selector;
 
     NetworkField(String selector) {
       this.selector = selector;
     }
 
+    @Override
     public String selector() {
       return selector;
-    }
-
-    static String selector(NetworkField... fields) {
-      Set<String> fieldStrings = Sets.newHashSetWithExpectedSize(fields.length + 3);
-      fieldStrings.add(SELF_LINK.selector());
-      fieldStrings.add(IPV4_RANGE.selector());
-      fieldStrings.add(AUTO_CREATE_SUBNETWORKS.selector());
-      for (NetworkField field : fields) {
-        fieldStrings.add(field.selector());
-      }
-      return Joiner.on(',').join(fieldStrings);
     }
   }
 
@@ -528,7 +453,7 @@ public interface Compute extends Service<ComputeOptions> {
    * @see <a href="https://cloud.google.com/compute/docs/reference/latest/instances#resource">
    *     Network Resource</a>
    */
-  enum InstanceField {
+  enum InstanceField implements FieldSelector {
     CAN_IP_FORWARD("canIpForward"),
     CPU_PLATFORM("cpuPlatform"),
     CREATION_TIMESTAMP("creationTimestamp"),
@@ -547,23 +472,17 @@ public interface Compute extends Service<ComputeOptions> {
     TAGS("tags"),
     ZONE("zone");
 
+    static final List<? extends FieldSelector> REQUIRED_FIELDS = ImmutableList.of(SELF_LINK);
+
     private final String selector;
 
     InstanceField(String selector) {
       this.selector = selector;
     }
 
+    @Override
     public String selector() {
       return selector;
-    }
-
-    static String selector(InstanceField... fields) {
-      Set<String> fieldStrings = Sets.newHashSetWithExpectedSize(fields.length + 1);
-      fieldStrings.add(SELF_LINK.selector());
-      for (InstanceField field : fields) {
-        fieldStrings.add(field.selector());
-      }
-      return Joiner.on(',').join(fieldStrings);
     }
   }
 
@@ -1158,7 +1077,8 @@ public interface Compute extends Service<ComputeOptions> {
      * returned, even if not specified.
      */
     public static DiskTypeOption fields(DiskTypeField... fields) {
-      return new DiskTypeOption(ComputeRpc.Option.FIELDS, DiskTypeField.selector(fields));
+      return new DiskTypeOption(ComputeRpc.Option.FIELDS,
+          Helper.selector(DiskTypeField.REQUIRED_FIELDS, fields));
     }
   }
 
@@ -1202,9 +1122,8 @@ public interface Compute extends Service<ComputeOptions> {
      * {@link DiskType#diskTypeId()} is always returned, even if not specified.
      */
     public static DiskTypeListOption fields(DiskTypeField... fields) {
-      StringBuilder builder = new StringBuilder();
-      builder.append("items(").append(DiskTypeField.selector(fields)).append("),nextPageToken");
-      return new DiskTypeListOption(ComputeRpc.Option.FIELDS, builder.toString());
+      return new DiskTypeListOption(ComputeRpc.Option.FIELDS,
+          Helper.listSelector("items", DiskTypeField.REQUIRED_FIELDS, fields));
     }
   }
 
@@ -1260,7 +1179,8 @@ public interface Compute extends Service<ComputeOptions> {
      * {@link MachineType#machineTypeId()} is always returned, even if not specified.
      */
     public static MachineTypeOption fields(MachineTypeField... fields) {
-      return new MachineTypeOption(ComputeRpc.Option.FIELDS, MachineTypeField.selector(fields));
+      return new MachineTypeOption(ComputeRpc.Option.FIELDS,
+          Helper.selector(MachineTypeField.REQUIRED_FIELDS, fields));
     }
   }
 
@@ -1304,9 +1224,8 @@ public interface Compute extends Service<ComputeOptions> {
      * {@link MachineType#machineTypeId()} is always returned, even if not specified.
      */
     public static MachineTypeListOption fields(MachineTypeField... fields) {
-      StringBuilder builder = new StringBuilder();
-      builder.append("items(").append(MachineTypeField.selector(fields)).append("),nextPageToken");
-      return new MachineTypeListOption(ComputeRpc.Option.FIELDS, builder.toString());
+      return new MachineTypeListOption(ComputeRpc.Option.FIELDS,
+          Helper.listSelector("items", MachineTypeField.REQUIRED_FIELDS, fields));
     }
   }
 
@@ -1362,7 +1281,8 @@ public interface Compute extends Service<ComputeOptions> {
      * returned, even if not specified.
      */
     public static RegionOption fields(RegionField... fields) {
-      return new RegionOption(ComputeRpc.Option.FIELDS, RegionField.selector(fields));
+      return new RegionOption(ComputeRpc.Option.FIELDS,
+          Helper.selector(RegionField.REQUIRED_FIELDS, fields));
     }
   }
 
@@ -1406,9 +1326,8 @@ public interface Compute extends Service<ComputeOptions> {
      * returned, even if not specified.
      */
     public static RegionListOption fields(RegionField... fields) {
-      StringBuilder builder = new StringBuilder();
-      builder.append("items(").append(RegionField.selector(fields)).append("),nextPageToken");
-      return new RegionListOption(ComputeRpc.Option.FIELDS, builder.toString());
+      return new RegionListOption(ComputeRpc.Option.FIELDS,
+          Helper.listSelector("items", RegionField.REQUIRED_FIELDS, fields));
     }
   }
 
@@ -1430,7 +1349,8 @@ public interface Compute extends Service<ComputeOptions> {
      * not specified.
      */
     public static ZoneOption fields(ZoneField... fields) {
-      return new ZoneOption(ComputeRpc.Option.FIELDS, ZoneField.selector(fields));
+      return new ZoneOption(ComputeRpc.Option.FIELDS,
+          Helper.selector(ZoneField.REQUIRED_FIELDS, fields));
     }
   }
 
@@ -1474,9 +1394,8 @@ public interface Compute extends Service<ComputeOptions> {
      * not specified.
      */
     public static ZoneListOption fields(ZoneField... fields) {
-      StringBuilder builder = new StringBuilder();
-      builder.append("items(").append(ZoneField.selector(fields)).append("),nextPageToken");
-      return new ZoneListOption(ComputeRpc.Option.FIELDS, builder.toString());
+      return new ZoneListOption(ComputeRpc.Option.FIELDS,
+          Helper.listSelector("items", ZoneField.REQUIRED_FIELDS, fields));
     }
   }
 
@@ -1498,7 +1417,8 @@ public interface Compute extends Service<ComputeOptions> {
      * returned, even if not specified.
      */
     public static LicenseOption fields(LicenseField... fields) {
-      return new LicenseOption(ComputeRpc.Option.FIELDS, LicenseField.selector(fields));
+      return new LicenseOption(ComputeRpc.Option.FIELDS,
+          Helper.selector(LicenseField.REQUIRED_FIELDS, fields));
     }
   }
 
@@ -1520,7 +1440,8 @@ public interface Compute extends Service<ComputeOptions> {
      * always returned, even if not specified.
      */
     public static OperationOption fields(OperationField... fields) {
-      return new OperationOption(ComputeRpc.Option.FIELDS, OperationField.selector(fields));
+      return new OperationOption(ComputeRpc.Option.FIELDS,
+          Helper.selector(OperationField.REQUIRED_FIELDS, fields));
     }
   }
 
@@ -1564,9 +1485,8 @@ public interface Compute extends Service<ComputeOptions> {
      * {@link Operation#operationId()} is always returned, even if not specified.
      */
     public static OperationListOption fields(OperationField... fields) {
-      StringBuilder builder = new StringBuilder();
-      builder.append("items(").append(OperationField.selector(fields)).append("),nextPageToken");
-      return new OperationListOption(ComputeRpc.Option.FIELDS, builder.toString());
+      return new OperationListOption(ComputeRpc.Option.FIELDS,
+          Helper.listSelector("items", OperationField.REQUIRED_FIELDS, fields));
     }
   }
 
@@ -1588,7 +1508,8 @@ public interface Compute extends Service<ComputeOptions> {
      * returned, even if not specified.
      */
     public static AddressOption fields(AddressField... fields) {
-      return new AddressOption(ComputeRpc.Option.FIELDS, AddressField.selector(fields));
+      return new AddressOption(ComputeRpc.Option.FIELDS,
+          Helper.selector(AddressField.REQUIRED_FIELDS, fields));
     }
   }
 
@@ -1632,9 +1553,8 @@ public interface Compute extends Service<ComputeOptions> {
      * returned, even if not specified.
      */
     public static AddressListOption fields(AddressField... fields) {
-      StringBuilder builder = new StringBuilder();
-      builder.append("items(").append(AddressField.selector(fields)).append("),nextPageToken");
-      return new AddressListOption(ComputeRpc.Option.FIELDS, builder.toString());
+      return new AddressListOption(ComputeRpc.Option.FIELDS,
+          Helper.listSelector("items", AddressField.REQUIRED_FIELDS, fields));
     }
   }
 
@@ -1690,7 +1610,8 @@ public interface Compute extends Service<ComputeOptions> {
      * returned, even if not specified.
      */
     public static SnapshotOption fields(SnapshotField... fields) {
-      return new SnapshotOption(ComputeRpc.Option.FIELDS, SnapshotField.selector(fields));
+      return new SnapshotOption(ComputeRpc.Option.FIELDS,
+          Helper.selector(SnapshotField.REQUIRED_FIELDS, fields));
     }
   }
 
@@ -1734,9 +1655,8 @@ public interface Compute extends Service<ComputeOptions> {
      * {@link Snapshot#snapshotId()} is always returned, even if not specified.
      */
     public static SnapshotListOption fields(SnapshotField... fields) {
-      StringBuilder builder = new StringBuilder();
-      builder.append("items(").append(SnapshotField.selector(fields)).append("),nextPageToken");
-      return new SnapshotListOption(ComputeRpc.Option.FIELDS, builder.toString());
+      return new SnapshotListOption(ComputeRpc.Option.FIELDS,
+          Helper.listSelector("items", SnapshotField.REQUIRED_FIELDS, fields));
     }
   }
 
@@ -1758,7 +1678,8 @@ public interface Compute extends Service<ComputeOptions> {
      * {@link Image#configuration()} are always returned, even if not specified.
      */
     public static ImageOption fields(ImageField... fields) {
-      return new ImageOption(ComputeRpc.Option.FIELDS, ImageField.selector(fields));
+      return new ImageOption(ComputeRpc.Option.FIELDS,
+          Helper.selector(ImageField.REQUIRED_FIELDS, fields));
     }
   }
 
@@ -1802,9 +1723,8 @@ public interface Compute extends Service<ComputeOptions> {
      * {@link Image#configuration()} are always returned, even if not specified.
      */
     public static ImageListOption fields(ImageField... fields) {
-      StringBuilder builder = new StringBuilder();
-      builder.append("items(").append(ImageField.selector(fields)).append("),nextPageToken");
-      return new ImageListOption(ComputeRpc.Option.FIELDS, builder.toString());
+      return new ImageListOption(ComputeRpc.Option.FIELDS,
+          Helper.listSelector("items", ImageField.REQUIRED_FIELDS, fields));
     }
   }
 
@@ -1828,7 +1748,8 @@ public interface Compute extends Service<ComputeOptions> {
      * {@link ImageDiskConfiguration#sourceImage()} are always returned, even if not specified.
      */
     public static DiskOption fields(DiskField... fields) {
-      return new DiskOption(ComputeRpc.Option.FIELDS, DiskField.selector(fields));
+      return new DiskOption(ComputeRpc.Option.FIELDS,
+          Helper.selector(DiskField.REQUIRED_FIELDS, fields));
     }
   }
 
@@ -1874,9 +1795,8 @@ public interface Compute extends Service<ComputeOptions> {
      * {@link ImageDiskConfiguration#sourceImage()} are always returned, even if not specified.
      */
     public static DiskListOption fields(DiskField... fields) {
-      StringBuilder builder = new StringBuilder();
-      builder.append("items(").append(DiskField.selector(fields)).append("),nextPageToken");
-      return new DiskListOption(ComputeRpc.Option.FIELDS, builder.toString());
+      return new DiskListOption(ComputeRpc.Option.FIELDS,
+          Helper.listSelector("items", DiskField.REQUIRED_FIELDS, fields));
     }
   }
 
@@ -1932,7 +1852,8 @@ public interface Compute extends Service<ComputeOptions> {
      * always returned, even if not specified.
      */
     public static SubnetworkOption fields(SubnetworkField... fields) {
-      return new SubnetworkOption(ComputeRpc.Option.FIELDS, SubnetworkField.selector(fields));
+      return new SubnetworkOption(ComputeRpc.Option.FIELDS,
+          Helper.selector(SubnetworkField.REQUIRED_FIELDS, fields));
     }
   }
 
@@ -1976,9 +1897,8 @@ public interface Compute extends Service<ComputeOptions> {
      * {@link Subnetwork#subnetworkId()} is always returned, even if not specified.
      */
     public static SubnetworkListOption fields(SubnetworkField... fields) {
-      StringBuilder builder = new StringBuilder();
-      builder.append("items(").append(SubnetworkField.selector(fields)).append("),nextPageToken");
-      return new SubnetworkListOption(ComputeRpc.Option.FIELDS, builder.toString());
+      return new SubnetworkListOption(ComputeRpc.Option.FIELDS,
+          Helper.listSelector("items", SubnetworkField.REQUIRED_FIELDS, fields));
     }
   }
 
@@ -2034,7 +1954,8 @@ public interface Compute extends Service<ComputeOptions> {
      * {@link Network#configuration()} are always returned, even if not specified.
      */
     public static NetworkOption fields(NetworkField... fields) {
-      return new NetworkOption(ComputeRpc.Option.FIELDS, NetworkField.selector(fields));
+      return new NetworkOption(ComputeRpc.Option.FIELDS,
+          Helper.selector(NetworkField.REQUIRED_FIELDS, fields));
     }
   }
 
@@ -2078,9 +1999,8 @@ public interface Compute extends Service<ComputeOptions> {
      * {@link Network#configuration()} are always returned, even if not specified.
      */
     public static NetworkListOption fields(NetworkField... fields) {
-      StringBuilder builder = new StringBuilder();
-      builder.append("items(").append(NetworkField.selector(fields)).append("),nextPageToken");
-      return new NetworkListOption(ComputeRpc.Option.FIELDS, builder.toString());
+      return new NetworkListOption(ComputeRpc.Option.FIELDS,
+          Helper.listSelector("items", NetworkField.REQUIRED_FIELDS, fields));
     }
   }
 
@@ -2102,7 +2022,8 @@ public interface Compute extends Service<ComputeOptions> {
      * returned, even if not specified.
      */
     public static InstanceOption fields(InstanceField... fields) {
-      return new InstanceOption(ComputeRpc.Option.FIELDS, InstanceField.selector(fields));
+      return new InstanceOption(ComputeRpc.Option.FIELDS,
+          Helper.selector(InstanceField.REQUIRED_FIELDS, fields));
     }
   }
 
@@ -2146,9 +2067,8 @@ public interface Compute extends Service<ComputeOptions> {
      * returned, even if not specified.
      */
     public static InstanceListOption fields(InstanceField... fields) {
-      StringBuilder builder = new StringBuilder();
-      builder.append("items(").append(InstanceField.selector(fields)).append("),nextPageToken");
-      return new InstanceListOption(ComputeRpc.Option.FIELDS, builder.toString());
+      return new InstanceListOption(ComputeRpc.Option.FIELDS,
+          Helper.listSelector("items", InstanceField.REQUIRED_FIELDS, fields));
     }
   }
 
