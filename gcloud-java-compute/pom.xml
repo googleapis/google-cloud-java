@@ -9,9 +9,9 @@
     Java idiomatic client for Google Cloud Compute Engine.
   </description>
   <parent>
-    <groupId>com.google.gcloud</groupId>
+    <groupId>com.google.cloud</groupId>
     <artifactId>gcloud-java-pom</artifactId>
-    <version>0.1.5-SNAPSHOT</version>
+    <version>0.2.1-SNAPSHOT</version>
   </parent>
   <properties>
     <site.installationModule>gcloud-java-compute</site.installationModule>

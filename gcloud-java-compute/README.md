@@ -10,7 +10,7 @@ Java idiomatic client for [Google Cloud Compute](https://cloud.google.com/comput
 [![Dependency Status](https://www.versioneye.com/user/projects/56bd8ee72a29ed002d2b0969/badge.svg?style=flat)](https://www.versioneye.com/user/projects/56bd8ee72a29ed002d2b0969)
 
 -  [Homepage](https://googlecloudplatform.github.io/gcloud-java/)
--  [API Documentation](http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/gcloud/compute/package-summary.html)
+-  [API Documentation](http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/cloud/compute/package-summary.html)
 
 > Note: This client is a work-in-progress, and may occasionally
 > make backwards-incompatible changes.
@@ -18,19 +18,29 @@ Java idiomatic client for [Google Cloud Compute](https://cloud.google.com/comput
 Quickstart
 ----------
 If you are using Maven, add this to your pom.xml file
-<!-- TODO(mziccard): add maven dependency code -->
+```xml
+<dependency>
+  <groupId>com.google.cloud</groupId>
+  <artifactId>gcloud-java-compute</artifactId>
+  <version>0.2.0</version>
+</dependency>
+```
 If you are using Gradle, add this to your dependencies
-<!-- TODO(mziccard): add gradle dependency code -->
+```Groovy
+compile 'com.google.cloud:gcloud-java-compute:0.2.0'
+```
 If you are using SBT, add this to your dependencies
-<!-- TODO(mziccard): add sbt dependency code -->
+```Scala
+libraryDependencies += "com.google.cloud" % "gcloud-java-compute" % "0.2.0"
+```
 
 Example Application
 -------------------
 
-[`ComputeExample`](../gcloud-java-examples/src/main/java/com/google/gcloud/examples/compute/ComputeExample.java)
+[`ComputeExample`](../gcloud-java-examples/src/main/java/com/google/cloud/examples/compute/ComputeExample.java)
 is a simple command line interface that provides some of Google Cloud Compute Engine's
 functionality. Read more about using the application on the
-[`ComputeExample` docs page](http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/gcloud/examples/compute/ComputeExample.html).
+[`ComputeExample` docs page](http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/cloud/examples/compute/ComputeExample.html).
 
 Authentication
 --------------
@@ -75,8 +85,8 @@ These credentials are automatically inferred from your environment, so you only 
 code to create your service object:
 
 ```java
-import com.google.gcloud.compute.Compute;
-import com.google.gcloud.compute.ComputeOptions;
+import com.google.cloud.compute.Compute;
+import com.google.cloud.compute.ComputeOptions;
 
 Compute compute = ComputeOptions.defaultInstance().service();
 ```
@@ -92,9 +102,9 @@ Engine. In this code snippet, we will create a new external region address.
 Add the following imports at the top of your file:
 
 ```java
-import com.google.gcloud.compute.AddressInfo;
-import com.google.gcloud.compute.Operation;
-import com.google.gcloud.compute.RegionAddressId;
+import com.google.cloud.compute.AddressInfo;
+import com.google.cloud.compute.Operation;
+import com.google.cloud.compute.RegionAddressId;
 ```
 
 Then add the following code to create an address. Most Compute Engine calls return an `Operation`
@@ -126,10 +136,10 @@ a publicly-available image.
 Add the following imports at the top of your file:
 
 ```java
-import com.google.gcloud.compute.DiskInfo;
-import com.google.gcloud.compute.DiskId;
-import com.google.gcloud.compute.ImageDiskConfiguration;
-import com.google.gcloud.compute.ImageId;
+import com.google.cloud.compute.DiskInfo;
+import com.google.cloud.compute.DiskId;
+import com.google.cloud.compute.ImageDiskConfiguration;
+import com.google.cloud.compute.ImageId;
 ```
 
 Then add the following code to create a disk and wait for disk creation to terminate.
@@ -161,15 +171,15 @@ boot disk the disk we have just created and assigning to it the just created IP 
 Add the following imports at the top of your file:
 
 ```java
-import com.google.gcloud.compute.AttachedDisk;
-import com.google.gcloud.compute.AttachedDisk.PersistentDiskConfiguration;
-import com.google.gcloud.compute.InstanceId;
-import com.google.gcloud.compute.InstanceInfo;
-import com.google.gcloud.compute.MachineTypeId;
-import com.google.gcloud.compute.NetworkConfiguration;
-import com.google.gcloud.compute.NetworkConfiguration.AccessConfig;
-import com.google.gcloud.compute.NetworkId;
-import com.google.gcloud.compute.NetworkInterface;
+import com.google.cloud.compute.AttachedDisk;
+import com.google.cloud.compute.AttachedDisk.PersistentDiskConfiguration;
+import com.google.cloud.compute.InstanceId;
+import com.google.cloud.compute.InstanceInfo;
+import com.google.cloud.compute.MachineTypeId;
+import com.google.cloud.compute.NetworkConfiguration;
+import com.google.cloud.compute.NetworkConfiguration.AccessConfig;
+import com.google.cloud.compute.NetworkId;
+import com.google.cloud.compute.NetworkInterface;
 ```
 
 Then add the following code to create an instance and wait for instance creation to terminate.
@@ -203,7 +213,7 @@ if (operation.errors() == null) {
 #### Complete source code
 
 In
-[CreateAddressDiskAndInstance.java](../gcloud-java-examples/src/main/java/com/google/gcloud/examples/compute/snippets/CreateAddressDiskAndInstance.java)
+[CreateAddressDiskAndInstance.java](../gcloud-java-examples/src/main/java/com/google/cloud/examples/compute/snippets/CreateAddressDiskAndInstance.java)
 we put together all the code shown above into one program. The program assumes that you are
 running on Compute Engine or from your own desktop. To run the example on App Engine, simply move
 the code from the main method to your application's servlet class and change the print statements to
@@ -254,4 +264,4 @@ Apache 2.0 - See [LICENSE] for more information.
 [cloud-platform]: https://cloud.google.com/
 
 [cloud-compute]: https://cloud.google.com/compute/
-[compute-api]: http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/gcloud/compute/package-summary.html
+[compute-api]: http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/cloud/compute/package-summary.html

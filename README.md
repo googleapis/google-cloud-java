@@ -51,8 +51,8 @@ Example Applications
 
 - [`BigQueryExample`](./gcloud-java-examples/src/main/java/com/google/cloud/examples/bigquery/BigQueryExample.java) - A simple command line interface providing some of Cloud BigQuery's functionality
   - Read more about using this application on the [`BigQueryExample` docs page](http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/cloud/examples/bigquery/BigQueryExample.html).
-- [`ComputeExample`](./gcloud-java-examples/src/main/java/com/google/gcloud/examples/compute/ComputeExample.java) - A simple command line interface providing some of Cloud Compute's functionality
-  - Read more about using this application on the [`gcloud-java-examples` docs page](http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/gcloud/examples/compute/ComputeExample.html).
+- [`ComputeExample`](./gcloud-java-examples/src/main/java/com/google/cloud/examples/compute/ComputeExample.java) - A simple command line interface providing some of Cloud Compute's functionality
+  - Read more about using this application on the [`gcloud-java-examples` docs page](http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/cloud/examples/compute/ComputeExample.html).
 - [`Bookshelf`](https://github.com/GoogleCloudPlatform/getting-started-java/tree/master/bookshelf) - An App Engine app that manages a virtual bookshelf.
   - This app uses `gcloud-java` to interface with Cloud Datastore and Cloud Storage. It also uses Cloud SQL, another Google Cloud Platform service.
 - [`DatastoreExample`](./gcloud-java-examples/src/main/java/com/google/cloud/examples/datastore/DatastoreExample.java) - A simple command line interface for Cloud Datastore
@@ -189,15 +189,15 @@ you must [supply credentials](#authentication) and a project ID if running this 
 
 The first snippet shows how to create a snapshot from an existing disk. Complete source code can be
 found at
-[CreateSnapshot.java](./gcloud-java-examples/src/main/java/com/google/gcloud/examples/compute/snippets/CreateSnapshot.java).
+[CreateSnapshot.java](./gcloud-java-examples/src/main/java/com/google/cloud/examples/compute/snippets/CreateSnapshot.java).
 
 ```java
-import com.google.gcloud.compute.Compute;
-import com.google.gcloud.compute.ComputeOptions;
-import com.google.gcloud.compute.Disk;
-import com.google.gcloud.compute.DiskId;
-import com.google.gcloud.compute.Operation;
-import com.google.gcloud.compute.Snapshot;
+import com.google.cloud.compute.Compute;
+import com.google.cloud.compute.ComputeOptions;
+import com.google.cloud.compute.Disk;
+import com.google.cloud.compute.DiskId;
+import com.google.cloud.compute.Operation;
+import com.google.cloud.compute.Snapshot;
 
 Compute compute = ComputeOptions.defaultInstance().service();
 DiskId diskId = DiskId.of("us-central1-a", "disk-name");
@@ -216,19 +216,19 @@ if (disk != null) {
 ```
 The second snippet shows how to create a virtual machine instance. Complete source code can be found
 at
-[CreateInstance.java](./gcloud-java-examples/src/main/java/com/google/gcloud/examples/compute/snippets/CreateInstance.java).
+[CreateInstance.java](./gcloud-java-examples/src/main/java/com/google/cloud/examples/compute/snippets/CreateInstance.java).
 ```java
-import com.google.gcloud.compute.AttachedDisk;
-import com.google.gcloud.compute.Compute;
-import com.google.gcloud.compute.ComputeOptions;
-import com.google.gcloud.compute.ImageId;
-import com.google.gcloud.compute.Instance;
-import com.google.gcloud.compute.InstanceId;
-import com.google.gcloud.compute.InstanceInfo;
-import com.google.gcloud.compute.MachineTypeId;
-import com.google.gcloud.compute.NetworkId;
-import com.google.gcloud.compute.NetworkInterface;
-import com.google.gcloud.compute.Operation;
+import com.google.cloud.compute.AttachedDisk;
+import com.google.cloud.compute.Compute;
+import com.google.cloud.compute.ComputeOptions;
+import com.google.cloud.compute.ImageId;
+import com.google.cloud.compute.Instance;
+import com.google.cloud.compute.InstanceId;
+import com.google.cloud.compute.InstanceInfo;
+import com.google.cloud.compute.MachineTypeId;
+import com.google.cloud.compute.NetworkId;
+import com.google.cloud.compute.NetworkInterface;
+import com.google.cloud.compute.Operation;
 
 Compute compute = ComputeOptions.defaultInstance().service();
 ImageId imageId = ImageId.of("debian-cloud", "debian-8-jessie-v20160329");
@@ -533,4 +533,4 @@ Apache 2.0 - See [LICENSE] for more information.
 
 [cloud-compute]: https://cloud.google.com/compute/
 [cloud-compute-docs]: https://cloud.google.com/compute/docs/overview
-[compute-api]: http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/gcloud/compute/package-summary.html
+[compute-api]: http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/cloud/compute/package-summary.html

@@ -67,11 +67,11 @@ To run examples from your command line:
     Before running the example, go to the [Google Developers Console][developers-console] to ensure
     that Compute API is enabled.
     ```
-    mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.compute.ComputeExample" -Dexec.args="create image-disk us-central1-a test-disk debian-cloud debian-8-jessie-v20160329"
-    mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.compute.ComputeExample" -Dexec.args="create instance us-central1-a test-instance n1-standard-1 test-disk default"
-    mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.compute.ComputeExample" -Dexec.args="add-access-config us-central1-a test-instance nic0 NAT"
-    mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.compute.ComputeExample" -Dexec.args="delete instance us-central1-a test-instance"
-    mvn exec:java -Dexec.mainClass="com.google.gcloud.examples.compute.ComputeExample" -Dexec.args="delete disk us-central1-a test-disk"
+    mvn exec:java -Dexec.mainClass="com.google.cloud.examples.compute.ComputeExample" -Dexec.args="create image-disk us-central1-a test-disk debian-cloud debian-8-jessie-v20160329"
+    mvn exec:java -Dexec.mainClass="com.google.cloud.examples.compute.ComputeExample" -Dexec.args="create instance us-central1-a test-instance n1-standard-1 test-disk default"
+    mvn exec:java -Dexec.mainClass="com.google.cloud.examples.compute.ComputeExample" -Dexec.args="add-access-config us-central1-a test-instance nic0 NAT"
+    mvn exec:java -Dexec.mainClass="com.google.cloud.examples.compute.ComputeExample" -Dexec.args="delete instance us-central1-a test-instance"
+    mvn exec:java -Dexec.mainClass="com.google.cloud.examples.compute.ComputeExample" -Dexec.args="delete disk us-central1-a test-disk"
     ```
 
   * Here's an example run of `DatastoreExample`.
