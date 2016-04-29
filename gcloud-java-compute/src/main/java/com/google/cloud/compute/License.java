@@ -71,7 +71,10 @@ public class License implements Serializable {
 
   @Override
   public final boolean equals(Object obj) {
-    return obj instanceof License && Objects.equals(toPb(), ((License) obj).toPb());
+    return obj == this
+        || obj != null
+        && obj.getClass().equals(License.class)
+        && Objects.equals(toPb(), ((License) obj).toPb());
   }
 
   com.google.api.services.compute.model.License toPb() {

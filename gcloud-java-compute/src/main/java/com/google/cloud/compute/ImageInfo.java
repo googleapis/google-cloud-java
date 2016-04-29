@@ -354,7 +354,8 @@ public class ImageInfo implements Serializable {
 
   @Override
   public boolean equals(Object obj) {
-    return obj != null
+    return obj == this
+        || obj != null
         && obj.getClass().equals(ImageInfo.class)
         && Objects.equals(toPb(), ((ImageInfo) obj).toPb());
   }

@@ -188,9 +188,14 @@ public class Image extends ImageInfo {
 
   @Override
   public final boolean equals(Object obj) {
-    return obj instanceof Image
-        && Objects.equals(toPb(), ((Image) obj).toPb())
-        && Objects.equals(options, ((Image) obj).options);
+    if (obj == this) {
+      return true;
+    }
+    if (obj == null || !obj.getClass().equals(Image.class)) {
+      return false;
+    }
+    Image other = (Image) obj;
+    return Objects.equals(toPb(), other.toPb()) && Objects.equals(options, other.options);
   }
 
   @Override

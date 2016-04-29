@@ -82,7 +82,10 @@ public class StandardDiskConfiguration extends DiskConfiguration {
 
   @Override
   public final boolean equals(Object obj) {
-    return obj instanceof StandardDiskConfiguration && baseEquals((StandardDiskConfiguration) obj);
+    return obj == this
+        || obj != null
+        && obj.getClass().equals(StandardDiskConfiguration.class)
+        && baseEquals((StandardDiskConfiguration) obj);
   }
 
   @Override

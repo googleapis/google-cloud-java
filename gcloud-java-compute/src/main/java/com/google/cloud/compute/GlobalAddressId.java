@@ -49,7 +49,7 @@ public final class GlobalAddressId extends AddressId {
 
   @Override
   public boolean equals(Object obj) {
-    return obj instanceof GlobalAddressId && baseEquals((GlobalAddressId) obj);
+    return obj == this || obj instanceof GlobalAddressId && baseEquals((GlobalAddressId) obj);
   }
 
   @Override

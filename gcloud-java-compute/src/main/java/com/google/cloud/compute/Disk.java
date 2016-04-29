@@ -235,9 +235,14 @@ public class Disk extends DiskInfo {
 
   @Override
   public final boolean equals(Object obj) {
-    return obj instanceof Disk
-        && Objects.equals(toPb(), ((Disk) obj).toPb())
-        && Objects.equals(options, ((Disk) obj).options);
+    if (obj == this) {
+      return true;
+    }
+    if (obj == null || !obj.getClass().equals(Disk.class)) {
+      return false;
+    }
+    Disk other = (Disk) obj;
+    return Objects.equals(toPb(), other.toPb()) && Objects.equals(options, other.options);
   }
 
   @Override

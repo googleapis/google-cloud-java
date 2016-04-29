@@ -66,7 +66,9 @@ public final class GlobalForwardingRuleId extends ForwardingRuleId {
 
   @Override
   public boolean equals(Object obj) {
-    return obj instanceof GlobalForwardingRuleId && baseEquals((GlobalForwardingRuleId) obj);
+    return obj == this
+        || obj instanceof GlobalForwardingRuleId
+        && baseEquals((GlobalForwardingRuleId) obj);
   }
 
   @Override

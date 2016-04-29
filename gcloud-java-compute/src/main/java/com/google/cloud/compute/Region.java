@@ -312,7 +312,10 @@ public class Region implements Serializable {
 
   @Override
   public final boolean equals(Object obj) {
-    return obj instanceof Region && Objects.equals(toPb(), ((Region) obj).toPb());
+    return obj == this
+        || obj != null
+        && obj.getClass().equals(Region.class)
+        && Objects.equals(toPb(), ((Region) obj).toPb());
   }
 
   com.google.api.services.compute.model.Region toPb() {

@@ -201,7 +201,10 @@ public class Zone implements Serializable {
 
   @Override
   public final boolean equals(Object obj) {
-    return obj instanceof Zone && Objects.equals(toPb(), ((Zone) obj).toPb());
+    return obj == this
+        || obj != null
+        && obj.getClass().equals(Zone.class)
+        && Objects.equals(toPb(), ((Zone) obj).toPb());
   }
 
   com.google.api.services.compute.model.Zone toPb() {

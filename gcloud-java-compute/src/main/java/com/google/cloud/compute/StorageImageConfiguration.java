@@ -158,7 +158,10 @@ public class StorageImageConfiguration extends ImageConfiguration {
 
   @Override
   public final boolean equals(Object obj) {
-    return obj instanceof StorageImageConfiguration && baseEquals((StorageImageConfiguration) obj);
+    return obj == this
+        || obj != null
+        && obj.getClass().equals(StorageImageConfiguration.class)
+        && Objects.equals(toPb(), ((StorageImageConfiguration) obj).toPb());
   }
 
   @Override

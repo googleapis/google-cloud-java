@@ -496,7 +496,8 @@ public class AddressInfo implements Serializable {
 
   @Override
   public boolean equals(Object obj) {
-    return obj != null
+    return obj == this
+        || obj != null
         && obj.getClass().equals(AddressInfo.class)
         && Objects.equals(toPb(), ((AddressInfo) obj).toPb());
   }

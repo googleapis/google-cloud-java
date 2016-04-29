@@ -712,9 +712,14 @@ public class Operation implements Serializable {
 
   @Override
   public final boolean equals(Object obj) {
-    return obj instanceof Operation
-        && Objects.equals(toPb(), ((Operation) obj).toPb())
-        && Objects.equals(options, ((Operation) obj).options);
+    if (obj == this) {
+      return true;
+    }
+    if (obj == null || !obj.getClass().equals(Operation.class)) {
+      return false;
+    }
+    Operation other = (Operation) obj;
+    return Objects.equals(toPb(), other.toPb()) && Objects.equals(options, other.options);
   }
 
   com.google.api.services.compute.model.Operation toPb() {

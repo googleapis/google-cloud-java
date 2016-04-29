@@ -189,9 +189,14 @@ public class Snapshot extends SnapshotInfo {
 
   @Override
   public final boolean equals(Object obj) {
-    return obj instanceof Snapshot
-        && Objects.equals(toPb(), ((Snapshot) obj).toPb())
-        && Objects.equals(options, ((Snapshot) obj).options);
+    if (obj == this) {
+      return true;
+    }
+    if (obj == null || !obj.getClass().equals(Snapshot.class)) {
+      return false;
+    }
+    Snapshot other = (Snapshot) obj;
+    return Objects.equals(toPb(), other.toPb()) && Objects.equals(options, other.options);
   }
 
   @Override

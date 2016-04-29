@@ -304,7 +304,8 @@ public final class DeprecationStatus<T extends ResourceId> implements Serializab
 
   @Override
   public boolean equals(Object obj) {
-    return obj instanceof DeprecationStatus
+    return obj == this
+        || obj instanceof DeprecationStatus
         && Objects.equals(toPb(), ((DeprecationStatus) obj).toPb());
   }
 

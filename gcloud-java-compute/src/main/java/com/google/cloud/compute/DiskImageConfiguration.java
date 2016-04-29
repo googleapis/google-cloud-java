@@ -122,7 +122,10 @@ public class DiskImageConfiguration extends ImageConfiguration {
 
   @Override
   public final boolean equals(Object obj) {
-    return obj instanceof DiskImageConfiguration && baseEquals((DiskImageConfiguration) obj);
+    return obj == this
+        || obj != null
+        && obj.getClass().equals(DiskImageConfiguration.class)
+        && baseEquals((DiskImageConfiguration) obj);
   }
 
   @Override

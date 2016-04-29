@@ -49,7 +49,7 @@ public final class GlobalOperationId extends OperationId {
 
   @Override
   public boolean equals(Object obj) {
-    return obj instanceof GlobalOperationId && baseEquals((GlobalOperationId) obj);
+    return obj == this || obj instanceof GlobalOperationId && baseEquals((GlobalOperationId) obj);
   }
 
   @Override

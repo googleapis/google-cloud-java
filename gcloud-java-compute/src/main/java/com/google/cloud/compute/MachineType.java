@@ -248,7 +248,10 @@ public class MachineType implements Serializable {
 
   @Override
   public final boolean equals(Object obj) {
-    return obj instanceof MachineType && Objects.equals(toPb(), ((MachineType) obj).toPb());
+    return obj == this
+        || obj != null
+        && obj.getClass().equals(MachineType.class)
+        && Objects.equals(toPb(), ((MachineType) obj).toPb());
   }
 
   com.google.api.services.compute.model.MachineType toPb() {

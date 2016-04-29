@@ -578,7 +578,9 @@ public class InstanceInfo implements Serializable {
 
   @Override
   public boolean equals(Object obj) {
-    return obj instanceof InstanceInfo
+    return obj == this
+        || obj != null
+        && obj.getClass().equals(InstanceInfo.class)
         && Objects.equals(toPb(), ((InstanceInfo) obj).toPb());
   }
 

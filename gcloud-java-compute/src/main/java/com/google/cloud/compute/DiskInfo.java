@@ -374,7 +374,8 @@ public class DiskInfo implements Serializable {
 
   @Override
   public boolean equals(Object obj) {
-    return obj != null
+    return obj == this
+        || obj != null
         && obj.getClass().equals(DiskInfo.class)
         && Objects.equals(toPb(), ((DiskInfo) obj).toPb());
   }

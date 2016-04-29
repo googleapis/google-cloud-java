@@ -421,7 +421,8 @@ public class SnapshotInfo implements Serializable {
 
   @Override
   public boolean equals(Object obj) {
-    return obj != null
+    return obj == this
+        || obj != null
         && obj.getClass().equals(SnapshotInfo.class)
         && Objects.equals(toPb(), ((SnapshotInfo) obj).toPb());
   }

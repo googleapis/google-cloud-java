@@ -141,7 +141,10 @@ public class SnapshotDiskConfiguration extends DiskConfiguration {
 
   @Override
   public final boolean equals(Object obj) {
-    return obj instanceof SnapshotDiskConfiguration && baseEquals((SnapshotDiskConfiguration) obj);
+    return obj == this
+        || obj != null
+        && obj.getClass().equals(SnapshotDiskConfiguration.class)
+        && baseEquals((SnapshotDiskConfiguration) obj);
   }
 
   @Override

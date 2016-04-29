@@ -165,9 +165,14 @@ public class Address extends AddressInfo {
 
   @Override
   public final boolean equals(Object obj) {
-    return obj instanceof Address
-        && Objects.equals(toPb(), ((Address) obj).toPb())
-        && Objects.equals(options, ((Address) obj).options);
+    if (obj == this) {
+      return true;
+    }
+    if (obj == null || !obj.getClass().equals(Address.class)) {
+      return false;
+    }
+    Address other = (Address) obj;
+    return Objects.equals(toPb(), other.toPb()) && Objects.equals(options, other.options);
   }
 
   @Override

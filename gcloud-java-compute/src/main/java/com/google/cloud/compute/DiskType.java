@@ -192,7 +192,10 @@ public class DiskType implements Serializable {
 
   @Override
   public final boolean equals(Object obj) {
-    return obj instanceof DiskType && Objects.equals(toPb(), ((DiskType) obj).toPb());
+    return obj == this
+        || obj != null
+        && obj.getClass().equals(DiskType.class)
+        && Objects.equals(toPb(), ((DiskType) obj).toPb());
   }
 
   com.google.api.services.compute.model.DiskType toPb() {

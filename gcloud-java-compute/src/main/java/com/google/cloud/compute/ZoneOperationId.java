@@ -76,9 +76,14 @@ public final class ZoneOperationId extends OperationId  {
 
   @Override
   public boolean equals(Object obj) {
-    return obj instanceof ZoneOperationId
-        && baseEquals((ZoneOperationId) obj)
-        && Objects.equals(zone, ((ZoneOperationId) obj).zone);
+    if (obj == this) {
+      return true;
+    }
+    if (!(obj instanceof ZoneOperationId)) {
+      return false;
+    }
+    ZoneOperationId other = (ZoneOperationId) obj;
+    return baseEquals(other) && Objects.equals(zone, other.zone);
   }
 
   @Override
