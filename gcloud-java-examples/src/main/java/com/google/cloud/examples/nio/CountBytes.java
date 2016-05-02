@@ -41,22 +41,26 @@ public class CountBytes {
    * NIO Filesystem provider without any extra effort.
    */
   private static void countFile(String fname) {
-    final int bufSize = 1024 * 1024;
+    // large buffers pay off
+    final int bufSize = 50 * 1024 * 1024;
     try {
       Path path = Paths.get(new URI(fname));
       long size = Files.size(path);
       System.out.println(fname + ": " + size + " bytes.");
-      Stopwatch sw = Stopwatch.createStarted();
       ByteBuffer buf = ByteBuffer.allocate(bufSize);
+      System.out.println("Reading the whole file...");
+      Stopwatch sw = Stopwatch.createStarted();
       SeekableByteChannel chan = Files.newByteChannel(path);
       long total = 0;
+      int readCalls = 0;
       for (int read = 1; read > 0; ) {
+        readCalls ++;
         read = chan.read(buf);
         buf.flip();
         total += read;
       }
       long elapsed = sw.elapsed(TimeUnit.SECONDS);
-      System.out.println("Read all " + total + " bytes in " + elapsed + "s.");
+      System.out.println("Read all " + total + " bytes in " + elapsed + "s. (" + readCalls +" calls to chan.read)");
       if (total != size) {
         System.out.println("Wait, this doesn't match! We saw " + total + " bytes, yet the file size is listed at " + size + " bytes.");
       }
