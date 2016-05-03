@@ -22,6 +22,7 @@ import com.google.cloud.AsyncPage;
 import com.google.cloud.BaseService;
 import com.google.cloud.Page;
 import com.google.cloud.pubsub.spi.PubSubRpc;
+import com.google.cloud.pubsub.spi.v1.PublisherApi;
 import com.google.common.base.Function;
 import com.google.common.base.Throwables;
 import com.google.common.util.concurrent.Uninterruptibles;
@@ -59,7 +60,7 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
 
   @Override
   public Future<Topic> createAsync(TopicInfo topic) {
-    return lazyTransform(rpc.create(topic.toPb()), Topic.fromPbFunction(this));
+    return lazyTransform(rpc.create(topic.toPb(options().projectId())), Topic.fromPbFunction(this));
   }
 
   @Override
@@ -69,7 +70,9 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
 
   @Override
   public Future<Topic> getTopicAsync(String topic) {
-    GetTopicRequest request = GetTopicRequest.newBuilder().setTopic(topic).build();
+    GetTopicRequest request = GetTopicRequest.newBuilder()
+        .setTopic(PublisherApi.formatTopicName(options().projectId(), topic))
+        .build();
     return lazyTransform(rpc.get(request), Topic.fromPbFunction(this));
   }
 
@@ -80,7 +83,9 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
 
   @Override
   public Future<Boolean> deleteTopicAsync(String topic) {
-    DeleteTopicRequest request = DeleteTopicRequest.newBuilder().setTopic(topic).build();
+    DeleteTopicRequest request = DeleteTopicRequest.newBuilder()
+        .setTopic(PublisherApi.formatTopicName(options().projectId(), topic))
+        .build();
     return lazyTransform(rpc.delete(request), new Function<Empty, Boolean>() {
       @Override
       public Boolean apply(Empty input) {
