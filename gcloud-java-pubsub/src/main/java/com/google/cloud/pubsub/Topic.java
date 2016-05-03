@@ -86,7 +86,7 @@ public class Topic extends TopicInfo {
       return false;
     }
     Topic other = (Topic) obj;
-    return Objects.equals(toPb(), other.toPb()) && Objects.equals(options, other.options);
+    return Objects.equals(name(), other.name()) && Objects.equals(options, other.options);
   }
 
   public PubSub pubSub() {

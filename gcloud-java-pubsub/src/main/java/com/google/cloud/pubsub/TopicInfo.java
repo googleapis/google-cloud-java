@@ -18,13 +18,17 @@ package com.google.cloud.pubsub;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import com.google.cloud.pubsub.spi.v1.PublisherApi;
 import com.google.common.base.MoreObjects;
 
 import java.io.Serializable;
 import java.util.Objects;
 
 /**
- * Pub/Sub Topic information.
+ * A Google Cloud Pub/Sub topic. A topic is a named resource to which messages are sent by
+ * publishers. Subscribers can receive messages sent to a topic by creating subscriptions.
+ *
+ * @see <a href="https://cloud.google.com/pubsub/overview#data_model">Pub/Sub Data Model</a>
  */
 public class TopicInfo implements Serializable {
 
@@ -33,12 +37,21 @@ public class TopicInfo implements Serializable {
   private final String name;
 
   /**
-   * Builder for TopicInfo.
+   * Builder for {@code TopicInfo} objects.
    */
   public abstract static class Builder {
 
+    /**
+     * Sets the name of the topic. The name must start with a letter, and contain only letters
+     * ({@code [A-Za-z]}), numbers ({@code [0-9]}), dashes ({@code -}), underscores ({@code _}),
+     * periods ({@code .}), tildes ({@code ~}), plus ({@code +}) or percent signs ({@code %}). It
+     * must be between 3 and 255 characters in length and cannot begin with the string {@code goog}.
+     */
     public abstract Builder name(String name);
 
+    /**
+     * Creates a topic object.
+     */
     public abstract TopicInfo build();
   }
 
@@ -70,6 +83,12 @@ public class TopicInfo implements Serializable {
     name = builder.name;
   }
 
+  /**
+   * Returns the name of the topic. The name must start with a letter, and contain only letters
+   * ({@code [A-Za-z]}), numbers ({@code [0-9]}), dashes ({@code -}), underscores ({@code _}),
+   * periods ({@code .}), tildes ({@code ~}), plus ({@code +}) or percent signs ({@code %}). It
+   * must be between 3 and 255 characters in length and cannot begin with the string {@code goog}.
+   */
   public String name() {
     return name;
   }
@@ -84,10 +103,10 @@ public class TopicInfo implements Serializable {
     if (this == obj) {
       return true;
     }
-    if (obj == null || getClass() != obj.getClass()) {
+    if (obj == null || !obj.getClass().equals(this.getClass())) {
       return false;
     }
-    return Objects.equals(toPb(), ((TopicInfo) obj).toPb());
+    return Objects.equals(name, ((TopicInfo) obj).name);
   }
 
   @Override
@@ -97,22 +116,42 @@ public class TopicInfo implements Serializable {
         .toString();
   }
 
-  com.google.pubsub.v1.Topic toPb() {
-    return com.google.pubsub.v1.Topic.newBuilder().setName(name).build();
+  com.google.pubsub.v1.Topic toPb(String projectId) {
+    return com.google.pubsub.v1.Topic.newBuilder()
+        .setName(PublisherApi.formatTopicName(projectId, name))
+        .build();
   }
 
   static TopicInfo fromPb(com.google.pubsub.v1.Topic topicPb) {
-    return builder(topicPb.getName()).build();
+    return builder(PublisherApi.parseTopicFromTopicName(topicPb.getName())).build();
   }
 
   public Builder toBuilder() {
     return new BuilderImpl(this);
   }
 
+  /**
+   * Creates a {@code TopicInfo} object given the name of the topic.
+   *
+   * @param name the name of the topic. The name must start with a letter, and contain only letters
+   *     ({@code [A-Za-z]}), numbers ({@code [0-9]}), dashes ({@code -}), underscores ({@code _}),
+   *     periods ({@code .}), tildes ({@code ~}), plus ({@code +}) or percent signs ({@code %}).
+   *     It must be between 3 and 255 characters in length and cannot begin with the string
+   *     {@code goog}.
+   */
   public static TopicInfo of(String name) {
     return builder(name).build();
   }
 
+  /**
+   * Creates a builder for {@code TopicInfo} objects given the name of the topic.
+   *
+   * @param name the name of the topic. The name must start with a letter, and contain only letters
+   *     ({@code [A-Za-z]}), numbers ({@code [0-9]}), dashes ({@code -}), underscores ({@code _}),
+   *     periods ({@code .}), tildes ({@code ~}), plus ({@code +}) or percent signs ({@code %}).
+   *     It must be between 3 and 255 characters in length and cannot begin with the string
+   *     {@code goog}.
+   */
   public static Builder builder(String name) {
     return new BuilderImpl(name);
   }
