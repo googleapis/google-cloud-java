@@ -59,7 +59,7 @@ public class PublisherApiTest {
     ManagedChannel channel = pubsubHelper.createChannel();
 
     PublisherSettings publisherSettings =
-        PublisherSettings.newBuilder()
+        PublisherSettings.defaultBuilder()
             .provideChannelWith(channel, true)
             .build();
     publisherApi = PublisherApi.create(publisherSettings);
@@ -69,7 +69,7 @@ public class PublisherApiTest {
             .setElementCountThreshold(10)
             .setDelayThreshold(Duration.standardSeconds(30));
 
-    PublisherSettings.Builder bundledPublisherSettingsBuilder = PublisherSettings.newBuilder();
+    PublisherSettings.Builder bundledPublisherSettingsBuilder = PublisherSettings.defaultBuilder();
     bundledPublisherSettingsBuilder
         .provideChannelWith(channel, true)
         .publishSettings()
@@ -78,7 +78,7 @@ public class PublisherApiTest {
     PublisherSettings bundledPublisherSettings = bundledPublisherSettingsBuilder.build();
     bundledPublisherApi = PublisherApi.create(bundledPublisherSettings);
 
-    SubscriberSettings subscriberSettings = SubscriberSettings.newBuilder()
+    SubscriberSettings subscriberSettings = SubscriberSettings.defaultBuilder()
         .provideChannelWith(channel, true)
         .build();
     subscriberApi = SubscriberApi.create(subscriberSettings);
