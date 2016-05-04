@@ -72,7 +72,6 @@ import java.util.concurrent.ScheduledExecutorService;
  *   String topic = "";
  *   PushConfig pushConfig = PushConfig.newBuilder().build();
  *   int ackDeadlineSeconds = 0;
- *
  *   Subscription callResult = subscriberApi.createSubscription(name, topic, pushConfig, ackDeadlineSeconds);
  * }
  * </code>
@@ -316,8 +315,8 @@ public class SubscriberApi implements AutoCloseable {
   // AUTO-GENERATED DOCUMENTATION AND METHOD - see instructions at the top of the file for editing.
   /**
    * Creates a subscription to a given topic for a given subscriber.
-   * If the subscription already exists, returns `ALREADY_EXISTS`.
-   * If the corresponding topic doesn't exist, returns `NOT_FOUND`.
+   * If the subscription already exists, generates `ALREADY_EXISTS`.
+   * If the corresponding topic doesn't exist, generates `NOT_FOUND`.
    *
    * If the name is not provided in the request, the server will assign a random
    * name for this subscription on the same project as the topic.
@@ -332,8 +331,6 @@ public class SubscriberApi implements AutoCloseable {
    * plus (`+`) or percent signs (`%`). It must be between 3 and 255 characters
    * in length, and it must not start with `"goog"`.
    * @param topic The name of the topic from which this subscription is receiving messages.
-   * The value of this field will be `_deleted-topic_` if the topic has been
-   * deleted.
    * @param pushConfig If push delivery is used with this subscription, this field is
    * used to configure it. An empty `pushConfig` signifies that the subscriber
    * will pull and ack messages using API methods.
@@ -373,8 +370,8 @@ public class SubscriberApi implements AutoCloseable {
   // AUTO-GENERATED DOCUMENTATION AND METHOD - see instructions at the top of the file for editing.
   /**
    * Creates a subscription to a given topic for a given subscriber.
-   * If the subscription already exists, returns `ALREADY_EXISTS`.
-   * If the corresponding topic doesn't exist, returns `NOT_FOUND`.
+   * If the subscription already exists, generates `ALREADY_EXISTS`.
+   * If the corresponding topic doesn't exist, generates `NOT_FOUND`.
    *
    * If the name is not provided in the request, the server will assign a random
    * name for this subscription on the same project as the topic.
@@ -392,8 +389,8 @@ public class SubscriberApi implements AutoCloseable {
   // AUTO-GENERATED DOCUMENTATION AND METHOD - see instructions at the top of the file for editing.
   /**
    * Creates a subscription to a given topic for a given subscriber.
-   * If the subscription already exists, returns `ALREADY_EXISTS`.
-   * If the corresponding topic doesn't exist, returns `NOT_FOUND`.
+   * If the subscription already exists, generates `ALREADY_EXISTS`.
+   * If the corresponding topic doesn't exist, generates `NOT_FOUND`.
    *
    * If the name is not provided in the request, the server will assign a random
    * name for this subscription on the same project as the topic.
@@ -410,6 +407,9 @@ public class SubscriberApi implements AutoCloseable {
   // AUTO-GENERATED DOCUMENTATION AND METHOD - see instructions at the top of the file for editing.
   /**
    * Gets the configuration details of a subscription.
+   *
+   * If the topic of a subscription has been deleted, the subscription itself is
+   * not deleted, but the value of the `topic` field is set to `_deleted-topic_`.
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
@@ -428,6 +428,9 @@ public class SubscriberApi implements AutoCloseable {
   /**
    * Gets the configuration details of a subscription.
    *
+   * If the topic of a subscription has been deleted, the subscription itself is
+   * not deleted, but the value of the `topic` field is set to `_deleted-topic_`.
+   *
    * <!-- manual edit -->
    * <!-- end manual edit -->
    *
@@ -442,6 +445,9 @@ public class SubscriberApi implements AutoCloseable {
   /**
    * Gets the configuration details of a subscription.
    *
+   * If the topic of a subscription has been deleted, the subscription itself is
+   * not deleted, but the value of the `topic` field is set to `_deleted-topic_`.
+   *
    * <!-- manual edit -->
    * <!-- end manual edit -->
    */
@@ -454,6 +460,9 @@ public class SubscriberApi implements AutoCloseable {
   // AUTO-GENERATED DOCUMENTATION AND METHOD - see instructions at the top of the file for editing.
   /**
    * Lists matching subscriptions.
+   *
+   * If the topic of a subscription has been deleted, the subscription itself is
+   * not deleted, but the value of the `topic` field is set to `_deleted-topic_`.
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
@@ -471,6 +480,9 @@ public class SubscriberApi implements AutoCloseable {
   /**
    * Lists matching subscriptions.
    *
+   * If the topic of a subscription has been deleted, the subscription itself is
+   * not deleted, but the value of the `topic` field is set to `_deleted-topic_`.
+   *
    * <!-- manual edit -->
    * <!-- end manual edit -->
    *
@@ -485,6 +497,9 @@ public class SubscriberApi implements AutoCloseable {
   /**
    * Lists matching subscriptions.
    *
+   * If the topic of a subscription has been deleted, the subscription itself is
+   * not deleted, but the value of the `topic` field is set to `_deleted-topic_`.
+   *
    * <!-- manual edit -->
    * <!-- end manual edit -->
    */
@@ -496,6 +511,9 @@ public class SubscriberApi implements AutoCloseable {
   // AUTO-GENERATED DOCUMENTATION AND METHOD - see instructions at the top of the file for editing.
   /**
    * Lists matching subscriptions.
+   *
+   * If the topic of a subscription has been deleted, the subscription itself is
+   * not deleted, but the value of the `topic` field is set to `_deleted-topic_`.
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
@@ -510,7 +528,7 @@ public class SubscriberApi implements AutoCloseable {
   // AUTO-GENERATED DOCUMENTATION AND METHOD - see instructions at the top of the file for editing.
   /**
    * Deletes an existing subscription. All pending messages in the subscription
-   * are immediately dropped. Calls to `Pull` after deletion will return
+   * are immediately dropped. Calls to `Pull` after deletion will generate
    * `NOT_FOUND`. After a subscription is deleted, a new one may be created with
    * the same name, but the new one has no association with the old
    * subscription, or its topic unless the same topic is specified.
@@ -531,7 +549,7 @@ public class SubscriberApi implements AutoCloseable {
   // AUTO-GENERATED DOCUMENTATION AND METHOD - see instructions at the top of the file for editing.
   /**
    * Deletes an existing subscription. All pending messages in the subscription
-   * are immediately dropped. Calls to `Pull` after deletion will return
+   * are immediately dropped. Calls to `Pull` after deletion will generate
    * `NOT_FOUND`. After a subscription is deleted, a new one may be created with
    * the same name, but the new one has no association with the old
    * subscription, or its topic unless the same topic is specified.
@@ -549,7 +567,7 @@ public class SubscriberApi implements AutoCloseable {
   // AUTO-GENERATED DOCUMENTATION AND METHOD - see instructions at the top of the file for editing.
   /**
    * Deletes an existing subscription. All pending messages in the subscription
-   * are immediately dropped. Calls to `Pull` after deletion will return
+   * are immediately dropped. Calls to `Pull` after deletion will generate
    * `NOT_FOUND`. After a subscription is deleted, a new one may be created with
    * the same name, but the new one has no association with the old
    * subscription, or its topic unless the same topic is specified.
@@ -694,7 +712,7 @@ public class SubscriberApi implements AutoCloseable {
   // AUTO-GENERATED DOCUMENTATION AND METHOD - see instructions at the top of the file for editing.
   /**
    * Pulls messages from the server. Returns an empty list if there are no
-   * messages available in the backlog. The server may return `UNAVAILABLE` if
+   * messages available in the backlog. The server may generate `UNAVAILABLE` if
    * there are too many concurrent pull requests pending for the given
    * subscription.
    *
@@ -705,8 +723,7 @@ public class SubscriberApi implements AutoCloseable {
    * @param returnImmediately If this is specified as true the system will respond immediately even if
    * it is not able to return a message in the `Pull` response. Otherwise the
    * system is allowed to wait until at least one message is available rather
-   * than returning no messages. The client may cancel the request if it does
-   * not wish to wait any longer for the response.
+   * than returning no messages.
    * @param maxMessages The maximum number of messages returned for this request. The Pub/Sub
    * system may return fewer than the number specified.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
@@ -725,7 +742,7 @@ public class SubscriberApi implements AutoCloseable {
   // AUTO-GENERATED DOCUMENTATION AND METHOD - see instructions at the top of the file for editing.
   /**
    * Pulls messages from the server. Returns an empty list if there are no
-   * messages available in the backlog. The server may return `UNAVAILABLE` if
+   * messages available in the backlog. The server may generate `UNAVAILABLE` if
    * there are too many concurrent pull requests pending for the given
    * subscription.
    *
@@ -742,7 +759,7 @@ public class SubscriberApi implements AutoCloseable {
   // AUTO-GENERATED DOCUMENTATION AND METHOD - see instructions at the top of the file for editing.
   /**
    * Pulls messages from the server. Returns an empty list if there are no
-   * messages available in the backlog. The server may return `UNAVAILABLE` if
+   * messages available in the backlog. The server may generate `UNAVAILABLE` if
    * there are too many concurrent pull requests pending for the given
    * subscription.
    *

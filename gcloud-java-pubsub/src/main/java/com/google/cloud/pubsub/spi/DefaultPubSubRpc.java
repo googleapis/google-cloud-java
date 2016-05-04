@@ -16,7 +16,6 @@
 
 package com.google.cloud.pubsub.spi;
 
-import com.google.api.gax.core.ConnectionSettings;
 import com.google.api.gax.core.RetrySettings;
 import com.google.api.gax.grpc.ApiCallSettings;
 import com.google.api.gax.grpc.ApiException;
@@ -69,15 +68,15 @@ public class DefaultPubSubRpc implements PubSubRpc {
     try {
       // Provide (and use a common thread-pool).
       // This depends on https://github.com/googleapis/gax-java/issues/73
-      PublisherSettings.Builder pbuilder = PublisherSettings.defaultBuilder();
-      pbuilder.provideChannelWith(ConnectionSettings.newBuilder()
-          .provideCredentialsWith(options.authCredentials().credentials()).build());
-      pbuilder.applyToAllApiMethods(apiCallSettings(options));
+      PublisherSettings.Builder pbuilder =
+          PublisherSettings.defaultBuilder()
+              .provideChannelWith(options.authCredentials().credentials())
+              .applyToAllApiMethods(apiCallSettings(options));
       publisherApi = PublisherApi.create(pbuilder.build());
-      SubscriberSettings.Builder sBuilder = SubscriberSettings.defaultBuilder();
-      sBuilder.provideChannelWith(ConnectionSettings.newBuilder()
-          .provideCredentialsWith(options.authCredentials().credentials()).build());
-      sBuilder.applyToAllApiMethods(apiCallSettings(options));
+      SubscriberSettings.Builder sBuilder =
+          SubscriberSettings.defaultBuilder()
+              .provideChannelWith(options.authCredentials().credentials())
+              .applyToAllApiMethods(apiCallSettings(options));
       subscriberApi = SubscriberApi.create(sBuilder.build());
     } catch (Exception ex) {
       throw new IOException(ex);
