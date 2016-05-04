@@ -65,6 +65,10 @@
               <name>Stat</name>
             </program>
             <program>
+              <mainClass>com.google.cloud.examples.nio.CountBytes</mainClass>
+              <name>CountBytes</name>
+            </program>
+            <program>
               <mainClass>
                 com.google.cloud.examples.resourcemanager.ResourceManagerExample
               </mainClass>
