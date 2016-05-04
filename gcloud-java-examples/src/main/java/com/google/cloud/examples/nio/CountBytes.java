@@ -30,7 +30,10 @@ import java.util.concurrent.TimeUnit;
 /**
  * CountBytes will read through the whole file given as input.
  *
- * <p>It's meant for testing that NIO doesn't read too slowly.
+ * <p>This example shows how to read a file size using NIO.
+ * File.size returns the size of the file as saved in Storage metadata.
+ * This class also shows how to read all of the file's contents using NIO,
+ * and reports how long it took.
  *
  * <p>See the README for compilation instructions. Run this code with
  * {@code target/appassembler/bin/CountBytes <file>}
