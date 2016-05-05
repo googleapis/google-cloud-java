@@ -44,6 +44,7 @@ import com.google.api.gax.grpc.PageStreamingDescriptor;
 import com.google.api.gax.grpc.RequestIssuer;
 import com.google.api.gax.grpc.ServiceApiSettings;
 import com.google.api.gax.grpc.SimpleCallSettings;
+import com.google.auth.Credentials;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -92,7 +93,7 @@ import org.joda.time.Duration;
  * <pre>
  * <code>
  * PublisherSettings.Builder publisherSettingsBuilder =
- *     PublisherSettings.defaultInstance().toBuilder();
+ *     PublisherSettings.defaultBuilder();
  * publisherSettingsBuilder.CreateTopicSettings().getRetrySettingsBuilder()
  *     .setTotalTimeout(Duration.standardSeconds(30));
  * PublisherSettings publisherSettings = publisherSettingsBuilder.build();
@@ -125,6 +126,16 @@ public class PublisherSettings extends ServiceApiSettings {
       ImmutableList.<String>builder()
           .add("https://www.googleapis.com/auth/pubsub")
           .add("https://www.googleapis.com/auth/cloud-platform")
+          .build();
+
+  /**
+   * The default connection settings of the service.
+   */
+  public static final ConnectionSettings DEFAULT_CONNECTION_SETTINGS =
+      ConnectionSettings.newBuilder()
+          .setServiceAddress(DEFAULT_SERVICE_ADDRESS)
+          .setPort(DEFAULT_SERVICE_PORT)
+          .provideCredentialsWith(DEFAULT_SERVICE_SCOPES)
           .build();
 
   private final SimpleCallSettings<Topic, Topic> createTopicSettings;
@@ -185,10 +196,10 @@ public class PublisherSettings extends ServiceApiSettings {
   }
 
   /**
-   * Returns an instance of this class with recommended defaults.
+   * Returns a builder for this class with recommended defaults.
    */
-  public static PublisherSettings defaultInstance() throws IOException {
-    return newBuilder().build();
+  public static Builder defaultBuilder() {
+    return Builder.createDefault();
   }
 
   /**
@@ -207,10 +218,8 @@ public class PublisherSettings extends ServiceApiSettings {
 
   private PublisherSettings(Builder settingsBuilder) throws IOException {
     super(
-        settingsBuilder.getOrBuildChannel(),
-        settingsBuilder.shouldAutoCloseChannel(),
-        settingsBuilder.getOrBuildExecutor(),
-        settingsBuilder.getConnectionSettings(),
+        settingsBuilder.getChannelProvider(),
+        settingsBuilder.getExecutorProvider(),
         settingsBuilder.getGeneratorName(),
         settingsBuilder.getGeneratorVersion(),
         settingsBuilder.getClientLibName(),
@@ -387,54 +396,26 @@ public class PublisherSettings extends ServiceApiSettings {
     }
 
     private Builder() {
-      super(
-          ConnectionSettings.newBuilder()
-              .setServiceAddress(DEFAULT_SERVICE_ADDRESS)
-              .setPort(DEFAULT_SERVICE_PORT)
-              .provideCredentialsWith(DEFAULT_SERVICE_SCOPES)
-              .build());
+      super(DEFAULT_CONNECTION_SETTINGS);
 
-      createTopicSettings =
-          SimpleCallSettings.newBuilder(PublisherGrpc.METHOD_CREATE_TOPIC)
-              .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-              .setRetrySettingsBuilder(RETRY_PARAM_DEFINITIONS.get("default"));
+      createTopicSettings = SimpleCallSettings.newBuilder(PublisherGrpc.METHOD_CREATE_TOPIC);
 
-      BundlingSettings.Builder publishBundlingSettingsBuilder =
-          BundlingSettings.newBuilder()
-              .setElementCountThreshold(800)
-              .setElementCountLimit(1000)
-              .setRequestByteThreshold(8388608)
-              .setRequestByteLimit(10485760)
-              .setDelayThreshold(Duration.millis(100))
-              .setBlockingCallCountThreshold(1);
       publishSettings =
           BundlingCallSettings.newBuilder(PublisherGrpc.METHOD_PUBLISH, PUBLISH_BUNDLING_DESC)
-              .setBundlingSettingsBuilder(publishBundlingSettingsBuilder)
-              .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-              .setRetrySettingsBuilder(RETRY_PARAM_DEFINITIONS.get("default"));
+              .setBundlingSettingsBuilder(BundlingSettings.newBuilder());
 
-      getTopicSettings =
-          SimpleCallSettings.newBuilder(PublisherGrpc.METHOD_GET_TOPIC)
-              .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-              .setRetrySettingsBuilder(RETRY_PARAM_DEFINITIONS.get("default"));
+      getTopicSettings = SimpleCallSettings.newBuilder(PublisherGrpc.METHOD_GET_TOPIC);
 
       listTopicsSettings =
           PageStreamingCallSettings.newBuilder(
-                  PublisherGrpc.METHOD_LIST_TOPICS, LIST_TOPICS_PAGE_STR_DESC)
-              .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-              .setRetrySettingsBuilder(RETRY_PARAM_DEFINITIONS.get("default"));
+              PublisherGrpc.METHOD_LIST_TOPICS, LIST_TOPICS_PAGE_STR_DESC);
 
       listTopicSubscriptionsSettings =
           PageStreamingCallSettings.newBuilder(
-                  PublisherGrpc.METHOD_LIST_TOPIC_SUBSCRIPTIONS,
-                  LIST_TOPIC_SUBSCRIPTIONS_PAGE_STR_DESC)
-              .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-              .setRetrySettingsBuilder(RETRY_PARAM_DEFINITIONS.get("default"));
+              PublisherGrpc.METHOD_LIST_TOPIC_SUBSCRIPTIONS,
+              LIST_TOPIC_SUBSCRIPTIONS_PAGE_STR_DESC);
 
-      deleteTopicSettings =
-          SimpleCallSettings.newBuilder(PublisherGrpc.METHOD_DELETE_TOPIC)
-              .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-              .setRetrySettingsBuilder(RETRY_PARAM_DEFINITIONS.get("default"));
+      deleteTopicSettings = SimpleCallSettings.newBuilder(PublisherGrpc.METHOD_DELETE_TOPIC);
 
       methodSettingsBuilders =
           ImmutableList.<ApiCallSettings.Builder>of(
@@ -444,6 +425,50 @@ public class PublisherSettings extends ServiceApiSettings {
               listTopicsSettings,
               listTopicSubscriptionsSettings,
               deleteTopicSettings);
+    }
+
+    private static Builder createDefault() {
+      Builder builder = new Builder();
+      builder
+          .createTopicSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettingsBuilder(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .publishSettings()
+          .getBundlingSettingsBuilder()
+          .setElementCountThreshold(800)
+          .setElementCountLimit(1000)
+          .setRequestByteThreshold(8388608)
+          .setRequestByteLimit(10485760)
+          .setDelayThreshold(Duration.millis(100))
+          .setBlockingCallCountThreshold(1);
+      builder
+          .publishSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettingsBuilder(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .getTopicSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettingsBuilder(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .listTopicsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettingsBuilder(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .listTopicSubscriptionsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettingsBuilder(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .deleteTopicSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettingsBuilder(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      return builder;
     }
 
     private Builder(PublisherSettings settings) {
@@ -467,6 +492,17 @@ public class PublisherSettings extends ServiceApiSettings {
     }
 
     @Override
+    protected ConnectionSettings getDefaultConnectionSettings() {
+      return DEFAULT_CONNECTION_SETTINGS;
+    }
+
+    @Override
+    public Builder provideExecutorWith(ScheduledExecutorService executor, boolean shouldAutoClose) {
+      super.provideExecutorWith(executor, shouldAutoClose);
+      return this;
+    }
+
+    @Override
     public Builder provideChannelWith(ManagedChannel channel, boolean shouldAutoClose) {
       super.provideChannelWith(channel, shouldAutoClose);
       return this;
@@ -479,8 +515,14 @@ public class PublisherSettings extends ServiceApiSettings {
     }
 
     @Override
-    public Builder setExecutor(ScheduledExecutorService executor) {
-      super.setExecutor(executor);
+    public Builder provideChannelWith(Credentials credentials) {
+      super.provideChannelWith(credentials);
+      return this;
+    }
+
+    @Override
+    public Builder provideChannelWith(List<String> scopes) {
+      super.provideChannelWith(scopes);
       return this;
     }
 
