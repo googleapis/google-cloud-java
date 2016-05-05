@@ -50,8 +50,20 @@ public class Subscription extends SubscriptionInfo {
     }
 
     @Override
-    public Builder topic(String name) {
-      delegate.topic(name);
+    public Builder topic(TopicId topic) {
+      delegate.topic(topic);
+      return this;
+    }
+
+    @Override
+    public Builder topic(String project, String topic) {
+      delegate.topic(project, topic);
+      return this;
+    }
+
+    @Override
+    public Builder topic(String topic) {
+      delegate.topic(topic);
       return this;
     }
 
