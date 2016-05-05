@@ -134,6 +134,7 @@ public class ParallelCountBytes {
         }
         work.add(exec.submit(full.resetForIndex(blockIndex++)));
       }
+      exec.shutdown();
 
       long elapsed = sw.elapsed(TimeUnit.SECONDS);
       System.out.println("Read all " + total + " bytes in " + elapsed + "s. ");
