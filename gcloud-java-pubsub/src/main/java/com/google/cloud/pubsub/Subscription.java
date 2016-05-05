@@ -21,6 +21,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
 import com.google.cloud.pubsub.PubSub.MessageConsumer;
 import com.google.cloud.pubsub.PubSub.MessageProcessor;
 import com.google.cloud.pubsub.PubSub.PullOption;
+import com.google.common.base.Function;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -103,7 +104,11 @@ public class Subscription extends SubscriptionInfo {
       return false;
     }
     Subscription other = (Subscription) obj;
-    return Objects.equals(toPb(), other.toPb()) && Objects.equals(options, other.options);
+    return Objects.equals(topic(), other.topic())
+        && Objects.equals(name(), other.name())
+        && Objects.equals(pushConfig(), other.pushConfig())
+        && ackDeadlineSeconds() == other.ackDeadlineSeconds()
+        && Objects.equals(options, other.options);
   }
 
   public PubSub pubSub() {
@@ -154,5 +159,15 @@ public class Subscription extends SubscriptionInfo {
   static Subscription fromPb(PubSub storage, com.google.pubsub.v1.Subscription subscriptionPb) {
     SubscriptionInfo subscriptionInfo = SubscriptionInfo.fromPb(subscriptionPb);
     return new Subscription(storage, new BuilderImpl(subscriptionInfo));
+  }
+
+  static Function<com.google.pubsub.v1.Subscription, Subscription> fromPbFunction(
+      final PubSub pubsub) {
+    return new Function<com.google.pubsub.v1.Subscription, Subscription>() {
+      @Override
+      public Subscription apply(com.google.pubsub.v1.Subscription subscriptionPb) {
+        return fromPb(pubsub, subscriptionPb);
+      }
+    };
   }
 }
