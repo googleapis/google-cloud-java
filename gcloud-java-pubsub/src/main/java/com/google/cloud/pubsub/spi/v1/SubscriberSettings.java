@@ -40,6 +40,7 @@ import com.google.api.gax.grpc.PageStreamingCallSettings;
 import com.google.api.gax.grpc.PageStreamingDescriptor;
 import com.google.api.gax.grpc.ServiceApiSettings;
 import com.google.api.gax.grpc.SimpleCallSettings;
+import com.google.auth.Credentials;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -60,6 +61,7 @@ import com.google.pubsub.v1.Subscription;
 import io.grpc.ManagedChannel;
 import io.grpc.Status;
 import java.io.IOException;
+import java.util.List;
 import java.util.concurrent.ScheduledExecutorService;
 import org.joda.time.Duration;
 
@@ -85,7 +87,7 @@ import org.joda.time.Duration;
  * <pre>
  * <code>
  * SubscriberSettings.Builder subscriberSettingsBuilder =
- *     SubscriberSettings.defaultInstance().toBuilder();
+ *     SubscriberSettings.defaultBuilder();
  * subscriberSettingsBuilder.CreateSubscriptionSettings().getRetrySettingsBuilder()
  *     .setTotalTimeout(Duration.standardSeconds(30));
  * SubscriberSettings subscriberSettings = subscriberSettingsBuilder.build();
@@ -118,6 +120,16 @@ public class SubscriberSettings extends ServiceApiSettings {
       ImmutableList.<String>builder()
           .add("https://www.googleapis.com/auth/pubsub")
           .add("https://www.googleapis.com/auth/cloud-platform")
+          .build();
+
+  /**
+   * The default connection settings of the service.
+   */
+  public static final ConnectionSettings DEFAULT_CONNECTION_SETTINGS =
+      ConnectionSettings.newBuilder()
+          .setServiceAddress(DEFAULT_SERVICE_ADDRESS)
+          .setPort(DEFAULT_SERVICE_PORT)
+          .provideCredentialsWith(DEFAULT_SERVICE_SCOPES)
           .build();
 
   private final SimpleCallSettings<Subscription, Subscription> createSubscriptionSettings;
@@ -191,10 +203,10 @@ public class SubscriberSettings extends ServiceApiSettings {
   }
 
   /**
-   * Returns an instance of this class with recommended defaults.
+   * Returns a builder for this class with recommended defaults.
    */
-  public static SubscriberSettings defaultInstance() throws IOException {
-    return newBuilder().build();
+  public static Builder defaultBuilder() {
+    return Builder.createDefault();
   }
 
   /**
@@ -213,10 +225,8 @@ public class SubscriberSettings extends ServiceApiSettings {
 
   private SubscriberSettings(Builder settingsBuilder) throws IOException {
     super(
-        settingsBuilder.getOrBuildChannel(),
-        settingsBuilder.shouldAutoCloseChannel(),
-        settingsBuilder.getOrBuildExecutor(),
-        settingsBuilder.getConnectionSettings(),
+        settingsBuilder.getChannelProvider(),
+        settingsBuilder.getExecutorProvider(),
         settingsBuilder.getGeneratorName(),
         settingsBuilder.getGeneratorVersion(),
         settingsBuilder.getClientLibName(),
@@ -311,53 +321,30 @@ public class SubscriberSettings extends ServiceApiSettings {
     }
 
     private Builder() {
-      super(
-          ConnectionSettings.newBuilder()
-              .setServiceAddress(DEFAULT_SERVICE_ADDRESS)
-              .setPort(DEFAULT_SERVICE_PORT)
-              .provideCredentialsWith(DEFAULT_SERVICE_SCOPES)
-              .build());
+      super(DEFAULT_CONNECTION_SETTINGS);
 
       createSubscriptionSettings =
-          SimpleCallSettings.newBuilder(SubscriberGrpc.METHOD_CREATE_SUBSCRIPTION)
-              .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-              .setRetrySettingsBuilder(RETRY_PARAM_DEFINITIONS.get("default"));
+          SimpleCallSettings.newBuilder(SubscriberGrpc.METHOD_CREATE_SUBSCRIPTION);
 
       getSubscriptionSettings =
-          SimpleCallSettings.newBuilder(SubscriberGrpc.METHOD_GET_SUBSCRIPTION)
-              .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-              .setRetrySettingsBuilder(RETRY_PARAM_DEFINITIONS.get("default"));
+          SimpleCallSettings.newBuilder(SubscriberGrpc.METHOD_GET_SUBSCRIPTION);
 
       listSubscriptionsSettings =
           PageStreamingCallSettings.newBuilder(
-                  SubscriberGrpc.METHOD_LIST_SUBSCRIPTIONS, LIST_SUBSCRIPTIONS_PAGE_STR_DESC)
-              .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-              .setRetrySettingsBuilder(RETRY_PARAM_DEFINITIONS.get("default"));
+              SubscriberGrpc.METHOD_LIST_SUBSCRIPTIONS, LIST_SUBSCRIPTIONS_PAGE_STR_DESC);
 
       deleteSubscriptionSettings =
-          SimpleCallSettings.newBuilder(SubscriberGrpc.METHOD_DELETE_SUBSCRIPTION)
-              .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
-              .setRetrySettingsBuilder(RETRY_PARAM_DEFINITIONS.get("default"));
+          SimpleCallSettings.newBuilder(SubscriberGrpc.METHOD_DELETE_SUBSCRIPTION);
 
       modifyAckDeadlineSettings =
-          SimpleCallSettings.newBuilder(SubscriberGrpc.METHOD_MODIFY_ACK_DEADLINE)
-              .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-              .setRetrySettingsBuilder(RETRY_PARAM_DEFINITIONS.get("default"));
+          SimpleCallSettings.newBuilder(SubscriberGrpc.METHOD_MODIFY_ACK_DEADLINE);
 
-      acknowledgeSettings =
-          SimpleCallSettings.newBuilder(SubscriberGrpc.METHOD_ACKNOWLEDGE)
-              .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-              .setRetrySettingsBuilder(RETRY_PARAM_DEFINITIONS.get("default"));
+      acknowledgeSettings = SimpleCallSettings.newBuilder(SubscriberGrpc.METHOD_ACKNOWLEDGE);
 
-      pullSettings =
-          SimpleCallSettings.newBuilder(SubscriberGrpc.METHOD_PULL)
-              .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-              .setRetrySettingsBuilder(RETRY_PARAM_DEFINITIONS.get("default"));
+      pullSettings = SimpleCallSettings.newBuilder(SubscriberGrpc.METHOD_PULL);
 
       modifyPushConfigSettings =
-          SimpleCallSettings.newBuilder(SubscriberGrpc.METHOD_MODIFY_PUSH_CONFIG)
-              .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-              .setRetrySettingsBuilder(RETRY_PARAM_DEFINITIONS.get("default"));
+          SimpleCallSettings.newBuilder(SubscriberGrpc.METHOD_MODIFY_PUSH_CONFIG);
 
       methodSettingsBuilders =
           ImmutableList.<ApiCallSettings.Builder>of(
@@ -369,6 +356,51 @@ public class SubscriberSettings extends ServiceApiSettings {
               acknowledgeSettings,
               pullSettings,
               modifyPushConfigSettings);
+    }
+
+    private static Builder createDefault() {
+      Builder builder = new Builder();
+      builder
+          .createSubscriptionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettingsBuilder(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .getSubscriptionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettingsBuilder(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .listSubscriptionsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettingsBuilder(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .deleteSubscriptionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettingsBuilder(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .modifyAckDeadlineSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettingsBuilder(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .acknowledgeSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettingsBuilder(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .pullSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettingsBuilder(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .modifyPushConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettingsBuilder(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      return builder;
     }
 
     private Builder(SubscriberSettings settings) {
@@ -396,6 +428,17 @@ public class SubscriberSettings extends ServiceApiSettings {
     }
 
     @Override
+    protected ConnectionSettings getDefaultConnectionSettings() {
+      return DEFAULT_CONNECTION_SETTINGS;
+    }
+
+    @Override
+    public Builder provideExecutorWith(ScheduledExecutorService executor, boolean shouldAutoClose) {
+      super.provideExecutorWith(executor, shouldAutoClose);
+      return this;
+    }
+
+    @Override
     public Builder provideChannelWith(ManagedChannel channel, boolean shouldAutoClose) {
       super.provideChannelWith(channel, shouldAutoClose);
       return this;
@@ -408,8 +451,14 @@ public class SubscriberSettings extends ServiceApiSettings {
     }
 
     @Override
-    public Builder setExecutor(ScheduledExecutorService executor) {
-      super.setExecutor(executor);
+    public Builder provideChannelWith(Credentials credentials) {
+      super.provideChannelWith(credentials);
+      return this;
+    }
+
+    @Override
+    public Builder provideChannelWith(List<String> scopes) {
+      super.provideChannelWith(scopes);
       return this;
     }
 

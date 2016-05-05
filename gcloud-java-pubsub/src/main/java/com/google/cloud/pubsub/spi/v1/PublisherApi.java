@@ -52,6 +52,7 @@ import java.io.Closeable;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ScheduledExecutorService;
 
 // Manually-added imports: add custom (non-generated) imports after this point.
 
@@ -65,10 +66,9 @@ import java.util.List;
  *
  * <pre>
  * <code>
- * try (PublisherApi publisherApi = PublisherApi.defaultInstance()) {
- *   // make calls here
- * String name = "";
- * Topic callResult = createTopic(name);
+ * try (PublisherApi publisherApi = PublisherApi.createWithDefaults()) {
+ *   String name = "";
+ *   Topic callResult = publisherApi.createTopic(name);
  * }
  * </code>
  * </pre>
@@ -100,15 +100,10 @@ import java.util.List;
  * <p>This class can be customized by passing in a custom instance of PublisherSettings to
  * create(). For example:
  *
- * <!-- TODO(garrettjones) refactor code to make this simpler -->
  * <pre>
  * <code>
- * ConnectionSettings defaultConnectionSettings =
- *     PublisherSettings.defaultInstance().toBuilder().getConnectionSettings();
- * ConnectionSettings updatedConnectionSettings =
- *     defaultConnectionSettings.toBuilder().provideCredentialsWith(myCredentials).build();
- * PublisherSettings publisherSettings = PublisherSettings.defaultInstance().toBuilder().
- *     provideChannelWith(updatedConnectionSettings)
+ * PublisherSettings publisherSettings = PublisherSettings.defaultBuilder()
+ *     .provideChannelWith(myCredentials)
  *     .build();
  * PublisherApi publisherApi = PublisherApi.create(publisherSettings);
  * </code>
@@ -119,7 +114,9 @@ import java.util.List;
  */
 @javax.annotation.Generated("by GAPIC")
 public class PublisherApi implements AutoCloseable {
+  private final PublisherSettings settings;
   private final ManagedChannel channel;
+  private final ScheduledExecutorService executor;
   private final List<AutoCloseable> closeables = new ArrayList<>();
 
   private final ApiCallable<Topic, Topic> createTopicCallable;
@@ -133,11 +130,15 @@ public class PublisherApi implements AutoCloseable {
       listTopicSubscriptionsPagedCallable;
   private final ApiCallable<DeleteTopicRequest, Empty> deleteTopicCallable;
 
+  public final PublisherSettings getSettings() {
+    return settings;
+  }
+
   private static final PathTemplate PROJECT_PATH_TEMPLATE =
-      PathTemplate.create("projects/{project}");
+      PathTemplate.createWithoutUrlEncoding("projects/{project}");
 
   private static final PathTemplate TOPIC_PATH_TEMPLATE =
-      PathTemplate.create("projects/{project}/topics/{topic}");
+      PathTemplate.createWithoutUrlEncoding("projects/{project}/topics/{topic}");
 
   /**
    * Formats a string containing the fully-qualified path to represent
@@ -200,8 +201,8 @@ public class PublisherApi implements AutoCloseable {
    * <!-- manual edit -->
    * <!-- end manual edit -->
    */
-  public static final PublisherApi defaultInstance() throws IOException {
-    return create(PublisherSettings.defaultInstance());
+  public static final PublisherApi createWithDefaults() throws IOException {
+    return create(PublisherSettings.defaultBuilder().build());
   }
 
   /**
@@ -225,29 +226,46 @@ public class PublisherApi implements AutoCloseable {
    * <!-- end manual edit -->
    */
   protected PublisherApi(PublisherSettings settings) throws IOException {
-    this.channel = settings.getChannel();
+    this.settings = settings;
+    this.executor = settings.getExecutorProvider().getOrBuildExecutor();
+    this.channel = settings.getChannelProvider().getOrBuildChannel(this.executor);
 
-    this.createTopicCallable = ApiCallable.create(settings.createTopicSettings(), settings);
-    this.publishCallable = ApiCallable.create(settings.publishSettings(), settings);
+    this.createTopicCallable =
+        ApiCallable.create(settings.createTopicSettings(), this.channel, this.executor);
+    this.publishCallable =
+        ApiCallable.create(settings.publishSettings(), this.channel, this.executor);
     if (settings.publishSettings().getBundlerFactory() != null) {
       closeables.add(settings.publishSettings().getBundlerFactory());
     }
-    this.getTopicCallable = ApiCallable.create(settings.getTopicSettings(), settings);
-    this.listTopicsCallable = ApiCallable.create(settings.listTopicsSettings(), settings);
+    this.getTopicCallable =
+        ApiCallable.create(settings.getTopicSettings(), this.channel, this.executor);
+    this.listTopicsCallable =
+        ApiCallable.create(settings.listTopicsSettings(), this.channel, this.executor);
     this.listTopicsPagedCallable =
-        ApiCallable.createPagedVariant(settings.listTopicsSettings(), settings);
+        ApiCallable.createPagedVariant(settings.listTopicsSettings(), this.channel, this.executor);
     this.listTopicSubscriptionsCallable =
-        ApiCallable.create(settings.listTopicSubscriptionsSettings(), settings);
+        ApiCallable.create(settings.listTopicSubscriptionsSettings(), this.channel, this.executor);
     this.listTopicSubscriptionsPagedCallable =
-        ApiCallable.createPagedVariant(settings.listTopicSubscriptionsSettings(), settings);
-    this.deleteTopicCallable = ApiCallable.create(settings.deleteTopicSettings(), settings);
+        ApiCallable.createPagedVariant(
+            settings.listTopicSubscriptionsSettings(), this.channel, this.executor);
+    this.deleteTopicCallable =
+        ApiCallable.create(settings.deleteTopicSettings(), this.channel, this.executor);
 
-    if (settings.shouldAutoCloseChannel()) {
+    if (settings.getChannelProvider().shouldAutoClose()) {
       closeables.add(
           new Closeable() {
             @Override
             public void close() throws IOException {
               channel.shutdown();
+            }
+          });
+    }
+    if (settings.getExecutorProvider().shouldAutoClose()) {
+      closeables.add(
+          new Closeable() {
+            @Override
+            public void close() throws IOException {
+              executor.shutdown();
             }
           });
     }
@@ -296,7 +314,6 @@ public class PublisherApi implements AutoCloseable {
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final ApiCallable<Topic, Topic> createTopicCallable() {
     return createTopicCallable;
@@ -348,7 +365,6 @@ public class PublisherApi implements AutoCloseable {
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final ApiCallable<PublishRequest, PublishResponse> publishCallable() {
     return publishCallable;
@@ -392,7 +408,6 @@ public class PublisherApi implements AutoCloseable {
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final ApiCallable<GetTopicRequest, Topic> getTopicCallable() {
     return getTopicCallable;
@@ -435,7 +450,6 @@ public class PublisherApi implements AutoCloseable {
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final ApiCallable<ListTopicsRequest, PageAccessor<Topic>> listTopicsPagedCallable() {
     return listTopicsPagedCallable;
@@ -447,7 +461,6 @@ public class PublisherApi implements AutoCloseable {
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final ApiCallable<ListTopicsRequest, ListTopicsResponse> listTopicsCallable() {
     return listTopicsCallable;
@@ -491,7 +504,6 @@ public class PublisherApi implements AutoCloseable {
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final ApiCallable<ListTopicSubscriptionsRequest, PageAccessor<String>>
       listTopicSubscriptionsPagedCallable() {
@@ -504,7 +516,6 @@ public class PublisherApi implements AutoCloseable {
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final ApiCallable<ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse>
       listTopicSubscriptionsCallable() {
@@ -561,7 +572,6 @@ public class PublisherApi implements AutoCloseable {
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final ApiCallable<DeleteTopicRequest, Empty> deleteTopicCallable() {
     return deleteTopicCallable;

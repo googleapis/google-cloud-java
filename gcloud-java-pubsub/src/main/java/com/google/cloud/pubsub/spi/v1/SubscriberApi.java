@@ -53,6 +53,7 @@ import java.io.Closeable;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ScheduledExecutorService;
 
 // Manually-added imports: add custom (non-generated) imports after this point.
 
@@ -66,13 +67,12 @@ import java.util.List;
  *
  * <pre>
  * <code>
- * try (SubscriberApi subscriberApi = SubscriberApi.defaultInstance()) {
- *   // make calls here
- * String name = "";
- * String topic = "";
- * PushConfig pushConfig = PushConfig.newBuilder().build();
- * int ackDeadlineSeconds = 0;
- * Subscription callResult = createSubscription(name, topic, pushConfig, ackDeadlineSeconds);
+ * try (SubscriberApi subscriberApi = SubscriberApi.createWithDefaults()) {
+ *   String name = "";
+ *   String topic = "";
+ *   PushConfig pushConfig = PushConfig.newBuilder().build();
+ *   int ackDeadlineSeconds = 0;
+ *   Subscription callResult = subscriberApi.createSubscription(name, topic, pushConfig, ackDeadlineSeconds);
  * }
  * </code>
  * </pre>
@@ -104,15 +104,10 @@ import java.util.List;
  * <p>This class can be customized by passing in a custom instance of SubscriberSettings to
  * create(). For example:
  *
- * <!-- TODO(garrettjones) refactor code to make this simpler -->
  * <pre>
  * <code>
- * ConnectionSettings defaultConnectionSettings =
- *     SubscriberSettings.defaultInstance().toBuilder().getConnectionSettings();
- * ConnectionSettings updatedConnectionSettings =
- *     defaultConnectionSettings.toBuilder().provideCredentialsWith(myCredentials).build();
- * SubscriberSettings subscriberSettings = SubscriberSettings.defaultInstance().toBuilder().
- *     provideChannelWith(updatedConnectionSettings)
+ * SubscriberSettings subscriberSettings = SubscriberSettings.defaultBuilder()
+ *     .provideChannelWith(myCredentials)
  *     .build();
  * SubscriberApi subscriberApi = SubscriberApi.create(subscriberSettings);
  * </code>
@@ -123,7 +118,9 @@ import java.util.List;
  */
 @javax.annotation.Generated("by GAPIC")
 public class SubscriberApi implements AutoCloseable {
+  private final SubscriberSettings settings;
   private final ManagedChannel channel;
+  private final ScheduledExecutorService executor;
   private final List<AutoCloseable> closeables = new ArrayList<>();
 
   private final ApiCallable<Subscription, Subscription> createSubscriptionCallable;
@@ -138,11 +135,18 @@ public class SubscriberApi implements AutoCloseable {
   private final ApiCallable<PullRequest, PullResponse> pullCallable;
   private final ApiCallable<ModifyPushConfigRequest, Empty> modifyPushConfigCallable;
 
+  public final SubscriberSettings getSettings() {
+    return settings;
+  }
+
   private static final PathTemplate PROJECT_PATH_TEMPLATE =
-      PathTemplate.create("projects/{project}");
+      PathTemplate.createWithoutUrlEncoding("projects/{project}");
 
   private static final PathTemplate SUBSCRIPTION_PATH_TEMPLATE =
-      PathTemplate.create("projects/{project}/subscriptions/{subscription}");
+      PathTemplate.createWithoutUrlEncoding("projects/{project}/subscriptions/{subscription}");
+
+  private static final PathTemplate TOPIC_PATH_TEMPLATE =
+      PathTemplate.createWithoutUrlEncoding("projects/{project}/topics/{topic}");
 
   /**
    * Formats a string containing the fully-qualified path to represent
@@ -164,6 +168,17 @@ public class SubscriberApi implements AutoCloseable {
    */
   public static final String formatSubscriptionName(String project, String subscription) {
     return SUBSCRIPTION_PATH_TEMPLATE.instantiate("project", project, "subscription", subscription);
+  }
+
+  /**
+   * Formats a string containing the fully-qualified path to represent
+   * a topic resource.
+   *
+   * <!-- manual edit -->
+   * <!-- end manual edit -->
+   */
+  public static final String formatTopicName(String project, String topic) {
+    return TOPIC_PATH_TEMPLATE.instantiate("project", project, "topic", topic);
   }
 
   /**
@@ -200,13 +215,35 @@ public class SubscriberApi implements AutoCloseable {
   }
 
   /**
+   * Parses the project from the given fully-qualified path which
+   * represents a topic resource.
+   *
+   * <!-- manual edit -->
+   * <!-- end manual edit -->
+   */
+  public static final String parseProjectFromTopicName(String topicName) {
+    return TOPIC_PATH_TEMPLATE.parse(topicName).get("project");
+  }
+
+  /**
+   * Parses the topic from the given fully-qualified path which
+   * represents a topic resource.
+   *
+   * <!-- manual edit -->
+   * <!-- end manual edit -->
+   */
+  public static final String parseTopicFromTopicName(String topicName) {
+    return TOPIC_PATH_TEMPLATE.parse(topicName).get("topic");
+  }
+
+  /**
    * Constructs an instance of SubscriberApi with default settings.
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
    */
-  public static final SubscriberApi defaultInstance() throws IOException {
-    return create(SubscriberSettings.defaultInstance());
+  public static final SubscriberApi createWithDefaults() throws IOException {
+    return create(SubscriberSettings.defaultBuilder().build());
   }
 
   /**
@@ -230,30 +267,44 @@ public class SubscriberApi implements AutoCloseable {
    * <!-- end manual edit -->
    */
   protected SubscriberApi(SubscriberSettings settings) throws IOException {
-    this.channel = settings.getChannel();
+    this.settings = settings;
+    this.executor = settings.getExecutorProvider().getOrBuildExecutor();
+    this.channel = settings.getChannelProvider().getOrBuildChannel(this.executor);
 
     this.createSubscriptionCallable =
-        ApiCallable.create(settings.createSubscriptionSettings(), settings);
-    this.getSubscriptionCallable = ApiCallable.create(settings.getSubscriptionSettings(), settings);
+        ApiCallable.create(settings.createSubscriptionSettings(), this.channel, this.executor);
+    this.getSubscriptionCallable =
+        ApiCallable.create(settings.getSubscriptionSettings(), this.channel, this.executor);
     this.listSubscriptionsCallable =
-        ApiCallable.create(settings.listSubscriptionsSettings(), settings);
+        ApiCallable.create(settings.listSubscriptionsSettings(), this.channel, this.executor);
     this.listSubscriptionsPagedCallable =
-        ApiCallable.createPagedVariant(settings.listSubscriptionsSettings(), settings);
+        ApiCallable.createPagedVariant(
+            settings.listSubscriptionsSettings(), this.channel, this.executor);
     this.deleteSubscriptionCallable =
-        ApiCallable.create(settings.deleteSubscriptionSettings(), settings);
+        ApiCallable.create(settings.deleteSubscriptionSettings(), this.channel, this.executor);
     this.modifyAckDeadlineCallable =
-        ApiCallable.create(settings.modifyAckDeadlineSettings(), settings);
-    this.acknowledgeCallable = ApiCallable.create(settings.acknowledgeSettings(), settings);
-    this.pullCallable = ApiCallable.create(settings.pullSettings(), settings);
+        ApiCallable.create(settings.modifyAckDeadlineSettings(), this.channel, this.executor);
+    this.acknowledgeCallable =
+        ApiCallable.create(settings.acknowledgeSettings(), this.channel, this.executor);
+    this.pullCallable = ApiCallable.create(settings.pullSettings(), this.channel, this.executor);
     this.modifyPushConfigCallable =
-        ApiCallable.create(settings.modifyPushConfigSettings(), settings);
+        ApiCallable.create(settings.modifyPushConfigSettings(), this.channel, this.executor);
 
-    if (settings.shouldAutoCloseChannel()) {
+    if (settings.getChannelProvider().shouldAutoClose()) {
       closeables.add(
           new Closeable() {
             @Override
             public void close() throws IOException {
               channel.shutdown();
+            }
+          });
+    }
+    if (settings.getExecutorProvider().shouldAutoClose()) {
+      closeables.add(
+          new Closeable() {
+            @Override
+            public void close() throws IOException {
+              executor.shutdown();
             }
           });
     }
@@ -346,7 +397,6 @@ public class SubscriberApi implements AutoCloseable {
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final ApiCallable<Subscription, Subscription> createSubscriptionCallable() {
     return createSubscriptionCallable;
@@ -400,7 +450,6 @@ public class SubscriberApi implements AutoCloseable {
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final ApiCallable<GetSubscriptionRequest, Subscription> getSubscriptionCallable() {
     return getSubscriptionCallable;
@@ -453,7 +502,6 @@ public class SubscriberApi implements AutoCloseable {
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final ApiCallable<ListSubscriptionsRequest, PageAccessor<Subscription>>
       listSubscriptionsPagedCallable() {
@@ -469,7 +517,6 @@ public class SubscriberApi implements AutoCloseable {
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final ApiCallable<ListSubscriptionsRequest, ListSubscriptionsResponse>
       listSubscriptionsCallable() {
@@ -527,7 +574,6 @@ public class SubscriberApi implements AutoCloseable {
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final ApiCallable<DeleteSubscriptionRequest, Empty> deleteSubscriptionCallable() {
     return deleteSubscriptionCallable;
@@ -592,7 +638,6 @@ public class SubscriberApi implements AutoCloseable {
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final ApiCallable<ModifyAckDeadlineRequest, Empty> modifyAckDeadlineCallable() {
     return modifyAckDeadlineCallable;
@@ -657,7 +702,6 @@ public class SubscriberApi implements AutoCloseable {
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final ApiCallable<AcknowledgeRequest, Empty> acknowledgeCallable() {
     return acknowledgeCallable;
@@ -721,7 +765,6 @@ public class SubscriberApi implements AutoCloseable {
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final ApiCallable<PullRequest, PullResponse> pullCallable() {
     return pullCallable;
@@ -790,7 +833,6 @@ public class SubscriberApi implements AutoCloseable {
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final ApiCallable<ModifyPushConfigRequest, Empty> modifyPushConfigCallable() {
     return modifyPushConfigCallable;
