@@ -71,7 +71,7 @@ public class LocalPubsubHelper {
   public LocalPubsubHelper() {
     port = LocalServiceHelper.findAvailablePort(DEFAULT_PORT);
     List<String> gcloudCommand = new ArrayList<>(Arrays.asList(GCLOUD_CMD_TEXT.split(" ")));
-    gcloudCommand.add(GCLOUD_CMD_PORT_FLAG + port);
+    gcloudCommand.add(GCLOUD_CMD_PORT_FLAG + "localhost:" + port);
     GCloudEmulatorRunner gcloudRunner =
         new GCloudEmulatorRunner(gcloudCommand, VERSION_PREFIX, MIN_VERSION);
     DownloadableEmulatorRunner downloadRunner =
@@ -89,7 +89,7 @@ public class LocalPubsubHelper {
    * @throws IOException
    */
   public void start() throws IOException, InterruptedException {
-    String blockUntilOutput = Integer.toString(port);
+    String blockUntilOutput = "Server started, listening on " + port;
     serviceHelper.start(blockUntilOutput);
   }
 
