@@ -624,7 +624,6 @@ public class ITBigQueryTest {
     assertTrue(bigquery.delete(TableId.of(DATASET, tableName)));
   }
 
-  @Ignore("Flaky test; see issue #836")
   @Test
   public void testListAllTableData() {
     Page<List<FieldValue>> rows = bigquery.listTableData(TABLE_ID);
@@ -908,7 +907,6 @@ public class ITBigQueryTest {
     assertFalse(bigquery.cancel("test_cancel_non_existing_job"));
   }
 
-  @Ignore("Flaky test; see #836")
   @Test
   public void testInsertFromFile() throws InterruptedException {
     String destinationTableName = "test_insert_from_file_table";
