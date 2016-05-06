@@ -28,8 +28,8 @@ import java.util.Objects;
 /**
  * Identity for a Google PubSub subscription. {@code SubscriptionId} objects are returned by the
  * {@link PubSub#listSubscriptions(String, PubSub.ListOption...)} and
- * {@link PubSub#listSubscriptionsAsync(String, PubSub.ListOption...)} methods as the same topic
- * can be used by subscriptions in different projects.
+ * {@link PubSub#listSubscriptionsAsync(String, PubSub.ListOption...)} methods as a topic may have
+ * subscriptions from different projects.
  */
 public class SubscriptionId implements Serializable {
 

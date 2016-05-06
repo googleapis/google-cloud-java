@@ -28,7 +28,7 @@ import java.util.Objects;
 
 /**
  * Identity for a Google PubSub topic. A {@code TopicId} object can be used to create subscriptions
- * for topics, possibly residing on a different project.
+ * for topics that possibly reside in different projects.
  */
 public final class TopicId implements Serializable {
 
@@ -43,7 +43,8 @@ public final class TopicId implements Serializable {
   }
 
   /**
-   * Returns the name of the project where the topic resides.
+   * Returns the name of the project where the topic resides. If {@code null} the topic is assumed
+   * to reside in the {@link PubSubOptions#projectId()} project.
    */
   public String project() {
     return project;

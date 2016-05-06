@@ -291,7 +291,7 @@ public class SubscriptionInfo implements Serializable {
    *     letters ({@code [A-Za-z]}), numbers ({@code [0-9]}), dashes ({@code -}), underscores
    *     ({@code _}), periods ({@code .}), tildes ({@code ~}), plus ({@code +}) or percent signs
    *     ({@code %}). It must be between 3 and 255 characters in length and cannot begin with the
-   *     string {@code goog}
+   *     string {@code goog}.
    */
   public static SubscriptionInfo of(String topic, String name) {
     return builder(topic, name).build();
@@ -307,7 +307,7 @@ public class SubscriptionInfo implements Serializable {
    *     letters ({@code [A-Za-z]}), numbers ({@code [0-9]}), dashes ({@code -}), underscores
    *     ({@code _}), periods ({@code .}), tildes ({@code ~}), plus ({@code +}) or percent signs
    *     ({@code %}). It must be between 3 and 255 characters in length and cannot begin with the
-   *     string {@code goog}
+   *     string {@code goog}.
    */
   public static SubscriptionInfo of(TopicId topic, String name) {
     return builder(topic, name).build();
@@ -323,7 +323,7 @@ public class SubscriptionInfo implements Serializable {
    *     letters ({@code [A-Za-z]}), numbers ({@code [0-9]}), dashes ({@code -}), underscores
    *     ({@code _}), periods ({@code .}), tildes ({@code ~}), plus ({@code +}) or percent signs
    *     ({@code %}). It must be between 3 and 255 characters in length and cannot begin with the
-   *     string {@code goog}
+   *     string {@code goog}.
    * @param endpoint a URL locating the endpoint to which messages should be pushed. For example,
    *     an endpoint might use {@code https://example.com/push}.
    */
@@ -341,7 +341,7 @@ public class SubscriptionInfo implements Serializable {
    *     letters ({@code [A-Za-z]}), numbers ({@code [0-9]}), dashes ({@code -}), underscores
    *     ({@code _}), periods ({@code .}), tildes ({@code ~}), plus ({@code +}) or percent signs
    *     ({@code %}). It must be between 3 and 255 characters in length and cannot begin with the
-   *     string {@code goog}
+   *     string {@code goog}.
    * @param endpoint a URL locating the endpoint to which messages should be pushed. For example,
    *     an endpoint might use {@code https://example.com/push}.
    */
@@ -359,7 +359,7 @@ public class SubscriptionInfo implements Serializable {
    *     letters ({@code [A-Za-z]}), numbers ({@code [0-9]}), dashes ({@code -}), underscores
    *     ({@code _}), periods ({@code .}), tildes ({@code ~}), plus ({@code +}) or percent signs
    *     ({@code %}). It must be between 3 and 255 characters in length and cannot begin with the
-   *     string {@code goog}
+   *     string {@code goog}.
    */
   public static Builder builder(String topic, String name) {
     return builder(TopicId.of(topic), name);
@@ -375,7 +375,7 @@ public class SubscriptionInfo implements Serializable {
    *     letters ({@code [A-Za-z]}), numbers ({@code [0-9]}), dashes ({@code -}), underscores
    *     ({@code _}), periods ({@code .}), tildes ({@code ~}), plus ({@code +}) or percent signs
    *     ({@code %}). It must be between 3 and 255 characters in length and cannot begin with the
-   *     string {@code goog}
+   *     string {@code goog}.
    */
   public static Builder builder(TopicId topic, String name) {
     return new BuilderImpl(topic, name);
