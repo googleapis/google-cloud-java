@@ -15,8 +15,6 @@
  */
 package com.google.datastore.v1beta3.client;
 
-import static com.google.datastore.v1beta3.client.DatastoreFactory.validateUrl;
-
 import com.google.api.client.auth.oauth2.Credential;
 import com.google.api.client.googleapis.auth.oauth2.GoogleCredential;
 import com.google.api.client.googleapis.javanet.GoogleNetHttpTransport;
@@ -314,8 +312,8 @@ public final class DatastoreHelper {
     }
     String projectId = getProjectIdFromEnv();
     if (System.getenv(URL_OVERRIDE_ENV_VAR) != null) {
-      options.projectEndpoint(validateUrl(String.format("%s/projects/%s",
-          System.getenv(URL_OVERRIDE_ENV_VAR), projectId)));
+      options.projectEndpoint(String.format("%s/projects/%s",
+          System.getenv(URL_OVERRIDE_ENV_VAR), projectId));
       return;
     }
     if (System.getenv(LOCAL_HOST_ENV_VAR) != null) {

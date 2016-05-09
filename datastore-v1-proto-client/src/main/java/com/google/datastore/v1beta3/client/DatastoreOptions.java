@@ -108,7 +108,6 @@ public class DatastoreOptions {
      */
     public Builder localHost(String localHost) {
       checkArgument(projectEndpoint == null, PROJECT_ENDPOINT_AND_LOCAL_HOST_ERROR);
-      DatastoreFactory.validateUrl(localHost);
       if (includesScheme(localHost)) {
         throw new IllegalArgumentException(
             String.format("Local host \"%s\" must not include scheme.", localHost));
@@ -124,7 +123,6 @@ public class DatastoreOptions {
     public Builder projectEndpoint(String projectEndpoint) {
       checkArgument(projectId == null, PROJECT_ENDPOINT_AND_PROJECT_ID_ERROR);
       checkArgument(localHost == null, PROJECT_ENDPOINT_AND_LOCAL_HOST_ERROR);
-      DatastoreFactory.validateUrl(projectEndpoint);
       if (!includesScheme(projectEndpoint)) {
         throw new IllegalArgumentException(String.format(
             "Project endpoint \"%s\" must include scheme.", projectEndpoint));
@@ -156,7 +154,7 @@ public class DatastoreOptions {
       this.transport = transport;
       return this;
     }
-    
+
     private static boolean includesScheme(String url) {
       return url.startsWith("http://") || url.startsWith("https://");
     }
@@ -165,7 +163,7 @@ public class DatastoreOptions {
   public String getProjectId() {
     return projectId;
   }
-  
+
   public String getProjectEndpoint() {
     return projectEndpoint;
   }
@@ -181,7 +179,7 @@ public class DatastoreOptions {
   public Credential getCredential() {
     return credential;
   }
-  
+
   public HttpTransport getTransport() {
     return transport;
   }

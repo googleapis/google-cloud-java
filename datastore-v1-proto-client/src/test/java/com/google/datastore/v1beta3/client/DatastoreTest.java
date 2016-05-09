@@ -87,7 +87,7 @@ public class DatastoreTest {
     options = new DatastoreOptions.Builder();
     thrown.expect(IllegalArgumentException.class);
     thrown.expectMessage("Either project ID or project endpoint must be provided");
-    options.build();
+    factory.create(options.build());
   }
 
   @Test
@@ -112,8 +112,10 @@ public class DatastoreTest {
   public void options_InvalidLocalHost() throws Exception {
     thrown.expect(IllegalArgumentException.class);
     thrown.expectMessage("Illegal character");
-    new DatastoreOptions.Builder()
-        .localHost("!not a valid url!");
+    factory.create(new DatastoreOptions.Builder()
+        .projectId(PROJECT_ID)
+        .localHost("!not a valid url!")
+        .build());
   }
 
   @Test
@@ -141,6 +143,16 @@ public class DatastoreTest {
   }
 
   @Test
+  public void create_LocalHostIp() {
+    Datastore datastore = factory.create(new DatastoreOptions.Builder()
+        .projectId(PROJECT_ID)
+        .localHost("127.0.0.1:8080")
+        .build());
+    assertThat(datastore.remoteRpc.getUrl())
+        .isEqualTo("http://127.0.0.1:8080/datastore/v1beta3/projects/project-id");
+  }
+
+  @Test
   public void create_DefaultHost() {
     Datastore datastore = factory.create(new DatastoreOptions.Builder()
         .projectId(PROJECT_ID)
@@ -156,6 +168,17 @@ public class DatastoreTest {
         .build());
     assertThat(datastore.remoteRpc.getUrl())
         .isEqualTo("http://prom-qa/datastore/v1beta42/projects/project-id");
+  }
+
+  @Test
+  public void create_ProjectEndpointNoScheme() {
+    thrown.expect(IllegalArgumentException.class);
+    thrown.expectMessage(
+        "Project endpoint \"prom-qa/datastore/v1beta42/projects/project-id\" must"
+        + " include scheme.");
+    factory.create(new DatastoreOptions.Builder()
+        .projectEndpoint("prom-qa/datastore/v1beta42/projects/project-id")
+        .build());
   }
 
   @Test

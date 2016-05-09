@@ -111,7 +111,7 @@ public class DatastoreFactory {
     return new RemoteRpc(client, options.getInitializer(), buildProjectEndpoint(options));
   }
 
-  static String validateUrl(String url) {
+  private static String validateUrl(String url) {
     try {
       return new URI(url).toString();
     } catch (URISyntaxException e) {
