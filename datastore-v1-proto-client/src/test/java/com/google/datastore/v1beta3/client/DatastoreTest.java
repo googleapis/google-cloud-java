@@ -96,7 +96,7 @@ public class DatastoreTest {
     thrown.expectMessage("Cannot set both project endpoint and project ID");
     options = new DatastoreOptions.Builder()
         .projectId(PROJECT_ID)
-        .projectEndpoint("http://prom-qa/datastore/v1beta42/projects/project-id");
+        .projectEndpoint("http://localhost:1234/datastore/v1beta42/projects/project-id");
   }
 
   @Test
@@ -105,7 +105,7 @@ public class DatastoreTest {
     thrown.expectMessage("Cannot set both project endpoint and local host");
     options = new DatastoreOptions.Builder()
         .localHost("localhost:8080")
-        .projectEndpoint("http://prom-qa/datastore/v1beta42/projects/project-id");
+        .projectEndpoint("http://localhost:1234/datastore/v1beta42/projects/project-id");
   }
 
   @Test
@@ -174,10 +174,10 @@ public class DatastoreTest {
   public void create_ProjectEndpointNoScheme() {
     thrown.expect(IllegalArgumentException.class);
     thrown.expectMessage(
-        "Project endpoint \"prom-qa/datastore/v1beta42/projects/project-id\" must"
+        "Project endpoint \"localhost:1234/datastore/v1beta42/projects/project-id\" must"
         + " include scheme.");
     factory.create(new DatastoreOptions.Builder()
-        .projectEndpoint("prom-qa/datastore/v1beta42/projects/project-id")
+        .projectEndpoint("localhost:1234/datastore/v1beta42/projects/project-id")
         .build());
   }
 
