@@ -43,8 +43,8 @@ public class SubscriptionIdTest {
 
   private void compareSubscriptionId(SubscriptionId expected, SubscriptionId value) {
     assertEquals(expected, value);
-    assertEquals(expected.project(), expected.project());
-    assertEquals(expected.subscription(), expected.subscription());
-    assertEquals(expected.hashCode(), expected.hashCode());
+    assertEquals(expected.project(), value.project());
+    assertEquals(expected.subscription(), value.subscription());
+    assertEquals(expected.hashCode(), value.hashCode());
   }
 }

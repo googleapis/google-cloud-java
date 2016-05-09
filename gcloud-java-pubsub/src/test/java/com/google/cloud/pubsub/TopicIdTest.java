@@ -17,7 +17,10 @@
 package com.google.cloud.pubsub;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertSame;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
@@ -35,6 +38,16 @@ public class TopicIdTest {
     topicId = TopicId.of(NAME);
     assertNull(topicId.project());
     assertEquals(NAME, topicId.topic());
+    assertFalse(topicId.isDeleted());
+  }
+
+  @Test
+  public void testDeletedTopic() {
+    TopicId deletedTopic = TopicId.deletedTopic();
+    assertNull(deletedTopic.project());
+    assertEquals("_deleted_topic_", deletedTopic.topic());
+    assertTrue(deletedTopic.isDeleted());
+    assertSame(deletedTopic, TopicId.deletedTopic());
   }
 
   @Test
@@ -51,9 +64,10 @@ public class TopicIdTest {
 
   private void compareTopicId(TopicId expected, TopicId value) {
     assertEquals(expected, value);
-    assertEquals(expected.project(), expected.project());
-    assertEquals(expected.topic(), expected.topic());
-    assertEquals(expected.toPb("project"), expected.toPb("project"));
-    assertEquals(expected.hashCode(), expected.hashCode());
+    assertEquals(expected.project(), value.project());
+    assertEquals(expected.topic(), value.topic());
+    assertEquals(expected.isDeleted(), value.isDeleted());
+    assertEquals(expected.toPb("project"), value.toPb("project"));
+    assertEquals(expected.hashCode(), value.hashCode());
   }
 }

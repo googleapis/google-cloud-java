@@ -33,13 +33,21 @@ import java.util.Objects;
 public final class TopicId implements Serializable {
 
   private static final long serialVersionUID = -4913169763174877777L;
+  private static final String DELETED_TOPIC_NAME = "_deleted_topic_";
+  private static final TopicId DELETED_TOPIC = new TopicId(null, DELETED_TOPIC_NAME, true);
 
   private final String project;
   private final String topic;
+  private final boolean isDeleted;
 
-  private TopicId(String project, String topic) {
+  private TopicId(String project, String topic, boolean isDeleted) {
     this.project = project;
     this.topic = checkNotNull(topic);
+    this.isDeleted = isDeleted;
+  }
+
+  private TopicId(String project, String topic) {
+    this(project, topic, false);
   }
 
   /**
@@ -57,14 +65,27 @@ public final class TopicId implements Serializable {
     return topic;
   }
 
+  /**
+   * Returns {@code true} if this object is the identity of a deleted topic, {@code false}
+   * otherwhise. If {@code isDeleted()} is {@code true}, {@link #topic()} returns
+   * "{@code _deleted_topic_}" and {@link #project()} returns {@code null}.
+   */
+  public boolean isDeleted() {
+    return isDeleted;
+  }
+
   @Override
   public String toString() {
-    return MoreObjects.toStringHelper(this).add("project", project).add("topic", topic).toString();
+    return MoreObjects.toStringHelper(this)
+        .add("project", project)
+        .add("topic", topic)
+        .add("isDeleted", isDeleted)
+        .toString();
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(project, topic);
+    return Objects.hash(project, topic, isDeleted);
   }
 
   @Override
@@ -76,11 +97,22 @@ public final class TopicId implements Serializable {
       return false;
     }
     TopicId other = (TopicId) obj;
-    return Objects.equals(project, other.project) && Objects.equals(topic, other.topic);
+    return Objects.equals(project, other.project)
+        && Objects.equals(topic, other.topic)
+        && Objects.equals(isDeleted, other.isDeleted);
   }
 
   String toPb(String projectId) {
     return formatTopicName(project != null ? project : projectId, topic);
+  }
+
+  /**
+   * Returns the identity of a deleted topic. The deleted topic is such that {@link #isDeleted()}
+   * returns {@code true}, {@link #topic()} returns "{@code _is_deleted_}" and {@link #project()}
+   * returns {@code null}.
+   */
+  public static TopicId deletedTopic() {
+    return DELETED_TOPIC;
   }
 
   /**
@@ -98,6 +130,9 @@ public final class TopicId implements Serializable {
   }
 
   static TopicId fromPb(String pb) {
+    if (Objects.equals(pb, DELETED_TOPIC_NAME)) {
+      return DELETED_TOPIC;
+    }
     return TopicId.of(parseProjectFromTopicName(pb), parseTopicFromTopicName(pb));
   }
 }

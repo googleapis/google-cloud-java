@@ -111,6 +111,13 @@ public class SubscriptionInfoTest {
     subscriptionInfo = SubscriptionInfo.of("topic", NAME, ENDPOINT);
     compareSubscriptionInfo(SubscriptionInfo.of(TOPIC, NAME, ENDPOINT),
         SubscriptionInfo.fromPb(subscriptionInfo.toPb("project")));
+    com.google.pubsub.v1.Subscription subscription = SUBSCRIPTION_INFO.toPb("project");
+    subscriptionInfo =
+        SubscriptionInfo.fromPb(subscription.toBuilder().setTopic("_deleted_topic_").build());
+    assertEquals(TopicId.deletedTopic(), subscriptionInfo.topic());
+    assertEquals(NAME, subscriptionInfo.name());
+    assertEquals(PUSH_CONFIG, subscriptionInfo.pushConfig());
+    assertEquals(ACK_DEADLINE, subscriptionInfo.ackDeadlineSeconds());
   }
 
   private void compareSubscriptionInfo(SubscriptionInfo expected, SubscriptionInfo value) {
