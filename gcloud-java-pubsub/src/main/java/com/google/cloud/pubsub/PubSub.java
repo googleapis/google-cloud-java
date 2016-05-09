@@ -20,9 +20,9 @@ import com.google.cloud.AsyncPage;
 import com.google.cloud.Page;
 import com.google.cloud.Service;
 
-import java.io.Serializable;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 
@@ -33,65 +33,67 @@ import java.util.concurrent.TimeUnit;
  */
 public interface PubSub extends Service<PubSubOptions> {
 
-  final class ListOption implements Serializable {
+  /**
+   * Class for specifying options for listing topics and subscriptions.
+   */
+  final class ListOption extends Option {
 
     private static final long serialVersionUID = 6517442127283383124L;
 
-    private final Option option;
-    private final Object value;
+    enum OptionType implements Option.OptionType {
+      PAGE_SIZE, PAGE_TOKEN;
 
-    enum Option {
-      PAGE_SIZE, PAGE_TOKEN
+      @SuppressWarnings("unchecked")
+      <T> T get(Map<Option.OptionType, ?> options) {
+        return (T) options.get(this);
+      }
     }
 
-    private ListOption(Option option, Object value) {
-      this.option = option;
-      this.value = value;
+    private ListOption(OptionType option, Object value) {
+      super(option, value);
     }
 
-    Option option() {
-      return option;
-    }
-
-    Object value() {
-      return value;
-    }
-
+    /**
+     * Returns an option to specify the maximum number of resources returned per page.
+     */
     public static ListOption pageSize(int pageSize) {
-      return new ListOption(Option.PAGE_SIZE, pageSize);
+      return new ListOption(OptionType.PAGE_SIZE, pageSize);
     }
 
+    /**
+     * Returns an option to specify the page token from which to start listing resources.
+     */
     public static ListOption pageToken(String pageToken) {
-      return new ListOption(Option.PAGE_TOKEN, pageToken);
+      return new ListOption(OptionType.PAGE_TOKEN, pageToken);
     }
   }
 
-  final class PullOption implements Serializable {
+  /**
+   * Class for specifying options for pulling messages.
+   */
+  final class PullOption extends Option {
 
     private static final long serialVersionUID = -5220474819637439937L;
 
-    private final Option option;
-    private final Object value;
+    enum OptionType implements Option.OptionType {
+      MAX_MESSAGES;
 
-    enum Option {
-      MAX_MESSAGES
+      @SuppressWarnings("unchecked")
+      <T> T get(Map<Option.OptionType, ?> options) {
+        return (T) options.get(this);
+      }
     }
 
-    private PullOption(Option option, Object value) {
-      this.option = option;
-      this.value = value;
+    private PullOption(OptionType option, Object value) {
+      super(option, value);
     }
 
-    Option option() {
-      return option;
-    }
-
-    Object value() {
-      return value;
-    }
-
+    /**
+     * Returns an option to specify the maximum number of messages that can be returned by the pull
+     * operation.
+     */
     public static PullOption maxMessages(int maxMessages) {
-      return new PullOption(Option.MAX_MESSAGES, maxMessages);
+      return new PullOption(OptionType.MAX_MESSAGES, maxMessages);
     }
   }
 
@@ -108,32 +110,32 @@ public interface PubSub extends Service<PubSubOptions> {
    */
   interface MessageConsumer extends AutoCloseable {
 
-    final class PullOption implements Serializable {
+    /**
+     * Class for specifying options to pull messages through a {@code MessageConsumer}.
+     */
+    final class PullOption extends Option {
 
       private static final long serialVersionUID = 4792164134340316582L;
 
-      private final Option option;
-      private final Object value;
+      enum OptionType implements Option.OptionType {
+        MAX_CONCURRENT_CALLBACKS;
 
-      enum Option {
-        MAX_CONCURRENT_CALLBACKS
+        @SuppressWarnings("unchecked")
+        <T> T get(Map<OptionType, ?> options) {
+          return (T) options.get(this);
+        }
       }
 
-      private PullOption(Option option, Object value) {
-        this.option = option;
-        this.value = value;
+      private PullOption(OptionType option, Object value) {
+        super(option, value);
       }
 
-      Option option() {
-        return option;
-      }
-
-      Object value() {
-        return value;
-      }
-
+      /**
+       * Returns an option to specify the maximum number of messages that can be executed
+       * concurrently at any time.
+       */
       public static PullOption maxConcurrentCallbacks(int maxConcurrency) {
-        return new PullOption(Option.MAX_CONCURRENT_CALLBACKS, maxConcurrency);
+        return new PullOption(OptionType.MAX_CONCURRENT_CALLBACKS, maxConcurrency);
       }
     }
 
