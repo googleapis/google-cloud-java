@@ -19,7 +19,6 @@ package com.google.cloud.pubsub;
 import static org.junit.Assert.assertEquals;
 
 import com.google.cloud.pubsub.PubSub.ListOption;
-import com.google.cloud.pubsub.PubSub.MessageConsumer;
 import com.google.cloud.pubsub.PubSub.PullOption;
 
 import org.junit.Test;
@@ -28,7 +27,6 @@ public class PubSubTest {
 
   private static final int PAGE_SIZE = 42;
   private static final String PAGE_TOKEN = "page token";
-  private static final int MAX_MESSAGES = 42;
   private static final int MAX_CONCURRENT_CALLBACKS = 42;
 
   @Test
@@ -45,17 +43,8 @@ public class PubSubTest {
 
   @Test
   public void testPullOptions() {
-    PullOption pullOption = PullOption.maxMessages(MAX_MESSAGES);
-    assertEquals(MAX_MESSAGES, pullOption.value());
-    assertEquals(PullOption.OptionType.MAX_MESSAGES, pullOption.optionType());
-  }
-
-  @Test
-  public void testMessageConsumerPullOptions() {
-    MessageConsumer.PullOption pullOption =
-        MessageConsumer.PullOption.maxConcurrentCallbacks(MAX_CONCURRENT_CALLBACKS);
+    PullOption pullOption = PullOption.maxConcurrentCallbacks(MAX_CONCURRENT_CALLBACKS);
     assertEquals(MAX_CONCURRENT_CALLBACKS, pullOption.value());
-    assertEquals(MessageConsumer.PullOption.OptionType.MAX_CONCURRENT_CALLBACKS,
-        pullOption.optionType());
+    assertEquals(PullOption.OptionType.MAX_CONCURRENT_CALLBACKS, pullOption.optionType());
   }
 }

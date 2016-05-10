@@ -47,6 +47,14 @@ public interface PubSub extends Service<PubSubOptions> {
       <T> T get(Map<Option.OptionType, ?> options) {
         return (T) options.get(this);
       }
+
+      String getString(Map<Option.OptionType, ?> options) {
+        return get(options);
+      }
+
+      Integer getInteger(Map<Option.OptionType, ?> options) {
+        return get(options);
+      }
     }
 
     private ListOption(OptionType option, Object value) {
@@ -73,27 +81,31 @@ public interface PubSub extends Service<PubSubOptions> {
    */
   final class PullOption extends Option {
 
-    private static final long serialVersionUID = -5220474819637439937L;
+    private static final long serialVersionUID = 4792164134340316582L;
 
     enum OptionType implements Option.OptionType {
-      MAX_MESSAGES;
+      MAX_CONCURRENT_CALLBACKS;
 
       @SuppressWarnings("unchecked")
       <T> T get(Map<Option.OptionType, ?> options) {
         return (T) options.get(this);
       }
+
+      Integer getInteger(Map<Option.OptionType, ?> options) {
+        return get(options);
+      }
     }
 
-    private PullOption(OptionType option, Object value) {
+    private PullOption(Option.OptionType option, Object value) {
       super(option, value);
     }
 
     /**
-     * Returns an option to specify the maximum number of messages that can be returned by the pull
-     * operation.
+     * Returns an option to specify the maximum number of messages that can be executed
+     * concurrently at any time.
      */
-    public static PullOption maxMessages(int maxMessages) {
-      return new PullOption(OptionType.MAX_MESSAGES, maxMessages);
+    public static PullOption maxConcurrentCallbacks(int maxConcurrency) {
+      return new PullOption(OptionType.MAX_CONCURRENT_CALLBACKS, maxConcurrency);
     }
   }
 
@@ -110,38 +122,6 @@ public interface PubSub extends Service<PubSubOptions> {
    */
   interface MessageConsumer extends AutoCloseable {
 
-    /**
-     * Class for specifying options to pull messages through a {@code MessageConsumer}.
-     */
-    final class PullOption extends Option {
-
-      private static final long serialVersionUID = 4792164134340316582L;
-
-      enum OptionType implements Option.OptionType {
-        MAX_CONCURRENT_CALLBACKS;
-
-        @SuppressWarnings("unchecked")
-        <T> T get(Map<OptionType, ?> options) {
-          return (T) options.get(this);
-        }
-      }
-
-      private PullOption(OptionType option, Object value) {
-        super(option, value);
-      }
-
-      /**
-       * Returns an option to specify the maximum number of messages that can be executed
-       * concurrently at any time.
-       */
-      public static PullOption maxConcurrentCallbacks(int maxConcurrency) {
-        return new PullOption(OptionType.MAX_CONCURRENT_CALLBACKS, maxConcurrency);
-      }
-    }
-
-    void start(MessageConsumer.PullOption... options);
-
-    void stop();
   }
 
   Topic create(TopicInfo topic);
@@ -200,11 +180,11 @@ public interface PubSub extends Service<PubSubOptions> {
 
   Future<AsyncPage<SubscriptionId>> listSubscriptionsAsync(String topic, ListOption... options);
 
-  Iterator<ReceivedMessage> pull(String subscription, PullOption... options);
+  Iterator<ReceivedMessage> pull(String subscription, int maxMessages);
 
-  Future<Iterator<ReceivedMessage>> pullAsync(String subscription, PullOption... options);
+  Future<Iterator<ReceivedMessage>> pullAsync(String subscription, int maxMessages);
 
-  MessageConsumer pullAsync(String subscription, MessageProcessor callback);
+  MessageConsumer pullAsync(String subscription, MessageProcessor callback, PullOption... options);
 
   void ack(String subscription, String ackId, String... ackIds);
 
