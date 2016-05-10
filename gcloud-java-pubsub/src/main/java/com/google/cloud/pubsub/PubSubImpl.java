@@ -185,12 +185,12 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
   }
 
   @Override
-  public Page<Subscription> listSubscriptions(String topic, ListOption... options) {
+  public Page<SubscriptionId> listSubscriptions(String topic, ListOption... options) {
     return null;
   }
 
   @Override
-  public Future<AsyncPage<Subscription>> listSubscriptionsAsync(String topic,
+  public Future<AsyncPage<SubscriptionId>> listSubscriptionsAsync(String topic,
       ListOption... options) {
     return null;
   }

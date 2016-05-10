@@ -140,7 +140,7 @@ public class TopicInfo implements Serializable {
    *     ({@code [A-Za-z]}), numbers ({@code [0-9]}), dashes ({@code -}), underscores ({@code _}),
    *     periods ({@code .}), tildes ({@code ~}), plus ({@code +}) or percent signs ({@code %}).
    *     It must be between 3 and 255 characters in length and cannot begin with the string
-   *     {@code goog}
+   *     {@code goog}.
    */
   public static TopicInfo of(String name) {
     return builder(name).build();
@@ -153,7 +153,7 @@ public class TopicInfo implements Serializable {
    *     ({@code [A-Za-z]}), numbers ({@code [0-9]}), dashes ({@code -}), underscores ({@code _}),
    *     periods ({@code .}), tildes ({@code ~}), plus ({@code +}) or percent signs ({@code %}).
    *     It must be between 3 and 255 characters in length and cannot begin with the string
-   *     {@code goog}
+   *     {@code goog}.
    */
   public static Builder builder(String name) {
     return new BuilderImpl(name);

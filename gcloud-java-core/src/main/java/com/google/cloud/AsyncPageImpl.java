@@ -17,6 +17,7 @@
 package com.google.cloud;
 
 import com.google.common.base.Throwables;
+import com.google.common.util.concurrent.Futures;
 import com.google.common.util.concurrent.Uninterruptibles;
 
 import java.io.Serializable;
@@ -47,7 +48,7 @@ public class AsyncPageImpl<T> extends PageImpl<T> implements AsyncPage<T> {
 
     private static final long serialVersionUID = -4124568632363525351L;
 
-    private NextPageFetcher<T> asyncPageFetcher;
+    private final NextPageFetcher<T> asyncPageFetcher;
 
     private SyncNextPageFetcher(NextPageFetcher<T> asyncPageFetcher) {
       this.asyncPageFetcher = asyncPageFetcher;
@@ -75,7 +76,7 @@ public class AsyncPageImpl<T> extends PageImpl<T> implements AsyncPage<T> {
   @Override
   public Future<AsyncPage<T>> nextPageAsync() {
     if (nextPageCursor() == null || asyncPageFetcher == null) {
-      return null;
+      return Futures.immediateCheckedFuture(null);
     }
     return asyncPageFetcher.nextPage();
   }
