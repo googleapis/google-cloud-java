@@ -37,7 +37,7 @@ import java.util.concurrent.Future;
  *   for (T value : page.values()) {
  *     // do something with value
  *   }
- *   page = page.nextPage().get();
+ *   page = page.nextPageAsync().get();
  * }}</pre>
  *
  * @param <T> the value type that the page holds
@@ -45,7 +45,8 @@ import java.util.concurrent.Future;
 public interface AsyncPage<T> extends Page<T> {
 
   /**
-   * Returns a {@link Future} object for the next page.
+   * Returns a {@link Future} object for the next page. {@link Future#get()} returns {@code null} if
+   * the last page has been reached.
    */
   Future<AsyncPage<T>> nextPageAsync();
 }

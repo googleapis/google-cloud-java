@@ -23,7 +23,7 @@ import org.junit.Test;
 
 public class SubscriptionInfoTest {
 
-  private static final String TOPIC = "topic";
+  private static final TopicId TOPIC = TopicId.of("project", "topic");
   private static final String NAME = "subscription";
   private static final String ENDPOINT = "https://example.com/push";
   private static final PushConfig PUSH_CONFIG = PushConfig.of(ENDPOINT);
@@ -40,7 +40,7 @@ public class SubscriptionInfoTest {
         .topic("newTopic")
         .name("newSubscription")
         .build();
-    assertEquals("newTopic", subscriptionInfo.topic());
+    assertEquals(TopicId.of("newTopic"), subscriptionInfo.topic());
     assertEquals("newSubscription", subscriptionInfo.name());
     subscriptionInfo = subscriptionInfo.toBuilder().name(NAME).topic(TOPIC).build();
     compareSubscriptionInfo(SUBSCRIPTION_INFO, subscriptionInfo);
@@ -52,6 +52,23 @@ public class SubscriptionInfoTest {
     assertEquals(NAME, SUBSCRIPTION_INFO.name());
     assertEquals(PUSH_CONFIG, SUBSCRIPTION_INFO.pushConfig());
     assertEquals(ACK_DEADLINE, SUBSCRIPTION_INFO.ackDeadlineSeconds());
+    SubscriptionInfo subscriptionInfo = SubscriptionInfo.builder("topic", "subscription").build();
+    assertEquals(TopicId.of("topic"), subscriptionInfo.topic());
+    assertEquals(NAME, subscriptionInfo.name());
+    assertNull(subscriptionInfo.pushConfig());
+    assertEquals(0, subscriptionInfo.ackDeadlineSeconds());
+    subscriptionInfo = SubscriptionInfo.builder("topic", "subscription")
+        .topic("project", "topic").build();
+    assertEquals(TOPIC, subscriptionInfo.topic());
+    assertEquals(NAME, subscriptionInfo.name());
+    assertNull(subscriptionInfo.pushConfig());
+    assertEquals(0, subscriptionInfo.ackDeadlineSeconds());
+    subscriptionInfo = SubscriptionInfo.builder("topic", "subscription")
+        .topic(TOPIC).build();
+    assertEquals(TOPIC, subscriptionInfo.topic());
+    assertEquals(NAME, subscriptionInfo.name());
+    assertNull(subscriptionInfo.pushConfig());
+    assertEquals(0, subscriptionInfo.ackDeadlineSeconds());
   }
 
   @Test
@@ -61,8 +78,18 @@ public class SubscriptionInfoTest {
     assertEquals(NAME, subscriptionInfo.name());
     assertNull(subscriptionInfo.pushConfig());
     assertEquals(0, subscriptionInfo.ackDeadlineSeconds());
+    subscriptionInfo = SubscriptionInfo.of("topic", NAME);
+    assertEquals(TopicId.of("topic"), subscriptionInfo.topic());
+    assertEquals(NAME, subscriptionInfo.name());
+    assertNull(subscriptionInfo.pushConfig());
+    assertEquals(0, subscriptionInfo.ackDeadlineSeconds());
     subscriptionInfo = SubscriptionInfo.of(TOPIC, NAME, ENDPOINT);
     assertEquals(TOPIC, subscriptionInfo.topic());
+    assertEquals(NAME, subscriptionInfo.name());
+    assertEquals(PushConfig.of(ENDPOINT), subscriptionInfo.pushConfig());
+    assertEquals(0, subscriptionInfo.ackDeadlineSeconds());
+    subscriptionInfo = SubscriptionInfo.of("topic", NAME, ENDPOINT);
+    assertEquals(TopicId.of("topic"), subscriptionInfo.topic());
     assertEquals(NAME, subscriptionInfo.name());
     assertEquals(PushConfig.of(ENDPOINT), subscriptionInfo.pushConfig());
     assertEquals(0, subscriptionInfo.ackDeadlineSeconds());
@@ -75,9 +102,22 @@ public class SubscriptionInfoTest {
     SubscriptionInfo subscriptionInfo = SubscriptionInfo.of(TOPIC, NAME);
     compareSubscriptionInfo(subscriptionInfo,
         SubscriptionInfo.fromPb(subscriptionInfo.toPb("project")));
+    subscriptionInfo = SubscriptionInfo.of("topic", NAME);
+    compareSubscriptionInfo(SubscriptionInfo.of(TOPIC, NAME),
+        SubscriptionInfo.fromPb(subscriptionInfo.toPb("project")));
     subscriptionInfo = SubscriptionInfo.of(TOPIC, NAME, ENDPOINT);
     compareSubscriptionInfo(subscriptionInfo,
         SubscriptionInfo.fromPb(subscriptionInfo.toPb("project")));
+    subscriptionInfo = SubscriptionInfo.of("topic", NAME, ENDPOINT);
+    compareSubscriptionInfo(SubscriptionInfo.of(TOPIC, NAME, ENDPOINT),
+        SubscriptionInfo.fromPb(subscriptionInfo.toPb("project")));
+    com.google.pubsub.v1.Subscription subscription = SUBSCRIPTION_INFO.toPb("project");
+    subscriptionInfo =
+        SubscriptionInfo.fromPb(subscription.toBuilder().setTopic("_deleted_topic_").build());
+    assertEquals(TopicId.deletedTopic(), subscriptionInfo.topic());
+    assertEquals(NAME, subscriptionInfo.name());
+    assertEquals(PUSH_CONFIG, subscriptionInfo.pushConfig());
+    assertEquals(ACK_DEADLINE, subscriptionInfo.ackDeadlineSeconds());
   }
 
   private void compareSubscriptionInfo(SubscriptionInfo expected, SubscriptionInfo value) {

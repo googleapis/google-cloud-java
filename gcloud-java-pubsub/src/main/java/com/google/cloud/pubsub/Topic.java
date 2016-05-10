@@ -133,11 +133,11 @@ public class Topic extends TopicInfo {
     return pubsub.publishAsync(name(), messages);
   }
 
-  public Page<Subscription> listSubscriptions(ListOption... options) {
+  public Page<SubscriptionId> listSubscriptions(ListOption... options) {
     return pubsub.listSubscriptions(name(), options);
   }
 
-  public Future<AsyncPage<Subscription>> listSubscriptionsAsync(ListOption... options) {
+  public Future<AsyncPage<SubscriptionId>> listSubscriptionsAsync(ListOption... options) {
     return pubsub.listSubscriptionsAsync(name(), options);
   }
 

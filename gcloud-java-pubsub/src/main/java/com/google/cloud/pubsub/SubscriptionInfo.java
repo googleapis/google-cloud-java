@@ -18,7 +18,6 @@ package com.google.cloud.pubsub;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
-import com.google.cloud.pubsub.spi.v1.PublisherApi;
 import com.google.cloud.pubsub.spi.v1.SubscriberApi;
 import com.google.common.base.MoreObjects;
 
@@ -53,7 +52,7 @@ public class SubscriptionInfo implements Serializable {
   private static final long serialVersionUID = 1860057426574127128L;
 
   private final String name;
-  private final String topic;
+  private final TopicId topic;
   private final PushConfig pushConfig;
   private final int ackDeadlineSeconds;
 
@@ -72,9 +71,22 @@ public class SubscriptionInfo implements Serializable {
     public abstract Builder name(String name);
 
     /**
-     * Sets the name of the topic the subscription refers to.
+     * Sets the topic the subscription refers to, given the topic name. The topic is assumed to
+     * reside in the {@link PubSubOptions#projectId()} project.
      */
-    public abstract Builder topic(String name);
+    public abstract Builder topic(String topic);
+
+    /**
+     * Sets the topic the subscription refers to, given the project and topic names.
+     */
+    public abstract Builder topic(String project, String topic);
+
+    /**
+     * Sets the topic the subscription refers to, given the topic identity. If
+     * {@code topic.project()} is {@code null} the topic is assumed to reside in the
+     * {@link PubSubOptions#projectId()} project.
+     */
+    public abstract Builder topic(TopicId topic);
 
     /**
      * Sets the push configuration for the subscription. If set, the subscription will be in
@@ -104,11 +116,11 @@ public class SubscriptionInfo implements Serializable {
   static final class BuilderImpl extends Builder {
 
     private String name;
-    private String topic;
+    private TopicId topic;
     private PushConfig pushConfig;
     private int ackDeadlineSeconds;
 
-    private BuilderImpl(String topic, String name) {
+    private BuilderImpl(TopicId topic, String name) {
       this.topic = checkNotNull(topic);
       this.name = checkNotNull(name);
     }
@@ -127,7 +139,17 @@ public class SubscriptionInfo implements Serializable {
     }
 
     @Override
+    public Builder topic(String project, String topic) {
+      return topic(TopicId.of(checkNotNull(project), topic));
+    }
+
+    @Override
     public Builder topic(String topic) {
+      return topic(TopicId.of(topic));
+    }
+
+    @Override
+    public Builder topic(TopicId topic) {
       this.topic = checkNotNull(topic);
       return this;
     }
@@ -158,9 +180,12 @@ public class SubscriptionInfo implements Serializable {
   }
 
   /**
-   * Returns the name of the topic this subscription refers to.
+   * Returns the identity of the topic this subscription refers to. If {@link TopicId#project()} is
+   * {@code null} the topic is assumed to reside in the {@link PubSubOptions#projectId()} project.
+   * After a topic is deleted, existing subscriptions to that topic are not deleted, but their topic
+   * field is set to {@link TopicId#deletedTopic()}.
    */
-  public String topic() {
+  public TopicId topic() {
     return topic;
   }
 
@@ -231,7 +256,7 @@ public class SubscriptionInfo implements Serializable {
   com.google.pubsub.v1.Subscription toPb(String projectId) {
     com.google.pubsub.v1.Subscription.Builder builder =
         com.google.pubsub.v1.Subscription.newBuilder();
-    builder.setTopic(PublisherApi.formatTopicName(projectId, topic));
+    builder.setTopic(topic.toPb(projectId));
     builder.setName(SubscriberApi.formatSubscriptionName(projectId, name));
     builder.setAckDeadlineSeconds(ackDeadlineSeconds);
     if (pushConfig != null) {
@@ -241,7 +266,7 @@ public class SubscriptionInfo implements Serializable {
   }
 
   static SubscriptionInfo fromPb(com.google.pubsub.v1.Subscription subscription) {
-    Builder builder = builder(PublisherApi.parseTopicFromTopicName(subscription.getTopic()),
+    Builder builder = builder(TopicId.fromPb(subscription.getTopic()),
         SubscriberApi.parseSubscriptionFromSubscriptionName(subscription.getName()));
     builder.ackDeadLineSeconds(subscription.getAckDeadlineSeconds());
     // A subscription with an "empty" push config is a pull subscription
@@ -261,29 +286,46 @@ public class SubscriptionInfo implements Serializable {
 
   /**
    * Creates a pull {@code SubscriptionInfo} object given the name of the topic and the name of the
-   * subscription.
+   * subscription. The topic is assumed to reside in the {@link PubSubOptions#projectId()} project.
    *
    * @param topic the name of the topic the subscription refers to
    * @param name the name of the subscription. The name must start with a letter, and contain only
    *     letters ({@code [A-Za-z]}), numbers ({@code [0-9]}), dashes ({@code -}), underscores
    *     ({@code _}), periods ({@code .}), tildes ({@code ~}), plus ({@code +}) or percent signs
    *     ({@code %}). It must be between 3 and 255 characters in length and cannot begin with the
-   *     string {@code goog}
+   *     string {@code goog}.
    */
   public static SubscriptionInfo of(String topic, String name) {
     return builder(topic, name).build();
   }
 
   /**
+   * Creates a pull {@code SubscriptionInfo} object given the identity of the topic and the name of
+   * the subscription. If {@code topic.project()} is {@code null} the topic is assumed to reside in
+   * the {@link PubSubOptions#projectId()} project.
+   *
+   * @param topic the identity of the topic the subscription refers to
+   * @param name the name of the subscription. The name must start with a letter, and contain only
+   *     letters ({@code [A-Za-z]}), numbers ({@code [0-9]}), dashes ({@code -}), underscores
+   *     ({@code _}), periods ({@code .}), tildes ({@code ~}), plus ({@code +}) or percent signs
+   *     ({@code %}). It must be between 3 and 255 characters in length and cannot begin with the
+   *     string {@code goog}.
+   */
+  public static SubscriptionInfo of(TopicId topic, String name) {
+    return builder(topic, name).build();
+  }
+
+  /**
    * Creates a push {@code SubscriptionInfo} object given the name of the topic, the name of the
-   * subscription and the push endpoint.
+   * subscription and the push endpoint. The topic is assumed to reside in the
+   * {@link PubSubOptions#projectId()} project.
    *
    * @param topic the name of the topic the subscription refers to
    * @param name the name of the subscription. The name must start with a letter, and contain only
    *     letters ({@code [A-Za-z]}), numbers ({@code [0-9]}), dashes ({@code -}), underscores
    *     ({@code _}), periods ({@code .}), tildes ({@code ~}), plus ({@code +}) or percent signs
    *     ({@code %}). It must be between 3 and 255 characters in length and cannot begin with the
-   *     string {@code goog}
+   *     string {@code goog}.
    * @param endpoint a URL locating the endpoint to which messages should be pushed. For example,
    *     an endpoint might use {@code https://example.com/push}.
    */
@@ -292,17 +334,52 @@ public class SubscriptionInfo implements Serializable {
   }
 
   /**
+   * Creates a push {@code SubscriptionInfo} object given the identity of the topic, the name of the
+   * subscription and the push endpoint. If {@code topic.project()} is {@code null} the topic is
+   * assumed to reside in the {@link PubSubOptions#projectId()} project.
+   *
+   * @param topic the identity of the topic the subscription refers to
+   * @param name the name of the subscription. The name must start with a letter, and contain only
+   *     letters ({@code [A-Za-z]}), numbers ({@code [0-9]}), dashes ({@code -}), underscores
+   *     ({@code _}), periods ({@code .}), tildes ({@code ~}), plus ({@code +}) or percent signs
+   *     ({@code %}). It must be between 3 and 255 characters in length and cannot begin with the
+   *     string {@code goog}.
+   * @param endpoint a URL locating the endpoint to which messages should be pushed. For example,
+   *     an endpoint might use {@code https://example.com/push}.
+   */
+  public static SubscriptionInfo of(TopicId topic, String name, String endpoint) {
+    return builder(topic, name).pushConfig(PushConfig.of(endpoint)).build();
+  }
+
+  /**
    * Creates a builder for {@code SubscriptionInfo} objects given the name of the topic and the name
-   * of the subscription.
+   * of the subscription. The topic is assumed to reside in the {@link PubSubOptions#projectId()}
+   * project.
    *
    * @param topic the name of the topic the subscription refers to
    * @param name the name of the subscription. The name must start with a letter, and contain only
    *     letters ({@code [A-Za-z]}), numbers ({@code [0-9]}), dashes ({@code -}), underscores
    *     ({@code _}), periods ({@code .}), tildes ({@code ~}), plus ({@code +}) or percent signs
    *     ({@code %}). It must be between 3 and 255 characters in length and cannot begin with the
-   *     string {@code goog}
+   *     string {@code goog}.
    */
   public static Builder builder(String topic, String name) {
+    return builder(TopicId.of(topic), name);
+  }
+
+  /**
+   * Creates a builder for {@code SubscriptionInfo} objects given the identity of the topic and the
+   * name of the subscription. If {@code topic.project()} is {@code null} the topic is assumed to
+   * reside in the {@link PubSubOptions#projectId()} project.
+   *
+   * @param topic the identity of the topic the subscription refers to
+   * @param name the name of the subscription. The name must start with a letter, and contain only
+   *     letters ({@code [A-Za-z]}), numbers ({@code [0-9]}), dashes ({@code -}), underscores
+   *     ({@code _}), periods ({@code .}), tildes ({@code ~}), plus ({@code +}) or percent signs
+   *     ({@code %}). It must be between 3 and 255 characters in length and cannot begin with the
+   *     string {@code goog}.
+   */
+  public static Builder builder(TopicId topic, String name) {
     return new BuilderImpl(topic, name);
   }
 }

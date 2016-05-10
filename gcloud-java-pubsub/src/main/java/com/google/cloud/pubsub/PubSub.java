@@ -194,9 +194,9 @@ public interface PubSub extends Service<PubSubOptions> {
 
   Future<AsyncPage<Subscription>> listSubscriptionsAsync(ListOption... options);
 
-  Page<Subscription> listSubscriptions(String topic, ListOption... options);
+  Page<SubscriptionId> listSubscriptions(String topic, ListOption... options);
 
-  Future<AsyncPage<Subscription>> listSubscriptionsAsync(String topic, ListOption... options);
+  Future<AsyncPage<SubscriptionId>> listSubscriptionsAsync(String topic, ListOption... options);
 
   Iterator<ReceivedMessage> pull(String subscription, PullOption... options);
 
