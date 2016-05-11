@@ -151,16 +151,16 @@ public class Subscription extends SubscriptionInfo {
     return pubsub.replacePushConfigAsync(name(), pushConfig);
   }
 
-  public Iterator<ReceivedMessage> pull(PullOption... options) {
-    return pubsub.pull(name(), options);
+  public Iterator<ReceivedMessage> pull(int maxMessages) {
+    return pubsub.pull(name(), maxMessages);
   }
 
-  public Future<Iterator<ReceivedMessage>> pullAsync(PullOption... options) {
-    return pubsub.pullAsync(name(), options);
+  public Future<Iterator<ReceivedMessage>> pullAsync(int maxMessages) {
+    return pubsub.pullAsync(name(), maxMessages);
   }
 
-  public MessageConsumer pullAsync(MessageProcessor callback) {
-    return pubsub.pullAsync(name(), callback);
+  public MessageConsumer pullAsync(MessageProcessor callback, PullOption... options) {
+    return pubsub.pullAsync(name(), callback, options);
   }
 
   private void readObject(ObjectInputStream input) throws IOException, ClassNotFoundException {
