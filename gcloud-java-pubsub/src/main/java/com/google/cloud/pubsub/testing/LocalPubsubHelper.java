@@ -19,10 +19,9 @@ package com.google.cloud.pubsub.testing;
 import com.google.api.gax.testing.DownloadableEmulatorRunner;
 import com.google.api.gax.testing.GCloudEmulatorRunner;
 import com.google.api.gax.testing.LocalServiceHelper;
-
-import io.grpc.ManagedChannel;
-import io.grpc.netty.NegotiationType;
-import io.grpc.netty.NettyChannelBuilder;
+import com.google.cloud.AuthCredentials;
+import com.google.cloud.RetryParams;
+import com.google.cloud.pubsub.PubSubOptions;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -30,6 +29,11 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.UUID;
+
+import io.grpc.ManagedChannel;
+import io.grpc.netty.NegotiationType;
+import io.grpc.netty.NettyChannelBuilder;
 
 /**
  * A class that runs a Pubsub emulator instance for use in tests.
@@ -38,11 +42,13 @@ public class LocalPubsubHelper {
 
   private final int port;
   private final LocalServiceHelper serviceHelper;
+  private final String projectId;
 
   // Local server settings
   private static final int DEFAULT_PORT = 8080;
   private static final String DEFAULT_HOST = "localhost";
   private static final URL EMULATOR_URL;
+  private static final String PROJECT_ID_PREFIX = "test-project-";
 
   // GCloud emulator settings
   private static final String GCLOUD_CMD_TEXT = "gcloud beta emulators pubsub start";
@@ -77,8 +83,8 @@ public class LocalPubsubHelper {
     DownloadableEmulatorRunner downloadRunner =
         new DownloadableEmulatorRunner(Arrays.asList(BIN_NAME, BIN_CMD_PORT_FLAG + port),
             EMULATOR_URL, MD5_CHECKSUM);
-    serviceHelper =
-        new LocalServiceHelper(Arrays.asList(gcloudRunner, downloadRunner), port);
+    serviceHelper = new LocalServiceHelper(Arrays.asList(gcloudRunner, downloadRunner), port);
+    projectId = PROJECT_ID_PREFIX + UUID.randomUUID().toString();
   }
 
   /**
@@ -119,6 +125,19 @@ public class LocalPubsubHelper {
   public ManagedChannel createChannel() {
     return NettyChannelBuilder.forAddress(DEFAULT_HOST, port)
         .negotiationType(NegotiationType.PLAINTEXT)
+        .build();
+  }
+
+  /**
+   * Returns a {@link PubSubOptions} instance that sets the host to use the PubSub emulator on
+   * localhost.
+   */
+  public PubSubOptions options() {
+    return PubSubOptions.builder()
+        .projectId(projectId)
+        .host("localhost:" + port)
+        .authCredentials(AuthCredentials.noAuth())
+        .retryParams(RetryParams.noRetries())
         .build();
   }
 }
