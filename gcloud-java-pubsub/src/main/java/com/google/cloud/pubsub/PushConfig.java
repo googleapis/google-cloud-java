@@ -27,7 +27,16 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * PubSub subscription push configuration.
+ * Google Cloud Pub/Sub configuration for a push subscription.
+ *
+ * <p>In a push subscription, the Pub/Sub server sends a request to the subscriber application. A
+ * {@code PushConfig} object can be used to configure the application endpoint. The subscriber's
+ * HTTP response serves as an implicit acknowledgement: a success response indicates that the
+ * message has been succesfully processed and the Pub/Sub system can delete it from the
+ * subscription; a non-success response indicates that the Pub/Sub server should resend it
+ * (implicit "nack").
+ *
+ * @see <a href="https://cloud.google.com/pubsub/subscriber">Subscriber Guide</a>
  */
 public final class PushConfig implements Serializable {
 
@@ -36,34 +45,97 @@ public final class PushConfig implements Serializable {
   private final String endpoint;
   private final ImmutableMap<String, String> attributes;
 
+  /**
+   * Builder for {@code PushConfig} objects.
+   */
   public static final class Builder {
 
     private String endpoint;
-    private final Map<String, String> attributes = new HashMap<>();
+    private Map<String, String> attributes = new HashMap<>();
 
     private Builder() {
     }
 
-    public Builder endPoint(String endpoint) {
+    /**
+     * Sets the URL locating the endpoint to which messages should be pushed. For example, an
+     * endpoint might use {@code https://example.com/push}.
+     */
+    public Builder endpoint(String endpoint) {
       this.endpoint = checkNotNull(endpoint);
       return this;
     }
 
+    /**
+     * Adds an API-supported attribute that can be used to control different aspects of the message
+     * delivery.
+     *
+     * <p>The currently supported attribute is {@code x-goog-version}, which can be used to change
+     * the format of the push message. This attribute indicates the version of the data expected by
+     * the endpoint. The endpoint version is based on the version of the Pub/Sub API. Possible
+     * values for this attribute are:
+     * <ul>
+     *   <li>{@code v1beta1}: uses the push format defined in the v1beta1 Pub/Sub API
+     *   <li>{@code v1} or {@code v1beta2}: uses the push format defined in the v1 Pub/Sub API
+     * </ul>
+     *
+     * <p>If the {@code x-goog-version} attribute is not present when a subscription is created (see
+     * {@link PubSub#create(SubscriptionInfo)} and {@link PubSub#createAsync(SubscriptionInfo)}), it
+     * will default to {@code v1}. If it is not present when modifying the push config (see
+     * {@link PubSub#replacePushConfig(String, PushConfig)} and
+     * {@link PubSub#replacePushConfigAsync(String, PushConfig)}), its value will not be changed.
+     *
+     * @see <a href="https://cloud.google.com/pubsub/subscriber#msg-format">Message Format</a>
+     */
     public Builder addAttribute(String name, String value) {
       attributes.put(name, value);
       return this;
     }
 
+    /**
+     * Sets the API-supported attributes that can be used to control different aspects of the
+     * message delivery.
+     *
+     * <p>The currently supported attribute is {@code x-goog-version}, which can be used to change
+     * the format of the push message. This attribute indicates the version of the data expected by
+     * the endpoint. The endpoint version is based on the version of the Pub/Sub API. Possible
+     * values for this attribute are:
+     * <ul>
+     *   <li>{@code v1beta1}: uses the push format defined in the v1beta1 Pub/Sub API
+     *   <li>{@code v1} or {@code v1beta2}: uses the push format defined in the v1 Pub/Sub API
+     * </ul>
+     *
+     * <p>If the {@code x-goog-version} attribute is not present when a subscription is created (see
+     * {@link PubSub#create(SubscriptionInfo)} and {@link PubSub#createAsync(SubscriptionInfo)}), it
+     * will default to {@code v1}. If it is not present when modifying the push config (see
+     * {@link PubSub#replacePushConfig(String, PushConfig)} and
+     * {@link PubSub#replacePushConfigAsync(String, PushConfig)}), its value will not be changed.
+     *
+     * @see <a href="https://cloud.google.com/pubsub/subscriber#msg-format">Message Format</a>
+     */
+    public Builder attributes(Map<String, String> attributes) {
+      this.attributes = new HashMap<>(attributes);
+      return this;
+    }
+
+    /**
+     * Removes an API-supported attribute.
+     */
     public Builder removeAttribute(String name) {
       attributes.remove(name);
       return this;
     }
 
+    /**
+     * Clears all API-supported attributes.
+     */
     public Builder clearAttributes() {
       attributes.clear();
       return this;
     }
 
+    /**
+     * Creates a {@code PushConfig} object.
+     */
     public PushConfig build() {
       return new PushConfig(this);
     }
@@ -74,24 +146,49 @@ public final class PushConfig implements Serializable {
     attributes = ImmutableMap.copyOf(builder.attributes);
   }
 
+  /**
+   * Returns the URL locating the endpoint to which messages should be pushed. For example, an
+   * endpoint might use {@code https://example.com/push}.
+   */
   public String endpoint() {
     return endpoint;
   }
 
+  /**
+   * Returns the API-supported attributes that can be used to control different aspects of the
+   * message delivery.
+   *
+   * <p>The currently supported attribute is {@code x-goog-version}, which can be used to change
+   * the format of the push message. This attribute indicates the version of the data expected by
+   * the endpoint. The endpoint version is based on the version of the Pub/Sub API. Possible
+   * values for this attribute are:
+   * <ul>
+   *   <li>{@code v1beta1}: uses the push format defined in the v1beta1 Pub/Sub API
+   *   <li>{@code v1} or {@code v1beta2}: uses the push format defined in the v1 Pub/Sub API
+   * </ul>
+   *
+   * <p>If the {@code x-goog-version} attribute is not present when a subscription is created (see
+   * {@link PubSub#create(SubscriptionInfo)} and {@link PubSub#createAsync(SubscriptionInfo)}), it
+   * will default to {@code v1}. If it is not present when modifying the push config (see
+   * {@link PubSub#replacePushConfig(String, PushConfig)} and
+   * {@link PubSub#replacePushConfigAsync(String, PushConfig)}), its value will not be changed.
+   *
+   * @see <a href="https://cloud.google.com/pubsub/subscriber#msg-format">Message Format</a>
+   */
   public Map<String, String> attributes() {
     return attributes;
   }
 
   @Override
-  public boolean equals(Object o) {
-    if (this == o) {
+  public boolean equals(Object obj) {
+    if (this == obj) {
       return true;
     }
-    if (o == null || getClass() != o.getClass()) {
+    if (!(obj instanceof PushConfig)) {
       return false;
     }
-    PushConfig that = (PushConfig) o;
-    return Objects.equals(endpoint, that.endpoint) && Objects.equals(attributes, that.attributes);
+    PushConfig other = (PushConfig) obj;
+    return Objects.equals(endpoint, other.endpoint) && Objects.equals(attributes, other.attributes);
   }
 
   @Override
@@ -107,28 +204,57 @@ public final class PushConfig implements Serializable {
         .toString();
   }
 
+  /**
+   * Returns a builder for the {@code PushConfig} object.
+   */
   public Builder toBuilder() {
     return builder(endpoint, attributes);
   }
 
+  /**
+   * Creates a {@code PushConfig} object given the push endpoint.
+   *
+   * @param endpoint the URL locating the endpoint to which messages should be pushed. For example,
+   *     an endpoint might use {@code https://example.com/push}.
+   */
   public static PushConfig of(String endpoint) {
     return builder(endpoint).build();
   }
 
+  /**
+   * Creates a {@code PushConfig} object given the push endpoint and the API-supported attributes
+   * that can be used to control different aspects of the message delivery.
+   *
+   * @param endpoint the URL locating the endpoint to which messages should be pushed. For example,
+   *     an endpoint might use {@code https://example.com/push}.
+   * @param attributes API supported attributes used to control message delivery. See
+   *     {@link Builder#attributes(Map)} for more details.
+   */
   public static PushConfig of(String endpoint, Map<String, String> attributes) {
     return builder(endpoint, attributes).build();
   }
 
-  public static Builder builder(String endPoint) {
-    return new Builder().endPoint(endPoint);
+  /**
+   * Creates a builder for {@code PushConfig} objects given the push endpoint.
+   *
+   * @param endpoint the URL locating the endpoint to which messages should be pushed. For example,
+   *     an endpoint might use {@code https://example.com/push}.
+   */
+  public static Builder builder(String endpoint) {
+    return new Builder().endpoint(endpoint);
   }
 
+  /**
+   * Creates a builder for {@code PushConfig} objects given the push endpoint and the API-supported
+   * attributes that can be used to control different aspects of the message delivery.
+   *
+   * @param endpoint the URL locating the endpoint to which messages should be pushed. For example,
+   *     an endpoint might use {@code https://example.com/push}.
+   * @param attributes API supported attributes used to control message delivery. See
+   *     {@link Builder#attributes(Map)} for more details.
+   */
   public static Builder builder(String endpoint, Map<String, String> attributes) {
-    Builder builder = builder(endpoint);
-    for (Map.Entry<String, String> entry : attributes.entrySet()) {
-      builder.addAttribute(entry.getKey(), entry.getValue());
-    }
-    return builder;
+    return builder(endpoint).attributes(attributes);
   }
 
   com.google.pubsub.v1.PushConfig toPb() {
