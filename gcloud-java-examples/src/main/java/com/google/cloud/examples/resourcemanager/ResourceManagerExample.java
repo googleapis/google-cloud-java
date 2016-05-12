@@ -90,9 +90,9 @@ public class ResourceManagerExample {
       Scanner scanner = new Scanner(System.in);
       if (scanner.nextLine().toLowerCase().equals("y")) {
         resourceManager.delete(projectId);
-        System.out.println("Successfully deleted project " + projectId + ".");
+        System.out.printf("Successfully deleted project %s.%n", projectId);
       } else {
-        System.out.println("Will not delete project " + projectId + ".");
+        System.out.printf("Will not delete project %s.%n", projectId);
       }
       scanner.close();
     }

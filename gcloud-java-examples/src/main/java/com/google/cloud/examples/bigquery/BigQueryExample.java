@@ -108,7 +108,7 @@ public class BigQueryExample {
 
   private abstract static class BigQueryAction<T> {
 
-    abstract void run(BigQuery bigquery, T request) throws Exception;
+    abstract void run(BigQuery bigquery, T arg) throws Exception;
 
     abstract T parse(String... args) throws Exception;
 
@@ -775,18 +775,18 @@ public class BigQueryExample {
       return;
     }
     BigQuery bigquery = optionsBuilder.build().service();
-    Object request;
+    Object arg;
     try {
-      request = action.parse(args);
+      arg = action.parse(args);
     } catch (IllegalArgumentException ex) {
-      System.out.println("Invalid input for action '" + actionName + "'. " + ex.getMessage());
-      System.out.println("Expected: " + action.params());
+      System.out.printf("Invalid input for action '%s'. %s%n", actionName, ex.getMessage());
+      System.out.printf("Expected: %s%n", action.params());
       return;
     } catch (Exception ex) {
-      System.out.println("Failed to parse request.");
+      System.out.println("Failed to parse arguments.");
       ex.printStackTrace();
       return;
     }
-    action.run(bigquery, request);
+    action.run(bigquery, arg);
   }
 }

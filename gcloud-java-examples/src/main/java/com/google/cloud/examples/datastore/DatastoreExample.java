@@ -66,7 +66,7 @@ public class DatastoreExample {
 
   private abstract static class DatastoreAction<T> {
 
-    abstract void run(Transaction tx, Key userKey, T request) throws Exception;
+    abstract void run(Transaction tx, Key userKey, T arg) throws Exception;
 
     abstract T parse(String... args) throws Exception;
 
@@ -81,7 +81,7 @@ public class DatastoreExample {
    */
   private static class DeleteAction extends DatastoreAction<Void> {
     @Override
-    public void run(Transaction tx, Key userKey, Void request) {
+    public void run(Transaction tx, Key userKey, Void arg) {
       Entity user = tx.get(userKey);
       if (user == null) {
         System.out.println("Nothing to delete, user does not exist.");
@@ -114,17 +114,18 @@ public class DatastoreExample {
    */
   private static class DisplayAction extends DatastoreAction<Void> {
     @Override
-    public void run(Transaction tx, Key userKey, Void request) {
+    public void run(Transaction tx, Key userKey, Void arg) {
       Entity user = tx.get(userKey);
       if (user == null) {
-        System.out.println("User '" + userKey.name() + "' does not exist.");
+        System.out.printf("User '%s' does not exist.%n", userKey.name());
         return;
       }
       if (user.contains("contact")) {
         FullEntity<IncompleteKey> contact = user.getEntity("contact");
         String email = contact.getString("email");
         String phone = contact.getString("phone");
-        System.out.printf("User '%s' email is '%s', phone is '%s'%n", userKey.name(), email, phone);
+        System.out.printf("User '%s' email is '%s', phone is '%s'.%n",
+            userKey.name(), email, phone);
       }
       System.out.printf("User '%s' has %d comment[s].%n", userKey.name(), user.getLong("count"));
       int limit = 200;
@@ -172,7 +173,7 @@ public class DatastoreExample {
       Entity user = tx.get(userKey);
       if (user == null) {
         System.out.println("Adding a new user.");
-        user = Entity.builder(userKey).set("count", 1L).build();
+        user = Entity.builder(userKey).set("count", 1).build();
         tx.add(user);
       } else {
         user = Entity.builder(user).set("count", user.getLong("count") + 1L).build();
@@ -184,7 +185,7 @@ public class DatastoreExample {
           .set("timestamp", DateTime.now())
           .build();
       tx.addWithDeferredIdAllocation(comment);
-      System.out.println("Adding a comment to user '" + userKey.name() + "'.");
+      System.out.printf("Adding a comment to user '%s'.%n", userKey.name());
     }
 
     @Override
@@ -245,7 +246,7 @@ public class DatastoreExample {
           .set("phone", contact.phone())
           .build();
       tx.update(Entity.builder(user).set("contact", contactEntity).build());
-      System.out.println("Setting contact for user '" + userKey.name() + "'.");
+      System.out.printf("Setting contact for user '%s'.%n", userKey.name());
     }
 
     @Override
@@ -281,7 +282,7 @@ public class DatastoreExample {
 
       String param = entry.getValue().params();
       if (param != null && !param.isEmpty()) {
-        actionAndParams.append(' ').append(param.replace("\n", "\n\t\t"));
+        actionAndParams.append(' ').append(param);
       }
     }
     System.out.printf("Usage: %s <project_id> <user> operation <args>*%s%n",
@@ -316,8 +317,8 @@ public class DatastoreExample {
     try {
       request = action.parse(args);
     } catch (IllegalArgumentException ex) {
-      System.out.println("Invalid input for action '" + actionName + "'. " + ex.getMessage());
-      System.out.println("Expected: " + action.params());
+      System.out.printf("Invalid input for action '%s'. %s%n", actionName, ex.getMessage());
+      System.out.printf("Expected: %s%n", action.params());
       return;
     } catch (Exception ex) {
       System.out.println("Failed to parse request.");

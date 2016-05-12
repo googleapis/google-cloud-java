@@ -199,7 +199,7 @@ public class ComputeExample {
 
   private abstract static class ComputeAction<T> {
 
-    abstract void run(Compute compute, T request) throws Exception;
+    abstract void run(Compute compute, T arg) throws Exception;
 
     abstract T parse(String... args) throws Exception;
 
@@ -332,7 +332,7 @@ public class ComputeExample {
   private static class DiskTypeInfoAction extends ComputeAction<DiskTypeId> {
     @Override
     public void run(Compute compute, DiskTypeId diskType) {
-      System.out.println("Disk type info: " + compute.getDiskType(diskType));
+      System.out.printf("Disk type info: %s%n", compute.getDiskType(diskType));
     }
 
     @Override
@@ -387,7 +387,7 @@ public class ComputeExample {
   private static class MachineTypeInfoAction extends ComputeAction<MachineTypeId> {
     @Override
     public void run(Compute compute, MachineTypeId machineType) {
-      System.out.println("Machine type info: " + compute.getMachineType(machineType));
+      System.out.printf("Machine type info: %s%n", compute.getMachineType(machineType));
     }
 
     @Override
@@ -434,7 +434,7 @@ public class ComputeExample {
   private static class RegionInfoAction extends ComputeAction<RegionId> {
     @Override
     public void run(Compute compute, RegionId region) {
-      System.out.println("Region info: " + compute.getRegion(region.region()));
+      System.out.printf("Region info: %s%n", compute.getRegion(region.region()));
     }
 
     @Override
@@ -480,7 +480,7 @@ public class ComputeExample {
   private static class ZoneInfoAction extends ComputeAction<ZoneId> {
     @Override
     public void run(Compute compute, ZoneId zone) {
-      System.out.println("Zone info: " + compute.getZone(zone.zone()));
+      System.out.printf("Zone info: %s%n", compute.getZone(zone.zone()));
     }
 
     @Override
@@ -511,7 +511,7 @@ public class ComputeExample {
   private static class LicenseInfoAction extends ComputeAction<LicenseId> {
     @Override
     public void run(Compute compute, LicenseId license) {
-      System.out.println("License info: " + compute.getLicense(license.license()));
+      System.out.printf("License info: %s%n", compute.getLicense(license.license()));
     }
 
     @Override
@@ -687,7 +687,7 @@ public class ComputeExample {
   private static class GlobalOperationInfoAction extends GlobalOperationAction {
     @Override
     public void run(Compute compute, GlobalOperationId operation) {
-      System.out.println("Operation info: " + compute.getOperation(operation));
+      System.out.printf("Operation info: %s%n", compute.getOperation(operation));
     }
   }
 
@@ -700,7 +700,7 @@ public class ComputeExample {
   private static class ZoneOperationInfoAction extends ZoneOperationAction {
     @Override
     public void run(Compute compute, ZoneOperationId operation) {
-      System.out.println("Operation info: " + compute.getOperation(operation));
+      System.out.printf("Operation info: %s%n", compute.getOperation(operation));
     }
   }
 
@@ -713,7 +713,7 @@ public class ComputeExample {
   private static class RegionOperationInfoAction extends RegionOperationAction {
     @Override
     public void run(Compute compute, RegionOperationId operation) {
-      System.out.println("Operation info: " + compute.getOperation(operation));
+      System.out.printf("Operation info: %s%n", compute.getOperation(operation));
     }
   }
 
@@ -727,9 +727,9 @@ public class ComputeExample {
     @Override
     public void run(Compute compute, GlobalOperationId operation) {
       if (compute.deleteOperation(operation)) {
-        System.out.println("Operation " + operation + " was deleted");
+        System.out.printf("Operation %s was deleted%n", operation);
       } else {
-        System.out.println("Operation " + operation + " not found");
+        System.out.printf("Operation %s not found%n", operation);
       }
     }
   }
@@ -744,9 +744,9 @@ public class ComputeExample {
     @Override
     public void run(Compute compute, ZoneOperationId operation) {
       if (compute.deleteOperation(operation)) {
-        System.out.println("Operation " + operation + " was deleted");
+        System.out.printf("Operation %s was deleted%n", operation);
       } else {
-        System.out.println("Operation " + operation + " not found");
+        System.out.printf("Operation %s not found%n", operation);
       }
     }
   }
@@ -761,9 +761,9 @@ public class ComputeExample {
     @Override
     public void run(Compute compute, RegionOperationId operation) {
       if (compute.deleteOperation(operation)) {
-        System.out.println("Operation " + operation + " was deleted");
+        System.out.printf("Operation %s was deleted%n", operation);
       } else {
-        System.out.println("Operation " + operation + " not found");
+        System.out.printf("Operation %s not found%n", operation);
       }
     }
   }
@@ -824,7 +824,7 @@ public class ComputeExample {
   private static class AddressInfoAction extends AddressAction {
     @Override
     public void run(Compute compute, AddressId address) {
-      System.out.println("Address info: " + compute.getAddress(address));
+      System.out.printf("Address info: %s%n", compute.getAddress(address));
     }
   }
 
@@ -841,20 +841,20 @@ public class ComputeExample {
     public void run(Compute compute, AddressId address) throws InterruptedException {
       Operation operation = compute.deleteAddress(address);
       if (operation == null) {
-        System.out.println("Address " + address + " does not exist");
+        System.out.printf("Address %s does not exist%n", address);
         return;
       }
       while (!operation.isDone()) {
-        System.out.println(
-            "Waiting for operation " + operation.operationId().operation() + " to complete");
+        System.out.printf(
+            "Waiting for operation %s to complete%n", operation.operationId().operation());
         Thread.sleep(1000L);
       }
       operation = operation.reload();
       if (operation.errors() == null) {
-        System.out.println("Address " + address + " was deleted");
+        System.out.printf("Address %s was deleted%n", address);
       } else {
-        System.out.println("Deletion of address " + address + " failed");
-        System.out.println("Error: " + operation.errors());
+        System.out.printf("Deletion of address %s failed%n", address);
+        System.out.printf("Error: %s%n", operation.errors());
       }
     }
   }
@@ -872,16 +872,16 @@ public class ComputeExample {
     public void run(Compute compute, AddressId address) throws InterruptedException {
       Operation operation = compute.create(AddressInfo.of(address));
       while (!operation.isDone()) {
-        System.out.println(
-            "Waiting for operation " + operation.operationId().operation() + " to complete");
+        System.out.printf(
+            "Waiting for operation %s to complete%n", operation.operationId().operation());
         Thread.sleep(1000L);
       }
       operation = operation.reload();
       if (operation.errors() == null) {
-        System.out.println("Address " + address + " was created");
+        System.out.printf("Address %s was created%n", address);
       } else {
-        System.out.println("Creation of address " + address + " failed");
-        System.out.println("Error: " + operation.errors());
+        System.out.printf("Creation of address %s failed%n", address);
+        System.out.printf("Error: %s%n", operation.errors());
       }
     }
   }
@@ -931,7 +931,7 @@ public class ComputeExample {
   private static class SnapshotInfoAction extends SnapshotAction {
     @Override
     public void run(Compute compute, SnapshotId snapshot) {
-      System.out.println("Snapshot info: " + compute.getSnapshot(snapshot.snapshot()));
+      System.out.printf("Snapshot info: %s%n", compute.getSnapshot(snapshot.snapshot()));
     }
   }
 
@@ -946,20 +946,20 @@ public class ComputeExample {
     public void run(Compute compute, SnapshotId snapshot) throws InterruptedException {
       Operation operation = compute.deleteSnapshot(snapshot.snapshot());
       if (operation == null) {
-        System.out.println("Snapshot " + snapshot + " does not exist");
+        System.out.printf("Snapshot %s does not exist%n", snapshot);
         return;
       }
       while (!operation.isDone()) {
-        System.out.println(
-            "Waiting for operation " + operation.operationId().operation() + " to complete");
+        System.out.printf(
+            "Waiting for operation %s to complete%n", operation.operationId().operation());
         Thread.sleep(1000L);
       }
       operation = operation.reload();
       if (operation.errors() == null) {
-        System.out.println("Snapshot " + snapshot + " was deleted");
+        System.out.printf("Snapshot %s was deleted%n", snapshot);
       } else {
-        System.out.println("Deletion of snapshot " + snapshot + " failed");
-        System.out.println("Error: " + operation.errors());
+        System.out.printf("Deletion of snapshot %s failed%n", snapshot);
+        System.out.printf("Error: %s%n", operation.errors());
       }
     }
   }
@@ -975,16 +975,16 @@ public class ComputeExample {
     public void run(Compute compute, SnapshotInfo snapshot) throws InterruptedException {
       Operation operation = compute.create(snapshot);
       while (!operation.isDone()) {
-        System.out.println(
-            "Waiting for operation " + operation.operationId().operation() + " to complete");
+        System.out.printf(
+            "Waiting for operation %s to complete%n", operation.operationId().operation());
         Thread.sleep(1000L);
       }
       operation = operation.reload();
       if (operation.errors() == null) {
-        System.out.println("Snapshot " + snapshot.snapshotId() + " was created");
+        System.out.printf("Snapshot %s was created%n", snapshot.snapshotId());
       } else {
-        System.out.println("Creation of snapshot " + snapshot.snapshotId() + " failed");
-        System.out.println("Error: " + operation.errors());
+        System.out.printf("Creation of snapshot %s failed%n", snapshot.snapshotId());
+        System.out.printf("Error: %s%n", operation.errors());
       }
     }
 
@@ -1055,7 +1055,7 @@ public class ComputeExample {
   private static class ImageInfoAction extends ImageAction {
     @Override
     public void run(Compute compute, ImageId image) {
-      System.out.println("Image info: " + compute.getImage(image));
+      System.out.printf("Image info: %s%n", compute.getImage(image));
     }
   }
 
@@ -1070,20 +1070,20 @@ public class ComputeExample {
     public void run(Compute compute, ImageId image) throws InterruptedException {
       Operation operation = compute.deleteImage(image);
       if (operation == null) {
-        System.out.println("Image " + image + " does not exist");
+        System.out.printf("Image %s does not exist%n", image);
         return;
       }
       while (!operation.isDone()) {
-        System.out.println(
-            "Waiting for operation " + operation.operationId().operation() + " to complete");
+        System.out.printf(
+            "Waiting for operation %s to complete%n", operation.operationId().operation());
         Thread.sleep(1000L);
       }
       operation = operation.reload();
       if (operation.errors() == null) {
-        System.out.println("Image " + image + " was deleted");
+        System.out.printf("Image %s was deleted%n", image);
       } else {
-        System.out.println("Deletion of image " + image + " failed");
-        System.out.println("Error: " + operation.errors());
+        System.out.printf("Deletion of image %s failed%n", image);
+        System.out.printf("Error: %s%n", operation.errors());
       }
     }
   }
@@ -1099,16 +1099,16 @@ public class ComputeExample {
     public void run(Compute compute, ImageInfo image) throws InterruptedException {
       Operation operation = compute.create(image);
       while (!operation.isDone()) {
-        System.out.println(
-            "Waiting for operation " + operation.operationId().operation() + " to complete");
+        System.out.printf(
+            "Waiting for operation %s to complete%n", operation.operationId().operation());
         Thread.sleep(1000L);
       }
       operation = operation.reload();
       if (operation.errors() == null) {
-        System.out.println("Image " + image.imageId() + " was created");
+        System.out.printf("Image %s was created%n", image.imageId());
       } else {
-        System.out.println("Creation of image " + image.imageId() + " failed");
-        System.out.println("Error: " + operation.errors());
+        System.out.printf("Creation of image %s failed%n", image.imageId());
+        System.out.printf("Error: %s%n", operation.errors());
       }
     }
 
@@ -1163,7 +1163,7 @@ public class ComputeExample {
   private static class DiskInfoAction extends DiskAction {
     @Override
     public void run(Compute compute, DiskId disk) {
-      System.out.println("Disk info: " + compute.getDisk(disk));
+      System.out.printf("Disk info: %s%n", compute.getDisk(disk));
     }
   }
 
@@ -1178,20 +1178,20 @@ public class ComputeExample {
     public void run(Compute compute, DiskId disk) throws InterruptedException {
       Operation operation = compute.deleteDisk(disk);
       if (operation == null) {
-        System.out.println("Disk " + disk + " does not exist");
+        System.out.printf("Disk %s does not exist%n", disk);
         return;
       }
       while (!operation.isDone()) {
-        System.out.println(
-            "Waiting for operation " + operation.operationId().operation() + " to complete");
+        System.out.printf(
+            "Waiting for operation %s to complete%n", operation.operationId().operation());
         Thread.sleep(1000L);
       }
       operation = operation.reload();
       if (operation.errors() == null) {
-        System.out.println("Disk " + disk + " was deleted");
+        System.out.printf("Disk %s was deleted%n", disk);
       } else {
-        System.out.println("Deletion of disk " + disk + " failed");
-        System.out.println("Error: " + operation.errors());
+        System.out.printf("Deletion of disk %s failed%n", disk);
+        System.out.printf("Error: %s%n", operation.errors());
       }
     }
   }
@@ -1217,16 +1217,16 @@ public class ComputeExample {
     public void run(Compute compute, DiskInfo disk) throws InterruptedException {
       Operation operation = compute.create(disk);
       while (!operation.isDone()) {
-        System.out.println(
-            "Waiting for operation " + operation.operationId().operation() + " to complete");
+        System.out.printf(
+            "Waiting for operation %s to complete%n", operation.operationId().operation());
         Thread.sleep(1000L);
       }
       operation = operation.reload();
       if (operation.errors() == null) {
-        System.out.println("Disk " + disk.diskId() + " was created");
+        System.out.printf("Disk %s was created%n", disk.diskId());
       } else {
-        System.out.println("Creation of disk " + disk.diskId() + " failed");
-        System.out.println("Error: " + operation.errors());
+        System.out.printf("Creation of disk %s failed%n", disk.diskId());
+        System.out.printf("Error: %s%n", operation.errors());
       }
     }
 
@@ -1370,7 +1370,7 @@ public class ComputeExample {
   private static class NetworkInfoAction extends NetworkAction {
     @Override
     public void run(Compute compute, NetworkId network) {
-      System.out.println("Network info: " + compute.getNetwork(network.network()));
+      System.out.printf("Network info: %s%n", compute.getNetwork(network.network()));
     }
   }
 
@@ -1385,20 +1385,20 @@ public class ComputeExample {
     public void run(Compute compute, NetworkId network) throws InterruptedException {
       Operation operation = compute.deleteNetwork(network.network());
       if (operation == null) {
-        System.out.println("Network " + network + " does not exist");
+        System.out.printf("Network %s does not exist%n", network);
         return;
       }
       while (!operation.isDone()) {
-        System.out.println(
-            "Waiting for operation " + operation.operationId().operation() + " to complete");
+        System.out.printf(
+            "Waiting for operation %s to complete%n", operation.operationId().operation());
         Thread.sleep(1000L);
       }
       operation = operation.reload();
       if (operation.errors() == null) {
-        System.out.println("Network " + network + " was deleted");
+        System.out.printf("Network %s was deleted%n", network);
       } else {
-        System.out.println("Deletion of network " + network + " failed");
-        System.out.println("Error: " + operation.errors());
+        System.out.printf("Deletion of network %s failed%n", network);
+        System.out.printf("Error: %s%n", operation.errors());
       }
     }
   }
@@ -1408,16 +1408,16 @@ public class ComputeExample {
     public void run(Compute compute, NetworkInfo network) throws InterruptedException {
       Operation operation = compute.create(network);
       while (!operation.isDone()) {
-        System.out.println(
-            "Waiting for operation " + operation.operationId().operation() + " to complete");
+        System.out.printf(
+            "Waiting for operation %s to complete%n", operation.operationId().operation());
         Thread.sleep(1000L);
       }
       operation = operation.reload();
       if (operation.errors() == null) {
-        System.out.println("Network " + network.networkId() + " was created");
+        System.out.printf("Network %s was created%n", network.networkId());
       } else {
-        System.out.println("Creation of network " + network.networkId() + " failed");
-        System.out.println("Error: " + operation.errors());
+        System.out.printf("Creation of network %s failed%n", network.networkId());
+        System.out.printf("Error: %s%n", operation.errors());
       }
     }
   }
@@ -1535,7 +1535,7 @@ public class ComputeExample {
   private static class SubnetworkInfoAction extends SubnetworkAction {
     @Override
     public void run(Compute compute, SubnetworkId subnetwork) {
-      System.out.println("Subnetwork info: " + compute.getSubnetwork(subnetwork));
+      System.out.printf("Subnetwork info: %s%n", compute.getSubnetwork(subnetwork));
     }
   }
 
@@ -1550,20 +1550,20 @@ public class ComputeExample {
     public void run(Compute compute, SubnetworkId subnetwork) throws InterruptedException {
       Operation operation = compute.deleteSubnetwork(subnetwork);
       if (operation == null) {
-        System.out.println("Subnetwork " + subnetwork + " does not exist");
+        System.out.printf("Subnetwork %s does not exist%n", subnetwork);
         return;
       }
       while (!operation.isDone()) {
-        System.out.println(
-            "Waiting for operation " + operation.operationId().operation() + " to complete");
+        System.out.printf(
+            "Waiting for operation %s to complete%n", operation.operationId().operation());
         Thread.sleep(1000L);
       }
       operation = operation.reload();
       if (operation.errors() == null) {
-        System.out.println("Subnetwork " + subnetwork + " was deleted");
+        System.out.printf("Subnetwork %s was deleted%n", subnetwork);
       } else {
-        System.out.println("Deletion of subnetwork " + subnetwork + " failed");
-        System.out.println("Error: " + operation.errors());
+        System.out.printf("Deletion of subnetwork %s failed%n", subnetwork);
+        System.out.printf("Error: %s%n", operation.errors());
       }
     }
   }
@@ -1579,16 +1579,16 @@ public class ComputeExample {
     public void run(Compute compute, SubnetworkInfo subnetwork) throws InterruptedException {
       Operation operation = compute.create(subnetwork);
       while (!operation.isDone()) {
-        System.out.println(
-            "Waiting for operation " + operation.operationId().operation() + " to complete");
+        System.out.printf(
+            "Waiting for operation %s to complete%n", operation.operationId().operation());
         Thread.sleep(1000L);
       }
       operation = operation.reload();
       if (operation.errors() == null) {
-        System.out.println("Subnetwork " + subnetwork.subnetworkId() + " was created");
+        System.out.printf("Subnetwork %s was created%n", subnetwork.subnetworkId());
       } else {
-        System.out.println("Creation of subnetwork " + subnetwork.subnetworkId() + " failed");
-        System.out.println("Error: " + operation.errors());
+        System.out.printf("Creation of subnetwork %s failed%n", subnetwork.subnetworkId());
+        System.out.printf("Error: %s%n", operation.errors());
       }
     }
 
@@ -1662,7 +1662,7 @@ public class ComputeExample {
   private static class InstanceInfoAction extends InstanceAction {
     @Override
     public void run(Compute compute, InstanceId instance) {
-      System.out.println("Instance info: " + compute.getInstance(instance));
+      System.out.printf("Instance info: %s%n", compute.getInstance(instance));
     }
   }
 
@@ -1677,20 +1677,20 @@ public class ComputeExample {
     public void run(Compute compute, InstanceId instance) throws InterruptedException {
       Operation operation = compute.deleteInstance(instance);
       if (operation == null) {
-        System.out.println("Instance " + instance + " does not exist");
+        System.out.printf("Instance %s does not exist%n", instance);
         return;
       }
       while (!operation.isDone()) {
-        System.out.println(
-            "Waiting for operation " + operation.operationId().operation() + " to complete");
+        System.out.printf(
+            "Waiting for operation %s to complete%n", operation.operationId().operation());
         Thread.sleep(1000L);
       }
       operation = operation.reload();
       if (operation.errors() == null) {
-        System.out.println("Instance " + instance + " was deleted");
+        System.out.printf("Instance %s was deleted%n", instance);
       } else {
-        System.out.println("Deletion of instance " + instance + " failed");
-        System.out.println("Error: " + operation.errors());
+        System.out.printf("Deletion of instance %s failed%n", instance);
+        System.out.printf("Error: %s%n", operation.errors());
       }
     }
   }
@@ -1706,16 +1706,16 @@ public class ComputeExample {
     public void run(Compute compute, InstanceInfo instance) throws InterruptedException {
       Operation operation = compute.create(instance);
       while (!operation.isDone()) {
-        System.out.println(
-            "Waiting for operation " + operation.operationId().operation() + " to complete");
+        System.out.printf(
+            "Waiting for operation %s to complete%n", operation.operationId().operation());
         Thread.sleep(1000L);
       }
       operation = operation.reload();
       if (operation.errors() == null) {
-        System.out.println("Instance " + instance.instanceId() + " was created");
+        System.out.printf("Instance %s was created%n", instance.instanceId());
       } else {
-        System.out.println("Creation of instance " + instance.instanceId() + " failed");
-        System.out.println("Error: " + operation.errors());
+        System.out.printf("Creation of instance %s failed%n", instance.instanceId());
+        System.out.printf("Error: %s%n", operation.errors());
       }
     }
 
@@ -1760,10 +1760,10 @@ public class ComputeExample {
       Integer port = instanceAndPort.y();
       String serialPortOutput;
       if (port != null) {
-        System.out.println("Getting serial port " + port + " output for instance " + instance);
+        System.out.printf("Getting serial port %d output for instance %s%n", port, instance);
         serialPortOutput = compute.getSerialPortOutput(instance, port);
       } else {
-        System.out.println("Getting serial port output for instance " + instance);
+        System.out.printf("Getting serial port output for instance %s%n", instance);
         serialPortOutput = compute.getSerialPortOutput(instance);
       }
       System.out.println(serialPortOutput);
@@ -1813,22 +1813,22 @@ public class ComputeExample {
       AccessConfig accessConfig = interfaceAndConfig.z();
       Operation operation = compute.addAccessConfig(instance, networkInterface, accessConfig);
       if (operation == null) {
-        System.out.println("Instance " + instance + " does not exist");
+        System.out.printf("Instance %s does not exist%n", instance);
         return;
       }
       while (!operation.isDone()) {
-        System.out.println(
-            "Waiting for operation " + operation.operationId().operation() + " to complete");
+        System.out.printf(
+            "Waiting for operation %s to complete%n", operation.operationId().operation());
         Thread.sleep(1000L);
       }
       operation = operation.reload();
       if (operation.errors() == null) {
-        System.out.println("Access config added to network interface " + networkInterface
-            + " of instance " + instance);
+        System.out.printf("Access config added to network interface %s of instance %s%n",
+            networkInterface, instance);
       } else {
-        System.out.println("Attempt to add access config to network interface " + networkInterface
-            + " of instance " + instance + " failed");
-        System.out.println("Error: " + operation.errors());
+        System.out.printf("Attempt to add access config to network interface %s of instance %s%n",
+            networkInterface, instance);
+        System.out.printf("Error: %s%n", operation.errors());
       }
     }
 
@@ -1877,22 +1877,23 @@ public class ComputeExample {
       String accessConfig = interfaceAndConfig.z();
       Operation operation = compute.deleteAccessConfig(instance, networkInterface, accessConfig);
       if (operation == null) {
-        System.out.println("Instance " + instance + " does not exist");
+        System.out.printf("Instance %s does not exist%n", instance);
         return;
       }
       while (!operation.isDone()) {
-        System.out.println(
-            "Waiting for operation " + operation.operationId().operation() + " to complete");
+        System.out.printf(
+            "Waiting for operation %s to complete%n", operation.operationId().operation());
         Thread.sleep(1000L);
       }
       operation = operation.reload();
       if (operation.errors() == null) {
-        System.out.println("Access config deleted from network interface " + networkInterface
-            + " of instance " + instance);
+        System.out.printf("Access config deleted from network interface %s of instance %s%n",
+            networkInterface, instance);
       } else {
-        System.out.println("Attempt to delete access config from network interface "
-            + networkInterface + " of instance " + instance + " failed");
-        System.out.println("Error: " + operation.errors());
+        System.out.printf(
+            "Attempt to delete access config from network interface %s of instance %s failed%n",
+            networkInterface, instance);
+        System.out.printf("Error: %s%n", operation.errors());
       }
     }
 
@@ -1934,20 +1935,20 @@ public class ComputeExample {
       PersistentDiskConfiguration diskConfiguration = instanceAndDisk.z();
       Operation operation = compute.attachDisk(instance, deviceName, diskConfiguration);
       if (operation == null) {
-        System.out.println("Instance " + instance + " does not exist");
+        System.out.printf("Instance %s does not exist%n", instance);
         return;
       }
       while (!operation.isDone()) {
-        System.out.println(
-            "Waiting for operation " + operation.operationId().operation() + " to complete");
+        System.out.printf(
+            "Waiting for operation %s to complete%n", operation.operationId().operation());
         Thread.sleep(1000L);
       }
       operation = operation.reload();
       if (operation.errors() == null) {
-        System.out.println("Disk attached to instance " + instance);
+        System.out.printf("Disk attached to instance %s%n", instance);
       } else {
-        System.out.println("Attempt to attach disk to instance " + instance + " failed");
-        System.out.println("Error: " + operation.errors());
+        System.out.printf("Attempt to attach disk to instance %s failed%n", instance);
+        System.out.printf("Error: %s%n", operation.errors());
       }
     }
 
@@ -1989,20 +1990,20 @@ public class ComputeExample {
       String deviceName = instanceAndDevice.y();
       Operation operation = compute.detachDisk(instance, deviceName);
       if (operation == null) {
-        System.out.println("Instance " + instance + " does not exist");
+        System.out.printf("Instance %s does not exist%n", instance);
         return;
       }
       while (!operation.isDone()) {
-        System.out.println(
-            "Waiting for operation " + operation.operationId().operation() + " to complete");
+        System.out.printf(
+            "Waiting for operation %s to complete%n", operation.operationId().operation());
         Thread.sleep(1000L);
       }
       operation = operation.reload();
       if (operation.errors() == null) {
-        System.out.println("Disk detached from instance " + instance);
+        System.out.printf("Disk detached from instance %s%n", instance);
       } else {
-        System.out.println("Attempt to detach disk from instance " + instance + " failed");
-        System.out.println("Error: " + operation.errors());
+        System.out.printf("Attempt to detach disk from instance %s failed%n", instance);
+        System.out.printf("Error: %s%n", operation.errors());
       }
     }
 
@@ -2045,21 +2046,21 @@ public class ComputeExample {
       Boolean autoDelete = deviceAndAutoDelete.z();
       Operation operation = compute.setDiskAutoDelete(instance, deviceName, autoDelete);
       if (operation == null) {
-        System.out.println("Instance " + instance + " does not exist");
+        System.out.printf("Instance %s does not exist%n", instance);
         return;
       }
       while (!operation.isDone()) {
-        System.out.println(
-            "Waiting for operation " + operation.operationId().operation() + " to complete");
+        System.out.printf(
+            "Waiting for operation %s to complete%n", operation.operationId().operation());
         Thread.sleep(1000L);
       }
       operation = operation.reload();
       if (operation.errors() == null) {
-        System.out.println("Auto-delete set for device " + deviceName + " of instance " + instance);
+        System.out.printf("Auto-delete set for device %s of instance %s%n", deviceName, instance);
       } else {
-        System.out.println("Attempt to set auto-delete for device " + deviceName + " of instance "
-            + instance + " failed");
-        System.out.println("Error: " + operation.errors());
+        System.out.printf("Attempt to set auto-delete for device %s of instance %s failed%n",
+            deviceName, instance);
+        System.out.printf("Error: %s%n", operation.errors());
       }
     }
 
@@ -2111,20 +2112,20 @@ public class ComputeExample {
       MachineTypeId machineType = instanceAndType.y();
       Operation operation = compute.setMachineType(instance, machineType);
       if (operation == null) {
-        System.out.println("Instance " + instance + " does not exist");
+        System.out.printf("Instance %s does not exist%n", instance);
         return;
       }
       while (!operation.isDone()) {
-        System.out.println(
-            "Waiting for operation " + operation.operationId().operation() + " to complete");
+        System.out.printf(
+            "Waiting for operation %s to complete%n", operation.operationId().operation());
         Thread.sleep(1000L);
       }
       operation = operation.reload();
       if (operation.errors() == null) {
-        System.out.println("Machine type set for instance " + instance);
+        System.out.printf("Machine type set for instance %s%n", instance);
       } else {
-        System.out.println("Attempt to set machine type for instance " + instance + " failed");
-        System.out.println("Error: " + operation.errors());
+        System.out.printf("Attempt to set machine type for instance %s failed%n", instance);
+        System.out.printf("Error: %s%n", operation.errors());
       }
     }
 
@@ -2164,21 +2165,21 @@ public class ComputeExample {
       List<String> tags = instanceAndTags.y();
       Instance instance = compute.getInstance(instanceId);
       if (instance == null) {
-        System.out.println("Instance " + instance + " does not exist");
+        System.out.printf("Instance %s does not exist%n", instanceId);
         return;
       }
       Operation operation = instance.setTags(tags);
       while (!operation.isDone()) {
-        System.out.println(
-            "Waiting for operation " + operation.operationId().operation() + " to complete");
+        System.out.printf(
+            "Waiting for operation %s to complete%n", operation.operationId().operation());
         Thread.sleep(1000L);
       }
       operation = operation.reload();
       if (operation.errors() == null) {
-        System.out.println("Tags set for instance " + instanceId);
+        System.out.printf("Tags set for instance %s%n", instanceId);
       } else {
-        System.out.println("Attempt to set tags for instance " + instanceId + " failed");
-        System.out.println("Error: " + operation.errors());
+        System.out.printf("Attempt to set tags for instance %s failed%n", instanceId);
+        System.out.printf("Error: %s%n", operation.errors());
       }
     }
 
@@ -2215,21 +2216,21 @@ public class ComputeExample {
       Map<String, String> metadata = instanceAndMetadata.y();
       Instance instance = compute.getInstance(instanceId);
       if (instance == null) {
-        System.out.println("Instance " + instance + " does not exist");
+        System.out.printf("Instance %s does not exist%n", instanceId);
         return;
       }
       Operation operation = instance.setMetadata(metadata);
       while (!operation.isDone()) {
-        System.out.println(
-            "Waiting for operation " + operation.operationId().operation() + " to complete");
+        System.out.printf(
+            "Waiting for operation %s to complete%n", operation.operationId().operation());
         Thread.sleep(1000L);
       }
       operation = operation.reload();
       if (operation.errors() == null) {
-        System.out.println("Metadata set for instance " + instanceId);
+        System.out.printf("Metadata set for instance %s%n", instanceId);
       } else {
-        System.out.println("Attempt to set metadata for instance " + instanceId + " failed");
-        System.out.println("Error: " + operation.errors());
+        System.out.printf("Attempt to set metadata for instance %s failed%n", instanceId);
+        System.out.printf("Error: %s%n", operation.errors());
       }
     }
 
@@ -2271,21 +2272,21 @@ public class ComputeExample {
       SchedulingOptions schedulingOptions = instanceAndScheduling.y();
       Operation operation = compute.setSchedulingOptions(instanceId, schedulingOptions);
       if (operation == null) {
-        System.out.println("Instance " + instanceId + " does not exist");
+        System.out.printf("Instance %s does not exist%n", instanceId);
         return;
       }
       while (!operation.isDone()) {
-        System.out.println(
-            "Waiting for operation " + operation.operationId().operation() + " to complete");
+        System.out.printf(
+            "Waiting for operation %s to complete%n", operation.operationId().operation());
         Thread.sleep(1000L);
       }
       operation = operation.reload();
       if (operation.errors() == null) {
-        System.out.println("Scheduling options set for instance " + instanceId);
+        System.out.printf("Scheduling options set for instance %s%n", instanceId);
       } else {
-        System.out.println(
-            "Attempt to set scheduling options for instance " + instanceId + " failed");
-        System.out.println("Error: " + operation.errors());
+        System.out.printf(
+            "Attempt to set scheduling options for instance %s failed%n", instanceId);
+        System.out.printf("Error: %s%n", operation.errors());
       }
     }
 
@@ -2337,20 +2338,20 @@ public class ComputeExample {
     public void run(Compute compute, InstanceId instance) throws InterruptedException {
       Operation operation = compute.reset(instance);
       if (operation == null) {
-        System.out.println("Instance " + instance + " does not exist");
+        System.out.printf("Instance %s does not exist%n", instance);
         return;
       }
       while (!operation.isDone()) {
-        System.out.println(
-            "Waiting for operation " + operation.operationId().operation() + " to complete");
+        System.out.printf(
+            "Waiting for operation %s to complete%n", operation.operationId().operation());
         Thread.sleep(1000L);
       }
       operation = operation.reload();
       if (operation.errors() == null) {
-        System.out.println("Instance " + instance + " was reset");
+        System.out.printf("Instance %s was reset%n", instance);
       } else {
-        System.out.println("Attempt to reset instance " + instance + " failed");
-        System.out.println("Error: " + operation.errors());
+        System.out.printf("Attempt to reset instance %s failed%n", instance);
+        System.out.printf("Error: %s%n", operation.errors());
       }
     }
   }
@@ -2366,20 +2367,20 @@ public class ComputeExample {
     public void run(Compute compute, InstanceId instance) throws InterruptedException {
       Operation operation = compute.stop(instance);
       if (operation == null) {
-        System.out.println("Instance " + instance + " does not exist");
+        System.out.printf("Instance %s does not exist%n", instance);
         return;
       }
       while (!operation.isDone()) {
-        System.out.println(
-            "Waiting for operation " + operation.operationId().operation() + " to complete");
+        System.out.printf(
+            "Waiting for operation %s to complete%n", operation.operationId().operation());
         Thread.sleep(1000L);
       }
       operation = operation.reload();
       if (operation.errors() == null) {
-        System.out.println("Instance " + instance + " was stopped");
+        System.out.printf("Instance %s was stopped%n", instance);
       } else {
-        System.out.println("Attempt to stop instance " + instance + " failed");
-        System.out.println("Error: " + operation.errors());
+        System.out.printf("Attempt to stop instance %s failed%n", instance);
+        System.out.printf("Error: %s%n", operation.errors());
       }
     }
   }
@@ -2395,20 +2396,20 @@ public class ComputeExample {
     public void run(Compute compute, InstanceId instance) throws InterruptedException {
       Operation operation = compute.start(instance);
       if (operation == null) {
-        System.out.println("Instance " + instance + " does not exist");
+        System.out.printf("Instance %s does not exist%n", instance);
         return;
       }
       while (!operation.isDone()) {
-        System.out.println(
-            "Waiting for operation " + operation.operationId().operation() + " to complete");
+        System.out.printf(
+            "Waiting for operation %s to complete%n", operation.operationId().operation());
         Thread.sleep(1000L);
       }
       operation = operation.reload();
       if (operation.errors() == null) {
-        System.out.println("Instance " + instance + " was started");
+        System.out.printf("Instance %s was started%n", instance);
       } else {
-        System.out.println("Attempt to start instance " + instance + " failed");
-        System.out.println("Error: " + operation.errors());
+        System.out.printf("Attempt to start instance %s failed%n", instance);
+        System.out.printf("Error: %s%n", operation.errors());
       }
     }
   }
@@ -2522,18 +2523,18 @@ public class ComputeExample {
       return;
     }
     Compute compute = optionsBuilder.build().service();
-    Object request;
+    Object arg;
     try {
-      request = action.parse(args);
+      arg = action.parse(args);
     } catch (IllegalArgumentException ex) {
-      System.out.println("Invalid input for action '" + actionName + "'. " + ex.getMessage());
-      System.out.println("Expected: " + action.params());
+      System.out.printf("Invalid input for action '%s'. %s%n", actionName, ex.getMessage());
+      System.out.printf("Expected: %s%n", action.params());
       return;
     } catch (Exception ex) {
-      System.out.println("Failed to parse request.");
+      System.out.println("Failed to parse arguments.");
       ex.printStackTrace();
       return;
     }
-    action.run(compute, request);
+    action.run(compute, arg);
   }
 }
