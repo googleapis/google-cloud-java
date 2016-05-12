@@ -31,7 +31,7 @@ import java.util.concurrent.TimeUnit;
  *
  * @see <a href="https://cloud.google.com/pubsub/">Google Cloud Pub/Sub</a>
  */
-public interface PubSub extends Service<PubSubOptions> {
+public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
 
   /**
    * Class for specifying options for listing topics and subscriptions.

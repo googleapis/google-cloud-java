@@ -38,8 +38,9 @@ import com.google.pubsub.v1.Subscription;
 import com.google.pubsub.v1.Topic;
 
 import java.util.concurrent.Future;
+import java.util.concurrent.ScheduledExecutorService;
 
-public interface PubSubRpc {
+public interface PubSubRpc extends AutoCloseable {
 
   // in all cases root cause of ExecutionException is PubSubException
   Future<Topic> create(Topic topic);
@@ -69,4 +70,6 @@ public interface PubSubRpc {
   Future<PullResponse> pull(PullRequest request);
 
   Future<Empty> modify(ModifyPushConfigRequest request);
+
+  ScheduledExecutorService executor();
 }
