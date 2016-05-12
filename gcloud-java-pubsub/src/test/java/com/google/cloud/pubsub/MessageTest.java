@@ -57,7 +57,11 @@ public class MessageTest {
         .build();
     assertEquals("newPayload", message.payloadAsString());
     assertEquals(ImmutableMap.of("key1", "value1"), message.attributes());
-    message = MESSAGE.toBuilder().payload(PAYLOAD_STRING).attributes(ATTRIBUTES).build();
+    message = message.toBuilder()
+        .payload(PAYLOAD_STRING)
+        .removeAttribute("key1")
+        .attributes(ATTRIBUTES)
+        .build();
     compareMessage(MESSAGE, message);
   }
 

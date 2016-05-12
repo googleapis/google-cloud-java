@@ -122,7 +122,7 @@ public class Message implements Serializable {
     abstract Builder publishTime(long publishTime);
 
     /**
-     * Creates a topic object.
+     * Creates a message object.
      */
     public abstract Message build();
   }
