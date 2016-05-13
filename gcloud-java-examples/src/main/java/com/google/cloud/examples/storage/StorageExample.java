@@ -90,7 +90,7 @@ public class StorageExample {
 
   private abstract static class StorageAction<T> {
 
-    abstract void run(Storage storage, T request) throws Exception;
+    abstract void run(Storage storage, T arg) throws Exception;
 
     abstract T parse(String... args) throws Exception;
 
@@ -137,7 +137,7 @@ public class StorageExample {
             System.out.println("No such bucket");
             return;
           }
-          System.out.println("Bucket info: " + bucket);
+          System.out.printf("Bucket info: %s%n", bucket);
         } else {
           // get Blob
           Blob blob = storage.get(blobIds[0]);
@@ -145,7 +145,7 @@ public class StorageExample {
             System.out.println("No such object");
             return;
           }
-          System.out.println("Blob info: " + blob);
+          System.out.printf("Blob info: %s%n", blob);
         }
       } else {
         // use batch to get multiple blobs.
@@ -188,7 +188,7 @@ public class StorageExample {
       for (Boolean deleted : deleteResults) {
         if (deleted) {
           // request order is maintained
-          System.out.println("Blob " + blobIds[index] + " was deleted");
+          System.out.printf("Blob %s was deleted%n", blobIds[index]);
         }
         index++;
       }
@@ -373,7 +373,7 @@ public class StorageExample {
     @Override
     public void run(Storage storage, CopyRequest request) {
       CopyWriter copyWriter = storage.copy(request);
-      System.out.println("Copied " + copyWriter.result());
+      System.out.printf("Copied %s%n", copyWriter.result());
     }
 
     @Override
@@ -399,7 +399,7 @@ public class StorageExample {
     @Override
     public void run(Storage storage, ComposeRequest request) {
       BlobInfo composedBlobInfo = storage.compose(request);
-      System.out.println("Composed " + composedBlobInfo);
+      System.out.printf("Composed %s%n", composedBlobInfo);
     }
 
     @Override
@@ -442,7 +442,7 @@ public class StorageExample {
         return;
       }
       Blob updateBlob = blob.toBuilder().metadata(metadata).build().update();
-      System.out.println("Updated " + updateBlob);
+      System.out.printf("Updated %s%n", updateBlob);
     }
 
     @Override
@@ -488,8 +488,8 @@ public class StorageExample {
 
     private void run(Storage storage, ServiceAccountAuthCredentials cred, BlobInfo blobInfo) {
       Blob blob = storage.get(blobInfo.blobId());
-      System.out.println("Signed URL: "
-          + blob.signUrl(1, TimeUnit.DAYS, SignUrlOption.signWith(cred)));
+      System.out.printf("Signed URL: %s%n",
+          blob.signUrl(1, TimeUnit.DAYS, SignUrlOption.signWith(cred)));
     }
 
     @Override
@@ -564,18 +564,18 @@ public class StorageExample {
       return;
     }
     Storage storage = optionsBuilder.build().service();
-    Object request;
+    Object arg;
     try {
-      request = action.parse(args);
+      arg = action.parse(args);
     } catch (IllegalArgumentException ex) {
-      System.out.println("Invalid input for action '" + actionName + "'");
-      System.out.println("Expected: " + action.params());
+      System.out.printf("Invalid input for action '%s'. %s%n", actionName, ex.getMessage());
+      System.out.printf("Expected: %s%n", action.params());
       return;
     } catch (Exception ex) {
-      System.out.println("Failed to parse request.");
+      System.out.println("Failed to parse arguments.");
       ex.printStackTrace();
       return;
     }
-    action.run(storage, request);
+    action.run(storage, arg);
   }
 }

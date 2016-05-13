@@ -81,6 +81,7 @@ To run examples from your command line:
     mvn exec:java -Dexec.mainClass="com.google.cloud.examples.datastore.DatastoreExample" -Dexec.args="your-project-id my_name add my\ comment"
     mvn exec:java -Dexec.mainClass="com.google.cloud.examples.datastore.DatastoreExample" -Dexec.args="your-project-id my_name display"
     mvn exec:java -Dexec.mainClass="com.google.cloud.examples.datastore.DatastoreExample" -Dexec.args="your-project-id my_name delete"
+    mvn exec:java -Dexec.mainClass="com.google.cloud.examples.datastore.DatastoreExample" -Dexec.args="your-project-id my_name set myname@mydomain.com 1234"
     ```
 
   * Here's an example run of `DnsExample`.
