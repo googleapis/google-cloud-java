@@ -288,7 +288,7 @@ public class PublisherApi implements AutoCloseable {
    * <!-- manual edit -->
    * <!-- end manual edit -->
    *
-   * @param formattedName The name of the topic. It must have the format
+   * @param name The name of the topic. It must have the format
    * `"projects/{project}/topics/{topic}"`. `{topic}` must start with a letter,
    * and contain only letters (`[A-Za-z]`), numbers (`[0-9]`), dashes (`-`),
    * underscores (`_`), periods (`.`), tildes (`~`), plus (`+`) or percent
@@ -296,9 +296,9 @@ public class PublisherApi implements AutoCloseable {
    * must not start with `"goog"`.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  public final Topic createTopic(String formattedName) {
-    TOPIC_PATH_TEMPLATE.validate(formattedName);
-    Topic request = Topic.newBuilder().setName(formattedName).build();
+  public final Topic createTopic(String name) {
+    TOPIC_PATH_TEMPLATE.validate(name);
+    Topic request = Topic.newBuilder().setName(name).build();
     return createTopic(request);
   }
 
@@ -371,15 +371,15 @@ public class PublisherApi implements AutoCloseable {
    * <!-- manual edit -->
    * <!-- end manual edit -->
    *
-   * @param formattedTopic The messages in the request will be published on this topic.
+   * @param topic The messages in the request will be published on this topic.
    * @param messages The messages to publish.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  public final PublishResponse publish(String formattedTopic, List<PubsubMessage> messages) {
-    TOPIC_PATH_TEMPLATE.validate(formattedTopic);
+  public final PublishResponse publish(String topic, List<PubsubMessage> messages) {
+    TOPIC_PATH_TEMPLATE.validate(topic);
 
     PublishRequest request =
-        PublishRequest.newBuilder().setTopic(formattedTopic).addAllMessages(messages).build();
+        PublishRequest.newBuilder().setTopic(topic).addAllMessages(messages).build();
     return publish(request);
   }
 
@@ -457,12 +457,12 @@ public class PublisherApi implements AutoCloseable {
    * <!-- manual edit -->
    * <!-- end manual edit -->
    *
-   * @param formattedTopic The name of the topic to get.
+   * @param topic The name of the topic to get.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  public final Topic getTopic(String formattedTopic) {
-    TOPIC_PATH_TEMPLATE.validate(formattedTopic);
-    GetTopicRequest request = GetTopicRequest.newBuilder().setTopic(formattedTopic).build();
+  public final Topic getTopic(String topic) {
+    TOPIC_PATH_TEMPLATE.validate(topic);
+    GetTopicRequest request = GetTopicRequest.newBuilder().setTopic(topic).build();
     return getTopic(request);
   }
 
@@ -534,12 +534,12 @@ public class PublisherApi implements AutoCloseable {
    * <!-- manual edit -->
    * <!-- end manual edit -->
    *
-   * @param formattedProject The name of the cloud project that topics belong to.
+   * @param project The name of the cloud project that topics belong to.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  public final PageAccessor<Topic> listTopics(String formattedProject) {
-    PROJECT_PATH_TEMPLATE.validate(formattedProject);
-    ListTopicsRequest request = ListTopicsRequest.newBuilder().setProject(formattedProject).build();
+  public final PageAccessor<Topic> listTopics(String project) {
+    PROJECT_PATH_TEMPLATE.validate(project);
+    ListTopicsRequest request = ListTopicsRequest.newBuilder().setProject(project).build();
     return listTopics(request);
   }
 
@@ -648,13 +648,13 @@ public class PublisherApi implements AutoCloseable {
    * <!-- manual edit -->
    * <!-- end manual edit -->
    *
-   * @param formattedTopic The name of the topic that subscriptions are attached to.
+   * @param topic The name of the topic that subscriptions are attached to.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  public final PageAccessor<String> listTopicSubscriptions(String formattedTopic) {
-    TOPIC_PATH_TEMPLATE.validate(formattedTopic);
+  public final PageAccessor<String> listTopicSubscriptions(String topic) {
+    TOPIC_PATH_TEMPLATE.validate(topic);
     ListTopicSubscriptionsRequest request =
-        ListTopicSubscriptionsRequest.newBuilder().setTopic(formattedTopic).build();
+        ListTopicSubscriptionsRequest.newBuilder().setTopic(topic).build();
     return listTopicSubscriptions(request);
   }
 
@@ -767,12 +767,12 @@ public class PublisherApi implements AutoCloseable {
    * <!-- manual edit -->
    * <!-- end manual edit -->
    *
-   * @param formattedTopic Name of the topic to delete.
+   * @param topic Name of the topic to delete.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  public final void deleteTopic(String formattedTopic) {
-    TOPIC_PATH_TEMPLATE.validate(formattedTopic);
-    DeleteTopicRequest request = DeleteTopicRequest.newBuilder().setTopic(formattedTopic).build();
+  public final void deleteTopic(String topic) {
+    TOPIC_PATH_TEMPLATE.validate(topic);
+    DeleteTopicRequest request = DeleteTopicRequest.newBuilder().setTopic(topic).build();
     deleteTopic(request);
   }
 

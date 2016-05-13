@@ -335,13 +335,13 @@ public class SubscriberApi implements AutoCloseable {
    * <!-- manual edit -->
    * <!-- end manual edit -->
    *
-   * @param formattedName The name of the subscription. It must have the format
+   * @param name The name of the subscription. It must have the format
    * `"projects/{project}/subscriptions/{subscription}"`. `{subscription}` must
    * start with a letter, and contain only letters (`[A-Za-z]`), numbers
    * (`[0-9]`), dashes (`-`), underscores (`_`), periods (`.`), tildes (`~`),
    * plus (`+`) or percent signs (`%`). It must be between 3 and 255 characters
    * in length, and it must not start with `"goog"`.
-   * @param formattedTopic The name of the topic from which this subscription is receiving messages.
+   * @param topic The name of the topic from which this subscription is receiving messages.
    * @param pushConfig If push delivery is used with this subscription, this field is
    * used to configure it. An empty `pushConfig` signifies that the subscriber
    * will pull and ack messages using API methods.
@@ -366,14 +366,14 @@ public class SubscriberApi implements AutoCloseable {
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final Subscription createSubscription(
-      String formattedName, String formattedTopic, PushConfig pushConfig, int ackDeadlineSeconds) {
-    SUBSCRIPTION_PATH_TEMPLATE.validate(formattedName);
-    TOPIC_PATH_TEMPLATE.validate(formattedTopic);
+      String name, String topic, PushConfig pushConfig, int ackDeadlineSeconds) {
+    SUBSCRIPTION_PATH_TEMPLATE.validate(name);
+    TOPIC_PATH_TEMPLATE.validate(topic);
 
     Subscription request =
         Subscription.newBuilder()
-            .setName(formattedName)
-            .setTopic(formattedTopic)
+            .setName(name)
+            .setTopic(topic)
             .setPushConfig(pushConfig)
             .setAckDeadlineSeconds(ackDeadlineSeconds)
             .build();
@@ -463,13 +463,13 @@ public class SubscriberApi implements AutoCloseable {
    * <!-- manual edit -->
    * <!-- end manual edit -->
    *
-   * @param formattedSubscription The name of the subscription to get.
+   * @param subscription The name of the subscription to get.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  public final Subscription getSubscription(String formattedSubscription) {
-    SUBSCRIPTION_PATH_TEMPLATE.validate(formattedSubscription);
+  public final Subscription getSubscription(String subscription) {
+    SUBSCRIPTION_PATH_TEMPLATE.validate(subscription);
     GetSubscriptionRequest request =
-        GetSubscriptionRequest.newBuilder().setSubscription(formattedSubscription).build();
+        GetSubscriptionRequest.newBuilder().setSubscription(subscription).build();
     return getSubscription(request);
   }
 
@@ -550,13 +550,13 @@ public class SubscriberApi implements AutoCloseable {
    * <!-- manual edit -->
    * <!-- end manual edit -->
    *
-   * @param formattedProject The name of the cloud project that subscriptions belong to.
+   * @param project The name of the cloud project that subscriptions belong to.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  public final PageAccessor<Subscription> listSubscriptions(String formattedProject) {
-    PROJECT_PATH_TEMPLATE.validate(formattedProject);
+  public final PageAccessor<Subscription> listSubscriptions(String project) {
+    PROJECT_PATH_TEMPLATE.validate(project);
     ListSubscriptionsRequest request =
-        ListSubscriptionsRequest.newBuilder().setProject(formattedProject).build();
+        ListSubscriptionsRequest.newBuilder().setProject(project).build();
     return listSubscriptions(request);
   }
 
@@ -678,13 +678,13 @@ public class SubscriberApi implements AutoCloseable {
    * <!-- manual edit -->
    * <!-- end manual edit -->
    *
-   * @param formattedSubscription The subscription to delete.
+   * @param subscription The subscription to delete.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  public final void deleteSubscription(String formattedSubscription) {
-    SUBSCRIPTION_PATH_TEMPLATE.validate(formattedSubscription);
+  public final void deleteSubscription(String subscription) {
+    SUBSCRIPTION_PATH_TEMPLATE.validate(subscription);
     DeleteSubscriptionRequest request =
-        DeleteSubscriptionRequest.newBuilder().setSubscription(formattedSubscription).build();
+        DeleteSubscriptionRequest.newBuilder().setSubscription(subscription).build();
     deleteSubscription(request);
   }
 
@@ -767,7 +767,7 @@ public class SubscriberApi implements AutoCloseable {
    * <!-- manual edit -->
    * <!-- end manual edit -->
    *
-   * @param formattedSubscription The name of the subscription.
+   * @param subscription The name of the subscription.
    * @param ackIds List of acknowledgment IDs.
    * @param ackDeadlineSeconds The new ack deadline with respect to the time this request was sent to
    * the Pub/Sub system. Must be &gt;= 0. For example, if the value is 10, the new
@@ -777,12 +777,12 @@ public class SubscriberApi implements AutoCloseable {
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final void modifyAckDeadline(
-      String formattedSubscription, List<String> ackIds, int ackDeadlineSeconds) {
-    SUBSCRIPTION_PATH_TEMPLATE.validate(formattedSubscription);
+      String subscription, List<String> ackIds, int ackDeadlineSeconds) {
+    SUBSCRIPTION_PATH_TEMPLATE.validate(subscription);
 
     ModifyAckDeadlineRequest request =
         ModifyAckDeadlineRequest.newBuilder()
-            .setSubscription(formattedSubscription)
+            .setSubscription(subscription)
             .addAllAckIds(ackIds)
             .setAckDeadlineSeconds(ackDeadlineSeconds)
             .build();
@@ -876,19 +876,16 @@ public class SubscriberApi implements AutoCloseable {
    * <!-- manual edit -->
    * <!-- end manual edit -->
    *
-   * @param formattedSubscription The subscription whose message is being acknowledged.
+   * @param subscription The subscription whose message is being acknowledged.
    * @param ackIds The acknowledgment ID for the messages being acknowledged that was returned
    * by the Pub/Sub system in the `Pull` response. Must not be empty.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  public final void acknowledge(String formattedSubscription, List<String> ackIds) {
-    SUBSCRIPTION_PATH_TEMPLATE.validate(formattedSubscription);
+  public final void acknowledge(String subscription, List<String> ackIds) {
+    SUBSCRIPTION_PATH_TEMPLATE.validate(subscription);
 
     AcknowledgeRequest request =
-        AcknowledgeRequest.newBuilder()
-            .setSubscription(formattedSubscription)
-            .addAllAckIds(ackIds)
-            .build();
+        AcknowledgeRequest.newBuilder().setSubscription(subscription).addAllAckIds(ackIds).build();
     acknowledge(request);
   }
 
@@ -979,7 +976,7 @@ public class SubscriberApi implements AutoCloseable {
    * <!-- manual edit -->
    * <!-- end manual edit -->
    *
-   * @param formattedSubscription The subscription from which messages should be pulled.
+   * @param subscription The subscription from which messages should be pulled.
    * @param returnImmediately If this is specified as true the system will respond immediately even if
    * it is not able to return a message in the `Pull` response. Otherwise the
    * system is allowed to wait until at least one message is available rather
@@ -988,13 +985,12 @@ public class SubscriberApi implements AutoCloseable {
    * system may return fewer than the number specified.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  public final PullResponse pull(
-      String formattedSubscription, boolean returnImmediately, int maxMessages) {
-    SUBSCRIPTION_PATH_TEMPLATE.validate(formattedSubscription);
+  public final PullResponse pull(String subscription, boolean returnImmediately, int maxMessages) {
+    SUBSCRIPTION_PATH_TEMPLATE.validate(subscription);
 
     PullRequest request =
         PullRequest.newBuilder()
-            .setSubscription(formattedSubscription)
+            .setSubscription(subscription)
             .setReturnImmediately(returnImmediately)
             .setMaxMessages(maxMessages)
             .build();
@@ -1083,7 +1079,7 @@ public class SubscriberApi implements AutoCloseable {
    * <!-- manual edit -->
    * <!-- end manual edit -->
    *
-   * @param formattedSubscription The name of the subscription.
+   * @param subscription The name of the subscription.
    * @param pushConfig The push configuration for future deliveries.
    *
    * An empty `pushConfig` indicates that the Pub/Sub system should
@@ -1092,12 +1088,12 @@ public class SubscriberApi implements AutoCloseable {
    * the subscription if `Pull` is not called.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  public final void modifyPushConfig(String formattedSubscription, PushConfig pushConfig) {
-    SUBSCRIPTION_PATH_TEMPLATE.validate(formattedSubscription);
+  public final void modifyPushConfig(String subscription, PushConfig pushConfig) {
+    SUBSCRIPTION_PATH_TEMPLATE.validate(subscription);
 
     ModifyPushConfigRequest request =
         ModifyPushConfigRequest.newBuilder()
-            .setSubscription(formattedSubscription)
+            .setSubscription(subscription)
             .setPushConfig(pushConfig)
             .build();
     modifyPushConfig(request);
