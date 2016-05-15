@@ -16,17 +16,17 @@
 
 package com.google.cloud.dns;
 
+import com.google.cloud.HttpServiceOptions;
 import com.google.common.collect.ImmutableSet;
-import com.google.cloud.ServiceOptions;
 import com.google.cloud.dns.spi.DefaultDnsRpc;
 import com.google.cloud.dns.spi.DnsRpc;
 import com.google.cloud.dns.spi.DnsRpcFactory;
 
 import java.util.Set;
 
-public class DnsOptions extends ServiceOptions<Dns, DnsRpc, DnsOptions> {
+public class DnsOptions extends HttpServiceOptions<Dns, DnsRpc, DnsOptions> {
 
-  private static final long serialVersionUID = -519128051411747771L;
+  private static final long serialVersionUID = -8639966476950724880L;
   private static final String GC_DNS_RW = "https://www.googleapis.com/auth/ndev.clouddns.readwrite";
   private static final Set<String> SCOPES = ImmutableSet.of(GC_DNS_RW);
 
@@ -49,7 +49,7 @@ public class DnsOptions extends ServiceOptions<Dns, DnsRpc, DnsOptions> {
     }
   }
 
-  public static class Builder extends ServiceOptions.Builder<Dns, DnsRpc,
+  public static class Builder extends HttpServiceOptions.Builder<Dns, DnsRpc,
       DnsOptions, Builder> {
 
     private Builder() {

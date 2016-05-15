@@ -16,8 +16,8 @@
 
 package com.google.cloud.resourcemanager;
 
+import com.google.cloud.HttpServiceOptions;
 import com.google.common.collect.ImmutableSet;
-import com.google.cloud.ServiceOptions;
 import com.google.cloud.resourcemanager.spi.DefaultResourceManagerRpc;
 import com.google.cloud.resourcemanager.spi.ResourceManagerRpc;
 import com.google.cloud.resourcemanager.spi.ResourceManagerRpcFactory;
@@ -25,9 +25,9 @@ import com.google.cloud.resourcemanager.spi.ResourceManagerRpcFactory;
 import java.util.Set;
 
 public class ResourceManagerOptions
-    extends ServiceOptions<ResourceManager, ResourceManagerRpc, ResourceManagerOptions> {
+    extends HttpServiceOptions<ResourceManager, ResourceManagerRpc, ResourceManagerOptions> {
 
-  private static final long serialVersionUID = 538303101192527452L;
+  private static final long serialVersionUID = -109855112863688882L;
   private static final String GCRM_SCOPE = "https://www.googleapis.com/auth/cloud-platform";
   private static final Set<String> SCOPES = ImmutableSet.of(GCRM_SCOPE);
   private static final String DEFAULT_HOST = "https://cloudresourcemanager.googleapis.com";
@@ -63,8 +63,8 @@ public class ResourceManagerOptions
     return DEFAULT_HOST;
   }
 
-  public static class Builder extends ServiceOptions.Builder<ResourceManager, ResourceManagerRpc,
-      ResourceManagerOptions, Builder> {
+  public static class Builder extends HttpServiceOptions.Builder<ResourceManager,
+      ResourceManagerRpc, ResourceManagerOptions, Builder> {
 
     private Builder() {}
 

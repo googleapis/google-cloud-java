@@ -16,7 +16,7 @@
 
 package com.google.cloud.pubsub;
 
-import com.google.cloud.ServiceOptions;
+import com.google.cloud.GrpcServiceOptions;
 import com.google.cloud.pubsub.spi.DefaultPubSubRpc;
 import com.google.cloud.pubsub.spi.PubSubRpc;
 import com.google.cloud.pubsub.spi.PubSubRpcFactory;
@@ -25,9 +25,9 @@ import com.google.common.collect.ImmutableSet;
 import java.io.IOException;
 import java.util.Set;
 
-public class PubSubOptions extends ServiceOptions<PubSub, PubSubRpc, PubSubOptions> {
+public class PubSubOptions extends GrpcServiceOptions<PubSub, PubSubRpc, PubSubOptions> {
 
-  private static final long serialVersionUID = 6740347843343421456L;
+  private static final long serialVersionUID = 5640180400046623305L;
   private static final String PUBSUB_SCOPE = "https://www.googleapis.com/auth/pubsub";
   private static final Set<String> SCOPES = ImmutableSet.of(PUBSUB_SCOPE);
   private static final String DEFAULT_HOST = "https://pubsub.googleapis.com";
@@ -67,7 +67,7 @@ public class PubSubOptions extends ServiceOptions<PubSub, PubSubRpc, PubSubOptio
   }
 
   public static class Builder extends
-      ServiceOptions.Builder<PubSub, PubSubRpc, PubSubOptions, Builder> {
+      GrpcServiceOptions.Builder<PubSub, PubSubRpc, PubSubOptions, Builder> {
 
     private Builder() {}
 
@@ -81,7 +81,7 @@ public class PubSubOptions extends ServiceOptions<PubSub, PubSubRpc, PubSubOptio
     }
   }
 
-  private PubSubOptions(Builder builder) {
+  protected PubSubOptions(Builder builder) {
     super(PubSubFactory.class, PubSubRpcFactory.class, builder);
   }
 
