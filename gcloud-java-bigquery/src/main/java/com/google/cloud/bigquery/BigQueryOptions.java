@@ -16,19 +16,19 @@
 
 package com.google.cloud.bigquery;
 
+import com.google.cloud.HttpServiceOptions;
 import com.google.common.collect.ImmutableSet;
-import com.google.cloud.ServiceOptions;
 import com.google.cloud.bigquery.spi.BigQueryRpc;
 import com.google.cloud.bigquery.spi.BigQueryRpcFactory;
 import com.google.cloud.bigquery.spi.DefaultBigQueryRpc;
 
 import java.util.Set;
 
-public class BigQueryOptions extends ServiceOptions<BigQuery, BigQueryRpc, BigQueryOptions> {
+public class BigQueryOptions extends HttpServiceOptions<BigQuery, BigQueryRpc, BigQueryOptions> {
 
   private static final String BIGQUERY_SCOPE = "https://www.googleapis.com/auth/bigquery";
   private static final Set<String> SCOPES = ImmutableSet.of(BIGQUERY_SCOPE);
-  private static final long serialVersionUID = -215981591481708043L;
+  private static final long serialVersionUID = -8592198255032667206L;
 
   public static class DefaultBigqueryFactory implements BigQueryFactory {
 
@@ -51,7 +51,7 @@ public class BigQueryOptions extends ServiceOptions<BigQuery, BigQueryRpc, BigQu
   }
 
   public static class Builder extends
-      ServiceOptions.Builder<BigQuery, BigQueryRpc, BigQueryOptions, Builder> {
+      HttpServiceOptions.Builder<BigQuery, BigQueryRpc, BigQueryOptions, Builder> {
 
     private Builder() {
     }

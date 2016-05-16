@@ -39,7 +39,7 @@ import com.google.pubsub.v1.Topic;
 
 import java.util.concurrent.Future;
 
-public interface PubSubRpc {
+public interface PubSubRpc extends AutoCloseable {
 
   // in all cases root cause of ExecutionException is PubSubException
   Future<Topic> create(Topic topic);

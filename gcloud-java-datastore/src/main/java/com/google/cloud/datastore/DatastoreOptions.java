@@ -18,9 +18,9 @@ package com.google.cloud.datastore;
 
 import static com.google.cloud.datastore.Validator.validateNamespace;
 
+import com.google.cloud.HttpServiceOptions;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableSet;
-import com.google.cloud.ServiceOptions;
 import com.google.cloud.datastore.spi.DatastoreRpc;
 import com.google.cloud.datastore.spi.DatastoreRpcFactory;
 import com.google.cloud.datastore.spi.DefaultDatastoreRpc;
@@ -29,9 +29,10 @@ import java.lang.reflect.Method;
 import java.util.Objects;
 import java.util.Set;
 
-public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreRpc, DatastoreOptions> {
+public class DatastoreOptions
+    extends HttpServiceOptions<Datastore, DatastoreRpc, DatastoreOptions> {
 
-  private static final long serialVersionUID = 5056049000758143852L;
+  private static final long serialVersionUID = -7859275434360052450L;
   private static final String DATASTORE_SCOPE = "https://www.googleapis.com/auth/datastore";
   private static final Set<String> SCOPES = ImmutableSet.of(DATASTORE_SCOPE);
 
@@ -58,7 +59,7 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreRpc, Da
   }
 
   public static class Builder extends
-      ServiceOptions.Builder<Datastore, DatastoreRpc, DatastoreOptions, Builder> {
+      HttpServiceOptions.Builder<Datastore, DatastoreRpc, DatastoreOptions, Builder> {
 
     private String namespace;
 
