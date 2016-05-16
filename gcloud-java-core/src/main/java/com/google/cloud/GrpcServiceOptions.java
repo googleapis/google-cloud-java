@@ -16,12 +16,17 @@
 
 package com.google.cloud;
 
+import static com.google.common.base.MoreObjects.firstNonNull;
+
 import com.google.cloud.spi.ServiceRpcFactory;
+import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
 
 import io.grpc.internal.SharedResourceHolder;
 import io.grpc.internal.SharedResourceHolder.Resource;
 
+import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.util.Objects;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
@@ -40,9 +45,12 @@ public abstract class GrpcServiceOptions<ServiceT extends Service<OptionsT>, Ser
     extends ServiceOptions<ServiceT, ServiceRpcT, OptionsT> {
 
   private static final long serialVersionUID = 6415982522610509549L;
+  private final String executorFactoryClassName;
   private final int initialTimeout;
   private final double timeoutMultiplier;
   private final int maxTimeout;
+
+  private transient ExecutorFactory executorFactory;
 
   /**
    * Shared thread pool executor.
@@ -65,45 +73,41 @@ public abstract class GrpcServiceOptions<ServiceT extends Service<OptionsT>, Ser
       };
 
   /**
-   * An interface that provides access to a scheduled executor service.
+   * An interface for {@link ScheduledExecutorService} factories. Implementations of this interface
+   * can be used to provide an user-defined scheduled executor to execute requests. Any
+   * implementation of this interface must override the {@code get()} method to return the desired
+   * executor. The {@code release(executor)} method should be overriden to free resources used by
+   * the executor (if needed) according to application's logic.
+   *
+   * <p>Implementation must provide a public no-arg constructor. Loading of a factory implementation
+   * is done via {@link java.util.ServiceLoader}.
    */
-  public interface ExecutorProvider {
+  public interface ExecutorFactory {
 
     /**
-     * Returns the scheduled executor service.
+     * Gets a scheduled executor service instance.
      */
     ScheduledExecutorService get();
 
     /**
-     * Shuts down the scheduled executor service if it is no longer used.
+     * Releases resources used by the executor and possibly shuts it down.
      */
-    void shutdown();
+    void release(ScheduledExecutorService executor);
   }
 
-  /**
-   * An interface that provides access to a scheduled executor service.
-   */
-  private static class DefaultExecutorProvider implements ExecutorProvider {
+  @VisibleForTesting
+  static class DefaultExecutorFactory implements ExecutorFactory {
 
-    private ScheduledExecutorService service;
-    private boolean shutdown = false;
-
-    private DefaultExecutorProvider() {}
+    private static final DefaultExecutorFactory INSTANCE = new DefaultExecutorFactory();
 
     @Override
-    public synchronized ScheduledExecutorService get() {
-      if (service == null && !shutdown) {
-        service = SharedResourceHolder.get(EXECUTOR);
-      }
-      return service;
+    public ScheduledExecutorService get() {
+      return SharedResourceHolder.get(EXECUTOR);
     }
 
     @Override
-    public synchronized void shutdown() {
-      if (service != null && !shutdown) {
-        shutdown = true;
-        service = SharedResourceHolder.release(EXECUTOR, service);
-      }
+    public synchronized void release(ScheduledExecutorService executor) {
+      SharedResourceHolder.release(EXECUTOR, executor);
     }
   }
 
@@ -120,6 +124,7 @@ public abstract class GrpcServiceOptions<ServiceT extends Service<OptionsT>, Ser
       B extends Builder<ServiceT, ServiceRpcT, OptionsT, B>>
       extends ServiceOptions.Builder<ServiceT, ServiceRpcT, OptionsT, B> {
 
+    private ExecutorFactory executorFactory;
     private int initialTimeout = 20_000;
     private double timeoutMultiplier = 1.5;
     private int maxTimeout = 100_000;
@@ -128,6 +133,7 @@ public abstract class GrpcServiceOptions<ServiceT extends Service<OptionsT>, Ser
 
     protected Builder(GrpcServiceOptions<ServiceT, ServiceRpcT, OptionsT> options) {
       super(options);
+      executorFactory = options.executorFactory;
       initialTimeout = options.initialTimeout;
       timeoutMultiplier = options.timeoutMultiplier;
       maxTimeout = options.maxTimeout;
@@ -135,6 +141,17 @@ public abstract class GrpcServiceOptions<ServiceT extends Service<OptionsT>, Ser
 
     @Override
     protected abstract GrpcServiceOptions<ServiceT, ServiceRpcT, OptionsT> build();
+
+    /**
+     * Sets the scheduled executor factory. This method can be used to provide an user-defined
+     * scheduled executor to execute requests.
+     *
+     * @return the builder
+     */
+    public B executorFactory(ExecutorFactory executorFactory) {
+      this.executorFactory = executorFactory;
+      return self();
+    }
 
     /**
      * Sets the timeout for the initial RPC, in milliseconds. Subsequent calls will use this value
@@ -180,6 +197,9 @@ public abstract class GrpcServiceOptions<ServiceT extends Service<OptionsT>, Ser
       Class<? extends ServiceRpcFactory<ServiceRpcT, OptionsT>> rpcFactoryClass, Builder<ServiceT,
       ServiceRpcT, OptionsT, ?> builder) {
     super(serviceFactoryClass, rpcFactoryClass, builder);
+    executorFactory = firstNonNull(builder.executorFactory,
+        getFromServiceLoader(ExecutorFactory.class, DefaultExecutorFactory.INSTANCE));
+    executorFactoryClassName = executorFactory.getClass().getName();
     initialTimeout = builder.initialTimeout;
     timeoutMultiplier = builder.timeoutMultiplier;
     maxTimeout = builder.maxTimeout <= initialTimeout ? initialTimeout : builder.maxTimeout;
@@ -188,8 +208,8 @@ public abstract class GrpcServiceOptions<ServiceT extends Service<OptionsT>, Ser
   /**
    * Returns a scheduled executor service provider.
    */
-  protected ExecutorProvider executorProvider() {
-    return new DefaultExecutorProvider();
+  protected ExecutorFactory executorFactory() {
+    return executorFactory;
   }
 
   /**
@@ -217,13 +237,20 @@ public abstract class GrpcServiceOptions<ServiceT extends Service<OptionsT>, Ser
 
   @Override
   protected int baseHashCode() {
-    return Objects.hash(super.baseHashCode(), initialTimeout, timeoutMultiplier, maxTimeout);
+    return Objects.hash(super.baseHashCode(), executorFactoryClassName, initialTimeout,
+        timeoutMultiplier, maxTimeout);
   }
 
   protected boolean baseEquals(GrpcServiceOptions<?, ?, ?> other) {
     return super.baseEquals(other)
+        && Objects.equals(executorFactoryClassName, other.executorFactoryClassName)
         && Objects.equals(initialTimeout, other.initialTimeout)
         && Objects.equals(timeoutMultiplier, other.timeoutMultiplier)
         && Objects.equals(maxTimeout, other.maxTimeout);
+  }
+
+  private void readObject(ObjectInputStream input) throws IOException, ClassNotFoundException {
+    input.defaultReadObject();
+    executorFactory = newInstance(executorFactoryClassName);
   }
 }

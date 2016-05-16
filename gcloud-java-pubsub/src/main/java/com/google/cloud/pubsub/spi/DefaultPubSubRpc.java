@@ -21,7 +21,7 @@ import com.google.api.gax.grpc.ApiCallSettings;
 import com.google.api.gax.grpc.ApiException;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.AuthCredentials;
-import com.google.cloud.GrpcServiceOptions.ExecutorProvider;
+import com.google.cloud.GrpcServiceOptions.ExecutorFactory;
 import com.google.cloud.RetryParams;
 import com.google.cloud.pubsub.PubSubException;
 import com.google.cloud.pubsub.PubSubOptions;
@@ -64,12 +64,14 @@ import io.grpc.netty.NettyChannelBuilder;
 import java.io.IOException;
 import java.util.Set;
 import java.util.concurrent.Future;
+import java.util.concurrent.ScheduledExecutorService;
 
 public class DefaultPubSubRpc implements PubSubRpc {
 
   private final PublisherApi publisherApi;
   private final SubscriberApi subscriberApi;
-  private final ExecutorProvider executorProvider;
+  private final ScheduledExecutorService executor;
+  private final ExecutorFactory executorFactory;
 
   private static final class InternalPubSubOptions extends PubSubOptions {
 
@@ -80,18 +82,19 @@ public class DefaultPubSubRpc implements PubSubRpc {
     }
 
     @Override
-    protected ExecutorProvider executorProvider() {
-      return super.executorProvider();
+    protected ExecutorFactory executorFactory() {
+      return super.executorFactory();
     }
   }
 
   public DefaultPubSubRpc(PubSubOptions options) throws IOException {
-    executorProvider = new InternalPubSubOptions(options).executorProvider();
+    executorFactory = new InternalPubSubOptions(options).executorFactory();
+    executor = executorFactory.get();
     try {
       PublisherSettings.Builder pubBuilder =
-          PublisherSettings.defaultBuilder().provideExecutorWith(executorProvider.get(), false);
+          PublisherSettings.defaultBuilder().provideExecutorWith(executor, false);
       SubscriberSettings.Builder subBuilder =
-          SubscriberSettings.defaultBuilder().provideExecutorWith(executorProvider.get(), false);
+          SubscriberSettings.defaultBuilder().provideExecutorWith(executor, false);
       // todo(mziccard): PublisherSettings should support null/absent credentials for testing
       if (options.host().contains("localhost")
           || options.authCredentials().equals(AuthCredentials.noAuth())) {
@@ -233,6 +236,6 @@ public class DefaultPubSubRpc implements PubSubRpc {
   public void close() throws Exception {
     subscriberApi.close();
     publisherApi.close();
-    executorProvider.shutdown();
+    executorFactory.release(executor);
   }
 }

@@ -18,21 +18,30 @@ package com.google.cloud;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertSame;
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
+import com.google.cloud.GrpcServiceOptions.DefaultExecutorFactory;
+import com.google.cloud.GrpcServiceOptions.ExecutorFactory;
 import com.google.cloud.spi.ServiceRpcFactory;
 
+import org.easymock.EasyMock;
 import org.junit.Test;
 
 import java.util.Set;
+import java.util.concurrent.ScheduledExecutorService;
 
 public class GrpcServiceOptionsTest {
 
+  private static final ExecutorFactory MOCK_EXECUTOR_FACTORY =
+      EasyMock.createMock(ExecutorFactory.class);
   private static final TestGrpcServiceOptions OPTIONS = TestGrpcServiceOptions.builder()
       .projectId("project-id")
       .initialTimeout(1234)
       .timeoutMultiplier(1.6)
       .maxTimeout(5678)
+      .executorFactory(MOCK_EXECUTOR_FACTORY)
       .build();
   private static final TestGrpcServiceOptions DEFAULT_OPTIONS =
       TestGrpcServiceOptions.builder().projectId("project-id").build();
@@ -138,9 +147,11 @@ public class GrpcServiceOptionsTest {
     assertEquals(1234, OPTIONS.initialTimeout());
     assertEquals(1.6, OPTIONS.timeoutMultiplier(), 0.0);
     assertEquals(5678, OPTIONS.maxTimeout());
+    assertSame(MOCK_EXECUTOR_FACTORY, OPTIONS.executorFactory());
     assertEquals(20000, DEFAULT_OPTIONS.initialTimeout());
     assertEquals(1.5, DEFAULT_OPTIONS.timeoutMultiplier(), 0.0);
     assertEquals(100000, DEFAULT_OPTIONS.maxTimeout());
+    assertTrue(DEFAULT_OPTIONS.executorFactory() instanceof DefaultExecutorFactory);
   }
 
   @Test
@@ -182,11 +193,26 @@ public class GrpcServiceOptionsTest {
   public void testBaseEquals() {
     assertEquals(OPTIONS, OPTIONS_COPY);
     assertNotEquals(DEFAULT_OPTIONS, OPTIONS);
+    TestGrpcServiceOptions options = OPTIONS.toBuilder()
+        .executorFactory(new DefaultExecutorFactory())
+        .build();
+    assertNotEquals(OPTIONS, options);
   }
 
   @Test
   public void testBaseHashCode() {
     assertEquals(OPTIONS.hashCode(), OPTIONS_COPY.hashCode());
     assertNotEquals(DEFAULT_OPTIONS.hashCode(), OPTIONS.hashCode());
+    TestGrpcServiceOptions options = OPTIONS.toBuilder()
+        .executorFactory(new DefaultExecutorFactory())
+        .build();
+    assertNotEquals(OPTIONS.hashCode(), options.hashCode());
+  }
+
+  @Test
+  public void testDefaultExecutorFactory() {
+    ExecutorFactory executorFactory = new DefaultExecutorFactory();
+    ScheduledExecutorService executorService = executorFactory.get();
+    assertSame(executorService, executorFactory.get());
   }
 }
