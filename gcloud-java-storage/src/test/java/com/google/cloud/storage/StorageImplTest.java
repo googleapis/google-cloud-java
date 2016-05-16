@@ -1136,17 +1136,42 @@ public class StorageImplTest {
     storage = options.toBuilder().authCredentials(authCredentials).build().service();
     URL url = storage.signUrl(BLOB_INFO1, 14, TimeUnit.DAYS);
     String stringUrl = url.toString();
-    String expectedUrl =
-        new StringBuilder("https://storage.googleapis.com/").append(BUCKET_NAME1).append("/")
-            .append(BLOB_NAME1).append("?GoogleAccessId=").append(ACCOUNT).append("&Expires=")
-            .append(42L + 1209600).append("&Signature=").toString();
+    String expectedUrl = new StringBuilder("https://storage.googleapis.com/").append(BUCKET_NAME1)
+        .append('/').append(BLOB_NAME1).append("?GoogleAccessId=").append(ACCOUNT)
+        .append("&Expires=").append(42L + 1209600).append("&Signature=").toString();
     assertTrue(stringUrl.startsWith(expectedUrl));
     String signature = stringUrl.substring(expectedUrl.length());
 
     StringBuilder signedMessageBuilder = new StringBuilder();
-    signedMessageBuilder.append(HttpMethod.GET).append('\n').append('\n').append('\n')
-        .append(42L + 1209600).append('\n').append("/").append(BUCKET_NAME1).append("/")
-        .append(BLOB_NAME1);
+    signedMessageBuilder.append(HttpMethod.GET).append("\n\n\n").append(42L + 1209600).append("\n/")
+        .append(BUCKET_NAME1).append('/').append(BLOB_NAME1);
+
+    Signature signer = Signature.getInstance("SHA256withRSA");
+    signer.initVerify(publicKey);
+    signer.update(signedMessageBuilder.toString().getBytes(UTF_8));
+    assertTrue(signer.verify(BaseEncoding.base64().decode(
+        URLDecoder.decode(signature, UTF_8.name()))));
+  }
+
+  @Test
+  public void testSignUrlLeadingSlash() throws NoSuchAlgorithmException, InvalidKeyException,
+      SignatureException, UnsupportedEncodingException {
+    String blobName = "/b1";
+    EasyMock.replay(storageRpcMock);
+    ServiceAccountAuthCredentials authCredentials =
+        ServiceAccountAuthCredentials.createFor(ACCOUNT, privateKey);
+    storage = options.toBuilder().authCredentials(authCredentials).build().service();
+    URL url = storage.signUrl(BlobInfo.builder(BUCKET_NAME1, blobName).build(), 14, TimeUnit.DAYS);
+    String stringUrl = url.toString();
+    String expectedUrl = new StringBuilder("https://storage.googleapis.com/").append(BUCKET_NAME1)
+        .append(blobName).append("?GoogleAccessId=").append(ACCOUNT).append("&Expires=")
+        .append(42L + 1209600).append("&Signature=").toString();
+    assertTrue(stringUrl.startsWith(expectedUrl));
+    String signature = stringUrl.substring(expectedUrl.length());
+
+    StringBuilder signedMessageBuilder = new StringBuilder();
+    signedMessageBuilder.append(HttpMethod.GET).append("\n\n\n").append(42L + 1209600).append("\n/")
+        .append(BUCKET_NAME1).append(blobName);
 
     Signature signer = Signature.getInstance("SHA256withRSA");
     signer.initVerify(publicKey);
@@ -1162,22 +1187,20 @@ public class StorageImplTest {
     ServiceAccountAuthCredentials authCredentials =
         ServiceAccountAuthCredentials.createFor(ACCOUNT, privateKey);
     storage = options.toBuilder().authCredentials(authCredentials).build().service();
-    URL url =
-        storage.signUrl(BLOB_INFO1, 14, TimeUnit.DAYS,
-            Storage.SignUrlOption.httpMethod(HttpMethod.POST),
-            Storage.SignUrlOption.withContentType(), Storage.SignUrlOption.withMd5());
+    URL url = storage.signUrl(BLOB_INFO1, 14, TimeUnit.DAYS,
+        Storage.SignUrlOption.httpMethod(HttpMethod.POST), Storage.SignUrlOption.withContentType(),
+        Storage.SignUrlOption.withMd5());
     String stringUrl = url.toString();
-    String expectedUrl =
-        new StringBuilder("https://storage.googleapis.com/").append(BUCKET_NAME1).append("/")
-            .append(BLOB_NAME1).append("?GoogleAccessId=").append(ACCOUNT).append("&Expires=")
-            .append(42L + 1209600).append("&Signature=").toString();
+    String expectedUrl = new StringBuilder("https://storage.googleapis.com/").append(BUCKET_NAME1)
+        .append('/').append(BLOB_NAME1).append("?GoogleAccessId=").append(ACCOUNT)
+        .append("&Expires=").append(42L + 1209600).append("&Signature=").toString();
     assertTrue(stringUrl.startsWith(expectedUrl));
     String signature = stringUrl.substring(expectedUrl.length());
 
     StringBuilder signedMessageBuilder = new StringBuilder();
     signedMessageBuilder.append(HttpMethod.POST).append('\n').append(BLOB_INFO1.md5()).append('\n')
-        .append(BLOB_INFO1.contentType()).append('\n').append(42L + 1209600).append('\n')
-        .append("/").append(BUCKET_NAME1).append("/").append(BLOB_NAME1);
+        .append(BLOB_INFO1.contentType()).append('\n').append(42L + 1209600).append("\n/")
+        .append(BUCKET_NAME1).append('/').append(BLOB_NAME1);
 
     Signature signer = Signature.getInstance("SHA256withRSA");
     signer.initVerify(publicKey);
