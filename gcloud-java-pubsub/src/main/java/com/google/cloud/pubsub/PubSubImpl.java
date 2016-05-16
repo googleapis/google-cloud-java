@@ -278,4 +278,9 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
       Iterable<String> ackIds) {
     return null;
   }
+
+  @Override
+  public void close() throws Exception {
+    rpc.close();
+  }
 }

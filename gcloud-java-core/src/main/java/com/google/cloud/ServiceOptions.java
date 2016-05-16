@@ -20,12 +20,6 @@ import static com.google.common.base.MoreObjects.firstNonNull;
 import static com.google.common.base.Preconditions.checkArgument;
 import static java.nio.charset.StandardCharsets.UTF_8;
 
-import com.google.api.client.extensions.appengine.http.UrlFetchTransport;
-import com.google.api.client.http.HttpRequest;
-import com.google.api.client.http.HttpRequestInitializer;
-import com.google.api.client.http.HttpTransport;
-import com.google.api.client.http.javanet.NetHttpTransport;
-import com.google.auth.http.HttpCredentialsAdapter;
 import com.google.cloud.spi.ServiceRpcFactory;
 import com.google.common.collect.Iterables;
 import com.google.common.io.Files;
@@ -70,59 +64,27 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
     OptionsT extends ServiceOptions<ServiceT, ServiceRpcT, OptionsT>> implements Serializable {
 
   private static final String DEFAULT_HOST = "https://www.googleapis.com";
-  private static final long serialVersionUID = 1203687993961393350L;
   private static final String PROJECT_ENV_NAME = "GCLOUD_PROJECT";
   private static final String MANIFEST_ARTIFACT_ID_KEY = "artifactId";
   private static final String MANIFEST_VERSION_KEY = "Implementation-Version";
   private static final String ARTIFACT_ID = "gcloud-java-core";
   private static final String APPLICATION_BASE_NAME = "gcloud-java";
   private static final String APPLICATION_NAME = getApplicationName();
+  private static final long serialVersionUID = -6410263550484023006L;
 
   private final String projectId;
   private final String host;
-  private final String httpTransportFactoryClassName;
   private final RestorableState<AuthCredentials> authCredentialsState;
   private final RetryParams retryParams;
   private final String serviceRpcFactoryClassName;
   private final String serviceFactoryClassName;
-  private final int connectTimeout;
-  private final int readTimeout;
   private final Clock clock;
 
-  private transient HttpTransportFactory httpTransportFactory;
   private transient AuthCredentials authCredentials;
   private transient ServiceRpcFactory<ServiceRpcT, OptionsT> serviceRpcFactory;
   private transient ServiceFactory<ServiceT, OptionsT> serviceFactory;
   private transient ServiceT service;
   private transient ServiceRpcT rpc;
-
-  /**
-   * A base interface for all {@link HttpTransport} factories.
-   *
-   * <p>Implementation must provide a public no-arg constructor. Loading of a factory implementation
-   * is done via {@link java.util.ServiceLoader}.
-   */
-  public interface HttpTransportFactory {
-    HttpTransport create();
-  }
-
-  public static class DefaultHttpTransportFactory implements HttpTransportFactory {
-
-    private static final HttpTransportFactory INSTANCE = new DefaultHttpTransportFactory();
-
-    @Override
-    public HttpTransport create() {
-      // Consider App Engine
-      if (appEngineAppId() != null) {
-        try {
-          return new UrlFetchTransport();
-        } catch (Exception ignore) {
-          // Maybe not on App Engine
-        }
-      }
-      return new NetHttpTransport();
-    }
-  }
 
   /**
    * Builder for {@code ServiceOptions}.
@@ -138,13 +100,10 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
 
     private String projectId;
     private String host;
-    private HttpTransportFactory httpTransportFactory;
     private AuthCredentials authCredentials;
     private RetryParams retryParams;
     private ServiceFactory<ServiceT, OptionsT> serviceFactory;
     private ServiceRpcFactory<ServiceRpcT, OptionsT> serviceRpcFactory;
-    private int connectTimeout = -1;
-    private int readTimeout = -1;
     private Clock clock;
 
     protected Builder() {}
@@ -152,13 +111,10 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
     protected Builder(ServiceOptions<ServiceT, ServiceRpcT, OptionsT> options) {
       projectId = options.projectId;
       host = options.host;
-      httpTransportFactory = options.httpTransportFactory;
       authCredentials = options.authCredentials;
       retryParams = options.retryParams;
       serviceFactory = options.serviceFactory;
       serviceRpcFactory = options.serviceRpcFactory;
-      connectTimeout = options.connectTimeout;
-      readTimeout = options.readTimeout;
       clock = options.clock;
     }
 
@@ -210,16 +166,6 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
     }
 
     /**
-     * Sets the transport factory.
-     *
-     * @return the builder
-     */
-    public B httpTransportFactory(HttpTransportFactory httpTransportFactory) {
-      this.httpTransportFactory = httpTransportFactory;
-      return self();
-    }
-
-    /**
      * Sets the service authentication credentials.
      *
      * @return the builder
@@ -250,30 +196,6 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
       this.serviceRpcFactory = serviceRpcFactory;
       return self();
     }
-
-    /**
-     * Sets the timeout in milliseconds to establish a connection.
-     *
-     * @param connectTimeout connection timeout in milliseconds. 0 for an infinite timeout, a
-     *        negative number for the default value (20000).
-     * @return the builder
-     */
-    public B connectTimeout(int connectTimeout) {
-      this.connectTimeout = connectTimeout;
-      return self();
-    }
-
-    /**
-     * Sets the timeout in milliseconds to read data from an established connection.
-     *
-     * @param readTimeout read timeout in milliseconds. 0 for an infinite timeout, a negative number
-     *        for the default value (20000).
-     * @return the builder
-     */
-    public B readTimeout(int readTimeout) {
-      this.readTimeout = readTimeout;
-      return self();
-    }
   }
 
   protected ServiceOptions(Class<? extends ServiceFactory<ServiceT, OptionsT>> serviceFactoryClass,
@@ -287,9 +209,6 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
           + "or the environment.  Please set a project ID using the builder.");
     }
     host = firstNonNull(builder.host, defaultHost());
-    httpTransportFactory = firstNonNull(builder.httpTransportFactory,
-        getFromServiceLoader(HttpTransportFactory.class, DefaultHttpTransportFactory.INSTANCE));
-    httpTransportFactoryClassName = httpTransportFactory.getClass().getName();
     authCredentials =
         builder.authCredentials != null ? builder.authCredentials : defaultAuthCredentials();
     authCredentialsState = authCredentials != null ? authCredentials.capture() : null;
@@ -300,8 +219,6 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
     serviceRpcFactory = firstNonNull(builder.serviceRpcFactory,
         getFromServiceLoader(rpcFactoryClass, defaultRpcFactory()));
     serviceRpcFactoryClassName = serviceRpcFactory.getClass().getName();
-    connectTimeout = builder.connectTimeout;
-    readTimeout = builder.readTimeout;
     clock = firstNonNull(builder.clock, Clock.defaultClock());
   }
 
@@ -493,13 +410,6 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
   }
 
   /**
-   * Returns the transport factory.
-   */
-  public HttpTransportFactory httpTransportFactory() {
-    return httpTransportFactory;
-  }
-
-  /**
    * Returns the authentication credentials.
    */
   public AuthCredentials authCredentials() {
@@ -512,47 +422,6 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
    */
   public RetryParams retryParams() {
     return retryParams;
-  }
-
-  /**
-   * Returns a request initializer responsible for initializing requests according to service
-   * options.
-   */
-  public HttpRequestInitializer httpRequestInitializer() {
-    final HttpRequestInitializer delegate =
-        authCredentials() != null && authCredentials.credentials() != null
-            ? new HttpCredentialsAdapter(authCredentials().credentials().createScoped(scopes()))
-            : null;
-    return new HttpRequestInitializer() {
-      @Override
-      public void initialize(HttpRequest httpRequest) throws IOException {
-        if (delegate != null) {
-          delegate.initialize(httpRequest);
-        }
-        if (connectTimeout >= 0) {
-          httpRequest.setConnectTimeout(connectTimeout);
-        }
-        if (readTimeout >= 0) {
-          httpRequest.setReadTimeout(readTimeout);
-        }
-      }
-    };
-  }
-
-  /**
-   * Returns the timeout in milliseconds to establish a connection. 0 is an infinite timeout, a
-   * negative number is the default value (20000).
-   */
-  public int connectTimeout() {
-    return connectTimeout;
-  }
-
-  /**
-   * Returns the timeout in milliseconds to read from an established connection. 0 is an infinite
-   * timeout, a negative number is the default value (20000).
-   */
-  public int readTimeout() {
-    return readTimeout;
   }
 
   /**
@@ -571,34 +440,29 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
   }
 
   protected int baseHashCode() {
-    return Objects.hash(projectId, host, httpTransportFactoryClassName, authCredentialsState,
-        retryParams, serviceFactoryClassName, serviceRpcFactoryClassName, connectTimeout,
-        readTimeout, clock);
+    return Objects.hash(projectId, host, authCredentialsState, retryParams, serviceFactoryClassName,
+        serviceRpcFactoryClassName, clock);
   }
 
   protected boolean baseEquals(ServiceOptions<?, ?, ?> other) {
     return Objects.equals(projectId, other.projectId)
         && Objects.equals(host, other.host)
-        && Objects.equals(httpTransportFactoryClassName, other.httpTransportFactoryClassName)
         && Objects.equals(authCredentialsState, other.authCredentialsState)
         && Objects.equals(retryParams, other.retryParams)
         && Objects.equals(serviceFactoryClassName, other.serviceFactoryClassName)
         && Objects.equals(serviceRpcFactoryClassName, other.serviceRpcFactoryClassName)
-        && Objects.equals(connectTimeout, other.connectTimeout)
-        && Objects.equals(readTimeout, other.readTimeout)
         && Objects.equals(clock, clock);
   }
 
   private void readObject(ObjectInputStream input) throws IOException, ClassNotFoundException {
     input.defaultReadObject();
-    httpTransportFactory = newInstance(httpTransportFactoryClassName);
     serviceFactory = newInstance(serviceFactoryClassName);
     serviceRpcFactory = newInstance(serviceRpcFactoryClassName);
     authCredentials = authCredentialsState != null ? authCredentialsState.restore() : null;
   }
 
   @SuppressWarnings("unchecked")
-  private static <T> T newInstance(String className) throws IOException, ClassNotFoundException {
+  static <T> T newInstance(String className) throws IOException, ClassNotFoundException {
     try {
       return (T) Class.forName(className).newInstance();
     } catch (InstantiationException | IllegalAccessException e) {
@@ -623,7 +487,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
     return RetryParams.defaultInstance();
   }
 
-  private static <T> T getFromServiceLoader(Class<? extends T> clazz, T defaultInstance) {
+  static <T> T getFromServiceLoader(Class<? extends T> clazz, T defaultInstance) {
     return Iterables.getFirst(ServiceLoader.load(clazz), defaultInstance);
   }
 
