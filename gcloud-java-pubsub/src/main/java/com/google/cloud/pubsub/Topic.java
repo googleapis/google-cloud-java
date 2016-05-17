@@ -155,7 +155,7 @@ public class Topic extends TopicInfo {
     return new Function<com.google.pubsub.v1.Topic, Topic>() {
       @Override
       public Topic apply(com.google.pubsub.v1.Topic topicPb) {
-        return fromPb(pubsub, topicPb);
+        return topicPb != null ? fromPb(pubsub, topicPb) : null;
       }
     };
   }
