@@ -44,6 +44,9 @@ import java.util.concurrent.Future;
  */
 public abstract class BaseSystemTest {
 
+  @Rule
+  public ExpectedException thrown = ExpectedException.none();
+
   /**
    * Returns the Pub/Sub service used to issue requests. This service can be such that it interacts
    * with the remote Pub/Sub service (for integration tests) or with an emulator
@@ -57,9 +60,6 @@ public abstract class BaseSystemTest {
    * name clashes.
    */
   protected abstract String formatForTest(String resourceName);
-
-  @Rule
-  public ExpectedException thrown = ExpectedException.none();
 
   @Test
   public void testCreateGetAndDeleteTopic() {
