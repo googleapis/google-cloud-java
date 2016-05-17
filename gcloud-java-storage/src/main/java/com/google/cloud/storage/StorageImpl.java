@@ -571,7 +571,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
       path.append('/');
     }
     if (blobInfo.name().startsWith("/")) {
-      path.setLength(stBuilder.length() - 1);
+      path.setLength(path.length() - 1);
     }
     path.append(blobInfo.name());
     stBuilder.append(path);
