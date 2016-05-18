@@ -355,8 +355,7 @@ public class DefaultStorageRpc implements StorageRpc {
           .setIfGenerationMatch(IF_GENERATION_MATCH.getLong(options))
           .setIfGenerationNotMatch(IF_GENERATION_NOT_MATCH.getLong(options));
       ByteArrayOutputStream out = new ByteArrayOutputStream();
-      getRequest.getMediaHttpDownloader().setDirectDownloadEnabled(true);
-      getRequest.executeMediaAndDownloadTo(out);
+      getRequest.executeMedia().download(out);
       return out.toByteArray();
     } catch (IOException ex) {
       throw translate(ex);
