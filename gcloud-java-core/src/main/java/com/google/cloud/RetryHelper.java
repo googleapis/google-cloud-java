@@ -235,8 +235,7 @@ public class RetryHelper<V> {
     return runWithRetries(callable, params, exceptionHandler, Clock.defaultClock());
   }
 
-  @VisibleForTesting
-  static <V> V runWithRetries(Callable<V> callable, RetryParams params,
+  public static <V> V runWithRetries(Callable<V> callable, RetryParams params,
       ExceptionHandler exceptionHandler, Clock clock) throws RetryHelperException {
     RetryHelper<V> retryHelper = new RetryHelper<>(callable, params, exceptionHandler, clock);
     Context previousContext = getContext();
