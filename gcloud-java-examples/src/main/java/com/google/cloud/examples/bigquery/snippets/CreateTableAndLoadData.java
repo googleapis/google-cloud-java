@@ -23,6 +23,7 @@
 package com.google.cloud.examples.bigquery.snippets;
 
 import com.google.cloud.bigquery.BigQuery;
+import com.google.cloud.bigquery.BigQueryError;
 import com.google.cloud.bigquery.BigQueryOptions;
 import com.google.cloud.bigquery.Field;
 import com.google.cloud.bigquery.FormatOptions;
@@ -32,6 +33,8 @@ import com.google.cloud.bigquery.StandardTableDefinition;
 import com.google.cloud.bigquery.Table;
 import com.google.cloud.bigquery.TableId;
 import com.google.cloud.bigquery.TableInfo;
+
+import java.util.List;
 
 /**
  * A snippet for Google Cloud BigQuery showing how to get a BigQuery table or create it if it does
@@ -52,13 +55,16 @@ public class CreateTableAndLoadData {
     }
     System.out.println("Loading data into table " + tableId);
     Job loadJob = table.load(FormatOptions.csv(), "gs://bucket/path");
-    while (!loadJob.isDone()) {
-      Thread.sleep(1000L);
-    }
-    if (loadJob.status().error() != null) {
-      System.out.println("Job completed with errors");
-    } else {
-      System.out.println("Job succeeded");
-    }
+    loadJob.whenDone(new Job.CompletionCallback() {
+      @Override
+      public void success(Job job) {
+        System.out.println("Job succeeded");
+      }
+
+      @Override
+      public void error(BigQueryError error, List<BigQueryError> executionErrors) {
+        System.out.println("Job completed with errors");
+      }
+    });
   }
 }

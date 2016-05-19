@@ -69,9 +69,9 @@ import com.google.cloud.storage.testing.RemoteStorageHelper;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 
+import org.easymock.EasyMock;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
-import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.Timeout;
@@ -188,10 +188,11 @@ public class ITBigQueryTest {
         .schema(TABLE_SCHEMA)
         .build();
     Job job = bigquery.create(JobInfo.of(configuration));
-    while (!job.isDone()) {
-      Thread.sleep(1000);
-    }
-    assertNull(job.status().error());
+    Job.CompletionCallback callback = EasyMock.createStrictMock(Job.CompletionCallback.class);
+    callback.success(EasyMock.<Job>anyObject());
+    EasyMock.replay(callback);
+    job.whenDone(callback);
+    EasyMock.verify(callback);
   }
 
   @AfterClass
@@ -799,10 +800,11 @@ public class ITBigQueryTest {
     TableId destinationTable = TableId.of(DATASET, destinationTableName);
     CopyJobConfiguration configuration = CopyJobConfiguration.of(destinationTable, sourceTable);
     Job remoteJob = bigquery.create(JobInfo.of(configuration));
-    while (!remoteJob.isDone()) {
-      Thread.sleep(1000);
-    }
-    assertNull(remoteJob.status().error());
+    Job.CompletionCallback callback = EasyMock.createStrictMock(Job.CompletionCallback.class);
+    callback.success(EasyMock.<Job>anyObject());
+    EasyMock.replay(callback);
+    remoteJob.whenDone(callback);
+    EasyMock.verify(callback);
     Table remoteTable = bigquery.getTable(DATASET, destinationTableName);
     assertNotNull(remoteTable);
     assertEquals(destinationTable.dataset(), remoteTable.tableId().dataset());
@@ -825,10 +827,11 @@ public class ITBigQueryTest {
         .destinationTable(destinationTable)
         .build();
     Job remoteJob = bigquery.create(JobInfo.of(configuration));
-    while (!remoteJob.isDone()) {
-      Thread.sleep(1000);
-    }
-    assertNull(remoteJob.status().error());
+    Job.CompletionCallback callback = EasyMock.createStrictMock(Job.CompletionCallback.class);
+    callback.success(EasyMock.<Job>anyObject());
+    EasyMock.replay(callback);
+    remoteJob.whenDone(callback);
+    EasyMock.reset(callback);
 
     QueryResponse response = bigquery.getQueryResults(remoteJob.jobId());
     while (!response.jobCompleted()) {
@@ -866,20 +869,21 @@ public class ITBigQueryTest {
             .schema(SIMPLE_SCHEMA)
             .build();
     Job remoteLoadJob = bigquery.create(JobInfo.of(configuration));
-    while (!remoteLoadJob.isDone()) {
-      Thread.sleep(1000);
-    }
-    assertNull(remoteLoadJob.status().error());
+    Job.CompletionCallback callback = EasyMock.createStrictMock(Job.CompletionCallback.class);
+    callback.success(EasyMock.<Job>anyObject());
+    EasyMock.replay(callback);
+    remoteLoadJob.whenDone(callback);
+    EasyMock.reset(callback);
 
     ExtractJobConfiguration extractConfiguration =
         ExtractJobConfiguration.builder(destinationTable, "gs://" + BUCKET + "/" + EXTRACT_FILE)
             .printHeader(false)
             .build();
     Job remoteExtractJob = bigquery.create(JobInfo.of(extractConfiguration));
-    while (!remoteExtractJob.isDone()) {
-      Thread.sleep(1000);
-    }
-    assertNull(remoteExtractJob.status().error());
+    callback.success(EasyMock.<Job>anyObject());
+    EasyMock.replay(callback);
+    remoteExtractJob.whenDone(callback);
+    EasyMock.verify(callback);
     assertEquals(CSV_CONTENT,
         new String(storage.readAllBytes(BUCKET, EXTRACT_FILE), StandardCharsets.UTF_8));
     assertTrue(bigquery.delete(DATASET, tableName));
@@ -896,10 +900,11 @@ public class ITBigQueryTest {
         .build();
     Job remoteJob = bigquery.create(JobInfo.of(configuration));
     assertTrue(remoteJob.cancel());
-    while (!remoteJob.isDone()) {
-      Thread.sleep(1000);
-    }
-    assertNull(remoteJob.status().error());
+    Job.CompletionCallback callback = EasyMock.createStrictMock(Job.CompletionCallback.class);
+    callback.success(EasyMock.<Job>anyObject());
+    EasyMock.replay(callback);
+    remoteJob.whenDone(callback);
+    EasyMock.verify(callback);
   }
 
   @Test

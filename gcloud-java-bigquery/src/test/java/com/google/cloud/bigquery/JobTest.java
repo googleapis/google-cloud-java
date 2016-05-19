@@ -28,9 +28,13 @@ import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
 import com.google.cloud.bigquery.JobStatistics.CopyStatistics;
+import com.google.common.collect.ImmutableList;
 
+import org.easymock.EasyMock;
 import org.junit.After;
 import org.junit.Test;
+
+import java.util.List;
 
 public class JobTest {
 
@@ -178,12 +182,69 @@ public class JobTest {
   }
 
   @Test
+  public void testWhenDone_Success() throws InterruptedException {
+    initializeExpectedJob(2);
+    Job.CompletionCallback callback = EasyMock.mock(Job.CompletionCallback.class);
+    BigQuery.JobOption[] expectedOptions = {BigQuery.JobOption.fields(BigQuery.JobField.STATUS)};
+    JobStatus status = createStrictMock(JobStatus.class);
+    expect(status.state()).andReturn(JobStatus.State.DONE);
+    expect(status.error()).andReturn(null);
+    expect(bigquery.options()).andReturn(mockOptions);
+    Job completedJob = expectedJob.toBuilder().status(status).build();
+    expect(bigquery.getJob(JOB_INFO.jobId(), expectedOptions)).andReturn(completedJob);
+    expect(bigquery.getJob(JOB_INFO.jobId())).andReturn(completedJob);
+    callback.success(completedJob);
+    EasyMock.expectLastCall();
+    replay(status, bigquery, callback);
+    initializeJob();
+    job.whenDone(callback);
+    verify(status, callback);
+  }
+
+  @Test
+  public void testWhenDone_Error() throws InterruptedException {
+    initializeExpectedJob(2);
+    Job.CompletionCallback callback = EasyMock.mock(Job.CompletionCallback.class);
+    BigQuery.JobOption[] expectedOptions = {BigQuery.JobOption.fields(BigQuery.JobField.STATUS)};
+    BigQueryError error = new BigQueryError("reason", "location", "message");
+    List<BigQueryError> executionErrors = ImmutableList.of(error);
+    JobStatus status = createStrictMock(JobStatus.class);
+    expect(status.state()).andReturn(JobStatus.State.DONE);
+    expect(status.error()).andReturn(error);
+    expect(status.executionErrors()).andReturn(executionErrors);
+    expect(bigquery.options()).andReturn(mockOptions);
+    Job completedJob = expectedJob.toBuilder().status(status).build();
+    expect(bigquery.getJob(JOB_INFO.jobId(), expectedOptions)).andReturn(completedJob);
+    expect(bigquery.getJob(JOB_INFO.jobId())).andReturn(completedJob);
+    callback.error(error, executionErrors);
+    EasyMock.expectLastCall();
+    replay(status, bigquery, callback);
+    initializeJob();
+    job.whenDone(callback);
+    verify(status, callback);
+  }
+
+  @Test
+  public void testWhenDone_Null() throws InterruptedException {
+    initializeExpectedJob(1);
+    Job.CompletionCallback callback = EasyMock.mock(Job.CompletionCallback.class);
+    BigQuery.JobOption[] expectedOptions = {BigQuery.JobOption.fields(BigQuery.JobField.STATUS)};
+    expect(bigquery.options()).andReturn(mockOptions);
+    expect(bigquery.getJob(JOB_INFO.jobId(), expectedOptions)).andReturn(null);
+    expect(bigquery.getJob(JOB_INFO.jobId())).andReturn(null);
+    replay(bigquery, callback);
+    initializeJob();
+    job.whenDone(callback);
+    verify(callback);
+  }
+
+  @Test
   public void testReload() throws Exception {
     initializeExpectedJob(4);
     JobInfo updatedInfo = JOB_INFO.toBuilder().etag("etag").build();
     Job expectedJob = new Job(serviceMockReturnsOptions, new JobInfo.BuilderImpl(updatedInfo));
     expect(bigquery.options()).andReturn(mockOptions);
-    expect(bigquery.getJob(JOB_INFO.jobId().job())).andReturn(expectedJob);
+    expect(bigquery.getJob(JOB_INFO.jobId())).andReturn(expectedJob);
     replay(bigquery);
     initializeJob();
     Job updatedJob = job.reload();
@@ -194,7 +255,7 @@ public class JobTest {
   public void testReloadNull() throws Exception {
     initializeExpectedJob(1);
     expect(bigquery.options()).andReturn(mockOptions);
-    expect(bigquery.getJob(JOB_INFO.jobId().job())).andReturn(null);
+    expect(bigquery.getJob(JOB_INFO.jobId())).andReturn(null);
     replay(bigquery);
     initializeJob();
     assertNull(job.reload());
@@ -206,7 +267,7 @@ public class JobTest {
     JobInfo updatedInfo = JOB_INFO.toBuilder().etag("etag").build();
     Job expectedJob = new Job(serviceMockReturnsOptions, new JobInfo.BuilderImpl(updatedInfo));
     expect(bigquery.options()).andReturn(mockOptions);
-    expect(bigquery.getJob(JOB_INFO.jobId().job(), BigQuery.JobOption.fields()))
+    expect(bigquery.getJob(JOB_INFO.jobId(), BigQuery.JobOption.fields()))
         .andReturn(expectedJob);
     replay(bigquery);
     initializeJob();
