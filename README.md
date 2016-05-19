@@ -209,22 +209,31 @@ import com.google.cloud.compute.Compute;
 import com.google.cloud.compute.ComputeOptions;
 import com.google.cloud.compute.Disk;
 import com.google.cloud.compute.DiskId;
-import com.google.cloud.compute.Operation;
+import com.google.cloud.compute.Operation.OperationError;
+import com.google.cloud.compute.Operation.OperationWarning;
 import com.google.cloud.compute.Snapshot;
 
-Compute compute = ComputeOptions.defaultInstance().service();
+import java.util.List;
+
+final Compute compute = ComputeOptions.defaultInstance().service();
 DiskId diskId = DiskId.of("us-central1-a", "disk-name");
 Disk disk = compute.getDisk(diskId, Compute.DiskOption.fields());
 if (disk != null) {
-  String snapshotName = "disk-name-snapshot";
+  final String snapshotName = "disk-name-snapshot";
   Operation operation = disk.createSnapshot(snapshotName);
-  while (!operation.isDone()) {
-    Thread.sleep(1000L);
-  }
-  if (operation.errors() == null) {
-    // use snapshot
-    Snapshot snapshot = compute.getSnapshot("disk-name-snapshot");
-  }
+  operation.whenDone(new Operation.CompletionCallback() {
+    @Override
+    public void success(Operation operation) {
+      // use snapshot
+      Snapshot snapshot = compute.getSnapshot(snapshotName);
+    }
+
+    @Override
+    public void error(List<OperationError> errors, List<OperationWarning> warnings) {
+      // inspect errors
+      throw new RuntimeException("Snaphsot creation failed");
+    }
+  });
 }
 ```
 The second snippet shows how to create a virtual machine instance. Complete source code can be found
@@ -240,8 +249,10 @@ import com.google.cloud.compute.InstanceId;
 import com.google.cloud.compute.InstanceInfo;
 import com.google.cloud.compute.MachineTypeId;
 import com.google.cloud.compute.NetworkId;
-import com.google.cloud.compute.NetworkInterface;
-import com.google.cloud.compute.Operation;
+import com.google.cloud.compute.Operation.OperationError;
+import com.google.cloud.compute.Operation.OperationWarning;
+
+import java.util.List;
 
 Compute compute = ComputeOptions.defaultInstance().service();
 ImageId imageId = ImageId.of("debian-cloud", "debian-8-jessie-v20160329");

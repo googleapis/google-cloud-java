@@ -22,41 +22,49 @@
  * <a href="https://github.com/GoogleCloudPlatform/gcloud-java/tree/master/gcloud-java-examples/src/main/java/com/google/cloud/examples/compute/snippets/CreateSnapshot.java">
  * CreateSnapshot.java</a>.
  * <pre> {@code
- * Compute compute = ComputeOptions.defaultInstance().service();
+ * final Compute compute = ComputeOptions.defaultInstance().service();
  * DiskId diskId = DiskId.of("us-central1-a", "disk-name");
  * Disk disk = compute.getDisk(diskId, Compute.DiskOption.fields());
  * if (disk != null) {
- *   String snapshotName = "disk-name-snapshot";
+ *   final String snapshotName = "disk-name-snapshot";
  *   Operation operation = disk.createSnapshot(snapshotName);
- *   while (!operation.isDone()) {
- *     Thread.sleep(1000L);
- *   }
- *   if (operation.errors() == null) {
- *     // use snapshot
- *     Snapshot snapshot = compute.getSnapshot("disk-name-snapshot");
- *   }
+ *   operation.whenDone(new Operation.CompletionCallback() {
+ *     public void success(Operation operation) {
+ *       // use snapshot
+ *       Snapshot snapshot = compute.getSnapshot(snapshotName);
+ *     }
+ *
+ *     public void error(List<OperationError> errors, List<OperationWarning> warnings) {
+ *       // inspect errors
+ *       throw new RuntimeException("Snaphsot creation failed");
+ *     }
+ *   });
  * }}</pre>
  * <p>This second example shows how to create a virtual machine instance. Complete source code can
  * be found at
  * <a href="https://github.com/GoogleCloudPlatform/gcloud-java/tree/master/gcloud-java-examples/src/main/java/com/google/cloud/examples/compute/snippets/CreateInstance.java">
  * CreateInstance.java</a>.
  * <pre> {@code
- * Compute compute = ComputeOptions.defaultInstance().service();
+ * final Compute compute = ComputeOptions.defaultInstance().service();
  * ImageId imageId = ImageId.of("debian-cloud", "debian-8-jessie-v20160329");
  * NetworkId networkId = NetworkId.of("default");
  * AttachedDisk attachedDisk = AttachedDisk.of(AttachedDisk.CreateDiskConfiguration.of(imageId));
  * NetworkInterface networkInterface = NetworkInterface.of(networkId);
- * InstanceId instanceId = InstanceId.of("us-central1-a", "instance-name");
+ * final InstanceId instanceId = InstanceId.of("us-central1-a", "instance-name");
  * MachineTypeId machineTypeId = MachineTypeId.of("us-central1-a", "n1-standard-1");
  * Operation operation =
  * compute.create(InstanceInfo.of(instanceId, machineTypeId, attachedDisk, networkInterface));
- * while (!operation.isDone()) {
- *   Thread.sleep(1000L);
- * }
- * if (operation.errors() == null) {
- *   // use instance
- *   Instance instance = compute.getInstance(instanceId);
- * }}</pre>
+ * operation.whenDone(new Operation.CompletionCallback() {
+ *   public void success(Operation operation) {
+ *     // use instance
+ *     Instance instance = compute.getInstance(instanceId);
+ *   }
+ *
+ *   public void error(List<OperationError> errors, List<OperationWarning> warnings) {
+ *     // inspect errors
+ *     throw new RuntimeException("Instance creation failed");
+ *   }
+ * });}</pre>
  *
  * @see <a href="https://cloud.google.com/compute/">Google Cloud Compute</a>
  */

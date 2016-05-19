@@ -42,7 +42,7 @@ import java.util.Objects;
  * {@link #operationId()} returns {@link GlobalOperationId} for global operations,
  * {@link RegionOperationId} for region operations, and {@link ZoneOperationId} for zone operations.
  * To get an {@code Operation} object with the most recent information, use
- * {@link #reload(OperationOption...)}.
+ * {@link #reload(Compute.OperationOption...)}.
  */
 public class Operation implements Serializable {
 
@@ -290,6 +290,24 @@ public class Operation implements Serializable {
     public int hashCode() {
       return Objects.hash(code, message, metadata);
     }
+  }
+
+  /**
+   * A callback for operation completion.
+   */
+  public interface CompletionCallback {
+    /**
+     * The method called when the operation completes successfully.
+     */
+    void success(Operation operation);
+
+    /**
+     * The method called when the operation completes with errors. {@code errors} contains all
+     * errors encountered while processing this operation (see {@link Operation#errors()}).
+     * {@code warnings} contains all warnings encountered while processing this operation (see
+     * {@link Operation#warnings()}).
+     */
+    void error(List<OperationError> errors, List<OperationWarning> warnings);
   }
 
   static final class Builder {
@@ -635,7 +653,7 @@ public class Operation implements Serializable {
    * @return {@code true} if this operation exists, {@code false} otherwise
    * @throws ComputeException upon failure
    */
-  public boolean exists() throws ComputeException {
+  public boolean exists() {
     return reload(OperationOption.fields()) != null;
   }
 
@@ -652,10 +670,47 @@ public class Operation implements Serializable {
    *     not exist, {@code false} if the state is not {@link Operation.Status#DONE}
    * @throws ComputeException upon failure
    */
-  public boolean isDone() throws ComputeException {
+  public boolean isDone() {
     Operation operation = compute.getOperation(operationId,
         OperationOption.fields(Compute.OperationField.STATUS));
     return operation == null || operation.status() == Status.DONE;
+  }
+
+  /**
+   * Waits until this operation completes its execution, either failing or succeeding. If the
+   * operation does not exist, this method returns without executing any method of the provided
+   * callback. If the operation completed successfully the
+   * {@link CompletionCallback#success(Operation)} method is called. If the operation completed with
+   * errors the {@link CompletionCallback#error(List, List)} method is called.
+   * <pre> {@code
+   * operation.whenDone(new CompletionCallback() {
+   *   void success(Operation operation) {
+   *     // completed successfully
+   *   }
+   *
+   *   void error(List<OperationError> errors, List<OperationWarning> warnings) {
+   *     // handle error
+   *   }
+   * });}</pre>
+   *
+   * @throws ComputeException upon failure
+   * @throws InterruptedException if the current thread gets interrupted while waiting for the
+   *     operation to complete
+   */
+  public void whenDone(CompletionCallback callback) throws InterruptedException {
+    while (!isDone()) {
+      Thread.sleep(500L);
+    }
+    Operation updatedOperation = reload();
+    if (updatedOperation == null) {
+      return;
+    }
+    List<OperationError> errors = updatedOperation.errors();
+    if (errors != null) {
+      callback.error(errors, updatedOperation.warnings());
+    } else {
+      callback.success(updatedOperation);
+    }
   }
 
   /**
@@ -666,7 +721,7 @@ public class Operation implements Serializable {
    * @return an {@code Operation} object with latest information or {@code null} if not found
    * @throws ComputeException upon failure
    */
-  public Operation reload(OperationOption... options) throws ComputeException  {
+  public Operation reload(OperationOption... options) {
     return compute.getOperation(operationId, options);
   }
 
@@ -677,7 +732,7 @@ public class Operation implements Serializable {
    * @return {@code true} if operation was deleted, {@code false} if it was not found
    * @throws ComputeException upon failure
    */
-  public boolean delete() throws ComputeException {
+  public boolean delete() {
     return compute.deleteOperation(operationId);
   }
 

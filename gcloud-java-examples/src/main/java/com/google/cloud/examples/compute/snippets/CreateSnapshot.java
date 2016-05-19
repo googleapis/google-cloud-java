@@ -21,7 +21,11 @@ import com.google.cloud.compute.ComputeOptions;
 import com.google.cloud.compute.Disk;
 import com.google.cloud.compute.DiskId;
 import com.google.cloud.compute.Operation;
+import com.google.cloud.compute.Operation.OperationError;
+import com.google.cloud.compute.Operation.OperationWarning;
 import com.google.cloud.compute.Snapshot;
+
+import java.util.List;
 
 /**
  * A snippet for Google Cloud Compute Engine showing how to create a snapshot of a disk if the disk
@@ -30,19 +34,25 @@ import com.google.cloud.compute.Snapshot;
 public class CreateSnapshot {
 
   public static void main(String... args) throws InterruptedException {
-    Compute compute = ComputeOptions.defaultInstance().service();
+    final Compute compute = ComputeOptions.defaultInstance().service();
     DiskId diskId = DiskId.of("us-central1-a", "disk-name");
     Disk disk = compute.getDisk(diskId, Compute.DiskOption.fields());
     if (disk != null) {
-      String snapshotName = "disk-name-snapshot";
+      final String snapshotName = "disk-name-snapshot";
       Operation operation = disk.createSnapshot(snapshotName);
-      while (!operation.isDone()) {
-        Thread.sleep(1000L);
-      }
-      if (operation.errors() == null) {
-        // use snapshot
-        Snapshot snapshot = compute.getSnapshot("disk-name-snapshot");
-      }
+      operation.whenDone(new Operation.CompletionCallback() {
+        @Override
+        public void success(Operation operation) {
+          // use snapshot
+          Snapshot snapshot = compute.getSnapshot(snapshotName);
+        }
+
+        @Override
+        public void error(List<OperationError> errors, List<OperationWarning> warnings) {
+          // inspect errors
+          throw new RuntimeException("Snaphsot creation failed");
+        }
+      });
     }
   }
 }

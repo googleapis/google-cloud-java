@@ -27,6 +27,10 @@ import com.google.cloud.compute.MachineTypeId;
 import com.google.cloud.compute.NetworkId;
 import com.google.cloud.compute.NetworkInterface;
 import com.google.cloud.compute.Operation;
+import com.google.cloud.compute.Operation.OperationError;
+import com.google.cloud.compute.Operation.OperationWarning;
+
+import java.util.List;
 
 /**
  * A snippet for Google Cloud Compute Engine showing how to create a virtual machine instance.
@@ -34,21 +38,27 @@ import com.google.cloud.compute.Operation;
 public class CreateInstance {
 
   public static void main(String... args) throws InterruptedException {
-    Compute compute = ComputeOptions.defaultInstance().service();
+    final Compute compute = ComputeOptions.defaultInstance().service();
     ImageId imageId = ImageId.of("debian-cloud", "debian-8-jessie-v20160329");
     NetworkId networkId = NetworkId.of("default");
     AttachedDisk attachedDisk = AttachedDisk.of(AttachedDisk.CreateDiskConfiguration.of(imageId));
     NetworkInterface networkInterface = NetworkInterface.of(networkId);
-    InstanceId instanceId = InstanceId.of("us-central1-a", "instance-name");
+    final InstanceId instanceId = InstanceId.of("us-central1-a", "instance-name");
     MachineTypeId machineTypeId = MachineTypeId.of("us-central1-a", "n1-standard-1");
     Operation operation =
         compute.create(InstanceInfo.of(instanceId, machineTypeId, attachedDisk, networkInterface));
-    while (!operation.isDone()) {
-      Thread.sleep(1000L);
-    }
-    if (operation.errors() == null) {
-      // use instance
-      Instance instance = compute.getInstance(instanceId);
-    }
+    operation.whenDone(new Operation.CompletionCallback() {
+      @Override
+      public void success(Operation operation) {
+        // use instance
+        Instance instance = compute.getInstance(instanceId);
+      }
+
+      @Override
+      public void error(List<OperationError> errors, List<OperationWarning> warnings) {
+        // inspect errors
+        throw new RuntimeException("Instance creation failed");
+      }
+    });
   }
 }

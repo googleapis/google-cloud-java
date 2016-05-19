@@ -28,9 +28,12 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
+import com.google.cloud.compute.Operation.OperationError;
+import com.google.cloud.compute.Operation.OperationWarning;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 
+import org.easymock.EasyMock;
 import org.junit.After;
 import org.junit.Test;
 
@@ -38,14 +41,14 @@ import java.util.List;
 
 public class OperationTest {
 
-  private static final Operation.OperationError OPERATION_ERROR1 =
-      new Operation.OperationError("code1", "location1", "message1");
-  private static final Operation.OperationError OPERATION_ERROR2 =
-      new Operation.OperationError("code2", "location2", "message2");
-  private static final Operation.OperationWarning OPERATION_WARNING1 =
-      new Operation.OperationWarning("code1", "message1", ImmutableMap.of("k1", "v1"));
-  private static final Operation.OperationWarning OPERATION_WARNING2 =
-      new Operation.OperationWarning("code2", "location2", ImmutableMap.of("k2", "v2"));
+  private static final OperationError OPERATION_ERROR1 =
+      new OperationError("code1", "location1", "message1");
+  private static final OperationError OPERATION_ERROR2 =
+      new OperationError("code2", "location2", "message2");
+  private static final OperationWarning OPERATION_WARNING1 =
+      new OperationWarning("code1", "message1", ImmutableMap.of("k1", "v1"));
+  private static final OperationWarning OPERATION_WARNING2 =
+      new OperationWarning("code2", "location2", ImmutableMap.of("k2", "v2"));
   private static final String GENERATED_ID = "1";
   private static final String CLIENT_OPERATION_ID = "clientOperationId";
   private static final String OPERATION_TYPE = "delete";
@@ -58,9 +61,9 @@ public class OperationTest {
   private static final Long INSERT_TIME = 1453293540000L;
   private static final Long START_TIME = 1453293420000L;
   private static final Long END_TIME = 1453293480000L;
-  private static final List<Operation.OperationError> ERRORS =
+  private static final List<OperationError> ERRORS =
       ImmutableList.of(OPERATION_ERROR1, OPERATION_ERROR2);
-  private static final List<Operation.OperationWarning> WARNINGS =
+  private static final List<OperationWarning> WARNINGS =
       ImmutableList.of(OPERATION_WARNING1, OPERATION_WARNING2);
   private static final Integer HTTP_ERROR_STATUS_CODE = 404;
   private static final String HTTP_ERROR_MESSAGE = "NOT FOUND";
@@ -350,6 +353,57 @@ public class OperationTest {
     initializeOperation();
     assertTrue(operation.isDone());
     verify(compute);
+  }
+
+  @Test
+  public void testWhenDone_Success() throws InterruptedException {
+    initializeExpectedOperation(4);
+    Operation.CompletionCallback callback = EasyMock.mock(Operation.CompletionCallback.class);
+    Compute.OperationOption[] expectedOptions =
+        {Compute.OperationOption.fields(Compute.OperationField.STATUS)};
+    Operation successOperation =
+        Operation.fromPb(serviceMockReturnsOptions, globalOperation.toPb().setError(null));
+    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOperation(GLOBAL_OPERATION_ID, expectedOptions)).andReturn(successOperation);
+    expect(compute.getOperation(GLOBAL_OPERATION_ID)).andReturn(successOperation);
+    callback.success(successOperation);
+    EasyMock.expectLastCall();
+    replay(compute, callback);
+    initializeOperation();
+    operation.whenDone(callback);
+    verify(callback);
+  }
+
+  @Test
+  public void testWhenDone_Error() throws InterruptedException {
+    initializeExpectedOperation(3);
+    Operation.CompletionCallback callback = EasyMock.mock(Operation.CompletionCallback.class);
+    Compute.OperationOption[] expectedOptions =
+        {Compute.OperationOption.fields(Compute.OperationField.STATUS)};
+    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOperation(GLOBAL_OPERATION_ID, expectedOptions)).andReturn(globalOperation);
+    expect(compute.getOperation(GLOBAL_OPERATION_ID)).andReturn(globalOperation);
+    callback.error(ERRORS, WARNINGS);
+    EasyMock.expectLastCall();
+    replay(compute, callback);
+    initializeOperation();
+    operation.whenDone(callback);
+    verify(callback);
+  }
+
+  @Test
+  public void testWhenDone_Null() throws InterruptedException {
+    initializeExpectedOperation(3);
+    Operation.CompletionCallback callback = EasyMock.mock(Operation.CompletionCallback.class);
+    Compute.OperationOption[] expectedOptions =
+        {Compute.OperationOption.fields(Compute.OperationField.STATUS)};
+    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOperation(GLOBAL_OPERATION_ID, expectedOptions)).andReturn(null);
+    expect(compute.getOperation(GLOBAL_OPERATION_ID)).andReturn(null);
+    replay(compute, callback);
+    initializeOperation();
+    operation.whenDone(callback);
+    verify(callback);
   }
 
   @Test
