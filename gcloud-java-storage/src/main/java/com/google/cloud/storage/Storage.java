@@ -1425,12 +1425,29 @@ public interface Storage extends Service<StorageOptions> {
   byte[] readAllBytes(BlobId blob, BlobSourceOption... options);
 
   /**
-   * Sends a batch request.
+   * Creates a new empty batch for grouping multiple service calls in one underlying RPC call.
    *
-   * @return the batch response
-   * @throws StorageException upon failure
+   * <p>Example of using a batch request to delete, update and get a blob:
+   * <pre>{@code
+   * StorageBatch batch = storage.batch();
+   * BlobId firstBlob = BlobId.of("bucket", "blob1"));
+   * BlobId secondBlob = BlobId.of("bucket", "blob2"));
+   * batch.delete(firstBlob).notify(new BatchResult.Callback<Boolean, StorageException>() {
+   *   public void success(Boolean result) {
+   *     // deleted successfully
+   *   }
+   *
+   *   public void error(StorageException exception) {
+   *     // delete failed
+   *   }
+   * });
+   * batch.update(BlobInfo.builder(secondBlob).contentType("text/plain").build());
+   * StorageBatchResult<Blob> result = batch.get(secondBlob);
+   * batch.submit();
+   * Blob blob = result.get(); // returns get result or throws StorageException
+   * }</pre>
    */
-  BatchResponse submit(BatchRequest batchRequest);
+  StorageBatch batch();
 
   /**
    * Returns a channel for reading the blob's content. The blob's latest generation is read. If the
@@ -1535,6 +1552,16 @@ public interface Storage extends Service<StorageOptions> {
   List<Blob> get(BlobId... blobIds);
 
   /**
+   * Gets the requested blobs. A batch request is used to perform this call.
+   *
+   * @param blobIds blobs to get
+   * @return an immutable list of {@code Blob} objects. If a blob does not exist or access to it
+   *     has been denied the corresponding item in the list is {@code null}.
+   * @throws StorageException upon failure
+   */
+  List<Blob> get(Iterable<BlobId> blobIds);
+
+  /**
    * Updates the requested blobs. A batch request is used to perform this call. Original metadata
    * are merged with metadata in the provided {@code BlobInfo} objects. To replace metadata instead
    * you first have to unset them. Unsetting metadata can be done by setting the provided
@@ -1549,6 +1576,20 @@ public interface Storage extends Service<StorageOptions> {
   List<Blob> update(BlobInfo... blobInfos);
 
   /**
+   * Updates the requested blobs. A batch request is used to perform this call. Original metadata
+   * are merged with metadata in the provided {@code BlobInfo} objects. To replace metadata instead
+   * you first have to unset them. Unsetting metadata can be done by setting the provided
+   * {@code BlobInfo} objects metadata to {@code null}. See
+   * {@link #update(BlobInfo)} for a code example.
+   *
+   * @param blobInfos blobs to update
+   * @return an immutable list of {@code Blob} objects. If a blob does not exist or access to it
+   *     has been denied the corresponding item in the list is {@code null}.
+   * @throws StorageException upon failure
+   */
+  List<Blob> update(Iterable<BlobInfo> blobInfos);
+
+  /**
    * Deletes the requested blobs. A batch request is used to perform this call.
    *
    * @param blobIds blobs to delete
@@ -1558,4 +1599,15 @@ public interface Storage extends Service<StorageOptions> {
    * @throws StorageException upon failure
    */
   List<Boolean> delete(BlobId... blobIds);
+
+  /**
+   * Deletes the requested blobs. A batch request is used to perform this call.
+   *
+   * @param blobIds blobs to delete
+   * @return an immutable list of booleans. If a blob has been deleted the corresponding item in the
+   *     list is {@code true}. If a blob was not found, deletion failed or access to the resource
+   *     was denied the corresponding item is {@code false}.
+   * @throws StorageException upon failure
+   */
+  List<Boolean> delete(Iterable<BlobId> blobIds);
 }

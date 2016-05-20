@@ -19,11 +19,13 @@ package com.google.cloud.storage;
 import static java.nio.charset.StandardCharsets.UTF_8;
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
+import com.google.api.client.googleapis.json.GoogleJsonError;
 import com.google.api.services.storage.model.StorageObject;
 import com.google.cloud.AuthCredentials.ServiceAccountAuthCredentials;
 import com.google.cloud.Clock;
@@ -32,14 +34,13 @@ import com.google.cloud.ReadChannel;
 import com.google.cloud.RetryParams;
 import com.google.cloud.WriteChannel;
 import com.google.cloud.storage.Storage.CopyRequest;
+import com.google.cloud.storage.spi.RpcBatch;
 import com.google.cloud.storage.spi.StorageRpc;
 import com.google.cloud.storage.spi.StorageRpc.Tuple;
 import com.google.cloud.storage.spi.StorageRpcFactory;
-import com.google.common.base.Function;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Iterables;
-import com.google.common.collect.Maps;
 import com.google.common.io.BaseEncoding;
 
 import org.easymock.Capture;
@@ -983,82 +984,16 @@ public class StorageImplTest {
   }
 
   @Test
-  public void testApply() {
-    BatchRequest req = BatchRequest.builder()
-        .delete(BUCKET_NAME1, BLOB_NAME1)
-        .update(BLOB_INFO2)
-        .get(BUCKET_NAME1, BLOB_NAME3)
-        .build();
-    List<StorageObject> toDelete = ImmutableList.of(BlobId.of(BUCKET_NAME1, BLOB_NAME1).toPb());
-    List<StorageObject> toUpdate = ImmutableList.of(BlobId.of(BUCKET_NAME1, BLOB_NAME2).toPb());
-    List<StorageObject> toGet = ImmutableList.of(BlobId.of(BUCKET_NAME1, BLOB_NAME3).toPb());
-    List<Map<StorageRpc.Option, ?>> deleteOptions =
-        ImmutableList.<Map<StorageRpc.Option, ?>>of(EMPTY_RPC_OPTIONS);
-    List<Map<StorageRpc.Option, ?>> updateOptions =
-        ImmutableList.<Map<StorageRpc.Option, ?>>of(EMPTY_RPC_OPTIONS);
-    List<Map<StorageRpc.Option, ?>> getOptions =
-        ImmutableList.<Map<StorageRpc.Option, ?>>of(EMPTY_RPC_OPTIONS);
-
-    Map<StorageObject, Tuple<Boolean, StorageException>> deleteResult = Maps.toMap(toDelete,
-        new Function<StorageObject, Tuple<Boolean, StorageException>>() {
-          @Override
-          public Tuple<Boolean, StorageException> apply(StorageObject f) {
-            return Tuple.of(true, null);
-          }
-        });
-    Map<StorageObject, Tuple<StorageObject, StorageException>> updateResult = Maps.toMap(toUpdate,
-        new Function<StorageObject, Tuple<StorageObject, StorageException>>() {
-          @Override
-          public Tuple<StorageObject, StorageException> apply(StorageObject f) {
-            return Tuple.of(f, null);
-          }
-        });
-    Map<StorageObject, Tuple<StorageObject, StorageException>> getResult = Maps.toMap(toGet,
-        new Function<StorageObject, Tuple<StorageObject, StorageException>>() {
-          @Override
-          public Tuple<StorageObject, StorageException> apply(StorageObject f) {
-            return Tuple.of(f, null);
-          }
-        });
-    StorageRpc.BatchResponse res =
-        new StorageRpc.BatchResponse(deleteResult, updateResult, getResult);
-
-    Capture<StorageRpc.BatchRequest> capturedBatchRequest = Capture.newInstance();
-    EasyMock.expect(storageRpcMock.batch(EasyMock.capture(capturedBatchRequest))).andReturn(res);
-    EasyMock.replay(storageRpcMock);
+  public void testBatch() {
+    RpcBatch batchMock = EasyMock.mock(RpcBatch.class);
+    EasyMock.expect(storageRpcMock.createBatch()).andReturn(batchMock);
+    EasyMock.replay(batchMock, storageRpcMock);
     initializeService();
-    BatchResponse batchResponse = storage.submit(req);
-
-    // Verify captured StorageRpc.BatchRequest
-    List<Tuple<StorageObject, Map<StorageRpc.Option, ?>>> capturedToDelete =
-        capturedBatchRequest.getValue().toDelete;
-    List<Tuple<StorageObject, Map<StorageRpc.Option, ?>>> capturedToUpdate =
-        capturedBatchRequest.getValue().toUpdate;
-    List<Tuple<StorageObject, Map<StorageRpc.Option, ?>>> capturedToGet =
-        capturedBatchRequest.getValue().toGet;
-    for (int i = 0; i < capturedToDelete.size(); i++) {
-      assertEquals(toDelete.get(i), capturedToDelete.get(i).x());
-      assertEquals(deleteOptions.get(i), capturedToDelete.get(i).y());
-    }
-    for (int i = 0; i < capturedToUpdate.size(); i++) {
-      assertEquals(toUpdate.get(i), capturedToUpdate.get(i).x());
-      assertEquals(updateOptions.get(i), capturedToUpdate.get(i).y());
-    }
-    for (int i = 0; i < capturedToGet.size(); i++) {
-      assertEquals(toGet.get(i), capturedToGet.get(i).x());
-      assertEquals(getOptions.get(i), capturedToGet.get(i).y());
-    }
-
-    // Verify BatchResponse
-    for (BatchResponse.Result<Boolean> result : batchResponse.deletes()) {
-      assertTrue(result.get());
-    }
-    for (int i = 0; i < batchResponse.updates().size(); i++) {
-      assertEquals(toUpdate.get(i), batchResponse.updates().get(i).get().toPb());
-    }
-    for (int i = 0; i < batchResponse.gets().size(); i++) {
-      assertEquals(toGet.get(i), batchResponse.gets().get(i).get().toPb());
-    }
+    StorageBatch batch = storage.batch();
+    assertSame(options, batch.options());
+    assertSame(storageRpcMock, batch.storageRpc());
+    assertSame(batchMock, batch.batch());
+    EasyMock.verify(batchMock);
   }
 
   @Test
@@ -1210,129 +1145,143 @@ public class StorageImplTest {
   }
 
   @Test
-  public void testGetAll() {
+  public void testGetAllArray() {
     BlobId blobId1 = BlobId.of(BUCKET_NAME1, BLOB_NAME1);
     BlobId blobId2 = BlobId.of(BUCKET_NAME1, BLOB_NAME2);
-    StorageObject storageObject1 = blobId1.toPb();
-    StorageObject storageObject2 = blobId2.toPb();
-    List<StorageObject> toGet = ImmutableList.of(storageObject1, storageObject2);
-
-    Map<StorageObject, Tuple<Boolean, StorageException>> deleteResult = ImmutableMap.of();
-    Map<StorageObject, Tuple<StorageObject, StorageException>> updateResult = ImmutableMap.of();
-    Map<StorageObject, Tuple<StorageObject, StorageException>> getResult = Maps.toMap(toGet,
-        new Function<StorageObject, Tuple<StorageObject, StorageException>>() {
-          @Override
-          public Tuple<StorageObject, StorageException> apply(StorageObject f) {
-            return Tuple.of(f, null);
-          }
-        });
-    StorageRpc.BatchResponse res =
-        new StorageRpc.BatchResponse(deleteResult, updateResult, getResult);
-
-    Capture<StorageRpc.BatchRequest> capturedBatchRequest = Capture.newInstance();
-    EasyMock.expect(storageRpcMock.batch(EasyMock.capture(capturedBatchRequest))).andReturn(res);
-    EasyMock.replay(storageRpcMock);
+    RpcBatch batchMock = EasyMock.createMock(RpcBatch.class);
+    Capture<RpcBatch.Callback<StorageObject>> callback1 = Capture.newInstance();
+    Capture<RpcBatch.Callback<StorageObject>> callback2 = Capture.newInstance();
+    batchMock.addGet(EasyMock.eq(blobId1.toPb()), EasyMock.capture(callback1),
+        EasyMock.eq(ImmutableMap.<StorageRpc.Option, Object>of()));
+    batchMock.addGet(EasyMock.eq(blobId2.toPb()), EasyMock.capture(callback2),
+        EasyMock.eq(ImmutableMap.<StorageRpc.Option, Object>of()));
+    EasyMock.expect(storageRpcMock.createBatch()).andReturn(batchMock);
+    batchMock.submit();
+    EasyMock.replay(storageRpcMock, batchMock);
     initializeService();
     List<Blob> resultBlobs = storage.get(blobId1, blobId2);
-
-    // Verify captured StorageRpc.BatchRequest
-    List<Tuple<StorageObject, Map<StorageRpc.Option, ?>>> capturedToGet =
-        capturedBatchRequest.getValue().toGet;
-    assertTrue(capturedBatchRequest.getValue().toDelete.isEmpty());
-    assertTrue(capturedBatchRequest.getValue().toUpdate.isEmpty());
-    for (int i = 0; i < capturedToGet.size(); i++) {
-      assertEquals(toGet.get(i), capturedToGet.get(i).x());
-      assertTrue(capturedToGet.get(i).y().isEmpty());
-    }
-
-    // Verify result
-    for (int i = 0; i < resultBlobs.size(); i++) {
-      assertEquals(toGet.get(i), resultBlobs.get(i).toPb());
-    }
+    callback1.getValue().onSuccess(BLOB_INFO1.toPb());
+    callback2.getValue().onFailure(new GoogleJsonError());
+    assertEquals(2, resultBlobs.size());
+    assertEquals(new Blob(storage, new BlobInfo.BuilderImpl(BLOB_INFO1)), resultBlobs.get(0));
+    assertNull(resultBlobs.get(1));
+    EasyMock.verify(batchMock);
   }
 
   @Test
-  public void testUpdateAll() {
-    BlobInfo blobInfo1 = BlobInfo.builder(BUCKET_NAME1, BLOB_NAME1).contentType("type").build();
-    BlobInfo blobInfo2 = BlobInfo.builder(BUCKET_NAME1, BLOB_NAME2).contentType("type").build();
-    StorageObject storageObject1 = blobInfo1.toPb();
-    StorageObject storageObject2 = blobInfo2.toPb();
-    List<StorageObject> toUpdate = ImmutableList.of(storageObject1, storageObject2);
-
-    Map<StorageObject, Tuple<Boolean, StorageException>> deleteResult = ImmutableMap.of();
-    Map<StorageObject, Tuple<StorageObject, StorageException>> getResult = ImmutableMap.of();
-    Map<StorageObject, Tuple<StorageObject, StorageException>> updateResult = Maps.toMap(toUpdate,
-        new Function<StorageObject, Tuple<StorageObject, StorageException>>() {
-          @Override
-          public Tuple<StorageObject, StorageException> apply(StorageObject f) {
-            return Tuple.of(f, null);
-          }
-        });
-    StorageRpc.BatchResponse res =
-        new StorageRpc.BatchResponse(deleteResult, updateResult, getResult);
-
-    Capture<StorageRpc.BatchRequest> capturedBatchRequest = Capture.newInstance();
-    EasyMock.expect(storageRpcMock.batch(EasyMock.capture(capturedBatchRequest))).andReturn(res);
-    EasyMock.replay(storageRpcMock);
+  public void testGetAllArrayIterable() {
+    BlobId blobId1 = BlobId.of(BUCKET_NAME1, BLOB_NAME1);
+    BlobId blobId2 = BlobId.of(BUCKET_NAME1, BLOB_NAME2);
+    RpcBatch batchMock = EasyMock.createMock(RpcBatch.class);
+    Capture<RpcBatch.Callback<StorageObject>> callback1 = Capture.newInstance();
+    Capture<RpcBatch.Callback<StorageObject>> callback2 = Capture.newInstance();
+    batchMock.addGet(EasyMock.eq(blobId1.toPb()), EasyMock.capture(callback1),
+        EasyMock.eq(ImmutableMap.<StorageRpc.Option, Object>of()));
+    batchMock.addGet(EasyMock.eq(blobId2.toPb()), EasyMock.capture(callback2),
+        EasyMock.eq(ImmutableMap.<StorageRpc.Option, Object>of()));
+    EasyMock.expect(storageRpcMock.createBatch()).andReturn(batchMock);
+    batchMock.submit();
+    EasyMock.replay(storageRpcMock, batchMock);
     initializeService();
-    List<Blob> resultBlobs = storage.update(blobInfo1, blobInfo2);
-
-    // Verify captured StorageRpc.BatchRequest
-    List<Tuple<StorageObject, Map<StorageRpc.Option, ?>>> capturedToUpdate =
-        capturedBatchRequest.getValue().toUpdate;
-    assertTrue(capturedBatchRequest.getValue().toDelete.isEmpty());
-    assertTrue(capturedBatchRequest.getValue().toGet.isEmpty());
-    for (int i = 0; i < capturedToUpdate.size(); i++) {
-      assertEquals(toUpdate.get(i), capturedToUpdate.get(i).x());
-      assertTrue(capturedToUpdate.get(i).y().isEmpty());
-    }
-
-    // Verify result
-    for (int i = 0; i < resultBlobs.size(); i++) {
-      assertEquals(toUpdate.get(i), resultBlobs.get(i).toPb());
-    }
+    List<Blob> resultBlobs = storage.get(ImmutableList.of(blobId1, blobId2));
+    callback1.getValue().onSuccess(BLOB_INFO1.toPb());
+    callback2.getValue().onFailure(new GoogleJsonError());
+    assertEquals(2, resultBlobs.size());
+    assertEquals(new Blob(storage, new BlobInfo.BuilderImpl(BLOB_INFO1)), resultBlobs.get(0));
+    assertNull(resultBlobs.get(1));
+    EasyMock.verify(batchMock);
   }
 
   @Test
-  public void testDeleteAll() {
-    BlobInfo blobInfo1 = BlobInfo.builder(BUCKET_NAME1, BLOB_NAME1).build();
-    BlobInfo blobInfo2 = BlobInfo.builder(BUCKET_NAME1, BLOB_NAME2).build();
-    StorageObject storageObject1 = blobInfo1.toPb();
-    StorageObject storageObject2 = blobInfo2.toPb();
-    List<StorageObject> toUpdate = ImmutableList.of(storageObject1, storageObject2);
-
-    Map<StorageObject, Tuple<StorageObject, StorageException>> updateResult = ImmutableMap.of();
-    Map<StorageObject, Tuple<StorageObject, StorageException>> getResult = ImmutableMap.of();
-    Map<StorageObject, Tuple<Boolean, StorageException>> deleteResult = Maps.toMap(toUpdate,
-        new Function<StorageObject, Tuple<Boolean, StorageException>>() {
-          @Override
-          public Tuple<Boolean, StorageException> apply(StorageObject f) {
-            return Tuple.of(true, null);
-          }
-        });
-    StorageRpc.BatchResponse res =
-        new StorageRpc.BatchResponse(deleteResult, updateResult, getResult);
-
-    Capture<StorageRpc.BatchRequest> capturedBatchRequest = Capture.newInstance();
-    EasyMock.expect(storageRpcMock.batch(EasyMock.capture(capturedBatchRequest))).andReturn(res);
-    EasyMock.replay(storageRpcMock);
+  public void testDeleteAllArray() {
+    BlobId blobId1 = BlobId.of(BUCKET_NAME1, BLOB_NAME1);
+    BlobId blobId2 = BlobId.of(BUCKET_NAME1, BLOB_NAME2);
+    RpcBatch batchMock = EasyMock.createMock(RpcBatch.class);
+    Capture<RpcBatch.Callback<Void>> callback1 = Capture.newInstance();
+    Capture<RpcBatch.Callback<Void>> callback2 = Capture.newInstance();
+    batchMock.addDelete(EasyMock.eq(blobId1.toPb()), EasyMock.capture(callback1),
+        EasyMock.eq(ImmutableMap.<StorageRpc.Option, Object>of()));
+    batchMock.addDelete(EasyMock.eq(blobId2.toPb()), EasyMock.capture(callback2),
+        EasyMock.eq(ImmutableMap.<StorageRpc.Option, Object>of()));
+    EasyMock.expect(storageRpcMock.createBatch()).andReturn(batchMock);
+    batchMock.submit();
+    EasyMock.replay(storageRpcMock, batchMock);
     initializeService();
-    List<Boolean> deleteResults = storage.delete(blobInfo1.blobId(), blobInfo2.blobId());
+    List<Boolean> result = storage.delete(blobId1, blobId2);
+    callback1.getValue().onSuccess(null);
+    callback2.getValue().onFailure(new GoogleJsonError());
+    assertEquals(2, result.size());
+    assertTrue(result.get(0));
+    assertFalse(result.get(1));
+    EasyMock.verify(batchMock);
+  }
 
-    // Verify captured StorageRpc.BatchRequest
-    List<Tuple<StorageObject, Map<StorageRpc.Option, ?>>> capturedToDelete =
-        capturedBatchRequest.getValue().toDelete;
-    assertTrue(capturedBatchRequest.getValue().toUpdate.isEmpty());
-    assertTrue(capturedBatchRequest.getValue().toGet.isEmpty());
-    for (int i = 0; i < capturedToDelete.size(); i++) {
-      assertEquals(toUpdate.get(i), capturedToDelete.get(i).x());
-      assertTrue(capturedToDelete.get(i).y().isEmpty());
-    }
+  @Test
+  public void testDeleteAllIterable() {
+    BlobId blobId1 = BlobId.of(BUCKET_NAME1, BLOB_NAME1);
+    BlobId blobId2 = BlobId.of(BUCKET_NAME1, BLOB_NAME2);
+    RpcBatch batchMock = EasyMock.createMock(RpcBatch.class);
+    Capture<RpcBatch.Callback<Void>> callback1 = Capture.newInstance();
+    Capture<RpcBatch.Callback<Void>> callback2 = Capture.newInstance();
+    batchMock.addDelete(EasyMock.eq(blobId1.toPb()), EasyMock.capture(callback1),
+        EasyMock.eq(ImmutableMap.<StorageRpc.Option, Object>of()));
+    batchMock.addDelete(EasyMock.eq(blobId2.toPb()), EasyMock.capture(callback2),
+        EasyMock.eq(ImmutableMap.<StorageRpc.Option, Object>of()));
+    EasyMock.expect(storageRpcMock.createBatch()).andReturn(batchMock);
+    batchMock.submit();
+    EasyMock.replay(storageRpcMock, batchMock);
+    initializeService();
+    List<Boolean> result = storage.delete(blobId1, blobId2);
+    callback1.getValue().onSuccess(null);
+    callback2.getValue().onFailure(new GoogleJsonError());
+    assertEquals(2, result.size());
+    assertTrue(result.get(0));
+    assertFalse(result.get(1));
+    EasyMock.verify(batchMock);
+  }
 
-    // Verify result
-    for (Boolean deleteStatus : deleteResults) {
-      assertTrue(deleteStatus);
-    }
+  @Test
+  public void testUpdateAllArray() {
+    RpcBatch batchMock = EasyMock.createMock(RpcBatch.class);
+    Capture<RpcBatch.Callback<StorageObject>> callback1 = Capture.newInstance();
+    Capture<RpcBatch.Callback<StorageObject>> callback2 = Capture.newInstance();
+    batchMock.addPatch(EasyMock.eq(BLOB_INFO1.toPb()), EasyMock.capture(callback1),
+        EasyMock.eq(ImmutableMap.<StorageRpc.Option, Object>of()));
+    batchMock.addPatch(EasyMock.eq(BLOB_INFO2.toPb()), EasyMock.capture(callback2),
+        EasyMock.eq(ImmutableMap.<StorageRpc.Option, Object>of()));
+    EasyMock.expect(storageRpcMock.createBatch()).andReturn(batchMock);
+    batchMock.submit();
+    EasyMock.replay(storageRpcMock, batchMock);
+    initializeService();
+    List<Blob> resultBlobs = storage.update(BLOB_INFO1, BLOB_INFO2);
+    callback1.getValue().onSuccess(BLOB_INFO1.toPb());
+    callback2.getValue().onFailure(new GoogleJsonError());
+    assertEquals(2, resultBlobs.size());
+    assertEquals(new Blob(storage, new BlobInfo.BuilderImpl(BLOB_INFO1)), resultBlobs.get(0));
+    assertNull(resultBlobs.get(1));
+    EasyMock.verify(batchMock);
+  }
+
+  @Test
+  public void testUpdateAllIterable() {
+    RpcBatch batchMock = EasyMock.createMock(RpcBatch.class);
+    Capture<RpcBatch.Callback<StorageObject>> callback1 = Capture.newInstance();
+    Capture<RpcBatch.Callback<StorageObject>> callback2 = Capture.newInstance();
+    batchMock.addPatch(EasyMock.eq(BLOB_INFO1.toPb()), EasyMock.capture(callback1),
+        EasyMock.eq(ImmutableMap.<StorageRpc.Option, Object>of()));
+    batchMock.addPatch(EasyMock.eq(BLOB_INFO2.toPb()), EasyMock.capture(callback2),
+        EasyMock.eq(ImmutableMap.<StorageRpc.Option, Object>of()));
+    EasyMock.expect(storageRpcMock.createBatch()).andReturn(batchMock);
+    batchMock.submit();
+    EasyMock.replay(storageRpcMock, batchMock);
+    initializeService();
+    List<Blob> resultBlobs = storage.update(ImmutableList.of(BLOB_INFO1, BLOB_INFO2));
+    callback1.getValue().onSuccess(BLOB_INFO1.toPb());
+    callback2.getValue().onFailure(new GoogleJsonError());
+    assertEquals(2, resultBlobs.size());
+    assertEquals(new Blob(storage, new BlobInfo.BuilderImpl(BLOB_INFO1)), resultBlobs.get(0));
+    assertNull(resultBlobs.get(1));
+    EasyMock.verify(batchMock);
   }
 
   @Test
