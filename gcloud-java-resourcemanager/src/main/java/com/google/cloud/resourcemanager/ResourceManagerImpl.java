@@ -55,7 +55,7 @@ final class ResourceManagerImpl
             public com.google.api.services.cloudresourcemanager.model.Project call() {
               return resourceManagerRpc.create(project.toPb());
             }
-          }, options().retryParams(), EXCEPTION_HANDLER));
+          }, options().retryParams(), EXCEPTION_HANDLER, options().clock()));
     } catch (RetryHelperException ex) {
       throw ResourceManagerException.translateAndThrow(ex);
     }
@@ -70,7 +70,7 @@ final class ResourceManagerImpl
           resourceManagerRpc.delete(projectId);
           return null;
         }
-      }, options().retryParams(), EXCEPTION_HANDLER);
+      }, options().retryParams(), EXCEPTION_HANDLER, options().clock());
     } catch (RetryHelperException ex) {
       throw ResourceManagerException.translateAndThrow(ex);
     }
@@ -86,7 +86,7 @@ final class ResourceManagerImpl
             public com.google.api.services.cloudresourcemanager.model.Project call() {
               return resourceManagerRpc.get(projectId, optionsMap);
             }
-          }, options().retryParams(), EXCEPTION_HANDLER);
+          }, options().retryParams(), EXCEPTION_HANDLER, options().clock());
       return answer == null ? null : Project.fromPb(this, answer);
     } catch (RetryHelperException ex) {
       throw ResourceManagerException.translateAndThrow(ex);
@@ -129,7 +129,7 @@ final class ResourceManagerImpl
                   return serviceOptions.rpc().list(optionsMap);
                 }
               },
-              serviceOptions.retryParams(), EXCEPTION_HANDLER);
+              serviceOptions.retryParams(), EXCEPTION_HANDLER, serviceOptions.clock());
       String cursor = result.x();
       Iterable<Project> projects =
           result.y() == null
@@ -161,7 +161,7 @@ final class ResourceManagerImpl
             public com.google.api.services.cloudresourcemanager.model.Project call() {
               return resourceManagerRpc.replace(newProject.toPb());
             }
-          }, options().retryParams(), EXCEPTION_HANDLER));
+          }, options().retryParams(), EXCEPTION_HANDLER, options().clock()));
     } catch (RetryHelperException ex) {
       throw ResourceManagerException.translateAndThrow(ex);
     }
@@ -176,7 +176,7 @@ final class ResourceManagerImpl
           resourceManagerRpc.undelete(projectId);
           return null;
         }
-      }, options().retryParams(), EXCEPTION_HANDLER);
+      }, options().retryParams(), EXCEPTION_HANDLER, options().clock());
     } catch (RetryHelperException ex) {
       throw ResourceManagerException.translateAndThrow(ex);
     }
@@ -192,7 +192,7 @@ final class ResourceManagerImpl
                 public com.google.api.services.cloudresourcemanager.model.Policy call() {
                   return resourceManagerRpc.getPolicy(projectId);
                 }
-              }, options().retryParams(), EXCEPTION_HANDLER);
+              }, options().retryParams(), EXCEPTION_HANDLER, options().clock());
       return answer == null ? null : Policy.fromPb(answer);
     } catch (RetryHelperException ex) {
       throw ResourceManagerException.translateAndThrow(ex);
@@ -208,7 +208,7 @@ final class ResourceManagerImpl
             public com.google.api.services.cloudresourcemanager.model.Policy call() {
               return resourceManagerRpc.replacePolicy(projectId, newPolicy.toPb());
             }
-          }, options().retryParams(), EXCEPTION_HANDLER));
+          }, options().retryParams(), EXCEPTION_HANDLER, options().clock()));
     } catch (RetryHelperException ex) {
       throw ResourceManagerException.translateAndThrow(ex);
     }
@@ -223,7 +223,7 @@ final class ResourceManagerImpl
             public List<Boolean> call() {
               return resourceManagerRpc.testPermissions(projectId, permissions);
             }
-          }, options().retryParams(), EXCEPTION_HANDLER);
+          }, options().retryParams(), EXCEPTION_HANDLER, options().clock());
     } catch (RetryHelperException ex) {
       throw ResourceManagerException.translateAndThrow(ex);
     }

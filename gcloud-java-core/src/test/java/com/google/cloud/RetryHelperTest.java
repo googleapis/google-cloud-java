@@ -24,8 +24,6 @@ import static org.junit.Assert.fail;
 
 import com.google.cloud.RetryHelper.NonRetriableException;
 import com.google.cloud.RetryHelper.RetriesExhaustedException;
-import com.google.common.base.Stopwatch;
-import com.google.common.base.Ticker;
 
 import org.junit.Test;
 
@@ -157,24 +155,24 @@ public class RetryHelperTest {
     }
   }
 
-  private static class FakeTicker extends Ticker {
-    private final AtomicLong nanos = new AtomicLong();
+  private static class FakeClock extends Clock {
 
-    // Advances the ticker value by {@code time} in {@code timeUnit}.
+    private final AtomicLong millis = new AtomicLong();
+
+    // Advances the clock value by {@code time} in {@code timeUnit}.
     void advance(long time, TimeUnit timeUnit) {
-      nanos.addAndGet(timeUnit.toNanos(time));
+      millis.addAndGet(timeUnit.toMillis(time));
     }
 
     @Override
-    public long read() {
-      return nanos.get();
+    public long millis() {
+      return millis.get();
     }
   }
 
   @Test
   public void testTriesNoMoreLongerThanTotalRetryPeriod() {
-    final FakeTicker ticker = new FakeTicker();
-    Stopwatch stopwatch = Stopwatch.createUnstarted(ticker);
+    final FakeClock fakeClock = new FakeClock();
     // The 8th attempt (after min and before max) will trigger a 1 second (virtual) delay exceeding
     // total retry period which is set just under 1 second. Test occurs faster than realtime.
     RetryParams params = RetryParams.builder().initialRetryDelayMillis(0)
@@ -190,11 +188,11 @@ public class RetryHelperTest {
         @Override public void run() {
           timesCalled.incrementAndGet();
           if (timesCalled.get() == sleepOnAttempt) {
-            ticker.advance(1000, TimeUnit.MILLISECONDS);
+            fakeClock.advance(1000, TimeUnit.MILLISECONDS);
           }
           throw new RuntimeException();
         }
-      }), params, handler, stopwatch);
+      }), params, handler, fakeClock);
       fail();
     } catch (RetriesExhaustedException expected) {
       // verify timesCalled

@@ -91,7 +91,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
             throws DatastoreException {
           return datastoreRpc.runQuery(requestPb);
         }
-      }, retryParams, EXCEPTION_HANDLER);
+      }, retryParams, EXCEPTION_HANDLER, options().clock());
     } catch (RetryHelperException e) {
       throw DatastoreException.translateAndThrow(e);
     }
@@ -129,7 +129,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
             throws DatastoreException {
           return datastoreRpc.allocateIds(requestPb);
         }
-      }, retryParams, EXCEPTION_HANDLER);
+      }, retryParams, EXCEPTION_HANDLER, options().clock());
     } catch (RetryHelperException e) {
       throw DatastoreException.translateAndThrow(e);
     }
@@ -285,7 +285,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
             throws DatastoreException {
           return datastoreRpc.lookup(requestPb);
         }
-      }, retryParams, EXCEPTION_HANDLER);
+      }, retryParams, EXCEPTION_HANDLER, options().clock());
     } catch (RetryHelperException e) {
       throw DatastoreException.translateAndThrow(e);
     }
@@ -365,7 +365,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
             }
           },
           retryParams,
-          EXCEPTION_HANDLER);
+          EXCEPTION_HANDLER, options().clock());
     } catch (RetryHelperException e) {
       throw DatastoreException.translateAndThrow(e);
     }
@@ -388,7 +388,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
             }
           },
           retryParams,
-          EXCEPTION_HANDLER);
+          EXCEPTION_HANDLER, options().clock());
     } catch (RetryHelperException e) {
       throw DatastoreException.translateAndThrow(e);
     }
@@ -408,7 +408,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
           datastoreRpc.rollback(requestPb);
           return null;
         }
-      }, retryParams, EXCEPTION_HANDLER);
+      }, retryParams, EXCEPTION_HANDLER, options().clock());
     } catch (RetryHelperException e) {
       throw DatastoreException.translateAndThrow(e);
     }

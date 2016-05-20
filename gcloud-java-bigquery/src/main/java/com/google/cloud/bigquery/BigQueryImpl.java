@@ -164,7 +164,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
             public com.google.api.services.bigquery.model.Dataset call() {
               return bigQueryRpc.create(datasetPb, optionsMap);
             }
-          }, options().retryParams(), EXCEPTION_HANDLER));
+          }, options().retryParams(), EXCEPTION_HANDLER, options().clock()));
     } catch (RetryHelper.RetryHelperException e) {
       throw BigQueryException.translateAndThrow(e);
     }
@@ -182,7 +182,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
             public com.google.api.services.bigquery.model.Table call() {
               return bigQueryRpc.create(tablePb, optionsMap);
             }
-          }, options().retryParams(), EXCEPTION_HANDLER));
+          }, options().retryParams(), EXCEPTION_HANDLER, options().clock()));
     } catch (RetryHelper.RetryHelperException e) {
       throw BigQueryException.translateAndThrow(e);
     }
@@ -200,7 +200,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
             public com.google.api.services.bigquery.model.Job call() {
               return bigQueryRpc.create(jobPb, optionsMap);
             }
-          }, options().retryParams(), EXCEPTION_HANDLER));
+          }, options().retryParams(), EXCEPTION_HANDLER, options().clock()));
     } catch (RetryHelper.RetryHelperException e) {
       throw BigQueryException.translateAndThrow(e);
     }
@@ -221,7 +221,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
             public com.google.api.services.bigquery.model.Dataset call() {
               return bigQueryRpc.getDataset(datasetId.dataset(), optionsMap);
             }
-          }, options().retryParams(), EXCEPTION_HANDLER);
+          }, options().retryParams(), EXCEPTION_HANDLER, options().clock());
       return answer == null ? null : Dataset.fromPb(this, answer);
     } catch (RetryHelper.RetryHelperException e) {
       throw BigQueryException.translateAndThrow(e);
@@ -244,7 +244,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
                     Iterable<com.google.api.services.bigquery.model.Dataset>> call() {
                   return serviceOptions.rpc().listDatasets(optionsMap);
                 }
-              }, serviceOptions.retryParams(), EXCEPTION_HANDLER);
+              }, serviceOptions.retryParams(), EXCEPTION_HANDLER, serviceOptions.clock());
       String cursor = result.x();
       return new PageImpl<>(new DatasetPageFetcher(serviceOptions, cursor, optionsMap), cursor,
           Iterables.transform(result.y(),
@@ -273,7 +273,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
         public Boolean call() {
           return bigQueryRpc.deleteDataset(datasetId.dataset(), optionsMap);
         }
-      }, options().retryParams(), EXCEPTION_HANDLER);
+      }, options().retryParams(), EXCEPTION_HANDLER, options().clock());
     } catch (RetryHelper.RetryHelperException e) {
       throw BigQueryException.translateAndThrow(e);
     }
@@ -292,7 +292,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
         public Boolean call() {
           return bigQueryRpc.deleteTable(tableId.dataset(), tableId.table());
         }
-      }, options().retryParams(), EXCEPTION_HANDLER);
+      }, options().retryParams(), EXCEPTION_HANDLER, options().clock());
     } catch (RetryHelper.RetryHelperException e) {
       throw BigQueryException.translateAndThrow(e);
     }
@@ -310,7 +310,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
             public com.google.api.services.bigquery.model.Dataset call() {
               return bigQueryRpc.patch(datasetPb, optionsMap);
             }
-          }, options().retryParams(), EXCEPTION_HANDLER));
+          }, options().retryParams(), EXCEPTION_HANDLER, options().clock()));
     } catch (RetryHelper.RetryHelperException e) {
       throw BigQueryException.translateAndThrow(e);
     }
@@ -328,7 +328,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
             public com.google.api.services.bigquery.model.Table call() {
               return bigQueryRpc.patch(tablePb, optionsMap);
             }
-          }, options().retryParams(), EXCEPTION_HANDLER));
+          }, options().retryParams(), EXCEPTION_HANDLER, options().clock()));
     } catch (RetryHelper.RetryHelperException e) {
       throw BigQueryException.translateAndThrow(e);
     }
@@ -349,7 +349,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
             public com.google.api.services.bigquery.model.Table call() {
               return bigQueryRpc.getTable(tableId.dataset(), tableId.table(), optionsMap);
             }
-          }, options().retryParams(), EXCEPTION_HANDLER);
+          }, options().retryParams(), EXCEPTION_HANDLER, options().clock());
       return answer == null ? null : Table.fromPb(this, answer);
     } catch (RetryHelper.RetryHelperException e) {
       throw BigQueryException.translateAndThrow(e);
@@ -377,7 +377,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
                 call() {
                   return serviceOptions.rpc().listTables(datasetId, optionsMap);
                 }
-          }, serviceOptions.retryParams(), EXCEPTION_HANDLER);
+          }, serviceOptions.retryParams(), EXCEPTION_HANDLER, serviceOptions.clock());
       String cursor = result.x();
       Iterable<Table> tables = Iterables.transform(result.y(),
           new Function<com.google.api.services.bigquery.model.Table, Table>() {
@@ -432,7 +432,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
               return serviceOptions.rpc()
                   .listTableData(tableId.dataset(), tableId.table(), optionsMap);
             }
-          }, serviceOptions.retryParams(), EXCEPTION_HANDLER);
+          }, serviceOptions.retryParams(), EXCEPTION_HANDLER, serviceOptions.clock());
       String cursor = result.x();
       return new PageImpl<>(new TableDataPageFetcher(tableId, serviceOptions, cursor, optionsMap),
           cursor, transformTableData(result.y()));
@@ -467,7 +467,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
             public com.google.api.services.bigquery.model.Job call() {
               return bigQueryRpc.getJob(jobId.job(), optionsMap);
             }
-          }, options().retryParams(), EXCEPTION_HANDLER);
+          }, options().retryParams(), EXCEPTION_HANDLER, options().clock());
       return answer == null ? null : Job.fromPb(this, answer);
     } catch (RetryHelper.RetryHelperException e) {
       throw BigQueryException.translateAndThrow(e);
@@ -489,7 +489,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
               call() {
             return serviceOptions.rpc().listJobs(optionsMap);
           }
-        }, serviceOptions.retryParams(), EXCEPTION_HANDLER);
+        }, serviceOptions.retryParams(), EXCEPTION_HANDLER, serviceOptions.clock());
     String cursor = result.x();
     Iterable<Job> jobs = Iterables.transform(result.y(),
         new Function<com.google.api.services.bigquery.model.Job, Job>() {
@@ -514,7 +514,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
         public Boolean call() {
           return bigQueryRpc.cancel(jobId.job());
         }
-      }, options().retryParams(), EXCEPTION_HANDLER);
+      }, options().retryParams(), EXCEPTION_HANDLER, options().clock());
     } catch (RetryHelper.RetryHelperException e) {
       throw BigQueryException.translateAndThrow(e);
     }
@@ -529,7 +529,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
             public com.google.api.services.bigquery.model.QueryResponse call() {
               return bigQueryRpc.query(request.setProjectId(options().projectId()).toPb());
             }
-          }, options().retryParams(), EXCEPTION_HANDLER);
+          }, options().retryParams(), EXCEPTION_HANDLER, options().clock());
       QueryResponse.Builder builder = QueryResponse.builder();
       JobId completeJobId = JobId.fromPb(results.getJobReference());
       builder.jobId(completeJobId);
@@ -574,7 +574,7 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
             public GetQueryResultsResponse call() {
               return serviceOptions.rpc().getQueryResults(jobId.job(), optionsMap);
             }
-          }, serviceOptions.retryParams(), EXCEPTION_HANDLER);
+          }, serviceOptions.retryParams(), EXCEPTION_HANDLER, serviceOptions.clock());
       QueryResponse.Builder builder = QueryResponse.builder();
       JobId completeJobId = JobId.fromPb(results.getJobReference());
       builder.jobId(completeJobId);
