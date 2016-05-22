@@ -102,8 +102,8 @@ public class SubscriptionInfo implements Serializable {
      * again during that time (on a best-effort basis). For pull subscriptions, this value is used
      * as the initial value for the ack deadline. To override the ack deadline value for a given
      * message, use {@link PubSub#modifyAckDeadline(String, int, TimeUnit, Iterable)}. For push
-     * delivery, this value is used to set the request timeout for the call to the push endpoint. If
-     * not specified, the default value of 10 seconds is used.
+     * delivery, this value is used to set the request timeout for the call to the push endpoint.
+     * This value must be between 10 and 600 seconds, if not specified, 10 seconds is used.
      */
     public abstract Builder ackDeadLineSeconds(int ackDeadLineSeconds);
 
@@ -216,8 +216,8 @@ public class SubscriptionInfo implements Serializable {
    * again during that time (on a best-effort basis). For pull subscriptions, this value is used
    * as the initial value for the ack deadline. To override the ack deadline value for a given
    * message, use {@link PubSub#modifyAckDeadline(String, int, TimeUnit, Iterable)}. For push
-   * delivery, this value is used to set the request timeout for the call to the push endpoint. If
-   * not specified, the default value of 10 seconds is used.
+   * delivery, this value is used to set the request timeout for the call to the push endpoint. This
+   * value must be between 10 and 600 seconds, if not specified, 10 seconds is used.
    */
   public long ackDeadlineSeconds() {
     return ackDeadlineSeconds;

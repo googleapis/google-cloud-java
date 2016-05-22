@@ -178,7 +178,7 @@ public class Subscription extends SubscriptionInfo {
     return new Function<com.google.pubsub.v1.Subscription, Subscription>() {
       @Override
       public Subscription apply(com.google.pubsub.v1.Subscription subscriptionPb) {
-        return fromPb(pubsub, subscriptionPb);
+        return subscriptionPb != null ? fromPb(pubsub, subscriptionPb) : null;
       }
     };
   }
