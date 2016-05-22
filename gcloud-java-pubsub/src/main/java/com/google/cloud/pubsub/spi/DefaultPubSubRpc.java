@@ -153,7 +153,7 @@ public class DefaultPubSubRpc implements PubSubRpc {
 
   @Override
   public Future<Topic> create(Topic topic) {
-    // TODO: it would be nice if we can get the idempotent inforamtion from the ApiCallSettings
+    // TODO: it would be nice if we can get the idempotent information from the ApiCallSettings
     // or from the exception
     return translate(publisherApi.createTopicCallable().futureCall(topic), true);
   }
@@ -185,7 +185,6 @@ public class DefaultPubSubRpc implements PubSubRpc {
 
   @Override
   public Future<Empty> delete(DeleteTopicRequest request) {
-    // TODO: check if null is not going to work for Empty
     return translate(publisherApi.deleteTopicCallable().futureCall(request), true,
         Code.NOT_FOUND.value());
   }
