@@ -112,7 +112,7 @@ object that can be used to wait for operation completion and to check whether op
 succeeded:
 
 ```java
-final RegionAddressId addressId = RegionAddressId.of("us-central1", "test-address");
+RegionAddressId addressId = RegionAddressId.of("us-central1", "test-address");
 Operation operation = compute.create(AddressInfo.of(addressId));
 // Wait for operation to complete
 operation = operation.waitFor();
@@ -143,7 +143,7 @@ import com.google.cloud.compute.ImageId;
 Then add the following code to create a disk and wait for disk creation to terminate.
 
 ```java
-final ImageId imageId = ImageId.of("debian-cloud", "debian-8-jessie-v20160329");
+ImageId imageId = ImageId.of("debian-cloud", "debian-8-jessie-v20160329");
 DiskId diskId = DiskId.of("us-central1-a", "test-disk");
 ImageDiskConfiguration diskConfiguration = ImageDiskConfiguration.of(imageId);
 DiskInfo disk = DiskInfo.of(diskId, diskConfiguration);
@@ -182,7 +182,7 @@ Then add the following code to create an instance and wait for instance creation
 
 ```java
 Address externalIp = compute.getAddress(addressId);
-final InstanceId instanceId = InstanceId.of("us-central1-a", "test-instance");
+InstanceId instanceId = InstanceId.of("us-central1-a", "test-instance");
 NetworkId networkId = NetworkId.of("default");
 PersistentDiskConfiguration attachConfiguration =
     PersistentDiskConfiguration.builder(diskId).boot(true).build();

@@ -47,7 +47,7 @@ public class CreateAddressDiskAndInstance {
     Compute compute = ComputeOptions.defaultInstance().service();
 
     // Create an external region address
-    final RegionAddressId addressId = RegionAddressId.of("us-central1", "test-address");
+    RegionAddressId addressId = RegionAddressId.of("us-central1", "test-address");
     Operation operation = compute.create(AddressInfo.of(addressId));
     // Wait for operation to complete
     operation = operation.waitFor();
@@ -60,7 +60,7 @@ public class CreateAddressDiskAndInstance {
 
     // Create a persistent disk
     ImageId imageId = ImageId.of("debian-cloud", "debian-8-jessie-v20160329");
-    final DiskId diskId = DiskId.of("us-central1-a", "test-disk");
+    DiskId diskId = DiskId.of("us-central1-a", "test-disk");
     ImageDiskConfiguration diskConfiguration = ImageDiskConfiguration.of(imageId);
     DiskInfo disk = DiskInfo.of(diskId, diskConfiguration);
     operation = compute.create(disk);
@@ -75,7 +75,7 @@ public class CreateAddressDiskAndInstance {
 
     // Create a virtual machine instance
     Address externalIp = compute.getAddress(addressId);
-    final InstanceId instanceId = InstanceId.of("us-central1-a", "test-instance");
+    InstanceId instanceId = InstanceId.of("us-central1-a", "test-instance");
     NetworkId networkId = NetworkId.of("default");
     PersistentDiskConfiguration attachConfiguration =
         PersistentDiskConfiguration.builder(diskId).boot(true).build();

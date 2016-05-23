@@ -22,11 +22,11 @@
  * <a href="https://github.com/GoogleCloudPlatform/gcloud-java/tree/master/gcloud-java-examples/src/main/java/com/google/cloud/examples/compute/snippets/CreateSnapshot.java">
  * CreateSnapshot.java</a>.
  * <pre> {@code
- * final Compute compute = ComputeOptions.defaultInstance().service();
+ * Compute compute = ComputeOptions.defaultInstance().service();
  * DiskId diskId = DiskId.of("us-central1-a", "disk-name");
  * Disk disk = compute.getDisk(diskId, Compute.DiskOption.fields());
  * if (disk != null) {
- *   final String snapshotName = "disk-name-snapshot";
+ *   String snapshotName = "disk-name-snapshot";
  *   Operation operation = disk.createSnapshot(snapshotName);
  *   operation = operation.waitFor();
  *   if (operation.errors() == null) {
@@ -39,12 +39,12 @@
  * <a href="https://github.com/GoogleCloudPlatform/gcloud-java/tree/master/gcloud-java-examples/src/main/java/com/google/cloud/examples/compute/snippets/CreateInstance.java">
  * CreateInstance.java</a>.
  * <pre> {@code
- * final Compute compute = ComputeOptions.defaultInstance().service();
+ * Compute compute = ComputeOptions.defaultInstance().service();
  * ImageId imageId = ImageId.of("debian-cloud", "debian-8-jessie-v20160329");
  * NetworkId networkId = NetworkId.of("default");
  * AttachedDisk attachedDisk = AttachedDisk.of(AttachedDisk.CreateDiskConfiguration.of(imageId));
  * NetworkInterface networkInterface = NetworkInterface.of(networkId);
- * final InstanceId instanceId = InstanceId.of("us-central1-a", "instance-name");
+ * InstanceId instanceId = InstanceId.of("us-central1-a", "instance-name");
  * MachineTypeId machineTypeId = MachineTypeId.of("us-central1-a", "n1-standard-1");
  * Operation operation =
  *     compute.create(InstanceInfo.of(instanceId, machineTypeId, attachedDisk, networkInterface));

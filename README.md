@@ -203,11 +203,11 @@ import com.google.cloud.compute.Disk;
 import com.google.cloud.compute.DiskId;
 import com.google.cloud.compute.Snapshot;
 
-final Compute compute = ComputeOptions.defaultInstance().service();
+Compute compute = ComputeOptions.defaultInstance().service();
 DiskId diskId = DiskId.of("us-central1-a", "disk-name");
 Disk disk = compute.getDisk(diskId, Compute.DiskOption.fields());
 if (disk != null) {
-  final String snapshotName = "disk-name-snapshot";
+  String snapshotName = "disk-name-snapshot";
   Operation operation = disk.createSnapshot(snapshotName);
   operation = operation.waitFor();
   if (operation.errors() == null) {

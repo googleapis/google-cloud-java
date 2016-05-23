@@ -34,12 +34,12 @@ import com.google.cloud.compute.Operation;
 public class CreateInstance {
 
   public static void main(String... args) throws InterruptedException {
-    final Compute compute = ComputeOptions.defaultInstance().service();
+    Compute compute = ComputeOptions.defaultInstance().service();
     ImageId imageId = ImageId.of("debian-cloud", "debian-8-jessie-v20160329");
     NetworkId networkId = NetworkId.of("default");
     AttachedDisk attachedDisk = AttachedDisk.of(AttachedDisk.CreateDiskConfiguration.of(imageId));
     NetworkInterface networkInterface = NetworkInterface.of(networkId);
-    final InstanceId instanceId = InstanceId.of("us-central1-a", "instance-name");
+    InstanceId instanceId = InstanceId.of("us-central1-a", "instance-name");
     MachineTypeId machineTypeId = MachineTypeId.of("us-central1-a", "n1-standard-1");
     Operation operation =
         compute.create(InstanceInfo.of(instanceId, machineTypeId, attachedDisk, networkInterface));
