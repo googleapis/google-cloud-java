@@ -47,7 +47,7 @@ public class LocalSystemTest extends BaseSystemTest {
 
   @AfterClass
   public static void stopServer() throws Exception {
-    pubsub.options().rpc().close();
+    pubsub.close();
     pubsubHelper.reset();
     pubsubHelper.stop();
   }
