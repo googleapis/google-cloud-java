@@ -104,11 +104,7 @@ Add the following imports at the top of your file:
 ```java
 import com.google.cloud.compute.AddressInfo;
 import com.google.cloud.compute.Operation;
-import com.google.cloud.compute.Operation.OperationError;
-import com.google.cloud.compute.Operation.OperationWarning;
 import com.google.cloud.compute.RegionAddressId;
-
-import java.util.List;
 ```
 
 Then add the following code to create an address. Most Compute Engine calls return an `Operation`
@@ -119,18 +115,13 @@ succeeded:
 final RegionAddressId addressId = RegionAddressId.of("us-central1", "test-address");
 Operation operation = compute.create(AddressInfo.of(addressId));
 // Wait for operation to complete
-operation.whenDone(new Operation.CompletionCallback() {
-  @Override
-  public void success(Operation operation) {
-    System.out.println("Address " + addressId + " was successfully created");
-  }
-
-  @Override
-  public void error(List<OperationError> errors, List<OperationWarning> warnings) {
-    // inspect errors
-    throw new RuntimeException("Address creation failed");
-  }
-});
+operation = operation.waitFor();
+if (operation.errors() == null) {
+  System.out.println("Address " + addressId + " was successfully created");
+} else {
+  // inspect operation.errors()
+  throw new RuntimeException("Address creation failed");
+}
 ```
 
 #### Creating a persistent disk
@@ -157,18 +148,14 @@ DiskId diskId = DiskId.of("us-central1-a", "test-disk");
 ImageDiskConfiguration diskConfiguration = ImageDiskConfiguration.of(imageId);
 DiskInfo disk = DiskInfo.of(diskId, diskConfiguration);
 Operation operation = compute.create(disk);
-operation.whenDone(new Operation.CompletionCallback() {
-  @Override
-  public void success(Operation operation) {
-    System.out.println("Disk " + diskId + " was successfully created");
-  }
-
-  @Override
-  public void error(List<OperationError> errors, List<OperationWarning> warnings) {
-    // inspect errors
-    throw new RuntimeException("Disk creation failed");
-  }
-});
+// Wait for operation to complete
+operation = operation.waitFor();
+if (operation.errors() == null) {
+  System.out.println("Disk " + diskId + " was successfully created");
+} else {
+  // inspect operation.errors()
+  throw new RuntimeException("Disk creation failed");
+}
 ```
 
 #### Creating a virtual machine instance
@@ -207,18 +194,14 @@ MachineTypeId machineTypeId = MachineTypeId.of("us-central1-a", "n1-standard-1")
 InstanceInfo instance =
     InstanceInfo.of(instanceId, machineTypeId, attachedDisk, networkInterface);
 Operation operation = compute.create(instance);
-operation.whenDone(new Operation.CompletionCallback() {
-  @Override
-  public void success(Operation operation) {
-    System.out.println("Instance " + instanceId + " was successfully created");
-  }
-
-  @Override
-  public void error(List<OperationError> errors, List<OperationWarning> warnings) {
-    // inspect errors
-    throw new RuntimeException("Instance creation failed");
-  }
-});
+// Wait for operation to complete
+operation = operation.waitFor();
+if (operation.errors() == null) {
+  System.out.println("Instance " + instanceId + " was successfully created");
+} else {
+  // inspect operation.errors()
+  throw new RuntimeException("Instance creation failed");
+}
 ```
 
 #### Complete source code

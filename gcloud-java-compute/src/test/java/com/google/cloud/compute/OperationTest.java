@@ -38,6 +38,7 @@ import org.junit.After;
 import org.junit.Test;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class OperationTest {
 
@@ -356,9 +357,8 @@ public class OperationTest {
   }
 
   @Test
-  public void testWhenDone_Success() throws InterruptedException {
+  public void testWaitFor() throws InterruptedException {
     initializeExpectedOperation(4);
-    Operation.CompletionCallback callback = EasyMock.mock(Operation.CompletionCallback.class);
     Compute.OperationOption[] expectedOptions =
         {Compute.OperationOption.fields(Compute.OperationField.STATUS)};
     Operation successOperation =
@@ -366,44 +366,65 @@ public class OperationTest {
     expect(compute.options()).andReturn(mockOptions);
     expect(compute.getOperation(GLOBAL_OPERATION_ID, expectedOptions)).andReturn(successOperation);
     expect(compute.getOperation(GLOBAL_OPERATION_ID)).andReturn(successOperation);
-    callback.success(successOperation);
-    EasyMock.expectLastCall();
-    replay(compute, callback);
+    replay(compute);
     initializeOperation();
-    operation.whenDone(callback);
-    verify(callback);
+    assertSame(successOperation, operation.waitFor());
   }
 
   @Test
-  public void testWhenDone_Error() throws InterruptedException {
+  public void testWaitFor_Null() throws InterruptedException {
     initializeExpectedOperation(3);
-    Operation.CompletionCallback callback = EasyMock.mock(Operation.CompletionCallback.class);
-    Compute.OperationOption[] expectedOptions =
-        {Compute.OperationOption.fields(Compute.OperationField.STATUS)};
-    expect(compute.options()).andReturn(mockOptions);
-    expect(compute.getOperation(GLOBAL_OPERATION_ID, expectedOptions)).andReturn(globalOperation);
-    expect(compute.getOperation(GLOBAL_OPERATION_ID)).andReturn(globalOperation);
-    callback.error(ERRORS, WARNINGS);
-    EasyMock.expectLastCall();
-    replay(compute, callback);
-    initializeOperation();
-    operation.whenDone(callback);
-    verify(callback);
-  }
-
-  @Test
-  public void testWhenDone_Null() throws InterruptedException {
-    initializeExpectedOperation(3);
-    Operation.CompletionCallback callback = EasyMock.mock(Operation.CompletionCallback.class);
     Compute.OperationOption[] expectedOptions =
         {Compute.OperationOption.fields(Compute.OperationField.STATUS)};
     expect(compute.options()).andReturn(mockOptions);
     expect(compute.getOperation(GLOBAL_OPERATION_ID, expectedOptions)).andReturn(null);
     expect(compute.getOperation(GLOBAL_OPERATION_ID)).andReturn(null);
-    replay(compute, callback);
+    replay(compute);
     initializeOperation();
-    operation.whenDone(callback);
-    verify(callback);
+    assertNull(operation.waitFor());
+  }
+
+  @Test
+  public void testWaitForWithTimeUnit() throws InterruptedException {
+    initializeExpectedOperation(5);
+    Compute.OperationOption[] expectedOptions =
+        {Compute.OperationOption.fields(Compute.OperationField.STATUS)};
+    TimeUnit timeUnit = createStrictMock(TimeUnit.class);
+    timeUnit.sleep(42);
+    EasyMock.expectLastCall();
+    Operation runningOperation = Operation.fromPb(serviceMockReturnsOptions,
+        globalOperation.toPb().setError(null).setStatus("RUNNING"));
+    Operation completedOperation =
+        Operation.fromPb(serviceMockReturnsOptions, globalOperation.toPb().setError(null));
+    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOperation(GLOBAL_OPERATION_ID, expectedOptions)).andReturn(runningOperation);
+    expect(compute.getOperation(GLOBAL_OPERATION_ID, expectedOptions))
+        .andReturn(completedOperation);
+    expect(compute.getOperation(GLOBAL_OPERATION_ID)).andReturn(completedOperation);
+    replay(compute, timeUnit);
+    initializeOperation();
+    assertSame(completedOperation, operation.waitFor(42, timeUnit));
+    verify(timeUnit);
+  }
+
+  @Test
+  public void testWaitForWithTimeUnit_Null() throws InterruptedException {
+    initializeExpectedOperation(4);
+    Compute.OperationOption[] expectedOptions =
+        {Compute.OperationOption.fields(Compute.OperationField.STATUS)};
+    TimeUnit timeUnit = createStrictMock(TimeUnit.class);
+    timeUnit.sleep(42);
+    EasyMock.expectLastCall();
+    Operation runningOperation = Operation.fromPb(serviceMockReturnsOptions,
+        globalOperation.toPb().setError(null).setStatus("RUNNING"));
+    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOperation(GLOBAL_OPERATION_ID, expectedOptions)).andReturn(runningOperation);
+    expect(compute.getOperation(GLOBAL_OPERATION_ID, expectedOptions)).andReturn(null);
+    expect(compute.getOperation(GLOBAL_OPERATION_ID)).andReturn(null);
+    replay(compute, timeUnit);
+    initializeOperation();
+    assertNull(operation.waitFor(42, timeUnit));
+    verify(compute, timeUnit);
   }
 
   @Test

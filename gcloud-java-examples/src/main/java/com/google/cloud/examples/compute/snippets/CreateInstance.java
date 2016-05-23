@@ -27,10 +27,6 @@ import com.google.cloud.compute.MachineTypeId;
 import com.google.cloud.compute.NetworkId;
 import com.google.cloud.compute.NetworkInterface;
 import com.google.cloud.compute.Operation;
-import com.google.cloud.compute.Operation.OperationError;
-import com.google.cloud.compute.Operation.OperationWarning;
-
-import java.util.List;
 
 /**
  * A snippet for Google Cloud Compute Engine showing how to create a virtual machine instance.
@@ -47,18 +43,10 @@ public class CreateInstance {
     MachineTypeId machineTypeId = MachineTypeId.of("us-central1-a", "n1-standard-1");
     Operation operation =
         compute.create(InstanceInfo.of(instanceId, machineTypeId, attachedDisk, networkInterface));
-    operation.whenDone(new Operation.CompletionCallback() {
-      @Override
-      public void success(Operation operation) {
-        // use instance
-        Instance instance = compute.getInstance(instanceId);
-      }
-
-      @Override
-      public void error(List<OperationError> errors, List<OperationWarning> warnings) {
-        // inspect errors
-        throw new RuntimeException("Instance creation failed");
-      }
-    });
+    operation = operation.waitFor();
+    if (operation.errors() == null) {
+      // use instance
+      Instance instance = compute.getInstance(instanceId);
+    }
   }
 }

@@ -20,8 +20,8 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
-import java.util.List;
 import java.util.Objects;
+import java.util.concurrent.TimeUnit;
 
 /**
  * A Google BigQuery Job.
@@ -37,24 +37,6 @@ public class Job extends JobInfo {
 
   private final BigQueryOptions options;
   private transient BigQuery bigquery;
-
-  /**
-   * A callback for job completion.
-   */
-  public interface CompletionCallback {
-    /**
-     * The method called when the job completes successfully.
-     */
-    void success(Job job);
-
-    /**
-     * The method called when the job completes with errors. {@code error} is the final error that
-     * caused the job to fail (see {@link JobStatus#error()}). {@code executionErrors} are all the
-     * errors (possibly not fatal) encountered by the job during its execution (see
-     * {@link JobStatus#executionErrors()}).
-     */
-    void error(BigQueryError error, List<BigQueryError> executionErrors);
-  }
 
   /**
    * A builder for {@code Job} objects.
@@ -163,40 +145,51 @@ public class Job extends JobInfo {
   }
 
   /**
-   * Waits until this job completes its execution, either failing or succeeding. If the job does not
-   * exist, this method returns without executing any method of the provided callback. If the job
-   * completed successfully the {@link CompletionCallback#success(Job)} method is called. If the job
-   * completed with errors the {@link CompletionCallback#error(BigQueryError, List)} method is
-   * called.
+   * Blocks until this job completes its execution, either failing or succeeding. The job status is
+   * checked every 500 milliseconds. This method returns current job's latest information. If the
+   * job no longer exists, this method returns {@code null}.
    * <pre> {@code
-   * job.whenDone(new CompletionCallback() {
-   *   void success(Job job) {
-   *     // completed successfully
-   *   }
-   *
-   *   void error(BigQueryError error, List<BigQueryError> executionErrors) {
-   *     // handle error
-   *   }
-   * });}</pre>
+   * Job completedJob = job.waitFor();
+   * if (completedJob == null) {
+   *   // job no longer exists
+   * } else if (completedJob.status().error() != null) {
+   *   // job failed, handle error
+   * } else {
+   *   // job completed successfully
+   * }}</pre>
    *
    * @throws BigQueryException upon failure
    * @throws InterruptedException if the current thread gets interrupted while waiting for the job
    *     to complete
    */
-  public void whenDone(CompletionCallback callback) throws InterruptedException {
+  public Job waitFor() throws InterruptedException {
+    return waitFor(500, TimeUnit.MILLISECONDS);
+  }
+
+  /**
+   * Blocks until this job completes its execution, either failing or succeeding. The
+   * {@code checkEvery} and {@code unit} parameters determine how often the job's status is checked.
+   * This method returns current job's latest information. If the job no longer exists, this method
+   * returns {@code null}.
+   * <pre> {@code
+   * Job completedJob = job.waitFor(1, TimeUnit.SECONDS);
+   * if (completedJob == null) {
+   *   // job no longer exists
+   * } else if (completedJob.status().error() != null) {
+   *   // job failed, handle error
+   * } else {
+   *   // job completed successfully
+   * }}</pre>
+   *
+   * @throws BigQueryException upon failure
+   * @throws InterruptedException if the current thread gets interrupted while waiting for the job
+   *     to complete
+   */
+  public Job waitFor(int checkEvery, TimeUnit unit) throws InterruptedException {
     while (!isDone()) {
-      Thread.sleep(500L);
+      unit.sleep(checkEvery);
     }
-    Job updatedJob = reload();
-    if (updatedJob == null) {
-      return;
-    }
-    BigQueryError error = updatedJob.status().error();
-    if (error != null) {
-      callback.error(error, updatedJob.status().executionErrors());
-    } else {
-      callback.success(updatedJob);
-    }
+    return reload();
   }
 
   /**

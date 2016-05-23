@@ -28,17 +28,11 @@
  * if (disk != null) {
  *   final String snapshotName = "disk-name-snapshot";
  *   Operation operation = disk.createSnapshot(snapshotName);
- *   operation.whenDone(new Operation.CompletionCallback() {
- *     public void success(Operation operation) {
- *       // use snapshot
- *       Snapshot snapshot = compute.getSnapshot(snapshotName);
- *     }
- *
- *     public void error(List<OperationError> errors, List<OperationWarning> warnings) {
- *       // inspect errors
- *       throw new RuntimeException("Snaphsot creation failed");
- *     }
- *   });
+ *   operation = operation.waitFor();
+ *   if (operation.errors() == null) {
+ *     // use snapshot
+ *     Snapshot snapshot = compute.getSnapshot(snapshotName);
+ *   }
  * }}</pre>
  * <p>This second example shows how to create a virtual machine instance. Complete source code can
  * be found at
@@ -53,18 +47,12 @@
  * final InstanceId instanceId = InstanceId.of("us-central1-a", "instance-name");
  * MachineTypeId machineTypeId = MachineTypeId.of("us-central1-a", "n1-standard-1");
  * Operation operation =
- * compute.create(InstanceInfo.of(instanceId, machineTypeId, attachedDisk, networkInterface));
- * operation.whenDone(new Operation.CompletionCallback() {
- *   public void success(Operation operation) {
- *     // use instance
- *     Instance instance = compute.getInstance(instanceId);
- *   }
- *
- *   public void error(List<OperationError> errors, List<OperationWarning> warnings) {
- *     // inspect errors
- *     throw new RuntimeException("Instance creation failed");
- *   }
- * });}</pre>
+ *     compute.create(InstanceInfo.of(instanceId, machineTypeId, attachedDisk, networkInterface));
+ * operation = operation.waitFor();
+ * if (operation.errors() == null) {
+ *   // use instance
+ *   Instance instance = compute.getInstance(instanceId);
+ * }}</pre>
  *
  * @see <a href="https://cloud.google.com/compute/">Google Cloud Compute</a>
  */

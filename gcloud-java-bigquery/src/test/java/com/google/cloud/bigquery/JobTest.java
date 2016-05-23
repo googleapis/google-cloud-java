@@ -28,13 +28,12 @@ import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
 import com.google.cloud.bigquery.JobStatistics.CopyStatistics;
-import com.google.common.collect.ImmutableList;
 
 import org.easymock.EasyMock;
 import org.junit.After;
 import org.junit.Test;
 
-import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class JobTest {
 
@@ -182,60 +181,71 @@ public class JobTest {
   }
 
   @Test
-  public void testWhenDone_Success() throws InterruptedException {
+  public void testWaitFor() throws InterruptedException {
     initializeExpectedJob(2);
-    Job.CompletionCallback callback = EasyMock.mock(Job.CompletionCallback.class);
     BigQuery.JobOption[] expectedOptions = {BigQuery.JobOption.fields(BigQuery.JobField.STATUS)};
     JobStatus status = createStrictMock(JobStatus.class);
     expect(status.state()).andReturn(JobStatus.State.DONE);
-    expect(status.error()).andReturn(null);
     expect(bigquery.options()).andReturn(mockOptions);
     Job completedJob = expectedJob.toBuilder().status(status).build();
     expect(bigquery.getJob(JOB_INFO.jobId(), expectedOptions)).andReturn(completedJob);
     expect(bigquery.getJob(JOB_INFO.jobId())).andReturn(completedJob);
-    callback.success(completedJob);
-    EasyMock.expectLastCall();
-    replay(status, bigquery, callback);
+    replay(status, bigquery);
     initializeJob();
-    job.whenDone(callback);
-    verify(status, callback);
+    assertSame(completedJob, job.waitFor());
+    verify(status);
   }
 
   @Test
-  public void testWhenDone_Error() throws InterruptedException {
-    initializeExpectedJob(2);
-    Job.CompletionCallback callback = EasyMock.mock(Job.CompletionCallback.class);
-    BigQuery.JobOption[] expectedOptions = {BigQuery.JobOption.fields(BigQuery.JobField.STATUS)};
-    BigQueryError error = new BigQueryError("reason", "location", "message");
-    List<BigQueryError> executionErrors = ImmutableList.of(error);
-    JobStatus status = createStrictMock(JobStatus.class);
-    expect(status.state()).andReturn(JobStatus.State.DONE);
-    expect(status.error()).andReturn(error);
-    expect(status.executionErrors()).andReturn(executionErrors);
-    expect(bigquery.options()).andReturn(mockOptions);
-    Job completedJob = expectedJob.toBuilder().status(status).build();
-    expect(bigquery.getJob(JOB_INFO.jobId(), expectedOptions)).andReturn(completedJob);
-    expect(bigquery.getJob(JOB_INFO.jobId())).andReturn(completedJob);
-    callback.error(error, executionErrors);
-    EasyMock.expectLastCall();
-    replay(status, bigquery, callback);
-    initializeJob();
-    job.whenDone(callback);
-    verify(status, callback);
-  }
-
-  @Test
-  public void testWhenDone_Null() throws InterruptedException {
+  public void testWaitFor_Null() throws InterruptedException {
     initializeExpectedJob(1);
-    Job.CompletionCallback callback = EasyMock.mock(Job.CompletionCallback.class);
     BigQuery.JobOption[] expectedOptions = {BigQuery.JobOption.fields(BigQuery.JobField.STATUS)};
     expect(bigquery.options()).andReturn(mockOptions);
     expect(bigquery.getJob(JOB_INFO.jobId(), expectedOptions)).andReturn(null);
     expect(bigquery.getJob(JOB_INFO.jobId())).andReturn(null);
-    replay(bigquery, callback);
+    replay(bigquery);
     initializeJob();
-    job.whenDone(callback);
-    verify(callback);
+    assertNull(job.waitFor());
+  }
+
+  @Test
+  public void testWaitForWithTimeUnit() throws InterruptedException {
+    initializeExpectedJob(3);
+    BigQuery.JobOption[] expectedOptions = {BigQuery.JobOption.fields(BigQuery.JobField.STATUS)};
+    TimeUnit timeUnit = createStrictMock(TimeUnit.class);
+    timeUnit.sleep(42);
+    EasyMock.expectLastCall();
+    JobStatus status = createStrictMock(JobStatus.class);
+    expect(status.state()).andReturn(JobStatus.State.RUNNING);
+    expect(status.state()).andReturn(JobStatus.State.DONE);
+    expect(bigquery.options()).andReturn(mockOptions);
+    Job runningJob = expectedJob.toBuilder().status(status).build();
+    Job completedJob = expectedJob.toBuilder().status(status).build();
+    expect(bigquery.getJob(JOB_INFO.jobId(), expectedOptions)).andReturn(runningJob);
+    expect(bigquery.getJob(JOB_INFO.jobId(), expectedOptions)).andReturn(completedJob);
+    expect(bigquery.getJob(JOB_INFO.jobId())).andReturn(completedJob);
+    replay(status, bigquery, timeUnit);
+    initializeJob();
+    assertSame(completedJob, job.waitFor(42, timeUnit));
+    verify(status, timeUnit);
+  }
+
+  @Test
+  public void testWaitForWithTimeUnit_Null() throws InterruptedException {
+    initializeExpectedJob(2);
+    BigQuery.JobOption[] expectedOptions = {BigQuery.JobOption.fields(BigQuery.JobField.STATUS)};
+    TimeUnit timeUnit = createStrictMock(TimeUnit.class);
+    timeUnit.sleep(42);
+    EasyMock.expectLastCall();
+    expect(bigquery.options()).andReturn(mockOptions);
+    Job runningJob = expectedJob.toBuilder().status(new JobStatus(JobStatus.State.RUNNING)).build();
+    expect(bigquery.getJob(JOB_INFO.jobId(), expectedOptions)).andReturn(runningJob);
+    expect(bigquery.getJob(JOB_INFO.jobId(), expectedOptions)).andReturn(null);
+    expect(bigquery.getJob(JOB_INFO.jobId())).andReturn(null);
+    replay(bigquery, timeUnit);
+    initializeJob();
+    assertNull(job.waitFor(42, timeUnit));
+    verify(bigquery, timeUnit);
   }
 
   @Test

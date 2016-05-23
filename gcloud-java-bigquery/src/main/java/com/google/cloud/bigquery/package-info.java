@@ -33,15 +33,12 @@
  * }
  * System.out.println("Loading data into table " + tableId);
  * Job loadJob = table.load(FormatOptions.csv(), "gs://bucket/path");
- * loadJob.whenDone(new Job.CompletionCallback() {
- *   public void success(Job job) {
- *     System.out.println("Job succeeded");
- *   }
- *
- *   public void error(BigQueryError error, List<BigQueryError> executionErrors) {
- *     System.out.println("Job completed with errors");
- *   }
- * });}</pre>
+ * loadJob = loadJob.waitFor();
+ * if (loadJob.status().error() != null) {
+ *   System.out.println("Job completed with errors");
+ * } else {
+ *   System.out.println("Job succeeded");
+ * }}</pre>
  *
  * @see <a href="https://cloud.google.com/bigquery/">Google Cloud BigQuery</a>
  */

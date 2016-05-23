@@ -36,6 +36,7 @@ import java.math.BigInteger;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Google Compute Engine operations. Operation identity can be obtained via {@link #operationId()}.
@@ -290,24 +291,6 @@ public class Operation implements Serializable {
     public int hashCode() {
       return Objects.hash(code, message, metadata);
     }
-  }
-
-  /**
-   * A callback for operation completion.
-   */
-  public interface CompletionCallback {
-    /**
-     * The method called when the operation completes successfully.
-     */
-    void success(Operation operation);
-
-    /**
-     * The method called when the operation completes with errors. {@code errors} contains all
-     * errors encountered while processing this operation (see {@link Operation#errors()}).
-     * {@code warnings} contains all warnings encountered while processing this operation (see
-     * {@link Operation#warnings()}).
-     */
-    void error(List<OperationError> errors, List<OperationWarning> warnings);
   }
 
   static final class Builder {
@@ -677,40 +660,51 @@ public class Operation implements Serializable {
   }
 
   /**
-   * Waits until this operation completes its execution, either failing or succeeding. If the
-   * operation does not exist, this method returns without executing any method of the provided
-   * callback. If the operation completed successfully the
-   * {@link CompletionCallback#success(Operation)} method is called. If the operation completed with
-   * errors the {@link CompletionCallback#error(List, List)} method is called.
+   * Blocks until this operation completes its execution, either failing or succeeding. The
+   * operation status is checked every 500 milliseconds. This method returns current operation's
+   * latest information. If the operation no longer exists, this method returns {@code null}.
    * <pre> {@code
-   * operation.whenDone(new CompletionCallback() {
-   *   void success(Operation operation) {
-   *     // completed successfully
-   *   }
-   *
-   *   void error(List<OperationError> errors, List<OperationWarning> warnings) {
-   *     // handle error
-   *   }
-   * });}</pre>
+   * Operation completedOperation = operation.waitFor();
+   * if (completedOperation == null) {
+   *   // operation no longer exists
+   * } else if (completedOperation.errors() != null) {
+   *   // operation failed, handle error
+   * } else {
+   *   // operation completed successfully
+   * }}</pre>
    *
    * @throws ComputeException upon failure
    * @throws InterruptedException if the current thread gets interrupted while waiting for the
    *     operation to complete
    */
-  public void whenDone(CompletionCallback callback) throws InterruptedException {
+  public Operation waitFor() throws InterruptedException {
+    return waitFor(500, TimeUnit.MILLISECONDS);
+  }
+
+  /**
+   * Blocks until this operation completes its execution, either failing or succeeding. The
+   * {@code checkEvery} and {@code unit} parameters determine how often the operation status is
+   * checked. This method returns current operation's latest information. If the operation no longer
+   * exists, this method returns {@code null}.
+   * <pre> {@code
+   * Operation completedOperation = operation.waitFor(1, TimeUnit.SECONDS);
+   * if (completedOperation == null) {
+   *   // operation no longer exists
+   * } else if (completedOperation.errors() != null) {
+   *   // operation failed, handle error
+   * } else {
+   *   // operation completed successfully
+   * }}</pre>
+   *
+   * @throws ComputeException upon failure
+   * @throws InterruptedException if the current thread gets interrupted while waiting for the
+   *     operation to complete
+   */
+  public Operation waitFor(int checkEvery, TimeUnit unit) throws InterruptedException {
     while (!isDone()) {
-      Thread.sleep(500L);
+      unit.sleep(checkEvery);
     }
-    Operation updatedOperation = reload();
-    if (updatedOperation == null) {
-      return;
-    }
-    List<OperationError> errors = updatedOperation.errors();
-    if (errors != null) {
-      callback.error(errors, updatedOperation.warnings());
-    } else {
-      callback.success(updatedOperation);
-    }
+    return reload();
   }
 
   /**

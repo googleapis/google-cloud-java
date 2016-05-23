@@ -523,19 +523,18 @@ public class BigQueryExample {
     @Override
     void run(BigQuery bigquery, JobInfo job) throws Exception {
       System.out.println("Creating job");
-      final Job startedJob = bigquery.create(job);
-      startedJob.whenDone(new Job.CompletionCallback() {
-        @Override
-        public void success(Job updatedJob) {
-          System.out.println("Job " + updatedJob.jobId().job() + " succeeded");
-        }
-
-        @Override
-        public void error(BigQueryError error, List<BigQueryError> executionErrors) {
-          System.out.println("Job " + startedJob.jobId().job() + " failed");
-          System.out.println("Error: " + startedJob.status().error());
-        }
-      });
+      Job startedJob = bigquery.create(job);
+      while (!startedJob.isDone()) {
+        System.out.println("Waiting for job " + startedJob.jobId().job() + " to complete");
+        Thread.sleep(1000L);
+      }
+      startedJob = startedJob.reload();
+      if (startedJob.status().error() == null) {
+        System.out.println("Job " + startedJob.jobId().job() + " succeeded");
+      } else {
+        System.out.println("Job " + startedJob.jobId().job() + " failed");
+        System.out.println("Error: " + startedJob.status().error());
+      }
     }
   }
 

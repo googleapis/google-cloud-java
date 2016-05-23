@@ -33,11 +33,7 @@ import com.google.cloud.compute.NetworkId;
 import com.google.cloud.compute.NetworkInterface;
 import com.google.cloud.compute.NetworkInterface.AccessConfig;
 import com.google.cloud.compute.Operation;
-import com.google.cloud.compute.Operation.OperationError;
-import com.google.cloud.compute.Operation.OperationWarning;
 import com.google.cloud.compute.RegionAddressId;
-
-import java.util.List;
 
 /**
  * A snippet for Google Cloud Compute Engine showing how to create a disk and an address. The
@@ -54,18 +50,13 @@ public class CreateAddressDiskAndInstance {
     final RegionAddressId addressId = RegionAddressId.of("us-central1", "test-address");
     Operation operation = compute.create(AddressInfo.of(addressId));
     // Wait for operation to complete
-    operation.whenDone(new Operation.CompletionCallback() {
-      @Override
-      public void success(Operation operation) {
-        System.out.println("Address " + addressId + " was successfully created");
-      }
-
-      @Override
-      public void error(List<OperationError> errors, List<OperationWarning> warnings) {
-        // inspect errors
-        throw new RuntimeException("Address creation failed");
-      }
-    });
+    operation = operation.waitFor();
+    if (operation.errors() == null) {
+      System.out.println("Address " + addressId + " was successfully created");
+    } else {
+      // inspect operation.errors()
+      throw new RuntimeException("Address creation failed");
+    }
 
     // Create a persistent disk
     ImageId imageId = ImageId.of("debian-cloud", "debian-8-jessie-v20160329");
@@ -74,18 +65,13 @@ public class CreateAddressDiskAndInstance {
     DiskInfo disk = DiskInfo.of(diskId, diskConfiguration);
     operation = compute.create(disk);
     // Wait for operation to complete
-    operation.whenDone(new Operation.CompletionCallback() {
-      @Override
-      public void success(Operation operation) {
-        System.out.println("Disk " + diskId + " was successfully created");
-      }
-
-      @Override
-      public void error(List<OperationError> errors, List<OperationWarning> warnings) {
-        // inspect errors
-        throw new RuntimeException("Disk creation failed");
-      }
-    });
+    operation = operation.waitFor();
+    if (operation.errors() == null) {
+      System.out.println("Disk " + diskId + " was successfully created");
+    } else {
+      // inspect operation.errors()
+      throw new RuntimeException("Disk creation failed");
+    }
 
     // Create a virtual machine instance
     Address externalIp = compute.getAddress(addressId);
@@ -102,17 +88,12 @@ public class CreateAddressDiskAndInstance {
         InstanceInfo.of(instanceId, machineTypeId, attachedDisk, networkInterface);
     operation = compute.create(instance);
     // Wait for operation to complete
-    operation.whenDone(new Operation.CompletionCallback() {
-      @Override
-      public void success(Operation operation) {
-        System.out.println("Instance " + instanceId + " was successfully created");
-      }
-
-      @Override
-      public void error(List<OperationError> errors, List<OperationWarning> warnings) {
-        // inspect errors
-        throw new RuntimeException("Instance creation failed");
-      }
-    });
+    operation = operation.waitFor();
+    if (operation.errors() == null) {
+      System.out.println("Instance " + instanceId + " was successfully created");
+    } else {
+      // inspect operation.errors()
+      throw new RuntimeException("Instance creation failed");
+    }
   }
 }

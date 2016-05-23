@@ -56,9 +56,6 @@ import com.google.cloud.compute.NetworkId;
 import com.google.cloud.compute.NetworkInfo;
 import com.google.cloud.compute.NetworkInterface;
 import com.google.cloud.compute.Operation;
-import com.google.cloud.compute.Operation.CompletionCallback;
-import com.google.cloud.compute.Operation.OperationError;
-import com.google.cloud.compute.Operation.OperationWarning;
 import com.google.cloud.compute.Region;
 import com.google.cloud.compute.RegionAddressId;
 import com.google.cloud.compute.RegionOperationId;
@@ -103,17 +100,6 @@ public class ITComputeTest {
   private static final ImageId IMAGE_ID = ImageId.of("debian-cloud", "debian-8-jessie-v20160219");
   private static final String IMAGE_PROJECT = "debian-cloud";
 
-  private static final CompletionCallback EMPTY_CALLBACK = new CompletionCallback() {
-    @Override
-    public void success(Operation operation) {
-      // do nothing
-    }
-
-    @Override
-    public void error(List<OperationError> errors, List<OperationWarning> warnings) {
-      // do noting
-    }
-  };
   private static Compute compute;
 
   @Rule
@@ -700,7 +686,7 @@ public class ITComputeTest {
     AddressId addressId = RegionAddressId.of(REGION, name);
     AddressInfo addressInfo = AddressInfo.of(addressId);
     Operation operation = compute.create(addressInfo);
-    operation.whenDone(EMPTY_CALLBACK);
+    operation.waitFor();
     // test get
     Address remoteAddress = compute.getAddress(addressId);
     assertNotNull(remoteAddress);
@@ -721,7 +707,7 @@ public class ITComputeTest {
     assertNull(remoteAddress.creationTimestamp());
     assertNull(remoteAddress.generatedId());
     operation = remoteAddress.delete();
-    operation.whenDone(EMPTY_CALLBACK);
+    operation.waitFor();
     assertNull(compute.getAddress(addressId));
   }
 
@@ -733,8 +719,8 @@ public class ITComputeTest {
     AddressId secondAddressId = RegionAddressId.of(REGION, addressNames[1]);
     Operation firstOperation = compute.create(AddressInfo.of(firstAddressId));
     Operation secondOperation = compute.create(AddressInfo.of(secondAddressId));
-    firstOperation.whenDone(EMPTY_CALLBACK);
-    secondOperation.whenDone(EMPTY_CALLBACK);
+    firstOperation.waitFor();
+    secondOperation.waitFor();
     Set<String> addressSet = ImmutableSet.copyOf(addressNames);
     // test list
     Compute.AddressFilter filter =
@@ -785,8 +771,8 @@ public class ITComputeTest {
     AddressId secondAddressId = GlobalAddressId.of(REGION, addressNames[1]);
     Operation firstOperation = compute.create(AddressInfo.of(firstAddressId));
     Operation secondOperation = compute.create(AddressInfo.of(secondAddressId));
-    firstOperation.whenDone(EMPTY_CALLBACK);
-    secondOperation.whenDone(EMPTY_CALLBACK);
+    firstOperation.waitFor();
+    secondOperation.waitFor();
     Set<String> addressSet = ImmutableSet.copyOf(addressNames);
     Compute.AddressFilter filter =
         Compute.AddressFilter.equals(Compute.AddressField.NAME, prefix + "\\d");
@@ -814,7 +800,7 @@ public class ITComputeTest {
     AddressId addressId = GlobalAddressId.of(name);
     AddressInfo addressInfo = AddressInfo.of(addressId);
     Operation operation = compute.create(addressInfo);
-    operation.whenDone(EMPTY_CALLBACK);
+    operation.waitFor();
     // test get
     Address remoteAddress = compute.getAddress(addressId);
     assertNotNull(remoteAddress);
@@ -833,7 +819,7 @@ public class ITComputeTest {
     assertNull(remoteAddress.creationTimestamp());
     assertNull(remoteAddress.generatedId());
     operation = remoteAddress.delete();
-    operation.whenDone(EMPTY_CALLBACK);
+    operation.waitFor();
     assertNull(compute.getAddress(addressId));
   }
 
@@ -845,8 +831,8 @@ public class ITComputeTest {
     AddressId secondAddressId = GlobalAddressId.of(addressNames[1]);
     Operation firstOperation = compute.create(AddressInfo.of(firstAddressId));
     Operation secondOperation = compute.create(AddressInfo.of(secondAddressId));
-    firstOperation.whenDone(EMPTY_CALLBACK);
-    secondOperation.whenDone(EMPTY_CALLBACK);
+    firstOperation.waitFor();
+    secondOperation.waitFor();
     Set<String> addressSet = ImmutableSet.copyOf(addressNames);
     // test list
     Compute.AddressFilter filter =
@@ -894,7 +880,7 @@ public class ITComputeTest {
     DiskInfo diskInfo =
         DiskInfo.of(diskId, StandardDiskConfiguration.of(DiskTypeId.of(ZONE, "pd-ssd"), 100L));
     Operation operation = compute.create(diskInfo);
-    operation.whenDone(EMPTY_CALLBACK);
+    operation.waitFor();
     // test get
     Disk remoteDisk = compute.getDisk(diskId);
     assertNotNull(remoteDisk);
@@ -910,7 +896,7 @@ public class ITComputeTest {
     assertNull(remoteDisk.lastAttachTimestamp());
     assertNull(remoteDisk.lastDetachTimestamp());
     operation = remoteDisk.resize(200L);
-    operation.whenDone(EMPTY_CALLBACK);
+    operation.waitFor();
     // test resize and get with selected fields
     remoteDisk = compute.getDisk(diskId, Compute.DiskOption.fields(Compute.DiskField.SIZE_GB));
     assertNotNull(remoteDisk);
@@ -926,7 +912,7 @@ public class ITComputeTest {
     assertNull(remoteDisk.lastAttachTimestamp());
     assertNull(remoteDisk.lastDetachTimestamp());
     operation = remoteDisk.delete();
-    operation.whenDone(EMPTY_CALLBACK);
+    operation.waitFor();
     assertNull(compute.getDisk(diskId));
   }
 
@@ -936,7 +922,7 @@ public class ITComputeTest {
     DiskId diskId = DiskId.of(ZONE, name);
     DiskInfo diskInfo = DiskInfo.of(diskId, ImageDiskConfiguration.of(IMAGE_ID));
     Operation operation = compute.create(diskInfo);
-    operation.whenDone(EMPTY_CALLBACK);
+    operation.waitFor();
     // test get
     Disk remoteDisk = compute.getDisk(diskId);
     assertNotNull(remoteDisk);
@@ -971,7 +957,7 @@ public class ITComputeTest {
     assertNull(remoteDisk.lastAttachTimestamp());
     assertNull(remoteDisk.lastDetachTimestamp());
     operation = remoteDisk.delete();
-    operation.whenDone(EMPTY_CALLBACK);
+    operation.waitFor();
     assertNull(compute.getDisk(diskId));
   }
 
@@ -985,10 +971,10 @@ public class ITComputeTest {
     DiskInfo diskInfo =
         DiskInfo.of(diskId, StandardDiskConfiguration.of(DiskTypeId.of(ZONE, "pd-ssd"), 100L));
     Operation operation = compute.create(diskInfo);
-    operation.whenDone(EMPTY_CALLBACK);
+    operation.waitFor();
     Disk remoteDisk = compute.getDisk(diskId);
     operation = remoteDisk.createSnapshot(snapshotName);
-    operation.whenDone(EMPTY_CALLBACK);
+    operation.waitFor();
     // test get snapshot with selected fields
     Snapshot snapshot = compute.getSnapshot(snapshotName,
         Compute.SnapshotOption.fields(Compute.SnapshotField.CREATION_TIMESTAMP));
@@ -1018,7 +1004,7 @@ public class ITComputeTest {
     diskInfo =
         DiskInfo.of(snapshotDiskId, SnapshotDiskConfiguration.of(SnapshotId.of(snapshotName)));
     operation = compute.create(diskInfo);
-operation.whenDone(EMPTY_CALLBACK);
+operation.waitFor();
     // test get disk
     remoteDisk = compute.getDisk(snapshotDiskId);
     assertNotNull(remoteDisk);
@@ -1054,10 +1040,10 @@ operation.whenDone(EMPTY_CALLBACK);
     assertNull(remoteDisk.lastAttachTimestamp());
     assertNull(remoteDisk.lastDetachTimestamp());
     operation = remoteDisk.delete();
-operation.whenDone(EMPTY_CALLBACK);
+operation.waitFor();
     assertNull(compute.getDisk(snapshotDiskId));
     operation = snapshot.delete();
-operation.whenDone(EMPTY_CALLBACK);
+operation.waitFor();
     assertNull(compute.getSnapshot(snapshotName));
   }
 
@@ -1071,8 +1057,8 @@ operation.whenDone(EMPTY_CALLBACK);
         StandardDiskConfiguration.of(DiskTypeId.of(ZONE, "pd-ssd"), 100L);
     Operation firstOperation = compute.create(DiskInfo.of(firstDiskId, configuration));
     Operation secondOperation = compute.create(DiskInfo.of(secondDiskId, configuration));
-    firstOperation.whenDone(EMPTY_CALLBACK);
-    secondOperation.whenDone(EMPTY_CALLBACK);
+    firstOperation.waitFor();
+    secondOperation.waitFor();
     Set<String> diskSet = ImmutableSet.copyOf(diskNames);
     // test list disks
     Compute.DiskFilter diskFilter =
@@ -1124,8 +1110,8 @@ operation.whenDone(EMPTY_CALLBACK);
     SnapshotId secondSnapshotId = SnapshotId.of(diskNames[1]);
     firstOperation = compute.create(SnapshotInfo.of(firstSnapshotId, firstDiskId));
     secondOperation = compute.create(SnapshotInfo.of(secondSnapshotId, secondDiskId));
-    firstOperation.whenDone(EMPTY_CALLBACK);
-    secondOperation.whenDone(EMPTY_CALLBACK);
+    firstOperation.waitFor();
+    secondOperation.waitFor();
     // test list snapshots
     Compute.SnapshotFilter snapshotFilter =
         Compute.SnapshotFilter.equals(Compute.SnapshotField.NAME, prefix + "\\d");
@@ -1183,8 +1169,8 @@ operation.whenDone(EMPTY_CALLBACK);
         StandardDiskConfiguration.of(DiskTypeId.of(ZONE, "pd-ssd"), 100L);
     Operation firstOperation = compute.create(DiskInfo.of(firstDiskId, configuration));
     Operation secondOperation = compute.create(DiskInfo.of(secondDiskId, configuration));
-    firstOperation.whenDone(EMPTY_CALLBACK);
-    secondOperation.whenDone(EMPTY_CALLBACK);
+    firstOperation.waitFor();
+    secondOperation.waitFor();
     Set<String> zoneSet = ImmutableSet.copyOf(diskZones);
     Set<String> diskSet = ImmutableSet.copyOf(diskNames);
     Compute.DiskFilter diskFilter =
@@ -1220,11 +1206,11 @@ operation.whenDone(EMPTY_CALLBACK);
     DiskInfo diskInfo =
         DiskInfo.of(diskId, StandardDiskConfiguration.of(DiskTypeId.of(ZONE, "pd-ssd"), 100L));
     Operation operation = compute.create(diskInfo);
-operation.whenDone(EMPTY_CALLBACK);
+operation.waitFor();
     Disk remoteDisk = compute.getDisk(diskId);
     ImageInfo imageInfo = ImageInfo.of(imageId, DiskImageConfiguration.of(diskId));
     operation = compute.create(imageInfo);
-operation.whenDone(EMPTY_CALLBACK);
+operation.waitFor();
     // test get image with selected fields
     Image image = compute.getImage(imageId,
         Compute.ImageOption.fields(Compute.ImageField.CREATION_TIMESTAMP));
@@ -1260,12 +1246,12 @@ operation.whenDone(EMPTY_CALLBACK);
             .deprecated(System.currentTimeMillis())
             .build();
     operation = image.deprecate(deprecationStatus);
-operation.whenDone(EMPTY_CALLBACK);
+operation.waitFor();
     image = compute.getImage(imageId);
     assertEquals(deprecationStatus, image.deprecationStatus());
     remoteDisk.delete();
     operation = image.delete();
-operation.whenDone(EMPTY_CALLBACK);
+operation.waitFor();
     assertNull(compute.getImage(imageId));
   }
 
@@ -1336,7 +1322,7 @@ operation.whenDone(EMPTY_CALLBACK);
     NetworkInfo networkInfo =
         NetworkInfo.of(networkId, StandardNetworkConfiguration.of("192.168.0.0/16"));
     Operation operation = compute.create(networkInfo);
-operation.whenDone(EMPTY_CALLBACK);
+operation.waitFor();
     // test get network with selected fields
     Network network = compute.getNetwork(networkId.network(),
         Compute.NetworkOption.fields(Compute.NetworkField.CREATION_TIMESTAMP));
@@ -1356,7 +1342,7 @@ operation.whenDone(EMPTY_CALLBACK);
     remoteConfiguration = network.configuration();
     assertEquals("192.168.0.0/16", remoteConfiguration.ipRange());
     operation = network.delete();
-operation.whenDone(EMPTY_CALLBACK);
+operation.waitFor();
     assertNull(compute.getNetwork(name));
   }
 
@@ -1367,7 +1353,7 @@ operation.whenDone(EMPTY_CALLBACK);
     NetworkInfo networkInfo =
         NetworkInfo.of(networkId, StandardNetworkConfiguration.of("192.168.0.0/16"));
     Operation operation = compute.create(networkInfo);
-operation.whenDone(EMPTY_CALLBACK);
+operation.waitFor();
     // test list
     Compute.NetworkFilter filter = Compute.NetworkFilter.equals(Compute.NetworkField.NAME, name);
     Page<Network> networkPage = compute.listNetworks(Compute.NetworkListOption.filter(filter));
@@ -1402,7 +1388,7 @@ operation.whenDone(EMPTY_CALLBACK);
     }
     assertEquals(1, count);
     operation = compute.deleteNetwork(networkId);
-operation.whenDone(EMPTY_CALLBACK);
+operation.waitFor();
     assertNull(compute.getNetwork(name));
   }
 
@@ -1412,7 +1398,7 @@ operation.whenDone(EMPTY_CALLBACK);
     NetworkId networkId = NetworkId.of(networkName);
     NetworkInfo networkInfo = NetworkInfo.of(networkId, SubnetNetworkConfiguration.of(false));
     Operation operation = compute.create(networkInfo);
-operation.whenDone(EMPTY_CALLBACK);
+operation.waitFor();
     // test get network
     Network network = compute.getNetwork(networkId.network());
     assertEquals(networkId.network(), network.networkId().network());
@@ -1425,7 +1411,7 @@ operation.whenDone(EMPTY_CALLBACK);
     SubnetworkId subnetworkId = SubnetworkId.of(REGION, subnetworkName);
     SubnetworkInfo subnetworkInfo = SubnetworkInfo.of(subnetworkId, networkId, "192.168.0.0/16");
     operation = compute.create(subnetworkInfo);
-operation.whenDone(EMPTY_CALLBACK);
+operation.waitFor();
     // test get subnetwork with selected fields
     Subnetwork subnetwork = compute.getSubnetwork(subnetworkId,
         Compute.SubnetworkOption.fields(Compute.SubnetworkField.CREATION_TIMESTAMP));
@@ -1480,9 +1466,9 @@ operation.whenDone(EMPTY_CALLBACK);
     }
     assertEquals(1, count);
     operation = subnetwork.delete();
-operation.whenDone(EMPTY_CALLBACK);
+operation.waitFor();
     operation = compute.deleteNetwork(networkId);
-operation.whenDone(EMPTY_CALLBACK);
+operation.waitFor();
     assertNull(compute.getSubnetwork(subnetworkId));
     assertNull(compute.getNetwork(networkName));
   }
@@ -1493,7 +1479,7 @@ operation.whenDone(EMPTY_CALLBACK);
     NetworkId networkId = NetworkId.of(networkName);
     NetworkInfo networkInfo = NetworkInfo.of(networkId, SubnetNetworkConfiguration.of(false));
     Operation operation = compute.create(networkInfo);
-operation.whenDone(EMPTY_CALLBACK);
+operation.waitFor();
     String prefix = BASE_RESOURCE_NAME + "list-subnetwork";
     String[] regionNames = {"us-central1", "us-east1"};
     String[] subnetworkNames = {prefix + "1", prefix + "2"};
@@ -1506,8 +1492,8 @@ operation.whenDone(EMPTY_CALLBACK);
         SubnetworkInfo.of(secondSubnetworkId, networkId, ipRanges[1]);
     Operation firstOperation = compute.create(firstSubnetworkInfo);
     Operation secondOperation = compute.create(secondSubnetworkInfo);
-    firstOperation.whenDone(EMPTY_CALLBACK);
-    secondOperation.whenDone(EMPTY_CALLBACK);
+    firstOperation.waitFor();
+    secondOperation.waitFor();
     Set<String> regionSet = ImmutableSet.copyOf(regionNames);
     Set<String> subnetworkSet = ImmutableSet.copyOf(subnetworkNames);
     Set<String> rangeSet = ImmutableSet.copyOf(ipRanges);
@@ -1531,10 +1517,10 @@ operation.whenDone(EMPTY_CALLBACK);
     assertEquals(2, count);
     firstOperation = compute.deleteSubnetwork(firstSubnetworkId);
     secondOperation = compute.deleteSubnetwork(secondSubnetworkId);
-    firstOperation.whenDone(EMPTY_CALLBACK);
-    secondOperation.whenDone(EMPTY_CALLBACK);
+    firstOperation.waitFor();
+    secondOperation.waitFor();
     operation = compute.deleteNetwork(networkId);
-operation.whenDone(EMPTY_CALLBACK);
+operation.waitFor();
     assertNull(compute.getNetwork(networkName));
   }
 
@@ -1546,7 +1532,7 @@ operation.whenDone(EMPTY_CALLBACK);
     AddressId addressId = RegionAddressId.of(REGION, addressName);
     AddressInfo addressInfo = AddressInfo.of(addressId);
     Operation operation = compute.create(addressInfo);
-operation.whenDone(EMPTY_CALLBACK);
+operation.waitFor();
     Address address = compute.getAddress(addressId);
     // Create an instance
     InstanceId instanceId = InstanceId.of(ZONE, instanceName);
@@ -1564,7 +1550,7 @@ operation.whenDone(EMPTY_CALLBACK);
             .networkInterfaces(networkInterface)
             .build();
     operation = compute.create(instanceInfo);
-operation.whenDone(EMPTY_CALLBACK);
+operation.waitFor();
     // test get
     Instance remoteInstance = compute.getInstance(instanceId);
     assertEquals(instanceName, remoteInstance.instanceId().instance());
@@ -1616,7 +1602,7 @@ operation.whenDone(EMPTY_CALLBACK);
     String newSerialPortOutput = remoteInstance.getSerialPortOutput(1);
     assertTrue(newSerialPortOutput.contains(serialPortOutput));
     operation = remoteInstance.delete();
-operation.whenDone(EMPTY_CALLBACK);
+operation.waitFor();
     assertNull(compute.getInstance(instanceId));
     address.delete();
   }
@@ -1635,22 +1621,22 @@ operation.whenDone(EMPTY_CALLBACK);
             .networkInterfaces(networkInterface)
             .build();
     Operation operation = compute.create(instanceInfo);
-operation.whenDone(EMPTY_CALLBACK);
+operation.waitFor();
     Instance remoteInstance = compute.getInstance(instanceId,
         Compute.InstanceOption.fields(Compute.InstanceField.STATUS));
     assertEquals(InstanceInfo.Status.RUNNING, remoteInstance.status());
     operation = remoteInstance.stop();
-operation.whenDone(EMPTY_CALLBACK);
+operation.waitFor();
     remoteInstance = compute.getInstance(instanceId,
         Compute.InstanceOption.fields(Compute.InstanceField.STATUS));
     assertEquals(InstanceInfo.Status.TERMINATED, remoteInstance.status());
     operation = remoteInstance.start();
-operation.whenDone(EMPTY_CALLBACK);
+operation.waitFor();
     remoteInstance = compute.getInstance(instanceId,
         Compute.InstanceOption.fields(Compute.InstanceField.STATUS));
     assertEquals(InstanceInfo.Status.RUNNING, remoteInstance.status());
     operation = remoteInstance.reset();
-operation.whenDone(EMPTY_CALLBACK);
+operation.waitFor();
     remoteInstance = compute.getInstance(instanceId,
         Compute.InstanceOption.fields(Compute.InstanceField.STATUS));
     assertEquals(InstanceInfo.Status.RUNNING, remoteInstance.status());
@@ -1671,32 +1657,32 @@ operation.whenDone(EMPTY_CALLBACK);
             .networkInterfaces(networkInterface)
             .build();
     Operation operation = compute.create(instanceInfo);
-operation.whenDone(EMPTY_CALLBACK);
+operation.waitFor();
     Instance remoteInstance = compute.getInstance(instanceId);
     // test set tags
     List<String> tags = ImmutableList.of("tag1", "tag2");
     operation = remoteInstance.setTags(tags);
-operation.whenDone(EMPTY_CALLBACK);
+operation.waitFor();
     remoteInstance = compute.getInstance(instanceId);
     assertEquals(tags, remoteInstance.tags().values());
     // test set metadata
     Map<String, String> metadata = ImmutableMap.of("key", "value");
     operation = remoteInstance.setMetadata(metadata);
-operation.whenDone(EMPTY_CALLBACK);
+operation.waitFor();
     remoteInstance = compute.getInstance(instanceId);
     assertEquals(metadata, remoteInstance.metadata().values());
     // test set machine type
     operation = remoteInstance.stop();
-operation.whenDone(EMPTY_CALLBACK);
+operation.waitFor();
     operation = remoteInstance.setMachineType(MachineTypeId.of(ZONE, "n1-standard-1"));
-operation.whenDone(EMPTY_CALLBACK);
+operation.waitFor();
     remoteInstance = compute.getInstance(instanceId);
     assertEquals("n1-standard-1", remoteInstance.machineType().type());
     assertEquals(ZONE, remoteInstance.machineType().zone());
     // test set scheduling options
     SchedulingOptions options = SchedulingOptions.standard(false, SchedulingOptions.Maintenance.TERMINATE);
     operation = remoteInstance.setSchedulingOptions(options);
-operation.whenDone(EMPTY_CALLBACK);
+operation.waitFor();
     remoteInstance = compute.getInstance(instanceId);
     assertEquals(options, remoteInstance.schedulingOptions());
     remoteInstance.delete();
@@ -1720,13 +1706,13 @@ operation.whenDone(EMPTY_CALLBACK);
     DiskId diskId = DiskId.of(ZONE, diskName);
     Operation diskOperation = compute.create(DiskInfo.of(diskId,
             StandardDiskConfiguration.of(DiskTypeId.of(ZONE, "pd-ssd"))));
-    instanceOperation.whenDone(EMPTY_CALLBACK);
-    diskOperation.whenDone(EMPTY_CALLBACK);
+    instanceOperation.waitFor();
+    diskOperation.waitFor();
     Instance remoteInstance = compute.getInstance(instanceId);
     // test attach disk
     instanceOperation = remoteInstance.attachDisk("dev1",
         AttachedDisk.PersistentDiskConfiguration.builder(diskId).build());
-    instanceOperation.whenDone(EMPTY_CALLBACK);
+    instanceOperation.waitFor();
     remoteInstance = compute.getInstance(instanceId);
     Set<String> deviceSet = ImmutableSet.of("dev0", "dev1");
     assertEquals(2, remoteInstance.attachedDisks().size());
@@ -1735,7 +1721,7 @@ operation.whenDone(EMPTY_CALLBACK);
     }
     // test set disk auto-delete
     instanceOperation = remoteInstance.setDiskAutoDelete("dev1", true);
-    instanceOperation.whenDone(EMPTY_CALLBACK);
+    instanceOperation.waitFor();
     remoteInstance = compute.getInstance(instanceId);
     assertEquals(2, remoteInstance.attachedDisks().size());
     for (AttachedDisk remoteAttachedDisk : remoteInstance.attachedDisks()) {
@@ -1744,7 +1730,7 @@ operation.whenDone(EMPTY_CALLBACK);
     }
     // test detach disk
     instanceOperation = remoteInstance.detachDisk("dev1");
-    instanceOperation.whenDone(EMPTY_CALLBACK);
+    instanceOperation.waitFor();
     remoteInstance = compute.getInstance(instanceId);
     assertEquals(1, remoteInstance.attachedDisks().size());
     assertEquals("dev0", remoteInstance.attachedDisks().get(0).deviceName());
@@ -1770,8 +1756,8 @@ operation.whenDone(EMPTY_CALLBACK);
     AddressId addressId = RegionAddressId.of(REGION, addressName);
     AddressInfo addressInfo = AddressInfo.of(addressId);
     Operation addressOperation = compute.create(addressInfo);
-    addressOperation.whenDone(EMPTY_CALLBACK);
-    instanceOperation.whenDone(EMPTY_CALLBACK);
+    addressOperation.waitFor();
+    instanceOperation.waitFor();
     Address remoteAddress = compute.getAddress(addressId);
     Instance remoteInstance = compute.getInstance(instanceId);
     String networkInterfaceName = remoteInstance.networkInterfaces().get(0).name();
@@ -1781,7 +1767,7 @@ operation.whenDone(EMPTY_CALLBACK);
         .name("NAT")
         .build();
     instanceOperation = remoteInstance.addAccessConfig(networkInterfaceName, accessConfig);
-    instanceOperation.whenDone(EMPTY_CALLBACK);
+    instanceOperation.waitFor();
     remoteInstance = compute.getInstance(instanceId);
     List<NetworkInterface.AccessConfig> accessConfigurations =
         remoteInstance.networkInterfaces().get(0).accessConfigurations();
@@ -1789,7 +1775,7 @@ operation.whenDone(EMPTY_CALLBACK);
     assertEquals("NAT", accessConfigurations.get(0).name());
     // test delete access config
     instanceOperation = remoteInstance.deleteAccessConfig(networkInterfaceName, "NAT");
-    instanceOperation.whenDone(EMPTY_CALLBACK);
+    instanceOperation.waitFor();
     remoteInstance = compute.getInstance(instanceId);
     assertTrue(remoteInstance.networkInterfaces().get(0).accessConfigurations().isEmpty());
     remoteInstance.delete();

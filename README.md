@@ -152,7 +152,6 @@ Complete source code can be found at
 
 ```java
 import com.google.cloud.bigquery.BigQuery;
-import com.google.cloud.bigquery.BigQueryError;
 import com.google.cloud.bigquery.BigQueryOptions;
 import com.google.cloud.bigquery.Field;
 import com.google.cloud.bigquery.FormatOptions;
@@ -162,8 +161,6 @@ import com.google.cloud.bigquery.StandardTableDefinition;
 import com.google.cloud.bigquery.Table;
 import com.google.cloud.bigquery.TableId;
 import com.google.cloud.bigquery.TableInfo;
-
-import java.util.List;
 
 BigQuery bigquery = BigQueryOptions.defaultInstance().service();
 TableId tableId = TableId.of("dataset", "table");
@@ -176,17 +173,12 @@ if (table == null) {
 }
 System.out.println("Loading data into table " + tableId);
 Job loadJob = table.load(FormatOptions.csv(), "gs://bucket/path");
-loadJob.whenDone(new Job.CompletionCallback() {
-  @Override
-  public void success(Job job) {
-    System.out.println("Job succeeded");
-  }
-
-  @Override
-  public void error(BigQueryError error, List<BigQueryError> executionErrors) {
-    System.out.println("Job completed with errors");
-  }
-});
+loadJob = loadJob.waitFor();
+if (loadJob.status().error() != null) {
+  System.out.println("Job completed with errors");
+} else {
+  System.out.println("Job succeeded");
+}
 ```
 
 Google Cloud Compute (Alpha)
@@ -209,11 +201,7 @@ import com.google.cloud.compute.Compute;
 import com.google.cloud.compute.ComputeOptions;
 import com.google.cloud.compute.Disk;
 import com.google.cloud.compute.DiskId;
-import com.google.cloud.compute.Operation.OperationError;
-import com.google.cloud.compute.Operation.OperationWarning;
 import com.google.cloud.compute.Snapshot;
-
-import java.util.List;
 
 final Compute compute = ComputeOptions.defaultInstance().service();
 DiskId diskId = DiskId.of("us-central1-a", "disk-name");
@@ -221,19 +209,11 @@ Disk disk = compute.getDisk(diskId, Compute.DiskOption.fields());
 if (disk != null) {
   final String snapshotName = "disk-name-snapshot";
   Operation operation = disk.createSnapshot(snapshotName);
-  operation.whenDone(new Operation.CompletionCallback() {
-    @Override
-    public void success(Operation operation) {
-      // use snapshot
-      Snapshot snapshot = compute.getSnapshot(snapshotName);
-    }
-
-    @Override
-    public void error(List<OperationError> errors, List<OperationWarning> warnings) {
-      // inspect errors
-      throw new RuntimeException("Snaphsot creation failed");
-    }
-  });
+  operation = operation.waitFor();
+  if (operation.errors() == null) {
+    // use snapshot
+    Snapshot snapshot = compute.getSnapshot(snapshotName);
+  }
 }
 ```
 The second snippet shows how to create a virtual machine instance. Complete source code can be found
@@ -249,10 +229,6 @@ import com.google.cloud.compute.InstanceId;
 import com.google.cloud.compute.InstanceInfo;
 import com.google.cloud.compute.MachineTypeId;
 import com.google.cloud.compute.NetworkId;
-import com.google.cloud.compute.Operation.OperationError;
-import com.google.cloud.compute.Operation.OperationWarning;
-
-import java.util.List;
 
 Compute compute = ComputeOptions.defaultInstance().service();
 ImageId imageId = ImageId.of("debian-cloud", "debian-8-jessie-v20160329");
@@ -263,9 +239,7 @@ InstanceId instanceId = InstanceId.of("us-central1-a", "instance-name");
 MachineTypeId machineTypeId = MachineTypeId.of("us-central1-a", "n1-standard-1");
 Operation operation =
     compute.create(InstanceInfo.of(instanceId, machineTypeId, attachedDisk, networkInterface));
-while (!operation.isDone()) {
-  Thread.sleep(1000L);
-}
+operation = operation.waitFor();
 if (operation.errors() == null) {
   // use instance
   Instance instance = compute.getInstance(instanceId);
