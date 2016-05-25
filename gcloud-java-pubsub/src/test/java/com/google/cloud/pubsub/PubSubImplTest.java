@@ -47,6 +47,7 @@ import com.google.pubsub.v1.ListTopicSubscriptionsRequest;
 import com.google.pubsub.v1.ListTopicSubscriptionsResponse;
 import com.google.pubsub.v1.ListTopicsRequest;
 import com.google.pubsub.v1.ListTopicsResponse;
+import com.google.pubsub.v1.ModifyAckDeadlineRequest;
 import com.google.pubsub.v1.ModifyPushConfigRequest;
 import com.google.pubsub.v1.PublishRequest;
 import com.google.pubsub.v1.PublishResponse;
@@ -61,6 +62,7 @@ import org.junit.rules.ExpectedException;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
+import java.util.concurrent.TimeUnit;
 
 public class PubSubImplTest {
 
@@ -1185,6 +1187,100 @@ public class PubSubImplTest {
     assertNull(page.nextPageAsync().get());
     assertArrayEquals(subscriptionList.toArray(),
         Iterables.toArray(page.values(), SubscriptionId.class));
+  }
+
+  @Test
+  public void testModifyAckDeadlineOneMessage() {
+    pubsub = options.service();
+    ModifyAckDeadlineRequest request = ModifyAckDeadlineRequest.newBuilder()
+        .setAckDeadlineSeconds(10)
+        .setSubscription(SUBSCRIPTION_NAME_PB)
+        .addAckIds("ackId")
+        .build();
+    Future<Empty> response = Futures.immediateFuture(Empty.getDefaultInstance());
+    EasyMock.expect(pubsubRpcMock.modify(request)).andReturn(response);
+    EasyMock.replay(pubsubRpcMock);
+    pubsub.modifyAckDeadline(SUBSCRIPTION, 10, TimeUnit.SECONDS, "ackId");
+  }
+
+  @Test
+  public void testModifyAckDeadlineOneMessageAsync()
+      throws ExecutionException, InterruptedException {
+    pubsub = options.service();
+    ModifyAckDeadlineRequest request = ModifyAckDeadlineRequest.newBuilder()
+        .setAckDeadlineSeconds(10)
+        .setSubscription(SUBSCRIPTION_NAME_PB)
+        .addAckIds("ackId")
+        .build();
+    Future<Empty> response = Futures.immediateFuture(Empty.getDefaultInstance());
+    EasyMock.expect(pubsubRpcMock.modify(request)).andReturn(response);
+    EasyMock.replay(pubsubRpcMock);
+    Future<Void> future =
+        pubsub.modifyAckDeadlineAsync(SUBSCRIPTION, 10, TimeUnit.SECONDS, "ackId");
+    assertNull(future.get());
+  }
+
+  @Test
+  public void testModifyAckDeadlineMoreMessages() {
+    pubsub = options.service();
+    ModifyAckDeadlineRequest request = ModifyAckDeadlineRequest.newBuilder()
+        .setAckDeadlineSeconds(10)
+        .setSubscription(SUBSCRIPTION_NAME_PB)
+        .addAllAckIds(ImmutableList.of("ackId1", "ackId2"))
+        .build();
+    Future<Empty> response = Futures.immediateFuture(Empty.getDefaultInstance());
+    EasyMock.expect(pubsubRpcMock.modify(request)).andReturn(response);
+    EasyMock.replay(pubsubRpcMock);
+    pubsub.modifyAckDeadline(SUBSCRIPTION, 10, TimeUnit.SECONDS, "ackId1", "ackId2");
+  }
+
+  @Test
+  public void testModifyAckDeadlineMoreMessagesAsync()
+      throws ExecutionException, InterruptedException {
+    pubsub = options.service();
+    ModifyAckDeadlineRequest request = ModifyAckDeadlineRequest.newBuilder()
+        .setAckDeadlineSeconds(10)
+        .setSubscription(SUBSCRIPTION_NAME_PB)
+        .addAllAckIds(ImmutableList.of("ackId1", "ackId2"))
+        .build();
+    Future<Empty> response = Futures.immediateFuture(Empty.getDefaultInstance());
+    EasyMock.expect(pubsubRpcMock.modify(request)).andReturn(response);
+    EasyMock.replay(pubsubRpcMock);
+    Future<Void> future =
+        pubsub.modifyAckDeadlineAsync(SUBSCRIPTION, 10, TimeUnit.SECONDS, "ackId1", "ackId2");
+    assertNull(future.get());
+  }
+
+  @Test
+  public void testModifyAckDeadlineMessageList() {
+    pubsub = options.service();
+    List<String> ackIds = ImmutableList.of("ackId1", "ackId2");
+    ModifyAckDeadlineRequest request = ModifyAckDeadlineRequest.newBuilder()
+        .setAckDeadlineSeconds(10)
+        .setSubscription(SUBSCRIPTION_NAME_PB)
+        .addAllAckIds(ackIds)
+        .build();
+    Future<Empty> response = Futures.immediateFuture(Empty.getDefaultInstance());
+    EasyMock.expect(pubsubRpcMock.modify(request)).andReturn(response);
+    EasyMock.replay(pubsubRpcMock);
+    pubsub.modifyAckDeadline(SUBSCRIPTION, 10, TimeUnit.SECONDS, ackIds);
+  }
+
+  @Test
+  public void testModifyAckDeadlineMessageListAsync()
+      throws ExecutionException, InterruptedException {
+    pubsub = options.service();
+    List<String> ackIds = ImmutableList.of("ackId1", "ackId2");
+    ModifyAckDeadlineRequest request = ModifyAckDeadlineRequest.newBuilder()
+        .setAckDeadlineSeconds(10)
+        .setSubscription(SUBSCRIPTION_NAME_PB)
+        .addAllAckIds(ackIds)
+        .build();
+    Future<Empty> response = Futures.immediateFuture(Empty.getDefaultInstance());
+    EasyMock.expect(pubsubRpcMock.modify(request)).andReturn(response);
+    EasyMock.replay(pubsubRpcMock);
+    Future<Void> future = pubsub.modifyAckDeadlineAsync(SUBSCRIPTION, 10, TimeUnit.SECONDS, ackIds);
+    assertNull(future.get());
   }
 
   @Test

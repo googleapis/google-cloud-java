@@ -23,6 +23,10 @@ import com.google.cloud.AuthCredentials;
 import com.google.cloud.RetryParams;
 import com.google.cloud.pubsub.PubSubOptions;
 
+import io.grpc.ManagedChannel;
+import io.grpc.netty.NegotiationType;
+import io.grpc.netty.NettyChannelBuilder;
+
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -30,10 +34,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
-
-import io.grpc.ManagedChannel;
-import io.grpc.netty.NegotiationType;
-import io.grpc.netty.NettyChannelBuilder;
 
 /**
  * A class that runs a Pubsub emulator instance for use in tests.
