@@ -403,14 +403,78 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
 
   Future<Void> nackAsync(String subscription, Iterable<String> ackIds);
 
+  /**
+   * Modifies the acknowledge deadline of the given messages. {@code deadline} must be >= 0 and is
+   * the new deadline with respect to the time the modify request was received by the Pub/Sub
+   * service. For example, if {@code deadline} is 10 and {@code unit} is {@link TimeUnit#SECONDS},
+   * the new ack deadline will expire 10 seconds after the modify request was received by the
+   * service. Specifying 0 may be used to make the message available for another pull request
+   * (corresponds to calling {@link #nack(String, String, String...)}).
+   *
+   * @param subscription the subscription whose messages need to update their acknowledge deadline
+   * @param deadline the new deadline, relative to the time the modify request is received by the
+   *     Pub/Sub service
+   * @param unit time unit for the {@code deadline} parameter
+   * @param ackId the ack id of the first message for which the acknowledge deadline must be
+   *     modified
+   * @param ackIds other ack ids of messages for which the acknowledge deadline must be modified
+   * @throws PubSubException upon failure, or if the subscription was not found
+   */
   void modifyAckDeadline(String subscription, int deadline, TimeUnit unit, String ackId,
       String... ackIds);
 
+  /**
+   * Sends a request to modify the acknowledge deadline of the given messages. {@code deadline}
+   * must be >= 0 and is the new deadline with respect to the time the modify request was received
+   * by the Pub/Sub service. For example, if {@code deadline} is 10 and {@code unit} is
+   * {@link TimeUnit#SECONDS}, the new ack deadline will expire 10 seconds after the modify request
+   * was received by the service. Specifying 0 may be used to make the message available for another
+   * pull request (corresponds to calling {@link #nackAsync(String, Iterable)}). The method returns
+   * a {@code Future} object that can be used to wait for the modify operation to be completed.
+   *
+   * @param subscription the subscription whose messages need to update their acknowledge deadline
+   * @param deadline the new deadline, relative to the time the modify request is received by the
+   *     Pub/Sub service
+   * @param unit time unit for the {@code deadline} parameter
+   * @param ackId the ack id of the first message for which the acknowledge deadline must be
+   *     modified
+   * @param ackIds other ack ids of messages for which the acknowledge deadline must be modified
+   */
   Future<Void> modifyAckDeadlineAsync(String subscription, int deadline, TimeUnit unit,
       String ackId, String... ackIds);
 
+  /**
+   * Modifies the acknowledge deadline of the given messages. {@code deadline} must be >= 0 and is
+   * the new deadline with respect to the time the modify request was received by the Pub/Sub
+   * service. For example, if {@code deadline} is 10 and {@code unit} is {@link TimeUnit#SECONDS},
+   * the new ack deadline will expire 10 seconds after the modify request was received by the
+   * service. Specifying 0 may be used to make the message available for another pull request
+   * (corresponds to calling {@link #nack(String, Iterable)}).
+   *
+   * @param subscription the subscription whose messages need to update their acknowledge deadline
+   * @param deadline the new deadline, relative to the time the modify request is received by the
+   *     Pub/Sub service
+   * @param unit time unit for the {@code deadline} parameter
+   * @param ackIds the ack ids of messages for which the acknowledge deadline must be modified
+   * @throws PubSubException upon failure, or if the subscription was not found
+   */
   void modifyAckDeadline(String subscription, int deadline, TimeUnit unit, Iterable<String> ackIds);
 
+  /**
+   * Sends a request to modify the acknowledge deadline of the given messages. {@code deadline}
+   * must be >= 0 and is the new deadline with respect to the time the modify request was received
+   * by the Pub/Sub service. For example, if {@code deadline} is 10 and {@code unit} is
+   * {@link TimeUnit#SECONDS}, the new ack deadline will expire 10 seconds after the modify request
+   * was received by the service. Specifying 0 may be used to make the message available for another
+   * pull request (corresponds to calling {@link #nackAsync(String, Iterable)}). The method returns
+   * a {@code Future} object that can be used to wait for the modify operation to be completed.
+   *
+   * @param subscription the subscription whose messages need to update their acknowledge deadline
+   * @param deadline the new deadline, relative to the time the modify request is received by the
+   *     Pub/Sub service
+   * @param unit time unit for the {@code deadline} parameter
+   * @param ackIds the ack ids of messages for which the acknowledge deadline must be modified
+   */
   Future<Void> modifyAckDeadlineAsync(String subscription, int deadline, TimeUnit unit,
       Iterable<String> ackIds);
 

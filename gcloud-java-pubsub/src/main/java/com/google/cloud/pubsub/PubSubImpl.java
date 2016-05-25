@@ -16,9 +16,9 @@
 
 package com.google.cloud.pubsub;
 
-import static com.google.api.client.util.Preconditions.checkArgument;
 import static com.google.cloud.pubsub.PubSub.ListOption.OptionType.PAGE_SIZE;
 import static com.google.cloud.pubsub.PubSub.ListOption.OptionType.PAGE_TOKEN;
+import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.util.concurrent.Futures.lazyTransform;
 
 import com.google.cloud.AsyncPage;
@@ -47,6 +47,7 @@ import com.google.pubsub.v1.ListTopicSubscriptionsRequest;
 import com.google.pubsub.v1.ListTopicSubscriptionsResponse;
 import com.google.pubsub.v1.ListTopicsRequest;
 import com.google.pubsub.v1.ListTopicsResponse;
+import com.google.pubsub.v1.ModifyAckDeadlineRequest;
 import com.google.pubsub.v1.ModifyPushConfigRequest;
 import com.google.pubsub.v1.PublishRequest;
 import com.google.pubsub.v1.PublishResponse;
@@ -504,25 +505,30 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
   @Override
   public void modifyAckDeadline(String subscription, int deadline, TimeUnit unit, String ackId,
       String... ackIds) {
-
+    get(modifyAckDeadlineAsync(subscription, deadline, unit, Lists.asList(ackId, ackIds)));
   }
 
   @Override
   public Future<Void> modifyAckDeadlineAsync(String subscription, int deadline, TimeUnit unit,
       String ackId, String... ackIds) {
-    return null;
+    return modifyAckDeadlineAsync(subscription, deadline, unit, Lists.asList(ackId, ackIds));
   }
 
   @Override
   public void modifyAckDeadline(String subscription, int deadline, TimeUnit unit,
       Iterable<String> ackIds) {
-
+    get(modifyAckDeadlineAsync(subscription, deadline, unit, ackIds));
   }
 
   @Override
   public Future<Void> modifyAckDeadlineAsync(String subscription, int deadline, TimeUnit unit,
       Iterable<String> ackIds) {
-    return null;
+    ModifyAckDeadlineRequest request = ModifyAckDeadlineRequest.newBuilder()
+        .setSubscription(SubscriberApi.formatSubscriptionName(options().projectId(), subscription))
+        .setAckDeadlineSeconds((int) TimeUnit.SECONDS.convert(deadline, unit))
+        .addAllAckIds(ackIds)
+        .build();
+    return lazyTransform(rpc.modify(request), EMPTY_TO_VOID_FUNCTION);
   }
 
   static <T extends Option.OptionType> Map<Option.OptionType, ?> optionMap(Option... options) {

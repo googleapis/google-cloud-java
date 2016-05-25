@@ -54,12 +54,12 @@ import com.google.pubsub.v1.PullResponse;
 import com.google.pubsub.v1.Subscription;
 import com.google.pubsub.v1.Topic;
 
-import org.joda.time.Duration;
-
 import io.grpc.ManagedChannel;
 import io.grpc.Status.Code;
 import io.grpc.netty.NegotiationType;
 import io.grpc.netty.NettyChannelBuilder;
+
+import org.joda.time.Duration;
 
 import java.io.IOException;
 import java.util.Set;
