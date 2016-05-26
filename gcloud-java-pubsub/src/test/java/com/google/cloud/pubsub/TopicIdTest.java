@@ -29,6 +29,7 @@ public class TopicIdTest {
   private static final String PROJECT = "project";
   private static final String NAME = "topic";
   private static final String TOPIC_PB = "projects/project/topics/topic";
+  private static final String DELETED_TOPIC_NAME = "_deleted-topic_";
 
   @Test
   public void testOf() {
@@ -45,7 +46,7 @@ public class TopicIdTest {
   public void testDeletedTopic() {
     TopicId deletedTopic = TopicId.deletedTopic();
     assertNull(deletedTopic.project());
-    assertEquals("_deleted_topic_", deletedTopic.topic());
+    assertEquals(DELETED_TOPIC_NAME, deletedTopic.topic());
     assertTrue(deletedTopic.isDeleted());
     assertSame(deletedTopic, TopicId.deletedTopic());
   }
@@ -60,6 +61,7 @@ public class TopicIdTest {
     topicPb = topicId.toPb("otherProject");
     assertEquals("projects/otherProject/topics/topic", topicPb);
     compareTopicId(TopicId.of("otherProject", NAME), TopicId.fromPb(topicPb));
+    assertSame(TopicId.deletedTopic(), TopicId.fromPb(DELETED_TOPIC_NAME));
   }
 
   private void compareTopicId(TopicId expected, TopicId value) {

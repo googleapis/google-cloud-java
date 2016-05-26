@@ -113,7 +113,7 @@ public class SubscriptionInfoTest {
         SubscriptionInfo.fromPb(subscriptionInfo.toPb("project")));
     com.google.pubsub.v1.Subscription subscription = SUBSCRIPTION_INFO.toPb("project");
     subscriptionInfo =
-        SubscriptionInfo.fromPb(subscription.toBuilder().setTopic("_deleted_topic_").build());
+        SubscriptionInfo.fromPb(subscription.toBuilder().setTopic("_deleted-topic_").build());
     assertEquals(TopicId.deletedTopic(), subscriptionInfo.topic());
     assertEquals(NAME, subscriptionInfo.name());
     assertEquals(PUSH_CONFIG, subscriptionInfo.pushConfig());

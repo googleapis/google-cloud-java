@@ -33,7 +33,7 @@ import java.util.Objects;
 public final class TopicId implements Serializable {
 
   private static final long serialVersionUID = -4913169763174877777L;
-  private static final String DELETED_TOPIC_NAME = "_deleted_topic_";
+  private static final String DELETED_TOPIC_NAME = "_deleted-topic_";
   private static final TopicId DELETED_TOPIC = new TopicId(null, DELETED_TOPIC_NAME, true);
 
   private final String project;
@@ -68,7 +68,7 @@ public final class TopicId implements Serializable {
   /**
    * Returns {@code true} if this object is the identity of a deleted topic, {@code false}
    * otherwhise. If {@code isDeleted()} is {@code true}, {@link #topic()} returns
-   * "{@code _deleted_topic_}" and {@link #project()} returns {@code null}.
+   * "{@code _deleted-topic_}" and {@link #project()} returns {@code null}.
    */
   public boolean isDeleted() {
     return isDeleted;
