@@ -37,6 +37,7 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.google.common.util.concurrent.Uninterruptibles;
 import com.google.protobuf.Empty;
+import com.google.pubsub.v1.AcknowledgeRequest;
 import com.google.pubsub.v1.DeleteSubscriptionRequest;
 import com.google.pubsub.v1.DeleteTopicRequest;
 import com.google.pubsub.v1.GetSubscriptionRequest;
@@ -466,40 +467,46 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
 
   @Override
   public void ack(String subscription, String ackId, String... ackIds) {
+    ack(subscription, Lists.asList(ackId, ackIds));
   }
 
   @Override
   public Future<Void> ackAsync(String subscription, String ackId, String... ackIds) {
-    return null;
+    return ackAsync(subscription, Lists.asList(ackId, ackIds));
   }
 
   @Override
   public void ack(String subscription, Iterable<String> ackIds) {
-
+    get(ackAsync(subscription, ackIds));
   }
 
   @Override
   public Future<Void> ackAsync(String subscription, Iterable<String> ackIds) {
-    return null;
+    AcknowledgeRequest request = AcknowledgeRequest.newBuilder()
+        .setSubscription(SubscriberApi.formatSubscriptionName(options().projectId(), subscription))
+        .addAllAckIds(ackIds)
+        .build();
+    return lazyTransform(rpc.acknowledge(request), EMPTY_TO_VOID_FUNCTION);
   }
 
   @Override
   public void nack(String subscription, String ackId, String... ackIds) {
+    nack(subscription, Lists.asList(ackId, ackIds));
   }
 
   @Override
   public Future<Void> nackAsync(String subscription, String ackId, String... ackIds) {
-    return null;
+    return nackAsync(subscription, Lists.asList(ackId, ackIds));
   }
 
   @Override
   public void nack(String subscription, Iterable<String> ackIds) {
-
+    get(nackAsync(subscription, ackIds));
   }
 
   @Override
   public Future<Void> nackAsync(String subscription, Iterable<String> ackIds) {
-    return null;
+    return modifyAckDeadlineAsync(subscription, 0, TimeUnit.SECONDS, ackIds);
   }
 
   @Override
