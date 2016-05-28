@@ -107,7 +107,7 @@ First, ensure that the necessary Google Cloud APIs are enabled for your project.
 Next, choose a method for authenticating API requests from within your project:
 
 1. When using `gcloud-java` libraries from within Compute/App Engine, no additional authentication steps are necessary.
-2. When using `gcloud-java` libraries elsewhere, there are two options:
+2. When using `gcloud-java` libraries elsewhere, there are three options:
   * [Generate a JSON service account key](https://cloud.google.com/storage/docs/authentication?hl=en#service_accounts).  After downloading that key, you must do one of the following:
     * Define the environment variable GOOGLE_APPLICATION_CREDENTIALS to be the location of the key.  For example:
     ```bash
@@ -116,11 +116,18 @@ Next, choose a method for authenticating API requests from within your project:
     * Supply the JSON credentials file when building the service options.  For example, this Storage object has the necessary permissions to interact with your Google Cloud Storage data:
     ```java
     Storage storage = StorageOptions.builder()
-      .authCredentials(AuthCredentials.createForJson(new FileInputStream("/path/to/my/key.json"))
+        .authCredentials(AuthCredentials.createForJson(new FileInputStream("/path/to/my/key.json"))
+        .build()
+        .service();
+    ```
+  * If running locally for development/testing, you can use Google Cloud SDK.  Download the SDK if you haven't already, then login using the SDK (`gcloud auth login` in command line).  Be sure to set your project ID as described above.
+  * If you already have an OAuth2 access token, you can use it to authenticate (notice that in this case the access token will not be automatically refreshed):
+  ```java
+  Storage storage = StorageOptions.builder()
+      .authCredentials(AuthCredentials.createFor("your_access_token"))
       .build()
       .service();
-    ```
-  * If running locally for development/testing, you can use use Google Cloud SDK.  Download the SDK if you haven't already, then login using the SDK (`gcloud auth login` in command line).  Be sure to set your project ID as described above.
+  ```
 
 `gcloud-java` looks for credentials in the following order, stopping once it finds credentials:
 
