@@ -98,15 +98,16 @@ public class TopicInfo implements Serializable {
     return Objects.hash(name);
   }
 
+  final boolean baseEquals(TopicInfo topicInfo) {
+    return Objects.equals(name, topicInfo.name);
+  }
+
   @Override
   public boolean equals(Object obj) {
-    if (this == obj) {
-      return true;
-    }
-    if (obj == null || !obj.getClass().equals(this.getClass())) {
-      return false;
-    }
-    return Objects.equals(name, ((TopicInfo) obj).name);
+    return obj == this
+        || obj != null
+        && obj.getClass().equals(TopicInfo.class)
+        && baseEquals((TopicInfo) obj);
   }
 
   @Override
