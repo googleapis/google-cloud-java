@@ -342,6 +342,67 @@ public abstract class AuthCredentials implements Restorable<AuthCredentials> {
   }
 
   /**
+   * Represents OAuth2 credentials. These credentials can be created given an OAuth2 access token.
+   * The access token will not be automatically refreshed.
+   */
+  public static class OAuth2AuthCredentials extends AuthCredentials {
+
+    private final GoogleCredentials credentials;
+    private final String accessToken;
+    private final Date expirationTime;
+
+    private static class OAuth2AuthCredentialsState
+        implements RestorableState<AuthCredentials>, Serializable {
+
+      private static final long serialVersionUID = -7760693952274496205L;
+
+      private final String accessToken;
+      private final Date expirationTime;
+
+      private OAuth2AuthCredentialsState(String accessToken, Date expirationTime) {
+        this.accessToken = accessToken;
+        this.expirationTime = expirationTime;
+      }
+
+      @Override
+      public AuthCredentials restore() {
+        return new OAuth2AuthCredentials(accessToken, expirationTime);
+      }
+
+      @Override
+      public int hashCode() {
+        return Objects.hash(accessToken, expirationTime);
+      }
+
+      @Override
+      public boolean equals(Object obj) {
+        if (!(obj instanceof OAuth2AuthCredentialsState)) {
+          return false;
+        }
+        OAuth2AuthCredentialsState other = (OAuth2AuthCredentialsState) obj;
+        return Objects.equals(accessToken, other.accessToken)
+            && Objects.equals(expirationTime, other.expirationTime);
+      }
+    }
+
+    OAuth2AuthCredentials(String accessToken, Date expirationTime) {
+      this.accessToken = checkNotNull(accessToken);
+      this.expirationTime = expirationTime;
+      this.credentials = new GoogleCredentials(new AccessToken(accessToken, expirationTime));
+    }
+
+    @Override
+    public GoogleCredentials credentials() {
+      return credentials;
+    }
+
+    @Override
+    public RestorableState<AuthCredentials> capture() {
+      return new OAuth2AuthCredentialsState(accessToken, expirationTime);
+    }
+  }
+
+  /**
    * A placeholder for credentials to signify that requests sent to the server should not be
    * authenticated. This is typically useful when using the local service emulators, such as
    * {@code LocalDatastoreHelper} and {@code LocalResourceManagerHelper}.
@@ -426,6 +487,28 @@ public abstract class AuthCredentials implements Restorable<AuthCredentials> {
    */
   public static ServiceAccountAuthCredentials createFor(String account, PrivateKey privateKey) {
     return new ServiceAccountAuthCredentials(account, privateKey);
+  }
+
+  /**
+   * Creates OAuth2 Credentials given the string representation of an access token. The access token
+   * will not be automatically refreshed.
+   *
+   * @param accessToken string representation of an access token
+   * @return the credentials instance
+   */
+  public static OAuth2AuthCredentials createFor(String accessToken) {
+    return createFor(accessToken, (Date) null);
+  }
+
+  /**
+   * Creates OAuth2 Credentials given the string representation of an access token and its
+   * expiration time. The access token will not be automatically refreshed.
+   *
+   * @param accessToken string representation of an access token
+   * @return the credentials instance
+   */
+  public static OAuth2AuthCredentials createFor(String accessToken, Date expirationTime) {
+    return new OAuth2AuthCredentials(accessToken, expirationTime);
   }
 
   /**

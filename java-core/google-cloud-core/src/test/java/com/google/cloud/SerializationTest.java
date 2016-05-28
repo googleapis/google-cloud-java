@@ -22,6 +22,7 @@ import com.google.common.collect.ImmutableList;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.Serializable;
+import java.util.Date;
 
 public class SerializationTest extends BaseSerializationTest {
 
@@ -94,7 +95,8 @@ public class SerializationTest extends BaseSerializationTest {
   protected Restorable<?>[] restorableObjects() {
     try {
       return new Restorable<?>[]{AuthCredentials.createForAppEngine(), AuthCredentials.noAuth(),
-          AuthCredentials.createForJson(new ByteArrayInputStream(JSON_KEY.getBytes()))};
+          AuthCredentials.createForJson(new ByteArrayInputStream(JSON_KEY.getBytes())),
+          AuthCredentials.createFor("accessToken", new Date())};
     } catch (IOException ex) {
       // never reached
       throw new RuntimeException(ex);
