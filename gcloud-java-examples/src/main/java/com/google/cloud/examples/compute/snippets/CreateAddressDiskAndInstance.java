@@ -35,13 +35,15 @@ import com.google.cloud.compute.NetworkInterface.AccessConfig;
 import com.google.cloud.compute.Operation;
 import com.google.cloud.compute.RegionAddressId;
 
+import java.util.concurrent.TimeoutException;
+
 /**
  * A snippet for Google Cloud Compute Engine showing how to create a disk and an address. The
  * snippet also shows how to create a virtual machine instance using the created disk and address.
  */
 public class CreateAddressDiskAndInstance {
 
-  public static void main(String... args) throws InterruptedException {
+  public static void main(String... args) throws InterruptedException, TimeoutException {
     // Create a service object
     // Credentials are inferred from the environment.
     Compute compute = ComputeOptions.defaultInstance().service();

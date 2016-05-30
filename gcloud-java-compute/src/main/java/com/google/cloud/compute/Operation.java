@@ -16,8 +16,14 @@
 
 package com.google.cloud.compute;
 
+import static com.google.cloud.WaitForOption.Option.CHECKING_PERIOD;
+import static com.google.cloud.WaitForOption.Option.TIMEOUT;
+import static com.google.common.base.MoreObjects.firstNonNull;
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import com.google.cloud.Clock;
+import com.google.cloud.WaitForOption;
+import com.google.cloud.WaitForOption.CheckingPeriod;
 import com.google.cloud.compute.Compute.OperationOption;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
@@ -37,6 +43,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 
 /**
  * Google Compute Engine operations. Operation identity can be obtained via {@link #operationId()}.
@@ -660,9 +667,13 @@ public class Operation implements Serializable {
   }
 
   /**
-   * Blocks until this operation completes its execution, either failing or succeeding. The
-   * operation status is checked every 500 milliseconds. This method returns current operation's
-   * latest information. If the operation no longer exists, this method returns {@code null}.
+   * Blocks until this operation completes its execution, either failing or succeeding. This method
+   * returns current operation's latest information. If the operation no longer exists, this method
+   * returns {@code null}. By default, the operation status is checked every 500 milliseconds, to
+   * configure this value use {@link WaitForOption#checkEvery(long, TimeUnit)}. Use
+   * {@link WaitForOption#timeout(long, TimeUnit)} to set the maximum time to wait.
+   *
+   * <p>Example usage of {@code waitFor()}:
    * <pre> {@code
    * Operation completedOperation = operation.waitFor();
    * if (completedOperation == null) {
@@ -673,21 +684,11 @@ public class Operation implements Serializable {
    *   // operation completed successfully
    * }}</pre>
    *
-   * @throws ComputeException upon failure
-   * @throws InterruptedException if the current thread gets interrupted while waiting for the
-   *     operation to complete
-   */
-  public Operation waitFor() throws InterruptedException {
-    return waitFor(500, TimeUnit.MILLISECONDS);
-  }
-
-  /**
-   * Blocks until this operation completes its execution, either failing or succeeding. The
-   * {@code checkEvery} and {@code unit} parameters determine how often the operation status is
-   * checked. This method returns current operation's latest information. If the operation no longer
-   * exists, this method returns {@code null}.
+   * <p>Example usage of {@code waitFor()} with checking period and timeout:
    * <pre> {@code
-   * Operation completedOperation = operation.waitFor(1, TimeUnit.SECONDS);
+   * Operation completedOperation =
+   *     operation.waitFor(WaitForOption.checkEvery(1, TimeUnit.SECONDS),
+   *         WaitForOption.timeout(60, TimeUnit.SECONDS));
    * if (completedOperation == null) {
    *   // operation no longer exists
    * } else if (completedOperation.errors() != null) {
@@ -696,13 +697,27 @@ public class Operation implements Serializable {
    *   // operation completed successfully
    * }}</pre>
    *
+   * @param waitOptions options to configure checking period and timeout
    * @throws ComputeException upon failure
    * @throws InterruptedException if the current thread gets interrupted while waiting for the
    *     operation to complete
+   * @throws TimeoutException if the timeout provided with
+   *     {@link WaitForOption#timeout(long, TimeUnit)} is exceeded. If no such option is provided
+   *     this exception is never thrown.
    */
-  public Operation waitFor(int checkEvery, TimeUnit unit) throws InterruptedException {
+  public Operation waitFor(WaitForOption... waitOptions)
+      throws InterruptedException, TimeoutException {
+    Map<WaitForOption.Option, ?> optionMap = WaitForOption.asMap(waitOptions);
+    CheckingPeriod checkingPeriod = firstNonNull(CHECKING_PERIOD.getCheckingPeriod(optionMap),
+        CheckingPeriod.defaultInstance());
+    long timeout = firstNonNull(TIMEOUT.getLong(optionMap), -1L);
+    Clock clock = options.clock();
+    long startTime = clock.millis();
     while (!isDone()) {
-      unit.sleep(checkEvery);
+      if (timeout  != -1 && (clock.millis() - startTime)  >= timeout) {
+        throw new TimeoutException();
+      }
+      checkingPeriod.sleep();
     }
     return reload();
   }

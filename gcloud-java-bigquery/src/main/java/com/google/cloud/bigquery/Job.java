@@ -16,12 +16,21 @@
 
 package com.google.cloud.bigquery;
 
+import static com.google.cloud.WaitForOption.Option.CHECKING_PERIOD;
+import static com.google.cloud.WaitForOption.Option.TIMEOUT;
+import static com.google.common.base.MoreObjects.firstNonNull;
 import static com.google.common.base.Preconditions.checkNotNull;
+
+import com.google.cloud.Clock;
+import com.google.cloud.WaitForOption;
+import com.google.cloud.WaitForOption.CheckingPeriod;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 
 /**
  * A Google BigQuery Job.
@@ -145,9 +154,13 @@ public class Job extends JobInfo {
   }
 
   /**
-   * Blocks until this job completes its execution, either failing or succeeding. The job status is
-   * checked every 500 milliseconds. This method returns current job's latest information. If the
-   * job no longer exists, this method returns {@code null}.
+   * Blocks until this job completes its execution, either failing or succeeding. This method
+   * returns current job's latest information. If the job no longer exists, this method returns
+   * {@code null}. By default, the job status is checked every 500 milliseconds, to configure this
+   * value use {@link WaitForOption#checkEvery(long, TimeUnit)}. Use
+   * {@link WaitForOption#timeout(long, TimeUnit)} to set the maximum time to wait.
+   *
+   * <p>Example usage of {@code waitFor()}:
    * <pre> {@code
    * Job completedJob = job.waitFor();
    * if (completedJob == null) {
@@ -158,21 +171,10 @@ public class Job extends JobInfo {
    *   // job completed successfully
    * }}</pre>
    *
-   * @throws BigQueryException upon failure
-   * @throws InterruptedException if the current thread gets interrupted while waiting for the job
-   *     to complete
-   */
-  public Job waitFor() throws InterruptedException {
-    return waitFor(500, TimeUnit.MILLISECONDS);
-  }
-
-  /**
-   * Blocks until this job completes its execution, either failing or succeeding. The
-   * {@code checkEvery} and {@code unit} parameters determine how often the job's status is checked.
-   * This method returns current job's latest information. If the job no longer exists, this method
-   * returns {@code null}.
+   * <p>Example usage of {@code waitFor()} with checking period and timeout:
    * <pre> {@code
-   * Job completedJob = job.waitFor(1, TimeUnit.SECONDS);
+   * Job completedJob = job.waitFor(WaitForOption.checkEvery(1, TimeUnit.SECONDS),
+   *     WaitForOption.timeout(60, TimeUnit.SECONDS));
    * if (completedJob == null) {
    *   // job no longer exists
    * } else if (completedJob.status().error() != null) {
@@ -181,13 +183,26 @@ public class Job extends JobInfo {
    *   // job completed successfully
    * }}</pre>
    *
+   * @param waitOptions options to configure checking period and timeout
    * @throws BigQueryException upon failure
    * @throws InterruptedException if the current thread gets interrupted while waiting for the job
    *     to complete
+   * @throws TimeoutException if the timeout provided with
+   *     {@link WaitForOption#timeout(long, TimeUnit)} is exceeded. If no such option is provided
+   *     this exception is never thrown.
    */
-  public Job waitFor(int checkEvery, TimeUnit unit) throws InterruptedException {
+  public Job waitFor(WaitForOption... waitOptions) throws InterruptedException, TimeoutException {
+    Map<WaitForOption.Option, ?> optionMap = WaitForOption.asMap(waitOptions);
+    CheckingPeriod checkingPeriod = firstNonNull(CHECKING_PERIOD.getCheckingPeriod(optionMap),
+        CheckingPeriod.defaultInstance());
+    long timeout = firstNonNull(TIMEOUT.getLong(optionMap), -1L);
+    Clock clock = options.clock();
+    long startTime = clock.millis();
     while (!isDone()) {
-      unit.sleep(checkEvery);
+      if (timeout  != -1 && (clock.millis() - startTime)  >= timeout) {
+        throw new TimeoutException();
+      }
+      checkingPeriod.sleep();
     }
     return reload();
   }

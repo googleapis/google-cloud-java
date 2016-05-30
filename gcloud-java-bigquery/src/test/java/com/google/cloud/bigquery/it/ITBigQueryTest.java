@@ -82,6 +82,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -169,7 +170,7 @@ public class ITBigQueryTest {
   public Timeout globalTimeout = Timeout.seconds(300);
 
   @BeforeClass
-  public static void beforeClass() throws InterruptedException {
+  public static void beforeClass() throws InterruptedException, TimeoutException {
     RemoteBigQueryHelper bigqueryHelper = RemoteBigQueryHelper.create();
     RemoteStorageHelper storageHelper = RemoteStorageHelper.create();
     bigquery = bigqueryHelper.options().service();
@@ -783,7 +784,7 @@ public class ITBigQueryTest {
   }
 
   @Test
-  public void testCopyJob() throws InterruptedException {
+  public void testCopyJob() throws InterruptedException, TimeoutException {
     String sourceTableName = "test_copy_job_source_table";
     String destinationTableName = "test_copy_job_destination_table";
     TableId sourceTable = TableId.of(DATASET, sourceTableName);
@@ -808,7 +809,7 @@ public class ITBigQueryTest {
   }
 
   @Test
-  public void testQueryJob() throws InterruptedException {
+  public void testQueryJob() throws InterruptedException, TimeoutException {
     String tableName = "test_query_job_table";
     String query = new StringBuilder()
         .append("SELECT TimestampField, StringField, BooleanField FROM ")
@@ -851,7 +852,7 @@ public class ITBigQueryTest {
   }
 
   @Test
-  public void testExtractJob() throws InterruptedException {
+  public void testExtractJob() throws InterruptedException, TimeoutException {
     String tableName = "test_export_job_table";
     TableId destinationTable = TableId.of(DATASET, tableName);
     LoadJobConfiguration configuration =
@@ -875,7 +876,7 @@ public class ITBigQueryTest {
   }
 
   @Test
-  public void testCancelJob() throws InterruptedException {
+  public void testCancelJob() throws InterruptedException, TimeoutException {
     String destinationTableName = "test_cancel_query_job_table";
     String query = "SELECT TimestampField, StringField, BooleanField FROM " + TABLE_ID.table();
     TableId destinationTable = TableId.of(DATASET, destinationTableName);
