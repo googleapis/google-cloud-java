@@ -87,11 +87,12 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
     try {
       return RetryHelper.runWithRetries(
           new Callable<com.google.datastore.v1beta3.RunQueryResponse>() {
-        @Override public com.google.datastore.v1beta3.RunQueryResponse call()
-            throws DatastoreException {
-          return datastoreRpc.runQuery(requestPb);
-        }
-      }, retryParams, EXCEPTION_HANDLER, options().clock());
+            @Override
+            public com.google.datastore.v1beta3.RunQueryResponse call()
+                throws DatastoreException {
+              return datastoreRpc.runQuery(requestPb);
+            }
+          }, retryParams, EXCEPTION_HANDLER, options().clock());
     } catch (RetryHelperException e) {
       throw DatastoreException.translateAndThrow(e);
     }
@@ -125,11 +126,12 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
     try {
       return RetryHelper.runWithRetries(
           new Callable<com.google.datastore.v1beta3.AllocateIdsResponse>() {
-        @Override public com.google.datastore.v1beta3.AllocateIdsResponse call()
-            throws DatastoreException {
-          return datastoreRpc.allocateIds(requestPb);
-        }
-      }, retryParams, EXCEPTION_HANDLER, options().clock());
+            @Override
+            public com.google.datastore.v1beta3.AllocateIdsResponse call()
+                throws DatastoreException {
+              return datastoreRpc.allocateIds(requestPb);
+            }
+          }, retryParams, EXCEPTION_HANDLER, options().clock());
     } catch (RetryHelperException e) {
       throw DatastoreException.translateAndThrow(e);
     }
@@ -166,7 +168,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
             "Duplicate entity with the key %s", entity.key());
         }
       } else {
-        Preconditions.checkArgument(entity.hasKey(), "entity %s is missing a key", entity);
+        Preconditions.checkArgument(entity.hasKey(), "Entity %s is missing a key", entity);
       }
       mutationsPb.add(com.google.datastore.v1beta3.Mutation.newBuilder()
           .setInsert(entity.toPb()).build());
@@ -281,19 +283,19 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
     try {
       return RetryHelper.runWithRetries(
           new Callable<com.google.datastore.v1beta3.LookupResponse>() {
-        @Override public com.google.datastore.v1beta3.LookupResponse call()
-            throws DatastoreException {
-          return datastoreRpc.lookup(requestPb);
-        }
-      }, retryParams, EXCEPTION_HANDLER, options().clock());
+            @Override
+            public com.google.datastore.v1beta3.LookupResponse call()
+                throws DatastoreException {
+              return datastoreRpc.lookup(requestPb);
+            }
+          }, retryParams, EXCEPTION_HANDLER, options().clock());
     } catch (RetryHelperException e) {
       throw DatastoreException.translateAndThrow(e);
     }
   }
 
-  @SafeVarargs
   @Override
-  public final void update(Entity... entities) {
+  public void update(Entity... entities) {
     if (entities.length > 0) {
       List<com.google.datastore.v1beta3.Mutation> mutationsPb =
           new ArrayList<>();
@@ -309,22 +311,47 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
     }
   }
 
-  @SafeVarargs
   @Override
-  public final void put(Entity... entities) {
-    if (entities.length > 0) {
-      List<com.google.datastore.v1beta3.Mutation> mutationsPb =
-          new ArrayList<>();
-      Map<Key, Entity> dedupEntities = new LinkedHashMap<>();
-      for (Entity entity : entities) {
-        dedupEntities.put(entity.key(), entity);
-      }
-      for (Entity e : dedupEntities.values()) {
-        mutationsPb.add(
-            com.google.datastore.v1beta3.Mutation.newBuilder().setUpsert(e.toPb()).build());
-      }
-      commitMutation(mutationsPb);
+  public Entity put(FullEntity<?> entity) {
+    return DatastoreHelper.put(this, entity);
+  }
+
+  @SuppressWarnings("unchecked")
+  @Override
+  public List<Entity> put(FullEntity<?>... entities) {
+    if (entities.length == 0) {
+      return Collections.emptyList();
     }
+    List<com.google.datastore.v1beta3.Mutation> mutationsPb = new ArrayList<>();
+    Map<Key, Entity> dedupEntities = new LinkedHashMap<>();
+    for (FullEntity<?> entity : entities) {
+      Preconditions.checkArgument(entity.hasKey(), "Entity %s is missing a key", entity);
+      if (entity.key() instanceof Key) {
+        Entity completeEntity = Entity.convert((FullEntity<Key>) entity);
+        dedupEntities.put(completeEntity.key(), completeEntity);
+      } else {
+        mutationsPb.add(
+            com.google.datastore.v1beta3.Mutation.newBuilder().setUpsert(entity.toPb()).build());
+      }
+    }
+    for (Entity entity : dedupEntities.values()) {
+      mutationsPb.add(
+          com.google.datastore.v1beta3.Mutation.newBuilder().setUpsert(entity.toPb()).build());
+    }
+    com.google.datastore.v1beta3.CommitResponse commitResponse = commitMutation(mutationsPb);
+    Iterator<com.google.datastore.v1beta3.MutationResult> mutationResults =
+        commitResponse.getMutationResultsList().iterator();
+    ImmutableList.Builder<Entity> responseBuilder = ImmutableList.builder();
+    for (FullEntity<?> entity : entities) {
+      Entity completeEntity = dedupEntities.get(entity.key());
+      if (completeEntity != null) {
+        responseBuilder.add(completeEntity);
+      } else {
+        responseBuilder.add(
+            Entity.builder(Key.fromPb(mutationResults.next().getKey()), entity).build());
+      }
+    }
+    return responseBuilder.build();
   }
 
   @Override
