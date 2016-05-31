@@ -17,6 +17,7 @@
 package com.google.cloud.examples.nio;
 
 import com.google.common.base.Stopwatch;
+import com.google.common.io.BaseEncoding;
 
 import java.io.IOException;
 import java.net.URI;
@@ -25,6 +26,7 @@ import java.nio.channels.SeekableByteChannel;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.security.MessageDigest;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -33,7 +35,7 @@ import java.util.concurrent.TimeUnit;
  * <p>This example shows how to read a file size using NIO.
  * File.size returns the size of the file as saved in Storage metadata.
  * This class also shows how to read all of the file's contents using NIO,
- * and reports how long it took.
+ * computes a MD5 hash, and reports how long it took.
  *
  * <p>See the README for compilation instructions. Run this code with
  * {@code target/appassembler/bin/CountBytes <file>}
@@ -72,8 +74,10 @@ public class CountBytes {
       SeekableByteChannel chan = Files.newByteChannel(path);
       long total = 0;
       int readCalls = 0;
+      MessageDigest md = MessageDigest.getInstance("MD5");
       while (chan.read(buf) > 0) {
         readCalls++;
+        md.update(buf.array(), 0, buf.position());
         total += buf.position();
         buf.flip();
       }
@@ -81,6 +85,8 @@ public class CountBytes {
       long elapsed = sw.elapsed(TimeUnit.SECONDS);
       System.out.println("Read all " + total + " bytes in " + elapsed + "s. " +
           "(" + readCalls +" calls to chan.read)");
+      String hex = String.valueOf(BaseEncoding.base16().encode(md.digest()));
+      System.out.println("The MD5 is: 0x" + hex);
       if (total != size) {
         System.out.println("Wait, this doesn't match! We saw " + total + " bytes, " +
             "yet the file size is listed at " + size + " bytes.");

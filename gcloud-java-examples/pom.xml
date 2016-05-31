@@ -68,6 +68,10 @@
               <name>CountBytes</name>
             </program>
             <program>
+              <mainClass>com.google.cloud.examples.nio.ParallelCountBytes</mainClass>
+              <name>ParallelCountBytes</name>
+            </program>
+            <program>
               <mainClass>
                 com.google.cloud.examples.resourcemanager.ResourceManagerExample
               </mainClass>
