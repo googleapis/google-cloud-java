@@ -71,25 +71,26 @@ public class CountBytes {
       ByteBuffer buf = ByteBuffer.allocate(bufSize);
       System.out.println("Reading the whole file...");
       Stopwatch sw = Stopwatch.createStarted();
-      SeekableByteChannel chan = Files.newByteChannel(path);
-      long total = 0;
-      int readCalls = 0;
-      MessageDigest md = MessageDigest.getInstance("MD5");
-      while (chan.read(buf) > 0) {
-        readCalls++;
-        md.update(buf.array(), 0, buf.position());
-        total += buf.position();
-        buf.flip();
-      }
-      readCalls++; // We must count the last call
-      long elapsed = sw.elapsed(TimeUnit.SECONDS);
-      System.out.println("Read all " + total + " bytes in " + elapsed + "s. " +
-          "(" + readCalls +" calls to chan.read)");
-      String hex = String.valueOf(BaseEncoding.base16().encode(md.digest()));
-      System.out.println("The MD5 is: 0x" + hex);
-      if (total != size) {
-        System.out.println("Wait, this doesn't match! We saw " + total + " bytes, " +
-            "yet the file size is listed at " + size + " bytes.");
+      try (SeekableByteChannel chan = Files.newByteChannel(path)) {
+        long total = 0;
+        int readCalls = 0;
+        MessageDigest md = MessageDigest.getInstance("MD5");
+        while (chan.read(buf) > 0) {
+          readCalls++;
+          md.update(buf.array(), 0, buf.position());
+          total += buf.position();
+          buf.flip();
+        }
+        readCalls++; // We must count the last call
+        long elapsed = sw.elapsed(TimeUnit.SECONDS);
+        System.out.println("Read all " + total + " bytes in " + elapsed + "s. " +
+            "(" + readCalls +" calls to chan.read)");
+        String hex = String.valueOf(BaseEncoding.base16().encode(md.digest()));
+        System.out.println("The MD5 is: 0x" + hex);
+        if (total != size) {
+          System.out.println("Wait, this doesn't match! We saw " + total + " bytes, " +
+              "yet the file size is listed at " + size + " bytes.");
+        }
       }
     } catch (Exception ex) {
       System.out.println(fname + ": " + ex.toString());

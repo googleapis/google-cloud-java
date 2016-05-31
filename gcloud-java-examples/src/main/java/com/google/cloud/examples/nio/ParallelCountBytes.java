@@ -79,7 +79,7 @@ public class ParallelCountBytes {
         return this;
       }
       chan.position(pos);
-      // read until buffer it is full, or EOF
+      // read until buffer is full, or EOF
       while (chan.read(buf) > 0) {};
       return this;
     }
