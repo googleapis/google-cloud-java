@@ -16,23 +16,27 @@
 
 package com.google.cloud.pubsub;
 
+import static org.junit.Assert.assertTrue;
+
 import com.google.cloud.GrpcServiceOptions.ExecutorFactory;
-import com.google.cloud.ServiceOptions.Clock;
 import com.google.common.collect.ImmutableList;
 
-import org.easymock.Capture;
 import org.easymock.EasyMock;
+import org.easymock.IAnswer;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicLong;
 
 public class AckDeadlineRenewerTest {
 
-  private static final int MIN_DEADLINE_MILLISECONDS = 10_000;
+  private static final int MIN_DEADLINE_MILLIS = 9_000;
 
   private static final String SUBSCRIPTION1 = "subscription1";
   private static final String SUBSCRIPTION2 = "subscription2";
@@ -40,195 +44,238 @@ public class AckDeadlineRenewerTest {
   private static final String ACK_ID2 = "ack-id2";
   private static final String ACK_ID3 = "ack-id3";
 
-  private final Capture<Runnable> renewRunnable = Capture.newInstance();
-  private Clock clock;
   private PubSub pubsub;
-  private ScheduledExecutorService executor;
-  private ExecutorFactory executorFactory;
   private AckDeadlineRenewer ackDeadlineRenewer;
-  private ScheduledFuture scheduledFuture;
 
   @Before
   public void setUp() {
-    clock = EasyMock.createStrictMock(Clock.class);
     pubsub = EasyMock.createStrictMock(PubSub.class);
-    executor = EasyMock.createStrictMock(ScheduledExecutorService.class);
-    executorFactory = EasyMock.createStrictMock(ExecutorFactory.class);
-    EasyMock.expect(executorFactory.get()).andReturn(executor);
-    scheduledFuture = EasyMock.createStrictMock(ScheduledFuture.class);
-    EasyMock.expect(executor.scheduleWithFixedDelay(EasyMock.capture(renewRunnable),
-        EasyMock.eq(0L), EasyMock.eq(1L), EasyMock.same(TimeUnit.SECONDS)))
-        .andReturn(scheduledFuture);
     PubSubOptions options = PubSubOptions.builder()
         .projectId("projectId")
-        .clock(clock)
-        .executorFactory(executorFactory)
         .build();
     EasyMock.expect(pubsub.options()).andReturn(options);
-    EasyMock.replay(executor, executorFactory, scheduledFuture, pubsub);
+    EasyMock.replay(pubsub);
     ackDeadlineRenewer = new AckDeadlineRenewer(pubsub);
-    EasyMock.reset(pubsub);
   }
 
   @After
-  public void tearDown() {
-    EasyMock.verify(clock, pubsub, executor, executorFactory, scheduledFuture);
+  public void tearDown() throws Exception {
+    EasyMock.verify(pubsub);
+    ackDeadlineRenewer.close();
+  }
+
+  private static IAnswer<Future<Void>> createAnswer(final CountDownLatch latch,
+      final AtomicLong renewal) {
+    return new IAnswer<Future<Void>>() {
+      @Override
+      public Future<Void> answer() throws Throwable {
+        latch.countDown();
+        renewal.set(System.currentTimeMillis());
+        return null;
+      }
+    };
   }
 
   @Test
-  public void testAddOneMessage() {
-    EasyMock.expect(clock.millis()).andReturn(0L);
-    EasyMock.expect(clock.millis()).andReturn(9_000L);
-    EasyMock.expect(clock.millis()).andReturn(10_000L);
-    EasyMock.expect(clock.millis()).andReturn(15_000L);
-    EasyMock.expect(clock.millis()).andReturn(19_000L);
-    EasyMock.expect(clock.millis()).andReturn(20_000L);
-    EasyMock.expect(pubsub.modifyAckDeadlineAsync(SUBSCRIPTION1, MIN_DEADLINE_MILLISECONDS,
-        TimeUnit.MILLISECONDS, ImmutableList.of(ACK_ID1))).andReturn(null);
-    EasyMock.expect(pubsub.modifyAckDeadlineAsync(SUBSCRIPTION1, MIN_DEADLINE_MILLISECONDS,
-        TimeUnit.MILLISECONDS, ImmutableList.of(ACK_ID1))).andReturn(null);
-    EasyMock.replay(clock, pubsub);
-    // Added for clock.millis() == 0
+  public void testAddOneMessage() throws InterruptedException {
+    EasyMock.reset(pubsub);
+    final CountDownLatch firstLatch = new CountDownLatch(1);
+    final CountDownLatch secondLatch = new CountDownLatch(1);
+    final AtomicLong firstRenewal = new AtomicLong();
+    final AtomicLong secondRenewal = new AtomicLong();
+    EasyMock.expect(pubsub.modifyAckDeadlineAsync(SUBSCRIPTION1, MIN_DEADLINE_MILLIS,
+        TimeUnit.MILLISECONDS, ImmutableList.of(ACK_ID1)))
+            .andAnswer(createAnswer(firstLatch, firstRenewal));
+    EasyMock.expect(pubsub.modifyAckDeadlineAsync(SUBSCRIPTION1, MIN_DEADLINE_MILLIS,
+        TimeUnit.MILLISECONDS, ImmutableList.of(ACK_ID1)))
+            .andAnswer(createAnswer(secondLatch, secondRenewal));
+    EasyMock.replay(pubsub);
+    long addTime = System.currentTimeMillis();
     ackDeadlineRenewer.add(SUBSCRIPTION1, ACK_ID1);
-    // The following call is for clock.millis() == 9000, we renew the message
-    renewRunnable.getValue().run();
-    // The following call is for clock.millis() == 15_000, we don't renew the message
-    renewRunnable.getValue().run();
-    // The following call is for clock.millis() == 19_000, we renew the message
-    renewRunnable.getValue().run();
+    firstLatch.await();
+    assertTrue(firstRenewal.get() < (addTime + MIN_DEADLINE_MILLIS));
+    secondLatch.await();
+    assertTrue(secondRenewal.get() < (firstRenewal.get() + MIN_DEADLINE_MILLIS));
   }
 
   @Test
-  public void testAddMessages() {
-    EasyMock.expect(clock.millis()).andReturn(0L).times(2);
-    EasyMock.expect(clock.millis()).andReturn(9_000L).times(1);
-    EasyMock.expect(clock.millis()).andReturn(10_000L).times(3);
-    EasyMock.expect(clock.millis()).andReturn(10_500L);
-    EasyMock.expect(clock.millis()).andReturn(15_000L);
-    EasyMock.expect(clock.millis()).andReturn(19_000L);
-    EasyMock.expect(clock.millis()).andReturn(20_000L).times(4);
-    EasyMock.expect(pubsub.modifyAckDeadlineAsync(SUBSCRIPTION1, MIN_DEADLINE_MILLISECONDS,
-        TimeUnit.MILLISECONDS, ImmutableList.of(ACK_ID1, ACK_ID2))).andReturn(null);
-    EasyMock.expect(pubsub.modifyAckDeadlineAsync(SUBSCRIPTION2, MIN_DEADLINE_MILLISECONDS,
-        TimeUnit.MILLISECONDS, ImmutableList.of(ACK_ID1))).andReturn(null);
-    EasyMock.expect(pubsub.modifyAckDeadlineAsync(SUBSCRIPTION1, MIN_DEADLINE_MILLISECONDS,
-        TimeUnit.MILLISECONDS, ImmutableList.of(ACK_ID1, ACK_ID2))).andReturn(null);
-    EasyMock.expect(pubsub.modifyAckDeadlineAsync(SUBSCRIPTION2, MIN_DEADLINE_MILLISECONDS,
-        TimeUnit.MILLISECONDS, ImmutableList.of(ACK_ID1, ACK_ID3))).andReturn(null);
-    EasyMock.replay(clock, pubsub);
-    // Added for clock.millis() == 0
+  public void testAddMessages() throws InterruptedException {
+    EasyMock.reset(pubsub);
+    final CountDownLatch firstLatch = new CountDownLatch(2);
+    final CountDownLatch secondLatch = new CountDownLatch(2);
+    final AtomicLong firstRenewalSub1 = new AtomicLong();
+    final AtomicLong firstRenewalSub2 = new AtomicLong();
+    final AtomicLong secondRenewalSub1 = new AtomicLong();
+    final AtomicLong secondRenewalSub2 = new AtomicLong();
+    EasyMock.expect(pubsub.modifyAckDeadlineAsync(SUBSCRIPTION1, MIN_DEADLINE_MILLIS,
+        TimeUnit.MILLISECONDS, ImmutableList.of(ACK_ID1, ACK_ID2)))
+            .andAnswer(createAnswer(firstLatch, firstRenewalSub1));
+    EasyMock.expect(pubsub.modifyAckDeadlineAsync(SUBSCRIPTION2, MIN_DEADLINE_MILLIS,
+        TimeUnit.MILLISECONDS, ImmutableList.of(ACK_ID1)))
+            .andAnswer(createAnswer(firstLatch, firstRenewalSub2));
+    EasyMock.expect(pubsub.modifyAckDeadlineAsync(SUBSCRIPTION1, MIN_DEADLINE_MILLIS,
+        TimeUnit.MILLISECONDS, ImmutableList.of(ACK_ID1, ACK_ID2)))
+            .andAnswer(createAnswer(secondLatch, secondRenewalSub1));
+    EasyMock.expect(pubsub.modifyAckDeadlineAsync(SUBSCRIPTION2, MIN_DEADLINE_MILLIS,
+        TimeUnit.MILLISECONDS, ImmutableList.of(ACK_ID1, ACK_ID3)))
+            .andAnswer(createAnswer(secondLatch, secondRenewalSub2));
+    EasyMock.replay(pubsub);
+    long addTime1 = System.currentTimeMillis();
     ackDeadlineRenewer.add(SUBSCRIPTION1, ImmutableList.of(ACK_ID1, ACK_ID2));
     ackDeadlineRenewer.add(SUBSCRIPTION2, ACK_ID1);
-    renewRunnable.getValue().run();
-    // Added for clock.millis() == 10_500
+    firstLatch.await();
+    assertTrue(firstRenewalSub1.get() < (addTime1 + MIN_DEADLINE_MILLIS));
+    assertTrue(firstRenewalSub2.get() < (addTime1 + MIN_DEADLINE_MILLIS));
     ackDeadlineRenewer.add(SUBSCRIPTION2, ACK_ID3);
-    // The following call is for clock.millis() == 15_000, no messages are renewed
-    renewRunnable.getValue().run();
-    // The following call is for clock.millis() == 19_000, we renew old messages and the new one
-    renewRunnable.getValue().run();
+    secondLatch.await();
+    assertTrue(secondRenewalSub1.get() < (firstRenewalSub1.get() + MIN_DEADLINE_MILLIS));
+    assertTrue(secondRenewalSub2.get() < (firstRenewalSub2.get() + MIN_DEADLINE_MILLIS));
   }
 
   @Test
-  public void testAddExistingMessage() {
-    EasyMock.expect(clock.millis()).andReturn(0L).times(2);
-    EasyMock.expect(clock.millis()).andReturn(9_000L).times(1);
-    EasyMock.expect(clock.millis()).andReturn(10_000L).times(3);
-    EasyMock.expect(clock.millis()).andReturn(14_000L);
-    EasyMock.expect(clock.millis()).andReturn(15_000L);
-    EasyMock.expect(clock.millis()).andReturn(19_000L);
-    EasyMock.expect(clock.millis()).andReturn(20_000L).times(2);
-    EasyMock.expect(clock.millis()).andReturn(24_000L);
-    EasyMock.expect(clock.millis()).andReturn(34_000L).times(1);
-    EasyMock.expect(pubsub.modifyAckDeadlineAsync(SUBSCRIPTION1, MIN_DEADLINE_MILLISECONDS,
-        TimeUnit.MILLISECONDS, ImmutableList.of(ACK_ID1, ACK_ID2))).andReturn(null);
-    EasyMock.expect(pubsub.modifyAckDeadlineAsync(SUBSCRIPTION2, MIN_DEADLINE_MILLISECONDS,
-        TimeUnit.MILLISECONDS, ImmutableList.of(ACK_ID1))).andReturn(null);
-    EasyMock.expect(pubsub.modifyAckDeadlineAsync(SUBSCRIPTION1, MIN_DEADLINE_MILLISECONDS,
-        TimeUnit.MILLISECONDS, ImmutableList.of(ACK_ID2))).andReturn(null);
-    EasyMock.expect(pubsub.modifyAckDeadlineAsync(SUBSCRIPTION2, MIN_DEADLINE_MILLISECONDS,
-        TimeUnit.MILLISECONDS, ImmutableList.of(ACK_ID1))).andReturn(null);
-    EasyMock.expect(pubsub.modifyAckDeadlineAsync(SUBSCRIPTION1, MIN_DEADLINE_MILLISECONDS,
-        TimeUnit.MILLISECONDS, ImmutableList.of(ACK_ID1))).andReturn(null);
-    EasyMock.replay(clock, pubsub);
-    // Added for clock.millis() == 0
+  public void testAddExistingMessage() throws InterruptedException {
+    EasyMock.reset(pubsub);
+    final CountDownLatch firstLatch = new CountDownLatch(2);
+    final CountDownLatch secondLatch = new CountDownLatch(2);
+    final AtomicLong firstRenewalSub1 = new AtomicLong();
+    final AtomicLong firstRenewalSub2 = new AtomicLong();
+    final AtomicLong secondRenewalSub1 = new AtomicLong();
+    final AtomicLong secondRenewalSub2 = new AtomicLong();
+    EasyMock.expect(pubsub.modifyAckDeadlineAsync(SUBSCRIPTION1, MIN_DEADLINE_MILLIS,
+        TimeUnit.MILLISECONDS, ImmutableList.of(ACK_ID1, ACK_ID2)))
+        .andAnswer(createAnswer(firstLatch, firstRenewalSub1));
+    EasyMock.expect(pubsub.modifyAckDeadlineAsync(SUBSCRIPTION2, MIN_DEADLINE_MILLIS,
+        TimeUnit.MILLISECONDS, ImmutableList.of(ACK_ID1)))
+        .andAnswer(createAnswer(firstLatch, firstRenewalSub2));
+    EasyMock.expect(pubsub.modifyAckDeadlineAsync(SUBSCRIPTION1, MIN_DEADLINE_MILLIS,
+        TimeUnit.MILLISECONDS, ImmutableList.of(ACK_ID1, ACK_ID2)))
+        .andAnswer(createAnswer(secondLatch, secondRenewalSub1));
+    EasyMock.expect(pubsub.modifyAckDeadlineAsync(SUBSCRIPTION2, MIN_DEADLINE_MILLIS,
+        TimeUnit.MILLISECONDS, ImmutableList.of(ACK_ID1)))
+        .andAnswer(createAnswer(secondLatch, secondRenewalSub2));
+    EasyMock.replay(pubsub);
+    long addTime1 = System.currentTimeMillis();
     ackDeadlineRenewer.add(SUBSCRIPTION1, ImmutableList.of(ACK_ID1, ACK_ID2));
     ackDeadlineRenewer.add(SUBSCRIPTION2, ACK_ID1);
-    renewRunnable.getValue().run();
-    // Added again for clock.millis() == 14_000
-    ackDeadlineRenewer.add(SUBSCRIPTION1, ACK_ID1);
-    // The following call is for clock.millis() == 15_000, no messages are renewed
-    renewRunnable.getValue().run();
-    // The following call is for clock.millis() == 19_000, we renew old messages but the updated one
-    renewRunnable.getValue().run();
-    // The following call is for clock.millis() == 24_000, wre renew the updated message
-    renewRunnable.getValue().run();
+    firstLatch.await();
+    assertTrue(firstRenewalSub1.get() < (addTime1 + MIN_DEADLINE_MILLIS));
+    assertTrue(firstRenewalSub2.get() < (addTime1 + MIN_DEADLINE_MILLIS));
+    ackDeadlineRenewer.add(SUBSCRIPTION2, ACK_ID1);
+    secondLatch.await();
+    assertTrue(secondRenewalSub1.get() < (firstRenewalSub1.get() + MIN_DEADLINE_MILLIS));
+    assertTrue(secondRenewalSub2.get() < (firstRenewalSub2.get() + MIN_DEADLINE_MILLIS));
   }
 
   @Test
-  public void testRemoveNonExistingMessage() {
-    EasyMock.expect(clock.millis()).andReturn(0L).times(2);
-    EasyMock.expect(clock.millis()).andReturn(9_000L).times(1);
-    EasyMock.expect(clock.millis()).andReturn(10_000L).times(3);
-    EasyMock.expect(clock.millis()).andReturn(15_000L);
-    EasyMock.expect(clock.millis()).andReturn(19_000L);
-    EasyMock.expect(clock.millis()).andReturn(20_000L).times(3);
-    EasyMock.expect(pubsub.modifyAckDeadlineAsync(SUBSCRIPTION1, MIN_DEADLINE_MILLISECONDS,
-        TimeUnit.MILLISECONDS, ImmutableList.of(ACK_ID1, ACK_ID2))).andReturn(null);
-    EasyMock.expect(pubsub.modifyAckDeadlineAsync(SUBSCRIPTION2, MIN_DEADLINE_MILLISECONDS,
-        TimeUnit.MILLISECONDS, ImmutableList.of(ACK_ID1))).andReturn(null);
-    EasyMock.expect(pubsub.modifyAckDeadlineAsync(SUBSCRIPTION1, MIN_DEADLINE_MILLISECONDS,
-        TimeUnit.MILLISECONDS, ImmutableList.of(ACK_ID1, ACK_ID2))).andReturn(null);
-    EasyMock.expect(pubsub.modifyAckDeadlineAsync(SUBSCRIPTION2, MIN_DEADLINE_MILLISECONDS,
-        TimeUnit.MILLISECONDS, ImmutableList.of(ACK_ID1))).andReturn(null);
-    EasyMock.replay(clock, pubsub);
-    // Added for clock.millis() == 0
+  public void testRemoveNonExistingMessage() throws InterruptedException {
+    EasyMock.reset(pubsub);
+    final CountDownLatch firstLatch = new CountDownLatch(2);
+    final CountDownLatch secondLatch = new CountDownLatch(2);
+    final AtomicLong firstRenewalSub1 = new AtomicLong();
+    final AtomicLong firstRenewalSub2 = new AtomicLong();
+    final AtomicLong secondRenewalSub1 = new AtomicLong();
+    final AtomicLong secondRenewalSub2 = new AtomicLong();
+    EasyMock.expect(pubsub.modifyAckDeadlineAsync(SUBSCRIPTION1, MIN_DEADLINE_MILLIS,
+        TimeUnit.MILLISECONDS, ImmutableList.of(ACK_ID1, ACK_ID2)))
+        .andAnswer(createAnswer(firstLatch, firstRenewalSub1));
+    EasyMock.expect(pubsub.modifyAckDeadlineAsync(SUBSCRIPTION2, MIN_DEADLINE_MILLIS,
+        TimeUnit.MILLISECONDS, ImmutableList.of(ACK_ID1)))
+        .andAnswer(createAnswer(firstLatch, firstRenewalSub2));
+    EasyMock.expect(pubsub.modifyAckDeadlineAsync(SUBSCRIPTION1, MIN_DEADLINE_MILLIS,
+        TimeUnit.MILLISECONDS, ImmutableList.of(ACK_ID1, ACK_ID2)))
+        .andAnswer(createAnswer(secondLatch, secondRenewalSub1));
+    EasyMock.expect(pubsub.modifyAckDeadlineAsync(SUBSCRIPTION2, MIN_DEADLINE_MILLIS,
+        TimeUnit.MILLISECONDS, ImmutableList.of(ACK_ID1)))
+        .andAnswer(createAnswer(secondLatch, secondRenewalSub2));
+    EasyMock.replay(pubsub);
+    long addTime1 = System.currentTimeMillis();
     ackDeadlineRenewer.add(SUBSCRIPTION1, ImmutableList.of(ACK_ID1, ACK_ID2));
     ackDeadlineRenewer.add(SUBSCRIPTION2, ACK_ID1);
-    renewRunnable.getValue().run();
-    // Remove a message
+    firstLatch.await();
+    assertTrue(firstRenewalSub1.get() < (addTime1 + MIN_DEADLINE_MILLIS));
+    assertTrue(firstRenewalSub2.get() < (addTime1 + MIN_DEADLINE_MILLIS));
     ackDeadlineRenewer.remove(SUBSCRIPTION1, ACK_ID3);
-    // The following call is for clock.millis() == 15_000, no messages are renewed
-    renewRunnable.getValue().run();
-    // The following call is for clock.millis() == 19_000, we renew old messages
-    renewRunnable.getValue().run();
+    secondLatch.await();
+    assertTrue(secondRenewalSub1.get() < (firstRenewalSub1.get() + MIN_DEADLINE_MILLIS));
+    assertTrue(secondRenewalSub2.get() < (firstRenewalSub2.get() + MIN_DEADLINE_MILLIS));
   }
 
   @Test
-  public void testRemoveMessage() {
-    EasyMock.expect(clock.millis()).andReturn(0L).times(2);
-    EasyMock.expect(clock.millis()).andReturn(9_000L).times(1);
-    EasyMock.expect(clock.millis()).andReturn(10_000L).times(3);
-    EasyMock.expect(clock.millis()).andReturn(15_000L);
-    EasyMock.expect(clock.millis()).andReturn(19_000L);
-    EasyMock.expect(clock.millis()).andReturn(20_000L).times(2);
-    EasyMock.expect(pubsub.modifyAckDeadlineAsync(SUBSCRIPTION1, MIN_DEADLINE_MILLISECONDS,
-        TimeUnit.MILLISECONDS, ImmutableList.of(ACK_ID1, ACK_ID2))).andReturn(null);
-    EasyMock.expect(pubsub.modifyAckDeadlineAsync(SUBSCRIPTION2, MIN_DEADLINE_MILLISECONDS,
-        TimeUnit.MILLISECONDS, ImmutableList.of(ACK_ID1))).andReturn(null);
-    EasyMock.expect(pubsub.modifyAckDeadlineAsync(SUBSCRIPTION1, MIN_DEADLINE_MILLISECONDS,
-        TimeUnit.MILLISECONDS, ImmutableList.of(ACK_ID1))).andReturn(null);
-    EasyMock.expect(pubsub.modifyAckDeadlineAsync(SUBSCRIPTION2, MIN_DEADLINE_MILLISECONDS,
-        TimeUnit.MILLISECONDS, ImmutableList.of(ACK_ID1))).andReturn(null);
-    EasyMock.replay(clock, pubsub);
-    // Added for clock.millis() == 0
+  public void testRemoveMessage() throws InterruptedException {
+    EasyMock.reset(pubsub);
+    final CountDownLatch firstLatch = new CountDownLatch(2);
+    final CountDownLatch secondLatch = new CountDownLatch(2);
+    final AtomicLong firstRenewalSub1 = new AtomicLong();
+    final AtomicLong firstRenewalSub2 = new AtomicLong();
+    final AtomicLong secondRenewalSub1 = new AtomicLong();
+    final AtomicLong secondRenewalSub2 = new AtomicLong();
+    EasyMock.expect(pubsub.modifyAckDeadlineAsync(SUBSCRIPTION1, MIN_DEADLINE_MILLIS,
+        TimeUnit.MILLISECONDS, ImmutableList.of(ACK_ID1, ACK_ID2)))
+        .andAnswer(createAnswer(firstLatch, firstRenewalSub1));
+    EasyMock.expect(pubsub.modifyAckDeadlineAsync(SUBSCRIPTION2, MIN_DEADLINE_MILLIS,
+        TimeUnit.MILLISECONDS, ImmutableList.of(ACK_ID1)))
+        .andAnswer(createAnswer(firstLatch, firstRenewalSub2));
+    EasyMock.expect(pubsub.modifyAckDeadlineAsync(SUBSCRIPTION1, MIN_DEADLINE_MILLIS,
+        TimeUnit.MILLISECONDS, ImmutableList.of(ACK_ID1)))
+        .andAnswer(createAnswer(secondLatch, secondRenewalSub1));
+    EasyMock.expect(pubsub.modifyAckDeadlineAsync(SUBSCRIPTION2, MIN_DEADLINE_MILLIS,
+        TimeUnit.MILLISECONDS, ImmutableList.of(ACK_ID1)))
+        .andAnswer(createAnswer(secondLatch, secondRenewalSub2));
+    EasyMock.replay(pubsub);
+    long addTime1 = System.currentTimeMillis();
     ackDeadlineRenewer.add(SUBSCRIPTION1, ImmutableList.of(ACK_ID1, ACK_ID2));
     ackDeadlineRenewer.add(SUBSCRIPTION2, ACK_ID1);
-    renewRunnable.getValue().run();
-    // Remove a message
+    firstLatch.await();
+    assertTrue(firstRenewalSub1.get() < (addTime1 + MIN_DEADLINE_MILLIS));
+    assertTrue(firstRenewalSub2.get() < (addTime1 + MIN_DEADLINE_MILLIS));
     ackDeadlineRenewer.remove(SUBSCRIPTION1, ACK_ID2);
-    // The following call is for clock.millis() == 15_000, no messages are renewed
-    renewRunnable.getValue().run();
-    // The following call is for clock.millis() == 19_000, we renew old messages
-    renewRunnable.getValue().run();
+    secondLatch.await();
+    assertTrue(secondRenewalSub1.get() < (firstRenewalSub1.get() + MIN_DEADLINE_MILLIS));
+    assertTrue(secondRenewalSub2.get() < (firstRenewalSub2.get() + MIN_DEADLINE_MILLIS));
   }
 
   @Test
+  @SuppressWarnings("unchecked")
   public void testClose() throws Exception {
-    EasyMock.reset(scheduledFuture, executorFactory);
-    EasyMock.expect(scheduledFuture.cancel(false)).andReturn(true);
+    PubSub pubsub = EasyMock.createStrictMock(PubSub.class);
+    ScheduledExecutorService executor = EasyMock.createStrictMock(ScheduledExecutorService.class);
+    ExecutorFactory executorFactory = EasyMock.createStrictMock(ExecutorFactory.class);
+    EasyMock.expect(executorFactory.get()).andReturn(executor);
+    PubSubOptions options = PubSubOptions.builder()
+        .projectId("projectId")
+        .executorFactory(executorFactory)
+        .build();
+    EasyMock.expect(pubsub.options()).andReturn(options);
     executorFactory.release(executor);
     EasyMock.expectLastCall();
-    EasyMock.replay(clock, pubsub, scheduledFuture, executorFactory);
+    EasyMock.replay(executor, executorFactory, pubsub);
+    AckDeadlineRenewer ackDeadlineRenewer = new AckDeadlineRenewer(pubsub);
     ackDeadlineRenewer.close();
+    EasyMock.verify(pubsub, executor, executorFactory);
+  }
+
+  @Test
+  @SuppressWarnings("unchecked")
+  public void testCloseWithMessage() throws Exception {
+    PubSub pubsub = EasyMock.createStrictMock(PubSub.class);
+    ScheduledExecutorService executor = EasyMock.createStrictMock(ScheduledExecutorService.class);
+    ExecutorFactory executorFactory = EasyMock.createStrictMock(ExecutorFactory.class);
+    EasyMock.expect(executorFactory.get()).andReturn(executor);
+    ScheduledFuture future = EasyMock.createStrictMock(ScheduledFuture.class);
+    EasyMock.expect(executor.schedule(EasyMock.<Runnable>anyObject(), EasyMock.anyLong(),
+        EasyMock.eq(TimeUnit.MILLISECONDS))).andReturn(future);
+    PubSubOptions options = PubSubOptions.builder()
+        .projectId("projectId")
+        .executorFactory(executorFactory)
+        .build();
+    EasyMock.expect(pubsub.options()).andReturn(options);
+    EasyMock.expect(future.cancel(true)).andReturn(true);
+    executorFactory.release(executor);
+    EasyMock.expectLastCall();
+    EasyMock.replay(executor, executorFactory, future, pubsub);
+    AckDeadlineRenewer ackDeadlineRenewer = new AckDeadlineRenewer(pubsub);
+    ackDeadlineRenewer.add(SUBSCRIPTION1, ACK_ID1);
+    ackDeadlineRenewer.close();
+    EasyMock.verify(pubsub, executor, executorFactory, future);
   }
 }
