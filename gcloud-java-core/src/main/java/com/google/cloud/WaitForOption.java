@@ -16,39 +16,47 @@
 
 package com.google.cloud;
 
-import static com.google.cloud.WaitForOption.Option.CHECKING_PERIOD;
-import static com.google.cloud.WaitForOption.Option.TIMEOUT;
+import static com.google.common.base.MoreObjects.firstNonNull;
 import static com.google.common.base.Preconditions.checkArgument;
 
 import com.google.common.base.MoreObjects;
-import com.google.common.collect.Maps;
 
 import java.io.Serializable;
-import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 
 /**
  * This class represents options for methods that wait for changes in the status of a resource.
  */
-public final class WaitForOption implements Serializable {
+public abstract class WaitForOption implements Serializable {
 
   private static final long serialVersionUID = 8443451708032349243L;
 
-  private final Option option;
-  private final Object value;
+  private final OptionType optionType;
+
+  enum OptionType {
+    CHECKING_PERIOD,
+    TIMEOUT
+  }
+
+  private WaitForOption(OptionType optionType) {
+    this.optionType = optionType;
+  }
 
   /**
-   * This class holds the actual period and related time unit for the checking period.
+   * This class represents an option to set how frequently the resource status should be checked.
+   * Objects of this class keep the actual period and related time unit for the checking period.
    */
-  public static final class CheckingPeriod implements Serializable {
+  public static final class CheckingPeriod extends WaitForOption {
 
     private static final long serialVersionUID = -2481062893220539210L;
+    private static final CheckingPeriod DEFAULT = new CheckingPeriod(500, TimeUnit.MILLISECONDS);
 
     private final long period;
     private final TimeUnit unit;
 
     private CheckingPeriod(long period, TimeUnit unit) {
+      super(OptionType.CHECKING_PERIOD);
       this.period = period;
       this.unit = unit;
     }
@@ -85,12 +93,14 @@ public final class WaitForOption implements Serializable {
         return false;
       }
       CheckingPeriod other = (CheckingPeriod) obj;
-      return Objects.equals(period, other.period) && Objects.equals(unit, other.unit);
+      return baseEquals(other)
+          && Objects.equals(period, other.period)
+          && Objects.equals(unit, other.unit);
     }
 
     @Override
     public int hashCode() {
-      return Objects.hash(period, unit);
+      return Objects.hash(baseHashCode(), period, unit);
     }
 
     @Override
@@ -102,48 +112,77 @@ public final class WaitForOption implements Serializable {
     }
 
     /**
-     * Returns the default checking period (500 milliseconds).
+     * Returns the {@code CheckingPeriod} option specified in {@code options}. If no
+     * {@code CheckingPeriod} could be found among {@code options}, the default checking period (500
+     * milliseconds) is used.
      */
-    public static CheckingPeriod defaultInstance() {
-      return new CheckingPeriod(500, TimeUnit.MILLISECONDS);
+    public static CheckingPeriod getOrDefault(WaitForOption... options) {
+      return getOrDefaultInternal(OptionType.CHECKING_PERIOD, DEFAULT, options);
     }
-  }
-
-  public enum Option {
-    CHECKING_PERIOD,
-    TIMEOUT;
-
-    @SuppressWarnings("unchecked")
-    <T> T get(Map<Option, ?> options) {
-      return (T) options.get(this);
-    }
-
-    public Long getLong(Map<Option, ?> options) {
-      return get(options);
-    }
-
-    public CheckingPeriod getCheckingPeriod(Map<Option, ?> options) {
-      return get(options);
-    }
-  }
-
-  private WaitForOption(Option option, Object value) {
-    this.option = option;
-    this.value = value;
   }
 
   /**
-   * Returns the option's type.
+   * This class represents an option to set the maximum time to wait for the resource's status to
+   * reach the desired state.
    */
-  public Option option() {
-    return option;
+  public static final class Timeout extends WaitForOption {
+
+    private static final long serialVersionUID = -7120401111985321932L;
+    private static final Timeout DEFAULT = new Timeout(-1);
+
+    private final long timeoutMillis;
+
+    private Timeout(long timeoutMillis) {
+      super(OptionType.TIMEOUT);
+      this.timeoutMillis = timeoutMillis;
+    }
+
+    /**
+     * Returns the timeout in milliseconds.
+     */
+    public long timeoutMillis() {
+      return timeoutMillis;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (obj == null || !(obj instanceof Timeout)) {
+        return false;
+      }
+      Timeout other = (Timeout) obj;
+      return baseEquals(other) && Objects.equals(timeoutMillis, other.timeoutMillis);
+    }
+
+    @Override
+    public int hashCode() {
+      return Objects.hash(baseHashCode(), timeoutMillis);
+    }
+
+    @Override
+    public String toString() {
+      return MoreObjects.toStringHelper(this)
+          .add("timeoutMillis", timeoutMillis)
+          .toString();
+    }
+
+    /**
+     * Returns the {@code Timeout} option specified in {@code options}. If no {@code Timeout} could
+     * be found among {@code options}, no timeout will be used.
+     */
+    public static Timeout getOrDefault(WaitForOption... options) {
+      return getOrDefaultInternal(OptionType.TIMEOUT, DEFAULT, options);
+    }
   }
 
-  /**
-   * Returns the option's value.
-   */
-  public Object value() {
-    return value;
+  OptionType optionType() {
+    return optionType;
+  }
+
+  final boolean baseEquals(WaitForOption option) {
+    return Objects.equals(option.optionType, option.optionType);
   }
 
   @Override
@@ -151,24 +190,32 @@ public final class WaitForOption implements Serializable {
     if (obj == this) {
       return true;
     }
-    if (obj == null || !(obj instanceof WaitForOption)) {
+    if (obj == null || !(obj.getClass().equals(WaitForOption.class))) {
       return false;
     }
-    WaitForOption other = (WaitForOption) obj;
-    return Objects.equals(option, other.option) && Objects.equals(value, other.value);
+    return baseEquals((WaitForOption) obj);
+  }
+
+  final int baseHashCode() {
+    return Objects.hash(optionType);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(option, value);
+    return baseHashCode();
   }
 
-  @Override
-  public String toString() {
-    return MoreObjects.toStringHelper(this)
-        .add("name", option.name().toLowerCase())
-        .add("value", value)
-        .toString();
+  @SuppressWarnings("unchecked")
+  private static <T extends WaitForOption> T getOrDefaultInternal(OptionType optionType,
+      T defaultValue, WaitForOption... options) {
+    T foundOption = null;
+    for (WaitForOption option : options) {
+      if (option.optionType.equals(optionType)) {
+        checkArgument(foundOption == null, "Duplicate option %s", option);
+        foundOption = (T) option;
+      }
+    }
+    return firstNonNull(foundOption, defaultValue);
   }
 
   /**
@@ -177,9 +224,9 @@ public final class WaitForOption implements Serializable {
    * @param checkEvery the checking period
    * @param unit the time unit of the checking period
    */
-  public static WaitForOption checkEvery(long checkEvery, TimeUnit unit) {
+  public static CheckingPeriod checkEvery(long checkEvery, TimeUnit unit) {
     checkArgument(checkEvery >= 0, "checkEvery must be >= 0");
-    return new WaitForOption(CHECKING_PERIOD, new CheckingPeriod(checkEvery, unit));
+    return new CheckingPeriod(checkEvery, unit);
   }
 
   /**
@@ -188,17 +235,8 @@ public final class WaitForOption implements Serializable {
    * @param timeout the maximum time to wait, expressed in {@code unit}
    * @param unit the time unit of the timeout
    */
-  public static WaitForOption timeout(long timeout, TimeUnit unit) {
+  public static Timeout timeout(long timeout, TimeUnit unit) {
     checkArgument(timeout >= 0, "timeout must be >= 0");
-    return new WaitForOption(TIMEOUT, TimeUnit.MILLISECONDS.convert(timeout, unit));
-  }
-
-  public static Map<Option, Object> asMap(WaitForOption... options) {
-    Map<Option, Object> optionMap = Maps.newEnumMap(Option.class);
-    for (WaitForOption waitOption : options) {
-      Object prev = optionMap.put(waitOption.option(), waitOption.value());
-      checkArgument(prev == null, "Duplicate option %s", waitOption);
-    }
-    return optionMap;
+    return new Timeout(unit.toMillis(timeout));
   }
 }

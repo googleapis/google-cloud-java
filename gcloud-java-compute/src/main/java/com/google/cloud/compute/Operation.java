@@ -16,9 +16,6 @@
 
 package com.google.cloud.compute;
 
-import static com.google.cloud.WaitForOption.Option.CHECKING_PERIOD;
-import static com.google.cloud.WaitForOption.Option.TIMEOUT;
-import static com.google.common.base.MoreObjects.firstNonNull;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.cloud.Clock;
@@ -707,14 +704,13 @@ public class Operation implements Serializable {
    */
   public Operation waitFor(WaitForOption... waitOptions)
       throws InterruptedException, TimeoutException {
-    Map<WaitForOption.Option, ?> optionMap = WaitForOption.asMap(waitOptions);
-    CheckingPeriod checkingPeriod = firstNonNull(CHECKING_PERIOD.getCheckingPeriod(optionMap),
-        CheckingPeriod.defaultInstance());
-    long timeout = firstNonNull(TIMEOUT.getLong(optionMap), -1L);
+    WaitForOption.Timeout timeout = WaitForOption.Timeout.getOrDefault(waitOptions);
+    CheckingPeriod checkingPeriod = CheckingPeriod.getOrDefault(waitOptions);
+    long timeoutMillis = timeout.timeoutMillis();
     Clock clock = options.clock();
     long startTime = clock.millis();
     while (!isDone()) {
-      if (timeout  != -1 && (clock.millis() - startTime)  >= timeout) {
+      if (timeoutMillis  != -1 && (clock.millis() - startTime)  >= timeoutMillis) {
         throw new TimeoutException();
       }
       checkingPeriod.sleep();

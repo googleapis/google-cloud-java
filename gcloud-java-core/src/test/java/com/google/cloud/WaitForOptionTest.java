@@ -18,16 +18,15 @@ package com.google.cloud;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
-import static org.junit.Assert.assertTrue;
 
 import com.google.cloud.WaitForOption.CheckingPeriod;
-import com.google.cloud.WaitForOption.Option;
+import com.google.cloud.WaitForOption.OptionType;
+import com.google.cloud.WaitForOption.Timeout;
 
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 public class WaitForOptionTest {
@@ -35,18 +34,15 @@ public class WaitForOptionTest {
   @Rule
   public ExpectedException thrown = ExpectedException.none();
 
-  private static final WaitForOption CHECKING_PERIOD_OPTION =
+  private static final CheckingPeriod CHECKING_PERIOD_OPTION =
       WaitForOption.checkEvery(42, TimeUnit.MILLISECONDS);
-  private static final WaitForOption TIMEOUT_OPTION =
-      WaitForOption.timeout(43, TimeUnit.MILLISECONDS);
+  private static final Timeout TIMEOUT_OPTION = WaitForOption.timeout(43, TimeUnit.MILLISECONDS);
 
   @Test
   public void testCheckEvery() {
-    assertEquals(Option.CHECKING_PERIOD, CHECKING_PERIOD_OPTION.option());
-    assertTrue(CHECKING_PERIOD_OPTION.value() instanceof CheckingPeriod);
-    CheckingPeriod checkingPeriod = (CheckingPeriod) CHECKING_PERIOD_OPTION.value();
-    assertEquals(42, checkingPeriod.period());
-    assertEquals(TimeUnit.MILLISECONDS, checkingPeriod.unit());
+    assertEquals(OptionType.CHECKING_PERIOD, CHECKING_PERIOD_OPTION.optionType());
+    assertEquals(42, CHECKING_PERIOD_OPTION.period());
+    assertEquals(TimeUnit.MILLISECONDS, CHECKING_PERIOD_OPTION.unit());
   }
 
   @Test
@@ -58,8 +54,10 @@ public class WaitForOptionTest {
 
   @Test
   public void testTimeout() {
-    assertEquals(Option.TIMEOUT, TIMEOUT_OPTION.option());
-    assertEquals(43L, TIMEOUT_OPTION.value());
+    assertEquals(OptionType.TIMEOUT, TIMEOUT_OPTION.optionType());
+    assertEquals(43, TIMEOUT_OPTION.timeoutMillis());
+    Timeout timeoutOption = WaitForOption.timeout(43, TimeUnit.SECONDS);
+    assertEquals(43_000, timeoutOption.timeoutMillis());
   }
 
   @Test
@@ -98,18 +96,29 @@ public class WaitForOptionTest {
   }
 
   @Test
-  public void testAsMap() {
-    Map<Option, Object> optionMap = WaitForOption.asMap(CHECKING_PERIOD_OPTION, TIMEOUT_OPTION);
-    CheckingPeriod checkingPeriod = Option.CHECKING_PERIOD.getCheckingPeriod(optionMap);
-    assertEquals(42, checkingPeriod.period());
+  public void testGetOrDefault() {
+    assertEquals(CHECKING_PERIOD_OPTION,
+        CheckingPeriod.getOrDefault(CHECKING_PERIOD_OPTION, TIMEOUT_OPTION));
+    assertEquals(TIMEOUT_OPTION,
+        Timeout.getOrDefault(CHECKING_PERIOD_OPTION, TIMEOUT_OPTION));
+    CheckingPeriod checkingPeriod = CheckingPeriod.getOrDefault(TIMEOUT_OPTION);
+    assertEquals(500, checkingPeriod.period());
     assertEquals(TimeUnit.MILLISECONDS, checkingPeriod.unit());
-    assertEquals(43, (long) Option.TIMEOUT.getLong(optionMap));
+    Timeout timeout = Timeout.getOrDefault(CHECKING_PERIOD_OPTION);
+    assertEquals(-1, timeout.timeoutMillis());
   }
 
   @Test
-  public void testAsMap_DuplicateOption() {
+  public void testCheckingPeriodGetOrDefault_DuplicateOption() {
     thrown.expect(IllegalArgumentException.class);
     thrown.expectMessage(String.format("Duplicate option %s", CHECKING_PERIOD_OPTION));
-    WaitForOption.asMap(CHECKING_PERIOD_OPTION, CHECKING_PERIOD_OPTION);
+    CheckingPeriod.getOrDefault(CHECKING_PERIOD_OPTION, CHECKING_PERIOD_OPTION);
+  }
+
+  @Test
+  public void testTimeoutGetOrDefault_DuplicateOption() {
+    thrown.expect(IllegalArgumentException.class);
+    thrown.expectMessage(String.format("Duplicate option %s", TIMEOUT_OPTION));
+    Timeout.getOrDefault(TIMEOUT_OPTION, TIMEOUT_OPTION);
   }
 }

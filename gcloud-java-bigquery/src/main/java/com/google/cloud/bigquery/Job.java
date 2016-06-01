@@ -16,18 +16,15 @@
 
 package com.google.cloud.bigquery;
 
-import static com.google.cloud.WaitForOption.Option.CHECKING_PERIOD;
-import static com.google.cloud.WaitForOption.Option.TIMEOUT;
-import static com.google.common.base.MoreObjects.firstNonNull;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.cloud.Clock;
 import com.google.cloud.WaitForOption;
 import com.google.cloud.WaitForOption.CheckingPeriod;
+import com.google.cloud.WaitForOption.Timeout;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
-import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
@@ -192,14 +189,13 @@ public class Job extends JobInfo {
    *     this exception is never thrown.
    */
   public Job waitFor(WaitForOption... waitOptions) throws InterruptedException, TimeoutException {
-    Map<WaitForOption.Option, ?> optionMap = WaitForOption.asMap(waitOptions);
-    CheckingPeriod checkingPeriod = firstNonNull(CHECKING_PERIOD.getCheckingPeriod(optionMap),
-        CheckingPeriod.defaultInstance());
-    long timeout = firstNonNull(TIMEOUT.getLong(optionMap), -1L);
+    Timeout timeout = Timeout.getOrDefault(waitOptions);
+    CheckingPeriod checkingPeriod = CheckingPeriod.getOrDefault(waitOptions);
+    long timeoutMillis = timeout.timeoutMillis();
     Clock clock = options.clock();
     long startTime = clock.millis();
     while (!isDone()) {
-      if (timeout  != -1 && (clock.millis() - startTime)  >= timeout) {
+      if (timeoutMillis  != -1 && (clock.millis() - startTime)  >= timeoutMillis) {
         throw new TimeoutException();
       }
       checkingPeriod.sleep();
