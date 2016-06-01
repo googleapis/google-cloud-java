@@ -73,6 +73,7 @@ public class BlobInfo implements Serializable {
   private final Long metageneration;
   private final Long deleteTime;
   private final Long updateTime;
+  private final Long createTime;
   private final String contentType;
   private final String contentEncoding;
   private final String contentDisposition;
@@ -188,6 +189,8 @@ public class BlobInfo implements Serializable {
 
     abstract Builder updateTime(Long updateTime);
 
+    abstract Builder createTime(Long createTime);
+
     abstract Builder isDirectory(boolean isDirectory);
 
     /**
@@ -218,6 +221,7 @@ public class BlobInfo implements Serializable {
     private Long metageneration;
     private Long deleteTime;
     private Long updateTime;
+    private Long createTime;
     private Boolean isDirectory;
 
     BuilderImpl(BlobId blobId) {
@@ -245,6 +249,7 @@ public class BlobInfo implements Serializable {
       metageneration = blobInfo.metageneration;
       deleteTime = blobInfo.deleteTime;
       updateTime = blobInfo.updateTime;
+      createTime = blobInfo.createTime;
       isDirectory = blobInfo.isDirectory;
     }
 
@@ -370,6 +375,12 @@ public class BlobInfo implements Serializable {
     }
 
     @Override
+    Builder createTime(Long createTime) {
+      this.createTime = createTime;
+      return this;
+    }
+
+    @Override
     Builder isDirectory(boolean isDirectory) {
       this.isDirectory = isDirectory;
       return this;
@@ -403,6 +414,7 @@ public class BlobInfo implements Serializable {
     metageneration = builder.metageneration;
     deleteTime = builder.deleteTime;
     updateTime = builder.updateTime;
+    createTime = builder.createTime;
     isDirectory = firstNonNull(builder.isDirectory, Boolean.FALSE);
   }
 
@@ -601,6 +613,13 @@ public class BlobInfo implements Serializable {
   }
 
   /**
+   * Returns the creation time of the blob.
+   */
+  public Long createTime() {
+    return createTime;
+  }
+
+  /**
    * Returns {@code true} if the current blob represents a directory. This can only happen if the
    * blob is returned by {@link Storage#list(String, Storage.BlobListOption...)} when the
    * {@link Storage.BlobListOption#currentDirectory()} option is used. When this is the case only
@@ -659,6 +678,9 @@ public class BlobInfo implements Serializable {
     }
     if (updateTime != null) {
       storageObject.setUpdated(new DateTime(updateTime));
+    }
+    if (createTime != null) {
+      storageObject.setTimeCreated(new DateTime(createTime));
     }
     if (size != null) {
       storageObject.setSize(BigInteger.valueOf(size));
@@ -772,6 +794,9 @@ public class BlobInfo implements Serializable {
     }
     if (storageObject.getUpdated() != null) {
       builder.updateTime(storageObject.getUpdated().getValue());
+    }
+    if (storageObject.getTimeCreated() != null) {
+      builder.createTime(storageObject.getTimeCreated().getValue());
     }
     if (storageObject.getSize() != null) {
       builder.size(storageObject.getSize().longValue());
