@@ -37,7 +37,7 @@ import java.util.Objects;
  * a key {@code iana.org/language_tag} and value {@code en} could be added to messages to mark them
  * as readable by an English-speaking subscriber.
  *
- * <p>To be published a message must have a non-empty payload, or at least one attribute.
+ * <p>To be published, a message must have a non-empty payload, or at least one attribute.
  *
  * @see <a href="https://cloud.google.com/pubsub/overview#data_model">Pub/Sub Data Model</a>
  */
@@ -64,11 +64,11 @@ public class Message implements Serializable {
 
     private static final long serialVersionUID = -3330181485911805428L;
 
-    protected InternalByteArray(ByteString byteString) {
+    InternalByteArray(ByteString byteString) {
       super(byteString);
     }
 
-    protected InternalByteArray(ByteArray byteArray) {
+    InternalByteArray(ByteArray byteArray) {
       super(byteArray);
     }
 
@@ -244,17 +244,24 @@ public class Message implements Serializable {
     return payload;
   }
 
+  final boolean baseEquals(Message message) {
+    return Objects.equals(id, message.id)
+        && Objects.equals(payload, message.payload)
+        && Objects.equals(attributes, message.attributes)
+        && Objects.equals(publishTime, message.publishTime);
+  }
+
   @Override
   public boolean equals(Object obj) {
     return obj == this
         || obj != null
         && obj.getClass().equals(Message.class)
-        && Objects.equals(toPb(), ((Message) obj).toPb());
+        && baseEquals((Message) obj);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(serialVersionUID, id, payload, attributes, publishTime);
+    return Objects.hash(id, payload, attributes, publishTime);
   }
 
   @Override
