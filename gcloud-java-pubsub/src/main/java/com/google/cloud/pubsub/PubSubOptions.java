@@ -16,6 +16,8 @@
 
 package com.google.cloud.pubsub;
 
+import static com.google.common.base.MoreObjects.firstNonNull;
+
 import com.google.cloud.GrpcServiceOptions;
 import com.google.cloud.pubsub.spi.DefaultPubSubRpc;
 import com.google.cloud.pubsub.spi.PubSubRpc;
@@ -31,6 +33,8 @@ public class PubSubOptions extends GrpcServiceOptions<PubSub, PubSubRpc, PubSubO
   private static final String PUBSUB_SCOPE = "https://www.googleapis.com/auth/pubsub";
   private static final Set<String> SCOPES = ImmutableSet.of(PUBSUB_SCOPE);
   private static final String DEFAULT_HOST = "https://pubsub.googleapis.com";
+
+  private final AckDeadlineRenewParams ackDeadlineRenewParams;
 
   public static class DefaultPubSubFactory implements PubSubFactory {
     private static final PubSubFactory INSTANCE = new DefaultPubSubFactory();
@@ -69,10 +73,22 @@ public class PubSubOptions extends GrpcServiceOptions<PubSub, PubSubRpc, PubSubO
   public static class Builder extends
       GrpcServiceOptions.Builder<PubSub, PubSubRpc, PubSubOptions, Builder> {
 
+    private AckDeadlineRenewParams ackDeadlineRenewParams;
+
     private Builder() {}
 
     private Builder(PubSubOptions options) {
       super(options);
+    }
+
+    /**
+     * Sets the configuration parameters for automatic deadline renewal. If not set,
+     * {@link AckDeadlineRenewParams#noBackoff()} is used: automatic deadline renewal always sets
+     * ack deadline to 10 seconds.
+     */
+    public Builder ackDeadlineRenewParams(AckDeadlineRenewParams ackDeadlineRenewParams) {
+      this.ackDeadlineRenewParams = ackDeadlineRenewParams;
+      return self();
     }
 
     @Override
@@ -83,6 +99,20 @@ public class PubSubOptions extends GrpcServiceOptions<PubSub, PubSubRpc, PubSubO
 
   protected PubSubOptions(Builder builder) {
     super(PubSubFactory.class, PubSubRpcFactory.class, builder);
+    ackDeadlineRenewParams =
+        firstNonNull(builder.ackDeadlineRenewParams, AckDeadlineRenewParams.noBackoff());
+  }
+
+  @Override
+  protected ExecutorFactory executorFactory() {
+    return super.executorFactory();
+  }
+
+  /**
+   * Returns the configuration parameters for automatic deadline renewal.
+   */
+  public AckDeadlineRenewParams ackDeadlineRenewParams() {
+    return ackDeadlineRenewParams;
   }
 
   @Override
