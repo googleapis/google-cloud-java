@@ -41,7 +41,8 @@ import java.util.concurrent.TimeUnit;
  */
 class AckDeadlineRenewer implements AutoCloseable {
 
-  private static final int MIN_DEADLINE_MILLIS = 9_000;
+  private static final int MIN_DEADLINE_MILLIS = 10_000;
+  private static final int DEADLINE_SLACK_MILLIS = 1_000;
   private static final int RENEW_THRESHOLD_MILLIS = 3_000;
   private static final int NEXT_RENEWAL_THRESHOLD_MILLIS = 1_000;
 
@@ -213,8 +214,8 @@ class AckDeadlineRenewer implements AutoCloseable {
     }
     for (Map.Entry<String, List<String>> entry : Multimaps.asMap(messagesToRenewNext).entrySet()) {
       // We send all ack deadline renewals for a subscription
-      pubsub.modifyAckDeadlineAsync(entry.getKey(), MIN_DEADLINE_MILLIS,
-          TimeUnit.MILLISECONDS, entry.getValue());
+      pubsub.modifyAckDeadlineAsync(entry.getKey(), MIN_DEADLINE_MILLIS, TimeUnit.MILLISECONDS,
+          entry.getValue());
     }
     unsetAndScheduleNextRenewal();
   }
@@ -253,7 +254,7 @@ class AckDeadlineRenewer implements AutoCloseable {
    */
   void add(String subscription, String ackId) {
     synchronized (lock) {
-      long deadline = clock.millis() + MIN_DEADLINE_MILLIS;
+      long deadline = clock.millis() + MIN_DEADLINE_MILLIS - DEADLINE_SLACK_MILLIS;
       Message message = new Message(new MessageId(subscription, ackId), deadline);
       messageQueue.add(message);
       messageDeadlines.put(message.messageId(), deadline);
@@ -272,7 +273,7 @@ class AckDeadlineRenewer implements AutoCloseable {
    */
   void add(String subscription, Iterable<String> ackIds) {
     synchronized (lock) {
-      long deadline = clock.millis() + MIN_DEADLINE_MILLIS;
+      long deadline = clock.millis() + MIN_DEADLINE_MILLIS - DEADLINE_SLACK_MILLIS;
       for (String ackId : ackIds) {
         Message message = new Message(new MessageId(subscription, ackId), deadline);
         messageQueue.add(message);

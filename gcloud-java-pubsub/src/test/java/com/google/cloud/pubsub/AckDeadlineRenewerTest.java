@@ -36,7 +36,7 @@ import java.util.concurrent.atomic.AtomicLong;
 
 public class AckDeadlineRenewerTest {
 
-  private static final int MIN_DEADLINE_MILLIS = 9_000;
+  private static final int MIN_DEADLINE_MILLIS = 10_000;
 
   private static final String SUBSCRIPTION1 = "subscription1";
   private static final String SUBSCRIPTION2 = "subscription2";
