@@ -73,6 +73,8 @@ public class DefaultPubSubRpc implements PubSubRpc {
   private final ScheduledExecutorService executor;
   private final ExecutorFactory executorFactory;
 
+  private boolean closed;
+
   private static final class InternalPubSubOptions extends PubSubOptions {
 
     private static final long serialVersionUID = -7997372049256706185L;
@@ -233,6 +235,10 @@ public class DefaultPubSubRpc implements PubSubRpc {
 
   @Override
   public void close() throws Exception {
+    if (closed) {
+      return;
+    }
+    closed = true;
     subscriberApi.close();
     publisherApi.close();
     executorFactory.release(executor);

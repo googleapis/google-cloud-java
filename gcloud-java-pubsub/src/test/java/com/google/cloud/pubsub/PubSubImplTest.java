@@ -52,6 +52,8 @@ import com.google.pubsub.v1.ModifyAckDeadlineRequest;
 import com.google.pubsub.v1.ModifyPushConfigRequest;
 import com.google.pubsub.v1.PublishRequest;
 import com.google.pubsub.v1.PublishResponse;
+import com.google.pubsub.v1.PullRequest;
+import com.google.pubsub.v1.PullResponse;
 
 import org.easymock.EasyMock;
 import org.junit.After;
@@ -60,6 +62,7 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
+import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
@@ -93,6 +96,18 @@ public class PubSubImplTest {
           .ackDeadLineSeconds(42)
           .pushConfig(PUSH_CONFIG)
           .build();
+  private static final Message MESSAGE1 = Message.of("payload1");
+  private static final com.google.pubsub.v1.ReceivedMessage MESSAGE_PB1 =
+      com.google.pubsub.v1.ReceivedMessage.newBuilder()
+          .setMessage(MESSAGE1.toPb())
+          .setAckId("ackId1")
+          .build();
+  private static final Message MESSAGE2 = Message.of("payload2");
+  private static final com.google.pubsub.v1.ReceivedMessage MESSAGE_PB2 =
+      com.google.pubsub.v1.ReceivedMessage.newBuilder()
+          .setMessage(MESSAGE2.toPb())
+          .setAckId("ackId2")
+          .build();
   private static final Function<SubscriptionInfo, com.google.pubsub.v1.Subscription>
       SUBSCRIPTION_TO_PB_FUNCTION =
           new Function<SubscriptionInfo, com.google.pubsub.v1.Subscription>() {
@@ -112,6 +127,7 @@ public class PubSubImplTest {
   private PubSubOptions options;
   private PubSubRpcFactory rpcFactoryMock;
   private PubSubRpc pubsubRpcMock;
+  private AckDeadlineRenewer renewerMock;
   private PubSub pubsub;
 
   @Rule
@@ -121,26 +137,32 @@ public class PubSubImplTest {
   public void setUp() {
     rpcFactoryMock = EasyMock.createStrictMock(PubSubRpcFactory.class);
     pubsubRpcMock = EasyMock.createStrictMock(PubSubRpc.class);
-    EasyMock.expect(rpcFactoryMock.create(EasyMock.anyObject(PubSubOptions.class)))
-        .andReturn(pubsubRpcMock).times(1);
-    options = PubSubOptions.builder()
-        .projectId(PROJECT)
-        .serviceRpcFactory(rpcFactoryMock)
-        .retryParams(RetryParams.noRetries())
-        .build();
-    EasyMock.replay(rpcFactoryMock, pubsubRpcMock);
-    EasyMock.reset(pubsubRpcMock);
+    renewerMock = EasyMock.createStrictMock(AckDeadlineRenewer.class);
+    options = EasyMock.createMock(PubSubOptions.class);
+    EasyMock.expect(options.projectId()).andReturn(PROJECT).anyTimes();
+    EasyMock.expect(options.rpc()).andReturn(pubsubRpcMock).anyTimes();
+    EasyMock.expect(options.retryParams()).andReturn(RetryParams.noRetries()).anyTimes();
+    EasyMock.replay(rpcFactoryMock, pubsubRpcMock, renewerMock, options);
+    EasyMock.reset(pubsubRpcMock, renewerMock);
   }
 
   @After
   public void tearDown() {
-    EasyMock.verify(rpcFactoryMock, pubsubRpcMock);
+    EasyMock.verify(rpcFactoryMock, pubsubRpcMock, renewerMock, options);
+  }
+
+  private void resetOptionsForList(int pageCount) {
+    EasyMock.reset(options);
+    EasyMock.expect(options.projectId()).andReturn(PROJECT).times(pageCount);
+    EasyMock.expect(options.rpc()).andReturn(pubsubRpcMock).times(pageCount);
+    EasyMock.expect(options.service()).andReturn(pubsub).times(pageCount);
+    EasyMock.replay(options);
   }
 
   @Test
   public void testGetOptions() {
-    EasyMock.replay(pubsubRpcMock);
-    pubsub = options.service();
+    EasyMock.replay(pubsubRpcMock, renewerMock);
+    pubsub = new PubSubImpl(options, renewerMock);
     assertSame(options, pubsub.options());
   }
 
@@ -149,8 +171,8 @@ public class PubSubImplTest {
     com.google.pubsub.v1.Topic topicPb = TOPIC_INFO.toPb(PROJECT);
     Future<com.google.pubsub.v1.Topic> response = Futures.immediateFuture(topicPb);
     EasyMock.expect(pubsubRpcMock.create(topicPb)).andReturn(response);
-    EasyMock.replay(pubsubRpcMock);
-    pubsub = options.service();
+    EasyMock.replay(pubsubRpcMock, renewerMock);
+    pubsub = new PubSubImpl(options, renewerMock);
     Topic topic = pubsub.create(TOPIC_INFO);
     assertEquals(new Topic(pubsub, new TopicInfo.BuilderImpl(TOPIC_INFO)), topic);
   }
@@ -160,8 +182,8 @@ public class PubSubImplTest {
     com.google.pubsub.v1.Topic topicPb = TOPIC_INFO.toPb(PROJECT);
     Future<com.google.pubsub.v1.Topic> response = Futures.immediateFuture(topicPb);
     EasyMock.expect(pubsubRpcMock.create(topicPb)).andReturn(response);
-    EasyMock.replay(pubsubRpcMock);
-    pubsub = options.service();
+    EasyMock.replay(pubsubRpcMock, renewerMock);
+    pubsub = new PubSubImpl(options, renewerMock);
     Topic topic = pubsub.createAsync(TOPIC_INFO).get();
     assertEquals(new Topic(pubsub, new TopicInfo.BuilderImpl(TOPIC_INFO)), topic);
   }
@@ -172,8 +194,8 @@ public class PubSubImplTest {
     Future<com.google.pubsub.v1.Topic> response =
         Futures.immediateFuture(TOPIC_INFO.toPb(PROJECT));
     EasyMock.expect(pubsubRpcMock.get(request)).andReturn(response);
-    EasyMock.replay(pubsubRpcMock);
-    pubsub = options.service();
+    EasyMock.replay(pubsubRpcMock, renewerMock);
+    pubsub = new PubSubImpl(options, renewerMock);
     Topic topic = pubsub.getTopic(TOPIC);
     assertEquals(new Topic(pubsub, new TopicInfo.BuilderImpl(TOPIC_INFO)), topic);
   }
@@ -183,8 +205,8 @@ public class PubSubImplTest {
     GetTopicRequest request = GetTopicRequest.newBuilder().setTopic(TOPIC_NAME_PB).build();
     Future<com.google.pubsub.v1.Topic> responseFuture = Futures.immediateFuture(null);
     EasyMock.expect(pubsubRpcMock.get(request)).andReturn(responseFuture);
-    EasyMock.replay(pubsubRpcMock);
-    pubsub = options.service();
+    EasyMock.replay(pubsubRpcMock, renewerMock);
+    pubsub = new PubSubImpl(options, renewerMock);
     assertNull(pubsub.getTopic(TOPIC));
   }
 
@@ -194,8 +216,8 @@ public class PubSubImplTest {
     Future<com.google.pubsub.v1.Topic> response =
         Futures.immediateFuture(TOPIC_INFO.toPb(PROJECT));
     EasyMock.expect(pubsubRpcMock.get(request)).andReturn(response);
-    EasyMock.replay(pubsubRpcMock);
-    pubsub = options.service();
+    EasyMock.replay(pubsubRpcMock, renewerMock);
+    pubsub = new PubSubImpl(options, renewerMock);
     Future<Topic> topicFuture = pubsub.getTopicAsync(TOPIC);
     assertEquals(new Topic(pubsub, new TopicInfo.BuilderImpl(TOPIC_INFO)), topicFuture.get());
   }
@@ -205,8 +227,8 @@ public class PubSubImplTest {
     GetTopicRequest request = GetTopicRequest.newBuilder().setTopic(TOPIC_NAME_PB).build();
     Future<com.google.pubsub.v1.Topic> responseFuture = Futures.immediateFuture(null);
     EasyMock.expect(pubsubRpcMock.get(request)).andReturn(responseFuture);
-    EasyMock.replay(pubsubRpcMock);
-    pubsub = options.service();
+    EasyMock.replay(pubsubRpcMock, renewerMock);
+    pubsub = new PubSubImpl(options, renewerMock);
     assertNull(pubsub.getTopicAsync(TOPIC).get());
   }
 
@@ -215,8 +237,8 @@ public class PubSubImplTest {
     DeleteTopicRequest request = DeleteTopicRequest.newBuilder().setTopic(TOPIC_NAME_PB).build();
     Future<Empty> response = Futures.immediateFuture(Empty.getDefaultInstance());
     EasyMock.expect(pubsubRpcMock.delete(request)).andReturn(response);
-    EasyMock.replay(pubsubRpcMock);
-    pubsub = options.service();
+    EasyMock.replay(pubsubRpcMock, renewerMock);
+    pubsub = new PubSubImpl(options, renewerMock);
     assertTrue(pubsub.deleteTopic(TOPIC));
   }
 
@@ -225,8 +247,8 @@ public class PubSubImplTest {
     DeleteTopicRequest request = DeleteTopicRequest.newBuilder().setTopic(TOPIC_NAME_PB).build();
     Future<Empty> response = Futures.immediateFuture(null);
     EasyMock.expect(pubsubRpcMock.delete(request)).andReturn(response);
-    EasyMock.replay(pubsubRpcMock);
-    pubsub = options.service();
+    EasyMock.replay(pubsubRpcMock, renewerMock);
+    pubsub = new PubSubImpl(options, renewerMock);
     assertFalse(pubsub.deleteTopic(TOPIC));
   }
 
@@ -235,8 +257,8 @@ public class PubSubImplTest {
     DeleteTopicRequest request = DeleteTopicRequest.newBuilder().setTopic(TOPIC_NAME_PB).build();
     Future<Empty> response = Futures.immediateFuture(Empty.getDefaultInstance());
     EasyMock.expect(pubsubRpcMock.delete(request)).andReturn(response);
-    EasyMock.replay(pubsubRpcMock);
-    pubsub = options.service();
+    EasyMock.replay(pubsubRpcMock, renewerMock);
+    pubsub = new PubSubImpl(options, renewerMock);
     assertTrue(pubsub.deleteTopicAsync(TOPIC).get());
   }
 
@@ -245,15 +267,16 @@ public class PubSubImplTest {
     DeleteTopicRequest request = DeleteTopicRequest.newBuilder().setTopic(TOPIC_NAME_PB).build();
     Future<Empty> response = Futures.immediateFuture(null);
     EasyMock.expect(pubsubRpcMock.delete(request)).andReturn(response);
-    EasyMock.replay(pubsubRpcMock);
-    pubsub = options.service();
+    EasyMock.replay(pubsubRpcMock, renewerMock);
+    pubsub = new PubSubImpl(options, renewerMock);
     assertFalse(pubsub.deleteTopicAsync(TOPIC).get());
   }
 
   @Test
   public void testListTopics() {
     String cursor = "cursor";
-    pubsub = options.service();
+    pubsub = new PubSubImpl(options, renewerMock);
+    resetOptionsForList(1);
     ListTopicsRequest request = ListTopicsRequest.newBuilder().setProject(PROJECT_PB).build();
     List<Topic> topicList = ImmutableList.of(
         new Topic(pubsub, new TopicInfo.BuilderImpl(TOPIC_INFO)),
@@ -264,7 +287,7 @@ public class PubSubImplTest {
         .build();
     Future<ListTopicsResponse> futureResponse = Futures.immediateFuture(response);
     EasyMock.expect(pubsubRpcMock.list(request)).andReturn(futureResponse);
-    EasyMock.replay(pubsubRpcMock);
+    EasyMock.replay(pubsubRpcMock, renewerMock);
     Page<Topic> page = pubsub.listTopics();
     assertEquals(cursor, page.nextPageCursor());
     assertArrayEquals(topicList.toArray(), Iterables.toArray(page.values(), Topic.class));
@@ -273,7 +296,8 @@ public class PubSubImplTest {
   @Test
   public void testListTopicsNextPage() {
     String cursor1 = "cursor";
-    pubsub = options.service();
+    pubsub = new PubSubImpl(options, renewerMock);
+    resetOptionsForList(2);
     ListTopicsRequest request1 = ListTopicsRequest.newBuilder().setProject(PROJECT_PB).build();
     ListTopicsRequest request2 = ListTopicsRequest.newBuilder()
         .setProject(PROJECT_PB)
@@ -297,7 +321,7 @@ public class PubSubImplTest {
     Future<ListTopicsResponse> futureResponse2 = Futures.immediateFuture(response2);
     EasyMock.expect(pubsubRpcMock.list(request1)).andReturn(futureResponse1);
     EasyMock.expect(pubsubRpcMock.list(request2)).andReturn(futureResponse2);
-    EasyMock.replay(pubsubRpcMock);
+    EasyMock.replay(pubsubRpcMock, renewerMock);
     Page<Topic> page = pubsub.listTopics();
     assertEquals(cursor1, page.nextPageCursor());
     assertArrayEquals(topicList1.toArray(), Iterables.toArray(page.values(), Topic.class));
@@ -308,7 +332,8 @@ public class PubSubImplTest {
 
   @Test
   public void testListTopicsEmpty() {
-    pubsub = options.service();
+    pubsub = new PubSubImpl(options, renewerMock);
+    resetOptionsForList(1);
     ListTopicsRequest request = ListTopicsRequest.newBuilder().setProject(PROJECT_PB).build();
     List<Topic> topicList = ImmutableList.of();
     ListTopicsResponse response = ListTopicsResponse.newBuilder()
@@ -317,7 +342,7 @@ public class PubSubImplTest {
         .build();
     Future<ListTopicsResponse> futureResponse = Futures.immediateFuture(response);
     EasyMock.expect(pubsubRpcMock.list(request)).andReturn(futureResponse);
-    EasyMock.replay(pubsubRpcMock);
+    EasyMock.replay(pubsubRpcMock, renewerMock);
     Page<Topic> page = pubsub.listTopics();
     assertNull(page.nextPageCursor());
     assertNull(page.nextPage());
@@ -327,7 +352,8 @@ public class PubSubImplTest {
   @Test
   public void testListTopicsWithOptions() {
     String cursor = "cursor";
-    pubsub = options.service();
+    pubsub = new PubSubImpl(options, renewerMock);
+    resetOptionsForList(1);
     ListTopicsRequest request = ListTopicsRequest.newBuilder()
         .setProject(PROJECT_PB)
         .setPageSize(42)
@@ -342,7 +368,7 @@ public class PubSubImplTest {
         .build();
     Future<ListTopicsResponse> futureResponse = Futures.immediateFuture(response);
     EasyMock.expect(pubsubRpcMock.list(request)).andReturn(futureResponse);
-    EasyMock.replay(pubsubRpcMock);
+    EasyMock.replay(pubsubRpcMock, renewerMock);
     Page<Topic> page = pubsub.listTopics(ListOption.pageSize(42), ListOption.pageToken(cursor));
     assertNull(page.nextPageCursor());
     assertNull(page.nextPage());
@@ -352,7 +378,8 @@ public class PubSubImplTest {
   @Test
   public void testListTopicsAsync() throws ExecutionException, InterruptedException {
     String cursor = "cursor";
-    pubsub = options.service();
+    pubsub = new PubSubImpl(options, renewerMock);
+    resetOptionsForList(1);
     ListTopicsRequest request = ListTopicsRequest.newBuilder().setProject(PROJECT_PB).build();
     List<Topic> topicList = ImmutableList.of(
         new Topic(pubsub, new TopicInfo.BuilderImpl(TOPIC_INFO)),
@@ -363,7 +390,7 @@ public class PubSubImplTest {
         .build();
     Future<ListTopicsResponse> futureResponse = Futures.immediateFuture(response);
     EasyMock.expect(pubsubRpcMock.list(request)).andReturn(futureResponse);
-    EasyMock.replay(pubsubRpcMock);
+    EasyMock.replay(pubsubRpcMock, renewerMock);
     AsyncPage<Topic> page = pubsub.listTopicsAsync().get();
     assertEquals(cursor, page.nextPageCursor());
     assertArrayEquals(topicList.toArray(), Iterables.toArray(page.values(), Topic.class));
@@ -372,7 +399,8 @@ public class PubSubImplTest {
   @Test
   public void testListTopicsAsyncNextPage() throws ExecutionException, InterruptedException {
     String cursor1 = "cursor";
-    pubsub = options.service();
+    pubsub = new PubSubImpl(options, renewerMock);
+    resetOptionsForList(2);
     ListTopicsRequest request1 = ListTopicsRequest.newBuilder().setProject(PROJECT_PB).build();
     ListTopicsRequest request2 = ListTopicsRequest.newBuilder()
         .setProject(PROJECT_PB)
@@ -396,7 +424,7 @@ public class PubSubImplTest {
     Future<ListTopicsResponse> futureResponse2 = Futures.immediateFuture(response2);
     EasyMock.expect(pubsubRpcMock.list(request1)).andReturn(futureResponse1);
     EasyMock.expect(pubsubRpcMock.list(request2)).andReturn(futureResponse2);
-    EasyMock.replay(pubsubRpcMock);
+    EasyMock.replay(pubsubRpcMock, renewerMock);
     AsyncPage<Topic> page = pubsub.listTopicsAsync().get();
     assertEquals(cursor1, page.nextPageCursor());
     assertArrayEquals(topicList1.toArray(), Iterables.toArray(page.values(), Topic.class));
@@ -407,7 +435,8 @@ public class PubSubImplTest {
 
   @Test
   public void testListTopicsAsyncEmpty() throws ExecutionException, InterruptedException {
-    pubsub = options.service();
+    pubsub = new PubSubImpl(options, renewerMock);
+    resetOptionsForList(1);
     ListTopicsRequest request = ListTopicsRequest.newBuilder().setProject(PROJECT_PB).build();
     List<Topic> topicList = ImmutableList.of();
     ListTopicsResponse response = ListTopicsResponse.newBuilder()
@@ -416,7 +445,7 @@ public class PubSubImplTest {
         .build();
     Future<ListTopicsResponse> futureResponse = Futures.immediateFuture(response);
     EasyMock.expect(pubsubRpcMock.list(request)).andReturn(futureResponse);
-    EasyMock.replay(pubsubRpcMock);
+    EasyMock.replay(pubsubRpcMock, renewerMock);
     AsyncPage<Topic> page = pubsub.listTopicsAsync().get();
     assertNull(page.nextPageCursor());
     assertNull(page.nextPageAsync().get());
@@ -427,7 +456,8 @@ public class PubSubImplTest {
   @Test
   public void testListTopicsAsyncWithOptions() throws ExecutionException, InterruptedException {
     String cursor = "cursor";
-    pubsub = options.service();
+    pubsub = new PubSubImpl(options, renewerMock);
+    resetOptionsForList(1);
     ListTopicsRequest request = ListTopicsRequest.newBuilder()
         .setProject(PROJECT_PB)
         .setPageSize(42)
@@ -442,7 +472,7 @@ public class PubSubImplTest {
         .build();
     Future<ListTopicsResponse> futureResponse = Futures.immediateFuture(response);
     EasyMock.expect(pubsubRpcMock.list(request)).andReturn(futureResponse);
-    EasyMock.replay(pubsubRpcMock);
+    EasyMock.replay(pubsubRpcMock, renewerMock);
     AsyncPage<Topic> page =
         pubsub.listTopicsAsync(ListOption.pageSize(42), ListOption.pageToken(cursor)).get();
     assertNull(page.nextPageCursor());
@@ -460,8 +490,8 @@ public class PubSubImplTest {
     PublishResponse response = PublishResponse.newBuilder().addMessageIds(messageId).build();
     Future<PublishResponse> responseFuture = Futures.immediateFuture(response);
     EasyMock.expect(pubsubRpcMock.publish(request)).andReturn(responseFuture);
-    EasyMock.replay(pubsubRpcMock);
-    pubsub = options.service();
+    EasyMock.replay(pubsubRpcMock, renewerMock);
+    pubsub = new PubSubImpl(options, renewerMock);
     assertEquals(messageId, pubsub.publish(TOPIC, MESSAGE));
   }
 
@@ -475,8 +505,8 @@ public class PubSubImplTest {
     PublishResponse response = PublishResponse.newBuilder().addMessageIds(messageId).build();
     Future<PublishResponse> responseFuture = Futures.immediateFuture(response);
     EasyMock.expect(pubsubRpcMock.publish(request)).andReturn(responseFuture);
-    EasyMock.replay(pubsubRpcMock);
-    pubsub = options.service();
+    EasyMock.replay(pubsubRpcMock, renewerMock);
+    pubsub = new PubSubImpl(options, renewerMock);
     assertEquals(messageId, pubsub.publishAsync(TOPIC, MESSAGE).get());
   }
 
@@ -492,8 +522,8 @@ public class PubSubImplTest {
         .build();
     Future<PublishResponse> responseFuture = Futures.immediateFuture(response);
     EasyMock.expect(pubsubRpcMock.publish(request)).andReturn(responseFuture);
-    EasyMock.replay(pubsubRpcMock);
-    pubsub = options.service();
+    EasyMock.replay(pubsubRpcMock, renewerMock);
+    pubsub = new PubSubImpl(options, renewerMock);
     assertEquals(messageIds, pubsub.publish(TOPIC, MESSAGE, MESSAGE));
   }
 
@@ -509,8 +539,8 @@ public class PubSubImplTest {
         .build();
     Future<PublishResponse> responseFuture = Futures.immediateFuture(response);
     EasyMock.expect(pubsubRpcMock.publish(request)).andReturn(responseFuture);
-    EasyMock.replay(pubsubRpcMock);
-    pubsub = options.service();
+    EasyMock.replay(pubsubRpcMock, renewerMock);
+    pubsub = new PubSubImpl(options, renewerMock);
     assertEquals(messageIds, pubsub.publishAsync(TOPIC, MESSAGE, MESSAGE).get());
   }
 
@@ -526,8 +556,8 @@ public class PubSubImplTest {
         .build();
     Future<PublishResponse> responseFuture = Futures.immediateFuture(response);
     EasyMock.expect(pubsubRpcMock.publish(request)).andReturn(responseFuture);
-    EasyMock.replay(pubsubRpcMock);
-    pubsub = options.service();
+    EasyMock.replay(pubsubRpcMock, renewerMock);
+    pubsub = new PubSubImpl(options, renewerMock);
     assertEquals(messageIds, pubsub.publish(TOPIC, ImmutableList.of(MESSAGE, MESSAGE)));
   }
 
@@ -543,8 +573,8 @@ public class PubSubImplTest {
         .build();
     Future<PublishResponse> responseFuture = Futures.immediateFuture(response);
     EasyMock.expect(pubsubRpcMock.publish(request)).andReturn(responseFuture);
-    EasyMock.replay(pubsubRpcMock);
-    pubsub = options.service();
+    EasyMock.replay(pubsubRpcMock, renewerMock);
+    pubsub = new PubSubImpl(options, renewerMock);
     assertEquals(messageIds, pubsub.publishAsync(TOPIC, ImmutableList.of(MESSAGE, MESSAGE)).get());
   }
 
@@ -554,8 +584,8 @@ public class PubSubImplTest {
     Future<com.google.pubsub.v1.Subscription> response =
         Futures.immediateFuture(subscriptionPb);
     EasyMock.expect(pubsubRpcMock.create(subscriptionPb)).andReturn(response);
-    EasyMock.replay(pubsubRpcMock);
-    pubsub = options.service();
+    EasyMock.replay(pubsubRpcMock, renewerMock);
+    pubsub = new PubSubImpl(options, renewerMock);
     Subscription subscription = pubsub.create(SUBSCRIPTION_INFO);
     assertEquals(
         new Subscription(pubsub, new SubscriptionInfo.BuilderImpl(COMPLETE_SUBSCRIPTION_INFO)),
@@ -568,8 +598,8 @@ public class PubSubImplTest {
     Future<com.google.pubsub.v1.Subscription> response =
         Futures.immediateFuture(subscriptionPb);
     EasyMock.expect(pubsubRpcMock.create(subscriptionPb)).andReturn(response);
-    EasyMock.replay(pubsubRpcMock);
-    pubsub = options.service();
+    EasyMock.replay(pubsubRpcMock, renewerMock);
+    pubsub = new PubSubImpl(options, renewerMock);
     Subscription subscription = pubsub.createAsync(SUBSCRIPTION_INFO).get();
     assertEquals(
         new Subscription(pubsub, new SubscriptionInfo.BuilderImpl(COMPLETE_SUBSCRIPTION_INFO)),
@@ -583,8 +613,8 @@ public class PubSubImplTest {
     Future<com.google.pubsub.v1.Subscription> response =
         Futures.immediateFuture(SUBSCRIPTION_INFO.toPb(PROJECT));
     EasyMock.expect(pubsubRpcMock.get(request)).andReturn(response);
-    EasyMock.replay(pubsubRpcMock);
-    pubsub = options.service();
+    EasyMock.replay(pubsubRpcMock, renewerMock);
+    pubsub = new PubSubImpl(options, renewerMock);
     Subscription subscription = pubsub.getSubscription(SUBSCRIPTION);
     assertEquals(
         new Subscription(pubsub, new SubscriptionInfo.BuilderImpl(COMPLETE_SUBSCRIPTION_INFO)),
@@ -597,8 +627,8 @@ public class PubSubImplTest {
         GetSubscriptionRequest.newBuilder().setSubscription(SUBSCRIPTION_NAME_PB).build();
     Future<com.google.pubsub.v1.Subscription> response = Futures.immediateFuture(null);
     EasyMock.expect(pubsubRpcMock.get(request)).andReturn(response);
-    EasyMock.replay(pubsubRpcMock);
-    pubsub = options.service();
+    EasyMock.replay(pubsubRpcMock, renewerMock);
+    pubsub = new PubSubImpl(options, renewerMock);
     assertNull(pubsub.getSubscription(SUBSCRIPTION));
   }
 
@@ -609,8 +639,8 @@ public class PubSubImplTest {
     Future<com.google.pubsub.v1.Subscription> response =
         Futures.immediateFuture(SUBSCRIPTION_INFO.toPb(PROJECT));
     EasyMock.expect(pubsubRpcMock.get(request)).andReturn(response);
-    EasyMock.replay(pubsubRpcMock);
-    pubsub = options.service();
+    EasyMock.replay(pubsubRpcMock, renewerMock);
+    pubsub = new PubSubImpl(options, renewerMock);
     Subscription subscription = pubsub.getSubscriptionAsync(SUBSCRIPTION).get();
     assertEquals(
         new Subscription(pubsub, new SubscriptionInfo.BuilderImpl(COMPLETE_SUBSCRIPTION_INFO)),
@@ -623,8 +653,8 @@ public class PubSubImplTest {
         GetSubscriptionRequest.newBuilder().setSubscription(SUBSCRIPTION_NAME_PB).build();
     Future<com.google.pubsub.v1.Subscription> response = Futures.immediateFuture(null);
     EasyMock.expect(pubsubRpcMock.get(request)).andReturn(response);
-    EasyMock.replay(pubsubRpcMock);
-    pubsub = options.service();
+    EasyMock.replay(pubsubRpcMock, renewerMock);
+    pubsub = new PubSubImpl(options, renewerMock);
     assertNull(pubsub.getSubscriptionAsync(SUBSCRIPTION).get());
   }
 
@@ -635,8 +665,8 @@ public class PubSubImplTest {
         .build();
     Future<Empty> response = Futures.immediateFuture(Empty.getDefaultInstance());
     EasyMock.expect(pubsubRpcMock.delete(request)).andReturn(response);
-    EasyMock.replay(pubsubRpcMock);
-    pubsub = options.service();
+    EasyMock.replay(pubsubRpcMock, renewerMock);
+    pubsub = new PubSubImpl(options, renewerMock);
     assertTrue(pubsub.deleteSubscription(SUBSCRIPTION));
   }
 
@@ -647,8 +677,8 @@ public class PubSubImplTest {
         .build();
     Future<Empty> response = Futures.immediateFuture(null);
     EasyMock.expect(pubsubRpcMock.delete(request)).andReturn(response);
-    EasyMock.replay(pubsubRpcMock);
-    pubsub = options.service();
+    EasyMock.replay(pubsubRpcMock, renewerMock);
+    pubsub = new PubSubImpl(options, renewerMock);
     assertFalse(pubsub.deleteSubscription(SUBSCRIPTION));
   }
 
@@ -659,8 +689,8 @@ public class PubSubImplTest {
         .build();
     Future<Empty> response = Futures.immediateFuture(Empty.getDefaultInstance());
     EasyMock.expect(pubsubRpcMock.delete(request)).andReturn(response);
-    EasyMock.replay(pubsubRpcMock);
-    pubsub = options.service();
+    EasyMock.replay(pubsubRpcMock, renewerMock);
+    pubsub = new PubSubImpl(options, renewerMock);
     assertTrue(pubsub.deleteSubscriptionAsync(SUBSCRIPTION).get());
   }
 
@@ -671,8 +701,8 @@ public class PubSubImplTest {
         .build();
     Future<Empty> response = Futures.immediateFuture(null);
     EasyMock.expect(pubsubRpcMock.delete(request)).andReturn(response);
-    EasyMock.replay(pubsubRpcMock);
-    pubsub = options.service();
+    EasyMock.replay(pubsubRpcMock, renewerMock);
+    pubsub = new PubSubImpl(options, renewerMock);
     assertFalse(pubsub.deleteSubscriptionAsync(SUBSCRIPTION).get());
   }
 
@@ -684,8 +714,8 @@ public class PubSubImplTest {
         .build();
     Future<Empty> response = Futures.immediateFuture(Empty.getDefaultInstance());
     EasyMock.expect(pubsubRpcMock.modify(request)).andReturn(response);
-    EasyMock.replay(pubsubRpcMock);
-    pubsub = options.service();
+    EasyMock.replay(pubsubRpcMock, renewerMock);
+    pubsub = new PubSubImpl(options, renewerMock);
     pubsub.replacePushConfig(SUBSCRIPTION, PUSH_CONFIG);
   }
 
@@ -697,8 +727,8 @@ public class PubSubImplTest {
         .build();
     Future<Empty> response = Futures.immediateFuture(Empty.getDefaultInstance());
     EasyMock.expect(pubsubRpcMock.modify(request)).andReturn(response);
-    EasyMock.replay(pubsubRpcMock);
-    pubsub = options.service();
+    EasyMock.replay(pubsubRpcMock, renewerMock);
+    pubsub = new PubSubImpl(options, renewerMock);
     pubsub.replacePushConfig(SUBSCRIPTION, null);
   }
 
@@ -710,8 +740,8 @@ public class PubSubImplTest {
         .build();
     Future<Empty> response = Futures.immediateFuture(Empty.getDefaultInstance());
     EasyMock.expect(pubsubRpcMock.modify(request)).andReturn(response);
-    EasyMock.replay(pubsubRpcMock);
-    pubsub = options.service();
+    EasyMock.replay(pubsubRpcMock, renewerMock);
+    pubsub = new PubSubImpl(options, renewerMock);
     pubsub.replacePushConfigAsync(SUBSCRIPTION, PUSH_CONFIG).get();
   }
 
@@ -723,15 +753,16 @@ public class PubSubImplTest {
         .build();
     Future<Empty> response = Futures.immediateFuture(Empty.getDefaultInstance());
     EasyMock.expect(pubsubRpcMock.modify(request)).andReturn(response);
-    EasyMock.replay(pubsubRpcMock);
-    pubsub = options.service();
+    EasyMock.replay(pubsubRpcMock, renewerMock);
+    pubsub = new PubSubImpl(options, renewerMock);
     pubsub.replacePushConfigAsync(SUBSCRIPTION, null).get();
   }
 
   @Test
   public void testListSubscriptions() {
     String cursor = "cursor";
-    pubsub = options.service();
+    pubsub = new PubSubImpl(options, renewerMock);
+    resetOptionsForList(1);
     ListSubscriptionsRequest request = ListSubscriptionsRequest.newBuilder()
         .setProject(PROJECT_PB)
         .build();
@@ -744,7 +775,7 @@ public class PubSubImplTest {
         .build();
     Future<ListSubscriptionsResponse> futureResponse = Futures.immediateFuture(response);
     EasyMock.expect(pubsubRpcMock.list(request)).andReturn(futureResponse);
-    EasyMock.replay(pubsubRpcMock);
+    EasyMock.replay(pubsubRpcMock, renewerMock);
     Page<Subscription> page = pubsub.listSubscriptions();
     assertEquals(cursor, page.nextPageCursor());
     assertArrayEquals(subscriptionList.toArray(),
@@ -754,7 +785,8 @@ public class PubSubImplTest {
   @Test
   public void testListSubscriptionsNextPage() {
     String cursor1 = "cursor";
-    pubsub = options.service();
+    pubsub = new PubSubImpl(options, renewerMock);
+    resetOptionsForList(2);
     ListSubscriptionsRequest request1 = ListSubscriptionsRequest.newBuilder()
         .setProject(PROJECT_PB)
         .build();
@@ -780,7 +812,7 @@ public class PubSubImplTest {
     Future<ListSubscriptionsResponse> futureResponse2 = Futures.immediateFuture(response2);
     EasyMock.expect(pubsubRpcMock.list(request1)).andReturn(futureResponse1);
     EasyMock.expect(pubsubRpcMock.list(request2)).andReturn(futureResponse2);
-    EasyMock.replay(pubsubRpcMock);
+    EasyMock.replay(pubsubRpcMock, renewerMock);
     Page<Subscription> page = pubsub.listSubscriptions();
     assertEquals(cursor1, page.nextPageCursor());
     assertArrayEquals(subscriptionList1.toArray(),
@@ -793,7 +825,8 @@ public class PubSubImplTest {
 
   @Test
   public void testListSubscriptionsEmpty() {
-    pubsub = options.service();
+    pubsub = new PubSubImpl(options, renewerMock);
+    resetOptionsForList(1);
     ListSubscriptionsRequest request = ListSubscriptionsRequest.newBuilder()
         .setProject(PROJECT_PB)
         .build();
@@ -804,7 +837,7 @@ public class PubSubImplTest {
         .build();
     Future<ListSubscriptionsResponse> futureResponse = Futures.immediateFuture(response);
     EasyMock.expect(pubsubRpcMock.list(request)).andReturn(futureResponse);
-    EasyMock.replay(pubsubRpcMock);
+    EasyMock.replay(pubsubRpcMock, renewerMock);
     Page<Subscription> page = pubsub.listSubscriptions();
     assertNull(page.nextPageCursor());
     assertNull(page.nextPage());
@@ -815,7 +848,8 @@ public class PubSubImplTest {
   @Test
   public void testListSubscriptionsWithOptions() {
     String cursor = "cursor";
-    pubsub = options.service();
+    pubsub = new PubSubImpl(options, renewerMock);
+    resetOptionsForList(1);
     ListSubscriptionsRequest request = ListSubscriptionsRequest.newBuilder()
         .setProject(PROJECT_PB)
         .setPageSize(42)
@@ -830,7 +864,7 @@ public class PubSubImplTest {
         .build();
     Future<ListSubscriptionsResponse> futureResponse = Futures.immediateFuture(response);
     EasyMock.expect(pubsubRpcMock.list(request)).andReturn(futureResponse);
-    EasyMock.replay(pubsubRpcMock);
+    EasyMock.replay(pubsubRpcMock, renewerMock);
     Page<Subscription> page =
         pubsub.listSubscriptions(ListOption.pageSize(42), ListOption.pageToken(cursor));
     assertNull(page.nextPageCursor());
@@ -842,7 +876,8 @@ public class PubSubImplTest {
   @Test
   public void testListSubscriptionsAsync() throws ExecutionException, InterruptedException {
     String cursor = "cursor";
-    pubsub = options.service();
+    pubsub = new PubSubImpl(options, renewerMock);
+    resetOptionsForList(1);
     ListSubscriptionsRequest request = ListSubscriptionsRequest.newBuilder()
         .setProject(PROJECT_PB)
         .build();
@@ -855,7 +890,7 @@ public class PubSubImplTest {
         .build();
     Future<ListSubscriptionsResponse> futureResponse = Futures.immediateFuture(response);
     EasyMock.expect(pubsubRpcMock.list(request)).andReturn(futureResponse);
-    EasyMock.replay(pubsubRpcMock);
+    EasyMock.replay(pubsubRpcMock, renewerMock);
     AsyncPage<Subscription> page = pubsub.listSubscriptionsAsync().get();
     assertEquals(cursor, page.nextPageCursor());
     assertArrayEquals(subscriptionList.toArray(),
@@ -865,7 +900,8 @@ public class PubSubImplTest {
   @Test
   public void testListSubscriptionsAsyncNextPage() throws ExecutionException, InterruptedException {
     String cursor1 = "cursor";
-    pubsub = options.service();
+    pubsub = new PubSubImpl(options, renewerMock);
+    resetOptionsForList(2);
     ListSubscriptionsRequest request1 = ListSubscriptionsRequest.newBuilder()
         .setProject(PROJECT_PB)
         .build();
@@ -891,7 +927,7 @@ public class PubSubImplTest {
     Future<ListSubscriptionsResponse> futureResponse2 = Futures.immediateFuture(response2);
     EasyMock.expect(pubsubRpcMock.list(request1)).andReturn(futureResponse1);
     EasyMock.expect(pubsubRpcMock.list(request2)).andReturn(futureResponse2);
-    EasyMock.replay(pubsubRpcMock);
+    EasyMock.replay(pubsubRpcMock, renewerMock);
     AsyncPage<Subscription> page = pubsub.listSubscriptionsAsync().get();
     assertEquals(cursor1, page.nextPageCursor());
     assertArrayEquals(subscriptionList1.toArray(),
@@ -904,7 +940,8 @@ public class PubSubImplTest {
 
   @Test
   public void testListSubscriptionsAsyncEmpty() throws ExecutionException, InterruptedException {
-    pubsub = options.service();
+    pubsub = new PubSubImpl(options, renewerMock);
+    resetOptionsForList(1);
     ListSubscriptionsRequest request = ListSubscriptionsRequest.newBuilder()
         .setProject(PROJECT_PB)
         .build();
@@ -915,7 +952,7 @@ public class PubSubImplTest {
         .build();
     Future<ListSubscriptionsResponse> futureResponse = Futures.immediateFuture(response);
     EasyMock.expect(pubsubRpcMock.list(request)).andReturn(futureResponse);
-    EasyMock.replay(pubsubRpcMock);
+    EasyMock.replay(pubsubRpcMock, renewerMock);
     AsyncPage<Subscription> page = pubsub.listSubscriptionsAsync().get();
     assertNull(page.nextPageCursor());
     assertNull(page.nextPageAsync().get());
@@ -928,7 +965,8 @@ public class PubSubImplTest {
   public void testListSubscriptionsAsyncWithOptions()
       throws ExecutionException, InterruptedException {
     String cursor = "cursor";
-    pubsub = options.service();
+    pubsub = new PubSubImpl(options, renewerMock);
+    resetOptionsForList(1);
     ListSubscriptionsRequest request = ListSubscriptionsRequest.newBuilder()
         .setProject(PROJECT_PB)
         .setPageSize(42)
@@ -943,7 +981,7 @@ public class PubSubImplTest {
         .build();
     Future<ListSubscriptionsResponse> futureResponse = Futures.immediateFuture(response);
     EasyMock.expect(pubsubRpcMock.list(request)).andReturn(futureResponse);
-    EasyMock.replay(pubsubRpcMock);
+    EasyMock.replay(pubsubRpcMock, renewerMock);
     AsyncPage<Subscription> page =
         pubsub.listSubscriptionsAsync(ListOption.pageSize(42), ListOption.pageToken(cursor)).get();
     assertNull(page.nextPageCursor());
@@ -956,7 +994,7 @@ public class PubSubImplTest {
   @Test
   public void testListTopicSubscriptions() {
     String cursor = "cursor";
-    pubsub = options.service();
+    pubsub = new PubSubImpl(options, renewerMock);
     ListTopicSubscriptionsRequest request = ListTopicSubscriptionsRequest.newBuilder()
         .setTopic(TOPIC_NAME_PB)
         .build();
@@ -970,7 +1008,7 @@ public class PubSubImplTest {
     Future<ListTopicSubscriptionsResponse> futureResponse =
         Futures.immediateFuture(response);
     EasyMock.expect(pubsubRpcMock.list(request)).andReturn(futureResponse);
-    EasyMock.replay(pubsubRpcMock);
+    EasyMock.replay(pubsubRpcMock, renewerMock);
     Page<SubscriptionId> page = pubsub.listSubscriptions(TOPIC);
     assertEquals(cursor, page.nextPageCursor());
     assertArrayEquals(subscriptionList.toArray(),
@@ -980,7 +1018,7 @@ public class PubSubImplTest {
   @Test
   public void testListTopicSubscriptionsNextPage() {
     String cursor1 = "cursor";
-    pubsub = options.service();
+    pubsub = new PubSubImpl(options, renewerMock);
     ListTopicSubscriptionsRequest request1 = ListTopicSubscriptionsRequest.newBuilder()
         .setTopic(TOPIC_NAME_PB)
         .build();
@@ -1008,7 +1046,7 @@ public class PubSubImplTest {
         Futures.immediateFuture(response2);
     EasyMock.expect(pubsubRpcMock.list(request1)).andReturn(futureResponse1);
     EasyMock.expect(pubsubRpcMock.list(request2)).andReturn(futureResponse2);
-    EasyMock.replay(pubsubRpcMock);
+    EasyMock.replay(pubsubRpcMock, renewerMock);
     Page<SubscriptionId> page = pubsub.listSubscriptions(TOPIC);
     assertEquals(cursor1, page.nextPageCursor());
     assertArrayEquals(subscriptionList1.toArray(),
@@ -1021,7 +1059,7 @@ public class PubSubImplTest {
 
   @Test
   public void testListTopicSubscriptionsEmpty() {
-    pubsub = options.service();
+    pubsub = new PubSubImpl(options, renewerMock);
     ListTopicSubscriptionsRequest request = ListTopicSubscriptionsRequest.newBuilder()
         .setTopic(TOPIC_NAME_PB)
         .build();
@@ -1033,7 +1071,7 @@ public class PubSubImplTest {
     Future<ListTopicSubscriptionsResponse> futureResponse =
         Futures.immediateFuture(response);
     EasyMock.expect(pubsubRpcMock.list(request)).andReturn(futureResponse);
-    EasyMock.replay(pubsubRpcMock);
+    EasyMock.replay(pubsubRpcMock, renewerMock);
     Page<SubscriptionId> page = pubsub.listSubscriptions(TOPIC);
     assertNull(page.nextPageCursor());
     assertNull(page.nextPage());
@@ -1044,7 +1082,7 @@ public class PubSubImplTest {
   @Test
   public void testListTopicSubscriptionsWithOptions() {
     String cursor = "cursor";
-    pubsub = options.service();
+    pubsub = new PubSubImpl(options, renewerMock);
     ListTopicSubscriptionsRequest request = ListTopicSubscriptionsRequest.newBuilder()
         .setTopic(TOPIC_NAME_PB)
         .setPageSize(42)
@@ -1060,7 +1098,7 @@ public class PubSubImplTest {
     Future<ListTopicSubscriptionsResponse> futureResponse =
         Futures.immediateFuture(response);
     EasyMock.expect(pubsubRpcMock.list(request)).andReturn(futureResponse);
-    EasyMock.replay(pubsubRpcMock);
+    EasyMock.replay(pubsubRpcMock, renewerMock);
     Page<SubscriptionId> page =
         pubsub.listSubscriptions(TOPIC, ListOption.pageSize(42), ListOption.pageToken(cursor));
     assertNull(page.nextPageCursor());
@@ -1072,7 +1110,7 @@ public class PubSubImplTest {
   @Test
   public void testListTopicSubscriptionsAsync() throws ExecutionException, InterruptedException {
     String cursor = "cursor";
-    pubsub = options.service();
+    pubsub = new PubSubImpl(options, renewerMock);
     ListTopicSubscriptionsRequest request = ListTopicSubscriptionsRequest.newBuilder()
         .setTopic(TOPIC_NAME_PB)
         .build();
@@ -1086,7 +1124,7 @@ public class PubSubImplTest {
     Future<ListTopicSubscriptionsResponse> futureResponse =
         Futures.immediateFuture(response);
     EasyMock.expect(pubsubRpcMock.list(request)).andReturn(futureResponse);
-    EasyMock.replay(pubsubRpcMock);
+    EasyMock.replay(pubsubRpcMock, renewerMock);
     AsyncPage<SubscriptionId> page = pubsub.listSubscriptionsAsync(TOPIC).get();
     assertEquals(cursor, page.nextPageCursor());
     assertArrayEquals(subscriptionList.toArray(),
@@ -1097,7 +1135,7 @@ public class PubSubImplTest {
   public void testListTopicSubscriptionsAsyncNextPage()
       throws ExecutionException, InterruptedException {
     String cursor1 = "cursor";
-    pubsub = options.service();
+    pubsub = new PubSubImpl(options, renewerMock);
     ListTopicSubscriptionsRequest request1 = ListTopicSubscriptionsRequest.newBuilder()
         .setTopic(TOPIC_NAME_PB)
         .build();
@@ -1125,7 +1163,7 @@ public class PubSubImplTest {
         Futures.immediateFuture(response2);
     EasyMock.expect(pubsubRpcMock.list(request1)).andReturn(futureResponse1);
     EasyMock.expect(pubsubRpcMock.list(request2)).andReturn(futureResponse2);
-    EasyMock.replay(pubsubRpcMock);
+    EasyMock.replay(pubsubRpcMock, renewerMock);
     AsyncPage<SubscriptionId> page = pubsub.listSubscriptionsAsync(TOPIC).get();
     assertEquals(cursor1, page.nextPageCursor());
     assertArrayEquals(subscriptionList1.toArray(),
@@ -1139,7 +1177,7 @@ public class PubSubImplTest {
   @Test
   public void testListTopicSubscriptionsAsyncEmpty()
       throws ExecutionException, InterruptedException {
-    pubsub = options.service();
+    pubsub = new PubSubImpl(options, renewerMock);
     ListTopicSubscriptionsRequest request = ListTopicSubscriptionsRequest.newBuilder()
         .setTopic(TOPIC_NAME_PB)
         .build();
@@ -1151,7 +1189,7 @@ public class PubSubImplTest {
     Future<ListTopicSubscriptionsResponse> futureResponse =
         Futures.immediateFuture(response);
     EasyMock.expect(pubsubRpcMock.list(request)).andReturn(futureResponse);
-    EasyMock.replay(pubsubRpcMock);
+    EasyMock.replay(pubsubRpcMock, renewerMock);
     AsyncPage<SubscriptionId> page = pubsub.listSubscriptionsAsync(TOPIC).get();
     assertNull(page.nextPageCursor());
     assertNull(page.nextPage());
@@ -1164,7 +1202,7 @@ public class PubSubImplTest {
   public void testListTopicSubscriptionsAsyncWithOptions()
       throws ExecutionException, InterruptedException {
     String cursor = "cursor";
-    pubsub = options.service();
+    pubsub = new PubSubImpl(options, renewerMock);
     ListTopicSubscriptionsRequest request = ListTopicSubscriptionsRequest.newBuilder()
         .setTopic(TOPIC_NAME_PB)
         .setPageSize(42)
@@ -1180,7 +1218,7 @@ public class PubSubImplTest {
     Future<ListTopicSubscriptionsResponse> futureResponse =
         Futures.immediateFuture(response);
     EasyMock.expect(pubsubRpcMock.list(request)).andReturn(futureResponse);
-    EasyMock.replay(pubsubRpcMock);
+    EasyMock.replay(pubsubRpcMock, renewerMock);
     AsyncPage<SubscriptionId> page = pubsub.listSubscriptionsAsync(
         TOPIC, ListOption.pageSize(42), ListOption.pageToken(cursor)).get();
     assertNull(page.nextPageCursor());
@@ -1191,62 +1229,122 @@ public class PubSubImplTest {
   }
 
   @Test
+  public void testPullMessages() {
+    pubsub = new PubSubImpl(options, renewerMock);
+    PullRequest request = PullRequest.newBuilder()
+        .setSubscription(SUBSCRIPTION_NAME_PB)
+        .setMaxMessages(42)
+        .setReturnImmediately(true)
+        .build();
+    List<ReceivedMessage> messageList = ImmutableList.of(
+        ReceivedMessage.fromPb(pubsub, SUBSCRIPTION, MESSAGE_PB1),
+        ReceivedMessage.fromPb(pubsub, SUBSCRIPTION, MESSAGE_PB2));
+    PullResponse response = PullResponse.newBuilder()
+        .addReceivedMessages(MESSAGE_PB1)
+        .addReceivedMessages(MESSAGE_PB2)
+        .build();
+    EasyMock.expect(pubsubRpcMock.pull(request)).andReturn(Futures.immediateFuture(response));
+    renewerMock.add(SUBSCRIPTION, ImmutableList.of("ackId1", "ackId2"));
+    EasyMock.replay(pubsubRpcMock, renewerMock);
+    Iterator<ReceivedMessage> messageIterator = pubsub.pull(SUBSCRIPTION, 42);
+    EasyMock.reset(renewerMock);
+    for (ReceivedMessage message : messageList) {
+      renewerMock.remove(SUBSCRIPTION, message.ackId());
+      EasyMock.expectLastCall();
+    }
+    EasyMock.replay(renewerMock);
+    while (messageIterator.hasNext()) {
+      messageIterator.next();
+    }
+  }
+
+  @Test
+  public void testPullMessagesAsync() throws ExecutionException, InterruptedException {
+    pubsub = new PubSubImpl(options, renewerMock);
+    PullRequest request = PullRequest.newBuilder()
+        .setSubscription(SUBSCRIPTION_NAME_PB)
+        .setMaxMessages(42)
+        .setReturnImmediately(true)
+        .build();
+    List<ReceivedMessage> messageList = ImmutableList.of(
+        ReceivedMessage.fromPb(pubsub, SUBSCRIPTION, MESSAGE_PB1),
+        ReceivedMessage.fromPb(pubsub, SUBSCRIPTION, MESSAGE_PB2));
+    PullResponse response = PullResponse.newBuilder()
+        .addReceivedMessages(MESSAGE_PB1)
+        .addReceivedMessages(MESSAGE_PB2)
+        .build();
+    EasyMock.expect(pubsubRpcMock.pull(request)).andReturn(Futures.immediateFuture(response));
+    renewerMock.add(SUBSCRIPTION, ImmutableList.of("ackId1", "ackId2"));
+    EasyMock.replay(pubsubRpcMock, renewerMock);
+    Iterator<ReceivedMessage> messageIterator = pubsub.pullAsync(SUBSCRIPTION, 42).get();
+    EasyMock.reset(renewerMock);
+    for (ReceivedMessage message : messageList) {
+      renewerMock.remove(SUBSCRIPTION, message.ackId());
+      EasyMock.expectLastCall();
+    }
+    EasyMock.replay(renewerMock);
+    while (messageIterator.hasNext()) {
+      messageIterator.next();
+    }
+  }
+
+  @Test
   public void testAckOneMessage() {
-    pubsub = options.service();
+    pubsub = new PubSubImpl(options, renewerMock);
     AcknowledgeRequest request = AcknowledgeRequest.newBuilder()
         .setSubscription(SUBSCRIPTION_NAME_PB)
         .addAckIds("ackId")
         .build();
     Future<Empty> response = Futures.immediateFuture(Empty.getDefaultInstance());
     EasyMock.expect(pubsubRpcMock.acknowledge(request)).andReturn(response);
-    EasyMock.replay(pubsubRpcMock);
+    EasyMock.replay(pubsubRpcMock, renewerMock);
     pubsub.ack(SUBSCRIPTION, "ackId");
   }
 
   @Test
   public void testAckOneMessageAsync() throws ExecutionException, InterruptedException {
-    pubsub = options.service();
+    pubsub = new PubSubImpl(options, renewerMock);
     AcknowledgeRequest request = AcknowledgeRequest.newBuilder()
         .setSubscription(SUBSCRIPTION_NAME_PB)
         .addAckIds("ackId")
         .build();
     Future<Empty> response = Futures.immediateFuture(Empty.getDefaultInstance());
     EasyMock.expect(pubsubRpcMock.acknowledge(request)).andReturn(response);
-    EasyMock.replay(pubsubRpcMock);
+    EasyMock.replay(pubsubRpcMock, renewerMock);
     Future<Void> future = pubsub.ackAsync(SUBSCRIPTION, "ackId");
     assertNull(future.get());
   }
 
   @Test
   public void testAckMoreMessages() {
-    pubsub = options.service();
+    pubsub = new PubSubImpl(options, renewerMock);
     AcknowledgeRequest request = AcknowledgeRequest.newBuilder()
         .setSubscription(SUBSCRIPTION_NAME_PB)
         .addAllAckIds(ImmutableList.of("ackId1", "ackId2"))
         .build();
     Future<Empty> response = Futures.immediateFuture(Empty.getDefaultInstance());
     EasyMock.expect(pubsubRpcMock.acknowledge(request)).andReturn(response);
-    EasyMock.replay(pubsubRpcMock);
+    EasyMock.replay(pubsubRpcMock, renewerMock);
     pubsub.ack(SUBSCRIPTION, "ackId1", "ackId2");
   }
 
   @Test
   public void testAckMoreMessagesAsync() throws ExecutionException, InterruptedException {
-    pubsub = options.service();
+    pubsub = new PubSubImpl(options, renewerMock);
     AcknowledgeRequest request = AcknowledgeRequest.newBuilder()
         .setSubscription(SUBSCRIPTION_NAME_PB)
         .addAllAckIds(ImmutableList.of("ackId1", "ackId2"))
         .build();
     Future<Empty> response = Futures.immediateFuture(Empty.getDefaultInstance());
     EasyMock.expect(pubsubRpcMock.acknowledge(request)).andReturn(response);
-    EasyMock.replay(pubsubRpcMock);
+    EasyMock.replay(pubsubRpcMock, renewerMock);
     Future<Void> future = pubsub.ackAsync(SUBSCRIPTION, "ackId1", "ackId2");
     assertNull(future.get());
   }
 
   @Test
   public void testAckMessageList() {
-    pubsub = options.service();
+    pubsub = new PubSubImpl(options, renewerMock);
     List<String> ackIds = ImmutableList.of("ackId1", "ackId2");
     AcknowledgeRequest request = AcknowledgeRequest.newBuilder()
         .setSubscription(SUBSCRIPTION_NAME_PB)
@@ -1254,13 +1352,13 @@ public class PubSubImplTest {
         .build();
     Future<Empty> response = Futures.immediateFuture(Empty.getDefaultInstance());
     EasyMock.expect(pubsubRpcMock.acknowledge(request)).andReturn(response);
-    EasyMock.replay(pubsubRpcMock);
+    EasyMock.replay(pubsubRpcMock, renewerMock);
     pubsub.ack(SUBSCRIPTION, ackIds);
   }
 
   @Test
   public void testAckMessageListAsync() throws ExecutionException, InterruptedException {
-    pubsub = options.service();
+    pubsub = new PubSubImpl(options, renewerMock);
     List<String> ackIds = ImmutableList.of("ackId1", "ackId2");
     AcknowledgeRequest request = AcknowledgeRequest.newBuilder()
         .setSubscription(SUBSCRIPTION_NAME_PB)
@@ -1268,14 +1366,14 @@ public class PubSubImplTest {
         .build();
     Future<Empty> response = Futures.immediateFuture(Empty.getDefaultInstance());
     EasyMock.expect(pubsubRpcMock.acknowledge(request)).andReturn(response);
-    EasyMock.replay(pubsubRpcMock);
+    EasyMock.replay(pubsubRpcMock, renewerMock);
     Future<Void> future = pubsub.ackAsync(SUBSCRIPTION, ackIds);
     assertNull(future.get());
   }
 
   @Test
   public void testNackOneMessage() {
-    pubsub = options.service();
+    pubsub = new PubSubImpl(options, renewerMock);
     ModifyAckDeadlineRequest request = ModifyAckDeadlineRequest.newBuilder()
         .setAckDeadlineSeconds(0)
         .setSubscription(SUBSCRIPTION_NAME_PB)
@@ -1283,13 +1381,13 @@ public class PubSubImplTest {
         .build();
     Future<Empty> response = Futures.immediateFuture(Empty.getDefaultInstance());
     EasyMock.expect(pubsubRpcMock.modify(request)).andReturn(response);
-    EasyMock.replay(pubsubRpcMock);
+    EasyMock.replay(pubsubRpcMock, renewerMock);
     pubsub.nack(SUBSCRIPTION, "ackId");
   }
 
   @Test
   public void testNackOneMessageAsync() throws ExecutionException, InterruptedException {
-    pubsub = options.service();
+    pubsub = new PubSubImpl(options, renewerMock);
     ModifyAckDeadlineRequest request = ModifyAckDeadlineRequest.newBuilder()
         .setAckDeadlineSeconds(0)
         .setSubscription(SUBSCRIPTION_NAME_PB)
@@ -1297,14 +1395,14 @@ public class PubSubImplTest {
         .build();
     Future<Empty> response = Futures.immediateFuture(Empty.getDefaultInstance());
     EasyMock.expect(pubsubRpcMock.modify(request)).andReturn(response);
-    EasyMock.replay(pubsubRpcMock);
+    EasyMock.replay(pubsubRpcMock, renewerMock);
     Future<Void> future = pubsub.nackAsync(SUBSCRIPTION, "ackId");
     assertNull(future.get());
   }
 
   @Test
   public void testNackMoreMessages() {
-    pubsub = options.service();
+    pubsub = new PubSubImpl(options, renewerMock);
     ModifyAckDeadlineRequest request = ModifyAckDeadlineRequest.newBuilder()
         .setAckDeadlineSeconds(0)
         .setSubscription(SUBSCRIPTION_NAME_PB)
@@ -1312,13 +1410,13 @@ public class PubSubImplTest {
         .build();
     Future<Empty> response = Futures.immediateFuture(Empty.getDefaultInstance());
     EasyMock.expect(pubsubRpcMock.modify(request)).andReturn(response);
-    EasyMock.replay(pubsubRpcMock);
+    EasyMock.replay(pubsubRpcMock, renewerMock);
     pubsub.nack(SUBSCRIPTION, "ackId1", "ackId2");
   }
 
   @Test
   public void testNackMoreMessagesAsync() throws ExecutionException, InterruptedException {
-    pubsub = options.service();
+    pubsub = new PubSubImpl(options, renewerMock);
     ModifyAckDeadlineRequest request = ModifyAckDeadlineRequest.newBuilder()
         .setAckDeadlineSeconds(0)
         .setSubscription(SUBSCRIPTION_NAME_PB)
@@ -1326,14 +1424,14 @@ public class PubSubImplTest {
         .build();
     Future<Empty> response = Futures.immediateFuture(Empty.getDefaultInstance());
     EasyMock.expect(pubsubRpcMock.modify(request)).andReturn(response);
-    EasyMock.replay(pubsubRpcMock);
+    EasyMock.replay(pubsubRpcMock, renewerMock);
     Future<Void> future = pubsub.nackAsync(SUBSCRIPTION, "ackId1", "ackId2");
     assertNull(future.get());
   }
 
   @Test
   public void testNackMessageList() {
-    pubsub = options.service();
+    pubsub = new PubSubImpl(options, renewerMock);
     List<String> ackIds = ImmutableList.of("ackId1", "ackId2");
     ModifyAckDeadlineRequest request = ModifyAckDeadlineRequest.newBuilder()
         .setAckDeadlineSeconds(0)
@@ -1342,13 +1440,13 @@ public class PubSubImplTest {
         .build();
     Future<Empty> response = Futures.immediateFuture(Empty.getDefaultInstance());
     EasyMock.expect(pubsubRpcMock.modify(request)).andReturn(response);
-    EasyMock.replay(pubsubRpcMock);
+    EasyMock.replay(pubsubRpcMock, renewerMock);
     pubsub.nack(SUBSCRIPTION, ackIds);
   }
 
   @Test
   public void testNackMessageListAsync() throws ExecutionException, InterruptedException {
-    pubsub = options.service();
+    pubsub = new PubSubImpl(options, renewerMock);
     List<String> ackIds = ImmutableList.of("ackId1", "ackId2");
     ModifyAckDeadlineRequest request = ModifyAckDeadlineRequest.newBuilder()
         .setAckDeadlineSeconds(0)
@@ -1357,14 +1455,14 @@ public class PubSubImplTest {
         .build();
     Future<Empty> response = Futures.immediateFuture(Empty.getDefaultInstance());
     EasyMock.expect(pubsubRpcMock.modify(request)).andReturn(response);
-    EasyMock.replay(pubsubRpcMock);
+    EasyMock.replay(pubsubRpcMock, renewerMock);
     Future<Void> future = pubsub.nackAsync(SUBSCRIPTION, ackIds);
     assertNull(future.get());
   }
 
   @Test
   public void testModifyAckDeadlineOneMessage() {
-    pubsub = options.service();
+    pubsub = new PubSubImpl(options, renewerMock);
     ModifyAckDeadlineRequest request = ModifyAckDeadlineRequest.newBuilder()
         .setAckDeadlineSeconds(10)
         .setSubscription(SUBSCRIPTION_NAME_PB)
@@ -1372,14 +1470,14 @@ public class PubSubImplTest {
         .build();
     Future<Empty> response = Futures.immediateFuture(Empty.getDefaultInstance());
     EasyMock.expect(pubsubRpcMock.modify(request)).andReturn(response);
-    EasyMock.replay(pubsubRpcMock);
+    EasyMock.replay(pubsubRpcMock, renewerMock);
     pubsub.modifyAckDeadline(SUBSCRIPTION, 10, TimeUnit.SECONDS, "ackId");
   }
 
   @Test
   public void testModifyAckDeadlineOneMessageAsync()
       throws ExecutionException, InterruptedException {
-    pubsub = options.service();
+    pubsub = new PubSubImpl(options, renewerMock);
     ModifyAckDeadlineRequest request = ModifyAckDeadlineRequest.newBuilder()
         .setAckDeadlineSeconds(10)
         .setSubscription(SUBSCRIPTION_NAME_PB)
@@ -1387,7 +1485,7 @@ public class PubSubImplTest {
         .build();
     Future<Empty> response = Futures.immediateFuture(Empty.getDefaultInstance());
     EasyMock.expect(pubsubRpcMock.modify(request)).andReturn(response);
-    EasyMock.replay(pubsubRpcMock);
+    EasyMock.replay(pubsubRpcMock, renewerMock);
     Future<Void> future =
         pubsub.modifyAckDeadlineAsync(SUBSCRIPTION, 10, TimeUnit.SECONDS, "ackId");
     assertNull(future.get());
@@ -1395,7 +1493,7 @@ public class PubSubImplTest {
 
   @Test
   public void testModifyAckDeadlineMoreMessages() {
-    pubsub = options.service();
+    pubsub = new PubSubImpl(options, renewerMock);
     ModifyAckDeadlineRequest request = ModifyAckDeadlineRequest.newBuilder()
         .setAckDeadlineSeconds(10)
         .setSubscription(SUBSCRIPTION_NAME_PB)
@@ -1403,14 +1501,14 @@ public class PubSubImplTest {
         .build();
     Future<Empty> response = Futures.immediateFuture(Empty.getDefaultInstance());
     EasyMock.expect(pubsubRpcMock.modify(request)).andReturn(response);
-    EasyMock.replay(pubsubRpcMock);
+    EasyMock.replay(pubsubRpcMock, renewerMock);
     pubsub.modifyAckDeadline(SUBSCRIPTION, 10, TimeUnit.SECONDS, "ackId1", "ackId2");
   }
 
   @Test
   public void testModifyAckDeadlineMoreMessagesAsync()
       throws ExecutionException, InterruptedException {
-    pubsub = options.service();
+    pubsub = new PubSubImpl(options, renewerMock);
     ModifyAckDeadlineRequest request = ModifyAckDeadlineRequest.newBuilder()
         .setAckDeadlineSeconds(10)
         .setSubscription(SUBSCRIPTION_NAME_PB)
@@ -1418,7 +1516,7 @@ public class PubSubImplTest {
         .build();
     Future<Empty> response = Futures.immediateFuture(Empty.getDefaultInstance());
     EasyMock.expect(pubsubRpcMock.modify(request)).andReturn(response);
-    EasyMock.replay(pubsubRpcMock);
+    EasyMock.replay(pubsubRpcMock, renewerMock);
     Future<Void> future =
         pubsub.modifyAckDeadlineAsync(SUBSCRIPTION, 10, TimeUnit.SECONDS, "ackId1", "ackId2");
     assertNull(future.get());
@@ -1426,7 +1524,7 @@ public class PubSubImplTest {
 
   @Test
   public void testModifyAckDeadlineMessageList() {
-    pubsub = options.service();
+    pubsub = new PubSubImpl(options, renewerMock);
     List<String> ackIds = ImmutableList.of("ackId1", "ackId2");
     ModifyAckDeadlineRequest request = ModifyAckDeadlineRequest.newBuilder()
         .setAckDeadlineSeconds(10)
@@ -1435,14 +1533,14 @@ public class PubSubImplTest {
         .build();
     Future<Empty> response = Futures.immediateFuture(Empty.getDefaultInstance());
     EasyMock.expect(pubsubRpcMock.modify(request)).andReturn(response);
-    EasyMock.replay(pubsubRpcMock);
+    EasyMock.replay(pubsubRpcMock, renewerMock);
     pubsub.modifyAckDeadline(SUBSCRIPTION, 10, TimeUnit.SECONDS, ackIds);
   }
 
   @Test
   public void testModifyAckDeadlineMessageListAsync()
       throws ExecutionException, InterruptedException {
-    pubsub = options.service();
+    pubsub = new PubSubImpl(options, renewerMock);
     List<String> ackIds = ImmutableList.of("ackId1", "ackId2");
     ModifyAckDeadlineRequest request = ModifyAckDeadlineRequest.newBuilder()
         .setAckDeadlineSeconds(10)
@@ -1451,17 +1549,22 @@ public class PubSubImplTest {
         .build();
     Future<Empty> response = Futures.immediateFuture(Empty.getDefaultInstance());
     EasyMock.expect(pubsubRpcMock.modify(request)).andReturn(response);
-    EasyMock.replay(pubsubRpcMock);
+    EasyMock.replay(pubsubRpcMock, renewerMock);
     Future<Void> future = pubsub.modifyAckDeadlineAsync(SUBSCRIPTION, 10, TimeUnit.SECONDS, ackIds);
     assertNull(future.get());
   }
 
   @Test
   public void testClose() throws Exception {
-    pubsub = options.service();
+    pubsub = new PubSubImpl(options, renewerMock);
     pubsubRpcMock.close();
     EasyMock.expectLastCall();
-    EasyMock.replay(pubsubRpcMock);
+    EasyMock.expectLastCall();
+    renewerMock.close();
+    EasyMock.expectLastCall();
+    EasyMock.replay(pubsubRpcMock, renewerMock);
+    pubsub.close();
+    // closing again should do nothing
     pubsub.close();
   }
 }

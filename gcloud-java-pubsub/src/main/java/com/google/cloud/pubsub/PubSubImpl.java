@@ -16,9 +16,9 @@
 
 package com.google.cloud.pubsub;
 
+import static com.google.api.client.util.Preconditions.checkArgument;
 import static com.google.cloud.pubsub.PubSub.ListOption.OptionType.PAGE_SIZE;
 import static com.google.cloud.pubsub.PubSub.ListOption.OptionType.PAGE_TOKEN;
-import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.util.concurrent.Futures.lazyTransform;
 
 import com.google.cloud.AsyncPage;
@@ -29,10 +29,12 @@ import com.google.cloud.PageImpl;
 import com.google.cloud.pubsub.spi.PubSubRpc;
 import com.google.cloud.pubsub.spi.v1.PublisherApi;
 import com.google.cloud.pubsub.spi.v1.SubscriberApi;
+import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Function;
 import com.google.common.base.Throwables;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterables;
+import com.google.common.collect.Iterators;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.google.common.util.concurrent.Uninterruptibles;
@@ -52,6 +54,8 @@ import com.google.pubsub.v1.ModifyAckDeadlineRequest;
 import com.google.pubsub.v1.ModifyPushConfigRequest;
 import com.google.pubsub.v1.PublishRequest;
 import com.google.pubsub.v1.PublishResponse;
+import com.google.pubsub.v1.PullRequest;
+import com.google.pubsub.v1.PullResponse;
 
 import java.util.Collections;
 import java.util.Iterator;
@@ -64,6 +68,8 @@ import java.util.concurrent.TimeUnit;
 class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
 
   private final PubSubRpc rpc;
+  private final AckDeadlineRenewer ackDeadlineRenewer;
+  private boolean closed;
 
   private static final Function<Empty, Void> EMPTY_TO_VOID_FUNCTION = new Function<Empty, Void>() {
     @Override
@@ -78,10 +84,25 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
           return input != null;
         }
       };
+  private static final Function<com.google.pubsub.v1.ReceivedMessage, String>
+      MESSAGE_TO_ACK_ID_FUNCTION = new Function<com.google.pubsub.v1.ReceivedMessage, String>() {
+        @Override
+        public String apply(com.google.pubsub.v1.ReceivedMessage message) {
+          return message.getAckId();
+        }
+      };
 
   PubSubImpl(PubSubOptions options) {
     super(options);
     rpc = options.rpc();
+    ackDeadlineRenewer = new AckDeadlineRenewer(this);
+  }
+
+  @VisibleForTesting
+  PubSubImpl(PubSubOptions options, AckDeadlineRenewer ackDeadlineRenewer) {
+    super(options);
+    rpc = options.rpc();
+    this.ackDeadlineRenewer = ackDeadlineRenewer;
   }
 
   private abstract static class BasePageFetcher<T> implements AsyncPageImpl.NextPageFetcher<T> {
@@ -445,17 +466,35 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
 
   @Override
   public Iterator<ReceivedMessage> pull(String subscription, int maxMessages) {
-    // this should set return_immediately to true
-    return null;
+    return get(pullAsync(subscription, maxMessages));
   }
 
   @Override
-  public Future<Iterator<ReceivedMessage>> pullAsync(String subscription, int maxMessages) {
-    // though this method can set return_immediately to false (as future can be canceled) I
-    // suggest to keep it false so sync could delegate to asyc and use the same options
-    // this method also should use the VTKIT thread-pool to renew ack deadline for non consumed
-    // messages
-    return null;
+  public Future<Iterator<ReceivedMessage>> pullAsync(final String subscription, int maxMessages) {
+    PullRequest request = PullRequest.newBuilder().setReturnImmediately(true)
+        .setSubscription(SubscriberApi.formatSubscriptionName(options().projectId(), subscription))
+        .setMaxMessages(maxMessages)
+        .setReturnImmediately(true)
+        .build();
+    Future<PullResponse> response = rpc.pull(request);
+    return lazyTransform(response, new Function<PullResponse, Iterator<ReceivedMessage>>() {
+      @Override
+      public Iterator<ReceivedMessage> apply(PullResponse pullResponse) {
+        // Add all received messages to the automatic ack deadline renewer
+        List<String> ackIds = Lists.transform(pullResponse.getReceivedMessagesList(),
+            MESSAGE_TO_ACK_ID_FUNCTION);
+        ackDeadlineRenewer.add(subscription, ackIds);
+        return Iterators.transform(pullResponse.getReceivedMessagesList().iterator(),
+            new Function<com.google.pubsub.v1.ReceivedMessage, ReceivedMessage>() {
+              @Override
+              public ReceivedMessage apply(com.google.pubsub.v1.ReceivedMessage receivedMessage) {
+                // Remove consumed message from automatic ack deadline renewer
+                ackDeadlineRenewer.remove(subscription, receivedMessage.getAckId());
+                return ReceivedMessage.fromPb(PubSubImpl.this, subscription, receivedMessage);
+              }
+            });
+      }
+    });
   }
 
   @Override
@@ -549,6 +588,13 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
 
   @Override
   public void close() throws Exception {
+    if (closed) {
+      return;
+    }
+    closed = true;
     rpc.close();
+    if (ackDeadlineRenewer != null) {
+      ackDeadlineRenewer.close();
+    }
   }
 }
