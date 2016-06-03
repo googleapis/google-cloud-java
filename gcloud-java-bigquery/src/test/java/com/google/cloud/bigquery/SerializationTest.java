@@ -68,7 +68,7 @@ public class SerializationTest extends BaseSerializationTest {
       .encoding(StandardCharsets.ISO_8859_1)
       .fieldDelimiter(",")
       .quote("\"")
-      .skipLeadingRows(42)
+      .skipLeadingRows(42L)
       .build();
   private static final Field FIELD_SCHEMA1 =
       Field.builder("StringField", Field.Type.string())
