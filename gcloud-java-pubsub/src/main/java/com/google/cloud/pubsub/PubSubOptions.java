@@ -86,6 +86,11 @@ public class PubSubOptions extends GrpcServiceOptions<PubSub, PubSubRpc, PubSubO
   }
 
   @Override
+  protected ExecutorFactory executorFactory() {
+    return super.executorFactory();
+  }
+
+  @Override
   protected PubSubFactory defaultServiceFactory() {
     return DefaultPubSubFactory.INSTANCE;
   }
