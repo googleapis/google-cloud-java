@@ -16,7 +16,6 @@
 
 package com.google.cloud;
 
-import static com.google.common.base.MoreObjects.firstNonNull;
 import static com.google.common.base.Preconditions.checkArgument;
 
 import com.google.common.base.MoreObjects;
@@ -185,24 +184,8 @@ public abstract class WaitForOption implements Serializable {
     return Objects.equals(option.optionType, option.optionType);
   }
 
-  @Override
-  public boolean equals(Object obj) {
-    if (obj == this) {
-      return true;
-    }
-    if (obj == null || !(obj.getClass().equals(WaitForOption.class))) {
-      return false;
-    }
-    return baseEquals((WaitForOption) obj);
-  }
-
   final int baseHashCode() {
     return Objects.hash(optionType);
-  }
-
-  @Override
-  public int hashCode() {
-    return baseHashCode();
   }
 
   @SuppressWarnings("unchecked")
@@ -215,7 +198,7 @@ public abstract class WaitForOption implements Serializable {
         foundOption = (T) option;
       }
     }
-    return firstNonNull(foundOption, defaultValue);
+    return foundOption != null ? foundOption : defaultValue;
   }
 
   /**
