@@ -22,6 +22,7 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
+import com.google.api.client.util.Lists;
 import com.google.cloud.AsyncPage;
 import com.google.cloud.Page;
 import com.google.common.collect.ImmutableList;
@@ -37,6 +38,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
+import java.util.concurrent.TimeUnit;
 
 /**
  * A base class for system tests. This class can be extended to run system tests in different
@@ -427,5 +429,219 @@ public abstract class BaseSystemTest {
     assertTrue(subscription1.delete());
     assertTrue(subscription2.delete());
     assertTrue(subscription3.delete());
+  }
+
+  @Test
+  public void testPullMessages() {
+    String topic = formatForTest("test-pull-messages-topic");
+    pubsub().create(TopicInfo.of(topic));
+    String subscription = formatForTest("test-pull-messages-subscription");
+    pubsub().create(SubscriptionInfo.of(topic, subscription));
+    Message message1 = Message.of("payload1");
+    Message message2 = Message.of("payload2");
+    List<String> messageIds = pubsub().publish(topic, ImmutableList.of(message1, message2));
+    assertEquals(2, messageIds.size());
+    Iterator<ReceivedMessage> iterator = pubsub().pull(subscription, 2);
+    assertEquals(message1.payloadAsString(), iterator.next().payloadAsString());
+    assertEquals(message2.payloadAsString(), iterator.next().payloadAsString());
+    assertTrue(pubsub().deleteSubscription(subscription));
+    assertTrue(pubsub().deleteTopic(topic));
+  }
+
+  @Test
+  public void testPullMessagesAndAutoRenewDeadline() throws InterruptedException {
+    String topic = formatForTest("test-pull-messages-and-renew-deadline-topic");
+    pubsub().create(TopicInfo.of(topic));
+    String subscription = formatForTest("test-pull-messages-and-renew-deadline-subscription");
+    pubsub().create(SubscriptionInfo.builder(topic, subscription).ackDeadLineSeconds(10).build());
+    Message message1 = Message.of("payload1");
+    Message message2 = Message.of("payload2");
+    // todo(mziccard): use batch publish if #1017 gets fixed, or remove this comment
+    pubsub().publish(topic, message1);
+    pubsub().publish(topic, message2);
+    Iterator<ReceivedMessage> iterator = pubsub().pull(subscription, 2);
+    ReceivedMessage consumedMessage = iterator.next();
+    Thread.sleep(15000);
+    // first message was consumed while second message is still being renewed
+    Iterator<ReceivedMessage> nextIterator = pubsub().pull(subscription, 2);
+    assertTrue(nextIterator.hasNext());
+    ReceivedMessage message = nextIterator.next();
+    assertEquals(consumedMessage.payloadAsString(), message.payloadAsString());
+    assertFalse(nextIterator.hasNext());
+    consumedMessage.ack();
+    iterator.next().ack();
+    nextIterator = pubsub().pull(subscription, 2);
+    assertFalse(nextIterator.hasNext());
+    assertTrue(pubsub().deleteSubscription(subscription));
+    assertTrue(pubsub().deleteTopic(topic));
+  }
+
+  @Test
+  public void testPullMessagesAndModifyAckDeadline() throws InterruptedException {
+    String topic = formatForTest("test-pull-messages-and-modify-deadline-topic");
+    pubsub().create(TopicInfo.of(topic));
+    String subscription = formatForTest("test-pull-messages-and-modify-deadline-subscription");
+    pubsub().create(SubscriptionInfo.builder(topic, subscription).ackDeadLineSeconds(10).build());
+    Message message1 = Message.of("payload1");
+    Message message2 = Message.of("payload2");
+    // todo(mziccard): use batch publish if #1017 gets fixed, or remove this comment
+    pubsub().publish(topic, message1);
+    pubsub().publish(topic, message2);
+    // Consume all messages and stop ack renewal
+    List<ReceivedMessage> receivedMessages = Lists.newArrayList(pubsub().pull(subscription, 2));
+    receivedMessages.get(0).modifyAckDeadline(60, TimeUnit.SECONDS);
+    Thread.sleep(15000);
+    // first message was renewed while second message should still be sent on pull requests
+    Iterator<ReceivedMessage> nextIterator = pubsub().pull(subscription, 2);
+    assertTrue(nextIterator.hasNext());
+    ReceivedMessage message = nextIterator.next();
+    assertEquals(receivedMessages.get(1).payloadAsString(), message.payloadAsString());
+    assertFalse(nextIterator.hasNext());
+    assertTrue(pubsub().deleteSubscription(subscription));
+    assertTrue(pubsub().deleteTopic(topic));
+  }
+
+  @Test
+  public void testPullNonExistingSubscription() {
+    thrown.expect(PubSubException.class);
+    pubsub().pull(formatForTest("non-existing-subscription"), 2);
+  }
+
+  @Test
+  public void testPullMessagesAsync() throws ExecutionException, InterruptedException {
+    String topic = formatForTest("test-pull-messages-async-topic");
+    pubsub().create(TopicInfo.of(topic));
+    String subscription = formatForTest("test-pull-messages-async-subscription");
+    pubsub().create(SubscriptionInfo.of(topic, subscription));
+    Message message1 = Message.of("payload1");
+    Message message2 = Message.of("payload2");
+    List<String> messageIds = pubsub().publish(topic, ImmutableList.of(message1, message2));
+    assertEquals(2, messageIds.size());
+    Iterator<ReceivedMessage> iterator = pubsub().pullAsync(subscription, 2).get();
+    assertEquals(message1.payloadAsString(), iterator.next().payloadAsString());
+    assertEquals(message2.payloadAsString(), iterator.next().payloadAsString());
+    assertTrue(pubsub().deleteSubscription(subscription));
+    assertTrue(pubsub().deleteTopic(topic));
+  }
+
+  @Test
+  public void testPullAsyncNonExistingSubscription()
+      throws ExecutionException, InterruptedException {
+    thrown.expect(ExecutionException.class);
+    pubsub().pullAsync(formatForTest("non-existing-subscription"), 2).get();
+  }
+
+  @Test
+  public void testAckAndNackOneMessage() {
+    String topic = formatForTest("test-ack-one-message-topic");
+    pubsub().create(TopicInfo.of(topic));
+    String subscription = formatForTest("test-ack-one-message-subscription");
+    pubsub().create(SubscriptionInfo.of(topic, subscription));
+    Message message = Message.of("payload");
+    assertNotNull(pubsub().publish(topic, message));
+    Iterator<ReceivedMessage> receivedMessages = pubsub().pull(subscription, 1);
+    receivedMessages.next().nack();
+    receivedMessages = pubsub().pull(subscription, 1);
+    receivedMessages.next().ack();
+    assertFalse(pubsub().pull(subscription, 1).hasNext());
+    assertTrue(pubsub().deleteSubscription(subscription));
+    assertTrue(pubsub().deleteTopic(topic));
+  }
+
+  @Test
+  public void testAckAndNackOneMessageAsync() throws ExecutionException, InterruptedException {
+    String topic = formatForTest("test-ack-one-message-async-topic");
+    pubsub().create(TopicInfo.of(topic));
+    String subscription = formatForTest("test-ack-one-message-async-subscription");
+    pubsub().create(SubscriptionInfo.of(topic, subscription));
+    Message message = Message.of("payload");
+    assertNotNull(pubsub().publish(topic, message));
+    Iterator<ReceivedMessage> receivedMessages = pubsub().pull(subscription, 1);
+    receivedMessages.next().nackAsync().get();
+    receivedMessages = pubsub().pull(subscription, 1);
+    receivedMessages.next().ackAsync().get();
+    assertFalse(pubsub().pull(subscription, 1).hasNext());
+    assertTrue(pubsub().deleteSubscription(subscription));
+    assertTrue(pubsub().deleteTopic(topic));
+  }
+
+  @Test
+  public void testAckAndNackMoreMessages() throws ExecutionException, InterruptedException {
+    String topic = formatForTest("test-ack-more-messages-topic");
+    pubsub().create(TopicInfo.of(topic));
+    String subscription = formatForTest("test-ack-more-messages-subscription");
+    pubsub().create(SubscriptionInfo.of(topic, subscription));
+    Message message1 = Message.of("payload1");
+    Message message2 = Message.of("payload2");
+    assertNotNull(pubsub().publish(topic, message1, message2));
+    Iterator<ReceivedMessage> receivedMessages = pubsub().pull(subscription, 2);
+    pubsub().nack(subscription, receivedMessages.next().ackId(), receivedMessages.next().ackId());
+    receivedMessages = pubsub().pull(subscription, 2);
+    pubsub().ack(subscription, receivedMessages.next().ackId(), receivedMessages.next().ackId());
+    assertFalse(pubsub().pull(subscription, 2).hasNext());
+    assertTrue(pubsub().deleteSubscription(subscription));
+    assertTrue(pubsub().deleteTopic(topic));
+  }
+
+  @Test
+  public void testAckAndNackMoreMessagesAsync() throws ExecutionException, InterruptedException {
+    String topic = formatForTest("test-ack-more-messages-async-topic");
+    pubsub().create(TopicInfo.of(topic));
+    String subscription = formatForTest("test-ack-more-messages-async-subscription");
+    pubsub().create(SubscriptionInfo.of(topic, subscription));
+    Message message1 = Message.of("payload1");
+    Message message2 = Message.of("payload2");
+    assertNotNull(pubsub().publish(topic, message1, message2));
+    Iterator<ReceivedMessage> receivedMessages = pubsub().pull(subscription, 2);
+    pubsub()
+        .nackAsync(subscription, receivedMessages.next().ackId(), receivedMessages.next().ackId())
+        .get();
+    receivedMessages = pubsub().pull(subscription, 2);
+    pubsub()
+        .ackAsync(subscription, receivedMessages.next().ackId(), receivedMessages.next().ackId())
+        .get();
+    assertFalse(pubsub().pull(subscription, 2).hasNext());
+    assertTrue(pubsub().deleteSubscription(subscription));
+    assertTrue(pubsub().deleteTopic(topic));
+  }
+
+  @Test
+  public void testAckAndNackMessageList() throws ExecutionException, InterruptedException {
+    String topic = formatForTest("test-ack-message-list-topic");
+    pubsub().create(TopicInfo.of(topic));
+    String subscription = formatForTest("test-ack-message-list-subscription");
+    pubsub().create(SubscriptionInfo.of(topic, subscription));
+    Message message1 = Message.of("payload1");
+    Message message2 = Message.of("payload2");
+    assertNotNull(pubsub().publish(topic, ImmutableList.of(message1, message2)));
+    Iterator<ReceivedMessage> receivedMessages = pubsub().pull(subscription, 2);
+    pubsub().nack(subscription,
+        ImmutableList.of(receivedMessages.next().ackId(), receivedMessages.next().ackId()));
+    receivedMessages = pubsub().pull(subscription, 2);
+    pubsub().ack(subscription,
+        ImmutableList.of(receivedMessages.next().ackId(), receivedMessages.next().ackId()));
+    assertFalse(pubsub().pull(subscription, 2).hasNext());
+    assertTrue(pubsub().deleteSubscription(subscription));
+    assertTrue(pubsub().deleteTopic(topic));
+  }
+
+  @Test
+  public void testAckAndNackMessageListAsync() throws ExecutionException, InterruptedException {
+    String topic = formatForTest("test-ack-message-list-async-topic");
+    pubsub().create(TopicInfo.of(topic));
+    String subscription = formatForTest("test-ack-message-list-async-subscription");
+    pubsub().create(SubscriptionInfo.of(topic, subscription));
+    Message message1 = Message.of("payload1");
+    Message message2 = Message.of("payload2");
+    assertNotNull(pubsub().publish(topic, ImmutableList.of(message1, message2)));
+    Iterator<ReceivedMessage> receivedMessages = pubsub().pull(subscription, 2);
+    pubsub().nackAsync(subscription,
+        ImmutableList.of(receivedMessages.next().ackId(), receivedMessages.next().ackId())).get();
+    receivedMessages = pubsub().pull(subscription, 2);
+    pubsub().ackAsync(subscription,
+        ImmutableList.of(receivedMessages.next().ackId(), receivedMessages.next().ackId())).get();
+    assertFalse(pubsub().pull(subscription, 2).hasNext());
+    assertTrue(pubsub().deleteSubscription(subscription));
+    assertTrue(pubsub().deleteTopic(topic));
   }
 }

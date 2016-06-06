@@ -25,7 +25,9 @@ import org.easymock.EasyMock;
 import org.easymock.IAnswer;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.Timeout;
 
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.Future;
@@ -46,6 +48,9 @@ public class AckDeadlineRenewerTest {
 
   private PubSub pubsub;
   private AckDeadlineRenewer ackDeadlineRenewer;
+
+  @Rule
+  public Timeout globalTimeout = Timeout.seconds(60);
 
   @Before
   public void setUp() {

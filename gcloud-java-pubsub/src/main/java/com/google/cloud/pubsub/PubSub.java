@@ -381,8 +381,56 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
    */
   Future<AsyncPage<SubscriptionId>> listSubscriptionsAsync(String topic, ListOption... options);
 
+  /**
+   * Pulls messages from the provided subscription. This method possibly returns no messages if no
+   * message was available at the time the request was processed by the Pub/Sub service (i.e. the
+   * system is not allowed to wait until at least one message is available). Pulled messages have
+   * their acknowledge deadline automatically renewed until they are explicitly consumed using
+   * {@link Iterator#next()}.
+   *
+   * <p>Example usage of synchronous message pulling:
+   * <pre> {@code
+   * Iterator<ReceivedMessage> messageIterator = pubsub.pull("subscription", 100);
+   * while (messageIterator.hasNext()) {
+   *   ReceivedMessage message = messageIterator.next();
+   *   // message's acknowledge deadline is no longer automatically renewed. If processing takes
+   *   // long pubsub.modifyAckDeadline(String, String, long, TimeUnit) can be used to extend it.
+   *   doSomething(message);
+   *   message.ack(); // or message.nack()
+   * }}</pre>
+   *
+   * @param subscription the subscription from which to pull messages
+   * @param maxMessages the maximum number of messages pulled by this method. This method can
+   *     possibly return fewer messages.
+   * @throws PubSubException upon failure
+   */
   Iterator<ReceivedMessage> pull(String subscription, int maxMessages);
 
+  /**
+   * Sends a request for pulling messages from the provided subscription. This method returns a
+   * {@code Future} object to consume the result. {@link Future#get()} returns a message iterator.
+   * This method possibly returns no messages if no message was available at the time the request
+   * was processed by the Pub/Sub service (i.e. the system is not allowed to wait until at least one
+   * message is available).
+   *
+   * <p>Example usage of asynchronous message pulling:
+   * <pre> {@code
+   * Future<Iterator<ReceivedMessage>> future = pubsub.pull("subscription", 100);
+   * // do something while the request gets processed
+   * Iterator<ReceivedMessage> messageIterator = future.get();
+   * while (messageIterator.hasNext()) {
+   *   ReceivedMessage message = messageIterator.next();
+   *   // message's acknowledge deadline is no longer automatically renewed. If processing takes
+   *   // long pubsub.modifyAckDeadline(String, String, long, TimeUnit) can be used to extend it.
+   *   doSomething(message);
+   *   message.ack(); // or message.nack()
+   * }}</pre>
+   *
+   * @param subscription the subscription from which to pull messages
+   * @param maxMessages the maximum number of messages pulled by this method. This method can
+   *     possibly return fewer messages.
+   * @throws PubSubException upon failure
+   */
   Future<Iterator<ReceivedMessage>> pullAsync(String subscription, int maxMessages);
 
   MessageConsumer pullAsync(String subscription, MessageProcessor callback, PullOption... options);
