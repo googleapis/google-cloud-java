@@ -24,6 +24,8 @@ import static org.junit.Assert.assertTrue;
 
 import com.google.cloud.AsyncPage;
 import com.google.cloud.Page;
+import com.google.cloud.pubsub.PubSub.MessageConsumer;
+import com.google.cloud.pubsub.PubSub.MessageProcessor;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
@@ -33,9 +35,12 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
+import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
@@ -529,6 +534,150 @@ public abstract class BaseSystemTest {
       throws ExecutionException, InterruptedException {
     thrown.expect(ExecutionException.class);
     pubsub().pullAsync(formatForTest("non-existing-subscription"), 2).get();
+  }
+
+  @Test
+  public void testMessageConsumer() throws Exception {
+    String topic = formatForTest("test-message-consumer-topic");
+    pubsub().create(TopicInfo.of(topic));
+    String subscription = formatForTest("test-message-consumer-subscription");
+    pubsub().create(SubscriptionInfo.of(topic, subscription));
+    Message message1 = Message.of("payload1");
+    Message message2 = Message.of("payload2");
+    Set<String> payloads = Sets.newHashSet("payload1", "payload2");
+    List<String> messageIds = pubsub().publish(topic, ImmutableList.of(message1, message2));
+    assertEquals(2, messageIds.size());
+    final List<Message> receivedMessages = Collections.synchronizedList(new ArrayList<Message>());
+    final CountDownLatch countDownLatch = new CountDownLatch(2);
+    MessageProcessor processor = new MessageProcessor() {
+      @Override
+      public void process(Message message) throws Exception {
+        receivedMessages.add(message);
+        countDownLatch.countDown();
+      }
+    };
+    try(MessageConsumer consumer = pubsub().pullAsync(subscription, processor)) {
+      countDownLatch.await();
+    }
+    for (Message message : receivedMessages) {
+      payloads.contains(message.payloadAsString());
+    }
+    // Messages have all been acked, they should not be pulled again
+    Iterator<ReceivedMessage> messages = pubsub().pull(subscription, 2);
+    assertFalse(messages.hasNext());
+    assertTrue(pubsub().deleteSubscription(subscription));
+    assertTrue(pubsub().deleteTopic(topic));
+  }
+
+  @Test
+  public void testMessageConsumerNack() throws Exception {
+    String topic = formatForTest("test-message-consumer-nack-topic");
+    pubsub().create(TopicInfo.of(topic));
+    String subscription = formatForTest("test-message-consumer-nack-subscription");
+    pubsub().create(SubscriptionInfo.of(topic, subscription));
+    Message message1 = Message.of("payload1");
+    Message message2 = Message.of("payload2");
+    Set<String> payloads = Sets.newHashSet("payload1", "payload2");
+    List<String> messageIds = pubsub().publish(topic, ImmutableList.of(message1, message2));
+    assertEquals(2, messageIds.size());
+    final List<Message> receivedMessages = Collections.synchronizedList(new ArrayList<Message>());
+    final CountDownLatch countDownLatch = new CountDownLatch(2);
+    MessageProcessor processor = new MessageProcessor() {
+      @Override
+      public void process(Message message) throws Exception {
+        receivedMessages.add(message);
+        countDownLatch.countDown();
+        throw new RuntimeException("Force nack");
+      }
+    };
+    try (MessageConsumer consumer = pubsub().pullAsync(subscription, processor)) {
+      countDownLatch.await();
+    }
+    for (Message message : receivedMessages) {
+      payloads.contains(message.payloadAsString());
+    }
+    // Messages have all been nacked, we should be able to pull them again
+    Thread.sleep(5000);
+    Iterator<ReceivedMessage> messages = pubsub().pull(subscription, 2);
+    while (messages.hasNext()) {
+      payloads.contains(messages.next().payloadAsString());
+    }
+    assertTrue(pubsub().deleteSubscription(subscription));
+    assertTrue(pubsub().deleteTopic(topic));
+  }
+
+  @Test
+  public void testMessageConsumerWithMoreMessages() throws Exception {
+    String topic = formatForTest("test-message-consumer-more-messages-topic");
+    pubsub().create(TopicInfo.of(topic));
+    String subscription = formatForTest("test-message-consumer-more-messages-subscriptions");
+    pubsub().create(SubscriptionInfo.of(topic, subscription));
+    int totalMessages = 200;
+    Set<String> payloads = Sets.newHashSetWithExpectedSize(totalMessages);
+    List<Message> messagesToSend = Lists.newArrayListWithCapacity(totalMessages);
+    for (int i = 0; i < totalMessages; i++) {
+      String payload = "payload" + i;
+      messagesToSend.add(Message.of(payload));
+      payloads.add(payload);
+
+    }
+    List<String> messageIds = pubsub().publish(topic, messagesToSend);
+    assertEquals(totalMessages, messageIds.size());
+    final List<Message> receivedMessages = Collections.synchronizedList(new ArrayList<Message>());
+    final CountDownLatch countDownLatch = new CountDownLatch(totalMessages);
+    MessageProcessor processor = new MessageProcessor() {
+      @Override
+      public void process(Message message) throws Exception {
+        receivedMessages.add(message);
+        countDownLatch.countDown();
+      }
+    };
+    try(MessageConsumer consumer = pubsub().pullAsync(subscription, processor)) {
+      countDownLatch.await();
+    }
+    // Messages have all been acked, they should not be pulled again
+    Iterator<ReceivedMessage> messages = pubsub().pull(subscription, totalMessages);
+    assertFalse(messages.hasNext());
+    assertTrue(pubsub().deleteSubscription(subscription));
+    assertTrue(pubsub().deleteTopic(topic));
+  }
+
+  @Test
+  public void testMessageConsumerAndAutoRenewDeadline() throws Exception {
+    String topic = formatForTest("test-message-consumer-and-renew-deadline-topic");
+    pubsub().create(TopicInfo.of(topic));
+    final String subscription =
+        formatForTest("test-message-consumer-and-renew-deadline-subscription");
+    pubsub().create(SubscriptionInfo.builder(topic, subscription).ackDeadLineSeconds(10).build());
+    Message message1 = Message.of("payload1");
+    Message message2 = Message.of("payload2");
+    Set<String> payloads = Sets.newHashSet("payload1", "payload2");
+    List<String> messageIds = pubsub().publish(topic, ImmutableList.of(message1, message2));
+    assertEquals(2, messageIds.size());
+    final List<Message> receivedMessages = Collections.synchronizedList(new ArrayList<Message>());
+    final CountDownLatch countDownLatch = new CountDownLatch(2);
+    MessageProcessor processor = new MessageProcessor() {
+      @Override
+      public void process(Message message) throws Exception {
+        receivedMessages.add(message);
+        Thread.sleep(15000);
+        // message deadline is being renewed, it should not be pulled again
+        Iterator<ReceivedMessage> messages = pubsub().pull(subscription, 2);
+        assertFalse(messages.hasNext());
+        countDownLatch.countDown();
+      }
+    };
+    try(MessageConsumer consumer = pubsub().pullAsync(subscription, processor)) {
+      countDownLatch.await();
+    }
+    for (Message message : receivedMessages) {
+      payloads.contains(message.payloadAsString());
+    }
+    // Messages have all been acked, they should not be pulled again
+    Iterator<ReceivedMessage> messages = pubsub().pull(subscription, 2);
+    assertFalse(messages.hasNext());
+    assertTrue(pubsub().deleteSubscription(subscription));
+    assertTrue(pubsub().deleteTopic(topic));
   }
 
   @Test

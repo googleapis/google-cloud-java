@@ -28,7 +28,11 @@ import static org.junit.Assert.fail;
 import com.google.cloud.AsyncPage;
 import com.google.cloud.Page;
 import com.google.cloud.RetryParams;
+import com.google.cloud.pubsub.MessageConsumerImplTest.TestPullFuture;
 import com.google.cloud.pubsub.PubSub.ListOption;
+import com.google.cloud.pubsub.PubSub.MessageConsumer;
+import com.google.cloud.pubsub.PubSub.MessageProcessor;
+import com.google.cloud.pubsub.PubSub.PullOption;
 import com.google.cloud.pubsub.spi.PubSubRpc;
 import com.google.cloud.pubsub.spi.PubSubRpc.PullCallback;
 import com.google.cloud.pubsub.spi.PubSubRpc.PullFuture;
@@ -60,6 +64,7 @@ import com.google.pubsub.v1.PullResponse;
 
 import org.easymock.Capture;
 import org.easymock.EasyMock;
+import org.easymock.IAnswer;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
@@ -69,7 +74,9 @@ import org.junit.rules.ExpectedException;
 import java.io.IOException;
 import java.util.Iterator;
 import java.util.List;
+import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 
@@ -128,6 +135,12 @@ public class PubSubImplTest {
           return formatSubscriptionName(subscriptionId.project(), subscriptionId.subscription());
         }
       };
+  private static final MessageProcessor DO_NOTHING = new MessageProcessor() {
+    @Override
+    public void process(Message message) throws Exception {
+      // do nothing
+    }
+  };
 
   private PubSubOptions options;
   private PubSubRpcFactory rpcFactoryMock;
@@ -139,6 +152,7 @@ public class PubSubImplTest {
   public ExpectedException thrown = ExpectedException.none();
 
   @Before
+  @SuppressWarnings("unchecked")
   public void setUp() {
     rpcFactoryMock = EasyMock.createStrictMock(PubSubRpcFactory.class);
     pubsubRpcMock = EasyMock.createStrictMock(PubSubRpc.class);
@@ -1353,6 +1367,66 @@ public class PubSubImplTest {
       assertSame(exception, ex.getCause());
     }
     EasyMock.verify(futureMock);
+  }
+
+  @Test
+  public void testMessageConsumer() throws Exception {
+    pubsub = new PubSubImpl(options, renewerMock);
+    EasyMock.reset(options);
+    EasyMock.expect(options.service()).andReturn(pubsub);
+    EasyMock.expect(options.rpc()).andReturn(pubsubRpcMock);
+    EasyMock.expect(options.projectId()).andReturn(PROJECT);
+    EasyMock.replay(options);
+    PullRequest request = PullRequest.newBuilder()
+        .setSubscription(SUBSCRIPTION_NAME_PB)
+        .setMaxMessages(100)
+        .setReturnImmediately(false)
+        .build();
+    final PullResponse response = PullResponse.getDefaultInstance();
+    final CountDownLatch latch = new CountDownLatch(1);
+    EasyMock.expect(pubsubRpcMock.pull(request)).andAnswer(new IAnswer<PullFuture>() {
+      @Override
+      public PullFuture answer() throws Throwable {
+        latch.countDown();
+        return new TestPullFuture(response);
+      }
+    });
+    EasyMock.replay(pubsubRpcMock, renewerMock);
+    try (MessageConsumer consumer = pubsub.pullAsync(SUBSCRIPTION, DO_NOTHING)) {
+      latch.await();
+    }
+  }
+
+  @Test
+  public void testMessageConsumerWithOptions() throws Exception {
+    pubsub = new PubSubImpl(options, renewerMock);
+    EasyMock.reset(options);
+    EasyMock.expect(options.service()).andReturn(pubsub);
+    EasyMock.expect(options.rpc()).andReturn(pubsubRpcMock);
+    EasyMock.expect(options.projectId()).andReturn(PROJECT);
+    EasyMock.replay(options);
+    ExecutorService executorServiceMock = EasyMock.createStrictMock(ExecutorService.class);
+    executorServiceMock.shutdown();
+    PullRequest request = PullRequest.newBuilder()
+        .setSubscription(SUBSCRIPTION_NAME_PB)
+        .setMaxMessages(42)
+        .setReturnImmediately(false)
+        .build();
+    final PullResponse response = PullResponse.getDefaultInstance();
+    final CountDownLatch latch = new CountDownLatch(1);
+    EasyMock.expect(pubsubRpcMock.pull(request)).andAnswer(new IAnswer<PullFuture>() {
+      @Override
+      public PullFuture answer() throws Throwable {
+        latch.countDown();
+        return new TestPullFuture(response);
+      }
+    });
+    EasyMock.replay(pubsubRpcMock, renewerMock, executorServiceMock);
+    PullOption[] options =
+        {PullOption.maxQueuedCallbacks(42), PullOption.executor(executorServiceMock, true)};
+    try (MessageConsumer consumer = pubsub.pullAsync(SUBSCRIPTION, DO_NOTHING, options)) {
+      latch.await();
+    }
   }
 
   @Test

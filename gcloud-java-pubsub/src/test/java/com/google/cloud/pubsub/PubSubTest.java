@@ -17,17 +17,22 @@
 package com.google.cloud.pubsub;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertSame;
 
+import com.google.cloud.GrpcServiceOptions.ExecutorFactory;
 import com.google.cloud.pubsub.PubSub.ListOption;
 import com.google.cloud.pubsub.PubSub.PullOption;
 
+import org.easymock.EasyMock;
 import org.junit.Test;
+
+import java.util.concurrent.ExecutorService;
 
 public class PubSubTest {
 
   private static final int PAGE_SIZE = 42;
   private static final String PAGE_TOKEN = "page token";
-  private static final int MAX_CONCURRENT_CALLBACKS = 42;
+  private static final int MAX_QUEUED_CALLBACKS = 42;
 
   @Test
   public void testListOption() {
@@ -42,9 +47,30 @@ public class PubSubTest {
   }
 
   @Test
+  @SuppressWarnings("unchecked")
   public void testPullOptions() {
-    PullOption pullOption = PullOption.maxConcurrentCallbacks(MAX_CONCURRENT_CALLBACKS);
-    assertEquals(MAX_CONCURRENT_CALLBACKS, pullOption.value());
-    assertEquals(PullOption.OptionType.MAX_CONCURRENT_CALLBACKS, pullOption.optionType());
+    // max queued callbacks
+    PullOption pullOption = PullOption.maxQueuedCallbacks(MAX_QUEUED_CALLBACKS);
+    assertEquals(MAX_QUEUED_CALLBACKS, pullOption.value());
+    assertEquals(PullOption.OptionType.MAX_QUEUED_CALLBACKS, pullOption.optionType());
+    // auto-closing executor
+    ExecutorService executor = EasyMock.createNiceMock(ExecutorService.class);
+    pullOption = PullOption.executor(executor, true);
+    ExecutorFactory<ExecutorService> factory = (ExecutorFactory) pullOption.value();
+    assertSame(executor, factory.get());
+    executor.shutdown();
+    EasyMock.expectLastCall();
+    EasyMock.replay(executor);
+    factory.release(executor);
+    EasyMock.verify(executor);
+    assertEquals(PullOption.OptionType.EXECUTOR, pullOption.optionType());
+    // auto-closing executor
+    EasyMock.reset(executor);
+    pullOption = PullOption.executor(executor, false);
+    factory = (ExecutorFactory) pullOption.value();
+    assertSame(executor, factory.get());
+    EasyMock.replay(executor);
+    factory.release(executor);
+    EasyMock.verify(executor);
   }
 }
