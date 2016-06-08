@@ -35,6 +35,7 @@ package com.google.cloud.logging.spi.v2;
 
 import com.google.api.MonitoredResource;
 import com.google.api.MonitoredResourceDescriptor;
+import com.google.api.gax.core.PageAccessor;
 import com.google.api.gax.grpc.ApiCallable;
 import com.google.api.gax.protobuf.PathTemplate;
 import com.google.logging.v2.DeleteLogRequest;
@@ -52,6 +53,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ScheduledExecutorService;
 
 // Manually-added imports: add custom (non-generated) imports after this point.
 
@@ -59,32 +61,86 @@ import java.util.Map;
 /**
  * Service Description: Service for ingesting and querying logs.
  *
+ * <p>This class provides the ability to make remote calls to the backing service through method
+ * calls that map to API methods. Sample code to get started:
+ *
+ * <pre>
+ * <code>
+ * try (LoggingServiceV2Api loggingServiceV2Api = LoggingServiceV2Api.createWithDefaults()) {
+ *   String logName = "";
+ *   loggingServiceV2Api.deleteLog(logName);
+ * }
+ * </code>
+ * </pre>
+ *
+ * <p>Note: close() needs to be called on the loggingServiceV2Api object to clean up resources such
+ * as threads. In the example above, try-with-resources is used, which automatically calls
+ * close().
+ *
+ * <p>The surface of this class includes several types of Java methods for each of the API's methods:
+ *
+ * <ol>
+ * <li> A "flattened" method. With this type of method, the fields of the request type have been
+ * converted into function parameters. It may be the case that not all fields are available
+ * as parameters, and not every API method will have a flattened method entry point.
+ * <li> A "request object" method. This type of method only takes one parameter, a request
+ * object, which must be constructed before the call. Not every API method will have a request
+ * object method.
+ * <li> A "callable" method. This type of method takes no parameters and returns an immutable
+ * ApiCallable object, which can be used to initiate calls to the service.
+ * </ol>
+ *
+ * <p>See the individual methods for example code.
+ *
+ * <p>Many parameters require resource names to be formatted in a particular way. To assist
+ * with these names, this class includes a format method for each type of name, and additionally
+ * a parse method to extract the individual identifiers contained within names that are
+ * returned.
+ *
+ * <p>This class can be customized by passing in a custom instance of LoggingServiceV2Settings to
+ * create(). For example:
+ *
+ * <pre>
+ * <code>
+ * LoggingServiceV2Settings loggingServiceV2Settings = LoggingServiceV2Settings.defaultBuilder()
+ *     .provideChannelWith(myCredentials)
+ *     .build();
+ * LoggingServiceV2Api loggingServiceV2Api = LoggingServiceV2Api.create(loggingServiceV2Settings);
+ * </code>
+ * </pre>
+ *
  * <!-- manual edit -->
  * <!-- end manual edit -->
  */
 @javax.annotation.Generated("by GAPIC")
 public class LoggingServiceV2Api implements AutoCloseable {
+  private final LoggingServiceV2Settings settings;
   private final ManagedChannel channel;
+  private final ScheduledExecutorService executor;
   private final List<AutoCloseable> closeables = new ArrayList<>();
 
   private final ApiCallable<DeleteLogRequest, Empty> deleteLogCallable;
   private final ApiCallable<WriteLogEntriesRequest, WriteLogEntriesResponse>
       writeLogEntriesCallable;
   private final ApiCallable<ListLogEntriesRequest, ListLogEntriesResponse> listLogEntriesCallable;
-  private final ApiCallable<ListLogEntriesRequest, Iterable<LogEntry>>
-      listLogEntriesIterableCallable;
+  private final ApiCallable<ListLogEntriesRequest, PageAccessor<LogEntry>>
+      listLogEntriesPagedCallable;
   private final ApiCallable<
           ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse>
       listMonitoredResourceDescriptorsCallable;
   private final ApiCallable<
-          ListMonitoredResourceDescriptorsRequest, Iterable<MonitoredResourceDescriptor>>
-      listMonitoredResourceDescriptorsIterableCallable;
+          ListMonitoredResourceDescriptorsRequest, PageAccessor<MonitoredResourceDescriptor>>
+      listMonitoredResourceDescriptorsPagedCallable;
+
+  public final LoggingServiceV2Settings getSettings() {
+    return settings;
+  }
 
   private static final PathTemplate PROJECT_PATH_TEMPLATE =
-      PathTemplate.create("projects/{project}");
+      PathTemplate.createWithoutUrlEncoding("projects/{project}");
 
   private static final PathTemplate LOG_PATH_TEMPLATE =
-      PathTemplate.create("projects/{project}/logs/{log}");
+      PathTemplate.createWithoutUrlEncoding("projects/{project}/logs/{log}");
 
   /**
    * Formats a string containing the fully-qualified path to represent
@@ -147,8 +203,8 @@ public class LoggingServiceV2Api implements AutoCloseable {
    * <!-- manual edit -->
    * <!-- end manual edit -->
    */
-  public static final LoggingServiceV2Api defaultInstance() throws IOException {
-    return create(LoggingServiceV2Settings.defaultInstance());
+  public static final LoggingServiceV2Api createWithDefaults() throws IOException {
+    return create(LoggingServiceV2Settings.defaultBuilder().build());
   }
 
   /**
@@ -173,24 +229,41 @@ public class LoggingServiceV2Api implements AutoCloseable {
    * <!-- end manual edit -->
    */
   protected LoggingServiceV2Api(LoggingServiceV2Settings settings) throws IOException {
-    this.channel = settings.getChannel();
+    this.settings = settings;
+    this.executor = settings.getExecutorProvider().getOrBuildExecutor();
+    this.channel = settings.getChannelProvider().getOrBuildChannel(this.executor);
 
-    this.deleteLogCallable = ApiCallable.create(settings.deleteLogSettings(), settings);
-    this.writeLogEntriesCallable = ApiCallable.create(settings.writeLogEntriesSettings(), settings);
-    this.listLogEntriesCallable = ApiCallable.create(settings.listLogEntriesSettings(), settings);
-    this.listLogEntriesIterableCallable =
-        ApiCallable.createIterable(settings.listLogEntriesSettings(), settings);
+    this.deleteLogCallable =
+        ApiCallable.create(settings.deleteLogSettings(), this.channel, this.executor);
+    this.writeLogEntriesCallable =
+        ApiCallable.create(settings.writeLogEntriesSettings(), this.channel, this.executor);
+    this.listLogEntriesCallable =
+        ApiCallable.create(settings.listLogEntriesSettings(), this.channel, this.executor);
+    this.listLogEntriesPagedCallable =
+        ApiCallable.createPagedVariant(
+            settings.listLogEntriesSettings(), this.channel, this.executor);
     this.listMonitoredResourceDescriptorsCallable =
-        ApiCallable.create(settings.listMonitoredResourceDescriptorsSettings(), settings);
-    this.listMonitoredResourceDescriptorsIterableCallable =
-        ApiCallable.createIterable(settings.listMonitoredResourceDescriptorsSettings(), settings);
+        ApiCallable.create(
+            settings.listMonitoredResourceDescriptorsSettings(), this.channel, this.executor);
+    this.listMonitoredResourceDescriptorsPagedCallable =
+        ApiCallable.createPagedVariant(
+            settings.listMonitoredResourceDescriptorsSettings(), this.channel, this.executor);
 
-    if (settings.shouldAutoCloseChannel()) {
+    if (settings.getChannelProvider().shouldAutoClose()) {
       closeables.add(
           new Closeable() {
             @Override
             public void close() throws IOException {
               channel.shutdown();
+            }
+          });
+    }
+    if (settings.getExecutorProvider().shouldAutoClose()) {
+      closeables.add(
+          new Closeable() {
+            @Override
+            public void close() throws IOException {
+              executor.shutdown();
             }
           });
     }
@@ -208,11 +281,11 @@ public class LoggingServiceV2Api implements AutoCloseable {
    *
    * @param logName Required. The resource name of the log to delete.  Example:
    * `"projects/my-project/logs/syslog"`.
-   * @throws ApiException if the remote call fails
+   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final void deleteLog(String logName) {
+    LOG_PATH_TEMPLATE.validate(logName);
     DeleteLogRequest request = DeleteLogRequest.newBuilder().setLogName(logName).build();
-
     deleteLog(request);
   }
 
@@ -225,7 +298,7 @@ public class LoggingServiceV2Api implements AutoCloseable {
    * <!-- end manual edit -->
    *
    * @param request The request object containing all of the parameters for the API call.
-   * @throws ApiException if the remote call fails
+   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   private void deleteLog(DeleteLogRequest request) {
     deleteLogCallable().call(request);
@@ -238,7 +311,6 @@ public class LoggingServiceV2Api implements AutoCloseable {
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
-   * @throws ApiException if the remote call fails
    */
   public final ApiCallable<DeleteLogRequest, Empty> deleteLogCallable() {
     return deleteLogCallable;
@@ -266,13 +338,15 @@ public class LoggingServiceV2Api implements AutoCloseable {
    * Example: `{ "size": "large", "color":"red" }`
    * @param entries Required. The log entries to write. The log entries must have values for
    * all required fields.
-   * @throws ApiException if the remote call fails
+   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final WriteLogEntriesResponse writeLogEntries(
       String logName,
       MonitoredResource resource,
       Map<String, String> labels,
       List<LogEntry> entries) {
+    LOG_PATH_TEMPLATE.validate(logName);
+
     WriteLogEntriesRequest request =
         WriteLogEntriesRequest.newBuilder()
             .setLogName(logName)
@@ -280,7 +354,6 @@ public class LoggingServiceV2Api implements AutoCloseable {
             .putAllLabels(labels)
             .addAllEntries(entries)
             .build();
-
     return writeLogEntries(request);
   }
 
@@ -293,7 +366,7 @@ public class LoggingServiceV2Api implements AutoCloseable {
    * <!-- end manual edit -->
    *
    * @param request The request object containing all of the parameters for the API call.
-   * @throws ApiException if the remote call fails
+   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public WriteLogEntriesResponse writeLogEntries(WriteLogEntriesRequest request) {
     return writeLogEntriesCallable().call(request);
@@ -306,7 +379,6 @@ public class LoggingServiceV2Api implements AutoCloseable {
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
-   * @throws ApiException if the remote call fails
    */
   public final ApiCallable<WriteLogEntriesRequest, WriteLogEntriesResponse>
       writeLogEntriesCallable() {
@@ -336,10 +408,11 @@ public class LoggingServiceV2Api implements AutoCloseable {
    * `LogEntry.timestamp` (oldest first), and the second option returns entries
    * in order of decreasing timestamps (newest first).  Entries with equal
    * timestamps are returned in order of `LogEntry.insertId`.
-   * @throws ApiException if the remote call fails
+   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  public final Iterable<LogEntry> listLogEntries(
+  public final PageAccessor<LogEntry> listLogEntries(
       List<String> projectIds, String filter, String orderBy) {
+
     ListLogEntriesRequest request =
         ListLogEntriesRequest.newBuilder()
             .addAllProjectIds(projectIds)
@@ -359,10 +432,10 @@ public class LoggingServiceV2Api implements AutoCloseable {
    * <!-- end manual edit -->
    *
    * @param request The request object containing all of the parameters for the API call.
-   * @throws ApiException if the remote call fails
+   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  public final Iterable<LogEntry> listLogEntries(ListLogEntriesRequest request) {
-    return listLogEntriesIterableCallable().call(request);
+  public final PageAccessor<LogEntry> listLogEntries(ListLogEntriesRequest request) {
+    return listLogEntriesPagedCallable().call(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD - see instructions at the top of the file for editing.
@@ -373,11 +446,10 @@ public class LoggingServiceV2Api implements AutoCloseable {
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
-   * @throws ApiException if the remote call fails
    */
-  public final ApiCallable<ListLogEntriesRequest, Iterable<LogEntry>>
-      listLogEntriesIterableCallable() {
-    return listLogEntriesIterableCallable;
+  public final ApiCallable<ListLogEntriesRequest, PageAccessor<LogEntry>>
+      listLogEntriesPagedCallable() {
+    return listLogEntriesPagedCallable;
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD - see instructions at the top of the file for editing.
@@ -388,7 +460,6 @@ public class LoggingServiceV2Api implements AutoCloseable {
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
-   * @throws ApiException if the remote call fails
    */
   public final ApiCallable<ListLogEntriesRequest, ListLogEntriesResponse> listLogEntriesCallable() {
     return listLogEntriesCallable;
@@ -404,11 +475,11 @@ public class LoggingServiceV2Api implements AutoCloseable {
    * <!-- end manual edit -->
    *
    * @param request The request object containing all of the parameters for the API call.
-   * @throws ApiException if the remote call fails
+   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  public final Iterable<MonitoredResourceDescriptor> listMonitoredResourceDescriptors(
+  public final PageAccessor<MonitoredResourceDescriptor> listMonitoredResourceDescriptors(
       ListMonitoredResourceDescriptorsRequest request) {
-    return listMonitoredResourceDescriptorsIterableCallable().call(request);
+    return listMonitoredResourceDescriptorsPagedCallable().call(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD - see instructions at the top of the file for editing.
@@ -417,12 +488,11 @@ public class LoggingServiceV2Api implements AutoCloseable {
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
-   * @throws ApiException if the remote call fails
    */
   public final ApiCallable<
-          ListMonitoredResourceDescriptorsRequest, Iterable<MonitoredResourceDescriptor>>
-      listMonitoredResourceDescriptorsIterableCallable() {
-    return listMonitoredResourceDescriptorsIterableCallable;
+          ListMonitoredResourceDescriptorsRequest, PageAccessor<MonitoredResourceDescriptor>>
+      listMonitoredResourceDescriptorsPagedCallable() {
+    return listMonitoredResourceDescriptorsPagedCallable;
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD - see instructions at the top of the file for editing.
@@ -431,7 +501,6 @@ public class LoggingServiceV2Api implements AutoCloseable {
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
-   * @throws ApiException if the remote call fails
    */
   public final ApiCallable<
           ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse>
