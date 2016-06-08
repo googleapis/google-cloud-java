@@ -178,6 +178,12 @@ public class StorageExample {
    * @see <a href="https://cloud.google.com/storage/docs/json_api/v1/objects/get">Objects: get</a>
    */
   private static class InfoAction extends BlobsAction {
+
+    /**
+     * Gets information for the provided blobs, using the {@code storage} service. If
+     * {@code blobIds} contains only one blob identity and {@code blobIds[0].name()} is empty, this
+     * method gets information for the bucket identified by {@code blobIds[0].bucket()}.
+     */
     @Override
     public void run(Storage storage, BlobId... blobIds) {
       if (blobIds.length == 1) {
@@ -565,6 +571,12 @@ public class StorageExample {
 
   private abstract static class AclAction extends StorageAction<Tuple<BlobId, Acl>> {
 
+    /**
+     * Sets the ACL according to the provided {@code params}, using the {@code storage} service. If
+     * {@code params.x()} returns a complete blob identity, the {@code params.y()} ACL is added to
+     * the blob. If {@code params.x().name()} is empty, the {@code params.y()} ACL is added to the
+     * bucket identified by {@code params.x().bucket()}.
+     */
     @Override
     public void run(Storage storage, Tuple<BlobId, Acl> params) {
       BlobId blobId = params.x();
