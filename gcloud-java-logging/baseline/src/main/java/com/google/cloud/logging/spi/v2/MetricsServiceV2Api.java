@@ -63,8 +63,8 @@ import java.util.concurrent.ScheduledExecutorService;
  * <pre>
  * <code>
  * try (MetricsServiceV2Api metricsServiceV2Api = MetricsServiceV2Api.createWithDefaults()) {
- *   String projectName = "";
- *   ListLogMetricsResponse response = metricsServiceV2Api.listLogMetrics(projectName);
+ *   String formattedProjectName = MetricsServiceV2Api.formatProjectName("[PROJECT]");
+ *   ListLogMetricsResponse response = metricsServiceV2Api.listLogMetrics(formattedProjectName);
  * }
  * </code>
  * </pre>
@@ -264,6 +264,16 @@ public class MetricsServiceV2Api implements AutoCloseable {
   /**
    * Lists logs-based metrics.
    *
+   * Sample code:
+   * <pre><code>
+   * try (MetricsServiceV2Api metricsServiceV2Api = MetricsServiceV2Api.createWithDefaults()) {
+   *   String formattedProjectName = MetricsServiceV2Api.formatProjectName("[PROJECT]");
+   *   for (LogMetric elements : metricsServiceV2Api.listLogMetrics(formattedProjectName)) {
+   *     // doThingsWith(elements);
+   *   }
+   * }
+   * </code></pre>
+   *
    * <!-- manual edit -->
    * <!-- end manual edit -->
    *
@@ -282,6 +292,19 @@ public class MetricsServiceV2Api implements AutoCloseable {
   /**
    * Lists logs-based metrics.
    *
+   * Sample code:
+   * <pre><code>
+   * try (MetricsServiceV2Api metricsServiceV2Api = MetricsServiceV2Api.createWithDefaults()) {
+   *   String formattedProjectName = MetricsServiceV2Api.formatProjectName("[PROJECT]");
+   *   ListLogMetricsRequest request = ListLogMetricsRequest.newBuilder()
+   *     .setProjectName(formattedProjectName)
+   *     .build();
+   *   for (LogMetric elements : metricsServiceV2Api.listLogMetrics(request)) {
+   *     // doThingsWith(elements);
+   *   }
+   * }
+   * </code></pre>
+   *
    * <!-- manual edit -->
    * <!-- end manual edit -->
    *
@@ -296,6 +319,21 @@ public class MetricsServiceV2Api implements AutoCloseable {
   /**
    * Lists logs-based metrics.
    *
+   * Sample code:
+   * <pre><code>
+   * try (MetricsServiceV2Api metricsServiceV2Api = MetricsServiceV2Api.createWithDefaults()) {
+   *   String formattedProjectName = MetricsServiceV2Api.formatProjectName("[PROJECT]");
+   *   ListLogMetricsRequest request = ListLogMetricsRequest.newBuilder()
+   *     .setProjectName(formattedProjectName)
+   *     .build();
+   *   ListenableFuture&lt;PageAccessor&lt;LogMetric&gt;&gt; future = metricsServiceV2Api.listLogMetricsPagedCallable().futureCall(request);
+   *   // Do something
+   *   for (LogMetric elements : future.get()) {
+   *     // doThingsWith(elements);
+   *   }
+   * }
+   * </code></pre>
+   *
    * <!-- manual edit -->
    * <!-- end manual edit -->
    */
@@ -307,6 +345,28 @@ public class MetricsServiceV2Api implements AutoCloseable {
   // AUTO-GENERATED DOCUMENTATION AND METHOD - see instructions at the top of the file for editing.
   /**
    * Lists logs-based metrics.
+   *
+   * Sample code:
+   * <pre><code>
+   * try (MetricsServiceV2Api metricsServiceV2Api = MetricsServiceV2Api.createWithDefaults()) {
+   *   String formattedProjectName = MetricsServiceV2Api.formatProjectName("[PROJECT]");
+   *   ListLogMetricsRequest request = ListLogMetricsRequest.newBuilder()
+   *     .setProjectName(formattedProjectName)
+   *     .build();
+   *   while (true) {
+   *     ListLogMetricsResponse response = metricsServiceV2Api.listLogMetricsCallable().call(request);
+   *     for (LogMetric elements : response.getMetricsList()) {
+   *       // doThingsWith(elements);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * </code></pre>
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
@@ -320,6 +380,14 @@ public class MetricsServiceV2Api implements AutoCloseable {
   // AUTO-GENERATED DOCUMENTATION AND METHOD - see instructions at the top of the file for editing.
   /**
    * Gets a logs-based metric.
+   *
+   * Sample code:
+   * <pre><code>
+   * try (MetricsServiceV2Api metricsServiceV2Api = MetricsServiceV2Api.createWithDefaults()) {
+   *   String formattedMetricName = MetricsServiceV2Api.formatMetricName("[PROJECT]", "[METRIC]");
+   *   LogMetric response = metricsServiceV2Api.getLogMetric(formattedMetricName);
+   * }
+   * </code></pre>
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
@@ -339,6 +407,17 @@ public class MetricsServiceV2Api implements AutoCloseable {
   /**
    * Gets a logs-based metric.
    *
+   * Sample code:
+   * <pre><code>
+   * try (MetricsServiceV2Api metricsServiceV2Api = MetricsServiceV2Api.createWithDefaults()) {
+   *   String formattedMetricName = MetricsServiceV2Api.formatMetricName("[PROJECT]", "[METRIC]");
+   *   GetLogMetricRequest request = GetLogMetricRequest.newBuilder()
+   *     .setMetricName(formattedMetricName)
+   *     .build();
+   *   LogMetric response = metricsServiceV2Api.getLogMetric(request);
+   * }
+   * </code></pre>
+   *
    * <!-- manual edit -->
    * <!-- end manual edit -->
    *
@@ -353,6 +432,19 @@ public class MetricsServiceV2Api implements AutoCloseable {
   /**
    * Gets a logs-based metric.
    *
+   * Sample code:
+   * <pre><code>
+   * try (MetricsServiceV2Api metricsServiceV2Api = MetricsServiceV2Api.createWithDefaults()) {
+   *   String formattedMetricName = MetricsServiceV2Api.formatMetricName("[PROJECT]", "[METRIC]");
+   *   GetLogMetricRequest request = GetLogMetricRequest.newBuilder()
+   *     .setMetricName(formattedMetricName)
+   *     .build();
+   *   ListenableFuture&lt;LogMetric&gt; future = metricsServiceV2Api.getLogMetricCallable().futureCall(request);
+   *   // Do something
+   *   LogMetric response = future.get();
+   * }
+   * </code></pre>
+   *
    * <!-- manual edit -->
    * <!-- end manual edit -->
    */
@@ -365,6 +457,15 @@ public class MetricsServiceV2Api implements AutoCloseable {
   // AUTO-GENERATED DOCUMENTATION AND METHOD - see instructions at the top of the file for editing.
   /**
    * Creates a logs-based metric.
+   *
+   * Sample code:
+   * <pre><code>
+   * try (MetricsServiceV2Api metricsServiceV2Api = MetricsServiceV2Api.createWithDefaults()) {
+   *   String formattedProjectName = MetricsServiceV2Api.formatProjectName("[PROJECT]");
+   *   LogMetric metric = LogMetric.newBuilder().build();
+   *   LogMetric response = metricsServiceV2Api.createLogMetric(formattedProjectName, metric);
+   * }
+   * </code></pre>
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
@@ -389,6 +490,19 @@ public class MetricsServiceV2Api implements AutoCloseable {
   /**
    * Creates a logs-based metric.
    *
+   * Sample code:
+   * <pre><code>
+   * try (MetricsServiceV2Api metricsServiceV2Api = MetricsServiceV2Api.createWithDefaults()) {
+   *   String formattedProjectName = MetricsServiceV2Api.formatProjectName("[PROJECT]");
+   *   LogMetric metric = LogMetric.newBuilder().build();
+   *   CreateLogMetricRequest request = CreateLogMetricRequest.newBuilder()
+   *     .setProjectName(formattedProjectName)
+   *     .setMetric(metric)
+   *     .build();
+   *   LogMetric response = metricsServiceV2Api.createLogMetric(request);
+   * }
+   * </code></pre>
+   *
    * <!-- manual edit -->
    * <!-- end manual edit -->
    *
@@ -403,6 +517,21 @@ public class MetricsServiceV2Api implements AutoCloseable {
   /**
    * Creates a logs-based metric.
    *
+   * Sample code:
+   * <pre><code>
+   * try (MetricsServiceV2Api metricsServiceV2Api = MetricsServiceV2Api.createWithDefaults()) {
+   *   String formattedProjectName = MetricsServiceV2Api.formatProjectName("[PROJECT]");
+   *   LogMetric metric = LogMetric.newBuilder().build();
+   *   CreateLogMetricRequest request = CreateLogMetricRequest.newBuilder()
+   *     .setProjectName(formattedProjectName)
+   *     .setMetric(metric)
+   *     .build();
+   *   ListenableFuture&lt;LogMetric&gt; future = metricsServiceV2Api.createLogMetricCallable().futureCall(request);
+   *   // Do something
+   *   LogMetric response = future.get();
+   * }
+   * </code></pre>
+   *
    * <!-- manual edit -->
    * <!-- end manual edit -->
    */
@@ -415,6 +544,15 @@ public class MetricsServiceV2Api implements AutoCloseable {
   // AUTO-GENERATED DOCUMENTATION AND METHOD - see instructions at the top of the file for editing.
   /**
    * Creates or updates a logs-based metric.
+   *
+   * Sample code:
+   * <pre><code>
+   * try (MetricsServiceV2Api metricsServiceV2Api = MetricsServiceV2Api.createWithDefaults()) {
+   *   String formattedMetricName = MetricsServiceV2Api.formatMetricName("[PROJECT]", "[METRIC]");
+   *   LogMetric metric = LogMetric.newBuilder().build();
+   *   LogMetric response = metricsServiceV2Api.updateLogMetric(formattedMetricName, metric);
+   * }
+   * </code></pre>
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
@@ -442,6 +580,19 @@ public class MetricsServiceV2Api implements AutoCloseable {
   /**
    * Creates or updates a logs-based metric.
    *
+   * Sample code:
+   * <pre><code>
+   * try (MetricsServiceV2Api metricsServiceV2Api = MetricsServiceV2Api.createWithDefaults()) {
+   *   String formattedMetricName = MetricsServiceV2Api.formatMetricName("[PROJECT]", "[METRIC]");
+   *   LogMetric metric = LogMetric.newBuilder().build();
+   *   UpdateLogMetricRequest request = UpdateLogMetricRequest.newBuilder()
+   *     .setMetricName(formattedMetricName)
+   *     .setMetric(metric)
+   *     .build();
+   *   LogMetric response = metricsServiceV2Api.updateLogMetric(request);
+   * }
+   * </code></pre>
+   *
    * <!-- manual edit -->
    * <!-- end manual edit -->
    *
@@ -456,6 +607,21 @@ public class MetricsServiceV2Api implements AutoCloseable {
   /**
    * Creates or updates a logs-based metric.
    *
+   * Sample code:
+   * <pre><code>
+   * try (MetricsServiceV2Api metricsServiceV2Api = MetricsServiceV2Api.createWithDefaults()) {
+   *   String formattedMetricName = MetricsServiceV2Api.formatMetricName("[PROJECT]", "[METRIC]");
+   *   LogMetric metric = LogMetric.newBuilder().build();
+   *   UpdateLogMetricRequest request = UpdateLogMetricRequest.newBuilder()
+   *     .setMetricName(formattedMetricName)
+   *     .setMetric(metric)
+   *     .build();
+   *   ListenableFuture&lt;LogMetric&gt; future = metricsServiceV2Api.updateLogMetricCallable().futureCall(request);
+   *   // Do something
+   *   LogMetric response = future.get();
+   * }
+   * </code></pre>
+   *
    * <!-- manual edit -->
    * <!-- end manual edit -->
    */
@@ -468,6 +634,14 @@ public class MetricsServiceV2Api implements AutoCloseable {
   // AUTO-GENERATED DOCUMENTATION AND METHOD - see instructions at the top of the file for editing.
   /**
    * Deletes a logs-based metric.
+   *
+   * Sample code:
+   * <pre><code>
+   * try (MetricsServiceV2Api metricsServiceV2Api = MetricsServiceV2Api.createWithDefaults()) {
+   *   String formattedMetricName = MetricsServiceV2Api.formatMetricName("[PROJECT]", "[METRIC]");
+   *   metricsServiceV2Api.deleteLogMetric(formattedMetricName);
+   * }
+   * </code></pre>
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
@@ -487,6 +661,17 @@ public class MetricsServiceV2Api implements AutoCloseable {
   /**
    * Deletes a logs-based metric.
    *
+   * Sample code:
+   * <pre><code>
+   * try (MetricsServiceV2Api metricsServiceV2Api = MetricsServiceV2Api.createWithDefaults()) {
+   *   String formattedMetricName = MetricsServiceV2Api.formatMetricName("[PROJECT]", "[METRIC]");
+   *   DeleteLogMetricRequest request = DeleteLogMetricRequest.newBuilder()
+   *     .setMetricName(formattedMetricName)
+   *     .build();
+   *   metricsServiceV2Api.deleteLogMetric(request);
+   * }
+   * </code></pre>
+   *
    * <!-- manual edit -->
    * <!-- end manual edit -->
    *
@@ -500,6 +685,19 @@ public class MetricsServiceV2Api implements AutoCloseable {
   // AUTO-GENERATED DOCUMENTATION AND METHOD - see instructions at the top of the file for editing.
   /**
    * Deletes a logs-based metric.
+   *
+   * Sample code:
+   * <pre><code>
+   * try (MetricsServiceV2Api metricsServiceV2Api = MetricsServiceV2Api.createWithDefaults()) {
+   *   String formattedMetricName = MetricsServiceV2Api.formatMetricName("[PROJECT]", "[METRIC]");
+   *   DeleteLogMetricRequest request = DeleteLogMetricRequest.newBuilder()
+   *     .setMetricName(formattedMetricName)
+   *     .build();
+   *   ListenableFuture&lt;Void&gt; future = metricsServiceV2Api.deleteLogMetricCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->

@@ -7,7 +7,11 @@
   </description>
   <groupId>com.google.gcloud</groupId>
   <artifactId>gcloud-java-logging</artifactId>
-  <version>0.0.0</version>
+  <parent>
+    <groupId>com.google.gcloud</groupId>
+    <artifactId>gcloud-java-pom</artifactId>
+    <version>0.1.4</version>
+  </parent>
   <packaging>jar</packaging>
   <properties>
     <site.installationModule>gcloud-java-logging</site.installationModule>

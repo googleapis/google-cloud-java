@@ -67,8 +67,8 @@ import java.util.concurrent.ScheduledExecutorService;
  * <pre>
  * <code>
  * try (LoggingServiceV2Api loggingServiceV2Api = LoggingServiceV2Api.createWithDefaults()) {
- *   String logName = "";
- *   loggingServiceV2Api.deleteLog(logName);
+ *   String formattedLogName = LoggingServiceV2Api.formatLogName("[PROJECT]", "[LOG]");
+ *   loggingServiceV2Api.deleteLog(formattedLogName);
  * }
  * </code>
  * </pre>
@@ -276,6 +276,14 @@ public class LoggingServiceV2Api implements AutoCloseable {
    * Deletes a log and all its log entries.
    * The log will reappear if it receives new entries.
    *
+   * Sample code:
+   * <pre><code>
+   * try (LoggingServiceV2Api loggingServiceV2Api = LoggingServiceV2Api.createWithDefaults()) {
+   *   String formattedLogName = LoggingServiceV2Api.formatLogName("[PROJECT]", "[LOG]");
+   *   loggingServiceV2Api.deleteLog(formattedLogName);
+   * }
+   * </code></pre>
+   *
    * <!-- manual edit -->
    * <!-- end manual edit -->
    *
@@ -294,6 +302,17 @@ public class LoggingServiceV2Api implements AutoCloseable {
    * Deletes a log and all its log entries.
    * The log will reappear if it receives new entries.
    *
+   * Sample code:
+   * <pre><code>
+   * try (LoggingServiceV2Api loggingServiceV2Api = LoggingServiceV2Api.createWithDefaults()) {
+   *   String formattedLogName = LoggingServiceV2Api.formatLogName("[PROJECT]", "[LOG]");
+   *   DeleteLogRequest request = DeleteLogRequest.newBuilder()
+   *     .setLogName(formattedLogName)
+   *     .build();
+   *   loggingServiceV2Api.deleteLog(request);
+   * }
+   * </code></pre>
+   *
    * <!-- manual edit -->
    * <!-- end manual edit -->
    *
@@ -309,6 +328,19 @@ public class LoggingServiceV2Api implements AutoCloseable {
    * Deletes a log and all its log entries.
    * The log will reappear if it receives new entries.
    *
+   * Sample code:
+   * <pre><code>
+   * try (LoggingServiceV2Api loggingServiceV2Api = LoggingServiceV2Api.createWithDefaults()) {
+   *   String formattedLogName = LoggingServiceV2Api.formatLogName("[PROJECT]", "[LOG]");
+   *   DeleteLogRequest request = DeleteLogRequest.newBuilder()
+   *     .setLogName(formattedLogName)
+   *     .build();
+   *   ListenableFuture&lt;Void&gt; future = loggingServiceV2Api.deleteLogCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   *
    * <!-- manual edit -->
    * <!-- end manual edit -->
    */
@@ -322,6 +354,17 @@ public class LoggingServiceV2Api implements AutoCloseable {
   /**
    * Writes log entries to Cloud Logging.
    * All log entries in Cloud Logging are written by this method.
+   *
+   * Sample code:
+   * <pre><code>
+   * try (LoggingServiceV2Api loggingServiceV2Api = LoggingServiceV2Api.createWithDefaults()) {
+   *   String logName = "";
+   *   MonitoredResource resource = MonitoredResource.newBuilder().build();
+   *   Map&lt;String, String&gt; labels = new HashMap&lt;&gt;();
+   *   List&lt;LogEntry&gt; entries = new ArrayList&lt;&gt;();
+   *   WriteLogEntriesResponse response = loggingServiceV2Api.writeLogEntries(logName, resource, labels, entries);
+   * }
+   * </code></pre>
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
@@ -362,6 +405,17 @@ public class LoggingServiceV2Api implements AutoCloseable {
    * Writes log entries to Cloud Logging.
    * All log entries in Cloud Logging are written by this method.
    *
+   * Sample code:
+   * <pre><code>
+   * try (LoggingServiceV2Api loggingServiceV2Api = LoggingServiceV2Api.createWithDefaults()) {
+   *   List&lt;LogEntry&gt; entries = new ArrayList&lt;&gt;();
+   *   WriteLogEntriesRequest request = WriteLogEntriesRequest.newBuilder()
+   *     .addAllEntries(entries)
+   *     .build();
+   *   WriteLogEntriesResponse response = loggingServiceV2Api.writeLogEntries(request);
+   * }
+   * </code></pre>
+   *
    * <!-- manual edit -->
    * <!-- end manual edit -->
    *
@@ -376,6 +430,19 @@ public class LoggingServiceV2Api implements AutoCloseable {
   /**
    * Writes log entries to Cloud Logging.
    * All log entries in Cloud Logging are written by this method.
+   *
+   * Sample code:
+   * <pre><code>
+   * try (LoggingServiceV2Api loggingServiceV2Api = LoggingServiceV2Api.createWithDefaults()) {
+   *   List&lt;LogEntry&gt; entries = new ArrayList&lt;&gt;();
+   *   WriteLogEntriesRequest request = WriteLogEntriesRequest.newBuilder()
+   *     .addAllEntries(entries)
+   *     .build();
+   *   ListenableFuture&lt;WriteLogEntriesResponse&gt; future = loggingServiceV2Api.writeLogEntriesCallable().futureCall(request);
+   *   // Do something
+   *   WriteLogEntriesResponse response = future.get();
+   * }
+   * </code></pre>
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
@@ -392,6 +459,18 @@ public class LoggingServiceV2Api implements AutoCloseable {
    * Lists log entries.  Use this method to retrieve log entries from Cloud
    * Logging.  For ways to export log entries, see
    * [Exporting Logs](/logging/docs/export).
+   *
+   * Sample code:
+   * <pre><code>
+   * try (LoggingServiceV2Api loggingServiceV2Api = LoggingServiceV2Api.createWithDefaults()) {
+   *   List&lt;String&gt; projectIds = new ArrayList&lt;&gt;();
+   *   String filter = "";
+   *   String orderBy = "";
+   *   for (LogEntry elements : loggingServiceV2Api.listLogEntries(projectIds, filter, orderBy)) {
+   *     // doThingsWith(elements);
+   *   }
+   * }
+   * </code></pre>
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
@@ -428,6 +507,19 @@ public class LoggingServiceV2Api implements AutoCloseable {
    * Logging.  For ways to export log entries, see
    * [Exporting Logs](/logging/docs/export).
    *
+   * Sample code:
+   * <pre><code>
+   * try (LoggingServiceV2Api loggingServiceV2Api = LoggingServiceV2Api.createWithDefaults()) {
+   *   List&lt;String&gt; projectIds = new ArrayList&lt;&gt;();
+   *   ListLogEntriesRequest request = ListLogEntriesRequest.newBuilder()
+   *     .addAllProjectIds(projectIds)
+   *     .build();
+   *   for (LogEntry elements : loggingServiceV2Api.listLogEntries(request)) {
+   *     // doThingsWith(elements);
+   *   }
+   * }
+   * </code></pre>
+   *
    * <!-- manual edit -->
    * <!-- end manual edit -->
    *
@@ -444,6 +536,21 @@ public class LoggingServiceV2Api implements AutoCloseable {
    * Logging.  For ways to export log entries, see
    * [Exporting Logs](/logging/docs/export).
    *
+   * Sample code:
+   * <pre><code>
+   * try (LoggingServiceV2Api loggingServiceV2Api = LoggingServiceV2Api.createWithDefaults()) {
+   *   List&lt;String&gt; projectIds = new ArrayList&lt;&gt;();
+   *   ListLogEntriesRequest request = ListLogEntriesRequest.newBuilder()
+   *     .addAllProjectIds(projectIds)
+   *     .build();
+   *   ListenableFuture&lt;PageAccessor&lt;LogEntry&gt;&gt; future = loggingServiceV2Api.listLogEntriesPagedCallable().futureCall(request);
+   *   // Do something
+   *   for (LogEntry elements : future.get()) {
+   *     // doThingsWith(elements);
+   *   }
+   * }
+   * </code></pre>
+   *
    * <!-- manual edit -->
    * <!-- end manual edit -->
    */
@@ -458,6 +565,28 @@ public class LoggingServiceV2Api implements AutoCloseable {
    * Logging.  For ways to export log entries, see
    * [Exporting Logs](/logging/docs/export).
    *
+   * Sample code:
+   * <pre><code>
+   * try (LoggingServiceV2Api loggingServiceV2Api = LoggingServiceV2Api.createWithDefaults()) {
+   *   List&lt;String&gt; projectIds = new ArrayList&lt;&gt;();
+   *   ListLogEntriesRequest request = ListLogEntriesRequest.newBuilder()
+   *     .addAllProjectIds(projectIds)
+   *     .build();
+   *   while (true) {
+   *     ListLogEntriesResponse response = loggingServiceV2Api.listLogEntriesCallable().call(request);
+   *     for (LogEntry elements : response.getEntriesList()) {
+   *       // doThingsWith(elements);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * </code></pre>
+   *
    * <!-- manual edit -->
    * <!-- end manual edit -->
    */
@@ -470,6 +599,17 @@ public class LoggingServiceV2Api implements AutoCloseable {
   // AUTO-GENERATED DOCUMENTATION AND METHOD - see instructions at the top of the file for editing.
   /**
    * Lists monitored resource descriptors that are used by Cloud Logging.
+   *
+   * Sample code:
+   * <pre><code>
+   * try (LoggingServiceV2Api loggingServiceV2Api = LoggingServiceV2Api.createWithDefaults()) {
+   *   ListMonitoredResourceDescriptorsRequest request = ListMonitoredResourceDescriptorsRequest.newBuilder()
+   *     .build();
+   *   for (MonitoredResourceDescriptor elements : loggingServiceV2Api.listMonitoredResourceDescriptors(request)) {
+   *     // doThingsWith(elements);
+   *   }
+   * }
+   * </code></pre>
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
@@ -486,6 +626,19 @@ public class LoggingServiceV2Api implements AutoCloseable {
   /**
    * Lists monitored resource descriptors that are used by Cloud Logging.
    *
+   * Sample code:
+   * <pre><code>
+   * try (LoggingServiceV2Api loggingServiceV2Api = LoggingServiceV2Api.createWithDefaults()) {
+   *   ListMonitoredResourceDescriptorsRequest request = ListMonitoredResourceDescriptorsRequest.newBuilder()
+   *     .build();
+   *   ListenableFuture&lt;PageAccessor&lt;MonitoredResourceDescriptor&gt;&gt; future = loggingServiceV2Api.listMonitoredResourceDescriptorsPagedCallable().futureCall(request);
+   *   // Do something
+   *   for (MonitoredResourceDescriptor elements : future.get()) {
+   *     // doThingsWith(elements);
+   *   }
+   * }
+   * </code></pre>
+   *
    * <!-- manual edit -->
    * <!-- end manual edit -->
    */
@@ -498,6 +651,26 @@ public class LoggingServiceV2Api implements AutoCloseable {
   // AUTO-GENERATED DOCUMENTATION AND METHOD - see instructions at the top of the file for editing.
   /**
    * Lists monitored resource descriptors that are used by Cloud Logging.
+   *
+   * Sample code:
+   * <pre><code>
+   * try (LoggingServiceV2Api loggingServiceV2Api = LoggingServiceV2Api.createWithDefaults()) {
+   *   ListMonitoredResourceDescriptorsRequest request = ListMonitoredResourceDescriptorsRequest.newBuilder()
+   *     .build();
+   *   while (true) {
+   *     ListMonitoredResourceDescriptorsResponse response = loggingServiceV2Api.listMonitoredResourceDescriptorsCallable().call(request);
+   *     for (MonitoredResourceDescriptor elements : response.getResourceDescriptorsList()) {
+   *       // doThingsWith(elements);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * </code></pre>
    *
    * <!-- manual edit -->
    * <!-- end manual edit -->
