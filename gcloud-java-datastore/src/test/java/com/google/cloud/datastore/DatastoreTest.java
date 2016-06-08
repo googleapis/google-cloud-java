@@ -903,21 +903,23 @@ public class DatastoreTest {
 
   @Test
   public void testPut() {
-    Iterator<Entity> keys =
-        datastore.fetch(ENTITY1.key(), ENTITY2.key(), ENTITY3.key()).iterator();
-    assertEquals(ENTITY1, keys.next());
-    assertEquals(ENTITY2, keys.next());
-    assertNull(keys.next());
-    assertFalse(keys.hasNext());
+    Entity updatedEntity = Entity.builder(ENTITY1).set("new_property", 42L).build();
+    assertEquals(updatedEntity, datastore.put(updatedEntity));
+    assertEquals(updatedEntity, datastore.get(updatedEntity.key()));
 
     Entity entity2 = Entity.builder(ENTITY2).clear().set("bla", new NullValue()).build();
     assertNotEquals(ENTITY2, entity2);
-    datastore.put(ENTITY3, ENTITY1, entity2);
-    keys = datastore.fetch(ENTITY1.key(), ENTITY2.key(), ENTITY3.key()).iterator();
-    assertEquals(ENTITY1, keys.next());
-    assertEquals(entity2, keys.next());
-    assertEquals(ENTITY3, keys.next());
-    assertFalse(keys.hasNext());
+    List<Entity> entities = datastore.put(ENTITY1, entity2, ENTITY3, PARTIAL_ENTITY1);
+    assertEquals(ENTITY1, entities.get(0));
+    assertEquals(entity2, entities.get(1));
+    assertEquals(ENTITY3, entities.get(2));
+    assertEquals(PARTIAL_ENTITY1.properties(), entities.get(3).properties());
+    assertEquals(PARTIAL_ENTITY1.key().ancestors(), entities.get(3).key().ancestors());
+    assertEquals(ENTITY1, datastore.get(ENTITY1.key()));
+    assertEquals(entity2, datastore.get(entity2.key()));
+    assertEquals(ENTITY3, datastore.get(ENTITY3.key()));
+    Entity entity = datastore.get(entities.get(3).key());
+    assertEquals(entities.get(3), entity);
   }
 
   @Test
