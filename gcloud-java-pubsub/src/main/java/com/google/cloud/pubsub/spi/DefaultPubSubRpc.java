@@ -31,6 +31,7 @@ import com.google.cloud.pubsub.spi.v1.SubscriberApi;
 import com.google.cloud.pubsub.spi.v1.SubscriberSettings;
 import com.google.common.base.Function;
 import com.google.common.collect.Sets;
+import com.google.common.util.concurrent.ForwardingListenableFuture;
 import com.google.common.util.concurrent.FutureCallback;
 import com.google.common.util.concurrent.Futures;
 import com.google.common.util.concurrent.ListenableFuture;
@@ -64,11 +65,8 @@ import org.joda.time.Duration;
 
 import java.io.IOException;
 import java.util.Set;
-import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.TimeoutException;
 
 public class DefaultPubSubRpc implements PubSubRpc {
 
@@ -93,43 +91,17 @@ public class DefaultPubSubRpc implements PubSubRpc {
     }
   }
 
-  private static final class PullFutureImpl implements PullFuture {
-
-    private final ListenableFuture<PullResponse> delegate;
+  private static final class PullFutureImpl
+      extends ForwardingListenableFuture.SimpleForwardingListenableFuture<PullResponse>
+      implements PullFuture {
 
     PullFutureImpl(ListenableFuture<PullResponse> delegate) {
-      this.delegate = delegate;
-    }
-
-    @Override
-    public boolean cancel(boolean mayInterruptIfRunning) {
-      return delegate.cancel(mayInterruptIfRunning);
-    }
-
-    @Override
-    public boolean isCancelled() {
-      return delegate.isCancelled();
-    }
-
-    @Override
-    public boolean isDone() {
-      return delegate.isDone();
-    }
-
-    @Override
-    public PullResponse get() throws InterruptedException, ExecutionException {
-      return delegate.get();
-    }
-
-    @Override
-    public PullResponse get(long timeout, TimeUnit unit) throws InterruptedException,
-        ExecutionException, TimeoutException {
-      return delegate.get(timeout, unit);
+      super(delegate);
     }
 
     @Override
     public void addCallback(final PullCallback callback) {
-      Futures.addCallback(delegate, new FutureCallback<PullResponse>() {
+      Futures.addCallback(delegate(), new FutureCallback<PullResponse>() {
         @Override
         public void onSuccess(PullResponse result) {
           callback.success(result);
