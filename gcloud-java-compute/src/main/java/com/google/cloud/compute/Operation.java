@@ -18,6 +18,9 @@ package com.google.cloud.compute;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import com.google.cloud.Clock;
+import com.google.cloud.WaitForOption;
+import com.google.cloud.WaitForOption.CheckingPeriod;
 import com.google.cloud.compute.Compute.OperationOption;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
@@ -36,13 +39,15 @@ import java.math.BigInteger;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 
 /**
  * Google Compute Engine operations. Operation identity can be obtained via {@link #operationId()}.
  * {@link #operationId()} returns {@link GlobalOperationId} for global operations,
  * {@link RegionOperationId} for region operations, and {@link ZoneOperationId} for zone operations.
  * To get an {@code Operation} object with the most recent information, use
- * {@link #reload(OperationOption...)}.
+ * {@link #reload(Compute.OperationOption...)}.
  */
 public class Operation implements Serializable {
 
@@ -635,7 +640,7 @@ public class Operation implements Serializable {
    * @return {@code true} if this operation exists, {@code false} otherwise
    * @throws ComputeException upon failure
    */
-  public boolean exists() throws ComputeException {
+  public boolean exists() {
     return reload(OperationOption.fields()) != null;
   }
 
@@ -652,10 +657,65 @@ public class Operation implements Serializable {
    *     not exist, {@code false} if the state is not {@link Operation.Status#DONE}
    * @throws ComputeException upon failure
    */
-  public boolean isDone() throws ComputeException {
+  public boolean isDone() {
     Operation operation = compute.getOperation(operationId,
         OperationOption.fields(Compute.OperationField.STATUS));
     return operation == null || operation.status() == Status.DONE;
+  }
+
+  /**
+   * Blocks until this operation completes its execution, either failing or succeeding. This method
+   * returns current operation's latest information. If the operation no longer exists, this method
+   * returns {@code null}. By default, the operation status is checked every 500 milliseconds, to
+   * configure this value use {@link WaitForOption#checkEvery(long, TimeUnit)}. Use
+   * {@link WaitForOption#timeout(long, TimeUnit)} to set the maximum time to wait.
+   *
+   * <p>Example usage of {@code waitFor()}:
+   * <pre> {@code
+   * Operation completedOperation = operation.waitFor();
+   * if (completedOperation == null) {
+   *   // operation no longer exists
+   * } else if (completedOperation.errors() != null) {
+   *   // operation failed, handle error
+   * } else {
+   *   // operation completed successfully
+   * }}</pre>
+   *
+   * <p>Example usage of {@code waitFor()} with checking period and timeout:
+   * <pre> {@code
+   * Operation completedOperation =
+   *     operation.waitFor(WaitForOption.checkEvery(1, TimeUnit.SECONDS),
+   *         WaitForOption.timeout(60, TimeUnit.SECONDS));
+   * if (completedOperation == null) {
+   *   // operation no longer exists
+   * } else if (completedOperation.errors() != null) {
+   *   // operation failed, handle error
+   * } else {
+   *   // operation completed successfully
+   * }}</pre>
+   *
+   * @param waitOptions options to configure checking period and timeout
+   * @throws ComputeException upon failure
+   * @throws InterruptedException if the current thread gets interrupted while waiting for the
+   *     operation to complete
+   * @throws TimeoutException if the timeout provided with
+   *     {@link WaitForOption#timeout(long, TimeUnit)} is exceeded. If no such option is provided
+   *     this exception is never thrown.
+   */
+  public Operation waitFor(WaitForOption... waitOptions)
+      throws InterruptedException, TimeoutException {
+    WaitForOption.Timeout timeout = WaitForOption.Timeout.getOrDefault(waitOptions);
+    CheckingPeriod checkingPeriod = CheckingPeriod.getOrDefault(waitOptions);
+    long timeoutMillis = timeout.timeoutMillis();
+    Clock clock = options.clock();
+    long startTime = clock.millis();
+    while (!isDone()) {
+      if (timeoutMillis  != -1 && (clock.millis() - startTime)  >= timeoutMillis) {
+        throw new TimeoutException();
+      }
+      checkingPeriod.sleep();
+    }
+    return reload();
   }
 
   /**
@@ -666,7 +726,7 @@ public class Operation implements Serializable {
    * @return an {@code Operation} object with latest information or {@code null} if not found
    * @throws ComputeException upon failure
    */
-  public Operation reload(OperationOption... options) throws ComputeException  {
+  public Operation reload(OperationOption... options) {
     return compute.getOperation(operationId, options);
   }
 
@@ -677,7 +737,7 @@ public class Operation implements Serializable {
    * @return {@code true} if operation was deleted, {@code false} if it was not found
    * @throws ComputeException upon failure
    */
-  public boolean delete() throws ComputeException {
+  public boolean delete() {
     return compute.deleteOperation(operationId);
   }
 

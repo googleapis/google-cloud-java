@@ -23,25 +23,25 @@ import com.google.cloud.compute.DiskId;
 import com.google.cloud.compute.Operation;
 import com.google.cloud.compute.Snapshot;
 
+import java.util.concurrent.TimeoutException;
+
 /**
  * A snippet for Google Cloud Compute Engine showing how to create a snapshot of a disk if the disk
  * exists.
  */
 public class CreateSnapshot {
 
-  public static void main(String... args) throws InterruptedException {
+  public static void main(String... args) throws InterruptedException, TimeoutException {
     Compute compute = ComputeOptions.defaultInstance().service();
     DiskId diskId = DiskId.of("us-central1-a", "disk-name");
     Disk disk = compute.getDisk(diskId, Compute.DiskOption.fields());
     if (disk != null) {
       String snapshotName = "disk-name-snapshot";
       Operation operation = disk.createSnapshot(snapshotName);
-      while (!operation.isDone()) {
-        Thread.sleep(1000L);
-      }
+      operation = operation.waitFor();
       if (operation.errors() == null) {
         // use snapshot
-        Snapshot snapshot = compute.getSnapshot("disk-name-snapshot");
+        Snapshot snapshot = compute.getSnapshot(snapshotName);
       }
     }
   }

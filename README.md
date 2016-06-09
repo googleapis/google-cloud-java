@@ -173,9 +173,7 @@ if (table == null) {
 }
 System.out.println("Loading data into table " + tableId);
 Job loadJob = table.load(FormatOptions.csv(), "gs://bucket/path");
-while (!loadJob.isDone()) {
-  Thread.sleep(1000L);
-}
+loadJob = loadJob.waitFor();
 if (loadJob.status().error() != null) {
   System.out.println("Job completed with errors");
 } else {
@@ -203,7 +201,6 @@ import com.google.cloud.compute.Compute;
 import com.google.cloud.compute.ComputeOptions;
 import com.google.cloud.compute.Disk;
 import com.google.cloud.compute.DiskId;
-import com.google.cloud.compute.Operation;
 import com.google.cloud.compute.Snapshot;
 
 Compute compute = ComputeOptions.defaultInstance().service();
@@ -212,12 +209,10 @@ Disk disk = compute.getDisk(diskId, Compute.DiskOption.fields());
 if (disk != null) {
   String snapshotName = "disk-name-snapshot";
   Operation operation = disk.createSnapshot(snapshotName);
-  while (!operation.isDone()) {
-    Thread.sleep(1000L);
-  }
+  operation = operation.waitFor();
   if (operation.errors() == null) {
     // use snapshot
-    Snapshot snapshot = compute.getSnapshot("disk-name-snapshot");
+    Snapshot snapshot = compute.getSnapshot(snapshotName);
   }
 }
 ```
@@ -234,8 +229,6 @@ import com.google.cloud.compute.InstanceId;
 import com.google.cloud.compute.InstanceInfo;
 import com.google.cloud.compute.MachineTypeId;
 import com.google.cloud.compute.NetworkId;
-import com.google.cloud.compute.NetworkInterface;
-import com.google.cloud.compute.Operation;
 
 Compute compute = ComputeOptions.defaultInstance().service();
 ImageId imageId = ImageId.of("debian-cloud", "debian-8-jessie-v20160329");
@@ -246,9 +239,7 @@ InstanceId instanceId = InstanceId.of("us-central1-a", "instance-name");
 MachineTypeId machineTypeId = MachineTypeId.of("us-central1-a", "n1-standard-1");
 Operation operation =
     compute.create(InstanceInfo.of(instanceId, machineTypeId, attachedDisk, networkInterface));
-while (!operation.isDone()) {
-  Thread.sleep(1000L);
-}
+operation = operation.waitFor();
 if (operation.errors() == null) {
   // use instance
   Instance instance = compute.getInstance(instanceId);

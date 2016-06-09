@@ -28,12 +28,14 @@ import com.google.cloud.compute.NetworkId;
 import com.google.cloud.compute.NetworkInterface;
 import com.google.cloud.compute.Operation;
 
+import java.util.concurrent.TimeoutException;
+
 /**
  * A snippet for Google Cloud Compute Engine showing how to create a virtual machine instance.
  */
 public class CreateInstance {
 
-  public static void main(String... args) throws InterruptedException {
+  public static void main(String... args) throws InterruptedException, TimeoutException {
     Compute compute = ComputeOptions.defaultInstance().service();
     ImageId imageId = ImageId.of("debian-cloud", "debian-8-jessie-v20160329");
     NetworkId networkId = NetworkId.of("default");
@@ -43,9 +45,7 @@ public class CreateInstance {
     MachineTypeId machineTypeId = MachineTypeId.of("us-central1-a", "n1-standard-1");
     Operation operation =
         compute.create(InstanceInfo.of(instanceId, machineTypeId, attachedDisk, networkInterface));
-    while (!operation.isDone()) {
-      Thread.sleep(1000L);
-    }
+    operation = operation.waitFor();
     if (operation.errors() == null) {
       // use instance
       Instance instance = compute.getInstance(instanceId);

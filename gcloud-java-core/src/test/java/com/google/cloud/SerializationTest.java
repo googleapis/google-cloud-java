@@ -23,6 +23,7 @@ import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.Serializable;
 import java.util.Date;
+import java.util.concurrent.TimeUnit;
 
 public class SerializationTest extends BaseSerializationTest {
 
@@ -36,6 +37,8 @@ public class SerializationTest extends BaseSerializationTest {
       new SigningException("message", BASE_SERVICE_EXCEPTION);
   private static final RetryParams RETRY_PARAMS = RetryParams.defaultInstance();
   private static final SomeIamPolicy SOME_IAM_POLICY = new SomeIamPolicy.Builder().build();
+  private static final WaitForOption CHECKING_PERIOD =
+      WaitForOption.checkEvery(42, TimeUnit.SECONDS);
   private static final String JSON_KEY = "{\n"
       + "  \"private_key_id\": \"somekeyid\",\n"
       + "  \"private_key\": \"-----BEGIN PRIVATE KEY-----\\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggS"
@@ -88,7 +91,7 @@ public class SerializationTest extends BaseSerializationTest {
   @Override
   protected Serializable[] serializableObjects() {
     return new Serializable[]{BASE_SERVICE_EXCEPTION, EXCEPTION_HANDLER, IDENTITY, PAGE,
-        RETRY_PARAMS, SOME_IAM_POLICY, SIGNING_EXCEPTION};
+        RETRY_PARAMS, SOME_IAM_POLICY, SIGNING_EXCEPTION, CHECKING_PERIOD};
   }
 
   @Override

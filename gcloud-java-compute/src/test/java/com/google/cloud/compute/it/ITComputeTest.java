@@ -88,6 +88,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.concurrent.TimeoutException;
 
 public class ITComputeTest {
 
@@ -681,14 +682,12 @@ public class ITComputeTest {
   }
 
   @Test
-  public void testCreateGetAndDeleteRegionAddress() throws InterruptedException {
+  public void testCreateGetAndDeleteRegionAddress() throws InterruptedException, TimeoutException {
     String name = BASE_RESOURCE_NAME + "create-and-get-region-address";
     AddressId addressId = RegionAddressId.of(REGION, name);
     AddressInfo addressInfo = AddressInfo.of(addressId);
     Operation operation = compute.create(addressInfo);
-    while (!operation.isDone()) {
-      Thread.sleep(1000L);
-    }
+    operation.waitFor();
     // test get
     Address remoteAddress = compute.getAddress(addressId);
     assertNotNull(remoteAddress);
@@ -709,26 +708,20 @@ public class ITComputeTest {
     assertNull(remoteAddress.creationTimestamp());
     assertNull(remoteAddress.generatedId());
     operation = remoteAddress.delete();
-    while (!operation.isDone()) {
-      Thread.sleep(1000L);
-    }
+    operation.waitFor();
     assertNull(compute.getAddress(addressId));
   }
 
   @Test
-  public void testListRegionAddresses() throws InterruptedException {
+  public void testListRegionAddresses() throws InterruptedException, TimeoutException {
     String prefix = BASE_RESOURCE_NAME + "list-region-address";
     String[] addressNames = {prefix + "1", prefix + "2"};
     AddressId firstAddressId = RegionAddressId.of(REGION, addressNames[0]);
     AddressId secondAddressId = RegionAddressId.of(REGION, addressNames[1]);
     Operation firstOperation = compute.create(AddressInfo.of(firstAddressId));
     Operation secondOperation = compute.create(AddressInfo.of(secondAddressId));
-    while (!firstOperation.isDone()) {
-      Thread.sleep(1000L);
-    }
-    while (!secondOperation.isDone()) {
-      Thread.sleep(1000L);
-    }
+    firstOperation.waitFor();
+    secondOperation.waitFor();
     Set<String> addressSet = ImmutableSet.copyOf(addressNames);
     // test list
     Compute.AddressFilter filter =
@@ -772,19 +765,15 @@ public class ITComputeTest {
   }
 
   @Test
-  public void testAggregatedListAddresses() throws InterruptedException {
+  public void testAggregatedListAddresses() throws InterruptedException, TimeoutException {
     String prefix = BASE_RESOURCE_NAME + "aggregated-list-address";
     String[] addressNames = {prefix + "1", prefix + "2"};
     AddressId firstAddressId = RegionAddressId.of(REGION, addressNames[0]);
     AddressId secondAddressId = GlobalAddressId.of(REGION, addressNames[1]);
     Operation firstOperation = compute.create(AddressInfo.of(firstAddressId));
     Operation secondOperation = compute.create(AddressInfo.of(secondAddressId));
-    while (!firstOperation.isDone()) {
-      Thread.sleep(1000L);
-    }
-    while (!secondOperation.isDone()) {
-      Thread.sleep(1000L);
-    }
+    firstOperation.waitFor();
+    secondOperation.waitFor();
     Set<String> addressSet = ImmutableSet.copyOf(addressNames);
     Compute.AddressFilter filter =
         Compute.AddressFilter.equals(Compute.AddressField.NAME, prefix + "\\d");
@@ -807,14 +796,12 @@ public class ITComputeTest {
   }
 
   @Test
-  public void testCreateGetAndDeleteGlobalAddress() throws InterruptedException {
+  public void testCreateGetAndDeleteGlobalAddress() throws InterruptedException, TimeoutException {
     String name = BASE_RESOURCE_NAME + "create-and-get-global-address";
     AddressId addressId = GlobalAddressId.of(name);
     AddressInfo addressInfo = AddressInfo.of(addressId);
     Operation operation = compute.create(addressInfo);
-    while (!operation.isDone()) {
-      Thread.sleep(1000L);
-    }
+    operation.waitFor();
     // test get
     Address remoteAddress = compute.getAddress(addressId);
     assertNotNull(remoteAddress);
@@ -833,26 +820,20 @@ public class ITComputeTest {
     assertNull(remoteAddress.creationTimestamp());
     assertNull(remoteAddress.generatedId());
     operation = remoteAddress.delete();
-    while (!operation.isDone()) {
-      Thread.sleep(1000L);
-    }
+    operation.waitFor();
     assertNull(compute.getAddress(addressId));
   }
 
   @Test
-  public void testListGlobalAddresses() throws InterruptedException {
+  public void testListGlobalAddresses() throws InterruptedException, TimeoutException {
     String prefix = BASE_RESOURCE_NAME + "list-global-address";
     String[] addressNames = {prefix + "1", prefix + "2"};
     AddressId firstAddressId = GlobalAddressId.of(addressNames[0]);
     AddressId secondAddressId = GlobalAddressId.of(addressNames[1]);
     Operation firstOperation = compute.create(AddressInfo.of(firstAddressId));
     Operation secondOperation = compute.create(AddressInfo.of(secondAddressId));
-    while (!firstOperation.isDone()) {
-      Thread.sleep(1000L);
-    }
-    while (!secondOperation.isDone()) {
-      Thread.sleep(1000L);
-    }
+    firstOperation.waitFor();
+    secondOperation.waitFor();
     Set<String> addressSet = ImmutableSet.copyOf(addressNames);
     // test list
     Compute.AddressFilter filter =
@@ -894,15 +875,13 @@ public class ITComputeTest {
   }
 
   @Test
-  public void testCreateGetResizeAndDeleteStandardDisk() throws InterruptedException {
+  public void testCreateGetResizeAndDeleteStandardDisk() throws InterruptedException, TimeoutException {
     String name = BASE_RESOURCE_NAME + "create-and-get-standard-disk";
     DiskId diskId = DiskId.of(ZONE, name);
     DiskInfo diskInfo =
         DiskInfo.of(diskId, StandardDiskConfiguration.of(DiskTypeId.of(ZONE, "pd-ssd"), 100L));
     Operation operation = compute.create(diskInfo);
-    while (!operation.isDone()) {
-      Thread.sleep(1000L);
-    }
+    operation.waitFor();
     // test get
     Disk remoteDisk = compute.getDisk(diskId);
     assertNotNull(remoteDisk);
@@ -918,9 +897,7 @@ public class ITComputeTest {
     assertNull(remoteDisk.lastAttachTimestamp());
     assertNull(remoteDisk.lastDetachTimestamp());
     operation = remoteDisk.resize(200L);
-    while (!operation.isDone()) {
-      Thread.sleep(1000L);
-    }
+    operation.waitFor();
     // test resize and get with selected fields
     remoteDisk = compute.getDisk(diskId, Compute.DiskOption.fields(Compute.DiskField.SIZE_GB));
     assertNotNull(remoteDisk);
@@ -936,21 +913,17 @@ public class ITComputeTest {
     assertNull(remoteDisk.lastAttachTimestamp());
     assertNull(remoteDisk.lastDetachTimestamp());
     operation = remoteDisk.delete();
-    while (!operation.isDone()) {
-      Thread.sleep(1000L);
-    }
+    operation.waitFor();
     assertNull(compute.getDisk(diskId));
   }
 
   @Test
-  public void testCreateGetAndDeleteImageDisk() throws InterruptedException {
+  public void testCreateGetAndDeleteImageDisk() throws InterruptedException, TimeoutException {
     String name = BASE_RESOURCE_NAME + "create-and-get-image-disk";
     DiskId diskId = DiskId.of(ZONE, name);
     DiskInfo diskInfo = DiskInfo.of(diskId, ImageDiskConfiguration.of(IMAGE_ID));
     Operation operation = compute.create(diskInfo);
-    while (!operation.isDone()) {
-      Thread.sleep(1000L);
-    }
+    operation.waitFor();
     // test get
     Disk remoteDisk = compute.getDisk(diskId);
     assertNotNull(remoteDisk);
@@ -985,14 +958,12 @@ public class ITComputeTest {
     assertNull(remoteDisk.lastAttachTimestamp());
     assertNull(remoteDisk.lastDetachTimestamp());
     operation = remoteDisk.delete();
-    while (!operation.isDone()) {
-      Thread.sleep(1000L);
-    }
+    operation.waitFor();
     assertNull(compute.getDisk(diskId));
   }
 
   @Test
-  public void testCreateGetAndDeleteSnapshotAndSnapshotDisk() throws InterruptedException {
+  public void testCreateGetAndDeleteSnapshotAndSnapshotDisk() throws InterruptedException, TimeoutException {
     String diskName = BASE_RESOURCE_NAME + "create-and-get-snapshot-disk1";
     String snapshotDiskName = BASE_RESOURCE_NAME + "create-and-get-snapshot-disk2";
     DiskId diskId = DiskId.of(ZONE, diskName);
@@ -1001,14 +972,10 @@ public class ITComputeTest {
     DiskInfo diskInfo =
         DiskInfo.of(diskId, StandardDiskConfiguration.of(DiskTypeId.of(ZONE, "pd-ssd"), 100L));
     Operation operation = compute.create(diskInfo);
-    while (!operation.isDone()) {
-      Thread.sleep(1000L);
-    }
+    operation.waitFor();
     Disk remoteDisk = compute.getDisk(diskId);
     operation = remoteDisk.createSnapshot(snapshotName);
-    while (!operation.isDone()) {
-      Thread.sleep(1000L);
-    }
+    operation.waitFor();
     // test get snapshot with selected fields
     Snapshot snapshot = compute.getSnapshot(snapshotName,
         Compute.SnapshotOption.fields(Compute.SnapshotField.CREATION_TIMESTAMP));
@@ -1038,9 +1005,7 @@ public class ITComputeTest {
     diskInfo =
         DiskInfo.of(snapshotDiskId, SnapshotDiskConfiguration.of(SnapshotId.of(snapshotName)));
     operation = compute.create(diskInfo);
-    while (!operation.isDone()) {
-      Thread.sleep(1000L);
-    }
+operation.waitFor();
     // test get disk
     remoteDisk = compute.getDisk(snapshotDiskId);
     assertNotNull(remoteDisk);
@@ -1076,19 +1041,15 @@ public class ITComputeTest {
     assertNull(remoteDisk.lastAttachTimestamp());
     assertNull(remoteDisk.lastDetachTimestamp());
     operation = remoteDisk.delete();
-    while (!operation.isDone()) {
-      Thread.sleep(1000L);
-    }
+operation.waitFor();
     assertNull(compute.getDisk(snapshotDiskId));
     operation = snapshot.delete();
-    while (!operation.isDone()) {
-      Thread.sleep(1000L);
-    }
+operation.waitFor();
     assertNull(compute.getSnapshot(snapshotName));
   }
 
   @Test
-  public void testListDisksAndSnapshots() throws InterruptedException {
+  public void testListDisksAndSnapshots() throws InterruptedException, TimeoutException {
     String prefix = BASE_RESOURCE_NAME + "list-disks-and-snapshots-disk";
     String[] diskNames = {prefix + "1", prefix + "2"};
     DiskId firstDiskId = DiskId.of(ZONE, diskNames[0]);
@@ -1097,12 +1058,8 @@ public class ITComputeTest {
         StandardDiskConfiguration.of(DiskTypeId.of(ZONE, "pd-ssd"), 100L);
     Operation firstOperation = compute.create(DiskInfo.of(firstDiskId, configuration));
     Operation secondOperation = compute.create(DiskInfo.of(secondDiskId, configuration));
-    while (!firstOperation.isDone()) {
-      Thread.sleep(1000L);
-    }
-    while (!secondOperation.isDone()) {
-      Thread.sleep(1000L);
-    }
+    firstOperation.waitFor();
+    secondOperation.waitFor();
     Set<String> diskSet = ImmutableSet.copyOf(diskNames);
     // test list disks
     Compute.DiskFilter diskFilter =
@@ -1154,12 +1111,8 @@ public class ITComputeTest {
     SnapshotId secondSnapshotId = SnapshotId.of(diskNames[1]);
     firstOperation = compute.create(SnapshotInfo.of(firstSnapshotId, firstDiskId));
     secondOperation = compute.create(SnapshotInfo.of(secondSnapshotId, secondDiskId));
-    while (!firstOperation.isDone()) {
-      Thread.sleep(1000L);
-    }
-    while (!secondOperation.isDone()) {
-      Thread.sleep(1000L);
-    }
+    firstOperation.waitFor();
+    secondOperation.waitFor();
     // test list snapshots
     Compute.SnapshotFilter snapshotFilter =
         Compute.SnapshotFilter.equals(Compute.SnapshotField.NAME, prefix + "\\d");
@@ -1207,7 +1160,7 @@ public class ITComputeTest {
   }
 
   @Test
-  public void testAggregatedListDisks() throws InterruptedException {
+  public void testAggregatedListDisks() throws InterruptedException, TimeoutException {
     String prefix = BASE_RESOURCE_NAME + "list-aggregated-disk";
     String[] diskZones = {"us-central1-a", "us-east1-c"};
     String[] diskNames = {prefix + "1", prefix + "2"};
@@ -1217,12 +1170,8 @@ public class ITComputeTest {
         StandardDiskConfiguration.of(DiskTypeId.of(ZONE, "pd-ssd"), 100L);
     Operation firstOperation = compute.create(DiskInfo.of(firstDiskId, configuration));
     Operation secondOperation = compute.create(DiskInfo.of(secondDiskId, configuration));
-    while (!firstOperation.isDone()) {
-      Thread.sleep(1000L);
-    }
-    while (!secondOperation.isDone()) {
-      Thread.sleep(1000L);
-    }
+    firstOperation.waitFor();
+    secondOperation.waitFor();
     Set<String> zoneSet = ImmutableSet.copyOf(diskZones);
     Set<String> diskSet = ImmutableSet.copyOf(diskNames);
     Compute.DiskFilter diskFilter =
@@ -1250,7 +1199,7 @@ public class ITComputeTest {
   }
 
   @Test
-  public void testCreateGetAndDeprecateImage() throws InterruptedException {
+  public void testCreateGetAndDeprecateImage() throws InterruptedException, TimeoutException {
     String diskName = BASE_RESOURCE_NAME + "create-and-get-image-disk";
     String imageName = BASE_RESOURCE_NAME + "create-and-get-image";
     DiskId diskId = DiskId.of(ZONE, diskName);
@@ -1258,15 +1207,11 @@ public class ITComputeTest {
     DiskInfo diskInfo =
         DiskInfo.of(diskId, StandardDiskConfiguration.of(DiskTypeId.of(ZONE, "pd-ssd"), 100L));
     Operation operation = compute.create(diskInfo);
-    while (!operation.isDone()) {
-      Thread.sleep(1000L);
-    }
+operation.waitFor();
     Disk remoteDisk = compute.getDisk(diskId);
     ImageInfo imageInfo = ImageInfo.of(imageId, DiskImageConfiguration.of(diskId));
     operation = compute.create(imageInfo);
-    while (!operation.isDone()) {
-      Thread.sleep(1000L);
-    }
+operation.waitFor();
     // test get image with selected fields
     Image image = compute.getImage(imageId,
         Compute.ImageOption.fields(Compute.ImageField.CREATION_TIMESTAMP));
@@ -1302,16 +1247,12 @@ public class ITComputeTest {
             .deprecated(System.currentTimeMillis())
             .build();
     operation = image.deprecate(deprecationStatus);
-    while (!operation.isDone()) {
-      Thread.sleep(1000L);
-    }
+operation.waitFor();
     image = compute.getImage(imageId);
     assertEquals(deprecationStatus, image.deprecationStatus());
     remoteDisk.delete();
     operation = image.delete();
-    while (!operation.isDone()) {
-      Thread.sleep(1000L);
-    }
+operation.waitFor();
     assertNull(compute.getImage(imageId));
   }
 
@@ -1376,15 +1317,13 @@ public class ITComputeTest {
   }
 
   @Test
-  public void testCreateAndGetNetwork() throws InterruptedException {
+  public void testCreateAndGetNetwork() throws InterruptedException, TimeoutException {
     String name = BASE_RESOURCE_NAME + "create-and-get-network";
     NetworkId networkId = NetworkId.of(name);
     NetworkInfo networkInfo =
         NetworkInfo.of(networkId, StandardNetworkConfiguration.of("192.168.0.0/16"));
     Operation operation = compute.create(networkInfo);
-    while (!operation.isDone()) {
-      Thread.sleep(1000L);
-    }
+operation.waitFor();
     // test get network with selected fields
     Network network = compute.getNetwork(networkId.network(),
         Compute.NetworkOption.fields(Compute.NetworkField.CREATION_TIMESTAMP));
@@ -1404,22 +1343,18 @@ public class ITComputeTest {
     remoteConfiguration = network.configuration();
     assertEquals("192.168.0.0/16", remoteConfiguration.ipRange());
     operation = network.delete();
-    while (!operation.isDone()) {
-      Thread.sleep(1000L);
-    }
+operation.waitFor();
     assertNull(compute.getNetwork(name));
   }
 
   @Test
-  public void testListNetworks() throws InterruptedException {
+  public void testListNetworks() throws InterruptedException, TimeoutException {
     String name = BASE_RESOURCE_NAME + "list-network";
     NetworkId networkId = NetworkId.of(name);
     NetworkInfo networkInfo =
         NetworkInfo.of(networkId, StandardNetworkConfiguration.of("192.168.0.0/16"));
     Operation operation = compute.create(networkInfo);
-    while (!operation.isDone()) {
-      Thread.sleep(1000L);
-    }
+operation.waitFor();
     // test list
     Compute.NetworkFilter filter = Compute.NetworkFilter.equals(Compute.NetworkField.NAME, name);
     Page<Network> networkPage = compute.listNetworks(Compute.NetworkListOption.filter(filter));
@@ -1454,21 +1389,17 @@ public class ITComputeTest {
     }
     assertEquals(1, count);
     operation = compute.deleteNetwork(networkId);
-    while (!operation.isDone()) {
-      Thread.sleep(1000L);
-    }
+operation.waitFor();
     assertNull(compute.getNetwork(name));
   }
 
   @Test
-  public void testCreateNetworkAndSubnetwork() throws InterruptedException {
+  public void testCreateNetworkAndSubnetwork() throws InterruptedException, TimeoutException {
     String networkName = BASE_RESOURCE_NAME + "create-subnetwork-network";
     NetworkId networkId = NetworkId.of(networkName);
     NetworkInfo networkInfo = NetworkInfo.of(networkId, SubnetNetworkConfiguration.of(false));
     Operation operation = compute.create(networkInfo);
-    while (!operation.isDone()) {
-      Thread.sleep(1000L);
-    }
+operation.waitFor();
     // test get network
     Network network = compute.getNetwork(networkId.network());
     assertEquals(networkId.network(), network.networkId().network());
@@ -1481,9 +1412,7 @@ public class ITComputeTest {
     SubnetworkId subnetworkId = SubnetworkId.of(REGION, subnetworkName);
     SubnetworkInfo subnetworkInfo = SubnetworkInfo.of(subnetworkId, networkId, "192.168.0.0/16");
     operation = compute.create(subnetworkInfo);
-    while (!operation.isDone()) {
-      Thread.sleep(1000L);
-    }
+operation.waitFor();
     // test get subnetwork with selected fields
     Subnetwork subnetwork = compute.getSubnetwork(subnetworkId,
         Compute.SubnetworkOption.fields(Compute.SubnetworkField.CREATION_TIMESTAMP));
@@ -1538,26 +1467,20 @@ public class ITComputeTest {
     }
     assertEquals(1, count);
     operation = subnetwork.delete();
-    while (!operation.isDone()) {
-      Thread.sleep(1000L);
-    }
+operation.waitFor();
     operation = compute.deleteNetwork(networkId);
-    while (!operation.isDone()) {
-      Thread.sleep(1000L);
-    }
+operation.waitFor();
     assertNull(compute.getSubnetwork(subnetworkId));
     assertNull(compute.getNetwork(networkName));
   }
 
   @Test
-  public void testAggregatedListSubnetworks() throws InterruptedException {
+  public void testAggregatedListSubnetworks() throws InterruptedException, TimeoutException {
     String networkName = BASE_RESOURCE_NAME + "list-subnetwork-network";
     NetworkId networkId = NetworkId.of(networkName);
     NetworkInfo networkInfo = NetworkInfo.of(networkId, SubnetNetworkConfiguration.of(false));
     Operation operation = compute.create(networkInfo);
-    while (!operation.isDone()) {
-      Thread.sleep(1000L);
-    }
+operation.waitFor();
     String prefix = BASE_RESOURCE_NAME + "list-subnetwork";
     String[] regionNames = {"us-central1", "us-east1"};
     String[] subnetworkNames = {prefix + "1", prefix + "2"};
@@ -1570,12 +1493,8 @@ public class ITComputeTest {
         SubnetworkInfo.of(secondSubnetworkId, networkId, ipRanges[1]);
     Operation firstOperation = compute.create(firstSubnetworkInfo);
     Operation secondOperation = compute.create(secondSubnetworkInfo);
-    while (!firstOperation.isDone()) {
-      Thread.sleep(1000L);
-    }
-    while (!secondOperation.isDone()) {
-      Thread.sleep(1000L);
-    }
+    firstOperation.waitFor();
+    secondOperation.waitFor();
     Set<String> regionSet = ImmutableSet.copyOf(regionNames);
     Set<String> subnetworkSet = ImmutableSet.copyOf(subnetworkNames);
     Set<String> rangeSet = ImmutableSet.copyOf(ipRanges);
@@ -1599,30 +1518,22 @@ public class ITComputeTest {
     assertEquals(2, count);
     firstOperation = compute.deleteSubnetwork(firstSubnetworkId);
     secondOperation = compute.deleteSubnetwork(secondSubnetworkId);
-    while (!firstOperation.isDone()) {
-      Thread.sleep(1000L);
-    }
-    while (!secondOperation.isDone()) {
-      Thread.sleep(1000L);
-    }
+    firstOperation.waitFor();
+    secondOperation.waitFor();
     operation = compute.deleteNetwork(networkId);
-    while (!operation.isDone()) {
-      Thread.sleep(1000L);
-    }
+operation.waitFor();
     assertNull(compute.getNetwork(networkName));
   }
 
   @Test
-  public void testCreateGetAndDeleteInstance() throws InterruptedException {
+  public void testCreateGetAndDeleteInstance() throws InterruptedException, TimeoutException {
     String instanceName = BASE_RESOURCE_NAME + "create-and-get-instance";
     String addressName = BASE_RESOURCE_NAME + "create-and-get-instance-address";
     // Create an address to assign to the instance
     AddressId addressId = RegionAddressId.of(REGION, addressName);
     AddressInfo addressInfo = AddressInfo.of(addressId);
     Operation operation = compute.create(addressInfo);
-    while (!operation.isDone()) {
-      Thread.sleep(1000L);
-    }
+operation.waitFor();
     Address address = compute.getAddress(addressId);
     // Create an instance
     InstanceId instanceId = InstanceId.of(ZONE, instanceName);
@@ -1640,9 +1551,7 @@ public class ITComputeTest {
             .networkInterfaces(networkInterface)
             .build();
     operation = compute.create(instanceInfo);
-    while (!operation.isDone()) {
-      Thread.sleep(1000L);
-    }
+operation.waitFor();
     // test get
     Instance remoteInstance = compute.getInstance(instanceId);
     assertEquals(instanceName, remoteInstance.instanceId().instance());
@@ -1694,15 +1603,13 @@ public class ITComputeTest {
     String newSerialPortOutput = remoteInstance.getSerialPortOutput(1);
     assertTrue(newSerialPortOutput.contains(serialPortOutput));
     operation = remoteInstance.delete();
-    while (!operation.isDone()) {
-      Thread.sleep(1000L);
-    }
+operation.waitFor();
     assertNull(compute.getInstance(instanceId));
     address.delete();
   }
 
   @Test
-  public void testStartStopAndResetInstance() throws InterruptedException {
+  public void testStartStopAndResetInstance() throws InterruptedException, TimeoutException {
     String instanceName = BASE_RESOURCE_NAME + "start-stop-reset-instance";
     InstanceId instanceId = InstanceId.of(ZONE, instanceName);
     NetworkId networkId = NetworkId.of("default");
@@ -1715,30 +1622,22 @@ public class ITComputeTest {
             .networkInterfaces(networkInterface)
             .build();
     Operation operation = compute.create(instanceInfo);
-    while (!operation.isDone()) {
-      Thread.sleep(1000L);
-    }
+operation.waitFor();
     Instance remoteInstance = compute.getInstance(instanceId,
         Compute.InstanceOption.fields(Compute.InstanceField.STATUS));
     assertEquals(InstanceInfo.Status.RUNNING, remoteInstance.status());
     operation = remoteInstance.stop();
-    while (!operation.isDone()) {
-      Thread.sleep(1000L);
-    }
+operation.waitFor();
     remoteInstance = compute.getInstance(instanceId,
         Compute.InstanceOption.fields(Compute.InstanceField.STATUS));
     assertEquals(InstanceInfo.Status.TERMINATED, remoteInstance.status());
     operation = remoteInstance.start();
-    while (!operation.isDone()) {
-      Thread.sleep(1000L);
-    }
+operation.waitFor();
     remoteInstance = compute.getInstance(instanceId,
         Compute.InstanceOption.fields(Compute.InstanceField.STATUS));
     assertEquals(InstanceInfo.Status.RUNNING, remoteInstance.status());
     operation = remoteInstance.reset();
-    while (!operation.isDone()) {
-      Thread.sleep(1000L);
-    }
+operation.waitFor();
     remoteInstance = compute.getInstance(instanceId,
         Compute.InstanceOption.fields(Compute.InstanceField.STATUS));
     assertEquals(InstanceInfo.Status.RUNNING, remoteInstance.status());
@@ -1746,7 +1645,7 @@ public class ITComputeTest {
   }
 
   @Test
-  public void testSetInstanceProperties() throws InterruptedException {
+  public void testSetInstanceProperties() throws InterruptedException, TimeoutException {
     String instanceName = BASE_RESOURCE_NAME + "set-properties-instance";
     InstanceId instanceId = InstanceId.of(ZONE, instanceName);
     NetworkId networkId = NetworkId.of("default");
@@ -1759,51 +1658,39 @@ public class ITComputeTest {
             .networkInterfaces(networkInterface)
             .build();
     Operation operation = compute.create(instanceInfo);
-    while (!operation.isDone()) {
-      Thread.sleep(1000L);
-    }
+operation.waitFor();
     Instance remoteInstance = compute.getInstance(instanceId);
     // test set tags
     List<String> tags = ImmutableList.of("tag1", "tag2");
     operation = remoteInstance.setTags(tags);
-    while (!operation.isDone()) {
-      Thread.sleep(1000L);
-    }
+operation.waitFor();
     remoteInstance = compute.getInstance(instanceId);
     assertEquals(tags, remoteInstance.tags().values());
     // test set metadata
     Map<String, String> metadata = ImmutableMap.of("key", "value");
     operation = remoteInstance.setMetadata(metadata);
-    while (!operation.isDone()) {
-      Thread.sleep(1000L);
-    }
+operation.waitFor();
     remoteInstance = compute.getInstance(instanceId);
     assertEquals(metadata, remoteInstance.metadata().values());
     // test set machine type
     operation = remoteInstance.stop();
-    while (!operation.isDone()) {
-      Thread.sleep(1000L);
-    }
+operation.waitFor();
     operation = remoteInstance.setMachineType(MachineTypeId.of(ZONE, "n1-standard-1"));
-    while (!operation.isDone()) {
-      Thread.sleep(1000L);
-    }
+operation.waitFor();
     remoteInstance = compute.getInstance(instanceId);
     assertEquals("n1-standard-1", remoteInstance.machineType().type());
     assertEquals(ZONE, remoteInstance.machineType().zone());
     // test set scheduling options
     SchedulingOptions options = SchedulingOptions.standard(false, SchedulingOptions.Maintenance.TERMINATE);
     operation = remoteInstance.setSchedulingOptions(options);
-    while (!operation.isDone()) {
-      Thread.sleep(1000L);
-    }
+operation.waitFor();
     remoteInstance = compute.getInstance(instanceId);
     assertEquals(options, remoteInstance.schedulingOptions());
     remoteInstance.delete();
   }
 
   @Test
-  public void testAttachAndDetachDisk() throws InterruptedException {
+  public void testAttachAndDetachDisk() throws InterruptedException, TimeoutException {
     String instanceName = BASE_RESOURCE_NAME + "attach-and-detach-disk-instance";
     String diskName = BASE_RESOURCE_NAME + "attach-and-detach-disk";
     InstanceId instanceId = InstanceId.of(ZONE, instanceName);
@@ -1820,19 +1707,13 @@ public class ITComputeTest {
     DiskId diskId = DiskId.of(ZONE, diskName);
     Operation diskOperation = compute.create(DiskInfo.of(diskId,
             StandardDiskConfiguration.of(DiskTypeId.of(ZONE, "pd-ssd"))));
-    while (!instanceOperation.isDone()) {
-      Thread.sleep(1000L);
-    }
-    while (!diskOperation.isDone()) {
-      Thread.sleep(1000L);
-    }
+    instanceOperation.waitFor();
+    diskOperation.waitFor();
     Instance remoteInstance = compute.getInstance(instanceId);
     // test attach disk
     instanceOperation = remoteInstance.attachDisk("dev1",
         AttachedDisk.PersistentDiskConfiguration.builder(diskId).build());
-    while (!instanceOperation.isDone()) {
-      Thread.sleep(1000L);
-    }
+    instanceOperation.waitFor();
     remoteInstance = compute.getInstance(instanceId);
     Set<String> deviceSet = ImmutableSet.of("dev0", "dev1");
     assertEquals(2, remoteInstance.attachedDisks().size());
@@ -1841,9 +1722,7 @@ public class ITComputeTest {
     }
     // test set disk auto-delete
     instanceOperation = remoteInstance.setDiskAutoDelete("dev1", true);
-    while (!instanceOperation.isDone()) {
-      Thread.sleep(1000L);
-    }
+    instanceOperation.waitFor();
     remoteInstance = compute.getInstance(instanceId);
     assertEquals(2, remoteInstance.attachedDisks().size());
     for (AttachedDisk remoteAttachedDisk : remoteInstance.attachedDisks()) {
@@ -1852,9 +1731,7 @@ public class ITComputeTest {
     }
     // test detach disk
     instanceOperation = remoteInstance.detachDisk("dev1");
-    while (!instanceOperation.isDone()) {
-      Thread.sleep(1000L);
-    }
+    instanceOperation.waitFor();
     remoteInstance = compute.getInstance(instanceId);
     assertEquals(1, remoteInstance.attachedDisks().size());
     assertEquals("dev0", remoteInstance.attachedDisks().get(0).deviceName());
@@ -1863,7 +1740,7 @@ public class ITComputeTest {
   }
 
   @Test
-  public void testAddAndRemoveAccessConfig() throws InterruptedException {
+  public void testAddAndRemoveAccessConfig() throws InterruptedException, TimeoutException {
     String instanceName = BASE_RESOURCE_NAME + "add-and-remove-access-instance";
     String addressName = BASE_RESOURCE_NAME + "add-and-remove-access-address";
     InstanceId instanceId = InstanceId.of(ZONE, instanceName);
@@ -1880,15 +1757,8 @@ public class ITComputeTest {
     AddressId addressId = RegionAddressId.of(REGION, addressName);
     AddressInfo addressInfo = AddressInfo.of(addressId);
     Operation addressOperation = compute.create(addressInfo);
-    while (!addressOperation.isDone()) {
-      Thread.sleep(1000L);
-    }
-    while (!instanceOperation.isDone()) {
-      Thread.sleep(1000L);
-    }
-    while (!addressOperation.isDone()) {
-      Thread.sleep(1000L);
-    }
+    addressOperation.waitFor();
+    instanceOperation.waitFor();
     Address remoteAddress = compute.getAddress(addressId);
     Instance remoteInstance = compute.getInstance(instanceId);
     String networkInterfaceName = remoteInstance.networkInterfaces().get(0).name();
@@ -1898,9 +1768,7 @@ public class ITComputeTest {
         .name("NAT")
         .build();
     instanceOperation = remoteInstance.addAccessConfig(networkInterfaceName, accessConfig);
-    while (!instanceOperation.isDone()) {
-      Thread.sleep(1000L);
-    }
+    instanceOperation.waitFor();
     remoteInstance = compute.getInstance(instanceId);
     List<NetworkInterface.AccessConfig> accessConfigurations =
         remoteInstance.networkInterfaces().get(0).accessConfigurations();
@@ -1908,9 +1776,7 @@ public class ITComputeTest {
     assertEquals("NAT", accessConfigurations.get(0).name());
     // test delete access config
     instanceOperation = remoteInstance.deleteAccessConfig(networkInterfaceName, "NAT");
-    while (!instanceOperation.isDone()) {
-      Thread.sleep(1000L);
-    }
+    instanceOperation.waitFor();
     remoteInstance = compute.getInstance(instanceId);
     assertTrue(remoteInstance.networkInterfaces().get(0).accessConfigurations().isEmpty());
     remoteInstance.delete();

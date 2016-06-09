@@ -528,6 +528,7 @@ public class BigQueryExample {
         System.out.println("Waiting for job " + startedJob.jobId().job() + " to complete");
         Thread.sleep(1000L);
       }
+      startedJob = startedJob.reload();
       if (startedJob.status().error() == null) {
         System.out.println("Job " + startedJob.jobId().job() + " succeeded");
       } else {

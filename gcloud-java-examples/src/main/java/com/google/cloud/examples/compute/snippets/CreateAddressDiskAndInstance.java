@@ -35,13 +35,15 @@ import com.google.cloud.compute.NetworkInterface.AccessConfig;
 import com.google.cloud.compute.Operation;
 import com.google.cloud.compute.RegionAddressId;
 
+import java.util.concurrent.TimeoutException;
+
 /**
  * A snippet for Google Cloud Compute Engine showing how to create a disk and an address. The
  * snippet also shows how to create a virtual machine instance using the created disk and address.
  */
 public class CreateAddressDiskAndInstance {
 
-  public static void main(String... args) throws InterruptedException {
+  public static void main(String... args) throws InterruptedException, TimeoutException {
     // Create a service object
     // Credentials are inferred from the environment.
     Compute compute = ComputeOptions.defaultInstance().service();
@@ -50,11 +52,7 @@ public class CreateAddressDiskAndInstance {
     RegionAddressId addressId = RegionAddressId.of("us-central1", "test-address");
     Operation operation = compute.create(AddressInfo.of(addressId));
     // Wait for operation to complete
-    while (!operation.isDone()) {
-      Thread.sleep(1000L);
-    }
-    // Check operation errors
-    operation = operation.reload();
+    operation = operation.waitFor();
     if (operation.errors() == null) {
       System.out.println("Address " + addressId + " was successfully created");
     } else {
@@ -69,11 +67,7 @@ public class CreateAddressDiskAndInstance {
     DiskInfo disk = DiskInfo.of(diskId, diskConfiguration);
     operation = compute.create(disk);
     // Wait for operation to complete
-    while (!operation.isDone()) {
-      Thread.sleep(1000L);
-    }
-    // Check operation errors
-    operation = operation.reload();
+    operation = operation.waitFor();
     if (operation.errors() == null) {
       System.out.println("Disk " + diskId + " was successfully created");
     } else {
@@ -96,11 +90,7 @@ public class CreateAddressDiskAndInstance {
         InstanceInfo.of(instanceId, machineTypeId, attachedDisk, networkInterface);
     operation = compute.create(instance);
     // Wait for operation to complete
-    while (!operation.isDone()) {
-      Thread.sleep(1000L);
-    }
-    // Check operation errors
-    operation = operation.reload();
+    operation = operation.waitFor();
     if (operation.errors() == null) {
       System.out.println("Instance " + instanceId + " was successfully created");
     } else {

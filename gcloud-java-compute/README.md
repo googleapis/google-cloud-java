@@ -114,10 +114,8 @@ succeeded:
 ```java
 RegionAddressId addressId = RegionAddressId.of("us-central1", "test-address");
 Operation operation = compute.create(AddressInfo.of(addressId));
-while (!operation.isDone()) {
-  Thread.sleep(1000L);
-}
-operation = operation.reload();
+// Wait for operation to complete
+operation = operation.waitFor();
 if (operation.errors() == null) {
   System.out.println("Address " + addressId + " was successfully created");
 } else {
@@ -150,10 +148,8 @@ DiskId diskId = DiskId.of("us-central1-a", "test-disk");
 ImageDiskConfiguration diskConfiguration = ImageDiskConfiguration.of(imageId);
 DiskInfo disk = DiskInfo.of(diskId, diskConfiguration);
 Operation operation = compute.create(disk);
-while (!operation.isDone()) {
-  Thread.sleep(1000L);
-}
-operation = operation.reload();
+// Wait for operation to complete
+operation = operation.waitFor();
 if (operation.errors() == null) {
   System.out.println("Disk " + diskId + " was successfully created");
 } else {
@@ -198,10 +194,8 @@ MachineTypeId machineTypeId = MachineTypeId.of("us-central1-a", "n1-standard-1")
 InstanceInfo instance =
     InstanceInfo.of(instanceId, machineTypeId, attachedDisk, networkInterface);
 Operation operation = compute.create(instance);
-while (!operation.isDone()) {
-  Thread.sleep(1000L);
-}
-operation = operation.reload();
+// Wait for operation to complete
+operation = operation.waitFor();
 if (operation.errors() == null) {
   System.out.println("Instance " + instanceId + " was successfully created");
 } else {

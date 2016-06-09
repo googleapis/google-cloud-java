@@ -71,7 +71,6 @@ import com.google.common.collect.ImmutableMap;
 
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
-import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.Timeout;
@@ -83,6 +82,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -170,7 +170,7 @@ public class ITBigQueryTest {
   public Timeout globalTimeout = Timeout.seconds(300);
 
   @BeforeClass
-  public static void beforeClass() throws InterruptedException {
+  public static void beforeClass() throws InterruptedException, TimeoutException {
     RemoteBigQueryHelper bigqueryHelper = RemoteBigQueryHelper.create();
     RemoteStorageHelper storageHelper = RemoteStorageHelper.create();
     bigquery = bigqueryHelper.options().service();
@@ -188,9 +188,7 @@ public class ITBigQueryTest {
         .schema(TABLE_SCHEMA)
         .build();
     Job job = bigquery.create(JobInfo.of(configuration));
-    while (!job.isDone()) {
-      Thread.sleep(1000);
-    }
+    job = job.waitFor();
     assertNull(job.status().error());
   }
 
@@ -786,7 +784,7 @@ public class ITBigQueryTest {
   }
 
   @Test
-  public void testCopyJob() throws InterruptedException {
+  public void testCopyJob() throws InterruptedException, TimeoutException {
     String sourceTableName = "test_copy_job_source_table";
     String destinationTableName = "test_copy_job_destination_table";
     TableId sourceTable = TableId.of(DATASET, sourceTableName);
@@ -799,9 +797,7 @@ public class ITBigQueryTest {
     TableId destinationTable = TableId.of(DATASET, destinationTableName);
     CopyJobConfiguration configuration = CopyJobConfiguration.of(destinationTable, sourceTable);
     Job remoteJob = bigquery.create(JobInfo.of(configuration));
-    while (!remoteJob.isDone()) {
-      Thread.sleep(1000);
-    }
+    remoteJob = remoteJob.waitFor();
     assertNull(remoteJob.status().error());
     Table remoteTable = bigquery.getTable(DATASET, destinationTableName);
     assertNotNull(remoteTable);
@@ -813,7 +809,7 @@ public class ITBigQueryTest {
   }
 
   @Test
-  public void testQueryJob() throws InterruptedException {
+  public void testQueryJob() throws InterruptedException, TimeoutException {
     String tableName = "test_query_job_table";
     String query = new StringBuilder()
         .append("SELECT TimestampField, StringField, BooleanField FROM ")
@@ -825,9 +821,7 @@ public class ITBigQueryTest {
         .destinationTable(destinationTable)
         .build();
     Job remoteJob = bigquery.create(JobInfo.of(configuration));
-    while (!remoteJob.isDone()) {
-      Thread.sleep(1000);
-    }
+    remoteJob = remoteJob.waitFor();
     assertNull(remoteJob.status().error());
 
     QueryResponse response = bigquery.getQueryResults(remoteJob.jobId());
@@ -858,7 +852,7 @@ public class ITBigQueryTest {
   }
 
   @Test
-  public void testExtractJob() throws InterruptedException {
+  public void testExtractJob() throws InterruptedException, TimeoutException {
     String tableName = "test_export_job_table";
     TableId destinationTable = TableId.of(DATASET, tableName);
     LoadJobConfiguration configuration =
@@ -866,9 +860,7 @@ public class ITBigQueryTest {
             .schema(SIMPLE_SCHEMA)
             .build();
     Job remoteLoadJob = bigquery.create(JobInfo.of(configuration));
-    while (!remoteLoadJob.isDone()) {
-      Thread.sleep(1000);
-    }
+    remoteLoadJob = remoteLoadJob.waitFor();
     assertNull(remoteLoadJob.status().error());
 
     ExtractJobConfiguration extractConfiguration =
@@ -876,9 +868,7 @@ public class ITBigQueryTest {
             .printHeader(false)
             .build();
     Job remoteExtractJob = bigquery.create(JobInfo.of(extractConfiguration));
-    while (!remoteExtractJob.isDone()) {
-      Thread.sleep(1000);
-    }
+    remoteExtractJob = remoteExtractJob.waitFor();
     assertNull(remoteExtractJob.status().error());
     assertEquals(CSV_CONTENT,
         new String(storage.readAllBytes(BUCKET, EXTRACT_FILE), StandardCharsets.UTF_8));
@@ -886,7 +876,7 @@ public class ITBigQueryTest {
   }
 
   @Test
-  public void testCancelJob() throws InterruptedException {
+  public void testCancelJob() throws InterruptedException, TimeoutException {
     String destinationTableName = "test_cancel_query_job_table";
     String query = "SELECT TimestampField, StringField, BooleanField FROM " + TABLE_ID.table();
     TableId destinationTable = TableId.of(DATASET, destinationTableName);
@@ -896,9 +886,7 @@ public class ITBigQueryTest {
         .build();
     Job remoteJob = bigquery.create(JobInfo.of(configuration));
     assertTrue(remoteJob.cancel());
-    while (!remoteJob.isDone()) {
-      Thread.sleep(1000);
-    }
+    remoteJob = remoteJob.waitFor();
     assertNull(remoteJob.status().error());
   }
 

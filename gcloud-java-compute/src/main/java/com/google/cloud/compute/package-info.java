@@ -28,12 +28,10 @@
  * if (disk != null) {
  *   String snapshotName = "disk-name-snapshot";
  *   Operation operation = disk.createSnapshot(snapshotName);
- *   while (!operation.isDone()) {
- *     Thread.sleep(1000L);
- *   }
+ *   operation = operation.waitFor();
  *   if (operation.errors() == null) {
  *     // use snapshot
- *     Snapshot snapshot = compute.getSnapshot("disk-name-snapshot");
+ *     Snapshot snapshot = compute.getSnapshot(snapshotName);
  *   }
  * }}</pre>
  * <p>This second example shows how to create a virtual machine instance. Complete source code can
@@ -49,10 +47,8 @@
  * InstanceId instanceId = InstanceId.of("us-central1-a", "instance-name");
  * MachineTypeId machineTypeId = MachineTypeId.of("us-central1-a", "n1-standard-1");
  * Operation operation =
- * compute.create(InstanceInfo.of(instanceId, machineTypeId, attachedDisk, networkInterface));
- * while (!operation.isDone()) {
- *   Thread.sleep(1000L);
- * }
+ *     compute.create(InstanceInfo.of(instanceId, machineTypeId, attachedDisk, networkInterface));
+ * operation = operation.waitFor();
  * if (operation.errors() == null) {
  *   // use instance
  *   Instance instance = compute.getInstance(instanceId);
