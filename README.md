@@ -34,16 +34,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>gcloud-java</artifactId>
-  <version>0.2.2</version>
+  <version>0.2.3</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:gcloud-java:0.2.2'
+compile 'com.google.cloud:gcloud-java:0.2.3'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "gcloud-java" % "0.2.2"
+libraryDependencies += "com.google.cloud" % "gcloud-java" % "0.2.3"
 ```
 
 Example Applications
