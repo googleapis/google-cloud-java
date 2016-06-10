@@ -73,7 +73,7 @@ public final class Field implements Serializable {
     private static final long serialVersionUID = 2841484762609576959L;
 
     public enum Value {
-      STRING, INTEGER, FLOAT, BOOLEAN, TIMESTAMP, RECORD
+      BYTES, STRING, INTEGER, FLOAT, BOOLEAN, TIMESTAMP, RECORD
     }
 
     private final Value value;
@@ -106,6 +106,13 @@ public final class Field implements Serializable {
      */
     public List<Field> fields() {
       return fields;
+    }
+
+    /**
+     * Returns a {@link Value#BYTES} field value.
+     */
+    public static Type bytes() {
+      return new Type(Value.BYTES);
     }
 
     /**

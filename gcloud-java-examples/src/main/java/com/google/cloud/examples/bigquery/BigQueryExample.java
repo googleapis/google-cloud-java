@@ -92,10 +92,10 @@ import java.util.Map;
  * operations that apply to more than one entity (`list`, `create`, `info` and `delete`) the third
  * parameter specifies the entity. {@code <primitiveType>} indicates that only primitive types are
  * supported by the {@code create table} and {@code create external-table} operations
- * ({@code string}, {@code float}, {@code integer}, {@code timestamp}, {@code boolean}).
- * {@code <sourceUri>}, {@code <sourceUris>} and {@code <destinationUris>} parameters are URIs to
- * Google Cloud Storage blobs, in the form {@code gs://bucket/path}. See each action's run method
- * for the specific BigQuery interaction.
+ * ({@code string}, {@code float}, {@code integer}, {@code timestamp}, {@code boolean},
+ * {@code bytes}). {@code <sourceUri>}, {@code <sourceUris>} and {@code <destinationUris>}
+ * parameters are URIs to Google Cloud Storage blobs, in the form {@code gs://bucket/path}.
+ * See each action's run method for the specific BigQuery interaction.
  */
 public class BigQueryExample {
 
@@ -425,6 +425,9 @@ public class BigQueryExample {
             break;
           case "boolean":
             fieldType = Field.Type.bool();
+            break;
+          case "bytes":
+            fieldType = Field.Type.bytes();
             break;
           default:
             throw new IllegalArgumentException("Unrecognized field type '" + typeString + "'.");
