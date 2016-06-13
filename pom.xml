@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>com.google.gcloud</groupId>
+  <groupId>com.google.cloud</groupId>
   <artifactId>gcloud-java-pom</artifactId>
   <packaging>pom</packaging>
-  <version>0.1.4-SNAPSHOT</version>
+  <version>0.2.1-SNAPSHOT</version>
   <name>GCloud Java</name>
   <url>https://github.com/GoogleCloudPlatform/gcloud-java</url>
   <description>
@@ -98,6 +98,7 @@
     <module>gcloud-java-contrib</module>
     <module>gcloud-java-core</module>
     <module>gcloud-java-datastore</module>
+    <module>gcloud-java-dns</module>
     <module>gcloud-java-examples</module>
     <module>gcloud-java-pubsub</module>
     <module>gcloud-java-logging</module>
@@ -135,7 +136,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
-        <version>2.18</version>
+        <version>2.19.1</version>
         <configuration>
           <!-- Excludes integration tests when unit tests are run -->
           <excludes>
@@ -217,6 +218,13 @@
             </manifestEntries>
           </archive>
         </configuration>
+        <executions>
+          <execution>
+            <goals>
+              <goal>test-jar</goal>
+            </goals>
+          </execution>
+        </executions>
       </plugin>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
@@ -230,32 +238,6 @@
           <encoding>UTF-8</encoding>
           <compilerArgument>-Xlint:unchecked</compilerArgument>
         </configuration>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-source-plugin</artifactId>
-        <version>2.4</version>
-        <executions>
-          <execution>
-            <id>attach-sources</id>
-            <goals>
-              <goal>jar-no-fork</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-javadoc-plugin</artifactId>
-        <version>2.10.3</version>
-        <executions>
-          <execution>
-            <id>attach-javadocs</id>
-            <goals>
-              <goal>jar</goal>
-            </goals>
-          </execution>
-        </executions>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -274,7 +256,7 @@
       <plugin>
         <groupId>org.sonatype.plugins</groupId>
         <artifactId>nexus-staging-maven-plugin</artifactId>
-        <version>1.6.5</version>
+        <version>1.6.6</version>
         <extensions>true</extensions>
         <configuration>
           <serverId>sonatype-nexus-staging</serverId>
@@ -285,7 +267,7 @@
       <plugin>
         <groupId>org.eluder.coveralls</groupId>
         <artifactId>coveralls-maven-plugin</artifactId>
-        <version>3.1.0</version>
+        <version>4.1.0</version>
         <configuration>
           <coberturaReports>
             <coberturaReport>${basedir}/target/coverage.xml</coberturaReport>
@@ -306,10 +288,10 @@
             <instrumentation>
               <ignoreTrivial>true</ignoreTrivial>
               <includes>
-                <include>com/google/gcloud/**/*.class</include>
+                <include>com/google/cloud/**/*.class</include>
               </includes>
               <excludes>
-                <exclude>com/google/gcloud/examples/**/*.class</exclude>
+                <exclude>com/google/cloud/examples/**/*.class</exclude>
               </excludes>
             </instrumentation>
           <maxmem>256m</maxmem>
@@ -394,6 +376,24 @@
                 <show>protected</show>
                 <nohelp>true</nohelp>
                 <outputDirectory>${project.build.directory}/javadoc</outputDirectory>
+                <groups>
+                  <group>
+                    <title>API packages</title>
+                    <packages>com.google.cloud*</packages>
+                  </group>
+                  <group>
+                    <title>Test helpers packages</title>
+                    <packages>com.google.cloud.bigquery.testing:com.google.cloud.datastore.testing:com.google.cloud.dns.testing:com.google.cloud.resourcemanager.testing:com.google.cloud.storage.testing</packages>
+                  </group>
+                  <group>
+                    <title>Example packages</title>
+                    <packages>com.google.cloud.examples*</packages>
+                  </group>
+                  <group>
+                    <title>SPI packages</title>
+                    <packages>com.google.cloud.spi:com.google.cloud.bigquery.spi:com.google.cloud.datastore.spi:com.google.cloud.dns.spi:com.google.cloud.resourcemanager.spi:com.google.cloud.storage.spi</packages>
+                  </group>
+                </groups>
               </configuration>
             </plugin>
             <plugin>
@@ -423,4 +423,39 @@
       </plugin>
     </plugins>
   </build>
+  <profiles>
+    <profile>
+      <id>release</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-source-plugin</artifactId>
+            <version>3.0.0</version>
+            <executions>
+              <execution>
+                <id>attach-sources</id>
+                <goals>
+                  <goal>jar-no-fork</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-javadoc-plugin</artifactId>
+            <version>2.10.3</version>
+            <executions>
+              <execution>
+                <id>attach-javadocs</id>
+                <goals>
+                  <goal>jar</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
 </project>

@@ -4,13 +4,14 @@
   <artifactId>gcloud-java-resourcemanager</artifactId>
   <packaging>jar</packaging>
   <name>GCloud Java resource manager</name>
+  <url>https://github.com/GoogleCloudPlatform/gcloud-java/tree/master/gcloud-java-resourcemanager</url>
   <description>
     Java idiomatic client for Google Cloud Resource Manager.
   </description>
   <parent>
-    <groupId>com.google.gcloud</groupId>
+    <groupId>com.google.cloud</groupId>
     <artifactId>gcloud-java-pom</artifactId>
-    <version>0.1.4-SNAPSHOT</version>
+    <version>0.2.1-SNAPSHOT</version>
   </parent>
   <properties>
     <site.installationModule>gcloud-java-resourcemanager</site.installationModule>
@@ -24,7 +25,7 @@
     <dependency>
       <groupId>com.google.apis</groupId>
       <artifactId>google-api-services-cloudresourcemanager</artifactId>
-      <version>v1beta1-rev6-1.19.0</version>
+      <version>v1beta1-rev10-1.21.0</version>
       <scope>compile</scope>
       <exclusions>
         <exclusion>
@@ -32,6 +33,13 @@
           <artifactId>guava-jdk5</artifactId>
         </exclusion>
       </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>gcloud-java-core</artifactId>
+      <version>${project.version}</version>
+      <type>test-jar</type>
+      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>junit</groupId>
@@ -42,7 +50,7 @@
     <dependency>
       <groupId>org.easymock</groupId>
       <artifactId>easymock</artifactId>
-      <version>3.3</version>
+      <version>3.4</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
