@@ -15,8 +15,9 @@
 package com.google.cloud.logging.spi.v2;
 
 import com.google.api.MonitoredResource;
-import com.google.common.collect.Iterables;
+import com.google.api.gax.core.PageAccessor;
 import com.google.cloud.logging.spi.v2.testing.LocalLoggingHelper;
+import com.google.common.collect.Iterables;
 import com.google.logging.v2.LogEntry;
 
 import org.junit.After;
@@ -49,7 +50,7 @@ public class LoggingServiceV2ApiTest {
   @Before
   public void setUp() throws IOException {
     loggingHelper.reset();
-    LoggingServiceV2Settings settings = LoggingServiceV2Settings.newBuilder()
+    LoggingServiceV2Settings settings = LoggingServiceV2Settings.defaultBuilder()
         .provideChannelWith(loggingHelper.createChannel(), true)
         .build();
     loggingApi = LoggingServiceV2Api.create(settings);
@@ -77,14 +78,14 @@ public class LoggingServiceV2ApiTest {
     entries.add(LogEntry.newBuilder().setLogName(logName).setTextPayload("foobar").build());
     loggingApi.writeLogEntries(logName, resource, Collections.<String, String>emptyMap(), entries);
 
-    Iterable<LogEntry> gotEntries =
+    PageAccessor<LogEntry> gotEntries =
         loggingApi.listLogEntries(Collections.singletonList("my-project"), "", "");
     Assert.assertTrue(Iterables.elementsEqual(entries, gotEntries));
   }
 
   @Test
   public void testListNoLog() {
-    Iterable<LogEntry> entries =
+    PageAccessor<LogEntry> entries =
         loggingApi.listLogEntries(Collections.singletonList("my-project"), "", "");
     Assert.assertTrue(Iterables.isEmpty(entries));
   }
@@ -99,7 +100,7 @@ public class LoggingServiceV2ApiTest {
 
     loggingApi.deleteLog(logName);
 
-    Iterable<LogEntry> gotEntries =
+    PageAccessor<LogEntry> gotEntries =
         loggingApi.listLogEntries(Collections.singletonList("my-project"), "", "");
     Assert.assertTrue(Iterables.isEmpty(gotEntries));
   }
