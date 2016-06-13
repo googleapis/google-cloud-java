@@ -2,9 +2,9 @@ Contributing
 ============
 
 1. **Please sign one of the contributor license agreements below.**
-1. Fork the repo, develop and test your code changes, add docs.
-1. Make sure that your commit messages clearly describe the changes.
-1. Send a pull request.
+2. Fork the repo, develop and test your code changes, add docs.
+3. Make sure that your commit messages clearly describe the changes.
+4. Send a pull request.
 
 
 Here are some guidelines for hacking on gcloud-java.
@@ -32,6 +32,8 @@ When changes are made to authentication and project ID-related code, authenticat
 
 Known issue: If you have installed the Google Cloud SDK, be sure to log in (using `gcloud auth login`) before running tests. Though the Datastore tests use a local Datastore emulator that doesn't require authentication, they will not run if you have the Google Cloud SDK installed but aren't authenticated.
 
+**Please, do not use your production projects for executing integration tests.** While we do our best to make our tests independent of your project's state and content, they do perform create, modify and deletes, and you do not want to have your production data accidentally modified.
+
 Adding Features
 ---------------
 In order to add a feature to gcloud-java:
@@ -41,6 +43,9 @@ The feature must work fully on Java 7 and above.
 The feature must not add unnecessary dependencies (where "unnecessary" is of course subjective,
 but new dependencies should be discussed).
 
+Adding Support for a New Service
+--------------------------------
+See [SUPPORTING_NEW_SERVICES](./SUPPORTING_NEW_SERVICES.md) for guidelines on how to add support for a new Google Cloud service to `gcloud-java`.
 
 Coding Style
 ------------

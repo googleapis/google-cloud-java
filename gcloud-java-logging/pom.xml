@@ -1,26 +1,26 @@
 <?xml version="1.0"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
+  <artifactId>gcloud-java-logging</artifactId>
+  <packaging>jar</packaging>
   <name>GCloud Java Logging</name>
+  <url>https://github.com/GoogleCloudPlatform/gcloud-java/tree/master/gcloud-java-logging</url>
   <description>
     Java idiomatic client for Google Cloud Logging.
   </description>
-  <groupId>com.google.gcloud</groupId>
-  <artifactId>gcloud-java-logging</artifactId>
   <parent>
-    <groupId>com.google.gcloud</groupId>
+    <groupId>com.google.cloud</groupId>
     <artifactId>gcloud-java-pom</artifactId>
-    <version>0.1.4</version>
+    <version>0.2.4-SNAPSHOT</version>
   </parent>
-  <packaging>jar</packaging>
   <properties>
     <site.installationModule>gcloud-java-logging</site.installationModule>
   </properties>
   <dependencies>
     <dependency>
-      <groupId>com.google.api</groupId>
-      <artifactId>gax</artifactId>
-      <version>0.0.13</version>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>gcloud-java-core</artifactId>
+      <version>${project.version}</version>
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>

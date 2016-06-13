@@ -10,7 +10,7 @@ RELEASED_VERSION=$(mvn org.apache.maven.plugins:maven-help-plugin:2.1.1:evaluate
 if [ "${RELEASED_VERSION##*-}" != "SNAPSHOT" ]; then
     echo "Changing version to $RELEASED_VERSION in README files"
     # Get list of directories for which README.md must be updated
-    module_folders=($(find . -maxdepth 1 -name 'gcloud-java*' -type d) .)
+    module_folders=($(find . -maxdepth 2 -type d | sed -E -n "/^\.\/(gcloud-java-contrib\/)?gcloud-java(-[a-z]+)+$/p") . ./gcloud-java)
     for item in ${module_folders[*]}
     do
         sed -ri "s/<version>[0-9]+\.[0-9]+\.[0-9]+<\/version>/<version>${RELEASED_VERSION}<\/version>/g" ${item}/README.md

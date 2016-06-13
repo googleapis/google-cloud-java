@@ -5,11 +5,12 @@ Java idiomatic client for [Google Cloud BigQuery] (https://cloud.google.com/bigq
 
 [![Build Status](https://travis-ci.org/GoogleCloudPlatform/gcloud-java.svg?branch=master)](https://travis-ci.org/GoogleCloudPlatform/gcloud-java)
 [![Coverage Status](https://coveralls.io/repos/GoogleCloudPlatform/gcloud-java/badge.svg?branch=master)](https://coveralls.io/r/GoogleCloudPlatform/gcloud-java?branch=master)
-[![Maven](https://img.shields.io/maven-central/v/com.google.gcloud/gcloud-java-bigquery.svg)]( https://img.shields.io/maven-central/v/com.google.gcloud/gcloud-java-bigquery.svg)
+[![Maven](https://img.shields.io/maven-central/v/com.google.cloud/gcloud-java-bigquery.svg)]( https://img.shields.io/maven-central/v/com.google.cloud/gcloud-java-bigquery.svg)
 [![Codacy Badge](https://api.codacy.com/project/badge/grade/9da006ad7c3a4fe1abd142e77c003917)](https://www.codacy.com/app/mziccard/gcloud-java)
+[![Dependency Status](https://www.versioneye.com/user/projects/56bd8ee72a29ed002d2b0969/badge.svg?style=flat)](https://www.versioneye.com/user/projects/56bd8ee72a29ed002d2b0969)
 
 -  [Homepage] (https://googlecloudplatform.github.io/gcloud-java/)
--  [API Documentation] (http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/gcloud/bigquery/package-summary.html)
+-  [API Documentation] (http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/cloud/bigquery/package-summary.html)
 
 > Note: This client is a work-in-progress, and may occasionally
 > make backwards-incompatible changes.
@@ -19,24 +20,24 @@ Quickstart
 If you are using Maven, add this to your pom.xml file
 ```xml
 <dependency>
-  <groupId>com.google.gcloud</groupId>
+  <groupId>com.google.cloud</groupId>
   <artifactId>gcloud-java-bigquery</artifactId>
-  <version>0.1.3</version>
+  <version>0.2.3</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.gcloud:gcloud-java-bigquery:0.1.3'
+compile 'com.google.cloud:gcloud-java-bigquery:0.2.3'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.gcloud" % "gcloud-java-bigquery" % "0.1.3"
+libraryDependencies += "com.google.cloud" % "gcloud-java-bigquery" % "0.2.3"
 ```
 
 Example Application
 -------------------
-- [`BigQueryExample`](../gcloud-java-examples/src/main/java/com/google/gcloud/examples/bigquery/BigQueryExample.java) - A simple command line interface providing some of Cloud BigQuery's functionality.
-Read more about using this application on the [`gcloud-java-examples` docs page](http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/gcloud/examples/BigQueryExample.html).
+- [`BigQueryExample`](../gcloud-java-examples/src/main/java/com/google/cloud/examples/bigquery/BigQueryExample.java) - A simple command line interface providing some of Cloud BigQuery's functionality.
+Read more about using this application on the [`BigQueryExample` docs page](http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/cloud/examples/bigquery/BigQueryExample.html).
 
 Authentication
 --------------
@@ -81,8 +82,8 @@ These credentials are automatically inferred from your environment, so you only 
 code to create your service object:
 
 ```java
-import com.google.gcloud.bigquery.BigQuery;
-import com.google.gcloud.bigquery.BigQueryOptions;
+import com.google.cloud.bigquery.BigQuery;
+import com.google.cloud.bigquery.BigQueryOptions;
 
 BigQuery bigquery = BigQueryOptions.defaultInstance().service();
 ```
@@ -95,7 +96,7 @@ With BigQuery you can create datasets. A dataset is a grouping mechanism that ho
 tables. Add the following import at the top of your file:
 
 ```java
-import com.google.gcloud.bigquery.DatasetInfo;
+import com.google.cloud.bigquery.DatasetInfo;
 ```
 Then, to create the dataset, use the following code:
 
@@ -112,12 +113,12 @@ are created from a BigQuery SQL query. In this code snippet we show how to creat
 with only one string field. Add the following imports at the top of your file:
 
 ```java
-import com.google.gcloud.bigquery.Field;
-import com.google.gcloud.bigquery.Schema;
-import com.google.gcloud.bigquery.StandardTableDefinition;
-import com.google.gcloud.bigquery.Table;
-import com.google.gcloud.bigquery.TableId;
-import com.google.gcloud.bigquery.TableInfo;
+import com.google.cloud.bigquery.Field;
+import com.google.cloud.bigquery.Schema;
+import com.google.cloud.bigquery.StandardTableDefinition;
+import com.google.cloud.bigquery.Table;
+import com.google.cloud.bigquery.TableId;
+import com.google.cloud.bigquery.TableInfo;
 ```
 Then add the following code to create the table:
 
@@ -138,8 +139,8 @@ Google Cloud Storage file. In this code snippet we show how to stream rows into 
 Add the following imports at the top of your file:
 
 ```java
-import com.google.gcloud.bigquery.InsertAllRequest;
-import com.google.gcloud.bigquery.InsertAllResponse;
+import com.google.cloud.bigquery.InsertAllRequest;
+import com.google.cloud.bigquery.InsertAllResponse;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -170,9 +171,9 @@ directly or through a Query Job. In this code snippet we show how to run a query
 for the result. Add the following imports at the top of your file:
 
 ```java
-import com.google.gcloud.bigquery.FieldValue;
-import com.google.gcloud.bigquery.QueryRequest;
-import com.google.gcloud.bigquery.QueryResponse;
+import com.google.cloud.bigquery.FieldValue;
+import com.google.cloud.bigquery.QueryRequest;
+import com.google.cloud.bigquery.QueryResponse;
 
 import java.util.Iterator;
 import java.util.List;
@@ -184,7 +185,7 @@ Then add the following code to run the query and wait for the result:
 QueryRequest queryRequest =
     QueryRequest.builder("SELECT * FROM my_dataset_id.my_table_id")
         .maxWaitTime(60000L)
-        .maxResults(1000L)
+        .pageSize(1000L)
         .build();
 // Request query to be executed and wait for results
 QueryResponse queryResponse = bigquery.query(queryRequest);
@@ -202,7 +203,7 @@ while (rowIterator.hasNext()) {
 #### Complete source code
 
 In
-[InsertDataAndQueryTable.java](../gcloud-java-examples/src/main/java/com/google/gcloud/examples/bigquery/snippets/InsertDataAndQueryTable.java)
+[InsertDataAndQueryTable.java](../gcloud-java-examples/src/main/java/com/google/cloud/examples/bigquery/snippets/InsertDataAndQueryTable.java)
 we put together all the code shown above into one program. The program assumes that you are
 running on Compute Engine or from your own desktop. To run the example on App Engine, simply move
 the code from the main method to your application's servlet class and change the print statements to
@@ -254,4 +255,4 @@ Apache 2.0 - See [LICENSE] for more information.
 
 [cloud-bigquery]: https://cloud.google.com/bigquery/
 [cloud-storage]: https://cloud.google.com/storage/
-[bigquery-api]: http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/gcloud/bigquery/package-summary.html
+[bigquery-api]: http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/cloud/bigquery/package-summary.html
