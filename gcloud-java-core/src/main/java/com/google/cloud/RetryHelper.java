@@ -21,12 +21,10 @@ import static java.lang.StrictMath.max;
 import static java.lang.StrictMath.min;
 import static java.lang.StrictMath.pow;
 import static java.lang.StrictMath.random;
-import static java.util.concurrent.TimeUnit.MILLISECONDS;
 
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.MoreObjects.ToStringHelper;
-import com.google.common.base.Stopwatch;
 
 import java.io.InterruptedIOException;
 import java.nio.channels.ClosedByInterruptException;
@@ -45,7 +43,7 @@ public class RetryHelper<V> {
 
   private static final Logger log = Logger.getLogger(RetryHelper.class.getName());
 
-  private final Stopwatch stopwatch;
+  private final Clock clock;
   private final Callable<V> callable;
   private final RetryParams params;
   private final ExceptionHandler exceptionHandler;
@@ -153,10 +151,10 @@ public class RetryHelper<V> {
 
   @VisibleForTesting
   RetryHelper(Callable<V> callable, RetryParams params, ExceptionHandler exceptionHandler,
-      Stopwatch stopwatch) {
+      Clock clock) {
     this.callable = checkNotNull(callable);
     this.params = checkNotNull(params);
-    this.stopwatch = checkNotNull(stopwatch);
+    this.clock = checkNotNull(clock);
     this.exceptionHandler = checkNotNull(exceptionHandler);
     exceptionHandler.verifyCaller(callable);
   }
@@ -165,7 +163,7 @@ public class RetryHelper<V> {
   public String toString() {
     ToStringHelper toStringHelper = MoreObjects.toStringHelper(this);
     toStringHelper.add("params", params);
-    toStringHelper.add("stopwatch", stopwatch);
+    toStringHelper.add("clock", clock);
     toStringHelper.add("attemptNumber", attemptNumber);
     toStringHelper.add("callable", callable);
     toStringHelper.add("exceptionHandler", exceptionHandler);
@@ -173,7 +171,7 @@ public class RetryHelper<V> {
   }
 
   private V doRetry() throws RetryHelperException {
-    stopwatch.start();
+    long start = clock.millis();
     while (true) {
       attemptNumber++;
       Exception exception;
@@ -196,7 +194,7 @@ public class RetryHelper<V> {
       }
       if (attemptNumber >= params.retryMaxAttempts()
           || attemptNumber >= params.retryMinAttempts()
-          && stopwatch.elapsed(MILLISECONDS) >= params.totalRetryPeriodMillis()) {
+          && clock.millis() - start >= params.totalRetryPeriodMillis()) {
         throw new RetriesExhaustedException(this + ": Too many failures, giving up", exception);
       }
       long sleepDurationMillis = getSleepDuration(params, attemptNumber);
@@ -234,13 +232,12 @@ public class RetryHelper<V> {
 
   public static <V> V runWithRetries(Callable<V> callable, RetryParams params,
       ExceptionHandler exceptionHandler) throws RetryHelperException {
-    return runWithRetries(callable, params, exceptionHandler, Stopwatch.createUnstarted());
+    return runWithRetries(callable, params, exceptionHandler, Clock.defaultClock());
   }
 
-  @VisibleForTesting
-  static <V> V runWithRetries(Callable<V> callable, RetryParams params,
-      ExceptionHandler exceptionHandler, Stopwatch stopwatch) throws RetryHelperException {
-    RetryHelper<V> retryHelper = new RetryHelper<>(callable, params, exceptionHandler, stopwatch);
+  public static <V> V runWithRetries(Callable<V> callable, RetryParams params,
+      ExceptionHandler exceptionHandler, Clock clock) throws RetryHelperException {
+    RetryHelper<V> retryHelper = new RetryHelper<>(callable, params, exceptionHandler, clock);
     Context previousContext = getContext();
     setContext(new Context(retryHelper));
     try {

@@ -16,8 +16,6 @@
 
 package com.google.cloud.examples.dns;
 
-import com.google.common.base.Joiner;
-import com.google.common.collect.ImmutableList;
 import com.google.cloud.dns.ChangeRequest;
 import com.google.cloud.dns.ChangeRequestInfo;
 import com.google.cloud.dns.Dns;
@@ -26,6 +24,8 @@ import com.google.cloud.dns.ProjectInfo;
 import com.google.cloud.dns.RecordSet;
 import com.google.cloud.dns.Zone;
 import com.google.cloud.dns.ZoneInfo;
+import com.google.common.base.Joiner;
+import com.google.common.collect.ImmutableList;
 
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
@@ -501,13 +501,13 @@ public class DnsExample {
     try {
       valid = action.check(args);
     } catch (NumberFormatException ex) {
-      System.out.println("Invalid input for action '" + actionName + "'.");
+      System.out.printf("Invalid input for action '%s'.%n", actionName);
       System.out.println("Ttl must be an integer.");
-      System.out.println("Expected: " + action.params());
+      System.out.printf("Expected: %s%n", action.params());
       return;
     } catch (Exception ex) {
       System.out.println("Failed to parse request.");
-      System.out.println("Expected: " + action.params());
+      System.out.printf("Expected: %s%n", action.params());
       ex.printStackTrace();
       return;
     }
@@ -519,8 +519,8 @@ public class DnsExample {
       Dns dns = optionsBuilder.build().service();
       action.run(dns, args);
     } else {
-      System.out.println("Invalid input for action '" + actionName + "'");
-      System.out.println("Expected: " + action.params());
+      System.out.printf("Invalid input for action '%s'%n", actionName);
+      System.out.printf("Expected: %s%n", action.params());
     }
   }
 }

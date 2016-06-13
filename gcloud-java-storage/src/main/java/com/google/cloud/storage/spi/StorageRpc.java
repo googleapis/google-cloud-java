@@ -16,16 +16,11 @@
 
 package com.google.cloud.storage.spi;
 
-import static com.google.common.base.MoreObjects.firstNonNull;
-
 import com.google.api.services.storage.model.Bucket;
 import com.google.api.services.storage.model.StorageObject;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import com.google.cloud.storage.StorageException;
 
 import java.io.InputStream;
-import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
@@ -98,39 +93,6 @@ public interface StorageRpc {
 
     public Y y() {
       return y;
-    }
-  }
-
-  class BatchRequest {
-
-    public final List<Tuple<StorageObject, Map<Option, ?>>> toDelete;
-    public final List<Tuple<StorageObject, Map<Option, ?>>> toUpdate;
-    public final List<Tuple<StorageObject, Map<Option, ?>>> toGet;
-
-    public BatchRequest(Iterable<Tuple<StorageObject, Map<Option, ?>>> toDelete,
-        Iterable<Tuple<StorageObject, Map<Option, ?>>> toUpdate,
-        Iterable<Tuple<StorageObject, Map<Option, ?>>> toGet) {
-      this.toDelete = ImmutableList.copyOf(
-          firstNonNull(toDelete, ImmutableList.<Tuple<StorageObject, Map<Option, ?>>>of()));
-      this.toUpdate = ImmutableList.copyOf(
-          firstNonNull(toUpdate, ImmutableList.<Tuple<StorageObject, Map<Option, ?>>>of()));
-      this.toGet = ImmutableList.copyOf(
-          firstNonNull(toGet, ImmutableList.<Tuple<StorageObject, Map<Option, ?>>>of()));
-    }
-  }
-
-  class BatchResponse {
-
-    public final Map<StorageObject, Tuple<Boolean, StorageException>> deletes;
-    public final Map<StorageObject, Tuple<StorageObject, StorageException>> updates;
-    public final Map<StorageObject, Tuple<StorageObject, StorageException>> gets;
-
-    public BatchResponse(Map<StorageObject, Tuple<Boolean, StorageException>> deletes,
-        Map<StorageObject, Tuple<StorageObject, StorageException>> updates,
-        Map<StorageObject, Tuple<StorageObject, StorageException>> gets) {
-      this.deletes = ImmutableMap.copyOf(deletes);
-      this.updates = ImmutableMap.copyOf(updates);
-      this.gets = ImmutableMap.copyOf(gets);
     }
   }
 
@@ -295,11 +257,9 @@ public interface StorageRpc {
   boolean delete(StorageObject object, Map<Option, ?> options);
 
   /**
-   * Sends a batch request.
-   *
-   * @throws StorageException upon failure
+   * Creates an empty batch.
    */
-  BatchResponse batch(BatchRequest request);
+  RpcBatch createBatch();
 
   /**
    * Sends a compose request.

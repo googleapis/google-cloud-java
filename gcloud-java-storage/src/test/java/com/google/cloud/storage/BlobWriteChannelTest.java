@@ -30,12 +30,12 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
-import com.google.common.collect.ImmutableMap;
 import com.google.cloud.RestorableState;
 import com.google.cloud.RetryParams;
 import com.google.cloud.WriteChannel;
 import com.google.cloud.storage.spi.StorageRpc;
 import com.google.cloud.storage.spi.StorageRpcFactory;
+import com.google.common.collect.ImmutableMap;
 
 import org.easymock.Capture;
 import org.easymock.CaptureType;

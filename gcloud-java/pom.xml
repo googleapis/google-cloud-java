@@ -11,12 +11,17 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>gcloud-java-pom</artifactId>
-    <version>0.2.1-SNAPSHOT</version>
+    <version>0.2.4-SNAPSHOT</version>
   </parent>
   <dependencies>
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>gcloud-java-bigquery</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>gcloud-java-compute</artifactId>
       <version>${project.version}</version>
     </dependency>
     <dependency>

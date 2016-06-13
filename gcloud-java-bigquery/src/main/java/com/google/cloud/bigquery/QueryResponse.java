@@ -170,16 +170,16 @@ public class QueryResponse implements Serializable {
   }
 
   @Override
-  public int hashCode() {
+  public final int hashCode() {
     return Objects.hash(jobId);
   }
 
   @Override
-  public boolean equals(Object obj) {
-    if (this == obj) {
+  public final boolean equals(Object obj) {
+    if (obj == this) {
       return true;
     }
-    if (obj == null || getClass() != obj.getClass()) {
+    if (obj == null || !obj.getClass().equals(QueryResponse.class)) {
       return false;
     }
     QueryResponse response = (QueryResponse) obj;

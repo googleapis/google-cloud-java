@@ -94,13 +94,16 @@ public class JobStatus implements Serializable {
   }
 
   @Override
-  public int hashCode() {
+  public final int hashCode() {
     return Objects.hash(state, error, executionErrors);
   }
 
   @Override
-  public boolean equals(Object obj) {
-    return obj instanceof JobStatus && Objects.equals(toPb(), ((JobStatus) obj).toPb());
+  public final boolean equals(Object obj) {
+    return obj == this
+        || obj != null
+        && obj.getClass().equals(JobStatus.class)
+        && Objects.equals(toPb(), ((JobStatus) obj).toPb());
   }
 
   com.google.api.services.bigquery.model.JobStatus toPb() {

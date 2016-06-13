@@ -17,7 +17,7 @@ import java.util.Objects;
  * {@link BigQueryException} is thrown the BigQuery Error that caused it, if any, can be accessed
  * with {@link BigQueryException#error()}.
  */
-public class BigQueryError implements Serializable {
+public final class BigQueryError implements Serializable {
 
   static final Function<ErrorProto, BigQueryError> FROM_PB_FUNCTION =
       new Function<ErrorProto, BigQueryError>() {
@@ -98,7 +98,9 @@ public class BigQueryError implements Serializable {
 
   @Override
   public boolean equals(Object obj) {
-    return obj instanceof BigQueryError && Objects.equals(toPb(), ((BigQueryError) obj).toPb());
+    return obj == this
+        || obj instanceof BigQueryError
+        && Objects.equals(toPb(), ((BigQueryError) obj).toPb());
   }
 
   ErrorProto toPb() {

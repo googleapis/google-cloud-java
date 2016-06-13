@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>gcloud-java-pom</artifactId>
   <packaging>pom</packaging>
-  <version>0.2.1-SNAPSHOT</version>
+  <version>0.2.4-SNAPSHOT</version>
   <name>GCloud Java</name>
   <url>https://github.com/GoogleCloudPlatform/gcloud-java</url>
   <description>
@@ -95,6 +95,7 @@
   <modules>
     <module>gcloud-java</module>
     <module>gcloud-java-bigquery</module>
+    <module>gcloud-java-compute</module>
     <module>gcloud-java-contrib</module>
     <module>gcloud-java-core</module>
     <module>gcloud-java-datastore</module>
@@ -383,7 +384,7 @@
                   </group>
                   <group>
                     <title>Test helpers packages</title>
-                    <packages>com.google.cloud.bigquery.testing:com.google.cloud.datastore.testing:com.google.cloud.dns.testing:com.google.cloud.resourcemanager.testing:com.google.cloud.storage.testing</packages>
+                    <packages>com.google.cloud.bigquery.testing:com.google.cloud.compute.testing:com.google.cloud.datastore.testing:com.google.cloud.dns.testing:com.google.cloud.resourcemanager.testing:com.google.cloud.storage.testing</packages>
                   </group>
                   <group>
                     <title>Example packages</title>
@@ -391,7 +392,7 @@
                   </group>
                   <group>
                     <title>SPI packages</title>
-                    <packages>com.google.cloud.spi:com.google.cloud.bigquery.spi:com.google.cloud.datastore.spi:com.google.cloud.dns.spi:com.google.cloud.resourcemanager.spi:com.google.cloud.storage.spi</packages>
+                    <packages>com.google.cloud.spi:com.google.cloud.bigquery.spi:com.google.cloud.compute.spi:com.google.cloud.datastore.spi:com.google.cloud.dns.spi:com.google.cloud.resourcemanager.spi:com.google.cloud.storage.spi</packages>
                   </group>
                 </groups>
               </configuration>
@@ -431,7 +432,12 @@
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-source-plugin</artifactId>
-            <version>3.0.0</version>
+            <!--
+              maven-source-plugin-3.0.0 exhibits the zipping behavior on ubuntu that was seen in
+              maven-jar-plugin with version < 2.5 (https://issues.apache.org/jira/browse/MJAR-188).
+              Until that is fixed we should stick to 2.4.
+            -->
+            <version>2.4</version>
             <executions>
               <execution>
                 <id>attach-sources</id>

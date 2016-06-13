@@ -31,6 +31,24 @@ public class ListValueTest {
 
   private static final List<Value<?>> CONTENT =
       ImmutableList.of(NullValue.of(), StringValue.of("foo"));
+  private static final String STRING1 = "string1";
+  private static final String STRING2 = "string2";
+  private static final long LONG1 = 1L;
+  private static final long LONG2 = 2L;
+  private static final double DOUBLE1 = 1.0;
+  private static final double DOUBLE2 = 2.0;
+  private static final boolean BOOLEAN1 = true;
+  private static final boolean BOOLEAN2 = false;
+  private static final DateTime DATETIME1 = new DateTime(1);
+  private static final DateTime DATETIME2 = new DateTime(2);
+  private static final LatLng LATLNG1 = LatLng.of(DOUBLE1, DOUBLE2);
+  private static final LatLng LATLNG2 = LatLng.of(DOUBLE2, DOUBLE1);
+  private static final Key KEY1 = Key.builder("project", "kind", "name1").build();
+  private static final Key KEY2 = Key.builder("project", "kind", "name2").build();
+  private static final FullEntity<Key> ENTITY1 = FullEntity.builder(KEY1).build();
+  private static final FullEntity<Key> ENTITY2 = FullEntity.builder(KEY2).build();
+  private static final Blob BLOB1 = Blob.copyFrom(new byte[]{0xD, 0xE, 0xA, 0xD});
+  private static final Blob BLOB2 = Blob.copyFrom(new byte[]{0xB, 0x0, 0x0, 0x0});
 
   @Test
   public void testToBuilder() throws Exception {
@@ -46,6 +64,44 @@ public class ListValueTest {
     value = ListValue.of(Collections.<Value<?>>emptyList());
     assertEquals(Collections.<Value<?>>emptyList(), value.get());
     assertFalse(value.excludeFromIndexes());
+    value = ListValue.of(STRING1);
+    assertEquals(ImmutableList.of(StringValue.of(STRING1)), value.get());
+    value = ListValue.of(STRING1, STRING2);
+    assertEquals(ImmutableList.of(StringValue.of(STRING1), StringValue.of(STRING2)), value.get());
+    value = ListValue.of(LONG1);
+    assertEquals(ImmutableList.of(LongValue.of(LONG1)), value.get());
+    value = ListValue.of(LONG1, LONG2);
+    assertEquals(ImmutableList.of(LongValue.of(LONG1), LongValue.of(LONG2)), value.get());
+    value = ListValue.of(DOUBLE1);
+    assertEquals(ImmutableList.of(DoubleValue.of(DOUBLE1)), value.get());
+    value = ListValue.of(DOUBLE1, DOUBLE2);
+    assertEquals(ImmutableList.of(DoubleValue.of(DOUBLE1), DoubleValue.of(DOUBLE2)), value.get());
+    value = ListValue.of(BOOLEAN1);
+    assertEquals(ImmutableList.of(BooleanValue.of(BOOLEAN1)), value.get());
+    value = ListValue.of(BOOLEAN1, BOOLEAN2);
+    assertEquals(ImmutableList.of(BooleanValue.of(BOOLEAN1), BooleanValue.of(BOOLEAN2)),
+        value.get());
+    value = ListValue.of(DATETIME1);
+    assertEquals(ImmutableList.of(DateTimeValue.of(DATETIME1)), value.get());
+    value = ListValue.of(DATETIME1, DATETIME2);
+    assertEquals(ImmutableList.of(DateTimeValue.of(DATETIME1), DateTimeValue.of(DATETIME2)),
+        value.get());
+    value = ListValue.of(LATLNG1);
+    assertEquals(ImmutableList.of(LatLngValue.of(LATLNG1)), value.get());
+    value = ListValue.of(LATLNG1, LATLNG2);
+    assertEquals(ImmutableList.of(LatLngValue.of(LATLNG1), LatLngValue.of(LATLNG2)), value.get());
+    value = ListValue.of(KEY1);
+    assertEquals(ImmutableList.of(KeyValue.of(KEY1)), value.get());
+    value = ListValue.of(KEY1, KEY2);
+    assertEquals(ImmutableList.of(KeyValue.of(KEY1), KeyValue.of(KEY2)), value.get());
+    value = ListValue.of(ENTITY1);
+    assertEquals(ImmutableList.of(EntityValue.of(ENTITY1)), value.get());
+    value = ListValue.of(ENTITY1, ENTITY2);
+    assertEquals(ImmutableList.of(EntityValue.of(ENTITY1), EntityValue.of(ENTITY2)), value.get());
+    value = ListValue.of(BLOB1);
+    assertEquals(ImmutableList.of(BlobValue.of(BLOB1)), value.get());
+    value = ListValue.of(BLOB1, BLOB2);
+    assertEquals(ImmutableList.of(BlobValue.of(BLOB1), BlobValue.of(BLOB2)), value.get());
   }
 
   @SuppressWarnings("deprecation")
@@ -65,5 +121,82 @@ public class ListValueTest {
 
     builder = builder.set(Collections.<Value<?>>emptyList());
     assertEquals(Collections.<Value<?>>emptyList(), builder.build().get());
+
+    builder = builder.addValue(STRING1);
+    assertEquals(ImmutableList.of(StringValue.of(STRING1)), builder.build().get());
+    builder = builder.set(Collections.<Value<?>>emptyList());
+
+    builder = builder.addValue(STRING1, STRING2);
+    assertEquals(ImmutableList.of(StringValue.of(STRING1), StringValue.of(STRING2)),
+        builder.build().get());
+    builder = builder.set(Collections.<Value<?>>emptyList());
+
+    builder = builder.addValue(LONG1);
+    assertEquals(ImmutableList.of(LongValue.of(LONG1)), builder.build().get());
+    builder = builder.set(Collections.<Value<?>>emptyList());
+
+    builder = builder.addValue(LONG1, LONG2);
+    assertEquals(ImmutableList.of(LongValue.of(LONG1), LongValue.of(LONG2)), builder.build().get());
+    builder = builder.set(Collections.<Value<?>>emptyList());
+
+    builder = builder.addValue(DOUBLE1);
+    assertEquals(ImmutableList.of(DoubleValue.of(DOUBLE1)), builder.build().get());
+    builder = builder.set(Collections.<Value<?>>emptyList());
+
+    builder = builder.addValue(DOUBLE1, DOUBLE2);
+    assertEquals(ImmutableList.of(DoubleValue.of(DOUBLE1), DoubleValue.of(DOUBLE2)),
+        builder.build().get());
+    builder = builder.set(Collections.<Value<?>>emptyList());
+
+    builder = builder.addValue(BOOLEAN1);
+    assertEquals(ImmutableList.of(BooleanValue.of(BOOLEAN1)), builder.build().get());
+    builder = builder.set(Collections.<Value<?>>emptyList());
+
+    builder = builder.addValue(BOOLEAN1, BOOLEAN2);
+    assertEquals(ImmutableList.of(BooleanValue.of(BOOLEAN1), BooleanValue.of(BOOLEAN2)),
+        builder.build().get());
+    builder = builder.set(Collections.<Value<?>>emptyList());
+
+    builder = builder.addValue(DATETIME1);
+    assertEquals(ImmutableList.of(DateTimeValue.of(DATETIME1)), builder.build().get());
+    builder = builder.set(Collections.<Value<?>>emptyList());
+
+    builder = builder.addValue(DATETIME1, DATETIME2);
+    assertEquals(ImmutableList.of(DateTimeValue.of(DATETIME1), DateTimeValue.of(DATETIME2)),
+        builder.build().get());
+    builder = builder.set(Collections.<Value<?>>emptyList());
+
+    builder = builder.addValue(LATLNG1);
+    assertEquals(ImmutableList.of(LatLngValue.of(LATLNG1)), builder.build().get());
+    builder = builder.set(Collections.<Value<?>>emptyList());
+
+    builder = builder.addValue(LATLNG1, LATLNG2);
+    assertEquals(ImmutableList.of(LatLngValue.of(LATLNG1), LatLngValue.of(LATLNG2)),
+        builder.build().get());
+    builder = builder.set(Collections.<Value<?>>emptyList());
+
+    builder = builder.addValue(KEY1);
+    assertEquals(ImmutableList.of(KeyValue.of(KEY1)), builder.build().get());
+    builder = builder.set(Collections.<Value<?>>emptyList());
+
+    builder = builder.addValue(KEY1, KEY2);
+    assertEquals(ImmutableList.of(KeyValue.of(KEY1), KeyValue.of(KEY2)), builder.build().get());
+    builder = builder.set(Collections.<Value<?>>emptyList());
+
+    builder = builder.addValue(ENTITY1);
+    assertEquals(ImmutableList.of(EntityValue.of(ENTITY1)), builder.build().get());
+    builder = builder.set(Collections.<Value<?>>emptyList());
+
+    builder = builder.addValue(ENTITY1, ENTITY2);
+    assertEquals(ImmutableList.of(EntityValue.of(ENTITY1), EntityValue.of(ENTITY2)),
+        builder.build().get());
+    builder = builder.set(Collections.<Value<?>>emptyList());
+
+    builder = builder.addValue(BLOB1);
+    assertEquals(ImmutableList.of(BlobValue.of(BLOB1)), builder.build().get());
+    builder = builder.set(Collections.<Value<?>>emptyList());
+
+    builder = builder.addValue(BLOB1, BLOB2);
+    assertEquals(ImmutableList.of(BlobValue.of(BLOB1), BlobValue.of(BLOB2)), builder.build().get());
   }
 }

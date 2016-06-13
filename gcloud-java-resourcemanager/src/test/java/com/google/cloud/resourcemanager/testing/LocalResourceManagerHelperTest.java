@@ -9,12 +9,12 @@ import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 import com.google.api.services.cloudresourcemanager.model.Binding;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import com.google.cloud.resourcemanager.ResourceManagerException;
 import com.google.cloud.resourcemanager.spi.DefaultResourceManagerRpc;
 import com.google.cloud.resourcemanager.spi.ResourceManagerRpc;
 import com.google.cloud.resourcemanager.spi.ResourceManagerRpc.Tuple;
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
 
 import org.junit.AfterClass;
 import org.junit.Before;

@@ -25,8 +25,6 @@ import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import com.google.cloud.Identity;
 import com.google.cloud.Page;
 import com.google.cloud.resourcemanager.Policy.ProjectRole;
@@ -37,6 +35,8 @@ import com.google.cloud.resourcemanager.ResourceManager.ProjectListOption;
 import com.google.cloud.resourcemanager.spi.ResourceManagerRpc;
 import com.google.cloud.resourcemanager.spi.ResourceManagerRpcFactory;
 import com.google.cloud.resourcemanager.testing.LocalResourceManagerHelper;
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
 
 import org.easymock.EasyMock;
 import org.junit.AfterClass;

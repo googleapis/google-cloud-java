@@ -30,7 +30,7 @@ public class CsvOptionsTest {
   private static final Charset ENCODING = StandardCharsets.UTF_8;
   private static final String FIELD_DELIMITER = ",";
   private static final String QUOTE = "\"";
-  private static final Integer SKIP_LEADING_ROWS = 42;
+  private static final long SKIP_LEADING_ROWS = 42L;
   private static final CsvOptions CSV_OPTIONS = CsvOptions.builder()
       .allowJaggedRows(ALLOW_JAGGED_ROWS)
       .allowQuotedNewLines(ALLOW_QUOTED_NEWLINE)
@@ -65,7 +65,7 @@ public class CsvOptionsTest {
     assertEquals(ENCODING.name(), CSV_OPTIONS.encoding());
     assertEquals(FIELD_DELIMITER, CSV_OPTIONS.fieldDelimiter());
     assertEquals(QUOTE, CSV_OPTIONS.quote());
-    assertEquals(SKIP_LEADING_ROWS, CSV_OPTIONS.skipLeadingRows());
+    assertEquals(SKIP_LEADING_ROWS, (long) CSV_OPTIONS.skipLeadingRows());
   }
 
   @Test

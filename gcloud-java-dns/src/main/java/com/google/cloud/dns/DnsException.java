@@ -16,10 +16,11 @@
 
 package com.google.cloud.dns;
 
-import com.google.common.collect.ImmutableSet;
+import com.google.api.client.googleapis.json.GoogleJsonError;
 import com.google.cloud.BaseServiceException;
 import com.google.cloud.RetryHelper.RetryHelperException;
 import com.google.cloud.RetryHelper.RetryInterruptedException;
+import com.google.common.collect.ImmutableSet;
 
 import java.io.IOException;
 import java.util.Set;
@@ -27,24 +28,28 @@ import java.util.Set;
 /**
  * DNS service exception.
  */
-public class DnsException extends BaseServiceException {
+public final class DnsException extends BaseServiceException {
 
   // see: https://cloud.google.com/dns/troubleshooting
   private static final Set<Error> RETRYABLE_ERRORS = ImmutableSet.of(
-      new Error(429, null),
-      new Error(500, null),
-      new Error(502, null),
-      new Error(503, null),
-      new Error(null, "userRateLimitExceeded"),
-      new Error(null, "rateLimitExceeded"));
+      new Error(429, null, true),
+      new Error(500, null, false),
+      new Error(502, null, false),
+      new Error(503, null, false),
+      new Error(null, "userRateLimitExceeded", true),
+      new Error(null, "rateLimitExceeded", true));
   private static final long serialVersionUID = 490302380416260252L;
 
-  public DnsException(IOException exception) {
-    super(exception, true);
+  public DnsException(IOException exception, boolean idempotent) {
+    super(exception, idempotent);
   }
 
-  private DnsException(int code, String message) {
-    super(code, message, null, true);
+  public DnsException(GoogleJsonError error, boolean idempotent) {
+    super(error, idempotent);
+  }
+
+  public DnsException(int code, String message, Throwable cause) {
+    super(code, message, null, true, cause);
   }
 
   @Override
@@ -61,6 +66,6 @@ public class DnsException extends BaseServiceException {
    */
   static DnsException translateAndThrow(RetryHelperException ex) {
     BaseServiceException.translateAndPropagateIfPossible(ex);
-    throw new DnsException(UNKNOWN_CODE, ex.getMessage());
+    throw new DnsException(UNKNOWN_CODE, ex.getMessage(), ex.getCause());
   }
 }
