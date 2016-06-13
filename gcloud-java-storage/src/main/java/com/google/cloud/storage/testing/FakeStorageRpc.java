@@ -193,7 +193,8 @@ public class FakeStorageRpc implements StorageRpc {
 
   @Override
   public RpcBatch createBatch() {
-    return null;
+    //return new DefaultRpcBatch(storage);
+    throw new UnsupportedOperationException();
   }
 
   @Override
@@ -328,7 +329,7 @@ public class FakeStorageRpc implements StorageRpc {
       throw new UnsupportedOperationException();
     }
   }
-  
+
   // Returns true if this is a folder. Adds it to folders if it isn't already there.
   private static boolean processedAsFolder(StorageObject so, String delimiter, String prefix, /* inout */ Map<String, StorageObject> folders) {
     if (delimiter == null) {
