@@ -33,9 +33,7 @@
  * }
  * System.out.println("Loading data into table " + tableId);
  * Job loadJob = table.load(FormatOptions.csv(), "gs://bucket/path");
- * while (!loadJob.isDone()) {
- *   Thread.sleep(1000L);
- * }
+ * loadJob = loadJob.waitFor();
  * if (loadJob.status().error() != null) {
  *   System.out.println("Job completed with errors");
  * } else {

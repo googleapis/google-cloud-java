@@ -503,4 +503,9 @@ public interface Dns extends Service<DnsOptions> {
    * @see <a href="https://cloud.google.com/dns/api/v1/changes/list">Cloud DNS Chages: list</a>
    */
   Page<ChangeRequest> listChangeRequests(String zoneName, ChangeRequestListOption... options);
+
+  /**
+   * Creates a new empty batch for grouping multiple service calls in one underlying RPC call.
+   */
+  DnsBatch batch();
 }

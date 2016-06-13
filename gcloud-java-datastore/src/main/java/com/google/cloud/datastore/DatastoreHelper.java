@@ -51,6 +51,10 @@ class DatastoreHelper {
     return writer.add(new FullEntity<?>[] {entity}).get(0);
   }
 
+  static Entity put(DatastoreWriter writer, FullEntity<?> entity) {
+    return writer.put(new FullEntity<?>[] {entity}).get(0);
+  }
+
   static KeyFactory newKeyFactory(DatastoreOptions options) {
     return new KeyFactory(options.projectId(), options.namespace());
   }

@@ -16,6 +16,7 @@
 
 package com.google.cloud.bigquery;
 
+import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNull;
@@ -24,6 +25,7 @@ import com.google.api.client.util.Data;
 import com.google.api.services.bigquery.model.TableCell;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
+import com.google.common.io.BaseEncoding;
 
 import org.junit.Test;
 
@@ -31,11 +33,14 @@ import java.util.Map;
 
 public class FieldValueTest {
 
+  private static final byte[] BYTES = {0xD, 0xE, 0xA, 0xD};
+  private static final String BYTES_BASE64 = BaseEncoding.base64().encode(BYTES);
   private static final TableCell BOOLEAN_FIELD = new TableCell().setV("false");
   private static final Map<String, String> INTEGER_FIELD = ImmutableMap.of("v", "1");
   private static final Map<String, String> FLOAT_FIELD = ImmutableMap.of("v", "1.5");
   private static final Map<String, String> STRING_FIELD = ImmutableMap.of("v", "string");
   private static final Map<String, String> TIMESTAMP_FIELD = ImmutableMap.of("v", "42");
+  private static final Map<String, String> BYTES_FIELD = ImmutableMap.of("v", BYTES_BASE64);
   private static final Map<String, Object> NULL_FIELD =
       ImmutableMap.of("v", Data.nullOf(String.class));
   private static final Map<String, Object> REPEATED_FIELD =
@@ -60,6 +65,9 @@ public class FieldValueTest {
     value = FieldValue.fromPb(TIMESTAMP_FIELD);
     assertEquals(FieldValue.Attribute.PRIMITIVE, value.attribute());
     assertEquals(42000000, value.timestampValue());
+    value = FieldValue.fromPb(BYTES_FIELD);
+    assertEquals(FieldValue.Attribute.PRIMITIVE, value.attribute());
+    assertArrayEquals(BYTES, value.bytesValue());
     value = FieldValue.fromPb(NULL_FIELD);
     assertNull(value.value());
     value = FieldValue.fromPb(REPEATED_FIELD);
@@ -93,6 +101,10 @@ public class FieldValueTest {
     FieldValue timestampValue = new FieldValue(FieldValue.Attribute.PRIMITIVE, "42");
     assertEquals(timestampValue, FieldValue.fromPb(TIMESTAMP_FIELD));
     assertEquals(timestampValue.hashCode(), FieldValue.fromPb(TIMESTAMP_FIELD).hashCode());
+
+    FieldValue bytesValue = new FieldValue(FieldValue.Attribute.PRIMITIVE, BYTES_BASE64);
+    assertEquals(bytesValue, FieldValue.fromPb(BYTES_FIELD));
+    assertEquals(bytesValue.hashCode(), FieldValue.fromPb(BYTES_FIELD).hashCode());
 
     FieldValue nullValue = new FieldValue(FieldValue.Attribute.PRIMITIVE, null);
     assertEquals(nullValue, FieldValue.fromPb(NULL_FIELD));

@@ -43,7 +43,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.ObjectInputStream;
-import java.io.ObjectStreamException;
 import java.io.Serializable;
 import java.lang.reflect.Method;
 import java.net.HttpURLConnection;
@@ -122,45 +121,6 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
         }
       }
       return new NetHttpTransport();
-    }
-  }
-
-  /**
-   * A class providing access to the current time in milliseconds. This class is mainly used for
-   * testing and will be replaced by Java8's {@code java.time.Clock}.
-   *
-   * <p>Implementations should implement {@code Serializable} wherever possible and must document
-   * whether or not they do support serialization.
-   */
-  public abstract static class Clock {
-
-    private static final ServiceOptions.Clock DEFAULT_TIME_SOURCE = new DefaultClock();
-
-    /**
-     * Returns current time in milliseconds according to this clock.
-     */
-    public abstract long millis();
-
-    /**
-     * Returns the default clock. Default clock uses {@link System#currentTimeMillis()} to get time
-     * in milliseconds.
-     */
-    public static ServiceOptions.Clock defaultClock() {
-      return DEFAULT_TIME_SOURCE;
-    }
-
-    private static class DefaultClock extends ServiceOptions.Clock implements Serializable {
-
-      private static final long serialVersionUID = -5077300394286703864L;
-
-      @Override
-      public long millis() {
-        return System.currentTimeMillis();
-      }
-
-      private Object readResolve() throws ObjectStreamException {
-        return DEFAULT_TIME_SOURCE;
-      }
     }
   }
 

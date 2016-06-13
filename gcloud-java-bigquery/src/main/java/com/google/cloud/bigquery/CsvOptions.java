@@ -34,7 +34,7 @@ public final class CsvOptions extends FormatOptions {
   private final String encoding;
   private final String fieldDelimiter;
   private final String quote;
-  private final Integer skipLeadingRows;
+  private final Long skipLeadingRows;
 
   public static final class Builder {
 
@@ -43,9 +43,18 @@ public final class CsvOptions extends FormatOptions {
     private String encoding;
     private String fieldDelimiter;
     private String quote;
-    private Integer skipLeadingRows;
+    private Long skipLeadingRows;
 
     private Builder() {}
+
+    private Builder(CsvOptions csvOptions) {
+      this.allowJaggedRows = csvOptions.allowJaggedRows;
+      this.allowQuotedNewLines = csvOptions.allowQuotedNewLines;
+      this.encoding = csvOptions.encoding;
+      this.fieldDelimiter = csvOptions.fieldDelimiter;
+      this.quote = csvOptions.quote;
+      this.skipLeadingRows = csvOptions.skipLeadingRows;
+    }
 
     /**
      * Set whether BigQuery should accept rows that are missing trailing optional columns. If
@@ -54,7 +63,7 @@ public final class CsvOptions extends FormatOptions {
      * bad records, an invalid error is returned in the job result. By default, rows with missing
      * trailing columns are considered bad records.
      */
-    public Builder allowJaggedRows(Boolean allowJaggedRows) {
+    public Builder allowJaggedRows(boolean allowJaggedRows) {
       this.allowJaggedRows = allowJaggedRows;
       return this;
     }
@@ -63,7 +72,7 @@ public final class CsvOptions extends FormatOptions {
      * Sets whether BigQuery should allow quoted data sections that contain newline characters in a
      * CSV file. By default quoted newline are not allowed.
      */
-    public Builder allowQuotedNewLines(Boolean allowQuotedNewLines) {
+    public Builder allowQuotedNewLines(boolean allowQuotedNewLines) {
       this.allowQuotedNewLines = allowQuotedNewLines;
       return this;
     }
@@ -104,7 +113,7 @@ public final class CsvOptions extends FormatOptions {
      * string to ISO-8859-1 encoding, and then uses the first byte of the encoded string to split
      * the data in its raw, binary state. The default value is a double-quote ('"'). If your data
      * does not contain quoted sections, set the property value to an empty string. If your data
-     * contains quoted newline characters, you must also set {@link #allowQuotedNewLines(Boolean)}
+     * contains quoted newline characters, you must also set {@link #allowQuotedNewLines(boolean)}
      * property to {@code true}.
      */
     public Builder quote(String quote) {
@@ -117,7 +126,7 @@ public final class CsvOptions extends FormatOptions {
      * data. The default value is 0. This property is useful if you have header rows in the file
      * that should be skipped.
      */
-    public Builder skipLeadingRows(Integer skipLeadingRows) {
+    public Builder skipLeadingRows(long skipLeadingRows) {
       this.skipLeadingRows = skipLeadingRows;
       return this;
     }
@@ -186,7 +195,7 @@ public final class CsvOptions extends FormatOptions {
    * Returns the number of rows at the top of a CSV file that BigQuery will skip when reading the
    * data.
    */
-  public Integer skipLeadingRows() {
+  public Long skipLeadingRows() {
     return skipLeadingRows;
   }
 
@@ -194,13 +203,7 @@ public final class CsvOptions extends FormatOptions {
    * Returns a builder for the {@code CsvOptions} object.
    */
   public Builder toBuilder() {
-    return new Builder()
-        .allowJaggedRows(allowJaggedRows)
-        .allowQuotedNewLines(allowQuotedNewLines)
-        .encoding(encoding)
-        .fieldDelimiter(fieldDelimiter)
-        .quote(quote)
-        .skipLeadingRows(skipLeadingRows);
+    return new Builder(this);
   }
 
   @Override

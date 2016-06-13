@@ -64,7 +64,7 @@ public class ZoneTest {
       ChangeRequestInfo.builder().generatedId("someid").build();
   private static final ChangeRequestInfo CHANGE_REQUEST_NO_ID =
       ChangeRequestInfo.builder().build();
-  private static final DnsException EXCEPTION = createStrictMock(DnsException.class);
+  private static final DnsException EXCEPTION = new DnsException(-1, "message", null);
   private static final DnsOptions OPTIONS = createStrictMock(DnsOptions.class);
 
   private Dns dns;

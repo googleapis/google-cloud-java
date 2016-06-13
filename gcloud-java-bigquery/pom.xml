@@ -11,7 +11,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>gcloud-java-pom</artifactId>
-    <version>0.2.1-SNAPSHOT</version>
+    <version>0.2.4-SNAPSHOT</version>
   </parent>
   <properties>
     <site.installationModule>gcloud-java-bigquery</site.installationModule>
@@ -31,7 +31,7 @@
     <dependency>
       <groupId>com.google.apis</groupId>
       <artifactId>google-api-services-bigquery</artifactId>
-      <version>v2-rev270-1.21.0</version>
+      <version>v2-rev303-1.22.0</version>
       <scope>compile</scope>
       <exclusions>
         <exclusion>

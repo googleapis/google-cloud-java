@@ -113,7 +113,7 @@ public class CopyWriter implements Restorable<CopyWriter> {
           public RewriteResponse call() {
             return storageRpc.continueRewrite(rewriteResponse);
           }
-        }, serviceOptions.retryParams(), StorageImpl.EXCEPTION_HANDLER);
+        }, serviceOptions.retryParams(), StorageImpl.EXCEPTION_HANDLER, serviceOptions.clock());
       } catch (RetryHelper.RetryHelperException e) {
         throw StorageException.translateAndThrow(e);
       }

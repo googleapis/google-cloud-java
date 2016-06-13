@@ -18,9 +18,16 @@ package com.google.cloud.bigquery;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import com.google.cloud.Clock;
+import com.google.cloud.WaitForOption;
+import com.google.cloud.WaitForOption.CheckingPeriod;
+import com.google.cloud.WaitForOption.Timeout;
+
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.util.Objects;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 
 /**
  * A Google BigQuery Job.
@@ -144,6 +151,59 @@ public class Job extends JobInfo {
   }
 
   /**
+   * Blocks until this job completes its execution, either failing or succeeding. This method
+   * returns current job's latest information. If the job no longer exists, this method returns
+   * {@code null}. By default, the job status is checked every 500 milliseconds, to configure this
+   * value use {@link WaitForOption#checkEvery(long, TimeUnit)}. Use
+   * {@link WaitForOption#timeout(long, TimeUnit)} to set the maximum time to wait.
+   *
+   * <p>Example usage of {@code waitFor()}:
+   * <pre> {@code
+   * Job completedJob = job.waitFor();
+   * if (completedJob == null) {
+   *   // job no longer exists
+   * } else if (completedJob.status().error() != null) {
+   *   // job failed, handle error
+   * } else {
+   *   // job completed successfully
+   * }}</pre>
+   *
+   * <p>Example usage of {@code waitFor()} with checking period and timeout:
+   * <pre> {@code
+   * Job completedJob = job.waitFor(WaitForOption.checkEvery(1, TimeUnit.SECONDS),
+   *     WaitForOption.timeout(60, TimeUnit.SECONDS));
+   * if (completedJob == null) {
+   *   // job no longer exists
+   * } else if (completedJob.status().error() != null) {
+   *   // job failed, handle error
+   * } else {
+   *   // job completed successfully
+   * }}</pre>
+   *
+   * @param waitOptions options to configure checking period and timeout
+   * @throws BigQueryException upon failure
+   * @throws InterruptedException if the current thread gets interrupted while waiting for the job
+   *     to complete
+   * @throws TimeoutException if the timeout provided with
+   *     {@link WaitForOption#timeout(long, TimeUnit)} is exceeded. If no such option is provided
+   *     this exception is never thrown.
+   */
+  public Job waitFor(WaitForOption... waitOptions) throws InterruptedException, TimeoutException {
+    Timeout timeout = Timeout.getOrDefault(waitOptions);
+    CheckingPeriod checkingPeriod = CheckingPeriod.getOrDefault(waitOptions);
+    long timeoutMillis = timeout.timeoutMillis();
+    Clock clock = options.clock();
+    long startTime = clock.millis();
+    while (!isDone()) {
+      if (timeoutMillis  != -1 && (clock.millis() - startTime)  >= timeoutMillis) {
+        throw new TimeoutException();
+      }
+      checkingPeriod.sleep();
+    }
+    return reload();
+  }
+
+  /**
    * Fetches current job's latest information. Returns {@code null} if the job does not exist.
    *
    * @param options job options
@@ -151,7 +211,7 @@ public class Job extends JobInfo {
    * @throws BigQueryException upon failure
    */
   public Job reload(BigQuery.JobOption... options) {
-    return bigquery.getJob(jobId().job(), options);
+    return bigquery.getJob(jobId(), options);
   }
 
   /**

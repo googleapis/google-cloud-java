@@ -23,6 +23,7 @@ import com.google.cloud.bigquery.JobInfo.CreateDisposition;
 import com.google.cloud.bigquery.JobInfo.WriteDisposition;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
+import com.google.common.primitives.Ints;
 
 import java.io.Serializable;
 import java.util.List;
@@ -90,12 +91,18 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
           || loadConfigurationPb.getQuote() != null
           || loadConfigurationPb.getSkipLeadingRows() != null) {
         CsvOptions.Builder builder = CsvOptions.builder()
-            .allowJaggedRows(loadConfigurationPb.getAllowJaggedRows())
-            .allowQuotedNewLines(loadConfigurationPb.getAllowQuotedNewlines())
             .encoding(loadConfigurationPb.getEncoding())
             .fieldDelimiter(loadConfigurationPb.getFieldDelimiter())
-            .quote(loadConfigurationPb.getQuote())
-            .skipLeadingRows(loadConfigurationPb.getSkipLeadingRows());
+            .quote(loadConfigurationPb.getQuote());
+        if (loadConfigurationPb.getAllowJaggedRows() != null) {
+          builder.allowJaggedRows(loadConfigurationPb.getAllowJaggedRows());
+        }
+        if (loadConfigurationPb.getAllowQuotedNewlines() != null) {
+          builder.allowQuotedNewLines(loadConfigurationPb.getAllowQuotedNewlines());
+        }
+        if (loadConfigurationPb.getSkipLeadingRows() != null) {
+          builder.skipLeadingRows(loadConfigurationPb.getSkipLeadingRows());
+        }
         this.formatOptions = builder.build();
       }
       this.maxBadRecords = loadConfigurationPb.getMaxBadRecords();
@@ -271,8 +278,11 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
           .setAllowJaggedRows(csvOptions.allowJaggedRows())
           .setAllowQuotedNewlines(csvOptions.allowQuotedNewLines())
           .setEncoding(csvOptions.encoding())
-          .setQuote(csvOptions.quote())
-          .setSkipLeadingRows(csvOptions.skipLeadingRows());
+          .setQuote(csvOptions.quote());
+      if (csvOptions.skipLeadingRows() != null) {
+        // todo(mziccard) remove checked cast or comment when #1044 is closed
+        loadConfigurationPb.setSkipLeadingRows(Ints.checkedCast(csvOptions.skipLeadingRows()));
+      }
     }
     if (schema != null) {
       loadConfigurationPb.setSchema(schema.toPb());

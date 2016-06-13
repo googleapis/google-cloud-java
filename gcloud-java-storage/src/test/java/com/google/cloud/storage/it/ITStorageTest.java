@@ -29,8 +29,6 @@ import com.google.cloud.Page;
 import com.google.cloud.ReadChannel;
 import com.google.cloud.RestorableState;
 import com.google.cloud.WriteChannel;
-import com.google.cloud.storage.BatchRequest;
-import com.google.cloud.storage.BatchResponse;
 import com.google.cloud.storage.Blob;
 import com.google.cloud.storage.BlobId;
 import com.google.cloud.storage.BlobInfo;
@@ -41,6 +39,8 @@ import com.google.cloud.storage.HttpMethod;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.Storage.BlobField;
 import com.google.cloud.storage.Storage.BucketField;
+import com.google.cloud.storage.StorageBatch;
+import com.google.cloud.storage.StorageBatchResult;
 import com.google.cloud.storage.StorageException;
 import com.google.cloud.storage.testing.RemoteStorageHelper;
 import com.google.common.collect.ImmutableList;
@@ -81,7 +81,7 @@ public class ITStorageTest {
   private static final String CONTENT_TYPE = "text/plain";
   private static final byte[] BLOB_BYTE_CONTENT = {0xD, 0xE, 0xA, 0xD};
   private static final String BLOB_STRING_CONTENT = "Hello Google Cloud Storage!";
-  private static final int MAX_BATCH_DELETES = 100;
+  private static final int MAX_BATCH_SIZE = 100;
 
   @BeforeClass
   public static void beforeClass() {
@@ -778,16 +778,12 @@ public class ITStorageTest {
     // Batch update request
     BlobInfo updatedBlob1 = sourceBlob1.toBuilder().contentType(CONTENT_TYPE).build();
     BlobInfo updatedBlob2 = sourceBlob2.toBuilder().contentType(CONTENT_TYPE).build();
-    BatchRequest updateRequest = BatchRequest.builder()
-        .update(updatedBlob1)
-        .update(updatedBlob2)
-        .build();
-    BatchResponse updateResponse = storage.submit(updateRequest);
-    assertEquals(2, updateResponse.updates().size());
-    assertEquals(0, updateResponse.deletes().size());
-    assertEquals(0, updateResponse.gets().size());
-    BlobInfo remoteUpdatedBlob1 = updateResponse.updates().get(0).get();
-    BlobInfo remoteUpdatedBlob2 = updateResponse.updates().get(1).get();
+    StorageBatch updateBatch = storage.batch();
+    StorageBatchResult<Blob> updateResult1 = updateBatch.update(updatedBlob1);
+    StorageBatchResult<Blob> updateResult2 = updateBatch.update(updatedBlob2);
+    updateBatch.submit();
+    Blob remoteUpdatedBlob1 = updateResult1.get();
+    Blob remoteUpdatedBlob2 = updateResult2.get();
     assertEquals(sourceBlob1.bucket(), remoteUpdatedBlob1.bucket());
     assertEquals(sourceBlob1.name(), remoteUpdatedBlob1.name());
     assertEquals(sourceBlob2.bucket(), remoteUpdatedBlob2.bucket());
@@ -796,75 +792,87 @@ public class ITStorageTest {
     assertEquals(updatedBlob2.contentType(), remoteUpdatedBlob2.contentType());
 
     // Batch get request
-    BatchRequest getRequest = BatchRequest.builder()
-        .get(BUCKET, sourceBlobName1)
-        .get(BUCKET, sourceBlobName2)
-        .build();
-    BatchResponse getResponse = storage.submit(getRequest);
-    assertEquals(2, getResponse.gets().size());
-    assertEquals(0, getResponse.deletes().size());
-    assertEquals(0, getResponse.updates().size());
-    BlobInfo remoteBlob1 = getResponse.gets().get(0).get();
-    BlobInfo remoteBlob2 = getResponse.gets().get(1).get();
+    StorageBatch getBatch = storage.batch();
+    StorageBatchResult<Blob> getResult1 = getBatch.get(BUCKET, sourceBlobName1);
+    StorageBatchResult<Blob> getResult2 = getBatch.get(BUCKET, sourceBlobName2);
+    getBatch.submit();
+    Blob remoteBlob1 = getResult1.get();
+    Blob remoteBlob2 = getResult2.get();
     assertEquals(remoteUpdatedBlob1, remoteBlob1);
     assertEquals(remoteUpdatedBlob2, remoteBlob2);
 
     // Batch delete request
-    BatchRequest deleteRequest = BatchRequest.builder()
-        .delete(BUCKET, sourceBlobName1)
-        .delete(BUCKET, sourceBlobName2)
-        .build();
-    BatchResponse deleteResponse = storage.submit(deleteRequest);
-    assertEquals(2, deleteResponse.deletes().size());
-    assertEquals(0, deleteResponse.gets().size());
-    assertEquals(0, deleteResponse.updates().size());
-    assertTrue(deleteResponse.deletes().get(0).get());
-    assertTrue(deleteResponse.deletes().get(1).get());
+    StorageBatch deleteBatch = storage.batch();
+    StorageBatchResult<Boolean> deleteResult1 = deleteBatch.delete(BUCKET, sourceBlobName1);
+    StorageBatchResult<Boolean> deleteResult2 = deleteBatch.delete(BUCKET, sourceBlobName2);
+    deleteBatch.submit();
+    assertTrue(deleteResult1.get());
+    assertTrue(deleteResult2.get());
   }
 
   @Test
-  public void testBatchRequestManyDeletes() {
-    List<BlobId> blobsToDelete = Lists.newArrayListWithCapacity(2 * MAX_BATCH_DELETES);
-    for (int i = 0; i < 2 * MAX_BATCH_DELETES; i++) {
-      blobsToDelete.add(BlobId.of(BUCKET, "test-batch-request-many-deletes-blob-" + i));
+  public void testBatchRequestManyOperations() {
+    List<StorageBatchResult<Boolean>> deleteResults =
+        Lists.newArrayListWithCapacity(MAX_BATCH_SIZE);
+    List<StorageBatchResult<Blob>> getResults =
+        Lists.newArrayListWithCapacity(MAX_BATCH_SIZE / 2);
+    List<StorageBatchResult<Blob>> updateResults =
+        Lists.newArrayListWithCapacity(MAX_BATCH_SIZE / 2);
+    StorageBatch batch = storage.batch();
+    for (int i = 0; i < MAX_BATCH_SIZE; i++) {
+      BlobId blobId = BlobId.of(BUCKET, "test-batch-request-many-operations-blob-" + i);
+      deleteResults.add(batch.delete(blobId));
     }
-    BatchRequest.Builder builder = BatchRequest.builder();
-    for (BlobId blob : blobsToDelete) {
-      builder.delete(blob);
+    for (int i = 0; i < MAX_BATCH_SIZE / 2; i++) {
+      BlobId blobId = BlobId.of(BUCKET, "test-batch-request-many-operations-blob-" + i);
+      getResults.add(batch.get(blobId));
     }
-    String sourceBlobName1 = "test-batch-request-many-deletes-source-blob-1";
-    String sourceBlobName2 = "test-batch-request-many-deletes-source-blob-2";
+    for (int i = 0; i < MAX_BATCH_SIZE / 2; i++) {
+      BlobInfo blob =
+          BlobInfo.builder(BlobId.of(BUCKET, "test-batch-request-many-operations-blob-" + i))
+              .build();
+      updateResults.add(batch.update(blob));
+    }
+
+    String sourceBlobName1 = "test-batch-request-many-operations-source-blob-1";
+    String sourceBlobName2 = "test-batch-request-many-operations-source-blob-2";
     BlobInfo sourceBlob1 = BlobInfo.builder(BUCKET, sourceBlobName1).build();
     BlobInfo sourceBlob2 = BlobInfo.builder(BUCKET, sourceBlobName2).build();
     assertNotNull(storage.create(sourceBlob1));
     assertNotNull(storage.create(sourceBlob2));
     BlobInfo updatedBlob2 = sourceBlob2.toBuilder().contentType(CONTENT_TYPE).build();
 
-    BatchRequest updateRequest = builder
-        .get(BUCKET, sourceBlobName1)
-        .update(updatedBlob2)
-        .build();
-    BatchResponse response = storage.submit(updateRequest);
-    assertEquals(2 * MAX_BATCH_DELETES, response.deletes().size());
-    assertEquals(1, response.updates().size());
-    assertEquals(1, response.gets().size());
+    StorageBatchResult<Blob> getResult = batch.get(BUCKET, sourceBlobName1);
+    StorageBatchResult<Blob> updateResult = batch.update(updatedBlob2);
+
+    batch.submit();
 
     // Check deletes
-    for (BatchResponse.Result<Boolean> deleteResult : response.deletes()) {
-      assertFalse(deleteResult.failed());
-      assertFalse(deleteResult.get());
+    for (StorageBatchResult<Boolean> failedDeleteResult : deleteResults) {
+      assertFalse(failedDeleteResult.get());
     }
 
+    // Check gets
+    for (StorageBatchResult<Blob> failedGetResult : getResults) {
+      assertNull(failedGetResult.get());
+    }
+    Blob remoteBlob1 = getResult.get();
+    assertEquals(sourceBlob1.bucket(), remoteBlob1.bucket());
+    assertEquals(sourceBlob1.name(), remoteBlob1.name());
+
     // Check updates
-    Blob remoteUpdatedBlob2 = response.updates().get(0).get();
+    for (StorageBatchResult<Blob> failedUpdateResult : updateResults) {
+      try {
+        failedUpdateResult.get();
+        fail("Expected StorageException");
+      } catch (StorageException ex) {
+        // expected
+      }
+    }
+    Blob remoteUpdatedBlob2 = updateResult.get();
     assertEquals(sourceBlob2.bucket(), remoteUpdatedBlob2.bucket());
     assertEquals(sourceBlob2.name(), remoteUpdatedBlob2.name());
     assertEquals(updatedBlob2.contentType(), remoteUpdatedBlob2.contentType());
-
-    // Check gets
-    Blob remoteBlob1 = response.gets().get(0).get();
-    assertEquals(sourceBlob1.bucket(), remoteBlob1.bucket());
-    assertEquals(sourceBlob1.name(), remoteBlob1.name());
 
     assertTrue(remoteBlob1.delete());
     assertTrue(remoteUpdatedBlob2.delete());
@@ -877,25 +885,36 @@ public class ITStorageTest {
     Blob remoteBlob = storage.create(blob);
     assertNotNull(remoteBlob);
     BlobInfo updatedBlob = BlobInfo.builder(BUCKET, blobName, -1L).build();
-    BatchRequest batchRequest = BatchRequest.builder()
-        .update(updatedBlob, Storage.BlobTargetOption.generationMatch())
-        .delete(BUCKET, blobName, Storage.BlobSourceOption.generationMatch(-1L))
-        .delete(BlobId.of(BUCKET, blobName, -1L))
-        .get(BUCKET, blobName, Storage.BlobGetOption.generationMatch(-1L))
-        .get(BlobId.of(BUCKET, blobName, -1L))
-        .build();
-    BatchResponse batchResponse = storage.submit(batchRequest);
-    assertEquals(1, batchResponse.updates().size());
-    assertEquals(2, batchResponse.deletes().size());
-    assertEquals(2, batchResponse.gets().size());
-    assertTrue(batchResponse.updates().get(0).failed());
-    assertTrue(batchResponse.gets().get(0).failed());
-    assertFalse(batchResponse.gets().get(1).failed());
-    assertNull(batchResponse.gets().get(1).get());
-    assertTrue(batchResponse.deletes().get(0).failed());
-    assertFalse(batchResponse.deletes().get(1).failed());
-    assertFalse(batchResponse.deletes().get(1).get());
-    assertTrue(remoteBlob.delete());
+    StorageBatch batch = storage.batch();
+    StorageBatchResult<Blob> updateResult =
+        batch.update(updatedBlob, Storage.BlobTargetOption.generationMatch());
+    StorageBatchResult<Boolean> deleteResult1 =
+        batch.delete(BUCKET, blobName, Storage.BlobSourceOption.generationMatch(-1L));
+    StorageBatchResult<Boolean> deleteResult2 = batch.delete(BlobId.of(BUCKET, blobName, -1L));
+    StorageBatchResult<Blob> getResult1 =
+        batch.get(BUCKET, blobName, Storage.BlobGetOption.generationMatch(-1L));
+    StorageBatchResult<Blob> getResult2 = batch.get(BlobId.of(BUCKET, blobName, -1L));
+    batch.submit();
+    try {
+      updateResult.get();
+      fail("Expected StorageException");
+    } catch (StorageException ex) {
+      // expected
+    }
+    try {
+      deleteResult1.get();
+      fail("Expected StorageException");
+    } catch (StorageException ex) {
+      // expected
+    }
+    assertFalse(deleteResult2.get());
+    try {
+      getResult1.get();
+      fail("Expected StorageException");
+    } catch (StorageException ex) {
+      // expected
+    }
+    assertNull(getResult2.get());
   }
 
   @Test

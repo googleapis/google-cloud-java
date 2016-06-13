@@ -23,6 +23,7 @@ import com.google.api.client.util.Data;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.Lists;
+import com.google.common.io.BaseEncoding;
 
 import java.io.Serializable;
 import java.util.List;
@@ -54,7 +55,7 @@ public class FieldValue implements Serializable {
   public enum Attribute {
     /**
      * A primitive field value. A {@code FieldValue} is primitive when the corresponding field has
-     * type {@link Field.Type#bool()}, {@link Field.Type#string()},
+     * type {@link Field.Type#bytes()}, {@link Field.Type#bool()}, {@link Field.Type#string()},
      * {@link Field.Type#floatingPoint()}, {@link Field.Type#integer()},
      * {@link Field.Type#timestamp()} or the value is set to {@code null}.
      */
@@ -80,7 +81,7 @@ public class FieldValue implements Serializable {
    * Returns the attribute of this Field Value.
    *
    * @return {@link Attribute#PRIMITIVE} if the field is a primitive type
-   *     ({@link Field.Type#bool()}, {@link Field.Type#string()},
+   *     ({@link Field.Type#bytes()}, {@link Field.Type#bool()}, {@link Field.Type#string()},
    *     {@link Field.Type#floatingPoint()}, {@link Field.Type#integer()},
    *     {@link Field.Type#timestamp()}) or is {@code null}. Returns {@link Attribute#REPEATED} if
    *     the corresponding field has ({@link Field.Mode#REPEATED}) mode. Returns
@@ -108,8 +109,8 @@ public class FieldValue implements Serializable {
 
   /**
    * Returns this field's value as a {@link String}. This method should only be used if the
-   * corresponding field has primitive type ({@link Field.Type#bool()}, {@link Field.Type#string()},
-   * {@link Field.Type#floatingPoint()}, {@link Field.Type#integer()},
+   * corresponding field has primitive type ({@link Field.Type#bytes()}, {@link Field.Type#bool()},
+   * {@link Field.Type#string()}, {@link Field.Type#floatingPoint()}, {@link Field.Type#integer()},
    * {@link Field.Type#timestamp()}).
    *
    * @throws ClassCastException if the field is not a primitive type
@@ -119,6 +120,22 @@ public class FieldValue implements Serializable {
   public String stringValue() {
     checkNotNull(value);
     return (String) value;
+  }
+
+  /**
+   * Returns this field's value as a byte array. This method should only be used if the
+   * corresponding field has primitive type ({@link Field.Type#bytes()}.
+   *
+   * @throws ClassCastException if the field is not a primitive type
+   * @throws NullPointerException if {@link #isNull()} returns {@code true}
+   * @throws IllegalStateException if the field value is not encoded in base64
+   */
+  public byte[] bytesValue() {
+    try {
+      return BaseEncoding.base64().decode(stringValue());
+    } catch (IllegalArgumentException ex) {
+      throw new IllegalStateException(ex);
+    }
   }
 
   /**

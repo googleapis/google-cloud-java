@@ -24,8 +24,7 @@ import java.util.List;
 public interface DatastoreWriter {
 
   /**
-   * Datastore add operation.
-   * This method will automatically allocate an id if necessary.
+   * Datastore add operation. This method will automatically allocate an id if necessary.
    *
    * @param entity the entity to add
    * @return an {@code Entity} with the same properties and a key that is either newly allocated
@@ -36,8 +35,8 @@ public interface DatastoreWriter {
   Entity add(FullEntity<?> entity);
 
   /**
-   * Datastore add operation.
-   * This method will automatically allocate id for any entity with an incomplete key.
+   * Datastore add operation. This method will automatically allocate id for any entity with an
+   * incomplete key.
    *
    * @return a list of {@code Entity} ordered by input with the same properties and a key that
    *     is either newly allocated or the same one if was already complete
@@ -45,23 +44,39 @@ public interface DatastoreWriter {
    * @throws IllegalArgumentException if any of the given entities is missing a key
    * @see #add(FullEntity)
    */
-  List<Entity> add(FullEntity<?>... entity);
+  List<Entity> add(FullEntity<?>... entities);
 
   /**
-   * A Datastore update operation.
-   * The operation will fail if an entity with the same key does not already exist.
+   * A Datastore update operation. The operation will fail if an entity with the same key does not
+   * already exist.
    */
-  void update(Entity... entity);
+  void update(Entity... entities);
 
   /**
-   * A Datastore put (a.k.a upsert) operation.
-   * The operation will add or modify the entities.
+   * A Datastore put (a.k.a upsert) operation. This method will automatically allocate an id if
+   * necessary.
+   *
+   * @param entity the entity to put
+   * @return an {@code Entity} with the same properties and a key that is either newly allocated
+   *     or the same one if key is already complete
+   * @throws DatastoreException upon failure
+   * @throws IllegalArgumentException if the given entity is missing a key
    */
-  void put(Entity... entity);
+  Entity put(FullEntity<?> entity);
 
   /**
-   * A datastore delete operation.
-   * It is OK request a deletion of a non-existing entity.
+   * A Datastore put (a.k.a upsert) operation. This method will automatically allocate id for any
+   * entity with an incomplete key.
+   *
+   * @return a list of updated or inserted {@code Entity}, ordered by input. Returned keys are
+   *     either newly allocated or the same one if was already complete.
+   * @throws DatastoreException upon failure
+   * @throws IllegalArgumentException if any of the given entities is missing a key
    */
-  void delete(Key... key);
+  List<Entity> put(FullEntity<?>... entities);
+
+  /**
+   * A datastore delete operation. It is OK request a deletion of a non-existing entity.
+   */
+  void delete(Key... keys);
 }

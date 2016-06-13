@@ -75,6 +75,9 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreRpc, Da
       return new DatastoreOptions(this);
     }
 
+    /**
+     * Sets the default namespace to be used by the datastore service.
+     */
     public Builder namespace(String namespace) {
       this.namespace = validateNamespace(namespace);
       return this;
@@ -112,6 +115,9 @@ public class DatastoreOptions extends ServiceOptions<Datastore, DatastoreRpc, Da
     return DefaultDatastoreRpcFactory.INSTANCE;
   }
 
+  /**
+   * Returns the default namespace to be used by the datastore service.
+   */
   public String namespace() {
     return namespace;
   }

@@ -31,7 +31,7 @@ import java.util.Set;
  * @see <a href="https://cloud.google.com/storage/docs/json_api/v1/status-codes">Google Cloud
  *      Storage error codes</a>
  */
-public class StorageException extends BaseServiceException {
+public final class StorageException extends BaseServiceException {
 
   // see: https://cloud.google.com/storage/docs/resumable-uploads-xml#practices
   private static final Set<Error> RETRYABLE_ERRORS = ImmutableSet.of(
@@ -46,7 +46,11 @@ public class StorageException extends BaseServiceException {
   private static final long serialVersionUID = -4168430271327813063L;
 
   public StorageException(int code, String message) {
-    super(code, message, null, true);
+    this(code, message, null);
+  }
+
+  public StorageException(int code, String message, Throwable cause) {
+    super(code, message, null, true, cause);
   }
 
   public StorageException(IOException exception) {
@@ -71,6 +75,6 @@ public class StorageException extends BaseServiceException {
    */
   static StorageException translateAndThrow(RetryHelperException ex) {
     BaseServiceException.translateAndPropagateIfPossible(ex);
-    throw new StorageException(UNKNOWN_CODE, ex.getMessage());
+    throw new StorageException(UNKNOWN_CODE, ex.getMessage(), ex.getCause());
   }
 }
