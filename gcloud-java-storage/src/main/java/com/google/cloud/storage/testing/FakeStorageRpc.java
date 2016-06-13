@@ -18,9 +18,10 @@ package com.google.cloud.storage.testing;
 
 import com.google.api.services.storage.model.Bucket;
 import com.google.api.services.storage.model.StorageObject;
-import com.google.cloud.storage.spi.StorageRpc;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageException;
+import com.google.cloud.storage.spi.RpcBatch;
+import com.google.cloud.storage.spi.StorageRpc;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -191,8 +192,9 @@ public class FakeStorageRpc implements StorageRpc {
   }
 
   @Override
-  public BatchResponse batch(BatchRequest request) throws StorageException {
-    return null;
+  public RpcBatch createBatch() {
+    //return new DefaultRpcBatch(storage);
+    throw new UnsupportedOperationException();
   }
 
   @Override
@@ -327,7 +329,7 @@ public class FakeStorageRpc implements StorageRpc {
       throw new UnsupportedOperationException();
     }
   }
-  
+
   // Returns true if this is a folder. Adds it to folders if it isn't already there.
   private static boolean processedAsFolder(StorageObject so, String delimiter, String prefix, /* inout */ Map<String, StorageObject> folders) {
     if (delimiter == null) {
