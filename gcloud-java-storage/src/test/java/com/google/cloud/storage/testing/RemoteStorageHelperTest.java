@@ -20,7 +20,6 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
-import com.google.common.collect.ImmutableList;
 import com.google.cloud.Page;
 import com.google.cloud.storage.Blob;
 import com.google.cloud.storage.BlobId;
@@ -28,6 +27,7 @@ import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.Storage.BlobListOption;
 import com.google.cloud.storage.StorageException;
 import com.google.cloud.storage.StorageOptions;
+import com.google.common.collect.ImmutableList;
 
 import org.easymock.EasyMock;
 import org.junit.Before;

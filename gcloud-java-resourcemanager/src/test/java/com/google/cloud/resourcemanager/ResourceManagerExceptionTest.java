@@ -23,6 +23,7 @@ import static org.easymock.EasyMock.verify;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
 import com.google.cloud.BaseServiceException;
@@ -71,12 +72,20 @@ public class ResourceManagerExceptionTest {
     assertNull(exception.getMessage());
     assertTrue(exception.retryable());
     assertTrue(exception.idempotent());
-    assertEquals(cause, exception.getCause());
+    assertSame(cause, exception.getCause());
+
+    exception = new ResourceManagerException(404, "message", cause);
+    assertEquals(404, exception.code());
+    assertEquals("message", exception.getMessage());
+    assertNull(exception.reason());
+    assertFalse(exception.retryable());
+    assertTrue(exception.idempotent());
+    assertSame(cause, exception.getCause());
   }
 
   @Test
   public void testTranslateAndThrow() throws Exception {
-    ResourceManagerException cause = new ResourceManagerException(503, "message");
+    Exception cause = new ResourceManagerException(503, "message");
     RetryHelperException exceptionMock = createMock(RetryHelperException.class);
     expect(exceptionMock.getCause()).andReturn(cause).times(2);
     replay(exceptionMock);
@@ -87,6 +96,22 @@ public class ResourceManagerExceptionTest {
       assertEquals("message", ex.getMessage());
       assertTrue(ex.retryable());
       assertTrue(ex.idempotent());
+    } finally {
+      verify(exceptionMock);
+    }
+    cause = new IllegalArgumentException("message");
+    exceptionMock = createMock(RetryHelperException.class);
+    expect(exceptionMock.getMessage()).andReturn("message").times(1);
+    expect(exceptionMock.getCause()).andReturn(cause).times(2);
+    replay(exceptionMock);
+    try {
+      ResourceManagerException.translateAndThrow(exceptionMock);
+    } catch (BaseServiceException ex) {
+      assertEquals(ResourceManagerException.UNKNOWN_CODE, ex.code());
+      assertEquals("message", ex.getMessage());
+      assertFalse(ex.retryable());
+      assertTrue(ex.idempotent());
+      assertSame(cause, ex.getCause());
     } finally {
       verify(exceptionMock);
     }

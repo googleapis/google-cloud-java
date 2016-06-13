@@ -15,6 +15,7 @@ Java idiomatic client for [Google Cloud Platform][cloud-platform] services.
 This client supports the following Google Cloud Platform services:
 
 -  [Google Cloud BigQuery] (#google-cloud-bigquery-alpha) (Alpha)
+-  [Google Cloud Compute] (#google-cloud-compute-alpha) (Alpha)
 -  [Google Cloud Datastore] (#google-cloud-datastore)
 -  [Google Cloud DNS] (#google-cloud-dns-alpha) (Alpha)
 -  [Google Cloud Resource Manager] (#google-cloud-resource-manager-alpha) (Alpha)
@@ -33,16 +34,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>gcloud-java</artifactId>
-  <version>0.2.0</version>
+  <version>0.2.3</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:gcloud-java:0.2.0'
+compile 'com.google.cloud:gcloud-java:0.2.3'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "gcloud-java" % "0.2.0"
+libraryDependencies += "com.google.cloud" % "gcloud-java" % "0.2.3"
 ```
 
 Example Applications
@@ -50,6 +51,8 @@ Example Applications
 
 - [`BigQueryExample`](./gcloud-java-examples/src/main/java/com/google/cloud/examples/bigquery/BigQueryExample.java) - A simple command line interface providing some of Cloud BigQuery's functionality
   - Read more about using this application on the [`BigQueryExample` docs page](http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/cloud/examples/bigquery/BigQueryExample.html).
+- [`ComputeExample`](./gcloud-java-examples/src/main/java/com/google/cloud/examples/compute/ComputeExample.java) - A simple command line interface providing some of Cloud Compute's functionality
+  - Read more about using this application on the [`gcloud-java-examples` docs page](http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/cloud/examples/compute/ComputeExample.html).
 - [`Bookshelf`](https://github.com/GoogleCloudPlatform/getting-started-java/tree/master/bookshelf) - An App Engine app that manages a virtual bookshelf.
   - This app uses `gcloud-java` to interface with Cloud Datastore and Cloud Storage. It also uses Cloud SQL, another Google Cloud Platform service.
 - [`DatastoreExample`](./gcloud-java-examples/src/main/java/com/google/cloud/examples/datastore/DatastoreExample.java) - A simple command line interface for Cloud Datastore
@@ -104,7 +107,7 @@ First, ensure that the necessary Google Cloud APIs are enabled for your project.
 Next, choose a method for authenticating API requests from within your project:
 
 1. When using `gcloud-java` libraries from within Compute/App Engine, no additional authentication steps are necessary.
-2. When using `gcloud-java` libraries elsewhere, there are two options:
+2. When using `gcloud-java` libraries elsewhere, there are three options:
   * [Generate a JSON service account key](https://cloud.google.com/storage/docs/authentication?hl=en#service_accounts).  After downloading that key, you must do one of the following:
     * Define the environment variable GOOGLE_APPLICATION_CREDENTIALS to be the location of the key.  For example:
     ```bash
@@ -113,11 +116,18 @@ Next, choose a method for authenticating API requests from within your project:
     * Supply the JSON credentials file when building the service options.  For example, this Storage object has the necessary permissions to interact with your Google Cloud Storage data:
     ```java
     Storage storage = StorageOptions.builder()
-      .authCredentials(AuthCredentials.createForJson(new FileInputStream("/path/to/my/key.json"))
+        .authCredentials(AuthCredentials.createForJson(new FileInputStream("/path/to/my/key.json"))
+        .build()
+        .service();
+    ```
+  * If running locally for development/testing, you can use Google Cloud SDK.  Download the SDK if you haven't already, then login using the SDK (`gcloud auth login` in command line).  Be sure to set your project ID as described above.
+  * If you already have an OAuth2 access token, you can use it to authenticate (notice that in this case the access token will not be automatically refreshed):
+  ```java
+  Storage storage = StorageOptions.builder()
+      .authCredentials(AuthCredentials.createFor("your_access_token"))
       .build()
       .service();
-    ```
-  * If running locally for development/testing, you can use use Google Cloud SDK.  Download the SDK if you haven't already, then login using the SDK (`gcloud auth login` in command line).  Be sure to set your project ID as described above.
+  ```
 
 `gcloud-java` looks for credentials in the following order, stopping once it finds credentials:
 
@@ -163,13 +173,76 @@ if (table == null) {
 }
 System.out.println("Loading data into table " + tableId);
 Job loadJob = table.load(FormatOptions.csv(), "gs://bucket/path");
-while (!loadJob.isDone()) {
-  Thread.sleep(1000L);
-}
+loadJob = loadJob.waitFor();
 if (loadJob.status().error() != null) {
   System.out.println("Job completed with errors");
 } else {
   System.out.println("Job succeeded");
+}
+```
+
+Google Cloud Compute (Alpha)
+----------------------
+
+- [API Documentation][compute-api]
+- [Official Documentation][cloud-compute-docs]
+
+#### Preview
+
+Here are two code snippets showing simple usage examples from within Compute/App Engine. Note that
+you must [supply credentials](#authentication) and a project ID if running this snippet elsewhere.
+
+The first snippet shows how to create a snapshot from an existing disk. Complete source code can be
+found at
+[CreateSnapshot.java](./gcloud-java-examples/src/main/java/com/google/cloud/examples/compute/snippets/CreateSnapshot.java).
+
+```java
+import com.google.cloud.compute.Compute;
+import com.google.cloud.compute.ComputeOptions;
+import com.google.cloud.compute.Disk;
+import com.google.cloud.compute.DiskId;
+import com.google.cloud.compute.Snapshot;
+
+Compute compute = ComputeOptions.defaultInstance().service();
+DiskId diskId = DiskId.of("us-central1-a", "disk-name");
+Disk disk = compute.getDisk(diskId, Compute.DiskOption.fields());
+if (disk != null) {
+  String snapshotName = "disk-name-snapshot";
+  Operation operation = disk.createSnapshot(snapshotName);
+  operation = operation.waitFor();
+  if (operation.errors() == null) {
+    // use snapshot
+    Snapshot snapshot = compute.getSnapshot(snapshotName);
+  }
+}
+```
+The second snippet shows how to create a virtual machine instance. Complete source code can be found
+at
+[CreateInstance.java](./gcloud-java-examples/src/main/java/com/google/cloud/examples/compute/snippets/CreateInstance.java).
+```java
+import com.google.cloud.compute.AttachedDisk;
+import com.google.cloud.compute.Compute;
+import com.google.cloud.compute.ComputeOptions;
+import com.google.cloud.compute.ImageId;
+import com.google.cloud.compute.Instance;
+import com.google.cloud.compute.InstanceId;
+import com.google.cloud.compute.InstanceInfo;
+import com.google.cloud.compute.MachineTypeId;
+import com.google.cloud.compute.NetworkId;
+
+Compute compute = ComputeOptions.defaultInstance().service();
+ImageId imageId = ImageId.of("debian-cloud", "debian-8-jessie-v20160329");
+NetworkId networkId = NetworkId.of("default");
+AttachedDisk attachedDisk = AttachedDisk.of(AttachedDisk.CreateDiskConfiguration.of(imageId));
+NetworkInterface networkInterface = NetworkInterface.of(networkId);
+InstanceId instanceId = InstanceId.of("us-central1-a", "instance-name");
+MachineTypeId machineTypeId = MachineTypeId.of("us-central1-a", "n1-standard-1");
+Operation operation =
+    compute.create(InstanceInfo.of(instanceId, machineTypeId, attachedDisk, networkInterface));
+operation = operation.waitFor();
+if (operation.errors() == null) {
+  // use instance
+  Instance instance = compute.getInstance(instanceId);
 }
 ```
 
@@ -455,3 +528,7 @@ Apache 2.0 - See [LICENSE] for more information.
 [cloud-bigquery]: https://cloud.google.com/bigquery/
 [cloud-bigquery-docs]: https://cloud.google.com/bigquery/docs/overview
 [bigquery-api]: http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/cloud/bigquery/package-summary.html
+
+[cloud-compute]: https://cloud.google.com/compute/
+[cloud-compute-docs]: https://cloud.google.com/compute/docs/overview
+[compute-api]: http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/cloud/compute/package-summary.html

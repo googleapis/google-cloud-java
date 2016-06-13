@@ -335,9 +335,11 @@ public class ChangeRequestInfo implements Serializable {
   }
 
   @Override
-  public boolean equals(Object other) {
-    return other != null && other.getClass().equals(ChangeRequestInfo.class)
-        && other instanceof ChangeRequestInfo && toPb().equals(((ChangeRequestInfo) other).toPb());
+  public boolean equals(Object obj) {
+    return obj == this
+        || obj != null
+        && obj.getClass().equals(ChangeRequestInfo.class)
+        && toPb().equals(((ChangeRequestInfo) obj).toPb());
   }
 
   @Override

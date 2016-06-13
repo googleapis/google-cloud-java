@@ -16,10 +16,10 @@
 
 package com.google.cloud.datastore;
 
+import com.google.cloud.datastore.Query.ResultType;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.AbstractIterator;
 import com.google.datastore.v1beta3.QueryResultBatch.MoreResultsType;
-import com.google.cloud.datastore.Query.ResultType;
 import com.google.protobuf.ByteString;
 
 import java.util.Iterator;

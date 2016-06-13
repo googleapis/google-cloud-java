@@ -173,8 +173,8 @@ public class ChangeRequest extends ChangeRequestInfo {
 
   /**
    * Returns {@code true} if the change request has been completed. If the status is not {@link
-   * Status#DONE} already, the method makes an API call to Google Cloud DNS to update the change
-   * request first.
+   * ChangeRequestInfo.Status#DONE} already, the method makes an API call to Google Cloud DNS to
+   * update the change request first.
    *
    * @throws DnsException upon failure of the API call or if the associated zone was not found
    */
@@ -192,19 +192,21 @@ public class ChangeRequest extends ChangeRequestInfo {
   }
 
   @Override
-  public boolean equals(Object obj) {
+  public final boolean equals(Object obj) {
+    if (obj == this) {
+      return true;
+    }
     if (obj == null || !obj.getClass().equals(ChangeRequest.class)) {
       return false;
-    } else {
-      ChangeRequest other = (ChangeRequest) obj;
-      return Objects.equals(options, other.options)
-          && Objects.equals(zone, other.zone)
-          && Objects.equals(toPb(), other.toPb());
     }
+    ChangeRequest other = (ChangeRequest) obj;
+    return Objects.equals(toPb(), other.toPb())
+        && Objects.equals(options, other.options)
+        && Objects.equals(zone, other.zone);
   }
 
   @Override
-  public int hashCode() {
+  public final int hashCode() {
     return Objects.hash(super.hashCode(), options, zone);
   }
 

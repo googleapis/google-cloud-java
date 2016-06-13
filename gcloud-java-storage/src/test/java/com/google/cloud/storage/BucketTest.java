@@ -19,7 +19,6 @@ package com.google.cloud.storage;
 import static com.google.cloud.storage.Acl.Project.ProjectRole.VIEWERS;
 import static com.google.cloud.storage.Acl.Role.READER;
 import static com.google.cloud.storage.Acl.Role.WRITER;
-import static org.easymock.EasyMock.capture;
 import static org.easymock.EasyMock.createMock;
 import static org.easymock.EasyMock.createStrictMock;
 import static org.easymock.EasyMock.expect;
@@ -30,16 +29,16 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
-import com.google.common.collect.ImmutableList;
 import com.google.cloud.Page;
 import com.google.cloud.PageImpl;
 import com.google.cloud.storage.Acl.Project;
 import com.google.cloud.storage.Acl.User;
-import com.google.cloud.storage.BatchResponse.Result;
 import com.google.cloud.storage.BucketInfo.AgeDeleteRule;
 import com.google.cloud.storage.BucketInfo.DeleteRule;
+import com.google.common.base.Function;
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.Lists;
 
-import org.easymock.Capture;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
@@ -50,9 +49,7 @@ import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.util.Collections;
 import java.util.Iterator;
-import java.util.LinkedList;
 import java.util.List;
-import java.util.Set;
 
 public class BucketTest {
 
@@ -99,7 +96,7 @@ public class BucketTest {
   private StorageOptions mockOptions = createMock(StorageOptions.class);
   private Bucket bucket;
   private Bucket expectedBucket;
-  private Iterable<Blob> blobResults;
+  private List<Blob> blobResults;
 
   @Rule
   public ExpectedException thrown = ExpectedException.none();
@@ -249,33 +246,35 @@ public class BucketTest {
   }
 
   @Test
-  public void testGetAll() throws Exception {
+  public void testGetAllArray() throws Exception {
     initializeExpectedBucket(4);
-    Capture<BatchRequest> capturedBatchRequest = Capture.newInstance();
-    List<Result<Blob>> batchResultList = new LinkedList<>();
-    for (Blob info : blobResults) {
-      batchResultList.add(new Result<>(info));
-    }
-    BatchResponse response = new BatchResponse(Collections.<Result<Boolean>>emptyList(),
-        Collections.<Result<Blob>>emptyList(), batchResultList);
     expect(storage.options()).andReturn(mockOptions);
-    expect(storage.submit(capture(capturedBatchRequest))).andReturn(response);
-    expect(storage.options()).andReturn(mockOptions).times(3);
+    List<BlobId> blobIds = Lists.transform(blobResults, new Function<Blob, BlobId>() {
+      @Override
+      public BlobId apply(Blob blob) {
+        return blob.blobId();
+      }
+    });
+    expect(storage.get(blobIds)).andReturn(blobResults);
     replay(storage);
     initializeBucket();
-    List<Blob> blobs = bucket.get("n1", "n2", "n3");
-    Set<BlobId> blobInfoSet = capturedBatchRequest.getValue().toGet().keySet();
-    assertEquals(batchResultList.size(), blobInfoSet.size());
-    for (BlobInfo info : blobResults) {
-      assertTrue(blobInfoSet.contains(info.blobId()));
-    }
-    Iterator<Blob> blobIterator = blobs.iterator();
-    Iterator<Result<Blob>> batchResultIterator = response.gets().iterator();
-    while (batchResultIterator.hasNext() && blobIterator.hasNext()) {
-      assertEquals(batchResultIterator.next().get(), blobIterator.next());
-    }
-    assertFalse(batchResultIterator.hasNext());
-    assertFalse(blobIterator.hasNext());
+    assertEquals(blobResults, bucket.get("n1", "n2", "n3"));
+  }
+
+  @Test
+  public void testGetAllIterable() throws Exception {
+    initializeExpectedBucket(4);
+    expect(storage.options()).andReturn(mockOptions);
+    List<BlobId> blobIds = Lists.transform(blobResults, new Function<Blob, BlobId>() {
+      @Override
+      public BlobId apply(Blob blob) {
+        return blob.blobId();
+      }
+    });
+    expect(storage.get(blobIds)).andReturn(blobResults);
+    replay(storage);
+    initializeBucket();
+    assertEquals(blobResults, bucket.get(ImmutableList.of("n1", "n2", "n3")));
   }
 
   @Test

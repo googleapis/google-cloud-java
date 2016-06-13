@@ -30,8 +30,8 @@ import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
-import com.google.common.collect.ImmutableList;
 import com.google.cloud.Page;
+import com.google.common.collect.ImmutableList;
 
 import org.junit.After;
 import org.junit.Before;
@@ -64,7 +64,7 @@ public class ZoneTest {
       ChangeRequestInfo.builder().generatedId("someid").build();
   private static final ChangeRequestInfo CHANGE_REQUEST_NO_ID =
       ChangeRequestInfo.builder().build();
-  private static final DnsException EXCEPTION = createStrictMock(DnsException.class);
+  private static final DnsException EXCEPTION = new DnsException(-1, "message", null);
   private static final DnsOptions OPTIONS = createStrictMock(DnsOptions.class);
 
   private Dns dns;

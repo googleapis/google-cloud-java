@@ -1,10 +1,10 @@
 package com.google.cloud.resourcemanager.spi;
 
-import static com.google.common.base.MoreObjects.firstNonNull;
 import static com.google.cloud.resourcemanager.spi.ResourceManagerRpc.Option.FIELDS;
 import static com.google.cloud.resourcemanager.spi.ResourceManagerRpc.Option.FILTER;
 import static com.google.cloud.resourcemanager.spi.ResourceManagerRpc.Option.PAGE_SIZE;
 import static com.google.cloud.resourcemanager.spi.ResourceManagerRpc.Option.PAGE_TOKEN;
+import static com.google.common.base.MoreObjects.firstNonNull;
 import static java.net.HttpURLConnection.HTTP_FORBIDDEN;
 import static java.net.HttpURLConnection.HTTP_NOT_FOUND;
 
@@ -19,10 +19,10 @@ import com.google.api.services.cloudresourcemanager.model.Project;
 import com.google.api.services.cloudresourcemanager.model.SetIamPolicyRequest;
 import com.google.api.services.cloudresourcemanager.model.TestIamPermissionsRequest;
 import com.google.api.services.cloudresourcemanager.model.TestIamPermissionsResponse;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableSet;
 import com.google.cloud.resourcemanager.ResourceManagerException;
 import com.google.cloud.resourcemanager.ResourceManagerOptions;
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableSet;
 
 import java.io.IOException;
 import java.util.List;

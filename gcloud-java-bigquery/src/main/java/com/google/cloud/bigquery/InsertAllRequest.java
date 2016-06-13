@@ -37,7 +37,7 @@ import java.util.Objects;
  * @see <a href="https://cloud.google.com/bigquery/streaming-data-into-bigquery">Streaming Data into
  *     BigQuery</a>
  */
-public class InsertAllRequest implements Serializable {
+public final class InsertAllRequest implements Serializable {
 
   private static final long serialVersionUID = 211200307773853078L;
 
@@ -49,7 +49,9 @@ public class InsertAllRequest implements Serializable {
 
   /**
    * A Google Big Query row to be inserted into a table. Each {@code RowToInsert} has an associated
-   * id used by BigQuery to detect duplicate insertion requests on a best-effort basis.
+   * id used by BigQuery to detect duplicate insertion requests on a best-effort basis. Please
+   * notice that data for fields of type {@link Field.Type#bytes()} must be provided as a base64
+   * encoded string.
    *
    * <p>Example usage of creating a row to insert:
    * <pre> {@code
@@ -58,8 +60,9 @@ public class InsertAllRequest implements Serializable {
    * recordContent.put("subfieldName1", "value");
    * recordContent.put("subfieldName2", repeatedFieldValue);
    * Map<String, Object> rowContent = new HashMap<String, Object>();
-   * rowContent.put("fieldName1", true);
-   * rowContent.put("fieldName2", recordContent);
+   * rowContent.put("booleanFieldName", true);
+   * rowContent.put("bytesFieldName", "DQ4KDQ==");
+   * rowContent.put("recordFieldName", recordContent);
    * RowToInsert row = new RowToInsert("rowId", rowContent);
    * }</pre>
    *
@@ -116,7 +119,8 @@ public class InsertAllRequest implements Serializable {
     }
 
     /**
-     * Creates a row to be inserted with associated id.
+     * Creates a row to be inserted with associated id. Please notice that data for fields of type
+     * {@link Field.Type#bytes()} must be provided as a base64 encoded string.
      *
      * @param id id of the row, used to identify duplicates
      * @param content the actual content of the row
@@ -126,7 +130,8 @@ public class InsertAllRequest implements Serializable {
     }
 
     /**
-     * Creates a row to be inserted without associated id.
+     * Creates a row to be inserted without associated id. Please notice that data for fields of
+     * type {@link Field.Type#bytes()} must be provided as a base64 encoded string.
      *
      * @param content the actual content of the row
      */
@@ -174,7 +179,8 @@ public class InsertAllRequest implements Serializable {
     }
 
     /**
-     * Adds a row to be inserted with associated id.
+     * Adds a row to be inserted with associated id. Please notice that data for fields of type
+     * {@link Field.Type#bytes()} must be provided as a base64 encoded string.
      *
      * <p>Example usage of adding a row with associated id:
      * <pre> {@code
@@ -184,8 +190,9 @@ public class InsertAllRequest implements Serializable {
      * recordContent.put("subfieldName1", "value");
      * recordContent.put("subfieldName2", repeatedFieldValue);
      * Map<String, Object> rowContent = new HashMap<String, Object>();
-     * rowContent.put("fieldName1", true);
-     * rowContent.put("fieldName2", recordContent);
+     * rowContent.put("booleanFieldName", true);
+     * rowContent.put("bytesFieldName", "DQ4KDQ==");
+     * rowContent.put("recordFieldName", recordContent);
      * builder.addRow("rowId", rowContent);
      * }</pre>
      */
@@ -195,7 +202,8 @@ public class InsertAllRequest implements Serializable {
     }
 
     /**
-     * Adds a row to be inserted without an associated id.
+     * Adds a row to be inserted without an associated id. Please notice that data for fields of
+     * type {@link Field.Type#bytes()} must be provided as a base64 encoded string.
      *
      * <p>Example usage of adding a row without an associated id:
      * <pre> {@code
@@ -205,8 +213,9 @@ public class InsertAllRequest implements Serializable {
      * recordContent.put("subfieldName1", "value");
      * recordContent.put("subfieldName2", repeatedFieldValue);
      * Map<String, Object> rowContent = new HashMap<String, Object>();
-     * rowContent.put("fieldName1", true);
-     * rowContent.put("fieldName2", recordContent);
+     * rowContent.put("booleanFieldName", true);
+     * rowContent.put("bytesFieldName", "DQ4KDQ==");
+     * rowContent.put("recordFieldName", recordContent);
      * builder.addRow(rowContent);
      * }</pre>
      */
@@ -443,6 +452,9 @@ public class InsertAllRequest implements Serializable {
 
   @Override
   public boolean equals(Object obj) {
+    if (obj == this) {
+      return true;
+    }
     if (!(obj instanceof InsertAllRequest)) {
       return false;
     }

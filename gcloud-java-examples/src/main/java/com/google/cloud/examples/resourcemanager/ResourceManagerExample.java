@@ -16,11 +16,11 @@
 
 package com.google.cloud.examples.resourcemanager;
 
-import com.google.common.base.Joiner;
 import com.google.cloud.resourcemanager.Project;
 import com.google.cloud.resourcemanager.ProjectInfo;
 import com.google.cloud.resourcemanager.ResourceManager;
 import com.google.cloud.resourcemanager.ResourceManagerOptions;
+import com.google.common.base.Joiner;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -90,9 +90,9 @@ public class ResourceManagerExample {
       Scanner scanner = new Scanner(System.in);
       if (scanner.nextLine().toLowerCase().equals("y")) {
         resourceManager.delete(projectId);
-        System.out.println("Successfully deleted project " + projectId + ".");
+        System.out.printf("Successfully deleted project %s.%n", projectId);
       } else {
-        System.out.println("Will not delete project " + projectId + ".");
+        System.out.printf("Will not delete project %s.%n", projectId);
       }
       scanner.close();
     }

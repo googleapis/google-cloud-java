@@ -60,7 +60,7 @@ import java.util.Objects;
  * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/jobs/query">Query</a>
  * @see <a href="https://cloud.google.com/bigquery/query-reference">Query Reference</a>
  */
-public class QueryRequest implements Serializable {
+public final class QueryRequest implements Serializable {
 
   private static final long serialVersionUID = -8727328332415880852L;
 
@@ -250,7 +250,9 @@ public class QueryRequest implements Serializable {
 
   @Override
   public boolean equals(Object obj) {
-    return obj instanceof QueryRequest && Objects.equals(toPb(), ((QueryRequest) obj).toPb());
+    return obj == this
+        || obj instanceof QueryRequest
+        && Objects.equals(toPb(), ((QueryRequest) obj).toPb());
   }
 
   QueryRequest setProjectId(String projectId) {

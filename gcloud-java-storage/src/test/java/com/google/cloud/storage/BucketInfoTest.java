@@ -21,7 +21,6 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import com.google.api.services.storage.model.Bucket.Lifecycle.Rule;
-import com.google.common.collect.ImmutableList;
 import com.google.cloud.storage.Acl.Project;
 import com.google.cloud.storage.Acl.Role;
 import com.google.cloud.storage.Acl.User;
@@ -32,6 +31,7 @@ import com.google.cloud.storage.BucketInfo.DeleteRule.Type;
 import com.google.cloud.storage.BucketInfo.IsLiveDeleteRule;
 import com.google.cloud.storage.BucketInfo.NumNewerVersionsDeleteRule;
 import com.google.cloud.storage.BucketInfo.RawDeleteRule;
+import com.google.common.collect.ImmutableList;
 
 import org.junit.Test;
 

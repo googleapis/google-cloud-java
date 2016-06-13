@@ -16,10 +16,10 @@
 
 package com.google.cloud.bigquery;
 
-import com.google.common.collect.ImmutableSet;
 import com.google.cloud.BaseServiceException;
 import com.google.cloud.RetryHelper.RetryHelperException;
 import com.google.cloud.RetryHelper.RetryInterruptedException;
+import com.google.common.collect.ImmutableSet;
 
 import java.io.IOException;
 import java.util.Objects;
@@ -31,7 +31,7 @@ import java.util.Set;
  * @see <a href="https://cloud.google.com/bigquery/troubleshooting-errors">Google Cloud
  *      BigQuery error codes</a>
  */
-public class BigQueryException extends BaseServiceException {
+public final class BigQueryException extends BaseServiceException {
 
   // see: https://cloud.google.com/bigquery/troubleshooting-errors
   private static final Set<Error> RETRYABLE_ERRORS = ImmutableSet.of(
@@ -44,7 +44,12 @@ public class BigQueryException extends BaseServiceException {
   private final BigQueryError error;
 
   public BigQueryException(int code, String message) {
-    this(code, message, null);
+    this(code, message, (Throwable) null);
+  }
+
+  public BigQueryException(int code, String message, Throwable cause) {
+    super(code, message, null, true, cause);
+    this.error = null;
   }
 
   public BigQueryException(int code, String message, BigQueryError error) {
@@ -100,6 +105,6 @@ public class BigQueryException extends BaseServiceException {
    */
   static BaseServiceException translateAndThrow(RetryHelperException ex) {
     BaseServiceException.translateAndPropagateIfPossible(ex);
-    throw new BigQueryException(UNKNOWN_CODE, ex.getMessage());
+    throw new BigQueryException(UNKNOWN_CODE, ex.getMessage(), ex.getCause());
   }
 }

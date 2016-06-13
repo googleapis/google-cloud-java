@@ -25,10 +25,10 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 import com.google.api.services.storage.model.StorageObject;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import com.google.cloud.storage.Acl.Project;
 import com.google.cloud.storage.Acl.User;
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
 
 import org.junit.Test;
 
@@ -60,6 +60,7 @@ public class BlobInfoTest {
   private static final String SELF_LINK = "http://storage/b/n";
   private static final Long SIZE = 1024L;
   private static final Long UPDATE_TIME = DELETE_TIME - 1L;
+  private static final Long CREATE_TIME = UPDATE_TIME - 1L;
   private static final BlobInfo BLOB_INFO = BlobInfo.builder("b", "n", GENERATION)
       .acl(ACL)
       .componentCount(COMPONENT_COUNT)
@@ -80,6 +81,7 @@ public class BlobInfoTest {
       .selfLink(SELF_LINK)
       .size(SIZE)
       .updateTime(UPDATE_TIME)
+      .createTime(CREATE_TIME)
       .build();
   private static final BlobInfo DIRECTORY_INFO = BlobInfo.builder("b", "n/")
       .size(0L)
@@ -127,6 +129,7 @@ public class BlobInfoTest {
     assertEquals(SELF_LINK, BLOB_INFO.selfLink());
     assertEquals(SIZE, BLOB_INFO.size());
     assertEquals(UPDATE_TIME, BLOB_INFO.updateTime());
+    assertEquals(CREATE_TIME, BLOB_INFO.createTime());
     assertFalse(BLOB_INFO.isDirectory());
     assertEquals("b", DIRECTORY_INFO.bucket());
     assertEquals("n/", DIRECTORY_INFO.name());
@@ -138,6 +141,7 @@ public class BlobInfoTest {
     assertNull(DIRECTORY_INFO.contentEncoding());
     assertNull(DIRECTORY_INFO.contentLanguage());
     assertNull(DIRECTORY_INFO.crc32c());
+    assertNull(DIRECTORY_INFO.createTime());
     assertNull(DIRECTORY_INFO.deleteTime());
     assertNull(DIRECTORY_INFO.etag());
     assertNull(DIRECTORY_INFO.generation());
@@ -165,6 +169,7 @@ public class BlobInfoTest {
     assertEquals(expected.contentEncoding(), value.contentEncoding());
     assertEquals(expected.contentLanguage(), value.contentLanguage());
     assertEquals(expected.crc32c(), value.crc32c());
+    assertEquals(expected.createTime(), value.createTime());
     assertEquals(expected.deleteTime(), value.deleteTime());
     assertEquals(expected.etag(), value.etag());
     assertEquals(expected.generation(), value.generation());
@@ -200,6 +205,7 @@ public class BlobInfoTest {
     assertNull(blobInfo.contentEncoding());
     assertNull(blobInfo.contentLanguage());
     assertNull(blobInfo.crc32c());
+    assertNull(blobInfo.createTime());
     assertNull(blobInfo.deleteTime());
     assertNull(blobInfo.etag());
     assertNull(blobInfo.generation());

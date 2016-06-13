@@ -16,8 +16,8 @@
 
 package com.google.cloud.pubsub;
 
+import com.google.cloud.Clock;
 import com.google.cloud.GrpcServiceOptions.ExecutorFactory;
-import com.google.cloud.ServiceOptions.Clock;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.LinkedListMultimap;
 import com.google.common.collect.ListMultimap;

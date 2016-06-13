@@ -19,12 +19,12 @@ package com.google.cloud.storage;
 import static com.google.cloud.RetryHelper.runWithRetries;
 
 import com.google.api.services.storage.model.StorageObject;
-import com.google.common.base.MoreObjects;
 import com.google.cloud.ReadChannel;
 import com.google.cloud.RestorableState;
 import com.google.cloud.RetryHelper;
 import com.google.cloud.storage.spi.StorageRpc;
 import com.google.cloud.storage.spi.StorageRpc.Tuple;
+import com.google.common.base.MoreObjects;
 
 import java.io.IOException;
 import java.io.Serializable;
@@ -126,7 +126,7 @@ class BlobReadChannel implements ReadChannel {
           public Tuple<String, byte[]> call() {
             return storageRpc.read(storageObject, requestOptions, position, toRead);
           }
-        }, serviceOptions.retryParams(), StorageImpl.EXCEPTION_HANDLER);
+        }, serviceOptions.retryParams(), StorageImpl.EXCEPTION_HANDLER, serviceOptions.clock());
         if (result.y().length > 0 && lastEtag != null && !Objects.equals(result.x(), lastEtag)) {
           StringBuilder messageBuilder = new StringBuilder();
           messageBuilder.append("Blob ").append(blob).append(" was updated while reading");

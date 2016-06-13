@@ -16,12 +16,11 @@
 
 package com.google.cloud.storage;
 
-import static com.google.common.base.Preconditions.checkNotNull;
 import static com.google.cloud.storage.Blob.BlobSourceOption.toGetOptions;
 import static com.google.cloud.storage.Blob.BlobSourceOption.toSourceOptions;
+import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.api.services.storage.model.StorageObject;
-import com.google.common.base.Function;
 import com.google.cloud.AuthCredentials;
 import com.google.cloud.AuthCredentials.AppEngineAuthCredentials;
 import com.google.cloud.AuthCredentials.ServiceAccountAuthCredentials;
@@ -35,6 +34,7 @@ import com.google.cloud.storage.Storage.CopyRequest;
 import com.google.cloud.storage.Storage.SignUrlOption;
 import com.google.cloud.storage.spi.StorageRpc;
 import com.google.cloud.storage.spi.StorageRpc.Tuple;
+import com.google.common.base.Function;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -296,6 +296,12 @@ public class Blob extends BlobInfo {
     }
 
     @Override
+    Builder createTime(Long createTime) {
+      infoBuilder.createTime(createTime);
+      return this;
+    }
+
+    @Override
     Builder isDirectory(boolean isDirectory) {
       infoBuilder.isDirectory(isDirectory);
       return this;
@@ -526,10 +532,15 @@ public class Blob extends BlobInfo {
 
   @Override
   public final boolean equals(Object obj) {
-    return this == obj
-        || obj instanceof Blob
-        && Objects.equals(toPb(), ((Blob) obj).toPb())
-        && Objects.equals(options, ((Blob) obj).options);
+    if (obj == this) {
+      return true;
+    }
+    if (obj == null || !obj.getClass().equals(Blob.class)) {
+      return false;
+    }
+    Blob other = (Blob) obj;
+    return Objects.equals(toPb(), other.toPb())
+        && Objects.equals(options, other.options);
   }
 
   @Override

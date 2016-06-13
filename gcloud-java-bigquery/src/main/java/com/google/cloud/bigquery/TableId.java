@@ -27,7 +27,7 @@ import java.util.Objects;
 /**
  * Google BigQuery Table identity.
  */
-public class TableId implements Serializable {
+public final class TableId implements Serializable {
 
   static final Function<TableReference, TableId> FROM_PB_FUNCTION =
       new Function<TableReference, TableId>() {
@@ -92,7 +92,9 @@ public class TableId implements Serializable {
 
   @Override
   public boolean equals(Object obj) {
-    return obj instanceof TableId && Objects.equals(toPb(), ((TableId) obj).toPb());
+    return obj == this
+        || obj instanceof TableId
+        && Objects.equals(toPb(), ((TableId) obj).toPb());
   }
 
   @Override

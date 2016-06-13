@@ -28,12 +28,12 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
-import com.google.common.collect.Iterators;
 import com.google.cloud.Page;
 import com.google.cloud.PageImpl;
 import com.google.cloud.bigquery.InsertAllRequest.RowToInsert;
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
+import com.google.common.collect.Iterators;
 
 import org.junit.After;
 import org.junit.Test;

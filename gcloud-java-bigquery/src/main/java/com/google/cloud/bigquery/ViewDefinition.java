@@ -33,7 +33,7 @@ import java.util.Objects;
  *
  * @see <a href="https://cloud.google.com/bigquery/querying-data#views">Views</a>
  */
-public final class ViewDefinition extends TableDefinition {
+public class ViewDefinition extends TableDefinition {
 
   private static final long serialVersionUID = -8789311196910794545L;
 
@@ -146,12 +146,15 @@ public final class ViewDefinition extends TableDefinition {
   }
 
   @Override
-  public boolean equals(Object obj) {
-    return obj instanceof ViewDefinition && baseEquals((ViewDefinition) obj);
+  public final boolean equals(Object obj) {
+    return obj == this
+        || obj != null
+        && obj.getClass().equals(ViewDefinition.class)
+        && baseEquals((ViewDefinition) obj);
   }
 
   @Override
-  public int hashCode() {
+  public final int hashCode() {
     return Objects.hash(baseHashCode(), query, userDefinedFunctions);
   }
 
