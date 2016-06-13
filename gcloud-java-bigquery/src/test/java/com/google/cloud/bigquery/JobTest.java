@@ -27,8 +27,18 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
+import com.google.cloud.Clock;
+import com.google.cloud.WaitForOption;
+import com.google.cloud.bigquery.JobStatistics.CopyStatistics;
+
+import org.easymock.EasyMock;
 import org.junit.After;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
+
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 
 public class JobTest {
 
@@ -40,7 +50,7 @@ public class JobTest {
   private static final String SELF_LINK = "selfLink";
   private static final String EMAIL = "email";
   private static final JobStatus JOB_STATUS = new JobStatus(JobStatus.State.DONE);
-  private static final JobStatistics COPY_JOB_STATISTICS = JobStatistics.builder()
+  private static final JobStatistics COPY_JOB_STATISTICS = CopyStatistics.builder()
       .creationTime(1L)
       .endTime(3L)
       .startTime(2L)
@@ -63,6 +73,9 @@ public class JobTest {
   private BigQuery bigquery;
   private Job expectedJob;
   private Job job;
+
+  @Rule
+  public final ExpectedException thrown = ExpectedException.none();
 
   private void initializeExpectedJob(int optionsCalls) {
     expect(serviceMockReturnsOptions.options()).andReturn(mockOptions).times(optionsCalls);
@@ -176,12 +189,112 @@ public class JobTest {
   }
 
   @Test
+  public void testWaitFor() throws InterruptedException, TimeoutException {
+    initializeExpectedJob(2);
+    BigQuery.JobOption[] expectedOptions = {BigQuery.JobOption.fields(BigQuery.JobField.STATUS)};
+    JobStatus status = createStrictMock(JobStatus.class);
+    expect(status.state()).andReturn(JobStatus.State.DONE);
+    expect(bigquery.options()).andReturn(mockOptions);
+    expect(mockOptions.clock()).andReturn(Clock.defaultClock());
+    Job completedJob = expectedJob.toBuilder().status(status).build();
+    expect(bigquery.getJob(JOB_INFO.jobId(), expectedOptions)).andReturn(completedJob);
+    expect(bigquery.getJob(JOB_INFO.jobId())).andReturn(completedJob);
+    replay(status, bigquery, mockOptions);
+    initializeJob();
+    assertSame(completedJob, job.waitFor());
+    verify(status, mockOptions);
+  }
+
+  @Test
+  public void testWaitFor_Null() throws InterruptedException, TimeoutException {
+    initializeExpectedJob(1);
+    BigQuery.JobOption[] expectedOptions = {BigQuery.JobOption.fields(BigQuery.JobField.STATUS)};
+    expect(bigquery.options()).andReturn(mockOptions);
+    expect(mockOptions.clock()).andReturn(Clock.defaultClock());
+    expect(bigquery.getJob(JOB_INFO.jobId(), expectedOptions)).andReturn(null);
+    expect(bigquery.getJob(JOB_INFO.jobId())).andReturn(null);
+    replay(bigquery, mockOptions);
+    initializeJob();
+    assertNull(job.waitFor());
+    verify(mockOptions);
+  }
+
+  @Test
+  public void testWaitForWithCheckingPeriod() throws InterruptedException, TimeoutException {
+    initializeExpectedJob(3);
+    BigQuery.JobOption[] expectedOptions = {BigQuery.JobOption.fields(BigQuery.JobField.STATUS)};
+    TimeUnit timeUnit = createStrictMock(TimeUnit.class);
+    timeUnit.sleep(42);
+    EasyMock.expectLastCall();
+    JobStatus status = createStrictMock(JobStatus.class);
+    expect(status.state()).andReturn(JobStatus.State.RUNNING);
+    expect(status.state()).andReturn(JobStatus.State.DONE);
+    expect(bigquery.options()).andReturn(mockOptions);
+    expect(mockOptions.clock()).andReturn(Clock.defaultClock());
+    Job runningJob = expectedJob.toBuilder().status(status).build();
+    Job completedJob = expectedJob.toBuilder().status(status).build();
+    expect(bigquery.getJob(JOB_INFO.jobId(), expectedOptions)).andReturn(runningJob);
+    expect(bigquery.getJob(JOB_INFO.jobId(), expectedOptions)).andReturn(completedJob);
+    expect(bigquery.getJob(JOB_INFO.jobId())).andReturn(completedJob);
+    replay(status, bigquery, timeUnit, mockOptions);
+    initializeJob();
+    assertSame(completedJob, job.waitFor(WaitForOption.checkEvery(42, timeUnit)));
+    verify(status, timeUnit, mockOptions);
+  }
+
+  @Test
+  public void testWaitForWithCheckingPeriod_Null() throws InterruptedException, TimeoutException {
+    initializeExpectedJob(2);
+    BigQuery.JobOption[] expectedOptions = {BigQuery.JobOption.fields(BigQuery.JobField.STATUS)};
+    TimeUnit timeUnit = createStrictMock(TimeUnit.class);
+    timeUnit.sleep(42);
+    EasyMock.expectLastCall();
+    expect(bigquery.options()).andReturn(mockOptions);
+    expect(mockOptions.clock()).andReturn(Clock.defaultClock());
+    Job runningJob = expectedJob.toBuilder().status(new JobStatus(JobStatus.State.RUNNING)).build();
+    expect(bigquery.getJob(JOB_INFO.jobId(), expectedOptions)).andReturn(runningJob);
+    expect(bigquery.getJob(JOB_INFO.jobId(), expectedOptions)).andReturn(null);
+    expect(bigquery.getJob(JOB_INFO.jobId())).andReturn(null);
+    replay(bigquery, timeUnit, mockOptions);
+    initializeJob();
+    assertNull(job.waitFor(WaitForOption.checkEvery(42, timeUnit)));
+    verify(bigquery, timeUnit, mockOptions);
+  }
+
+  @Test
+  public void testWaitForWithTimeout() throws InterruptedException, TimeoutException {
+    initializeExpectedJob(2);
+    BigQuery.JobOption[] expectedOptions = {BigQuery.JobOption.fields(BigQuery.JobField.STATUS)};
+    TimeUnit timeUnit = createStrictMock(TimeUnit.class);
+    timeUnit.sleep(1);
+    EasyMock.expectLastCall();
+    Clock clock = createStrictMock(Clock.class);
+    expect(clock.millis()).andReturn(0L);
+    expect(clock.millis()).andReturn(1L);
+    expect(clock.millis()).andReturn(3L);
+    JobStatus status = createStrictMock(JobStatus.class);
+    expect(status.state()).andReturn(JobStatus.State.RUNNING);
+    expect(status.state()).andReturn(JobStatus.State.RUNNING);
+    expect(bigquery.options()).andReturn(mockOptions);
+    expect(mockOptions.clock()).andReturn(clock);
+    Job runningJob = expectedJob.toBuilder().status(status).build();
+    expect(bigquery.getJob(JOB_INFO.jobId(), expectedOptions)).andReturn(runningJob);
+    expect(bigquery.getJob(JOB_INFO.jobId(), expectedOptions)).andReturn(runningJob);
+    replay(status, bigquery, timeUnit, clock, mockOptions);
+    initializeJob();
+    thrown.expect(TimeoutException.class);
+    job.waitFor(WaitForOption.checkEvery(1, timeUnit),
+        WaitForOption.timeout(3, TimeUnit.MILLISECONDS));
+    verify(status, timeUnit, clock, mockOptions);
+  }
+
+  @Test
   public void testReload() throws Exception {
     initializeExpectedJob(4);
     JobInfo updatedInfo = JOB_INFO.toBuilder().etag("etag").build();
     Job expectedJob = new Job(serviceMockReturnsOptions, new JobInfo.BuilderImpl(updatedInfo));
     expect(bigquery.options()).andReturn(mockOptions);
-    expect(bigquery.getJob(JOB_INFO.jobId().job())).andReturn(expectedJob);
+    expect(bigquery.getJob(JOB_INFO.jobId())).andReturn(expectedJob);
     replay(bigquery);
     initializeJob();
     Job updatedJob = job.reload();
@@ -192,7 +305,7 @@ public class JobTest {
   public void testReloadNull() throws Exception {
     initializeExpectedJob(1);
     expect(bigquery.options()).andReturn(mockOptions);
-    expect(bigquery.getJob(JOB_INFO.jobId().job())).andReturn(null);
+    expect(bigquery.getJob(JOB_INFO.jobId())).andReturn(null);
     replay(bigquery);
     initializeJob();
     assertNull(job.reload());
@@ -204,7 +317,7 @@ public class JobTest {
     JobInfo updatedInfo = JOB_INFO.toBuilder().etag("etag").build();
     Job expectedJob = new Job(serviceMockReturnsOptions, new JobInfo.BuilderImpl(updatedInfo));
     expect(bigquery.options()).andReturn(mockOptions);
-    expect(bigquery.getJob(JOB_INFO.jobId().job(), BigQuery.JobOption.fields()))
+    expect(bigquery.getJob(JOB_INFO.jobId(), BigQuery.JobOption.fields()))
         .andReturn(expectedJob);
     replay(bigquery);
     initializeJob();

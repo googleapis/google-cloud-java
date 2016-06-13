@@ -19,6 +19,7 @@ package com.google.cloud.bigquery;
 import static org.junit.Assert.assertEquals;
 
 import com.google.common.collect.ImmutableList;
+import com.google.cloud.bigquery.JobStatistics.CopyStatistics;
 import com.google.cloud.bigquery.JobStatistics.ExtractStatistics;
 import com.google.cloud.bigquery.JobStatistics.LoadStatistics;
 import com.google.cloud.bigquery.JobStatistics.QueryStatistics;
@@ -42,6 +43,11 @@ public class JobStatisticsTest {
   private static final Long CREATION_TIME = 10L;
   private static final Long END_TIME = 20L;
   private static final Long START_TIME = 15L;
+  private static final CopyStatistics COPY_STATISTICS = CopyStatistics.builder()
+      .creationTime(CREATION_TIME)
+      .endTime(END_TIME)
+      .startTime(START_TIME)
+      .build();
   private static final ExtractStatistics EXTRACT_STATISTICS = ExtractStatistics.builder()
       .creationTime(CREATION_TIME)
       .endTime(END_TIME)
@@ -101,17 +107,12 @@ public class JobStatisticsTest {
       .billingTier(BILLING_TIER)
       .cacheHit(CACHE_HIT)
       .build();
-  private static final JobStatistics STATISTICS = JobStatistics.builder()
-      .creationTime(CREATION_TIME)
-      .endTime(END_TIME)
-      .startTime(START_TIME)
-      .build();
 
   @Test
   public void testBuilder() {
-    assertEquals(CREATION_TIME, STATISTICS.creationTime());
-    assertEquals(START_TIME, STATISTICS.startTime());
-    assertEquals(END_TIME, STATISTICS.endTime());
+    assertEquals(CREATION_TIME, COPY_STATISTICS.creationTime());
+    assertEquals(START_TIME, COPY_STATISTICS.startTime());
+    assertEquals(END_TIME, COPY_STATISTICS.endTime());
 
     assertEquals(CREATION_TIME, EXTRACT_STATISTICS.creationTime());
     assertEquals(START_TIME, EXTRACT_STATISTICS.startTime());
@@ -160,7 +161,7 @@ public class JobStatisticsTest {
         ExtractStatistics.fromPb(EXTRACT_STATISTICS.toPb()));
     compareLoadStatistics(LOAD_STATISTICS, LoadStatistics.fromPb(LOAD_STATISTICS.toPb()));
     compareQueryStatistics(QUERY_STATISTICS, QueryStatistics.fromPb(QUERY_STATISTICS.toPb()));
-    compareStatistics(STATISTICS, JobStatistics.fromPb(STATISTICS.toPb()));
+    compareStatistics(COPY_STATISTICS, JobStatistics.fromPb(COPY_STATISTICS.toPb()));
 
     compareLoadStatistics(LOAD_STATISTICS_INCOMPLETE,
         LoadStatistics.fromPb(LOAD_STATISTICS_INCOMPLETE.toPb()));

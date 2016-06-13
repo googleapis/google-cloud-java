@@ -59,7 +59,10 @@ public class FormatOptions implements Serializable {
 
   @Override
   public boolean equals(Object obj) {
-    return obj instanceof FormatOptions && Objects.equals(type, ((FormatOptions) obj).type());
+    return obj == this
+        || obj != null
+        && obj.getClass().equals(FormatOptions.class)
+        && Objects.equals(type, ((FormatOptions) obj).type());
   }
 
   /**

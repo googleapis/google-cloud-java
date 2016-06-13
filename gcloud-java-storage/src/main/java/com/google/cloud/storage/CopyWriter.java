@@ -18,13 +18,13 @@ package com.google.cloud.storage;
 
 import static com.google.cloud.RetryHelper.runWithRetries;
 
-import com.google.common.base.MoreObjects;
 import com.google.cloud.Restorable;
 import com.google.cloud.RestorableState;
 import com.google.cloud.RetryHelper;
 import com.google.cloud.storage.spi.StorageRpc;
 import com.google.cloud.storage.spi.StorageRpc.RewriteRequest;
 import com.google.cloud.storage.spi.StorageRpc.RewriteResponse;
+import com.google.common.base.MoreObjects;
 
 import java.io.Serializable;
 import java.util.Map;
@@ -113,7 +113,7 @@ public class CopyWriter implements Restorable<CopyWriter> {
           public RewriteResponse call() {
             return storageRpc.continueRewrite(rewriteResponse);
           }
-        }, serviceOptions.retryParams(), StorageImpl.EXCEPTION_HANDLER);
+        }, serviceOptions.retryParams(), StorageImpl.EXCEPTION_HANDLER, serviceOptions.clock());
       } catch (RetryHelper.RetryHelperException e) {
         throw StorageException.translateAndThrow(e);
       }

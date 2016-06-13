@@ -19,10 +19,10 @@ package com.google.cloud.datastore.testing;
 import static com.google.common.base.MoreObjects.firstNonNull;
 import static com.google.common.base.Preconditions.checkArgument;
 
-import com.google.common.base.Strings;
 import com.google.cloud.AuthCredentials;
 import com.google.cloud.RetryParams;
 import com.google.cloud.datastore.DatastoreOptions;
+import com.google.common.base.Strings;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
@@ -92,7 +92,7 @@ public class LocalDatastoreHelper {
       GCD_URL = null;
     } else {
       try {
-        GCD_URL = new URL("http://storage.googleapis.com/gcd/tools/" + GCD_FILENAME);
+        GCD_URL = new URL("https://storage.googleapis.com/gcd/tools/" + GCD_FILENAME);
       } catch (MalformedURLException e) {
         throw new RuntimeException(e);
       }
@@ -556,17 +556,28 @@ public class LocalDatastoreHelper {
     }
   }
 
+  private DatastoreOptions.Builder optionsBuilder() {
+    return DatastoreOptions.builder()
+        .projectId(projectId)
+        .host("localhost:" + Integer.toString(port))
+        .authCredentials(AuthCredentials.noAuth())
+        .retryParams(RetryParams.noRetries());
+  }
+
   /**
    * Returns a {@link DatastoreOptions} instance that sets the host to use the Datastore emulator on
    * localhost.
    */
   public DatastoreOptions options() {
-    return DatastoreOptions.builder()
-        .projectId(projectId)
-        .host("localhost:" + Integer.toString(port))
-        .authCredentials(AuthCredentials.noAuth())
-        .retryParams(RetryParams.noRetries())
-        .build();
+    return optionsBuilder().build();
+  }
+
+  /**
+   * Returns a {@link DatastoreOptions} instance that sets the host to use the Datastore emulator on
+   * localhost. The default namespace is set to {@code namespace}.
+   */
+  public DatastoreOptions options(String namespace) {
+    return optionsBuilder().namespace(namespace).build();
   }
 
   /**

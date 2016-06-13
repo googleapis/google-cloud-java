@@ -16,6 +16,7 @@
 
 package com.google.cloud.bigquery.it;
 
+import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
@@ -23,8 +24,6 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import com.google.cloud.Page;
 import com.google.cloud.WriteChannel;
 import com.google.cloud.bigquery.BigQuery;
@@ -68,10 +67,12 @@ import com.google.cloud.storage.BlobInfo;
 import com.google.cloud.storage.BucketInfo;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.testing.RemoteStorageHelper;
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
+import com.google.common.io.BaseEncoding;
 
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
-import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.Timeout;
@@ -83,11 +84,14 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class ITBigQueryTest {
 
+  private static final byte[] BYTES = {0xD, 0xE, 0xA, 0xD};
+  private static final String BYTES_BASE64 = BaseEncoding.base64().encode(BYTES);
   private static final Logger LOG = Logger.getLogger(ITBigQueryTest.class.getName());
   private static final String DATASET = RemoteBigQueryHelper.generateDatasetName();
   private static final String DESCRIPTION = "Test dataset";
@@ -112,14 +116,19 @@ public class ITBigQueryTest {
           .mode(Field.Mode.NULLABLE)
           .description("BooleanDescription")
           .build();
+  private static final Field BYTES_FIELD_SCHEMA =
+      Field.builder("BytesField", Field.Type.bytes())
+          .mode(Field.Mode.NULLABLE)
+          .description("BytesDescription")
+          .build();
   private static final Field RECORD_FIELD_SCHEMA =
       Field.builder("RecordField", Field.Type.record(TIMESTAMP_FIELD_SCHEMA,
-          STRING_FIELD_SCHEMA, INTEGER_FIELD_SCHEMA, BOOLEAN_FIELD_SCHEMA))
+          STRING_FIELD_SCHEMA, INTEGER_FIELD_SCHEMA, BOOLEAN_FIELD_SCHEMA, BYTES_FIELD_SCHEMA))
           .mode(Field.Mode.REQUIRED)
           .description("RecordDescription")
           .build();
   private static final Schema TABLE_SCHEMA = Schema.of(TIMESTAMP_FIELD_SCHEMA, STRING_FIELD_SCHEMA,
-      INTEGER_FIELD_SCHEMA, BOOLEAN_FIELD_SCHEMA, RECORD_FIELD_SCHEMA);
+      INTEGER_FIELD_SCHEMA, BOOLEAN_FIELD_SCHEMA, BYTES_FIELD_SCHEMA, RECORD_FIELD_SCHEMA);
   private static final Schema SIMPLE_SCHEMA = Schema.of(STRING_FIELD_SCHEMA);
   private static final Schema QUERY_RESULT_SCHEMA = Schema.builder()
       .addField(Field.builder("TimestampField", Field.Type.timestamp())
@@ -143,11 +152,13 @@ public class ITBigQueryTest {
       + "\"StringField\": \"stringValue\","
       + "\"IntegerField\": [\"0\", \"1\"],"
       + "\"BooleanField\": \"false\","
+      + "\"BytesField\": \"" + BYTES_BASE64 + "\","
       + "\"RecordField\": {"
       + "\"TimestampField\": \"1969-07-20 20:18:04 UTC\","
       + "\"StringField\": null,"
       + "\"IntegerField\": [\"1\",\"0\"],"
-      + "\"BooleanField\": \"true\""
+      + "\"BooleanField\": \"true\","
+      + "\"BytesField\": \"" + BYTES_BASE64 + "\""
       + "}"
       + "}\n"
       + "{"
@@ -155,11 +166,13 @@ public class ITBigQueryTest {
       + "\"StringField\": \"stringValue\","
       + "\"IntegerField\": [\"0\", \"1\"],"
       + "\"BooleanField\": \"false\","
+      + "\"BytesField\": \"" + BYTES_BASE64 + "\","
       + "\"RecordField\": {"
       + "\"TimestampField\": \"1969-07-20 20:18:04 UTC\","
       + "\"StringField\": null,"
       + "\"IntegerField\": [\"1\",\"0\"],"
-      + "\"BooleanField\": \"true\""
+      + "\"BooleanField\": \"true\","
+      + "\"BytesField\": \"" + BYTES_BASE64 + "\""
       + "}"
       + "}";
 
@@ -170,7 +183,7 @@ public class ITBigQueryTest {
   public Timeout globalTimeout = Timeout.seconds(300);
 
   @BeforeClass
-  public static void beforeClass() throws InterruptedException {
+  public static void beforeClass() throws InterruptedException, TimeoutException {
     RemoteBigQueryHelper bigqueryHelper = RemoteBigQueryHelper.create();
     RemoteStorageHelper storageHelper = RemoteStorageHelper.create();
     bigquery = bigqueryHelper.options().service();
@@ -188,9 +201,7 @@ public class ITBigQueryTest {
         .schema(TABLE_SCHEMA)
         .build();
     Job job = bigquery.create(JobInfo.of(configuration));
-    while (!job.isDone()) {
-      Thread.sleep(1000);
-    }
+    job = job.waitFor();
     assertNull(job.status().error());
   }
 
@@ -512,30 +523,36 @@ public class ITBigQueryTest {
   }
 
   @Test
-  public void testInsertAll() {
+  public void testInsertAll() throws IOException {
     String tableName = "test_insert_all_table";
     StandardTableDefinition tableDefinition = StandardTableDefinition.of(TABLE_SCHEMA);
     TableInfo tableInfo = TableInfo.of(TableId.of(DATASET, tableName), tableDefinition);
     assertNotNull(bigquery.create(tableInfo));
+    ImmutableMap.Builder<String, Object> builder1 = ImmutableMap.builder();
+    builder1.put("TimestampField", "2014-08-19 07:41:35.220 -05:00");
+    builder1.put("StringField", "stringValue");
+    builder1.put("IntegerField", ImmutableList.of(0, 1));
+    builder1.put("BooleanField", false);
+    builder1.put("BytesField", BYTES_BASE64);
+    builder1.put("RecordField", ImmutableMap.of(
+        "TimestampField", "1969-07-20 20:18:04 UTC",
+        "IntegerField", ImmutableList.of(1, 0),
+        "BooleanField", true,
+        "BytesField", BYTES_BASE64));
+    ImmutableMap.Builder<String, Object> builder2 = ImmutableMap.builder();
+    builder2.put("TimestampField", "2014-08-19 07:41:35.220 -05:00");
+    builder2.put("StringField", "stringValue");
+    builder2.put("IntegerField", ImmutableList.of(0, 1));
+    builder2.put("BooleanField", false);
+    builder2.put("BytesField", BYTES_BASE64);
+    builder2.put("RecordField", ImmutableMap.of(
+        "TimestampField", "1969-07-20 20:18:04 UTC",
+        "IntegerField", ImmutableList.of(1, 0),
+        "BooleanField", true,
+        "BytesField", BYTES_BASE64));
     InsertAllRequest request = InsertAllRequest.builder(tableInfo.tableId())
-        .addRow(ImmutableMap.<String, Object>of(
-            "TimestampField", "2014-08-19 07:41:35.220 -05:00",
-            "StringField", "stringValue",
-            "IntegerField", ImmutableList.of(0, 1),
-            "BooleanField", false,
-            "RecordField", ImmutableMap.of(
-                "TimestampField", "1969-07-20 20:18:04 UTC",
-                "IntegerField", ImmutableList.of(1, 0),
-                "BooleanField", true)))
-        .addRow(ImmutableMap.<String, Object>of(
-            "TimestampField", "2014-08-19 07:41:35.220 -05:00",
-            "StringField", "stringValue",
-            "IntegerField", ImmutableList.of(0, 1),
-            "BooleanField", false,
-            "RecordField", ImmutableMap.of(
-                "TimestampField", "1969-07-20 20:18:04 UTC",
-                "IntegerField", ImmutableList.of(1, 0),
-                "BooleanField", true)))
+        .addRow(builder1.build())
+        .addRow(builder2.build())
         .build();
     InsertAllResponse response = bigquery.insertAll(request);
     assertFalse(response.hasErrors());
@@ -549,25 +566,31 @@ public class ITBigQueryTest {
     StandardTableDefinition tableDefinition = StandardTableDefinition.of(TABLE_SCHEMA);
     TableInfo tableInfo = TableInfo.of(TableId.of(DATASET, tableName), tableDefinition);
     assertNotNull(bigquery.create(tableInfo));
+    ImmutableMap.Builder<String, Object> builder1 = ImmutableMap.builder();
+    builder1.put("TimestampField", "2014-08-19 07:41:35.220 -05:00");
+    builder1.put("StringField", "stringValue");
+    builder1.put("IntegerField", ImmutableList.of(0, 1));
+    builder1.put("BooleanField", false);
+    builder1.put("BytesField", BYTES_BASE64);
+    builder1.put("RecordField", ImmutableMap.of(
+        "TimestampField", "1969-07-20 20:18:04 UTC",
+        "IntegerField", ImmutableList.of(1, 0),
+        "BooleanField", true,
+        "BytesField", BYTES_BASE64));
+    ImmutableMap.Builder<String, Object> builder2 = ImmutableMap.builder();
+    builder2.put("TimestampField", "2014-08-19 07:41:35.220 -05:00");
+    builder2.put("StringField", "stringValue");
+    builder2.put("IntegerField", ImmutableList.of(0, 1));
+    builder2.put("BooleanField", false);
+    builder2.put("BytesField", BYTES_BASE64);
+    builder2.put("RecordField", ImmutableMap.of(
+        "TimestampField", "1969-07-20 20:18:04 UTC",
+        "IntegerField", ImmutableList.of(1, 0),
+        "BooleanField", true,
+        "BytesField", BYTES_BASE64));
     InsertAllRequest request = InsertAllRequest.builder(tableInfo.tableId())
-        .addRow(ImmutableMap.<String, Object>of(
-            "TimestampField", "2014-08-19 07:41:35.220 -05:00",
-            "StringField", "stringValue",
-            "IntegerField", ImmutableList.of(0, 1),
-            "BooleanField", false,
-            "RecordField", ImmutableMap.of(
-                "TimestampField", "1969-07-20 20:18:04 UTC",
-                "IntegerField", ImmutableList.of(1, 0),
-                "BooleanField", true)))
-        .addRow(ImmutableMap.<String, Object>of(
-            "TimestampField", "2014-08-19 07:41:35.220 -05:00",
-            "StringField", "stringValue",
-            "IntegerField", ImmutableList.of(0, 1),
-            "BooleanField", false,
-            "RecordField", ImmutableMap.of(
-                "TimestampField", "1969-07-20 20:18:04 UTC",
-                "IntegerField", ImmutableList.of(1, 0),
-                "BooleanField", true)))
+        .addRow(builder1.build())
+        .addRow(builder2.build())
         .templateSuffix("_suffix")
         .build();
     InsertAllResponse response = bigquery.insertAll(request);
@@ -590,30 +613,38 @@ public class ITBigQueryTest {
     StandardTableDefinition tableDefinition = StandardTableDefinition.of(TABLE_SCHEMA);
     TableInfo tableInfo = TableInfo.of(TableId.of(DATASET, tableName), tableDefinition);
     assertNotNull(bigquery.create(tableInfo));
+    ImmutableMap.Builder<String, Object> builder1 = ImmutableMap.builder();
+    builder1.put("TimestampField", "2014-08-19 07:41:35.220 -05:00");
+    builder1.put("StringField", "stringValue");
+    builder1.put("IntegerField", ImmutableList.of(0, 1));
+    builder1.put("BooleanField", false);
+    builder1.put("BytesField", BYTES_BASE64);
+    builder1.put("RecordField", ImmutableMap.of(
+        "TimestampField", "1969-07-20 20:18:04 UTC",
+        "IntegerField", ImmutableList.of(1, 0),
+        "BooleanField", true,
+        "BytesField", BYTES_BASE64));
+    ImmutableMap.Builder<String, Object> builder2 = ImmutableMap.builder();
+    builder2.put("TimestampField", "invalidDate");
+    builder2.put("StringField", "stringValue");
+    builder2.put("IntegerField", ImmutableList.of(0, 1));
+    builder2.put("BooleanField", false);
+    builder2.put("BytesField", BYTES_BASE64);
+    builder2.put("RecordField", ImmutableMap.of(
+        "TimestampField", "1969-07-20 20:18:04 UTC",
+        "IntegerField", ImmutableList.of(1, 0),
+        "BooleanField", true,
+        "BytesField", BYTES_BASE64));
+    ImmutableMap.Builder<String, Object> builder3 = ImmutableMap.builder();
+    builder3.put("TimestampField", "2014-08-19 07:41:35.220 -05:00");
+    builder3.put("StringField", "stringValue");
+    builder3.put("IntegerField", ImmutableList.of(0, 1));
+    builder3.put("BooleanField", false);
+    builder3.put("BytesField", BYTES_BASE64);
     InsertAllRequest request = InsertAllRequest.builder(tableInfo.tableId())
-        .addRow(ImmutableMap.<String, Object>of(
-            "TimestampField", "2014-08-19 07:41:35.220 -05:00",
-            "StringField", "stringValue",
-            "IntegerField", ImmutableList.of(0, 1),
-            "BooleanField", false,
-            "RecordField", ImmutableMap.of(
-                "TimestampField", "1969-07-20 20:18:04 UTC",
-                "IntegerField", ImmutableList.of(1, 0),
-                "BooleanField", true)))
-        .addRow(ImmutableMap.<String, Object>of(
-            "TimestampField", "invalidDate",
-            "StringField", "stringValue",
-            "IntegerField", ImmutableList.of(0, 1),
-            "BooleanField", false,
-            "RecordField", ImmutableMap.of(
-                "TimestampField", "1969-07-20 20:18:04 UTC",
-                "IntegerField", ImmutableList.of(1, 0),
-                "BooleanField", true)))
-        .addRow(ImmutableMap.<String, Object>of(
-            "TimestampField", "1969-07-20 20:18:04 UTC",
-            "StringField", "stringValue",
-            "IntegerField", ImmutableList.of(0, 1),
-            "BooleanField", false))
+        .addRow(builder1.build())
+        .addRow(builder2.build())
+        .addRow(builder3.build())
         .skipInvalidRows(true)
         .build();
     InsertAllResponse response = bigquery.insertAll(request);
@@ -624,7 +655,6 @@ public class ITBigQueryTest {
     assertTrue(bigquery.delete(TableId.of(DATASET, tableName)));
   }
 
-  @Ignore("Flaky test; see issue #836")
   @Test
   public void testListAllTableData() {
     Page<List<FieldValue>> rows = bigquery.listTableData(TABLE_ID);
@@ -634,17 +664,20 @@ public class ITBigQueryTest {
       FieldValue stringCell = row.get(1);
       FieldValue integerCell = row.get(2);
       FieldValue booleanCell = row.get(3);
-      FieldValue recordCell = row.get(4);
+      FieldValue bytesCell = row.get(4);
+      FieldValue recordCell = row.get(5);
       assertEquals(FieldValue.Attribute.PRIMITIVE, timestampCell.attribute());
       assertEquals(FieldValue.Attribute.PRIMITIVE, stringCell.attribute());
       assertEquals(FieldValue.Attribute.REPEATED, integerCell.attribute());
       assertEquals(FieldValue.Attribute.PRIMITIVE, booleanCell.attribute());
+      assertEquals(FieldValue.Attribute.PRIMITIVE, bytesCell.attribute());
       assertEquals(FieldValue.Attribute.RECORD, recordCell.attribute());
       assertEquals(1408452095220000L, timestampCell.timestampValue());
       assertEquals("stringValue", stringCell.stringValue());
       assertEquals(0, integerCell.repeatedValue().get(0).longValue());
       assertEquals(1, integerCell.repeatedValue().get(1).longValue());
       assertEquals(false, booleanCell.booleanValue());
+      assertArrayEquals(BYTES, bytesCell.bytesValue());
       assertEquals(-14182916000000L, recordCell.recordValue().get(0).timestampValue());
       assertTrue(recordCell.recordValue().get(1).isNull());
       assertEquals(1, recordCell.recordValue().get(2).repeatedValue().get(0).longValue());
@@ -787,7 +820,7 @@ public class ITBigQueryTest {
   }
 
   @Test
-  public void testCopyJob() throws InterruptedException {
+  public void testCopyJob() throws InterruptedException, TimeoutException {
     String sourceTableName = "test_copy_job_source_table";
     String destinationTableName = "test_copy_job_destination_table";
     TableId sourceTable = TableId.of(DATASET, sourceTableName);
@@ -800,9 +833,7 @@ public class ITBigQueryTest {
     TableId destinationTable = TableId.of(DATASET, destinationTableName);
     CopyJobConfiguration configuration = CopyJobConfiguration.of(destinationTable, sourceTable);
     Job remoteJob = bigquery.create(JobInfo.of(configuration));
-    while (!remoteJob.isDone()) {
-      Thread.sleep(1000);
-    }
+    remoteJob = remoteJob.waitFor();
     assertNull(remoteJob.status().error());
     Table remoteTable = bigquery.getTable(DATASET, destinationTableName);
     assertNotNull(remoteTable);
@@ -814,7 +845,7 @@ public class ITBigQueryTest {
   }
 
   @Test
-  public void testQueryJob() throws InterruptedException {
+  public void testQueryJob() throws InterruptedException, TimeoutException {
     String tableName = "test_query_job_table";
     String query = new StringBuilder()
         .append("SELECT TimestampField, StringField, BooleanField FROM ")
@@ -826,9 +857,7 @@ public class ITBigQueryTest {
         .destinationTable(destinationTable)
         .build();
     Job remoteJob = bigquery.create(JobInfo.of(configuration));
-    while (!remoteJob.isDone()) {
-      Thread.sleep(1000);
-    }
+    remoteJob = remoteJob.waitFor();
     assertNull(remoteJob.status().error());
 
     QueryResponse response = bigquery.getQueryResults(remoteJob.jobId());
@@ -859,7 +888,7 @@ public class ITBigQueryTest {
   }
 
   @Test
-  public void testExtractJob() throws InterruptedException {
+  public void testExtractJob() throws InterruptedException, TimeoutException {
     String tableName = "test_export_job_table";
     TableId destinationTable = TableId.of(DATASET, tableName);
     LoadJobConfiguration configuration =
@@ -867,9 +896,7 @@ public class ITBigQueryTest {
             .schema(SIMPLE_SCHEMA)
             .build();
     Job remoteLoadJob = bigquery.create(JobInfo.of(configuration));
-    while (!remoteLoadJob.isDone()) {
-      Thread.sleep(1000);
-    }
+    remoteLoadJob = remoteLoadJob.waitFor();
     assertNull(remoteLoadJob.status().error());
 
     ExtractJobConfiguration extractConfiguration =
@@ -877,9 +904,7 @@ public class ITBigQueryTest {
             .printHeader(false)
             .build();
     Job remoteExtractJob = bigquery.create(JobInfo.of(extractConfiguration));
-    while (!remoteExtractJob.isDone()) {
-      Thread.sleep(1000);
-    }
+    remoteExtractJob = remoteExtractJob.waitFor();
     assertNull(remoteExtractJob.status().error());
     assertEquals(CSV_CONTENT,
         new String(storage.readAllBytes(BUCKET, EXTRACT_FILE), StandardCharsets.UTF_8));
@@ -887,7 +912,7 @@ public class ITBigQueryTest {
   }
 
   @Test
-  public void testCancelJob() throws InterruptedException {
+  public void testCancelJob() throws InterruptedException, TimeoutException {
     String destinationTableName = "test_cancel_query_job_table";
     String query = "SELECT TimestampField, StringField, BooleanField FROM " + TABLE_ID.table();
     TableId destinationTable = TableId.of(DATASET, destinationTableName);
@@ -897,9 +922,7 @@ public class ITBigQueryTest {
         .build();
     Job remoteJob = bigquery.create(JobInfo.of(configuration));
     assertTrue(remoteJob.cancel());
-    while (!remoteJob.isDone()) {
-      Thread.sleep(1000);
-    }
+    remoteJob = remoteJob.waitFor();
     assertNull(remoteJob.status().error());
   }
 
@@ -908,7 +931,6 @@ public class ITBigQueryTest {
     assertFalse(bigquery.cancel("test_cancel_non_existing_job"));
   }
 
-  @Ignore("Flaky test; see #836")
   @Test
   public void testInsertFromFile() throws InterruptedException {
     String destinationTableName = "test_insert_from_file_table";
@@ -934,17 +956,20 @@ public class ITBigQueryTest {
       FieldValue stringCell = row.get(1);
       FieldValue integerCell = row.get(2);
       FieldValue booleanCell = row.get(3);
-      FieldValue recordCell = row.get(4);
+      FieldValue bytesCell = row.get(4);
+      FieldValue recordCell = row.get(5);
       assertEquals(FieldValue.Attribute.PRIMITIVE, timestampCell.attribute());
       assertEquals(FieldValue.Attribute.PRIMITIVE, stringCell.attribute());
       assertEquals(FieldValue.Attribute.REPEATED, integerCell.attribute());
       assertEquals(FieldValue.Attribute.PRIMITIVE, booleanCell.attribute());
+      assertEquals(FieldValue.Attribute.PRIMITIVE, bytesCell.attribute());
       assertEquals(FieldValue.Attribute.RECORD, recordCell.attribute());
       assertEquals(1408452095220000L, timestampCell.timestampValue());
       assertEquals("stringValue", stringCell.stringValue());
       assertEquals(0, integerCell.repeatedValue().get(0).longValue());
       assertEquals(1, integerCell.repeatedValue().get(1).longValue());
       assertEquals(false, booleanCell.booleanValue());
+      assertArrayEquals(BYTES, bytesCell.bytesValue());
       assertEquals(-14182916000000L, recordCell.recordValue().get(0).timestampValue());
       assertTrue(recordCell.recordValue().get(1).isNull());
       assertEquals(1, recordCell.recordValue().get(2).repeatedValue().get(0).longValue());

@@ -16,12 +16,12 @@
 
 package com.google.cloud.resourcemanager;
 
+import com.google.cloud.IamPolicy;
+import com.google.cloud.Identity;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Function;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
-import com.google.cloud.IamPolicy;
-import com.google.cloud.Identity;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -40,7 +40,7 @@ import java.util.Set;
  *
  * @see <a href="https://cloud.google.com/iam/reference/rest/v1/Policy">Policy</a>
  */
-public class Policy extends IamPolicy<String> {
+public final class Policy extends IamPolicy<String> {
 
   private static final long serialVersionUID = -5573557282693961850L;
 

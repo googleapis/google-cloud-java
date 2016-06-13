@@ -20,6 +20,7 @@ import com.google.cloud.AuthCredentials;
 import com.google.cloud.AuthCredentials.ServiceAccountAuthCredentials;
 import com.google.cloud.ReadChannel;
 import com.google.cloud.WriteChannel;
+import com.google.cloud.storage.Acl;
 import com.google.cloud.storage.Blob;
 import com.google.cloud.storage.BlobId;
 import com.google.cloud.storage.BlobInfo;
@@ -30,7 +31,9 @@ import com.google.cloud.storage.Storage.ComposeRequest;
 import com.google.cloud.storage.Storage.CopyRequest;
 import com.google.cloud.storage.Storage.SignUrlOption;
 import com.google.cloud.storage.StorageOptions;
+import com.google.cloud.storage.spi.StorageRpc;
 import com.google.cloud.storage.spi.StorageRpc.Tuple;
+import com.google.common.collect.ImmutableMap;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -51,6 +54,7 @@ import java.security.cert.CertificateException;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
@@ -75,7 +79,11 @@ import java.util.concurrent.TimeUnit;
  *  cp <from_bucket> <from_path> <to_bucket> <to_path> |
  *  compose <bucket> <from_path>+ <to_path> |
  *  update_metadata <bucket> <file> [key=value]* |
- *  sign_url <service_account_private_key_file> <service_account_email> <bucket> <path>"}</pre>
+ *  sign_url <service_account_private_key_file> <service_account_email> <bucket> <path> |
+ *  add-acl domain <bucket> <path>? <domain> OWNER|READER|WRITER |
+ *  add-acl project <bucket> <path>? <projectId>:(OWNERS|EDITORS|VIEWERS) OWNER|READER|WRITER |
+ *  add-acl user <bucket> <path>? <userEmail>|allUsers|allAuthenticatedUsers OWNER|READER|WRITER |
+ *  add-acl group <bucket> <path>? <group> OWNER|READER|WRITER"}</pre>
  * </li>
  * </ol>
  *
@@ -87,10 +95,11 @@ import java.util.concurrent.TimeUnit;
 public class StorageExample {
 
   private static final Map<String, StorageAction> ACTIONS = new HashMap<>();
+  private static final Map<String, StorageAction> ACL_ACTIONS = new HashMap<>();
 
   private abstract static class StorageAction<T> {
 
-    abstract void run(Storage storage, T request) throws Exception;
+    abstract void run(Storage storage, T arg) throws Exception;
 
     abstract T parse(String... args) throws Exception;
 
@@ -119,6 +128,48 @@ public class StorageExample {
     }
   }
 
+  private static class ParentAction extends StorageAction<StorageRpc.Tuple<StorageAction, Object>> {
+
+    private final Map<String, StorageAction> subActions;
+
+    ParentAction(Map<String, StorageAction> subActions) {
+      this.subActions = ImmutableMap.copyOf(subActions);
+    }
+
+    @Override
+    @SuppressWarnings("unchecked")
+    void run(Storage storage, StorageRpc.Tuple<StorageAction, Object> subaction) throws Exception {
+      subaction.x().run(storage, subaction.y());
+    }
+
+    @Override
+    StorageRpc.Tuple<StorageAction, Object> parse(String... args) throws Exception {
+      if (args.length >= 1) {
+        StorageAction action = subActions.get(args[0]);
+        if (action != null) {
+          Object actionArguments = action.parse(Arrays.copyOfRange(args, 1, args.length));
+          return StorageRpc.Tuple.of(action, actionArguments);
+        } else {
+          throw new IllegalArgumentException("Unrecognized entity '" + args[0] + "'.");
+        }
+      }
+      throw new IllegalArgumentException("Missing required entity.");
+    }
+
+    @Override
+    public String params() {
+      StringBuilder builder = new StringBuilder();
+      for (Map.Entry<String, StorageAction> entry : subActions.entrySet()) {
+        builder.append('\n').append(entry.getKey());
+        String param = entry.getValue().params();
+        if (param != null && !param.isEmpty()) {
+          builder.append(' ').append(param);
+        }
+      }
+      return builder.toString();
+    }
+  }
+
   /**
    * This class demonstrates how to retrieve Bucket or Blob metadata.
    * If more than one blob is supplied a Batch operation would be used to get all blobs metadata
@@ -127,6 +178,12 @@ public class StorageExample {
    * @see <a href="https://cloud.google.com/storage/docs/json_api/v1/objects/get">Objects: get</a>
    */
   private static class InfoAction extends BlobsAction {
+
+    /**
+     * Gets information for the provided blobs, using the {@code storage} service. If
+     * {@code blobIds} contains only one blob identity and {@code blobIds[0].name()} is empty, this
+     * method gets information for the bucket identified by {@code blobIds[0].bucket()}.
+     */
     @Override
     public void run(Storage storage, BlobId... blobIds) {
       if (blobIds.length == 1) {
@@ -137,7 +194,7 @@ public class StorageExample {
             System.out.println("No such bucket");
             return;
           }
-          System.out.println("Bucket info: " + bucket);
+          System.out.printf("Bucket info: %s%n", bucket);
         } else {
           // get Blob
           Blob blob = storage.get(blobIds[0]);
@@ -145,7 +202,7 @@ public class StorageExample {
             System.out.println("No such object");
             return;
           }
-          System.out.println("Blob info: " + blob);
+          System.out.printf("Blob info: %s%n", blob);
         }
       } else {
         // use batch to get multiple blobs.
@@ -188,7 +245,7 @@ public class StorageExample {
       for (Boolean deleted : deleteResults) {
         if (deleted) {
           // request order is maintained
-          System.out.println("Blob " + blobIds[index] + " was deleted");
+          System.out.printf("Blob %s was deleted%n", blobIds[index]);
         }
         index++;
       }
@@ -373,7 +430,7 @@ public class StorageExample {
     @Override
     public void run(Storage storage, CopyRequest request) {
       CopyWriter copyWriter = storage.copy(request);
-      System.out.println("Copied " + copyWriter.result());
+      System.out.printf("Copied %s%n", copyWriter.result());
     }
 
     @Override
@@ -399,7 +456,7 @@ public class StorageExample {
     @Override
     public void run(Storage storage, ComposeRequest request) {
       BlobInfo composedBlobInfo = storage.compose(request);
-      System.out.println("Composed " + composedBlobInfo);
+      System.out.printf("Composed %s%n", composedBlobInfo);
     }
 
     @Override
@@ -442,7 +499,7 @@ public class StorageExample {
         return;
       }
       Blob updateBlob = blob.toBuilder().metadata(metadata).build().update();
-      System.out.println("Updated " + updateBlob);
+      System.out.printf("Updated %s%n", updateBlob);
     }
 
     @Override
@@ -488,8 +545,8 @@ public class StorageExample {
 
     private void run(Storage storage, ServiceAccountAuthCredentials cred, BlobInfo blobInfo) {
       Blob blob = storage.get(blobInfo.blobId());
-      System.out.println("Signed URL: "
-          + blob.signUrl(1, TimeUnit.DAYS, SignUrlOption.signWith(cred)));
+      System.out.printf("Signed URL: %s%n",
+          blob.signUrl(1, TimeUnit.DAYS, SignUrlOption.signWith(cred)));
     }
 
     @Override
@@ -512,6 +569,194 @@ public class StorageExample {
     }
   }
 
+  private abstract static class AclAction extends StorageAction<Tuple<BlobId, Acl>> {
+
+    /**
+     * Sets the ACL according to the provided {@code params}, using the {@code storage} service. If
+     * {@code params.x()} returns a complete blob identity, the {@code params.y()} ACL is added to
+     * the blob. If {@code params.x().name()} is empty, the {@code params.y()} ACL is added to the
+     * bucket identified by {@code params.x().bucket()}.
+     */
+    @Override
+    public void run(Storage storage, Tuple<BlobId, Acl> params) {
+      BlobId blobId = params.x();
+      Acl acl = params.y();
+      if (blobId.name().isEmpty()) {
+        Bucket bucket = storage.get(blobId.bucket());
+        if (bucket == null) {
+          System.out.printf("Bucket %s does not exist%n", blobId.bucket());
+          return;
+        }
+        bucket.toBuilder().acl(addAcl(bucket.acl(), acl)).build().update();
+        System.out.printf("Added ACL %s to bucket %s%n", acl, blobId.bucket());
+      } else {
+        Blob blob = storage.get(blobId);
+        if (blob == null) {
+          System.out.printf("Blob %s does not exist%n", blobId);
+          return;
+        }
+        blob.toBuilder().acl(addAcl(blob.acl(), acl)).build().update();
+        System.out.printf("Added ACL %s to blob %s%n", acl, blobId);
+      }
+    }
+
+    private static List<Acl> addAcl(List<Acl> acls, Acl newAcl) {
+      List<Acl> newAcls = new LinkedList<>(acls);
+      newAcls.add(newAcl);
+      return newAcls;
+    }
+  }
+
+  /**
+   * This class demonstrates how to add an ACL to a blob or a bucket for a group of users
+   * (identified by the group's email).
+   *
+   * @see <a href="https://cloud.google.com/storage/docs/access-control/lists#permissions">Access
+   *     Control Lists (ACLs)</a>
+   */
+  private static class AddGroupAclAction extends AclAction {
+
+    @Override
+    Tuple<BlobId, Acl> parse(String... args) {
+      if (args.length >= 3) {
+        BlobId blob;
+        int nextArg;
+        if (args.length == 3) {
+          blob = BlobId.of(args[0], "");
+          nextArg = 1;
+        } else if (args.length == 4) {
+          blob = BlobId.of(args[0], args[1]);
+          nextArg = 2;
+        } else {
+          throw new IllegalArgumentException("Too many arguments.");
+        }
+        String group = args[nextArg++];
+        Acl.Role role = Acl.Role.valueOf(args[nextArg]);
+        return Tuple.of(blob, Acl.of(new Acl.Group(group), role));
+      }
+      throw new IllegalArgumentException("Missing required bucket, groupEmail or role arguments.");
+    }
+
+    @Override
+    public String params() {
+      return "<bucket> <path>? <group> OWNER|READER|WRITER";
+    }
+  }
+
+  /**
+   * This class demonstrates how to add an ACL to a blob or a bucket for a domain.
+   *
+   * @see <a href="https://cloud.google.com/storage/docs/access-control/lists#permissions">Access
+   *     Control Lists (ACLs)</a>
+   */
+  private static class AddDomainAclAction extends AclAction {
+
+    @Override
+    Tuple<BlobId, Acl> parse(String... args) {
+      if (args.length >= 3) {
+        BlobId blob;
+        int nextArg;
+        if (args.length == 3) {
+          blob = BlobId.of(args[0], "");
+          nextArg = 1;
+        } else if (args.length == 4) {
+          blob = BlobId.of(args[0], args[1]);
+          nextArg = 2;
+        } else {
+          throw new IllegalArgumentException("Too many arguments.");
+        }
+        String domain = args[nextArg++];
+        Acl.Role role = Acl.Role.valueOf(args[nextArg]);
+        return Tuple.of(blob, Acl.of(new Acl.Domain(domain), role));
+      }
+      throw new IllegalArgumentException("Missing required bucket, domain or role arguments.");
+    }
+
+    @Override
+    public String params() {
+      return "<bucket> <path>? <domain> OWNER|READER|WRITER";
+    }
+  }
+
+  /**
+   * This class demonstrates how to add an ACL to a blob or a bucket for either a user (if an email
+   * is provided), all users (if {@code allUsers} is provided), or all authenticated users (if
+   * {@code allAuthenticatedUsers} is provided).
+   *
+   * @see <a href="https://cloud.google.com/storage/docs/access-control/lists#permissions">Access
+   *     Control Lists (ACLs)</a>
+   */
+  private static class AddUserAclAction extends AclAction {
+
+    @Override
+    Tuple<BlobId, Acl> parse(String... args) {
+      if (args.length >= 3) {
+        BlobId blob;
+        int nextArg;
+        if (args.length == 3) {
+          blob = BlobId.of(args[0], "");
+          nextArg = 1;
+        } else if (args.length == 4) {
+          blob = BlobId.of(args[0], args[1]);
+          nextArg = 2;
+        } else {
+          throw new IllegalArgumentException("Too many arguments.");
+        }
+        String user = args[nextArg++];
+        Acl.Role role = Acl.Role.valueOf(args[nextArg]);
+        return Tuple.of(blob, Acl.of(new Acl.User(user), role));
+      }
+      throw new IllegalArgumentException("Missing required bucket, userEmail or role arguments.");
+    }
+
+    @Override
+    public String params() {
+      return "<bucket> <path>? <userEmail>|allUsers|allAuthenticatedUsers OWNER|READER|WRITER";
+    }
+  }
+
+  /**
+   * This class demonstrates how to add an ACL to a blob or a bucket for all users that have a
+   * specific role in a provided project.
+   *
+   * @see <a href="https://cloud.google.com/storage/docs/access-control/lists#permissions">Access
+   *     Control Lists (ACLs)</a>
+   */
+  private static class AddProjectAclAction extends AclAction {
+
+    @Override
+    Tuple<BlobId, Acl> parse(String... args) {
+      if (args.length >= 3) {
+        BlobId blob;
+        int nextArg;
+        if (args.length == 3) {
+          blob = BlobId.of(args[0], "");
+          nextArg = 1;
+        } else if (args.length == 4) {
+          blob = BlobId.of(args[0], args[1]);
+          nextArg = 2;
+        } else {
+          throw new IllegalArgumentException("Too many arguments.");
+        }
+        String[] projectAndRole = args[nextArg++].split(":");
+        if (projectAndRole.length != 2) {
+          throw new IllegalArgumentException(
+              "Project entity must be specified as <projectId>:(OWNERS|READERS|WRITERS)");
+        } else {
+          Acl.Project.ProjectRole projectRole = Acl.Project.ProjectRole.valueOf(projectAndRole[1]);
+          Acl.Role role = Acl.Role.valueOf(args[nextArg]);
+          return Tuple.of(blob, Acl.of(new Acl.Project(projectRole, projectAndRole[0]), role));
+        }
+      }
+      throw new IllegalArgumentException("Missing required bucket, project or role arguments.");
+    }
+
+    @Override
+    public String params() {
+      return "<bucket> <path>? <projectId>:(OWNERS|EDITORS|VIEWERS) OWNER|READER|WRITER";
+    }
+  }
+
   static {
     ACTIONS.put("info", new InfoAction());
     ACTIONS.put("delete", new DeleteAction());
@@ -522,6 +767,11 @@ public class StorageExample {
     ACTIONS.put("compose", new ComposeAction());
     ACTIONS.put("update_metadata", new UpdateMetadataAction());
     ACTIONS.put("sign_url", new SignUrlAction());
+    ACL_ACTIONS.put("group", new AddGroupAclAction());
+    ACL_ACTIONS.put("domain", new AddDomainAclAction());
+    ACL_ACTIONS.put("user", new AddUserAclAction());
+    ACL_ACTIONS.put("project", new AddProjectAclAction());
+    ACTIONS.put("add-acl", new ParentAction(ACL_ACTIONS));
   }
 
   private static void printUsage() {
@@ -531,10 +781,11 @@ public class StorageExample {
 
       String param = entry.getValue().params();
       if (param != null && !param.isEmpty()) {
-        actionAndParams.append(' ').append(param);
+        // Add extra padding for multi-line action
+        actionAndParams.append(' ').append(param.replace("\n", "\n\t\t"));
       }
     }
-    System.out.printf("Usage: %s [<project_id>] operation <args>*%s%n",
+    System.out.printf("Usage: %s [<project_id>] operation [entity] <args>*%s%n",
         StorageExample.class.getSimpleName(), actionAndParams);
   }
 
@@ -564,18 +815,18 @@ public class StorageExample {
       return;
     }
     Storage storage = optionsBuilder.build().service();
-    Object request;
+    Object arg;
     try {
-      request = action.parse(args);
+      arg = action.parse(args);
     } catch (IllegalArgumentException ex) {
-      System.out.println("Invalid input for action '" + actionName + "'");
-      System.out.println("Expected: " + action.params());
+      System.out.printf("Invalid input for action '%s'. %s%n", actionName, ex.getMessage());
+      System.out.printf("Expected: %s%n", action.params());
       return;
     } catch (Exception ex) {
-      System.out.println("Failed to parse request.");
+      System.out.println("Failed to parse arguments.");
       ex.printStackTrace();
       return;
     }
-    action.run(storage, request);
+    action.run(storage, arg);
   }
 }

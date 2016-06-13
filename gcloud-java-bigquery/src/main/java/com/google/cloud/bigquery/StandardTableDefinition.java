@@ -252,12 +252,15 @@ public class StandardTableDefinition extends TableDefinition {
   }
 
   @Override
-  public boolean equals(Object obj) {
-    return obj instanceof StandardTableDefinition && baseEquals((StandardTableDefinition) obj);
+  public final boolean equals(Object obj) {
+    return obj == this
+        || obj != null
+        && obj.getClass().equals(StandardTableDefinition.class)
+        && baseEquals((StandardTableDefinition) obj);
   }
 
   @Override
-  public int hashCode() {
+  public final int hashCode() {
     return Objects.hash(baseHashCode(), numBytes, numRows, location, streamingBuffer);
   }
 

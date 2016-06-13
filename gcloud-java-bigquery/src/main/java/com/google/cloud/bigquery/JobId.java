@@ -26,7 +26,7 @@ import java.util.Objects;
 /**
  * Google BigQuery Job identity.
  */
-public class JobId implements Serializable {
+public final class JobId implements Serializable {
 
   private static final long serialVersionUID = 1225914835379688976L;
 
@@ -68,7 +68,9 @@ public class JobId implements Serializable {
 
   @Override
   public boolean equals(Object obj) {
-    return obj instanceof JobId && Objects.equals(toPb(), ((JobId) obj).toPb());
+    return obj == this
+        || obj instanceof JobId
+        && Objects.equals(toPb(), ((JobId) obj).toPb());
   }
 
   @Override

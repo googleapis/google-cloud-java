@@ -181,7 +181,9 @@ public final class CopyJobConfiguration extends JobConfiguration {
 
   @Override
   public boolean equals(Object obj) {
-    return obj instanceof CopyJobConfiguration && baseEquals((CopyJobConfiguration) obj);
+    return obj == this
+        || obj instanceof CopyJobConfiguration
+        && baseEquals((CopyJobConfiguration) obj);
   }
 
   @Override

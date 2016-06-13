@@ -319,7 +319,8 @@ public class JobInfo implements Serializable {
 
   @Override
   public boolean equals(Object obj) {
-    return obj != null
+    return obj == this
+        || obj != null
         && obj.getClass().equals(JobInfo.class)
         && Objects.equals(toPb(), ((JobInfo) obj).toPb());
   }

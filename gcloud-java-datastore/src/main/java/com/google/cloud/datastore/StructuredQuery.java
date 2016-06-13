@@ -16,7 +16,6 @@
 
 package com.google.cloud.datastore;
 
-import static com.google.common.base.Preconditions.checkNotNull;
 import static com.google.cloud.datastore.BlobValue.of;
 import static com.google.cloud.datastore.BooleanValue.of;
 import static com.google.cloud.datastore.DateTimeValue.of;
@@ -24,6 +23,7 @@ import static com.google.cloud.datastore.DoubleValue.of;
 import static com.google.cloud.datastore.KeyValue.of;
 import static com.google.cloud.datastore.LongValue.of;
 import static com.google.cloud.datastore.StringValue.of;
+import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.common.base.MoreObjects;
 import com.google.common.base.MoreObjects.ToStringHelper;

@@ -11,7 +11,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>gcloud-java-pom</artifactId>
-    <version>0.2.1-SNAPSHOT</version>
+    <version>0.2.4-SNAPSHOT</version>
   </parent>
   <properties>
     <site.installationModule>gcloud-java-core</site.installationModule>
@@ -106,7 +106,7 @@
     <dependency>
       <groupId>com.google.api</groupId>
       <artifactId>gax</artifactId>
-      <version>0.0.11</version>
+      <version>0.0.13</version>
     </dependency>
   </dependencies>
 </project>

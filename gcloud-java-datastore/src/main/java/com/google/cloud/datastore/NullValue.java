@@ -17,7 +17,6 @@
 package com.google.cloud.datastore;
 
 import static com.google.common.base.Preconditions.checkArgument;
-
 import static com.google.datastore.v1beta3.Value.NULL_VALUE_FIELD_NUMBER;
 
 public final class NullValue extends Value<Void> {

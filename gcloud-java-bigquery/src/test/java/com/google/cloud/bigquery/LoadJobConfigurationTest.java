@@ -18,9 +18,9 @@ package com.google.cloud.bigquery;
 
 import static org.junit.Assert.assertEquals;
 
-import com.google.common.collect.ImmutableList;
 import com.google.cloud.bigquery.JobInfo.CreateDisposition;
 import com.google.cloud.bigquery.JobInfo.WriteDisposition;
+import com.google.common.collect.ImmutableList;
 
 import org.junit.Test;
 

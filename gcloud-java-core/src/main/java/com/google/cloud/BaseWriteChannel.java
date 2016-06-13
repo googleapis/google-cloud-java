@@ -16,6 +16,7 @@
 
 package com.google.cloud;
 
+import com.google.cloud.BaseWriteChannel.BaseState;
 import com.google.common.base.MoreObjects;
 
 import java.io.IOException;

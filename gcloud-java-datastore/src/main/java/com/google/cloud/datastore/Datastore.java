@@ -77,28 +77,35 @@ public interface Datastore extends Service<DatastoreOptions>, DatastoreReaderWri
    * @throws DatastoreException upon failure
    * @see #allocateId(IncompleteKey)
    */
-  List<Key> allocateId(IncompleteKey... key);
+  List<Key> allocateId(IncompleteKey... keys);
 
   /**
    * {@inheritDoc}
    * @throws DatastoreException upon failure
    */
   @Override
-  void update(Entity... entity);
+  void update(Entity... entities);
 
   /**
    * {@inheritDoc}
    * @throws DatastoreException upon failure
    */
   @Override
-  void put(Entity... entity);
+  Entity put(FullEntity<?> entity);
 
   /**
    * {@inheritDoc}
    * @throws DatastoreException upon failure
    */
   @Override
-  void delete(Key... key);
+  List<Entity> put(FullEntity<?>... entities);
+
+  /**
+   * {@inheritDoc}
+   * @throws DatastoreException upon failure
+   */
+  @Override
+  void delete(Key... keys);
 
   /**
    * Returns a new KeyFactory for this service

@@ -43,6 +43,8 @@ public interface FieldSelector {
    */
   class Helper {
 
+    private static final String[] EMPTY_FIELDS = {};
+
     private Helper() {}
 
     private static final Function<FieldSelector, String> FIELD_TO_STRING_FUNCTION =
@@ -63,18 +65,18 @@ public interface FieldSelector {
     }
 
     /**
-     * Returns a composite selector given a number of fields. The string selector returned by this
-     * method can be used for field selection in API calls that return a single resource. This
-     * method is not supposed to be used directly by users.
+     * Returns a composite selector given a number of resource fields. The string selector returned
+     * by this method can be used for field selection in API calls that return a single resource.
+     * This method is not supposed to be used directly by users.
      */
     public static String selector(List<? extends FieldSelector> required, FieldSelector... others) {
       return selector(required, others, new String[]{});
     }
 
     /**
-     * Returns a composite selector given a number of fields and a container name. The string
-     * selector returned by this method can be used for field selection in API calls that return a
-     * list of resources. This method is not supposed to be used directly by users.
+     * Returns a composite selector given a number of resource fields and a container name. The
+     * string selector returned by this method can be used for field selection in API calls that
+     * return a  list of resources. This method is not supposed to be used directly by users.
      */
     public static String listSelector(String containerName, List<? extends FieldSelector> required,
         FieldSelector... others) {
@@ -82,14 +84,30 @@ public interface FieldSelector {
     }
 
     /**
-     * Returns a composite selector given a number of fields and a container name. This methods also
-     * takes an {@code extraResourceFields} parameter to specify some extra fields as strings. The
-     * string selector returned by this method can be used for field selection in API calls that
-     * return a list of resources. This method is not supposed to be used directly by users.
+     * Returns a composite selector given a number of resource fields and a container name. This
+     * method also takes an {@code extraResourceFields} parameter to specify some extra resource
+     * fields as strings. The string selector returned by this method can be used for field
+     * selection in API calls that return a list of resources. This method is not supposed to be
+     * used directly by users.
      */
     public static String listSelector(String containerName, List<? extends FieldSelector> required,
         FieldSelector[] others, String... extraResourceFields) {
-      return "nextPageToken," + containerName + '('
+      return listSelector(EMPTY_FIELDS, containerName, required, others, extraResourceFields);
+    }
+
+    /**
+     * Returns a composite selector given a number of top level fields as strings, a number of
+     * resource fields and a container name. This method also takes an {@code extraResourceFields}
+     * parameter  to specify some extra resource fields as strings. The string selector returned by
+     * this method can be used for field selection in API calls that return a list of resources.
+     * This method is not supposed to be used directly by users.
+     */
+    public static String listSelector(String[] topLevelFields, String containerName,
+        List<? extends FieldSelector> required, FieldSelector[] others,
+        String... extraResourceFields) {
+      Set<String> topLevelStrings = Sets.newHashSetWithExpectedSize(topLevelFields.length + 1);
+      topLevelStrings.addAll(Lists.asList("nextPageToken", topLevelFields));
+      return Joiner.on(',').join(topLevelStrings) + "," + containerName + '('
           + selector(required, others, extraResourceFields) + ')';
     }
   }

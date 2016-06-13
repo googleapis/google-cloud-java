@@ -16,12 +16,12 @@
 
 package com.google.cloud.bigquery;
 
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
 import com.google.cloud.AuthCredentials;
 import com.google.cloud.BaseSerializationTest;
 import com.google.cloud.Restorable;
 import com.google.cloud.bigquery.StandardTableDefinition.StreamingBuffer;
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
 
 import java.io.Serializable;
 import java.nio.charset.StandardCharsets;
@@ -68,7 +68,7 @@ public class SerializationTest extends BaseSerializationTest {
       .encoding(StandardCharsets.ISO_8859_1)
       .fieldDelimiter(",")
       .quote("\"")
-      .skipLeadingRows(42)
+      .skipLeadingRows(42L)
       .build();
   private static final Field FIELD_SCHEMA1 =
       Field.builder("StringField", Field.Type.string())
@@ -122,11 +122,12 @@ public class SerializationTest extends BaseSerializationTest {
           .etag(ETAG)
           .generatedId(GENERATED_ID)
           .build();
-  private static final JobStatistics JOB_STATISTICS = JobStatistics.builder()
-      .creationTime(1L)
-      .endTime(3L)
-      .startTime(2L)
-      .build();
+  private static final JobStatistics.CopyStatistics COPY_STATISTICS =
+      JobStatistics.CopyStatistics.builder()
+          .creationTime(1L)
+          .endTime(3L)
+          .startTime(2L)
+          .build();
   private static final JobStatistics.ExtractStatistics EXTRACT_STATISTICS =
       JobStatistics.ExtractStatistics.builder()
           .creationTime(1L)
@@ -235,7 +236,7 @@ public class SerializationTest extends BaseSerializationTest {
     return new Serializable[]{DOMAIN_ACCESS, GROUP_ACCESS, USER_ACCESS, VIEW_ACCESS, DATASET_ID,
         DATASET_INFO, TABLE_ID, CSV_OPTIONS, STREAMING_BUFFER, TABLE_DEFINITION,
         EXTERNAL_TABLE_DEFINITION, VIEW_DEFINITION, TABLE_SCHEMA, TABLE_INFO, VIEW_INFO,
-        EXTERNAL_TABLE_INFO, INLINE_FUNCTION, URI_FUNCTION, JOB_STATISTICS, EXTRACT_STATISTICS,
+        EXTERNAL_TABLE_INFO, INLINE_FUNCTION, URI_FUNCTION, COPY_STATISTICS, EXTRACT_STATISTICS,
         LOAD_STATISTICS, QUERY_STATISTICS, BIGQUERY_ERROR, JOB_STATUS, JOB_ID,
         COPY_JOB_CONFIGURATION, EXTRACT_JOB_CONFIGURATION, LOAD_CONFIGURATION,
         LOAD_JOB_CONFIGURATION, QUERY_JOB_CONFIGURATION, JOB_INFO, INSERT_ALL_REQUEST,

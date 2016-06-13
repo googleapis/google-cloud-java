@@ -16,12 +16,12 @@
 
 package com.google.cloud.dns;
 
-import com.google.common.collect.ImmutableList;
 import com.google.cloud.FieldSelector;
 import com.google.cloud.FieldSelector.Helper;
 import com.google.cloud.Page;
 import com.google.cloud.Service;
 import com.google.cloud.dns.spi.DnsRpc;
+import com.google.common.collect.ImmutableList;
 
 import java.util.List;
 
@@ -503,4 +503,9 @@ public interface Dns extends Service<DnsOptions> {
    * @see <a href="https://cloud.google.com/dns/api/v1/changes/list">Cloud DNS Chages: list</a>
    */
   Page<ChangeRequest> listChangeRequests(String zoneName, ChangeRequestListOption... options);
+
+  /**
+   * Creates a new empty batch for grouping multiple service calls in one underlying RPC call.
+   */
+  DnsBatch batch();
 }

@@ -16,9 +16,9 @@
 
 package com.google.cloud.bigquery;
 
+import com.google.cloud.PageImpl;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
-import com.google.cloud.PageImpl;
 
 import java.util.List;
 import java.util.Objects;
@@ -149,16 +149,16 @@ public class QueryResult extends PageImpl<List<FieldValue>> {
   }
 
   @Override
-  public int hashCode() {
+  public final int hashCode() {
     return Objects.hash(super.hashCode(), cacheHit, schema, totalBytesProcessed, totalRows);
   }
 
   @Override
-  public boolean equals(Object obj) {
-    if (this == obj) {
+  public final boolean equals(Object obj) {
+    if (obj == this) {
       return true;
     }
-    if (obj == null || getClass() != obj.getClass()) {
+    if (obj == null || !obj.getClass().equals(QueryResult.class)) {
       return false;
     }
     QueryResult response = (QueryResult) obj;

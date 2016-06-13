@@ -21,6 +21,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
 import com.google.api.services.bigquery.model.JobConfigurationLoad;
 import com.google.common.base.MoreObjects.ToStringHelper;
 import com.google.common.collect.ImmutableList;
+import com.google.common.primitives.Ints;
 
 import java.util.List;
 import java.util.Objects;
@@ -97,12 +98,18 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
           || loadConfigurationPb.getQuote() != null
           || loadConfigurationPb.getSkipLeadingRows() != null) {
         CsvOptions.Builder builder = CsvOptions.builder()
-            .allowJaggedRows(loadConfigurationPb.getAllowJaggedRows())
-            .allowQuotedNewLines(loadConfigurationPb.getAllowQuotedNewlines())
             .encoding(loadConfigurationPb.getEncoding())
             .fieldDelimiter(loadConfigurationPb.getFieldDelimiter())
-            .quote(loadConfigurationPb.getQuote())
-            .skipLeadingRows(loadConfigurationPb.getSkipLeadingRows());
+            .quote(loadConfigurationPb.getQuote());
+        if (loadConfigurationPb.getAllowJaggedRows() != null) {
+          builder.allowJaggedRows(loadConfigurationPb.getAllowJaggedRows());
+        }
+        if (loadConfigurationPb.getAllowQuotedNewlines() != null) {
+          builder.allowQuotedNewLines(loadConfigurationPb.getAllowQuotedNewlines());
+        }
+        if (loadConfigurationPb.getSkipLeadingRows() != null) {
+          builder.skipLeadingRows(loadConfigurationPb.getSkipLeadingRows());
+        }
         this.formatOptions = builder.build();
       }
       this.maxBadRecords = loadConfigurationPb.getMaxBadRecords();
@@ -269,7 +276,9 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
 
   @Override
   public boolean equals(Object obj) {
-    return obj instanceof LoadJobConfiguration && baseEquals((LoadJobConfiguration) obj);
+    return obj == this
+        || obj instanceof LoadJobConfiguration
+        && baseEquals((LoadJobConfiguration) obj);
   }
 
   @Override
@@ -298,8 +307,11 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
           .setAllowJaggedRows(csvOptions.allowJaggedRows())
           .setAllowQuotedNewlines(csvOptions.allowQuotedNewLines())
           .setEncoding(csvOptions.encoding())
-          .setQuote(csvOptions.quote())
-          .setSkipLeadingRows(csvOptions.skipLeadingRows());
+          .setQuote(csvOptions.quote());
+      if (csvOptions.skipLeadingRows() != null) {
+        // todo(mziccard) remove checked cast or comment when #1044 is closed
+        loadConfigurationPb.setSkipLeadingRows(Ints.checkedCast(csvOptions.skipLeadingRows()));
+      }
     }
     if (schema != null) {
       loadConfigurationPb.setSchema(schema.toPb());

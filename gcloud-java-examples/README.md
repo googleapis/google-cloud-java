@@ -19,16 +19,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>gcloud-java-examples</artifactId>
-  <version>0.2.0</version>
+  <version>0.2.3</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:gcloud-java-examples:0.2.0'
+compile 'com.google.cloud:gcloud-java-examples:0.2.3'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "gcloud-java-examples" % "0.2.0"
+libraryDependencies += "com.google.cloud" % "gcloud-java-examples" % "0.2.3"
 ```
 
 To run examples from your command line:
@@ -62,6 +62,18 @@ To run examples from your command line:
     mvn exec:java -Dexec.mainClass="com.google.cloud.examples.bigquery.BigQueryExample" -Dexec.args="query 'select * from new_dataset_id.new_table_id'"
     ```
 
+  * Here's an example run of `ComputeExample`.
+
+    Before running the example, go to the [Google Developers Console][developers-console] to ensure
+    that Compute API is enabled.
+    ```
+    mvn exec:java -Dexec.mainClass="com.google.cloud.examples.compute.ComputeExample" -Dexec.args="create image-disk us-central1-a test-disk debian-cloud debian-8-jessie-v20160329"
+    mvn exec:java -Dexec.mainClass="com.google.cloud.examples.compute.ComputeExample" -Dexec.args="create instance us-central1-a test-instance n1-standard-1 test-disk default"
+    mvn exec:java -Dexec.mainClass="com.google.cloud.examples.compute.ComputeExample" -Dexec.args="add-access-config us-central1-a test-instance nic0 NAT"
+    mvn exec:java -Dexec.mainClass="com.google.cloud.examples.compute.ComputeExample" -Dexec.args="delete instance us-central1-a test-instance"
+    mvn exec:java -Dexec.mainClass="com.google.cloud.examples.compute.ComputeExample" -Dexec.args="delete disk us-central1-a test-disk"
+    ```
+
   * Here's an example run of `DatastoreExample`.
 
     Be sure to change the placeholder project ID "your-project-id" with your own project ID. Also note that you have to enable the Google Cloud Datastore API on the [Google Developers Console][developers-console] before running the following commands.
@@ -69,6 +81,7 @@ To run examples from your command line:
     mvn exec:java -Dexec.mainClass="com.google.cloud.examples.datastore.DatastoreExample" -Dexec.args="your-project-id my_name add my\ comment"
     mvn exec:java -Dexec.mainClass="com.google.cloud.examples.datastore.DatastoreExample" -Dexec.args="your-project-id my_name display"
     mvn exec:java -Dexec.mainClass="com.google.cloud.examples.datastore.DatastoreExample" -Dexec.args="your-project-id my_name delete"
+    mvn exec:java -Dexec.mainClass="com.google.cloud.examples.datastore.DatastoreExample" -Dexec.args="your-project-id my_name set myname@mydomain.com 1234"
     ```
 
   * Here's an example run of `DnsExample`.

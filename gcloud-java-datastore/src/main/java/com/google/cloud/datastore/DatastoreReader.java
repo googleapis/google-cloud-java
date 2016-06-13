@@ -40,7 +40,7 @@ public interface DatastoreReader {
    * @throws DatastoreException upon failure
    * @see #get(Key)
    */
-  Iterator<Entity> get(Key... key);
+  Iterator<Entity> get(Key... keys);
 
   /**
    * Returns a list with a value for each given key (ordered by input). {@code null} values are

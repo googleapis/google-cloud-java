@@ -16,26 +16,25 @@
 
 package com.google.cloud.storage;
 
-import static com.google.common.base.Preconditions.checkArgument;
-import static com.google.common.base.Preconditions.checkNotNull;
 import static com.google.cloud.storage.Bucket.BucketSourceOption.toGetOptions;
 import static com.google.cloud.storage.Bucket.BucketSourceOption.toSourceOptions;
+import static com.google.common.base.Preconditions.checkArgument;
+import static com.google.common.base.Preconditions.checkNotNull;
 
-import com.google.common.base.Function;
-import com.google.common.collect.Lists;
-import com.google.common.collect.Sets;
 import com.google.cloud.Page;
 import com.google.cloud.storage.Storage.BlobGetOption;
 import com.google.cloud.storage.Storage.BucketTargetOption;
 import com.google.cloud.storage.spi.StorageRpc;
+import com.google.common.base.Function;
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.Lists;
+import com.google.common.collect.Sets;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.ObjectInputStream;
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 import java.util.Set;
@@ -49,7 +48,7 @@ import java.util.Set;
  * {@link BucketInfo}.
  * </p>
  */
-public final class Bucket extends BucketInfo {
+public class Bucket extends BucketInfo {
 
   private static final long serialVersionUID = 8574601739542252586L;
 
@@ -609,19 +608,28 @@ public final class Bucket extends BucketInfo {
    * @throws StorageException upon failure
    */
   public List<Blob> get(String blobName1, String blobName2, String... blobNames) {
-    BatchRequest.Builder batch = BatchRequest.builder();
-    batch.get(name(), blobName1);
-    batch.get(name(), blobName2);
-    for (String name : blobNames) {
-      batch.get(name(), name);
+    List<BlobId> blobIds = Lists.newArrayListWithCapacity(blobNames.length + 2);
+    blobIds.add(BlobId.of(name(), blobName1));
+    blobIds.add(BlobId.of(name(), blobName2));
+    for (String blobName : blobNames) {
+      blobIds.add(BlobId.of(name(), blobName));
     }
-    List<Blob> blobs = new ArrayList<>(blobNames.length);
-    BatchResponse response = storage.submit(batch.build());
-    for (BatchResponse.Result<Blob> result : response.gets()) {
-      BlobInfo blobInfo = result.get();
-      blobs.add(blobInfo != null ? new Blob(storage, new BlobInfo.BuilderImpl(blobInfo)) : null);
+    return storage.get(blobIds);
+  }
+
+  /**
+   * Returns a list of requested blobs in this bucket. Blobs that do not exist are null.
+   *
+   * @param blobNames blobs to get
+   * @return an immutable list of {@code Blob} objects
+   * @throws StorageException upon failure
+   */
+  public List<Blob> get(Iterable<String> blobNames) {
+    ImmutableList.Builder<BlobId> builder = ImmutableList.builder();
+    for (String blobName : blobNames) {
+      builder.add(BlobId.of(name(), blobName));
     }
-    return Collections.unmodifiableList(blobs);
+    return storage.get(builder.build());
   }
 
   /**
@@ -714,13 +722,20 @@ public final class Bucket extends BucketInfo {
   }
 
   @Override
-  public boolean equals(Object obj) {
-    return obj instanceof Bucket && Objects.equals(toPb(), ((Bucket) obj).toPb())
-        && Objects.equals(options, ((Bucket) obj).options);
+  public final boolean equals(Object obj) {
+    if (obj == this) {
+      return true;
+    }
+    if (obj != null && !obj.getClass().equals(Bucket.class)) {
+      return false;
+    }
+    Bucket other = (Bucket) obj;
+    return Objects.equals(toPb(), other.toPb())
+        && Objects.equals(options, other.options);
   }
 
   @Override
-  public int hashCode() {
+  public final int hashCode() {
     return Objects.hash(super.hashCode(), options);
   }
 
