@@ -33,6 +33,8 @@ import com.google.cloud.bigquery.Table;
 import com.google.cloud.bigquery.TableId;
 import com.google.cloud.bigquery.TableInfo;
 
+import java.util.concurrent.TimeoutException;
+
 /**
  * A snippet for Google Cloud BigQuery showing how to get a BigQuery table or create it if it does
  * not exist. The snippet also starts a BigQuery job to load data into the table from a Cloud
@@ -40,7 +42,7 @@ import com.google.cloud.bigquery.TableInfo;
  */
 public class CreateTableAndLoadData {
 
-  public static void main(String... args) throws InterruptedException {
+  public static void main(String... args) throws InterruptedException, TimeoutException {
     BigQuery bigquery = BigQueryOptions.defaultInstance().service();
     TableId tableId = TableId.of("dataset", "table");
     Table table = bigquery.getTable(tableId);
@@ -52,9 +54,7 @@ public class CreateTableAndLoadData {
     }
     System.out.println("Loading data into table " + tableId);
     Job loadJob = table.load(FormatOptions.csv(), "gs://bucket/path");
-    while (!loadJob.isDone()) {
-      Thread.sleep(1000L);
-    }
+    loadJob = loadJob.waitFor();
     if (loadJob.status().error() != null) {
       System.out.println("Job completed with errors");
     } else {

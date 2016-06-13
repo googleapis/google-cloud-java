@@ -22,7 +22,6 @@ import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
-import com.google.cloud.ServiceOptions.Clock;
 import com.google.cloud.ServiceOptions.DefaultHttpTransportFactory;
 import com.google.cloud.ServiceOptions.HttpTransportFactory;
 import com.google.cloud.spi.ServiceRpcFactory;

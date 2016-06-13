@@ -30,7 +30,7 @@ import java.util.Set;
  * @see <a href="https://cloud.google.com/resource-manager/v1/errors/core_errors">Google Cloud
  *      Resource Manager error codes</a>
  */
-public class ResourceManagerException extends BaseServiceException {
+public final class ResourceManagerException extends BaseServiceException {
 
   // see https://cloud.google.com/resource-manager/v1/errors/core_errors
   private static final Set<Error> RETRYABLE_ERRORS = ImmutableSet.of(
@@ -48,7 +48,11 @@ public class ResourceManagerException extends BaseServiceException {
   private static final long serialVersionUID = -9207194488966554136L;
 
   public ResourceManagerException(int code, String message) {
-    super(code, message, null, true);
+    this(code, message, null);
+  }
+
+  public ResourceManagerException(int code, String message, Throwable cause) {
+    super(code, message, null, true, cause);
   }
 
   public ResourceManagerException(IOException exception) {
@@ -70,6 +74,6 @@ public class ResourceManagerException extends BaseServiceException {
    */
   static ResourceManagerException translateAndThrow(RetryHelperException ex) {
     BaseServiceException.translateAndPropagateIfPossible(ex);
-    throw new ResourceManagerException(UNKNOWN_CODE, ex.getMessage());
+    throw new ResourceManagerException(UNKNOWN_CODE, ex.getMessage(), ex.getCause());
   }
 }

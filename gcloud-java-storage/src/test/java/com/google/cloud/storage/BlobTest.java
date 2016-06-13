@@ -73,6 +73,7 @@ public class BlobTest {
   private static final String SELF_LINK = "http://storage/b/n";
   private static final Long SIZE = 1024L;
   private static final Long UPDATE_TIME = DELETE_TIME - 1L;
+  private static final Long CREATE_TIME = UPDATE_TIME - 1L;
   private static final BlobInfo FULL_BLOB_INFO = BlobInfo.builder("b", "n", GENERATION)
       .acl(ACL)
       .componentCount(COMPONENT_COUNT)
@@ -93,6 +94,7 @@ public class BlobTest {
       .selfLink(SELF_LINK)
       .size(SIZE)
       .updateTime(UPDATE_TIME)
+      .createTime(CREATE_TIME)
       .build();
   private static final BlobInfo BLOB_INFO = BlobInfo.builder("b", "n").metageneration(42L).build();
   private static final BlobInfo DIRECTORY_INFO = BlobInfo.builder("b", "n/")
@@ -347,6 +349,7 @@ public class BlobTest {
         .selfLink(SELF_LINK)
         .size(SIZE)
         .updateTime(UPDATE_TIME)
+        .createTime(CREATE_TIME)
         .build();
     assertEquals("b", blob.bucket());
     assertEquals("n", blob.name());
@@ -358,6 +361,7 @@ public class BlobTest {
     assertEquals(CONTENT_ENCODING, blob.contentEncoding());
     assertEquals(CONTENT_LANGUAGE, blob.contentLanguage());
     assertEquals(CRC32, blob.crc32c());
+    assertEquals(CREATE_TIME, blob.createTime());
     assertEquals(DELETE_TIME, blob.deleteTime());
     assertEquals(ETAG, blob.etag());
     assertEquals(GENERATED_ID, blob.generatedId());
@@ -385,6 +389,7 @@ public class BlobTest {
     assertNull(blob.contentEncoding());
     assertNull(blob.contentLanguage());
     assertNull(blob.crc32c());
+    assertNull(blob.createTime());
     assertNull(blob.deleteTime());
     assertNull(blob.etag());
     assertNull(blob.generatedId());

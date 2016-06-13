@@ -45,11 +45,6 @@ public class SerializationTest extends BaseSerializationTest {
   private static final Cors.Origin ORIGIN = Cors.Origin.any();
   private static final Cors CORS =
       Cors.builder().maxAgeSeconds(1).origins(Collections.singleton(ORIGIN)).build();
-  private static final BatchRequest BATCH_REQUEST = BatchRequest.builder().delete("B", "N").build();
-  private static final BatchResponse BATCH_RESPONSE = new BatchResponse(
-      Collections.singletonList(BatchResponse.Result.of(true)),
-      Collections.<BatchResponse.Result<Blob>>emptyList(),
-      Collections.<BatchResponse.Result<Blob>>emptyList());
   private static final PageImpl<Blob> PAGE_RESULT =
       new PageImpl<>(null, "c", Collections.singletonList(BLOB));
   private static final StorageException STORAGE_EXCEPTION = new StorageException(42, "message");
@@ -78,10 +73,9 @@ public class SerializationTest extends BaseSerializationTest {
         .authCredentials(null)
         .build();
     return new Serializable[]{ACL_DOMAIN, ACL_GROUP, ACL_PROJECT_, ACL_USER, ACL_RAW, ACL,
-        BLOB_INFO, BLOB, BUCKET_INFO, BUCKET, ORIGIN, CORS, BATCH_REQUEST, BATCH_RESPONSE,
-        PAGE_RESULT, BLOB_LIST_OPTIONS, BLOB_SOURCE_OPTIONS, BLOB_TARGET_OPTIONS,
-        BUCKET_LIST_OPTIONS, BUCKET_SOURCE_OPTIONS, BUCKET_TARGET_OPTIONS, STORAGE_EXCEPTION,
-        options, otherOptions};
+        BLOB_INFO, BLOB, BUCKET_INFO, BUCKET, ORIGIN, CORS, PAGE_RESULT, BLOB_LIST_OPTIONS,
+        BLOB_SOURCE_OPTIONS, BLOB_TARGET_OPTIONS, BUCKET_LIST_OPTIONS, BUCKET_SOURCE_OPTIONS,
+        BUCKET_TARGET_OPTIONS, STORAGE_EXCEPTION, options, otherOptions};
   }
 
   @Override

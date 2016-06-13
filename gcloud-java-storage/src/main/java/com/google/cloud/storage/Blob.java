@@ -296,6 +296,12 @@ public class Blob extends BlobInfo {
     }
 
     @Override
+    Builder createTime(Long createTime) {
+      infoBuilder.createTime(createTime);
+      return this;
+    }
+
+    @Override
     Builder isDirectory(boolean isDirectory) {
       infoBuilder.isDirectory(isDirectory);
       return this;

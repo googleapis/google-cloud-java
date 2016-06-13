@@ -131,17 +131,65 @@ public abstract class BaseDatastoreBatchWriter implements DatastoreBatchWriter {
     }
   }
 
-  @SafeVarargs
+  private void putInternal(FullEntity<Key> entity) {
+    Key key = entity.key();
+    toAdd.remove(key);
+    toUpdate.remove(key);
+    toDelete.remove(key);
+    toPut.put(key, entity);
+  }
+
   @Override
-  public final void put(Entity... entities) {
+  public final Entity put(FullEntity<?> entity) {
+    return DatastoreHelper.put(this, entity);
+  }
+
+  @SuppressWarnings("unchecked")
+  @Override
+  public final void putWithDeferredIdAllocation(FullEntity<?>... entities) {
     validateActive();
-    for (Entity entity : entities) {
-      Key key = entity.key();
-      toAdd.remove(key);
-      toUpdate.remove(key);
-      toDelete.remove(key);
-      toPut.put(key, entity);
+    for (FullEntity<?> entity : entities) {
+      IncompleteKey key = entity.key();
+      Preconditions.checkArgument(key != null, "Entity must have a key");
+      if (key instanceof Key) {
+        putInternal(Entity.convert((FullEntity<Key>) entity));
+      } else {
+        toAddAutoId.add((FullEntity<IncompleteKey>) entity);
+      }
     }
+  }
+
+  @SuppressWarnings("unchecked")
+  @Override
+  public final List<Entity> put(FullEntity<?>... entities) {
+    validateActive();
+    List<IncompleteKey> incompleteKeys = Lists.newArrayListWithExpectedSize(entities.length);
+    for (FullEntity<?> entity : entities) {
+      IncompleteKey key = entity.key();
+      Preconditions.checkArgument(key != null, "Entity must have a key");
+      if (!(key instanceof Key)) {
+        incompleteKeys.add(key);
+      }
+    }
+    Iterator<Key> allocated;
+    if (!incompleteKeys.isEmpty()) {
+      IncompleteKey[] toAllocate = Iterables.toArray(incompleteKeys, IncompleteKey.class);
+      allocated = datastore().allocateId(toAllocate).iterator();
+    } else {
+      allocated = Collections.emptyIterator();
+    }
+    List<Entity> answer = Lists.newArrayListWithExpectedSize(entities.length);
+    for (FullEntity<?> entity : entities) {
+      if (entity.key() instanceof Key) {
+        putInternal((FullEntity<Key>) entity);
+        answer.add(Entity.convert((FullEntity<Key>) entity));
+      } else {
+        Entity entityWithAllocatedId = Entity.builder(allocated.next(), entity).build();
+        putInternal(entityWithAllocatedId);
+        answer.add(entityWithAllocatedId);
+      }
+    }
+    return answer;
   }
 
   @Override

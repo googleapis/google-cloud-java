@@ -48,7 +48,7 @@ class BlobWriteChannel extends BaseWriteChannel<StorageOptions, BlobInfo> {
         public void run() {
           options().rpc().write(uploadId(), buffer(), 0, position(), length, last);
         }
-      }), options().retryParams(), StorageImpl.EXCEPTION_HANDLER);
+      }), options().retryParams(), StorageImpl.EXCEPTION_HANDLER, options().clock());
     } catch (RetryHelper.RetryHelperException e) {
       throw StorageException.translateAndThrow(e);
     }

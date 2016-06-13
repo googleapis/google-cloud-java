@@ -47,7 +47,7 @@ class TableDataWriteChannel extends BaseWriteChannel<BigQueryOptions, WriteChann
         public void run() {
           options().rpc().write(uploadId(), buffer(), 0, position(), length, last);
         }
-      }), options().retryParams(), BigQueryImpl.EXCEPTION_HANDLER);
+      }), options().retryParams(), BigQueryImpl.EXCEPTION_HANDLER, options().clock());
     } catch (RetryHelper.RetryHelperException e) {
       throw BigQueryException.translateAndThrow(e);
     }

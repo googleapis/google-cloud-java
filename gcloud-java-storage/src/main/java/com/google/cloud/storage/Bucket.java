@@ -26,6 +26,7 @@ import com.google.cloud.storage.Storage.BlobGetOption;
 import com.google.cloud.storage.Storage.BucketTargetOption;
 import com.google.cloud.storage.spi.StorageRpc;
 import com.google.common.base.Function;
+import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
 
@@ -33,9 +34,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.ObjectInputStream;
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 import java.util.Set;
@@ -609,19 +608,28 @@ public class Bucket extends BucketInfo {
    * @throws StorageException upon failure
    */
   public List<Blob> get(String blobName1, String blobName2, String... blobNames) {
-    BatchRequest.Builder batch = BatchRequest.builder();
-    batch.get(name(), blobName1);
-    batch.get(name(), blobName2);
-    for (String name : blobNames) {
-      batch.get(name(), name);
+    List<BlobId> blobIds = Lists.newArrayListWithCapacity(blobNames.length + 2);
+    blobIds.add(BlobId.of(name(), blobName1));
+    blobIds.add(BlobId.of(name(), blobName2));
+    for (String blobName : blobNames) {
+      blobIds.add(BlobId.of(name(), blobName));
     }
-    List<Blob> blobs = new ArrayList<>(blobNames.length);
-    BatchResponse response = storage.submit(batch.build());
-    for (BatchResponse.Result<Blob> result : response.gets()) {
-      BlobInfo blobInfo = result.get();
-      blobs.add(blobInfo != null ? new Blob(storage, new BlobInfo.BuilderImpl(blobInfo)) : null);
+    return storage.get(blobIds);
+  }
+
+  /**
+   * Returns a list of requested blobs in this bucket. Blobs that do not exist are null.
+   *
+   * @param blobNames blobs to get
+   * @return an immutable list of {@code Blob} objects
+   * @throws StorageException upon failure
+   */
+  public List<Blob> get(Iterable<String> blobNames) {
+    ImmutableList.Builder<BlobId> builder = ImmutableList.builder();
+    for (String blobName : blobNames) {
+      builder.add(BlobId.of(name(), blobName));
     }
-    return Collections.unmodifiableList(blobs);
+    return storage.get(builder.build());
   }
 
   /**

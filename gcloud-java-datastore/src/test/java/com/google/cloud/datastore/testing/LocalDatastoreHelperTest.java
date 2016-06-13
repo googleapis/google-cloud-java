@@ -16,6 +16,7 @@
 
 package com.google.cloud.datastore.testing;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
@@ -31,6 +32,7 @@ public class LocalDatastoreHelperTest {
 
   private static final double TOLERANCE = 0.00001;
   private static final String PROJECT_ID_PREFIX = "test-project-";
+  private static final String NAMESPACE = "namespace";
 
   @Test
   public void testCreate() {
@@ -49,5 +51,10 @@ public class LocalDatastoreHelperTest {
     assertTrue(options.projectId().startsWith(PROJECT_ID_PREFIX));
     assertTrue(options.host().startsWith("localhost:"));
     assertSame(AuthCredentials.noAuth(), options.authCredentials());
+    options = helper.options(NAMESPACE);
+    assertTrue(options.projectId().startsWith(PROJECT_ID_PREFIX));
+    assertTrue(options.host().startsWith("localhost:"));
+    assertSame(AuthCredentials.noAuth(), options.authCredentials());
+    assertEquals(NAMESPACE, options.namespace());
   }
 }

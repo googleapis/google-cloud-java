@@ -501,13 +501,13 @@ public class DnsExample {
     try {
       valid = action.check(args);
     } catch (NumberFormatException ex) {
-      System.out.println("Invalid input for action '" + actionName + "'.");
+      System.out.printf("Invalid input for action '%s'.%n", actionName);
       System.out.println("Ttl must be an integer.");
-      System.out.println("Expected: " + action.params());
+      System.out.printf("Expected: %s%n", action.params());
       return;
     } catch (Exception ex) {
       System.out.println("Failed to parse request.");
-      System.out.println("Expected: " + action.params());
+      System.out.printf("Expected: %s%n", action.params());
       ex.printStackTrace();
       return;
     }
@@ -519,8 +519,8 @@ public class DnsExample {
       Dns dns = optionsBuilder.build().service();
       action.run(dns, args);
     } else {
-      System.out.println("Invalid input for action '" + actionName + "'");
-      System.out.println("Expected: " + action.params());
+      System.out.printf("Invalid input for action '%s'%n", actionName);
+      System.out.printf("Expected: %s%n", action.params());
     }
   }
 }

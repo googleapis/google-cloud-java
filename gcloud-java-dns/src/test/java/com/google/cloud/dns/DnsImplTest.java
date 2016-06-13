@@ -22,9 +22,9 @@ import static org.junit.Assert.assertTrue;
 import com.google.api.services.dns.model.Change;
 import com.google.api.services.dns.model.ManagedZone;
 import com.google.api.services.dns.model.ResourceRecordSet;
+import com.google.cloud.Clock;
 import com.google.cloud.Page;
 import com.google.cloud.RetryParams;
-import com.google.cloud.ServiceOptions;
 import com.google.cloud.dns.spi.DnsRpc;
 import com.google.cloud.dns.spi.DnsRpcFactory;
 import com.google.common.collect.ImmutableList;
@@ -91,7 +91,7 @@ public class DnsImplTest {
       Dns.ChangeRequestListOption.pageToken(PAGE_TOKEN),
       Dns.ChangeRequestListOption.fields(Dns.ChangeRequestField.STATUS),
       Dns.ChangeRequestListOption.sortOrder(Dns.SortingOrder.ASCENDING)};
-  private static final Dns.RecordSetListOption[] DNS_RECORD_LIST_OPTIONS = {
+  private static final Dns.RecordSetListOption[] RECORD_SET_LIST_OPTIONS = {
       Dns.RecordSetListOption.pageSize(MAX_SIZE),
       Dns.RecordSetListOption.pageToken(PAGE_TOKEN),
       Dns.RecordSetListOption.fields(Dns.RecordSetField.TTL),
@@ -100,7 +100,7 @@ public class DnsImplTest {
 
   // Other
   private static final Map<DnsRpc.Option, ?> EMPTY_RPC_OPTIONS = ImmutableMap.of();
-  private static final ServiceOptions.Clock TIME_SOURCE = new ServiceOptions.Clock() {
+  private static final Clock TIME_SOURCE = new Clock() {
     @Override
     public long millis() {
       return 42000L;
@@ -350,7 +350,7 @@ public class DnsImplTest {
   }
 
   @Test
-  public void testListDnsRecords() {
+  public void testListRecordSets() {
     EasyMock.expect(dnsRpcMock.listRecordSets(ZONE_INFO.name(), EMPTY_RPC_OPTIONS))
         .andReturn(LIST_OF_PB_DNS_RECORDS);
     EasyMock.replay(dnsRpcMock);
@@ -362,28 +362,28 @@ public class DnsImplTest {
   }
 
   @Test
-  public void testListDnsRecordsWithOptions() {
+  public void testListRecordSetsWithOptions() {
     Capture<Map<DnsRpc.Option, Object>> capturedOptions = Capture.newInstance();
     EasyMock.expect(dnsRpcMock.listRecordSets(EasyMock.eq(ZONE_NAME),
         EasyMock.capture(capturedOptions))).andReturn(LIST_OF_PB_DNS_RECORDS);
     EasyMock.replay(dnsRpcMock);
     dns = options.service(); // creates DnsImpl
-    Page<RecordSet> dnsPage = dns.listRecordSets(ZONE_NAME, DNS_RECORD_LIST_OPTIONS);
+    Page<RecordSet> dnsPage = dns.listRecordSets(ZONE_NAME, RECORD_SET_LIST_OPTIONS);
     assertEquals(2, Lists.newArrayList(dnsPage.values()).size());
     assertTrue(Lists.newArrayList(dnsPage.values()).contains(DNS_RECORD1));
     assertTrue(Lists.newArrayList(dnsPage.values()).contains(DNS_RECORD2));
-    Integer size = (Integer) capturedOptions.getValue().get(DNS_RECORD_LIST_OPTIONS[0].rpcOption());
+    Integer size = (Integer) capturedOptions.getValue().get(RECORD_SET_LIST_OPTIONS[0].rpcOption());
     assertEquals(MAX_SIZE, size);
     String selector = (String) capturedOptions.getValue()
-        .get(DNS_RECORD_LIST_OPTIONS[1].rpcOption());
+        .get(RECORD_SET_LIST_OPTIONS[1].rpcOption());
     assertEquals(PAGE_TOKEN, selector);
-    selector = (String) capturedOptions.getValue().get(DNS_RECORD_LIST_OPTIONS[2].rpcOption());
+    selector = (String) capturedOptions.getValue().get(RECORD_SET_LIST_OPTIONS[2].rpcOption());
     assertTrue(selector.contains(Dns.RecordSetField.NAME.selector()));
     assertTrue(selector.contains(Dns.RecordSetField.TTL.selector()));
-    selector = (String) capturedOptions.getValue().get(DNS_RECORD_LIST_OPTIONS[3].rpcOption());
-    assertEquals(DNS_RECORD_LIST_OPTIONS[3].value(), selector);
-    String type = (String) capturedOptions.getValue().get(DNS_RECORD_LIST_OPTIONS[4]
+    selector = (String) capturedOptions.getValue().get(RECORD_SET_LIST_OPTIONS[3].rpcOption());
+    assertEquals(RECORD_SET_LIST_OPTIONS[3].value(), selector);
+    String type = (String) capturedOptions.getValue().get(RECORD_SET_LIST_OPTIONS[4]
         .rpcOption());
-    assertEquals(DNS_RECORD_LIST_OPTIONS[4].value(), type);
+    assertEquals(RECORD_SET_LIST_OPTIONS[4].value(), type);
   }
 }
