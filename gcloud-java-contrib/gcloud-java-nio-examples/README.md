@@ -22,12 +22,12 @@ To run this example:
 4.    Run the sample with:
 
     ```
-    java -cp gcloud-java-contrib/gcloud-java-nio/target/gcloud-java-nio-0.2.1-SNAPSHOT-shaded.jar:gcloud-java-contrib/gcloud-java-nio-examples/target/gcloud-java-nio-examples-0.2.1-SNAPSHOT.jar com.google.cloud.nio.examples.ListFilesystems
+    java -cp gcloud-java-contrib/gcloud-java-nio/target/gcloud-java-nio-0.2.5-SNAPSHOT-shaded.jar:gcloud-java-contrib/gcloud-java-nio-examples/target/gcloud-java-nio-examples-0.2.5-SNAPSHOT.jar com.google.cloud.nio.examples.ListFilesystems
     ```
 
     Notice that it lists gcs, which it wouldn't if you ran it without the nio jar:
     ```
-    java -cp gcloud-java-contrib/gcloud-java-nio-examples/target/gcloud-java-nio-examples-0.2.1-SNAPSHOT.jar com.google.cloud.nio.examples.ListFilesystems
+    java -cp gcloud-java-contrib/gcloud-java-nio-examples/target/gcloud-java-nio-examples-0.2.5-SNAPSHOT.jar com.google.cloud.nio.examples.ListFilesystems
     ```
 
 The sample doesn't have anything about GCS in it. It gets that ability from the nio jar that
