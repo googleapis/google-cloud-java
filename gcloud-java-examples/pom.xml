@@ -56,12 +56,20 @@
               <name>BigQueryExample</name>
             </program>
             <program>
+              <mainClass>com.google.cloud.examples.compute.ComputeExample</mainClass>
+              <name>ComputeExample</name>
+            </program>
+            <program>
               <mainClass>com.google.cloud.examples.datastore.DatastoreExample</mainClass>
               <name>DatastoreExample</name>
             </program>
             <program>
               <mainClass>com.google.cloud.examples.nio.Stat</mainClass>
               <name>Stat</name>
+            </program>
+            <program>
+              <mainClass>com.google.cloud.examples.dns.DnsExample</mainClass>
+              <name>DnsExample</name>
             </program>
             <program>
               <mainClass>com.google.cloud.examples.nio.CountBytes</mainClass>
