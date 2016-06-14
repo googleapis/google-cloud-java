@@ -44,14 +44,14 @@ import java.util.concurrent.TimeUnit;
  *
  * <p>See the README for steps needed for running the example.
  * <p>The command-line arguments can be:
- * <PRE>{@code [<project_id>]
+ * <pre>{@code [<project_id>]
  * create <zone_name> <dns_name> <description> |
  * get <zone_name> |
  * delete <zone_name> |
  * list [<zone_name> [changes [descending | ascending] | records]] |
  * add-record <zone_name> <record_name> <ip> <ttl> |
  * delete-record <zone_name> <record_name> <ip> [<ttl>] |
- * quota}</PRE>
+ * quota}</pre>
  *
  * <p>The first parameter is an optional {@code project_id}. The project specified in the Google
  * Cloud SDK configuration (see {@code gcloud config list}) will be used if the project ID is not
