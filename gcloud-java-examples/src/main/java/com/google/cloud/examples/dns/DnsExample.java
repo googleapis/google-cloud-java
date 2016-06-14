@@ -42,21 +42,16 @@ import java.util.concurrent.TimeUnit;
  * <p>This example creates, deletes, gets, and lists zones. It also creates and deletes
  * record sets of type A, and lists record sets.
  *
- * <p>Steps needed for running the example:
- * <ol>
- * <li>login using gcloud SDK - {@code gcloud auth login}.</li>
- * <li>compile using maven - {@code mvn compile}</li>
- * <li>run using maven - {@code mvn exec:java
- * -Dexec.mainClass="com.google.cloud.examples.dns.DnsExample"
- * -Dexec.args="[<project_id>]
+ * <p>See the README for steps needed for running the example.
+ * <p>The command-line arguments can be:
+ * <pre>{@code [<project_id>]
  * create <zone_name> <dns_name> <description> |
  * get <zone_name> |
  * delete <zone_name> |
  * list [<zone_name> [changes [descending | ascending] | records]] |
  * add-record <zone_name> <record_name> <ip> <ttl> |
  * delete-record <zone_name> <record_name> <ip> [<ttl>] |
- * quota}</li>
- * </ol>
+ * quota}</pre>
  *
  * <p>The first parameter is an optional {@code project_id}. The project specified in the Google
  * Cloud SDK configuration (see {@code gcloud config list}) will be used if the project ID is not

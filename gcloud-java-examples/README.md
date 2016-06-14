@@ -68,11 +68,11 @@ To run examples from your command line:
     Before running the example, go to the [Google Developers Console][developers-console] to ensure
     that Compute API is enabled.
     ```
-    mvn exec:java -Dexec.mainClass="com.google.cloud.examples.compute.ComputeExample" -Dexec.args="create image-disk us-central1-a test-disk debian-cloud debian-8-jessie-v20160329"
-    mvn exec:java -Dexec.mainClass="com.google.cloud.examples.compute.ComputeExample" -Dexec.args="create instance us-central1-a test-instance n1-standard-1 test-disk default"
-    mvn exec:java -Dexec.mainClass="com.google.cloud.examples.compute.ComputeExample" -Dexec.args="add-access-config us-central1-a test-instance nic0 NAT"
-    mvn exec:java -Dexec.mainClass="com.google.cloud.examples.compute.ComputeExample" -Dexec.args="delete instance us-central1-a test-instance"
-    mvn exec:java -Dexec.mainClass="com.google.cloud.examples.compute.ComputeExample" -Dexec.args="delete disk us-central1-a test-disk"
+    target/appassembler/bin/ComputeExample create image-disk us-central1-a test-disk debian-cloud debian-8-jessie-v20160329
+    target/appassembler/bin/ComputeExample create instance us-central1-a test-instance n1-standard-1 test-disk default
+    target/appassembler/bin/ComputeExample add-access-config us-central1-a test-instance nic0 NAT
+    target/appassembler/bin/ComputeExample delete instance us-central1-a test-instance
+    target/appassembler/bin/ComputeExample delete disk us-central1-a test-disk
     ```
 
   * Here's an example run of `DatastoreExample`.
@@ -90,14 +90,14 @@ To run examples from your command line:
     You will need to replace the domain name `elaborateexample.com` with your own domain name with [verified ownership] (https://www.google.com/webmasters/verification/home).
     Also, note that the example creates and deletes record sets of type A only. Operations with other record types are not implemented in the example.
     ```
-    mvn exec:java -Dexec.mainClass="com.google.cloud.examples.dns.DnsExample" -Dexec.args="create some-sample-zone elaborateexample.com. description"
-    mvn exec:java -Dexec.mainClass="com.google.cloud.examples.dns.DnsExample" -Dexec.args="list"
-    mvn exec:java -Dexec.mainClass="com.google.cloud.examples.dns.DnsExample" -Dexec.args="list some-sample-zone records"
-    mvn exec:java -Dexec.mainClass="com.google.cloud.examples.dns.DnsExample" -Dexec.args="add-record some-sample-zone www.elaborateexample.com. 12.13.14.15 69"
-    mvn exec:java -Dexec.mainClass="com.google.cloud.examples.dns.DnsExample" -Dexec.args="get some-sample-zone"
-    mvn exec:java -Dexec.mainClass="com.google.cloud.examples.dns.DnsExample" -Dexec.args="delete-record some-sample-zone www.elaborateexample.com. 12.13.14.15 69"
-    mvn exec:java -Dexec.mainClass="com.google.cloud.examples.dns.DnsExample" -Dexec.args="list some-sample-zone changes ascending"
-    mvn exec:java -Dexec.mainClass="com.google.cloud.examples.dns.DnsExample" -Dexec.args="delete some-sample-zone"
+    target/appassembler/bin/DnsExample create some-sample-zone elaborateexample.com. description
+    target/appassembler/bin/DnsExample list
+    target/appassembler/bin/DnsExample list some-sample-zone records
+    target/appassembler/bin/DnsExample add-record some-sample-zone www.elaborateexample.com. 12.13.14.15 69
+    target/appassembler/bin/DnsExample get some-sample-zone
+    target/appassembler/bin/DnsExample delete-record some-sample-zone www.elaborateexample.com. 12.13.14.15 69
+    target/appassembler/bin/DnsExample list some-sample-zone changes ascending
+    target/appassembler/bin/DnsExample delete some-sample-zone
     ```
 
   * Here's an example run of `PubSubExample`.
