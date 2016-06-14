@@ -31,6 +31,8 @@ import com.google.cloud.pubsub.spi.v1.SubscriberApi;
 import com.google.cloud.pubsub.spi.v1.SubscriberSettings;
 import com.google.common.base.Function;
 import com.google.common.collect.Sets;
+import com.google.common.util.concurrent.ForwardingListenableFuture;
+import com.google.common.util.concurrent.FutureCallback;
 import com.google.common.util.concurrent.Futures;
 import com.google.common.util.concurrent.ListenableFuture;
 import com.google.protobuf.Empty;
@@ -89,6 +91,30 @@ public class DefaultPubSubRpc implements PubSubRpc {
     }
   }
 
+  private static final class PullFutureImpl
+      extends ForwardingListenableFuture.SimpleForwardingListenableFuture<PullResponse>
+      implements PullFuture {
+
+    PullFutureImpl(ListenableFuture<PullResponse> delegate) {
+      super(delegate);
+    }
+
+    @Override
+    public void addCallback(final PullCallback callback) {
+      Futures.addCallback(delegate(), new FutureCallback<PullResponse>() {
+        @Override
+        public void onSuccess(PullResponse result) {
+          callback.success(result);
+        }
+
+        @Override
+        public void onFailure(Throwable error) {
+          callback.failure(error);
+        }
+      });
+    }
+  }
+
   public DefaultPubSubRpc(PubSubOptions options) throws IOException {
     executorFactory = new InternalPubSubOptions(options).executorFactory();
     executor = executorFactory.get();
@@ -136,13 +162,13 @@ public class DefaultPubSubRpc implements PubSubRpc {
     return ApiCallSettings.newBuilder().setRetrySettingsBuilder(builder);
   }
 
-  private static <V> Future<V> translate(ListenableFuture<V> from, final boolean idempotent,
-      int... returnNullOn) {
+  private static <V> ListenableFuture<V> translate(ListenableFuture<V> from,
+      final boolean idempotent, int... returnNullOn) {
     final Set<Integer> returnNullOnSet = Sets.newHashSetWithExpectedSize(returnNullOn.length);
     for (int value : returnNullOn) {
       returnNullOnSet.add(value);
     }
-    return  Futures.catching(from, ApiException.class, new Function<ApiException, V>() {
+    return Futures.catching(from, ApiException.class, new Function<ApiException, V>() {
       @Override
       public V apply(ApiException exception) {
         if (returnNullOnSet.contains(exception.getStatusCode().value())) {
@@ -224,8 +250,8 @@ public class DefaultPubSubRpc implements PubSubRpc {
   }
 
   @Override
-  public Future<PullResponse> pull(PullRequest request) {
-    return translate(subscriberApi.pullCallable().futureCall(request), false);
+  public PullFuture pull(PullRequest request) {
+    return new PullFutureImpl(translate(subscriberApi.pullCallable().futureCall(request), false));
   }
 
   @Override

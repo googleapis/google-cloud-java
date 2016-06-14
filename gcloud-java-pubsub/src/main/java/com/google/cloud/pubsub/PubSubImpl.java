@@ -16,9 +16,9 @@
 
 package com.google.cloud.pubsub;
 
-import static com.google.api.client.util.Preconditions.checkArgument;
 import static com.google.cloud.pubsub.PubSub.ListOption.OptionType.PAGE_SIZE;
 import static com.google.cloud.pubsub.PubSub.ListOption.OptionType.PAGE_TOKEN;
+import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.util.concurrent.Futures.lazyTransform;
 
 import com.google.cloud.AsyncPage;
@@ -27,6 +27,7 @@ import com.google.cloud.BaseService;
 import com.google.cloud.Page;
 import com.google.cloud.PageImpl;
 import com.google.cloud.pubsub.spi.PubSubRpc;
+import com.google.cloud.pubsub.spi.PubSubRpc.PullFuture;
 import com.google.cloud.pubsub.spi.v1.PublisherApi;
 import com.google.cloud.pubsub.spi.v1.SubscriberApi;
 import com.google.common.annotations.VisibleForTesting;
@@ -476,15 +477,24 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
         .setMaxMessages(maxMessages)
         .setReturnImmediately(true)
         .build();
-    Future<PullResponse> response = rpc.pull(request);
-    return lazyTransform(response, new Function<PullResponse, Iterator<ReceivedMessage>>() {
+    PullFuture future = rpc.pull(request);
+    future.addCallback(new PubSubRpc.PullCallback() {
       @Override
-      public Iterator<ReceivedMessage> apply(PullResponse pullResponse) {
-        // Add all received messages to the automatic ack deadline renewer
-        List<String> ackIds = Lists.transform(pullResponse.getReceivedMessagesList(),
+      public void success(PullResponse response) {
+        List<String> ackIds = Lists.transform(response.getReceivedMessagesList(),
             MESSAGE_TO_ACK_ID_FUNCTION);
         ackDeadlineRenewer.add(subscription, ackIds);
-        return Iterators.transform(pullResponse.getReceivedMessagesList().iterator(),
+      }
+
+      @Override
+      public void failure(Throwable error) {
+        // ignore
+      }
+    });
+    return lazyTransform(future, new Function<PullResponse, Iterator<ReceivedMessage>>() {
+      @Override
+      public Iterator<ReceivedMessage> apply(PullResponse response) {
+        return Iterators.transform(response.getReceivedMessagesList().iterator(),
             new Function<com.google.pubsub.v1.ReceivedMessage, ReceivedMessage>() {
               @Override
               public ReceivedMessage apply(com.google.pubsub.v1.ReceivedMessage receivedMessage) {
