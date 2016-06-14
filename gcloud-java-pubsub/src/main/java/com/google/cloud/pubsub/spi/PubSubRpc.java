@@ -41,6 +41,44 @@ import java.util.concurrent.Future;
 
 public interface PubSubRpc extends AutoCloseable {
 
+  /**
+   * A callback that can be registered to {@link PullFuture} objects. Objects of this class allow
+   * to asynchronously react to the success or failure of a pull RPC.
+   */
+  interface PullCallback {
+
+    /**
+     * This method is invoked with the result of a {@link PullFuture} when it was successful.
+     *
+     * @param response the pull response
+     */
+    void success(PullResponse response);
+
+    /**
+     * This method is invoked when the {@link PullFuture} failed or was cancelled.
+     *
+     * @param error the execption that caused the {@link PullFuture} to fail
+     */
+    void failure(Throwable error);
+  }
+
+  /**
+   * A {@link Future} implementation for pull RPCs. This class also allows users to register
+   * callbacks via {@link #addCallback(PullCallback)}.
+   */
+  interface PullFuture extends Future<PullResponse> {
+
+    /**
+     * Registers a callback to be run on the given executor. The listener will run when the pull
+     * future completed its computation or, if the computation is already complete, immediately.
+     * There is no guaranteed ordering of execution of callbacks.
+     *
+     * <p>Registered callbacks are run using the same thread that run the RPC call. Only lightweight
+     * callbacks should be registered via this method.
+     */
+    void addCallback(final PullCallback callback);
+  }
+
   // in all cases root cause of ExecutionException is PubSubException
   Future<Topic> create(Topic topic);
 
@@ -66,7 +104,7 @@ public interface PubSubRpc extends AutoCloseable {
 
   Future<Empty> acknowledge(AcknowledgeRequest request);
 
-  Future<PullResponse> pull(PullRequest request);
+  PullFuture pull(PullRequest request);
 
   Future<Empty> modify(ModifyPushConfigRequest request);
 }
