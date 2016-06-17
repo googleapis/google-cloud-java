@@ -26,6 +26,9 @@ public class MetricInfoTest {
   private static final String NAME = "name";
   private static final String FILTER = "logName=projects/my-projectid/logs/syslog";
   private static final String DESCRIPTION = "description";
+  private static final String NEW_NAME = "newName";
+  private static final String NEW_FILTER = "logName=projects/my-projectid/logs/newSyslog";
+  private static final String NEW_DESCRIPTION = "newDescription";
   private static final MetricInfo METRIC_INFO = MetricInfo.builder(NAME, FILTER)
       .description(DESCRIPTION)
       .build();
@@ -49,13 +52,13 @@ public class MetricInfoTest {
   public void testToBuilder() {
     compareMetricInfo(METRIC_INFO, METRIC_INFO.toBuilder().build());
     MetricInfo metricInfo = METRIC_INFO.toBuilder()
-        .name("newName")
-        .description("newDescription")
-        .filter("logName=projects/my-projectid/logs/syslog")
+        .name(NEW_NAME)
+        .description(NEW_DESCRIPTION)
+        .filter(NEW_FILTER)
         .build();
-    assertEquals("newName", metricInfo.name());
-    assertEquals("logName=projects/my-projectid/logs/syslog", metricInfo.filter());
-    assertEquals("newDescription", metricInfo.description());
+    assertEquals(NEW_NAME, metricInfo.name());
+    assertEquals(NEW_FILTER, metricInfo.filter());
+    assertEquals(NEW_DESCRIPTION, metricInfo.description());
     metricInfo = metricInfo.toBuilder()
         .name(NAME)
         .description(DESCRIPTION)
