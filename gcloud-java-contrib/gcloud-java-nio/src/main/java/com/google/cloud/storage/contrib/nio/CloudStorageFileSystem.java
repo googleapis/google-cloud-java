@@ -145,10 +145,12 @@ public final class CloudStorageFileSystem extends FileSystem {
    * Does nothing.
    */
   @Override
-  public void close() {}
+  public void close() throws IOException {
+    // TODO(#809): Synchronously close all channels associated with this FileSystem instance.
+  }
 
   /**
-   * Returns {@code true}.
+   * Returns {@code true}, even if you previously called the {@link #close()} method.
    */
   @Override
   public boolean isOpen() {
