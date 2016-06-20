@@ -16,8 +16,6 @@
 
 package com.google.cloud.pubsub;
 
-import static com.google.common.base.Preconditions.checkArgument;
-
 import com.google.cloud.AsyncPage;
 import com.google.cloud.GrpcServiceOptions.ExecutorFactory;
 import com.google.cloud.Page;

@@ -26,8 +26,6 @@ import com.google.cloud.pubsub.PubSub.PullOption;
 import org.easymock.EasyMock;
 import org.junit.Test;
 
-import java.util.concurrent.ExecutorService;
-
 public class PubSubTest {
 
   private static final int PAGE_SIZE = 42;
