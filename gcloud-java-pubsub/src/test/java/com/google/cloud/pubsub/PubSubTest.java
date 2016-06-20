@@ -53,24 +53,9 @@ public class PubSubTest {
     PullOption pullOption = PullOption.maxQueuedCallbacks(MAX_QUEUED_CALLBACKS);
     assertEquals(MAX_QUEUED_CALLBACKS, pullOption.value());
     assertEquals(PullOption.OptionType.MAX_QUEUED_CALLBACKS, pullOption.optionType());
-    // auto-closing executor
-    ExecutorService executor = EasyMock.createNiceMock(ExecutorService.class);
-    pullOption = PullOption.executor(executor, true);
-    ExecutorFactory<ExecutorService> factory = (ExecutorFactory) pullOption.value();
-    assertSame(executor, factory.get());
-    executor.shutdown();
-    EasyMock.expectLastCall();
-    EasyMock.replay(executor);
-    factory.release(executor);
-    EasyMock.verify(executor);
-    assertEquals(PullOption.OptionType.EXECUTOR, pullOption.optionType());
-    // auto-closing executor
-    EasyMock.reset(executor);
-    pullOption = PullOption.executor(executor, false);
-    factory = (ExecutorFactory) pullOption.value();
-    assertSame(executor, factory.get());
-    EasyMock.replay(executor);
-    factory.release(executor);
-    EasyMock.verify(executor);
+    ExecutorFactory executorFactory = EasyMock.createStrictMock(ExecutorFactory.class);
+    pullOption = PullOption.executorFactory(executorFactory);
+    assertSame(executorFactory, pullOption.value());
+    assertEquals(PullOption.OptionType.EXECUTOR_FACTORY, pullOption.optionType());
   }
 }

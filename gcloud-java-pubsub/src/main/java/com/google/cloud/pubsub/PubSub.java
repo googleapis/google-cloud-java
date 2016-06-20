@@ -88,7 +88,7 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
     private static final long serialVersionUID = 4792164134340316582L;
 
     enum OptionType implements Option.OptionType {
-      EXECUTOR,
+      EXECUTOR_FACTORY,
       MAX_QUEUED_CALLBACKS;
 
       @SuppressWarnings("unchecked")
@@ -122,31 +122,21 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
 
     /**
      * Returns an option to specify the executor used to execute message processor callbacks. The
-     * executor determines the number of messages that can be processed at the same time. The
-     * {@code shouldAutoClose} parameter sets whether the executor should be shutdown when the
-     * message consumer is closed. If not provided, a single-threaded executor is used.
+     * executor determines the number of messages that can be processed at the same time. If not
+     * provided, a single-threaded executor is used to execute message processor callbacks.
      *
-     * @param executor the executor used to run message processor callbacks
-     * @param shouldAutoClose if {@code true}, the executor is shutdown when the message consumer is
-     *     closed. If {@code false}, the user must take care of shutting the executor down.
+     * <p>The {@link ExecutorFactory} object can be used to handle creation and release of the
+     * executor, possibly reusing existing executors. {@link ExecutorFactory#get()} is called when
+     * the message consumer is created. {@link ExecutorFactory#release(ExecutorService)} is called
+     * when the message consumer is closed.
+     *
+     * <p>For the created option to be serializable, the provided executor factory should implement
+     * {@link java.io.Serializable}.
+     *
+     * @param executorFactory the executor factory.
      */
-    public static PullOption executor(final ExecutorService executor,
-        final boolean shouldAutoClose) {
-      return new PullOption(OptionType.EXECUTOR, new ExecutorFactory<ExecutorService>() {
-
-        @Override
-        public ExecutorService get() {
-          return executor;
-        }
-
-        @Override
-        public void release(ExecutorService toRelease) {
-          checkArgument(executor == toRelease, "Releasing the wrong executor");
-          if (shouldAutoClose) {
-            executor.shutdown();
-          }
-        }
-      });
+    public static PullOption executorFactory(ExecutorFactory executorFactory) {
+      return new PullOption(OptionType.EXECUTOR_FACTORY, executorFactory);
     }
   }
 
@@ -485,7 +475,7 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
    *
    * <p>The {@link PullOption#maxQueuedCallbacks(int)} option can be used to control the maximum
    * number of queued messages (messages either being processed or waiting to be processed). The
-   * {@link PullOption#executor(ExecutorService, boolean)} can be used to provide an executor to run
+   * {@link PullOption#executorFactory(ExecutorFactory)} can be used to provide an executor to run
    * message processor callbacks.
    *
    * @param subscription the subscription from which to pull messages

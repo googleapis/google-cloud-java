@@ -26,6 +26,7 @@ import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 import com.google.cloud.AsyncPage;
+import com.google.cloud.GrpcServiceOptions.ExecutorFactory;
 import com.google.cloud.Page;
 import com.google.cloud.RetryParams;
 import com.google.cloud.pubsub.MessageConsumerImplTest.TestPullFuture;
@@ -1405,8 +1406,10 @@ public class PubSubImplTest {
     EasyMock.expect(options.rpc()).andReturn(pubsubRpcMock);
     EasyMock.expect(options.projectId()).andReturn(PROJECT);
     EasyMock.replay(options);
+    ExecutorFactory executorFactoryMock = EasyMock.createStrictMock(ExecutorFactory.class);
     ExecutorService executorServiceMock = EasyMock.createStrictMock(ExecutorService.class);
-    executorServiceMock.shutdown();
+    EasyMock.expect(executorFactoryMock.get()).andReturn(executorServiceMock);
+    executorFactoryMock.release(executorServiceMock);
     PullRequest request = PullRequest.newBuilder()
         .setSubscription(SUBSCRIPTION_NAME_PB)
         .setMaxMessages(42)
@@ -1421,9 +1424,9 @@ public class PubSubImplTest {
         return new TestPullFuture(response);
       }
     });
-    EasyMock.replay(pubsubRpcMock, renewerMock, executorServiceMock);
+    EasyMock.replay(pubsubRpcMock, renewerMock, executorFactoryMock, executorServiceMock);
     PullOption[] options =
-        {PullOption.maxQueuedCallbacks(42), PullOption.executor(executorServiceMock, true)};
+        {PullOption.maxQueuedCallbacks(42), PullOption.executorFactory(executorFactoryMock)};
     try (MessageConsumer consumer = pubsub.pullAsync(SUBSCRIPTION, DO_NOTHING, options)) {
       latch.await();
     }

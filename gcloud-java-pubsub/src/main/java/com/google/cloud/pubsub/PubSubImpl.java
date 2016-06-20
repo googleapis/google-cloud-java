@@ -18,7 +18,7 @@ package com.google.cloud.pubsub;
 
 import static com.google.cloud.pubsub.PubSub.ListOption.OptionType.PAGE_SIZE;
 import static com.google.cloud.pubsub.PubSub.ListOption.OptionType.PAGE_TOKEN;
-import static com.google.cloud.pubsub.PubSub.PullOption.OptionType.EXECUTOR;
+import static com.google.cloud.pubsub.PubSub.PullOption.OptionType.EXECUTOR_FACTORY;
 import static com.google.cloud.pubsub.PubSub.PullOption.OptionType.MAX_QUEUED_CALLBACKS;
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.util.concurrent.Futures.lazyTransform;
@@ -515,7 +515,7 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
     Map<Option.OptionType, ?> optionMap = optionMap(options);
     return MessageConsumerImpl.builder(options(), subscription, ackDeadlineRenewer, callback)
         .maxQueuedCallbacks(MAX_QUEUED_CALLBACKS.getInteger(optionMap))
-        .executorFactory(EXECUTOR.getExecutorFactory(optionMap))
+        .executorFactory(EXECUTOR_FACTORY.getExecutorFactory(optionMap))
         .build();
   }
 
