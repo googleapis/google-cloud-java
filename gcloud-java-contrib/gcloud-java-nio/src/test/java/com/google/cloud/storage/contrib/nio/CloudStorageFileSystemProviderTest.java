@@ -391,7 +391,7 @@ public class CloudStorageFileSystemProviderTest {
   }
 
   @Test
-  public void testExists_trailingSlash_disablePseudoDirectories() {
+  public void testExists_trailingSlash_disablePseudoDirectories() throws IOException  {
     try (CloudStorageFileSystem fs = forBucket("military", usePseudoDirectories(false))) {
       assertThat(Files.exists(fs.getPath("fashion/"))).isFalse();
     }
@@ -547,7 +547,7 @@ public class CloudStorageFileSystemProviderTest {
   }
 
   @Test
-  public void testIsDirectory_trailingSlash_pseudoDirectoriesDisabled_false() {
+  public void testIsDirectory_trailingSlash_pseudoDirectoriesDisabled_false() throws IOException  {
     try (CloudStorageFileSystem fs = forBucket("doodle", usePseudoDirectories(false))) {
       assertThat(Files.isDirectory(fs.getPath("fundir/"))).isFalse();
     }
