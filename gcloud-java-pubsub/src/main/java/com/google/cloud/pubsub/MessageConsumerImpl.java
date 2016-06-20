@@ -37,7 +37,6 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
@@ -75,9 +74,38 @@ final class MessageConsumerImpl implements MessageConsumer {
   private final int maxQueuedCallbacks;
   private final Object futureLock = new Object();
   private final Runnable consumerRunnable;
+  private final RestartPolicy restartPolicy;
   private boolean closed;
   private Future<?> scheduledFuture;
   private PullFuture pullerFuture;
+
+  /**
+   * Interface for policies according to which the consumer should be restarted.
+   */
+  interface RestartPolicy {
+
+    boolean shouldRestart(int queuedCallbacks);
+  }
+
+  /**
+   * Default restart policy. Restarts the consumer once {@code restartThreshold} messages out of
+   * {@code maxQueuedCallbacks} have already been processed.
+   */
+  static class DefaultRestartPolicy implements RestartPolicy {
+
+    final int maxQueuedCallbacks;
+    final int restartThreshold;
+
+    DefaultRestartPolicy(int maxQueuedCallbacks, int restartThreshold) {
+      this.maxQueuedCallbacks = maxQueuedCallbacks;
+      this.restartThreshold = restartThreshold;
+    }
+
+    @Override
+    public boolean shouldRestart(int queuedCallbacks) {
+      return (maxQueuedCallbacks - queuedCallbacks) >= restartThreshold;
+    }
+  }
 
   /**
    * Default executor factory for the message processor executor. By default a single-threaded
@@ -127,6 +155,33 @@ final class MessageConsumerImpl implements MessageConsumer {
         }
       });
     }
+
+    private PullRequest createPullRequest() {
+      return PullRequest.newBuilder()
+          .setSubscription(formatSubscriptionName(pubsubOptions.projectId(), subscription))
+          .setMaxMessages(maxQueuedCallbacks - queuedCallbacks.get())
+          .setReturnImmediately(false)
+          .build();
+    }
+
+    private Runnable ackingRunnable(final ReceivedMessage receivedMessage) {
+      return new Runnable() {
+        @Override
+        public void run() {
+          try {
+            messageProcessor.process(receivedMessage);
+            pubsub.ackAsync(receivedMessage.subscription(), receivedMessage.ackId());
+          } catch (Exception ex) {
+            pubsub.nackAsync(receivedMessage.subscription(), receivedMessage.ackId());
+          } finally {
+            deadlineRenewer.remove(receivedMessage.subscription(), receivedMessage.ackId());
+            queuedCallbacks.decrementAndGet();
+            // We can now pull more messages, according to the restart policy.
+            restartIfNeeded();
+          }
+        }
+      };
+    }
   }
 
   private MessageConsumerImpl(Builder builder) {
@@ -138,47 +193,24 @@ final class MessageConsumerImpl implements MessageConsumer {
     this.deadlineRenewer = builder.deadlineRenewer;
     this.queuedCallbacks = new AtomicInteger();
     this.timer = SharedResourceHolder.get(TIMER);
-    this.executorFactory = firstNonNull(builder.executorFactory, new DefaultExecutorFactory());
+    this.executorFactory =
+        builder.executorFactory != null ? builder.executorFactory : new DefaultExecutorFactory();
     this.executor = executorFactory.get();
     this.maxQueuedCallbacks = firstNonNull(builder.maxQueuedCallbacks, MAX_QUEUED_CALLBACKS);
     this.consumerRunnable = new ConsumerRunnable();
+    int restartThreshold = builder.restartThreshold != null ? builder.restartThreshold
+        : this.maxQueuedCallbacks / 2;
+    this.restartPolicy = new DefaultRestartPolicy(maxQueuedCallbacks, restartThreshold);
     nextPull();
   }
 
-  private Runnable ackingRunnable(final ReceivedMessage receivedMessage) {
-    return new Runnable() {
-      @Override
-      public void run() {
-        try {
-          messageProcessor.process(receivedMessage);
-          pubsub.ackAsync(receivedMessage.subscription(), receivedMessage.ackId());
-        } catch (Exception ex) {
-          pubsub.nackAsync(receivedMessage.subscription(), receivedMessage.ackId());
-        } finally {
-          deadlineRenewer.remove(receivedMessage.subscription(), receivedMessage.ackId());
-          queuedCallbacks.decrementAndGet();
-          // We can now pull more messages. We do not pull immediately to possibly wait for other
-          // callbacks to end
-          scheduleNextPull(500, TimeUnit.MILLISECONDS);
-        }
-      }
-    };
-  }
-
-  private PullRequest createPullRequest() {
-    return PullRequest.newBuilder()
-        .setSubscription(formatSubscriptionName(pubsubOptions.projectId(), subscription))
-        .setMaxMessages(maxQueuedCallbacks - queuedCallbacks.get())
-        .setReturnImmediately(false)
-        .build();
-  }
-
-  private void scheduleNextPull(long delay, TimeUnit timeUnit) {
+  private void restartIfNeeded() {
     synchronized (futureLock) {
-      if (closed || scheduledFuture != null) {
+      if (closed || scheduledFuture != null
+          || !restartPolicy.shouldRestart(queuedCallbacks.get())) {
         return;
       }
-      scheduledFuture = timer.schedule(consumerRunnable, delay, timeUnit);
+      scheduledFuture = timer.submit(consumerRunnable);
     }
   }
 
@@ -217,6 +249,7 @@ final class MessageConsumerImpl implements MessageConsumer {
     private final MessageProcessor messageProcessor;
     private Integer maxQueuedCallbacks;
     private ExecutorFactory<ExecutorService> executorFactory;
+    private Integer restartThreshold;
 
     Builder(PubSubOptions pubsubOptions, String subscription, AckDeadlineRenewer deadlineRenewer,
         MessageProcessor messageProcessor) {
@@ -240,6 +273,16 @@ final class MessageConsumerImpl implements MessageConsumer {
      */
     Builder executorFactory(ExecutorFactory<ExecutorService> executorFactory) {
       this.executorFactory = executorFactory;
+      return this;
+    }
+
+    /**
+     * Sets the restart threshold. If the consumer was interrupted for reaching the maximum number
+     * of queued callbacks, it will be restarted only once at least {@code restartThreshold}
+     * callbacks have completed their execution.
+     */
+    Builder restartThreshold(Integer restartThreshold) {
+      this.restartThreshold = restartThreshold;
       return this;
     }
 
