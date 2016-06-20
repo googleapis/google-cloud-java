@@ -16,7 +16,123 @@
 
 package com.google.cloud.logging;
 
+import com.google.cloud.AsyncPage;
+import com.google.cloud.Page;
 import com.google.cloud.Service;
 
+import java.util.Map;
+import java.util.concurrent.Future;
+
 public interface Logging extends AutoCloseable, Service<LoggingOptions> {
+
+  /**
+   * Class for specifying options for listing sinks, monitored resources and monitored resource
+   * descriptors.
+   */
+  final class ListOption extends Option {
+
+    private static final long serialVersionUID = -6857294816115909271L;
+
+    enum OptionType implements Option.OptionType {
+      PAGE_SIZE, PAGE_TOKEN;
+
+      @SuppressWarnings("unchecked")
+      <T> T get(Map<Option.OptionType, ?> options) {
+        return (T) options.get(this);
+      }
+    }
+
+    private ListOption(OptionType option, Object value) {
+      super(option, value);
+    }
+
+    /**
+     * Returns an option to specify the maximum number of resources returned per page.
+     */
+    public static ListOption pageSize(int pageSize) {
+      return new ListOption(OptionType.PAGE_SIZE, pageSize);
+    }
+
+    /**
+     * Returns an option to specify the page token from which to start listing resources.
+     */
+    public static ListOption pageToken(String pageToken) {
+      return new ListOption(OptionType.PAGE_TOKEN, pageToken);
+    }
+  }
+
+  /**
+   * Creates a new sink.
+   *
+   * @return the created sink
+   * @throws LoggingException upon failure
+   */
+  Sink create(SinkInfo sink);
+
+  /**
+   * Sends a request for creating a sink. This method returns a {@code Future} object to consume the
+   * result. {@link Future#get()} returns the created sink or {@code null} if not found.
+   */
+  Future<Sink> createAsync(SinkInfo sink);
+
+  /**
+   * Updates a sink or creates one if it does not exist.
+   *
+   * @return the created sink
+   * @throws LoggingException upon failure
+   */
+  Sink update(SinkInfo sink);
+
+  /**
+   * Sends a request for updating a sink (or creating it, if it does not exist). This method returns
+   * a {@code Future} object to consume the result. {@link Future#get()} returns the
+   * updated/created sink or {@code null} if not found.
+   */
+  Future<Sink> updateAsync(SinkInfo sink);
+
+  /**
+   * Returns the requested sink or {@code null} if not found.
+   *
+   * @throws LoggingException upon failure
+   */
+  Sink getSink(String sink);
+
+  /**
+   * Sends a request for getting a sink. This method returns a {@code Future} object to consume the
+   * result. {@link Future#get()} returns the requested sink or {@code null} if not found.
+   *
+   * @throws LoggingException upon failure
+   */
+  Future<Sink> getSinkAsync(String sink);
+
+  /**
+   * Lists the sinks. This method returns a {@link Page} object that can be used to consume
+   * paginated results. Use {@link ListOption} to specify the page size or the page token from which
+   * to start listing sinks.
+   *
+   * @throws LoggingException upon failure
+   */
+  Page<Sink> listSinks(ListOption... options);
+
+  /**
+   * Sends a request for listing sinks. This method returns a {@code Future} object to consume
+   * the result. {@link Future#get()} returns an {@link AsyncPage} object that can be used to
+   * asynchronously handle paginated results. Use {@link ListOption} to specify the page size or the
+   * page token from which to start listing sinks.
+   */
+  Future<AsyncPage<Sink>> listSinksAsync(ListOption... options);
+
+  /**
+   * Deletes the requested sink.
+   *
+   * @return {@code true} if the sink was deleted, {@code false} if it was not found
+   */
+  boolean deleteSink(String sink);
+
+  /**
+   * Sends a request for deleting a sink. This method returns a {@code Future} object to consume the
+   * result. {@link Future#get()} returns {@code true} if the sink was deleted, {@code false} if it
+   * was not found.
+   */
+  Future<Boolean> deleteSinkAsync(String sink);
 }

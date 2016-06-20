@@ -37,9 +37,7 @@ public class LoggingOptions extends GrpcServiceOptions<Logging, LoggingRpc, Logg
 
     @Override
     public Logging create(LoggingOptions options) {
-      // todo(mziccard) uncomment once LoggingImpl is implemented
-      // return new LoggingImpl(options);
-      return null;
+      return new LoggingImpl(options);
     }
   }
 
