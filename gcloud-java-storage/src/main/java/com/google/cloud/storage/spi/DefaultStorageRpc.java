@@ -467,10 +467,13 @@ public class DefaultStorageRpc implements StorageRpc {
           .setIfMetagenerationNotMatch(IF_METAGENERATION_NOT_MATCH.getLong(options))
           .setIfGenerationMatch(IF_GENERATION_MATCH.getLong(options))
           .setIfGenerationNotMatch(IF_GENERATION_NOT_MATCH.getLong(options));
+      if (position<0) {
+        throw new IllegalArgumentException("position should be non-negative, is: " + position);
+      }
       StringBuilder range = new StringBuilder();
       range.append("bytes=").append(position).append("-").append(position + bytes - 1);
       req.getRequestHeaders().setRange(range.toString());
-      ByteArrayOutputStream output = new ByteArrayOutputStream();
+      ByteArrayOutputStream output = new ByteArrayOutputStream(bytes);
       req.executeMedia().download(output);
       String etag = req.getLastResponseHeaders().getETag();
       return Tuple.of(etag, output.toByteArray());

@@ -74,7 +74,7 @@ public class ParallelCountBytes {
 
     @Override
     public WorkUnit call() throws IOException {
-      int pos = blockSize * blockIndex;
+      long pos = ((long)blockSize) * blockIndex;
       if (pos > chan.size()) {
         return this;
       }
@@ -89,6 +89,7 @@ public class ParallelCountBytes {
       buf.flip();
       return this;
     }
+
 
     public void close() throws IOException {
       chan.close();
