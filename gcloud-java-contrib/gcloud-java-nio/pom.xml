@@ -75,30 +75,6 @@
   </dependencies>
   <build>
     <plugins>
-      <!-- require the License header in all java files -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-checkstyle-plugin</artifactId>
-        <version>2.17</version>
-        <inherited>true</inherited>
-        <executions>
-          <execution>
-            <id>checkstyle</id>
-            <phase>validate</phase>
-            <goals>
-              <goal>check</goal>
-            </goals>
-            <configuration>
-              <configLocation>gcloud-java-contrib/gcloud-java-nio/src/main/checkstyle/license-checks.xml</configLocation>
-              <consoleOutput>true</consoleOutput>
-              <failOnViolation>true</failOnViolation>
-              <violationSeverity>error</violationSeverity>
-              <failsOnError>true</failsOnError>
-              <includeTestSourceDirectory>true</includeTestSourceDirectory>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>exec-maven-plugin</artifactId>
