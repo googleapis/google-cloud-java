@@ -118,7 +118,7 @@ final class CloudStorageReadChannel implements SeekableByteChannel {
       if (newPosition == position) {
         return this;
       }
-      channel.seek((int) newPosition);
+      channel.seek(newPosition);
       position = newPosition;
       return this;
     }
