@@ -31,6 +31,7 @@ import static com.google.cloud.storage.spi.StorageRpc.Option.PREDEFINED_DEFAULT_
 import static com.google.cloud.storage.spi.StorageRpc.Option.PREFIX;
 import static com.google.cloud.storage.spi.StorageRpc.Option.VERSIONS;
 import static com.google.common.base.MoreObjects.firstNonNull;
+import static com.google.common.base.Preconditions.checkArgument;
 import static java.net.HttpURLConnection.HTTP_NOT_FOUND;
 import static javax.servlet.http.HttpServletResponse.SC_REQUESTED_RANGE_NOT_SATISFIABLE;
 
@@ -467,9 +468,7 @@ public class DefaultStorageRpc implements StorageRpc {
           .setIfMetagenerationNotMatch(IF_METAGENERATION_NOT_MATCH.getLong(options))
           .setIfGenerationMatch(IF_GENERATION_MATCH.getLong(options))
           .setIfGenerationNotMatch(IF_GENERATION_NOT_MATCH.getLong(options));
-      if (position<0) {
-        throw new IllegalArgumentException("position should be non-negative, is: " + position);
-      }
+      checkArgument(position >= 0, "Position should be non-negative, is %d", position);
       StringBuilder range = new StringBuilder();
       range.append("bytes=").append(position).append("-").append(position + bytes - 1);
       req.getRequestHeaders().setRange(range.toString());
