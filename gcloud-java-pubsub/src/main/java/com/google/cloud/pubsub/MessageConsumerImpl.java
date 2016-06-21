@@ -74,36 +74,36 @@ final class MessageConsumerImpl implements MessageConsumer {
   private final int maxQueuedCallbacks;
   private final Object futureLock = new Object();
   private final Runnable consumerRunnable;
-  private final RestartPolicy restartPolicy;
+  private final NextPullPolicy pullPolicy;
   private boolean closed;
   private Future<?> scheduledFuture;
   private PullFuture pullerFuture;
 
   /**
-   * Interface for policies according to which the consumer should be restarted.
+   * Interface for policies according to which the consumer should pull messages.
    */
-  interface RestartPolicy {
+  interface NextPullPolicy {
 
-    boolean shouldRestart(int queuedCallbacks);
+    boolean shouldPull(int queuedCallbacks);
   }
 
   /**
-   * Default restart policy. Restarts the consumer once {@code restartThreshold} messages out of
-   * {@code maxQueuedCallbacks} have already been processed.
+   * Default pull policy. The consumer will pull again once {@code nextPullThreshold} messages out
+   * of {@code maxQueuedCallbacks} have been processed.
    */
-  static class DefaultRestartPolicy implements RestartPolicy {
+  static class DefaultNextPullPolicy implements NextPullPolicy {
 
     final int maxQueuedCallbacks;
-    final int restartThreshold;
+    final int nextPullThreshold;
 
-    DefaultRestartPolicy(int maxQueuedCallbacks, int restartThreshold) {
+    DefaultNextPullPolicy(int maxQueuedCallbacks, int nextPullThreshold) {
       this.maxQueuedCallbacks = maxQueuedCallbacks;
-      this.restartThreshold = restartThreshold;
+      this.nextPullThreshold = nextPullThreshold;
     }
 
     @Override
-    public boolean shouldRestart(int queuedCallbacks) {
-      return (maxQueuedCallbacks - queuedCallbacks) >= restartThreshold;
+    public boolean shouldPull(int queuedCallbacks) {
+      return (maxQueuedCallbacks - queuedCallbacks) >= nextPullThreshold;
     }
   }
 
@@ -176,8 +176,8 @@ final class MessageConsumerImpl implements MessageConsumer {
           } finally {
             deadlineRenewer.remove(receivedMessage.subscription(), receivedMessage.ackId());
             queuedCallbacks.decrementAndGet();
-            // We can now pull more messages, according to the restart policy.
-            restartIfNeeded();
+            // We can now pull more messages, according to the next pull policy.
+            pullIfNeeded();
           }
         }
       };
@@ -198,16 +198,15 @@ final class MessageConsumerImpl implements MessageConsumer {
     this.executor = executorFactory.get();
     this.maxQueuedCallbacks = firstNonNull(builder.maxQueuedCallbacks, MAX_QUEUED_CALLBACKS);
     this.consumerRunnable = new ConsumerRunnable();
-    int restartThreshold = builder.restartThreshold != null ? builder.restartThreshold
+    int nextPullThreshold = builder.nextPullThreshold != null ? builder.nextPullThreshold
         : this.maxQueuedCallbacks / 2;
-    this.restartPolicy = new DefaultRestartPolicy(maxQueuedCallbacks, restartThreshold);
+    this.pullPolicy = new DefaultNextPullPolicy(maxQueuedCallbacks, nextPullThreshold);
     nextPull();
   }
 
-  private void restartIfNeeded() {
+  private void pullIfNeeded() {
     synchronized (futureLock) {
-      if (closed || scheduledFuture != null
-          || !restartPolicy.shouldRestart(queuedCallbacks.get())) {
+      if (closed || scheduledFuture != null || !pullPolicy.shouldPull(queuedCallbacks.get())) {
         return;
       }
       scheduledFuture = timer.submit(consumerRunnable);
@@ -249,7 +248,7 @@ final class MessageConsumerImpl implements MessageConsumer {
     private final MessageProcessor messageProcessor;
     private Integer maxQueuedCallbacks;
     private ExecutorFactory<ExecutorService> executorFactory;
-    private Integer restartThreshold;
+    private Integer nextPullThreshold;
 
     Builder(PubSubOptions pubsubOptions, String subscription, AckDeadlineRenewer deadlineRenewer,
         MessageProcessor messageProcessor) {
@@ -277,12 +276,12 @@ final class MessageConsumerImpl implements MessageConsumer {
     }
 
     /**
-     * Sets the restart threshold. If the consumer was interrupted for reaching the maximum number
-     * of queued callbacks, it will be restarted only once at least {@code restartThreshold}
-     * callbacks have completed their execution.
+     * Sets a threshold for the next pull. If the consumer stopped pulling due to reaching the
+     * maximum number of queued callbacks, it will be pull again only once at least
+     * {@code nextPullThreshold} callbacks have completed their execution.
      */
-    Builder restartThreshold(Integer restartThreshold) {
-      this.restartThreshold = restartThreshold;
+    Builder nextPullThreshold(Integer nextPullThreshold) {
+      this.nextPullThreshold = nextPullThreshold;
       return this;
     }
 
