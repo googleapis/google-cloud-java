@@ -40,19 +40,24 @@ import javax.annotation.concurrent.NotThreadSafe;
  *
  * <p>This class is <i>not</i> thread-safe. It's also (currently) limited in the following ways:
  * <ul>
- * <li>Partially Supported (not all variants implemented, see code for details)
+ * <li>Supported
  *   <ul>
- *   <li>create
- *   <li>get
- *   <li>delete
- *   <li>directory listing
+ *   <li>object create
+ *   <li>object get
+ *   <li>object delete
+ *   <li>list the contents of a bucket
  *   </ul>
  * <li>Unsupported
  *   <ul>
+ *   <li>bucket create
+ *   <li>bucket get
+ *   <li>bucket delete
+ *   <li>list all buckets
  *   <li>generations
  *   <li>file attributes
  *   <li>patch
  *   <li>continueRewrite
+ *   <li>createBatch
  *   </ul>
  * </ul>
  */
