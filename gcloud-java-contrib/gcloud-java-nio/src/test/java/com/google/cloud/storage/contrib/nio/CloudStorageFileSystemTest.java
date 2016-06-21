@@ -19,7 +19,8 @@ package com.google.cloud.storage.contrib.nio;
 import static com.google.common.truth.Truth.assertThat;
 import static java.nio.charset.StandardCharsets.UTF_8;
 
-import com.google.cloud.storage.testing.LocalGcsHelper;
+import com.google.cloud.storage.StorageOptions;
+import com.google.cloud.storage.testing.LocalStorageHelper;
 import com.google.common.testing.EqualsTester;
 import com.google.common.testing.NullPointerTester;
 
@@ -56,7 +57,7 @@ public class CloudStorageFileSystemTest {
 
   @Before
   public void before() {
-    CloudStorageFileSystemProvider.setGCloudOptions(LocalGcsHelper.options());
+    CloudStorageFileSystemProvider.setGCloudOptions(LocalStorageHelper.options());
   }
 
   @Test
@@ -130,7 +131,8 @@ public class CloudStorageFileSystemTest {
       NullPointerTester tester =
           new NullPointerTester()
               .ignore(CloudStorageFileSystem.class.getMethod("equals", Object.class))
-              .setDefault(CloudStorageConfiguration.class, CloudStorageConfiguration.DEFAULT);
+              .setDefault(CloudStorageConfiguration.class, CloudStorageConfiguration.DEFAULT)
+              .setDefault(StorageOptions.class, LocalStorageHelper.options());
       tester.testAllPublicStaticMethods(CloudStorageFileSystem.class);
       tester.testAllPublicInstanceMethods(fs);
     }
