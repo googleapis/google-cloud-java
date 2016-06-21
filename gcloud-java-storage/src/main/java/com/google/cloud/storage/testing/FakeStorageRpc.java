@@ -37,9 +37,24 @@ import javax.annotation.concurrent.NotThreadSafe;
 
 /**
  * A bare-bones in-memory implementation of Storage, meant for testing.
- * See LocalGcsHelper.
  *
- * This class is NOT thread-safe.
+ * <p>This class is <i>not</i> thread-safe. It's also (currently) limited in the following ways:
+ * <ul>
+ * <li>Partially Supported
+ *   <ul>
+ *   <li>create
+ *   <li>get
+ *   <li>delete
+ *   <li>directory listing
+ *   </ul>
+ * <li>Unsupported
+ *   <ul>
+ *   <li>generations
+ *   <li>file attributes
+ *   <li>patch
+ *   <li>continueRewrite
+ *   </ul>
+ * </ul>
  */
 @NotThreadSafe
 public class FakeStorageRpc implements StorageRpc {
