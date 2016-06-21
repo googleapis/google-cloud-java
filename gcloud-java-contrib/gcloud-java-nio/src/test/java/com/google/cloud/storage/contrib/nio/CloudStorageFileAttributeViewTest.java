@@ -21,7 +21,7 @@ import static java.nio.charset.StandardCharsets.UTF_8;
 
 import com.google.common.testing.EqualsTester;
 import com.google.common.testing.NullPointerTester;
-import com.google.cloud.storage.testing.LocalGcsHelper;
+import com.google.cloud.storage.testing.LocalStorageHelper;
 
 import org.junit.Before;
 import org.junit.Rule;
@@ -52,7 +52,7 @@ public class CloudStorageFileAttributeViewTest {
 
   @Before
   public void before() {
-    CloudStorageFileSystemProvider.setGCloudOptions(LocalGcsHelper.options());
+    CloudStorageFileSystemProvider.setGCloudOptions(LocalStorageHelper.options());
     path = Paths.get(URI.create("gs://red/water"));
   }
 

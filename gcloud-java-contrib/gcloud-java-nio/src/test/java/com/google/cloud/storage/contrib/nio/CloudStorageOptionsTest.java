@@ -21,7 +21,7 @@ import static java.nio.charset.StandardCharsets.UTF_8;
 
 import com.google.common.testing.NullPointerTester;
 import com.google.cloud.storage.Acl;
-import com.google.cloud.storage.testing.LocalGcsHelper;
+import com.google.cloud.storage.testing.LocalStorageHelper;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -42,7 +42,7 @@ public class CloudStorageOptionsTest {
 
   @Before
   public void before() {
-    CloudStorageFileSystemProvider.setGCloudOptions(LocalGcsHelper.options());
+    CloudStorageFileSystemProvider.setGCloudOptions(LocalStorageHelper.options());
   }
 
   @Test

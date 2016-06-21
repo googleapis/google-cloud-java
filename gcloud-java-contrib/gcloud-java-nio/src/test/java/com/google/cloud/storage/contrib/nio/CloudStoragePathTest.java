@@ -22,7 +22,7 @@ import static com.google.cloud.storage.contrib.nio.CloudStorageFileSystem.forBuc
 import com.google.common.collect.Iterables;
 import com.google.common.testing.EqualsTester;
 import com.google.common.testing.NullPointerTester;
-import com.google.cloud.storage.testing.LocalGcsHelper;
+import com.google.cloud.storage.testing.LocalStorageHelper;
 
 import org.junit.Before;
 import org.junit.Rule;
@@ -48,7 +48,7 @@ public class CloudStoragePathTest {
 
   @Before
   public void before() {
-    CloudStorageFileSystemProvider.setGCloudOptions(LocalGcsHelper.options());
+    CloudStorageFileSystemProvider.setGCloudOptions(LocalStorageHelper.options());
   }
 
   @Test
