@@ -28,7 +28,7 @@ import static java.nio.file.StandardOpenOption.WRITE;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.testing.NullPointerTester;
-import com.google.cloud.storage.testing.LocalGcsHelper;
+import com.google.cloud.storage.testing.LocalStorageHelper;
 
 import org.junit.Before;
 import org.junit.Rule;
@@ -91,7 +91,7 @@ public class CloudStorageFileSystemProviderTest {
 
   @Before
   public void before() {
-    CloudStorageFileSystemProvider.setGCloudOptions(LocalGcsHelper.options());
+    CloudStorageFileSystemProvider.setGCloudOptions(LocalStorageHelper.options());
   }
 
   @Test
