@@ -38,6 +38,7 @@ import org.junit.rules.Timeout;
 
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Future;
 
 public class MessageConsumerImplTest {
 
@@ -213,20 +214,33 @@ public class MessageConsumerImplTest {
     PullResponse response1 = PullResponse.newBuilder()
         .addReceivedMessages(MESSAGE1_PB)
         .build();
-    PullResponse response2 = PullResponse.newBuilder()
+    final PullResponse response2 = PullResponse.newBuilder()
         .addReceivedMessages(MESSAGE2_PB)
         .build();
     EasyMock.expect(options.rpc()).andReturn(pubsubRpc);
     EasyMock.expect(options.service()).andReturn(pubsub);
     EasyMock.expect(options.projectId()).andReturn(PROJECT).anyTimes();
+    final CountDownLatch nextPullLatch = new CountDownLatch(1);
     final CountDownLatch latch = new CountDownLatch(2);
     EasyMock.expect(pubsub.options()).andReturn(options);
-    EasyMock.expect(pubsub.ackAsync(SUBSCRIPTION, ACK_ID1)).andReturn(null);
+    EasyMock.expect(pubsub.ackAsync(SUBSCRIPTION, ACK_ID1)).andAnswer(new IAnswer<Future<Void>>() {
+      @Override
+      public Future<Void> answer() throws Throwable {
+        nextPullLatch.await();
+        return null;
+      }
+    });
     EasyMock.expect(pubsub.options()).andReturn(options);
     EasyMock.expect(pubsub.ackAsync(SUBSCRIPTION, ACK_ID2)).andReturn(null);
     EasyMock.replay(pubsub);
     EasyMock.expect(pubsubRpc.pull(request1)).andReturn(new TestPullFuture(response1));
-    EasyMock.expect(pubsubRpc.pull(request2)).andReturn(new TestPullFuture(response2));
+    EasyMock.expect(pubsubRpc.pull(request2)).andAnswer(new IAnswer<PullFuture>() {
+      @Override
+      public PullFuture answer() throws Throwable {
+        nextPullLatch.countDown();
+        return new TestPullFuture(response2);
+      }
+    });
     EasyMock.expect(pubsubRpc.pull(EasyMock.<PullRequest>anyObject()))
         .andReturn(new TestPullFuture(EMPTY_RESPONSE)).anyTimes();
     renewer.add(SUBSCRIPTION, ACK_ID1);
@@ -253,20 +267,33 @@ public class MessageConsumerImplTest {
     PullResponse response1 = PullResponse.newBuilder()
         .addReceivedMessages(MESSAGE1_PB)
         .build();
-    PullResponse response2 = PullResponse.newBuilder()
+    final PullResponse response2 = PullResponse.newBuilder()
         .addReceivedMessages(MESSAGE2_PB)
         .build();
     EasyMock.expect(options.rpc()).andReturn(pubsubRpc);
     EasyMock.expect(options.service()).andReturn(pubsub);
     EasyMock.expect(options.projectId()).andReturn(PROJECT).anyTimes();
+    final CountDownLatch nextPullLatch = new CountDownLatch(1);
     final CountDownLatch latch = new CountDownLatch(2);
     EasyMock.expect(pubsub.options()).andReturn(options);
-    EasyMock.expect(pubsub.nackAsync(SUBSCRIPTION, ACK_ID1)).andReturn(null);
+    EasyMock.expect(pubsub.nackAsync(SUBSCRIPTION, ACK_ID1)).andAnswer(new IAnswer<Future<Void>>() {
+      @Override
+      public Future<Void> answer() throws Throwable {
+        nextPullLatch.await();
+        return null;
+      }
+    });
     EasyMock.expect(pubsub.options()).andReturn(options);
     EasyMock.expect(pubsub.nackAsync(SUBSCRIPTION, ACK_ID2)).andReturn(null);
     EasyMock.replay(pubsub);
     EasyMock.expect(pubsubRpc.pull(request1)).andReturn(new TestPullFuture(response1));
-    EasyMock.expect(pubsubRpc.pull(request2)).andReturn(new TestPullFuture(response2));
+    EasyMock.expect(pubsubRpc.pull(request2)).andAnswer(new IAnswer<PullFuture>() {
+      @Override
+      public PullFuture answer() throws Throwable {
+        nextPullLatch.countDown();
+        return new TestPullFuture(response2);
+      }
+    });
     EasyMock.expect(pubsubRpc.pull(EasyMock.<PullRequest>anyObject()))
         .andReturn(new TestPullFuture(EMPTY_RESPONSE)).anyTimes();
     renewer.add(SUBSCRIPTION, ACK_ID1);
@@ -289,22 +316,35 @@ public class MessageConsumerImplTest {
   @Test
   public void testMessageConsumerMaxCallbacksAck() throws Exception {
     PullRequest request1 = pullRequest(2);
-    PullRequest request2 = pullRequest(2);
-    PullResponse otherPullResponse = PullResponse.newBuilder()
+    PullRequest request2 = pullRequest(1);
+    final PullResponse otherPullResponse = PullResponse.newBuilder()
         .addReceivedMessages(MESSAGE1_PB)
         .build();
     EasyMock.expect(options.rpc()).andReturn(pubsubRpc);
     EasyMock.expect(options.service()).andReturn(pubsub);
     EasyMock.expect(options.projectId()).andReturn(PROJECT).anyTimes();
     EasyMock.expect(pubsub.options()).andReturn(options).times(2);
+    final CountDownLatch nextPullLatch = new CountDownLatch(1);
     final CountDownLatch latch = new CountDownLatch(3);
     EasyMock.expect(pubsub.ackAsync(SUBSCRIPTION, ACK_ID1)).andReturn(null);
-    EasyMock.expect(pubsub.ackAsync(SUBSCRIPTION, ACK_ID2)).andReturn(null);
+    EasyMock.expect(pubsub.ackAsync(SUBSCRIPTION, ACK_ID2)).andAnswer(new IAnswer<Future<Void>>() {
+      @Override
+      public Future<Void> answer() throws Throwable {
+        nextPullLatch.await();
+        return null;
+      }
+    });
     EasyMock.expect(pubsub.options()).andReturn(options);
     EasyMock.expect(pubsub.ackAsync(SUBSCRIPTION, ACK_ID1)).andReturn(null);
     EasyMock.replay(pubsub);
     EasyMock.expect(pubsubRpc.pull(request1)).andReturn(new TestPullFuture(PULL_RESPONSE));
-    EasyMock.expect(pubsubRpc.pull(request2)).andReturn(new TestPullFuture(otherPullResponse));
+    EasyMock.expect(pubsubRpc.pull(request2)).andAnswer(new IAnswer<PullFuture>() {
+      @Override
+      public PullFuture answer() throws Throwable {
+        nextPullLatch.countDown();
+        return new TestPullFuture(otherPullResponse);
+      }
+    });
     EasyMock.expect(pubsubRpc.pull(EasyMock.<PullRequest>anyObject()))
         .andReturn(new TestPullFuture(EMPTY_RESPONSE)).anyTimes();
     renewer.add(SUBSCRIPTION, ACK_ID1);
@@ -331,22 +371,35 @@ public class MessageConsumerImplTest {
   @Test
   public void testMessageConsumerMaxCallbacksNack() throws Exception {
     PullRequest request1 = pullRequest(2);
-    PullRequest request2 = pullRequest(2);
-    PullResponse otherPullResponse = PullResponse.newBuilder()
+    PullRequest request2 = pullRequest(1);
+    final PullResponse otherPullResponse = PullResponse.newBuilder()
         .addReceivedMessages(MESSAGE1_PB)
         .build();
     EasyMock.expect(options.rpc()).andReturn(pubsubRpc);
     EasyMock.expect(options.service()).andReturn(pubsub);
     EasyMock.expect(options.projectId()).andReturn(PROJECT).anyTimes();
     EasyMock.expect(pubsub.options()).andReturn(options).times(2);
+    final CountDownLatch nextPullLatch = new CountDownLatch(1);
     final CountDownLatch latch = new CountDownLatch(3);
     EasyMock.expect(pubsub.nackAsync(SUBSCRIPTION, ACK_ID1)).andReturn(null);
-    EasyMock.expect(pubsub.nackAsync(SUBSCRIPTION, ACK_ID2)).andReturn(null);
+    EasyMock.expect(pubsub.nackAsync(SUBSCRIPTION, ACK_ID2)).andAnswer(new IAnswer<Future<Void>>() {
+      @Override
+      public Future<Void> answer() throws Throwable {
+        nextPullLatch.await();
+        return null;
+      }
+    });
     EasyMock.expect(pubsub.options()).andReturn(options);
     EasyMock.expect(pubsub.nackAsync(SUBSCRIPTION, ACK_ID1)).andReturn(null);
     EasyMock.replay(pubsub);
     EasyMock.expect(pubsubRpc.pull(request1)).andReturn(new TestPullFuture(PULL_RESPONSE));
-    EasyMock.expect(pubsubRpc.pull(request2)).andReturn(new TestPullFuture(otherPullResponse));
+    EasyMock.expect(pubsubRpc.pull(request2)).andAnswer(new IAnswer<PullFuture>() {
+      @Override
+      public PullFuture answer() throws Throwable {
+        nextPullLatch.countDown();
+        return new TestPullFuture(otherPullResponse);
+      }
+    });
     EasyMock.expect(pubsubRpc.pull(EasyMock.<PullRequest>anyObject()))
         .andReturn(new TestPullFuture(EMPTY_RESPONSE)).anyTimes();
     renewer.add(SUBSCRIPTION, ACK_ID1);
