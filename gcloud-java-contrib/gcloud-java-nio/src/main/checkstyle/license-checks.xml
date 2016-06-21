@@ -6,6 +6,6 @@
   <module name="Header">
     <property name="fileExtensions" value="java"/>
     <property name="ignoreLines" value="2"/>
-    <property name="headerFile" value="src/main/checkstyle/java.header"/>
+    <property name="headerFile" value="gcloud-java-contrib/gcloud-java-nio/src/main/checkstyle/java.header"/>
   </module>
 </module>
