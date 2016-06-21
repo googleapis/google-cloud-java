@@ -79,32 +79,126 @@ public interface PubSubRpc extends AutoCloseable {
     void addCallback(final PullCallback callback);
   }
 
-  // in all cases root cause of ExecutionException is PubSubException
+  /**
+   * Sends a request to create a topic. This method returns a {@code Future} object to consume the
+   * result. {@link Future#get()} returns the created topic.
+   *
+   * @param topic the topic to create
+   */
   Future<Topic> create(Topic topic);
 
+  /**
+   * Sends a request to publish messages. This method returns a {@code Future} object to consume the
+   * result. {@link Future#get()} returns a response object containing the publish result.
+   *
+   * @param request the request object containing all of the parameters for the API call
+   */
   Future<PublishResponse> publish(PublishRequest request);
 
+  /**
+   * Sends a request to get a topic. This method returns a {@code Future} object to consume the
+   * result. {@link Future#get()} returns the requested topic or {@code null} if not found.
+   *
+   * @param request the request object containing all of the parameters for the API call
+   */
   Future<Topic> get(GetTopicRequest request);
 
+  /**
+   * Sends a request to list the topics in a project. This method returns a {@code Future} object to
+   * consume the result. {@link Future#get()} returns a response object containing the listing
+   * result.
+   *
+   * @param request the request object containing all of the parameters for the API call
+   */
   Future<ListTopicsResponse> list(ListTopicsRequest request);
 
+  /**
+   * Sends a request to list the subscriptions for a topic. This method returns a {@code Future}
+   * object to consume the result. {@link Future#get()} returns a response object containing the
+   * listing result.
+   *
+   * @param request the request object containing all of the parameters for the API call
+   */
   Future<ListTopicSubscriptionsResponse> list(ListTopicSubscriptionsRequest request);
 
+  /**
+   * Sends a request to delete a topic. This method returns a {@code Future} object to consume the
+   * result. {@link Future#get()} returns {@link Empty#getDefaultInstance()} or {@code null} if the
+   * topic was not found.
+   *
+   * @param request the request object containing all of the parameters for the API call
+   */
   Future<Empty> delete(DeleteTopicRequest request);
 
+  /**
+   * Sends a request to create a subscription. This method returns a {@code Future} object to
+   * consume the result. {@link Future#get()} returns the created subscription.
+   *
+   * @param subscription the subscription to create
+   */
   Future<Subscription> create(Subscription subscription);
 
+  /**
+   * Sends a request to get a subscription. This method returns a {@code Future} object to consume
+   * the result. {@link Future#get()} returns the requested subscription or {@code null} if not
+   * found.
+   *
+   * @param request the request object containing all of the parameters for the API call
+   */
   Future<Subscription> get(GetSubscriptionRequest request);
 
+  /**
+   * Sends a request to list the subscriptions in a project. This method returns a {@code Future}
+   * object to consume the result. {@link Future#get()} returns a response object containing the
+   * listing result.
+   *
+   * @param request the request object containing all of the parameters for the API call
+   */
   Future<ListSubscriptionsResponse> list(ListSubscriptionsRequest request);
 
+  /**
+   * Sends a request to delete a subscription. This method returns a {@code Future} object to
+   * consume the result. {@link Future#get()} returns {@link Empty#getDefaultInstance()} or
+   * {@code null} if the subscription was not found.
+   *
+   * @param request the request object containing all of the parameters for the API call
+   */
   Future<Empty> delete(DeleteSubscriptionRequest request);
 
+  /**
+   * Sends a request to modify the acknowledge deadline of a subscription. This method returns a
+   * {@code Future} object to consume the result. {@link Future#get()} returns
+   * {@link Empty#getDefaultInstance()} if the request was issued correctly.
+   *
+   * @param request the request object containing all of the parameters for the API call
+   */
   Future<Empty> modify(ModifyAckDeadlineRequest request);
 
+  /**
+   * Sends a request to acknowledge messages for a subscription. This method returns a
+   * {@code Future} object to consume the result. {@link Future#get()} returns
+   * {@link Empty#getDefaultInstance()} if the request was issued correctly.
+   *
+   * @param request the request object containing all of the parameters for the API call
+   */
   Future<Empty> acknowledge(AcknowledgeRequest request);
 
+  /**
+   * Sends a request to pull messages from a subscription. This method returns a {@link PullFuture}
+   * object to consume the result. {@link PullFuture#get()} returns a response object containing the
+   * pulled messages. {@link PullFuture#addCallback(PullCallback)} can be used to register a
+   * callback for the request's completion.
+   *
+   * @param request the request object containing all of the parameters for the API call
+   */
   PullFuture pull(PullRequest request);
 
+  /**
+   * Sends a request to modify the push configuration of a subscription. This method returns a
+   * {@code Future} object to consume the result. {@link Future#get()} returns
+   * {@link Empty#getDefaultInstance()} if the request was issued correctly.
+   *
+   * @param request the request object containing all of the parameters for the API call
+   */
   Future<Empty> modify(ModifyPushConfigRequest request);
 }
