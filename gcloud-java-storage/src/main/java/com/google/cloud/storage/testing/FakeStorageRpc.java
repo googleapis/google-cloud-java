@@ -40,7 +40,7 @@ import javax.annotation.concurrent.NotThreadSafe;
  *
  * <p>This class is <i>not</i> thread-safe. It's also (currently) limited in the following ways:
  * <ul>
- * <li>Partially Supported
+ * <li>Partially Supported (not all variants implemented, see code for details)
  *   <ul>
  *   <li>create
  *   <li>get
