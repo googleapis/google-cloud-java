@@ -38,7 +38,7 @@ public interface ReadChannel extends ReadableByteChannel, Closeable, Restorable<
   @Override
   void close();
 
-  void seek(int position) throws IOException;
+  void seek(long position) throws IOException;
 
   /**
    * Sets the minimum size that will be read by a single RPC.
