@@ -28,6 +28,7 @@ import io.grpc.internal.SharedResourceHolder.Resource;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.util.Objects;
+import java.util.concurrent.ExecutorService;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
@@ -50,7 +51,7 @@ public abstract class GrpcServiceOptions<ServiceT extends Service<OptionsT>, Ser
   private final double timeoutMultiplier;
   private final int maxTimeout;
 
-  private transient ExecutorFactory executorFactory;
+  private transient ExecutorFactory<ScheduledExecutorService> executorFactory;
 
   /**
    * Shared thread pool executor.
@@ -73,30 +74,32 @@ public abstract class GrpcServiceOptions<ServiceT extends Service<OptionsT>, Ser
       };
 
   /**
-   * An interface for {@link ScheduledExecutorService} factories. Implementations of this interface
-   * can be used to provide an user-defined scheduled executor to execute requests. Any
-   * implementation of this interface must override the {@code get()} method to return the desired
-   * executor. The {@code release(executor)} method should be overriden to free resources used by
-   * the executor (if needed) according to application's logic.
+   * An interface for {@link ExecutorService} factories. Implementations of this interface can be
+   * used to provide an user-defined executor to execute requests. Any implementation of this
+   * interface must override the {@code get()} method to return the desired executor. The
+   * {@code release(executor)} method should be overriden to free resources used by the executor (if
+   * needed) according to application's logic.
    *
    * <p>Implementation must provide a public no-arg constructor. Loading of a factory implementation
    * is done via {@link java.util.ServiceLoader}.
+   *
+   * @param <T> the {@link ExecutorService} subclass created by this factory
    */
-  public interface ExecutorFactory {
+  public interface ExecutorFactory<T extends ExecutorService> {
 
     /**
-     * Gets a scheduled executor service instance.
+     * Gets an executor service instance.
      */
-    ScheduledExecutorService get();
+    T get();
 
     /**
      * Releases resources used by the executor and possibly shuts it down.
      */
-    void release(ScheduledExecutorService executor);
+    void release(T executor);
   }
 
   @VisibleForTesting
-  static class DefaultExecutorFactory implements ExecutorFactory {
+  static class DefaultExecutorFactory implements ExecutorFactory<ScheduledExecutorService> {
 
     private static final DefaultExecutorFactory INSTANCE = new DefaultExecutorFactory();
 
@@ -148,7 +151,7 @@ public abstract class GrpcServiceOptions<ServiceT extends Service<OptionsT>, Ser
      *
      * @return the builder
      */
-    public B executorFactory(ExecutorFactory executorFactory) {
+    public B executorFactory(ExecutorFactory<ScheduledExecutorService> executorFactory) {
       this.executorFactory = executorFactory;
       return self();
     }
@@ -192,6 +195,7 @@ public abstract class GrpcServiceOptions<ServiceT extends Service<OptionsT>, Ser
     }
   }
 
+  @SuppressWarnings("unchecked")
   protected GrpcServiceOptions(
       Class<? extends ServiceFactory<ServiceT, OptionsT>> serviceFactoryClass,
       Class<? extends ServiceRpcFactory<ServiceRpcT, OptionsT>> rpcFactoryClass, Builder<ServiceT,
@@ -208,7 +212,7 @@ public abstract class GrpcServiceOptions<ServiceT extends Service<OptionsT>, Ser
   /**
    * Returns a scheduled executor service provider.
    */
-  protected ExecutorFactory executorFactory() {
+  protected ExecutorFactory<ScheduledExecutorService> executorFactory() {
     return executorFactory;
   }
 

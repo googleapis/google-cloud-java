@@ -48,7 +48,7 @@ class AckDeadlineRenewer implements AutoCloseable {
 
   private final PubSub pubsub;
   private final ScheduledExecutorService executor;
-  private final ExecutorFactory executorFactory;
+  private final ExecutorFactory<ScheduledExecutorService> executorFactory;
   private final Clock clock;
   private final Queue<Message> messageQueue;
   private final Map<MessageId, Long> messageDeadlines;

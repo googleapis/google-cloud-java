@@ -18,6 +18,8 @@ package com.google.cloud.pubsub;
 
 import static com.google.cloud.pubsub.PubSub.ListOption.OptionType.PAGE_SIZE;
 import static com.google.cloud.pubsub.PubSub.ListOption.OptionType.PAGE_TOKEN;
+import static com.google.cloud.pubsub.PubSub.PullOption.OptionType.EXECUTOR_FACTORY;
+import static com.google.cloud.pubsub.PubSub.PullOption.OptionType.MAX_QUEUED_CALLBACKS;
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.util.concurrent.Futures.lazyTransform;
 
@@ -510,8 +512,11 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
   @Override
   public MessageConsumer pullAsync(String subscription, MessageProcessor callback,
       PullOption... options) {
-    // this method should use the VTKIT thread-pool (maybe getting it should be part of the spi)
-    return null;
+    Map<Option.OptionType, ?> optionMap = optionMap(options);
+    return MessageConsumerImpl.builder(options(), subscription, ackDeadlineRenewer, callback)
+        .maxQueuedCallbacks(MAX_QUEUED_CALLBACKS.getInteger(optionMap))
+        .executorFactory(EXECUTOR_FACTORY.getExecutorFactory(optionMap))
+        .build();
   }
 
   @Override
