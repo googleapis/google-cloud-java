@@ -17,12 +17,14 @@
 package com.google.cloud.pubsub;
 
 import com.google.cloud.AsyncPage;
+import com.google.cloud.GrpcServiceOptions.ExecutorFactory;
 import com.google.cloud.Page;
 import com.google.cloud.Service;
 
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 
@@ -84,7 +86,8 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
     private static final long serialVersionUID = 4792164134340316582L;
 
     enum OptionType implements Option.OptionType {
-      MAX_CONCURRENT_CALLBACKS;
+      EXECUTOR_FACTORY,
+      MAX_QUEUED_CALLBACKS;
 
       @SuppressWarnings("unchecked")
       <T> T get(Map<Option.OptionType, ?> options) {
@@ -94,6 +97,10 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
       Integer getInteger(Map<Option.OptionType, ?> options) {
         return get(options);
       }
+
+      ExecutorFactory<ExecutorService> getExecutorFactory(Map<Option.OptionType, ?> options) {
+        return get(options);
+      }
     }
 
     private PullOption(Option.OptionType option, Object value) {
@@ -101,11 +108,33 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
     }
 
     /**
-     * Returns an option to specify the maximum number of messages that can be processed
-     * concurrently at any time.
+     * Returns an option to specify the maximum number of messages that can be queued in the message
+     * consumer at any time. Queued messages are already pulled messages that are either waiting to
+     * be processed or being processed. Queued messages will have their acknowledge deadline renewed
+     * until they are acknowledged or "nacked". If not provided, at most 100 messages can be in the
+     * queue.
      */
-    public static PullOption maxConcurrentCallbacks(int maxConcurrency) {
-      return new PullOption(OptionType.MAX_CONCURRENT_CALLBACKS, maxConcurrency);
+    public static PullOption maxQueuedCallbacks(int maxQueuedCallbacks) {
+      return new PullOption(OptionType.MAX_QUEUED_CALLBACKS, maxQueuedCallbacks);
+    }
+
+    /**
+     * Returns an option to specify the executor used to execute message processor callbacks. The
+     * executor determines the number of messages that can be processed at the same time. If not
+     * provided, a single-threaded executor is used to execute message processor callbacks.
+     *
+     * <p>The {@link ExecutorFactory} object can be used to handle creation and release of the
+     * executor, possibly reusing existing executors. {@link ExecutorFactory#get()} is called when
+     * the message consumer is created. {@link ExecutorFactory#release(ExecutorService)} is called
+     * when the message consumer is closed.
+     *
+     * <p>For the created option to be serializable, the provided executor factory should implement
+     * {@link java.io.Serializable}.
+     *
+     * @param executorFactory the executor factory.
+     */
+    public static PullOption executorFactory(ExecutorFactory executorFactory) {
+      return new PullOption(OptionType.EXECUTOR_FACTORY, executorFactory);
     }
   }
 
@@ -433,6 +462,25 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
    */
   Future<Iterator<ReceivedMessage>> pullAsync(String subscription, int maxMessages);
 
+  /**
+   * Creates a message consumer that pulls messages for the provided subscription. You can stop
+   * pulling messages by calling {@link MessageConsumer#close()}. The returned message consumer
+   * executes {@link MessageProcessor#process(Message)} on each pulled message. If
+   * {@link MessageProcessor#process(Message)} executes correctly, the message is acknowledged. If
+   * {@link MessageProcessor#process(Message)} throws an exception, the message is "nacked". For
+   * all pulled messages, the ack deadline is automatically renewed until the message is either
+   * acknowledged or "nacked".
+   *
+   * <p>The {@link PullOption#maxQueuedCallbacks(int)} option can be used to control the maximum
+   * number of queued messages (messages either being processed or waiting to be processed). The
+   * {@link PullOption#executorFactory(ExecutorFactory)} can be used to provide an executor to run
+   * message processor callbacks.
+   *
+   * @param subscription the subscription from which to pull messages
+   * @param callback the callback to be executed on each message
+   * @param options pulling options
+   * @return a message consumer for the provided subscription and options
+   */
   MessageConsumer pullAsync(String subscription, MessageProcessor callback, PullOption... options);
 
   /**

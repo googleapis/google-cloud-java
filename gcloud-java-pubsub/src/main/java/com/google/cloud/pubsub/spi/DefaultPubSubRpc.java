@@ -73,7 +73,7 @@ public class DefaultPubSubRpc implements PubSubRpc {
   private final PublisherApi publisherApi;
   private final SubscriberApi subscriberApi;
   private final ScheduledExecutorService executor;
-  private final ExecutorFactory executorFactory;
+  private final ExecutorFactory<ScheduledExecutorService> executorFactory;
 
   private boolean closed;
 
@@ -86,7 +86,7 @@ public class DefaultPubSubRpc implements PubSubRpc {
     }
 
     @Override
-    protected ExecutorFactory executorFactory() {
+    protected ExecutorFactory<ScheduledExecutorService> executorFactory() {
       return super.executorFactory();
     }
   }

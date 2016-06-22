@@ -24,6 +24,7 @@ import com.google.common.collect.ImmutableSet;
 
 import java.io.IOException;
 import java.util.Set;
+import java.util.concurrent.ScheduledExecutorService;
 
 public class PubSubOptions extends GrpcServiceOptions<PubSub, PubSubRpc, PubSubOptions> {
 
@@ -86,7 +87,7 @@ public class PubSubOptions extends GrpcServiceOptions<PubSub, PubSubRpc, PubSubO
   }
 
   @Override
-  protected ExecutorFactory executorFactory() {
+  protected ExecutorFactory<ScheduledExecutorService> executorFactory() {
     return super.executorFactory();
   }
 
