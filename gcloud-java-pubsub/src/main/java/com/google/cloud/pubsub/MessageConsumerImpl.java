@@ -35,8 +35,6 @@ import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
@@ -46,17 +44,15 @@ final class MessageConsumerImpl implements MessageConsumer {
 
   private static final int MAX_QUEUED_CALLBACKS = 100;
   // shared scheduled executor, used to schedule pulls
-  private static final SharedResourceHolder.Resource<ScheduledExecutorService> TIMER =
-      new SharedResourceHolder.Resource<ScheduledExecutorService>() {
+  private static final SharedResourceHolder.Resource<ExecutorService> CONSUMER_EXECUTOR =
+      new SharedResourceHolder.Resource<ExecutorService>() {
         @Override
-        public ScheduledExecutorService create() {
-          ScheduledThreadPoolExecutor timer = new ScheduledThreadPoolExecutor(1);
-          timer.setRemoveOnCancelPolicy(true);
-          return timer;
+        public ExecutorService create() {
+          return Executors.newSingleThreadExecutor();
         }
 
         @Override
-        public void close(ScheduledExecutorService instance) {
+        public void close(ExecutorService instance) {
           instance.shutdown();
         }
       };
@@ -67,7 +63,7 @@ final class MessageConsumerImpl implements MessageConsumer {
   private final AckDeadlineRenewer deadlineRenewer;
   private final String subscription;
   private final MessageProcessor messageProcessor;
-  private final ScheduledExecutorService timer;
+  private final ExecutorService consumerExecutor;
   private final ExecutorFactory<ExecutorService> executorFactory;
   private final ExecutorService executor;
   private final AtomicInteger queuedCallbacks;
@@ -192,7 +188,7 @@ final class MessageConsumerImpl implements MessageConsumer {
     this.pubsub = pubsubOptions.service();
     this.deadlineRenewer = builder.deadlineRenewer;
     this.queuedCallbacks = new AtomicInteger();
-    this.timer = SharedResourceHolder.get(TIMER);
+    this.consumerExecutor = SharedResourceHolder.get(CONSUMER_EXECUTOR);
     this.executorFactory =
         builder.executorFactory != null ? builder.executorFactory : new DefaultExecutorFactory();
     this.executor = executorFactory.get();
@@ -209,7 +205,7 @@ final class MessageConsumerImpl implements MessageConsumer {
       if (closed || scheduledFuture != null || !pullPolicy.shouldPull(queuedCallbacks.get())) {
         return;
       }
-      scheduledFuture = timer.submit(consumerRunnable);
+      scheduledFuture = consumerExecutor.submit(consumerRunnable);
     }
   }
 
@@ -219,7 +215,7 @@ final class MessageConsumerImpl implements MessageConsumer {
         scheduledFuture = null;
         return;
       }
-      scheduledFuture = timer.submit(consumerRunnable);
+      scheduledFuture = consumerExecutor.submit(consumerRunnable);
     }
   }
 
@@ -237,7 +233,7 @@ final class MessageConsumerImpl implements MessageConsumer {
         pullerFuture.cancel(true);
       }
     }
-    SharedResourceHolder.release(TIMER, timer);
+    SharedResourceHolder.release(CONSUMER_EXECUTOR, consumerExecutor);
     executorFactory.release(executor);
   }
 
