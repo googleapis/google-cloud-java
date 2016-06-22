@@ -211,7 +211,7 @@ public class GrpcServiceOptionsTest {
 
   @Test
   public void testDefaultExecutorFactory() {
-    ExecutorFactory executorFactory = new DefaultExecutorFactory();
+    ExecutorFactory<ScheduledExecutorService> executorFactory = new DefaultExecutorFactory();
     ScheduledExecutorService executorService = executorFactory.get();
     assertSame(executorService, executorFactory.get());
   }
