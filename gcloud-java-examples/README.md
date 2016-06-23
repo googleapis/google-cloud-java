@@ -100,6 +100,16 @@ To run examples from your command line:
     mvn exec:java -Dexec.mainClass="com.google.cloud.examples.dns.DnsExample" -Dexec.args="delete some-sample-zone"
     ```
 
+  * Here's an example run of `PubSubExample`.
+
+    Before running the example, go to the [Google Developers Console][developers-console] to ensure that "Google Cloud Pub/Sub" is enabled.
+    ```
+    mvn exec:java -Dexec.mainClass="com.google.cloud.examples.pubsub.PubSubExample" -Dexec.args="create topic test-topic"
+    mvn exec:java -Dexec.mainClass="com.google.cloud.examples.pubsub.PubSubExample" -Dexec.args="create subscription test-topic test-subscription"
+    mvn exec:java -Dexec.mainClass="com.google.cloud.examples.pubsub.PubSubExample" -Dexec.args="publish test-topic message1 message2"
+    mvn exec:java -Dexec.mainClass="com.google.cloud.examples.pubsub.PubSubExample" -Dexec.args="pull sync test-subscription 2"
+    ```
+
   * Here's an example run of `ResourceManagerExample`.
 
     Be sure to change the placeholder project ID "your-project-id" with your own globally unique project ID.
