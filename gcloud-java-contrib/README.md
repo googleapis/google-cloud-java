@@ -12,29 +12,34 @@ Packages that provide higher-level abstraction/functionality for common gcloud-j
 Contents
 --------
 
-<<<<<<< HEAD
  * [gcloud-java-nio](./gcloud-java-nio/): NIO Filesystem Provider for Google Cloud Storage.
  * [gcloud-java-nio-examples](./gcloud-java-nio-examples/): How to add GCS NIO after the fact.
-=======
+
 Quickstart
 ----------
+
+### gcloud-java-nio
+
 If you are using Maven, add this to your pom.xml file
 ```xml
 <dependency>
   <groupId>com.google.cloud</groupId>
-  <artifactId>gcloud-java-contrib</artifactId>
+  <artifactId>gcloud-java-nio</artifactId>
   <version>0.2.3</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:gcloud-java-contrib:0.2.3'
+compile 'com.google.cloud:gcloud-java-nio:0.2.3'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
 libraryDependencies += "com.google.cloud" % "gcloud-java-contrib" % "0.2.3"
 ```
->>>>>>> master
+
+### gcloud-java-nio-examples
+
+See its [README](./gcloud-java-nio-examples/README.md) for instructions on how to run it.
 
 Java Versions
 -------------

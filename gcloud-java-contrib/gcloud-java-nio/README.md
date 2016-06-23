@@ -1,0 +1,174 @@
+NIO Filesystem Provider for Google Cloud Storage
+================================================
+
+Java idiomatic NIO client for [Google Cloud Storage](https://cloud.google.com/storage/).
+
+This client library allows you to easily interact with Google Cloud Storage using Java's
+standard file system API.
+
+[![Build Status](https://travis-ci.org/GoogleCloudPlatform/gcloud-java.svg?branch=master)](https://travis-ci.org/GoogleCloudPlatform/gcloud-java)
+[![Coverage Status](https://coveralls.io/repos/GoogleCloudPlatform/gcloud-java/badge.svg?branch=master)](https://coveralls.io/r/GoogleCloudPlatform/gcloud-java?branch=master)
+[![Maven](https://img.shields.io/maven-central/v/com.google.cloud/gcloud-java-nio.svg)]( https://img.shields.io/maven-central/v/com.google.cloud/gcloud-java-nio.svg)
+
+-  [Homepage] (https://googlecloudplatform.github.io/gcloud-java/)
+-  [API Documentation] (http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/cloud/storage/package-summary.html)
+
+> Note: This client is a work-in-progress, and may occasionally
+> make backwards-incompatible changes.
+
+Quickstart
+----------
+If you are using Maven, add this to your pom.xml file
+```xml
+<dependency>
+  <groupId>com.google.cloud</groupId>
+  <artifactId>gcloud-java-nio</artifactId>
+  <version>0.2.3</version>
+</dependency>
+```
+If you are using Gradle, add this to your dependencies
+```Groovy
+compile 'com.google.cloud:gcloud-java-nio:0.2.3'
+```
+If you are using SBT, add this to your dependencies
+```Scala
+libraryDependencies += "com.google.cloud" % "gcloud-java-nio" % "0.2.3"
+```
+
+Example Applications
+-------------------
+
+* [`Stat`](../../gcloud-java-examples/src/main/java/com/google/cloud/examples/nio/Stat.java) shows how to get started with NIO.
+
+* [`ParallelCountBytes`](../../gcloud-java-examples/src/main/java/com/google/cloud/examples/nio/ParallelCountBytes.java) efficiently downloads a file from Google Cloud Storage.
+
+* [`ListFileSystems`](../gcloud-java-nio-examples/README.md) illustrates how NIO can add Google Cloud Storage support to some legacy programs, without having to modify them.
+
+
+Authentication
+--------------
+
+See the [Authentication](https://github.com/GoogleCloudPlatform/gcloud-java#authentication) section in the base directory's README.
+
+About Google Cloud Storage
+--------------------------
+
+[Google Cloud Storage][cloud-storage] is a durable and highly available
+object storage service. Google Cloud Storage is almost infinitely scalable
+and guarantees consistency: when a write succeeds, the latest copy of the
+object will be returned to any GET, globally.
+
+See the [Google Cloud Storage docs][cloud-storage-activation] for more details on how to activate
+Cloud Storage for your project.
+
+About Java NIO Providers
+------------------------
+
+Java NIO Providers is an extension mechanism that is part of Java and allows third parties
+to extend Java's [normal File API][java-file-api] to support additional filesystems.
+
+Getting Started
+---------------
+#### Prerequisites
+For this tutorial, you will need a [Google Developers Console](https://console.developers.google.com/) project with "Google Cloud Storage" and "Google Cloud Storage JSON API" enabled via the console's API Manager. You will need to [enable billing](https://support.google.com/cloud/answer/6158867?hl=en) to use Google Cloud Storage. [Follow these instructions](https://cloud.google.com/docs/authentication#preparation) to get your project set up. You will also need to set up the local development environment by [installing the Google Cloud SDK](https://cloud.google.com/sdk/) and running the following commands in command line: `gcloud auth login` and `gcloud config set project [YOUR PROJECT ID]`.
+
+#### Installation and setup
+You'll need to obtain the `gcloud-java-nio` library.
+
+There are two ways to use this library.
+
+The recommended way is to follow the [Quickstart](#quickstart) section to add `gcloud-java-nio` as a dependency in your code.
+
+The second way is more complicated, but it allows you to add Google Cloud Storage support to some legacy Java programs.
+This approach is described in the [gcloud-java-nio-examples README](../gcloud-java-nio-examples/README.md).
+
+#### Accessing files
+
+The simplest way to get started is with `Paths` and `Files`:
+
+    Path path = Paths.get(URI.create("gs://bucket/lolcat.csv"));
+    List<String> lines = Files.readAllLines(path, StandardCharsets.UTF_8);
+
+If you know the paths will point to Google Cloud Storage, you can also use the direct
+formulation:
+
+    try (CloudStorageFileSystem fs = CloudStorageFileSystem.forBucket("bucket") {
+          Path path = fs.getPath("lolcat.csv");
+          List<String> lines = Files.readAllLines(path, StandardCharsets.UTF_8);
+    }
+
+Once you have a `Path` you can use it as you would a normal file. For example
+you can use InputStream and OutputStream for streaming:
+
+    try (InputStream input = Files.openInputStream(path)) {
+      // ...
+    }
+
+You can also set various attributes using CloudStorageOptions static helpers:
+
+    Files.write(csvPath, csvLines, StandardCharsets.UTF_8,
+        withMimeType(MediaType.CSV_UTF8),
+        withoutCaching());
+
+#### Caveats
+
+Please keep in mind that even though this library allows you to use the familiar file API
+to access Google Cloud Storage, it will behave differently from the local filesystem since
+they do not have exactly the same features. This library, by design, does not mask those differences.
+Rather, it aims to expose the common subset via a familiar interface.
+
+**NOTE:** Cloud Storage uses a flat namespace and therefore doesn't support real
+directories. So this library supports what's known as "pseudo-directories". Any path that
+includes a trailing slash, will be considered a directory. It will always be assumed to exist,
+without performing any I/O. This allows you to do path manipulation in the same manner as you
+would with the normal UNIX file system implementation. You can disable this feature with
+`CloudStorageConfiguration.usePseudoDirectories()`.
+
+
+
+#### Complete source code
+
+There are examples in [gcloud-java-examples](../gcloud-java-examples/src/main/java/com/google/cloud/examples/nio/) for your perusal.
+
+Java Versions
+-------------
+
+Java 7 or above is required for using this client.
+
+Versioning
+----------
+
+This library follows [Semantic Versioning] (http://semver.org/).
+
+It is currently in major version zero (``0.y.z``), which means that anything
+may change at any time and the public API should not be considered
+stable.
+
+Contributing
+------------
+
+Contributions to this library are always welcome and highly encouraged.
+
+See `gcloud-java`'s [CONTRIBUTING] documentation and the `gcloud-*` [shared documentation](https://github.com/GoogleCloudPlatform/gcloud-common/blob/master/contributing/readme.md#how-to-contribute-to-gcloud) for more information on how to get started.
+
+Please note that this project is released with a Contributor Code of Conduct. By participating in this project you agree to abide by its terms. See [Code of Conduct][code-of-conduct] for more information.
+
+License
+-------
+
+Apache 2.0 - See [LICENSE] for more information.
+
+
+[CONTRIBUTING]:https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/CONTRIBUTING.md
+[code-of-conduct]:https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/CODE_OF_CONDUCT.md#contributor-code-of-conduct
+[LICENSE]: https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/LICENSE
+[TESTING]: https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/TESTING.md#testing-code-that-uses-storage
+[cloud-platform]: https://cloud.google.com/
+
+[cloud-storage]: https://cloud.google.com/storage/
+[cloud-storage-docs]: https://cloud.google.com/storage/docs/overview
+[cloud-storage-create-bucket]: https://cloud.google.com/storage/docs/cloud-console#_creatingbuckets
+[storage-api]: http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/cloud/storage/package-summary.html
+[cloud-storage-activation]:https://cloud.google.com/storage/docs/signup?hl=en
+
+[java-file-api]: https://docs.oracle.com/javase/7/docs/api/java/nio/file/Files.html
