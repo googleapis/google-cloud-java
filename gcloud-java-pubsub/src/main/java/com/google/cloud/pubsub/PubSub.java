@@ -173,7 +173,7 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
 
   /**
    * Sends a request for creating a topic. This method returns a {@code Future} object to consume
-   * the result. {@link Future#get()} returns the created topic or {@code null} if not found.
+   * the result. {@link Future#get()} returns the created topic.
    */
   Future<Topic> createAsync(TopicInfo topic);
 
@@ -311,8 +311,7 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
 
   /**
    * Sends a request for creating a subscription. This method returns a {@code Future} object to
-   * consume the result. {@link Future#get()} returns the created subscription or {@code null} if
-   * not found.
+   * consume the result. {@link Future#get()} returns the created subscription.
    */
   Future<Subscription> createAsync(SubscriptionInfo subscription);
 
@@ -463,7 +462,7 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
   Future<Iterator<ReceivedMessage>> pullAsync(String subscription, int maxMessages);
 
   /**
-   * Creates a message consumer that pulls messages for the provided subscription. You can stop
+   * Creates a message consumer that pulls messages from the provided subscription. You can stop
    * pulling messages by calling {@link MessageConsumer#close()}. The returned message consumer
    * executes {@link MessageProcessor#process(Message)} on each pulled message. If
    * {@link MessageProcessor#process(Message)} executes correctly, the message is acknowledged. If
