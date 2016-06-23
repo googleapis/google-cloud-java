@@ -58,6 +58,7 @@ import javax.annotation.concurrent.NotThreadSafe;
  *   <li>patch
  *   <li>continueRewrite
  *   <li>createBatch
+ *   <li>checksums, etags
  *   </ul>
  * </ul>
  */
@@ -65,7 +66,7 @@ import javax.annotation.concurrent.NotThreadSafe;
 public class FakeStorageRpc implements StorageRpc {
 
   // fullname -> metadata
-  Map<String, StorageObject> stuff = new HashMap<>();
+  Map<String, StorageObject> metadata = new HashMap<>();
   // fullname -> contents
   Map<String, byte[]> contents = new HashMap<>();
   // fullname -> future contents that will be visible on close.
@@ -74,7 +75,7 @@ public class FakeStorageRpc implements StorageRpc {
   private final boolean throwIfOption;
 
   /**
-   * @param throwIfOption if true, we throw when given any option.
+   * @param throwIfOption if true, we throw when given any option
    */
   public FakeStorageRpc(boolean throwIfOption) {
     this.throwIfOption = throwIfOption;
@@ -82,7 +83,7 @@ public class FakeStorageRpc implements StorageRpc {
 
   // remove all files
   void reset() {
-    stuff = new HashMap<>();
+    metadata = new HashMap<>();
     contents = new HashMap<>();
   }
 
@@ -96,7 +97,7 @@ public class FakeStorageRpc implements StorageRpc {
       throws StorageException {
     potentiallyThrow(options);
     String key = fullname(object);
-    stuff.put(key, object);
+    metadata.put(key, object);
     try {
       contents.put(key, com.google.common.io.ByteStreams.toByteArray(content));
     } catch (IOException e) {
@@ -138,7 +139,7 @@ public class FakeStorageRpc implements StorageRpc {
 
     List<StorageObject> values = new ArrayList<>();
     Map<String, StorageObject> folders = new HashMap<>();
-    for (StorageObject so : stuff.values()) {
+    for (StorageObject so : metadata.values()) {
       if (!so.getName().startsWith(prefix)) {
         continue;
       }
@@ -175,8 +176,8 @@ public class FakeStorageRpc implements StorageRpc {
     }
 
     String key = fullname(object);
-    if (stuff.containsKey(key)) {
-      StorageObject ret = stuff.get(key);
+    if (metadata.containsKey(key)) {
+      StorageObject ret = metadata.get(key);
       if (contents.containsKey(key)) {
         ret.setSize(BigInteger.valueOf(contents.get(key).length));
       }
@@ -208,7 +209,7 @@ public class FakeStorageRpc implements StorageRpc {
   public boolean delete(StorageObject object, Map<Option, ?> options) throws StorageException {
     String key = fullname(object);
     contents.remove(key);
-    return null != stuff.remove(key);
+    return null != metadata.remove(key);
   }
 
   @Override
@@ -272,10 +273,10 @@ public class FakeStorageRpc implements StorageRpc {
         }
       }
     }
-    if (mustNotExist && stuff.containsKey(key)) {
+    if (mustNotExist && metadata.containsKey(key)) {
       throw new StorageException(new FileAlreadyExistsException(key));
     }
-    stuff.put(key, object);
+    metadata.put(key, object);
 
     return fullname(object);
   }
@@ -327,7 +328,7 @@ public class FakeStorageRpc implements StorageRpc {
       throw new StorageException(new FileAlreadyExistsException(destKey));
     }
 
-    stuff.put(destKey, rewriteRequest.target);
+    metadata.put(destKey, rewriteRequest.target);
 
     byte[] data = contents.get(sourceKey);
     contents.put(destKey, Arrays.copyOf(data, data.length));

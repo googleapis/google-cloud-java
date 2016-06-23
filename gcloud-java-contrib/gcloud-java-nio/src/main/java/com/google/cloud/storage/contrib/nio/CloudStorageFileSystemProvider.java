@@ -69,10 +69,16 @@ import java.util.Objects;
 import java.util.Set;
 import javax.annotation.Nullable;
 import javax.annotation.concurrent.ThreadSafe;
+import javax.inject.Singleton;
 
 /**
  * Google Cloud Storage {@link FileSystemProvider} implementation.
+ *
+ * <p><b>Note:</b> This class should never be used directly. This class is instantiated by the
+ * service loader and called through a standardized API, e.g. {@link java.nio.file.Files}. However
+ * the javadocs in this class serve as useful documentation for the behavior of the GCS NIO library.
  */
+@Singleton
 @ThreadSafe
 @AutoService(FileSystemProvider.class)
 public final class CloudStorageFileSystemProvider extends FileSystemProvider {
@@ -156,6 +162,13 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
 
   /**
    * Returns Cloud Storage file system, provided a URI with no path, e.g. {@code gs://bucket}.
+   *
+   * @param uri bucket and current working directory, e.g. {@code gs://bucket}
+   * @param env map of configuration options, whose keys correspond to the method names of
+   *     {@link CloudStorageConfiguration.Builder}. However you are not allowed to set the working
+   *     directory, as that should be provided in the {@code uri}
+   * @throws IllegalArgumentException if {@code uri} specifies a user, query, fragment, or scheme is
+   *     not {@value CloudStorageFileSystem#URI_SCHEME}
    */
   @Override
   public CloudStorageFileSystem newFileSystem(URI uri, Map<String, ?> env) {
@@ -531,9 +544,9 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
 
   @Override
   public Map<String, Object> readAttributes(Path path, String attributes, LinkOption... options) {
-    // Java 7 NIO defines at least eleven string attributes we'd want to support
-    // (eg. BasicFileAttributeView and PosixFileAttributeView), so rather than a partial
-    // implementation we rely on the other overload for now.
+    // TODO(#811): Java 7 NIO defines at least eleven string attributes we'd want to support
+    //             (eg. BasicFileAttributeView and PosixFileAttributeView), so rather than a partial
+    //             implementation we rely on the other overload for now.
     throw new UnsupportedOperationException();
   }
 
@@ -615,13 +628,13 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
   }
 
   private IOException asIOException(StorageException oops) {
+    // RPC API can only throw StorageException, but CloudStorageFileSystemProvider
+    // can only throw IOException. Square peg, round hole.
+    // TODO(#810): Research if other codes should be translated similarly.
     if (oops.code() == 404) {
       return new NoSuchFileException(oops.reason());
     }
-    // TODO: research if other codes should be translated to IOException.
 
-    // RPC API can only throw StorageException, but CloudStorageFileSystemProvider
-    // can only throw IOException. Square peg, round hole.
     Throwable cause = oops.getCause();
     try {
       if (cause instanceof FileAlreadyExistsException) {

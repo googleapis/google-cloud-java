@@ -37,6 +37,8 @@ import java.util.Set;
 
 import javax.annotation.Nullable;
 import javax.annotation.concurrent.Immutable;
+import javax.annotation.CheckReturnValue;
+import javax.annotation.concurrent.ThreadSafe;
 
 /**
  * Google Cloud Storage {@link FileSystem} implementation.
@@ -46,7 +48,7 @@ import javax.annotation.concurrent.Immutable;
  * @see <a href="https://developers.google.com/storage/docs/bucketnaming">
  *        Bucket and Object Naming Guidelines</a>
  */
-@Immutable
+@ThreadSafe
 public final class CloudStorageFileSystem extends FileSystem {
 
   /**
@@ -64,6 +66,7 @@ public final class CloudStorageFileSystem extends FileSystem {
    * @see #forBucket(String, CloudStorageConfiguration)
    * @see java.nio.file.FileSystems#getFileSystem(URI)
    */
+  @CheckReturnValue
   public static CloudStorageFileSystem forBucket(String bucket) {
     return forBucket(bucket, CloudStorageConfiguration.DEFAULT);
   }
@@ -73,16 +76,26 @@ public final class CloudStorageFileSystem extends FileSystem {
    *
    * @see #forBucket(String)
    */
+  @CheckReturnValue
   public static CloudStorageFileSystem forBucket(String bucket, CloudStorageConfiguration config) {
     return forBucket(bucket, config, null);
   }
 
   /**
-   * Creates a new filesystem for a particular bucket, with customizable settings and storage
-   * options.
+   * Returns Google Cloud Storage {@link FileSystem} object for {@code bucket}.
    *
-   * @see #forBucket(String)
+   * <p>GCS file system objects are basically free. You can create as many as you want, even if you
+   * have multiple instances for the same bucket. There's no actual system resources associated
+   * with this object. Therefore calling {@link #close()} on the returned value is optional.
+   *
+   * <p><b>Note:</b> It is also possible to instantiate this class via Java's
+   * {@code FileSystems.getFileSystem(URI.create("gs://bucket"))}. We discourage you
+   * from using that if possible, for the reasons documented in
+   * {@link CloudStorageFileSystemProvider#newFileSystem(URI, java.util.Map)}
+   *
+   * @see java.nio.file.FileSystems#getFileSystem(URI)
    */
+  @CheckReturnValue
   public static CloudStorageFileSystem forBucket(String bucket, CloudStorageConfiguration config,
         @Nullable StorageOptions storageOptions) {
     checkArgument(!bucket.startsWith(URI_SCHEME + ":"),
@@ -142,7 +155,9 @@ public final class CloudStorageFileSystem extends FileSystem {
   }
 
   /**
-   * Does nothing.
+   * Does nothing currently. This method <i>might</i> be updated in the future to close all channels
+   * associated with this file system object. However it's unlikely that even then, calling this
+   * method will become mandatory.
    */
   @Override
   public void close() throws IOException {
@@ -178,6 +193,9 @@ public final class CloudStorageFileSystem extends FileSystem {
     return ImmutableSet.<Path>of(CloudStoragePath.getPath(this, UnixPath.ROOT));
   }
 
+  /**
+   * Returns nothing because GCS doesn't have disk partitions of limited size, or anything similar.
+   */
   @Override
   public Iterable<FileStore> getFileStores() {
     return ImmutableSet.of();
@@ -193,7 +211,7 @@ public final class CloudStorageFileSystem extends FileSystem {
    */
   @Override
   public PathMatcher getPathMatcher(String syntaxAndPattern) {
-    // TODO: Implement me.
+    // TODO(#813): Implement me.
     throw new UnsupportedOperationException();
   }
 
