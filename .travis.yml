@@ -9,7 +9,7 @@ before_install:
 - cp target/travis/settings.xml ~/.m2/settings.xml
 install: mvn install -DskipTests=true -Dgpg.skip=true
 script: 
-- travis_wait 30 utilities/verify.sh
+- travis_wait 60 utilities/verify.sh
 after_success:
 - utilities/after_success.sh
 env:
