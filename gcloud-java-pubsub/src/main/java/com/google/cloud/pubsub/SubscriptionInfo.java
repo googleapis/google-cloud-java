@@ -37,10 +37,11 @@ import java.util.concurrent.TimeUnit;
  * indicates that the Pub/Sub server should resend it (implicit "nack").
  *
  * <p>In a pull subscription, the subscribing application must explicitly pull messages using one of
- * {@link PubSub#pull(String, PubSub.PullOption...)},
- * {@link PubSub#pullAsync(String, PubSub.MessageProcessor)} or
- * {@link PubSub#pullAsync(String, PubSub.PullOption...)}. The subscribing application must then
- * explicitly acknowledge the messages using one of {@link PubSub#ack(String, Iterable)},
+ * {@link PubSub#pull(String, int)}, {@link PubSub#pullAsync(String, int)} or
+ * {@link PubSub#pullAsync(String, PubSub.MessageProcessor callback, PubSub.PullOption...)}.
+ * When messages are pulled with {@link PubSub#pull(String, int)} or
+ * {@link PubSub#pullAsync(String, int)} the subscribing application must also explicitly
+ * acknowledge them using one of {@link PubSub#ack(String, Iterable)},
  * {@link PubSub#ack(String, String, String...)}, {@link PubSub#ackAsync(String, Iterable)} or
  * {@link PubSub#ackAsync(String, String, String...)}.
  *
@@ -190,7 +191,7 @@ public class SubscriptionInfo implements Serializable {
   }
 
   /**
-   * Sets the name of the subscription. The name must start with a letter, and contain only
+   * Returns the name of the subscription. The name must start with a letter, and contain only
    * letters ({@code [A-Za-z]}), numbers ({@code [0-9]}), dashes ({@code -}), underscores
    * ({@code _}), periods ({@code .}), tildes ({@code ~}), plus ({@code +}) or percent signs
    * ({@code %}). It must be between 3 and 255 characters in length and cannot begin with the
@@ -223,19 +224,19 @@ public class SubscriptionInfo implements Serializable {
     return ackDeadlineSeconds;
   }
 
+  final boolean baseEquals(SubscriptionInfo subscriptionInfo) {
+    return Objects.equals(topic, subscriptionInfo.topic)
+        && Objects.equals(name, subscriptionInfo.name)
+        && Objects.equals(pushConfig, subscriptionInfo.pushConfig)
+        && ackDeadlineSeconds == subscriptionInfo.ackDeadlineSeconds;
+  }
+
   @Override
   public boolean equals(Object obj) {
-    if (this == obj) {
-      return true;
-    }
-    if (obj == null || !obj.getClass().equals(this.getClass())) {
-      return false;
-    }
-    SubscriptionInfo other = (SubscriptionInfo) obj;
-    return Objects.equals(topic, other.topic)
-        && Objects.equals(name, other.name)
-        && Objects.equals(pushConfig, other.pushConfig)
-        && ackDeadlineSeconds == other.ackDeadlineSeconds;
+    return obj == this
+        || obj != null
+        && obj.getClass().equals(SubscriptionInfo.class)
+        && baseEquals((SubscriptionInfo) obj);
   }
 
   @Override
