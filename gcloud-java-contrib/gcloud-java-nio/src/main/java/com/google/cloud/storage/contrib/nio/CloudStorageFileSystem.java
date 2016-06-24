@@ -38,6 +38,8 @@ import java.util.Set;
 import javax.annotation.CheckReturnValue;
 import javax.annotation.Nullable;
 import javax.annotation.concurrent.Immutable;
+import javax.annotation.CheckReturnValue;
+import javax.annotation.concurrent.ThreadSafe;
 
 /**
  * Google Cloud Storage {@link FileSystem} implementation.
@@ -47,7 +49,7 @@ import javax.annotation.concurrent.Immutable;
  * @see <a href="https://developers.google.com/storage/docs/bucketnaming">
  *        Bucket and Object Naming Guidelines</a>
  */
-@Immutable
+@ThreadSafe
 public final class CloudStorageFileSystem extends FileSystem {
 
   /**
@@ -65,6 +67,7 @@ public final class CloudStorageFileSystem extends FileSystem {
    * @see #forBucket(String, CloudStorageConfiguration)
    * @see java.nio.file.FileSystems#getFileSystem(java.net.URI)
    */
+  @CheckReturnValue
   public static CloudStorageFileSystem forBucket(String bucket) {
     return forBucket(bucket, CloudStorageConfiguration.DEFAULT);
   }
@@ -74,6 +77,7 @@ public final class CloudStorageFileSystem extends FileSystem {
    *
    * @see #forBucket(String)
    */
+  @CheckReturnValue
   public static CloudStorageFileSystem forBucket(String bucket, CloudStorageConfiguration config) {
     checkArgument(
         !bucket.startsWith(URI_SCHEME + ":"), "Bucket name must not have schema: %s", bucket);
@@ -155,7 +159,9 @@ public final class CloudStorageFileSystem extends FileSystem {
   }
 
   /**
-   * Does nothing.
+   * Does nothing currently. This method <i>might</i> be updated in the future to close all channels
+   * associated with this file system object. However it's unlikely that even then, calling this
+   * method will become mandatory.
    */
   @Override
   public void close() throws IOException {
@@ -191,6 +197,9 @@ public final class CloudStorageFileSystem extends FileSystem {
     return ImmutableSet.<Path>of(CloudStoragePath.getPath(this, UnixPath.ROOT));
   }
 
+  /**
+   * Returns nothing because GCS doesn't have disk partitions of limited size, or anything similar.
+   */
   @Override
   public Iterable<FileStore> getFileStores() {
     return ImmutableSet.of();
@@ -206,7 +215,7 @@ public final class CloudStorageFileSystem extends FileSystem {
    */
   @Override
   public PathMatcher getPathMatcher(String syntaxAndPattern) {
-    // TODO: Implement me.
+    // TODO(#813): Implement me.
     throw new UnsupportedOperationException();
   }
 

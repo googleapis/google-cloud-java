@@ -58,17 +58,16 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * Integration test for gcloud-nio. This test actually talks to GCS (you need an account).
- * Tests both reading and writing.
+ * Integration test for gcloud-nio.
  *
- * You *must* set the GOOGLE_APPLICATION_CREDENTIALS environment variable
- * for this test to work. It must contain the name of a local file that contains
- * your Service Account JSON Key.
+ * <p>This test actually talks to GCS (you need an account) and tests both reading and writing. You
+ * *must* set the {@code GOOGLE_APPLICATION_CREDENTIALS} environment variable for this test to work.
+ * It must contain the name of a local file that contains your Service Account JSON Key.
  *
- * The instructions for how to get the Service Account JSON Key are
+ * <p>The instructions for how to get the Service Account JSON Key are
  * at https://cloud.google.com/storage/docs/authentication?hl=en#service_accounts
  *
- * The short version is this: go to cloud.google.com/console,
+ * <p>The short version is this: go to cloud.google.com/console,
  * select your project, search for "API manager", click "Credentials",
  * click "create credentials/service account key", new service account,
  * JSON. The contents of the file that's sent to your browsers is your
@@ -78,19 +77,18 @@ import java.util.logging.Logger;
 @RunWith(JUnit4.class)
 public class ITGcsNio {
 
-  private static final List<String> FILE_CONTENTS = ImmutableList.of(
-      "Tous les êtres humains naissent libres et égaux en dignité et en droits.",
-      "Ils sont doués de raison et de conscience et doivent agir ",
-      "les uns envers les autres dans un esprit de fraternité.");
+  private static final List<String> FILE_CONTENTS =
+      ImmutableList.of(
+        "Tous les êtres humains naissent libres et égaux en dignité et en droits.",
+        "Ils sont doués de raison et de conscience et doivent agir ",
+        "les uns envers les autres dans un esprit de fraternité.");
 
   private static final Logger log = Logger.getLogger(ITGcsNio.class.getName());
   private static final String BUCKET = RemoteStorageHelper.generateBucketName();
   private static final String SML_FILE = "tmp-test-small-file.txt";
   private static final int SML_SIZE = 100;
-  // it's big, relatively speaking.
-  private static final String BIG_FILE = "tmp-test-big-file.txt";
-  // arbitrary size that's not too round.
-  private static final int BIG_SIZE = 2 * 1024 * 1024 - 50;
+  private static final String BIG_FILE = "tmp-test-big-file.txt"; // it's big, relatively speaking.
+  private static final int BIG_SIZE = 2 * 1024 * 1024 - 50; // arbitrary size that's not too round.
   private static final String PREFIX = "tmp-test-file";
   private static Storage storage;
   private static StorageOptions storageOptions;
