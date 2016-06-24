@@ -30,6 +30,7 @@ import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Set;
+import java.util.regex.Pattern;
 
 public class ServiceOptionsTest {
   private static final String JSON_KEY =
@@ -80,6 +81,9 @@ public class ServiceOptionsTest {
   private static final TestServiceOptions DEFAULT_OPTIONS =
       TestServiceOptions.builder().projectId("project-id").build();
   private static final TestServiceOptions OPTIONS_COPY = OPTIONS.toBuilder().build();
+  private static final String LIBRARY_NAME = "gcloud-java";
+  private static final Pattern APPLICATION_NAME_PATTERN =
+      Pattern.compile(LIBRARY_NAME + "(/[0-9]+.[0-9]+.[0-9]+)?");
 
   private static class TestClock extends Clock {
     @Override
@@ -212,6 +216,16 @@ public class ServiceOptionsTest {
   public void testBaseEquals() {
     assertEquals(OPTIONS, OPTIONS_COPY);
     assertNotEquals(DEFAULT_OPTIONS, OPTIONS);
+  }
+
+  @Test
+  public void testLibraryName() {
+    assertEquals(LIBRARY_NAME, OPTIONS.libraryName());
+  }
+
+  @Test
+  public void testApplicationName() {
+    assertTrue(APPLICATION_NAME_PATTERN.matcher(OPTIONS.applicationName()).matches());
   }
 
   @Test

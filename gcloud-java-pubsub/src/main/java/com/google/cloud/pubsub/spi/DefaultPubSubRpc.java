@@ -16,6 +16,8 @@
 
 package com.google.cloud.pubsub.spi;
 
+import static com.google.common.base.MoreObjects.firstNonNull;
+
 import com.google.api.gax.core.RetrySettings;
 import com.google.api.gax.grpc.ApiCallSettings;
 import com.google.api.gax.grpc.ApiException;
@@ -118,11 +120,15 @@ public class DefaultPubSubRpc implements PubSubRpc {
   public DefaultPubSubRpc(PubSubOptions options) throws IOException {
     executorFactory = new InternalPubSubOptions(options).executorFactory();
     executor = executorFactory.get();
+    String libraryName = options.libraryName();
+    String libraryVersion = firstNonNull(options.libraryVersion(), "");
     try {
-      PublisherSettings.Builder pubBuilder =
-          PublisherSettings.defaultBuilder().provideExecutorWith(executor, false);
-      SubscriberSettings.Builder subBuilder =
-          SubscriberSettings.defaultBuilder().provideExecutorWith(executor, false);
+      PublisherSettings.Builder pubBuilder = PublisherSettings.defaultBuilder()
+          .provideExecutorWith(executor, false)
+          .setClientLibHeader(libraryName, libraryVersion);
+      SubscriberSettings.Builder subBuilder = SubscriberSettings.defaultBuilder()
+          .provideExecutorWith(executor, false)
+          .setClientLibHeader(libraryName, libraryVersion);
       // todo(mziccard): PublisherSettings should support null/absent credentials for testing
       if (options.host().contains("localhost")
           || options.authCredentials().equals(AuthCredentials.noAuth())) {

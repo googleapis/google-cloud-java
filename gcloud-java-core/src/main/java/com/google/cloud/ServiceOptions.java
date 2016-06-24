@@ -68,9 +68,11 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
   private static final String MANIFEST_ARTIFACT_ID_KEY = "artifactId";
   private static final String MANIFEST_VERSION_KEY = "Implementation-Version";
   private static final String ARTIFACT_ID = "gcloud-java-core";
-  private static final String APPLICATION_BASE_NAME = "gcloud-java";
-  private static final String APPLICATION_NAME = getApplicationName();
-  private static final long serialVersionUID = -6410263550484023006L;
+  private static final String LIBRARY_NAME = "gcloud-java";
+  private static final String LIBRARY_VERSION = getLibraryVersion();
+  private static final String APPLICATION_NAME =
+      LIBRARY_VERSION == null ? LIBRARY_NAME : LIBRARY_NAME + "/" + LIBRARY_VERSION;
+  private static final long serialVersionUID = 3049375916337507361L;
 
   private final String projectId;
   private final String host;
@@ -439,6 +441,20 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
     return APPLICATION_NAME;
   }
 
+  /**
+   * Returns the library's name, {@code gcloud-java}, as a string.
+   */
+  public String libraryName() {
+    return LIBRARY_NAME;
+  }
+
+  /**
+   * Returns the library's version as a string.
+   */
+  public String libraryVersion() {
+    return LIBRARY_VERSION;
+  }
+
   protected int baseHashCode() {
     return Objects.hash(projectId, host, authCredentialsState, retryParams, serviceFactoryClassName,
         serviceRpcFactoryClassName, clock);
@@ -491,7 +507,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
     return Iterables.getFirst(ServiceLoader.load(clazz), defaultInstance);
   }
 
-  private static String getApplicationName() {
+  private static String getLibraryVersion() {
     String version = null;
     try {
       Enumeration<URL> resources =
@@ -507,6 +523,6 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
     } catch (IOException e) {
       // ignore
     }
-    return version != null ? APPLICATION_BASE_NAME + "/" + version : APPLICATION_BASE_NAME;
+    return version;
   }
 }
