@@ -29,6 +29,7 @@
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>exec-maven-plugin</artifactId>
         <configuration>
+          <cleanupDaemonThreads>false</cleanupDaemonThreads>
           <skip>false</skip>
         </configuration>
       </plugin>

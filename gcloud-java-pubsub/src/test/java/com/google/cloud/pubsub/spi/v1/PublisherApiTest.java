@@ -45,7 +45,7 @@ public class PublisherApiTest {
 
   @BeforeClass
   public static void startServer() throws IOException, InterruptedException {
-    pubsubHelper = new LocalPubsubHelper();
+    pubsubHelper = LocalPubsubHelper.create();
     pubsubHelper.start();
   }
 
