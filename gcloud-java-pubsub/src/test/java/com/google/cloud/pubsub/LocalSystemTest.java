@@ -40,7 +40,7 @@ public class LocalSystemTest extends BaseSystemTest {
 
   @BeforeClass
   public static void startServer() throws IOException, InterruptedException {
-    pubsubHelper = new LocalPubsubHelper();
+    pubsubHelper = LocalPubsubHelper.create();
     pubsubHelper.start();
     pubsub = pubsubHelper.options().service();
   }

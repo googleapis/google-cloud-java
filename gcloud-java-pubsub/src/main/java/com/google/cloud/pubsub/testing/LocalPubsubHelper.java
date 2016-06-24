@@ -70,11 +70,7 @@ public class LocalPubsubHelper {
     }
   }
 
-  /**
-   * Constructs a new LocalPubsubHelper. The method start() must
-   * be called before it is used.
-   */
-  public LocalPubsubHelper() {
+  private LocalPubsubHelper() {
     port = LocalServiceHelper.findAvailablePort(DEFAULT_PORT);
     List<String> gcloudCommand = new ArrayList<>(Arrays.asList(GCLOUD_CMD_TEXT.split(" ")));
     gcloudCommand.add(GCLOUD_CMD_PORT_FLAG + "localhost:" + port);
@@ -85,6 +81,14 @@ public class LocalPubsubHelper {
             EMULATOR_URL, MD5_CHECKSUM);
     serviceHelper = new LocalServiceHelper(Arrays.asList(gcloudRunner, downloadRunner), port);
     projectId = PROJECT_ID_PREFIX + UUID.randomUUID().toString();
+  }
+
+  /**
+   * Constructs a new {@code LocalPubsubHelper}. The method {@code start()} must be called before it
+   * is used.
+   */
+  public static LocalPubsubHelper create() {
+    return new LocalPubsubHelper();
   }
 
   /**

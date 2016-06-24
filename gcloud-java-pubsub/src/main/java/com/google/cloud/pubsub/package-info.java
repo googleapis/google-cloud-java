@@ -17,13 +17,38 @@
 /**
  * A client to Google Cloud Pub/Sub.
  *
- * <p>Here's a simple usage example for using gcloud-pubsub:
- * todo: add example
+ * <p>Here's a simple usage example for using gcloud-java from Compute Engine/App Engine Flexible.
+ * This example shows how to create a Pub/Sub topic and asynchronously publish messages to it. For
+ * the complete source code see
+ * <a href="https://github.com/GoogleCloudPlatform/gcloud-java/tree/master/gcloud-java-examples/src/main/java/com/google/cloud/examples/pubsub/snippets/CreateTopicAndPublishMessages.java">
+ * CreateTopicAndPublishMessages.java</a>.
  * <pre> {@code
- * PubSub pubsub = PubSubOptions.defaultInstance().service();
- * }</pre>
+ * try (PubSub pubsub = PubSubOptions.defaultInstance().service()) {
+ *   Topic topic = pubsub.create(TopicInfo.of("test-topic"));
+ *   Message message1 = Message.of("First message");
+ *   Message message2 = Message.of("Second message");
+ *   topic.publishAsync(message1, message2);
+ * }}</pre>
+ *
+ * <p>This second example shows how to create a Pub/Sub pull subscription and asynchronously pull
+ * messages from it. For the complete source code see
+ * <a href="https://github.com/GoogleCloudPlatform/gcloud-java/tree/master/gcloud-java-examples/src/main/java/com/google/cloud/examples/pubsub/snippets/CreateSubscriptionAndPullMessages.java">
+ * CreateSubscriptionAndPullMessages.java</a>.
+ * <pre> {@code
+ * try (PubSub pubsub = PubSubOptions.defaultInstance().service()) {
+ *   Subscription subscription =
+ *   pubsub.create(SubscriptionInfo.of("test-topic", "test-subscription"));
+ *   MessageProcessor callback = new MessageProcessor() {
+ *     public void process(Message message) throws Exception {
+ *       System.out.printf("Received message \"%s\"%n", message.payloadAsString());
+ *     }
+ *   };
+ *   // Create a message consumer and pull messages (for 60 seconds)
+ *   try (MessageConsumer consumer = subscription.pullAsync(callback)) {
+ *     Thread.sleep(60_000);
+ *   }
+ * }}</pre>
  *
  * @see <a href="https://cloud.google.com/pubsub/">Google Cloud Pub/Sub</a>
  */
-
 package com.google.cloud.pubsub;

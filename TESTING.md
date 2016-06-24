@@ -174,5 +174,46 @@ Here is an example that clears the dataset created in Step 3.
   RemoteBigQueryHelper.forceDelete(bigquery, dataset);
   ```
 
+### Testing code that uses Pub/Sub
+
+#### On your machine
+
+You can test against a temporary local Pub/Sub by following these steps:
+
+1. Start the local Pub/Sub emulator before running your tests using `LocalPubSubHelper`'s `create`
+and `start` methods. This will bind a port for communication with the local Pub/Sub emulator.
+  ```java
+  LocalPubSubHelper helper = LocalPubSubHelper.create();
+
+  helper.start(); // Starts the local Pub/Sub emulator in a separate process
+  ```
+
+2. Create and use a `PubSub` object with the options given by the `LocalPubSubHelper` instance. For
+example:
+  ```java
+  PubSub localPubsub = helper.options().service();
+  ```
+
+3. Run your tests.
+
+4. Stop the local Pub/Sub emulator by calling the `stop()` method, like so:
+  ```java
+  helper.stop();
+  ```
+
+#### On a remote machine
+
+You can test against a remote Pub/Sub emulator as well. To do this, set the `PubSubOptions` project
+endpoint to the hostname of the remote machine, like the example below.
+
+  ```java
+  PubSubOptions options = PubSubOptions.builder()
+      .projectId("my-project-id") // must match project ID specified on remote machine
+      .host("<hostname of machine>:<port>")
+      .authCredentials(AuthCredentials.noAuth())
+      .build();
+  PubSub localPubsub= options.service();
+  ```
+
 [cloud-platform-storage-authentication]:https://cloud.google.com/storage/docs/authentication?hl=en#service_accounts
 [create-service-account]:https://developers.google.com/identity/protocols/OAuth2ServiceAccount#creatinganaccount
