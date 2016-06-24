@@ -442,7 +442,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
   }
 
   /**
-   * Returns {@code gcloud-java}, the library's name, as a string.
+   * Returns the library's name, {@code gcloud-java}, as a string.
    */
   public String libraryName() {
     return LIBRARY_NAME;
