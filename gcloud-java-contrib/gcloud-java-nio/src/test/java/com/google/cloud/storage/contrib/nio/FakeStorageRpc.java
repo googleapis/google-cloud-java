@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.cloud.storage.testing;
+package com.google.cloud.storage.contrib.nio;
 
 import com.google.api.services.storage.model.Bucket;
 import com.google.api.services.storage.model.StorageObject;
@@ -63,7 +63,7 @@ import javax.annotation.concurrent.NotThreadSafe;
  * </ul>
  */
 @NotThreadSafe
-public class FakeStorageRpc implements StorageRpc {
+class FakeStorageRpc implements StorageRpc {
 
   // fullname -> metadata
   Map<String, StorageObject> metadata = new HashMap<>();
