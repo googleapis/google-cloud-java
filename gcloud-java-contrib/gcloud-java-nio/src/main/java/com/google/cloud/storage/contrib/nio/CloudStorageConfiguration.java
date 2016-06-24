@@ -82,8 +82,9 @@ public abstract class CloudStorageConfiguration {
     private int blockSize = CloudStorageFileSystem.BLOCK_SIZE_DEFAULT;
 
     /**
-     * Changes current working directory for new filesystem. This cannot be changed once it's
-     * been set. You'll need to create another {@link CloudStorageFileSystem} object.
+     * Changes current working directory for new filesystem. This defaults to the root directory.
+     * The working directory cannot be changed once it's been set. You'll need to create another
+     * {@link CloudStorageFileSystem} object.
      *
      * @throws IllegalArgumentException if {@code path} is not absolute.
      */
@@ -95,7 +96,7 @@ public abstract class CloudStorageConfiguration {
 
     /**
      * Configures whether or not we should throw an exception when encountering object names
-     * containing superfluous slashes, e.g. {@code a//b}
+     * containing superfluous slashes, e.g. {@code a//b}.
      */
     public Builder permitEmptyPathComponents(boolean value) {
       permitEmptyPathComponents = value;
