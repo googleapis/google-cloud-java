@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google Inc. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.cloud.storage.testing;
+package com.google.cloud.storage.contrib.nio;
 
 import com.google.cloud.spi.ServiceRpcFactory;
 import com.google.cloud.storage.spi.StorageRpc;
@@ -24,15 +24,14 @@ import com.google.cloud.storage.StorageOptions;
  * Utility to create an in-memory storage configuration for testing. Storage options can be
  * obtained via the {@link #options()} method. Returned options will point to FakeStorageRpc.
  */
-public class LocalStorageHelper {
+class LocalStorageHelper {
 
   // used for testing. Will throw if you pass it an option.
   private static final FakeStorageRpc instance = new FakeStorageRpc(true);
 
   /**
-   * Returns a {@link StorageOptions} that use the static FakeStorageRpc instance,
-   * and resets it first so you start from a clean slate.
-   * That instance will throw if you pass it any option.   *
+   * Returns a {@link StorageOptions} that use the static FakeStorageRpc instance, and resets it
+   * first so you start from a clean slate. That instance will throw if you pass it any option.
    */
   public static StorageOptions options() {
     instance.reset();
@@ -49,8 +48,8 @@ public class LocalStorageHelper {
   }
 
   /**
-   * Returns a {@link StorageOptions} that creates a new FakeStorageRpc instance
-   * with the given option.
+   * Returns a {@link StorageOptions} that creates a new FakeStorageRpc instance with the given
+   * option.
    */
   public static StorageOptions customOptions(final boolean throwIfOptions) {
     return StorageOptions.builder()
@@ -64,5 +63,4 @@ public class LocalStorageHelper {
          })
       .build();
   }
-
 }
