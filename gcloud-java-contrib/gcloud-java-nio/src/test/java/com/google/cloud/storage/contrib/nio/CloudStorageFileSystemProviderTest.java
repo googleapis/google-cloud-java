@@ -26,7 +26,6 @@ import static java.nio.file.StandardOpenOption.CREATE_NEW;
 import static java.nio.file.StandardOpenOption.TRUNCATE_EXISTING;
 import static java.nio.file.StandardOpenOption.WRITE;
 
-import com.google.cloud.storage.testing.LocalStorageHelper;
 import com.google.common.collect.ImmutableList;
 import com.google.common.testing.NullPointerTester;
 

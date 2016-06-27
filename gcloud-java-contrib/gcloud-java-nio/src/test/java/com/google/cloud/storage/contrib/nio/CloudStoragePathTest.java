@@ -18,7 +18,6 @@ package com.google.cloud.storage.contrib.nio;
 
 import static com.google.common.truth.Truth.assertThat;
 
-import com.google.cloud.storage.testing.LocalStorageHelper;
 import com.google.common.collect.Iterables;
 import com.google.common.testing.EqualsTester;
 import com.google.common.testing.NullPointerTester;
