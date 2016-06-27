@@ -28,11 +28,6 @@
       <version>${project.version}</version>
     </dependency>
     <dependency>
-      <groupId>com.google.api</groupId>
-      <artifactId>gax</artifactId>
-      <version>0.0.13</version>
-    </dependency>
-    <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-pubsub-v1</artifactId>
       <version>0.0.2</version>
@@ -40,7 +35,7 @@
     <dependency>
       <groupId>io.grpc</groupId>
       <artifactId>grpc-all</artifactId>
-      <version>0.14.0</version>
+      <version>0.14.1</version>
     </dependency>
     <dependency>
       <groupId>com.google.auto.value</groupId>
