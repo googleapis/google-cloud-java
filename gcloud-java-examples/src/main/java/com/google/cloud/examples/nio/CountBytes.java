@@ -37,8 +37,10 @@ import java.util.concurrent.TimeUnit;
  * This class also shows how to read all of the file's contents using NIO,
  * computes a MD5 hash, and reports how long it took.
  *
- * <p>See the README for compilation instructions. Run this code with
- * {@code target/appassembler/bin/CountBytes <file>}
+ * <p>See the
+ * <a href="https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/gcloud-java-examples/README.md">
+ * README</a> for compilation instructions. Run this code with
+ * <pre>{@code target/appassembler/bin/CountBytes <file>}</pre>
  */
 public class CountBytes {
 
