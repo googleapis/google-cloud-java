@@ -35,6 +35,8 @@ public class PageImplTest {
   public void testPage() {
     final PageImpl<String> nextResult = new PageImpl<>(null, "c", NEXT_VALUES);
     PageImpl.NextPageFetcher<String> fetcher = new PageImpl.NextPageFetcher<String>() {
+      private static final long serialVersionUID = -1714571149183431798L;
+
       @Override
       public PageImpl<String> nextPage() {
         return nextResult;
