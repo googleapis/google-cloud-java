@@ -16,7 +16,7 @@
 
 package com.google.cloud.compute;
 
-import com.google.cloud.ServiceOptions;
+import com.google.cloud.HttpServiceOptions;
 import com.google.cloud.compute.spi.ComputeRpc;
 import com.google.cloud.compute.spi.ComputeRpcFactory;
 import com.google.cloud.compute.spi.DefaultComputeRpc;
@@ -24,11 +24,11 @@ import com.google.common.collect.ImmutableSet;
 
 import java.util.Set;
 
-public class ComputeOptions extends ServiceOptions<Compute, ComputeRpc, ComputeOptions> {
+public class ComputeOptions extends HttpServiceOptions<Compute, ComputeRpc, ComputeOptions> {
 
   private static final String COMPUTE_SCOPE = "https://www.googleapis.com/auth/compute";
   private static final Set<String> SCOPES = ImmutableSet.of(COMPUTE_SCOPE);
-  private static final long serialVersionUID = 6509557711917342058L;
+  private static final long serialVersionUID = 5074781985597996770L;
 
   public static class DefaultComputeFactory implements ComputeFactory {
 
@@ -51,7 +51,7 @@ public class ComputeOptions extends ServiceOptions<Compute, ComputeRpc, ComputeO
   }
 
   public static class Builder extends
-      ServiceOptions.Builder<Compute, ComputeRpc, ComputeOptions, Builder> {
+      HttpServiceOptions.Builder<Compute, ComputeRpc, ComputeOptions, Builder> {
 
     private Builder() {
     }

@@ -18,6 +18,7 @@ This client supports the following Google Cloud Platform services:
 -  [Google Cloud Compute] (#google-cloud-compute-alpha) (Alpha)
 -  [Google Cloud Datastore] (#google-cloud-datastore)
 -  [Google Cloud DNS] (#google-cloud-dns-alpha) (Alpha)
+-  [Google Cloud Pub/Sub] (#google-cloud-pubsub-alpha) (Alpha - Not working on App Engine Standard)
 -  [Google Cloud Resource Manager] (#google-cloud-resource-manager-alpha) (Alpha)
 -  [Google Cloud Storage] (#google-cloud-storage)
 
@@ -62,6 +63,8 @@ Example Applications
 - [`Flexible Environment/Datastore example`](https://github.com/GoogleCloudPlatform/java-docs-samples/tree/master/managed_vms/datastore) - A simple app that uses Cloud Datastore to list the last 10 IP addresses that visited your site.
   - Read about how to run the application [here](https://github.com/GoogleCloudPlatform/java-docs-samples/blob/master/managed_vms/README.md).
 - [`Flexible Environment/Storage example`](https://github.com/GoogleCloudPlatform/java-docs-samples/tree/master/managed_vms/cloudstorage) - An app that uploads files to a public Cloud Storage bucket on the App Engine Flexible Environment runtime.
+- [`PubSubExample`](./gcloud-java-examples/src/main/java/com/google/cloud/examples/pubsub/PubSubExample.java) - A simple command line interface providing some of Cloud Pub/Sub's functionality
+  - Read more about using this application on the [`PubSubExample` docs page](http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/cloud/examples/pubsub/PubSubExample.html).
 - [`ResourceManagerExample`](./gcloud-java-examples/src/main/java/com/google/cloud/examples/resourcemanager/ResourceManagerExample.java) - A simple command line interface providing some of Cloud Resource Manager's functionality
   - Read more about using this application on the [`ResourceManagerExample` docs page](http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/cloud/examples/resourcemanager/ResourceManagerExample.html).
 - [`SparkDemo`](https://github.com/GoogleCloudPlatform/java-docs-samples/blob/master/managed_vms/sparkjava) - An example of using `gcloud-java-datastore` from within the SparkJava and App Engine Flexible Environment frameworks.
@@ -368,6 +371,44 @@ ChangeRequestInfo changeRequest = changeBuilder.build();
 zone.applyChangeRequest(changeRequest);
 ```
 
+Google Cloud Pub/Sub (Alpha)
+----------------------
+
+- [API Documentation][pubsub-api]
+- [Official Documentation][cloud-pubsub-docs]
+
+#### Preview
+
+Here is a code snippet showing a simple usage example from within Compute Engine/App Engine
+Flexible. Note that you must [supply credentials](#authentication) and a project ID if running this
+snippet elsewhere. Complete source code can be found at
+[CreateSubscriptionAndPullMessages.java](./gcloud-java-examples/src/main/java/com/google/cloud/examples/pubsub/snippets/CreateSubscriptionAndPullMessages.java).
+
+```java
+import com.google.cloud.pubsub.Message;
+import com.google.cloud.pubsub.PubSub;
+import com.google.cloud.pubsub.PubSub.MessageConsumer;
+import com.google.cloud.pubsub.PubSub.MessageProcessor;
+import com.google.cloud.pubsub.PubSubOptions;
+import com.google.cloud.pubsub.Subscription;
+import com.google.cloud.pubsub.SubscriptionInfo;
+
+try (PubSub pubsub = PubSubOptions.defaultInstance().service()) {
+  Subscription subscription =
+      pubsub.create(SubscriptionInfo.of("test-topic", "test-subscription"));
+  MessageProcessor callback = new MessageProcessor() {
+    @Override
+    public void process(Message message) throws Exception {
+      System.out.printf("Received message \"%s\"%n", message.payloadAsString());
+    }
+  };
+  // Create a message consumer and pull messages (for 60 seconds)
+  try (MessageConsumer consumer = subscription.pullAsync(callback)) {
+    Thread.sleep(60_000);
+  }
+}
+```
+
 Google Cloud Resource Manager (Alpha)
 ----------------------
 
@@ -513,6 +554,7 @@ Apache 2.0 - See [LICENSE] for more information.
 [cloud-dns-docs]: https://cloud.google.com/dns/docs
 [cloud-dns-activation]: https://console.cloud.google.com/start/api?id=dns
 
+[pubsub-api]: http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/cloud/pubsub/package-summary.html
 [cloud-pubsub]: https://cloud.google.com/pubsub/
 [cloud-pubsub-docs]: https://cloud.google.com/pubsub/docs
 

@@ -22,21 +22,16 @@ import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
-import com.google.cloud.ServiceOptions.DefaultHttpTransportFactory;
-import com.google.cloud.ServiceOptions.HttpTransportFactory;
 import com.google.cloud.spi.ServiceRpcFactory;
 
-import org.easymock.EasyMock;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Set;
+import java.util.regex.Pattern;
 
-@RunWith(JUnit4.class)
 public class ServiceOptionsTest {
   private static final String JSON_KEY =
       "{\n"
@@ -74,23 +69,21 @@ public class ServiceOptionsTest {
       fail("Couldn't create fake JSON credentials.");
     }
   }
-  private static final HttpTransportFactory MOCK_HTTP_TRANSPORT_FACTORY =
-      EasyMock.createMock(HttpTransportFactory.class);
   private static final Clock TEST_CLOCK = new TestClock();
   private static final TestServiceOptions OPTIONS =
       TestServiceOptions.builder()
           .authCredentials(authCredentials)
           .clock(TEST_CLOCK)
-          .connectTimeout(1234)
           .host("host")
-          .httpTransportFactory(MOCK_HTTP_TRANSPORT_FACTORY)
           .projectId("project-id")
-          .readTimeout(5678)
           .retryParams(RetryParams.noRetries())
           .build();
   private static final TestServiceOptions DEFAULT_OPTIONS =
       TestServiceOptions.builder().projectId("project-id").build();
   private static final TestServiceOptions OPTIONS_COPY = OPTIONS.toBuilder().build();
+  private static final String LIBRARY_NAME = "gcloud-java";
+  private static final Pattern APPLICATION_NAME_PATTERN =
+      Pattern.compile(LIBRARY_NAME + "(/[0-9]+.[0-9]+.[0-9]+)?");
 
   private static class TestClock extends Clock {
     @Override
@@ -196,18 +189,11 @@ public class ServiceOptionsTest {
   public void testBuilder() {
     assertSame(authCredentials, OPTIONS.authCredentials());
     assertSame(TEST_CLOCK, OPTIONS.clock());
-    assertEquals(1234, OPTIONS.connectTimeout());
     assertEquals("host", OPTIONS.host());
-    assertSame(MOCK_HTTP_TRANSPORT_FACTORY, OPTIONS.httpTransportFactory());
     assertEquals("project-id", OPTIONS.projectId());
-    assertEquals(5678, OPTIONS.readTimeout());
     assertSame(RetryParams.noRetries(), OPTIONS.retryParams());
-
     assertSame(Clock.defaultClock(), DEFAULT_OPTIONS.clock());
-    assertEquals(-1, DEFAULT_OPTIONS.connectTimeout());
     assertEquals("https://www.googleapis.com", DEFAULT_OPTIONS.host());
-    assertTrue(DEFAULT_OPTIONS.httpTransportFactory() instanceof DefaultHttpTransportFactory);
-    assertEquals(-1, DEFAULT_OPTIONS.readTimeout());
     assertSame(RetryParams.defaultInstance(), DEFAULT_OPTIONS.retryParams());
   }
 
@@ -230,6 +216,16 @@ public class ServiceOptionsTest {
   public void testBaseEquals() {
     assertEquals(OPTIONS, OPTIONS_COPY);
     assertNotEquals(DEFAULT_OPTIONS, OPTIONS);
+  }
+
+  @Test
+  public void testLibraryName() {
+    assertEquals(LIBRARY_NAME, OPTIONS.libraryName());
+  }
+
+  @Test
+  public void testApplicationName() {
+    assertTrue(APPLICATION_NAME_PATTERN.matcher(OPTIONS.applicationName()).matches());
   }
 
   @Test
