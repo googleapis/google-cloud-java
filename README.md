@@ -18,7 +18,7 @@ This client supports the following Google Cloud Platform services:
 -  [Google Cloud Compute] (#google-cloud-compute-alpha) (Alpha)
 -  [Google Cloud Datastore] (#google-cloud-datastore)
 -  [Google Cloud DNS] (#google-cloud-dns-alpha) (Alpha)
--  [Google Cloud Pub/Sub] (#google-cloud-pubsub) (Alpha - Not working on App Engine Standard)
+-  [Google Cloud Pub/Sub] (#google-cloud-pubsub-alpha) (Alpha - Not working on App Engine Standard)
 -  [Google Cloud Resource Manager] (#google-cloud-resource-manager-alpha) (Alpha)
 -  [Google Cloud Storage] (#google-cloud-storage)
 
