@@ -17,6 +17,9 @@ Contents
 
 Quickstart
 ----------
+
+### gcloud-java-nio
+
 If you are using Maven, add this to your pom.xml file
 ```xml
 <dependency>
@@ -33,6 +36,10 @@ If you are using SBT, add this to your dependencies
 ```Scala
 libraryDependencies += "com.google.cloud" % "gcloud-java-contrib" % "0.2.4"
 ```
+
+### gcloud-java-nio-examples
+
+See its [README](./gcloud-java-nio-examples/README.md) for instructions on how to run it.
 
 Java Versions
 -------------

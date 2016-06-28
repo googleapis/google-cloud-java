@@ -39,3 +39,5 @@ facility, the [standard way](http://docs.oracle.com/javase/7/docs/technotes/guid
 If you have access to a project's source code you can also simply add gcloud-java-nio as
 a dependency and let Maven pull in the required dependencies (this is what the nio unit tests do).
 This approach is preferable as the fat jar approach may waste memory on multiple copies of dependencies.
+
+[developers-console]:https://console.developers.google.com/
