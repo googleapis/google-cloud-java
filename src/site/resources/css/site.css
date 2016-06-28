@@ -132,8 +132,11 @@ img {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-weight: normal;
     font-weight: 300;
+}
+
+h2, h3 {
+    color: #4285f4;
 }
 
 /* Header
@@ -320,6 +323,7 @@ h1, h2, h3, h4, h5, h6 {
 .hero-banner h2 {
     margin-bottom: 0.2em;
     font-size: 1.3em;
+    color: #fff;
 }
 
 .hero-banner pre {
