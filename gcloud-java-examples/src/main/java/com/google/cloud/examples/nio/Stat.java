@@ -35,8 +35,10 @@ import java.nio.file.spi.FileSystemProvider;
  * or you can directly pass in a GCS file name to use. In that case you have to
  * be logged in (using e.g. the gcloud auth command).
  *
- * <p>See the README for compilation instructions. Run this code with
- * {@code target/appassembler/bin/Stat --help | --check | --list | <file>}
+ * <p>See the
+ * <a href="https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/gcloud-java-examples/README.md">
+ * README</a> for compilation instructions. Run this code with
+ * <pre>{@code target/appassembler/bin/Stat --help | --check | --list | <file>}</pre>
  *
  * <p>In short, this version (in gcloud-java-examples) is in a package that lists gcloud-java-nio
  * as a dependency, so it will work directly without having to do any special work.

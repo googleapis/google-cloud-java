@@ -43,8 +43,10 @@ import java.util.concurrent.TimeUnit;
  * in order, using multithreaded NIO reads.
  * It prints a MD5 hash and reports how long it took.
  *
- * <p>See the README for compilation instructions. Run this code with
- * {@code target/appassembler/bin/ParallelCountBytes <file>}
+ * <p>See the
+ * <a href="https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/gcloud-java-examples/README.md">
+ * README</a> for compilation instructions. Run this code with
+ * <pre>{@code target/appassembler/bin/ParallelCountBytes <file>}</pre>
  */
 public class ParallelCountBytes {
 

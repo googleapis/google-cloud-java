@@ -42,9 +42,10 @@ import java.util.concurrent.TimeUnit;
  * <p>This example creates, deletes, gets, and lists zones. It also creates and deletes
  * record sets of type A, and lists record sets.
  *
- * <p>See the README for steps needed for running the example.
- * <p>The command-line arguments can be:
- * <pre>{@code [<project_id>]
+ * <p>See the
+ * <a href="https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/gcloud-java-examples/README.md">
+ * README</a> for compilation instructions. Run this code with
+ * <pre>{@code target/appassembler/bin/DnsExample [<project_id>]
  * create <zone_name> <dns_name> <description> |
  * get <zone_name> |
  * delete <zone_name> |

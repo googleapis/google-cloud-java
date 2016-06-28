@@ -41,14 +41,11 @@ import java.util.TreeMap;
  * <p>This example adds, displays or clears comments for a given user. This example also sets
  * contact information for a user.
  *
- * <p>Steps needed for running the example:<ol>
- * <li>login using gcloud SDK - {@code gcloud auth login}.</li>
- * <li>compile using maven - {@code cd gcloud-java-examples;
- * mvn package appassembler:assemble -DskipTests -Dmaven.javadoc.skip=true -Dmaven.source.skip=true}
- * </li>
- * <li>run - {@code target/appassembler/bin/DatastoreExample
- * [projectId] [user] [delete|display|add comment]}</li>
- * </ol>
+ * <p>See the
+ * <a href="https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/gcloud-java-examples/README.md">
+ * README</a> for compilation instructions. Run this code with
+ * <pre>{@code target/appassembler/bin/DatastoreExample
+ * [projectId] [user] [delete|display|add comment]}</pre>
  *
  * <p>If no action is provided {@code display} is executed.
  */
