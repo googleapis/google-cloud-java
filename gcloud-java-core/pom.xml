@@ -11,7 +11,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>gcloud-java-pom</artifactId>
-    <version>0.2.4-SNAPSHOT</version>
+    <version>0.2.4</version>
   </parent>
   <properties>
     <site.installationModule>gcloud-java-core</site.installationModule>
