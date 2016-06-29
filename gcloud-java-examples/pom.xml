@@ -82,6 +82,12 @@
             </program>
             <program>
               <mainClass>
+                com.google.cloud.examples.pubsub.PubSubExample
+              </mainClass>
+              <name>PubSubExample</name>
+            </program>
+            <program>
+              <mainClass>
                 com.google.cloud.examples.resourcemanager.ResourceManagerExample
               </mainClass>
               <name>ResourceManagerExample</name>
