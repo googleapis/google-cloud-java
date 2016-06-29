@@ -11,14 +11,17 @@ if [ "${RELEASED_VERSION##*-}" != "SNAPSHOT" ]; then
     echo "Changing version to $RELEASED_VERSION in README files"
     # Get list of directories for which README.md must be updated
     module_folders=($(find . -maxdepth 2 -type d | sed -E -n "/^\.\/(gcloud-java-contrib\/)?gcloud-java(-[a-z]+)+$/p") . ./gcloud-java)
+    readmes=""
     for item in ${module_folders[*]}
     do
-        sed -ri "s/<version>[0-9]+\.[0-9]+\.[0-9]+<\/version>/<version>${RELEASED_VERSION}<\/version>/g" ${item}/README.md
-        sed -ri "s/:[0-9]+\.[0-9]+\.[0-9]+'/:${RELEASED_VERSION}'/g" ${item}/README.md
-        sed -ri "s/\"[0-9]+\.[0-9]+\.[0-9]+\"/\"${RELEASED_VERSION}\"/g" ${item}/README.md
+        if [ -f ${item}/README.md ]; then
+            sed -ri "s/<version>[0-9]+\.[0-9]+\.[0-9]+<\/version>/<version>${RELEASED_VERSION}<\/version>/g" ${item}/README.md
+            sed -ri "s/:[0-9]+\.[0-9]+\.[0-9]+'/:${RELEASED_VERSION}'/g" ${item}/README.md
+            sed -ri "s/\"[0-9]+\.[0-9]+\.[0-9]+\"/\"${RELEASED_VERSION}\"/g" ${item}/README.md
+            readmes="$readmes ${item}/README.md"
+        fi
     done
-    
-    git add README.md */README.md
+    git add $readmes
     git config --global user.name "travis-ci"
     git config --global user.email "travis@travis-ci.org"
     git commit -m "Updating version in README files. [ci skip]"
