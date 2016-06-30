@@ -139,7 +139,8 @@ public final class CloudStoragePath implements Path {
       objectName = objectName.removeBeginningSeparator();
     }
     checkArgument(
-        !errorCheck || !objectName.isEmpty(), "I/O not allowed on empty GCS object names.");
+        !errorCheck || !objectName.isEmpty(),
+        "I/O not allowed on empty Google Cloud Storage object names.");
     return objectName;
   }
 
@@ -256,8 +257,8 @@ public final class CloudStoragePath implements Path {
   }
 
   /**
-   * Throws {@link UnsupportedOperationException} because GCS files are not backed by the local file
-   * system.
+   * Throws {@link UnsupportedOperationException} because Google Cloud Storage files are not backed
+   * by the local file system.
    */
   @Override
   public File toFile() {

@@ -77,7 +77,8 @@ import javax.inject.Singleton;
  *
  * <p><b>Note:</b> This class should never be used directly. This class is instantiated by the
  * service loader and called through a standardized API, e.g. {@link java.nio.file.Files}. However
- * the javadocs in this class serve as useful documentation for the behavior of the GCS NIO library.
+ * the javadocs in this class serve as useful documentation for the behavior of the Google Cloud
+ * Storage NIO library.
  */
 @Singleton
 @ThreadSafe
@@ -481,7 +482,7 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
   }
 
   /**
-   * Always returns {@code false}, because GCS doesn't support hidden files.
+   * Always returns {@code false}, because Google Cloud Storage doesn't support hidden files.
    */
   @Override
   public boolean isHidden(Path path) {
@@ -561,7 +562,7 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
   }
 
   /**
-   * Does nothing since GCS uses fake directories.
+   * Does nothing since Google Cloud Storage uses fake directories.
    */
   @Override
   public void createDirectory(Path dir, FileAttribute<?>... attrs) {

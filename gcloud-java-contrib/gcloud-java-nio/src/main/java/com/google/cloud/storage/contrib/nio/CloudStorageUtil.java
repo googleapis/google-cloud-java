@@ -36,9 +36,9 @@ final class CloudStorageUtil {
         "Invalid bucket name: '"
             + bucket
             + "'. "
-            + "GCS bucket names must contain only lowercase letters, numbers, dashes (-), "
-            + "underscores (_), and dots (.). Bucket names must start and end with a number or a "
-            + "letter. See the following page for more details: "
+            + "Google Cloud Storage bucket names must contain only lowercase letters, numbers, "
+            + "dashes (-), underscores (_), and dots (.). Bucket names must start and end with a "
+            + "number or a letter. See the following page for more details: "
             + "https://developers.google.com/storage/docs/bucketnaming");
   }
 

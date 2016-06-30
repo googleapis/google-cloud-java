@@ -46,9 +46,9 @@ To run examples from your command line:
 
     Before running the example, go to the [Google Developers Console][developers-console] to ensure
     that BigQuery API is enabled. You can upload a CSV file `my_csv_file` to the `my_bucket` bucket
-    (replace `my_csv_file` and `my_bucket` with actual file and bucket names) using the GCS
-    [web browser](https://console.developers.google.com/storage/browser). The CSV file will be used to
-    load data into a BigQuery table and should look something like:
+    (replace `my_csv_file` and `my_bucket` with actual file and bucket names) using the Google Cloud
+    Storage [web browser](https://console.developers.google.com/storage/browser). The CSV file will
+    be used to load data into a BigQuery table and should look something like:
     ```csv
     value1
     value2
@@ -82,6 +82,7 @@ To run examples from your command line:
     target/appassembler/bin/DatastoreExample your-project-id my_name add my\ comment
     target/appassembler/bin/DatastoreExample your-project-id my_name display
     target/appassembler/bin/DatastoreExample your-project-id my_name delete
+    target/appassembler/bin/DatastoreExample your-project-id my_name set myname@mydomain.com 1234
     ```
 
   * Here's an example run of `DnsExample`.
@@ -143,8 +144,9 @@ To run examples from your command line:
     target/appassembler/bin/Stat gs://mybucket/myfile.txt
     ```
 
-    The sample doesn't have anything special about GCS in it, it just opens files via the NIO API.
-    It lists gcloud-java-nio as a dependency, and that enables it to interpret `gs://` paths.
+    The sample doesn't have anything special about Google Cloud Storage in it, it just opens files
+    via the NIO API. It lists gcloud-java-nio as a dependency, and that enables it to interpret
+    `gs://` paths.
 
 Troubleshooting
 ---------------

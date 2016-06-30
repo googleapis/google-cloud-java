@@ -141,7 +141,7 @@ yet implemented:
  * Resuming upload or download
  * Generations
  * File attributes
- * (more)
+ * (more - list is not exhaustive)
 
 Some features are not on the roadmap: this library would be a poor choice to
 mirror a local filesystem onto the cloud because Google Cloud Storage has a

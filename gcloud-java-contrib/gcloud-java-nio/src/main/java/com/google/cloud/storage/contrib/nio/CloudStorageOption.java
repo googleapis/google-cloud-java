@@ -25,17 +25,17 @@ import java.nio.file.OpenOption;
 public interface CloudStorageOption {
 
   /**
-   * Interface for GCS options that can be specified when opening files.
+   * Interface for Google Cloud Storage options that can be specified when opening files.
    */
   interface Open extends CloudStorageOption, OpenOption {}
 
   /**
-   * Interface for GCS options that can be specified when copying files.
+   * Interface for Google Cloud Storage options that can be specified when copying files.
    */
   interface Copy extends CloudStorageOption, CopyOption {}
 
   /**
-   * Interface for GCS options that can be specified when opening or copying files.
+   * Interface for Google Cloud Storage options that can be specified when opening or copying files.
    */
   interface OpenCopy extends Open, Copy {}
 }

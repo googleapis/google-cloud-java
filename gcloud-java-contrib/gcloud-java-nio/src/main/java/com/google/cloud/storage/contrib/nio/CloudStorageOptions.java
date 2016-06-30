@@ -83,7 +83,7 @@ public final class CloudStorageOptions {
   }
 
   /**
-   * Sets the block size (in bytes) when talking to the GCS server.
+   * Sets the block size (in bytes) when talking to the Google Cloud Storage server.
    *
    * <p>The default is {@value CloudStorageFileSystem#BLOCK_SIZE_DEFAULT}.
    */

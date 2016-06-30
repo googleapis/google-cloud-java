@@ -55,7 +55,7 @@ public abstract class CloudStorageConfiguration {
   public abstract boolean usePseudoDirectories();
 
   /**
-   * Returns block size (in bytes) used when talking to the GCS HTTP server.
+   * Returns block size (in bytes) used when talking to the Google Cloud Storage HTTP server.
    */
   public abstract int blockSize();
 

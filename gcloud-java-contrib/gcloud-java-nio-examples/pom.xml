@@ -6,7 +6,7 @@
   <name>GCloud Java NIO examples</name>
   <url>https://github.com/GoogleCloudPlatform/gcloud-java/tree/master/gcloud-java-contrib/gcloud-java-nio-examples</url>
   <description>
-    Demonstrates how to use the gcloud-java-nio jar to add GCS functionality to legacy code.
+    Demonstrates how to use the gcloud-java-nio jar to add Google Cloud Storage functionality to legacy code.
   </description>
   <parent>
     <groupId>com.google.cloud</groupId>

@@ -97,9 +97,10 @@ public final class CloudStorageFileSystem extends FileSystem {
   /**
    * Returns Google Cloud Storage {@link FileSystem} object for {@code bucket}.
    *
-   * <p>GCS file system objects are basically free. You can create as many as you want, even if you
-   * have multiple instances for the same bucket. There's no actual system resources associated
-   * with this object. Therefore calling {@link #close()} on the returned value is optional.
+   * <p>Google Cloud Storage file system objects are basically free. You can create as many as you
+   * want, even if you have multiple instances for the same bucket. There's no actual system
+   * resources associated with this object. Therefore calling {@link #close()} on the returned value
+   * is optional.
    *
    * <p><b>Note:</b> It is also possible to instantiate this class via Java's
    * {@code FileSystems.getFileSystem(URI.create("gs://bucket"))}. We discourage you
@@ -151,7 +152,7 @@ public final class CloudStorageFileSystem extends FileSystem {
   public CloudStoragePath getPath(String first, String... more) {
     checkArgument(
         !first.startsWith(URI_SCHEME + ":"),
-        "GCS FileSystem.getPath() must not have schema and bucket name: %s",
+        "Google Cloud Storage FileSystem.getPath() must not have schema and bucket name: %s",
         first);
     return CloudStoragePath.getPath(this, first, more);
   }
@@ -196,7 +197,8 @@ public final class CloudStorageFileSystem extends FileSystem {
   }
 
   /**
-   * Returns nothing because GCS doesn't have disk partitions of limited size, or anything similar.
+   * Returns nothing because Google Cloud Storage doesn't have disk partitions of limited size, or
+   * anything similar.
    */
   @Override
   public Iterable<FileStore> getFileStores() {

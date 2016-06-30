@@ -31,9 +31,9 @@ import java.nio.file.spi.FileSystemProvider;
  *
  * <p>It's meant to be used to test GCloud's integration with Java NIO.
  *
- * <p>You can either use the '--check' argument to see whether GCS is enabled,
- * or you can directly pass in a GCS file name to use. In that case you have to
- * be logged in (using e.g. the gcloud auth command).
+ * <p>You can either use the '--check' argument to see whether Google Cloud Storage is enabled, or
+ * you can directly pass in a Google Cloud Storage file name to use. In that case you have to be
+ * logged in (using e.g. the gcloud auth command).
  *
  * <p>See the
  * <a href="https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/gcloud-java-examples/README.md">
@@ -92,13 +92,13 @@ public class Stat {
          "   to list the filesystem providers.",
          "",
          " * --check",
-         "   to double-check the GCS provider is installed.",
+         "   to double-check the Google Cloud Storage provider is installed.",
          "",
          "The purpose of this tool is to demonstrate that the gcloud NIO filesystem provider",
          "can add Google Cloud Storage support to programs not explicitly designed for it.",
          "",
          "This tool normally knows nothing of Google Cloud Storage. If you pass it --check",
-         "or a GCS file name (e.g. gs://mybucket/myfile), it will show an error.",
+         "or a Google Cloud Storage file name (e.g. gs://mybucket/myfile), it will show an error.",
          "However, by just adding the gcloud-nio jar as a dependency and recompiling, this tool is",
          "made aware of gs:// paths and can access files on the cloud.",
          "",

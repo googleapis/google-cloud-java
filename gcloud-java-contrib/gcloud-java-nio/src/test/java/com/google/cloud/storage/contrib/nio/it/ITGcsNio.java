@@ -58,21 +58,20 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * Integration test for gcloud-nio.
+ * Integration test for gcloud-java-nio.
  *
- * <p>This test actually talks to GCS (you need an account) and tests both reading and writing. You
- * *must* set the {@code GOOGLE_APPLICATION_CREDENTIALS} environment variable for this test to work.
- * It must contain the name of a local file that contains your Service Account JSON Key.
+ * <p>This test actually talks to Google Cloud Storage (you need an account) and tests both reading
+ * and writing. You *must* set the {@code GOOGLE_APPLICATION_CREDENTIALS} environment variable for
+ * this test to work. It must contain the name of a local file that contains your Service Account
+ * JSON Key.
  *
- * <p>The instructions for how to get the Service Account JSON Key are
- * at https://cloud.google.com/storage/docs/authentication?hl=en#service_accounts
+ * <p>See <a href="https://cloud.google.com/storage/docs/authentication?hl=en#service_accounts">
+ * Service Accounts</a> for instructions on how to get the Service Account JSON Key.
  *
- * <p>The short version is this: go to cloud.google.com/console,
- * select your project, search for "API manager", click "Credentials",
- * click "create credentials/service account key", new service account,
- * JSON. The contents of the file that's sent to your browsers is your
+ * <p>The short version is this: go to cloud.google.com/console, select your project, search for
+ * "API manager", click "Credentials", click "create credentials/service account key", new service
+ * account, JSON. The contents of the file that's sent to your browsers is your
  * "Service Account JSON Key".
- *
  */
 @RunWith(JUnit4.class)
 public class ITGcsNio {

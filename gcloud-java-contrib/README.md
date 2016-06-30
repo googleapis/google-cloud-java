@@ -13,7 +13,7 @@ Contents
 --------
 
  * [gcloud-java-nio](./gcloud-java-nio/): NIO Filesystem Provider for Google Cloud Storage.
- * [gcloud-java-nio-examples](./gcloud-java-nio-examples/): How to add GCS NIO after the fact.
+ * [gcloud-java-nio-examples](./gcloud-java-nio-examples/): How to add Google Cloud Storage NIO after the fact.
 
 Quickstart
 ----------
