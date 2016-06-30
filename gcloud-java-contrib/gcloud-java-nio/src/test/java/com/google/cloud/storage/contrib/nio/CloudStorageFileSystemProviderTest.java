@@ -22,6 +22,7 @@ import static java.nio.charset.StandardCharsets.UTF_8;
 import static java.nio.file.StandardCopyOption.ATOMIC_MOVE;
 import static java.nio.file.StandardCopyOption.COPY_ATTRIBUTES;
 import static java.nio.file.StandardCopyOption.REPLACE_EXISTING;
+import static java.nio.file.StandardOpenOption.CREATE;
 import static java.nio.file.StandardOpenOption.CREATE_NEW;
 import static java.nio.file.StandardOpenOption.TRUNCATE_EXISTING;
 import static java.nio.file.StandardOpenOption.WRITE;
@@ -53,8 +54,6 @@ import java.nio.file.NoSuchFileException;
 import java.nio.file.OpenOption;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.nio.file.StandardCopyOption;
-import java.nio.file.StandardOpenOption;
 import java.util.List;
 
 /**
@@ -348,7 +347,7 @@ public class CloudStorageFileSystemProviderTest {
   @Test
   public void testWriteOnClose() throws IOException {
     Path path = Paths.get(URI.create("gs://greenbean/adipose"));
-    try (SeekableByteChannel chan = Files.newByteChannel(path, StandardOpenOption.WRITE)) {
+    try (SeekableByteChannel chan = Files.newByteChannel(path, WRITE)) {
       // writing lots of contents to defeat channel-internal buffering.
       for (int i = 0; i < 9999; i++) {
         for (String s : FILE_CONTENTS) {
@@ -627,8 +626,8 @@ public class CloudStorageFileSystemProviderTest {
       tester.ignore(CloudStorageFileSystemProvider.class.getMethod("equals", Object.class));
       tester.setDefault(URI.class, URI.create("gs://blood"));
       tester.setDefault(Path.class, fs.getPath("and/one"));
-      tester.setDefault(OpenOption.class, StandardOpenOption.CREATE);
-      tester.setDefault(CopyOption.class, StandardCopyOption.COPY_ATTRIBUTES);
+      tester.setDefault(OpenOption.class, CREATE);
+      tester.setDefault(CopyOption.class, COPY_ATTRIBUTES);
       // can't do that, setGCloudOptions accepts a null argument.
       // TODO(jart): Figure out how to re-enable this.
       // tester.testAllPublicStaticMethods(CloudStorageFileSystemProvider.class);

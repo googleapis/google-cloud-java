@@ -265,12 +265,9 @@ class FakeStorageRpc implements StorageRpc {
     String key = fullname(object);
     boolean mustNotExist = false;
     for (Option option : options.keySet()) {
-      if (option instanceof StorageRpc.Option) {
-        // this is a bit of a hack, since we don't implement generations.
-        if ((StorageRpc.Option) option == Option.IF_GENERATION_MATCH
-            && ((Long) options.get(option)).longValue() == 0L) {
-          mustNotExist = true;
-        }
+      // this is a bit of a hack, since we don't implement generations.
+      if (option == Option.IF_GENERATION_MATCH && ((Long) options.get(option)) == 0L) {
+        mustNotExist = true;
       }
     }
     if (mustNotExist && metadata.containsKey(key)) {
@@ -314,12 +311,10 @@ class FakeStorageRpc implements StorageRpc {
 
     boolean mustNotExist = false;
     for (Option option : rewriteRequest.targetOptions.keySet()) {
-      if (option instanceof StorageRpc.Option) {
-        // this is a bit of a hack, since we don't implement generations.
-        if ((StorageRpc.Option) option == Option.IF_GENERATION_MATCH
-            && ((Long) rewriteRequest.targetOptions.get(option)).longValue() == 0L) {
-          mustNotExist = true;
-        }
+      // this is a bit of a hack, since we don't implement generations.
+      if (option == Option.IF_GENERATION_MATCH
+          && (Long) rewriteRequest.targetOptions.get(option) == 0L) {
+        mustNotExist = true;
       }
     }
 

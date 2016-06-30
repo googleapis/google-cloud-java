@@ -54,7 +54,7 @@ public class CloudStorageReadChannelTest {
 
   private final Storage gcsStorage = mock(Storage.class);
   private final BlobId file = BlobId.of("blob", "attack");
-  private Blob metadata = mock(Blob.class);
+  private final Blob metadata = mock(Blob.class);
   private final ReadChannel gcsChannel = mock(ReadChannel.class);
 
   @Before

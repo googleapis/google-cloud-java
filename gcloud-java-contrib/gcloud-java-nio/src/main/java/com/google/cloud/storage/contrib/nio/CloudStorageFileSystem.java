@@ -37,8 +37,6 @@ import java.util.Set;
 
 import javax.annotation.CheckReturnValue;
 import javax.annotation.Nullable;
-import javax.annotation.concurrent.Immutable;
-import javax.annotation.CheckReturnValue;
 import javax.annotation.concurrent.ThreadSafe;
 
 /**
@@ -51,6 +49,17 @@ import javax.annotation.concurrent.ThreadSafe;
  */
 @ThreadSafe
 public final class CloudStorageFileSystem extends FileSystem {
+
+  public static final String URI_SCHEME = "gs";
+  public static final String GCS_VIEW = "gcs";
+  public static final String BASIC_VIEW = "basic";
+  public static final int BLOCK_SIZE_DEFAULT = 2 * 1024 * 1024;
+  public static final FileTime FILE_TIME_UNKNOWN = FileTime.fromMillis(0);
+  public static final ImmutableSet<String> SUPPORTED_VIEWS = ImmutableSet.of(BASIC_VIEW, GCS_VIEW);
+
+  private final CloudStorageFileSystemProvider provider;
+  private final String bucket;
+  private final CloudStorageConfiguration config;
 
   /**
    * Returns Google Cloud Storage {@link FileSystem} object for {@code bucket}.
@@ -107,17 +116,6 @@ public final class CloudStorageFileSystem extends FileSystem {
     return new CloudStorageFileSystem(new CloudStorageFileSystemProvider(storageOptions),
         bucket, checkNotNull(config));
   }
-
-  public static final String URI_SCHEME = "gs";
-  public static final String GCS_VIEW = "gcs";
-  public static final String BASIC_VIEW = "basic";
-  public static final int BLOCK_SIZE_DEFAULT = 2 * 1024 * 1024;
-  public static final FileTime FILE_TIME_UNKNOWN = FileTime.fromMillis(0);
-  public static final ImmutableSet<String> SUPPORTED_VIEWS = ImmutableSet.of(BASIC_VIEW, GCS_VIEW);
-
-  private final CloudStorageFileSystemProvider provider;
-  private final String bucket;
-  private final CloudStorageConfiguration config;
 
   CloudStorageFileSystem(
       CloudStorageFileSystemProvider provider, String bucket, CloudStorageConfiguration config) {
@@ -189,7 +187,7 @@ public final class CloudStorageFileSystem extends FileSystem {
    */
   @Override
   public String getSeparator() {
-    return "" + UnixPath.SEPARATOR;
+    return Character.toString(UnixPath.SEPARATOR);
   }
 
   @Override

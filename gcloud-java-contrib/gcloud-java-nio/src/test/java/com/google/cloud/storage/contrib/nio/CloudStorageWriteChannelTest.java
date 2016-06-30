@@ -49,7 +49,7 @@ public class CloudStorageWriteChannelTest {
   @Rule public final ExpectedException thrown = ExpectedException.none();
 
   private final WriteChannel gcsChannel = mock(WriteChannel.class);
-  private CloudStorageWriteChannel chan = new CloudStorageWriteChannel(gcsChannel);
+  private final CloudStorageWriteChannel chan = new CloudStorageWriteChannel(gcsChannel);
 
   @Before
   public void before() {

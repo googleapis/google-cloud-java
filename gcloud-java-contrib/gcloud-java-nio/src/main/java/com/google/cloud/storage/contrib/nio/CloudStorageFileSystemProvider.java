@@ -308,10 +308,10 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
 
     try {
       return new CloudStorageWriteChannel(
-          storage.writer(
-              infoBuilder.build(), writeOptions.toArray(new Storage.BlobWriteOption[0])));
+          storage.writer(infoBuilder.build(),
+              writeOptions.toArray(new Storage.BlobWriteOption[writeOptions.size()])));
     } catch (StorageException oops) {
-      throw asIOException(oops);
+      throw asIoException(oops);
     }
   }
 
@@ -471,7 +471,7 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
       CopyWriter copyWriter = storage.copy(copyReqBuilder.build());
       copyWriter.result();
     } catch (StorageException oops) {
-      throw asIOException(oops);
+      throw asIoException(oops);
     }
   }
 
@@ -623,7 +623,7 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
     return MoreObjects.toStringHelper(this).add("storage", storage).toString();
   }
 
-  private IOException asIOException(StorageException oops) {
+  private IOException asIoException(StorageException oops) {
     // RPC API can only throw StorageException, but CloudStorageFileSystemProvider
     // can only throw IOException. Square peg, round hole.
     // TODO(#810): Research if other codes should be translated similarly.

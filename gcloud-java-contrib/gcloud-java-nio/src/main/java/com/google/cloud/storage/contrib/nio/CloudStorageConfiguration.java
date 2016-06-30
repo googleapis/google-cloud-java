@@ -28,6 +28,8 @@ import java.util.Map;
 @AutoValue
 public abstract class CloudStorageConfiguration {
 
+  public static final CloudStorageConfiguration DEFAULT = builder().build();
+
   /**
    * Returns path of current working directory. This defaults to the root directory.
    */
@@ -76,7 +78,7 @@ public abstract class CloudStorageConfiguration {
   public static final class Builder {
 
     private String workingDirectory = UnixPath.ROOT;
-    private boolean permitEmptyPathComponents = false;
+    private boolean permitEmptyPathComponents;
     private boolean stripPrefixSlash = true;
     private boolean usePseudoDirectories = true;
     private int blockSize = CloudStorageFileSystem.BLOCK_SIZE_DEFAULT;
@@ -146,8 +148,6 @@ public abstract class CloudStorageConfiguration {
 
     Builder() {}
   }
-
-  public static final CloudStorageConfiguration DEFAULT = builder().build();
 
   static CloudStorageConfiguration fromMap(Map<String, ?> env) {
     Builder builder = builder();

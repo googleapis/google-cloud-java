@@ -41,6 +41,10 @@ import javax.annotation.concurrent.ThreadSafe;
 @ThreadSafe
 final class CloudStorageReadChannel implements SeekableByteChannel {
 
+  private final ReadChannel channel;
+  private long position;
+  private long size;
+
   @CheckReturnValue
   @SuppressWarnings("resource")
   static CloudStorageReadChannel create(Storage gcsStorage, BlobId file, long position)
@@ -53,10 +57,6 @@ final class CloudStorageReadChannel implements SeekableByteChannel {
     }
     return new CloudStorageReadChannel(position, size, channel);
   }
-
-  private final ReadChannel channel;
-  private long position;
-  private long size;
 
   private CloudStorageReadChannel(long position, long size, ReadChannel channel) {
     this.position = position;
