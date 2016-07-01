@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.cloud.logging;
+package com.google.cloud;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
@@ -29,23 +29,23 @@ import java.util.List;
 import java.util.Objects;
 
 /**
- * This class describes the schema of Cloud Logging monitored resources. Monitored resource
- * descriptors contain a type name and a set of labels. For example, the monitored resource
- * descriptor for Google Compute Engine VM instances has a type of {@code gce_instance} and
- * specifies the use of the labels {@code instance_id} and {@code zone} to identify particular VM
- * instances.
+ * This class describes the schema of Cloud monitored resources. Monitored resource descriptors
+ * contain a type name and a set of labels. For example, the monitored resource descriptor for
+ * Google Compute Engine VM instances has a type of {@code gce_instance} and specifies the use of
+ * the labels {@code instance_id} and {@code zone} to identify particular VM instances.
  */
 public class MonitoredResourceDescriptor implements Serializable {
 
   private static final long serialVersionUID = -3702077512777687441L;
-  static final Function<com.google.api.MonitoredResourceDescriptor, MonitoredResourceDescriptor>
-      FROM_PB_FUNCTION =
-      new Function<com.google.api.MonitoredResourceDescriptor, MonitoredResourceDescriptor>() {
-        @Override
-        public MonitoredResourceDescriptor apply(com.google.api.MonitoredResourceDescriptor pb) {
-          return fromPb(pb);
-        }
-      };
+  public static final Function<com.google.api.MonitoredResourceDescriptor,
+      MonitoredResourceDescriptor> FROM_PB_FUNCTION =
+          new Function<com.google.api.MonitoredResourceDescriptor, MonitoredResourceDescriptor>() {
+            @Override
+            public MonitoredResourceDescriptor apply(
+                com.google.api.MonitoredResourceDescriptor pb) {
+              return fromPb(pb);
+            }
+          };
 
   private final String type;
   private final String name;
@@ -306,7 +306,7 @@ public class MonitoredResourceDescriptor implements Serializable {
         .toString();
   }
 
-  com.google.api.MonitoredResourceDescriptor toPb() {
+  public com.google.api.MonitoredResourceDescriptor toPb() {
     com.google.api.MonitoredResourceDescriptor.Builder builder =
         com.google.api.MonitoredResourceDescriptor.newBuilder()
             .setType(type)
@@ -327,7 +327,7 @@ public class MonitoredResourceDescriptor implements Serializable {
     return new Builder(type);
   }
 
-  static MonitoredResourceDescriptor fromPb(
+  public static MonitoredResourceDescriptor fromPb(
       com.google.api.MonitoredResourceDescriptor descriptorPb) {
     Builder builder = builder(descriptorPb.getType());
     if (descriptorPb.getName() != null && !descriptorPb.getName().equals("")) {

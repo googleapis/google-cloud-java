@@ -108,5 +108,10 @@
       <artifactId>gax</artifactId>
       <version>0.0.13</version>
     </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>grpc-core-proto</artifactId>
+      <version>0.0.4</version>
+    </dependency>
   </dependencies>
 </project>

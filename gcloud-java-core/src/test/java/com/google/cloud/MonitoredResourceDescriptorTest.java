@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-package com.google.cloud.logging;
+package com.google.cloud;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 
-import com.google.cloud.logging.MonitoredResourceDescriptor.LabelDescriptor;
-import com.google.cloud.logging.MonitoredResourceDescriptor.LabelDescriptor.ValueType;
+import com.google.cloud.MonitoredResourceDescriptor.LabelDescriptor;
+import com.google.cloud.MonitoredResourceDescriptor.LabelDescriptor.ValueType;
 import com.google.common.collect.ImmutableList;
 
 import org.junit.Test;
