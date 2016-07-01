@@ -71,7 +71,7 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
 
   /**
    * Sends a request for creating a sink. This method returns a {@code Future} object to consume the
-   * result. {@link Future#get()} returns the created sink or {@code null} if not found.
+   * result. {@link Future#get()} returns the created sink.
    */
   Future<Sink> createAsync(SinkInfo sink);
 
@@ -135,4 +135,79 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    * was not found.
    */
   Future<Boolean> deleteSinkAsync(String sink);
+
+  /**
+   * Creates a new metric.
+   *
+   * @return the created metric
+   * @throws LoggingException upon failure
+   */
+  Metric create(MetricInfo metric);
+
+  /**
+   * Sends a request for creating a metric. This method returns a {@code Future} object to consume
+   * the result. {@link Future#get()} returns the created metric.
+   */
+  Future<Metric> createAsync(MetricInfo metric);
+
+  /**
+   * Updates a metric or creates one if it does not exist.
+   *
+   * @return the created metric
+   * @throws LoggingException upon failure
+   */
+  Metric update(MetricInfo metric);
+
+  /**
+   * Sends a request for updating a metric (or creating it, if it does not exist). This method
+   * returns a {@code Future} object to consume the result. {@link Future#get()} returns the
+   * updated/created metric or {@code null} if not found.
+   */
+  Future<Metric> updateAsync(MetricInfo metric);
+
+  /**
+   * Returns the requested metric or {@code null} if not found.
+   *
+   * @throws LoggingException upon failure
+   */
+  Metric getMetric(String metric);
+
+  /**
+   * Sends a request for getting a metric. This method returns a {@code Future} object to consume
+   * the result. {@link Future#get()} returns the requested metric or {@code null} if not found.
+   *
+   * @throws LoggingException upon failure
+   */
+  Future<Metric> getMetricAsync(String metric);
+
+  /**
+   * Lists the metrics. This method returns a {@link Page} object that can be used to consume
+   * paginated results. Use {@link ListOption} to specify the page size or the page token from which
+   * to start listing metrics.
+   *
+   * @throws LoggingException upon failure
+   */
+  Page<Metric> listMetrics(ListOption... options);
+
+  /**
+   * Sends a request for listing metrics. This method returns a {@code Future} object to consume
+   * the result. {@link Future#get()} returns an {@link AsyncPage} object that can be used to
+   * asynchronously handle paginated results. Use {@link ListOption} to specify the page size or the
+   * page token from which to start listing metrics.
+   */
+  Future<AsyncPage<Metric>> listMetricsAsync(ListOption... options);
+
+  /**
+   * Deletes the requested metric.
+   *
+   * @return {@code true} if the metric was deleted, {@code false} if it was not found
+   */
+  boolean deleteMetric(String metric);
+
+  /**
+   * Sends a request for deleting a metric. This method returns a {@code Future} object to consume
+   * the result. {@link Future#get()} returns {@code true} if the metric was deleted, {@code false}
+   * if it was not found.
+   */
+  Future<Boolean> deleteMetricAsync(String metric);
 }

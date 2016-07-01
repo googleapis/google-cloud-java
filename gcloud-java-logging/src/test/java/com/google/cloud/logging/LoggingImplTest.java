@@ -35,12 +35,19 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import com.google.common.util.concurrent.Futures;
+import com.google.logging.v2.CreateLogMetricRequest;
 import com.google.logging.v2.CreateSinkRequest;
+import com.google.logging.v2.DeleteLogMetricRequest;
 import com.google.logging.v2.DeleteSinkRequest;
+import com.google.logging.v2.GetLogMetricRequest;
 import com.google.logging.v2.GetSinkRequest;
+import com.google.logging.v2.ListLogMetricsRequest;
+import com.google.logging.v2.ListLogMetricsResponse;
 import com.google.logging.v2.ListSinksRequest;
 import com.google.logging.v2.ListSinksResponse;
+import com.google.logging.v2.LogMetric;
 import com.google.logging.v2.LogSink;
+import com.google.logging.v2.UpdateLogMetricRequest;
 import com.google.logging.v2.UpdateSinkRequest;
 import com.google.protobuf.Empty;
 
@@ -63,11 +70,25 @@ public class LoggingImplTest {
   private static final SinkInfo SINK_INFO =
       SinkInfo.of(SINK_NAME, Destination.BucketDestination.of("bucket"));
   private static final String SINK_NAME_PB = "projects/" + PROJECT + "/sinks/" + SINK_NAME;
+  private static final String METRIC_NAME = "metric";
+  private static final String METRIC_NAME_PB = "projects/" + PROJECT + "/metrics/" + METRIC_NAME;
+  private static final String FILTER = "logName=projects/my-projectid/logs/syslog";
+  private static final String DESCRIPTION = "description";
+  private static final MetricInfo METRIC_INFO = MetricInfo.builder(METRIC_NAME, FILTER)
+      .description(DESCRIPTION)
+      .build();
   private static final Function<SinkInfo, LogSink> SINK_TO_PB_FUNCTION =
       new Function<SinkInfo, LogSink>() {
         @Override
         public LogSink apply(SinkInfo sinkInfo) {
           return sinkInfo.toPb(PROJECT);
+        }
+      };
+  private static final Function<MetricInfo, LogMetric> METRIC_TO_PB_FUNCTION =
+      new Function<MetricInfo, LogMetric>() {
+        @Override
+        public LogMetric apply(MetricInfo metricInfo) {
+          return metricInfo.toPb();
         }
       };
 
@@ -214,7 +235,7 @@ public class LoggingImplTest {
     EasyMock.expect(loggingRpcMock.delete(request)).andReturn(response);
     EasyMock.replay(rpcFactoryMock, loggingRpcMock);
     logging = options.service();
-    assertTrue(logging.deleteSink("sink"));
+    assertTrue(logging.deleteSink(SINK_NAME));
   }
 
   @Test
@@ -224,7 +245,7 @@ public class LoggingImplTest {
     EasyMock.expect(loggingRpcMock.delete(request)).andReturn(response);
     EasyMock.replay(rpcFactoryMock, loggingRpcMock);
     logging = options.service();
-    assertFalse(logging.deleteSink("sink"));
+    assertFalse(logging.deleteSink(SINK_NAME));
   }
 
   @Test
@@ -234,7 +255,7 @@ public class LoggingImplTest {
     EasyMock.expect(loggingRpcMock.delete(request)).andReturn(response);
     EasyMock.replay(rpcFactoryMock, loggingRpcMock);
     logging = options.service();
-    assertTrue(logging.deleteSinkAsync("sink").get());
+    assertTrue(logging.deleteSinkAsync(SINK_NAME).get());
   }
 
   @Test
@@ -244,7 +265,7 @@ public class LoggingImplTest {
     EasyMock.expect(loggingRpcMock.delete(request)).andReturn(response);
     EasyMock.replay(rpcFactoryMock, loggingRpcMock);
     logging = options.service();
-    assertFalse(logging.deleteSinkAsync("sink").get());
+    assertFalse(logging.deleteSinkAsync(SINK_NAME).get());
   }
 
   @Test
@@ -450,5 +471,368 @@ public class LoggingImplTest {
         logging.listSinksAsync(ListOption.pageSize(42), ListOption.pageToken(cursor)).get();
     assertEquals(cursor, page.nextPageCursor());
     assertArrayEquals(sinkList.toArray(), Iterables.toArray(page.values(), Sink.class));
+  }
+
+  @Test
+  public void testCreateMetric() {
+    LogMetric metricPb = METRIC_INFO.toPb();
+    Future<LogMetric> response = Futures.immediateFuture(metricPb);
+    CreateLogMetricRequest request = CreateLogMetricRequest.newBuilder()
+        .setProjectName(PROJECT_PB)
+        .setMetric(metricPb)
+        .build();
+    EasyMock.expect(loggingRpcMock.create(request)).andReturn(response);
+    EasyMock.replay(rpcFactoryMock, loggingRpcMock);
+    logging = options.service();
+    Metric metric = logging.create(METRIC_INFO);
+    assertEquals(new Metric(logging, new MetricInfo.BuilderImpl(METRIC_INFO)), metric);
+  }
+
+  @Test
+  public void testCreateMetricAsync() throws ExecutionException, InterruptedException {
+    LogMetric metricPb = METRIC_INFO.toPb();
+    Future<LogMetric> response = Futures.immediateFuture(metricPb);
+    CreateLogMetricRequest request = CreateLogMetricRequest.newBuilder()
+        .setProjectName(PROJECT_PB)
+        .setMetric(metricPb)
+        .build();
+    EasyMock.expect(loggingRpcMock.create(request)).andReturn(response);
+    EasyMock.replay(rpcFactoryMock, loggingRpcMock);
+    logging = options.service();
+    Metric metric = logging.createAsync(METRIC_INFO).get();
+    assertEquals(new Metric(logging, new MetricInfo.BuilderImpl(METRIC_INFO)), metric);
+  }
+
+  @Test
+  public void testUpdateMetric() {
+    LogMetric sinkPb = METRIC_INFO.toPb();
+    Future<LogMetric> response = Futures.immediateFuture(sinkPb);
+    UpdateLogMetricRequest request = UpdateLogMetricRequest.newBuilder()
+        .setMetricName(METRIC_NAME_PB)
+        .setMetric(sinkPb)
+        .build();
+    EasyMock.expect(loggingRpcMock.update(request)).andReturn(response);
+    EasyMock.replay(rpcFactoryMock, loggingRpcMock);
+    logging = options.service();
+    Metric sink = logging.update(METRIC_INFO);
+    assertEquals(new Metric(logging, new MetricInfo.BuilderImpl(METRIC_INFO)), sink);
+  }
+
+  @Test
+  public void testUpdateMetricAsync() throws ExecutionException, InterruptedException {
+    LogMetric sinkPb = METRIC_INFO.toPb();
+    Future<LogMetric> response = Futures.immediateFuture(sinkPb);
+    UpdateLogMetricRequest request = UpdateLogMetricRequest.newBuilder()
+        .setMetricName(METRIC_NAME_PB)
+        .setMetric(sinkPb)
+        .build();
+    EasyMock.expect(loggingRpcMock.update(request)).andReturn(response);
+    EasyMock.replay(rpcFactoryMock, loggingRpcMock);
+    logging = options.service();
+    Metric sink = logging.updateAsync(METRIC_INFO).get();
+    assertEquals(new Metric(logging, new MetricInfo.BuilderImpl(METRIC_INFO)), sink);
+  }
+
+  @Test
+  public void testGetMetric() {
+    LogMetric sinkPb = METRIC_INFO.toPb();
+    Future<LogMetric> response = Futures.immediateFuture(sinkPb);
+    GetLogMetricRequest request =
+        GetLogMetricRequest.newBuilder().setMetricName(METRIC_NAME_PB).build();
+    EasyMock.expect(loggingRpcMock.get(request)).andReturn(response);
+    EasyMock.replay(rpcFactoryMock, loggingRpcMock);
+    logging = options.service();
+    Metric sink = logging.getMetric(METRIC_NAME);
+    assertEquals(new Metric(logging, new MetricInfo.BuilderImpl(METRIC_INFO)), sink);
+  }
+
+  @Test
+  public void testGetMetric_Null() {
+    Future<LogMetric> response = Futures.immediateFuture(null);
+    GetLogMetricRequest request =
+        GetLogMetricRequest.newBuilder().setMetricName(METRIC_NAME_PB).build();
+    EasyMock.expect(loggingRpcMock.get(request)).andReturn(response);
+    EasyMock.replay(rpcFactoryMock, loggingRpcMock);
+    logging = options.service();
+    assertNull(logging.getMetric(METRIC_NAME));
+  }
+
+  @Test
+  public void testGetMetricAsync() throws ExecutionException, InterruptedException {
+    LogMetric sinkPb = METRIC_INFO.toPb();
+    Future<LogMetric> response = Futures.immediateFuture(sinkPb);
+    GetLogMetricRequest request =
+        GetLogMetricRequest.newBuilder().setMetricName(METRIC_NAME_PB).build();
+    EasyMock.expect(loggingRpcMock.get(request)).andReturn(response);
+    EasyMock.replay(rpcFactoryMock, loggingRpcMock);
+    logging = options.service();
+    Metric sink = logging.getMetricAsync(METRIC_NAME).get();
+    assertEquals(new Metric(logging, new MetricInfo.BuilderImpl(METRIC_INFO)), sink);
+  }
+
+  @Test
+  public void testGetMetricAsync_Null() throws ExecutionException, InterruptedException {
+    Future<LogMetric> response = Futures.immediateFuture(null);
+    GetLogMetricRequest request =
+        GetLogMetricRequest.newBuilder().setMetricName(METRIC_NAME_PB).build();
+    EasyMock.expect(loggingRpcMock.get(request)).andReturn(response);
+    EasyMock.replay(rpcFactoryMock, loggingRpcMock);
+    logging = options.service();
+    assertNull(logging.getMetricAsync(METRIC_NAME).get());
+  }
+
+  @Test
+  public void testDeleteMetric() {
+    DeleteLogMetricRequest request =
+        DeleteLogMetricRequest.newBuilder().setMetricName(METRIC_NAME_PB).build();
+    Future<Empty> response = Futures.immediateFuture(Empty.getDefaultInstance());
+    EasyMock.expect(loggingRpcMock.delete(request)).andReturn(response);
+    EasyMock.replay(rpcFactoryMock, loggingRpcMock);
+    logging = options.service();
+    assertTrue(logging.deleteMetric(METRIC_NAME));
+  }
+
+  @Test
+  public void testDeleteMetric_Null() {
+    DeleteLogMetricRequest request =
+        DeleteLogMetricRequest.newBuilder().setMetricName(METRIC_NAME_PB).build();
+    Future<Empty> response = Futures.immediateFuture(null);
+    EasyMock.expect(loggingRpcMock.delete(request)).andReturn(response);
+    EasyMock.replay(rpcFactoryMock, loggingRpcMock);
+    logging = options.service();
+    assertFalse(logging.deleteMetric(METRIC_NAME));
+  }
+
+  @Test
+  public void testDeleteMetricAsync() throws ExecutionException, InterruptedException {
+    DeleteLogMetricRequest request =
+        DeleteLogMetricRequest.newBuilder().setMetricName(METRIC_NAME_PB).build();
+    Future<Empty> response = Futures.immediateFuture(Empty.getDefaultInstance());
+    EasyMock.expect(loggingRpcMock.delete(request)).andReturn(response);
+    EasyMock.replay(rpcFactoryMock, loggingRpcMock);
+    logging = options.service();
+    assertTrue(logging.deleteMetricAsync(METRIC_NAME).get());
+  }
+
+  @Test
+  public void testDeleteMetricAsync_Null() throws ExecutionException, InterruptedException {
+    DeleteLogMetricRequest request =
+        DeleteLogMetricRequest.newBuilder().setMetricName(METRIC_NAME_PB).build();
+    Future<Empty> response = Futures.immediateFuture(null);
+    EasyMock.expect(loggingRpcMock.delete(request)).andReturn(response);
+    EasyMock.replay(rpcFactoryMock, loggingRpcMock);
+    logging = options.service();
+    assertFalse(logging.deleteMetricAsync(METRIC_NAME).get());
+  }
+
+  @Test
+  public void testListMetrics() {
+    String cursor = "cursor";
+    EasyMock.replay(rpcFactoryMock);
+    logging = options.service();
+    ListLogMetricsRequest request =
+        ListLogMetricsRequest.newBuilder().setProjectName(PROJECT_PB).build();
+    List<Metric> sinkList = ImmutableList.of(
+        new Metric(logging, new MetricInfo.BuilderImpl(METRIC_INFO)),
+        new Metric(logging, new MetricInfo.BuilderImpl(METRIC_INFO)));
+    ListLogMetricsResponse response = ListLogMetricsResponse.newBuilder()
+        .setNextPageToken(cursor)
+        .addAllMetrics(Lists.transform(sinkList, METRIC_TO_PB_FUNCTION))
+        .build();
+    Future<ListLogMetricsResponse> futureResponse = Futures.immediateFuture(response);
+    EasyMock.expect(loggingRpcMock.list(request)).andReturn(futureResponse);
+    EasyMock.replay(loggingRpcMock);
+    Page<Metric> page = logging.listMetrics();
+    assertEquals(cursor, page.nextPageCursor());
+    assertArrayEquals(sinkList.toArray(), Iterables.toArray(page.values(), Metric.class));
+  }
+
+  @Test
+  public void testListMetricsNextPage() {
+    String cursor1 = "cursor";
+    EasyMock.replay(rpcFactoryMock);
+    logging = options.service();
+    ListLogMetricsRequest request1 =
+        ListLogMetricsRequest.newBuilder().setProjectName(PROJECT_PB).build();
+    ListLogMetricsRequest request2 = ListLogMetricsRequest.newBuilder()
+        .setProjectName(PROJECT_PB)
+        .setPageToken(cursor1)
+        .build();
+    List<Metric> sinkList1 = ImmutableList.of(
+        new Metric(logging, new MetricInfo.BuilderImpl(METRIC_INFO)),
+        new Metric(logging, new MetricInfo.BuilderImpl(METRIC_INFO)));
+    List<Metric> sinkList2 = ImmutableList.of(
+        new Metric(logging, new MetricInfo.BuilderImpl(METRIC_INFO)));
+    ListLogMetricsResponse response1 = ListLogMetricsResponse.newBuilder()
+        .setNextPageToken(cursor1)
+        .addAllMetrics(Lists.transform(sinkList1, METRIC_TO_PB_FUNCTION))
+        .build();
+    String cursor2 = "nextCursor";
+    ListLogMetricsResponse response2 = ListLogMetricsResponse.newBuilder()
+        .setNextPageToken(cursor2)
+        .addAllMetrics(Lists.transform(sinkList2, METRIC_TO_PB_FUNCTION))
+        .build();
+    Future<ListLogMetricsResponse> futureResponse1 = Futures.immediateFuture(response1);
+    Future<ListLogMetricsResponse> futureResponse2 = Futures.immediateFuture(response2);
+    EasyMock.expect(loggingRpcMock.list(request1)).andReturn(futureResponse1);
+    EasyMock.expect(loggingRpcMock.list(request2)).andReturn(futureResponse2);
+    EasyMock.replay(loggingRpcMock);
+    Page<Metric> page = logging.listMetrics();
+    assertEquals(cursor1, page.nextPageCursor());
+    assertArrayEquals(sinkList1.toArray(), Iterables.toArray(page.values(), Metric.class));
+    page = page.nextPage();
+    assertEquals(cursor2, page.nextPageCursor());
+    assertArrayEquals(sinkList2.toArray(), Iterables.toArray(page.values(), Metric.class));
+  }
+
+  @Test
+  public void testListMetricsEmpty() {
+    EasyMock.replay(rpcFactoryMock);
+    logging = options.service();
+    ListLogMetricsRequest request =
+        ListLogMetricsRequest.newBuilder().setProjectName(PROJECT_PB).build();
+    List<Metric> sinkList = ImmutableList.of();
+    ListLogMetricsResponse response = ListLogMetricsResponse.newBuilder()
+        .setNextPageToken("")
+        .addAllMetrics(Lists.transform(sinkList, METRIC_TO_PB_FUNCTION))
+        .build();
+    Future<ListLogMetricsResponse> futureResponse = Futures.immediateFuture(response);
+    EasyMock.expect(loggingRpcMock.list(request)).andReturn(futureResponse);
+    EasyMock.replay(loggingRpcMock);
+    Page<Metric> page = logging.listMetrics();
+    assertNull(page.nextPageCursor());
+    assertNull(page.nextPage());
+    assertArrayEquals(sinkList.toArray(), Iterables.toArray(page.values(), Metric.class));
+  }
+
+  @Test
+  public void testListMetricsWithOptions() {
+    String cursor = "cursor";
+    EasyMock.replay(rpcFactoryMock);
+    logging = options.service();
+    ListLogMetricsRequest request = ListLogMetricsRequest.newBuilder()
+        .setPageToken(cursor)
+        .setPageSize(42)
+        .setProjectName(PROJECT_PB)
+        .build();
+    List<Metric> sinkList = ImmutableList.of(
+        new Metric(logging, new MetricInfo.BuilderImpl(METRIC_INFO)),
+        new Metric(logging, new MetricInfo.BuilderImpl(METRIC_INFO)));
+    ListLogMetricsResponse response = ListLogMetricsResponse.newBuilder()
+        .setNextPageToken(cursor)
+        .addAllMetrics(Lists.transform(sinkList, METRIC_TO_PB_FUNCTION))
+        .build();
+    Future<ListLogMetricsResponse> futureResponse = Futures.immediateFuture(response);
+    EasyMock.expect(loggingRpcMock.list(request)).andReturn(futureResponse);
+    EasyMock.replay(loggingRpcMock);
+    Page<Metric> page = logging.listMetrics(ListOption.pageSize(42), ListOption.pageToken(cursor));
+    assertEquals(cursor, page.nextPageCursor());
+    assertArrayEquals(sinkList.toArray(), Iterables.toArray(page.values(), Metric.class));
+  }
+
+  @Test
+  public void testListMetricsAsync() throws ExecutionException, InterruptedException {
+    String cursor = "cursor";
+    EasyMock.replay(rpcFactoryMock);
+    logging = options.service();
+    ListLogMetricsRequest request =
+        ListLogMetricsRequest.newBuilder().setProjectName(PROJECT_PB).build();
+    List<Metric> sinkList = ImmutableList.of(
+        new Metric(logging, new MetricInfo.BuilderImpl(METRIC_INFO)),
+        new Metric(logging, new MetricInfo.BuilderImpl(METRIC_INFO)));
+    ListLogMetricsResponse response = ListLogMetricsResponse.newBuilder()
+        .setNextPageToken(cursor)
+        .addAllMetrics(Lists.transform(sinkList, METRIC_TO_PB_FUNCTION))
+        .build();
+    Future<ListLogMetricsResponse> futureResponse = Futures.immediateFuture(response);
+    EasyMock.expect(loggingRpcMock.list(request)).andReturn(futureResponse);
+    EasyMock.replay(loggingRpcMock);
+    AsyncPage<Metric> page = logging.listMetricsAsync().get();
+    assertEquals(cursor, page.nextPageCursor());
+    assertArrayEquals(sinkList.toArray(), Iterables.toArray(page.values(), Metric.class));
+  }
+
+  @Test
+  public void testListMetricsAsyncNextPage() throws ExecutionException, InterruptedException {
+    String cursor1 = "cursor";
+    EasyMock.replay(rpcFactoryMock);
+    logging = options.service();
+    ListLogMetricsRequest request1 =
+        ListLogMetricsRequest.newBuilder().setProjectName(PROJECT_PB).build();
+    ListLogMetricsRequest request2 = ListLogMetricsRequest.newBuilder()
+        .setProjectName(PROJECT_PB)
+        .setPageToken(cursor1)
+        .build();
+    List<Metric> sinkList1 = ImmutableList.of(
+        new Metric(logging, new MetricInfo.BuilderImpl(METRIC_INFO)),
+        new Metric(logging, new MetricInfo.BuilderImpl(METRIC_INFO)));
+    List<Metric> sinkList2 = ImmutableList.of(
+        new Metric(logging, new MetricInfo.BuilderImpl(METRIC_INFO)));
+    ListLogMetricsResponse response1 = ListLogMetricsResponse.newBuilder()
+        .setNextPageToken(cursor1)
+        .addAllMetrics(Lists.transform(sinkList1, METRIC_TO_PB_FUNCTION))
+        .build();
+    String cursor2 = "nextCursor";
+    ListLogMetricsResponse response2 = ListLogMetricsResponse.newBuilder()
+        .setNextPageToken(cursor2)
+        .addAllMetrics(Lists.transform(sinkList2, METRIC_TO_PB_FUNCTION))
+        .build();
+    Future<ListLogMetricsResponse> futureResponse1 = Futures.immediateFuture(response1);
+    Future<ListLogMetricsResponse> futureResponse2 = Futures.immediateFuture(response2);
+    EasyMock.expect(loggingRpcMock.list(request1)).andReturn(futureResponse1);
+    EasyMock.expect(loggingRpcMock.list(request2)).andReturn(futureResponse2);
+    EasyMock.replay(loggingRpcMock);
+    AsyncPage<Metric> page = logging.listMetricsAsync().get();
+    assertEquals(cursor1, page.nextPageCursor());
+    assertArrayEquals(sinkList1.toArray(), Iterables.toArray(page.values(), Metric.class));
+    page = page.nextPageAsync().get();
+    assertEquals(cursor2, page.nextPageCursor());
+    assertArrayEquals(sinkList2.toArray(), Iterables.toArray(page.values(), Metric.class));
+  }
+
+  @Test
+  public void testListMetricsAsyncEmpty() throws ExecutionException, InterruptedException {
+    EasyMock.replay(rpcFactoryMock);
+    logging = options.service();
+    ListLogMetricsRequest request =
+        ListLogMetricsRequest.newBuilder().setProjectName(PROJECT_PB).build();
+    List<Metric> sinkList = ImmutableList.of();
+    ListLogMetricsResponse response = ListLogMetricsResponse.newBuilder()
+        .setNextPageToken("")
+        .addAllMetrics(Lists.transform(sinkList, METRIC_TO_PB_FUNCTION))
+        .build();
+    Future<ListLogMetricsResponse> futureResponse = Futures.immediateFuture(response);
+    EasyMock.expect(loggingRpcMock.list(request)).andReturn(futureResponse);
+    EasyMock.replay(loggingRpcMock);
+    AsyncPage<Metric> page = logging.listMetricsAsync().get();
+    assertNull(page.nextPageCursor());
+    assertNull(page.nextPage());
+    assertArrayEquals(sinkList.toArray(), Iterables.toArray(page.values(), Metric.class));
+  }
+
+  @Test
+  public void testListMetricsWithOptionsAsync() throws ExecutionException, InterruptedException {
+    String cursor = "cursor";
+    EasyMock.replay(rpcFactoryMock);
+    logging = options.service();
+    ListLogMetricsRequest request = ListLogMetricsRequest.newBuilder()
+        .setPageToken(cursor)
+        .setPageSize(42)
+        .setProjectName(PROJECT_PB)
+        .build();
+    List<Metric> sinkList = ImmutableList.of(
+        new Metric(logging, new MetricInfo.BuilderImpl(METRIC_INFO)),
+        new Metric(logging, new MetricInfo.BuilderImpl(METRIC_INFO)));
+    ListLogMetricsResponse response = ListLogMetricsResponse.newBuilder()
+        .setNextPageToken(cursor)
+        .addAllMetrics(Lists.transform(sinkList, METRIC_TO_PB_FUNCTION))
+        .build();
+    Future<ListLogMetricsResponse> futureResponse = Futures.immediateFuture(response);
+    EasyMock.expect(loggingRpcMock.list(request)).andReturn(futureResponse);
+    EasyMock.replay(loggingRpcMock);
+    AsyncPage<Metric> page =
+        logging.listMetricsAsync(ListOption.pageSize(42), ListOption.pageToken(cursor)).get();
+    assertEquals(cursor, page.nextPageCursor());
+    assertArrayEquals(sinkList.toArray(), Iterables.toArray(page.values(), Metric.class));
   }
 }
