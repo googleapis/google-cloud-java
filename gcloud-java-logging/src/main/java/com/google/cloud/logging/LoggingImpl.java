@@ -16,9 +16,9 @@
 
 package com.google.cloud.logging;
 
-import static com.google.api.client.util.Preconditions.checkArgument;
 import static com.google.cloud.logging.Logging.ListOption.OptionType.PAGE_SIZE;
 import static com.google.cloud.logging.Logging.ListOption.OptionType.PAGE_TOKEN;
+import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.util.concurrent.Futures.lazyTransform;
 
 import com.google.cloud.AsyncPage;
@@ -28,17 +28,24 @@ import com.google.cloud.Page;
 import com.google.cloud.PageImpl;
 import com.google.cloud.logging.spi.LoggingRpc;
 import com.google.cloud.logging.spi.v2.ConfigServiceV2Api;
+import com.google.cloud.logging.spi.v2.MetricsServiceV2Api;
 import com.google.common.base.Function;
 import com.google.common.base.Throwables;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.google.common.util.concurrent.Uninterruptibles;
+import com.google.logging.v2.CreateLogMetricRequest;
 import com.google.logging.v2.CreateSinkRequest;
+import com.google.logging.v2.DeleteLogMetricRequest;
 import com.google.logging.v2.DeleteSinkRequest;
+import com.google.logging.v2.GetLogMetricRequest;
 import com.google.logging.v2.GetSinkRequest;
+import com.google.logging.v2.ListLogMetricsRequest;
+import com.google.logging.v2.ListLogMetricsResponse;
 import com.google.logging.v2.ListSinksRequest;
 import com.google.logging.v2.ListSinksResponse;
+import com.google.logging.v2.UpdateLogMetricRequest;
 import com.google.logging.v2.UpdateSinkRequest;
 import com.google.protobuf.Empty;
 
@@ -108,6 +115,21 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
     @Override
     public Future<AsyncPage<Sink>> nextPage() {
       return listSinksAsync(serviceOptions(), requestOptions());
+    }
+  }
+
+  private static class MetricPageFetcher extends BasePageFetcher<Metric> {
+
+    private static final long serialVersionUID = -316783549651771553L;
+
+    MetricPageFetcher(LoggingOptions serviceOptions, String cursor,
+        Map<Option.OptionType, ?> requestOptions) {
+      super(serviceOptions, cursor, requestOptions);
+    }
+
+    @Override
+    public Future<AsyncPage<Metric>> nextPage() {
+      return listMetricsAsync(serviceOptions(), requestOptions());
     }
   }
 
@@ -204,6 +226,103 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
   public Future<Boolean> deleteSinkAsync(String sink) {
     DeleteSinkRequest request = DeleteSinkRequest.newBuilder()
         .setSinkName(ConfigServiceV2Api.formatSinkName(options().projectId(), sink))
+        .build();
+    return lazyTransform(rpc.delete(request), EMPTY_TO_BOOLEAN_FUNCTION);
+  }
+
+  @Override
+  public Metric create(MetricInfo metric) {
+    return get(createAsync(metric));
+  }
+
+  @Override
+  public Future<Metric> createAsync(MetricInfo metric) {
+    CreateLogMetricRequest request = CreateLogMetricRequest.newBuilder()
+        .setProjectName(MetricsServiceV2Api.formatProjectName(options().projectId()))
+        .setMetric(metric.toPb())
+        .build();
+    return lazyTransform(rpc.create(request), Metric.fromPbFunction(this));
+  }
+
+  @Override
+  public Metric update(MetricInfo metric) {
+    return get(updateAsync(metric));
+  }
+
+  @Override
+  public Future<Metric> updateAsync(MetricInfo metric) {
+    UpdateLogMetricRequest request = UpdateLogMetricRequest.newBuilder()
+        .setMetricName(MetricsServiceV2Api.formatMetricName(options().projectId(), metric.name()))
+        .setMetric(metric.toPb())
+        .build();
+    return lazyTransform(rpc.update(request), Metric.fromPbFunction(this));
+  }
+
+  @Override
+  public Metric getMetric(String metric) {
+    return get(getMetricAsync(metric));
+  }
+
+  @Override
+  public Future<Metric> getMetricAsync(String metric) {
+    GetLogMetricRequest request = GetLogMetricRequest.newBuilder()
+        .setMetricName(MetricsServiceV2Api.formatMetricName(options().projectId(), metric))
+        .build();
+    return lazyTransform(rpc.get(request), Metric.fromPbFunction(this));
+  }
+
+  private static ListLogMetricsRequest listMetricsRequest(LoggingOptions serviceOptions,
+      Map<Option.OptionType, ?> options) {
+    ListLogMetricsRequest.Builder builder = ListLogMetricsRequest.newBuilder();
+    builder.setProjectName(MetricsServiceV2Api.formatProjectName(serviceOptions.projectId()));
+    Integer pageSize = PAGE_SIZE.get(options);
+    String pageToken = PAGE_TOKEN.get(options);
+    if (pageSize != null) {
+      builder.setPageSize(pageSize);
+    }
+    if (pageToken != null) {
+      builder.setPageToken(pageToken);
+    }
+    return builder.build();
+  }
+
+  private static Future<AsyncPage<Metric>> listMetricsAsync(final LoggingOptions serviceOptions,
+      final Map<Option.OptionType, ?> options) {
+    final ListLogMetricsRequest request = listMetricsRequest(serviceOptions, options);
+    Future<ListLogMetricsResponse> list = serviceOptions.rpc().list(request);
+    return lazyTransform(list, new Function<ListLogMetricsResponse, AsyncPage<Metric>>() {
+      @Override
+      public AsyncPage<Metric> apply(ListLogMetricsResponse listMetricsResponse) {
+        List<Metric> metrics = listMetricsResponse.getMetricsList() == null
+            ? ImmutableList.<Metric>of() : Lists.transform(listMetricsResponse.getMetricsList(),
+                Metric.fromPbFunction(serviceOptions.service()));
+        String cursor = listMetricsResponse.getNextPageToken().equals("") ? null
+            : listMetricsResponse.getNextPageToken();
+        return new AsyncPageImpl<>(new MetricPageFetcher(serviceOptions, cursor, options), cursor,
+            metrics);
+      }
+    });
+  }
+
+  @Override
+  public Page<Metric> listMetrics(ListOption... options) {
+    return get(listMetricsAsync(options));
+  }
+
+  @Override
+  public Future<AsyncPage<Metric>> listMetricsAsync(ListOption... options) {
+    return listMetricsAsync(options(), optionMap(options));
+  }
+
+  @Override
+  public boolean deleteMetric(String metric) {
+    return get(deleteMetricAsync(metric));
+  }
+
+  @Override
+  public Future<Boolean> deleteMetricAsync(String metric) {
+    DeleteLogMetricRequest request = DeleteLogMetricRequest.newBuilder()
+        .setMetricName(MetricsServiceV2Api.formatMetricName(options().projectId(), metric))
         .build();
     return lazyTransform(rpc.delete(request), EMPTY_TO_BOOLEAN_FUNCTION);
   }
