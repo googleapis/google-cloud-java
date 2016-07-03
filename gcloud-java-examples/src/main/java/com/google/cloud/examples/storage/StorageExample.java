@@ -64,13 +64,10 @@ import java.util.concurrent.TimeUnit;
  *
  * <p>This example demonstrates a simple/typical storage usage.
  *
- * <p>Steps needed for running the example:
- * <ol>
- * <li>login using gcloud SDK - {@code gcloud auth login}.</li>
- * <li>compile using maven - {@code mvn compile}</li>
- * <li>run using maven -
- * <pre>{@code mvn exec:java -Dexec.mainClass="com.google.cloud.examples.storage.StorageExample"
- *  -Dexec.args="[<project_id>]
+ * <p>See the
+ * <a href="https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/gcloud-java-examples/README.md">
+ * README</a> for compilation instructions. Run this code with
+ * <pre>{@code target/appassembler/bin/StorageExample [<project_id>]
  *  list [<bucket>] |
  *  info [<bucket> [<file>]] |
  *  download <bucket> <path> [local_file] |
@@ -83,9 +80,7 @@ import java.util.concurrent.TimeUnit;
  *  add-acl domain <bucket> <path>? <domain> OWNER|READER|WRITER |
  *  add-acl project <bucket> <path>? <projectId>:(OWNERS|EDITORS|VIEWERS) OWNER|READER|WRITER |
  *  add-acl user <bucket> <path>? <userEmail>|allUsers|allAuthenticatedUsers OWNER|READER|WRITER |
- *  add-acl group <bucket> <path>? <group> OWNER|READER|WRITER"}</pre>
- * </li>
- * </ol>
+ *  add-acl group <bucket> <path>? <group> OWNER|READER|WRITER}</pre>
  *
  * <p>The first parameter is an optional {@code project_id} (logged-in project will be used if not
  * supplied). Second parameter is a Storage operation (list, delete, compose,...) and can be used to

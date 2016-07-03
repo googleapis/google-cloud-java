@@ -58,34 +58,29 @@ import java.util.Map;
  *
  * <p>This example demonstrates a simple/typical BigQuery usage.
  *
- * <p>Steps needed for running the example:
- * <ol>
- * <li>login using gcloud SDK - {@code gcloud auth login}.</li>
- * <li>compile using maven - {@code mvn compile}</li>
- * <li>run using maven -
- * <pre>{@code mvn exec:java -Dexec.mainClass="com.google.cloud.examples.bigquery.BigQueryExample"
- *  -Dexec.args="[<project_id>]
- *  list datasets |
- *  list tables <dataset> |
- *  list jobs |
- *  list data <dataset> <table> |
- *  info dataset <dataset> |
- *  info table <dataset> <table> |
- *  info job <job> |
- *  create dataset <dataset> |
- *  create table <dataset> <table> (<fieldName>:<primitiveType>)+ |
- *  create view <dataset> <table> <query> |
- *  create external-table <dataset> <table> <format> (<fieldName>:<primitiveType>)+ <sourceUri> |
- *  delete dataset <dataset> |
- *  delete table <dataset> <table> |
- *  cancel <job> |
- *  copy <sourceDataset> <sourceTable> <destinationDataset> <destinationTable> |
- *  load <dataset> <table> <format> <sourceUri>+ |
- *  extract <dataset> <table> <format> <destinationUri>+ |
- *  query <query> |
- *  load-file <dataset> <table> <format> <filePath>"}</pre>
- * </li>
- * </ol>
+ * <p>See the
+ * <a href="https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/gcloud-java-examples/README.md">
+ * README</a> for compilation instructions. Run this code with
+ * <pre>{@code target/appassembler/bin/BigQueryExample [<project_id>]
+ * list datasets |
+ * list tables <dataset> |
+ * list jobs |
+ * list data <dataset> <table> |
+ * info dataset <dataset> |
+ * info table <dataset> <table> |
+ * info job <job> |
+ * create dataset <dataset> |
+ * create table <dataset> <table> (<fieldName>:<primitiveType>)+ |
+ * create view <dataset> <table> <query> |
+ * create external-table <dataset> <table> <format> (<fieldName>:<primitiveType>)+ <sourceUri> |
+ * delete dataset <dataset> |
+ * delete table <dataset> <table> |
+ * cancel <job> |
+ * copy <sourceDataset> <sourceTable> <destinationDataset> <destinationTable> |
+ * load <dataset> <table> <format> <sourceUri>+ |
+ * extract <dataset> <table> <format> <destinationUri>+ |
+ * query <query> |
+ * load-file <dataset> <table> <format> <filePath>}</pre>
  *
  * <p>The first parameter is an optional {@code project_id} (logged-in project will be used if not
  * supplied). Second parameter is a BigQuery operation and can be used to demonstrate its usage. For

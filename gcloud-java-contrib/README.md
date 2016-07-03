@@ -9,8 +9,17 @@ Packages that provide higher-level abstraction/functionality for common gcloud-j
 [![Codacy Badge](https://api.codacy.com/project/badge/grade/9da006ad7c3a4fe1abd142e77c003917)](https://www.codacy.com/app/mziccard/gcloud-java)
 [![Dependency Status](https://www.versioneye.com/user/projects/56bd8ee72a29ed002d2b0969/badge.svg?style=flat)](https://www.versioneye.com/user/projects/56bd8ee72a29ed002d2b0969)
 
+Contents
+--------
+
+ * [gcloud-java-nio](./gcloud-java-nio/): NIO Filesystem Provider for Google Cloud Storage.
+ * [gcloud-java-nio-examples](./gcloud-java-nio-examples/): How to add Google Cloud Storage NIO after the fact.
+
 Quickstart
 ----------
+
+### gcloud-java-nio
+
 If you are using Maven, add this to your pom.xml file
 ```xml
 <dependency>
@@ -28,6 +37,10 @@ If you are using SBT, add this to your dependencies
 libraryDependencies += "com.google.cloud" % "gcloud-java-contrib" % "0.2.4"
 ```
 
+### gcloud-java-nio-examples
+
+See its [README](./gcloud-java-nio-examples/README.md) for instructions on how to run it.
+
 Java Versions
 -------------
 
@@ -41,6 +54,11 @@ This library follows [Semantic Versioning] (http://semver.org/).
 It is currently in major version zero (``0.y.z``), which means that anything
 may change at any time and the public API should not be considered
 stable.
+
+See also
+--------
+
+ * [gcloud-java-examples](../gcloud-java-examples) for an example of how to use NIO normally.
 
 Contributing
 ------------

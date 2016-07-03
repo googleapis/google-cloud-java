@@ -45,7 +45,7 @@ class BlobReadChannel implements ReadChannel {
   private final BlobId blob;
   private final Map<StorageRpc.Option, ?> requestOptions;
   private String lastEtag;
-  private int position;
+  private long position;
   private boolean isOpen;
   private boolean endOfStream;
   private int chunkSize = DEFAULT_CHUNK_SIZE;
@@ -99,7 +99,7 @@ class BlobReadChannel implements ReadChannel {
   }
 
   @Override
-  public void seek(int position) throws IOException {
+  public void seek(long position) throws IOException {
     validateOpen();
     this.position = position;
     buffer = null;
@@ -164,7 +164,7 @@ class BlobReadChannel implements ReadChannel {
     private final BlobId blob;
     private final Map<StorageRpc.Option, ?> requestOptions;
     private final String lastEtag;
-    private final int position;
+    private final long position;
     private final boolean isOpen;
     private final boolean endOfStream;
     private final int chunkSize;
@@ -185,7 +185,7 @@ class BlobReadChannel implements ReadChannel {
       private final BlobId blob;
       private final Map<StorageRpc.Option, ?> requestOptions;
       private String lastEtag;
-      private int position;
+      private long position;
       private boolean isOpen;
       private boolean endOfStream;
       private int chunkSize;
@@ -201,7 +201,7 @@ class BlobReadChannel implements ReadChannel {
         return this;
       }
 
-      Builder position(int position) {
+      Builder position(long position) {
         this.position = position;
         return this;
       }

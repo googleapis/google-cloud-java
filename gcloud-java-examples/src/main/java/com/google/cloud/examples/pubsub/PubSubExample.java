@@ -43,12 +43,10 @@ import java.util.concurrent.atomic.AtomicInteger;
  *
  * <p>This example demonstrates a simple/typical Pub/Sub usage.
  *
- * <p>Steps needed for running the example:
- * <ol>
- * <li>login using gcloud SDK - {@code gcloud auth login}.</li>
- * <li>compile using maven - {@code mvn compile}</li>
- * <li>run using maven -
- * <pre>{@code mvn exec:java -Dexec.mainClass="com.google.cloud.examples.pubsub.PubSubExample"
+ * <p>See the
+ * <a href="https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/gcloud-java-examples/README.md">
+ * README</a> for compilation instructions. Run this code with
+ * <pre>{@code target/appassembler/bin/PubSubExample
  *  -Dexec.args="[<project_id>]
  *  pull async <subscription> <timeoutMillis>?
  *  pull sync <subscription> <maxMessages>
@@ -64,8 +62,6 @@ import java.util.concurrent.atomic.AtomicInteger;
  *  delete subscription <subscription>
  *  info topic <topic>
  *  info subscription <subscription>"}</pre>
- * </li>
- * </ol>
  *
  * <p>The first parameter is an optional {@code project_id} (logged-in project will be used if not
  * supplied). Second parameter is a Pub/Sub operation and can be used to demonstrate its usage. For

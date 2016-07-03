@@ -83,13 +83,10 @@ import java.util.Map;
  *
  * <p>This example demonstrates a simple/typical Compute usage.
  *
- * <p>Steps needed for running the example:
- * <ol>
- * <li>login using gcloud SDK - {@code gcloud auth login}.</li>
- * <li>compile using maven - {@code mvn compile}</li>
- * <li>run using maven -
- * <pre>{@code mvn exec:java -Dexec.mainClass="com.google.cloud.examples.compute.ComputeExample"
- *  -Dexec.args="[<project_id>]
+ * <p>See the
+ * <a href="https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/gcloud-java-examples/README.md">
+ * README</a> for compilation instructions. Run this code with
+ * <pre>{@code target/appassembler/bin/ComputeExample [<project_id>]
  * list networks |
  * list region-operations <region> |
  * list instances <zone>? |
@@ -151,9 +148,7 @@ import java.util.Map;
  * stop <zone> <instance> |
  * reset <zone> <instance> |
  * set-tags <zone> <instance> <tag>* |
- * set-metadata <zone> <instance> <key value>*"}</pre>
- * </li>
- * </ol>
+ * set-metadata <zone> <instance> <key value>*}</pre>
  *
  * <p>The first parameter is an optional {@code project_id} (logged-in project will be used if not
  * supplied). Second parameter is a Compute operation and can be used to demonstrate its usage. For
