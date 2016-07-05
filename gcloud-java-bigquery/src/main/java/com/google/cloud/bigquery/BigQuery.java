@@ -92,6 +92,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
     SELF_LINK("selfLink"),
     STREAMING_BUFFER("streamingBuffer"),
     TABLE_REFERENCE("tableReference"),
+    TIME_PARTITIONING("timePartitioning"),
     TYPE("type"),
     VIEW("view");
 
