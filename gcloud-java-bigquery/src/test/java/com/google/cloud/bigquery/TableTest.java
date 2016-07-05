@@ -50,6 +50,7 @@ public class TableTest {
   private static final String DESCRIPTION = "description";
   private static final Long CREATION_TIME = 10L;
   private static final Long EXPIRATION_TIME = 100L;
+  private static final boolean TIME_PARTITIONING = true;
   private static final Long LAST_MODIFIED_TIME = 20L;
   private static final TableId TABLE_ID1 = TableId.of("dataset", "table1");
   private static final TableId TABLE_ID2 = TableId.of("dataset", "table2");
@@ -114,6 +115,7 @@ public class TableTest {
         .description(DESCRIPTION)
         .etag(ETAG)
         .expirationTime(EXPIRATION_TIME)
+        .timePartitioning(TIME_PARTITIONING)
         .friendlyName(FRIENDLY_NAME)
         .generatedId(GENERATED_ID)
         .lastModifiedTime(LAST_MODIFIED_TIME)
@@ -124,6 +126,7 @@ public class TableTest {
     assertEquals(DESCRIPTION, builtTable.description());
     assertEquals(ETAG, builtTable.etag());
     assertEquals(EXPIRATION_TIME, builtTable.expirationTime());
+    assertEquals(TIME_PARTITIONING, builtTable.timePartitioning());
     assertEquals(FRIENDLY_NAME, builtTable.friendlyName());
     assertEquals(GENERATED_ID, builtTable.generatedId());
     assertEquals(LAST_MODIFIED_TIME, builtTable.lastModifiedTime());
@@ -397,6 +400,7 @@ public class TableTest {
     assertEquals(expected.description(), value.description());
     assertEquals(expected.etag(), value.etag());
     assertEquals(expected.expirationTime(), value.expirationTime());
+    assertEquals(expected.timePartitioning(), value.timePartitioning());
     assertEquals(expected.friendlyName(), value.friendlyName());
     assertEquals(expected.generatedId(), value.generatedId());
     assertEquals(expected.lastModifiedTime(), value.lastModifiedTime());
