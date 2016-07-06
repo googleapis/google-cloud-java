@@ -16,14 +16,15 @@
 
 package com.google.cloud.logging;
 
+import static com.google.api.client.util.Preconditions.checkArgument;
 import static com.google.cloud.logging.Logging.ListOption.OptionType.PAGE_SIZE;
 import static com.google.cloud.logging.Logging.ListOption.OptionType.PAGE_TOKEN;
-import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.util.concurrent.Futures.lazyTransform;
 
 import com.google.cloud.AsyncPage;
 import com.google.cloud.AsyncPageImpl;
 import com.google.cloud.BaseService;
+import com.google.cloud.MonitoredResourceDescriptor;
 import com.google.cloud.Page;
 import com.google.cloud.PageImpl;
 import com.google.cloud.logging.spi.LoggingRpc;
@@ -43,6 +44,8 @@ import com.google.logging.v2.GetLogMetricRequest;
 import com.google.logging.v2.GetSinkRequest;
 import com.google.logging.v2.ListLogMetricsRequest;
 import com.google.logging.v2.ListLogMetricsResponse;
+import com.google.logging.v2.ListMonitoredResourceDescriptorsRequest;
+import com.google.logging.v2.ListMonitoredResourceDescriptorsResponse;
 import com.google.logging.v2.ListSinksRequest;
 import com.google.logging.v2.ListSinksResponse;
 import com.google.logging.v2.UpdateLogMetricRequest;
@@ -115,6 +118,22 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
     @Override
     public Future<AsyncPage<Sink>> nextPage() {
       return listSinksAsync(serviceOptions(), requestOptions());
+    }
+  }
+
+  private static class MonitoredResourceDescriptorPageFetcher
+      extends BasePageFetcher<MonitoredResourceDescriptor> {
+
+    private static final long serialVersionUID = -2346495771766629195L;
+
+    MonitoredResourceDescriptorPageFetcher(LoggingOptions serviceOptions, String cursor,
+        Map<Option.OptionType, ?> requestOptions) {
+      super(serviceOptions, cursor, requestOptions);
+    }
+
+    @Override
+    public Future<AsyncPage<MonitoredResourceDescriptor>> nextPage() {
+      return listMonitoredResourceDescriptorsAsync(serviceOptions(), requestOptions());
     }
   }
 
@@ -228,6 +247,55 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
         .setSinkName(ConfigServiceV2Api.formatSinkName(options().projectId(), sink))
         .build();
     return lazyTransform(rpc.delete(request), EMPTY_TO_BOOLEAN_FUNCTION);
+  }
+
+  private static ListMonitoredResourceDescriptorsRequest listMonitoredResourceDescriptorsRequest(
+      Map<Option.OptionType, ?> options) {
+    ListMonitoredResourceDescriptorsRequest.Builder builder =
+        ListMonitoredResourceDescriptorsRequest.newBuilder();
+    Integer pageSize = PAGE_SIZE.get(options);
+    String pageToken = PAGE_TOKEN.get(options);
+    if (pageSize != null) {
+      builder.setPageSize(pageSize);
+    }
+    if (pageToken != null) {
+      builder.setPageToken(pageToken);
+    }
+    return builder.build();
+  }
+
+  private static Future<AsyncPage<MonitoredResourceDescriptor>>
+      listMonitoredResourceDescriptorsAsync(final LoggingOptions serviceOptions,
+          final Map<Option.OptionType, ?> options) {
+    final ListMonitoredResourceDescriptorsRequest request =
+        listMonitoredResourceDescriptorsRequest(options);
+    Future<ListMonitoredResourceDescriptorsResponse> list = serviceOptions.rpc().list(request);
+    return lazyTransform(list, new Function<ListMonitoredResourceDescriptorsResponse,
+        AsyncPage<MonitoredResourceDescriptor>>() {
+          @Override
+          public AsyncPage<MonitoredResourceDescriptor> apply(
+              ListMonitoredResourceDescriptorsResponse listDescriptorsResponse) {
+            List<MonitoredResourceDescriptor> descriptors =
+                listDescriptorsResponse.getResourceDescriptorsList() == null
+                    ? ImmutableList.<MonitoredResourceDescriptor>of()
+                    : Lists.transform(listDescriptorsResponse.getResourceDescriptorsList(),
+                MonitoredResourceDescriptor.FROM_PB_FUNCTION);
+            String cursor = listDescriptorsResponse.getNextPageToken().equals("") ? null
+                : listDescriptorsResponse.getNextPageToken();
+            return new AsyncPageImpl<>(
+                new MonitoredResourceDescriptorPageFetcher(serviceOptions, cursor, options), cursor,
+                descriptors);
+          }
+        });
+  }
+
+  public Page<MonitoredResourceDescriptor> listMonitoredResourceDescriptors(ListOption... options) {
+    return get(listMonitoredResourceDescriptorsAsync(options));
+  }
+
+  public Future<AsyncPage<MonitoredResourceDescriptor>> listMonitoredResourceDescriptorsAsync(
+      ListOption... options) {
+    return listMonitoredResourceDescriptorsAsync(options(), optionMap(options));
   }
 
   @Override
