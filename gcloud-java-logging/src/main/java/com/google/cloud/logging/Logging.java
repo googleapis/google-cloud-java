@@ -17,6 +17,7 @@
 package com.google.cloud.logging;
 
 import com.google.cloud.AsyncPage;
+import com.google.cloud.MonitoredResourceDescriptor;
 import com.google.cloud.Page;
 import com.google.cloud.Service;
 
@@ -135,6 +136,25 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    * was not found.
    */
   Future<Boolean> deleteSinkAsync(String sink);
+
+  /**
+   * Lists the monitored resource descriptors used by Google Cloud Logging. This method returns a
+   * {@link Page} object that can be used to consume paginated results. Use {@link ListOption} to
+   * specify the page size or the page token from which to start listing resource descriptors.
+   *
+   * @throws LoggingException upon failure
+   */
+  Page<MonitoredResourceDescriptor> listMonitoredResourceDescriptors(ListOption... options);
+
+  /**
+   * Sends a request for listing monitored resource descriptors used by Google Cloud Logging. This
+   * method returns a {@code Future} object to consume the result. {@link Future#get()} returns an
+   * {@link AsyncPage} object that can be used to asynchronously handle paginated results. Use
+   * {@link ListOption} to specify the page size or the page token from which to start listing
+   * resource descriptors.
+   */
+  Future<AsyncPage<MonitoredResourceDescriptor>> listMonitoredResourceDescriptorsAsync(
+      ListOption... options);
 
   /**
    * Creates a new metric.

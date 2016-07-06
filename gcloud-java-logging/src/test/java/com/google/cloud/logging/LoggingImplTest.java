@@ -24,6 +24,7 @@ import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
 import com.google.cloud.AsyncPage;
+import com.google.cloud.MonitoredResourceDescriptor;
 import com.google.cloud.Page;
 import com.google.cloud.RetryParams;
 import com.google.cloud.logging.Logging.ListOption;
@@ -43,6 +44,8 @@ import com.google.logging.v2.GetLogMetricRequest;
 import com.google.logging.v2.GetSinkRequest;
 import com.google.logging.v2.ListLogMetricsRequest;
 import com.google.logging.v2.ListLogMetricsResponse;
+import com.google.logging.v2.ListMonitoredResourceDescriptorsRequest;
+import com.google.logging.v2.ListMonitoredResourceDescriptorsResponse;
 import com.google.logging.v2.ListSinksRequest;
 import com.google.logging.v2.ListSinksResponse;
 import com.google.logging.v2.LogMetric;
@@ -77,6 +80,10 @@ public class LoggingImplTest {
   private static final MetricInfo METRIC_INFO = MetricInfo.builder(METRIC_NAME, FILTER)
       .description(DESCRIPTION)
       .build();
+  private static final com.google.api.MonitoredResourceDescriptor DESCRIPTOR_PB =
+      com.google.api.MonitoredResourceDescriptor.getDefaultInstance();
+  private static final MonitoredResourceDescriptor DESCRIPTOR =
+      MonitoredResourceDescriptor.fromPb(DESCRIPTOR_PB);
   private static final Function<SinkInfo, LogSink> SINK_TO_PB_FUNCTION =
       new Function<SinkInfo, LogSink>() {
         @Override
@@ -89,6 +96,15 @@ public class LoggingImplTest {
         @Override
         public LogMetric apply(MetricInfo metricInfo) {
           return metricInfo.toPb();
+        }
+      };
+  private static final Function<MonitoredResourceDescriptor,
+      com.google.api.MonitoredResourceDescriptor> DESCRIPTOR_TO_PB_FUNCTION =
+      new Function<MonitoredResourceDescriptor, com.google.api.MonitoredResourceDescriptor>() {
+        @Override
+        public com.google.api.MonitoredResourceDescriptor apply(
+            MonitoredResourceDescriptor descriptor) {
+          return descriptor.toPb();
         }
       };
 
@@ -834,5 +850,234 @@ public class LoggingImplTest {
         logging.listMetricsAsync(ListOption.pageSize(42), ListOption.pageToken(cursor)).get();
     assertEquals(cursor, page.nextPageCursor());
     assertArrayEquals(sinkList.toArray(), Iterables.toArray(page.values(), Metric.class));
+  }
+
+  @Test
+  public void testListResourceDescriptor() {
+    String cursor = "cursor";
+    EasyMock.replay(rpcFactoryMock);
+    logging = options.service();
+    ListMonitoredResourceDescriptorsRequest request =
+        ListMonitoredResourceDescriptorsRequest.newBuilder().build();
+    List<MonitoredResourceDescriptor> descriptorList = ImmutableList.of(DESCRIPTOR, DESCRIPTOR);
+    ListMonitoredResourceDescriptorsResponse response =
+        ListMonitoredResourceDescriptorsResponse.newBuilder()
+            .setNextPageToken(cursor)
+            .addAllResourceDescriptors(Lists.transform(descriptorList, DESCRIPTOR_TO_PB_FUNCTION))
+        .build();
+    Future<ListMonitoredResourceDescriptorsResponse> futureResponse =
+        Futures.immediateFuture(response);
+    EasyMock.expect(loggingRpcMock.list(request)).andReturn(futureResponse);
+    EasyMock.replay(loggingRpcMock);
+    Page<MonitoredResourceDescriptor> page = logging.listMonitoredResourceDescriptors();
+    assertEquals(cursor, page.nextPageCursor());
+    assertArrayEquals(descriptorList.toArray(),
+        Iterables.toArray(page.values(), MonitoredResourceDescriptor.class));
+  }
+
+  @Test
+  public void testListResourceDescriptorNextPage() {
+    String cursor1 = "cursor";
+    EasyMock.replay(rpcFactoryMock);
+    logging = options.service();
+    ListMonitoredResourceDescriptorsRequest request1 =
+        ListMonitoredResourceDescriptorsRequest.newBuilder().build();
+    ListMonitoredResourceDescriptorsRequest request2 =
+        ListMonitoredResourceDescriptorsRequest.newBuilder().setPageToken(cursor1).build();
+    List<MonitoredResourceDescriptor> descriptorList1 = ImmutableList.of(DESCRIPTOR, DESCRIPTOR);
+    List<MonitoredResourceDescriptor> descriptorList2 = ImmutableList.of(DESCRIPTOR);
+    ListMonitoredResourceDescriptorsResponse response1 =
+        ListMonitoredResourceDescriptorsResponse.newBuilder()
+            .setNextPageToken(cursor1)
+            .addAllResourceDescriptors(Lists.transform(descriptorList1, DESCRIPTOR_TO_PB_FUNCTION))
+            .build();
+    String cursor2 = "nextCursor";
+    ListMonitoredResourceDescriptorsResponse response2 =
+        ListMonitoredResourceDescriptorsResponse.newBuilder()
+            .setNextPageToken(cursor2)
+            .addAllResourceDescriptors(Lists.transform(descriptorList2, DESCRIPTOR_TO_PB_FUNCTION))
+            .build();
+    Future<ListMonitoredResourceDescriptorsResponse> futureResponse1 =
+        Futures.immediateFuture(response1);
+    Future<ListMonitoredResourceDescriptorsResponse> futureResponse2 =
+        Futures.immediateFuture(response2);
+    EasyMock.expect(loggingRpcMock.list(request1)).andReturn(futureResponse1);
+    EasyMock.expect(loggingRpcMock.list(request2)).andReturn(futureResponse2);
+    EasyMock.replay(loggingRpcMock);
+    Page<MonitoredResourceDescriptor> page = logging.listMonitoredResourceDescriptors();
+    assertEquals(cursor1, page.nextPageCursor());
+    assertArrayEquals(descriptorList1.toArray(), Iterables.toArray(page.values(),
+        MonitoredResourceDescriptor.class));
+    page = page.nextPage();
+    assertEquals(cursor2, page.nextPageCursor());
+    assertArrayEquals(descriptorList2.toArray(),
+        Iterables.toArray(page.values(), MonitoredResourceDescriptor.class));
+  }
+
+  @Test
+  public void testListResourceDescriptorEmpty() {
+    EasyMock.replay(rpcFactoryMock);
+    logging = options.service();
+    ListMonitoredResourceDescriptorsRequest request =
+        ListMonitoredResourceDescriptorsRequest.newBuilder().build();
+    List<MonitoredResourceDescriptor> descriptorList = ImmutableList.of();
+    ListMonitoredResourceDescriptorsResponse response =
+        ListMonitoredResourceDescriptorsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllResourceDescriptors(Lists.transform(descriptorList, DESCRIPTOR_TO_PB_FUNCTION))
+            .build();
+    Future<ListMonitoredResourceDescriptorsResponse> futureResponse =
+        Futures.immediateFuture(response);
+    EasyMock.expect(loggingRpcMock.list(request)).andReturn(futureResponse);
+    EasyMock.replay(loggingRpcMock);
+    Page<MonitoredResourceDescriptor> page = logging.listMonitoredResourceDescriptors();
+    assertNull(page.nextPageCursor());
+    assertNull(page.nextPage());
+    assertArrayEquals(descriptorList.toArray(),
+        Iterables.toArray(page.values(), MonitoredResourceDescriptor.class));
+  }
+
+  @Test
+  public void testListResourceDescriptorWithOptions() {
+    String cursor = "cursor";
+    EasyMock.replay(rpcFactoryMock);
+    logging = options.service();
+    ListMonitoredResourceDescriptorsRequest request =
+        ListMonitoredResourceDescriptorsRequest.newBuilder()
+            .setPageToken(cursor)
+            .setPageSize(42)
+            .build();
+    List<MonitoredResourceDescriptor> descriptorList = ImmutableList.of(DESCRIPTOR, DESCRIPTOR);
+    ListMonitoredResourceDescriptorsResponse response =
+        ListMonitoredResourceDescriptorsResponse.newBuilder()
+            .setNextPageToken(cursor)
+            .addAllResourceDescriptors(Lists.transform(descriptorList, DESCRIPTOR_TO_PB_FUNCTION))
+            .build();
+    Future<ListMonitoredResourceDescriptorsResponse> futureResponse =
+        Futures.immediateFuture(response);
+    EasyMock.expect(loggingRpcMock.list(request)).andReturn(futureResponse);
+    EasyMock.replay(loggingRpcMock);
+    Page<MonitoredResourceDescriptor> page = logging.listMonitoredResourceDescriptors(
+        ListOption.pageSize(42), ListOption.pageToken(cursor));
+    assertEquals(cursor, page.nextPageCursor());
+    assertArrayEquals(descriptorList.toArray(),
+        Iterables.toArray(page.values(), MonitoredResourceDescriptor.class));
+  }
+
+  @Test
+  public void testListResourceDescriptorAsync() throws ExecutionException, InterruptedException {
+    String cursor = "cursor";
+    EasyMock.replay(rpcFactoryMock);
+    logging = options.service();
+    ListMonitoredResourceDescriptorsRequest request =
+        ListMonitoredResourceDescriptorsRequest.newBuilder().build();
+    List<MonitoredResourceDescriptor> descriptorList = ImmutableList.of(DESCRIPTOR, DESCRIPTOR);
+    ListMonitoredResourceDescriptorsResponse response =
+        ListMonitoredResourceDescriptorsResponse.newBuilder()
+            .setNextPageToken(cursor)
+            .addAllResourceDescriptors(Lists.transform(descriptorList, DESCRIPTOR_TO_PB_FUNCTION))
+            .build();
+    Future<ListMonitoredResourceDescriptorsResponse> futureResponse =
+        Futures.immediateFuture(response);
+    EasyMock.expect(loggingRpcMock.list(request)).andReturn(futureResponse);
+    EasyMock.replay(loggingRpcMock);
+    AsyncPage<MonitoredResourceDescriptor> page =
+        logging.listMonitoredResourceDescriptorsAsync().get();
+    assertEquals(cursor, page.nextPageCursor());
+    assertArrayEquals(descriptorList.toArray(),
+        Iterables.toArray(page.values(), MonitoredResourceDescriptor.class));
+  }
+
+  @Test
+  public void testListResourceDescriptorAsyncNextPage() throws ExecutionException, InterruptedException {
+    String cursor1 = "cursor";
+    EasyMock.replay(rpcFactoryMock);
+    logging = options.service();
+    ListMonitoredResourceDescriptorsRequest request1 =
+        ListMonitoredResourceDescriptorsRequest.newBuilder().build();
+    ListMonitoredResourceDescriptorsRequest request2 =
+        ListMonitoredResourceDescriptorsRequest.newBuilder().setPageToken(cursor1).build();
+    List<MonitoredResourceDescriptor> descriptorList1 = ImmutableList.of(DESCRIPTOR, DESCRIPTOR);
+    List<MonitoredResourceDescriptor> descriptorList2 = ImmutableList.of(DESCRIPTOR);
+    ListMonitoredResourceDescriptorsResponse response1 =
+        ListMonitoredResourceDescriptorsResponse.newBuilder()
+            .setNextPageToken(cursor1)
+            .addAllResourceDescriptors(Lists.transform(descriptorList1, DESCRIPTOR_TO_PB_FUNCTION))
+            .build();
+    String cursor2 = "nextCursor";
+    ListMonitoredResourceDescriptorsResponse response2 =
+        ListMonitoredResourceDescriptorsResponse.newBuilder()
+            .setNextPageToken(cursor2)
+            .addAllResourceDescriptors(Lists.transform(descriptorList2, DESCRIPTOR_TO_PB_FUNCTION))
+            .build();
+    Future<ListMonitoredResourceDescriptorsResponse> futureResponse1 =
+        Futures.immediateFuture(response1);
+    Future<ListMonitoredResourceDescriptorsResponse> futureResponse2 =
+        Futures.immediateFuture(response2);
+    EasyMock.expect(loggingRpcMock.list(request1)).andReturn(futureResponse1);
+    EasyMock.expect(loggingRpcMock.list(request2)).andReturn(futureResponse2);
+    EasyMock.replay(loggingRpcMock);
+    AsyncPage<MonitoredResourceDescriptor> page =
+        logging.listMonitoredResourceDescriptorsAsync().get();
+    assertEquals(cursor1, page.nextPageCursor());
+    assertArrayEquals(descriptorList1.toArray(), Iterables.toArray(page.values(),
+        MonitoredResourceDescriptor.class));
+    page = page.nextPageAsync().get();
+    assertEquals(cursor2, page.nextPageCursor());
+    assertArrayEquals(descriptorList2.toArray(),
+        Iterables.toArray(page.values(), MonitoredResourceDescriptor.class));
+  }
+
+  @Test
+  public void testListResourceDescriptorAsyncEmpty()
+      throws ExecutionException, InterruptedException {
+    EasyMock.replay(rpcFactoryMock);
+    logging = options.service();
+    ListMonitoredResourceDescriptorsRequest request =
+        ListMonitoredResourceDescriptorsRequest.newBuilder().build();
+    List<MonitoredResourceDescriptor> descriptorList = ImmutableList.of();
+    ListMonitoredResourceDescriptorsResponse response =
+        ListMonitoredResourceDescriptorsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllResourceDescriptors(Lists.transform(descriptorList, DESCRIPTOR_TO_PB_FUNCTION))
+            .build();
+    Future<ListMonitoredResourceDescriptorsResponse> futureResponse =
+        Futures.immediateFuture(response);
+    EasyMock.expect(loggingRpcMock.list(request)).andReturn(futureResponse);
+    EasyMock.replay(loggingRpcMock);
+    AsyncPage<MonitoredResourceDescriptor> page =
+        logging.listMonitoredResourceDescriptorsAsync().get();
+    assertNull(page.nextPageCursor());
+    assertNull(page.nextPage());
+    assertArrayEquals(descriptorList.toArray(),
+        Iterables.toArray(page.values(), MonitoredResourceDescriptor.class));
+  }
+
+  @Test
+  public void testListResourceDescriptorAsyncWithOptions()
+      throws ExecutionException, InterruptedException {
+    String cursor = "cursor";
+    EasyMock.replay(rpcFactoryMock);
+    logging = options.service();
+    ListMonitoredResourceDescriptorsRequest request =
+        ListMonitoredResourceDescriptorsRequest.newBuilder()
+            .setPageToken(cursor)
+            .setPageSize(42)
+            .build();
+    List<MonitoredResourceDescriptor> descriptorList = ImmutableList.of(DESCRIPTOR, DESCRIPTOR);
+    ListMonitoredResourceDescriptorsResponse response =
+        ListMonitoredResourceDescriptorsResponse.newBuilder()
+            .setNextPageToken(cursor)
+            .addAllResourceDescriptors(Lists.transform(descriptorList, DESCRIPTOR_TO_PB_FUNCTION))
+            .build();
+    Future<ListMonitoredResourceDescriptorsResponse> futureResponse =
+        Futures.immediateFuture(response);
+    EasyMock.expect(loggingRpcMock.list(request)).andReturn(futureResponse);
+    EasyMock.replay(loggingRpcMock);
+    AsyncPage<MonitoredResourceDescriptor> page = logging.listMonitoredResourceDescriptorsAsync(
+        ListOption.pageSize(42), ListOption.pageToken(cursor)).get();
+    assertEquals(cursor, page.nextPageCursor());
+    assertArrayEquals(descriptorList.toArray(),
+        Iterables.toArray(page.values(), MonitoredResourceDescriptor.class));
   }
 }
