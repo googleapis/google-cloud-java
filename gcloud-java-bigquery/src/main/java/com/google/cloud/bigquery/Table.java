@@ -86,12 +86,6 @@ public class Table extends TableInfo {
     }
 
     @Override
-    public Builder timePartitioning(boolean partitioning) {
-      infoBuilder.timePartitioning(partitioning);
-      return this;
-    }
-
-    @Override
     public Builder friendlyName(String friendlyName) {
       infoBuilder.friendlyName(friendlyName);
       return this;

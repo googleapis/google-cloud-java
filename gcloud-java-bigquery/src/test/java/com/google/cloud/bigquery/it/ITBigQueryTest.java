@@ -60,6 +60,8 @@ import com.google.cloud.bigquery.Table;
 import com.google.cloud.bigquery.TableDefinition;
 import com.google.cloud.bigquery.TableId;
 import com.google.cloud.bigquery.TableInfo;
+import com.google.cloud.bigquery.TimePartitioning;
+import com.google.cloud.bigquery.TimePartitioning.Type;
 import com.google.cloud.bigquery.ViewDefinition;
 import com.google.cloud.bigquery.WriteChannelConfiguration;
 import com.google.cloud.bigquery.testing.RemoteBigQueryHelper;
@@ -298,7 +300,11 @@ public class ITBigQueryTest {
   public void testCreateAndGetTable() {
     String tableName = "test_create_and_get_table";
     TableId tableId = TableId.of(DATASET, tableName);
-    StandardTableDefinition tableDefinition = StandardTableDefinition.of(TABLE_SCHEMA);
+    TimePartitioning partitioning = TimePartitioning.of(Type.DAY);
+    StandardTableDefinition tableDefinition = StandardTableDefinition.builder()
+        .schema(TABLE_SCHEMA)
+        .timePartitioning(partitioning)
+        .build();
     Table createdTable = bigquery.create(TableInfo.of(tableId, tableDefinition));
     assertNotNull(createdTable);
     assertEquals(DATASET, createdTable.tableId().dataset());
@@ -313,6 +319,8 @@ public class ITBigQueryTest {
     assertNotNull(remoteTable.lastModifiedTime());
     assertNotNull(remoteTable.<StandardTableDefinition>definition().numBytes());
     assertNotNull(remoteTable.<StandardTableDefinition>definition().numRows());
+    assertEquals(partitioning,
+        remoteTable.<StandardTableDefinition>definition().timePartitioning());
     assertTrue(remoteTable.delete());
   }
 
@@ -336,6 +344,7 @@ public class ITBigQueryTest {
     assertNull(remoteTable.lastModifiedTime());
     assertNull(remoteTable.<StandardTableDefinition>definition().numBytes());
     assertNull(remoteTable.<StandardTableDefinition>definition().numRows());
+    assertNull(remoteTable.<StandardTableDefinition>definition().timePartitioning());
     assertTrue(remoteTable.delete());
   }
 

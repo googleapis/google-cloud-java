@@ -21,7 +21,6 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.api.client.util.Data;
 import com.google.api.services.bigquery.model.Table;
-import com.google.api.services.bigquery.model.TimePartitioning;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
 
@@ -64,7 +63,6 @@ public class TableInfo implements Serializable {
   private final Long creationTime;
   private final Long expirationTime;
   private final Long lastModifiedTime;
-  private final TimePartitioning timePartitioning;
   private final TableDefinition definition;
 
   /**
@@ -91,12 +89,6 @@ public class TableInfo implements Serializable {
      * Sets a user-friendly name for the table.
      */
     public abstract Builder friendlyName(String friendlyName);
-
-    /**
-     * Sets whether or not time partitioning should take place. Currently, only partitioning by day
-     * is available.
-     */
-    public abstract Builder timePartitioning(boolean partitioning);
 
     abstract Builder generatedId(String generatedId);
 
@@ -133,7 +125,6 @@ public class TableInfo implements Serializable {
     private Long creationTime;
     private Long expirationTime;
     private Long lastModifiedTime;
-    private TimePartitioning timePartitioning;
     private TableDefinition definition;
 
     BuilderImpl() {}
@@ -148,7 +139,6 @@ public class TableInfo implements Serializable {
       this.creationTime = tableInfo.creationTime;
       this.expirationTime = tableInfo.expirationTime;
       this.lastModifiedTime = tableInfo.lastModifiedTime;
-      this.timePartitioning = tableInfo.timePartitioning;
       this.definition = tableInfo.definition;
     }
 
@@ -159,7 +149,6 @@ public class TableInfo implements Serializable {
       }
       this.description = tablePb.getDescription();
       this.expirationTime = tablePb.getExpirationTime();
-      this.timePartitioning = tablePb.getTimePartitioning();
       this.friendlyName = tablePb.getFriendlyName();
       this.creationTime = tablePb.getCreationTime();
       this.etag = tablePb.getEtag();
@@ -189,17 +178,6 @@ public class TableInfo implements Serializable {
     @Override
     public Builder expirationTime(Long expirationTime) {
       this.expirationTime = firstNonNull(expirationTime, Data.<Long>nullOf(Long.class));
-      return this;
-    }
-
-    @Override
-    public Builder timePartitioning(boolean partitioning) {
-      if (partitioning) {
-        this.timePartitioning = new TimePartitioning();
-        this.timePartitioning.setType("DAY");
-      } else {
-        this.timePartitioning = null;
-      }
       return this;
     }
 
@@ -254,7 +232,6 @@ public class TableInfo implements Serializable {
     this.description = builder.description;
     this.creationTime = builder.creationTime;
     this.expirationTime = builder.expirationTime;
-    this.timePartitioning = builder.timePartitioning;
     this.lastModifiedTime = builder.lastModifiedTime;
     this.definition = builder.definition;
   }
@@ -318,13 +295,6 @@ public class TableInfo implements Serializable {
   }
 
   /**
-   * Returns whether or not this table will be time partitioned.
-   */
-  public boolean timePartitioning() {
-    return timePartitioning != null;
-  }
-
-  /**
    * Returns the time when this table was last modified, in milliseconds since the epoch.
    */
   public Long lastModifiedTime() {
@@ -356,7 +326,6 @@ public class TableInfo implements Serializable {
         .add("friendlyName", friendlyName)
         .add("description", description)
         .add("expirationTime", expirationTime)
-        .add("timePartitioning", timePartitioning)
         .add("creationTime", creationTime)
         .add("lastModifiedTime", lastModifiedTime)
         .add("definition", definition)
@@ -410,7 +379,6 @@ public class TableInfo implements Serializable {
     tablePb.setDescription(description);
     tablePb.setEtag(etag);
     tablePb.setExpirationTime(expirationTime);
-    tablePb.setTimePartitioning(timePartitioning);
     tablePb.setFriendlyName(friendlyName);
     tablePb.setId(generatedId);
     tablePb.setSelfLink(selfLink);

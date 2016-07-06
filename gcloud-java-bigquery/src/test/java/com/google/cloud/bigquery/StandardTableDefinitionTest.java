@@ -17,13 +17,14 @@
 package com.google.cloud.bigquery;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 import com.google.cloud.bigquery.StandardTableDefinition.StreamingBuffer;
 
 import org.junit.Test;
 
-public class TableDefinitionTest {
+public class StandardTableDefinitionTest {
 
   private static final Field FIELD_SCHEMA1 =
       Field.builder("StringField", Field.Type.string())
@@ -45,6 +46,8 @@ public class TableDefinitionTest {
   private static final Long NUM_ROWS = 43L;
   private static final String LOCATION = "US";
   private static final StreamingBuffer STREAMING_BUFFER = new StreamingBuffer(1L, 2L, 3L);
+  private static final TimePartitioning TIME_PARTITIONING =
+      TimePartitioning.of(TimePartitioning.Type.DAY, 42);
   private static final StandardTableDefinition TABLE_DEFINITION =
       StandardTableDefinition.builder()
           .location(LOCATION)
@@ -52,17 +55,18 @@ public class TableDefinitionTest {
           .numRows(NUM_ROWS)
           .streamingBuffer(STREAMING_BUFFER)
           .schema(TABLE_SCHEMA)
+          .timePartitioning(TIME_PARTITIONING)
           .build();
 
   @Test
   public void testToBuilder() {
-    compareTableDefinition(TABLE_DEFINITION, TABLE_DEFINITION.toBuilder().build());
+    compareStandardTableDefinition(TABLE_DEFINITION, TABLE_DEFINITION.toBuilder().build());
     StandardTableDefinition tableDefinition = TABLE_DEFINITION.toBuilder().location("EU").build();
     assertEquals("EU", tableDefinition.location());
     tableDefinition = tableDefinition.toBuilder()
         .location(LOCATION)
         .build();
-    compareTableDefinition(TABLE_DEFINITION, tableDefinition);
+    compareStandardTableDefinition(TABLE_DEFINITION, tableDefinition);
   }
 
   @Test
@@ -79,16 +83,33 @@ public class TableDefinitionTest {
     assertEquals(NUM_BYTES, TABLE_DEFINITION.numBytes());
     assertEquals(NUM_ROWS, TABLE_DEFINITION.numRows());
     assertEquals(STREAMING_BUFFER, TABLE_DEFINITION.streamingBuffer());
+    assertEquals(TIME_PARTITIONING, TABLE_DEFINITION.timePartitioning());
+  }
+
+  @Test
+  public void testOf() {
+    StandardTableDefinition definition = StandardTableDefinition.of(TABLE_SCHEMA);
+    assertEquals(TableDefinition.Type.TABLE, TABLE_DEFINITION.type());
+    assertEquals(TABLE_SCHEMA, TABLE_DEFINITION.schema());
+    assertNull(definition.location());
+    assertNull(definition.numBytes());
+    assertNull(definition.numRows());
+    assertNull(definition.streamingBuffer());
+    assertNull(definition.timePartitioning());
   }
 
   @Test
   public void testToAndFromPb() {
     assertTrue(TableDefinition.fromPb(TABLE_DEFINITION.toPb()) instanceof StandardTableDefinition);
-    compareTableDefinition(TABLE_DEFINITION,
+    compareStandardTableDefinition(TABLE_DEFINITION,
         TableDefinition.<StandardTableDefinition>fromPb(TABLE_DEFINITION.toPb()));
+    StandardTableDefinition definition = StandardTableDefinition.of(TABLE_SCHEMA);
+    assertTrue(TableDefinition.fromPb(definition.toPb()) instanceof StandardTableDefinition);
+    compareStandardTableDefinition(definition,
+        TableDefinition.<StandardTableDefinition>fromPb(definition.toPb()));
   }
 
-  private void compareTableDefinition(StandardTableDefinition expected,
+  private void compareStandardTableDefinition(StandardTableDefinition expected,
       StandardTableDefinition value) {
     assertEquals(expected, value);
     assertEquals(expected.schema(), value.schema());
@@ -98,6 +119,7 @@ public class TableDefinitionTest {
     assertEquals(expected.location(), value.location());
     assertEquals(expected.streamingBuffer(), value.streamingBuffer());
     assertEquals(expected.type(), value.type());
+    assertEquals(expected.timePartitioning(), value.timePartitioning());
     assertEquals(expected.hashCode(), value.hashCode());
   }
 }
