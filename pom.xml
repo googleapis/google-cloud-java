@@ -384,11 +384,11 @@
                   </group>
                   <group>
                     <title>Example packages</title>
-                    <packages>com.google.cloud.examples*</packages>
+                    <packages>com.google.cloud.examples.*:com.google.cloud.nio.examples</packages>
                   </group>
                   <group>
                     <title>SPI packages</title>
-                    <packages>com.google.cloud.spi:com.google.cloud.bigquery.spi:com.google.cloud.compute.spi:com.google.cloud.datastore.spi:com.google.cloud.dns.spi:com.google.cloud.pubsub.spi:com.google.cloud.resourcemanager.spi:com.google.cloud.storage.spi</packages>
+                    <packages>com.google.cloud.spi:com.google.cloud.bigquery.spi:com.google.cloud.compute.spi:com.google.cloud.datastore.spi:com.google.cloud.dns.spi:com.google.cloud.pubsub.spi:com.google.cloud.pubsub.spi.*:com.google.cloud.resourcemanager.spi:com.google.cloud.storage.spi</packages>
                   </group>
                 </groups>
               </configuration>
