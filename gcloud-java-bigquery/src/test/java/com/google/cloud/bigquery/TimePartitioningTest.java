@@ -18,11 +18,12 @@ package com.google.cloud.bigquery;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
-import static org.junit.Assert.fail;
 
 import com.google.cloud.bigquery.TimePartitioning.Type;
 
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 
 public class TimePartitioningTest {
 
@@ -31,6 +32,9 @@ public class TimePartitioningTest {
   private static final TimePartitioning TIME_PARTITIONING =
       TimePartitioning.of(TYPE, EXPIRATION_MS);
 
+  @Rule
+  public ExpectedException thrown = ExpectedException.none();
+
   @Test
   public void testOf() {
     assertEquals(TYPE, TIME_PARTITIONING.type());
@@ -38,18 +42,18 @@ public class TimePartitioningTest {
     TimePartitioning partitioning = TimePartitioning.of(TYPE);
     assertEquals(TYPE, partitioning.type());
     assertNull(partitioning.expirationMs());
-    try {
-      TimePartitioning.of(null);
-      fail("NullPointerException expected");
-    } catch (NullPointerException ex) {
-      // expected
-    }
-    try {
-      TimePartitioning.of(null, EXPIRATION_MS);
-      fail("NullPointerException expected");
-    } catch (NullPointerException ex) {
-      // expected
-    }
+  }
+
+  @Test
+  public void testTypeOf_Npe() {
+    thrown.expect(NullPointerException.class);
+    TimePartitioning.of(null);
+  }
+
+  @Test
+  public void testTypeAndExpirationOf_Npe() {
+    thrown.expect(NullPointerException.class);
+    TimePartitioning.of(null, EXPIRATION_MS);
   }
 
   @Test
