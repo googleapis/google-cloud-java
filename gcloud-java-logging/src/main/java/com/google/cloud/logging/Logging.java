@@ -138,6 +138,20 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
   Future<Boolean> deleteSinkAsync(String sink);
 
   /**
+   * Deletes a log and all its log entries. The log will reappear if new entries are written to it.
+   *
+   * @return {@code true} if the log was deleted, {@code false} if it was not found
+   */
+  boolean deleteLog(String log);
+
+  /**
+   * Sends a request for deleting a log and all its log entries. This method returns a
+   * {@code Future} object to consume the result. {@link Future#get()} returns {@code true} if the
+   * log was deleted, {@code false} if it was not found.
+   */
+  Future<Boolean> deleteLogAsync(String log);
+
+  /**
    * Lists the monitored resource descriptors used by Google Cloud Logging. This method returns a
    * {@link Page} object that can be used to consume paginated results. Use {@link ListOption} to
    * specify the page size or the page token from which to start listing resource descriptors.
