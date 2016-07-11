@@ -39,6 +39,7 @@ import com.google.common.util.concurrent.Futures;
 import com.google.logging.v2.CreateLogMetricRequest;
 import com.google.logging.v2.CreateSinkRequest;
 import com.google.logging.v2.DeleteLogMetricRequest;
+import com.google.logging.v2.DeleteLogRequest;
 import com.google.logging.v2.DeleteSinkRequest;
 import com.google.logging.v2.GetLogMetricRequest;
 import com.google.logging.v2.GetSinkRequest;
@@ -84,6 +85,8 @@ public class LoggingImplTest {
       com.google.api.MonitoredResourceDescriptor.getDefaultInstance();
   private static final MonitoredResourceDescriptor DESCRIPTOR =
       MonitoredResourceDescriptor.fromPb(DESCRIPTOR_PB);
+  private static final String LOG_NAME = "log";
+  private static final String LOG_NAME_PB = "projects/" + PROJECT + "/logs/" + LOG_NAME;
   private static final Function<SinkInfo, LogSink> SINK_TO_PB_FUNCTION =
       new Function<SinkInfo, LogSink>() {
         @Override
@@ -1079,5 +1082,43 @@ public class LoggingImplTest {
     assertEquals(cursor, page.nextPageCursor());
     assertArrayEquals(descriptorList.toArray(),
         Iterables.toArray(page.values(), MonitoredResourceDescriptor.class));
+  }
+
+  @Test
+  public void testDeleteLog() {
+    DeleteLogRequest request = DeleteLogRequest.newBuilder().setLogName(LOG_NAME_PB).build();
+    Future<Empty> response = Futures.immediateFuture(Empty.getDefaultInstance());
+    EasyMock.expect(loggingRpcMock.delete(request)).andReturn(response);
+    EasyMock.replay(rpcFactoryMock, loggingRpcMock);
+    logging = options.service();
+    assertTrue(logging.deleteLog(LOG_NAME));
+  }
+
+  @Test
+  public void testDeleteLog_Null() {
+    DeleteLogRequest request = DeleteLogRequest.newBuilder().setLogName(LOG_NAME_PB).build();
+    EasyMock.expect(loggingRpcMock.delete(request)).andReturn(Futures.<Empty>immediateFuture(null));
+    EasyMock.replay(rpcFactoryMock, loggingRpcMock);
+    logging = options.service();
+    assertFalse(logging.deleteLog(LOG_NAME));
+  }
+
+  @Test
+  public void testDeleteLogAync() throws ExecutionException, InterruptedException {
+    DeleteLogRequest request = DeleteLogRequest.newBuilder().setLogName(LOG_NAME_PB).build();
+    Future<Empty> response = Futures.immediateFuture(Empty.getDefaultInstance());
+    EasyMock.expect(loggingRpcMock.delete(request)).andReturn(response);
+    EasyMock.replay(rpcFactoryMock, loggingRpcMock);
+    logging = options.service();
+    assertTrue(logging.deleteLogAsync(LOG_NAME).get());
+  }
+
+  @Test
+  public void testDeleteLogAsync_Null() throws ExecutionException, InterruptedException {
+    DeleteLogRequest request = DeleteLogRequest.newBuilder().setLogName(LOG_NAME_PB).build();
+    EasyMock.expect(loggingRpcMock.delete(request)).andReturn(Futures.<Empty>immediateFuture(null));
+    EasyMock.replay(rpcFactoryMock, loggingRpcMock);
+    logging = options.service();
+    assertFalse(logging.deleteLogAsync(LOG_NAME).get());
   }
 }

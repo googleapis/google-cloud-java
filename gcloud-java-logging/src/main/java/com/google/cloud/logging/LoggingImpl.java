@@ -29,6 +29,7 @@ import com.google.cloud.Page;
 import com.google.cloud.PageImpl;
 import com.google.cloud.logging.spi.LoggingRpc;
 import com.google.cloud.logging.spi.v2.ConfigServiceV2Api;
+import com.google.cloud.logging.spi.v2.LoggingServiceV2Api;
 import com.google.cloud.logging.spi.v2.MetricsServiceV2Api;
 import com.google.common.base.Function;
 import com.google.common.base.Throwables;
@@ -39,6 +40,7 @@ import com.google.common.util.concurrent.Uninterruptibles;
 import com.google.logging.v2.CreateLogMetricRequest;
 import com.google.logging.v2.CreateSinkRequest;
 import com.google.logging.v2.DeleteLogMetricRequest;
+import com.google.logging.v2.DeleteLogRequest;
 import com.google.logging.v2.DeleteSinkRequest;
 import com.google.logging.v2.GetLogMetricRequest;
 import com.google.logging.v2.GetSinkRequest;
@@ -245,6 +247,17 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
   public Future<Boolean> deleteSinkAsync(String sink) {
     DeleteSinkRequest request = DeleteSinkRequest.newBuilder()
         .setSinkName(ConfigServiceV2Api.formatSinkName(options().projectId(), sink))
+        .build();
+    return lazyTransform(rpc.delete(request), EMPTY_TO_BOOLEAN_FUNCTION);
+  }
+
+  public boolean deleteLog(String log) {
+    return get(deleteLogAsync(log));
+  }
+
+  public Future<Boolean> deleteLogAsync(String log) {
+    DeleteLogRequest request = DeleteLogRequest.newBuilder()
+        .setLogName(LoggingServiceV2Api.formatLogName(options().projectId(), log))
         .build();
     return lazyTransform(rpc.delete(request), EMPTY_TO_BOOLEAN_FUNCTION);
   }
