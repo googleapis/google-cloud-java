@@ -210,7 +210,8 @@ public class Concepts {
         .set("done", false)
         .set("priority", 4)
         .set("percent_complete", 10.0)
-        .set("description", "Learn Cloud Datastore")
+        .set("description",
+          StringValue.builder("Learn Cloud Datastore").excludeFromIndexes(true).build())
         .build();
     // [END properties]
     assertValidEntity(task);
