@@ -10,7 +10,7 @@ if [ "${TRAVIS_PULL_REQUEST}" == "false" ]; then
     chmod 700 $TRAVIS_BUILD_DIR/signing-tools
     tar xvf $TRAVIS_BUILD_DIR/signing-tools.tar -C $TRAVIS_BUILD_DIR/signing-tools
     # Run verify
-    mvn verify -P release
+    mvn verify --quiet -Djava.util.logging.config.file=logging.properties -P release
 else
-    mvn verify -DskipITs -P release
+    mvn verify --quiet -Djava.util.logging.config.file=logging.properties -DskipITs -P release
 fi
