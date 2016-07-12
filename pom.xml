@@ -289,6 +289,7 @@
               </includes>
               <excludes>
                 <exclude>com/google/cloud/examples/**/*.class</exclude>
+                <exclude>com/google/cloud/**/AutoValue_*.class</exclude>
               </excludes>
             </instrumentation>
           <maxmem>256m</maxmem>
