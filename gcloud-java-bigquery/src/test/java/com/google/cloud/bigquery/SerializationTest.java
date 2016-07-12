@@ -222,6 +222,8 @@ public class SerializationTest extends BaseSerializationTest {
   private static final Job JOB = new Job(BIGQUERY, new JobInfo.BuilderImpl(JOB_INFO));
   private static final BigQueryException BIG_QUERY_EXCEPTION =
       new BigQueryException(42, "message", BIGQUERY_ERROR);
+  private static final TimePartitioning TIME_PARTITIONING =
+      TimePartitioning.of(TimePartitioning.Type.DAY, 42);
 
   @Override
   protected Serializable[] serializableObjects() {
@@ -241,10 +243,11 @@ public class SerializationTest extends BaseSerializationTest {
         COPY_JOB_CONFIGURATION, EXTRACT_JOB_CONFIGURATION, LOAD_CONFIGURATION,
         LOAD_JOB_CONFIGURATION, QUERY_JOB_CONFIGURATION, JOB_INFO, INSERT_ALL_REQUEST,
         INSERT_ALL_RESPONSE, FIELD_VALUE, QUERY_REQUEST, QUERY_RESPONSE, BIG_QUERY_EXCEPTION,
-        BigQuery.DatasetOption.fields(), BigQuery.DatasetDeleteOption.deleteContents(),
-        BigQuery.DatasetListOption.all(), BigQuery.TableOption.fields(),
-        BigQuery.TableListOption.pageSize(42L), BigQuery.JobOption.fields(),
-        BigQuery.JobListOption.allUsers(), DATASET, TABLE, JOB, options, otherOptions};
+        TIME_PARTITIONING, BigQuery.DatasetOption.fields(),
+        BigQuery.DatasetDeleteOption.deleteContents(), BigQuery.DatasetListOption.all(),
+        BigQuery.TableOption.fields(), BigQuery.TableListOption.pageSize(42L),
+        BigQuery.JobOption.fields(), BigQuery.JobListOption.allUsers(), DATASET, TABLE, JOB,
+        options, otherOptions};
   }
 
   @Override

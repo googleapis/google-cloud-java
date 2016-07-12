@@ -42,6 +42,7 @@ public class StandardTableDefinition extends TableDefinition {
   private final Long numRows;
   private final String location;
   private final StreamingBuffer streamingBuffer;
+  private final TimePartitioning timePartitioning;
 
   /**
    * Google BigQuery Table's Streaming Buffer information. This class contains information on a
@@ -123,6 +124,7 @@ public class StandardTableDefinition extends TableDefinition {
     private Long numRows;
     private String location;
     private StreamingBuffer streamingBuffer;
+    private TimePartitioning timePartitioning;
 
     private Builder() {
       super(Type.TABLE);
@@ -134,6 +136,7 @@ public class StandardTableDefinition extends TableDefinition {
       this.numRows = tableDefinition.numRows;
       this.location = tableDefinition.location;
       this.streamingBuffer = tableDefinition.streamingBuffer;
+      this.timePartitioning = tableDefinition.timePartitioning;
     }
 
     private Builder(Table tablePb) {
@@ -145,6 +148,9 @@ public class StandardTableDefinition extends TableDefinition {
       this.location = tablePb.getLocation();
       if (tablePb.getStreamingBuffer() != null) {
         this.streamingBuffer = StreamingBuffer.fromPb(tablePb.getStreamingBuffer());
+      }
+      if (tablePb.getTimePartitioning() != null) {
+        this.timePartitioning = TimePartitioning.fromPb(tablePb.getTimePartitioning());
       }
     }
 
@@ -169,6 +175,15 @@ public class StandardTableDefinition extends TableDefinition {
     }
 
     /**
+     * Sets the time partitioning configuration for the table. If not set, the table is not
+     * time-partitioned.
+     */
+    public Builder timePartitioning(TimePartitioning timePartitioning) {
+      this.timePartitioning = timePartitioning;
+      return this;
+    }
+
+    /**
      * Creates a {@code StandardTableDefinition} object.
      */
     @Override
@@ -183,6 +198,7 @@ public class StandardTableDefinition extends TableDefinition {
     this.numRows = builder.numRows;
     this.location = builder.location;
     this.streamingBuffer = builder.streamingBuffer;
+    this.timePartitioning = builder.timePartitioning;
   }
 
   /**
@@ -235,6 +251,14 @@ public class StandardTableDefinition extends TableDefinition {
   }
 
   /**
+   * Returns the time partitioning configuration for this table. If {@code null}, the table is not
+   * time-partitioned.
+   */
+  public TimePartitioning timePartitioning() {
+    return timePartitioning;
+  }
+
+  /**
    * Returns a builder for the {@code StandardTableDefinition} object.
    */
   @Override
@@ -248,7 +272,8 @@ public class StandardTableDefinition extends TableDefinition {
         .add("numBytes", numBytes)
         .add("numRows", numRows)
         .add("location", location)
-        .add("streamingBuffer", streamingBuffer);
+        .add("streamingBuffer", streamingBuffer)
+        .add("timePartitioning", timePartitioning);
   }
 
   @Override
@@ -261,7 +286,8 @@ public class StandardTableDefinition extends TableDefinition {
 
   @Override
   public final int hashCode() {
-    return Objects.hash(baseHashCode(), numBytes, numRows, location, streamingBuffer);
+    return Objects.hash(baseHashCode(), numBytes, numRows, location, streamingBuffer,
+        timePartitioning);
   }
 
   @Override
@@ -274,6 +300,9 @@ public class StandardTableDefinition extends TableDefinition {
     tablePb.setLocation(location);
     if (streamingBuffer != null) {
       tablePb.setStreamingBuffer(streamingBuffer.toPb());
+    }
+    if (timePartitioning != null) {
+      tablePb.setTimePartitioning(timePartitioning.toPb());
     }
     return tablePb;
   }

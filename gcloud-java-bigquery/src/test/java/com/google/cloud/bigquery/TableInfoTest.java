@@ -17,6 +17,7 @@
 package com.google.cloud.bigquery;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 
 import com.google.common.collect.ImmutableList;
 
@@ -80,7 +81,7 @@ public class TableInfoTest {
   private static final String VIEW_QUERY = "VIEW QUERY";
   private static final List<UserDefinedFunction> USER_DEFINED_FUNCTIONS =
       ImmutableList.of(UserDefinedFunction.inline("Function"), UserDefinedFunction.fromUri("URI"));
-  private static final ViewDefinition VIEW_TYPE =
+  private static final ViewDefinition VIEW_DEFINITION =
       ViewDefinition.builder(VIEW_QUERY, USER_DEFINED_FUNCTIONS).build();
 
   private static final TableInfo TABLE_INFO = TableInfo.builder(TABLE_ID, TABLE_DEFINITION)
@@ -93,7 +94,7 @@ public class TableInfoTest {
       .lastModifiedTime(LAST_MODIFIED_TIME)
       .selfLink(SELF_LINK)
       .build();
-  private static final TableInfo VIEW_INFO = TableInfo.builder(TABLE_ID, VIEW_TYPE)
+  private static final TableInfo VIEW_INFO = TableInfo.builder(TABLE_ID, VIEW_DEFINITION)
       .creationTime(CREATION_TIME)
       .description(DESCRIPTION)
       .etag(ETAG)
@@ -134,7 +135,7 @@ public class TableInfoTest {
   public void testToBuilderIncomplete() {
     TableInfo tableInfo = TableInfo.of(TABLE_ID, TABLE_DEFINITION);
     assertEquals(tableInfo, tableInfo.toBuilder().build());
-    tableInfo = TableInfo.of(TABLE_ID, VIEW_TYPE);
+    tableInfo = TableInfo.of(TABLE_ID, VIEW_DEFINITION);
     assertEquals(tableInfo, tableInfo.toBuilder().build());
     tableInfo = TableInfo.of(TABLE_ID, EXTERNAL_TABLE_DEFINITION);
     assertEquals(tableInfo, tableInfo.toBuilder().build());
@@ -153,7 +154,7 @@ public class TableInfoTest {
     assertEquals(TABLE_DEFINITION, TABLE_INFO.definition());
     assertEquals(SELF_LINK, TABLE_INFO.selfLink());
     assertEquals(TABLE_ID, VIEW_INFO.tableId());
-    assertEquals(VIEW_TYPE, VIEW_INFO.definition());
+    assertEquals(VIEW_DEFINITION, VIEW_INFO.definition());
     assertEquals(CREATION_TIME, VIEW_INFO.creationTime());
     assertEquals(DESCRIPTION, VIEW_INFO.description());
     assertEquals(ETAG, VIEW_INFO.etag());
@@ -161,7 +162,7 @@ public class TableInfoTest {
     assertEquals(FRIENDLY_NAME, VIEW_INFO.friendlyName());
     assertEquals(GENERATED_ID, VIEW_INFO.generatedId());
     assertEquals(LAST_MODIFIED_TIME, VIEW_INFO.lastModifiedTime());
-    assertEquals(VIEW_TYPE, VIEW_INFO.definition());
+    assertEquals(VIEW_DEFINITION, VIEW_INFO.definition());
     assertEquals(SELF_LINK, VIEW_INFO.selfLink());
     assertEquals(TABLE_ID, EXTERNAL_TABLE_INFO.tableId());
     assertEquals(CREATION_TIME, EXTERNAL_TABLE_INFO.creationTime());
@@ -173,6 +174,43 @@ public class TableInfoTest {
     assertEquals(LAST_MODIFIED_TIME, EXTERNAL_TABLE_INFO.lastModifiedTime());
     assertEquals(EXTERNAL_TABLE_DEFINITION, EXTERNAL_TABLE_INFO.definition());
     assertEquals(SELF_LINK, EXTERNAL_TABLE_INFO.selfLink());
+  }
+
+  @Test
+  public void testOf() {
+    TableInfo tableInfo = TableInfo.of(TABLE_ID, TABLE_DEFINITION);
+    assertEquals(TABLE_ID, tableInfo.tableId());
+    assertNull(tableInfo.creationTime());
+    assertNull(tableInfo.description());
+    assertNull(tableInfo.etag());
+    assertNull(tableInfo.expirationTime());
+    assertNull(tableInfo.friendlyName());
+    assertNull(tableInfo.generatedId());
+    assertNull(tableInfo.lastModifiedTime());
+    assertEquals(TABLE_DEFINITION, tableInfo.definition());
+    assertNull(tableInfo.selfLink());
+    tableInfo = TableInfo.of(TABLE_ID, VIEW_DEFINITION);
+    assertEquals(TABLE_ID, tableInfo.tableId());
+    assertNull(tableInfo.creationTime());
+    assertNull(tableInfo.description());
+    assertNull(tableInfo.etag());
+    assertNull(tableInfo.expirationTime());
+    assertNull(tableInfo.friendlyName());
+    assertNull(tableInfo.generatedId());
+    assertNull(tableInfo.lastModifiedTime());
+    assertEquals(VIEW_DEFINITION, tableInfo.definition());
+    assertNull(tableInfo.selfLink());
+    tableInfo = TableInfo.of(TABLE_ID, EXTERNAL_TABLE_DEFINITION);
+    assertEquals(TABLE_ID, tableInfo.tableId());
+    assertNull(tableInfo.creationTime());
+    assertNull(tableInfo.description());
+    assertNull(tableInfo.etag());
+    assertNull(tableInfo.expirationTime());
+    assertNull(tableInfo.friendlyName());
+    assertNull(tableInfo.generatedId());
+    assertNull(tableInfo.lastModifiedTime());
+    assertEquals(EXTERNAL_TABLE_DEFINITION, tableInfo.definition());
+    assertNull(tableInfo.selfLink());
   }
 
   @Test
