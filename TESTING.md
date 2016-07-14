@@ -88,6 +88,31 @@ You can test against an in-memory local DNS by following these steps:
 
   This method will block until the server thread has been terminated.
 
+### Testing code that uses Logging
+
+Currently, there isn't an emulator for Stackdriver Logging, so an alternative is to create a test
+project. `RemoteLoggingHelper` contains convenience methods to make setting up the test project
+easier. To use this class, follow the steps below:
+
+1. Create a test Google Cloud project.
+
+2. Download a [JSON service account credentials file][create-service-account] from the Google
+Developer's Console.
+
+3. Create a `RemoteLoggingHelper` object using your project ID and JSON key. Here is an example that
+uses the `RemoteLoggingHelper` to create a metric.
+  ```java
+  RemoteLoggingHelper loggingHelper =
+      RemoteLoggingHelper.create(PROJECT_ID, new FileInputStream("/path/to/my/JSON/key.json"));
+  Logging logging = loggingHelper.options().service();
+  // Pick a name for the resource with low probability of clashing
+  String metricName = RemoteLoggingHelper.formatForTest("test-metric");
+  MetricInfo metricInfo = MetricInfo.of(name, "logName:syslog");
+  Metric metric = logging.create(metricInfo);
+  ```
+
+4. Run your tests.
+
 ### Testing code that uses Storage
 
 Currently, there isn't an emulator for Google Cloud Storage, so an alternative is to create a test project.  `RemoteStorageHelper` contains convenience methods to make setting up and cleaning up the test project easier.  To use this class, follow the steps below:
