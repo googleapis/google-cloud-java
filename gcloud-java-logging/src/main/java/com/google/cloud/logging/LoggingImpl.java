@@ -17,13 +17,19 @@
 package com.google.cloud.logging;
 
 import static com.google.api.client.util.Preconditions.checkArgument;
+import static com.google.cloud.logging.Logging.EntryListOption.OptionType.FILTER;
+import static com.google.cloud.logging.Logging.EntryListOption.OptionType.ORDER_BY;
 import static com.google.cloud.logging.Logging.ListOption.OptionType.PAGE_SIZE;
 import static com.google.cloud.logging.Logging.ListOption.OptionType.PAGE_TOKEN;
+import static com.google.cloud.logging.Logging.WriteOption.OptionType.LABELS;
+import static com.google.cloud.logging.Logging.WriteOption.OptionType.LOG_NAME;
+import static com.google.cloud.logging.Logging.WriteOption.OptionType.RESOURCE;
 import static com.google.common.util.concurrent.Futures.lazyTransform;
 
 import com.google.cloud.AsyncPage;
 import com.google.cloud.AsyncPageImpl;
 import com.google.cloud.BaseService;
+import com.google.cloud.MonitoredResource;
 import com.google.cloud.MonitoredResourceDescriptor;
 import com.google.cloud.Page;
 import com.google.cloud.PageImpl;
@@ -34,6 +40,7 @@ import com.google.cloud.logging.spi.v2.MetricsServiceV2Api;
 import com.google.common.base.Function;
 import com.google.common.base.Throwables;
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.google.common.util.concurrent.Uninterruptibles;
@@ -44,6 +51,8 @@ import com.google.logging.v2.DeleteLogRequest;
 import com.google.logging.v2.DeleteSinkRequest;
 import com.google.logging.v2.GetLogMetricRequest;
 import com.google.logging.v2.GetSinkRequest;
+import com.google.logging.v2.ListLogEntriesRequest;
+import com.google.logging.v2.ListLogEntriesResponse;
 import com.google.logging.v2.ListLogMetricsRequest;
 import com.google.logging.v2.ListLogMetricsResponse;
 import com.google.logging.v2.ListMonitoredResourceDescriptorsRequest;
@@ -52,6 +61,8 @@ import com.google.logging.v2.ListSinksRequest;
 import com.google.logging.v2.ListSinksResponse;
 import com.google.logging.v2.UpdateLogMetricRequest;
 import com.google.logging.v2.UpdateSinkRequest;
+import com.google.logging.v2.WriteLogEntriesRequest;
+import com.google.logging.v2.WriteLogEntriesResponse;
 import com.google.protobuf.Empty;
 
 import java.util.List;
@@ -69,6 +80,13 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
         @Override
         public Boolean apply(Empty input) {
           return input != null;
+        }
+      };
+  private static final Function<WriteLogEntriesResponse, Void> WRITE_RESPONSE_TO_VOID_FUNCTION =
+      new Function<WriteLogEntriesResponse, Void>() {
+        @Override
+        public Void apply(WriteLogEntriesResponse input) {
+          return null;
         }
       };
 
@@ -151,6 +169,21 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
     @Override
     public Future<AsyncPage<Metric>> nextPage() {
       return listMetricsAsync(serviceOptions(), requestOptions());
+    }
+  }
+
+  private static class LogEntryPageFetcher extends BasePageFetcher<LogEntry> {
+
+    private static final long serialVersionUID = 4001239712280747734L;
+
+    LogEntryPageFetcher(LoggingOptions serviceOptions, String cursor,
+        Map<Option.OptionType, ?> requestOptions) {
+      super(serviceOptions, cursor, requestOptions);
+    }
+
+    @Override
+    public Future<AsyncPage<LogEntry>> nextPage() {
+      return listLogEntriesAsync(serviceOptions(), requestOptions());
     }
   }
 
@@ -406,6 +439,87 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
         .setMetricName(MetricsServiceV2Api.formatMetricName(options().projectId(), metric))
         .build();
     return lazyTransform(rpc.delete(request), EMPTY_TO_BOOLEAN_FUNCTION);
+  }
+
+  private static WriteLogEntriesRequest writeLogEntriesRequest(LoggingOptions serviceOptions,
+      Iterable<LogEntry> logEntries, Map<Option.OptionType, ?> options) {
+    String projectId = serviceOptions.projectId();
+    WriteLogEntriesRequest.Builder builder = WriteLogEntriesRequest.newBuilder();
+    String logName = LOG_NAME.get(options);
+    if (logName != null) {
+      builder.setLogName(LoggingServiceV2Api.formatLogName(projectId, logName));
+    }
+    MonitoredResource resource = RESOURCE.get(options);
+    if (resource != null) {
+      builder.setResource(resource.toPb());
+    }
+    Map<String, String> labels = LABELS.get(options);
+    if (labels != null) {
+      builder.putAllLabels(labels);
+    }
+    builder.addAllEntries(Iterables.transform(logEntries, LogEntry.toPbFunction(projectId)));
+    return builder.build();
+  }
+
+  public void write(Iterable<LogEntry> logEntries, WriteOption... options) {
+    get(writeAsync(logEntries, options));
+  }
+
+  public Future<Void> writeAsync(Iterable<LogEntry> logEntries, WriteOption... options) {
+    return lazyTransform(
+        rpc.write(writeLogEntriesRequest(options(), logEntries, optionMap(options))),
+            WRITE_RESPONSE_TO_VOID_FUNCTION);
+  }
+
+  private static ListLogEntriesRequest listLogEntriesRequest(LoggingOptions serviceOptions,
+      Map<Option.OptionType, ?> options) {
+    ListLogEntriesRequest.Builder builder = ListLogEntriesRequest.newBuilder();
+    builder.addProjectIds(serviceOptions.projectId());
+    Integer pageSize = PAGE_SIZE.get(options);
+    if (pageSize != null) {
+      builder.setPageSize(pageSize);
+    }
+    String pageToken = PAGE_TOKEN.get(options);
+    if (pageToken != null) {
+      builder.setPageToken(pageToken);
+    }
+    String orderBy = ORDER_BY.get(options);
+    if (orderBy != null) {
+      builder.setOrderBy(orderBy);
+    }
+    String filter = FILTER.get(options);
+    if (filter != null) {
+      builder.setFilter(filter);
+    }
+    return builder.build();
+  }
+
+  private static Future<AsyncPage<LogEntry>> listLogEntriesAsync(
+      final LoggingOptions serviceOptions, final Map<Option.OptionType, ?> options) {
+    final ListLogEntriesRequest request = listLogEntriesRequest(serviceOptions, options);
+    Future<ListLogEntriesResponse> list = serviceOptions.rpc().list(request);
+    return lazyTransform(list, new Function<ListLogEntriesResponse, AsyncPage<LogEntry>>() {
+      @Override
+      public AsyncPage<LogEntry> apply(ListLogEntriesResponse listLogEntrysResponse) {
+        List<LogEntry> entries = listLogEntrysResponse.getEntriesList() == null
+            ? ImmutableList.<LogEntry>of() : Lists.transform(listLogEntrysResponse.getEntriesList(),
+            LogEntry.FROM_PB_FUNCTION);
+        String cursor = listLogEntrysResponse.getNextPageToken().equals("") ? null
+            : listLogEntrysResponse.getNextPageToken();
+        return new AsyncPageImpl<>(new LogEntryPageFetcher(serviceOptions, cursor, options), cursor,
+            entries);
+      }
+    });
+  }
+
+  @Override
+  public Page<LogEntry> listLogEntries(EntryListOption... options) {
+    return get(listLogEntriesAsync(options));
+  }
+
+  @Override
+  public Future<AsyncPage<LogEntry>> listLogEntriesAsync(EntryListOption... options) {
+    return listLogEntriesAsync(options(), optionMap(options));
   }
 
   @Override
