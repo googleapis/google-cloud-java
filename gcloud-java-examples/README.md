@@ -100,6 +100,19 @@ To run examples from your command line:
     mvn exec:java -Dexec.mainClass="com.google.cloud.examples.dns.DnsExample" -Dexec.args="delete some-sample-zone"
     ```
 
+  * Here's an example run of `LoggingExample`.
+
+    Before running the example, go to the [Google Developers Console][developers-console] to ensure
+    that Logging API is enabled.
+    ```
+    target/appassembler/bin/LoggingExample create metric test-metric severity>=ERROR
+    target/appassembler/bin/LoggingExample list metrics
+    target/appassembler/bin/LoggingExample create sink test-sink bucket test-bucket severity>=ERROR
+    target/appassembler/bin/LoggingExample list sinks
+    target/appassembler/bin/LoggingExample write test-log-name ERROR test-message test-key test-value
+    target/appassembler/bin/LoggingExample list entries
+    ```
+
   * Here's an example run of `ResourceManagerExample`.
 
     Be sure to change the placeholder project ID "your-project-id" with your own globally unique project ID.
