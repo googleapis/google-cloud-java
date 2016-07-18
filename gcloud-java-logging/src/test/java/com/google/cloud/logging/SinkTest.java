@@ -54,30 +54,30 @@ public class SinkTest {
       .build();
   private final Logging serviceMockReturnsOptions = createStrictMock(Logging.class);
   private final LoggingOptions mockOptions = createMock(LoggingOptions.class);
-  private Logging pubsub;
+  private Logging logging;
   private Sink expectedSink;
   private Sink sink;
 
   private void initializeExpectedSink(int optionsCalls) {
     expect(serviceMockReturnsOptions.options()).andReturn(mockOptions).times(optionsCalls);
     replay(serviceMockReturnsOptions);
-    pubsub = createStrictMock(Logging.class);
+    logging = createStrictMock(Logging.class);
     expectedSink = new Sink(serviceMockReturnsOptions, new Sink.BuilderImpl(SINK_INFO));
   }
 
   private void initializeSink() {
-    sink = new Sink(pubsub, new Sink.BuilderImpl(SINK_INFO));
+    sink = new Sink(logging, new Sink.BuilderImpl(SINK_INFO));
   }
 
   @After
   public void tearDown() throws Exception {
-    verify(pubsub, serviceMockReturnsOptions);
+    verify(logging, serviceMockReturnsOptions);
   }
 
   @Test
   public void testBuilder() {
     initializeExpectedSink(2);
-    replay(pubsub);
+    replay(logging);
     SinkInfo builtSink = expectedSink.toBuilder()
         .name(NEW_NAME)
         .filter(NEW_FILTER)
@@ -93,7 +93,7 @@ public class SinkTest {
   @Test
   public void testToBuilder() {
     initializeExpectedSink(2);
-    replay(pubsub);
+    replay(logging);
     compareSink(expectedSink, expectedSink.toBuilder().build());
   }
 
@@ -103,9 +103,9 @@ public class SinkTest {
     SinkInfo updatedInfo = SINK_INFO.toBuilder().filter(NEW_FILTER).build();
     Sink expectedSink =
         new Sink(serviceMockReturnsOptions, new SinkInfo.BuilderImpl(updatedInfo));
-    expect(pubsub.options()).andReturn(mockOptions);
-    expect(pubsub.getSink(NAME)).andReturn(expectedSink);
-    replay(pubsub);
+    expect(logging.options()).andReturn(mockOptions);
+    expect(logging.getSink(NAME)).andReturn(expectedSink);
+    replay(logging);
     initializeSink();
     Sink updatedSink = sink.reload();
     compareSink(expectedSink, updatedSink);
@@ -114,9 +114,9 @@ public class SinkTest {
   @Test
   public void testReloadNull() {
     initializeExpectedSink(1);
-    expect(pubsub.options()).andReturn(mockOptions);
-    expect(pubsub.getSink(NAME)).andReturn(null);
-    replay(pubsub);
+    expect(logging.options()).andReturn(mockOptions);
+    expect(logging.getSink(NAME)).andReturn(null);
+    replay(logging);
     initializeSink();
     assertNull(sink.reload());
   }
@@ -126,10 +126,10 @@ public class SinkTest {
     initializeExpectedSink(2);
     SinkInfo updatedInfo = SINK_INFO.toBuilder().filter(NEW_FILTER).build();
     Sink expectedSink = new Sink(serviceMockReturnsOptions, new SinkInfo.BuilderImpl(updatedInfo));
-    expect(pubsub.options()).andReturn(mockOptions);
-    expect(pubsub.getSinkAsync(NAME))
+    expect(logging.options()).andReturn(mockOptions);
+    expect(logging.getSinkAsync(NAME))
         .andReturn(Futures.immediateFuture(expectedSink));
-    replay(pubsub);
+    replay(logging);
     initializeSink();
     Sink updatedSink = sink.reloadAsync().get();
     compareSink(expectedSink, updatedSink);
@@ -138,9 +138,9 @@ public class SinkTest {
   @Test
   public void testReloadAsyncNull() throws ExecutionException, InterruptedException {
     initializeExpectedSink(1);
-    expect(pubsub.options()).andReturn(mockOptions);
-    expect(pubsub.getSinkAsync(NAME)).andReturn(Futures.<Sink>immediateFuture(null));
-    replay(pubsub);
+    expect(logging.options()).andReturn(mockOptions);
+    expect(logging.getSinkAsync(NAME)).andReturn(Futures.<Sink>immediateFuture(null));
+    replay(logging);
     initializeSink();
     assertNull(sink.reloadAsync().get());
   }
@@ -150,9 +150,9 @@ public class SinkTest {
     initializeExpectedSink(2);
     SinkInfo updatedInfo = SINK_INFO.toBuilder().filter(NEW_FILTER).build();
     Sink expectedSink = new Sink(serviceMockReturnsOptions, new SinkInfo.BuilderImpl(updatedInfo));
-    expect(pubsub.options()).andReturn(mockOptions);
-    expect(pubsub.update(updatedInfo)).andReturn(expectedSink);
-    replay(pubsub);
+    expect(logging.options()).andReturn(mockOptions);
+    expect(logging.update(updatedInfo)).andReturn(expectedSink);
+    replay(logging);
     initializeSink();
     Sink updatedSink = sink.update(updatedInfo);
     compareSink(expectedSink, updatedSink);
@@ -163,9 +163,9 @@ public class SinkTest {
     initializeExpectedSink(2);
     SinkInfo updatedInfo = SINK_INFO.toBuilder().filter(NEW_FILTER).build();
     Sink expectedSink = new Sink(serviceMockReturnsOptions, new SinkInfo.BuilderImpl(updatedInfo));
-    expect(pubsub.options()).andReturn(mockOptions);
-    expect(pubsub.updateAsync(updatedInfo)).andReturn(Futures.immediateFuture(expectedSink));
-    replay(pubsub);
+    expect(logging.options()).andReturn(mockOptions);
+    expect(logging.updateAsync(updatedInfo)).andReturn(Futures.immediateFuture(expectedSink));
+    replay(logging);
     initializeSink();
     Sink updatedSink = sink.updateAsync(updatedInfo).get();
     compareSink(expectedSink, updatedSink);
@@ -174,9 +174,9 @@ public class SinkTest {
   @Test
   public void testDeleteTrue() {
     initializeExpectedSink(1);
-    expect(pubsub.options()).andReturn(mockOptions);
-    expect(pubsub.deleteSink(NAME)).andReturn(true);
-    replay(pubsub);
+    expect(logging.options()).andReturn(mockOptions);
+    expect(logging.deleteSink(NAME)).andReturn(true);
+    replay(logging);
     initializeSink();
     assertTrue(sink.delete());
   }
@@ -184,9 +184,9 @@ public class SinkTest {
   @Test
   public void testDeleteFalse() {
     initializeExpectedSink(1);
-    expect(pubsub.options()).andReturn(mockOptions);
-    expect(pubsub.deleteSink(NAME)).andReturn(false);
-    replay(pubsub);
+    expect(logging.options()).andReturn(mockOptions);
+    expect(logging.deleteSink(NAME)).andReturn(false);
+    replay(logging);
     initializeSink();
     assertFalse(sink.delete());
   }
@@ -194,9 +194,9 @@ public class SinkTest {
   @Test
   public void testDeleteAsyncTrue() throws ExecutionException, InterruptedException {
     initializeExpectedSink(1);
-    expect(pubsub.options()).andReturn(mockOptions);
-    expect(pubsub.deleteSinkAsync(NAME)).andReturn(Futures.immediateFuture(true));
-    replay(pubsub);
+    expect(logging.options()).andReturn(mockOptions);
+    expect(logging.deleteSinkAsync(NAME)).andReturn(Futures.immediateFuture(true));
+    replay(logging);
     initializeSink();
     assertTrue(sink.deleteAsync().get());
   }
@@ -204,9 +204,9 @@ public class SinkTest {
   @Test
   public void testDeleteAsyncFalse() throws ExecutionException, InterruptedException {
     initializeExpectedSink(1);
-    expect(pubsub.options()).andReturn(mockOptions);
-    expect(pubsub.deleteSinkAsync(NAME)).andReturn(Futures.immediateFuture(false));
-    replay(pubsub);
+    expect(logging.options()).andReturn(mockOptions);
+    expect(logging.deleteSinkAsync(NAME)).andReturn(Futures.immediateFuture(false));
+    replay(logging);
     initializeSink();
     assertFalse(sink.deleteAsync().get());
   }
@@ -214,6 +214,10 @@ public class SinkTest {
   private void compareSink(Sink expected, Sink value) {
     assertEquals(expected, value);
     assertEquals(expected.name(), value.name());
+    assertEquals(expected.destination(), value.destination());
+    assertEquals(expected.filter(), value.filter());
+    assertEquals(expected.versionFormat(), value.versionFormat());
     assertEquals(expected.hashCode(), value.hashCode());
+    assertEquals(expected.toString(), value.toString());
   }
 }
