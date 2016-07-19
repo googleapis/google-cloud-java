@@ -46,30 +46,30 @@ public class MetricTest {
       .build();
   private final Logging serviceMockReturnsOptions = createStrictMock(Logging.class);
   private final LoggingOptions mockOptions = createMock(LoggingOptions.class);
-  private Logging pubsub;
+  private Logging logging;
   private Metric expectedMetric;
   private Metric metric;
 
   private void initializeExpectedMetric(int optionsCalls) {
     expect(serviceMockReturnsOptions.options()).andReturn(mockOptions).times(optionsCalls);
     replay(serviceMockReturnsOptions);
-    pubsub = createStrictMock(Logging.class);
+    logging = createStrictMock(Logging.class);
     expectedMetric = new Metric(serviceMockReturnsOptions, new Metric.BuilderImpl(METRIC_INFO));
   }
 
   private void initializeMetric() {
-    metric = new Metric(pubsub, new Metric.BuilderImpl(METRIC_INFO));
+    metric = new Metric(logging, new Metric.BuilderImpl(METRIC_INFO));
   }
 
   @After
   public void tearDown() throws Exception {
-    verify(pubsub, serviceMockReturnsOptions);
+    verify(logging, serviceMockReturnsOptions);
   }
 
   @Test
   public void testBuilder() {
     initializeExpectedMetric(2);
-    replay(pubsub);
+    replay(logging);
     MetricInfo builtMetric = expectedMetric.toBuilder()
         .name(NEW_NAME)
         .filter(NEW_FILTER)
@@ -83,7 +83,7 @@ public class MetricTest {
   @Test
   public void testToBuilder() {
     initializeExpectedMetric(2);
-    replay(pubsub);
+    replay(logging);
     compareMetric(expectedMetric, expectedMetric.toBuilder().build());
   }
 
@@ -93,9 +93,9 @@ public class MetricTest {
     MetricInfo updatedInfo = METRIC_INFO.toBuilder().filter(NEW_FILTER).build();
     Metric expectedMetric =
         new Metric(serviceMockReturnsOptions, new MetricInfo.BuilderImpl(updatedInfo));
-    expect(pubsub.options()).andReturn(mockOptions);
-    expect(pubsub.getMetric(NAME)).andReturn(expectedMetric);
-    replay(pubsub);
+    expect(logging.options()).andReturn(mockOptions);
+    expect(logging.getMetric(NAME)).andReturn(expectedMetric);
+    replay(logging);
     initializeMetric();
     Metric updatedMetric = metric.reload();
     compareMetric(expectedMetric, updatedMetric);
@@ -104,9 +104,9 @@ public class MetricTest {
   @Test
   public void testReloadNull() {
     initializeExpectedMetric(1);
-    expect(pubsub.options()).andReturn(mockOptions);
-    expect(pubsub.getMetric(NAME)).andReturn(null);
-    replay(pubsub);
+    expect(logging.options()).andReturn(mockOptions);
+    expect(logging.getMetric(NAME)).andReturn(null);
+    replay(logging);
     initializeMetric();
     assertNull(metric.reload());
   }
@@ -116,10 +116,10 @@ public class MetricTest {
     initializeExpectedMetric(2);
     MetricInfo updatedInfo = METRIC_INFO.toBuilder().filter(NEW_FILTER).build();
     Metric expectedMetric = new Metric(serviceMockReturnsOptions, new MetricInfo.BuilderImpl(updatedInfo));
-    expect(pubsub.options()).andReturn(mockOptions);
-    expect(pubsub.getMetricAsync(NAME))
+    expect(logging.options()).andReturn(mockOptions);
+    expect(logging.getMetricAsync(NAME))
         .andReturn(Futures.immediateFuture(expectedMetric));
-    replay(pubsub);
+    replay(logging);
     initializeMetric();
     Metric updatedMetric = metric.reloadAsync().get();
     compareMetric(expectedMetric, updatedMetric);
@@ -128,9 +128,9 @@ public class MetricTest {
   @Test
   public void testReloadAsyncNull() throws ExecutionException, InterruptedException {
     initializeExpectedMetric(1);
-    expect(pubsub.options()).andReturn(mockOptions);
-    expect(pubsub.getMetricAsync(NAME)).andReturn(Futures.<Metric>immediateFuture(null));
-    replay(pubsub);
+    expect(logging.options()).andReturn(mockOptions);
+    expect(logging.getMetricAsync(NAME)).andReturn(Futures.<Metric>immediateFuture(null));
+    replay(logging);
     initializeMetric();
     assertNull(metric.reloadAsync().get());
   }
@@ -140,9 +140,9 @@ public class MetricTest {
     initializeExpectedMetric(2);
     MetricInfo updatedInfo = METRIC_INFO.toBuilder().filter(NEW_FILTER).build();
     Metric expectedMetric = new Metric(serviceMockReturnsOptions, new MetricInfo.BuilderImpl(updatedInfo));
-    expect(pubsub.options()).andReturn(mockOptions);
-    expect(pubsub.update(updatedInfo)).andReturn(expectedMetric);
-    replay(pubsub);
+    expect(logging.options()).andReturn(mockOptions);
+    expect(logging.update(updatedInfo)).andReturn(expectedMetric);
+    replay(logging);
     initializeMetric();
     Metric updatedMetric = metric.update(updatedInfo);
     compareMetric(expectedMetric, updatedMetric);
@@ -153,9 +153,9 @@ public class MetricTest {
     initializeExpectedMetric(2);
     MetricInfo updatedInfo = METRIC_INFO.toBuilder().filter(NEW_FILTER).build();
     Metric expectedMetric = new Metric(serviceMockReturnsOptions, new MetricInfo.BuilderImpl(updatedInfo));
-    expect(pubsub.options()).andReturn(mockOptions);
-    expect(pubsub.updateAsync(updatedInfo)).andReturn(Futures.immediateFuture(expectedMetric));
-    replay(pubsub);
+    expect(logging.options()).andReturn(mockOptions);
+    expect(logging.updateAsync(updatedInfo)).andReturn(Futures.immediateFuture(expectedMetric));
+    replay(logging);
     initializeMetric();
     Metric updatedMetric = metric.updateAsync(updatedInfo).get();
     compareMetric(expectedMetric, updatedMetric);
@@ -164,9 +164,9 @@ public class MetricTest {
   @Test
   public void testDeleteTrue() {
     initializeExpectedMetric(1);
-    expect(pubsub.options()).andReturn(mockOptions);
-    expect(pubsub.deleteMetric(NAME)).andReturn(true);
-    replay(pubsub);
+    expect(logging.options()).andReturn(mockOptions);
+    expect(logging.deleteMetric(NAME)).andReturn(true);
+    replay(logging);
     initializeMetric();
     assertTrue(metric.delete());
   }
@@ -174,9 +174,9 @@ public class MetricTest {
   @Test
   public void testDeleteFalse() {
     initializeExpectedMetric(1);
-    expect(pubsub.options()).andReturn(mockOptions);
-    expect(pubsub.deleteMetric(NAME)).andReturn(false);
-    replay(pubsub);
+    expect(logging.options()).andReturn(mockOptions);
+    expect(logging.deleteMetric(NAME)).andReturn(false);
+    replay(logging);
     initializeMetric();
     assertFalse(metric.delete());
   }
@@ -184,9 +184,9 @@ public class MetricTest {
   @Test
   public void testDeleteAsyncTrue() throws ExecutionException, InterruptedException {
     initializeExpectedMetric(1);
-    expect(pubsub.options()).andReturn(mockOptions);
-    expect(pubsub.deleteMetricAsync(NAME)).andReturn(Futures.immediateFuture(true));
-    replay(pubsub);
+    expect(logging.options()).andReturn(mockOptions);
+    expect(logging.deleteMetricAsync(NAME)).andReturn(Futures.immediateFuture(true));
+    replay(logging);
     initializeMetric();
     assertTrue(metric.deleteAsync().get());
   }
@@ -194,9 +194,9 @@ public class MetricTest {
   @Test
   public void testDeleteAsyncFalse() throws ExecutionException, InterruptedException {
     initializeExpectedMetric(1);
-    expect(pubsub.options()).andReturn(mockOptions);
-    expect(pubsub.deleteMetricAsync(NAME)).andReturn(Futures.immediateFuture(false));
-    replay(pubsub);
+    expect(logging.options()).andReturn(mockOptions);
+    expect(logging.deleteMetricAsync(NAME)).andReturn(Futures.immediateFuture(false));
+    replay(logging);
     initializeMetric();
     assertFalse(metric.deleteAsync().get());
   }
