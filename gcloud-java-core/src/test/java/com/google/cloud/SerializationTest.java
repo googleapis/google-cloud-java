@@ -16,8 +16,11 @@
 
 package com.google.cloud;
 
+import com.google.cloud.MonitoredResourceDescriptor.LabelDescriptor;
+import com.google.cloud.MonitoredResourceDescriptor.LabelDescriptor.ValueType;
 import com.google.cloud.ServiceAccountSigner.SigningException;
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -39,6 +42,15 @@ public class SerializationTest extends BaseSerializationTest {
   private static final SomeIamPolicy SOME_IAM_POLICY = new SomeIamPolicy.Builder().build();
   private static final WaitForOption CHECKING_PERIOD =
       WaitForOption.checkEvery(42, TimeUnit.SECONDS);
+  private static final LabelDescriptor LABEL_DESCRIPTOR =
+      new LabelDescriptor("project_id", ValueType.STRING, "The project id");
+  private static final MonitoredResourceDescriptor MONITORED_RESOURCE_DESCRIPTOR =
+      MonitoredResourceDescriptor.builder("global")
+          .labels(ImmutableList.of(LABEL_DESCRIPTOR))
+          .build();
+  private static final MonitoredResource MONITORED_RESOURCE = MonitoredResource.builder("global")
+      .labels(ImmutableMap.of("project_id", "project"))
+      .build();
   private static final String JSON_KEY = "{\n"
       + "  \"private_key_id\": \"somekeyid\",\n"
       + "  \"private_key\": \"-----BEGIN PRIVATE KEY-----\\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggS"
@@ -91,7 +103,8 @@ public class SerializationTest extends BaseSerializationTest {
   @Override
   protected Serializable[] serializableObjects() {
     return new Serializable[]{BASE_SERVICE_EXCEPTION, EXCEPTION_HANDLER, IDENTITY, PAGE,
-        RETRY_PARAMS, SOME_IAM_POLICY, SIGNING_EXCEPTION, CHECKING_PERIOD};
+        RETRY_PARAMS, SOME_IAM_POLICY, SIGNING_EXCEPTION, CHECKING_PERIOD, LABEL_DESCRIPTOR,
+        MONITORED_RESOURCE_DESCRIPTOR, MONITORED_RESOURCE};
   }
 
   @Override

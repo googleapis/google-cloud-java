@@ -53,7 +53,7 @@ public final class HttpRequest implements Serializable {
   /**
    * The HTTP request method.
    */
-  enum RequestMethod {
+  public enum RequestMethod {
     GET,
     HEAD,
     PUT,
