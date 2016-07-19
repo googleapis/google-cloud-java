@@ -35,27 +35,28 @@ import java.util.Iterator;
  */
 public class WriteAndListLogEntries {
 
-  public static void main(String... args) {
+  public static void main(String... args) throws Exception {
     // Create a service object
     // Credentials are inferred from the environment
     LoggingOptions options = LoggingOptions.defaultInstance();
-    Logging logging = options.service();
+    try(Logging logging = options.service()) {
 
-    // Create a log entry
-    LogEntry firstEntry = LogEntry.builder(StringPayload.of("message"))
-        .logName("test-log")
-        .resource(MonitoredResource.builder("global")
-            .addLabel("project_id", options.projectId())
-            .build())
-        .build();
-    logging.write(Collections.singleton(firstEntry));
+      // Create a log entry
+      LogEntry firstEntry = LogEntry.builder(StringPayload.of("message"))
+          .logName("test-log")
+          .resource(MonitoredResource.builder("global")
+              .addLabel("project_id", options.projectId())
+              .build())
+          .build();
+      logging.write(Collections.singleton(firstEntry));
 
-    // List log entries
-    Page<LogEntry> entries = logging.listLogEntries(
-        EntryListOption.filter("logName=projects/" + options.projectId() + "/logs/test-log"));
-    Iterator<LogEntry> entryIterator = entries.iterateAll();
-    while (entryIterator.hasNext()) {
-      System.out.println(entryIterator.next());
+      // List log entries
+      Page<LogEntry> entries = logging.listLogEntries(
+          EntryListOption.filter("logName=projects/" + options.projectId() + "/logs/test-log"));
+      Iterator<LogEntry> entryIterator = entries.iterateAll();
+      while (entryIterator.hasNext()) {
+        System.out.println(entryIterator.next());
+      }
     }
   }
 }

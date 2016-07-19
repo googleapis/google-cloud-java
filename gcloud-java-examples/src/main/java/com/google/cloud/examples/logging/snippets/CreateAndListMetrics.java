@@ -33,22 +33,23 @@ import java.util.Iterator;
  */
 public class CreateAndListMetrics {
 
-  public static void main(String... args) {
+  public static void main(String... args) throws Exception {
     // Create a service object
     // Credentials are inferred from the environment
-    Logging logging = LoggingOptions.defaultInstance().service();
+    try(Logging logging = LoggingOptions.defaultInstance().service()) {
 
-    // Create a metric
-    MetricInfo metricInfo = MetricInfo.builder("test-metric", "severity >= ERROR")
-        .description("Log entries with severity higher or equal to ERROR")
-        .build();
-    logging.create(metricInfo);
+      // Create a metric
+      MetricInfo metricInfo = MetricInfo.builder("test-metric", "severity >= ERROR")
+          .description("Log entries with severity higher or equal to ERROR")
+          .build();
+      logging.create(metricInfo);
 
-    // List metrics
-    Page<Metric> metrics = logging.listMetrics();
-    Iterator<Metric> metricIterator = metrics.iterateAll();
-    while (metricIterator.hasNext()) {
-      System.out.println(metricIterator.next());
+      // List metrics
+      Page<Metric> metrics = logging.listMetrics();
+      Iterator<Metric> metricIterator = metrics.iterateAll();
+      while (metricIterator.hasNext()) {
+        System.out.println(metricIterator.next());
+      }
     }
   }
 }
