@@ -83,7 +83,11 @@ import java.util.logging.SimpleFormatter;
  * </ul>
  *
  * <p>To add a {@code LoggingHandler} to an existing {@link Logger} and be sure to avoid infinite
- * recursion when logging, use the {@link #addHandler(Logger, LoggingHandler)} method.
+ * recursion when logging, use the {@link #addHandler(Logger, LoggingHandler)} method. Alternatively
+ * you can add the handler via {@code logging.properties}. For example using the following line:
+ * <pre>
+ * {@code com.example.mypackage.handlers=com.google.cloud.logging.LoggingHandler}
+ * </pre>
  */
 public class LoggingHandler extends Handler {
 
