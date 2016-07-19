@@ -33,22 +33,23 @@ import java.util.Iterator;
  */
 public class CreateAndListSinks {
 
-  public static void main(String... args) {
+  public static void main(String... args) throws Exception {
     // Create a service object
     // Credentials are inferred from the environment
-    Logging logging = LoggingOptions.defaultInstance().service();
+    try(Logging logging = LoggingOptions.defaultInstance().service()) {
 
-    // Create a sink to back log entries to a BigQuery dataset
-    SinkInfo sinkInfo = SinkInfo.builder("test-sink", DatasetDestination.of("test-dataset"))
-        .filter("severity >= ERROR")
-        .build();
-    logging.create(sinkInfo);
+      // Create a sink to back log entries to a BigQuery dataset
+      SinkInfo sinkInfo = SinkInfo.builder("test-sink", DatasetDestination.of("test-dataset"))
+          .filter("severity >= ERROR")
+          .build();
+      logging.create(sinkInfo);
 
-    // List sinks
-    Page<Sink> sinks = logging.listSinks();
-    Iterator<Sink> sinkIterator = sinks.iterateAll();
-    while (sinkIterator.hasNext()) {
-      System.out.println(sinkIterator.next());
+      // List sinks
+      Page<Sink> sinks = logging.listSinks();
+      Iterator<Sink> sinkIterator = sinks.iterateAll();
+      while (sinkIterator.hasNext()) {
+        System.out.println(sinkIterator.next());
+      }
     }
   }
 }
