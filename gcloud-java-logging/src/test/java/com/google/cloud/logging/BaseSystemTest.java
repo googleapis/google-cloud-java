@@ -49,6 +49,8 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 import java.util.concurrent.ExecutionException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * A base class for system tests. This class can be extended to run system tests in different
@@ -452,5 +454,80 @@ public abstract class BaseSystemTest {
   public void testDeleteNonExistingLogAsync() throws ExecutionException, InterruptedException {
     String logName = formatForTest("test-delete-non-existing-log-async");
     assertFalse(logging().deleteLogAsync(logName).get());
+  }
+
+  @Test
+  public void testLoggingHandler() throws InterruptedException {
+    String logName = formatForTest("test-logging-handler");
+    LoggingOptions options = logging().options();
+    LoggingHandler handler = new LoggingHandler(logName, options);
+    handler.setLevel(Level.INFO);
+    Logger logger = Logger.getLogger(getClass().getName());
+    logger.addHandler(handler);
+    logger.setLevel(Level.INFO);
+    logger.info("Message");
+    Iterator<LogEntry> iterator =
+        logging().listLogEntries(EntryListOption.filter("logName:" + logName)).iterateAll();
+    while (!iterator.hasNext()) {
+      Thread.sleep(500L);
+      iterator =
+          logging().listLogEntries(EntryListOption.filter("logName:" + logName)).iterateAll();
+    }
+    assertTrue(iterator.hasNext());
+    LogEntry entry = iterator.next();
+    assertTrue(entry.payload() instanceof StringPayload);
+    assertTrue(entry.<StringPayload>payload().data().contains("Message"));
+    assertEquals(logName, entry.logName());
+    assertEquals(ImmutableMap.of("levelName", "INFO",
+        "levelValue", String.valueOf(Level.INFO.intValue())), entry.labels());
+    assertEquals("global", entry.resource().type());
+    assertEquals(ImmutableMap.of("project_id", options.projectId()), entry.resource().labels());
+    assertNull(entry.httpRequest());
+    assertEquals(Severity.INFO, entry.severity());
+    assertNull(entry.operation());
+    assertNotNull(entry.insertId());
+    assertNotNull(entry.timestamp());
+    assertFalse(iterator.hasNext());
+    logger.removeHandler(handler);
+    logging().deleteLog(logName);
+  }
+
+  @Test
+  public void testAsyncLoggingHandler() throws InterruptedException {
+    String logName = formatForTest("test-async-logging-handler");
+    LoggingOptions options = logging().options();
+    MonitoredResource resource = MonitoredResource.of("gce_instance",
+        ImmutableMap.of("project_id", options.projectId(),
+            "instance_id", "instance",
+            "zone", "us-central1-a"));
+    LoggingHandler handler = new AsyncLoggingHandler(logName, options, resource);
+    handler.setLevel(Level.WARNING);
+    Logger logger = Logger.getLogger(getClass().getName());
+    logger.addHandler(handler);
+    logger.setLevel(Level.WARNING);
+    logger.warning("Message");
+    Iterator<LogEntry> iterator =
+        logging().listLogEntries(EntryListOption.filter("logName:" + logName)).iterateAll();
+    while (!iterator.hasNext()) {
+      Thread.sleep(500L);
+      iterator =
+          logging().listLogEntries(EntryListOption.filter("logName:" + logName)).iterateAll();
+    }
+    assertTrue(iterator.hasNext());
+    LogEntry entry = iterator.next();
+    assertTrue(entry.payload() instanceof StringPayload);
+    assertTrue(entry.<StringPayload>payload().data().contains("Message"));
+    assertEquals(logName, entry.logName());
+    assertEquals(ImmutableMap.of("levelName", "WARNING",
+        "levelValue", String.valueOf(Level.WARNING.intValue())), entry.labels());
+    assertEquals(resource, entry.resource());
+    assertNull(entry.httpRequest());
+    assertEquals(Severity.WARNING, entry.severity());
+    assertNull(entry.operation());
+    assertNotNull(entry.insertId());
+    assertNotNull(entry.timestamp());
+    assertFalse(iterator.hasNext());
+    logger.removeHandler(handler);
+    logging().deleteLog(logName);
   }
 }
