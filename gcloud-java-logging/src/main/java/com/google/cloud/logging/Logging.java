@@ -282,7 +282,7 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
   Future<Boolean> deleteLogAsync(String log);
 
   /**
-   * Lists the monitored resource descriptors used by Google Cloud Logging. This method returns a
+   * Lists the monitored resource descriptors used by Stackdriver Logging. This method returns a
    * {@link Page} object that can be used to consume paginated results. Use {@link ListOption} to
    * specify the page size or the page token from which to start listing resource descriptors.
    *
@@ -291,7 +291,7 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
   Page<MonitoredResourceDescriptor> listMonitoredResourceDescriptors(ListOption... options);
 
   /**
-   * Sends a request for listing monitored resource descriptors used by Google Cloud Logging. This
+   * Sends a request for listing monitored resource descriptors used by Stackdriver Logging. This
    * method returns a {@code Future} object to consume the result. {@link Future#get()} returns an
    * {@link AsyncPage} object that can be used to asynchronously handle paginated results. Use
    * {@link ListOption} to specify the page size or the page token from which to start listing
@@ -376,8 +376,8 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
   Future<Boolean> deleteMetricAsync(String metric);
 
   /**
-   * Writes log entries to Cloud Logging. Use {@link WriteOption#logName(String)} to provide a log
-   * name for those entries that do not specify one. Use
+   * Writes log entries to Stackdriver Logging. Use {@link WriteOption#logName(String)} to provide a
+   * log name for those entries that do not specify one. Use
    * {@link WriteOption#resource(MonitoredResource)} to provide a monitored resource for those
    * entries that do not specify one. Use {@link WriteOption#labels(Map)} to provide some labels
    * to be added to every entry in {@code logEntries}.
@@ -385,8 +385,8 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
   void write(Iterable<LogEntry> logEntries, WriteOption... options);
 
   /**
-   * Sends a request to log entries to Cloud Logging. Use {@link WriteOption#logName(String)} to
-   * provide a log name for those entries that do not specify one. Use
+   * Sends a request to log entries to Stackdriver Logging. Use {@link WriteOption#logName(String)}
+   * to provide a log name for those entries that do not specify one. Use
    * {@link WriteOption#resource(MonitoredResource)} to provide a monitored resource for those
    * entries that do not specify one. Use {@link WriteOption#labels(Map)} to provide some labels
    * to be added to every entry in {@code logEntries}. The method returns a {@code Future} object

@@ -27,10 +27,9 @@ import java.util.Objects;
 import java.util.concurrent.Future;
 
 /**
- * Google Cloud Logging sinks can be used to control the export of your logs. Each sink specifies
- * the export of a set of log entries to a certain destination. A sink consists of a name, unique to
- * the project, a filter for choosing the log entries to export and a destination for the log
- * entries.
+ * Stackdriver Logging sinks can be used to control the export of your logs. Each sink specifies the
+ * export of a set of log entries to a certain destination. A sink consists of a name, unique to the
+ * project, a filter for choosing the log entries to export and a destination for the log entries.
  *
  * <p>Sink destination can either be a Google Cloud Storage bucket (see
  * {@link SinkInfo.Destination.BucketDestination}, a Google Cloud BigQuery dataset (see

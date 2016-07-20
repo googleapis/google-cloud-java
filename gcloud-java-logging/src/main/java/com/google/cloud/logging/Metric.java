@@ -27,7 +27,7 @@ import java.util.Objects;
 import java.util.concurrent.Future;
 
 /**
- * Google Cloud Logging metrics describe logs-based metric. The value of the metric is the number of
+ * Stackdriver Logging metrics describe logs-based metric. The value of the metric is the number of
  * log entries that match a logs filter (see {@link #filter()}).
  *
  * <p>{@code Metric} adds a layer of service-related functionality over {@link MetricInfo}. Objects
