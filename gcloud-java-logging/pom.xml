@@ -6,7 +6,7 @@
   <name>GCloud Java Logging</name>
   <url>https://github.com/GoogleCloudPlatform/gcloud-java/tree/master/gcloud-java-logging</url>
   <description>
-    Java idiomatic client for Google Cloud Logging.
+    Java idiomatic client for Stackdriver Logging.
   </description>
   <parent>
     <groupId>com.google.cloud</groupId>
