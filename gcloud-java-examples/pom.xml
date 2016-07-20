@@ -73,6 +73,10 @@
               <name>DnsExample</name>
             </program>
             <program>
+              <mainClass>com.google.cloud.examples.logging.LoggingExample</mainClass>
+              <name>LoggingExample</name>
+            </program>
+            <program>
               <mainClass>com.google.cloud.examples.nio.CountBytes</mainClass>
               <name>CountBytes</name>
             </program>

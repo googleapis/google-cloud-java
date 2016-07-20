@@ -101,16 +101,6 @@ To run examples from your command line:
     target/appassembler/bin/DnsExample delete some-sample-zone
     ```
 
-  * Here's an example run of `PubSubExample`.
-
-    Before running the example, go to the [Google Developers Console][developers-console] to ensure that "Google Cloud Pub/Sub" is enabled.
-    ```
-    target/appassembler/bin/PubSubExample create topic test-topic
-    target/appassembler/bin/PubSubExample create subscription test-topic test-subscription
-    target/appassembler/bin/PubSubExample publish test-topic message1 message2
-    target/appassembler/bin/PubSubExample pull sync test-subscription 2
-    ```
-
   * Here's an example run of `LoggingExample`.
 
     Before running the example, go to the [Google Developers Console][developers-console] to ensure
@@ -122,6 +112,16 @@ To run examples from your command line:
     target/appassembler/bin/LoggingExample list sinks
     target/appassembler/bin/LoggingExample write test-log-name ERROR test-message test-key test-value
     target/appassembler/bin/LoggingExample list entries
+    ```
+
+  * Here's an example run of `PubSubExample`.
+
+    Before running the example, go to the [Google Developers Console][developers-console] to ensure that "Google Cloud Pub/Sub" is enabled.
+    ```
+    target/appassembler/bin/PubSubExample create topic test-topic
+    target/appassembler/bin/PubSubExample create subscription test-topic test-subscription
+    target/appassembler/bin/PubSubExample publish test-topic message1 message2
+    target/appassembler/bin/PubSubExample pull sync test-subscription 2
     ```
 
   * Here's an example run of `ResourceManagerExample`.
