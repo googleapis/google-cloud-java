@@ -101,6 +101,19 @@ To run examples from your command line:
     target/appassembler/bin/DnsExample delete some-sample-zone
     ```
 
+  * Here's an example run of `LoggingExample`.
+
+    Before running the example, go to the [Google Developers Console][developers-console] to ensure
+    that Logging API is enabled.
+    ```
+    target/appassembler/bin/LoggingExample create metric test-metric severity>=ERROR
+    target/appassembler/bin/LoggingExample list metrics
+    target/appassembler/bin/LoggingExample create sink test-sink bucket test-bucket severity>=ERROR
+    target/appassembler/bin/LoggingExample list sinks
+    target/appassembler/bin/LoggingExample write test-log-name ERROR test-message test-key test-value
+    target/appassembler/bin/LoggingExample list entries
+    ```
+
   * Here's an example run of `PubSubExample`.
 
     Before running the example, go to the [Google Developers Console][developers-console] to ensure that "Google Cloud Pub/Sub" is enabled.
