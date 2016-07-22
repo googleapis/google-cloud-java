@@ -114,6 +114,13 @@ To run examples from your command line:
     target/appassembler/bin/LoggingExample list entries
     ```
 
+  * Here's an example run of `ParallelCountBytes`.
+
+    Before running the example, go to the [Google Developers Console][developers-console] to ensure that Google Cloud Storage API is enabled and that you have a bucket with a file in it.
+    ```
+    target/appassembler/bin/ParallelCountBytes gs://mybucket/myfile.txt
+    ```
+
   * Here's an example run of `PubSubExample`.
 
     Before running the example, go to the [Google Developers Console][developers-console] to ensure that "Google Cloud Pub/Sub" is enabled.
