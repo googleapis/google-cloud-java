@@ -61,7 +61,7 @@ public class ITDnsTest {
   private static final String ZONE_NAME1 = (PREFIX + UUID.randomUUID()).substring(0, 32);
   private static final String ZONE_NAME_EMPTY_DESCRIPTION =
       (PREFIX + UUID.randomUUID()).substring(0, 32);
-  private static final String ZONE_NAME_TOO_LONG = PREFIX + UUID.randomUUID();
+  private static final String ZONE_NAME_TOO_LONG = ZONE_NAME1 + UUID.randomUUID();
   private static final String ZONE_DESCRIPTION1 = "first zone";
   private static final String ZONE_DNS_NAME1 = ZONE_NAME1 + ".com.";
   private static final String ZONE_DNS_EMPTY_DESCRIPTION = ZONE_NAME_EMPTY_DESCRIPTION + ".com.";
@@ -205,7 +205,7 @@ public class ITDnsTest {
     try {
       try {
         DNS.create(ZONE_NAME_ERROR);
-        fail("Zone name is missing a period. The service returns an error.");
+        fail("Zone name is too long. The service returns an error.");
       } catch (DnsException ex) {
         // expected
         assertFalse(ex.retryable());
@@ -1173,7 +1173,7 @@ public class ITDnsTest {
       batch.submit();
       try {
         nameErrorResult.get();
-        fail("Zone name is missing a period. The service returns an error.");
+        fail("Zone name is too long. The service returns an error.");
       } catch (DnsException ex) {
         // expected
         assertFalse(ex.retryable());
