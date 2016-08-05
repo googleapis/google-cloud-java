@@ -101,9 +101,9 @@ String bucketName = "my_unique_bucket"; // Change this to something unique
 Bucket bucket = storage.create(BucketInfo.of(bucketName));
 
 // Upload a blob to the newly created bucket
-BlobId blobId = BlobId.of(bucketName, "my_blob_name");
-Blob blob = storage.create(
-    "my_blob_name", "a simple blob".getBytes(UTF_8), "text/plain");
+BlobId blobId = BlobId.of("bucket", "blob_name");
+BlobInfo blobInfo = BlobInfo.builder(blobId).contentType("text/plain").build();
+Blob blob = storage.create(blobInfo, "Hello, Cloud Storage!".getBytes(UTF_8));
 ```
 
 At this point, you will be able to see your newly created bucket and blob on the Google Developers Console.
