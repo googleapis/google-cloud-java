@@ -35,6 +35,7 @@ public class TableInfoTest {
   private static final String DESCRIPTION = "description";
   private static final Long CREATION_TIME = 10L;
   private static final Long EXPIRATION_TIME = 100L;
+  private static final boolean TIME_PARTITIONING = true;
   private static final Long LAST_MODIFIED_TIME = 20L;
 
   private static final Field FIELD_SCHEMA1 =
@@ -89,6 +90,7 @@ public class TableInfoTest {
       .description(DESCRIPTION)
       .etag(ETAG)
       .expirationTime(EXPIRATION_TIME)
+      .timePartitioning(TIME_PARTITIONING)
       .friendlyName(FRIENDLY_NAME)
       .generatedId(GENERATED_ID)
       .lastModifiedTime(LAST_MODIFIED_TIME)
@@ -99,6 +101,7 @@ public class TableInfoTest {
       .description(DESCRIPTION)
       .etag(ETAG)
       .expirationTime(EXPIRATION_TIME)
+      .timePartitioning(TIME_PARTITIONING)
       .friendlyName(FRIENDLY_NAME)
       .generatedId(GENERATED_ID)
       .lastModifiedTime(LAST_MODIFIED_TIME)
@@ -110,6 +113,7 @@ public class TableInfoTest {
           .description(DESCRIPTION)
           .etag(ETAG)
           .expirationTime(EXPIRATION_TIME)
+          .timePartitioning(TIME_PARTITIONING)
           .friendlyName(FRIENDLY_NAME)
           .generatedId(GENERATED_ID)
           .lastModifiedTime(LAST_MODIFIED_TIME)
@@ -148,6 +152,7 @@ public class TableInfoTest {
     assertEquals(DESCRIPTION, TABLE_INFO.description());
     assertEquals(ETAG, TABLE_INFO.etag());
     assertEquals(EXPIRATION_TIME, TABLE_INFO.expirationTime());
+    assertEquals(TIME_PARTITIONING, TABLE_INFO.timePartitioning());
     assertEquals(FRIENDLY_NAME, TABLE_INFO.friendlyName());
     assertEquals(GENERATED_ID, TABLE_INFO.generatedId());
     assertEquals(LAST_MODIFIED_TIME, TABLE_INFO.lastModifiedTime());
@@ -159,6 +164,7 @@ public class TableInfoTest {
     assertEquals(DESCRIPTION, VIEW_INFO.description());
     assertEquals(ETAG, VIEW_INFO.etag());
     assertEquals(EXPIRATION_TIME, VIEW_INFO.expirationTime());
+    assertEquals(TIME_PARTITIONING, VIEW_INFO.timePartitioning());
     assertEquals(FRIENDLY_NAME, VIEW_INFO.friendlyName());
     assertEquals(GENERATED_ID, VIEW_INFO.generatedId());
     assertEquals(LAST_MODIFIED_TIME, VIEW_INFO.lastModifiedTime());
@@ -169,6 +175,7 @@ public class TableInfoTest {
     assertEquals(DESCRIPTION, EXTERNAL_TABLE_INFO.description());
     assertEquals(ETAG, EXTERNAL_TABLE_INFO.etag());
     assertEquals(EXPIRATION_TIME, EXTERNAL_TABLE_INFO.expirationTime());
+    assertEquals(TIME_PARTITIONING, EXTERNAL_TABLE_INFO.timePartitioning());
     assertEquals(FRIENDLY_NAME, EXTERNAL_TABLE_INFO.friendlyName());
     assertEquals(GENERATED_ID, EXTERNAL_TABLE_INFO.generatedId());
     assertEquals(LAST_MODIFIED_TIME, EXTERNAL_TABLE_INFO.lastModifiedTime());
@@ -235,6 +242,7 @@ public class TableInfoTest {
     assertEquals(expected.description(), value.description());
     assertEquals(expected.etag(), value.etag());
     assertEquals(expected.expirationTime(), value.expirationTime());
+    assertEquals(expected.timePartitioning(), value.timePartitioning());
     assertEquals(expected.friendlyName(), value.friendlyName());
     assertEquals(expected.generatedId(), value.generatedId());
     assertEquals(expected.lastModifiedTime(), value.lastModifiedTime());
