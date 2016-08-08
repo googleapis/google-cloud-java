@@ -100,7 +100,7 @@ public class DefaultDatastoreRpc implements DatastoreRpc {
       }
     }
     return new DatastoreException(
-        exception.getCode().ordinal(), exception.getMessage(), reason, exception);
+        exception.getCode().getNumber(), exception.getMessage(), reason, exception);
   }
 
   @Override
