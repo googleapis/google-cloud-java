@@ -96,8 +96,8 @@ public final class DeprecationStatus<T extends ResourceId> implements Serializab
      *
      * @see <a href="http://www.ietf.org/rfc/rfc3339.txt">RFC3339</a>
      */
-    // todo(mziccard): remove this method if #732 is closed
-    public Builder<T> deleted(String deleted) {
+    // Wrongly-formatted timestamps were allowed, we must still support them (see #732 for details)
+    Builder<T> deleted(String deleted) {
       this.deleted = deleted;
       return this;
     }
@@ -108,8 +108,8 @@ public final class DeprecationStatus<T extends ResourceId> implements Serializab
      *
      * @see <a href="http://www.ietf.org/rfc/rfc3339.txt">RFC3339</a>
      */
-    // todo(mziccard): remove this method if #732 is closed
-    public Builder<T> deprecated(String deprecated) {
+    // Wrongly-formatted timestamps were allowed, we must still support them (see #732 for details)
+    Builder<T> deprecated(String deprecated) {
       this.deprecated = deprecated;
       return this;
     }
@@ -120,8 +120,8 @@ public final class DeprecationStatus<T extends ResourceId> implements Serializab
      *
      * @see <a href="http://www.ietf.org/rfc/rfc3339.txt">RFC3339</a>
      */
-    // todo(mziccard): remove this method if #732 is closed
-    public Builder<T> obsolete(String obsolete) {
+    // Wrongly-formatted timestamps were allowed, we must still support them (see #732 for details)
+    Builder<T> obsolete(String obsolete) {
       this.obsolete = obsolete;
       return this;
     }
@@ -193,7 +193,7 @@ public final class DeprecationStatus<T extends ResourceId> implements Serializab
    *
    * @see <a href="http://www.ietf.org/rfc/rfc3339.txt">RFC3339</a>
    */
-  // todo(mziccard): remove this method if #732 is closed
+  // Wrongly-formatted timestamps were allowed, we must still support them (see #732 for details)
   public String deleted() {
     return deleted;
   }
@@ -205,7 +205,7 @@ public final class DeprecationStatus<T extends ResourceId> implements Serializab
    *
    * @see <a href="http://www.ietf.org/rfc/rfc3339.txt">RFC3339</a>
    */
-  // todo(mziccard): remove this method if #732 is closed
+  // Wrongly-formatted timestamps were allowed, we must still support them (see #732 for details)
   public String deprecated() {
     return deprecated;
   }
@@ -217,7 +217,7 @@ public final class DeprecationStatus<T extends ResourceId> implements Serializab
    *
    * @see <a href="http://www.ietf.org/rfc/rfc3339.txt">RFC3339</a>
    */
-  // todo(mziccard): remove this method if #732 is closed
+  // Wrongly-formatted timestamps were allowed, we must still support them (see #732 for details)
   public String obsolete() {
     return obsolete;
   }
