@@ -105,6 +105,7 @@
     <module>gcloud-java-pubsub</module>
     <module>gcloud-java-resourcemanager</module>
     <module>gcloud-java-storage</module>
+    <module>gcloud-java-translate</module>
   </modules>
   <pluginRepositories>
     <pluginRepository>
