@@ -70,6 +70,7 @@ public final class QueryRequest implements Serializable {
   private final Long maxWaitTime;
   private final Boolean dryRun;
   private final Boolean useQueryCache;
+  private final Boolean useLegacySql;
 
   public static final class Builder {
 
@@ -79,6 +80,7 @@ public final class QueryRequest implements Serializable {
     private Long maxWaitTime;
     private Boolean dryRun;
     private Boolean useQueryCache;
+    private Boolean useLegacySql;
 
     private Builder() {}
 
@@ -150,6 +152,17 @@ public final class QueryRequest implements Serializable {
       return this;
     }
 
+    /**
+     * Sets whether to use BigQuery's legacy SQL dialect for this query. If set to {@code false},
+     * the query will use BigQuery's <a href="https://cloud.google.com/bigquery/sql-reference/">
+     * Standard SQL</a>. If not set, legacy SQL dialect is used. This property is experimental and
+     * might be subject to change.
+     */
+    public Builder useLegacySql(Boolean useLegacySql) {
+      this.useLegacySql = useLegacySql;
+      return this;
+    }
+
     public QueryRequest build() {
       return new QueryRequest(this);
     }
@@ -162,6 +175,7 @@ public final class QueryRequest implements Serializable {
     maxWaitTime = builder.maxWaitTime;
     dryRun = builder.dryRun;
     useQueryCache = builder.useQueryCache;
+    useLegacySql = builder.useLegacySql;
   }
 
   /**
@@ -219,6 +233,16 @@ public final class QueryRequest implements Serializable {
   }
 
   /**
+   * Returns whether to use BigQuery's legacy SQL dialect for this query. If set to {@code false},
+   * the query will use BigQuery's <a href="https://cloud.google.com/bigquery/sql-reference/">
+   * Standard SQL</a>. If not set, legacy SQL dialect is used. This property is experimental and
+   * might be subject to change.
+   */
+  public Boolean useLegacySql() {
+    return useLegacySql;
+  }
+
+  /**
    * Returns a builder for the {@code QueryRequest} object.
    */
   public Builder toBuilder() {
@@ -228,7 +252,8 @@ public final class QueryRequest implements Serializable {
         .defaultDataset(defaultDataset)
         .maxWaitTime(maxWaitTime)
         .dryRun(dryRun)
-        .useQueryCache(useQueryCache);
+        .useQueryCache(useQueryCache)
+        .useLegacySql(useLegacySql);
   }
 
   @Override
@@ -240,12 +265,14 @@ public final class QueryRequest implements Serializable {
         .add("maxWaitTime", maxWaitTime)
         .add("dryRun", dryRun)
         .add("useQueryCache", useQueryCache)
+        .add("useLegacySql", useLegacySql)
         .toString();
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(query, pageSize, defaultDataset, maxWaitTime, dryRun, useQueryCache);
+    return Objects.hash(query, pageSize, defaultDataset, maxWaitTime, dryRun, useQueryCache,
+        useLegacySql);
   }
 
   @Override
@@ -281,6 +308,9 @@ public final class QueryRequest implements Serializable {
     if (useQueryCache != null) {
       queryRequestPb.setUseQueryCache(useQueryCache);
     }
+    if (useLegacySql != null) {
+      queryRequestPb.setUseLegacySql(useLegacySql);
+    }
     return queryRequestPb;
   }
 
@@ -314,6 +344,9 @@ public final class QueryRequest implements Serializable {
     }
     if (queryRequestPb.getUseQueryCache() != null) {
       builder.useQueryCache(queryRequestPb.getUseQueryCache());
+    }
+    if (queryRequestPb.getUseLegacySql() != null) {
+      builder.useLegacySql(queryRequestPb.getUseLegacySql());
     }
     return builder.build();
   }

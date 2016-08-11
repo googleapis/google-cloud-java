@@ -51,6 +51,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
   private final Boolean useQueryCache;
   private final Boolean flattenResults;
   private final Boolean dryRun;
+  private final Boolean useLegacySql;
 
   /**
    * Priority levels for a query. If not specified the priority is assumed to be
@@ -87,6 +88,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
     private Boolean useQueryCache;
     private Boolean flattenResults;
     private Boolean dryRun;
+    private Boolean useLegacySql;
 
     private Builder() {
       super(Type.QUERY);
@@ -106,6 +108,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
       this.useQueryCache = jobConfiguration.useQueryCache;
       this.flattenResults = jobConfiguration.flattenResults;
       this.dryRun = jobConfiguration.dryRun;
+      this.useLegacySql = jobConfiguration.useLegacySql;
     }
 
     private Builder(com.google.api.services.bigquery.model.JobConfiguration configurationPb) {
@@ -115,6 +118,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
       allowLargeResults = queryConfigurationPb.getAllowLargeResults();
       useQueryCache = queryConfigurationPb.getUseQueryCache();
       flattenResults = queryConfigurationPb.getFlattenResults();
+      useLegacySql = queryConfigurationPb.getUseLegacySql();
       dryRun = configurationPb.getDryRun();
       if (queryConfigurationPb.getDestinationTable() != null) {
         destinationTable = TableId.fromPb(queryConfigurationPb.getDestinationTable());
@@ -293,6 +297,20 @@ public final class QueryJobConfiguration extends JobConfiguration {
       return this;
     }
 
+    /**
+     * Sets whether to use BigQuery's legacy SQL dialect for this query. If set to {@code false},
+     * the query will use BigQuery's <a href="https://cloud.google.com/bigquery/sql-reference/">
+     * Standard SQL</a>. When set to {@code false}, the values of
+     * {@link #allowLargeResults(Boolean)} and {@link #flattenResults(Boolean)} are ignored; query
+     * will be run as if {@link #allowLargeResults(Boolean)} is {@code true} and
+     * {@link #flattenResults(Boolean)} is {@code false}. If not set, legacy SQL dialect is used.
+     * This property is experimental and might be subject to change.
+     */
+    public Builder useLegacySql(Boolean useLegacySql) {
+      this.useLegacySql = useLegacySql;
+      return this;
+    }
+
     public QueryJobConfiguration build() {
       return new QueryJobConfiguration(this);
     }
@@ -313,6 +331,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
     this.tableDefinitions =
         builder.tableDefinitions != null ? ImmutableMap.copyOf(builder.tableDefinitions) : null;
     this.dryRun = builder.dryRun;
+    this.useLegacySql = builder.useLegacySql;
   }
 
   /**
@@ -426,6 +445,18 @@ public final class QueryJobConfiguration extends JobConfiguration {
     return dryRun;
   }
 
+  /**
+   * Returns whether to use BigQuery's legacy SQL dialect for this query. If set to {@code false},
+   * the query will use BigQuery's <a href="https://cloud.google.com/bigquery/sql-reference/">
+   * Standard SQL</a>. When set to {@code false}, the values of {@link #allowLargeResults()} and
+   * {@link #flattenResults()} are ignored; query will be run as if {@link #allowLargeResults()} is
+   * {@code true} and {@link #flattenResults()} is {@code false}. If not set, legacy SQL dialect is
+   * used. This property is experimental and might be subject to change.
+   */
+  public Boolean useLegacySql() {
+    return useLegacySql;
+  }
+
   @Override
   public Builder toBuilder() {
     return new Builder(this);
@@ -445,7 +476,8 @@ public final class QueryJobConfiguration extends JobConfiguration {
         .add("userDefinedFunctions", userDefinedFunctions)
         .add("createDisposition", createDisposition)
         .add("writeDisposition", writeDisposition)
-        .add("dryRun", dryRun);
+        .add("dryRun", dryRun)
+        .add("useLegacySql", useLegacySql);
   }
 
   @Override
@@ -459,7 +491,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
   public int hashCode() {
     return Objects.hash(baseHashCode(), allowLargeResults, createDisposition, destinationTable,
         defaultDataset, flattenResults, priority, query, tableDefinitions, useQueryCache,
-        userDefinedFunctions, writeDisposition, dryRun);
+        userDefinedFunctions, writeDisposition, dryRun, useLegacySql);
   }
 
   @Override
@@ -512,6 +544,9 @@ public final class QueryJobConfiguration extends JobConfiguration {
     }
     if (writeDisposition != null) {
       queryConfigurationPb.setWriteDisposition(writeDisposition.toString());
+    }
+    if (useLegacySql != null) {
+      queryConfigurationPb.setUseLegacySql(useLegacySql);
     }
     return configurationPb.setQuery(queryConfigurationPb);
   }

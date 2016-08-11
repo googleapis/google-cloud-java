@@ -18,6 +18,7 @@ package com.google.cloud.bigquery;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Rule;
 import org.junit.Test;
@@ -31,12 +32,14 @@ public class QueryRequestTest {
   private static final Boolean DRY_RUN = false;
   private static final Long PAGE_SIZE = 42L;
   private static final Long MAX_WAIT_TIME = 42000L;
+  private static final Boolean USE_LEGACY_SQL = true;
   private static final QueryRequest QUERY_REQUEST = QueryRequest.builder(QUERY)
       .useQueryCache(USE_QUERY_CACHE)
       .defaultDataset(DATASET_ID)
       .dryRun(DRY_RUN)
       .pageSize(PAGE_SIZE)
       .maxWaitTime(MAX_WAIT_TIME)
+      .useLegacySql(USE_LEGACY_SQL)
       .build();
 
   @Rule
@@ -67,6 +70,7 @@ public class QueryRequestTest {
     assertEquals(DRY_RUN, QUERY_REQUEST.dryRun());
     assertEquals(PAGE_SIZE, QUERY_REQUEST.pageSize());
     assertEquals(MAX_WAIT_TIME, QUERY_REQUEST.maxWaitTime());
+    assertTrue(QUERY_REQUEST.useLegacySql());
     thrown.expect(NullPointerException.class);
     QueryRequest.builder(null);
   }
@@ -80,6 +84,7 @@ public class QueryRequestTest {
     assertNull(request.dryRun());
     assertNull(request.pageSize());
     assertNull(request.maxWaitTime());
+    assertNull(request.useLegacySql());
     thrown.expect(NullPointerException.class);
     QueryRequest.of(null);
   }
@@ -104,5 +109,6 @@ public class QueryRequestTest {
     assertEquals(expected.dryRun(), value.dryRun());
     assertEquals(expected.pageSize(), value.pageSize());
     assertEquals(expected.maxWaitTime(), value.maxWaitTime());
+    assertEquals(expected.useLegacySql(), value.useLegacySql());
   }
 }

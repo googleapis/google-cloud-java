@@ -72,6 +72,7 @@ public class QueryJobConfigurationTest {
   private static final boolean ALLOW_LARGE_RESULTS = true;
   private static final boolean USE_QUERY_CACHE = false;
   private static final boolean FLATTEN_RESULTS = true;
+  private static final boolean USE_LEGACY_SQL = true;
   private static final List<UserDefinedFunction> USER_DEFINED_FUNCTIONS = ImmutableList.of(
       UserDefinedFunction.inline("Function"), UserDefinedFunction.fromUri("URI"));
   private static final QueryJobConfiguration QUERY_JOB_CONFIGURATION =
@@ -87,6 +88,7 @@ public class QueryJobConfigurationTest {
           .flattenResults(FLATTEN_RESULTS)
           .userDefinedFunctions(USER_DEFINED_FUNCTIONS)
           .dryRun(true)
+          .useLegacySql(USE_LEGACY_SQL)
           .build();
 
   @Test
@@ -127,6 +129,7 @@ public class QueryJobConfigurationTest {
     assertEquals(USER_DEFINED_FUNCTIONS, QUERY_JOB_CONFIGURATION.userDefinedFunctions());
     assertEquals(WRITE_DISPOSITION, QUERY_JOB_CONFIGURATION.writeDisposition());
     assertTrue(QUERY_JOB_CONFIGURATION.dryRun());
+    assertTrue(QUERY_JOB_CONFIGURATION.useLegacySql());
   }
 
   @Test
@@ -165,5 +168,6 @@ public class QueryJobConfigurationTest {
     assertEquals(expected.useQueryCache(), value.useQueryCache());
     assertEquals(expected.userDefinedFunctions(), value.userDefinedFunctions());
     assertEquals(expected.writeDisposition(), value.writeDisposition());
+    assertEquals(expected.useLegacySql(), value.useLegacySql());
   }
 }
