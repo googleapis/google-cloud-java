@@ -16,6 +16,8 @@
 
 package com.google.cloud.logging.spi;
 
+import static com.google.common.base.MoreObjects.firstNonNull;
+
 import com.google.api.gax.core.RetrySettings;
 import com.google.api.gax.grpc.ApiCallSettings;
 import com.google.api.gax.grpc.ApiException;
@@ -97,13 +99,18 @@ public class DefaultLoggingRpc implements LoggingRpc {
   public DefaultLoggingRpc(LoggingOptions options) throws IOException {
     executorFactory = new InternalLoggingOptions(options).executorFactory();
     executor = executorFactory.get();
+    String libraryName = options.libraryName();
+    String libraryVersion = firstNonNull(options.libraryVersion(), "");
     try {
-      ConfigServiceV2Settings.Builder confBuilder =
-          ConfigServiceV2Settings.defaultBuilder().provideExecutorWith(executor, false);
-      LoggingServiceV2Settings.Builder logBuilder =
-          LoggingServiceV2Settings.defaultBuilder().provideExecutorWith(executor, false);
-      MetricsServiceV2Settings.Builder metricsBuilder =
-          MetricsServiceV2Settings.defaultBuilder().provideExecutorWith(executor, false);
+      ConfigServiceV2Settings.Builder confBuilder = ConfigServiceV2Settings.defaultBuilder()
+          .provideExecutorWith(executor, false)
+          .setClientLibHeader(libraryName, libraryVersion);
+      LoggingServiceV2Settings.Builder logBuilder = LoggingServiceV2Settings.defaultBuilder()
+          .provideExecutorWith(executor, false)
+          .setClientLibHeader(libraryName, libraryVersion);
+      MetricsServiceV2Settings.Builder metricsBuilder = MetricsServiceV2Settings.defaultBuilder()
+          .provideExecutorWith(executor, false)
+          .setClientLibHeader(libraryName, libraryVersion);
       // todo(mziccard): PublisherSettings should support null/absent credentials for testing
       if (options.host().contains("localhost")
           || options.authCredentials().equals(AuthCredentials.noAuth())) {
