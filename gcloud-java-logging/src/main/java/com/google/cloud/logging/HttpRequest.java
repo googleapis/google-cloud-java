@@ -458,7 +458,7 @@ public final class HttpRequest implements Serializable {
     // todo(mziccard) uncomment when #1042 gets fixed
     // builder.setCacheLookup(cacheLookup);
     builder.setCacheHit(cacheHit);
-    builder.setValidatedWithOriginServer(cacheValidatedWithOriginServer);
+    builder.setCacheValidatedWithOriginServer(cacheValidatedWithOriginServer);
     // todo(mziccard) uncomment when #1042 gets fixed
     //if (cacheFillBytes != null) {
     //  builder.setCacheFillBytes(cacheFillBytes);
@@ -506,7 +506,7 @@ public final class HttpRequest implements Serializable {
     // todo(mziccard) uncomment when #1042 gets fixed
     // builder.cacheLookup(requestPb.getCacheLookup());
     builder.cacheHit(requestPb.getCacheHit());
-    builder.cacheValidatedWithOriginServer(requestPb.getValidatedWithOriginServer());
+    builder.cacheValidatedWithOriginServer(requestPb.getCacheValidatedWithOriginServer());
     // todo(mziccard) uncomment when #1042 gets fixed
     //if (requestPb.getCacheFillBytes() != 0L) {
     //  builder.cacheFillBytes(requestPb.getCacheFillBytes());

@@ -11,26 +11,6 @@
  * or implied. See the License for the specific language governing permissions and limitations under
  * the License.
  */
-
-/*
- * EDITING INSTRUCTIONS
- * This file was generated from the file
- * https://github.com/google/googleapis/blob/master/google/logging/v2/logging_metrics.proto
- * and updates to that file get reflected here through a refresh process.
- * For the short term, the refresh process will only be runnable by Google engineers.
- * Manual additions are allowed because the refresh process performs
- * a 3-way merge in order to preserve those manual additions. In order to not
- * break the refresh process, only certain types of modifications are
- * allowed.
- *
- * Allowed modifications - currently these are the only types allowed:
- * 1. New methods (these should be added to the end of the class)
- * 2. New imports
- * 3. Additional documentation between "manual edit" demarcations
- *
- * Happy editing!
- */
-
 package com.google.cloud.logging.spi.v2;
 
 import com.google.api.gax.core.ConnectionSettings;
@@ -62,9 +42,7 @@ import java.util.List;
 import java.util.concurrent.ScheduledExecutorService;
 import org.joda.time.Duration;
 
-// Manually-added imports: add custom (non-generated) imports after this point.
-
-// AUTO-GENERATED DOCUMENTATION AND CLASS - see instructions at the top of the file for editing.
+// AUTO-GENERATED DOCUMENTATION AND CLASS
 /**
  * Settings class to configure an instance of {@link MetricsServiceV2Api}.
  *
@@ -79,13 +57,13 @@ import org.joda.time.Duration;
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders.
  * When build() is called, the tree of builders is called to create the complete settings
- * object. For example, to set the total timeout of ListLogMetrics to 30 seconds:
+ * object. For example, to set the total timeout of getLogMetric to 30 seconds:
  *
  * <pre>
  * <code>
  * MetricsServiceV2Settings.Builder metricsServiceV2SettingsBuilder =
  *     MetricsServiceV2Settings.defaultBuilder();
- * metricsServiceV2SettingsBuilder.ListLogMetricsSettings().getRetrySettingsBuilder()
+ * metricsServiceV2SettingsBuilder.getLogMetricSettings().getRetrySettingsBuilder()
  *     .setTotalTimeout(Duration.standardSeconds(30));
  * MetricsServiceV2Settings metricsServiceV2Settings = metricsServiceV2SettingsBuilder.build();
  * </code>
@@ -93,33 +71,26 @@ import org.joda.time.Duration;
  */
 @javax.annotation.Generated("by GAPIC")
 public class MetricsServiceV2Settings extends ServiceApiSettings {
-
   /**
    * The default address of the service.
-   *
-   * <!-- manual edit -->
-   * <!-- end manual edit -->
    */
-  public static final String DEFAULT_SERVICE_ADDRESS = "logging.googleapis.com";
+  private static final String DEFAULT_SERVICE_ADDRESS = "logging.googleapis.com";
 
   /**
    * The default port of the service.
-   *
-   * <!-- manual edit -->
-   * <!-- end manual edit -->
    */
-  public static final int DEFAULT_SERVICE_PORT = 443;
+  private static final int DEFAULT_SERVICE_PORT = 443;
 
   /**
    * The default scopes of the service.
    */
-  public static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
+  private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
       ImmutableList.<String>builder()
-          .add("https://www.googleapis.com/auth/logging.write")
+          .add("https://www.googleapis.com/auth/cloud-platform")
+          .add("https://www.googleapis.com/auth/cloud-platform.read-only")
           .add("https://www.googleapis.com/auth/logging.admin")
           .add("https://www.googleapis.com/auth/logging.read")
-          .add("https://www.googleapis.com/auth/cloud-platform.read-only")
-          .add("https://www.googleapis.com/auth/cloud-platform")
+          .add("https://www.googleapis.com/auth/logging.write")
           .build();
 
   /**
@@ -134,7 +105,6 @@ public class MetricsServiceV2Settings extends ServiceApiSettings {
 
   private final PageStreamingCallSettings<ListLogMetricsRequest, ListLogMetricsResponse, LogMetric>
       listLogMetricsSettings;
-
   private final SimpleCallSettings<GetLogMetricRequest, LogMetric> getLogMetricSettings;
   private final SimpleCallSettings<CreateLogMetricRequest, LogMetric> createLogMetricSettings;
   private final SimpleCallSettings<UpdateLogMetricRequest, LogMetric> updateLogMetricSettings;
@@ -174,6 +144,27 @@ public class MetricsServiceV2Settings extends ServiceApiSettings {
    */
   public SimpleCallSettings<DeleteLogMetricRequest, Empty> deleteLogMetricSettings() {
     return deleteLogMetricSettings;
+  }
+
+  /**
+   * Returns the default service address.
+   */
+  public static String getDefaultServiceAddress() {
+    return DEFAULT_SERVICE_ADDRESS;
+  }
+
+  /**
+   * Returns the default service port.
+   */
+  public static int getDefaultServicePort() {
+    return DEFAULT_SERVICE_PORT;
+  }
+
+  /**
+   * Returns the default service scopes.
+   */
+  public static ImmutableList<String> getDefaultServiceScopes() {
+    return DEFAULT_SERVICE_SCOPES;
   }
 
   /**
@@ -312,6 +303,7 @@ public class MetricsServiceV2Settings extends ServiceApiSettings {
 
     private static Builder createDefault() {
       Builder builder = new Builder();
+
       builder
           .listLogMetricsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))

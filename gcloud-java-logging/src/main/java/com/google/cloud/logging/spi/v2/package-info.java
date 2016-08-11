@@ -12,25 +12,43 @@
  * the License.
  */
 
-/*
- * EDITING INSTRUCTIONS
- * This file was automatically generated. For the short term, the process for
- * refreshing this file will only be runnable by Google engineers.
- * Manual additions are allowed because the refresh process performs
- * a 3-way merge in order to preserve those manual additions. In order to not
- * break the refresh process, additional documentation should be added between
- * "manual edit" demarcations.
- *
- * Other generated files allow additional edits - see the editing instructions
- * in those files for more details.
- *
- * Happy editing!
- */
-
 /**
  * A client to Google Cloud Logging API.
  *
  * The interfaces provided are listed below, along with a usage sample
+ *
+ * ==================
+ * ConfigServiceV2Api
+ * ==================
+ *
+ * Service Description: Service for configuring sinks used to export log entries outside Stackdriver
+ * Logging.
+ *
+ * Sample for ConfigServiceV2Api:
+ * <pre>
+ * <code>
+ * try (ConfigServiceV2Api configServiceV2Api = ConfigServiceV2Api.create()) {
+ *   String formattedSinkName = ConfigServiceV2Api.formatSinkName("[PROJECT]", "[SINK]");
+ *   LogSink response = configServiceV2Api.getSink(formattedSinkName);
+ * }
+ * </code>
+ * </pre>
+ *
+ * ===================
+ * MetricsServiceV2Api
+ * ===================
+ *
+ * Service Description: Service for configuring logs-based metrics.
+ *
+ * Sample for MetricsServiceV2Api:
+ * <pre>
+ * <code>
+ * try (MetricsServiceV2Api metricsServiceV2Api = MetricsServiceV2Api.create()) {
+ *   String formattedMetricName = MetricsServiceV2Api.formatMetricName("[PROJECT]", "[METRIC]");
+ *   LogMetric response = metricsServiceV2Api.getLogMetric(formattedMetricName);
+ * }
+ * </code>
+ * </pre>
  *
  * ===================
  * LoggingServiceV2Api
@@ -41,46 +59,12 @@
  * Sample for LoggingServiceV2Api:
  * <pre>
  * <code>
- * try (LoggingServiceV2Api loggingServiceV2Api = LoggingServiceV2Api.createWithDefaults()) {
+ * try (LoggingServiceV2Api loggingServiceV2Api = LoggingServiceV2Api.create()) {
  *   String formattedLogName = LoggingServiceV2Api.formatLogName("[PROJECT]", "[LOG]");
  *   loggingServiceV2Api.deleteLog(formattedLogName);
  * }
  * </code>
  * </pre>
  *
- * ==================
- * ConfigServiceV2Api
- * ==================
- *
- * Service Description:
- *
- * Sample for ConfigServiceV2Api:
- * <pre>
- * <code>
- * try (ConfigServiceV2Api configServiceV2Api = ConfigServiceV2Api.createWithDefaults()) {
- *   String formattedProjectName = ConfigServiceV2Api.formatProjectName("[PROJECT]");
- *   ListSinksResponse response = configServiceV2Api.listSinks(formattedProjectName);
- * }
- * </code>
- * </pre>
- *
- * ===================
- * MetricsServiceV2Api
- * ===================
- *
- * Service Description:
- *
- * Sample for MetricsServiceV2Api:
- * <pre>
- * <code>
- * try (MetricsServiceV2Api metricsServiceV2Api = MetricsServiceV2Api.createWithDefaults()) {
- *   String formattedProjectName = MetricsServiceV2Api.formatProjectName("[PROJECT]");
- *   ListLogMetricsResponse response = metricsServiceV2Api.listLogMetrics(formattedProjectName);
- * }
- * </code>
- * </pre>
- *
- * <!-- manual edit -->
- * <!-- end manual edit -->
  */
 package com.google.cloud.logging.spi.v2;

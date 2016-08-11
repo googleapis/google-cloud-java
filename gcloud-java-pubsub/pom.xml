@@ -29,13 +29,13 @@
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
-      <artifactId>grpc-pubsub-v1</artifactId>
-      <version>0.0.2</version>
+      <artifactId>grpc-google-pubsub-v1</artifactId>
+      <version>0.0.7</version>
     </dependency>
     <dependency>
       <groupId>io.grpc</groupId>
       <artifactId>grpc-all</artifactId>
-      <version>0.14.1</version>
+      <version>0.15.0</version>
     </dependency>
     <dependency>
       <groupId>com.google.auto.value</groupId>

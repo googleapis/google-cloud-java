@@ -11,26 +11,6 @@
  * or implied. See the License for the specific language governing permissions and limitations under
  * the License.
  */
-
-/*
- * EDITING INSTRUCTIONS
- * This file was generated from the file
- * https://github.com/google/googleapis/blob/master/google/pubsub/v1/pubsub.proto
- * and updates to that file get reflected here through a refresh process.
- * For the short term, the refresh process will only be runnable by Google engineers.
- * Manual additions are allowed because the refresh process performs
- * a 3-way merge in order to preserve those manual additions. In order to not
- * break the refresh process, only certain types of modifications are
- * allowed.
- *
- * Allowed modifications - currently these are the only types allowed:
- * 1. New methods (these should be added to the end of the class)
- * 2. New imports
- * 3. Additional documentation between "manual edit" demarcations
- *
- * Happy editing!
- */
-
 package com.google.cloud.pubsub.spi.v1;
 
 import com.google.api.gax.core.ConnectionSettings;
@@ -71,16 +51,14 @@ import java.util.List;
 import java.util.concurrent.ScheduledExecutorService;
 import org.joda.time.Duration;
 
-// Manually-added imports: add custom (non-generated) imports after this point.
-
-// AUTO-GENERATED DOCUMENTATION AND CLASS - see instructions at the top of the file for editing.
+// AUTO-GENERATED DOCUMENTATION AND CLASS
 /**
  * Settings class to configure an instance of {@link PublisherApi}.
  *
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- * <li>The default service address (pubsub-experimental.googleapis.com) and default port (443)
+ * <li>The default service address (pubsub.googleapis.com) and default port (443)
  * are used.
  * <li>Credentials are acquired automatically through Application Default Credentials.
  * <li>Retries are configured for idempotent methods but not for non-idempotent methods.
@@ -88,13 +66,13 @@ import org.joda.time.Duration;
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders.
  * When build() is called, the tree of builders is called to create the complete settings
- * object. For example, to set the total timeout of CreateTopic to 30 seconds:
+ * object. For example, to set the total timeout of createTopic to 30 seconds:
  *
  * <pre>
  * <code>
  * PublisherSettings.Builder publisherSettingsBuilder =
  *     PublisherSettings.defaultBuilder();
- * publisherSettingsBuilder.CreateTopicSettings().getRetrySettingsBuilder()
+ * publisherSettingsBuilder.createTopicSettings().getRetrySettingsBuilder()
  *     .setTotalTimeout(Duration.standardSeconds(30));
  * PublisherSettings publisherSettings = publisherSettingsBuilder.build();
  * </code>
@@ -102,30 +80,23 @@ import org.joda.time.Duration;
  */
 @javax.annotation.Generated("by GAPIC")
 public class PublisherSettings extends ServiceApiSettings {
-
   /**
    * The default address of the service.
-   *
-   * <!-- manual edit -->
-   * <!-- end manual edit -->
    */
-  public static final String DEFAULT_SERVICE_ADDRESS = "pubsub-experimental.googleapis.com";
+  private static final String DEFAULT_SERVICE_ADDRESS = "pubsub.googleapis.com";
 
   /**
    * The default port of the service.
-   *
-   * <!-- manual edit -->
-   * <!-- end manual edit -->
    */
-  public static final int DEFAULT_SERVICE_PORT = 443;
+  private static final int DEFAULT_SERVICE_PORT = 443;
 
   /**
    * The default scopes of the service.
    */
-  public static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
+  private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
       ImmutableList.<String>builder()
-          .add("https://www.googleapis.com/auth/pubsub")
           .add("https://www.googleapis.com/auth/cloud-platform")
+          .add("https://www.googleapis.com/auth/pubsub")
           .build();
 
   /**
@@ -143,11 +114,9 @@ public class PublisherSettings extends ServiceApiSettings {
   private final SimpleCallSettings<GetTopicRequest, Topic> getTopicSettings;
   private final PageStreamingCallSettings<ListTopicsRequest, ListTopicsResponse, Topic>
       listTopicsSettings;
-
   private final PageStreamingCallSettings<
           ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse, String>
       listTopicSubscriptionsSettings;
-
   private final SimpleCallSettings<DeleteTopicRequest, Empty> deleteTopicSettings;
 
   /**
@@ -193,6 +162,27 @@ public class PublisherSettings extends ServiceApiSettings {
    */
   public SimpleCallSettings<DeleteTopicRequest, Empty> deleteTopicSettings() {
     return deleteTopicSettings;
+  }
+
+  /**
+   * Returns the default service address.
+   */
+  public static String getDefaultServiceAddress() {
+    return DEFAULT_SERVICE_ADDRESS;
+  }
+
+  /**
+   * Returns the default service port.
+   */
+  public static int getDefaultServicePort() {
+    return DEFAULT_SERVICE_PORT;
+  }
+
+  /**
+   * Returns the default service scopes.
+   */
+  public static ImmutableList<String> getDefaultServiceScopes() {
+    return DEFAULT_SERVICE_SCOPES;
   }
 
   /**
@@ -290,7 +280,7 @@ public class PublisherSettings extends ServiceApiSettings {
       new BundlingDescriptor<PublishRequest, PublishResponse>() {
         @Override
         public String getBundlePartitionKey(PublishRequest request) {
-          return request.getTopic();
+          return request.getTopic() + "|";
         }
 
         @Override
@@ -373,6 +363,11 @@ public class PublisherSettings extends ServiceApiSettings {
           Sets.immutableEnumSet(
               Lists.<Status.Code>newArrayList(
                   Status.Code.DEADLINE_EXCEEDED, Status.Code.UNAVAILABLE)));
+      definitions.put(
+          "one_plus_delivery",
+          Sets.immutableEnumSet(
+              Lists.<Status.Code>newArrayList(
+                  Status.Code.DEADLINE_EXCEEDED, Status.Code.UNAVAILABLE)));
       definitions.put("non_idempotent", Sets.immutableEnumSet(Lists.<Status.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
@@ -385,13 +380,23 @@ public class PublisherSettings extends ServiceApiSettings {
       settingsBuilder =
           RetrySettings.newBuilder()
               .setInitialRetryDelay(Duration.millis(100L))
-              .setRetryDelayMultiplier(1.2)
-              .setMaxRetryDelay(Duration.millis(1000L))
-              .setInitialRpcTimeout(Duration.millis(2000L))
-              .setRpcTimeoutMultiplier(1.5)
-              .setMaxRpcTimeout(Duration.millis(30000L))
-              .setTotalTimeout(Duration.millis(45000L));
+              .setRetryDelayMultiplier(1.3)
+              .setMaxRetryDelay(Duration.millis(60000L))
+              .setInitialRpcTimeout(Duration.millis(60000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.millis(60000L))
+              .setTotalTimeout(Duration.millis(600000L));
       definitions.put("default", settingsBuilder);
+      settingsBuilder =
+          RetrySettings.newBuilder()
+              .setInitialRetryDelay(Duration.millis(100L))
+              .setRetryDelayMultiplier(1.3)
+              .setMaxRetryDelay(Duration.millis(60000L))
+              .setInitialRpcTimeout(Duration.millis(12000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeout(Duration.millis(12000L))
+              .setTotalTimeout(Duration.millis(600000L));
+      definitions.put("messaging", settingsBuilder);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -429,6 +434,7 @@ public class PublisherSettings extends ServiceApiSettings {
 
     private static Builder createDefault() {
       Builder builder = new Builder();
+
       builder
           .createTopicSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
@@ -437,16 +443,16 @@ public class PublisherSettings extends ServiceApiSettings {
       builder
           .publishSettings()
           .getBundlingSettingsBuilder()
-          .setElementCountThreshold(800)
+          .setElementCountThreshold(10)
           .setElementCountLimit(1000)
-          .setRequestByteThreshold(8388608)
+          .setRequestByteThreshold(1024)
           .setRequestByteLimit(10485760)
-          .setDelayThreshold(Duration.millis(100))
+          .setDelayThreshold(Duration.millis(10))
           .setBlockingCallCountThreshold(1);
       builder
           .publishSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
-          .setRetrySettingsBuilder(RETRY_PARAM_DEFINITIONS.get("default"));
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("one_plus_delivery"))
+          .setRetrySettingsBuilder(RETRY_PARAM_DEFINITIONS.get("messaging"));
 
       builder
           .getTopicSettings()

@@ -123,11 +123,11 @@ public class DefaultLoggingRpc implements LoggingRpc {
       } else {
         GoogleCredentials credentials = options.authCredentials().credentials();
         confBuilder.provideChannelWith(
-            credentials.createScoped(ConfigServiceV2Settings.DEFAULT_SERVICE_SCOPES));
+            credentials.createScoped(ConfigServiceV2Settings.getDefaultServiceScopes()));
         logBuilder.provideChannelWith(
-            credentials.createScoped(LoggingServiceV2Settings.DEFAULT_SERVICE_SCOPES));
+            credentials.createScoped(LoggingServiceV2Settings.getDefaultServiceScopes()));
         metricsBuilder.provideChannelWith(
-            credentials.createScoped(MetricsServiceV2Settings.DEFAULT_SERVICE_SCOPES));
+            credentials.createScoped(MetricsServiceV2Settings.getDefaultServiceScopes()));
       }
       ApiCallSettings.Builder callBuilder = apiCallSettings(options);
       confBuilder.applyToAllApiMethods(callBuilder);

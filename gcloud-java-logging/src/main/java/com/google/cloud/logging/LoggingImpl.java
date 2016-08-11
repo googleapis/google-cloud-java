@@ -195,7 +195,7 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
   @Override
   public Future<Sink> createAsync(SinkInfo sink) {
     CreateSinkRequest request = CreateSinkRequest.newBuilder()
-        .setProjectName(ConfigServiceV2Api.formatProjectName(options().projectId()))
+        .setParent(ConfigServiceV2Api.formatProjectName(options().projectId()))
         .setSink(sink.toPb(options().projectId()))
         .build();
     return lazyTransform(rpc.create(request), Sink.fromPbFunction(this));
@@ -231,7 +231,7 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
   private static ListSinksRequest listSinksRequest(LoggingOptions serviceOptions,
       Map<Option.OptionType, ?> options) {
     ListSinksRequest.Builder builder = ListSinksRequest.newBuilder();
-    builder.setProjectName(ConfigServiceV2Api.formatProjectName(serviceOptions.projectId()));
+    builder.setParent(ConfigServiceV2Api.formatProjectName(serviceOptions.projectId()));
     Integer pageSize = PAGE_SIZE.get(options);
     String pageToken = PAGE_TOKEN.get(options);
     if (pageSize != null) {
@@ -352,7 +352,7 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
   @Override
   public Future<Metric> createAsync(MetricInfo metric) {
     CreateLogMetricRequest request = CreateLogMetricRequest.newBuilder()
-        .setProjectName(MetricsServiceV2Api.formatProjectName(options().projectId()))
+        .setParent(MetricsServiceV2Api.formatProjectName(options().projectId()))
         .setMetric(metric.toPb())
         .build();
     return lazyTransform(rpc.create(request), Metric.fromPbFunction(this));
@@ -388,7 +388,7 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
   private static ListLogMetricsRequest listMetricsRequest(LoggingOptions serviceOptions,
       Map<Option.OptionType, ?> options) {
     ListLogMetricsRequest.Builder builder = ListLogMetricsRequest.newBuilder();
-    builder.setProjectName(MetricsServiceV2Api.formatProjectName(serviceOptions.projectId()));
+    builder.setParent(MetricsServiceV2Api.formatProjectName(serviceOptions.projectId()));
     Integer pageSize = PAGE_SIZE.get(options);
     String pageToken = PAGE_TOKEN.get(options);
     if (pageSize != null) {
