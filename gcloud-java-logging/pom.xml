@@ -29,18 +29,13 @@
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
-      <artifactId>grpc-logging-type</artifactId>
-      <version>0.0.2</version>
-    </dependency>
-    <dependency>
-      <groupId>com.google.api.grpc</groupId>
-      <artifactId>grpc-logging-v2</artifactId>
-      <version>0.0.2</version>
+      <artifactId>grpc-google-logging-v2</artifactId>
+      <version>0.0.7</version>
     </dependency>
     <dependency>
       <groupId>io.grpc</groupId>
       <artifactId>grpc-all</artifactId>
-      <version>0.14.0</version>
+      <version>0.15.0</version>
     </dependency>
     <dependency>
       <groupId>com.google.auto.value</groupId>

@@ -142,15 +142,15 @@ public class DefaultPubSubRpc implements PubSubRpc {
         GoogleCredentials credentials = options.authCredentials().credentials();
         ConnectionSettings pubConnectionSettings = ConnectionSettings.newBuilder()
             .setServiceAddress(options.host())
-            .setPort(PublisherSettings.DEFAULT_SERVICE_PORT)
+            .setPort(PublisherSettings.getDefaultServicePort())
             .provideCredentialsWith(
-                credentials.createScoped(PublisherSettings.DEFAULT_SERVICE_SCOPES))
+                credentials.createScoped(PublisherSettings.getDefaultServiceScopes()))
             .build();
         ConnectionSettings subConnectionSettings = ConnectionSettings.newBuilder()
             .setServiceAddress(options.host())
-            .setPort(SubscriberSettings.DEFAULT_SERVICE_PORT)
+            .setPort(SubscriberSettings.getDefaultServicePort())
             .provideCredentialsWith(
-                credentials.createScoped(SubscriberSettings.DEFAULT_SERVICE_SCOPES))
+                credentials.createScoped(SubscriberSettings.getDefaultServiceScopes()))
             .build();
         pubBuilder.provideChannelWith(pubConnectionSettings);
         subBuilder.provideChannelWith(subConnectionSettings);

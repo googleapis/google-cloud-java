@@ -169,7 +169,7 @@ public class LoggingImplTest {
     LogSink sinkPb = SINK_INFO.toPb(PROJECT);
     Future<LogSink> response = Futures.immediateFuture(sinkPb);
     CreateSinkRequest request = CreateSinkRequest.newBuilder()
-        .setProjectName(PROJECT_PB)
+        .setParent(PROJECT_PB)
         .setSink(sinkPb)
         .build();
     EasyMock.expect(loggingRpcMock.create(request)).andReturn(response);
@@ -184,7 +184,7 @@ public class LoggingImplTest {
     LogSink sinkPb = SINK_INFO.toPb(PROJECT);
     Future<LogSink> response = Futures.immediateFuture(sinkPb);
     CreateSinkRequest request = CreateSinkRequest.newBuilder()
-        .setProjectName(PROJECT_PB)
+        .setParent(PROJECT_PB)
         .setSink(sinkPb)
         .build();
     EasyMock.expect(loggingRpcMock.create(request)).andReturn(response);
@@ -313,7 +313,7 @@ public class LoggingImplTest {
     String cursor = "cursor";
     EasyMock.replay(rpcFactoryMock);
     logging = options.service();
-    ListSinksRequest request = ListSinksRequest.newBuilder().setProjectName(PROJECT_PB).build();
+    ListSinksRequest request = ListSinksRequest.newBuilder().setParent(PROJECT_PB).build();
     List<Sink> sinkList = ImmutableList.of(
         new Sink(logging, new SinkInfo.BuilderImpl(SINK_INFO)),
         new Sink(logging, new SinkInfo.BuilderImpl(SINK_INFO)));
@@ -334,9 +334,9 @@ public class LoggingImplTest {
     String cursor1 = "cursor";
     EasyMock.replay(rpcFactoryMock);
     logging = options.service();
-    ListSinksRequest request1 = ListSinksRequest.newBuilder().setProjectName(PROJECT_PB).build();
+    ListSinksRequest request1 = ListSinksRequest.newBuilder().setParent(PROJECT_PB).build();
     ListSinksRequest request2 = ListSinksRequest.newBuilder()
-        .setProjectName(PROJECT_PB)
+        .setParent(PROJECT_PB)
         .setPageToken(cursor1)
         .build();
     List<Sink> sinkList1 = ImmutableList.of(
@@ -370,7 +370,7 @@ public class LoggingImplTest {
   public void testListSinksEmpty() {
     EasyMock.replay(rpcFactoryMock);
     logging = options.service();
-    ListSinksRequest request = ListSinksRequest.newBuilder().setProjectName(PROJECT_PB).build();
+    ListSinksRequest request = ListSinksRequest.newBuilder().setParent(PROJECT_PB).build();
     List<Sink> sinkList = ImmutableList.of();
     ListSinksResponse response = ListSinksResponse.newBuilder()
         .setNextPageToken("")
@@ -393,7 +393,7 @@ public class LoggingImplTest {
     ListSinksRequest request = ListSinksRequest.newBuilder()
         .setPageToken(cursor)
         .setPageSize(42)
-        .setProjectName(PROJECT_PB)
+        .setParent(PROJECT_PB)
         .build();
     List<Sink> sinkList = ImmutableList.of(
         new Sink(logging, new SinkInfo.BuilderImpl(SINK_INFO)),
@@ -415,7 +415,7 @@ public class LoggingImplTest {
     String cursor = "cursor";
     EasyMock.replay(rpcFactoryMock);
     logging = options.service();
-    ListSinksRequest request = ListSinksRequest.newBuilder().setProjectName(PROJECT_PB).build();
+    ListSinksRequest request = ListSinksRequest.newBuilder().setParent(PROJECT_PB).build();
     List<Sink> sinkList = ImmutableList.of(
         new Sink(logging, new SinkInfo.BuilderImpl(SINK_INFO)),
         new Sink(logging, new SinkInfo.BuilderImpl(SINK_INFO)));
@@ -436,9 +436,9 @@ public class LoggingImplTest {
     String cursor1 = "cursor";
     EasyMock.replay(rpcFactoryMock);
     logging = options.service();
-    ListSinksRequest request1 = ListSinksRequest.newBuilder().setProjectName(PROJECT_PB).build();
+    ListSinksRequest request1 = ListSinksRequest.newBuilder().setParent(PROJECT_PB).build();
     ListSinksRequest request2 = ListSinksRequest.newBuilder()
-        .setProjectName(PROJECT_PB)
+        .setParent(PROJECT_PB)
         .setPageToken(cursor1)
         .build();
     List<Sink> sinkList1 = ImmutableList.of(
@@ -472,7 +472,7 @@ public class LoggingImplTest {
   public void testListSinksAsyncEmpty() throws ExecutionException, InterruptedException {
     EasyMock.replay(rpcFactoryMock);
     logging = options.service();
-    ListSinksRequest request = ListSinksRequest.newBuilder().setProjectName(PROJECT_PB).build();
+    ListSinksRequest request = ListSinksRequest.newBuilder().setParent(PROJECT_PB).build();
     List<Sink> sinkList = ImmutableList.of();
     ListSinksResponse response = ListSinksResponse.newBuilder()
         .setNextPageToken("")
@@ -495,7 +495,7 @@ public class LoggingImplTest {
     ListSinksRequest request = ListSinksRequest.newBuilder()
         .setPageToken(cursor)
         .setPageSize(42)
-        .setProjectName(PROJECT_PB)
+        .setParent(PROJECT_PB)
         .build();
     List<Sink> sinkList = ImmutableList.of(
         new Sink(logging, new SinkInfo.BuilderImpl(SINK_INFO)),
@@ -518,7 +518,7 @@ public class LoggingImplTest {
     LogMetric metricPb = METRIC_INFO.toPb();
     Future<LogMetric> response = Futures.immediateFuture(metricPb);
     CreateLogMetricRequest request = CreateLogMetricRequest.newBuilder()
-        .setProjectName(PROJECT_PB)
+        .setParent(PROJECT_PB)
         .setMetric(metricPb)
         .build();
     EasyMock.expect(loggingRpcMock.create(request)).andReturn(response);
@@ -533,7 +533,7 @@ public class LoggingImplTest {
     LogMetric metricPb = METRIC_INFO.toPb();
     Future<LogMetric> response = Futures.immediateFuture(metricPb);
     CreateLogMetricRequest request = CreateLogMetricRequest.newBuilder()
-        .setProjectName(PROJECT_PB)
+        .setParent(PROJECT_PB)
         .setMetric(metricPb)
         .build();
     EasyMock.expect(loggingRpcMock.create(request)).andReturn(response);
@@ -671,7 +671,7 @@ public class LoggingImplTest {
     EasyMock.replay(rpcFactoryMock);
     logging = options.service();
     ListLogMetricsRequest request =
-        ListLogMetricsRequest.newBuilder().setProjectName(PROJECT_PB).build();
+        ListLogMetricsRequest.newBuilder().setParent(PROJECT_PB).build();
     List<Metric> sinkList = ImmutableList.of(
         new Metric(logging, new MetricInfo.BuilderImpl(METRIC_INFO)),
         new Metric(logging, new MetricInfo.BuilderImpl(METRIC_INFO)));
@@ -693,9 +693,9 @@ public class LoggingImplTest {
     EasyMock.replay(rpcFactoryMock);
     logging = options.service();
     ListLogMetricsRequest request1 =
-        ListLogMetricsRequest.newBuilder().setProjectName(PROJECT_PB).build();
+        ListLogMetricsRequest.newBuilder().setParent(PROJECT_PB).build();
     ListLogMetricsRequest request2 = ListLogMetricsRequest.newBuilder()
-        .setProjectName(PROJECT_PB)
+        .setParent(PROJECT_PB)
         .setPageToken(cursor1)
         .build();
     List<Metric> sinkList1 = ImmutableList.of(
@@ -730,7 +730,7 @@ public class LoggingImplTest {
     EasyMock.replay(rpcFactoryMock);
     logging = options.service();
     ListLogMetricsRequest request =
-        ListLogMetricsRequest.newBuilder().setProjectName(PROJECT_PB).build();
+        ListLogMetricsRequest.newBuilder().setParent(PROJECT_PB).build();
     List<Metric> sinkList = ImmutableList.of();
     ListLogMetricsResponse response = ListLogMetricsResponse.newBuilder()
         .setNextPageToken("")
@@ -753,7 +753,7 @@ public class LoggingImplTest {
     ListLogMetricsRequest request = ListLogMetricsRequest.newBuilder()
         .setPageToken(cursor)
         .setPageSize(42)
-        .setProjectName(PROJECT_PB)
+        .setParent(PROJECT_PB)
         .build();
     List<Metric> sinkList = ImmutableList.of(
         new Metric(logging, new MetricInfo.BuilderImpl(METRIC_INFO)),
@@ -776,7 +776,7 @@ public class LoggingImplTest {
     EasyMock.replay(rpcFactoryMock);
     logging = options.service();
     ListLogMetricsRequest request =
-        ListLogMetricsRequest.newBuilder().setProjectName(PROJECT_PB).build();
+        ListLogMetricsRequest.newBuilder().setParent(PROJECT_PB).build();
     List<Metric> sinkList = ImmutableList.of(
         new Metric(logging, new MetricInfo.BuilderImpl(METRIC_INFO)),
         new Metric(logging, new MetricInfo.BuilderImpl(METRIC_INFO)));
@@ -798,9 +798,9 @@ public class LoggingImplTest {
     EasyMock.replay(rpcFactoryMock);
     logging = options.service();
     ListLogMetricsRequest request1 =
-        ListLogMetricsRequest.newBuilder().setProjectName(PROJECT_PB).build();
+        ListLogMetricsRequest.newBuilder().setParent(PROJECT_PB).build();
     ListLogMetricsRequest request2 = ListLogMetricsRequest.newBuilder()
-        .setProjectName(PROJECT_PB)
+        .setParent(PROJECT_PB)
         .setPageToken(cursor1)
         .build();
     List<Metric> sinkList1 = ImmutableList.of(
@@ -835,7 +835,7 @@ public class LoggingImplTest {
     EasyMock.replay(rpcFactoryMock);
     logging = options.service();
     ListLogMetricsRequest request =
-        ListLogMetricsRequest.newBuilder().setProjectName(PROJECT_PB).build();
+        ListLogMetricsRequest.newBuilder().setParent(PROJECT_PB).build();
     List<Metric> sinkList = ImmutableList.of();
     ListLogMetricsResponse response = ListLogMetricsResponse.newBuilder()
         .setNextPageToken("")
@@ -858,7 +858,7 @@ public class LoggingImplTest {
     ListLogMetricsRequest request = ListLogMetricsRequest.newBuilder()
         .setPageToken(cursor)
         .setPageSize(42)
-        .setProjectName(PROJECT_PB)
+        .setParent(PROJECT_PB)
         .build();
     List<Metric> sinkList = ImmutableList.of(
         new Metric(logging, new MetricInfo.BuilderImpl(METRIC_INFO)),

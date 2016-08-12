@@ -20,6 +20,7 @@ import com.google.cloud.GrpcServiceOptions;
 import com.google.cloud.pubsub.spi.DefaultPubSubRpc;
 import com.google.cloud.pubsub.spi.PubSubRpc;
 import com.google.cloud.pubsub.spi.PubSubRpcFactory;
+import com.google.cloud.pubsub.spi.v1.PublisherSettings;
 import com.google.common.collect.ImmutableSet;
 
 import java.io.IOException;
@@ -31,7 +32,7 @@ public class PubSubOptions extends GrpcServiceOptions<PubSub, PubSubRpc, PubSubO
   private static final long serialVersionUID = 5640180400046623305L;
   private static final String PUBSUB_SCOPE = "https://www.googleapis.com/auth/pubsub";
   private static final Set<String> SCOPES = ImmutableSet.of(PUBSUB_SCOPE);
-  private static final String DEFAULT_HOST = "pubsub.googleapis.com";
+  private static final String DEFAULT_HOST = PublisherSettings.getDefaultServiceAddress();
 
   public static class DefaultPubSubFactory implements PubSubFactory {
     private static final PubSubFactory INSTANCE = new DefaultPubSubFactory();
