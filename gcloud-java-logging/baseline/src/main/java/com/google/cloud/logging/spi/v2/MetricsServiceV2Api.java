@@ -102,7 +102,7 @@ public class MetricsServiceV2Api implements AutoCloseable {
     return settings;
   }
 
-  private static final PathTemplate PROJECT_PATH_TEMPLATE =
+  private static final PathTemplate PARENT_PATH_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding("projects/{project}");
 
   private static final PathTemplate METRIC_PATH_TEMPLATE =
@@ -110,10 +110,10 @@ public class MetricsServiceV2Api implements AutoCloseable {
 
   /**
    * Formats a string containing the fully-qualified path to represent
-   * a project resource.
+   * a parent resource.
    */
-  public static final String formatProjectName(String project) {
-    return PROJECT_PATH_TEMPLATE.instantiate("project", project);
+  public static final String formatParentName(String project) {
+    return PARENT_PATH_TEMPLATE.instantiate("project", project);
   }
 
   /**
@@ -128,10 +128,10 @@ public class MetricsServiceV2Api implements AutoCloseable {
 
   /**
    * Parses the project from the given fully-qualified path which
-   * represents a project resource.
+   * represents a parent resource.
    */
-  public static final String parseProjectFromProjectName(String projectName) {
-    return PROJECT_PATH_TEMPLATE.parse(projectName).get("project");
+  public static final String parseProjectFromParentName(String parentName) {
+    return PARENT_PATH_TEMPLATE.parse(parentName).get("project");
   }
 
   /**
@@ -218,7 +218,7 @@ public class MetricsServiceV2Api implements AutoCloseable {
    * Sample code:
    * <pre><code>
    * try (MetricsServiceV2Api metricsServiceV2Api = MetricsServiceV2Api.create()) {
-   *   String formattedParent = MetricsServiceV2Api.formatProjectName("[PROJECT]");
+   *   String formattedParent = MetricsServiceV2Api.formatParentName("[PROJECT]");
    *   for (LogMetric element : metricsServiceV2Api.listLogMetrics(formattedParent)) {
    *     // doThingsWith(element);
    *   }
@@ -230,7 +230,7 @@ public class MetricsServiceV2Api implements AutoCloseable {
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final PageAccessor<LogMetric> listLogMetrics(String parent) {
-    PROJECT_PATH_TEMPLATE.validate(parent, "listLogMetrics");
+    PARENT_PATH_TEMPLATE.validate(parent, "listLogMetrics");
     ListLogMetricsRequest request = ListLogMetricsRequest.newBuilder().setParent(parent).build();
     return listLogMetrics(request);
   }
@@ -242,7 +242,7 @@ public class MetricsServiceV2Api implements AutoCloseable {
    * Sample code:
    * <pre><code>
    * try (MetricsServiceV2Api metricsServiceV2Api = MetricsServiceV2Api.create()) {
-   *   String formattedParent = MetricsServiceV2Api.formatProjectName("[PROJECT]");
+   *   String formattedParent = MetricsServiceV2Api.formatParentName("[PROJECT]");
    *   ListLogMetricsRequest request = ListLogMetricsRequest.newBuilder()
    *     .setParent(formattedParent)
    *     .build();
@@ -266,7 +266,7 @@ public class MetricsServiceV2Api implements AutoCloseable {
    * Sample code:
    * <pre><code>
    * try (MetricsServiceV2Api metricsServiceV2Api = MetricsServiceV2Api.create()) {
-   *   String formattedParent = MetricsServiceV2Api.formatProjectName("[PROJECT]");
+   *   String formattedParent = MetricsServiceV2Api.formatParentName("[PROJECT]");
    *   ListLogMetricsRequest request = ListLogMetricsRequest.newBuilder()
    *     .setParent(formattedParent)
    *     .build();
@@ -290,7 +290,7 @@ public class MetricsServiceV2Api implements AutoCloseable {
    * Sample code:
    * <pre><code>
    * try (MetricsServiceV2Api metricsServiceV2Api = MetricsServiceV2Api.create()) {
-   *   String formattedParent = MetricsServiceV2Api.formatProjectName("[PROJECT]");
+   *   String formattedParent = MetricsServiceV2Api.formatParentName("[PROJECT]");
    *   ListLogMetricsRequest request = ListLogMetricsRequest.newBuilder()
    *     .setParent(formattedParent)
    *     .build();
@@ -386,7 +386,7 @@ public class MetricsServiceV2Api implements AutoCloseable {
    * Sample code:
    * <pre><code>
    * try (MetricsServiceV2Api metricsServiceV2Api = MetricsServiceV2Api.create()) {
-   *   String formattedParent = MetricsServiceV2Api.formatProjectName("[PROJECT]");
+   *   String formattedParent = MetricsServiceV2Api.formatParentName("[PROJECT]");
    *   LogMetric metric = LogMetric.newBuilder().build();
    *   LogMetric response = metricsServiceV2Api.createLogMetric(formattedParent, metric);
    * }
@@ -401,7 +401,7 @@ public class MetricsServiceV2Api implements AutoCloseable {
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final LogMetric createLogMetric(String parent, LogMetric metric) {
-    PROJECT_PATH_TEMPLATE.validate(parent, "createLogMetric");
+    PARENT_PATH_TEMPLATE.validate(parent, "createLogMetric");
     CreateLogMetricRequest request =
         CreateLogMetricRequest.newBuilder().setParent(parent).setMetric(metric).build();
     return createLogMetric(request);
@@ -414,7 +414,7 @@ public class MetricsServiceV2Api implements AutoCloseable {
    * Sample code:
    * <pre><code>
    * try (MetricsServiceV2Api metricsServiceV2Api = MetricsServiceV2Api.create()) {
-   *   String formattedParent = MetricsServiceV2Api.formatProjectName("[PROJECT]");
+   *   String formattedParent = MetricsServiceV2Api.formatParentName("[PROJECT]");
    *   LogMetric metric = LogMetric.newBuilder().build();
    *   CreateLogMetricRequest request = CreateLogMetricRequest.newBuilder()
    *     .setParent(formattedParent)
@@ -438,7 +438,7 @@ public class MetricsServiceV2Api implements AutoCloseable {
    * Sample code:
    * <pre><code>
    * try (MetricsServiceV2Api metricsServiceV2Api = MetricsServiceV2Api.create()) {
-   *   String formattedParent = MetricsServiceV2Api.formatProjectName("[PROJECT]");
+   *   String formattedParent = MetricsServiceV2Api.formatParentName("[PROJECT]");
    *   LogMetric metric = LogMetric.newBuilder().build();
    *   CreateLogMetricRequest request = CreateLogMetricRequest.newBuilder()
    *     .setParent(formattedParent)

@@ -102,7 +102,7 @@ public class ConfigServiceV2Api implements AutoCloseable {
     return settings;
   }
 
-  private static final PathTemplate PROJECT_PATH_TEMPLATE =
+  private static final PathTemplate PARENT_PATH_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding("projects/{project}");
 
   private static final PathTemplate SINK_PATH_TEMPLATE =
@@ -110,10 +110,10 @@ public class ConfigServiceV2Api implements AutoCloseable {
 
   /**
    * Formats a string containing the fully-qualified path to represent
-   * a project resource.
+   * a parent resource.
    */
-  public static final String formatProjectName(String project) {
-    return PROJECT_PATH_TEMPLATE.instantiate("project", project);
+  public static final String formatParentName(String project) {
+    return PARENT_PATH_TEMPLATE.instantiate("project", project);
   }
 
   /**
@@ -128,10 +128,10 @@ public class ConfigServiceV2Api implements AutoCloseable {
 
   /**
    * Parses the project from the given fully-qualified path which
-   * represents a project resource.
+   * represents a parent resource.
    */
-  public static final String parseProjectFromProjectName(String projectName) {
-    return PROJECT_PATH_TEMPLATE.parse(projectName).get("project");
+  public static final String parseProjectFromParentName(String parentName) {
+    return PARENT_PATH_TEMPLATE.parse(parentName).get("project");
   }
 
   /**
@@ -217,7 +217,7 @@ public class ConfigServiceV2Api implements AutoCloseable {
    * Sample code:
    * <pre><code>
    * try (ConfigServiceV2Api configServiceV2Api = ConfigServiceV2Api.create()) {
-   *   String formattedParent = ConfigServiceV2Api.formatProjectName("[PROJECT]");
+   *   String formattedParent = ConfigServiceV2Api.formatParentName("[PROJECT]");
    *   for (LogSink element : configServiceV2Api.listSinks(formattedParent)) {
    *     // doThingsWith(element);
    *   }
@@ -229,7 +229,7 @@ public class ConfigServiceV2Api implements AutoCloseable {
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final PageAccessor<LogSink> listSinks(String parent) {
-    PROJECT_PATH_TEMPLATE.validate(parent, "listSinks");
+    PARENT_PATH_TEMPLATE.validate(parent, "listSinks");
     ListSinksRequest request = ListSinksRequest.newBuilder().setParent(parent).build();
     return listSinks(request);
   }
@@ -241,7 +241,7 @@ public class ConfigServiceV2Api implements AutoCloseable {
    * Sample code:
    * <pre><code>
    * try (ConfigServiceV2Api configServiceV2Api = ConfigServiceV2Api.create()) {
-   *   String formattedParent = ConfigServiceV2Api.formatProjectName("[PROJECT]");
+   *   String formattedParent = ConfigServiceV2Api.formatParentName("[PROJECT]");
    *   ListSinksRequest request = ListSinksRequest.newBuilder()
    *     .setParent(formattedParent)
    *     .build();
@@ -265,7 +265,7 @@ public class ConfigServiceV2Api implements AutoCloseable {
    * Sample code:
    * <pre><code>
    * try (ConfigServiceV2Api configServiceV2Api = ConfigServiceV2Api.create()) {
-   *   String formattedParent = ConfigServiceV2Api.formatProjectName("[PROJECT]");
+   *   String formattedParent = ConfigServiceV2Api.formatParentName("[PROJECT]");
    *   ListSinksRequest request = ListSinksRequest.newBuilder()
    *     .setParent(formattedParent)
    *     .build();
@@ -288,7 +288,7 @@ public class ConfigServiceV2Api implements AutoCloseable {
    * Sample code:
    * <pre><code>
    * try (ConfigServiceV2Api configServiceV2Api = ConfigServiceV2Api.create()) {
-   *   String formattedParent = ConfigServiceV2Api.formatProjectName("[PROJECT]");
+   *   String formattedParent = ConfigServiceV2Api.formatParentName("[PROJECT]");
    *   ListSinksRequest request = ListSinksRequest.newBuilder()
    *     .setParent(formattedParent)
    *     .build();
@@ -383,7 +383,7 @@ public class ConfigServiceV2Api implements AutoCloseable {
    * Sample code:
    * <pre><code>
    * try (ConfigServiceV2Api configServiceV2Api = ConfigServiceV2Api.create()) {
-   *   String formattedParent = ConfigServiceV2Api.formatProjectName("[PROJECT]");
+   *   String formattedParent = ConfigServiceV2Api.formatParentName("[PROJECT]");
    *   LogSink sink = LogSink.newBuilder().build();
    *   LogSink response = configServiceV2Api.createSink(formattedParent, sink);
    * }
@@ -398,7 +398,7 @@ public class ConfigServiceV2Api implements AutoCloseable {
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final LogSink createSink(String parent, LogSink sink) {
-    PROJECT_PATH_TEMPLATE.validate(parent, "createSink");
+    PARENT_PATH_TEMPLATE.validate(parent, "createSink");
     CreateSinkRequest request =
         CreateSinkRequest.newBuilder().setParent(parent).setSink(sink).build();
     return createSink(request);
@@ -411,7 +411,7 @@ public class ConfigServiceV2Api implements AutoCloseable {
    * Sample code:
    * <pre><code>
    * try (ConfigServiceV2Api configServiceV2Api = ConfigServiceV2Api.create()) {
-   *   String formattedParent = ConfigServiceV2Api.formatProjectName("[PROJECT]");
+   *   String formattedParent = ConfigServiceV2Api.formatParentName("[PROJECT]");
    *   LogSink sink = LogSink.newBuilder().build();
    *   CreateSinkRequest request = CreateSinkRequest.newBuilder()
    *     .setParent(formattedParent)
@@ -435,7 +435,7 @@ public class ConfigServiceV2Api implements AutoCloseable {
    * Sample code:
    * <pre><code>
    * try (ConfigServiceV2Api configServiceV2Api = ConfigServiceV2Api.create()) {
-   *   String formattedParent = ConfigServiceV2Api.formatProjectName("[PROJECT]");
+   *   String formattedParent = ConfigServiceV2Api.formatParentName("[PROJECT]");
    *   LogSink sink = LogSink.newBuilder().build();
    *   CreateSinkRequest request = CreateSinkRequest.newBuilder()
    *     .setParent(formattedParent)

@@ -112,7 +112,7 @@ public class LoggingServiceV2Api implements AutoCloseable {
     return settings;
   }
 
-  private static final PathTemplate PROJECT_PATH_TEMPLATE =
+  private static final PathTemplate PARENT_PATH_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding("projects/{project}");
 
   private static final PathTemplate LOG_PATH_TEMPLATE =
@@ -120,10 +120,10 @@ public class LoggingServiceV2Api implements AutoCloseable {
 
   /**
    * Formats a string containing the fully-qualified path to represent
-   * a project resource.
+   * a parent resource.
    */
-  public static final String formatProjectName(String project) {
-    return PROJECT_PATH_TEMPLATE.instantiate("project", project);
+  public static final String formatParentName(String project) {
+    return PARENT_PATH_TEMPLATE.instantiate("project", project);
   }
 
   /**
@@ -138,10 +138,10 @@ public class LoggingServiceV2Api implements AutoCloseable {
 
   /**
    * Parses the project from the given fully-qualified path which
-   * represents a project resource.
+   * represents a parent resource.
    */
-  public static final String parseProjectFromProjectName(String projectName) {
-    return PROJECT_PATH_TEMPLATE.parse(projectName).get("project");
+  public static final String parseProjectFromParentName(String parentName) {
+    return PARENT_PATH_TEMPLATE.parse(parentName).get("project");
   }
 
   /**
@@ -532,7 +532,7 @@ public class LoggingServiceV2Api implements AutoCloseable {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  private final PageAccessor<MonitoredResourceDescriptor> listMonitoredResourceDescriptors(
+  public final PageAccessor<MonitoredResourceDescriptor> listMonitoredResourceDescriptors(
       ListMonitoredResourceDescriptorsRequest request) {
     return listMonitoredResourceDescriptorsPagedCallable().call(request);
   }
