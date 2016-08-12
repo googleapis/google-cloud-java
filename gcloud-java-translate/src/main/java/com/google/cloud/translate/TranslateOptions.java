@@ -43,9 +43,7 @@ public class TranslateOptions extends
 
     @Override
     public Translate create(TranslateOptions options) {
-      return null;
-      // todo(mziccard) uncomment as soon as TranslateImpl is implemented
-      // return new TranslateImpl(options);
+      return new TranslateImpl(options);
     }
   }
 
@@ -174,7 +172,13 @@ public class TranslateOptions extends
 
   @Override
   public boolean equals(Object obj) {
-    return obj instanceof TranslateOptions && baseEquals((TranslateOptions) obj);
+    if (!(obj instanceof TranslateOptions)) {
+      return false;
+    }
+    TranslateOptions options = (TranslateOptions) obj;
+    return baseEquals(options)
+        && apiKey.equals(options.apiKey)
+        && targetLanguage.equals(options.targetLanguage);
   }
 
   /**
