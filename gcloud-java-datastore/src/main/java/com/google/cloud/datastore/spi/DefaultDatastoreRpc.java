@@ -16,6 +16,7 @@
 
 package com.google.cloud.datastore.spi;
 
+import com.google.api.client.http.HttpTransport;
 import com.google.cloud.datastore.DatastoreException;
 import com.google.cloud.datastore.DatastoreOptions;
 import com.google.datastore.v1beta3.AllocateIdsRequest;
@@ -40,10 +41,12 @@ public class DefaultDatastoreRpc implements DatastoreRpc {
   private final com.google.datastore.v1beta3.client.Datastore client;
 
   public DefaultDatastoreRpc(DatastoreOptions options) {
+    HttpTransport transport = options.httpTransportFactory().create();
     com.google.datastore.v1beta3.client.DatastoreOptions.Builder clientBuilder =
         new com.google.datastore.v1beta3.client.DatastoreOptions.Builder()
             .projectId(options.projectId())
-            .initializer(options.httpRequestInitializer());
+            .initializer(options.httpRequestInitializer())
+            .transport(transport);
     String normalizedHost = options.host() != null ? options.host().toLowerCase() : "";
     if (isLocalHost(normalizedHost)) {
       clientBuilder = clientBuilder.localHost(removeScheme(normalizedHost));
@@ -100,7 +103,7 @@ public class DefaultDatastoreRpc implements DatastoreRpc {
       }
     }
     return new DatastoreException(
-        exception.getCode().ordinal(), exception.getMessage(), reason, exception);
+        exception.getCode().getNumber(), exception.getMessage(), reason, exception);
   }
 
   @Override

@@ -53,9 +53,9 @@ public class StandardTableDefinition extends TableDefinition {
     private static final long serialVersionUID = 822027055549277843L;
     private final long estimatedRows;
     private final long estimatedBytes;
-    private final long oldestEntryTime;
+    private final Long oldestEntryTime;
 
-    StreamingBuffer(long estimatedRows, long estimatedBytes, long oldestEntryTime) {
+    StreamingBuffer(long estimatedRows, long estimatedBytes, Long oldestEntryTime) {
       this.estimatedRows = estimatedRows;
       this.estimatedBytes = estimatedBytes;
       this.oldestEntryTime = oldestEntryTime;
@@ -77,9 +77,9 @@ public class StandardTableDefinition extends TableDefinition {
 
     /**
      * Returns the timestamp of the oldest entry in the streaming buffer, in milliseconds since
-     * epoch.
+     * epoch. Returns {@code null} if the streaming buffer is empty.
      */
-    public long oldestEntryTime() {
+    public Long oldestEntryTime() {
       return oldestEntryTime;
     }
 
@@ -111,9 +111,13 @@ public class StandardTableDefinition extends TableDefinition {
     }
 
     static StreamingBuffer fromPb(Streamingbuffer streamingBufferPb) {
+      Long oldestEntryTime = null;
+      if (streamingBufferPb.getOldestEntryTime() != null) {
+        oldestEntryTime = streamingBufferPb.getOldestEntryTime().longValue();
+      }
       return new StreamingBuffer(streamingBufferPb.getEstimatedRows().longValue(),
           streamingBufferPb.getEstimatedBytes().longValue(),
-          streamingBufferPb.getOldestEntryTime().longValue());
+          oldestEntryTime);
     }
   }
 

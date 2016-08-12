@@ -18,6 +18,7 @@ package com.google.cloud.pubsub.spi;
 
 import static com.google.common.base.MoreObjects.firstNonNull;
 
+import com.google.api.gax.core.ConnectionSettings;
 import com.google.api.gax.core.RetrySettings;
 import com.google.api.gax.grpc.ApiCallSettings;
 import com.google.api.gax.grpc.ApiException;
@@ -139,10 +140,20 @@ public class DefaultPubSubRpc implements PubSubRpc {
         subBuilder.provideChannelWith(channel, true);
       } else {
         GoogleCredentials credentials = options.authCredentials().credentials();
-        pubBuilder.provideChannelWith(
-            credentials.createScoped(PublisherSettings.DEFAULT_SERVICE_SCOPES));
-        subBuilder.provideChannelWith(
-            credentials.createScoped(SubscriberSettings.DEFAULT_SERVICE_SCOPES));
+        ConnectionSettings pubConnectionSettings = ConnectionSettings.newBuilder()
+            .setServiceAddress(options.host())
+            .setPort(PublisherSettings.DEFAULT_SERVICE_PORT)
+            .provideCredentialsWith(
+                credentials.createScoped(PublisherSettings.DEFAULT_SERVICE_SCOPES))
+            .build();
+        ConnectionSettings subConnectionSettings = ConnectionSettings.newBuilder()
+            .setServiceAddress(options.host())
+            .setPort(SubscriberSettings.DEFAULT_SERVICE_PORT)
+            .provideCredentialsWith(
+                credentials.createScoped(SubscriberSettings.DEFAULT_SERVICE_SCOPES))
+            .build();
+        pubBuilder.provideChannelWith(pubConnectionSettings);
+        subBuilder.provideChannelWith(subConnectionSettings);
       }
       pubBuilder.applyToAllApiMethods(apiCallSettings(options));
       subBuilder.applyToAllApiMethods(apiCallSettings(options));
