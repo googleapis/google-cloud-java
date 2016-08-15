@@ -167,8 +167,8 @@ public abstract class GrpcServiceOptions<ServiceT extends Service<OptionsT>, Ser
      * Sets the timeout for the initial RPC, in milliseconds. Subsequent calls will use this value
      * adjusted according to {@link #timeoutMultiplier(double)}. Default value is 20000.
      *
-     * @throws IllegalArgumentException if the provided timeout is &lt; 0
      * @return the builder
+     * @throws IllegalArgumentException if the provided timeout is &lt; 0
      */
     public B initialTimeout(int initialTimeout) {
       Preconditions.checkArgument(initialTimeout > 0, "Initial timeout must be > 0");
@@ -180,8 +180,8 @@ public abstract class GrpcServiceOptions<ServiceT extends Service<OptionsT>, Ser
      * Sets the timeout multiplier. This value is used to compute the timeout for a retried RPC.
      * Timeout is computed as {@code timeoutMultiplier * previousTimeout}. Default value is 1.5.
      *
-     * @throws IllegalArgumentException if the provided timeout multiplier is &lt; 0
      * @return the builder
+     * @throws IllegalArgumentException if the provided timeout multiplier is &lt; 0
      */
     public B timeoutMultiplier(double timeoutMultiplier) {
       Preconditions.checkArgument(timeoutMultiplier >= 1.0, "Timeout multiplier must be >= 1");
