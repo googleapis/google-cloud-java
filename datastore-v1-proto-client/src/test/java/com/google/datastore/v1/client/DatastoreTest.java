@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.google.datastore.v1beta3.client;
+package com.google.datastore.v1.client;
 
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertArrayEquals;
@@ -36,20 +36,20 @@ import com.google.api.client.testing.http.MockLowLevelHttpRequest;
 import com.google.api.client.testing.http.MockLowLevelHttpResponse;
 import com.google.api.client.testing.util.TestableByteArrayInputStream;
 import com.google.common.collect.Iterables;
-import com.google.datastore.v1beta3.AllocateIdsRequest;
-import com.google.datastore.v1beta3.AllocateIdsResponse;
-import com.google.datastore.v1beta3.BeginTransactionRequest;
-import com.google.datastore.v1beta3.BeginTransactionResponse;
-import com.google.datastore.v1beta3.CommitRequest;
-import com.google.datastore.v1beta3.CommitResponse;
-import com.google.datastore.v1beta3.EntityResult;
-import com.google.datastore.v1beta3.LookupRequest;
-import com.google.datastore.v1beta3.LookupResponse;
-import com.google.datastore.v1beta3.QueryResultBatch;
-import com.google.datastore.v1beta3.RollbackRequest;
-import com.google.datastore.v1beta3.RollbackResponse;
-import com.google.datastore.v1beta3.RunQueryRequest;
-import com.google.datastore.v1beta3.RunQueryResponse;
+import com.google.datastore.v1.AllocateIdsRequest;
+import com.google.datastore.v1.AllocateIdsResponse;
+import com.google.datastore.v1.BeginTransactionRequest;
+import com.google.datastore.v1.BeginTransactionResponse;
+import com.google.datastore.v1.CommitRequest;
+import com.google.datastore.v1.CommitResponse;
+import com.google.datastore.v1.EntityResult;
+import com.google.datastore.v1.LookupRequest;
+import com.google.datastore.v1.LookupResponse;
+import com.google.datastore.v1.QueryResultBatch;
+import com.google.datastore.v1.RollbackRequest;
+import com.google.datastore.v1.RollbackResponse;
+import com.google.datastore.v1.RunQueryRequest;
+import com.google.datastore.v1.RunQueryResponse;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Message;
 import com.google.rpc.Code;
@@ -139,7 +139,7 @@ public class DatastoreTest {
         .localHost("localhost:8080")
         .build());
     assertThat(datastore.remoteRpc.getUrl())
-        .isEqualTo("http://localhost:8080/datastore/v1beta3/projects/project-id");
+        .isEqualTo("http://localhost:8080/datastore/v1/projects/project-id");
   }
 
   @Test
@@ -149,7 +149,7 @@ public class DatastoreTest {
         .localHost("127.0.0.1:8080")
         .build());
     assertThat(datastore.remoteRpc.getUrl())
-        .isEqualTo("http://127.0.0.1:8080/datastore/v1beta3/projects/project-id");
+        .isEqualTo("http://127.0.0.1:8080/datastore/v1/projects/project-id");
   }
 
   @Test
@@ -158,7 +158,7 @@ public class DatastoreTest {
         .projectId(PROJECT_ID)
         .build());
     assertThat(datastore.remoteRpc.getUrl())
-        .isEqualTo("https://datastore.googleapis.com/v1beta3/projects/project-id");
+        .isEqualTo("https://datastore.googleapis.com/v1/projects/project-id");
   }
 
   @Test
@@ -258,7 +258,7 @@ public class DatastoreTest {
     Object[] callArgs = { request };
     assertEquals(response, call.invoke(datastore, callArgs));
 
-    assertEquals("/v1beta3/projects/project-id:" + methodName, mockClient.lastPath);
+    assertEquals("/v1/projects/project-id:" + methodName, mockClient.lastPath);
     assertEquals("application/x-protobuf", mockClient.lastMimeType);
     assertEquals("2", mockClient.lastApiFormatHeaderValue);
     assertArrayEquals(request.toByteArray(), mockClient.lastBody);

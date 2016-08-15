@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.google.datastore.v1beta3.client;
+package com.google.datastore.v1.client;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
@@ -43,7 +43,7 @@ public class DatastoreFactory {
   private static ConsoleHandler methodHandler;
 
   /** API version. */
-  public static final String VERSION = "v1beta3";
+  public static final String VERSION = "v1";
 
   public static final String DEFAULT_HOST = "https://datastore.googleapis.com";
 

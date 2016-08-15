@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.google.datastore.v1beta3.client;
+package com.google.datastore.v1.client;
 
 import static org.junit.Assert.fail;
 

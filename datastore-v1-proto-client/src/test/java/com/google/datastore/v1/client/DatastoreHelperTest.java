@@ -13,19 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.google.datastore.v1beta3.client;
+package com.google.datastore.v1.client;
 
-import static com.google.datastore.v1beta3.client.DatastoreHelper.getByteString;
-import static com.google.datastore.v1beta3.client.DatastoreHelper.makeKey;
-import static com.google.datastore.v1beta3.client.DatastoreHelper.makeValue;
-import static com.google.datastore.v1beta3.client.DatastoreHelper.toDate;
+import static com.google.datastore.v1.client.DatastoreHelper.getByteString;
+import static com.google.datastore.v1.client.DatastoreHelper.makeKey;
+import static com.google.datastore.v1.client.DatastoreHelper.makeValue;
+import static com.google.datastore.v1.client.DatastoreHelper.toDate;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
 
-import com.google.datastore.v1beta3.Key;
-import com.google.datastore.v1beta3.PartitionId;
-import com.google.datastore.v1beta3.Value;
-import com.google.datastore.v1beta3.Value.ValueTypeCase;
+import com.google.datastore.v1.Key;
+import com.google.datastore.v1.PartitionId;
+import com.google.datastore.v1.Value;
+import com.google.datastore.v1.Value.ValueTypeCase;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Timestamp;
 

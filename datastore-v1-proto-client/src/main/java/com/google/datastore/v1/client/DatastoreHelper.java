@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.google.datastore.v1beta3.client;
+package com.google.datastore.v1.client;
 
 import com.google.api.client.auth.oauth2.Credential;
 import com.google.api.client.googleapis.auth.oauth2.GoogleCredential;
@@ -23,20 +23,20 @@ import com.google.api.client.http.HttpRequest;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.json.JsonFactory;
 import com.google.api.client.json.jackson.JacksonFactory;
-import com.google.datastore.v1beta3.ArrayValue;
-import com.google.datastore.v1beta3.CompositeFilter;
-import com.google.datastore.v1beta3.Entity;
-import com.google.datastore.v1beta3.Filter;
-import com.google.datastore.v1beta3.Key;
-import com.google.datastore.v1beta3.Key.PathElement;
-import com.google.datastore.v1beta3.Key.PathElement.IdTypeCase;
-import com.google.datastore.v1beta3.Mutation;
-import com.google.datastore.v1beta3.PartitionId;
-import com.google.datastore.v1beta3.PropertyFilter;
-import com.google.datastore.v1beta3.PropertyOrder;
-import com.google.datastore.v1beta3.PropertyReference;
-import com.google.datastore.v1beta3.Value;
-import com.google.datastore.v1beta3.Value.ValueTypeCase;
+import com.google.datastore.v1.ArrayValue;
+import com.google.datastore.v1.CompositeFilter;
+import com.google.datastore.v1.Entity;
+import com.google.datastore.v1.Filter;
+import com.google.datastore.v1.Key;
+import com.google.datastore.v1.Key.PathElement;
+import com.google.datastore.v1.Key.PathElement.IdTypeCase;
+import com.google.datastore.v1.Mutation;
+import com.google.datastore.v1.PartitionId;
+import com.google.datastore.v1.PropertyFilter;
+import com.google.datastore.v1.PropertyOrder;
+import com.google.datastore.v1.PropertyReference;
+import com.google.datastore.v1.Value;
+import com.google.datastore.v1.Value.ValueTypeCase;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Timestamp;
 import com.google.protobuf.TimestampOrBuilder;

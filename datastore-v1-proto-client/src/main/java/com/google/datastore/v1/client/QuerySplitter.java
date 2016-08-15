@@ -13,10 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.google.datastore.v1beta3.client;
+package com.google.datastore.v1.client;
 
-import com.google.datastore.v1beta3.PartitionId;
-import com.google.datastore.v1beta3.Query;
+import com.google.datastore.v1.PartitionId;
+import com.google.datastore.v1.Query;
 
 import java.util.List;
 

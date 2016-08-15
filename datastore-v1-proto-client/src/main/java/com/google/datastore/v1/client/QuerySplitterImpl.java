@@ -13,23 +13,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.google.datastore.v1beta3.client;
+package com.google.datastore.v1.client;
 
-import static com.google.datastore.v1beta3.client.DatastoreHelper.makeAndFilter;
+import static com.google.datastore.v1.client.DatastoreHelper.makeAndFilter;
 
-import com.google.datastore.v1beta3.EntityResult;
-import com.google.datastore.v1beta3.Filter;
-import com.google.datastore.v1beta3.Key;
-import com.google.datastore.v1beta3.PartitionId;
-import com.google.datastore.v1beta3.Projection;
-import com.google.datastore.v1beta3.PropertyFilter;
-import com.google.datastore.v1beta3.PropertyFilter.Operator;
-import com.google.datastore.v1beta3.PropertyOrder.Direction;
-import com.google.datastore.v1beta3.PropertyReference;
-import com.google.datastore.v1beta3.Query;
-import com.google.datastore.v1beta3.QueryResultBatch;
-import com.google.datastore.v1beta3.QueryResultBatch.MoreResultsType;
-import com.google.datastore.v1beta3.RunQueryRequest;
+import com.google.datastore.v1.EntityResult;
+import com.google.datastore.v1.Filter;
+import com.google.datastore.v1.Key;
+import com.google.datastore.v1.PartitionId;
+import com.google.datastore.v1.Projection;
+import com.google.datastore.v1.PropertyFilter;
+import com.google.datastore.v1.PropertyFilter.Operator;
+import com.google.datastore.v1.PropertyOrder.Direction;
+import com.google.datastore.v1.PropertyReference;
+import com.google.datastore.v1.Query;
+import com.google.datastore.v1.QueryResultBatch;
+import com.google.datastore.v1.QueryResultBatch.MoreResultsType;
+import com.google.datastore.v1.RunQueryRequest;
 
 import java.util.ArrayList;
 import java.util.Collections;
