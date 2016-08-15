@@ -40,15 +40,12 @@ public final class HttpRequest implements Serializable {
   private final Long responseSize;
   private final String userAgent;
   private final String remoteIp;
-  // todo(mziccard) uncomment when #1042 gets fixed
-  // private final String serverIp;
+  private final String serverIp;
   private final String referer;
-  // todo(mziccard) uncomment when #1042 gets fixed
-  // private final boolean cacheLookup;
+  private final boolean cacheLookup;
   private final boolean cacheHit;
   private final boolean cacheValidatedWithOriginServer;
-  // todo(mziccard) uncomment when #1042 gets fixed
-  // private final Long cacheFillBytes;
+  private final Long cacheFillBytes;
 
   /**
    * The HTTP request method.
@@ -72,15 +69,12 @@ public final class HttpRequest implements Serializable {
     private Long responseSize;
     private String userAgent;
     private String remoteIp;
-    // todo(mziccard) uncomment when #1042 gets fixed
-    // private String serverIp;
+    private String serverIp;
     private String referer;
-    // todo(mziccard) uncomment when #1042 gets fixed
-    // private boolean cacheLookup;
+    private boolean cacheLookup;
     private boolean cacheHit;
     private boolean cacheValidatedWithOriginServer;
-    // todo(mziccard) uncomment when #1042 gets fixed
-    // private Long cacheFillBytes;
+    private Long cacheFillBytes;
 
     Builder() {}
 
@@ -92,15 +86,12 @@ public final class HttpRequest implements Serializable {
       this.responseSize = request.responseSize;
       this.userAgent = request.userAgent;
       this.remoteIp = request.remoteIp;
-      // todo(mziccard) uncomment when #1042 gets fixed
-      // this.serverIp = request.serverIp;
+      this.serverIp = request.serverIp;
       this.referer = request.referer;
-      // todo(mziccard) uncomment when #1042 gets fixed
-      // this.cacheLookup = request.cacheLookup;
+      this.cacheLookup = request.cacheLookup;
       this.cacheHit = request.cacheHit;
       this.cacheValidatedWithOriginServer = request.cacheValidatedWithOriginServer;
-      // todo(mziccard) uncomment when #1042 gets fixed
-      // this.cacheFillBytes = request.cacheFillBytes;
+      this.cacheFillBytes = request.cacheFillBytes;
     }
 
     /**
@@ -169,11 +160,10 @@ public final class HttpRequest implements Serializable {
      * Sets the IP address (IPv4 or IPv6) of the origin server that the request was sent to.
      * Examples: {@code 192.168.1.1}, {@code FE80::0202:B3FF:FE1E:8329}.
      */
-    // todo(mziccard) uncomment when #1042 gets fixed
-    //public Builder serverIp(String serverIp) {
-    //  this.serverIp = serverIp;
-    //  return this;
-    //}
+    public Builder serverIp(String serverIp) {
+      this.serverIp = serverIp;
+      return this;
+    }
 
     /**
      * Sets the referer URL of the request, as defined in HTTP/1.1 Header Field Definitions.
@@ -189,11 +179,10 @@ public final class HttpRequest implements Serializable {
     /**
      * Sets whether or not a cache lookup was attempted. If not set, {@code false} is used.
      */
-    // todo(mziccard) uncomment when #1042 gets fixed
-    //public Builder cacheLookup(boolean cacheLookup) {
-    //  this.cacheLookup = cacheLookup;
-    //  return this;
-    //}
+    public Builder cacheLookup(boolean cacheLookup) {
+      this.cacheLookup = cacheLookup;
+      return this;
+    }
 
     /**
      * Sets whether or not an entity was served from cache (with or without validation). If not set,
@@ -218,11 +207,10 @@ public final class HttpRequest implements Serializable {
      * Sets the number of HTTP response bytes inserted into cache. Set only when a cache fill was
      * attempted.
      */
-    // todo(mziccard) uncomment when #1042 gets fixed
-    //public Builder cacheFillBytes(long cacheFillBytes) {
-    //  this.cacheFillBytes = cacheFillBytes;
-    //  return this;
-    //}
+    public Builder cacheFillBytes(long cacheFillBytes) {
+      this.cacheFillBytes = cacheFillBytes;
+      return this;
+    }
 
     /**
      * Creates a {@code HttpRequest} object for this builder.
@@ -240,15 +228,12 @@ public final class HttpRequest implements Serializable {
     this.responseSize = builder.responseSize;
     this.userAgent = builder.userAgent;
     this.remoteIp = builder.remoteIp;
-    // todo(mziccard) uncomment when #1042 gets fixed
-    // this.serverIp = builder.serverIp;
+    this.serverIp = builder.serverIp;
     this.referer = builder.referer;
-    // todo(mziccard) uncomment when #1042 gets fixed
-    // this.cacheLookup = builder.cacheLookup;
+    this.cacheLookup = builder.cacheLookup;
     this.cacheHit = builder.cacheHit;
     this.cacheValidatedWithOriginServer = builder.cacheValidatedWithOriginServer;
-    // todo(mziccard) uncomment when #1042 gets fixed
-    // this.cacheFillBytes = builder.cacheFillBytes;
+    this.cacheFillBytes = builder.cacheFillBytes;
   }
 
   /**
@@ -310,10 +295,9 @@ public final class HttpRequest implements Serializable {
    * Returns the IP address (IPv4 or IPv6) of the origin server that the request was sent to.
    * Examples: {@code 192.168.1.1}, {@code FE80::0202:B3FF:FE1E:8329}.
    */
-  // todo(mziccard) uncomment when #1042 gets fixed
-  //public String serverIp() {
-  //  return serverIp;
-  //}
+  public String serverIp() {
+    return serverIp;
+  }
 
   /**
    * Returns the referer URL of the request, as defined in HTTP/1.1 Header Field Definitions.
@@ -329,10 +313,9 @@ public final class HttpRequest implements Serializable {
    * Returns whether or not a cache lookup was attempted. If not set, this method returns
    * {@code false}.
    */
-  // todo(mziccard) uncomment when #1042 gets fixed
-  //public boolean cacheLookup() {
-  //  return cacheLookup;
-  //}
+  public boolean cacheLookup() {
+    return cacheLookup;
+  }
 
   /**
    * Returns whether or not an entity was served from cache (with or without validation). If not
@@ -355,17 +338,15 @@ public final class HttpRequest implements Serializable {
    * Returns the number of HTTP response bytes inserted into cache. Set only when a cache fill was
    * attempted.
    */
-  // todo(mziccard) uncomment when #1042 gets fixed
-  //public Long cacheFillBytes() {
-  //  return cacheFillBytes;
-  //}
+  public Long cacheFillBytes() {
+    return cacheFillBytes;
+  }
 
   @Override
   public int hashCode() {
     return Objects.hash(requestMethod, requestUrl, requestSize, status, responseSize, userAgent,
-        // todo(mziccard) uncomment when #1042 gets fixed
-        // serverIp, cacheLookup, cacheFillBytes
-        remoteIp, referer, cacheHit, cacheValidatedWithOriginServer);
+        serverIp, cacheLookup, cacheFillBytes, remoteIp, referer, cacheHit,
+        cacheValidatedWithOriginServer);
   }
 
   @Override
@@ -378,15 +359,12 @@ public final class HttpRequest implements Serializable {
         .add("responseSize", responseSize)
         .add("userAgent", userAgent)
         .add("remoteIp", remoteIp)
-        // todo(mziccard) uncomment when #1042 gets fixed
-        // .add("serverIp", serverIp)
+        .add("serverIp", serverIp)
         .add("referer", referer)
-        // todo(mziccard) uncomment when #1042 gets fixed
-        // .add("cacheLookup", cacheLookup)
+        .add("cacheLookup", cacheLookup)
         .add("cacheHit", cacheHit)
         .add("cacheValidatedWithOriginServer", cacheValidatedWithOriginServer)
-        // todo(mziccard) uncomment when #1042 gets fixed
-        // .add("cacheFillBytes", cacheFillBytes)
+        .add("cacheFillBytes", cacheFillBytes)
         .toString();
   }
 
@@ -406,15 +384,12 @@ public final class HttpRequest implements Serializable {
         && Objects.equals(responseSize, other.responseSize)
         && Objects.equals(userAgent, other.userAgent)
         && Objects.equals(remoteIp, other.remoteIp)
-        // todo(mziccard) uncomment when #1042 gets fixed
-        // && Objects.equals(serverIp, other.serverIp)
+        && Objects.equals(serverIp, other.serverIp)
         && Objects.equals(referer, other.referer)
-        // todo(mziccard) uncomment when #1042 gets fixed
-        // && cacheLookup == other.cacheLookup
+        && cacheLookup == other.cacheLookup
         && cacheHit == other.cacheHit
-        && cacheValidatedWithOriginServer == other.cacheValidatedWithOriginServer;
-        // todo(mziccard) uncomment when #1042 gets fixed
-        // && Objects.equals(cacheFillBytes, other.cacheFillBytes);
+        && cacheValidatedWithOriginServer == other.cacheValidatedWithOriginServer
+        && Objects.equals(cacheFillBytes, other.cacheFillBytes);
   }
 
   /**
@@ -448,21 +423,18 @@ public final class HttpRequest implements Serializable {
     if (remoteIp != null) {
       builder.setRemoteIp(remoteIp);
     }
-    // todo(mziccard) uncomment when #1042 gets fixed
-    // if (serverIp != null) {
-    //  builder.setServerIp(serverIp);
-    //}
+     if (serverIp != null) {
+      builder.setServerIp(serverIp);
+    }
     if (referer != null) {
       builder.setReferer(referer);
     }
-    // todo(mziccard) uncomment when #1042 gets fixed
-    // builder.setCacheLookup(cacheLookup);
+    builder.setCacheLookup(cacheLookup);
     builder.setCacheHit(cacheHit);
     builder.setCacheValidatedWithOriginServer(cacheValidatedWithOriginServer);
-    // todo(mziccard) uncomment when #1042 gets fixed
-    //if (cacheFillBytes != null) {
-    //  builder.setCacheFillBytes(cacheFillBytes);
-    //}
+    if (cacheFillBytes != null) {
+      builder.setCacheFillBytes(cacheFillBytes);
+    }
     return builder.build();
   }
 
@@ -493,24 +465,21 @@ public final class HttpRequest implements Serializable {
     if (requestPb.getUserAgent() != null && !requestPb.getRequestUrl().equals("")) {
       builder.userAgent(requestPb.getUserAgent());
     }
-    // todo(mziccard) uncomment when #1042 gets fixed
-    //if (requestPb.getServerIp() != null && !requestPb.getServerIp().equals("")) {
-    //  builder.serverIp(requestPb.getServerIp());
-    //}
+    if (requestPb.getServerIp() != null && !requestPb.getServerIp().equals("")) {
+      builder.serverIp(requestPb.getServerIp());
+    }
     if (requestPb.getRemoteIp() != null && !requestPb.getRemoteIp().equals("")) {
       builder.remoteIp(requestPb.getRemoteIp());
     }
     if (requestPb.getReferer() != null && !requestPb.getReferer().equals("")) {
       builder.referer(requestPb.getReferer());
     }
-    // todo(mziccard) uncomment when #1042 gets fixed
-    // builder.cacheLookup(requestPb.getCacheLookup());
+    builder.cacheLookup(requestPb.getCacheLookup());
     builder.cacheHit(requestPb.getCacheHit());
     builder.cacheValidatedWithOriginServer(requestPb.getCacheValidatedWithOriginServer());
-    // todo(mziccard) uncomment when #1042 gets fixed
-    //if (requestPb.getCacheFillBytes() != 0L) {
-    //  builder.cacheFillBytes(requestPb.getCacheFillBytes());
-    //}
+    if (requestPb.getCacheFillBytes() != 0L) {
+      builder.cacheFillBytes(requestPb.getCacheFillBytes());
+    }
     return builder.build();
   }
 }
