@@ -19,13 +19,10 @@ package com.google.cloud.pubsub.spi;
 import static com.google.common.base.MoreObjects.firstNonNull;
 
 import com.google.api.gax.core.ConnectionSettings;
-import com.google.api.gax.core.RetrySettings;
 import com.google.api.gax.grpc.ApiCallSettings;
 import com.google.api.gax.grpc.ApiException;
-import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.AuthCredentials;
 import com.google.cloud.GrpcServiceOptions.ExecutorFactory;
-import com.google.cloud.RetryParams;
 import com.google.cloud.pubsub.PubSubException;
 import com.google.cloud.pubsub.PubSubOptions;
 import com.google.cloud.pubsub.spi.v1.PublisherApi;
@@ -64,8 +61,6 @@ import io.grpc.Status.Code;
 import io.grpc.netty.NegotiationType;
 import io.grpc.netty.NettyChannelBuilder;
 
-import org.joda.time.Duration;
-
 import java.io.IOException;
 import java.util.Set;
 import java.util.concurrent.Future;
@@ -91,6 +86,16 @@ public class DefaultPubSubRpc implements PubSubRpc {
     @Override
     protected ExecutorFactory<ScheduledExecutorService> executorFactory() {
       return super.executorFactory();
+    }
+
+    @Override
+    protected ApiCallSettings.Builder apiCallSettings() {
+      return super.apiCallSettings();
+    }
+
+    @Override
+    protected ConnectionSettings.Builder connectionSettings() {
+      return super.connectionSettings();
     }
   }
 
@@ -119,7 +124,8 @@ public class DefaultPubSubRpc implements PubSubRpc {
   }
 
   public DefaultPubSubRpc(PubSubOptions options) throws IOException {
-    executorFactory = new InternalPubSubOptions(options).executorFactory();
+    InternalPubSubOptions internalOptions = new InternalPubSubOptions(options);
+    executorFactory = internalOptions.executorFactory();
     executor = executorFactory.get();
     String libraryName = options.libraryName();
     String libraryVersion = firstNonNull(options.libraryVersion(), "");
@@ -139,44 +145,18 @@ public class DefaultPubSubRpc implements PubSubRpc {
         pubBuilder.provideChannelWith(channel, true);
         subBuilder.provideChannelWith(channel, true);
       } else {
-        GoogleCredentials credentials = options.authCredentials().credentials();
-        ConnectionSettings pubConnectionSettings = ConnectionSettings.newBuilder()
-            .setServiceAddress(options.host())
-            .setPort(PublisherSettings.getDefaultServicePort())
-            .provideCredentialsWith(
-                credentials.createScoped(PublisherSettings.getDefaultServiceScopes()))
-            .build();
-        ConnectionSettings subConnectionSettings = ConnectionSettings.newBuilder()
-            .setServiceAddress(options.host())
-            .setPort(SubscriberSettings.getDefaultServicePort())
-            .provideCredentialsWith(
-                credentials.createScoped(SubscriberSettings.getDefaultServiceScopes()))
-            .build();
-        pubBuilder.provideChannelWith(pubConnectionSettings);
-        subBuilder.provideChannelWith(subConnectionSettings);
+        ConnectionSettings connectionSettings = internalOptions.connectionSettings().build();
+        pubBuilder.provideChannelWith(connectionSettings);
+        subBuilder.provideChannelWith(connectionSettings);
       }
-      pubBuilder.applyToAllApiMethods(apiCallSettings(options));
-      subBuilder.applyToAllApiMethods(apiCallSettings(options));
+      ApiCallSettings.Builder callSettingsBuilder = internalOptions.apiCallSettings();
+      pubBuilder.applyToAllApiMethods(callSettingsBuilder);
+      subBuilder.applyToAllApiMethods(callSettingsBuilder);
       publisherApi = PublisherApi.create(pubBuilder.build());
       subscriberApi = SubscriberApi.create(subBuilder.build());
     } catch (Exception ex) {
       throw new IOException(ex);
     }
-  }
-
-  private static ApiCallSettings.Builder apiCallSettings(PubSubOptions options) {
-    // TODO: specify timeout these settings:
-    // retryParams.retryMaxAttempts(), retryParams.retryMinAttempts()
-    RetryParams retryParams = options.retryParams();
-    final RetrySettings.Builder builder = RetrySettings.newBuilder()
-        .setTotalTimeout(Duration.millis(retryParams.totalRetryPeriodMillis()))
-        .setInitialRpcTimeout(Duration.millis(options.initialTimeout()))
-        .setRpcTimeoutMultiplier(options.timeoutMultiplier())
-        .setMaxRpcTimeout(Duration.millis(options.maxTimeout()))
-        .setInitialRetryDelay(Duration.millis(retryParams.initialRetryDelayMillis()))
-        .setRetryDelayMultiplier(retryParams.retryDelayBackoffFactor())
-        .setMaxRetryDelay(Duration.millis(retryParams.maxRetryDelayMillis()));
-    return ApiCallSettings.newBuilder().setRetrySettingsBuilder(builder);
   }
 
   private static <V> ListenableFuture<V> translate(ListenableFuture<V> from,
