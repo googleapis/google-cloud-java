@@ -17,6 +17,9 @@
 package com.google.cloud.translate;
 
 import com.google.cloud.Service;
+import com.google.cloud.translate.spi.TranslateRpc;
+
+import java.util.List;
 
 /**
  * An interface for Google Translate.
@@ -24,4 +27,47 @@ import com.google.cloud.Service;
  * @see <a href="https://cloud.google.com/translate/docs">Google Translate</a>
  */
 public interface Translate extends Service<TranslateOptions> {
+
+  /**
+   * Class for specifying supported language listing options.
+   */
+  class LanguageListOption extends Option {
+
+    private static final long serialVersionUID = 1982978040516658597L;
+
+    private LanguageListOption(TranslateRpc.Option rpcOption, String value) {
+      super(rpcOption, value);
+    }
+
+    /**
+     * Returns an option for setting the target language. If this option is not provided, the value
+     * returned by {@link TranslateOptions#targetLanguage()} is used. When provided, the returned
+     * {@link Language#name()} will be in the language specified by the {@code targetLanguage} code.
+     *
+     * @param targetLanguage the target language code
+     */
+    public static LanguageListOption targetLanguage(String targetLanguage) {
+      return new LanguageListOption(TranslateRpc.Option.TARGET_LANGUAGE, targetLanguage);
+    }
+  }
+
+  /**
+   * Returns the list of languages supported by Google Translate. If
+   * {@link LanguageListOption#targetLanguage(String)} is provided, {@link Language#name()} values
+   * are localized according to the provided target language. If no such option is passed,
+   * {@link Language#name()} values are localized according to
+   * {@link TranslateOptions#targetLanguage()}.
+   *
+   * <p>Example of listing supported languages, localized according to
+   * {@link TranslateOptions#targetLanguage()}:
+   * <pre> {@code
+   * List<Language> languages = translate.listSupportedLanguages();
+   * }</pre>
+   * Or according to another target language:
+   * <pre> {@code
+   * List<Language> languages = translate.listSupportedLanguages(
+   *     LanguageListOption.targetLanguage("es"));
+   * }</pre>
+   */
+  List<Language> listSupportedLanguages(LanguageListOption... options);
 }
