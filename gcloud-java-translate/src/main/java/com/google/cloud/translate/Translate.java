@@ -70,4 +70,46 @@ public interface Translate extends Service<TranslateOptions> {
    * }</pre>
    */
   List<Language> listSupportedLanguages(LanguageListOption... options);
+
+  /**
+   * Detects the language of the provided texts.
+   *
+   * <p>Example of detecting the language of some texts:
+   * <pre> {@code
+   * List<String> texts = new LinkedList<>();
+   * texts.add("Hello, World!");
+   * texts.add("¡Hola Mundo!");
+   * List<Detection> detections = translate.detect(texts);
+   * }</pre>
+   *
+   * @param texts the texts for which language should be detected
+   * @return a list of objects containing information on the language detection, one for each
+   *     provided text, in order.
+   */
+  List<Detection> detect(List<String> texts);
+
+  /**
+   * Detects the language of the provided texts.
+   *
+   * <p>Example of detecting the language of some texts:
+   * <pre> {@code
+   * List<Detection> detections = translate.detect("Hello, World!", "¡Hola Mundo!");
+   * }</pre>
+   *
+   * @param texts the texts for which language should be detected
+   * @return a list of objects containing information on the language detection, one for each
+   *     provided text, in order.
+   */
+  List<Detection> detect(String... texts);
+
+  /**
+   * Detects the language of the provided text. Returns an object containing information on the
+   * language detection.
+   *
+   * <p>Example of detecting the language a text:
+   * <pre> {@code
+   * Detection detection = translate.detect("Hello, World!");
+   * }</pre>
+   */
+  Detection detect(String text);
 }
