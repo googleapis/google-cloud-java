@@ -37,15 +37,12 @@ public class HttpRequestTest {
   private static final String USER_AGENT =
       "Mozilla/4.0 (compatible; MSIE 6.0; Windows 98; Q312461; .NET CLR 1.0.3705)";
   private static final String REMOTE_IP = "192.168.1.1";
-  // todo(mziccard) uncomment when #1042 gets fixed
-  // private static final String SERVER_IP = "192.168.1.2";
+  private static final String SERVER_IP = "192.168.1.2";
   private static final String REFERER = "Referer: http://www.example.com";
-  // todo(mziccard) uncomment when #1042 gets fixed
-  // private static final boolean CACHE_LOOKUP = true;
+  private static final boolean CACHE_LOOKUP = true;
   private static final boolean CACHE_HIT = true;
   private static final boolean CACHE_VALIDATED_WITH_ORIGIN_SERVER = false;
-  // todo(mziccard) uncomment when #1042 gets fixed
-  // private static final Long CACHE_FILL_BYTES = 3L;
+  private static final Long CACHE_FILL_BYTES = 3L;
   private static final HttpRequest HTTP_REQUEST = HttpRequest.builder()
       .requestMethod(REQUEST_METHOD)
       .requestUrl(REQUEST_URL)
@@ -54,15 +51,12 @@ public class HttpRequestTest {
       .responseSize(REPONSE_SIZE)
       .userAgent(USER_AGENT)
       .remoteIp(REMOTE_IP)
-      // todo(mziccard) uncomment when #1042 gets fixed
-      // .serverIp(SERVER_IP)
+      .serverIp(SERVER_IP)
       .referer(REFERER)
-      // todo(mziccard) uncomment when #1042 gets fixed
-      // .cacheLookup(CACHE_LOOKUP)
+      .cacheLookup(CACHE_LOOKUP)
       .cacheHit(CACHE_HIT)
       .cacheValidatedWithOriginServer(CACHE_VALIDATED_WITH_ORIGIN_SERVER)
-      // todo(mziccard) uncomment when #1042 gets fixed
-      // .cacheFillBytes(CACHE_FILL_BYTES)
+      .cacheFillBytes(CACHE_FILL_BYTES)
       .build();
 
   @Rule
@@ -77,15 +71,12 @@ public class HttpRequestTest {
     assertEquals(REPONSE_SIZE, HTTP_REQUEST.responseSize());
     assertEquals(USER_AGENT, HTTP_REQUEST.userAgent());
     assertEquals(REMOTE_IP, HTTP_REQUEST.remoteIp());
-    // todo(mziccard) uncomment when #1042 gets fixed
-    // assertEquals(SERVER_IP, HTTP_REQUEST.serverIp());
+    assertEquals(SERVER_IP, HTTP_REQUEST.serverIp());
     assertEquals(REFERER, HTTP_REQUEST.referer());
-    // todo(mziccard) uncomment when #1042 gets fixed
-    // assertEquals(CACHE_LOOKUP, HTTP_REQUEST.cacheLookup());
+    assertEquals(CACHE_LOOKUP, HTTP_REQUEST.cacheLookup());
     assertEquals(CACHE_HIT, HTTP_REQUEST.cacheHit());
     assertEquals(CACHE_VALIDATED_WITH_ORIGIN_SERVER, HTTP_REQUEST.cacheValidatedWithOriginServer());
-    // todo(mziccard) uncomment when #1042 gets fixed
-    // assertEquals(CACHE_FILL_BYTES, HTTP_REQUEST.cacheFillBytes());
+    assertEquals(CACHE_FILL_BYTES, HTTP_REQUEST.cacheFillBytes());
   }
 
   @Test
@@ -98,15 +89,12 @@ public class HttpRequestTest {
     assertNull(httpRequest.responseSize());
     assertNull(httpRequest.userAgent());
     assertNull(httpRequest.remoteIp());
-    // todo(mziccard) uncomment when #1042 gets fixed
-    // assertNull(httpRequest.serverIp());
+    assertNull(httpRequest.serverIp());
     assertNull(httpRequest.referer());
-    // todo(mziccard) uncomment when #1042 gets fixed
-    // assertFalse(httpRequest.cacheLookup());
+    assertFalse(httpRequest.cacheLookup());
     assertFalse(httpRequest.cacheHit());
     assertFalse(httpRequest.cacheValidatedWithOriginServer());
-    // todo(mziccard) uncomment when #1042 gets fixed
-    // assertNull(httpRequest.cacheFillBytes());
+    assertNull(httpRequest.cacheFillBytes());
   }
 
   @Test
@@ -120,15 +108,12 @@ public class HttpRequestTest {
         .responseSize(5)
         .userAgent("otherUserAgent")
         .remoteIp("192.168.1.3")
-        // todo(mziccard) uncomment when #1042 gets fixed
-        // .serverIp("192.168.1.4")
+        .serverIp("192.168.1.4")
         .referer("Referer: http://www.other-example.com")
-        // todo(mziccard) uncomment when #1042 gets fixed
-        // .cacheLookup(true)
+        .cacheLookup(true)
         .cacheHit(true)
         .cacheValidatedWithOriginServer(true)
-        // todo(mziccard) uncomment when #1042 gets fixed
-        // .cacheFillBytes(6)
+        .cacheFillBytes(6)
         .build();
     assertEquals(RequestMethod.POST, httpRequest.requestMethod());
     assertEquals("http://www.other-example.com", httpRequest.requestUrl());
@@ -137,15 +122,12 @@ public class HttpRequestTest {
     assertEquals(5, (long) httpRequest.responseSize());
     assertEquals("otherUserAgent", httpRequest.userAgent());
     assertEquals("192.168.1.3", httpRequest.remoteIp());
-    // todo(mziccard) uncomment when #1042 gets fixed
-    // assertEquals("192.168.1.4", httpRequest.serverIp());
+    assertEquals("192.168.1.4", httpRequest.serverIp());
     assertEquals("Referer: http://www.other-example.com", httpRequest.referer());
-    // todo(mziccard) uncomment when #1042 gets fixed
-    // assertTrue(httpRequest.cacheLookup());
+    assertTrue(httpRequest.cacheLookup());
     assertTrue(httpRequest.cacheHit());
     assertTrue(httpRequest.cacheValidatedWithOriginServer());
-    // todo(mziccard) uncomment when #1042 gets fixed
-    // assertEquals(6, (long) httpRequest.cacheFillBytes());
+    assertEquals(6, (long) httpRequest.cacheFillBytes());
   }
 
   @Test
@@ -159,15 +141,12 @@ public class HttpRequestTest {
     assertEquals(REPONSE_SIZE, httpRequest.responseSize());
     assertEquals(USER_AGENT, httpRequest.userAgent());
     assertEquals(REMOTE_IP, httpRequest.remoteIp());
-    // todo(mziccard) uncomment when #1042 gets fixed
-    // assertEquals(SERVER_IP, httpRequest.serverIp());
+    assertEquals(SERVER_IP, httpRequest.serverIp());
     assertEquals(REFERER, httpRequest.referer());
-    // todo(mziccard) uncomment when #1042 gets fixed
-    // assertEquals(CACHE_LOOKUP, httpRequest.cacheLookup());
+    assertEquals(CACHE_LOOKUP, httpRequest.cacheLookup());
     assertEquals(CACHE_HIT, httpRequest.cacheHit());
     assertEquals(CACHE_VALIDATED_WITH_ORIGIN_SERVER, httpRequest.cacheValidatedWithOriginServer());
-    // todo(mziccard) uncomment when #1042 gets fixed
-    // assertEquals(CACHE_FILL_BYTES, httpRequest.cacheFillBytes());
+    assertEquals(CACHE_FILL_BYTES, httpRequest.cacheFillBytes());
     HttpRequest incompleteHttpRequest = HttpRequest.builder().build();
     httpRequest = HttpRequest.fromPb(incompleteHttpRequest.toPb());
     compareHttpRequest(incompleteHttpRequest, httpRequest);
@@ -178,15 +157,12 @@ public class HttpRequestTest {
     assertNull(httpRequest.responseSize());
     assertNull(httpRequest.userAgent());
     assertNull(httpRequest.remoteIp());
-    // todo(mziccard) uncomment when #1042 gets fixed
-    // assertNull(httpRequest.serverIp());
+    assertNull(httpRequest.serverIp());
     assertNull(httpRequest.referer());
-    // todo(mziccard) uncomment when #1042 gets fixed
-    // assertFalse(httpRequest.cacheLookup());
+    assertFalse(httpRequest.cacheLookup());
     assertFalse(httpRequest.cacheHit());
     assertFalse(httpRequest.cacheValidatedWithOriginServer());
-    // todo(mziccard) uncomment when #1042 gets fixed
-    // assertNull(httpRequest.cacheFillBytes());
+    assertNull(httpRequest.cacheFillBytes());
   }
 
   private void compareHttpRequest(HttpRequest expected, HttpRequest value) {
@@ -198,15 +174,12 @@ public class HttpRequestTest {
     assertEquals(expected.responseSize(), value.responseSize());
     assertEquals(expected.userAgent(), value.userAgent());
     assertEquals(expected.remoteIp(), value.remoteIp());
-    // todo(mziccard) uncomment when #1042 gets fixed
-    // assertEquals(expected.serverIp(), value.serverIp();
+    assertEquals(expected.serverIp(), value.serverIp());
     assertEquals(expected.referer(), value.referer());
-    // todo(mziccard) uncomment when #1042 gets fixed
-    // assertEquals(expected.cacheLookup(), value.cacheLookup();
+    assertEquals(expected.cacheLookup(), value.cacheLookup());
     assertEquals(expected.cacheHit(), value.cacheHit());
     assertEquals(expected.cacheValidatedWithOriginServer(), value.cacheValidatedWithOriginServer());
-    // todo(mziccard) uncomment when #1042 gets fixed
-    // assertEquals(expected.cacheFillBytes(), value.cacheFillBytes();
+    assertEquals(expected.cacheFillBytes(), value.cacheFillBytes());
     assertEquals(expected.hashCode(), value.hashCode());
     assertEquals(expected.toString(), value.toString());
   }
