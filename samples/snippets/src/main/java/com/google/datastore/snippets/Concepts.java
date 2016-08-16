@@ -192,7 +192,7 @@ public class Concepts {
         .kind("Task")
         .newKey("sampleTask");
     Entity task = Entity.builder(taskKey)
-        .set("type", "Personal")
+        .set("category", "Personal")
         .set("done", false)
         .set("priority", 4)
         .set("description", "Learn Cloud Datastore")
@@ -205,7 +205,7 @@ public class Concepts {
   public void testProperties() {
     // [START properties]
     Entity task = Entity.builder(taskKey)
-        .set("type", "Personal")
+        .set("category", "Personal")
         .set("created", DateTime.now())
         .set("done", false)
         .set("priority", 4)
@@ -232,7 +232,7 @@ public class Concepts {
   public void testBasicEntity() {
     // [START basic_entity]
     Entity task = Entity.builder(taskKey)
-        .set("type", "Personal")
+        .set("category", "Personal")
         .set("done", false)
         .set("priority", 4)
         .set("description", "Learn Cloud Datastore")
@@ -288,13 +288,13 @@ public class Concepts {
 
   private List<Entity> setUpBatchTests(Key taskKey1, Key taskKey2) {
     Entity task1 = Entity.builder(taskKey1)
-        .set("type", "Personal")
+        .set("category", "Personal")
         .set("done", false)
         .set("priority", 4)
         .set("description", "Learn Cloud Datastore")
         .build();
     Entity task2 = Entity.builder(taskKey2)
-        .set("type", "Personal")
+        .set("category", "Personal")
         .set("done", false)
         .set("priority", 5)
         .set("description", "Integrate Cloud Datastore")
@@ -307,13 +307,13 @@ public class Concepts {
   public void testBatchUpsert() {
     // [START batch_upsert]
     FullEntity<IncompleteKey> task1 = FullEntity.builder(keyFactory.newKey())
-        .set("type", "Personal")
+        .set("category", "Personal")
         .set("done", false)
         .set("priority", 4)
         .set("description", "Learn Cloud Datastore")
         .build();
     FullEntity<IncompleteKey> task2 = Entity.builder(keyFactory.newKey())
-        .set("type", "Personal")
+        .set("category", "Personal")
         .set("done", false)
         .set("priority", 5)
         .set("description", "Integrate Cloud Datastore")
@@ -356,7 +356,7 @@ public class Concepts {
         .ancestors(PathElement.of("TaskList", "default"))
         .newKey("someTask");
     datastore.put(Entity.builder(taskKey)
-        .set("type", "Personal")
+        .set("category", "Personal")
         .set("done", false)
         .set("completed", false)
         .set("priority", 4)
@@ -555,9 +555,9 @@ public class Concepts {
     // [START distinct_query]
     Query<ProjectionEntity> query = Query.projectionEntityQueryBuilder()
         .kind("Task")
-        .projection("type", "priority")
-        .distinctOn("type", "priority")
-        .orderBy(OrderBy.asc("type"), OrderBy.asc("priority"))
+        .projection("category", "priority")
+        .distinctOn("category", "priority")
+        .orderBy(OrderBy.asc("category"), OrderBy.asc("priority"))
         .build();
     // [END distinct_query]
     assertValidQuery(query);
@@ -569,9 +569,9 @@ public class Concepts {
     // [START distinct_on_query]
     Query<ProjectionEntity> query = Query.projectionEntityQueryBuilder()
         .kind("Task")
-        .projection("type", "priority")
-        .distinctOn("type")
-        .orderBy(OrderBy.asc("type"), OrderBy.asc("priority"))
+        .projection("category", "priority")
+        .distinctOn("category")
+        .orderBy(OrderBy.asc("category"), OrderBy.asc("priority"))
         .build();
     // [END distinct_on_query]
     assertValidQuery(query);
@@ -923,7 +923,7 @@ public class Concepts {
     }
     // [END property_run_query]
     Map<String, ImmutableSet<String>> expected = ImmutableMap.of("Task", ImmutableSet.of(
-        "done", "type", "done", "completed", "priority", "created", "percent_complete", "tag"));
+        "done", "category", "done", "completed", "priority", "created", "percent_complete", "tag"));
     assertEquals(expected, propertiesByKind);
   }
 
@@ -953,7 +953,7 @@ public class Concepts {
     }
     // [END property_by_kind_run_query]
     Map<String, Collection<String>> expected = ImmutableMap.<String, Collection<String>>builder()
-        .put("type", Collections.singleton("STRING"))
+        .put("category", Collections.singleton("STRING"))
         .put("done", Collections.singleton("BOOLEAN"))
         .put("completed", Collections.singleton("BOOLEAN"))
         .put("priority", Collections.singleton("INT64"))
@@ -991,7 +991,7 @@ public class Concepts {
     }
     // [END property_filtering_run_query]
     Map<String, ImmutableSet<String>> expected =
-        ImmutableMap.of("Task", ImmutableSet.of("priority", "tag", "type"));
+        ImmutableMap.of("Task", ImmutableSet.of("priority", "tag", "category"));
     assertEquals(expected, propertiesByKind);
   }
 
