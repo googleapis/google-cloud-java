@@ -250,8 +250,6 @@ public class CreateCustomMetric {
     monitoredResource.setType("gce_instance");
     monitoredResource.setLabels(resourceLabel);
     timeSeries.setResource(monitoredResource);
-    timeSeries.setMetricKind(METRIC_KIND);
-    timeSeries.setValueType("INT64");
     Point point = new Point();
     TimeInterval ti = new TimeInterval();
     String now = getNow();
