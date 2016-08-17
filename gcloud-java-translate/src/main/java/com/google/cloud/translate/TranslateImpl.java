@@ -22,6 +22,7 @@ import static com.google.common.base.Preconditions.checkState;
 
 import com.google.api.services.translate.model.DetectionsResourceItems;
 import com.google.api.services.translate.model.LanguagesResource;
+import com.google.api.services.translate.model.TranslationsResource;
 import com.google.cloud.BaseService;
 import com.google.cloud.RetryHelper.RetryHelperException;
 import com.google.cloud.translate.spi.TranslateRpc;
@@ -100,6 +101,26 @@ final class TranslateImpl extends BaseService<TranslateOptions> implements Trans
   @Override
   public Detection detect(String text) {
     return detect(Collections.singletonList(text)).get(0);
+  }
+
+  @Override
+  public List<Translation> translate(final List<String> texts, final TranslateOption... options) {
+    try {
+      return Lists.transform(runWithRetries(new Callable<List<TranslationsResource>>() {
+        @Override
+        public List<TranslationsResource> call() {
+          return translateRpc.translate(texts, optionMap(options));
+        }
+      }, options().retryParams(), EXCEPTION_HANDLER, options().clock()),
+          Translation.FROM_PB_FUNCTION);
+    } catch (RetryHelperException e) {
+      throw TranslateException.translateAndThrow(e);
+    }
+  }
+
+  @Override
+  public Translation translate(String text, TranslateOption... options) {
+    return translate(Collections.singletonList(text), options).get(0);
   }
 
   private Map<TranslateRpc.Option, ?> optionMap(Option... options) {

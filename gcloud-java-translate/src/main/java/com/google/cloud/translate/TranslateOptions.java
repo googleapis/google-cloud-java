@@ -20,11 +20,13 @@ import static com.google.common.base.MoreObjects.firstNonNull;
 
 import com.google.cloud.AuthCredentials;
 import com.google.cloud.HttpServiceOptions;
+import com.google.cloud.translate.Translate.TranslateOption;
 import com.google.cloud.translate.spi.DefaultTranslateRpc;
 import com.google.cloud.translate.spi.TranslateRpc;
 import com.google.cloud.translate.spi.TranslateRpcFactory;
 import com.google.common.collect.ImmutableSet;
 
+import java.util.List;
 import java.util.Locale;
 import java.util.Set;
 
@@ -96,6 +98,10 @@ public class TranslateOptions extends
 
     /**
      * Sets the code for the default target language. If not set, english ({@code en}) is used.
+     * {@link Translate#translate(List, TranslateOption...)} and
+     * {@link Translate#translate(String, TranslateOption...)} calls will use this
+     * value unless a {@link TranslateOption#targetLanguage(String)} option is explicitly
+     * provided.
      *
      * @return the builder
      */
