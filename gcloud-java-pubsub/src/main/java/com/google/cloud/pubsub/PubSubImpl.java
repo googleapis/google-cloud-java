@@ -21,7 +21,6 @@ import static com.google.cloud.pubsub.PubSub.ListOption.OptionType.PAGE_TOKEN;
 import static com.google.cloud.pubsub.PubSub.PullOption.OptionType.EXECUTOR_FACTORY;
 import static com.google.cloud.pubsub.PubSub.PullOption.OptionType.MAX_QUEUED_CALLBACKS;
 import static com.google.common.base.Preconditions.checkArgument;
-import static com.google.common.util.concurrent.Futures.lazyTransform;
 
 import com.google.cloud.AsyncPage;
 import com.google.cloud.AsyncPageImpl;
@@ -40,6 +39,8 @@ import com.google.common.collect.Iterables;
 import com.google.common.collect.Iterators;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
+import com.google.common.util.concurrent.Futures;
+import com.google.common.util.concurrent.ListenableFuture;
 import com.google.common.util.concurrent.Uninterruptibles;
 import com.google.protobuf.Empty;
 import com.google.pubsub.v1.AcknowledgeRequest;
@@ -187,6 +188,14 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
     }
   }
 
+  private static <I, O> Future<O> transform(Future<I> future,
+      Function<? super I, ? extends O> function) {
+    if (future instanceof ListenableFuture) {
+      return Futures.transform((ListenableFuture<I>) future, function);
+    }
+    return Futures.lazyTransform(future, function);
+  }
+
   @Override
   public Topic create(TopicInfo topic) {
     return get(createAsync(topic));
@@ -194,7 +203,7 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
 
   @Override
   public Future<Topic> createAsync(TopicInfo topic) {
-    return lazyTransform(rpc.create(topic.toPb(options().projectId())), Topic.fromPbFunction(this));
+    return transform(rpc.create(topic.toPb(options().projectId())), Topic.fromPbFunction(this));
   }
 
   @Override
@@ -207,7 +216,7 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
     GetTopicRequest request = GetTopicRequest.newBuilder()
         .setTopic(PublisherApi.formatTopicName(options().projectId(), topic))
         .build();
-    return lazyTransform(rpc.get(request), Topic.fromPbFunction(this));
+    return transform(rpc.get(request), Topic.fromPbFunction(this));
   }
 
   @Override
@@ -220,7 +229,7 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
     DeleteTopicRequest request = DeleteTopicRequest.newBuilder()
         .setTopic(PublisherApi.formatTopicName(options().projectId(), topic))
         .build();
-    return lazyTransform(rpc.delete(request), EMPTY_TO_BOOLEAN_FUNCTION);
+    return transform(rpc.delete(request), EMPTY_TO_BOOLEAN_FUNCTION);
   }
 
   private static ListTopicsRequest listTopicsRequest(PubSubOptions serviceOptions,
@@ -242,7 +251,7 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
       final Map<Option.OptionType, ?> options) {
     final ListTopicsRequest request = listTopicsRequest(serviceOptions, options);
     Future<ListTopicsResponse> list = serviceOptions.rpc().list(request);
-    return lazyTransform(list,  new Function<ListTopicsResponse, AsyncPage<Topic>>() {
+    return transform(list,  new Function<ListTopicsResponse, AsyncPage<Topic>>() {
       @Override
       public AsyncPage<Topic> apply(ListTopicsResponse listTopicsResponse) {
         List<Topic> topics = listTopicsResponse.getTopicsList() == null ? ImmutableList.<Topic>of()
@@ -281,7 +290,7 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
 
   @Override
   public Future<String> publishAsync(String topic, Message message) {
-    return lazyTransform(
+    return transform(
         rpc.publish(publishRequest(options(), topic, Collections.singletonList(message))),
         new Function<PublishResponse, String>() {
           @Override
@@ -308,7 +317,7 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
 
   @Override
   public Future<List<String>> publishAsync(String topic, Iterable<Message> messages) {
-    return lazyTransform(rpc.publish(publishRequest(options(), topic, messages)),
+    return transform(rpc.publish(publishRequest(options(), topic, messages)),
         new Function<PublishResponse, List<String>>() {
           @Override
           public List<String> apply(PublishResponse publishResponse) {
@@ -324,7 +333,7 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
 
   @Override
   public Future<Subscription> createAsync(SubscriptionInfo subscription) {
-    return lazyTransform(rpc.create(subscription.toPb(options().projectId())),
+    return transform(rpc.create(subscription.toPb(options().projectId())),
         Subscription.fromPbFunction(this));
   }
 
@@ -338,7 +347,7 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
     GetSubscriptionRequest request = GetSubscriptionRequest.newBuilder()
         .setSubscription(SubscriberApi.formatSubscriptionName(options().projectId(), subscription))
         .build();
-    return lazyTransform(rpc.get(request), Subscription.fromPbFunction(this));
+    return transform(rpc.get(request), Subscription.fromPbFunction(this));
   }
 
   @Override
@@ -353,7 +362,7 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
         .setPushConfig(pushConfig != null ? pushConfig.toPb()
             : com.google.pubsub.v1.PushConfig.getDefaultInstance())
         .build();
-    return lazyTransform(rpc.modify(request), EMPTY_TO_VOID_FUNCTION);
+    return transform(rpc.modify(request), EMPTY_TO_VOID_FUNCTION);
   }
 
   @Override
@@ -366,7 +375,7 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
     DeleteSubscriptionRequest request = DeleteSubscriptionRequest.newBuilder()
         .setSubscription(SubscriberApi.formatSubscriptionName(options().projectId(), subscription))
         .build();
-    return lazyTransform(rpc.delete(request), EMPTY_TO_BOOLEAN_FUNCTION);
+    return transform(rpc.delete(request), EMPTY_TO_BOOLEAN_FUNCTION);
   }
 
   private static ListSubscriptionsRequest listSubscriptionsRequest(PubSubOptions serviceOptions,
@@ -388,7 +397,7 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
       final PubSubOptions serviceOptions, final Map<Option.OptionType, ?> options) {
     final ListSubscriptionsRequest request = listSubscriptionsRequest(serviceOptions, options);
     Future<ListSubscriptionsResponse> list = serviceOptions.rpc().list(request);
-    return lazyTransform(list, new Function<ListSubscriptionsResponse, AsyncPage<Subscription>>() {
+    return transform(list, new Function<ListSubscriptionsResponse, AsyncPage<Subscription>>() {
       @Override
       public AsyncPage<Subscription> apply(ListSubscriptionsResponse listSubscriptionsResponse) {
         List<Subscription> subscriptions = listSubscriptionsResponse.getSubscriptionsList() == null
@@ -432,7 +441,7 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
     final ListTopicSubscriptionsRequest request =
         listSubscriptionsRequest(topic, serviceOptions, options);
     Future<ListTopicSubscriptionsResponse> list = serviceOptions.rpc().list(request);
-    return lazyTransform(list,
+    return transform(list,
         new Function<ListTopicSubscriptionsResponse, AsyncPage<SubscriptionId>>() {
           @Override
           public AsyncPage<SubscriptionId> apply(
@@ -493,7 +502,7 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
         // ignore
       }
     });
-    return lazyTransform(future, new Function<PullResponse, Iterator<ReceivedMessage>>() {
+    return transform(future, new Function<PullResponse, Iterator<ReceivedMessage>>() {
       @Override
       public Iterator<ReceivedMessage> apply(PullResponse response) {
         return Iterators.transform(response.getReceivedMessagesList().iterator(),
@@ -540,7 +549,7 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
         .setSubscription(SubscriberApi.formatSubscriptionName(options().projectId(), subscription))
         .addAllAckIds(ackIds)
         .build();
-    return lazyTransform(rpc.acknowledge(request), EMPTY_TO_VOID_FUNCTION);
+    return transform(rpc.acknowledge(request), EMPTY_TO_VOID_FUNCTION);
   }
 
   @Override
@@ -589,7 +598,7 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
         .setAckDeadlineSeconds((int) TimeUnit.SECONDS.convert(deadline, unit))
         .addAllAckIds(ackIds)
         .build();
-    return lazyTransform(rpc.modify(request), EMPTY_TO_VOID_FUNCTION);
+    return transform(rpc.modify(request), EMPTY_TO_VOID_FUNCTION);
   }
 
   static <T extends Option.OptionType> Map<Option.OptionType, ?> optionMap(Option... options) {
