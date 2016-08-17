@@ -64,7 +64,7 @@ public class DatastoreFactory {
   public Datastore create(DatastoreOptions options) throws IllegalArgumentException {
     return new Datastore(newRemoteRpc(options));
   }
-  
+
   /**
    * Constructs a Google APIs HTTP client with the associated credentials.
    */
@@ -98,7 +98,7 @@ public class DatastoreFactory {
     // DatastoreOptions ensures either project endpoint or project ID is set.
     String projectId = checkNotNull(options.getProjectId());
     if (options.getLocalHost() != null) {
-      return validateUrl(String.format("http://%s/datastore/%s/projects/%s",
+      return validateUrl(String.format("http://%s/%s/projects/%s",
           options.getLocalHost(), VERSION, projectId));
     }
     return validateUrl(String.format("%s/%s/projects/%s",

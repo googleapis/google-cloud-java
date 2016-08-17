@@ -139,7 +139,7 @@ public class DatastoreTest {
         .localHost("localhost:8080")
         .build());
     assertThat(datastore.remoteRpc.getUrl())
-        .isEqualTo("http://localhost:8080/datastore/v1/projects/project-id");
+        .isEqualTo("http://localhost:8080/v1/projects/project-id");
   }
 
   @Test
@@ -149,7 +149,7 @@ public class DatastoreTest {
         .localHost("127.0.0.1:8080")
         .build());
     assertThat(datastore.remoteRpc.getUrl())
-        .isEqualTo("http://127.0.0.1:8080/datastore/v1/projects/project-id");
+        .isEqualTo("http://127.0.0.1:8080/v1/projects/project-id");
   }
 
   @Test
