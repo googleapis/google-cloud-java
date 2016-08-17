@@ -21,8 +21,10 @@ import static org.junit.Assert.assertSame;
 
 import com.google.api.services.translate.model.DetectionsResourceItems;
 import com.google.api.services.translate.model.LanguagesResource;
+import com.google.api.services.translate.model.TranslationsResource;
 import com.google.cloud.RetryParams;
 import com.google.cloud.translate.Translate.LanguageListOption;
+import com.google.cloud.translate.Translate.TranslateOption;
 import com.google.cloud.translate.spi.TranslateRpc;
 import com.google.cloud.translate.spi.TranslateRpcFactory;
 import com.google.common.collect.ImmutableList;
@@ -63,6 +65,12 @@ public class TranslateImplTest {
       new DetectionsResourceItems().setLanguage("en").setConfidence(0.8F);
   private static final Detection DETECTION1 = Detection.fromPb(DETECTION1_PB);
   private static final Detection DETECTION2 = Detection.fromPb(DETECTION2_PB);
+  private static final TranslationsResource TRANSLATION1_PB =
+      new TranslationsResource().setTranslatedText("Hello World!").setDetectedSourceLanguage("es");
+  private static final TranslationsResource TRANSLATION2_PB =
+      new TranslationsResource().setTranslatedText("Hello World!").setDetectedSourceLanguage("de");
+  private static final Translation TRANSLATION1 = Translation.fromPb(TRANSLATION1_PB);
+  private static final Translation TRANSLATION2 = Translation.fromPb(TRANSLATION2_PB);
 
   // Empty TranslateRpc options
   private static final Map<TranslateRpc.Option, ?> EMPTY_RPC_OPTIONS = ImmutableMap.of();
@@ -72,6 +80,15 @@ public class TranslateImplTest {
       LanguageListOption.targetLanguage(TARGET_LANGUAGE);
   private static final Map<TranslateRpc.Option, ?> LANGUAGE_LIST_OPTIONS = ImmutableMap.of(
       TranslateRpc.Option.TARGET_LANGUAGE, LANGUAGE_LIST_OPTION.value());
+
+  // Translate options
+  private static final TranslateOption TARGET_LANGUAGE_OPTION =
+      TranslateOption.targetLanguage("en");
+  private static final TranslateOption SOURCE_LANGUAGE_OPTION =
+      TranslateOption.sourceLanguage("de");
+  private static final Map<TranslateRpc.Option, ?> TRANSLATE_OPTIONS = ImmutableMap.of(
+      TranslateRpc.Option.TARGET_LANGUAGE, TARGET_LANGUAGE_OPTION.value(),
+      TranslateRpc.Option.SOURCE_LANGUAGE, SOURCE_LANGUAGE_OPTION.value());
 
   private TranslateOptions options;
   private TranslateRpcFactory rpcFactoryMock;
@@ -247,6 +264,51 @@ public class TranslateImplTest {
     thrown.expect(IllegalStateException.class);
     thrown.expectMessage("No detection found for text: other text");
     translate.detect(text1, text2);
+  }
+
+  @Test
+  public void testTranslate() {
+    String text = "¡Hola Mundo!";
+    EasyMock.expect(translateRpcMock.translate(ImmutableList.of(text), EMPTY_RPC_OPTIONS))
+        .andReturn(ImmutableList.of(TRANSLATION1_PB));
+    EasyMock.replay(translateRpcMock);
+    initializeService();
+    assertEquals(TRANSLATION1, translate.translate(text));
+  }
+
+  @Test
+  public void testTranslateWithOptions() {
+    String text = "Hallo Welt!";
+    EasyMock.expect(translateRpcMock.translate(ImmutableList.of(text), TRANSLATE_OPTIONS))
+        .andReturn(ImmutableList.of(TRANSLATION2_PB));
+    EasyMock.replay(translateRpcMock);
+    initializeService();
+    assertEquals(TRANSLATION2,
+        translate.translate(text, TARGET_LANGUAGE_OPTION, SOURCE_LANGUAGE_OPTION));
+  }
+
+  @Test
+  public void testTranslateList() {
+    String text1 = "¡Hola Mundo!";
+    String text2 = "Hallo Welt!";
+    List<String> texts = ImmutableList.of(text1, text2);
+    EasyMock.expect(translateRpcMock.translate(texts, EMPTY_RPC_OPTIONS))
+        .andReturn(ImmutableList.of(TRANSLATION1_PB, TRANSLATION2_PB));
+    EasyMock.replay(translateRpcMock);
+    initializeService();
+    assertEquals(ImmutableList.of(TRANSLATION1, TRANSLATION2), translate.translate(texts));
+  }
+
+  @Test
+  public void testTranslateListWithOptions() {
+    String text = "Hallo Welt!";
+    List<String> texts = ImmutableList.of(text);
+    EasyMock.expect(translateRpcMock.translate(texts, TRANSLATE_OPTIONS))
+        .andReturn(ImmutableList.of(TRANSLATION2_PB));
+    EasyMock.replay(translateRpcMock);
+    initializeService();
+    assertEquals(ImmutableList.of(TRANSLATION2),
+        translate.translate(texts, TARGET_LANGUAGE_OPTION, SOURCE_LANGUAGE_OPTION));
   }
 
   @Test

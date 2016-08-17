@@ -52,6 +52,38 @@ public interface Translate extends Service<TranslateOptions> {
   }
 
   /**
+   * Class for specifying translate options.
+   */
+  class TranslateOption extends Option {
+
+    private static final long serialVersionUID = 1347871763933507106L;
+
+    private TranslateOption(TranslateRpc.Option rpcOption, String value) {
+      super(rpcOption, value);
+    }
+
+    /**
+     * Returns an option for setting the source language. If not provided, Google Translate will try
+     * to detect the language of the text to translate.
+     *
+     * @param sourceLanguage the source language code
+     */
+    public static TranslateOption sourceLanguage(String sourceLanguage) {
+      return new TranslateOption(TranslateRpc.Option.SOURCE_LANGUAGE, sourceLanguage);
+    }
+
+    /**
+     * Returns an option for setting the target language. If this option is not provided, the value
+     * returned by {@link TranslateOptions#targetLanguage()} is used.
+     *
+     * @param targetLanguage the target language code
+     */
+    public static TranslateOption targetLanguage(String targetLanguage) {
+      return new TranslateOption(TranslateRpc.Option.TARGET_LANGUAGE, targetLanguage);
+    }
+  }
+
+  /**
    * Returns the list of languages supported by Google Translate. If
    * {@link LanguageListOption#targetLanguage(String)} is provided, {@link Language#name()} values
    * are localized according to the provided target language. If no such option is passed,
@@ -112,4 +144,48 @@ public interface Translate extends Service<TranslateOptions> {
    * }</pre>
    */
   Detection detect(String text);
+
+  /**
+   * Translates the provided texts.
+   *
+   * <p>Example of translating some texts:
+   * <pre> {@code
+   * List<String> texts = new LinkedList<>();
+   * texts.add("Hello, World!");
+   * texts.add("¡Hola Mundo!");
+   * List<Translation> translations = translate.translate(texts);
+   * }</pre>
+   *
+   * <p>Example of translating some texts, specifying source and target language:
+   * <pre> {@code
+   * List<String> texts = new LinkedList<>();
+   * texts.add("¡Hola Mundo!");
+   * List<Translation> translations = translate.translate(texts,
+   *     TranslateOption.sourceLanguage("es"), TranslateOption.targetLanguage("de"));
+   * }</pre>
+   *
+   * @param texts the texts to translate
+   * @return a list of objects containing information on the language translation, one for each
+   *     provided text, in order.
+   */
+  List<Translation> translate(List<String> texts, TranslateOption... options);
+
+  /**
+   * Translates the provided texts.
+   *
+   * <p>Example of translating a text:
+   * <pre> {@code
+   * Translation translation = translate.translate("¡Hola Mundo!");
+   * }</pre>
+   *
+   * <p>Example of translating a text, specifying source and target language:
+   * <pre> {@code
+   * Translation translation = translate.translate("¡Hola Mundo!",
+   *     TranslateOption.sourceLanguage("es"), TranslateOption.targetLanguage("de"));
+   * }</pre>
+   *
+   * @param text the text to translate
+   * @return an object containing information on the language translation
+   */
+  Translation translate(String text, TranslateOption... options);
 }
