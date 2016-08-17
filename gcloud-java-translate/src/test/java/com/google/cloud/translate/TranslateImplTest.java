@@ -19,6 +19,7 @@ package com.google.cloud.translate;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertSame;
 
+import com.google.api.services.translate.model.DetectionsResourceItems;
 import com.google.api.services.translate.model.LanguagesResource;
 import com.google.cloud.RetryParams;
 import com.google.cloud.translate.Translate.LanguageListOption;
@@ -56,6 +57,12 @@ public class TranslateImplTest {
   private static final Language LANGUAGE4 = Language.fromPb(LANGUAGE4_PB);
   private static final List<Language> LANGUAGES1 = ImmutableList.of(LANGUAGE1, LANGUAGE2);
   private static final List<Language> LANGUAGES2 = ImmutableList.of(LANGUAGE3, LANGUAGE4);
+  private static final DetectionsResourceItems DETECTION1_PB =
+      new DetectionsResourceItems().setLanguage("en").setConfidence(0.9F);
+  private static final DetectionsResourceItems DETECTION2_PB =
+      new DetectionsResourceItems().setLanguage("en").setConfidence(0.8F);
+  private static final Detection DETECTION1 = Detection.fromPb(DETECTION1_PB);
+  private static final Detection DETECTION2 = Detection.fromPb(DETECTION2_PB);
 
   // Empty TranslateRpc options
   private static final Map<TranslateRpc.Option, ?> EMPTY_RPC_OPTIONS = ImmutableMap.of();
@@ -104,7 +111,7 @@ public class TranslateImplTest {
   }
 
   @Test
-  public void testListSupporteLanguages() {
+  public void testListSupportedLanguages() {
     EasyMock.expect(translateRpcMock.listSupportedLanguages(EMPTY_RPC_OPTIONS))
         .andReturn(ImmutableList.of(LANGUAGE1_PB, LANGUAGE2_PB));
     EasyMock.replay(translateRpcMock);
@@ -113,13 +120,133 @@ public class TranslateImplTest {
   }
 
   @Test
-  public void testListSupporteLanguagesWithOptions() {
+  public void testListSupportedLanguagesWithOptions() {
     EasyMock.expect(translateRpcMock.listSupportedLanguages(LANGUAGE_LIST_OPTIONS))
         .andReturn(ImmutableList.of(LANGUAGE3_PB, LANGUAGE4_PB));
     EasyMock.replay(translateRpcMock);
     initializeService();
     assertEquals(LANGUAGES2, translate.listSupportedLanguages(
         LanguageListOption.targetLanguage(TARGET_LANGUAGE)));
+  }
+
+  @Test
+  public void testDetect() {
+    String text = "text";
+    EasyMock.expect(translateRpcMock.detect(ImmutableList.of(text)))
+        .andReturn(
+            ImmutableList.<List<DetectionsResourceItems>>of(ImmutableList.of(DETECTION1_PB)));
+    EasyMock.replay(translateRpcMock);
+    initializeService();
+    assertEquals(DETECTION1, translate.detect(text));
+  }
+
+  @Test
+  public void testDetectMultipleDetections() {
+    String text = "text";
+    EasyMock.expect(translateRpcMock.detect(ImmutableList.of(text)))
+        .andReturn(ImmutableList.<List<DetectionsResourceItems>>of(
+            ImmutableList.of(DETECTION1_PB, DETECTION2_PB)));
+    EasyMock.replay(translateRpcMock);
+    initializeService();
+    thrown.expect(IllegalStateException.class);
+    thrown.expectMessage("Multiple detections found for text: text");
+    translate.detect(text);
+  }
+
+  @Test
+  public void testDetectNoDetection() {
+    String text = "text";
+    EasyMock.expect(translateRpcMock.detect(ImmutableList.of(text)))
+        .andReturn(ImmutableList.<List<DetectionsResourceItems>>of(
+            ImmutableList.<DetectionsResourceItems>of()));
+    EasyMock.replay(translateRpcMock);
+    initializeService();
+    thrown.expect(IllegalStateException.class);
+    thrown.expectMessage("No detection found for text: text");
+    translate.detect(text);
+  }
+
+  @Test
+  public void testDetectList() {
+    String text1 = "text";
+    String text2 = "other text";
+    List<String> texts = ImmutableList.of(text1, text2);
+    EasyMock.expect(translateRpcMock.detect(texts))
+        .andReturn(ImmutableList.<List<DetectionsResourceItems>>of(
+            ImmutableList.of(DETECTION1_PB), ImmutableList.of(DETECTION2_PB)));
+    EasyMock.replay(translateRpcMock);
+    initializeService();
+    assertEquals(ImmutableList.of(DETECTION1, DETECTION2), translate.detect(texts));
+  }
+
+  @Test
+  public void testDetectListMultipleDetections() {
+    String text1 = "text";
+    String text2 = "other text";
+    List<String> texts = ImmutableList.of(text1, text2);
+    EasyMock.expect(translateRpcMock.detect(texts))
+        .andReturn(ImmutableList.<List<DetectionsResourceItems>>of(
+            ImmutableList.of(DETECTION1_PB, DETECTION2_PB), ImmutableList.of(DETECTION1_PB)));
+    EasyMock.replay(translateRpcMock);
+    initializeService();
+    thrown.expect(IllegalStateException.class);
+    thrown.expectMessage("Multiple detections found for text: text");
+    translate.detect(texts);
+  }
+
+  @Test
+  public void testDetectListNoDetection() {
+    String text1 = "text";
+    String text2 = "other text";
+    List<String> texts = ImmutableList.of(text1, text2);
+    EasyMock.expect(translateRpcMock.detect(texts))
+        .andReturn(ImmutableList.<List<DetectionsResourceItems>>of(
+            ImmutableList.of(DETECTION1_PB), ImmutableList.<DetectionsResourceItems>of()));
+    EasyMock.replay(translateRpcMock);
+    initializeService();
+    thrown.expect(IllegalStateException.class);
+    thrown.expectMessage("No detection found for text: other text");
+    translate.detect(texts);
+  }
+
+  @Test
+  public void testDetectVararg() {
+    String text1 = "text";
+    String text2 = "other text";
+    EasyMock.expect(translateRpcMock.detect(ImmutableList.of(text1, text2)))
+        .andReturn(ImmutableList.<List<DetectionsResourceItems>>of(
+            ImmutableList.of(DETECTION1_PB), ImmutableList.of(DETECTION2_PB)));
+    EasyMock.replay(translateRpcMock);
+    initializeService();
+    assertEquals(ImmutableList.of(DETECTION1, DETECTION2), translate.detect(text1, text2));
+  }
+
+  @Test
+  public void testDetectVarargMultipleDetections() {
+    String text1 = "text";
+    String text2 = "other text";
+    EasyMock.expect(translateRpcMock.detect(ImmutableList.of(text1, text2)))
+        .andReturn(ImmutableList.<List<DetectionsResourceItems>>of(
+            ImmutableList.of(DETECTION1_PB, DETECTION2_PB), ImmutableList.of(DETECTION1_PB)));
+    EasyMock.replay(translateRpcMock);
+    initializeService();
+    thrown.expect(IllegalStateException.class);
+    thrown.expectMessage("Multiple detections found for text: text");
+    translate.detect(text1, text2);
+  }
+
+  @Test
+  public void testDetectVarargNoDetection() {
+    String text1 = "text";
+    String text2 = "other text";
+    EasyMock.expect(translateRpcMock.detect(ImmutableList.of(text1, text2)))
+        .andReturn(ImmutableList.<List<DetectionsResourceItems>>of(
+            ImmutableList.of(DETECTION1_PB), ImmutableList.<DetectionsResourceItems>of()));
+    EasyMock.replay(translateRpcMock);
+    initializeService();
+    thrown.expect(IllegalStateException.class);
+    thrown.expectMessage("No detection found for text: other text");
+    translate.detect(text1, text2);
   }
 
   @Test

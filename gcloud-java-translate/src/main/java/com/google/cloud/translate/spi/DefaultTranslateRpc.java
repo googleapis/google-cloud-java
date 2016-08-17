@@ -57,10 +57,10 @@ public class DefaultTranslateRpc implements TranslateRpc {
   }
 
   @Override
-  public List<List<DetectionsResourceItems>> detect(List<String> text) {
+  public List<List<DetectionsResourceItems>> detect(List<String> texts) {
     try {
       List<List<DetectionsResourceItems>> detections =
-          translate.detections().list(text).setKey(options.apiKey()).execute().getDetections();
+          translate.detections().list(texts).setKey(options.apiKey()).execute().getDetections();
       return detections != null ? detections : ImmutableList.<List<DetectionsResourceItems>>of();
     } catch (IOException ex) {
       throw translate(ex);
@@ -82,14 +82,14 @@ public class DefaultTranslateRpc implements TranslateRpc {
   }
 
   @Override
-  public List<TranslationsResource> translate(List<String> text, Map<Option, ?> optionMap) {
+  public List<TranslationsResource> translate(List<String> texts, Map<Option, ?> optionMap) {
     try {
       String targetLanguage =
           firstNonNull(TARGET_LANGUAGE.getString(optionMap), options.targetLanguage());
       final String sourceLanguage = SOURCE_LANGUAGE.getString(optionMap);
       List<TranslationsResource> translations =
           translate.translations()
-              .list(text, targetLanguage)
+              .list(texts, targetLanguage)
               .setSource(sourceLanguage)
               .setKey(options.apiKey())
               .execute()
