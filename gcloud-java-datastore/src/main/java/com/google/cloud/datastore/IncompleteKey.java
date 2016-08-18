@@ -54,21 +54,21 @@ public class IncompleteKey extends BaseKey {
 
   @Override
   Object fromPb(byte[] bytesPb) throws InvalidProtocolBufferException {
-    return fromPb(com.google.datastore.v1beta3.Key.parseFrom(bytesPb));
+    return fromPb(com.google.datastore.v1.Key.parseFrom(bytesPb));
   }
 
-  static IncompleteKey fromPb(com.google.datastore.v1beta3.Key keyPb) {
+  static IncompleteKey fromPb(com.google.datastore.v1.Key keyPb) {
     String projectId = "";
     String namespace = "";
     if (keyPb.hasPartitionId()) {
-      com.google.datastore.v1beta3.PartitionId partitionIdPb = keyPb.getPartitionId();
+      com.google.datastore.v1.PartitionId partitionIdPb = keyPb.getPartitionId();
       projectId = partitionIdPb.getProjectId();
       namespace = partitionIdPb.getNamespaceId();
     }
-    List<com.google.datastore.v1beta3.Key.PathElement> pathElementsPb = keyPb.getPathList();
+    List<com.google.datastore.v1.Key.PathElement> pathElementsPb = keyPb.getPathList();
     Preconditions.checkArgument(!pathElementsPb.isEmpty(), "Path must not be empty");
     ImmutableList.Builder<PathElement> pathBuilder = ImmutableList.builder();
-    for (com.google.datastore.v1beta3.Key.PathElement pathElementPb : pathElementsPb) {
+    for (com.google.datastore.v1.Key.PathElement pathElementPb : pathElementsPb) {
       pathBuilder.add(PathElement.fromPb(pathElementPb));
     }
     ImmutableList<PathElement> path = pathBuilder.build();

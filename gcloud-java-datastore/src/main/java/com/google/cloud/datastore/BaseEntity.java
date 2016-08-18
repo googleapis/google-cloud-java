@@ -50,7 +50,7 @@ import java.util.Set;
  *     Entities, Properties, and Keys</a>
  */
 public abstract class BaseEntity<K extends IncompleteKey>
-    extends Serializable<com.google.datastore.v1beta3.Entity> {
+    extends Serializable<com.google.datastore.v1.Entity> {
 
   private static final long serialVersionUID = 8175618724683792766L;
 
@@ -92,10 +92,10 @@ public abstract class BaseEntity<K extends IncompleteKey>
     }
 
     @SuppressWarnings("unchecked")
-    B fill(com.google.datastore.v1beta3.Entity entityPb) {
+    B fill(com.google.datastore.v1.Entity entityPb) {
       Map<String, Value<?>> copiedProperties = Maps.newHashMap();
-      for (Map.Entry<String, com.google.datastore.v1beta3.Value> entry :
-        entityPb.getProperties().entrySet()) {
+      for (Map.Entry<String, com.google.datastore.v1.Value> entry :
+          entityPb.getProperties().entrySet()) {
         copiedProperties.put(entry.getKey(), Value.fromPb(entry.getValue()));
       }
       properties(copiedProperties);
@@ -646,17 +646,16 @@ public abstract class BaseEntity<K extends IncompleteKey>
   @Override
   Object fromPb(byte[] bytesPb) throws InvalidProtocolBufferException {
     Builder<?, ?> builder = emptyBuilder();
-    builder.fill(com.google.datastore.v1beta3.Entity.parseFrom(bytesPb));
+    builder.fill(com.google.datastore.v1.Entity.parseFrom(bytesPb));
     return builder.build();
   }
 
   protected abstract Builder<?, ?> emptyBuilder();
 
   @Override
-  final com.google.datastore.v1beta3.Entity toPb() {
-    com.google.datastore.v1beta3.Entity.Builder entityPb =
-        com.google.datastore.v1beta3.Entity.newBuilder();
-    Map<String, com.google.datastore.v1beta3.Value> propertiesPb = entityPb.getMutableProperties();
+  final com.google.datastore.v1.Entity toPb() {
+    com.google.datastore.v1.Entity.Builder entityPb = com.google.datastore.v1.Entity.newBuilder();
+    Map<String, com.google.datastore.v1.Value> propertiesPb = entityPb.getMutableProperties();
     for (Map.Entry<String, Value<?>> entry : properties.entrySet()) {
       propertiesPb.put(entry.getKey(), entry.getValue().toPb());
     }

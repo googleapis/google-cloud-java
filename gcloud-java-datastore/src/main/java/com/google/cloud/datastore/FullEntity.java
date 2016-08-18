@@ -68,8 +68,7 @@ public class FullEntity<K extends IncompleteKey> extends BaseEntity<K> {
     return new Builder<>(copyFrom);
   }
 
-
-  static FullEntity<?> fromPb(com.google.datastore.v1beta3.Entity entityPb) {
+  static FullEntity<?> fromPb(com.google.datastore.v1.Entity entityPb) {
     return new Builder<>().fill(entityPb).build();
   }
 }

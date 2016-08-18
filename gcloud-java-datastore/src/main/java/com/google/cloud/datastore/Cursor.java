@@ -28,7 +28,7 @@ import com.google.protobuf.InvalidProtocolBufferException;
  * A Google Cloud Datastore cursor.
  * The cursor can be used to as a starting point or an ending point for a {@link Query}
  */
-public final class Cursor extends Serializable<com.google.datastore.v1beta3.Value> {
+public final class Cursor extends Serializable<com.google.datastore.v1.Value> {
 
   private static final long serialVersionUID = -1423744878777486541L;
 
@@ -85,16 +85,16 @@ public final class Cursor extends Serializable<com.google.datastore.v1beta3.Valu
   }
 
   @Override
-  com.google.datastore.v1beta3.Value toPb() {
-    return com.google.datastore.v1beta3.Value.newBuilder().setBlobValue(byteString).build();
+  com.google.datastore.v1.Value toPb() {
+    return com.google.datastore.v1.Value.newBuilder().setBlobValue(byteString).build();
   }
 
   @Override
   Object fromPb(byte[] bytesPb) throws InvalidProtocolBufferException {
-    return fromPb(com.google.datastore.v1beta3.Value.parseFrom(bytesPb));
+    return fromPb(com.google.datastore.v1.Value.parseFrom(bytesPb));
   }
 
-  static Cursor fromPb(com.google.datastore.v1beta3.Value valuePb) {
+  static Cursor fromPb(com.google.datastore.v1.Value valuePb) {
     return new Cursor(valuePb.getBlobValue());
   }
 }

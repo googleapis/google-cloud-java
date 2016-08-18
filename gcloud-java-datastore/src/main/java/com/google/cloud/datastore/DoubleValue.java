@@ -16,7 +16,7 @@
 
 package com.google.cloud.datastore;
 
-import static com.google.datastore.v1beta3.Value.DOUBLE_VALUE_FIELD_NUMBER;
+import static com.google.datastore.v1.Value.DOUBLE_VALUE_FIELD_NUMBER;
 
 public final class DoubleValue extends Value<Double> {
 
@@ -38,12 +38,12 @@ public final class DoubleValue extends Value<Double> {
         }
 
         @Override
-        protected Double getValue(com.google.datastore.v1beta3.Value from) {
+        protected Double getValue(com.google.datastore.v1.Value from) {
           return from.getDoubleValue();
         }
 
         @Override
-        protected void setValue(DoubleValue from, com.google.datastore.v1beta3.Value.Builder to) {
+        protected void setValue(DoubleValue from, com.google.datastore.v1.Value.Builder to) {
           to.setDoubleValue(from.get());
         }
       };

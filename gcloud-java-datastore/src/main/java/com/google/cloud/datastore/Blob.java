@@ -36,7 +36,7 @@ import java.nio.ByteBuffer;
  * @see <a href="https://cloud.google.com/datastore/docs/concepts/entities">
  *   Google Cloud Datastore Entities, Properties, and Keys</a>
  */
-public final class Blob extends Serializable<com.google.datastore.v1beta3.Value> {
+public final class Blob extends Serializable<com.google.datastore.v1.Value> {
 
   private static final long serialVersionUID = 3835421019618247721L;
 
@@ -145,12 +145,12 @@ public final class Blob extends Serializable<com.google.datastore.v1beta3.Value>
   }
 
   @Override
-  com.google.datastore.v1beta3.Value toPb() {
-    return com.google.datastore.v1beta3.Value.newBuilder().setBlobValue(byteString).build();
+  com.google.datastore.v1.Value toPb() {
+    return com.google.datastore.v1.Value.newBuilder().setBlobValue(byteString).build();
   }
 
   @Override
   Object fromPb(byte[] bytesPb) throws InvalidProtocolBufferException {
-    return new Blob(com.google.datastore.v1beta3.Value.parseFrom(bytesPb).getBlobValue());
+    return new Blob(com.google.datastore.v1.Value.parseFrom(bytesPb).getBlobValue());
   }
 }

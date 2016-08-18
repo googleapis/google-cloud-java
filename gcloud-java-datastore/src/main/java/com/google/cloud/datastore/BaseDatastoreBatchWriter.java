@@ -246,28 +246,26 @@ public abstract class BaseDatastoreBatchWriter implements DatastoreBatchWriter {
     return DatastoreException.throwInvalidRequest(String.format(msg, params));
   }
 
-  protected List<com.google.datastore.v1beta3.Mutation> toMutationPbList() {
-    List<com.google.datastore.v1beta3.Mutation> mutationsPb = 
-        new ArrayList<>();
+  protected List<com.google.datastore.v1.Mutation> toMutationPbList() {
+    List<com.google.datastore.v1.Mutation> mutationsPb = new ArrayList<>();
     for (FullEntity<IncompleteKey> entity : toAddAutoId()) {
       mutationsPb.add(
-          com.google.datastore.v1beta3.Mutation.newBuilder().setInsert(entity.toPb()).build());
+          com.google.datastore.v1.Mutation.newBuilder().setInsert(entity.toPb()).build());
     }
     for (FullEntity<Key> entity : toAdd().values()) {
       mutationsPb.add(
-          com.google.datastore.v1beta3.Mutation.newBuilder().setInsert(entity.toPb()).build());
+          com.google.datastore.v1.Mutation.newBuilder().setInsert(entity.toPb()).build());
     }
     for (FullEntity<Key> entity : toUpdate().values()) {
       mutationsPb.add(
-          com.google.datastore.v1beta3.Mutation.newBuilder().setUpdate(entity.toPb()).build());
+          com.google.datastore.v1.Mutation.newBuilder().setUpdate(entity.toPb()).build());
     }
     for (FullEntity<Key> entity : toPut().values()) {
       mutationsPb.add(
-          com.google.datastore.v1beta3.Mutation.newBuilder().setUpsert(entity.toPb()).build());
+          com.google.datastore.v1.Mutation.newBuilder().setUpsert(entity.toPb()).build());
     }
     for (Key key : toDelete()) {
-      mutationsPb.add(
-          com.google.datastore.v1beta3.Mutation.newBuilder().setDelete(key.toPb()).build());
+      mutationsPb.add(com.google.datastore.v1.Mutation.newBuilder().setDelete(key.toPb()).build());
     }
     return mutationsPb;
   }

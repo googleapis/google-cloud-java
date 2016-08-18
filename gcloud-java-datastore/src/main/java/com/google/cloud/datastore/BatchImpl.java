@@ -20,24 +20,23 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-
 class BatchImpl extends BaseDatastoreBatchWriter implements Batch {
 
   private final DatastoreImpl datastore;
 
   static class ResponseImpl implements Batch.Response {
 
-    private final com.google.datastore.v1beta3.CommitResponse response;
+    private final com.google.datastore.v1.CommitResponse response;
     private final int numAutoAllocatedIds;
 
-    ResponseImpl(com.google.datastore.v1beta3.CommitResponse response, int numAutoAllocatedIds) {
+    ResponseImpl(com.google.datastore.v1.CommitResponse response, int numAutoAllocatedIds) {
       this.response = response;
       this.numAutoAllocatedIds = numAutoAllocatedIds;
     }
 
     @Override
     public List<Key> generatedKeys() {
-      Iterator<com.google.datastore.v1beta3.MutationResult> results = 
+      Iterator<com.google.datastore.v1.MutationResult> results =
           response.getMutationResultsList().iterator();
       List<Key> generated = new ArrayList<>(numAutoAllocatedIds);
       for (int i = 0; i < numAutoAllocatedIds; i++) {
@@ -55,12 +54,12 @@ class BatchImpl extends BaseDatastoreBatchWriter implements Batch {
   @Override
   public Batch.Response submit() {
     validateActive();
-    List<com.google.datastore.v1beta3.Mutation> mutationsPb = toMutationPbList();
-    com.google.datastore.v1beta3.CommitRequest.Builder requestPb = 
-        com.google.datastore.v1beta3.CommitRequest.newBuilder();
-    requestPb.setMode(com.google.datastore.v1beta3.CommitRequest.Mode.NON_TRANSACTIONAL);
+    List<com.google.datastore.v1.Mutation> mutationsPb = toMutationPbList();
+    com.google.datastore.v1.CommitRequest.Builder requestPb =
+        com.google.datastore.v1.CommitRequest.newBuilder();
+    requestPb.setMode(com.google.datastore.v1.CommitRequest.Mode.NON_TRANSACTIONAL);
     requestPb.addAllMutations(mutationsPb);
-    com.google.datastore.v1beta3.CommitResponse responsePb = datastore.commit(requestPb.build());
+    com.google.datastore.v1.CommitResponse responsePb = datastore.commit(requestPb.build());
     deactivate();
     return new ResponseImpl(responsePb, toAddAutoId().size());
   }

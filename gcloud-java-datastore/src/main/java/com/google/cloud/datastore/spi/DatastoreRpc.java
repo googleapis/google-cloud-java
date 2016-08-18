@@ -17,18 +17,18 @@
 package com.google.cloud.datastore.spi;
 
 import com.google.cloud.datastore.DatastoreException;
-import com.google.datastore.v1beta3.AllocateIdsRequest;
-import com.google.datastore.v1beta3.AllocateIdsResponse;
-import com.google.datastore.v1beta3.BeginTransactionRequest;
-import com.google.datastore.v1beta3.BeginTransactionResponse;
-import com.google.datastore.v1beta3.CommitRequest;
-import com.google.datastore.v1beta3.CommitResponse;
-import com.google.datastore.v1beta3.LookupRequest;
-import com.google.datastore.v1beta3.LookupResponse;
-import com.google.datastore.v1beta3.RollbackRequest;
-import com.google.datastore.v1beta3.RollbackResponse;
-import com.google.datastore.v1beta3.RunQueryRequest;
-import com.google.datastore.v1beta3.RunQueryResponse;
+import com.google.datastore.v1.AllocateIdsRequest;
+import com.google.datastore.v1.AllocateIdsResponse;
+import com.google.datastore.v1.BeginTransactionRequest;
+import com.google.datastore.v1.BeginTransactionResponse;
+import com.google.datastore.v1.CommitRequest;
+import com.google.datastore.v1.CommitResponse;
+import com.google.datastore.v1.LookupRequest;
+import com.google.datastore.v1.LookupResponse;
+import com.google.datastore.v1.RollbackRequest;
+import com.google.datastore.v1.RollbackResponse;
+import com.google.datastore.v1.RunQueryRequest;
+import com.google.datastore.v1.RunQueryResponse;
 
 /**
  * Provides access to the remote Datastore service.

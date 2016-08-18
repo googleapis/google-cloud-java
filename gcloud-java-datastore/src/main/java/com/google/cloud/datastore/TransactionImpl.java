@@ -30,17 +30,17 @@ final class TransactionImpl extends BaseDatastoreBatchWriter implements Transact
 
   static class ResponseImpl implements Transaction.Response {
 
-    private final com.google.datastore.v1beta3.CommitResponse response;
+    private final com.google.datastore.v1.CommitResponse response;
     private final int numAutoAllocatedIds;
 
-    ResponseImpl(com.google.datastore.v1beta3.CommitResponse response, int numAutoAllocatedIds) {
+    ResponseImpl(com.google.datastore.v1.CommitResponse response, int numAutoAllocatedIds) {
       this.response = response;
       this.numAutoAllocatedIds = numAutoAllocatedIds;
     }
 
     @Override
     public List<Key> generatedKeys() {
-      Iterator<com.google.datastore.v1beta3.MutationResult> results =
+      Iterator<com.google.datastore.v1.MutationResult> results =
           response.getMutationResultsList().iterator();
       List<Key> generated = new ArrayList<>(numAutoAllocatedIds);
       for (int i = 0; i < numAutoAllocatedIds; i++) {
@@ -53,8 +53,8 @@ final class TransactionImpl extends BaseDatastoreBatchWriter implements Transact
   TransactionImpl(DatastoreImpl datastore) {
     super("transaction");
     this.datastore = datastore;
-    com.google.datastore.v1beta3.BeginTransactionRequest.Builder requestPb =
-        com.google.datastore.v1beta3.BeginTransactionRequest.newBuilder();
+    com.google.datastore.v1.BeginTransactionRequest.Builder requestPb =
+        com.google.datastore.v1.BeginTransactionRequest.newBuilder();
     transaction = datastore.requestTransactionId(requestPb);
   }
 
@@ -66,8 +66,8 @@ final class TransactionImpl extends BaseDatastoreBatchWriter implements Transact
   @Override
   public Iterator<Entity> get(Key... keys) {
     validateActive();
-    com.google.datastore.v1beta3.ReadOptions.Builder readOptionsPb =
-        com.google.datastore.v1beta3.ReadOptions.newBuilder();
+    com.google.datastore.v1.ReadOptions.Builder readOptionsPb =
+        com.google.datastore.v1.ReadOptions.newBuilder();
     readOptionsPb.setTransaction(transaction);
     return datastore.get(readOptionsPb.build(), keys);
   }
@@ -81,8 +81,8 @@ final class TransactionImpl extends BaseDatastoreBatchWriter implements Transact
   @Override
   public <T> QueryResults<T> run(Query<T> query) {
     validateActive();
-    com.google.datastore.v1beta3.ReadOptions.Builder readOptionsPb =
-        com.google.datastore.v1beta3.ReadOptions.newBuilder();
+    com.google.datastore.v1.ReadOptions.Builder readOptionsPb =
+        com.google.datastore.v1.ReadOptions.newBuilder();
     readOptionsPb.setTransaction(transaction);
     return datastore.run(readOptionsPb.build(), query);
   }
@@ -90,13 +90,13 @@ final class TransactionImpl extends BaseDatastoreBatchWriter implements Transact
   @Override
   public Transaction.Response commit() {
     validateActive();
-    List<com.google.datastore.v1beta3.Mutation> mutationsPb = toMutationPbList();
-    com.google.datastore.v1beta3.CommitRequest.Builder requestPb =
-        com.google.datastore.v1beta3.CommitRequest.newBuilder();
-    requestPb.setMode(com.google.datastore.v1beta3.CommitRequest.Mode.TRANSACTIONAL);
+    List<com.google.datastore.v1.Mutation> mutationsPb = toMutationPbList();
+    com.google.datastore.v1.CommitRequest.Builder requestPb =
+        com.google.datastore.v1.CommitRequest.newBuilder();
+    requestPb.setMode(com.google.datastore.v1.CommitRequest.Mode.TRANSACTIONAL);
     requestPb.setTransaction(transaction);
     requestPb.addAllMutations(mutationsPb);
-    com.google.datastore.v1beta3.CommitResponse responsePb = datastore.commit(requestPb.build());
+    com.google.datastore.v1.CommitResponse responsePb = datastore.commit(requestPb.build());
     deactivate();
     return new ResponseImpl(responsePb, toAddAutoId().size());
   }

@@ -35,15 +35,15 @@ import com.google.cloud.datastore.testing.LocalDatastoreHelper;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterators;
 import com.google.common.collect.Lists;
-import com.google.datastore.v1beta3.EntityResult;
-import com.google.datastore.v1beta3.LookupRequest;
-import com.google.datastore.v1beta3.LookupResponse;
-import com.google.datastore.v1beta3.PartitionId;
-import com.google.datastore.v1beta3.QueryResultBatch;
-import com.google.datastore.v1beta3.ReadOptions;
-import com.google.datastore.v1beta3.ReadOptions.ReadConsistency;
-import com.google.datastore.v1beta3.RunQueryRequest;
-import com.google.datastore.v1beta3.RunQueryResponse;
+import com.google.datastore.v1.EntityResult;
+import com.google.datastore.v1.LookupRequest;
+import com.google.datastore.v1.LookupResponse;
+import com.google.datastore.v1.PartitionId;
+import com.google.datastore.v1.QueryResultBatch;
+import com.google.datastore.v1.ReadOptions;
+import com.google.datastore.v1.ReadOptions.ReadConsistency;
+import com.google.datastore.v1.RunQueryRequest;
+import com.google.datastore.v1.RunQueryResponse;
 import com.google.protobuf.ByteString;
 
 import org.easymock.EasyMock;
@@ -550,6 +550,7 @@ public class DatastoreTest {
     return responses;
   }
 
+  @Test
   public void testQueryPaginationWithLimit() throws DatastoreException {
     List<RunQueryResponse> responses = buildResponsesForQueryPaginationWithLimit();
     List<ByteString> endCursors = Lists.newArrayListWithCapacity(responses.size());
@@ -638,7 +639,7 @@ public class DatastoreTest {
   public void testEventualConsistencyQuery() {
     ReadOptions readOption =
         ReadOptions.newBuilder().setReadConsistencyValue(ReadConsistency.EVENTUAL_VALUE).build();
-    com.google.datastore.v1beta3.GqlQuery query = com.google.datastore.v1beta3.GqlQuery.newBuilder()
+    com.google.datastore.v1.GqlQuery query = com.google.datastore.v1.GqlQuery.newBuilder()
         .setQueryString("FROM * SELECT *")
         .build();
     RunQueryRequest.Builder expectedRequest = RunQueryRequest.newBuilder()
@@ -736,9 +737,9 @@ public class DatastoreTest {
   public void testLookupEventualConsistency() {
     ReadOptions readOption =
         ReadOptions.newBuilder().setReadConsistencyValue(ReadConsistency.EVENTUAL_VALUE).build();
-    com.google.datastore.v1beta3.Key key = com.google.datastore.v1beta3.Key.newBuilder()
+    com.google.datastore.v1.Key key = com.google.datastore.v1.Key.newBuilder()
         .setPartitionId(PartitionId.newBuilder().setProjectId(PROJECT_ID).build())
-        .addPath(com.google.datastore.v1beta3.Key.PathElement.newBuilder()
+        .addPath(com.google.datastore.v1.Key.PathElement.newBuilder()
             .setKind("kind1").setName("name").build())
         .build();
     LookupRequest lookupRequest =
@@ -785,6 +786,7 @@ public class DatastoreTest {
     assertFalse(result.hasNext());
   }
 
+  @Test
   public void testGetArrayDeferredResults() throws DatastoreException {
     Set<Key> requestedKeys = new HashSet<>();
     requestedKeys.add(KEY1);
@@ -800,6 +802,7 @@ public class DatastoreTest {
     assertEquals(requestedKeys, keysOfFoundEntities);
   }
 
+  @Test
   public void testFetchArrayDeferredResults() throws DatastoreException {
     List<Entity> foundEntities =
         createDatastoreForDeferredLookup().fetch(KEY1, KEY2, KEY3, KEY4, KEY5);
@@ -812,7 +815,7 @@ public class DatastoreTest {
   }
 
   private Datastore createDatastoreForDeferredLookup() throws DatastoreException {
-    List<com.google.datastore.v1beta3.Key> keysPb = new ArrayList<>();
+    List<com.google.datastore.v1.Key> keysPb = new ArrayList<>();
     keysPb.add(KEY1.toPb());
     keysPb.add(KEY2.toPb());
     keysPb.add(KEY3.toPb());
@@ -822,11 +825,11 @@ public class DatastoreTest {
     lookupRequests.add(LookupRequest.newBuilder().addAllKeys(keysPb).build());
     lookupRequests.add(
         LookupRequest.newBuilder()
+            .addKeys(keysPb.get(1))
             .addKeys(keysPb.get(2))
-            .addKeys(keysPb.get(3))
-            .addKeys(keysPb.get(5))
+            .addKeys(keysPb.get(4))
             .build());
-    lookupRequests.add(LookupRequest.newBuilder().addKeys(keysPb.get(5)).build());
+    lookupRequests.add(LookupRequest.newBuilder().addKeys(keysPb.get(4)).build());
     Entity entity4 = Entity.builder(KEY4).set("value", StringValue.of("value")).build();
     Entity entity5 = Entity.builder(KEY5).set("value", "value").build();
     List<LookupResponse> lookupResponses = new ArrayList<>();
@@ -834,15 +837,15 @@ public class DatastoreTest {
         LookupResponse.newBuilder()
             .addFound(EntityResult.newBuilder().setEntity(ENTITY1.toPb()))
             .addFound(EntityResult.newBuilder().setEntity(entity4.toPb()))
+            .addDeferred(keysPb.get(1))
             .addDeferred(keysPb.get(2))
-            .addDeferred(keysPb.get(3))
-            .addDeferred(keysPb.get(5))
+            .addDeferred(keysPb.get(4))
             .build());
     lookupResponses.add(
         LookupResponse.newBuilder()
+            .addFound(EntityResult.newBuilder().setEntity(ENTITY2.toPb()))
             .addFound(EntityResult.newBuilder().setEntity(ENTITY3.toPb()))
-            .addFound(EntityResult.newBuilder().setEntity(entity4.toPb()))
-            .addDeferred(keysPb.get(5))
+            .addDeferred(keysPb.get(4))
             .build());
     lookupResponses.add(
         LookupResponse.newBuilder()

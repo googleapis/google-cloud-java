@@ -41,7 +41,7 @@ public final class EntityQuery extends StructuredQuery<Entity> {
     }
 
     @Override
-    Builder mergeFrom(com.google.datastore.v1beta3.Query queryPb) {
+    Builder mergeFrom(com.google.datastore.v1.Query queryPb) {
       super.mergeFrom(queryPb);
       clearProjection();
       clearDistinctOn();

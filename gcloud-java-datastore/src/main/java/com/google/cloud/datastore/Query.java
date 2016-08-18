@@ -54,68 +54,64 @@ public abstract class Query<V> extends Serializable<GeneratedMessage> {
   public abstract static class ResultType<V> implements java.io.Serializable {
 
     private static final long serialVersionUID = 2104157695425806623L;
-    private static final Map<com.google.datastore.v1beta3.EntityResult.ResultType, ResultType<?>>
+    private static final Map<com.google.datastore.v1.EntityResult.ResultType, ResultType<?>>
         PB_TO_INSTANCE = Maps.newEnumMap(
-            com.google.datastore.v1beta3.EntityResult.ResultType.class);
+            com.google.datastore.v1.EntityResult.ResultType.class);
 
-    static final ResultType<?> UNKNOWN =
-        new ResultType<Object>(null, Object.class) {
+    static final ResultType<?> UNKNOWN = new ResultType<Object>(null, Object.class) {
 
-          private static final long serialVersionUID = 1602329532153860907L;
+      private static final long serialVersionUID = 1602329532153860907L;
 
-          @Override
-          Object convert(com.google.datastore.v1beta3.Entity entityPb) {
-            if (entityPb.getProperties().isEmpty()) {
-              if (!entityPb.hasKey()) {
-                return null;
-              }
-              return Key.fromPb(entityPb.getKey());
-            }
-            return ProjectionEntity.fromPb(entityPb);
+      @Override
+      Object convert(com.google.datastore.v1.Entity entityPb) {
+        if (entityPb.getProperties().isEmpty()) {
+          if (!entityPb.hasKey()) {
+            return null;
           }
-        };
+          return Key.fromPb(entityPb.getKey());
+        }
+        return ProjectionEntity.fromPb(entityPb);
+      }
+    };
 
     public static final ResultType<Entity> ENTITY =
-        new ResultType<Entity>(
-            com.google.datastore.v1beta3.EntityResult.ResultType.FULL, Entity.class) {
+        new ResultType<Entity>(com.google.datastore.v1.EntityResult.ResultType.FULL, Entity.class) {
 
           private static final long serialVersionUID = 7712959777507168274L;
 
           @Override
-          Entity convert(com.google.datastore.v1beta3.Entity entityPb) {
+          Entity convert(com.google.datastore.v1.Entity entityPb) {
             return Entity.fromPb(entityPb);
           }
         };
 
     public static final ResultType<Key> KEY =
-        new ResultType<Key>(
-            com.google.datastore.v1beta3.EntityResult.ResultType.KEY_ONLY, Key.class) {
+        new ResultType<Key>(com.google.datastore.v1.EntityResult.ResultType.KEY_ONLY, Key.class) {
 
           private static final long serialVersionUID = -8514289244104446252L;
 
           @Override
-          Key convert(com.google.datastore.v1beta3.Entity entityPb) {
+          Key convert(com.google.datastore.v1.Entity entityPb) {
             return Key.fromPb(entityPb.getKey());
           }
         };
 
     public static final ResultType<ProjectionEntity> PROJECTION_ENTITY =
-        new ResultType<ProjectionEntity>(
-            com.google.datastore.v1beta3.EntityResult.ResultType.PROJECTION,
+        new ResultType<ProjectionEntity>(com.google.datastore.v1.EntityResult.ResultType.PROJECTION,
             ProjectionEntity.class) {
 
           private static final long serialVersionUID = -7591409419690650246L;
 
           @Override
-          ProjectionEntity convert(com.google.datastore.v1beta3.Entity entityPb) {
+          ProjectionEntity convert(com.google.datastore.v1.Entity entityPb) {
             return ProjectionEntity.fromPb(entityPb);
           }
         };
 
     private final Class<V> resultClass;
-    private final com.google.datastore.v1beta3.EntityResult.ResultType queryType;
+    private final com.google.datastore.v1.EntityResult.ResultType queryType;
 
-    private ResultType(com.google.datastore.v1beta3.EntityResult.ResultType queryType,
+    private ResultType(com.google.datastore.v1.EntityResult.ResultType queryType,
         Class<V> resultClass) {
       this.queryType = queryType;
       this.resultClass = resultClass;
@@ -157,9 +153,9 @@ public abstract class Query<V> extends Serializable<GeneratedMessage> {
       return resultClass.isAssignableFrom(otherResultType.resultClass);
     }
 
-    abstract V convert(com.google.datastore.v1beta3.Entity entityPb);
+    abstract V convert(com.google.datastore.v1.Entity entityPb);
 
-    static ResultType<?> fromPb(com.google.datastore.v1beta3.EntityResult.ResultType typePb) {
+    static ResultType<?> fromPb(com.google.datastore.v1.EntityResult.ResultType typePb) {
       return MoreObjects.firstNonNull(PB_TO_INSTANCE.get(typePb), UNKNOWN);
     }
   }
@@ -194,9 +190,9 @@ public abstract class Query<V> extends Serializable<GeneratedMessage> {
   abstract Object fromPb(ResultType<V> resultType, String namespace, byte[] bytesPb)
       throws InvalidProtocolBufferException;
 
-  abstract void populatePb(com.google.datastore.v1beta3.RunQueryRequest.Builder requestPb);
+  abstract void populatePb(com.google.datastore.v1.RunQueryRequest.Builder requestPb);
 
-  abstract Query<V> nextQuery(com.google.datastore.v1beta3.RunQueryResponse responsePb);
+  abstract Query<V> nextQuery(com.google.datastore.v1.RunQueryResponse responsePb);
 
   /**
    * Returns a new {@link GqlQuery} builder.

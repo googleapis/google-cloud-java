@@ -16,7 +16,7 @@
 
 package com.google.cloud.datastore;
 
-import static com.google.datastore.v1beta3.Value.ENTITY_VALUE_FIELD_NUMBER;
+import static com.google.datastore.v1.Value.ENTITY_VALUE_FIELD_NUMBER;
 
 public class EntityValue extends Value<FullEntity<?>> {
 
@@ -38,12 +38,12 @@ public class EntityValue extends Value<FullEntity<?>> {
         }
 
         @Override
-        protected FullEntity<?> getValue(com.google.datastore.v1beta3.Value from) {
+        protected FullEntity<?> getValue(com.google.datastore.v1.Value from) {
           return FullEntity.fromPb(from.getEntityValue());
         }
 
         @Override
-        protected void setValue(EntityValue from, com.google.datastore.v1beta3.Value.Builder to) {
+        protected void setValue(EntityValue from, com.google.datastore.v1.Value.Builder to) {
           to.setEntityValue(from.get().toPb());
         }
       };
