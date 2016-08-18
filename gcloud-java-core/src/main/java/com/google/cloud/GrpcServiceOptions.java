@@ -18,12 +18,19 @@ package com.google.cloud;
 
 import static com.google.common.base.MoreObjects.firstNonNull;
 
+import com.google.api.gax.core.ConnectionSettings;
+import com.google.api.gax.core.RetrySettings;
+import com.google.api.gax.grpc.ApiCallSettings;
+import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.spi.ServiceRpcFactory;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
+import com.google.common.net.HostAndPort;
 
 import io.grpc.internal.SharedResourceHolder;
 import io.grpc.internal.SharedResourceHolder.Resource;
+
+import org.joda.time.Duration;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -160,8 +167,8 @@ public abstract class GrpcServiceOptions<ServiceT extends Service<OptionsT>, Ser
      * Sets the timeout for the initial RPC, in milliseconds. Subsequent calls will use this value
      * adjusted according to {@link #timeoutMultiplier(double)}. Default value is 20000.
      *
-     * @throws IllegalArgumentException if the provided timeout is &lt; 0
      * @return the builder
+     * @throws IllegalArgumentException if the provided timeout is &lt; 0
      */
     public B initialTimeout(int initialTimeout) {
       Preconditions.checkArgument(initialTimeout > 0, "Initial timeout must be > 0");
@@ -173,8 +180,8 @@ public abstract class GrpcServiceOptions<ServiceT extends Service<OptionsT>, Ser
      * Sets the timeout multiplier. This value is used to compute the timeout for a retried RPC.
      * Timeout is computed as {@code timeoutMultiplier * previousTimeout}. Default value is 1.5.
      *
-     * @throws IllegalArgumentException if the provided timeout multiplier is &lt; 0
      * @return the builder
+     * @throws IllegalArgumentException if the provided timeout multiplier is &lt; 0
      */
     public B timeoutMultiplier(double timeoutMultiplier) {
       Preconditions.checkArgument(timeoutMultiplier >= 1.0, "Timeout multiplier must be >= 1");
@@ -214,6 +221,38 @@ public abstract class GrpcServiceOptions<ServiceT extends Service<OptionsT>, Ser
    */
   protected ExecutorFactory<ScheduledExecutorService> executorFactory() {
     return executorFactory;
+  }
+
+  /**
+   * Returns a builder for API call settings.
+   */
+  protected ApiCallSettings.Builder apiCallSettings() {
+    // todo(mziccard): specify timeout these settings:
+    // retryParams().retryMaxAttempts(), retryParams().retryMinAttempts()
+    final RetrySettings.Builder builder = RetrySettings.newBuilder()
+        .setTotalTimeout(Duration.millis(retryParams().totalRetryPeriodMillis()))
+        .setInitialRpcTimeout(Duration.millis(initialTimeout()))
+        .setRpcTimeoutMultiplier(timeoutMultiplier())
+        .setMaxRpcTimeout(Duration.millis(maxTimeout()))
+        .setInitialRetryDelay(Duration.millis(retryParams().initialRetryDelayMillis()))
+        .setRetryDelayMultiplier(retryParams().retryDelayBackoffFactor())
+        .setMaxRetryDelay(Duration.millis(retryParams().maxRetryDelayMillis()));
+    return ApiCallSettings.newBuilder().setRetrySettingsBuilder(builder);
+  }
+
+  /**
+   * Returns a builder for connection-related settings.
+   */
+  protected ConnectionSettings.Builder connectionSettings() {
+    HostAndPort hostAndPort = HostAndPort.fromString(host());
+    ConnectionSettings.Builder builder = ConnectionSettings.newBuilder()
+        .setServiceAddress(hostAndPort.getHostText())
+        .setPort(hostAndPort.getPort());
+    GoogleCredentials credentials = authCredentials().credentials();
+    if (credentials != null) {
+      builder.provideCredentialsWith(credentials.createScoped(scopes()));
+    }
+    return builder;
   }
 
   /**

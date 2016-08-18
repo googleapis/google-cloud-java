@@ -18,13 +18,11 @@ package com.google.cloud.logging.spi;
 
 import static com.google.common.base.MoreObjects.firstNonNull;
 
-import com.google.api.gax.core.RetrySettings;
+import com.google.api.gax.core.ConnectionSettings;
 import com.google.api.gax.grpc.ApiCallSettings;
 import com.google.api.gax.grpc.ApiException;
-import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.AuthCredentials;
 import com.google.cloud.GrpcServiceOptions.ExecutorFactory;
-import com.google.cloud.RetryParams;
 import com.google.cloud.logging.LoggingException;
 import com.google.cloud.logging.LoggingOptions;
 import com.google.cloud.logging.spi.v2.ConfigServiceV2Api;
@@ -65,8 +63,6 @@ import io.grpc.Status.Code;
 import io.grpc.netty.NegotiationType;
 import io.grpc.netty.NettyChannelBuilder;
 
-import org.joda.time.Duration;
-
 import java.io.IOException;
 import java.util.Set;
 import java.util.concurrent.Future;
@@ -94,10 +90,21 @@ public class DefaultLoggingRpc implements LoggingRpc {
     protected ExecutorFactory<ScheduledExecutorService> executorFactory() {
       return super.executorFactory();
     }
+
+    @Override
+    protected ApiCallSettings.Builder apiCallSettings() {
+      return super.apiCallSettings();
+    }
+
+    @Override
+    protected ConnectionSettings.Builder connectionSettings() {
+      return super.connectionSettings();
+    }
   }
 
   public DefaultLoggingRpc(LoggingOptions options) throws IOException {
-    executorFactory = new InternalLoggingOptions(options).executorFactory();
+    InternalLoggingOptions internalOptions = new InternalLoggingOptions(options);
+    executorFactory = internalOptions.executorFactory();
     executor = executorFactory.get();
     String libraryName = options.libraryName();
     String libraryVersion = firstNonNull(options.libraryVersion(), "");
@@ -121,39 +128,21 @@ public class DefaultLoggingRpc implements LoggingRpc {
         logBuilder.provideChannelWith(channel, true);
         metricsBuilder.provideChannelWith(channel, true);
       } else {
-        GoogleCredentials credentials = options.authCredentials().credentials();
-        confBuilder.provideChannelWith(
-            credentials.createScoped(ConfigServiceV2Settings.getDefaultServiceScopes()));
-        logBuilder.provideChannelWith(
-            credentials.createScoped(LoggingServiceV2Settings.getDefaultServiceScopes()));
-        metricsBuilder.provideChannelWith(
-            credentials.createScoped(MetricsServiceV2Settings.getDefaultServiceScopes()));
+        ConnectionSettings connectionSettings = internalOptions.connectionSettings().build();
+        confBuilder.provideChannelWith(connectionSettings);
+        logBuilder.provideChannelWith(connectionSettings);
+        metricsBuilder.provideChannelWith(connectionSettings);
       }
-      ApiCallSettings.Builder callBuilder = apiCallSettings(options);
-      confBuilder.applyToAllApiMethods(callBuilder);
-      logBuilder.applyToAllApiMethods(callBuilder);
-      metricsBuilder.applyToAllApiMethods(callBuilder);
+      ApiCallSettings.Builder callSettingsBuilder = internalOptions.apiCallSettings();
+      confBuilder.applyToAllApiMethods(callSettingsBuilder);
+      logBuilder.applyToAllApiMethods(callSettingsBuilder);
+      metricsBuilder.applyToAllApiMethods(callSettingsBuilder);
       configApi = ConfigServiceV2Api.create(confBuilder.build());
       loggingApi = LoggingServiceV2Api.create(logBuilder.build());
       metricsApi = MetricsServiceV2Api.create(metricsBuilder.build());
     } catch (Exception ex) {
       throw new IOException(ex);
     }
-  }
-
-  private static ApiCallSettings.Builder apiCallSettings(LoggingOptions options) {
-    // todo(mziccard): specify timeout these settings:
-    // retryParams.retryMaxAttempts(), retryParams.retryMinAttempts()
-    RetryParams retryParams = options.retryParams();
-    final RetrySettings.Builder builder = RetrySettings.newBuilder()
-        .setTotalTimeout(Duration.millis(retryParams.totalRetryPeriodMillis()))
-        .setInitialRpcTimeout(Duration.millis(options.initialTimeout()))
-        .setRpcTimeoutMultiplier(options.timeoutMultiplier())
-        .setMaxRpcTimeout(Duration.millis(options.maxTimeout()))
-        .setInitialRetryDelay(Duration.millis(retryParams.initialRetryDelayMillis()))
-        .setRetryDelayMultiplier(retryParams.retryDelayBackoffFactor())
-        .setMaxRetryDelay(Duration.millis(retryParams.maxRetryDelayMillis()));
-    return ApiCallSettings.newBuilder().setRetrySettingsBuilder(builder);
   }
 
   private static <V> Future<V> translate(ListenableFuture<V> from, final boolean idempotent,

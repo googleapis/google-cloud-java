@@ -39,13 +39,13 @@ public class MonitoredResourceDescriptor implements Serializable {
   private static final long serialVersionUID = -3702077512777687441L;
   public static final Function<com.google.api.MonitoredResourceDescriptor,
       MonitoredResourceDescriptor> FROM_PB_FUNCTION =
-          new Function<com.google.api.MonitoredResourceDescriptor, MonitoredResourceDescriptor>() {
-            @Override
-            public MonitoredResourceDescriptor apply(
-                com.google.api.MonitoredResourceDescriptor pb) {
-              return fromPb(pb);
-            }
-          };
+      new Function<com.google.api.MonitoredResourceDescriptor, MonitoredResourceDescriptor>() {
+        @Override
+        public MonitoredResourceDescriptor apply(
+            com.google.api.MonitoredResourceDescriptor pb) {
+          return fromPb(pb);
+        }
+      };
 
   private final String type;
   private final String name;
