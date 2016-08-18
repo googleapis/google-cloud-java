@@ -135,7 +135,7 @@ public class ByteArray implements Iterable<Byte>, Serializable {
   /**
    * Creates a {@code ByteArray} object given an array of bytes. The bytes are copied.
    */
-  public final static ByteArray copyFrom(byte[] bytes) {
+  public static final ByteArray copyFrom(byte[] bytes) {
     return new ByteArray(ByteString.copyFrom(bytes));
   }
 
@@ -143,14 +143,14 @@ public class ByteArray implements Iterable<Byte>, Serializable {
    * Creates a {@code ByteArray} object given a string. The string is encoded in {@code UTF-8}. The
    * bytes are copied.
    */
-  public final static ByteArray copyFrom(String string) {
+  public static final ByteArray copyFrom(String string) {
     return new ByteArray(ByteString.copyFrom(string, StandardCharsets.UTF_8));
   }
 
   /**
    * Creates a {@code ByteArray} object given a {@link ByteBuffer}. The bytes are copied.
    */
-  public final static ByteArray copyFrom(ByteBuffer bytes) {
+  public static final ByteArray copyFrom(ByteBuffer bytes) {
     return new ByteArray(ByteString.copyFrom(bytes));
   }
 
@@ -158,7 +158,7 @@ public class ByteArray implements Iterable<Byte>, Serializable {
    * Creates a {@code ByteArray} object given an {@link InputStream}. The stream is read into the
    * created object.
    */
-  public final static ByteArray copyFrom(InputStream input) throws IOException {
+  public static final ByteArray copyFrom(InputStream input) throws IOException {
     return new ByteArray(ByteString.readFrom(input));
   }
 }
