@@ -106,6 +106,7 @@
     <module>gcloud-java-resourcemanager</module>
     <module>gcloud-java-storage</module>
     <module>gcloud-java-translate</module>
+    <module>gcloud-java-vision</module>
   </modules>
   <pluginRepositories>
     <pluginRepository>
