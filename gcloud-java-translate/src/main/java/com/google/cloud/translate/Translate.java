@@ -91,22 +91,24 @@ public interface Translate extends Service<TranslateOptions> {
    * {@link TranslateOptions#targetLanguage()}.
    *
    * <p>Example of listing supported languages, localized according to
-   * {@link TranslateOptions#targetLanguage()}:
+   * {@link TranslateOptions#targetLanguage()}.
    * <pre> {@code
    * List<Language> languages = translate.listSupportedLanguages();
    * }</pre>
-   * Or according to another target language:
+   *
+   * <p>Example of listing supported languages, localized according to a provided language.
    * <pre> {@code
    * List<Language> languages = translate.listSupportedLanguages(
    *     LanguageListOption.targetLanguage("es"));
    * }</pre>
+   *
    */
   List<Language> listSupportedLanguages(LanguageListOption... options);
 
   /**
    * Detects the language of the provided texts.
    *
-   * <p>Example of detecting the language of some texts:
+   * <p>Example of detecting the language of some texts.
    * <pre> {@code
    * List<String> texts = new LinkedList<>();
    * texts.add("Hello, World!");
@@ -123,7 +125,7 @@ public interface Translate extends Service<TranslateOptions> {
   /**
    * Detects the language of the provided texts.
    *
-   * <p>Example of detecting the language of some texts:
+   * <p>Example of detecting the language of some texts.
    * <pre> {@code
    * List<Detection> detections = translate.detect("Hello, World!", "¡Hola Mundo!");
    * }</pre>
@@ -138,17 +140,18 @@ public interface Translate extends Service<TranslateOptions> {
    * Detects the language of the provided text. Returns an object containing information on the
    * language detection.
    *
-   * <p>Example of detecting the language a text:
+   * <p>Example of detecting the language of a text.
    * <pre> {@code
    * Detection detection = translate.detect("Hello, World!");
    * }</pre>
+   *
    */
   Detection detect(String text);
 
   /**
    * Translates the provided texts.
    *
-   * <p>Example of translating some texts:
+   * <p>Example of translating some texts.
    * <pre> {@code
    * List<String> texts = new LinkedList<>();
    * texts.add("Hello, World!");
@@ -156,7 +159,7 @@ public interface Translate extends Service<TranslateOptions> {
    * List<Translation> translations = translate.translate(texts);
    * }</pre>
    *
-   * <p>Example of translating some texts, specifying source and target language:
+   * <p>Example of translating some texts, specifying source and target language.
    * <pre> {@code
    * List<String> texts = new LinkedList<>();
    * texts.add("¡Hola Mundo!");
@@ -173,12 +176,12 @@ public interface Translate extends Service<TranslateOptions> {
   /**
    * Translates the provided texts.
    *
-   * <p>Example of translating a text:
+   * <p>Example of translating a text.
    * <pre> {@code
    * Translation translation = translate.translate("¡Hola Mundo!");
    * }</pre>
    *
-   * <p>Example of translating a text, specifying source and target language:
+   * <p>Example of translating a text, specifying source and target language.
    * <pre> {@code
    * Translation translation = translate.translate("¡Hola Mundo!",
    *     TranslateOption.sourceLanguage("es"), TranslateOption.targetLanguage("de"));
