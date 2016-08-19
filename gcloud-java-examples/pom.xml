@@ -100,6 +100,10 @@
               <mainClass>com.google.cloud.examples.storage.StorageExample</mainClass>
               <name>StorageExample</name>
             </program>
+            <program>
+              <mainClass>com.google.cloud.examples.translate.TranslateExample</mainClass>
+              <name>TranslateExample</name>
+            </program>
           </programs>
         </configuration>
       </plugin>
