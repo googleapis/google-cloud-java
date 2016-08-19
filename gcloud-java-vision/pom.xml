@@ -6,7 +6,7 @@
   <name>GCloud Java Vision</name>
   <url>https://github.com/GoogleCloudPlatform/gcloud-java/tree/master/gcloud-java-vision</url>
   <description>
-    Java idiomatic client for Google Cloud Vision.
+    Java idiomatic client for Google Cloud Vision API.
   </description>
   <parent>
     <groupId>com.google.cloud</groupId>
