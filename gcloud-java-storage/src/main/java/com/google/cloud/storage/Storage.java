@@ -1213,9 +1213,7 @@ public interface Storage extends Service<StorageOptions> {
   /**
    * Creates a new bucket.
    *
-   * <p>Example of creating a bucket (see {@code createBucket()} in
-   * <a href="https://github.com/GoogleCloudPlatform/gcloud-java/tree/master/gcloud-java-examples/src/main/java/com/google/cloud/examples/storage/snippets/StorageSnippets.java">
-   * StorageSnippets.java</a>):
+   * <p>Example of creating a bucket.
    * <pre> {@code
    * String bucketName = "my_unique_bucket";
    * Bucket bucket = storage.create(BucketInfo.of(bucketName));
@@ -1229,11 +1227,11 @@ public interface Storage extends Service<StorageOptions> {
   /**
    * Creates a new blob with no content.
    *
-   * <p>Example of creating a blob with no content (see {@code createBlob()} in
-   * <a href="https://github.com/GoogleCloudPlatform/gcloud-java/tree/master/gcloud-java-examples/src/main/java/com/google/cloud/examples/storage/snippets/StorageSnippets.java">
-   * StorageSnippets.java</a>):
+   * <p>Example of creating a blob with no content.
    * <pre> {@code
-   * BlobId blobId = BlobId.of("my_unique_bucket", "my_blob_name");
+   * String bucketName = "my_unique_bucket";
+   * String blobName = "my_blob_name";
+   * BlobId blobId = BlobId.of(bucketName, blobName);
    * BlobInfo blobInfo = BlobInfo.builder(blobId).contentType("text/plain").build();
    * Blob blob = storage.create(blobInfo);
    * }</pre>
@@ -1248,11 +1246,11 @@ public interface Storage extends Service<StorageOptions> {
    * {@link #writer} is recommended as it uses resumable upload. MD5 and CRC32C hashes of
    * {@code content} are computed and used for validating transferred data.
    *
-   * <p>Example of creating a blob from a byte array (see {@code createBlobFromByteArray()} in
-   * <a href="https://github.com/GoogleCloudPlatform/gcloud-java/tree/master/gcloud-java-examples/src/main/java/com/google/cloud/examples/storage/snippets/StorageSnippets.java">
-   * StorageSnippets.java</a>):
+   * <p>Example of creating a blob from a byte array.
    * <pre> {@code
-   * BlobId blobId = BlobId.of("my_unique_bucket", "my_blob_name");
+   * String bucketName = "my_unique_bucket";
+   * String blobName = "my_blob_name";
+   * BlobId blobId = BlobId.of(bucketName, blobName);
    * BlobInfo blobInfo = BlobInfo.builder(blobId).contentType("text/plain").build();
    * Blob blob = storage.create(blobInfo, "Hello, World!".getBytes(UTF_8));
    * }</pre>
@@ -1270,12 +1268,12 @@ public interface Storage extends Service<StorageOptions> {
    * {@code BlobWriteOption.md5Match} and {@code BlobWriteOption.crc32cMatch} options. The given
    * input stream is closed upon success.
    *
-   * <p>Example of creating a blob from an input stream (see {@code createBlobFromInputStream()} in
-   * <a href="https://github.com/GoogleCloudPlatform/gcloud-java/tree/master/gcloud-java-examples/src/main/java/com/google/cloud/examples/storage/snippets/StorageSnippets.java">
-   * StorageSnippets.java</a>):
+   * <p>Example of creating a blob from an input stream.
    * <pre> {@code
+   * String bucketName = "my_unique_bucket";
+   * String blobName = "my_blob_name";
    * InputStream content = new ByteArrayInputStream("Hello, World!".getBytes(UTF_8));
-   * BlobId blobId = BlobId.of("my_unique_bucket", "my_blob_name");
+   * BlobId blobId = BlobId.of(bucketName, blobName);
    * BlobInfo blobInfo = BlobInfo.builder(blobId).contentType("text/plain").build();
    * Blob blob = storage.create(blobInfo, content);
    * }</pre>
@@ -1289,11 +1287,12 @@ public interface Storage extends Service<StorageOptions> {
    * Returns the requested bucket or {@code null} if not found.
    *
    * <p>Example of getting information on a bucket, only if its metageneration matches a value,
-   * otherwise a {@link StorageException} is thrown (see {@code getBucketWithMetageneration()} in
-   * <a href="https://github.com/GoogleCloudPlatform/gcloud-java/tree/master/gcloud-java-examples/src/main/java/com/google/cloud/examples/storage/snippets/StorageSnippets.java">
-   * StorageSnippets.java</a>):
+   * otherwise a {@link StorageException} is thrown.
    * <pre> {@code
-   * Bucket bucket = storage.get("my_unique_bucket", BucketGetOption.metagenerationMatch(42));
+   * String bucketName = "my_unique_bucket";
+   * long bucketMetageneration = 42;
+   * Bucket bucket = storage.get(bucketName,
+   *     BucketGetOption.metagenerationMatch(bucketMetageneration));
    * }</pre>
    *
    * @throws StorageException upon failure
@@ -1303,14 +1302,14 @@ public interface Storage extends Service<StorageOptions> {
   /**
    * Returns the requested blob or {@code null} if not found.
    *
-   * <p>Example of getting information on a blob, only if its metageneration matches a value,
-   * otherwise a {@link StorageException} is thrown (see
-   * {@code getBlobFromStringsWithMetageneration()} in
-   * <a href="https://github.com/GoogleCloudPlatform/gcloud-java/tree/master/gcloud-java-examples/src/main/java/com/google/cloud/examples/storage/snippets/StorageSnippets.java">
-   * StorageSnippets.java</a>):
+   * <p>Example of getting information on a blob, only if its metageneration matches a value, otherwise
+   * a {@link StorageException} is thrown.
    * <pre> {@code
-   * Blob blob = storage.get("my_unique_bucket", "my_blob_name",
-   *     BlobGetOption.metagenerationMatch(42));
+   * String bucketName = "my_unique_bucket";
+   * String blobName = "my_blob_name";
+   * long blobMetageneration = 42;
+   * Blob blob = storage.get(bucketName, blobName,
+   *     BlobGetOption.metagenerationMatch(blobMetageneration));
    * }</pre>
    *
    * @throws StorageException upon failure
@@ -1320,14 +1319,14 @@ public interface Storage extends Service<StorageOptions> {
   /**
    * Returns the requested blob or {@code null} if not found.
    *
-   * <p>Example of getting information on a blob, only if its metageneration matches a value,
-   * otherwise a {@link StorageException} is thrown (see {@code getBlobFromIdWithMetageneration()}
-   * in
-   * <a href="https://github.com/GoogleCloudPlatform/gcloud-java/tree/master/gcloud-java-examples/src/main/java/com/google/cloud/examples/storage/snippets/StorageSnippets.java">
-   * StorageSnippets.java</a>):
+   * <p>Example of getting information on a blob, only if its metageneration matches a value, otherwise
+   * a {@link StorageException} is thrown.
    * <pre> {@code
-   * BlobId blobId = BlobId.of("my_unique_bucket", "my_blob_name");
-   * Blob blob = storage.get(blobId, BlobGetOption.metagenerationMatch(42));
+   * String bucketName = "my_unique_bucket";
+   * String blobName = "my_blob_name";
+   * long blobMetageneration = 42;
+   * BlobId blobId = BlobId.of(bucketName, blobName);
+   * Blob blob = storage.get(blobId, BlobGetOption.metagenerationMatch(blobMetageneration));
    * }</pre>
    *
    * @throws StorageException upon failure
@@ -1337,11 +1336,11 @@ public interface Storage extends Service<StorageOptions> {
   /**
    * Returns the requested blob or {@code null} if not found.
    *
-   * <p>Example of getting information on a blob (see {@code getBlobFromId()} in
-   * <a href="https://github.com/GoogleCloudPlatform/gcloud-java/tree/master/gcloud-java-examples/src/main/java/com/google/cloud/examples/storage/snippets/StorageSnippets.java">
-   * StorageSnippets.java</a>):
+   * <p>Example of getting information on a blob.
    * <pre> {@code
-   * BlobId blobId = BlobId.of("my_unique_bucket", "my_blob_name");
+   * String bucketName = "my_unique_bucket";
+   * String blobName = "my_blob_name";
+   * BlobId blobId = BlobId.of(bucketName, blobName);
    * Blob blob = storage.get(blobId);
    * }</pre>
    *
@@ -1352,18 +1351,17 @@ public interface Storage extends Service<StorageOptions> {
   /**
    * Lists the project's buckets.
    *
-   * <p>Example of listing buckets, specifying the page size and a name prefix (see
-   * {@code listBucketsWithSizeAndPrefix()} in
-   * <a href="https://github.com/GoogleCloudPlatform/gcloud-java/tree/master/gcloud-java-examples/src/main/java/com/google/cloud/examples/storage/snippets/StorageSnippets.java">
-   * StorageSnippets.java</a>):
+   * <p>Example of listing buckets, specifying the page size and a name prefix.
    * <pre> {@code
+   * String prefix = "bucket_";
    * Page<Bucket> buckets = storage.list(BucketListOption.pageSize(100),
-   *     BucketListOption.prefix("bucket_"));
+   *     BucketListOption.prefix(prefix));
    * Iterator<Bucket> bucketIterator = buckets.iterateAll();
    * while (bucketIterator.hasNext()) {
    *   Bucket bucket = bucketIterator.next();
    *   // do something with the bucket
-   * }}</pre>
+   * }
+   * }</pre>
    *
    * @throws StorageException upon failure
    */
@@ -1373,18 +1371,18 @@ public interface Storage extends Service<StorageOptions> {
    * Lists the bucket's blobs. If the {@link BlobListOption#currentDirectory()} option is provided,
    * results are returned in a directory-like mode.
    *
-   * <p>Example of listing blobs in {@code my_directory} (see
-   * {@code listBlobsWithDirectoryAndPrefix()} in
-   * <a href="https://github.com/GoogleCloudPlatform/gcloud-java/tree/master/gcloud-java-examples/src/main/java/com/google/cloud/examples/storage/snippets/StorageSnippets.java">
-   * StorageSnippets.java</a>):
+   * <p>Example of listing buckets, specifying the page size and a name prefix.
    * <pre> {@code
-   * Page<Blob> blobs = storage.list("my_unique_bucket", BlobListOption.currentDirectory(),
-   *     BlobListOption.prefix("my_directory"));
+   * String bucketName = "my_unique_bucket";
+   * String directory = "my_directory";
+   * Page<Blob> blobs = storage.list(bucketName, BlobListOption.currentDirectory(),
+   *     BlobListOption.prefix(directory));
    * Iterator<Blob> blobIterator = blobs.iterateAll();
    * while (blobIterator.hasNext()) {
    *   Blob blob = blobIterator.next();
    *   // do something with the blob
-   * }}</pre>
+   * }
+   * }</pre>
    *
    * @throws StorageException upon failure
    */
@@ -1393,11 +1391,10 @@ public interface Storage extends Service<StorageOptions> {
   /**
    * Updates bucket information.
    *
-   * <p>Example of updating bucket information (see {@code updateBucket()} in
-   * <a href="https://github.com/GoogleCloudPlatform/gcloud-java/tree/master/gcloud-java-examples/src/main/java/com/google/cloud/examples/storage/snippets/StorageSnippets.java">
-   * StorageSnippets.java</a>):
+   * <p>Example of updating bucket information.
    * <pre> {@code
-   * BucketInfo bucketInfo = BucketInfo.builder("my_unique_bucket").versioningEnabled(true).build();
+   * String bucketName = "my_unique_bucket";
+   * BucketInfo bucketInfo = BucketInfo.builder(bucketName).versioningEnabled(true).build();
    * Bucket bucket = storage.update(bucketInfo);
    * }</pre>
    *
@@ -1411,14 +1408,14 @@ public interface Storage extends Service<StorageOptions> {
    * {@code blobInfo}. To replace metadata instead you first have to unset them. Unsetting metadata
    * can be done by setting the provided {@code blobInfo}'s metadata to {@code null}.
    *
-   * <p>Example of replacing blob's metadata (see {@code updateBlob()} in
-   * <a href="https://github.com/GoogleCloudPlatform/gcloud-java/tree/master/gcloud-java-examples/src/main/java/com/google/cloud/examples/storage/snippets/StorageSnippets.java">
-   * StorageSnippets.java</a>):
+   * <p>Example of udating a blob, only if the blob's metageneration matches a value, otherwise a
+   * {@link StorageException} is thrown.
    * <pre> {@code
-   * Map<String, String> newMetadata = new HashMap<>();
-   * newMetadata.put("key", "value");
-   * storage.update(BlobInfo.builder("bucket", "name").metadata(null).build());
-   * storage.update(BlobInfo.builder("bucket", "name").metadata(newMetadata).build());
+   * String bucketName = "my_unique_bucket";
+   * String blobName = "my_blob_name";
+   * Blob blob = storage.get(bucketName, blobName);
+   * BlobInfo updatedInfo = blob.toBuilder().contentType("text/plain").build();
+   * storage.update(updatedInfo, BlobTargetOption.metagenerationMatch());
    * }</pre>
    *
    * @return the updated blob
@@ -1431,14 +1428,16 @@ public interface Storage extends Service<StorageOptions> {
    * {@code blobInfo}. To replace metadata instead you first have to unset them. Unsetting metadata
    * can be done by setting the provided {@code blobInfo}'s metadata to {@code null}.
    *
-   * <p>Example of replacing blob's metadata (see {@code updateBlob()} in
-   * <a href="https://github.com/GoogleCloudPlatform/gcloud-java/tree/master/gcloud-java-examples/src/main/java/com/google/cloud/examples/storage/snippets/StorageSnippets.java">
-   * StorageSnippets.java</a>):
+   * <p>Example of replacing blob's metadata.
    * <pre> {@code
+   * String bucketName = "my_unique_bucket";
+   * String blobName = "my_blob_name";
    * Map<String, String> newMetadata = new HashMap<>();
    * newMetadata.put("key", "value");
-   * storage.update(BlobInfo.builder("bucket", "name").metadata(null).build());
-   * storage.update(BlobInfo.builder("bucket", "name").metadata(newMetadata).build());
+   * storage.update(BlobInfo.builder(bucketName, blobName).metadata(null).build());
+   * Blob blob = storage.update(BlobInfo.builder(bucketName, blobName)
+   *     .metadata(newMetadata)
+   *     .build());
    * }</pre>
    *
    * @return the updated blob
@@ -1450,17 +1449,18 @@ public interface Storage extends Service<StorageOptions> {
    * Deletes the requested bucket.
    *
    * <p>Example of deleting a bucket, only if its metageneration matches a value, otherwise a
-   * {@link StorageException} is thrown (see {@code deleteBucketWithMetageneration()} in
-   * <a href="https://github.com/GoogleCloudPlatform/gcloud-java/tree/master/gcloud-java-examples/src/main/java/com/google/cloud/examples/storage/snippets/StorageSnippets.java">
-   * StorageSnippets.java</a>):
+   * {@link StorageException} is thrown.
    * <pre> {@code
-   * boolean deleted = storage.delete("my_unique_bucket",
-   *     BucketSourceOption.metagenerationMatch(42));
+   * String bucketName = "my_unique_bucket";
+   * long bucketMetageneration = 42;
+   * boolean deleted = storage.delete(bucketName,
+   *     BucketSourceOption.metagenerationMatch(bucketMetageneration));
    * if (deleted) {
    *   // the bucket was deleted
    * } else {
    *   // the bucket was not found
-   * }}</pre>
+   * }
+   * }</pre>
    *
    * @return {@code true} if bucket was deleted, {@code false} if it was not found
    * @throws StorageException upon failure
@@ -1471,17 +1471,19 @@ public interface Storage extends Service<StorageOptions> {
    * Deletes the requested blob.
    *
    * <p>Example of deleting a blob, only if its generation matches a value, otherwise a
-   * {@link StorageException} is thrown (see {@code deleteBlobFromStringsWithGeneration()} in
-   * <a href="https://github.com/GoogleCloudPlatform/gcloud-java/tree/master/gcloud-java-examples/src/main/java/com/google/cloud/examples/storage/snippets/StorageSnippets.java">
-   * StorageSnippets.java</a>):
+   * {@link StorageException} is thrown.
    * <pre> {@code
-   * boolean deleted = storage.delete("my_unique_bucket", "my_blob_name",
-   *     BlobSourceOption.generationMatch(42));
+   * String bucketName = "my_unique_bucket";
+   * String blobName = "my_blob_name";
+   * long blobGeneration = 42;
+   * boolean deleted = storage.delete(bucketName, blobName,
+   *     BlobSourceOption.generationMatch(blobGeneration));
    * if (deleted) {
    *   // the blob was deleted
    * } else {
    *   // the blob was not found
-   * }}</pre>
+   * }
+   * }</pre>
    *
    * @return {@code true} if blob was deleted, {@code false} if it was not found
    * @throws StorageException upon failure
@@ -1492,17 +1494,19 @@ public interface Storage extends Service<StorageOptions> {
    * Deletes the requested blob.
    *
    * <p>Example of deleting a blob, only if its generation matches a value, otherwise a
-   * {@link StorageException} is thrown (see {@code deleteBlobFromIdWithGeneration()} in
-   * <a href="https://github.com/GoogleCloudPlatform/gcloud-java/tree/master/gcloud-java-examples/src/main/java/com/google/cloud/examples/storage/snippets/StorageSnippets.java">
-   * StorageSnippets.java</a>):
+   * {@link StorageException} is thrown.
    * <pre> {@code
-   * BlobId blobId = BlobId.of("my_unique_bucket", "my_blob_name");
-   * boolean deleted = storage.delete(blobId, BlobSourceOption.generationMatch(42));
+   * String bucketName = "my_unique_bucket";
+   * String blobName = "my_blob_name";
+   * long blobGeneration = 42;
+   * BlobId blobId = BlobId.of(bucketName, blobName);
+   * boolean deleted = storage.delete(blobId, BlobSourceOption.generationMatch(blobGeneration));
    * if (deleted) {
    *   // the blob was deleted
    * } else {
    *   // the blob was not found
-   * }}</pre>
+   * }
+   * }</pre>
    *
    * @return {@code true} if blob was deleted, {@code false} if it was not found
    * @throws StorageException upon failure
@@ -1512,17 +1516,18 @@ public interface Storage extends Service<StorageOptions> {
   /**
    * Deletes the requested blob.
    *
-   * <p>Example of deleting a blob (see {@code deleteBlob()} in
-   * <a href="https://github.com/GoogleCloudPlatform/gcloud-java/tree/master/gcloud-java-examples/src/main/java/com/google/cloud/examples/storage/snippets/StorageSnippets.java">
-   * StorageSnippets.java</a>):
+   * <p>Example of deleting a blob.
    * <pre> {@code
-   * BlobId blobId = BlobId.of("my_unique_bucket", "my_blob_name");
+   * String bucketName = "my_unique_bucket";
+   * String blobName = "my_blob_name";
+   * BlobId blobId = BlobId.of(bucketName, blobName);
    * boolean deleted = storage.delete(blobId);
    * if (deleted) {
    *   // the blob was deleted
    * } else {
    *   // the blob was not found
-   * }}</pre>
+   * }
+   * }</pre>
    *
    * @return {@code true} if blob was deleted, {@code false} if it was not found
    * @throws StorageException upon failure
@@ -1532,16 +1537,18 @@ public interface Storage extends Service<StorageOptions> {
   /**
    * Sends a compose request.
    *
-   * <p>Example of composing two blobs (see {@code composeBlobs()} in
-   * <a href="https://github.com/GoogleCloudPlatform/gcloud-java/tree/master/gcloud-java-examples/src/main/java/com/google/cloud/examples/storage/snippets/StorageSnippets.java">
-   * StorageSnippets.java</a>):
+   * <p>Example of composing two blobs.
    * <pre> {@code
-   * BlobId blobId = BlobId.of("my_unique_bucket", "my_blob_name");
+   * String bucketName = "my_unique_bucket";
+   * String blobName = "my_blob_name";
+   * String sourceBlob1 = "source_blob_1";
+   * String sourceBlob2 = "source_blob_2";
+   * BlobId blobId = BlobId.of(bucketName, blobName);
    * BlobInfo blobInfo = BlobInfo.builder(blobId).contentType("text/plain").build();
    * ComposeRequest request = ComposeRequest.builder()
    *     .target(blobInfo)
-   *     .addSource("source_blob_1")
-   *     .addSource("source_blob_2")
+   *     .addSource(sourceBlob1)
+   *     .addSource(sourceBlob2)
    *     .build();
    * Blob blob = storage.compose(request);
    * }</pre>
@@ -1565,30 +1572,32 @@ public interface Storage extends Service<StorageOptions> {
    * location or storage class {@link CopyWriter#result()} might issue multiple RPC calls depending
    * on blob's size.
    *
-   * <p>Example of copying a blob (see {@code copyBlob()} in
-   * <a href="https://github.com/GoogleCloudPlatform/gcloud-java/tree/master/gcloud-java-examples/src/main/java/com/google/cloud/examples/storage/snippets/StorageSnippets.java">
-   * StorageSnippets.java</a>):
+   * <p>Example of copying a blob.
    * <pre> {@code
+   * String bucketName = "my_unique_bucket";
+   * String blobName = "my_blob_name";
+   * String copyBlobName = "copy_blob_name";
    * CopyRequest request = CopyRequest.builder()
-   *     .source(BlobId.of("my_unique_bucket", "my_blob_name"))
-   *     .target(BlobId.of("my_unique_bucket", "copy_blob_name"))
+   *     .source(BlobId.of(bucketName, blobName))
+   *     .target(BlobId.of(bucketName, copyBlobName))
    *     .build();
-   * BlobInfo blob = storage.copy(request).result();
+   * Blob blob = storage.copy(request).result();
    * }</pre>
-   * To explicitly issue chunk copy requests use {@link CopyWriter#copyChunk()} instead (see
-   * {@code copyBlobInChunks()} in
-   * <a href="https://github.com/GoogleCloudPlatform/gcloud-java/tree/master/gcloud-java-examples/src/main/java/com/google/cloud/examples/storage/snippets/StorageSnippets.java">
-   * StorageSnippets.java</a>):
+   *
+   * <p>Example of copying a blob in chunks.
    * <pre> {@code
+   * String bucketName = "my_unique_bucket";
+   * String blobName = "my_blob_name";
+   * String copyBlobName = "copy_blob_name";
    * CopyRequest request = CopyRequest.builder()
-   *     .source(BlobId.of("my_unique_bucket", "my_blob_name"))
-   *     .target(BlobId.of("my_unique_bucket", "copy_blob_name"))
+   *     .source(BlobId.of(bucketName, blobName))
+   *     .target(BlobId.of(bucketName, copyBlobName))
    *     .build();
    * CopyWriter copyWriter = storage.copy(request);
    * while (!copyWriter.isDone()) {
    *   copyWriter.copyChunk();
    * }
-   * BlobInfo blob = copyWriter.result();
+   * Blob blob = copyWriter.result();
    * }</pre>
    *
    * @return a {@link CopyWriter} object that can be used to get information on the newly created
@@ -1602,12 +1611,13 @@ public interface Storage extends Service<StorageOptions> {
    * Reads all the bytes from a blob.
    *
    * <p>Example of reading all bytes of a blob, if generation matches a value, otherwise a
-   * {@link StorageException} is thrown (see {@code readBlobFromStringsWithGeneration()} in
-   * <a href="https://github.com/GoogleCloudPlatform/gcloud-java/tree/master/gcloud-java-examples/src/main/java/com/google/cloud/examples/storage/snippets/StorageSnippets.java">
-   * StorageSnippets.java</a>):
+   * {@link StorageException} is thrown.
    * <pre> {@code
-   * byte[] content = storage.readAllBytes("my_unique_bucket", "my_blob_name",
-   *    BlobSourceOption.generationMatch(42));
+   * String bucketName = "my_unique_bucket";
+   * String blobName = "my_blob_name";
+   * long blobGeneration = 42";
+   * byte[] content = storage.readAllBytes(bucketName, blobName,
+   *     BlobSourceOption.generationMatch(blobGeneration));
    * }</pre>
    *
    * @return the blob's content
@@ -1619,34 +1629,28 @@ public interface Storage extends Service<StorageOptions> {
    * Reads all the bytes from a blob.
    *
    * <p>Example of reading all bytes of a blob's specific generation, otherwise a
-   * {@link StorageException} is thrown (see {@code readBlobFromId()} in
-   * <a href="https://github.com/GoogleCloudPlatform/gcloud-java/tree/master/gcloud-java-examples/src/main/java/com/google/cloud/examples/storage/snippets/StorageSnippets.java">
-   * StorageSnippets.java</a>):
+   * {@link StorageException} is thrown.
    * <pre> {@code
-   * BlobId blobId = BlobId.of("my_unique_bucket", "my_blob_name", 42L);
+   * String bucketName = "my_unique_bucket";
+   * String blobName = "my_blob_name";
+   * long blobGeneration = 42";
+   * BlobId blobId = BlobId.of(bucketName, blobName, blobGeneration);
    * byte[] content = storage.readAllBytes(blobId);
    * }</pre>
    *
-   * @return the blob's content
-   * @throws StorageException upon failure
-   */
-  byte[] readAllBytes(BlobId blob, BlobSourceOption... options);
-
-  /**
-   * Creates a new empty batch for grouping multiple service calls in one underlying RPC call.
-   *
-   * <p>Example of using a batch request to delete, update and get a blob (see {@code batch()} in
-   * <a href="https://github.com/GoogleCloudPlatform/gcloud-java/tree/master/gcloud-java-examples/src/main/java/com/google/cloud/examples/storage/snippets/StorageSnippets.java">
-   * StorageSnippets.java</a>):
-   * <pre>{@code
+   * <p>Example of using a batch request to delete, update and get a blob.
+   * <pre> {@code
+   * String bucketName = "my_unique_bucket";
+   * String blobName1 = "my_blob_name1";
+   * String blobName2 = "my_blob_name2";
    * StorageBatch batch = storage.batch();
-   * BlobId firstBlob = BlobId.of("bucket", "blob1");
-   * BlobId secondBlob = BlobId.of("bucket", "blob2");
+   * BlobId firstBlob = BlobId.of(bucketName, blobName1);
+   * BlobId secondBlob = BlobId.of(bucketName, blobName2);
    * batch.delete(firstBlob).notify(new BatchResult.Callback<Boolean, StorageException>() {
    *   public void success(Boolean result) {
    *     // deleted successfully
    *   }
-   *
+   * 
    *   public void error(StorageException exception) {
    *     // delete failed
    *   }
@@ -1656,6 +1660,14 @@ public interface Storage extends Service<StorageOptions> {
    * batch.submit();
    * Blob blob = result.get(); // returns get result or throws StorageException
    * }</pre>
+   *
+   * @return the blob's content
+   * @throws StorageException upon failure
+   */
+  byte[] readAllBytes(BlobId blob, BlobSourceOption... options);
+
+  /**
+   * Creates a new empty batch for grouping multiple service calls in one underlying RPC call.
    */
   StorageBatch batch();
 
@@ -1664,22 +1676,19 @@ public interface Storage extends Service<StorageOptions> {
    * blob changes while reading (i.e. {@link BlobInfo#etag()} changes), subsequent calls to
    * {@code blobReadChannel.read(ByteBuffer)} may throw {@link StorageException}.
    *
-   * <p>The {@link BlobSourceOption#generationMatch(long)} option can be provided to ensure that
-   * {@code blobReadChannel.read(ByteBuffer)} calls will throw {@link StorageException} if blob`s
-   * generation differs from the expected one.
-   *
-   * <p>Example of reading a blob's content through a reader (see {@code readerFromStrings()} in
-   * <a href="https://github.com/GoogleCloudPlatform/gcloud-java/tree/master/gcloud-java-examples/src/main/java/com/google/cloud/examples/storage/snippets/StorageSnippets.java">
-   * StorageSnippets.java</a>):
+   * <p>Example of reading a blob's content through a reader.
    * <pre> {@code
-   * try (ReadChannel reader = storage.reader("my_unique_bucket", "my_blob_name")) {
+   * String bucketName = "my_unique_bucket";
+   * String blobName = "my_blob_name";
+   * try (ReadChannel reader = storage.reader(bucketName, blobName)) {
    *   ByteBuffer bytes = ByteBuffer.allocate(64 * 1024);
    *   while (reader.read(bytes) > 0) {
    *     bytes.flip();
    *     // do something with bytes
    *     bytes.clear();
    *   }
-   * }}</pre>
+   * }
+   * }</pre>
    *
    * @throws StorageException upon failure
    */
@@ -1697,11 +1706,11 @@ public interface Storage extends Service<StorageOptions> {
    * {@code blobReadChannel.read(ByteBuffer)} calls will throw {@link StorageException} if the
    * blob`s generation differs from the expected one.
    *
-   * <p>Example of reading a blob's content through a reader (see {@code readerFromId()} in
-   * <a href="https://github.com/GoogleCloudPlatform/gcloud-java/tree/master/gcloud-java-examples/src/main/java/com/google/cloud/examples/storage/snippets/StorageSnippets.java">
-   * StorageSnippets.java</a>):
+   * <p>Example of reading a blob's content through a reader.
    * <pre> {@code
-   * BlobId blobId = BlobId.of("my_unique_bucket", "my_blob_name");
+   * String bucketName = "my_unique_bucket";
+   * String blobName = "my_blob_name";
+   * BlobId blobId = BlobId.of(bucketName, blobName);
    * try (ReadChannel reader = storage.reader(blobId)) {
    *   ByteBuffer bytes = ByteBuffer.allocate(64 * 1024);
    *   while (reader.read(bytes) > 0) {
@@ -1709,7 +1718,8 @@ public interface Storage extends Service<StorageOptions> {
    *     // do something with bytes
    *     bytes.clear();
    *   }
-   * }}</pre>
+   * }
+   * }</pre>
    *
    * @throws StorageException upon failure
    */
@@ -1720,11 +1730,11 @@ public interface Storage extends Service<StorageOptions> {
    * values in the given {@code blobInfo} are ignored unless requested via the
    * {@code BlobWriteOption.md5Match} and {@code BlobWriteOption.crc32cMatch} options.
    *
-   * <p>Example of writing a blob's content through a writer (see {@code writer()} in
-   * <a href="https://github.com/GoogleCloudPlatform/gcloud-java/tree/master/gcloud-java-examples/src/main/java/com/google/cloud/examples/storage/snippets/StorageSnippets.java">
-   * StorageSnippets.java</a>):
+   * <p>Example of writing a blob's content through a writer.
    * <pre> {@code
-   * BlobId blobId = BlobId.of("my_unique_bucket", "my_blob_name");
+   * String bucketName = "my_unique_bucket";
+   * String blobName = "my_blob_name";
+   * BlobId blobId = BlobId.of(bucketName, blobName);
    * byte[] content = "Hello, World!".getBytes(UTF_8);
    * BlobInfo blobInfo = BlobInfo.builder(blobId).contentType("text/plain").build();
    * try (WriteChannel writer = storage.writer(blobInfo)) {
@@ -1733,7 +1743,8 @@ public interface Storage extends Service<StorageOptions> {
    *   } catch (Exception ex) {
    *     // handle exception
    *   }
-   * }}</pre>
+   * }
+   * }</pre>
    *
    * @throws StorageException upon failure
    */
@@ -1761,24 +1772,25 @@ public interface Storage extends Service<StorageOptions> {
    *   <li>The default credentials, if no credentials were passed to {@link StorageOptions}
    * </ol>
    *
-   * <p>Example usage of creating a signed URL that is valid for 2 weeks, using the default
-   * credentials for signing the URL (see {@code signUrl()} in
-   * <a href="https://github.com/GoogleCloudPlatform/gcloud-java/tree/master/gcloud-java-examples/src/main/java/com/google/cloud/examples/storage/snippets/StorageSnippets.java">
-   * StorageSnippets.java</a>):
+   * <p>Example of creating a signed URL that is valid for 2 weeks, using the default credentials for
+   * signing the URL.
    * <pre> {@code
-   * storage.signUrl(BlobInfo.builder("my_unique_bucket", "my_blob_name").build(), 14,
+   * String bucketName = "my_unique_bucket";
+   * String blobName = "my_blob_name";
+   * URL signedUrl = storage.signUrl(BlobInfo.builder(bucketName, blobName).build(), 14,
    *     TimeUnit.DAYS);
    * }</pre>
    *
-   * <p>Example usage of creating a signed URL passing the
+   * <p>Example of creating a signed URL passing the
    * {@link SignUrlOption#signWith(ServiceAccountSigner)} option, that will be used for signing the
-   * URL (see {@code signUrlWithSigner()} in
-   * <a href="https://github.com/GoogleCloudPlatform/gcloud-java/tree/master/gcloud-java-examples/src/main/java/com/google/cloud/examples/storage/snippets/StorageSnippets.java">
-   * StorageSnippets.java</a>):
+   * URL.
    * <pre> {@code
-   * storage.signUrl(BlobInfo.builder("my_unique_bucket", "my_blob_name").build(), 14,
-   *     TimeUnit.DAYS, SignUrlOption.signWith(
-   *         AuthCredentials.createForJson(new FileInputStream("/path/to/key.json"))));
+   * String bucketName = "my_unique_bucket";
+   * String blobName = "my_blob_name";
+   * String keyPath = "/path/to/key.json";
+   * URL signedUrl = storage.signUrl(BlobInfo.builder("my_unique_bucket", "my_blob_name").build(),
+   *     14, TimeUnit.DAYS, SignUrlOption.signWith(
+   *         AuthCredentials.createForJson(new FileInputStream(keyPath))));
    * }</pre>
    *
    * @param blobInfo the blob associated with the signed URL
@@ -1801,13 +1813,14 @@ public interface Storage extends Service<StorageOptions> {
   /**
    * Gets the requested blobs. A batch request is used to perform this call.
    *
-   * <p>Example of getting information on several blobs using a single batch request (see
-   * {@code batchGet()} in
-   * <a href="https://github.com/GoogleCloudPlatform/gcloud-java/tree/master/gcloud-java-examples/src/main/java/com/google/cloud/examples/storage/snippets/StorageSnippets.java">
-   * StorageSnippets.java</a>):
+   *
+   * <p>Example of getting information on several blobs using a single batch request.
    * <pre> {@code
-   * BlobId firstBlob = BlobId.of("my_unique_bucket", "my_blob_name_1");
-   * BlobId secondBlob = BlobId.of("my_unique_bucket", "my_blob_name_2");
+   * String bucketName = "my_unique_bucket";
+   * String blobName1 = "my_blob_name1";
+   * String blobName2 = "my_blob_name2";
+   * BlobId firstBlob = BlobId.of(bucketName, blobName1);
+   * BlobId secondBlob = BlobId.of(bucketName, blobName2);
    * List<Blob> blobs = storage.get(firstBlob, secondBlob);
    * }</pre>
    *
@@ -1821,14 +1834,14 @@ public interface Storage extends Service<StorageOptions> {
   /**
    * Gets the requested blobs. A batch request is used to perform this call.
    *
-   * <p>Example of getting information on several blobs using a single batch request (see
-   * {@code batchGetIterable()} in
-   * <a href="https://github.com/GoogleCloudPlatform/gcloud-java/tree/master/gcloud-java-examples/src/main/java/com/google/cloud/examples/storage/snippets/StorageSnippets.java">
-   * StorageSnippets.java</a>):
+   * <p>Example of getting information on several blobs using a single batch request.
    * <pre> {@code
+   * String bucketName = "my_unique_bucket";
+   * String blobName1 = "my_blob_name1";
+   * String blobName2 = "my_blob_name2";
    * List<BlobId> blobIds = new LinkedList<>();
-   * blobIds.add(BlobId.of("my_unique_bucket", "my_blob_name_1"));
-   * blobIds.add(BlobId.of("my_unique_bucket", "my_blob_name_2"));
+   * blobIds.add(BlobId.of(bucketName, blobName1));
+   * blobIds.add(BlobId.of(bucketName, blobName2));
    * List<Blob> blobs = storage.get(blobIds);
    * }</pre>
    *
@@ -1846,13 +1859,13 @@ public interface Storage extends Service<StorageOptions> {
    * {@code BlobInfo} objects metadata to {@code null}. See
    * {@link #update(BlobInfo)} for a code example.
    *
-   * <p>Example of updating information on several blobs using a single batch request (see
-   * {@code batchUpdate()} in
-   * <a href="https://github.com/GoogleCloudPlatform/gcloud-java/tree/master/gcloud-java-examples/src/main/java/com/google/cloud/examples/storage/snippets/StorageSnippets.java">
-   * StorageSnippets.java</a>):
+   * <p>Example of updating information on several blobs using a single batch request.
    * <pre> {@code
-   * Blob firstBlob = storage.get("my_unique_bucket", "my_blob_name_1");
-   * Blob secondBlob = storage.get("my_unique_bucket", "my_blob_name_2");
+   * String bucketName = "my_unique_bucket";
+   * String blobName1 = "my_blob_name1";
+   * String blobName2 = "my_blob_name2";
+   * Blob firstBlob = storage.get(bucketName, blobName1);
+   * Blob secondBlob = storage.get(bucketName, blobName2);
    * List<Blob> updatedBlobs = storage.update(
    *     firstBlob.toBuilder().contentType("text/plain").build(),
    *     secondBlob.toBuilder().contentType("text/plain").build());
@@ -1872,13 +1885,13 @@ public interface Storage extends Service<StorageOptions> {
    * {@code BlobInfo} objects metadata to {@code null}. See
    * {@link #update(BlobInfo)} for a code example.
    *
-   * <p>Example of updating information on several blobs using a single batch request (see
-   * {@code batchUpdateIterable()} in
-   * <a href="https://github.com/GoogleCloudPlatform/gcloud-java/tree/master/gcloud-java-examples/src/main/java/com/google/cloud/examples/storage/snippets/StorageSnippets.java">
-   * StorageSnippets.java</a>):
+   * <p>Example of updating information on several blobs using a single batch request.
    * <pre> {@code
-   * Blob firstBlob = storage.get("my_unique_bucket", "my_blob_name_1");
-   * Blob secondBlob = storage.get("my_unique_bucket", "my_blob_name_2");
+   * String bucketName = "my_unique_bucket";
+   * String blobName1 = "my_blob_name1";
+   * String blobName2 = "my_blob_name2";
+   * Blob firstBlob = storage.get(bucketName, blobName1);
+   * Blob secondBlob = storage.get(bucketName, blobName2);
    * List<BlobInfo> blobs = new LinkedList<>();
    * blobs.add(firstBlob.toBuilder().contentType("text/plain").build());
    * blobs.add(secondBlob.toBuilder().contentType("text/plain").build());
@@ -1895,12 +1908,13 @@ public interface Storage extends Service<StorageOptions> {
   /**
    * Deletes the requested blobs. A batch request is used to perform this call.
    *
-   * <p>Example of deleting several blobs using a single batch request (see {@code batchDelete()} in
-   * <a href="https://github.com/GoogleCloudPlatform/gcloud-java/tree/master/gcloud-java-examples/src/main/java/com/google/cloud/examples/storage/snippets/StorageSnippets.java">
-   * StorageSnippets.java</a>):
+   * <p>Example of deleting several blobs using a single batch request.
    * <pre> {@code
-   * BlobId firstBlob = BlobId.of("my_unique_bucket", "my_blob_name_1");
-   * BlobId secondBlob = BlobId.of("my_unique_bucket", "my_blob_name_2");
+   * String bucketName = "my_unique_bucket";
+   * String blobName1 = "my_blob_name1";
+   * String blobName2 = "my_blob_name2";
+   * BlobId firstBlob = BlobId.of(bucketName, blobName1);
+   * BlobId secondBlob = BlobId.of(bucketName, blobName2);
    * List<Boolean> deleted = storage.delete(firstBlob, secondBlob);
    * }</pre>
    *
@@ -1915,14 +1929,14 @@ public interface Storage extends Service<StorageOptions> {
   /**
    * Deletes the requested blobs. A batch request is used to perform this call.
    *
-   * <p>Example of deleting several blobs using a single batch request (see
-   * {@code batchDeleteIterable()} in
-   * <a href="https://github.com/GoogleCloudPlatform/gcloud-java/tree/master/gcloud-java-examples/src/main/java/com/google/cloud/examples/storage/snippets/StorageSnippets.java">
-   * StorageSnippets.java</a>):
+   * <p>Example of deleting several blobs using a single batch request.
    * <pre> {@code
+   * String bucketName = "my_unique_bucket";
+   * String blobName1 = "my_blob_name1";
+   * String blobName2 = "my_blob_name2";
    * List<BlobId> blobIds = new LinkedList<>();
-   * blobIds.add(BlobId.of("my_unique_bucket", "my_blob_name_1"));
-   * blobIds.add(BlobId.of("my_unique_bucket", "my_blob_name_2"));
+   * blobIds.add(BlobId.of(bucketName, blobName1));
+   * blobIds.add(BlobId.of(bucketName, blobName2));
    * List<Boolean> deleted = storage.delete(blobIds);
    * }</pre>
    *
