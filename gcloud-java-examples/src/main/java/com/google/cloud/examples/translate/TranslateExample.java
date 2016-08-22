@@ -169,27 +169,32 @@ public class TranslateExample {
         actionAndParams.append(' ').append(param);
       }
     }
-    System.out.printf("Usage: %s <apiKey> [<targetLanguage>] operation <args>*%s%n",
+    System.out.printf("Usage: %s [<apiKey>] [<targetLanguage>] operation <args>*%s%n",
         TranslateExample.class.getSimpleName(), actionAndParams);
   }
 
   @SuppressWarnings("unchecked")
   public static void main(String... args) throws Exception {
-    if (args.length < 2) {
-      System.out.println("Missing required api key and action");
+    if (args.length < 1) {
+      System.out.println("Missing required action");
       printUsage();
       return;
     }
-    TranslateOptions.Builder optionsBuilder = TranslateOptions.builder(args[0]);
+    TranslateOptions.Builder optionsBuilder = TranslateOptions.builder();
     TranslateAction action;
     String actionName;
     if (args.length >= 3 && !ACTIONS.containsKey(args[1])) {
+      optionsBuilder.apiKey(args[0]);
       actionName = args[2];
       optionsBuilder.targetLanguage(args[1]);
       args = Arrays.copyOfRange(args, 3, args.length);
-    } else {
+    } else if (args.length >= 2 && !ACTIONS.containsKey(args[0])) {
+      optionsBuilder.apiKey(args[0]);
       actionName = args[1];
       args = Arrays.copyOfRange(args, 2, args.length);
+    } else {
+      actionName = args[0];
+      args = Arrays.copyOfRange(args, 1, args.length);
     }
     action = ACTIONS.get(actionName);
     if (action == null) {

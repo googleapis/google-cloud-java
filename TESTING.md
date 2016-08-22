@@ -270,5 +270,25 @@ Here is an example that clears the bucket created in Step 3 with a timeout of 5 
   RemoteStorageHelper.forceDelete(storage, bucket, 5, TimeUnit.SECONDS);
   ```
 
+### Testing code that uses Translate
+
+`RemoteTranslateHelper` contains convenience methods to make is easier to run tests against the
+Google Translate service.
+
+1. Create a test Google Cloud project.
+
+2. Follow [Translate Quickstart](https://cloud.google.com/translate/v2/quickstart) to get an API
+key.
+
+3. Create a `RemoteTranslateHelper` object using your project ID and API key. Here is an example
+that uses the `RemoteTranslateHelper` to list supported languages.
+  ```java
+  RemoteTranslateHelper translateHelper = RemoteTranslateHelper.create(PROJECT_ID, API_KEY);
+  Translate translate = translateHelper.options().service();
+  List<Language> languages = translate.listSupportedLanguages();
+  ```
+
+4. Run your tests.
+
 [cloud-platform-storage-authentication]:https://cloud.google.com/storage/docs/authentication?hl=en#service_accounts
 [create-service-account]:https://developers.google.com/identity/protocols/OAuth2ServiceAccount#creatinganaccount
