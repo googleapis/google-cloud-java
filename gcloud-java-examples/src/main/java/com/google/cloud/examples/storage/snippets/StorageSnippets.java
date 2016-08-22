@@ -575,7 +575,7 @@ public class StorageSnippets {
   public URL signUrlWithSigner(String bucketName, String blobName, String keyPath)
       throws IOException {
     // [SNIPPET START]
-    URL signedUrl = storage.signUrl(BlobInfo.builder("my_unique_bucket", "my_blob_name").build(),
+    URL signedUrl = storage.signUrl(BlobInfo.builder(bucketName, blobName).build(),
         14, TimeUnit.DAYS, SignUrlOption.signWith(
             AuthCredentials.createForJson(new FileInputStream(keyPath))));
     // [SNIPPET END]
