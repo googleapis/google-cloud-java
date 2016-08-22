@@ -17,6 +17,7 @@
 package com.google.cloud.translate;
 
 import static com.google.common.base.MoreObjects.firstNonNull;
+import static com.google.common.base.Preconditions.checkArgument;
 
 import com.google.cloud.AuthCredentials;
 import com.google.cloud.HttpServiceOptions;
@@ -34,6 +35,7 @@ public class TranslateOptions extends
     HttpServiceOptions<Translate, TranslateRpc, TranslateOptions> {
 
   private static final long serialVersionUID = 5997441123713672886L;
+  private static final String API_KEY_ENV_NAME = "GOOGLE_API_KEY";
   private static final Set<String> SCOPES = ImmutableSet.of();
 
   private final String apiKey;
@@ -62,12 +64,10 @@ public class TranslateOptions extends
   public static class Builder extends
       HttpServiceOptions.Builder<Translate, TranslateRpc, TranslateOptions, Builder> {
 
-    private final String apiKey;
+    private String apiKey;
     private String targetLanguage;
 
-    private Builder(String apiKey) {
-      this.apiKey = apiKey;
-    }
+    private Builder() {}
 
     private Builder(TranslateOptions options) {
       super(options);
@@ -97,6 +97,16 @@ public class TranslateOptions extends
     }
 
     /**
+     * Sets the API key used to issue requets. If not set, the API key is looked for in the
+     * {@code GOOGLE_API_KEY} environment variable. For instructions on how to get an API key see
+     * <a href="https://cloud.google.com/translate/v2/quickstart">Translate quickstart</a>.
+     */
+    public Builder apiKey(String apiKey) {
+      this.apiKey = apiKey;
+      return this;
+    }
+
+    /**
      * Sets the code for the default target language. If not set, english ({@code en}) is used.
      * {@link Translate#translate(List, TranslateOption...)} and
      * {@link Translate#translate(String, TranslateOption...)} calls will use this
@@ -112,13 +122,18 @@ public class TranslateOptions extends
 
     @Override
     public TranslateOptions build() {
+      // Auth credentials are not used by Translate
+      authCredentials(AuthCredentials.noAuth());
       return new TranslateOptions(this);
     }
   }
 
   private TranslateOptions(Builder builder) {
     super(TranslateFactory.class, TranslateRpcFactory.class, builder);
-    this.apiKey = builder.apiKey;
+    this.apiKey = builder.apiKey != null ? builder.apiKey : defaultApiKey();
+    checkArgument(this.apiKey != null,
+        "An API key is required for this service but could not be determined from the builder "
+            + "or the environment. Please set an API key using the builder.");
     this.targetLanguage = firstNonNull(builder.targetLanguage, Locale.ENGLISH.getLanguage());
   }
 
@@ -142,6 +157,10 @@ public class TranslateOptions extends
     return SCOPES;
   }
 
+  protected String defaultApiKey() {
+    return System.getProperty(API_KEY_ENV_NAME, System.getenv(API_KEY_ENV_NAME));
+  }
+
   /**
    * Returns the API key, to be used used to send requests.
    */
@@ -154,15 +173,6 @@ public class TranslateOptions extends
    */
   public String targetLanguage() {
     return targetLanguage;
-  }
-
-  /**
-   * Returns a default {@code TranslateOptions} instance given an API key. For instructions on
-   * how to get an API key see <a href="https://cloud.google.com/translate/v2/quickstart">Translate
-   * quickstart</a>.
-   */
-  public static TranslateOptions defaultInstance(String apiKey) {
-    return builder(apiKey).build();
   }
 
   @SuppressWarnings("unchecked")
@@ -188,11 +198,16 @@ public class TranslateOptions extends
   }
 
   /**
-   * Creates a builder for {@code TranslateOptions} objects given an api key. For instructions on
-   * how to get an API key see <a href="https://cloud.google.com/translate/v2/quickstart">Translate
-   * quickstart</a>.
+   * Returns a default {@code TranslateOptions} instance.
    */
-  public static Builder builder(String apiKey) {
-    return new Builder(apiKey);
+  public static TranslateOptions defaultInstance() {
+    return builder().build();
+  }
+
+  /**
+   * Returns a builder for {@code TranslateOptions} objects.
+   */
+  public static Builder builder() {
+    return new Builder();
   }
 }

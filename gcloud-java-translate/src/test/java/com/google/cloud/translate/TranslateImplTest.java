@@ -105,7 +105,8 @@ public class TranslateImplTest {
     EasyMock.expect(rpcFactoryMock.create(EasyMock.anyObject(TranslateOptions.class)))
         .andReturn(translateRpcMock);
     EasyMock.replay(rpcFactoryMock);
-    options = TranslateOptions.builder(API_KEY)
+    options = TranslateOptions.builder()
+        .apiKey(API_KEY)
         .serviceRpcFactory(rpcFactoryMock)
         .retryParams(RetryParams.noRetries())
         .build();
