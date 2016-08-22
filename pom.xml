@@ -104,6 +104,7 @@
     <module>gcloud-java-logging</module>
     <module>gcloud-java-pubsub</module>
     <module>gcloud-java-resourcemanager</module>
+    <module>gcloud-java-speech</module>
     <module>gcloud-java-storage</module>
   </modules>
   <pluginRepositories>
