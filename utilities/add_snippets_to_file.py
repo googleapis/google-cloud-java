@@ -81,7 +81,7 @@ class Method(object):
     def parse_methods(cls, data, class_name):
         parser = plyj.Parser()
         tree = parser.parse_string(data)
-        LOGGER.info("Parsing methods for class %s.", class_name)
+        LOGGER.info('Parsing methods for class %s.', class_name)
         methods = []
         for ast_type_declaration in tree.type_declarations:
             if ast_type_declaration.name == class_name:
@@ -102,7 +102,8 @@ class Method(object):
 
 class Snippet(object):
 
-    def __init__(self, target, caption, variables, code, signature, parameters):
+    def __init__(self, name, target, caption, variables, code, signature, parameters):
+        self.name = name
         self.target = target
         self.caption = caption
         self.variables = variables
@@ -144,22 +145,22 @@ class Snippet(object):
         caption = []
         while index < len(lines):
             stripped_line = lines[index].strip()
-            if stripped_line.startswith("*/"):
+            if stripped_line.startswith('*/'):
                 return (index, caption)
             caption.append(stripped_line.strip('*').lstrip())
             index += 1
-        return (index, caption)
+        raise ValueError('Javadoc comment is never closed')
 
     @classmethod
-    def parse_code(cls, index, lines):
+    def parse_code(cls, index, lines, name):
         code = []
         while index < len(lines):
             line = lines[index].rstrip()
-            if line.lstrip().startswith("// [SNIPPET END]"):
+            if line.lstrip().startswith('// [END ' + name + ']'):
                 return (index, code)
             code.append(line)
             index += 1
-        return (index, code)
+        raise ValueError('Snippet {} is missing an END tag'.format(name))
 
     @classmethod
     def parse_snippets(cls, snippets_filename):
@@ -169,17 +170,17 @@ class Snippet(object):
         /**
          * Snippet caption.
          */
-        // [SNIPPET TARGET method(Type1, Type2)]
-        // [SNIPPET VARIABLE "stringValue"]
-        // [SNIPPET VARIABLE 42]
+        // [TARGET method(Type1, Type2)]
+        // [VARIABLE "stringValue"]
+        // [VARIABLE 42]
         public void snippetMethod(String arg1, int arg2) {
-          // [SNIPPET START]
+          // [START snippetMethod]
           here goes snippet code
-          // [SNIPPET END]
+          // [END snippetMethod]
         }
         """
         snippets_name = os.path.splitext(os.path.basename(snippets_filename))[0]
-        LOGGER.info("Parsing snippets from class %s.", snippets_name)
+        LOGGER.info('Parsing snippets from class %s.', snippets_name)
         snippets = []
         with open(snippets_filename, 'r') as snippets_file:
             snippets_string = snippets_file.read()
@@ -206,12 +207,14 @@ class Snippet(object):
                     code = ''
                     (index, caption) = Snippet.parse_caption(index, snippets_lines)
                     continue
-                if stripped_line.startswith('// [SNIPPET TARGET'):
-                    target = stripped_line.replace('// [SNIPPET TARGET ', '').rstrip(']')
+                if stripped_line.startswith('// [TARGET'):
+                    target = stripped_line.replace('// [TARGET ', '').rstrip(']')
                     continue
-                if stripped_line.startswith('// [SNIPPET START]'):
-                    (index, code) = Snippet.parse_code(index, snippets_lines)
+                if stripped_line.startswith('// [START '):
+                    snippet_name = stripped_line.replace('// [START ', '').rstrip(']')
+                    (index, code) = Snippet.parse_code(index, snippets_lines, snippet_name)
                     snippet = cls(
+                        snippet_name,
                         target,
                         caption,
                         variables,
@@ -221,8 +224,8 @@ class Snippet(object):
                     snippets.append(snippet)
                     method_index += 1
                     continue
-                if stripped_line.startswith('// [SNIPPET VARIABLE'):
-                    variables.append(stripped_line.replace('// [SNIPPET VARIABLE ', '').rstrip(']'))
+                if stripped_line.startswith('// [VARIABLE'):
+                    variables.append(stripped_line.replace('// [VARIABLE ', '').rstrip(']'))
                     continue
             return snippets
 
@@ -239,7 +242,7 @@ class Snippet(object):
             line_numbers = LineNumbers(string, methods)
             for snippet in snippets:
                 target = snippet.target
-                LOGGER.info("Building snippet for method %s#%s.", class_name, target)
+                LOGGER.info('Building snippet for method %s#%s.', class_name, target)
                 target_line = line_numbers.get(target)
                 index = target_line - 2
                 while index >= 0:
@@ -262,7 +265,7 @@ class LineNumbers(object):
             for match in pattern.finditer(data):
                 line_number = len(NEWLINE_PATTERN.findall(data[:match.start()])) + 1
                 signature = method.signature
-                LOGGER.info("Method %s found at line %d.", signature, line_number)
+                LOGGER.info('Method %s found at line %d.', signature, line_number)
                 self.line_numbers[signature] = line_number
 
     def get(self, signature):

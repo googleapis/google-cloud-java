@@ -78,58 +78,58 @@ public class StorageSnippets {
   /**
    * Example of creating a bucket.
    */
-  // [SNIPPET TARGET create(BucketInfo, BucketTargetOption...)]
-  // [SNIPPET VARIABLE "my_unique_bucket"]
+  // [TARGET create(BucketInfo, BucketTargetOption...)]
+  // [VARIABLE "my_unique_bucket"]
   public Bucket createBucket(String bucketName) {
-    // [SNIPPET START]
+    // [START createBucket]
     Bucket bucket = storage.create(BucketInfo.of(bucketName));
-    // [SNIPPET END]
+    // [END createBucket]
     return bucket;
   }
 
   /**
    * Example of creating a blob with no content.
    */
-  // [SNIPPET TARGET create(BlobInfo, BlobTargetOption...)]
-  // [SNIPPET VARIABLE "my_unique_bucket"]
-  // [SNIPPET VARIABLE "my_blob_name"]
+  // [TARGET create(BlobInfo, BlobTargetOption...)]
+  // [VARIABLE "my_unique_bucket"]
+  // [VARIABLE "my_blob_name"]
   public Blob createBlob(String bucketName, String blobName) {
-    // [SNIPPET START]
+    // [START createBlob]
     BlobId blobId = BlobId.of(bucketName, blobName);
     BlobInfo blobInfo = BlobInfo.builder(blobId).contentType("text/plain").build();
     Blob blob = storage.create(blobInfo);
-    // [SNIPPET END]
+    // [END createBlob]
     return blob;
   }
 
   /**
    * Example of creating a blob from a byte array.
    */
-  // [SNIPPET TARGET create(BlobInfo, byte[], BlobTargetOption...)]
-  // [SNIPPET VARIABLE "my_unique_bucket"]
-  // [SNIPPET VARIABLE "my_blob_name"]
+  // [TARGET create(BlobInfo, byte[], BlobTargetOption...)]
+  // [VARIABLE "my_unique_bucket"]
+  // [VARIABLE "my_blob_name"]
   public Blob createBlobFromByteArray(String bucketName, String blobName) {
-    // [SNIPPET START]
+    // [START createBlobFromByteArray]
     BlobId blobId = BlobId.of(bucketName, blobName);
     BlobInfo blobInfo = BlobInfo.builder(blobId).contentType("text/plain").build();
     Blob blob = storage.create(blobInfo, "Hello, World!".getBytes(UTF_8));
-    // [SNIPPET END]
+    // [END createBlobFromByteArray]
     return blob;
   }
 
   /**
    * Example of creating a blob from an input stream.
    */
-  // [SNIPPET TARGET create(BlobInfo, InputStream, BlobWriteOption...)]
-  // [SNIPPET VARIABLE "my_unique_bucket"]
-  // [SNIPPET VARIABLE "my_blob_name"]
+  // [TARGET create(BlobInfo, InputStream, BlobWriteOption...)]
+  // [VARIABLE "my_unique_bucket"]
+  // [VARIABLE "my_blob_name"]
   public Blob createBlobFromInputStream(String bucketName, String blobName) {
-    // [SNIPPET START]
+    // [START createBlobFromInputStream]
     InputStream content = new ByteArrayInputStream("Hello, World!".getBytes(UTF_8));
     BlobId blobId = BlobId.of(bucketName, blobName);
     BlobInfo blobInfo = BlobInfo.builder(blobId).contentType("text/plain").build();
     Blob blob = storage.create(blobInfo, content);
-    // [SNIPPET END]
+    // [END createBlobFromInputStream]
     return blob;
   }
 
@@ -137,14 +137,14 @@ public class StorageSnippets {
    * Example of getting information on a bucket, only if its metageneration matches a value,
    * otherwise a {@link StorageException} is thrown.
    */
-  // [SNIPPET TARGET get(String, BucketGetOption...)]
-  // [SNIPPET VARIABLE "my_unique_bucket"]
-  // [SNIPPET VARIABLE 42]
+  // [TARGET get(String, BucketGetOption...)]
+  // [VARIABLE "my_unique_bucket"]
+  // [VARIABLE 42]
   public Bucket getBucketWithMetageneration(String bucketName, long bucketMetageneration) {
-    // [SNIPPET START]
+    // [START getBucketWithMetageneration]
     Bucket bucket = storage.get(bucketName,
         BucketGetOption.metagenerationMatch(bucketMetageneration));
-    // [SNIPPET END]
+    // [END getBucketWithMetageneration]
     return bucket;
   }
 
@@ -152,30 +152,30 @@ public class StorageSnippets {
    * Example of getting information on a blob, only if its metageneration matches a value, otherwise
    * a {@link StorageException} is thrown.
    */
-  // [SNIPPET TARGET get(String, String, BlobGetOption...)]
-  // [SNIPPET VARIABLE "my_unique_bucket"]
-  // [SNIPPET VARIABLE "my_blob_name"]
-  // [SNIPPET VARIABLE 42]
+  // [TARGET get(String, String, BlobGetOption...)]
+  // [VARIABLE "my_unique_bucket"]
+  // [VARIABLE "my_blob_name"]
+  // [VARIABLE 42]
   public Blob getBlobFromStringsWithMetageneration(String bucketName, String blobName,
       long blobMetageneration) {
-    // [SNIPPET START]
+    // [START getBlobFromStringsWithMetageneration]
     Blob blob = storage.get(bucketName, blobName,
         BlobGetOption.metagenerationMatch(blobMetageneration));
-    // [SNIPPET END]
+    // [END getBlobFromStringsWithMetageneration]
     return blob;
   }
 
   /**
    * Example of getting information on a blob.
    */
-  // [SNIPPET TARGET get(BlobId)]
-  // [SNIPPET VARIABLE "my_unique_bucket"]
-  // [SNIPPET VARIABLE "my_blob_name"]
+  // [TARGET get(BlobId)]
+  // [VARIABLE "my_unique_bucket"]
+  // [VARIABLE "my_blob_name"]
   public Blob getBlobFromId(String bucketName, String blobName) {
-    // [SNIPPET START]
+    // [START getBlobFromId]
     BlobId blobId = BlobId.of(bucketName, blobName);
     Blob blob = storage.get(blobId);
-    // [SNIPPET END]
+    // [END getBlobFromId]
     return blob;
   }
 
@@ -183,26 +183,26 @@ public class StorageSnippets {
    * Example of getting information on a blob, only if its metageneration matches a value, otherwise
    * a {@link StorageException} is thrown.
    */
-  // [SNIPPET TARGET get(BlobId, BlobGetOption...)]
-  // [SNIPPET VARIABLE "my_unique_bucket"]
-  // [SNIPPET VARIABLE "my_blob_name"]
-  // [SNIPPET VARIABLE 42]
+  // [TARGET get(BlobId, BlobGetOption...)]
+  // [VARIABLE "my_unique_bucket"]
+  // [VARIABLE "my_blob_name"]
+  // [VARIABLE 42]
   public Blob getBlobFromIdWithMetageneration(String bucketName, String blobName,
       long blobMetageneration) {
-    // [SNIPPET START]
+    // [START getBlobFromIdWithMetageneration]
     BlobId blobId = BlobId.of(bucketName, blobName);
     Blob blob = storage.get(blobId, BlobGetOption.metagenerationMatch(blobMetageneration));
-    // [SNIPPET END]
+    // [END getBlobFromIdWithMetageneration]
     return blob;
   }
 
   /**
    * Example of listing buckets, specifying the page size and a name prefix.
    */
-  // [SNIPPET TARGET list(BucketListOption...)]
-  // [SNIPPET VARIABLE "bucket_"]
+  // [TARGET list(BucketListOption...)]
+  // [VARIABLE "bucket_"]
   public Iterator<Bucket> listBucketsWithSizeAndPrefix(String prefix) {
-    // [SNIPPET START]
+    // [START listBucketsWithSizeAndPrefix]
     Page<Bucket> buckets = storage.list(BucketListOption.pageSize(100),
         BucketListOption.prefix(prefix));
     Iterator<Bucket> bucketIterator = buckets.iterateAll();
@@ -210,18 +210,18 @@ public class StorageSnippets {
       Bucket bucket = bucketIterator.next();
       // do something with the bucket
     }
-    // [SNIPPET END]
+    // [END listBucketsWithSizeAndPrefix]
     return bucketIterator;
   }
 
   /**
    * Example of listing buckets, specifying the page size and a name prefix.
    */
-  // [SNIPPET TARGET list(String, BlobListOption...)]
-  // [SNIPPET VARIABLE "my_unique_bucket"]
-  // [SNIPPET VARIABLE "my_directory"]
+  // [TARGET list(String, BlobListOption...)]
+  // [VARIABLE "my_unique_bucket"]
+  // [VARIABLE "my_directory"]
   public Iterator<Blob> listBlobsWithDirectoryAndPrefix(String bucketName, String directory) {
-    // [SNIPPET START]
+    // [START listBlobsWithDirectoryAndPrefix]
     Page<Blob> blobs = storage.list(bucketName, BlobListOption.currentDirectory(),
         BlobListOption.prefix(directory));
     Iterator<Blob> blobIterator = blobs.iterateAll();
@@ -229,38 +229,38 @@ public class StorageSnippets {
       Blob blob = blobIterator.next();
       // do something with the blob
     }
-    // [SNIPPET END]
+    // [END listBlobsWithDirectoryAndPrefix]
     return blobIterator;
   }
 
   /**
    * Example of updating bucket information.
    */
-  // [SNIPPET TARGET update(BucketInfo, BucketTargetOption...)]
-  // [SNIPPET VARIABLE "my_unique_bucket"]
+  // [TARGET update(BucketInfo, BucketTargetOption...)]
+  // [VARIABLE "my_unique_bucket"]
   public Bucket updateBucket(String bucketName) {
-    // [SNIPPET START]
+    // [START updateBucket]
     BucketInfo bucketInfo = BucketInfo.builder(bucketName).versioningEnabled(true).build();
     Bucket bucket = storage.update(bucketInfo);
-    // [SNIPPET END]
+    // [END updateBucket]
     return bucket;
   }
 
   /**
    * Example of replacing blob's metadata.
    */
-  // [SNIPPET TARGET update(BlobInfo)]
-  // [SNIPPET VARIABLE "my_unique_bucket"]
-  // [SNIPPET VARIABLE "my_blob_name"]
+  // [TARGET update(BlobInfo)]
+  // [VARIABLE "my_unique_bucket"]
+  // [VARIABLE "my_blob_name"]
   public Blob updateBlob(String bucketName, String blobName) {
-    // [SNIPPET START]
+    // [START updateBlob]
     Map<String, String> newMetadata = new HashMap<>();
     newMetadata.put("key", "value");
     storage.update(BlobInfo.builder(bucketName, blobName).metadata(null).build());
     Blob blob = storage.update(BlobInfo.builder(bucketName, blobName)
         .metadata(newMetadata)
         .build());
-    // [SNIPPET END]
+    // [END updateBlob]
     return blob;
   }
 
@@ -268,15 +268,15 @@ public class StorageSnippets {
    * Example of udating a blob, only if the blob's metageneration matches a value, otherwise a
    * {@link StorageException} is thrown.
    */
-  // [SNIPPET TARGET update(BlobInfo, BlobTargetOption...)]
-  // [SNIPPET VARIABLE "my_unique_bucket"]
-  // [SNIPPET VARIABLE "my_blob_name"]
+  // [TARGET update(BlobInfo, BlobTargetOption...)]
+  // [VARIABLE "my_unique_bucket"]
+  // [VARIABLE "my_blob_name"]
   public Blob updateBlobWithMetageneration(String bucketName, String blobName) {
-    // [SNIPPET START]
+    // [START updateBlobWithMetageneration]
     Blob blob = storage.get(bucketName, blobName);
     BlobInfo updatedInfo = blob.toBuilder().contentType("text/plain").build();
     storage.update(updatedInfo, BlobTargetOption.metagenerationMatch());
-    // [SNIPPET END]
+    // [END updateBlobWithMetageneration]
     return blob;
   }
 
@@ -284,11 +284,11 @@ public class StorageSnippets {
    * Example of deleting a bucket, only if its metageneration matches a value, otherwise a
    * {@link StorageException} is thrown.
    */
-  // [SNIPPET TARGET delete(String, BucketSourceOption...)]
-  // [SNIPPET VARIABLE "my_unique_bucket"]
-  // [SNIPPET VARIABLE 42]
+  // [TARGET delete(String, BucketSourceOption...)]
+  // [VARIABLE "my_unique_bucket"]
+  // [VARIABLE 42]
   public boolean deleteBucketWithMetageneration(String bucketName, long bucketMetageneration) {
-    // [SNIPPET START]
+    // [START deleteBucketWithMetageneration]
     boolean deleted = storage.delete(bucketName,
         BucketSourceOption.metagenerationMatch(bucketMetageneration));
     if (deleted) {
@@ -296,7 +296,7 @@ public class StorageSnippets {
     } else {
       // the bucket was not found
     }
-    // [SNIPPET END]
+    // [END deleteBucketWithMetageneration]
     return deleted;
   }
 
@@ -304,13 +304,13 @@ public class StorageSnippets {
    * Example of deleting a blob, only if its generation matches a value, otherwise a
    * {@link StorageException} is thrown.
    */
-  // [SNIPPET TARGET delete(String, String, BlobSourceOption...)]
-  // [SNIPPET VARIABLE "my_unique_bucket"]
-  // [SNIPPET VARIABLE "my_blob_name"]
-  // [SNIPPET VARIABLE 42]
+  // [TARGET delete(String, String, BlobSourceOption...)]
+  // [VARIABLE "my_unique_bucket"]
+  // [VARIABLE "my_blob_name"]
+  // [VARIABLE 42]
   public boolean deleteBlobFromStringsWithGeneration(String bucketName, String blobName,
       long blobGeneration) {
-    // [SNIPPET START]
+    // [START deleteBlobFromStringsWithGeneration]
     boolean deleted = storage.delete(bucketName, blobName,
         BlobSourceOption.generationMatch(blobGeneration));
     if (deleted) {
@@ -318,7 +318,7 @@ public class StorageSnippets {
     } else {
       // the blob was not found
     }
-    // [SNIPPET END]
+    // [END deleteBlobFromStringsWithGeneration]
     return deleted;
   }
 
@@ -326,13 +326,13 @@ public class StorageSnippets {
    * Example of deleting a blob, only if its generation matches a value, otherwise a
    * {@link StorageException} is thrown.
    */
-  // [SNIPPET TARGET delete(BlobId, BlobSourceOption...)]
-  // [SNIPPET VARIABLE "my_unique_bucket"]
-  // [SNIPPET VARIABLE "my_blob_name"]
-  // [SNIPPET VARIABLE 42]
+  // [TARGET delete(BlobId, BlobSourceOption...)]
+  // [VARIABLE "my_unique_bucket"]
+  // [VARIABLE "my_blob_name"]
+  // [VARIABLE 42]
   public boolean deleteBlobFromIdWithGeneration(String bucketName, String blobName,
       long blobGeneration) {
-    // [SNIPPET START]
+    // [START deleteBlobFromIdWithGeneration]
     BlobId blobId = BlobId.of(bucketName, blobName);
     boolean deleted = storage.delete(blobId, BlobSourceOption.generationMatch(blobGeneration));
     if (deleted) {
@@ -340,18 +340,18 @@ public class StorageSnippets {
     } else {
       // the blob was not found
     }
-    // [SNIPPET END]
+    // [END deleteBlobFromIdWithGeneration]
     return deleted;
   }
 
   /**
    * Example of deleting a blob.
    */
-  // [SNIPPET TARGET delete(BlobId)]
-  // [SNIPPET VARIABLE "my_unique_bucket"]
-  // [SNIPPET VARIABLE "my_blob_name"]
+  // [TARGET delete(BlobId)]
+  // [VARIABLE "my_unique_bucket"]
+  // [VARIABLE "my_blob_name"]
   public boolean deleteBlob(String bucketName, String blobName) {
-    // [SNIPPET START]
+    // [START deleteBlob]
     BlobId blobId = BlobId.of(bucketName, blobName);
     boolean deleted = storage.delete(blobId);
     if (deleted) {
@@ -359,21 +359,21 @@ public class StorageSnippets {
     } else {
       // the blob was not found
     }
-    // [SNIPPET END]
+    // [END deleteBlob]
     return deleted;
   }
 
   /**
    * Example of composing two blobs.
    */
-  // [SNIPPET TARGET compose(ComposeRequest)]
-  // [SNIPPET VARIABLE "my_unique_bucket"]
-  // [SNIPPET VARIABLE "my_blob_name"]
-  // [SNIPPET VARIABLE "source_blob_1"]
-  // [SNIPPET VARIABLE "source_blob_2"]
+  // [TARGET compose(ComposeRequest)]
+  // [VARIABLE "my_unique_bucket"]
+  // [VARIABLE "my_blob_name"]
+  // [VARIABLE "source_blob_1"]
+  // [VARIABLE "source_blob_2"]
   public Blob composeBlobs(String bucketName, String blobName, String sourceBlob1,
       String sourceBlob2) {
-    // [SNIPPET START]
+    // [START composeBlobs]
     BlobId blobId = BlobId.of(bucketName, blobName);
     BlobInfo blobInfo = BlobInfo.builder(blobId).contentType("text/plain").build();
     ComposeRequest request = ComposeRequest.builder()
@@ -382,37 +382,37 @@ public class StorageSnippets {
         .addSource(sourceBlob2)
         .build();
     Blob blob = storage.compose(request);
-    // [SNIPPET END]
+    // [END composeBlobs]
     return blob;
   }
 
   /**
    * Example of copying a blob.
    */
-  // [SNIPPET TARGET copy(CopyRequest)]
-  // [SNIPPET VARIABLE "my_unique_bucket"]
-  // [SNIPPET VARIABLE "my_blob_name"]
-  // [SNIPPET VARIABLE "copy_blob_name"]
+  // [TARGET copy(CopyRequest)]
+  // [VARIABLE "my_unique_bucket"]
+  // [VARIABLE "my_blob_name"]
+  // [VARIABLE "copy_blob_name"]
   public Blob copyBlob(String bucketName, String blobName, String copyBlobName) {
-    // [SNIPPET START]
+    // [START copyBlob]
     CopyRequest request = CopyRequest.builder()
         .source(BlobId.of(bucketName, blobName))
         .target(BlobId.of(bucketName, copyBlobName))
         .build();
     Blob blob = storage.copy(request).result();
-    // [SNIPPET END]
+    // [END copyBlob]
     return blob;
   }
 
   /**
    * Example of copying a blob in chunks.
    */
-  // [SNIPPET TARGET copy(CopyRequest)]
-  // [SNIPPET VARIABLE "my_unique_bucket"]
-  // [SNIPPET VARIABLE "my_blob_name"]
-  // [SNIPPET VARIABLE "copy_blob_name"]
+  // [TARGET copy(CopyRequest)]
+  // [VARIABLE "my_unique_bucket"]
+  // [VARIABLE "my_blob_name"]
+  // [VARIABLE "copy_blob_name"]
   public Blob copyBlobInChunks(String bucketName, String blobName, String copyBlobName) {
-    // [SNIPPET START]
+    // [START copyBlobInChunks]
     CopyRequest request = CopyRequest.builder()
         .source(BlobId.of(bucketName, blobName))
         .target(BlobId.of(bucketName, copyBlobName))
@@ -422,7 +422,7 @@ public class StorageSnippets {
       copyWriter.copyChunk();
     }
     Blob blob = copyWriter.result();
-    // [SNIPPET END]
+    // [END copyBlobInChunks]
     return blob;
   }
 
@@ -430,16 +430,16 @@ public class StorageSnippets {
    * Example of reading all bytes of a blob, if generation matches a value, otherwise a
    * {@link StorageException} is thrown.
    */
-  // [SNIPPET TARGET readAllBytes(String, String, BlobSourceOption...)]
-  // [SNIPPET VARIABLE "my_unique_bucket"]
-  // [SNIPPET VARIABLE "my_blob_name"]
-  // [SNIPPET VARIABLE 42"]
+  // [TARGET readAllBytes(String, String, BlobSourceOption...)]
+  // [VARIABLE "my_unique_bucket"]
+  // [VARIABLE "my_blob_name"]
+  // [VARIABLE 42"]
   public byte[] readBlobFromStringsWithGeneration(String bucketName, String blobName,
       long blobGeneration) {
-    // [SNIPPET START]
+    // [START readBlobFromStringsWithGeneration]
     byte[] content = storage.readAllBytes(bucketName, blobName,
         BlobSourceOption.generationMatch(blobGeneration));
-    // [SNIPPET END]
+    // [END readBlobFromStringsWithGeneration]
     return content;
   }
 
@@ -447,27 +447,27 @@ public class StorageSnippets {
    * Example of reading all bytes of a blob's specific generation, otherwise a
    * {@link StorageException} is thrown.
    */
-  // [SNIPPET TARGET readAllBytes(BlobId, BlobSourceOption...)]
-  // [SNIPPET VARIABLE "my_unique_bucket"]
-  // [SNIPPET VARIABLE "my_blob_name"]
-  // [SNIPPET VARIABLE 42"]
+  // [TARGET readAllBytes(BlobId, BlobSourceOption...)]
+  // [VARIABLE "my_unique_bucket"]
+  // [VARIABLE "my_blob_name"]
+  // [VARIABLE 42"]
   public byte[] readBlobFromId(String bucketName, String blobName, long blobGeneration) {
-    // [SNIPPET START]
+    // [START readBlobFromId]
     BlobId blobId = BlobId.of(bucketName, blobName, blobGeneration);
     byte[] content = storage.readAllBytes(blobId);
-    // [SNIPPET END]
+    // [END readBlobFromId]
     return content;
   }
 
   /**
    * Example of using a batch request to delete, update and get a blob.
    */
-  // [SNIPPET TARGET batch()]
-  // [SNIPPET VARIABLE "my_unique_bucket"]
-  // [SNIPPET VARIABLE "my_blob_name1"]
-  // [SNIPPET VARIABLE "my_blob_name2"]
+  // [TARGET batch()]
+  // [VARIABLE "my_unique_bucket"]
+  // [VARIABLE "my_blob_name1"]
+  // [VARIABLE "my_blob_name2"]
   public Blob batch(String bucketName, String blobName1, String blobName2) {
-    // [SNIPPET START]
+    // [START batch]
     StorageBatch batch = storage.batch();
     BlobId firstBlob = BlobId.of(bucketName, blobName1);
     BlobId secondBlob = BlobId.of(bucketName, blobName2);
@@ -484,18 +484,18 @@ public class StorageSnippets {
     StorageBatchResult<Blob> result = batch.get(secondBlob);
     batch.submit();
     Blob blob = result.get(); // returns get result or throws StorageException
-    // [SNIPPET END]
+    // [END batch]
     return blob;
   }
 
   /**
    * Example of reading a blob's content through a reader.
    */
-  // [SNIPPET TARGET reader(String, String, BlobSourceOption...)]
-  // [SNIPPET VARIABLE "my_unique_bucket"]
-  // [SNIPPET VARIABLE "my_blob_name"]
+  // [TARGET reader(String, String, BlobSourceOption...)]
+  // [VARIABLE "my_unique_bucket"]
+  // [VARIABLE "my_blob_name"]
   public void readerFromStrings(String bucketName, String blobName) throws IOException {
-    // [SNIPPET START]
+    // [START readerFromStrings]
     try (ReadChannel reader = storage.reader(bucketName, blobName)) {
       ByteBuffer bytes = ByteBuffer.allocate(64 * 1024);
       while (reader.read(bytes) > 0) {
@@ -504,17 +504,17 @@ public class StorageSnippets {
         bytes.clear();
       }
     }
-    // [SNIPPET END]
+    // [END readerFromStrings]
   }
 
   /**
    * Example of reading a blob's content through a reader.
    */
-  // [SNIPPET TARGET reader(BlobId, BlobSourceOption...)]
-  // [SNIPPET VARIABLE "my_unique_bucket"]
-  // [SNIPPET VARIABLE "my_blob_name"]
+  // [TARGET reader(BlobId, BlobSourceOption...)]
+  // [VARIABLE "my_unique_bucket"]
+  // [VARIABLE "my_blob_name"]
   public void readerFromId(String bucketName, String blobName) throws IOException {
-    // [SNIPPET START]
+    // [START readerFromId]
     BlobId blobId = BlobId.of(bucketName, blobName);
     try (ReadChannel reader = storage.reader(blobId)) {
       ByteBuffer bytes = ByteBuffer.allocate(64 * 1024);
@@ -524,17 +524,17 @@ public class StorageSnippets {
         bytes.clear();
       }
     }
-    // [SNIPPET END]
+    // [END readerFromId]
   }
 
   /**
    * Example of writing a blob's content through a writer.
    */
-  // [SNIPPET TARGET writer(BlobInfo, BlobWriteOption...)]
-  // [SNIPPET VARIABLE "my_unique_bucket"]
-  // [SNIPPET VARIABLE "my_blob_name"]
+  // [TARGET writer(BlobInfo, BlobWriteOption...)]
+  // [VARIABLE "my_unique_bucket"]
+  // [VARIABLE "my_blob_name"]
   public void writer(String bucketName, String blobName) throws IOException {
-    // [SNIPPET START]
+    // [START writer]
     BlobId blobId = BlobId.of(bucketName, blobName);
     byte[] content = "Hello, World!".getBytes(UTF_8);
     BlobInfo blobInfo = BlobInfo.builder(blobId).contentType("text/plain").build();
@@ -545,21 +545,21 @@ public class StorageSnippets {
         // handle exception
       }
     }
-    // [SNIPPET END]
+    // [END writer]
   }
 
   /**
    * Example of creating a signed URL that is valid for 2 weeks, using the default credentials for
    * signing the URL.
    */
-  // [SNIPPET TARGET signUrl(BlobInfo, long, TimeUnit, SignUrlOption...)]
-  // [SNIPPET VARIABLE "my_unique_bucket"]
-  // [SNIPPET VARIABLE "my_blob_name"]
+  // [TARGET signUrl(BlobInfo, long, TimeUnit, SignUrlOption...)]
+  // [VARIABLE "my_unique_bucket"]
+  // [VARIABLE "my_blob_name"]
   public URL signUrl(String bucketName, String blobName) {
-    // [SNIPPET START]
+    // [START signUrl]
     URL signedUrl = storage.signUrl(BlobInfo.builder(bucketName, blobName).build(), 14,
         TimeUnit.DAYS);
-    // [SNIPPET END]
+    // [END signUrl]
     return signedUrl;
   }
 
@@ -568,120 +568,120 @@ public class StorageSnippets {
    * {@link SignUrlOption#signWith(ServiceAccountSigner)} option, that will be used for signing the
    * URL.
    */
-  // [SNIPPET TARGET signUrl(BlobInfo, long, TimeUnit, SignUrlOption...)]
-  // [SNIPPET VARIABLE "my_unique_bucket"]
-  // [SNIPPET VARIABLE "my_blob_name"]
-  // [SNIPPET VARIABLE "/path/to/key.json"]
+  // [TARGET signUrl(BlobInfo, long, TimeUnit, SignUrlOption...)]
+  // [VARIABLE "my_unique_bucket"]
+  // [VARIABLE "my_blob_name"]
+  // [VARIABLE "/path/to/key.json"]
   public URL signUrlWithSigner(String bucketName, String blobName, String keyPath)
       throws IOException {
-    // [SNIPPET START]
+    // [START signUrlWithSigner]
     URL signedUrl = storage.signUrl(BlobInfo.builder(bucketName, blobName).build(),
         14, TimeUnit.DAYS, SignUrlOption.signWith(
             AuthCredentials.createForJson(new FileInputStream(keyPath))));
-    // [SNIPPET END]
+    // [END signUrlWithSigner]
     return signedUrl;
   }
 
   /**
    * Example of getting information on several blobs using a single batch request.
    */
-  // [SNIPPET TARGET get(BlobId...)]
-  // [SNIPPET VARIABLE "my_unique_bucket"]
-  // [SNIPPET VARIABLE "my_blob_name1"]
-  // [SNIPPET VARIABLE "my_blob_name2"]
+  // [TARGET get(BlobId...)]
+  // [VARIABLE "my_unique_bucket"]
+  // [VARIABLE "my_blob_name1"]
+  // [VARIABLE "my_blob_name2"]
   public List<Blob> batchGet(String bucketName, String blobName1, String blobName2) {
-    // [SNIPPET START]
+    // [START batchGet]
     BlobId firstBlob = BlobId.of(bucketName, blobName1);
     BlobId secondBlob = BlobId.of(bucketName, blobName2);
     List<Blob> blobs = storage.get(firstBlob, secondBlob);
-    // [SNIPPET END]
+    // [END batchGet]
     return blobs;
   }
 
   /**
    * Example of getting information on several blobs using a single batch request.
    */
-  // [SNIPPET TARGET get(Iterable)]
-  // [SNIPPET VARIABLE "my_unique_bucket"]
-  // [SNIPPET VARIABLE "my_blob_name1"]
-  // [SNIPPET VARIABLE "my_blob_name2"]
+  // [TARGET get(Iterable)]
+  // [VARIABLE "my_unique_bucket"]
+  // [VARIABLE "my_blob_name1"]
+  // [VARIABLE "my_blob_name2"]
   public List<Blob> batchGetIterable(String bucketName, String blobName1, String blobName2) {
-    // [SNIPPET START]
+    // [START batchGetIterable]
     List<BlobId> blobIds = new LinkedList<>();
     blobIds.add(BlobId.of(bucketName, blobName1));
     blobIds.add(BlobId.of(bucketName, blobName2));
     List<Blob> blobs = storage.get(blobIds);
-    // [SNIPPET END]
+    // [END batchGetIterable]
     return blobs;
   }
 
   /**
    * Example of updating information on several blobs using a single batch request.
    */
-  // [SNIPPET TARGET update(BlobInfo...)]
-  // [SNIPPET VARIABLE "my_unique_bucket"]
-  // [SNIPPET VARIABLE "my_blob_name1"]
-  // [SNIPPET VARIABLE "my_blob_name2"]
+  // [TARGET update(BlobInfo...)]
+  // [VARIABLE "my_unique_bucket"]
+  // [VARIABLE "my_blob_name1"]
+  // [VARIABLE "my_blob_name2"]
   public List<Blob> batchUpdate(String bucketName, String blobName1, String blobName2) {
-    // [SNIPPET START]
+    // [START batchUpdate]
     Blob firstBlob = storage.get(bucketName, blobName1);
     Blob secondBlob = storage.get(bucketName, blobName2);
     List<Blob> updatedBlobs = storage.update(
         firstBlob.toBuilder().contentType("text/plain").build(),
         secondBlob.toBuilder().contentType("text/plain").build());
-    // [SNIPPET END]
+    // [END batchUpdate]
     return updatedBlobs;
   }
 
   /**
    * Example of updating information on several blobs using a single batch request.
    */
-  // [SNIPPET TARGET update(Iterable)]
-  // [SNIPPET VARIABLE "my_unique_bucket"]
-  // [SNIPPET VARIABLE "my_blob_name1"]
-  // [SNIPPET VARIABLE "my_blob_name2"]
+  // [TARGET update(Iterable)]
+  // [VARIABLE "my_unique_bucket"]
+  // [VARIABLE "my_blob_name1"]
+  // [VARIABLE "my_blob_name2"]
   public List<Blob> batchUpdateIterable(String bucketName, String blobName1, String blobName2) {
-    // [SNIPPET START]
+    // [START batchUpdateIterable]
     Blob firstBlob = storage.get(bucketName, blobName1);
     Blob secondBlob = storage.get(bucketName, blobName2);
     List<BlobInfo> blobs = new LinkedList<>();
     blobs.add(firstBlob.toBuilder().contentType("text/plain").build());
     blobs.add(secondBlob.toBuilder().contentType("text/plain").build());
     List<Blob> updatedBlobs = storage.update(blobs);
-    // [SNIPPET END]
+    // [END batchUpdateIterable]
     return updatedBlobs;
   }
 
   /**
    * Example of deleting several blobs using a single batch request.
    */
-  // [SNIPPET TARGET delete(BlobId...)]
-  // [SNIPPET VARIABLE "my_unique_bucket"]
-  // [SNIPPET VARIABLE "my_blob_name1"]
-  // [SNIPPET VARIABLE "my_blob_name2"]
+  // [TARGET delete(BlobId...)]
+  // [VARIABLE "my_unique_bucket"]
+  // [VARIABLE "my_blob_name1"]
+  // [VARIABLE "my_blob_name2"]
   public List<Boolean> batchDelete(String bucketName, String blobName1, String blobName2) {
-    // [SNIPPET START]
+    // [START batchDelete]
     BlobId firstBlob = BlobId.of(bucketName, blobName1);
     BlobId secondBlob = BlobId.of(bucketName, blobName2);
     List<Boolean> deleted = storage.delete(firstBlob, secondBlob);
-    // [SNIPPET END]
+    // [END batchDelete]
     return deleted;
   }
 
   /**
    * Example of deleting several blobs using a single batch request.
    */
-  // [SNIPPET TARGET delete(Iterable)]
-  // [SNIPPET VARIABLE "my_unique_bucket"]
-  // [SNIPPET VARIABLE "my_blob_name1"]
-  // [SNIPPET VARIABLE "my_blob_name2"]
+  // [TARGET delete(Iterable)]
+  // [VARIABLE "my_unique_bucket"]
+  // [VARIABLE "my_blob_name1"]
+  // [VARIABLE "my_blob_name2"]
   public List<Boolean> batchDeleteIterable(String bucketName, String blobName1, String blobName2) {
-    // [SNIPPET START]
+    // [START batchDeleteIterable]
     List<BlobId> blobIds = new LinkedList<>();
     blobIds.add(BlobId.of(bucketName, blobName1));
     blobIds.add(BlobId.of(bucketName, blobName2));
     List<Boolean> deleted = storage.delete(blobIds);
-    // [SNIPPET END]
+    // [END batchDeleteIterable]
     return deleted;
   }
 }
