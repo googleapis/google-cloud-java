@@ -18,7 +18,7 @@ package com.google.cloud.datastore;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
-import com.google.datastore.v1beta3.Value.ValueTypeCase;
+import com.google.datastore.v1.Value.ValueTypeCase;
 import com.google.protobuf.InvalidProtocolBufferException;
 
 import java.util.Objects;
@@ -31,7 +31,7 @@ import java.util.Objects;
  *
  * @param <V> the type of the content for this value
  */
-public abstract class Value<V> extends Serializable<com.google.datastore.v1beta3.Value> {
+public abstract class Value<V> extends Serializable<com.google.datastore.v1.Value> {
 
   private static final long serialVersionUID = -1899638277588872742L;
 
@@ -52,7 +52,7 @@ public abstract class Value<V> extends Serializable<com.google.datastore.v1beta3
 
     @SuppressWarnings("deprecation")
     @Override
-    public final B fromProto(com.google.datastore.v1beta3.Value proto) {
+    public final B fromProto(com.google.datastore.v1.Value proto) {
       B builder = newBuilder(getValue(proto));
       builder.excludeFromIndexes(proto.getExcludeFromIndexes());
       builder.meaning(proto.getMeaning());
@@ -61,18 +61,17 @@ public abstract class Value<V> extends Serializable<com.google.datastore.v1beta3
 
     @SuppressWarnings("deprecation")
     @Override
-    public final com.google.datastore.v1beta3.Value toProto(P value) {
-      com.google.datastore.v1beta3.Value.Builder builder =
-          com.google.datastore.v1beta3.Value.newBuilder();
+    public final com.google.datastore.v1.Value toProto(P value) {
+      com.google.datastore.v1.Value.Builder builder = com.google.datastore.v1.Value.newBuilder();
       builder.setExcludeFromIndexes(value.excludeFromIndexes());
       builder.setMeaning(value.meaning());
       setValue(value, builder);
       return builder.build();
     }
 
-    protected abstract V getValue(com.google.datastore.v1beta3.Value from);
+    protected abstract V getValue(com.google.datastore.v1.Value from);
 
-    protected abstract void setValue(P from, com.google.datastore.v1beta3.Value.Builder to);
+    protected abstract void setValue(P from, com.google.datastore.v1.Value.Builder to);
   }
 
   abstract static class BaseBuilder<V, P extends Value<V>, B extends BaseBuilder<V, P, B>>
@@ -194,11 +193,11 @@ public abstract class Value<V> extends Serializable<com.google.datastore.v1beta3
 
   @Override
   @SuppressWarnings("unchecked")
-  com.google.datastore.v1beta3.Value toPb() {
+  com.google.datastore.v1.Value toPb() {
     return type().getMarshaller().toProto(this);
   }
 
-  static Value<?> fromPb(com.google.datastore.v1beta3.Value proto) {
+  static Value<?> fromPb(com.google.datastore.v1.Value proto) {
     ValueTypeCase descriptorId = proto.getValueTypeCase();
     ValueType valueType = ValueType.getByDescriptorId(descriptorId.getNumber());
     return valueType == null ? RawValue.MARSHALLER.fromProto(proto).build()
@@ -207,6 +206,6 @@ public abstract class Value<V> extends Serializable<com.google.datastore.v1beta3
 
   @Override
   Object fromPb(byte[] bytesPb) throws InvalidProtocolBufferException {
-    return fromPb(com.google.datastore.v1beta3.Value.parseFrom(bytesPb));
+    return fromPb(com.google.datastore.v1.Value.parseFrom(bytesPb));
   }
 }

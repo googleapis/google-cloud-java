@@ -42,7 +42,7 @@ public final class KeyQuery extends StructuredQuery<Key> {
     }
 
     @Override
-    Builder mergeFrom(com.google.datastore.v1beta3.Query queryPb) {
+    Builder mergeFrom(com.google.datastore.v1.Query queryPb) {
       super.mergeFrom(queryPb);
       projection(KEY_PROPERTY_NAME);
       clearDistinctOn();

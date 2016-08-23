@@ -16,7 +16,7 @@
 
 package com.google.cloud.datastore;
 
-import static com.google.datastore.v1beta3.Value.GEO_POINT_VALUE_FIELD_NUMBER;
+import static com.google.datastore.v1.Value.GEO_POINT_VALUE_FIELD_NUMBER;
 
 public final class LatLngValue extends Value<LatLng> {
 
@@ -38,13 +38,13 @@ public final class LatLngValue extends Value<LatLng> {
         }
 
         @Override
-        protected LatLng getValue(com.google.datastore.v1beta3.Value from) {
+        protected LatLng getValue(com.google.datastore.v1.Value from) {
           return new LatLng(
               from.getGeoPointValue().getLatitude(), from.getGeoPointValue().getLongitude());
         }
 
         @Override
-        protected void setValue(LatLngValue from, com.google.datastore.v1beta3.Value.Builder to) {
+        protected void setValue(LatLngValue from, com.google.datastore.v1.Value.Builder to) {
           to.setGeoPointValue(from.get().toPb());
         }
       };

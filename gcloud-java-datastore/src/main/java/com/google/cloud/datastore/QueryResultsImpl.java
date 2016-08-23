@@ -19,7 +19,7 @@ package com.google.cloud.datastore;
 import com.google.cloud.datastore.Query.ResultType;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.AbstractIterator;
-import com.google.datastore.v1beta3.QueryResultBatch.MoreResultsType;
+import com.google.datastore.v1.QueryResultBatch.MoreResultsType;
 import com.google.protobuf.ByteString;
 
 import java.util.Iterator;
@@ -28,25 +28,25 @@ import java.util.Objects;
 class QueryResultsImpl<T> extends AbstractIterator<T> implements QueryResults<T> {
 
   private final DatastoreImpl datastore;
-  private final com.google.datastore.v1beta3.ReadOptions readOptionsPb;
-  private final com.google.datastore.v1beta3.PartitionId partitionIdPb;
+  private final com.google.datastore.v1.ReadOptions readOptionsPb;
+  private final com.google.datastore.v1.PartitionId partitionIdPb;
   private final ResultType<T> queryResultType;
   private Query<T> query;
   private ResultType<?> actualResultType;
-  private com.google.datastore.v1beta3.RunQueryResponse runQueryResponsePb;
-  private com.google.datastore.v1beta3.Query mostRecentQueryPb;
+  private com.google.datastore.v1.RunQueryResponse runQueryResponsePb;
+  private com.google.datastore.v1.Query mostRecentQueryPb;
   private boolean lastBatch;
-  private Iterator<com.google.datastore.v1beta3.EntityResult> entityResultPbIter;
+  private Iterator<com.google.datastore.v1.EntityResult> entityResultPbIter;
   private ByteString cursor;
 
-  QueryResultsImpl(DatastoreImpl datastore, com.google.datastore.v1beta3.ReadOptions readOptionsPb,
+  QueryResultsImpl(DatastoreImpl datastore, com.google.datastore.v1.ReadOptions readOptionsPb,
                    Query<T> query) {
     this.datastore = datastore;
     this.readOptionsPb = readOptionsPb;
     this.query = query;
     queryResultType = query.type();
-    com.google.datastore.v1beta3.PartitionId.Builder pbBuilder =
-        com.google.datastore.v1beta3.PartitionId.newBuilder();
+    com.google.datastore.v1.PartitionId.Builder pbBuilder =
+         com.google.datastore.v1.PartitionId.newBuilder();
     pbBuilder.setProjectId(datastore.options().projectId());
     if (query.namespace() != null) {
       pbBuilder.setNamespaceId(query.namespace());
@@ -63,8 +63,8 @@ class QueryResultsImpl<T> extends AbstractIterator<T> implements QueryResults<T>
   }
 
   private void sendRequest() {
-    com.google.datastore.v1beta3.RunQueryRequest.Builder requestPb =
-        com.google.datastore.v1beta3.RunQueryRequest.newBuilder();
+    com.google.datastore.v1.RunQueryRequest.Builder requestPb =
+        com.google.datastore.v1.RunQueryRequest.newBuilder();
     if (readOptionsPb != null) {
       requestPb.setReadOptions(readOptionsPb);
     }
@@ -96,7 +96,7 @@ class QueryResultsImpl<T> extends AbstractIterator<T> implements QueryResults<T>
       cursor = runQueryResponsePb.getBatch().getEndCursor();
       return endOfData();
     }
-    com.google.datastore.v1beta3.EntityResult entityResultPb = entityResultPbIter.next();
+    com.google.datastore.v1.EntityResult entityResultPb = entityResultPbIter.next();
     cursor = entityResultPb.getCursor();
     @SuppressWarnings("unchecked")
     T result = (T) actualResultType.convert(entityResultPb.getEntity());

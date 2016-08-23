@@ -19,18 +19,18 @@ package com.google.cloud.datastore.spi;
 import com.google.api.client.http.HttpTransport;
 import com.google.cloud.datastore.DatastoreException;
 import com.google.cloud.datastore.DatastoreOptions;
-import com.google.datastore.v1beta3.AllocateIdsRequest;
-import com.google.datastore.v1beta3.AllocateIdsResponse;
-import com.google.datastore.v1beta3.BeginTransactionRequest;
-import com.google.datastore.v1beta3.BeginTransactionResponse;
-import com.google.datastore.v1beta3.CommitRequest;
-import com.google.datastore.v1beta3.CommitResponse;
-import com.google.datastore.v1beta3.LookupRequest;
-import com.google.datastore.v1beta3.LookupResponse;
-import com.google.datastore.v1beta3.RollbackRequest;
-import com.google.datastore.v1beta3.RollbackResponse;
-import com.google.datastore.v1beta3.RunQueryRequest;
-import com.google.datastore.v1beta3.RunQueryResponse;
+import com.google.datastore.v1.AllocateIdsRequest;
+import com.google.datastore.v1.AllocateIdsResponse;
+import com.google.datastore.v1.BeginTransactionRequest;
+import com.google.datastore.v1.BeginTransactionResponse;
+import com.google.datastore.v1.CommitRequest;
+import com.google.datastore.v1.CommitResponse;
+import com.google.datastore.v1.LookupRequest;
+import com.google.datastore.v1.LookupResponse;
+import com.google.datastore.v1.RollbackRequest;
+import com.google.datastore.v1.RollbackResponse;
+import com.google.datastore.v1.RunQueryRequest;
+import com.google.datastore.v1.RunQueryResponse;
 
 import java.io.IOException;
 import java.net.InetAddress;
@@ -38,19 +38,19 @@ import java.net.URL;
 
 public class DefaultDatastoreRpc implements DatastoreRpc {
 
-  private final com.google.datastore.v1beta3.client.Datastore client;
+  private final com.google.datastore.v1.client.Datastore client;
 
   public DefaultDatastoreRpc(DatastoreOptions options) {
     HttpTransport transport = options.httpTransportFactory().create();
-    com.google.datastore.v1beta3.client.DatastoreOptions.Builder clientBuilder =
-        new com.google.datastore.v1beta3.client.DatastoreOptions.Builder()
+    com.google.datastore.v1.client.DatastoreOptions.Builder clientBuilder =
+        new com.google.datastore.v1.client.DatastoreOptions.Builder()
             .projectId(options.projectId())
             .initializer(options.httpRequestInitializer())
             .transport(transport);
     String normalizedHost = options.host() != null ? options.host().toLowerCase() : "";
     if (isLocalHost(normalizedHost)) {
       clientBuilder = clientBuilder.localHost(removeScheme(normalizedHost));
-    } else if (!removeScheme(com.google.datastore.v1beta3.client.DatastoreFactory.DEFAULT_HOST)
+    } else if (!removeScheme(com.google.datastore.v1.client.DatastoreFactory.DEFAULT_HOST)
                     .equals(removeScheme(normalizedHost))
         && !normalizedHost.isEmpty()) {
       String fullURL = normalizedHost;
@@ -58,12 +58,12 @@ public class DefaultDatastoreRpc implements DatastoreRpc {
         fullURL = fullURL + '/';
       }
       fullURL = fullURL
-          + com.google.datastore.v1beta3.client.DatastoreFactory.VERSION
+          + com.google.datastore.v1.client.DatastoreFactory.VERSION
           + "/projects/"
           + options.projectId();
       clientBuilder = clientBuilder.projectId(null).projectEndpoint(fullURL);
     }
-    client = com.google.datastore.v1beta3.client.DatastoreFactory.get()
+    client = com.google.datastore.v1.client.DatastoreFactory.get()
         .create(clientBuilder.build());
   }
 
@@ -92,7 +92,7 @@ public class DefaultDatastoreRpc implements DatastoreRpc {
   }
 
   private static DatastoreException translate(
-      com.google.datastore.v1beta3.client.DatastoreException exception) {
+      com.google.datastore.v1.client.DatastoreException exception) {
     String reason = "";
     if (exception.getCode() != null) {
       reason = exception.getCode().name();
@@ -110,7 +110,7 @@ public class DefaultDatastoreRpc implements DatastoreRpc {
   public AllocateIdsResponse allocateIds(AllocateIdsRequest request) {
     try {
       return client.allocateIds(request);
-    } catch (com.google.datastore.v1beta3.client.DatastoreException ex) {
+    } catch (com.google.datastore.v1.client.DatastoreException ex) {
 
       throw translate(ex);
     }
@@ -120,7 +120,7 @@ public class DefaultDatastoreRpc implements DatastoreRpc {
   public BeginTransactionResponse beginTransaction(BeginTransactionRequest request) {
     try {
       return client.beginTransaction(request);
-    } catch (com.google.datastore.v1beta3.client.DatastoreException ex) {
+    } catch (com.google.datastore.v1.client.DatastoreException ex) {
       throw translate(ex);
     }
   }
@@ -129,7 +129,7 @@ public class DefaultDatastoreRpc implements DatastoreRpc {
   public CommitResponse commit(CommitRequest request) {
     try {
       return client.commit(request);
-    } catch (com.google.datastore.v1beta3.client.DatastoreException ex) {
+    } catch (com.google.datastore.v1.client.DatastoreException ex) {
       throw translate(ex);
     }
   }
@@ -138,7 +138,7 @@ public class DefaultDatastoreRpc implements DatastoreRpc {
   public LookupResponse lookup(LookupRequest request) {
     try {
       return client.lookup(request);
-    } catch (com.google.datastore.v1beta3.client.DatastoreException ex) {
+    } catch (com.google.datastore.v1.client.DatastoreException ex) {
       throw translate(ex);
     }
   }
@@ -147,7 +147,7 @@ public class DefaultDatastoreRpc implements DatastoreRpc {
   public RollbackResponse rollback(RollbackRequest request) {
     try {
       return client.rollback(request);
-    } catch (com.google.datastore.v1beta3.client.DatastoreException ex) {
+    } catch (com.google.datastore.v1.client.DatastoreException ex) {
       throw translate(ex);
     }
   }
@@ -156,7 +156,7 @@ public class DefaultDatastoreRpc implements DatastoreRpc {
   public RunQueryResponse runQuery(RunQueryRequest request) {
     try {
       return client.runQuery(request);
-    } catch (com.google.datastore.v1beta3.client.DatastoreException ex) {
+    } catch (com.google.datastore.v1.client.DatastoreException ex) {
       throw translate(ex);
     }
   }

@@ -16,7 +16,7 @@
 
 package com.google.cloud.datastore;
 
-import static com.google.datastore.v1beta3.Value.STRING_VALUE_FIELD_NUMBER;
+import static com.google.datastore.v1.Value.STRING_VALUE_FIELD_NUMBER;
 
 public final class StringValue extends Value<String> {
 
@@ -38,12 +38,12 @@ public final class StringValue extends Value<String> {
         }
 
         @Override
-        protected String getValue(com.google.datastore.v1beta3.Value from) {
+        protected String getValue(com.google.datastore.v1.Value from) {
           return from.getStringValue();
         }
 
         @Override
-        protected void setValue(StringValue from, com.google.datastore.v1beta3.Value.Builder to) {
+        protected void setValue(StringValue from, com.google.datastore.v1.Value.Builder to) {
           to.setStringValue(from.get());
         }
       };

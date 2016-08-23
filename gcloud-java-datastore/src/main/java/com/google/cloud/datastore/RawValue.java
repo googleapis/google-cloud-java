@@ -16,17 +16,17 @@
 
 package com.google.cloud.datastore;
 
-public final class RawValue extends Value<com.google.datastore.v1beta3.Value> {
+public final class RawValue extends Value<com.google.datastore.v1.Value> {
 
   private static final long serialVersionUID = -3359604598651897941L;
 
-  static final BaseMarshaller<com.google.datastore.v1beta3.Value, RawValue, Builder> MARSHALLER =
-      new BaseMarshaller<com.google.datastore.v1beta3.Value, RawValue, Builder>() {
+  static final BaseMarshaller<com.google.datastore.v1.Value, RawValue, Builder> MARSHALLER =
+      new BaseMarshaller<com.google.datastore.v1.Value, RawValue, Builder>() {
 
         private static final long serialVersionUID = 5320642719486106244L;
 
         @Override
-        public Builder newBuilder(com.google.datastore.v1beta3.Value value) {
+        public Builder newBuilder(com.google.datastore.v1.Value value) {
           return builder(value);
         }
 
@@ -36,19 +36,19 @@ public final class RawValue extends Value<com.google.datastore.v1beta3.Value> {
         }
 
         @Override
-        protected com.google.datastore.v1beta3.Value getValue(
-            com.google.datastore.v1beta3.Value from) {
+        protected com.google.datastore.v1.Value getValue(
+            com.google.datastore.v1.Value from) {
           return from;
         }
 
         @Override
-        protected void setValue(RawValue from, com.google.datastore.v1beta3.Value.Builder to) {
+        protected void setValue(RawValue from, com.google.datastore.v1.Value.Builder to) {
           to.mergeFrom(from.get());
         }
       };
 
   public static final class Builder
-      extends Value.BaseBuilder<com.google.datastore.v1beta3.Value, RawValue, Builder> {
+      extends Value.BaseBuilder<com.google.datastore.v1.Value, RawValue, Builder> {
 
     private Builder() {
       super(ValueType.RAW_VALUE);
@@ -64,7 +64,7 @@ public final class RawValue extends Value<com.google.datastore.v1beta3.Value> {
     super(builder);
   }
 
-  RawValue(com.google.datastore.v1beta3.Value valuePb) {
+  RawValue(com.google.datastore.v1.Value valuePb) {
     this(builder(valuePb));
   }
 
@@ -73,11 +73,11 @@ public final class RawValue extends Value<com.google.datastore.v1beta3.Value> {
     return new Builder().mergeFrom(this);
   }
 
-  static RawValue of(com.google.datastore.v1beta3.Value valuePb) {
+  static RawValue of(com.google.datastore.v1.Value valuePb) {
     return new RawValue(valuePb);
   }
 
-  static Builder builder(com.google.datastore.v1beta3.Value valuePb) {
+  static Builder builder(com.google.datastore.v1.Value valuePb) {
     Builder builder = new Builder();
     builder.excludeFromIndexes(valuePb.getExcludeFromIndexes());
     builder.meaning(valuePb.getMeaning());

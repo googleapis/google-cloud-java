@@ -24,7 +24,7 @@ import org.junit.Test;
 
 public class RawValueTest {
 
-  private static final com.google.datastore.v1beta3.Value CONTENT = StringValue.of("hello").toPb();
+  private static final com.google.datastore.v1.Value CONTENT = StringValue.of("hello").toPb();
 
   @Test
   public void testToBuilder() throws Exception {

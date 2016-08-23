@@ -66,16 +66,15 @@ import java.util.zip.ZipInputStream;
  */
 public class LocalDatastoreHelper {
   private static final Logger log = Logger.getLogger(LocalDatastoreHelper.class.getName());
-  private static final String GCD_VERSION = "v1beta3";
-  private static final String GCD_BUILD = "1.0.1";
+  private static final String GCD_VERSION = "1.2.0";
   private static final double DEFAULT_CONSISTENCY = 0.9;
-  private static final String GCD_BASENAME = "gcd-" + GCD_VERSION + "-" + GCD_BUILD;
+  private static final String GCD_BASENAME = "cloud-datastore-emulator-" + GCD_VERSION;
   private static final String GCD_FILENAME = GCD_BASENAME + ".zip";
-  private static final String MD5_CHECKSUM = "df876ba8f054d69acff30ec9540ec386";
+  private static final String MD5_CHECKSUM = "e68695ff005421ccb7144689d9633df1";
   private static final URL GCD_URL;
   private static final String GCLOUD = "gcloud";
   private static final Path INSTALLED_GCD_PATH;
-  private static final String GCD_VERSION_PREFIX = "gcd-emulator ";
+  private static final String GCD_VERSION_PREFIX = "cloud-datastore-emulator ";
   private static final String PROJECT_ID_PREFIX = "test-project-";
 
   private final String projectId;
@@ -117,7 +116,7 @@ public class LocalDatastoreHelper {
     if (log.isLoggable(Level.FINE)) {
       log.fine("SDK found, looking for datastore emulator");
     }
-    Path installedGcdPath = gcloudPath.resolve("platform").resolve("gcd");
+    Path installedGcdPath = gcloudPath.resolve("platform").resolve("cloud-datastore-emulator");
     if (Files.exists(installedGcdPath)) {
       try {
         String installedVersion = installedGcdVersion();
@@ -175,10 +174,16 @@ public class LocalDatastoreHelper {
     private final BufferedReader reader;
     private volatile boolean terminated;
 
-    ProcessStreamReader(InputStream inputStream) {
+    ProcessStreamReader(InputStream inputStream, String blockUntil) throws IOException {
       super("Local GCD InputStream reader");
       setDaemon(true);
       reader = new BufferedReader(new InputStreamReader(inputStream));
+      if (!Strings.isNullOrEmpty(blockUntil)) {
+        String line;
+        do {
+          line = reader.readLine();
+        } while (line != null && !line.contains(blockUntil));
+      }
     }
 
     void terminate() throws IOException {
@@ -200,8 +205,9 @@ public class LocalDatastoreHelper {
       }
     }
 
-    public static ProcessStreamReader start(InputStream inputStream) {
-      ProcessStreamReader thread = new ProcessStreamReader(inputStream);
+    public static ProcessStreamReader start(InputStream inputStream, String blockUntil)
+        throws IOException {
+      ProcessStreamReader thread = new ProcessStreamReader(inputStream, blockUntil);
       thread.start();
       return thread;
     }
@@ -218,16 +224,10 @@ public class LocalDatastoreHelper {
     private boolean collectionMode;
     private volatile boolean terminated;
 
-    ProcessErrorStreamReader(InputStream errorStream, String blockUntil) throws IOException {
+    ProcessErrorStreamReader(InputStream errorStream) {
       super("Local GCD ErrorStream reader");
       setDaemon(true);
       errorReader = new BufferedReader(new InputStreamReader(errorStream));
-      if (!Strings.isNullOrEmpty(blockUntil)) {
-        String line;
-        do {
-          line = errorReader.readLine();
-        } while (line != null && !line.contains(blockUntil));
-      }
     }
 
     void terminate() throws IOException {
@@ -296,9 +296,8 @@ public class LocalDatastoreHelper {
       }
     }
 
-    public static ProcessErrorStreamReader start(InputStream errorStream, String blockUntil)
-        throws IOException {
-      ProcessErrorStreamReader thread = new ProcessErrorStreamReader(errorStream, blockUntil);
+    public static ProcessErrorStreamReader start(InputStream errorStream) {
+      ProcessErrorStreamReader thread = new ProcessErrorStreamReader(errorStream);
       thread.start();
       return thread;
     }
@@ -422,9 +421,9 @@ public class LocalDatastoreHelper {
     // Get path to cmd executable
     Path gcdAbsolutePath;
     if (isWindows()) {
-      gcdAbsolutePath = executablePath.toAbsolutePath().resolve("gcd.cmd");
+      gcdAbsolutePath = executablePath.toAbsolutePath().resolve("cloud_datastore_emulator.cmd");
     } else {
-      gcdAbsolutePath = executablePath.toAbsolutePath().resolve("gcd.sh");
+      gcdAbsolutePath = executablePath.toAbsolutePath().resolve("cloud_datastore_emulator");
     }
 
     // create the datastore for the project
@@ -433,7 +432,7 @@ public class LocalDatastoreHelper {
     }
     Process createProcess =
         CommandWrapper.create()
-            .command(gcdAbsolutePath.toString(), "create", "-p", projectId, projectId)
+            .command(gcdAbsolutePath.toString(), "create", projectId)
             .redirectErrorInherit()
             .directory(gcdPath)
             .redirectOutputToNull()
@@ -446,14 +445,14 @@ public class LocalDatastoreHelper {
     }
     startProcess =
         CommandWrapper.create()
-            .command(gcdAbsolutePath.toString(), "start", "--testing", "--allow_remote_shutdown",
+            .command(gcdAbsolutePath.toString(), "start", "--testing",
                 "--port=" + Integer.toString(port), "--consistency=" + Double.toString(consistency),
                 projectId)
             .directory(gcdPath)
             .start();
-    processReader = ProcessStreamReader.start(startProcess.getInputStream());
-    processErrorReader = ProcessErrorStreamReader.start(
-        startProcess.getErrorStream(), "Dev App Server is now running");
+    processReader = ProcessStreamReader.start(startProcess.getInputStream(),
+        "Dev App Server is now running");
+    processErrorReader = ProcessErrorStreamReader.start(startProcess.getErrorStream());
   }
 
   private static String md5(File gcdZipFile) throws IOException {
@@ -638,7 +637,7 @@ public class LocalDatastoreHelper {
     // If cloud is available we use it, otherwise we download and start gcd
     if (INSTALLED_GCD_PATH == null) {
       downloadGcd();
-      gcdExecutablePath = gcdPath.resolve("gcd");
+      gcdExecutablePath = gcdPath.resolve("cloud-datastore-emulator");
     } else {
       gcdExecutablePath = INSTALLED_GCD_PATH;
     }

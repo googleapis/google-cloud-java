@@ -79,7 +79,7 @@ public class SerializationTest extends BaseSerializationTest {
   private static final DateTimeValue DATE_AND_TIME_VALUE = DateTimeValue.of(DateTime.now());
   private static final BlobValue BLOB_VALUE = BlobValue.of(BLOB1);
   private static final RawValue RAW_VALUE = 
-      RawValue.of(com.google.datastore.v1beta3.Value.newBuilder().setMeaning(18).build());
+      RawValue.of(com.google.datastore.v1.Value.newBuilder().setMeaning(18).build());
   private static final LatLngValue LAT_LNG_VALUE = LatLngValue.of(LAT_LNG);
   private static final Entity ENTITY1 = Entity.builder(KEY1).build();
   private static final Entity ENTITY2 =

@@ -93,16 +93,16 @@ public class DatastoreOptions
   @Override
   protected String defaultHost() {
     String host = System.getProperty(
-        com.google.datastore.v1beta3.client.DatastoreHelper.LOCAL_HOST_ENV_VAR,
-        System.getenv(com.google.datastore.v1beta3.client.DatastoreHelper.LOCAL_HOST_ENV_VAR));
-    return host != null ? host : com.google.datastore.v1beta3.client.DatastoreFactory.DEFAULT_HOST;
+        com.google.datastore.v1.client.DatastoreHelper.LOCAL_HOST_ENV_VAR,
+        System.getenv(com.google.datastore.v1.client.DatastoreHelper.LOCAL_HOST_ENV_VAR));
+    return host != null ? host : com.google.datastore.v1.client.DatastoreFactory.DEFAULT_HOST;
   }
 
   @Override
   protected String defaultProject() {
     String projectId = System.getProperty(
-        com.google.datastore.v1beta3.client.DatastoreHelper.PROJECT_ID_ENV_VAR,
-        System.getenv(com.google.datastore.v1beta3.client.DatastoreHelper.PROJECT_ID_ENV_VAR));
+        com.google.datastore.v1.client.DatastoreHelper.PROJECT_ID_ENV_VAR,
+        System.getenv(com.google.datastore.v1.client.DatastoreHelper.PROJECT_ID_ENV_VAR));
     return projectId != null ? projectId : super.defaultProject();
   }
 

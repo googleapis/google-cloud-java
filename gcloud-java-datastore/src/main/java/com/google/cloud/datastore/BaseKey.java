@@ -30,7 +30,7 @@ import java.util.Objects;
 /**
  * Base class for keys.
  */
-public abstract class BaseKey extends Serializable<com.google.datastore.v1beta3.Key> {
+public abstract class BaseKey extends Serializable<com.google.datastore.v1.Key> {
 
   private static final long serialVersionUID = -4671243265877410635L;
 
@@ -178,10 +178,10 @@ public abstract class BaseKey extends Serializable<com.google.datastore.v1beta3.
   }
 
   @Override
-  com.google.datastore.v1beta3.Key toPb() {
-    com.google.datastore.v1beta3.Key.Builder keyPb = com.google.datastore.v1beta3.Key.newBuilder();
-    com.google.datastore.v1beta3.PartitionId.Builder partitionIdPb =
-        com.google.datastore.v1beta3.PartitionId.newBuilder();
+  com.google.datastore.v1.Key toPb() {
+    com.google.datastore.v1.Key.Builder keyPb = com.google.datastore.v1.Key.newBuilder();
+    com.google.datastore.v1.PartitionId.Builder partitionIdPb =
+        com.google.datastore.v1.PartitionId.newBuilder();
     partitionIdPb.setProjectId(projectId);
     partitionIdPb.setNamespaceId(namespace);
     keyPb.setPartitionId(partitionIdPb.build());

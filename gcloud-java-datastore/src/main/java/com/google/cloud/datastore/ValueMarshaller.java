@@ -22,9 +22,9 @@ package com.google.cloud.datastore;
 interface ValueMarshaller<V, P extends Value<V>, B extends ValueBuilder<V, P, B>>
     extends java.io.Serializable {
 
-  B fromProto(com.google.datastore.v1beta3.Value proto);
+  B fromProto(com.google.datastore.v1.Value proto);
 
-  com.google.datastore.v1beta3.Value toProto(P value);
+  com.google.datastore.v1.Value toProto(P value);
 
   int getProtoFieldId();
 }
