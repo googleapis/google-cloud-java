@@ -32,6 +32,7 @@ import com.google.common.collect.ImmutableSet;
 import org.junit.Test;
 
 import java.io.IOException;
+import java.net.SocketException;
 import java.net.SocketTimeoutException;
 import java.util.Set;
 
@@ -101,6 +102,21 @@ public class BaseServiceExceptionTest {
     serviceException = new BaseServiceException(exception, true);
     assertTrue(serviceException.retryable());
     assertTrue(serviceException.idempotent());
+    assertNull(serviceException.getMessage());
+    assertEquals(exception, serviceException.getCause());
+
+    exception = new SocketException();
+    serviceException = new BaseServiceException(exception, true);
+    assertTrue(serviceException.retryable());
+    assertTrue(serviceException.idempotent());
+    assertNull(serviceException.getMessage());
+    assertEquals(exception, serviceException.getCause());
+
+    exception = new IOException("insufficient data written");
+    serviceException = new BaseServiceException(exception, true);
+    assertTrue(serviceException.retryable());
+    assertTrue(serviceException.idempotent());
+    assertEquals("insufficient data written", serviceException.getMessage());
     assertEquals(exception, serviceException.getCause());
 
     GoogleJsonError error = new GoogleJsonError();

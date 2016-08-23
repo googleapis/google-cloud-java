@@ -23,6 +23,7 @@ import com.google.common.base.MoreObjects;
 
 import java.io.IOException;
 import java.io.Serializable;
+import java.net.SocketException;
 import java.net.SocketTimeoutException;
 import java.util.Collections;
 import java.util.Objects;
@@ -187,7 +188,10 @@ public class BaseServiceException extends RuntimeException {
   }
 
   protected boolean isRetryable(boolean idempotent, IOException exception) {
-    return idempotent && exception instanceof SocketTimeoutException;
+    boolean exceptionIsRetryable = exception instanceof SocketTimeoutException
+        || exception instanceof SocketException
+        || "insufficient data written".equals(exception.getMessage());
+    return idempotent && exceptionIsRetryable;
   }
 
   /**
