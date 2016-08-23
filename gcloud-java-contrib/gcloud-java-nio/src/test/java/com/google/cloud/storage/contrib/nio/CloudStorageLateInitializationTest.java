@@ -16,9 +16,7 @@
 
 package com.google.cloud.storage.contrib.nio;
 
-import com.google.common.collect.ImmutableList;
-import com.google.common.testing.NullPointerTester;
-import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
@@ -27,35 +25,10 @@ import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
 import java.net.URI;
-import java.nio.ByteBuffer;
-import java.nio.channels.ReadableByteChannel;
-import java.nio.channels.SeekableByteChannel;
-import java.nio.file.AtomicMoveNotSupportedException;
-import java.nio.file.CopyOption;
-import java.nio.file.FileAlreadyExistsException;
-import java.nio.file.FileSystem;
-import java.nio.file.FileSystems;
 import java.nio.file.Files;
-import java.nio.file.NoSuchFileException;
-import java.nio.file.OpenOption;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.spi.FileSystemProvider;
-import java.util.List;
-
-import static com.google.cloud.storage.contrib.nio.CloudStorageFileSystem.forBucket;
-import static com.google.common.truth.Truth.assertThat;
-import static java.nio.charset.StandardCharsets.UTF_8;
-import static java.nio.file.StandardCopyOption.ATOMIC_MOVE;
-import static java.nio.file.StandardCopyOption.COPY_ATTRIBUTES;
-import static java.nio.file.StandardCopyOption.REPLACE_EXISTING;
-import static java.nio.file.StandardOpenOption.CREATE;
-import static java.nio.file.StandardOpenOption.CREATE_NEW;
-import static java.nio.file.StandardOpenOption.TRUNCATE_EXISTING;
-import static java.nio.file.StandardOpenOption.WRITE;
 
 /**
  * Unit tests for {@link CloudStorageFileSystemProvider} when gcloud is not configured.
@@ -66,8 +39,8 @@ public class CloudStorageLateInitializationTest {
 
   @Rule public final ExpectedException thrown = ExpectedException.none();
 
-  @Before
-  public void before() {
+  @BeforeClass
+  public static void beforeClass() {
     if (System.getenv().containsKey("GOOGLE_APPLICATION_CREDENTIALS")) {
       throw new RuntimeException("CloudStorageLateInitializationTest can only be run if gcloud is not configured. This means no GOOGLE_APPLICATION_CREDENTIALS environment variable.");
     }
@@ -93,7 +66,7 @@ public class CloudStorageLateInitializationTest {
     // *and* we don't have a ~/.config/gcloud/properties file (or %APPDATA%/gcloud in Windows)
     // and we don't have a ~/.config/gcloud/active-config.
     // (since we're also not providing credentials in any other way)
-    Path path = Paths.get(URI.create("gs://bucket/wat"));
+    Paths.get(URI.create("gs://bucket/wat"));
   }
 
   @Test
