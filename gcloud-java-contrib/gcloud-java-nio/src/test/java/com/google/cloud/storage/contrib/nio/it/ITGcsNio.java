@@ -96,6 +96,11 @@ public class ITGcsNio {
 
   @BeforeClass
   public static void beforeClass() throws IOException {
+    if (!System.getenv().containsKey("GOOGLE_APPLICATION_CREDENTIALS")) {
+      throw new RuntimeException("ITGcsNio can only be run if gcloud is configured. Please set " +
+          " the GOOGLE_APPLICATION_CREDENTIALS environment variable.");
+    }
+
     // loads the credentials from local disk as par README
     RemoteStorageHelper gcsHelper = RemoteStorageHelper.create();
     storageOptions = gcsHelper.options();
