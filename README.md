@@ -22,6 +22,7 @@ This client supports the following Google Cloud Platform services:
 -  [Google Cloud Pub/Sub] (#google-cloud-pubsub-alpha) (Alpha - Not working on App Engine Standard)
 -  [Google Cloud Resource Manager] (#google-cloud-resource-manager-alpha) (Alpha)
 -  [Google Cloud Storage] (#google-cloud-storage)
+-  [Google Cloud Translate] (#google-translate) (Alpha)
 
 > Note: This client is a work-in-progress, and may occasionally
 > make backwards-incompatible changes.
@@ -569,6 +570,40 @@ if (blob != null) {
 }
 ```
 
+Google Translate
+----------------
+
+- [API Documentation][translate-api]
+- [Official Documentation][translate-docs]
+
+#### Preview
+
+Here's a snippet showing a simple usage example. The example shows how to detect the language of
+some text and how to translate some text. The example assumes that the `GOOGLE_API_KEY` is set and
+contains a valid API key. Alternatively, you can use the `apiKey(String)` setter in
+`TranslateOptions.Builder` to set the API key. Complete source code can be found at
+[DetectLanguageAndTranslate.java](./gcloud-java-examples/src/main/java/com/google/cloud/examples/translate/snippets/DetectLanguageAndTranslate.java).
+
+```java
+import com.google.cloud.translate.Detection;
+import com.google.cloud.translate.Translate;
+import com.google.cloud.translate.Translate.TranslateOption;
+import com.google.cloud.translate.TranslateOptions;
+import com.google.cloud.translate.Translation;
+
+Translate translate = TranslateOptions.defaultInstance().service();
+
+Detection detection = translate.detect("Hola");
+String detectedLanguage = detection.language();
+
+Translation translation = translate.translate(
+    "World",
+    TranslateOption.sourceLanguage("en"),
+    TranslateOption.targetLanguage(detectedLanguage));
+
+System.out.printf("Hola %s%n", translation.translatedText());
+```
+
 Troubleshooting
 ---------------
 
@@ -648,3 +683,6 @@ Apache 2.0 - See [LICENSE] for more information.
 [cloud-compute]: https://cloud.google.com/compute/
 [cloud-compute-docs]: https://cloud.google.com/compute/docs/overview
 [compute-api]: http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/cloud/compute/package-summary.html
+
+[translate-docs]: https://cloud.google.com/translate/docs/
+[translate-api]: http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/cloud/translate/package-summary.html
