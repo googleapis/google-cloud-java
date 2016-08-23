@@ -1638,6 +1638,14 @@ public interface Storage extends Service<StorageOptions> {
    * byte[] content = storage.readAllBytes(blobId);
    * }</pre>
    *
+   * @return the blob's content
+   * @throws StorageException upon failure
+   */
+  byte[] readAllBytes(BlobId blob, BlobSourceOption... options);
+
+  /**
+   * Creates a new empty batch for grouping multiple service calls in one underlying RPC call.
+   *
    * <p>Example of using a batch request to delete, update and get a blob.
    * <pre> {@code
    * String bucketName = "my_unique_bucket";
@@ -1661,13 +1669,6 @@ public interface Storage extends Service<StorageOptions> {
    * Blob blob = result.get(); // returns get result or throws StorageException
    * }</pre>
    *
-   * @return the blob's content
-   * @throws StorageException upon failure
-   */
-  byte[] readAllBytes(BlobId blob, BlobSourceOption... options);
-
-  /**
-   * Creates a new empty batch for grouping multiple service calls in one underlying RPC call.
    */
   StorageBatch batch();
 
@@ -1788,7 +1789,7 @@ public interface Storage extends Service<StorageOptions> {
    * String bucketName = "my_unique_bucket";
    * String blobName = "my_blob_name";
    * String keyPath = "/path/to/key.json";
-   * URL signedUrl = storage.signUrl(BlobInfo.builder("my_unique_bucket", "my_blob_name").build(),
+   * URL signedUrl = storage.signUrl(BlobInfo.builder(bucketName, blobName).build(),
    *     14, TimeUnit.DAYS, SignUrlOption.signWith(
    *         AuthCredentials.createForJson(new FileInputStream(keyPath))));
    * }</pre>
