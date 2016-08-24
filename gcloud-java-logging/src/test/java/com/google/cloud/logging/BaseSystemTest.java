@@ -38,12 +38,14 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Iterators;
+import com.google.common.collect.Sets;
 import com.google.protobuf.Any;
 import com.google.protobuf.StringValue;
 
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
+import org.junit.rules.Timeout;
 
 import java.util.HashSet;
 import java.util.Iterator;
@@ -68,6 +70,9 @@ public abstract class BaseSystemTest {
 
   @Rule
   public ExpectedException thrown = ExpectedException.none();
+
+  @Rule
+  public Timeout globalTimeout = Timeout.seconds(300);
 
   /**
    * Returns the Logging service used to issue requests. This service can be such that it interacts
@@ -99,12 +104,11 @@ public abstract class BaseSystemTest {
     assertEquals("dataset", datasetDestination.dataset());
     assertEquals(sink, logging().getSink(name));
     sink = sink.update(sink.toBuilder()
-        .versionFormat(SinkInfo.VersionFormat.V1)
-        .filter("metadata.serviceName=appengine.googleapis.com")
+        .filter("severity<=ERROR")
         .build());
     assertEquals(name, sink.name());
-    assertEquals(SinkInfo.VersionFormat.V1, sink.versionFormat());
-    assertEquals("metadata.serviceName=appengine.googleapis.com", sink.filter());
+    assertEquals(SinkInfo.VersionFormat.V2, sink.versionFormat());
+    assertEquals("severity<=ERROR", sink.filter());
     assertTrue(sink.delete());
   }
 
@@ -125,12 +129,11 @@ public abstract class BaseSystemTest {
     assertEquals("dataset", datasetDestination.dataset());
     assertEquals(sink, logging().getSinkAsync(name).get());
     sink = sink.updateAsync(sink.toBuilder()
-        .versionFormat(SinkInfo.VersionFormat.V1)
-        .filter("metadata.serviceName=appengine.googleapis.com")
+        .filter("severity<=ERROR")
         .build()).get();
     assertEquals(name, sink.name());
-    assertEquals(SinkInfo.VersionFormat.V1, sink.versionFormat());
-    assertEquals("metadata.serviceName=appengine.googleapis.com", sink.filter());
+    assertEquals(SinkInfo.VersionFormat.V2, sink.versionFormat());
+    assertEquals("severity<=ERROR", sink.filter());
     assertTrue(sink.deleteAsync().get());
   }
 
@@ -171,18 +174,18 @@ public abstract class BaseSystemTest {
   }
 
   @Test
-  public void testListSinks() {
+  public void testListSinks() throws InterruptedException {
     String firstName = formatForTest("test-list-sinks-1");
     String secondName = formatForTest("test-list-sinks-2");
     Sink firstSink = logging().create(SinkInfo.of(firstName, DatasetDestination.of("dataset")));
     Sink secondSink = logging().create(SinkInfo.of(secondName, DatasetDestination.of("dataset")));
-    Set<String> sinkNames = new HashSet<>();
-    Iterator<Sink> sinkIterator = logging().listSinks(Logging.ListOption.pageSize(1)).iterateAll();
-    while (sinkIterator.hasNext()) {
-      sinkNames.add(sinkIterator.next().name());
+    Logging.ListOption[] options = {Logging.ListOption.pageSize(1)};
+    Page<Sink> sinkPage = logging().listSinks(options);
+    Set<Sink> sinks = Sets.newHashSet(sinkPage.iterateAll());
+    while (!sinks.contains(firstSink) || !sinks.contains(secondSink)) {
+      Thread.sleep(500);
+      sinks = Sets.newHashSet(logging().listSinks(options).iterateAll());
     }
-    assertTrue(sinkNames.contains(firstName));
-    assertTrue(sinkNames.contains(secondName));
     firstSink.delete();
     secondSink.delete();
   }
@@ -193,14 +196,13 @@ public abstract class BaseSystemTest {
     String secondName = formatForTest("test-list-sinks-async-2");
     Sink firstSink = logging().create(SinkInfo.of(firstName, DatasetDestination.of("dataset")));
     Sink secondSink = logging().create(SinkInfo.of(secondName, DatasetDestination.of("dataset")));
-    Set<String> sinkNames = new HashSet<>();
-    Iterator<Sink> sinkIterator =
-        logging().listSinksAsync(Logging.ListOption.pageSize(1)).get().iterateAll();
-    while (sinkIterator.hasNext()) {
-      sinkNames.add(sinkIterator.next().name());
+    Logging.ListOption[] options = {Logging.ListOption.pageSize(1)};
+    AsyncPage<Sink> sinkPage = logging().listSinksAsync(options).get();
+    Set<Sink> sinks = Sets.newHashSet(sinkPage.iterateAll());
+    while (!sinks.contains(firstSink) || !sinks.contains(secondSink)) {
+      Thread.sleep(500);
+      sinks = Sets.newHashSet(logging().listSinksAsync(options).get().iterateAll());
     }
-    assertTrue(sinkNames.contains(firstName));
-    assertTrue(sinkNames.contains(secondName));
     firstSink.delete();
     secondSink.delete();
   }
@@ -304,37 +306,35 @@ public abstract class BaseSystemTest {
   }
 
   @Test
-  public void testListMetrics() {
+  public void testListMetrics() throws InterruptedException {
     String firstName = formatForTest("test-list-metrics-1");
     String secondName = formatForTest("test-list-metrics-2");
     Metric firstMetric = logging().create(MetricInfo.of(firstName, "severity>=ERROR"));
     Metric secondMetric = logging().create(MetricInfo.of(secondName, "severity>=ERROR"));
-    Set<String> metricNames = new HashSet<>();
-    Iterator<Metric> metricIterator =
-        logging().listMetrics(Logging.ListOption.pageSize(1)).iterateAll();
-    while (metricIterator.hasNext()) {
-      metricNames.add(metricIterator.next().name());
+    Logging.ListOption[] options = {Logging.ListOption.pageSize(1)};
+    Page<Metric> metricPage = logging().listMetrics(options);
+    Set<Metric> metrics = Sets.newHashSet(metricPage.iterateAll());
+    while (!metrics.contains(firstMetric) || !metrics.contains(secondMetric)) {
+      Thread.sleep(500);
+      metrics = Sets.newHashSet(logging().listMetrics(options).iterateAll());
     }
-    assertTrue(metricNames.contains(firstName));
-    assertTrue(metricNames.contains(secondName));
     firstMetric.delete();
     secondMetric.delete();
   }
 
   @Test
-  public void testListMetricsAsync() {
+  public void testListMetricsAsync() throws ExecutionException, InterruptedException {
     String firstName = formatForTest("test-list-metrics-async-1");
     String secondName = formatForTest("test-list-metrics-async-2");
     Metric firstMetric = logging().create(MetricInfo.of(firstName, "severity>=ERROR"));
     Metric secondMetric = logging().create(MetricInfo.of(secondName, "severity>=ERROR"));
-    Set<String> metricNames = new HashSet<>();
-    Iterator<Metric> metricIterator =
-        logging().listMetrics(Logging.ListOption.pageSize(1)).iterateAll();
-    while (metricIterator.hasNext()) {
-      metricNames.add(metricIterator.next().name());
+    Logging.ListOption[] options = {Logging.ListOption.pageSize(1)};
+    AsyncPage<Metric> metricPage = logging().listMetricsAsync(options).get();
+    Set<Metric> metrics = Sets.newHashSet(metricPage.iterateAll());
+    while (!metrics.contains(firstMetric) || !metrics.contains(secondMetric)) {
+      Thread.sleep(500);
+      metrics = Sets.newHashSet(logging().listMetricsAsync(options).get().iterateAll());
     }
-    assertTrue(metricNames.contains(firstName));
-    assertTrue(metricNames.contains(secondName));
     firstMetric.delete();
     secondMetric.delete();
   }
