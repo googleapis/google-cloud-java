@@ -47,7 +47,7 @@ public class CloudStorageFileAttributesTest {
 
   @Before
   public void before() {
-    CloudStorageFileSystemProvider.setGCloudOptions(LocalStorageHelper.options());
+    CloudStorageFileSystemProvider.setStorageOptions(LocalStorageHelper.options());
     path = Paths.get(URI.create("gs://bucket/randompath"));
     dir = Paths.get(URI.create("gs://bucket/randompath/"));
   }

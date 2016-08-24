@@ -123,7 +123,7 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
    * Sets options that are only used by the constructor.
    */
   @VisibleForTesting
-  public static void setGCloudOptions(StorageOptions newStorageOptions) {
+  public static void setStorageOptions(StorageOptions newStorageOptions) {
     futureStorageOptions = newStorageOptions;
   }
 
@@ -142,10 +142,8 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
 
   }
 
-  // Initialize this.storage, once. This may throw an exception if the environment variable
-  // GOOGLE_APPLICATION_CREDENTIALS is not set.
-  // We don't do this in the constructor because the ctor is called even when just enumerating
-  // available filesystems, and this should work without configuring gcloud.
+  // Initialize this.storage, once. This may throw an exception if default authentication
+  // credentials are not available (hence not doing it in the ctor).
   private void initStorage() {
     if (this.storage != null) {
       return;
