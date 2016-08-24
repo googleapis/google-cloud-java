@@ -645,9 +645,8 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
 
   @Override
   public String toString() {
-    return "CloudStorageFileSystemProvider";
-    //initStorage();
-    //return MoreObjects.toStringHelper(this).add("storage", storage).toString();
+    initStorage();
+    return MoreObjects.toStringHelper(this).add("storage", storage).toString();
   }
 
   private IOException asIoException(StorageException oops) {
