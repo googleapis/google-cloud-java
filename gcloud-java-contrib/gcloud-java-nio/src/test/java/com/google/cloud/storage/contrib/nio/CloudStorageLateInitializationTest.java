@@ -16,6 +16,7 @@
 
 package com.google.cloud.storage.contrib.nio;
 
+import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageOptions;
 import org.junit.Before;
 import org.junit.Rule;
@@ -45,7 +46,8 @@ public class CloudStorageLateInitializationTest {
   @Before
   public void before() {
     mockOptions = mock(StorageOptions.class);
-    when(mockOptions.service()).thenReturn(StorageOptions.defaultInstance().service());
+    Storage mockStorage = mock(Storage.class);
+    when(mockOptions.service()).thenReturn(mockStorage);
     CloudStorageFileSystemProvider.setStorageOptions(mockOptions);
   }
 
@@ -58,7 +60,7 @@ public class CloudStorageLateInitializationTest {
   @Test
   public void getPathCreatesStorageOnce() {
     CloudStorageFileSystemProvider provider = new CloudStorageFileSystemProvider();
-    provider.getPath(URI.create("gs://bucket/wat"));
+    provider.getPath(URI.create("gs://bucket1/wat"));
     provider.getPath(URI.create("gs://bucket2/wat"));
     verify(mockOptions, times(1)).service();
   }
