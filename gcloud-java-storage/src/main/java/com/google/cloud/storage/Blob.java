@@ -322,6 +322,16 @@ public class Blob extends BlobInfo {
   /**
    * Checks if this blob exists.
    *
+   * <p>Example of checking if the blob exists.
+   * <pre> {@code
+   * boolean exists = blob.exists();
+   * if (exists) {
+   *   // the blob exists
+   * } else {
+   *   // the blob was not found
+   * }
+   * }</pre>
+   *
    * @param options blob read options
    * @return true if this blob exists, false otherwise
    * @throws StorageException upon failure
@@ -336,15 +346,30 @@ public class Blob extends BlobInfo {
   /**
    * Returns this blob's content.
    *
+   * <p>Example of reading all bytes of the blob, if its generation matches the
+   * {@link Blob#generation()} value, otherwise a {@link StorageException} is thrown.
+   * <pre> {@code
+   * byte[] content = blob.content(BlobSourceOption.generationMatch());
+   * }</pre>
+   *
    * @param options blob read options
    * @throws StorageException upon failure
    */
-  public byte[] content(Storage.BlobSourceOption... options) {
-    return storage.readAllBytes(blobId(), options);
+  public byte[] content(BlobSourceOption... options) {
+    return storage.readAllBytes(blobId(), toSourceOptions(this, options));
   }
 
   /**
    * Fetches current blob's latest information. Returns {@code null} if the blob does not exist.
+   *
+   * <p>Example of getting the blob's latest information, if its generation does not match the
+   * {@link Blob#generation()} value, otherwise a {@link StorageException} is thrown.
+   * <pre> {@code
+   * Blob latestBlob = blob.reload(BlobSourceOption.generationNotMatch());
+   * if (latestBlob == null) {
+   *   // the blob was not found
+   * }
+   * }</pre>
    *
    * @param options blob read options
    * @return a {@code Blob} object with latest information or {@code null} if not found
@@ -367,12 +392,13 @@ public class Blob extends BlobInfo {
    * {@code blob}'s metadata to {@code null}.
    * </p>
    *
-   * <p>Example usage of replacing blob's metadata:
+   * <p>Example of replacing blob's metadata.
    * <pre> {@code
+   * Map<String, String> newMetadata = new HashMap<>();
+   * newMetadata.put("key", "value");
    * blob.toBuilder().metadata(null).build().update();
-   * blob.toBuilder().metadata(newMetadata).build().update();
-   * }
-   * </pre>
+   * Blob updatedBlob = blob.toBuilder().metadata(newMetadata).build().update();
+   * }</pre>
    *
    * @param options update options
    * @return a {@code Blob} object with updated information
@@ -385,6 +411,17 @@ public class Blob extends BlobInfo {
   /**
    * Deletes this blob.
    *
+   * <p>Example of deleting the blob, if its generation matches the {@link Blob#generation()} value,
+   * otherwise a {@link StorageException} is thrown.
+   * <pre> {@code
+   * boolean deleted = blob.delete(BlobSourceOption.generationMatch());
+   * if (deleted) {
+   *   // the blob was deleted
+   * } else {
+   *   // the blob was not found
+   * }
+   * }</pre>
+   *
    * @param options blob delete options
    * @return {@code true} if blob was deleted, {@code false} if it was not found
    * @throws StorageException upon failure
@@ -396,6 +433,14 @@ public class Blob extends BlobInfo {
   /**
    * Sends a copy request for the current blob to the target blob. Possibly also some of the
    * metadata are copied (e.g. content-type).
+   *
+   * <p>Example of copying the blob to a different bucket with a different name.
+   * <pre> {@code
+   * String bucketName = "my_unique_bucket";
+   * String blobName = "copy_blob_name";
+   * CopyWriter copyWriter = blob.copyTo(BlobId.of(bucketName, blobName));
+   * Blob copiedBlob = copyWriter.result();
+   * }</pre>
    *
    * @param targetBlob target blob's id
    * @param options source blob options
@@ -416,6 +461,13 @@ public class Blob extends BlobInfo {
    * Sends a copy request for the current blob to the target bucket, preserving its name. Possibly
    * copying also some of the metadata (e.g. content-type).
    *
+   * <p>Example of copying the blob to a different bucket, keeping the original name.
+   * <pre> {@code
+   * String bucketName = "my_unique_bucket";
+   * CopyWriter copyWriter = blob.copyTo(bucketName);
+   * Blob copiedBlob = copyWriter.result();
+   * }</pre>
+   *
    * @param targetBucket target bucket's name
    * @param options source blob options
    * @return a {@link CopyWriter} object that can be used to get information on the newly created
@@ -429,6 +481,14 @@ public class Blob extends BlobInfo {
   /**
    * Sends a copy request for the current blob to the target blob. Possibly also some of the
    * metadata are copied (e.g. content-type).
+   *
+   * <p>Example of copying the blob to a different bucket with a different name.
+   * <pre> {@code
+   * String bucketName = "my_unique_bucket";
+   * String blobName = "copy_blob_name";
+   * CopyWriter copyWriter = blob.copyTo(bucketName, blobName);
+   * Blob copiedBlob = copyWriter.result();
+   * }</pre>
    *
    * @param targetBucket target bucket's name
    * @param targetBlob target blob's name
@@ -444,6 +504,18 @@ public class Blob extends BlobInfo {
   /**
    * Returns a {@code ReadChannel} object for reading this blob's content.
    *
+   * <p>Example of reading the blob's content through a reader.
+   * <pre> {@code
+   * try (ReadChannel reader = blob.reader()) {
+   *   ByteBuffer bytes = ByteBuffer.allocate(64 * 1024);
+   *   while (reader.read(bytes) > 0) {
+   *     bytes.flip();
+   *     // do something with bytes
+   *     bytes.clear();
+   *   }
+   * }
+   * }</pre>
+   *
    * @param options blob read options
    * @throws StorageException upon failure
    */
@@ -455,6 +527,18 @@ public class Blob extends BlobInfo {
    * Returns a {@code WriteChannel} object for writing to this blob. By default any md5 and
    * crc32c values in the current blob are ignored unless requested via the
    * {@code BlobWriteOption.md5Match} and {@code BlobWriteOption.crc32cMatch} options.
+   *
+   * <p>Example of writing the blob's content through a writer.
+   * <pre> {@code
+   * byte[] content = "Hello, World!".getBytes(UTF_8);
+   * try (WriteChannel writer = blob.writer()) {
+   *   try {
+   *     writer.write(ByteBuffer.wrap(content, 0, content.length));
+   *   } catch (Exception ex) {
+   *     // handle exception
+   *   }
+   * }
+   * }</pre>
    *
    * @param options target blob options
    * @throws StorageException upon failure
@@ -485,18 +569,18 @@ public class Blob extends BlobInfo {
    *   <li>The default credentials, if no credentials were passed to {@link StorageOptions}
    * </ol>
    *
-   * <p>Example usage of creating a signed URL that is valid for 2 weeks, using the default
-   * credentials for signing the URL:
+   * <p>Example of creating a signed URL for the blob that is valid for 2 weeks, using the default
+   * credentials for signing the URL.
    * <pre> {@code
-   * blob.signUrl(14, TimeUnit.DAYS);
+   * URL signedUrl = blob.signUrl(14, TimeUnit.DAYS);
    * }</pre>
    *
-   * <p>Example usage of creating a signed URL passing the
-   * {@link SignUrlOption#signWith(ServiceAccountSigner)} option, that will be used for signing the
-   * URL:
+   * <p>Example of creating a signed URL for the blob passing the
+   * {@link SignUrlOption#signWith(ServiceAccountSigner)} option, that will be used to sign the URL.
    * <pre> {@code
-   * blob.signUrl(14, TimeUnit.DAYS, SignUrlOption.signWith(
-   *     AuthCredentials.createForJson(new FileInputStream("/path/to/key.json"))));
+   * String keyPath = "/path/to/key.json";
+   * URL signedUrl = blob.signUrl(14, TimeUnit.DAYS, SignUrlOption.signWith(
+   *     AuthCredentials.createForJson(new FileInputStream(keyPath))));
    * }</pre>
    *
    * @param duration time until the signed URL expires, expressed in {@code unit}. The finer
