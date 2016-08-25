@@ -23,6 +23,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.cloud.Page;
 import com.google.cloud.storage.Storage.BlobGetOption;
+import com.google.cloud.storage.Storage.BlobListOption;
 import com.google.cloud.storage.Storage.BucketTargetOption;
 import com.google.cloud.storage.spi.StorageRpc;
 import com.google.common.base.Function;
@@ -530,6 +531,16 @@ public class Bucket extends BucketInfo {
   /**
    * Checks if this bucket exists.
    *
+   * <p>Example of checking if the bucket exists.
+   * <pre> {@code
+   * boolean exists = bucket.exists();
+   * if (exists) {
+   *   // the bucket exists
+   * } else {
+   *   // the bucket was not found
+   * }
+   * }</pre>
+   *
    * @return true if this bucket exists, false otherwise
    * @throws StorageException upon failure
    */
@@ -542,6 +553,15 @@ public class Bucket extends BucketInfo {
 
   /**
    * Fetches current bucket's latest information. Returns {@code null} if the bucket does not exist.
+   *
+   * <p>Example of getting the bucket's latest information, if its generation does not match the
+   * {@link Bucket#metageneration()} value, otherwise a {@link StorageException} is thrown.
+   * <pre> {@code
+   * Bucket latestBucket = bucket.reload(BucketSourceOption.metagenerationMatch());
+   * if (latestBucket == null) {
+   *   // the bucket was not found
+   * }
+   * }</pre>
    *
    * @param options bucket read options
    * @return a {@code Bucket} object with latest information or {@code null} if not found
@@ -558,6 +578,11 @@ public class Bucket extends BucketInfo {
    * version use the {@code metagenerationMatch} option:
    * {@code bucket.update(BucketTargetOption.metagenerationMatch())}
    *
+   * <p>Example of updating the bucket's information.
+   * <pre> {@code
+   * Bucket updatedBucket = bucket.toBuilder().versioningEnabled(true).build().update();
+   * }</pre>
+   *
    * @param options update options
    * @return a {@code Bucket} object with updated information
    * @throws StorageException upon failure
@@ -568,6 +593,17 @@ public class Bucket extends BucketInfo {
 
   /**
    * Deletes this bucket.
+   *
+   * <p>Example of deleting the bucket, if its metageneration matches the
+   * {@link Bucket#metageneration()} value, otherwise a {@link StorageException} is thrown.
+   * <pre> {@code
+   * boolean deleted = bucket.delete(BucketSourceOption.metagenerationMatch());
+   * if (deleted) {
+   *   // the bucket was deleted
+   * } else {
+   *   // the bucket was not found
+   * }
+   * }</pre>
    *
    * @param options bucket delete options
    * @return {@code true} if bucket was deleted, {@code false} if it was not found
@@ -580,15 +616,32 @@ public class Bucket extends BucketInfo {
   /**
    * Returns the paginated list of {@code Blob} in this bucket.
    *
+   * <p>Example of listing the blobs in the bucket.
+   * <pre> {@code
+   * Iterator<Blob> blobIterator = bucket.list().iterateAll();
+   * while (blobIterator.hasNext()) {
+   *   Blob blob = blobIterator.next();
+   *   // do something with the blob
+   * }
+   * }</pre>
+   *
    * @param options options for listing blobs
    * @throws StorageException upon failure
    */
-  public Page<Blob> list(Storage.BlobListOption... options) {
+  public Page<Blob> list(BlobListOption... options) {
     return storage.list(name(), options);
   }
 
   /**
    * Returns the requested blob in this bucket or {@code null} if not found.
+   *
+   * <p>Example of getting a blob in the bucket, only if its metageneration matches a value, otherwise
+   * a {@link StorageException} is thrown.
+   * <pre> {@code
+   * String blobName = "my_blob_name";
+   * long generation = 42;
+   * Blob blob = bucket.get(blobName, BlobGetOption.generationMatch(generation));
+   * }</pre>
    *
    * @param blob name of the requested blob
    * @param options blob search options
@@ -600,6 +653,18 @@ public class Bucket extends BucketInfo {
 
   /**
    * Returns a list of requested blobs in this bucket. Blobs that do not exist are null.
+   *
+   * <p>Example of getting some blobs in the bucket, using a batch request.
+   * <pre> {@code
+   * String blobName1 = "my_blob_name1";
+   * String blobName2 = "my_blob_name2";
+   * List<Blob> blobs = bucket.get(blobName1, blobName2);
+   * for (Blob blob : blobs) {
+   *   if (blob == null) {
+   *     // the blob was not found
+   *   }
+   * }
+   * }</pre>
    *
    * @param blobName1 first blob to get
    * @param blobName2 second blob to get
@@ -620,6 +685,21 @@ public class Bucket extends BucketInfo {
   /**
    * Returns a list of requested blobs in this bucket. Blobs that do not exist are null.
    *
+   * <p>Example of getting some blobs in the bucket, using a batch request.
+   * <pre> {@code
+   * String blobName1 = "my_blob_name1";
+   * String blobName2 = "my_blob_name2";
+   * List<String> blobNames = new LinkedList<>();
+   * blobNames.add(blobName1);
+   * blobNames.add(blobName2);
+   * List<Blob> blobs = bucket.get(blobNames);
+   * for (Blob blob : blobs) {
+   *   if (blob == null) {
+   *     // the blob was not found
+   *   }
+   * }
+   * }</pre>
+   *
    * @param blobNames blobs to get
    * @return an immutable list of {@code Blob} objects
    * @throws StorageException upon failure
@@ -637,6 +717,12 @@ public class Bucket extends BucketInfo {
    * For large content, {@link Blob#writer(com.google.cloud.storage.Storage.BlobWriteOption...)}
    * is recommended as it uses resumable upload. MD5 and CRC32C hashes of {@code content} are
    * computed and used for validating transferred data.
+   *
+   * <p>Example of creating a blob in the bucket from a byte array with a content type.
+   * <pre> {@code
+   * String blobName = "my_blob_name";
+   * Blob blob = bucket.create(blobName, "Hello, World!".getBytes(UTF_8), "text/plain");
+   * }</pre>
    *
    * @param blob a blob name
    * @param content the blob content
@@ -656,6 +742,13 @@ public class Bucket extends BucketInfo {
    * Creates a new blob in this bucket. Direct upload is used to upload {@code content}.
    * For large content, {@link Blob#writer(com.google.cloud.storage.Storage.BlobWriteOption...)}
    * is recommended as it uses resumable upload.
+   *
+   * <p>Example of creating a blob in the bucket from an input stream with a content type.
+   * <pre> {@code
+   * String blobName = "my_blob_name";
+   * InputStream content = new ByteArrayInputStream("Hello, World!".getBytes(UTF_8));
+   * Blob blob = bucket.create(blobName, content, "text/plain");
+   * }</pre>
    *
    * @param blob a blob name
    * @param content the blob content as a stream
@@ -678,6 +771,12 @@ public class Bucket extends BucketInfo {
    * is recommended as it uses resumable upload. MD5 and CRC32C hashes of {@code content} are
    * computed and used for validating transferred data.
    *
+   * <p>Example of creating a blob in the bucket from a byte array.
+   * <pre> {@code
+   * String blobName = "my_blob_name";
+   * Blob blob = bucket.create(blobName, "Hello, World!".getBytes(UTF_8));
+   * }</pre>
+   *
    * @param blob a blob name
    * @param content the blob content
    * @param options options for blob creation
@@ -695,6 +794,13 @@ public class Bucket extends BucketInfo {
    * Creates a new blob in this bucket. Direct upload is used to upload {@code content}.
    * For large content, {@link Blob#writer(com.google.cloud.storage.Storage.BlobWriteOption...)}
    * is recommended as it uses resumable upload.
+   *
+   * <p>Example of creating a blob in the bucket from an input stream.
+   * <pre> {@code
+   * String blobName = "my_blob_name";
+   * InputStream content = new ByteArrayInputStream("Hello, World!".getBytes(UTF_8));
+   * Blob blob = bucket.create(blobName, content);
+   * }</pre>
    *
    * @param blob a blob name
    * @param content the blob content as a stream
