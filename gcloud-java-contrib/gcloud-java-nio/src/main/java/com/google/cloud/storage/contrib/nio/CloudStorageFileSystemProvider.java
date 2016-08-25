@@ -85,10 +85,11 @@ import javax.inject.Singleton;
 @AutoService(FileSystemProvider.class)
 public final class CloudStorageFileSystemProvider extends FileSystemProvider {
 
-  private final Storage storage;
+  private Storage storage;
+  private StorageOptions storageOptions;
 
   // used only when we create a new instance of CloudStorageFileSystemProvider.
-  private static StorageOptions storageOptions;
+  private static StorageOptions futureStorageOptions;
 
   private static class LazyPathIterator extends AbstractIterator<Path> {
     private final Iterator<Blob> blobIterator;
@@ -122,8 +123,8 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
    * Sets options that are only used by the constructor.
    */
   @VisibleForTesting
-  public static void setGCloudOptions(StorageOptions newStorageOptions) {
-    storageOptions = newStorageOptions;
+  public static void setStorageOptions(StorageOptions newStorageOptions) {
+    futureStorageOptions = newStorageOptions;
   }
 
   /**
@@ -133,14 +134,24 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
    * @see CloudStorageFileSystem#forBucket(String)
    */
   public CloudStorageFileSystemProvider() {
-    this(storageOptions);
+    this(futureStorageOptions);
   }
 
   CloudStorageFileSystemProvider(@Nullable StorageOptions gcsStorageOptions) {
-    if (gcsStorageOptions == null) {
+    this.storageOptions = gcsStorageOptions;
+
+  }
+
+  // Initialize this.storage, once. This may throw an exception if default authentication
+  // credentials are not available (hence not doing it in the ctor).
+  private void initStorage() {
+    if (this.storage != null) {
+      return;
+    }
+    if (storageOptions == null) {
       this.storage = StorageOptions.defaultInstance().service();
     } else {
-      this.storage = gcsStorageOptions.service();
+      this.storage = storageOptions.service();
     }
   }
 
@@ -154,6 +165,7 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
    */
   @Override
   public CloudStorageFileSystem getFileSystem(URI uri) {
+    initStorage();
     return newFileSystem(uri, Collections.<String, Object>emptyMap());
   }
 
@@ -186,11 +198,13 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
         "GCS FileSystem URIs mustn't have: port, userinfo, path, query, or fragment: %s",
         uri);
     CloudStorageUtil.checkBucket(uri.getHost());
+    initStorage();
     return new CloudStorageFileSystem(this, uri.getHost(), CloudStorageConfiguration.fromMap(env));
   }
 
   @Override
   public CloudStoragePath getPath(URI uri) {
+    initStorage();
     return CloudStoragePath.getPath(
         getFileSystem(CloudStorageUtil.stripPathFromUri(uri)), uri.getPath());
   }
@@ -199,6 +213,7 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
   public SeekableByteChannel newByteChannel(
       Path path, Set<? extends OpenOption> options, FileAttribute<?>... attrs) throws IOException {
     checkNotNull(path);
+    initStorage();
     CloudStorageUtil.checkNotNullArray(attrs);
     if (options.contains(StandardOpenOption.WRITE)) {
       // TODO: Make our OpenOptions implement FileAttribute. Also remove buffer option.
@@ -210,6 +225,7 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
 
   private SeekableByteChannel newReadChannel(Path path, Set<? extends OpenOption> options)
       throws IOException {
+    initStorage();
     for (OpenOption option : options) {
       if (option instanceof StandardOpenOption) {
         switch ((StandardOpenOption) option) {
@@ -244,7 +260,7 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
 
   private SeekableByteChannel newWriteChannel(Path path, Set<? extends OpenOption> options)
       throws IOException {
-
+    initStorage();
     CloudStoragePath cloudPath = CloudStorageUtil.checkPath(path);
     if (cloudPath.seemsLikeADirectoryAndUsePseudoDirectories()) {
       throw new CloudStoragePseudoDirectoryException(cloudPath);
@@ -318,6 +334,7 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
 
   @Override
   public InputStream newInputStream(Path path, OpenOption... options) throws IOException {
+    initStorage();
     InputStream result = super.newInputStream(path, options);
     CloudStoragePath cloudPath = CloudStorageUtil.checkPath(path);
     int blockSize = cloudPath.getFileSystem().config().blockSize();
@@ -331,6 +348,7 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
 
   @Override
   public boolean deleteIfExists(Path path) throws IOException {
+    initStorage();
     CloudStoragePath cloudPath = CloudStorageUtil.checkPath(path);
     if (cloudPath.seemsLikeADirectoryAndUsePseudoDirectories()) {
       throw new CloudStoragePseudoDirectoryException(cloudPath);
@@ -340,6 +358,7 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
 
   @Override
   public void delete(Path path) throws IOException {
+    initStorage();
     CloudStoragePath cloudPath = CloudStorageUtil.checkPath(path);
     if (!deleteIfExists(cloudPath)) {
       throw new NoSuchFileException(cloudPath.toString());
@@ -348,6 +367,7 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
 
   @Override
   public void move(Path source, Path target, CopyOption... options) throws IOException {
+    initStorage();
     for (CopyOption option : options) {
       if (option == StandardCopyOption.ATOMIC_MOVE) {
         throw new AtomicMoveNotSupportedException(
@@ -362,6 +382,7 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
 
   @Override
   public void copy(Path source, Path target, CopyOption... options) throws IOException {
+    initStorage();
     boolean wantCopyAttributes = false;
     boolean wantReplaceExisting = false;
     boolean setContentType = false;
@@ -492,6 +513,7 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
 
   @Override
   public void checkAccess(Path path, AccessMode... modes) throws IOException {
+    initStorage();
     for (AccessMode mode : modes) {
       switch (mode) {
         case READ:
@@ -520,6 +542,7 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
     if (type != CloudStorageFileAttributes.class && type != BasicFileAttributes.class) {
       throw new UnsupportedOperationException(type.getSimpleName());
     }
+    initStorage();
     CloudStoragePath cloudPath = CloudStorageUtil.checkPath(path);
     if (cloudPath.seemsLikeADirectoryAndUsePseudoDirectories()) {
       @SuppressWarnings("unchecked")
@@ -574,6 +597,7 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
   public DirectoryStream<Path> newDirectoryStream(Path dir, final Filter<? super Path> filter) {
     final CloudStoragePath cloudPath = CloudStorageUtil.checkPath(dir);
     checkNotNull(filter);
+    initStorage();
     String prefix = cloudPath.toString();
     final Iterator<Blob> blobIterator = storage.list(cloudPath.bucket(),
         Storage.BlobListOption.prefix(prefix), Storage.BlobListOption.currentDirectory(),
@@ -621,6 +645,7 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
 
   @Override
   public String toString() {
+    initStorage();
     return MoreObjects.toStringHelper(this).add("storage", storage).toString();
   }
 

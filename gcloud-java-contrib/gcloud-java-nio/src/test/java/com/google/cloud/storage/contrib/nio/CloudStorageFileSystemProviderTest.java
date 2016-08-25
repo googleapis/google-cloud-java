@@ -89,7 +89,7 @@ public class CloudStorageFileSystemProviderTest {
 
   @Before
   public void before() {
-    CloudStorageFileSystemProvider.setGCloudOptions(LocalStorageHelper.options());
+    CloudStorageFileSystemProvider.setStorageOptions(LocalStorageHelper.options());
   }
 
   @Test
@@ -628,7 +628,7 @@ public class CloudStorageFileSystemProviderTest {
       tester.setDefault(Path.class, fs.getPath("and/one"));
       tester.setDefault(OpenOption.class, CREATE);
       tester.setDefault(CopyOption.class, COPY_ATTRIBUTES);
-      // can't do that, setGCloudOptions accepts a null argument.
+      // can't do that, setStorageOptions accepts a null argument.
       // TODO(jart): Figure out how to re-enable this.
       // tester.testAllPublicStaticMethods(CloudStorageFileSystemProvider.class);
       tester.testAllPublicInstanceMethods(new CloudStorageFileSystemProvider());
