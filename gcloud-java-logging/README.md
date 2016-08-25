@@ -26,16 +26,16 @@ Add this to your pom.xml file
 <dependency>
   <groupId>com.google.gcloud</groupId>
   <artifactId>gcloud-java-logging</artifactId>
-  <version>0.2.7</version>
+  <version>0.2.8</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:gcloud-java-logging:0.2.7'
+compile 'com.google.cloud:gcloud-java-logging:0.2.8'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "gcloud-java-logging" % "0.2.7"
+libraryDependencies += "com.google.cloud" % "gcloud-java-logging" % "0.2.8"
 ```
 
 Example Application
