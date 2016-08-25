@@ -59,5 +59,10 @@
       <artifactId>gcloud-java-storage</artifactId>
       <version>${project.version}</version>
     </dependency>
+    <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>gcloud-java-translate</artifactId>
+      <version>${project.version}</version>
+    </dependency>
   </dependencies>
 </project>

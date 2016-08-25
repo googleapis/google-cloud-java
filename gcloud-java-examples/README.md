@@ -168,6 +168,16 @@ To run examples from your command line:
     via the NIO API. It lists gcloud-java-nio as a dependency, and that enables it to interpret
     `gs://` paths.
 
+  * Here's an example run of `TranslateExample`.
+
+    Before running the example, go to the [Google Developers Console][developers-console] to ensure that "Google Translate API" is enabled and that you have a valid API key.
+    ```
+    target/appassembler/bin/TranslateExample <apiKey> languages
+    target/appassembler/bin/TranslateExample <apiKey> detect Hello,\ World!
+    target/appassembler/bin/TranslateExample <apiKey> translate ¡Hola\ Mundo!
+    target/appassembler/bin/TranslateExample <apiKey> es translate Hello,\ World!
+    ```
+
 Troubleshooting
 ---------------
 
