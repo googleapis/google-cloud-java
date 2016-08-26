@@ -65,6 +65,8 @@ Example Applications
 - [`Flexible Environment/Datastore example`](https://github.com/GoogleCloudPlatform/java-docs-samples/tree/master/managed_vms/datastore) - A simple app that uses Cloud Datastore to list the last 10 IP addresses that visited your site.
   - Read about how to run the application [here](https://github.com/GoogleCloudPlatform/java-docs-samples/blob/master/managed_vms/README.md).
 - [`Flexible Environment/Storage example`](https://github.com/GoogleCloudPlatform/java-docs-samples/tree/master/managed_vms/cloudstorage) - An app that uploads files to a public Cloud Storage bucket on the App Engine Flexible Environment runtime.
+- [`LoggingExample`](./gcloud-java-examples/src/main/java/com/google/cloud/examples/logging/LoggingExample.java) - A simple command line interface providing some of Stackdriver Logging's functionality
+  - Read more about using this application on the [`LoggingExample` docs page](http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/cloud/examples/logging/LoggingExample.html).
 - [`PubSubExample`](./gcloud-java-examples/src/main/java/com/google/cloud/examples/pubsub/PubSubExample.java) - A simple command line interface providing some of Cloud Pub/Sub's functionality
   - Read more about using this application on the [`PubSubExample` docs page](http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/cloud/examples/pubsub/PubSubExample.html).
 - [`ResourceManagerExample`](./gcloud-java-examples/src/main/java/com/google/cloud/examples/resourcemanager/ResourceManagerExample.java) - A simple command line interface providing some of Cloud Resource Manager's functionality
@@ -75,6 +77,8 @@ Example Applications
   - Read more about using this application on the [`StorageExample` docs page](http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/cloud/examples/storage/StorageExample.html).
 - [`TaskList`](https://github.com/GoogleCloudPlatform/java-docs-samples/blob/master/datastore/src/main/java/com/google/datastore/snippets/TaskList.java) - A command line application that uses Cloud Datastore to manage a to-do list.
   - Read about how to run the application on its [README page](https://github.com/GoogleCloudPlatform/java-docs-samples/tree/master/datastore).
+- [`TranslateExample`](./gcloud-java-examples/src/main/java/com/google/cloud/examples/translate/TranslateExample.java) - A simple command line interface providing some of Google Translate's functionality
+  - Read more about using this application on the [`TranslateExample` docs page](http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/cloud/examples/translate/TranslateExample.html).
 
 Specifying a Project ID
 -----------------------
