@@ -1,0 +1,172 @@
+/*
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *       http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package com.google.cloud.examples.logging.snippets;
+
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
+
+import com.google.cloud.MonitoredResourceDescriptor;
+import com.google.cloud.logging.LogEntry;
+import com.google.cloud.logging.Logging;
+import com.google.cloud.logging.Metric;
+import com.google.cloud.logging.Sink;
+import com.google.cloud.logging.testing.RemoteLoggingHelper;
+import com.google.common.collect.ImmutableSet;
+import com.google.common.collect.Iterators;
+import com.google.common.collect.Sets;
+
+import org.junit.BeforeClass;
+import org.junit.Rule;
+import org.junit.Test;
+import org.junit.rules.ExpectedException;
+import org.junit.rules.Timeout;
+
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
+import java.util.concurrent.ExecutionException;
+
+public class ITLoggingSnippets {
+
+  private static final String DATASET = "dataset";
+  private static final Set<String> DESCRIPTOR_TYPES = ImmutableSet.of("gce_instance", "gae_app",
+      "cloudsql_database", "api", "gcs_bucket", "global", "dataflow_step", "build",
+      "app_script_function", "dataproc_cluster", "ml_job", "bigquery_resource",
+      "crm_iam_policy_check", "container", "gke_cluster", "cloud_debugger_resource",
+      "http_load_balancer", "aws_ec2_instance", "client_auth_config_brand",
+      "client_auth_config_client", "logging_log", "logging_sink", "metric", "project",
+      "testservice_matrix", "service_account", "deployment", "dns_managed_zone");
+
+  private static Logging logging;
+  private static LoggingSnippets loggingSnippets;
+
+  @Rule
+  public Timeout globalTimeout = Timeout.seconds(300);
+
+  @Rule
+  public ExpectedException thrown = ExpectedException.none();
+
+  @BeforeClass
+  public static void beforeClass() {
+    RemoteLoggingHelper helper = RemoteLoggingHelper.create();
+    logging = helper.options().service();
+    loggingSnippets = new LoggingSnippets(logging);
+  }
+
+  @Test
+  public void testSink() throws ExecutionException, InterruptedException {
+    String sinkName1 = RemoteLoggingHelper.formatForTest("sink_name1");
+    String sinkName2 = RemoteLoggingHelper.formatForTest("sink_name2");
+    Sink sink1 = loggingSnippets.createSink(sinkName1, DATASET);
+    Sink sink2 = loggingSnippets.createSinkAsync(sinkName2, DATASET);
+    assertNotNull(sink1);
+    assertNotNull(sink2);
+    sink1 = loggingSnippets.getSink(sinkName1);
+    sink2 = loggingSnippets.getSinkAsync(sinkName2);
+    assertNotNull(sink1);
+    assertNotNull(sink2);
+    sink1 = loggingSnippets.updateSink(sinkName1, DATASET);
+    sink2 = loggingSnippets.updateSinkAsync(sinkName2, DATASET);
+    Set<Sink> sinks = Sets.newHashSet(loggingSnippets.listSinks().iterateAll());
+    while (!sinks.contains(sink1) || !sinks.contains(sink2)) {
+      Thread.sleep(500);
+      sinks = Sets.newHashSet(loggingSnippets.listSinks().iterateAll());
+    }
+    sinks = Sets.newHashSet(loggingSnippets.listSinksAsync().iterateAll());
+    while (!sinks.contains(sink1) || !sinks.contains(sink2)) {
+      Thread.sleep(500);
+      sinks = Sets.newHashSet(loggingSnippets.listSinksAsync().iterateAll());
+    }
+    assertTrue(loggingSnippets.deleteSink(sinkName1));
+    assertTrue(loggingSnippets.deleteSinkAsync(sinkName2));
+  }
+
+  @Test
+  public void testMetric() throws ExecutionException, InterruptedException {
+    String metricName1 = RemoteLoggingHelper.formatForTest("metric_name1");
+    String metricName2 = RemoteLoggingHelper.formatForTest("metric_name2");
+    Metric metric1 = loggingSnippets.createMetric(metricName1);
+    Metric metric2 = loggingSnippets.createMetricAsync(metricName2);
+    assertNotNull(metric1);
+    assertNotNull(metric2);
+    metric1 = loggingSnippets.getMetric(metricName1);
+    metric2 = loggingSnippets.getMetricAsync(metricName2);
+    assertNotNull(metric1);
+    assertNotNull(metric2);
+    metric1 = loggingSnippets.updateMetric(metricName1);
+    metric2 = loggingSnippets.updateMetricAsync(metricName2);
+    Set<Metric> metrics = Sets.newHashSet(loggingSnippets.listMetrics().iterateAll());
+    while (!metrics.contains(metric1) || !metrics.contains(metric2)) {
+      Thread.sleep(500);
+      metrics = Sets.newHashSet(loggingSnippets.listMetrics().iterateAll());
+    }
+    metrics = Sets.newHashSet(loggingSnippets.listMetricsAsync().iterateAll());
+    while (!metrics.contains(metric1) || !metrics.contains(metric2)) {
+      Thread.sleep(500);
+      metrics = Sets.newHashSet(loggingSnippets.listMetricsAsync().iterateAll());
+    }
+    assertTrue(loggingSnippets.deleteMetric(metricName1));
+    assertTrue(loggingSnippets.deleteMetricAsync(metricName2));
+  }
+
+  @Test
+  public void testMonitoredResourceDescriptor() throws ExecutionException, InterruptedException {
+    Iterator<MonitoredResourceDescriptor> iterator =
+        loggingSnippets.listMonitoredResourceDescriptors().iterateAll();
+    Set<String> descriptorTypes = new HashSet<>();
+    while (iterator.hasNext()) {
+      descriptorTypes.add(iterator.next().type());
+    }
+    for (String type : DESCRIPTOR_TYPES) {
+      assertTrue(descriptorTypes.contains(type));
+    }
+    iterator = loggingSnippets.listMonitoredResourceDescriptorsAsync().iterateAll();
+    descriptorTypes.clear();
+    while (iterator.hasNext()) {
+      descriptorTypes.add(iterator.next().type());
+    }
+    for (String type : DESCRIPTOR_TYPES) {
+      assertTrue(descriptorTypes.contains(type));
+    }
+  }
+
+  @Test
+  public void testWriteAndListLogEntries() throws InterruptedException {
+    String logName = RemoteLoggingHelper.formatForTest("log_name");
+    String filter = "logName=projects/" + logging.options().projectId() + "/logs/" + logName;
+    loggingSnippets.write(logName);
+    Iterator<LogEntry> iterator = loggingSnippets.listLogEntries(filter).iterateAll();
+    while (Iterators.size(iterator) < 2) {
+      Thread.sleep(500);
+      iterator = loggingSnippets.listLogEntries(filter).iterateAll();
+    }
+    assertTrue(loggingSnippets.deleteLog(logName));
+  }
+
+  @Test
+  public void testWriteAndListLogEntriesAsync() throws ExecutionException, InterruptedException {
+    String logName = RemoteLoggingHelper.formatForTest("log_name");
+    String filter = "logName=projects/" + logging.options().projectId() + "/logs/" + logName;
+    loggingSnippets.writeAsync(logName).get();
+    Iterator<LogEntry> iterator = loggingSnippets.listLogEntriesAsync(filter).iterateAll();
+    while (Iterators.size(iterator) < 2) {
+      Thread.sleep(500);
+      iterator = loggingSnippets.listLogEntriesAsync(filter).iterateAll();
+    }
+    assertTrue(loggingSnippets.deleteLogAsync(logName));
+  }
+}
