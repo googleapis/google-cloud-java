@@ -12,7 +12,7 @@
  * the License.
  */
 
-package com.google.cloud.devtools.cloudtrace.spi.v1;
+package com.google.cloud.cloudtrace.spi.v1;
 
 import com.google.common.collect.Lists;
 import com.google.devtools.cloudtrace.v1.GetTraceRequest;

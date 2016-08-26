@@ -11,7 +11,7 @@
  * or implied. See the License for the specific language governing permissions and limitations under
  * the License.
  */
-package com.google.cloud.devtools.cloudtrace.spi.v1;
+package com.google.cloud.cloudtrace.spi.v1;
 
 import com.google.api.gax.core.ConnectionSettings;
 import com.google.api.gax.core.RetrySettings;
@@ -55,13 +55,13 @@ import org.joda.time.Duration;
  *
  * <p>The builder of this class is recursive, so contained classes are themselves builders.
  * When build() is called, the tree of builders is called to create the complete settings
- * object. For example, to set the total timeout of getTrace to 30 seconds:
+ * object. For example, to set the total timeout of patchTraces to 30 seconds:
  *
  * <pre>
  * <code>
  * TraceServiceSettings.Builder traceServiceSettingsBuilder =
  *     TraceServiceSettings.defaultBuilder();
- * traceServiceSettingsBuilder.getTraceSettings().getRetrySettingsBuilder()
+ * traceServiceSettingsBuilder.patchTracesSettings().getRetrySettingsBuilder()
  *     .setTotalTimeout(Duration.standardSeconds(30));
  * TraceServiceSettings traceServiceSettings = traceServiceSettingsBuilder.build();
  * </code>
@@ -99,17 +99,16 @@ public class TraceServiceSettings extends ServiceApiSettings {
           .provideCredentialsWith(DEFAULT_SERVICE_SCOPES)
           .build();
 
+  private final SimpleCallSettings<PatchTracesRequest, Empty> patchTracesSettings;
+  private final SimpleCallSettings<GetTraceRequest, Trace> getTraceSettings;
   private final PageStreamingCallSettings<ListTracesRequest, ListTracesResponse, Trace>
       listTracesSettings;
-  private final SimpleCallSettings<GetTraceRequest, Trace> getTraceSettings;
-  private final SimpleCallSettings<PatchTracesRequest, Empty> patchTracesSettings;
 
   /**
-   * Returns the object with the settings used for calls to listTraces.
+   * Returns the object with the settings used for calls to patchTraces.
    */
-  public PageStreamingCallSettings<ListTracesRequest, ListTracesResponse, Trace>
-      listTracesSettings() {
-    return listTracesSettings;
+  public SimpleCallSettings<PatchTracesRequest, Empty> patchTracesSettings() {
+    return patchTracesSettings;
   }
 
   /**
@@ -120,10 +119,11 @@ public class TraceServiceSettings extends ServiceApiSettings {
   }
 
   /**
-   * Returns the object with the settings used for calls to patchTraces.
+   * Returns the object with the settings used for calls to listTraces.
    */
-  public SimpleCallSettings<PatchTracesRequest, Empty> patchTracesSettings() {
-    return patchTracesSettings;
+  public PageStreamingCallSettings<ListTracesRequest, ListTracesResponse, Trace>
+      listTracesSettings() {
+    return listTracesSettings;
   }
 
   /**
@@ -177,9 +177,9 @@ public class TraceServiceSettings extends ServiceApiSettings {
         settingsBuilder.getClientLibName(),
         settingsBuilder.getClientLibVersion());
 
-    listTracesSettings = settingsBuilder.listTracesSettings().build();
-    getTraceSettings = settingsBuilder.getTraceSettings().build();
     patchTracesSettings = settingsBuilder.patchTracesSettings().build();
+    getTraceSettings = settingsBuilder.getTraceSettings().build();
+    listTracesSettings = settingsBuilder.listTracesSettings().build();
   }
 
   private static PageStreamingDescriptor<ListTracesRequest, ListTracesResponse, Trace>
@@ -212,10 +212,10 @@ public class TraceServiceSettings extends ServiceApiSettings {
   public static class Builder extends ServiceApiSettings.Builder {
     private final ImmutableList<ApiCallSettings.Builder> methodSettingsBuilders;
 
+    private SimpleCallSettings.Builder<PatchTracesRequest, Empty> patchTracesSettings;
+    private SimpleCallSettings.Builder<GetTraceRequest, Trace> getTraceSettings;
     private PageStreamingCallSettings.Builder<ListTracesRequest, ListTracesResponse, Trace>
         listTracesSettings;
-    private SimpleCallSettings.Builder<GetTraceRequest, Trace> getTraceSettings;
-    private SimpleCallSettings.Builder<PatchTracesRequest, Empty> patchTracesSettings;
 
     private static final ImmutableMap<String, ImmutableSet<Status.Code>> RETRYABLE_CODE_DEFINITIONS;
 
@@ -251,25 +251,25 @@ public class TraceServiceSettings extends ServiceApiSettings {
     private Builder() {
       super(DEFAULT_CONNECTION_SETTINGS);
 
+      patchTracesSettings = SimpleCallSettings.newBuilder(TraceServiceGrpc.METHOD_PATCH_TRACES);
+
+      getTraceSettings = SimpleCallSettings.newBuilder(TraceServiceGrpc.METHOD_GET_TRACE);
+
       listTracesSettings =
           PageStreamingCallSettings.newBuilder(
               TraceServiceGrpc.METHOD_LIST_TRACES, LIST_TRACES_PAGE_STR_DESC);
 
-      getTraceSettings = SimpleCallSettings.newBuilder(TraceServiceGrpc.METHOD_GET_TRACE);
-
-      patchTracesSettings = SimpleCallSettings.newBuilder(TraceServiceGrpc.METHOD_PATCH_TRACES);
-
       methodSettingsBuilders =
           ImmutableList.<ApiCallSettings.Builder>of(
-              listTracesSettings, getTraceSettings, patchTracesSettings);
+              patchTracesSettings, getTraceSettings, listTracesSettings);
     }
 
     private static Builder createDefault() {
       Builder builder = new Builder();
 
       builder
-          .listTracesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .patchTracesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettingsBuilder(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
@@ -278,8 +278,8 @@ public class TraceServiceSettings extends ServiceApiSettings {
           .setRetrySettingsBuilder(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
-          .patchTracesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .listTracesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettingsBuilder(RETRY_PARAM_DEFINITIONS.get("default"));
 
       return builder;
@@ -288,13 +288,13 @@ public class TraceServiceSettings extends ServiceApiSettings {
     private Builder(TraceServiceSettings settings) {
       super(settings);
 
-      listTracesSettings = settings.listTracesSettings.toBuilder();
-      getTraceSettings = settings.getTraceSettings.toBuilder();
       patchTracesSettings = settings.patchTracesSettings.toBuilder();
+      getTraceSettings = settings.getTraceSettings.toBuilder();
+      listTracesSettings = settings.listTracesSettings.toBuilder();
 
       methodSettingsBuilders =
           ImmutableList.<ApiCallSettings.Builder>of(
-              listTracesSettings, getTraceSettings, patchTracesSettings);
+              patchTracesSettings, getTraceSettings, listTracesSettings);
     }
 
     @Override
@@ -355,11 +355,10 @@ public class TraceServiceSettings extends ServiceApiSettings {
     }
 
     /**
-     * Returns the builder for the settings used for calls to listTraces.
+     * Returns the builder for the settings used for calls to patchTraces.
      */
-    public PageStreamingCallSettings.Builder<ListTracesRequest, ListTracesResponse, Trace>
-        listTracesSettings() {
-      return listTracesSettings;
+    public SimpleCallSettings.Builder<PatchTracesRequest, Empty> patchTracesSettings() {
+      return patchTracesSettings;
     }
 
     /**
@@ -370,10 +369,11 @@ public class TraceServiceSettings extends ServiceApiSettings {
     }
 
     /**
-     * Returns the builder for the settings used for calls to patchTraces.
+     * Returns the builder for the settings used for calls to listTraces.
      */
-    public SimpleCallSettings.Builder<PatchTracesRequest, Empty> patchTracesSettings() {
-      return patchTracesSettings;
+    public PageStreamingCallSettings.Builder<ListTracesRequest, ListTracesResponse, Trace>
+        listTracesSettings() {
+      return listTracesSettings;
     }
 
     @Override

@@ -11,7 +11,7 @@
  * or implied. See the License for the specific language governing permissions and limitations under
  * the License.
  */
-package com.google.cloud.devtools.cloudtrace.spi.v1;
+package com.google.cloud.cloudtrace.spi.v1;
 
 import com.google.api.gax.core.PageAccessor;
 import com.google.api.gax.grpc.ApiCallable;
@@ -45,8 +45,8 @@ import java.util.concurrent.ScheduledExecutorService;
  * <code>
  * try (TraceServiceApi traceServiceApi = TraceServiceApi.create()) {
  *   String projectId = "";
- *   String traceId = "";
- *   Trace response = traceServiceApi.getTrace(projectId, traceId);
+ *   Traces traces = Traces.newBuilder().build();
+ *   traceServiceApi.patchTraces(projectId, traces);
  * }
  * </code>
  * </pre>
@@ -94,10 +94,10 @@ public class TraceServiceApi implements AutoCloseable {
   private final ScheduledExecutorService executor;
   private final List<AutoCloseable> closeables = new ArrayList<>();
 
+  private final ApiCallable<PatchTracesRequest, Empty> patchTracesCallable;
+  private final ApiCallable<GetTraceRequest, Trace> getTraceCallable;
   private final ApiCallable<ListTracesRequest, ListTracesResponse> listTracesCallable;
   private final ApiCallable<ListTracesRequest, PageAccessor<Trace>> listTracesPagedCallable;
-  private final ApiCallable<GetTraceRequest, Trace> getTraceCallable;
-  private final ApiCallable<PatchTracesRequest, Empty> patchTracesCallable;
 
   public final TraceServiceSettings getSettings() {
     return settings;
@@ -129,14 +129,14 @@ public class TraceServiceApi implements AutoCloseable {
     this.executor = settings.getExecutorProvider().getOrBuildExecutor();
     this.channel = settings.getChannelProvider().getOrBuildChannel(this.executor);
 
+    this.patchTracesCallable =
+        ApiCallable.create(settings.patchTracesSettings(), this.channel, this.executor);
+    this.getTraceCallable =
+        ApiCallable.create(settings.getTraceSettings(), this.channel, this.executor);
     this.listTracesCallable =
         ApiCallable.create(settings.listTracesSettings(), this.channel, this.executor);
     this.listTracesPagedCallable =
         ApiCallable.createPagedVariant(settings.listTracesSettings(), this.channel, this.executor);
-    this.getTraceCallable =
-        ApiCallable.create(settings.getTraceSettings(), this.channel, this.executor);
-    this.patchTracesCallable =
-        ApiCallable.create(settings.patchTracesSettings(), this.channel, this.executor);
 
     if (settings.getChannelProvider().shouldAutoClose()) {
       closeables.add(
@@ -156,6 +156,158 @@ public class TraceServiceApi implements AutoCloseable {
             }
           });
     }
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sends new traces to Cloud Trace or updates existing traces. If the ID of
+   * a trace that you send matches that of an existing trace, any fields
+   * in the existing trace and its spans are overwritten by the provided values,
+   * and any new fields provided are merged with the existing trace data. If the
+   * ID does not match, a new trace is created.
+   *
+   * Sample code:
+   * <pre><code>
+   * try (TraceServiceApi traceServiceApi = TraceServiceApi.create()) {
+   *   String projectId = "";
+   *   Traces traces = Traces.newBuilder().build();
+   *   traceServiceApi.patchTraces(projectId, traces);
+   * }
+   * </code></pre>
+   *
+   * @param projectId ID of the Cloud project where the trace data is stored.
+   * @param traces The body of the message.
+   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   */
+  public final void patchTraces(String projectId, Traces traces) {
+    PatchTracesRequest request =
+        PatchTracesRequest.newBuilder().setProjectId(projectId).setTraces(traces).build();
+    patchTraces(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sends new traces to Cloud Trace or updates existing traces. If the ID of
+   * a trace that you send matches that of an existing trace, any fields
+   * in the existing trace and its spans are overwritten by the provided values,
+   * and any new fields provided are merged with the existing trace data. If the
+   * ID does not match, a new trace is created.
+   *
+   * Sample code:
+   * <pre><code>
+   * try (TraceServiceApi traceServiceApi = TraceServiceApi.create()) {
+   *   String projectId = "";
+   *   Traces traces = Traces.newBuilder().build();
+   *   PatchTracesRequest request = PatchTracesRequest.newBuilder()
+   *     .setProjectId(projectId)
+   *     .setTraces(traces)
+   *     .build();
+   *   traceServiceApi.patchTraces(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   */
+  public final void patchTraces(PatchTracesRequest request) {
+    patchTracesCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sends new traces to Cloud Trace or updates existing traces. If the ID of
+   * a trace that you send matches that of an existing trace, any fields
+   * in the existing trace and its spans are overwritten by the provided values,
+   * and any new fields provided are merged with the existing trace data. If the
+   * ID does not match, a new trace is created.
+   *
+   * Sample code:
+   * <pre><code>
+   * try (TraceServiceApi traceServiceApi = TraceServiceApi.create()) {
+   *   String projectId = "";
+   *   Traces traces = Traces.newBuilder().build();
+   *   PatchTracesRequest request = PatchTracesRequest.newBuilder()
+   *     .setProjectId(projectId)
+   *     .setTraces(traces)
+   *     .build();
+   *   ListenableFuture&lt;Void&gt; future = traceServiceApi.patchTracesCallable().futureCall(request);
+   *   // Do something
+   *   future.get();
+   * }
+   * </code></pre>
+   */
+  public final ApiCallable<PatchTracesRequest, Empty> patchTracesCallable() {
+    return patchTracesCallable;
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets a single trace by its ID.
+   *
+   * Sample code:
+   * <pre><code>
+   * try (TraceServiceApi traceServiceApi = TraceServiceApi.create()) {
+   *   String projectId = "";
+   *   String traceId = "";
+   *   Trace response = traceServiceApi.getTrace(projectId, traceId);
+   * }
+   * </code></pre>
+   *
+   * @param projectId ID of the Cloud project where the trace data is stored.
+   * @param traceId ID of the trace to return.
+   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   */
+  public final Trace getTrace(String projectId, String traceId) {
+    GetTraceRequest request =
+        GetTraceRequest.newBuilder().setProjectId(projectId).setTraceId(traceId).build();
+    return getTrace(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets a single trace by its ID.
+   *
+   * Sample code:
+   * <pre><code>
+   * try (TraceServiceApi traceServiceApi = TraceServiceApi.create()) {
+   *   String projectId = "";
+   *   String traceId = "";
+   *   GetTraceRequest request = GetTraceRequest.newBuilder()
+   *     .setProjectId(projectId)
+   *     .setTraceId(traceId)
+   *     .build();
+   *   Trace response = traceServiceApi.getTrace(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   */
+  private final Trace getTrace(GetTraceRequest request) {
+    return getTraceCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets a single trace by its ID.
+   *
+   * Sample code:
+   * <pre><code>
+   * try (TraceServiceApi traceServiceApi = TraceServiceApi.create()) {
+   *   String projectId = "";
+   *   String traceId = "";
+   *   GetTraceRequest request = GetTraceRequest.newBuilder()
+   *     .setProjectId(projectId)
+   *     .setTraceId(traceId)
+   *     .build();
+   *   ListenableFuture&lt;Trace&gt; future = traceServiceApi.getTraceCallable().futureCall(request);
+   *   // Do something
+   *   Trace response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final ApiCallable<GetTraceRequest, Trace> getTraceCallable() {
+    return getTraceCallable;
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -255,158 +407,6 @@ public class TraceServiceApi implements AutoCloseable {
    */
   public final ApiCallable<ListTracesRequest, ListTracesResponse> listTracesCallable() {
     return listTracesCallable;
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Gets a single trace by its ID.
-   *
-   * Sample code:
-   * <pre><code>
-   * try (TraceServiceApi traceServiceApi = TraceServiceApi.create()) {
-   *   String projectId = "";
-   *   String traceId = "";
-   *   Trace response = traceServiceApi.getTrace(projectId, traceId);
-   * }
-   * </code></pre>
-   *
-   * @param projectId ID of the Cloud project where the trace data is stored.
-   * @param traceId ID of the trace to return.
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
-   */
-  public final Trace getTrace(String projectId, String traceId) {
-    GetTraceRequest request =
-        GetTraceRequest.newBuilder().setProjectId(projectId).setTraceId(traceId).build();
-    return getTrace(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Gets a single trace by its ID.
-   *
-   * Sample code:
-   * <pre><code>
-   * try (TraceServiceApi traceServiceApi = TraceServiceApi.create()) {
-   *   String projectId = "";
-   *   String traceId = "";
-   *   GetTraceRequest request = GetTraceRequest.newBuilder()
-   *     .setProjectId(projectId)
-   *     .setTraceId(traceId)
-   *     .build();
-   *   Trace response = traceServiceApi.getTrace(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
-   */
-  private final Trace getTrace(GetTraceRequest request) {
-    return getTraceCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Gets a single trace by its ID.
-   *
-   * Sample code:
-   * <pre><code>
-   * try (TraceServiceApi traceServiceApi = TraceServiceApi.create()) {
-   *   String projectId = "";
-   *   String traceId = "";
-   *   GetTraceRequest request = GetTraceRequest.newBuilder()
-   *     .setProjectId(projectId)
-   *     .setTraceId(traceId)
-   *     .build();
-   *   ListenableFuture&lt;Trace&gt; future = traceServiceApi.getTraceCallable().futureCall(request);
-   *   // Do something
-   *   Trace response = future.get();
-   * }
-   * </code></pre>
-   */
-  public final ApiCallable<GetTraceRequest, Trace> getTraceCallable() {
-    return getTraceCallable;
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Sends new traces to Cloud Trace or updates existing traces. If the ID of
-   * a trace that you send matches that of an existing trace, any fields
-   * in the existing trace and its spans are overwritten by the provided values,
-   * and any new fields provided are merged with the existing trace data. If the
-   * ID does not match, a new trace is created.
-   *
-   * Sample code:
-   * <pre><code>
-   * try (TraceServiceApi traceServiceApi = TraceServiceApi.create()) {
-   *   String projectId = "";
-   *   Traces traces = Traces.newBuilder().build();
-   *   traceServiceApi.patchTraces(projectId, traces);
-   * }
-   * </code></pre>
-   *
-   * @param projectId ID of the Cloud project where the trace data is stored.
-   * @param traces The body of the message.
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
-   */
-  public final void patchTraces(String projectId, Traces traces) {
-    PatchTracesRequest request =
-        PatchTracesRequest.newBuilder().setProjectId(projectId).setTraces(traces).build();
-    patchTraces(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Sends new traces to Cloud Trace or updates existing traces. If the ID of
-   * a trace that you send matches that of an existing trace, any fields
-   * in the existing trace and its spans are overwritten by the provided values,
-   * and any new fields provided are merged with the existing trace data. If the
-   * ID does not match, a new trace is created.
-   *
-   * Sample code:
-   * <pre><code>
-   * try (TraceServiceApi traceServiceApi = TraceServiceApi.create()) {
-   *   String projectId = "";
-   *   Traces traces = Traces.newBuilder().build();
-   *   PatchTracesRequest request = PatchTracesRequest.newBuilder()
-   *     .setProjectId(projectId)
-   *     .setTraces(traces)
-   *     .build();
-   *   traceServiceApi.patchTraces(request);
-   * }
-   * </code></pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
-   */
-  public final void patchTraces(PatchTracesRequest request) {
-    patchTracesCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD
-  /**
-   * Sends new traces to Cloud Trace or updates existing traces. If the ID of
-   * a trace that you send matches that of an existing trace, any fields
-   * in the existing trace and its spans are overwritten by the provided values,
-   * and any new fields provided are merged with the existing trace data. If the
-   * ID does not match, a new trace is created.
-   *
-   * Sample code:
-   * <pre><code>
-   * try (TraceServiceApi traceServiceApi = TraceServiceApi.create()) {
-   *   String projectId = "";
-   *   Traces traces = Traces.newBuilder().build();
-   *   PatchTracesRequest request = PatchTracesRequest.newBuilder()
-   *     .setProjectId(projectId)
-   *     .setTraces(traces)
-   *     .build();
-   *   ListenableFuture&lt;Void&gt; future = traceServiceApi.patchTracesCallable().futureCall(request);
-   *   // Do something
-   *   future.get();
-   * }
-   * </code></pre>
-   */
-  public final ApiCallable<PatchTracesRequest, Empty> patchTracesCallable() {
-    return patchTracesCallable;
   }
 
   /**

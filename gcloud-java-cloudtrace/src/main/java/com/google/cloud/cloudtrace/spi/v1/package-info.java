@@ -32,11 +32,11 @@
  * <code>
  * try (TraceServiceApi traceServiceApi = TraceServiceApi.create()) {
  *   String projectId = "";
- *   String traceId = "";
- *   Trace response = traceServiceApi.getTrace(projectId, traceId);
+ *   Traces traces = Traces.newBuilder().build();
+ *   traceServiceApi.patchTraces(projectId, traces);
  * }
  * </code>
  * </pre>
  *
  */
-package com.google.cloud.devtools.cloudtrace.spi.v1;
+package com.google.cloud.cloudtrace.spi.v1;

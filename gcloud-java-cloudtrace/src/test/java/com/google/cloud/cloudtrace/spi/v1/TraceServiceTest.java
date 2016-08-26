@@ -12,7 +12,7 @@
  * the License.
  */
 
-package com.google.cloud.devtools.cloudtrace.spi.v1;
+package com.google.cloud.cloudtrace.spi.v1;
 
 import com.google.api.gax.core.PageAccessor;
 import com.google.api.gax.testing.MockGrpcService;
@@ -28,23 +28,26 @@ import com.google.protobuf.Empty;
 import com.google.protobuf.GeneratedMessage;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
-import junit.framework.Assert;
 import org.junit.After;
 import org.junit.AfterClass;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
 @javax.annotation.Generated("by GAPIC")
 public class TraceServiceTest {
+  private static MockTraceService mockTraceService;
   private static MockServiceHelper serviceHelper;
   private TraceServiceApi api;
 
   @BeforeClass
   public static void startStaticServer() {
-    MockTraceService mockService = new MockTraceService();
-    serviceHelper = new MockServiceHelper("in-process-1", mockService);
+    mockTraceService = new MockTraceService();
+    serviceHelper =
+        new MockServiceHelper("in-process-1", Arrays.<MockGrpcService>asList(mockTraceService));
     serviceHelper.start();
   }
 
@@ -70,65 +73,79 @@ public class TraceServiceTest {
 
   @Test
   @SuppressWarnings("all")
-  public void listTracesTest() {
-    ListTracesResponse expectedResponse = ListTracesResponse.newBuilder().build();
+  public void patchTracesTest() {
+    Empty expectedResponse = Empty.newBuilder().build();
     List<GeneratedMessage> expectedResponses = new ArrayList<>();
     expectedResponses.add(expectedResponse);
-    serviceHelper.getService().setResponses(expectedResponses);
+    mockTraceService.setResponses(expectedResponses);
 
-    String projectId = "";
-    PageAccessor<Trace> pageAccessor = api.listTraces(projectId);
+    String projectId = "projectId-1969970175";
+    Traces traces = Traces.newBuilder().build();
 
-    // PageAccessor will not make actual request until it is being used.
-    // Add all the pages here in order to make grpc requests.
-    List<Trace> resources = Lists.newArrayList(pageAccessor.getPageValues());
-    Assert.assertEquals(0, resources.size());
+    api.patchTraces(projectId, traces);
 
-    List<GeneratedMessage> actualRequests = serviceHelper.getService().getRequests();
+    List<GeneratedMessage> actualRequests = mockTraceService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    ListTracesRequest actualRequest = (ListTracesRequest) actualRequests.get(0);
+    PatchTracesRequest actualRequest = (PatchTracesRequest) actualRequests.get(0);
 
-    Assert.assertEquals(actualRequest.getProjectId(), projectId);
+    Assert.assertEquals(projectId, actualRequest.getProjectId());
+    Assert.assertEquals(traces, actualRequest.getTraces());
   }
 
   @Test
   @SuppressWarnings("all")
   public void getTraceTest() {
-    Trace expectedResponse = Trace.newBuilder().build();
+    String projectId2 = "projectId2939242356";
+    String traceId2 = "traceId2987826376";
+    Trace expectedResponse =
+        Trace.newBuilder().setProjectId(projectId2).setTraceId(traceId2).build();
     List<GeneratedMessage> expectedResponses = new ArrayList<>();
     expectedResponses.add(expectedResponse);
-    serviceHelper.getService().setResponses(expectedResponses);
+    mockTraceService.setResponses(expectedResponses);
 
-    String projectId = "";
-    String traceId = "";
+    String projectId = "projectId-1969970175";
+    String traceId = "traceId1270300245";
+
     Trace actualResponse = api.getTrace(projectId, traceId);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessage> actualRequests = serviceHelper.getService().getRequests();
+    List<GeneratedMessage> actualRequests = mockTraceService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetTraceRequest actualRequest = (GetTraceRequest) actualRequests.get(0);
 
-    Assert.assertEquals(actualRequest.getProjectId(), projectId);
-    Assert.assertEquals(actualRequest.getTraceId(), traceId);
+    Assert.assertEquals(projectId, actualRequest.getProjectId());
+    Assert.assertEquals(traceId, actualRequest.getTraceId());
   }
 
   @Test
   @SuppressWarnings("all")
-  public void patchTracesTest() {
-    Empty expectedResponse = Empty.newBuilder().build();
+  public void listTracesTest() {
+    Trace tracesElement = Trace.newBuilder().build();
+    List<Trace> traces = Arrays.asList(tracesElement);
+    String nextPageToken = "nextPageToken-1530815211";
+    ListTracesResponse expectedResponse =
+        ListTracesResponse.newBuilder()
+            .addAllTraces(traces)
+            .setNextPageToken(nextPageToken)
+            .build();
     List<GeneratedMessage> expectedResponses = new ArrayList<>();
     expectedResponses.add(expectedResponse);
-    serviceHelper.getService().setResponses(expectedResponses);
+    mockTraceService.setResponses(expectedResponses);
 
-    String projectId = "";
-    Traces traces = Traces.newBuilder().build();
-    api.patchTraces(projectId, traces);
+    String projectId = "projectId-1969970175";
 
-    List<GeneratedMessage> actualRequests = serviceHelper.getService().getRequests();
+    PageAccessor<Trace> pageAccessor = api.listTraces(projectId);
+
+    // PageAccessor will not make actual request until it is being used.
+    // Add all the pages here in order to make grpc requests.
+    List<Trace> resources = Lists.newArrayList(pageAccessor.getPageValues());
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getTracesList().get(0), resources.get(0));
+
+    List<GeneratedMessage> actualRequests = mockTraceService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
-    PatchTracesRequest actualRequest = (PatchTracesRequest) actualRequests.get(0);
+    ListTracesRequest actualRequest = (ListTracesRequest) actualRequests.get(0);
 
-    Assert.assertEquals(actualRequest.getProjectId(), projectId);
-    Assert.assertEquals(actualRequest.getTraces(), traces);
+    Assert.assertEquals(projectId, actualRequest.getProjectId());
   }
 }
