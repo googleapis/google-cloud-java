@@ -1371,10 +1371,10 @@ public interface Storage extends Service<StorageOptions> {
    * Lists the bucket's blobs. If the {@link BlobListOption#currentDirectory()} option is provided,
    * results are returned in a directory-like mode.
    *
-   * <p>Example of listing buckets, specifying the page size and a name prefix.
+   * <p>Example of listing blobs in a provided directory.
    * <pre> {@code
    * String bucketName = "my_unique_bucket";
-   * String directory = "my_directory";
+   * String directory = "my_directory/";
    * Page<Blob> blobs = storage.list(bucketName, BlobListOption.currentDirectory(),
    *     BlobListOption.prefix(directory));
    * Iterator<Blob> blobIterator = blobs.iterateAll();
