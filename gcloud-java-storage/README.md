@@ -102,7 +102,7 @@ Bucket bucket = storage.create(BucketInfo.of(bucketName));
 
 // Upload a blob to the newly created bucket
 BlobId blobId = BlobId.of(bucketName, "my_blob_name");
-Blob blob = storage.create(
+Blob blob = bucket.create(
     "my_blob_name", "a simple blob".getBytes(UTF_8), "text/plain");
 ```
 
