@@ -24,6 +24,7 @@ package com.google.cloud.examples.storage.snippets;
 
 import static java.nio.charset.StandardCharsets.UTF_8;
 
+import com.google.cloud.Page;
 import com.google.cloud.storage.Blob;
 import com.google.cloud.storage.Bucket;
 import com.google.cloud.storage.Bucket.BucketSourceOption;
@@ -110,15 +111,16 @@ public class BucketSnippets {
    * Example of listing the blobs in the bucket.
    */
   // [TARGET list(BlobListOption...)]
-  public Iterator<Blob> listBlobs() {
+  public Page<Blob> listBlobs() {
     // [START listBlobs]
-    Iterator<Blob> blobIterator = bucket.list().iterateAll();
+    Page<Blob> blobs = bucket.list();
+    Iterator<Blob> blobIterator = blobs.iterateAll();
     while (blobIterator.hasNext()) {
       Blob blob = blobIterator.next();
       // do something with the blob
     }
     // [END listBlobs]
-    return blobIterator;
+    return blobs;
   }
 
   /**

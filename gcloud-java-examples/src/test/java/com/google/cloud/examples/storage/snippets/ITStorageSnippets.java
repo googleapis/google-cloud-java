@@ -24,25 +24,30 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
+import com.google.cloud.Page;
 import com.google.cloud.storage.Blob;
 import com.google.cloud.storage.BlobInfo;
 import com.google.cloud.storage.Bucket;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageException;
 import com.google.cloud.storage.testing.RemoteStorageHelper;
+import com.google.common.collect.Iterators;
 
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
+import org.junit.rules.Timeout;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
@@ -58,6 +63,9 @@ public class ITStorageSnippets {
 
   @Rule
   public ExpectedException thrown = ExpectedException.none();
+
+  @Rule
+  public Timeout globalTimeout = Timeout.seconds(300);
 
   @BeforeClass
   public static void beforeClass() {
@@ -78,7 +86,7 @@ public class ITStorageSnippets {
   }
 
   @Test
-  public void testBlob() {
+  public void testBlob() throws InterruptedException {
     String blobName = "directory/test-blob";
     Blob blob = storageSnippets.createBlob(BUCKET, blobName);
     assertNotNull(blob);
@@ -88,12 +96,20 @@ public class ITStorageSnippets {
     assertNotNull(blob);
     blob = storageSnippets.updateBlobWithMetageneration(BUCKET, blobName);
     assertNotNull(blob);
-    blob = storageSnippets.copyBlob(BUCKET, blobName, "directory/copy-blob");
-    assertNotNull(blob);
-    Iterator<Blob> blobs = storageSnippets.listBlobsWithDirectoryAndPrefix(BUCKET, "directory");
-    while (blobs.hasNext()) {
-      assertTrue(blobs.next().name().startsWith("directory"));
-    }    blob.delete();
+    Blob copiedBlob = storageSnippets.copyBlob(BUCKET, blobName, "directory/copy-blob");
+    assertNotNull(copiedBlob);
+    Page<Blob> blobs = storageSnippets.listBlobsWithDirectoryAndPrefix(BUCKET, "directory/");
+    while (Iterators.size(blobs.iterateAll()) < 2) {
+      Thread.sleep(500);
+      blobs = storageSnippets.listBlobsWithDirectoryAndPrefix(BUCKET, "directory/");
+    }
+    Set<String> blobNames = new HashSet<>();
+    Iterator<Blob> blobIterator = blobs.iterateAll();
+    while (blobIterator.hasNext()) {
+      blobNames.add(blobIterator.next().name());
+    }
+    assertTrue(blobNames.contains(blobName));
+    assertTrue(blobNames.contains("directory/copy-blob"));
     try {
       storageSnippets.getBlobFromStringsWithMetageneration(BUCKET, blobName, -1);
       fail("Expected StorageException to be thrown");
@@ -101,6 +117,7 @@ public class ITStorageSnippets {
       // expected
     }
     assertTrue(storageSnippets.deleteBlob(BUCKET, blobName));
+    copiedBlob.delete();
   }
 
   @Test
@@ -136,10 +153,15 @@ public class ITStorageSnippets {
   }
 
   @Test
-  public void testListBucketsWithSizeAndPrefix() {
-    Iterator<Bucket> buckets = storageSnippets.listBucketsWithSizeAndPrefix(BUCKET);
-    while (buckets.hasNext()) {
-      assertTrue(buckets.next().name().startsWith(BUCKET));
+  public void testListBucketsWithSizeAndPrefix() throws InterruptedException {
+    Page<Bucket> buckets = storageSnippets.listBucketsWithSizeAndPrefix(BUCKET);
+    while (Iterators.size(buckets.iterateAll()) < 1) {
+      Thread.sleep(500);
+      buckets = storageSnippets.listBucketsWithSizeAndPrefix(BUCKET);
+    }
+    Iterator<Bucket> bucketIterator = buckets.iterateAll();
+    while (bucketIterator.hasNext()) {
+      assertTrue(bucketIterator.next().name().startsWith(BUCKET));
     }
   }
 

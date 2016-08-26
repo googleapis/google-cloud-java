@@ -201,7 +201,7 @@ public class StorageSnippets {
    */
   // [TARGET list(BucketListOption...)]
   // [VARIABLE "bucket_"]
-  public Iterator<Bucket> listBucketsWithSizeAndPrefix(String prefix) {
+  public Page<Bucket> listBucketsWithSizeAndPrefix(String prefix) {
     // [START listBucketsWithSizeAndPrefix]
     Page<Bucket> buckets = storage.list(BucketListOption.pageSize(100),
         BucketListOption.prefix(prefix));
@@ -211,16 +211,16 @@ public class StorageSnippets {
       // do something with the bucket
     }
     // [END listBucketsWithSizeAndPrefix]
-    return bucketIterator;
+    return buckets;
   }
 
   /**
-   * Example of listing buckets, specifying the page size and a name prefix.
+   * Example of listing blobs in a provided directory.
    */
   // [TARGET list(String, BlobListOption...)]
   // [VARIABLE "my_unique_bucket"]
-  // [VARIABLE "my_directory"]
-  public Iterator<Blob> listBlobsWithDirectoryAndPrefix(String bucketName, String directory) {
+  // [VARIABLE "my_directory/"]
+  public Page<Blob> listBlobsWithDirectoryAndPrefix(String bucketName, String directory) {
     // [START listBlobsWithDirectoryAndPrefix]
     Page<Blob> blobs = storage.list(bucketName, BlobListOption.currentDirectory(),
         BlobListOption.prefix(directory));
@@ -230,7 +230,7 @@ public class StorageSnippets {
       // do something with the blob
     }
     // [END listBlobsWithDirectoryAndPrefix]
-    return blobIterator;
+    return blobs;
   }
 
   /**

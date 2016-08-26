@@ -26,15 +26,15 @@ import com.google.cloud.storage.BucketInfo;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageException;
 import com.google.cloud.storage.testing.RemoteStorageHelper;
-import com.google.common.collect.ImmutableSet;
+import com.google.common.collect.Sets;
 
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
+import org.junit.rules.Timeout;
 
-import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.ExecutionException;
@@ -50,13 +50,15 @@ public class ITBucketSnippets {
   private static final String BLOB2 = "blob2";
   private static final String BLOB3 = "blob3";
   private static final String BLOB4 = "blob4";
-  private static final Set<String> BLOBS = ImmutableSet.of(BLOB1, BLOB2, BLOB3, BLOB4);
 
   private static Storage storage;
   private static BucketSnippets bucketSnippets;
 
   @Rule
   public ExpectedException thrown = ExpectedException.none();
+
+  @Rule
+  public Timeout globalTimeout = Timeout.seconds(300);
 
   @BeforeClass
   public static void beforeClass() {
@@ -76,7 +78,7 @@ public class ITBucketSnippets {
   }
 
   @Test
-  public void testBucket() {
+  public void testBucket() throws InterruptedException {
     assertTrue(bucketSnippets.exists());
     Bucket bucket = bucketSnippets.reload();
     assertNotNull(bucket);
@@ -90,10 +92,15 @@ public class ITBucketSnippets {
     assertNotNull(blob3);
     Blob blob4 = bucketSnippets.createBlobFromInputStreamWithContentType(BLOB4);
     assertNotNull(blob4);
-    Iterator<Blob> blobIterator = bucketSnippets.listBlobs();
-    while (blobIterator.hasNext()) {
-      assertTrue(BLOBS.contains(blobIterator.next().name()));
+    Set<Blob> blobSet = Sets.newHashSet(bucketSnippets.listBlobs().iterateAll());
+    while (blobSet.size() < 4) {
+      Thread.sleep(500);
+      blobSet = Sets.newHashSet(bucketSnippets.listBlobs().iterateAll());
     }
+    assertTrue(blobSet.contains(blob1));
+    assertTrue(blobSet.contains(blob2));
+    assertTrue(blobSet.contains(blob3));
+    assertTrue(blobSet.contains(blob4));
     blob1 = bucketSnippets.getBlob(BLOB1, blob1.generation());
     assertEquals(BLOB1, blob1.name());
     List<Blob> blobs = bucketSnippets.getBlobFromStrings(BLOB2, BLOB3);
