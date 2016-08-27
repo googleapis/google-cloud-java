@@ -24,23 +24,26 @@ import com.google.common.collect.Lists;
 import com.google.protobuf.GeneratedMessage;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
-import junit.framework.Assert;
 import org.junit.After;
 import org.junit.AfterClass;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
 @javax.annotation.Generated("by GAPIC")
 public class ImageAnnotatorTest {
+  private static MockImageAnnotator mockImageAnnotator;
   private static MockServiceHelper serviceHelper;
   private ImageAnnotatorApi api;
 
   @BeforeClass
   public static void startStaticServer() {
-    MockImageAnnotator mockService = new MockImageAnnotator();
-    serviceHelper = new MockServiceHelper("in-process-1", mockService);
+    mockImageAnnotator = new MockImageAnnotator();
+    serviceHelper =
+        new MockServiceHelper("in-process-1", Arrays.<MockGrpcService>asList(mockImageAnnotator));
     serviceHelper.start();
   }
 
@@ -70,16 +73,17 @@ public class ImageAnnotatorTest {
     BatchAnnotateImagesResponse expectedResponse = BatchAnnotateImagesResponse.newBuilder().build();
     List<GeneratedMessage> expectedResponses = new ArrayList<>();
     expectedResponses.add(expectedResponse);
-    serviceHelper.getService().setResponses(expectedResponses);
+    mockImageAnnotator.setResponses(expectedResponses);
 
     List<AnnotateImageRequest> requests = new ArrayList<>();
+
     BatchAnnotateImagesResponse actualResponse = api.batchAnnotateImages(requests);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessage> actualRequests = serviceHelper.getService().getRequests();
+    List<GeneratedMessage> actualRequests = mockImageAnnotator.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     BatchAnnotateImagesRequest actualRequest = (BatchAnnotateImagesRequest) actualRequests.get(0);
 
-    Assert.assertEquals(actualRequest.getRequestsList(), requests);
+    Assert.assertEquals(requests, actualRequest.getRequestsList());
   }
 }
