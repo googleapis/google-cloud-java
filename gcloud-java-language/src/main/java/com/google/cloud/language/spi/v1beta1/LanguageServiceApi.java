@@ -230,7 +230,7 @@ public class LanguageServiceApi implements AutoCloseable {
    * <pre><code>
    * try (LanguageServiceApi languageServiceApi = LanguageServiceApi.create()) {
    *   Document document = Document.newBuilder().build();
-   *   EncodingType encodingType = EncodingType.forNumber(0);
+   *   EncodingType encodingType = EncodingType.NONE;
    *   AnalyzeEntitiesResponse response = languageServiceApi.analyzeEntities(document, encodingType);
    * }
    * </code></pre>
@@ -258,7 +258,7 @@ public class LanguageServiceApi implements AutoCloseable {
    * <pre><code>
    * try (LanguageServiceApi languageServiceApi = LanguageServiceApi.create()) {
    *   Document document = Document.newBuilder().build();
-   *   EncodingType encodingType = EncodingType.forNumber(0);
+   *   EncodingType encodingType = EncodingType.NONE;
    *   AnalyzeEntitiesRequest request = AnalyzeEntitiesRequest.newBuilder()
    *     .setDocument(document)
    *     .setEncodingType(encodingType)
@@ -283,7 +283,7 @@ public class LanguageServiceApi implements AutoCloseable {
    * <pre><code>
    * try (LanguageServiceApi languageServiceApi = LanguageServiceApi.create()) {
    *   Document document = Document.newBuilder().build();
-   *   EncodingType encodingType = EncodingType.forNumber(0);
+   *   EncodingType encodingType = EncodingType.NONE;
    *   AnalyzeEntitiesRequest request = AnalyzeEntitiesRequest.newBuilder()
    *     .setDocument(document)
    *     .setEncodingType(encodingType)
@@ -310,8 +310,8 @@ public class LanguageServiceApi implements AutoCloseable {
    * <pre><code>
    * try (LanguageServiceApi languageServiceApi = LanguageServiceApi.create()) {
    *   Document document = Document.newBuilder().build();
-   *   AnnotateTextRequest.Features features = AnnotateTextRequest.Features.newBuilder().build();
-   *   EncodingType encodingType = EncodingType.forNumber(0);
+   *   Features features = Features.newBuilder().build();
+   *   EncodingType encodingType = EncodingType.NONE;
    *   AnnotateTextResponse response = languageServiceApi.annotateText(document, features, encodingType);
    * }
    * </code></pre>
@@ -322,7 +322,7 @@ public class LanguageServiceApi implements AutoCloseable {
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final AnnotateTextResponse annotateText(
-      Document document, AnnotateTextRequest.Features features, EncodingType encodingType) {
+      Document document, Features features, EncodingType encodingType) {
     AnnotateTextRequest request =
         AnnotateTextRequest.newBuilder()
             .setDocument(document)
@@ -343,8 +343,8 @@ public class LanguageServiceApi implements AutoCloseable {
    * <pre><code>
    * try (LanguageServiceApi languageServiceApi = LanguageServiceApi.create()) {
    *   Document document = Document.newBuilder().build();
-   *   AnnotateTextRequest.Features features = AnnotateTextRequest.Features.newBuilder().build();
-   *   EncodingType encodingType = EncodingType.forNumber(0);
+   *   Features features = Features.newBuilder().build();
+   *   EncodingType encodingType = EncodingType.NONE;
    *   AnnotateTextRequest request = AnnotateTextRequest.newBuilder()
    *     .setDocument(document)
    *     .setFeatures(features)
@@ -372,8 +372,8 @@ public class LanguageServiceApi implements AutoCloseable {
    * <pre><code>
    * try (LanguageServiceApi languageServiceApi = LanguageServiceApi.create()) {
    *   Document document = Document.newBuilder().build();
-   *   AnnotateTextRequest.Features features = AnnotateTextRequest.Features.newBuilder().build();
-   *   EncodingType encodingType = EncodingType.forNumber(0);
+   *   Features features = Features.newBuilder().build();
+   *   EncodingType encodingType = EncodingType.NONE;
    *   AnnotateTextRequest request = AnnotateTextRequest.newBuilder()
    *     .setDocument(document)
    *     .setFeatures(features)
