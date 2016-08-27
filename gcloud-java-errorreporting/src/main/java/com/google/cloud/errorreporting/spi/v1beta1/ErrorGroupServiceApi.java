@@ -11,7 +11,7 @@
  * or implied. See the License for the specific language governing permissions and limitations under
  * the License.
  */
-package com.google.cloud.devtools.clouderrorreporting.spi.v1beta1;
+package com.google.cloud.errorreporting.spi.v1beta1;
 
 import com.google.api.gax.grpc.ApiCallable;
 import com.google.api.gax.protobuf.PathTemplate;

@@ -12,7 +12,7 @@
  * the License.
  */
 
-package com.google.cloud.devtools.clouderrorreporting.spi.v1beta1;
+package com.google.cloud.errorreporting.spi.v1beta1;
 
 import com.google.api.gax.core.PageAccessor;
 import com.google.api.gax.testing.MockGrpcService;
@@ -24,23 +24,33 @@ import com.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent;
 import com.google.protobuf.GeneratedMessage;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
-import junit.framework.Assert;
 import org.junit.After;
 import org.junit.AfterClass;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
 @javax.annotation.Generated("by GAPIC")
 public class ReportErrorsServiceTest {
+  private static MockErrorGroupService mockErrorGroupService;
+  private static MockErrorStatsService mockErrorStatsService;
+  private static MockReportErrorsService mockReportErrorsService;
   private static MockServiceHelper serviceHelper;
   private ReportErrorsServiceApi api;
 
   @BeforeClass
   public static void startStaticServer() {
-    MockReportErrorsService mockService = new MockReportErrorsService();
-    serviceHelper = new MockServiceHelper("in-process-1", mockService);
+    mockErrorGroupService = new MockErrorGroupService();
+    mockErrorStatsService = new MockErrorStatsService();
+    mockReportErrorsService = new MockReportErrorsService();
+    serviceHelper =
+        new MockServiceHelper(
+            "in-process-1",
+            Arrays.<MockGrpcService>asList(
+                mockErrorGroupService, mockErrorStatsService, mockReportErrorsService));
     serviceHelper.start();
   }
 
@@ -70,18 +80,19 @@ public class ReportErrorsServiceTest {
     ReportErrorEventResponse expectedResponse = ReportErrorEventResponse.newBuilder().build();
     List<GeneratedMessage> expectedResponses = new ArrayList<>();
     expectedResponses.add(expectedResponse);
-    serviceHelper.getService().setResponses(expectedResponses);
+    mockReportErrorsService.setResponses(expectedResponses);
 
     String formattedProjectName = ReportErrorsServiceApi.formatProjectName("[PROJECT]");
     ReportedErrorEvent event = ReportedErrorEvent.newBuilder().build();
+
     ReportErrorEventResponse actualResponse = api.reportErrorEvent(formattedProjectName, event);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessage> actualRequests = serviceHelper.getService().getRequests();
+    List<GeneratedMessage> actualRequests = mockReportErrorsService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ReportErrorEventRequest actualRequest = (ReportErrorEventRequest) actualRequests.get(0);
 
-    Assert.assertEquals(actualRequest.getProjectName(), formattedProjectName);
-    Assert.assertEquals(actualRequest.getEvent(), event);
+    Assert.assertEquals(formattedProjectName, actualRequest.getProjectName());
+    Assert.assertEquals(event, actualRequest.getEvent());
   }
 }

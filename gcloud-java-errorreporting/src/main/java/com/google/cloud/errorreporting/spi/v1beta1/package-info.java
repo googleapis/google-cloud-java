@@ -68,4 +68,4 @@
  * </pre>
  *
  */
-package com.google.cloud.devtools.clouderrorreporting.spi.v1beta1;
+package com.google.cloud.errorreporting.spi.v1beta1;
