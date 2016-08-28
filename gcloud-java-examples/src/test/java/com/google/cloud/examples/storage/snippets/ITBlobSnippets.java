@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.cloud.example.storage.snippets;
+package com.google.cloud.examples.storage.snippets;
 
 import static java.nio.charset.StandardCharsets.UTF_8;
 import static org.junit.Assert.assertArrayEquals;
@@ -24,7 +24,6 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
-import com.google.cloud.examples.storage.snippets.BlobSnippets;
 import com.google.cloud.storage.Blob;
 import com.google.cloud.storage.BlobId;
 import com.google.cloud.storage.BlobInfo;
