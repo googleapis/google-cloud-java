@@ -1,5 +1,18 @@
+# build version
 version: '{build}'
-os: Windows Server 2012
+
+# branches to build
+branches:
+  # blacklist
+  except:
+    - gh-pages
+    - travis
+    - appveyor
+
+# Do not build on tags
+skip_tags: true
+
+# enviroment settings
 environment:
   matrix:
     - JAVA_HOME: C:\Program Files\Java\jdk1.7.0
@@ -7,6 +20,8 @@ environment:
     secure: hEMdRRNQ5x4GHZcZGt6gsA==
   SECRET:
     secure: 8RQaiFWYQ8DoGCvFJhYYCSH063ZZQofpDxXjUZ8UZZsxVgzHQqjQz44pszw1KrjshkWD7qNHynxPOqlUDFGP9SAW08pzO1ckckNVyMVLDFMDj5WtWWXepZhTIvTbp+qJYU8ToZYzMTfOykov9uUfwS6Oy7e5RQW6SZ6S7ffuVkuRSCIkwL3YetsonB9Hl6ydKwXvyT5F+vd2xIsSkgvrlw9VVdMZl55d4Pd8nqDVDuM=
+
+# install required tools (maven, secure-file, encrypted files)
 install:
   - ps: |
       Add-Type -AssemblyName System.IO.Compression.FileSystem
@@ -25,11 +40,17 @@ install:
   - cmd: nuget install secure-file -ExcludeVersion
   - cmd: IF DEFINED SECRET (secure-file\tools\secure-file -decrypt appveyor\key.json.enc -secret %SECRET% -out appveyor\key.json)
   - cmd: IF DEFINED SECRET (SET GOOGLE_APPLICATION_CREDENTIALS=%APPVEYOR_BUILD_FOLDER%\appveyor\key.json)
-  - cmd: echo %GOOGLE_APPLICATION_CREDENTIALS%
+  - cmd: ECHO %GOOGLE_APPLICATION_CREDENTIALS%
+
+# build and install artifacts
 build_script:
   - mvn clean install -DskipTests
+
+# verify artifacts (no integration tests on PR)
 test_script:
   - IF DEFINED APPVEYOR_PULL_REQUEST_NUMBER (mvn verify -DskipITs) ELSE (mvn verify)
+
+# preserve dependencies between builds
 cache:
   - C:\maven\
   - C:\Users\appveyor\.m2
