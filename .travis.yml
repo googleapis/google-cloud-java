@@ -8,7 +8,8 @@ matrix:
     - os: linux
       jdk: openjdk7
     - os: osx
-      language: java
+      # see travis issue https://github.com/travis-ci/travis-ci/issues/2839
+      env: JAVA_HOME=$(/usr/libexec/java_home)
 before_install:
 - mvn clean
 - git clone -b travis `git config --get remote.origin.url` target/travis
