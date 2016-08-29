@@ -1,8 +1,14 @@
 language: java
-jdk:
-- oraclejdk8
-- oraclejdk7
-- openjdk7
+matrix:
+  include:
+    - os: linux
+      jdk: oraclejdk8
+    - os: linux
+      jdk: oraclejdk7
+    - os: linux
+      jdk: openjdk7
+    - os: osx
+      language: java
 before_install:
 - mvn clean
 - git clone -b travis `git config --get remote.origin.url` target/travis
