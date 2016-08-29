@@ -102,6 +102,7 @@
     <module>gcloud-java-dns</module>
     <module>gcloud-java-examples</module>
     <module>gcloud-java-logging</module>
+    <module>gcloud-java-monitoring</module>
     <module>gcloud-java-pubsub</module>
     <module>gcloud-java-resourcemanager</module>
     <module>gcloud-java-storage</module>
