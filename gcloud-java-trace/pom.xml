@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <artifactId>gcloud-java-cloudtrace</artifactId>
+  <artifactId>gcloud-java-trace</artifactId>
   <packaging>jar</packaging>
   <name>GCloud Java Stackdriver Trace</name>
-  <url>https://github.com/GoogleCloudPlatform/gcloud-java/tree/master/gcloud-java-cloudtrace</url>
+  <url>https://github.com/GoogleCloudPlatform/gcloud-java/tree/master/gcloud-java-trace</url>
   <description>
     Java idiomatic client for Stackdriver Trace.
   </description>
@@ -14,7 +14,7 @@
     <version>0.2.9-SNAPSHOT</version>
   </parent>
   <properties>
-    <site.installationModule>gcloud-java-cloudtrace</site.installationModule>
+    <site.installationModule>gcloud-java-trace</site.installationModule>
   </properties>
   <dependencies>
     <dependency>
