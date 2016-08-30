@@ -7,7 +7,7 @@ Contributing
 4. Send a pull request.
 
 
-Here are some guidelines for hacking on google-cloud.
+Here are some guidelines for hacking on google-cloud-java.
 
 
 Using maven for build/test
@@ -21,7 +21,7 @@ Follow step 2 of the [authentication instructions](https://github.com/GoogleClou
 
 It's also important to test that changes don't break compatibility with App/Compute Engine and when running elsewhere. 
 To run tests on different platforms, try deploying the apps available on the [google-cloud-examples](https://github.com/GoogleCloudPlatform/google-cloud-examples) repository.
-End-to-end tests should ensure that google-cloud works when running on the
+End-to-end tests should ensure that google-cloud-java works when running on the
 
 * App Engine production environment (see the docs for [uploading your app to production App Engine](https://cloud.google.com/appengine/docs/java/tools/maven#uploading_your_app_to_production_app_engine))
 * App Engine development server (see the docs for [testing your app with the development server](https://cloud.google.com/appengine/docs/java/tools/maven#testing_your_app_with_the_development_server))
@@ -36,7 +36,7 @@ Known issue: If you have installed the Google Cloud SDK, be sure to log in (usin
 
 Adding Features
 ---------------
-In order to add a feature to google-cloud:
+In order to add a feature to google-cloud-java:
 
 The feature must be fully documented using Javadoc and examples should be provided.
 The feature must work fully on Java 7 and above.
