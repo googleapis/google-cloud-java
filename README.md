@@ -95,7 +95,7 @@ Most `google-cloud` libraries require a project ID.  There are multiple ways to 
   ```java
   Datastore datastore = DatastoreOptions.builder().projectId("PROJECT_ID").build().service(); 
   ```
-  * Specify the environment variable `GCLOUD_PROJECT` to be your desired project ID.
+  * Specify the environment variable `GOOGLE_CLOUD_PROJECT` to be your desired project ID.
   * Set the project ID using the [Google Cloud SDK](https://cloud.google.com/sdk/?hl=en).  To use the SDK, [download the SDK](https://cloud.google.com/sdk/?hl=en) if you haven't already, and set the project ID from the command line.  For example:
 
   ```
@@ -105,7 +105,7 @@ Most `google-cloud` libraries require a project ID.  There are multiple ways to 
 `google-cloud` determines the project ID from the following sources in the listed order, stopping once it finds a value:
 
 1. Project ID supplied when building the service options
-2. Project ID specified by the environment variable `GCLOUD_PROJECT`
+2. Project ID specified by the environment variable `GOOGLE_CLOUD_PROJECT`
 3. App Engine project ID
 4. Project ID specified in the JSON credentials file pointed by the `GOOGLE_APPLICATION_CREDENTIALS` environment variable
 5. Google Cloud SDK project ID

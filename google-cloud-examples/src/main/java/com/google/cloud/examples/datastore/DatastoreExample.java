@@ -53,7 +53,7 @@ public class DatastoreExample {
 
   private static final String USER_KIND = "_DS_EXAMPLE_USER";
   private static final String COMMENT_KIND = "_DS_EXAMPLE_COMMENT";
-  private static final String NAMESPACE = "gcloud_java_example";
+  private static final String NAMESPACE = "google_cloud_example";
   private static final String DEFAULT_ACTION = "display";
   private static final Map<String, DatastoreAction> ACTIONS = new HashMap<>();
 

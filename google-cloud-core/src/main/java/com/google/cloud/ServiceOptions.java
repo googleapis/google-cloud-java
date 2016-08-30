@@ -64,10 +64,11 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
     OptionsT extends ServiceOptions<ServiceT, ServiceRpcT, OptionsT>> implements Serializable {
 
   private static final String DEFAULT_HOST = "https://www.googleapis.com";
-  private static final String PROJECT_ENV_NAME = "GCLOUD_PROJECT";
+  private static final String LEGACY_PROJECT_ENV_NAME = "GCLOUD_PROJECT";
+  private static final String PROJECT_ENV_NAME = "GOOGLE_CLOUD_PROJECT";
   private static final String MANIFEST_ARTIFACT_ID_KEY = "artifactId";
   private static final String MANIFEST_VERSION_KEY = "Implementation-Version";
-  private static final String ARTIFACT_ID = "gcloud-java-core";
+  private static final String ARTIFACT_ID = "google-cloud-core";
   private static final String LIBRARY_NAME = "gcloud-java";
   private static final String LIBRARY_VERSION = getLibraryVersion();
   private static final String APPLICATION_NAME =
@@ -261,6 +262,10 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
 
   protected String defaultProject() {
     String projectId = System.getProperty(PROJECT_ENV_NAME, System.getenv(PROJECT_ENV_NAME));
+    if (projectId == null) {
+      projectId =
+          System.getProperty(LEGACY_PROJECT_ENV_NAME, System.getenv(LEGACY_PROJECT_ENV_NAME));
+    }
     if (projectId == null) {
       projectId = appEngineProjectId();
     }
