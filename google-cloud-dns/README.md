@@ -3,14 +3,14 @@ Google Cloud Java Client for DNS
 
 Java idiomatic client for [Google Cloud DNS] (https://cloud.google.com/dns/).
 
-[![Build Status](https://travis-ci.org/GoogleCloudPlatform/gcloud-java.svg?branch=master)](https://travis-ci.org/GoogleCloudPlatform/gcloud-java)
-[![Coverage Status](https://coveralls.io/repos/GoogleCloudPlatform/gcloud-java/badge.svg?branch=master)](https://coveralls.io/r/GoogleCloudPlatform/gcloud-java?branch=master)
-[![Maven](https://img.shields.io/maven-central/v/com.google.cloud/gcloud-java-dns.svg)]( https://img.shields.io/maven-central/v/com.google.cloud/gcloud-java-dns.svg)
-[![Codacy Badge](https://api.codacy.com/project/badge/grade/9da006ad7c3a4fe1abd142e77c003917)](https://www.codacy.com/app/mziccard/gcloud-java)
+[![Build Status](https://travis-ci.org/GoogleCloudPlatform/google-cloud-java.svg?branch=master)](https://travis-ci.org/GoogleCloudPlatform/google-cloud-java)
+[![Coverage Status](https://coveralls.io/repos/GoogleCloudPlatform/google-cloud-java/badge.svg?branch=master)](https://coveralls.io/r/GoogleCloudPlatform/google-cloud-java?branch=master)
+[![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-dns.svg)]( https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-dns.svg)
+[![Codacy Badge](https://api.codacy.com/project/badge/grade/9da006ad7c3a4fe1abd142e77c003917)](https://www.codacy.com/app/mziccard/google-cloud-java)
 [![Dependency Status](https://www.versioneye.com/user/projects/56bd8ee72a29ed002d2b0969/badge.svg?style=flat)](https://www.versioneye.com/user/projects/56bd8ee72a29ed002d2b0969)
 
--  [Homepage] (https://googlecloudplatform.github.io/gcloud-java/)
--  [API Documentation] (http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/cloud/dns/package-summary.html)
+-  [Homepage] (https://googlecloudplatform.github.io/google-cloud-java/)
+-  [API Documentation] (https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/dns/package-summary.html)
 
 > Note: This client is a work-in-progress, and may occasionally
 > make backwards-incompatible changes.
@@ -21,31 +21,31 @@ If you are using Maven, add this to your pom.xml file
 ```xml
 <dependency>
   <groupId>com.google.cloud</groupId>
-  <artifactId>gcloud-java-dns</artifactId>
+  <artifactId>google-cloud-dns</artifactId>
   <version>0.2.8</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:gcloud-java-dns:0.2.8'
+compile 'com.google.cloud:google-cloud-dns:0.2.8'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "gcloud-java-dns" % "0.2.8"
+libraryDependencies += "com.google.cloud" % "google-cloud-dns" % "0.2.8"
 ```
 
 Example Application
 -------------------
 
-[`DnsExample`](../gcloud-java-examples/src/main/java/com/google/cloud/examples/dns/DnsExample.java)
+[`DnsExample`](../google-cloud-examples/src/main/java/com/google/cloud/examples/dns/DnsExample.java)
 is a simple command line interface that provides some of Google Cloud DNS's functionality.  Read
 more about using the application on the
-[`DnsExample` docs page](http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/cloud/examples/dns/DnsExample.html).
+[`DnsExample` docs page](https://googlecloudplatform.github.io/google-cloud-java/apidocs/?com/google/cloud/examples/dns/DnsExample.html).
 
 Authentication
 --------------
 
-See the [Authentication](https://github.com/GoogleCloudPlatform/gcloud-java#authentication) section
+See the [Authentication](https://github.com/GoogleCloudPlatform/google-cloud-java#authentication) section
 in the base directory's README.
 
 About Google Cloud DNS
@@ -58,7 +58,7 @@ and is a cost-effective way to make your applications and services available to 
 See the [Google Cloud DNS docs][dns-activate] for more details on how to activate
 Cloud DNS for your project.
 
-See the [``gcloud-java-dns`` API documentation][dns-api] to learn how to interact
+See the [``google-cloud-dns`` API documentation][dns-api] to learn how to interact
 with the Cloud DNS using this client Library.
 
 Getting Started
@@ -72,8 +72,8 @@ to get your project set up. You will also need to set up the local development e
 in command line: `gcloud auth login` and `gcloud config set project [YOUR PROJECT ID]`.
 
 #### Installation and setup
-You'll need to obtain the `gcloud-java-dns` library.  See the [Quickstart](#quickstart) section to
-add `gcloud-java-dns` as a dependency in your code.
+You'll need to obtain the `google-cloud-dns` library.  See the [Quickstart](#quickstart) section to
+add `google-cloud-dns` as a dependency in your code.
 
 #### Creating an authorized service object
 To make authenticated requests to Google Cloud DNS, you must create a service object with
@@ -89,10 +89,10 @@ import com.google.cloud.dns.DnsOptions;
 Dns dns = DnsOptions.defaultInstance().service();
 ```
 
-For other authentication options, see the [Authentication](https://github.com/GoogleCloudPlatform/gcloud-java#authentication) page.
+For other authentication options, see the [Authentication](https://github.com/GoogleCloudPlatform/google-cloud-java#authentication) page.
 
 #### Managing Zones
-Record sets in `gcloud-java-dns` are managed inside containers called "zones". `ZoneInfo` is a class
+Record sets in `google-cloud-dns` are managed inside containers called "zones". `ZoneInfo` is a class
 which encapsulates metadata that describe a zone in Google Cloud DNS. `Zone`, a subclass of `ZoneInfo`, adds service-related
 functionality over `ZoneInfo`.
 
@@ -120,7 +120,7 @@ Then add the following code to create a zone.
 // Create a zone metadata object
 String zoneName = "my-unique-zone"; // Change this zone name which is unique within your project
 String domainName = "someexampledomain.com."; // Change this to a domain which you own
-String description = "This is a gcloud-java-dns sample zone.";
+String description = "This is a google-cloud-dns sample zone.";
 ZoneInfo zoneInfo = ZoneInfo.of(zoneName, domainName, description);
 
 // Create zone in Google Cloud DNS
@@ -325,11 +325,11 @@ if (result) {
 #### Complete Source Code
 
 We composed some of the aforementioned snippets into complete executable code samples. In
-[CreateZones.java](../gcloud-java-examples/src/main/java/com/google/cloud/examples/dns/snippets/CreateZone.java)
-we create a zone. In [CreateOrUpdateRecordSets.java](../gcloud-java-examples/src/main/java/com/google/cloud/examples/dns/snippets/CreateOrUpdateRecordSets.java)
+[CreateZones.java](../google-cloud-examples/src/main/java/com/google/cloud/examples/dns/snippets/CreateZone.java)
+we create a zone. In [CreateOrUpdateRecordSets.java](../google-cloud-examples/src/main/java/com/google/cloud/examples/dns/snippets/CreateOrUpdateRecordSets.java)
 we create a type A record set for a zone, or update an existing type A record set to a new IP address. We
-demonstrate how to delete a zone in [DeleteZone.java](../gcloud-java-examples/src/main/java/com/google/cloud/examples/dns/snippets/DeleteZone.java).
-Finally, in [ManipulateZonesAndRecordSets.java](../gcloud-java-examples/src/main/java/com/google/cloud/examples/dns/snippets/ManipulateZonesAndRecordSets.java)
+demonstrate how to delete a zone in [DeleteZone.java](../google-cloud-examples/src/main/java/com/google/cloud/examples/dns/snippets/DeleteZone.java).
+Finally, in [ManipulateZonesAndRecordSets.java](../google-cloud-examples/src/main/java/com/google/cloud/examples/dns/snippets/ManipulateZonesAndRecordSets.java)
 we assemble all the code snippets together and create zone, create or update a record set, list zones, list record sets, list changes, and
 delete a zone. The applications assume that they are running on Compute Engine or from your own desktop. To run any of these examples on App
 Engine, simply move the code from the main method to your application's servlet class and change the
@@ -338,7 +338,7 @@ print statements to display on your webpage.
 Troubleshooting
 ---------------
 
-To get help, follow the `gcloud-java` links in the `gcloud-*` [shared Troubleshooting document](https://github.com/GoogleCloudPlatform/gcloud-common/blob/master/troubleshooting/readme.md#troubleshooting).
+To get help, follow the instructions in the [shared Troubleshooting document](https://github.com/GoogleCloudPlatform/gcloud-common/blob/master/troubleshooting/readme.md#troubleshooting).
 
 Java Versions
 -------------
@@ -366,7 +366,7 @@ Contributing
 
 Contributions to this library are always welcome and highly encouraged.
 
-See `gcloud-java`'s [CONTRIBUTING] documentation and the `gcloud-*` [shared documentation](https://github.com/GoogleCloudPlatform/gcloud-common/blob/master/contributing/readme.md#how-to-contribute-to-gcloud) for more information on how to get started.
+See `google-cloud`'s [CONTRIBUTING] documentation and the [shared documentation](https://github.com/GoogleCloudPlatform/gcloud-common/blob/master/contributing/readme.md#how-to-contribute-to-gcloud) for more information on how to get started.
 
 Please note that this project is released with a Contributor Code of Conduct. By participating in this project you agree to abide by its terms. See [Code of Conduct][code-of-conduct] for more information.
 
@@ -376,12 +376,12 @@ License
 Apache 2.0 - See [LICENSE] for more information.
 
 
-[CONTRIBUTING]:https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/CONTRIBUTING.md
-[code-of-conduct]:https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/CODE_OF_CONDUCT.md#contributor-code-of-conduct
-[LICENSE]: https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/LICENSE
-[TESTING]: https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/TESTING.md#testing-code-that-uses-storage
+[CONTRIBUTING]:https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/CONTRIBUTING.md
+[code-of-conduct]:https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/CODE_OF_CONDUCT.md#contributor-code-of-conduct
+[LICENSE]: https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/LICENSE
+[TESTING]: https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/TESTING.md#testing-code-that-uses-storage
 [cloud-platform]: https://cloud.google.com/
 
 [cloud-dns]: https://cloud.google.com/dns/
-[dns-api]: http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/cloud/dns/package-summary.html
+[dns-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/dns/package-summary.html
 [dns-activate]:https://cloud.google.com/dns/getting-started#prerequisites

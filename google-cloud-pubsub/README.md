@@ -3,14 +3,14 @@ Google Cloud Java Client for Pub/Sub (Alpha)
 
 Java idiomatic client for [Google Cloud Pub/Sub] (https://cloud.google.com/pubsub/).
 
-[![Build Status](https://travis-ci.org/GoogleCloudPlatform/gcloud-java.svg?branch=master)](https://travis-ci.org/GoogleCloudPlatform/gcloud-java)
-[![Coverage Status](https://coveralls.io/repos/GoogleCloudPlatform/gcloud-java/badge.svg?branch=master)](https://coveralls.io/r/GoogleCloudPlatform/gcloud-java?branch=master)
-[![Maven](https://img.shields.io/maven-central/v/com.google.cloud/gcloud-java-pubsub.svg)]( https://img.shields.io/maven-central/v/com.google.cloud/gcloud-java-pubsub.svg)
-[![Codacy Badge](https://api.codacy.com/project/badge/grade/9da006ad7c3a4fe1abd142e77c003917)](https://www.codacy.com/app/mziccard/gcloud-java)
+[![Build Status](https://travis-ci.org/GoogleCloudPlatform/google-cloud-java.svg?branch=master)](https://travis-ci.org/GoogleCloudPlatform/google-cloud-java)
+[![Coverage Status](https://coveralls.io/repos/GoogleCloudPlatform/google-cloud-java/badge.svg?branch=master)](https://coveralls.io/r/GoogleCloudPlatform/google-cloud-java?branch=master)
+[![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-pubsub.svg)]( https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-pubsub.svg)
+[![Codacy Badge](https://api.codacy.com/project/badge/grade/9da006ad7c3a4fe1abd142e77c003917)](https://www.codacy.com/app/mziccard/google-cloud-java)
 [![Dependency Status](https://www.versioneye.com/user/projects/56bd8ee72a29ed002d2b0969/badge.svg?style=flat)](https://www.versioneye.com/user/projects/56bd8ee72a29ed002d2b0969)
 
--  [Homepage] (https://googlecloudplatform.github.io/gcloud-java/)
--  [API Documentation] (http://googlecloudplatform.github.io/gcloud-java/apidocs)
+-  [Homepage] (https://googlecloudplatform.github.io/google-cloud-java/)
+-  [API Documentation] (https://googlecloudplatform.github.io/google-cloud-java/apidocs)
 
 > Note: This client is a work-in-progress, and may occasionally
 > make backwards-incompatible changes.
@@ -18,35 +18,35 @@ Java idiomatic client for [Google Cloud Pub/Sub] (https://cloud.google.com/pubsu
 Quickstart
 ----------
 
-> `gcloud-java-pubsub` uses gRPC as transport layer, which is not (yet) supported by App Engine
-Standard. `gcloud-java-pubsub` will work on App Engine Flexible.
+> `google-cloud-pubsub` uses gRPC as transport layer, which is not (yet) supported by App Engine
+Standard. `google-cloud-pubsub` will work on App Engine Flexible.
 
 Add this to your pom.xml file
 ```xml
 <dependency>
   <groupId>com.google.cloud</groupId>
-  <artifactId>gcloud-java-pubsub</artifactId>
+  <artifactId>google-cloud-pubsub</artifactId>
   <version>0.2.8</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:gcloud-java-pubsub:0.2.8'
+compile 'com.google.cloud:google-cloud-pubsub:0.2.8'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "gcloud-java-pubsub" % "0.2.8"
+libraryDependencies += "com.google.cloud" % "google-cloud-pubsub" % "0.2.8"
 ```
 
 Example Application
 -------------------
 
-[`PubSubExample`](../gcloud-java-examples/src/main/java/com/google/cloud/examples/pubsub/PubSubExample.java) is a simple command line interface that provides some of Cloud Pub/Sub's functionality.  Read more about using the application on the [`PubSubExample` docs page](http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/cloud/examples/pubsub/PubSubExample.html).
+[`PubSubExample`](../google-cloud-examples/src/main/java/com/google/cloud/examples/pubsub/PubSubExample.java) is a simple command line interface that provides some of Cloud Pub/Sub's functionality.  Read more about using the application on the [`PubSubExample` docs page](https://googlecloudplatform.github.io/google-cloud-java/apidocs/?com/google/cloud/examples/pubsub/PubSubExample.html).
 
 Authentication
 --------------
 
-See the [Authentication](https://github.com/GoogleCloudPlatform/gcloud-java#authentication) section in the base directory's README.
+See the [Authentication](https://github.com/GoogleCloudPlatform/google-cloud-java#authentication) section in the base directory's README.
 
 About Google Cloud Pub/Sub
 --------------------------
@@ -61,7 +61,7 @@ independently written applications.
 See the [Google Cloud Pub/Sub docs][cloud-pubsub-quickstart] for more details on how to activate
 Cloud Pub/Sub for your project.
 
-See the ``gcloud-java`` API [Pub/Sub documentation][pubsub-api] to learn how to interact with the
+See the ``google-cloud`` API [Pub/Sub documentation][pubsub-api] to learn how to interact with the
 Cloud Pub/Sub using this Client Library.
 
 Getting Started
@@ -77,8 +77,8 @@ Google Cloud SDK](https://cloud.google.com/sdk/) and running the following comma
 `gcloud auth login` and `gcloud config set project [YOUR PROJECT ID]`.
 
 #### Installation and setup
-You'll need to obtain the `gcloud-java-pubsub` library.  See the [Quickstart](#quickstart) section
-to add `gcloud-java-pubsub` as a dependency in your code.
+You'll need to obtain the `google-cloud-pubsub` library.  See the [Quickstart](#quickstart) section
+to add `google-cloud-pubsub` as a dependency in your code.
 
 #### Creating an authorized service object
 To make authenticated requests to Google Cloud Pub/Sub, you must create a service object with
@@ -98,7 +98,7 @@ try(PubSub pubsub = PubSubOptions.defaultInstance().service()) {
 ```
 
 For other authentication options, see the
-[Authentication](https://github.com/GoogleCloudPlatform/gcloud-java#authentication) page.
+[Authentication](https://github.com/GoogleCloudPlatform/google-cloud-java#authentication) page.
 
 #### Creating a topic
 With Pub/Sub you can create topics. A topic is a named resource to which messages are sent by
@@ -169,9 +169,9 @@ try (MessageConsumer consumer = subscription.pullAsync(callback)) {
 #### Complete source code
 
 In
-[CreateTopicAndPublishMessages.java](../gcloud-java-examples/src/main/java/com/google/cloud/examples/pubsub/snippets/CreateTopicAndPublishMessages.java)
+[CreateTopicAndPublishMessages.java](../google-cloud-examples/src/main/java/com/google/cloud/examples/pubsub/snippets/CreateTopicAndPublishMessages.java)
 and
-[CreateSubscriptionAndPullMessages.java](../gcloud-java-examples/src/main/java/com/google/cloud/examples/pubsub/snippets/CreateSubscriptionAndPullMessages.java)
+[CreateSubscriptionAndPullMessages.java](../google-cloud-examples/src/main/java/com/google/cloud/examples/pubsub/snippets/CreateSubscriptionAndPullMessages.java)
 we put together all the code shown above into two programs. The programs assume that you are
 running on Compute Engine, App Engine Flexible or from your own desktop.
 
@@ -201,7 +201,7 @@ Contributing
 
 Contributions to this library are always welcome and highly encouraged.
 
-See `gcloud-java`'s [CONTRIBUTING] documentation and the `gcloud-*` [shared documentation](https://github.com/GoogleCloudPlatform/gcloud-common/blob/master/contributing/readme.md#how-to-contribute-to-gcloud) for more information on how to get started.
+See `google-cloud`'s [CONTRIBUTING] documentation and the [shared documentation](https://github.com/GoogleCloudPlatform/gcloud-common/blob/master/contributing/readme.md#how-to-contribute-to-gcloud) for more information on how to get started.
 
 Please note that this project is released with a Contributor Code of Conduct. By participating in this project you agree to abide by its terms. See [Code of Conduct][code-of-conduct] for more information.
 
@@ -211,11 +211,11 @@ License
 Apache 2.0 - See [LICENSE] for more information.
 
 
-[CONTRIBUTING]:https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/CONTRIBUTING.md
-[code-of-conduct]:https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/CODE_OF_CONDUCT.md#contributor-code-of-conduct
-[LICENSE]: https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/LICENSE
-[TESTING]: https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/TESTING.md#testing-code-that-uses-pubsub
+[CONTRIBUTING]:https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/CONTRIBUTING.md
+[code-of-conduct]:https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/CODE_OF_CONDUCT.md#contributor-code-of-conduct
+[LICENSE]: https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/LICENSE
+[TESTING]: https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/TESTING.md#testing-code-that-uses-pubsub
 
 [cloud-pubsub]: https://cloud.google.com/storage/
 [cloud-pubsub-quickstart]: https://cloud.google.com/pubsub/quickstart-console#before-you-begin
-[pubsub-api]: http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/cloud/pubsub/package-summary.html
+[pubsub-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/pubsub/package-summary.html

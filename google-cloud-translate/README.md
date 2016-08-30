@@ -3,14 +3,14 @@ Google Cloud Java Client for Translate
 
 Java idiomatic client for [Google Translate](https://cloud.google.com/translate/).
 
-[![Build Status](https://travis-ci.org/GoogleCloudPlatform/gcloud-java.svg?branch=master)](https://travis-ci.org/GoogleCloudPlatform/gcloud-java)
-[![Coverage Status](https://coveralls.io/repos/GoogleCloudPlatform/gcloud-java/badge.svg?branch=master)](https://coveralls.io/r/GoogleCloudPlatform/gcloud-java?branch=master)
-[![Maven](https://img.shields.io/maven-central/v/com.google.cloud/gcloud-java-translate.svg)]( https://img.shields.io/maven-central/v/com.google.cloud/gcloud-java-translate.svg)
-[![Codacy Badge](https://api.codacy.com/project/badge/grade/9da006ad7c3a4fe1abd142e77c003917)](https://www.codacy.com/app/mziccard/gcloud-java)
+[![Build Status](https://travis-ci.org/GoogleCloudPlatform/google-cloud-java.svg?branch=master)](https://travis-ci.org/GoogleCloudPlatform/google-cloud-java)
+[![Coverage Status](https://coveralls.io/repos/GoogleCloudPlatform/google-cloud-java/badge.svg?branch=master)](https://coveralls.io/r/GoogleCloudPlatform/google-cloud-java?branch=master)
+[![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-translate.svg)]( https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-translate.svg)
+[![Codacy Badge](https://api.codacy.com/project/badge/grade/9da006ad7c3a4fe1abd142e77c003917)](https://www.codacy.com/app/mziccard/google-cloud-java)
 [![Dependency Status](https://www.versioneye.com/user/projects/56bd8ee72a29ed002d2b0969/badge.svg?style=flat)](https://www.versioneye.com/user/projects/56bd8ee72a29ed002d2b0969)
 
--  [Homepage](https://googlecloudplatform.github.io/gcloud-java/)
--  [API Documentation](http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/cloud/translate/package-summary.html)
+-  [Homepage](https://googlecloudplatform.github.io/google-cloud-java/)
+-  [API Documentation](https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/translate/package-summary.html)
 
 > Note: This client is a work-in-progress, and may occasionally
 > make backwards-incompatible changes.
@@ -21,23 +21,23 @@ If you are using Maven, add this to your pom.xml file
 ```xml
 <dependency>
   <groupId>com.google.cloud</groupId>
-  <artifactId>gcloud-java-translate</artifactId>
+  <artifactId>google-cloud-translate</artifactId>
   <version>0.2.8</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:gcloud-java-translate:0.2.8'
+compile 'com.google.cloud:google-cloud-translate:0.2.8'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "gcloud-java-translate" % "0.2.8"
+libraryDependencies += "com.google.cloud" % "google-cloud-translate" % "0.2.8"
 ```
 
 Example Application
 -------------------
 
-[`TranslateExample`](../gcloud-java-examples/src/main/java/com/google/cloud/examples/translate/TranslateExample.java) is a simple command line interface that provides some of Google Translate's functionality.  Read more about using the application on the [`TranslateExample` docs page](http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/cloud/examples/translate/TranslateExample.html).
+[`TranslateExample`](../google-cloud-examples/src/main/java/com/google/cloud/examples/translate/TranslateExample.java) is a simple command line interface that provides some of Google Translate's functionality.  Read more about using the application on the [`TranslateExample` docs page](https://googlecloudplatform.github.io/google-cloud-java/apidocs/?com/google/cloud/examples/translate/TranslateExample.html).
 
 Authentication
 --------------
@@ -57,7 +57,7 @@ available In cases where the source language is unknown.
 See the [Translate quickstart](https://cloud.google.com/translate/v2/quickstart) for more details
 on how to activate Google Translate for your project.
 
-See the ``gcloud-java`` API [Translate documentation][translate-api] to learn how to interact with
+See the ``google-cloud`` API [Translate documentation][translate-api] to learn how to interact with
 the Google Translate using this Client Library.
 
 Getting Started
@@ -70,8 +70,8 @@ retrieve an API key. See [Translate quickstart](https://cloud.google.com/transla
 for more details.
 
 #### Installation and setup
-You'll need to obtain the `gcloud-java-translate` library. See the [Quickstart](#quickstart)
-section to add `gcloud-java-translate` as a dependency in your code.
+You'll need to obtain the `google-cloud-translate` library. See the [Quickstart](#quickstart)
+section to add `google-cloud-translate` as a dependency in your code.
 
 #### Creating an authorized service object
 To make authenticated requests to Google Translates, you must create a service object with an API
@@ -130,14 +130,14 @@ Translation translation = translate.translate(
 #### Complete source code
 
 In
-[DetectLanguageAndTranslate.java](../gcloud-java-examples/src/main/java/com/google/cloud/examples/translate/snippets/DetectLanguageAndTranslate.java)
+[DetectLanguageAndTranslate.java](../google-cloud-examples/src/main/java/com/google/cloud/examples/translate/snippets/DetectLanguageAndTranslate.java)
 we put together all the code shown above into one program. The program assumes that a valid api key
 is available.
 
 Troubleshooting
 ---------------
 
-To get help, follow the `gcloud-java` links in the `gcloud-*` [shared Troubleshooting document](https://github.com/GoogleCloudPlatform/gcloud-common/blob/master/troubleshooting/readme.md#troubleshooting).
+To get help, follow the instructions in the [shared Troubleshooting document](https://github.com/GoogleCloudPlatform/gcloud-common/blob/master/troubleshooting/readme.md#troubleshooting).
 
 Java Versions
 -------------
@@ -165,7 +165,7 @@ Contributing
 
 Contributions to this library are always welcome and highly encouraged.
 
-See `gcloud-java`'s [CONTRIBUTING] documentation and the `gcloud-*` [shared documentation](https://github.com/GoogleCloudPlatform/gcloud-common/blob/master/contributing/readme.md#how-to-contribute-to-gcloud) for more information on how to get started.
+See `google-cloud`'s [CONTRIBUTING] documentation and the [shared documentation](https://github.com/GoogleCloudPlatform/gcloud-common/blob/master/contributing/readme.md#how-to-contribute-to-gcloud) for more information on how to get started.
 
 Please note that this project is released with a Contributor Code of Conduct. By participating in this project you agree to abide by its terms. See [Code of Conduct][code-of-conduct] for more information.
 
@@ -174,12 +174,12 @@ License
 
 Apache 2.0 - See [LICENSE] for more information.
 
-[CONTRIBUTING]:https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/CONTRIBUTING.md
-[code-of-conduct]:https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/CODE_OF_CONDUCT.md#contributor-code-of-conduct
-[LICENSE]: https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/LICENSE
-[TESTING]: https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/TESTING.md#testing-code-that-uses-translate
+[CONTRIBUTING]:https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/CONTRIBUTING.md
+[code-of-conduct]:https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/CODE_OF_CONDUCT.md#contributor-code-of-conduct
+[LICENSE]: https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/LICENSE
+[TESTING]: https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/TESTING.md#testing-code-that-uses-translate
 [cloud-platform]: https://cloud.google.com/
 
 [google-translate]: https://cloud.google.com/translate/
 [google-translate-docs]: https://cloud.google.com/translate/docs/
-[translate-api]: http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/cloud/translate/package-summary.html
+[translate-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/translate/package-summary.html

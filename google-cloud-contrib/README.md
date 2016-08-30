@@ -1,45 +1,45 @@
 Google Cloud Java Contributions
 ===============================
 
-Packages that provide higher-level abstraction/functionality for common gcloud-java use cases.
+Packages that provide higher-level abstraction/functionality for common Google Cloud use cases.
 
-[![Build Status](https://travis-ci.org/GoogleCloudPlatform/gcloud-java.svg?branch=master)](https://travis-ci.org/GoogleCloudPlatform/gcloud-java)
-[![Coverage Status](https://coveralls.io/repos/GoogleCloudPlatform/gcloud-java/badge.svg?branch=master)](https://coveralls.io/r/GoogleCloudPlatform/gcloud-java?branch=master)
-[![Maven](https://img.shields.io/maven-central/v/com.google.cloud/gcloud-java-bigquery.svg)]( https://img.shields.io/maven-central/v/com.google.cloud/gcloud-java-bigquery.svg)
-[![Codacy Badge](https://api.codacy.com/project/badge/grade/9da006ad7c3a4fe1abd142e77c003917)](https://www.codacy.com/app/mziccard/gcloud-java)
+[![Build Status](https://travis-ci.org/GoogleCloudPlatform/google-cloud-java.svg?branch=master)](https://travis-ci.org/GoogleCloudPlatform/google-cloud-java)
+[![Coverage Status](https://coveralls.io/repos/GoogleCloudPlatform/google-cloud-java/badge.svg?branch=master)](https://coveralls.io/r/GoogleCloudPlatform/google-cloud-java?branch=master)
+[![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-bigquery.svg)]( https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-bigquery.svg)
+[![Codacy Badge](https://api.codacy.com/project/badge/grade/9da006ad7c3a4fe1abd142e77c003917)](https://www.codacy.com/app/mziccard/google-cloud-java)
 [![Dependency Status](https://www.versioneye.com/user/projects/56bd8ee72a29ed002d2b0969/badge.svg?style=flat)](https://www.versioneye.com/user/projects/56bd8ee72a29ed002d2b0969)
 
 Contents
 --------
 
- * [gcloud-java-nio](./gcloud-java-nio/): NIO Filesystem Provider for Google Cloud Storage.
- * [gcloud-java-nio-examples](./gcloud-java-nio-examples/): How to add Google Cloud Storage NIO after the fact.
+ * [google-cloud-nio](./google-cloud-nio/): NIO Filesystem Provider for Google Cloud Storage.
+ * [google-cloud-nio-examples](./google-cloud-nio-examples/): How to add Google Cloud Storage NIO after the fact.
 
 Quickstart
 ----------
 
-### gcloud-java-nio
+### google-cloud-nio
 
 If you are using Maven, add this to your pom.xml file
 ```xml
 <dependency>
   <groupId>com.google.cloud</groupId>
-  <artifactId>gcloud-java-contrib</artifactId>
+  <artifactId>google-cloud-contrib</artifactId>
   <version>0.2.8</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:gcloud-java-contrib:0.2.8'
+compile 'com.google.cloud:google-cloud-contrib:0.2.8'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "gcloud-java-contrib" % "0.2.8"
+libraryDependencies += "com.google.cloud" % "google-cloud-contrib" % "0.2.8"
 ```
 
-### gcloud-java-nio-examples
+### google-cloud-nio-examples
 
-See its [README](./gcloud-java-nio-examples/README.md) for instructions on how to run it.
+See its [README](./google-cloud-nio-examples/README.md) for instructions on how to run it.
 
 Java Versions
 -------------
@@ -58,14 +58,14 @@ stable.
 See also
 --------
 
- * [gcloud-java-examples](../gcloud-java-examples) for an example of how to use NIO normally.
+ * [google-cloud-examples](../google-cloud-examples) for an example of how to use NIO normally.
 
 Contributing
 ------------
 
 Contributions to this library are always welcome and highly encouraged.
 
-See `gcloud-java`'s [CONTRIBUTING] documentation and the `gcloud-*` [shared documentation](https://github.com/GoogleCloudPlatform/gcloud-common/blob/master/contributing/readme.md#how-to-contribute-to-gcloud) for more information on how to get started.
+See `google-cloud`'s [CONTRIBUTING] documentation and the [shared documentation](https://github.com/GoogleCloudPlatform/gcloud-common/blob/master/contributing/readme.md#how-to-contribute-to-gcloud) for more information on how to get started.
 
 Please note that this project is released with a Contributor Code of Conduct. By participating in this project you agree to abide by its terms. See [Code of Conduct][code-of-conduct] for more information.
 
@@ -75,8 +75,8 @@ License
 Apache 2.0 - See [LICENSE] for more information.
 
 
-[CONTRIBUTING]:https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/CONTRIBUTING.md
-[code-of-conduct]:https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/CODE_OF_CONDUCT.md#contributor-code-of-conduct
-[LICENSE]: https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/LICENSE
+[CONTRIBUTING]:https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/CONTRIBUTING.md
+[code-of-conduct]:https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/CODE_OF_CONDUCT.md#contributor-code-of-conduct
+[LICENSE]: https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/LICENSE
 [cloud-platform]: https://cloud.google.com/
 [developers-console]:https://console.developers.google.com/

@@ -3,14 +3,14 @@ Google Cloud Java Client for BigQuery (Alpha)
 
 Java idiomatic client for [Google Cloud BigQuery] (https://cloud.google.com/bigquery).
 
-[![Build Status](https://travis-ci.org/GoogleCloudPlatform/gcloud-java.svg?branch=master)](https://travis-ci.org/GoogleCloudPlatform/gcloud-java)
-[![Coverage Status](https://coveralls.io/repos/GoogleCloudPlatform/gcloud-java/badge.svg?branch=master)](https://coveralls.io/r/GoogleCloudPlatform/gcloud-java?branch=master)
-[![Maven](https://img.shields.io/maven-central/v/com.google.cloud/gcloud-java-bigquery.svg)]( https://img.shields.io/maven-central/v/com.google.cloud/gcloud-java-bigquery.svg)
-[![Codacy Badge](https://api.codacy.com/project/badge/grade/9da006ad7c3a4fe1abd142e77c003917)](https://www.codacy.com/app/mziccard/gcloud-java)
+[![Build Status](https://travis-ci.org/GoogleCloudPlatform/google-cloud-java.svg?branch=master)](https://travis-ci.org/GoogleCloudPlatform/google-cloud-java)
+[![Coverage Status](https://coveralls.io/repos/GoogleCloudPlatform/google-cloud-java/badge.svg?branch=master)](https://coveralls.io/r/GoogleCloudPlatform/google-cloud-java?branch=master)
+[![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-bigquery.svg)]( https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-bigquery.svg)
+[![Codacy Badge](https://api.codacy.com/project/badge/grade/9da006ad7c3a4fe1abd142e77c003917)](https://www.codacy.com/app/mziccard/google-cloud-java)
 [![Dependency Status](https://www.versioneye.com/user/projects/56bd8ee72a29ed002d2b0969/badge.svg?style=flat)](https://www.versioneye.com/user/projects/56bd8ee72a29ed002d2b0969)
 
--  [Homepage] (https://googlecloudplatform.github.io/gcloud-java/)
--  [API Documentation] (http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/cloud/bigquery/package-summary.html)
+-  [Homepage] (https://googlecloudplatform.github.io/google-cloud-java/)
+-  [API Documentation] (https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/bigquery/package-summary.html)
 
 > Note: This client is a work-in-progress, and may occasionally
 > make backwards-incompatible changes.
@@ -21,28 +21,28 @@ If you are using Maven, add this to your pom.xml file
 ```xml
 <dependency>
   <groupId>com.google.cloud</groupId>
-  <artifactId>gcloud-java-bigquery</artifactId>
+  <artifactId>google-cloud-bigquery</artifactId>
   <version>0.2.8</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:gcloud-java-bigquery:0.2.8'
+compile 'com.google.cloud:google-cloud-bigquery:0.2.8'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "gcloud-java-bigquery" % "0.2.8"
+libraryDependencies += "com.google.cloud" % "google-cloud-bigquery" % "0.2.8"
 ```
 
 Example Application
 -------------------
-- [`BigQueryExample`](../gcloud-java-examples/src/main/java/com/google/cloud/examples/bigquery/BigQueryExample.java) - A simple command line interface providing some of Cloud BigQuery's functionality.
-Read more about using this application on the [`BigQueryExample` docs page](http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/cloud/examples/bigquery/BigQueryExample.html).
+- [`BigQueryExample`](../google-cloud-examples/src/main/java/com/google/cloud/examples/bigquery/BigQueryExample.java) - A simple command line interface providing some of Cloud BigQuery's functionality.
+Read more about using this application on the [`BigQueryExample` docs page](https://googlecloudplatform.github.io/google-cloud-java/apidocs/?com/google/cloud/examples/bigquery/BigQueryExample.html).
 
 Authentication
 --------------
 
-See the [Authentication](https://github.com/GoogleCloudPlatform/gcloud-java#authentication) section in the base directory's README.
+See the [Authentication](https://github.com/GoogleCloudPlatform/google-cloud-java#authentication) section in the base directory's README.
 
 About Google Cloud BigQuery
 --------------------------
@@ -54,7 +54,7 @@ With BigQuery you can easily deploy Petabyte-scale Databases.
 Be sure to activate the Google Cloud BigQuery API on the Developer's Console to use BigQuery from
 your project.
 
-See the ``gcloud-java`` API [bigquery documentation][bigquery-api] to learn how to interact
+See the ``google-cloud`` API [bigquery documentation][bigquery-api] to learn how to interact
 with Google Cloud BigQuery using this Client Library.
 
 Getting Started
@@ -70,8 +70,8 @@ Google Cloud SDK](https://cloud.google.com/sdk/) and running the following comma
 `gcloud auth login` and `gcloud config set project [YOUR PROJECT ID]`.
 
 #### Installation and setup
-You'll need to obtain the `gcloud-java-bigquery` library.  See the [Quickstart](#quickstart) section
-to add `gcloud-java-bigquery` as a dependency in your code.
+You'll need to obtain the `google-cloud-bigquery` library.  See the [Quickstart](#quickstart) section
+to add `google-cloud-bigquery` as a dependency in your code.
 
 #### Creating an authorized service object
 To make authenticated requests to Google Cloud BigQuery, you must create a service object with
@@ -89,7 +89,7 @@ BigQuery bigquery = BigQueryOptions.defaultInstance().service();
 ```
 
 For other authentication options, see the
-[Authentication](https://github.com/GoogleCloudPlatform/gcloud-java#authentication) page.
+[Authentication](https://github.com/GoogleCloudPlatform/google-cloud-java#authentication) page.
 
 #### Creating a dataset
 With BigQuery you can create datasets. A dataset is a grouping mechanism that holds zero or more
@@ -203,7 +203,7 @@ while (rowIterator.hasNext()) {
 #### Complete source code
 
 In
-[InsertDataAndQueryTable.java](../gcloud-java-examples/src/main/java/com/google/cloud/examples/bigquery/snippets/InsertDataAndQueryTable.java)
+[InsertDataAndQueryTable.java](../google-cloud-examples/src/main/java/com/google/cloud/examples/bigquery/snippets/InsertDataAndQueryTable.java)
 we put together all the code shown above into one program. The program assumes that you are
 running on Compute Engine or from your own desktop. To run the example on App Engine, simply move
 the code from the main method to your application's servlet class and change the print statements to
@@ -212,7 +212,7 @@ display on your webpage.
 Troubleshooting
 ---------------
 
-To get help, follow the `gcloud-java` links in the `gcloud-*`[shared Troubleshooting document](https://github.com/GoogleCloudPlatform/gcloud-common/blob/master/troubleshooting/readme.md#troubleshooting).
+To get help, follow the instructions in the [shared Troubleshooting document](https://github.com/GoogleCloudPlatform/gcloud-common/blob/master/troubleshooting/readme.md#troubleshooting).
 
 Java Versions
 -------------
@@ -248,11 +248,11 @@ License
 Apache 2.0 - See [LICENSE] for more information.
 
 
-[CONTRIBUTING]:https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/CONTRIBUTING.md
-[LICENSE]: https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/LICENSE
-[TESTING]: https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/TESTING.md#testing-code-that-uses-bigquery
+[CONTRIBUTING]:https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/CONTRIBUTING.md
+[LICENSE]: https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/LICENSE
+[TESTING]: https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/TESTING.md#testing-code-that-uses-bigquery
 [cloud-platform]: https://cloud.google.com/
 
 [cloud-bigquery]: https://cloud.google.com/bigquery/
 [cloud-storage]: https://cloud.google.com/storage/
-[bigquery-api]: http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/cloud/bigquery/package-summary.html
+[bigquery-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/bigquery/package-summary.html

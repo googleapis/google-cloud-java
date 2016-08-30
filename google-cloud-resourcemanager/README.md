@@ -3,14 +3,14 @@ Google Cloud Java Client for Resource Manager (Alpha)
 
 Java idiomatic client for [Google Cloud Resource Manager] (https://cloud.google.com/resource-manager/).
 
-[![Build Status](https://travis-ci.org/GoogleCloudPlatform/gcloud-java.svg?branch=master)](https://travis-ci.org/GoogleCloudPlatform/gcloud-java)
-[![Coverage Status](https://coveralls.io/repos/GoogleCloudPlatform/gcloud-java/badge.svg?branch=master)](https://coveralls.io/r/GoogleCloudPlatform/gcloud-java?branch=master)
-[![Maven](https://img.shields.io/maven-central/v/com.google.cloud/gcloud-java-resourcemanager.svg)]( https://img.shields.io/maven-central/v/com.google.cloud/gcloud-java-resourcemanager.svg)
-[![Codacy Badge](https://api.codacy.com/project/badge/grade/9da006ad7c3a4fe1abd142e77c003917)](https://www.codacy.com/app/mziccard/gcloud-java)
+[![Build Status](https://travis-ci.org/GoogleCloudPlatform/google-cloud-java.svg?branch=master)](https://travis-ci.org/GoogleCloudPlatform/google-cloud-java)
+[![Coverage Status](https://coveralls.io/repos/GoogleCloudPlatform/google-cloud-java/badge.svg?branch=master)](https://coveralls.io/r/GoogleCloudPlatform/google-cloud-java?branch=master)
+[![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-resourcemanager.svg)]( https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-resourcemanager.svg)
+[![Codacy Badge](https://api.codacy.com/project/badge/grade/9da006ad7c3a4fe1abd142e77c003917)](https://www.codacy.com/app/mziccard/google-cloud-java)
 [![Dependency Status](https://www.versioneye.com/user/projects/56bd8ee72a29ed002d2b0969/badge.svg?style=flat)](https://www.versioneye.com/user/projects/56bd8ee72a29ed002d2b0969)
 
--  [Homepage] (https://googlecloudplatform.github.io/gcloud-java/)
--  [API Documentation] (http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/cloud/resourcemanager/package-summary.html)
+-  [Homepage] (https://googlecloudplatform.github.io/google-cloud-java/)
+-  [API Documentation] (https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/resourcemanager/package-summary.html)
 
 > Note: This client is a work-in-progress, and may occasionally
 > make backwards-incompatible changes.
@@ -21,27 +21,27 @@ If you are using Maven, add this to your pom.xml file
 ```xml
 <dependency>
   <groupId>com.google.cloud</groupId>
-  <artifactId>gcloud-java-resourcemanager</artifactId>
+  <artifactId>google-cloud-resourcemanager</artifactId>
   <version>0.2.8</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:gcloud-java-resourcemanager:0.2.8'
+compile 'com.google.cloud:google-cloud-resourcemanager:0.2.8'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "gcloud-java-resourcemanager" % "0.2.8"
+libraryDependencies += "com.google.cloud" % "google-cloud-resourcemanager" % "0.2.8"
 ```
 
 Example Application
 --------------------
-[`ResourceManagerExample`](../gcloud-java-examples/src/main/java/com/google/cloud/examples/resourcemanager/ResourceManagerExample.java) is a simple command line interface for the Cloud Resource Manager.  Read more about using the application on the [`ResourceManagerExample` docs page](http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/cloud/examples/resourcemanager/ResourceManagerExample.html).
+[`ResourceManagerExample`](../google-cloud-examples/src/main/java/com/google/cloud/examples/resourcemanager/ResourceManagerExample.java) is a simple command line interface for the Cloud Resource Manager.  Read more about using the application on the [`ResourceManagerExample` docs page](https://googlecloudplatform.github.io/google-cloud-java/apidocs/?com/google/cloud/examples/resourcemanager/ResourceManagerExample.html).
 
 Authentication
 --------------
 
-Unlike other `gcloud-java` service libraries, `gcloud-java-resourcemanager` only accepts Google Cloud SDK credentials at this time. If you are having trouble authenticating, it may be that you have other types of credentials that override your Google Cloud SDK credentials. See more about Google Cloud SDK credentials and credential precedence in the global README's [Authentication section](https://github.com/GoogleCloudPlatform/gcloud-java#authentication).
+Unlike other `google-cloud` service libraries, `google-cloud-resourcemanager` only accepts Google Cloud SDK credentials at this time. If you are having trouble authenticating, it may be that you have other types of credentials that override your Google Cloud SDK credentials. See more about Google Cloud SDK credentials and credential precedence in the global README's [Authentication section](https://github.com/GoogleCloudPlatform/google-cloud-java#authentication).
 
 About Google Cloud Resource Manager
 -----------------------------------
@@ -58,7 +58,7 @@ Google Cloud Resource Manager is currently in beta and may occasionally make bac
 
 Be sure to activate the Google Cloud Resource Manager API on the Developer's Console to use Resource Manager from your project.
 
-See the ``gcloud-java`` API [Resource Manager documentation][resourcemanager-api] to learn how to interact
+See the ``google-cloud`` API [Resource Manager documentation][resourcemanager-api] to learn how to interact
 with the Cloud Resource Manager using this client Library.
 
 Getting Started
@@ -69,7 +69,7 @@ You will need to set up the local development environment by [installing the Goo
 > Note: You don't need a project ID to use this service. If you have a project ID set in the Google Cloud SDK, you can unset it by typing `gcloud config unset project` in command line.
 
 #### Installation and setup
-You'll need to obtain the `gcloud-java-resourcemanager` library.  See the [Quickstart](#quickstart) section to add `gcloud-java-resourcemanager` as a dependency in your code.
+You'll need to obtain the `google-cloud-resourcemanager` library.  See the [Quickstart](#quickstart) section to add `google-cloud-resourcemanager` as a dependency in your code.
 
 #### Creating an authorized service object
 To make authenticated requests to Google Cloud Resource Manager, you must create a service object
@@ -206,15 +206,15 @@ We put together all the code shown above into three programs. The programs assum
 running from your own desktop and used the Google Cloud SDK to authenticate yourself.
 
 The first program creates a project if it does not exist. Complete source code can be found at
-[GetOrCreateProject.java](../gcloud-java-examples/src/main/java/com/google/cloud/examples/resourcemanager/snippets/GetOrCreateProject.java).
+[GetOrCreateProject.java](../google-cloud-examples/src/main/java/com/google/cloud/examples/resourcemanager/snippets/GetOrCreateProject.java).
 
 The second program updates a project if it exists and lists all projects the user has permission to
 view. Complete source code can be found at
-[UpdateAndListProjects.java](../gcloud-java-examples/src/main/java/com/google/cloud/examples/resourcemanager/snippets/UpdateAndListProjects.java).
+[UpdateAndListProjects.java](../google-cloud-examples/src/main/java/com/google/cloud/examples/resourcemanager/snippets/UpdateAndListProjects.java).
 
 The third program modifies the IAM policy associated with a project using the read-modify-write
 pattern.  Complete source code can be found at
-[ModifyPolicy.java](../gcloud-java-examples/src/main/java/com/google/cloud/examples/resourcemanager/snippets/ModifyPolicy.java)
+[ModifyPolicy.java](../google-cloud-examples/src/main/java/com/google/cloud/examples/resourcemanager/snippets/ModifyPolicy.java)
 
 Java Versions
 -------------
@@ -250,10 +250,10 @@ License
 Apache 2.0 - See [LICENSE] for more information.
 
 
-[CONTRIBUTING]:https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/CONTRIBUTING.md
-[LICENSE]: https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/LICENSE
-[TESTING]: https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/TESTING.md#testing-code-that-uses-resource-manager
+[CONTRIBUTING]:https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/CONTRIBUTING.md
+[LICENSE]: https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/LICENSE
+[TESTING]: https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/TESTING.md#testing-code-that-uses-resource-manager
 [cloud-platform]: https://cloud.google.com/
 [cloud-resourcemanager]: https://cloud.google.com/resource-manager/docs
-[resourcemanager-api]: http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/cloud/resourcemanager/package-summary.html
+[resourcemanager-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/resourcemanager/package-summary.html
 

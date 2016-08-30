@@ -3,14 +3,14 @@ Google Cloud Java Client for Compute (Alpha)
 
 Java idiomatic client for [Google Cloud Compute](https://cloud.google.com/compute).
 
-[![Build Status](https://travis-ci.org/GoogleCloudPlatform/gcloud-java.svg?branch=master)](https://travis-ci.org/GoogleCloudPlatform/gcloud-java)
-[![Coverage Status](https://coveralls.io/repos/GoogleCloudPlatform/gcloud-java/badge.svg?branch=master)](https://coveralls.io/r/GoogleCloudPlatform/gcloud-java?branch=master)
-[![Maven](https://img.shields.io/maven-central/v/com.google.cloud/gcloud-java-compute.svg)]( https://img.shields.io/maven-central/v/com.google.cloud/gcloud-java-compute.svg)
-[![Codacy Badge](https://api.codacy.com/project/badge/grade/9da006ad7c3a4fe1abd142e77c003917)](https://www.codacy.com/app/mziccard/gcloud-java)
+[![Build Status](https://travis-ci.org/GoogleCloudPlatform/google-cloud-java.svg?branch=master)](https://travis-ci.org/GoogleCloudPlatform/google-cloud-java)
+[![Coverage Status](https://coveralls.io/repos/GoogleCloudPlatform/google-cloud-java/badge.svg?branch=master)](https://coveralls.io/r/GoogleCloudPlatform/google-cloud-java?branch=master)
+[![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-compute.svg)]( https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-compute.svg)
+[![Codacy Badge](https://api.codacy.com/project/badge/grade/9da006ad7c3a4fe1abd142e77c003917)](https://www.codacy.com/app/mziccard/google-cloud-java)
 [![Dependency Status](https://www.versioneye.com/user/projects/56bd8ee72a29ed002d2b0969/badge.svg?style=flat)](https://www.versioneye.com/user/projects/56bd8ee72a29ed002d2b0969)
 
--  [Homepage](https://googlecloudplatform.github.io/gcloud-java/)
--  [API Documentation](http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/cloud/compute/package-summary.html)
+-  [Homepage](https://googlecloudplatform.github.io/google-cloud-java/)
+-  [API Documentation](https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/compute/package-summary.html)
 
 > Note: This client is a work-in-progress, and may occasionally
 > make backwards-incompatible changes.
@@ -21,31 +21,31 @@ If you are using Maven, add this to your pom.xml file
 ```xml
 <dependency>
   <groupId>com.google.cloud</groupId>
-  <artifactId>gcloud-java-compute</artifactId>
+  <artifactId>google-cloud-compute</artifactId>
   <version>0.2.8</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:gcloud-java-compute:0.2.8'
+compile 'com.google.cloud:google-cloud-compute:0.2.8'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "gcloud-java-compute" % "0.2.8"
+libraryDependencies += "com.google.cloud" % "google-cloud-compute" % "0.2.8"
 ```
 
 Example Application
 -------------------
 
-[`ComputeExample`](../gcloud-java-examples/src/main/java/com/google/cloud/examples/compute/ComputeExample.java)
+[`ComputeExample`](../google-cloud-examples/src/main/java/com/google/cloud/examples/compute/ComputeExample.java)
 is a simple command line interface that provides some of Google Cloud Compute Engine's
 functionality. Read more about using the application on the
-[`ComputeExample` docs page](http://googlecloudplatform.github.io/gcloud-java/apidocs/?com/google/cloud/examples/compute/ComputeExample.html).
+[`ComputeExample` docs page](https://googlecloudplatform.github.io/google-cloud-java/apidocs/?com/google/cloud/examples/compute/ComputeExample.html).
 
 Authentication
 --------------
 
-See the [Authentication](https://github.com/GoogleCloudPlatform/gcloud-java#authentication) section in the base directory's README.
+See the [Authentication](https://github.com/GoogleCloudPlatform/google-cloud-java#authentication) section in the base directory's README.
 
 About Google Cloud Compute
 --------------------------
@@ -59,7 +59,7 @@ configurations.
 Be sure to activate the Google Cloud Compute API on the Developer's Console to use Compute from
 your project.
 
-See the ``gcloud-java`` API [compute documentation][compute-api] to learn how to interact
+See the ``google-cloud`` API [compute documentation][compute-api] to learn how to interact
 with Google Cloud Compute using this Client Library.
 
 Getting Started
@@ -74,8 +74,8 @@ to get your project set up. You will also need to set up the local development e
 in command line: `gcloud auth login` and `gcloud config set project [YOUR PROJECT ID]`.
 
 #### Installation and setup
-You'll need to obtain the `gcloud-java-compute` library.  See the [Quickstart](#quickstart) section
-to add `gcloud-java-compute` as a dependency in your code.
+You'll need to obtain the `google-cloud-compute` library.  See the [Quickstart](#quickstart) section
+to add `google-cloud-compute` as a dependency in your code.
 
 #### Creating an authorized service object
 To make authenticated requests to Google Cloud Compute Engine, you must create a service object with
@@ -91,7 +91,7 @@ import com.google.cloud.compute.ComputeOptions;
 Compute compute = ComputeOptions.defaultInstance().service();
 ```
 
-For other authentication options, see the [Authentication](https://github.com/GoogleCloudPlatform/gcloud-java#authentication)
+For other authentication options, see the [Authentication](https://github.com/GoogleCloudPlatform/google-cloud-java#authentication)
 page.
 
 #### Creating a region IP address
@@ -207,7 +207,7 @@ if (operation.errors() == null) {
 #### Complete source code
 
 In
-[CreateAddressDiskAndInstance.java](../gcloud-java-examples/src/main/java/com/google/cloud/examples/compute/snippets/CreateAddressDiskAndInstance.java)
+[CreateAddressDiskAndInstance.java](../google-cloud-examples/src/main/java/com/google/cloud/examples/compute/snippets/CreateAddressDiskAndInstance.java)
 we put together all the code shown above into one program. The program assumes that you are
 running on Compute Engine or from your own desktop. To run the example on App Engine, simply move
 the code from the main method to your application's servlet class and change the print statements to
@@ -216,7 +216,7 @@ display on your webpage.
 Troubleshooting
 ---------------
 
-To get help, follow the `gcloud-java` links in the `gcloud-*`[shared Troubleshooting document](https://github.com/GoogleCloudPlatform/gcloud-common/blob/master/troubleshooting/readme.md#troubleshooting).
+To get help, follow the instructions in the [shared Troubleshooting document](https://github.com/GoogleCloudPlatform/gcloud-common/blob/master/troubleshooting/readme.md#troubleshooting).
 
 Java Versions
 -------------
@@ -252,10 +252,10 @@ License
 Apache 2.0 - See [LICENSE] for more information.
 
 
-[CONTRIBUTING]:https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/CONTRIBUTING.md
-[LICENSE]: https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/LICENSE
-[TESTING]: https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/TESTING.md#testing-code-that-uses-compute
+[CONTRIBUTING]:https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/CONTRIBUTING.md
+[LICENSE]: https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/LICENSE
+[TESTING]: https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/TESTING.md#testing-code-that-uses-compute
 [cloud-platform]: https://cloud.google.com/
 
 [cloud-compute]: https://cloud.google.com/compute/
-[compute-api]: http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/cloud/compute/package-summary.html
+[compute-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/compute/package-summary.html

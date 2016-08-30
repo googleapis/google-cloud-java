@@ -1,16 +1,16 @@
 Google Cloud Java Client Examples
 =================================
 
-Examples for gcloud-java (Java idiomatic client for [Google Cloud Platform][cloud-platform] services).
+Examples for google-cloud (Java idiomatic client for [Google Cloud Platform][cloud-platform] services).
 
-[![Build Status](https://travis-ci.org/GoogleCloudPlatform/gcloud-java.svg?branch=master)](https://travis-ci.org/GoogleCloudPlatform/gcloud-java)
-[![Coverage Status](https://coveralls.io/repos/GoogleCloudPlatform/gcloud-java/badge.svg?branch=master)](https://coveralls.io/r/GoogleCloudPlatform/gcloud-java?branch=master)
-[![Maven](https://img.shields.io/maven-central/v/com.google.cloud/gcloud-java-examples.svg)]( https://img.shields.io/maven-central/v/com.google.cloud/gcloud-java-examples.svg)
-[![Codacy Badge](https://api.codacy.com/project/badge/grade/9da006ad7c3a4fe1abd142e77c003917)](https://www.codacy.com/app/mziccard/gcloud-java)
+[![Build Status](https://travis-ci.org/GoogleCloudPlatform/google-cloud-java.svg?branch=master)](https://travis-ci.org/GoogleCloudPlatform/google-cloud-java)
+[![Coverage Status](https://coveralls.io/repos/GoogleCloudPlatform/google-cloud-java/badge.svg?branch=master)](https://coveralls.io/r/GoogleCloudPlatform/google-cloud-java?branch=master)
+[![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-examples.svg)]( https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-examples.svg)
+[![Codacy Badge](https://api.codacy.com/project/badge/grade/9da006ad7c3a4fe1abd142e77c003917)](https://www.codacy.com/app/mziccard/google-cloud-java)
 [![Dependency Status](https://www.versioneye.com/user/projects/56bd8ee72a29ed002d2b0969/badge.svg?style=flat)](https://www.versioneye.com/user/projects/56bd8ee72a29ed002d2b0969)
 
--  [Homepage](https://googlecloudplatform.github.io/gcloud-java/)
--  [Examples](http://googlecloudplatform.github.io/gcloud-java/apidocs/index.html?com/google/cloud/examples/package-summary.html)
+-  [Homepage](https://googlecloudplatform.github.io/google-cloud-java/)
+-  [Examples](https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/examples/package-summary.html)
 
 Quickstart
 ----------
@@ -18,17 +18,17 @@ If you are using Maven, add this to your pom.xml file
 ```xml
 <dependency>
   <groupId>com.google.cloud</groupId>
-  <artifactId>gcloud-java-examples</artifactId>
+  <artifactId>google-cloud-examples</artifactId>
   <version>0.2.8</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:gcloud-java-examples:0.2.8'
+compile 'com.google.cloud:google-cloud-examples:0.2.8'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "gcloud-java-examples" % "0.2.8"
+libraryDependencies += "com.google.cloud" % "google-cloud-examples" % "0.2.8"
 ```
 
 To run examples from your command line:
@@ -38,7 +38,7 @@ To run examples from your command line:
 2. Set your current project using `gcloud config set project PROJECT_ID`. This step is not necessary for `ResourceManagerExample`.
 
 3. Compile using Maven: `mvn install -DskipTests` in command line from your base project directory
-   then `cd gcloud-java-examples` and finally `mvn package appassembler:assemble -DskipTests`.
+   then `cd google-cloud-examples` and finally `mvn package appassembler:assemble -DskipTests`.
 
 4. Run an example from the command line using the Maven-generated scripts.
 
@@ -150,11 +150,11 @@ To run examples from your command line:
     target/appassembler/bin/StorageExample delete <bucket_name> test.txt
     ```
 
- * Here's an example run of `Stat`, illustrating the use of gcloud-java-nio.
+ * Here's an example run of `Stat`, illustrating the use of google-cloud-nio.
 
     Before running the example, go to the [Google Developers Console][developers-console] to ensure that Google Cloud Storage API is enabled and that you have a bucket with a file in it.
 
-    Run the sample with (from the gcloud-java-examples folder):
+    Run the sample with (from the google-cloud-examples folder):
     ```
     target/appassembler/bin/Stat --check
 
@@ -165,7 +165,7 @@ To run examples from your command line:
     ```
 
     The sample doesn't have anything special about Google Cloud Storage in it, it just opens files
-    via the NIO API. It lists gcloud-java-nio as a dependency, and that enables it to interpret
+    via the NIO API. It lists google-cloud-nio as a dependency, and that enables it to interpret
     `gs://` paths.
 
   * Here's an example run of `TranslateExample`.
@@ -181,7 +181,7 @@ To run examples from your command line:
 Troubleshooting
 ---------------
 
-To get help, follow the `gcloud-java` links in the `gcloud-*` [shared Troubleshooting document](https://github.com/GoogleCloudPlatform/gcloud-common/blob/master/troubleshooting/readme.md#troubleshooting).
+To get help, follow the instructions in the [shared Troubleshooting document](https://github.com/GoogleCloudPlatform/gcloud-common/blob/master/troubleshooting/readme.md#troubleshooting).
 
 Java Versions
 -------------
@@ -202,7 +202,7 @@ Contributing
 
 Contributions to this library are always welcome and highly encouraged.
 
-See `gcloud-java`'s [CONTRIBUTING] documentation and the `gcloud-*` [shared documentation](https://github.com/GoogleCloudPlatform/gcloud-common/blob/master/contributing/readme.md#how-to-contribute-to-gcloud) for more information on how to get started.
+See `google-cloud`'s [CONTRIBUTING] documentation and the [shared documentation](https://github.com/GoogleCloudPlatform/gcloud-common/blob/master/contributing/readme.md#how-to-contribute-to-gcloud) for more information on how to get started.
 
 Please note that this project is released with a Contributor Code of Conduct. By participating in this project you agree to abide by its terms. See [Code of Conduct][code-of-conduct] for more information.
 
@@ -212,8 +212,8 @@ License
 Apache 2.0 - See [LICENSE] for more information.
 
 
-[CONTRIBUTING]:https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/CONTRIBUTING.md
-[code-of-conduct]:https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/CODE_OF_CONDUCT.md#contributor-code-of-conduct
-[LICENSE]: https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/LICENSE
+[CONTRIBUTING]:https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/CONTRIBUTING.md
+[code-of-conduct]:https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/CODE_OF_CONDUCT.md#contributor-code-of-conduct
+[LICENSE]: https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/LICENSE
 [cloud-platform]: https://cloud.google.com/
 [developers-console]:https://console.developers.google.com/

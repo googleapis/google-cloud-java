@@ -1,6 +1,6 @@
-## gcloud-java tools for testing
+## Google Cloud Java tools for testing
 
-This library provides tools to help write tests for code that uses the following gcloud-java services:
+This library provides tools to help write tests for code that uses the following google-cloud services:
 
 -  [BigQuery] (#testing-code-that-uses-bigquery)
 -  [Compute] (#testing-code-that-uses-compute)
