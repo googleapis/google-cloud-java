@@ -33,7 +33,7 @@ import java.util.Scanner;
  * <p>This example creates, deletes, gets, and lists projects.
  *
  * <p>See the
- * <a href="https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/gcloud-java-examples/README.md">
+ * <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/google-cloud-examples/README.md">
  * README</a> for compilation instructions. Run this code with
  * <pre>{@code target/appassembler/bin/ResourceManagerExample
  * [list | [create | delete | get] projectId]}</pre>

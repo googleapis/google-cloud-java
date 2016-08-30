@@ -32,7 +32,7 @@
  * RemoteStorageHelper.forceDelete(storage, bucket, 5, TimeUnit.SECONDS);
  * } </pre>
  *
- * @see <a href="https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/TESTING.md#testing-code-that-uses-storage">
- *     gcloud-java tools for testing</a>
+ * @see <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/TESTING.md#testing-code-that-uses-storage">
+ *     Google Cloud Java tools for testing</a>
  */
 package com.google.cloud.storage.testing;

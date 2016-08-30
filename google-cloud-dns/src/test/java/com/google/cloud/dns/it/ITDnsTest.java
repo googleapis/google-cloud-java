@@ -488,7 +488,7 @@ public class ITDnsTest {
       assertNotNull(zone.name());
       assertNull(zone.dnsName());
       assertNull(zone.description());
-      assertNull(zone.nameServerSet()); // we cannot set it using gcloud java
+      assertNull(zone.nameServerSet()); // we cannot set it using google-cloud
       assertTrue(zone.nameServers().isEmpty());
       assertNull(zone.generatedId());
       assertFalse(zoneIterator.hasNext());
@@ -1109,7 +1109,7 @@ public class ITDnsTest {
       assertNotNull(zone.name());
       assertNull(zone.dnsName());
       assertNull(zone.description());
-      assertNull(zone.nameServerSet()); // we cannot set it using gcloud java
+      assertNull(zone.nameServerSet()); // we cannot set it using google-cloud
       assertTrue(zone.nameServers().isEmpty());
       assertNull(zone.generatedId());
       assertFalse(zoneIterator.hasNext());

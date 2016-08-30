@@ -30,7 +30,7 @@
  * helper.stop();
  * } </pre>
  *
- * @see <a href="https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/TESTING.md#testing-code-that-uses-pubsub">
- *     gcloud-java tools for testing</a>
+ * @see <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/TESTING.md#testing-code-that-uses-pubsub">
+ *     Google Cloud Java tools for testing</a>
  */
 package com.google.cloud.pubsub.testing;

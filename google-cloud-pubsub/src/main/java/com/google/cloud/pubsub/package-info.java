@@ -17,10 +17,10 @@
 /**
  * A client to Google Cloud Pub/Sub.
  *
- * <p>Here's a simple usage example for using gcloud-java from Compute Engine/App Engine Flexible.
+ * <p>Here's a simple usage example for using google-cloud from Compute Engine/App Engine Flexible.
  * This example shows how to create a Pub/Sub topic and asynchronously publish messages to it. For
  * the complete source code see
- * <a href="https://github.com/GoogleCloudPlatform/gcloud-java/tree/master/gcloud-java-examples/src/main/java/com/google/cloud/examples/pubsub/snippets/CreateTopicAndPublishMessages.java">
+ * <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/src/main/java/com/google/cloud/examples/pubsub/snippets/CreateTopicAndPublishMessages.java">
  * CreateTopicAndPublishMessages.java</a>.
  * <pre> {@code
  * try (PubSub pubsub = PubSubOptions.defaultInstance().service()) {
@@ -32,7 +32,7 @@
  *
  * <p>This second example shows how to create a Pub/Sub pull subscription and asynchronously pull
  * messages from it. For the complete source code see
- * <a href="https://github.com/GoogleCloudPlatform/gcloud-java/tree/master/gcloud-java-examples/src/main/java/com/google/cloud/examples/pubsub/snippets/CreateSubscriptionAndPullMessages.java">
+ * <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/src/main/java/com/google/cloud/examples/pubsub/snippets/CreateSubscriptionAndPullMessages.java">
  * CreateSubscriptionAndPullMessages.java</a>.
  * <pre> {@code
  * try (PubSub pubsub = PubSubOptions.defaultInstance().service()) {

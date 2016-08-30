@@ -44,7 +44,7 @@ import java.util.concurrent.TimeUnit;
  * It prints a MD5 hash and reports how long it took.
  *
  * <p>See the
- * <a href="https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/gcloud-java-examples/README.md">
+ * <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/google-cloud-examples/README.md">
  * README</a> for compilation instructions. Run this code with
  * <pre>{@code target/appassembler/bin/ParallelCountBytes <file>}</pre>
  */

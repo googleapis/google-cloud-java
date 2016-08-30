@@ -46,7 +46,7 @@ public class ManipulateZonesAndRecordSets {
     // Create a zone metadata object
     String zoneName = "my-unique-zone"; // Change this zone name which is unique within your project
     String domainName = "someexampledomain.com."; // Change this to a domain which you own
-    String description = "This is a gcloud-java-dns sample zone.";
+    String description = "This is a google-cloud-dns sample zone.";
     ZoneInfo zoneInfo = ZoneInfo.of(zoneName, domainName, description);
 
     // Create zone in Google Cloud DNS

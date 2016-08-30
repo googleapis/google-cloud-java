@@ -17,12 +17,12 @@
 /**
  * A client to Google Translate.
  *
- * <p>Here's a simple usage example for using gcloud-java. This example shows how to detect the
+ * <p>Here's a simple usage example for using google-cloud. This example shows how to detect the
  * language of some text and how to translate some text. The example assumes that the
  * {@code GOOGLE_API_KEY} is set and contains a valid API key. Alternatively, you can use
  * {@link com.google.cloud.translate.TranslateOptions.Builder#apiKey(java.lang.String)} to set the
  * API key. For the complete source code see
- * <a href="https://github.com/GoogleCloudPlatform/gcloud-java/tree/master/gcloud-java-examples/src/main/java/com/google/cloud/examples/translate/snippets/DetectLanguageAndTranslate.java">
+ * <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/src/main/java/com/google/cloud/examples/translate/snippets/DetectLanguageAndTranslate.java">
  * DetectLanguageAndTranslate.java</a>.
  * <pre> {@code
  * Translate translate = TranslateOptions.defaultInstance().service();

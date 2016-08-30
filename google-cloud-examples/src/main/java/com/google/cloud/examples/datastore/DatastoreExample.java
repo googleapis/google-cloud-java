@@ -42,7 +42,7 @@ import java.util.TreeMap;
  * contact information for a user.
  *
  * <p>See the
- * <a href="https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/gcloud-java-examples/README.md">
+ * <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/google-cloud-examples/README.md">
  * README</a> for compilation instructions. Run this code with
  * <pre>{@code target/appassembler/bin/DatastoreExample
  * [projectId] [user] [delete|display|add comment|set <email> <phone>]}</pre>

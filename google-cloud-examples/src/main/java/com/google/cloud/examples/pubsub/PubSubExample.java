@@ -44,7 +44,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * <p>This example demonstrates a simple/typical Pub/Sub usage.
  *
  * <p>See the
- * <a href="https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/gcloud-java-examples/README.md">
+ * <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/google-cloud-examples/README.md">
  * README</a> for compilation instructions. Run this code with
  * <pre>{@code target/appassembler/bin/PubSubExample
  *  -Dexec.args="[<project_id>]

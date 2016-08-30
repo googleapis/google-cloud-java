@@ -29,18 +29,18 @@ import java.nio.file.spi.FileSystemProvider;
  * Stat is a super-simple program that just displays the size of the file
  * passed as argument.
  *
- * <p>It's meant to be used to test GCloud's integration with Java NIO.
+ * <p>It's meant to be used to test Google Cloud's integration with Java NIO.
  *
  * <p>You can either use the '--check' argument to see whether Google Cloud Storage is enabled, or
  * you can directly pass in a Google Cloud Storage file name to use. In that case you have to be
  * logged in (using e.g. the gcloud auth command).
  *
  * <p>See the
- * <a href="https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/gcloud-java-examples/README.md">
+ * <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/google-cloud-examples/README.md">
  * README</a> for compilation instructions. Run this code with
  * <pre>{@code target/appassembler/bin/Stat --help | --check | --list | <file>}</pre>
  *
- * <p>In short, this version (in gcloud-java-examples) is in a package that lists gcloud-java-nio
+ * <p>In short, this version (in google-cloud-examples) is in a package that lists google-cloud-nio
  * as a dependency, so it will work directly without having to do any special work.
  */
 public class Stat {
@@ -94,15 +94,15 @@ public class Stat {
          " * --check",
          "   to double-check the Google Cloud Storage provider is installed.",
          "",
-         "The purpose of this tool is to demonstrate that the gcloud NIO filesystem provider",
+         "The purpose of this tool is to demonstrate that the Google Cloud NIO filesystem provider",
          "can add Google Cloud Storage support to programs not explicitly designed for it.",
          "",
          "This tool normally knows nothing of Google Cloud Storage. If you pass it --check",
          "or a Google Cloud Storage file name (e.g. gs://mybucket/myfile), it will show an error.",
-         "However, by just adding the gcloud-nio jar as a dependency and recompiling, this tool is",
-         "made aware of gs:// paths and can access files on the cloud.",
+         "However, by just adding the google-cloud-nio jar as a dependency and recompiling, this",
+         "tool is made aware of gs:// paths and can access files on the cloud.",
          "",
-         "The gcloud NIO filesystem provider can similarly enable existing Java 7 programs",
+         "The Google Cloud NIO filesystem provider can similarly enable existing Java 7 programs",
          "to read and write cloud files, even if they have no special built-in cloud support."
         };
     for (String s : help) {

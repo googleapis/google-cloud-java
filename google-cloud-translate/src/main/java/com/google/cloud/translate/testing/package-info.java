@@ -24,7 +24,7 @@
  * Translate translate = helper.options().service();
  * } </pre>
  *
- * @see <a href="https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/TESTING.md#testing-code-that-uses-translate">
- *     gcloud-java tools for testing</a>
+ * @see <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/TESTING.md#testing-code-that-uses-translate">
+ *     Google Cloud Java tools for testing</a>
  */
 package com.google.cloud.translate.testing;

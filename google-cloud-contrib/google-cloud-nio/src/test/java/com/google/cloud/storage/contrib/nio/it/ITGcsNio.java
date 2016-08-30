@@ -58,7 +58,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * Integration test for gcloud-java-nio.
+ * Integration test for google-cloud-nio.
  *
  * <p>This test actually talks to Google Cloud Storage (you need an account) and tests both reading
  * and writing. You *must* set the {@code GOOGLE_APPLICATION_CREDENTIALS} environment variable for

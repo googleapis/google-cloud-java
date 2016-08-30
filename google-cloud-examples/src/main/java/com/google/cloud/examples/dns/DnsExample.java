@@ -43,7 +43,7 @@ import java.util.concurrent.TimeUnit;
  * record sets of type A, and lists record sets.
  *
  * <p>See the
- * <a href="https://github.com/GoogleCloudPlatform/gcloud-java/blob/master/gcloud-java-examples/README.md">
+ * <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/google-cloud-examples/README.md">
  * README</a> for compilation instructions. Run this code with
  * <pre>{@code target/appassembler/bin/DnsExample [<project_id>]
  * create <zone_name> <dns_name> <description> |

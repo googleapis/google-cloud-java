@@ -100,7 +100,7 @@ public class DefaultStorageRpc implements StorageRpc {
 
     // Batch size is limited as, due to some current service implementation details, the service
     // performs better if the batches are split for better distribution. See
-    // https://github.com/GoogleCloudPlatform/gcloud-java/pull/952#issuecomment-213466772 for
+    // https://github.com/GoogleCloudPlatform/google-cloud-java/pull/952#issuecomment-213466772 for
     // background.
     private static final int MAX_BATCH_SIZE = 100;
 
