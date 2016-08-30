@@ -15,6 +15,6 @@
  */
 
 /**
- * Core classes for the {@code gcloud-java} library.
+ * Core classes for the {@code google-cloud} library.
  */
 package com.google.cloud;
