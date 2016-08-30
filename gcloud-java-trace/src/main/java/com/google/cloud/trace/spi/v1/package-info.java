@@ -39,4 +39,4 @@
  * </pre>
  *
  */
-package com.google.cloud.cloudtrace.spi.v1;
+package com.google.cloud.trace.spi.v1;
