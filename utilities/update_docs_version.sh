@@ -10,7 +10,7 @@ RELEASED_VERSION=$(mvn org.apache.maven.plugins:maven-help-plugin:2.1.1:evaluate
 if [ "${RELEASED_VERSION##*-}" != "SNAPSHOT" ]; then
     echo "Changing version to $RELEASED_VERSION in README files"
     # Get list of directories for which README.md must be updated
-    module_folders=($(find . -maxdepth 2 -type d | sed -E -n "/^\.\/(gcloud-java-contrib\/)?gcloud-java(-[a-z]+)+$/p") . ./gcloud-java)
+    module_folders=($(find . -maxdepth 2 -type d | sed -E -n "/^\.\/(google-cloud-contrib\/)?google-cloud(-[a-z]+)+$/p") . ./google-cloud)
     readmes=""
     for item in ${module_folders[*]}
     do
@@ -22,12 +22,12 @@ if [ "${RELEASED_VERSION##*-}" != "SNAPSHOT" ]; then
         fi
     done
     NEW_VERSION=${RELEASED_VERSION%.*}.$((${RELEASED_VERSION##*.}+1))-SNAPSHOT
-    echo "Changing version to $NEW_VERSION in gcloud-java-nio-example README"
-    sed -ri "s/gcloud-java-nio-[0-9]+\.[0-9]+\.[0-9]+-SNAPSHOT/gcloud-java-nio-$NEW_VERSION/g" gcloud-java-contrib/gcloud-java-nio-examples/README.md
-    sed -ri "s/gcloud-java-nio-examples-[0-9]+\.[0-9]+\.[0-9]+-SNAPSHOT/gcloud-java-nio-examples-$NEW_VERSION/g" gcloud-java-contrib/gcloud-java-nio-examples/README.md
+    echo "Changing version to $NEW_VERSION in google-cloud-nio-example README"
+    sed -ri "s/google-cloud-nio-[0-9]+\.[0-9]+\.[0-9]+-SNAPSHOT/google-cloud-nio-$NEW_VERSION/g" google-cloud-contrib/google-cloud-nio-examples/README.md
+    sed -ri "s/google-cloud-nio-examples-[0-9]+\.[0-9]+\.[0-9]+-SNAPSHOT/google-cloud-nio-examples-$NEW_VERSION/g" google-cloud-contrib/google-cloud-nio-examples/README.md
     git add $readmes
     git config --global user.name "travis-ci"
     git config --global user.email "travis@travis-ci.org"
     git commit -m "Updating version in README files. [ci skip]"
-    git push --quiet "https://${CI_DEPLOY_USERNAME}:${CI_DEPLOY_PASSWORD}@github.com/GoogleCloudPlatform/gcloud-java.git" HEAD:master > /dev/null 2>&1
+    git push --quiet "https://${CI_DEPLOY_USERNAME}:${CI_DEPLOY_PASSWORD}@github.com/GoogleCloudPlatform/google-cloud-java.git" HEAD:master > /dev/null 2>&1
 fi

@@ -11,7 +11,7 @@
 # Get the previous maven project version.
 CURRENT_VERSION=$(mvn org.apache.maven.plugins:maven-help-plugin:2.1.1:evaluate -Dexpression=project.version | grep -Ev '(^\[|\w+:)')
 # Get list of directories for which pom.xml must be updated
-module_folders=($(find . -maxdepth 2 -type d | sed -E -n "/^\.\/(gcloud-java-contrib\/)?gcloud-java(-[a-z]+)+$/p") . ./gcloud-java)
+module_folders=($(find . -maxdepth 2 -type d | sed -E -n "/^\.\/(google-cloud-contrib\/)?google-cloud(-[a-z]+)+$/p") . ./google-cloud)
 if [ $# -eq 1 ]; then
     NEW_VERSION=$1
 elif [ "${CURRENT_VERSION##*-}" != "SNAPSHOT" ]; then
