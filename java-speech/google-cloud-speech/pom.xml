@@ -1,20 +1,20 @@
 <?xml version="1.0"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <artifactId>gcloud-java-speech</artifactId>
+  <artifactId>google-cloud-speech</artifactId>
   <packaging>jar</packaging>
-  <name>GCloud Java Speech</name>
-  <url>https://github.com/GoogleCloudPlatform/gcloud-java/tree/master/gcloud-java-speech</url>
+  <name>Google Cloud Speech</name>
+  <url>https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-speech</url>
   <description>
     Java idiomatic client for Google Cloud Speech.
   </description>
   <parent>
     <groupId>com.google.cloud</groupId>
-    <artifactId>gcloud-java-pom</artifactId>
+    <artifactId>google-cloud-pom</artifactId>
     <version>0.2.9-SNAPSHOT</version>
   </parent>
   <properties>
-    <site.installationModule>gcloud-java-speech</site.installationModule>
+    <site.installationModule>google-cloud-speech</site.installationModule>
   </properties>
   <dependencies>
     <dependency>
@@ -24,7 +24,7 @@
     </dependency>
     <dependency>
       <groupId>${project.groupId}</groupId>
-      <artifactId>gcloud-java-core</artifactId>
+      <artifactId>google-cloud-core</artifactId>
       <version>${project.version}</version>
     </dependency>
     <dependency>
@@ -44,7 +44,7 @@
     </dependency>
     <dependency>
       <groupId>${project.groupId}</groupId>
-      <artifactId>gcloud-java-core</artifactId>
+      <artifactId>google-cloud-core</artifactId>
       <version>${project.version}</version>
       <type>test-jar</type>
       <scope>test</scope>
