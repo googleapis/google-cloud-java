@@ -2,11 +2,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
-  <artifactId>gcloud-java-pom</artifactId>
+  <artifactId>google-cloud-pom</artifactId>
   <packaging>pom</packaging>
-  <version>0.2.9-SNAPSHOT</version>
-  <name>GCloud Java</name>
-  <url>https://github.com/GoogleCloudPlatform/gcloud-java</url>
+  <version>0.3.0-SNAPSHOT</version>
+  <name>Google Cloud</name>
+  <url>https://github.com/GoogleCloudPlatform/google-cloud-java</url>
   <description>
     Java idiomatic client for Google Cloud Platform services.
   </description>
@@ -52,17 +52,17 @@
     <name>Google</name>
   </organization>
   <scm>
-    <connection>scm:git:git@github.com:GoogleCloudPlatform/gcloud-java.git</connection>
-    <developerConnection>scm:git:git@github.com:GoogleCloudPlatform/gcloud-java.git</developerConnection>
-    <url>https://github.com/GoogleCloudPlatform/gcloud-java</url>
+    <connection>scm:git:git@github.com:GoogleCloudPlatform/google-cloud.git</connection>
+    <developerConnection>scm:git:git@github.com:GoogleCloudPlatform/google-cloud.git</developerConnection>
+    <url>https://github.com/GoogleCloudPlatform/google-cloud</url>
     <tag>HEAD</tag>
   </scm>
   <ciManagement>
     <system>Travis CI</system>
-    <url>https://travis-ci.org/GoogleCloudPlatform/gcloud-java</url>
+    <url>https://travis-ci.org/GoogleCloudPlatform/google-cloud-java</url>
   </ciManagement>
   <issueManagement>
-    <url>https://github.com/GoogleCloudPlatform/gcloud-java/issues</url>
+    <url>https://github.com/GoogleCloudPlatform/google-cloud-java/issues</url>
     <system>GitHub Issues</system>
   </issueManagement>
   <distributionManagement>
@@ -82,35 +82,35 @@
   </distributionManagement>
   <licenses>
     <license>
-      <name>GCloud Java Software License</name>
-      <url>https://raw.githubusercontent.com/GoogleCloudPlatform/gcloud-java/master/LICENSE</url>
+      <name>Google Cloud Software License</name>
+      <url>https://raw.githubusercontent.com/GoogleCloudPlatform/google-cloud/master/LICENSE</url>
     </license>
   </licenses>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <github.global.server>github</github.global.server>
-    <site.installationModule>gcloud-java</site.installationModule>
+    <site.installationModule>google-cloud</site.installationModule>
   </properties>
   <modules>
-    <module>gcloud-java</module>
-    <module>gcloud-java-bigquery</module>
-    <module>gcloud-java-trace</module>
-    <module>gcloud-java-compute</module>
-    <module>gcloud-java-contrib</module>
-    <module>gcloud-java-core</module>
-    <module>gcloud-java-datastore</module>
-    <module>gcloud-java-dns</module>
-    <module>gcloud-java-errorreporting</module>
-    <module>gcloud-java-examples</module>
-    <module>gcloud-java-language</module>
-    <module>gcloud-java-logging</module>
-    <module>gcloud-java-pubsub</module>
-    <module>gcloud-java-resourcemanager</module>
-    <module>gcloud-java-speech</module>
-    <module>gcloud-java-storage</module>
-    <module>gcloud-java-translate</module>
-    <module>gcloud-java-vision</module>
+    <module>google-cloud</module>
+    <module>google-cloud-bigquery</module>
+    <module>google-cloud-compute</module>
+    <module>google-cloud-contrib</module>
+    <module>google-cloud-core</module>
+    <module>google-cloud-datastore</module>
+    <module>google-cloud-dns</module>
+    <module>google-cloud-errorreporting</module>
+    <module>google-cloud-examples</module>
+    <module>google-cloud-language</module>
+    <module>google-cloud-logging</module>
+    <module>google-cloud-pubsub</module>
+    <module>google-cloud-resourcemanager</module>
+    <module>google-cloud-speech</module>
+    <module>google-cloud-storage</module>
+    <module>google-cloud-trace</module>
+    <module>google-cloud-translate</module>
+    <module>google-cloud-vision</module>
   </modules>
   <pluginRepositories>
     <pluginRepository>
@@ -415,7 +415,7 @@
                   </group>
                   <group>
                     <title>SPI packages</title>
-                    <packages>com.google.cloud.spi:com.google.cloud.bigquery.spi:com.google.cloud.compute.spi:com.google.cloud.datastore.spi:com.google.cloud.dns.spi:com.google.cloud.logging.spi:com.google.cloud.logging.spi.*:com.google.cloud.pubsub.spi:com.google.cloud.pubsub.spi.*:com.google.cloud.resourcemanager.spi:com.google.cloud.storage.spi:com.google.cloud.translate.spi</packages>
+                    <packages>com.google.cloud.spi:com.google.cloud.bigquery.spi:com.google.cloud.compute.spi:com.google.cloud.datastore.spi:com.google.cloud.dns.spi:com.google.cloud.errorreporting.spi:com.google.cloud.errorreporting.spi.*:com.google.cloud.language.spi:com.google.cloud.language.spi.*:com.google.cloud.logging.spi:com.google.cloud.logging.spi.*:com.google.cloud.pubsub.spi:com.google.cloud.pubsub.spi.*:com.google.cloud.resourcemanager.spi:com.google.cloud.speech.spi:com.google.cloud.speech.spi.*:com.google.cloud.storage.spi:com.google.cloud.trace.spi:com.google.cloud.trace.spi.*:com.google.cloud.translate.spi:com.google.cloud.vision.spi:com.google.cloud.vision.spi.*</packages>
                   </group>
                 </groups>
               </configuration>
