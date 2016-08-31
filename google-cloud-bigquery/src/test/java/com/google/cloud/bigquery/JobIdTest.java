@@ -45,6 +45,11 @@ public class JobIdTest {
     compareJobs(JOB_COMPLETE, JobId.fromPb(JOB_COMPLETE.toPb()));
   }
 
+  @Test
+  public void testSetProjectId() {
+    assertEquals(JOB_COMPLETE, JOB.setProjectId("project"));
+  }
+
   private void compareJobs(JobId expected, JobId value) {
     assertEquals(expected, value);
     assertEquals(expected.hashCode(), value.hashCode());
