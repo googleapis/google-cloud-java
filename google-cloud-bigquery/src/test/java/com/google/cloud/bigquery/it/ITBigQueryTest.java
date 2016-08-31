@@ -71,6 +71,7 @@ import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.testing.RemoteStorageHelper;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
+import com.google.common.collect.ImmutableSet;
 import com.google.common.io.BaseEncoding;
 
 import org.junit.AfterClass;
@@ -82,8 +83,10 @@ import org.junit.rules.Timeout;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.charset.StandardCharsets;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
@@ -177,6 +180,8 @@ public class ITBigQueryTest {
       + "\"BytesField\": \"" + BYTES_BASE64 + "\""
       + "}"
       + "}";
+  private static final Set<String> PUBLIC_DATASETS = ImmutableSet.of("github_repos", "hacker_news",
+      "noaa_gsod", "samples", "usa_names");
 
   private static BigQuery bigquery;
   private static Storage storage;
@@ -217,6 +222,19 @@ public class ITBigQueryTest {
       if (!wasDeleted && LOG.isLoggable(Level.WARNING)) {
         LOG.log(Level.WARNING, "Deletion of bucket {0} timed out, bucket is not empty", BUCKET);
       }
+    }
+  }
+
+  @Test
+  public void testListDatasets() {
+    Page<Dataset> datasets = bigquery.listDatasets("bigquery-public-data");
+    Iterator<Dataset> iterator = datasets.iterateAll();
+    Set<String> datasetNames = new HashSet<>();
+    while (iterator.hasNext()) {
+      datasetNames.add(iterator.next().datasetId().dataset());
+    }
+    for (String type : PUBLIC_DATASETS) {
+      assertTrue(datasetNames.contains(type));
     }
   }
 

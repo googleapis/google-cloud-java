@@ -483,6 +483,17 @@ public interface BigQuery extends Service<BigQueryOptions> {
   Page<Dataset> listDatasets(DatasetListOption... options);
 
   /**
+   * Lists the datasets in the provided project. This method returns partial information on each
+   * dataset: ({@link Dataset#datasetId()}, {@link Dataset#friendlyName()} and
+   * {@link Dataset#generatedId()}). To get complete information use either
+   * {@link #getDataset(String, DatasetOption...)} or
+   * {@link #getDataset(DatasetId, DatasetOption...)}.
+   *
+   * @throws BigQueryException upon failure
+   */
+  Page<Dataset> listDatasets(String projectId, DatasetListOption... options);
+
+  /**
    * Deletes the requested dataset.
    *
    * @return {@code true} if dataset was deleted, {@code false} if it was not found
