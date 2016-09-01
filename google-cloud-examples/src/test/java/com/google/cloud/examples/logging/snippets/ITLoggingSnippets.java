@@ -29,6 +29,7 @@ import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Iterators;
 import com.google.common.collect.Sets;
 
+import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
@@ -45,11 +46,11 @@ public class ITLoggingSnippets {
   private static final String DATASET = "dataset";
   private static final Set<String> DESCRIPTOR_TYPES = ImmutableSet.of("gce_instance", "gae_app",
       "cloudsql_database", "api", "gcs_bucket", "global", "dataflow_step", "build",
-      "app_script_function", "dataproc_cluster", "ml_job", "bigquery_resource",
-      "crm_iam_policy_check", "container", "gke_cluster", "cloud_debugger_resource",
-      "http_load_balancer", "aws_ec2_instance", "client_auth_config_brand",
-      "client_auth_config_client", "logging_log", "logging_sink", "metric", "project",
-      "testservice_matrix", "service_account", "deployment", "dns_managed_zone");
+      "app_script_function", "dataproc_cluster", "ml_job", "bigquery_resource", "container",
+      "gke_cluster", "cloud_debugger_resource", "http_load_balancer", "aws_ec2_instance",
+      "client_auth_config_brand", "client_auth_config_client", "logging_log", "logging_sink",
+      "metric", "project", "testservice_matrix", "service_account", "deployment",
+      "dns_managed_zone");
 
   private static Logging logging;
   private static LoggingSnippets loggingSnippets;
@@ -65,6 +66,13 @@ public class ITLoggingSnippets {
     RemoteLoggingHelper helper = RemoteLoggingHelper.create();
     logging = helper.options().service();
     loggingSnippets = new LoggingSnippets(logging);
+  }
+
+  @AfterClass
+  public static void afterClass() throws Exception {
+    if (logging != null) {
+      logging.close();
+    }
   }
 
   @Test
