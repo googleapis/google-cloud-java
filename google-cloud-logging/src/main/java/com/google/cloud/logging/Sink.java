@@ -176,8 +176,8 @@ public class Sink extends SinkInfo {
    * @return a {@code Sink} object with updated information
    * @throws LoggingException upon failure
    */
-  public Sink update(SinkInfo sinkInfo) {
-    return logging.update(sinkInfo);
+  public Sink update() {
+    return logging.update(this);
   }
 
   /**
@@ -187,8 +187,8 @@ public class Sink extends SinkInfo {
    *
    * @throws LoggingException upon failure
    */
-  public Future<Sink> updateAsync(SinkInfo sinkInfo) {
-    return logging.updateAsync(sinkInfo);
+  public Future<Sink> updateAsync() {
+    return logging.updateAsync(this);
   }
 
   private void readObject(ObjectInputStream input) throws IOException, ClassNotFoundException {

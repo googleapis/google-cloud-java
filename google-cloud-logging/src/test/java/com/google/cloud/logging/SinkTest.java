@@ -150,11 +150,11 @@ public class SinkTest {
     initializeExpectedSink(2);
     SinkInfo updatedInfo = SINK_INFO.toBuilder().filter(NEW_FILTER).build();
     Sink expectedSink = new Sink(serviceMockReturnsOptions, new SinkInfo.BuilderImpl(updatedInfo));
-    expect(logging.options()).andReturn(mockOptions);
-    expect(logging.update(updatedInfo)).andReturn(expectedSink);
+    expect(logging.options()).andReturn(mockOptions).times(2);
+    expect(logging.update(expectedSink)).andReturn(expectedSink);
     replay(logging);
     initializeSink();
-    Sink updatedSink = sink.update(updatedInfo);
+    Sink updatedSink = sink.toBuilder().filter(NEW_FILTER).build().update();
     compareSink(expectedSink, updatedSink);
   }
 
@@ -163,11 +163,11 @@ public class SinkTest {
     initializeExpectedSink(2);
     SinkInfo updatedInfo = SINK_INFO.toBuilder().filter(NEW_FILTER).build();
     Sink expectedSink = new Sink(serviceMockReturnsOptions, new SinkInfo.BuilderImpl(updatedInfo));
-    expect(logging.options()).andReturn(mockOptions);
-    expect(logging.updateAsync(updatedInfo)).andReturn(Futures.immediateFuture(expectedSink));
+    expect(logging.options()).andReturn(mockOptions).times(2);
+    expect(logging.updateAsync(expectedSink)).andReturn(Futures.immediateFuture(expectedSink));
     replay(logging);
     initializeSink();
-    Sink updatedSink = sink.updateAsync(updatedInfo).get();
+    Sink updatedSink = sink.toBuilder().filter(NEW_FILTER).build().updateAsync().get();
     compareSink(expectedSink, updatedSink);
   }
 

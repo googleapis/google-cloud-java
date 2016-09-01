@@ -103,9 +103,10 @@ public abstract class BaseSystemTest {
     assertEquals(logging().options().projectId(), datasetDestination.project());
     assertEquals("dataset", datasetDestination.dataset());
     assertEquals(sink, logging().getSink(name));
-    sink = sink.update(sink.toBuilder()
+    sink = sink.toBuilder()
         .filter("severity<=ERROR")
-        .build());
+        .build()
+        .update();
     assertEquals(name, sink.name());
     assertEquals(SinkInfo.VersionFormat.V2, sink.versionFormat());
     assertEquals("severity<=ERROR", sink.filter());
@@ -128,9 +129,10 @@ public abstract class BaseSystemTest {
     assertEquals(logging().options().projectId(), datasetDestination.project());
     assertEquals("dataset", datasetDestination.dataset());
     assertEquals(sink, logging().getSinkAsync(name).get());
-    sink = sink.updateAsync(sink.toBuilder()
+    sink = sink.toBuilder()
         .filter("severity<=ERROR")
-        .build()).get();
+        .build()
+        .updateAsync().get();
     assertEquals(name, sink.name());
     assertEquals(SinkInfo.VersionFormat.V2, sink.versionFormat());
     assertEquals("severity<=ERROR", sink.filter());
