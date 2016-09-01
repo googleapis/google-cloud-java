@@ -93,7 +93,7 @@ class Method(object):
                             method_name, ', '.join(
                                 [parameter.signature_type for parameter in parameters]))
                         regex = '{}\(\s*{}\)'.format(re.escape(method_name),
-                            ',\s+'.join(['{}\s+{}'.format(
+                            ',\s+'.join(['(final\s+)?{}\s+{}'.format(
                                 re.escape(parameter.complete_type), re.escape(parameter.name))
                             for parameter in parameters]))
                         method = cls(method_name, parameters, signature, regex)
