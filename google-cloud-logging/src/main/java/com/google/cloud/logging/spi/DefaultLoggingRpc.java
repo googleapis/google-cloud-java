@@ -184,7 +184,8 @@ public class DefaultLoggingRpc implements LoggingRpc {
 
   @Override
   public Future<Empty> delete(DeleteSinkRequest request) {
-    return translate(configApi.deleteSinkCallable().futureCall(request), true);
+    return translate(configApi.deleteSinkCallable().futureCall(request), true,
+        Code.NOT_FOUND.value());
   }
 
   @Override
