@@ -164,8 +164,8 @@ public class Metric extends MetricInfo {
    * @return a {@code Metric} object with updated information
    * @throws LoggingException upon failure
    */
-  public Metric update(MetricInfo metricInfo) {
-    return logging.update(metricInfo);
+  public Metric update() {
+    return logging.update(this);
   }
 
   /**
@@ -175,8 +175,8 @@ public class Metric extends MetricInfo {
    *
    * @throws LoggingException upon failure
    */
-  public Future<Metric> updateAsync(MetricInfo metricInfo) {
-    return logging.updateAsync(metricInfo);
+  public Future<Metric> updateAsync() {
+    return logging.updateAsync(this);
   }
 
   private void readObject(ObjectInputStream input) throws IOException, ClassNotFoundException {
