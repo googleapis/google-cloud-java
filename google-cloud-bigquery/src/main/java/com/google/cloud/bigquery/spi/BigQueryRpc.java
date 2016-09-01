@@ -100,15 +100,16 @@ public interface BigQueryRpc {
    *
    * @throws BigQueryException upon failure
    */
-  Dataset getDataset(String datasetId, Map<Option, ?> options);
+  Dataset getDataset(String projectId, String datasetId, Map<Option, ?> options);
 
   /**
-   * Lists the project's datasets. Partial information is returned on a dataset (datasetReference,
-   * friendlyName and id). To get full information use {@link #getDataset(String, Map)}.
+   * Lists the provided project's datasets. Partial information is returned on a dataset
+   * (datasetReference, friendlyName and id). To get full information use
+   * {@link #getDataset(String, String, Map)}.
    *
    * @throws BigQueryException upon failure
    */
-  Tuple<String, Iterable<Dataset>> listDatasets(Map<Option, ?> options);
+  Tuple<String, Iterable<Dataset>> listDatasets(String projectId, Map<Option, ?> options);
 
   /**
    * Creates a new dataset.
@@ -137,7 +138,7 @@ public interface BigQueryRpc {
    * @return {@code true} if dataset was deleted, {@code false} if it was not found
    * @throws BigQueryException upon failure
    */
-  boolean deleteDataset(String datasetId, Map<Option, ?> options);
+  boolean deleteDataset(String projectId, String datasetId, Map<Option, ?> options);
 
   /**
    * Updates dataset information.
@@ -158,15 +159,17 @@ public interface BigQueryRpc {
    *
    * @throws BigQueryException upon failure
    */
-  Table getTable(String datasetId, String tableId, Map<Option, ?> options);
+  Table getTable(String projectId, String datasetId, String tableId, Map<Option, ?> options);
 
   /**
    * Lists the dataset's tables. Partial information is returned on a table (tableReference,
-   * friendlyName, id and type). To get full information use {@link #getTable(String, String, Map)}.
+   * friendlyName, id and type). To get full information use
+   * {@link #getTable(String, String, String, Map)}.
    *
    * @throws BigQueryException upon failure
    */
-  Tuple<String, Iterable<Table>> listTables(String dataset, Map<Option, ?> options);
+  Tuple<String, Iterable<Table>> listTables(String projectId, String dataset,
+      Map<Option, ?> options);
 
   /**
    * Delete the requested table.
@@ -174,14 +177,14 @@ public interface BigQueryRpc {
    * @return {@code true} if table was deleted, {@code false} if it was not found
    * @throws BigQueryException upon failure
    */
-  boolean deleteTable(String datasetId, String tableId);
+  boolean deleteTable(String projectId, String datasetId, String tableId);
 
   /**
    * Sends an insert all request.
    *
    * @throws BigQueryException upon failure
    */
-  TableDataInsertAllResponse insertAll(String datasetId, String tableId,
+  TableDataInsertAllResponse insertAll(String projectId, String datasetId, String tableId,
       TableDataInsertAllRequest request);
 
   /**
@@ -189,22 +192,22 @@ public interface BigQueryRpc {
    *
    * @throws BigQueryException upon failure
    */
-  Tuple<String, Iterable<TableRow>> listTableData(String datasetId, String tableId,
-      Map<Option, ?> options);
+  Tuple<String, Iterable<TableRow>> listTableData(String projectId, String datasetId,
+      String tableId, Map<Option, ?> options);
 
   /**
    * Returns the requested job or {@code null} if not found.
    *
    * @throws BigQueryException upon failure
    */
-  Job getJob(String jobId, Map<Option, ?> options);
+  Job getJob(String projectId, String jobId, Map<Option, ?> options);
 
   /**
    * Lists the project's jobs.
    *
    * @throws BigQueryException upon failure
    */
-  Tuple<String, Iterable<Job>> listJobs(Map<Option, ?> options);
+  Tuple<String, Iterable<Job>> listJobs(String projectId, Map<Option, ?> options);
 
   /**
    * Sends a job cancel request. This call will return immediately, and the client will need to poll
@@ -214,14 +217,14 @@ public interface BigQueryRpc {
    *     found
    * @throws BigQueryException upon failure
    */
-  boolean cancel(String jobId);
+  boolean cancel(String projectId, String jobId);
 
   /**
    * Returns results of the query associated with the provided job.
    *
    * @throws BigQueryException upon failure
    */
-  GetQueryResultsResponse getQueryResults(String jobId, Map<Option, ?> options);
+  GetQueryResultsResponse getQueryResults(String projectId, String jobId, Map<Option, ?> options);
 
   /**
    * Runs the query associated with the request.

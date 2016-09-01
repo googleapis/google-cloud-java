@@ -326,7 +326,11 @@ public class JobInfo implements Serializable {
   }
 
   JobInfo setProjectId(String projectId) {
-    return toBuilder().configuration(configuration.setProjectId(projectId)).build();
+    Builder builder = toBuilder();
+    if (jobId != null) {
+      builder.jobId(jobId.setProjectId(projectId));
+    }
+    return builder.configuration(configuration.setProjectId(projectId)).build();
   }
 
   Job toPb() {

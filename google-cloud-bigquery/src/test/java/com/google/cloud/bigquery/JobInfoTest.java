@@ -341,16 +341,24 @@ public class JobInfoTest {
 
   @Test
   public void testSetProjectId() {
-    CopyJobConfiguration copyConfiguration = COPY_JOB.setProjectId("p").configuration();
+    JobInfo jobInfo = COPY_JOB.setProjectId("p");
+    assertEquals("p", jobInfo.jobId().project());
+    CopyJobConfiguration copyConfiguration = jobInfo.configuration();
     assertEquals("p", copyConfiguration.destinationTable().project());
     for (TableId sourceTable : copyConfiguration.sourceTables()) {
       assertEquals("p", sourceTable.project());
     }
-    ExtractJobConfiguration extractConfiguration = EXTRACT_JOB.setProjectId("p").configuration();
+    jobInfo = EXTRACT_JOB.setProjectId("p");
+    assertEquals("p", jobInfo.jobId().project());
+    ExtractJobConfiguration extractConfiguration = jobInfo.configuration();
     assertEquals("p", extractConfiguration.sourceTable().project());
-    LoadJobConfiguration loadConfiguration = LOAD_JOB.setProjectId("p").configuration();
+    jobInfo = LOAD_JOB.setProjectId("p");
+    assertEquals("p", jobInfo.jobId().project());
+    LoadJobConfiguration loadConfiguration = jobInfo.configuration();
     assertEquals("p", loadConfiguration.destinationTable().project());
-    QueryJobConfiguration queryConfiguration = QUERY_JOB.setProjectId("p").configuration();
+    jobInfo = QUERY_JOB.setProjectId("p");
+    assertEquals("p", jobInfo.jobId().project());
+    QueryJobConfiguration queryConfiguration = jobInfo.configuration();
     assertEquals("p", queryConfiguration.defaultDataset().project());
     assertEquals("p", queryConfiguration.destinationTable().project());
   }

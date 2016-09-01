@@ -83,6 +83,10 @@ public final class JobId implements Serializable {
     return toPb().toString();
   }
 
+  JobId setProjectId(String projectId) {
+    return project() != null ? this : JobId.of(projectId, job());
+  }
+
   JobReference toPb() {
     return new JobReference().setProjectId(project).setJobId(job);
   }
