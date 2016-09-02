@@ -72,9 +72,7 @@ import java.util.Map;
 import java.util.TimeZone;
 
 /**
- * Contains Cloud Datastore snippets linked from the Concepts documentation.
- *
- * @see <a href="https://cloud.google.com/datastore/v1beta3/">Key Datastore Concepts</a>
+ * Contains Cloud Datastore snippets demonstrating concepts for documentation.
  */
 public class Concepts {
 
