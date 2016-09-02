@@ -26,7 +26,8 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 
 import com.google.cloud.Identity;
-import com.google.cloud.resourcemanager.Policy.ProjectRole;
+import com.google.cloud.Policy;
+import com.google.cloud.Role;
 import com.google.cloud.resourcemanager.ProjectInfo.ResourceId;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -56,8 +57,8 @@ public class ProjectTest {
   private static final Identity SERVICE_ACCOUNT =
       Identity.serviceAccount("service-account@gmail.com");
   private static final Policy POLICY = Policy.builder()
-      .addIdentity(ProjectRole.OWNER.value(), USER)
-      .addIdentity(ProjectRole.EDITOR.value(), SERVICE_ACCOUNT)
+      .addIdentity(Role.of("roles/owner"), USER)
+      .addIdentity(Role.of("roles/editor"), SERVICE_ACCOUNT)
       .build();
 
   private ResourceManager serviceMockReturnsOptions = createStrictMock(ResourceManager.class);

@@ -18,6 +18,8 @@ package com.google.cloud.resourcemanager;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import com.google.cloud.Policy;
+
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.util.List;

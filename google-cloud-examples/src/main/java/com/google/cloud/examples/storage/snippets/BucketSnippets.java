@@ -76,7 +76,7 @@ public class BucketSnippets {
       // the bucket was not found
     }
     // [END reload]
-    return bucket;
+    return latestBucket;
   }
 
   /**

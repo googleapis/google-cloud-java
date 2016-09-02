@@ -27,7 +27,8 @@ import static org.junit.Assert.fail;
 
 import com.google.cloud.Identity;
 import com.google.cloud.Page;
-import com.google.cloud.resourcemanager.Policy.ProjectRole;
+import com.google.cloud.Policy;
+import com.google.cloud.Role;
 import com.google.cloud.resourcemanager.ProjectInfo.ResourceId;
 import com.google.cloud.resourcemanager.ResourceManager.ProjectField;
 import com.google.cloud.resourcemanager.ResourceManager.ProjectGetOption;
@@ -70,12 +71,10 @@ public class ResourceManagerImplTest {
       .parent(PARENT)
       .build();
   private static final Map<ResourceManagerRpc.Option, ?> EMPTY_RPC_OPTIONS = ImmutableMap.of();
-  private static final Policy POLICY =
-      Policy.builder()
-          .addIdentity(ProjectRole.OWNER.value(), Identity.user("me@gmail.com"))
-          .addIdentity(
-              ProjectRole.EDITOR.value(), Identity.serviceAccount("serviceaccount@gmail.com"))
-          .build();
+  private static final Policy POLICY = Policy.builder()
+      .addIdentity(Role.of("roles/owner"), Identity.user("me@gmail.com"))
+      .addIdentity(Role.of("roles/editor"), Identity.serviceAccount("serviceaccount@gmail.com"))
+      .build();
 
   @Rule
   public ExpectedException thrown = ExpectedException.none();
@@ -339,7 +338,7 @@ public class ResourceManagerImplTest {
     Policy retrieved = RESOURCE_MANAGER.getPolicy(COMPLETE_PROJECT.projectId());
     assertEquals(POLICY.bindings(), retrieved.bindings());
     assertNotNull(retrieved.etag());
-    assertEquals(0, retrieved.version().intValue());
+    assertEquals(0, retrieved.version());
   }
 
   @Test

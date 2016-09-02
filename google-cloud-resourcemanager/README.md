@@ -172,8 +172,8 @@ add these imports:
 
 ```java
 import com.google.cloud.Identity;
-import com.google.cloud.resourcemanager.Policy;
-import com.google.cloud.resourcemanager.Policy.Role;
+import com.google.cloud.Policy;
+import com.google.cloud.Role;
 ```
 
 Assuming you have completed the steps above to create the `ResourceManager` service object and load
@@ -186,11 +186,7 @@ Policy policy = project.getPolicy();
 // Add a viewer
 Policy.Builder modifiedPolicy = policy.toBuilder();
 Identity newViewer = Identity.user("<insert user's email address here>");
-if (policy.bindings().containsKey(Role.viewer())) {
-  modifiedPolicy.addIdentity(Role.viewer(), newViewer);
-} else {
-  modifiedPolicy.addBinding(Role.viewer(), newViewer);
-}
+modifiedPolicy.addIdentity(Role.of("roles/viewer"), newViewer);
 
 // Write policy
 Policy updatedPolicy = project.replacePolicy(modifiedPolicy.build());
