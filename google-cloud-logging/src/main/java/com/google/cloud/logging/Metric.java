@@ -119,6 +119,16 @@ public class Metric extends MetricInfo {
   /**
    * Deletes this metric.
    *
+   * <p>Example of deleting the metric.
+   * <pre> {@code
+   * boolean deleted = metric.delete();
+   * if (deleted) {
+   *   // the metric was deleted
+   * } else {
+   *   // the metric was not found
+   * }
+   * }</pre>
+   *
    * @return {@code true} if the metric was deleted, {@code false} if it was not found
    * @throws LoggingException upon failure
    */
@@ -131,6 +141,18 @@ public class Metric extends MetricInfo {
    * consume the result. {@link Future#get()} returns {@code true} if the metric was deleted,
    * {@code false} if it was not found.
    *
+   * <p>Example of asynchronously deleting the metric.
+   * <pre> {@code
+   * Future<Boolean> future = metric.deleteAsync();
+   * // ...
+   * boolean deleted = future.get();
+   * if (deleted) {
+   *   // the metric was deleted
+   * } else {
+   *   // the metric was not found
+   * }
+   * }</pre>
+   *
    * @throws LoggingException upon failure
    */
   public Future<Boolean> deleteAsync() {
@@ -139,6 +161,14 @@ public class Metric extends MetricInfo {
 
   /**
    * Fetches current metric's latest information. Returns {@code null} if the metric does not exist.
+   *
+   * <p>Example of getting the metric's latest information.
+   * <pre> {@code
+   * Metric latestMetric = metric.reload();
+   * if (latestMetric == null) {
+   *   // the metric was not found
+   * }
+   * }</pre>
    *
    * @return a {@code Metric} object with latest information or {@code null} if not found
    * @throws LoggingException upon failure
@@ -152,6 +182,16 @@ public class Metric extends MetricInfo {
    * {@code Future} object to consume the result. {@link Future#get()} returns a {@code Metric}
    * object with latest information or {@code null} if not found.
    *
+   * <p>Example of asynchronously getting the metric's latest information.
+   * <pre> {@code
+   * Future<Metric> future = metric.reloadAsync();
+   * // ...
+   * Metric latestMetric = future.get();
+   * if (latestMetric == null) {
+   *   // the metric was not found
+   * }
+   * }</pre>
+   *
    * @throws LoggingException upon failure
    */
   public Future<Metric> reloadAsync() {
@@ -161,11 +201,19 @@ public class Metric extends MetricInfo {
   /**
    * Updates current metric. If the metric does not exist, it is created.
    *
+   * <p>Example of updating the metric's information.
+   * <pre> {@code
+   * Metric updatedMetric = metric.toBuilder()
+   *     .description("A more detailed description")
+   *     .build()
+   *     .update();
+   * }</pre>
+   *
    * @return a {@code Metric} object with updated information
    * @throws LoggingException upon failure
    */
-  public Metric update(MetricInfo metricInfo) {
-    return logging.update(metricInfo);
+  public Metric update() {
+    return logging.update(this);
   }
 
   /**
@@ -173,10 +221,20 @@ public class Metric extends MetricInfo {
    * method returns a {@code Future} object to consume the result. {@link Future#get()} returns a
    * {@code Metric} object with updated information.
    *
+   * <p>Example of asynchronously updating the metric's information.
+   * <pre> {@code
+   * Future<Metric> future = metric.toBuilder()
+   *     .description("A more detailed description")
+   *     .build()
+   *     .updateAsync();
+   * // ...
+   * Metric updatedMetric = future.get();
+   * }</pre>
+   *
    * @throws LoggingException upon failure
    */
-  public Future<Metric> updateAsync(MetricInfo metricInfo) {
-    return logging.updateAsync(metricInfo);
+  public Future<Metric> updateAsync() {
+    return logging.updateAsync(this);
   }
 
   private void readObject(ObjectInputStream input) throws IOException, ClassNotFoundException {

@@ -245,10 +245,11 @@ public abstract class BaseSystemTest {
     assertEquals("severity>=ERROR", metric.filter());
     assertEquals("description", metric.description());
     assertEquals(metric, logging().getMetric(name));
-    metric = metric.update(metric.toBuilder()
+    metric = metric.toBuilder()
         .description("newDescription")
         .filter("severity>=WARNING")
-        .build());
+        .build()
+        .update();
     assertEquals(name, metric.name());
     assertEquals("severity>=WARNING", metric.filter());
     assertEquals("newDescription", metric.description());
@@ -267,10 +268,11 @@ public abstract class BaseSystemTest {
     assertEquals("severity>=ERROR", metric.filter());
     assertEquals("description", metric.description());
     assertEquals(metric, logging().getMetricAsync(name).get());
-    metric = metric.updateAsync(metric.toBuilder()
+    metric = metric.toBuilder()
         .description("newDescription")
         .filter("severity>=WARNING")
-        .build()).get();
+        .build()
+        .updateAsync().get();
     assertEquals(name, metric.name());
     assertEquals("severity>=WARNING", metric.filter());
     assertEquals("newDescription", metric.description());

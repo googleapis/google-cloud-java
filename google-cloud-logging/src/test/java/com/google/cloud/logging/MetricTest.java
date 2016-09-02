@@ -139,12 +139,13 @@ public class MetricTest {
   public void testUpdate() {
     initializeExpectedMetric(2);
     MetricInfo updatedInfo = METRIC_INFO.toBuilder().filter(NEW_FILTER).build();
-    Metric expectedMetric = new Metric(serviceMockReturnsOptions, new MetricInfo.BuilderImpl(updatedInfo));
-    expect(logging.options()).andReturn(mockOptions);
-    expect(logging.update(updatedInfo)).andReturn(expectedMetric);
+    Metric expectedMetric =
+        new Metric(serviceMockReturnsOptions, new MetricInfo.BuilderImpl(updatedInfo));
+    expect(logging.options()).andReturn(mockOptions).times(2);
+    expect(logging.update(expectedMetric)).andReturn(expectedMetric);
     replay(logging);
     initializeMetric();
-    Metric updatedMetric = metric.update(updatedInfo);
+    Metric updatedMetric = metric.toBuilder().filter(NEW_FILTER).build().update();
     compareMetric(expectedMetric, updatedMetric);
   }
 
@@ -152,12 +153,13 @@ public class MetricTest {
   public void testUpdateAsync() throws ExecutionException, InterruptedException {
     initializeExpectedMetric(2);
     MetricInfo updatedInfo = METRIC_INFO.toBuilder().filter(NEW_FILTER).build();
-    Metric expectedMetric = new Metric(serviceMockReturnsOptions, new MetricInfo.BuilderImpl(updatedInfo));
-    expect(logging.options()).andReturn(mockOptions);
-    expect(logging.updateAsync(updatedInfo)).andReturn(Futures.immediateFuture(expectedMetric));
+    Metric expectedMetric =
+        new Metric(serviceMockReturnsOptions, new MetricInfo.BuilderImpl(updatedInfo));
+    expect(logging.options()).andReturn(mockOptions).times(2);
+    expect(logging.updateAsync(expectedMetric)).andReturn(Futures.immediateFuture(expectedMetric));
     replay(logging);
     initializeMetric();
-    Metric updatedMetric = metric.updateAsync(updatedInfo).get();
+    Metric updatedMetric = metric.toBuilder().filter(NEW_FILTER).build().updateAsync().get();
     compareMetric(expectedMetric, updatedMetric);
   }
 
