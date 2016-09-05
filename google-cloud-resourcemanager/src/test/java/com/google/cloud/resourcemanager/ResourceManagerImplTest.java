@@ -72,8 +72,8 @@ public class ResourceManagerImplTest {
       .build();
   private static final Map<ResourceManagerRpc.Option, ?> EMPTY_RPC_OPTIONS = ImmutableMap.of();
   private static final Policy POLICY = Policy.builder()
-      .addIdentity(Role.of("roles/owner"), Identity.user("me@gmail.com"))
-      .addIdentity(Role.of("roles/editor"), Identity.serviceAccount("serviceaccount@gmail.com"))
+      .addIdentity(Role.owner(), Identity.user("me@gmail.com"))
+      .addIdentity(Role.editor(), Identity.serviceAccount("serviceaccount@gmail.com"))
       .build();
 
   @Rule

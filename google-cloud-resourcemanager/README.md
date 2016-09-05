@@ -186,7 +186,7 @@ Policy policy = project.getPolicy();
 // Add a viewer
 Policy.Builder modifiedPolicy = policy.toBuilder();
 Identity newViewer = Identity.user("<insert user's email address here>");
-modifiedPolicy.addIdentity(Role.of("roles/viewer"), newViewer);
+modifiedPolicy.addIdentity(Role.viewer(), newViewer);
 
 // Write policy
 Policy updatedPolicy = project.replacePolicy(modifiedPolicy.build());

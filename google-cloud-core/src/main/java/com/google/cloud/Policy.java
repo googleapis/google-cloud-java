@@ -24,6 +24,7 @@ import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
+import com.google.common.io.BaseEncoding;
 import com.google.protobuf.ByteString;
 
 import java.io.Serializable;
@@ -39,10 +40,10 @@ import java.util.Objects;
 import java.util.Set;
 
 /**
- * Base class for Identity and Access Management (IAM) policies. IAM policies are used to specify
- * access settings for Cloud Platform resources. A policy is a map of bindings. A binding assigns
- * a set of identities to a role, where the identities can be user accounts, Google groups, Google
- * domains, and service accounts. A role is a named list of permissions defined by IAM.
+ * Class for Identity and Access Management (IAM) policies. IAM policies are used to specify access
+ * settings for Cloud Platform resources. A policy is a map of bindings. A binding assigns a set of
+ * identities to a role, where the identities can be user accounts, Google groups, Google domains,
+ * and service accounts. A role is a named list of permissions defined by IAM.
  *
  * @see <a href="https://cloud.google.com/iam/reference/rest/v1/Policy">Policy</a>
  */
@@ -88,7 +89,8 @@ public final class Policy implements Serializable {
       }
       return builder()
           .bindings(bindings)
-          .etag(policyPb.getEtag().size() == 0 ? null : policyPb.getEtag().toStringUtf8())
+          .etag(policyPb.getEtag().isEmpty() ? null
+              : BaseEncoding.base64().encode(policyPb.getEtag().toByteArray()))
           .version(policyPb.getVersion())
           .build();
     }
@@ -106,7 +108,7 @@ public final class Policy implements Serializable {
       }
       policyBuilder.addAllBindings(bindingPbList);
       if (policy.etag != null) {
-        policyBuilder.setEtag(ByteString.copyFromUtf8(policy.etag));
+        policyBuilder.setEtag(ByteString.copyFrom(BaseEncoding.base64().decode(policy.etag)));
       }
       policyBuilder.setVersion(policy.version);
       return policyBuilder.build();
@@ -250,14 +252,14 @@ public final class Policy implements Serializable {
   }
 
   /**
-   * The map of bindings that comprises the policy.
+   * Returns the map of bindings that comprises the policy.
    */
   public Map<Role, Set<Identity>> bindings() {
     return bindings;
   }
 
   /**
-   * The policy's etag.
+   * Returns the policy's etag.
    *
    * <p>Etags are used for optimistic concurrency control as a way to help prevent simultaneous
    * updates of a policy from overwriting each other. It is strongly suggested that systems make
@@ -272,8 +274,8 @@ public final class Policy implements Serializable {
   }
 
   /**
-   * Sets the version of the policy. The default version is 0, meaning only the "owner", "editor",
-   * and "viewer" roles are permitted. If the version is 1, you may also use other roles.
+   * Returns the version of the policy. The default version is 0, meaning only the "owner",
+   * "editor", and "viewer" roles are permitted. If the version is 1, you may also use other roles.
    */
   public int version() {
     return version;

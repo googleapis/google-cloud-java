@@ -57,8 +57,8 @@ public class ProjectTest {
   private static final Identity SERVICE_ACCOUNT =
       Identity.serviceAccount("service-account@gmail.com");
   private static final Policy POLICY = Policy.builder()
-      .addIdentity(Role.of("roles/owner"), USER)
-      .addIdentity(Role.of("roles/editor"), SERVICE_ACCOUNT)
+      .addIdentity(Role.owner(), USER)
+      .addIdentity(Role.editor(), SERVICE_ACCOUNT)
       .build();
 
   private ResourceManager serviceMockReturnsOptions = createStrictMock(ResourceManager.class);

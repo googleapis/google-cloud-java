@@ -303,7 +303,7 @@ public interface ResourceManager extends Service<ResourceManagerOptions> {
    * <pre> {@code
    * Policy currentPolicy = resourceManager.getPolicy("my-project-id");
    * Policy modifiedPolicy = current.toBuilder()
-   *     .removeIdentity(Role.of("roles/viewer"), Identity.user("user@gmail.com"))
+   *     .removeIdentity(Role.viewer(), Identity.user("user@gmail.com"))
    *     .build();
    * Policy newPolicy = resourceManager.replacePolicy("my-project-id", modified);
    * }

@@ -36,6 +36,21 @@ public class RoleTest {
     compareRoles(OWNER, Role.of("roles/owner"));
   }
 
+  @Test
+  public void testViewer() {
+    assertEquals("roles/viewer", Role.viewer().value());
+  }
+
+  @Test
+  public void testEditor() {
+    assertEquals("roles/editor", Role.editor().value());
+  }
+
+  @Test
+  public void testOwner() {
+    assertEquals("roles/owner", Role.owner().value());
+  }
+
   @Test(expected = NullPointerException.class)
   public void testOfNullValue() {
     Role.of(null);

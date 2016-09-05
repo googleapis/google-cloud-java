@@ -27,6 +27,7 @@ import java.util.Objects;
  *
  * @see <a href="https://cloud.google.com/iam/docs/viewing-grantable-roles">Viewing the Grantable
  *     Roles on Resources</a>
+ * @see <a href="https://cloud.google.com/iam/docs/understanding-roles">Understanding Roles</a>
  */
 public final class Role implements Serializable {
 
@@ -45,6 +46,36 @@ public final class Role implements Serializable {
    */
   public String value() {
     return value;
+  }
+
+  /**
+   * Returns the viewer role. Encapsulates the permission for read-only actions that preserve state
+   * of a resource.
+   *
+   * @see <a href="https://cloud.google.com/iam/docs/understanding-roles">Understanding Roles</a>
+   */
+  public static Role viewer() {
+    return of("viewer");
+  }
+
+  /**
+   * Returns the editor role. Encapsulates all viewer's permissions and permissions for actions that
+   * modify the state of a resource.
+   *
+   * @see <a href="https://cloud.google.com/iam/docs/understanding-roles">Understanding Roles</a>
+   */
+  public static Role editor() {
+    return of("editor");
+  }
+
+  /**
+   * Returns the owner role. Encapsulates all editor's permissions and permissions to manage access
+   * control for a resource or manage the billing options for a project.
+   *
+   * @see <a href="https://cloud.google.com/iam/docs/understanding-roles">Understanding Roles</a>
+   */
+  public static Role owner() {
+    return of("owner");
   }
 
   /**

@@ -43,9 +43,9 @@ public class PolicyTest {
       Identity.serviceAccount("service-account@gmail.com");
   private static final Identity GROUP = Identity.group("group@gmail.com");
   private static final Identity DOMAIN = Identity.domain("google.com");
-  private static final Role VIEWER = Role.of("viewer");
-  private static final Role EDITOR = Role.of("editor");
-  private static final Role OWNER = Role.of("owner");
+  private static final Role VIEWER = Role.viewer();
+  private static final Role EDITOR = Role.editor();
+  private static final Role OWNER = Role.owner();
   private static final Map<Role, ImmutableSet<Identity>> BINDINGS = ImmutableMap.of(
       VIEWER,
       ImmutableSet.of(USER, SERVICE_ACCOUNT, ALL_USERS),

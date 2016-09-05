@@ -38,7 +38,7 @@ final class PolicyMarshaller
 
   private PolicyMarshaller() {}
 
-  private static class Builder extends com.google.cloud.Policy.Builder {
+  private static class Builder extends Policy.Builder {
 
     private Builder(Map<Role, Set<Identity>> bindings, String etag, Integer version) {
       bindings(bindings);

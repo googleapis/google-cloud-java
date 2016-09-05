@@ -39,7 +39,7 @@ public class SerializationTest extends BaseSerializationTest {
   private static final SigningException SIGNING_EXCEPTION =
       new SigningException("message", BASE_SERVICE_EXCEPTION);
   private static final RetryParams RETRY_PARAMS = RetryParams.defaultInstance();
-  private static final Role SOME_ROLE = Role.of("viewer");
+  private static final Role SOME_ROLE = Role.viewer();
   private static final Policy SOME_IAM_POLICY = Policy.builder().build();
   private static final WaitForOption CHECKING_PERIOD =
       WaitForOption.checkEvery(42, TimeUnit.SECONDS);
