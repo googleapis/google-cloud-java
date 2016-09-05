@@ -131,6 +131,16 @@ public class Sink extends SinkInfo {
   /**
    * Deletes this sink.
    *
+   * <p>Example of deleting the sink.
+   * <pre> {@code
+   * boolean deleted = sink.delete();
+   * if (deleted) {
+   *   // the sink was deleted
+   * } else {
+   *   // the sink was not found
+   * }
+   * }</pre>
+   *
    * @return {@code true} if the sink was deleted, {@code false} if it was not found
    * @throws LoggingException upon failure
    */
@@ -143,6 +153,18 @@ public class Sink extends SinkInfo {
    * the result. {@link Future#get()} returns {@code true} if the sink was deleted, {@code false}
    * if it was not found.
    *
+   * <p>Example of asynchronously deleting the sink.
+   * <pre> {@code
+   * Future<Boolean> future = sink.deleteAsync();
+   * // ...
+   * boolean deleted = future.get();
+   * if (deleted) {
+   *   // the sink was deleted
+   * } else {
+   *   // the sink was not found
+   * }
+   * }</pre>
+   *
    * @throws LoggingException upon failure
    */
   public Future<Boolean> deleteAsync() {
@@ -151,6 +173,14 @@ public class Sink extends SinkInfo {
 
   /**
    * Fetches current sink's latest information. Returns {@code null} if the sink does not exist.
+   *
+   * <p>Example of getting the sink's latest information.
+   * <pre> {@code
+   * Sink latestSink = sink.reload();
+   * if (latestSink == null) {
+   *   // the sink was not found
+   * }
+   * }</pre>
    *
    * @return a {@code Sink} object with latest information or {@code null} if not found
    * @throws LoggingException upon failure
@@ -164,6 +194,16 @@ public class Sink extends SinkInfo {
    * {@code Future} object to consume the result. {@link Future#get()} returns a {@code Sink} object
    * with latest information or {@code null} if not found.
    *
+   * <p>Example of asynchronously getting the sink's latest information.
+   * <pre> {@code
+   * Future<Sink> future = sink.reloadAsync();
+   * // ...
+   * Sink latestSink = future.get();
+   * if (latestSink == null) {
+   *   // the sink was not found
+   * }
+   * }</pre>
+   *
    * @throws LoggingException upon failure
    */
   public Future<Sink> reloadAsync() {
@@ -173,11 +213,19 @@ public class Sink extends SinkInfo {
   /**
    * Updates current sink. If the sink does not exist, it is created.
    *
+   * <p>Example of updating the sink's information.
+   * <pre> {@code
+   * Sink updatedSink = sink.toBuilder()
+   *     .filter("severity<=ERROR")
+   *     .build()
+   *     .update();
+   * }</pre>
+   *
    * @return a {@code Sink} object with updated information
    * @throws LoggingException upon failure
    */
-  public Sink update(SinkInfo sinkInfo) {
-    return logging.update(sinkInfo);
+  public Sink update() {
+    return logging.update(this);
   }
 
   /**
@@ -185,10 +233,20 @@ public class Sink extends SinkInfo {
    * returns a {@code Future} object to consume the result. {@link Future#get()} returns a
    * {@code Sink} object with updated information.
    *
+   * <p>Example of asynchronously updating the sink's information.
+   * <pre> {@code
+   * Future<Sink> future = sink.toBuilder()
+   *     .filter("severity<=ERROR")
+   *     .build()
+   *     .updateAsync();
+   * // ...
+   * Sink updatedSink = future.get();
+   * }</pre>
+   *
    * @throws LoggingException upon failure
    */
-  public Future<Sink> updateAsync(SinkInfo sinkInfo) {
-    return logging.updateAsync(sinkInfo);
+  public Future<Sink> updateAsync() {
+    return logging.updateAsync(this);
   }
 
   private void readObject(ObjectInputStream input) throws IOException, ClassNotFoundException {

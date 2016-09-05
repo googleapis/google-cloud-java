@@ -103,13 +103,15 @@ public abstract class BaseSystemTest {
     assertEquals(logging().options().projectId(), datasetDestination.project());
     assertEquals("dataset", datasetDestination.dataset());
     assertEquals(sink, logging().getSink(name));
-    sink = sink.update(sink.toBuilder()
+    sink = sink.toBuilder()
         .filter("severity<=ERROR")
-        .build());
+        .build()
+        .update();
     assertEquals(name, sink.name());
     assertEquals(SinkInfo.VersionFormat.V2, sink.versionFormat());
     assertEquals("severity<=ERROR", sink.filter());
     assertTrue(sink.delete());
+    assertFalse(sink.delete());
   }
 
   @Test
@@ -128,13 +130,15 @@ public abstract class BaseSystemTest {
     assertEquals(logging().options().projectId(), datasetDestination.project());
     assertEquals("dataset", datasetDestination.dataset());
     assertEquals(sink, logging().getSinkAsync(name).get());
-    sink = sink.updateAsync(sink.toBuilder()
+    sink = sink.toBuilder()
         .filter("severity<=ERROR")
-        .build()).get();
+        .build()
+        .updateAsync().get();
     assertEquals(name, sink.name());
     assertEquals(SinkInfo.VersionFormat.V2, sink.versionFormat());
     assertEquals("severity<=ERROR", sink.filter());
     assertTrue(sink.deleteAsync().get());
+    assertFalse(sink.deleteAsync().get());
   }
 
   @Test
@@ -254,6 +258,7 @@ public abstract class BaseSystemTest {
     assertEquals("severity>=WARNING", metric.filter());
     assertEquals("newDescription", metric.description());
     assertTrue(metric.delete());
+    assertFalse(metric.delete());
   }
 
   @Test
@@ -277,6 +282,7 @@ public abstract class BaseSystemTest {
     assertEquals("severity>=WARNING", metric.filter());
     assertEquals("newDescription", metric.description());
     assertTrue(metric.deleteAsync().get());
+    assertFalse(metric.deleteAsync().get());
   }
 
   @Test
@@ -398,7 +404,8 @@ public abstract class BaseSystemTest {
     while (iterator.hasNext()) {
       assertTrue(iterator.next().timestamp() <= lastTimestamp);
     }
-    logging().deleteLog(logName);
+    assertTrue(logging().deleteLog(logName));
+    assertFalse(logging().deleteLog(logName));
   }
 
   @Test
@@ -443,7 +450,8 @@ public abstract class BaseSystemTest {
     assertNull(entry.httpRequest());
     assertNotNull(entry.insertId());
     assertNotNull(entry.timestamp());
-    logging().deleteLogAsync(logName).get();
+    assertTrue(logging().deleteLogAsync(logName).get());
+    assertFalse(logging().deleteLogAsync(logName).get());
   }
 
   @Test
