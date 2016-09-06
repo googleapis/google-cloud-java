@@ -405,7 +405,6 @@ public abstract class BaseSystemTest {
       assertTrue(iterator.next().timestamp() <= lastTimestamp);
     }
     assertTrue(logging().deleteLog(logName));
-    assertFalse(logging().deleteLog(logName));
   }
 
   @Test
@@ -451,7 +450,6 @@ public abstract class BaseSystemTest {
     assertNotNull(entry.insertId());
     assertNotNull(entry.timestamp());
     assertTrue(logging().deleteLogAsync(logName).get());
-    assertFalse(logging().deleteLogAsync(logName).get());
   }
 
   @Test
