@@ -16,6 +16,11 @@ package com.google.cloud.pubsub.spi.v1;
 import com.google.api.gax.core.PageAccessor;
 import com.google.api.gax.grpc.ApiCallable;
 import com.google.api.gax.protobuf.PathTemplate;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.protobuf.Empty;
 import com.google.pubsub.v1.AcknowledgeRequest;
 import com.google.pubsub.v1.DeleteSubscriptionRequest;
@@ -109,6 +114,10 @@ public class SubscriberApi implements AutoCloseable {
   private final ApiCallable<AcknowledgeRequest, Empty> acknowledgeCallable;
   private final ApiCallable<PullRequest, PullResponse> pullCallable;
   private final ApiCallable<ModifyPushConfigRequest, Empty> modifyPushConfigCallable;
+  private final ApiCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable;
+  private final ApiCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable;
+  private final ApiCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsCallable;
 
   public final SubscriberSettings getSettings() {
     return settings;
@@ -235,6 +244,12 @@ public class SubscriberApi implements AutoCloseable {
     this.pullCallable = ApiCallable.create(settings.pullSettings(), this.channel, this.executor);
     this.modifyPushConfigCallable =
         ApiCallable.create(settings.modifyPushConfigSettings(), this.channel, this.executor);
+    this.setIamPolicyCallable =
+        ApiCallable.create(settings.setIamPolicySettings(), this.channel, this.executor);
+    this.getIamPolicyCallable =
+        ApiCallable.create(settings.getIamPolicySettings(), this.channel, this.executor);
+    this.testIamPermissionsCallable =
+        ApiCallable.create(settings.testIamPermissionsSettings(), this.channel, this.executor);
 
     if (settings.getChannelProvider().shouldAutoClose()) {
       closeables.add(
@@ -992,6 +1007,230 @@ public class SubscriberApi implements AutoCloseable {
    */
   public final ApiCallable<ModifyPushConfigRequest, Empty> modifyPushConfigCallable() {
     return modifyPushConfigCallable;
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sets the access control policy on the specified resource. Replaces any
+   * existing policy.
+   *
+   * Sample code:
+   * <pre><code>
+   * try (SubscriberApi subscriberApi = SubscriberApi.create()) {
+   *   String formattedResource = SubscriberApi.formatSubscriptionName("[PROJECT]", "[SUBSCRIPTION]");
+   *   Policy policy = Policy.newBuilder().build();
+   *   Policy response = subscriberApi.setIamPolicy(formattedResource, policy);
+   * }
+   * </code></pre>
+   *
+   * @param resource REQUIRED: The resource for which policy is being specified.
+   * Resource is usually specified as a path, such as,
+   * projects/{project}/zones/{zone}/disks/{disk}.
+   * @param policy REQUIRED: The complete policy to be applied to the 'resource'. The size of
+   * the policy is limited to a few 10s of KB. An empty policy is in general a
+   * valid policy but certain services (like Projects) might reject them.
+   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   */
+  public final Policy setIamPolicy(String resource, Policy policy) {
+    SUBSCRIPTION_PATH_TEMPLATE.validate(resource, "setIamPolicy");
+    SetIamPolicyRequest request =
+        SetIamPolicyRequest.newBuilder().setResource(resource).setPolicy(policy).build();
+    return setIamPolicy(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sets the access control policy on the specified resource. Replaces any
+   * existing policy.
+   *
+   * Sample code:
+   * <pre><code>
+   * try (SubscriberApi subscriberApi = SubscriberApi.create()) {
+   *   String formattedResource = SubscriberApi.formatSubscriptionName("[PROJECT]", "[SUBSCRIPTION]");
+   *   Policy policy = Policy.newBuilder().build();
+   *   SetIamPolicyRequest request = SetIamPolicyRequest.newBuilder()
+   *     .setResource(formattedResource)
+   *     .setPolicy(policy)
+   *     .build();
+   *   Policy response = subscriberApi.setIamPolicy(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   */
+  public final Policy setIamPolicy(SetIamPolicyRequest request) {
+    return setIamPolicyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sets the access control policy on the specified resource. Replaces any
+   * existing policy.
+   *
+   * Sample code:
+   * <pre><code>
+   * try (SubscriberApi subscriberApi = SubscriberApi.create()) {
+   *   String formattedResource = SubscriberApi.formatSubscriptionName("[PROJECT]", "[SUBSCRIPTION]");
+   *   Policy policy = Policy.newBuilder().build();
+   *   SetIamPolicyRequest request = SetIamPolicyRequest.newBuilder()
+   *     .setResource(formattedResource)
+   *     .setPolicy(policy)
+   *     .build();
+   *   ListenableFuture&lt;Policy&gt; future = subscriberApi.setIamPolicyCallable().futureCall(request);
+   *   // Do something
+   *   Policy response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final ApiCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
+    return setIamPolicyCallable;
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets the access control policy for a resource. Is empty if the
+   * policy or the resource does not exist.
+   *
+   * Sample code:
+   * <pre><code>
+   * try (SubscriberApi subscriberApi = SubscriberApi.create()) {
+   *   String formattedResource = SubscriberApi.formatSubscriptionName("[PROJECT]", "[SUBSCRIPTION]");
+   *   Policy response = subscriberApi.getIamPolicy(formattedResource);
+   * }
+   * </code></pre>
+   *
+   * @param resource REQUIRED: The resource for which policy is being requested. Resource
+   * is usually specified as a path, such as, projects/{project}.
+   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   */
+  public final Policy getIamPolicy(String resource) {
+    SUBSCRIPTION_PATH_TEMPLATE.validate(resource, "getIamPolicy");
+    GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder().setResource(resource).build();
+    return getIamPolicy(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets the access control policy for a resource. Is empty if the
+   * policy or the resource does not exist.
+   *
+   * Sample code:
+   * <pre><code>
+   * try (SubscriberApi subscriberApi = SubscriberApi.create()) {
+   *   String formattedResource = SubscriberApi.formatSubscriptionName("[PROJECT]", "[SUBSCRIPTION]");
+   *   GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder()
+   *     .setResource(formattedResource)
+   *     .build();
+   *   Policy response = subscriberApi.getIamPolicy(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   */
+  private final Policy getIamPolicy(GetIamPolicyRequest request) {
+    return getIamPolicyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets the access control policy for a resource. Is empty if the
+   * policy or the resource does not exist.
+   *
+   * Sample code:
+   * <pre><code>
+   * try (SubscriberApi subscriberApi = SubscriberApi.create()) {
+   *   String formattedResource = SubscriberApi.formatSubscriptionName("[PROJECT]", "[SUBSCRIPTION]");
+   *   GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder()
+   *     .setResource(formattedResource)
+   *     .build();
+   *   ListenableFuture&lt;Policy&gt; future = subscriberApi.getIamPolicyCallable().futureCall(request);
+   *   // Do something
+   *   Policy response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final ApiCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
+    return getIamPolicyCallable;
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Returns permissions that a caller has on the specified resource.
+   *
+   * Sample code:
+   * <pre><code>
+   * try (SubscriberApi subscriberApi = SubscriberApi.create()) {
+   *   String formattedResource = SubscriberApi.formatSubscriptionName("[PROJECT]", "[SUBSCRIPTION]");
+   *   List&lt;String&gt; permissions = new ArrayList&lt;&gt;();
+   *   TestIamPermissionsResponse response = subscriberApi.testIamPermissions(formattedResource, permissions);
+   * }
+   * </code></pre>
+   *
+   * @param resource REQUIRED: The resource for which policy detail is being requested.
+   * Resource is usually specified as a path, such as, projects/{project}.
+   * @param permissions The set of permissions to check for the 'resource'. Permissions with
+   * wildcards (such as '&ast;' or 'storage.&ast;') are not allowed.
+   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   */
+  public final TestIamPermissionsResponse testIamPermissions(
+      String resource, List<String> permissions) {
+    SUBSCRIPTION_PATH_TEMPLATE.validate(resource, "testIamPermissions");
+    TestIamPermissionsRequest request =
+        TestIamPermissionsRequest.newBuilder()
+            .setResource(resource)
+            .addAllPermissions(permissions)
+            .build();
+    return testIamPermissions(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Returns permissions that a caller has on the specified resource.
+   *
+   * Sample code:
+   * <pre><code>
+   * try (SubscriberApi subscriberApi = SubscriberApi.create()) {
+   *   String formattedResource = SubscriberApi.formatSubscriptionName("[PROJECT]", "[SUBSCRIPTION]");
+   *   List&lt;String&gt; permissions = new ArrayList&lt;&gt;();
+   *   TestIamPermissionsRequest request = TestIamPermissionsRequest.newBuilder()
+   *     .setResource(formattedResource)
+   *     .addAllPermissions(permissions)
+   *     .build();
+   *   TestIamPermissionsResponse response = subscriberApi.testIamPermissions(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   */
+  public final TestIamPermissionsResponse testIamPermissions(TestIamPermissionsRequest request) {
+    return testIamPermissionsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Returns permissions that a caller has on the specified resource.
+   *
+   * Sample code:
+   * <pre><code>
+   * try (SubscriberApi subscriberApi = SubscriberApi.create()) {
+   *   String formattedResource = SubscriberApi.formatSubscriptionName("[PROJECT]", "[SUBSCRIPTION]");
+   *   List&lt;String&gt; permissions = new ArrayList&lt;&gt;();
+   *   TestIamPermissionsRequest request = TestIamPermissionsRequest.newBuilder()
+   *     .setResource(formattedResource)
+   *     .addAllPermissions(permissions)
+   *     .build();
+   *   ListenableFuture&lt;TestIamPermissionsResponse&gt; future = subscriberApi.testIamPermissionsCallable().futureCall(request);
+   *   // Do something
+   *   TestIamPermissionsResponse response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final ApiCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsCallable() {
+    return testIamPermissionsCallable;
   }
 
   /**

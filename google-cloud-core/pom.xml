@@ -111,7 +111,7 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-common-protos</artifactId>
-      <version>0.0.7</version>
+      <version>0.0.9</version>
     </dependency>
   </dependencies>
 </project>

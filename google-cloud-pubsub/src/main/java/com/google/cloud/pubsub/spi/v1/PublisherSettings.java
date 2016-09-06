@@ -30,6 +30,12 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.IAMPolicyGrpc;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.protobuf.Empty;
 import com.google.pubsub.v1.DeleteTopicRequest;
 import com.google.pubsub.v1.GetTopicRequest;
@@ -118,6 +124,10 @@ public class PublisherSettings extends ServiceApiSettings {
           ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse, String>
       listTopicSubscriptionsSettings;
   private final SimpleCallSettings<DeleteTopicRequest, Empty> deleteTopicSettings;
+  private final SimpleCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings;
+  private final SimpleCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings;
+  private final SimpleCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsSettings;
 
   /**
    * Returns the object with the settings used for calls to createTopic.
@@ -162,6 +172,28 @@ public class PublisherSettings extends ServiceApiSettings {
    */
   public SimpleCallSettings<DeleteTopicRequest, Empty> deleteTopicSettings() {
     return deleteTopicSettings;
+  }
+
+  /**
+   * Returns the object with the settings used for calls to setIamPolicy.
+   */
+  public SimpleCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+    return setIamPolicySettings;
+  }
+
+  /**
+   * Returns the object with the settings used for calls to getIamPolicy.
+   */
+  public SimpleCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+    return getIamPolicySettings;
+  }
+
+  /**
+   * Returns the object with the settings used for calls to testIamPermissions.
+   */
+  public SimpleCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsSettings() {
+    return testIamPermissionsSettings;
   }
 
   /**
@@ -221,6 +253,9 @@ public class PublisherSettings extends ServiceApiSettings {
     listTopicsSettings = settingsBuilder.listTopicsSettings().build();
     listTopicSubscriptionsSettings = settingsBuilder.listTopicSubscriptionsSettings().build();
     deleteTopicSettings = settingsBuilder.deleteTopicSettings().build();
+    setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
+    getIamPolicySettings = settingsBuilder.getIamPolicySettings().build();
+    testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
   }
 
   private static PageStreamingDescriptor<ListTopicsRequest, ListTopicsResponse, Topic>
@@ -353,6 +388,10 @@ public class PublisherSettings extends ServiceApiSettings {
             ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse, String>
         listTopicSubscriptionsSettings;
     private SimpleCallSettings.Builder<DeleteTopicRequest, Empty> deleteTopicSettings;
+    private SimpleCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings;
+    private SimpleCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings;
+    private SimpleCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsSettings;
 
     private static final ImmutableMap<String, ImmutableSet<Status.Code>> RETRYABLE_CODE_DEFINITIONS;
 
@@ -422,6 +461,13 @@ public class PublisherSettings extends ServiceApiSettings {
 
       deleteTopicSettings = SimpleCallSettings.newBuilder(PublisherGrpc.METHOD_DELETE_TOPIC);
 
+      setIamPolicySettings = SimpleCallSettings.newBuilder(IAMPolicyGrpc.METHOD_SET_IAM_POLICY);
+
+      getIamPolicySettings = SimpleCallSettings.newBuilder(IAMPolicyGrpc.METHOD_GET_IAM_POLICY);
+
+      testIamPermissionsSettings =
+          SimpleCallSettings.newBuilder(IAMPolicyGrpc.METHOD_TEST_IAM_PERMISSIONS);
+
       methodSettingsBuilders =
           ImmutableList.<ApiCallSettings.Builder>of(
               createTopicSettings,
@@ -429,7 +475,10 @@ public class PublisherSettings extends ServiceApiSettings {
               getTopicSettings,
               listTopicsSettings,
               listTopicSubscriptionsSettings,
-              deleteTopicSettings);
+              deleteTopicSettings,
+              setIamPolicySettings,
+              getIamPolicySettings,
+              testIamPermissionsSettings);
     }
 
     private static Builder createDefault() {
@@ -474,6 +523,21 @@ public class PublisherSettings extends ServiceApiSettings {
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettingsBuilder(RETRY_PARAM_DEFINITIONS.get("default"));
 
+      builder
+          .setIamPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettingsBuilder(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .getIamPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettingsBuilder(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .testIamPermissionsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettingsBuilder(RETRY_PARAM_DEFINITIONS.get("default"));
+
       return builder;
     }
 
@@ -486,6 +550,9 @@ public class PublisherSettings extends ServiceApiSettings {
       listTopicsSettings = settings.listTopicsSettings.toBuilder();
       listTopicSubscriptionsSettings = settings.listTopicSubscriptionsSettings.toBuilder();
       deleteTopicSettings = settings.deleteTopicSettings.toBuilder();
+      setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
+      getIamPolicySettings = settings.getIamPolicySettings.toBuilder();
+      testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
 
       methodSettingsBuilders =
           ImmutableList.<ApiCallSettings.Builder>of(
@@ -494,7 +561,10 @@ public class PublisherSettings extends ServiceApiSettings {
               getTopicSettings,
               listTopicsSettings,
               listTopicSubscriptionsSettings,
-              deleteTopicSettings);
+              deleteTopicSettings,
+              setIamPolicySettings,
+              getIamPolicySettings,
+              testIamPermissionsSettings);
     }
 
     @Override
@@ -597,6 +667,28 @@ public class PublisherSettings extends ServiceApiSettings {
      */
     public SimpleCallSettings.Builder<DeleteTopicRequest, Empty> deleteTopicSettings() {
       return deleteTopicSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to setIamPolicy.
+     */
+    public SimpleCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+      return setIamPolicySettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to getIamPolicy.
+     */
+    public SimpleCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+      return getIamPolicySettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to testIamPermissions.
+     */
+    public SimpleCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsSettings() {
+      return testIamPermissionsSettings;
     }
 
     @Override

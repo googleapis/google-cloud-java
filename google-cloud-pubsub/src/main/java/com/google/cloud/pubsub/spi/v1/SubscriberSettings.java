@@ -26,6 +26,12 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.IAMPolicyGrpc;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.protobuf.Empty;
 import com.google.pubsub.v1.AcknowledgeRequest;
 import com.google.pubsub.v1.DeleteSubscriptionRequest;
@@ -113,6 +119,10 @@ public class SubscriberSettings extends ServiceApiSettings {
   private final SimpleCallSettings<AcknowledgeRequest, Empty> acknowledgeSettings;
   private final SimpleCallSettings<PullRequest, PullResponse> pullSettings;
   private final SimpleCallSettings<ModifyPushConfigRequest, Empty> modifyPushConfigSettings;
+  private final SimpleCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings;
+  private final SimpleCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings;
+  private final SimpleCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsSettings;
 
   /**
    * Returns the object with the settings used for calls to createSubscription.
@@ -170,6 +180,28 @@ public class SubscriberSettings extends ServiceApiSettings {
    */
   public SimpleCallSettings<ModifyPushConfigRequest, Empty> modifyPushConfigSettings() {
     return modifyPushConfigSettings;
+  }
+
+  /**
+   * Returns the object with the settings used for calls to setIamPolicy.
+   */
+  public SimpleCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+    return setIamPolicySettings;
+  }
+
+  /**
+   * Returns the object with the settings used for calls to getIamPolicy.
+   */
+  public SimpleCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+    return getIamPolicySettings;
+  }
+
+  /**
+   * Returns the object with the settings used for calls to testIamPermissions.
+   */
+  public SimpleCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsSettings() {
+    return testIamPermissionsSettings;
   }
 
   /**
@@ -231,6 +263,9 @@ public class SubscriberSettings extends ServiceApiSettings {
     acknowledgeSettings = settingsBuilder.acknowledgeSettings().build();
     pullSettings = settingsBuilder.pullSettings().build();
     modifyPushConfigSettings = settingsBuilder.modifyPushConfigSettings().build();
+    setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
+    getIamPolicySettings = settingsBuilder.getIamPolicySettings().build();
+    testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
   }
 
   private static PageStreamingDescriptor<
@@ -279,6 +314,10 @@ public class SubscriberSettings extends ServiceApiSettings {
     private SimpleCallSettings.Builder<AcknowledgeRequest, Empty> acknowledgeSettings;
     private SimpleCallSettings.Builder<PullRequest, PullResponse> pullSettings;
     private SimpleCallSettings.Builder<ModifyPushConfigRequest, Empty> modifyPushConfigSettings;
+    private SimpleCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings;
+    private SimpleCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings;
+    private SimpleCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsSettings;
 
     private static final ImmutableMap<String, ImmutableSet<Status.Code>> RETRYABLE_CODE_DEFINITIONS;
 
@@ -347,6 +386,13 @@ public class SubscriberSettings extends ServiceApiSettings {
       modifyPushConfigSettings =
           SimpleCallSettings.newBuilder(SubscriberGrpc.METHOD_MODIFY_PUSH_CONFIG);
 
+      setIamPolicySettings = SimpleCallSettings.newBuilder(IAMPolicyGrpc.METHOD_SET_IAM_POLICY);
+
+      getIamPolicySettings = SimpleCallSettings.newBuilder(IAMPolicyGrpc.METHOD_GET_IAM_POLICY);
+
+      testIamPermissionsSettings =
+          SimpleCallSettings.newBuilder(IAMPolicyGrpc.METHOD_TEST_IAM_PERMISSIONS);
+
       methodSettingsBuilders =
           ImmutableList.<ApiCallSettings.Builder>of(
               createSubscriptionSettings,
@@ -356,7 +402,10 @@ public class SubscriberSettings extends ServiceApiSettings {
               modifyAckDeadlineSettings,
               acknowledgeSettings,
               pullSettings,
-              modifyPushConfigSettings);
+              modifyPushConfigSettings,
+              setIamPolicySettings,
+              getIamPolicySettings,
+              testIamPermissionsSettings);
     }
 
     private static Builder createDefault() {
@@ -402,6 +451,21 @@ public class SubscriberSettings extends ServiceApiSettings {
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettingsBuilder(RETRY_PARAM_DEFINITIONS.get("default"));
 
+      builder
+          .setIamPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettingsBuilder(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .getIamPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettingsBuilder(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .testIamPermissionsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettingsBuilder(RETRY_PARAM_DEFINITIONS.get("default"));
+
       return builder;
     }
 
@@ -416,6 +480,9 @@ public class SubscriberSettings extends ServiceApiSettings {
       acknowledgeSettings = settings.acknowledgeSettings.toBuilder();
       pullSettings = settings.pullSettings.toBuilder();
       modifyPushConfigSettings = settings.modifyPushConfigSettings.toBuilder();
+      setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
+      getIamPolicySettings = settings.getIamPolicySettings.toBuilder();
+      testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
 
       methodSettingsBuilders =
           ImmutableList.<ApiCallSettings.Builder>of(
@@ -426,7 +493,10 @@ public class SubscriberSettings extends ServiceApiSettings {
               modifyAckDeadlineSettings,
               acknowledgeSettings,
               pullSettings,
-              modifyPushConfigSettings);
+              modifyPushConfigSettings,
+              setIamPolicySettings,
+              getIamPolicySettings,
+              testIamPermissionsSettings);
     }
 
     @Override
@@ -544,6 +614,28 @@ public class SubscriberSettings extends ServiceApiSettings {
      */
     public SimpleCallSettings.Builder<ModifyPushConfigRequest, Empty> modifyPushConfigSettings() {
       return modifyPushConfigSettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to setIamPolicy.
+     */
+    public SimpleCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+      return setIamPolicySettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to getIamPolicy.
+     */
+    public SimpleCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+      return getIamPolicySettings;
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to testIamPermissions.
+     */
+    public SimpleCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsSettings() {
+      return testIamPermissionsSettings;
     }
 
     @Override
