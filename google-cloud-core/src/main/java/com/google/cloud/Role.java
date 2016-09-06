@@ -41,8 +41,8 @@ public final class Role implements Serializable {
   }
 
   /**
-   * Returns the string identifier for this role. For example, {@code roles/viewer},
-   * {@code roles/editor}, or {@code roles/owner}.
+   * Returns the string identifier for this role. For example, {@code "roles/viewer"},
+   * {@code "roles/editor"}, or {@code "roles/owner"}.
    */
   public String value() {
     return value;
@@ -81,9 +81,9 @@ public final class Role implements Serializable {
   /**
    * Returns a new role given its string value.
    *
-   * @param value the string value for the role, for example, {@code roles/viewer},
-   *     {@code roles/editor}, or {@code roles/owner}. If this value does not start with the role
-   *     prefix {@code roles/}, the prefix is prepended.
+   * @param value the string value for the role, for example, {@code "roles/viewer"},
+   *     {@code "roles/editor"}, or {@code "roles/owner"}. If this value does not start with the
+   *     role prefix {@code roles/}, the prefix is prepended.
    * @see <a href="https://cloud.google.com/iam/docs/viewing-grantable-roles">Viewing the Grantable
    *     Roles on Resources</a>
    */
