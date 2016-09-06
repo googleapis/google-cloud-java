@@ -23,6 +23,7 @@ import com.google.cloud.BaseService;
 import com.google.cloud.Page;
 import com.google.cloud.PageImpl;
 import com.google.cloud.PageImpl.NextPageFetcher;
+import com.google.cloud.Policy;
 import com.google.cloud.RetryHelper.RetryHelperException;
 import com.google.cloud.resourcemanager.spi.ResourceManagerRpc;
 import com.google.cloud.resourcemanager.spi.ResourceManagerRpc.Tuple;
@@ -193,7 +194,7 @@ final class ResourceManagerImpl
                   return resourceManagerRpc.getPolicy(projectId);
                 }
               }, options().retryParams(), EXCEPTION_HANDLER, options().clock());
-      return answer == null ? null : Policy.fromPb(answer);
+      return answer == null ? null : PolicyMarshaller.INSTANCE.fromPb(answer);
     } catch (RetryHelperException ex) {
       throw ResourceManagerException.translateAndThrow(ex);
     }
@@ -202,11 +203,12 @@ final class ResourceManagerImpl
   @Override
   public Policy replacePolicy(final String projectId, final Policy newPolicy) {
     try {
-      return Policy.fromPb(runWithRetries(
+      return PolicyMarshaller.INSTANCE.fromPb(runWithRetries(
           new Callable<com.google.api.services.cloudresourcemanager.model.Policy>() {
             @Override
             public com.google.api.services.cloudresourcemanager.model.Policy call() {
-              return resourceManagerRpc.replacePolicy(projectId, newPolicy.toPb());
+              return resourceManagerRpc.replacePolicy(projectId,
+                  PolicyMarshaller.INSTANCE.toPb(newPolicy));
             }
           }, options().retryParams(), EXCEPTION_HANDLER, options().clock()));
     } catch (RetryHelperException ex) {

@@ -17,10 +17,8 @@
 package com.google.cloud.resourcemanager;
 
 import com.google.cloud.BaseSerializationTest;
-import com.google.cloud.Identity;
 import com.google.cloud.PageImpl;
 import com.google.cloud.Restorable;
-import com.google.cloud.resourcemanager.Policy.ProjectRole;
 import com.google.common.collect.ImmutableMap;
 
 import java.io.Serializable;
@@ -46,9 +44,6 @@ private static final ResourceManager RESOURCE_MANAGER =
       ResourceManager.ProjectGetOption.fields(ResourceManager.ProjectField.NAME);
   private static final ResourceManager.ProjectListOption PROJECT_LIST_OPTION =
       ResourceManager.ProjectListOption.filter("name:*");
-  private static final Policy POLICY = Policy.builder()
-      .addIdentity(ProjectRole.VIEWER.value(), Identity.user("abc@gmail.com"))
-      .build();
   private static final ResourceManagerException RESOURCE_MANAGER_EXCEPTION =
       new ResourceManagerException(42, "message");
 
@@ -59,8 +54,7 @@ private static final ResourceManager RESOURCE_MANAGER =
         .projectId("some-unnecessary-project-ID")
         .build();
     return new Serializable[]{PARTIAL_PROJECT_INFO, FULL_PROJECT_INFO, PROJECT, PAGE_RESULT,
-        PROJECT_GET_OPTION, PROJECT_LIST_OPTION, POLICY, RESOURCE_MANAGER_EXCEPTION, options,
-        otherOptions};
+        PROJECT_GET_OPTION, PROJECT_LIST_OPTION, RESOURCE_MANAGER_EXCEPTION, options, otherOptions};
   }
 
   @Override

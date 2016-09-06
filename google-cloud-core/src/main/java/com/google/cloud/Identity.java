@@ -24,8 +24,7 @@ import java.io.Serializable;
 import java.util.Objects;
 
 /**
- * An identity in an {@link IamPolicy}. The following types of identities are permitted in IAM
- * policies:
+ * An identity in a {@link Policy}. The following types of identities are permitted in IAM policies:
  * <ul>
  * <li>Google account
  * <li>Service account
@@ -159,6 +158,11 @@ public final class Identity implements Serializable {
    */
   public static Identity domain(String domain) {
     return new Identity(Type.DOMAIN, checkNotNull(domain));
+  }
+
+  @Override
+  public String toString() {
+    return strValue();
   }
 
   @Override

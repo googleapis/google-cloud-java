@@ -39,7 +39,8 @@ public class SerializationTest extends BaseSerializationTest {
   private static final SigningException SIGNING_EXCEPTION =
       new SigningException("message", BASE_SERVICE_EXCEPTION);
   private static final RetryParams RETRY_PARAMS = RetryParams.defaultInstance();
-  private static final SomeIamPolicy SOME_IAM_POLICY = new SomeIamPolicy.Builder().build();
+  private static final Role SOME_ROLE = Role.viewer();
+  private static final Policy SOME_IAM_POLICY = Policy.builder().build();
   private static final WaitForOption CHECKING_PERIOD =
       WaitForOption.checkEvery(42, TimeUnit.SECONDS);
   private static final LabelDescriptor LABEL_DESCRIPTOR =
@@ -78,33 +79,11 @@ public class SerializationTest extends BaseSerializationTest {
       + "  \"type\": \"service_account\"\n"
       + "}";
 
-  private static class SomeIamPolicy extends IamPolicy<String> {
-
-    private static final long serialVersionUID = 271243551016958285L;
-
-    private static class Builder extends IamPolicy.Builder<String, Builder> {
-
-      @Override
-      public SomeIamPolicy build() {
-        return new SomeIamPolicy(this);
-      }
-    }
-
-    protected SomeIamPolicy(Builder builder) {
-      super(builder);
-    }
-
-    @Override
-    public Builder toBuilder() {
-      return new Builder();
-    }
-  }
-
   @Override
   protected Serializable[] serializableObjects() {
     return new Serializable[]{BASE_SERVICE_EXCEPTION, EXCEPTION_HANDLER, IDENTITY, PAGE,
-        RETRY_PARAMS, SOME_IAM_POLICY, SIGNING_EXCEPTION, CHECKING_PERIOD, LABEL_DESCRIPTOR,
-        MONITORED_RESOURCE_DESCRIPTOR, MONITORED_RESOURCE};
+        RETRY_PARAMS, SOME_ROLE, SOME_IAM_POLICY, SIGNING_EXCEPTION, CHECKING_PERIOD,
+        LABEL_DESCRIPTOR, MONITORED_RESOURCE_DESCRIPTOR, MONITORED_RESOURCE};
   }
 
   @Override
