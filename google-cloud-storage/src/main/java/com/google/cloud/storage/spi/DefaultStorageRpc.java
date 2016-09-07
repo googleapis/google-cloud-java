@@ -57,9 +57,11 @@ import com.google.api.services.storage.Storage;
 import com.google.api.services.storage.Storage.Objects.Get;
 import com.google.api.services.storage.Storage.Objects.Insert;
 import com.google.api.services.storage.model.Bucket;
+import com.google.api.services.storage.model.BucketAccessControl;
 import com.google.api.services.storage.model.Buckets;
 import com.google.api.services.storage.model.ComposeRequest;
 import com.google.api.services.storage.model.ComposeRequest.SourceObjects.ObjectPreconditions;
+import com.google.api.services.storage.model.ObjectAccessControl;
 import com.google.api.services.storage.model.Objects;
 import com.google.api.services.storage.model.StorageObject;
 import com.google.cloud.storage.StorageException;
@@ -85,6 +87,32 @@ public class DefaultStorageRpc implements StorageRpc {
   private final Storage storage;
 
   private static final long MEGABYTE = 1024L * 1024L;
+  private static final Function<Object, ObjectAccessControl> FROM_OBJECT_TO_ACL_FUNCTION =
+      new Function<Object, ObjectAccessControl>() {
+        @Override
+        @SuppressWarnings("unchecked")
+        public ObjectAccessControl apply(Object obj) {
+          ObjectAccessControl acl = new ObjectAccessControl();
+          Map<String, ?> map = (Map<String, ?>) obj;
+          for (Map.Entry<String, ?> entry : map.entrySet()) {
+            String key = entry.getKey();
+            switch (key) {
+              case "projectTeam":
+                ObjectAccessControl.ProjectTeam projectTeam = new ObjectAccessControl.ProjectTeam();
+                projectTeam.putAll((Map<String, ?>) entry.getValue());
+                acl.set(key, projectTeam);
+                break;
+              case "generation":
+                acl.set(entry.getKey(), Long.parseLong((String) entry.getValue()));
+                break;
+              default:
+                acl.set(entry.getKey(), entry.getValue());
+                break;
+            }
+          }
+          return acl;
+        }
+      };
 
   public DefaultStorageRpc(StorageOptions options) {
     HttpTransport transport = options.httpTransportFactory().create();
@@ -611,6 +639,190 @@ public class DefaultStorageRpc implements StorageRpc {
           rewriteResponse.getDone(),
           rewriteResponse.getRewriteToken(),
           rewriteResponse.getTotalBytesRewritten().longValue());
+    } catch (IOException ex) {
+      throw translate(ex);
+    }
+  }
+
+  @Override
+  public BucketAccessControl getAcl(String bucket, String entity) {
+    try {
+      return storage.bucketAccessControls().get(bucket, entity).execute();
+    } catch (IOException ex) {
+      StorageException serviceException = translate(ex);
+      if (serviceException.code() == HTTP_NOT_FOUND) {
+        return null;
+      }
+      throw serviceException;
+    }
+  }
+
+  @Override
+  public boolean deleteAcl(String bucket, String entity) {
+    try {
+      storage.bucketAccessControls().delete(bucket, entity).execute();
+      return true;
+    } catch (IOException ex) {
+      StorageException serviceException = translate(ex);
+      if (serviceException.code() == HTTP_NOT_FOUND) {
+        return false;
+      }
+      throw serviceException;
+    }
+  }
+
+  @Override
+  public BucketAccessControl createAcl(BucketAccessControl acl) {
+    try {
+      return storage.bucketAccessControls().insert(acl.getBucket(), acl).execute();
+    } catch (IOException ex) {
+      throw translate(ex);
+    }
+  }
+
+  @Override
+  public BucketAccessControl patchAcl(BucketAccessControl acl) {
+    try {
+      return storage.bucketAccessControls()
+          .patch(acl.getBucket(), acl.getEntity(), acl).execute();
+    } catch (IOException ex) {
+      throw translate(ex);
+    }
+  }
+
+  @Override
+  public List<BucketAccessControl> listAcls(String bucket) {
+    try {
+      return storage.bucketAccessControls().list(bucket).execute().getItems();
+    } catch (IOException ex) {
+      throw translate(ex);
+    }
+  }
+
+  @Override
+  public ObjectAccessControl getDefaultAcl(String bucket, String entity) {
+    try {
+      return storage.defaultObjectAccessControls().get(bucket, entity).execute();
+    } catch (IOException ex) {
+      StorageException serviceException = translate(ex);
+      if (serviceException.code() == HTTP_NOT_FOUND) {
+        return null;
+      }
+      throw serviceException;
+    }
+  }
+
+  @Override
+  public boolean deleteDefaultAcl(String bucket, String entity) {
+    try {
+      storage.defaultObjectAccessControls().delete(bucket, entity).execute();
+      return true;
+    } catch (IOException ex) {
+      StorageException serviceException = translate(ex);
+      if (serviceException.code() == HTTP_NOT_FOUND) {
+        return false;
+      }
+      throw serviceException;
+    }
+  }
+
+  @Override
+  public ObjectAccessControl createDefaultAcl(ObjectAccessControl acl) {
+    try {
+      return storage.defaultObjectAccessControls().insert(acl.getBucket(), acl).execute();
+    } catch (IOException ex) {
+      throw translate(ex);
+    }
+  }
+
+  @Override
+  public ObjectAccessControl patchDefaultAcl(ObjectAccessControl acl) {
+    try {
+      return storage.defaultObjectAccessControls()
+          .patch(acl.getBucket(), acl.getEntity(), acl)
+          .execute();
+    } catch (IOException ex) {
+      throw translate(ex);
+    }
+  }
+
+  @Override
+  public List<ObjectAccessControl> listDefaultAcls(String bucket) {
+    try {
+      // TODO(mziccard) remove when https://github.com/google/google-api-java-client/issues/1022 is
+      // fixed
+      return Lists.transform(
+          storage.defaultObjectAccessControls().list(bucket).execute().getItems(),
+          FROM_OBJECT_TO_ACL_FUNCTION);
+    } catch (IOException ex) {
+      throw translate(ex);
+    }
+  }
+
+  @Override
+  public ObjectAccessControl getAcl(String bucket, String object, Long generation, String entity) {
+    try {
+      return storage.objectAccessControls().get(bucket, object, entity)
+          .setGeneration(generation)
+          .execute();
+    } catch (IOException ex) {
+      StorageException serviceException = translate(ex);
+      if (serviceException.code() == HTTP_NOT_FOUND) {
+        return null;
+      }
+      throw serviceException;
+    }
+  }
+
+  @Override
+  public boolean deleteAcl(String bucket, String object, Long generation, String entity) {
+    try {
+      storage.objectAccessControls().delete(bucket, object, entity)
+          .setGeneration(generation)
+          .execute();
+      return true;
+    } catch (IOException ex) {
+      StorageException serviceException = translate(ex);
+      if (serviceException.code() == HTTP_NOT_FOUND) {
+        return false;
+      }
+      throw serviceException;
+    }
+  }
+
+  @Override
+  public ObjectAccessControl createAcl(ObjectAccessControl acl) {
+    try {
+      return storage.objectAccessControls().insert(acl.getBucket(), acl.getObject(), acl)
+          .setGeneration(acl.getGeneration())
+          .execute();
+    } catch (IOException ex) {
+      throw translate(ex);
+    }
+  }
+
+  @Override
+  public ObjectAccessControl patchAcl(ObjectAccessControl acl) {
+    try {
+      return storage.objectAccessControls()
+          .patch(acl.getBucket(), acl.getObject(), acl.getEntity(), acl)
+          .setGeneration(acl.getGeneration())
+          .execute();
+    } catch (IOException ex) {
+      throw translate(ex);
+    }
+  }
+
+  @Override
+  public List<ObjectAccessControl> listAcls(String bucket, String object, Long generation) {
+    try {
+      // TODO(mziccard) remove when https://github.com/google/google-api-java-client/issues/1022 is
+      // fixed
+      return Lists.transform(
+          storage.objectAccessControls().list(bucket, object)
+              .setGeneration(generation)
+              .execute().getItems(),
+          FROM_OBJECT_TO_ACL_FUNCTION);
     } catch (IOException ex) {
       throw translate(ex);
     }

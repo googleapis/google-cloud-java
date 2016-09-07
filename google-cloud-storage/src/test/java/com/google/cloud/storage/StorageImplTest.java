@@ -33,6 +33,10 @@ import com.google.cloud.Page;
 import com.google.cloud.ReadChannel;
 import com.google.cloud.RetryParams;
 import com.google.cloud.WriteChannel;
+import com.google.cloud.storage.Acl.Project;
+import com.google.cloud.storage.Acl.Project.ProjectRole;
+import com.google.cloud.storage.Acl.Role;
+import com.google.cloud.storage.Acl.User;
 import com.google.cloud.storage.Storage.CopyRequest;
 import com.google.cloud.storage.spi.RpcBatch;
 import com.google.cloud.storage.spi.StorageRpc;
@@ -209,6 +213,10 @@ public class StorageImplTest {
       StorageRpc.Option.MAX_RESULTS, BLOB_LIST_PAGE_SIZE.value(),
       StorageRpc.Option.PREFIX, BLOB_LIST_PREFIX.value(),
       StorageRpc.Option.VERSIONS, BLOB_LIST_VERSIONS.value());
+
+  // ACLs
+  private static final Acl ACL = Acl.of(User.ofAllAuthenticatedUsers(), Role.OWNER);
+  private static final Acl OTHER_ACL = Acl.of(new Project(ProjectRole.OWNERS, "p"), Role.READER);
 
   private static final String PRIVATE_KEY_STRING = "MIICdwIBADANBgkqhkiG9w0BAQEFAASCAmEwggJdAgEAAoG"
           + "BAL2xolH1zrISQ8+GzOV29BNjjzq4/HIP8Psd1+cZb81vDklSF+95wB250MSE0BDc81pvIMwj5OmIfLg1NY6uB"
@@ -1282,6 +1290,198 @@ public class StorageImplTest {
     assertEquals(new Blob(storage, new BlobInfo.BuilderImpl(BLOB_INFO1)), resultBlobs.get(0));
     assertNull(resultBlobs.get(1));
     EasyMock.verify(batchMock);
+  }
+
+  @Test
+  public void testGetBucketAcl() {
+    EasyMock.expect(storageRpcMock.getAcl(BUCKET_NAME1, "allAuthenticatedUsers"))
+        .andReturn(ACL.toBucketPb());
+    EasyMock.replay(storageRpcMock);
+    initializeService();
+    Acl acl = storage.getAcl(BUCKET_NAME1, User.ofAllAuthenticatedUsers());
+    assertEquals(ACL, acl);
+  }
+
+  @Test
+  public void testGetBucketAclNull() {
+    EasyMock.expect(storageRpcMock.getAcl(BUCKET_NAME1, "allAuthenticatedUsers")).andReturn(null);
+    EasyMock.replay(storageRpcMock);
+    initializeService();
+    assertNull(storage.getAcl(BUCKET_NAME1, User.ofAllAuthenticatedUsers()));
+  }
+
+  @Test
+  public void testDeleteBucketAcl() {
+    EasyMock.expect(storageRpcMock.deleteAcl(BUCKET_NAME1, "allAuthenticatedUsers"))
+        .andReturn(true);
+    EasyMock.replay(storageRpcMock);
+    initializeService();
+    assertTrue(storage.deleteAcl(BUCKET_NAME1, User.ofAllAuthenticatedUsers()));
+  }
+
+  @Test
+  public void testCreateBucketAcl() {
+    Acl returnedAcl = ACL.toBuilder().etag("ETAG").id("ID").build();
+    EasyMock.expect(storageRpcMock.createAcl(ACL.toBucketPb().setBucket(BUCKET_NAME1)))
+        .andReturn(returnedAcl.toBucketPb());
+    EasyMock.replay(storageRpcMock);
+    initializeService();
+    Acl acl = storage.createAcl(BUCKET_NAME1, ACL);
+    assertEquals(returnedAcl, acl);
+  }
+
+  @Test
+  public void testUpdateBucketAcl() {
+    Acl returnedAcl = ACL.toBuilder().etag("ETAG").id("ID").build();
+    EasyMock.expect(storageRpcMock.patchAcl(ACL.toBucketPb().setBucket(BUCKET_NAME1)))
+        .andReturn(returnedAcl.toBucketPb());
+    EasyMock.replay(storageRpcMock);
+    initializeService();
+    Acl acl = storage.updateAcl(BUCKET_NAME1, ACL);
+    assertEquals(returnedAcl, acl);
+  }
+
+  @Test
+  public void testListBucketAcl() {
+    EasyMock.expect(storageRpcMock.listAcls(BUCKET_NAME1))
+        .andReturn(ImmutableList.of(ACL.toBucketPb(), OTHER_ACL.toBucketPb()));
+    EasyMock.replay(storageRpcMock);
+    initializeService();
+    List<Acl> acls = storage.listAcls(BUCKET_NAME1);
+    assertEquals(ImmutableList.of(ACL, OTHER_ACL), acls);
+  }
+
+  @Test
+  public void testGetDefaultBucketAcl() {
+    EasyMock.expect(storageRpcMock.getDefaultAcl(BUCKET_NAME1, "allAuthenticatedUsers"))
+        .andReturn(ACL.toObjectPb());
+    EasyMock.replay(storageRpcMock);
+    initializeService();
+    Acl acl = storage.getDefaultAcl(BUCKET_NAME1, User.ofAllAuthenticatedUsers());
+    assertEquals(ACL, acl);
+  }
+
+  @Test
+  public void testGetDefaultBucketAclNull() {
+    EasyMock.expect(storageRpcMock.getDefaultAcl(BUCKET_NAME1, "allAuthenticatedUsers"))
+        .andReturn(null);
+    EasyMock.replay(storageRpcMock);
+    initializeService();
+    assertNull(storage.getDefaultAcl(BUCKET_NAME1, User.ofAllAuthenticatedUsers()));
+  }
+
+  @Test
+  public void testDeleteDefaultBucketAcl() {
+    EasyMock.expect(storageRpcMock.deleteDefaultAcl(BUCKET_NAME1, "allAuthenticatedUsers"))
+        .andReturn(true);
+    EasyMock.replay(storageRpcMock);
+    initializeService();
+    assertTrue(storage.deleteDefaultAcl(BUCKET_NAME1, User.ofAllAuthenticatedUsers()));
+  }
+
+  @Test
+  public void testCreateDefaultBucketAcl() {
+    Acl returnedAcl = ACL.toBuilder().etag("ETAG").id("ID").build();
+    EasyMock.expect(storageRpcMock.createDefaultAcl(ACL.toObjectPb().setBucket(BUCKET_NAME1)))
+        .andReturn(returnedAcl.toObjectPb());
+    EasyMock.replay(storageRpcMock);
+    initializeService();
+    Acl acl = storage.createDefaultAcl(BUCKET_NAME1, ACL);
+    assertEquals(returnedAcl, acl);
+  }
+
+  @Test
+  public void testUpdateDefaultBucketAcl() {
+    Acl returnedAcl = ACL.toBuilder().etag("ETAG").id("ID").build();
+    EasyMock.expect(storageRpcMock.patchDefaultAcl(ACL.toObjectPb().setBucket(BUCKET_NAME1)))
+        .andReturn(returnedAcl.toObjectPb());
+    EasyMock.replay(storageRpcMock);
+    initializeService();
+    Acl acl = storage.updateDefaultAcl(BUCKET_NAME1, ACL);
+    assertEquals(returnedAcl, acl);
+  }
+
+  @Test
+  public void testListDefaultBucketAcl() {
+    EasyMock.expect(storageRpcMock.listDefaultAcls(BUCKET_NAME1))
+        .andReturn(ImmutableList.of(ACL.toObjectPb(), OTHER_ACL.toObjectPb()));
+    EasyMock.replay(storageRpcMock);
+    initializeService();
+    List<Acl> acls = storage.listDefaultAcls(BUCKET_NAME1);
+    assertEquals(ImmutableList.of(ACL, OTHER_ACL), acls);
+  }
+
+  @Test
+  public void testGetBlobAcl() {
+    BlobId blobId = BlobId.of(BUCKET_NAME1, BLOB_NAME1, 42L);
+    EasyMock.expect(storageRpcMock.getAcl(BUCKET_NAME1, BLOB_NAME1, 42L, "allAuthenticatedUsers"))
+        .andReturn(ACL.toObjectPb());
+    EasyMock.replay(storageRpcMock);
+    initializeService();
+    Acl acl = storage.getAcl(blobId, User.ofAllAuthenticatedUsers());
+    assertEquals(ACL, acl);
+  }
+
+  @Test
+  public void testGetBlobAclNull() {
+    BlobId blobId = BlobId.of(BUCKET_NAME1, BLOB_NAME1, 42L);
+    EasyMock.expect(storageRpcMock.getAcl(BUCKET_NAME1, BLOB_NAME1, 42L, "allAuthenticatedUsers"))
+        .andReturn(null);
+    EasyMock.replay(storageRpcMock);
+    initializeService();
+    assertNull(storage.getAcl(blobId, User.ofAllAuthenticatedUsers()));
+  }
+
+  @Test
+  public void testDeleteBlobAcl() {
+    BlobId blobId = BlobId.of(BUCKET_NAME1, BLOB_NAME1, 42L);
+    EasyMock.expect(
+        storageRpcMock.deleteAcl(BUCKET_NAME1, BLOB_NAME1, 42L, "allAuthenticatedUsers"))
+        .andReturn(true);
+    EasyMock.replay(storageRpcMock);
+    initializeService();
+    assertTrue(storage.deleteAcl(blobId, User.ofAllAuthenticatedUsers()));
+  }
+
+  @Test
+  public void testCreateBlobAcl() {
+    BlobId blobId = BlobId.of(BUCKET_NAME1, BLOB_NAME1, 42L);
+    Acl returnedAcl = ACL.toBuilder().etag("ETAG").id("ID").build();
+    EasyMock.expect(storageRpcMock.createAcl(ACL.toObjectPb()
+        .setBucket(BUCKET_NAME1)
+        .setObject(BLOB_NAME1)
+        .setGeneration(42L)))
+        .andReturn(returnedAcl.toObjectPb());
+    EasyMock.replay(storageRpcMock);
+    initializeService();
+    Acl acl = storage.createAcl(blobId, ACL);
+    assertEquals(returnedAcl, acl);
+  }
+
+  @Test
+  public void testUpdateBlobAcl() {
+    BlobId blobId = BlobId.of(BUCKET_NAME1, BLOB_NAME1, 42L);
+    Acl returnedAcl = ACL.toBuilder().etag("ETAG").id("ID").build();
+    EasyMock.expect(storageRpcMock.patchAcl(ACL.toObjectPb()
+        .setBucket(BUCKET_NAME1)
+        .setObject(BLOB_NAME1)
+        .setGeneration(42L)))
+        .andReturn(returnedAcl.toObjectPb());
+    EasyMock.replay(storageRpcMock);
+    initializeService();
+    Acl acl = storage.updateAcl(blobId, ACL);
+    assertEquals(returnedAcl, acl);
+  }
+
+  @Test
+  public void testListBlobAcl() {
+    BlobId blobId = BlobId.of(BUCKET_NAME1, BLOB_NAME1, 42L);
+    EasyMock.expect(storageRpcMock.listAcls(BUCKET_NAME1, BLOB_NAME1, 42L))
+        .andReturn(ImmutableList.of(ACL.toObjectPb(), OTHER_ACL.toObjectPb()));
+    EasyMock.replay(storageRpcMock);
+    initializeService();
+    List<Acl> acls = storage.listAcls(blobId);
+    assertEquals(ImmutableList.of(ACL, OTHER_ACL), acls);
   }
 
   @Test

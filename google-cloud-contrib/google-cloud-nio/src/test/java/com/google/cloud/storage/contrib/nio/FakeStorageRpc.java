@@ -17,6 +17,8 @@
 package com.google.cloud.storage.contrib.nio;
 
 import com.google.api.services.storage.model.Bucket;
+import com.google.api.services.storage.model.BucketAccessControl;
+import com.google.api.services.storage.model.ObjectAccessControl;
 import com.google.api.services.storage.model.StorageObject;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageException;
@@ -333,6 +335,81 @@ class FakeStorageRpc implements StorageRpc {
 
   @Override
   public RewriteResponse continueRewrite(RewriteResponse previousResponse) throws StorageException {
+    throw new UnsupportedOperationException();
+  }
+
+  @Override
+  public BucketAccessControl getAcl(String bucket, String entity) {
+    throw new UnsupportedOperationException();
+  }
+
+  @Override
+  public boolean deleteAcl(String bucket, String entity) {
+    throw new UnsupportedOperationException();
+  }
+
+  @Override
+  public BucketAccessControl createAcl(BucketAccessControl acl) {
+    throw new UnsupportedOperationException();
+  }
+
+  @Override
+  public BucketAccessControl patchAcl(BucketAccessControl acl) {
+    throw new UnsupportedOperationException();
+  }
+
+  @Override
+  public List<BucketAccessControl> listAcls(String bucket) {
+    throw new UnsupportedOperationException();
+  }
+
+  @Override
+  public ObjectAccessControl getDefaultAcl(String bucket, String entity) {
+    throw new UnsupportedOperationException();
+  }
+
+  @Override
+  public boolean deleteDefaultAcl(String bucket, String entity) {
+    throw new UnsupportedOperationException();
+  }
+
+  @Override
+  public ObjectAccessControl createDefaultAcl(ObjectAccessControl acl) {
+    throw new UnsupportedOperationException();
+  }
+
+  @Override
+  public ObjectAccessControl patchDefaultAcl(ObjectAccessControl acl) {
+    throw new UnsupportedOperationException();
+  }
+
+  @Override
+  public List<ObjectAccessControl> listDefaultAcls(String bucket) {
+    throw new UnsupportedOperationException();
+  }
+
+  @Override
+  public ObjectAccessControl getAcl(String bucket, String object, Long generation, String entity) {
+    throw new UnsupportedOperationException();
+  }
+
+  @Override
+  public boolean deleteAcl(String bucket, String object, Long generation, String entity) {
+    throw new UnsupportedOperationException();
+  }
+
+  @Override
+  public ObjectAccessControl createAcl(ObjectAccessControl acl) {
+    throw new UnsupportedOperationException();
+  }
+
+  @Override
+  public ObjectAccessControl patchAcl(ObjectAccessControl acl) {
+    throw new UnsupportedOperationException();
+  }
+
+  @Override
+  public List<ObjectAccessControl> listAcls(String bucket, String object, Long generation) {
     throw new UnsupportedOperationException();
   }
 

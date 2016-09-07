@@ -31,6 +31,8 @@ import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkState;
 import static java.nio.charset.StandardCharsets.UTF_8;
 
+import com.google.api.services.storage.model.BucketAccessControl;
+import com.google.api.services.storage.model.ObjectAccessControl;
 import com.google.api.services.storage.model.StorageObject;
 import com.google.cloud.BaseService;
 import com.google.cloud.BatchResult;
@@ -40,6 +42,7 @@ import com.google.cloud.PageImpl.NextPageFetcher;
 import com.google.cloud.ReadChannel;
 import com.google.cloud.RetryHelper.RetryHelperException;
 import com.google.cloud.ServiceAccountSigner;
+import com.google.cloud.storage.Acl.Entity;
 import com.google.cloud.storage.spi.StorageRpc;
 import com.google.cloud.storage.spi.StorageRpc.RewriteResponse;
 import com.google.cloud.storage.spi.StorageRpc.Tuple;
@@ -613,6 +616,234 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
     }
     batch.submit();
     return Collections.unmodifiableList(results);
+  }
+
+  @Override
+  public Acl getAcl(final String bucket, final Entity entity) {
+    try {
+      BucketAccessControl answer = runWithRetries(new Callable<BucketAccessControl>() {
+        @Override
+        public BucketAccessControl call() {
+          return storageRpc.getAcl(bucket, entity.toPb());
+        }
+      }, options().retryParams(), EXCEPTION_HANDLER, options().clock());
+      return answer == null ? null : Acl.fromPb(answer);
+    } catch (RetryHelperException e) {
+      throw StorageException.translateAndThrow(e);
+    }
+  }
+
+  @Override
+  public boolean deleteAcl(final String bucket, final Entity entity) {
+    try {
+      return runWithRetries(new Callable<Boolean>() {
+        @Override
+        public Boolean call() {
+          return storageRpc.deleteAcl(bucket, entity.toPb());
+        }
+      }, options().retryParams(), EXCEPTION_HANDLER, options().clock());
+    } catch (RetryHelperException e) {
+      throw StorageException.translateAndThrow(e);
+    }
+  }
+
+  @Override
+  public Acl createAcl(String bucket, Acl acl) {
+    final BucketAccessControl aclPb = acl.toBucketPb().setBucket(bucket);
+    try {
+      return Acl.fromPb(runWithRetries(new Callable<BucketAccessControl>() {
+        @Override
+        public BucketAccessControl call() {
+          return storageRpc.createAcl(aclPb);
+        }
+      }, options().retryParams(), EXCEPTION_HANDLER, options().clock()));
+    } catch (RetryHelperException e) {
+      throw StorageException.translateAndThrow(e);
+    }
+  }
+
+  @Override
+  public Acl updateAcl(String bucket, Acl acl) {
+    final BucketAccessControl aclPb = acl.toBucketPb().setBucket(bucket);
+    try {
+      return Acl.fromPb(runWithRetries(new Callable<BucketAccessControl>() {
+        @Override
+        public BucketAccessControl call() {
+          return storageRpc.patchAcl(aclPb);
+        }
+      }, options().retryParams(), EXCEPTION_HANDLER, options().clock()));
+    } catch (RetryHelperException e) {
+      throw StorageException.translateAndThrow(e);
+    }
+  }
+
+  @Override
+  public List<Acl> listAcls(final String bucket) {
+    try {
+      List<BucketAccessControl> answer = runWithRetries(new Callable<List<BucketAccessControl>>() {
+        @Override
+        public List<BucketAccessControl> call() {
+          return storageRpc.listAcls(bucket);
+        }
+      }, options().retryParams(), EXCEPTION_HANDLER, options().clock());
+      return Lists.transform(answer, Acl.FROM_BUCKET_PB_FUNCTION);
+    } catch (RetryHelperException e) {
+      throw StorageException.translateAndThrow(e);
+    }
+  }
+
+  @Override
+  public Acl getDefaultAcl(final String bucket, final Entity entity) {
+    try {
+      ObjectAccessControl answer = runWithRetries(new Callable<ObjectAccessControl>() {
+        @Override
+        public ObjectAccessControl call() {
+          return storageRpc.getDefaultAcl(bucket, entity.toPb());
+        }
+      }, options().retryParams(), EXCEPTION_HANDLER, options().clock());
+      return answer == null ? null : Acl.fromPb(answer);
+    } catch (RetryHelperException e) {
+      throw StorageException.translateAndThrow(e);
+    }
+  }
+
+  @Override
+  public boolean deleteDefaultAcl(final String bucket, final Entity entity) {
+    try {
+      return runWithRetries(new Callable<Boolean>() {
+        @Override
+        public Boolean call() {
+          return storageRpc.deleteDefaultAcl(bucket, entity.toPb());
+        }
+      }, options().retryParams(), EXCEPTION_HANDLER, options().clock());
+    } catch (RetryHelperException e) {
+      throw StorageException.translateAndThrow(e);
+    }
+  }
+
+  @Override
+  public Acl createDefaultAcl(String bucket, Acl acl) {
+    final ObjectAccessControl aclPb = acl.toObjectPb().setBucket(bucket);
+    try {
+      return Acl.fromPb(runWithRetries(new Callable<ObjectAccessControl>() {
+        @Override
+        public ObjectAccessControl call() {
+          return storageRpc.createDefaultAcl(aclPb);
+        }
+      }, options().retryParams(), EXCEPTION_HANDLER, options().clock()));
+    } catch (RetryHelperException e) {
+      throw StorageException.translateAndThrow(e);
+    }
+  }
+
+  @Override
+  public Acl updateDefaultAcl(String bucket, Acl acl) {
+    final ObjectAccessControl aclPb = acl.toObjectPb().setBucket(bucket);
+    try {
+      return Acl.fromPb(runWithRetries(new Callable<ObjectAccessControl>() {
+        @Override
+        public ObjectAccessControl call() {
+          return storageRpc.patchDefaultAcl(aclPb);
+        }
+      }, options().retryParams(), EXCEPTION_HANDLER, options().clock()));
+    } catch (RetryHelperException e) {
+      throw StorageException.translateAndThrow(e);
+    }
+  }
+
+  @Override
+  public List<Acl> listDefaultAcls(final String bucket) {
+    try {
+      List<ObjectAccessControl> answer = runWithRetries(new Callable<List<ObjectAccessControl>>() {
+        @Override
+        public List<ObjectAccessControl> call() {
+          return storageRpc.listDefaultAcls(bucket);
+        }
+      }, options().retryParams(), EXCEPTION_HANDLER, options().clock());
+      return Lists.transform(answer, Acl.FROM_OBJECT_PB_FUNCTION);
+    } catch (RetryHelperException e) {
+      throw StorageException.translateAndThrow(e);
+    }
+  }
+
+  @Override
+  public Acl getAcl(final BlobId blob, final Entity entity) {
+    try {
+      ObjectAccessControl answer = runWithRetries(new Callable<ObjectAccessControl>() {
+        @Override
+        public ObjectAccessControl call() {
+          return storageRpc.getAcl(blob.bucket(), blob.name(), blob.generation(), entity.toPb());
+        }
+      }, options().retryParams(), EXCEPTION_HANDLER, options().clock());
+      return answer == null ? null : Acl.fromPb(answer);
+    } catch (RetryHelperException e) {
+      throw StorageException.translateAndThrow(e);
+    }
+  }
+
+  @Override
+  public boolean deleteAcl(final BlobId blob, final Entity entity) {
+    try {
+      return runWithRetries(new Callable<Boolean>() {
+        @Override
+        public Boolean call() {
+          return storageRpc.deleteAcl(blob.bucket(), blob.name(), blob.generation(), entity.toPb());
+        }
+      }, options().retryParams(), EXCEPTION_HANDLER, options().clock());
+    } catch (RetryHelperException e) {
+      throw StorageException.translateAndThrow(e);
+    }
+  }
+
+  @Override
+  public Acl createAcl(final BlobId blob, final Acl acl) {
+    final ObjectAccessControl aclPb = acl.toObjectPb()
+        .setBucket(blob.bucket())
+        .setObject(blob.name())
+        .setGeneration(blob.generation());
+    try {
+      return Acl.fromPb(runWithRetries(new Callable<ObjectAccessControl>() {
+        @Override
+        public ObjectAccessControl call() {
+          return storageRpc.createAcl(aclPb);
+        }
+      }, options().retryParams(), EXCEPTION_HANDLER, options().clock()));
+    } catch (RetryHelperException e) {
+      throw StorageException.translateAndThrow(e);
+    }
+  }
+
+  @Override
+  public Acl updateAcl(BlobId blob, Acl acl) {
+    final ObjectAccessControl aclPb = acl.toObjectPb()
+        .setBucket(blob.bucket())
+        .setObject(blob.name())
+        .setGeneration(blob.generation());
+    try {
+      return Acl.fromPb(runWithRetries(new Callable<ObjectAccessControl>() {
+        @Override
+        public ObjectAccessControl call() {
+          return storageRpc.patchAcl(aclPb);
+        }
+      }, options().retryParams(), EXCEPTION_HANDLER, options().clock()));
+    } catch (RetryHelperException e) {
+      throw StorageException.translateAndThrow(e);
+    }
+  }
+
+  @Override
+  public List<Acl> listAcls(final BlobId blob) {
+    try {
+      List<ObjectAccessControl> answer = runWithRetries(new Callable<List<ObjectAccessControl>>() {
+        @Override
+        public List<ObjectAccessControl> call() {
+          return storageRpc.listAcls(blob.bucket(), blob.name(), blob.generation());
+        }
+      }, options().retryParams(), EXCEPTION_HANDLER, options().clock());
+      return Lists.transform(answer, Acl.FROM_OBJECT_PB_FUNCTION);
+    } catch (RetryHelperException e) {
+      throw StorageException.translateAndThrow(e);
+    }
   }
 
   private static <T> void addToOptionMap(StorageRpc.Option option, T defaultValue,

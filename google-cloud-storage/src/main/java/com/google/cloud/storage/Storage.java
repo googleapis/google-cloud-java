@@ -30,6 +30,7 @@ import com.google.cloud.Service;
 import com.google.cloud.ServiceAccountSigner;
 import com.google.cloud.ServiceAccountSigner.SigningException;
 import com.google.cloud.WriteChannel;
+import com.google.cloud.storage.Acl.Entity;
 import com.google.cloud.storage.spi.StorageRpc;
 import com.google.cloud.storage.spi.StorageRpc.Tuple;
 import com.google.common.collect.ImmutableList;
@@ -1948,4 +1949,130 @@ public interface Storage extends Service<StorageOptions> {
    * @throws StorageException upon failure
    */
   List<Boolean> delete(Iterable<BlobId> blobIds);
+
+  /**
+   * Returns the ACL entry for the specified entity on the specified bucket or {@code null} if not
+   * found.
+   *
+   * @throws StorageException upon failure
+   */
+  Acl getAcl(String bucket, Entity entity);
+
+  /**
+   * Deletes the ACL entry for the specified entity on the specified bucket.
+   *
+   * @return {@code true} if the ACL was deleted, {@code false} if it was not found
+   * @throws StorageException upon failure
+   */
+  boolean deleteAcl(String bucket, Entity entity);
+
+  /**
+   * Creates a new ACL entry on the specified bucket.
+   *
+   * @throws StorageException upon failure
+   */
+  Acl createAcl(String bucket, Acl acl);
+
+  /**
+   * Updates an ACL entry on the specified bucket.
+   *
+   * @throws StorageException upon failure
+   */
+  Acl updateAcl(String bucket, Acl acl);
+
+  /**
+   * Lists the ACL entries for the provided bucket.
+   *
+   * @throws StorageException upon failure
+   */
+  List<Acl> listAcls(String bucket);
+
+  /**
+   * Returns the default object ACL entry for the specified entity on the specified bucket or
+   * {@code null} if not found.
+   *
+   * <p>Default ACLs are applied to a new blob within the bucket when no ACL was provided for that
+   * blob.
+   *
+   * @throws StorageException upon failure
+   */
+  Acl getDefaultAcl(String bucket, Entity entity);
+
+  /**
+   * Deletes the default object ACL entry for the specified entity on the specified bucket.
+   *
+   * <p>Default ACLs are applied to a new blob within the bucket when no ACL was provided for that
+   * blob.
+   *
+   * @return {@code true} if the ACL was deleted, {@code false} if it was not found
+   * @throws StorageException upon failure
+   */
+  boolean deleteDefaultAcl(String bucket, Entity entity);
+
+  /**
+   * Creates a new default blob ACL entry on the specified bucket.
+   *
+   * <p>Default ACLs are applied to a new blob within the bucket when no ACL was provided for that
+   * blob.
+   *
+   * @throws StorageException upon failure
+   */
+  Acl createDefaultAcl(String bucket, Acl acl);
+
+  /**
+   * Updates a default blob ACL entry on the specified bucket.
+   *
+   * <p>Default ACLs are applied to a new blob within the bucket when no ACL was provided for that
+   * blob.
+   *
+   * @throws StorageException upon failure
+   */
+  Acl updateDefaultAcl(String bucket, Acl acl);
+
+  /**
+   * Lists the default blob ACL entries for the provided bucket.
+   *
+   * <p>Default ACLs are applied to a new blob within the bucket when no ACL was provided for that
+   * blob.
+   *
+   * @throws StorageException upon failure
+   */
+  List<Acl> listDefaultAcls(String bucket);
+
+  /**
+   * Returns the ACL entry for the specified entity on the specified blob or {@code null} if not
+   * found.
+   *
+   * @throws StorageException upon failure
+   */
+  Acl getAcl(BlobId blob, Entity entity);
+
+  /**
+   * Deletes the ACL entry for the specified entity on the specified blob.
+   *
+   * @return {@code true} if the ACL was deleted, {@code false} if it was not found
+   * @throws StorageException upon failure
+   */
+  boolean deleteAcl(BlobId blob, Entity entity);
+
+  /**
+   * Creates a new ACL entry on the specified blob.
+   *
+   * @throws StorageException upon failure
+   */
+  Acl createAcl(BlobId blob, Acl acl);
+
+  /**
+   * Updates an ACL entry on the specified blob.
+   *
+   * @throws StorageException upon failure
+   */
+  Acl updateAcl(BlobId blob, Acl acl);
+
+  /**
+   * Lists the ACL entries for the provided blob.
+   *
+   * @throws StorageException upon failure
+   */
+  List<Acl> listAcls(BlobId blob);
 }

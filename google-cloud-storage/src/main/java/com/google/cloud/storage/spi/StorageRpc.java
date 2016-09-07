@@ -17,10 +17,13 @@
 package com.google.cloud.storage.spi;
 
 import com.google.api.services.storage.model.Bucket;
+import com.google.api.services.storage.model.BucketAccessControl;
+import com.google.api.services.storage.model.ObjectAccessControl;
 import com.google.api.services.storage.model.StorageObject;
 import com.google.cloud.storage.StorageException;
 
 import java.io.InputStream;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
@@ -311,4 +314,115 @@ public interface StorageRpc {
    * @throws StorageException upon failure
    */
   RewriteResponse continueRewrite(RewriteResponse previousResponse);
+
+  /**
+   * Returns the ACL entry for the specified entity on the specified bucket or {@code null} if not
+   * found.
+   *
+   * @throws StorageException upon failure
+   */
+  BucketAccessControl getAcl(String bucket, String entity);
+
+  /**
+   * Deletes the ACL entry for the specified entity on the specified bucket.
+   *
+   * @return {@code true} if the ACL was deleted, {@code false} if it was not found
+   * @throws StorageException upon failure
+   */
+  boolean deleteAcl(String bucket, String entity);
+
+  /**
+   * Creates a new ACL entry on the specified bucket.
+   *
+   * @throws StorageException upon failure
+   */
+  BucketAccessControl createAcl(BucketAccessControl acl);
+
+  /**
+   * Updates an ACL entry on the specified bucket.
+   *
+   * @throws StorageException upon failure
+   */
+  BucketAccessControl patchAcl(BucketAccessControl acl);
+
+  /**
+   * Lists the ACL entries for the provided bucket.
+   *
+   * @throws StorageException upon failure
+   */
+  List<BucketAccessControl> listAcls(String bucket);
+
+  /**
+   * Returns the default object ACL entry for the specified entity on the specified bucket or
+   * {@code null} if not found.
+   *
+   * @throws StorageException upon failure
+   */
+  ObjectAccessControl getDefaultAcl(String bucket, String entity);
+
+  /**
+   * Deletes the default object ACL entry for the specified entity on the specified bucket.
+   *
+   * @return {@code true} if the ACL was deleted, {@code false} if it was not found
+   * @throws StorageException upon failure
+   */
+  boolean deleteDefaultAcl(String bucket, String entity);
+
+  /**
+   * Creates a new default object ACL entry on the specified bucket.
+   *
+   * @throws StorageException upon failure
+   */
+  ObjectAccessControl createDefaultAcl(ObjectAccessControl acl);
+
+  /**
+   * Updates a default object ACL entry on the specified bucket.
+   *
+   * @throws StorageException upon failure
+   */
+  ObjectAccessControl patchDefaultAcl(ObjectAccessControl acl);
+
+  /**
+   * Lists the default object ACL entries for the provided bucket.
+   *
+   * @throws StorageException upon failure
+   */
+  List<ObjectAccessControl> listDefaultAcls(String bucket);
+
+  /**
+   * Returns the ACL entry for the specified entity on the specified object or {@code null} if not
+   * found.
+   *
+   * @throws StorageException upon failure
+   */
+  ObjectAccessControl getAcl(String bucket, String object, Long generation, String entity);
+
+  /**
+   * Deletes the ACL entry for the specified entity on the specified object.
+   *
+   * @return {@code true} if the ACL was deleted, {@code false} if it was not found
+   * @throws StorageException upon failure
+   */
+  boolean deleteAcl(String bucket, String object, Long generation, String entity);
+
+  /**
+   * Creates a new ACL entry on the specified object.
+   *
+   * @throws StorageException upon failure
+   */
+  ObjectAccessControl createAcl(ObjectAccessControl acl);
+
+  /**
+   * Updates an ACL entry on the specified object.
+   *
+   * @throws StorageException upon failure
+   */
+  ObjectAccessControl patchAcl(ObjectAccessControl acl);
+
+  /**
+   * Lists the ACL entries for the provided object.
+   *
+   * @throws StorageException upon failure
+   */
+  List<ObjectAccessControl> listAcls(String bucket, String object, Long generation);
 }
