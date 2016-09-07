@@ -1303,8 +1303,8 @@ public interface Storage extends Service<StorageOptions> {
   /**
    * Returns the requested blob or {@code null} if not found.
    *
-   * <p>Example of getting information on a blob, only if its metageneration matches a value, otherwise
-   * a {@link StorageException} is thrown.
+   * <p>Example of getting information on a blob, only if its metageneration matches a value,
+   * otherwise a {@link StorageException} is thrown.
    * <pre> {@code
    * String bucketName = "my_unique_bucket";
    * String blobName = "my_blob_name";
@@ -1320,8 +1320,8 @@ public interface Storage extends Service<StorageOptions> {
   /**
    * Returns the requested blob or {@code null} if not found.
    *
-   * <p>Example of getting information on a blob, only if its metageneration matches a value, otherwise
-   * a {@link StorageException} is thrown.
+   * <p>Example of getting information on a blob, only if its metageneration matches a value,
+   * otherwise a {@link StorageException} is thrown.
    * <pre> {@code
    * String bucketName = "my_unique_bucket";
    * String blobName = "my_blob_name";
@@ -1774,8 +1774,8 @@ public interface Storage extends Service<StorageOptions> {
    *   <li>The default credentials, if no credentials were passed to {@link StorageOptions}
    * </ol>
    *
-   * <p>Example of creating a signed URL that is valid for 2 weeks, using the default credentials for
-   * signing the URL.
+   * <p>Example of creating a signed URL that is valid for 2 weeks, using the default credentials
+   * for signing the URL.
    * <pre> {@code
    * String bucketName = "my_unique_bucket";
    * String blobName = "my_blob_name";
@@ -1954,12 +1954,29 @@ public interface Storage extends Service<StorageOptions> {
    * Returns the ACL entry for the specified entity on the specified bucket or {@code null} if not
    * found.
    *
+   * <p>Example of getting the ACL entry for an entity on a bucket.
+   * <pre> {@code
+   * String bucketName = "my_unique_bucket";
+   * Acl acl = storage.getAcl(bucketName, User.ofAllAuthenticatedUsers());
+   * }</pre>
+   *
    * @throws StorageException upon failure
    */
   Acl getAcl(String bucket, Entity entity);
 
   /**
    * Deletes the ACL entry for the specified entity on the specified bucket.
+   *
+   * <p>Example of deleting the ACL entry for an entity on a bucket.
+   * <pre> {@code
+   * String bucketName = "my_unique_bucket";
+   * boolean deleted = storage.deleteAcl(bucketName, User.ofAllAuthenticatedUsers());
+   * if (deleted) {
+   *   // the acl entry was deleted
+   * } else {
+   *   // the acl entry was not found
+   * }
+   * }</pre>
    *
    * @return {@code true} if the ACL was deleted, {@code false} if it was not found
    * @throws StorageException upon failure
@@ -1969,6 +1986,12 @@ public interface Storage extends Service<StorageOptions> {
   /**
    * Creates a new ACL entry on the specified bucket.
    *
+   * <p>Example of creating a new ACL entry on a bucket.
+   * <pre> {@code
+   * String bucketName = "my_unique_bucket";
+   * Acl acl = storage.createAcl(bucketName, Acl.of(User.ofAllAuthenticatedUsers(), Role.READER));
+   * }</pre>
+   *
    * @throws StorageException upon failure
    */
   Acl createAcl(String bucket, Acl acl);
@@ -1976,12 +1999,27 @@ public interface Storage extends Service<StorageOptions> {
   /**
    * Updates an ACL entry on the specified bucket.
    *
+   * <p>Example of updating a new ACL entry on a bucket.
+   * <pre> {@code
+   * String bucketName = "my_unique_bucket";
+   * Acl acl = storage.updateAcl(bucketName, Acl.of(User.ofAllAuthenticatedUsers(), Role.OWNER));
+   * }</pre>
+   *
    * @throws StorageException upon failure
    */
   Acl updateAcl(String bucket, Acl acl);
 
   /**
    * Lists the ACL entries for the provided bucket.
+   *
+   * <p>Example of listing the ACL entries for a blob.
+   * <pre> {@code
+   * String bucketName = "my_unique_bucket";
+   * List<Acl> acls = storage.listAcls(bucketName);
+   * for (Acl acl : acls) {
+   *   // do something with ACL entry
+   * }
+   * }</pre>
    *
    * @throws StorageException upon failure
    */
@@ -1994,6 +2032,12 @@ public interface Storage extends Service<StorageOptions> {
    * <p>Default ACLs are applied to a new blob within the bucket when no ACL was provided for that
    * blob.
    *
+   * <p>Example of getting the default ACL entry for an entity on a bucket.
+   * <pre> {@code
+   * String bucketName = "my_unique_bucket";
+   * Acl acl = storage.getDefaultAcl(bucketName, User.ofAllAuthenticatedUsers());
+   * }</pre>
+   *
    * @throws StorageException upon failure
    */
   Acl getDefaultAcl(String bucket, Entity entity);
@@ -2003,6 +2047,17 @@ public interface Storage extends Service<StorageOptions> {
    *
    * <p>Default ACLs are applied to a new blob within the bucket when no ACL was provided for that
    * blob.
+   *
+   * <p>Example of deleting the default ACL entry for an entity on a bucket.
+   * <pre> {@code
+   * String bucketName = "my_unique_bucket";
+   * boolean deleted = storage.deleteDefaultAcl(bucketName, User.ofAllAuthenticatedUsers());
+   * if (deleted) {
+   *   // the acl entry was deleted
+   * } else {
+   *   // the acl entry was not found
+   * }
+   * }</pre>
    *
    * @return {@code true} if the ACL was deleted, {@code false} if it was not found
    * @throws StorageException upon failure
@@ -2015,6 +2070,13 @@ public interface Storage extends Service<StorageOptions> {
    * <p>Default ACLs are applied to a new blob within the bucket when no ACL was provided for that
    * blob.
    *
+   * <p>Example of creating a new default ACL entry on a bucket.
+   * <pre> {@code
+   * String bucketName = "my_unique_bucket";
+   * Acl acl =
+   *     storage.createDefaultAcl(bucketName, Acl.of(User.ofAllAuthenticatedUsers(), Role.READER));
+   * }</pre>
+   *
    * @throws StorageException upon failure
    */
   Acl createDefaultAcl(String bucket, Acl acl);
@@ -2024,6 +2086,13 @@ public interface Storage extends Service<StorageOptions> {
    *
    * <p>Default ACLs are applied to a new blob within the bucket when no ACL was provided for that
    * blob.
+   *
+   * <p>Example of updating a new default ACL entry on a bucket.
+   * <pre> {@code
+   * String bucketName = "my_unique_bucket";
+   * Acl acl =
+   *     storage.updateDefaultAcl(bucketName, Acl.of(User.ofAllAuthenticatedUsers(), Role.OWNER));
+   * }</pre>
    *
    * @throws StorageException upon failure
    */
@@ -2035,6 +2104,15 @@ public interface Storage extends Service<StorageOptions> {
    * <p>Default ACLs are applied to a new blob within the bucket when no ACL was provided for that
    * blob.
    *
+   * <p>Example of listing the default ACL entries for a blob.
+   * <pre> {@code
+   * String bucketName = "my_unique_bucket";
+   * List<Acl> acls = storage.listDefaultAcls(bucketName);
+   * for (Acl acl : acls) {
+   *   // do something with ACL entry
+   * }
+   * }</pre>
+   *
    * @throws StorageException upon failure
    */
   List<Acl> listDefaultAcls(String bucket);
@@ -2043,12 +2121,35 @@ public interface Storage extends Service<StorageOptions> {
    * Returns the ACL entry for the specified entity on the specified blob or {@code null} if not
    * found.
    *
+   * <p>Example of getting the ACL entry for an entity on a blob.
+   * <pre> {@code
+   * String bucketName = "my_unique_bucket";
+   * String blobName = "my_blob_name";
+   * long blobGeneration = 42;
+   * BlobId blobId = BlobId.of(bucketName, blobName, blobGeneration);
+   * Acl acl = storage.getAcl(blobId, User.ofAllAuthenticatedUsers());
+   * }</pre>
+   *
    * @throws StorageException upon failure
    */
   Acl getAcl(BlobId blob, Entity entity);
 
   /**
    * Deletes the ACL entry for the specified entity on the specified blob.
+   *
+   * <p>Example of deleting the ACL entry for an entity on a blob.
+   * <pre> {@code
+   * String bucketName = "my_unique_bucket";
+   * String blobName = "my_blob_name";
+   * long blobGeneration = 42;
+   * BlobId blobId = BlobId.of(bucketName, blobName, blobGeneration);
+   * boolean deleted = storage.deleteAcl(blobId, User.ofAllAuthenticatedUsers());
+   * if (deleted) {
+   *   // the acl entry was deleted
+   * } else {
+   *   // the acl entry was not found
+   * }
+   * }</pre>
    *
    * @return {@code true} if the ACL was deleted, {@code false} if it was not found
    * @throws StorageException upon failure
@@ -2058,6 +2159,15 @@ public interface Storage extends Service<StorageOptions> {
   /**
    * Creates a new ACL entry on the specified blob.
    *
+   * <p>Example of creating a new ACL entry on a blob.
+   * <pre> {@code
+   * String bucketName = "my_unique_bucket";
+   * String blobName = "my_blob_name";
+   * long blobGeneration = 42;
+   * BlobId blobId = BlobId.of(bucketName, blobName, blobGeneration);
+   * Acl acl = storage.createAcl(blobId, Acl.of(User.ofAllAuthenticatedUsers(), Role.READER));
+   * }</pre>
+   *
    * @throws StorageException upon failure
    */
   Acl createAcl(BlobId blob, Acl acl);
@@ -2065,12 +2175,33 @@ public interface Storage extends Service<StorageOptions> {
   /**
    * Updates an ACL entry on the specified blob.
    *
+   * <p>Example of updating a new ACL entry on a blob.
+   * <pre> {@code
+   * String bucketName = "my_unique_bucket";
+   * String blobName = "my_blob_name";
+   * long blobGeneration = 42;
+   * BlobId blobId = BlobId.of(bucketName, blobName, blobGeneration);
+   * Acl acl = storage.updateAcl(blobId, Acl.of(User.ofAllAuthenticatedUsers(), Role.OWNER));
+   * }</pre>
+   *
    * @throws StorageException upon failure
    */
   Acl updateAcl(BlobId blob, Acl acl);
 
   /**
    * Lists the ACL entries for the provided blob.
+   *
+   * <p>Example of listing the ACL entries for a blob.
+   * <pre> {@code
+   * String bucketName = "my_unique_bucket";
+   * String blobName = "my_blob_name";
+   * long blobGeneration = 42;
+   * BlobId blobId = BlobId.of(bucketName, blobName, blobGeneration);
+   * List<Acl> acls = storage.listAcls(blobId);
+   * for (Acl acl : acls) {
+   *   // do something with ACL entry
+   * }
+   * }</pre>
    *
    * @throws StorageException upon failure
    */

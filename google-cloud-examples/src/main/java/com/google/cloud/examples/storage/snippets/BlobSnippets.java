@@ -28,6 +28,8 @@ import com.google.cloud.AuthCredentials;
 import com.google.cloud.ReadChannel;
 import com.google.cloud.ServiceAccountSigner;
 import com.google.cloud.WriteChannel;
+import com.google.cloud.storage.Acl;
+import com.google.cloud.storage.Acl.User;
 import com.google.cloud.storage.Blob;
 import com.google.cloud.storage.Blob.BlobSourceOption;
 import com.google.cloud.storage.BlobId;
@@ -40,6 +42,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.nio.ByteBuffer;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
@@ -227,5 +230,68 @@ public class BlobSnippets {
         AuthCredentials.createForJson(new FileInputStream(keyPath))));
     // [END signUrlWithSigner]
     return signedUrl;
+  }
+
+  /**
+   * Example of getting the ACL entry for an entity.
+   */
+  // [TARGET getAcl(Entity)]
+  public Acl getAcl() {
+    // [START getAcl]
+    Acl acl = blob.getAcl(User.ofAllAuthenticatedUsers());
+    // [END getAcl]
+    return acl;
+  }
+
+  /**
+   * Example of deleting the ACL entry for an entity.
+   */
+  // [TARGET deleteAcl(Entity)]
+  public boolean deleteAcl() {
+    // [START deleteAcl]
+    boolean deleted = blob.deleteAcl(User.ofAllAuthenticatedUsers());
+    if (deleted) {
+      // the acl entry was deleted
+    } else {
+      // the acl entry was not found
+    }
+    // [END deleteAcl]
+    return deleted;
+  }
+
+  /**
+   * Example of creating a new ACL entry.
+   */
+  // [TARGET createAcl(Acl)]
+  public Acl createAcl() {
+    // [START createAcl]
+    Acl acl = blob.createAcl(Acl.of(User.ofAllAuthenticatedUsers(), Acl.Role.READER));
+    // [END createAcl]
+    return acl;
+  }
+
+  /**
+   * Example of updating a new ACL entry.
+   */
+  // [TARGET updateAcl(Acl)]
+  public Acl updateAcl() {
+    // [START updateAcl]
+    Acl acl = blob.updateAcl(Acl.of(User.ofAllAuthenticatedUsers(), Acl.Role.OWNER));
+    // [END updateAcl]
+    return acl;
+  }
+
+  /**
+   * Example of listing the ACL entries.
+   */
+  // [TARGET listAcls()]
+  public List<Acl> listAcls() {
+    // [START listAcls]
+    List<Acl> acls = blob.listAcls();
+    for (Acl acl : acls) {
+      // do something with ACL entry
+    }
+    // [END listAcls]
+    return acls;
   }
 }

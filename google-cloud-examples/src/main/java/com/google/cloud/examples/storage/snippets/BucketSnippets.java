@@ -25,6 +25,8 @@ package com.google.cloud.examples.storage.snippets;
 import static java.nio.charset.StandardCharsets.UTF_8;
 
 import com.google.cloud.Page;
+import com.google.cloud.storage.Acl;
+import com.google.cloud.storage.Acl.User;
 import com.google.cloud.storage.Blob;
 import com.google.cloud.storage.Bucket;
 import com.google.cloud.storage.Bucket.BucketSourceOption;
@@ -124,8 +126,8 @@ public class BucketSnippets {
   }
 
   /**
-   * Example of getting a blob in the bucket, only if its metageneration matches a value, otherwise
-   * a {@link StorageException} is thrown.
+   * Example of getting a blob in the bucket, only if its metageneration matches a value,
+   * otherwise a {@link StorageException} is thrown.
    */
   // [TARGET get(String, BlobGetOption...)]
   // [VARIABLE "my_blob_name"]
@@ -225,5 +227,131 @@ public class BucketSnippets {
     Blob blob = bucket.create(blobName, content, "text/plain");
     // [END createBlobFromInputStreamWithContentType]
     return blob;
+  }
+
+  /**
+   * Example of getting the ACL entry for an entity.
+   */
+  // [TARGET getAcl(Entity)]
+  public Acl getAcl() {
+    // [START getAcl]
+    Acl acl = bucket.getAcl(User.ofAllAuthenticatedUsers());
+    // [END getAcl]
+    return acl;
+  }
+
+  /**
+   * Example of deleting the ACL entry for an entity.
+   */
+  // [TARGET deleteAcl(Entity)]
+  public boolean deleteAcl() {
+    // [START deleteAcl]
+    boolean deleted = bucket.deleteAcl(User.ofAllAuthenticatedUsers());
+    if (deleted) {
+      // the acl entry was deleted
+    } else {
+      // the acl entry was not found
+    }
+    // [END deleteAcl]
+    return deleted;
+  }
+
+  /**
+   * Example of creating a new ACL entry.
+   */
+  // [TARGET createAcl(Acl)]
+  public Acl createAcl() {
+    // [START createAcl]
+    Acl acl = bucket.createAcl(Acl.of(User.ofAllAuthenticatedUsers(), Acl.Role.READER));
+    // [END createAcl]
+    return acl;
+  }
+
+  /**
+   * Example of updating a new ACL entry.
+   */
+  // [TARGET updateAcl(Acl)]
+  public Acl updateAcl() {
+    // [START updateAcl]
+    Acl acl = bucket.updateAcl(Acl.of(User.ofAllAuthenticatedUsers(), Acl.Role.OWNER));
+    // [END updateAcl]
+    return acl;
+  }
+
+  /**
+   * Example of listing the ACL entries.
+   */
+  // [TARGET listAcls()]
+  public List<Acl> listAcls() {
+    // [START listAcls]
+    List<Acl> acls = bucket.listAcls();
+    for (Acl acl : acls) {
+      // do something with ACL entry
+    }
+    // [END listAcls]
+    return acls;
+  }
+
+  /**
+   * Example of getting the default ACL entry for an entity.
+   */
+  // [TARGET getDefaultAcl(Entity)]
+  public Acl getDefaultAcl() {
+    // [START getDefaultAcl]
+    Acl acl = bucket.getDefaultAcl(User.ofAllAuthenticatedUsers());
+    // [END getDefaultAcl]
+    return acl;
+  }
+
+  /**
+   * Example of deleting the default ACL entry for an entity.
+   */
+  // [TARGET deleteDefaultAcl(Entity)]
+  public boolean deleteDefaultAcl() {
+    // [START deleteDefaultAcl]
+    boolean deleted = bucket.deleteDefaultAcl(User.ofAllAuthenticatedUsers());
+    if (deleted) {
+      // the acl entry was deleted
+    } else {
+      // the acl entry was not found
+    }
+    // [END deleteDefaultAcl]
+    return deleted;
+  }
+
+  /**
+   * Example of creating a new default ACL entry.
+   */
+  // [TARGET createDefaultAcl(Acl)]
+  public Acl createDefaultAcl() {
+    // [START createDefaultAcl]
+    Acl acl = bucket.createDefaultAcl(Acl.of(User.ofAllAuthenticatedUsers(), Acl.Role.READER));
+    // [END createDefaultAcl]
+    return acl;
+  }
+
+  /**
+   * Example of updating a new default ACL entry.
+   */
+  // [TARGET updateDefaultAcl(Acl)]
+  public Acl updateDefaultAcl() {
+    // [START updateDefaultAcl]
+    Acl acl = bucket.updateDefaultAcl(Acl.of(User.ofAllAuthenticatedUsers(), Acl.Role.OWNER));
+    // [END updateDefaultAcl]
+    return acl;
+  }
+
+  /**
+   * Example of listing the default ACL entries.
+   */
+  // [TARGET listDefaultAcls()]
+  public List<Acl> listDefaultAcls() {
+    // [START listDefaultAcls]
+    List<Acl> acls = bucket.listDefaultAcls();
+    for (Acl acl : acls) {
+      // do something with ACL entry
+    }
+    // [END listDefaultAcls]
+    return acls;
   }
 }

@@ -18,8 +18,11 @@ package com.google.cloud.examples.storage.snippets;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
+import com.google.cloud.storage.Acl;
+import com.google.cloud.storage.Acl.Role;
 import com.google.cloud.storage.Blob;
 import com.google.cloud.storage.Bucket;
 import com.google.cloud.storage.BucketInfo;
@@ -109,6 +112,24 @@ public class ITBucketSnippets {
     blobs = bucketSnippets.getBlobFromStringIterable(BLOB3, BLOB4);
     assertEquals(BLOB3, blobs.get(0).name());
     assertEquals(BLOB4, blobs.get(1).name());
+    // test ACLs
+    assertNull(bucketSnippets.getAcl());
+    assertNotNull(bucketSnippets.createAcl());
+    Acl updatedAcl = bucketSnippets.updateAcl();
+    assertEquals(Role.OWNER, updatedAcl.role());
+    Set<Acl> acls = Sets.newHashSet(bucketSnippets.listAcls());
+    assertTrue(acls.contains(updatedAcl));
+    assertTrue(bucketSnippets.deleteAcl());
+    assertNull(bucketSnippets.getAcl());
+    // test default ACLs
+    assertNull(bucketSnippets.getDefaultAcl());
+    assertNotNull(bucketSnippets.createDefaultAcl());
+    updatedAcl = bucketSnippets.updateDefaultAcl();
+    assertEquals(Role.OWNER, updatedAcl.role());
+    acls = Sets.newHashSet(bucketSnippets.listDefaultAcls());
+    assertTrue(acls.contains(updatedAcl));
+    assertTrue(bucketSnippets.deleteDefaultAcl());
+    assertNull(bucketSnippets.getDefaultAcl());
     thrown.expect(StorageException.class);
     assertTrue(bucketSnippets.delete());
   }

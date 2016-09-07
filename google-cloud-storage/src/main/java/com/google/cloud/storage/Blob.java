@@ -606,6 +606,11 @@ public class Blob extends BlobInfo {
   /**
    * Returns the ACL entry for the specified entity on this blob or {@code null} if not found.
    *
+   * <p>Example of getting the ACL entry for an entity.
+   * <pre> {@code
+   * Acl acl = blob.getAcl(User.ofAllAuthenticatedUsers());
+   * }</pre>
+   *
    * @throws StorageException upon failure
    */
   public Acl getAcl(Entity entity) {
@@ -614,6 +619,16 @@ public class Blob extends BlobInfo {
 
   /**
    * Deletes the ACL entry for the specified entity on this blob.
+   *
+   * <p>Example of deleting the ACL entry for an entity.
+   * <pre> {@code
+   * boolean deleted = blob.deleteAcl(User.ofAllAuthenticatedUsers());
+   * if (deleted) {
+   *   // the acl entry was deleted
+   * } else {
+   *   // the acl entry was not found
+   * }
+   * }</pre>
    *
    * @return {@code true} if the ACL was deleted, {@code false} if it was not found
    * @throws StorageException upon failure
@@ -625,6 +640,11 @@ public class Blob extends BlobInfo {
   /**
    * Creates a new ACL entry on this blob.
    *
+   * <p>Example of creating a new ACL entry.
+   * <pre> {@code
+   * Acl acl = blob.createAcl(Acl.of(User.ofAllAuthenticatedUsers(), Acl.Role.READER));
+   * }</pre>
+   *
    * @throws StorageException upon failure
    */
   public Acl createAcl(Acl acl) {
@@ -634,6 +654,11 @@ public class Blob extends BlobInfo {
   /**
    * Updates an ACL entry on this blob.
    *
+   * <p>Example of updating a new ACL entry.
+   * <pre> {@code
+   * Acl acl = blob.updateAcl(Acl.of(User.ofAllAuthenticatedUsers(), Acl.Role.OWNER));
+   * }</pre>
+   *
    * @throws StorageException upon failure
    */
   public Acl updateAcl(Acl acl) {
@@ -642,6 +667,14 @@ public class Blob extends BlobInfo {
 
   /**
    * Lists the ACL entries for this blob.
+   *
+   * <p>Example of listing the ACL entries.
+   * <pre> {@code
+   * List<Acl> acls = blob.listAcls();
+   * for (Acl acl : acls) {
+   *   // do something with ACL entry
+   * }
+   * }</pre>
    *
    * @throws StorageException upon failure
    */

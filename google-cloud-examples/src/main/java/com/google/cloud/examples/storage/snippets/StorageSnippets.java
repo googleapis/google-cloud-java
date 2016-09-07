@@ -30,6 +30,9 @@ import com.google.cloud.Page;
 import com.google.cloud.ReadChannel;
 import com.google.cloud.ServiceAccountSigner;
 import com.google.cloud.WriteChannel;
+import com.google.cloud.storage.Acl;
+import com.google.cloud.storage.Acl.Role;
+import com.google.cloud.storage.Acl.User;
 import com.google.cloud.storage.Blob;
 import com.google.cloud.storage.BlobId;
 import com.google.cloud.storage.BlobInfo;
@@ -149,8 +152,8 @@ public class StorageSnippets {
   }
 
   /**
-   * Example of getting information on a blob, only if its metageneration matches a value, otherwise
-   * a {@link StorageException} is thrown.
+   * Example of getting information on a blob, only if its metageneration matches a value,
+   * otherwise a {@link StorageException} is thrown.
    */
   // [TARGET get(String, String, BlobGetOption...)]
   // [VARIABLE "my_unique_bucket"]
@@ -180,8 +183,8 @@ public class StorageSnippets {
   }
 
   /**
-   * Example of getting information on a blob, only if its metageneration matches a value, otherwise
-   * a {@link StorageException} is thrown.
+   * Example of getting information on a blob, only if its metageneration matches a value,
+   * otherwise a {@link StorageException} is thrown.
    */
   // [TARGET get(BlobId, BlobGetOption...)]
   // [VARIABLE "my_unique_bucket"]
@@ -549,8 +552,8 @@ public class StorageSnippets {
   }
 
   /**
-   * Example of creating a signed URL that is valid for 2 weeks, using the default credentials for
-   * signing the URL.
+   * Example of creating a signed URL that is valid for 2 weeks, using the default credentials
+   * for signing the URL.
    */
   // [TARGET signUrl(BlobInfo, long, TimeUnit, SignUrlOption...)]
   // [VARIABLE "my_unique_bucket"]
@@ -683,5 +686,226 @@ public class StorageSnippets {
     List<Boolean> deleted = storage.delete(blobIds);
     // [END batchDeleteIterable]
     return deleted;
+  }
+
+  /**
+   * Example of getting the ACL entry for an entity on a bucket.
+   */
+  // [TARGET getAcl(String, Entity)]
+  // [VARIABLE "my_unique_bucket"]
+  public Acl getBucketAcl(String bucketName) {
+    // [START getBucketAcl]
+    Acl acl = storage.getAcl(bucketName, User.ofAllAuthenticatedUsers());
+    // [END getBucketAcl]
+    return acl;
+  }
+
+  /**
+   * Example of deleting the ACL entry for an entity on a bucket.
+   */
+  // [TARGET deleteAcl(String, Entity)]
+  // [VARIABLE "my_unique_bucket"]
+  public boolean deleteBucketAcl(String bucketName) {
+    // [START deleteBucketAcl]
+    boolean deleted = storage.deleteAcl(bucketName, User.ofAllAuthenticatedUsers());
+    if (deleted) {
+      // the acl entry was deleted
+    } else {
+      // the acl entry was not found
+    }
+    // [END deleteBucketAcl]
+    return deleted;
+  }
+
+  /**
+   * Example of creating a new ACL entry on a bucket.
+   */
+  // [TARGET createAcl(String, Acl)]
+  // [VARIABLE "my_unique_bucket"]
+  public Acl createBucketAcl(String bucketName) {
+    // [START createBucketAcl]
+    Acl acl = storage.createAcl(bucketName, Acl.of(User.ofAllAuthenticatedUsers(), Role.READER));
+    // [END createBucketAcl]
+    return acl;
+  }
+
+  /**
+   * Example of updating a new ACL entry on a bucket.
+   */
+  // [TARGET updateAcl(String, Acl)]
+  // [VARIABLE "my_unique_bucket"]
+  public Acl updateBucketAcl(String bucketName) {
+    // [START updateBucketAcl]
+    Acl acl = storage.updateAcl(bucketName, Acl.of(User.ofAllAuthenticatedUsers(), Role.OWNER));
+    // [END updateBucketAcl]
+    return acl;
+  }
+
+  /**
+   * Example of listing the ACL entries for a blob.
+   */
+  // [TARGET listAcls(String)]
+  // [VARIABLE "my_unique_bucket"]
+  public List<Acl> listBucketAcls(String bucketName) {
+    // [START listBucketAcls]
+    List<Acl> acls = storage.listAcls(bucketName);
+    for (Acl acl : acls) {
+      // do something with ACL entry
+    }
+    // [END listBucketAcls]
+    return acls;
+  }
+
+  /**
+   * Example of getting the default ACL entry for an entity on a bucket.
+   */
+  // [TARGET getDefaultAcl(String, Entity)]
+  // [VARIABLE "my_unique_bucket"]
+  public Acl getDefaultBucketAcl(String bucketName) {
+    // [START getDefaultBucketAcl]
+    Acl acl = storage.getDefaultAcl(bucketName, User.ofAllAuthenticatedUsers());
+    // [END getDefaultBucketAcl]
+    return acl;
+  }
+
+  /**
+   * Example of deleting the default ACL entry for an entity on a bucket.
+   */
+  // [TARGET deleteDefaultAcl(String, Entity)]
+  // [VARIABLE "my_unique_bucket"]
+  public boolean deleteDefaultBucketAcl(String bucketName) {
+    // [START deleteDefaultBucketAcl]
+    boolean deleted = storage.deleteDefaultAcl(bucketName, User.ofAllAuthenticatedUsers());
+    if (deleted) {
+      // the acl entry was deleted
+    } else {
+      // the acl entry was not found
+    }
+    // [END deleteDefaultBucketAcl]
+    return deleted;
+  }
+
+  /**
+   * Example of creating a new default ACL entry on a bucket.
+   */
+  // [TARGET createDefaultAcl(String, Acl)]
+  // [VARIABLE "my_unique_bucket"]
+  public Acl createDefaultBucketAcl(String bucketName) {
+    // [START createDefaultBucketAcl]
+    Acl acl =
+        storage.createDefaultAcl(bucketName, Acl.of(User.ofAllAuthenticatedUsers(), Role.READER));
+    // [END createDefaultBucketAcl]
+    return acl;
+  }
+
+  /**
+   * Example of updating a new default ACL entry on a bucket.
+   */
+  // [TARGET updateDefaultAcl(String, Acl)]
+  // [VARIABLE "my_unique_bucket"]
+  public Acl updateDefaultBucketAcl(String bucketName) {
+    // [START updateDefaultBucketAcl]
+    Acl acl =
+        storage.updateDefaultAcl(bucketName, Acl.of(User.ofAllAuthenticatedUsers(), Role.OWNER));
+    // [END updateDefaultBucketAcl]
+    return acl;
+  }
+
+  /**
+   * Example of listing the default ACL entries for a blob.
+   */
+  // [TARGET listDefaultAcls(String)]
+  // [VARIABLE "my_unique_bucket"]
+  public List<Acl> listDefaultBucketAcls(String bucketName) {
+    // [START listDefaultBucketAcls]
+    List<Acl> acls = storage.listDefaultAcls(bucketName);
+    for (Acl acl : acls) {
+      // do something with ACL entry
+    }
+    // [END listDefaultBucketAcls]
+    return acls;
+  }
+
+  /**
+   * Example of getting the ACL entry for an entity on a blob.
+   */
+  // [TARGET getAcl(BlobId, Entity)]
+  // [VARIABLE "my_unique_bucket"]
+  // [VARIABLE "my_blob_name"]
+  // [VARIABLE 42]
+  public Acl getBlobAcl(String bucketName, String blobName, long blobGeneration) {
+    // [START getBlobAcl]
+    BlobId blobId = BlobId.of(bucketName, blobName, blobGeneration);
+    Acl acl = storage.getAcl(blobId, User.ofAllAuthenticatedUsers());
+    // [END getBlobAcl]
+    return acl;
+  }
+
+  /**
+   * Example of deleting the ACL entry for an entity on a blob.
+   */
+  // [TARGET deleteAcl(BlobId, Entity)]
+  // [VARIABLE "my_unique_bucket"]
+  // [VARIABLE "my_blob_name"]
+  // [VARIABLE 42]
+  public boolean deleteBlobAcl(String bucketName, String blobName, long blobGeneration) {
+    // [START deleteBlobAcl]
+    BlobId blobId = BlobId.of(bucketName, blobName, blobGeneration);
+    boolean deleted = storage.deleteAcl(blobId, User.ofAllAuthenticatedUsers());
+    if (deleted) {
+      // the acl entry was deleted
+    } else {
+      // the acl entry was not found
+    }
+    // [END deleteBlobAcl]
+    return deleted;
+  }
+
+  /**
+   * Example of creating a new ACL entry on a blob.
+   */
+  // [TARGET createAcl(BlobId, Acl)]
+  // [VARIABLE "my_unique_bucket"]
+  // [VARIABLE "my_blob_name"]
+  // [VARIABLE 42]
+  public Acl createBlobAcl(String bucketName, String blobName, long blobGeneration) {
+    // [START createBlobAcl]
+    BlobId blobId = BlobId.of(bucketName, blobName, blobGeneration);
+    Acl acl = storage.createAcl(blobId, Acl.of(User.ofAllAuthenticatedUsers(), Role.READER));
+    // [END createBlobAcl]
+    return acl;
+  }
+
+  /**
+   * Example of updating a new ACL entry on a blob.
+   */
+  // [TARGET updateAcl(BlobId, Acl)]
+  // [VARIABLE "my_unique_bucket"]
+  // [VARIABLE "my_blob_name"]
+  // [VARIABLE 42]
+  public Acl updateBlobAcl(String bucketName, String blobName, long blobGeneration) {
+    // [START updateBlobAcl]
+    BlobId blobId = BlobId.of(bucketName, blobName, blobGeneration);
+    Acl acl = storage.updateAcl(blobId, Acl.of(User.ofAllAuthenticatedUsers(), Role.OWNER));
+    // [END updateBlobAcl]
+    return acl;
+  }
+
+  /**
+   * Example of listing the ACL entries for a blob.
+   */
+  // [TARGET listAcls(BlobId)]
+  // [VARIABLE "my_unique_bucket"]
+  // [VARIABLE "my_blob_name"]
+  // [VARIABLE 42]
+  public List<Acl> listBlobAcls(String bucketName, String blobName, long blobGeneration) {
+    // [START listBlobAcls]
+    BlobId blobId = BlobId.of(bucketName, blobName, blobGeneration);
+    List<Acl> acls = storage.listAcls(blobId);
+    for (Acl acl : acls) {
+      // do something with ACL entry
+    }
+    // [END listBlobAcls]
+    return acls;
   }
 }
