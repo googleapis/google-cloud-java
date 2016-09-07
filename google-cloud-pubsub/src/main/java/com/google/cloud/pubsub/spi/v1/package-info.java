@@ -17,6 +17,23 @@
  *
  * The interfaces provided are listed below, along with a usage sample
  *
+ * ============
+ * PublisherApi
+ * ============
+ *
+ * Service Description: The service that an application uses to manipulate topics, and to send
+ * messages to a topic.
+ *
+ * Sample for PublisherApi:
+ * <pre>
+ * <code>
+ * try (PublisherApi publisherApi = PublisherApi.create()) {
+ *   String formattedName = PublisherApi.formatTopicName("[PROJECT]", "[TOPIC]");
+ *   Topic response = publisherApi.createTopic(formattedName);
+ * }
+ * </code>
+ * </pre>
+ *
  * =============
  * SubscriberApi
  * =============
@@ -33,23 +50,6 @@
  *   PushConfig pushConfig = PushConfig.newBuilder().build();
  *   int ackDeadlineSeconds = 0;
  *   Subscription response = subscriberApi.createSubscription(formattedName, formattedTopic, pushConfig, ackDeadlineSeconds);
- * }
- * </code>
- * </pre>
- *
- * ============
- * PublisherApi
- * ============
- *
- * Service Description: The service that an application uses to manipulate topics, and to send
- * messages to a topic.
- *
- * Sample for PublisherApi:
- * <pre>
- * <code>
- * try (PublisherApi publisherApi = PublisherApi.create()) {
- *   String formattedName = PublisherApi.formatTopicName("[PROJECT]", "[TOPIC]");
- *   Topic response = publisherApi.createTopic(formattedName);
  * }
  * </code>
  * </pre>
