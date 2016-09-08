@@ -26,6 +26,7 @@ import com.google.cloud.WriteChannel;
 import com.google.cloud.storage.spi.StorageRpc;
 
 import java.util.Map;
+import java.util.concurrent.Callable;
 
 /**
  * Write channel implementation to upload Google Cloud Storage blobs.
@@ -33,7 +34,7 @@ import java.util.Map;
 class BlobWriteChannel extends BaseWriteChannel<StorageOptions, BlobInfo> {
 
   BlobWriteChannel(StorageOptions options, BlobInfo blob, Map<StorageRpc.Option, ?> optionsMap) {
-    this(options, blob, options.rpc().open(blob.toPb(), optionsMap));
+    this(options, blob, open(options, blob, optionsMap));
   }
 
   BlobWriteChannel(StorageOptions options, BlobInfo blobInfo, String uploadId) {
@@ -56,6 +57,20 @@ class BlobWriteChannel extends BaseWriteChannel<StorageOptions, BlobInfo> {
 
   protected StateImpl.Builder stateBuilder() {
     return StateImpl.builder(options(), entity(), uploadId());
+  }
+
+  private static String open(final StorageOptions options, final BlobInfo blob,
+      final Map<StorageRpc.Option, ?> optionsMap) {
+    try {
+      return runWithRetries(new Callable<String>() {
+        @Override
+        public String call() {
+          return options.rpc().open(blob.toPb(), optionsMap);
+        }
+      }, options.retryParams(), StorageImpl.EXCEPTION_HANDLER, options.clock());
+    } catch (RetryHelper.RetryHelperException e) {
+      throw StorageException.translateAndThrow(e);
+    }
   }
 
   static class StateImpl extends BaseWriteChannel.BaseState<StorageOptions, BlobInfo> {

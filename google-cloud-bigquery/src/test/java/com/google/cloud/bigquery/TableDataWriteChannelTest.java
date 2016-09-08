@@ -39,9 +39,12 @@ import org.easymock.Capture;
 import org.easymock.CaptureType;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 
 import java.io.IOException;
+import java.net.SocketException;
 import java.nio.ByteBuffer;
 import java.util.Arrays;
 import java.util.Random;
@@ -63,6 +66,9 @@ public class TableDataWriteChannelTest {
   private static final int CUSTOM_CHUNK_SIZE = 4 * MIN_CHUNK_SIZE;
   private static final Random RANDOM = new Random();
 
+  @Rule
+  public ExpectedException thrown = ExpectedException.none();
+
   private BigQueryOptions options;
   private BigQueryRpcFactory rpcFactoryMock;
   private BigQueryRpc bigqueryRpcMock;
@@ -72,8 +78,7 @@ public class TableDataWriteChannelTest {
   public void setUp() {
     rpcFactoryMock = createMock(BigQueryRpcFactory.class);
     bigqueryRpcMock = createMock(BigQueryRpc.class);
-    expect(rpcFactoryMock.create(anyObject(BigQueryOptions.class)))
-        .andReturn(bigqueryRpcMock);
+    expect(rpcFactoryMock.create(anyObject(BigQueryOptions.class))).andReturn(bigqueryRpcMock);
     replay(rpcFactoryMock);
     options = BigQueryOptions.builder()
         .projectId("projectid")
@@ -92,6 +97,24 @@ public class TableDataWriteChannelTest {
     replay(bigqueryRpcMock);
     writer = new TableDataWriteChannel(options, LOAD_CONFIGURATION);
     assertTrue(writer.isOpen());
+  }
+
+  @Test
+  public void testCreateRetryableError() {
+    BigQueryException exception = new BigQueryException(new SocketException("Socket closed"));
+    expect(bigqueryRpcMock.open(LOAD_CONFIGURATION.toPb())).andThrow(exception);
+    expect(bigqueryRpcMock.open(LOAD_CONFIGURATION.toPb())).andReturn(UPLOAD_ID);
+    replay(bigqueryRpcMock);
+    writer = new TableDataWriteChannel(options, LOAD_CONFIGURATION);
+    assertTrue(writer.isOpen());
+  }
+
+  @Test
+  public void testCreateNonRetryableError() {
+    expect(bigqueryRpcMock.open(LOAD_CONFIGURATION.toPb())).andThrow(new RuntimeException());
+    replay(bigqueryRpcMock);
+    thrown.expect(RuntimeException.class);
+    new TableDataWriteChannel(options, LOAD_CONFIGURATION);
   }
 
   @Test

@@ -24,6 +24,8 @@ import com.google.cloud.RestorableState;
 import com.google.cloud.RetryHelper;
 import com.google.cloud.WriteChannel;
 
+import java.util.concurrent.Callable;
+
 /**
  * WriteChannel implementation to stream data into a BigQuery table.
  */
@@ -31,7 +33,7 @@ class TableDataWriteChannel extends BaseWriteChannel<BigQueryOptions, WriteChann
 
   TableDataWriteChannel(BigQueryOptions options,
       WriteChannelConfiguration writeChannelConfiguration) {
-    this(options, writeChannelConfiguration, options.rpc().open(writeChannelConfiguration.toPb()));
+    this(options, writeChannelConfiguration, open(options, writeChannelConfiguration));
   }
 
   TableDataWriteChannel(BigQueryOptions options, WriteChannelConfiguration config,
@@ -56,6 +58,20 @@ class TableDataWriteChannel extends BaseWriteChannel<BigQueryOptions, WriteChann
   @Override
   protected StateImpl.Builder stateBuilder() {
     return StateImpl.builder(options(), entity(), uploadId());
+  }
+
+  private static String open(final BigQueryOptions options,
+      final WriteChannelConfiguration writeChannelConfiguration) {
+    try {
+      return runWithRetries(new Callable<String>() {
+        @Override
+        public String call() {
+          return options.rpc().open(writeChannelConfiguration.toPb());
+        }
+      }, options.retryParams(), BigQueryImpl.EXCEPTION_HANDLER, options.clock());
+    } catch (RetryHelper.RetryHelperException e) {
+      throw BigQueryException.translateAndThrow(e);
+    }
   }
 
   static class StateImpl
