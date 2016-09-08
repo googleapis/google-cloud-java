@@ -35,6 +35,11 @@ import com.google.common.util.concurrent.ForwardingListenableFuture;
 import com.google.common.util.concurrent.FutureCallback;
 import com.google.common.util.concurrent.Futures;
 import com.google.common.util.concurrent.ListenableFuture;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.protobuf.Empty;
 import com.google.pubsub.v1.AcknowledgeRequest;
 import com.google.pubsub.v1.DeleteSubscriptionRequest;
@@ -254,6 +259,23 @@ public class DefaultPubSubRpc implements PubSubRpc {
   @Override
   public Future<Empty> modify(ModifyPushConfigRequest request) {
     return translate(subscriberApi.modifyPushConfigCallable().futureCall(request), false);
+  }
+
+  @Override
+  public Future<Policy> getIamPolicy(String resource) {
+    GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder().setResource(resource).build();
+    return translate(subscriberApi.getIamPolicyCallable().futureCall(request), true,
+        Code.NOT_FOUND.value());
+  }
+
+  @Override
+  public Future<Policy> setIamPolicy(SetIamPolicyRequest request) {
+    return translate(subscriberApi.setIamPolicyCallable().futureCall(request), false);
+  }
+
+  @Override
+  public Future<TestIamPermissionsResponse> testIamPermissions(TestIamPermissionsRequest request) {
+    return translate(subscriberApi.testIamPermissionsCallable().futureCall(request), true);
   }
 
   @Override

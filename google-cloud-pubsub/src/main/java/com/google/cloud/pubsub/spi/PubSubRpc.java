@@ -16,6 +16,10 @@
 
 package com.google.cloud.pubsub.spi;
 
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.protobuf.Empty;
 import com.google.pubsub.v1.AcknowledgeRequest;
 import com.google.pubsub.v1.DeleteSubscriptionRequest;
@@ -201,4 +205,25 @@ public interface PubSubRpc extends AutoCloseable {
    * @param request the request object containing all of the parameters for the API call
    */
   Future<Empty> modify(ModifyPushConfigRequest request);
+
+  /**
+   * Sends a request to get the IAM policy for the provided resource.
+   *
+   * @param resource the resource for which to get the IAM policy
+   */
+  Future<Policy> getIamPolicy(String resource);
+
+  /**
+   * Sends a request to set the IAM policy for a resource.
+   *
+   * @param request the request object containing all of the parameters for the API call
+   */
+  Future<Policy> setIamPolicy(SetIamPolicyRequest request);
+
+  /**
+   * Sends a request to test the permissions that the caller has on a provided resource.
+   *
+   * @param request the request object containing all of the parameters for the API call
+   */
+  Future<TestIamPermissionsResponse> testIamPermissions(TestIamPermissionsRequest request);
 }

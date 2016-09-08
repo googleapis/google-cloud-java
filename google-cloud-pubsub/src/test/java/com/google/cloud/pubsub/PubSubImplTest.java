@@ -27,8 +27,11 @@ import static org.junit.Assert.fail;
 
 import com.google.cloud.AsyncPage;
 import com.google.cloud.GrpcServiceOptions.ExecutorFactory;
+import com.google.cloud.Identity;
 import com.google.cloud.Page;
+import com.google.cloud.Policy;
 import com.google.cloud.RetryParams;
+import com.google.cloud.Role;
 import com.google.cloud.pubsub.MessageConsumerImplTest.TestPullFuture;
 import com.google.cloud.pubsub.PubSub.ListOption;
 import com.google.cloud.pubsub.PubSub.MessageConsumer;
@@ -44,6 +47,9 @@ import com.google.common.collect.Iterables;
 import com.google.common.collect.Iterators;
 import com.google.common.collect.Lists;
 import com.google.common.util.concurrent.Futures;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.protobuf.Empty;
 import com.google.pubsub.v1.AcknowledgeRequest;
 import com.google.pubsub.v1.DeleteSubscriptionRequest;
@@ -121,6 +127,10 @@ public class PubSubImplTest {
           .setMessage(MESSAGE2.toPb())
           .setAckId("ackId2")
           .build();
+  private static final Policy POLICY = Policy.builder()
+      .addIdentity(Role.viewer(), Identity.allAuthenticatedUsers())
+      .build();
+  private static final com.google.iam.v1.Policy POLICY_PB = PolicyMarshaller.INSTANCE.toPb(POLICY);
   private static final Function<SubscriptionInfo, com.google.pubsub.v1.Subscription>
       SUBSCRIPTION_TO_PB_FUNCTION =
           new Function<SubscriptionInfo, com.google.pubsub.v1.Subscription>() {
@@ -1696,6 +1706,269 @@ public class PubSubImplTest {
     EasyMock.replay(pubsubRpcMock, renewerMock);
     Future<Void> future = pubsub.modifyAckDeadlineAsync(SUBSCRIPTION, 10, TimeUnit.SECONDS, ackIds);
     assertNull(future.get());
+  }
+
+  @Test
+  public void testGetTopicPolicy() {
+    Future<com.google.iam.v1.Policy> response = Futures.immediateFuture(POLICY_PB);
+    EasyMock.expect(pubsubRpcMock.getIamPolicy(TOPIC_NAME_PB)).andReturn(response);
+    EasyMock.replay(pubsubRpcMock, renewerMock);
+    pubsub = new PubSubImpl(options, renewerMock);
+    Policy policy = pubsub.getTopicPolicy(TOPIC);
+    assertEquals(POLICY, policy);
+  }
+
+  @Test
+  public void testGetTopicPolicy_Null() {
+    Future<com.google.iam.v1.Policy> response = Futures.immediateFuture(null);
+    EasyMock.expect(pubsubRpcMock.getIamPolicy(TOPIC_NAME_PB)).andReturn(response);
+    EasyMock.replay(pubsubRpcMock, renewerMock);
+    pubsub = new PubSubImpl(options, renewerMock);
+    assertNull(pubsub.getTopicPolicy(TOPIC));
+  }
+
+  @Test
+  public void testGetTopicPolicyAsync() throws ExecutionException, InterruptedException {
+    Future<com.google.iam.v1.Policy> response = Futures.immediateFuture(POLICY_PB);
+    EasyMock.expect(pubsubRpcMock.getIamPolicy(TOPIC_NAME_PB)).andReturn(response);
+    EasyMock.replay(pubsubRpcMock, renewerMock);
+    pubsub = new PubSubImpl(options, renewerMock);
+    Future<Policy> future = pubsub.getTopicPolicyAsync(TOPIC);
+    assertEquals(POLICY, future.get());
+  }
+
+  @Test
+  public void testGetTopicPolicyAsync_Null() throws ExecutionException, InterruptedException {
+    Future<com.google.iam.v1.Policy> response = Futures.immediateFuture(null);
+    EasyMock.expect(pubsubRpcMock.getIamPolicy(TOPIC_NAME_PB)).andReturn(response);
+    EasyMock.replay(pubsubRpcMock, renewerMock);
+    pubsub = new PubSubImpl(options, renewerMock);
+    assertNull(pubsub.getTopicPolicyAsync(TOPIC).get());
+  }
+
+  @Test
+  public void testReplaceTopicPolicy() {
+    SetIamPolicyRequest request = SetIamPolicyRequest.newBuilder()
+        .setResource(TOPIC_NAME_PB)
+        .setPolicy(PolicyMarshaller.INSTANCE.toPb(POLICY))
+        .build();
+    Future<com.google.iam.v1.Policy> response = Futures.immediateFuture(POLICY_PB);
+    EasyMock.expect(pubsubRpcMock.setIamPolicy(request)).andReturn(response);
+    EasyMock.replay(pubsubRpcMock, renewerMock);
+    pubsub = new PubSubImpl(options, renewerMock);
+    Policy policy = pubsub.replaceTopicPolicy(TOPIC, POLICY);
+    assertEquals(POLICY, policy);
+  }
+
+  @Test
+  public void testReplaceTopicPolicyAsync() throws ExecutionException, InterruptedException {
+    SetIamPolicyRequest request = SetIamPolicyRequest.newBuilder()
+        .setResource(TOPIC_NAME_PB)
+        .setPolicy(PolicyMarshaller.INSTANCE.toPb(POLICY))
+        .build();
+    Future<com.google.iam.v1.Policy> response = Futures.immediateFuture(POLICY_PB);
+    EasyMock.expect(pubsubRpcMock.setIamPolicy(request)).andReturn(response);
+    EasyMock.replay(pubsubRpcMock, renewerMock);
+    pubsub = new PubSubImpl(options, renewerMock);
+    Future<Policy> future = pubsub.replaceTopicPolicyAsync(TOPIC, POLICY);
+    assertEquals(POLICY, future.get());
+  }
+
+  @Test
+  public void testTestTopicPermissions() {
+    List<String> permissions = ImmutableList.of("pubsub.topics.get");
+    TestIamPermissionsRequest request = TestIamPermissionsRequest.newBuilder()
+        .setResource(TOPIC_NAME_PB)
+        .addAllPermissions(permissions)
+        .build();
+    TestIamPermissionsResponse response = TestIamPermissionsResponse.newBuilder()
+        .addAllPermissions(permissions)
+        .build();
+    Future<TestIamPermissionsResponse> responseFuture = Futures.immediateFuture(response);
+    EasyMock.expect(pubsubRpcMock.testIamPermissions(request)).andReturn(responseFuture);
+    EasyMock.replay(pubsubRpcMock, renewerMock);
+    pubsub = new PubSubImpl(options, renewerMock);
+    List<Boolean> permissionBooleans = pubsub.testTopicPermissions(TOPIC, permissions);
+    assertEquals(ImmutableList.of(true), permissionBooleans);
+  }
+
+  @Test
+  public void testTestTopicNoPermissions() {
+    List<String> permissions = ImmutableList.of("pubsub.topics.get");
+    TestIamPermissionsRequest request = TestIamPermissionsRequest.newBuilder()
+        .setResource(TOPIC_NAME_PB)
+        .addAllPermissions(permissions)
+        .build();
+    TestIamPermissionsResponse response = TestIamPermissionsResponse.newBuilder()
+        .addAllPermissions(ImmutableList.<String>of())
+        .build();
+    Future<TestIamPermissionsResponse> responseFuture = Futures.immediateFuture(response);
+    EasyMock.expect(pubsubRpcMock.testIamPermissions(request)).andReturn(responseFuture);
+    EasyMock.replay(pubsubRpcMock, renewerMock);
+    pubsub = new PubSubImpl(options, renewerMock);
+    List<Boolean> permissionBooleans = pubsub.testTopicPermissions(TOPIC, permissions);
+    assertEquals(ImmutableList.of(false), permissionBooleans);
+  }
+
+  @Test
+  public void testTestTopicPermissionsAsync() throws ExecutionException, InterruptedException {
+    List<String> permissions = ImmutableList.of("pubsub.topics.get");
+    TestIamPermissionsRequest request = TestIamPermissionsRequest.newBuilder()
+        .setResource(TOPIC_NAME_PB)
+        .addAllPermissions(permissions)
+        .build();
+    TestIamPermissionsResponse response = TestIamPermissionsResponse.newBuilder()
+        .addAllPermissions(permissions)
+        .build();
+    Future<TestIamPermissionsResponse> responseFuture = Futures.immediateFuture(response);
+    EasyMock.expect(pubsubRpcMock.testIamPermissions(request)).andReturn(responseFuture);
+    EasyMock.replay(pubsubRpcMock, renewerMock);
+    pubsub = new PubSubImpl(options, renewerMock);
+    Future<List<Boolean>> future = pubsub.testTopicPermissionsAsync(TOPIC, permissions);
+    assertEquals(ImmutableList.of(true), future.get());
+  }
+
+  @Test
+  public void testTestTopicNoPermissionsAsync() throws ExecutionException, InterruptedException {
+    List<String> permissions = ImmutableList.of("pubsub.topics.get");
+    TestIamPermissionsRequest request = TestIamPermissionsRequest.newBuilder()
+        .setResource(TOPIC_NAME_PB)
+        .addAllPermissions(permissions)
+        .build();
+    TestIamPermissionsResponse response = TestIamPermissionsResponse.newBuilder()
+        .addAllPermissions(ImmutableList.<String>of())
+        .build();
+    Future<TestIamPermissionsResponse> responseFuture = Futures.immediateFuture(response);
+    EasyMock.expect(pubsubRpcMock.testIamPermissions(request)).andReturn(responseFuture);
+    EasyMock.replay(pubsubRpcMock, renewerMock);
+    pubsub = new PubSubImpl(options, renewerMock);
+    Future<List<Boolean>> future = pubsub.testTopicPermissionsAsync(TOPIC, permissions);
+    assertEquals(ImmutableList.of(false), future.get());
+  }
+
+  @Test
+  public void testGetSubscriptionPolicy() {
+    Future<com.google.iam.v1.Policy> response = Futures.immediateFuture(POLICY_PB);
+    EasyMock.expect(pubsubRpcMock.getIamPolicy(SUBSCRIPTION_NAME_PB)).andReturn(response);
+    EasyMock.replay(pubsubRpcMock, renewerMock);
+    pubsub = new PubSubImpl(options, renewerMock);
+    Policy policy = pubsub.getSubscriptionPolicy(SUBSCRIPTION);
+    assertEquals(POLICY, policy);
+  }
+
+  @Test
+  public void testGetSubscriptionPolicy_Null() {
+    Future<com.google.iam.v1.Policy> response = Futures.immediateFuture(null);
+    EasyMock.expect(pubsubRpcMock.getIamPolicy(SUBSCRIPTION_NAME_PB)).andReturn(response);
+    EasyMock.replay(pubsubRpcMock, renewerMock);
+    pubsub = new PubSubImpl(options, renewerMock);
+    assertNull(pubsub.getSubscriptionPolicy(SUBSCRIPTION));
+  }
+
+  @Test
+  public void testReplaceSubscriptionPolicy() {
+    SetIamPolicyRequest request = SetIamPolicyRequest.newBuilder()
+        .setResource(SUBSCRIPTION_NAME_PB)
+        .setPolicy(PolicyMarshaller.INSTANCE.toPb(POLICY))
+        .build();
+    Future<com.google.iam.v1.Policy> response = Futures.immediateFuture(POLICY_PB);
+    EasyMock.expect(pubsubRpcMock.setIamPolicy(request)).andReturn(response);
+    EasyMock.replay(pubsubRpcMock, renewerMock);
+    pubsub = new PubSubImpl(options, renewerMock);
+    Policy policy = pubsub.replaceSubscriptionPolicy(SUBSCRIPTION, POLICY);
+    assertEquals(POLICY, policy);
+  }
+
+  @Test
+  public void testReplaceSubscriptionPolicyAsync() throws ExecutionException, InterruptedException {
+    SetIamPolicyRequest request = SetIamPolicyRequest.newBuilder()
+        .setResource(SUBSCRIPTION_NAME_PB)
+        .setPolicy(PolicyMarshaller.INSTANCE.toPb(POLICY))
+        .build();
+    Future<com.google.iam.v1.Policy> response = Futures.immediateFuture(POLICY_PB);
+    EasyMock.expect(pubsubRpcMock.setIamPolicy(request)).andReturn(response);
+    EasyMock.replay(pubsubRpcMock, renewerMock);
+    pubsub = new PubSubImpl(options, renewerMock);
+    Future<Policy> future = pubsub.replaceSubscriptionPolicyAsync(SUBSCRIPTION, POLICY);
+    assertEquals(POLICY, future.get());
+  }
+
+  @Test
+  public void testTestSubscriptionPermissions() {
+    List<String> permissions = ImmutableList.of("pubsub.subscriptions.get");
+    TestIamPermissionsRequest request = TestIamPermissionsRequest.newBuilder()
+        .setResource(SUBSCRIPTION_NAME_PB)
+        .addAllPermissions(permissions)
+        .build();
+    TestIamPermissionsResponse response = TestIamPermissionsResponse.newBuilder()
+        .addAllPermissions(permissions)
+        .build();
+    Future<TestIamPermissionsResponse> responseFuture = Futures.immediateFuture(response);
+    EasyMock.expect(pubsubRpcMock.testIamPermissions(request)).andReturn(responseFuture);
+    EasyMock.replay(pubsubRpcMock, renewerMock);
+    pubsub = new PubSubImpl(options, renewerMock);
+    List<Boolean> permissionBooleans =
+        pubsub.testSubscriptionPermissions(SUBSCRIPTION, permissions);
+    assertEquals(ImmutableList.of(true), permissionBooleans);
+  }
+
+  @Test
+  public void testTestSubscriptionNoPermissions() {
+    List<String> permissions = ImmutableList.of("pubsub.subscriptions.get");
+    TestIamPermissionsRequest request = TestIamPermissionsRequest.newBuilder()
+        .setResource(SUBSCRIPTION_NAME_PB)
+        .addAllPermissions(permissions)
+        .build();
+    TestIamPermissionsResponse response = TestIamPermissionsResponse.newBuilder()
+        .addAllPermissions(ImmutableList.<String>of())
+        .build();
+    Future<TestIamPermissionsResponse> responseFuture = Futures.immediateFuture(response);
+    EasyMock.expect(pubsubRpcMock.testIamPermissions(request)).andReturn(responseFuture);
+    EasyMock.replay(pubsubRpcMock, renewerMock);
+    pubsub = new PubSubImpl(options, renewerMock);
+    List<Boolean> permissionBooleans =
+        pubsub.testSubscriptionPermissions(SUBSCRIPTION, permissions);
+    assertEquals(ImmutableList.of(false), permissionBooleans);
+  }
+
+  @Test
+  public void testTestSubscriptionPermissionsAsync()
+      throws ExecutionException, InterruptedException {
+    List<String> permissions = ImmutableList.of("pubsub.subscriptions.get");
+    TestIamPermissionsRequest request = TestIamPermissionsRequest.newBuilder()
+        .setResource(SUBSCRIPTION_NAME_PB)
+        .addAllPermissions(permissions)
+        .build();
+    TestIamPermissionsResponse response = TestIamPermissionsResponse.newBuilder()
+        .addAllPermissions(permissions)
+        .build();
+    Future<TestIamPermissionsResponse> responseFuture = Futures.immediateFuture(response);
+    EasyMock.expect(pubsubRpcMock.testIamPermissions(request)).andReturn(responseFuture);
+    EasyMock.replay(pubsubRpcMock, renewerMock);
+    pubsub = new PubSubImpl(options, renewerMock);
+    Future<List<Boolean>> future =
+        pubsub.testSubscriptionPermissionsAsync(SUBSCRIPTION, permissions);
+    assertEquals(ImmutableList.of(true), future.get());
+  }
+
+  @Test
+  public void testTestSubscriptionNoPermissionsAsync()
+      throws ExecutionException, InterruptedException {
+    List<String> permissions = ImmutableList.of("pubsub.subscriptions.get");
+    TestIamPermissionsRequest request = TestIamPermissionsRequest.newBuilder()
+        .setResource(SUBSCRIPTION_NAME_PB)
+        .addAllPermissions(permissions)
+        .build();
+    TestIamPermissionsResponse response = TestIamPermissionsResponse.newBuilder()
+        .addAllPermissions(ImmutableList.<String>of())
+        .build();
+    Future<TestIamPermissionsResponse> responseFuture = Futures.immediateFuture(response);
+    EasyMock.expect(pubsubRpcMock.testIamPermissions(request)).andReturn(responseFuture);
+    EasyMock.replay(pubsubRpcMock, renewerMock);
+    pubsub = new PubSubImpl(options, renewerMock);
+    Future<List<Boolean>> future =
+        pubsub.testSubscriptionPermissionsAsync(SUBSCRIPTION, permissions);
+    assertEquals(ImmutableList.of(false), future.get());
   }
 
   @Test

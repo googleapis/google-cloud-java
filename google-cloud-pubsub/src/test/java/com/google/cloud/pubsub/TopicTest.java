@@ -28,8 +28,11 @@ import static org.junit.Assert.assertTrue;
 
 import com.google.cloud.AsyncPage;
 import com.google.cloud.AsyncPageImpl;
+import com.google.cloud.Identity;
 import com.google.cloud.Page;
 import com.google.cloud.PageImpl;
+import com.google.cloud.Policy;
+import com.google.cloud.Role;
 import com.google.cloud.pubsub.PubSub.ListOption;
 import com.google.common.collect.ImmutableList;
 import com.google.common.util.concurrent.Futures;
@@ -44,6 +47,9 @@ public class TopicTest {
 
   private static final String NAME = "topic";
   private static final TopicInfo TOPIC_INFO = TopicInfo.of(NAME);
+  private static final Policy POLICY = Policy.builder()
+      .addIdentity(Role.viewer(), Identity.allAuthenticatedUsers())
+      .build();
 
   private final PubSub serviceMockReturnsOptions = createStrictMock(PubSub.class);
   private final PubSubOptions mockOptions = createMock(PubSubOptions.class);
@@ -310,6 +316,85 @@ public class TopicTest {
     initializeTopic();
     assertEquals(subscriptions,
         topic.listSubscriptionsAsync(ListOption.pageSize(42)).get().values());
+  }
+
+  @Test
+  public void testGetPolicy() {
+    initializeExpectedTopic(1);
+    expect(pubsub.options()).andReturn(mockOptions);
+    expect(pubsub.getTopicPolicy(NAME)).andReturn(POLICY);
+    replay(pubsub);
+    initializeTopic();
+    Policy policy = topic.getPolicy();
+    assertEquals(POLICY, policy);
+  }
+
+  @Test
+  public void testGetPolicyNull() {
+    initializeExpectedTopic(1);
+    expect(pubsub.options()).andReturn(mockOptions);
+    expect(pubsub.getTopicPolicy(NAME)).andReturn(null);
+    replay(pubsub);
+    initializeTopic();
+    assertNull(topic.getPolicy());
+  }
+
+  @Test
+  public void testGetPolicyAsync() throws ExecutionException, InterruptedException {
+    initializeExpectedTopic(1);
+    expect(pubsub.options()).andReturn(mockOptions);
+    expect(pubsub.getTopicPolicyAsync(NAME)).andReturn(Futures.immediateFuture(POLICY));
+    replay(pubsub);
+    initializeTopic();
+    Policy policy = topic.getPolicyAsync().get();
+    assertEquals(POLICY, policy);
+  }
+
+  @Test
+  public void testReplacePolicy() {
+    initializeExpectedTopic(1);
+    expect(pubsub.options()).andReturn(mockOptions);
+    expect(pubsub.replaceTopicPolicy(NAME, POLICY)).andReturn(POLICY);
+    replay(pubsub);
+    initializeTopic();
+    Policy policy = topic.replacePolicy(POLICY);
+    assertEquals(POLICY, policy);
+  }
+
+  @Test
+  public void testReplacePolicyAsync() throws ExecutionException, InterruptedException {
+    initializeExpectedTopic(1);
+    expect(pubsub.options()).andReturn(mockOptions);
+    expect(pubsub.replaceTopicPolicyAsync(NAME, POLICY)).andReturn(Futures.immediateFuture(POLICY));
+    replay(pubsub);
+    initializeTopic();
+    Policy policy = topic.replacePolicyAsync(POLICY).get();
+    assertEquals(POLICY, policy);
+  }
+
+  @Test
+  public void testTestPermissions() {
+    List<String> permissions = ImmutableList.of("pubsub.topics.get");
+    List<Boolean> permissionsResult = ImmutableList.of(true);
+    initializeExpectedTopic(1);
+    expect(pubsub.options()).andReturn(mockOptions);
+    expect(pubsub.testTopicPermissions(NAME, permissions)).andReturn(permissionsResult);
+    replay(pubsub);
+    initializeTopic();
+    assertEquals(permissionsResult, topic.testPermissions(permissions));
+  }
+
+  @Test
+  public void testTestPermissionsAsync() throws ExecutionException, InterruptedException {
+    List<String> permissions = ImmutableList.of("pubsub.topics.get");
+    List<Boolean> permissionsResult = ImmutableList.of(true);
+    initializeExpectedTopic(1);
+    expect(pubsub.options()).andReturn(mockOptions);
+    expect(pubsub.testTopicPermissionsAsync(NAME, permissions))
+        .andReturn(Futures.immediateFuture(permissionsResult));
+    replay(pubsub);
+    initializeTopic();
+    assertEquals(permissionsResult, topic.testPermissionsAsync(permissions).get());
   }
 
   private void compareTopic(Topic expected, Topic value) {

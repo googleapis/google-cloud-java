@@ -19,6 +19,7 @@ package com.google.cloud.pubsub;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.cloud.GrpcServiceOptions;
+import com.google.cloud.Policy;
 import com.google.cloud.pubsub.PubSub.MessageConsumer;
 import com.google.cloud.pubsub.PubSub.MessageProcessor;
 import com.google.cloud.pubsub.PubSub.PullOption;
@@ -27,6 +28,7 @@ import com.google.common.base.Function;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Objects;
 import java.util.concurrent.Future;
 
@@ -299,6 +301,105 @@ public class Subscription extends SubscriptionInfo {
    */
   public MessageConsumer pullAsync(MessageProcessor callback, PullOption... options) {
     return pubsub.pullAsync(name(), callback, options);
+  }
+
+  /**
+   * Returns the IAM access control policy for this subscription. Returns {@code null} if the
+   * subscription was not found.
+   *
+   * @throws PubSubException upon failure
+   */
+  public Policy getPolicy() {
+    return pubsub.getSubscriptionPolicy(this.name());
+  }
+
+  /**
+   * Sends a request for getting the IAM access control policy for this subscription. This method
+   * returns a {@code Future} object to consume the result. {@link Future#get()} returns the
+   * requested policy or {@code null} if the subscription was not found.
+   *
+   * @throws PubSubException upon failure
+   */
+  public Future<Policy> getPolicyAsync() {
+    return pubsub.getSubscriptionPolicyAsync(this.name());
+  }
+
+  /**
+   * Sets the IAM access control policy for this subscription. Replaces any existing policy. This
+   * method returns the new policy.
+   *
+   * <p>It is recommended that you use the read-modify-write pattern. This pattern entails reading
+   * the project's current policy, updating it locally, and then sending the modified policy for
+   * writing. Cloud IAM solves the problem of conflicting processes simultaneously attempting to
+   * modify a policy by using the {@link Policy#etag etag} property. This property is used to
+   * verify whether the policy has changed since the last request. When you make a request with an
+   * etag value, the value in the request is compared with the existing etag value associated with
+   * the policy. The policy is written only if the etag values match. If the etags don't match, a
+   * {@code PubSubException} is thrown, denoting that the server aborted update. If an etag is not
+   * provided, the policy is overwritten blindly.
+   *
+   * @throws PubSubException upon failure
+   */
+  public Policy replacePolicy(Policy newPolicy) {
+    return pubsub.replaceSubscriptionPolicy(this.name(), newPolicy);
+  }
+
+  /**
+   * Sends a request to set the IAM access control policy for this subscription. Replaces any
+   * existing policy. This method returns a {@code Future} object to consume the result.
+   * {@link Future#get()} returns the new policy.
+   *
+   * <p>It is recommended that you use the read-modify-write pattern. This pattern entails reading
+   * the project's current policy, updating it locally, and then sending the modified policy for
+   * writing. Cloud IAM solves the problem of conflicting processes simultaneously attempting to
+   * modify a policy by using the {@link Policy#etag etag} property. This property is used to
+   * verify whether the policy has changed since the last request. When you make a request with an
+   * etag value, the value in the request is compared with the existing etag value associated with
+   * the policy. The policy is written only if the etag values match. If the etags don't match,
+   * {@link Future#get()} will throw a {@link java.util.concurrent.ExecutionException} caused by a
+   * {@code PubSubException}, denoting that the server aborted update. If an etag is not provided,
+   * the policy is overwritten blindly.
+   *
+   * @throws PubSubException upon failure
+   */
+  public Future<Policy> replacePolicyAsync(Policy newPolicy) {
+    return pubsub.replaceSubscriptionPolicyAsync(this.name(), newPolicy);
+  }
+
+  /**
+   * Returns the permissions that a caller has on this subscription. You typically don't call this
+   * method if you're using Google Cloud Platform directly to manage permissions. This method is
+   * intended for integration with your proprietary software, such as a customized graphical user
+   * interface. For example, the Cloud Platform Console tests IAM permissions internally to
+   * determine which UI should be available to the logged-in user.
+   *
+   * @return A list of booleans representing whether the caller has the permissions specified (in
+   *     the order of the given permissions)
+   * @throws PubSubException upon failure
+   * @see <a href="https://cloud.google.com/pubsub/docs/access_control#permissions">
+   *     Permissions and Roles</a>
+   */
+  public List<Boolean> testPermissions(List<String> permissions) {
+    return pubsub.testSubscriptionPermissions(this.name(), permissions);
+  }
+
+  /**
+   * Sends a request to get the permissions that a caller has on this subscription.
+   *
+   * <p>You typically don't call this method if you're using Google Cloud Platform directly to
+   * manage permissions. This method is intended for integration with your proprietary software,
+   * such as a customized graphical user interface. For example, the Cloud Platform Console tests
+   * IAM permissions internally to determine which UI should be available to the logged-in user.
+   *
+   * @return A {@code Future} object to consume the result. {@link Future#get()} returns a list of
+   *     booleans representing whether the caller has the permissions specified (in the order of the
+   *     given permissions)
+   * @throws PubSubException upon failure
+   * @see <a href="https://cloud.google.com/pubsub/docs/access_control#permissions">
+   *     Permissions and Roles</a>
+   */
+  public Future<List<Boolean>> testPermissionsAsync(List<String> permissions) {
+    return pubsub.testSubscriptionPermissionsAsync(this.name(), permissions);
   }
 
   private void readObject(ObjectInputStream input) throws IOException, ClassNotFoundException {
