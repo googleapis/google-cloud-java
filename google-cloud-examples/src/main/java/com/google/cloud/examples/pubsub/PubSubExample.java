@@ -16,6 +16,9 @@
 
 package com.google.cloud.examples.pubsub;
 
+import com.google.cloud.Identity;
+import com.google.cloud.Policy;
+import com.google.cloud.Role;
 import com.google.cloud.pubsub.Message;
 import com.google.cloud.pubsub.PubSub;
 import com.google.cloud.pubsub.PubSub.MessageProcessor;
@@ -61,7 +64,13 @@ import java.util.concurrent.atomic.AtomicInteger;
  *  delete topic <topic>
  *  delete subscription <subscription>
  *  info topic <topic>
- *  info subscription <subscription>"}</pre>
+ *  info subscription <subscription>
+ *  get-policy topic <resourceName>
+ *  get-policy subscription <resourceName>
+ *  add-identity topic <resourceName> <role> <identity>
+ *  add-identity subscription <resourceName> <role> <identity>
+ *  test-permissions topic <resourceName> <permission>+
+ *  test-permissions subscription <resourceName> <permission>+"}</pre>
  *
  * <p>The first parameter is an optional {@code project_id} (logged-in project will be used if not
  * supplied). Second parameter is a Pub/Sub operation and can be used to demonstrate its usage. For
@@ -76,6 +85,9 @@ public class PubSubExample {
   private static final Map<String, PubSubAction> LIST_ACTIONS = new HashMap<>();
   private static final Map<String, PubSubAction> DELETE_ACTIONS = new HashMap<>();
   private static final Map<String, PubSubAction> PULL_ACTIONS = new HashMap<>();
+  private static final Map<String, PubSubAction> GET_IAM_ACTIONS = new HashMap<>();
+  private static final Map<String, PubSubAction> REPLACE_IAM_ACTIONS = new HashMap<>();
+  private static final Map<String, PubSubAction> TEST_IAM_ACTIONS = new HashMap<>();
   private static final Map<String, PubSubAction> ACTIONS = new HashMap<>();
 
   private abstract static class PubSubAction<T> {
@@ -627,6 +639,175 @@ public class PubSubExample {
     }
   }
 
+  private abstract static class GetPolicyAction extends PubSubAction<String> {
+    @Override
+    String parse(String... args) throws Exception {
+      String message;
+      if (args.length == 1) {
+        return args[0];
+      } else if (args.length > 1) {
+        message = "Too many arguments.";
+      } else {
+        message = "Missing required resource name";
+      }
+      throw new IllegalArgumentException(message);
+    }
+
+    @Override
+    public String params() {
+      return "<resourceName>";
+    }
+  }
+
+  /**
+   * This class demonstrates how to get the IAM policy of a topic.
+   *
+   * @see <a href="https://cloud.google.com/pubsub/docs/access_control">Access Control</a>
+   */
+  private static class GetTopicPolicyAction extends GetPolicyAction {
+    @Override
+    public void run(PubSub pubsub, String topic) throws Exception {
+      Policy policy = pubsub.getTopicPolicy(topic);
+      System.out.printf("Policy for topic %s%n", topic);
+      System.out.println(policy);
+    }
+  }
+
+  /**
+   * This class demonstrates how to get the IAM policy of a subscription.
+   *
+   * @see <a href="https://cloud.google.com/pubsub/docs/access_control">Access Control</a>
+   */
+  private static class GetSubscriptionPolicyAction extends GetPolicyAction {
+    @Override
+    public void run(PubSub pubsub, String subscription) throws Exception {
+      Policy policy = pubsub.getSubscriptionPolicy(subscription);
+      System.out.printf("Policy for subscription %s%n", subscription);
+      System.out.println(policy);
+    }
+  }
+
+  private abstract static class AddIdentityAction
+      extends PubSubAction<Tuple<String, Tuple<Role, Identity>>> {
+    @Override
+    Tuple<String, Tuple<Role, Identity>> parse(String... args) throws Exception {
+      String message;
+      if (args.length == 3) {
+        String resourceName = args[0];
+        Role role = Role.of(args[1]);
+        Identity identity = Identity.valueOf(args[2]);
+        return Tuple.of(resourceName, Tuple.of(role, identity));
+      } else if (args.length > 2) {
+        message = "Too many arguments.";
+      } else {
+        message = "Missing required resource name, role and identity";
+      }
+      throw new IllegalArgumentException(message);
+    }
+
+    @Override
+    public String params() {
+      return "<resourceName> <role> <identity>";
+    }
+  }
+
+  /**
+   * This class demonstrates how to add an identity to a certain role in a topic's IAM policy.
+   *
+   * @see <a href="https://cloud.google.com/pubsub/docs/access_control">Access Control</a>
+   */
+  private static class AddIdentityTopicAction extends AddIdentityAction {
+    @Override
+    public void run(PubSub pubsub, Tuple<String, Tuple<Role, Identity>> param) throws Exception {
+      String topic = param.x();
+      Tuple<Role, Identity> roleAndIdentity = param.y();
+      Role role = roleAndIdentity.x();
+      Identity identity = roleAndIdentity.y();
+      Policy policy = pubsub.getTopicPolicy(topic);
+      policy = pubsub.replaceTopicPolicy(topic,
+          policy.toBuilder().addIdentity(role, identity).build());
+      System.out.printf("Added role %s to identity %s for topic %s%n", role, identity, topic);
+      System.out.println(policy);
+    }
+  }
+
+  /**
+   * This class demonstrates how to add an identity to a certain role in a subscription's IAM
+   * policy.
+   *
+   * @see <a href="https://cloud.google.com/pubsub/docs/access_control">Access Control</a>
+   */
+  private static class AddIdentitySubscriptionAction extends AddIdentityAction {
+    @Override
+    public void run(PubSub pubsub, Tuple<String, Tuple<Role, Identity>> param) throws Exception {
+      String subscription = param.x();
+      Tuple<Role, Identity> roleAndIdentity = param.y();
+      Role role = roleAndIdentity.x();
+      Identity identity = roleAndIdentity.y();
+      Policy policy = pubsub.getSubscriptionPolicy(subscription);
+      policy = pubsub.replaceSubscriptionPolicy(subscription,
+          policy.toBuilder().addIdentity(role, identity).build());
+      System.out.printf("Added role %s to identity %s for subscription %s%n", role, identity,
+          subscription);
+      System.out.println(policy);
+    }
+  }
+
+  private abstract static class TestPermissionsAction
+      extends PubSubAction<Tuple<String, List<String>>> {
+    @Override
+    Tuple<String, List<String>> parse(String... args) throws Exception {
+      if (args.length >= 2) {
+        String resourceName = args[0];
+        return Tuple.of(resourceName, Arrays.asList(Arrays.copyOfRange(args, 1, args.length)));
+      }
+      throw new IllegalArgumentException("Missing required resource name and permissions");
+    }
+
+    @Override
+    public String params() {
+      return "<resourceName> <permission>+";
+    }
+  }
+
+  /**
+   * This class demonstrates how to test whether the caller has the provided permissions on a topic.
+   *
+   * @see <a href="https://cloud.google.com/pubsub/docs/access_control">Access Control</a>
+   */
+  private static class TestTopicPermissionsAction extends TestPermissionsAction {
+    @Override
+    public void run(PubSub pubsub, Tuple<String, List<String>> param) throws Exception {
+      String topic = param.x();
+      List<String> permissions = param.y();
+      List<Boolean> booleanPermissions = pubsub.testTopicPermissions(topic, permissions);
+      System.out.printf("Caller permissions on topic %s%n", topic);
+      for (int i = 0; i < permissions.size(); i++) {
+        System.out.printf("%s: %b%n", permissions.get(i), booleanPermissions.get(i));
+      }
+    }
+  }
+
+  /**
+   * This class demonstrates how to test whether the caller has the provided permissions on a
+   * subscription.
+   *
+   * @see <a href="https://cloud.google.com/pubsub/docs/access_control">Access Control</a>
+   */
+  private static class TestSubscriptionPermissionsAction extends TestPermissionsAction {
+    @Override
+    public void run(PubSub pubsub, Tuple<String, List<String>> param) throws Exception {
+      String subscription = param.x();
+      List<String> permissions = param.y();
+      List<Boolean> booleanPermissions =
+          pubsub.testSubscriptionPermissions(subscription, permissions);
+      System.out.printf("Caller permissions on subscription %s%n", subscription);
+      for (int i = 0; i < permissions.size(); i++) {
+        System.out.printf("%s: %b%n", permissions.get(i), booleanPermissions.get(i));
+      }
+    }
+  }
+
   static {
     CREATE_ACTIONS.put("topic", new CreateTopicAction());
     CREATE_ACTIONS.put("subscription", new CreateSubscriptionAction());
@@ -638,11 +819,20 @@ public class PubSubExample {
     DELETE_ACTIONS.put("subscription", new DeleteSubscriptionAction());
     PULL_ACTIONS.put("async", new PullAsyncAction());
     PULL_ACTIONS.put("sync", new PullSyncAction());
+    GET_IAM_ACTIONS.put("topic", new GetTopicPolicyAction());
+    GET_IAM_ACTIONS.put("subscription", new GetSubscriptionPolicyAction());
+    REPLACE_IAM_ACTIONS.put("topic", new AddIdentityTopicAction());
+    REPLACE_IAM_ACTIONS.put("subscription", new AddIdentitySubscriptionAction());
+    TEST_IAM_ACTIONS.put("topic", new TestTopicPermissionsAction());
+    TEST_IAM_ACTIONS.put("subscription", new TestSubscriptionPermissionsAction());
     ACTIONS.put("create", new ParentAction(CREATE_ACTIONS));
     ACTIONS.put("info", new ParentAction(INFO_ACTIONS));
     ACTIONS.put("list", new ParentAction(LIST_ACTIONS));
     ACTIONS.put("delete", new ParentAction(DELETE_ACTIONS));
     ACTIONS.put("pull", new ParentAction(PULL_ACTIONS));
+    ACTIONS.put("get-policy", new ParentAction(GET_IAM_ACTIONS));
+    ACTIONS.put("add-identity", new ParentAction(REPLACE_IAM_ACTIONS));
+    ACTIONS.put("test-permissions", new ParentAction(TEST_IAM_ACTIONS));
     ACTIONS.put("publish", new PublishMessagesAction());
     ACTIONS.put("replace-push-config", new ReplacePushConfigAction());
     ACTIONS.put("ack", new AckMessagesAction());
