@@ -13,7 +13,7 @@
  */
 
 /**
- * A client to Google Cloud Logging API.
+ * A client to Stackdriver Logging API.
  *
  * The interfaces provided are listed below, along with a usage sample
  *
