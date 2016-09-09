@@ -36,10 +36,12 @@ import com.google.cloud.storage.Storage.SignUrlOption;
 import com.google.cloud.storage.spi.StorageRpc;
 import com.google.cloud.storage.spi.StorageRpc.Tuple;
 import com.google.common.base.Function;
+import com.google.common.io.BaseEncoding;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.net.URL;
+import java.security.Key;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
@@ -81,6 +83,10 @@ public class Blob extends BlobInfo {
       super(rpcOption, null);
     }
 
+    private BlobSourceOption(StorageRpc.Option rpcOption, Object value) {
+      super(rpcOption, value);
+    }
+
     private Storage.BlobSourceOption toSourceOptions(BlobInfo blobInfo) {
       switch (rpcOption()) {
         case IF_GENERATION_MATCH:
@@ -91,6 +97,8 @@ public class Blob extends BlobInfo {
           return Storage.BlobSourceOption.metagenerationMatch(blobInfo.metageneration());
         case IF_METAGENERATION_NOT_MATCH:
           return Storage.BlobSourceOption.metagenerationNotMatch(blobInfo.metageneration());
+        case CUSTOMER_SUPPLIED_KEY:
+          return Storage.BlobSourceOption.decryptionKey((String) value());
         default:
           throw new AssertionError("Unexpected enum value");
       }
@@ -141,6 +149,25 @@ public class Blob extends BlobInfo {
      */
     public static BlobSourceOption metagenerationNotMatch() {
       return new BlobSourceOption(StorageRpc.Option.IF_METAGENERATION_NOT_MATCH);
+    }
+
+    /**
+     * Returns an option to set a customer-supplied AES256 key for server-side encryption of the
+     * blob.
+     */
+    public static BlobSourceOption decryptionKey(Key key) {
+      String base64Key = BaseEncoding.base64().encode(key.getEncoded());
+      return new BlobSourceOption(StorageRpc.Option.CUSTOMER_SUPPLIED_KEY, base64Key);
+    }
+
+    /**
+     * Returns an option to set a customer-supplied AES256 key for server-side encryption of the
+     * blob.
+     *
+     * @param key the AES256 encoded in base64
+     */
+    public static BlobSourceOption decryptionKey(String key) {
+      return new BlobSourceOption(StorageRpc.Option.CUSTOMER_SUPPLIED_KEY, key);
     }
 
     static Storage.BlobSourceOption[] toSourceOptions(BlobInfo blobInfo,
@@ -305,6 +332,12 @@ public class Blob extends BlobInfo {
     @Override
     Builder isDirectory(boolean isDirectory) {
       infoBuilder.isDirectory(isDirectory);
+      return this;
+    }
+
+    @Override
+    Builder customerEncryption(CustomerEncryption customerEncryption) {
+      infoBuilder.customerEncryption(customerEncryption);
       return this;
     }
 

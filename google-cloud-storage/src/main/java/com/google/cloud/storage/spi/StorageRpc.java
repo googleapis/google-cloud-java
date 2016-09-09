@@ -46,7 +46,8 @@ public interface StorageRpc {
     PAGE_TOKEN("pageToken"),
     DELIMITER("delimiter"),
     VERSIONS("versions"),
-    FIELDS("fields");
+    FIELDS("fields"),
+    CUSTOMER_SUPPLIED_KEY("customerSuppliedKey");
 
     private final String value;
 

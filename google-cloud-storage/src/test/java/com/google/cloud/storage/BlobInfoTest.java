@@ -27,6 +27,7 @@ import static org.junit.Assert.assertTrue;
 import com.google.api.services.storage.model.StorageObject;
 import com.google.cloud.storage.Acl.Project;
 import com.google.cloud.storage.Acl.User;
+import com.google.cloud.storage.BlobInfo.CustomerEncryption;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 
@@ -61,6 +62,10 @@ public class BlobInfoTest {
   private static final Long SIZE = 1024L;
   private static final Long UPDATE_TIME = DELETE_TIME - 1L;
   private static final Long CREATE_TIME = UPDATE_TIME - 1L;
+  private static final String ENCRYPTION_ALGORITHM = "AES256";
+  private static final String KEY_SHA256 = "keySha";
+  private static final CustomerEncryption CUSTOMER_ENCRYPTION =
+      new CustomerEncryption(ENCRYPTION_ALGORITHM, KEY_SHA256);
   private static final BlobInfo BLOB_INFO = BlobInfo.builder("b", "n", GENERATION)
       .acl(ACL)
       .componentCount(COMPONENT_COUNT)
@@ -69,6 +74,7 @@ public class BlobInfoTest {
       .contentDisposition(CONTENT_DISPOSITION)
       .contentEncoding(CONTENT_ENCODING)
       .contentLanguage(CONTENT_LANGUAGE)
+      .customerEncryption(CUSTOMER_ENCRYPTION)
       .crc32c(CRC32)
       .deleteTime(DELETE_TIME)
       .etag(ETAG)
@@ -87,6 +93,12 @@ public class BlobInfoTest {
       .size(0L)
       .isDirectory(true)
       .build();
+
+  @Test
+  public void testCustomerEncryption() {
+    assertEquals(ENCRYPTION_ALGORITHM, CUSTOMER_ENCRYPTION.encryptionAlgorithm());
+    assertEquals(KEY_SHA256, CUSTOMER_ENCRYPTION.keySha256());
+  }
 
   @Test
   public void testToBuilder() {
@@ -116,6 +128,7 @@ public class BlobInfoTest {
     assertEquals(CONTENT_DISPOSITION, BLOB_INFO.contentDisposition());
     assertEquals(CONTENT_ENCODING, BLOB_INFO.contentEncoding());
     assertEquals(CONTENT_LANGUAGE, BLOB_INFO.contentLanguage());
+    assertEquals(CUSTOMER_ENCRYPTION, BLOB_INFO.customerEncryption());
     assertEquals(CRC32, BLOB_INFO.crc32c());
     assertEquals(DELETE_TIME, BLOB_INFO.deleteTime());
     assertEquals(ETAG, BLOB_INFO.etag());
@@ -140,6 +153,7 @@ public class BlobInfoTest {
     assertNull(DIRECTORY_INFO.contentDisposition());
     assertNull(DIRECTORY_INFO.contentEncoding());
     assertNull(DIRECTORY_INFO.contentLanguage());
+    assertNull(DIRECTORY_INFO.customerEncryption());
     assertNull(DIRECTORY_INFO.crc32c());
     assertNull(DIRECTORY_INFO.createTime());
     assertNull(DIRECTORY_INFO.deleteTime());
@@ -168,6 +182,7 @@ public class BlobInfoTest {
     assertEquals(expected.contentDisposition(), value.contentDisposition());
     assertEquals(expected.contentEncoding(), value.contentEncoding());
     assertEquals(expected.contentLanguage(), value.contentLanguage());
+    assertEquals(expected.customerEncryption(), value.customerEncryption());
     assertEquals(expected.crc32c(), value.crc32c());
     assertEquals(expected.createTime(), value.createTime());
     assertEquals(expected.deleteTime(), value.deleteTime());
@@ -184,8 +199,17 @@ public class BlobInfoTest {
     assertEquals(expected.updateTime(), value.updateTime());
   }
 
+  private void compareCustomerEncryptions(CustomerEncryption expected, CustomerEncryption value) {
+    assertEquals(expected, value);
+    assertEquals(expected.encryptionAlgorithm(), value.encryptionAlgorithm());
+    assertEquals(expected.keySha256(), value.keySha256());
+    assertEquals(expected.hashCode(), value.hashCode());
+  }
+
   @Test
   public void testToPbAndFromPb() {
+    compareCustomerEncryptions(CUSTOMER_ENCRYPTION,
+        CustomerEncryption.fromPb(CUSTOMER_ENCRYPTION.toPb()));
     compareBlobs(BLOB_INFO, BlobInfo.fromPb(BLOB_INFO.toPb()));
     BlobInfo blobInfo = BlobInfo.builder(BlobId.of("b", "n")).build();
     compareBlobs(blobInfo, BlobInfo.fromPb(blobInfo.toPb()));
@@ -204,6 +228,7 @@ public class BlobInfoTest {
     assertNull(blobInfo.contentDisposition());
     assertNull(blobInfo.contentEncoding());
     assertNull(blobInfo.contentLanguage());
+    assertNull(blobInfo.customerEncryption());
     assertNull(blobInfo.crc32c());
     assertNull(blobInfo.createTime());
     assertNull(blobInfo.deleteTime());

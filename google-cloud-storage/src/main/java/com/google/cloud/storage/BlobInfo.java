@@ -80,6 +80,7 @@ public class BlobInfo implements Serializable {
   private final String contentLanguage;
   private final Integer componentCount;
   private final boolean isDirectory;
+  private final CustomerEncryption customerEncryption;
 
   /**
    * This class is meant for internal use only. Users are discouraged from using this class.
@@ -89,6 +90,69 @@ public class BlobInfo implements Serializable {
     @Override
     public Set<Entry<K, V>> entrySet() {
       return ImmutableSet.of();
+    }
+  }
+
+  /**
+   * Objects of this class hold information on the customer-supplied encryption key, if the blob is
+   * encrypted using such a key.
+   */
+  public static class CustomerEncryption implements Serializable {
+
+    private static final long serialVersionUID = -2133042982786959351L;
+
+    private final String encryptionAlgorithm;
+    private final String keySha256;
+
+    CustomerEncryption(String encryptionAlgorithm, String keySha256) {
+      this.encryptionAlgorithm = encryptionAlgorithm;
+      this.keySha256 = keySha256;
+    }
+
+    /**
+     * Returns the algorithm used to encrypt the blob.
+     */
+    public String encryptionAlgorithm() {
+      return encryptionAlgorithm;
+    }
+
+    /**
+     * Returns the SHA256 hash of the encryption key.
+     */
+    public String keySha256() {
+      return keySha256;
+    }
+
+    @Override
+    public String toString() {
+      return MoreObjects.toStringHelper(this)
+          .add("encryptionAlgorithm", encryptionAlgorithm())
+          .add("keySha256", keySha256())
+          .toString();
+    }
+
+    @Override
+    public final int hashCode() {
+      return Objects.hash(encryptionAlgorithm, keySha256);
+    }
+
+    @Override
+    public final boolean equals(Object obj) {
+      return obj == this
+          || obj != null
+          && obj.getClass().equals(CustomerEncryption.class)
+          && Objects.equals(toPb(), ((CustomerEncryption) obj).toPb());
+    }
+
+    StorageObject.CustomerEncryption toPb() {
+      return new StorageObject.CustomerEncryption()
+          .setEncryptionAlgorithm(encryptionAlgorithm)
+          .setKeySha256(keySha256);
+    }
+
+    static CustomerEncryption fromPb(StorageObject.CustomerEncryption customerEncryptionPb) {
+      return new CustomerEncryption(customerEncryptionPb.getEncryptionAlgorithm(),
+          customerEncryptionPb.getKeySha256());
     }
   }
 
@@ -193,6 +257,8 @@ public class BlobInfo implements Serializable {
 
     abstract Builder isDirectory(boolean isDirectory);
 
+    abstract Builder customerEncryption(CustomerEncryption customerEncryption);
+
     /**
      * Creates a {@code BlobInfo} object.
      */
@@ -223,6 +289,7 @@ public class BlobInfo implements Serializable {
     private Long updateTime;
     private Long createTime;
     private Boolean isDirectory;
+    private CustomerEncryption customerEncryption;
 
     BuilderImpl(BlobId blobId) {
       this.blobId = blobId;
@@ -237,6 +304,7 @@ public class BlobInfo implements Serializable {
       contentDisposition = blobInfo.contentDisposition;
       contentLanguage = blobInfo.contentLanguage;
       componentCount = blobInfo.componentCount;
+      customerEncryption = blobInfo.customerEncryption;
       acl = blobInfo.acl;
       owner = blobInfo.owner;
       size = blobInfo.size;
@@ -387,6 +455,12 @@ public class BlobInfo implements Serializable {
     }
 
     @Override
+    Builder customerEncryption(CustomerEncryption customerEncryption) {
+      this.customerEncryption = customerEncryption;
+      return this;
+    }
+
+    @Override
     public BlobInfo build() {
       checkNotNull(blobId);
       return new BlobInfo(this);
@@ -402,6 +476,7 @@ public class BlobInfo implements Serializable {
     contentDisposition = builder.contentDisposition;
     contentLanguage = builder.contentLanguage;
     componentCount = builder.componentCount;
+    customerEncryption = builder.customerEncryption;
     acl = builder.acl;
     owner = builder.owner;
     size = builder.size;
@@ -632,6 +707,14 @@ public class BlobInfo implements Serializable {
   }
 
   /**
+   * Returns information on the customer-supplied encryption key, if the blob is encrypted using
+   * such a key.
+   */
+  public CustomerEncryption customerEncryption() {
+    return customerEncryption;
+  }
+
+  /**
    * Returns a builder for the current blob.
    */
   public Builder toBuilder() {
@@ -695,6 +778,9 @@ public class BlobInfo implements Serializable {
         pbMetadata.put(entry.getKey(),
             firstNonNull(entry.getValue(), Data.<String>nullOf(String.class)));
       }
+    }
+    if (customerEncryption != null) {
+      storageObject.setCustomerEncryption(customerEncryption.toPb());
     }
     storageObject.setMetadata(pbMetadata);
     storageObject.setCacheControl(cacheControl);
@@ -814,6 +900,9 @@ public class BlobInfo implements Serializable {
     }
     if (storageObject.containsKey("isDirectory")) {
       builder.isDirectory(Boolean.TRUE);
+    }
+    if (storageObject.getCustomerEncryption() != null) {
+      builder.customerEncryption(CustomerEncryption.fromPb(storageObject.getCustomerEncryption()));
     }
     return builder.build();
   }

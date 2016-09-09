@@ -35,6 +35,8 @@ import com.google.cloud.storage.Acl.Project;
 import com.google.cloud.storage.Acl.Project.ProjectRole;
 import com.google.cloud.storage.Acl.Role;
 import com.google.cloud.storage.Acl.User;
+import com.google.cloud.storage.Blob.BlobSourceOption;
+import com.google.cloud.storage.Storage.BlobWriteOption;
 import com.google.cloud.storage.Storage.CopyRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -74,6 +76,10 @@ public class BlobTest {
   private static final Long SIZE = 1024L;
   private static final Long UPDATE_TIME = DELETE_TIME - 1L;
   private static final Long CREATE_TIME = UPDATE_TIME - 1L;
+  private static final String ENCRYPTION_ALGORITHM = "AES256";
+  private static final String KEY_SHA256 = "keySha";
+  private static final BlobInfo.CustomerEncryption CUSTOMER_ENCRYPTION =
+      new BlobInfo.CustomerEncryption(ENCRYPTION_ALGORITHM, KEY_SHA256);
   private static final BlobInfo FULL_BLOB_INFO = BlobInfo.builder("b", "n", GENERATION)
       .acl(ACLS)
       .componentCount(COMPONENT_COUNT)
@@ -95,6 +101,7 @@ public class BlobTest {
       .size(SIZE)
       .updateTime(UPDATE_TIME)
       .createTime(CREATE_TIME)
+      .customerEncryption(CUSTOMER_ENCRYPTION)
       .build();
   private static final BlobInfo BLOB_INFO = BlobInfo.builder("b", "n").metageneration(42L).build();
   private static final BlobInfo DIRECTORY_INFO = BlobInfo.builder("b", "n/")
@@ -161,6 +168,18 @@ public class BlobTest {
   }
 
   @Test
+  public void testContentWithOptions() throws Exception {
+    initializeExpectedBlob(2);
+    byte[] content = {1, 2};
+    expect(storage.options()).andReturn(mockOptions);
+    expect(storage.readAllBytes(BLOB_INFO.blobId(), Storage.BlobSourceOption.decryptionKey("key")))
+        .andReturn(content);
+    replay(storage);
+    initializeBlob();
+    assertArrayEquals(content, blob.content(BlobSourceOption.decryptionKey("key")));
+  }
+
+  @Test
   public void testReload() throws Exception {
     initializeExpectedBlob(2);
     Blob expectedReloadedBlob = expectedBlob.toBuilder().cacheControl("c").build();
@@ -193,7 +212,7 @@ public class BlobTest {
     expect(storage.get(BLOB_INFO.blobId(), options)).andReturn(expectedReloadedBlob);
     replay(storage);
     initializeBlob();
-    Blob updatedBlob = blob.reload(Blob.BlobSourceOption.metagenerationMatch());
+    Blob updatedBlob = blob.reload(BlobSourceOption.metagenerationMatch());
     assertEquals(expectedReloadedBlob, updatedBlob);
   }
 
@@ -291,6 +310,18 @@ public class BlobTest {
   }
 
   @Test
+  public void testReaderWithOptions() throws Exception {
+    initializeExpectedBlob(2);
+    ReadChannel channel = createMock(ReadChannel.class);
+    expect(storage.options()).andReturn(mockOptions);
+    expect(storage.reader(BLOB_INFO.blobId(), Storage.BlobSourceOption.decryptionKey("key")))
+        .andReturn(channel);
+    replay(storage);
+    initializeBlob();
+    assertSame(channel, blob.reader(BlobSourceOption.decryptionKey("key")));
+  }
+
+  @Test
   public void testWriter() throws Exception {
     initializeExpectedBlob(2);
     BlobWriteChannel channel = createMock(BlobWriteChannel.class);
@@ -299,6 +330,18 @@ public class BlobTest {
     replay(storage);
     initializeBlob();
     assertSame(channel, blob.writer());
+  }
+
+  @Test
+  public void testWriterWithOptions() throws Exception {
+    initializeExpectedBlob(2);
+    BlobWriteChannel channel = createMock(BlobWriteChannel.class);
+    expect(storage.options()).andReturn(mockOptions);
+    expect(storage.writer(eq(expectedBlob), eq(BlobWriteOption.encryptionKey("key"))))
+        .andReturn(channel);
+    replay(storage);
+    initializeBlob();
+    assertSame(channel, blob.writer(BlobWriteOption.encryptionKey("key")));
   }
 
   @Test
@@ -390,6 +433,8 @@ public class BlobTest {
         .contentEncoding(CONTENT_ENCODING)
         .contentLanguage(CONTENT_LANGUAGE)
         .crc32c(CRC32)
+        .createTime(CREATE_TIME)
+        .customerEncryption(CUSTOMER_ENCRYPTION)
         .deleteTime(DELETE_TIME)
         .etag(ETAG)
         .generatedId(GENERATED_ID)
@@ -401,7 +446,6 @@ public class BlobTest {
         .selfLink(SELF_LINK)
         .size(SIZE)
         .updateTime(UPDATE_TIME)
-        .createTime(CREATE_TIME)
         .build();
     assertEquals("b", blob.bucket());
     assertEquals("n", blob.name());
@@ -414,6 +458,7 @@ public class BlobTest {
     assertEquals(CONTENT_LANGUAGE, blob.contentLanguage());
     assertEquals(CRC32, blob.crc32c());
     assertEquals(CREATE_TIME, blob.createTime());
+    assertEquals(CUSTOMER_ENCRYPTION, blob.customerEncryption());
     assertEquals(DELETE_TIME, blob.deleteTime());
     assertEquals(ETAG, blob.etag());
     assertEquals(GENERATED_ID, blob.generatedId());
@@ -442,6 +487,7 @@ public class BlobTest {
     assertNull(blob.contentLanguage());
     assertNull(blob.crc32c());
     assertNull(blob.createTime());
+    assertNull(blob.customerEncryption());
     assertNull(blob.deleteTime());
     assertNull(blob.etag());
     assertNull(blob.generatedId());

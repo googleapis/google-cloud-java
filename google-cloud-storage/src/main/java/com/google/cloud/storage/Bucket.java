@@ -31,11 +31,13 @@ import com.google.common.base.Function;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
+import com.google.common.io.BaseEncoding;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.ObjectInputStream;
 import java.io.Serializable;
+import java.security.Key;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
@@ -166,6 +168,9 @@ public class Bucket extends BucketInfo {
         case IF_METAGENERATION_NOT_MATCH:
           return StorageRpc.Tuple.of(blobInfo.toBuilder().metageneration((Long) value()).build(),
               Storage.BlobTargetOption.metagenerationNotMatch());
+        case CUSTOMER_SUPPLIED_KEY:
+          return StorageRpc.Tuple.of(blobInfo,
+              Storage.BlobTargetOption.encryptionKey((String) value()));
         default:
           throw new AssertionError("Unexpected enum value");
       }
@@ -221,6 +226,25 @@ public class Bucket extends BucketInfo {
      */
     public static BlobTargetOption metagenerationNotMatch(long metageneration) {
       return new BlobTargetOption(StorageRpc.Option.IF_METAGENERATION_NOT_MATCH, metageneration);
+    }
+
+    /**
+     * Returns an option to set a customer-supplied AES256 key for server-side encryption of the
+     * blob.
+     */
+    public static BlobTargetOption encryptionKey(Key key) {
+      String base64Key = BaseEncoding.base64().encode(key.getEncoded());
+      return new BlobTargetOption(StorageRpc.Option.CUSTOMER_SUPPLIED_KEY, base64Key);
+    }
+
+    /**
+     * Returns an option to set a customer-supplied AES256 key for server-side encryption of the
+     * blob.
+     *
+     * @param key the AES256 encoded in base64
+     */
+    public static BlobTargetOption encryptionKey(String key) {
+      return new BlobTargetOption(StorageRpc.Option.CUSTOMER_SUPPLIED_KEY, key);
     }
 
     static StorageRpc.Tuple<BlobInfo, Storage.BlobTargetOption[]> toTargetOptions(
@@ -289,6 +313,9 @@ public class Bucket extends BucketInfo {
         case IF_CRC32C_MATCH:
           return StorageRpc.Tuple.of(blobInfo.toBuilder().crc32c((String) value).build(),
               Storage.BlobWriteOption.crc32cMatch());
+        case CUSTOMER_SUPPLIED_KEY:
+          return StorageRpc.Tuple.of(blobInfo,
+              Storage.BlobWriteOption.encryptionKey((String) value));
         default:
           throw new AssertionError("Unexpected enum value");
       }
@@ -385,6 +412,25 @@ public class Bucket extends BucketInfo {
      */
     public static BlobWriteOption crc32cMatch(String crc32c) {
       return new BlobWriteOption(Storage.BlobWriteOption.Option.IF_CRC32C_MATCH, crc32c);
+    }
+
+    /**
+     * Returns an option to set a customer-supplied AES256 key for server-side encryption of the
+     * blob.
+     */
+    public static BlobWriteOption encryptionKey(Key key) {
+      String base64Key = BaseEncoding.base64().encode(key.getEncoded());
+      return new BlobWriteOption(Storage.BlobWriteOption.Option.CUSTOMER_SUPPLIED_KEY, base64Key);
+    }
+
+    /**
+     * Returns an option to set a customer-supplied AES256 key for server-side encryption of the
+     * blob.
+     *
+     * @param key the AES256 encoded in base64
+     */
+    public static BlobWriteOption encryptionKey(String key) {
+      return new BlobWriteOption(Storage.BlobWriteOption.Option.CUSTOMER_SUPPLIED_KEY, key);
     }
 
     static StorageRpc.Tuple<BlobInfo, Storage.BlobWriteOption[]> toWriteOptions(

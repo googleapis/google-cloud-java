@@ -52,6 +52,7 @@ import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Iterators;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
+import com.google.common.io.BaseEncoding;
 
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
@@ -64,6 +65,9 @@ import java.io.InputStream;
 import java.net.URL;
 import java.net.URLConnection;
 import java.nio.ByteBuffer;
+import java.security.Key;
+import java.security.NoSuchAlgorithmException;
+import java.security.spec.InvalidKeySpecException;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -76,6 +80,8 @@ import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import javax.crypto.spec.SecretKeySpec;
+
 public class ITStorageTest {
 
   private static Storage storage;
@@ -86,9 +92,13 @@ public class ITStorageTest {
   private static final byte[] BLOB_BYTE_CONTENT = {0xD, 0xE, 0xA, 0xD};
   private static final String BLOB_STRING_CONTENT = "Hello Google Cloud Storage!";
   private static final int MAX_BATCH_SIZE = 100;
+  private static final String BASE64_KEY = "JVzfVl8NLD9FjedFuStegjRfES5ll5zc59CIXw572OA=";
+  private static final String OTHER_BASE64_KEY = "IcOIQGlliNr5pr3vJb63l+XMqc7NjXqjfw/deBoNxPA=";
+  private static final Key KEY =
+      new SecretKeySpec(BaseEncoding.base64().decode(BASE64_KEY), "AES256");
 
   @BeforeClass
-  public static void beforeClass() {
+  public static void beforeClass() throws NoSuchAlgorithmException, InvalidKeySpecException {
     RemoteStorageHelper helper = RemoteStorageHelper.create();
     storage = helper.options().service();
     storage.create(BucketInfo.of(BUCKET));
@@ -155,6 +165,21 @@ public class ITStorageTest {
     assertEquals(blob.bucket(), remoteBlob.bucket());
     assertEquals(blob.name(), remoteBlob.name());
     byte[] readBytes = storage.readAllBytes(BUCKET, blobName);
+    assertArrayEquals(BLOB_BYTE_CONTENT, readBytes);
+    assertTrue(remoteBlob.delete());
+  }
+
+  @Test
+  public void testCreateBlobWithEncryptionKey() {
+    String blobName = "test-create-with-customer-key-blob";
+    BlobInfo blob = BlobInfo.builder(BUCKET, blobName).build();
+    Blob remoteBlob =
+        storage.create(blob, BLOB_BYTE_CONTENT, Storage.BlobTargetOption.encryptionKey(KEY));
+    assertNotNull(remoteBlob);
+    assertEquals(blob.bucket(), remoteBlob.bucket());
+    assertEquals(blob.name(), remoteBlob.name());
+    byte[] readBytes =
+        storage.readAllBytes(BUCKET, blobName, Storage.BlobSourceOption.decryptionKey(BASE64_KEY));
     assertArrayEquals(BLOB_BYTE_CONTENT, readBytes);
     assertTrue(remoteBlob.delete());
   }
@@ -695,6 +720,48 @@ public class ITStorageTest {
   }
 
   @Test
+  public void testCopyBlobWithEncryptionKeys() {
+    String sourceBlobName = "test-copy-blob-encryption-key-source";
+    BlobId source = BlobId.of(BUCKET, sourceBlobName);
+    ImmutableMap<String, String> metadata = ImmutableMap.of("k", "v");
+    Blob remoteBlob = storage.create(BlobInfo.builder(source).build(), BLOB_BYTE_CONTENT,
+        Storage.BlobTargetOption.encryptionKey(KEY));
+    assertNotNull(remoteBlob);
+    String targetBlobName = "test-copy-blob-encryption-key-target";
+    BlobInfo target = BlobInfo.builder(BUCKET, targetBlobName)
+        .contentType(CONTENT_TYPE)
+        .metadata(metadata)
+        .build();
+    Storage.CopyRequest req = Storage.CopyRequest.builder()
+        .source(source)
+        .target(target, Storage.BlobTargetOption.encryptionKey(OTHER_BASE64_KEY))
+        .sourceOptions(Storage.BlobSourceOption.decryptionKey(BASE64_KEY))
+        .build();
+    CopyWriter copyWriter = storage.copy(req);
+    assertEquals(BUCKET, copyWriter.result().bucket());
+    assertEquals(targetBlobName, copyWriter.result().name());
+    assertEquals(CONTENT_TYPE, copyWriter.result().contentType());
+    assertArrayEquals(BLOB_BYTE_CONTENT,
+        copyWriter.result().content(Blob.BlobSourceOption.decryptionKey(OTHER_BASE64_KEY)));
+    assertEquals(metadata, copyWriter.result().metadata());
+    assertTrue(copyWriter.isDone());
+    req = Storage.CopyRequest.builder()
+        .source(source)
+        .target(target)
+        .sourceOptions(Storage.BlobSourceOption.decryptionKey(BASE64_KEY))
+        .build();
+    copyWriter = storage.copy(req);
+    assertEquals(BUCKET, copyWriter.result().bucket());
+    assertEquals(targetBlobName, copyWriter.result().name());
+    assertEquals(CONTENT_TYPE, copyWriter.result().contentType());
+    assertArrayEquals(BLOB_BYTE_CONTENT, copyWriter.result().content());
+    assertEquals(metadata, copyWriter.result().metadata());
+    assertTrue(copyWriter.isDone());
+    assertTrue(remoteBlob.delete());
+    assertTrue(storage.delete(BUCKET, targetBlobName));
+  }
+
+  @Test
   public void testCopyBlobUpdateMetadata() {
     String sourceBlobName = "test-copy-blob-update-metadata-source";
     BlobId source = BlobId.of(BUCKET, sourceBlobName);
@@ -934,6 +1001,31 @@ public class ITStorageTest {
     ByteBuffer readBytes;
     ByteBuffer readStringBytes;
     try (ReadChannel reader = storage.reader(blob.blobId())) {
+      readBytes = ByteBuffer.allocate(BLOB_BYTE_CONTENT.length);
+      readStringBytes = ByteBuffer.allocate(stringBytes.length);
+      reader.read(readBytes);
+      reader.read(readStringBytes);
+    }
+    assertArrayEquals(BLOB_BYTE_CONTENT, readBytes.array());
+    assertEquals(BLOB_STRING_CONTENT, new String(readStringBytes.array(), UTF_8));
+    assertTrue(storage.delete(BUCKET, blobName));
+  }
+
+  @Test
+  public void testReadAndWriteChannelWithEncryptionKey() throws IOException {
+    String blobName = "test-read-write-channel-with-customer-key-blob";
+    BlobInfo blob = BlobInfo.builder(BUCKET, blobName).build();
+    byte[] stringBytes;
+    try (WriteChannel writer = storage.writer(blob,
+        Storage.BlobWriteOption.encryptionKey(BASE64_KEY))) {
+      stringBytes = BLOB_STRING_CONTENT.getBytes(UTF_8);
+      writer.write(ByteBuffer.wrap(BLOB_BYTE_CONTENT));
+      writer.write(ByteBuffer.wrap(stringBytes));
+    }
+    ByteBuffer readBytes;
+    ByteBuffer readStringBytes;
+    try (ReadChannel reader =
+             storage.reader(blob.blobId(), Storage.BlobSourceOption.decryptionKey(KEY))) {
       readBytes = ByteBuffer.allocate(BLOB_BYTE_CONTENT.length);
       readStringBytes = ByteBuffer.allocate(stringBytes.length);
       reader.read(readBytes);

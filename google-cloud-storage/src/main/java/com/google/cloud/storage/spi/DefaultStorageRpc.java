@@ -16,6 +16,7 @@
 
 package com.google.cloud.storage.spi;
 
+import static com.google.cloud.storage.spi.StorageRpc.Option.CUSTOMER_SUPPLIED_KEY;
 import static com.google.cloud.storage.spi.StorageRpc.Option.DELIMITER;
 import static com.google.cloud.storage.spi.StorageRpc.Option.FIELDS;
 import static com.google.cloud.storage.spi.StorageRpc.Option.IF_GENERATION_MATCH;
@@ -70,6 +71,9 @@ import com.google.common.base.Function;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
+import com.google.common.hash.HashFunction;
+import com.google.common.hash.Hashing;
+import com.google.common.io.BaseEncoding;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -83,6 +87,8 @@ import java.util.Map;
 public class DefaultStorageRpc implements StorageRpc {
 
   public static final String DEFAULT_PROJECTION = "full";
+  private static final String ENCRYPTION_KEY_PREFIX = "x-goog-encryption-";
+  private static final String SOURCE_ENCRYPTION_KEY_PREFIX = "x-goog-copy-source-encryption-";
   private final StorageOptions options;
   private final Storage storage;
 
@@ -222,6 +228,19 @@ public class DefaultStorageRpc implements StorageRpc {
     return new StorageException(exception);
   }
 
+  private static void setEncryptionHeaders(HttpHeaders headers, String headerPrefix,
+      Map<Option, ?> options) {
+    String key = CUSTOMER_SUPPLIED_KEY.getString(options);
+    if (key != null) {
+      BaseEncoding base64 = BaseEncoding.base64();
+      HashFunction hashFunction = Hashing.sha256();
+      headers.set(headerPrefix + "algorithm", "AES256");
+      headers.set(headerPrefix + "key", key);
+      headers.set(headerPrefix + "key-sha256",
+          base64.encode(hashFunction.hashBytes(base64.decode(key)).asBytes()));
+    }
+  }
+
   @Override
   public Bucket create(Bucket bucket, Map<Option, ?> options) {
     try {
@@ -244,6 +263,7 @@ public class DefaultStorageRpc implements StorageRpc {
           .insert(storageObject.getBucket(), storageObject,
               new InputStreamContent(storageObject.getContentType(), content));
       insert.getMediaHttpUploader().setDirectUploadEnabled(true);
+      setEncryptionHeaders(insert.getRequestHeaders(), ENCRYPTION_KEY_PREFIX, options);
       return insert.setProjection(DEFAULT_PROJECTION)
           .setPredefinedAcl(PREDEFINED_ACL.getString(options))
           .setIfMetagenerationMatch(IF_METAGENERATION_MATCH.getLong(options))
@@ -474,6 +494,7 @@ public class DefaultStorageRpc implements StorageRpc {
           .setIfMetagenerationNotMatch(IF_METAGENERATION_NOT_MATCH.getLong(options))
           .setIfGenerationMatch(IF_GENERATION_MATCH.getLong(options))
           .setIfGenerationNotMatch(IF_GENERATION_NOT_MATCH.getLong(options));
+      setEncryptionHeaders(getRequest.getRequestHeaders(), ENCRYPTION_KEY_PREFIX, options);
       ByteArrayOutputStream out = new ByteArrayOutputStream();
       getRequest.executeMedia().download(out);
       return out.toByteArray();
@@ -501,7 +522,9 @@ public class DefaultStorageRpc implements StorageRpc {
       checkArgument(position >= 0, "Position should be non-negative, is %d", position);
       StringBuilder range = new StringBuilder();
       range.append("bytes=").append(position).append("-").append(position + bytes - 1);
-      req.getRequestHeaders().setRange(range.toString());
+      HttpHeaders requestHeaders = req.getRequestHeaders();
+      requestHeaders.setRange(range.toString());
+      setEncryptionHeaders(requestHeaders, ENCRYPTION_KEY_PREFIX, options);
       ByteArrayOutputStream output = new ByteArrayOutputStream(bytes);
       req.executeMedia().download(output);
       String etag = req.getLastResponseHeaders().getETag();
@@ -586,8 +609,18 @@ public class DefaultStorageRpc implements StorageRpc {
       HttpRequestFactory requestFactory = storage.getRequestFactory();
       HttpRequest httpRequest =
           requestFactory.buildPostRequest(url, new JsonHttpContent(jsonFactory, object));
-      httpRequest.getHeaders().set("X-Upload-Content-Type",
+      HttpHeaders requestHeaders = httpRequest.getHeaders();
+      requestHeaders.set("X-Upload-Content-Type",
           firstNonNull(object.getContentType(), "application/octet-stream"));
+      String key = CUSTOMER_SUPPLIED_KEY.getString(options);
+      if (key != null) {
+        BaseEncoding base64 = BaseEncoding.base64();
+        HashFunction hashFunction = Hashing.sha256();
+        requestHeaders.set("x-goog-encryption-algorithm", "AES256");
+        requestHeaders.set("x-goog-encryption-key", key);
+        requestHeaders.set("x-goog-encryption-key-sha256",
+            base64.encode(hashFunction.hashBytes(base64.decode(key)).asBytes()));
+      }
       HttpResponse response = httpRequest.execute();
       if (response.getStatusCode() != 200) {
         GoogleJsonError error = new GoogleJsonError();
@@ -615,7 +648,7 @@ public class DefaultStorageRpc implements StorageRpc {
     try {
       Long maxBytesRewrittenPerCall = req.megabytesRewrittenPerCall != null
           ? req.megabytesRewrittenPerCall * MEGABYTE : null;
-      com.google.api.services.storage.model.RewriteResponse rewriteResponse = storage.objects()
+      Storage.Objects.Rewrite rewrite = storage.objects()
           .rewrite(req.source.getBucket(), req.source.getName(), req.target.getBucket(),
               req.target.getName(), req.overrideInfo ? req.target : null)
           .setSourceGeneration(req.source.getGeneration())
@@ -630,8 +663,11 @@ public class DefaultStorageRpc implements StorageRpc {
           .setIfMetagenerationMatch(IF_METAGENERATION_MATCH.getLong(req.targetOptions))
           .setIfMetagenerationNotMatch(IF_METAGENERATION_NOT_MATCH.getLong(req.targetOptions))
           .setIfGenerationMatch(IF_GENERATION_MATCH.getLong(req.targetOptions))
-          .setIfGenerationNotMatch(IF_GENERATION_NOT_MATCH.getLong(req.targetOptions))
-          .execute();
+          .setIfGenerationNotMatch(IF_GENERATION_NOT_MATCH.getLong(req.targetOptions));
+      HttpHeaders requestHeaders = rewrite.getRequestHeaders();
+      setEncryptionHeaders(requestHeaders, SOURCE_ENCRYPTION_KEY_PREFIX, req.sourceOptions);
+      setEncryptionHeaders(requestHeaders, ENCRYPTION_KEY_PREFIX, req.targetOptions);
+      com.google.api.services.storage.model.RewriteResponse rewriteResponse = rewrite.execute();
       return new RewriteResponse(
           req,
           rewriteResponse.getResource(),
