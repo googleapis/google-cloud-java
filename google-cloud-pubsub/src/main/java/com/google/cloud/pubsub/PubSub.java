@@ -19,6 +19,7 @@ package com.google.cloud.pubsub;
 import com.google.cloud.AsyncPage;
 import com.google.cloud.GrpcServiceOptions.ExecutorFactory;
 import com.google.cloud.Page;
+import com.google.cloud.Policy;
 import com.google.cloud.Service;
 
 import java.util.Iterator;
@@ -655,7 +656,179 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
   Future<Void> modifyAckDeadlineAsync(String subscription, int deadline, TimeUnit unit,
       Iterable<String> ackIds);
 
-  // IAM Policy operations:  getPolicy, replacePolicy, testPermissions
-  // Not sure if ready (docs is not up-to-date)
-  // Looks like policy is per resource (topic or subscription) but not per service?
+  /**
+   * Returns the IAM access control policy for the specified topic. Returns {@code null} if the
+   * topic was not found.
+   *
+   * @throws PubSubException upon failure
+   */
+  Policy getTopicPolicy(String topic);
+
+  /**
+   * Sends a request for getting the IAM access control policy for the specified topic. This method
+   * returns a {@code Future} object to consume the result. {@link Future#get()} returns the
+   * requested policy or {@code null} if the topic was not found.
+   *
+   * @throws PubSubException upon failure
+   */
+  Future<Policy> getTopicPolicyAsync(String topic);
+
+  /**
+   * Sets the IAM access control policy for the specified topic. Replaces any existing policy. This
+   * method returns the new policy.
+   *
+   * <p>It is recommended that you use the read-modify-write pattern. This pattern entails reading
+   * the project's current policy, updating it locally, and then sending the modified policy for
+   * writing. Cloud IAM solves the problem of conflicting processes simultaneously attempting to
+   * modify a policy by using the {@link Policy#etag etag} property. This property is used to
+   * verify whether the policy has changed since the last request. When you make a request with an
+   * etag value, the value in the request is compared with the existing etag value associated with
+   * the policy. The policy is written only if the etag values match. If the etags don't match, a
+   * {@code PubSubException} is thrown, denoting that the server aborted update. If an etag is not
+   * provided, the policy is overwritten blindly.
+   *
+   * @throws PubSubException upon failure
+   */
+  Policy replaceTopicPolicy(String topic, Policy newPolicy);
+
+  /**
+   * Sends a request to set the IAM access control policy for the specified topic. Replaces any
+   * existing policy. This method returns a {@code Future} object to consume the result.
+   * {@link Future#get()} returns the new policy.
+   *
+   * <p>It is recommended that you use the read-modify-write pattern. This pattern entails reading
+   * the project's current policy, updating it locally, and then sending the modified policy for
+   * writing. Cloud IAM solves the problem of conflicting processes simultaneously attempting to
+   * modify a policy by using the {@link Policy#etag etag} property. This property is used to
+   * verify whether the policy has changed since the last request. When you make a request with an
+   * etag value, the value in the request is compared with the existing etag value associated with
+   * the policy. The policy is written only if the etag values match. If the etags don't match,
+   * {@link Future#get()} will throw a {@link java.util.concurrent.ExecutionException} caused by a
+   * {@code PubSubException}, denoting that the server aborted update. If an etag is not provided,
+   * the policy is overwritten blindly.
+   *
+   * @throws PubSubException upon failure
+   */
+  Future<Policy> replaceTopicPolicyAsync(String topic, Policy newPolicy);
+
+  /**
+   * Returns the permissions that a caller has on the specified topic.
+   *
+   * <p>You typically don't call this method if you're using Google Cloud Platform directly to
+   * manage permissions. This method is intended for integration with your proprietary software,
+   * such as a customized graphical user interface. For example, the Cloud Platform Console tests
+   * IAM permissions internally to determine which UI should be available to the logged-in user.
+   *
+   * @return A list of booleans representing whether the caller has the permissions specified (in
+   *     the order of the given permissions)
+   * @throws PubSubException upon failure
+   * @see <a href="https://cloud.google.com/pubsub/docs/access_control#permissions">
+   *     Permissions and Roles</a>
+   */
+  List<Boolean> testTopicPermissions(String topic, List<String> permissions);
+
+  /**
+   * Sends a request to get the permissions that a caller has on the specified topic.
+   *
+   * <p>You typically don't call this method if you're using Google Cloud Platform directly to
+   * manage permissions. This method is intended for integration with your proprietary software,
+   * such as a customized graphical user interface. For example, the Cloud Platform Console tests
+   * IAM permissions internally to determine which UI should be available to the logged-in user.
+   *
+   * @return A {@code Future} object to consume the result. {@link Future#get()} returns a list of
+   *     booleans representing whether the caller has the permissions specified (in the order of the
+   *     given permissions)
+   * @throws PubSubException upon failure
+   * @see <a href="https://cloud.google.com/pubsub/docs/access_control#permissions">
+   *     Permissions and Roles</a>
+   */
+  Future<List<Boolean>> testTopicPermissionsAsync(String topic, List<String> permissions);
+
+  /**
+   * Returns the IAM access control policy for the specified subscription. Returns {@code null} if
+   * the subscription was not found.
+   *
+   * @throws PubSubException upon failure
+   */
+  Policy getSubscriptionPolicy(String subscription);
+
+  /**
+   * Sends a request for getting the IAM access control policy for the specified subscription. This
+   * method returns a {@code Future} object to consume the result. {@link Future#get()} returns the
+   * requested policy or {@code null} if the subscription was not found.
+   *
+   * @throws PubSubException upon failure
+   */
+  Future<Policy> getSubscriptionPolicyAsync(String subscription);
+
+  /**
+   * Sets the IAM access control policy for the specified subscription. Replaces any existing
+   * policy. This method returns the new policy.
+   *
+   * <p>It is recommended that you use the read-modify-write pattern. This pattern entails reading
+   * the project's current policy, updating it locally, and then sending the modified policy for
+   * writing. Cloud IAM solves the problem of conflicting processes simultaneously attempting to
+   * modify a policy by using the {@link Policy#etag etag} property. This property is used to
+   * verify whether the policy has changed since the last request. When you make a request with an
+   * etag value, the value in the request is compared with the existing etag value associated with
+   * the policy. The policy is written only if the etag values match. If the etags don't match, a
+   * {@code PubSubException} is thrown, denoting that the server aborted update. If an etag is not
+   * provided, the policy is overwritten blindly.
+   *
+   * @throws PubSubException upon failure
+   */
+  Policy replaceSubscriptionPolicy(String subscription, Policy newPolicy);
+
+  /**
+   * Sends a request to set the IAM access control policy for the specified subscription. Replaces
+   * any existing policy. This method returns a {@code Future} object to consume the result.
+   * {@link Future#get()} returns the new policy.
+   *
+   * <p>It is recommended that you use the read-modify-write pattern. This pattern entails reading
+   * the project's current policy, updating it locally, and then sending the modified policy for
+   * writing. Cloud IAM solves the problem of conflicting processes simultaneously attempting to
+   * modify a policy by using the {@link Policy#etag etag} property. This property is used to
+   * verify whether the policy has changed since the last request. When you make a request with an
+   * etag value, the value in the request is compared with the existing etag value associated with
+   * the policy. The policy is written only if the etag values match. If the etags don't match,
+   * {@link Future#get()} will throw a {@link java.util.concurrent.ExecutionException} caused by a
+   * {@code PubSubException}, denoting that the server aborted update. If an etag is not provided,
+   * the policy is overwritten blindly.
+   *
+   * @throws PubSubException upon failure
+   */
+  Future<Policy> replaceSubscriptionPolicyAsync(String subscription, Policy newPolicy);
+
+  /**
+   * Returns the permissions that a caller has on the specified subscription. You typically don't
+   * call this method if you're using Google Cloud Platform directly to manage permissions. This
+   * method is intended for integration with your proprietary software, such as a customized
+   * graphical user interface. For example, the Cloud Platform Console tests IAM permissions
+   * internally to determine which UI should be available to the logged-in user.
+   *
+   * @return A list of booleans representing whether the caller has the permissions specified (in
+   *     the order of the given permissions)
+   * @throws PubSubException upon failure
+   * @see <a href="https://cloud.google.com/pubsub/docs/access_control#permissions">
+   *     Permissions and Roles</a>
+   */
+  List<Boolean> testSubscriptionPermissions(String subscription, List<String> permissions);
+
+  /**
+   * Sends a request to get the permissions that a caller has on the specified subscription.
+   *
+   * <p>You typically don't call this method if you're using Google Cloud Platform directly to
+   * manage permissions. This method is intended for integration with your proprietary software,
+   * such as a customized graphical user interface. For example, the Cloud Platform Console tests
+   * IAM permissions internally to determine which UI should be available to the logged-in user.
+   *
+   * @return A {@code Future} object to consume the result. {@link Future#get()} returns a list of
+   *     booleans representing whether the caller has the permissions specified (in the order of the
+   *     given permissions)
+   * @throws PubSubException upon failure
+   * @see <a href="https://cloud.google.com/pubsub/docs/access_control#permissions">
+   *     Permissions and Roles</a>
+   */
+  Future<List<Boolean>> testSubscriptionPermissionsAsync(String subscription,
+      List<String> permissions);
 }

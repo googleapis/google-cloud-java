@@ -20,6 +20,7 @@ import static com.google.cloud.pubsub.PubSub.ListOption.OptionType.PAGE_SIZE;
 import static com.google.cloud.pubsub.PubSub.ListOption.OptionType.PAGE_TOKEN;
 import static com.google.cloud.pubsub.PubSub.PullOption.OptionType.EXECUTOR_FACTORY;
 import static com.google.cloud.pubsub.PubSub.PullOption.OptionType.MAX_QUEUED_CALLBACKS;
+import static com.google.common.base.MoreObjects.firstNonNull;
 import static com.google.common.base.Preconditions.checkArgument;
 
 import com.google.cloud.AsyncPage;
@@ -27,6 +28,7 @@ import com.google.cloud.AsyncPageImpl;
 import com.google.cloud.BaseService;
 import com.google.cloud.Page;
 import com.google.cloud.PageImpl;
+import com.google.cloud.Policy;
 import com.google.cloud.pubsub.spi.PubSubRpc;
 import com.google.cloud.pubsub.spi.PubSubRpc.PullFuture;
 import com.google.cloud.pubsub.spi.v1.PublisherApi;
@@ -35,6 +37,7 @@ import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Function;
 import com.google.common.base.Throwables;
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Iterators;
 import com.google.common.collect.Lists;
@@ -42,6 +45,9 @@ import com.google.common.collect.Maps;
 import com.google.common.util.concurrent.Futures;
 import com.google.common.util.concurrent.ListenableFuture;
 import com.google.common.util.concurrent.Uninterruptibles;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.protobuf.Empty;
 import com.google.pubsub.v1.AcknowledgeRequest;
 import com.google.pubsub.v1.DeleteSubscriptionRequest;
@@ -65,6 +71,7 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
@@ -93,6 +100,13 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
         @Override
         public String apply(com.google.pubsub.v1.ReceivedMessage message) {
           return message.getAckId();
+        }
+      };
+  private static final Function<com.google.iam.v1.Policy, Policy> POLICY_TO_PB_FUNCTION =
+      new Function<com.google.iam.v1.Policy, Policy>() {
+        @Override
+        public Policy apply(com.google.iam.v1.Policy policyPb) {
+          return policyPb == null ? null : PolicyMarshaller.INSTANCE.fromPb(policyPb);
         }
       };
 
@@ -599,6 +613,102 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
         .addAllAckIds(ackIds)
         .build();
     return transform(rpc.modify(request), EMPTY_TO_VOID_FUNCTION);
+  }
+
+  @Override
+  public Policy getTopicPolicy(String topic) {
+    return get(getTopicPolicyAsync(topic));
+  }
+
+  @Override
+  public Future<Policy> getTopicPolicyAsync(String topic) {
+    return transform(rpc.getIamPolicy(PublisherApi.formatTopicName(options().projectId(), topic)),
+        POLICY_TO_PB_FUNCTION);
+  }
+
+  @Override
+  public Policy replaceTopicPolicy(String topic, Policy newPolicy) {
+    return get(replaceTopicPolicyAsync(topic, newPolicy));
+  }
+
+  @Override
+  public Future<Policy> replaceTopicPolicyAsync(String topic, Policy newPolicy) {
+    SetIamPolicyRequest request = SetIamPolicyRequest.newBuilder()
+        .setPolicy(PolicyMarshaller.INSTANCE.toPb(newPolicy))
+        .setResource(PublisherApi.formatTopicName(options().projectId(), topic))
+        .build();
+    return transform(rpc.setIamPolicy(request), POLICY_TO_PB_FUNCTION);
+  }
+
+  @Override
+  public List<Boolean> testTopicPermissions(String topic, final List<String> permissions) {
+    return get(testTopicPermissionsAsync(topic, permissions));
+  }
+
+  @Override
+  public Future<List<Boolean>> testTopicPermissionsAsync(String topic, List<String> permissions) {
+    TestIamPermissionsRequest request = TestIamPermissionsRequest.newBuilder()
+        .setResource(PublisherApi.formatTopicName(options().projectId(), topic))
+        .addAllPermissions(permissions)
+        .build();
+    return transform(rpc.testIamPermissions(request), permissionsFromPbFunction(permissions));
+  }
+
+  @Override
+  public Policy getSubscriptionPolicy(String subscription) {
+    return get(getSubscriptionPolicyAsync(subscription));
+  }
+
+  @Override
+  public Future<Policy> getSubscriptionPolicyAsync(String subscription) {
+    return transform(
+        rpc.getIamPolicy(SubscriberApi.formatSubscriptionName(options().projectId(), subscription)),
+        POLICY_TO_PB_FUNCTION);
+  }
+
+  @Override
+  public Policy replaceSubscriptionPolicy(String subscription, Policy newPolicy) {
+    return get(replaceSubscriptionPolicyAsync(subscription, newPolicy));
+  }
+
+  @Override
+  public Future<Policy> replaceSubscriptionPolicyAsync(String subscription, Policy newPolicy) {
+    SetIamPolicyRequest request = SetIamPolicyRequest.newBuilder()
+        .setPolicy(PolicyMarshaller.INSTANCE.toPb(newPolicy))
+        .setResource(SubscriberApi.formatSubscriptionName(options().projectId(), subscription))
+        .build();
+    return transform(rpc.setIamPolicy(request), POLICY_TO_PB_FUNCTION);
+  }
+
+  @Override
+  public List<Boolean> testSubscriptionPermissions(String subscription, List<String> permissions) {
+    return get(testSubscriptionPermissionsAsync(subscription, permissions));
+  }
+
+  @Override
+  public Future<List<Boolean>> testSubscriptionPermissionsAsync(String subscription,
+      List<String> permissions) {
+    TestIamPermissionsRequest request = TestIamPermissionsRequest.newBuilder()
+        .setResource(SubscriberApi.formatSubscriptionName(options().projectId(), subscription))
+        .addAllPermissions(permissions)
+        .build();
+    return transform(rpc.testIamPermissions(request), permissionsFromPbFunction(permissions));
+  }
+
+  private static Function<TestIamPermissionsResponse, List<Boolean>> permissionsFromPbFunction(
+      final List<String> permissions) {
+    return new Function<TestIamPermissionsResponse, List<Boolean>>() {
+      @Override
+      public List<Boolean> apply(TestIamPermissionsResponse response) {
+        Set<String> permissionsOwned = ImmutableSet.copyOf(
+            firstNonNull(response.getPermissionsList(), ImmutableList.<String>of()));
+        ImmutableList.Builder<Boolean> answer = ImmutableList.builder();
+        for (String permission : permissions) {
+          answer.add(permissionsOwned.contains(permission));
+        }
+        return answer.build();
+      }
+    };
   }
 
   static <T extends Option.OptionType> Map<Option.OptionType, ?> optionMap(Option... options) {

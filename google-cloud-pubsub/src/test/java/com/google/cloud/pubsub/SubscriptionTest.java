@@ -27,6 +27,9 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
+import com.google.cloud.Identity;
+import com.google.cloud.Policy;
+import com.google.cloud.Role;
 import com.google.cloud.pubsub.PubSub.MessageConsumer;
 import com.google.cloud.pubsub.PubSub.MessageProcessor;
 import com.google.cloud.pubsub.PubSub.PullOption;
@@ -64,6 +67,9 @@ public class SubscriptionTest {
           .setMessage(MESSAGE2.toPb())
           .setAckId("ackId2")
           .build();
+  private static final Policy POLICY = Policy.builder()
+      .addIdentity(Role.viewer(), Identity.allAuthenticatedUsers())
+      .build();
 
   private final PubSub serviceMockReturnsOptions = createStrictMock(PubSub.class);
   private final PubSubOptions mockOptions = createStrictMock(PubSubOptions.class);
@@ -314,6 +320,86 @@ public class SubscriptionTest {
     assertSame(messageConsumer,
         subscription.pullAsync(messageProcessor, PullOption.maxQueuedCallbacks(2)));
     verify(messageConsumer, messageProcessor);
+  }
+
+  @Test
+  public void testGetPolicy() {
+    initializeExpectedSubscription(1);
+    expect(pubsub.options()).andReturn(mockOptions);
+    expect(pubsub.getSubscriptionPolicy(NAME)).andReturn(POLICY);
+    replay(pubsub);
+    initializeSubscription();
+    Policy policy = subscription.getPolicy();
+    assertEquals(POLICY, policy);
+  }
+
+  @Test
+  public void testGetPolicyNull() {
+    initializeExpectedSubscription(1);
+    expect(pubsub.options()).andReturn(mockOptions);
+    expect(pubsub.getSubscriptionPolicy(NAME)).andReturn(null);
+    replay(pubsub);
+    initializeSubscription();
+    assertNull(subscription.getPolicy());
+  }
+
+  @Test
+  public void testGetPolicyAsync() throws ExecutionException, InterruptedException {
+    initializeExpectedSubscription(1);
+    expect(pubsub.options()).andReturn(mockOptions);
+    expect(pubsub.getSubscriptionPolicyAsync(NAME)).andReturn(Futures.immediateFuture(POLICY));
+    replay(pubsub);
+    initializeSubscription();
+    Policy policy = subscription.getPolicyAsync().get();
+    assertEquals(POLICY, policy);
+  }
+
+  @Test
+  public void testReplacePolicy() {
+    initializeExpectedSubscription(1);
+    expect(pubsub.options()).andReturn(mockOptions);
+    expect(pubsub.replaceSubscriptionPolicy(NAME, POLICY)).andReturn(POLICY);
+    replay(pubsub);
+    initializeSubscription();
+    Policy policy = subscription.replacePolicy(POLICY);
+    assertEquals(POLICY, policy);
+  }
+
+  @Test
+  public void testReplacePolicyAsync() throws ExecutionException, InterruptedException {
+    initializeExpectedSubscription(1);
+    expect(pubsub.options()).andReturn(mockOptions);
+    expect(pubsub.replaceSubscriptionPolicyAsync(NAME, POLICY))
+        .andReturn(Futures.immediateFuture(POLICY));
+    replay(pubsub);
+    initializeSubscription();
+    Policy policy = subscription.replacePolicyAsync(POLICY).get();
+    assertEquals(POLICY, policy);
+  }
+
+  @Test
+  public void testTestPermissions() {
+    List<String> permissions = ImmutableList.of("pubsub.subscriptions.get");
+    List<Boolean> permissionsResult = ImmutableList.of(true);
+    initializeExpectedSubscription(1);
+    expect(pubsub.options()).andReturn(mockOptions);
+    expect(pubsub.testSubscriptionPermissions(NAME, permissions)).andReturn(permissionsResult);
+    replay(pubsub);
+    initializeSubscription();
+    assertEquals(permissionsResult, subscription.testPermissions(permissions));
+  }
+
+  @Test
+  public void testTestPermissionsAsync() throws ExecutionException, InterruptedException {
+    List<String> permissions = ImmutableList.of("pubsub.subscriptions.get");
+    List<Boolean> permissionsResult = ImmutableList.of(true);
+    initializeExpectedSubscription(1);
+    expect(pubsub.options()).andReturn(mockOptions);
+    expect(pubsub.testSubscriptionPermissionsAsync(NAME, permissions))
+        .andReturn(Futures.immediateFuture(permissionsResult));
+    replay(pubsub);
+    initializeSubscription();
+    assertEquals(permissionsResult, subscription.testPermissionsAsync(permissions).get());
   }
 
   private void compareSubscription(Subscription expected, Subscription value) {
