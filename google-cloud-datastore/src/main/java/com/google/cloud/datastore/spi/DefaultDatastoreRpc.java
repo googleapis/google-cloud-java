@@ -93,6 +93,11 @@ public class DefaultDatastoreRpc implements DatastoreRpc {
 
   private static DatastoreException translate(
       com.google.datastore.v1.client.DatastoreException exception) {
+    return translate(exception, true);
+  }
+
+  private static DatastoreException translate(
+      com.google.datastore.v1.client.DatastoreException exception, boolean idempotent) {
     String reason = "";
     if (exception.getCode() != null) {
       reason = exception.getCode().name();
@@ -103,7 +108,7 @@ public class DefaultDatastoreRpc implements DatastoreRpc {
       }
     }
     return new DatastoreException(
-        exception.getCode().getNumber(), exception.getMessage(), reason, exception);
+        exception.getCode().getNumber(), exception.getMessage(), reason, idempotent, exception);
   }
 
   @Override
@@ -111,7 +116,6 @@ public class DefaultDatastoreRpc implements DatastoreRpc {
     try {
       return client.allocateIds(request);
     } catch (com.google.datastore.v1.client.DatastoreException ex) {
-
       throw translate(ex);
     }
   }
@@ -130,7 +134,7 @@ public class DefaultDatastoreRpc implements DatastoreRpc {
     try {
       return client.commit(request);
     } catch (com.google.datastore.v1.client.DatastoreException ex) {
-      throw translate(ex);
+      throw translate(ex, request.getMode() == CommitRequest.Mode.NON_TRANSACTIONAL);
     }
   }
 

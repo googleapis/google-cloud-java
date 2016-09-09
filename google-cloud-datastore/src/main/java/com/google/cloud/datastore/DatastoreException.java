@@ -38,11 +38,16 @@ public final class DatastoreException extends BaseServiceException {
   private static final long serialVersionUID = 2663750991205874435L;
 
   public DatastoreException(int code, String message, String reason) {
-    this(code, message, reason, null);
+    this(code, message, reason, true, null);
   }
 
   public DatastoreException(int code, String message, String reason, Throwable cause) {
     super(code, message, reason, true, cause);
+  }
+
+  public DatastoreException(int code, String message, String reason, boolean idempotent,
+      Throwable cause) {
+    super(code, message, reason, idempotent, cause);
   }
 
   public DatastoreException(IOException exception) {
