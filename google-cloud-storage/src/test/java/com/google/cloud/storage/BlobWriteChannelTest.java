@@ -31,7 +31,6 @@ import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 import com.google.cloud.RestorableState;
-import com.google.cloud.RetryParams;
 import com.google.cloud.WriteChannel;
 import com.google.cloud.storage.spi.StorageRpc;
 import com.google.cloud.storage.spi.StorageRpcFactory;
@@ -41,9 +40,12 @@ import org.easymock.Capture;
 import org.easymock.CaptureType;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 
 import java.io.IOException;
+import java.net.SocketException;
 import java.nio.ByteBuffer;
 import java.util.Arrays;
 import java.util.Map;
@@ -61,6 +63,9 @@ public class BlobWriteChannelTest {
   private static final int CUSTOM_CHUNK_SIZE = 4 * MIN_CHUNK_SIZE;
   private static final Random RANDOM = new Random();
 
+  @Rule
+  public ExpectedException thrown = ExpectedException.none();
+
   private StorageOptions options;
   private StorageRpcFactory rpcFactoryMock;
   private StorageRpc storageRpcMock;
@@ -70,13 +75,11 @@ public class BlobWriteChannelTest {
   public void setUp() {
     rpcFactoryMock = createMock(StorageRpcFactory.class);
     storageRpcMock = createMock(StorageRpc.class);
-    expect(rpcFactoryMock.create(anyObject(StorageOptions.class)))
-        .andReturn(storageRpcMock);
+    expect(rpcFactoryMock.create(anyObject(StorageOptions.class))).andReturn(storageRpcMock);
     replay(rpcFactoryMock);
     options = StorageOptions.builder()
         .projectId("projectid")
         .serviceRpcFactory(rpcFactoryMock)
-        .retryParams(RetryParams.noRetries())
         .build();
   }
 
@@ -91,6 +94,25 @@ public class BlobWriteChannelTest {
     replay(storageRpcMock);
     writer = new BlobWriteChannel(options, BLOB_INFO, EMPTY_RPC_OPTIONS);
     assertTrue(writer.isOpen());
+  }
+
+  @Test
+  public void testCreateRetryableError() {
+    StorageException exception = new StorageException(new SocketException("Socket closed"));
+    expect(storageRpcMock.open(BLOB_INFO.toPb(), EMPTY_RPC_OPTIONS)).andThrow(exception);
+    expect(storageRpcMock.open(BLOB_INFO.toPb(), EMPTY_RPC_OPTIONS)).andReturn(UPLOAD_ID);
+    replay(storageRpcMock);
+    writer = new BlobWriteChannel(options, BLOB_INFO, EMPTY_RPC_OPTIONS);
+    assertTrue(writer.isOpen());
+  }
+
+  @Test
+  public void testCreateNonRetryableError() {
+    expect(storageRpcMock.open(BLOB_INFO.toPb(), EMPTY_RPC_OPTIONS))
+        .andThrow(new RuntimeException());
+    replay(storageRpcMock);
+    thrown.expect(RuntimeException.class);
+    new BlobWriteChannel(options, BLOB_INFO, EMPTY_RPC_OPTIONS);
   }
 
   @Test
