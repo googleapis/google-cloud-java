@@ -22,6 +22,7 @@ import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.cloud.Page;
+import com.google.cloud.storage.Acl.Entity;
 import com.google.cloud.storage.Storage.BlobGetOption;
 import com.google.cloud.storage.Storage.BlobListOption;
 import com.google.cloud.storage.Storage.BucketTargetOption;
@@ -433,7 +434,7 @@ public class Bucket extends BucketInfo {
     }
 
     @Override
-    Builder owner(Acl.Entity owner) {
+    Builder owner(Entity owner) {
       infoBuilder.owner(owner);
       return this;
     }
@@ -636,8 +637,8 @@ public class Bucket extends BucketInfo {
   /**
    * Returns the requested blob in this bucket or {@code null} if not found.
    *
-   * <p>Example of getting a blob in the bucket, only if its metageneration matches a value, otherwise
-   * a {@link StorageException} is thrown.
+   * <p>Example of getting a blob in the bucket, only if its metageneration matches a value,
+   * otherwise a {@link StorageException} is thrown.
    * <pre> {@code
    * String blobName = "my_blob_name";
    * long generation = 42;
@@ -814,6 +815,180 @@ public class Bucket extends BucketInfo {
     StorageRpc.Tuple<BlobInfo, Storage.BlobWriteOption[]> write =
         BlobWriteOption.toWriteOptions(blobInfo, options);
     return storage.create(write.x(), content, write.y());
+  }
+
+  /**
+   * Returns the ACL entry for the specified entity on this bucket or {@code null} if not found.
+   *
+   * <p>Example of getting the ACL entry for an entity.
+   * <pre> {@code
+   * Acl acl = bucket.getAcl(User.ofAllAuthenticatedUsers());
+   * }</pre>
+   *
+   * @throws StorageException upon failure
+   */
+  public Acl getAcl(Entity entity) {
+    return storage.getAcl(name(), entity);
+  }
+
+  /**
+   * Deletes the ACL entry for the specified entity on this bucket.
+   *
+   * <p>Example of deleting the ACL entry for an entity.
+   * <pre> {@code
+   * boolean deleted = bucket.deleteAcl(User.ofAllAuthenticatedUsers());
+   * if (deleted) {
+   *   // the acl entry was deleted
+   * } else {
+   *   // the acl entry was not found
+   * }
+   * }</pre>
+   *
+   * @return {@code true} if the ACL was deleted, {@code false} if it was not found
+   * @throws StorageException upon failure
+   */
+  public boolean deleteAcl(Entity entity) {
+    return storage.deleteAcl(name(), entity);
+  }
+
+  /**
+   * Creates a new ACL entry on this bucket.
+   *
+   * <p>Example of creating a new ACL entry.
+   * <pre> {@code
+   * Acl acl = bucket.createAcl(Acl.of(User.ofAllAuthenticatedUsers(), Acl.Role.READER));
+   * }</pre>
+   *
+   * @throws StorageException upon failure
+   */
+  public Acl createAcl(Acl acl) {
+    return storage.createAcl(name(), acl);
+  }
+
+  /**
+   * Updates an ACL entry on this bucket.
+   *
+   * <p>Example of updating a new ACL entry.
+   * <pre> {@code
+   * Acl acl = bucket.updateAcl(Acl.of(User.ofAllAuthenticatedUsers(), Acl.Role.OWNER));
+   * }</pre>
+   *
+   * @throws StorageException upon failure
+   */
+  public Acl updateAcl(Acl acl) {
+    return storage.updateAcl(name(), acl);
+  }
+
+  /**
+   * Lists the ACL entries for this bucket.
+   *
+   * <p>Example of listing the ACL entries.
+   * <pre> {@code
+   * List<Acl> acls = bucket.listAcls();
+   * for (Acl acl : acls) {
+   *   // do something with ACL entry
+   * }
+   * }</pre>
+   *
+   * @throws StorageException upon failure
+   */
+  public List<Acl> listAcls() {
+    return storage.listAcls(name());
+  }
+
+  /**
+   * Returns the default object ACL entry for the specified entity on this bucket or {@code null} if
+   * not found.
+   *
+   * <p>Default ACLs are applied to a new blob within the bucket when no ACL was provided for that
+   * blob.
+   *
+   * <p>Example of getting the default ACL entry for an entity.
+   * <pre> {@code
+   * Acl acl = bucket.getDefaultAcl(User.ofAllAuthenticatedUsers());
+   * }</pre>
+   *
+   * @throws StorageException upon failure
+   */
+  public Acl getDefaultAcl(Entity entity) {
+    return storage.getDefaultAcl(name(), entity);
+  }
+
+  /**
+   * Deletes the default object ACL entry for the specified entity on this bucket.
+   *
+   * <p>Default ACLs are applied to a new blob within the bucket when no ACL was provided for that
+   * blob.
+   *
+   * <p>Example of deleting the default ACL entry for an entity.
+   * <pre> {@code
+   * boolean deleted = bucket.deleteDefaultAcl(User.ofAllAuthenticatedUsers());
+   * if (deleted) {
+   *   // the acl entry was deleted
+   * } else {
+   *   // the acl entry was not found
+   * }
+   * }</pre>
+   *
+   * @return {@code true} if the ACL was deleted, {@code false} if it was not found
+   * @throws StorageException upon failure
+   */
+  public boolean deleteDefaultAcl(Entity entity) {
+    return storage.deleteDefaultAcl(name(), entity);
+  }
+
+  /**
+   * Creates a new default blob ACL entry on this bucket.
+   *
+   * <p>Default ACLs are applied to a new blob within the bucket when no ACL was provided for that
+   * blob.
+   *
+   * <p>Example of creating a new default ACL entry.
+   * <pre> {@code
+   * Acl acl = bucket.createDefaultAcl(Acl.of(User.ofAllAuthenticatedUsers(), Acl.Role.READER));
+   * }</pre>
+   *
+   * @throws StorageException upon failure
+   */
+  public Acl createDefaultAcl(Acl acl) {
+    return storage.createDefaultAcl(name(), acl);
+  }
+
+  /**
+   * Updates a default blob ACL entry on this bucket.
+   *
+   * <p>Default ACLs are applied to a new blob within the bucket when no ACL was provided for that
+   * blob.
+   *
+   * <p>Example of updating a new default ACL entry.
+   * <pre> {@code
+   * Acl acl = bucket.updateDefaultAcl(Acl.of(User.ofAllAuthenticatedUsers(), Acl.Role.OWNER));
+   * }</pre>
+   *
+   * @throws StorageException upon failure
+   */
+  public Acl updateDefaultAcl(Acl acl) {
+    return storage.updateDefaultAcl(name(), acl);
+  }
+
+  /**
+   * Lists the default blob ACL entries for this bucket.
+   *
+   * <p>Default ACLs are applied to a new blob within the bucket when no ACL was provided for that
+   * blob.
+   *
+   * <p>Example of listing the default ACL entries.
+   * <pre> {@code
+   * List<Acl> acls = bucket.listDefaultAcls();
+   * for (Acl acl : acls) {
+   *   // do something with ACL entry
+   * }
+   * }</pre>
+   *
+   * @throws StorageException upon failure
+   */
+  public List<Acl> listDefaultAcls() {
+    return storage.listDefaultAcls(name());
   }
 
   /**

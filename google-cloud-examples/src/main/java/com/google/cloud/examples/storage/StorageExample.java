@@ -582,7 +582,7 @@ public class StorageExample {
           System.out.printf("Bucket %s does not exist%n", blobId.bucket());
           return;
         }
-        bucket.toBuilder().acl(addAcl(bucket.acl(), acl)).build().update();
+        acl = bucket.createAcl(acl);
         System.out.printf("Added ACL %s to bucket %s%n", acl, blobId.bucket());
       } else {
         Blob blob = storage.get(blobId);
@@ -590,15 +590,9 @@ public class StorageExample {
           System.out.printf("Blob %s does not exist%n", blobId);
           return;
         }
-        blob.toBuilder().acl(addAcl(blob.acl(), acl)).build().update();
+        acl = blob.createAcl(acl);
         System.out.printf("Added ACL %s to blob %s%n", acl, blobId);
       }
-    }
-
-    private static List<Acl> addAcl(List<Acl> acls, Acl newAcl) {
-      List<Acl> newAcls = new LinkedList<>(acls);
-      newAcls.add(newAcl);
-      return newAcls;
     }
   }
 

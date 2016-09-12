@@ -28,6 +28,7 @@ import com.google.cloud.ReadChannel;
 import com.google.cloud.ServiceAccountSigner;
 import com.google.cloud.ServiceAccountSigner.SigningException;
 import com.google.cloud.WriteChannel;
+import com.google.cloud.storage.Acl.Entity;
 import com.google.cloud.storage.Storage.BlobTargetOption;
 import com.google.cloud.storage.Storage.BlobWriteOption;
 import com.google.cloud.storage.Storage.CopyRequest;
@@ -230,7 +231,7 @@ public class Blob extends BlobInfo {
     }
 
     @Override
-    Builder owner(Acl.Entity owner) {
+    Builder owner(Entity owner) {
       infoBuilder.owner(owner);
       return this;
     }
@@ -600,6 +601,85 @@ public class Blob extends BlobInfo {
    */
   public URL signUrl(long duration, TimeUnit unit, SignUrlOption... options) {
     return storage.signUrl(this, duration, unit, options);
+  }
+
+  /**
+   * Returns the ACL entry for the specified entity on this blob or {@code null} if not found.
+   *
+   * <p>Example of getting the ACL entry for an entity.
+   * <pre> {@code
+   * Acl acl = blob.getAcl(User.ofAllAuthenticatedUsers());
+   * }</pre>
+   *
+   * @throws StorageException upon failure
+   */
+  public Acl getAcl(Entity entity) {
+    return storage.getAcl(blobId(), entity);
+  }
+
+  /**
+   * Deletes the ACL entry for the specified entity on this blob.
+   *
+   * <p>Example of deleting the ACL entry for an entity.
+   * <pre> {@code
+   * boolean deleted = blob.deleteAcl(User.ofAllAuthenticatedUsers());
+   * if (deleted) {
+   *   // the acl entry was deleted
+   * } else {
+   *   // the acl entry was not found
+   * }
+   * }</pre>
+   *
+   * @return {@code true} if the ACL was deleted, {@code false} if it was not found
+   * @throws StorageException upon failure
+   */
+  public boolean deleteAcl(Entity entity) {
+    return storage.deleteAcl(blobId(), entity);
+  }
+
+  /**
+   * Creates a new ACL entry on this blob.
+   *
+   * <p>Example of creating a new ACL entry.
+   * <pre> {@code
+   * Acl acl = blob.createAcl(Acl.of(User.ofAllAuthenticatedUsers(), Acl.Role.READER));
+   * }</pre>
+   *
+   * @throws StorageException upon failure
+   */
+  public Acl createAcl(Acl acl) {
+    return storage.createAcl(blobId(), acl);
+  }
+
+  /**
+   * Updates an ACL entry on this blob.
+   *
+   * <p>Example of updating a new ACL entry.
+   * <pre> {@code
+   * Acl acl = blob.updateAcl(Acl.of(User.ofAllAuthenticatedUsers(), Acl.Role.OWNER));
+   * }</pre>
+   *
+   * @throws StorageException upon failure
+   */
+  public Acl updateAcl(Acl acl) {
+    return storage.updateAcl(blobId(), acl);
+  }
+
+  /**
+   * Lists the ACL entries for this blob.
+   *
+   * <p>Example of listing the ACL entries.
+   * <pre> {@code
+   * List<Acl> acls = blob.listAcls();
+   * for (Acl acl : acls) {
+   *   // do something with ACL entry
+   * }
+   * }</pre>
+   *
+   * @throws StorageException upon failure
+   */
+  public List<Acl> listAcls() {
+    return storage.listAcls(blobId());
   }
 
   /**

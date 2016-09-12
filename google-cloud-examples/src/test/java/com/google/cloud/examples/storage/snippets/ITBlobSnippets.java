@@ -21,9 +21,11 @@ import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
+import com.google.cloud.storage.Acl;
 import com.google.cloud.storage.Blob;
 import com.google.cloud.storage.BlobId;
 import com.google.cloud.storage.BlobInfo;
@@ -32,6 +34,7 @@ import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageException;
 import com.google.cloud.storage.testing.RemoteStorageHelper;
 import com.google.common.collect.ImmutableMap;
+import com.google.common.collect.Sets;
 
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
@@ -43,6 +46,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.Set;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
@@ -101,6 +105,7 @@ public class ITBlobSnippets {
     copiedBlob.delete();
     copiedBlob = blobSnippets.copyToBucket(BUCKET);
     assertNotNull(copiedBlob);
+    copiedBlob.delete();
     blobSnippets.reload();
     blobSnippets.writer();
     URL signedUrl = blobSnippets.signUrl();
@@ -117,6 +122,15 @@ public class ITBlobSnippets {
       assertArrayEquals(CONTENT, readBytes);
     }
     assertFalse(blobSnippets.delete());
+    blobSnippets = new BlobSnippets(storage.get(blob.bucket(), blob.name()));
+    assertNull(blobSnippets.getAcl());
+    assertNotNull(blobSnippets.createAcl());
+    Acl updatedAcl = blobSnippets.updateAcl();
+    assertEquals(Acl.Role.OWNER, updatedAcl.role());
+    Set<Acl> acls = Sets.newHashSet(blobSnippets.listAcls());
+    assertTrue(acls.contains(updatedAcl));
+    assertTrue(blobSnippets.deleteAcl());
+    assertNull(blobSnippets.getAcl());
     storage.delete(BlobId.of(BUCKET, BLOB));
   }
 }

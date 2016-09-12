@@ -16,8 +16,6 @@
 
 package com.google.cloud.storage;
 
-import static com.google.cloud.storage.Acl.Project.ProjectRole.VIEWERS;
-import static com.google.cloud.storage.Acl.Role.READER;
 import static com.google.cloud.storage.Acl.Role.WRITER;
 import static org.easymock.EasyMock.createMock;
 import static org.easymock.EasyMock.createStrictMock;
@@ -32,6 +30,8 @@ import static org.junit.Assert.assertTrue;
 import com.google.cloud.Page;
 import com.google.cloud.PageImpl;
 import com.google.cloud.storage.Acl.Project;
+import com.google.cloud.storage.Acl.Project.ProjectRole;
+import com.google.cloud.storage.Acl.Role;
 import com.google.cloud.storage.Acl.User;
 import com.google.cloud.storage.BucketInfo.AgeDeleteRule;
 import com.google.cloud.storage.BucketInfo.DeleteRule;
@@ -53,8 +53,9 @@ import java.util.List;
 
 public class BucketTest {
 
-  private static final List<Acl> ACL = ImmutableList.of(
-      Acl.of(User.ofAllAuthenticatedUsers(), READER), Acl.of(new Project(VIEWERS, "p1"), WRITER));
+  private static final Acl ACL = Acl.of(User.ofAllAuthenticatedUsers(), Role.OWNER);
+  private static final Acl OTHER_ACL = Acl.of(new Project(ProjectRole.OWNERS, "p"), Role.READER);
+  private static final List<Acl> ACLS = ImmutableList.of(ACL, OTHER_ACL);
   private static final String ETAG = "0xFF00";
   private static final String GENERATED_ID = "B/N:1";
   private static final Long META_GENERATION = 10L;
@@ -72,7 +73,7 @@ public class BucketTest {
   private static final String STORAGE_CLASS = "STANDARD";
   private static final Boolean VERSIONING_ENABLED = true;
   private static final BucketInfo FULL_BUCKET_INFO = BucketInfo.builder("b")
-      .acl(ACL)
+      .acl(ACLS)
       .etag(ETAG)
       .generatedId(GENERATED_ID)
       .metageneration(META_GENERATION)
@@ -476,6 +477,112 @@ public class BucketTest {
   }
 
   @Test
+  public void testGetAcl() throws Exception {
+    initializeExpectedBucket(4);
+    expect(storage.options()).andReturn(mockOptions);
+    expect(storage.getAcl(BUCKET_INFO.name(), User.ofAllAuthenticatedUsers())).andReturn(ACL);
+    replay(storage);
+    initializeBucket();
+    assertEquals(ACL, bucket.getAcl(User.ofAllAuthenticatedUsers()));
+  }
+
+  @Test
+  public void testDeleteAcl() throws Exception {
+    initializeExpectedBucket(4);
+    expect(storage.options()).andReturn(mockOptions);
+    expect(storage.deleteAcl(BUCKET_INFO.name(), User.ofAllAuthenticatedUsers())).andReturn(true);
+    replay(storage);
+    initializeBucket();
+    assertTrue(bucket.deleteAcl(User.ofAllAuthenticatedUsers()));
+  }
+
+  @Test
+  public void testCreateAcl() throws Exception {
+    initializeExpectedBucket(4);
+    expect(storage.options()).andReturn(mockOptions);
+    Acl returnedAcl = ACL.toBuilder().etag("ETAG").id("ID").build();
+    expect(storage.createAcl(BUCKET_INFO.name(), ACL)).andReturn(returnedAcl);
+    replay(storage);
+    initializeBucket();
+    assertEquals(returnedAcl, bucket.createAcl(ACL));
+  }
+
+  @Test
+  public void testUpdateAcl() throws Exception {
+    initializeExpectedBucket(4);
+    expect(storage.options()).andReturn(mockOptions);
+    Acl returnedAcl = ACL.toBuilder().etag("ETAG").id("ID").build();
+    expect(storage.updateAcl(BUCKET_INFO.name(), ACL)).andReturn(returnedAcl);
+    replay(storage);
+    initializeBucket();
+    assertEquals(returnedAcl, bucket.updateAcl(ACL));
+  }
+
+  @Test
+  public void testListAcls() throws Exception {
+    initializeExpectedBucket(4);
+    expect(storage.options()).andReturn(mockOptions);
+    expect(storage.listAcls(BUCKET_INFO.name())).andReturn(ACLS);
+    replay(storage);
+    initializeBucket();
+    assertEquals(ACLS, bucket.listAcls());
+  }
+
+  @Test
+  public void testGetDefaultAcl() throws Exception {
+    initializeExpectedBucket(4);
+    expect(storage.options()).andReturn(mockOptions);
+    expect(storage.getDefaultAcl(BUCKET_INFO.name(), User.ofAllAuthenticatedUsers()))
+        .andReturn(ACL);
+    replay(storage);
+    initializeBucket();
+    assertEquals(ACL, bucket.getDefaultAcl(User.ofAllAuthenticatedUsers()));
+  }
+
+  @Test
+  public void testDeleteDefaultAcl() throws Exception {
+    initializeExpectedBucket(4);
+    expect(storage.options()).andReturn(mockOptions);
+    expect(storage.deleteDefaultAcl(BUCKET_INFO.name(), User.ofAllAuthenticatedUsers()))
+        .andReturn(true);
+    replay(storage);
+    initializeBucket();
+    assertTrue(bucket.deleteDefaultAcl(User.ofAllAuthenticatedUsers()));
+  }
+
+  @Test
+  public void testCreateDefaultAcl() throws Exception {
+    initializeExpectedBucket(4);
+    expect(storage.options()).andReturn(mockOptions);
+    Acl returnedAcl = ACL.toBuilder().etag("ETAG").id("ID").build();
+    expect(storage.createDefaultAcl(BUCKET_INFO.name(), ACL)).andReturn(returnedAcl);
+    replay(storage);
+    initializeBucket();
+    assertEquals(returnedAcl, bucket.createDefaultAcl(ACL));
+  }
+
+  @Test
+  public void testUpdateDefaultAcl() throws Exception {
+    initializeExpectedBucket(4);
+    expect(storage.options()).andReturn(mockOptions);
+    Acl returnedAcl = ACL.toBuilder().etag("ETAG").id("ID").build();
+    expect(storage.updateDefaultAcl(BUCKET_INFO.name(), ACL)).andReturn(returnedAcl);
+    replay(storage);
+    initializeBucket();
+    assertEquals(returnedAcl, bucket.updateDefaultAcl(ACL));
+  }
+
+  @Test
+  public void testListDefaultAcls() throws Exception {
+    initializeExpectedBucket(4);
+    expect(storage.options()).andReturn(mockOptions);
+    expect(storage.listDefaultAcls(BUCKET_INFO.name())).andReturn(ACLS);
+    replay(storage);
+    initializeBucket();
+    assertEquals(ACLS, bucket.listDefaultAcls());
+  }
+
+  @Test
   public void testToBuilder() {
     expect(storage.options()).andReturn(mockOptions).times(4);
     replay(storage);
@@ -492,7 +599,7 @@ public class BucketTest {
     replay(storage);
     Bucket.Builder builder =
         new Bucket.Builder(new Bucket(storage, new BucketInfo.BuilderImpl(BUCKET_INFO)));
-    Bucket bucket = builder.acl(ACL)
+    Bucket bucket = builder.acl(ACLS)
         .etag(ETAG)
         .generatedId(GENERATED_ID)
         .metageneration(META_GENERATION)
@@ -509,7 +616,7 @@ public class BucketTest {
         .versioningEnabled(VERSIONING_ENABLED)
         .build();
     assertEquals("b", bucket.name());
-    assertEquals(ACL, bucket.acl());
+    assertEquals(ACLS, bucket.acl());
     assertEquals(ETAG, bucket.etag());
     assertEquals(GENERATED_ID, bucket.generatedId());
     assertEquals(META_GENERATION, bucket.metageneration());

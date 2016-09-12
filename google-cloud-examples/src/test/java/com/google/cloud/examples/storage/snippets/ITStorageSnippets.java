@@ -21,17 +21,21 @@ import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 import com.google.cloud.Page;
+import com.google.cloud.storage.Acl;
 import com.google.cloud.storage.Blob;
+import com.google.cloud.storage.BlobId;
 import com.google.cloud.storage.BlobInfo;
 import com.google.cloud.storage.Bucket;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageException;
 import com.google.cloud.storage.testing.RemoteStorageHelper;
 import com.google.common.collect.Iterators;
+import com.google.common.collect.Sets;
 
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
@@ -255,5 +259,70 @@ public class ITStorageSnippets {
     List<Boolean> deleted = storageSnippets.batchDeleteIterable(BUCKET, blobName1, blobName2);
     assertFalse(deleted.get(0));
     assertTrue(deleted.get(1));
+  }
+
+  @Test
+  public void testBucketAcl() {
+    assertNull(storageSnippets.getBucketAcl(BUCKET));
+    assertFalse(storageSnippets.deleteBucketAcl(BUCKET));
+    assertNotNull(storageSnippets.createBucketAcl(BUCKET));
+    Acl updatedAcl = storageSnippets.updateBucketAcl(BUCKET);
+    assertEquals(Acl.Role.OWNER, updatedAcl.role());
+    Set<Acl> acls = Sets.newHashSet(storageSnippets.listBucketAcls(BUCKET));
+    assertTrue(acls.contains(updatedAcl));
+    assertTrue(storageSnippets.deleteBucketAcl(BUCKET));
+    assertNull(storageSnippets.getBucketAcl(BUCKET));
+  }
+
+  @Test
+  public void testDefaultBucketAcl() {
+    assertNull(storageSnippets.getDefaultBucketAcl(BUCKET));
+    assertFalse(storageSnippets.deleteDefaultBucketAcl(BUCKET));
+    assertNotNull(storageSnippets.createDefaultBucketAcl(BUCKET));
+    Acl updatedAcl = storageSnippets.updateDefaultBucketAcl(BUCKET);
+    assertEquals(Acl.Role.OWNER, updatedAcl.role());
+    Set<Acl> acls = Sets.newHashSet(storageSnippets.listDefaultBucketAcls(BUCKET));
+    assertTrue(acls.contains(updatedAcl));
+    assertTrue(storageSnippets.deleteDefaultBucketAcl(BUCKET));
+    assertNull(storageSnippets.getDefaultBucketAcl(BUCKET));
+  }
+
+  @Test
+  public void testBlobAcl() {
+    String blobName = "test-blob-acl";
+    BlobId blobId = BlobId.of(BUCKET, "test-blob-acl");
+    BlobInfo blob = BlobInfo.builder(blobId).build();
+    Blob createdBlob = storage.create(blob);
+    assertNull(storageSnippets.getBlobAcl(BUCKET, blobName, createdBlob.generation()));
+    assertNotNull(storageSnippets.createBlobAcl(BUCKET, blobName, createdBlob.generation()));
+    Acl updatedAcl = storageSnippets.updateBlobAcl(BUCKET, blobName, createdBlob.generation());
+    assertEquals(Acl.Role.OWNER, updatedAcl.role());
+    Set<Acl> acls =
+        Sets.newHashSet(storageSnippets.listBlobAcls(BUCKET, blobName, createdBlob.generation()));
+    assertTrue(acls.contains(updatedAcl));
+    assertTrue(storageSnippets.deleteBlobAcl(BUCKET, blobName, createdBlob.generation()));
+    assertNull(storageSnippets.getBlobAcl(BUCKET, blobName, createdBlob.generation()));
+    // test non-existing blob
+    String nonExistingBlob = "test-blob-acl";
+    assertNull(storageSnippets.getBlobAcl(BUCKET, nonExistingBlob, -1L));
+    assertFalse(storageSnippets.deleteBlobAcl(BUCKET, nonExistingBlob, -1L));
+    try {
+      storageSnippets.createBlobAcl(BUCKET, nonExistingBlob, -1L);
+      fail("Expected StorageException");
+    } catch (StorageException ex) {
+      // expected
+    }
+    try {
+      storageSnippets.updateBlobAcl(BUCKET, nonExistingBlob, -1L);
+      fail("Expected StorageException");
+    } catch (StorageException ex) {
+      // expected
+    }
+    try {
+      storageSnippets.listBlobAcls(BUCKET, nonExistingBlob, -1L);
+      fail("Expected StorageException");
+    } catch (StorageException ex) {
+      // expected
+    }
   }
 }

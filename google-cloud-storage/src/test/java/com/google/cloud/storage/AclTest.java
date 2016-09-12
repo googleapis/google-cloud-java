@@ -34,6 +34,41 @@ import org.junit.Test;
 
 public class AclTest {
 
+  private static final Role ROLE = Role.OWNER;
+  private static final Entity ENTITY = User.ofAllAuthenticatedUsers();
+  private static final String ETAG = "etag";
+  private static final String ID = "id";
+  private static final Acl ACL = Acl.builder(ENTITY, ROLE).etag(ETAG).id(ID).build();
+
+  @Test
+  public void testBuilder() {
+    assertEquals(ROLE, ACL.role());
+    assertEquals(ENTITY, ACL.entity());
+    assertEquals(ETAG, ACL.etag());
+    assertEquals(ID, ACL.id());
+  }
+
+  @Test
+  public void testToBuilder() {
+    assertEquals(ACL, ACL.toBuilder().build());
+    Acl acl = ACL.toBuilder()
+        .etag("otherEtag")
+        .id("otherId")
+        .role(Role.READER)
+        .entity(User.ofAllUsers())
+        .build();
+    assertEquals(Role.READER, acl.role());
+    assertEquals(User.ofAllUsers(), acl.entity());
+    assertEquals("otherEtag", acl.etag());
+    assertEquals("otherId", acl.id());
+  }
+
+  @Test
+  public void testToAndFromPb() {
+    assertEquals(ACL, Acl.fromPb(ACL.toBucketPb()));
+    assertEquals(ACL, Acl.fromPb(ACL.toObjectPb()));
+  }
+
   @Test
   public void testDomainEntity() {
     Domain acl = new Domain("d1");
@@ -79,7 +114,6 @@ public class AclTest {
     String pb = acl.toPb();
     assertEquals(acl, Entity.fromPb(pb));
   }
-
 
   @Test
   public void testOf() {

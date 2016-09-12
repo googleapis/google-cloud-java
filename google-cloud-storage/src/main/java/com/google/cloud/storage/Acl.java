@@ -16,8 +16,12 @@
 
 package com.google.cloud.storage;
 
+import static com.google.common.base.Preconditions.checkNotNull;
+
 import com.google.api.services.storage.model.BucketAccessControl;
 import com.google.api.services.storage.model.ObjectAccessControl;
+import com.google.common.base.Function;
+import com.google.common.base.MoreObjects;
 
 import java.io.Serializable;
 import java.util.Objects;
@@ -30,13 +34,85 @@ import java.util.Objects;
  */
 public final class Acl implements Serializable {
 
-  private static final long serialVersionUID = 6435575339887912222L;
+  private static final long serialVersionUID = 7516713233557576082L;
+  static final Function<ObjectAccessControl, Acl> FROM_OBJECT_PB_FUNCTION =
+      new Function<ObjectAccessControl, Acl>() {
+        @Override
+        public Acl apply(ObjectAccessControl aclPb) {
+          return Acl.fromPb(aclPb);
+        }
+      };
+  static final Function<BucketAccessControl, Acl> FROM_BUCKET_PB_FUNCTION =
+      new Function<BucketAccessControl, Acl>() {
+        @Override
+        public Acl apply(BucketAccessControl aclPb) {
+          return Acl.fromPb(aclPb);
+        }
+      };
 
   private final Entity entity;
   private final Role role;
+  private final String id;
+  private final String etag;
 
   public enum Role {
     OWNER, READER, WRITER
+  }
+
+  /**
+   * Builder for {@code Acl} objects.
+   */
+  public static class Builder {
+
+    private Entity entity;
+    private Role role;
+    private String id;
+    private String etag;
+
+    private Builder(Entity entity, Role role) {
+      this.entity = entity;
+      this.role = role;
+    }
+
+    private Builder(Acl acl) {
+      this.entity = acl.entity;
+      this.role = acl.role;
+      this.id = acl.id;
+      this.etag = acl.etag;
+    }
+
+    /**
+     * Sets the entity for the ACL object.
+     */
+    public Builder entity(Entity entity) {
+      this.entity = entity;
+      return this;
+    }
+
+    /**
+     * Sets the role to associate to the {@code entity} object.
+     */
+    public Builder role(Role role) {
+      this.role = role;
+      return this;
+    }
+
+    Builder id(String id) {
+      this.id = id;
+      return this;
+    }
+
+    Builder etag(String etag) {
+      this.etag = etag;
+      return this;
+    }
+
+    /**
+     * Creates an {@code Acl} object from this builder.
+     */
+    public Acl build() {
+      return new Acl(this);
+    }
   }
 
   /**
@@ -274,9 +350,11 @@ public final class Acl implements Serializable {
     }
   }
 
-  private Acl(Entity entity, Role role) {
-    this.entity = entity;
-    this.role = role;
+  private Acl(Builder builder) {
+    this.entity = checkNotNull(builder.entity);
+    this.role = checkNotNull(builder.role);
+    this.id = builder.id;
+    this.etag = builder.etag;
   }
 
   /**
@@ -294,13 +372,56 @@ public final class Acl implements Serializable {
   }
 
   /**
-   * Returns an Acl object.
+   * Returns the ID of the ACL entry.
+   */
+  public String id() {
+    return id;
+  }
+
+  /**
+   * Returns HTTP 1.1 Entity tag for the ACL entry.
+   *
+   * @see <a href="http://tools.ietf.org/html/rfc2616#section-3.11">Entity Tags</a>
+   */
+  public String etag() {
+    return etag;
+  }
+
+  /**
+   * Returns a builder for this {@code Acl} object.
+   */
+  public Builder toBuilder() {
+    return new Builder(this);
+  }
+
+  /**
+   * Returns an {@code Acl} object.
    *
    * @param entity the entity for this ACL object
    * @param role the role to associate to the {@code entity} object
    */
   public static Acl of(Entity entity, Role role) {
-    return new Acl(entity, role);
+    return builder(entity, role).build();
+  }
+
+  /**
+   * Returns a builder for {@code Acl} objects.
+   *
+   * @param entity the entity for this ACL object
+   * @param role the role to associate to the {@code entity} object
+   */
+  public static Builder builder(Entity entity, Role role) {
+    return new Builder(entity, role);
+  }
+
+  @Override
+  public String toString() {
+    return MoreObjects.toStringHelper(this)
+        .add("entity", entity)
+        .add("role", role)
+        .add("etag", etag)
+        .add("id", id)
+        .toString();
   }
 
   @Override
@@ -318,30 +439,44 @@ public final class Acl implements Serializable {
     }
     final Acl other = (Acl) obj;
     return Objects.equals(this.entity, other.entity)
-        && Objects.equals(this.role, other.role);
+        && Objects.equals(this.role, other.role)
+        && Objects.equals(this.etag, other.etag)
+        && Objects.equals(this.id, other.id);
   }
 
   BucketAccessControl toBucketPb() {
     BucketAccessControl bucketPb = new BucketAccessControl();
-    bucketPb.setRole(role().toString());
     bucketPb.setEntity(entity().toString());
+    bucketPb.setRole(role().toString());
+    bucketPb.setId(id());
+    bucketPb.setEtag(etag());
     return bucketPb;
   }
 
   ObjectAccessControl toObjectPb() {
     ObjectAccessControl objectPb = new ObjectAccessControl();
-    objectPb.setRole(role().name());
     objectPb.setEntity(entity().toPb());
+    objectPb.setRole(role().name());
+    objectPb.setId(id());
+    objectPb.setEtag(etag());
     return objectPb;
   }
 
   static Acl fromPb(ObjectAccessControl objectAccessControl) {
     Role role = Role.valueOf(objectAccessControl.getRole());
-    return Acl.of(Entity.fromPb(objectAccessControl.getEntity()), role);
+    Entity entity = Entity.fromPb(objectAccessControl.getEntity());
+    return builder(entity, role)
+        .etag(objectAccessControl.getEtag())
+        .id(objectAccessControl.getId())
+        .build();
   }
 
   static Acl fromPb(BucketAccessControl bucketAccessControl) {
     Role role = Role.valueOf(bucketAccessControl.getRole());
-    return Acl.of(Entity.fromPb(bucketAccessControl.getEntity()), role);
+    Entity entity = Entity.fromPb(bucketAccessControl.getEntity());
+    return builder(entity, role)
+        .etag(bucketAccessControl.getEtag())
+        .id(bucketAccessControl.getId())
+        .build();
   }
 }

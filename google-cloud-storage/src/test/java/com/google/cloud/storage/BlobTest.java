@@ -16,9 +16,6 @@
 
 package com.google.cloud.storage;
 
-import static com.google.cloud.storage.Acl.Project.ProjectRole.VIEWERS;
-import static com.google.cloud.storage.Acl.Role.READER;
-import static com.google.cloud.storage.Acl.Role.WRITER;
 import static org.easymock.EasyMock.capture;
 import static org.easymock.EasyMock.createMock;
 import static org.easymock.EasyMock.createStrictMock;
@@ -35,6 +32,8 @@ import static org.junit.Assert.assertTrue;
 
 import com.google.cloud.ReadChannel;
 import com.google.cloud.storage.Acl.Project;
+import com.google.cloud.storage.Acl.Project.ProjectRole;
+import com.google.cloud.storage.Acl.Role;
 import com.google.cloud.storage.Acl.User;
 import com.google.cloud.storage.Storage.CopyRequest;
 import com.google.common.collect.ImmutableList;
@@ -52,8 +51,9 @@ import java.util.concurrent.TimeUnit;
 
 public class BlobTest {
 
-  private static final List<Acl> ACL = ImmutableList.of(
-      Acl.of(User.ofAllAuthenticatedUsers(), READER), Acl.of(new Project(VIEWERS, "p1"), WRITER));
+  private static final Acl ACL = Acl.of(User.ofAllAuthenticatedUsers(), Role.OWNER);
+  private static final Acl OTHER_ACL = Acl.of(new Project(ProjectRole.OWNERS, "p"), Role.READER);
+  private static final List<Acl> ACLS = ImmutableList.of(ACL, OTHER_ACL);
   private static final Integer COMPONENT_COUNT = 2;
   private static final String CONTENT_TYPE = "text/html";
   private static final String CACHE_CONTROL = "cache";
@@ -75,7 +75,7 @@ public class BlobTest {
   private static final Long UPDATE_TIME = DELETE_TIME - 1L;
   private static final Long CREATE_TIME = UPDATE_TIME - 1L;
   private static final BlobInfo FULL_BLOB_INFO = BlobInfo.builder("b", "n", GENERATION)
-      .acl(ACL)
+      .acl(ACLS)
       .componentCount(COMPONENT_COUNT)
       .contentType(CONTENT_TYPE)
       .cacheControl(CACHE_CONTROL)
@@ -313,6 +313,58 @@ public class BlobTest {
   }
 
   @Test
+  public void testGetAcl() throws Exception {
+    initializeExpectedBlob(1);
+    expect(storage.options()).andReturn(mockOptions);
+    expect(storage.getAcl(BLOB_INFO.blobId(), User.ofAllAuthenticatedUsers())).andReturn(ACL);
+    replay(storage);
+    initializeBlob();
+    assertEquals(ACL, blob.getAcl(User.ofAllAuthenticatedUsers()));
+  }
+
+  @Test
+  public void testDeleteAcl() throws Exception {
+    initializeExpectedBlob(1);
+    expect(storage.options()).andReturn(mockOptions);
+    expect(storage.deleteAcl(BLOB_INFO.blobId(), User.ofAllAuthenticatedUsers())).andReturn(true);
+    replay(storage);
+    initializeBlob();
+    assertTrue(blob.deleteAcl(User.ofAllAuthenticatedUsers()));
+  }
+
+  @Test
+  public void testCreateAcl() throws Exception {
+    initializeExpectedBlob(1);
+    expect(storage.options()).andReturn(mockOptions);
+    Acl returnedAcl = ACL.toBuilder().etag("ETAG").id("ID").build();
+    expect(storage.createAcl(BLOB_INFO.blobId(), ACL)).andReturn(returnedAcl);
+    replay(storage);
+    initializeBlob();
+    assertEquals(returnedAcl, blob.createAcl(ACL));
+  }
+
+  @Test
+  public void testUpdateAcl() throws Exception {
+    initializeExpectedBlob(1);
+    expect(storage.options()).andReturn(mockOptions);
+    Acl returnedAcl = ACL.toBuilder().etag("ETAG").id("ID").build();
+    expect(storage.updateAcl(BLOB_INFO.blobId(), ACL)).andReturn(returnedAcl);
+    replay(storage);
+    initializeBlob();
+    assertEquals(returnedAcl, blob.updateAcl(ACL));
+  }
+
+  @Test
+  public void testListAcls() throws Exception {
+    initializeExpectedBlob(1);
+    expect(storage.options()).andReturn(mockOptions);
+    expect(storage.listAcls(BLOB_INFO.blobId())).andReturn(ACLS);
+    replay(storage);
+    initializeBlob();
+    assertEquals(ACLS, blob.listAcls());
+  }
+
+  @Test
   public void testToBuilder() {
     expect(storage.options()).andReturn(mockOptions).times(6);
     replay(storage);
@@ -330,7 +382,7 @@ public class BlobTest {
     expect(storage.options()).andReturn(mockOptions).times(4);
     replay(storage);
     Blob.Builder builder = new Blob.Builder(new Blob(storage, new BlobInfo.BuilderImpl(BLOB_INFO)));
-    Blob blob = builder.acl(ACL)
+    Blob blob = builder.acl(ACLS)
         .componentCount(COMPONENT_COUNT)
         .contentType(CONTENT_TYPE)
         .cacheControl(CACHE_CONTROL)
@@ -353,7 +405,7 @@ public class BlobTest {
         .build();
     assertEquals("b", blob.bucket());
     assertEquals("n", blob.name());
-    assertEquals(ACL, blob.acl());
+    assertEquals(ACLS, blob.acl());
     assertEquals(COMPONENT_COUNT, blob.componentCount());
     assertEquals(CONTENT_TYPE, blob.contentType());
     assertEquals(CACHE_CONTROL, blob.cacheControl());

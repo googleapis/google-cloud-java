@@ -29,6 +29,9 @@ import com.google.cloud.Page;
 import com.google.cloud.ReadChannel;
 import com.google.cloud.RestorableState;
 import com.google.cloud.WriteChannel;
+import com.google.cloud.storage.Acl;
+import com.google.cloud.storage.Acl.Role;
+import com.google.cloud.storage.Acl.User;
 import com.google.cloud.storage.Blob;
 import com.google.cloud.storage.BlobId;
 import com.google.cloud.storage.BlobInfo;
@@ -48,6 +51,7 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Iterators;
 import com.google.common.collect.Lists;
+import com.google.common.collect.Sets;
 
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
@@ -1218,5 +1222,71 @@ public class ITStorageTest {
     assertEquals(CONTENT_TYPE, updatedBlobs.get(0).contentType());
     assertNull(updatedBlobs.get(1));
     assertTrue(updatedBlobs.get(0).delete());
+  }
+
+  @Test
+  public void testBucketAcl() {
+    assertNull(storage.getAcl(BUCKET, User.ofAllAuthenticatedUsers()));
+    assertFalse(storage.deleteAcl(BUCKET, User.ofAllAuthenticatedUsers()));
+    Acl acl = Acl.of(User.ofAllAuthenticatedUsers(), Role.READER);
+    assertNotNull(storage.createAcl(BUCKET, acl));
+    Acl updatedAcl = storage.updateAcl(BUCKET, acl.toBuilder().role(Role.WRITER).build());
+    assertEquals(Role.WRITER, updatedAcl.role());
+    Set<Acl> acls = Sets.newHashSet(storage.listAcls(BUCKET));
+    assertTrue(acls.contains(updatedAcl));
+    assertTrue(storage.deleteAcl(BUCKET, User.ofAllAuthenticatedUsers()));
+    assertNull(storage.getAcl(BUCKET, User.ofAllAuthenticatedUsers()));
+  }
+
+  @Test
+  public void testBucketDefaultAcl() {
+    assertNull(storage.getDefaultAcl(BUCKET, User.ofAllAuthenticatedUsers()));
+    assertFalse(storage.deleteDefaultAcl(BUCKET, User.ofAllAuthenticatedUsers()));
+    Acl acl = Acl.of(User.ofAllAuthenticatedUsers(), Role.READER);
+    assertNotNull(storage.createDefaultAcl(BUCKET, acl));
+    Acl updatedAcl = storage.updateDefaultAcl(BUCKET, acl.toBuilder().role(Role.OWNER).build());
+    assertEquals(Role.OWNER, updatedAcl.role());
+    Set<Acl> acls = Sets.newHashSet(storage.listDefaultAcls(BUCKET));
+    assertTrue(acls.contains(updatedAcl));
+    assertTrue(storage.deleteDefaultAcl(BUCKET, User.ofAllAuthenticatedUsers()));
+    assertNull(storage.getDefaultAcl(BUCKET, User.ofAllAuthenticatedUsers()));
+  }
+
+  @Test
+  public void testBlobAcl() {
+    BlobId blobId = BlobId.of(BUCKET, "test-blob-acl");
+    BlobInfo blob = BlobInfo.builder(blobId).build();
+    storage.create(blob);
+    assertNull(storage.getAcl(blobId, User.ofAllAuthenticatedUsers()));
+    Acl acl = Acl.of(User.ofAllAuthenticatedUsers(), Role.READER);
+    assertNotNull(storage.createAcl(blobId, acl));
+    Acl updatedAcl = storage.updateAcl(blobId, acl.toBuilder().role(Role.OWNER).build());
+    assertEquals(Role.OWNER, updatedAcl.role());
+    Set<Acl> acls = Sets.newHashSet(storage.listAcls(blobId));
+    assertTrue(acls.contains(updatedAcl));
+    assertTrue(storage.deleteAcl(blobId, User.ofAllAuthenticatedUsers()));
+    assertNull(storage.getAcl(blobId, User.ofAllAuthenticatedUsers()));
+    // test non-existing blob
+    BlobId otherBlobId = BlobId.of(BUCKET, "test-blob-acl", -1L);
+    assertNull(storage.getAcl(otherBlobId, User.ofAllAuthenticatedUsers()));
+    assertFalse(storage.deleteAcl(otherBlobId, User.ofAllAuthenticatedUsers()));
+    try {
+      storage.createAcl(otherBlobId, acl);
+      fail("Expected StorageException");
+    } catch (StorageException ex) {
+      // expected
+    }
+    try {
+      storage.updateAcl(otherBlobId, acl);
+      fail("Expected StorageException");
+    } catch (StorageException ex) {
+      // expected
+    }
+    try {
+      storage.listAcls(otherBlobId);
+      fail("Expected StorageException");
+    } catch (StorageException ex) {
+      // expected
+    }
   }
 }
