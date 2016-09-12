@@ -20,12 +20,12 @@ import static com.google.datastore.v1.Value.TIMESTAMP_VALUE_FIELD_NUMBER;
 
 public final class DateTimeValue extends Value<DateTime> {
 
-  private static final long serialVersionUID = -5096238337676649540L;
+  private static final long serialVersionUID = -8502433575902990648L;
 
   static final BaseMarshaller<DateTime, DateTimeValue, Builder> MARSHALLER =
       new BaseMarshaller<DateTime, DateTimeValue, Builder>() {
 
-        private static final long serialVersionUID = -5695812592049332840L;
+        private static final long serialVersionUID = -5789520029958113745L;
 
         @Override
         public int getProtoFieldId() {

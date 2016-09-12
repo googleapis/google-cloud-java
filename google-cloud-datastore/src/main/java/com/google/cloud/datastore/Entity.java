@@ -26,7 +26,7 @@ import com.google.common.base.Preconditions;
  */
 public final class Entity extends FullEntity<Key> {
 
-  private static final long serialVersionUID = 432961565733066915L;
+  private static final long serialVersionUID = 2312315289215899118L;
 
   public static final class Builder extends BaseEntity.Builder<Key, Builder> {
 
@@ -66,11 +66,6 @@ public final class Entity extends FullEntity<Key> {
   Entity(FullEntity<Key> from) {
     super(from);
     Preconditions.checkArgument(from.key() != null);
-  }
-
-  @Override
-  protected BaseEntity.Builder<Key, Builder> emptyBuilder() {
-    return new Builder();
   }
 
   static Entity convert(FullEntity<Key> from) {

@@ -21,11 +21,9 @@ import static com.google.common.base.Preconditions.checkNotNull;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.MoreObjects.ToStringHelper;
 import com.google.common.collect.Maps;
-import com.google.protobuf.GeneratedMessage;
-import com.google.protobuf.InvalidProtocolBufferException;
 
+import java.io.Serializable;
 import java.util.Map;
-
 
 /**
  * A Google Cloud Datastore query.
@@ -38,9 +36,9 @@ import java.util.Map;
  * @param <V> the type of the values returned by this query.
  * @see <a href="https://cloud.google.com/datastore/docs/concepts/queries">Datastore Queries</a>
  */
-public abstract class Query<V> extends Serializable<GeneratedMessage> {
+public abstract class Query<V> implements Serializable {
 
-  private static final long serialVersionUID = -2748141759901313101L;
+  private static final long serialVersionUID = 7967659059395653941L;
 
   private final ResultType<V> resultType;
   private final String namespace;
@@ -51,7 +49,7 @@ public abstract class Query<V> extends Serializable<GeneratedMessage> {
    *   PROJECTION_ENTITY: A projection entity, represented by {@link ProjectionEntity}.
    *   KEY: An entity's {@link Key}.
    */
-  public abstract static class ResultType<V> implements java.io.Serializable {
+  public abstract static class ResultType<V> implements Serializable {
 
     private static final long serialVersionUID = 2104157695425806623L;
     private static final Map<com.google.datastore.v1.EntityResult.ResultType, ResultType<?>>
@@ -173,22 +171,9 @@ public abstract class Query<V> extends Serializable<GeneratedMessage> {
     return namespace;
   }
 
-  @Override
-  public String toString() {
-    ToStringHelper toStringHelper = MoreObjects.toStringHelper(this);
-    toStringHelper.add("type", resultType);
-    toStringHelper.add("namespace", namespace);
-    toStringHelper.add("queryPb", super.toString());
-    return toStringHelper.toString();
+  ToStringHelper toStringHelper() {
+    return MoreObjects.toStringHelper(this).add("type", resultType).add("namespace", namespace);
   }
-
-  @Override
-  Object fromPb(byte[] bytesPb) throws InvalidProtocolBufferException {
-    return fromPb(resultType, namespace, bytesPb);
-  }
-
-  abstract Object fromPb(ResultType<V> resultType, String namespace, byte[] bytesPb)
-      throws InvalidProtocolBufferException;
 
   abstract void populatePb(com.google.datastore.v1.RunQueryRequest.Builder requestPb);
 

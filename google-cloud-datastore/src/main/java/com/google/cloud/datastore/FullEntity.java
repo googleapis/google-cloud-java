@@ -22,7 +22,7 @@ package com.google.cloud.datastore;
  */
 public class FullEntity<K extends IncompleteKey> extends BaseEntity<K> {
 
-  private static final long serialVersionUID = 432961565733066915L;
+  private static final long serialVersionUID = -2075539363782670624L;
 
   public static class Builder<K extends IncompleteKey> extends BaseEntity.Builder<K, Builder<K>> {
 
@@ -49,11 +49,6 @@ public class FullEntity<K extends IncompleteKey> extends BaseEntity<K> {
 
   FullEntity(FullEntity<K> from) {
     super(from);
-  }
-
-  @Override
-  protected BaseEntity.Builder<K, ?> emptyBuilder() {
-    return new Builder<K>();
   }
 
   public static Builder<IncompleteKey> builder() {

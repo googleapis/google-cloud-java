@@ -29,12 +29,12 @@ import java.util.List;
  */
 public final class ListValue extends Value<List<? extends Value<?>>> {
 
-  private static final long serialVersionUID = -5461475706792576395L;
+  private static final long serialVersionUID = -5121887228607148857L;
 
   static final BaseMarshaller<List<? extends Value<?>>, ListValue, Builder> MARSHALLER =
       new BaseMarshaller<List<? extends Value<?>>, ListValue, Builder>() {
 
-        private static final long serialVersionUID = -3193794036327640106L;
+        private static final long serialVersionUID = 7720473855548179942L;
 
         @Override
         public int getProtoFieldId() {

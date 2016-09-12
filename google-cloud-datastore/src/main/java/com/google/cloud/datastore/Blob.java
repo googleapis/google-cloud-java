@@ -21,12 +21,12 @@ import static com.google.common.base.Preconditions.checkNotNull;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.MoreObjects.ToStringHelper;
 import com.google.protobuf.ByteString;
-import com.google.protobuf.InvalidProtocolBufferException;
 
 import java.io.BufferedInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.Serializable;
 import java.nio.ByteBuffer;
 
 /**
@@ -36,11 +36,11 @@ import java.nio.ByteBuffer;
  * @see <a href="https://cloud.google.com/datastore/docs/concepts/entities">
  *   Google Cloud Datastore Entities, Properties, and Keys</a>
  */
-public final class Blob extends Serializable<com.google.datastore.v1.Value> {
+public final class Blob implements Serializable {
 
-  private static final long serialVersionUID = 3835421019618247721L;
+  private static final long serialVersionUID = 7311366042557240313L;
 
-  private final transient ByteString byteString;
+  private final ByteString byteString;
 
   Blob(ByteString byteString) {
     this.byteString = checkNotNull(byteString);
@@ -144,13 +144,7 @@ public final class Blob extends Serializable<com.google.datastore.v1.Value> {
     return copyFrom(bytes.toByteArray());
   }
 
-  @Override
   com.google.datastore.v1.Value toPb() {
     return com.google.datastore.v1.Value.newBuilder().setBlobValue(byteString).build();
-  }
-
-  @Override
-  Object fromPb(byte[] bytesPb) throws InvalidProtocolBufferException {
-    return new Blob(com.google.datastore.v1.Value.parseFrom(bytesPb).getBlobValue());
   }
 }

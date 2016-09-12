@@ -18,8 +18,7 @@ package com.google.cloud.datastore;
 
 import static com.google.common.base.Preconditions.checkArgument;
 
-import com.google.protobuf.InvalidProtocolBufferException;
-
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
@@ -29,12 +28,12 @@ import java.util.Objects;
  * @see <a href="https://cloud.google.com/datastore/docs/concepts/entities">Google Cloud Datastore
  *     Entities, Properties, and Keys</a>
  */
-public final class LatLng extends Serializable<com.google.type.LatLng> {
+public final class LatLng implements Serializable {
 
-  private static final long serialVersionUID = 9077060962655752073L;
+  private static final long serialVersionUID = -3739859034159591779L;
 
-  private final transient double latitude;
-  private final transient double longitude;
+  private final double latitude;
+  private final double longitude;
 
   LatLng(double latitude, double longitude) {
     checkArgument(
@@ -74,17 +73,10 @@ public final class LatLng extends Serializable<com.google.type.LatLng> {
     return new LatLng(latitude, longitude);
   }
 
-  @Override
   protected com.google.type.LatLng toPb() {
     return com.google.type.LatLng.newBuilder()
         .setLatitude(latitude)
         .setLongitude(longitude)
         .build();
-  }
-
-  @Override
-  protected Object fromPb(byte[] bytesPb) throws InvalidProtocolBufferException {
-    com.google.type.LatLng parsedLatLng = com.google.type.LatLng.parseFrom(bytesPb);
-    return new LatLng(parsedLatLng.getLatitude(), parsedLatLng.getLongitude());
   }
 }

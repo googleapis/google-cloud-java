@@ -20,7 +20,6 @@ import static java.nio.charset.StandardCharsets.UTF_8;
 
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
-import com.google.protobuf.InvalidProtocolBufferException;
 import com.google.protobuf.TextFormat;
 
 import java.io.UnsupportedEncodingException;
@@ -37,7 +36,7 @@ import java.net.URLEncoder;
  */
 public final class Key extends IncompleteKey {
 
-  private static final long serialVersionUID = 3160994559785491356L;
+  private static final long serialVersionUID = 2563249643000943477L;
 
   public static final class Builder extends BaseKey.Builder<Builder> {
 
@@ -160,11 +159,6 @@ public final class Key extends IncompleteKey {
     } catch (TextFormat.ParseException e) {
       throw new IllegalArgumentException("Could not parse key", e);
     }
-  }
-
-  @Override
-  Object fromPb(byte[] bytesPb) throws InvalidProtocolBufferException {
-    return fromPb(com.google.datastore.v1.Key.parseFrom(bytesPb));
   }
 
   static Key fromPb(com.google.datastore.v1.Key keyPb) {

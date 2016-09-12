@@ -20,12 +20,12 @@ import static com.google.datastore.v1.Value.ENTITY_VALUE_FIELD_NUMBER;
 
 public class EntityValue extends Value<FullEntity<?>> {
 
-  private static final long serialVersionUID = -5461475706792576395L;
+  private static final long serialVersionUID = 2231420223179039760L;
 
   static final BaseMarshaller<FullEntity<?>, EntityValue, Builder> MARSHALLER =
       new BaseMarshaller<FullEntity<?>, EntityValue, Builder>() {
 
-        private static final long serialVersionUID = 2355075086076070931L;
+        private static final long serialVersionUID = 7349141367266671632L;
 
         @Override
         public int getProtoFieldId() {

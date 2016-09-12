@@ -20,12 +20,12 @@ import static com.google.datastore.v1.Value.GEO_POINT_VALUE_FIELD_NUMBER;
 
 public final class LatLngValue extends Value<LatLng> {
 
-  private static final long serialVersionUID = -5810614280642405898L;
+  private static final long serialVersionUID = 565308388087634597L;
 
   static final BaseMarshaller<LatLng, LatLngValue, Builder> MARSHALLER =
       new BaseMarshaller<LatLng, LatLngValue, Builder>() {
 
-        private static final long serialVersionUID = -3550567536035178649L;
+        private static final long serialVersionUID = -5226207069346124222L;
 
         @Override
         public int getProtoFieldId() {

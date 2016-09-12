@@ -25,7 +25,7 @@ package com.google.cloud.datastore;
  */
 public final class ProjectionEntityQuery extends StructuredQuery<ProjectionEntity> {
 
-  private static final long serialVersionUID = 5488451194542425391L;
+  private static final long serialVersionUID = 6217728277947673577L;
 
   /**
    * A {@code ProjectionEntityQuery} builder for queries that return {@link ProjectionEntity}

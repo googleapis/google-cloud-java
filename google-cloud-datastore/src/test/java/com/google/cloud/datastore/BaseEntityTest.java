@@ -48,13 +48,7 @@ public class BaseEntityTest {
 
     @Override public BaseEntity<Key> build() {
 
-      return new BaseEntity<Key>(this) {
-
-        @Override
-        protected BaseEntityTest.Builder emptyBuilder() {
-          return new BaseEntityTest.Builder();
-        }
-      };
+      return new BaseEntity<Key>(this) {};
     }
   }
 

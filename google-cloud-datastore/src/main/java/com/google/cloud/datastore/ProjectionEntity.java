@@ -30,7 +30,7 @@ import com.google.protobuf.ByteString;
  */
 public final class ProjectionEntity extends BaseEntity<Key> {
 
-  private static final long serialVersionUID = 432961565733066915L;
+  private static final long serialVersionUID = -3399517537444851544L;
 
   public static final class Builder extends BaseEntity.Builder<Key, Builder> {
 
@@ -73,11 +73,6 @@ public final class ProjectionEntity extends BaseEntity<Key> {
 
   static ProjectionEntity fromPb(com.google.datastore.v1.Entity entityPb) {
     return new Builder().fill(entityPb).build();
-  }
-
-  @Override
-  protected Builder emptyBuilder() {
-    return new Builder();
   }
 
   public static Builder builder(ProjectionEntity copyFrom) {
