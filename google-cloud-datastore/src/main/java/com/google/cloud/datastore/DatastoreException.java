@@ -34,7 +34,9 @@ public final class DatastoreException extends BaseServiceException {
 
   // see https://cloud.google.com/datastore/docs/concepts/errors#Error_Codes"
   private static final Set<Error> RETRYABLE_ERRORS = ImmutableSet.of(
-      new Error(10, "ABORTED"), new Error(4, "DEADLINE_EXCEEDED"), new Error(14, "UNAVAILABLE"));
+      new Error(10, "ABORTED", true),
+      new Error(4, "DEADLINE_EXCEEDED", false),
+      new Error(14, "UNAVAILABLE", true));
   private static final long serialVersionUID = 2663750991205874435L;
 
   public DatastoreException(int code, String message, String reason) {
