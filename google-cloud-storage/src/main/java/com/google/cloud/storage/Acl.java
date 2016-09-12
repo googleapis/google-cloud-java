@@ -34,8 +34,7 @@ import java.util.Objects;
  */
 public final class Acl implements Serializable {
 
-  private static final long serialVersionUID = 6435575339887912222L;
-
+  private static final long serialVersionUID = 7516713233557576082L;
   static final Function<ObjectAccessControl, Acl> FROM_OBJECT_PB_FUNCTION =
       new Function<ObjectAccessControl, Acl>() {
         @Override
@@ -51,10 +50,10 @@ public final class Acl implements Serializable {
         }
       };
 
-  private final String id;
-  private final String etag;
   private final Entity entity;
   private final Role role;
+  private final String id;
+  private final String etag;
 
   public enum Role {
     OWNER, READER, WRITER
@@ -359,6 +358,20 @@ public final class Acl implements Serializable {
   }
 
   /**
+   * Returns the entity for this ACL object.
+   */
+  public Entity entity() {
+    return entity;
+  }
+
+  /**
+   * Returns the role associated to the entity in this ACL object.
+   */
+  public Role role() {
+    return role;
+  }
+
+  /**
    * Returns the ID of the ACL entry.
    */
   public String id() {
@@ -372,20 +385,6 @@ public final class Acl implements Serializable {
    */
   public String etag() {
     return etag;
-  }
-
-  /**
-   * Returns the entity for this ACL object.
-   */
-  public Entity entity() {
-    return entity;
-  }
-
-  /**
-   * Returns the role associated to the entity in this ACL object.
-   */
-  public Role role() {
-    return role;
   }
 
   /**
@@ -447,8 +446,8 @@ public final class Acl implements Serializable {
 
   BucketAccessControl toBucketPb() {
     BucketAccessControl bucketPb = new BucketAccessControl();
-    bucketPb.setRole(role().toString());
     bucketPb.setEntity(entity().toString());
+    bucketPb.setRole(role().toString());
     bucketPb.setId(id());
     bucketPb.setEtag(etag());
     return bucketPb;
@@ -456,8 +455,8 @@ public final class Acl implements Serializable {
 
   ObjectAccessControl toObjectPb() {
     ObjectAccessControl objectPb = new ObjectAccessControl();
-    objectPb.setRole(role().name());
     objectPb.setEntity(entity().toPb());
+    objectPb.setRole(role().name());
     objectPb.setId(id());
     objectPb.setEtag(etag());
     return objectPb;
