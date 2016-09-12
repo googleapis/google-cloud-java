@@ -21,73 +21,73 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-/**
- * Tests for {@link LocalDevelopmentDatastore}.
- */
+/** Tests for {@link DatastoreEmulator}. */
 @RunWith(JUnit4.class)
-public class LocalDevelopmentDatastoreTest {
+public class DatastoreEmulatorTest {
 
-  private static final LocalDevelopmentDatastoreOptions options =
-      new LocalDevelopmentDatastoreOptions.Builder().build();
+  private static final DatastoreEmulatorOptions options =
+      new DatastoreEmulatorOptions.Builder().build();
 
   @Test
-  public void testArgs() throws LocalDevelopmentDatastoreException {
-    LocalDevelopmentDatastore datastore = new LocalDevelopmentDatastore(null, "blar", options) {
-      @Override
-      void startDatastoreInternal(String sdkPath, String dataset, String... cmdLineOpts) {
-        // no-op for testing
-      }
-    };
+  public void testArgs() throws DatastoreEmulatorException {
+    DatastoreEmulator datastore =
+        new DatastoreEmulator(null, "blar", options) {
+          @Override
+          void startEmulatorInternal(String emulatorDir, String projectId, String... cmdLineOpts) {
+            // no-op for testing
+          }
+        };
 
     try {
-      datastore.start(null, "dataset");
+      datastore.start(null, "projectId");
       fail("expected exception");
     } catch (NullPointerException npe) {
       // good
     }
 
     try {
-      datastore.start("path/to/sdk", null);
+      datastore.start("path/to/emulator", null);
       fail("expected exception");
     } catch (NullPointerException npe) {
       // good
     }
 
-    datastore.start("path/to/sdk", "dataset");
+    datastore.start("path/to/emulator", "projectId");
   }
 
   @Test
-  public void testLifecycle() throws LocalDevelopmentDatastoreException {
-    LocalDevelopmentDatastore datastore = new LocalDevelopmentDatastore(null, "blar", options) {
-      @Override
-      void startDatastoreInternal(String sdkPath, String dataset, String... cmdLineOpts) {
-        // no-op for testing
-      }
+  public void testLifecycle() throws DatastoreEmulatorException {
+    DatastoreEmulator datastore =
+        new DatastoreEmulator(null, "blar", options) {
+          @Override
+          void startEmulatorInternal(String emulatorDir, String projectId, String... cmdLineOpts) {
+            // no-op for testing
+          }
 
-      @Override
-      protected void stopDatastoreInternal() {
-        // no-op for testing
-      }
-    };
+          @Override
+          protected void stopEmulatorInternal() {
+            // no-op for testing
+          }
+        };
 
-    String sdkPath = "/yar";
-    String myApp = "myapp";
+    String emulatorDir = "/yar";
+    String myProject = "myproject";
 
-    datastore.start(sdkPath, myApp);
+    datastore.start(emulatorDir, myProject);
     try {
-      datastore.start(sdkPath, myApp);
+      datastore.start(emulatorDir, myProject);
       fail("expected exception");
     } catch (IllegalStateException e) {
       // good
     }
 
     datastore.stop();
-    // it's ok to stop if we've already stopped
+    // It's ok to stop if we've already stopped.
     datastore.stop();
 
-    // once we've stopped we can't start again
+    // Once we've stopped we can't start again.
     try {
-      datastore.start(sdkPath, myApp);
+      datastore.start(emulatorDir, myProject);
       fail("expected exception");
     } catch (IllegalStateException e) {
       // good

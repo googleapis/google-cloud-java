@@ -15,31 +15,26 @@
  */
 package com.google.datastore.v1.client;
 
-/**
- * Factory for {@link LocalDevelopmentDatastore}.
- */
-public class LocalDevelopmentDatastoreFactory extends DatastoreFactory {
+/** Factory for {@link DatastoreEmulator}. */
+public class DatastoreEmulatorFactory extends DatastoreFactory {
 
   /** Singleton factory instance. */
-  private static final LocalDevelopmentDatastoreFactory INSTANCE =
-      new LocalDevelopmentDatastoreFactory();
+  private static final DatastoreEmulatorFactory INSTANCE = new DatastoreEmulatorFactory();
 
-  public static LocalDevelopmentDatastoreFactory get() {
+  public static DatastoreEmulatorFactory get() {
     return INSTANCE;
   }
 
-  LocalDevelopmentDatastoreFactory() { }
+  DatastoreEmulatorFactory() {}
 
   @Override
-  public LocalDevelopmentDatastore create(DatastoreOptions options)
-      throws IllegalArgumentException {
-    return create(options, new LocalDevelopmentDatastoreOptions.Builder().build());
+  public DatastoreEmulator create(DatastoreOptions options) throws IllegalArgumentException {
+    return create(options, new DatastoreEmulatorOptions.Builder().build());
   }
 
-  public LocalDevelopmentDatastore create(DatastoreOptions options,
-      LocalDevelopmentDatastoreOptions localDevelopmentOptions) {
+  public DatastoreEmulator create(
+      DatastoreOptions options, DatastoreEmulatorOptions localDevelopmentOptions) {
     RemoteRpc rpc = newRemoteRpc(options);
-    return new LocalDevelopmentDatastore(rpc, options.getLocalHost(),
-        localDevelopmentOptions);
+    return new DatastoreEmulator(rpc, options.getLocalHost(), localDevelopmentOptions);
   }
 }

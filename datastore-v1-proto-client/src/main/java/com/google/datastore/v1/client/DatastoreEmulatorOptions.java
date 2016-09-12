@@ -18,35 +18,29 @@ package com.google.datastore.v1.client;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * An immutable object containing settings for a {@link LocalDevelopmentDatastore}.
- */
-public class LocalDevelopmentDatastoreOptions {
+/** An immutable object containing settings for a {@link DatastoreEmulator}. */
+public class DatastoreEmulatorOptions {
   private final Map<String, String> envVars;
-  
-  LocalDevelopmentDatastoreOptions(Map<String, String> envVars) {
+
+  DatastoreEmulatorOptions(Map<String, String> envVars) {
     this.envVars = envVars;
   }
-  
-  /**
-   * Builder for {@link LocalDevelopmentDatastoreOptions}.
-   */
+
+  /** Builder for {@link DatastoreEmulatorOptions}. */
   public static class Builder {
     private final Map<String, String> envVars = new HashMap<String, String>();
 
-    public LocalDevelopmentDatastoreOptions build() {
-      return new LocalDevelopmentDatastoreOptions(envVars);
+    public DatastoreEmulatorOptions build() {
+      return new DatastoreEmulatorOptions(envVars);
     }
-    
-    /**
-     * Adds an environment variable to pass to the GCD tool.
-     */
+
+    /** Adds an environment variable to pass to the emulator. */
     public Builder addEnvVar(String var, String value) {
       envVars.put(var, value);
       return this;
     }
   }
-  
+
   public Map<String, String> getEnvVars() {
     return envVars;
   }

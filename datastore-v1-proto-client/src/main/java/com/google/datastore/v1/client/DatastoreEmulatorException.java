@@ -15,15 +15,13 @@
  */
 package com.google.datastore.v1.client;
 
-/**
- * An exception related to the local development {@link Datastore}.
- */
-public class LocalDevelopmentDatastoreException extends Exception {
-  public LocalDevelopmentDatastoreException(String message) {
+/** An exception related to the {@link DatastoreEmulator}. */
+public class DatastoreEmulatorException extends Exception {
+  public DatastoreEmulatorException(String message) {
     super(message);
   }
 
-  public LocalDevelopmentDatastoreException(String message, Throwable cause) {
+  public DatastoreEmulatorException(String message, Throwable cause) {
     super(message, cause);
   }
 }
