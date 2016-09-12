@@ -60,7 +60,7 @@ interface DatastoreBatchWriter extends DatastoreWriter {
   /**
    * {@inheritDoc}
    * This operation will also remove from this batch any prior writes for entities with the same
-   * keys
+   * keys.
    *
    * @throws DatastoreException if not active
    */

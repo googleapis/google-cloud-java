@@ -57,7 +57,7 @@ public final class ListValue extends Value<List<? extends Value<?>>> {
 
         @Override
         protected void setValue(ListValue from, com.google.datastore.v1.Value.Builder to) {
-          List<com.google.datastore.v1.Value> propertiesPb = new ArrayList<com.google.datastore.v1.Value>();
+          List<com.google.datastore.v1.Value> propertiesPb = new ArrayList<>();
           for (Value<?> property : from.get()) {
             propertiesPb.add(property.toPb());
           }

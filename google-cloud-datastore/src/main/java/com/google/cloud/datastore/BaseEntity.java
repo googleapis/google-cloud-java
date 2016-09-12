@@ -32,6 +32,7 @@ import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableSortedMap;
 import com.google.common.collect.Maps;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -49,7 +50,7 @@ import java.util.Set;
  * @see <a href="https://cloud.google.com/datastore/docs/concepts/entities">Google Cloud Datastore
  *     Entities, Properties, and Keys</a>
  */
-public abstract class BaseEntity<K extends IncompleteKey> implements java.io.Serializable {
+public abstract class BaseEntity<K extends IncompleteKey> implements Serializable {
 
   private static final long serialVersionUID = -9070588108769487081L;
   private final ImmutableSortedMap<String, Value<?>> properties;

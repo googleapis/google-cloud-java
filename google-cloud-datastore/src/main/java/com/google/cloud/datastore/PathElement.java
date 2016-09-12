@@ -74,6 +74,7 @@ public final class PathElement implements Serializable {
         .add("name", name)
         .toString();
   }
+
   @Override
   public int hashCode() {
     return Objects.hash(kind, id, name);

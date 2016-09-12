@@ -752,7 +752,7 @@ public abstract class StructuredQuery<V> extends Query<V> {
 
   @Override
   public String toString() {
-    return super.toStringHelper()
+    return toStringHelper()
         .add("kind", kind)
         .add("startCursor", startCursor)
         .add("endCursor", endCursor)
