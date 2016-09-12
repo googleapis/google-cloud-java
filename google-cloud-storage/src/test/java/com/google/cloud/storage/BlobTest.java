@@ -40,6 +40,7 @@ import com.google.cloud.storage.Storage.BlobWriteOption;
 import com.google.cloud.storage.Storage.CopyRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
+import com.google.common.io.BaseEncoding;
 
 import org.easymock.Capture;
 import org.junit.After;
@@ -47,9 +48,12 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.net.URL;
+import java.security.Key;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
+
+import javax.crypto.spec.SecretKeySpec;
 
 public class BlobTest {
 
@@ -108,6 +112,9 @@ public class BlobTest {
       .size(0L)
       .isDirectory(true)
       .build();
+  private static final String BASE64_KEY = "JVzfVl8NLD9FjedFuStegjRfES5ll5zc59CIXw572OA=";
+  private static final Key KEY =
+      new SecretKeySpec(BaseEncoding.base64().decode(BASE64_KEY), "AES256");
 
   private Storage storage;
   private Blob blob;
@@ -168,15 +175,17 @@ public class BlobTest {
   }
 
   @Test
-  public void testContentWithOptions() throws Exception {
+  public void testContentWithDecryptionKey() throws Exception {
     initializeExpectedBlob(2);
     byte[] content = {1, 2};
     expect(storage.options()).andReturn(mockOptions);
-    expect(storage.readAllBytes(BLOB_INFO.blobId(), Storage.BlobSourceOption.decryptionKey("key")))
-        .andReturn(content);
+    expect(storage.readAllBytes(BLOB_INFO.blobId(),
+        Storage.BlobSourceOption.decryptionKey(BASE64_KEY)))
+        .andReturn(content).times(2);
     replay(storage);
     initializeBlob();
-    assertArrayEquals(content, blob.content(BlobSourceOption.decryptionKey("key")));
+    assertArrayEquals(content, blob.content(BlobSourceOption.decryptionKey(BASE64_KEY)));
+    assertArrayEquals(content, blob.content(BlobSourceOption.decryptionKey(KEY)));
   }
 
   @Test
@@ -310,15 +319,16 @@ public class BlobTest {
   }
 
   @Test
-  public void testReaderWithOptions() throws Exception {
+  public void testReaderWithDecryptionKey() throws Exception {
     initializeExpectedBlob(2);
     ReadChannel channel = createMock(ReadChannel.class);
     expect(storage.options()).andReturn(mockOptions);
-    expect(storage.reader(BLOB_INFO.blobId(), Storage.BlobSourceOption.decryptionKey("key")))
-        .andReturn(channel);
+    expect(storage.reader(BLOB_INFO.blobId(), Storage.BlobSourceOption.decryptionKey(BASE64_KEY)))
+        .andReturn(channel).times(2);
     replay(storage);
     initializeBlob();
-    assertSame(channel, blob.reader(BlobSourceOption.decryptionKey("key")));
+    assertSame(channel, blob.reader(BlobSourceOption.decryptionKey(BASE64_KEY)));
+    assertSame(channel, blob.reader(BlobSourceOption.decryptionKey(KEY)));
   }
 
   @Test
@@ -333,15 +343,16 @@ public class BlobTest {
   }
 
   @Test
-  public void testWriterWithOptions() throws Exception {
+  public void testWriterWithEncryptionKey() throws Exception {
     initializeExpectedBlob(2);
     BlobWriteChannel channel = createMock(BlobWriteChannel.class);
     expect(storage.options()).andReturn(mockOptions);
-    expect(storage.writer(eq(expectedBlob), eq(BlobWriteOption.encryptionKey("key"))))
-        .andReturn(channel);
+    expect(storage.writer(eq(expectedBlob), eq(BlobWriteOption.encryptionKey(BASE64_KEY))))
+        .andReturn(channel).times(2);
     replay(storage);
     initializeBlob();
-    assertSame(channel, blob.writer(BlobWriteOption.encryptionKey("key")));
+    assertSame(channel, blob.writer(BlobWriteOption.encryptionKey(BASE64_KEY)));
+    assertSame(channel, blob.writer(BlobWriteOption.encryptionKey(KEY)));
   }
 
   @Test

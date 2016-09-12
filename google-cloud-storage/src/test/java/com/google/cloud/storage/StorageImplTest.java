@@ -403,6 +403,33 @@ public class StorageImplTest {
   }
 
   @Test
+  public void testCreateBlobWithEncryptionKey() throws IOException {
+    Capture<ByteArrayInputStream> capturedStream = Capture.newInstance();
+    EasyMock.expect(storageRpcMock.create(
+        EasyMock.eq(BLOB_INFO1.toBuilder().md5(CONTENT_MD5).crc32c(CONTENT_CRC32C).build().toPb()),
+        EasyMock.capture(capturedStream),
+        EasyMock.eq(ENCRYPTION_KEY_OPTIONS)))
+        .andReturn(BLOB_INFO1.toPb())
+        .times(2);
+    EasyMock.replay(storageRpcMock);
+    initializeService();
+    Blob blob = storage.create(BLOB_INFO1, BLOB_CONTENT, BlobTargetOption.encryptionKey(KEY));
+    assertEquals(expectedBlob1, blob);
+    ByteArrayInputStream byteStream = capturedStream.getValue();
+    byte[] streamBytes = new byte[BLOB_CONTENT.length];
+    assertEquals(BLOB_CONTENT.length, byteStream.read(streamBytes));
+    assertArrayEquals(BLOB_CONTENT, streamBytes);
+    assertEquals(-1, byteStream.read(streamBytes));
+    blob = storage.create(BLOB_INFO1, BLOB_CONTENT, BlobTargetOption.encryptionKey(BASE64_KEY));
+    assertEquals(expectedBlob1, blob);
+    byteStream = capturedStream.getValue();
+    streamBytes = new byte[BLOB_CONTENT.length];
+    assertEquals(BLOB_CONTENT.length, byteStream.read(streamBytes));
+    assertArrayEquals(BLOB_CONTENT, streamBytes);
+    assertEquals(-1, byteStream.read(streamBytes));
+  }
+
+  @Test
   public void testCreateBlobFromStream() {
     ByteArrayInputStream fileStream = new ByteArrayInputStream(BLOB_CONTENT);
     BlobInfo.Builder infoBuilder = BLOB_INFO1.toBuilder();
@@ -413,6 +440,24 @@ public class StorageImplTest {
     EasyMock.replay(storageRpcMock);
     initializeService();
     Blob blob = storage.create(infoWithHashes, fileStream);
+    assertEquals(expectedBlob1, blob);
+  }
+
+  @Test
+  public void testCreateBlobFromStreamWithEncryptionKey() throws IOException {
+    ByteArrayInputStream fileStream = new ByteArrayInputStream(BLOB_CONTENT);
+    BlobInfo.Builder infoBuilder = BLOB_INFO1.toBuilder();
+    BlobInfo infoWithHashes = infoBuilder.md5(CONTENT_MD5).crc32c(CONTENT_CRC32C).build();
+    BlobInfo infoWithoutHashes = infoBuilder.md5(null).crc32c(null).build();
+    EasyMock.expect(
+        storageRpcMock.create(infoWithoutHashes.toPb(), fileStream, ENCRYPTION_KEY_OPTIONS))
+        .andReturn(BLOB_INFO1.toPb()).times(2);
+    EasyMock.replay(storageRpcMock);
+    initializeService();
+    Blob blob =
+        storage.create(infoWithHashes, fileStream, BlobWriteOption.encryptionKey(BASE64_KEY));
+    assertEquals(expectedBlob1, blob);
+    blob = storage.create(infoWithHashes, fileStream, BlobWriteOption.encryptionKey(BASE64_KEY));
     assertEquals(expectedBlob1, blob);
   }
 
@@ -933,10 +978,19 @@ public class StorageImplTest {
         ENCRYPTION_KEY_OPTIONS, true, request.target().toPb(), ENCRYPTION_KEY_OPTIONS, null);
     StorageRpc.RewriteResponse rpcResponse = new StorageRpc.RewriteResponse(rpcRequest, null, 42L,
         false, "token", 21L);
-    EasyMock.expect(storageRpcMock.openRewrite(rpcRequest)).andReturn(rpcResponse);
+    EasyMock.expect(storageRpcMock.openRewrite(rpcRequest)).andReturn(rpcResponse).times(2);
     EasyMock.replay(storageRpcMock);
     initializeService();
     CopyWriter writer = storage.copy(request);
+    assertEquals(42L, writer.blobSize());
+    assertEquals(21L, writer.totalBytesCopied());
+    assertTrue(!writer.isDone());
+    request = Storage.CopyRequest.builder()
+        .source(BLOB_INFO2.blobId())
+        .sourceOptions(BlobSourceOption.decryptionKey(BASE64_KEY))
+        .target(BLOB_INFO1, BlobTargetOption.encryptionKey(KEY))
+        .build();
+    writer = storage.copy(request);
     assertEquals(42L, writer.blobSize());
     assertEquals(21L, writer.totalBytesCopied());
     assertTrue(!writer.isDone());
@@ -1012,28 +1066,19 @@ public class StorageImplTest {
   public void testReadAllBytesWithDecriptionKey() {
     EasyMock.expect(
         storageRpcMock.load(BlobId.of(BUCKET_NAME1, BLOB_NAME1).toPb(), ENCRYPTION_KEY_OPTIONS))
-        .andReturn(BLOB_CONTENT);
+        .andReturn(BLOB_CONTENT).times(2);
     EasyMock.replay(storageRpcMock);
     initializeService();
     byte[] readBytes = storage.readAllBytes(BUCKET_NAME1, BLOB_NAME1,
         BlobSourceOption.decryptionKey(KEY));
     assertArrayEquals(BLOB_CONTENT, readBytes);
-  }
-
-  @Test
-  public void testReadAllBytesWithBase64DecriptionKey() {
-    EasyMock.expect(
-        storageRpcMock.load(BlobId.of(BUCKET_NAME1, BLOB_NAME1).toPb(), ENCRYPTION_KEY_OPTIONS))
-        .andReturn(BLOB_CONTENT);
-    EasyMock.replay(storageRpcMock);
-    initializeService();
-    byte[] readBytes = storage.readAllBytes(BUCKET_NAME1, BLOB_NAME1,
+    readBytes = storage.readAllBytes(BUCKET_NAME1, BLOB_NAME1,
         BlobSourceOption.decryptionKey(BASE64_KEY));
     assertArrayEquals(BLOB_CONTENT, readBytes);
   }
 
   @Test
-  public void testReadAllBytesWithOptionsFromBlobId() {
+  public void testReadAllBytesFromBlobIdWithOptions() {
     EasyMock.expect(
         storageRpcMock.load(BLOB_INFO1.blobId().toPb(), BLOB_SOURCE_OPTIONS))
         .andReturn(BLOB_CONTENT);
@@ -1041,6 +1086,21 @@ public class StorageImplTest {
     initializeService();
     byte[] readBytes = storage.readAllBytes(BLOB_INFO1.blobId(),
         BLOB_SOURCE_GENERATION_FROM_BLOB_ID, BLOB_SOURCE_METAGENERATION);
+    assertArrayEquals(BLOB_CONTENT, readBytes);
+  }
+
+  @Test
+  public void testReadAllBytesFromBlobIdWithDecriptionKey() {
+    EasyMock.expect(
+        storageRpcMock.load(BLOB_INFO1.blobId().toPb(), ENCRYPTION_KEY_OPTIONS))
+        .andReturn(BLOB_CONTENT).times(2);
+    EasyMock.replay(storageRpcMock);
+    initializeService();
+    byte[] readBytes =
+        storage.readAllBytes(BLOB_INFO1.blobId(), BlobSourceOption.decryptionKey(KEY));
+    assertArrayEquals(BLOB_CONTENT, readBytes);
+    readBytes =
+        storage.readAllBytes(BLOB_INFO1.blobId(), BlobSourceOption.decryptionKey(BASE64_KEY));
     assertArrayEquals(BLOB_CONTENT, readBytes);
   }
 
@@ -1086,7 +1146,7 @@ public class StorageImplTest {
     byte[] result = new byte[DEFAULT_CHUNK_SIZE];
     EasyMock.expect(
         storageRpcMock.read(BLOB_INFO2.toPb(), ENCRYPTION_KEY_OPTIONS, 0, DEFAULT_CHUNK_SIZE))
-        .andReturn(StorageRpc.Tuple.of("etag", result));
+        .andReturn(StorageRpc.Tuple.of("etag", result)).times(2);
     EasyMock.replay(storageRpcMock);
     initializeService();
     ReadChannel channel =
@@ -1094,18 +1154,7 @@ public class StorageImplTest {
     assertNotNull(channel);
     assertTrue(channel.isOpen());
     channel.read(ByteBuffer.allocate(42));
-  }
-
-  @Test
-  public void testReaderWithBase64DecryptionKey() throws IOException {
-    byte[] result = new byte[DEFAULT_CHUNK_SIZE];
-    EasyMock.expect(
-        storageRpcMock.read(BLOB_INFO2.toPb(), ENCRYPTION_KEY_OPTIONS, 0, DEFAULT_CHUNK_SIZE))
-        .andReturn(StorageRpc.Tuple.of("etag", result));
-    EasyMock.replay(storageRpcMock);
-    initializeService();
-    ReadChannel channel =
-        storage.reader(BUCKET_NAME1, BLOB_NAME2, BlobSourceOption.decryptionKey(BASE64_KEY));
+    channel = storage.reader(BUCKET_NAME1, BLOB_NAME2, BlobSourceOption.decryptionKey(BASE64_KEY));
     assertNotNull(channel);
     assertTrue(channel.isOpen());
     channel.read(ByteBuffer.allocate(42));
@@ -1157,22 +1206,13 @@ public class StorageImplTest {
   public void testWriterWithEncryptionKey() {
     BlobInfo info = BLOB_INFO1.toBuilder().md5(null).crc32c(null).build();
     EasyMock.expect(storageRpcMock.open(info.toPb(), ENCRYPTION_KEY_OPTIONS))
-        .andReturn("upload-id");
+        .andReturn("upload-id").times(2);
     EasyMock.replay(storageRpcMock);
     initializeService();
     WriteChannel channel = storage.writer(info, BlobWriteOption.encryptionKey(KEY));
     assertNotNull(channel);
     assertTrue(channel.isOpen());
-  }
-
-  @Test
-  public void testWriterWithBase64EncryptionKey() {
-    BlobInfo info = BLOB_INFO1.toBuilder().md5(null).crc32c(null).build();
-    EasyMock.expect(storageRpcMock.open(info.toPb(), ENCRYPTION_KEY_OPTIONS))
-        .andReturn("upload-id");
-    EasyMock.replay(storageRpcMock);
-    initializeService();
-    WriteChannel channel = storage.writer(info, BlobWriteOption.encryptionKey(BASE64_KEY));
+    channel = storage.writer(info, BlobWriteOption.encryptionKey(BASE64_KEY));
     assertNotNull(channel);
     assertTrue(channel.isOpen());
   }

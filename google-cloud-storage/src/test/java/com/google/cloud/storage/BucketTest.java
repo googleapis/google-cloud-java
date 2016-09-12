@@ -38,6 +38,7 @@ import com.google.cloud.storage.BucketInfo.DeleteRule;
 import com.google.common.base.Function;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
+import com.google.common.io.BaseEncoding;
 
 import org.junit.After;
 import org.junit.Before;
@@ -47,9 +48,12 @@ import org.junit.rules.ExpectedException;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
+import java.security.Key;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
+
+import javax.crypto.spec.SecretKeySpec;
 
 public class BucketTest {
 
@@ -91,6 +95,9 @@ public class BucketTest {
       .build();
   private static final BucketInfo BUCKET_INFO = BucketInfo.builder("b").metageneration(42L).build();
   private static final String CONTENT_TYPE = "text/plain";
+  private static final String BASE64_KEY = "JVzfVl8NLD9FjedFuStegjRfES5ll5zc59CIXw572OA=";
+  private static final Key KEY =
+      new SecretKeySpec(BaseEncoding.base64().decode(BASE64_KEY), "AES256");
 
   private Storage storage;
   private Storage serviceMockReturnsOptions = createMock(Storage.class);
@@ -320,14 +327,30 @@ public class BucketTest {
     expect(storage.create(info, content, Storage.BlobTargetOption.generationMatch(),
         Storage.BlobTargetOption.metagenerationMatch(),
         Storage.BlobTargetOption.predefinedAcl(acl),
-        Storage.BlobTargetOption.encryptionKey("key"))).andReturn(expectedBlob);
+        Storage.BlobTargetOption.encryptionKey(BASE64_KEY))).andReturn(expectedBlob);
     replay(storage);
     initializeBucket();
     Blob blob = bucket.create("n", content, CONTENT_TYPE,
         Bucket.BlobTargetOption.generationMatch(42L),
         Bucket.BlobTargetOption.metagenerationMatch(24L),
         Bucket.BlobTargetOption.predefinedAcl(acl),
-        Bucket.BlobTargetOption.encryptionKey("key"));
+        Bucket.BlobTargetOption.encryptionKey(BASE64_KEY));
+    assertEquals(expectedBlob, blob);
+  }
+
+  @Test
+  public void testCreateWithEncryptionKey() throws Exception {
+    initializeExpectedBucket(5);
+    BlobInfo info = BlobInfo.builder(BlobId.of("b", "n")).contentType(CONTENT_TYPE).build();
+    Blob expectedBlob = new Blob(serviceMockReturnsOptions, new BlobInfo.BuilderImpl(info));
+    byte[] content = {0xD, 0xE, 0xA, 0xD};
+    expect(storage.options()).andReturn(mockOptions);
+    expect(storage.create(info, content, Storage.BlobTargetOption.encryptionKey(KEY)))
+        .andReturn(expectedBlob);
+    replay(storage);
+    initializeBucket();
+    Blob blob =
+        bucket.create("n", content, CONTENT_TYPE, Bucket.BlobTargetOption.encryptionKey(KEY));
     assertEquals(expectedBlob, blob);
   }
 
@@ -421,7 +444,7 @@ public class BucketTest {
     expect(storage.create(info, streamContent, Storage.BlobWriteOption.generationMatch(),
         Storage.BlobWriteOption.metagenerationMatch(), Storage.BlobWriteOption.predefinedAcl(acl),
         Storage.BlobWriteOption.crc32cMatch(), Storage.BlobWriteOption.md5Match(),
-        Storage.BlobWriteOption.encryptionKey("key")))
+        Storage.BlobWriteOption.encryptionKey(BASE64_KEY)))
         .andReturn(expectedBlob);
     replay(storage);
     initializeBucket();
@@ -429,7 +452,24 @@ public class BucketTest {
         Bucket.BlobWriteOption.generationMatch(42L),
         Bucket.BlobWriteOption.metagenerationMatch(24L), Bucket.BlobWriteOption.predefinedAcl(acl),
         Bucket.BlobWriteOption.crc32cMatch("crc"), Bucket.BlobWriteOption.md5Match("md5"),
-        Bucket.BlobWriteOption.encryptionKey("key"));
+        Bucket.BlobWriteOption.encryptionKey(BASE64_KEY));
+    assertEquals(expectedBlob, blob);
+  }
+
+  @Test
+  public void testCreateFromStreamWithEncryptionKey() throws Exception {
+    initializeExpectedBucket(5);
+    BlobInfo info = BlobInfo.builder(BlobId.of("b", "n")).contentType(CONTENT_TYPE).build();
+    Blob expectedBlob = new Blob(serviceMockReturnsOptions, new BlobInfo.BuilderImpl(info));
+    byte[] content = {0xD, 0xE, 0xA, 0xD};
+    InputStream streamContent = new ByteArrayInputStream(content);
+    expect(storage.options()).andReturn(mockOptions);
+    expect(storage.create(info, streamContent, Storage.BlobWriteOption.encryptionKey(KEY)))
+        .andReturn(expectedBlob);
+    replay(storage);
+    initializeBucket();
+    Blob blob =
+        bucket.create("n", streamContent, CONTENT_TYPE, Bucket.BlobWriteOption.encryptionKey(KEY));
     assertEquals(expectedBlob, blob);
   }
 
