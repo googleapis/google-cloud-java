@@ -35,9 +35,12 @@ import com.google.cloud.storage.Acl.Project;
 import com.google.cloud.storage.Acl.Project.ProjectRole;
 import com.google.cloud.storage.Acl.Role;
 import com.google.cloud.storage.Acl.User;
+import com.google.cloud.storage.Blob.BlobSourceOption;
+import com.google.cloud.storage.Storage.BlobWriteOption;
 import com.google.cloud.storage.Storage.CopyRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
+import com.google.common.io.BaseEncoding;
 
 import org.easymock.Capture;
 import org.junit.After;
@@ -45,9 +48,12 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.net.URL;
+import java.security.Key;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
+
+import javax.crypto.spec.SecretKeySpec;
 
 public class BlobTest {
 
@@ -74,6 +80,10 @@ public class BlobTest {
   private static final Long SIZE = 1024L;
   private static final Long UPDATE_TIME = DELETE_TIME - 1L;
   private static final Long CREATE_TIME = UPDATE_TIME - 1L;
+  private static final String ENCRYPTION_ALGORITHM = "AES256";
+  private static final String KEY_SHA256 = "keySha";
+  private static final BlobInfo.CustomerEncryption CUSTOMER_ENCRYPTION =
+      new BlobInfo.CustomerEncryption(ENCRYPTION_ALGORITHM, KEY_SHA256);
   private static final BlobInfo FULL_BLOB_INFO = BlobInfo.builder("b", "n", GENERATION)
       .acl(ACLS)
       .componentCount(COMPONENT_COUNT)
@@ -95,12 +105,16 @@ public class BlobTest {
       .size(SIZE)
       .updateTime(UPDATE_TIME)
       .createTime(CREATE_TIME)
+      .customerEncryption(CUSTOMER_ENCRYPTION)
       .build();
   private static final BlobInfo BLOB_INFO = BlobInfo.builder("b", "n").metageneration(42L).build();
   private static final BlobInfo DIRECTORY_INFO = BlobInfo.builder("b", "n/")
       .size(0L)
       .isDirectory(true)
       .build();
+  private static final String BASE64_KEY = "JVzfVl8NLD9FjedFuStegjRfES5ll5zc59CIXw572OA=";
+  private static final Key KEY =
+      new SecretKeySpec(BaseEncoding.base64().decode(BASE64_KEY), "AES256");
 
   private Storage storage;
   private Blob blob;
@@ -161,6 +175,20 @@ public class BlobTest {
   }
 
   @Test
+  public void testContentWithDecryptionKey() throws Exception {
+    initializeExpectedBlob(2);
+    byte[] content = {1, 2};
+    expect(storage.options()).andReturn(mockOptions);
+    expect(storage.readAllBytes(BLOB_INFO.blobId(),
+        Storage.BlobSourceOption.decryptionKey(BASE64_KEY)))
+        .andReturn(content).times(2);
+    replay(storage);
+    initializeBlob();
+    assertArrayEquals(content, blob.content(BlobSourceOption.decryptionKey(BASE64_KEY)));
+    assertArrayEquals(content, blob.content(BlobSourceOption.decryptionKey(KEY)));
+  }
+
+  @Test
   public void testReload() throws Exception {
     initializeExpectedBlob(2);
     Blob expectedReloadedBlob = expectedBlob.toBuilder().cacheControl("c").build();
@@ -193,7 +221,7 @@ public class BlobTest {
     expect(storage.get(BLOB_INFO.blobId(), options)).andReturn(expectedReloadedBlob);
     replay(storage);
     initializeBlob();
-    Blob updatedBlob = blob.reload(Blob.BlobSourceOption.metagenerationMatch());
+    Blob updatedBlob = blob.reload(BlobSourceOption.metagenerationMatch());
     assertEquals(expectedReloadedBlob, updatedBlob);
   }
 
@@ -291,6 +319,19 @@ public class BlobTest {
   }
 
   @Test
+  public void testReaderWithDecryptionKey() throws Exception {
+    initializeExpectedBlob(2);
+    ReadChannel channel = createMock(ReadChannel.class);
+    expect(storage.options()).andReturn(mockOptions);
+    expect(storage.reader(BLOB_INFO.blobId(), Storage.BlobSourceOption.decryptionKey(BASE64_KEY)))
+        .andReturn(channel).times(2);
+    replay(storage);
+    initializeBlob();
+    assertSame(channel, blob.reader(BlobSourceOption.decryptionKey(BASE64_KEY)));
+    assertSame(channel, blob.reader(BlobSourceOption.decryptionKey(KEY)));
+  }
+
+  @Test
   public void testWriter() throws Exception {
     initializeExpectedBlob(2);
     BlobWriteChannel channel = createMock(BlobWriteChannel.class);
@@ -299,6 +340,19 @@ public class BlobTest {
     replay(storage);
     initializeBlob();
     assertSame(channel, blob.writer());
+  }
+
+  @Test
+  public void testWriterWithEncryptionKey() throws Exception {
+    initializeExpectedBlob(2);
+    BlobWriteChannel channel = createMock(BlobWriteChannel.class);
+    expect(storage.options()).andReturn(mockOptions);
+    expect(storage.writer(eq(expectedBlob), eq(BlobWriteOption.encryptionKey(BASE64_KEY))))
+        .andReturn(channel).times(2);
+    replay(storage);
+    initializeBlob();
+    assertSame(channel, blob.writer(BlobWriteOption.encryptionKey(BASE64_KEY)));
+    assertSame(channel, blob.writer(BlobWriteOption.encryptionKey(KEY)));
   }
 
   @Test
@@ -390,6 +444,8 @@ public class BlobTest {
         .contentEncoding(CONTENT_ENCODING)
         .contentLanguage(CONTENT_LANGUAGE)
         .crc32c(CRC32)
+        .createTime(CREATE_TIME)
+        .customerEncryption(CUSTOMER_ENCRYPTION)
         .deleteTime(DELETE_TIME)
         .etag(ETAG)
         .generatedId(GENERATED_ID)
@@ -401,7 +457,6 @@ public class BlobTest {
         .selfLink(SELF_LINK)
         .size(SIZE)
         .updateTime(UPDATE_TIME)
-        .createTime(CREATE_TIME)
         .build();
     assertEquals("b", blob.bucket());
     assertEquals("n", blob.name());
@@ -414,6 +469,7 @@ public class BlobTest {
     assertEquals(CONTENT_LANGUAGE, blob.contentLanguage());
     assertEquals(CRC32, blob.crc32c());
     assertEquals(CREATE_TIME, blob.createTime());
+    assertEquals(CUSTOMER_ENCRYPTION, blob.customerEncryption());
     assertEquals(DELETE_TIME, blob.deleteTime());
     assertEquals(ETAG, blob.etag());
     assertEquals(GENERATED_ID, blob.generatedId());
@@ -442,6 +498,7 @@ public class BlobTest {
     assertNull(blob.contentLanguage());
     assertNull(blob.crc32c());
     assertNull(blob.createTime());
+    assertNull(blob.customerEncryption());
     assertNull(blob.deleteTime());
     assertNull(blob.etag());
     assertNull(blob.generatedId());

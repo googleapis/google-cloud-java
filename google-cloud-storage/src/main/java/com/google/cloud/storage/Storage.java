@@ -36,10 +36,12 @@ import com.google.cloud.storage.spi.StorageRpc.Tuple;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
+import com.google.common.io.BaseEncoding;
 
 import java.io.InputStream;
 import java.io.Serializable;
 import java.net.URL;
+import java.security.Key;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.LinkedHashSet;
@@ -325,6 +327,25 @@ public interface Storage extends Service<StorageOptions> {
       return new BlobTargetOption(StorageRpc.Option.IF_METAGENERATION_NOT_MATCH);
     }
 
+    /**
+     * Returns an option to set a customer-supplied AES256 key for server-side encryption of the
+     * blob.
+     */
+    public static BlobTargetOption encryptionKey(Key key) {
+      String base64Key = BaseEncoding.base64().encode(key.getEncoded());
+      return new BlobTargetOption(StorageRpc.Option.CUSTOMER_SUPPLIED_KEY, base64Key);
+    }
+
+    /**
+     * Returns an option to set a customer-supplied AES256 key for server-side encryption of the
+     * blob.
+     *
+     * @param key the AES256 encoded in base64
+     */
+    public static BlobTargetOption encryptionKey(String key) {
+      return new BlobTargetOption(StorageRpc.Option.CUSTOMER_SUPPLIED_KEY, key);
+    }
+
     static Tuple<BlobInfo, BlobTargetOption[]> convert(BlobInfo info, BlobWriteOption... options) {
       BlobInfo.Builder infoBuilder = info.toBuilder().crc32c(null).md5(null);
       List<BlobTargetOption> targetOptions = Lists.newArrayListWithCapacity(options.length);
@@ -358,7 +379,7 @@ public interface Storage extends Service<StorageOptions> {
 
     enum Option {
       PREDEFINED_ACL, IF_GENERATION_MATCH, IF_GENERATION_NOT_MATCH, IF_METAGENERATION_MATCH,
-      IF_METAGENERATION_NOT_MATCH, IF_MD5_MATCH, IF_CRC32C_MATCH;
+      IF_METAGENERATION_NOT_MATCH, IF_MD5_MATCH, IF_CRC32C_MATCH, CUSTOMER_SUPPLIED_KEY;
 
       StorageRpc.Option toRpcOption() {
         return StorageRpc.Option.valueOf(this.name());
@@ -456,6 +477,25 @@ public interface Storage extends Service<StorageOptions> {
     public static BlobWriteOption crc32cMatch() {
       return new BlobWriteOption(Option.IF_CRC32C_MATCH, true);
     }
+
+    /**
+     * Returns an option to set a customer-supplied AES256 key for server-side encryption of the
+     * blob.
+     */
+    public static BlobWriteOption encryptionKey(Key key) {
+      String base64Key = BaseEncoding.base64().encode(key.getEncoded());
+      return new BlobWriteOption(Option.CUSTOMER_SUPPLIED_KEY, base64Key);
+    }
+
+    /**
+     * Returns an option to set a customer-supplied AES256 key for server-side encryption of the
+     * blob.
+     *
+     * @param key the AES256 encoded in base64
+     */
+    public static BlobWriteOption encryptionKey(String key) {
+      return new BlobWriteOption(Option.CUSTOMER_SUPPLIED_KEY, key);
+    }
   }
 
   /**
@@ -465,7 +505,7 @@ public interface Storage extends Service<StorageOptions> {
 
     private static final long serialVersionUID = -3712768261070182991L;
 
-    private BlobSourceOption(StorageRpc.Option rpcOption, Long value) {
+    private BlobSourceOption(StorageRpc.Option rpcOption, Object value) {
       super(rpcOption, value);
     }
 
@@ -521,6 +561,25 @@ public interface Storage extends Service<StorageOptions> {
      */
     public static BlobSourceOption metagenerationNotMatch(long metageneration) {
       return new BlobSourceOption(StorageRpc.Option.IF_METAGENERATION_NOT_MATCH, metageneration);
+    }
+
+    /**
+     * Returns an option to set a customer-supplied AES256 key for server-side encryption of the
+     * blob.
+     */
+    public static BlobSourceOption decryptionKey(Key key) {
+      String base64Key = BaseEncoding.base64().encode(key.getEncoded());
+      return new BlobSourceOption(StorageRpc.Option.CUSTOMER_SUPPLIED_KEY, base64Key);
+    }
+
+    /**
+     * Returns an option to set a customer-supplied AES256 key for server-side encryption of the
+     * blob.
+     *
+     * @param key the AES256 encoded in base64
+     */
+    public static BlobSourceOption decryptionKey(String key) {
+      return new BlobSourceOption(StorageRpc.Option.CUSTOMER_SUPPLIED_KEY, key);
     }
   }
 
