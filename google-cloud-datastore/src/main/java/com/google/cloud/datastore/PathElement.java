@@ -19,21 +19,22 @@ package com.google.cloud.datastore;
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import com.google.common.base.MoreObjects;
 import com.google.common.base.Strings;
-import com.google.protobuf.InvalidProtocolBufferException;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
  * Represents a single element in a key's path.
  */
-public final class PathElement extends Serializable<com.google.datastore.v1.Key.PathElement> {
+public final class PathElement implements Serializable {
 
-  private static final long serialVersionUID = -7968078857690784595L;
+  private static final long serialVersionUID = -777300414390493910L;
 
-  private final transient String kind;
-  private final transient Long id;
-  private final transient String name;
+  private final String kind;
+  private final Long id;
+  private final String name;
 
   private PathElement(String kind, String name, Long id) {
     this.kind = checkNotNull(kind, "kind must not be null");
@@ -66,6 +67,15 @@ public final class PathElement extends Serializable<com.google.datastore.v1.Key.
   }
 
   @Override
+  public String toString() {
+    return MoreObjects.toStringHelper(this)
+        .add("kind", kind)
+        .add("id", id)
+        .add("name", name)
+        .toString();
+  }
+
+  @Override
   public int hashCode() {
     return Objects.hash(kind, id, name);
   }
@@ -84,7 +94,6 @@ public final class PathElement extends Serializable<com.google.datastore.v1.Key.
         && Objects.equals(name, other.name);
   }
 
-  @Override
   com.google.datastore.v1.Key.PathElement toPb() {
     com.google.datastore.v1.Key.PathElement.Builder pathElementPb =
         com.google.datastore.v1.Key.PathElement.newBuilder();
@@ -95,11 +104,6 @@ public final class PathElement extends Serializable<com.google.datastore.v1.Key.
       pathElementPb.setName(name);
     }
     return pathElementPb.build();
-  }
-
-  @Override
-  Object fromPb(byte[] bytesPb) throws InvalidProtocolBufferException {
-    return fromPb(com.google.datastore.v1.Key.PathElement.parseFrom(bytesPb));
   }
 
   static PathElement fromPb(com.google.datastore.v1.Key.PathElement pathElementPb) {

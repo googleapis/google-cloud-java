@@ -28,10 +28,11 @@ import static com.google.cloud.datastore.LongValue.of;
 import static com.google.cloud.datastore.NullValue.of;
 import static com.google.cloud.datastore.StringValue.of;
 
+import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableSortedMap;
 import com.google.common.collect.Maps;
-import com.google.protobuf.InvalidProtocolBufferException;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -49,12 +50,10 @@ import java.util.Set;
  * @see <a href="https://cloud.google.com/datastore/docs/concepts/entities">Google Cloud Datastore
  *     Entities, Properties, and Keys</a>
  */
-public abstract class BaseEntity<K extends IncompleteKey>
-    extends Serializable<com.google.datastore.v1.Entity> {
+public abstract class BaseEntity<K extends IncompleteKey> implements Serializable {
 
-  private static final long serialVersionUID = 8175618724683792766L;
-
-  private final transient ImmutableSortedMap<String, Value<?>> properties;
+  private static final long serialVersionUID = -9070588108769487081L;
+  private final ImmutableSortedMap<String, Value<?>> properties;
   private final K key;
 
   public abstract static class Builder<K extends IncompleteKey, B extends Builder<K, B>> {
@@ -460,6 +459,14 @@ public abstract class BaseEntity<K extends IncompleteKey>
   }
 
   @Override
+  public String toString() {
+    return MoreObjects.toStringHelper(this)
+        .add("key", key)
+        .add("properties", properties)
+        .toString();
+  }
+
+  @Override
   public int hashCode() {
     return Objects.hash(key, properties);
   }
@@ -643,16 +650,6 @@ public abstract class BaseEntity<K extends IncompleteKey>
     return properties;
   }
 
-  @Override
-  Object fromPb(byte[] bytesPb) throws InvalidProtocolBufferException {
-    Builder<?, ?> builder = emptyBuilder();
-    builder.fill(com.google.datastore.v1.Entity.parseFrom(bytesPb));
-    return builder.build();
-  }
-
-  protected abstract Builder<?, ?> emptyBuilder();
-
-  @Override
   final com.google.datastore.v1.Entity toPb() {
     com.google.datastore.v1.Entity.Builder entityPb = com.google.datastore.v1.Entity.newBuilder();
     Map<String, com.google.datastore.v1.Value> propertiesPb = entityPb.getMutableProperties();

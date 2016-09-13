@@ -18,7 +18,6 @@ package com.google.cloud.datastore;
 
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
-import com.google.protobuf.InvalidProtocolBufferException;
 
 import java.util.List;
 
@@ -28,7 +27,7 @@ import java.util.List;
  */
 public class IncompleteKey extends BaseKey {
 
-  private static final long serialVersionUID = -75301206578793347L;
+  private static final long serialVersionUID = 4947014765344279019L;
 
   public static class Builder extends BaseKey.Builder<Builder> {
 
@@ -50,11 +49,6 @@ public class IncompleteKey extends BaseKey {
 
   IncompleteKey(String projectId, String namespace, ImmutableList<PathElement> path) {
     super(projectId, namespace, path);
-  }
-
-  @Override
-  Object fromPb(byte[] bytesPb) throws InvalidProtocolBufferException {
-    return fromPb(com.google.datastore.v1.Key.parseFrom(bytesPb));
   }
 
   static IncompleteKey fromPb(com.google.datastore.v1.Key keyPb) {

@@ -25,7 +25,7 @@ package com.google.cloud.datastore;
  */
 public final class KeyQuery extends StructuredQuery<Key> {
 
-  private static final long serialVersionUID = -746768461459070045L;
+  private static final long serialVersionUID = 1187064062245269457L;
 
   /**
    * A {@code KeyQuery} builder for queries that return {@link Key} results.

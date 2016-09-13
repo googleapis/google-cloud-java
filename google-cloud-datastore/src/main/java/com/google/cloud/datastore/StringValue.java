@@ -20,12 +20,12 @@ import static com.google.datastore.v1.Value.STRING_VALUE_FIELD_NUMBER;
 
 public final class StringValue extends Value<String> {
 
-  private static final long serialVersionUID = -3105699707394545523L;
+  private static final long serialVersionUID = -8709280401468276732L;
 
   static final BaseMarshaller<String, StringValue, Builder> MARSHALLER =
       new BaseMarshaller<String, StringValue, Builder>() {
 
-        private static final long serialVersionUID = -359610204134164436L;
+        private static final long serialVersionUID = -635109599283869091L;
 
         @Override
         public int getProtoFieldId() {

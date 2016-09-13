@@ -81,7 +81,7 @@ public enum ValueType {
   RAW_VALUE(RawValue.MARSHALLER),
 
   /**
-   * Represents a {@link LatLng} value
+   * Represents a {@link LatLng} value.
    */
   LAT_LNG(LatLngValue.MARSHALLER);
 

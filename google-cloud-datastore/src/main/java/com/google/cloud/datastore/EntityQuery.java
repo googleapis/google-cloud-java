@@ -25,7 +25,7 @@ package com.google.cloud.datastore;
  */
 public final class EntityQuery extends StructuredQuery<Entity> {
 
-  private static final long serialVersionUID = 2990565454831019471L;
+  private static final long serialVersionUID = -4748310327736758820L;
 
   /**
    * A {@code EntityQuery} builder for queries that return {@link Entity} results.

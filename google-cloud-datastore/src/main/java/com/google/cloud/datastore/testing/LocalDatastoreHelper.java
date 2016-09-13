@@ -623,7 +623,7 @@ public class LocalDatastoreHelper {
    *
    * @throws InterruptedException if emulator-related tasks are interrupted
    * @throws IOException if there are socket exceptions or issues creating/deleting the temporary
-   * data folder
+   *     data folder
    */
   public void start() throws IOException, InterruptedException {
     // send a quick request in case we have a hanging process from a previous run

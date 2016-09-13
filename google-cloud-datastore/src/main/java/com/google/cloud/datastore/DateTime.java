@@ -18,10 +18,9 @@ package com.google.cloud.datastore;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
-import com.google.protobuf.InvalidProtocolBufferException;
-
 import org.joda.time.format.ISODateTimeFormat;
 
+import java.io.Serializable;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -32,12 +31,11 @@ import java.util.Date;
  * @see <a href="https://cloud.google.com/datastore/docs/concepts/entities">Google Cloud Datastore
  *     Entities, Properties, and Keys</a>
  */
-public final class DateTime extends Serializable<com.google.protobuf.Timestamp>
-    implements Comparable<DateTime> {
+public final class DateTime implements Comparable<DateTime>, Serializable {
 
-  private static final long serialVersionUID = 7343324797621228378L;
+  private static final long serialVersionUID = 5152143600571559844L;
 
-  private final transient long timestampMicroseconds;
+  private final long timestampMicroseconds;
 
   DateTime(long timestampMicroseconds) {
     this.timestampMicroseconds = timestampMicroseconds;
@@ -95,15 +93,8 @@ public final class DateTime extends Serializable<com.google.protobuf.Timestamp>
     return copyFrom(calendar.getTime());
   }
 
-  @Override
   com.google.protobuf.Timestamp toPb() {
     return microsecondsToTimestampPb(timestampMicroseconds);
-  }
-
-  @Override
-  Object fromPb(byte[] bytesPb) throws InvalidProtocolBufferException {
-    return new DateTime(timestampPbToMicroseconds(
-        com.google.protobuf.Timestamp.parseFrom(bytesPb)));
   }
 
   static long timestampPbToMicroseconds(com.google.protobuf.Timestamp timestampPb) {

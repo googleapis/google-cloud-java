@@ -21,12 +21,12 @@ import static com.google.datastore.v1.Value.NULL_VALUE_FIELD_NUMBER;
 
 public final class NullValue extends Value<Void> {
 
-  private static final long serialVersionUID = 8497300779013002270L;
+  private static final long serialVersionUID = 2089084567599008130L;
 
   static final BaseMarshaller<Void, NullValue, Builder> MARSHALLER =
       new BaseMarshaller<Void, NullValue, Builder>() {
 
-        private static final long serialVersionUID = 2785573597627128832L;
+        private static final long serialVersionUID = 6997769137212338027L;
 
         @Override
         public Builder newBuilder(Void value) {

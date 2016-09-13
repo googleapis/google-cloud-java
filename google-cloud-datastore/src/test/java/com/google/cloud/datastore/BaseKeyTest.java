@@ -45,10 +45,6 @@ public class BaseKeyTest {
       path.addAll(ancestors);
       path.add(PathElement.of(kind));
       return new BaseKey(projectId, namespace, path.build()) {
-        @Override
-        protected Object fromPb(byte[] bytesPb) throws InvalidProtocolBufferException {
-          return null;
-        }
 
         @Override
         protected BaseKey parent() {

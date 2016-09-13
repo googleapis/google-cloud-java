@@ -18,12 +18,12 @@ package com.google.cloud.datastore;
 
 public final class RawValue extends Value<com.google.datastore.v1.Value> {
 
-  private static final long serialVersionUID = -3359604598651897941L;
+  private static final long serialVersionUID = 6615860024753061102L;
 
   static final BaseMarshaller<com.google.datastore.v1.Value, RawValue, Builder> MARSHALLER =
       new BaseMarshaller<com.google.datastore.v1.Value, RawValue, Builder>() {
 
-        private static final long serialVersionUID = 5320642719486106244L;
+        private static final long serialVersionUID = -5724906360924425548L;
 
         @Override
         public Builder newBuilder(com.google.datastore.v1.Value value) {

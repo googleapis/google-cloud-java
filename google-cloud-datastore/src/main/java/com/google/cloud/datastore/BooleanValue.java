@@ -20,12 +20,12 @@ import static com.google.datastore.v1.Value.BOOLEAN_VALUE_FIELD_NUMBER;
 
 public final class BooleanValue extends Value<Boolean> {
 
-  private static final long serialVersionUID = -542649497897250340L;
+  private static final long serialVersionUID = -6692551696100439451L;
 
   static final BaseMarshaller<Boolean, BooleanValue, Builder> MARSHALLER =
       new BaseMarshaller<Boolean, BooleanValue, Builder>() {
 
-        private static final long serialVersionUID = 7080467411349092522L;
+        private static final long serialVersionUID = 5178009712526977429L;
 
         @Override
         public int getProtoFieldId() {

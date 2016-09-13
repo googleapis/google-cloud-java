@@ -25,7 +25,7 @@ public final class BlobValue extends Value<Blob> {
   static final BaseMarshaller<Blob, BlobValue, Builder> MARSHALLER =
       new BaseMarshaller<Blob, BlobValue, Builder>() {
 
-        private static final long serialVersionUID = -823515687083612387L;
+        private static final long serialVersionUID = -739627441374592171L;
 
         @Override
         public int getProtoFieldId() {

@@ -16,11 +16,13 @@
 
 package com.google.cloud.datastore;
 
+import java.io.Serializable;
+
 /**
  * A common interface for Value marshallers.
  */
 interface ValueMarshaller<V, P extends Value<V>, B extends ValueBuilder<V, P, B>>
-    extends java.io.Serializable {
+    extends Serializable {
 
   B fromProto(com.google.datastore.v1.Value proto);
 

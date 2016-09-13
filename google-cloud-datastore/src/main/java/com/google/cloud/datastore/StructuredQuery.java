@@ -29,7 +29,6 @@ import com.google.common.base.MoreObjects;
 import com.google.common.base.MoreObjects.ToStringHelper;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
-import com.google.protobuf.InvalidProtocolBufferException;
 
 import java.io.Serializable;
 import java.util.Arrays;
@@ -85,15 +84,15 @@ public abstract class StructuredQuery<V> extends Query<V> {
   private static final long serialVersionUID = 546838955624019594L;
   static final String KEY_PROPERTY_NAME = "__key__";
 
-  private final transient String kind;
+  private final String kind;
   private final ImmutableList<String> projection;
-  private final transient Filter filter;
+  private final Filter filter;
   private final ImmutableList<String> distinctOn;
-  private final transient ImmutableList<OrderBy> orderBy;
-  private final transient Cursor startCursor;
-  private final transient Cursor endCursor;
-  private final transient int offset;
-  private final transient Integer limit;
+  private final ImmutableList<OrderBy> orderBy;
+  private final Cursor startCursor;
+  private final Cursor endCursor;
+  private final int offset;
+  private final Integer limit;
 
   public abstract static class Filter implements Serializable {
 
@@ -752,9 +751,24 @@ public abstract class StructuredQuery<V> extends Query<V> {
   }
 
   @Override
+  public String toString() {
+    return toStringHelper()
+        .add("kind", kind)
+        .add("startCursor", startCursor)
+        .add("endCursor", endCursor)
+        .add("offset", offset)
+        .add("limit", limit)
+        .add("filter", filter)
+        .add("orderBy", orderBy)
+        .add("projection", projection)
+        .add("distinctOn", distinctOn)
+        .toString();
+  }
+
+  @Override
   public int hashCode() {
     return Objects.hash(namespace(), kind, startCursor, endCursor, offset, limit, filter, orderBy,
-        distinctOn());
+        projection, distinctOn);
   }
 
   @Override
@@ -841,7 +855,6 @@ public abstract class StructuredQuery<V> extends Query<V> {
     return builder.build();
   }
 
-  @Override
   com.google.datastore.v1.Query toPb() {
     com.google.datastore.v1.Query.Builder queryPb = com.google.datastore.v1.Query.newBuilder();
     if (kind != null) {
@@ -857,7 +870,7 @@ public abstract class StructuredQuery<V> extends Query<V> {
       queryPb.setOffset(offset);
     }
     if (limit != null) {
-      queryPb.setLimit(com.google.protobuf.Int32Value.newBuilder().setValue(limit.intValue()));
+      queryPb.setLimit(com.google.protobuf.Int32Value.newBuilder().setValue(limit));
     }
     if (filter != null) {
       queryPb.setFilter(filter.toPb());
@@ -877,12 +890,6 @@ public abstract class StructuredQuery<V> extends Query<V> {
       queryPb.addProjection(expressionPb.build());
     }
     return queryPb.build();
-  }
-
-  @Override
-  Object fromPb(ResultType<V> resultType, String namespace, byte[] bytesPb)
-      throws InvalidProtocolBufferException {
-    return fromPb(resultType, namespace, com.google.datastore.v1.Query.parseFrom(bytesPb));
   }
 
   @SuppressWarnings("unchecked")

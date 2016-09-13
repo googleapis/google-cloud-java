@@ -22,17 +22,18 @@ import com.google.common.base.MoreObjects;
 import com.google.common.base.MoreObjects.ToStringHelper;
 import com.google.common.io.BaseEncoding;
 import com.google.protobuf.ByteString;
-import com.google.protobuf.InvalidProtocolBufferException;
+
+import java.io.Serializable;
 
 /**
  * A Google Cloud Datastore cursor.
  * The cursor can be used to as a starting point or an ending point for a {@link Query}
  */
-public final class Cursor extends Serializable<com.google.datastore.v1.Value> {
+public final class Cursor implements Serializable {
 
-  private static final long serialVersionUID = -1423744878777486541L;
+  private static final long serialVersionUID = 4688656124180503551L;
 
-  private final transient ByteString byteString;
+  private final ByteString byteString;
 
   Cursor(ByteString byteString) {
     this.byteString = byteString;
@@ -84,17 +85,7 @@ public final class Cursor extends Serializable<com.google.datastore.v1.Value> {
     return new Cursor(ByteString.copyFrom(checkNotNull(bytes)));
   }
 
-  @Override
   com.google.datastore.v1.Value toPb() {
     return com.google.datastore.v1.Value.newBuilder().setBlobValue(byteString).build();
-  }
-
-  @Override
-  Object fromPb(byte[] bytesPb) throws InvalidProtocolBufferException {
-    return fromPb(com.google.datastore.v1.Value.parseFrom(bytesPb));
-  }
-
-  static Cursor fromPb(com.google.datastore.v1.Value valuePb) {
-    return new Cursor(valuePb.getBlobValue());
   }
 }

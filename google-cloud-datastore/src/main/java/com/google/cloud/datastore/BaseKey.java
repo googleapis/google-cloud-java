@@ -20,9 +20,11 @@ import static com.google.cloud.datastore.Validator.validateDatabase;
 import static com.google.cloud.datastore.Validator.validateKind;
 import static com.google.cloud.datastore.Validator.validateNamespace;
 
+import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 
+import java.io.Serializable;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
@@ -30,13 +32,13 @@ import java.util.Objects;
 /**
  * Base class for keys.
  */
-public abstract class BaseKey extends Serializable<com.google.datastore.v1.Key> {
+public abstract class BaseKey implements Serializable {
 
-  private static final long serialVersionUID = -4671243265877410635L;
+  private static final long serialVersionUID = -5897863400209818325L;
 
-  private final transient String projectId;
-  private final transient String namespace;
-  private final transient ImmutableList<PathElement> path;
+  private final String projectId;
+  private final String namespace;
+  private final ImmutableList<PathElement> path;
 
   /**
    * Base class for key builders.
@@ -159,6 +161,15 @@ public abstract class BaseKey extends Serializable<com.google.datastore.v1.Key> 
   abstract BaseKey parent();
 
   @Override
+  public String toString() {
+    return MoreObjects.toStringHelper(this)
+        .add("projectId", projectId)
+        .add("namespace", namespace)
+        .add("path", path)
+        .toString();
+  }
+
+  @Override
   public int hashCode() {
     return Objects.hash(projectId(), namespace(), path());
   }
@@ -177,7 +188,6 @@ public abstract class BaseKey extends Serializable<com.google.datastore.v1.Key> 
         && Objects.equals(path(), other.path());
   }
 
-  @Override
   com.google.datastore.v1.Key toPb() {
     com.google.datastore.v1.Key.Builder keyPb = com.google.datastore.v1.Key.newBuilder();
     com.google.datastore.v1.PartitionId.Builder partitionIdPb =

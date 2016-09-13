@@ -26,8 +26,8 @@ import com.google.common.collect.ImmutableSortedMap;
 import com.google.common.primitives.Booleans;
 import com.google.common.primitives.Doubles;
 import com.google.common.primitives.Longs;
-import com.google.protobuf.InvalidProtocolBufferException;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
@@ -70,19 +70,19 @@ import java.util.TreeMap;
  */
 public final class GqlQuery<V> extends Query<V> {
 
-  private static final long serialVersionUID = 5988280590929540569L;
+  private static final long serialVersionUID = -5514894742849230793L;
 
-  private final transient String queryString;
-  private final transient boolean allowLiteral;
-  private final transient ImmutableMap<String, Binding> namedBindings;
-  private final transient ImmutableList<Binding> positionalBindings;
+  private final String queryString;
+  private final boolean allowLiteral;
+  private final ImmutableMap<String, Binding> namedBindings;
+  private final ImmutableList<Binding> positionalBindings;
 
-  static final class Binding extends Serializable<com.google.datastore.v1.GqlQueryParameter> {
+  static final class Binding implements Serializable {
 
-    private static final long serialVersionUID = 1976895435257636275L;
+    private static final long serialVersionUID = 2344746877591371548L;
 
-    private final transient Cursor cursor;
-    private final transient Value<?> value;
+    private final Cursor cursor;
+    private final Value<?> value;
 
     Binding(Cursor cursor) {
       this.cursor = checkNotNull(cursor);
@@ -96,6 +96,11 @@ public final class GqlQuery<V> extends Query<V> {
 
     Object cursorOrValue() {
       return MoreObjects.firstNonNull(cursor, value);
+    }
+
+    @Override
+    public String toString() {
+      return MoreObjects.toStringHelper(this).add("cursor", cursor).add("value", value).toString();
     }
 
     @Override
@@ -115,7 +120,6 @@ public final class GqlQuery<V> extends Query<V> {
       return Objects.equals(cursor, other.cursor) && Objects.equals(value, other.value);
     }
 
-    @Override
     com.google.datastore.v1.GqlQueryParameter toPb() {
       com.google.datastore.v1.GqlQueryParameter.Builder argPb =
           com.google.datastore.v1.GqlQueryParameter.newBuilder();
@@ -126,11 +130,6 @@ public final class GqlQuery<V> extends Query<V> {
         argPb.setValue(value.toPb());
       }
       return argPb.build();
-    }
-
-    @Override
-    Object fromPb(byte[] bytesPb) throws InvalidProtocolBufferException {
-      return fromPb(com.google.datastore.v1.GqlQueryParameter.parseFrom(bytesPb));
     }
 
     static Binding fromPb(com.google.datastore.v1.GqlQueryParameter argPb) {
@@ -336,6 +335,16 @@ public final class GqlQuery<V> extends Query<V> {
   }
 
   @Override
+  public String toString() {
+    return super.toStringHelper()
+        .add("queryString", queryString)
+        .add("allowLiteral", allowLiteral)
+        .add("namedBindings",  namedBindings)
+        .add("positionalBindings", positionalBindings)
+        .toString();
+  }
+
+  @Override
   public int hashCode() {
     return Objects.hash(namespace(), queryString, allowLiteral, namedBindings, positionalBindings);
   }
@@ -356,7 +365,6 @@ public final class GqlQuery<V> extends Query<V> {
         && Objects.equals(positionalBindings,  other.positionalBindings);
   }
 
-  @Override
   com.google.datastore.v1.GqlQuery toPb() {
     com.google.datastore.v1.GqlQuery.Builder queryPb =
         com.google.datastore.v1.GqlQuery.newBuilder();
@@ -383,29 +391,4 @@ public final class GqlQuery<V> extends Query<V> {
     return StructuredQuery.<V>fromPb(type(), namespace(), responsePb.getQuery())
         .nextQuery(responsePb);
   }
-
-  @Override
-  Object fromPb(ResultType<V> resultType, String namespace, byte[] bytesPb)
-      throws InvalidProtocolBufferException {
-    return fromPb(resultType, namespace, com.google.datastore.v1.GqlQuery.parseFrom(bytesPb));
-  }
-
-  private static <V> GqlQuery<V> fromPb(
-      ResultType<V> resultType, String ns, com.google.datastore.v1.GqlQuery queryPb) {
-    Builder<V> builder = new Builder<>(resultType, queryPb.getQueryString());
-    builder.namespace(ns);
-    builder.allowLiteral = queryPb.getAllowLiterals();
-    for (Map.Entry<String, com.google.datastore.v1.GqlQueryParameter> nameArg
-         : queryPb.getNamedBindings().entrySet()) {
-      Binding currBinding = Binding.fromPb(nameArg.getValue());
-      builder.namedBindings.put(nameArg.getKey(), currBinding);
-    }
-    for (com.google.datastore.v1.GqlQueryParameter numberArg
-         : queryPb.getPositionalBindingsList()) {
-      Binding currBinding = Binding.fromPb(numberArg);
-      builder.positionalBindings.add(currBinding);
-    }
-    return builder.build();
-  }
-
 }

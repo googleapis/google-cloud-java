@@ -18,9 +18,10 @@ package com.google.cloud.datastore;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import com.google.common.base.MoreObjects;
 import com.google.datastore.v1.Value.ValueTypeCase;
-import com.google.protobuf.InvalidProtocolBufferException;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
@@ -31,14 +32,14 @@ import java.util.Objects;
  *
  * @param <V> the type of the content for this value
  */
-public abstract class Value<V> extends Serializable<com.google.datastore.v1.Value> {
+public abstract class Value<V> implements Serializable {
 
-  private static final long serialVersionUID = -1899638277588872742L;
+  private static final long serialVersionUID = 8532411152601335280L;
 
-  private final transient ValueType valueType;
-  private final transient boolean excludeFromIndexes;
-  private final transient int meaning;
-  private final transient V value;
+  private final ValueType valueType;
+  private final boolean excludeFromIndexes;
+  private final int meaning;
+  private final V value;
 
   interface BuilderFactory<V, P extends Value<V>, B extends ValueBuilder<V, P, B>>
       extends java.io.Serializable {
@@ -48,7 +49,7 @@ public abstract class Value<V> extends Serializable<com.google.datastore.v1.Valu
   abstract static class BaseMarshaller<V, P extends Value<V>, B extends ValueBuilder<V, P, B>>
       implements ValueMarshaller<V, P, B>, BuilderFactory<V, P, B> {
 
-    private static final long serialVersionUID = 2880767488942992985L;
+    private static final long serialVersionUID = -5224067974180563797L;
 
     @SuppressWarnings("deprecation")
     @Override
@@ -171,6 +172,16 @@ public abstract class Value<V> extends Serializable<com.google.datastore.v1.Valu
   public abstract ValueBuilder<?, ?, ?> toBuilder();
 
   @Override
+  public String toString() {
+    return MoreObjects.toStringHelper(this)
+        .add("valueType", valueType)
+        .add("excludeFromIndexes", excludeFromIndexes)
+        .add("meaning", meaning)
+        .add("value", value)
+        .toString();
+  }
+
+  @Override
   public int hashCode() {
     return Objects.hash(valueType, excludeFromIndexes, meaning, value);
   }
@@ -191,7 +202,6 @@ public abstract class Value<V> extends Serializable<com.google.datastore.v1.Valu
         && Objects.equals(value, other.value);
   }
 
-  @Override
   @SuppressWarnings("unchecked")
   com.google.datastore.v1.Value toPb() {
     return type().getMarshaller().toProto(this);
@@ -202,10 +212,5 @@ public abstract class Value<V> extends Serializable<com.google.datastore.v1.Valu
     ValueType valueType = ValueType.getByDescriptorId(descriptorId.getNumber());
     return valueType == null ? RawValue.MARSHALLER.fromProto(proto).build()
         : valueType.getMarshaller().fromProto(proto).build();
-  }
-
-  @Override
-  Object fromPb(byte[] bytesPb) throws InvalidProtocolBufferException {
-    return fromPb(com.google.datastore.v1.Value.parseFrom(bytesPb));
   }
 }
