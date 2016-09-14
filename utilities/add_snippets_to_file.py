@@ -323,7 +323,7 @@ class LineNumbers(object):
     def __init__(self, data, methods):
         self.line_numbers = {}
         for method in methods:
-            pattern = re.compile(method.regex)
+            pattern = re.compile('\s+' + method.regex)
             for match in pattern.finditer(data):
                 line_number = len(NEWLINE_PATTERN.findall(data[:match.start()])) + 1
                 signature = method.signature
