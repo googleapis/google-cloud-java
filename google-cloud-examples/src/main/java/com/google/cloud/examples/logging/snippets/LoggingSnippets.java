@@ -134,7 +134,7 @@ public class LoggingSnippets {
   public Sink getSink(String sinkName) {
     // [START getSink]
     Sink sink = logging.getSink(sinkName);
-    if (sink != null) {
+    if (sink == null) {
       // sink was not found
     }
     // [END getSink]
@@ -151,7 +151,7 @@ public class LoggingSnippets {
     Future<Sink> future = logging.getSinkAsync(sinkName);
     // ...
     Sink sink = future.get();
-    if (sink != null) {
+    if (sink == null) {
       // sink was not found
     }
     // [END getSinkAsync]
@@ -371,7 +371,7 @@ public class LoggingSnippets {
   public Metric getMetric(String metricName) {
     // [START getMetric]
     Metric metric = logging.getMetric(metricName);
-    if (metric != null) {
+    if (metric == null) {
       // metric was not found
     }
     // [END getMetric]
@@ -388,7 +388,7 @@ public class LoggingSnippets {
     Future<Metric> future = logging.getMetricAsync(metricName);
     // ...
     Metric metric = future.get();
-    if (metric != null) {
+    if (metric == null) {
       // metric was not found
     }
     // [END getMetricAsync]
