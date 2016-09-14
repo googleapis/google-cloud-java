@@ -22,6 +22,7 @@ import com.google.cloud.Clock;
 import com.google.cloud.WaitForOption;
 import com.google.cloud.WaitForOption.CheckingPeriod;
 import com.google.cloud.WaitForOption.Timeout;
+import com.google.cloud.bigquery.BigQuery.JobOption;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -130,7 +131,7 @@ public class Job extends JobInfo {
    * @throws BigQueryException upon failure
    */
   public boolean exists() {
-    return bigquery.getJob(jobId(), BigQuery.JobOption.fields()) != null;
+    return bigquery.getJob(jobId(), JobOption.fields()) != null;
   }
 
   /**
@@ -146,7 +147,7 @@ public class Job extends JobInfo {
    * @throws BigQueryException upon failure
    */
   public boolean isDone() {
-    Job job = bigquery.getJob(jobId(), BigQuery.JobOption.fields(BigQuery.JobField.STATUS));
+    Job job = bigquery.getJob(jobId(), JobOption.fields(BigQuery.JobField.STATUS));
     return job == null || job.status().state() == JobStatus.State.DONE;
   }
 
@@ -210,7 +211,7 @@ public class Job extends JobInfo {
    * @return a {@code Job} object with latest information or {@code null} if not found
    * @throws BigQueryException upon failure
    */
-  public Job reload(BigQuery.JobOption... options) {
+  public Job reload(JobOption... options) {
     return bigquery.getJob(jobId(), options);
   }
 
