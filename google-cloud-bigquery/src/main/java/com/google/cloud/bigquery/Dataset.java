@@ -19,6 +19,9 @@ package com.google.cloud.bigquery;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.cloud.Page;
+import com.google.cloud.bigquery.BigQuery.DatasetOption;
+import com.google.cloud.bigquery.BigQuery.TableListOption;
+import com.google.cloud.bigquery.BigQuery.TableOption;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -145,7 +148,7 @@ public class Dataset extends DatasetInfo {
    * @throws BigQueryException upon failure
    */
   public boolean exists() {
-    return bigquery.getDataset(datasetId(), BigQuery.DatasetOption.fields()) != null;
+    return bigquery.getDataset(datasetId(), DatasetOption.fields()) != null;
   }
 
   /**
@@ -156,7 +159,7 @@ public class Dataset extends DatasetInfo {
    * @return a {@code Dataset} object with latest information or {@code null} if not found
    * @throws BigQueryException upon failure
    */
-  public Dataset reload(BigQuery.DatasetOption... options) {
+  public Dataset reload(DatasetOption... options) {
     return bigquery.getDataset(datasetId().dataset(), options);
   }
 
@@ -168,7 +171,7 @@ public class Dataset extends DatasetInfo {
    * @return a {@code Dataset} object with updated information
    * @throws BigQueryException upon failure
    */
-  public Dataset update(BigQuery.DatasetOption... options) {
+  public Dataset update(DatasetOption... options) {
     return bigquery.update(this, options);
   }
 
@@ -188,7 +191,7 @@ public class Dataset extends DatasetInfo {
    * @param options options for listing tables
    * @throws BigQueryException upon failure
    */
-  public Page<Table> list(BigQuery.TableListOption... options) {
+  public Page<Table> list(TableListOption... options) {
     return bigquery.listTables(datasetId(), options);
   }
 
@@ -199,7 +202,7 @@ public class Dataset extends DatasetInfo {
    * @param options table options
    * @throws BigQueryException upon failure
    */
-  public Table get(String table, BigQuery.TableOption... options) {
+  public Table get(String table, TableOption... options) {
     return bigquery.getTable(TableId.of(datasetId().dataset(), table), options);
   }
 
@@ -212,7 +215,7 @@ public class Dataset extends DatasetInfo {
    * @return a {@code Table} object for the created table
    * @throws BigQueryException upon failure
    */
-  public Table create(String table, TableDefinition definition, BigQuery.TableOption... options) {
+  public Table create(String table, TableDefinition definition, TableOption... options) {
     TableInfo tableInfo = TableInfo.of(TableId.of(datasetId().dataset(), table), definition);
     return bigquery.create(tableInfo, options);
   }

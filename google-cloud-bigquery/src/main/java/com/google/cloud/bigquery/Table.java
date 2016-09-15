@@ -19,6 +19,9 @@ package com.google.cloud.bigquery;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.cloud.Page;
+import com.google.cloud.bigquery.BigQuery.JobOption;
+import com.google.cloud.bigquery.BigQuery.TableDataListOption;
+import com.google.cloud.bigquery.BigQuery.TableOption;
 import com.google.common.collect.ImmutableList;
 
 import java.io.IOException;
@@ -140,7 +143,7 @@ public class Table extends TableInfo {
    * @throws BigQueryException upon failure
    */
   public boolean exists() {
-    return bigquery.getTable(tableId(), BigQuery.TableOption.fields()) != null;
+    return bigquery.getTable(tableId(), TableOption.fields()) != null;
   }
 
   /**
@@ -150,7 +153,7 @@ public class Table extends TableInfo {
    * @return a {@code Table} object with latest information or {@code null} if not found
    * @throws BigQueryException upon failure
    */
-  public Table reload(BigQuery.TableOption... options) {
+  public Table reload(TableOption... options) {
     return bigquery.getTable(tableId(), options);
   }
 
@@ -162,7 +165,7 @@ public class Table extends TableInfo {
    * @return a {@code Table} object with updated information
    * @throws BigQueryException upon failure
    */
-  public Table update(BigQuery.TableOption... options) {
+  public Table update(TableOption... options) {
     return bigquery.update(this, options);
   }
 
@@ -213,7 +216,7 @@ public class Table extends TableInfo {
    * @param options table data list options
    * @throws BigQueryException upon failure
    */
-  public Page<List<FieldValue>> list(BigQuery.TableDataListOption... options)
+  public Page<List<FieldValue>> list(TableDataListOption... options)
       throws BigQueryException {
     return bigquery.listTableData(tableId(), options);
   }
@@ -227,7 +230,7 @@ public class Table extends TableInfo {
    * @param options job options
    * @throws BigQueryException upon failure
    */
-  public Job copy(String destinationDataset, String destinationTable, BigQuery.JobOption... options)
+  public Job copy(String destinationDataset, String destinationTable, JobOption... options)
       throws BigQueryException {
     return copy(TableId.of(destinationDataset, destinationTable), options);
   }
@@ -240,7 +243,7 @@ public class Table extends TableInfo {
    * @param options job options
    * @throws BigQueryException upon failure
    */
-  public Job copy(TableId destinationTable, BigQuery.JobOption... options)
+  public Job copy(TableId destinationTable, JobOption... options)
       throws BigQueryException {
     CopyJobConfiguration configuration = CopyJobConfiguration.of(destinationTable, tableId());
     return bigquery.create(JobInfo.of(configuration), options);
@@ -256,7 +259,7 @@ public class Table extends TableInfo {
    * @param options job options
    * @throws BigQueryException upon failure
    */
-  public Job extract(String format, String destinationUri, BigQuery.JobOption... options)
+  public Job extract(String format, String destinationUri, JobOption... options)
       throws BigQueryException {
     return extract(format, ImmutableList.of(destinationUri), options);
   }
@@ -271,7 +274,7 @@ public class Table extends TableInfo {
    * @param options job options
    * @throws BigQueryException upon failure
    */
-  public Job extract(String format, List<String> destinationUris, BigQuery.JobOption... options)
+  public Job extract(String format, List<String> destinationUris, JobOption... options)
       throws BigQueryException {
     ExtractJobConfiguration extractConfiguration =
         ExtractJobConfiguration.of(tableId(), destinationUris, format);
@@ -288,7 +291,7 @@ public class Table extends TableInfo {
    * @param options job options
    * @throws BigQueryException upon failure
    */
-  public Job load(FormatOptions format, String sourceUri, BigQuery.JobOption... options)
+  public Job load(FormatOptions format, String sourceUri, JobOption... options)
       throws BigQueryException {
     return load(format, ImmutableList.of(sourceUri), options);
   }
@@ -303,7 +306,7 @@ public class Table extends TableInfo {
    * @param options job options
    * @throws BigQueryException upon failure
    */
-  public Job load(FormatOptions format, List<String> sourceUris, BigQuery.JobOption... options)
+  public Job load(FormatOptions format, List<String> sourceUris, JobOption... options)
       throws BigQueryException {
     LoadJobConfiguration loadConfig = LoadJobConfiguration.of(tableId(), sourceUris, format);
     return bigquery.create(JobInfo.of(loadConfig), options);
