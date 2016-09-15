@@ -46,6 +46,9 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * This class contains a number of snippets for the {@link PubSub} interface.
+ */
 public class PubSubSnippets {
 
   private final PubSub pubsub;
@@ -205,12 +208,12 @@ public class PubSubSnippets {
   // [VARIABLE "my_topic_name"]
   public String publishOneMessageAsync(String topicName)
       throws ExecutionException, InterruptedException {
-    // [START publishOneMessage]
+    // [START publishOneMessageAsync]
     Message message = Message.of("payload");
     Future<String> future = pubsub.publishAsync(topicName, message);
     // ...
     String messageId = future.get();
-    // [END publishOneMessage]
+    // [END publishOneMessageAsync]
     return messageId;
   }
 
@@ -220,12 +223,12 @@ public class PubSubSnippets {
   // [TARGET publish(String, Iterable)]
   // [VARIABLE "my_topic_name"]
   public List<String> publishMessageList(String topicName) {
-    // [START publishOneMessageAsync]
+    // [START publishMessageList]
     List<Message> messages = new LinkedList<>();
     messages.add(Message.of("payload1"));
     messages.add(Message.of("payload2"));
     List<String> messageIds = pubsub.publish(topicName, messages);
-    // [END publishOneMessageAsync]
+    // [END publishMessageList]
     return messageIds;
   }
 

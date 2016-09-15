@@ -40,7 +40,6 @@ import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
-import org.junit.rules.ExpectedException;
 import org.junit.rules.Timeout;
 
 import java.util.HashSet;
@@ -59,9 +58,6 @@ public class ITPubSubSnippets {
 
   @Rule
   public Timeout globalTimeout = Timeout.seconds(300);
-
-  @Rule
-  public ExpectedException thrown = ExpectedException.none();
 
   private static String formatForTest(String resourceName) {
     return resourceName + "-" + NAME_SUFFIX;
