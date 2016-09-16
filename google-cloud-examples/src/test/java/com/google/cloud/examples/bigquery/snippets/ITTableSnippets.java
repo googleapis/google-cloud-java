@@ -16,10 +16,17 @@
 
 package com.google.cloud.examples.bigquery.snippets;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+
+import com.google.cloud.Page;
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQueryOptions;
+import com.google.cloud.bigquery.DatasetInfo;
 import com.google.cloud.bigquery.Field;
 import com.google.cloud.bigquery.Field.Type;
+import com.google.cloud.bigquery.FieldValue;
+import com.google.cloud.bigquery.InsertAllResponse;
 import com.google.cloud.bigquery.Schema;
 import com.google.cloud.bigquery.StandardTableDefinition;
 import com.google.cloud.bigquery.Table;
@@ -30,39 +37,62 @@ import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Logger;
 
 /**
  * Integration tests for {@link TableSnippets}.
  */
 public class ITTableSnippets {
-  private static final String TABLE_NAME = "table";
-  private static final String DATASET_NAME = "dataset";
-  public static final TableId TABLE_ID = TableId.of(DATASET_NAME, TABLE_NAME);
+  private static final String TABLE_NAME = "my_table";
+  private static final String DATASET_NAME = "my_dataset";
+  private static final Value ROW1 = new Value("value1", true);
+  private static final Value ROW2 = new Value("value2", false);
+  private static final TableId TABLE_ID = TableId.of(DATASET_NAME, TABLE_NAME);
   private static final Logger log = Logger.getLogger(ITTableSnippets.class.getName());
 
-  private static BigQuery bq;
+  private static BigQuery bigquery;
   private static Table table;
   private static TableSnippets tableSnippets;
 
   @BeforeClass
   public static void beforeClass() {
-    bq = BigQueryOptions.defaultInstance().service();
+    bigquery = BigQueryOptions.defaultInstance().service();
+    bigquery.create(DatasetInfo.builder(DATASET_NAME).build());
     StandardTableDefinition.Builder builder = StandardTableDefinition.builder();
     builder.schema(Schema.of(
         Field.of("stringField", Type.string()),
         Field.of("booleanField", Type.bool())));
-    table = bq.create(TableInfo.of(TABLE_ID, builder.build()));
+    table = bigquery.create(TableInfo.of(TABLE_ID, builder.build()));
     tableSnippets = new TableSnippets(table);
   }
 
   @AfterClass
   public static void afterClass() {
-    bq.delete(TABLE_ID);
+    bigquery.delete(TABLE_ID);
+    bigquery.delete(DATASET_NAME);
   }
 
   @Test
   public void testInsert() {
-    tableSnippets.insert("row1", "row2");
+    InsertAllResponse response = tableSnippets.insert("row1", "row2");
+    assertFalse(response.hasErrors());
+    Page<List<FieldValue>> page = table.list();
+    List<List<FieldValue>> results = new ArrayList<>();
+    for (List<FieldValue> row : page.values()) {
+      results.add(row);
+    }
+    assertEquals(2, results.size());
+  }
+
+  private static class Value {
+    final String stringField;
+    final boolean booleanField;
+
+    Value(String stringField, boolean booleanField) {
+      this.stringField = stringField;
+      this.booleanField = booleanField;
+    }
   }
 }
