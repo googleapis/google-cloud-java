@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.cloud.examples.storage.snippets;
+package com.google.cloud.examples.datastore.snippets;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
