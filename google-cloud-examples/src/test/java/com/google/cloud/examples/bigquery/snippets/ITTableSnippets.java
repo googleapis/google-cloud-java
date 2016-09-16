@@ -19,7 +19,14 @@ package com.google.cloud.examples.bigquery.snippets;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 
-import com.google.cloud.Page;
+import java.util.List;
+import java.util.Set;
+import java.util.logging.Logger;
+
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQueryOptions;
 import com.google.cloud.bigquery.DatasetInfo;
@@ -33,14 +40,11 @@ import com.google.cloud.bigquery.StandardTableDefinition;
 import com.google.cloud.bigquery.Table;
 import com.google.cloud.bigquery.TableId;
 import com.google.cloud.bigquery.TableInfo;
-
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
-import org.junit.Test;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.logging.Logger;
+import com.google.common.base.Function;
+import com.google.common.base.Objects;
+import com.google.common.collect.FluentIterable;
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableSet;
 
 /**
  * Integration tests for {@link TableSnippets}.
@@ -48,12 +52,15 @@ import java.util.logging.Logger;
 public class ITTableSnippets {
   private static final String TABLE_NAME = "my_table";
   private static final String DATASET_NAME = "my_dataset";
+  private static final String COPY_DATASET_NAME = "my_copy_dataset";
   private static final Value ROW1 = new Value("value1", true);
   private static final Value ROW2 = new Value("value2", false);
   private static final TableId TABLE_ID = TableId.of(DATASET_NAME, TABLE_NAME);
+  private static final TableId COPY_TABLE_ID = TableId.of(COPY_DATASET_NAME, TABLE_NAME);
   private static final Logger log = Logger.getLogger(ITTableSnippets.class.getName());
 
   private static Table table;
+  private static Table copyTable;
   private static TableSnippets tableSnippets;
   private static BigQuery bigquery;
 
@@ -61,30 +68,42 @@ public class ITTableSnippets {
   public static void beforeClass() {
     bigquery = BigQueryOptions.defaultInstance().service();
     bigquery.create(DatasetInfo.builder(DATASET_NAME).build());
+    bigquery.create(DatasetInfo.builder(COPY_DATASET_NAME).build());
     StandardTableDefinition.Builder builder = StandardTableDefinition.builder();
-    builder.schema(Schema.of(
-        Field.of("stringField", Type.string()),
-        Field.of("booleanField", Type.bool())));
+    builder.schema(
+        Schema.of(Field.of("stringField", Type.string()), Field.of("booleanField", Type.bool())));
     table = bigquery.create(TableInfo.of(TABLE_ID, builder.build()));
+    copyTable = bigquery.create(TableInfo.of(COPY_TABLE_ID, builder.build()));
     tableSnippets = new TableSnippets(table);
   }
 
   @AfterClass
   public static void afterClass() {
     bigquery.delete(TABLE_ID);
+    bigquery.delete(COPY_TABLE_ID);
     bigquery.delete(DATASET_NAME);
+    bigquery.delete(COPY_DATASET_NAME);
   }
 
   @Test
-  public void testInsert() {
+  public void testInsert() throws InterruptedException {
     InsertAllResponse response = tableSnippets.insert("row1", "row2");
     assertFalse(response.hasErrors());
-    Page<List<FieldValue>> page = table.list();
-    List<List<FieldValue>> results = new ArrayList<>();
-    for (List<FieldValue> row : page.values()) {
-      results.add(row);
+    List<List<FieldValue>> rows = ImmutableList.copyOf(tableSnippets.list().values());
+    while (rows.size() != 2) {
+      Thread.sleep(500);
+      rows = ImmutableList.copyOf(tableSnippets.list().values());
     }
-    assertEquals(2, results.size());
+    Set<Value> values =
+        FluentIterable.from(rows).transform(new Function<List<FieldValue>, Value>() {
+          @Override
+          public Value apply(List<FieldValue> row) {
+            return new Value(row.get(0).stringValue(), row.get(1).booleanValue());
+          }
+        }).toSet();
+    assertEquals(new Value("value1", true), new Value("value1", true));
+    assertEquals(new Value("value2", false), new Value("value2", false));
+    assertEquals(ImmutableSet.of(ROW2, ROW1), values);
   }
 
   private static class Value {
@@ -94,6 +113,25 @@ public class ITTableSnippets {
     Value(String stringField, boolean booleanField) {
       this.stringField = stringField;
       this.booleanField = booleanField;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+      if (obj instanceof Value) {
+        Value o = (Value) obj;
+        return Objects.equal(stringField, o.stringField) && booleanField == o.booleanField;
+      }
+      return false;
+    }
+
+    @Override
+    public int hashCode() {
+      return Objects.hashCode(stringField, booleanField);
+    }
+
+    @Override
+    public String toString() {
+      return "<Value stringField: " + stringField + " booleanField: " + booleanField + ">";
     }
   }
   
