@@ -34,10 +34,10 @@ import com.google.cloud.datastore.Transaction;
  */
 public class TransactionSnippets {
 
-  private final Datastore datastore;
+  private final Transaction transaction;
 
-  public TransactionSnippets(Datastore datastore) {
-    this.datastore = datastore;
+  public TransactionSnippets(Transaction transaction) {
+    this.transaction = transaction;
   }
 
   /**
@@ -45,6 +45,7 @@ public class TransactionSnippets {
    */
   // [TARGET commit()]
   public Key commitTransaction() {
+    Datastore datastore = transaction.datastore();
     // [START commitTransaction]
     // create an entity
     KeyFactory keyFactory = datastore.newKeyFactory().kind("someKind");
@@ -68,6 +69,7 @@ public class TransactionSnippets {
    */
   // [TARGET rollback()]
   public Key rollbackTransaction() {
+    Datastore datastore = transaction.datastore();
     // [START rollbackTransaction]
     // create an entity
     KeyFactory keyFactory = datastore.newKeyFactory().kind("someKind");
@@ -88,6 +90,7 @@ public class TransactionSnippets {
    */
   // [TARGET active()]
   public Key activeTransaction() {
+    Datastore datastore = transaction.datastore();
     // [START activeTransaction]
     // create an entity
     KeyFactory keyFactory = datastore.newKeyFactory().kind("someKind");
