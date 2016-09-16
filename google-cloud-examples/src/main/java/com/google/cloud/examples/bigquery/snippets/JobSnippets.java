@@ -1,0 +1,51 @@
+/*
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *       http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+/*
+ * EDITING INSTRUCTIONS
+ * This file is referenced in Job's javadoc. Any change to this file should be reflected in
+ * Job's javadoc.
+ */
+
+package com.google.cloud.examples.bigquery.snippets;
+
+import com.google.cloud.bigquery.Job;
+
+public class JobSnippets {
+
+  private final Job job;
+
+  public JobSnippets(Job job) {
+    this.job = job;
+  }
+
+  /**
+   * Example of waiting for a job until it reports that it is done.
+   */
+  // [TARGET isDone()]
+  public boolean isDone() {
+    try {
+      // [START isDone]
+      while(!job.isDone()) {
+          Thread.sleep(1000L);
+      }
+      // [END isDone]
+    } catch (InterruptedException e) {
+      return false;
+    }
+    return true;
+  }
+}
