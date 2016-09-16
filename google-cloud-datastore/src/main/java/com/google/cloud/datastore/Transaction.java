@@ -105,6 +105,21 @@ public interface Transaction extends DatastoreBatchWriter, DatastoreReaderWriter
   /**
    * Commit the transaction.
    *
+   * <p>Example of committing a transaction.
+   * <pre> {@code
+   * // create an entity
+   * KeyFactory keyFactory = datastore.newKeyFactory().kind("someKind");
+   * Key key = datastore.allocateId(keyFactory.newKey());
+   * Entity entity = Entity.builder(key).set("description", "commit()").build();
+   * // add the entity and commit
+   * try {
+   *   transaction.put(entity);
+   *   transaction.commit();
+   * } catch (DatastoreException ex) {
+   *   // handle exception
+   * }
+   * }</pre>
+   *
    * @throws DatastoreException if could not commit the transaction or if no longer active
    */
   Response commit();
@@ -112,12 +127,47 @@ public interface Transaction extends DatastoreBatchWriter, DatastoreReaderWriter
   /**
    * Rollback the transaction.
    *
+   * <p>Example of rolling back a transaction.
+   * <pre> {@code
+   * // create an entity
+   * KeyFactory keyFactory = datastore.newKeyFactory().kind("someKind");
+   * Key key = datastore.allocateId(keyFactory.newKey());
+   * Entity entity = Entity.builder(key).set("description", "rollback()").build();
+   * 
+   * // add the entity and rollback
+   * transaction.put(entity);
+   * transaction.rollback();
+   * // calling transaction.commit() now would fail
+   * }</pre>
+   *
    * @throws DatastoreException if transaction was already committed
    */
   void rollback();
 
   /**
    * Returns {@code true} if the transaction is still active (was not committed or rolledback).
+   *
+   * <p>Example of verifying if a transaction is active.
+   * <pre> {@code
+   * // create an entity
+   * KeyFactory keyFactory = datastore.newKeyFactory().kind("someKind");
+   * Key key = datastore.allocateId(keyFactory.newKey());
+   * Entity entity = Entity.builder(key).set("description", "active()").build();
+   * // calling transaction.active() now would return true
+   * try {
+   *   // add the entity and commit
+   *   transaction.put(entity);
+   *   transaction.commit();
+   * } finally {
+   *   // if committing succeeded
+   *   // then transaction.active() will be false
+   *   if (transaction.active()) {
+   *     // otherwise it's true and we need to rollback
+   *     transaction.rollback();
+   *   }
+   * }
+   * }</pre>
+   *
    */
   @Override
   boolean active();
