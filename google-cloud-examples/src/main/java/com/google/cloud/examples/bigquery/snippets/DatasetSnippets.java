@@ -174,7 +174,6 @@ public class DatasetSnippets {
         .build();
     StandardTableDefinition definition = StandardTableDefinition.builder()
         .schema(schema)
-        .timePartitioning(TimePartitioning.of(TimePartitioning.Type.DAY))
         .build();
     Table table = dataset.create(tableName, definition);
     // [END createTable]
