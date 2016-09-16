@@ -20,6 +20,9 @@ import com.google.cloud.Page;
 import com.google.cloud.WaitForOption;
 import com.google.cloud.bigquery.BigQuery.JobField;
 import com.google.cloud.bigquery.BigQuery.JobOption;
+import com.google.cloud.bigquery.BigQuery;
+import com.google.cloud.bigquery.BigQuery.TableOption;
+import com.google.cloud.bigquery.BigQuery.TableField;
 import com.google.cloud.bigquery.BigQuery.TableDataListOption;
 import com.google.cloud.bigquery.BigQueryException;
 import com.google.cloud.bigquery.FieldValue;
@@ -28,6 +31,7 @@ import com.google.cloud.bigquery.InsertAllResponse;
 import com.google.cloud.bigquery.Job;
 import com.google.cloud.bigquery.Table;
 import com.google.cloud.bigquery.TableId;
+import com.google.cloud.bigquery.spi.BigQueryRpc;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -48,9 +52,57 @@ public class TableSnippets {
   }
 
   /**
+   * Example of ensuring that a table exists. 
+   */
+  // [TARGET exists()]
+  public void checkExists() {
+	  // [START checkExists]
+	  if (!table.exists()) {
+		  throw new RuntimeException("Table does not exist.");
+	  }
+	  // [END checkExists]
+  }
+
+  /**
+   * Example of fetching a table's latest information, specifying particular table field options.
+   */
+  // [TARGET reload(BigQuery.TableOption... options)]
+  // [VARIABLE TableField.LAST_MODIFIED_TIME]
+  // [VARIABLE TableField.NUM_ROWS]
+  public Table reloadTableWithFields(TableField... fields) {
+	  // [START reloadTableWithFields]
+	  Table reloaded = table.reload(TableOption.fields(fields));
+	  // [END reloadTableWithFields]
+	  return reloaded;
+  }
+
+  /**
+   * Example of updating a table's information, specifying particular table field options.
+   */
+  // [TARGET update(BigQuery.TableOption... options)]
+  // [VARIABLE TableField.LAST_MODIFIED_TIME]
+  // [VARIABLE TableField.NUM_ROWS]
+  public Table updateTableWithFields(TableField... fields) {
+	  // [START updateTableWithFields]
+	  Table updated = table.update(TableOption.fields(fields));
+	  // [END updateTableWithFields]
+	  return updated;
+  }
+
+  /**
+   * Example of deleting a table.
+   */
+  // [TARGET delete()]
+  public void delete() {
+	  // [START delete]
+	  table.delete();
+	  // [END delete]
+  }
+  
+  /**
    * Example of inserting rows into a table.
    */
-  // [TARGET insert(Iterable<InsertAllRequest.RowToInsert>)]
+  // [TARGET insert(Iterable)]
   // [VARIABLE "rowId1"]
   // [VARIABLE "rowId2"]
   public InsertAllResponse insert(String rowId1, String rowId2) {
@@ -73,7 +125,7 @@ public class TableSnippets {
   /**
    * Example of inserting rows into a table which ignores invalid rows.
    */
-  // [TARGET insert(Iterable<InsertAllRequest.RowToInsert>, boolean, boolean)]
+  // [TARGET insert(Iterable, boolean, boolean)]
   // [VARIABLE "rowId1"]
   // [VARIABLE "rowId2"]
   public InsertAllResponse insertWithParams(String rowId1, String rowId2) {
@@ -96,7 +148,7 @@ public class TableSnippets {
   /**
    * Example of getting a paginated list of rows in a table.
    */
-  // [TARGET list(BigQuery.TableDataListOption...)]
+  // [TARGET list(TableDataListOption...)]
   public Page<List<FieldValue>> list() {
     // [START list]
     Page<List<FieldValue>> page = table.list(TableDataListOption.pageSize(100));
@@ -108,7 +160,7 @@ public class TableSnippets {
   /**
    * Example of copying a table to a destination table and dataset referenced by name.
    */
-  // [TARGET copy(String, String, BigQuery.JobOption...)]
+  // [TARGET copy(String, String, JobOption...)]
   // [VARIABLE "my_dataset"]
   // [VARIABLE "my_destination_table"]
   public Job copy(String datasetName, String tableName) {
@@ -164,7 +216,7 @@ public class TableSnippets {
   /**
    * Example extracting data to a list of Google Cloud Storage files.
    */
-  // [TARGET extract(String, List<String>, BigQuery.JobOption...)]
+  // [TARGET extract(String, List, JobOption...)]
   // [VARIABLE "CSV"]
   // [VARIABLE "gs://bucket_name/PartitionA_*.csv"]
   // [VARIABLE "gs://bucket_name/PartitionB_*.csv"]
