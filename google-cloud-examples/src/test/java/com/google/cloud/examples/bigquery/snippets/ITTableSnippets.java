@@ -23,8 +23,8 @@ import java.util.List;
 import java.util.Set;
 import java.util.logging.Logger;
 
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 
 import com.google.cloud.bigquery.BigQuery;
@@ -58,13 +58,13 @@ public class ITTableSnippets {
   private static final TableId COPY_TABLE_ID = TableId.of(COPY_DATASET_NAME, TABLE_NAME);
   private static final Logger log = Logger.getLogger(ITTableSnippets.class.getName());
 
-  private static BigQuery bigquery;
-  private static Table table;
-  private static Table copyTable;
-  private static TableSnippets tableSnippets;
+  private BigQuery bigquery;
+  private Table table;
+  private Table copyTable;
+  private TableSnippets tableSnippets;
 
-  @BeforeClass
-  public static void beforeClass() {
+  @Before
+  public void before() {
     bigquery = BigQueryOptions.defaultInstance().service();
     bigquery.create(DatasetInfo.builder(DATASET_NAME).build());
     bigquery.create(DatasetInfo.builder(COPY_DATASET_NAME).build());
@@ -76,8 +76,8 @@ public class ITTableSnippets {
     tableSnippets = new TableSnippets(table);
   }
 
-  @AfterClass
-  public static void afterClass() {
+  @After
+  public void after() {
     bigquery.delete(TABLE_ID);
     bigquery.delete(COPY_TABLE_ID);
     bigquery.delete(DATASET_NAME);
