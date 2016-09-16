@@ -65,21 +65,13 @@ public class ITTableSnippets {
   private static final TableId COPY_TABLE_ID = TableId.of(COPY_DATASET_NAME, BASE_TABLE_NAME);
   private static final Logger log = Logger.getLogger(ITTableSnippets.class.getName());
 
+  private BigQuery bigquery;
   private Table table;
   private Table copyTable;
   private TableSnippets tableSnippets;
-  private BigQuery bigquery;
-  
+
   private static int nextTableNumber = 0;
   
-  private String GetTableName() {
-    return BASE_TABLE_NAME + nextTableNumber;
-  }
-  
-  private TableId GetTableId() {
-    return TableId.of(DATASET_NAME, GetTableName());
-  }
-
   @Before
   public void before() {
     ++nextTableNumber;
@@ -100,6 +92,14 @@ public class ITTableSnippets {
     bigquery.delete(COPY_TABLE_ID);
     bigquery.delete(DATASET_NAME);
     bigquery.delete(COPY_DATASET_NAME);
+  }
+
+  private String GetTableName() {
+    return BASE_TABLE_NAME + nextTableNumber;
+  }
+  
+  private TableId GetTableId() {
+    return TableId.of(DATASET_NAME, GetTableName());
   }
 
   @Test
