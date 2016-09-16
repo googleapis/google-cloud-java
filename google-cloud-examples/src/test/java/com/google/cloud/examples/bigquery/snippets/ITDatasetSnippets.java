@@ -16,6 +16,51 @@
 
 package com.google.cloud.examples.bigquery.snippets;
 
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+
+import com.google.cloud.bigquery.BigQuery;
+import com.google.cloud.bigquery.BigQueryOptions;
+import com.google.cloud.bigquery.Dataset;
+import com.google.cloud.bigquery.DatasetInfo;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
 public class ITDatasetSnippets {
+  private static final String datasetId = "dataset_snippets_integration_test";
+  private static final String nonExistandDatasetId = "non_existant_dataset";
+
+  private static BigQuery bigquery;
+  private static Dataset dataset;
+  private static Dataset nonExistantDataset;
+
+  @BeforeClass
+  public static void beforeClass() {
+      bigquery = BigQueryOptions.defaultInstance().service();
+  }
+
+  @Before
+  public void before() {
+    dataset = bigquery.create(DatasetInfo.builder(datasetId).build());
+    nonExistantDataset = bigquery.create(DatasetInfo.builder(nonExistandDatasetId).build());
+    bigquery.delete(nonExistandDatasetId, BigQuery.DatasetDeleteOption.deleteContents());
+  }
+
+  @After
+  public void after() {
+    bigquery.delete(datasetId, BigQuery.DatasetDeleteOption.deleteContents());
+  }
+
+  @Test
+  public void testExistsReturnsFalseWhenDatasetDoesntExist() {
+    assertFalse(nonExistantDataset.exists());
+  }
+
+  @Test
+  public void testExistsReturnsTrueWhenDatasetExists() {
+    assertTrue(dataset.exists());
+  }
 
 }

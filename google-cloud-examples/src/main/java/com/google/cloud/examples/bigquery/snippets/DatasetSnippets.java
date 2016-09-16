@@ -43,6 +43,29 @@ public class DatasetSnippets {
   public DatasetSnippets(Dataset dataset) {
     this.dataset = dataset;
   }
+  
+  /**
+   * Example of checking whether a dataset exists.
+   */
+  // [TARGET exists()]
+  public boolean checkDatasetExists() {
+    // [START checkDatasetExists]
+    boolean exists = this.dataset.exists();
+    // [END checkDatasetExists]
+    return exists;
+  }
+
+  /**
+   * Example of reloading a dataset.
+   */
+  // [TARGET reload(DatasetOption... options)]
+  public Dataset reloadDataset() {
+    // [START reloadDataset]
+    Dataset dataset = this.dataset.reload();
+    // [END reloadDataset]
+    return dataset;
+  }
+   */
 
   /**
   * Example of listing dataset tables. 
@@ -122,4 +145,5 @@ public class DatasetSnippets {
     // [END createTable]
     return table;
   }
+
 }
