@@ -1,34 +1,40 @@
 /*
-* Copyright 2016 Google Inc. All Rights Reserved.
-*
-* Licensed under the Apache License, Version 2.0 (the "License");
-* you may not use this file except in compliance with the License.
-* You may obtain a copy of the License at
-*
-*       http://www.apache.org/licenses/LICENSE-2.0
-*
-* Unless required by applicable law or agreed to in writing, software
-* distributed under the License is distributed on an "AS IS" BASIS,
-* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-* See the License for the specific language governing permissions and
-* limitations under the License.
-*/
+ * Copyright 2016 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *       http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 
 /*
-* EDITING INSTRUCTIONS
-* This file is referenced in MyClass’s javadoc. Any change to this file should be reflected in MyClass’s
-* javadoc.
-*/
+ * EDITING INSTRUCTIONS
+ * This file is referenced in Datastore's javadoc. Any change to this file should be reflected in
+ * Datastore's javadoc.
+ */
 
 package com.google.cloud.examples.datastore.snippets;
 
 import com.google.cloud.datastore.Datastore;
 import com.google.cloud.datastore.Entity;
+import com.google.cloud.datastore.IncompleteKey;
 import com.google.cloud.datastore.Key;
 import com.google.cloud.datastore.KeyFactory;
 import com.google.common.collect.Lists;
-import java.util.Iterator;
 
+import java.util.Iterator;
+import java.util.List;
+
+/**
+ * This class contains a number of snippets for the {@link Datastore} interface.
+ */
 public class DatastoreSnippets {
 
   private final Datastore datastore;
@@ -40,7 +46,37 @@ public class DatastoreSnippets {
   // ANTHONY STARTS HERE
 
 
+  /**
+   * Example of allocating an id
+   */
+  // [TARGET allocatedId()]
+  public Key allocateIdSingle() {
+    // [START allocateIdSingle]
+    KeyFactory keyFactory = datastore.newKeyFactory().kind("someKind");
+    IncompleteKey incompleteKey = keyFactory.newKey();
 
+    // let cloud datastore automatically assign an id
+    Key key = datastore.allocateId(keyFactory.newKey());
+    // [END allocateIdSingle]
+
+    return key;
+  }
+
+  /**
+   * Example of allocating multiple ids
+   */
+  // [TARGET allocatedId()]
+  public List<Key> allocateIdMultiple() {
+    // [START allocateIdMultiple]
+    KeyFactory keyFactory = datastore.newKeyFactory().kind("someKind");
+    IncompleteKey incompleteKey1 = keyFactory.newKey();
+    IncompleteKey incompleteKey2 = keyFactory.newKey();
+
+    // let cloud datastore automatically assign the ids
+    List<Key> keys = datastore.allocateId(incompleteKey1, incompleteKey2);
+    // [END allocateIdMultiple]
+    return keys;
+  }
   // ANTHONY ENDS HERE
 
   // GARRETT STARTS HERE
