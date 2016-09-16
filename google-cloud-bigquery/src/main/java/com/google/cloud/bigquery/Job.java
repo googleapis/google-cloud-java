@@ -136,11 +136,14 @@ public class Job extends JobInfo {
 
   /**
    * Checks if this job has completed its execution, either failing or succeeding. If the job does
-   * not exist this method returns {@code true}. You can wait for job completion with:
+   * not exist this method returns {@code true}.
+   *
+   * <p>Example of waiting for a job until it reports that it is done.
    * <pre> {@code
-   * while(!job.isDone()) {
+   * while (!job.isDone()) {
    *   Thread.sleep(1000L);
-   * }}</pre>
+   * }
+   * }</pre>
    *
    * @return {@code true} if this job is in {@link JobStatus.State#DONE} state or if it does not
    *     exist, {@code false} if the state is not {@link JobStatus.State#DONE}
@@ -158,7 +161,7 @@ public class Job extends JobInfo {
    * value use {@link WaitForOption#checkEvery(long, TimeUnit)}. Use
    * {@link WaitForOption#timeout(long, TimeUnit)} to set the maximum time to wait.
    *
-   * <p>Example usage of {@code waitFor()}:
+   * <p>Example usage of {@code waitFor()}.
    * <pre> {@code
    * Job completedJob = job.waitFor();
    * if (completedJob == null) {
@@ -167,19 +170,23 @@ public class Job extends JobInfo {
    *   // job failed, handle error
    * } else {
    *   // job completed successfully
-   * }}</pre>
+   * }
+   * }</pre>
    *
-   * <p>Example usage of {@code waitFor()} with checking period and timeout:
+   * <p>Example usage of {@code waitFor()} with checking period and timeout.
    * <pre> {@code
-   * Job completedJob = job.waitFor(WaitForOption.checkEvery(1, TimeUnit.SECONDS),
-   *     WaitForOption.timeout(60, TimeUnit.SECONDS));
+   * Job completedJob =
+   *     job.waitFor(
+   *         WaitForOption.checkEvery(1, TimeUnit.SECONDS),
+   *         WaitForOption.timeout(60, TimeUnit.SECONDS));
    * if (completedJob == null) {
    *   // job no longer exists
    * } else if (completedJob.status().error() != null) {
    *   // job failed, handle error
    * } else {
    *   // job completed successfully
-   * }}</pre>
+   * }
+   * }</pre>
    *
    * @param waitOptions options to configure checking period and timeout
    * @throws BigQueryException upon failure
