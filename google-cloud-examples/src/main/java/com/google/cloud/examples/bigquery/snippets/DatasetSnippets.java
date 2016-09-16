@@ -22,15 +22,15 @@
 
 package com.google.cloud.examples.bigquery.snippets;
 
-import com.google.cloud.bigquery.TimePartitioning;
 import com.google.cloud.Page;
 import com.google.cloud.bigquery.BigQuery.TableListOption;
 import com.google.cloud.bigquery.Dataset;
+import com.google.cloud.bigquery.Dataset.Builder;
 import com.google.cloud.bigquery.Field;
 import com.google.cloud.bigquery.Schema;
 import com.google.cloud.bigquery.StandardTableDefinition;
 import com.google.cloud.bigquery.Table;
-
+import com.google.cloud.bigquery.TimePartitioning;
 import java.util.Iterator;
 
 /**
@@ -48,22 +48,58 @@ public class DatasetSnippets {
    * Example of checking whether a dataset exists.
    */
   // [TARGET exists()]
-  public boolean checkDatasetExists() {
-    // [START checkDatasetExists]
+  public boolean doesDatasetExist() {
+    // [START doesDatasetExist]
     boolean exists = this.dataset.exists();
-    // [END checkDatasetExists]
+    // [END doesDatasetExist]
     return exists;
   }
 
   /**
    * Example of reloading a dataset.
    */
-  // [TARGET reload(DatasetOption... options)]
+  // [TARGET reload(BigQuery.DatasetOption... options)]
   public Dataset reloadDataset() {
     // [START reloadDataset]
     Dataset dataset = this.dataset.reload();
+    if (dataset != null) {
+      // The dataset was reloaded.
+    } else {
+      // The dataset was not found.
+    }
     // [END reloadDataset]
     return dataset;
+  }
+
+  /**
+   * Example of updating a dataset.
+   */
+  // [TARGET update(BigQuery.DatasetOption... options)]
+  // [VARIABLE "my_friendly_name"]
+  public Dataset updateDataset(String friendlyName) {
+    // [START updateDataset]
+    Builder builder = this.dataset.toBuilder();
+    builder.friendlyName(friendlyName);
+    Dataset datasetWithChanges = builder.build();
+    Dataset updatedDataset = datasetWithChanges.update();
+    // [END updateDataset]
+    return updatedDataset;
+  }
+
+  /**
+   * Example of deleting a dataset.
+   */
+  // [TARGET delete()]
+  public boolean deleteDataset() {
+    // [START deleteDataset]
+    boolean deleted = this.dataset.delete();
+    if (deleted) {
+      // The dataset was deleted.
+    } else {
+      // The dataset was not found.
+    }
+    // [END deleteDataset]
+    return deleted;
   }
 
   /**
