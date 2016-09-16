@@ -76,18 +76,31 @@ public class ITTopicSnippets {
     assertEquals(2, topicSnippets.publishMessageListAsync().size());
     assertEquals(2, topicSnippets.publishMessages().size());
     assertEquals(2, topicSnippets.publishMessagesAsync().size());
+  }
+
+  @Test
+  public void testTopicSubscriptions() throws ExecutionException, InterruptedException {
+    TopicSnippets topicSnippets = new TopicSnippets(topic);
     pubsub.create(SubscriptionInfo.of(TOPIC, SUBSCRIPTION));
-    Page<SubscriptionId> subscriptions = topicSnippets.listSubscriptionsForTopic();
-    while (Iterators.size(subscriptions.values().iterator()) < 1) {
-      subscriptions = topicSnippets.listSubscriptionsForTopic();
+    try {
+      Page<SubscriptionId> subscriptions = topicSnippets.listSubscriptionsForTopic();
+      while (Iterators.size(subscriptions.values().iterator()) < 1) {
+        subscriptions = topicSnippets.listSubscriptionsForTopic();
+      }
+      assertEquals(SUBSCRIPTION, subscriptions.values().iterator().next().subscription());
+      subscriptions = topicSnippets.listSubscriptionsForTopicAsync();
+      while (Iterators.size(subscriptions.values().iterator()) < 1) {
+        subscriptions = topicSnippets.listSubscriptionsForTopic();
+      }
+      assertEquals(SUBSCRIPTION, subscriptions.values().iterator().next().subscription());
+    } finally {
+      pubsub.deleteSubscription(SUBSCRIPTION);
     }
-    assertEquals(SUBSCRIPTION, subscriptions.values().iterator().next().subscription());
-    subscriptions = topicSnippets.listSubscriptionsForTopicAsync();
-    while (Iterators.size(subscriptions.values().iterator()) < 1) {
-      subscriptions = topicSnippets.listSubscriptionsForTopic();
-    }
-    assertEquals(SUBSCRIPTION, subscriptions.values().iterator().next().subscription());
-    pubsub.deleteSubscription(SUBSCRIPTION);
+  }
+
+  @Test
+  public void testPolicy() throws ExecutionException, InterruptedException {
+    TopicSnippets topicSnippets = new TopicSnippets(topic);
     Policy policy = topicSnippets.getPolicy();
     assertNotNull(policy);
     assertEquals(policy, topicSnippets.getPolicyAsync());
