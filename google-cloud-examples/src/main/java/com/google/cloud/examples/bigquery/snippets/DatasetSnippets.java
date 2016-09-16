@@ -109,7 +109,7 @@ public class DatasetSnippets {
   // [TARGET create(String table, TableDefinition definition, BigQuery.TableOption... options)]
   // [VARIABLE “my_table”]
   // [VARIABLE “my_field”]
-  public Table createTabl(String tableName, String fieldName) {
+  public Table createTable(String tableName, String fieldName) {
     // [START createTable]
     Schema schema = Schema.builder()
         .addField(Field.of(fieldName, Field.Type.string()))
