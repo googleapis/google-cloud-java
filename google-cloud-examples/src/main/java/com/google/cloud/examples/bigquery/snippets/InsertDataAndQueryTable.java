@@ -70,10 +70,8 @@ public class InsertDataAndQueryTable {
     firstRow.put("StringField", "value1");
     secondRow.put("StringField", "value2");
     // Create an insert request
-    InsertAllRequest insertRequest = InsertAllRequest.builder(tableId)
-        .addRow(firstRow)
-        .addRow(secondRow)
-        .build();
+    InsertAllRequest insertRequest =
+        InsertAllRequest.builder(tableId).addRow(firstRow).addRow(secondRow).build();
     // Insert rows
     InsertAllResponse insertResponse = bigquery.insertAll(insertRequest);
     // Check if errors occurred
@@ -82,10 +80,11 @@ public class InsertDataAndQueryTable {
     }
 
     // Create a query request
-    QueryRequest queryRequest = QueryRequest.builder("SELECT * FROM my_dataset_id.my_table_id")
-        .maxWaitTime(60000L)
-        .pageSize(1000L)
-        .build();
+    QueryRequest queryRequest =
+        QueryRequest.builder("SELECT * FROM my_dataset_id.my_table_id")
+            .maxWaitTime(60000L)
+            .pageSize(1000L)
+            .build();
     // Request query to be executed and wait for results
     QueryResponse queryResponse = bigquery.query(queryRequest);
     while (!queryResponse.jobCompleted()) {
