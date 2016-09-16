@@ -28,8 +28,9 @@ import com.google.cloud.datastore.QueryResults;
 import com.google.cloud.examples.datastore.snippets.DatastoreSnippets;
 import com.google.cloud.storage.testing.RemoteStorageHelper;
 
-import java.util.Iterator;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.ExecutionException;
 import java.util.logging.Logger;
 
@@ -39,6 +40,8 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 import org.junit.rules.Timeout;
+
+import autovalue.shaded.com.google.common.common.collect.Lists;
 
 public class ITDatastoreSnippets {
 
@@ -85,19 +88,31 @@ public class ITDatastoreSnippets {
 
   // GARRETT STARTS HERE
 
-//  @Test
-//  public void testUpdateEntity() {
-//    String KEY = "my_key_name";
-//    // WILL FAIL - need to ensure it is created first
-//    datastoreSnippets.updateEntity(KEY);
-//  }
-
   @Test
-  public void testPutEntity() {
+  public void testPutUpdateGet() {
     String KEY = "my_key_name";
     datastoreSnippets.putSingleEntity(KEY);
     Entity entity = datastoreSnippets.getEntityWithKey(KEY);
     assertEquals("value", entity.getString("propertyName"));
+
+    datastoreSnippets.updateEntity(KEY);
+    Entity entityV2 = datastoreSnippets.getEntityWithKey(KEY);
+    assertEquals("updatedValue", entityV2.getString("propertyName"));
+  }
+
+  @Test
+  public void testBatchPutUpdateGet() {
+    String KEY1 = "my_key_name";
+    String KEY2 = "my_key_name2";
+    datastoreSnippets.batchPutEntities(KEY1, KEY2);
+    List<Entity> entities = Lists.newArrayList(datastoreSnippets.getEntitiesWithKeys(KEY1, KEY2));
+    assertEquals(2, entities.size());
+    Map<String, Entity> entityMap = new HashMap<>();
+    for (Entity entity : entities) {
+      entityMap.put(entity.key().name(), entity);
+    }
+    assertEquals("value1", entityMap.get(KEY1).getString("propertyName"));
+    assertEquals("value2", entityMap.get(KEY2).getString("propertyName"));
   }
 
   // GARRETT ENDS HERE
