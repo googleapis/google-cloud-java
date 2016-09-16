@@ -41,7 +41,10 @@ class Method(object):
     def parse_type(csl, ast_type, is_vararg):
         parameter_type = ''
         parameter_complete_type = ''
-        if isinstance(ast_type, ast.Type):
+        if isinstance(ast_type, ast.Wildcard):
+             parameter_type = '?'
+             parameter_complete_type = '?'
+        elif isinstance(ast_type, ast.Type):
             if isinstance(ast_type.name, ast.Name):
                 parameter_type = ast_type.name.value
                 parameter_complete_type = ast_type.name.value
