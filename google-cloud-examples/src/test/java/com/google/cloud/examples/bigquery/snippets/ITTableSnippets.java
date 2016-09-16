@@ -37,6 +37,7 @@ import com.google.cloud.Page;
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQuery.DatasetDeleteOption;
 import com.google.cloud.bigquery.BigQuery.TableDataListOption;
+import com.google.cloud.bigquery.BigQuery.TableField;
 import com.google.cloud.bigquery.BigQueryOptions;
 import com.google.cloud.bigquery.DatasetInfo;
 import com.google.cloud.bigquery.Field;
@@ -70,6 +71,13 @@ public class ITTableSnippets {
   private Table table;
   private TableSnippets tableSnippets;
 
+  private static final String DOOMED_TABLE_NAME = "doomed_table";
+  private static final String DOOMED_DATASET_NAME = "doomed_dataset";
+  public static final TableId DOOMED_TABLE_ID = TableId.of(DOOMED_DATASET_NAME, DOOMED_TABLE_NAME);
+  
+  private static Table doomedTable;
+  private static TableSnippets doomedTableSnippets;
+
   private static int nextTableNumber = 0;
   
   @BeforeClass
@@ -77,6 +85,7 @@ public class ITTableSnippets {
     bigquery = BigQueryOptions.defaultInstance().service();
     bigquery.create(DatasetInfo.builder(DATASET_NAME).build());
     bigquery.create(DatasetInfo.builder(COPY_DATASET_NAME).build());
+    bigquery.create(DatasetInfo.builder(DOOMED_DATASET_NAME).build());
   }
 
   @Before
@@ -88,18 +97,23 @@ public class ITTableSnippets {
     table = bigquery.create(TableInfo.of(getTableId(), builder.build()));
     bigquery.create(TableInfo.of(getCopyTableId(), builder.build()));
     tableSnippets = new TableSnippets(table);
+    
+    doomedTable = bigquery.create(TableInfo.of(DOOMED_TABLE_ID, builder.build()));
+    doomedTableSnippets = new TableSnippets(doomedTable);
   }
 
   @After
   public void after() {
     bigquery.delete(getTableId());
     bigquery.delete(getCopyTableId());
+    bigquery.delete(DOOMED_TABLE_ID);
   }
 
   @AfterClass
   public static void afterClass() {
     bigquery.delete(DATASET_NAME, DatasetDeleteOption.deleteContents());
     bigquery.delete(COPY_DATASET_NAME, DatasetDeleteOption.deleteContents());
+    bigquery.delete(DOOMED_DATASET_NAME, DatasetDeleteOption.deleteContents());
   }
 
   private String getTableName() {
@@ -119,8 +133,28 @@ public class ITTableSnippets {
   }
 
   @Test
+  public void testCheckExists() {
+	tableSnippets.checkExists();
+  }
+  
+  @Test
+  public void testReloadTableWithFields() {
+	tableSnippets.reloadTableWithFields(TableField.LAST_MODIFIED_TIME, TableField.NUM_ROWS);
+  }
+  
+  @Test
+  public void testUpdateTableWithFields() {
+	tableSnippets.updateTableWithFields(TableField.LAST_MODIFIED_TIME, TableField.NUM_ROWS);
+  }
+  
+  @Test
+  public void testDelete() {
+	doomedTableSnippets.delete();
+  }
+
+  @Test
   public void testInsert() {
-    log.info("testInsert");
+	log.info("testInsert");
     InsertAllResponse response = tableSnippets.insert("row1", "row2");
     assertFalse(response.hasErrors());
     verifyTestRows(table);

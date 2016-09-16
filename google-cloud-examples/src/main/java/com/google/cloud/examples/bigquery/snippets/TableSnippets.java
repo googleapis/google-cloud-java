@@ -20,6 +20,9 @@ import com.google.cloud.Page;
 import com.google.cloud.WaitForOption;
 import com.google.cloud.bigquery.BigQuery.JobField;
 import com.google.cloud.bigquery.BigQuery.JobOption;
+import com.google.cloud.bigquery.BigQuery;
+import com.google.cloud.bigquery.BigQuery.TableOption;
+import com.google.cloud.bigquery.BigQuery.TableField;
 import com.google.cloud.bigquery.BigQuery.TableDataListOption;
 import com.google.cloud.bigquery.BigQueryException;
 import com.google.cloud.bigquery.FieldValue;
@@ -28,6 +31,7 @@ import com.google.cloud.bigquery.InsertAllResponse;
 import com.google.cloud.bigquery.Job;
 import com.google.cloud.bigquery.Table;
 import com.google.cloud.bigquery.TableId;
+import com.google.cloud.bigquery.spi.BigQueryRpc;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -47,6 +51,54 @@ public class TableSnippets {
     this.table = table;
   }
 
+  /**
+   * Example of ensuring that a table exists. 
+   */
+  // [TARGET exists()]
+  public void checkExists() {
+	  // [START checkExists]
+	  if (!table.exists()) {
+		  throw new RuntimeException("Table does not exist.");
+	  }
+	  // [END checkExists]
+  }
+
+  /**
+   * Example of fetching a table's latest information, specifying particular table field options.
+   */
+  // [TARGET reload(BigQuery.TableOption... options)]
+  // [VARIABLE TableField.LAST_MODIFIED_TIME]
+  // [VARIABLE TableField.NUM_ROWS]
+  public Table reloadTableWithFields(TableField... fields) {
+	  // [START reloadTableWithFields]
+	  Table reloaded = table.reload(TableOption.fields(fields));
+	  // [END reloadTableWithFields]
+	  return reloaded;
+  }
+
+  /**
+   * Example of updating a table's information, specifying particular table field options.
+   */
+  // [TARGET update(BigQuery.TableOption... options)]
+  // [VARIABLE TableField.LAST_MODIFIED_TIME]
+  // [VARIABLE TableField.NUM_ROWS]
+  public Table updateTableWithFields(TableField... fields) {
+	  // [START updateTableWithFields]
+	  Table updated = table.update(TableOption.fields(fields));
+	  // [END updateTableWithFields]
+	  return updated;
+  }
+
+  /**
+   * Example of deleting a table.
+   */
+  // [TARGET delete()]
+  public void delete() {
+	  // [START delete]
+	  table.delete();
+	  // [END delete]
+  }
+  
   /**
    * Example of inserting rows into a table.
    */
