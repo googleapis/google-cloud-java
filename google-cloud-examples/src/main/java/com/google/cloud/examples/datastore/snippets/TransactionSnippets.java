@@ -30,6 +30,7 @@ import com.google.cloud.datastore.KeyFactory;
 import com.google.cloud.datastore.Transaction;
 
 import java.util.Iterator;
+import java.util.List;
 
 /**
  * This class contains a number of snippets for the {@link Transaction} interface.
@@ -52,6 +53,8 @@ public class TransactionSnippets {
     // [START get]
     Datastore datastore = transaction.datastore();
     KeyFactory keyFactory = datastore.newKeyFactory().kind("someKind");
+
+    // Create an entity.
     Key key = datastore.allocateId(keyFactory.newKey());
     Entity entity = Entity.builder(key).set("description", "get()").build();
     datastore.put(entity);
@@ -65,29 +68,35 @@ public class TransactionSnippets {
     // [END get]
 
     // For tests.
+    // TODO: Consider putting this block inside the try statement above so users can see the
+    // expected output without even having to run the snippet.
     boolean consistent = result != null && result.equals(entity);
 
     // Clean up.
     transaction.rollback();
 
-    return consistent; 
+    return consistent;
   }
 
-   /**
-    * Example of getting multiple transactions.
-    */
+  /**
+   * Example of getting Entitys for several keys.
+   *
+   * This function cleans up after itself after the snippet part executes.
+   */
    // [TARGET get(Key...)]
   public boolean getMultiple() {
     // [START getmultiple]
     Datastore datastore = transaction.datastore();
     KeyFactory keyFactory = datastore.newKeyFactory().kind("someKind");
 
+    // Create an entity.
     Key keyOne = datastore.allocateId(keyFactory.newKey());
-    Entity entityOne = Entity.builder(keyOne).set("description", "get() One").build();
+    Entity entityOne = Entity.builder(keyOne).set("description", "One").build();
     datastore.put(entityOne);
 
+    // Create another entity.
     Key keyTwo = datastore.allocateId(keyFactory.newKey());
-    Entity entityTwo = Entity.builder(keyTwo).set("description", "get() Two").build();
+    Entity entityTwo = Entity.builder(keyTwo).set("description", "Two").build();
     datastore.put(entityTwo);
 
     Iterator<Entity> result = null;
@@ -99,6 +108,8 @@ public class TransactionSnippets {
      // [END getmultiple]
 
     // For tests.
+    // TODO: Consider putting this block inside the try statement above so users can see the
+    // expected output without even having to run the snippet.
     boolean consistent = (result != null);
     if (consistent) {
       Entity entityFirst = result.next();
@@ -108,6 +119,56 @@ public class TransactionSnippets {
           (entityFirst.equals(entityOne) || entityFirst.equals(entityTwo)) &&
           (entitySecond.equals(entityOne) || entitySecond.equals(entityTwo));
     }
+
+    // Clean up.
+    transaction.rollback();
+
+    return consistent;
+   }
+
+  /**
+   * Example of fetching a list of Entity for several keys.
+   *
+   * This function cleans up after itself after the snippet part executes.
+   */
+   // [TARGET fetch(Key...)]
+  public boolean fetch() {
+    // [START fetch]
+    Datastore datastore = transaction.datastore();
+    KeyFactory keyFactory = datastore.newKeyFactory().kind("someKind");
+
+    // Create an entity.
+    Key keyOne = datastore.allocateId(keyFactory.newKey());
+    Entity entityOne = Entity.builder(keyOne).set("description", "One").build();
+    datastore.put(entityOne);
+
+    // Create another entity.
+    Key keyTwo = datastore.allocateId(keyFactory.newKey());
+    Entity entityTwo = Entity.builder(keyTwo).set("description", "Two").build();
+    datastore.put(entityTwo);
+
+    // No entity is associated with the following key.
+    Key keyAbsent = datastore.allocateId(keyFactory.newKey());
+
+    List<Entity> result = null;
+    try {
+      result = transaction.fetch(keyOne, keyAbsent, keyTwo);
+    } catch (DatastoreException ex) {
+      // handle exception
+    }
+     // [END fetch]
+
+    // For tests.
+    // TODO: Consider putting this block inside the try statement above so users can see the
+    // expected output without even having to run the snippet.
+    Iterator<Entity> iterator = result.iterator();
+    Entity entityFirst = iterator.next();
+    Entity entityAbsent = iterator.next();
+    Entity entitySecond = iterator.next();
+    boolean consistent = !iterator.hasNext() &&
+        entityFirst.equals(entityOne) &&
+        entityAbsent == null &&
+        entitySecond.equals(entityTwo);
 
     // Clean up.
     transaction.rollback();
@@ -126,6 +187,7 @@ public class TransactionSnippets {
     KeyFactory keyFactory = datastore.newKeyFactory().kind("someKind");
     Key key = datastore.allocateId(keyFactory.newKey());
     Entity entity = Entity.builder(key).set("description", "commit()").build();
+
     // add the entity and commit
     try {
       transaction.put(entity);
@@ -134,6 +196,7 @@ public class TransactionSnippets {
       // handle exception
     }
     // [END commit]
+
     return key;
   }
 

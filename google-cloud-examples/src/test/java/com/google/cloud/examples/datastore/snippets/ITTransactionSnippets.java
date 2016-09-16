@@ -53,6 +53,13 @@ public class ITTransactionSnippets {
   }
 
   @Test
+  public void fetch() {
+    Transaction transaction = datastore.newTransaction();
+    TransactionSnippets transactionSnippets = new TransactionSnippets(transaction);
+    assertTrue(transactionSnippets.fetch());
+  }
+
+  @Test
   public void testCommit() {
     Transaction transaction = datastore.newTransaction();
     TransactionSnippets transactionSnippets = new TransactionSnippets(transaction);
