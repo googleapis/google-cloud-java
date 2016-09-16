@@ -29,12 +29,12 @@ import com.google.cloud.datastore.KeyFactory;
 import com.google.cloud.examples.datastore.snippets.DatastoreSnippets;
 import com.google.common.collect.Lists;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.ExecutionException;
 
-import org.junit.AfterClass;
+import org.junit.After;
 import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
@@ -45,6 +45,8 @@ public class ITDatastoreSnippets {
 
   private static Datastore datastore;
   private static DatastoreSnippets datastoreSnippets;
+
+  private List<Key> registeredKeys = new ArrayList<>();
 
   @Rule
   public ExpectedException thrown = ExpectedException.none();
@@ -58,15 +60,35 @@ public class ITDatastoreSnippets {
     datastoreSnippets = new DatastoreSnippets(datastore);
   }
 
-  @AfterClass
-  public static void afterClass() throws ExecutionException, InterruptedException {
-    // TODO: do the right work for Datastore, similar to the Storage code below
-//    if (storage != null) {
-//      boolean wasDeleted = RemoteStorageHelper.forceDelete(storage, BUCKET, 5, TimeUnit.SECONDS);
-//      if (!wasDeleted && log.isLoggable(Level.WARNING)) {
-//        log.log(Level.WARNING, "Deletion of bucket {0} timed out, bucket is not empty", BUCKET);
-//      }
-//    }
+  @After
+  public void afterTest() {
+    datastore.delete(registeredKeys.toArray(new Key[0]));
+  }
+
+  private String registerKey(String keyName) {
+    return registerKey(keyName, "MyClass");
+  }
+
+  private String registerKey(String keyName, String kind) {
+    Key key = datastore.newKeyFactory().kind(kind).newKey(keyName);
+    registeredKeys.add(key);
+    return key.name();
+  }
+
+  private Map<String, Entity> createEntityMap(List<Entity> entities) {
+    Map<String, Entity> entityMap = new HashMap<>();
+    for (Entity entity : entities) {
+      entityMap.put(entity.key().name(), entity);
+    }
+    return entityMap;
+  }
+
+  private void addEntity(String keyName, String keyClass, String value) {
+    Key key = datastore.newKeyFactory().kind(keyClass).newKey(keyName);
+    Entity.Builder entityBuilder = Entity.builder(key);
+    entityBuilder.set("propertyName", value);
+    Entity entity = entityBuilder.build();
+    datastore.put(entity);
   }
 
   @Test
@@ -100,30 +122,18 @@ public class ITDatastoreSnippets {
     assertEquals(2, keys.size());
   }
 
-  // GARRETT STARTS HERE
-
   @Test
   public void testEntityPutGet() {
-    String key = "my_single_key";
+    String key = registerKey("my_single_key");
     datastoreSnippets.putSingleEntity(key);
     Entity entity = datastoreSnippets.getEntityWithKey(key);
     assertEquals("value", entity.getString("propertyName"));
-
-    datastore.delete(datastore.newKeyFactory().kind("MyClass").newKey(key));
-  }
-
-  private Map<String, Entity> createEntityMap(List<Entity> entities) {
-    Map<String, Entity> entityMap = new HashMap<>();
-    for (Entity entity : entities) {
-      entityMap.put(entity.key().name(), entity);
-    }
-    return entityMap;
   }
 
   @Test
   public void testBatchEntityCrud() {
-    String key1 = "batch_key1";
-    String key2 = "batch_key2";
+    String key1 = registerKey("batch_key1");
+    String key2 = registerKey("batch_key2");
     datastoreSnippets.batchPutEntities(key1, key2);
 
     assertNotNull(datastoreSnippets.getEntityWithKey(key1));
@@ -155,47 +165,26 @@ public class ITDatastoreSnippets {
     assertNull(fetchedEntities2.get(1));
   }
 
-  // GARRETT ENDS HERE
-
-  // MIKE STARTS HERE
-
   @Test
   public void testCreateKeyFactory() {
     KeyFactory keyFactory = datastoreSnippets.createKeyFactory();
     assertNotNull(keyFactory);
   }
 
-  private void addEntity(String keyName, String keyClass, String value) {
-    Key key = datastore.newKeyFactory().kind(keyClass).newKey(keyName);
-    Entity.Builder entityBuilder = Entity.builder(key);
-    entityBuilder.set("propertyName", value);
-    Entity entity = entityBuilder.build();
-    datastore.put(entity);
-  }
-  
-  private void deleteEntity(String keyName, String keyClass) {
-    Key key = datastore.newKeyFactory().kind(keyClass).newKey(keyName);
-    datastore.delete(key);
-  }
-  
   @Test
   public void testRunQuery() {
-    String keyNameToFind = "my_key_name_to_find";
-    String keyNameToMiss = "my_key_name_to_miss";
-    
     String kindToFind = "ClassToFind";
     String kindToMiss = "OtherClass";
-    
+
+    String keyNameToFind = registerKey("my_key_name_to_find", kindToFind);
+    String keyNameToMiss = registerKey("my_key_name_to_miss", kindToMiss);
+
     addEntity(keyNameToFind, kindToFind, "");
     addEntity(keyNameToMiss, kindToMiss, "");
-    
+
     List<Entity> queryResults = datastoreSnippets.runQuery(kindToFind);
     assertNotNull(queryResults);
     assertEquals(1, queryResults.size());
-    
-    deleteEntity(keyNameToFind, kindToFind);
-    deleteEntity(keyNameToMiss, kindToMiss);
   }
 
-  // MIKE ENDS HERE
 }
