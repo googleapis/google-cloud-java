@@ -16,32 +16,21 @@
 
 package com.google.cloud.examples.storage.snippets;
 
-import static java.nio.charset.StandardCharsets.UTF_8;
-import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
 
-import com.google.cloud.Page;
 import com.google.cloud.datastore.Datastore;
+import com.google.cloud.datastore.DatastoreOptions;
 import com.google.cloud.datastore.Entity;
 import com.google.cloud.datastore.KeyFactory;
 import com.google.cloud.datastore.QueryResults;
-import com.google.cloud.datastore.testing.LocalDatastoreHelper;
 import com.google.cloud.examples.datastore.snippets.DatastoreSnippets;
-import com.google.cloud.storage.Acl;
-import com.google.cloud.storage.Blob;
-import com.google.cloud.storage.BlobId;
-import com.google.cloud.storage.BlobInfo;
-import com.google.cloud.storage.Bucket;
-import com.google.cloud.storage.Storage;
-import com.google.cloud.storage.StorageException;
 import com.google.cloud.storage.testing.RemoteStorageHelper;
-import com.google.common.collect.Iterators;
-import com.google.common.collect.Sets;
+
+import java.util.Iterator;
+import java.util.List;
+import java.util.concurrent.ExecutionException;
+import java.util.logging.Logger;
 
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
@@ -49,19 +38,6 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 import org.junit.rules.Timeout;
-
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.URL;
-import java.net.URLConnection;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Set;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.TimeUnit;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class ITDatastoreSnippets {
 
@@ -79,16 +55,19 @@ public class ITDatastoreSnippets {
 
   @BeforeClass
   public static void beforeClass() {
-    LocalDatastoreHelper helper = LocalDatastoreHelper.create();
-    datastore = helper.options().service();
+    datastore = DatastoreOptions.defaultInstance().service();
     datastoreSnippets = new DatastoreSnippets(datastore);
   }
 
   @AfterClass
   public static void afterClass() throws ExecutionException, InterruptedException {
-    if (datastore != null) {
-      //LocalDatastoreHelper.sendQuitRequest(port)
-    }
+    // TODO: do the right work for Datastore, similar to the Storage code below
+//    if (storage != null) {
+//      boolean wasDeleted = RemoteStorageHelper.forceDelete(storage, BUCKET, 5, TimeUnit.SECONDS);
+//      if (!wasDeleted && log.isLoggable(Level.WARNING)) {
+//        log.log(Level.WARNING, "Deletion of bucket {0} timed out, bucket is not empty", BUCKET);
+//      }
+//    }
   }
 
   // ANTHONY STARTS HERE
@@ -96,6 +75,21 @@ public class ITDatastoreSnippets {
   // ANTHONY ENDS HERE
 
   // GARRETT STARTS HERE
+
+//  @Test
+//  public void testUpdateEntity() {
+//    String KEY = "my_key_name";
+//    // WILL FAIL - need to ensure it is created first
+//    datastoreSnippets.updateEntity(KEY);
+//  }
+
+  @Test
+  public void testPutEntity() {
+    String KEY = "my_key_name";
+    datastoreSnippets.putSingleEntity(KEY);
+    Entity entity = datastoreSnippets.getEntityWithKey(KEY);
+    assertEquals("value", entity.getString("propertyName"));
+  }
 
   // GARRETT ENDS HERE
 

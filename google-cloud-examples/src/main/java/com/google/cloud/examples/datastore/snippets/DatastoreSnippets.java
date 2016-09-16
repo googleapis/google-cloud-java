@@ -57,7 +57,7 @@ public class DatastoreSnippets {
   // [TARGET allocatedId()]
   public Key allocateIdSingle() {
     // [START allocateIdSingle]
-    KeyFactory keyFactory = datastore.newKeyFactory().kind("someKind");
+    KeyFactory keyFactory = datastore.newKeyFactory().kind("MyClass");
     IncompleteKey incompleteKey = keyFactory.newKey();
 
     // let cloud datastore automatically assign an id
@@ -73,7 +73,7 @@ public class DatastoreSnippets {
   // [TARGET allocatedId()]
   public List<Key> allocateIdMultiple() {
     // [START allocateIdMultiple]
-    KeyFactory keyFactory = datastore.newKeyFactory().kind("someKind");
+    KeyFactory keyFactory = datastore.newKeyFactory().kind("MyClass");
     IncompleteKey incompleteKey1 = keyFactory.newKey();
     IncompleteKey incompleteKey2 = keyFactory.newKey();
 
@@ -90,9 +90,9 @@ public class DatastoreSnippets {
   // [VARIABLE "my_key_name"]
   public void updateEntity(String keyName) {
     // [START updateEntity]
-    Key key = datastore.newKeyFactory().newKey(keyName);
+    Key key = datastore.newKeyFactory().kind("MyClass").newKey(keyName);
     Entity.Builder entityBuilder = Entity.builder(key);
-    entityBuilder.set("propertyName", "value");
+    entityBuilder.set("propertyName", "updatedValue");
     Entity entity = entityBuilder.build();
     datastore.update(entity);
     // [END updateEntity]
@@ -102,7 +102,7 @@ public class DatastoreSnippets {
   // [VARIABLE "my_key_name"]
   public void putSingleEntity(String keyName) {
     // [START putSingleEntity]
-    Key key = datastore.newKeyFactory().newKey(keyName);
+    Key key = datastore.newKeyFactory().kind("MyClass").newKey(keyName);
     Entity.Builder entityBuilder = Entity.builder(key);
     entityBuilder.set("propertyName", "value");
     Entity entity = entityBuilder.build();
@@ -115,12 +115,12 @@ public class DatastoreSnippets {
   // [VARIABLE "my_key_name2"]
   public void batchPutEntities(String keyName1, String keyName2) {
     // [START batchPutEntities]
-    Key key1 = datastore.newKeyFactory().newKey(keyName1);
+    Key key1 = datastore.newKeyFactory().kind("MyClass").newKey(keyName1);
     Entity.Builder entityBuilder1 = Entity.builder(key1);
     entityBuilder1.set("propertyName", "value");
     Entity entity1 = entityBuilder1.build();
 
-    Key key2 = datastore.newKeyFactory().newKey(keyName2);
+    Key key2 = datastore.newKeyFactory().kind("MyClass").newKey(keyName2);
     Entity.Builder entityBuilder2 = Entity.builder(key2);
     entityBuilder2.set("propertyName", "value");
     Entity entity2 = entityBuilder2.build();
@@ -134,8 +134,8 @@ public class DatastoreSnippets {
   // [VARIABLE "my_key_name2"]
   public void deleteEntities(String keyName1, String keyName2) {
     // [START deleteEntities]
-    Key key1 = datastore.newKeyFactory().newKey(keyName1);
-    Key key2 = datastore.newKeyFactory().newKey(keyName2);
+    Key key1 = datastore.newKeyFactory().kind("MyClass").newKey(keyName1);
+    Key key2 = datastore.newKeyFactory().kind("MyClass").newKey(keyName2);
     datastore.delete(key1, key2);
     // [END deleteEntities]
   }
@@ -162,7 +162,7 @@ public class DatastoreSnippets {
   // [VARIABLE "my_key_name"]
   public Entity getEntityWithKey(String keyName) {
     // [START get]
-    Key key = datastore.newKeyFactory().newKey(keyName);
+    Key key = datastore.newKeyFactory().kind("MyClass").newKey(keyName);
     Entity entity = datastore.get(key);
     // Do something with the entity
     // [END get]
@@ -178,8 +178,8 @@ public class DatastoreSnippets {
   public Iterator<Entity> getEntitiesWithKeys(String firstKeyName, String secondKeyName) {
     // [START get]
     KeyFactory keyFactory = datastore.newKeyFactory();
-    Key firstKey = keyFactory.newKey(firstKeyName);
-    Key secondKey = keyFactory.newKey(secondKeyName);
+    Key firstKey = keyFactory.kind("MyClass").newKey(firstKeyName);
+    Key secondKey = keyFactory.kind("MyClass").newKey(secondKeyName);
     Iterator<Entity> entitiesIterator = datastore.get(Lists.newArrayList(firstKey, secondKey));
     while (entitiesIterator.hasNext()) {
       Entity entity = entitiesIterator.next();
@@ -188,7 +188,7 @@ public class DatastoreSnippets {
     // [END get]
     return entitiesIterator;
   }
-  
+
   /**
    * Example of fetching a list of Entity objects.
    */
@@ -198,8 +198,8 @@ public class DatastoreSnippets {
   public List<Entity> fetchEntitiesWithKeys(String firstKeyName, String secondKeyName) {
     // [START get]
     KeyFactory keyFactory = datastore.newKeyFactory();
-    Key firstKey = keyFactory.newKey(firstKeyName);
-    Key secondKey = keyFactory.newKey(secondKeyName);
+    Key firstKey = keyFactory.kind("MyClass").newKey(firstKeyName);
+    Key secondKey = keyFactory.kind("MyClass").newKey(secondKeyName);
     List<Entity> entities = datastore.fetch(Lists.newArrayList(firstKey, secondKey));
     for (Entity entity : entities) {
       // do something with the entity
@@ -207,7 +207,7 @@ public class DatastoreSnippets {
     // [END get]
     return entities;
   }
-  
+
   /**
    * Example of running a query.
    */
@@ -217,7 +217,7 @@ public class DatastoreSnippets {
   // [VARIABLE "my_query_namespace"]
   public QueryResults<Entity> runQuery(String keyName, String queryKind, String queryNamespace) {
     // [START get]
-    Key key = datastore.newKeyFactory().newKey(keyName);
+    Key key = datastore.newKeyFactory().kind("MyClass").newKey(keyName);
     StructuredQuery<Entity> query =
         Query.entityQueryBuilder()
             .namespace(queryNamespace)
@@ -232,6 +232,6 @@ public class DatastoreSnippets {
     // [END get]
     return results;
   }
-  
+
   // MIKE ENDS HERE
 }
