@@ -173,7 +173,7 @@ public class ITDatastoreSnippets {
     String kindToMiss = "OtherClass";
     
     String keyNameToFind = registerKey("my_key_name_to_find", kindToFind);
-    String otherKeyNameToFind = registerKey("my_key_name_to_find", kindToFind);
+    String otherKeyNameToFind = registerKey("other_key_name_to_find", kindToFind);
     String keyNameToMiss = registerKey("my_key_name_to_miss", kindToMiss);
     
     String property = "my_property_name";
