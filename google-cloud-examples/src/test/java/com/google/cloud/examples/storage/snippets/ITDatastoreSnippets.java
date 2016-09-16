@@ -42,12 +42,6 @@ import org.junit.rules.Timeout;
 
 public class ITDatastoreSnippets {
 
-  private static final String KEY = "my_key_name";
-  private static final String FIRST_KEY = "first_key_name";
-  private static final String SECOND_KEY = "second_key_name";
-  private static final String QUERY_KIND = "kind";
-  private static final String NAMESPACE = "";
-
   private static Datastore datastore;
   private static DatastoreSnippets datastoreSnippets;
 
@@ -111,20 +105,16 @@ public class ITDatastoreSnippets {
   // MIKE STARTS HERE
 
   @Test
-  public void test() throws InterruptedException {
-
+  public void testCreateKeyFactory() {
     KeyFactory keyFactory = datastoreSnippets.createKeyFactory();
     assertNotNull(keyFactory);
+  }
 
-    Entity entity = datastoreSnippets.getEntityWithKey(KEY);
-    assertNotNull(entity);
-
-    Iterator<Entity> entityIterator = datastoreSnippets.getEntitiesWithKeys(FIRST_KEY, SECOND_KEY);
-    assertNotNull(entityIterator);
-
-    List<Entity> entityList = datastoreSnippets.fetchEntitiesWithKeys(FIRST_KEY, SECOND_KEY);
-    assertNotNull(entityList);
-
+  @Test
+  public void testRunQuery() {
+    String KEY = "my_key_name";
+    String QUERY_KIND = "my_query_kind";
+    String NAMESPACE = "";
     QueryResults<Entity> queryResults = datastoreSnippets.runQuery(KEY, QUERY_KIND, NAMESPACE);
     assertNotNull(queryResults);
   }
