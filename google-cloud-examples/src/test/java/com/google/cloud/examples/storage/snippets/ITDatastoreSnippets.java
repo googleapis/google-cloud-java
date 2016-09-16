@@ -152,11 +152,15 @@ public class ITDatastoreSnippets {
 
   @Test
   public void testRunQuery() {
-    String KEY = "my_key_name";
-    String QUERY_KIND = "my_query_kind";
-    String NAMESPACE = "";
-    QueryResults<Entity> queryResults = datastoreSnippets.runQuery(KEY, QUERY_KIND, NAMESPACE);
+    String keyToFind = "my_key_name_to_find";
+    String keyToMiss = "my_key_name_to_miss";
+    String query_kind = "MyClass";
+    String namespace = "";
+    datastoreSnippets.batchPutEntities(keyToFind, keyToMiss);
+    List<Entity> queryResults = datastoreSnippets.runQuery(keyToFind, query_kind, namespace);
     assertNotNull(queryResults);
+    assertEquals(1, queryResults.size());
+    datastoreSnippets.deleteEntities(keyToFind, keyToMiss);
   }
 
   // MIKE ENDS HERE

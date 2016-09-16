@@ -223,7 +223,7 @@ public class DatastoreSnippets {
   // [VARIABLE "my_key_name"]
   // [VARIABLE "my_query_kind"]
   // [VARIABLE "my_query_namespace"]
-  public QueryResults<Entity> runQuery(String keyName, String queryKind, String queryNamespace) {
+  public List<Entity> runQuery(String keyName, String queryKind, String queryNamespace) {
     // [START runQuery]
     Key key = datastore.newKeyFactory().kind("MyClass").newKey(keyName);
     StructuredQuery<Entity> query =
@@ -233,12 +233,16 @@ public class DatastoreSnippets {
             .filter(PropertyFilter.hasAncestor(key))
             .build();
     QueryResults<Entity> results = datastore.run(query);
+    // TODO make a change so that it's not necessary to hold the entities in a list for
+    // integration testing
+    List<Entity> entities = Lists.newArrayList();
     while (results.hasNext()) {
       Entity result = results.next();
       // do something with result
+      entities.add(result);
     }
     // [END runQuery]
-    return results;
+    return entities;
   }
 
   // MIKE ENDS HERE
