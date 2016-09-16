@@ -267,9 +267,19 @@ public class ITTableSnippets {
   }
 
   @Test
-  public void testExtract() {
-    log.info("testExtract");
+  public void testExtractList() {
+    log.info("testExtractList");
     String projectId = bigquery.options().projectId();
-    tableSnippets.extract("CSV", "gs://" + projectId + ".appspot.com/extractTest.csv");
+    String gcsFile1 = "gs://" + projectId + ".appspot.com/extractTestA_*.csv";
+    String gcsFile2 = "gs://" + projectId + ".appspot.com/extractTestB_*.csv";
+    tableSnippets.extractList("CSV", gcsFile1, gcsFile2);
+  }
+
+  @Test
+  public void testExtractSingle() {
+    log.info("testExtractSingle");
+    String projectId = bigquery.options().projectId();
+    String gcsFile = "gs://" + projectId + ".appspot.com/extractTest.csv";
+    tableSnippets.extractSingle("CSV", gcsFile);
   }
 }

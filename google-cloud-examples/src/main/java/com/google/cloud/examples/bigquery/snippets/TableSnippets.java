@@ -162,15 +162,17 @@ public class TableSnippets {
   }
   
   /**
-   * Example extracting data to Google Cloud Storage.
+   * Example extracting data to a list of Google Cloud Storage files.
    */
   // [TARGET extract(String, List<String>, BigQuery.JobOption...)]
   // [VARIABLE "CSV"]
-  // [VARIABLE "gs://bucket_name/filename.csv"]
-  public Job extract(String format, String gcsUrl) {
-    // [START extract]
+  // [VARIABLE "gs://bucket_name/PartitionA_*.csv"]
+  // [VARIABLE "gs://bucket_name/PartitionB_*.csv"]
+  public Job extractList(String format, String gcsUrl1, String gcsUrl2) {
+    // [START extractList]
     List<String> destinationUris = new ArrayList<>();
-    destinationUris.add(gcsUrl);
+    destinationUris.add(gcsUrl1);
+    destinationUris.add(gcsUrl2);
 
     Job job = table.extract(format, destinationUris);
 
@@ -186,7 +188,33 @@ public class TableSnippets {
     } catch(InterruptedException | TimeoutException e) {
       // Handle interrupted wait.
     }
-    // [END extract]
+    // [END extractList]
+    return job;
+  }
+
+  /**
+   * Example extracting data to single Google Cloud Storage file.
+   */
+  // [TARGET extract(String, String, BigQuery.JobOption...)]
+  // [VARIABLE "CSV"]
+  // [VARIABLE "gs://bucket_name/filename.csv"]
+  public Job extractSingle(String format, String gcsUrl) {
+    // [START extractSingle]
+    Job job = table.extract(format, gcsUrl);
+
+    // Wait for the job to complete.
+    try {
+      Job completedJob = job.waitFor(WaitForOption.checkEvery(1, TimeUnit.SECONDS),
+          WaitForOption.timeout(60, TimeUnit.SECONDS));
+      if (completedJob != null && completedJob.status().error() == null) {
+        // Job completed successfully.
+      } else {
+        // Handle error case.
+      }
+    } catch(InterruptedException | TimeoutException e) {
+      // Handle interrupted wait.
+    }
+    // [END extractSingle]
     return job;
   }
 }
