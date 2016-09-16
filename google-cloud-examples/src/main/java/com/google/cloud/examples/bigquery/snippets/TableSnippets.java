@@ -149,4 +149,33 @@ public class TableSnippets {
     // [END copyTableId]
     return job;
   }
+  
+  /**
+   * Example extracting data to Google Cloud Storage.
+   */
+  // [TARGET extract(String, List<String>, BigQuery.JobOption...)]
+  // [VARIABLE "CSV"]
+  // [VARIABLE "gs://bucket_name/filename.csv"]
+  public Job extract(String format, String gcsUrl) {
+    // [START extract]
+    List<String> destinationUris = new ArrayList<>();
+    destinationUris.add(gcsUrl);
+
+    Job job = table.extract(format, destinationUris);
+
+    // Wait for the job to complete.
+    try {
+      Job completedJob = job.waitFor(WaitForOption.checkEvery(1, TimeUnit.SECONDS),
+          WaitForOption.timeout(60, TimeUnit.SECONDS));
+      if (completedJob != null && completedJob.status().error() == null) {
+        // Job completed successfully.
+      } else {
+        // Handle error case.
+      }
+    } catch(InterruptedException | TimeoutException e) {
+      // Handle interrupted wait.
+    }
+    // [END extract]
+    return job;
+  }
 }

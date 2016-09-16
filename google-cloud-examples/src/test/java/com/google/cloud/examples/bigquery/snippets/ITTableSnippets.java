@@ -109,7 +109,8 @@ public class ITTableSnippets {
   }
 
   @Test
-  public void testInsert() throws InterruptedException {
+  public void testInsert() {
+    log.info("testInsert");
     InsertAllResponse response = tableSnippets.insert("row1", "row2");
     assertFalse(response.hasErrors());
     verifyTestRows(table);
@@ -212,6 +213,14 @@ public class ITTableSnippets {
   
   @Test
   public void testCopyTableId() {
+    log.info("testCopyTableId");
     tableSnippets.copyTableId(COPY_DATASET_NAME, getCopyTableName());
+  }
+
+  @Test
+  public void testExtract() {
+    log.info("testExtract");
+    String projectId = bigquery.options().projectId();
+    tableSnippets.extract("CSV", "gs://" + projectId + ".appspot.com/extractTest.csv");
   }
 }
