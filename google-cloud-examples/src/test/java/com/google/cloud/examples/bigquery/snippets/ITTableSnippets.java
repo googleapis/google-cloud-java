@@ -37,7 +37,7 @@ import java.util.logging.Logger;
  * Integration tests for {@link TableSnippets}.
  */
 public class ITTableSnippets {
-  private static final String TABLE_NAME = "table";
+  private static final String TABLE_NAME = "snippetTestTable";
   private static final String DATASET_NAME = "dataset";
   public static final TableId TABLE_ID = TableId.of(DATASET_NAME, TABLE_NAME);
   private static final Logger log = Logger.getLogger(ITTableSnippets.class.getName());
