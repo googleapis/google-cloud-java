@@ -130,7 +130,7 @@ public class TableSnippets {
   // [VARIABLE "my_dataset"]
   // [VARIABLE "copy_destination"]
   public Job copyTableId(String dataset, String tableName) throws BigQueryException {
-    // [START copy-tableid]
+    // [START copyTableId]
     TableId destinationId = TableId.of(dataset, tableName);
     JobOption options = JobOption.fields(JobField.STATUS, JobField.USER_EMAIL);
 
@@ -142,10 +142,13 @@ public class TableSnippets {
           WaitForOption.timeout(60, TimeUnit.SECONDS));
       if (completedJob != null && completedJob.status().error() == null) {
         // Job completed successfully.
+      } else {
+        // Handle error case.
       }
     } catch(InterruptedException | TimeoutException e) {
+      // Handle interrupted wait.
     }
-    // [END copy-tableid]
+    // [END copyTableId]
     return job;
   }
 }
