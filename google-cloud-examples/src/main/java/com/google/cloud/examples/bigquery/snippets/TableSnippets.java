@@ -17,6 +17,7 @@
 package com.google.cloud.examples.bigquery.snippets;
 
 import com.google.cloud.Page;
+import com.google.cloud.WaitForOption;
 import com.google.cloud.bigquery.BigQuery.JobField;
 import com.google.cloud.bigquery.BigQuery.JobOption;
 import com.google.cloud.bigquery.BigQuery.TableDataListOption;
@@ -33,6 +34,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 
 /*
  * EDITING INSTRUCTIONS
@@ -120,14 +123,26 @@ public class TableSnippets {
 
   /**
    * Example copying a table to a destination table referenced by table ID.
+   * @throws TimeoutException 
+   * @throws InterruptedException 
    */
   // [TARGET copy(TableId, JobOption...)]
   public Job copy(TableId destinationTable) throws BigQueryException {
     // [START copy-tableid]
-    // Only copy the Status and User Email fields.
+    // As an example, this only retrieves the Status and User Email fields in the
+    // job RPC.
     JobOption options = JobOption.fields(JobField.STATUS, JobField.USER_EMAIL);
     Job job = table.copy(destinationTable, options);
-    // do something with job
+
+    // Wait for the job to complete.
+    try {
+      Job completedJob = job.waitFor(WaitForOption.checkEvery(1, TimeUnit.SECONDS),
+          WaitForOption.timeout(60, TimeUnit.SECONDS));
+      if (completedJob != null && completedJob.status().error() == null) {
+        // Job completed successfully.
+      }
+    } catch(InterruptedException | TimeoutException e) {
+    }
     // [END copy-tableid]
     return job;
   }
