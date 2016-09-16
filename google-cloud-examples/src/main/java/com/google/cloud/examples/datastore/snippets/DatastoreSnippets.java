@@ -33,9 +33,10 @@ import com.google.cloud.datastore.KeyFactory;
 import com.google.cloud.datastore.Query;
 import com.google.cloud.datastore.QueryResults;
 import com.google.cloud.datastore.StructuredQuery;
+import com.google.cloud.datastore.StructuredQuery.Filter;
 import com.google.cloud.datastore.StructuredQuery.PropertyFilter;
 import com.google.common.collect.Lists;
-
+import com.google.datastore.v1.PropertyFilter.Operator;
 import java.util.Iterator;
 import java.util.List;
 
@@ -283,4 +284,30 @@ public class DatastoreSnippets {
     return entities;
   }
 
+  /**
+   * Example of running a query to find all keys with a matching property value.
+   */
+  // [TARGET run(Query<T> query, ReadOption... options)]
+  // [VARIABLE "my_kind"]
+  // [VARIABLE "my_property"]
+  // [VARIABLE "my_value"]
+  public List<Entity> runQueryOnProperty(String kind, String property, String value) {
+    // [START runQueryOnProperty]
+    StructuredQuery<Entity> query =
+        Query.entityQueryBuilder()
+            .kind(kind)
+            .filter(PropertyFilter.eq(property, value))
+            .build();
+    QueryResults<Entity> results = datastore.run(query);
+    // TODO make a change so that it's not necessary to hold the entities in a list for
+    // integration testing
+    List<Entity> entities = Lists.newArrayList();
+    while (results.hasNext()) {
+      Entity result = results.next();
+      // do something with result
+      entities.add(result);
+    }
+    // [END runQueryOnProperty]
+    return entities;
+  }
 }
