@@ -22,7 +22,10 @@
 
 package com.google.cloud.examples.datastore.snippets;
 
+import com.google.cloud.datastore.Batch;
 import com.google.cloud.datastore.Datastore;
+import com.google.cloud.datastore.Datastore.TransactionCallable;
+import com.google.cloud.datastore.DatastoreReaderWriter;
 import com.google.cloud.datastore.Entity;
 import com.google.cloud.datastore.IncompleteKey;
 import com.google.cloud.datastore.Key;
@@ -47,8 +50,44 @@ public class DatastoreSnippets {
     this.datastore = datastore;
   }
 
-  // ANTHONY STARTS HERE
+  /**
+   * Example of running in a transaction.
+   */
+  // [TARGET runInTransaction(TransactionCallable<T> callable)]
+  // [VARIABLE "my_callable_result"]
+  public String runInTransaction(String callableResult) {
+    // [START runInTransaction]
+    final String runResult = callableResult;
+    TransactionCallable<String> callable = new TransactionCallable<String>() {
+      @Override
+      public String run(DatastoreReaderWriter readerWriter) {
+        return runResult;
+      }
+    };
+    String result = datastore.runInTransaction(callable);
+    return result;
+    // [END runInTransaction]
+  }
 
+  /**
+   * Example of starting a new batch.
+   */
+  // [TARGET runInTransaction(TransactionCallable<T> callable)]
+  // [VARIABLE "my_key_name_1"]
+  // [VARIABLE "my_key_name_2"]
+  public Batch newBatch(String keyName1, String keyName2) {
+    // [START newBatch]
+    Key key1 = datastore.newKeyFactory().newKey(keyName1);
+    Key key2 = datastore.newKeyFactory().newKey(keyName2);
+    Batch batch = datastore.newBatch();
+    Entity entity1 = Entity.builder(key1).set("name", "John").build();
+    Entity entity2 = Entity.builder(key2).set("title", "title").build();
+    batch.add(entity1);
+    batch.add(entity2);
+    batch.submit();
+    return batch;
+    // [END newBatch]
+  }
 
   /**
    * Example of allocating an id
