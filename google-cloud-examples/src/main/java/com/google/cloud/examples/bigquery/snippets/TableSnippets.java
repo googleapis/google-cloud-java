@@ -17,13 +17,18 @@
 package com.google.cloud.examples.bigquery.snippets;
 
 import com.google.cloud.Page;
+import com.google.cloud.bigquery.BigQuery.JobField;
+import com.google.cloud.bigquery.BigQuery.JobOption;
 import com.google.cloud.bigquery.BigQuery.TableDataListOption;
+import com.google.cloud.bigquery.BigQueryException;
+import com.google.cloud.bigquery.CopyJobConfiguration;
 import com.google.cloud.bigquery.FieldValue;
 import com.google.cloud.bigquery.InsertAllRequest.RowToInsert;
 import com.google.cloud.bigquery.InsertAllResponse;
 import com.google.cloud.bigquery.Job;
+import com.google.cloud.bigquery.JobInfo;
 import com.google.cloud.bigquery.Table;
-
+import com.google.cloud.bigquery.TableId;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -110,6 +115,20 @@ public class TableSnippets {
     Job job = table.copy(datasetName, tableName);
     // do something with job
     // [END copy]
+    return job;
+  }
+
+  /**
+   * Example copying a table to a destination table referenced by table ID.
+   */
+  // [TARGET copy(TableId, JobOption...)]
+  public Job copy(TableId destinationTable) throws BigQueryException {
+    // [START copy-tableid]
+    // Only copy the Status and User Email fields.
+    JobOption options = JobOption.fields(JobField.STATUS, JobField.USER_EMAIL);
+    Job job = table.copy(destinationTable, options);
+    // do something with job
+    // [END copy-tableid]
     return job;
   }
 }

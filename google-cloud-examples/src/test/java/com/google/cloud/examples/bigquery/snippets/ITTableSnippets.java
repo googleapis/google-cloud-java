@@ -20,6 +20,7 @@ import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQueryOptions;
 import com.google.cloud.bigquery.Field;
 import com.google.cloud.bigquery.Field.Type;
+import com.google.cloud.bigquery.Job;
 import com.google.cloud.bigquery.Schema;
 import com.google.cloud.bigquery.StandardTableDefinition;
 import com.google.cloud.bigquery.Table;
@@ -64,5 +65,10 @@ public class ITTableSnippets {
   @Test
   public void testInsert() {
     tableSnippets.insert("row1", "row2");
+  }
+  
+  @Test
+  public void testCopyTableId() {
+    Job job = tableSnippets.copy(TABLE_ID);
   }
 }
