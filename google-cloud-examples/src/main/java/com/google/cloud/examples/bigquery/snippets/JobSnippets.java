@@ -22,7 +22,11 @@
 
 package com.google.cloud.examples.bigquery.snippets;
 
+import com.google.cloud.WaitForOption;
 import com.google.cloud.bigquery.Job;
+
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 
 public class JobSnippets {
 
@@ -36,15 +40,58 @@ public class JobSnippets {
    * Example of waiting for a job until it reports that it is done.
    */
   // [TARGET isDone()]
-  public boolean isDone() {
+  public void isDone() throws InterruptedException {
+    // [START isDone]
+    while (!job.isDone()) {
+      Thread.sleep(1000L);
+    }
+    // [END isDone]
+  }
+
+  /**
+   * Example usage of {@code waitFor()}.
+   */
+  // [TARGET waitFor(WaitForOption...)]
+  public boolean waitFor() throws InterruptedException {
     try {
-      // [START isDone]
-      while (!job.isDone()) {
-        Thread.sleep(1000L);
+      // [START waitFor]
+      Job completedJob = job.waitFor();
+      if (completedJob == null) {
+        // job no longer exists
+      } else if (completedJob.status().error() != null) {
+        // job failed, handle error
+      } else {
+        // job completed successfully
       }
-      // [END isDone]
-    } catch (InterruptedException e) {
+      // [END waitFor]
+    } catch (TimeoutException e) {
+      // Timeouts shouldn't happen without a timeout option.
       return false;
+    }
+    return true;
+  }
+
+  /**
+   * Example usage of {@code waitFor()} with checking period and timeout.
+   */
+  // [TARGET waitFor(WaitForOption...)]
+  public boolean waitForWithOptions() throws InterruptedException {
+    try {
+      // [START waitFor]
+      Job completedJob =
+          job.waitFor(
+              WaitForOption.checkEvery(1, TimeUnit.SECONDS),
+              WaitForOption.timeout(60, TimeUnit.SECONDS));
+      if (completedJob == null) {
+        // job no longer exists
+      } else if (completedJob.status().error() != null) {
+        // job failed, handle error
+      } else {
+        // job completed successfully
+      }
+      // [END waitFor]
+    } catch (TimeoutException e) {
+      return true;
     }
     return true;
   }

@@ -30,6 +30,9 @@ import org.junit.Test;
 
 public class ITJobSnippets {
 
+  private static final String QUERY =
+      "SELECT corpus FROM `publicdata.samples.shakespeare` GROUP BY corpus;";
+
   private static BigQuery bigquery;
 
   @BeforeClass
@@ -39,15 +42,31 @@ public class ITJobSnippets {
 
   @Test
   public void testIsDone() throws Exception {
-    JobConfiguration jobConfig =
-        QueryJobConfiguration.builder(
-                "SELECT corpus FROM `publicdata.samples.shakespeare` GROUP BY corpus;")
-            .useLegacySql(false)
-            .build();
+    JobConfiguration jobConfig = QueryJobConfiguration.builder(QUERY).useLegacySql(false).build();
     JobInfo jobInfo = JobInfo.builder(jobConfig).build();
     Job job = bigquery.create(jobInfo);
     JobSnippets jobSnippets = new JobSnippets(job);
-    boolean result = jobSnippets.isDone();
+    jobSnippets.isDone();
+    assertTrue(job.isDone());
+  }
+
+  @Test
+  public void testWaitFor() throws Exception {
+    JobConfiguration jobConfig = QueryJobConfiguration.builder(QUERY).useLegacySql(false).build();
+    JobInfo jobInfo = JobInfo.builder(jobConfig).build();
+    Job job = bigquery.create(jobInfo);
+    JobSnippets jobSnippets = new JobSnippets(job);
+    boolean result = jobSnippets.waitFor();
+    assertTrue(result);
+  }
+
+  @Test
+  public void testWaitForWithOptions() throws Exception {
+    JobConfiguration jobConfig = QueryJobConfiguration.builder(QUERY).useLegacySql(false).build();
+    JobInfo jobInfo = JobInfo.builder(jobConfig).build();
+    Job job = bigquery.create(jobInfo);
+    JobSnippets jobSnippets = new JobSnippets(job);
+    boolean result = jobSnippets.waitForWithOptions();
     assertTrue(result);
   }
 }
