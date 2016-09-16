@@ -31,7 +31,6 @@ import com.google.cloud.datastore.Query;
 import com.google.cloud.datastore.QueryResults;
 import com.google.cloud.datastore.StructuredQuery;
 import com.google.cloud.datastore.StructuredQuery.PropertyFilter;
-import com.google.cloud.storage.Blob;
 import com.google.common.collect.Lists;
 
 import java.util.Iterator;
@@ -150,7 +149,7 @@ public class DatastoreSnippets {
   // [TARGET newKeyFactory()]
   public KeyFactory createKeyFactory() {
     // [START newKeyFactory]
-    KeyFactory keyFactory = datastore.newKeyFactory();
+    KeyFactory keyFactory = datastore.newKeyFactory().kind("MyClass");
     // [END newKeyFactory]
     return keyFactory;
   }
@@ -177,9 +176,9 @@ public class DatastoreSnippets {
   // [VARIABLE "my_second_key_name"]
   public Iterator<Entity> getEntitiesWithKeys(String firstKeyName, String secondKeyName) {
     // [START get]
-    KeyFactory keyFactory = datastore.newKeyFactory();
-    Key firstKey = keyFactory.kind("MyClass").newKey(firstKeyName);
-    Key secondKey = keyFactory.kind("MyClass").newKey(secondKeyName);
+    KeyFactory keyFactory = datastore.newKeyFactory().kind("MyClass");
+    Key firstKey = keyFactory.newKey(firstKeyName);
+    Key secondKey = keyFactory.newKey(secondKeyName);
     Iterator<Entity> entitiesIterator = datastore.get(Lists.newArrayList(firstKey, secondKey));
     while (entitiesIterator.hasNext()) {
       Entity entity = entitiesIterator.next();
@@ -197,9 +196,9 @@ public class DatastoreSnippets {
   // [VARIABLE "my_second_key_name"]
   public List<Entity> fetchEntitiesWithKeys(String firstKeyName, String secondKeyName) {
     // [START get]
-    KeyFactory keyFactory = datastore.newKeyFactory();
-    Key firstKey = keyFactory.kind("MyClass").newKey(firstKeyName);
-    Key secondKey = keyFactory.kind("MyClass").newKey(secondKeyName);
+    KeyFactory keyFactory = datastore.newKeyFactory().kind("MyClass");
+    Key firstKey = keyFactory.newKey(firstKeyName);
+    Key secondKey = keyFactory.newKey(secondKeyName);
     List<Entity> entities = datastore.fetch(Lists.newArrayList(firstKey, secondKey));
     for (Entity entity : entities) {
       // do something with the entity

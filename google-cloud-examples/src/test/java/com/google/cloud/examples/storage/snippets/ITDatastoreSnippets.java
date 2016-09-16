@@ -42,8 +42,11 @@ import org.junit.rules.Timeout;
 
 public class ITDatastoreSnippets {
 
-  private static final Logger log = Logger.getLogger(ITDatastoreSnippets.class.getName());
-  private static final String BUCKET = RemoteStorageHelper.generateBucketName();
+  private static final String KEY = "my_key_name";
+  private static final String FIRST_KEY = "first_key_name";
+  private static final String SECOND_KEY = "second_key_name";
+  private static final String QUERY_KIND = "kind";
+  private static final String NAMESPACE = "";
 
   private static Datastore datastore;
   private static DatastoreSnippets datastoreSnippets;
@@ -109,12 +112,6 @@ public class ITDatastoreSnippets {
 
   @Test
   public void test() throws InterruptedException {
-
-    String KEY = "my_key_name";
-    String FIRST_KEY = "first_key_name";
-    String SECOND_KEY = "second_key_name";
-    String QUERY_KIND = "kind";
-    String NAMESPACE = "namespace";
 
     KeyFactory keyFactory = datastoreSnippets.createKeyFactory();
     assertNotNull(keyFactory);
