@@ -18,6 +18,7 @@ package com.google.cloud.examples.storage.snippets;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 
 import com.google.cloud.datastore.Datastore;
 import com.google.cloud.datastore.DatastoreOptions;
@@ -26,13 +27,11 @@ import com.google.cloud.datastore.Key;
 import com.google.cloud.datastore.KeyFactory;
 import com.google.cloud.datastore.QueryResults;
 import com.google.cloud.examples.datastore.snippets.DatastoreSnippets;
-import com.google.cloud.storage.testing.RemoteStorageHelper;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ExecutionException;
-import java.util.logging.Logger;
 
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
@@ -89,30 +88,51 @@ public class ITDatastoreSnippets {
   // GARRETT STARTS HERE
 
   @Test
-  public void testPutUpdateGet() {
-    String KEY = "my_key_name";
+  public void testEntityPutGet() {
     datastoreSnippets.putSingleEntity(KEY);
     Entity entity = datastoreSnippets.getEntityWithKey(KEY);
     assertEquals("value", entity.getString("propertyName"));
-
-    datastoreSnippets.updateEntity(KEY);
-    Entity entityV2 = datastoreSnippets.getEntityWithKey(KEY);
-    assertEquals("updatedValue", entityV2.getString("propertyName"));
   }
 
-  @Test
-  public void testBatchPutUpdateGet() {
-    String KEY1 = "my_key_name";
-    String KEY2 = "my_key_name2";
-    datastoreSnippets.batchPutEntities(KEY1, KEY2);
-    List<Entity> entities = Lists.newArrayList(datastoreSnippets.getEntitiesWithKeys(KEY1, KEY2));
-    assertEquals(2, entities.size());
+  private Map<String, Entity> createEntityMap(List<Entity> entities) {
     Map<String, Entity> entityMap = new HashMap<>();
     for (Entity entity : entities) {
       entityMap.put(entity.key().name(), entity);
     }
-    assertEquals("value1", entityMap.get(KEY1).getString("propertyName"));
-    assertEquals("value2", entityMap.get(KEY2).getString("propertyName"));
+    return entityMap;
+  }
+
+  @Test
+  public void testBatchEntityCrud() {
+    datastoreSnippets.batchPutEntities(FIRST_KEY, SECOND_KEY);
+
+    assertNotNull(datastoreSnippets.getEntityWithKey(FIRST_KEY));
+    assertNotNull(datastoreSnippets.getEntityWithKey(SECOND_KEY));
+
+    List<Entity> entities = Lists
+        .newArrayList(datastoreSnippets.getEntitiesWithKeys(FIRST_KEY, SECOND_KEY));
+    assertEquals(2, entities.size());
+    Map<String, Entity> entityMap = createEntityMap(entities);
+    assertEquals("value1", entityMap.get(FIRST_KEY).getString("propertyName"));
+    assertEquals("value2", entityMap.get(SECOND_KEY).getString("propertyName"));
+
+    datastoreSnippets.batchUpdateEntities(FIRST_KEY, SECOND_KEY);
+
+    List<Entity> fetchedEntities = datastoreSnippets.fetchEntitiesWithKeys(FIRST_KEY, SECOND_KEY);
+    assertEquals(2, fetchedEntities.size());
+    Map<String, Entity> fetchedEntityMap = createEntityMap(fetchedEntities);
+    assertEquals("updatedValue1", fetchedEntityMap.get(FIRST_KEY).getString("propertyName"));
+    assertEquals("updatedValue2", fetchedEntityMap.get(SECOND_KEY).getString("propertyName"));
+
+    datastoreSnippets.batchDeleteEntities(FIRST_KEY, SECOND_KEY);
+
+    assertNull(datastoreSnippets.getEntityWithKey(FIRST_KEY));
+    assertNull(datastoreSnippets.getEntityWithKey(SECOND_KEY));
+
+    List<Entity> fetchedEntities2 = datastoreSnippets.fetchEntitiesWithKeys(FIRST_KEY, SECOND_KEY);
+    assertEquals(2, fetchedEntities2.size());
+    assertNull(fetchedEntities2.get(0));
+    assertNull(fetchedEntities2.get(1));
   }
 
   // GARRETT ENDS HERE

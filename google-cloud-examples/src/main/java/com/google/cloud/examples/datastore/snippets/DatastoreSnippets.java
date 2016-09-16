@@ -86,14 +86,20 @@ public class DatastoreSnippets {
 
   // [TARGET update(Entity... entities)]
   // [VARIABLE "my_key_name"]
-  public void updateEntity(String keyName) {
-    // [START updateEntity]
-    Key key = datastore.newKeyFactory().kind("MyClass").newKey(keyName);
-    Entity.Builder entityBuilder = Entity.builder(key);
-    entityBuilder.set("propertyName", "updatedValue");
-    Entity entity = entityBuilder.build();
-    datastore.update(entity);
-    // [END updateEntity]
+  public void batchUpdateEntities(String keyName1, String keyName2) {
+    // [START batchUpdateEntities]
+    Key key1 = datastore.newKeyFactory().kind("MyClass").newKey(keyName1);
+    Entity.Builder entityBuilder1 = Entity.builder(key1);
+    entityBuilder1.set("propertyName", "updatedValue1");
+    Entity entity1 = entityBuilder1.build();
+
+    Key key2 = datastore.newKeyFactory().kind("MyClass").newKey(keyName2);
+    Entity.Builder entityBuilder2 = Entity.builder(key2);
+    entityBuilder2.set("propertyName", "updatedValue2");
+    Entity entity2 = entityBuilder2.build();
+
+    datastore.update(entity1, entity2);
+    // [END batchUpdateEntities]
   }
 
   // [TARGET put(FullEntity<?> entity)]
@@ -127,15 +133,15 @@ public class DatastoreSnippets {
     // [END batchPutEntities]
   }
 
-  // [TARGET update(Entity... entities)]
+  // [TARGET delete(Key... keys)]
   // [VARIABLE "my_key_name1"]
   // [VARIABLE "my_key_name2"]
-  public void deleteEntities(String keyName1, String keyName2) {
-    // [START deleteEntities]
+  public void batchDeleteEntities(String keyName1, String keyName2) {
+    // [START batchDeleteEntities]
     Key key1 = datastore.newKeyFactory().kind("MyClass").newKey(keyName1);
     Key key2 = datastore.newKeyFactory().kind("MyClass").newKey(keyName2);
     datastore.delete(key1, key2);
-    // [END deleteEntities]
+    // [END batchDeleteEntities]
   }
 
   // GARRETT ENDS HERE
