@@ -115,23 +115,6 @@ public class DatasetSnippets {
     // [END listDataset]
    return tables;
   }
-
-  /**
-   * Example of listing dataset tables with page sizes.
-   */
-  // [TARGET list(BigQuery.TableListOption... options)]
-  public Page<Table> listDatasetWithPageSize(long pageSize) {
-     // [START listDataset]
-    TableListOption option = TableListOption.pageSize(pageSize);
-    Page<Table> tables = dataset.list(option);
-    Iterator<Table> tableIterator = tables.iterateAll();
-    while (tableIterator.hasNext()) {
-      Table table = tableIterator.next();
-      // do something with the table
-    }
-    // [END listDataset]
-   return tables;
-  }
   
   /**
    * Example of getting a dataset table.
