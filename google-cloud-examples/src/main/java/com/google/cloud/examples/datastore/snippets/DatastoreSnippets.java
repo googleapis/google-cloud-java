@@ -30,27 +30,79 @@ import com.google.common.collect.Lists;
 import java.util.Iterator;
 
 public class DatastoreSnippets {
-  
+
   private final Datastore datastore;
 
   public DatastoreSnippets(Datastore datastore) {
     this.datastore = datastore;
   }
-  
+
   // ANTHONY STARTS HERE
-  
-  
-  
+
+
+
   // ANTHONY ENDS HERE
-  
+
   // GARRETT STARTS HERE
-  
-  
-  
+
+  // [TARGET update(Entity... entities)]
+  // [VARIABLE "my_key_name"]
+  public void updateEntity(String keyName) {
+    // [START updateEntity]
+    Key key = datastore.newKeyFactory().newKey(keyName);
+    Entity.Builder entityBuilder = Entity.builder(key);
+    entityBuilder.set("propertyName", "value");
+    Entity entity = entityBuilder.build();
+    datastore.update(entity);
+    // [END updateEntity]
+  }
+
+  // [TARGET put(FullEntity<?> entity)]
+  // [VARIABLE "my_key_name"]
+  public void putSingleEntity(String keyName) {
+    // [START putSingleEntity]
+    Key key = datastore.newKeyFactory().newKey(keyName);
+    Entity.Builder entityBuilder = Entity.builder(key);
+    entityBuilder.set("propertyName", "value");
+    Entity entity = entityBuilder.build();
+    datastore.put(entity);
+    // [END putSingleEntity]
+  }
+
+  // [TARGET put(FullEntity<?>... entity)]
+  // [VARIABLE "my_key_name1"]
+  // [VARIABLE "my_key_name2"]
+  public void batchPutEntities(String keyName1, String keyName2) {
+    // [START batchPutEntities]
+    Key key1 = datastore.newKeyFactory().newKey(keyName1);
+    Entity.Builder entityBuilder1 = Entity.builder(key1);
+    entityBuilder1.set("propertyName", "value");
+    Entity entity1 = entityBuilder1.build();
+
+    Key key2 = datastore.newKeyFactory().newKey(keyName2);
+    Entity.Builder entityBuilder2 = Entity.builder(key2);
+    entityBuilder2.set("propertyName", "value");
+    Entity entity2 = entityBuilder2.build();
+
+    datastore.put(entity1, entity2);
+    // [END batchPutEntities]
+  }
+
+  // [TARGET update(Entity... entities)]
+  // [VARIABLE "my_key_name1"]
+  // [VARIABLE "my_key_name2"]
+  public void deleteEntities(String keyName1, String keyName2) {
+    // [START deleteEntities]
+    Key key1 = datastore.newKeyFactory().newKey(keyName1);
+    Key key2 = datastore.newKeyFactory().newKey(keyName2);
+    datastore.delete(key1, key2);
+    // [END deleteEntities]
+  }
+
   // GARRETT ENDS HERE
-  
+
   // MIKE STARTS HERE
-  
+
   /**
    * Example of creating a KeyFactory.
    */
@@ -61,7 +113,7 @@ public class DatastoreSnippets {
     // [END newKeyFactory]
     return keyFactory;
   }
-  
+
   /**
    * Example of getting an Entity.
    */
@@ -74,7 +126,7 @@ public class DatastoreSnippets {
     // [END get]
     return entity;
   }
-  
+
   /**
    * Example of getting multiple entities
    */
@@ -89,9 +141,9 @@ public class DatastoreSnippets {
     // [END get]
     return entities;
   }
-  
-  //fetch(Iterable<Key> keys, ReadOption... options)      
+
+  //fetch(Iterable<Key> keys, ReadOption... options)
   //run(Query<T> query, ReadOption... options)
-  
+
   // MIKE ENDS HERE
 }
