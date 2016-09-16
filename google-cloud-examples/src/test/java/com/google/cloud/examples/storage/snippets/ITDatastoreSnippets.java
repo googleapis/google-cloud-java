@@ -166,29 +166,29 @@ public class ITDatastoreSnippets {
     KeyFactory keyFactory = datastoreSnippets.createKeyFactory();
     assertNotNull(keyFactory);
   }
-  
+
   @Test
   public void testRunQuery() {
     String kindToFind = "ClassToFind";
     String kindToMiss = "OtherClass";
-    
+
     String keyNameToFind = registerKey("my_key_name_to_find", kindToFind);
     String otherKeyNameToFind = registerKey("other_key_name_to_find", kindToFind);
     String keyNameToMiss = registerKey("my_key_name_to_miss", kindToMiss);
-    
+
     String property = "my_property_name";
-    
+
     String valueToFind = "my_value_to_find";
     String valueToMiss = "my_value_to_miss";
-    
+
     addEntity(keyNameToFind, kindToFind, property, valueToFind);
     addEntity(otherKeyNameToFind, kindToFind, property, valueToMiss);
     addEntity(keyNameToMiss, kindToMiss, property, valueToFind);
-    
+
     List<Entity> queryResults = datastoreSnippets.runQuery(kindToFind);
     assertNotNull(queryResults);
     assertEquals(2, queryResults.size());
-    
+
     queryResults = datastoreSnippets.runQueryOnProperty(kindToFind, property, valueToFind);
     assertNotNull(queryResults);
     assertEquals(1, queryResults.size());
