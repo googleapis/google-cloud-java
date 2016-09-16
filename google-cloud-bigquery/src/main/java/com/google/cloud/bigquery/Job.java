@@ -127,6 +127,13 @@ public class Job extends JobInfo {
   /**
    * Checks if this job exists.
    *
+   * <p>Example of checking that a job exists.
+   * <pre> {@code
+   * if (!job.exists()) {
+   *   // job doesn't exist
+   * }
+   * }</pre>
+   *
    * @return {@code true} if this job exists, {@code false} otherwise
    * @throws BigQueryException upon failure
    */
@@ -214,6 +221,22 @@ public class Job extends JobInfo {
   /**
    * Fetches current job's latest information. Returns {@code null} if the job does not exist.
    *
+   * <p>Example of reloading all fields until job status is DONE.
+   * <pre> {@code
+   * while (job.status().state() != JobStatus.State.DONE) {
+   *   Thread.sleep(1000L);
+   *   job = job.reload();
+   * }
+   * }</pre>
+   *
+   * <p>Example of reloading status field until job status is DONE.
+   * <pre> {@code
+   * while (job.status().state() != JobStatus.State.DONE) {
+   *   Thread.sleep(1000L);
+   *   job = job.reload(BigQuery.JobOption.fields(BigQuery.JobField.STATUS));
+   * }
+   * }</pre>
+   *
    * @param options job options
    * @return a {@code Job} object with latest information or {@code null} if not found
    * @throws BigQueryException upon failure
@@ -224,6 +247,15 @@ public class Job extends JobInfo {
 
   /**
    * Sends a job cancel request.
+   *
+   * <p>Example of cancelling a job.
+   * <pre> {@code
+   * if (job.cancel()) {
+   *   return true; // job successfully cancelled
+   * } else {
+   *   // job not found
+   * }
+   * }</pre>
    *
    * @return {@code true} if cancel request was sent successfully, {@code false} if job was not
    *     found
