@@ -28,24 +28,27 @@ import java.util.Set;
 import java.util.logging.Logger;
 
 import org.junit.After;
+import org.junit.AfterClass;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
+
 import com.google.cloud.Page;
 import com.google.cloud.bigquery.BigQuery;
+import com.google.cloud.bigquery.BigQuery.DatasetDeleteOption;
+import com.google.cloud.bigquery.BigQuery.TableDataListOption;
 import com.google.cloud.bigquery.BigQueryOptions;
 import com.google.cloud.bigquery.DatasetInfo;
 import com.google.cloud.bigquery.Field;
 import com.google.cloud.bigquery.Field.Type;
-import com.google.cloud.bigquery.InsertAllRequest.RowToInsert;
-import com.google.cloud.bigquery.Job;
 import com.google.cloud.bigquery.FieldValue;
+import com.google.cloud.bigquery.InsertAllRequest.RowToInsert;
 import com.google.cloud.bigquery.InsertAllResponse;
 import com.google.cloud.bigquery.Schema;
 import com.google.cloud.bigquery.StandardTableDefinition;
 import com.google.cloud.bigquery.Table;
 import com.google.cloud.bigquery.TableId;
 import com.google.cloud.bigquery.TableInfo;
-import com.google.cloud.bigquery.BigQuery.TableDataListOption;
 import com.google.common.base.Function;
 import com.google.common.base.Objects;
 import com.google.common.collect.FluentIterable;
@@ -63,24 +66,27 @@ public class ITTableSnippets {
   private static final Value ROW2 = new Value("value2", false);
   private static final Logger log = Logger.getLogger(ITTableSnippets.class.getName());
 
-  private BigQuery bigquery;
+  private static BigQuery bigquery;
   private Table table;
-  private Table copyTable;
   private TableSnippets tableSnippets;
 
   private static int nextTableNumber = 0;
   
-  @Before
-  public void before() {
-    ++nextTableNumber;
+  @BeforeClass
+  public static void beforeClass() {
     bigquery = BigQueryOptions.defaultInstance().service();
     bigquery.create(DatasetInfo.builder(DATASET_NAME).build());
     bigquery.create(DatasetInfo.builder(COPY_DATASET_NAME).build());
+  }
+
+  @Before
+  public void before() {
+    ++nextTableNumber;
     StandardTableDefinition.Builder builder = StandardTableDefinition.builder();
     builder.schema(
         Schema.of(Field.of("stringField", Type.string()), Field.of("booleanField", Type.bool())));
     table = bigquery.create(TableInfo.of(getTableId(), builder.build()));
-    copyTable = bigquery.create(TableInfo.of(getCopyTableId(), builder.build()));
+    bigquery.create(TableInfo.of(getCopyTableId(), builder.build()));
     tableSnippets = new TableSnippets(table);
   }
 
@@ -88,8 +94,12 @@ public class ITTableSnippets {
   public void after() {
     bigquery.delete(getTableId());
     bigquery.delete(getCopyTableId());
-    bigquery.delete(DATASET_NAME);
-    bigquery.delete(COPY_DATASET_NAME);
+  }
+
+  @AfterClass
+  public static void afterClass() {
+    bigquery.delete(DATASET_NAME, DatasetDeleteOption.deleteContents());
+    bigquery.delete(COPY_DATASET_NAME, DatasetDeleteOption.deleteContents());
   }
 
   private String getTableName() {
@@ -113,6 +123,45 @@ public class ITTableSnippets {
     InsertAllResponse response = tableSnippets.insert("row1", "row2");
     assertFalse(response.hasErrors());
     verifyTestRows(table);
+  }
+
+  @Test
+  public void testInsertParams() throws InterruptedException {
+    InsertAllResponse response = tableSnippets.insertWithParams("row1", "row2");
+    assertTrue(response.hasErrors());
+    List<List<FieldValue>> rows = ImmutableList.copyOf(tableSnippets.list().values());
+    while (rows.size() == 0) {
+      Thread.sleep(500);
+      rows = ImmutableList.copyOf(tableSnippets.list().values());
+    }
+    Set<Value> values =
+        FluentIterable.from(rows).transform(new Function<List<FieldValue>, Value>() {
+          @Override
+          public Value apply(List<FieldValue> row) {
+            return new Value(row.get(0).stringValue(), row.get(1).booleanValue());
+          }
+        }).toSet();
+    assertEquals(ImmutableSet.of(ROW2), values);
+  }
+
+  @Test
+  public void testList() throws InterruptedException {
+    List<List<FieldValue>> rows = ImmutableList.copyOf(tableSnippets.list().values());
+    assertEquals(0, rows.size());
+
+    InsertAllResponse response = tableSnippets.insert("row1", "row2");
+    assertFalse(response.hasErrors());
+    rows = ImmutableList.copyOf(tableSnippets.list().values());
+    while (rows.size() == 0) {
+      Thread.sleep(500);
+      rows = ImmutableList.copyOf(tableSnippets.list().values());
+    }
+    assertEquals(2, rows.size());
+  }
+
+  @Test
+  public void testCopy() {
+    tableSnippets.copy(COPY_DATASET_NAME, BASE_TABLE_NAME);
   }
 
   private static class Value {

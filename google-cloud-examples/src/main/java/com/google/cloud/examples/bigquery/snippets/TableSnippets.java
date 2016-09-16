@@ -82,7 +82,7 @@ public class TableSnippets {
     // [START insertWithParams]
     List<RowToInsert> rows = new ArrayList<>();
     Map<String, Object> row1 = new HashMap<>();
-    row1.put("stringField", "value1");
+    row1.put("stringField", 1);
     row1.put("booleanField", true);
     Map<String, Object> row2 = new HashMap<>();
     row2.put("stringField", "value2");
@@ -116,7 +116,20 @@ public class TableSnippets {
   public Job copy(String datasetName, String tableName) {
     // [START copy]
     Job job = table.copy(datasetName, tableName);
-    // do something with job
+
+    // Wait for the job to complete.
+    try {
+      Job completedJob = job.waitFor(WaitForOption.checkEvery(1, TimeUnit.SECONDS),
+          WaitForOption.timeout(60, TimeUnit.SECONDS));
+      if (completedJob != null && completedJob.status().error() == null) {
+        // Job completed successfully.
+      } else {
+        // Handle error case.
+      }
+    } catch (InterruptedException | TimeoutException e) {
+      // Handle interrupted wait.
+    }
+
     // [END copy]
     return job;
   }
