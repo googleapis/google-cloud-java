@@ -30,7 +30,6 @@ import com.google.cloud.bigquery.Field;
 import com.google.cloud.bigquery.Schema;
 import com.google.cloud.bigquery.StandardTableDefinition;
 import com.google.cloud.bigquery.Table;
-import com.google.cloud.bigquery.TimePartitioning;
 import java.util.Iterator;
 
 /**
@@ -80,8 +79,7 @@ public class DatasetSnippets {
     // [START updateDataset]
     Builder builder = this.dataset.toBuilder();
     builder.friendlyName(friendlyName);
-    Dataset datasetWithChanges = builder.build();
-    Dataset updatedDataset = datasetWithChanges.update();
+    Dataset updatedDataset = builder.build().update();
     // [END updateDataset]
     return updatedDataset;
   }
