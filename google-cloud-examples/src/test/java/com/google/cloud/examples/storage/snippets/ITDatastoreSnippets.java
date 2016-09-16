@@ -89,8 +89,9 @@ public class ITDatastoreSnippets {
 
   @Test
   public void testEntityPutGet() {
-    datastoreSnippets.putSingleEntity(KEY);
-    Entity entity = datastoreSnippets.getEntityWithKey(KEY);
+    String key = "my_key";
+    datastoreSnippets.putSingleEntity(key);
+    Entity entity = datastoreSnippets.getEntityWithKey(key);
     assertEquals("value", entity.getString("propertyName"));
   }
 
@@ -104,32 +105,34 @@ public class ITDatastoreSnippets {
 
   @Test
   public void testBatchEntityCrud() {
-    datastoreSnippets.batchPutEntities(FIRST_KEY, SECOND_KEY);
+    String key1 = "key1";
+    String key2 = "key2";
+    datastoreSnippets.batchPutEntities(key1, key2);
 
-    assertNotNull(datastoreSnippets.getEntityWithKey(FIRST_KEY));
-    assertNotNull(datastoreSnippets.getEntityWithKey(SECOND_KEY));
+    assertNotNull(datastoreSnippets.getEntityWithKey(key1));
+    assertNotNull(datastoreSnippets.getEntityWithKey(key2));
 
     List<Entity> entities = Lists
-        .newArrayList(datastoreSnippets.getEntitiesWithKeys(FIRST_KEY, SECOND_KEY));
+        .newArrayList(datastoreSnippets.getEntitiesWithKeys(key1, key2));
     assertEquals(2, entities.size());
     Map<String, Entity> entityMap = createEntityMap(entities);
-    assertEquals("value1", entityMap.get(FIRST_KEY).getString("propertyName"));
-    assertEquals("value2", entityMap.get(SECOND_KEY).getString("propertyName"));
+    assertEquals("value1", entityMap.get(key1).getString("propertyName"));
+    assertEquals("value2", entityMap.get(key2).getString("propertyName"));
 
-    datastoreSnippets.batchUpdateEntities(FIRST_KEY, SECOND_KEY);
+    datastoreSnippets.batchUpdateEntities(key1, key2);
 
-    List<Entity> fetchedEntities = datastoreSnippets.fetchEntitiesWithKeys(FIRST_KEY, SECOND_KEY);
+    List<Entity> fetchedEntities = datastoreSnippets.fetchEntitiesWithKeys(key1, key2);
     assertEquals(2, fetchedEntities.size());
     Map<String, Entity> fetchedEntityMap = createEntityMap(fetchedEntities);
-    assertEquals("updatedValue1", fetchedEntityMap.get(FIRST_KEY).getString("propertyName"));
-    assertEquals("updatedValue2", fetchedEntityMap.get(SECOND_KEY).getString("propertyName"));
+    assertEquals("updatedValue1", fetchedEntityMap.get(key1).getString("propertyName"));
+    assertEquals("updatedValue2", fetchedEntityMap.get(key2).getString("propertyName"));
 
-    datastoreSnippets.batchDeleteEntities(FIRST_KEY, SECOND_KEY);
+    datastoreSnippets.batchDeleteEntities(key1, key2);
 
-    assertNull(datastoreSnippets.getEntityWithKey(FIRST_KEY));
-    assertNull(datastoreSnippets.getEntityWithKey(SECOND_KEY));
+    assertNull(datastoreSnippets.getEntityWithKey(key1));
+    assertNull(datastoreSnippets.getEntityWithKey(key2));
 
-    List<Entity> fetchedEntities2 = datastoreSnippets.fetchEntitiesWithKeys(FIRST_KEY, SECOND_KEY);
+    List<Entity> fetchedEntities2 = datastoreSnippets.fetchEntitiesWithKeys(key1, key2);
     assertEquals(2, fetchedEntities2.size());
     assertNull(fetchedEntities2.get(0));
     assertNull(fetchedEntities2.get(1));
