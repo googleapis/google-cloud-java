@@ -119,10 +119,10 @@ public class DatastoreSnippets {
     // [END allocateIdMultiple]
     return keys;
   }
-  // ANTHONY ENDS HERE
 
-  // GARRETT STARTS HERE
-
+  /**
+   * Example of updating multiple entities
+   */
   // [TARGET update(Entity... entities)]
   // [VARIABLE "my_key_name"]
   public void batchUpdateEntities(String keyName1, String keyName2) {
@@ -141,6 +141,9 @@ public class DatastoreSnippets {
     // [END batchUpdateEntities]
   }
 
+  /**
+   * Example of putting a single entity
+   */
   // [TARGET put(FullEntity<?> entity)]
   // [VARIABLE "my_key_name"]
   public void putSingleEntity(String keyName) {
@@ -153,6 +156,9 @@ public class DatastoreSnippets {
     // [END putSingleEntity]
   }
 
+  /**
+   * Example of putting multiple entities
+   */
   // [TARGET put(FullEntity<?>... entity)]
   // [VARIABLE "my_key_name1"]
   // [VARIABLE "my_key_name2"]
@@ -172,6 +178,9 @@ public class DatastoreSnippets {
     // [END batchPutEntities]
   }
 
+  /**
+   * Example of deleting multiplie entities
+   */
   // [TARGET delete(Key... keys)]
   // [VARIABLE "my_key_name1"]
   // [VARIABLE "my_key_name2"]
@@ -182,10 +191,6 @@ public class DatastoreSnippets {
     datastore.delete(key1, key2);
     // [END batchDeleteEntities]
   }
-
-  // GARRETT ENDS HERE
-
-  // MIKE STARTS HERE
 
   /**
    * Example of creating a KeyFactory.
@@ -284,5 +289,4 @@ public class DatastoreSnippets {
     return entities;
   }
 
-  // MIKE ENDS HERE
 }

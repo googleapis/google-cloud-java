@@ -25,8 +25,8 @@ import com.google.cloud.datastore.DatastoreOptions;
 import com.google.cloud.datastore.Entity;
 import com.google.cloud.datastore.Key;
 import com.google.cloud.datastore.KeyFactory;
-import com.google.cloud.datastore.QueryResults;
 import com.google.cloud.examples.datastore.snippets.DatastoreSnippets;
+import com.google.common.collect.Lists;
 
 import java.util.HashMap;
 import java.util.List;
@@ -39,8 +39,6 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 import org.junit.rules.Timeout;
-
-import autovalue.shaded.com.google.common.common.collect.Lists;
 
 public class ITDatastoreSnippets {
 
