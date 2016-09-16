@@ -50,7 +50,7 @@ public class TableSnippets {
   /**
    * Example of inserting rows into a table.
    */
-  // [TARGET insert(Iterable<InsertAllRequest.RowToInsert>)]
+  // [TARGET insert(Iterable)]
   // [VARIABLE "rowId1"]
   // [VARIABLE "rowId2"]
   public InsertAllResponse insert(String rowId1, String rowId2) {
@@ -73,7 +73,7 @@ public class TableSnippets {
   /**
    * Example of inserting rows into a table which ignores invalid rows.
    */
-  // [TARGET insert(Iterable<InsertAllRequest.RowToInsert>, boolean, boolean)]
+  // [TARGET insert(Iterable, boolean, boolean)]
   // [VARIABLE "rowId1"]
   // [VARIABLE "rowId2"]
   public InsertAllResponse insertWithParams(String rowId1, String rowId2) {
@@ -96,7 +96,7 @@ public class TableSnippets {
   /**
    * Example of getting a paginated list of rows in a table.
    */
-  // [TARGET list(BigQuery.TableDataListOption...)]
+  // [TARGET list(TableDataListOption...)]
   public Page<List<FieldValue>> list() {
     // [START list]
     Page<List<FieldValue>> page = table.list(TableDataListOption.pageSize(100));
@@ -108,7 +108,7 @@ public class TableSnippets {
   /**
    * Example of copying a table to a destination table and dataset referenced by name.
    */
-  // [TARGET copy(String, String, BigQuery.JobOption...)]
+  // [TARGET copy(String, String, JobOption...)]
   // [VARIABLE "my_dataset"]
   // [VARIABLE "my_destination_table"]
   public Job copy(String datasetName, String tableName) {
@@ -164,7 +164,7 @@ public class TableSnippets {
   /**
    * Example extracting data to Google Cloud Storage.
    */
-  // [TARGET extract(String, List<String>, BigQuery.JobOption...)]
+  // [TARGET extract(String, List, JobOption...)]
   // [VARIABLE "CSV"]
   // [VARIABLE "gs://bucket_name/filename.csv"]
   public Job extract(String format, String gcsUrl) {
