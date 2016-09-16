@@ -127,12 +127,14 @@ public class TableSnippets {
    * @throws InterruptedException 
    */
   // [TARGET copy(TableId, JobOption...)]
-  public Job copy(TableId destinationTable) throws BigQueryException {
+  // [VARIABLE "my_dataset"]
+  // [VARIABLE "copy_destination"]
+  public Job copyTableId(String dataset, String tableName) throws BigQueryException {
     // [START copy-tableid]
-    // As an example, this only retrieves the Status and User Email fields in the
-    // job RPC.
+    TableId destinationId = TableId.of(dataset, tableName);
     JobOption options = JobOption.fields(JobField.STATUS, JobField.USER_EMAIL);
-    Job job = table.copy(destinationTable, options);
+
+    Job job = table.copy(destinationId, options);
 
     // Wait for the job to complete.
     try {

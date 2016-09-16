@@ -99,15 +99,16 @@ public class ITTableSnippets {
   
   @Test
   public void testCopyTableId() {
+    final String destinationTableName = "copy_destination";
     StandardTableDefinition.Builder builder = StandardTableDefinition.builder();
     builder.schema(Schema.of(
         Field.of("stringField", Type.string()),
         Field.of("booleanField", Type.bool())));
-    TableId destinationId = TableId.of(DATASET_NAME, "copy_destination");
+    TableId destinationId = TableId.of(DATASET_NAME, destinationTableName);
     Table destinationTable = bigquery.create(TableInfo.of(destinationId, builder.build()));
 
     try {
-      Job job = tableSnippets.copy(destinationId);
+      Job job = tableSnippets.copyTableId(DATASET_NAME, destinationTableName);
     } finally {
       bigquery.delete(destinationId);
     }
