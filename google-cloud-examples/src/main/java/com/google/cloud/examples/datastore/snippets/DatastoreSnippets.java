@@ -31,7 +31,6 @@ import com.google.cloud.datastore.Query;
 import com.google.cloud.datastore.QueryResults;
 import com.google.cloud.datastore.StructuredQuery;
 import com.google.cloud.datastore.StructuredQuery.PropertyFilter;
-import com.google.cloud.storage.Blob;
 import com.google.common.collect.Lists;
 
 import java.util.Iterator;
@@ -116,12 +115,12 @@ public class DatastoreSnippets {
     // [START batchPutEntities]
     Key key1 = datastore.newKeyFactory().kind("MyClass").newKey(keyName1);
     Entity.Builder entityBuilder1 = Entity.builder(key1);
-    entityBuilder1.set("propertyName", "value");
+    entityBuilder1.set("propertyName", "value1");
     Entity entity1 = entityBuilder1.build();
 
     Key key2 = datastore.newKeyFactory().kind("MyClass").newKey(keyName2);
     Entity.Builder entityBuilder2 = Entity.builder(key2);
-    entityBuilder2.set("propertyName", "value");
+    entityBuilder2.set("propertyName", "value2");
     Entity entity2 = entityBuilder2.build();
 
     datastore.put(entity1, entity2);
@@ -149,7 +148,7 @@ public class DatastoreSnippets {
   // [TARGET newKeyFactory()]
   public KeyFactory createKeyFactory() {
     // [START newKeyFactory]
-    KeyFactory keyFactory = datastore.newKeyFactory();
+    KeyFactory keyFactory = datastore.newKeyFactory().kind("MyClass");
     // [END newKeyFactory]
     return keyFactory;
   }
@@ -174,18 +173,22 @@ public class DatastoreSnippets {
   // [TARGET get(Iterable<Key> key, ReadOption... options)]
   // [VARIABLE "my_first_key_name"]
   // [VARIABLE "my_second_key_name"]
-  public Iterator<Entity> getEntitiesWithKeys(String firstKeyName, String secondKeyName) {
+  public List<Entity> getEntitiesWithKeys(String firstKeyName, String secondKeyName) {
     // [START get]
-    KeyFactory keyFactory = datastore.newKeyFactory();
-    Key firstKey = keyFactory.kind("MyClass").newKey(firstKeyName);
-    Key secondKey = keyFactory.kind("MyClass").newKey(secondKeyName);
+    KeyFactory keyFactory = datastore.newKeyFactory().kind("MyClass");
+    Key firstKey = keyFactory.newKey(firstKeyName);
+    Key secondKey = keyFactory.newKey(secondKeyName);
     Iterator<Entity> entitiesIterator = datastore.get(Lists.newArrayList(firstKey, secondKey));
+    // TODO make a change so that it's not necessary to hold the entities in a list for
+    // integration testing
+    List<Entity> entities = Lists.newArrayList();
     while (entitiesIterator.hasNext()) {
       Entity entity = entitiesIterator.next();
       // do something with the entity
+      entities.add(entity);
     }
     // [END get]
-    return entitiesIterator;
+    return entities;
   }
 
   /**
@@ -196,9 +199,9 @@ public class DatastoreSnippets {
   // [VARIABLE "my_second_key_name"]
   public List<Entity> fetchEntitiesWithKeys(String firstKeyName, String secondKeyName) {
     // [START get]
-    KeyFactory keyFactory = datastore.newKeyFactory();
-    Key firstKey = keyFactory.kind("MyClass").newKey(firstKeyName);
-    Key secondKey = keyFactory.kind("MyClass").newKey(secondKeyName);
+    KeyFactory keyFactory = datastore.newKeyFactory().kind("MyClass");
+    Key firstKey = keyFactory.newKey(firstKeyName);
+    Key secondKey = keyFactory.newKey(secondKeyName);
     List<Entity> entities = datastore.fetch(Lists.newArrayList(firstKey, secondKey));
     for (Entity entity : entities) {
       // do something with the entity
