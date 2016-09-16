@@ -160,7 +160,7 @@ public class ITDatastoreSnippets {
     List<Entity> queryResults = datastoreSnippets.runQuery(keyToFind, query_kind, namespace);
     assertNotNull(queryResults);
     assertEquals(1, queryResults.size());
-    datastoreSnippets.deleteEntities(keyToFind, keyToMiss);
+    datastoreSnippets.batchDeleteEntities(keyToFind, keyToMiss);
   }
 
   // MIKE ENDS HERE
