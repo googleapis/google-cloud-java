@@ -29,6 +29,8 @@ import com.google.cloud.datastore.Key;
 import com.google.cloud.datastore.KeyFactory;
 import com.google.cloud.datastore.Transaction;
 
+import java.util.Iterator;
+
 /**
  * This class contains a number of snippets for the {@link Transaction} interface.
  */
@@ -39,6 +41,79 @@ public class TransactionSnippets {
   public TransactionSnippets(Transaction transaction) {
     this.transaction = transaction;
   }
+
+  /**
+   * Example of getting an Entity for a given key.
+   *
+   * This function cleans up after itself after the snippet part executes.
+   */
+  // [TARGET get(Key)]
+  public boolean get() {
+    // [START get]
+    Datastore datastore = transaction.datastore();
+    KeyFactory keyFactory = datastore.newKeyFactory().kind("someKind");
+    Key key = datastore.allocateId(keyFactory.newKey());
+    Entity entity = Entity.builder(key).set("description", "get()").build();
+    datastore.put(entity);
+
+    Entity result = null;
+    try {
+      result = transaction.get(key);
+    } catch (DatastoreException ex) {
+      // handle exception
+    }
+    // [END get]
+
+    // For tests.
+    boolean consistent = result != null && result.equals(entity);
+
+    // Clean up.
+    transaction.rollback();
+
+    return consistent; 
+  }
+
+   /**
+    * Example of getting multiple transactions.
+    */
+   // [TARGET get(Key...)]
+  public boolean getMultiple() {
+    // [START getmultiple]
+    Datastore datastore = transaction.datastore();
+    KeyFactory keyFactory = datastore.newKeyFactory().kind("someKind");
+
+    Key keyOne = datastore.allocateId(keyFactory.newKey());
+    Entity entityOne = Entity.builder(keyOne).set("description", "get() One").build();
+    datastore.put(entityOne);
+
+    Key keyTwo = datastore.allocateId(keyFactory.newKey());
+    Entity entityTwo = Entity.builder(keyTwo).set("description", "get() Two").build();
+    datastore.put(entityTwo);
+
+    Iterator<Entity> result = null;
+    try {
+      result = transaction.get(keyOne, keyTwo);
+    } catch (DatastoreException ex) {
+      // handle exception
+    }
+     // [END getmultiple]
+
+    // For tests.
+    boolean consistent = (result != null);
+    if (consistent) {
+      Entity entityFirst = result.next();
+      Entity entitySecond = result.next();
+      consistent = !result.hasNext() &&
+          (!entityFirst.equals(entitySecond)) &&
+          (entityFirst.equals(entityOne) || entityFirst.equals(entityTwo)) &&
+          (entitySecond.equals(entityOne) || entitySecond.equals(entityTwo));
+    }
+
+    // Clean up.
+    transaction.rollback();
+
+    return consistent;
+   }
 
   /**
    * Example of committing a transaction.
