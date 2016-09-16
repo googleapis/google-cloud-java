@@ -22,6 +22,7 @@ import static org.junit.Assert.assertNotNull;
 import com.google.cloud.datastore.Datastore;
 import com.google.cloud.datastore.DatastoreOptions;
 import com.google.cloud.datastore.Entity;
+import com.google.cloud.datastore.Key;
 import com.google.cloud.datastore.KeyFactory;
 import com.google.cloud.datastore.QueryResults;
 import com.google.cloud.examples.datastore.snippets.DatastoreSnippets;
@@ -72,6 +73,17 @@ public class ITDatastoreSnippets {
 
   // ANTHONY STARTS HERE
 
+  @Test
+  public void testAllocateIdSingle() {
+    Key key = datastoreSnippets.allocateIdSingle();
+    assertNotNull(key);
+  }
+
+  @Test
+  public void testAllocateIdMultiple() {
+    List<Key> keys = datastoreSnippets.allocateIdMultiple();
+    assertEquals(2, keys.size());
+  }
   // ANTHONY ENDS HERE
 
   // GARRETT STARTS HERE
