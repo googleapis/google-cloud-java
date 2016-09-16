@@ -67,8 +67,8 @@ public class DatasetSnippets {
   }
 
   /**
-  * Example of listing dataset tables. 
-  */
+   * Example of listing dataset tables.
+   */
   // [TARGET list(BigQuery.TableListOption... options)]
   public Page<Table> listDataset() {
      // [START listDataset]
@@ -83,8 +83,8 @@ public class DatasetSnippets {
   }
 
   /**
-  * Example of listing dataset tables with page sizes. 
-  */
+   * Example of listing dataset tables with page sizes.
+   */
   // [TARGET list(BigQuery.TableListOption... options)]
   public Page<Table> listDatasetWithPageSize(long pageSize) {
      // [START listDataset]
@@ -100,8 +100,8 @@ public class DatasetSnippets {
   }
   
   /**
-  * Example of getting a dataset table. 
-  */
+   * Example of getting a dataset table.
+   */
   // [TARGET get(String table, BigQuery.TableOption... options)]
   // [VARIABLE “my_table”]
   public Table getTable(String tableName) {
@@ -112,8 +112,8 @@ public class DatasetSnippets {
   }
 
   /**
-  * Example of creating an empty dataset table. 
-  */
+   * Example of creating an empty dataset table.
+   */
   // [TARGET create(String table, TableDefinition definition, BigQuery.TableOption... options)]
   // [VARIABLE “my_table”]
   public Table createTable(String tableName) {
@@ -126,8 +126,8 @@ public class DatasetSnippets {
   }
   
   /**
-  * Example of creating a dataset table with schema and time partitioning. 
-  */
+   * Example of creating a dataset table with schema and time partitioning.
+   */
   // [TARGET create(String table, TableDefinition definition, BigQuery.TableOption... options)]
   // [VARIABLE “my_table”]
   // [VARIABLE “my_field”]
