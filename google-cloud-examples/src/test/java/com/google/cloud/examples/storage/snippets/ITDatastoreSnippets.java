@@ -20,6 +20,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 
+import com.google.cloud.datastore.Batch;
 import com.google.cloud.datastore.Datastore;
 import com.google.cloud.datastore.DatastoreOptions;
 import com.google.cloud.datastore.Entity;
@@ -68,7 +69,24 @@ public class ITDatastoreSnippets {
 //    }
   }
 
-  // ANTHONY STARTS HERE
+  @Test
+  public void testRunInTransaction() {
+    final String testString = "Test String";
+    String result = datastoreSnippets.runInTransaction(testString);
+    assertEquals(testString, result);
+  }
+
+  @Test
+  public void testNewBatch() {
+    final String testKey1 = "new_batch_key1";
+    final Key key1 = datastore.newKeyFactory().kind("MyClass").newKey(testKey1);
+    final String testKey2 = "new_batch_key2";
+    final Key key2 = datastore.newKeyFactory().kind("MyClass").newKey(testKey2);
+    datastore.delete(key1, key2);
+    Batch batch = datastoreSnippets.newBatch(testKey1, testKey2);
+    assertNotNull(batch);
+    datastore.delete(key1, key2);
+  }
 
   @Test
   public void testAllocateIdSingle() {
@@ -81,7 +99,6 @@ public class ITDatastoreSnippets {
     List<Key> keys = datastoreSnippets.allocateIdMultiple();
     assertEquals(2, keys.size());
   }
-  // ANTHONY ENDS HERE
 
   // GARRETT STARTS HERE
 

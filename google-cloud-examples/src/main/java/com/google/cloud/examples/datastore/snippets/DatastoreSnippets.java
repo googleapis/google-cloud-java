@@ -77,8 +77,8 @@ public class DatastoreSnippets {
   // [VARIABLE "my_key_name_2"]
   public Batch newBatch(String keyName1, String keyName2) {
     // [START newBatch]
-    Key key1 = datastore.newKeyFactory().newKey(keyName1);
-    Key key2 = datastore.newKeyFactory().newKey(keyName2);
+    Key key1 = datastore.newKeyFactory().kind("MyClass").newKey(keyName1);
+    Key key2 = datastore.newKeyFactory().kind("MyClass").newKey(keyName2);
     Batch batch = datastore.newBatch();
     Entity entity1 = Entity.builder(key1).set("name", "John").build();
     Entity entity2 = Entity.builder(key2).set("title", "title").build();
