@@ -55,13 +55,12 @@ public class DatastoreSnippets {
    */
   // [TARGET runInTransaction(TransactionCallable<T> callable)]
   // [VARIABLE "my_callable_result"]
-  public String runInTransaction(String callableResult) {
+  public String runInTransaction(final String callableResult) {
     // [START runInTransaction]
-    final String runResult = callableResult;
     TransactionCallable<String> callable = new TransactionCallable<String>() {
       @Override
       public String run(DatastoreReaderWriter readerWriter) {
-        return runResult;
+        return callableResult;
       }
     };
     String result = datastore.runInTransaction(callable);
@@ -72,7 +71,7 @@ public class DatastoreSnippets {
   /**
    * Example of starting a new batch.
    */
-  // [TARGET runInTransaction(TransactionCallable<T> callable)]
+  // [TARGET newBatch()]
   // [VARIABLE "my_key_name_1"]
   // [VARIABLE "my_key_name_2"]
   public Batch newBatch(String keyName1, String keyName2) {
@@ -105,18 +104,18 @@ public class DatastoreSnippets {
   }
 
   /**
-   * Example of allocating multiple ids
+   * Example of allocating multiple ids in a single batch
    */
   // [TARGET allocateId(IncompleteKey... keys)]
-  public List<Key> allocateIdMultiple() {
-    // [START allocateIdMultiple]
+  public List<Key> batchAllocateId() {
+    // [START batchAllocateId]
     KeyFactory keyFactory = datastore.newKeyFactory().kind("MyClass");
     IncompleteKey incompleteKey1 = keyFactory.newKey();
     IncompleteKey incompleteKey2 = keyFactory.newKey();
 
     // let cloud datastore automatically assign the ids
     List<Key> keys = datastore.allocateId(incompleteKey1, incompleteKey2);
-    // [END allocateIdMultiple]
+    // [END batchAllocateId]
     return keys;
   }
 

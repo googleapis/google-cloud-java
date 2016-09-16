@@ -93,21 +93,17 @@ public class ITDatastoreSnippets {
 
   @Test
   public void testRunInTransaction() {
-    final String testString = "Test String";
+    String testString = "Test String";
     String result = datastoreSnippets.runInTransaction(testString);
     assertEquals(testString, result);
   }
 
   @Test
   public void testNewBatch() {
-    final String testKey1 = "new_batch_key1";
-    final Key key1 = datastore.newKeyFactory().kind("MyClass").newKey(testKey1);
-    final String testKey2 = "new_batch_key2";
-    final Key key2 = datastore.newKeyFactory().kind("MyClass").newKey(testKey2);
-    datastore.delete(key1, key2);
+    String testKey1 = registerKey("new_batch_key1");
+    String testKey2 = registerKey("new_batch_key2");
     Batch batch = datastoreSnippets.newBatch(testKey1, testKey2);
     assertNotNull(batch);
-    datastore.delete(key1, key2);
   }
 
   @Test
@@ -118,7 +114,7 @@ public class ITDatastoreSnippets {
 
   @Test
   public void testAllocateIdMultiple() {
-    List<Key> keys = datastoreSnippets.allocateIdMultiple();
+    List<Key> keys = datastoreSnippets.batchAllocateId();
     assertEquals(2, keys.size());
   }
 
