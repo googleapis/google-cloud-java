@@ -105,6 +105,23 @@ public interface Transaction extends DatastoreBatchWriter, DatastoreReaderWriter
   /**
    * Commit the transaction.
    *
+   * <p>Example of committing a transaction
+   * <pre> {@code
+   * // create an entity
+   * KeyFactory keyFactory = datastore.newKeyFactory().kind("someKind");
+   * Key key = datastore.allocateId(keyFactory.newKey());
+   * Entity entity = Entity.builder(key).set("description", "calling commit()").build();
+   * 
+   * // add the entity and commit
+   * Transaction txn = datastore.newTransaction();
+   * try {
+   *   txn.put(entity);
+   *   txn.commit();
+   * } catch (DatastoreException ex) {
+   *   // handle exception
+   * }
+   * }</pre>
+   *
    * @throws DatastoreException if could not commit the transaction or if no longer active
    */
   Response commit();
@@ -112,12 +129,51 @@ public interface Transaction extends DatastoreBatchWriter, DatastoreReaderWriter
   /**
    * Rollback the transaction.
    *
+   * <p>Example of rolling back a Transaction
+   * <pre> {@code
+   * // create an entity
+   * KeyFactory keyFactory = datastore.newKeyFactory().kind("someKind");
+   * Key key = datastore.allocateId(keyFactory.newKey());
+   * Entity entity = Entity.builder(key).set("description", "calling active()").build();
+   * 
+   * // add the entity and rollback
+   * Transaction txn = datastore.newTransaction();
+   * txn.put(entity);
+   * txn.rollback();
+   * // calling txn.commit() now would fail
+   * }</pre>
+   *
    * @throws DatastoreException if transaction was already committed
    */
   void rollback();
 
   /**
    * Returns {@code true} if the transaction is still active (was not committed or rolledback).
+   *
+   * <p>Example of verifying if a Transaction is active
+   * <pre> {@code
+   * // create an entity
+   * KeyFactory keyFactory = datastore.newKeyFactory().kind("someKind");
+   * Key key = datastore.allocateId(keyFactory.newKey());
+   * Entity entity = Entity.builder(key).set("description", "calling active()").build();
+   * 
+   * // create a transaction
+   * Transaction txn = datastore.newTransaction();
+   * // calling txn.active() now would return true
+   * try {
+   *   // add the entity and commit
+   *   txn.put(entity);
+   *   txn.commit();
+   * } finally {
+   *   // if committing succeeded
+   *   // then txn.active() will be false
+   *   if (txn.active()) {
+   *     // otherwise it's true and we need to rollback
+   *     txn.rollback();
+   *   }
+   * }
+   * }</pre>
+   *
    */
   @Override
   boolean active();
