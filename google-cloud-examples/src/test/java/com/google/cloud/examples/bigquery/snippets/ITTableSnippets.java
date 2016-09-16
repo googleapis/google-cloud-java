@@ -25,12 +25,9 @@ import com.google.cloud.bigquery.BigQueryOptions;
 import com.google.cloud.bigquery.DatasetInfo;
 import com.google.cloud.bigquery.Field;
 import com.google.cloud.bigquery.Field.Type;
-<<<<<<< HEAD
 import com.google.cloud.bigquery.Job;
-=======
 import com.google.cloud.bigquery.FieldValue;
 import com.google.cloud.bigquery.InsertAllResponse;
->>>>>>> master
 import com.google.cloud.bigquery.Schema;
 import com.google.cloud.bigquery.StandardTableDefinition;
 import com.google.cloud.bigquery.Table;
