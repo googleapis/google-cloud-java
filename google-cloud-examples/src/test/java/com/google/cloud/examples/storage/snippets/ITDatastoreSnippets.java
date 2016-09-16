@@ -89,10 +89,12 @@ public class ITDatastoreSnippets {
 
   @Test
   public void testEntityPutGet() {
-    String key = "my_key";
+    String key = "my_single_key";
     datastoreSnippets.putSingleEntity(key);
     Entity entity = datastoreSnippets.getEntityWithKey(key);
     assertEquals("value", entity.getString("propertyName"));
+
+    datastore.delete(datastore.newKeyFactory().kind("MyClass").newKey(key));
   }
 
   private Map<String, Entity> createEntityMap(List<Entity> entities) {
@@ -105,8 +107,8 @@ public class ITDatastoreSnippets {
 
   @Test
   public void testBatchEntityCrud() {
-    String key1 = "key1";
-    String key2 = "key2";
+    String key1 = "batch_key1";
+    String key2 = "batch_key2";
     datastoreSnippets.batchPutEntities(key1, key2);
 
     assertNotNull(datastoreSnippets.getEntityWithKey(key1));
