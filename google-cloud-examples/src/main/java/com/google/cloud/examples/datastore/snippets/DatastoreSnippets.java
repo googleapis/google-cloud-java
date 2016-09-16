@@ -26,8 +26,14 @@ import com.google.cloud.datastore.Datastore;
 import com.google.cloud.datastore.Entity;
 import com.google.cloud.datastore.Key;
 import com.google.cloud.datastore.KeyFactory;
+import com.google.cloud.datastore.Query;
+import com.google.cloud.datastore.QueryResults;
+import com.google.cloud.datastore.StructuredQuery;
+import com.google.cloud.datastore.StructuredQuery.PropertyFilter;
+import com.google.cloud.storage.Blob;
 import com.google.common.collect.Lists;
 import java.util.Iterator;
+import java.util.List;
 
 public class DatastoreSnippets {
   
@@ -55,7 +61,7 @@ public class DatastoreSnippets {
    * Example of creating a KeyFactory.
    */
   // [TARGET newKeyFactory()]
-  public KeyFactory newKeyFactory() {
+  public KeyFactory createKeyFactory() {
     // [START newKeyFactory]
     KeyFactory keyFactory = datastore.newKeyFactory();
     // [END newKeyFactory]
@@ -67,31 +73,78 @@ public class DatastoreSnippets {
    */
   // [TARGET get(Key key, ReadOption... options)]
   // [VARIABLE "my_key_name"]
-  public Entity get(String keyName) {
+  public Entity getEntityWithKey(String keyName) {
     // [START get]
     Key key = datastore.newKeyFactory().newKey(keyName);
     Entity entity = datastore.get(key);
+    // Do something with the entity
     // [END get]
     return entity;
   }
   
   /**
-   * Example of getting multiple entities
+   * Example of getting multiple Entity objects.
    */
-  // [TARGET get(Key key, ReadOption... options)]
+  // [TARGET get(Iterable<Key> key, ReadOption... options)]
   // [VARIABLE "my_first_key_name"]
-  //[VARIABLE "my_second_key_name"]
-  public Iterator<Entity> get(String firstKeyName, String secondKeyName) {
+  // [VARIABLE "my_second_key_name"]
+  public Iterator<Entity> getEntitiesWithKeys(String firstKeyName, String secondKeyName) {
     // [START get]
-    Key firstKey = datastore.newKeyFactory().newKey(firstKeyName);
-    Key secondKey = datastore.newKeyFactory().newKey(secondKeyName);
-    Iterator<Entity> entities = datastore.get(Lists.newArrayList(firstKey, secondKey));
+    KeyFactory keyFactory = datastore.newKeyFactory();
+    Key firstKey = keyFactory.newKey(firstKeyName);
+    Key secondKey = keyFactory.newKey(secondKeyName);
+    Iterator<Entity> entitiesIterator = datastore.get(Lists.newArrayList(firstKey, secondKey));
+    while (entitiesIterator.hasNext()) {
+      Entity entity = entitiesIterator.next();
+      // do something with the entity
+    }
+    // [END get]
+    return entitiesIterator;
+  }
+  
+  /**
+   * Example of fetching a list of Entity objects.
+   */
+  // [TARGET fetch(Iterable<Key> key, ReadOption... options)]
+  // [VARIABLE "my_first_key_name"]
+  // [VARIABLE "my_second_key_name"]
+  public List<Entity> fetchEntitiesWithKeys(String firstKeyName, String secondKeyName) {
+    // [START get]
+    KeyFactory keyFactory = datastore.newKeyFactory();
+    Key firstKey = keyFactory.newKey(firstKeyName);
+    Key secondKey = keyFactory.newKey(secondKeyName);
+    List<Entity> entities = datastore.fetch(Lists.newArrayList(firstKey, secondKey));
+    for (Entity entity : entities) {
+      // do something with the entity
+    }
     // [END get]
     return entities;
   }
   
-  //fetch(Iterable<Key> keys, ReadOption... options)      
-  //run(Query<T> query, ReadOption... options)
+  /**
+   * Example of running a query.
+   */
+  // [TARGET run(Query<T> query, ReadOption... options)]
+  // [VARIABLE "my_key_name"]
+  // [VARIABLE "my_query_kind"]
+  // [VARIABLE "my_query_namespace"]
+  public QueryResults<Entity> runQuery(String keyName, String queryKind, String queryNamespace) {
+    // [START get]
+    Key key = datastore.newKeyFactory().newKey(keyName);
+    StructuredQuery<Entity> query =
+        Query.entityQueryBuilder()
+            .namespace(queryNamespace)
+            .kind(queryKind)
+            .filter(PropertyFilter.hasAncestor(key))
+            .build();
+    QueryResults<Entity> results = datastore.run(query);
+    while (results.hasNext()) {
+      Entity result = results.next();
+      // do something with result
+    }
+    // [END get]
+    return results;
+  }
   
   // MIKE ENDS HERE
 }
