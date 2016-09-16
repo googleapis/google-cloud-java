@@ -22,6 +22,17 @@
 
 package com.google.cloud.examples.bigquery.snippets;
 
+import com.google.cloud.bigquery.Dataset;
+
+/**
+ * This class contains a number of snippets for the {@link Dataset} interface.
+ */
 public class DatasetSnippets {
+
+  private final Dataset dataset;
+
+  public DatasetSnippets(Dataset dataset) {
+    this.dataset = dataset;
+  }
 
 }
