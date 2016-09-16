@@ -91,28 +91,40 @@ public class ITDatastoreSnippets {
     }
   }
 
+  // ANTHONY STARTS HERE
+
+  // ANTHONY ENDS HERE
+
+  // GARRETT STARTS HERE
+
+  // GARRETT ENDS HERE
+
+  // MIKE STARTS HERE
+
   @Test
   public void test() throws InterruptedException {
-    
+
     String KEY = "my_key_name";
     String FIRST_KEY = "first_key_name";
     String SECOND_KEY = "second_key_name";
     String QUERY_KIND = "kind";
     String NAMESPACE = "namespace";
-    
+
     KeyFactory keyFactory = datastoreSnippets.createKeyFactory();
     assertNotNull(keyFactory);
-    
+
     Entity entity = datastoreSnippets.getEntityWithKey(KEY);
     assertNotNull(entity);
-    
+
     Iterator<Entity> entityIterator = datastoreSnippets.getEntitiesWithKeys(FIRST_KEY, SECOND_KEY);
     assertNotNull(entityIterator);
-    
+
     List<Entity> entityList = datastoreSnippets.fetchEntitiesWithKeys(FIRST_KEY, SECOND_KEY);
     assertNotNull(entityList);
-    
+
     QueryResults<Entity> queryResults = datastoreSnippets.runQuery(KEY, QUERY_KIND, NAMESPACE);
     assertNotNull(queryResults);
   }
+
+  // MIKE ENDS HERE
 }
