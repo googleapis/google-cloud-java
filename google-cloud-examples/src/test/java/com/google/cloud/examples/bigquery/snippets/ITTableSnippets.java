@@ -109,6 +109,8 @@ public class ITTableSnippets {
 
     try {
       Job job = tableSnippets.copyTableId(DATASET_NAME, destinationTableName);
+      
+      // TODO: Test that the destination table has the same contents as the source.
     } finally {
       bigquery.delete(destinationId);
     }

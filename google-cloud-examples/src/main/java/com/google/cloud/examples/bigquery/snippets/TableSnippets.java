@@ -123,8 +123,6 @@ public class TableSnippets {
 
   /**
    * Example copying a table to a destination table referenced by table ID.
-   * @throws TimeoutException 
-   * @throws InterruptedException 
    */
   // [TARGET copy(TableId, JobOption...)]
   // [VARIABLE "my_dataset"]
