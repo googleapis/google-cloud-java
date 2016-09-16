@@ -53,23 +53,22 @@ public class DatastoreSnippets {
   /**
    * Example of allocating an id
    */
-  // [TARGET allocatedId()]
+  // [TARGET allocateId(IncompleteKey key)]
   public Key allocateIdSingle() {
     // [START allocateIdSingle]
     KeyFactory keyFactory = datastore.newKeyFactory().kind("MyClass");
     IncompleteKey incompleteKey = keyFactory.newKey();
 
     // let cloud datastore automatically assign an id
-    Key key = datastore.allocateId(keyFactory.newKey());
+    Key key = datastore.allocateId(incompleteKey);
     // [END allocateIdSingle]
-
     return key;
   }
 
   /**
    * Example of allocating multiple ids
    */
-  // [TARGET allocatedId()]
+  // [TARGET allocateId(IncompleteKey... keys)]
   public List<Key> allocateIdMultiple() {
     // [START allocateIdMultiple]
     KeyFactory keyFactory = datastore.newKeyFactory().kind("MyClass");
