@@ -65,7 +65,6 @@ public class DatasetSnippets {
     // [END reloadDataset]
     return dataset;
   }
-   */
 
   /**
   * Example of listing dataset tables. 
