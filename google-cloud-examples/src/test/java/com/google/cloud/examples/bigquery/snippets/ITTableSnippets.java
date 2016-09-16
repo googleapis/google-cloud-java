@@ -61,8 +61,6 @@ public class ITTableSnippets {
   private static final String COPY_DATASET_NAME = "my_copy_dataset";
   private static final Value ROW1 = new Value("value1", true);
   private static final Value ROW2 = new Value("value2", false);
-  // TODO: Make the copy table name unique.
-  private static final TableId COPY_TABLE_ID = TableId.of(COPY_DATASET_NAME, BASE_TABLE_NAME);
   private static final Logger log = Logger.getLogger(ITTableSnippets.class.getName());
 
   private BigQuery bigquery;
@@ -81,48 +79,40 @@ public class ITTableSnippets {
     StandardTableDefinition.Builder builder = StandardTableDefinition.builder();
     builder.schema(
         Schema.of(Field.of("stringField", Type.string()), Field.of("booleanField", Type.bool())));
-    table = bigquery.create(TableInfo.of(GetTableId(), builder.build()));
-    copyTable = bigquery.create(TableInfo.of(COPY_TABLE_ID, builder.build()));
+    table = bigquery.create(TableInfo.of(getTableId(), builder.build()));
+    copyTable = bigquery.create(TableInfo.of(getCopyTableId(), builder.build()));
     tableSnippets = new TableSnippets(table);
   }
 
   @After
   public void after() {
-    bigquery.delete(GetTableId());
-    bigquery.delete(COPY_TABLE_ID);
+    bigquery.delete(getTableId());
+    bigquery.delete(getCopyTableId());
     bigquery.delete(DATASET_NAME);
     bigquery.delete(COPY_DATASET_NAME);
   }
 
-  private String GetTableName() {
+  private String getTableName() {
     return BASE_TABLE_NAME + nextTableNumber;
   }
   
-  private TableId GetTableId() {
-    return TableId.of(DATASET_NAME, GetTableName());
+  private TableId getTableId() {
+    return TableId.of(DATASET_NAME, getTableName());
+  }
+
+  private String getCopyTableName() {
+    return BASE_TABLE_NAME + "_copy_" + nextTableNumber;
+  }
+
+  private TableId getCopyTableId() {
+    return TableId.of(COPY_DATASET_NAME, getCopyTableName());
   }
 
   @Test
   public void testInsert() throws InterruptedException {
     InsertAllResponse response = tableSnippets.insert("row1", "row2");
     assertFalse(response.hasErrors());
-    
-    // TODO: Replace the following with VerifyTestRows(table)?
-    List<List<FieldValue>> rows = ImmutableList.copyOf(tableSnippets.list().values());
-    while (rows.size() != 2) {
-      Thread.sleep(500);
-      rows = ImmutableList.copyOf(tableSnippets.list().values());
-    }
-    Set<Value> values =
-        FluentIterable.from(rows).transform(new Function<List<FieldValue>, Value>() {
-          @Override
-          public Value apply(List<FieldValue> row) {
-            return new Value(row.get(0).stringValue(), row.get(1).booleanValue());
-          }
-        }).toSet();
-    assertEquals(new Value("value1", true), new Value("value1", true));
-    assertEquals(new Value("value2", false), new Value("value2", false));
-    assertEquals(ImmutableSet.of(ROW2, ROW1), values);
+    verifyTestRows(table);
   }
 
   private static class Value {
@@ -157,8 +147,7 @@ public class ITTableSnippets {
   /**
    * Inserts some data into the test table.
    */
-  private void InsertTestRows() {
-    log.info("Inserting test rows...");
+  private void insertTestRows() {
     String rowId1 = "row1";
     String rowId2 = "row2";
     List<RowToInsert> rows = new ArrayList<>();
@@ -170,15 +159,19 @@ public class ITTableSnippets {
     row2.put("booleanField", ROW2.booleanField);
     rows.add(RowToInsert.of(rowId1, row1));
     rows.add(RowToInsert.of(rowId2, row2));
-    table.insert(rows);
+    InsertAllResponse response = table.insert(rows);
+    while (response.hasErrors()) {
+      log.info("Error inserting rows.  Trying again...");
+      response = table.insert(rows);
+    }
   }
   
   /**
    * Verifies that the given table has the rows inserted by InsertTestRows().
    * @param checkTable The table to query.
    */
-  private void VerifyTestRows(Table checkTable) {
-    List<List<FieldValue>> rows = WaitForTableRows(checkTable, 2);
+  private void verifyTestRows(Table checkTable) {
+    List<List<FieldValue>> rows = waitForTableRows(checkTable, 2);
     // Verify that the table data matches what it's supposed to.
     Set<Value> values =
         FluentIterable.from(rows).transform(new Function<List<FieldValue>, Value>() {
@@ -190,7 +183,14 @@ public class ITTableSnippets {
     assertEquals(ImmutableSet.of(ROW2, ROW1), values);
   }
 
-  private List<List<FieldValue>> WaitForTableRows(Table checkTable, int numRows) {
+  /**
+   * Waits for a specified number of rows to appear in the given table.  This is used
+   * by verifyTestRows to wait for data to appear before verifying.
+   * @param checkTable
+   * @param numRows
+   * @return The rows from the table.
+   */
+  private List<List<FieldValue>> waitForTableRows(Table checkTable, int numRows) {
     // Wait for the data to appear.
     Page<List<FieldValue>> page = checkTable.list(TableDataListOption.pageSize(100));
     List<List<FieldValue>> rows = ImmutableList.copyOf(page.values());
@@ -212,10 +212,6 @@ public class ITTableSnippets {
   
   @Test
   public void testCopyTableId() {
-    InsertTestRows();
-    VerifyTestRows(table);
-    log.info("Found test rows in original table.");
-
-    tableSnippets.copyTableId(COPY_DATASET_NAME, BASE_TABLE_NAME);
+    tableSnippets.copyTableId(COPY_DATASET_NAME, getCopyTableName());
   }
 }
