@@ -148,17 +148,36 @@ public class ITDatastoreSnippets {
     assertNotNull(keyFactory);
   }
 
+  private void addEntity(String keyName, String keyClass, String value) {
+    Key key = datastore.newKeyFactory().kind(keyClass).newKey(keyName);
+    Entity.Builder entityBuilder = Entity.builder(key);
+    entityBuilder.set("propertyName", value);
+    Entity entity = entityBuilder.build();
+    datastore.put(entity);
+  }
+  
+  private void deleteEntity(String keyName, String keyClass) {
+    Key key = datastore.newKeyFactory().kind(keyClass).newKey(keyName);
+    datastore.delete(key);
+  }
+  
   @Test
   public void testRunQuery() {
-    String keyToFind = "my_key_name_to_find";
-    String keyToMiss = "my_key_name_to_miss";
-    String query_kind = "MyClass";
-    String namespace = "";
-    datastoreSnippets.batchPutEntities(keyToFind, keyToMiss);
-    List<Entity> queryResults = datastoreSnippets.runQuery(keyToFind, query_kind, namespace);
+    String keyNameToFind = "my_key_name_to_find";
+    String keyNameToMiss = "my_key_name_to_miss";
+    
+    String kindToFind = "ClassToFind";
+    String kindToMiss = "OtherClass";
+    
+    addEntity(keyNameToFind, kindToFind, "");
+    addEntity(keyNameToMiss, kindToMiss, "");
+    
+    List<Entity> queryResults = datastoreSnippets.runQuery(kindToFind);
     assertNotNull(queryResults);
     assertEquals(1, queryResults.size());
-    datastoreSnippets.batchDeleteEntities(keyToFind, keyToMiss);
+    
+    deleteEntity(keyNameToFind, kindToFind);
+    deleteEntity(keyNameToMiss, kindToMiss);
   }
 
   // MIKE ENDS HERE

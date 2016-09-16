@@ -261,20 +261,15 @@ public class DatastoreSnippets {
   }
 
   /**
-   * Example of running a query.
+   * Example of running a query to find all keys of one kind.
    */
   // [TARGET run(Query<T> query, ReadOption... options)]
-  // [VARIABLE "my_key_name"]
-  // [VARIABLE "my_query_kind"]
-  // [VARIABLE "my_query_namespace"]
-  public List<Entity> runQuery(String keyName, String queryKind, String queryNamespace) {
+  // [VARIABLE "my_kind"]
+  public List<Entity> runQuery(String kind) {
     // [START runQuery]
-    Key key = datastore.newKeyFactory().kind("MyClass").newKey(keyName);
     StructuredQuery<Entity> query =
         Query.entityQueryBuilder()
-            .namespace(queryNamespace)
-            .kind(queryKind)
-            .filter(PropertyFilter.hasAncestor(key))
+            .kind(kind)
             .build();
     QueryResults<Entity> results = datastore.run(query);
     // TODO make a change so that it's not necessary to hold the entities in a list for
