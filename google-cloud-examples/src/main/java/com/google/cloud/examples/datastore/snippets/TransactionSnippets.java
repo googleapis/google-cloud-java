@@ -115,7 +115,7 @@ public class TransactionSnippets {
     // For tests.
     // TODO: Consider putting this block inside the try statement above so users can see the
     // expected output without even having to run the snippet.
-    boolean consistent = (result != null);
+    boolean consistent = result != null;
     if (consistent) {
       Entity entityFirst = result.next();
       Entity entitySecond = result.next();
@@ -214,7 +214,6 @@ public class TransactionSnippets {
         .build();
 
     QueryResults<Entity> result = null;
-    Entity first = null;
 
     // Run the query
     try {
