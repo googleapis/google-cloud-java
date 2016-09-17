@@ -134,21 +134,25 @@ public class ITTableSnippets {
 
   @Test
   public void testCheckExists() {
+	log.info("testCheckExists");
 	tableSnippets.checkExists();
   }
   
   @Test
   public void testReloadTableWithFields() {
+	log.info("testReloadTableWithFields");
 	tableSnippets.reloadTableWithFields(TableField.LAST_MODIFIED_TIME, TableField.NUM_ROWS);
   }
   
   @Test
   public void testUpdateTableWithFields() {
+	log.info("testUpdateTableWithFields");
 	tableSnippets.updateTableWithFields(TableField.LAST_MODIFIED_TIME, TableField.NUM_ROWS);
   }
   
   @Test
   public void testDelete() {
+	log.info("testDelete");
 	doomedTableSnippets.delete();
   }
 
