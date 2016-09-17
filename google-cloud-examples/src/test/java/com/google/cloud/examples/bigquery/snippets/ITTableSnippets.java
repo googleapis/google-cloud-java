@@ -321,8 +321,13 @@ public class ITTableSnippets {
   public void testLoadList() {
     log.info("testLoadList");
     String projectId = bigquery.options().projectId();
-    String gcsFile1 = "gs://" + projectId + ".appspot.com/extractTestA_000000000000.csv";
-    String gcsFile2 = "gs://" + projectId + ".appspot.com/extractTestB_000000000000.csv";
+    String gcsFile1 = "gs://" + projectId + ".appspot.com/loadTest1.csv";
+    String gcsFile2 = "gs://" + projectId + ".appspot.com/loadTest2.csv";
+
+    // Before we can load, we should make sure those files exist.
+    tableSnippets.extractSingle("CSV", gcsFile1);
+    tableSnippets.extractSingle("CSV", gcsFile2);
+
     tableSnippets.loadList(gcsFile1, gcsFile2);
   }
 }
