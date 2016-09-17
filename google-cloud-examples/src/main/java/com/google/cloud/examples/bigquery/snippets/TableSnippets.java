@@ -67,12 +67,12 @@ public class TableSnippets {
   /**
    * Example of fetching a table's latest information, specifying particular table field options.
    */
-  // [TARGET reload(BigQuery.TableOption... options)]
+  // [TARGET reload(TableOption...)]
   // [VARIABLE TableField.LAST_MODIFIED_TIME]
   // [VARIABLE TableField.NUM_ROWS]
-  public Table reloadTableWithFields(TableField... fields) {
+  public Table reloadTableWithFields(TableField field1, TableField field2) {
 	  // [START reloadTableWithFields]
-	  Table reloaded = table.reload(TableOption.fields(fields));
+	  Table reloaded = table.reload(TableOption.fields(field1, field2));
 	  // [END reloadTableWithFields]
 	  return reloaded;
   }
@@ -80,12 +80,12 @@ public class TableSnippets {
   /**
    * Example of updating a table's information, specifying particular table field options.
    */
-  // [TARGET update(BigQuery.TableOption... options)]
+  // [TARGET update(TableOption...)]
   // [VARIABLE TableField.LAST_MODIFIED_TIME]
   // [VARIABLE TableField.NUM_ROWS]
-  public Table updateTableWithFields(TableField... fields) {
+  public Table updateTableWithFields(TableField field1, TableField field2) {
 	  // [START updateTableWithFields]
-	  Table updated = table.update(TableOption.fields(fields));
+	  Table updated = table.update(TableOption.fields(field1, field2));
 	  // [END updateTableWithFields]
 	  return updated;
   }
