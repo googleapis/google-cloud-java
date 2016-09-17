@@ -334,4 +334,16 @@ public class ITTableSnippets {
 
     tableSnippets.loadList(gcsFile1, gcsFile2);
   }
+
+  @Test
+  public void testLoadSingle() {
+    log.info("testLoadSingle");
+    String projectId = bigquery.options().projectId();
+    String gcsFile = "gs://" + projectId + ".appspot.com/loadSingle.csv";
+
+    // Before we can load, we should make sure the file exists.
+    tableSnippets.extractSingle("CSV", gcsFile);
+
+    tableSnippets.loadSingle(gcsFile);
+  }
 }

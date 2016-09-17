@@ -219,8 +219,8 @@ public class TableSnippets {
    */
   // [TARGET extract(String, List, JobOption...)]
   // [VARIABLE "CSV"]
-  // [VARIABLE "gs://bucket_name/PartitionA_*.csv"]
-  // [VARIABLE "gs://bucket_name/PartitionB_*.csv"]
+  // [VARIABLE "gs://myapp.appspot.com/PartitionA_*.csv"]
+  // [VARIABLE "gs://myapp.appspot.com/PartitionB_*.csv"]
   public Job extractList(String format, String gcsUrl1, String gcsUrl2) {
     // [START extractList]
     List<String> destinationUris = new ArrayList<>();
@@ -248,9 +248,9 @@ public class TableSnippets {
   /**
    * Example extracting data to single Google Cloud Storage file.
    */
-  // [TARGET extract(String, String, BigQuery.JobOption...)]
+  // [TARGET extract(String, String, JobOption...)]
   // [VARIABLE "CSV"]
-  // [VARIABLE "gs://bucket_name/filename.csv"]
+  // [VARIABLE "gs://myapp.appspot.com/filename.csv"]
   public Job extractSingle(String format, String gcsUrl) {
     // [START extractSingle]
     Job job = table.extract(format, gcsUrl);
@@ -272,11 +272,11 @@ public class TableSnippets {
   }
 
   /**
-   * Example extracting data to a list of Google Cloud Storage files.
+   * Example loading data from a list of Google Cloud Storage files.
    */
   // [TARGET load(String, List, JobOption...)]
-  // [VARIABLE "gs://bucket_name/PartitionA_000000000000.csv"]
-  // [VARIABLE "gs://bucket_name/PartitionB_000000000000.csv"]
+  // [VARIABLE "gs://myapp.appspot.com/PartitionA_000000000000.csv"]
+  // [VARIABLE "gs://myapp.appspot.com/PartitionB_000000000000.csv"]
   public Job loadList(String gcsUrl1, String gcsUrl2) {
     // [START loadList]
     List<String> sourceUris = new ArrayList<>();
@@ -298,6 +298,31 @@ public class TableSnippets {
       // Handle interrupted wait.
     }
     // [END loadList]
+    return job;
+  }
+
+  /**
+   * Example loading data from a single Google Cloud Storage file.
+   */
+  // [TARGET load(String, String, JobOption...)]
+  // [VARIABLE "gs://myapp.appspot.com/filename.csv"]
+  public Job loadSingle(String sourceUri) {
+    // [START loadSingle]
+    Job job = table.load(FormatOptions.csv(), sourceUri);
+
+    // Wait for the job to complete.
+    try {
+      Job completedJob = job.waitFor(WaitForOption.checkEvery(1, TimeUnit.SECONDS),
+          WaitForOption.timeout(60, TimeUnit.SECONDS));
+      if (completedJob != null && completedJob.status().error() == null) {
+        // Job completed successfully.
+      } else {
+        // Handle error case.
+      }
+    } catch(InterruptedException | TimeoutException e) {
+      // Handle interrupted wait.
+    }
+    // [END loadSingle]
     return job;
   }
 }
