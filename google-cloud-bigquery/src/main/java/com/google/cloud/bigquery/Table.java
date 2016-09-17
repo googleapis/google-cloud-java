@@ -142,7 +142,7 @@ public class Table extends TableInfo {
    * <p>Example of ensuring that a table exists.
    * <pre> {@code
    * if (!table.exists()) {
-   *  throw new RuntimeException("Table does not exist.");
+   *   throw new RuntimeException("Table does not exist.");
    * }
    * }</pre>
    *
@@ -344,7 +344,7 @@ public class Table extends TableInfo {
    *   } else {
    *     // Handle error case.
    *   }
-   * } catch(InterruptedException | TimeoutException e) {
+   * } catch (InterruptedException | TimeoutException e) {
    *   // Handle interrupted wait.
    * }
    * }</pre>
@@ -366,7 +366,7 @@ public class Table extends TableInfo {
    * <p>Example extracting data to single Google Cloud Storage file.
    * <pre> {@code
    * String format = "CSV";
-   * String gcsUrl = "gs://bucket_name/filename.csv";
+   * String gcsUrl = "gs://myapp.appspot.com/filename.csv";
    * Job job = table.extract(format, gcsUrl);
    * 
    * // Wait for the job to complete.
@@ -378,7 +378,7 @@ public class Table extends TableInfo {
    *   } else {
    *     // Handle error case.
    *   }
-   * } catch(InterruptedException | TimeoutException e) {
+   * } catch (InterruptedException | TimeoutException e) {
    *   // Handle interrupted wait.
    * }
    * }</pre>
@@ -401,8 +401,8 @@ public class Table extends TableInfo {
    * <p>Example extracting data to a list of Google Cloud Storage files.
    * <pre> {@code
    * String format = "CSV";
-   * String gcsUrl1 = "gs://bucket_name/PartitionA_*.csv";
-   * String gcsUrl2 = "gs://bucket_name/PartitionB_*.csv";
+   * String gcsUrl1 = "gs://myapp.appspot.com/PartitionA_*.csv";
+   * String gcsUrl2 = "gs://myapp.appspot.com/PartitionB_*.csv";
    * List<String> destinationUris = new ArrayList<>();
    * destinationUris.add(gcsUrl1);
    * destinationUris.add(gcsUrl2);
@@ -418,7 +418,7 @@ public class Table extends TableInfo {
    *   } else {
    *     // Handle error case.
    *   }
-   * } catch(InterruptedException | TimeoutException e) {
+   * } catch (InterruptedException | TimeoutException e) {
    *   // Handle interrupted wait.
    * }
    * }</pre>
@@ -440,6 +440,25 @@ public class Table extends TableInfo {
    * Starts a BigQuery Job to load data into the current table from the provided source URI. Returns
    * the started {@link Job} object.
    *
+   * <p>Example loading data from a single Google Cloud Storage file.
+   * <pre> {@code
+   * String sourceUri = "gs://myapp.appspot.com/filename.csv";
+   * Job job = table.load(FormatOptions.csv(), sourceUri);
+   * 
+   * // Wait for the job to complete.
+   * try {
+   *   Job completedJob = job.waitFor(WaitForOption.checkEvery(1, TimeUnit.SECONDS),
+   *       WaitForOption.timeout(60, TimeUnit.SECONDS));
+   *   if (completedJob != null && completedJob.status().error() == null) {
+   *     // Job completed successfully.
+   *   } else {
+   *     // Handle error case.
+   *   }
+   * } catch (InterruptedException | TimeoutException e) {
+   *   // Handle interrupted wait.
+   * }
+   * }</pre>
+   *
    * @param format the format of the data to load
    * @param sourceUri the fully-qualified Google Cloud Storage URI (e.g. gs://bucket/path) from
    *     which to load the data
@@ -454,6 +473,30 @@ public class Table extends TableInfo {
   /**
    * Starts a BigQuery Job to load data into the current table from the provided source URIs.
    * Returns the started {@link Job} object.
+   *
+   * <p>Example loading data from a list of Google Cloud Storage files.
+   * <pre> {@code
+   * String gcsUrl1 = "gs://myapp.appspot.com/PartitionA_000000000000.csv";
+   * String gcsUrl2 = "gs://myapp.appspot.com/PartitionB_000000000000.csv";
+   * List<String> sourceUris = new ArrayList<>();
+   * sourceUris.add(gcsUrl1);
+   * sourceUris.add(gcsUrl2);
+   * 
+   * Job job = table.load(FormatOptions.csv(), sourceUris);
+   * 
+   * // Wait for the job to complete.
+   * try {
+   *   Job completedJob = job.waitFor(WaitForOption.checkEvery(1, TimeUnit.SECONDS),
+   *       WaitForOption.timeout(60, TimeUnit.SECONDS));
+   *   if (completedJob != null && completedJob.status().error() == null) {
+   *     // Job completed successfully.
+   *   } else {
+   *     // Handle error case.
+   *   }
+   * } catch (InterruptedException | TimeoutException e) {
+   *   // Handle interrupted wait.
+   * }
+   * }</pre>
    *
    * @param format the format of the exported data
    * @param sourceUris the fully-qualified Google Cloud Storage URIs (e.g. gs://bucket/path) from

@@ -274,7 +274,7 @@ public class TableSnippets {
   /**
    * Example loading data from a list of Google Cloud Storage files.
    */
-  // [TARGET load(String, List, JobOption...)]
+  // [TARGET load(FormatOptions, List, JobOption...)]
   // [VARIABLE "gs://myapp.appspot.com/PartitionA_000000000000.csv"]
   // [VARIABLE "gs://myapp.appspot.com/PartitionB_000000000000.csv"]
   public Job loadList(String gcsUrl1, String gcsUrl2) {
@@ -304,7 +304,7 @@ public class TableSnippets {
   /**
    * Example loading data from a single Google Cloud Storage file.
    */
-  // [TARGET load(String, String, JobOption...)]
+  // [TARGET load(FormatOptions, String, JobOption...)]
   // [VARIABLE "gs://myapp.appspot.com/filename.csv"]
   public Job loadSingle(String sourceUri) {
     // [START loadSingle]
