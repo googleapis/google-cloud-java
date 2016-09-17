@@ -74,12 +74,12 @@ public class ITTableSnippets {
   private static final String DOOMED_TABLE_NAME = "doomed_table";
   private static final String DOOMED_DATASET_NAME = "doomed_dataset";
   public static final TableId DOOMED_TABLE_ID = TableId.of(DOOMED_DATASET_NAME, DOOMED_TABLE_NAME);
-  
+
   private static Table doomedTable;
   private static TableSnippets doomedTableSnippets;
 
   private static int nextTableNumber = 0;
-  
+
   @BeforeClass
   public static void beforeClass() {
     bigquery = BigQueryOptions.defaultInstance().service();
@@ -97,7 +97,7 @@ public class ITTableSnippets {
     table = bigquery.create(TableInfo.of(getTableId(), builder.build()));
     bigquery.create(TableInfo.of(getCopyTableId(), builder.build()));
     tableSnippets = new TableSnippets(table);
-    
+
     doomedTable = bigquery.create(TableInfo.of(DOOMED_TABLE_ID, builder.build()));
     doomedTableSnippets = new TableSnippets(doomedTable);
   }
@@ -119,7 +119,7 @@ public class ITTableSnippets {
   private String getTableName() {
     return BASE_TABLE_NAME + nextTableNumber;
   }
-  
+
   private TableId getTableId() {
     return TableId.of(DATASET_NAME, getTableName());
   }
@@ -134,31 +134,31 @@ public class ITTableSnippets {
 
   @Test
   public void testCheckExists() {
-	log.info("testCheckExists");
-	tableSnippets.checkExists();
+    log.info("testCheckExists");
+    tableSnippets.checkExists();
   }
-  
+
   @Test
   public void testReloadTableWithFields() {
-	log.info("testReloadTableWithFields");
-	tableSnippets.reloadTableWithFields(TableField.LAST_MODIFIED_TIME, TableField.NUM_ROWS);
+    log.info("testReloadTableWithFields");
+    tableSnippets.reloadTableWithFields(TableField.LAST_MODIFIED_TIME, TableField.NUM_ROWS);
   }
-  
+
   @Test
   public void testUpdateTableWithFields() {
-	log.info("testUpdateTableWithFields");
-	tableSnippets.updateTableWithFields(TableField.LAST_MODIFIED_TIME, TableField.NUM_ROWS);
+    log.info("testUpdateTableWithFields");
+    tableSnippets.updateTableWithFields(TableField.LAST_MODIFIED_TIME, TableField.NUM_ROWS);
   }
-  
+
   @Test
   public void testDelete() {
-	log.info("testDelete");
-	doomedTableSnippets.delete();
+    log.info("testDelete");
+    doomedTableSnippets.delete();
   }
 
   @Test
   public void testInsert() {
-	log.info("testInsert");
+    log.info("testInsert");
     InsertAllResponse response = tableSnippets.insert("row1", "row2");
     assertFalse(response.hasErrors());
     verifyTestRows(table);
@@ -231,7 +231,7 @@ public class ITTableSnippets {
       return "<Value stringField: " + stringField + " booleanField: " + booleanField + ">";
     }
   }
-  
+
   /**
    * Inserts some data into the test table.
    */
@@ -253,9 +253,10 @@ public class ITTableSnippets {
       response = table.insert(rows);
     }
   }
-  
+
   /**
    * Verifies that the given table has the rows inserted by InsertTestRows().
+   *
    * @param checkTable The table to query.
    */
   private void verifyTestRows(Table checkTable) {
@@ -272,8 +273,9 @@ public class ITTableSnippets {
   }
 
   /**
-   * Waits for a specified number of rows to appear in the given table.  This is used
-   * by verifyTestRows to wait for data to appear before verifying.
+   * Waits for a specified number of rows to appear in the given table. This is used by
+   * verifyTestRows to wait for data to appear before verifying.
+   *
    * @param checkTable
    * @param numRows
    * @return The rows from the table.
@@ -290,14 +292,14 @@ public class ITTableSnippets {
       try {
         ++numSleeps;
         Thread.sleep(5000);
-      } catch(InterruptedException e) {
+      } catch (InterruptedException e) {
       }
       page = checkTable.list(TableDataListOption.pageSize(100));
       rows = ImmutableList.copyOf(page.values());
     }
     return rows;
   }
-  
+
   @Test
   public void testCopyTableId() {
     log.info("testCopyTableId");

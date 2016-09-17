@@ -53,15 +53,15 @@ public class TableSnippets {
   }
 
   /**
-   * Example of ensuring that a table exists. 
+   * Example of ensuring that a table exists.
    */
   // [TARGET exists()]
   public void checkExists() {
-	  // [START checkExists]
-	  if (!table.exists()) {
-		  throw new RuntimeException("Table does not exist.");
-	  }
-	  // [END checkExists]
+    // [START checkExists]
+    if (!table.exists()) {
+      throw new RuntimeException("Table does not exist.");
+    }
+    // [END checkExists]
   }
 
   /**
@@ -71,10 +71,10 @@ public class TableSnippets {
   // [VARIABLE TableField.LAST_MODIFIED_TIME]
   // [VARIABLE TableField.NUM_ROWS]
   public Table reloadTableWithFields(TableField field1, TableField field2) {
-	  // [START reloadTableWithFields]
-	  Table reloaded = table.reload(TableOption.fields(field1, field2));
-	  // [END reloadTableWithFields]
-	  return reloaded;
+    // [START reloadTableWithFields]
+    Table reloaded = table.reload(TableOption.fields(field1, field2));
+    // [END reloadTableWithFields]
+    return reloaded;
   }
 
   /**
@@ -84,10 +84,10 @@ public class TableSnippets {
   // [VARIABLE TableField.LAST_MODIFIED_TIME]
   // [VARIABLE TableField.NUM_ROWS]
   public Table updateTableWithFields(TableField field1, TableField field2) {
-	  // [START updateTableWithFields]
-	  Table updated = table.update(TableOption.fields(field1, field2));
-	  // [END updateTableWithFields]
-	  return updated;
+    // [START updateTableWithFields]
+    Table updated = table.update(TableOption.fields(field1, field2));
+    // [END updateTableWithFields]
+    return updated;
   }
 
   /**
@@ -95,11 +95,11 @@ public class TableSnippets {
    */
   // [TARGET delete()]
   public void delete() {
-	  // [START delete]
-	  table.delete();
-	  // [END delete]
+    // [START delete]
+    table.delete();
+    // [END delete]
   }
-  
+
   /**
    * Example of inserting rows into a table.
    */
@@ -207,13 +207,13 @@ public class TableSnippets {
       } else {
         // Handle error case.
       }
-    } catch(InterruptedException | TimeoutException e) {
+    } catch (InterruptedException | TimeoutException e) {
       // Handle interrupted wait.
     }
     // [END copyTableId]
     return job;
   }
-  
+
   /**
    * Example extracting data to a list of Google Cloud Storage files.
    */
@@ -238,7 +238,7 @@ public class TableSnippets {
       } else {
         // Handle error case.
       }
-    } catch(InterruptedException | TimeoutException e) {
+    } catch (InterruptedException | TimeoutException e) {
       // Handle interrupted wait.
     }
     // [END extractList]
@@ -264,7 +264,7 @@ public class TableSnippets {
       } else {
         // Handle error case.
       }
-    } catch(InterruptedException | TimeoutException e) {
+    } catch (InterruptedException | TimeoutException e) {
       // Handle interrupted wait.
     }
     // [END extractSingle]
@@ -294,7 +294,7 @@ public class TableSnippets {
       } else {
         // Handle error case.
       }
-    } catch(InterruptedException | TimeoutException e) {
+    } catch (InterruptedException | TimeoutException e) {
       // Handle interrupted wait.
     }
     // [END loadList]
@@ -319,7 +319,7 @@ public class TableSnippets {
       } else {
         // Handle error case.
       }
-    } catch(InterruptedException | TimeoutException e) {
+    } catch (InterruptedException | TimeoutException e) {
       // Handle interrupted wait.
     }
     // [END loadSingle]
