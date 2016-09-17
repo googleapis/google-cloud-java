@@ -27,6 +27,10 @@ import com.google.cloud.datastore.DatastoreException;
 import com.google.cloud.datastore.Entity;
 import com.google.cloud.datastore.Key;
 import com.google.cloud.datastore.KeyFactory;
+import com.google.cloud.datastore.PathElement;
+import com.google.cloud.datastore.Query;
+import com.google.cloud.datastore.QueryResults;
+import com.google.cloud.datastore.StructuredQuery.PropertyFilter;
 import com.google.cloud.datastore.Transaction;
 
 import java.util.Iterator;
@@ -74,6 +78,7 @@ public class TransactionSnippets {
 
     // Clean up.
     transaction.rollback();
+    datastore.delete(key);
 
     return consistent;
   }
@@ -122,6 +127,8 @@ public class TransactionSnippets {
 
     // Clean up.
     transaction.rollback();
+    datastore.delete(keyOne);
+    datastore.delete(keyTwo);
 
     return consistent;
    }
@@ -172,9 +179,69 @@ public class TransactionSnippets {
 
     // Clean up.
     transaction.rollback();
+    datastore.delete(keyOne);
+    datastore.delete(keyTwo);
 
     return consistent;
    }
+
+  /**
+   * Example of committing a transaction.
+   */
+  // [TARGET run(Query<T>)]
+  public boolean run() {
+    Datastore datastore = transaction.datastore();
+
+    // [START run]
+    // Create an entity
+    Key keyOne = datastore.newKeyFactory().kind("First").newKey("One");
+    Entity entityOne = Entity.builder(keyOne).set("description", "run one").build();
+    datastore.put(entityOne);
+
+    // Create a child. Note that queries inside transactions must have ancestors.
+    Key keyTwo = datastore
+        .newKeyFactory()
+        .kind("Second")
+        .ancestors(PathElement.of("First", "One"))
+        .newKey("Two");
+    Entity entityTwo = Entity.builder(keyTwo).set("description", "run two").build();
+    datastore.put(entityTwo);
+
+    // Build a query
+    Query<Entity> query = Query.entityQueryBuilder()
+        .kind("Second")
+        .filter(PropertyFilter.hasAncestor(keyOne))
+        .build();
+
+    QueryResults<Entity> result = null;
+    Entity first = null;
+
+    // Run the query
+    try {
+      // first = transaction.get(keyOne);
+      result = transaction.run(query);
+      transaction.commit();
+    } catch (DatastoreException ex) {
+      // handle exception
+    }
+    // [END run]
+
+    // For tests.
+    // TODO: Consider putting this block inside the try statement above so users can see the
+    // expected output without even having to run the snippet.
+    //
+    // If this test starts failing, ensure in the Cloud Console that all entities of kinds "First"
+    // and "Second" have been deleted.
+    boolean consistent = result != null &&
+        result.next().equals(entityTwo) &&
+        !result.hasNext();
+
+    // Clean up.
+    datastore.delete(keyOne);
+    datastore.delete(keyTwo);
+
+    return consistent;
+  }
 
   /**
    * Example of committing a transaction.

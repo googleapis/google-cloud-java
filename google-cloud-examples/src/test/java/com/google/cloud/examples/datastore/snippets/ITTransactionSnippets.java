@@ -60,6 +60,13 @@ public class ITTransactionSnippets {
   }
 
   @Test
+  public void run() {
+    Transaction transaction = datastore.newTransaction();
+    TransactionSnippets transactionSnippets = new TransactionSnippets(transaction);
+    assertTrue(transactionSnippets.run());
+  }
+
+  @Test
   public void testCommit() {
     Transaction transaction = datastore.newTransaction();
     TransactionSnippets transactionSnippets = new TransactionSnippets(transaction);
