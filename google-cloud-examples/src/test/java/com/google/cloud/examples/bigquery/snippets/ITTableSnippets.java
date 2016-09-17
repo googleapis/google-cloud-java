@@ -316,4 +316,13 @@ public class ITTableSnippets {
     String gcsFile = "gs://" + projectId + ".appspot.com/extractTest.csv";
     tableSnippets.extractSingle("CSV", gcsFile);
   }
+
+  @Test
+  public void testLoadList() {
+    log.info("testLoadList");
+    String projectId = bigquery.options().projectId();
+    String gcsFile1 = "gs://" + projectId + ".appspot.com/extractTestA_000000000000.csv";
+    String gcsFile2 = "gs://" + projectId + ".appspot.com/extractTestB_000000000000.csv";
+    tableSnippets.loadList(gcsFile1, gcsFile2);
+  }
 }

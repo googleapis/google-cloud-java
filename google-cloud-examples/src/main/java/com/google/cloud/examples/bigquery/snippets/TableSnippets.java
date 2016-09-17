@@ -26,6 +26,7 @@ import com.google.cloud.bigquery.BigQuery.TableField;
 import com.google.cloud.bigquery.BigQuery.TableDataListOption;
 import com.google.cloud.bigquery.BigQueryException;
 import com.google.cloud.bigquery.FieldValue;
+import com.google.cloud.bigquery.FormatOptions;
 import com.google.cloud.bigquery.InsertAllRequest.RowToInsert;
 import com.google.cloud.bigquery.InsertAllResponse;
 import com.google.cloud.bigquery.Job;
@@ -267,6 +268,36 @@ public class TableSnippets {
       // Handle interrupted wait.
     }
     // [END extractSingle]
+    return job;
+  }
+
+  /**
+   * Example extracting data to a list of Google Cloud Storage files.
+   */
+  // [TARGET load(String, List, JobOption...)]
+  // [VARIABLE "gs://bucket_name/PartitionA_000000000000.csv"]
+  // [VARIABLE "gs://bucket_name/PartitionB_000000000000.csv"]
+  public Job loadList(String gcsUrl1, String gcsUrl2) {
+    // [START loadList]
+    List<String> sourceUris = new ArrayList<>();
+    sourceUris.add(gcsUrl1);
+    sourceUris.add(gcsUrl2);
+
+    Job job = table.load(FormatOptions.csv(), sourceUris);
+
+    // Wait for the job to complete.
+    try {
+      Job completedJob = job.waitFor(WaitForOption.checkEvery(1, TimeUnit.SECONDS),
+          WaitForOption.timeout(60, TimeUnit.SECONDS));
+      if (completedJob != null && completedJob.status().error() == null) {
+        // Job completed successfully.
+      } else {
+        // Handle error case.
+      }
+    } catch(InterruptedException | TimeoutException e) {
+      // Handle interrupted wait.
+    }
+    // [END loadList]
     return job;
   }
 }
