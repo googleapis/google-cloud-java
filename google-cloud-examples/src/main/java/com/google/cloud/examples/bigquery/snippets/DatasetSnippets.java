@@ -23,13 +23,15 @@
 package com.google.cloud.examples.bigquery.snippets;
 
 import com.google.cloud.Page;
-import com.google.cloud.bigquery.BigQuery.TableListOption;
 import com.google.cloud.bigquery.Dataset;
 import com.google.cloud.bigquery.Dataset.Builder;
 import com.google.cloud.bigquery.Field;
+import com.google.cloud.bigquery.Field.Type;
 import com.google.cloud.bigquery.Schema;
 import com.google.cloud.bigquery.StandardTableDefinition;
 import com.google.cloud.bigquery.Table;
+import com.google.cloud.bigquery.TimePartitioning;
+
 import java.util.Iterator;
 
 /**
@@ -48,78 +50,81 @@ public class DatasetSnippets {
    */
   // [TARGET exists()]
   public boolean doesDatasetExist() {
-    // [START doesDatasetExist]
-    boolean exists = this.dataset.exists();
-    // [END doesDatasetExist]
+    // [START exists]
+    boolean exists = dataset.exists();
+    if (exists) {
+      // the dataset exists
+    } else {
+      // the dataset was not found
+    }
+    // [END exists]
     return exists;
   }
 
   /**
    * Example of reloading a dataset.
    */
-  // [TARGET reload(BigQuery.DatasetOption... options)]
+  // [TARGET reload(DatasetOption...)]
   public Dataset reloadDataset() {
-    // [START reloadDataset]
-    Dataset dataset = this.dataset.reload();
-    if (dataset != null) {
-      // The dataset was reloaded.
-    } else {
-      // The dataset was not found.
+    // [START reload]
+    Dataset latestDataset = dataset.reload();
+    if (latestDataset == null) {
+      // The dataset was not found
     }
-    // [END reloadDataset]
-    return dataset;
+    // [END reload]
+    return latestDataset;
   }
 
   /**
    * Example of updating a dataset.
    */
-  // [TARGET update(BigQuery.DatasetOption... options)]
+  // [TARGET update(DatasetOption...)]
   // [VARIABLE "my_friendly_name"]
   public Dataset updateDataset(String friendlyName) {
-    // [START updateDataset]
-    Builder builder = this.dataset.toBuilder();
+    // [START update]
+    Builder builder = dataset.toBuilder();
     builder.friendlyName(friendlyName);
     Dataset updatedDataset = builder.build().update();
-    // [END updateDataset]
+    // [END update]
     return updatedDataset;
   }
 
   /**
    * Example of deleting a dataset.
    */
-  // [TARGET delete()]
+  // [TARGET delete(DatasetDeleteOption...)]
   public boolean deleteDataset() {
-    // [START deleteDataset]
-    boolean deleted = this.dataset.delete();
+    // [START delete]
+    boolean deleted = dataset.delete();
     if (deleted) {
-      // The dataset was deleted.
+      // The dataset was deleted
     } else {
-      // The dataset was not found.
+      // The dataset was not found
     }
-    // [END deleteDataset]
+    // [END delete]
     return deleted;
   }
 
   /**
-   * Example of listing dataset tables.
+   * Example of listing tables in the dataset.
    */
-  // [TARGET list(BigQuery.TableListOption... options)]
-  public Page<Table> listDataset() {
-     // [START listDataset]
+  // [TARGET list(TableListOption...)]
+  public Page<Table> list() {
+     // [START list]
     Page<Table> tables = dataset.list();
     Iterator<Table> tableIterator = tables.iterateAll();
     while (tableIterator.hasNext()) {
       Table table = tableIterator.next();
       // do something with the table
     }
-    // [END listDataset]
+    // [END list]
    return tables;
   }
   
   /**
-   * Example of getting a dataset table.
+   * Example of getting a table in the dataset.
    */
-  // [TARGET get(String table, BigQuery.TableOption... options)]
+  // [TARGET get(String, TableOption...)]
   // [VARIABLE “my_table”]
   public Table getTable(String tableName) {
     // [START getTable]
@@ -127,38 +132,22 @@ public class DatasetSnippets {
     // [END getTable]
     return table;
   }
-
-  /**
-   * Example of creating an empty dataset table.
-   */
-  // [TARGET create(String table, TableDefinition definition, BigQuery.TableOption... options)]
-  // [VARIABLE “my_table”]
-  public Table createTable(String tableName) {
-    // [START createTable]
-    StandardTableDefinition definition = StandardTableDefinition.builder()
-        .build();
-    Table table = dataset.create(tableName, definition);
-    // [END createTable]
-    return table;
-  }
   
   /**
-   * Example of creating a dataset table with schema and time partitioning.
+   * Example of creating a table in the dataset with schema and time partitioning.
    */
-  // [TARGET create(String table, TableDefinition definition, BigQuery.TableOption... options)]
+  // [TARGET create(String, TableDefinition, TableOption...)]
   // [VARIABLE “my_table”]
   // [VARIABLE “my_field”]
   public Table createTable(String tableName, String fieldName) {
     // [START createTable]
-    Schema schema = Schema.builder()
-        .addField(Field.of(fieldName, Field.Type.string()))
-        .build();
+    Schema schema = Schema.of(Field.of(fieldName, Type.string()));
     StandardTableDefinition definition = StandardTableDefinition.builder()
         .schema(schema)
+        .timePartitioning(TimePartitioning.of(TimePartitioning.Type.DAY))
         .build();
     Table table = dataset.create(tableName, definition);
     // [END createTable]
     return table;
   }
-
 }
