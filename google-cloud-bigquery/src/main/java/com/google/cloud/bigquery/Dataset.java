@@ -19,6 +19,7 @@ package com.google.cloud.bigquery;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.cloud.Page;
+import com.google.cloud.bigquery.BigQuery.DatasetDeleteOption;
 import com.google.cloud.bigquery.BigQuery.DatasetOption;
 import com.google.cloud.bigquery.BigQuery.TableListOption;
 import com.google.cloud.bigquery.BigQuery.TableOption;
@@ -144,6 +145,16 @@ public class Dataset extends DatasetInfo {
   /**
    * Checks if this dataset exists.
    *
+   * <p>Example of checking whether a dataset exists.
+   * <pre> {@code
+   * boolean exists = dataset.exists();
+   * if (exists) {
+   *   // the dataset exists
+   * } else {
+   *   // the dataset was not found
+   * }
+   * }</pre>
+   *
    * @return {@code true} if this dataset exists, {@code false} otherwise
    * @throws BigQueryException upon failure
    */
@@ -154,6 +165,14 @@ public class Dataset extends DatasetInfo {
   /**
    * Fetches current dataset's latest information. Returns {@code null} if the dataset does not
    * exist.
+   *
+   * <p>Example of reloading a dataset.
+   * <pre> {@code
+   * Dataset latestDataset = dataset.reload();
+   * if (latestDataset == null) {
+   *   // The dataset was not found
+   * }
+   * }</pre>
    *
    * @param options dataset options
    * @return a {@code Dataset} object with latest information or {@code null} if not found
@@ -167,6 +186,14 @@ public class Dataset extends DatasetInfo {
    * Updates the dataset's information with this dataset's information. Dataset's user-defined id
    * cannot be changed. A new {@code Dataset} object is returned.
    *
+   * <p>Example of updating a dataset.
+   * <pre> {@code
+   * String friendlyName = "my_friendly_name";
+   * Builder builder = dataset.toBuilder();
+   * builder.friendlyName(friendlyName);
+   * Dataset updatedDataset = builder.build().update();
+   * }</pre>
+   *
    * @param options dataset options
    * @return a {@code Dataset} object with updated information
    * @throws BigQueryException upon failure
@@ -178,15 +205,35 @@ public class Dataset extends DatasetInfo {
   /**
    * Deletes this dataset.
    *
+   * <p>Example of deleting a dataset.
+   * <pre> {@code
+   * boolean deleted = dataset.delete();
+   * if (deleted) {
+   *   // The dataset was deleted
+   * } else {
+   *   // The dataset was not found
+   * }
+   * }</pre>
+   *
    * @return {@code true} if dataset was deleted, {@code false} if it was not found
    * @throws BigQueryException upon failure
    */
-  public boolean delete() {
-    return bigquery.delete(datasetId());
+  public boolean delete(DatasetDeleteOption... options) {
+    return bigquery.delete(datasetId(), options);
   }
 
   /**
    * Returns the paginated list of tables in this dataset.
+   *
+   * <p>Example of listing tables in the dataset.
+   * <pre> {@code
+   * Page<Table> tables = dataset.list();
+   * Iterator<Table> tableIterator = tables.iterateAll();
+   * while (tableIterator.hasNext()) {
+   *   Table table = tableIterator.next();
+   *   // do something with the table
+   * }
+   * }</pre>
    *
    * @param options options for listing tables
    * @throws BigQueryException upon failure
@@ -198,6 +245,12 @@ public class Dataset extends DatasetInfo {
   /**
    * Returns the requested table in this dataset or {@code null} if not found.
    *
+   * <p>Example of getting a table in the dataset.
+   * <pre> {@code
+   * String tableName = “my_table”;
+   * Table table = dataset.get(tableName);
+   * }</pre>
+   *
    * @param table user-defined id of the requested table
    * @param options table options
    * @throws BigQueryException upon failure
@@ -208,6 +261,18 @@ public class Dataset extends DatasetInfo {
 
   /**
    * Creates a new table in this dataset.
+   *
+   * <p>Example of creating a table in the dataset with schema and time partitioning.
+   * <pre> {@code
+   * String tableName = “my_table”;
+   * String fieldName = “my_field”;
+   * Schema schema = Schema.of(Field.of(fieldName, Type.string()));
+   * StandardTableDefinition definition = StandardTableDefinition.builder()
+   *     .schema(schema)
+   *     .timePartitioning(TimePartitioning.of(TimePartitioning.Type.DAY))
+   *     .build();
+   * Table table = dataset.create(tableName, definition);
+   * }</pre>
    *
    * @param table the table's user-defined id
    * @param definition the table's definition
