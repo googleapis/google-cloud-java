@@ -16,12 +16,14 @@
 
 package com.google.cloud.examples.bigquery.snippets;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.Job;
 import com.google.cloud.bigquery.JobConfiguration;
 import com.google.cloud.bigquery.JobInfo;
+import com.google.cloud.bigquery.JobStatus;
 import com.google.cloud.bigquery.QueryJobConfiguration;
 import com.google.cloud.bigquery.testing.RemoteBigQueryHelper;
 
@@ -38,6 +40,16 @@ public class ITJobSnippets {
   @BeforeClass
   public static void beforeClass() {
     bigquery = RemoteBigQueryHelper.create().options().service();
+  }
+
+  @Test
+  public void testExists() throws Exception {
+    JobConfiguration jobConfig = QueryJobConfiguration.builder(QUERY).useLegacySql(false).build();
+    JobInfo jobInfo = JobInfo.builder(jobConfig).build();
+    Job job = bigquery.create(jobInfo);
+    JobSnippets jobSnippets = new JobSnippets(job);
+    boolean result = jobSnippets.exists();
+    assertTrue(result);
   }
 
   @Test
@@ -67,6 +79,36 @@ public class ITJobSnippets {
     Job job = bigquery.create(jobInfo);
     JobSnippets jobSnippets = new JobSnippets(job);
     boolean result = jobSnippets.waitForWithOptions();
+    assertTrue(result);
+  }
+
+  @Test
+  public void testReload() throws Exception {
+    JobConfiguration jobConfig = QueryJobConfiguration.builder(QUERY).useLegacySql(false).build();
+    JobInfo jobInfo = JobInfo.builder(jobConfig).build();
+    Job job = bigquery.create(jobInfo);
+    JobSnippets jobSnippets = new JobSnippets(job);
+    JobStatus.State result = jobSnippets.reload();
+    assertEquals(JobStatus.State.DONE, result);
+  }
+
+  @Test
+  public void testReloadStatus() throws Exception {
+    JobConfiguration jobConfig = QueryJobConfiguration.builder(QUERY).useLegacySql(false).build();
+    JobInfo jobInfo = JobInfo.builder(jobConfig).build();
+    Job job = bigquery.create(jobInfo);
+    JobSnippets jobSnippets = new JobSnippets(job);
+    JobStatus.State result = jobSnippets.reloadStatus();
+    assertEquals(JobStatus.State.DONE, result);
+  }
+
+  @Test
+  public void testCancel() {
+    JobConfiguration jobConfig = QueryJobConfiguration.builder(QUERY).useLegacySql(false).build();
+    JobInfo jobInfo = JobInfo.builder(jobConfig).build();
+    Job job = bigquery.create(jobInfo);
+    JobSnippets jobSnippets = new JobSnippets(job);
+    boolean result = jobSnippets.cancel();
     assertTrue(result);
   }
 }

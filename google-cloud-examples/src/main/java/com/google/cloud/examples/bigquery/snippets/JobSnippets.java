@@ -23,17 +23,32 @@
 package com.google.cloud.examples.bigquery.snippets;
 
 import com.google.cloud.WaitForOption;
+import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.Job;
+import com.google.cloud.bigquery.JobStatus;
 
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
 public class JobSnippets {
 
-  private final Job job;
+  private Job job;
 
   public JobSnippets(Job job) {
     this.job = job;
+  }
+
+  /**
+   * Example of checking that a job exists.
+   */
+  // [TARGET exists()]
+  public boolean exists() throws InterruptedException {
+    // [START exists]
+    if (!job.exists()) {
+      // job doesn't exist
+    }
+    // [END exists]
+    return job.exists();
   }
 
   /**
@@ -77,7 +92,7 @@ public class JobSnippets {
   // [TARGET waitFor(WaitForOption...)]
   public boolean waitForWithOptions() throws InterruptedException {
     try {
-      // [START waitFor]
+      // [START waitForWithOptions]
       Job completedJob =
           job.waitFor(
               WaitForOption.checkEvery(1, TimeUnit.SECONDS),
@@ -89,10 +104,53 @@ public class JobSnippets {
       } else {
         // job completed successfully
       }
-      // [END waitFor]
+      // [END waitForWithOptions]
     } catch (TimeoutException e) {
       return true;
     }
     return true;
+  }
+
+  /**
+   * Example of reloading all fields until job status is DONE.
+   */
+  // [TARGET reload(JobOption...)]
+  public JobStatus.State reload() throws InterruptedException {
+    // [START reload]
+    while (job.status().state() != JobStatus.State.DONE) {
+      Thread.sleep(1000L);
+      job = job.reload();
+    }
+    // [END reload]
+    return job.status().state();
+  }
+
+  /**
+   * Example of reloading status field until job status is DONE.
+   */
+  // [TARGET reload(JobOption...)]
+  public JobStatus.State reloadStatus() throws InterruptedException {
+    // [START reloadStatus]
+    while (job.status().state() != JobStatus.State.DONE) {
+      Thread.sleep(1000L);
+      job = job.reload(BigQuery.JobOption.fields(BigQuery.JobField.STATUS));
+    }
+    // [END reloadStatus]
+    return job.status().state();
+  }
+
+  /**
+   * Example of cancelling a job.
+   */
+  // [TARGET cancel()]
+  public boolean cancel() {
+    // [START cancel]
+    if (job.cancel()) {
+      return true; // job successfully cancelled
+    } else {
+      // job not found
+    }
+    // [END cancel]
+    return false;
   }
 }
