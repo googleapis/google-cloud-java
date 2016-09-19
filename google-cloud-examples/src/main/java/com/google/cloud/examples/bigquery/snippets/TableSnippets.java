@@ -58,7 +58,7 @@ public class TableSnippets {
   public void checkExists() {
     // [START checkExists]
     if (!table.exists()) {
-      throw new RuntimeException("Table does not exist.");
+      throw new IllegalArgumentException("Table does not exist.");
     }
     // [END checkExists]
   }

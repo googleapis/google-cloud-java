@@ -20,10 +20,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
 import java.util.logging.Logger;
 
@@ -43,7 +40,6 @@ import com.google.cloud.bigquery.DatasetInfo;
 import com.google.cloud.bigquery.Field;
 import com.google.cloud.bigquery.Field.Type;
 import com.google.cloud.bigquery.FieldValue;
-import com.google.cloud.bigquery.InsertAllRequest.RowToInsert;
 import com.google.cloud.bigquery.InsertAllResponse;
 import com.google.cloud.bigquery.Schema;
 import com.google.cloud.bigquery.StandardTableDefinition;
@@ -78,7 +74,7 @@ public class ITTableSnippets {
   private static Table doomedTable;
   private static TableSnippets doomedTableSnippets;
 
-  private static int nextTableNumber = 0;
+  private static int nextTableNumber;
 
   @BeforeClass
   public static void beforeClass() {
@@ -169,7 +165,7 @@ public class ITTableSnippets {
     InsertAllResponse response = tableSnippets.insertWithParams("row1", "row2");
     assertTrue(response.hasErrors());
     List<List<FieldValue>> rows = ImmutableList.copyOf(tableSnippets.list().values());
-    while (rows.size() == 0) {
+    while (rows.isEmpty()) {
       Thread.sleep(500);
       rows = ImmutableList.copyOf(tableSnippets.list().values());
     }
@@ -191,7 +187,7 @@ public class ITTableSnippets {
     InsertAllResponse response = tableSnippets.insert("row1", "row2");
     assertFalse(response.hasErrors());
     rows = ImmutableList.copyOf(tableSnippets.list().values());
-    while (rows.size() == 0) {
+    while (rows.isEmpty()) {
       Thread.sleep(500);
       rows = ImmutableList.copyOf(tableSnippets.list().values());
     }
@@ -201,103 +197,6 @@ public class ITTableSnippets {
   @Test
   public void testCopy() {
     tableSnippets.copy(COPY_DATASET_NAME, BASE_TABLE_NAME);
-  }
-
-  private static class Value {
-    final String stringField;
-    final boolean booleanField;
-
-    Value(String stringField, boolean booleanField) {
-      this.stringField = stringField;
-      this.booleanField = booleanField;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-      if (obj instanceof Value) {
-        Value o = (Value) obj;
-        return Objects.equal(stringField, o.stringField) && booleanField == o.booleanField;
-      }
-      return false;
-    }
-
-    @Override
-    public int hashCode() {
-      return Objects.hashCode(stringField, booleanField);
-    }
-
-    @Override
-    public String toString() {
-      return "<Value stringField: " + stringField + " booleanField: " + booleanField + ">";
-    }
-  }
-
-  /**
-   * Inserts some data into the test table.
-   */
-  private void insertTestRows() {
-    String rowId1 = "row1";
-    String rowId2 = "row2";
-    List<RowToInsert> rows = new ArrayList<>();
-    Map<String, Object> row1 = new HashMap<>();
-    row1.put("stringField", ROW1.stringField);
-    row1.put("booleanField", ROW1.booleanField);
-    Map<String, Object> row2 = new HashMap<>();
-    row2.put("stringField", ROW2.stringField);
-    row2.put("booleanField", ROW2.booleanField);
-    rows.add(RowToInsert.of(rowId1, row1));
-    rows.add(RowToInsert.of(rowId2, row2));
-    InsertAllResponse response = table.insert(rows);
-    while (response.hasErrors()) {
-      log.info("Error inserting rows.  Trying again...");
-      response = table.insert(rows);
-    }
-  }
-
-  /**
-   * Verifies that the given table has the rows inserted by InsertTestRows().
-   *
-   * @param checkTable The table to query.
-   */
-  private void verifyTestRows(Table checkTable) {
-    List<List<FieldValue>> rows = waitForTableRows(checkTable, 2);
-    // Verify that the table data matches what it's supposed to.
-    Set<Value> values =
-        FluentIterable.from(rows).transform(new Function<List<FieldValue>, Value>() {
-          @Override
-          public Value apply(List<FieldValue> row) {
-            return new Value(row.get(0).stringValue(), row.get(1).booleanValue());
-          }
-        }).toSet();
-    assertEquals(ImmutableSet.of(ROW2, ROW1), values);
-  }
-
-  /**
-   * Waits for a specified number of rows to appear in the given table. This is used by
-   * verifyTestRows to wait for data to appear before verifying.
-   *
-   * @param checkTable
-   * @param numRows
-   * @return The rows from the table.
-   */
-  private List<List<FieldValue>> waitForTableRows(Table checkTable, int numRows) {
-    // Wait for the data to appear.
-    Page<List<FieldValue>> page = checkTable.list(TableDataListOption.pageSize(100));
-    List<List<FieldValue>> rows = ImmutableList.copyOf(page.values());
-    int numSleeps = 0;
-    while (rows.size() != numRows) {
-      assertTrue(numSleeps < 10);
-      log.info("Sleeping and waiting for " + numRows + " test rows to appear (currently "
-          + rows.size() + ")...");
-      try {
-        ++numSleeps;
-        Thread.sleep(5000);
-      } catch (InterruptedException e) {
-      }
-      page = checkTable.list(TableDataListOption.pageSize(100));
-      rows = ImmutableList.copyOf(page.values());
-    }
-    return rows;
   }
 
   @Test
@@ -347,5 +246,80 @@ public class ITTableSnippets {
     tableSnippets.extractSingle("CSV", gcsFile);
 
     tableSnippets.loadSingle(gcsFile);
+  }
+
+  private static class Value {
+    final String stringField;
+    final boolean booleanField;
+
+    Value(String stringField, boolean booleanField) {
+      this.stringField = stringField;
+      this.booleanField = booleanField;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+      if (obj instanceof Value) {
+        Value o = (Value) obj;
+        return Objects.equal(stringField, o.stringField) && booleanField == o.booleanField;
+      }
+      return false;
+    }
+
+    @Override
+    public int hashCode() {
+      return Objects.hashCode(stringField, booleanField);
+    }
+
+    @Override
+    public String toString() {
+      return "<Value stringField: " + stringField + " booleanField: " + booleanField + ">";
+    }
+  }
+
+  /**
+   * Verifies that the given table has the rows inserted by InsertTestRows().
+   *
+   * @param checkTable The table to query.
+   */
+  private void verifyTestRows(Table checkTable) {
+    List<List<FieldValue>> rows = waitForTableRows(checkTable, 2);
+    // Verify that the table data matches what it's supposed to.
+    Set<Value> values =
+        FluentIterable.from(rows).transform(new Function<List<FieldValue>, Value>() {
+          @Override
+          public Value apply(List<FieldValue> row) {
+            return new Value(row.get(0).stringValue(), row.get(1).booleanValue());
+          }
+        }).toSet();
+    assertEquals(ImmutableSet.of(ROW2, ROW1), values);
+  }
+
+  /**
+   * Waits for a specified number of rows to appear in the given table. This is used by
+   * verifyTestRows to wait for data to appear before verifying.
+   *
+   * @param checkTable
+   * @param numRows
+   * @return The rows from the table.
+   */
+  private List<List<FieldValue>> waitForTableRows(Table checkTable, int numRows) {
+    // Wait for the data to appear.
+    Page<List<FieldValue>> page = checkTable.list(TableDataListOption.pageSize(100));
+    List<List<FieldValue>> rows = ImmutableList.copyOf(page.values());
+    int numSleeps = 0;
+    while (rows.size() != numRows) {
+      assertTrue(numSleeps < 10);
+      log.info("Sleeping and waiting for " + numRows + " test rows to appear (currently "
+          + rows.size() + ")...");
+      try {
+        ++numSleeps;
+        Thread.sleep(5000);
+      } catch (InterruptedException e) {
+      }
+      page = checkTable.list(TableDataListOption.pageSize(100));
+      rows = ImmutableList.copyOf(page.values());
+    }
+    return rows;
   }
 }
