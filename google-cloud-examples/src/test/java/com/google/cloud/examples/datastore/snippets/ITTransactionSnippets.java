@@ -18,6 +18,7 @@ package com.google.cloud.examples.datastore.snippets;
 
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
 
 import com.google.cloud.datastore.Datastore;
 import com.google.cloud.datastore.DatastoreOptions;
@@ -35,6 +36,34 @@ public class ITTransactionSnippets {
   @BeforeClass
   public static void beforeClass() {
     datastore = DatastoreOptions.defaultInstance().service();
+  }
+
+  @Test
+  public void testGet() {
+    Transaction transaction = datastore.newTransaction();
+    TransactionSnippets transactionSnippets = new TransactionSnippets(transaction);
+    assertTrue(transactionSnippets.get());
+  }
+
+  @Test
+  public void testGetMultiple() {
+    Transaction transaction = datastore.newTransaction();
+    TransactionSnippets transactionSnippets = new TransactionSnippets(transaction);
+    assertTrue(transactionSnippets.getMultiple());
+  }
+
+  @Test
+  public void fetch() {
+    Transaction transaction = datastore.newTransaction();
+    TransactionSnippets transactionSnippets = new TransactionSnippets(transaction);
+    assertTrue(transactionSnippets.fetch());
+  }
+
+  @Test
+  public void run() {
+    Transaction transaction = datastore.newTransaction();
+    TransactionSnippets transactionSnippets = new TransactionSnippets(transaction);
+    assertTrue(transactionSnippets.run());
   }
 
   @Test
