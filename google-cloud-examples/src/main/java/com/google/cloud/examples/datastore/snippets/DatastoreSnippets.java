@@ -33,10 +33,9 @@ import com.google.cloud.datastore.KeyFactory;
 import com.google.cloud.datastore.Query;
 import com.google.cloud.datastore.QueryResults;
 import com.google.cloud.datastore.StructuredQuery;
-import com.google.cloud.datastore.StructuredQuery.Filter;
 import com.google.cloud.datastore.StructuredQuery.PropertyFilter;
 import com.google.common.collect.Lists;
-import com.google.datastore.v1.PropertyFilter.Operator;
+
 import java.util.Iterator;
 import java.util.List;
 
@@ -54,19 +53,19 @@ public class DatastoreSnippets {
   /**
    * Example of running in a transaction.
    */
-  // [TARGET runInTransaction(TransactionCallable<T> callable)]
+  // [TARGET runInTransaction(TransactionCallable)]
   // [VARIABLE "my_callable_result"]
   public String runInTransaction(final String callableResult) {
     // [START runInTransaction]
     TransactionCallable<String> callable = new TransactionCallable<String>() {
-      @Override
       public String run(DatastoreReaderWriter readerWriter) {
+        // use readerWriter to run in transaction
         return callableResult;
       }
     };
     String result = datastore.runInTransaction(callable);
-    return result;
     // [END runInTransaction]
+    return result;
   }
 
   /**
@@ -77,25 +76,25 @@ public class DatastoreSnippets {
   // [VARIABLE "my_key_name_2"]
   public Batch newBatch(String keyName1, String keyName2) {
     // [START newBatch]
-    Key key1 = datastore.newKeyFactory().kind("MyClass").newKey(keyName1);
-    Key key2 = datastore.newKeyFactory().kind("MyClass").newKey(keyName2);
+    Key key1 = datastore.newKeyFactory().kind("MyKind").newKey(keyName1);
+    Key key2 = datastore.newKeyFactory().kind("MyKind").newKey(keyName2);
     Batch batch = datastore.newBatch();
     Entity entity1 = Entity.builder(key1).set("name", "John").build();
     Entity entity2 = Entity.builder(key2).set("title", "title").build();
     batch.add(entity1);
     batch.add(entity2);
     batch.submit();
-    return batch;
     // [END newBatch]
+    return batch;
   }
 
   /**
-   * Example of allocating an id
+   * Example of allocating an id.
    */
-  // [TARGET allocateId(IncompleteKey key)]
+  // [TARGET allocateId(IncompleteKey)]
   public Key allocateIdSingle() {
     // [START allocateIdSingle]
-    KeyFactory keyFactory = datastore.newKeyFactory().kind("MyClass");
+    KeyFactory keyFactory = datastore.newKeyFactory().kind("MyKind");
     IncompleteKey incompleteKey = keyFactory.newKey();
 
     // let cloud datastore automatically assign an id
@@ -105,12 +104,12 @@ public class DatastoreSnippets {
   }
 
   /**
-   * Example of allocating multiple ids in a single batch
+   * Example of allocating multiple ids in a single batch.
    */
-  // [TARGET allocateId(IncompleteKey... keys)]
+  // [TARGET allocateId(IncompleteKey...)]
   public List<Key> batchAllocateId() {
     // [START batchAllocateId]
-    KeyFactory keyFactory = datastore.newKeyFactory().kind("MyClass");
+    KeyFactory keyFactory = datastore.newKeyFactory().kind("MyKind");
     IncompleteKey incompleteKey1 = keyFactory.newKey();
     IncompleteKey incompleteKey2 = keyFactory.newKey();
 
@@ -121,18 +120,19 @@ public class DatastoreSnippets {
   }
 
   /**
-   * Example of updating multiple entities
+   * Example of updating multiple entities.
    */
-  // [TARGET update(Entity... entities)]
-  // [VARIABLE "my_key_name"]
+  // [TARGET update(Entity...)]
+  // [VARIABLE "my_key_name_1"]
+  // [VARIABLE "my_key_name_2"]
   public void batchUpdateEntities(String keyName1, String keyName2) {
     // [START batchUpdateEntities]
-    Key key1 = datastore.newKeyFactory().kind("MyClass").newKey(keyName1);
+    Key key1 = datastore.newKeyFactory().kind("MyKind").newKey(keyName1);
     Entity.Builder entityBuilder1 = Entity.builder(key1);
     entityBuilder1.set("propertyName", "updatedValue1");
     Entity entity1 = entityBuilder1.build();
 
-    Key key2 = datastore.newKeyFactory().kind("MyClass").newKey(keyName2);
+    Key key2 = datastore.newKeyFactory().kind("MyKind").newKey(keyName2);
     Entity.Builder entityBuilder2 = Entity.builder(key2);
     entityBuilder2.set("propertyName", "updatedValue2");
     Entity entity2 = entityBuilder2.build();
@@ -142,13 +142,13 @@ public class DatastoreSnippets {
   }
 
   /**
-   * Example of putting a single entity
+   * Example of putting a single entity.
    */
-  // [TARGET put(FullEntity<?> entity)]
+  // [TARGET put(FullEntity)]
   // [VARIABLE "my_key_name"]
   public void putSingleEntity(String keyName) {
     // [START putSingleEntity]
-    Key key = datastore.newKeyFactory().kind("MyClass").newKey(keyName);
+    Key key = datastore.newKeyFactory().kind("MyKind").newKey(keyName);
     Entity.Builder entityBuilder = Entity.builder(key);
     entityBuilder.set("propertyName", "value");
     Entity entity = entityBuilder.build();
@@ -157,19 +157,19 @@ public class DatastoreSnippets {
   }
 
   /**
-   * Example of putting multiple entities
+   * Example of putting multiple entities.
    */
-  // [TARGET put(FullEntity<?>... entity)]
+  // [TARGET put(FullEntity...)]
   // [VARIABLE "my_key_name1"]
   // [VARIABLE "my_key_name2"]
   public void batchPutEntities(String keyName1, String keyName2) {
     // [START batchPutEntities]
-    Key key1 = datastore.newKeyFactory().kind("MyClass").newKey(keyName1);
+    Key key1 = datastore.newKeyFactory().kind("MyKind").newKey(keyName1);
     Entity.Builder entityBuilder1 = Entity.builder(key1);
     entityBuilder1.set("propertyName", "value1");
     Entity entity1 = entityBuilder1.build();
 
-    Key key2 = datastore.newKeyFactory().kind("MyClass").newKey(keyName2);
+    Key key2 = datastore.newKeyFactory().kind("MyKind").newKey(keyName2);
     Entity.Builder entityBuilder2 = Entity.builder(key2);
     entityBuilder2.set("propertyName", "value2");
     Entity entity2 = entityBuilder2.build();
@@ -179,21 +179,21 @@ public class DatastoreSnippets {
   }
 
   /**
-   * Example of deleting multiplie entities
+   * Example of deleting multiple entities.
    */
-  // [TARGET delete(Key... keys)]
+  // [TARGET delete(Key...)]
   // [VARIABLE "my_key_name1"]
   // [VARIABLE "my_key_name2"]
   public void batchDeleteEntities(String keyName1, String keyName2) {
     // [START batchDeleteEntities]
-    Key key1 = datastore.newKeyFactory().kind("MyClass").newKey(keyName1);
-    Key key2 = datastore.newKeyFactory().kind("MyClass").newKey(keyName2);
+    Key key1 = datastore.newKeyFactory().kind("MyKind").newKey(keyName1);
+    Key key2 = datastore.newKeyFactory().kind("MyKind").newKey(keyName2);
     datastore.delete(key1, key2);
     // [END batchDeleteEntities]
   }
 
   /**
-   * Example of creating a KeyFactory.
+   * Example of creating a {@code KeyFactory}.
    */
   // [TARGET newKeyFactory()]
   public KeyFactory createKeyFactory() {
@@ -204,13 +204,13 @@ public class DatastoreSnippets {
   }
 
   /**
-   * Example of getting an Entity.
+   * Example of getting an entity.
    */
-  // [TARGET get(Key key, ReadOption... options)]
+  // [TARGET get(Key, ReadOption...)]
   // [VARIABLE "my_key_name"]
   public Entity getEntityWithKey(String keyName) {
     // [START getEntityWithKey]
-    Key key = datastore.newKeyFactory().kind("MyClass").newKey(keyName);
+    Key key = datastore.newKeyFactory().kind("MyKind").newKey(keyName);
     Entity entity = datastore.get(key);
     // Do something with the entity
     // [END getEntityWithKey]
@@ -218,19 +218,18 @@ public class DatastoreSnippets {
   }
 
   /**
-   * Example of getting multiple Entity objects.
+   * Example of getting multiple entity objects.
    */
-  // [TARGET get(Iterable<Key> key, ReadOption... options)]
+  // [TARGET get(Iterable, ReadOption...)]
   // [VARIABLE "my_first_key_name"]
   // [VARIABLE "my_second_key_name"]
   public List<Entity> getEntitiesWithKeys(String firstKeyName, String secondKeyName) {
+    // TODO change so that it's not necessary to hold the entities in a list for integration testing
     // [START getEntitiesWithKeys]
-    KeyFactory keyFactory = datastore.newKeyFactory().kind("MyClass");
+    KeyFactory keyFactory = datastore.newKeyFactory().kind("MyKind");
     Key firstKey = keyFactory.newKey(firstKeyName);
     Key secondKey = keyFactory.newKey(secondKeyName);
     Iterator<Entity> entitiesIterator = datastore.get(Lists.newArrayList(firstKey, secondKey));
-    // TODO make a change so that it's not necessary to hold the entities in a list for
-    // integration testing
     List<Entity> entities = Lists.newArrayList();
     while (entitiesIterator.hasNext()) {
       Entity entity = entitiesIterator.next();
@@ -244,12 +243,12 @@ public class DatastoreSnippets {
   /**
    * Example of fetching a list of Entity objects.
    */
-  // [TARGET fetch(Iterable<Key> key, ReadOption... options)]
+  // [TARGET fetch(Iterable, ReadOption...)]
   // [VARIABLE "my_first_key_name"]
   // [VARIABLE "my_second_key_name"]
   public List<Entity> fetchEntitiesWithKeys(String firstKeyName, String secondKeyName) {
     // [START fetchEntitiesWithKeys]
-    KeyFactory keyFactory = datastore.newKeyFactory().kind("MyClass");
+    KeyFactory keyFactory = datastore.newKeyFactory().kind("MyKind");
     Key firstKey = keyFactory.newKey(firstKeyName);
     Key secondKey = keyFactory.newKey(secondKeyName);
     List<Entity> entities = datastore.fetch(Lists.newArrayList(firstKey, secondKey));
@@ -261,19 +260,17 @@ public class DatastoreSnippets {
   }
 
   /**
-   * Example of running a query to find all keys of one kind.
+   * Example of running a query to find all entities of one kind.
    */
-  // [TARGET run(Query<T> query, ReadOption... options)]
+  // [TARGET run(Query, ReadOption...)]
   // [VARIABLE "my_kind"]
   public List<Entity> runQuery(String kind) {
+    // TODO change so that it's not necessary to hold the entities in a list for integration testing
     // [START runQuery]
-    StructuredQuery<Entity> query =
-        Query.entityQueryBuilder()
-            .kind(kind)
-            .build();
+    StructuredQuery<Entity> query = Query.entityQueryBuilder()
+        .kind(kind)
+        .build();
     QueryResults<Entity> results = datastore.run(query);
-    // TODO make a change so that it's not necessary to hold the entities in a list for
-    // integration testing
     List<Entity> entities = Lists.newArrayList();
     while (results.hasNext()) {
       Entity result = results.next();
@@ -285,22 +282,20 @@ public class DatastoreSnippets {
   }
 
   /**
-   * Example of running a query to find all keys with a matching property value.
+   * Example of running a query to find all entities with a matching property value.
    */
-  // [TARGET run(Query<T> query, ReadOption... options)]
+  // [TARGET run(Query, ReadOption...)]
   // [VARIABLE "my_kind"]
   // [VARIABLE "my_property"]
   // [VARIABLE "my_value"]
   public List<Entity> runQueryOnProperty(String kind, String property, String value) {
+    // TODO change so that it's not necessary to hold the entities in a list for integration testing
     // [START runQueryOnProperty]
-    StructuredQuery<Entity> query =
-        Query.entityQueryBuilder()
-            .kind(kind)
-            .filter(PropertyFilter.eq(property, value))
-            .build();
+    StructuredQuery<Entity> query = Query.entityQueryBuilder()
+        .kind(kind)
+        .filter(PropertyFilter.eq(property, value))
+        .build();
     QueryResults<Entity> results = datastore.run(query);
-    // TODO make a change so that it's not necessary to hold the entities in a list for
-    // integration testing
     List<Entity> entities = Lists.newArrayList();
     while (results.hasNext()) {
       Entity result = results.next();

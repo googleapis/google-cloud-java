@@ -26,13 +26,7 @@ import com.google.cloud.datastore.DatastoreOptions;
 import com.google.cloud.datastore.Entity;
 import com.google.cloud.datastore.Key;
 import com.google.cloud.datastore.KeyFactory;
-import com.google.cloud.examples.datastore.snippets.DatastoreSnippets;
 import com.google.common.collect.Lists;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 import org.junit.After;
 import org.junit.BeforeClass;
@@ -41,12 +35,17 @@ import org.junit.Test;
 import org.junit.rules.ExpectedException;
 import org.junit.rules.Timeout;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 public class ITDatastoreSnippets {
 
   private static Datastore datastore;
   private static DatastoreSnippets datastoreSnippets;
 
-  private List<Key> registeredKeys = new ArrayList<>();
+  private final List<Key> registeredKeys = new ArrayList<>();
 
   @Rule
   public ExpectedException thrown = ExpectedException.none();
@@ -62,11 +61,11 @@ public class ITDatastoreSnippets {
 
   @After
   public void afterTest() {
-    datastore.delete(registeredKeys.toArray(new Key[0]));
+    datastore.delete(registeredKeys.toArray(new Key[registeredKeys.size()]));
   }
 
   private String registerKey(String keyName) {
-    return registerKey(keyName, "MyClass");
+    return registerKey(keyName, "MyKind");
   }
 
   private String registerKey(String keyName, String kind) {
