@@ -16,14 +16,20 @@
 
 package com.google.cloud.examples.bigquery.snippets;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
+
 import com.google.cloud.Page;
 import com.google.cloud.WaitForOption;
 import com.google.cloud.bigquery.BigQuery.JobField;
 import com.google.cloud.bigquery.BigQuery.JobOption;
-import com.google.cloud.bigquery.BigQuery;
-import com.google.cloud.bigquery.BigQuery.TableOption;
-import com.google.cloud.bigquery.BigQuery.TableField;
 import com.google.cloud.bigquery.BigQuery.TableDataListOption;
+import com.google.cloud.bigquery.BigQuery.TableField;
+import com.google.cloud.bigquery.BigQuery.TableOption;
 import com.google.cloud.bigquery.BigQueryException;
 import com.google.cloud.bigquery.FieldValue;
 import com.google.cloud.bigquery.FormatOptions;
@@ -32,13 +38,6 @@ import com.google.cloud.bigquery.InsertAllResponse;
 import com.google.cloud.bigquery.Job;
 import com.google.cloud.bigquery.Table;
 import com.google.cloud.bigquery.TableId;
-import com.google.cloud.bigquery.spi.BigQueryRpc;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.TimeoutException;
 
 /*
  * EDITING INSTRUCTIONS
