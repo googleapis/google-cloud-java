@@ -139,10 +139,13 @@ public class Table extends TableInfo {
   /**
    * Checks if this table exists.
    *
-   * <p>Example of ensuring that a table exists.
+   * <p>Example of checking if the table exists.
    * <pre> {@code
-   * if (!table.exists()) {
-   *   throw new RuntimeException("Table does not exist.");
+   * boolean exists = table.exists();
+   * if (exists) {
+   *   // the table exists
+   * } else {
+   *   // the table was not found
    * }
    * }</pre>
    *
@@ -156,11 +159,15 @@ public class Table extends TableInfo {
   /**
    * Fetches current table's latest information. Returns {@code null} if the table does not exist.
    *
-   * <p>Example of fetching a table's latest information, specifying particular table field options.
+   * <p>Example of fetching the table's latest information, specifying particular table fields to
+   * get.
    * <pre> {@code
    * TableField field1 = TableField.LAST_MODIFIED_TIME;
    * TableField field2 = TableField.NUM_ROWS;
-   * Table reloaded = table.reload(TableOption.fields(field1, field2));
+   * Table latestTable = table.reload(TableOption.fields(field1, field2));
+   * if (latestTable == null) {
+   *   // the table was not found
+   * }
    * }</pre>
    *
    * @param options table options
@@ -175,11 +182,9 @@ public class Table extends TableInfo {
    * Updates the table's information with this table's information. Dataset's and table's
    * user-defined ids cannot be changed. A new {@code Table} object is returned.
    *
-   * <p>Example of updating a table's information, specifying particular table field options.
+   * <p>Example of updating the table's information.
    * <pre> {@code
-   * TableField field1 = TableField.LAST_MODIFIED_TIME;
-   * TableField field2 = TableField.NUM_ROWS;
-   * Table updated = table.update(TableOption.fields(field1, field2));
+   * Table updatedTable = table.toBuilder().description("new description").build().update();
    * }</pre>
    *
    * @param options dataset options
@@ -193,9 +198,14 @@ public class Table extends TableInfo {
   /**
    * Deletes this table.
    *
-   * <p>Example of deleting a table.
+   * <p>Example of deleting the table.
    * <pre> {@code
-   * table.delete();
+   * boolean deleted = table.delete();
+   * if (deleted) {
+   *   // the table was deleted
+   * } else {
+   *   // the table was not found
+   * }
    * }</pre>
    *
    * @return {@code true} if table was deleted, {@code false} if it was not found
@@ -208,7 +218,7 @@ public class Table extends TableInfo {
   /**
    * Insert rows into the table.
    *
-   * <p>Example of inserting rows into a table.
+   * <p>Example of inserting rows into the table.
    * <pre> {@code
    * String rowId1 = "rowId1";
    * String rowId2 = "rowId2";
@@ -236,7 +246,7 @@ public class Table extends TableInfo {
   /**
    * Insert rows into the table.
    *
-   * <p>Example of inserting rows into a table which ignores invalid rows.
+   * <p>Example of inserting rows into the table, ignoring invalid rows.
    * <pre> {@code
    * String rowId1 = "rowId1";
    * String rowId2 = "rowId2";
@@ -273,10 +283,14 @@ public class Table extends TableInfo {
   /**
    * Returns the paginated list rows in this table.
    *
-   * <p>Example of getting a paginated list of rows in a table.
+   * <p>Example of listing rows in the table.
    * <pre> {@code
    * Page<List<FieldValue>> page = table.list(TableDataListOption.pageSize(100));
-   * // do something with page
+   * Iterator<List<FieldValue>> rowIterator = page.iterateAll();
+   * while (rowIterator.hasNext()) {
+   *   List<FieldValue> row = rowIterator.next();
+   *   // do something with the row
+   * }
    * }</pre>
    *
    * @param options table data list options
@@ -291,25 +305,23 @@ public class Table extends TableInfo {
    * Starts a BigQuery Job to copy the current table to the provided destination table. Returns the
    * started {@link Job} object.
    *
-   * <p>Example of copying a table to a destination table and dataset referenced by name.
+   * <p>Example of copying the table to a destination table.
    * <pre> {@code
    * String datasetName = "my_dataset";
    * String tableName = "my_destination_table";
    * Job job = table.copy(datasetName, tableName);
-   *
    * // Wait for the job to complete.
    * try {
    *   Job completedJob = job.waitFor(WaitForOption.checkEvery(1, TimeUnit.SECONDS),
-   *       WaitForOption.timeout(60, TimeUnit.SECONDS));
+   *       WaitForOption.timeout(3, TimeUnit.MINUTES));
    *   if (completedJob != null && completedJob.status().error() == null) {
-   *     // Job completed successfully.
+   *     // Job completed successfully
    *   } else {
-   *     // Handle error case.
+   *     // Handle error case
    *   }
    * } catch (InterruptedException | TimeoutException e) {
-   *   // Handle interrupted wait.
+   *   // Handle interrupted wait
    * }
-   *
    * }</pre>
    *
    * @param destinationDataset the user-defined id of the destination dataset
@@ -326,26 +338,24 @@ public class Table extends TableInfo {
    * Starts a BigQuery Job to copy the current table to the provided destination table. Returns the
    * started {@link Job} object.
    *
-   * <p>Example copying a table to a destination table referenced by table ID.
+   * <p>Example copying the table to a destination table.
    * <pre> {@code
    * String dataset = "my_dataset";
-   * String tableName = "copy_destination";
+   * String tableName = "my_destination_table";
    * TableId destinationId = TableId.of(dataset, tableName);
    * JobOption options = JobOption.fields(JobField.STATUS, JobField.USER_EMAIL);
-   *
    * Job job = table.copy(destinationId, options);
-   *
    * // Wait for the job to complete.
    * try {
    *   Job completedJob = job.waitFor(WaitForOption.checkEvery(1, TimeUnit.SECONDS),
-   *       WaitForOption.timeout(60, TimeUnit.SECONDS));
+   *       WaitForOption.timeout(3, TimeUnit.MINUTES));
    *   if (completedJob != null && completedJob.status().error() == null) {
    *     // Job completed successfully.
    *   } else {
    *     // Handle error case.
    *   }
    * } catch (InterruptedException | TimeoutException e) {
-   *   // Handle interrupted wait.
+   *   // Handle interrupted wait
    * }
    * }</pre>
    *
@@ -366,20 +376,19 @@ public class Table extends TableInfo {
    * <p>Example extracting data to single Google Cloud Storage file.
    * <pre> {@code
    * String format = "CSV";
-   * String gcsUrl = "gs://myapp.appspot.com/filename.csv";
+   * String gcsUrl = "gs://my_bucket/filename.csv";
    * Job job = table.extract(format, gcsUrl);
-   *
-   * // Wait for the job to complete.
+   * // Wait for the job to complete
    * try {
    *   Job completedJob = job.waitFor(WaitForOption.checkEvery(1, TimeUnit.SECONDS),
-   *       WaitForOption.timeout(60, TimeUnit.SECONDS));
+   *       WaitForOption.timeout(3, TimeUnit.MINUTES));
    *   if (completedJob != null && completedJob.status().error() == null) {
-   *     // Job completed successfully.
+   *     // Job completed successfully
    *   } else {
-   *     // Handle error case.
+   *     // Handle error case
    *   }
    * } catch (InterruptedException | TimeoutException e) {
-   *   // Handle interrupted wait.
+   *   // Handle interrupted wait
    * }
    * }</pre>
    *
@@ -398,28 +407,26 @@ public class Table extends TableInfo {
    * Starts a BigQuery Job to extract the current table to the provided destination URIs. Returns
    * the started {@link Job} object.
    *
-   * <p>Example extracting data to a list of Google Cloud Storage files.
+   * <p>Example of partitioning data to a list of Google Cloud Storage files.
    * <pre> {@code
    * String format = "CSV";
-   * String gcsUrl1 = "gs://myapp.appspot.com/PartitionA_*.csv";
-   * String gcsUrl2 = "gs://myapp.appspot.com/PartitionB_*.csv";
+   * String gcsUrl1 = "gs://my_bucket/PartitionA_*.csv";
+   * String gcsUrl2 = "gs://my_bucket/PartitionB_*.csv";
    * List<String> destinationUris = new ArrayList<>();
    * destinationUris.add(gcsUrl1);
    * destinationUris.add(gcsUrl2);
-   *
    * Job job = table.extract(format, destinationUris);
-   *
-   * // Wait for the job to complete.
+   * // Wait for the job to complete
    * try {
    *   Job completedJob = job.waitFor(WaitForOption.checkEvery(1, TimeUnit.SECONDS),
-   *       WaitForOption.timeout(60, TimeUnit.SECONDS));
+   *       WaitForOption.timeout(3, TimeUnit.MINUTES));
    *   if (completedJob != null && completedJob.status().error() == null) {
-   *     // Job completed successfully.
+   *     // Job completed successfully
    *   } else {
-   *     // Handle error case.
+   *     // Handle error case
    *   }
    * } catch (InterruptedException | TimeoutException e) {
-   *   // Handle interrupted wait.
+   *   // Handle interrupted wait
    * }
    * }</pre>
    *
@@ -442,20 +449,19 @@ public class Table extends TableInfo {
    *
    * <p>Example loading data from a single Google Cloud Storage file.
    * <pre> {@code
-   * String sourceUri = "gs://myapp.appspot.com/filename.csv";
+   * String sourceUri = "gs://my_bucket/filename.csv";
    * Job job = table.load(FormatOptions.csv(), sourceUri);
-   *
-   * // Wait for the job to complete.
+   * // Wait for the job to complete
    * try {
    *   Job completedJob = job.waitFor(WaitForOption.checkEvery(1, TimeUnit.SECONDS),
-   *       WaitForOption.timeout(60, TimeUnit.SECONDS));
+   *       WaitForOption.timeout(3, TimeUnit.MINUTES));
    *   if (completedJob != null && completedJob.status().error() == null) {
-   *     // Job completed successfully.
+   *     // Job completed successfully
    *   } else {
-   *     // Handle error case.
+   *     // Handle error case
    *   }
    * } catch (InterruptedException | TimeoutException e) {
-   *   // Handle interrupted wait.
+   *   // Handle interrupted wait
    * }
    * }</pre>
    *
@@ -476,25 +482,23 @@ public class Table extends TableInfo {
    *
    * <p>Example loading data from a list of Google Cloud Storage files.
    * <pre> {@code
-   * String gcsUrl1 = "gs://myapp.appspot.com/PartitionA_000000000000.csv";
-   * String gcsUrl2 = "gs://myapp.appspot.com/PartitionB_000000000000.csv";
+   * String gcsUrl1 = "gs://my_bucket/filename1.csv";
+   * String gcsUrl2 = "gs://my_bucket/filename2.csv";
    * List<String> sourceUris = new ArrayList<>();
    * sourceUris.add(gcsUrl1);
    * sourceUris.add(gcsUrl2);
-   *
    * Job job = table.load(FormatOptions.csv(), sourceUris);
-   *
-   * // Wait for the job to complete.
+   * // Wait for the job to complete
    * try {
    *   Job completedJob = job.waitFor(WaitForOption.checkEvery(1, TimeUnit.SECONDS),
-   *       WaitForOption.timeout(60, TimeUnit.SECONDS));
+   *       WaitForOption.timeout(3, TimeUnit.MINUTES));
    *   if (completedJob != null && completedJob.status().error() == null) {
-   *     // Job completed successfully.
+   *     // Job completed successfully
    *   } else {
-   *     // Handle error case.
+   *     // Handle error case
    *   }
    * } catch (InterruptedException | TimeoutException e) {
-   *   // Handle interrupted wait.
+   *   // Handle interrupted wait
    * }
    * }</pre>
    *

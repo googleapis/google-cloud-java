@@ -18,98 +18,101 @@ package com.google.cloud.examples.bigquery.snippets;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
-
-import java.util.List;
-import java.util.Set;
-import java.util.logging.Logger;
-
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
 
 import com.google.cloud.Page;
 import com.google.cloud.bigquery.BigQuery;
-import com.google.cloud.bigquery.BigQuery.DatasetDeleteOption;
 import com.google.cloud.bigquery.BigQuery.TableDataListOption;
 import com.google.cloud.bigquery.BigQuery.TableField;
-import com.google.cloud.bigquery.BigQueryOptions;
 import com.google.cloud.bigquery.DatasetInfo;
 import com.google.cloud.bigquery.Field;
 import com.google.cloud.bigquery.Field.Type;
 import com.google.cloud.bigquery.FieldValue;
 import com.google.cloud.bigquery.InsertAllResponse;
+import com.google.cloud.bigquery.Job;
 import com.google.cloud.bigquery.Schema;
 import com.google.cloud.bigquery.StandardTableDefinition;
 import com.google.cloud.bigquery.Table;
 import com.google.cloud.bigquery.TableId;
 import com.google.cloud.bigquery.TableInfo;
+import com.google.cloud.bigquery.testing.RemoteBigQueryHelper;
+import com.google.cloud.storage.BucketInfo;
+import com.google.cloud.storage.Storage;
+import com.google.cloud.storage.testing.RemoteStorageHelper;
 import com.google.common.base.Function;
-import com.google.common.base.Objects;
 import com.google.common.collect.FluentIterable;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Rule;
+import org.junit.Test;
+import org.junit.rules.Timeout;
+
+import java.util.List;
+import java.util.Set;
 
 /**
  * Integration tests for {@link TableSnippets}.
  */
 public class ITTableSnippets {
+
   private static final String BASE_TABLE_NAME = "my_table";
-  private static final String DATASET_NAME = "my_dataset";
-  private static final String COPY_DATASET_NAME = "my_copy_dataset";
-  private static final Value ROW1 = new Value("value1", true);
-  private static final Value ROW2 = new Value("value2", false);
-  private static final Logger log = Logger.getLogger(ITTableSnippets.class.getName());
+  private static final String DATASET_NAME = RemoteBigQueryHelper.generateDatasetName();
+  private static final String COPY_DATASET_NAME = RemoteBigQueryHelper.generateDatasetName();
+  private static final String BUCKET_NAME = RemoteStorageHelper.generateBucketName();
+  private static final Schema SCHEMA =
+      Schema.of(Field.of("stringField", Type.string()), Field.of("booleanField", Type.bool()));
+  private static final List<?> ROW1 = ImmutableList.of("value1", true);
+  private static final List<?> ROW2 = ImmutableList.of("value2", false);
+  private static final String DOOMED_TABLE_NAME = "doomed_table";
+  private static final TableId DOOMED_TABLE_ID = TableId.of(DATASET_NAME, DOOMED_TABLE_NAME);
 
   private static BigQuery bigquery;
+  private static Storage storage;
+  private static int nextTableNumber;
+
   private Table table;
   private TableSnippets tableSnippets;
 
-  private static final String DOOMED_TABLE_NAME = "doomed_table";
-  private static final String DOOMED_DATASET_NAME = "doomed_dataset";
-  public static final TableId DOOMED_TABLE_ID = TableId.of(DOOMED_DATASET_NAME, DOOMED_TABLE_NAME);
-
-  private static Table doomedTable;
-  private static TableSnippets doomedTableSnippets;
-
-  private static int nextTableNumber;
+  @Rule
+  public Timeout globalTimeout = Timeout.seconds(300);
 
   @BeforeClass
   public static void beforeClass() {
-    bigquery = BigQueryOptions.defaultInstance().service();
+    bigquery = RemoteBigQueryHelper.create().options().service();
     bigquery.create(DatasetInfo.builder(DATASET_NAME).build());
     bigquery.create(DatasetInfo.builder(COPY_DATASET_NAME).build());
-    bigquery.create(DatasetInfo.builder(DOOMED_DATASET_NAME).build());
+    storage = RemoteStorageHelper.create().options().service();
+    storage.create(BucketInfo.of(BUCKET_NAME));
   }
 
   @Before
   public void before() {
     ++nextTableNumber;
     StandardTableDefinition.Builder builder = StandardTableDefinition.builder();
-    builder.schema(
-        Schema.of(Field.of("stringField", Type.string()), Field.of("booleanField", Type.bool())));
+    builder.schema(SCHEMA);
     table = bigquery.create(TableInfo.of(getTableId(), builder.build()));
     bigquery.create(TableInfo.of(getCopyTableId(), builder.build()));
     tableSnippets = new TableSnippets(table);
-
-    doomedTable = bigquery.create(TableInfo.of(DOOMED_TABLE_ID, builder.build()));
-    doomedTableSnippets = new TableSnippets(doomedTable);
   }
 
   @After
   public void after() {
     bigquery.delete(getTableId());
     bigquery.delete(getCopyTableId());
-    bigquery.delete(DOOMED_TABLE_ID);
   }
 
   @AfterClass
   public static void afterClass() {
-    bigquery.delete(DATASET_NAME, DatasetDeleteOption.deleteContents());
-    bigquery.delete(COPY_DATASET_NAME, DatasetDeleteOption.deleteContents());
-    bigquery.delete(DOOMED_DATASET_NAME, DatasetDeleteOption.deleteContents());
+    RemoteBigQueryHelper.forceDelete(bigquery, DATASET_NAME);
+    RemoteBigQueryHelper.forceDelete(bigquery, COPY_DATASET_NAME);
+    RemoteStorageHelper.forceDelete(storage, BUCKET_NAME);
   }
 
   private String getTableName() {
@@ -129,32 +132,34 @@ public class ITTableSnippets {
   }
 
   @Test
-  public void testCheckExists() {
-    log.info("testCheckExists");
-    tableSnippets.checkExists();
+  public void testExists() {
+    assertTrue(tableSnippets.exists());
   }
 
   @Test
   public void testReloadTableWithFields() {
-    log.info("testReloadTableWithFields");
-    tableSnippets.reloadTableWithFields(TableField.LAST_MODIFIED_TIME, TableField.NUM_ROWS);
+    Table latestTable =
+        tableSnippets.reloadTableWithFields(TableField.LAST_MODIFIED_TIME, TableField.NUM_ROWS);
+    assertNotNull(latestTable);
+    assertNotNull(latestTable.lastModifiedTime());
   }
 
   @Test
-  public void testUpdateTableWithFields() {
-    log.info("testUpdateTableWithFields");
-    tableSnippets.updateTableWithFields(TableField.LAST_MODIFIED_TIME, TableField.NUM_ROWS);
+  public void testUpdate() {
+    Table updatedTable = tableSnippets.update();
+    assertEquals("new description", updatedTable.description());
   }
 
   @Test
   public void testDelete() {
-    log.info("testDelete");
-    doomedTableSnippets.delete();
+    Table doomedTable =
+        bigquery.create(TableInfo.of(DOOMED_TABLE_ID, StandardTableDefinition.of(SCHEMA)));
+    TableSnippets doomedTableSnippets = new TableSnippets(doomedTable);
+    assertTrue(doomedTableSnippets.delete());
   }
 
   @Test
-  public void testInsert() {
-    log.info("testInsert");
+  public void testInsert() throws InterruptedException {
     InsertAllResponse response = tableSnippets.insert("row1", "row2");
     assertFalse(response.hasErrors());
     verifyTestRows(table);
@@ -169,11 +174,11 @@ public class ITTableSnippets {
       Thread.sleep(500);
       rows = ImmutableList.copyOf(tableSnippets.list().values());
     }
-    Set<Value> values =
-        FluentIterable.from(rows).transform(new Function<List<FieldValue>, Value>() {
+    Set<List<?>> values =
+        FluentIterable.from(rows).transform(new Function<List<FieldValue>, List<?>>() {
           @Override
-          public Value apply(List<FieldValue> row) {
-            return new Value(row.get(0).stringValue(), row.get(1).booleanValue());
+          public List<?> apply(List<FieldValue> row) {
+            return ImmutableList.of(row.get(0).stringValue(), row.get(1).booleanValue());
           }
         }).toSet();
     assertEquals(ImmutableSet.of(ROW2), values);
@@ -201,95 +206,44 @@ public class ITTableSnippets {
 
   @Test
   public void testCopyTableId() {
-    log.info("testCopyTableId");
-    tableSnippets.copyTableId(COPY_DATASET_NAME, getCopyTableName());
+    Job copyJob = tableSnippets.copyTableId(COPY_DATASET_NAME, getCopyTableName());
+    assertSuccessful(copyJob);
   }
 
   @Test
-  public void testExtractList() {
-    log.info("testExtractList");
-    String projectId = bigquery.options().projectId();
-    String gcsFile1 = "gs://" + projectId + ".appspot.com/extractTestA_*.csv";
-    String gcsFile2 = "gs://" + projectId + ".appspot.com/extractTestB_*.csv";
-    tableSnippets.extractList("CSV", gcsFile1, gcsFile2);
+  public void testExtractAndLoadList() {
+    String gcsFile1 = "gs://" + BUCKET_NAME + "/extractTestA_*.csv";
+    String gcsFile2 = "gs://" + BUCKET_NAME + "/extractTestB_*.csv";
+    Job extractJob = tableSnippets.extractList("CSV", gcsFile1, gcsFile2);
+    gcsFile1 = gcsFile1.replace("*", "000000000000");
+    gcsFile2 = gcsFile2.replace("*", "000000000000");
+    assertSuccessful(extractJob);
+    Job loadJob = tableSnippets.loadList(gcsFile1, gcsFile2);
+    assertSuccessful(loadJob);
   }
 
   @Test
-  public void testExtractSingle() {
-    log.info("testExtractSingle");
-    String projectId = bigquery.options().projectId();
-    String gcsFile = "gs://" + projectId + ".appspot.com/extractTest.csv";
-    tableSnippets.extractSingle("CSV", gcsFile);
-  }
-
-  @Test
-  public void testLoadList() {
-    log.info("testLoadList");
-    String projectId = bigquery.options().projectId();
-    String gcsFile1 = "gs://" + projectId + ".appspot.com/loadTest1.csv";
-    String gcsFile2 = "gs://" + projectId + ".appspot.com/loadTest2.csv";
-
-    // Before we can load, we should make sure those files exist.
-    tableSnippets.extractSingle("CSV", gcsFile1);
-    tableSnippets.extractSingle("CSV", gcsFile2);
-
-    tableSnippets.loadList(gcsFile1, gcsFile2);
-  }
-
-  @Test
-  public void testLoadSingle() {
-    log.info("testLoadSingle");
-    String projectId = bigquery.options().projectId();
-    String gcsFile = "gs://" + projectId + ".appspot.com/loadSingle.csv";
-
-    // Before we can load, we should make sure the file exists.
-    tableSnippets.extractSingle("CSV", gcsFile);
-
-    tableSnippets.loadSingle(gcsFile);
-  }
-
-  private static class Value {
-    final String stringField;
-    final boolean booleanField;
-
-    Value(String stringField, boolean booleanField) {
-      this.stringField = stringField;
-      this.booleanField = booleanField;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-      if (obj instanceof Value) {
-        Value o = (Value) obj;
-        return Objects.equal(stringField, o.stringField) && booleanField == o.booleanField;
-      }
-      return false;
-    }
-
-    @Override
-    public int hashCode() {
-      return Objects.hashCode(stringField, booleanField);
-    }
-
-    @Override
-    public String toString() {
-      return "<Value stringField: " + stringField + " booleanField: " + booleanField + ">";
-    }
+  public void testExtractAndLoadSingle() {
+    String gcsFile = "gs://" + BUCKET_NAME + "/extractTest.csv";
+    Job extractJob = tableSnippets.extractSingle("CSV", gcsFile);
+    assertSuccessful(extractJob);
+    Job loadJob = tableSnippets.loadSingle(gcsFile);
+    assertSuccessful(loadJob);
   }
 
   /**
    * Verifies that the given table has the rows inserted by InsertTestRows().
    *
-   * @param checkTable The table to query.
+   * @param checkTable the table to query
    */
-  private void verifyTestRows(Table checkTable) {
+  private void verifyTestRows(Table checkTable) throws InterruptedException {
     List<List<FieldValue>> rows = waitForTableRows(checkTable, 2);
     // Verify that the table data matches what it's supposed to.
-    Set<Value> values =
-        FluentIterable.from(rows).transform(new Function<List<FieldValue>, Value>() {
+    Set<List<?>> values =
+        FluentIterable.from(rows).transform(new Function<List<FieldValue>, List<?>>() {
           @Override
-          public Value apply(List<FieldValue> row) {
-            return new Value(row.get(0).stringValue(), row.get(1).booleanValue());
+          public List<?> apply(List<FieldValue> row) {
+            return ImmutableList.of(row.get(0).stringValue(), row.get(1).booleanValue());
           }
         }).toSet();
     assertEquals(ImmutableSet.of(ROW2, ROW1), values);
@@ -299,27 +253,25 @@ public class ITTableSnippets {
    * Waits for a specified number of rows to appear in the given table. This is used by
    * verifyTestRows to wait for data to appear before verifying.
    *
-   * @param checkTable
-   * @param numRows
-   * @return The rows from the table.
+   * @param checkTable the table to query
+   * @param numRows the expected number of rows
+   * @return the rows from the table
    */
-  private List<List<FieldValue>> waitForTableRows(Table checkTable, int numRows) {
+  private List<List<FieldValue>> waitForTableRows(Table checkTable, int numRows)
+      throws InterruptedException {
     // Wait for the data to appear.
     Page<List<FieldValue>> page = checkTable.list(TableDataListOption.pageSize(100));
     List<List<FieldValue>> rows = ImmutableList.copyOf(page.values());
-    int numSleeps = 0;
     while (rows.size() != numRows) {
-      assertTrue(numSleeps < 10);
-      log.info("Sleeping and waiting for " + numRows + " test rows to appear (currently "
-          + rows.size() + ")...");
-      try {
-        ++numSleeps;
-        Thread.sleep(5000);
-      } catch (InterruptedException e) {
-      }
+      Thread.sleep(1000);
       page = checkTable.list(TableDataListOption.pageSize(100));
       rows = ImmutableList.copyOf(page.values());
     }
     return rows;
+  }
+
+  private void assertSuccessful(Job job) {
+    assertTrue(job.isDone());
+    assertNull(job.status().error());
   }
 }

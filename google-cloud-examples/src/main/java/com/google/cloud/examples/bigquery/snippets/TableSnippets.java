@@ -14,14 +14,13 @@
  * limitations under the License.
  */
 
-package com.google.cloud.examples.bigquery.snippets;
+/*
+ * EDITING INSTRUCTIONS
+ * This file is referenced in Table’s javadoc. Any change to this file should be reflected in
+ * Table’s javadoc.
+ */
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.TimeoutException;
+package com.google.cloud.examples.bigquery.snippets;
 
 import com.google.cloud.Page;
 import com.google.cloud.WaitForOption;
@@ -39,12 +38,20 @@ import com.google.cloud.bigquery.Job;
 import com.google.cloud.bigquery.Table;
 import com.google.cloud.bigquery.TableId;
 
-/*
- * EDITING INSTRUCTIONS
- * This file is referenced in Table’s javadoc. Any change to this file should be reflected in
- * Table’s javadoc.
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
+
+
+/**
+ * This class contains a number of snippets for the {@link Table} class.
  */
 public class TableSnippets {
+
   private final Table table;
 
   public TableSnippets(Table table) {
@@ -52,55 +59,67 @@ public class TableSnippets {
   }
 
   /**
-   * Example of ensuring that a table exists.
+   * Example of checking if the table exists.
    */
   // [TARGET exists()]
-  public void checkExists() {
-    // [START checkExists]
-    if (!table.exists()) {
-      throw new IllegalArgumentException("Table does not exist.");
+  public boolean exists() {
+    // [START exists]
+    boolean exists = table.exists();
+    if (exists) {
+      // the table exists
+    } else {
+      // the table was not found
     }
-    // [END checkExists]
+    // [END exists]
+    return exists;
   }
 
   /**
-   * Example of fetching a table's latest information, specifying particular table field options.
+   * Example of fetching the table's latest information, specifying particular table fields to
+   * get.
    */
   // [TARGET reload(TableOption...)]
   // [VARIABLE TableField.LAST_MODIFIED_TIME]
   // [VARIABLE TableField.NUM_ROWS]
   public Table reloadTableWithFields(TableField field1, TableField field2) {
     // [START reloadTableWithFields]
-    Table reloaded = table.reload(TableOption.fields(field1, field2));
+    Table latestTable = table.reload(TableOption.fields(field1, field2));
+    if (latestTable == null) {
+      // the table was not found
+    }
     // [END reloadTableWithFields]
-    return reloaded;
+    return latestTable;
   }
 
   /**
-   * Example of updating a table's information, specifying particular table field options.
+   * Example of updating the table's information.
    */
   // [TARGET update(TableOption...)]
-  // [VARIABLE TableField.LAST_MODIFIED_TIME]
-  // [VARIABLE TableField.NUM_ROWS]
-  public Table updateTableWithFields(TableField field1, TableField field2) {
-    // [START updateTableWithFields]
-    Table updated = table.update(TableOption.fields(field1, field2));
-    // [END updateTableWithFields]
-    return updated;
+  public Table update() {
+    // [START update]
+    Table updatedTable = table.toBuilder().description("new description").build().update();
+    // [END update]
+    return updatedTable;
   }
 
   /**
-   * Example of deleting a table.
+   * Example of deleting the table.
    */
   // [TARGET delete()]
-  public void delete() {
+  public boolean delete() {
     // [START delete]
-    table.delete();
+    boolean deleted = table.delete();
+    if (deleted) {
+      // the table was deleted
+    } else {
+      // the table was not found
+    }
     // [END delete]
+    return deleted;
   }
 
   /**
-   * Example of inserting rows into a table.
+   * Example of inserting rows into the table.
    */
   // [TARGET insert(Iterable)]
   // [VARIABLE "rowId1"]
@@ -123,7 +142,7 @@ public class TableSnippets {
   }
 
   /**
-   * Example of inserting rows into a table which ignores invalid rows.
+   * Example of inserting rows into the table, ignoring invalid rows.
    */
   // [TARGET insert(Iterable, boolean, boolean)]
   // [VARIABLE "rowId1"]
@@ -146,19 +165,23 @@ public class TableSnippets {
   }
 
   /**
-   * Example of getting a paginated list of rows in a table.
+   * Example of listing rows in the table.
    */
   // [TARGET list(TableDataListOption...)]
   public Page<List<FieldValue>> list() {
     // [START list]
     Page<List<FieldValue>> page = table.list(TableDataListOption.pageSize(100));
-    // do something with page
+    Iterator<List<FieldValue>> rowIterator = page.iterateAll();
+    while (rowIterator.hasNext()) {
+      List<FieldValue> row = rowIterator.next();
+      // do something with the row
+    }
     // [END list]
     return page;
   }
 
   /**
-   * Example of copying a table to a destination table and dataset referenced by name.
+   * Example of copying the table to a destination table.
    */
   // [TARGET copy(String, String, JobOption...)]
   // [VARIABLE "my_dataset"]
@@ -166,79 +189,73 @@ public class TableSnippets {
   public Job copy(String datasetName, String tableName) {
     // [START copy]
     Job job = table.copy(datasetName, tableName);
-
     // Wait for the job to complete.
     try {
       Job completedJob = job.waitFor(WaitForOption.checkEvery(1, TimeUnit.SECONDS),
-          WaitForOption.timeout(60, TimeUnit.SECONDS));
+          WaitForOption.timeout(3, TimeUnit.MINUTES));
       if (completedJob != null && completedJob.status().error() == null) {
-        // Job completed successfully.
+        // Job completed successfully
       } else {
-        // Handle error case.
+        // Handle error case
       }
     } catch (InterruptedException | TimeoutException e) {
-      // Handle interrupted wait.
+      // Handle interrupted wait
     }
-
     // [END copy]
     return job;
   }
 
   /**
-   * Example copying a table to a destination table referenced by table ID.
+   * Example copying the table to a destination table.
    */
   // [TARGET copy(TableId, JobOption...)]
   // [VARIABLE "my_dataset"]
-  // [VARIABLE "copy_destination"]
+  // [VARIABLE "my_destination_table"]
   public Job copyTableId(String dataset, String tableName) throws BigQueryException {
     // [START copyTableId]
     TableId destinationId = TableId.of(dataset, tableName);
     JobOption options = JobOption.fields(JobField.STATUS, JobField.USER_EMAIL);
-
     Job job = table.copy(destinationId, options);
-
     // Wait for the job to complete.
     try {
       Job completedJob = job.waitFor(WaitForOption.checkEvery(1, TimeUnit.SECONDS),
-          WaitForOption.timeout(60, TimeUnit.SECONDS));
+          WaitForOption.timeout(3, TimeUnit.MINUTES));
       if (completedJob != null && completedJob.status().error() == null) {
         // Job completed successfully.
       } else {
         // Handle error case.
       }
     } catch (InterruptedException | TimeoutException e) {
-      // Handle interrupted wait.
+      // Handle interrupted wait
     }
     // [END copyTableId]
     return job;
   }
 
   /**
-   * Example extracting data to a list of Google Cloud Storage files.
+   * Example of partitioning data to a list of Google Cloud Storage files.
    */
   // [TARGET extract(String, List, JobOption...)]
   // [VARIABLE "CSV"]
-  // [VARIABLE "gs://myapp.appspot.com/PartitionA_*.csv"]
-  // [VARIABLE "gs://myapp.appspot.com/PartitionB_*.csv"]
+  // [VARIABLE "gs://my_bucket/PartitionA_*.csv"]
+  // [VARIABLE "gs://my_bucket/PartitionB_*.csv"]
   public Job extractList(String format, String gcsUrl1, String gcsUrl2) {
     // [START extractList]
     List<String> destinationUris = new ArrayList<>();
     destinationUris.add(gcsUrl1);
     destinationUris.add(gcsUrl2);
-
     Job job = table.extract(format, destinationUris);
-
-    // Wait for the job to complete.
+    // Wait for the job to complete
     try {
       Job completedJob = job.waitFor(WaitForOption.checkEvery(1, TimeUnit.SECONDS),
-          WaitForOption.timeout(60, TimeUnit.SECONDS));
+          WaitForOption.timeout(3, TimeUnit.MINUTES));
       if (completedJob != null && completedJob.status().error() == null) {
-        // Job completed successfully.
+        // Job completed successfully
       } else {
-        // Handle error case.
+        // Handle error case
       }
     } catch (InterruptedException | TimeoutException e) {
-      // Handle interrupted wait.
+      // Handle interrupted wait
     }
     // [END extractList]
     return job;
@@ -249,22 +266,21 @@ public class TableSnippets {
    */
   // [TARGET extract(String, String, JobOption...)]
   // [VARIABLE "CSV"]
-  // [VARIABLE "gs://myapp.appspot.com/filename.csv"]
+  // [VARIABLE "gs://my_bucket/filename.csv"]
   public Job extractSingle(String format, String gcsUrl) {
     // [START extractSingle]
     Job job = table.extract(format, gcsUrl);
-
-    // Wait for the job to complete.
+    // Wait for the job to complete
     try {
       Job completedJob = job.waitFor(WaitForOption.checkEvery(1, TimeUnit.SECONDS),
-          WaitForOption.timeout(60, TimeUnit.SECONDS));
+          WaitForOption.timeout(3, TimeUnit.MINUTES));
       if (completedJob != null && completedJob.status().error() == null) {
-        // Job completed successfully.
+        // Job completed successfully
       } else {
-        // Handle error case.
+        // Handle error case
       }
     } catch (InterruptedException | TimeoutException e) {
-      // Handle interrupted wait.
+      // Handle interrupted wait
     }
     // [END extractSingle]
     return job;
@@ -274,27 +290,25 @@ public class TableSnippets {
    * Example loading data from a list of Google Cloud Storage files.
    */
   // [TARGET load(FormatOptions, List, JobOption...)]
-  // [VARIABLE "gs://myapp.appspot.com/PartitionA_000000000000.csv"]
-  // [VARIABLE "gs://myapp.appspot.com/PartitionB_000000000000.csv"]
+  // [VARIABLE "gs://my_bucket/filename1.csv"]
+  // [VARIABLE "gs://my_bucket/filename2.csv"]
   public Job loadList(String gcsUrl1, String gcsUrl2) {
     // [START loadList]
     List<String> sourceUris = new ArrayList<>();
     sourceUris.add(gcsUrl1);
     sourceUris.add(gcsUrl2);
-
     Job job = table.load(FormatOptions.csv(), sourceUris);
-
-    // Wait for the job to complete.
+    // Wait for the job to complete
     try {
       Job completedJob = job.waitFor(WaitForOption.checkEvery(1, TimeUnit.SECONDS),
-          WaitForOption.timeout(60, TimeUnit.SECONDS));
+          WaitForOption.timeout(3, TimeUnit.MINUTES));
       if (completedJob != null && completedJob.status().error() == null) {
-        // Job completed successfully.
+        // Job completed successfully
       } else {
-        // Handle error case.
+        // Handle error case
       }
     } catch (InterruptedException | TimeoutException e) {
-      // Handle interrupted wait.
+      // Handle interrupted wait
     }
     // [END loadList]
     return job;
@@ -304,22 +318,21 @@ public class TableSnippets {
    * Example loading data from a single Google Cloud Storage file.
    */
   // [TARGET load(FormatOptions, String, JobOption...)]
-  // [VARIABLE "gs://myapp.appspot.com/filename.csv"]
+  // [VARIABLE "gs://my_bucket/filename.csv"]
   public Job loadSingle(String sourceUri) {
     // [START loadSingle]
     Job job = table.load(FormatOptions.csv(), sourceUri);
-
-    // Wait for the job to complete.
+    // Wait for the job to complete
     try {
       Job completedJob = job.waitFor(WaitForOption.checkEvery(1, TimeUnit.SECONDS),
-          WaitForOption.timeout(60, TimeUnit.SECONDS));
+          WaitForOption.timeout(3, TimeUnit.MINUTES));
       if (completedJob != null && completedJob.status().error() == null) {
-        // Job completed successfully.
+        // Job completed successfully
       } else {
-        // Handle error case.
+        // Handle error case
       }
     } catch (InterruptedException | TimeoutException e) {
-      // Handle interrupted wait.
+      // Handle interrupted wait
     }
     // [END loadSingle]
     return job;
