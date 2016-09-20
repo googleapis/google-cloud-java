@@ -22,12 +22,12 @@
 
 package com.google.cloud.examples.datastore.snippets;
 
+import com.google.api.client.util.Lists;
 import com.google.cloud.datastore.Datastore;
 import com.google.cloud.datastore.DatastoreException;
 import com.google.cloud.datastore.Entity;
 import com.google.cloud.datastore.Key;
 import com.google.cloud.datastore.KeyFactory;
-import com.google.cloud.datastore.PathElement;
 import com.google.cloud.datastore.Query;
 import com.google.cloud.datastore.QueryResults;
 import com.google.cloud.datastore.StructuredQuery.PropertyFilter;
@@ -48,198 +48,92 @@ public class TransactionSnippets {
   }
 
   /**
-   * Example of getting an Entity for a given key.
-   *
-   * This function cleans up after itself after the snippet part executes.
+   * Example of getting an entity for a given key.
    */
   // [TARGET get(Key)]
-  public boolean get() {
-    // [START get]
+  // [VARIABLE "my_key_name"]
+  public Entity get(String keyName) {
     Datastore datastore = transaction.datastore();
-    KeyFactory keyFactory = datastore.newKeyFactory().kind("someKind");
-
-    // Create an entity.
-    Key key = datastore.allocateId(keyFactory.newKey());
-    Entity entity = Entity.builder(key).set("description", "get()").build();
-    datastore.put(entity);
-
-    Entity result = null;
-    try {
-      result = transaction.get(key);
-    } catch (DatastoreException ex) {
-      // handle exception
-    }
+    // [START get]
+    Key key = datastore.newKeyFactory().kind("MyKind").newKey(keyName);
+    Entity entity = transaction.get(key);
+    transaction.commit();
+    // Do something with the entity
     // [END get]
-
-    // For tests.
-    // TODO: Consider putting this block inside the try statement above so users can see the
-    // expected output without even having to run the snippet.
-    boolean consistent = result != null && result.equals(entity);
-
-    // Clean up.
-    transaction.rollback();
-    datastore.delete(key);
-
-    return consistent;
+    return entity;
   }
 
   /**
-   * Example of getting Entitys for several keys.
-   *
-   * This function cleans up after itself after the snippet part executes.
+   * Example of getting entities for several keys.
    */
-   // [TARGET get(Key...)]
-  public boolean getMultiple() {
-    // [START getmultiple]
+  // [TARGET get(Key...)]
+  // [VARIABLE "my_first_key_name"]
+  // [VARIABLE "my_second_key_name"]
+  public List<Entity> getMultiple(String firstKeyName, String secondKeyName) {
     Datastore datastore = transaction.datastore();
-    KeyFactory keyFactory = datastore.newKeyFactory().kind("someKind");
-
-    // Create an entity.
-    Key keyOne = datastore.allocateId(keyFactory.newKey());
-    Entity entityOne = Entity.builder(keyOne).set("description", "One").build();
-    datastore.put(entityOne);
-
-    // Create another entity.
-    Key keyTwo = datastore.allocateId(keyFactory.newKey());
-    Entity entityTwo = Entity.builder(keyTwo).set("description", "Two").build();
-    datastore.put(entityTwo);
-
-    Iterator<Entity> result = null;
-    try {
-      result = transaction.get(keyOne, keyTwo);
-    } catch (DatastoreException ex) {
-      // handle exception
+    // TODO change so that it's not necessary to hold the entities in a list for integration testing
+    // [START getMultiple]
+    KeyFactory keyFactory = datastore.newKeyFactory().kind("MyKind");
+    Key firstKey = keyFactory.newKey(firstKeyName);
+    Key secondKey = keyFactory.newKey(secondKeyName);
+    Iterator<Entity> entitiesIterator = transaction.get(firstKey, secondKey);
+    List<Entity> entities = Lists.newArrayList();
+    while (entitiesIterator.hasNext()) {
+      Entity entity = entitiesIterator.next();
+      // do something with the entity
+      entities.add(entity);
     }
-     // [END getmultiple]
-
-    // For tests.
-    // TODO: Consider putting this block inside the try statement above so users can see the
-    // expected output without even having to run the snippet.
-    boolean consistent = result != null;
-    if (consistent) {
-      Entity entityFirst = result.next();
-      Entity entitySecond = result.next();
-      consistent = !result.hasNext() &&
-          (!entityFirst.equals(entitySecond)) &&
-          (entityFirst.equals(entityOne) || entityFirst.equals(entityTwo)) &&
-          (entitySecond.equals(entityOne) || entitySecond.equals(entityTwo));
-    }
-
-    // Clean up.
-    transaction.rollback();
-    datastore.delete(keyOne);
-    datastore.delete(keyTwo);
-
-    return consistent;
-   }
+    transaction.commit();
+    // [END getMultiple]
+    return entities;
+  }
 
   /**
-   * Example of fetching a list of Entity for several keys.
-   *
-   * This function cleans up after itself after the snippet part executes.
+   * Example of fetching a list of entities for several keys.
    */
-   // [TARGET fetch(Key...)]
-  public boolean fetch() {
-    // [START fetch]
+  // [TARGET fetch(Key...)]
+  // [VARIABLE "my_first_key_name"]
+  // [VARIABLE "my_second_key_name"]
+  public List<Entity> fetchEntitiesWithKeys(String firstKeyName, String secondKeyName) {
     Datastore datastore = transaction.datastore();
-    KeyFactory keyFactory = datastore.newKeyFactory().kind("someKind");
-
-    // Create an entity.
-    Key keyOne = datastore.allocateId(keyFactory.newKey());
-    Entity entityOne = Entity.builder(keyOne).set("description", "One").build();
-    datastore.put(entityOne);
-
-    // Create another entity.
-    Key keyTwo = datastore.allocateId(keyFactory.newKey());
-    Entity entityTwo = Entity.builder(keyTwo).set("description", "Two").build();
-    datastore.put(entityTwo);
-
-    // No entity is associated with the following key.
-    Key keyAbsent = datastore.allocateId(keyFactory.newKey());
-
-    List<Entity> result = null;
-    try {
-      result = transaction.fetch(keyOne, keyAbsent, keyTwo);
-    } catch (DatastoreException ex) {
-      // handle exception
+    // [START fetchEntitiesWithKeys]
+    KeyFactory keyFactory = datastore.newKeyFactory().kind("MyKind");
+    Key firstKey = keyFactory.newKey(firstKeyName);
+    Key secondKey = keyFactory.newKey(secondKeyName);
+    List<Entity> entities = transaction.fetch(firstKey, secondKey);
+    for (Entity entity : entities) {
+      // do something with the entity
     }
-     // [END fetch]
-
-    // For tests.
-    // TODO: Consider putting this block inside the try statement above so users can see the
-    // expected output without even having to run the snippet.
-    Iterator<Entity> iterator = result.iterator();
-    Entity entityFirst = iterator.next();
-    Entity entityAbsent = iterator.next();
-    Entity entitySecond = iterator.next();
-    boolean consistent = !iterator.hasNext() &&
-        entityFirst.equals(entityOne) &&
-        entityAbsent == null &&
-        entitySecond.equals(entityTwo);
-
-    // Clean up.
-    transaction.rollback();
-    datastore.delete(keyOne);
-    datastore.delete(keyTwo);
-
-    return consistent;
-   }
+    transaction.commit();
+    // [END fetchEntitiesWithKeys]
+    return entities;
+  }
 
   /**
-   * Example of committing a transaction.
+   * Example of running a query to find all entities with an ancestor.
    */
-  // [TARGET run(Query<T>)]
-  public boolean run() {
+  // [TARGET run(Query)]
+  // [VARIABLE "my_parent_key_name"]
+  public List<Entity> run(String parentKeyName) {
     Datastore datastore = transaction.datastore();
-
     // [START run]
-    // Create an entity
-    Key keyOne = datastore.newKeyFactory().kind("First").newKey("One");
-    Entity entityOne = Entity.builder(keyOne).set("description", "run one").build();
-    datastore.put(entityOne);
-
-    // Create a child. Note that queries inside transactions must have ancestors.
-    Key keyTwo = datastore
-        .newKeyFactory()
-        .kind("Second")
-        .ancestors(PathElement.of("First", "One"))
-        .newKey("Two");
-    Entity entityTwo = Entity.builder(keyTwo).set("description", "run two").build();
-    datastore.put(entityTwo);
-
+    KeyFactory keyFactory = datastore.newKeyFactory().kind("ParentKind");
+    Key parentKey = keyFactory.newKey(parentKeyName);
     // Build a query
     Query<Entity> query = Query.entityQueryBuilder()
-        .kind("Second")
-        .filter(PropertyFilter.hasAncestor(keyOne))
+        .kind("MyKind")
+        .filter(PropertyFilter.hasAncestor(parentKey))
         .build();
-
-    QueryResults<Entity> result = null;
-
-    // Run the query
-    try {
-      // first = transaction.get(keyOne);
-      result = transaction.run(query);
-      transaction.commit();
-    } catch (DatastoreException ex) {
-      // handle exception
+    QueryResults<Entity> results = transaction.run(query);
+    List<Entity> entities = Lists.newArrayList();
+    while (results.hasNext()) {
+      Entity result = results.next();
+      // do something with result
+      entities.add(result);
     }
+    transaction.commit();
     // [END run]
-
-    // For tests.
-    // TODO: Consider putting this block inside the try statement above so users can see the
-    // expected output without even having to run the snippet.
-    //
-    // If this test starts failing, ensure in the Cloud Console that all entities of kinds "First"
-    // and "Second" have been deleted.
-    boolean consistent = result != null &&
-        result.next().equals(entityTwo) &&
-        !result.hasNext();
-
-    // Clean up.
-    datastore.delete(keyOne);
-    datastore.delete(keyTwo);
-
-    return consistent;
+    return entities;
   }
 
   /**
@@ -250,7 +144,7 @@ public class TransactionSnippets {
     Datastore datastore = transaction.datastore();
     // [START commit]
     // create an entity
-    KeyFactory keyFactory = datastore.newKeyFactory().kind("someKind");
+    KeyFactory keyFactory = datastore.newKeyFactory().kind("MyKind");
     Key key = datastore.allocateId(keyFactory.newKey());
     Entity entity = Entity.builder(key).set("description", "commit()").build();
 
@@ -274,7 +168,7 @@ public class TransactionSnippets {
     Datastore datastore = transaction.datastore();
     // [START rollback]
     // create an entity
-    KeyFactory keyFactory = datastore.newKeyFactory().kind("someKind");
+    KeyFactory keyFactory = datastore.newKeyFactory().kind("MyKind");
     Key key = datastore.allocateId(keyFactory.newKey());
     Entity entity = Entity.builder(key).set("description", "rollback()").build();
 
@@ -294,7 +188,7 @@ public class TransactionSnippets {
     Datastore datastore = transaction.datastore();
     // [START active]
     // create an entity
-    KeyFactory keyFactory = datastore.newKeyFactory().kind("someKind");
+    KeyFactory keyFactory = datastore.newKeyFactory().kind("MyKind");
     Key key = datastore.allocateId(keyFactory.newKey());
     Entity entity = Entity.builder(key).set("description", "active()").build();
     // calling transaction.active() now would return true

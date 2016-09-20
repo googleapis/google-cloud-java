@@ -16,6 +16,7 @@
 
 package com.google.cloud.examples.datastore.snippets;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
@@ -24,46 +25,119 @@ import com.google.cloud.datastore.Datastore;
 import com.google.cloud.datastore.DatastoreOptions;
 import com.google.cloud.datastore.Entity;
 import com.google.cloud.datastore.Key;
+import com.google.cloud.datastore.PathElement;
 import com.google.cloud.datastore.Transaction;
+import com.google.common.collect.Sets;
 
+import org.junit.After;
 import org.junit.BeforeClass;
 import org.junit.Test;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
 
 public class ITTransactionSnippets {
 
   private static Datastore datastore;
+
+  private List<Key> registeredKeys = new ArrayList<>();
+
+  private String registerKey(Key key) {
+    registeredKeys.add(key);
+    return key.name();
+  }
+
+  private String registerKey(String keyName) {
+    return registerKey(keyName, "MyKind");
+  }
+
+  private String registerKey(String keyName, String kind) {
+    Key key = datastore.newKeyFactory().kind(kind).newKey(keyName);
+    registeredKeys.add(key);
+    return key.name();
+  }
 
   @BeforeClass
   public static void beforeClass() {
     datastore = DatastoreOptions.defaultInstance().service();
   }
 
+  @After
+  public void afterTest() {
+    datastore.delete(registeredKeys.toArray(new Key[registeredKeys.size()]));
+  }
+
   @Test
   public void testGet() {
+    Key key1 = datastore.newKeyFactory().kind("MyKind").newKey("fetch_key_1");
+    Entity entity1 = Entity.builder(key1).set("description", "fetch1").build();
+    datastore.put(entity1);
+    registerKey("fetch_key_1");
+
     Transaction transaction = datastore.newTransaction();
     TransactionSnippets transactionSnippets = new TransactionSnippets(transaction);
-    assertTrue(transactionSnippets.get());
+    assertEquals(entity1, transactionSnippets.get("fetch_key_1"));
   }
 
   @Test
   public void testGetMultiple() {
+    Key key1 = datastore.newKeyFactory().kind("MyKind").newKey("fetch_key_1");
+    Key key2 = datastore.newKeyFactory().kind("MyKind").newKey("fetch_key_2");
+    Entity entity1 = Entity.builder(key1).set("description", "fetch1").build();
+    Entity entity2 = Entity.builder(key2).set("description", "fetch2").build();
+    datastore.put(entity1, entity2);
+    registerKey("fetch_key_1");
+    registerKey("fetch_key_2");
+
     Transaction transaction = datastore.newTransaction();
     TransactionSnippets transactionSnippets = new TransactionSnippets(transaction);
-    assertTrue(transactionSnippets.getMultiple());
+    Set<Entity> entities =
+        Sets.newHashSet(transactionSnippets.getMultiple("fetch_key_1", "fetch_key_2"));
+    assertEquals(2, entities.size());
+    assertTrue(entities.contains(entity1));
+    assertTrue(entities.contains(entity2));
   }
 
   @Test
-  public void fetch() {
+  public void testFetchEntitiesWithKeys() {
+    Key key1 = datastore.newKeyFactory().kind("MyKind").newKey("fetch_key_1");
+    Key key2 = datastore.newKeyFactory().kind("MyKind").newKey("fetch_key_2");
+    Entity entity1 = Entity.builder(key1).set("description", "fetch1").build();
+    Entity entity2 = Entity.builder(key2).set("description", "fetch2").build();
+    datastore.put(entity1, entity2);
+    registerKey("fetch_key_1");
+    registerKey("fetch_key_2");
+
     Transaction transaction = datastore.newTransaction();
     TransactionSnippets transactionSnippets = new TransactionSnippets(transaction);
-    assertTrue(transactionSnippets.fetch());
+    Set<Entity> entities =
+        Sets.newHashSet(transactionSnippets.fetchEntitiesWithKeys("fetch_key_1", "fetch_key_2"));
+    assertEquals(2, entities.size());
+    assertTrue(entities.contains(entity1));
+    assertTrue(entities.contains(entity2));
   }
 
   @Test
-  public void run() {
+  public void testRun() {
+    Key key1 = datastore.newKeyFactory().kind("ParentKind").newKey("run_key_1");
+    Entity entity1 = Entity.builder(key1).set("description", "run1").build();
+    datastore.put(entity1);
+    Key key2 = datastore
+        .newKeyFactory()
+        .kind("MyKind")
+        .ancestors(PathElement.of("ParentKind", "run_key_1"))
+        .newKey("run_key_2");
+    registerKey(key1);
+    registerKey(key2);
+    Entity entity2 = Entity.builder(key2).set("description", "run2").build();
+    datastore.put(entity2);
+
     Transaction transaction = datastore.newTransaction();
     TransactionSnippets transactionSnippets = new TransactionSnippets(transaction);
-    assertTrue(transactionSnippets.run());
+    List<Entity> entities = transactionSnippets.run("run_key_1");
+    assertEquals(1, entities.size());
+    assertEquals(entity2, entities.get(0));
   }
 
   @Test
