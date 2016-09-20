@@ -41,7 +41,7 @@ public class ITTransactionSnippets {
 
   private static Datastore datastore;
 
-  private List<Key> registeredKeys = new ArrayList<>();
+  private final List<Key> registeredKeys = new ArrayList<>();
 
   private String registerKey(Key key) {
     registeredKeys.add(key);
