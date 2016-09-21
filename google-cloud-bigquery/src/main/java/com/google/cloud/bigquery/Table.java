@@ -139,6 +139,16 @@ public class Table extends TableInfo {
   /**
    * Checks if this table exists.
    *
+   * <p>Example of checking if the table exists.
+   * <pre> {@code
+   * boolean exists = table.exists();
+   * if (exists) {
+   *   // the table exists
+   * } else {
+   *   // the table was not found
+   * }
+   * }</pre>
+   *
    * @return {@code true} if this table exists, {@code false} otherwise
    * @throws BigQueryException upon failure
    */
@@ -148,6 +158,17 @@ public class Table extends TableInfo {
 
   /**
    * Fetches current table's latest information. Returns {@code null} if the table does not exist.
+   *
+   * <p>Example of fetching the table's latest information, specifying particular table fields to
+   * get.
+   * <pre> {@code
+   * TableField field1 = TableField.LAST_MODIFIED_TIME;
+   * TableField field2 = TableField.NUM_ROWS;
+   * Table latestTable = table.reload(TableOption.fields(field1, field2));
+   * if (latestTable == null) {
+   *   // the table was not found
+   * }
+   * }</pre>
    *
    * @param options table options
    * @return a {@code Table} object with latest information or {@code null} if not found
@@ -161,6 +182,11 @@ public class Table extends TableInfo {
    * Updates the table's information with this table's information. Dataset's and table's
    * user-defined ids cannot be changed. A new {@code Table} object is returned.
    *
+   * <p>Example of updating the table's information.
+   * <pre> {@code
+   * Table updatedTable = table.toBuilder().description("new description").build().update();
+   * }</pre>
+   *
    * @param options dataset options
    * @return a {@code Table} object with updated information
    * @throws BigQueryException upon failure
@@ -172,6 +198,16 @@ public class Table extends TableInfo {
   /**
    * Deletes this table.
    *
+   * <p>Example of deleting the table.
+   * <pre> {@code
+   * boolean deleted = table.delete();
+   * if (deleted) {
+   *   // the table was deleted
+   * } else {
+   *   // the table was not found
+   * }
+   * }</pre>
+   *
    * @return {@code true} if table was deleted, {@code false} if it was not found
    * @throws BigQueryException upon failure
    */
@@ -181,6 +217,23 @@ public class Table extends TableInfo {
 
   /**
    * Insert rows into the table.
+   *
+   * <p>Example of inserting rows into the table.
+   * <pre> {@code
+   * String rowId1 = "rowId1";
+   * String rowId2 = "rowId2";
+   * List<RowToInsert> rows = new ArrayList<>();
+   * Map<String, Object> row1 = new HashMap<>();
+   * row1.put("stringField", "value1");
+   * row1.put("booleanField", true);
+   * Map<String, Object> row2 = new HashMap<>();
+   * row2.put("stringField", "value2");
+   * row2.put("booleanField", false);
+   * rows.add(RowToInsert.of(rowId1, row1));
+   * rows.add(RowToInsert.of(rowId2, row2));
+   * InsertAllResponse response = table.insert(rows);
+   * // do something with response
+   * }</pre>
    *
    * @param rows rows to be inserted
    * @throws BigQueryException upon failure
@@ -193,6 +246,23 @@ public class Table extends TableInfo {
   /**
    * Insert rows into the table.
    *
+   * <p>Example of inserting rows into the table, ignoring invalid rows.
+   * <pre> {@code
+   * String rowId1 = "rowId1";
+   * String rowId2 = "rowId2";
+   * List<RowToInsert> rows = new ArrayList<>();
+   * Map<String, Object> row1 = new HashMap<>();
+   * row1.put("stringField", 1);
+   * row1.put("booleanField", true);
+   * Map<String, Object> row2 = new HashMap<>();
+   * row2.put("stringField", "value2");
+   * row2.put("booleanField", false);
+   * rows.add(RowToInsert.of(rowId1, row1));
+   * rows.add(RowToInsert.of(rowId2, row2));
+   * InsertAllResponse response = table.insert(rows, true, true);
+   * // do something with response
+   * }</pre>
+   *
    * @param rows rows to be inserted
    * @param skipInvalidRows whether to insert all valid rows, even if invalid rows exist. If not set
    *     the entire insert operation will fail if rows to be inserted contain an invalid row
@@ -202,7 +272,7 @@ public class Table extends TableInfo {
    * @throws BigQueryException upon failure
    */
   public InsertAllResponse insert(Iterable<InsertAllRequest.RowToInsert> rows,
-      boolean skipInvalidRows, boolean ignoreUnknownValues) throws BigQueryException {
+                                  boolean skipInvalidRows, boolean ignoreUnknownValues) throws BigQueryException {
     InsertAllRequest request = InsertAllRequest.builder(tableId(), rows)
         .skipInvalidRows(skipInvalidRows)
         .ignoreUnknownValues(ignoreUnknownValues)
@@ -212,6 +282,16 @@ public class Table extends TableInfo {
 
   /**
    * Returns the paginated list rows in this table.
+   *
+   * <p>Example of listing rows in the table.
+   * <pre> {@code
+   * Page<List<FieldValue>> page = table.list(TableDataListOption.pageSize(100));
+   * Iterator<List<FieldValue>> rowIterator = page.iterateAll();
+   * while (rowIterator.hasNext()) {
+   *   List<FieldValue> row = rowIterator.next();
+   *   // do something with the row
+   * }
+   * }</pre>
    *
    * @param options table data list options
    * @throws BigQueryException upon failure
@@ -224,6 +304,25 @@ public class Table extends TableInfo {
   /**
    * Starts a BigQuery Job to copy the current table to the provided destination table. Returns the
    * started {@link Job} object.
+   *
+   * <p>Example of copying the table to a destination table.
+   * <pre> {@code
+   * String datasetName = "my_dataset";
+   * String tableName = "my_destination_table";
+   * Job job = table.copy(datasetName, tableName);
+   * // Wait for the job to complete.
+   * try {
+   *   Job completedJob = job.waitFor(WaitForOption.checkEvery(1, TimeUnit.SECONDS),
+   *       WaitForOption.timeout(3, TimeUnit.MINUTES));
+   *   if (completedJob != null && completedJob.status().error() == null) {
+   *     // Job completed successfully
+   *   } else {
+   *     // Handle error case
+   *   }
+   * } catch (InterruptedException | TimeoutException e) {
+   *   // Handle interrupted wait
+   * }
+   * }</pre>
    *
    * @param destinationDataset the user-defined id of the destination dataset
    * @param destinationTable the user-defined id of the destination table
@@ -239,6 +338,27 @@ public class Table extends TableInfo {
    * Starts a BigQuery Job to copy the current table to the provided destination table. Returns the
    * started {@link Job} object.
    *
+   * <p>Example copying the table to a destination table.
+   * <pre> {@code
+   * String dataset = "my_dataset";
+   * String tableName = "my_destination_table";
+   * TableId destinationId = TableId.of(dataset, tableName);
+   * JobOption options = JobOption.fields(JobField.STATUS, JobField.USER_EMAIL);
+   * Job job = table.copy(destinationId, options);
+   * // Wait for the job to complete.
+   * try {
+   *   Job completedJob = job.waitFor(WaitForOption.checkEvery(1, TimeUnit.SECONDS),
+   *       WaitForOption.timeout(3, TimeUnit.MINUTES));
+   *   if (completedJob != null && completedJob.status().error() == null) {
+   *     // Job completed successfully.
+   *   } else {
+   *     // Handle error case.
+   *   }
+   * } catch (InterruptedException | TimeoutException e) {
+   *   // Handle interrupted wait
+   * }
+   * }</pre>
+   *
    * @param destinationTable the destination table of the copy job
    * @param options job options
    * @throws BigQueryException upon failure
@@ -252,6 +372,25 @@ public class Table extends TableInfo {
   /**
    * Starts a BigQuery Job to extract the current table to the provided destination URI. Returns the
    * started {@link Job} object.
+   *
+   * <p>Example extracting data to single Google Cloud Storage file.
+   * <pre> {@code
+   * String format = "CSV";
+   * String gcsUrl = "gs://my_bucket/filename.csv";
+   * Job job = table.extract(format, gcsUrl);
+   * // Wait for the job to complete
+   * try {
+   *   Job completedJob = job.waitFor(WaitForOption.checkEvery(1, TimeUnit.SECONDS),
+   *       WaitForOption.timeout(3, TimeUnit.MINUTES));
+   *   if (completedJob != null && completedJob.status().error() == null) {
+   *     // Job completed successfully
+   *   } else {
+   *     // Handle error case
+   *   }
+   * } catch (InterruptedException | TimeoutException e) {
+   *   // Handle interrupted wait
+   * }
+   * }</pre>
    *
    * @param format the format of the extracted data
    * @param destinationUri the fully-qualified Google Cloud Storage URI (e.g. gs://bucket/path)
@@ -267,6 +406,29 @@ public class Table extends TableInfo {
   /**
    * Starts a BigQuery Job to extract the current table to the provided destination URIs. Returns
    * the started {@link Job} object.
+   *
+   * <p>Example of partitioning data to a list of Google Cloud Storage files.
+   * <pre> {@code
+   * String format = "CSV";
+   * String gcsUrl1 = "gs://my_bucket/PartitionA_*.csv";
+   * String gcsUrl2 = "gs://my_bucket/PartitionB_*.csv";
+   * List<String> destinationUris = new ArrayList<>();
+   * destinationUris.add(gcsUrl1);
+   * destinationUris.add(gcsUrl2);
+   * Job job = table.extract(format, destinationUris);
+   * // Wait for the job to complete
+   * try {
+   *   Job completedJob = job.waitFor(WaitForOption.checkEvery(1, TimeUnit.SECONDS),
+   *       WaitForOption.timeout(3, TimeUnit.MINUTES));
+   *   if (completedJob != null && completedJob.status().error() == null) {
+   *     // Job completed successfully
+   *   } else {
+   *     // Handle error case
+   *   }
+   * } catch (InterruptedException | TimeoutException e) {
+   *   // Handle interrupted wait
+   * }
+   * }</pre>
    *
    * @param format the format of the exported data
    * @param destinationUris the fully-qualified Google Cloud Storage URIs (e.g. gs://bucket/path)
@@ -285,6 +447,24 @@ public class Table extends TableInfo {
    * Starts a BigQuery Job to load data into the current table from the provided source URI. Returns
    * the started {@link Job} object.
    *
+   * <p>Example loading data from a single Google Cloud Storage file.
+   * <pre> {@code
+   * String sourceUri = "gs://my_bucket/filename.csv";
+   * Job job = table.load(FormatOptions.csv(), sourceUri);
+   * // Wait for the job to complete
+   * try {
+   *   Job completedJob = job.waitFor(WaitForOption.checkEvery(1, TimeUnit.SECONDS),
+   *       WaitForOption.timeout(3, TimeUnit.MINUTES));
+   *   if (completedJob != null && completedJob.status().error() == null) {
+   *     // Job completed successfully
+   *   } else {
+   *     // Handle error case
+   *   }
+   * } catch (InterruptedException | TimeoutException e) {
+   *   // Handle interrupted wait
+   * }
+   * }</pre>
+   *
    * @param format the format of the data to load
    * @param sourceUri the fully-qualified Google Cloud Storage URI (e.g. gs://bucket/path) from
    *     which to load the data
@@ -299,6 +479,28 @@ public class Table extends TableInfo {
   /**
    * Starts a BigQuery Job to load data into the current table from the provided source URIs.
    * Returns the started {@link Job} object.
+   *
+   * <p>Example loading data from a list of Google Cloud Storage files.
+   * <pre> {@code
+   * String gcsUrl1 = "gs://my_bucket/filename1.csv";
+   * String gcsUrl2 = "gs://my_bucket/filename2.csv";
+   * List<String> sourceUris = new ArrayList<>();
+   * sourceUris.add(gcsUrl1);
+   * sourceUris.add(gcsUrl2);
+   * Job job = table.load(FormatOptions.csv(), sourceUris);
+   * // Wait for the job to complete
+   * try {
+   *   Job completedJob = job.waitFor(WaitForOption.checkEvery(1, TimeUnit.SECONDS),
+   *       WaitForOption.timeout(3, TimeUnit.MINUTES));
+   *   if (completedJob != null && completedJob.status().error() == null) {
+   *     // Job completed successfully
+   *   } else {
+   *     // Handle error case
+   *   }
+   * } catch (InterruptedException | TimeoutException e) {
+   *   // Handle interrupted wait
+   * }
+   * }</pre>
    *
    * @param format the format of the exported data
    * @param sourceUris the fully-qualified Google Cloud Storage URIs (e.g. gs://bucket/path) from
