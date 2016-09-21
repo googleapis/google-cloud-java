@@ -13,7 +13,7 @@
  */
 
 /**
- * A client to Google Monitoring API.
+ * A client to Stackdriver Monitoring API.
  *
  * The interfaces provided are listed below, along with a usage sample
  *

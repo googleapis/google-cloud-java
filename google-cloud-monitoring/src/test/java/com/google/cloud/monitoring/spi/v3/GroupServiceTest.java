@@ -15,7 +15,7 @@
 package com.google.cloud.monitoring.spi.v3;
 
 import com.google.api.MonitoredResource;
-import com.google.api.gax.core.PageAccessor;
+import com.google.api.gax.core.PagedListResponse;
 import com.google.api.gax.testing.MockGrpcService;
 import com.google.api.gax.testing.MockServiceHelper;
 import com.google.common.collect.Lists;
@@ -28,7 +28,7 @@ import com.google.monitoring.v3.ListGroupMembersResponse;
 import com.google.monitoring.v3.TimeInterval;
 import com.google.monitoring.v3.UpdateGroupRequest;
 import com.google.protobuf.Empty;
-import com.google.protobuf.GeneratedMessage;
+import com.google.protobuf.GeneratedMessageV3;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -97,7 +97,7 @@ public class GroupServiceTest {
             .setFilter(filter)
             .setIsCluster(isCluster)
             .build();
-    List<GeneratedMessage> expectedResponses = new ArrayList<>();
+    List<GeneratedMessageV3> expectedResponses = new ArrayList<>();
     expectedResponses.add(expectedResponse);
     mockGroupService.setResponses(expectedResponses);
 
@@ -106,7 +106,7 @@ public class GroupServiceTest {
     Group actualResponse = api.getGroup(formattedName);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessage> actualRequests = mockGroupService.getRequests();
+    List<GeneratedMessageV3> actualRequests = mockGroupService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetGroupRequest actualRequest = (GetGroupRequest) actualRequests.get(0);
 
@@ -129,7 +129,7 @@ public class GroupServiceTest {
             .setFilter(filter)
             .setIsCluster(isCluster)
             .build();
-    List<GeneratedMessage> expectedResponses = new ArrayList<>();
+    List<GeneratedMessageV3> expectedResponses = new ArrayList<>();
     expectedResponses.add(expectedResponse);
     mockGroupService.setResponses(expectedResponses);
 
@@ -140,7 +140,7 @@ public class GroupServiceTest {
     Group actualResponse = api.createGroup(formattedName, group, validateOnly);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessage> actualRequests = mockGroupService.getRequests();
+    List<GeneratedMessageV3> actualRequests = mockGroupService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     CreateGroupRequest actualRequest = (CreateGroupRequest) actualRequests.get(0);
 
@@ -165,7 +165,7 @@ public class GroupServiceTest {
             .setFilter(filter)
             .setIsCluster(isCluster)
             .build();
-    List<GeneratedMessage> expectedResponses = new ArrayList<>();
+    List<GeneratedMessageV3> expectedResponses = new ArrayList<>();
     expectedResponses.add(expectedResponse);
     mockGroupService.setResponses(expectedResponses);
 
@@ -175,7 +175,7 @@ public class GroupServiceTest {
     Group actualResponse = api.updateGroup(group, validateOnly);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessage> actualRequests = mockGroupService.getRequests();
+    List<GeneratedMessageV3> actualRequests = mockGroupService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     UpdateGroupRequest actualRequest = (UpdateGroupRequest) actualRequests.get(0);
 
@@ -187,7 +187,7 @@ public class GroupServiceTest {
   @SuppressWarnings("all")
   public void deleteGroupTest() {
     Empty expectedResponse = Empty.newBuilder().build();
-    List<GeneratedMessage> expectedResponses = new ArrayList<>();
+    List<GeneratedMessageV3> expectedResponses = new ArrayList<>();
     expectedResponses.add(expectedResponse);
     mockGroupService.setResponses(expectedResponses);
 
@@ -195,7 +195,7 @@ public class GroupServiceTest {
 
     api.deleteGroup(formattedName);
 
-    List<GeneratedMessage> actualRequests = mockGroupService.getRequests();
+    List<GeneratedMessageV3> actualRequests = mockGroupService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     DeleteGroupRequest actualRequest = (DeleteGroupRequest) actualRequests.get(0);
 
@@ -205,17 +205,17 @@ public class GroupServiceTest {
   @Test
   @SuppressWarnings("all")
   public void listGroupMembersTest() {
+    String nextPageToken = "";
+    int totalSize = -705419236;
     MonitoredResource membersElement = MonitoredResource.newBuilder().build();
     List<MonitoredResource> members = Arrays.asList(membersElement);
-    String nextPageToken = "nextPageToken-1530815211";
-    int totalSize = -705419236;
     ListGroupMembersResponse expectedResponse =
         ListGroupMembersResponse.newBuilder()
-            .addAllMembers(members)
             .setNextPageToken(nextPageToken)
             .setTotalSize(totalSize)
+            .addAllMembers(members)
             .build();
-    List<GeneratedMessage> expectedResponses = new ArrayList<>();
+    List<GeneratedMessageV3> expectedResponses = new ArrayList<>();
     expectedResponses.add(expectedResponse);
     mockGroupService.setResponses(expectedResponses);
 
@@ -223,16 +223,14 @@ public class GroupServiceTest {
     String filter = "filter-1274492040";
     TimeInterval interval = TimeInterval.newBuilder().build();
 
-    PageAccessor<MonitoredResource> pageAccessor =
-        api.listGroupMembers(formattedName, filter, interval);
+    PagedListResponse<ListGroupMembersRequest, ListGroupMembersResponse, MonitoredResource>
+        pagedListResponse = api.listGroupMembers(formattedName, filter, interval);
 
-    // PageAccessor will not make actual request until it is being used.
-    // Add all the pages here in order to make grpc requests.
-    List<MonitoredResource> resources = Lists.newArrayList(pageAccessor.getPageValues());
+    List<MonitoredResource> resources = Lists.newArrayList(pagedListResponse.iterateAllElements());
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getMembersList().get(0), resources.get(0));
 
-    List<GeneratedMessage> actualRequests = mockGroupService.getRequests();
+    List<GeneratedMessageV3> actualRequests = mockGroupService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ListGroupMembersRequest actualRequest = (ListGroupMembersRequest) actualRequests.get(0);
 

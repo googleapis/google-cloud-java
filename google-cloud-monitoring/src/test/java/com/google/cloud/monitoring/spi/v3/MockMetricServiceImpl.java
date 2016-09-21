@@ -28,9 +28,9 @@ import com.google.monitoring.v3.ListMonitoredResourceDescriptorsRequest;
 import com.google.monitoring.v3.ListMonitoredResourceDescriptorsResponse;
 import com.google.monitoring.v3.ListTimeSeriesRequest;
 import com.google.monitoring.v3.ListTimeSeriesResponse;
-import com.google.monitoring.v3.MetricServiceGrpc.MetricService;
+import com.google.monitoring.v3.MetricServiceGrpc.MetricServiceImplBase;
 import com.google.protobuf.Empty;
-import com.google.protobuf.GeneratedMessage;
+import com.google.protobuf.GeneratedMessageV3;
 import io.grpc.stub.StreamObserver;
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -38,20 +38,20 @@ import java.util.List;
 import java.util.Queue;
 
 @javax.annotation.Generated("by GAPIC")
-public class MockMetricServiceImpl implements MetricService {
-  private ArrayList<GeneratedMessage> requests;
-  private Queue<GeneratedMessage> responses;
+public class MockMetricServiceImpl extends MetricServiceImplBase {
+  private ArrayList<GeneratedMessageV3> requests;
+  private Queue<GeneratedMessageV3> responses;
 
   public MockMetricServiceImpl() {
     requests = new ArrayList<>();
     responses = new LinkedList<>();
   }
 
-  public List<GeneratedMessage> getRequests() {
+  public List<GeneratedMessageV3> getRequests() {
     return requests;
   }
 
-  public void setResponses(List<GeneratedMessage> responses) {
+  public void setResponses(List<GeneratedMessageV3> responses) {
     this.responses = Lists.newLinkedList(responses);
   }
 

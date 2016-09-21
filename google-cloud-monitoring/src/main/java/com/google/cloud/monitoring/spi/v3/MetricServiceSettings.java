@@ -273,6 +273,19 @@ public class MetricServiceSettings extends ServiceApiSettings {
             }
 
             @Override
+            public ListMonitoredResourceDescriptorsRequest injectPageSize(
+                ListMonitoredResourceDescriptorsRequest payload, int pageSize) {
+              return ListMonitoredResourceDescriptorsRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListMonitoredResourceDescriptorsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
             public Object extractNextToken(ListMonitoredResourceDescriptorsResponse payload) {
               return payload.getNextPageToken();
             }
@@ -303,6 +316,17 @@ public class MetricServiceSettings extends ServiceApiSettings {
             }
 
             @Override
+            public ListMetricDescriptorsRequest injectPageSize(
+                ListMetricDescriptorsRequest payload, int pageSize) {
+              return ListMetricDescriptorsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListMetricDescriptorsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
             public Object extractNextToken(ListMetricDescriptorsResponse payload) {
               return payload.getNextPageToken();
             }
@@ -325,6 +349,17 @@ public class MetricServiceSettings extends ServiceApiSettings {
             @Override
             public ListTimeSeriesRequest injectToken(ListTimeSeriesRequest payload, Object token) {
               return ListTimeSeriesRequest.newBuilder(payload).setPageToken((String) token).build();
+            }
+
+            @Override
+            public ListTimeSeriesRequest injectPageSize(
+                ListTimeSeriesRequest payload, int pageSize) {
+              return ListTimeSeriesRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListTimeSeriesRequest payload) {
+              return payload.getPageSize();
             }
 
             @Override

@@ -15,10 +15,9 @@ package com.google.cloud.monitoring.spi.v3;
 
 import com.google.api.MetricDescriptor;
 import com.google.api.MonitoredResourceDescriptor;
-import com.google.api.gax.core.PageAccessor;
+import com.google.api.gax.core.PagedListResponse;
 import com.google.api.gax.grpc.ApiCallable;
 import com.google.api.gax.protobuf.PathTemplate;
-import com.google.monitoring.v3.Aggregation;
 import com.google.monitoring.v3.CreateMetricDescriptorRequest;
 import com.google.monitoring.v3.CreateTimeSeriesRequest;
 import com.google.monitoring.v3.DeleteMetricDescriptorRequest;
@@ -29,9 +28,7 @@ import com.google.monitoring.v3.ListMetricDescriptorsResponse;
 import com.google.monitoring.v3.ListMonitoredResourceDescriptorsRequest;
 import com.google.monitoring.v3.ListMonitoredResourceDescriptorsResponse;
 import com.google.monitoring.v3.ListTimeSeriesRequest;
-import com.google.monitoring.v3.ListTimeSeriesRequest.TimeSeriesView;
 import com.google.monitoring.v3.ListTimeSeriesResponse;
-import com.google.monitoring.v3.TimeInterval;
 import com.google.monitoring.v3.TimeSeries;
 import com.google.protobuf.Empty;
 import io.grpc.ManagedChannel;
@@ -105,13 +102,19 @@ public class MetricServiceApi implements AutoCloseable {
           ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse>
       listMonitoredResourceDescriptorsCallable;
   private final ApiCallable<
-          ListMonitoredResourceDescriptorsRequest, PageAccessor<MonitoredResourceDescriptor>>
+          ListMonitoredResourceDescriptorsRequest,
+          PagedListResponse<
+              ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse,
+              MonitoredResourceDescriptor>>
       listMonitoredResourceDescriptorsPagedCallable;
   private final ApiCallable<GetMonitoredResourceDescriptorRequest, MonitoredResourceDescriptor>
       getMonitoredResourceDescriptorCallable;
   private final ApiCallable<ListMetricDescriptorsRequest, ListMetricDescriptorsResponse>
       listMetricDescriptorsCallable;
-  private final ApiCallable<ListMetricDescriptorsRequest, PageAccessor<MetricDescriptor>>
+  private final ApiCallable<
+          ListMetricDescriptorsRequest,
+          PagedListResponse<
+              ListMetricDescriptorsRequest, ListMetricDescriptorsResponse, MetricDescriptor>>
       listMetricDescriptorsPagedCallable;
   private final ApiCallable<GetMetricDescriptorRequest, MetricDescriptor>
       getMetricDescriptorCallable;
@@ -119,7 +122,9 @@ public class MetricServiceApi implements AutoCloseable {
       createMetricDescriptorCallable;
   private final ApiCallable<DeleteMetricDescriptorRequest, Empty> deleteMetricDescriptorCallable;
   private final ApiCallable<ListTimeSeriesRequest, ListTimeSeriesResponse> listTimeSeriesCallable;
-  private final ApiCallable<ListTimeSeriesRequest, PageAccessor<TimeSeries>>
+  private final ApiCallable<
+          ListTimeSeriesRequest,
+          PagedListResponse<ListTimeSeriesRequest, ListTimeSeriesResponse, TimeSeries>>
       listTimeSeriesPagedCallable;
   private final ApiCallable<CreateTimeSeriesRequest, Empty> createTimeSeriesCallable;
 
@@ -301,7 +306,7 @@ public class MetricServiceApi implements AutoCloseable {
    * try (MetricServiceApi metricServiceApi = MetricServiceApi.create()) {
    *   String formattedName = MetricServiceApi.formatProjectName("[PROJECT]");
    *   String filter = "";
-   *   for (MonitoredResourceDescriptor element : metricServiceApi.listMonitoredResourceDescriptors(formattedName, filter)) {
+   *   for (MonitoredResourceDescriptor element : metricServiceApi.listMonitoredResourceDescriptors(formattedName, filter).iterateAllElements()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -318,8 +323,10 @@ public class MetricServiceApi implements AutoCloseable {
    *     resource.type = starts_with("gce_") AND resource.label:id
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  public final PageAccessor<MonitoredResourceDescriptor> listMonitoredResourceDescriptors(
-      String name, String filter) {
+  public final PagedListResponse<
+          ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse,
+          MonitoredResourceDescriptor>
+      listMonitoredResourceDescriptors(String name, String filter) {
     PROJECT_PATH_TEMPLATE.validate(name, "listMonitoredResourceDescriptors");
     ListMonitoredResourceDescriptorsRequest request =
         ListMonitoredResourceDescriptorsRequest.newBuilder()
@@ -342,7 +349,7 @@ public class MetricServiceApi implements AutoCloseable {
    *     .setName(formattedName)
    *     .setFilter(filter)
    *     .build();
-   *   for (MonitoredResourceDescriptor element : metricServiceApi.listMonitoredResourceDescriptors(request)) {
+   *   for (MonitoredResourceDescriptor element : metricServiceApi.listMonitoredResourceDescriptors(request).iterateAllElements()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -351,8 +358,10 @@ public class MetricServiceApi implements AutoCloseable {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  public final PageAccessor<MonitoredResourceDescriptor> listMonitoredResourceDescriptors(
-      ListMonitoredResourceDescriptorsRequest request) {
+  public final PagedListResponse<
+          ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse,
+          MonitoredResourceDescriptor>
+      listMonitoredResourceDescriptors(ListMonitoredResourceDescriptorsRequest request) {
     return listMonitoredResourceDescriptorsPagedCallable().call(request);
   }
 
@@ -369,16 +378,19 @@ public class MetricServiceApi implements AutoCloseable {
    *     .setName(formattedName)
    *     .setFilter(filter)
    *     .build();
-   *   ListenableFuture&lt;PageAccessor&lt;MonitoredResourceDescriptor&gt;&gt; future = metricServiceApi.listMonitoredResourceDescriptorsPagedCallable().futureCall(request);
+   *   ListenableFuture&lt;PagedListResponse&lt;ListMonitoredResourceDescriptorsRequest,ListMonitoredResourceDescriptorsResponse,MonitoredResourceDescriptor&gt;&gt; future = metricServiceApi.listMonitoredResourceDescriptorsPagedCallable().futureCall(request);
    *   // Do something
-   *   for (MonitoredResourceDescriptor element : future.get()) {
+   *   for (MonitoredResourceDescriptor element : future.get().iterateAllElements()) {
    *     // doThingsWith(element);
    *   }
    * }
    * </code></pre>
    */
   public final ApiCallable<
-          ListMonitoredResourceDescriptorsRequest, PageAccessor<MonitoredResourceDescriptor>>
+          ListMonitoredResourceDescriptorsRequest,
+          PagedListResponse<
+              ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse,
+              MonitoredResourceDescriptor>>
       listMonitoredResourceDescriptorsPagedCallable() {
     return listMonitoredResourceDescriptorsPagedCallable;
   }
@@ -496,7 +508,7 @@ public class MetricServiceApi implements AutoCloseable {
    * try (MetricServiceApi metricServiceApi = MetricServiceApi.create()) {
    *   String formattedName = MetricServiceApi.formatProjectName("[PROJECT]");
    *   String filter = "";
-   *   for (MetricDescriptor element : metricServiceApi.listMetricDescriptors(formattedName, filter)) {
+   *   for (MetricDescriptor element : metricServiceApi.listMetricDescriptors(formattedName, filter).iterateAllElements()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -514,7 +526,9 @@ public class MetricServiceApi implements AutoCloseable {
    *     metric.type = starts_with("custom.googleapis.com/")
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  public final PageAccessor<MetricDescriptor> listMetricDescriptors(String name, String filter) {
+  public final PagedListResponse<
+          ListMetricDescriptorsRequest, ListMetricDescriptorsResponse, MetricDescriptor>
+      listMetricDescriptors(String name, String filter) {
     PROJECT_PATH_TEMPLATE.validate(name, "listMetricDescriptors");
     ListMetricDescriptorsRequest request =
         ListMetricDescriptorsRequest.newBuilder().setName(name).setFilter(filter).build();
@@ -534,7 +548,7 @@ public class MetricServiceApi implements AutoCloseable {
    *     .setName(formattedName)
    *     .setFilter(filter)
    *     .build();
-   *   for (MetricDescriptor element : metricServiceApi.listMetricDescriptors(request)) {
+   *   for (MetricDescriptor element : metricServiceApi.listMetricDescriptors(request).iterateAllElements()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -543,8 +557,9 @@ public class MetricServiceApi implements AutoCloseable {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  public final PageAccessor<MetricDescriptor> listMetricDescriptors(
-      ListMetricDescriptorsRequest request) {
+  public final PagedListResponse<
+          ListMetricDescriptorsRequest, ListMetricDescriptorsResponse, MetricDescriptor>
+      listMetricDescriptors(ListMetricDescriptorsRequest request) {
     return listMetricDescriptorsPagedCallable().call(request);
   }
 
@@ -561,15 +576,18 @@ public class MetricServiceApi implements AutoCloseable {
    *     .setName(formattedName)
    *     .setFilter(filter)
    *     .build();
-   *   ListenableFuture&lt;PageAccessor&lt;MetricDescriptor&gt;&gt; future = metricServiceApi.listMetricDescriptorsPagedCallable().futureCall(request);
+   *   ListenableFuture&lt;PagedListResponse&lt;ListMetricDescriptorsRequest,ListMetricDescriptorsResponse,MetricDescriptor&gt;&gt; future = metricServiceApi.listMetricDescriptorsPagedCallable().futureCall(request);
    *   // Do something
-   *   for (MetricDescriptor element : future.get()) {
+   *   for (MetricDescriptor element : future.get().iterateAllElements()) {
    *     // doThingsWith(element);
    *   }
    * }
    * </code></pre>
    */
-  public final ApiCallable<ListMetricDescriptorsRequest, PageAccessor<MetricDescriptor>>
+  public final ApiCallable<
+          ListMetricDescriptorsRequest,
+          PagedListResponse<
+              ListMetricDescriptorsRequest, ListMetricDescriptorsResponse, MetricDescriptor>>
       listMetricDescriptorsPagedCallable() {
     return listMetricDescriptorsPagedCallable;
   }
@@ -852,7 +870,7 @@ public class MetricServiceApi implements AutoCloseable {
    *     .setOrderBy(orderBy)
    *     .setView(view)
    *     .build();
-   *   for (TimeSeries element : metricServiceApi.listTimeSeries(request)) {
+   *   for (TimeSeries element : metricServiceApi.listTimeSeries(request).iterateAllElements()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -861,7 +879,8 @@ public class MetricServiceApi implements AutoCloseable {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  public final PageAccessor<TimeSeries> listTimeSeries(ListTimeSeriesRequest request) {
+  public final PagedListResponse<ListTimeSeriesRequest, ListTimeSeriesResponse, TimeSeries>
+      listTimeSeries(ListTimeSeriesRequest request) {
     return listTimeSeriesPagedCallable().call(request);
   }
 
@@ -886,15 +905,17 @@ public class MetricServiceApi implements AutoCloseable {
    *     .setOrderBy(orderBy)
    *     .setView(view)
    *     .build();
-   *   ListenableFuture&lt;PageAccessor&lt;TimeSeries&gt;&gt; future = metricServiceApi.listTimeSeriesPagedCallable().futureCall(request);
+   *   ListenableFuture&lt;PagedListResponse&lt;ListTimeSeriesRequest,ListTimeSeriesResponse,TimeSeries&gt;&gt; future = metricServiceApi.listTimeSeriesPagedCallable().futureCall(request);
    *   // Do something
-   *   for (TimeSeries element : future.get()) {
+   *   for (TimeSeries element : future.get().iterateAllElements()) {
    *     // doThingsWith(element);
    *   }
    * }
    * </code></pre>
    */
-  public final ApiCallable<ListTimeSeriesRequest, PageAccessor<TimeSeries>>
+  public final ApiCallable<
+          ListTimeSeriesRequest,
+          PagedListResponse<ListTimeSeriesRequest, ListTimeSeriesResponse, TimeSeries>>
       listTimeSeriesPagedCallable() {
     return listTimeSeriesPagedCallable;
   }

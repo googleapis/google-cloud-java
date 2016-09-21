@@ -15,14 +15,14 @@
 package com.google.cloud.monitoring.spi.v3;
 
 import com.google.api.MonitoredResource;
-import com.google.api.gax.core.PageAccessor;
+import com.google.api.gax.core.PagedListResponse;
 import com.google.api.gax.testing.MockGrpcService;
 import com.google.api.gax.testing.MockServiceHelper;
 import com.google.common.collect.Lists;
 import com.google.monitoring.v3.CollectdPayload;
 import com.google.monitoring.v3.CreateCollectdTimeSeriesRequest;
 import com.google.protobuf.Empty;
-import com.google.protobuf.GeneratedMessage;
+import com.google.protobuf.GeneratedMessageV3;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -79,7 +79,7 @@ public class AgentTranslationServiceTest {
   @SuppressWarnings("all")
   public void createCollectdTimeSeriesTest() {
     Empty expectedResponse = Empty.newBuilder().build();
-    List<GeneratedMessage> expectedResponses = new ArrayList<>();
+    List<GeneratedMessageV3> expectedResponses = new ArrayList<>();
     expectedResponses.add(expectedResponse);
     mockAgentTranslationService.setResponses(expectedResponses);
 
@@ -90,7 +90,7 @@ public class AgentTranslationServiceTest {
 
     api.createCollectdTimeSeries(formattedName, resource, collectdVersion, collectdPayloads);
 
-    List<GeneratedMessage> actualRequests = mockAgentTranslationService.getRequests();
+    List<GeneratedMessageV3> actualRequests = mockAgentTranslationService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     CreateCollectdTimeSeriesRequest actualRequest =
         (CreateCollectdTimeSeriesRequest) actualRequests.get(0);
