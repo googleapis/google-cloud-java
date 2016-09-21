@@ -15,7 +15,6 @@
 package com.google.cloud.logging.spi.v2;
 
 import com.google.api.gax.testing.MockGrpcService;
-import com.google.logging.v2.MetricsServiceV2Grpc;
 import com.google.protobuf.GeneratedMessageV3;
 import io.grpc.ServerServiceDefinition;
 import java.util.List;
