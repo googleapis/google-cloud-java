@@ -13,7 +13,7 @@
  */
 package com.google.cloud.logging.spi.v2;
 
-import com.google.api.gax.core.PageAccessor;
+import com.google.api.gax.core.PagedListResponse;
 import com.google.api.gax.grpc.ApiCallable;
 import com.google.api.gax.protobuf.PathTemplate;
 import com.google.logging.v2.CreateLogMetricRequest;
@@ -91,7 +91,9 @@ public class MetricsServiceV2Api implements AutoCloseable {
   private final List<AutoCloseable> closeables = new ArrayList<>();
 
   private final ApiCallable<ListLogMetricsRequest, ListLogMetricsResponse> listLogMetricsCallable;
-  private final ApiCallable<ListLogMetricsRequest, PageAccessor<LogMetric>>
+  private final ApiCallable<
+          ListLogMetricsRequest,
+          PagedListResponse<ListLogMetricsRequest, ListLogMetricsResponse, LogMetric>>
       listLogMetricsPagedCallable;
   private final ApiCallable<GetLogMetricRequest, LogMetric> getLogMetricCallable;
   private final ApiCallable<CreateLogMetricRequest, LogMetric> createLogMetricCallable;
@@ -219,7 +221,7 @@ public class MetricsServiceV2Api implements AutoCloseable {
    * <pre><code>
    * try (MetricsServiceV2Api metricsServiceV2Api = MetricsServiceV2Api.create()) {
    *   String formattedParent = MetricsServiceV2Api.formatParentName("[PROJECT]");
-   *   for (LogMetric element : metricsServiceV2Api.listLogMetrics(formattedParent)) {
+   *   for (LogMetric element : metricsServiceV2Api.listLogMetrics(formattedParent).iterateAllElements()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -229,7 +231,8 @@ public class MetricsServiceV2Api implements AutoCloseable {
    * Example: `"projects/my-project-id"`.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  public final PageAccessor<LogMetric> listLogMetrics(String parent) {
+  public final PagedListResponse<ListLogMetricsRequest, ListLogMetricsResponse, LogMetric>
+      listLogMetrics(String parent) {
     PARENT_PATH_TEMPLATE.validate(parent, "listLogMetrics");
     ListLogMetricsRequest request = ListLogMetricsRequest.newBuilder().setParent(parent).build();
     return listLogMetrics(request);
@@ -246,7 +249,7 @@ public class MetricsServiceV2Api implements AutoCloseable {
    *   ListLogMetricsRequest request = ListLogMetricsRequest.newBuilder()
    *     .setParent(formattedParent)
    *     .build();
-   *   for (LogMetric element : metricsServiceV2Api.listLogMetrics(request)) {
+   *   for (LogMetric element : metricsServiceV2Api.listLogMetrics(request).iterateAllElements()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -255,7 +258,8 @@ public class MetricsServiceV2Api implements AutoCloseable {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  public final PageAccessor<LogMetric> listLogMetrics(ListLogMetricsRequest request) {
+  public final PagedListResponse<ListLogMetricsRequest, ListLogMetricsResponse, LogMetric>
+      listLogMetrics(ListLogMetricsRequest request) {
     return listLogMetricsPagedCallable().call(request);
   }
 
@@ -270,15 +274,17 @@ public class MetricsServiceV2Api implements AutoCloseable {
    *   ListLogMetricsRequest request = ListLogMetricsRequest.newBuilder()
    *     .setParent(formattedParent)
    *     .build();
-   *   ListenableFuture&lt;PageAccessor&lt;LogMetric&gt;&gt; future = metricsServiceV2Api.listLogMetricsPagedCallable().futureCall(request);
+   *   ListenableFuture&lt;PagedListResponse&lt;ListLogMetricsRequest,ListLogMetricsResponse,LogMetric&gt;&gt; future = metricsServiceV2Api.listLogMetricsPagedCallable().futureCall(request);
    *   // Do something
-   *   for (LogMetric element : future.get()) {
+   *   for (LogMetric element : future.get().iterateAllElements()) {
    *     // doThingsWith(element);
    *   }
    * }
    * </code></pre>
    */
-  public final ApiCallable<ListLogMetricsRequest, PageAccessor<LogMetric>>
+  public final ApiCallable<
+          ListLogMetricsRequest,
+          PagedListResponse<ListLogMetricsRequest, ListLogMetricsResponse, LogMetric>>
       listLogMetricsPagedCallable() {
     return listLogMetricsPagedCallable;
   }

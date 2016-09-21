@@ -20,9 +20,9 @@ import com.google.devtools.cloudtrace.v1.ListTracesRequest;
 import com.google.devtools.cloudtrace.v1.ListTracesResponse;
 import com.google.devtools.cloudtrace.v1.PatchTracesRequest;
 import com.google.devtools.cloudtrace.v1.Trace;
-import com.google.devtools.cloudtrace.v1.TraceServiceGrpc.TraceService;
+import com.google.devtools.cloudtrace.v1.TraceServiceGrpc.TraceServiceImplBase;
 import com.google.protobuf.Empty;
-import com.google.protobuf.GeneratedMessage;
+import com.google.protobuf.GeneratedMessageV3;
 import io.grpc.stub.StreamObserver;
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -30,20 +30,20 @@ import java.util.List;
 import java.util.Queue;
 
 @javax.annotation.Generated("by GAPIC")
-public class MockTraceServiceImpl implements TraceService {
-  private ArrayList<GeneratedMessage> requests;
-  private Queue<GeneratedMessage> responses;
+public class MockTraceServiceImpl extends TraceServiceImplBase {
+  private ArrayList<GeneratedMessageV3> requests;
+  private Queue<GeneratedMessageV3> responses;
 
   public MockTraceServiceImpl() {
     requests = new ArrayList<>();
     responses = new LinkedList<>();
   }
 
-  public List<GeneratedMessage> getRequests() {
+  public List<GeneratedMessageV3> getRequests() {
     return requests;
   }
 
-  public void setResponses(List<GeneratedMessage> responses) {
+  public void setResponses(List<GeneratedMessageV3> responses) {
     this.responses = Lists.newLinkedList(responses);
   }
 

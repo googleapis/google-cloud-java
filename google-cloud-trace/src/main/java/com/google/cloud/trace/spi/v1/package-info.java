@@ -13,7 +13,7 @@
  */
 
 /**
- * A client to Google Cloud Trace API.
+ * A client to Stackdriver Trace API.
  *
  * The interfaces provided are listed below, along with a usage sample
  *

@@ -16,7 +16,7 @@ package com.google.cloud.speech.spi.v1beta1;
 
 import com.google.api.gax.testing.MockGrpcService;
 import com.google.cloud.speech.v1beta1.SpeechGrpc;
-import com.google.protobuf.GeneratedMessage;
+import com.google.protobuf.GeneratedMessageV3;
 import io.grpc.ServerServiceDefinition;
 import java.util.List;
 
@@ -29,18 +29,18 @@ public class MockSpeech implements MockGrpcService {
   }
 
   @Override
-  public List<GeneratedMessage> getRequests() {
+  public List<GeneratedMessageV3> getRequests() {
     return serviceImpl.getRequests();
   }
 
   @Override
-  public void setResponses(List<GeneratedMessage> responses) {
+  public void setResponses(List<GeneratedMessageV3> responses) {
     serviceImpl.setResponses(responses);
   }
 
   @Override
   public ServerServiceDefinition getServiceDefinition() {
-    return SpeechGrpc.bindService(serviceImpl);
+    return serviceImpl.bindService();
   }
 
   @Override

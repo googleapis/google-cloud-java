@@ -16,9 +16,9 @@ package com.google.cloud.vision.spi.v1;
 
 import com.google.cloud.vision.v1.BatchAnnotateImagesRequest;
 import com.google.cloud.vision.v1.BatchAnnotateImagesResponse;
-import com.google.cloud.vision.v1.ImageAnnotatorGrpc.ImageAnnotator;
+import com.google.cloud.vision.v1.ImageAnnotatorGrpc.ImageAnnotatorImplBase;
 import com.google.common.collect.Lists;
-import com.google.protobuf.GeneratedMessage;
+import com.google.protobuf.GeneratedMessageV3;
 import io.grpc.stub.StreamObserver;
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -26,20 +26,20 @@ import java.util.List;
 import java.util.Queue;
 
 @javax.annotation.Generated("by GAPIC")
-public class MockImageAnnotatorImpl implements ImageAnnotator {
-  private ArrayList<GeneratedMessage> requests;
-  private Queue<GeneratedMessage> responses;
+public class MockImageAnnotatorImpl extends ImageAnnotatorImplBase {
+  private ArrayList<GeneratedMessageV3> requests;
+  private Queue<GeneratedMessageV3> responses;
 
   public MockImageAnnotatorImpl() {
     requests = new ArrayList<>();
     responses = new LinkedList<>();
   }
 
-  public List<GeneratedMessage> getRequests() {
+  public List<GeneratedMessageV3> getRequests() {
     return requests;
   }
 
-  public void setResponses(List<GeneratedMessage> responses) {
+  public void setResponses(List<GeneratedMessageV3> responses) {
     this.responses = Lists.newLinkedList(responses);
   }
 

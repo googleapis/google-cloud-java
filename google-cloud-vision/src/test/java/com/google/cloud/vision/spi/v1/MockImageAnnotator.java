@@ -16,7 +16,7 @@ package com.google.cloud.vision.spi.v1;
 
 import com.google.api.gax.testing.MockGrpcService;
 import com.google.cloud.vision.v1.ImageAnnotatorGrpc;
-import com.google.protobuf.GeneratedMessage;
+import com.google.protobuf.GeneratedMessageV3;
 import io.grpc.ServerServiceDefinition;
 import java.util.List;
 
@@ -29,18 +29,18 @@ public class MockImageAnnotator implements MockGrpcService {
   }
 
   @Override
-  public List<GeneratedMessage> getRequests() {
+  public List<GeneratedMessageV3> getRequests() {
     return serviceImpl.getRequests();
   }
 
   @Override
-  public void setResponses(List<GeneratedMessage> responses) {
+  public void setResponses(List<GeneratedMessageV3> responses) {
     serviceImpl.setResponses(responses);
   }
 
   @Override
   public ServerServiceDefinition getServiceDefinition() {
-    return ImageAnnotatorGrpc.bindService(serviceImpl);
+    return serviceImpl.bindService();
   }
 
   @Override

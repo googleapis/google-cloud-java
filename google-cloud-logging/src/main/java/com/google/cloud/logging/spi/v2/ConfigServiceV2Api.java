@@ -13,7 +13,7 @@
  */
 package com.google.cloud.logging.spi.v2;
 
-import com.google.api.gax.core.PageAccessor;
+import com.google.api.gax.core.PagedListResponse;
 import com.google.api.gax.grpc.ApiCallable;
 import com.google.api.gax.protobuf.PathTemplate;
 import com.google.logging.v2.CreateSinkRequest;
@@ -92,7 +92,9 @@ public class ConfigServiceV2Api implements AutoCloseable {
   private final List<AutoCloseable> closeables = new ArrayList<>();
 
   private final ApiCallable<ListSinksRequest, ListSinksResponse> listSinksCallable;
-  private final ApiCallable<ListSinksRequest, PageAccessor<LogSink>> listSinksPagedCallable;
+  private final ApiCallable<
+          ListSinksRequest, PagedListResponse<ListSinksRequest, ListSinksResponse, LogSink>>
+      listSinksPagedCallable;
   private final ApiCallable<GetSinkRequest, LogSink> getSinkCallable;
   private final ApiCallable<CreateSinkRequest, LogSink> createSinkCallable;
   private final ApiCallable<UpdateSinkRequest, LogSink> updateSinkCallable;
@@ -218,7 +220,7 @@ public class ConfigServiceV2Api implements AutoCloseable {
    * <pre><code>
    * try (ConfigServiceV2Api configServiceV2Api = ConfigServiceV2Api.create()) {
    *   String formattedParent = ConfigServiceV2Api.formatParentName("[PROJECT]");
-   *   for (LogSink element : configServiceV2Api.listSinks(formattedParent)) {
+   *   for (LogSink element : configServiceV2Api.listSinks(formattedParent).iterateAllElements()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -228,7 +230,8 @@ public class ConfigServiceV2Api implements AutoCloseable {
    * Example: `"projects/my-logging-project"`.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  public final PageAccessor<LogSink> listSinks(String parent) {
+  public final PagedListResponse<ListSinksRequest, ListSinksResponse, LogSink> listSinks(
+      String parent) {
     PARENT_PATH_TEMPLATE.validate(parent, "listSinks");
     ListSinksRequest request = ListSinksRequest.newBuilder().setParent(parent).build();
     return listSinks(request);
@@ -245,7 +248,7 @@ public class ConfigServiceV2Api implements AutoCloseable {
    *   ListSinksRequest request = ListSinksRequest.newBuilder()
    *     .setParent(formattedParent)
    *     .build();
-   *   for (LogSink element : configServiceV2Api.listSinks(request)) {
+   *   for (LogSink element : configServiceV2Api.listSinks(request).iterateAllElements()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -254,7 +257,8 @@ public class ConfigServiceV2Api implements AutoCloseable {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  public final PageAccessor<LogSink> listSinks(ListSinksRequest request) {
+  public final PagedListResponse<ListSinksRequest, ListSinksResponse, LogSink> listSinks(
+      ListSinksRequest request) {
     return listSinksPagedCallable().call(request);
   }
 
@@ -269,15 +273,17 @@ public class ConfigServiceV2Api implements AutoCloseable {
    *   ListSinksRequest request = ListSinksRequest.newBuilder()
    *     .setParent(formattedParent)
    *     .build();
-   *   ListenableFuture&lt;PageAccessor&lt;LogSink&gt;&gt; future = configServiceV2Api.listSinksPagedCallable().futureCall(request);
+   *   ListenableFuture&lt;PagedListResponse&lt;ListSinksRequest,ListSinksResponse,LogSink&gt;&gt; future = configServiceV2Api.listSinksPagedCallable().futureCall(request);
    *   // Do something
-   *   for (LogSink element : future.get()) {
+   *   for (LogSink element : future.get().iterateAllElements()) {
    *     // doThingsWith(element);
    *   }
    * }
    * </code></pre>
    */
-  public final ApiCallable<ListSinksRequest, PageAccessor<LogSink>> listSinksPagedCallable() {
+  public final ApiCallable<
+          ListSinksRequest, PagedListResponse<ListSinksRequest, ListSinksResponse, LogSink>>
+      listSinksPagedCallable() {
     return listSinksPagedCallable;
   }
 

@@ -14,14 +14,14 @@
 
 package com.google.cloud.vision.spi.v1;
 
-import com.google.api.gax.core.PageAccessor;
+import com.google.api.gax.core.PagedListResponse;
 import com.google.api.gax.testing.MockGrpcService;
 import com.google.api.gax.testing.MockServiceHelper;
 import com.google.cloud.vision.v1.AnnotateImageRequest;
 import com.google.cloud.vision.v1.BatchAnnotateImagesRequest;
 import com.google.cloud.vision.v1.BatchAnnotateImagesResponse;
 import com.google.common.collect.Lists;
-import com.google.protobuf.GeneratedMessage;
+import com.google.protobuf.GeneratedMessageV3;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -71,7 +71,7 @@ public class ImageAnnotatorTest {
   @SuppressWarnings("all")
   public void batchAnnotateImagesTest() {
     BatchAnnotateImagesResponse expectedResponse = BatchAnnotateImagesResponse.newBuilder().build();
-    List<GeneratedMessage> expectedResponses = new ArrayList<>();
+    List<GeneratedMessageV3> expectedResponses = new ArrayList<>();
     expectedResponses.add(expectedResponse);
     mockImageAnnotator.setResponses(expectedResponses);
 
@@ -80,7 +80,7 @@ public class ImageAnnotatorTest {
     BatchAnnotateImagesResponse actualResponse = api.batchAnnotateImages(requests);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessage> actualRequests = mockImageAnnotator.getRequests();
+    List<GeneratedMessageV3> actualRequests = mockImageAnnotator.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     BatchAnnotateImagesRequest actualRequest = (BatchAnnotateImagesRequest) actualRequests.get(0);
 

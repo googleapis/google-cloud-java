@@ -15,14 +15,14 @@
 package com.google.cloud.speech.spi.v1beta1;
 
 import com.google.cloud.speech.v1beta1.AsyncRecognizeRequest;
-import com.google.cloud.speech.v1beta1.SpeechGrpc.Speech;
+import com.google.cloud.speech.v1beta1.SpeechGrpc.SpeechImplBase;
 import com.google.cloud.speech.v1beta1.StreamingRecognizeRequest;
 import com.google.cloud.speech.v1beta1.StreamingRecognizeResponse;
 import com.google.cloud.speech.v1beta1.SyncRecognizeRequest;
 import com.google.cloud.speech.v1beta1.SyncRecognizeResponse;
 import com.google.common.collect.Lists;
 import com.google.longrunning.Operation;
-import com.google.protobuf.GeneratedMessage;
+import com.google.protobuf.GeneratedMessageV3;
 import io.grpc.stub.StreamObserver;
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -30,20 +30,20 @@ import java.util.List;
 import java.util.Queue;
 
 @javax.annotation.Generated("by GAPIC")
-public class MockSpeechImpl implements Speech {
-  private ArrayList<GeneratedMessage> requests;
-  private Queue<GeneratedMessage> responses;
+public class MockSpeechImpl extends SpeechImplBase {
+  private ArrayList<GeneratedMessageV3> requests;
+  private Queue<GeneratedMessageV3> responses;
 
   public MockSpeechImpl() {
     requests = new ArrayList<>();
     responses = new LinkedList<>();
   }
 
-  public List<GeneratedMessage> getRequests() {
+  public List<GeneratedMessageV3> getRequests() {
     return requests;
   }
 
-  public void setResponses(List<GeneratedMessage> responses) {
+  public void setResponses(List<GeneratedMessageV3> responses) {
     this.responses = Lists.newLinkedList(responses);
   }
 

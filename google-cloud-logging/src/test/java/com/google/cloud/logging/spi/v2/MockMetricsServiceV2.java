@@ -12,20 +12,20 @@
  * the License.
  */
 
-package com.google.cloud.pubsub.spi.v1;
+package com.google.cloud.logging.spi.v2;
 
 import com.google.api.gax.testing.MockGrpcService;
+import com.google.logging.v2.MetricsServiceV2Grpc;
 import com.google.protobuf.GeneratedMessageV3;
-import com.google.pubsub.v1.SubscriberGrpc;
 import io.grpc.ServerServiceDefinition;
 import java.util.List;
 
 @javax.annotation.Generated("by GAPIC")
-public class MockSubscriber implements MockGrpcService {
-  private MockSubscriberImpl serviceImpl;
+public class MockMetricsServiceV2 implements MockGrpcService {
+  private MockMetricsServiceV2Impl serviceImpl;
 
-  public MockSubscriber() {
-    serviceImpl = new MockSubscriberImpl();
+  public MockMetricsServiceV2() {
+    serviceImpl = new MockMetricsServiceV2Impl();
   }
 
   @Override

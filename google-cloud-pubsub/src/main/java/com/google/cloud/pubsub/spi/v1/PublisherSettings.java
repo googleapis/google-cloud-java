@@ -272,6 +272,16 @@ public class PublisherSettings extends ServiceApiSettings {
             }
 
             @Override
+            public ListTopicsRequest injectPageSize(ListTopicsRequest payload, int pageSize) {
+              return ListTopicsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListTopicsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
             public Object extractNextToken(ListTopicsResponse payload) {
               return payload.getNextPageToken();
             }
@@ -298,6 +308,19 @@ public class PublisherSettings extends ServiceApiSettings {
               return ListTopicSubscriptionsRequest.newBuilder(payload)
                   .setPageToken((String) token)
                   .build();
+            }
+
+            @Override
+            public ListTopicSubscriptionsRequest injectPageSize(
+                ListTopicSubscriptionsRequest payload, int pageSize) {
+              return ListTopicSubscriptionsRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListTopicSubscriptionsRequest payload) {
+              return payload.getPageSize();
             }
 
             @Override

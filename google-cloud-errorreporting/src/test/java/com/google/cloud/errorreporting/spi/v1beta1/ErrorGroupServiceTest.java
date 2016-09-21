@@ -14,14 +14,14 @@
 
 package com.google.cloud.errorreporting.spi.v1beta1;
 
-import com.google.api.gax.core.PageAccessor;
+import com.google.api.gax.core.PagedListResponse;
 import com.google.api.gax.testing.MockGrpcService;
 import com.google.api.gax.testing.MockServiceHelper;
 import com.google.common.collect.Lists;
 import com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup;
 import com.google.devtools.clouderrorreporting.v1beta1.GetGroupRequest;
 import com.google.devtools.clouderrorreporting.v1beta1.UpdateGroupRequest;
-import com.google.protobuf.GeneratedMessage;
+import com.google.protobuf.GeneratedMessageV3;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -80,7 +80,7 @@ public class ErrorGroupServiceTest {
     String name = "name3373707";
     String groupId = "groupId506361563";
     ErrorGroup expectedResponse = ErrorGroup.newBuilder().setName(name).setGroupId(groupId).build();
-    List<GeneratedMessage> expectedResponses = new ArrayList<>();
+    List<GeneratedMessageV3> expectedResponses = new ArrayList<>();
     expectedResponses.add(expectedResponse);
     mockErrorGroupService.setResponses(expectedResponses);
 
@@ -89,7 +89,7 @@ public class ErrorGroupServiceTest {
     ErrorGroup actualResponse = api.getGroup(formattedGroupName);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessage> actualRequests = mockErrorGroupService.getRequests();
+    List<GeneratedMessageV3> actualRequests = mockErrorGroupService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetGroupRequest actualRequest = (GetGroupRequest) actualRequests.get(0);
 
@@ -102,7 +102,7 @@ public class ErrorGroupServiceTest {
     String name = "name3373707";
     String groupId = "groupId506361563";
     ErrorGroup expectedResponse = ErrorGroup.newBuilder().setName(name).setGroupId(groupId).build();
-    List<GeneratedMessage> expectedResponses = new ArrayList<>();
+    List<GeneratedMessageV3> expectedResponses = new ArrayList<>();
     expectedResponses.add(expectedResponse);
     mockErrorGroupService.setResponses(expectedResponses);
 
@@ -111,7 +111,7 @@ public class ErrorGroupServiceTest {
     ErrorGroup actualResponse = api.updateGroup(group);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessage> actualRequests = mockErrorGroupService.getRequests();
+    List<GeneratedMessageV3> actualRequests = mockErrorGroupService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     UpdateGroupRequest actualRequest = (UpdateGroupRequest) actualRequests.get(0);
 

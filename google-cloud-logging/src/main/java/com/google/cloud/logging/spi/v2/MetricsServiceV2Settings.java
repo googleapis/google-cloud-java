@@ -218,6 +218,17 @@ public class MetricsServiceV2Settings extends ServiceApiSettings {
             }
 
             @Override
+            public ListLogMetricsRequest injectPageSize(
+                ListLogMetricsRequest payload, int pageSize) {
+              return ListLogMetricsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListLogMetricsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
             public Object extractNextToken(ListLogMetricsResponse payload) {
               return payload.getNextPageToken();
             }

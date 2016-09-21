@@ -49,7 +49,7 @@ public class LocalLoggingHelper {
         NettyServerBuilder.forAddress(address)
             .flowControlWindow(FLOW_CONTROL_WINDOW)
             .channelType(LocalServerChannel.class);
-    builder.addService(LoggingServiceV2Grpc.bindService(loggingImpl));
+    builder.addService(loggingImpl.bindService());
     server = builder.build();
   }
   /**

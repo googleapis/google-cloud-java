@@ -15,7 +15,7 @@ package com.google.cloud.logging.spi.v2;
 
 import com.google.api.MonitoredResource;
 import com.google.api.MonitoredResourceDescriptor;
-import com.google.api.gax.core.PageAccessor;
+import com.google.api.gax.core.PagedListResponse;
 import com.google.api.gax.grpc.ApiCallable;
 import com.google.api.gax.protobuf.PathTemplate;
 import com.google.logging.v2.DeleteLogRequest;
@@ -31,7 +31,6 @@ import io.grpc.ManagedChannel;
 import java.io.Closeable;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ScheduledExecutorService;
@@ -99,13 +98,18 @@ public class LoggingServiceV2Api implements AutoCloseable {
   private final ApiCallable<WriteLogEntriesRequest, WriteLogEntriesResponse>
       writeLogEntriesCallable;
   private final ApiCallable<ListLogEntriesRequest, ListLogEntriesResponse> listLogEntriesCallable;
-  private final ApiCallable<ListLogEntriesRequest, PageAccessor<LogEntry>>
+  private final ApiCallable<
+          ListLogEntriesRequest,
+          PagedListResponse<ListLogEntriesRequest, ListLogEntriesResponse, LogEntry>>
       listLogEntriesPagedCallable;
   private final ApiCallable<
           ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse>
       listMonitoredResourceDescriptorsCallable;
   private final ApiCallable<
-          ListMonitoredResourceDescriptorsRequest, PageAccessor<MonitoredResourceDescriptor>>
+          ListMonitoredResourceDescriptorsRequest,
+          PagedListResponse<
+              ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse,
+              MonitoredResourceDescriptor>>
       listMonitoredResourceDescriptorsPagedCallable;
 
   public final LoggingServiceV2Settings getSettings() {
@@ -299,11 +303,11 @@ public class LoggingServiceV2Api implements AutoCloseable {
    * Sample code:
    * <pre><code>
    * try (LoggingServiceV2Api loggingServiceV2Api = LoggingServiceV2Api.create()) {
-   *   String logName = "";
+   *   String formattedLogName = LoggingServiceV2Api.formatLogName("[PROJECT]", "[LOG]");
    *   MonitoredResource resource = MonitoredResource.newBuilder().build();
    *   Map&lt;String, String&gt; labels = new HashMap&lt;&gt;();
    *   List&lt;LogEntry&gt; entries = new ArrayList&lt;&gt;();
-   *   WriteLogEntriesResponse response = loggingServiceV2Api.writeLogEntries(logName, resource, labels, entries);
+   *   WriteLogEntriesResponse response = loggingServiceV2Api.writeLogEntries(formattedLogName, resource, labels, entries);
    * }
    * </code></pre>
    *
@@ -330,7 +334,9 @@ public class LoggingServiceV2Api implements AutoCloseable {
       MonitoredResource resource,
       Map<String, String> labels,
       List<LogEntry> entries) {
-    LOG_PATH_TEMPLATE.validate(logName, "writeLogEntries");
+    if (!logName.isEmpty()) {
+      LOG_PATH_TEMPLATE.validate(logName, "writeLogEntries");
+    }
     WriteLogEntriesRequest request =
         WriteLogEntriesRequest.newBuilder()
             .setLogName(logName)
@@ -399,7 +405,7 @@ public class LoggingServiceV2Api implements AutoCloseable {
    *   List&lt;String&gt; projectIds = new ArrayList&lt;&gt;();
    *   String filter = "";
    *   String orderBy = "";
-   *   for (LogEntry element : loggingServiceV2Api.listLogEntries(projectIds, filter, orderBy)) {
+   *   for (LogEntry element : loggingServiceV2Api.listLogEntries(projectIds, filter, orderBy).iterateAllElements()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -419,8 +425,8 @@ public class LoggingServiceV2Api implements AutoCloseable {
    * timestamps are returned in order of `LogEntry.insertId`.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  public final PageAccessor<LogEntry> listLogEntries(
-      List<String> projectIds, String filter, String orderBy) {
+  public final PagedListResponse<ListLogEntriesRequest, ListLogEntriesResponse, LogEntry>
+      listLogEntries(List<String> projectIds, String filter, String orderBy) {
     ListLogEntriesRequest request =
         ListLogEntriesRequest.newBuilder()
             .addAllProjectIds(projectIds)
@@ -443,7 +449,7 @@ public class LoggingServiceV2Api implements AutoCloseable {
    *   ListLogEntriesRequest request = ListLogEntriesRequest.newBuilder()
    *     .addAllProjectIds(projectIds)
    *     .build();
-   *   for (LogEntry element : loggingServiceV2Api.listLogEntries(request)) {
+   *   for (LogEntry element : loggingServiceV2Api.listLogEntries(request).iterateAllElements()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -452,7 +458,8 @@ public class LoggingServiceV2Api implements AutoCloseable {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  public final PageAccessor<LogEntry> listLogEntries(ListLogEntriesRequest request) {
+  public final PagedListResponse<ListLogEntriesRequest, ListLogEntriesResponse, LogEntry>
+      listLogEntries(ListLogEntriesRequest request) {
     return listLogEntriesPagedCallable().call(request);
   }
 
@@ -469,15 +476,17 @@ public class LoggingServiceV2Api implements AutoCloseable {
    *   ListLogEntriesRequest request = ListLogEntriesRequest.newBuilder()
    *     .addAllProjectIds(projectIds)
    *     .build();
-   *   ListenableFuture&lt;PageAccessor&lt;LogEntry&gt;&gt; future = loggingServiceV2Api.listLogEntriesPagedCallable().futureCall(request);
+   *   ListenableFuture&lt;PagedListResponse&lt;ListLogEntriesRequest,ListLogEntriesResponse,LogEntry&gt;&gt; future = loggingServiceV2Api.listLogEntriesPagedCallable().futureCall(request);
    *   // Do something
-   *   for (LogEntry element : future.get()) {
+   *   for (LogEntry element : future.get().iterateAllElements()) {
    *     // doThingsWith(element);
    *   }
    * }
    * </code></pre>
    */
-  public final ApiCallable<ListLogEntriesRequest, PageAccessor<LogEntry>>
+  public final ApiCallable<
+          ListLogEntriesRequest,
+          PagedListResponse<ListLogEntriesRequest, ListLogEntriesResponse, LogEntry>>
       listLogEntriesPagedCallable() {
     return listLogEntriesPagedCallable;
   }
@@ -521,9 +530,8 @@ public class LoggingServiceV2Api implements AutoCloseable {
    * Sample code:
    * <pre><code>
    * try (LoggingServiceV2Api loggingServiceV2Api = LoggingServiceV2Api.create()) {
-   *   ListMonitoredResourceDescriptorsRequest request = ListMonitoredResourceDescriptorsRequest.newBuilder()
-   *     .build();
-   *   for (MonitoredResourceDescriptor element : loggingServiceV2Api.listMonitoredResourceDescriptors(request)) {
+   *   ListMonitoredResourceDescriptorsRequest request = ListMonitoredResourceDescriptorsRequest.newBuilder().build();
+   *   for (MonitoredResourceDescriptor element : loggingServiceV2Api.listMonitoredResourceDescriptors(request).iterateAllElements()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -532,8 +540,10 @@ public class LoggingServiceV2Api implements AutoCloseable {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  public final PageAccessor<MonitoredResourceDescriptor> listMonitoredResourceDescriptors(
-      ListMonitoredResourceDescriptorsRequest request) {
+  public final PagedListResponse<
+          ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse,
+          MonitoredResourceDescriptor>
+      listMonitoredResourceDescriptors(ListMonitoredResourceDescriptorsRequest request) {
     return listMonitoredResourceDescriptorsPagedCallable().call(request);
   }
 
@@ -544,18 +554,20 @@ public class LoggingServiceV2Api implements AutoCloseable {
    * Sample code:
    * <pre><code>
    * try (LoggingServiceV2Api loggingServiceV2Api = LoggingServiceV2Api.create()) {
-   *   ListMonitoredResourceDescriptorsRequest request = ListMonitoredResourceDescriptorsRequest.newBuilder()
-   *     .build();
-   *   ListenableFuture&lt;PageAccessor&lt;MonitoredResourceDescriptor&gt;&gt; future = loggingServiceV2Api.listMonitoredResourceDescriptorsPagedCallable().futureCall(request);
+   *   ListMonitoredResourceDescriptorsRequest request = ListMonitoredResourceDescriptorsRequest.newBuilder().build();
+   *   ListenableFuture&lt;PagedListResponse&lt;ListMonitoredResourceDescriptorsRequest,ListMonitoredResourceDescriptorsResponse,MonitoredResourceDescriptor&gt;&gt; future = loggingServiceV2Api.listMonitoredResourceDescriptorsPagedCallable().futureCall(request);
    *   // Do something
-   *   for (MonitoredResourceDescriptor element : future.get()) {
+   *   for (MonitoredResourceDescriptor element : future.get().iterateAllElements()) {
    *     // doThingsWith(element);
    *   }
    * }
    * </code></pre>
    */
   public final ApiCallable<
-          ListMonitoredResourceDescriptorsRequest, PageAccessor<MonitoredResourceDescriptor>>
+          ListMonitoredResourceDescriptorsRequest,
+          PagedListResponse<
+              ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse,
+              MonitoredResourceDescriptor>>
       listMonitoredResourceDescriptorsPagedCallable() {
     return listMonitoredResourceDescriptorsPagedCallable;
   }
@@ -567,8 +579,7 @@ public class LoggingServiceV2Api implements AutoCloseable {
    * Sample code:
    * <pre><code>
    * try (LoggingServiceV2Api loggingServiceV2Api = LoggingServiceV2Api.create()) {
-   *   ListMonitoredResourceDescriptorsRequest request = ListMonitoredResourceDescriptorsRequest.newBuilder()
-   *     .build();
+   *   ListMonitoredResourceDescriptorsRequest request = ListMonitoredResourceDescriptorsRequest.newBuilder().build();
    *   while (true) {
    *     ListMonitoredResourceDescriptorsResponse response = loggingServiceV2Api.listMonitoredResourceDescriptorsCallable().call(request);
    *     for (MonitoredResourceDescriptor element : response.getResourceDescriptorsList()) {
