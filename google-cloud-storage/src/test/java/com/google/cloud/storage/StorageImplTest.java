@@ -50,6 +50,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Iterables;
 import com.google.common.io.BaseEncoding;
+import com.google.common.net.UrlEscapers;
 
 import org.easymock.Capture;
 import org.easymock.EasyMock;
@@ -1252,16 +1253,17 @@ public class StorageImplTest {
         ServiceAccountAuthCredentials.createFor(ACCOUNT, privateKey);
     storage = options.toBuilder().authCredentials(authCredentials).build().service();
     URL url = storage.signUrl(BlobInfo.builder(BUCKET_NAME1, blobName).build(), 14, TimeUnit.DAYS);
+    String escapedBlobName = UrlEscapers.urlPathSegmentEscaper().escape(blobName);
     String stringUrl = url.toString();
     String expectedUrl = new StringBuilder("https://storage.googleapis.com/").append(BUCKET_NAME1)
-        .append(blobName).append("?GoogleAccessId=").append(ACCOUNT).append("&Expires=")
+        .append(escapedBlobName).append("?GoogleAccessId=").append(ACCOUNT).append("&Expires=")
         .append(42L + 1209600).append("&Signature=").toString();
     assertTrue(stringUrl.startsWith(expectedUrl));
     String signature = stringUrl.substring(expectedUrl.length());
 
     StringBuilder signedMessageBuilder = new StringBuilder();
     signedMessageBuilder.append(HttpMethod.GET).append("\n\n\n").append(42L + 1209600).append("\n/")
-        .append(BUCKET_NAME1).append(blobName);
+        .append(BUCKET_NAME1).append(escapedBlobName);
 
     Signature signer = Signature.getInstance("SHA256withRSA");
     signer.initVerify(publicKey);
@@ -1297,6 +1299,42 @@ public class StorageImplTest {
     signer.update(signedMessageBuilder.toString().getBytes(UTF_8));
     assertTrue(signer.verify(BaseEncoding.base64().decode(
         URLDecoder.decode(signature, UTF_8.name()))));
+  }
+
+  @Test
+  public void testSignUrlForBlobWithSpecialChars() throws NoSuchAlgorithmException,
+      InvalidKeyException, SignatureException, UnsupportedEncodingException {
+    // List of chars under test were taken from
+    // https://en.wikipedia.org/wiki/Percent-encoding#Percent-encoding_reserved_characters
+    char[] specialChars =
+            new char[]{'!','#','$','&','\'','(',')','*','+',',',':',';','=','?','@','[',']'};
+    EasyMock.replay(storageRpcMock);
+    ServiceAccountAuthCredentials authCredentials =
+        ServiceAccountAuthCredentials.createFor(ACCOUNT, privateKey);
+    storage = options.toBuilder().authCredentials(authCredentials).build().service();
+
+    for (char specialChar : specialChars) {
+      String blobName = "/a" + specialChar + "b";
+      URL url =
+          storage.signUrl(BlobInfo.builder(BUCKET_NAME1, blobName).build(), 14, TimeUnit.DAYS);
+      String escapedBlobName = UrlEscapers.urlPathSegmentEscaper().escape(blobName);
+      String stringUrl = url.toString();
+      String expectedUrl = new StringBuilder("https://storage.googleapis.com/").append(BUCKET_NAME1)
+          .append(escapedBlobName).append("?GoogleAccessId=").append(ACCOUNT).append("&Expires=")
+          .append(42L + 1209600).append("&Signature=").toString();
+      assertTrue(stringUrl.startsWith(expectedUrl));
+      String signature = stringUrl.substring(expectedUrl.length());
+
+      StringBuilder signedMessageBuilder = new StringBuilder();
+      signedMessageBuilder.append(HttpMethod.GET).append("\n\n\n").append(42L + 1209600)
+          .append("\n/").append(BUCKET_NAME1).append(escapedBlobName);
+
+      Signature signer = Signature.getInstance("SHA256withRSA");
+      signer.initVerify(publicKey);
+      signer.update(signedMessageBuilder.toString().getBytes(UTF_8));
+      assertTrue(signer.verify(BaseEncoding.base64().decode(
+          URLDecoder.decode(signature, UTF_8.name()))));
+    }
   }
 
   @Test

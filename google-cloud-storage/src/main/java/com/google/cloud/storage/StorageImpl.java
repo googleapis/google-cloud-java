@@ -55,6 +55,7 @@ import com.google.common.collect.Maps;
 import com.google.common.hash.Hashing;
 import com.google.common.io.BaseEncoding;
 import com.google.common.primitives.Ints;
+import com.google.common.net.UrlEscapers;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
@@ -524,7 +525,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
     if (blobInfo.name().startsWith("/")) {
       path.setLength(path.length() - 1);
     }
-    path.append(blobInfo.name());
+    path.append(UrlEscapers.urlPathSegmentEscaper().escape(blobInfo.name()));
     stBuilder.append(path);
     try {
       byte[] signatureBytes = authCredentials.sign(stBuilder.toString().getBytes(UTF_8));
