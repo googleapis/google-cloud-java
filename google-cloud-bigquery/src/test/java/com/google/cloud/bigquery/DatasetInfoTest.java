@@ -108,6 +108,34 @@ public class DatasetInfoTest {
   }
 
   @Test
+  public void testOf() {
+    DatasetInfo datasetInfo = DatasetInfo.of(DATASET_ID.dataset());
+    assertEquals(DATASET_ID, datasetInfo.datasetId());
+    assertNull(datasetInfo.acl());
+    assertNull(datasetInfo.creationTime());
+    assertNull(datasetInfo.defaultTableLifetime());
+    assertNull(datasetInfo.description());
+    assertNull(datasetInfo.etag());
+    assertNull(datasetInfo.friendlyName());
+    assertNull(datasetInfo.generatedId());
+    assertNull(datasetInfo.lastModified());
+    assertNull(datasetInfo.location());
+    assertNull(datasetInfo.selfLink());
+    datasetInfo = DatasetInfo.of(DATASET_ID);
+    assertEquals(DATASET_ID, datasetInfo.datasetId());
+    assertNull(datasetInfo.acl());
+    assertNull(datasetInfo.creationTime());
+    assertNull(datasetInfo.defaultTableLifetime());
+    assertNull(datasetInfo.description());
+    assertNull(datasetInfo.etag());
+    assertNull(datasetInfo.friendlyName());
+    assertNull(datasetInfo.generatedId());
+    assertNull(datasetInfo.lastModified());
+    assertNull(datasetInfo.location());
+    assertNull(datasetInfo.selfLink());
+  }
+
+  @Test
   public void testToPbAndFromPb() {
     compareDatasets(DATASET_INFO_COMPLETE, DatasetInfo.fromPb(DATASET_INFO_COMPLETE.toPb()));
     DatasetInfo datasetInfo = DatasetInfo.builder("project", "dataset").build();
