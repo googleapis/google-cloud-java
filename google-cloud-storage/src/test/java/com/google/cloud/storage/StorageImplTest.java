@@ -50,6 +50,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Iterables;
 import com.google.common.io.BaseEncoding;
+import com.google.common.net.UrlEscapers;
 
 import org.easymock.Capture;
 import org.easymock.EasyMock;
@@ -1252,16 +1253,17 @@ public class StorageImplTest {
         ServiceAccountAuthCredentials.createFor(ACCOUNT, privateKey);
     storage = options.toBuilder().authCredentials(authCredentials).build().service();
     URL url = storage.signUrl(BlobInfo.builder(BUCKET_NAME1, blobName).build(), 14, TimeUnit.DAYS);
+    String escapedBlobName = UrlEscapers.urlPathSegmentEscaper().escape(blobName);
     String stringUrl = url.toString();
     String expectedUrl = new StringBuilder("https://storage.googleapis.com/").append(BUCKET_NAME1)
-        .append(blobName).append("?GoogleAccessId=").append(ACCOUNT).append("&Expires=")
+        .append(escapedBlobName).append("?GoogleAccessId=").append(ACCOUNT).append("&Expires=")
         .append(42L + 1209600).append("&Signature=").toString();
     assertTrue(stringUrl.startsWith(expectedUrl));
     String signature = stringUrl.substring(expectedUrl.length());
 
     StringBuilder signedMessageBuilder = new StringBuilder();
     signedMessageBuilder.append(HttpMethod.GET).append("\n\n\n").append(42L + 1209600).append("\n/")
-        .append(BUCKET_NAME1).append(blobName);
+        .append(BUCKET_NAME1).append(escapedBlobName);
 
     Signature signer = Signature.getInstance("SHA256withRSA");
     signer.initVerify(publicKey);
