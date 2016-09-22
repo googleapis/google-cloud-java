@@ -1302,10 +1302,12 @@ public class StorageImplTest {
   }
 
   @Test
-  public void testSignUrlForBlobWithSpecialChars() throws NoSuchAlgorithmException, InvalidKeyException,
-          SignatureException, UnsupportedEncodingException {
-    // List of chars under test were taken from https://en.wikipedia.org/wiki/Percent-encoding#Percent-encoding_reserved_characters
-    char[] specialChars = new char[]{'!','#','$','&','\'','(',')','*','+',',',':',';','=','?','@','[',']'};
+  public void testSignUrlForBlobWithSpecialChars() throws NoSuchAlgorithmException,
+          InvalidKeyException, SignatureException, UnsupportedEncodingException {
+    // List of chars under test were taken from
+    // https://en.wikipedia.org/wiki/Percent-encoding#Percent-encoding_reserved_characters
+    char[] specialChars =
+            new char[]{'!','#','$','&','\'','(',')','*','+',',',':',';','=','?','@','[',']'};
     EasyMock.replay(storageRpcMock);
     ServiceAccountAuthCredentials authCredentials =
             ServiceAccountAuthCredentials.createFor(ACCOUNT, privateKey);
@@ -1313,7 +1315,8 @@ public class StorageImplTest {
 
     for (char specialChar : specialChars) {
       String blobName = "/a" + specialChar + "b";
-      URL url = storage.signUrl(BlobInfo.builder(BUCKET_NAME1, blobName).build(), 14, TimeUnit.DAYS);
+      URL url =
+              storage.signUrl(BlobInfo.builder(BUCKET_NAME1, blobName).build(), 14, TimeUnit.DAYS);
       String escapedBlobName = UrlEscapers.urlPathSegmentEscaper().escape(blobName);
       String stringUrl = url.toString();
       String expectedUrl = new StringBuilder("https://storage.googleapis.com/").append(BUCKET_NAME1)
@@ -1323,8 +1326,8 @@ public class StorageImplTest {
       String signature = stringUrl.substring(expectedUrl.length());
 
       StringBuilder signedMessageBuilder = new StringBuilder();
-      signedMessageBuilder.append(HttpMethod.GET).append("\n\n\n").append(42L + 1209600).append("\n/")
-              .append(BUCKET_NAME1).append(escapedBlobName);
+      signedMessageBuilder.append(HttpMethod.GET).append("\n\n\n").append(42L + 1209600)
+              .append("\n/").append(BUCKET_NAME1).append(escapedBlobName);
 
       Signature signer = Signature.getInstance("SHA256withRSA");
       signer.initVerify(publicKey);
