@@ -16,12 +16,13 @@ package com.google.cloud.speech.spi.v1beta1;
 import com.google.api.gax.core.ConnectionSettings;
 import com.google.api.gax.core.RetrySettings;
 import com.google.api.gax.grpc.ApiCallSettings;
-import com.google.api.gax.grpc.PageStreamingDescriptor;
 import com.google.api.gax.grpc.ServiceApiSettings;
 import com.google.api.gax.grpc.SimpleCallSettings;
 import com.google.auth.Credentials;
 import com.google.cloud.speech.v1beta1.AsyncRecognizeRequest;
 import com.google.cloud.speech.v1beta1.SpeechGrpc;
+import com.google.cloud.speech.v1beta1.StreamingRecognizeRequest;
+import com.google.cloud.speech.v1beta1.StreamingRecognizeResponse;
 import com.google.cloud.speech.v1beta1.SyncRecognizeRequest;
 import com.google.cloud.speech.v1beta1.SyncRecognizeResponse;
 import com.google.common.collect.ImmutableList;
@@ -30,12 +31,16 @@ import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
 import com.google.longrunning.Operation;
+
+import org.joda.time.Duration;
+
 import io.grpc.ManagedChannel;
 import io.grpc.Status;
+import io.grpc.stub.StreamObserver;
+
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.ScheduledExecutorService;
-import org.joda.time.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 /**
@@ -95,6 +100,8 @@ public class SpeechSettings extends ServiceApiSettings {
   private final SimpleCallSettings<SyncRecognizeRequest, SyncRecognizeResponse>
       syncRecognizeSettings;
   private final SimpleCallSettings<AsyncRecognizeRequest, Operation> asyncRecognizeSettings;
+  private final SimpleCallSettings<StreamObserver<StreamingRecognizeRequest>,
+      StreamObserver<StreamingRecognizeResponse>> streamingRecognizeSettings;
 
   /**
    * Returns the object with the settings used for calls to syncRecognize.
@@ -108,6 +115,14 @@ public class SpeechSettings extends ServiceApiSettings {
    */
   public SimpleCallSettings<AsyncRecognizeRequest, Operation> asyncRecognizeSettings() {
     return asyncRecognizeSettings;
+  }
+
+  /**
+   * Returns the object with the settings used for calls to asyncRecognize.
+   */
+  public SimpleCallSettings<StreamObserver<StreamingRecognizeRequest>,
+      StreamObserver<StreamingRecognizeResponse>> streamingRecognizeSettings() {
+    return streamingRecognizeSettings;
   }
 
   /**
@@ -163,6 +178,7 @@ public class SpeechSettings extends ServiceApiSettings {
 
     syncRecognizeSettings = settingsBuilder.syncRecognizeSettings().build();
     asyncRecognizeSettings = settingsBuilder.asyncRecognizeSettings().build();
+    streamingRecognizeSettings = settingsBuilder.streamingRecognizeSettings().build();
   }
 
   /**
@@ -174,6 +190,8 @@ public class SpeechSettings extends ServiceApiSettings {
     private SimpleCallSettings.Builder<SyncRecognizeRequest, SyncRecognizeResponse>
         syncRecognizeSettings;
     private SimpleCallSettings.Builder<AsyncRecognizeRequest, Operation> asyncRecognizeSettings;
+    private SimpleCallSettings.Builder<StreamObserver<StreamingRecognizeRequest>,
+        StreamObserver<StreamingRecognizeResponse>> streamingRecognizeSettings;
 
     private static final ImmutableMap<String, ImmutableSet<Status.Code>> RETRYABLE_CODE_DEFINITIONS;
 
@@ -313,6 +331,11 @@ public class SpeechSettings extends ServiceApiSettings {
      */
     public SimpleCallSettings.Builder<AsyncRecognizeRequest, Operation> asyncRecognizeSettings() {
       return asyncRecognizeSettings;
+    }
+
+    public SimpleCallSettings.Builder<StreamObserver<StreamingRecognizeRequest>,
+        StreamObserver<StreamingRecognizeResponse>> streamingRecognizeSettings() {
+      return streamingRecognizeSettings;
     }
 
     @Override

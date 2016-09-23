@@ -14,14 +14,18 @@
 package com.google.cloud.speech.spi.v1beta1;
 
 import com.google.api.gax.grpc.ApiCallable;
-import com.google.api.gax.protobuf.PathTemplate;
 import com.google.cloud.speech.v1beta1.AsyncRecognizeRequest;
 import com.google.cloud.speech.v1beta1.RecognitionAudio;
 import com.google.cloud.speech.v1beta1.RecognitionConfig;
+import com.google.cloud.speech.v1beta1.StreamingRecognizeRequest;
+import com.google.cloud.speech.v1beta1.StreamingRecognizeResponse;
 import com.google.cloud.speech.v1beta1.SyncRecognizeRequest;
 import com.google.cloud.speech.v1beta1.SyncRecognizeResponse;
 import com.google.longrunning.Operation;
+
 import io.grpc.ManagedChannel;
+import io.grpc.stub.StreamObserver;
+
 import java.io.Closeable;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -90,6 +94,8 @@ public class SpeechApi implements AutoCloseable {
 
   private final ApiCallable<SyncRecognizeRequest, SyncRecognizeResponse> syncRecognizeCallable;
   private final ApiCallable<AsyncRecognizeRequest, Operation> asyncRecognizeCallable;
+  private final ApiCallable<StreamObserver<StreamingRecognizeRequest>,
+      StreamObserver<StreamingRecognizeResponse>> streamingRecognizeCallable;
 
   public final SpeechSettings getSettings() {
     return settings;
@@ -125,6 +131,8 @@ public class SpeechApi implements AutoCloseable {
         ApiCallable.create(settings.syncRecognizeSettings(), this.channel, this.executor);
     this.asyncRecognizeCallable =
         ApiCallable.create(settings.asyncRecognizeSettings(), this.channel, this.executor);
+    this.streamingRecognizeCallable =
+        ApiCallable.create(settings.streamingRecognizeSettings(), this.channel, this.executor);
 
     if (settings.getChannelProvider().shouldAutoClose()) {
       closeables.add(
@@ -144,6 +152,11 @@ public class SpeechApi implements AutoCloseable {
             }
           });
     }
+  }
+
+  public final StreamObserver<StreamingRecognizeResponse> streamingRecognize(
+      StreamObserver<StreamingRecognizeRequest> streamObserver) {
+    return streamingRecognizeCallable.call(streamObserver);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
