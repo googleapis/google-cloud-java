@@ -18,6 +18,8 @@ package com.google.cloud.datastore;
 
 import static com.google.cloud.datastore.Validator.validateNamespace;
 
+import com.google.api.client.http.HttpRequest;
+import com.google.api.client.http.HttpRequestInitializer;
 import com.google.cloud.HttpServiceOptions;
 import com.google.cloud.datastore.spi.DatastoreRpc;
 import com.google.cloud.datastore.spi.DatastoreRpcFactory;
@@ -25,6 +27,7 @@ import com.google.cloud.datastore.spi.DefaultDatastoreRpc;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableSet;
 
+import java.io.IOException;
 import java.lang.reflect.Method;
 import java.util.Objects;
 import java.util.Set;
@@ -88,6 +91,18 @@ public class DatastoreOptions
   private DatastoreOptions(Builder builder) {
     super(DatastoreFactory.class, DatastoreRpcFactory.class, builder);
     namespace = builder.namespace != null ? builder.namespace : defaultNamespace();
+  }
+
+  @Override
+  public HttpRequestInitializer httpRequestInitializer() {
+    final HttpRequestInitializer delegate = super.httpRequestInitializer();
+    return new HttpRequestInitializer() {
+      @Override
+      public void initialize(HttpRequest httpRequest) throws IOException {
+        delegate.initialize(httpRequest);
+        httpRequest.getHeaders().setUserAgent(applicationName());
+      }
+    };
   }
 
   @Override
