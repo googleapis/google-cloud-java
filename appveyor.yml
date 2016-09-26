@@ -25,19 +25,8 @@ environment:
 
 # install required tools (maven, secure-file, encrypted files)
 install:
-  - ps: |
-      Add-Type -AssemblyName System.IO.Compression.FileSystem
-      if (!(Test-Path -Path "C:\maven" )) {
-        (new-object System.Net.WebClient).DownloadFile(
-          'http://www.us.apache.org/dist/maven/maven-3/3.2.5/binaries/apache-maven-3.2.5-bin.zip',
-          'C:\maven-bin.zip'
-        )
-        [System.IO.Compression.ZipFile]::ExtractToDirectory("C:\maven-bin.zip", "C:\maven")
-      }
-  - cmd: SET PATH=C:\maven\apache-maven-3.2.5\bin;%JAVA_HOME%\bin;%PATH%
-  - cmd: SET MAVEN_OPTS=-XX:MaxPermSize=2g -Xmx4g
-  - cmd: SET JAVA_OPTS=-XX:MaxPermSize=2g -Xmx4g
   - cmd: echo %JAVA_HOME%
+  - cmd: echo %M2_HOME%
   - ps: $origin = git config --get remote.origin.url; git clone --quiet -b appveyor $origin appveyor
   - cmd: nuget install secure-file -ExcludeVersion
   - cmd: IF DEFINED SECRET (secure-file\tools\secure-file -decrypt appveyor\key.json.enc -secret %SECRET% -out appveyor\key.json)
