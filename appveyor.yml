@@ -16,10 +16,12 @@ skip_tags: true
 environment:
   matrix:
     - JAVA_HOME: C:\Program Files\Java\jdk1.7.0
-  GCLOUD_PROJECT:
-    secure: hEMdRRNQ5x4GHZcZGt6gsA==
+  GOOGLE_CLOUD_PROJECT:
+    secure: uFZ/+vyRarW3Xot03J4h5w==
   SECRET:
-    secure: 8RQaiFWYQ8DoGCvFJhYYCSH063ZZQofpDxXjUZ8UZZsxVgzHQqjQz44pszw1KrjshkWD7qNHynxPOqlUDFGP9SAW08pzO1ckckNVyMVLDFMDj5WtWWXepZhTIvTbp+qJYU8ToZYzMTfOykov9uUfwS6Oy7e5RQW6SZ6S7ffuVkuRSCIkwL3YetsonB9Hl6ydKwXvyT5F+vd2xIsSkgvrlw9VVdMZl55d4Pd8nqDVDuM=
+    secure: aiT7rDn1EzWK6imZcF/1q8NqPP5rLf7T9dUB+QFna8Zpa4k4ezMX/ZFYhFz02Aia3VLV8uD8M5esqBVB3NB9ah7kqsWMbm3blVJF8UiuR/+snafR3q/jbQ/E4FJ6TY/Xx4WgnSOFpXBFqlGvUCtrvzH5V8+M+aDmuj8wHmb1/Y6ms7HQ42uHp9/v8YhnGdZFERgD61r5v2zSkqwKIGNaSw6Zd1+hPYIEK8iCAgE8jzc=
+  GOOGLE_API_KEY:
+    secure: v/wAbkBCQm25Yqk4n/+7II/Klsibax+kymVIJREJgGTjBYR5AlIkpTT2oECy0Z+B
 
 # install required tools (maven, secure-file, encrypted files)
 install:
