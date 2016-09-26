@@ -76,7 +76,7 @@ public final class InsertAllRequest implements Serializable {
     private final String id;
     private final Map<String, Object> content;
 
-    RowToInsert(String id, Map<String, Object> content) {
+    RowToInsert(String id, Map<String, ?> content) {
       this.id = id;
       this.content = ImmutableMap.copyOf(content);
     }
@@ -125,7 +125,7 @@ public final class InsertAllRequest implements Serializable {
      * @param id id of the row, used to identify duplicates
      * @param content the actual content of the row
      */
-    public static RowToInsert of(String id, Map<String, Object> content) {
+    public static RowToInsert of(String id, Map<String, ?> content) {
       return new RowToInsert(checkNotNull(id), checkNotNull(content));
     }
 
@@ -135,7 +135,7 @@ public final class InsertAllRequest implements Serializable {
      *
      * @param content the actual content of the row
      */
-    public static RowToInsert of(Map<String, Object> content) {
+    public static RowToInsert of(Map<String, ?> content) {
       return new RowToInsert(null, checkNotNull(content));
     }
   }
@@ -196,7 +196,7 @@ public final class InsertAllRequest implements Serializable {
      * builder.addRow("rowId", rowContent);
      * }</pre>
      */
-    public Builder addRow(String id, Map<String, Object> content) {
+    public Builder addRow(String id, Map<String, ?> content) {
       addRow(new RowToInsert(id, content));
       return this;
     }
@@ -219,7 +219,7 @@ public final class InsertAllRequest implements Serializable {
      * builder.addRow(rowContent);
      * }</pre>
      */
-    public Builder addRow(Map<String, Object> content) {
+    public Builder addRow(Map<String, ?> content) {
       addRow(new RowToInsert(null, content));
       return this;
     }
