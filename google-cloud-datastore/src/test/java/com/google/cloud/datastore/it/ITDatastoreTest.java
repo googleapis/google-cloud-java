@@ -194,7 +194,7 @@ public class ITDatastoreTest {
   }
 
   @Test
-  public void testTransactionWithQuery() {
+  public void testTransactionWithQuery() throws InterruptedException {
     Query<Entity> query = Query.entityQueryBuilder()
         .kind(KIND2)
         .filter(PropertyFilter.hasAncestor(KEY2))
@@ -202,6 +202,12 @@ public class ITDatastoreTest {
         .build();
     Transaction transaction = DATASTORE.newTransaction();
     QueryResults<Entity> results = transaction.run(query);
+    while (Iterators.size(results) < 1) {
+      Thread.sleep(500);
+      results = DATASTORE.run(query);
+    }
+    results = DATASTORE.run(query);
+    assertTrue(results.hasNext());
     assertEquals(ENTITY2, results.next());
     assertFalse(results.hasNext());
     transaction.add(ENTITY3);
@@ -210,7 +216,14 @@ public class ITDatastoreTest {
 
     transaction = DATASTORE.newTransaction();
     results = transaction.run(query);
+    while (Iterators.size(results) < 1) {
+      Thread.sleep(500);
+      results = DATASTORE.run(query);
+    }
+    results = DATASTORE.run(query);
+    assertTrue(results.hasNext());
     assertEquals(ENTITY2, results.next());
+    assertFalse(results.hasNext());
     transaction.delete(ENTITY3.key());
     // update entity2 during the transaction
     DATASTORE.put(Entity.builder(ENTITY2).clear().build());
@@ -312,8 +325,8 @@ public class ITDatastoreTest {
         .build();
     QueryResults<Entity> results1 = DATASTORE.run(query1);
     while (Iterators.size(results1) < 1) {
-      results1 = DATASTORE.run(query1);
       Thread.sleep(500);
+      results1 = DATASTORE.run(query1);
     }
     results1 = DATASTORE.run(query1);
     assertTrue(results1.hasNext());
@@ -327,8 +340,8 @@ public class ITDatastoreTest {
             .build();
     QueryResults<? extends Entity> results2 = DATASTORE.run(query2);
     while (Iterators.size(results2) < 2) {
-      results2 = DATASTORE.run(query2);
       Thread.sleep(500);
+      results2 = DATASTORE.run(query2);
     }
     results2 = DATASTORE.run(query2);
     assertTrue(results2.hasNext());
@@ -348,8 +361,8 @@ public class ITDatastoreTest {
         .build();
     QueryResults<Key> keyOnlyResults = DATASTORE.run(keyOnlyQuery);
     while (Iterators.size(keyOnlyResults) < 1) {
-      keyOnlyResults = DATASTORE.run(keyOnlyQuery);
       Thread.sleep(500);
+      keyOnlyResults = DATASTORE.run(keyOnlyQuery);
     }
     keyOnlyResults = DATASTORE.run(keyOnlyQuery);
     assertTrue(keyOnlyResults.hasNext());
@@ -362,8 +375,8 @@ public class ITDatastoreTest {
             .build();
     QueryResults<ProjectionEntity> keyProjectionResult = DATASTORE.run(keyProjectionQuery);
     while (Iterators.size(keyProjectionResult) < 1) {
-      keyProjectionResult = DATASTORE.run(keyProjectionQuery);
       Thread.sleep(500);
+      keyProjectionResult = DATASTORE.run(keyProjectionQuery);
     }
     keyProjectionResult = DATASTORE.run(keyProjectionQuery);
     assertTrue(keyProjectionResult.hasNext());
@@ -381,8 +394,8 @@ public class ITDatastoreTest {
         .build();
     QueryResults<Entity> results1 = DATASTORE.run(query1);
     while (Iterators.size(results1) < 1) {
-      results1 = DATASTORE.run(query1);
       Thread.sleep(500);
+      results1 = DATASTORE.run(query1);
     }
     results1 = DATASTORE.run(query1);
     assertTrue(results1.hasNext());
@@ -394,8 +407,8 @@ public class ITDatastoreTest {
         .build();
     QueryResults<?> results2 = DATASTORE.run(query2);
     while (Iterators.size(results2) < 1) {
-      results2 = DATASTORE.run(query2);
       Thread.sleep(500);
+      results2 = DATASTORE.run(query2);
     }
     results2 = DATASTORE.run(query1);
     assertSame(Entity.class, results2.resultClass());
@@ -412,8 +425,8 @@ public class ITDatastoreTest {
         Query.entityQueryBuilder().kind(KIND1).orderBy(OrderBy.asc("__key__")).build();
     QueryResults<Entity> results1 = DATASTORE.run(query);
     while (Iterators.size(results1) < 1) {
-      results1 = DATASTORE.run(query);
       Thread.sleep(500);
+      results1 = DATASTORE.run(query);
     }
     results1 = DATASTORE.run(query);
     assertTrue(results1.hasNext());
@@ -423,8 +436,8 @@ public class ITDatastoreTest {
     Query<Key> keyOnlyQuery =  Query.keyQueryBuilder().kind(KIND1).build();
     QueryResults<Key> results2 = DATASTORE.run(keyOnlyQuery);
     while (Iterators.size(results2) < 1) {
-      results2 = DATASTORE.run(keyOnlyQuery);
       Thread.sleep(500);
+      results2 = DATASTORE.run(keyOnlyQuery);
     }
     results2 = DATASTORE.run(keyOnlyQuery);
     assertTrue(results2.hasNext());
@@ -436,8 +449,8 @@ public class ITDatastoreTest {
             .kind(KIND1).projection("__key__").build();
     QueryResults<ProjectionEntity> results3 = DATASTORE.run(keyOnlyProjectionQuery);
     while (Iterators.size(results3) < 1) {
-      results3 = DATASTORE.run(keyOnlyProjectionQuery);
       Thread.sleep(500);
+      results3 = DATASTORE.run(keyOnlyProjectionQuery);
     }
     results3 = DATASTORE.run(keyOnlyProjectionQuery);
     assertTrue(results3.hasNext());
@@ -457,8 +470,8 @@ public class ITDatastoreTest {
 
     QueryResults<ProjectionEntity> results4 = DATASTORE.run(projectionQuery);
     while (Iterators.size(results4) < 1) {
-      results4 = DATASTORE.run(projectionQuery);
       Thread.sleep(500);
+      results4 = DATASTORE.run(projectionQuery);
     }
     results4 = DATASTORE.run(projectionQuery);
     assertTrue(results4.hasNext());
