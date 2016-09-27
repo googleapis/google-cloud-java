@@ -27,6 +27,7 @@ import com.google.cloud.Page;
 import com.google.cloud.pubsub.PubSub.MessageConsumer;
 import com.google.cloud.pubsub.PubSub.MessageProcessor;
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.Iterators;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
 
@@ -465,7 +466,18 @@ public abstract class BaseSystemTest {
     pubsub().publish(topic, message1);
     pubsub().publish(topic, message2);
     Iterator<ReceivedMessage> iterator = pubsub().pull(subscription, 2);
+    while (!iterator.hasNext()) {
+      Thread.sleep(500);
+      iterator = pubsub().pull(subscription, 2);
+    }
     ReceivedMessage consumedMessage = iterator.next();
+    if (!iterator.hasNext()) {
+      iterator = pubsub().pull(subscription, 1);
+      while (!iterator.hasNext()) {
+        Thread.sleep(500);
+        iterator = pubsub().pull(subscription, 1);
+      }
+    }
     Thread.sleep(15000);
     // first message was consumed while second message is still being renewed
     Iterator<ReceivedMessage> nextIterator = pubsub().pull(subscription, 2);
@@ -494,6 +506,10 @@ public abstract class BaseSystemTest {
     pubsub().publish(topic, message2);
     // Consume all messages and stop ack renewal
     List<ReceivedMessage> receivedMessages = Lists.newArrayList(pubsub().pull(subscription, 2));
+    while (receivedMessages.size() < 2) {
+      Thread.sleep(500);
+      Iterators.addAll(receivedMessages, pubsub().pull(subscription, 2));
+    }
     receivedMessages.get(0).modifyAckDeadline(60, TimeUnit.SECONDS);
     Thread.sleep(15000);
     // first message was renewed while second message should still be sent on pull requests
