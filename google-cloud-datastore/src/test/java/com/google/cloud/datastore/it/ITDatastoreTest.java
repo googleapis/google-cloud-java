@@ -62,7 +62,9 @@ import com.google.common.collect.Iterators;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.Timeout;
 
 import java.util.Collections;
 import java.util.Iterator;
@@ -124,6 +126,9 @@ public class ITDatastoreTest {
   private static final Entity ENTITY3 = Entity.builder(ENTITY1).key(KEY3).remove("str")
       .set("null", NULL_VALUE).set("partial1", PARTIAL_ENTITY2).set("partial2", ENTITY2).build();
 
+  @Rule
+  public Timeout globalTimeout = Timeout.seconds(100);
+
   @AfterClass
   public static void afterClass() {
     HELPER.deleteNamespace();
@@ -150,6 +155,7 @@ public class ITDatastoreTest {
     transaction.update(entity2);
     transaction.delete(KEY1);
     transaction.commit();
+    assertFalse(transaction.active());
 
     List<Entity> list = DATASTORE.fetch(KEY1, KEY2, KEY3);
     assertNull(list.get(0));
@@ -160,15 +166,15 @@ public class ITDatastoreTest {
     try {
       transaction.commit();
       fail("Expecting a failure");
-    } catch (DatastoreException ex) {
-      // expected to fail
+    } catch (DatastoreException expected) {
+      assertEquals("FAILED_PRECONDITION", expected.reason());
     }
 
     try {
       transaction.rollback();
       fail("Expecting a failure");
-    } catch (DatastoreException ex) {
-      // expected to fail
+    } catch (DatastoreException expected) {
+      assertEquals("FAILED_PRECONDITION", expected.reason());
     }
   }
 
@@ -249,8 +255,8 @@ public class ITDatastoreTest {
     try {
       transaction.commit();
       fail("Expecting a failure");
-    } catch (DatastoreException ex) {
-      // expected to fail
+    } catch (DatastoreException expected) {
+      assertEquals("FAILED_PRECONDITION", expected.reason());
     }
 
     List<Entity> list = DATASTORE.fetch(KEY1, KEY2, KEY3);
@@ -300,8 +306,8 @@ public class ITDatastoreTest {
     try {
       batch.submit();
       fail("Expecting a failure");
-    } catch (DatastoreException ex) {
-      // expected to fail
+    } catch (DatastoreException expected) {
+      assertEquals("FAILED_PRECONDITION", expected.reason());
     }
 
     batch = DATASTORE.newBatch();
