@@ -454,7 +454,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
    *
    * @throws BigQueryException upon failure
    */
-  Dataset create(DatasetInfo dataset, DatasetOption... options);
+  Dataset create(DatasetInfo datasetInfo, DatasetOption... options);
 
   /**
    * Creates a new table.
@@ -476,7 +476,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
    *
    * @throws BigQueryException upon failure
    */
-  Table create(TableInfo table, TableOption... options);
+  Table create(TableInfo tableInfo, TableOption... options);
 
   /**
    * Creates a new job.
@@ -496,7 +496,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
    *
    * @throws BigQueryException upon failure
    */
-  Job create(JobInfo job, JobOption... options);
+  Job create(JobInfo jobInfo, JobOption... options);
 
   /**
    * Returns the requested dataset or {@code null} if not found.
@@ -665,7 +665,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
    *
    * @throws BigQueryException upon failure
    */
-  Dataset update(DatasetInfo dataset, DatasetOption... options);
+  Dataset update(DatasetInfo datasetInfo, DatasetOption... options);
 
   /**
    * Updates table information.
@@ -682,7 +682,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
    *
    * @throws BigQueryException upon failure
    */
-  Table update(TableInfo table, TableOption... options);
+  Table update(TableInfo tableInfo, TableOption... options);
 
   /**
    * Returns the requested table or {@code null} if not found.
@@ -924,7 +924,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
    *     found
    * @throws BigQueryException upon failure
    */
-  boolean cancel(JobId tableId);
+  boolean cancel(JobId jobId);
 
   /**
    * Runs the query associated with the request.
@@ -980,7 +980,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
    *
    * @throws BigQueryException upon failure
    */
-  QueryResponse getQueryResults(JobId job, QueryResultsOption... options);
+  QueryResponse getQueryResults(JobId jobId, QueryResultsOption... options);
 
   /**
    * Returns a channel to write data to be inserted into a BigQuery table. Data format and other
