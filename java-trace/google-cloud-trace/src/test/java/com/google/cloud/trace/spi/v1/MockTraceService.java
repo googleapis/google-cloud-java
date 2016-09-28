@@ -16,7 +16,7 @@ package com.google.cloud.trace.spi.v1;
 
 import com.google.api.gax.testing.MockGrpcService;
 import com.google.devtools.cloudtrace.v1.TraceServiceGrpc;
-import com.google.protobuf.GeneratedMessage;
+import com.google.protobuf.GeneratedMessageV3;
 import io.grpc.ServerServiceDefinition;
 import java.util.List;
 
@@ -29,18 +29,18 @@ public class MockTraceService implements MockGrpcService {
   }
 
   @Override
-  public List<GeneratedMessage> getRequests() {
+  public List<GeneratedMessageV3> getRequests() {
     return serviceImpl.getRequests();
   }
 
   @Override
-  public void setResponses(List<GeneratedMessage> responses) {
+  public void setResponses(List<GeneratedMessageV3> responses) {
     serviceImpl.setResponses(responses);
   }
 
   @Override
   public ServerServiceDefinition getServiceDefinition() {
-    return TraceServiceGrpc.bindService(serviceImpl);
+    return serviceImpl.bindService();
   }
 
   @Override
