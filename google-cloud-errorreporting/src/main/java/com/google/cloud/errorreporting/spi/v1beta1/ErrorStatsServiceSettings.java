@@ -199,6 +199,17 @@ public class ErrorStatsServiceSettings extends ServiceApiSettings {
             }
 
             @Override
+            public ListGroupStatsRequest injectPageSize(
+                ListGroupStatsRequest payload, int pageSize) {
+              return ListGroupStatsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListGroupStatsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
             public Object extractNextToken(ListGroupStatsResponse payload) {
               return payload.getNextPageToken();
             }
@@ -220,6 +231,16 @@ public class ErrorStatsServiceSettings extends ServiceApiSettings {
             @Override
             public ListEventsRequest injectToken(ListEventsRequest payload, Object token) {
               return ListEventsRequest.newBuilder(payload).setPageToken((String) token).build();
+            }
+
+            @Override
+            public ListEventsRequest injectPageSize(ListEventsRequest payload, int pageSize) {
+              return ListEventsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListEventsRequest payload) {
+              return payload.getPageSize();
             }
 
             @Override

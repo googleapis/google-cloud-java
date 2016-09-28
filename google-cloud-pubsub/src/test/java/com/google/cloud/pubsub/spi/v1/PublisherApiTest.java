@@ -165,7 +165,7 @@ public class PublisherApiTest {
     publisherApi.createTopic(topicName2);
     publisherApi.createTopic(topicName3);
     List<Topic> topics = new ArrayList<>();
-    for (Topic topic : publisherApi.listTopics(project1)) {
+    for (Topic topic : publisherApi.listTopics(project1).iterateAllElements()) {
       topics.add(topic);
     }
     Assert.assertEquals(2, topics.size());
@@ -180,7 +180,7 @@ public class PublisherApiTest {
     publisherApi.createTopic(topicName);
     publisherApi.deleteTopic(topicName);
     List<Topic> topics = new ArrayList<>();
-    for (Topic topic : publisherApi.listTopics(project)) {
+    for (Topic topic : publisherApi.listTopics(project).iterateAllElements()) {
       topics.add(topic);
     }
     Assert.assertEquals(0, topics.size());

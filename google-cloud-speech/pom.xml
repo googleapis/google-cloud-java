@@ -20,7 +20,7 @@
     <dependency>
       <groupId>io.netty</groupId>
       <artifactId>netty-tcnative-boringssl-static</artifactId>
-      <version>1.1.33.Fork17</version>
+      <version>1.1.33.Fork19</version>
     </dependency>
     <dependency>
       <groupId>${project.groupId}</groupId>
@@ -30,17 +30,12 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-speech-v1beta1</artifactId>
-      <version>0.0.7</version>
+      <version>0.1.0</version>
     </dependency>
     <dependency>
       <groupId>io.grpc</groupId>
       <artifactId>grpc-all</artifactId>
-      <version>0.15.0</version>
-    </dependency>
-    <dependency>
-      <groupId>com.google.auto.value</groupId>
-      <artifactId>auto-value</artifactId>
-      <version>1.1</version>
+      <version>1.0.1</version>
     </dependency>
     <dependency>
       <groupId>${project.groupId}</groupId>

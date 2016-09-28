@@ -196,6 +196,18 @@ public class TraceServiceSettings extends ServiceApiSettings {
             }
 
             @Override
+            public ListTracesRequest injectPageSize(ListTracesRequest payload, int pageSize) {
+              throw new UnsupportedOperationException(
+                  "page size is not supported by this API method");
+            }
+
+            @Override
+            public Integer extractPageSize(ListTracesRequest payload) {
+              throw new UnsupportedOperationException(
+                  "page size is not supported by this API method");
+            }
+
+            @Override
             public Object extractNextToken(ListTracesResponse payload) {
               return payload.getNextPageToken();
             }

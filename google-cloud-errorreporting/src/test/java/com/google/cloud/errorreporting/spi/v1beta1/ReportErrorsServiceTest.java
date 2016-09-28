@@ -14,14 +14,14 @@
 
 package com.google.cloud.errorreporting.spi.v1beta1;
 
-import com.google.api.gax.core.PageAccessor;
+import com.google.api.gax.core.PagedListResponse;
 import com.google.api.gax.testing.MockGrpcService;
 import com.google.api.gax.testing.MockServiceHelper;
 import com.google.common.collect.Lists;
 import com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest;
 import com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse;
 import com.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent;
-import com.google.protobuf.GeneratedMessage;
+import com.google.protobuf.GeneratedMessageV3;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -78,7 +78,7 @@ public class ReportErrorsServiceTest {
   @SuppressWarnings("all")
   public void reportErrorEventTest() {
     ReportErrorEventResponse expectedResponse = ReportErrorEventResponse.newBuilder().build();
-    List<GeneratedMessage> expectedResponses = new ArrayList<>();
+    List<GeneratedMessageV3> expectedResponses = new ArrayList<>();
     expectedResponses.add(expectedResponse);
     mockReportErrorsService.setResponses(expectedResponses);
 
@@ -88,7 +88,7 @@ public class ReportErrorsServiceTest {
     ReportErrorEventResponse actualResponse = api.reportErrorEvent(formattedProjectName, event);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessage> actualRequests = mockReportErrorsService.getRequests();
+    List<GeneratedMessageV3> actualRequests = mockReportErrorsService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ReportErrorEventRequest actualRequest = (ReportErrorEventRequest) actualRequests.get(0);
 

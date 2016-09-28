@@ -220,6 +220,17 @@ public class LoggingServiceV2Settings extends ServiceApiSettings {
             }
 
             @Override
+            public ListLogEntriesRequest injectPageSize(
+                ListLogEntriesRequest payload, int pageSize) {
+              return ListLogEntriesRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListLogEntriesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
             public Object extractNextToken(ListLogEntriesResponse payload) {
               return payload.getNextPageToken();
             }
@@ -248,6 +259,19 @@ public class LoggingServiceV2Settings extends ServiceApiSettings {
               return ListMonitoredResourceDescriptorsRequest.newBuilder(payload)
                   .setPageToken((String) token)
                   .build();
+            }
+
+            @Override
+            public ListMonitoredResourceDescriptorsRequest injectPageSize(
+                ListMonitoredResourceDescriptorsRequest payload, int pageSize) {
+              return ListMonitoredResourceDescriptorsRequest.newBuilder(payload)
+                  .setPageSize(pageSize)
+                  .build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListMonitoredResourceDescriptorsRequest payload) {
+              return payload.getPageSize();
             }
 
             @Override

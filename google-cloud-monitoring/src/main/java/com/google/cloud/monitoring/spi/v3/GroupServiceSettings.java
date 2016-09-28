@@ -228,6 +228,16 @@ public class GroupServiceSettings extends ServiceApiSettings {
             }
 
             @Override
+            public ListGroupsRequest injectPageSize(ListGroupsRequest payload, int pageSize) {
+              return ListGroupsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListGroupsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
             public Object extractNextToken(ListGroupsResponse payload) {
               return payload.getNextPageToken();
             }
@@ -254,6 +264,17 @@ public class GroupServiceSettings extends ServiceApiSettings {
               return ListGroupMembersRequest.newBuilder(payload)
                   .setPageToken((String) token)
                   .build();
+            }
+
+            @Override
+            public ListGroupMembersRequest injectPageSize(
+                ListGroupMembersRequest payload, int pageSize) {
+              return ListGroupMembersRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListGroupMembersRequest payload) {
+              return payload.getPageSize();
             }
 
             @Override

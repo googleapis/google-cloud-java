@@ -13,7 +13,7 @@
  */
 package com.google.cloud.pubsub.spi.v1;
 
-import com.google.api.gax.core.PageAccessor;
+import com.google.api.gax.core.PagedListResponse;
 import com.google.api.gax.grpc.ApiCallable;
 import com.google.api.gax.protobuf.PathTemplate;
 import com.google.iam.v1.GetIamPolicyRequest;
@@ -21,7 +21,6 @@ import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
-import com.google.protobuf.ByteString;
 import com.google.protobuf.Empty;
 import com.google.pubsub.v1.DeleteTopicRequest;
 import com.google.pubsub.v1.GetTopicRequest;
@@ -104,10 +103,14 @@ public class PublisherApi implements AutoCloseable {
   private final ApiCallable<PublishRequest, PublishResponse> publishCallable;
   private final ApiCallable<GetTopicRequest, Topic> getTopicCallable;
   private final ApiCallable<ListTopicsRequest, ListTopicsResponse> listTopicsCallable;
-  private final ApiCallable<ListTopicsRequest, PageAccessor<Topic>> listTopicsPagedCallable;
+  private final ApiCallable<
+          ListTopicsRequest, PagedListResponse<ListTopicsRequest, ListTopicsResponse, Topic>>
+      listTopicsPagedCallable;
   private final ApiCallable<ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse>
       listTopicSubscriptionsCallable;
-  private final ApiCallable<ListTopicSubscriptionsRequest, PageAccessor<String>>
+  private final ApiCallable<
+          ListTopicSubscriptionsRequest,
+          PagedListResponse<ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse, String>>
       listTopicSubscriptionsPagedCallable;
   private final ApiCallable<DeleteTopicRequest, Empty> deleteTopicCallable;
   private final ApiCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable;
@@ -470,7 +473,7 @@ public class PublisherApi implements AutoCloseable {
    * <pre><code>
    * try (PublisherApi publisherApi = PublisherApi.create()) {
    *   String formattedProject = PublisherApi.formatProjectName("[PROJECT]");
-   *   for (Topic element : publisherApi.listTopics(formattedProject)) {
+   *   for (Topic element : publisherApi.listTopics(formattedProject).iterateAllElements()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -479,7 +482,8 @@ public class PublisherApi implements AutoCloseable {
    * @param project The name of the cloud project that topics belong to.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  public final PageAccessor<Topic> listTopics(String project) {
+  public final PagedListResponse<ListTopicsRequest, ListTopicsResponse, Topic> listTopics(
+      String project) {
     PROJECT_PATH_TEMPLATE.validate(project, "listTopics");
     ListTopicsRequest request = ListTopicsRequest.newBuilder().setProject(project).build();
     return listTopics(request);
@@ -496,7 +500,7 @@ public class PublisherApi implements AutoCloseable {
    *   ListTopicsRequest request = ListTopicsRequest.newBuilder()
    *     .setProject(formattedProject)
    *     .build();
-   *   for (Topic element : publisherApi.listTopics(request)) {
+   *   for (Topic element : publisherApi.listTopics(request).iterateAllElements()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -505,7 +509,8 @@ public class PublisherApi implements AutoCloseable {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  public final PageAccessor<Topic> listTopics(ListTopicsRequest request) {
+  public final PagedListResponse<ListTopicsRequest, ListTopicsResponse, Topic> listTopics(
+      ListTopicsRequest request) {
     return listTopicsPagedCallable().call(request);
   }
 
@@ -520,15 +525,17 @@ public class PublisherApi implements AutoCloseable {
    *   ListTopicsRequest request = ListTopicsRequest.newBuilder()
    *     .setProject(formattedProject)
    *     .build();
-   *   ListenableFuture&lt;PageAccessor&lt;Topic&gt;&gt; future = publisherApi.listTopicsPagedCallable().futureCall(request);
+   *   ListenableFuture&lt;PagedListResponse&lt;ListTopicsRequest,ListTopicsResponse,Topic&gt;&gt; future = publisherApi.listTopicsPagedCallable().futureCall(request);
    *   // Do something
-   *   for (Topic element : future.get()) {
+   *   for (Topic element : future.get().iterateAllElements()) {
    *     // doThingsWith(element);
    *   }
    * }
    * </code></pre>
    */
-  public final ApiCallable<ListTopicsRequest, PageAccessor<Topic>> listTopicsPagedCallable() {
+  public final ApiCallable<
+          ListTopicsRequest, PagedListResponse<ListTopicsRequest, ListTopicsResponse, Topic>>
+      listTopicsPagedCallable() {
     return listTopicsPagedCallable;
   }
 
@@ -570,7 +577,7 @@ public class PublisherApi implements AutoCloseable {
    * <pre><code>
    * try (PublisherApi publisherApi = PublisherApi.create()) {
    *   String formattedTopic = PublisherApi.formatTopicName("[PROJECT]", "[TOPIC]");
-   *   for (String element : publisherApi.listTopicSubscriptions(formattedTopic)) {
+   *   for (String element : publisherApi.listTopicSubscriptions(formattedTopic).iterateAllElements()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -579,7 +586,9 @@ public class PublisherApi implements AutoCloseable {
    * @param topic The name of the topic that subscriptions are attached to.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  public final PageAccessor<String> listTopicSubscriptions(String topic) {
+  public final PagedListResponse<
+          ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse, String>
+      listTopicSubscriptions(String topic) {
     TOPIC_PATH_TEMPLATE.validate(topic, "listTopicSubscriptions");
     ListTopicSubscriptionsRequest request =
         ListTopicSubscriptionsRequest.newBuilder().setTopic(topic).build();
@@ -597,7 +606,7 @@ public class PublisherApi implements AutoCloseable {
    *   ListTopicSubscriptionsRequest request = ListTopicSubscriptionsRequest.newBuilder()
    *     .setTopic(formattedTopic)
    *     .build();
-   *   for (String element : publisherApi.listTopicSubscriptions(request)) {
+   *   for (String element : publisherApi.listTopicSubscriptions(request).iterateAllElements()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -606,7 +615,9 @@ public class PublisherApi implements AutoCloseable {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  public final PageAccessor<String> listTopicSubscriptions(ListTopicSubscriptionsRequest request) {
+  public final PagedListResponse<
+          ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse, String>
+      listTopicSubscriptions(ListTopicSubscriptionsRequest request) {
     return listTopicSubscriptionsPagedCallable().call(request);
   }
 
@@ -621,15 +632,17 @@ public class PublisherApi implements AutoCloseable {
    *   ListTopicSubscriptionsRequest request = ListTopicSubscriptionsRequest.newBuilder()
    *     .setTopic(formattedTopic)
    *     .build();
-   *   ListenableFuture&lt;PageAccessor&lt;String&gt;&gt; future = publisherApi.listTopicSubscriptionsPagedCallable().futureCall(request);
+   *   ListenableFuture&lt;PagedListResponse&lt;ListTopicSubscriptionsRequest,ListTopicSubscriptionsResponse,String&gt;&gt; future = publisherApi.listTopicSubscriptionsPagedCallable().futureCall(request);
    *   // Do something
-   *   for (String element : future.get()) {
+   *   for (String element : future.get().iterateAllElements()) {
    *     // doThingsWith(element);
    *   }
    * }
    * </code></pre>
    */
-  public final ApiCallable<ListTopicSubscriptionsRequest, PageAccessor<String>>
+  public final ApiCallable<
+          ListTopicSubscriptionsRequest,
+          PagedListResponse<ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse, String>>
       listTopicSubscriptionsPagedCallable() {
     return listTopicSubscriptionsPagedCallable;
   }

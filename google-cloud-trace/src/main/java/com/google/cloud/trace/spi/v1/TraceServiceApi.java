@@ -13,7 +13,7 @@
  */
 package com.google.cloud.trace.spi.v1;
 
-import com.google.api.gax.core.PageAccessor;
+import com.google.api.gax.core.PagedListResponse;
 import com.google.api.gax.grpc.ApiCallable;
 import com.google.api.gax.protobuf.PathTemplate;
 import com.google.devtools.cloudtrace.v1.GetTraceRequest;
@@ -97,7 +97,9 @@ public class TraceServiceApi implements AutoCloseable {
   private final ApiCallable<PatchTracesRequest, Empty> patchTracesCallable;
   private final ApiCallable<GetTraceRequest, Trace> getTraceCallable;
   private final ApiCallable<ListTracesRequest, ListTracesResponse> listTracesCallable;
-  private final ApiCallable<ListTracesRequest, PageAccessor<Trace>> listTracesPagedCallable;
+  private final ApiCallable<
+          ListTracesRequest, PagedListResponse<ListTracesRequest, ListTracesResponse, Trace>>
+      listTracesPagedCallable;
 
   public final TraceServiceSettings getSettings() {
     return settings;
@@ -318,7 +320,7 @@ public class TraceServiceApi implements AutoCloseable {
    * <pre><code>
    * try (TraceServiceApi traceServiceApi = TraceServiceApi.create()) {
    *   String projectId = "";
-   *   for (Trace element : traceServiceApi.listTraces(projectId)) {
+   *   for (Trace element : traceServiceApi.listTraces(projectId).iterateAllElements()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -327,7 +329,8 @@ public class TraceServiceApi implements AutoCloseable {
    * @param projectId ID of the Cloud project where the trace data is stored.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  public final PageAccessor<Trace> listTraces(String projectId) {
+  public final PagedListResponse<ListTracesRequest, ListTracesResponse, Trace> listTraces(
+      String projectId) {
     ListTracesRequest request = ListTracesRequest.newBuilder().setProjectId(projectId).build();
     return listTraces(request);
   }
@@ -343,7 +346,7 @@ public class TraceServiceApi implements AutoCloseable {
    *   ListTracesRequest request = ListTracesRequest.newBuilder()
    *     .setProjectId(projectId)
    *     .build();
-   *   for (Trace element : traceServiceApi.listTraces(request)) {
+   *   for (Trace element : traceServiceApi.listTraces(request).iterateAllElements()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -352,7 +355,8 @@ public class TraceServiceApi implements AutoCloseable {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  public final PageAccessor<Trace> listTraces(ListTracesRequest request) {
+  public final PagedListResponse<ListTracesRequest, ListTracesResponse, Trace> listTraces(
+      ListTracesRequest request) {
     return listTracesPagedCallable().call(request);
   }
 
@@ -367,15 +371,17 @@ public class TraceServiceApi implements AutoCloseable {
    *   ListTracesRequest request = ListTracesRequest.newBuilder()
    *     .setProjectId(projectId)
    *     .build();
-   *   ListenableFuture&lt;PageAccessor&lt;Trace&gt;&gt; future = traceServiceApi.listTracesPagedCallable().futureCall(request);
+   *   ListenableFuture&lt;PagedListResponse&lt;ListTracesRequest,ListTracesResponse,Trace&gt;&gt; future = traceServiceApi.listTracesPagedCallable().futureCall(request);
    *   // Do something
-   *   for (Trace element : future.get()) {
+   *   for (Trace element : future.get().iterateAllElements()) {
    *     // doThingsWith(element);
    *   }
    * }
    * </code></pre>
    */
-  public final ApiCallable<ListTracesRequest, PageAccessor<Trace>> listTracesPagedCallable() {
+  public final ApiCallable<
+          ListTracesRequest, PagedListResponse<ListTracesRequest, ListTracesResponse, Trace>>
+      listTracesPagedCallable() {
     return listTracesPagedCallable;
   }
 

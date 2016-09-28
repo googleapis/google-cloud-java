@@ -13,7 +13,7 @@
  */
 package com.google.cloud.pubsub.spi.v1;
 
-import com.google.api.gax.core.PageAccessor;
+import com.google.api.gax.core.PagedListResponse;
 import com.google.api.gax.grpc.ApiCallable;
 import com.google.api.gax.protobuf.PathTemplate;
 import com.google.iam.v1.GetIamPolicyRequest;
@@ -107,7 +107,9 @@ public class SubscriberApi implements AutoCloseable {
   private final ApiCallable<GetSubscriptionRequest, Subscription> getSubscriptionCallable;
   private final ApiCallable<ListSubscriptionsRequest, ListSubscriptionsResponse>
       listSubscriptionsCallable;
-  private final ApiCallable<ListSubscriptionsRequest, PageAccessor<Subscription>>
+  private final ApiCallable<
+          ListSubscriptionsRequest,
+          PagedListResponse<ListSubscriptionsRequest, ListSubscriptionsResponse, Subscription>>
       listSubscriptionsPagedCallable;
   private final ApiCallable<DeleteSubscriptionRequest, Empty> deleteSubscriptionCallable;
   private final ApiCallable<ModifyAckDeadlineRequest, Empty> modifyAckDeadlineCallable;
@@ -467,7 +469,7 @@ public class SubscriberApi implements AutoCloseable {
    * <pre><code>
    * try (SubscriberApi subscriberApi = SubscriberApi.create()) {
    *   String formattedProject = SubscriberApi.formatProjectName("[PROJECT]");
-   *   for (Subscription element : subscriberApi.listSubscriptions(formattedProject)) {
+   *   for (Subscription element : subscriberApi.listSubscriptions(formattedProject).iterateAllElements()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -476,7 +478,8 @@ public class SubscriberApi implements AutoCloseable {
    * @param project The name of the cloud project that subscriptions belong to.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  public final PageAccessor<Subscription> listSubscriptions(String project) {
+  public final PagedListResponse<ListSubscriptionsRequest, ListSubscriptionsResponse, Subscription>
+      listSubscriptions(String project) {
     PROJECT_PATH_TEMPLATE.validate(project, "listSubscriptions");
     ListSubscriptionsRequest request =
         ListSubscriptionsRequest.newBuilder().setProject(project).build();
@@ -494,7 +497,7 @@ public class SubscriberApi implements AutoCloseable {
    *   ListSubscriptionsRequest request = ListSubscriptionsRequest.newBuilder()
    *     .setProject(formattedProject)
    *     .build();
-   *   for (Subscription element : subscriberApi.listSubscriptions(request)) {
+   *   for (Subscription element : subscriberApi.listSubscriptions(request).iterateAllElements()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -503,7 +506,8 @@ public class SubscriberApi implements AutoCloseable {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  public final PageAccessor<Subscription> listSubscriptions(ListSubscriptionsRequest request) {
+  public final PagedListResponse<ListSubscriptionsRequest, ListSubscriptionsResponse, Subscription>
+      listSubscriptions(ListSubscriptionsRequest request) {
     return listSubscriptionsPagedCallable().call(request);
   }
 
@@ -518,15 +522,17 @@ public class SubscriberApi implements AutoCloseable {
    *   ListSubscriptionsRequest request = ListSubscriptionsRequest.newBuilder()
    *     .setProject(formattedProject)
    *     .build();
-   *   ListenableFuture&lt;PageAccessor&lt;Subscription&gt;&gt; future = subscriberApi.listSubscriptionsPagedCallable().futureCall(request);
+   *   ListenableFuture&lt;PagedListResponse&lt;ListSubscriptionsRequest,ListSubscriptionsResponse,Subscription&gt;&gt; future = subscriberApi.listSubscriptionsPagedCallable().futureCall(request);
    *   // Do something
-   *   for (Subscription element : future.get()) {
+   *   for (Subscription element : future.get().iterateAllElements()) {
    *     // doThingsWith(element);
    *   }
    * }
    * </code></pre>
    */
-  public final ApiCallable<ListSubscriptionsRequest, PageAccessor<Subscription>>
+  public final ApiCallable<
+          ListSubscriptionsRequest,
+          PagedListResponse<ListSubscriptionsRequest, ListSubscriptionsResponse, Subscription>>
       listSubscriptionsPagedCallable() {
     return listSubscriptionsPagedCallable;
   }

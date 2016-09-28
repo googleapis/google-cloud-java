@@ -17,6 +17,22 @@
  *
  * The interfaces provided are listed below, along with a usage sample
  *
+ * ===================
+ * LoggingServiceV2Api
+ * ===================
+ *
+ * Service Description: Service for ingesting and querying logs.
+ *
+ * Sample for LoggingServiceV2Api:
+ * <pre>
+ * <code>
+ * try (LoggingServiceV2Api loggingServiceV2Api = LoggingServiceV2Api.create()) {
+ *   String formattedLogName = LoggingServiceV2Api.formatLogName("[PROJECT]", "[LOG]");
+ *   loggingServiceV2Api.deleteLog(formattedLogName);
+ * }
+ * </code>
+ * </pre>
+ *
  * ==================
  * ConfigServiceV2Api
  * ==================
@@ -46,22 +62,6 @@
  * try (MetricsServiceV2Api metricsServiceV2Api = MetricsServiceV2Api.create()) {
  *   String formattedMetricName = MetricsServiceV2Api.formatMetricName("[PROJECT]", "[METRIC]");
  *   LogMetric response = metricsServiceV2Api.getLogMetric(formattedMetricName);
- * }
- * </code>
- * </pre>
- *
- * ===================
- * LoggingServiceV2Api
- * ===================
- *
- * Service Description: Service for ingesting and querying logs.
- *
- * Sample for LoggingServiceV2Api:
- * <pre>
- * <code>
- * try (LoggingServiceV2Api loggingServiceV2Api = LoggingServiceV2Api.create()) {
- *   String formattedLogName = LoggingServiceV2Api.formatLogName("[PROJECT]", "[LOG]");
- *   loggingServiceV2Api.deleteLog(formattedLogName);
  * }
  * </code>
  * </pre>

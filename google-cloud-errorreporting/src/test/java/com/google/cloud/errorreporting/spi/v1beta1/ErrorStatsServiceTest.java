@@ -14,7 +14,7 @@
 
 package com.google.cloud.errorreporting.spi.v1beta1;
 
-import com.google.api.gax.core.PageAccessor;
+import com.google.api.gax.core.PagedListResponse;
 import com.google.api.gax.testing.MockGrpcService;
 import com.google.api.gax.testing.MockServiceHelper;
 import com.google.common.collect.Lists;
@@ -27,7 +27,7 @@ import com.google.devtools.clouderrorreporting.v1beta1.ListEventsResponse;
 import com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsRequest;
 import com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse;
 import com.google.devtools.clouderrorreporting.v1beta1.QueryTimeRange;
-import com.google.protobuf.GeneratedMessage;
+import com.google.protobuf.GeneratedMessageV3;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -83,31 +83,29 @@ public class ErrorStatsServiceTest {
   @Test
   @SuppressWarnings("all")
   public void listGroupStatsTest() {
+    String nextPageToken = "";
     ErrorGroupStats errorGroupStatsElement = ErrorGroupStats.newBuilder().build();
     List<ErrorGroupStats> errorGroupStats = Arrays.asList(errorGroupStatsElement);
-    String nextPageToken = "nextPageToken-1530815211";
     ListGroupStatsResponse expectedResponse =
         ListGroupStatsResponse.newBuilder()
-            .addAllErrorGroupStats(errorGroupStats)
             .setNextPageToken(nextPageToken)
+            .addAllErrorGroupStats(errorGroupStats)
             .build();
-    List<GeneratedMessage> expectedResponses = new ArrayList<>();
+    List<GeneratedMessageV3> expectedResponses = new ArrayList<>();
     expectedResponses.add(expectedResponse);
     mockErrorStatsService.setResponses(expectedResponses);
 
     String formattedProjectName = ErrorStatsServiceApi.formatProjectName("[PROJECT]");
     QueryTimeRange timeRange = QueryTimeRange.newBuilder().build();
 
-    PageAccessor<ErrorGroupStats> pageAccessor =
-        api.listGroupStats(formattedProjectName, timeRange);
+    PagedListResponse<ListGroupStatsRequest, ListGroupStatsResponse, ErrorGroupStats>
+        pagedListResponse = api.listGroupStats(formattedProjectName, timeRange);
 
-    // PageAccessor will not make actual request until it is being used.
-    // Add all the pages here in order to make grpc requests.
-    List<ErrorGroupStats> resources = Lists.newArrayList(pageAccessor.getPageValues());
+    List<ErrorGroupStats> resources = Lists.newArrayList(pagedListResponse.iterateAllElements());
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getErrorGroupStatsList().get(0), resources.get(0));
 
-    List<GeneratedMessage> actualRequests = mockErrorStatsService.getRequests();
+    List<GeneratedMessageV3> actualRequests = mockErrorStatsService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ListGroupStatsRequest actualRequest = (ListGroupStatsRequest) actualRequests.get(0);
 
@@ -118,30 +116,29 @@ public class ErrorStatsServiceTest {
   @Test
   @SuppressWarnings("all")
   public void listEventsTest() {
+    String nextPageToken = "";
     ErrorEvent errorEventsElement = ErrorEvent.newBuilder().build();
     List<ErrorEvent> errorEvents = Arrays.asList(errorEventsElement);
-    String nextPageToken = "nextPageToken-1530815211";
     ListEventsResponse expectedResponse =
         ListEventsResponse.newBuilder()
-            .addAllErrorEvents(errorEvents)
             .setNextPageToken(nextPageToken)
+            .addAllErrorEvents(errorEvents)
             .build();
-    List<GeneratedMessage> expectedResponses = new ArrayList<>();
+    List<GeneratedMessageV3> expectedResponses = new ArrayList<>();
     expectedResponses.add(expectedResponse);
     mockErrorStatsService.setResponses(expectedResponses);
 
     String formattedProjectName = ErrorStatsServiceApi.formatProjectName("[PROJECT]");
     String groupId = "groupId506361563";
 
-    PageAccessor<ErrorEvent> pageAccessor = api.listEvents(formattedProjectName, groupId);
+    PagedListResponse<ListEventsRequest, ListEventsResponse, ErrorEvent> pagedListResponse =
+        api.listEvents(formattedProjectName, groupId);
 
-    // PageAccessor will not make actual request until it is being used.
-    // Add all the pages here in order to make grpc requests.
-    List<ErrorEvent> resources = Lists.newArrayList(pageAccessor.getPageValues());
+    List<ErrorEvent> resources = Lists.newArrayList(pagedListResponse.iterateAllElements());
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getErrorEventsList().get(0), resources.get(0));
 
-    List<GeneratedMessage> actualRequests = mockErrorStatsService.getRequests();
+    List<GeneratedMessageV3> actualRequests = mockErrorStatsService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ListEventsRequest actualRequest = (ListEventsRequest) actualRequests.get(0);
 
@@ -153,7 +150,7 @@ public class ErrorStatsServiceTest {
   @SuppressWarnings("all")
   public void deleteEventsTest() {
     DeleteEventsResponse expectedResponse = DeleteEventsResponse.newBuilder().build();
-    List<GeneratedMessage> expectedResponses = new ArrayList<>();
+    List<GeneratedMessageV3> expectedResponses = new ArrayList<>();
     expectedResponses.add(expectedResponse);
     mockErrorStatsService.setResponses(expectedResponses);
 
@@ -162,7 +159,7 @@ public class ErrorStatsServiceTest {
     DeleteEventsResponse actualResponse = api.deleteEvents(formattedProjectName);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessage> actualRequests = mockErrorStatsService.getRequests();
+    List<GeneratedMessageV3> actualRequests = mockErrorStatsService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     DeleteEventsRequest actualRequest = (DeleteEventsRequest) actualRequests.get(0);
 

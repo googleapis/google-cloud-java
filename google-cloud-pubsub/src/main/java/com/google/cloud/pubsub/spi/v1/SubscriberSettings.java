@@ -287,6 +287,17 @@ public class SubscriberSettings extends ServiceApiSettings {
             }
 
             @Override
+            public ListSubscriptionsRequest injectPageSize(
+                ListSubscriptionsRequest payload, int pageSize) {
+              return ListSubscriptionsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListSubscriptionsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
             public Object extractNextToken(ListSubscriptionsResponse payload) {
               return payload.getNextPageToken();
             }

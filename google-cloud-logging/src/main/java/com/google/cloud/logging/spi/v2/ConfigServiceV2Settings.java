@@ -218,6 +218,16 @@ public class ConfigServiceV2Settings extends ServiceApiSettings {
             }
 
             @Override
+            public ListSinksRequest injectPageSize(ListSinksRequest payload, int pageSize) {
+              return ListSinksRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListSinksRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
             public Object extractNextToken(ListSinksResponse payload) {
               return payload.getNextPageToken();
             }

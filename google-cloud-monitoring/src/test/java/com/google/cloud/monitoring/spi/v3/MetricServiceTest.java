@@ -16,7 +16,7 @@ package com.google.cloud.monitoring.spi.v3;
 
 import com.google.api.MetricDescriptor;
 import com.google.api.MonitoredResourceDescriptor;
-import com.google.api.gax.core.PageAccessor;
+import com.google.api.gax.core.PagedListResponse;
 import com.google.api.gax.testing.MockGrpcService;
 import com.google.api.gax.testing.MockServiceHelper;
 import com.google.common.collect.Lists;
@@ -31,7 +31,7 @@ import com.google.monitoring.v3.ListMonitoredResourceDescriptorsRequest;
 import com.google.monitoring.v3.ListMonitoredResourceDescriptorsResponse;
 import com.google.monitoring.v3.TimeSeries;
 import com.google.protobuf.Empty;
-import com.google.protobuf.GeneratedMessage;
+import com.google.protobuf.GeneratedMessageV3;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -87,33 +87,34 @@ public class MetricServiceTest {
   @Test
   @SuppressWarnings("all")
   public void listMonitoredResourceDescriptorsTest() {
+    String nextPageToken = "";
     MonitoredResourceDescriptor resourceDescriptorsElement =
         MonitoredResourceDescriptor.newBuilder().build();
     List<MonitoredResourceDescriptor> resourceDescriptors =
         Arrays.asList(resourceDescriptorsElement);
-    String nextPageToken = "nextPageToken-1530815211";
     ListMonitoredResourceDescriptorsResponse expectedResponse =
         ListMonitoredResourceDescriptorsResponse.newBuilder()
-            .addAllResourceDescriptors(resourceDescriptors)
             .setNextPageToken(nextPageToken)
+            .addAllResourceDescriptors(resourceDescriptors)
             .build();
-    List<GeneratedMessage> expectedResponses = new ArrayList<>();
+    List<GeneratedMessageV3> expectedResponses = new ArrayList<>();
     expectedResponses.add(expectedResponse);
     mockMetricService.setResponses(expectedResponses);
 
     String formattedName = MetricServiceApi.formatProjectName("[PROJECT]");
     String filter = "filter-1274492040";
 
-    PageAccessor<MonitoredResourceDescriptor> pageAccessor =
-        api.listMonitoredResourceDescriptors(formattedName, filter);
+    PagedListResponse<
+            ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse,
+            MonitoredResourceDescriptor>
+        pagedListResponse = api.listMonitoredResourceDescriptors(formattedName, filter);
 
-    // PageAccessor will not make actual request until it is being used.
-    // Add all the pages here in order to make grpc requests.
-    List<MonitoredResourceDescriptor> resources = Lists.newArrayList(pageAccessor.getPageValues());
+    List<MonitoredResourceDescriptor> resources =
+        Lists.newArrayList(pagedListResponse.iterateAllElements());
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getResourceDescriptorsList().get(0), resources.get(0));
 
-    List<GeneratedMessage> actualRequests = mockMetricService.getRequests();
+    List<GeneratedMessageV3> actualRequests = mockMetricService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ListMonitoredResourceDescriptorsRequest actualRequest =
         (ListMonitoredResourceDescriptorsRequest) actualRequests.get(0);
@@ -138,7 +139,7 @@ public class MetricServiceTest {
             .setDisplayName(displayName)
             .setDescription(description)
             .build();
-    List<GeneratedMessage> expectedResponses = new ArrayList<>();
+    List<GeneratedMessageV3> expectedResponses = new ArrayList<>();
     expectedResponses.add(expectedResponse);
     mockMetricService.setResponses(expectedResponses);
 
@@ -149,7 +150,7 @@ public class MetricServiceTest {
     MonitoredResourceDescriptor actualResponse = api.getMonitoredResourceDescriptor(formattedName);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessage> actualRequests = mockMetricService.getRequests();
+    List<GeneratedMessageV3> actualRequests = mockMetricService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetMonitoredResourceDescriptorRequest actualRequest =
         (GetMonitoredResourceDescriptorRequest) actualRequests.get(0);
@@ -160,30 +161,29 @@ public class MetricServiceTest {
   @Test
   @SuppressWarnings("all")
   public void listMetricDescriptorsTest() {
+    String nextPageToken = "";
     MetricDescriptor metricDescriptorsElement = MetricDescriptor.newBuilder().build();
     List<MetricDescriptor> metricDescriptors = Arrays.asList(metricDescriptorsElement);
-    String nextPageToken = "nextPageToken-1530815211";
     ListMetricDescriptorsResponse expectedResponse =
         ListMetricDescriptorsResponse.newBuilder()
-            .addAllMetricDescriptors(metricDescriptors)
             .setNextPageToken(nextPageToken)
+            .addAllMetricDescriptors(metricDescriptors)
             .build();
-    List<GeneratedMessage> expectedResponses = new ArrayList<>();
+    List<GeneratedMessageV3> expectedResponses = new ArrayList<>();
     expectedResponses.add(expectedResponse);
     mockMetricService.setResponses(expectedResponses);
 
     String formattedName = MetricServiceApi.formatProjectName("[PROJECT]");
     String filter = "filter-1274492040";
 
-    PageAccessor<MetricDescriptor> pageAccessor = api.listMetricDescriptors(formattedName, filter);
+    PagedListResponse<ListMetricDescriptorsRequest, ListMetricDescriptorsResponse, MetricDescriptor>
+        pagedListResponse = api.listMetricDescriptors(formattedName, filter);
 
-    // PageAccessor will not make actual request until it is being used.
-    // Add all the pages here in order to make grpc requests.
-    List<MetricDescriptor> resources = Lists.newArrayList(pageAccessor.getPageValues());
+    List<MetricDescriptor> resources = Lists.newArrayList(pagedListResponse.iterateAllElements());
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getMetricDescriptorsList().get(0), resources.get(0));
 
-    List<GeneratedMessage> actualRequests = mockMetricService.getRequests();
+    List<GeneratedMessageV3> actualRequests = mockMetricService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ListMetricDescriptorsRequest actualRequest =
         (ListMetricDescriptorsRequest) actualRequests.get(0);
@@ -209,7 +209,7 @@ public class MetricServiceTest {
             .setDescription(description)
             .setDisplayName(displayName)
             .build();
-    List<GeneratedMessage> expectedResponses = new ArrayList<>();
+    List<GeneratedMessageV3> expectedResponses = new ArrayList<>();
     expectedResponses.add(expectedResponse);
     mockMetricService.setResponses(expectedResponses);
 
@@ -219,7 +219,7 @@ public class MetricServiceTest {
     MetricDescriptor actualResponse = api.getMetricDescriptor(formattedName);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessage> actualRequests = mockMetricService.getRequests();
+    List<GeneratedMessageV3> actualRequests = mockMetricService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetMetricDescriptorRequest actualRequest = (GetMetricDescriptorRequest) actualRequests.get(0);
 
@@ -242,7 +242,7 @@ public class MetricServiceTest {
             .setDescription(description)
             .setDisplayName(displayName)
             .build();
-    List<GeneratedMessage> expectedResponses = new ArrayList<>();
+    List<GeneratedMessageV3> expectedResponses = new ArrayList<>();
     expectedResponses.add(expectedResponse);
     mockMetricService.setResponses(expectedResponses);
 
@@ -252,7 +252,7 @@ public class MetricServiceTest {
     MetricDescriptor actualResponse = api.createMetricDescriptor(formattedName, metricDescriptor);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessage> actualRequests = mockMetricService.getRequests();
+    List<GeneratedMessageV3> actualRequests = mockMetricService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     CreateMetricDescriptorRequest actualRequest =
         (CreateMetricDescriptorRequest) actualRequests.get(0);
@@ -265,7 +265,7 @@ public class MetricServiceTest {
   @SuppressWarnings("all")
   public void deleteMetricDescriptorTest() {
     Empty expectedResponse = Empty.newBuilder().build();
-    List<GeneratedMessage> expectedResponses = new ArrayList<>();
+    List<GeneratedMessageV3> expectedResponses = new ArrayList<>();
     expectedResponses.add(expectedResponse);
     mockMetricService.setResponses(expectedResponses);
 
@@ -274,7 +274,7 @@ public class MetricServiceTest {
 
     api.deleteMetricDescriptor(formattedName);
 
-    List<GeneratedMessage> actualRequests = mockMetricService.getRequests();
+    List<GeneratedMessageV3> actualRequests = mockMetricService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     DeleteMetricDescriptorRequest actualRequest =
         (DeleteMetricDescriptorRequest) actualRequests.get(0);
@@ -286,7 +286,7 @@ public class MetricServiceTest {
   @SuppressWarnings("all")
   public void createTimeSeriesTest() {
     Empty expectedResponse = Empty.newBuilder().build();
-    List<GeneratedMessage> expectedResponses = new ArrayList<>();
+    List<GeneratedMessageV3> expectedResponses = new ArrayList<>();
     expectedResponses.add(expectedResponse);
     mockMetricService.setResponses(expectedResponses);
 
@@ -295,7 +295,7 @@ public class MetricServiceTest {
 
     api.createTimeSeries(formattedName, timeSeries);
 
-    List<GeneratedMessage> actualRequests = mockMetricService.getRequests();
+    List<GeneratedMessageV3> actualRequests = mockMetricService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     CreateTimeSeriesRequest actualRequest = (CreateTimeSeriesRequest) actualRequests.get(0);
 

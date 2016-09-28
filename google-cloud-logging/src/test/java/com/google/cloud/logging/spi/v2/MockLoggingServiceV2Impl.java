@@ -12,66 +12,71 @@
  * the License.
  */
 
-package com.google.cloud.logging.spi.v2.testing;
+package com.google.cloud.logging.spi.v2;
 
+import com.google.common.collect.Lists;
 import com.google.logging.v2.DeleteLogRequest;
 import com.google.logging.v2.ListLogEntriesRequest;
 import com.google.logging.v2.ListLogEntriesResponse;
 import com.google.logging.v2.ListMonitoredResourceDescriptorsRequest;
 import com.google.logging.v2.ListMonitoredResourceDescriptorsResponse;
-import com.google.logging.v2.LogEntry;
-import com.google.logging.v2.LoggingServiceV2Grpc;
+import com.google.logging.v2.LoggingServiceV2Grpc.LoggingServiceV2ImplBase;
 import com.google.logging.v2.WriteLogEntriesRequest;
 import com.google.logging.v2.WriteLogEntriesResponse;
-import com.google.protobuf.ByteString;
 import com.google.protobuf.Empty;
-
+import com.google.protobuf.GeneratedMessageV3;
 import io.grpc.stub.StreamObserver;
-
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
+import java.util.Queue;
 
-public class LocalLoggingImpl extends LoggingServiceV2Grpc.LoggingServiceV2ImplBase {
+@javax.annotation.Generated("by GAPIC")
+public class MockLoggingServiceV2Impl extends LoggingServiceV2ImplBase {
+  private ArrayList<GeneratedMessageV3> requests;
+  private Queue<GeneratedMessageV3> responses;
 
-  private Map<String, List<LogEntry>> logs = new HashMap<>();
+  public MockLoggingServiceV2Impl() {
+    requests = new ArrayList<>();
+    responses = new LinkedList<>();
+  }
+
+  public List<GeneratedMessageV3> getRequests() {
+    return requests;
+  }
+
+  public void setResponses(List<GeneratedMessageV3> responses) {
+    this.responses = Lists.newLinkedList(responses);
+  }
+
+  public void reset() {
+    requests = new ArrayList<>();
+    responses = new LinkedList<>();
+  }
 
   @Override
   public void deleteLog(DeleteLogRequest request, StreamObserver<Empty> responseObserver) {
-    logs.remove(request.getLogName());
-    responseObserver.onNext(Empty.getDefaultInstance());
+    Empty response = (Empty) responses.remove();
+    requests.add(request);
+    responseObserver.onNext(response);
     responseObserver.onCompleted();
   }
 
   @Override
   public void writeLogEntries(
       WriteLogEntriesRequest request, StreamObserver<WriteLogEntriesResponse> responseObserver) {
-    List<LogEntry> entries = logs.get(request.getLogName());
-    if (entries == null) {
-      entries = new ArrayList<LogEntry>();
-      logs.put(request.getLogName(), entries);
-    }
-    entries.addAll(request.getEntriesList());
-    // Response is empty
-    responseObserver.onNext(WriteLogEntriesResponse.newBuilder().build());
+    WriteLogEntriesResponse response = (WriteLogEntriesResponse) responses.remove();
+    requests.add(request);
+    responseObserver.onNext(response);
     responseObserver.onCompleted();
   }
 
   @Override
   public void listLogEntries(
       ListLogEntriesRequest request, StreamObserver<ListLogEntriesResponse> responseObserver) {
-    List<LogEntry> entries = new ArrayList<>();
-
-    for (ByteString proj : request.getProjectIdsList().asByteStringList()) {
-      String prefix = "projects/" + proj.toStringUtf8() + "/";
-      for (Map.Entry<String, List<LogEntry>> entry : logs.entrySet()) {
-        if (entry.getKey().startsWith(prefix)) {
-          entries.addAll(entry.getValue());
-        }
-      }
-    }
-    responseObserver.onNext(ListLogEntriesResponse.newBuilder().addAllEntries(entries).build());
+    ListLogEntriesResponse response = (ListLogEntriesResponse) responses.remove();
+    requests.add(request);
+    responseObserver.onNext(response);
     responseObserver.onCompleted();
   }
 
@@ -79,10 +84,10 @@ public class LocalLoggingImpl extends LoggingServiceV2Grpc.LoggingServiceV2ImplB
   public void listMonitoredResourceDescriptors(
       ListMonitoredResourceDescriptorsRequest request,
       StreamObserver<ListMonitoredResourceDescriptorsResponse> responseObserver) {
-    throw new UnsupportedOperationException();
-  }
-
-  public void reset() {
-    logs.clear();
+    ListMonitoredResourceDescriptorsResponse response =
+        (ListMonitoredResourceDescriptorsResponse) responses.remove();
+    requests.add(request);
+    responseObserver.onNext(response);
+    responseObserver.onCompleted();
   }
 }

@@ -13,7 +13,7 @@
  */
 package com.google.cloud.errorreporting.spi.v1beta1;
 
-import com.google.api.gax.core.PageAccessor;
+import com.google.api.gax.core.PagedListResponse;
 import com.google.api.gax.grpc.ApiCallable;
 import com.google.api.gax.protobuf.PathTemplate;
 import com.google.devtools.clouderrorreporting.v1beta1.DeleteEventsRequest;
@@ -93,10 +93,14 @@ public class ErrorStatsServiceApi implements AutoCloseable {
   private final List<AutoCloseable> closeables = new ArrayList<>();
 
   private final ApiCallable<ListGroupStatsRequest, ListGroupStatsResponse> listGroupStatsCallable;
-  private final ApiCallable<ListGroupStatsRequest, PageAccessor<ErrorGroupStats>>
+  private final ApiCallable<
+          ListGroupStatsRequest,
+          PagedListResponse<ListGroupStatsRequest, ListGroupStatsResponse, ErrorGroupStats>>
       listGroupStatsPagedCallable;
   private final ApiCallable<ListEventsRequest, ListEventsResponse> listEventsCallable;
-  private final ApiCallable<ListEventsRequest, PageAccessor<ErrorEvent>> listEventsPagedCallable;
+  private final ApiCallable<
+          ListEventsRequest, PagedListResponse<ListEventsRequest, ListEventsResponse, ErrorEvent>>
+      listEventsPagedCallable;
   private final ApiCallable<DeleteEventsRequest, DeleteEventsResponse> deleteEventsCallable;
 
   public final ErrorStatsServiceSettings getSettings() {
@@ -190,7 +194,7 @@ public class ErrorStatsServiceApi implements AutoCloseable {
    * try (ErrorStatsServiceApi errorStatsServiceApi = ErrorStatsServiceApi.create()) {
    *   String formattedProjectName = ErrorStatsServiceApi.formatProjectName("[PROJECT]");
    *   QueryTimeRange timeRange = QueryTimeRange.newBuilder().build();
-   *   for (ErrorGroupStats element : errorStatsServiceApi.listGroupStats(formattedProjectName, timeRange)) {
+   *   for (ErrorGroupStats element : errorStatsServiceApi.listGroupStats(formattedProjectName, timeRange).iterateAllElements()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -208,8 +212,8 @@ public class ErrorStatsServiceApi implements AutoCloseable {
    * higher response times or in returning incomplete results.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  public final PageAccessor<ErrorGroupStats> listGroupStats(
-      String projectName, QueryTimeRange timeRange) {
+  public final PagedListResponse<ListGroupStatsRequest, ListGroupStatsResponse, ErrorGroupStats>
+      listGroupStats(String projectName, QueryTimeRange timeRange) {
     PROJECT_PATH_TEMPLATE.validate(projectName, "listGroupStats");
     ListGroupStatsRequest request =
         ListGroupStatsRequest.newBuilder()
@@ -232,7 +236,7 @@ public class ErrorStatsServiceApi implements AutoCloseable {
    *     .setProjectName(formattedProjectName)
    *     .setTimeRange(timeRange)
    *     .build();
-   *   for (ErrorGroupStats element : errorStatsServiceApi.listGroupStats(request)) {
+   *   for (ErrorGroupStats element : errorStatsServiceApi.listGroupStats(request).iterateAllElements()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -241,7 +245,8 @@ public class ErrorStatsServiceApi implements AutoCloseable {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  public final PageAccessor<ErrorGroupStats> listGroupStats(ListGroupStatsRequest request) {
+  public final PagedListResponse<ListGroupStatsRequest, ListGroupStatsResponse, ErrorGroupStats>
+      listGroupStats(ListGroupStatsRequest request) {
     return listGroupStatsPagedCallable().call(request);
   }
 
@@ -258,15 +263,17 @@ public class ErrorStatsServiceApi implements AutoCloseable {
    *     .setProjectName(formattedProjectName)
    *     .setTimeRange(timeRange)
    *     .build();
-   *   ListenableFuture&lt;PageAccessor&lt;ErrorGroupStats&gt;&gt; future = errorStatsServiceApi.listGroupStatsPagedCallable().futureCall(request);
+   *   ListenableFuture&lt;PagedListResponse&lt;ListGroupStatsRequest,ListGroupStatsResponse,ErrorGroupStats&gt;&gt; future = errorStatsServiceApi.listGroupStatsPagedCallable().futureCall(request);
    *   // Do something
-   *   for (ErrorGroupStats element : future.get()) {
+   *   for (ErrorGroupStats element : future.get().iterateAllElements()) {
    *     // doThingsWith(element);
    *   }
    * }
    * </code></pre>
    */
-  public final ApiCallable<ListGroupStatsRequest, PageAccessor<ErrorGroupStats>>
+  public final ApiCallable<
+          ListGroupStatsRequest,
+          PagedListResponse<ListGroupStatsRequest, ListGroupStatsResponse, ErrorGroupStats>>
       listGroupStatsPagedCallable() {
     return listGroupStatsPagedCallable;
   }
@@ -312,7 +319,7 @@ public class ErrorStatsServiceApi implements AutoCloseable {
    * try (ErrorStatsServiceApi errorStatsServiceApi = ErrorStatsServiceApi.create()) {
    *   String formattedProjectName = ErrorStatsServiceApi.formatProjectName("[PROJECT]");
    *   String groupId = "";
-   *   for (ErrorEvent element : errorStatsServiceApi.listEvents(formattedProjectName, groupId)) {
+   *   for (ErrorEvent element : errorStatsServiceApi.listEvents(formattedProjectName, groupId).iterateAllElements()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -325,7 +332,8 @@ public class ErrorStatsServiceApi implements AutoCloseable {
    * @param groupId [Required] The group for which events shall be returned.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  public final PageAccessor<ErrorEvent> listEvents(String projectName, String groupId) {
+  public final PagedListResponse<ListEventsRequest, ListEventsResponse, ErrorEvent> listEvents(
+      String projectName, String groupId) {
     PROJECT_PATH_TEMPLATE.validate(projectName, "listEvents");
     ListEventsRequest request =
         ListEventsRequest.newBuilder().setProjectName(projectName).setGroupId(groupId).build();
@@ -345,7 +353,7 @@ public class ErrorStatsServiceApi implements AutoCloseable {
    *     .setProjectName(formattedProjectName)
    *     .setGroupId(groupId)
    *     .build();
-   *   for (ErrorEvent element : errorStatsServiceApi.listEvents(request)) {
+   *   for (ErrorEvent element : errorStatsServiceApi.listEvents(request).iterateAllElements()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -354,7 +362,8 @@ public class ErrorStatsServiceApi implements AutoCloseable {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  public final PageAccessor<ErrorEvent> listEvents(ListEventsRequest request) {
+  public final PagedListResponse<ListEventsRequest, ListEventsResponse, ErrorEvent> listEvents(
+      ListEventsRequest request) {
     return listEventsPagedCallable().call(request);
   }
 
@@ -371,15 +380,17 @@ public class ErrorStatsServiceApi implements AutoCloseable {
    *     .setProjectName(formattedProjectName)
    *     .setGroupId(groupId)
    *     .build();
-   *   ListenableFuture&lt;PageAccessor&lt;ErrorEvent&gt;&gt; future = errorStatsServiceApi.listEventsPagedCallable().futureCall(request);
+   *   ListenableFuture&lt;PagedListResponse&lt;ListEventsRequest,ListEventsResponse,ErrorEvent&gt;&gt; future = errorStatsServiceApi.listEventsPagedCallable().futureCall(request);
    *   // Do something
-   *   for (ErrorEvent element : future.get()) {
+   *   for (ErrorEvent element : future.get().iterateAllElements()) {
    *     // doThingsWith(element);
    *   }
    * }
    * </code></pre>
    */
-  public final ApiCallable<ListEventsRequest, PageAccessor<ErrorEvent>> listEventsPagedCallable() {
+  public final ApiCallable<
+          ListEventsRequest, PagedListResponse<ListEventsRequest, ListEventsResponse, ErrorEvent>>
+      listEventsPagedCallable() {
     return listEventsPagedCallable;
   }
 
