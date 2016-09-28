@@ -208,7 +208,6 @@ public class SubscriptionSnippets {
   public void pullWithMessageConsumer(String subscriptionName) throws Exception {
     // [START pullWithMessageConsumer]
     MessageProcessor callback = new MessageProcessor() {
-      @Override
       public void process(Message message) throws Exception {
         // Ack deadline is renewed until this method returns
         // Message is acked if this method returns successfully
