@@ -14,7 +14,7 @@
 
 package com.google.cloud.speech.spi.v1beta1;
 
-import com.google.api.gax.core.PageAccessor;
+import com.google.api.gax.core.PagedListResponse;
 import com.google.api.gax.testing.MockGrpcService;
 import com.google.api.gax.testing.MockServiceHelper;
 import com.google.cloud.speech.v1beta1.AsyncRecognizeRequest;
@@ -24,7 +24,7 @@ import com.google.cloud.speech.v1beta1.SyncRecognizeRequest;
 import com.google.cloud.speech.v1beta1.SyncRecognizeResponse;
 import com.google.common.collect.Lists;
 import com.google.longrunning.Operation;
-import com.google.protobuf.GeneratedMessage;
+import com.google.protobuf.GeneratedMessageV3;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -74,7 +74,7 @@ public class SpeechTest {
   @SuppressWarnings("all")
   public void syncRecognizeTest() {
     SyncRecognizeResponse expectedResponse = SyncRecognizeResponse.newBuilder().build();
-    List<GeneratedMessage> expectedResponses = new ArrayList<>();
+    List<GeneratedMessageV3> expectedResponses = new ArrayList<>();
     expectedResponses.add(expectedResponse);
     mockSpeech.setResponses(expectedResponses);
 
@@ -84,7 +84,7 @@ public class SpeechTest {
     SyncRecognizeResponse actualResponse = api.syncRecognize(config, audio);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessage> actualRequests = mockSpeech.getRequests();
+    List<GeneratedMessageV3> actualRequests = mockSpeech.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     SyncRecognizeRequest actualRequest = (SyncRecognizeRequest) actualRequests.get(0);
 
@@ -98,7 +98,7 @@ public class SpeechTest {
     String name = "name3373707";
     boolean done = true;
     Operation expectedResponse = Operation.newBuilder().setName(name).setDone(done).build();
-    List<GeneratedMessage> expectedResponses = new ArrayList<>();
+    List<GeneratedMessageV3> expectedResponses = new ArrayList<>();
     expectedResponses.add(expectedResponse);
     mockSpeech.setResponses(expectedResponses);
 
@@ -108,7 +108,7 @@ public class SpeechTest {
     Operation actualResponse = api.asyncRecognize(config, audio);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessage> actualRequests = mockSpeech.getRequests();
+    List<GeneratedMessageV3> actualRequests = mockSpeech.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     AsyncRecognizeRequest actualRequest = (AsyncRecognizeRequest) actualRequests.get(0);
 
