@@ -101,22 +101,22 @@
     <dependency>
       <groupId>com.google.protobuf</groupId>
       <artifactId>protobuf-java</artifactId>
-      <version>3.0.0-beta-3</version>
+      <version>3.0.0</version>
     </dependency>
     <dependency>
       <groupId>com.google.api</groupId>
       <artifactId>gax</artifactId>
-      <version>0.0.16</version>
+      <version>0.0.18</version>
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-common-protos</artifactId>
-      <version>0.0.9</version>
+      <version>0.1.0</version>
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-iam-v1</artifactId>
-      <version>0.0.9</version>
+      <version>0.1.0</version>
     </dependency>
   </dependencies>
 </project>
