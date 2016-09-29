@@ -155,9 +155,9 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
   }
 
   @Override
-  public Dataset create(DatasetInfo dataset, DatasetOption... options) {
+  public Dataset create(DatasetInfo datasetInfo, DatasetOption... options) {
     final com.google.api.services.bigquery.model.Dataset datasetPb =
-        dataset.setProjectId(options().projectId()).toPb();
+        datasetInfo.setProjectId(options().projectId()).toPb();
     final Map<BigQueryRpc.Option, ?> optionsMap = optionMap(options);
     try {
       return Dataset.fromPb(this,
@@ -173,9 +173,9 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
   }
 
   @Override
-  public Table create(TableInfo table, TableOption... options) {
+  public Table create(TableInfo tableInfo, TableOption... options) {
     final com.google.api.services.bigquery.model.Table tablePb =
-        table.setProjectId(options().projectId()).toPb();
+        tableInfo.setProjectId(options().projectId()).toPb();
     final Map<BigQueryRpc.Option, ?> optionsMap = optionMap(options);
     try {
       return Table.fromPb(this,
@@ -191,9 +191,9 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
   }
 
   @Override
-  public Job create(JobInfo job, JobOption... options) {
+  public Job create(JobInfo jobInfo, JobOption... options) {
     final com.google.api.services.bigquery.model.Job jobPb =
-        job.setProjectId(options().projectId()).toPb();
+        jobInfo.setProjectId(options().projectId()).toPb();
     final Map<BigQueryRpc.Option, ?> optionsMap = optionMap(options);
     try {
       return Job.fromPb(this,
@@ -312,9 +312,9 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
   }
 
   @Override
-  public Dataset update(DatasetInfo dataset, DatasetOption... options) {
+  public Dataset update(DatasetInfo datasetInfo, DatasetOption... options) {
     final com.google.api.services.bigquery.model.Dataset datasetPb =
-        dataset.setProjectId(options().projectId()).toPb();
+        datasetInfo.setProjectId(options().projectId()).toPb();
     final Map<BigQueryRpc.Option, ?> optionsMap = optionMap(options);
     try {
       return Dataset.fromPb(this,
@@ -330,9 +330,9 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
   }
 
   @Override
-  public Table update(TableInfo table, TableOption... options) {
+  public Table update(TableInfo tableInfo, TableOption... options) {
     final com.google.api.services.bigquery.model.Table tablePb =
-        table.setProjectId(options().projectId()).toPb();
+        tableInfo.setProjectId(options().projectId()).toPb();
     final Map<BigQueryRpc.Option, ?> optionsMap = optionMap(options);
     try {
       return Table.fromPb(this,
@@ -582,9 +582,9 @@ final class BigQueryImpl extends BaseService<BigQueryOptions> implements BigQuer
   }
 
   @Override
-  public QueryResponse getQueryResults(JobId job, QueryResultsOption... options) {
+  public QueryResponse getQueryResults(JobId jobId, QueryResultsOption... options) {
     Map<BigQueryRpc.Option, ?> optionsMap = optionMap(options);
-    return getQueryResults(job, options(), optionsMap);
+    return getQueryResults(jobId, options(), optionsMap);
   }
 
   private static QueryResponse getQueryResults(JobId jobId,

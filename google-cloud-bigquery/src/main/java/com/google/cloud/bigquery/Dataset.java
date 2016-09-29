@@ -251,12 +251,12 @@ public class Dataset extends DatasetInfo {
    * Table table = dataset.get(tableName);
    * }</pre>
    *
-   * @param table user-defined id of the requested table
+   * @param tableId user-defined id of the requested table
    * @param options table options
    * @throws BigQueryException upon failure
    */
-  public Table get(String table, TableOption... options) {
-    return bigquery.getTable(TableId.of(datasetId().dataset(), table), options);
+  public Table get(String tableId, TableOption... options) {
+    return bigquery.getTable(TableId.of(datasetId().dataset(), tableId), options);
   }
 
   /**
@@ -274,14 +274,14 @@ public class Dataset extends DatasetInfo {
    * Table table = dataset.create(tableName, definition);
    * }</pre>
    *
-   * @param table the table's user-defined id
+   * @param tableId the table's user-defined id
    * @param definition the table's definition
    * @param options options for table creation
    * @return a {@code Table} object for the created table
    * @throws BigQueryException upon failure
    */
-  public Table create(String table, TableDefinition definition, TableOption... options) {
-    TableInfo tableInfo = TableInfo.of(TableId.of(datasetId().dataset(), table), definition);
+  public Table create(String tableId, TableDefinition definition, TableOption... options) {
+    TableInfo tableInfo = TableInfo.of(TableId.of(datasetId().dataset(), tableId), definition);
     return bigquery.create(tableInfo, options);
   }
 
