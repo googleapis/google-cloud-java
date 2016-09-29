@@ -15,14 +15,13 @@
 package com.google.cloud.vision.spi.v1;
 
 import com.google.api.gax.testing.MockGrpcService;
-import com.google.cloud.vision.v1.ImageAnnotatorGrpc;
 import com.google.protobuf.GeneratedMessageV3;
 import io.grpc.ServerServiceDefinition;
 import java.util.List;
 
 @javax.annotation.Generated("by GAPIC")
 public class MockImageAnnotator implements MockGrpcService {
-  private MockImageAnnotatorImpl serviceImpl;
+  private final MockImageAnnotatorImpl serviceImpl;
 
   public MockImageAnnotator() {
     serviceImpl = new MockImageAnnotatorImpl();

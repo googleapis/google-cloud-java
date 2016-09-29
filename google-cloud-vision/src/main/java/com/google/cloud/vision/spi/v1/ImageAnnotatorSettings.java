@@ -161,7 +161,8 @@ public class ImageAnnotatorSettings extends ServiceApiSettings {
   public static class Builder extends ServiceApiSettings.Builder {
     private final ImmutableList<ApiCallSettings.Builder> methodSettingsBuilders;
 
-    private SimpleCallSettings.Builder<BatchAnnotateImagesRequest, BatchAnnotateImagesResponse>
+    private final SimpleCallSettings.Builder<
+            BatchAnnotateImagesRequest, BatchAnnotateImagesResponse>
         batchAnnotateImagesSettings;
 
     private static final ImmutableMap<String, ImmutableSet<Status.Code>> RETRYABLE_CODE_DEFINITIONS;

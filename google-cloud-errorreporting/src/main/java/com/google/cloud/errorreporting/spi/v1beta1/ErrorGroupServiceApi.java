@@ -87,10 +87,6 @@ public class ErrorGroupServiceApi implements AutoCloseable {
   private final ApiCallable<GetGroupRequest, ErrorGroup> getGroupCallable;
   private final ApiCallable<UpdateGroupRequest, ErrorGroup> updateGroupCallable;
 
-  public final ErrorGroupServiceSettings getSettings() {
-    return settings;
-  }
-
   private static final PathTemplate GROUP_PATH_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding("projects/{project}/groups/{group}");
 
@@ -170,6 +166,10 @@ public class ErrorGroupServiceApi implements AutoCloseable {
             }
           });
     }
+  }
+
+  public final ErrorGroupServiceSettings getSettings() {
+    return settings;
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD

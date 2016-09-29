@@ -14,6 +14,7 @@
 package com.google.cloud.pubsub.spi.v1;
 
 import com.google.api.gax.core.ConnectionSettings;
+import com.google.api.gax.core.PagedListResponse;
 import com.google.api.gax.core.RetrySettings;
 import com.google.api.gax.grpc.ApiCallSettings;
 import com.google.api.gax.grpc.BundlingCallSettings;
@@ -258,7 +259,7 @@ public class PublisherSettings extends ServiceApiSettings {
     testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
   }
 
-  private static PageStreamingDescriptor<ListTopicsRequest, ListTopicsResponse, Topic>
+  private static final PageStreamingDescriptor<ListTopicsRequest, ListTopicsResponse, Topic>
       LIST_TOPICS_PAGE_STR_DESC =
           new PageStreamingDescriptor<ListTopicsRequest, ListTopicsResponse, Topic>() {
             @Override
@@ -292,7 +293,7 @@ public class PublisherSettings extends ServiceApiSettings {
             }
           };
 
-  private static PageStreamingDescriptor<
+  private static final PageStreamingDescriptor<
           ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse, String>
       LIST_TOPIC_SUBSCRIPTIONS_PAGE_STR_DESC =
           new PageStreamingDescriptor<
@@ -334,7 +335,7 @@ public class PublisherSettings extends ServiceApiSettings {
             }
           };
 
-  private static BundlingDescriptor<PublishRequest, PublishResponse> PUBLISH_BUNDLING_DESC =
+  private static final BundlingDescriptor<PublishRequest, PublishResponse> PUBLISH_BUNDLING_DESC =
       new BundlingDescriptor<PublishRequest, PublishResponse>() {
         @Override
         public String getBundlePartitionKey(PublishRequest request) {
@@ -402,18 +403,18 @@ public class PublisherSettings extends ServiceApiSettings {
   public static class Builder extends ServiceApiSettings.Builder {
     private final ImmutableList<ApiCallSettings.Builder> methodSettingsBuilders;
 
-    private SimpleCallSettings.Builder<Topic, Topic> createTopicSettings;
-    private BundlingCallSettings.Builder<PublishRequest, PublishResponse> publishSettings;
-    private SimpleCallSettings.Builder<GetTopicRequest, Topic> getTopicSettings;
-    private PageStreamingCallSettings.Builder<ListTopicsRequest, ListTopicsResponse, Topic>
+    private final SimpleCallSettings.Builder<Topic, Topic> createTopicSettings;
+    private final BundlingCallSettings.Builder<PublishRequest, PublishResponse> publishSettings;
+    private final SimpleCallSettings.Builder<GetTopicRequest, Topic> getTopicSettings;
+    private final PageStreamingCallSettings.Builder<ListTopicsRequest, ListTopicsResponse, Topic>
         listTopicsSettings;
-    private PageStreamingCallSettings.Builder<
+    private final PageStreamingCallSettings.Builder<
             ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse, String>
         listTopicSubscriptionsSettings;
-    private SimpleCallSettings.Builder<DeleteTopicRequest, Empty> deleteTopicSettings;
-    private SimpleCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings;
-    private SimpleCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings;
-    private SimpleCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
+    private final SimpleCallSettings.Builder<DeleteTopicRequest, Empty> deleteTopicSettings;
+    private final SimpleCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings;
+    private final SimpleCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings;
+    private final SimpleCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsSettings;
 
     private static final ImmutableMap<String, ImmutableSet<Status.Code>> RETRYABLE_CODE_DEFINITIONS;

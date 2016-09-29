@@ -88,10 +88,6 @@ public class ReportErrorsServiceApi implements AutoCloseable {
   private final ApiCallable<ReportErrorEventRequest, ReportErrorEventResponse>
       reportErrorEventCallable;
 
-  public final ReportErrorsServiceSettings getSettings() {
-    return settings;
-  }
-
   private static final PathTemplate PROJECT_PATH_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding("projects/{project}");
 
@@ -159,6 +155,10 @@ public class ReportErrorsServiceApi implements AutoCloseable {
             }
           });
     }
+  }
+
+  public final ReportErrorsServiceSettings getSettings() {
+    return settings;
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD

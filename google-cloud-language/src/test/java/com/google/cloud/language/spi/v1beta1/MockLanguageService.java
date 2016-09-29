@@ -15,14 +15,13 @@
 package com.google.cloud.language.spi.v1beta1;
 
 import com.google.api.gax.testing.MockGrpcService;
-import com.google.cloud.language.v1beta1.LanguageServiceGrpc;
 import com.google.protobuf.GeneratedMessageV3;
 import io.grpc.ServerServiceDefinition;
 import java.util.List;
 
 @javax.annotation.Generated("by GAPIC")
 public class MockLanguageService implements MockGrpcService {
-  private MockLanguageServiceImpl serviceImpl;
+  private final MockLanguageServiceImpl serviceImpl;
 
   public MockLanguageService() {
     serviceImpl = new MockLanguageServiceImpl();

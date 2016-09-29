@@ -169,8 +169,8 @@ public class ErrorGroupServiceSettings extends ServiceApiSettings {
   public static class Builder extends ServiceApiSettings.Builder {
     private final ImmutableList<ApiCallSettings.Builder> methodSettingsBuilders;
 
-    private SimpleCallSettings.Builder<GetGroupRequest, ErrorGroup> getGroupSettings;
-    private SimpleCallSettings.Builder<UpdateGroupRequest, ErrorGroup> updateGroupSettings;
+    private final SimpleCallSettings.Builder<GetGroupRequest, ErrorGroup> getGroupSettings;
+    private final SimpleCallSettings.Builder<UpdateGroupRequest, ErrorGroup> updateGroupSettings;
 
     private static final ImmutableMap<String, ImmutableSet<Status.Code>> RETRYABLE_CODE_DEFINITIONS;
 

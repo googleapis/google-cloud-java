@@ -161,7 +161,7 @@ public class ReportErrorsServiceSettings extends ServiceApiSettings {
   public static class Builder extends ServiceApiSettings.Builder {
     private final ImmutableList<ApiCallSettings.Builder> methodSettingsBuilders;
 
-    private SimpleCallSettings.Builder<ReportErrorEventRequest, ReportErrorEventResponse>
+    private final SimpleCallSettings.Builder<ReportErrorEventRequest, ReportErrorEventResponse>
         reportErrorEventSettings;
 
     private static final ImmutableMap<String, ImmutableSet<Status.Code>> RETRYABLE_CODE_DEFINITIONS;

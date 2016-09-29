@@ -112,10 +112,6 @@ public class LoggingServiceV2Api implements AutoCloseable {
               MonitoredResourceDescriptor>>
       listMonitoredResourceDescriptorsPagedCallable;
 
-  public final LoggingServiceV2Settings getSettings() {
-    return settings;
-  }
-
   private static final PathTemplate PARENT_PATH_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding("projects/{project}");
 
@@ -225,6 +221,10 @@ public class LoggingServiceV2Api implements AutoCloseable {
             }
           });
     }
+  }
+
+  public final LoggingServiceV2Settings getSettings() {
+    return settings;
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD

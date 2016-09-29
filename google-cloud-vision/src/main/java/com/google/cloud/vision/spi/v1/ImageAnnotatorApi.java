@@ -89,10 +89,6 @@ public class ImageAnnotatorApi implements AutoCloseable {
   private final ApiCallable<BatchAnnotateImagesRequest, BatchAnnotateImagesResponse>
       batchAnnotateImagesCallable;
 
-  public final ImageAnnotatorSettings getSettings() {
-    return settings;
-  }
-
   /**
    * Constructs an instance of ImageAnnotatorApi with default settings.
    */
@@ -140,6 +136,10 @@ public class ImageAnnotatorApi implements AutoCloseable {
             }
           });
     }
+  }
+
+  public final ImageAnnotatorSettings getSettings() {
+    return settings;
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD

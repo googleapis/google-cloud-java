@@ -100,10 +100,6 @@ public class MetricsServiceV2Api implements AutoCloseable {
   private final ApiCallable<UpdateLogMetricRequest, LogMetric> updateLogMetricCallable;
   private final ApiCallable<DeleteLogMetricRequest, Empty> deleteLogMetricCallable;
 
-  public final MetricsServiceV2Settings getSettings() {
-    return settings;
-  }
-
   private static final PathTemplate PARENT_PATH_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding("projects/{project}");
 
@@ -211,6 +207,10 @@ public class MetricsServiceV2Api implements AutoCloseable {
             }
           });
     }
+  }
+
+  public final MetricsServiceV2Settings getSettings() {
+    return settings;
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD

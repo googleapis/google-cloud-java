@@ -15,14 +15,13 @@
 package com.google.cloud.monitoring.spi.v3;
 
 import com.google.api.gax.testing.MockGrpcService;
-import com.google.monitoring.v3.GroupServiceGrpc;
 import com.google.protobuf.GeneratedMessageV3;
 import io.grpc.ServerServiceDefinition;
 import java.util.List;
 
 @javax.annotation.Generated("by GAPIC")
 public class MockGroupService implements MockGrpcService {
-  private MockGroupServiceImpl serviceImpl;
+  private final MockGroupServiceImpl serviceImpl;
 
   public MockGroupService() {
     serviceImpl = new MockGroupServiceImpl();

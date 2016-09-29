@@ -128,10 +128,6 @@ public class MetricServiceApi implements AutoCloseable {
       listTimeSeriesPagedCallable;
   private final ApiCallable<CreateTimeSeriesRequest, Empty> createTimeSeriesCallable;
 
-  public final MetricServiceSettings getSettings() {
-    return settings;
-  }
-
   private static final PathTemplate PROJECT_PATH_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding("projects/{project}");
 
@@ -295,6 +291,10 @@ public class MetricServiceApi implements AutoCloseable {
             }
           });
     }
+  }
+
+  public final MetricServiceSettings getSettings() {
+    return settings;
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -861,7 +861,7 @@ public class MetricServiceApi implements AutoCloseable {
    *   TimeInterval interval = TimeInterval.newBuilder().build();
    *   Aggregation aggregation = Aggregation.newBuilder().build();
    *   String orderBy = "";
-   *   TimeSeriesView view = TimeSeriesView.FULL;
+   *   ListTimeSeriesRequest.TimeSeriesView view = ListTimeSeriesRequest.TimeSeriesView.FULL;
    *   ListTimeSeriesRequest request = ListTimeSeriesRequest.newBuilder()
    *     .setName(formattedName)
    *     .setFilter(filter)
@@ -896,7 +896,7 @@ public class MetricServiceApi implements AutoCloseable {
    *   TimeInterval interval = TimeInterval.newBuilder().build();
    *   Aggregation aggregation = Aggregation.newBuilder().build();
    *   String orderBy = "";
-   *   TimeSeriesView view = TimeSeriesView.FULL;
+   *   ListTimeSeriesRequest.TimeSeriesView view = ListTimeSeriesRequest.TimeSeriesView.FULL;
    *   ListTimeSeriesRequest request = ListTimeSeriesRequest.newBuilder()
    *     .setName(formattedName)
    *     .setFilter(filter)
@@ -932,7 +932,7 @@ public class MetricServiceApi implements AutoCloseable {
    *   TimeInterval interval = TimeInterval.newBuilder().build();
    *   Aggregation aggregation = Aggregation.newBuilder().build();
    *   String orderBy = "";
-   *   TimeSeriesView view = TimeSeriesView.FULL;
+   *   ListTimeSeriesRequest.TimeSeriesView view = ListTimeSeriesRequest.TimeSeriesView.FULL;
    *   ListTimeSeriesRequest request = ListTimeSeriesRequest.newBuilder()
    *     .setName(formattedName)
    *     .setFilter(filter)
