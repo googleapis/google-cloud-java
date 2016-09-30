@@ -91,10 +91,6 @@ public class SpeechApi implements AutoCloseable {
   private final ApiCallable<SyncRecognizeRequest, SyncRecognizeResponse> syncRecognizeCallable;
   private final ApiCallable<AsyncRecognizeRequest, Operation> asyncRecognizeCallable;
 
-  public final SpeechSettings getSettings() {
-    return settings;
-  }
-
   /**
    * Constructs an instance of SpeechApi with default settings.
    */
@@ -144,6 +140,10 @@ public class SpeechApi implements AutoCloseable {
             }
           });
     }
+  }
+
+  public final SpeechSettings getSettings() {
+    return settings;
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -224,8 +224,9 @@ public class SpeechApi implements AutoCloseable {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Perform asynchronous speech-recognition: receive results via the
-   * google.longrunning.Operations interface. `Operation.response` returns
-   * `AsyncRecognizeResponse`.
+   * google.longrunning.Operations interface. Returns either an
+   * `Operation.error` or an `Operation.response` which contains
+   * an `AsyncRecognizeResponse` message.
    *
    * Sample code:
    * <pre><code>
@@ -250,8 +251,9 @@ public class SpeechApi implements AutoCloseable {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Perform asynchronous speech-recognition: receive results via the
-   * google.longrunning.Operations interface. `Operation.response` returns
-   * `AsyncRecognizeResponse`.
+   * google.longrunning.Operations interface. Returns either an
+   * `Operation.error` or an `Operation.response` which contains
+   * an `AsyncRecognizeResponse` message.
    *
    * Sample code:
    * <pre><code>
@@ -276,8 +278,9 @@ public class SpeechApi implements AutoCloseable {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Perform asynchronous speech-recognition: receive results via the
-   * google.longrunning.Operations interface. `Operation.response` returns
-   * `AsyncRecognizeResponse`.
+   * google.longrunning.Operations interface. Returns either an
+   * `Operation.error` or an `Operation.response` which contains
+   * an `AsyncRecognizeResponse` message.
    *
    * Sample code:
    * <pre><code>

@@ -15,14 +15,13 @@
 package com.google.cloud.speech.spi.v1beta1;
 
 import com.google.api.gax.testing.MockGrpcService;
-import com.google.cloud.speech.v1beta1.SpeechGrpc;
 import com.google.protobuf.GeneratedMessageV3;
 import io.grpc.ServerServiceDefinition;
 import java.util.List;
 
 @javax.annotation.Generated("by GAPIC")
 public class MockSpeech implements MockGrpcService {
-  private MockSpeechImpl serviceImpl;
+  private final MockSpeechImpl serviceImpl;
 
   public MockSpeech() {
     serviceImpl = new MockSpeechImpl();
