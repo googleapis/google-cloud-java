@@ -53,6 +53,7 @@ import com.google.common.collect.Iterators;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
 import com.google.common.io.BaseEncoding;
+import com.google.common.io.ByteStreams;
 
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
@@ -79,6 +80,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.zip.GZIPInputStream;
 
 import javax.crypto.spec.SecretKeySpec;
 
@@ -96,6 +98,8 @@ public class ITStorageTest {
   private static final String OTHER_BASE64_KEY = "IcOIQGlliNr5pr3vJb63l+XMqc7NjXqjfw/deBoNxPA=";
   private static final Key KEY =
       new SecretKeySpec(BaseEncoding.base64().decode(BASE64_KEY), "AES256");
+  private static final byte[] COMPRESSED_CONTENT = BaseEncoding.base64()
+      .decode("H4sIAAAAAAAAAPNIzcnJV3DPz0/PSVVwzskvTVEILskvSkxPVQQA/LySchsAAAA=");
 
   @BeforeClass
   public static void beforeClass() throws NoSuchAlgorithmException, InvalidKeySpecException {
@@ -1380,5 +1384,34 @@ public class ITStorageTest {
     } catch (StorageException ex) {
       // expected
     }
+  }
+
+  @Test
+  public void testReadCompressedBlob() throws IOException {
+    String blobName = "test-read-compressed-blob";
+    BlobInfo blobInfo = BlobInfo.builder(BlobId.of(BUCKET, blobName))
+        .contentType("text/plain")
+        .contentEncoding("gzip")
+        .build();
+    Blob blob = storage.create(blobInfo, COMPRESSED_CONTENT);
+    try (ByteArrayOutputStream output = new ByteArrayOutputStream()) {
+      try (ReadChannel reader = storage.reader(BlobId.of(BUCKET, blobName))) {
+        reader.chunkSize(8);
+        ByteBuffer buffer = ByteBuffer.allocate(8);
+        while (reader.read(buffer) != -1) {
+          buffer.flip();
+          output.write(buffer.array(), 0, buffer.limit());
+          buffer.clear();
+        }
+      }
+      assertArrayEquals(BLOB_STRING_CONTENT.getBytes(UTF_8),
+          storage.readAllBytes(BUCKET, blobName));
+      assertArrayEquals(COMPRESSED_CONTENT, output.toByteArray());
+      try (GZIPInputStream zipInput =
+               new GZIPInputStream(new ByteArrayInputStream(output.toByteArray()))) {
+        assertArrayEquals(BLOB_STRING_CONTENT.getBytes(UTF_8), ByteStreams.toByteArray(zipInput));
+      }
+    }
+    blob.delete();
   }
 }
