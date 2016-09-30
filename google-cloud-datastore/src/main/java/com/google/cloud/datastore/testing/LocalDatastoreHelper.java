@@ -70,7 +70,7 @@ public class LocalDatastoreHelper {
   private static final double DEFAULT_CONSISTENCY = 0.9;
   private static final String GCD_BASENAME = "cloud-datastore-emulator-" + GCD_VERSION;
   private static final String GCD_FILENAME = GCD_BASENAME + ".zip";
-  private static final String MD5_CHECKSUM = "e68695ff005421ccb7144689d9633df1";
+  private static final String MD5_CHECKSUM = "ec2237a0f0ac54964c6bd95e12c73720";
   private static final URL GCD_URL;
   private static final String GCLOUD = "gcloud";
   private static final Path INSTALLED_GCD_PATH;
