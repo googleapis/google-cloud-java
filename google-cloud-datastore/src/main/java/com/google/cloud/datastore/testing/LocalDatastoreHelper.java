@@ -23,6 +23,7 @@ import com.google.cloud.AuthCredentials;
 import com.google.cloud.RetryParams;
 import com.google.cloud.datastore.DatastoreOptions;
 import com.google.common.base.Strings;
+import com.google.common.io.CharStreams;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
@@ -508,6 +509,24 @@ public class LocalDatastoreHelper {
     return result.toString().startsWith(shutdownMsg);
   }
 
+  public String sendPostRequest(String request) throws IOException {
+    URL url = new URL("http", "localhost", this.port, request);
+    HttpURLConnection con = (HttpURLConnection) url.openConnection();
+    con.setRequestMethod("POST");
+    con.setDoOutput(true);
+    OutputStream out = con.getOutputStream();
+    out.write("".getBytes());
+    out.flush();
+
+    InputStream in = con.getInputStream();
+    String response = CharStreams.toString(new InputStreamReader(con.getInputStream()));
+    in.close();
+    return response;
+  }
+
+  /**
+   * Quit the local emulator and related local service.
+   */
   public void stop() throws IOException, InterruptedException {
     sendQuitRequest(port);
     if (processReader != null) {
@@ -519,6 +538,13 @@ public class LocalDatastoreHelper {
     if (gcdPath != null) {
       deleteRecurse(gcdPath);
     }
+  }
+
+  /**
+   * Reset the internal state of the emulator.
+   */
+  public void reset() throws IOException {
+    sendPostRequest("/reset");
   }
 
   private static void deleteRecurse(Path path) throws IOException {
