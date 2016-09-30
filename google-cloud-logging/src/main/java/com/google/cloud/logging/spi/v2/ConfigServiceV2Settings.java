@@ -14,6 +14,7 @@
 package com.google.cloud.logging.spi.v2;
 
 import com.google.api.gax.core.ConnectionSettings;
+import com.google.api.gax.core.PagedListResponse;
 import com.google.api.gax.core.RetrySettings;
 import com.google.api.gax.grpc.ApiCallSettings;
 import com.google.api.gax.grpc.PageStreamingCallSettings;
@@ -204,7 +205,7 @@ public class ConfigServiceV2Settings extends ServiceApiSettings {
     deleteSinkSettings = settingsBuilder.deleteSinkSettings().build();
   }
 
-  private static PageStreamingDescriptor<ListSinksRequest, ListSinksResponse, LogSink>
+  private static final PageStreamingDescriptor<ListSinksRequest, ListSinksResponse, LogSink>
       LIST_SINKS_PAGE_STR_DESC =
           new PageStreamingDescriptor<ListSinksRequest, ListSinksResponse, LogSink>() {
             @Override
@@ -244,12 +245,12 @@ public class ConfigServiceV2Settings extends ServiceApiSettings {
   public static class Builder extends ServiceApiSettings.Builder {
     private final ImmutableList<ApiCallSettings.Builder> methodSettingsBuilders;
 
-    private PageStreamingCallSettings.Builder<ListSinksRequest, ListSinksResponse, LogSink>
+    private final PageStreamingCallSettings.Builder<ListSinksRequest, ListSinksResponse, LogSink>
         listSinksSettings;
-    private SimpleCallSettings.Builder<GetSinkRequest, LogSink> getSinkSettings;
-    private SimpleCallSettings.Builder<CreateSinkRequest, LogSink> createSinkSettings;
-    private SimpleCallSettings.Builder<UpdateSinkRequest, LogSink> updateSinkSettings;
-    private SimpleCallSettings.Builder<DeleteSinkRequest, Empty> deleteSinkSettings;
+    private final SimpleCallSettings.Builder<GetSinkRequest, LogSink> getSinkSettings;
+    private final SimpleCallSettings.Builder<CreateSinkRequest, LogSink> createSinkSettings;
+    private final SimpleCallSettings.Builder<UpdateSinkRequest, LogSink> updateSinkSettings;
+    private final SimpleCallSettings.Builder<DeleteSinkRequest, Empty> deleteSinkSettings;
 
     private static final ImmutableMap<String, ImmutableSet<Status.Code>> RETRYABLE_CODE_DEFINITIONS;
 

@@ -118,10 +118,6 @@ public class PublisherApi implements AutoCloseable {
   private final ApiCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable;
 
-  public final PublisherSettings getSettings() {
-    return settings;
-  }
-
   private static final PathTemplate PROJECT_PATH_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding("projects/{project}");
 
@@ -241,6 +237,10 @@ public class PublisherApi implements AutoCloseable {
             }
           });
     }
+  }
+
+  public final PublisherSettings getSettings() {
+    return settings;
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD

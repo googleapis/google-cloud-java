@@ -15,14 +15,13 @@
 package com.google.cloud.monitoring.spi.v3;
 
 import com.google.api.gax.testing.MockGrpcService;
-import com.google.monitoring.v3.AgentTranslationServiceGrpc;
 import com.google.protobuf.GeneratedMessageV3;
 import io.grpc.ServerServiceDefinition;
 import java.util.List;
 
 @javax.annotation.Generated("by GAPIC")
 public class MockAgentTranslationService implements MockGrpcService {
-  private MockAgentTranslationServiceImpl serviceImpl;
+  private final MockAgentTranslationServiceImpl serviceImpl;
 
   public MockAgentTranslationService() {
     serviceImpl = new MockAgentTranslationServiceImpl();

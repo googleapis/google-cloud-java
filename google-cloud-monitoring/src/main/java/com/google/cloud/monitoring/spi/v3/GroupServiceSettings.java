@@ -15,6 +15,7 @@ package com.google.cloud.monitoring.spi.v3;
 
 import com.google.api.MonitoredResource;
 import com.google.api.gax.core.ConnectionSettings;
+import com.google.api.gax.core.PagedListResponse;
 import com.google.api.gax.core.RetrySettings;
 import com.google.api.gax.grpc.ApiCallSettings;
 import com.google.api.gax.grpc.PageStreamingCallSettings;
@@ -214,7 +215,7 @@ public class GroupServiceSettings extends ServiceApiSettings {
     listGroupMembersSettings = settingsBuilder.listGroupMembersSettings().build();
   }
 
-  private static PageStreamingDescriptor<ListGroupsRequest, ListGroupsResponse, Group>
+  private static final PageStreamingDescriptor<ListGroupsRequest, ListGroupsResponse, Group>
       LIST_GROUPS_PAGE_STR_DESC =
           new PageStreamingDescriptor<ListGroupsRequest, ListGroupsResponse, Group>() {
             @Override
@@ -248,7 +249,7 @@ public class GroupServiceSettings extends ServiceApiSettings {
             }
           };
 
-  private static PageStreamingDescriptor<
+  private static final PageStreamingDescriptor<
           ListGroupMembersRequest, ListGroupMembersResponse, MonitoredResource>
       LIST_GROUP_MEMBERS_PAGE_STR_DESC =
           new PageStreamingDescriptor<
@@ -294,13 +295,13 @@ public class GroupServiceSettings extends ServiceApiSettings {
   public static class Builder extends ServiceApiSettings.Builder {
     private final ImmutableList<ApiCallSettings.Builder> methodSettingsBuilders;
 
-    private PageStreamingCallSettings.Builder<ListGroupsRequest, ListGroupsResponse, Group>
+    private final PageStreamingCallSettings.Builder<ListGroupsRequest, ListGroupsResponse, Group>
         listGroupsSettings;
-    private SimpleCallSettings.Builder<GetGroupRequest, Group> getGroupSettings;
-    private SimpleCallSettings.Builder<CreateGroupRequest, Group> createGroupSettings;
-    private SimpleCallSettings.Builder<UpdateGroupRequest, Group> updateGroupSettings;
-    private SimpleCallSettings.Builder<DeleteGroupRequest, Empty> deleteGroupSettings;
-    private PageStreamingCallSettings.Builder<
+    private final SimpleCallSettings.Builder<GetGroupRequest, Group> getGroupSettings;
+    private final SimpleCallSettings.Builder<CreateGroupRequest, Group> createGroupSettings;
+    private final SimpleCallSettings.Builder<UpdateGroupRequest, Group> updateGroupSettings;
+    private final SimpleCallSettings.Builder<DeleteGroupRequest, Empty> deleteGroupSettings;
+    private final PageStreamingCallSettings.Builder<
             ListGroupMembersRequest, ListGroupMembersResponse, MonitoredResource>
         listGroupMembersSettings;
 

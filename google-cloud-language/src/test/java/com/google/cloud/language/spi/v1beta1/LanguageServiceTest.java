@@ -130,7 +130,7 @@ public class LanguageServiceTest {
     mockLanguageService.setResponses(expectedResponses);
 
     Document document = Document.newBuilder().build();
-    Features features = Features.newBuilder().build();
+    AnnotateTextRequest.Features features = AnnotateTextRequest.Features.newBuilder().build();
     EncodingType encodingType = EncodingType.NONE;
 
     AnnotateTextResponse actualResponse = api.annotateText(document, features, encodingType);

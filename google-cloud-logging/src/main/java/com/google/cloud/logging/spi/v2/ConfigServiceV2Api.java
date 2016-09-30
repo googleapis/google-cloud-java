@@ -100,10 +100,6 @@ public class ConfigServiceV2Api implements AutoCloseable {
   private final ApiCallable<UpdateSinkRequest, LogSink> updateSinkCallable;
   private final ApiCallable<DeleteSinkRequest, Empty> deleteSinkCallable;
 
-  public final ConfigServiceV2Settings getSettings() {
-    return settings;
-  }
-
   private static final PathTemplate PARENT_PATH_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding("projects/{project}");
 
@@ -210,6 +206,10 @@ public class ConfigServiceV2Api implements AutoCloseable {
             }
           });
     }
+  }
+
+  public final ConfigServiceV2Settings getSettings() {
+    return settings;
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD

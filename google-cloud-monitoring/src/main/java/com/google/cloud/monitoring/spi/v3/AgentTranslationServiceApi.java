@@ -93,10 +93,6 @@ public class AgentTranslationServiceApi implements AutoCloseable {
   private final ApiCallable<CreateCollectdTimeSeriesRequest, Empty>
       createCollectdTimeSeriesCallable;
 
-  public final AgentTranslationServiceSettings getSettings() {
-    return settings;
-  }
-
   private static final PathTemplate PROJECT_PATH_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding("projects/{project}");
 
@@ -166,6 +162,10 @@ public class AgentTranslationServiceApi implements AutoCloseable {
             }
           });
     }
+  }
+
+  public final AgentTranslationServiceSettings getSettings() {
+    return settings;
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD

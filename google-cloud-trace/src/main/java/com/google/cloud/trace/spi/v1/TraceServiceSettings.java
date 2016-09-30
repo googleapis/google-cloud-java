@@ -14,6 +14,7 @@
 package com.google.cloud.trace.spi.v1;
 
 import com.google.api.gax.core.ConnectionSettings;
+import com.google.api.gax.core.PagedListResponse;
 import com.google.api.gax.core.RetrySettings;
 import com.google.api.gax.grpc.ApiCallSettings;
 import com.google.api.gax.grpc.PageStreamingCallSettings;
@@ -182,7 +183,7 @@ public class TraceServiceSettings extends ServiceApiSettings {
     listTracesSettings = settingsBuilder.listTracesSettings().build();
   }
 
-  private static PageStreamingDescriptor<ListTracesRequest, ListTracesResponse, Trace>
+  private static final PageStreamingDescriptor<ListTracesRequest, ListTracesResponse, Trace>
       LIST_TRACES_PAGE_STR_DESC =
           new PageStreamingDescriptor<ListTracesRequest, ListTracesResponse, Trace>() {
             @Override
@@ -224,9 +225,9 @@ public class TraceServiceSettings extends ServiceApiSettings {
   public static class Builder extends ServiceApiSettings.Builder {
     private final ImmutableList<ApiCallSettings.Builder> methodSettingsBuilders;
 
-    private SimpleCallSettings.Builder<PatchTracesRequest, Empty> patchTracesSettings;
-    private SimpleCallSettings.Builder<GetTraceRequest, Trace> getTraceSettings;
-    private PageStreamingCallSettings.Builder<ListTracesRequest, ListTracesResponse, Trace>
+    private final SimpleCallSettings.Builder<PatchTracesRequest, Empty> patchTracesSettings;
+    private final SimpleCallSettings.Builder<GetTraceRequest, Trace> getTraceSettings;
+    private final PageStreamingCallSettings.Builder<ListTracesRequest, ListTracesResponse, Trace>
         listTracesSettings;
 
     private static final ImmutableMap<String, ImmutableSet<Status.Code>> RETRYABLE_CODE_DEFINITIONS;

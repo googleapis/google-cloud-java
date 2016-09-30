@@ -21,7 +21,7 @@ import java.util.List;
 
 @javax.annotation.Generated("by GAPIC")
 public class MockLoggingServiceV2 implements MockGrpcService {
-  private MockLoggingServiceV2Impl serviceImpl;
+  private final MockLoggingServiceV2Impl serviceImpl;
 
   public MockLoggingServiceV2() {
     serviceImpl = new MockLoggingServiceV2Impl();

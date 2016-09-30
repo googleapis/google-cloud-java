@@ -14,6 +14,7 @@
 package com.google.cloud.logging.spi.v2;
 
 import com.google.api.gax.core.ConnectionSettings;
+import com.google.api.gax.core.PagedListResponse;
 import com.google.api.gax.core.RetrySettings;
 import com.google.api.gax.grpc.ApiCallSettings;
 import com.google.api.gax.grpc.PageStreamingCallSettings;
@@ -204,7 +205,8 @@ public class MetricsServiceV2Settings extends ServiceApiSettings {
     deleteLogMetricSettings = settingsBuilder.deleteLogMetricSettings().build();
   }
 
-  private static PageStreamingDescriptor<ListLogMetricsRequest, ListLogMetricsResponse, LogMetric>
+  private static final PageStreamingDescriptor<
+          ListLogMetricsRequest, ListLogMetricsResponse, LogMetric>
       LIST_LOG_METRICS_PAGE_STR_DESC =
           new PageStreamingDescriptor<ListLogMetricsRequest, ListLogMetricsResponse, LogMetric>() {
             @Override
@@ -245,13 +247,15 @@ public class MetricsServiceV2Settings extends ServiceApiSettings {
   public static class Builder extends ServiceApiSettings.Builder {
     private final ImmutableList<ApiCallSettings.Builder> methodSettingsBuilders;
 
-    private PageStreamingCallSettings.Builder<
+    private final PageStreamingCallSettings.Builder<
             ListLogMetricsRequest, ListLogMetricsResponse, LogMetric>
         listLogMetricsSettings;
-    private SimpleCallSettings.Builder<GetLogMetricRequest, LogMetric> getLogMetricSettings;
-    private SimpleCallSettings.Builder<CreateLogMetricRequest, LogMetric> createLogMetricSettings;
-    private SimpleCallSettings.Builder<UpdateLogMetricRequest, LogMetric> updateLogMetricSettings;
-    private SimpleCallSettings.Builder<DeleteLogMetricRequest, Empty> deleteLogMetricSettings;
+    private final SimpleCallSettings.Builder<GetLogMetricRequest, LogMetric> getLogMetricSettings;
+    private final SimpleCallSettings.Builder<CreateLogMetricRequest, LogMetric>
+        createLogMetricSettings;
+    private final SimpleCallSettings.Builder<UpdateLogMetricRequest, LogMetric>
+        updateLogMetricSettings;
+    private final SimpleCallSettings.Builder<DeleteLogMetricRequest, Empty> deleteLogMetricSettings;
 
     private static final ImmutableMap<String, ImmutableSet<Status.Code>> RETRYABLE_CODE_DEFINITIONS;
 

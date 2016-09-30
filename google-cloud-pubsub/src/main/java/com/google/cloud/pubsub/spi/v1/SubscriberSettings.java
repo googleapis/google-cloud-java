@@ -14,6 +14,7 @@
 package com.google.cloud.pubsub.spi.v1;
 
 import com.google.api.gax.core.ConnectionSettings;
+import com.google.api.gax.core.PagedListResponse;
 import com.google.api.gax.core.RetrySettings;
 import com.google.api.gax.grpc.ApiCallSettings;
 import com.google.api.gax.grpc.PageStreamingCallSettings;
@@ -268,7 +269,7 @@ public class SubscriberSettings extends ServiceApiSettings {
     testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
   }
 
-  private static PageStreamingDescriptor<
+  private static final PageStreamingDescriptor<
           ListSubscriptionsRequest, ListSubscriptionsResponse, Subscription>
       LIST_SUBSCRIPTIONS_PAGE_STR_DESC =
           new PageStreamingDescriptor<
@@ -314,20 +315,23 @@ public class SubscriberSettings extends ServiceApiSettings {
   public static class Builder extends ServiceApiSettings.Builder {
     private final ImmutableList<ApiCallSettings.Builder> methodSettingsBuilders;
 
-    private SimpleCallSettings.Builder<Subscription, Subscription> createSubscriptionSettings;
-    private SimpleCallSettings.Builder<GetSubscriptionRequest, Subscription>
+    private final SimpleCallSettings.Builder<Subscription, Subscription> createSubscriptionSettings;
+    private final SimpleCallSettings.Builder<GetSubscriptionRequest, Subscription>
         getSubscriptionSettings;
-    private PageStreamingCallSettings.Builder<
+    private final PageStreamingCallSettings.Builder<
             ListSubscriptionsRequest, ListSubscriptionsResponse, Subscription>
         listSubscriptionsSettings;
-    private SimpleCallSettings.Builder<DeleteSubscriptionRequest, Empty> deleteSubscriptionSettings;
-    private SimpleCallSettings.Builder<ModifyAckDeadlineRequest, Empty> modifyAckDeadlineSettings;
-    private SimpleCallSettings.Builder<AcknowledgeRequest, Empty> acknowledgeSettings;
-    private SimpleCallSettings.Builder<PullRequest, PullResponse> pullSettings;
-    private SimpleCallSettings.Builder<ModifyPushConfigRequest, Empty> modifyPushConfigSettings;
-    private SimpleCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings;
-    private SimpleCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings;
-    private SimpleCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
+    private final SimpleCallSettings.Builder<DeleteSubscriptionRequest, Empty>
+        deleteSubscriptionSettings;
+    private final SimpleCallSettings.Builder<ModifyAckDeadlineRequest, Empty>
+        modifyAckDeadlineSettings;
+    private final SimpleCallSettings.Builder<AcknowledgeRequest, Empty> acknowledgeSettings;
+    private final SimpleCallSettings.Builder<PullRequest, PullResponse> pullSettings;
+    private final SimpleCallSettings.Builder<ModifyPushConfigRequest, Empty>
+        modifyPushConfigSettings;
+    private final SimpleCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings;
+    private final SimpleCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings;
+    private final SimpleCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsSettings;
 
     private static final ImmutableMap<String, ImmutableSet<Status.Code>> RETRYABLE_CODE_DEFINITIONS;

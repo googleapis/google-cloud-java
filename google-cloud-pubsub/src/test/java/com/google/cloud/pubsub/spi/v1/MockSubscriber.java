@@ -16,13 +16,12 @@ package com.google.cloud.pubsub.spi.v1;
 
 import com.google.api.gax.testing.MockGrpcService;
 import com.google.protobuf.GeneratedMessageV3;
-import com.google.pubsub.v1.SubscriberGrpc;
 import io.grpc.ServerServiceDefinition;
 import java.util.List;
 
 @javax.annotation.Generated("by GAPIC")
 public class MockSubscriber implements MockGrpcService {
-  private MockSubscriberImpl serviceImpl;
+  private final MockSubscriberImpl serviceImpl;
 
   public MockSubscriber() {
     serviceImpl = new MockSubscriberImpl();

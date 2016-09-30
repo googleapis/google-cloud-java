@@ -185,11 +185,11 @@ public class LanguageServiceSettings extends ServiceApiSettings {
   public static class Builder extends ServiceApiSettings.Builder {
     private final ImmutableList<ApiCallSettings.Builder> methodSettingsBuilders;
 
-    private SimpleCallSettings.Builder<AnalyzeSentimentRequest, AnalyzeSentimentResponse>
+    private final SimpleCallSettings.Builder<AnalyzeSentimentRequest, AnalyzeSentimentResponse>
         analyzeSentimentSettings;
-    private SimpleCallSettings.Builder<AnalyzeEntitiesRequest, AnalyzeEntitiesResponse>
+    private final SimpleCallSettings.Builder<AnalyzeEntitiesRequest, AnalyzeEntitiesResponse>
         analyzeEntitiesSettings;
-    private SimpleCallSettings.Builder<AnnotateTextRequest, AnnotateTextResponse>
+    private final SimpleCallSettings.Builder<AnnotateTextRequest, AnnotateTextResponse>
         annotateTextSettings;
 
     private static final ImmutableMap<String, ImmutableSet<Status.Code>> RETRYABLE_CODE_DEFINITIONS;

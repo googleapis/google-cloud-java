@@ -103,10 +103,6 @@ public class ErrorStatsServiceApi implements AutoCloseable {
       listEventsPagedCallable;
   private final ApiCallable<DeleteEventsRequest, DeleteEventsResponse> deleteEventsCallable;
 
-  public final ErrorStatsServiceSettings getSettings() {
-    return settings;
-  }
-
   private static final PathTemplate PROJECT_PATH_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding("projects/{project}");
 
@@ -183,6 +179,10 @@ public class ErrorStatsServiceApi implements AutoCloseable {
             }
           });
     }
+  }
+
+  public final ErrorStatsServiceSettings getSettings() {
+    return settings;
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD

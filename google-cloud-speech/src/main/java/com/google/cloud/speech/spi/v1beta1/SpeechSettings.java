@@ -171,9 +171,10 @@ public class SpeechSettings extends ServiceApiSettings {
   public static class Builder extends ServiceApiSettings.Builder {
     private final ImmutableList<ApiCallSettings.Builder> methodSettingsBuilders;
 
-    private SimpleCallSettings.Builder<SyncRecognizeRequest, SyncRecognizeResponse>
+    private final SimpleCallSettings.Builder<SyncRecognizeRequest, SyncRecognizeResponse>
         syncRecognizeSettings;
-    private SimpleCallSettings.Builder<AsyncRecognizeRequest, Operation> asyncRecognizeSettings;
+    private final SimpleCallSettings.Builder<AsyncRecognizeRequest, Operation>
+        asyncRecognizeSettings;
 
     private static final ImmutableMap<String, ImmutableSet<Status.Code>> RETRYABLE_CODE_DEFINITIONS;
 

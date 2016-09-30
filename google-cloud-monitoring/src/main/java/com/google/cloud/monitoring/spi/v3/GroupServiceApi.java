@@ -120,10 +120,6 @@ public class GroupServiceApi implements AutoCloseable {
           PagedListResponse<ListGroupMembersRequest, ListGroupMembersResponse, MonitoredResource>>
       listGroupMembersPagedCallable;
 
-  public final GroupServiceSettings getSettings() {
-    return settings;
-  }
-
   private static final PathTemplate PROJECT_PATH_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding("projects/{project}");
 
@@ -234,6 +230,10 @@ public class GroupServiceApi implements AutoCloseable {
             }
           });
     }
+  }
+
+  public final GroupServiceSettings getSettings() {
+    return settings;
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD

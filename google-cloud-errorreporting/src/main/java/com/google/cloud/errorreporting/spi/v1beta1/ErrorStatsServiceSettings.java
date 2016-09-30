@@ -14,6 +14,7 @@
 package com.google.cloud.errorreporting.spi.v1beta1;
 
 import com.google.api.gax.core.ConnectionSettings;
+import com.google.api.gax.core.PagedListResponse;
 import com.google.api.gax.core.RetrySettings;
 import com.google.api.gax.grpc.ApiCallSettings;
 import com.google.api.gax.grpc.PageStreamingCallSettings;
@@ -183,7 +184,7 @@ public class ErrorStatsServiceSettings extends ServiceApiSettings {
     deleteEventsSettings = settingsBuilder.deleteEventsSettings().build();
   }
 
-  private static PageStreamingDescriptor<
+  private static final PageStreamingDescriptor<
           ListGroupStatsRequest, ListGroupStatsResponse, ErrorGroupStats>
       LIST_GROUP_STATS_PAGE_STR_DESC =
           new PageStreamingDescriptor<
@@ -220,7 +221,7 @@ public class ErrorStatsServiceSettings extends ServiceApiSettings {
             }
           };
 
-  private static PageStreamingDescriptor<ListEventsRequest, ListEventsResponse, ErrorEvent>
+  private static final PageStreamingDescriptor<ListEventsRequest, ListEventsResponse, ErrorEvent>
       LIST_EVENTS_PAGE_STR_DESC =
           new PageStreamingDescriptor<ListEventsRequest, ListEventsResponse, ErrorEvent>() {
             @Override
@@ -260,12 +261,13 @@ public class ErrorStatsServiceSettings extends ServiceApiSettings {
   public static class Builder extends ServiceApiSettings.Builder {
     private final ImmutableList<ApiCallSettings.Builder> methodSettingsBuilders;
 
-    private PageStreamingCallSettings.Builder<
+    private final PageStreamingCallSettings.Builder<
             ListGroupStatsRequest, ListGroupStatsResponse, ErrorGroupStats>
         listGroupStatsSettings;
-    private PageStreamingCallSettings.Builder<ListEventsRequest, ListEventsResponse, ErrorEvent>
+    private final PageStreamingCallSettings.Builder<
+            ListEventsRequest, ListEventsResponse, ErrorEvent>
         listEventsSettings;
-    private SimpleCallSettings.Builder<DeleteEventsRequest, DeleteEventsResponse>
+    private final SimpleCallSettings.Builder<DeleteEventsRequest, DeleteEventsResponse>
         deleteEventsSettings;
 
     private static final ImmutableMap<String, ImmutableSet<Status.Code>> RETRYABLE_CODE_DEFINITIONS;

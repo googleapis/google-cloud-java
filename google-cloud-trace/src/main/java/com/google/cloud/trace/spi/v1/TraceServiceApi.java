@@ -101,10 +101,6 @@ public class TraceServiceApi implements AutoCloseable {
           ListTracesRequest, PagedListResponse<ListTracesRequest, ListTracesResponse, Trace>>
       listTracesPagedCallable;
 
-  public final TraceServiceSettings getSettings() {
-    return settings;
-  }
-
   /**
    * Constructs an instance of TraceServiceApi with default settings.
    */
@@ -158,6 +154,10 @@ public class TraceServiceApi implements AutoCloseable {
             }
           });
     }
+  }
+
+  public final TraceServiceSettings getSettings() {
+    return settings;
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD

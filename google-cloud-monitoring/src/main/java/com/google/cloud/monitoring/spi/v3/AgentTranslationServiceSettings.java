@@ -161,7 +161,7 @@ public class AgentTranslationServiceSettings extends ServiceApiSettings {
   public static class Builder extends ServiceApiSettings.Builder {
     private final ImmutableList<ApiCallSettings.Builder> methodSettingsBuilders;
 
-    private SimpleCallSettings.Builder<CreateCollectdTimeSeriesRequest, Empty>
+    private final SimpleCallSettings.Builder<CreateCollectdTimeSeriesRequest, Empty>
         createCollectdTimeSeriesSettings;
 
     private static final ImmutableMap<String, ImmutableSet<Status.Code>> RETRYABLE_CODE_DEFINITIONS;
