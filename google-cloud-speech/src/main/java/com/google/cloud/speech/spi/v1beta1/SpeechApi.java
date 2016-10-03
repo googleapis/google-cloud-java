@@ -14,7 +14,6 @@
 package com.google.cloud.speech.spi.v1beta1;
 
 import com.google.api.gax.grpc.ApiCallable;
-import com.google.api.gax.protobuf.PathTemplate;
 import com.google.cloud.speech.v1beta1.AsyncRecognizeRequest;
 import com.google.cloud.speech.v1beta1.RecognitionAudio;
 import com.google.cloud.speech.v1beta1.RecognitionConfig;
@@ -45,32 +44,31 @@ import java.util.concurrent.ScheduledExecutorService;
  * </code>
  * </pre>
  *
- * <p>Note: close() needs to be called on the speechApi object to clean up resources such
- * as threads. In the example above, try-with-resources is used, which automatically calls
- * close().
+ * <p>Note: close() needs to be called on the speechApi object to clean up resources such as
+ * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
- * <p>The surface of this class includes several types of Java methods for each of the API's methods:
+ * <p>The surface of this class includes several types of Java methods for each of the API's
+ * methods:
  *
  * <ol>
- * <li> A "flattened" method. With this type of method, the fields of the request type have been
- * converted into function parameters. It may be the case that not all fields are available
- * as parameters, and not every API method will have a flattened method entry point.
- * <li> A "request object" method. This type of method only takes one parameter, a request
- * object, which must be constructed before the call. Not every API method will have a request
- * object method.
- * <li> A "callable" method. This type of method takes no parameters and returns an immutable
- * ApiCallable object, which can be used to initiate calls to the service.
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
+ *       converted into function parameters. It may be the case that not all fields are available as
+ *       parameters, and not every API method will have a flattened method entry point.
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
+ *       which must be constructed before the call. Not every API method will have a request object
+ *       method.
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable
+ *       ApiCallable object, which can be used to initiate calls to the service.
  * </ol>
  *
  * <p>See the individual methods for example code.
  *
- * <p>Many parameters require resource names to be formatted in a particular way. To assist
- * with these names, this class includes a format method for each type of name, and additionally
- * a parse method to extract the individual identifiers contained within names that are
- * returned.
+ * <p>Many parameters require resource names to be formatted in a particular way. To assist with
+ * these names, this class includes a format method for each type of name, and additionally a parse
+ * method to extract the individual identifiers contained within names that are returned.
  *
- * <p>This class can be customized by passing in a custom instance of SpeechSettings to
- * create(). For example:
+ * <p>This class can be customized by passing in a custom instance of SpeechSettings to create().
+ * For example:
  *
  * <pre>
  * <code>
@@ -91,26 +89,22 @@ public class SpeechApi implements AutoCloseable {
   private final ApiCallable<SyncRecognizeRequest, SyncRecognizeResponse> syncRecognizeCallable;
   private final ApiCallable<AsyncRecognizeRequest, Operation> asyncRecognizeCallable;
 
-  /**
-   * Constructs an instance of SpeechApi with default settings.
-   */
+  /** Constructs an instance of SpeechApi with default settings. */
   public static final SpeechApi create() throws IOException {
     return create(SpeechSettings.defaultBuilder().build());
   }
 
   /**
-   * Constructs an instance of SpeechApi, using the given settings.
-   * The channels are created based on the settings passed in, or defaults for any
-   * settings that are not set.
+   * Constructs an instance of SpeechApi, using the given settings. The channels are created based
+   * on the settings passed in, or defaults for any settings that are not set.
    */
   public static final SpeechApi create(SpeechSettings settings) throws IOException {
     return new SpeechApi(settings);
   }
 
   /**
-   * Constructs an instance of SpeechApi, using the given settings.
-   * This is protected so that it easy to make a subclass, but otherwise, the static
-   * factory methods should be preferred.
+   * Constructs an instance of SpeechApi, using the given settings. This is protected so that it
+   * easy to make a subclass, but otherwise, the static factory methods should be preferred.
    */
   protected SpeechApi(SpeechSettings settings) throws IOException {
     this.settings = settings;
@@ -148,10 +142,11 @@ public class SpeechApi implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Perform synchronous speech-recognition: receive results after all audio
-   * has been sent and processed.
+   * Perform synchronous speech-recognition: receive results after all audio has been sent and
+   * processed.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (SpeechApi speechApi = SpeechApi.create()) {
    *   RecognitionConfig config = RecognitionConfig.newBuilder().build();
@@ -160,8 +155,8 @@ public class SpeechApi implements AutoCloseable {
    * }
    * </code></pre>
    *
-   * @param config [Required] The `config` message provides information to the recognizer
-   * that specifies how to process the request.
+   * @param config [Required] The `config` message provides information to the recognizer that
+   *     specifies how to process the request.
    * @param audio [Required] The audio data to be recognized.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
@@ -174,10 +169,11 @@ public class SpeechApi implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Perform synchronous speech-recognition: receive results after all audio
-   * has been sent and processed.
+   * Perform synchronous speech-recognition: receive results after all audio has been sent and
+   * processed.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (SpeechApi speechApi = SpeechApi.create()) {
    *   RecognitionConfig config = RecognitionConfig.newBuilder().build();
@@ -199,10 +195,11 @@ public class SpeechApi implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Perform synchronous speech-recognition: receive results after all audio
-   * has been sent and processed.
+   * Perform synchronous speech-recognition: receive results after all audio has been sent and
+   * processed.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (SpeechApi speechApi = SpeechApi.create()) {
    *   RecognitionConfig config = RecognitionConfig.newBuilder().build();
@@ -223,12 +220,12 @@ public class SpeechApi implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Perform asynchronous speech-recognition: receive results via the
-   * google.longrunning.Operations interface. Returns either an
-   * `Operation.error` or an `Operation.response` which contains
-   * an `AsyncRecognizeResponse` message.
+   * Perform asynchronous speech-recognition: receive results via the google.longrunning.Operations
+   * interface. Returns either an `Operation.error` or an `Operation.response` which contains an
+   * `AsyncRecognizeResponse` message.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (SpeechApi speechApi = SpeechApi.create()) {
    *   RecognitionConfig config = RecognitionConfig.newBuilder().build();
@@ -237,8 +234,8 @@ public class SpeechApi implements AutoCloseable {
    * }
    * </code></pre>
    *
-   * @param config [Required] The `config` message provides information to the recognizer
-   * that specifies how to process the request.
+   * @param config [Required] The `config` message provides information to the recognizer that
+   *     specifies how to process the request.
    * @param audio [Required] The audio data to be recognized.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
@@ -250,12 +247,12 @@ public class SpeechApi implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Perform asynchronous speech-recognition: receive results via the
-   * google.longrunning.Operations interface. Returns either an
-   * `Operation.error` or an `Operation.response` which contains
-   * an `AsyncRecognizeResponse` message.
+   * Perform asynchronous speech-recognition: receive results via the google.longrunning.Operations
+   * interface. Returns either an `Operation.error` or an `Operation.response` which contains an
+   * `AsyncRecognizeResponse` message.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (SpeechApi speechApi = SpeechApi.create()) {
    *   RecognitionConfig config = RecognitionConfig.newBuilder().build();
@@ -277,12 +274,12 @@ public class SpeechApi implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Perform asynchronous speech-recognition: receive results via the
-   * google.longrunning.Operations interface. Returns either an
-   * `Operation.error` or an `Operation.response` which contains
-   * an `AsyncRecognizeResponse` message.
+   * Perform asynchronous speech-recognition: receive results via the google.longrunning.Operations
+   * interface. Returns either an `Operation.error` or an `Operation.response` which contains an
+   * `AsyncRecognizeResponse` message.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (SpeechApi speechApi = SpeechApi.create()) {
    *   RecognitionConfig config = RecognitionConfig.newBuilder().build();

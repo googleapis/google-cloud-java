@@ -56,32 +56,31 @@ import java.util.concurrent.ScheduledExecutorService;
  * </code>
  * </pre>
  *
- * <p>Note: close() needs to be called on the publisherApi object to clean up resources such
- * as threads. In the example above, try-with-resources is used, which automatically calls
- * close().
+ * <p>Note: close() needs to be called on the publisherApi object to clean up resources such as
+ * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
- * <p>The surface of this class includes several types of Java methods for each of the API's methods:
+ * <p>The surface of this class includes several types of Java methods for each of the API's
+ * methods:
  *
  * <ol>
- * <li> A "flattened" method. With this type of method, the fields of the request type have been
- * converted into function parameters. It may be the case that not all fields are available
- * as parameters, and not every API method will have a flattened method entry point.
- * <li> A "request object" method. This type of method only takes one parameter, a request
- * object, which must be constructed before the call. Not every API method will have a request
- * object method.
- * <li> A "callable" method. This type of method takes no parameters and returns an immutable
- * ApiCallable object, which can be used to initiate calls to the service.
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
+ *       converted into function parameters. It may be the case that not all fields are available as
+ *       parameters, and not every API method will have a flattened method entry point.
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
+ *       which must be constructed before the call. Not every API method will have a request object
+ *       method.
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable
+ *       ApiCallable object, which can be used to initiate calls to the service.
  * </ol>
  *
  * <p>See the individual methods for example code.
  *
- * <p>Many parameters require resource names to be formatted in a particular way. To assist
- * with these names, this class includes a format method for each type of name, and additionally
- * a parse method to extract the individual identifiers contained within names that are
- * returned.
+ * <p>Many parameters require resource names to be formatted in a particular way. To assist with
+ * these names, this class includes a format method for each type of name, and additionally a parse
+ * method to extract the individual identifiers contained within names that are returned.
  *
- * <p>This class can be customized by passing in a custom instance of PublisherSettings to
- * create(). For example:
+ * <p>This class can be customized by passing in a custom instance of PublisherSettings to create().
+ * For example:
  *
  * <pre>
  * <code>
@@ -124,68 +123,49 @@ public class PublisherApi implements AutoCloseable {
   private static final PathTemplate TOPIC_PATH_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding("projects/{project}/topics/{topic}");
 
-  /**
-   * Formats a string containing the fully-qualified path to represent
-   * a project resource.
-   */
+  /** Formats a string containing the fully-qualified path to represent a project resource. */
   public static final String formatProjectName(String project) {
     return PROJECT_PATH_TEMPLATE.instantiate("project", project);
   }
 
-  /**
-   * Formats a string containing the fully-qualified path to represent
-   * a topic resource.
-   */
+  /** Formats a string containing the fully-qualified path to represent a topic resource. */
   public static final String formatTopicName(String project, String topic) {
     return TOPIC_PATH_TEMPLATE.instantiate(
         "project", project,
         "topic", topic);
   }
 
-  /**
-   * Parses the project from the given fully-qualified path which
-   * represents a project resource.
-   */
+  /** Parses the project from the given fully-qualified path which represents a project resource. */
   public static final String parseProjectFromProjectName(String projectName) {
     return PROJECT_PATH_TEMPLATE.parse(projectName).get("project");
   }
 
-  /**
-   * Parses the project from the given fully-qualified path which
-   * represents a topic resource.
-   */
+  /** Parses the project from the given fully-qualified path which represents a topic resource. */
   public static final String parseProjectFromTopicName(String topicName) {
     return TOPIC_PATH_TEMPLATE.parse(topicName).get("project");
   }
 
-  /**
-   * Parses the topic from the given fully-qualified path which
-   * represents a topic resource.
-   */
+  /** Parses the topic from the given fully-qualified path which represents a topic resource. */
   public static final String parseTopicFromTopicName(String topicName) {
     return TOPIC_PATH_TEMPLATE.parse(topicName).get("topic");
   }
 
-  /**
-   * Constructs an instance of PublisherApi with default settings.
-   */
+  /** Constructs an instance of PublisherApi with default settings. */
   public static final PublisherApi create() throws IOException {
     return create(PublisherSettings.defaultBuilder().build());
   }
 
   /**
-   * Constructs an instance of PublisherApi, using the given settings.
-   * The channels are created based on the settings passed in, or defaults for any
-   * settings that are not set.
+   * Constructs an instance of PublisherApi, using the given settings. The channels are created
+   * based on the settings passed in, or defaults for any settings that are not set.
    */
   public static final PublisherApi create(PublisherSettings settings) throws IOException {
     return new PublisherApi(settings);
   }
 
   /**
-   * Constructs an instance of PublisherApi, using the given settings.
-   * This is protected so that it easy to make a subclass, but otherwise, the static
-   * factory methods should be preferred.
+   * Constructs an instance of PublisherApi, using the given settings. This is protected so that it
+   * easy to make a subclass, but otherwise, the static factory methods should be preferred.
    */
   protected PublisherApi(PublisherSettings settings) throws IOException {
     this.settings = settings;
@@ -247,7 +227,8 @@ public class PublisherApi implements AutoCloseable {
   /**
    * Creates the given topic with the given name.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (PublisherApi publisherApi = PublisherApi.create()) {
    *   String formattedName = PublisherApi.formatTopicName("[PROJECT]", "[TOPIC]");
@@ -256,11 +237,10 @@ public class PublisherApi implements AutoCloseable {
    * </code></pre>
    *
    * @param name The name of the topic. It must have the format
-   * `"projects/{project}/topics/{topic}"`. `{topic}` must start with a letter,
-   * and contain only letters (`[A-Za-z]`), numbers (`[0-9]`), dashes (`-`),
-   * underscores (`_`), periods (`.`), tildes (`~`), plus (`+`) or percent
-   * signs (`%`). It must be between 3 and 255 characters in length, and it
-   * must not start with `"goog"`.
+   *     `"projects/{project}/topics/{topic}"`. `{topic}` must start with a letter, and contain only
+   *     letters (`[A-Za-z]`), numbers (`[0-9]`), dashes (`-`), underscores (`_`), periods (`.`),
+   *     tildes (`~`), plus (`+`) or percent signs (`%`). It must be between 3 and 255 characters in
+   *     length, and it must not start with `"goog"`.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final Topic createTopic(String name) {
@@ -273,7 +253,8 @@ public class PublisherApi implements AutoCloseable {
   /**
    * Creates the given topic with the given name.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (PublisherApi publisherApi = PublisherApi.create()) {
    *   String formattedName = PublisherApi.formatTopicName("[PROJECT]", "[TOPIC]");
@@ -295,7 +276,8 @@ public class PublisherApi implements AutoCloseable {
   /**
    * Creates the given topic with the given name.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (PublisherApi publisherApi = PublisherApi.create()) {
    *   String formattedName = PublisherApi.formatTopicName("[PROJECT]", "[TOPIC]");
@@ -314,11 +296,12 @@ public class PublisherApi implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Adds one or more messages to the topic. Returns `NOT_FOUND` if the topic
-   * does not exist. The message payload must not be empty; it must contain
-   *  either a non-empty data field, or at least one attribute.
+   * Adds one or more messages to the topic. Returns `NOT_FOUND` if the topic does not exist. The
+   * message payload must not be empty; it must contain either a non-empty data field, or at least
+   * one attribute.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (PublisherApi publisherApi = PublisherApi.create()) {
    *   String formattedTopic = PublisherApi.formatTopicName("[PROJECT]", "[TOPIC]");
@@ -344,11 +327,12 @@ public class PublisherApi implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Adds one or more messages to the topic. Returns `NOT_FOUND` if the topic
-   * does not exist. The message payload must not be empty; it must contain
-   *  either a non-empty data field, or at least one attribute.
+   * Adds one or more messages to the topic. Returns `NOT_FOUND` if the topic does not exist. The
+   * message payload must not be empty; it must contain either a non-empty data field, or at least
+   * one attribute.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (PublisherApi publisherApi = PublisherApi.create()) {
    *   String formattedTopic = PublisherApi.formatTopicName("[PROJECT]", "[TOPIC]");
@@ -374,11 +358,12 @@ public class PublisherApi implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Adds one or more messages to the topic. Returns `NOT_FOUND` if the topic
-   * does not exist. The message payload must not be empty; it must contain
-   *  either a non-empty data field, or at least one attribute.
+   * Adds one or more messages to the topic. Returns `NOT_FOUND` if the topic does not exist. The
+   * message payload must not be empty; it must contain either a non-empty data field, or at least
+   * one attribute.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (PublisherApi publisherApi = PublisherApi.create()) {
    *   String formattedTopic = PublisherApi.formatTopicName("[PROJECT]", "[TOPIC]");
@@ -405,7 +390,8 @@ public class PublisherApi implements AutoCloseable {
   /**
    * Gets the configuration of a topic.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (PublisherApi publisherApi = PublisherApi.create()) {
    *   String formattedTopic = PublisherApi.formatTopicName("[PROJECT]", "[TOPIC]");
@@ -426,7 +412,8 @@ public class PublisherApi implements AutoCloseable {
   /**
    * Gets the configuration of a topic.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (PublisherApi publisherApi = PublisherApi.create()) {
    *   String formattedTopic = PublisherApi.formatTopicName("[PROJECT]", "[TOPIC]");
@@ -448,7 +435,8 @@ public class PublisherApi implements AutoCloseable {
   /**
    * Gets the configuration of a topic.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (PublisherApi publisherApi = PublisherApi.create()) {
    *   String formattedTopic = PublisherApi.formatTopicName("[PROJECT]", "[TOPIC]");
@@ -469,7 +457,8 @@ public class PublisherApi implements AutoCloseable {
   /**
    * Lists matching topics.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (PublisherApi publisherApi = PublisherApi.create()) {
    *   String formattedProject = PublisherApi.formatProjectName("[PROJECT]");
@@ -493,7 +482,8 @@ public class PublisherApi implements AutoCloseable {
   /**
    * Lists matching topics.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (PublisherApi publisherApi = PublisherApi.create()) {
    *   String formattedProject = PublisherApi.formatProjectName("[PROJECT]");
@@ -518,7 +508,8 @@ public class PublisherApi implements AutoCloseable {
   /**
    * Lists matching topics.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (PublisherApi publisherApi = PublisherApi.create()) {
    *   String formattedProject = PublisherApi.formatProjectName("[PROJECT]");
@@ -543,7 +534,8 @@ public class PublisherApi implements AutoCloseable {
   /**
    * Lists matching topics.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (PublisherApi publisherApi = PublisherApi.create()) {
    *   String formattedProject = PublisherApi.formatProjectName("[PROJECT]");
@@ -573,7 +565,8 @@ public class PublisherApi implements AutoCloseable {
   /**
    * Lists the name of the subscriptions for this topic.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (PublisherApi publisherApi = PublisherApi.create()) {
    *   String formattedTopic = PublisherApi.formatTopicName("[PROJECT]", "[TOPIC]");
@@ -599,7 +592,8 @@ public class PublisherApi implements AutoCloseable {
   /**
    * Lists the name of the subscriptions for this topic.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (PublisherApi publisherApi = PublisherApi.create()) {
    *   String formattedTopic = PublisherApi.formatTopicName("[PROJECT]", "[TOPIC]");
@@ -625,7 +619,8 @@ public class PublisherApi implements AutoCloseable {
   /**
    * Lists the name of the subscriptions for this topic.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (PublisherApi publisherApi = PublisherApi.create()) {
    *   String formattedTopic = PublisherApi.formatTopicName("[PROJECT]", "[TOPIC]");
@@ -651,7 +646,8 @@ public class PublisherApi implements AutoCloseable {
   /**
    * Lists the name of the subscriptions for this topic.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (PublisherApi publisherApi = PublisherApi.create()) {
    *   String formattedTopic = PublisherApi.formatTopicName("[PROJECT]", "[TOPIC]");
@@ -680,13 +676,13 @@ public class PublisherApi implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the topic with the given name. Returns `NOT_FOUND` if the topic
-   * does not exist. After a topic is deleted, a new topic may be created with
-   * the same name; this is an entirely new topic with none of the old
-   * configuration or subscriptions. Existing subscriptions to this topic are
+   * Deletes the topic with the given name. Returns `NOT_FOUND` if the topic does not exist. After a
+   * topic is deleted, a new topic may be created with the same name; this is an entirely new topic
+   * with none of the old configuration or subscriptions. Existing subscriptions to this topic are
    * not deleted, but their `topic` field is set to `_deleted-topic_`.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (PublisherApi publisherApi = PublisherApi.create()) {
    *   String formattedTopic = PublisherApi.formatTopicName("[PROJECT]", "[TOPIC]");
@@ -705,13 +701,13 @@ public class PublisherApi implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the topic with the given name. Returns `NOT_FOUND` if the topic
-   * does not exist. After a topic is deleted, a new topic may be created with
-   * the same name; this is an entirely new topic with none of the old
-   * configuration or subscriptions. Existing subscriptions to this topic are
+   * Deletes the topic with the given name. Returns `NOT_FOUND` if the topic does not exist. After a
+   * topic is deleted, a new topic may be created with the same name; this is an entirely new topic
+   * with none of the old configuration or subscriptions. Existing subscriptions to this topic are
    * not deleted, but their `topic` field is set to `_deleted-topic_`.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (PublisherApi publisherApi = PublisherApi.create()) {
    *   String formattedTopic = PublisherApi.formatTopicName("[PROJECT]", "[TOPIC]");
@@ -731,13 +727,13 @@ public class PublisherApi implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes the topic with the given name. Returns `NOT_FOUND` if the topic
-   * does not exist. After a topic is deleted, a new topic may be created with
-   * the same name; this is an entirely new topic with none of the old
-   * configuration or subscriptions. Existing subscriptions to this topic are
+   * Deletes the topic with the given name. Returns `NOT_FOUND` if the topic does not exist. After a
+   * topic is deleted, a new topic may be created with the same name; this is an entirely new topic
+   * with none of the old configuration or subscriptions. Existing subscriptions to this topic are
    * not deleted, but their `topic` field is set to `_deleted-topic_`.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (PublisherApi publisherApi = PublisherApi.create()) {
    *   String formattedTopic = PublisherApi.formatTopicName("[PROJECT]", "[TOPIC]");
@@ -756,10 +752,10 @@ public class PublisherApi implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the access control policy on the specified resource. Replaces any
-   * existing policy.
+   * Sets the access control policy on the specified resource. Replaces any existing policy.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (PublisherApi publisherApi = PublisherApi.create()) {
    *   String formattedResource = PublisherApi.formatTopicName("[PROJECT]", "[TOPIC]");
@@ -768,12 +764,11 @@ public class PublisherApi implements AutoCloseable {
    * }
    * </code></pre>
    *
-   * @param resource REQUIRED: The resource for which policy is being specified.
-   * Resource is usually specified as a path, such as,
-   * projects/{project}/zones/{zone}/disks/{disk}.
-   * @param policy REQUIRED: The complete policy to be applied to the 'resource'. The size of
-   * the policy is limited to a few 10s of KB. An empty policy is in general a
-   * valid policy but certain services (like Projects) might reject them.
+   * @param resource REQUIRED: The resource for which policy is being specified. Resource is usually
+   *     specified as a path, such as, projects/{project}/zones/{zone}/disks/{disk}.
+   * @param policy REQUIRED: The complete policy to be applied to the 'resource'. The size of the
+   *     policy is limited to a few 10s of KB. An empty policy is in general a valid policy but
+   *     certain services (like Projects) might reject them.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final Policy setIamPolicy(String resource, Policy policy) {
@@ -785,10 +780,10 @@ public class PublisherApi implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the access control policy on the specified resource. Replaces any
-   * existing policy.
+   * Sets the access control policy on the specified resource. Replaces any existing policy.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (PublisherApi publisherApi = PublisherApi.create()) {
    *   String formattedResource = PublisherApi.formatTopicName("[PROJECT]", "[TOPIC]");
@@ -810,10 +805,10 @@ public class PublisherApi implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sets the access control policy on the specified resource. Replaces any
-   * existing policy.
+   * Sets the access control policy on the specified resource. Replaces any existing policy.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (PublisherApi publisherApi = PublisherApi.create()) {
    *   String formattedResource = PublisherApi.formatTopicName("[PROJECT]", "[TOPIC]");
@@ -834,10 +829,11 @@ public class PublisherApi implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Gets the access control policy for a resource. Is empty if the
-   * policy or the resource does not exist.
+   * Gets the access control policy for a resource. Is empty if the policy or the resource does not
+   * exist.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (PublisherApi publisherApi = PublisherApi.create()) {
    *   String formattedResource = PublisherApi.formatTopicName("[PROJECT]", "[TOPIC]");
@@ -845,8 +841,8 @@ public class PublisherApi implements AutoCloseable {
    * }
    * </code></pre>
    *
-   * @param resource REQUIRED: The resource for which policy is being requested. Resource
-   * is usually specified as a path, such as, projects/{project}.
+   * @param resource REQUIRED: The resource for which policy is being requested. Resource is usually
+   *     specified as a path, such as, projects/{project}.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final Policy getIamPolicy(String resource) {
@@ -857,10 +853,11 @@ public class PublisherApi implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Gets the access control policy for a resource. Is empty if the
-   * policy or the resource does not exist.
+   * Gets the access control policy for a resource. Is empty if the policy or the resource does not
+   * exist.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (PublisherApi publisherApi = PublisherApi.create()) {
    *   String formattedResource = PublisherApi.formatTopicName("[PROJECT]", "[TOPIC]");
@@ -880,10 +877,11 @@ public class PublisherApi implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Gets the access control policy for a resource. Is empty if the
-   * policy or the resource does not exist.
+   * Gets the access control policy for a resource. Is empty if the policy or the resource does not
+   * exist.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (PublisherApi publisherApi = PublisherApi.create()) {
    *   String formattedResource = PublisherApi.formatTopicName("[PROJECT]", "[TOPIC]");
@@ -904,7 +902,8 @@ public class PublisherApi implements AutoCloseable {
   /**
    * Returns permissions that a caller has on the specified resource.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (PublisherApi publisherApi = PublisherApi.create()) {
    *   String formattedResource = PublisherApi.formatTopicName("[PROJECT]", "[TOPIC]");
@@ -913,10 +912,10 @@ public class PublisherApi implements AutoCloseable {
    * }
    * </code></pre>
    *
-   * @param resource REQUIRED: The resource for which policy detail is being requested.
-   * Resource is usually specified as a path, such as, projects/{project}.
+   * @param resource REQUIRED: The resource for which policy detail is being requested. Resource is
+   *     usually specified as a path, such as, projects/{project}.
    * @param permissions The set of permissions to check for the 'resource'. Permissions with
-   * wildcards (such as '&ast;' or 'storage.&ast;') are not allowed.
+   *     wildcards (such as '&ast;' or 'storage.&ast;') are not allowed.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final TestIamPermissionsResponse testIamPermissions(
@@ -934,7 +933,8 @@ public class PublisherApi implements AutoCloseable {
   /**
    * Returns permissions that a caller has on the specified resource.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (PublisherApi publisherApi = PublisherApi.create()) {
    *   String formattedResource = PublisherApi.formatTopicName("[PROJECT]", "[TOPIC]");
@@ -958,7 +958,8 @@ public class PublisherApi implements AutoCloseable {
   /**
    * Returns permissions that a caller has on the specified resource.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (PublisherApi publisherApi = PublisherApi.create()) {
    *   String formattedResource = PublisherApi.formatTopicName("[PROJECT]", "[TOPIC]");

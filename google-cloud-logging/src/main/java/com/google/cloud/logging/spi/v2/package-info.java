@@ -15,15 +15,14 @@
 /**
  * A client to Stackdriver Logging API.
  *
- * The interfaces provided are listed below, along with a usage sample
+ * <p>The interfaces provided are listed below, along with a usage sample
  *
- * ===================
- * LoggingServiceV2Api
- * ===================
+ * <p>=================== LoggingServiceV2Api ===================
  *
- * Service Description: Service for ingesting and querying logs.
+ * <p>Service Description: Service for ingesting and querying logs.
  *
- * Sample for LoggingServiceV2Api:
+ * <p>Sample for LoggingServiceV2Api:
+ *
  * <pre>
  * <code>
  * try (LoggingServiceV2Api loggingServiceV2Api = LoggingServiceV2Api.create()) {
@@ -33,14 +32,13 @@
  * </code>
  * </pre>
  *
- * ==================
- * ConfigServiceV2Api
- * ==================
+ * ================== ConfigServiceV2Api ==================
  *
- * Service Description: Service for configuring sinks used to export log entries outside Stackdriver
- * Logging.
+ * <p>Service Description: Service for configuring sinks used to export log entries outside
+ * Stackdriver Logging.
  *
- * Sample for ConfigServiceV2Api:
+ * <p>Sample for ConfigServiceV2Api:
+ *
  * <pre>
  * <code>
  * try (ConfigServiceV2Api configServiceV2Api = ConfigServiceV2Api.create()) {
@@ -50,13 +48,12 @@
  * </code>
  * </pre>
  *
- * ===================
- * MetricsServiceV2Api
- * ===================
+ * =================== MetricsServiceV2Api ===================
  *
- * Service Description: Service for configuring logs-based metrics.
+ * <p>Service Description: Service for configuring logs-based metrics.
  *
- * Sample for MetricsServiceV2Api:
+ * <p>Sample for MetricsServiceV2Api:
+ *
  * <pre>
  * <code>
  * try (MetricsServiceV2Api metricsServiceV2Api = MetricsServiceV2Api.create()) {
@@ -65,6 +62,5 @@
  * }
  * </code>
  * </pre>
- *
  */
 package com.google.cloud.logging.spi.v2;

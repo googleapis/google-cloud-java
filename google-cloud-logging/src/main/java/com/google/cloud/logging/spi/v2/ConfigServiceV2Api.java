@@ -49,28 +49,27 @@ import java.util.concurrent.ScheduledExecutorService;
  * </pre>
  *
  * <p>Note: close() needs to be called on the configServiceV2Api object to clean up resources such
- * as threads. In the example above, try-with-resources is used, which automatically calls
- * close().
+ * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
- * <p>The surface of this class includes several types of Java methods for each of the API's methods:
+ * <p>The surface of this class includes several types of Java methods for each of the API's
+ * methods:
  *
  * <ol>
- * <li> A "flattened" method. With this type of method, the fields of the request type have been
- * converted into function parameters. It may be the case that not all fields are available
- * as parameters, and not every API method will have a flattened method entry point.
- * <li> A "request object" method. This type of method only takes one parameter, a request
- * object, which must be constructed before the call. Not every API method will have a request
- * object method.
- * <li> A "callable" method. This type of method takes no parameters and returns an immutable
- * ApiCallable object, which can be used to initiate calls to the service.
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
+ *       converted into function parameters. It may be the case that not all fields are available as
+ *       parameters, and not every API method will have a flattened method entry point.
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
+ *       which must be constructed before the call. Not every API method will have a request object
+ *       method.
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable
+ *       ApiCallable object, which can be used to initiate calls to the service.
  * </ol>
  *
  * <p>See the individual methods for example code.
  *
- * <p>Many parameters require resource names to be formatted in a particular way. To assist
- * with these names, this class includes a format method for each type of name, and additionally
- * a parse method to extract the individual identifiers contained within names that are
- * returned.
+ * <p>Many parameters require resource names to be formatted in a particular way. To assist with
+ * these names, this class includes a format method for each type of name, and additionally a parse
+ * method to extract the individual identifiers contained within names that are returned.
  *
  * <p>This class can be customized by passing in a custom instance of ConfigServiceV2Settings to
  * create(). For example:
@@ -106,59 +105,41 @@ public class ConfigServiceV2Api implements AutoCloseable {
   private static final PathTemplate SINK_PATH_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding("projects/{project}/sinks/{sink}");
 
-  /**
-   * Formats a string containing the fully-qualified path to represent
-   * a parent resource.
-   */
+  /** Formats a string containing the fully-qualified path to represent a parent resource. */
   public static final String formatParentName(String project) {
     return PARENT_PATH_TEMPLATE.instantiate("project", project);
   }
 
-  /**
-   * Formats a string containing the fully-qualified path to represent
-   * a sink resource.
-   */
+  /** Formats a string containing the fully-qualified path to represent a sink resource. */
   public static final String formatSinkName(String project, String sink) {
     return SINK_PATH_TEMPLATE.instantiate(
         "project", project,
         "sink", sink);
   }
 
-  /**
-   * Parses the project from the given fully-qualified path which
-   * represents a parent resource.
-   */
+  /** Parses the project from the given fully-qualified path which represents a parent resource. */
   public static final String parseProjectFromParentName(String parentName) {
     return PARENT_PATH_TEMPLATE.parse(parentName).get("project");
   }
 
-  /**
-   * Parses the project from the given fully-qualified path which
-   * represents a sink resource.
-   */
+  /** Parses the project from the given fully-qualified path which represents a sink resource. */
   public static final String parseProjectFromSinkName(String sinkName) {
     return SINK_PATH_TEMPLATE.parse(sinkName).get("project");
   }
 
-  /**
-   * Parses the sink from the given fully-qualified path which
-   * represents a sink resource.
-   */
+  /** Parses the sink from the given fully-qualified path which represents a sink resource. */
   public static final String parseSinkFromSinkName(String sinkName) {
     return SINK_PATH_TEMPLATE.parse(sinkName).get("sink");
   }
 
-  /**
-   * Constructs an instance of ConfigServiceV2Api with default settings.
-   */
+  /** Constructs an instance of ConfigServiceV2Api with default settings. */
   public static final ConfigServiceV2Api create() throws IOException {
     return create(ConfigServiceV2Settings.defaultBuilder().build());
   }
 
   /**
-   * Constructs an instance of ConfigServiceV2Api, using the given settings.
-   * The channels are created based on the settings passed in, or defaults for any
-   * settings that are not set.
+   * Constructs an instance of ConfigServiceV2Api, using the given settings. The channels are
+   * created based on the settings passed in, or defaults for any settings that are not set.
    */
   public static final ConfigServiceV2Api create(ConfigServiceV2Settings settings)
       throws IOException {
@@ -166,9 +147,8 @@ public class ConfigServiceV2Api implements AutoCloseable {
   }
 
   /**
-   * Constructs an instance of ConfigServiceV2Api, using the given settings.
-   * This is protected so that it easy to make a subclass, but otherwise, the static
-   * factory methods should be preferred.
+   * Constructs an instance of ConfigServiceV2Api, using the given settings. This is protected so
+   * that it easy to make a subclass, but otherwise, the static factory methods should be preferred.
    */
   protected ConfigServiceV2Api(ConfigServiceV2Settings settings) throws IOException {
     this.settings = settings;
@@ -216,7 +196,8 @@ public class ConfigServiceV2Api implements AutoCloseable {
   /**
    * Lists sinks.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (ConfigServiceV2Api configServiceV2Api = ConfigServiceV2Api.create()) {
    *   String formattedParent = ConfigServiceV2Api.formatParentName("[PROJECT]");
@@ -226,8 +207,8 @@ public class ConfigServiceV2Api implements AutoCloseable {
    * }
    * </code></pre>
    *
-   * @param parent Required. The resource name containing the sinks.
-   * Example: `"projects/my-logging-project"`.
+   * @param parent Required. The resource name containing the sinks. Example:
+   *     `"projects/my-logging-project"`.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final PagedListResponse<ListSinksRequest, ListSinksResponse, LogSink> listSinks(
@@ -241,7 +222,8 @@ public class ConfigServiceV2Api implements AutoCloseable {
   /**
    * Lists sinks.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (ConfigServiceV2Api configServiceV2Api = ConfigServiceV2Api.create()) {
    *   String formattedParent = ConfigServiceV2Api.formatParentName("[PROJECT]");
@@ -266,7 +248,8 @@ public class ConfigServiceV2Api implements AutoCloseable {
   /**
    * Lists sinks.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (ConfigServiceV2Api configServiceV2Api = ConfigServiceV2Api.create()) {
    *   String formattedParent = ConfigServiceV2Api.formatParentName("[PROJECT]");
@@ -291,7 +274,8 @@ public class ConfigServiceV2Api implements AutoCloseable {
   /**
    * Lists sinks.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (ConfigServiceV2Api configServiceV2Api = ConfigServiceV2Api.create()) {
    *   String formattedParent = ConfigServiceV2Api.formatParentName("[PROJECT]");
@@ -321,7 +305,8 @@ public class ConfigServiceV2Api implements AutoCloseable {
   /**
    * Gets a sink.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (ConfigServiceV2Api configServiceV2Api = ConfigServiceV2Api.create()) {
    *   String formattedSinkName = ConfigServiceV2Api.formatSinkName("[PROJECT]", "[SINK]");
@@ -329,8 +314,8 @@ public class ConfigServiceV2Api implements AutoCloseable {
    * }
    * </code></pre>
    *
-   * @param sinkName The resource name of the sink to return.
-   * Example: `"projects/my-project-id/sinks/my-sink-id"`.
+   * @param sinkName The resource name of the sink to return. Example:
+   *     `"projects/my-project-id/sinks/my-sink-id"`.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final LogSink getSink(String sinkName) {
@@ -343,7 +328,8 @@ public class ConfigServiceV2Api implements AutoCloseable {
   /**
    * Gets a sink.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (ConfigServiceV2Api configServiceV2Api = ConfigServiceV2Api.create()) {
    *   String formattedSinkName = ConfigServiceV2Api.formatSinkName("[PROJECT]", "[SINK]");
@@ -365,7 +351,8 @@ public class ConfigServiceV2Api implements AutoCloseable {
   /**
    * Gets a sink.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (ConfigServiceV2Api configServiceV2Api = ConfigServiceV2Api.create()) {
    *   String formattedSinkName = ConfigServiceV2Api.formatSinkName("[PROJECT]", "[SINK]");
@@ -386,7 +373,8 @@ public class ConfigServiceV2Api implements AutoCloseable {
   /**
    * Creates a sink.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (ConfigServiceV2Api configServiceV2Api = ConfigServiceV2Api.create()) {
    *   String formattedParent = ConfigServiceV2Api.formatParentName("[PROJECT]");
@@ -395,12 +383,9 @@ public class ConfigServiceV2Api implements AutoCloseable {
    * }
    * </code></pre>
    *
-   * @param parent The resource in which to create the sink.
-   * Example: `"projects/my-project-id"`.
-   *
-   * The new sink must be provided in the request.
-   * @param sink The new sink, which must not have an identifier that already
-   * exists.
+   * @param parent The resource in which to create the sink. Example: `"projects/my-project-id"`.
+   *     <p>The new sink must be provided in the request.
+   * @param sink The new sink, which must not have an identifier that already exists.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final LogSink createSink(String parent, LogSink sink) {
@@ -414,7 +399,8 @@ public class ConfigServiceV2Api implements AutoCloseable {
   /**
    * Creates a sink.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (ConfigServiceV2Api configServiceV2Api = ConfigServiceV2Api.create()) {
    *   String formattedParent = ConfigServiceV2Api.formatParentName("[PROJECT]");
@@ -438,7 +424,8 @@ public class ConfigServiceV2Api implements AutoCloseable {
   /**
    * Creates a sink.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (ConfigServiceV2Api configServiceV2Api = ConfigServiceV2Api.create()) {
    *   String formattedParent = ConfigServiceV2Api.formatParentName("[PROJECT]");
@@ -461,7 +448,8 @@ public class ConfigServiceV2Api implements AutoCloseable {
   /**
    * Creates or updates a sink.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (ConfigServiceV2Api configServiceV2Api = ConfigServiceV2Api.create()) {
    *   String formattedSinkName = ConfigServiceV2Api.formatSinkName("[PROJECT]", "[SINK]");
@@ -470,15 +458,12 @@ public class ConfigServiceV2Api implements AutoCloseable {
    * }
    * </code></pre>
    *
-   * @param sinkName The resource name of the sink to update.
-   * Example: `"projects/my-project-id/sinks/my-sink-id"`.
-   *
-   * The updated sink must be provided in the request and have the
-   * same name that is specified in `sinkName`.  If the sink does not
-   * exist, it is created.
-   * @param sink The updated sink, whose name must be the same as the sink
-   * identifier in `sinkName`.  If `sinkName` does not exist, then
-   * this method creates a new sink.
+   * @param sinkName The resource name of the sink to update. Example:
+   *     `"projects/my-project-id/sinks/my-sink-id"`.
+   *     <p>The updated sink must be provided in the request and have the same name that is
+   *     specified in `sinkName`. If the sink does not exist, it is created.
+   * @param sink The updated sink, whose name must be the same as the sink identifier in `sinkName`.
+   *     If `sinkName` does not exist, then this method creates a new sink.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final LogSink updateSink(String sinkName, LogSink sink) {
@@ -492,7 +477,8 @@ public class ConfigServiceV2Api implements AutoCloseable {
   /**
    * Creates or updates a sink.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (ConfigServiceV2Api configServiceV2Api = ConfigServiceV2Api.create()) {
    *   String formattedSinkName = ConfigServiceV2Api.formatSinkName("[PROJECT]", "[SINK]");
@@ -516,7 +502,8 @@ public class ConfigServiceV2Api implements AutoCloseable {
   /**
    * Creates or updates a sink.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (ConfigServiceV2Api configServiceV2Api = ConfigServiceV2Api.create()) {
    *   String formattedSinkName = ConfigServiceV2Api.formatSinkName("[PROJECT]", "[SINK]");
@@ -539,7 +526,8 @@ public class ConfigServiceV2Api implements AutoCloseable {
   /**
    * Deletes a sink.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (ConfigServiceV2Api configServiceV2Api = ConfigServiceV2Api.create()) {
    *   String formattedSinkName = ConfigServiceV2Api.formatSinkName("[PROJECT]", "[SINK]");
@@ -547,8 +535,8 @@ public class ConfigServiceV2Api implements AutoCloseable {
    * }
    * </code></pre>
    *
-   * @param sinkName The resource name of the sink to delete.
-   * Example: `"projects/my-project-id/sinks/my-sink-id"`.
+   * @param sinkName The resource name of the sink to delete. Example:
+   *     `"projects/my-project-id/sinks/my-sink-id"`.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final void deleteSink(String sinkName) {
@@ -561,7 +549,8 @@ public class ConfigServiceV2Api implements AutoCloseable {
   /**
    * Deletes a sink.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (ConfigServiceV2Api configServiceV2Api = ConfigServiceV2Api.create()) {
    *   String formattedSinkName = ConfigServiceV2Api.formatSinkName("[PROJECT]", "[SINK]");
@@ -583,7 +572,8 @@ public class ConfigServiceV2Api implements AutoCloseable {
   /**
    * Deletes a sink.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (ConfigServiceV2Api configServiceV2Api = ConfigServiceV2Api.create()) {
    *   String formattedSinkName = ConfigServiceV2Api.formatSinkName("[PROJECT]", "[SINK]");

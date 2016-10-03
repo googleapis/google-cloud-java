@@ -15,15 +15,14 @@
 /**
  * A client to Stackdriver Error Reporting API.
  *
- * The interfaces provided are listed below, along with a usage sample
+ * <p>The interfaces provided are listed below, along with a usage sample
  *
- * ====================
- * ErrorGroupServiceApi
- * ====================
+ * <p>==================== ErrorGroupServiceApi ====================
  *
- * Service Description: Service for retrieving and updating individual error groups.
+ * <p>Service Description: Service for retrieving and updating individual error groups.
  *
- * Sample for ErrorGroupServiceApi:
+ * <p>Sample for ErrorGroupServiceApi:
+ *
  * <pre>
  * <code>
  * try (ErrorGroupServiceApi errorGroupServiceApi = ErrorGroupServiceApi.create()) {
@@ -33,14 +32,13 @@
  * </code>
  * </pre>
  *
- * ====================
- * ErrorStatsServiceApi
- * ====================
+ * ==================== ErrorStatsServiceApi ====================
  *
- * Service Description: An API for retrieving and managing error statistics as well as data for
+ * <p>Service Description: An API for retrieving and managing error statistics as well as data for
  * individual events.
  *
- * Sample for ErrorStatsServiceApi:
+ * <p>Sample for ErrorStatsServiceApi:
+ *
  * <pre>
  * <code>
  * try (ErrorStatsServiceApi errorStatsServiceApi = ErrorStatsServiceApi.create()) {
@@ -50,13 +48,12 @@
  * </code>
  * </pre>
  *
- * ======================
- * ReportErrorsServiceApi
- * ======================
+ * ====================== ReportErrorsServiceApi ======================
  *
- * Service Description: An API for reporting error events.
+ * <p>Service Description: An API for reporting error events.
  *
- * Sample for ReportErrorsServiceApi:
+ * <p>Sample for ReportErrorsServiceApi:
+ *
  * <pre>
  * <code>
  * try (ReportErrorsServiceApi reportErrorsServiceApi = ReportErrorsServiceApi.create()) {
@@ -66,6 +63,5 @@
  * }
  * </code>
  * </pre>
- *
  */
 package com.google.cloud.errorreporting.spi.v1beta1;

@@ -28,9 +28,8 @@ import java.util.concurrent.ScheduledExecutorService;
 
 // AUTO-GENERATED DOCUMENTATION AND SERVICE
 /**
- * Service Description: The AgentTranslation API allows `collectd`-based agents to
- * write time series data to Cloud Monitoring.
- * See [google.monitoring.v3.MetricService.CreateTimeSeries] instead.
+ * Service Description: The AgentTranslation API allows `collectd`-based agents to write time series
+ * data to Cloud Monitoring. See [google.monitoring.v3.MetricService.CreateTimeSeries] instead.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -47,32 +46,32 @@ import java.util.concurrent.ScheduledExecutorService;
  * </code>
  * </pre>
  *
- * <p>Note: close() needs to be called on the agentTranslationServiceApi object to clean up resources such
- * as threads. In the example above, try-with-resources is used, which automatically calls
- * close().
+ * <p>Note: close() needs to be called on the agentTranslationServiceApi object to clean up
+ * resources such as threads. In the example above, try-with-resources is used, which automatically
+ * calls close().
  *
- * <p>The surface of this class includes several types of Java methods for each of the API's methods:
+ * <p>The surface of this class includes several types of Java methods for each of the API's
+ * methods:
  *
  * <ol>
- * <li> A "flattened" method. With this type of method, the fields of the request type have been
- * converted into function parameters. It may be the case that not all fields are available
- * as parameters, and not every API method will have a flattened method entry point.
- * <li> A "request object" method. This type of method only takes one parameter, a request
- * object, which must be constructed before the call. Not every API method will have a request
- * object method.
- * <li> A "callable" method. This type of method takes no parameters and returns an immutable
- * ApiCallable object, which can be used to initiate calls to the service.
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
+ *       converted into function parameters. It may be the case that not all fields are available as
+ *       parameters, and not every API method will have a flattened method entry point.
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
+ *       which must be constructed before the call. Not every API method will have a request object
+ *       method.
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable
+ *       ApiCallable object, which can be used to initiate calls to the service.
  * </ol>
  *
  * <p>See the individual methods for example code.
  *
- * <p>Many parameters require resource names to be formatted in a particular way. To assist
- * with these names, this class includes a format method for each type of name, and additionally
- * a parse method to extract the individual identifiers contained within names that are
- * returned.
+ * <p>Many parameters require resource names to be formatted in a particular way. To assist with
+ * these names, this class includes a format method for each type of name, and additionally a parse
+ * method to extract the individual identifiers contained within names that are returned.
  *
- * <p>This class can be customized by passing in a custom instance of AgentTranslationServiceSettings to
- * create(). For example:
+ * <p>This class can be customized by passing in a custom instance of
+ * AgentTranslationServiceSettings to create(). For example:
  *
  * <pre>
  * <code>
@@ -96,33 +95,24 @@ public class AgentTranslationServiceApi implements AutoCloseable {
   private static final PathTemplate PROJECT_PATH_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding("projects/{project}");
 
-  /**
-   * Formats a string containing the fully-qualified path to represent
-   * a project resource.
-   */
+  /** Formats a string containing the fully-qualified path to represent a project resource. */
   public static final String formatProjectName(String project) {
     return PROJECT_PATH_TEMPLATE.instantiate("project", project);
   }
 
-  /**
-   * Parses the project from the given fully-qualified path which
-   * represents a project resource.
-   */
+  /** Parses the project from the given fully-qualified path which represents a project resource. */
   public static final String parseProjectFromProjectName(String projectName) {
     return PROJECT_PATH_TEMPLATE.parse(projectName).get("project");
   }
 
-  /**
-   * Constructs an instance of AgentTranslationServiceApi with default settings.
-   */
+  /** Constructs an instance of AgentTranslationServiceApi with default settings. */
   public static final AgentTranslationServiceApi create() throws IOException {
     return create(AgentTranslationServiceSettings.defaultBuilder().build());
   }
 
   /**
-   * Constructs an instance of AgentTranslationServiceApi, using the given settings.
-   * The channels are created based on the settings passed in, or defaults for any
-   * settings that are not set.
+   * Constructs an instance of AgentTranslationServiceApi, using the given settings. The channels
+   * are created based on the settings passed in, or defaults for any settings that are not set.
    */
   public static final AgentTranslationServiceApi create(AgentTranslationServiceSettings settings)
       throws IOException {
@@ -130,9 +120,9 @@ public class AgentTranslationServiceApi implements AutoCloseable {
   }
 
   /**
-   * Constructs an instance of AgentTranslationServiceApi, using the given settings.
-   * This is protected so that it easy to make a subclass, but otherwise, the static
-   * factory methods should be preferred.
+   * Constructs an instance of AgentTranslationServiceApi, using the given settings. This is
+   * protected so that it easy to make a subclass, but otherwise, the static factory methods should
+   * be preferred.
    */
   protected AgentTranslationServiceApi(AgentTranslationServiceSettings settings)
       throws IOException {
@@ -172,11 +162,12 @@ public class AgentTranslationServiceApi implements AutoCloseable {
   /**
    * &ast;&ast;Stackdriver Monitoring Agent only:&ast;&ast; Creates a new time series.
    *
-   * &lt;aside class="caution"&gt;This method is only for use by the Google Monitoring Agent.
-   * Use [projects.timeSeries.create][google.monitoring.v3.MetricService.CreateTimeSeries]
+   * <p>&lt;aside class="caution"&gt;This method is only for use by the Google Monitoring Agent. Use
+   * [projects.timeSeries.create][google.monitoring.v3.MetricService.CreateTimeSeries]
    * instead.&lt;/aside&gt;
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (AgentTranslationServiceApi agentTranslationServiceApi = AgentTranslationServiceApi.create()) {
    *   String formattedName = AgentTranslationServiceApi.formatProjectName("[PROJECT]");
@@ -188,13 +179,13 @@ public class AgentTranslationServiceApi implements AutoCloseable {
    * </code></pre>
    *
    * @param name The project in which to create the time series. The format is
-   * `"projects/PROJECT_ID_OR_NUMBER"`.
+   *     `"projects/PROJECT_ID_OR_NUMBER"`.
    * @param resource The monitored resource associated with the time series.
-   * @param collectdVersion The version of `collectd` that collected the data. Example: `"5.3.0-192.el6"`.
-   * @param collectdPayloads The `collectd` payloads representing the time series data.
-   * You must not include more than a single point for each
-   * time series, so no two payloads can have the same values
-   * for all of the fields `plugin`, `plugin_instance`, `type`, and `type_instance`.
+   * @param collectdVersion The version of `collectd` that collected the data. Example:
+   *     `"5.3.0-192.el6"`.
+   * @param collectdPayloads The `collectd` payloads representing the time series data. You must not
+   *     include more than a single point for each time series, so no two payloads can have the same
+   *     values for all of the fields `plugin`, `plugin_instance`, `type`, and `type_instance`.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final void createCollectdTimeSeries(
@@ -217,11 +208,12 @@ public class AgentTranslationServiceApi implements AutoCloseable {
   /**
    * &ast;&ast;Stackdriver Monitoring Agent only:&ast;&ast; Creates a new time series.
    *
-   * &lt;aside class="caution"&gt;This method is only for use by the Google Monitoring Agent.
-   * Use [projects.timeSeries.create][google.monitoring.v3.MetricService.CreateTimeSeries]
+   * <p>&lt;aside class="caution"&gt;This method is only for use by the Google Monitoring Agent. Use
+   * [projects.timeSeries.create][google.monitoring.v3.MetricService.CreateTimeSeries]
    * instead.&lt;/aside&gt;
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (AgentTranslationServiceApi agentTranslationServiceApi = AgentTranslationServiceApi.create()) {
    *   String formattedName = AgentTranslationServiceApi.formatProjectName("[PROJECT]");
@@ -249,11 +241,12 @@ public class AgentTranslationServiceApi implements AutoCloseable {
   /**
    * &ast;&ast;Stackdriver Monitoring Agent only:&ast;&ast; Creates a new time series.
    *
-   * &lt;aside class="caution"&gt;This method is only for use by the Google Monitoring Agent.
-   * Use [projects.timeSeries.create][google.monitoring.v3.MetricService.CreateTimeSeries]
+   * <p>&lt;aside class="caution"&gt;This method is only for use by the Google Monitoring Agent. Use
+   * [projects.timeSeries.create][google.monitoring.v3.MetricService.CreateTimeSeries]
    * instead.&lt;/aside&gt;
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (AgentTranslationServiceApi agentTranslationServiceApi = AgentTranslationServiceApi.create()) {
    *   String formattedName = AgentTranslationServiceApi.formatProjectName("[PROJECT]");

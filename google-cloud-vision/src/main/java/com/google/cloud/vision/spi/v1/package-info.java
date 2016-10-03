@@ -15,17 +15,16 @@
 /**
  * A client to Google Cloud Vision API.
  *
- * The interfaces provided are listed below, along with a usage sample
+ * <p>The interfaces provided are listed below, along with a usage sample
  *
- * =================
- * ImageAnnotatorApi
- * =================
+ * <p>================= ImageAnnotatorApi =================
  *
- * Service Description: Service that performs Google Cloud Vision API detection tasks, such as face,
- * landmark, logo, label, and text detection, over client images, and returns
- * detected entities from the images.
+ * <p>Service Description: Service that performs Google Cloud Vision API detection tasks, such as
+ * face, landmark, logo, label, and text detection, over client images, and returns detected
+ * entities from the images.
  *
- * Sample for ImageAnnotatorApi:
+ * <p>Sample for ImageAnnotatorApi:
+ *
  * <pre>
  * <code>
  * try (ImageAnnotatorApi imageAnnotatorApi = ImageAnnotatorApi.create()) {
@@ -34,6 +33,5 @@
  * }
  * </code>
  * </pre>
- *
  */
 package com.google.cloud.vision.spi.v1;

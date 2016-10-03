@@ -15,7 +15,6 @@ package com.google.cloud.trace.spi.v1;
 
 import com.google.api.gax.core.PagedListResponse;
 import com.google.api.gax.grpc.ApiCallable;
-import com.google.api.gax.protobuf.PathTemplate;
 import com.google.devtools.cloudtrace.v1.GetTraceRequest;
 import com.google.devtools.cloudtrace.v1.ListTracesRequest;
 import com.google.devtools.cloudtrace.v1.ListTracesResponse;
@@ -33,10 +32,9 @@ import java.util.concurrent.ScheduledExecutorService;
 // AUTO-GENERATED DOCUMENTATION AND SERVICE
 /**
  * Service Description: This file describes an API for collecting and viewing traces and spans
- * within a trace.  A Trace is a collection of spans corresponding to a single
- * operation or set of operations for an application. A span is an individual
- * timed event which forms a node of the trace tree. Spans for a single trace
- * may span multiple services.
+ * within a trace. A Trace is a collection of spans corresponding to a single operation or set of
+ * operations for an application. A span is an individual timed event which forms a node of the
+ * trace tree. Spans for a single trace may span multiple services.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -51,29 +49,28 @@ import java.util.concurrent.ScheduledExecutorService;
  * </code>
  * </pre>
  *
- * <p>Note: close() needs to be called on the traceServiceApi object to clean up resources such
- * as threads. In the example above, try-with-resources is used, which automatically calls
- * close().
+ * <p>Note: close() needs to be called on the traceServiceApi object to clean up resources such as
+ * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
- * <p>The surface of this class includes several types of Java methods for each of the API's methods:
+ * <p>The surface of this class includes several types of Java methods for each of the API's
+ * methods:
  *
  * <ol>
- * <li> A "flattened" method. With this type of method, the fields of the request type have been
- * converted into function parameters. It may be the case that not all fields are available
- * as parameters, and not every API method will have a flattened method entry point.
- * <li> A "request object" method. This type of method only takes one parameter, a request
- * object, which must be constructed before the call. Not every API method will have a request
- * object method.
- * <li> A "callable" method. This type of method takes no parameters and returns an immutable
- * ApiCallable object, which can be used to initiate calls to the service.
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
+ *       converted into function parameters. It may be the case that not all fields are available as
+ *       parameters, and not every API method will have a flattened method entry point.
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
+ *       which must be constructed before the call. Not every API method will have a request object
+ *       method.
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable
+ *       ApiCallable object, which can be used to initiate calls to the service.
  * </ol>
  *
  * <p>See the individual methods for example code.
  *
- * <p>Many parameters require resource names to be formatted in a particular way. To assist
- * with these names, this class includes a format method for each type of name, and additionally
- * a parse method to extract the individual identifiers contained within names that are
- * returned.
+ * <p>Many parameters require resource names to be formatted in a particular way. To assist with
+ * these names, this class includes a format method for each type of name, and additionally a parse
+ * method to extract the individual identifiers contained within names that are returned.
  *
  * <p>This class can be customized by passing in a custom instance of TraceServiceSettings to
  * create(). For example:
@@ -101,26 +98,22 @@ public class TraceServiceApi implements AutoCloseable {
           ListTracesRequest, PagedListResponse<ListTracesRequest, ListTracesResponse, Trace>>
       listTracesPagedCallable;
 
-  /**
-   * Constructs an instance of TraceServiceApi with default settings.
-   */
+  /** Constructs an instance of TraceServiceApi with default settings. */
   public static final TraceServiceApi create() throws IOException {
     return create(TraceServiceSettings.defaultBuilder().build());
   }
 
   /**
-   * Constructs an instance of TraceServiceApi, using the given settings.
-   * The channels are created based on the settings passed in, or defaults for any
-   * settings that are not set.
+   * Constructs an instance of TraceServiceApi, using the given settings. The channels are created
+   * based on the settings passed in, or defaults for any settings that are not set.
    */
   public static final TraceServiceApi create(TraceServiceSettings settings) throws IOException {
     return new TraceServiceApi(settings);
   }
 
   /**
-   * Constructs an instance of TraceServiceApi, using the given settings.
-   * This is protected so that it easy to make a subclass, but otherwise, the static
-   * factory methods should be preferred.
+   * Constructs an instance of TraceServiceApi, using the given settings. This is protected so that
+   * it easy to make a subclass, but otherwise, the static factory methods should be preferred.
    */
   protected TraceServiceApi(TraceServiceSettings settings) throws IOException {
     this.settings = settings;
@@ -162,13 +155,13 @@ public class TraceServiceApi implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sends new traces to Cloud Trace or updates existing traces. If the ID of
-   * a trace that you send matches that of an existing trace, any fields
-   * in the existing trace and its spans are overwritten by the provided values,
-   * and any new fields provided are merged with the existing trace data. If the
-   * ID does not match, a new trace is created.
+   * Sends new traces to Cloud Trace or updates existing traces. If the ID of a trace that you send
+   * matches that of an existing trace, any fields in the existing trace and its spans are
+   * overwritten by the provided values, and any new fields provided are merged with the existing
+   * trace data. If the ID does not match, a new trace is created.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TraceServiceApi traceServiceApi = TraceServiceApi.create()) {
    *   String projectId = "";
@@ -189,13 +182,13 @@ public class TraceServiceApi implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sends new traces to Cloud Trace or updates existing traces. If the ID of
-   * a trace that you send matches that of an existing trace, any fields
-   * in the existing trace and its spans are overwritten by the provided values,
-   * and any new fields provided are merged with the existing trace data. If the
-   * ID does not match, a new trace is created.
+   * Sends new traces to Cloud Trace or updates existing traces. If the ID of a trace that you send
+   * matches that of an existing trace, any fields in the existing trace and its spans are
+   * overwritten by the provided values, and any new fields provided are merged with the existing
+   * trace data. If the ID does not match, a new trace is created.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TraceServiceApi traceServiceApi = TraceServiceApi.create()) {
    *   String projectId = "";
@@ -217,13 +210,13 @@ public class TraceServiceApi implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Sends new traces to Cloud Trace or updates existing traces. If the ID of
-   * a trace that you send matches that of an existing trace, any fields
-   * in the existing trace and its spans are overwritten by the provided values,
-   * and any new fields provided are merged with the existing trace data. If the
-   * ID does not match, a new trace is created.
+   * Sends new traces to Cloud Trace or updates existing traces. If the ID of a trace that you send
+   * matches that of an existing trace, any fields in the existing trace and its spans are
+   * overwritten by the provided values, and any new fields provided are merged with the existing
+   * trace data. If the ID does not match, a new trace is created.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TraceServiceApi traceServiceApi = TraceServiceApi.create()) {
    *   String projectId = "";
@@ -246,7 +239,8 @@ public class TraceServiceApi implements AutoCloseable {
   /**
    * Gets a single trace by its ID.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TraceServiceApi traceServiceApi = TraceServiceApi.create()) {
    *   String projectId = "";
@@ -269,7 +263,8 @@ public class TraceServiceApi implements AutoCloseable {
   /**
    * Gets a single trace by its ID.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TraceServiceApi traceServiceApi = TraceServiceApi.create()) {
    *   String projectId = "";
@@ -293,7 +288,8 @@ public class TraceServiceApi implements AutoCloseable {
   /**
    * Gets a single trace by its ID.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TraceServiceApi traceServiceApi = TraceServiceApi.create()) {
    *   String projectId = "";
@@ -316,7 +312,8 @@ public class TraceServiceApi implements AutoCloseable {
   /**
    * Returns of a list of traces that match the specified filter conditions.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TraceServiceApi traceServiceApi = TraceServiceApi.create()) {
    *   String projectId = "";
@@ -339,7 +336,8 @@ public class TraceServiceApi implements AutoCloseable {
   /**
    * Returns of a list of traces that match the specified filter conditions.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TraceServiceApi traceServiceApi = TraceServiceApi.create()) {
    *   String projectId = "";
@@ -364,7 +362,8 @@ public class TraceServiceApi implements AutoCloseable {
   /**
    * Returns of a list of traces that match the specified filter conditions.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TraceServiceApi traceServiceApi = TraceServiceApi.create()) {
    *   String projectId = "";
@@ -389,7 +388,8 @@ public class TraceServiceApi implements AutoCloseable {
   /**
    * Returns of a list of traces that match the specified filter conditions.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (TraceServiceApi traceServiceApi = TraceServiceApi.create()) {
    *   String projectId = "";

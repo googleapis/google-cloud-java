@@ -14,7 +14,6 @@
 package com.google.cloud.language.spi.v1beta1;
 
 import com.google.api.gax.grpc.ApiCallable;
-import com.google.api.gax.protobuf.PathTemplate;
 import com.google.cloud.language.v1beta1.AnalyzeEntitiesRequest;
 import com.google.cloud.language.v1beta1.AnalyzeEntitiesResponse;
 import com.google.cloud.language.v1beta1.AnalyzeSentimentRequest;
@@ -49,28 +48,27 @@ import java.util.concurrent.ScheduledExecutorService;
  * </pre>
  *
  * <p>Note: close() needs to be called on the languageServiceApi object to clean up resources such
- * as threads. In the example above, try-with-resources is used, which automatically calls
- * close().
+ * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
- * <p>The surface of this class includes several types of Java methods for each of the API's methods:
+ * <p>The surface of this class includes several types of Java methods for each of the API's
+ * methods:
  *
  * <ol>
- * <li> A "flattened" method. With this type of method, the fields of the request type have been
- * converted into function parameters. It may be the case that not all fields are available
- * as parameters, and not every API method will have a flattened method entry point.
- * <li> A "request object" method. This type of method only takes one parameter, a request
- * object, which must be constructed before the call. Not every API method will have a request
- * object method.
- * <li> A "callable" method. This type of method takes no parameters and returns an immutable
- * ApiCallable object, which can be used to initiate calls to the service.
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
+ *       converted into function parameters. It may be the case that not all fields are available as
+ *       parameters, and not every API method will have a flattened method entry point.
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
+ *       which must be constructed before the call. Not every API method will have a request object
+ *       method.
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable
+ *       ApiCallable object, which can be used to initiate calls to the service.
  * </ol>
  *
  * <p>See the individual methods for example code.
  *
- * <p>Many parameters require resource names to be formatted in a particular way. To assist
- * with these names, this class includes a format method for each type of name, and additionally
- * a parse method to extract the individual identifiers contained within names that are
- * returned.
+ * <p>Many parameters require resource names to be formatted in a particular way. To assist with
+ * these names, this class includes a format method for each type of name, and additionally a parse
+ * method to extract the individual identifiers contained within names that are returned.
  *
  * <p>This class can be customized by passing in a custom instance of LanguageServiceSettings to
  * create(). For example:
@@ -97,17 +95,14 @@ public class LanguageServiceApi implements AutoCloseable {
       analyzeEntitiesCallable;
   private final ApiCallable<AnnotateTextRequest, AnnotateTextResponse> annotateTextCallable;
 
-  /**
-   * Constructs an instance of LanguageServiceApi with default settings.
-   */
+  /** Constructs an instance of LanguageServiceApi with default settings. */
   public static final LanguageServiceApi create() throws IOException {
     return create(LanguageServiceSettings.defaultBuilder().build());
   }
 
   /**
-   * Constructs an instance of LanguageServiceApi, using the given settings.
-   * The channels are created based on the settings passed in, or defaults for any
-   * settings that are not set.
+   * Constructs an instance of LanguageServiceApi, using the given settings. The channels are
+   * created based on the settings passed in, or defaults for any settings that are not set.
    */
   public static final LanguageServiceApi create(LanguageServiceSettings settings)
       throws IOException {
@@ -115,9 +110,8 @@ public class LanguageServiceApi implements AutoCloseable {
   }
 
   /**
-   * Constructs an instance of LanguageServiceApi, using the given settings.
-   * This is protected so that it easy to make a subclass, but otherwise, the static
-   * factory methods should be preferred.
+   * Constructs an instance of LanguageServiceApi, using the given settings. This is protected so
+   * that it easy to make a subclass, but otherwise, the static factory methods should be preferred.
    */
   protected LanguageServiceApi(LanguageServiceSettings settings) throws IOException {
     this.settings = settings;
@@ -159,7 +153,8 @@ public class LanguageServiceApi implements AutoCloseable {
   /**
    * Analyzes the sentiment of the provided text.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (LanguageServiceApi languageServiceApi = LanguageServiceApi.create()) {
    *   Document document = Document.newBuilder().build();
@@ -168,7 +163,7 @@ public class LanguageServiceApi implements AutoCloseable {
    * </code></pre>
    *
    * @param document Input document. Currently, `analyzeSentiment` only supports English text
-   * ([Document.language][google.cloud.language.v1beta1.Document.language]="EN").
+   *     ([Document.language][google.cloud.language.v1beta1.Document.language]="EN").
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final AnalyzeSentimentResponse analyzeSentiment(Document document) {
@@ -181,7 +176,8 @@ public class LanguageServiceApi implements AutoCloseable {
   /**
    * Analyzes the sentiment of the provided text.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (LanguageServiceApi languageServiceApi = LanguageServiceApi.create()) {
    *   Document document = Document.newBuilder().build();
@@ -203,7 +199,8 @@ public class LanguageServiceApi implements AutoCloseable {
   /**
    * Analyzes the sentiment of the provided text.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (LanguageServiceApi languageServiceApi = LanguageServiceApi.create()) {
    *   Document document = Document.newBuilder().build();
@@ -223,10 +220,11 @@ public class LanguageServiceApi implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Finds named entities (currently finds proper names) in the text,
-   * entity types, salience, mentions for each entity, and other properties.
+   * Finds named entities (currently finds proper names) in the text, entity types, salience,
+   * mentions for each entity, and other properties.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (LanguageServiceApi languageServiceApi = LanguageServiceApi.create()) {
    *   Document document = Document.newBuilder().build();
@@ -251,10 +249,11 @@ public class LanguageServiceApi implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Finds named entities (currently finds proper names) in the text,
-   * entity types, salience, mentions for each entity, and other properties.
+   * Finds named entities (currently finds proper names) in the text, entity types, salience,
+   * mentions for each entity, and other properties.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (LanguageServiceApi languageServiceApi = LanguageServiceApi.create()) {
    *   Document document = Document.newBuilder().build();
@@ -276,10 +275,11 @@ public class LanguageServiceApi implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Finds named entities (currently finds proper names) in the text,
-   * entity types, salience, mentions for each entity, and other properties.
+   * Finds named entities (currently finds proper names) in the text, entity types, salience,
+   * mentions for each entity, and other properties.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (LanguageServiceApi languageServiceApi = LanguageServiceApi.create()) {
    *   Document document = Document.newBuilder().build();
@@ -301,12 +301,12 @@ public class LanguageServiceApi implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Advanced API that analyzes the document and provides a full set of text
-   * annotations, including semantic, syntactic, and sentiment information. This
-   * API is intended for users who are familiar with machine learning and need
-   * in-depth text features to build upon.
+   * Advanced API that analyzes the document and provides a full set of text annotations, including
+   * semantic, syntactic, and sentiment information. This API is intended for users who are familiar
+   * with machine learning and need in-depth text features to build upon.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (LanguageServiceApi languageServiceApi = LanguageServiceApi.create()) {
    *   Document document = Document.newBuilder().build();
@@ -334,12 +334,12 @@ public class LanguageServiceApi implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Advanced API that analyzes the document and provides a full set of text
-   * annotations, including semantic, syntactic, and sentiment information. This
-   * API is intended for users who are familiar with machine learning and need
-   * in-depth text features to build upon.
+   * Advanced API that analyzes the document and provides a full set of text annotations, including
+   * semantic, syntactic, and sentiment information. This API is intended for users who are familiar
+   * with machine learning and need in-depth text features to build upon.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (LanguageServiceApi languageServiceApi = LanguageServiceApi.create()) {
    *   Document document = Document.newBuilder().build();
@@ -363,12 +363,12 @@ public class LanguageServiceApi implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Advanced API that analyzes the document and provides a full set of text
-   * annotations, including semantic, syntactic, and sentiment information. This
-   * API is intended for users who are familiar with machine learning and need
-   * in-depth text features to build upon.
+   * Advanced API that analyzes the document and provides a full set of text annotations, including
+   * semantic, syntactic, and sentiment information. This API is intended for users who are familiar
+   * with machine learning and need in-depth text features to build upon.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (LanguageServiceApi languageServiceApi = LanguageServiceApi.create()) {
    *   Document document = Document.newBuilder().build();
