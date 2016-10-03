@@ -18,8 +18,9 @@ package com.google.cloud.pubsub;
 
 import static com.google.cloud.pubsub.PubSub.ListOption.OptionType.PAGE_SIZE;
 import static com.google.cloud.pubsub.PubSub.ListOption.OptionType.PAGE_TOKEN;
-import static com.google.cloud.pubsub.PubSub.PullOption.OptionType.EXECUTOR_FACTORY;
-import static com.google.cloud.pubsub.PubSub.PullOption.OptionType.MAX_QUEUED_CALLBACKS;
+import static com.google.cloud.pubsub.PubSub.MessageConsumerOption.OptionType.EXECUTOR_FACTORY;
+import static com.google.cloud.pubsub.PubSub.MessageConsumerOption.OptionType.MAX_QUEUED_CALLBACKS;
+import static com.google.cloud.pubsub.PubSub.PullOption.OptionType.RETURN_IMMEDIATELY;
 import static com.google.common.base.MoreObjects.firstNonNull;
 import static com.google.common.base.Preconditions.checkArgument;
 
@@ -496,12 +497,16 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
   }
 
   @Override
-  public Future<Iterator<ReceivedMessage>> pullAsync(final String subscription, int maxMessages) {
-    PullRequest request = PullRequest.newBuilder().setReturnImmediately(true)
+  public Future<Iterator<ReceivedMessage>> pullAsync(final String subscription, int maxMessages,
+      PullOption... options) {
+    PullRequest.Builder builder = PullRequest.newBuilder().setReturnImmediately(true)
         .setSubscription(SubscriberApi.formatSubscriptionName(options().projectId(), subscription))
-        .setMaxMessages(maxMessages)
-        .setReturnImmediately(true)
-        .build();
+        .setMaxMessages(maxMessages);
+    Map<Option.OptionType, ?> optionMap = optionMap(options);
+    if (RETURN_IMMEDIATELY.getBoolean(optionMap) != null) {
+      builder.setReturnImmediately(RETURN_IMMEDIATELY.getBoolean(optionMap));
+    }
+    PullRequest request = builder.build();
     PullFuture future = rpc.pull(request);
     future.addCallback(new PubSubRpc.PullCallback() {
       @Override
@@ -534,7 +539,7 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
 
   @Override
   public MessageConsumer pullAsync(String subscription, MessageProcessor callback,
-      PullOption... options) {
+      MessageConsumerOption... options) {
     Map<Option.OptionType, ?> optionMap = optionMap(options);
     return MessageConsumerImpl.builder(options(), subscription, ackDeadlineRenewer, callback)
         .maxQueuedCallbacks(MAX_QUEUED_CALLBACKS.getInteger(optionMap))

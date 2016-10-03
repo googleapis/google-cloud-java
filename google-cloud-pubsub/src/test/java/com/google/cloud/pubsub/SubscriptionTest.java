@@ -32,6 +32,7 @@ import com.google.cloud.Policy;
 import com.google.cloud.Role;
 import com.google.cloud.pubsub.PubSub.MessageConsumer;
 import com.google.cloud.pubsub.PubSub.MessageProcessor;
+import com.google.cloud.pubsub.PubSub.MessageConsumerOption;
 import com.google.cloud.pubsub.PubSub.PullOption;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
@@ -293,6 +294,24 @@ public class SubscriptionTest {
   }
 
   @Test
+  public void testPullAsyncWithOptions() throws ExecutionException, InterruptedException {
+    initializeExpectedSubscription(1);
+    expect(pubsub.options()).andReturn(mockOptions).times(2);
+    replay(pubsub);
+    ReceivedMessage message1 = ReceivedMessage.fromPb(pubsub, NAME, MESSAGE_PB1);
+    ReceivedMessage message2 = ReceivedMessage.fromPb(pubsub, NAME, MESSAGE_PB2);
+    reset(pubsub);
+    expect(pubsub.options()).andReturn(mockOptions);
+    List<ReceivedMessage> messages = ImmutableList.of(message1, message2);
+    expect(pubsub.pullAsync(NAME, 42, PullOption.returnImmediately(false)))
+        .andReturn(Futures.immediateFuture(messages.iterator()));
+    replay(pubsub);
+    initializeSubscription();
+    assertEquals(messages,
+        Lists.newArrayList(subscription.pullAsync(42, PullOption.returnImmediately(false)).get()));
+  }
+
+  @Test
   public void testMessageConsumer() throws ExecutionException, InterruptedException {
     initializeExpectedSubscription(1);
     MessageConsumer messageConsumer = createStrictMock(MessageConsumer.class);
@@ -313,12 +332,12 @@ public class SubscriptionTest {
     MessageProcessor messageProcessor = createStrictMock(MessageProcessor.class);
     replay(messageConsumer, messageProcessor);
     expect(pubsub.options()).andReturn(mockOptions);
-    expect(pubsub.pullAsync(NAME, messageProcessor, PullOption.maxQueuedCallbacks(2)))
+    expect(pubsub.pullAsync(NAME, messageProcessor, MessageConsumerOption.maxQueuedCallbacks(2)))
         .andReturn(messageConsumer);
     replay(pubsub);
     initializeSubscription();
     assertSame(messageConsumer,
-        subscription.pullAsync(messageProcessor, PullOption.maxQueuedCallbacks(2)));
+        subscription.pullAsync(messageProcessor, MessageConsumerOption.maxQueuedCallbacks(2)));
     verify(messageConsumer, messageProcessor);
   }
 

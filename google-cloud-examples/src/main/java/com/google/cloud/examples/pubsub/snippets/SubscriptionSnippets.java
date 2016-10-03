@@ -185,7 +185,7 @@ public class SubscriptionSnippets {
   /**
    * Example of asynchronously pulling a maximum number of messages from the subscription.
    */
-  // [TARGET pullAsync(int)]
+  // [TARGET pullAsync(int, PullOption...)]
   public void pullAsync() throws ExecutionException, InterruptedException {
     // [START pullAsync]
     Future<Iterator<ReceivedMessage>> future = subscription.pullAsync(100);
@@ -203,7 +203,7 @@ public class SubscriptionSnippets {
   /**
    * Example of continuously pulling messages from the subscription.
    */
-  // [TARGET pullAsync(MessageProcessor, PullOption...)]
+  // [TARGET pullAsync(MessageProcessor, MessageConsumerOption...)]
   // [VARIABLE "my_subscription_name"]
   public void pullWithMessageConsumer(String subscriptionName) throws Exception {
     // [START pullWithMessageConsumer]

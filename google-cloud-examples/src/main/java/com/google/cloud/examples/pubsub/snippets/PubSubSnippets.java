@@ -533,7 +533,7 @@ public class PubSubSnippets {
   /**
    * Example of asynchronously pulling a maximum number of messages from a subscription.
    */
-  // [TARGET pullAsync(String, int)]
+  // [TARGET pullAsync(String, int, PullOption...)]
   // [VARIABLE "my_subscription_name"]
   public void pullAsync(String subscriptionName) throws ExecutionException, InterruptedException {
     // [START pullAsync]
@@ -552,7 +552,7 @@ public class PubSubSnippets {
   /**
    * Example of continuously pulling messages from a subscription.
    */
-  // [TARGET pullAsync(String, MessageProcessor, PullOption...)]
+  // [TARGET pullAsync(String, MessageProcessor, MessageConsumerOption...)]
   // [VARIABLE "my_subscription_name"]
   public void pullWithMessageConsumer(String subscriptionName) throws Exception {
     // [START pullWithMessageConsumer]
@@ -929,7 +929,8 @@ public class PubSubSnippets {
   }
 
   /**
-   * Example of asynchronously testing whether the caller has the provided permissions on a topic.
+   * Example of asynchronously testing whether the caller has the provided permissions on a
+   * topic.
    */
   // [TARGET testTopicPermissionsAsync(String, List)]
   // [VARIABLE "my_topic_name"]

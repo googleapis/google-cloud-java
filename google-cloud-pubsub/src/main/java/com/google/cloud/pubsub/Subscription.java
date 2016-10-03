@@ -21,6 +21,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
 import com.google.cloud.GrpcServiceOptions;
 import com.google.cloud.Policy;
 import com.google.cloud.pubsub.PubSub.MessageConsumer;
+import com.google.cloud.pubsub.PubSub.MessageConsumerOption;
 import com.google.cloud.pubsub.PubSub.MessageProcessor;
 import com.google.cloud.pubsub.PubSub.PullOption;
 import com.google.common.base.Function;
@@ -44,11 +45,11 @@ import java.util.concurrent.Future;
  * indicates that the Pub/Sub server should resend it (implicit "nack").
  *
  * <p>In a pull subscription, the subscribing application must explicitly pull messages using one of
- * {@link PubSub#pull(String, int)}, {@link PubSub#pullAsync(String, int)} or
- * {@link PubSub#pullAsync(String, PubSub.MessageProcessor callback, PubSub.PullOption...)}.
+ * {@link PubSub#pull(String, int)}, {@link PubSub#pullAsync(String, int, PullOption...)} or
+ * {@link PubSub#pullAsync(String, PubSub.MessageProcessor callback, MessageConsumerOption...)}.
  * When messages are pulled with {@link PubSub#pull(String, int)} or
- * {@link PubSub#pullAsync(String, int)} the subscribing application must also explicitly
- * acknowledge them using one of {@link PubSub#ack(String, Iterable)},
+ * {@link PubSub#pullAsync(String, int, PullOption...)} the subscribing application must also
+ * explicitly acknowledge them using one of {@link PubSub#ack(String, Iterable)},
  * {@link PubSub#ack(String, String, String...)}, {@link PubSub#ackAsync(String, Iterable)} or
  * {@link PubSub#ackAsync(String, String, String...)}.
  *
@@ -349,8 +350,8 @@ public class Subscription extends SubscriptionInfo {
    *     possibly return fewer messages.
    * @throws PubSubException upon failure
    */
-  public Future<Iterator<ReceivedMessage>> pullAsync(int maxMessages) {
-    return pubsub.pullAsync(name(), maxMessages);
+  public Future<Iterator<ReceivedMessage>> pullAsync(int maxMessages, PullOption... options) {
+    return pubsub.pullAsync(name(), maxMessages, options);
   }
 
   /**
@@ -362,10 +363,10 @@ public class Subscription extends SubscriptionInfo {
    * all pulled messages, the ack deadline is automatically renewed until the message is either
    * acknowledged or "nacked".
    *
-   * <p>The {@link PullOption#maxQueuedCallbacks(int)} option can be used to control the maximum
-   * number of queued messages (messages either being processed or waiting to be processed). The
-   * {@link PullOption#executorFactory(GrpcServiceOptions.ExecutorFactory)} can be used to provide
-   * an executor to run message processor callbacks.
+   * <p>The {@link MessageConsumerOption#maxQueuedCallbacks(int)} option can be used to control the
+   * maximum number of queued messages (messages either being processed or waiting to be processed).
+   * The {@link MessageConsumerOption#executorFactory(GrpcServiceOptions.ExecutorFactory)} can be
+   * used to provide an executor to run message processor callbacks.
    *
    * <p>Example of continuously pulling messages from the subscription.
    * <pre> {@code
@@ -387,7 +388,7 @@ public class Subscription extends SubscriptionInfo {
    * @param options pulling options
    * @return a message consumer for the provided subscription and options
    */
-  public MessageConsumer pullAsync(MessageProcessor callback, PullOption... options) {
+  public MessageConsumer pullAsync(MessageProcessor callback, MessageConsumerOption... options) {
     return pubsub.pullAsync(name(), callback, options);
   }
 

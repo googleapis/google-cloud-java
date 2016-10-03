@@ -84,6 +84,40 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
    */
   final class PullOption extends Option {
 
+    private static final long serialVersionUID = 8335266553263173237L;
+
+    enum OptionType implements Option.OptionType {
+      RETURN_IMMEDIATELY;
+
+      @SuppressWarnings("unchecked")
+      <T> T get(Map<Option.OptionType, ?> options) {
+        return (T) options.get(this);
+      }
+
+      Boolean getBoolean(Map<Option.OptionType, ?> options) {
+        return get(options);
+      }
+    }
+
+    private PullOption(Option.OptionType option, Object value) {
+      super(option, value);
+    }
+
+    /**
+     * Returns an option to specify whether the pull operation should always return immediately or
+     * should rather wait until at least one message is available for pulling. If not provided,
+     * pull operations return immediatelly.
+     */
+    public static PullOption returnImmediately(boolean returnImmediately) {
+      return new PullOption(OptionType.RETURN_IMMEDIATELY, returnImmediately);
+    }
+  }
+
+  /**
+   * Class for specifying options for pulling messages with a {@link MessageConsumer}.
+   */
+  final class MessageConsumerOption extends Option {
+
     private static final long serialVersionUID = 4792164134340316582L;
 
     enum OptionType implements Option.OptionType {
@@ -104,7 +138,7 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
       }
     }
 
-    private PullOption(Option.OptionType option, Object value) {
+    private MessageConsumerOption(Option.OptionType option, Object value) {
       super(option, value);
     }
 
@@ -115,8 +149,8 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
      * until they are acknowledged or "nacked". If not provided, at most 100 messages can be in the
      * queue.
      */
-    public static PullOption maxQueuedCallbacks(int maxQueuedCallbacks) {
-      return new PullOption(OptionType.MAX_QUEUED_CALLBACKS, maxQueuedCallbacks);
+    public static MessageConsumerOption maxQueuedCallbacks(int maxQueuedCallbacks) {
+      return new MessageConsumerOption(OptionType.MAX_QUEUED_CALLBACKS, maxQueuedCallbacks);
     }
 
     /**
@@ -134,8 +168,8 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
      *
      * @param executorFactory the executor factory.
      */
-    public static PullOption executorFactory(ExecutorFactory executorFactory) {
-      return new PullOption(OptionType.EXECUTOR_FACTORY, executorFactory);
+    public static MessageConsumerOption executorFactory(ExecutorFactory executorFactory) {
+      return new MessageConsumerOption(OptionType.EXECUTOR_FACTORY, executorFactory);
     }
   }
 
@@ -728,9 +762,13 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
   /**
    * Sends a request for pulling messages from the provided subscription. This method returns a
    * {@code Future} object to consume the result. {@link Future#get()} returns a message iterator.
-   * This method possibly returns no messages if no message was available at the time the request
+   * If {@link PullOption#returnImmediately(boolean)} is not provided or set to {@code true}, this
+   * method possibly returns no messages if no message was available at the time the request
    * was processed by the Pub/Sub service (i.e. the system is not allowed to wait until at least one
-   * message is available).
+   * message is available). If {@link PullOption#returnImmediately(boolean)} is set to {@code false}
+   * the pull operation waits until at least one message is available or
+   * {@link PubSubOptions#initialTimeout()} is reached. If {@link PubSubOptions#initialTimeout()} is
+   * exceeded, {@link Future#get()} throws a {@link java.util.concurrent.ExecutionException}.
    *
    * <p>Example of asynchronously pulling a maximum number of messages from a subscription.
    * <pre> {@code
@@ -749,9 +787,10 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
    * @param subscription the subscription from which to pull messages
    * @param maxMessages the maximum number of messages pulled by this method. This method can
    *     possibly return fewer messages.
-   * @throws PubSubException upon failure
+   * @param options pulling options
    */
-  Future<Iterator<ReceivedMessage>> pullAsync(String subscription, int maxMessages);
+  Future<Iterator<ReceivedMessage>> pullAsync(String subscription, int maxMessages,
+      PullOption... options);
 
   /**
    * Creates a message consumer that pulls messages from the provided subscription. You can stop
@@ -762,10 +801,10 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
    * all pulled messages, the ack deadline is automatically renewed until the message is either
    * acknowledged or "nacked".
    *
-   * <p>The {@link PullOption#maxQueuedCallbacks(int)} option can be used to control the maximum
-   * number of queued messages (messages either being processed or waiting to be processed). The
-   * {@link PullOption#executorFactory(ExecutorFactory)} can be used to provide an executor to run
-   * message processor callbacks.
+   * <p>The {@link MessageConsumerOption#maxQueuedCallbacks(int)} option can be used to control the
+   * maximum number of queued messages (messages either being processed or waiting to be processed).
+   * The {@link MessageConsumerOption#executorFactory(ExecutorFactory)} can be used to provide an
+   * executor to run message processor callbacks.
    *
    * <p>Example of continuously pulling messages from a subscription.
    * <pre> {@code
@@ -788,12 +827,13 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
    * @param options pulling options
    * @return a message consumer for the provided subscription and options
    */
-  MessageConsumer pullAsync(String subscription, MessageProcessor callback, PullOption... options);
+  MessageConsumer pullAsync(String subscription, MessageProcessor callback,
+      MessageConsumerOption... options);
 
   /**
    * Acknowledges the given messages for the provided subscription. Ack ids identify the messages to
    * acknowledge, as returned in {@link ReceivedMessage#ackId()} by {@link #pull(String, int)} and
-   * {@link #pullAsync(String, int)}.
+   * {@link #pullAsync(String, int, PullOption...)}.
    *
    * <p>Example of acking one message.
    * <pre> {@code
@@ -820,8 +860,9 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
   /**
    * Sends a request to acknowledge the given messages for the provided subscription. Ack ids
    * identify the messages to acknowledge, as returned in {@link ReceivedMessage#ackId()} by
-   * {@link #pull(String, int)} and {@link #pullAsync(String, int)}. The method returns a
-   * {@code Future} object that can be used to wait for the acknowledge operation to be completed.
+   * {@link #pull(String, int)} and {@link #pullAsync(String, int, PullOption...)}. The method
+   * returns a {@code Future} object that can be used to wait for the acknowledge operation to be
+   * completed.
    *
    * <p>Example of asynchronously acking one message.
    * <pre> {@code
@@ -851,7 +892,7 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
   /**
    * Acknowledges the given messages for the provided subscription. Ack ids identify the messages to
    * acknowledge, as returned in {@link ReceivedMessage#ackId()} by {@link #pull(String, int)} and
-   * {@link #pullAsync(String, int)}.
+   * {@link #pullAsync(String, int, PullOption...)}.
    *
    * <p>Example of acking a list of messages.
    * <pre> {@code
@@ -873,8 +914,9 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
   /**
    * Sends a request to acknowledge the given messages for the provided subscription. Ack ids
    * identify the messages to acknowledge, as returned in {@link ReceivedMessage#ackId()} by
-   * {@link #pull(String, int)} and {@link #pullAsync(String, int)}. The method returns a
-   * {@code Future} object that can be used to wait for the acknowledge operation to be completed.
+   * {@link #pull(String, int)} and {@link #pullAsync(String, int, PullOption...)}. The method
+   * returns a {@code Future} object that can be used to wait for the acknowledge operation to be
+   * completed.
    *
    * <p>Example of asynchronously acking a list of messages.
    * <pre> {@code
@@ -897,7 +939,7 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
   /**
    * "Nacks" the given messages for the provided subscription. Ack ids identify the messages to
    * "nack", as returned in {@link ReceivedMessage#ackId()} by {@link #pull(String, int)} and
-   * {@link #pullAsync(String, int)}. This method corresponds to calling
+   * {@link #pullAsync(String, int, PullOption...)}. This method corresponds to calling
    * {@link #modifyAckDeadline(String, int, TimeUnit, String, String...)} with a deadline of 0.
    *
    * <p>Example of nacking one message.
@@ -925,10 +967,11 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
   /**
    * Sends a request to "nack" the given messages for the provided subscription. Ack ids identify
    * the messages to "nack", as returned in {@link ReceivedMessage#ackId()} by
-   * {@link #pull(String, int)} and {@link #pullAsync(String, int)}. This method corresponds to
-   * calling {@link #modifyAckDeadlineAsync(String, int, TimeUnit, String, String...)} with a
-   * deadline of 0. The method returns a {@code Future} object that can be used to wait for the
-   * "nack" operation to be completed.
+   * {@link #pull(String, int)} and {@link #pullAsync(String, int, PullOption...)}. This method
+   * corresponds to calling
+   * {@link #modifyAckDeadlineAsync(String, int, TimeUnit, String, String...)} with a deadline of 0.
+   * The method returns a {@code Future} object that can be used to wait for the "nack" operation to
+   * be completed.
    *
    * <p>Example of asynchronously nacking one message.
    * <pre> {@code
@@ -958,7 +1001,7 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
   /**
    * "Nacks" the given messages for the provided subscription. Ack ids identify the messages to
    * "nack", as returned in {@link ReceivedMessage#ackId()} by {@link #pull(String, int)} and
-   * {@link #pullAsync(String, int)}. This method corresponds to calling
+   * {@link #pullAsync(String, int, PullOption...)}. This method corresponds to calling
    * {@link #modifyAckDeadline(String, int, TimeUnit, Iterable)} with a deadline of 0.
    *
    * <p>Example of nacking a list of messages.
@@ -981,10 +1024,10 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
   /**
    * Sends a request to "nack" the given messages for the provided subscription. Ack ids identify
    * the messages to "nack", as returned in {@link ReceivedMessage#ackId()} by
-   * {@link #pull(String, int)} and {@link #pullAsync(String, int)}. This method corresponds to
-   * calling {@link #modifyAckDeadlineAsync(String, int, TimeUnit, Iterable)} with a deadline of 0.
-   * The method returns a {@code Future} object that can be used to wait for the "nack" operation to
-   * be completed.
+   * {@link #pull(String, int)} and {@link #pullAsync(String, int, PullOption...)}. This method
+   * corresponds to calling {@link #modifyAckDeadlineAsync(String, int, TimeUnit, Iterable)} with a
+   * deadline of 0. The method returns a {@code Future} object that can be used to wait for the
+   * "nack" operation to be completed.
    *
    * <p>Example of asynchronously nacking a list of messages.
    * <pre> {@code
@@ -1269,7 +1312,8 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
    * such as a customized graphical user interface. For example, the Cloud Platform Console tests
    * IAM permissions internally to determine which UI should be available to the logged-in user.
    *
-   * <p>Example of asynchronously testing whether the caller has the provided permissions on a topic.
+   * <p>Example of asynchronously testing whether the caller has the provided permissions on a
+   * topic.
    * <pre> {@code
    * String topicName = "my_topic_name";
    * List<String> permissions = new LinkedList<>();
