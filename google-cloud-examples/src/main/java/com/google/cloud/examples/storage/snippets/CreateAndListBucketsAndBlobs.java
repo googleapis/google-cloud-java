@@ -51,7 +51,7 @@ public class CreateAndListBucketsAndBlobs {
     Blob blob = bucket.create("my_blob_name", "a simple blob".getBytes(UTF_8), "text/plain");
 
     // Read the blob content from the server
-    String blobContent = new String(blob.content(), UTF_8);
+    String blobContent = new String(blob.getContent(), UTF_8);
 
     // List all your buckets
     Iterator<Bucket> bucketIterator = storage.list().iterateAll();

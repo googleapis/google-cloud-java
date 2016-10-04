@@ -60,7 +60,15 @@ public class RemoteStorageHelper {
   /**
    * Returns a {@link StorageOptions} object to be used for testing.
    */
+  @Deprecated
   public StorageOptions options() {
+    return options;
+  }
+
+  /**
+   * Returns a {@link StorageOptions} object to be used for testing.
+   */
+  public StorageOptions getOptions() {
     return options;
   }
 
@@ -176,7 +184,7 @@ public class RemoteStorageHelper {
     public Boolean call() {
       while (true) {
         for (BlobInfo info : storage.list(bucket, BlobListOption.versions(true)).values()) {
-          storage.delete(info.blobId());
+          storage.delete(info.getBlobId());
         }
         try {
           storage.delete(bucket);

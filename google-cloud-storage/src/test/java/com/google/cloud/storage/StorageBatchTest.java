@@ -43,9 +43,9 @@ public class StorageBatchTest {
 
   private static final BlobId BLOB_ID = BlobId.of("b1", "n1");
   private static final BlobId BLOB_ID_COMPLETE = BlobId.of("b1", "n1", 42L);
-  private static final BlobInfo BLOB_INFO = BlobInfo.builder(BLOB_ID).build();
-  private static final BlobInfo BLOB_INFO_COMPLETE = BlobInfo.builder(BLOB_ID_COMPLETE)
-      .metageneration(42L)
+  private static final BlobInfo BLOB_INFO = BlobInfo.newBuilder(BLOB_ID).build();
+  private static final BlobInfo BLOB_INFO_COMPLETE = BlobInfo.newBuilder(BLOB_ID_COMPLETE)
+      .setMetageneration(42L)
       .build();
   private static final BlobGetOption[] BLOB_GET_OPTIONS = {
       BlobGetOption.generationMatch(42L), BlobGetOption.metagenerationMatch(42L)};
@@ -91,7 +91,8 @@ public class StorageBatchTest {
     batchMock.addDelete(EasyMock.eq(BLOB_INFO.toPb()), EasyMock.capture(callback),
         EasyMock.eq(ImmutableMap.<StorageRpc.Option, Object>of()));
     EasyMock.replay(batchMock);
-    StorageBatchResult<Boolean> batchResult = dnsBatch.delete(BLOB_ID.bucket(), BLOB_ID.name());
+    StorageBatchResult<Boolean> batchResult =
+        dnsBatch.delete(BLOB_ID.getBucket(), BLOB_ID.getName());
     assertNotNull(callback.getValue());
     try {
       batchResult.get();
@@ -122,7 +123,7 @@ public class StorageBatchTest {
     assertNotNull(callback.getValue());
     assertEquals(2, capturedOptions.getValue().size());
     for (BlobSourceOption option : BLOB_SOURCE_OPTIONS) {
-      assertEquals(option.value(), capturedOptions.getValue().get(option.rpcOption()));
+      assertEquals(option.getValue(), capturedOptions.getValue().get(option.getRpcOption()));
     }
     RpcBatch.Callback<Void> capturedCallback = callback.getValue();
     capturedCallback.onSuccess(null);
@@ -168,8 +169,8 @@ public class StorageBatchTest {
     StorageBatchResult<Blob> batchResult = dnsBatch.update(BLOB_INFO_COMPLETE, BLOB_TARGET_OPTIONS);
     assertNotNull(callback.getValue());
     assertEquals(2, capturedOptions.getValue().size());
-    assertEquals(42L, capturedOptions.getValue().get(BLOB_TARGET_OPTIONS[0].rpcOption()));
-    assertEquals(42L, capturedOptions.getValue().get(BLOB_TARGET_OPTIONS[1].rpcOption()));
+    assertEquals(42L, capturedOptions.getValue().get(BLOB_TARGET_OPTIONS[0].getRpcOption()));
+    assertEquals(42L, capturedOptions.getValue().get(BLOB_TARGET_OPTIONS[1].getRpcOption()));
     RpcBatch.Callback<StorageObject> capturedCallback = callback.getValue();
     capturedCallback.onSuccess(BLOB_INFO.toPb());
     assertEquals(new Blob(storage, new Blob.BuilderImpl(BLOB_INFO)), batchResult.get());
@@ -182,7 +183,7 @@ public class StorageBatchTest {
     batchMock.addGet(EasyMock.eq(BLOB_INFO.toPb()), EasyMock.capture(callback),
         EasyMock.eq(ImmutableMap.<StorageRpc.Option, Object>of()));
     EasyMock.replay(batchMock);
-    StorageBatchResult<Blob> batchResult = dnsBatch.get(BLOB_ID.bucket(), BLOB_ID.name());
+    StorageBatchResult<Blob> batchResult = dnsBatch.get(BLOB_ID.getBucket(), BLOB_ID.getName());
     assertNotNull(callback.getValue());
     try {
       batchResult.get();
@@ -215,7 +216,7 @@ public class StorageBatchTest {
     assertNotNull(callback.getValue());
     assertEquals(2, capturedOptions.getValue().size());
     for (BlobGetOption option : BLOB_GET_OPTIONS) {
-      assertEquals(option.value(), capturedOptions.getValue().get(option.rpcOption()));
+      assertEquals(option.getValue(), capturedOptions.getValue().get(option.getRpcOption()));
     }
     RpcBatch.Callback<StorageObject> capturedCallback = callback.getValue();
     capturedCallback.onSuccess(BLOB_INFO.toPb());

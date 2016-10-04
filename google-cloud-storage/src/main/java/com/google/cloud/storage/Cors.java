@@ -142,7 +142,17 @@ public final class Cors implements Serializable {
      * Sets the max time in seconds in which a client can issue requests before sending a new
      * preflight request.
      */
+    @Deprecated
     public Builder maxAgeSeconds(Integer maxAgeSeconds) {
+      this.maxAgeSeconds = maxAgeSeconds;
+      return this;
+    }
+
+    /**
+     * Sets the max time in seconds in which a client can issue requests before sending a new
+     * preflight request.
+     */
+    public Builder setMaxAgeSeconds(Integer maxAgeSeconds) {
       this.maxAgeSeconds = maxAgeSeconds;
       return this;
     }
@@ -150,7 +160,16 @@ public final class Cors implements Serializable {
     /**
      * Sets the HTTP methods supported by this CORS configuration.
      */
+    @Deprecated
     public Builder methods(Iterable<HttpMethod> methods) {
+      this.methods = methods != null ? ImmutableList.copyOf(methods) : null;
+      return this;
+    }
+
+    /**
+     * Sets the HTTP methods supported by this CORS configuration.
+     */
+    public Builder setMethods(Iterable<HttpMethod> methods) {
       this.methods = methods != null ? ImmutableList.copyOf(methods) : null;
       return this;
     }
@@ -158,7 +177,16 @@ public final class Cors implements Serializable {
     /**
      * Sets the origins for this CORS configuration.
      */
+    @Deprecated
     public Builder origins(Iterable<Origin> origins) {
+      this.origins = origins != null ? ImmutableList.copyOf(origins) : null;
+      return this;
+    }
+
+    /**
+     * Sets the origins for this CORS configuration.
+     */
+    public Builder setOrigins(Iterable<Origin> origins) {
       this.origins = origins != null ? ImmutableList.copyOf(origins) : null;
       return this;
     }
@@ -166,7 +194,16 @@ public final class Cors implements Serializable {
     /**
      * Sets the response headers supported by this CORS configuration.
      */
+    @Deprecated
     public Builder responseHeaders(Iterable<String> headers) {
+      this.responseHeaders = headers != null ? ImmutableList.copyOf(headers) : null;
+      return this;
+    }
+
+    /**
+     * Sets the response headers supported by this CORS configuration.
+     */
+    public Builder setResponseHeaders(Iterable<String> headers) {
       this.responseHeaders = headers != null ? ImmutableList.copyOf(headers) : null;
       return this;
     }
@@ -190,28 +227,61 @@ public final class Cors implements Serializable {
    * Returns the max time in seconds in which a client can issue requests before sending a new
    * preflight request.
    */
+  @Deprecated
   public Integer maxAgeSeconds() {
+    return maxAgeSeconds;
+  }
+
+  /**
+   * Returns the max time in seconds in which a client can issue requests before sending a new
+   * preflight request.
+   */
+  public Integer getMaxAgeSeconds() {
     return maxAgeSeconds;
   }
 
   /**
    * Returns the HTTP methods supported by this CORS configuration.
    */
+  @Deprecated
   public List<HttpMethod> methods() {
+    return methods;
+  }
+
+  /**
+   * Returns the HTTP methods supported by this CORS configuration.
+   */
+  public List<HttpMethod> getMethods() {
     return methods;
   }
 
   /**
    * Returns the origins in this CORS configuration.
    */
+  @Deprecated
   public List<Origin> origins() {
+    return origins;
+  }
+
+  /**
+   * Returns the origins in this CORS configuration.
+   */
+  public List<Origin> getOrigins() {
     return origins;
   }
 
   /**
    * Returns the response headers supported by this CORS configuration.
    */
+  @Deprecated
   public List<String> responseHeaders() {
+    return responseHeaders;
+  }
+
+  /**
+   * Returns the response headers supported by this CORS configuration.
+   */
+  public List<String> getResponseHeaders() {
     return responseHeaders;
   }
 
@@ -219,11 +289,11 @@ public final class Cors implements Serializable {
    * Returns a builder for this CORS configuration.
    */
   public Builder toBuilder() {
-    return builder()
-        .maxAgeSeconds(maxAgeSeconds)
-        .methods(methods)
-        .origins(origins)
-        .responseHeaders(responseHeaders);
+    return newBuilder()
+        .setMaxAgeSeconds(maxAgeSeconds)
+        .setMethods(methods)
+        .setOrigins(origins)
+        .setResponseHeaders(responseHeaders);
   }
 
   @Override
@@ -246,7 +316,15 @@ public final class Cors implements Serializable {
   /**
    * Returns a CORS configuration builder.
    */
+  @Deprecated
   public static Builder builder() {
+    return new Builder();
+  }
+
+  /**
+   * Returns a CORS configuration builder.
+   */
+  public static Builder newBuilder() {
     return new Builder();
   }
 
@@ -264,9 +342,9 @@ public final class Cors implements Serializable {
   }
 
   static Cors fromPb(Bucket.Cors cors) {
-    Builder builder = builder().maxAgeSeconds(cors.getMaxAgeSeconds());
+    Builder builder = newBuilder().setMaxAgeSeconds(cors.getMaxAgeSeconds());
     if (cors.getMethod() != null) {
-      builder.methods(transform(cors.getMethod(), new Function<String, HttpMethod>() {
+      builder.setMethods(transform(cors.getMethod(), new Function<String, HttpMethod>() {
         @Override
         public HttpMethod apply(String name) {
           return HttpMethod.valueOf(name.toUpperCase());
@@ -274,14 +352,14 @@ public final class Cors implements Serializable {
       }));
     }
     if (cors.getOrigin() != null) {
-      builder.origins(transform(cors.getOrigin(), new Function<String, Origin>() {
+      builder.setOrigins(transform(cors.getOrigin(), new Function<String, Origin>() {
         @Override
         public Origin apply(String value) {
           return Origin.of(value);
         }
       }));
     }
-    builder.responseHeaders(cors.getResponseHeader());
+    builder.setResponseHeaders(cors.getResponseHeader());
     return builder.build();
   }
 }

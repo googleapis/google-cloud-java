@@ -84,7 +84,16 @@ public final class Acl implements Serializable {
     /**
      * Sets the entity for the ACL object.
      */
+    @Deprecated
     public Builder entity(Entity entity) {
+      this.entity = entity;
+      return this;
+    }
+
+    /**
+     * Sets the entity for the ACL object.
+     */
+    public Builder setEntity(Entity entity) {
       this.entity = entity;
       return this;
     }
@@ -92,17 +101,38 @@ public final class Acl implements Serializable {
     /**
      * Sets the role to associate to the {@code entity} object.
      */
+    @Deprecated
     public Builder role(Role role) {
       this.role = role;
       return this;
     }
 
+    /**
+     * Sets the role to associate to the {@code entity} object.
+     */
+    public Builder setRole(Role role) {
+      this.role = role;
+      return this;
+    }
+
+    @Deprecated
     Builder id(String id) {
       this.id = id;
       return this;
     }
 
+    Builder setId(String id) {
+      this.id = id;
+      return this;
+    }
+
+    @Deprecated
     Builder etag(String etag) {
+      this.etag = etag;
+      return this;
+    }
+
+    Builder setEtag(String etag) {
       this.etag = etag;
       return this;
     }
@@ -137,14 +167,30 @@ public final class Acl implements Serializable {
     /**
      * Returns the type of entity.
      */
+    @Deprecated
     public Type type() {
+      return type;
+    }
+
+    /**
+     * Returns the type of entity.
+     */
+    public Type getType() {
       return type;
     }
 
     /**
      * Returns the entity's value.
      */
+    @Deprecated
     protected String value() {
+      return value;
+    }
+
+    /**
+     * Returns the entity's value.
+     */
+    protected String getValue() {
       return value;
     }
 
@@ -171,7 +217,7 @@ public final class Acl implements Serializable {
     }
 
     String toPb() {
-      return type.name().toLowerCase() + "-" + value();
+      return type.name().toLowerCase() + "-" + getValue();
     }
 
     static Entity fromPb(String entity) {
@@ -219,8 +265,16 @@ public final class Acl implements Serializable {
     /**
      * Returns the domain associated to this entity.
      */
+    @Deprecated
     public String domain() {
-      return value();
+      return getValue();
+    }
+
+    /**
+     * Returns the domain associated to this entity.
+     */
+    public String getDomain() {
+      return getValue();
     }
   }
 
@@ -243,8 +297,16 @@ public final class Acl implements Serializable {
     /**
      * Returns the group email.
      */
+    @Deprecated
     public String email() {
-      return value();
+      return getValue();
+    }
+
+    /**
+     * Returns the group email.
+     */
+    public String getEmail() {
+      return getValue();
     }
   }
 
@@ -269,13 +331,21 @@ public final class Acl implements Serializable {
     /**
      * Returns the user email.
      */
+    @Deprecated
     public String email() {
-      return value();
+      return getValue();
+    }
+
+    /**
+     * Returns the user email.
+     */
+    public String getEmail() {
+      return getValue();
     }
 
     @Override
     String toPb() {
-      switch (value()) {
+      switch (getValue()) {
         case ALL_AUTHENTICATED_USERS:
           return ALL_AUTHENTICATED_USERS;
         case ALL_USERS:
@@ -324,6 +394,7 @@ public final class Acl implements Serializable {
     /**
      * Returns the role in the project for this entity.
      */
+    @Deprecated
     public ProjectRole projectRole() {
       return projectRole;
     }
@@ -331,7 +402,22 @@ public final class Acl implements Serializable {
     /**
      * Returns the project id for this entity.
      */
+    @Deprecated
     public String projectId() {
+      return projectId;
+    }
+
+    /**
+     * Returns the role in the project for this entity.
+     */
+    public ProjectRole getProjectRole() {
+      return projectRole;
+    }
+
+    /**
+     * Returns the project id for this entity.
+     */
+    public String getProjectId() {
       return projectId;
     }
   }
@@ -346,7 +432,7 @@ public final class Acl implements Serializable {
 
     @Override
     String toPb() {
-      return value();
+      return getValue();
     }
   }
 
@@ -360,21 +446,45 @@ public final class Acl implements Serializable {
   /**
    * Returns the entity for this ACL object.
    */
+  @Deprecated
   public Entity entity() {
+    return entity;
+  }
+
+  /**
+   * Returns the entity for this ACL object.
+   */
+  public Entity getEntity() {
     return entity;
   }
 
   /**
    * Returns the role associated to the entity in this ACL object.
    */
+  @Deprecated
   public Role role() {
+    return role;
+  }
+
+  /**
+   * Returns the role associated to the entity in this ACL object.
+   */
+  public Role getRole() {
     return role;
   }
 
   /**
    * Returns the ID of the ACL entry.
    */
+  @Deprecated
   public String id() {
+    return id;
+  }
+
+  /**
+   * Returns the ID of the ACL entry.
+   */
+  public String getId() {
     return id;
   }
 
@@ -383,7 +493,17 @@ public final class Acl implements Serializable {
    *
    * @see <a href="http://tools.ietf.org/html/rfc2616#section-3.11">Entity Tags</a>
    */
+  @Deprecated
   public String etag() {
+    return etag;
+  }
+
+  /**
+   * Returns HTTP 1.1 Entity tag for the ACL entry.
+   *
+   * @see <a href="http://tools.ietf.org/html/rfc2616#section-3.11">Entity Tags</a>
+   */
+  public String getEtag() {
     return etag;
   }
 
@@ -401,7 +521,7 @@ public final class Acl implements Serializable {
    * @param role the role to associate to the {@code entity} object
    */
   public static Acl of(Entity entity, Role role) {
-    return builder(entity, role).build();
+    return newBuilder(entity, role).build();
   }
 
   /**
@@ -410,7 +530,18 @@ public final class Acl implements Serializable {
    * @param entity the entity for this ACL object
    * @param role the role to associate to the {@code entity} object
    */
+  @Deprecated
   public static Builder builder(Entity entity, Role role) {
+    return new Builder(entity, role);
+  }
+
+  /**
+   * Returns a builder for {@code Acl} objects.
+   *
+   * @param entity the entity for this ACL object
+   * @param role the role to associate to the {@code entity} object
+   */
+  public static Builder newBuilder(Entity entity, Role role) {
     return new Builder(entity, role);
   }
 
@@ -446,37 +577,37 @@ public final class Acl implements Serializable {
 
   BucketAccessControl toBucketPb() {
     BucketAccessControl bucketPb = new BucketAccessControl();
-    bucketPb.setEntity(entity().toString());
-    bucketPb.setRole(role().toString());
-    bucketPb.setId(id());
-    bucketPb.setEtag(etag());
+    bucketPb.setEntity(getEntity().toString());
+    bucketPb.setRole(getRole().toString());
+    bucketPb.setId(getId());
+    bucketPb.setEtag(getEtag());
     return bucketPb;
   }
 
   ObjectAccessControl toObjectPb() {
     ObjectAccessControl objectPb = new ObjectAccessControl();
-    objectPb.setEntity(entity().toPb());
-    objectPb.setRole(role().name());
-    objectPb.setId(id());
-    objectPb.setEtag(etag());
+    objectPb.setEntity(getEntity().toPb());
+    objectPb.setRole(getRole().name());
+    objectPb.setId(getId());
+    objectPb.setEtag(getEtag());
     return objectPb;
   }
 
   static Acl fromPb(ObjectAccessControl objectAccessControl) {
     Role role = Role.valueOf(objectAccessControl.getRole());
     Entity entity = Entity.fromPb(objectAccessControl.getEntity());
-    return builder(entity, role)
-        .etag(objectAccessControl.getEtag())
-        .id(objectAccessControl.getId())
+    return newBuilder(entity, role)
+        .setEtag(objectAccessControl.getEtag())
+        .setId(objectAccessControl.getId())
         .build();
   }
 
   static Acl fromPb(BucketAccessControl bucketAccessControl) {
     Role role = Role.valueOf(bucketAccessControl.getRole());
     Entity entity = Entity.fromPb(bucketAccessControl.getEntity());
-    return builder(entity, role)
-        .etag(bucketAccessControl.getEtag())
-        .id(bucketAccessControl.getId())
+    return newBuilder(entity, role)
+        .setEtag(bucketAccessControl.getEtag())
+        .setId(bucketAccessControl.getId())
         .build();
   }
 }
