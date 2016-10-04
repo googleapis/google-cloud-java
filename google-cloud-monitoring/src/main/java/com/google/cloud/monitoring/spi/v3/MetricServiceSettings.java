@@ -16,7 +16,6 @@ package com.google.cloud.monitoring.spi.v3;
 import com.google.api.MetricDescriptor;
 import com.google.api.MonitoredResourceDescriptor;
 import com.google.api.gax.core.ConnectionSettings;
-import com.google.api.gax.core.PagedListResponse;
 import com.google.api.gax.core.RetrySettings;
 import com.google.api.gax.grpc.ApiCallSettings;
 import com.google.api.gax.grpc.PageStreamingCallSettings;
@@ -57,15 +56,14 @@ import org.joda.time.Duration;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- * <li>The default service address (monitoring.googleapis.com) and default port (443)
- * are used.
- * <li>Credentials are acquired automatically through Application Default Credentials.
- * <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ *   <li>The default service address (monitoring.googleapis.com) and default port (443) are used.
+ *   <li>Credentials are acquired automatically through Application Default Credentials.
+ *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
- * <p>The builder of this class is recursive, so contained classes are themselves builders.
- * When build() is called, the tree of builders is called to create the complete settings
- * object. For example, to set the total timeout of getMonitoredResourceDescriptor to 30 seconds:
+ * <p>The builder of this class is recursive, so contained classes are themselves builders. When
+ * build() is called, the tree of builders is called to create the complete settings object. For
+ * example, to set the total timeout of getMonitoredResourceDescriptor to 30 seconds:
  *
  * <pre>
  * <code>
@@ -79,25 +77,17 @@ import org.joda.time.Duration;
  */
 @javax.annotation.Generated("by GAPIC")
 public class MetricServiceSettings extends ServiceApiSettings {
-  /**
-   * The default address of the service.
-   */
+  /** The default address of the service. */
   private static final String DEFAULT_SERVICE_ADDRESS = "monitoring.googleapis.com";
 
-  /**
-   * The default port of the service.
-   */
+  /** The default port of the service. */
   private static final int DEFAULT_SERVICE_PORT = 443;
 
-  /**
-   * The default scopes of the service.
-   */
+  /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
       ImmutableList.<String>builder().build();
 
-  /**
-   * The default connection settings of the service.
-   */
+  /** The default connection settings of the service. */
   public static final ConnectionSettings DEFAULT_CONNECTION_SETTINGS =
       ConnectionSettings.newBuilder()
           .setServiceAddress(DEFAULT_SERVICE_ADDRESS)
@@ -125,9 +115,7 @@ public class MetricServiceSettings extends ServiceApiSettings {
       listTimeSeriesSettings;
   private final SimpleCallSettings<CreateTimeSeriesRequest, Empty> createTimeSeriesSettings;
 
-  /**
-   * Returns the object with the settings used for calls to listMonitoredResourceDescriptors.
-   */
+  /** Returns the object with the settings used for calls to listMonitoredResourceDescriptors. */
   public PageStreamingCallSettings<
           ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse,
           MonitoredResourceDescriptor>
@@ -135,99 +123,73 @@ public class MetricServiceSettings extends ServiceApiSettings {
     return listMonitoredResourceDescriptorsSettings;
   }
 
-  /**
-   * Returns the object with the settings used for calls to getMonitoredResourceDescriptor.
-   */
+  /** Returns the object with the settings used for calls to getMonitoredResourceDescriptor. */
   public SimpleCallSettings<GetMonitoredResourceDescriptorRequest, MonitoredResourceDescriptor>
       getMonitoredResourceDescriptorSettings() {
     return getMonitoredResourceDescriptorSettings;
   }
 
-  /**
-   * Returns the object with the settings used for calls to listMetricDescriptors.
-   */
+  /** Returns the object with the settings used for calls to listMetricDescriptors. */
   public PageStreamingCallSettings<
           ListMetricDescriptorsRequest, ListMetricDescriptorsResponse, MetricDescriptor>
       listMetricDescriptorsSettings() {
     return listMetricDescriptorsSettings;
   }
 
-  /**
-   * Returns the object with the settings used for calls to getMetricDescriptor.
-   */
+  /** Returns the object with the settings used for calls to getMetricDescriptor. */
   public SimpleCallSettings<GetMetricDescriptorRequest, MetricDescriptor>
       getMetricDescriptorSettings() {
     return getMetricDescriptorSettings;
   }
 
-  /**
-   * Returns the object with the settings used for calls to createMetricDescriptor.
-   */
+  /** Returns the object with the settings used for calls to createMetricDescriptor. */
   public SimpleCallSettings<CreateMetricDescriptorRequest, MetricDescriptor>
       createMetricDescriptorSettings() {
     return createMetricDescriptorSettings;
   }
 
-  /**
-   * Returns the object with the settings used for calls to deleteMetricDescriptor.
-   */
+  /** Returns the object with the settings used for calls to deleteMetricDescriptor. */
   public SimpleCallSettings<DeleteMetricDescriptorRequest, Empty> deleteMetricDescriptorSettings() {
     return deleteMetricDescriptorSettings;
   }
 
-  /**
-   * Returns the object with the settings used for calls to listTimeSeries.
-   */
+  /** Returns the object with the settings used for calls to listTimeSeries. */
   public PageStreamingCallSettings<ListTimeSeriesRequest, ListTimeSeriesResponse, TimeSeries>
       listTimeSeriesSettings() {
     return listTimeSeriesSettings;
   }
 
-  /**
-   * Returns the object with the settings used for calls to createTimeSeries.
-   */
+  /** Returns the object with the settings used for calls to createTimeSeries. */
   public SimpleCallSettings<CreateTimeSeriesRequest, Empty> createTimeSeriesSettings() {
     return createTimeSeriesSettings;
   }
 
-  /**
-   * Returns the default service address.
-   */
+  /** Returns the default service address. */
   public static String getDefaultServiceAddress() {
     return DEFAULT_SERVICE_ADDRESS;
   }
 
-  /**
-   * Returns the default service port.
-   */
+  /** Returns the default service port. */
   public static int getDefaultServicePort() {
     return DEFAULT_SERVICE_PORT;
   }
 
-  /**
-   * Returns the default service scopes.
-   */
+  /** Returns the default service scopes. */
   public static ImmutableList<String> getDefaultServiceScopes() {
     return DEFAULT_SERVICE_SCOPES;
   }
 
-  /**
-   * Returns a builder for this class with recommended defaults.
-   */
+  /** Returns a builder for this class with recommended defaults. */
   public static Builder defaultBuilder() {
     return Builder.createDefault();
   }
 
-  /**
-   * Returns a new builder for this class.
-   */
+  /** Returns a new builder for this class. */
   public static Builder newBuilder() {
     return new Builder();
   }
 
-  /**
-   * Returns a builder containing all the values of this settings class.
-   */
+  /** Returns a builder containing all the values of this settings class. */
   public Builder toBuilder() {
     return new Builder(this);
   }
@@ -375,9 +337,7 @@ public class MetricServiceSettings extends ServiceApiSettings {
             }
           };
 
-  /**
-   * Builder for MetricServiceSettings.
-   */
+  /** Builder for MetricServiceSettings. */
   public static class Builder extends ServiceApiSettings.Builder {
     private final ImmutableList<ApiCallSettings.Builder> methodSettingsBuilders;
 
@@ -598,18 +558,15 @@ public class MetricServiceSettings extends ServiceApiSettings {
     }
 
     /**
-     * Applies the given settings to all of the API methods in this service. Only
-     * values that are non-null will be applied, so this method is not capable
-     * of un-setting any values.
+     * Applies the given settings to all of the API methods in this service. Only values that are
+     * non-null will be applied, so this method is not capable of un-setting any values.
      */
     public Builder applyToAllApiMethods(ApiCallSettings.Builder apiCallSettings) throws Exception {
       super.applyToAllApiMethods(methodSettingsBuilders, apiCallSettings);
       return this;
     }
 
-    /**
-     * Returns the builder for the settings used for calls to listMonitoredResourceDescriptors.
-     */
+    /** Returns the builder for the settings used for calls to listMonitoredResourceDescriptors. */
     public PageStreamingCallSettings.Builder<
             ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse,
             MonitoredResourceDescriptor>
@@ -617,60 +574,46 @@ public class MetricServiceSettings extends ServiceApiSettings {
       return listMonitoredResourceDescriptorsSettings;
     }
 
-    /**
-     * Returns the builder for the settings used for calls to getMonitoredResourceDescriptor.
-     */
+    /** Returns the builder for the settings used for calls to getMonitoredResourceDescriptor. */
     public SimpleCallSettings.Builder<
             GetMonitoredResourceDescriptorRequest, MonitoredResourceDescriptor>
         getMonitoredResourceDescriptorSettings() {
       return getMonitoredResourceDescriptorSettings;
     }
 
-    /**
-     * Returns the builder for the settings used for calls to listMetricDescriptors.
-     */
+    /** Returns the builder for the settings used for calls to listMetricDescriptors. */
     public PageStreamingCallSettings.Builder<
             ListMetricDescriptorsRequest, ListMetricDescriptorsResponse, MetricDescriptor>
         listMetricDescriptorsSettings() {
       return listMetricDescriptorsSettings;
     }
 
-    /**
-     * Returns the builder for the settings used for calls to getMetricDescriptor.
-     */
+    /** Returns the builder for the settings used for calls to getMetricDescriptor. */
     public SimpleCallSettings.Builder<GetMetricDescriptorRequest, MetricDescriptor>
         getMetricDescriptorSettings() {
       return getMetricDescriptorSettings;
     }
 
-    /**
-     * Returns the builder for the settings used for calls to createMetricDescriptor.
-     */
+    /** Returns the builder for the settings used for calls to createMetricDescriptor. */
     public SimpleCallSettings.Builder<CreateMetricDescriptorRequest, MetricDescriptor>
         createMetricDescriptorSettings() {
       return createMetricDescriptorSettings;
     }
 
-    /**
-     * Returns the builder for the settings used for calls to deleteMetricDescriptor.
-     */
+    /** Returns the builder for the settings used for calls to deleteMetricDescriptor. */
     public SimpleCallSettings.Builder<DeleteMetricDescriptorRequest, Empty>
         deleteMetricDescriptorSettings() {
       return deleteMetricDescriptorSettings;
     }
 
-    /**
-     * Returns the builder for the settings used for calls to listTimeSeries.
-     */
+    /** Returns the builder for the settings used for calls to listTimeSeries. */
     public PageStreamingCallSettings.Builder<
             ListTimeSeriesRequest, ListTimeSeriesResponse, TimeSeries>
         listTimeSeriesSettings() {
       return listTimeSeriesSettings;
     }
 
-    /**
-     * Returns the builder for the settings used for calls to createTimeSeries.
-     */
+    /** Returns the builder for the settings used for calls to createTimeSeries. */
     public SimpleCallSettings.Builder<CreateTimeSeriesRequest, Empty> createTimeSeriesSettings() {
       return createTimeSeriesSettings;
     }

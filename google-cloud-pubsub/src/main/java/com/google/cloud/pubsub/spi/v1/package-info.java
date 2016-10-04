@@ -15,16 +15,15 @@
 /**
  * A client to Google Cloud Pub/Sub API.
  *
- * The interfaces provided are listed below, along with a usage sample
+ * <p>The interfaces provided are listed below, along with a usage sample
  *
- * ============
- * PublisherApi
- * ============
+ * <p>============ PublisherApi ============
  *
- * Service Description: The service that an application uses to manipulate topics, and to send
+ * <p>Service Description: The service that an application uses to manipulate topics, and to send
  * messages to a topic.
  *
- * Sample for PublisherApi:
+ * <p>Sample for PublisherApi:
+ *
  * <pre>
  * <code>
  * try (PublisherApi publisherApi = PublisherApi.create()) {
@@ -34,14 +33,13 @@
  * </code>
  * </pre>
  *
- * =============
- * SubscriberApi
- * =============
+ * ============= SubscriberApi =============
  *
- * Service Description: The service that an application uses to manipulate subscriptions and to
+ * <p>Service Description: The service that an application uses to manipulate subscriptions and to
  * consume messages from a subscription via the `Pull` method.
  *
- * Sample for SubscriberApi:
+ * <p>Sample for SubscriberApi:
+ *
  * <pre>
  * <code>
  * try (SubscriberApi subscriberApi = SubscriberApi.create()) {
@@ -53,6 +51,5 @@
  * }
  * </code>
  * </pre>
- *
  */
 package com.google.cloud.pubsub.spi.v1;

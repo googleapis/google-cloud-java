@@ -15,10 +15,8 @@
 package com.google.cloud.monitoring.spi.v3;
 
 import com.google.api.MonitoredResource;
-import com.google.api.gax.core.PagedListResponse;
 import com.google.api.gax.testing.MockGrpcService;
 import com.google.api.gax.testing.MockServiceHelper;
-import com.google.common.collect.Lists;
 import com.google.monitoring.v3.CollectdPayload;
 import com.google.monitoring.v3.CreateCollectdTimeSeriesRequest;
 import com.google.protobuf.Empty;

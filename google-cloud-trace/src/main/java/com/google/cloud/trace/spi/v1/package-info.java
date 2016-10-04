@@ -15,19 +15,17 @@
 /**
  * A client to Stackdriver Trace API.
  *
- * The interfaces provided are listed below, along with a usage sample
+ * <p>The interfaces provided are listed below, along with a usage sample
  *
- * ===============
- * TraceServiceApi
- * ===============
+ * <p>=============== TraceServiceApi ===============
  *
- * Service Description: This file describes an API for collecting and viewing traces and spans
- * within a trace.  A Trace is a collection of spans corresponding to a single
- * operation or set of operations for an application. A span is an individual
- * timed event which forms a node of the trace tree. Spans for a single trace
- * may span multiple services.
+ * <p>Service Description: This file describes an API for collecting and viewing traces and spans
+ * within a trace. A Trace is a collection of spans corresponding to a single operation or set of
+ * operations for an application. A span is an individual timed event which forms a node of the
+ * trace tree. Spans for a single trace may span multiple services.
  *
- * Sample for TraceServiceApi:
+ * <p>Sample for TraceServiceApi:
+ *
  * <pre>
  * <code>
  * try (TraceServiceApi traceServiceApi = TraceServiceApi.create()) {
@@ -37,6 +35,5 @@
  * }
  * </code>
  * </pre>
- *
  */
 package com.google.cloud.trace.spi.v1;

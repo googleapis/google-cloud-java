@@ -42,29 +42,29 @@ import java.util.concurrent.ScheduledExecutorService;
  * </code>
  * </pre>
  *
- * <p>Note: close() needs to be called on the reportErrorsServiceApi object to clean up resources such
- * as threads. In the example above, try-with-resources is used, which automatically calls
+ * <p>Note: close() needs to be called on the reportErrorsServiceApi object to clean up resources
+ * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
  *
- * <p>The surface of this class includes several types of Java methods for each of the API's methods:
+ * <p>The surface of this class includes several types of Java methods for each of the API's
+ * methods:
  *
  * <ol>
- * <li> A "flattened" method. With this type of method, the fields of the request type have been
- * converted into function parameters. It may be the case that not all fields are available
- * as parameters, and not every API method will have a flattened method entry point.
- * <li> A "request object" method. This type of method only takes one parameter, a request
- * object, which must be constructed before the call. Not every API method will have a request
- * object method.
- * <li> A "callable" method. This type of method takes no parameters and returns an immutable
- * ApiCallable object, which can be used to initiate calls to the service.
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
+ *       converted into function parameters. It may be the case that not all fields are available as
+ *       parameters, and not every API method will have a flattened method entry point.
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
+ *       which must be constructed before the call. Not every API method will have a request object
+ *       method.
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable
+ *       ApiCallable object, which can be used to initiate calls to the service.
  * </ol>
  *
  * <p>See the individual methods for example code.
  *
- * <p>Many parameters require resource names to be formatted in a particular way. To assist
- * with these names, this class includes a format method for each type of name, and additionally
- * a parse method to extract the individual identifiers contained within names that are
- * returned.
+ * <p>Many parameters require resource names to be formatted in a particular way. To assist with
+ * these names, this class includes a format method for each type of name, and additionally a parse
+ * method to extract the individual identifiers contained within names that are returned.
  *
  * <p>This class can be customized by passing in a custom instance of ReportErrorsServiceSettings to
  * create(). For example:
@@ -91,33 +91,24 @@ public class ReportErrorsServiceApi implements AutoCloseable {
   private static final PathTemplate PROJECT_PATH_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding("projects/{project}");
 
-  /**
-   * Formats a string containing the fully-qualified path to represent
-   * a project resource.
-   */
+  /** Formats a string containing the fully-qualified path to represent a project resource. */
   public static final String formatProjectName(String project) {
     return PROJECT_PATH_TEMPLATE.instantiate("project", project);
   }
 
-  /**
-   * Parses the project from the given fully-qualified path which
-   * represents a project resource.
-   */
+  /** Parses the project from the given fully-qualified path which represents a project resource. */
   public static final String parseProjectFromProjectName(String projectName) {
     return PROJECT_PATH_TEMPLATE.parse(projectName).get("project");
   }
 
-  /**
-   * Constructs an instance of ReportErrorsServiceApi with default settings.
-   */
+  /** Constructs an instance of ReportErrorsServiceApi with default settings. */
   public static final ReportErrorsServiceApi create() throws IOException {
     return create(ReportErrorsServiceSettings.defaultBuilder().build());
   }
 
   /**
-   * Constructs an instance of ReportErrorsServiceApi, using the given settings.
-   * The channels are created based on the settings passed in, or defaults for any
-   * settings that are not set.
+   * Constructs an instance of ReportErrorsServiceApi, using the given settings. The channels are
+   * created based on the settings passed in, or defaults for any settings that are not set.
    */
   public static final ReportErrorsServiceApi create(ReportErrorsServiceSettings settings)
       throws IOException {
@@ -125,9 +116,9 @@ public class ReportErrorsServiceApi implements AutoCloseable {
   }
 
   /**
-   * Constructs an instance of ReportErrorsServiceApi, using the given settings.
-   * This is protected so that it easy to make a subclass, but otherwise, the static
-   * factory methods should be preferred.
+   * Constructs an instance of ReportErrorsServiceApi, using the given settings. This is protected
+   * so that it easy to make a subclass, but otherwise, the static factory methods should be
+   * preferred.
    */
   protected ReportErrorsServiceApi(ReportErrorsServiceSettings settings) throws IOException {
     this.settings = settings;
@@ -165,14 +156,15 @@ public class ReportErrorsServiceApi implements AutoCloseable {
   /**
    * Report an individual error event.
    *
-   * This endpoint accepts &lt;strong&gt;either&lt;/strong&gt; an OAuth token,
-   * &lt;strong&gt;or&lt;/strong&gt; an
-   * &lt;a href="https://support.google.com/cloud/answer/6158862"&gt;API key&lt;/a&gt;
-   * for authentication. To use an API key, append it to the URL as the value of
-   * a `key` parameter. For example:
-   * &lt;pre&gt;POST https://clouderrorreporting.googleapis.com/v1beta1/projects/example-project/events:report?key=123ABC456&lt;/pre&gt;
+   * <p>This endpoint accepts &lt;strong&gt;either&lt;/strong&gt; an OAuth token,
+   * &lt;strong&gt;or&lt;/strong&gt; an &lt;a
+   * href="https://support.google.com/cloud/answer/6158862"&gt;API key&lt;/a&gt; for authentication.
+   * To use an API key, append it to the URL as the value of a `key` parameter. For example:
+   * &lt;pre&gt;POST
+   * https://clouderrorreporting.googleapis.com/v1beta1/projects/example-project/events:report?key=123ABC456&lt;/pre&gt;
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (ReportErrorsServiceApi reportErrorsServiceApi = ReportErrorsServiceApi.create()) {
    *   String formattedProjectName = ReportErrorsServiceApi.formatProjectName("[PROJECT]");
@@ -182,9 +174,8 @@ public class ReportErrorsServiceApi implements AutoCloseable {
    * </code></pre>
    *
    * @param projectName [Required] The resource name of the Google Cloud Platform project. Written
-   * as `projects/` plus the
-   * [Google Cloud Platform project ID](https://support.google.com/cloud/answer/6158840).
-   * Example: `projects/my-project-123`.
+   *     as `projects/` plus the [Google Cloud Platform project
+   *     ID](https://support.google.com/cloud/answer/6158840). Example: `projects/my-project-123`.
    * @param event [Required] The error event to be reported.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
@@ -200,14 +191,15 @@ public class ReportErrorsServiceApi implements AutoCloseable {
   /**
    * Report an individual error event.
    *
-   * This endpoint accepts &lt;strong&gt;either&lt;/strong&gt; an OAuth token,
-   * &lt;strong&gt;or&lt;/strong&gt; an
-   * &lt;a href="https://support.google.com/cloud/answer/6158862"&gt;API key&lt;/a&gt;
-   * for authentication. To use an API key, append it to the URL as the value of
-   * a `key` parameter. For example:
-   * &lt;pre&gt;POST https://clouderrorreporting.googleapis.com/v1beta1/projects/example-project/events:report?key=123ABC456&lt;/pre&gt;
+   * <p>This endpoint accepts &lt;strong&gt;either&lt;/strong&gt; an OAuth token,
+   * &lt;strong&gt;or&lt;/strong&gt; an &lt;a
+   * href="https://support.google.com/cloud/answer/6158862"&gt;API key&lt;/a&gt; for authentication.
+   * To use an API key, append it to the URL as the value of a `key` parameter. For example:
+   * &lt;pre&gt;POST
+   * https://clouderrorreporting.googleapis.com/v1beta1/projects/example-project/events:report?key=123ABC456&lt;/pre&gt;
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (ReportErrorsServiceApi reportErrorsServiceApi = ReportErrorsServiceApi.create()) {
    *   String formattedProjectName = ReportErrorsServiceApi.formatProjectName("[PROJECT]");
@@ -231,14 +223,15 @@ public class ReportErrorsServiceApi implements AutoCloseable {
   /**
    * Report an individual error event.
    *
-   * This endpoint accepts &lt;strong&gt;either&lt;/strong&gt; an OAuth token,
-   * &lt;strong&gt;or&lt;/strong&gt; an
-   * &lt;a href="https://support.google.com/cloud/answer/6158862"&gt;API key&lt;/a&gt;
-   * for authentication. To use an API key, append it to the URL as the value of
-   * a `key` parameter. For example:
-   * &lt;pre&gt;POST https://clouderrorreporting.googleapis.com/v1beta1/projects/example-project/events:report?key=123ABC456&lt;/pre&gt;
+   * <p>This endpoint accepts &lt;strong&gt;either&lt;/strong&gt; an OAuth token,
+   * &lt;strong&gt;or&lt;/strong&gt; an &lt;a
+   * href="https://support.google.com/cloud/answer/6158862"&gt;API key&lt;/a&gt; for authentication.
+   * To use an API key, append it to the URL as the value of a `key` parameter. For example:
+   * &lt;pre&gt;POST
+   * https://clouderrorreporting.googleapis.com/v1beta1/projects/example-project/events:report?key=123ABC456&lt;/pre&gt;
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (ReportErrorsServiceApi reportErrorsServiceApi = ReportErrorsServiceApi.create()) {
    *   String formattedProjectName = ReportErrorsServiceApi.formatProjectName("[PROJECT]");

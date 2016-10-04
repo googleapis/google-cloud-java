@@ -15,26 +15,22 @@
 /**
  * A client to Stackdriver Monitoring API.
  *
- * The interfaces provided are listed below, along with a usage sample
+ * <p>The interfaces provided are listed below, along with a usage sample
  *
- * ===============
- * GroupServiceApi
- * ===============
+ * <p>=============== GroupServiceApi ===============
  *
- * Service Description: The Group API lets you inspect and manage your
+ * <p>Service Description: The Group API lets you inspect and manage your
  * [groups](google.monitoring.v3.Group).
  *
- * A group is a named filter that is used to identify
- * a collection of monitored resources. Groups are typically used to
- * mirror the physical and/or logical topology of the environment.
- * Because group membership is computed dynamically, monitored
- * resources that are started in the future are automatically placed
- * in matching groups. By using a group to name monitored resources in,
- * for example, an alert policy, the target of that alert policy is
- * updated automatically as monitored resources are added and removed
- * from the infrastructure.
+ * <p>A group is a named filter that is used to identify a collection of monitored resources. Groups
+ * are typically used to mirror the physical and/or logical topology of the environment. Because
+ * group membership is computed dynamically, monitored resources that are started in the future are
+ * automatically placed in matching groups. By using a group to name monitored resources in, for
+ * example, an alert policy, the target of that alert policy is updated automatically as monitored
+ * resources are added and removed from the infrastructure.
  *
- * Sample for GroupServiceApi:
+ * <p>Sample for GroupServiceApi:
+ *
  * <pre>
  * <code>
  * try (GroupServiceApi groupServiceApi = GroupServiceApi.create()) {
@@ -44,14 +40,13 @@
  * </code>
  * </pre>
  *
- * ================
- * MetricServiceApi
- * ================
+ * ================ MetricServiceApi ================
  *
- * Service Description: Manages metric descriptors, monitored resource descriptors, and
- * time series data.
+ * <p>Service Description: Manages metric descriptors, monitored resource descriptors, and time
+ * series data.
  *
- * Sample for MetricServiceApi:
+ * <p>Sample for MetricServiceApi:
+ *
  * <pre>
  * <code>
  * try (MetricServiceApi metricServiceApi = MetricServiceApi.create()) {
@@ -61,15 +56,14 @@
  * </code>
  * </pre>
  *
- * ==========================
- * AgentTranslationServiceApi
- * ==========================
+ * ========================== AgentTranslationServiceApi ==========================
  *
- * Service Description: The AgentTranslation API allows `collectd`-based agents to
- * write time series data to Cloud Monitoring.
- * See [google.monitoring.v3.MetricService.CreateTimeSeries] instead.
+ * <p>Service Description: The AgentTranslation API allows `collectd`-based agents to write time
+ * series data to Cloud Monitoring. See [google.monitoring.v3.MetricService.CreateTimeSeries]
+ * instead.
  *
- * Sample for AgentTranslationServiceApi:
+ * <p>Sample for AgentTranslationServiceApi:
+ *
  * <pre>
  * <code>
  * try (AgentTranslationServiceApi agentTranslationServiceApi = AgentTranslationServiceApi.create()) {
@@ -81,6 +75,5 @@
  * }
  * </code>
  * </pre>
- *
  */
 package com.google.cloud.monitoring.spi.v3;

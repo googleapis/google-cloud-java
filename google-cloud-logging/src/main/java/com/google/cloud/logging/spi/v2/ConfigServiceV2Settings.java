@@ -14,7 +14,6 @@
 package com.google.cloud.logging.spi.v2;
 
 import com.google.api.gax.core.ConnectionSettings;
-import com.google.api.gax.core.PagedListResponse;
 import com.google.api.gax.core.RetrySettings;
 import com.google.api.gax.grpc.ApiCallSettings;
 import com.google.api.gax.grpc.PageStreamingCallSettings;
@@ -50,15 +49,14 @@ import org.joda.time.Duration;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- * <li>The default service address (logging.googleapis.com) and default port (443)
- * are used.
- * <li>Credentials are acquired automatically through Application Default Credentials.
- * <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ *   <li>The default service address (logging.googleapis.com) and default port (443) are used.
+ *   <li>Credentials are acquired automatically through Application Default Credentials.
+ *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
- * <p>The builder of this class is recursive, so contained classes are themselves builders.
- * When build() is called, the tree of builders is called to create the complete settings
- * object. For example, to set the total timeout of getSink to 30 seconds:
+ * <p>The builder of this class is recursive, so contained classes are themselves builders. When
+ * build() is called, the tree of builders is called to create the complete settings object. For
+ * example, to set the total timeout of getSink to 30 seconds:
  *
  * <pre>
  * <code>
@@ -72,19 +70,13 @@ import org.joda.time.Duration;
  */
 @javax.annotation.Generated("by GAPIC")
 public class ConfigServiceV2Settings extends ServiceApiSettings {
-  /**
-   * The default address of the service.
-   */
+  /** The default address of the service. */
   private static final String DEFAULT_SERVICE_ADDRESS = "logging.googleapis.com";
 
-  /**
-   * The default port of the service.
-   */
+  /** The default port of the service. */
   private static final int DEFAULT_SERVICE_PORT = 443;
 
-  /**
-   * The default scopes of the service.
-   */
+  /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
       ImmutableList.<String>builder()
           .add("https://www.googleapis.com/auth/cloud-platform")
@@ -94,9 +86,7 @@ public class ConfigServiceV2Settings extends ServiceApiSettings {
           .add("https://www.googleapis.com/auth/logging.write")
           .build();
 
-  /**
-   * The default connection settings of the service.
-   */
+  /** The default connection settings of the service. */
   public static final ConnectionSettings DEFAULT_CONNECTION_SETTINGS =
       ConnectionSettings.newBuilder()
           .setServiceAddress(DEFAULT_SERVICE_ADDRESS)
@@ -111,80 +101,58 @@ public class ConfigServiceV2Settings extends ServiceApiSettings {
   private final SimpleCallSettings<UpdateSinkRequest, LogSink> updateSinkSettings;
   private final SimpleCallSettings<DeleteSinkRequest, Empty> deleteSinkSettings;
 
-  /**
-   * Returns the object with the settings used for calls to listSinks.
-   */
+  /** Returns the object with the settings used for calls to listSinks. */
   public PageStreamingCallSettings<ListSinksRequest, ListSinksResponse, LogSink>
       listSinksSettings() {
     return listSinksSettings;
   }
 
-  /**
-   * Returns the object with the settings used for calls to getSink.
-   */
+  /** Returns the object with the settings used for calls to getSink. */
   public SimpleCallSettings<GetSinkRequest, LogSink> getSinkSettings() {
     return getSinkSettings;
   }
 
-  /**
-   * Returns the object with the settings used for calls to createSink.
-   */
+  /** Returns the object with the settings used for calls to createSink. */
   public SimpleCallSettings<CreateSinkRequest, LogSink> createSinkSettings() {
     return createSinkSettings;
   }
 
-  /**
-   * Returns the object with the settings used for calls to updateSink.
-   */
+  /** Returns the object with the settings used for calls to updateSink. */
   public SimpleCallSettings<UpdateSinkRequest, LogSink> updateSinkSettings() {
     return updateSinkSettings;
   }
 
-  /**
-   * Returns the object with the settings used for calls to deleteSink.
-   */
+  /** Returns the object with the settings used for calls to deleteSink. */
   public SimpleCallSettings<DeleteSinkRequest, Empty> deleteSinkSettings() {
     return deleteSinkSettings;
   }
 
-  /**
-   * Returns the default service address.
-   */
+  /** Returns the default service address. */
   public static String getDefaultServiceAddress() {
     return DEFAULT_SERVICE_ADDRESS;
   }
 
-  /**
-   * Returns the default service port.
-   */
+  /** Returns the default service port. */
   public static int getDefaultServicePort() {
     return DEFAULT_SERVICE_PORT;
   }
 
-  /**
-   * Returns the default service scopes.
-   */
+  /** Returns the default service scopes. */
   public static ImmutableList<String> getDefaultServiceScopes() {
     return DEFAULT_SERVICE_SCOPES;
   }
 
-  /**
-   * Returns a builder for this class with recommended defaults.
-   */
+  /** Returns a builder for this class with recommended defaults. */
   public static Builder defaultBuilder() {
     return Builder.createDefault();
   }
 
-  /**
-   * Returns a new builder for this class.
-   */
+  /** Returns a new builder for this class. */
   public static Builder newBuilder() {
     return new Builder();
   }
 
-  /**
-   * Returns a builder containing all the values of this settings class.
-   */
+  /** Returns a builder containing all the values of this settings class. */
   public Builder toBuilder() {
     return new Builder(this);
   }
@@ -239,9 +207,7 @@ public class ConfigServiceV2Settings extends ServiceApiSettings {
             }
           };
 
-  /**
-   * Builder for ConfigServiceV2Settings.
-   */
+  /** Builder for ConfigServiceV2Settings. */
   public static class Builder extends ServiceApiSettings.Builder {
     private final ImmutableList<ApiCallSettings.Builder> methodSettingsBuilders;
 
@@ -404,47 +370,36 @@ public class ConfigServiceV2Settings extends ServiceApiSettings {
     }
 
     /**
-     * Applies the given settings to all of the API methods in this service. Only
-     * values that are non-null will be applied, so this method is not capable
-     * of un-setting any values.
+     * Applies the given settings to all of the API methods in this service. Only values that are
+     * non-null will be applied, so this method is not capable of un-setting any values.
      */
     public Builder applyToAllApiMethods(ApiCallSettings.Builder apiCallSettings) throws Exception {
       super.applyToAllApiMethods(methodSettingsBuilders, apiCallSettings);
       return this;
     }
 
-    /**
-     * Returns the builder for the settings used for calls to listSinks.
-     */
+    /** Returns the builder for the settings used for calls to listSinks. */
     public PageStreamingCallSettings.Builder<ListSinksRequest, ListSinksResponse, LogSink>
         listSinksSettings() {
       return listSinksSettings;
     }
 
-    /**
-     * Returns the builder for the settings used for calls to getSink.
-     */
+    /** Returns the builder for the settings used for calls to getSink. */
     public SimpleCallSettings.Builder<GetSinkRequest, LogSink> getSinkSettings() {
       return getSinkSettings;
     }
 
-    /**
-     * Returns the builder for the settings used for calls to createSink.
-     */
+    /** Returns the builder for the settings used for calls to createSink. */
     public SimpleCallSettings.Builder<CreateSinkRequest, LogSink> createSinkSettings() {
       return createSinkSettings;
     }
 
-    /**
-     * Returns the builder for the settings used for calls to updateSink.
-     */
+    /** Returns the builder for the settings used for calls to updateSink. */
     public SimpleCallSettings.Builder<UpdateSinkRequest, LogSink> updateSinkSettings() {
       return updateSinkSettings;
     }
 
-    /**
-     * Returns the builder for the settings used for calls to deleteSink.
-     */
+    /** Returns the builder for the settings used for calls to deleteSink. */
     public SimpleCallSettings.Builder<DeleteSinkRequest, Empty> deleteSinkSettings() {
       return deleteSinkSettings;
     }

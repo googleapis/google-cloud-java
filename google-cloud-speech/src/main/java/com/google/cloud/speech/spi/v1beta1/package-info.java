@@ -15,15 +15,14 @@
 /**
  * A client to Google Cloud Speech API.
  *
- * The interfaces provided are listed below, along with a usage sample
+ * <p>The interfaces provided are listed below, along with a usage sample
  *
- * =========
- * SpeechApi
- * =========
+ * <p>========= SpeechApi =========
  *
- * Service Description: Service that implements Google Cloud Speech API.
+ * <p>Service Description: Service that implements Google Cloud Speech API.
  *
- * Sample for SpeechApi:
+ * <p>Sample for SpeechApi:
+ *
  * <pre>
  * <code>
  * try (SpeechApi speechApi = SpeechApi.create()) {
@@ -33,6 +32,5 @@
  * }
  * </code>
  * </pre>
- *
  */
 package com.google.cloud.speech.spi.v1beta1;

@@ -14,7 +14,6 @@
 
 package com.google.cloud.language.spi.v1beta1;
 
-import com.google.api.gax.core.PagedListResponse;
 import com.google.api.gax.testing.MockGrpcService;
 import com.google.api.gax.testing.MockServiceHelper;
 import com.google.cloud.language.v1beta1.AnalyzeEntitiesRequest;
@@ -26,7 +25,6 @@ import com.google.cloud.language.v1beta1.AnnotateTextRequest.Features;
 import com.google.cloud.language.v1beta1.AnnotateTextResponse;
 import com.google.cloud.language.v1beta1.Document;
 import com.google.cloud.language.v1beta1.EncodingType;
-import com.google.common.collect.Lists;
 import com.google.protobuf.GeneratedMessageV3;
 import java.io.IOException;
 import java.util.ArrayList;

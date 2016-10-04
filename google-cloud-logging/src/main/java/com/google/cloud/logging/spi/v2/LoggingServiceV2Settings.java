@@ -15,7 +15,6 @@ package com.google.cloud.logging.spi.v2;
 
 import com.google.api.MonitoredResourceDescriptor;
 import com.google.api.gax.core.ConnectionSettings;
-import com.google.api.gax.core.PagedListResponse;
 import com.google.api.gax.core.RetrySettings;
 import com.google.api.gax.grpc.ApiCallSettings;
 import com.google.api.gax.grpc.PageStreamingCallSettings;
@@ -52,15 +51,14 @@ import org.joda.time.Duration;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- * <li>The default service address (logging.googleapis.com) and default port (443)
- * are used.
- * <li>Credentials are acquired automatically through Application Default Credentials.
- * <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ *   <li>The default service address (logging.googleapis.com) and default port (443) are used.
+ *   <li>Credentials are acquired automatically through Application Default Credentials.
+ *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
- * <p>The builder of this class is recursive, so contained classes are themselves builders.
- * When build() is called, the tree of builders is called to create the complete settings
- * object. For example, to set the total timeout of deleteLog to 30 seconds:
+ * <p>The builder of this class is recursive, so contained classes are themselves builders. When
+ * build() is called, the tree of builders is called to create the complete settings object. For
+ * example, to set the total timeout of deleteLog to 30 seconds:
  *
  * <pre>
  * <code>
@@ -74,19 +72,13 @@ import org.joda.time.Duration;
  */
 @javax.annotation.Generated("by GAPIC")
 public class LoggingServiceV2Settings extends ServiceApiSettings {
-  /**
-   * The default address of the service.
-   */
+  /** The default address of the service. */
   private static final String DEFAULT_SERVICE_ADDRESS = "logging.googleapis.com";
 
-  /**
-   * The default port of the service.
-   */
+  /** The default port of the service. */
   private static final int DEFAULT_SERVICE_PORT = 443;
 
-  /**
-   * The default scopes of the service.
-   */
+  /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
       ImmutableList.<String>builder()
           .add("https://www.googleapis.com/auth/cloud-platform")
@@ -96,9 +88,7 @@ public class LoggingServiceV2Settings extends ServiceApiSettings {
           .add("https://www.googleapis.com/auth/logging.write")
           .build();
 
-  /**
-   * The default connection settings of the service.
-   */
+  /** The default connection settings of the service. */
   public static final ConnectionSettings DEFAULT_CONNECTION_SETTINGS =
       ConnectionSettings.newBuilder()
           .setServiceAddress(DEFAULT_SERVICE_ADDRESS)
@@ -116,32 +106,24 @@ public class LoggingServiceV2Settings extends ServiceApiSettings {
           MonitoredResourceDescriptor>
       listMonitoredResourceDescriptorsSettings;
 
-  /**
-   * Returns the object with the settings used for calls to deleteLog.
-   */
+  /** Returns the object with the settings used for calls to deleteLog. */
   public SimpleCallSettings<DeleteLogRequest, Empty> deleteLogSettings() {
     return deleteLogSettings;
   }
 
-  /**
-   * Returns the object with the settings used for calls to writeLogEntries.
-   */
+  /** Returns the object with the settings used for calls to writeLogEntries. */
   public SimpleCallSettings<WriteLogEntriesRequest, WriteLogEntriesResponse>
       writeLogEntriesSettings() {
     return writeLogEntriesSettings;
   }
 
-  /**
-   * Returns the object with the settings used for calls to listLogEntries.
-   */
+  /** Returns the object with the settings used for calls to listLogEntries. */
   public PageStreamingCallSettings<ListLogEntriesRequest, ListLogEntriesResponse, LogEntry>
       listLogEntriesSettings() {
     return listLogEntriesSettings;
   }
 
-  /**
-   * Returns the object with the settings used for calls to listMonitoredResourceDescriptors.
-   */
+  /** Returns the object with the settings used for calls to listMonitoredResourceDescriptors. */
   public PageStreamingCallSettings<
           ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse,
           MonitoredResourceDescriptor>
@@ -149,44 +131,32 @@ public class LoggingServiceV2Settings extends ServiceApiSettings {
     return listMonitoredResourceDescriptorsSettings;
   }
 
-  /**
-   * Returns the default service address.
-   */
+  /** Returns the default service address. */
   public static String getDefaultServiceAddress() {
     return DEFAULT_SERVICE_ADDRESS;
   }
 
-  /**
-   * Returns the default service port.
-   */
+  /** Returns the default service port. */
   public static int getDefaultServicePort() {
     return DEFAULT_SERVICE_PORT;
   }
 
-  /**
-   * Returns the default service scopes.
-   */
+  /** Returns the default service scopes. */
   public static ImmutableList<String> getDefaultServiceScopes() {
     return DEFAULT_SERVICE_SCOPES;
   }
 
-  /**
-   * Returns a builder for this class with recommended defaults.
-   */
+  /** Returns a builder for this class with recommended defaults. */
   public static Builder defaultBuilder() {
     return Builder.createDefault();
   }
 
-  /**
-   * Returns a new builder for this class.
-   */
+  /** Returns a new builder for this class. */
   public static Builder newBuilder() {
     return new Builder();
   }
 
-  /**
-   * Returns a builder containing all the values of this settings class.
-   */
+  /** Returns a builder containing all the values of this settings class. */
   public Builder toBuilder() {
     return new Builder(this);
   }
@@ -288,9 +258,7 @@ public class LoggingServiceV2Settings extends ServiceApiSettings {
             }
           };
 
-  /**
-   * Builder for LoggingServiceV2Settings.
-   */
+  /** Builder for LoggingServiceV2Settings. */
   public static class Builder extends ServiceApiSettings.Builder {
     private final ImmutableList<ApiCallSettings.Builder> methodSettingsBuilders;
 
@@ -462,42 +430,33 @@ public class LoggingServiceV2Settings extends ServiceApiSettings {
     }
 
     /**
-     * Applies the given settings to all of the API methods in this service. Only
-     * values that are non-null will be applied, so this method is not capable
-     * of un-setting any values.
+     * Applies the given settings to all of the API methods in this service. Only values that are
+     * non-null will be applied, so this method is not capable of un-setting any values.
      */
     public Builder applyToAllApiMethods(ApiCallSettings.Builder apiCallSettings) throws Exception {
       super.applyToAllApiMethods(methodSettingsBuilders, apiCallSettings);
       return this;
     }
 
-    /**
-     * Returns the builder for the settings used for calls to deleteLog.
-     */
+    /** Returns the builder for the settings used for calls to deleteLog. */
     public SimpleCallSettings.Builder<DeleteLogRequest, Empty> deleteLogSettings() {
       return deleteLogSettings;
     }
 
-    /**
-     * Returns the builder for the settings used for calls to writeLogEntries.
-     */
+    /** Returns the builder for the settings used for calls to writeLogEntries. */
     public SimpleCallSettings.Builder<WriteLogEntriesRequest, WriteLogEntriesResponse>
         writeLogEntriesSettings() {
       return writeLogEntriesSettings;
     }
 
-    /**
-     * Returns the builder for the settings used for calls to listLogEntries.
-     */
+    /** Returns the builder for the settings used for calls to listLogEntries. */
     public PageStreamingCallSettings.Builder<
             ListLogEntriesRequest, ListLogEntriesResponse, LogEntry>
         listLogEntriesSettings() {
       return listLogEntriesSettings;
     }
 
-    /**
-     * Returns the builder for the settings used for calls to listMonitoredResourceDescriptors.
-     */
+    /** Returns the builder for the settings used for calls to listMonitoredResourceDescriptors. */
     public PageStreamingCallSettings.Builder<
             ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse,
             MonitoredResourceDescriptor>

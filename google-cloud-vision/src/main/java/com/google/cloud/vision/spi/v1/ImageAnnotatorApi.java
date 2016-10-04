@@ -14,7 +14,6 @@
 package com.google.cloud.vision.spi.v1;
 
 import com.google.api.gax.grpc.ApiCallable;
-import com.google.api.gax.protobuf.PathTemplate;
 import com.google.cloud.vision.v1.AnnotateImageRequest;
 import com.google.cloud.vision.v1.BatchAnnotateImagesRequest;
 import com.google.cloud.vision.v1.BatchAnnotateImagesResponse;
@@ -28,8 +27,8 @@ import java.util.concurrent.ScheduledExecutorService;
 // AUTO-GENERATED DOCUMENTATION AND SERVICE
 /**
  * Service Description: Service that performs Google Cloud Vision API detection tasks, such as face,
- * landmark, logo, label, and text detection, over client images, and returns
- * detected entities from the images.
+ * landmark, logo, label, and text detection, over client images, and returns detected entities from
+ * the images.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -43,29 +42,28 @@ import java.util.concurrent.ScheduledExecutorService;
  * </code>
  * </pre>
  *
- * <p>Note: close() needs to be called on the imageAnnotatorApi object to clean up resources such
- * as threads. In the example above, try-with-resources is used, which automatically calls
- * close().
+ * <p>Note: close() needs to be called on the imageAnnotatorApi object to clean up resources such as
+ * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
- * <p>The surface of this class includes several types of Java methods for each of the API's methods:
+ * <p>The surface of this class includes several types of Java methods for each of the API's
+ * methods:
  *
  * <ol>
- * <li> A "flattened" method. With this type of method, the fields of the request type have been
- * converted into function parameters. It may be the case that not all fields are available
- * as parameters, and not every API method will have a flattened method entry point.
- * <li> A "request object" method. This type of method only takes one parameter, a request
- * object, which must be constructed before the call. Not every API method will have a request
- * object method.
- * <li> A "callable" method. This type of method takes no parameters and returns an immutable
- * ApiCallable object, which can be used to initiate calls to the service.
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
+ *       converted into function parameters. It may be the case that not all fields are available as
+ *       parameters, and not every API method will have a flattened method entry point.
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
+ *       which must be constructed before the call. Not every API method will have a request object
+ *       method.
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable
+ *       ApiCallable object, which can be used to initiate calls to the service.
  * </ol>
  *
  * <p>See the individual methods for example code.
  *
- * <p>Many parameters require resource names to be formatted in a particular way. To assist
- * with these names, this class includes a format method for each type of name, and additionally
- * a parse method to extract the individual identifiers contained within names that are
- * returned.
+ * <p>Many parameters require resource names to be formatted in a particular way. To assist with
+ * these names, this class includes a format method for each type of name, and additionally a parse
+ * method to extract the individual identifiers contained within names that are returned.
  *
  * <p>This class can be customized by passing in a custom instance of ImageAnnotatorSettings to
  * create(). For example:
@@ -89,26 +87,22 @@ public class ImageAnnotatorApi implements AutoCloseable {
   private final ApiCallable<BatchAnnotateImagesRequest, BatchAnnotateImagesResponse>
       batchAnnotateImagesCallable;
 
-  /**
-   * Constructs an instance of ImageAnnotatorApi with default settings.
-   */
+  /** Constructs an instance of ImageAnnotatorApi with default settings. */
   public static final ImageAnnotatorApi create() throws IOException {
     return create(ImageAnnotatorSettings.defaultBuilder().build());
   }
 
   /**
-   * Constructs an instance of ImageAnnotatorApi, using the given settings.
-   * The channels are created based on the settings passed in, or defaults for any
-   * settings that are not set.
+   * Constructs an instance of ImageAnnotatorApi, using the given settings. The channels are created
+   * based on the settings passed in, or defaults for any settings that are not set.
    */
   public static final ImageAnnotatorApi create(ImageAnnotatorSettings settings) throws IOException {
     return new ImageAnnotatorApi(settings);
   }
 
   /**
-   * Constructs an instance of ImageAnnotatorApi, using the given settings.
-   * This is protected so that it easy to make a subclass, but otherwise, the static
-   * factory methods should be preferred.
+   * Constructs an instance of ImageAnnotatorApi, using the given settings. This is protected so
+   * that it easy to make a subclass, but otherwise, the static factory methods should be preferred.
    */
   protected ImageAnnotatorApi(ImageAnnotatorSettings settings) throws IOException {
     this.settings = settings;
@@ -146,7 +140,8 @@ public class ImageAnnotatorApi implements AutoCloseable {
   /**
    * Run image detection and annotation for a batch of images.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (ImageAnnotatorApi imageAnnotatorApi = ImageAnnotatorApi.create()) {
    *   List&lt;AnnotateImageRequest&gt; requests = new ArrayList&lt;&gt;();
@@ -168,7 +163,8 @@ public class ImageAnnotatorApi implements AutoCloseable {
   /**
    * Run image detection and annotation for a batch of images.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (ImageAnnotatorApi imageAnnotatorApi = ImageAnnotatorApi.create()) {
    *   List&lt;AnnotateImageRequest&gt; requests = new ArrayList&lt;&gt;();
@@ -191,7 +187,8 @@ public class ImageAnnotatorApi implements AutoCloseable {
   /**
    * Run image detection and annotation for a batch of images.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (ImageAnnotatorApi imageAnnotatorApi = ImageAnnotatorApi.create()) {
    *   List&lt;AnnotateImageRequest&gt; requests = new ArrayList&lt;&gt;();

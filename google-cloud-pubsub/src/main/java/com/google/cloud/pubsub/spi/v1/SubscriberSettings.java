@@ -14,7 +14,6 @@
 package com.google.cloud.pubsub.spi.v1;
 
 import com.google.api.gax.core.ConnectionSettings;
-import com.google.api.gax.core.PagedListResponse;
 import com.google.api.gax.core.RetrySettings;
 import com.google.api.gax.grpc.ApiCallSettings;
 import com.google.api.gax.grpc.PageStreamingCallSettings;
@@ -59,15 +58,14 @@ import org.joda.time.Duration;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- * <li>The default service address (pubsub.googleapis.com) and default port (443)
- * are used.
- * <li>Credentials are acquired automatically through Application Default Credentials.
- * <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ *   <li>The default service address (pubsub.googleapis.com) and default port (443) are used.
+ *   <li>Credentials are acquired automatically through Application Default Credentials.
+ *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
- * <p>The builder of this class is recursive, so contained classes are themselves builders.
- * When build() is called, the tree of builders is called to create the complete settings
- * object. For example, to set the total timeout of createSubscription to 30 seconds:
+ * <p>The builder of this class is recursive, so contained classes are themselves builders. When
+ * build() is called, the tree of builders is called to create the complete settings object. For
+ * example, to set the total timeout of createSubscription to 30 seconds:
  *
  * <pre>
  * <code>
@@ -81,28 +79,20 @@ import org.joda.time.Duration;
  */
 @javax.annotation.Generated("by GAPIC")
 public class SubscriberSettings extends ServiceApiSettings {
-  /**
-   * The default address of the service.
-   */
+  /** The default address of the service. */
   private static final String DEFAULT_SERVICE_ADDRESS = "pubsub.googleapis.com";
 
-  /**
-   * The default port of the service.
-   */
+  /** The default port of the service. */
   private static final int DEFAULT_SERVICE_PORT = 443;
 
-  /**
-   * The default scopes of the service.
-   */
+  /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
       ImmutableList.<String>builder()
           .add("https://www.googleapis.com/auth/cloud-platform")
           .add("https://www.googleapis.com/auth/pubsub")
           .build();
 
-  /**
-   * The default connection settings of the service.
-   */
+  /** The default connection settings of the service. */
   public static final ConnectionSettings DEFAULT_CONNECTION_SETTINGS =
       ConnectionSettings.newBuilder()
           .setServiceAddress(DEFAULT_SERVICE_ADDRESS)
@@ -125,124 +115,90 @@ public class SubscriberSettings extends ServiceApiSettings {
   private final SimpleCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsSettings;
 
-  /**
-   * Returns the object with the settings used for calls to createSubscription.
-   */
+  /** Returns the object with the settings used for calls to createSubscription. */
   public SimpleCallSettings<Subscription, Subscription> createSubscriptionSettings() {
     return createSubscriptionSettings;
   }
 
-  /**
-   * Returns the object with the settings used for calls to getSubscription.
-   */
+  /** Returns the object with the settings used for calls to getSubscription. */
   public SimpleCallSettings<GetSubscriptionRequest, Subscription> getSubscriptionSettings() {
     return getSubscriptionSettings;
   }
 
-  /**
-   * Returns the object with the settings used for calls to listSubscriptions.
-   */
+  /** Returns the object with the settings used for calls to listSubscriptions. */
   public PageStreamingCallSettings<
           ListSubscriptionsRequest, ListSubscriptionsResponse, Subscription>
       listSubscriptionsSettings() {
     return listSubscriptionsSettings;
   }
 
-  /**
-   * Returns the object with the settings used for calls to deleteSubscription.
-   */
+  /** Returns the object with the settings used for calls to deleteSubscription. */
   public SimpleCallSettings<DeleteSubscriptionRequest, Empty> deleteSubscriptionSettings() {
     return deleteSubscriptionSettings;
   }
 
-  /**
-   * Returns the object with the settings used for calls to modifyAckDeadline.
-   */
+  /** Returns the object with the settings used for calls to modifyAckDeadline. */
   public SimpleCallSettings<ModifyAckDeadlineRequest, Empty> modifyAckDeadlineSettings() {
     return modifyAckDeadlineSettings;
   }
 
-  /**
-   * Returns the object with the settings used for calls to acknowledge.
-   */
+  /** Returns the object with the settings used for calls to acknowledge. */
   public SimpleCallSettings<AcknowledgeRequest, Empty> acknowledgeSettings() {
     return acknowledgeSettings;
   }
 
-  /**
-   * Returns the object with the settings used for calls to pull.
-   */
+  /** Returns the object with the settings used for calls to pull. */
   public SimpleCallSettings<PullRequest, PullResponse> pullSettings() {
     return pullSettings;
   }
 
-  /**
-   * Returns the object with the settings used for calls to modifyPushConfig.
-   */
+  /** Returns the object with the settings used for calls to modifyPushConfig. */
   public SimpleCallSettings<ModifyPushConfigRequest, Empty> modifyPushConfigSettings() {
     return modifyPushConfigSettings;
   }
 
-  /**
-   * Returns the object with the settings used for calls to setIamPolicy.
-   */
+  /** Returns the object with the settings used for calls to setIamPolicy. */
   public SimpleCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings() {
     return setIamPolicySettings;
   }
 
-  /**
-   * Returns the object with the settings used for calls to getIamPolicy.
-   */
+  /** Returns the object with the settings used for calls to getIamPolicy. */
   public SimpleCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings() {
     return getIamPolicySettings;
   }
 
-  /**
-   * Returns the object with the settings used for calls to testIamPermissions.
-   */
+  /** Returns the object with the settings used for calls to testIamPermissions. */
   public SimpleCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsSettings() {
     return testIamPermissionsSettings;
   }
 
-  /**
-   * Returns the default service address.
-   */
+  /** Returns the default service address. */
   public static String getDefaultServiceAddress() {
     return DEFAULT_SERVICE_ADDRESS;
   }
 
-  /**
-   * Returns the default service port.
-   */
+  /** Returns the default service port. */
   public static int getDefaultServicePort() {
     return DEFAULT_SERVICE_PORT;
   }
 
-  /**
-   * Returns the default service scopes.
-   */
+  /** Returns the default service scopes. */
   public static ImmutableList<String> getDefaultServiceScopes() {
     return DEFAULT_SERVICE_SCOPES;
   }
 
-  /**
-   * Returns a builder for this class with recommended defaults.
-   */
+  /** Returns a builder for this class with recommended defaults. */
   public static Builder defaultBuilder() {
     return Builder.createDefault();
   }
 
-  /**
-   * Returns a new builder for this class.
-   */
+  /** Returns a new builder for this class. */
   public static Builder newBuilder() {
     return new Builder();
   }
 
-  /**
-   * Returns a builder containing all the values of this settings class.
-   */
+  /** Returns a builder containing all the values of this settings class. */
   public Builder toBuilder() {
     return new Builder(this);
   }
@@ -309,9 +265,7 @@ public class SubscriberSettings extends ServiceApiSettings {
             }
           };
 
-  /**
-   * Builder for SubscriberSettings.
-   */
+  /** Builder for SubscriberSettings. */
   public static class Builder extends ServiceApiSettings.Builder {
     private final ImmutableList<ApiCallSettings.Builder> methodSettingsBuilders;
 
@@ -562,92 +516,69 @@ public class SubscriberSettings extends ServiceApiSettings {
     }
 
     /**
-     * Applies the given settings to all of the API methods in this service. Only
-     * values that are non-null will be applied, so this method is not capable
-     * of un-setting any values.
+     * Applies the given settings to all of the API methods in this service. Only values that are
+     * non-null will be applied, so this method is not capable of un-setting any values.
      */
     public Builder applyToAllApiMethods(ApiCallSettings.Builder apiCallSettings) throws Exception {
       super.applyToAllApiMethods(methodSettingsBuilders, apiCallSettings);
       return this;
     }
 
-    /**
-     * Returns the builder for the settings used for calls to createSubscription.
-     */
+    /** Returns the builder for the settings used for calls to createSubscription. */
     public SimpleCallSettings.Builder<Subscription, Subscription> createSubscriptionSettings() {
       return createSubscriptionSettings;
     }
 
-    /**
-     * Returns the builder for the settings used for calls to getSubscription.
-     */
+    /** Returns the builder for the settings used for calls to getSubscription. */
     public SimpleCallSettings.Builder<GetSubscriptionRequest, Subscription>
         getSubscriptionSettings() {
       return getSubscriptionSettings;
     }
 
-    /**
-     * Returns the builder for the settings used for calls to listSubscriptions.
-     */
+    /** Returns the builder for the settings used for calls to listSubscriptions. */
     public PageStreamingCallSettings.Builder<
             ListSubscriptionsRequest, ListSubscriptionsResponse, Subscription>
         listSubscriptionsSettings() {
       return listSubscriptionsSettings;
     }
 
-    /**
-     * Returns the builder for the settings used for calls to deleteSubscription.
-     */
+    /** Returns the builder for the settings used for calls to deleteSubscription. */
     public SimpleCallSettings.Builder<DeleteSubscriptionRequest, Empty>
         deleteSubscriptionSettings() {
       return deleteSubscriptionSettings;
     }
 
-    /**
-     * Returns the builder for the settings used for calls to modifyAckDeadline.
-     */
+    /** Returns the builder for the settings used for calls to modifyAckDeadline. */
     public SimpleCallSettings.Builder<ModifyAckDeadlineRequest, Empty> modifyAckDeadlineSettings() {
       return modifyAckDeadlineSettings;
     }
 
-    /**
-     * Returns the builder for the settings used for calls to acknowledge.
-     */
+    /** Returns the builder for the settings used for calls to acknowledge. */
     public SimpleCallSettings.Builder<AcknowledgeRequest, Empty> acknowledgeSettings() {
       return acknowledgeSettings;
     }
 
-    /**
-     * Returns the builder for the settings used for calls to pull.
-     */
+    /** Returns the builder for the settings used for calls to pull. */
     public SimpleCallSettings.Builder<PullRequest, PullResponse> pullSettings() {
       return pullSettings;
     }
 
-    /**
-     * Returns the builder for the settings used for calls to modifyPushConfig.
-     */
+    /** Returns the builder for the settings used for calls to modifyPushConfig. */
     public SimpleCallSettings.Builder<ModifyPushConfigRequest, Empty> modifyPushConfigSettings() {
       return modifyPushConfigSettings;
     }
 
-    /**
-     * Returns the builder for the settings used for calls to setIamPolicy.
-     */
+    /** Returns the builder for the settings used for calls to setIamPolicy. */
     public SimpleCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings() {
       return setIamPolicySettings;
     }
 
-    /**
-     * Returns the builder for the settings used for calls to getIamPolicy.
-     */
+    /** Returns the builder for the settings used for calls to getIamPolicy. */
     public SimpleCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings() {
       return getIamPolicySettings;
     }
 
-    /**
-     * Returns the builder for the settings used for calls to testIamPermissions.
-     */
+    /** Returns the builder for the settings used for calls to testIamPermissions. */
     public SimpleCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsSettings() {
       return testIamPermissionsSettings;
