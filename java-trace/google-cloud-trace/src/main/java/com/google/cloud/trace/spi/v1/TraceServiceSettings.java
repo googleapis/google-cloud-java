@@ -14,7 +14,6 @@
 package com.google.cloud.trace.spi.v1;
 
 import com.google.api.gax.core.ConnectionSettings;
-import com.google.api.gax.core.PagedListResponse;
 import com.google.api.gax.core.RetrySettings;
 import com.google.api.gax.grpc.ApiCallSettings;
 import com.google.api.gax.grpc.PageStreamingCallSettings;
@@ -48,15 +47,14 @@ import org.joda.time.Duration;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- * <li>The default service address (cloudtrace.googleapis.com) and default port (443)
- * are used.
- * <li>Credentials are acquired automatically through Application Default Credentials.
- * <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ *   <li>The default service address (cloudtrace.googleapis.com) and default port (443) are used.
+ *   <li>Credentials are acquired automatically through Application Default Credentials.
+ *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
- * <p>The builder of this class is recursive, so contained classes are themselves builders.
- * When build() is called, the tree of builders is called to create the complete settings
- * object. For example, to set the total timeout of patchTraces to 30 seconds:
+ * <p>The builder of this class is recursive, so contained classes are themselves builders. When
+ * build() is called, the tree of builders is called to create the complete settings object. For
+ * example, to set the total timeout of patchTraces to 30 seconds:
  *
  * <pre>
  * <code>
@@ -70,19 +68,13 @@ import org.joda.time.Duration;
  */
 @javax.annotation.Generated("by GAPIC")
 public class TraceServiceSettings extends ServiceApiSettings {
-  /**
-   * The default address of the service.
-   */
+  /** The default address of the service. */
   private static final String DEFAULT_SERVICE_ADDRESS = "cloudtrace.googleapis.com";
 
-  /**
-   * The default port of the service.
-   */
+  /** The default port of the service. */
   private static final int DEFAULT_SERVICE_PORT = 443;
 
-  /**
-   * The default scopes of the service.
-   */
+  /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
       ImmutableList.<String>builder()
           .add("https://www.googleapis.com/auth/cloud-platform")
@@ -90,9 +82,7 @@ public class TraceServiceSettings extends ServiceApiSettings {
           .add("https://www.googleapis.com/auth/trace.readonly")
           .build();
 
-  /**
-   * The default connection settings of the service.
-   */
+  /** The default connection settings of the service. */
   public static final ConnectionSettings DEFAULT_CONNECTION_SETTINGS =
       ConnectionSettings.newBuilder()
           .setServiceAddress(DEFAULT_SERVICE_ADDRESS)
@@ -105,66 +95,48 @@ public class TraceServiceSettings extends ServiceApiSettings {
   private final PageStreamingCallSettings<ListTracesRequest, ListTracesResponse, Trace>
       listTracesSettings;
 
-  /**
-   * Returns the object with the settings used for calls to patchTraces.
-   */
+  /** Returns the object with the settings used for calls to patchTraces. */
   public SimpleCallSettings<PatchTracesRequest, Empty> patchTracesSettings() {
     return patchTracesSettings;
   }
 
-  /**
-   * Returns the object with the settings used for calls to getTrace.
-   */
+  /** Returns the object with the settings used for calls to getTrace. */
   public SimpleCallSettings<GetTraceRequest, Trace> getTraceSettings() {
     return getTraceSettings;
   }
 
-  /**
-   * Returns the object with the settings used for calls to listTraces.
-   */
+  /** Returns the object with the settings used for calls to listTraces. */
   public PageStreamingCallSettings<ListTracesRequest, ListTracesResponse, Trace>
       listTracesSettings() {
     return listTracesSettings;
   }
 
-  /**
-   * Returns the default service address.
-   */
+  /** Returns the default service address. */
   public static String getDefaultServiceAddress() {
     return DEFAULT_SERVICE_ADDRESS;
   }
 
-  /**
-   * Returns the default service port.
-   */
+  /** Returns the default service port. */
   public static int getDefaultServicePort() {
     return DEFAULT_SERVICE_PORT;
   }
 
-  /**
-   * Returns the default service scopes.
-   */
+  /** Returns the default service scopes. */
   public static ImmutableList<String> getDefaultServiceScopes() {
     return DEFAULT_SERVICE_SCOPES;
   }
 
-  /**
-   * Returns a builder for this class with recommended defaults.
-   */
+  /** Returns a builder for this class with recommended defaults. */
   public static Builder defaultBuilder() {
     return Builder.createDefault();
   }
 
-  /**
-   * Returns a new builder for this class.
-   */
+  /** Returns a new builder for this class. */
   public static Builder newBuilder() {
     return new Builder();
   }
 
-  /**
-   * Returns a builder containing all the values of this settings class.
-   */
+  /** Returns a builder containing all the values of this settings class. */
   public Builder toBuilder() {
     return new Builder(this);
   }
@@ -219,9 +191,7 @@ public class TraceServiceSettings extends ServiceApiSettings {
             }
           };
 
-  /**
-   * Builder for TraceServiceSettings.
-   */
+  /** Builder for TraceServiceSettings. */
   public static class Builder extends ServiceApiSettings.Builder {
     private final ImmutableList<ApiCallSettings.Builder> methodSettingsBuilders;
 
@@ -358,32 +328,25 @@ public class TraceServiceSettings extends ServiceApiSettings {
     }
 
     /**
-     * Applies the given settings to all of the API methods in this service. Only
-     * values that are non-null will be applied, so this method is not capable
-     * of un-setting any values.
+     * Applies the given settings to all of the API methods in this service. Only values that are
+     * non-null will be applied, so this method is not capable of un-setting any values.
      */
     public Builder applyToAllApiMethods(ApiCallSettings.Builder apiCallSettings) throws Exception {
       super.applyToAllApiMethods(methodSettingsBuilders, apiCallSettings);
       return this;
     }
 
-    /**
-     * Returns the builder for the settings used for calls to patchTraces.
-     */
+    /** Returns the builder for the settings used for calls to patchTraces. */
     public SimpleCallSettings.Builder<PatchTracesRequest, Empty> patchTracesSettings() {
       return patchTracesSettings;
     }
 
-    /**
-     * Returns the builder for the settings used for calls to getTrace.
-     */
+    /** Returns the builder for the settings used for calls to getTrace. */
     public SimpleCallSettings.Builder<GetTraceRequest, Trace> getTraceSettings() {
       return getTraceSettings;
     }
 
-    /**
-     * Returns the builder for the settings used for calls to listTraces.
-     */
+    /** Returns the builder for the settings used for calls to listTraces. */
     public PageStreamingCallSettings.Builder<ListTracesRequest, ListTracesResponse, Trace>
         listTracesSettings() {
       return listTracesSettings;
