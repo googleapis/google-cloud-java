@@ -14,7 +14,6 @@
 
 package com.google.cloud.speech.spi.v1beta1;
 
-import com.google.api.gax.core.PagedListResponse;
 import com.google.api.gax.testing.MockGrpcService;
 import com.google.api.gax.testing.MockServiceHelper;
 import com.google.cloud.speech.v1beta1.AsyncRecognizeRequest;
@@ -22,7 +21,6 @@ import com.google.cloud.speech.v1beta1.RecognitionAudio;
 import com.google.cloud.speech.v1beta1.RecognitionConfig;
 import com.google.cloud.speech.v1beta1.SyncRecognizeRequest;
 import com.google.cloud.speech.v1beta1.SyncRecognizeResponse;
-import com.google.common.collect.Lists;
 import com.google.longrunning.Operation;
 import com.google.protobuf.GeneratedMessageV3;
 import java.io.IOException;
