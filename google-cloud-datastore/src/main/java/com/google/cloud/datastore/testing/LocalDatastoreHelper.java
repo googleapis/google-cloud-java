@@ -55,9 +55,11 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
+import java.util.Objects;
 import java.util.UUID;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
@@ -67,7 +69,7 @@ import java.util.zip.ZipInputStream;
  */
 public class LocalDatastoreHelper {
   private static final Logger log = Logger.getLogger(LocalDatastoreHelper.class.getName());
-  private static final String GCD_VERSION = "1.2.0";
+  private static final Version GCD_VERSION = Version.fromString("1.2.0");
   private static final double DEFAULT_CONSISTENCY = 0.9;
   private static final String GCD_BASENAME = "cloud-datastore-emulator-" + GCD_VERSION;
   private static final String GCD_FILENAME = GCD_BASENAME + ".zip";
@@ -120,8 +122,8 @@ public class LocalDatastoreHelper {
     Path installedGcdPath = gcloudPath.resolve("platform").resolve("cloud-datastore-emulator");
     if (Files.exists(installedGcdPath)) {
       try {
-        String installedVersion = installedGcdVersion();
-        if (installedVersion != null && installedVersion.startsWith(GCD_VERSION)) {
+        Version installedVersion = installedGcdVersion();
+        if (installedVersion != null && installedVersion.compareTo(GCD_VERSION) >= 0) {
           if (log.isLoggable(Level.FINE)) {
             log.fine("SDK datastore emulator found");
           }
@@ -131,14 +133,14 @@ public class LocalDatastoreHelper {
             log.fine("SDK datastore emulator found but version mismatch");
           }
         }
-      } catch (IOException | InterruptedException ignore) {
+      } catch (IOException | InterruptedException | IllegalArgumentException ignore) {
         // ignore
       }
     }
     return null;
   }
 
-  private static String installedGcdVersion() throws IOException, InterruptedException {
+  private static Version installedGcdVersion() throws IOException, InterruptedException {
     Process process =
         CommandWrapper.create().command("gcloud", "version").redirectErrorStream().start();
     process.waitFor();
@@ -148,7 +150,7 @@ public class LocalDatastoreHelper {
         if (line.startsWith(GCD_VERSION_PREFIX)) {
           String[] lineComponents = line.split(" ");
           if (lineComponents.length > 1) {
-            return lineComponents[1];
+            return Version.fromString(lineComponents[1]);
           }
         }
       }
@@ -169,6 +171,59 @@ public class LocalDatastoreHelper {
       }
     }
     return null;
+  }
+
+  private static class Version implements Comparable<Version> {
+
+    private static final Pattern VERSION_PATTERN = Pattern.compile("(\\d+).(\\d+).(\\d+)");
+
+    final int major;
+    final int minor;
+    final int patch;
+
+    Version(int major, int minor, int patch) {
+      this.major = major;
+      this.minor = minor;
+      this.patch = patch;
+    }
+
+    @Override
+    public int compareTo(Version version) {
+      int result = major - version.major;
+      if (result == 0) {
+        result = minor - version.minor;
+        if (result == 0) {
+          result = patch - version.patch;
+        }
+      }
+      return result;
+    }
+
+    @Override
+    public String toString() {
+      return String.format("%d.%d.%d", major, minor, patch);
+    }
+
+    @Override
+    public boolean equals(Object other) {
+      return this == other || other instanceof Version && compareTo((Version) other) == 0;
+    }
+
+    @Override
+    public int hashCode() {
+      return Objects.hash(major, minor, patch);
+    }
+
+    static Version fromString(String version) {
+      Matcher matcher = VERSION_PATTERN.matcher(version);
+      if (matcher.matches()) {
+        return new Version(
+            Integer.valueOf(matcher.group(1)),
+            Integer.valueOf(matcher.group(2)),
+            Integer.valueOf(matcher.group(3)));
+      }
+      throw new IllegalArgumentException("Invalid version format");
+    }
   }
 
   private static class ProcessStreamReader extends Thread {
