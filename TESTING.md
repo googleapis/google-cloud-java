@@ -257,7 +257,7 @@ Here is an example that uses the `RemoteStorageHelper` to create a bucket.
   ```java
   RemoteStorageHelper helper =
       RemoteStorageHelper.create(PROJECT_ID, new FileInputStream("/path/to/my/JSON/key.json"));
-  Storage storage = helper.options().service();
+  Storage storage = helper.getOptions().service();
   String bucket = RemoteStorageHelper.generateBucketName();
   storage.create(BucketInfo.of(bucket));
   ```
