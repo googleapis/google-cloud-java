@@ -483,35 +483,14 @@ public class Bucket extends BucketInfo {
     }
 
     @Override
-    @Deprecated
-    Builder generatedId(String generatedId) {
-      infoBuilder.setGeneratedId(generatedId);
-      return this;
-    }
-
-    @Override
     Builder setGeneratedId(String generatedId) {
       infoBuilder.setGeneratedId(generatedId);
       return this;
     }
 
     @Override
-    @Deprecated
-    Builder owner(Entity owner) {
-      infoBuilder.setOwner(owner);
-      return this;
-    }
-
-    @Override
     Builder setOwner(Entity owner) {
       infoBuilder.setOwner(owner);
-      return this;
-    }
-
-    @Override
-    @Deprecated
-    Builder selfLink(String selfLink) {
-      infoBuilder.setSelfLink(selfLink);
       return this;
     }
 
@@ -600,35 +579,14 @@ public class Bucket extends BucketInfo {
     }
 
     @Override
-    @Deprecated
-    Builder etag(String etag) {
-      infoBuilder.setEtag(etag);
-      return this;
-    }
-
-    @Override
     Builder setEtag(String etag) {
       infoBuilder.setEtag(etag);
       return this;
     }
 
     @Override
-    @Deprecated
-    Builder createTime(Long createTime) {
-      infoBuilder.setCreateTime(createTime);
-      return this;
-    }
-
-    @Override
     Builder setCreateTime(Long createTime) {
       infoBuilder.setCreateTime(createTime);
-      return this;
-    }
-
-    @Override
-    @Deprecated
-    Builder metageneration(Long metageneration) {
-      infoBuilder.setMetageneration(metageneration);
       return this;
     }
 

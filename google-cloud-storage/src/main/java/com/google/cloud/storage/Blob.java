@@ -199,7 +199,7 @@ public class Blob extends BlobInfo {
     private final BlobInfo.BuilderImpl infoBuilder;
 
     Builder(Blob blob) {
-      this.storage = blob.storage();
+      this.storage = blob.getStorage();
       this.infoBuilder = new BlobInfo.BuilderImpl(blob);
     }
 
@@ -213,13 +213,6 @@ public class Blob extends BlobInfo {
     @Override
     public Builder setBlobId(BlobId blobId) {
       infoBuilder.setBlobId(blobId);
-      return this;
-    }
-
-    @Override
-    @Deprecated
-    Builder generatedId(String generatedId) {
-      infoBuilder.setGeneratedId(generatedId);
       return this;
     }
 
@@ -282,13 +275,6 @@ public class Blob extends BlobInfo {
     }
 
     @Override
-    @Deprecated
-    Builder componentCount(Integer componentCount) {
-      infoBuilder.setComponentCount(componentCount);
-      return this;
-    }
-
-    @Override
     Builder setComponentCount(Integer componentCount) {
       infoBuilder.setComponentCount(componentCount);
       return this;
@@ -321,22 +307,8 @@ public class Blob extends BlobInfo {
     }
 
     @Override
-    @Deprecated
-    Builder owner(Entity owner) {
-      infoBuilder.setOwner(owner);
-      return this;
-    }
-
-    @Override
     Builder setOwner(Entity owner) {
       infoBuilder.setOwner(owner);
-      return this;
-    }
-
-    @Override
-    @Deprecated
-    Builder size(Long size) {
-      infoBuilder.setSize(size);
       return this;
     }
 
@@ -347,22 +319,8 @@ public class Blob extends BlobInfo {
     }
 
     @Override
-    @Deprecated
-    Builder etag(String etag) {
-      infoBuilder.setEtag(etag);
-      return this;
-    }
-
-    @Override
     Builder setEtag(String etag) {
       infoBuilder.setEtag(etag);
-      return this;
-    }
-
-    @Override
-    @Deprecated
-    Builder selfLink(String selfLink) {
-      infoBuilder.setSelfLink(selfLink);
       return this;
     }
 
@@ -399,13 +357,6 @@ public class Blob extends BlobInfo {
     }
 
     @Override
-    @Deprecated
-    Builder mediaLink(String mediaLink) {
-      infoBuilder.setMediaLink(mediaLink);
-      return this;
-    }
-
-    @Override
     Builder setMediaLink(String mediaLink) {
       infoBuilder.setMediaLink(mediaLink);
       return this;
@@ -425,22 +376,8 @@ public class Blob extends BlobInfo {
     }
 
     @Override
-    @Deprecated
-    Builder metageneration(Long metageneration) {
-      infoBuilder.setMetageneration(metageneration);
-      return this;
-    }
-
-    @Override
     Builder setMetageneration(Long metageneration) {
       infoBuilder.setMetageneration(metageneration);
-      return this;
-    }
-
-    @Override
-    @Deprecated
-    Builder deleteTime(Long deleteTime) {
-      infoBuilder.setDeleteTime(deleteTime);
       return this;
     }
 
@@ -451,22 +388,8 @@ public class Blob extends BlobInfo {
     }
 
     @Override
-    @Deprecated
-    Builder updateTime(Long updateTime) {
-      infoBuilder.setUpdateTime(updateTime);
-      return this;
-    }
-
-    @Override
     Builder setUpdateTime(Long updateTime) {
       infoBuilder.setUpdateTime(updateTime);
-      return this;
-    }
-
-    @Override
-    @Deprecated
-    Builder createTime(Long createTime) {
-      infoBuilder.setCreateTime(createTime);
       return this;
     }
 
@@ -477,22 +400,8 @@ public class Blob extends BlobInfo {
     }
 
     @Override
-    @Deprecated
-    Builder isDirectory(boolean isDirectory) {
-      infoBuilder.setIsDirectory(isDirectory);
-      return this;
-    }
-
-    @Override
     Builder setIsDirectory(boolean isDirectory) {
       infoBuilder.setIsDirectory(isDirectory);
-      return this;
-    }
-
-    @Override
-    @Deprecated
-    Builder customerEncryption(CustomerEncryption customerEncryption) {
-      infoBuilder.setCustomerEncryption(customerEncryption);
       return this;
     }
 

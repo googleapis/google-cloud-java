@@ -523,26 +523,26 @@ public class BlobTest {
     replay(storage);
     Blob.Builder builder = new Blob.Builder(new Blob(storage, new BlobInfo.BuilderImpl(BLOB_INFO)));
     Blob blob = builder.acl(ACLS)
-        .componentCount(COMPONENT_COUNT)
+        .setComponentCount(COMPONENT_COUNT)
         .contentType(CONTENT_TYPE)
         .cacheControl(CACHE_CONTROL)
         .contentDisposition(CONTENT_DISPOSITION)
         .contentEncoding(CONTENT_ENCODING)
         .contentLanguage(CONTENT_LANGUAGE)
         .crc32c(CRC32)
-        .createTime(CREATE_TIME)
-        .customerEncryption(CUSTOMER_ENCRYPTION)
-        .deleteTime(DELETE_TIME)
-        .etag(ETAG)
-        .generatedId(GENERATED_ID)
+        .setCreateTime(CREATE_TIME)
+        .setCustomerEncryption(CUSTOMER_ENCRYPTION)
+        .setDeleteTime(DELETE_TIME)
+        .setEtag(ETAG)
+        .setGeneratedId(GENERATED_ID)
         .md5(MD5)
-        .mediaLink(MEDIA_LINK)
+        .setMediaLink(MEDIA_LINK)
         .metadata(METADATA)
-        .metageneration(META_GENERATION)
-        .owner(OWNER)
-        .selfLink(SELF_LINK)
-        .size(SIZE)
-        .updateTime(UPDATE_TIME)
+        .setMetageneration(META_GENERATION)
+        .setOwner(OWNER)
+        .setSelfLink(SELF_LINK)
+        .setSize(SIZE)
+        .setUpdateTime(UPDATE_TIME)
         .build();
     assertEquals("b", blob.bucket());
     assertEquals("n", blob.name());
@@ -571,8 +571,8 @@ public class BlobTest {
     assertFalse(blob.isDirectory());
     builder = new Blob.Builder(new Blob(storage, new BlobInfo.BuilderImpl(DIRECTORY_INFO)));
     blob = builder.blobId(BlobId.of("b", "n/"))
-        .isDirectory(true)
-        .size(0L)
+        .setIsDirectory(true)
+        .setSize(0L)
         .build();
     assertEquals("b", blob.bucket());
     assertEquals("n/", blob.name());

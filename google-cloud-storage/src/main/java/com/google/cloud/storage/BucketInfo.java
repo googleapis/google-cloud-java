@@ -352,18 +352,9 @@ public class BucketInfo implements Serializable {
      */
     public abstract Builder setName(String name);
 
-    @Deprecated
-    abstract Builder generatedId(String generatedId);
-
     abstract Builder setGeneratedId(String generatedId);
 
-    @Deprecated
-    abstract Builder owner(Acl.Entity owner);
-
     abstract Builder setOwner(Acl.Entity owner);
-
-    @Deprecated
-    abstract Builder selfLink(String selfLink);
 
     abstract Builder setSelfLink(String selfLink);
 
@@ -449,18 +440,9 @@ public class BucketInfo implements Serializable {
      */
     public abstract Builder setLocation(String location);
 
-    @Deprecated
-    abstract Builder etag(String etag);
-
     abstract Builder setEtag(String etag);
 
-    @Deprecated
-    abstract Builder createTime(Long createTime);
-
     abstract Builder setCreateTime(Long createTime);
-
-    @Deprecated
-    abstract Builder metageneration(Long metageneration);
 
     abstract Builder setMetageneration(Long metageneration);
 
@@ -583,35 +565,14 @@ public class BucketInfo implements Serializable {
     }
 
     @Override
-    @Deprecated
-    Builder generatedId(String generatedId) {
-      this.generatedId = generatedId;
-      return this;
-    }
-
-    @Override
     Builder setGeneratedId(String generatedId) {
       this.generatedId = generatedId;
       return this;
     }
 
     @Override
-    @Deprecated
-    Builder owner(Acl.Entity owner) {
-      this.owner = owner;
-      return this;
-    }
-
-    @Override
     Builder setOwner(Acl.Entity owner) {
       this.owner = owner;
-      return this;
-    }
-
-    @Override
-    @Deprecated
-    Builder selfLink(String selfLink) {
-      this.selfLink = selfLink;
       return this;
     }
 
@@ -700,35 +661,14 @@ public class BucketInfo implements Serializable {
     }
 
     @Override
-    @Deprecated
-    Builder etag(String etag) {
-      this.etag = etag;
-      return this;
-    }
-
-    @Override
     Builder setEtag(String etag) {
       this.etag = etag;
       return this;
     }
 
     @Override
-    @Deprecated
-    Builder createTime(Long createTime) {
-      this.createTime = createTime;
-      return this;
-    }
-
-    @Override
     Builder setCreateTime(Long createTime) {
       this.createTime = createTime;
-      return this;
-    }
-
-    @Override
-    @Deprecated
-    Builder metageneration(Long metageneration) {
-      this.metageneration = metageneration;
       return this;
     }
 

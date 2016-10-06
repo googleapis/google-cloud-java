@@ -188,9 +188,6 @@ public class BlobInfo implements Serializable {
      */
     public abstract Builder setBlobId(BlobId blobId);
 
-    @Deprecated
-    abstract Builder generatedId(String generatedId);
-
     abstract Builder setGeneratedId(String generatedId);
 
     /**
@@ -253,9 +250,6 @@ public class BlobInfo implements Serializable {
      */
     public abstract Builder setContentEncoding(String contentEncoding);
 
-    @Deprecated
-    abstract Builder componentCount(Integer componentCount);
-
     abstract Builder setComponentCount(Integer componentCount);
 
     /**
@@ -292,23 +286,11 @@ public class BlobInfo implements Serializable {
      */
     public abstract Builder setAcl(List<Acl> acl);
 
-    @Deprecated
-    abstract Builder owner(Acl.Entity owner);
-
     abstract Builder setOwner(Acl.Entity owner);
-
-    @Deprecated
-    abstract Builder size(Long size);
 
     abstract Builder setSize(Long size);
 
-    @Deprecated
-    abstract Builder etag(String etag);
-
     abstract Builder setEtag(String etag);
-
-    @Deprecated
-    abstract Builder selfLink(String selfLink);
 
     abstract Builder setSelfLink(String selfLink);
 
@@ -350,9 +332,6 @@ public class BlobInfo implements Serializable {
      */
     public abstract Builder setCrc32c(String crc32c);
 
-    @Deprecated
-    abstract Builder mediaLink(String mediaLink);
-
     abstract Builder setMediaLink(String mediaLink);
 
     /**
@@ -368,31 +347,13 @@ public class BlobInfo implements Serializable {
 
     abstract Builder setMetageneration(Long metageneration);
 
-    @Deprecated
-    abstract Builder metageneration(Long metageneration);
-
     abstract Builder setDeleteTime(Long deleteTime);
-
-    @Deprecated
-    abstract Builder deleteTime(Long deleteTime);
 
     abstract Builder setUpdateTime(Long updateTime);
 
-    @Deprecated
-    abstract Builder updateTime(Long updateTime);
-
     abstract Builder setCreateTime(Long createTime);
 
-    @Deprecated
-    abstract Builder createTime(Long createTime);
-
-    @Deprecated
-    abstract Builder isDirectory(boolean isDirectory);
-
     abstract Builder setIsDirectory(boolean isDirectory);
-
-    @Deprecated
-    abstract Builder customerEncryption(CustomerEncryption customerEncryption);
 
     abstract Builder setCustomerEncryption(CustomerEncryption customerEncryption);
 
@@ -472,13 +433,6 @@ public class BlobInfo implements Serializable {
     }
 
     @Override
-    @Deprecated
-    Builder generatedId(String generatedId) {
-      this.generatedId = generatedId;
-      return this;
-    }
-
-    @Override
     Builder setGeneratedId(String generatedId) {
       this.generatedId = generatedId;
       return this;
@@ -537,13 +491,6 @@ public class BlobInfo implements Serializable {
     }
 
     @Override
-    @Deprecated
-    Builder componentCount(Integer componentCount) {
-      this.componentCount = componentCount;
-      return this;
-    }
-
-    @Override
     Builder setComponentCount(Integer componentCount) {
       this.componentCount = componentCount;
       return this;
@@ -576,22 +523,8 @@ public class BlobInfo implements Serializable {
     }
 
     @Override
-    @Deprecated
-    Builder owner(Acl.Entity owner) {
-      this.owner = owner;
-      return this;
-    }
-
-    @Override
     Builder setOwner(Acl.Entity owner) {
       this.owner = owner;
-      return this;
-    }
-
-    @Override
-    @Deprecated
-    Builder size(Long size) {
-      this.size = size;
       return this;
     }
 
@@ -602,22 +535,8 @@ public class BlobInfo implements Serializable {
     }
 
     @Override
-    @Deprecated
-    Builder etag(String etag) {
-      this.etag = etag;
-      return this;
-    }
-
-    @Override
     Builder setEtag(String etag) {
       this.etag = etag;
-      return this;
-    }
-
-    @Override
-    @Deprecated
-    Builder selfLink(String selfLink) {
-      this.selfLink = selfLink;
       return this;
     }
 
@@ -654,13 +573,6 @@ public class BlobInfo implements Serializable {
     }
 
     @Override
-    @Deprecated
-    Builder mediaLink(String mediaLink) {
-      this.mediaLink = mediaLink;
-      return this;
-    }
-
-    @Override
     Builder setMediaLink(String mediaLink) {
       this.mediaLink = mediaLink;
       return this;
@@ -682,22 +594,8 @@ public class BlobInfo implements Serializable {
     }
 
     @Override
-    @Deprecated
-    Builder metageneration(Long metageneration) {
-      this.metageneration = metageneration;
-      return this;
-    }
-
-    @Override
     Builder setMetageneration(Long metageneration) {
       this.metageneration = metageneration;
-      return this;
-    }
-
-    @Override
-    @Deprecated
-    Builder deleteTime(Long deleteTime) {
-      this.deleteTime = deleteTime;
       return this;
     }
 
@@ -708,22 +606,8 @@ public class BlobInfo implements Serializable {
     }
 
     @Override
-    @Deprecated
-    Builder updateTime(Long updateTime) {
-      this.updateTime = updateTime;
-      return this;
-    }
-
-    @Override
     Builder setUpdateTime(Long updateTime) {
       this.updateTime = updateTime;
-      return this;
-    }
-
-    @Override
-    @Deprecated
-    Builder createTime(Long createTime) {
-      this.createTime = createTime;
       return this;
     }
 
@@ -734,22 +618,8 @@ public class BlobInfo implements Serializable {
     }
 
     @Override
-    @Deprecated
-    Builder isDirectory(boolean isDirectory) {
-      this.isDirectory = isDirectory;
-      return this;
-    }
-
-    @Override
     Builder setIsDirectory(boolean isDirectory) {
       this.isDirectory = isDirectory;
-      return this;
-    }
-
-    @Override
-    @Deprecated
-    Builder customerEncryption(CustomerEncryption customerEncryption) {
-      this.customerEncryption = customerEncryption;
       return this;
     }
 

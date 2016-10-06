@@ -78,13 +78,13 @@ public class BucketInfoTest {
       .build();
   private static final BucketInfo DEPRECATED_BUCKET_INFO = BucketInfo.builder("b")
       .acl(ACL)
-      .etag(ETAG)
-      .generatedId(GENERATED_ID)
-      .metageneration(META_GENERATION)
-      .owner(OWNER)
-      .selfLink(SELF_LINK)
+      .setEtag(ETAG)
+      .setGeneratedId(GENERATED_ID)
+      .setMetageneration(META_GENERATION)
+      .setOwner(OWNER)
+      .setSelfLink(SELF_LINK)
       .cors(CORS)
-      .createTime(CREATE_TIME)
+      .setCreateTime(CREATE_TIME)
       .defaultAcl(DEFAULT_ACL)
       .deleteRules(DELETE_RULES)
       .indexPage(INDEX_PAGE)
@@ -107,10 +107,10 @@ public class BucketInfoTest {
   @Test
   public void testToBuilderDeprecated() {
     compareBuckets(BUCKET_INFO, BUCKET_INFO.toBuilder().build());
-    BucketInfo bucketInfo = BUCKET_INFO.toBuilder().name("B").generatedId("id").build();
+    BucketInfo bucketInfo = BUCKET_INFO.toBuilder().name("B").setGeneratedId("id").build();
     assertEquals("B", bucketInfo.name());
     assertEquals("id", bucketInfo.generatedId());
-    bucketInfo = bucketInfo.toBuilder().name("b").generatedId(GENERATED_ID).build();
+    bucketInfo = bucketInfo.toBuilder().name("b").setGeneratedId(GENERATED_ID).build();
     compareBuckets(BUCKET_INFO, bucketInfo);
   }
 
