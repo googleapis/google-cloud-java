@@ -187,7 +187,7 @@ public class Job extends JobInfo {
    * Job completedJob = job.waitFor();
    * if (completedJob == null) {
    *   // job no longer exists
-   * } else if (completedJob.status().error() != null) {
+   * } else if (completedJob.getStatus().getError() != null) {
    *   // job failed, handle error
    * } else {
    *   // job completed successfully
@@ -202,7 +202,7 @@ public class Job extends JobInfo {
    *         WaitForOption.timeout(60, TimeUnit.SECONDS));
    * if (completedJob == null) {
    *   // job no longer exists
-   * } else if (completedJob.status().error() != null) {
+   * } else if (completedJob.getStatus().getError() != null) {
    *   // job failed, handle error
    * } else {
    *   // job completed successfully
@@ -237,7 +237,7 @@ public class Job extends JobInfo {
    *
    * <p>Example of reloading all fields until job status is DONE.
    * <pre> {@code
-   * while (job.status().state() != JobStatus.State.DONE) {
+   * while (job.getStatus().getState() != JobStatus.State.DONE) {
    *   Thread.sleep(1000L);
    *   job = job.reload();
    * }
@@ -245,7 +245,7 @@ public class Job extends JobInfo {
    *
    * <p>Example of reloading status field until job status is DONE.
    * <pre> {@code
-   * while (job.status().state() != JobStatus.State.DONE) {
+   * while (job.getStatus().getState() != JobStatus.State.DONE) {
    *   Thread.sleep(1000L);
    *   job = job.reload(BigQuery.JobOption.fields(BigQuery.JobField.STATUS));
    * }

@@ -232,7 +232,7 @@ public class Dataset extends DatasetInfo {
    * <pre> {@code
    * String friendlyName = "my_friendly_name";
    * Builder builder = dataset.toBuilder();
-   * builder.friendlyName(friendlyName);
+   * builder.setFriendlyName(friendlyName);
    * Dataset updatedDataset = builder.build().update();
    * }</pre>
    *
@@ -309,9 +309,9 @@ public class Dataset extends DatasetInfo {
    * String tableName = “my_table”;
    * String fieldName = “my_field”;
    * Schema schema = Schema.of(Field.of(fieldName, Type.string()));
-   * StandardTableDefinition definition = StandardTableDefinition.builder()
-   *     .schema(schema)
-   *     .timePartitioning(TimePartitioning.of(TimePartitioning.Type.DAY))
+   * StandardTableDefinition definition = StandardTableDefinition.newBuilder()
+   *     .setSchema(schema)
+   *     .setTimePartitioning(TimePartitioning.of(TimePartitioning.Type.DAY))
    *     .build();
    * Table table = dataset.create(tableName, definition);
    * }</pre>

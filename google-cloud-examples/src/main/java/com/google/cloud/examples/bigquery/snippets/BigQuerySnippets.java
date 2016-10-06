@@ -85,7 +85,7 @@ public class BigQuerySnippets {
   public Dataset createDataset(String datasetName) {
     // [START createDataset]
     Dataset dataset = null;
-    DatasetInfo datasetInfo = DatasetInfo.builder(datasetName).build();
+    DatasetInfo datasetInfo = DatasetInfo.newBuilder(datasetName).build();
     try {
       // the dataset was created
       dataset = bigquery.create(datasetInfo);
@@ -105,7 +105,7 @@ public class BigQuerySnippets {
   public Dataset updateDataset(String datasetName, String newFriendlyName) {
     // [START updateDataset]
     Dataset oldDataset = bigquery.getDataset(datasetName);
-    DatasetInfo datasetInfo = oldDataset.toBuilder().friendlyName(newFriendlyName).build();
+    DatasetInfo datasetInfo = oldDataset.toBuilder().setFriendlyName(newFriendlyName).build();
     Dataset newDataset = bigquery.update(datasetInfo);
     // [END updateDataset]
     return newDataset;
@@ -121,7 +121,7 @@ public class BigQuerySnippets {
   public Table updateTable(String datasetName, String tableName, String newFriendlyName) {
     // [START updateTable]
     Table oldTable = bigquery.getTable(datasetName, tableName);
-    TableInfo tableInfo = oldTable.toBuilder().friendlyName(newFriendlyName).build();
+    TableInfo tableInfo = oldTable.toBuilder().setFriendlyName(newFriendlyName).build();
     Table newTable = bigquery.update(tableInfo);
     // [END updateTable]
     return newTable;
@@ -337,7 +337,9 @@ public class BigQuerySnippets {
     // [START writeToTable]
     TableId tableId = TableId.of(datasetName, tableName);
     WriteChannelConfiguration writeChannelConfiguration =
-        WriteChannelConfiguration.builder(tableId).formatOptions(FormatOptions.csv()).build();
+        WriteChannelConfiguration.newBuilder(tableId)
+            .setFormatOptions(FormatOptions.csv())
+            .build();
     BaseWriteChannel<BigQueryOptions, WriteChannelConfiguration> writer =
         bigquery.writer(writeChannelConfiguration);
     // Write data to writer
@@ -365,13 +367,13 @@ public class BigQuerySnippets {
     rowContent.put("booleanField", true);
     // Bytes are passed in base64
     rowContent.put("bytesField", "DQ4KDQ==");
-    InsertAllResponse response = bigquery.insertAll(InsertAllRequest.builder(tableId)
+    InsertAllResponse response = bigquery.insertAll(InsertAllRequest.newBuilder(tableId)
         .addRow("rowId", rowContent)
         // More rows can be added in the same RPC by invoking .addRow() on the builder
         .build());
     if (response.hasErrors()) {
       // If any of the insertions failed, this lets you inspect the errors
-      for (Entry<Long, List<BigQueryError>> entry : response.insertErrors().entrySet()) {
+      for (Entry<Long, List<BigQueryError>> entry : response.getInsertErrors().entrySet()) {
         // inspect row error
       }
     }
@@ -394,7 +396,7 @@ public class BigQuerySnippets {
     // Table schema definition
     Schema schema = Schema.of(field);
     TableDefinition tableDefinition = StandardTableDefinition.of(schema);
-    TableInfo tableInfo = TableInfo.builder(tableId, tableDefinition).build();
+    TableInfo tableInfo = TableInfo.newBuilder(tableId, tableDefinition).build();
     Table table = bigquery.create(tableInfo);
     // [END createTable]
     return table;
@@ -553,12 +555,12 @@ public class BigQuerySnippets {
     // Wait for things to finish
     while (!response.jobCompleted()) {
       Thread.sleep(1000);
-      response = bigquery.getQueryResults(response.jobId());
+      response = bigquery.getQueryResults(response.getJobId());
     }
     if (response.hasErrors()) {
       // handle errors
     }
-    QueryResult result = response.result();
+    QueryResult result = response.getResult();
     Iterator<List<FieldValue>> rowIterator = result.iterateAll();
     while (rowIterator.hasNext()) {
       List<FieldValue> row = rowIterator.next();
@@ -580,12 +582,12 @@ public class BigQuerySnippets {
     // Wait for things to finish
     while (!response.jobCompleted()) {
       Thread.sleep(1000);
-      response = bigquery.getQueryResults(response.jobId());
+      response = bigquery.getQueryResults(response.getJobId());
     }
     if (response.hasErrors()) {
       // handle errors
     }
-    QueryResult result = response.result();
+    QueryResult result = response.getResult();
     Iterator<List<FieldValue>> rowIterator = result.iterateAll();
     while (rowIterator.hasNext()) {
       List<FieldValue> row = rowIterator.next();
