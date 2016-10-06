@@ -175,7 +175,7 @@ public class LocalDatastoreHelper {
 
   private static class Version implements Comparable<Version> {
 
-    private static final Pattern VERSION_PATTERN = Pattern.compile("(\\d+).(\\d+).(\\d+)");
+    private static final Pattern VERSION_PATTERN = Pattern.compile("^(\\d+)\\.(\\d+)\\.(\\d+)$");
 
     final int major;
     final int minor;
