@@ -22,7 +22,6 @@ import com.google.cloud.datastore.Datastore;
 import com.google.cloud.datastore.DatastoreOptions;
 import com.google.cloud.datastore.Entity;
 import com.google.cloud.datastore.Key;
-import com.google.cloud.datastore.KeyFactory;
 
 public class QuickstartSample {
   public static void main(String... args) throws Exception {
