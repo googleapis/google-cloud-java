@@ -194,11 +194,13 @@ public class ITBigQueryTest {
     RemoteBigQueryHelper bigqueryHelper = RemoteBigQueryHelper.create();
     RemoteStorageHelper storageHelper = RemoteStorageHelper.create();
     bigquery = bigqueryHelper.options().service();
-    storage = storageHelper.options().service();
+    storage = storageHelper.getOptions().service();
     storage.create(BucketInfo.of(BUCKET));
-    storage.create(BlobInfo.builder(BUCKET, LOAD_FILE).contentType("text/plain").build(),
+    storage.create(BlobInfo.newBuilder(BUCKET, LOAD_FILE).setContentType("text/plain").build(),
         CSV_CONTENT.getBytes(StandardCharsets.UTF_8));
-    storage.create(BlobInfo.builder(BUCKET, JSON_LOAD_FILE).contentType("application/json").build(),
+    storage.create(BlobInfo.newBuilder(BUCKET, JSON_LOAD_FILE)
+            .setContentType("application/json")
+            .build(),
         JSON_CONTENT.getBytes(StandardCharsets.UTF_8));
     DatasetInfo info = DatasetInfo.builder(DATASET).description(DESCRIPTION).build();
     bigquery.create(info);
