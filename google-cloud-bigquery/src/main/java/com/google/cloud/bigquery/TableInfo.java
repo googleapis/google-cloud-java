@@ -70,43 +70,76 @@ public class TableInfo implements Serializable {
    */
   public abstract static class Builder {
 
-    abstract Builder creationTime(Long creationTime);
+    abstract Builder setCreationTime(Long creationTime);
 
     /**
      * Sets a user-friendly description for the table.
      */
+    @Deprecated
     public abstract Builder description(String description);
 
-    abstract Builder etag(String etag);
+    /**
+     * Sets a user-friendly description for the table.
+     */
+    public abstract Builder setDescription(String description);
+
+    abstract Builder setEtag(String etag);
 
     /**
      * Sets the time when this table expires, in milliseconds since the epoch. If not present, the
      * table will persist indefinitely. Expired tables will be deleted and their storage reclaimed.
      */
+    @Deprecated
     public abstract Builder expirationTime(Long expirationTime);
+
+    /**
+     * Sets the time when this table expires, in milliseconds since the epoch. If not present, the
+     * table will persist indefinitely. Expired tables will be deleted and their storage reclaimed.
+     */
+    public abstract Builder setExpirationTime(Long expirationTime);
 
     /**
      * Sets a user-friendly name for the table.
      */
+    @Deprecated
     public abstract Builder friendlyName(String friendlyName);
 
-    abstract Builder generatedId(String generatedId);
+    /**
+     * Sets a user-friendly name for the table.
+     */
+    public abstract Builder setFriendlyName(String friendlyName);
 
-    abstract Builder lastModifiedTime(Long lastModifiedTime);
+    abstract Builder setGeneratedId(String generatedId);
 
-    abstract Builder selfLink(String selfLink);
+    abstract Builder setLastModifiedTime(Long lastModifiedTime);
+
+    abstract Builder setSelfLink(String selfLink);
 
     /**
      * Sets the table identity.
      */
+    @Deprecated
     public abstract Builder tableId(TableId tableId);
+
+    /**
+     * Sets the table identity.
+     */
+    public abstract Builder setTableId(TableId tableId);
 
     /**
      * Sets the table definition. Use {@link StandardTableDefinition} to create simple BigQuery
      * table. Use {@link ViewDefinition} to create a BigQuery view. Use
      * {@link ExternalTableDefinition} to create a BigQuery a table backed by external data.
      */
+    @Deprecated
     public abstract Builder definition(TableDefinition definition);
+
+    /**
+     * Sets the table definition. Use {@link StandardTableDefinition} to create simple BigQuery
+     * table. Use {@link ViewDefinition} to create a BigQuery view. Use
+     * {@link ExternalTableDefinition} to create a BigQuery a table backed by external data.
+     */
+    public abstract Builder setDefinition(TableDefinition definition);
 
     /**
      * Creates a {@code TableInfo} object.
@@ -145,7 +178,7 @@ public class TableInfo implements Serializable {
     BuilderImpl(Table tablePb) {
       this.tableId = TableId.fromPb(tablePb.getTableReference());
       if (tablePb.getLastModifiedTime() != null) {
-        this.lastModifiedTime(tablePb.getLastModifiedTime().longValue());
+        this.setLastModifiedTime(tablePb.getLastModifiedTime().longValue());
       }
       this.description = tablePb.getDescription();
       this.expirationTime = tablePb.getExpirationTime();
@@ -158,61 +191,96 @@ public class TableInfo implements Serializable {
     }
 
     @Override
-    Builder creationTime(Long creationTime) {
+    Builder setCreationTime(Long creationTime) {
       this.creationTime = creationTime;
       return this;
     }
 
     @Override
+    @Deprecated
     public Builder description(String description) {
       this.description = firstNonNull(description, Data.<String>nullOf(String.class));
       return this;
     }
 
     @Override
-    Builder etag(String etag) {
+    public Builder setDescription(String description) {
+      this.description = firstNonNull(description, Data.<String>nullOf(String.class));
+      return this;
+    }
+
+    @Override
+    Builder setEtag(String etag) {
       this.etag = etag;
       return this;
     }
 
     @Override
+    @Deprecated
     public Builder expirationTime(Long expirationTime) {
       this.expirationTime = firstNonNull(expirationTime, Data.<Long>nullOf(Long.class));
       return this;
     }
 
     @Override
+    public Builder setExpirationTime(Long expirationTime) {
+      this.expirationTime = firstNonNull(expirationTime, Data.<Long>nullOf(Long.class));
+      return this;
+    }
+
+    @Override
+    @Deprecated
     public Builder friendlyName(String friendlyName) {
       this.friendlyName = firstNonNull(friendlyName, Data.<String>nullOf(String.class));
       return this;
     }
 
     @Override
-    Builder generatedId(String generatedId) {
+    public Builder setFriendlyName(String friendlyName) {
+      this.friendlyName = firstNonNull(friendlyName, Data.<String>nullOf(String.class));
+      return this;
+    }
+
+    @Override
+    Builder setGeneratedId(String generatedId) {
       this.generatedId = generatedId;
       return this;
     }
 
     @Override
-    Builder lastModifiedTime(Long lastModifiedTime) {
+    Builder setLastModifiedTime(Long lastModifiedTime) {
       this.lastModifiedTime = lastModifiedTime;
       return this;
     }
 
     @Override
-    Builder selfLink(String selfLink) {
+    Builder setSelfLink(String selfLink) {
       this.selfLink = selfLink;
       return this;
     }
 
     @Override
+    @Deprecated
     public Builder tableId(TableId tableId) {
       this.tableId = checkNotNull(tableId);
       return this;
     }
 
     @Override
+    public Builder setTableId(TableId tableId) {
+      this.tableId = checkNotNull(tableId);
+      return this;
+    }
+
+    @Override
+    @Deprecated
     public Builder definition(TableDefinition definition) {
+      this.definition = checkNotNull(definition);
+      return this;
+    }
+
+    @Override
+    public Builder setDefinition(TableDefinition definition) {
       this.definition = checkNotNull(definition);
       return this;
     }
@@ -239,14 +307,30 @@ public class TableInfo implements Serializable {
   /**
    * Returns the hash of the table resource.
    */
+  @Deprecated
   public String etag() {
+    return etag;
+  }
+
+  /**
+   * Returns the hash of the table resource.
+   */
+  public String getEtag() {
     return etag;
   }
 
   /**
    * Returns the service-generated id for the table.
    */
+  @Deprecated
   public String generatedId() {
+    return generatedId;
+  }
+
+  /**
+   * Returns the service-generated id for the table.
+   */
+  public String getGeneratedId() {
     return generatedId;
   }
 
@@ -254,35 +338,76 @@ public class TableInfo implements Serializable {
    * Returns an URL that can be used to access the resource again. The returned URL can be used for
    * get or update requests.
    */
+  @Deprecated
   public String selfLink() {
+    return selfLink;
+  }
+
+  /**
+   * Returns an URL that can be used to access the resource again. The returned URL can be used for
+   * get or update requests.
+   */
+  public String getSelfLink() {
     return selfLink;
   }
 
   /**
    * Returns the table identity.
    */
+  @Deprecated
   public TableId tableId() {
+    return tableId;
+  }
+
+  /**
+   * Returns the table identity.
+   */
+  public TableId getTableId() {
     return tableId;
   }
 
   /**
    * Returns a user-friendly name for the table.
    */
+  @Deprecated
   public String friendlyName() {
+    return Data.isNull(friendlyName) ? null : friendlyName;
+  }
+
+  /**
+   * Returns a user-friendly name for the table.
+   */
+  public String getFriendlyName() {
     return Data.isNull(friendlyName) ? null : friendlyName;
   }
 
   /**
    * Returns a user-friendly description for the table.
    */
+  @Deprecated
   public String description() {
+    return Data.isNull(description) ? null : description;
+  }
+
+  /**
+   * Returns a user-friendly description for the table.
+   */
+  public String getDescription() {
     return Data.isNull(description) ? null : description;
   }
 
   /**
    * Returns the time when this table was created, in milliseconds since the epoch.
    */
+  @Deprecated
   public Long creationTime() {
+    return creationTime;
+  }
+
+  /**
+   * Returns the time when this table was created, in milliseconds since the epoch.
+   */
+  public Long getCreationTime() {
     return creationTime;
   }
 
@@ -290,14 +415,31 @@ public class TableInfo implements Serializable {
    * Returns the time when this table expires, in milliseconds since the epoch. If not present, the
    * table will persist indefinitely. Expired tables will be deleted and their storage reclaimed.
    */
+  @Deprecated
   public Long expirationTime() {
+    return Data.isNull(expirationTime) ? null : expirationTime;
+  }
+
+  /**
+   * Returns the time when this table expires, in milliseconds since the epoch. If not present, the
+   * table will persist indefinitely. Expired tables will be deleted and their storage reclaimed.
+   */
+  public Long getExpirationTime() {
     return Data.isNull(expirationTime) ? null : expirationTime;
   }
 
   /**
    * Returns the time when this table was last modified, in milliseconds since the epoch.
    */
+  @Deprecated
   public Long lastModifiedTime() {
+    return lastModifiedTime;
+  }
+
+  /**
+   * Returns the time when this table was last modified, in milliseconds since the epoch.
+   */
+  public Long getLastModifiedTime() {
     return lastModifiedTime;
   }
 
@@ -305,7 +447,16 @@ public class TableInfo implements Serializable {
    * Returns the table definition.
    */
   @SuppressWarnings("unchecked")
+  @Deprecated
   public <T extends TableDefinition> T definition() {
+    return (T) definition;
+  }
+
+  /**
+   * Returns the table definition.
+   */
+  @SuppressWarnings("unchecked")
+  public <T extends TableDefinition> T getDefinition() {
     return (T) definition;
   }
 
@@ -351,8 +502,19 @@ public class TableInfo implements Serializable {
    * create a BigQuery view. Use {@link ExternalTableDefinition} to create a BigQuery a table backed
    * by external data.
    */
+  @Deprecated
   public static Builder builder(TableId tableId, TableDefinition definition) {
-    return new BuilderImpl().tableId(tableId).definition(definition);
+    return new BuilderImpl().setTableId(tableId).setDefinition(definition);
+  }
+
+  /**
+   * Returns a builder for a {@code TableInfo} object given table identity and definition. Use
+   * {@link StandardTableDefinition} to create simple BigQuery table. Use {@link ViewDefinition} to
+   * create a BigQuery view. Use {@link ExternalTableDefinition} to create a BigQuery a table backed
+   * by external data.
+   */
+  public static Builder newBuilder(TableId tableId, TableDefinition definition) {
+    return new BuilderImpl().setTableId(tableId).setDefinition(definition);
   }
 
   /**
@@ -362,11 +524,11 @@ public class TableInfo implements Serializable {
    * by external data.
    */
   public static TableInfo of(TableId tableId, TableDefinition definition) {
-    return builder(tableId, definition).build();
+    return newBuilder(tableId, definition).build();
   }
 
   TableInfo setProjectId(String projectId) {
-    return toBuilder().tableId(tableId().setProjectId(projectId)).build();
+    return toBuilder().setTableId(getTableId().setProjectId(projectId)).build();
   }
 
   Table toPb() {

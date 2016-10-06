@@ -27,6 +27,14 @@ public class DatasetIdTest {
 
   @Test
   public void testOf() {
+    assertEquals(null, DATASET.getProject());
+    assertEquals("dataset", DATASET.getDataset());
+    assertEquals("project", DATASET_COMPLETE.getProject());
+    assertEquals("dataset", DATASET_COMPLETE.getDataset());
+  }
+
+  @Test
+  public void testOfDeprecated() {
     assertEquals(null, DATASET.project());
     assertEquals("dataset", DATASET.dataset());
     assertEquals("project", DATASET_COMPLETE.project());
@@ -52,8 +60,8 @@ public class DatasetIdTest {
 
   private void compareDatasetIds(DatasetId expected, DatasetId value) {
     assertEquals(expected, value);
-    assertEquals(expected.project(), value.project());
-    assertEquals(expected.dataset(), value.dataset());
+    assertEquals(expected.getProject(), value.getProject());
+    assertEquals(expected.getDataset(), value.getDataset());
     assertEquals(expected.hashCode(), value.hashCode());
   }
 }

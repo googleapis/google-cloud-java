@@ -27,9 +27,9 @@ Here is an example that uses the `RemoteBigQueryHelper` to create a dataset.
   ```java
   RemoteBigQueryHelper bigqueryHelper =
       RemoteBigQueryHelper.create(PROJECT_ID, new FileInputStream("/path/to/my/JSON/key.json"));
-  BigQuery bigquery = bigqueryHelper.options().service();
+  BigQuery bigquery = bigqueryHelper.getOptions().service();
   String dataset = RemoteBigQueryHelper.generateDatasetName();
-  bigquery.create(DatasetInfo.builder(dataset).build());
+  bigquery.create(DatasetInfo.newBuilder(dataset).build());
   ```
 
 4. Run your tests.

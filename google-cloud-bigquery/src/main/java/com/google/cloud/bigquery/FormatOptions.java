@@ -43,7 +43,15 @@ public class FormatOptions implements Serializable {
   /**
    * Returns the external data format, as a string.
    */
+  @Deprecated
   public String type() {
+    return type;
+  }
+
+  /**
+   * Returns the external data format, as a string.
+   */
+  public String getType() {
     return type;
   }
 
@@ -62,14 +70,14 @@ public class FormatOptions implements Serializable {
     return obj == this
         || obj != null
         && obj.getClass().equals(FormatOptions.class)
-        && Objects.equals(type, ((FormatOptions) obj).type());
+        && Objects.equals(type, ((FormatOptions) obj).getType());
   }
 
   /**
    * Default options for CSV format.
    */
   public static CsvOptions csv() {
-    return CsvOptions.builder().build();
+    return CsvOptions.newBuilder().build();
   }
 
   /**

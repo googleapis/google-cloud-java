@@ -56,7 +56,7 @@ public class Job extends JobInfo {
     Builder(BigQuery bigquery, JobConfiguration configuration) {
       this.bigquery = bigquery;
       this.infoBuilder = new JobInfo.BuilderImpl();
-      this.infoBuilder.configuration(configuration);
+      this.infoBuilder.setConfiguration(configuration);
     }
 
     Builder(Job job) {
@@ -65,50 +65,64 @@ public class Job extends JobInfo {
     }
 
     @Override
-    Builder etag(String etag) {
-      infoBuilder.etag(etag);
+    Builder setEtag(String etag) {
+      infoBuilder.setEtag(etag);
       return this;
     }
 
     @Override
-    Builder generatedId(String generatedId) {
-      infoBuilder.generatedId(generatedId);
+    Builder setGeneratedId(String generatedId) {
+      infoBuilder.setGeneratedId(generatedId);
       return this;
     }
 
     @Override
+    @Deprecated
     public Builder jobId(JobId jobId) {
-      infoBuilder.jobId(jobId);
+      infoBuilder.setJobId(jobId);
       return this;
     }
 
     @Override
-    Builder selfLink(String selfLink) {
-      infoBuilder.selfLink(selfLink);
+    public Builder setJobId(JobId jobId) {
+      infoBuilder.setJobId(jobId);
       return this;
     }
 
     @Override
-    Builder status(JobStatus status) {
-      infoBuilder.status(status);
+    Builder setSelfLink(String selfLink) {
+      infoBuilder.setSelfLink(selfLink);
       return this;
     }
 
     @Override
-    Builder statistics(JobStatistics statistics) {
-      infoBuilder.statistics(statistics);
+    Builder setStatus(JobStatus status) {
+      infoBuilder.setStatus(status);
       return this;
     }
 
     @Override
-    Builder userEmail(String userEmail) {
-      infoBuilder.userEmail(userEmail);
+    Builder setStatistics(JobStatistics statistics) {
+      infoBuilder.setStatistics(statistics);
       return this;
     }
 
     @Override
+    Builder setUserEmail(String userEmail) {
+      infoBuilder.setUserEmail(userEmail);
+      return this;
+    }
+
+    @Override
+    @Deprecated
     public Builder configuration(JobConfiguration configuration) {
-      infoBuilder.configuration(configuration);
+      infoBuilder.setConfiguration(configuration);
+      return this;
+    }
+
+    @Override
+    public Builder setConfiguration(JobConfiguration configuration) {
+      infoBuilder.setConfiguration(configuration);
       return this;
     }
 
@@ -138,7 +152,7 @@ public class Job extends JobInfo {
    * @throws BigQueryException upon failure
    */
   public boolean exists() {
-    return bigquery.getJob(jobId(), JobOption.fields()) != null;
+    return bigquery.getJob(getJobId(), JobOption.fields()) != null;
   }
 
   /**
@@ -157,8 +171,8 @@ public class Job extends JobInfo {
    * @throws BigQueryException upon failure
    */
   public boolean isDone() {
-    Job job = bigquery.getJob(jobId(), JobOption.fields(BigQuery.JobField.STATUS));
-    return job == null || job.status().state() == JobStatus.State.DONE;
+    Job job = bigquery.getJob(getJobId(), JobOption.fields(BigQuery.JobField.STATUS));
+    return job == null || job.getStatus().getState() == JobStatus.State.DONE;
   }
 
   /**
@@ -242,7 +256,7 @@ public class Job extends JobInfo {
    * @throws BigQueryException upon failure
    */
   public Job reload(JobOption... options) {
-    return bigquery.getJob(jobId(), options);
+    return bigquery.getJob(getJobId(), options);
   }
 
   /**
@@ -262,13 +276,21 @@ public class Job extends JobInfo {
    * @throws BigQueryException upon failure
    */
   public boolean cancel() {
-    return bigquery.cancel(jobId());
+    return bigquery.cancel(getJobId());
   }
 
   /**
    * Returns the job's {@code BigQuery} object used to issue requests.
    */
+  @Deprecated
   public BigQuery bigquery() {
+    return bigquery;
+  }
+
+  /**
+   * Returns the job's {@code BigQuery} object used to issue requests.
+   */
+  public BigQuery getBigquery() {
     return bigquery;
   }
 

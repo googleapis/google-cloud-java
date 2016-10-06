@@ -72,35 +72,37 @@ public class BigQueryImplTest {
   private static final List<Acl> ACCESS_RULES_WITH_PROJECT = ImmutableList.of(
       Acl.of(Acl.Group.ofAllAuthenticatedUsers(), Acl.Role.READER),
       Acl.of(new Acl.View(TableId.of(PROJECT, "dataset", "table"))));
-  private static final DatasetInfo DATASET_INFO = DatasetInfo.builder(DATASET)
-      .acl(ACCESS_RULES)
-      .description("description")
+  private static final DatasetInfo DATASET_INFO = DatasetInfo.newBuilder(DATASET)
+      .setAcl(ACCESS_RULES)
+      .setDescription("description")
       .build();
-  private static final DatasetInfo DATASET_INFO_WITH_PROJECT = DatasetInfo.builder(PROJECT, DATASET)
-      .acl(ACCESS_RULES_WITH_PROJECT)
-      .description("description")
-      .build();
-  private static final DatasetInfo OTHER_DATASET_INFO = DatasetInfo.builder(PROJECT, OTHER_DATASET)
-      .acl(ACCESS_RULES)
-      .description("other description")
-      .build();
+  private static final DatasetInfo DATASET_INFO_WITH_PROJECT =
+      DatasetInfo.newBuilder(PROJECT, DATASET)
+          .setAcl(ACCESS_RULES_WITH_PROJECT)
+          .setDescription("description")
+          .build();
+  private static final DatasetInfo OTHER_DATASET_INFO =
+      DatasetInfo.newBuilder(PROJECT, OTHER_DATASET)
+          .setAcl(ACCESS_RULES)
+          .setDescription("other description")
+          .build();
   private static final TableId TABLE_ID = TableId.of(DATASET, TABLE);
   private static final TableId OTHER_TABLE_ID = TableId.of(PROJECT, DATASET, OTHER_TABLE);
   private static final TableId TABLE_ID_WITH_PROJECT = TableId.of(PROJECT, DATASET, TABLE);
   private static final Field FIELD_SCHEMA1 =
-      Field.builder("StringField", Field.Type.string())
-          .mode(Field.Mode.NULLABLE)
-          .description("FieldDescription1")
+      Field.newBuilder("StringField", Field.Type.string())
+          .setMode(Field.Mode.NULLABLE)
+          .setDescription("FieldDescription1")
           .build();
   private static final Field FIELD_SCHEMA2 =
-      Field.builder("IntegerField", Field.Type.integer())
-          .mode(Field.Mode.REPEATED)
-          .description("FieldDescription2")
+      Field.newBuilder("IntegerField", Field.Type.integer())
+          .setMode(Field.Mode.REPEATED)
+          .setDescription("FieldDescription2")
           .build();
   private static final Field FIELD_SCHEMA3 =
-      Field.builder("RecordField", Field.Type.record(FIELD_SCHEMA1, FIELD_SCHEMA2))
-          .mode(Field.Mode.REQUIRED)
-          .description("FieldDescription3")
+      Field.newBuilder("RecordField", Field.Type.record(FIELD_SCHEMA1, FIELD_SCHEMA2))
+          .setMode(Field.Mode.REQUIRED)
+          .setDescription("FieldDescription3")
           .build();
   private static final Schema TABLE_SCHEMA = Schema.of(FIELD_SCHEMA1, FIELD_SCHEMA2, FIELD_SCHEMA3);
   private static final StandardTableDefinition TABLE_DEFINITION =
@@ -126,14 +128,14 @@ public class BigQueryImplTest {
   private static final JobInfo COMPLETE_COPY_JOB =
       JobInfo.of(JobId.of(PROJECT, JOB), COPY_JOB_CONFIGURATION_WITH_PROJECT);
   private static final QueryJobConfiguration QUERY_JOB_CONFIGURATION =
-      QueryJobConfiguration.builder("SQL")
-          .defaultDataset(DatasetId.of(DATASET))
-          .destinationTable(TABLE_ID)
+      QueryJobConfiguration.newBuilder("SQL")
+          .setDefaultDataset(DatasetId.of(DATASET))
+          .setDestinationTable(TABLE_ID)
           .build();
   private static final QueryJobConfiguration QUERY_JOB_CONFIGURATION_WITH_PROJECT =
-      QueryJobConfiguration.builder("SQL")
-          .defaultDataset(DatasetId.of(PROJECT, DATASET))
-          .destinationTable(TABLE_ID_WITH_PROJECT)
+      QueryJobConfiguration.newBuilder("SQL")
+          .setDefaultDataset(DatasetId.of(PROJECT, DATASET))
+          .setDestinationTable(TABLE_ID_WITH_PROJECT)
           .build();
   private static final JobInfo QUERY_JOB = JobInfo.of(QUERY_JOB_CONFIGURATION);
   private static final JobInfo COMPLETE_QUERY_JOB =
@@ -149,15 +151,15 @@ public class BigQueryImplTest {
   private static final TableCell INTEGER_FIELD = new TableCell().setV("1");
   private static final TableRow TABLE_ROW =
       new TableRow().setF(ImmutableList.of(BOOLEAN_FIELD, INTEGER_FIELD));
-  private static final QueryRequest QUERY_REQUEST = QueryRequest.builder("SQL")
-      .pageSize(42L)
-      .useQueryCache(false)
-      .defaultDataset(DatasetId.of(DATASET))
+  private static final QueryRequest QUERY_REQUEST = QueryRequest.newBuilder("SQL")
+      .setPageSize(42L)
+      .setUseQueryCache(false)
+      .setDefaultDataset(DatasetId.of(DATASET))
       .build();
-  private static final QueryRequest QUERY_REQUEST_WITH_PROJECT = QueryRequest.builder("SQL")
-      .pageSize(42L)
-      .useQueryCache(false)
-      .defaultDataset(DatasetId.of(PROJECT, DATASET))
+  private static final QueryRequest QUERY_REQUEST_WITH_PROJECT = QueryRequest.newBuilder("SQL")
+      .setPageSize(42L)
+      .setUseQueryCache(false)
+      .setDefaultDataset(DatasetId.of(PROJECT, DATASET))
       .build();
   private static final String CURSOR = "cursor";
   private static final TableCell CELL_PB1 = new TableCell().setV("Value1");
@@ -310,7 +312,7 @@ public class BigQueryImplTest {
     EasyMock.replay(bigqueryRpcMock);
     bigquery = options.service();
     Dataset dataset = bigquery.create(DATASET_INFO, DATASET_OPTION_FIELDS);
-    String selector = (String) capturedOptions.getValue().get(DATASET_OPTION_FIELDS.rpcOption());
+    String selector = (String) capturedOptions.getValue().get(DATASET_OPTION_FIELDS.getRpcOption());
     assertTrue(selector.contains("datasetReference"));
     assertTrue(selector.contains("access"));
     assertTrue(selector.contains("etag"));
@@ -361,7 +363,7 @@ public class BigQueryImplTest {
     EasyMock.replay(bigqueryRpcMock);
     bigquery = options.service();
     Dataset dataset = bigquery.getDataset(DATASET, DATASET_OPTION_FIELDS);
-    String selector = (String) capturedOptions.getValue().get(DATASET_OPTION_FIELDS.rpcOption());
+    String selector = (String) capturedOptions.getValue().get(DATASET_OPTION_FIELDS.getRpcOption());
     assertTrue(selector.contains("datasetReference"));
     assertTrue(selector.contains("access"));
     assertTrue(selector.contains("etag"));
@@ -470,7 +472,7 @@ public class BigQueryImplTest {
   @Test
   public void testUpdateDataset() {
     DatasetInfo updatedDatasetInfo = DATASET_INFO.setProjectId(OTHER_PROJECT).toBuilder()
-        .description("newDescription")
+        .setDescription("newDescription")
         .build();
     EasyMock.expect(bigqueryRpcMock.patch(updatedDatasetInfo.toPb(), EMPTY_RPC_OPTIONS))
         .andReturn(updatedDatasetInfo.toPb());
@@ -483,9 +485,10 @@ public class BigQueryImplTest {
   @Test
   public void testUpdateDatasetWithSelectedFields() {
     Capture<Map<BigQueryRpc.Option, Object>> capturedOptions = Capture.newInstance();
-    DatasetInfo updatedDatasetInfo = DATASET_INFO.toBuilder().description("newDescription").build();
+    DatasetInfo updatedDatasetInfo =
+        DATASET_INFO.toBuilder().setDescription("newDescription").build();
     DatasetInfo updatedDatasetInfoWithProject = DATASET_INFO_WITH_PROJECT.toBuilder()
-        .description("newDescription")
+        .setDescription("newDescription")
         .build();
     EasyMock.expect(
         bigqueryRpcMock.patch(eq(updatedDatasetInfoWithProject.toPb()), capture(capturedOptions)))
@@ -493,7 +496,7 @@ public class BigQueryImplTest {
     EasyMock.replay(bigqueryRpcMock);
     bigquery = options.service();
     Dataset dataset = bigquery.update(updatedDatasetInfo, DATASET_OPTION_FIELDS);
-    String selector = (String) capturedOptions.getValue().get(DATASET_OPTION_FIELDS.rpcOption());
+    String selector = (String) capturedOptions.getValue().get(DATASET_OPTION_FIELDS.getRpcOption());
     assertTrue(selector.contains("datasetReference"));
     assertTrue(selector.contains("access"));
     assertTrue(selector.contains("etag"));
@@ -522,7 +525,7 @@ public class BigQueryImplTest {
     EasyMock.replay(bigqueryRpcMock);
     bigquery = options.service();
     Table table = bigquery.create(TABLE_INFO, TABLE_OPTION_FIELDS);
-    String selector = (String) capturedOptions.getValue().get(TABLE_OPTION_FIELDS.rpcOption());
+    String selector = (String) capturedOptions.getValue().get(TABLE_OPTION_FIELDS.getRpcOption());
     assertTrue(selector.contains("tableReference"));
     assertTrue(selector.contains("schema"));
     assertTrue(selector.contains("etag"));
@@ -571,7 +574,7 @@ public class BigQueryImplTest {
     EasyMock.replay(bigqueryRpcMock);
     bigquery = options.service();
     Table table = bigquery.getTable(TABLE_ID, TABLE_OPTION_FIELDS);
-    String selector = (String) capturedOptions.getValue().get(TABLE_OPTION_FIELDS.rpcOption());
+    String selector = (String) capturedOptions.getValue().get(TABLE_OPTION_FIELDS.getRpcOption());
     assertTrue(selector.contains("tableReference"));
     assertTrue(selector.contains("schema"));
     assertTrue(selector.contains("etag"));
@@ -670,7 +673,7 @@ public class BigQueryImplTest {
   @Test
   public void testUpdateTable() {
     TableInfo updatedTableInfo = TABLE_INFO.setProjectId(OTHER_PROJECT).toBuilder()
-        .description("newDescription")
+        .setDescription("newDescription")
         .build();
     EasyMock.expect(bigqueryRpcMock.patch(updatedTableInfo.toPb(), EMPTY_RPC_OPTIONS))
         .andReturn(updatedTableInfo.toPb());
@@ -683,16 +686,16 @@ public class BigQueryImplTest {
   @Test
   public void testUpdateTableWithSelectedFields() {
     Capture<Map<BigQueryRpc.Option, Object>> capturedOptions = Capture.newInstance();
-    TableInfo updatedTableInfo = TABLE_INFO.toBuilder().description("newDescription").build();
+    TableInfo updatedTableInfo = TABLE_INFO.toBuilder().setDescription("newDescription").build();
     TableInfo updatedTableInfoWithProject = TABLE_INFO_WITH_PROJECT.toBuilder()
-        .description("newDescription")
+        .setDescription("newDescription")
         .build();
     EasyMock.expect(bigqueryRpcMock.patch(eq(updatedTableInfoWithProject.toPb()),
         capture(capturedOptions))).andReturn(updatedTableInfoWithProject.toPb());
     EasyMock.replay(bigqueryRpcMock);
     bigquery = options.service();
     Table table = bigquery.update(updatedTableInfo, TABLE_OPTION_FIELDS);
-    String selector = (String) capturedOptions.getValue().get(TABLE_OPTION_FIELDS.rpcOption());
+    String selector = (String) capturedOptions.getValue().get(TABLE_OPTION_FIELDS.getRpcOption());
     assertTrue(selector.contains("tableReference"));
     assertTrue(selector.contains("schema"));
     assertTrue(selector.contains("etag"));
@@ -709,18 +712,18 @@ public class BigQueryImplTest {
         new RowToInsert("row1", row1),
         new RowToInsert("row2", row2)
     );
-    InsertAllRequest request = InsertAllRequest.builder(TABLE_ID)
-        .rows(rows)
-        .skipInvalidRows(false)
-        .ignoreUnknownValues(true)
-        .templateSuffix("suffix")
+    InsertAllRequest request = InsertAllRequest.newBuilder(TABLE_ID)
+        .setRows(rows)
+        .setSkipInvalidRows(false)
+        .setIgnoreUnknownValues(true)
+        .setTemplateSuffix("suffix")
         .build();
     TableDataInsertAllRequest requestPb = new TableDataInsertAllRequest().setRows(
         Lists.transform(rows, new Function<RowToInsert, TableDataInsertAllRequest.Rows>() {
           @Override
           public TableDataInsertAllRequest.Rows apply(RowToInsert rowToInsert) {
-            return new TableDataInsertAllRequest.Rows().setInsertId(rowToInsert.id())
-                .setJson(rowToInsert.content());
+            return new TableDataInsertAllRequest.Rows().setInsertId(rowToInsert.getId())
+                .setJson(rowToInsert.getContent());
           }
         })).setSkipInvalidRows(false).setIgnoreUnknownValues(true).setTemplateSuffix("suffix");
     TableDataInsertAllResponse responsePb = new TableDataInsertAllResponse().setInsertErrors(
@@ -731,10 +734,10 @@ public class BigQueryImplTest {
     EasyMock.replay(bigqueryRpcMock);
     bigquery = options.service();
     InsertAllResponse response = bigquery.insertAll(request);
-    assertNotNull(response.errorsFor(0L));
-    assertNull(response.errorsFor(1L));
-    assertEquals(1, response.errorsFor(0L).size());
-    assertEquals("ErrorMessage", response.errorsFor(0L).get(0).message());
+    assertNotNull(response.getErrorsFor(0L));
+    assertNull(response.getErrorsFor(1L));
+    assertEquals(1, response.getErrorsFor(0L).size());
+    assertEquals("ErrorMessage", response.getErrorsFor(0L).get(0).getMessage());
   }
 
   @Test
@@ -746,18 +749,18 @@ public class BigQueryImplTest {
         new RowToInsert("row2", row2)
     );
     TableId tableId = TableId.of(OTHER_PROJECT, DATASET, TABLE);
-    InsertAllRequest request = InsertAllRequest.builder(tableId)
-        .rows(rows)
-        .skipInvalidRows(false)
-        .ignoreUnknownValues(true)
-        .templateSuffix("suffix")
+    InsertAllRequest request = InsertAllRequest.newBuilder(tableId)
+        .setRows(rows)
+        .setSkipInvalidRows(false)
+        .setIgnoreUnknownValues(true)
+        .setTemplateSuffix("suffix")
         .build();
     TableDataInsertAllRequest requestPb = new TableDataInsertAllRequest().setRows(
         Lists.transform(rows, new Function<RowToInsert, TableDataInsertAllRequest.Rows>() {
           @Override
           public TableDataInsertAllRequest.Rows apply(RowToInsert rowToInsert) {
-            return new TableDataInsertAllRequest.Rows().setInsertId(rowToInsert.id())
-                .setJson(rowToInsert.content());
+            return new TableDataInsertAllRequest.Rows().setInsertId(rowToInsert.getId())
+                .setJson(rowToInsert.getContent());
           }
         })).setSkipInvalidRows(false).setIgnoreUnknownValues(true).setTemplateSuffix("suffix");
     TableDataInsertAllResponse responsePb = new TableDataInsertAllResponse().setInsertErrors(
@@ -768,10 +771,10 @@ public class BigQueryImplTest {
     EasyMock.replay(bigqueryRpcMock);
     bigquery = options.service();
     InsertAllResponse response = bigquery.insertAll(request);
-    assertNotNull(response.errorsFor(0L));
-    assertNull(response.errorsFor(1L));
-    assertEquals(1, response.errorsFor(0L).size());
-    assertEquals("ErrorMessage", response.errorsFor(0L).get(0).message());
+    assertNotNull(response.getErrorsFor(0L));
+    assertNull(response.getErrorsFor(1L));
+    assertEquals(1, response.getErrorsFor(0L).size());
+    assertEquals("ErrorMessage", response.getErrorsFor(0L).get(0).getMessage());
   }
 
   @Test
@@ -875,7 +878,7 @@ public class BigQueryImplTest {
     bigquery = options.service();
     Job job = bigquery.create(QUERY_JOB, JOB_OPTION_FIELDS);
     assertEquals(new Job(bigquery, new JobInfo.BuilderImpl(COMPLETE_QUERY_JOB)), job);
-    String selector = (String) capturedOptions.getValue().get(JOB_OPTION_FIELDS.rpcOption());
+    String selector = (String) capturedOptions.getValue().get(JOB_OPTION_FIELDS.getRpcOption());
     assertTrue(selector.contains("jobReference"));
     assertTrue(selector.contains("configuration"));
     assertTrue(selector.contains("user_email"));
@@ -884,8 +887,8 @@ public class BigQueryImplTest {
 
   @Test
   public void testCreateJobWithProjectId() {
-    JobInfo jobInfo = JobInfo.builder(QUERY_JOB_CONFIGURATION.setProjectId(OTHER_PROJECT))
-        .jobId(JobId.of(OTHER_PROJECT, JOB))
+    JobInfo jobInfo = JobInfo.newBuilder(QUERY_JOB_CONFIGURATION.setProjectId(OTHER_PROJECT))
+        .setJobId(JobId.of(OTHER_PROJECT, JOB))
         .build();
     Capture<Map<BigQueryRpc.Option, Object>> capturedOptions = Capture.newInstance();
     EasyMock.expect(bigqueryRpcMock.create(eq(jobInfo.toPb()), capture(capturedOptions)))
@@ -894,7 +897,7 @@ public class BigQueryImplTest {
     bigquery = options.service();
     Job job = bigquery.create(jobInfo, JOB_OPTION_FIELDS);
     assertEquals(new Job(bigquery, new JobInfo.BuilderImpl(jobInfo)), job);
-    String selector = (String) capturedOptions.getValue().get(JOB_OPTION_FIELDS.rpcOption());
+    String selector = (String) capturedOptions.getValue().get(JOB_OPTION_FIELDS.getRpcOption());
     assertTrue(selector.contains("jobReference"));
     assertTrue(selector.contains("configuration"));
     assertTrue(selector.contains("user_email"));
@@ -997,7 +1000,7 @@ public class BigQueryImplTest {
     Page<Job> page = bigquery.listJobs(JOB_LIST_OPTION_FIELD);
     assertEquals(CURSOR, page.nextPageCursor());
     assertArrayEquals(jobList.toArray(), Iterables.toArray(page.values(), Job.class));
-    String selector = (String) capturedOptions.getValue().get(JOB_OPTION_FIELDS.rpcOption());
+    String selector = (String) capturedOptions.getValue().get(JOB_OPTION_FIELDS.getRpcOption());
     assertTrue(selector.contains("nextPageToken,jobs("));
     assertTrue(selector.contains("configuration"));
     assertTrue(selector.contains("jobReference"));
@@ -1044,13 +1047,13 @@ public class BigQueryImplTest {
     EasyMock.replay(bigqueryRpcMock);
     bigquery = options.service();
     QueryResponse response = bigquery.query(QUERY_REQUEST);
-    assertNull(response.etag());
-    assertNull(response.result());
-    assertEquals(queryJob, response.jobId());
+    assertNull(response.getEtag());
+    assertNull(response.getResult());
+    assertEquals(queryJob, response.getJobId());
     assertEquals(false, response.jobCompleted());
-    assertEquals(ImmutableList.<BigQueryError>of(), response.executionErrors());
+    assertEquals(ImmutableList.<BigQueryError>of(), response.getExecutionErrors());
     assertFalse(response.hasErrors());
-    assertEquals(null, response.result());
+    assertEquals(null, response.getResult());
   }
 
   @Test
@@ -1069,20 +1072,20 @@ public class BigQueryImplTest {
     EasyMock.replay(bigqueryRpcMock);
     bigquery = options.service();
     QueryResponse response = bigquery.query(QUERY_REQUEST);
-    assertNull(response.etag());
-    assertEquals(queryJob, response.jobId());
+    assertNull(response.getEtag());
+    assertEquals(queryJob, response.getJobId());
     assertEquals(true, response.jobCompleted());
-    assertEquals(false, response.result().cacheHit());
-    assertEquals(ImmutableList.<BigQueryError>of(), response.executionErrors());
+    assertEquals(false, response.getResult().cacheHit());
+    assertEquals(ImmutableList.<BigQueryError>of(), response.getExecutionErrors());
     assertFalse(response.hasErrors());
-    assertEquals(null, response.result().schema());
-    assertEquals(42L, response.result().totalBytesProcessed());
-    assertEquals(1L, response.result().totalRows());
-    for (List<FieldValue> row : response.result().values()) {
-      assertEquals(false, row.get(0).booleanValue());
-      assertEquals(1L, row.get(1).longValue());
+    assertEquals(null, response.getResult().getSchema());
+    assertEquals(42L, response.getResult().getTotalBytesProcessed());
+    assertEquals(1L, response.getResult().getTotalRows());
+    for (List<FieldValue> row : response.getResult().values()) {
+      assertEquals(false, row.get(0).getBooleanValue());
+      assertEquals(1L, row.get(1).getLongValue());
     }
-    assertEquals(CURSOR, response.result().nextPageCursor());
+    assertEquals(CURSOR, response.getResult().nextPageCursor());
   }
 
   @Test
@@ -1102,20 +1105,20 @@ public class BigQueryImplTest {
     EasyMock.replay(bigqueryRpcMock);
     bigquery = options.service();
     QueryResponse response = bigquery.getQueryResults(queryJob);
-    assertEquals("etag", response.etag());
-    assertEquals(queryJob, response.jobId());
+    assertEquals("etag", response.getEtag());
+    assertEquals(queryJob, response.getJobId());
     assertEquals(true, response.jobCompleted());
-    assertEquals(false, response.result().cacheHit());
-    assertEquals(ImmutableList.<BigQueryError>of(), response.executionErrors());
+    assertEquals(false, response.getResult().cacheHit());
+    assertEquals(ImmutableList.<BigQueryError>of(), response.getExecutionErrors());
     assertFalse(response.hasErrors());
-    assertEquals(null, response.result().schema());
-    assertEquals(42L, response.result().totalBytesProcessed());
-    assertEquals(1L, response.result().totalRows());
-    for (List<FieldValue> row : response.result().values()) {
-      assertEquals(false, row.get(0).booleanValue());
-      assertEquals(1L, row.get(1).longValue());
+    assertEquals(null, response.getResult().getSchema());
+    assertEquals(42L, response.getResult().getTotalBytesProcessed());
+    assertEquals(1L, response.getResult().getTotalRows());
+    for (List<FieldValue> row : response.getResult().values()) {
+      assertEquals(false, row.get(0).getBooleanValue());
+      assertEquals(1L, row.get(1).getLongValue());
     }
-    assertEquals(CURSOR, response.result().nextPageCursor());
+    assertEquals(CURSOR, response.getResult().nextPageCursor());
   }
 
   @Test
@@ -1135,20 +1138,20 @@ public class BigQueryImplTest {
     EasyMock.replay(bigqueryRpcMock);
     bigquery = options.service();
     QueryResponse response = bigquery.getQueryResults(queryJob);
-    assertEquals("etag", response.etag());
-    assertEquals(queryJob, response.jobId());
+    assertEquals("etag", response.getEtag());
+    assertEquals(queryJob, response.getJobId());
     assertEquals(true, response.jobCompleted());
-    assertEquals(false, response.result().cacheHit());
-    assertEquals(ImmutableList.<BigQueryError>of(), response.executionErrors());
+    assertEquals(false, response.getResult().cacheHit());
+    assertEquals(ImmutableList.<BigQueryError>of(), response.getExecutionErrors());
     assertFalse(response.hasErrors());
-    assertEquals(null, response.result().schema());
-    assertEquals(42L, response.result().totalBytesProcessed());
-    assertEquals(1L, response.result().totalRows());
-    for (List<FieldValue> row : response.result().values()) {
-      assertEquals(false, row.get(0).booleanValue());
-      assertEquals(1L, row.get(1).longValue());
+    assertEquals(null, response.getResult().getSchema());
+    assertEquals(42L, response.getResult().getTotalBytesProcessed());
+    assertEquals(1L, response.getResult().getTotalRows());
+    for (List<FieldValue> row : response.getResult().values()) {
+      assertEquals(false, row.get(0).getBooleanValue());
+      assertEquals(1L, row.get(1).getLongValue());
     }
-    assertEquals(CURSOR, response.result().nextPageCursor());
+    assertEquals(CURSOR, response.getResult().nextPageCursor());
   }
 
   @Test
@@ -1169,19 +1172,19 @@ public class BigQueryImplTest {
     QueryResponse response = bigquery.getQueryResults(queryJob, QUERY_RESULTS_OPTION_TIME,
         QUERY_RESULTS_OPTION_INDEX, QUERY_RESULTS_OPTION_PAGE_SIZE,
         QUERY_RESULTS_OPTION_PAGE_TOKEN);
-    assertEquals(queryJob, response.jobId());
+    assertEquals(queryJob, response.getJobId());
     assertEquals(true, response.jobCompleted());
-    assertEquals(false, response.result().cacheHit());
-    assertEquals(ImmutableList.<BigQueryError>of(), response.executionErrors());
+    assertEquals(false, response.getResult().cacheHit());
+    assertEquals(ImmutableList.<BigQueryError>of(), response.getExecutionErrors());
     assertFalse(response.hasErrors());
-    assertEquals(null, response.result().schema());
-    assertEquals(42L, response.result().totalBytesProcessed());
-    assertEquals(1L, response.result().totalRows());
-    for (List<FieldValue> row : response.result().values()) {
-      assertEquals(false, row.get(0).booleanValue());
-      assertEquals(1L, row.get(1).longValue());
+    assertEquals(null, response.getResult().getSchema());
+    assertEquals(42L, response.getResult().getTotalBytesProcessed());
+    assertEquals(1L, response.getResult().getTotalRows());
+    for (List<FieldValue> row : response.getResult().values()) {
+      assertEquals(false, row.get(0).getBooleanValue());
+      assertEquals(1L, row.get(1).getLongValue());
     }
-    assertEquals(CURSOR, response.result().nextPageCursor());
+    assertEquals(CURSOR, response.getResult().nextPageCursor());
   }
 
   @Test

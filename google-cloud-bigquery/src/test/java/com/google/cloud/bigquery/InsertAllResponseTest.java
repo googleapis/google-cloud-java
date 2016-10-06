@@ -49,6 +49,15 @@ public class InsertAllResponseTest {
 
   @Test
   public void testErrorsFor() {
+    assertEquals(ERRORS_MAP, INSERT_ALL_RESPONSE.getInsertErrors());
+    assertEquals(ERRORS1, INSERT_ALL_RESPONSE.getErrorsFor(0L));
+    assertEquals(ERRORS2, INSERT_ALL_RESPONSE.getErrorsFor(1L));
+    assertNull(INSERT_ALL_RESPONSE.getErrorsFor(2L));
+  }
+
+  @Test
+  public void testErrorsForDeprecated() {
+    assertEquals(ERRORS_MAP, INSERT_ALL_RESPONSE.insertErrors());
     assertEquals(ERRORS1, INSERT_ALL_RESPONSE.errorsFor(0L));
     assertEquals(ERRORS2, INSERT_ALL_RESPONSE.errorsFor(1L));
     assertNull(INSERT_ALL_RESPONSE.errorsFor(2L));
@@ -72,6 +81,6 @@ public class InsertAllResponseTest {
     assertEquals(expected, value);
     assertEquals(expected.hashCode(), value.hashCode());
     assertEquals(expected.toString(), value.toString());
-    assertEquals(expected.insertErrors(), value.insertErrors());
+    assertEquals(expected.getInsertErrors(), value.getInsertErrors());
   }
 }

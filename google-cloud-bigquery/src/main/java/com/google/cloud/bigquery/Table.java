@@ -56,7 +56,7 @@ public class Table extends TableInfo {
     Builder(BigQuery bigquery, TableId tableId, TableDefinition defintion) {
       this.bigquery = bigquery;
       this.infoBuilder = new TableInfo.BuilderImpl();
-      this.infoBuilder.tableId(tableId).definition(defintion);
+      this.infoBuilder.setTableId(tableId).setDefinition(defintion);
     }
 
     Builder(Table table) {
@@ -65,62 +65,97 @@ public class Table extends TableInfo {
     }
 
     @Override
-    Builder creationTime(Long creationTime) {
-      infoBuilder.creationTime(creationTime);
+    Builder setCreationTime(Long creationTime) {
+      infoBuilder.setCreationTime(creationTime);
       return this;
     }
 
     @Override
+    @Deprecated
     public Builder description(String description) {
-      infoBuilder.description(description);
+      infoBuilder.setDescription(description);
       return this;
     }
 
     @Override
-    Builder etag(String etag) {
-      infoBuilder.etag(etag);
+    public Builder setDescription(String description) {
+      infoBuilder.setDescription(description);
       return this;
     }
 
     @Override
+    Builder setEtag(String etag) {
+      infoBuilder.setEtag(etag);
+      return this;
+    }
+
+    @Override
+    @Deprecated
     public Builder expirationTime(Long expirationTime) {
-      infoBuilder.expirationTime(expirationTime);
+      infoBuilder.setExpirationTime(expirationTime);
       return this;
     }
 
     @Override
+    public Builder setExpirationTime(Long expirationTime) {
+      infoBuilder.setExpirationTime(expirationTime);
+      return this;
+    }
+
+    @Override
+    @Deprecated
     public Builder friendlyName(String friendlyName) {
-      infoBuilder.friendlyName(friendlyName);
+      infoBuilder.setFriendlyName(friendlyName);
       return this;
     }
 
     @Override
-    Builder generatedId(String generatedId) {
-      infoBuilder.generatedId(generatedId);
+    public Builder setFriendlyName(String friendlyName) {
+      infoBuilder.setFriendlyName(friendlyName);
       return this;
     }
 
     @Override
-    Builder lastModifiedTime(Long lastModifiedTime) {
-      infoBuilder.lastModifiedTime(lastModifiedTime);
+    Builder setGeneratedId(String generatedId) {
+      infoBuilder.setGeneratedId(generatedId);
       return this;
     }
 
     @Override
-    Builder selfLink(String selfLink) {
-      infoBuilder.selfLink(selfLink);
+    Builder setLastModifiedTime(Long lastModifiedTime) {
+      infoBuilder.setLastModifiedTime(lastModifiedTime);
       return this;
     }
 
     @Override
+    Builder setSelfLink(String selfLink) {
+      infoBuilder.setSelfLink(selfLink);
+      return this;
+    }
+
+    @Override
+    @Deprecated
     public Builder tableId(TableId tableId) {
-      infoBuilder.tableId(tableId);
+      infoBuilder.setTableId(tableId);
       return this;
     }
 
     @Override
+    public Builder setTableId(TableId tableId) {
+      infoBuilder.setTableId(tableId);
+      return this;
+    }
+
+    @Override
+    @Deprecated
     public Builder definition(TableDefinition definition) {
-      infoBuilder.definition(definition);
+      infoBuilder.setDefinition(definition);
+      return this;
+    }
+
+    @Override
+    public Builder setDefinition(TableDefinition definition) {
+      infoBuilder.setDefinition(definition);
       return this;
     }
 
@@ -153,7 +188,7 @@ public class Table extends TableInfo {
    * @throws BigQueryException upon failure
    */
   public boolean exists() {
-    return bigquery.getTable(tableId(), TableOption.fields()) != null;
+    return bigquery.getTable(getTableId(), TableOption.fields()) != null;
   }
 
   /**
@@ -175,7 +210,7 @@ public class Table extends TableInfo {
    * @throws BigQueryException upon failure
    */
   public Table reload(TableOption... options) {
-    return bigquery.getTable(tableId(), options);
+    return bigquery.getTable(getTableId(), options);
   }
 
   /**
@@ -212,7 +247,7 @@ public class Table extends TableInfo {
    * @throws BigQueryException upon failure
    */
   public boolean delete() {
-    return bigquery.delete(tableId());
+    return bigquery.delete(getTableId());
   }
 
   /**
@@ -240,7 +275,7 @@ public class Table extends TableInfo {
    */
   public InsertAllResponse insert(Iterable<InsertAllRequest.RowToInsert> rows)
       throws BigQueryException {
-    return bigquery.insertAll(InsertAllRequest.of(tableId(), rows));
+    return bigquery.insertAll(InsertAllRequest.of(getTableId(), rows));
   }
 
   /**
@@ -272,10 +307,10 @@ public class Table extends TableInfo {
    * @throws BigQueryException upon failure
    */
   public InsertAllResponse insert(Iterable<InsertAllRequest.RowToInsert> rows,
-                                  boolean skipInvalidRows, boolean ignoreUnknownValues) throws BigQueryException {
-    InsertAllRequest request = InsertAllRequest.builder(tableId(), rows)
-        .skipInvalidRows(skipInvalidRows)
-        .ignoreUnknownValues(ignoreUnknownValues)
+      boolean skipInvalidRows, boolean ignoreUnknownValues) throws BigQueryException {
+    InsertAllRequest request = InsertAllRequest.newBuilder(getTableId(), rows)
+        .setSkipInvalidRows(skipInvalidRows)
+        .setIgnoreUnknownValues(ignoreUnknownValues)
         .build();
     return bigquery.insertAll(request);
   }
@@ -298,7 +333,7 @@ public class Table extends TableInfo {
    */
   public Page<List<FieldValue>> list(TableDataListOption... options)
       throws BigQueryException {
-    return bigquery.listTableData(tableId(), options);
+    return bigquery.listTableData(getTableId(), options);
   }
 
   /**
@@ -365,7 +400,7 @@ public class Table extends TableInfo {
    */
   public Job copy(TableId destinationTable, JobOption... options)
       throws BigQueryException {
-    CopyJobConfiguration configuration = CopyJobConfiguration.of(destinationTable, tableId());
+    CopyJobConfiguration configuration = CopyJobConfiguration.of(destinationTable, getTableId());
     return bigquery.create(JobInfo.of(configuration), options);
   }
 
@@ -439,7 +474,7 @@ public class Table extends TableInfo {
   public Job extract(String format, List<String> destinationUris, JobOption... options)
       throws BigQueryException {
     ExtractJobConfiguration extractConfiguration =
-        ExtractJobConfiguration.of(tableId(), destinationUris, format);
+        ExtractJobConfiguration.of(getTableId(), destinationUris, format);
     return bigquery.create(JobInfo.of(extractConfiguration), options);
   }
 
@@ -510,14 +545,22 @@ public class Table extends TableInfo {
    */
   public Job load(FormatOptions format, List<String> sourceUris, JobOption... options)
       throws BigQueryException {
-    LoadJobConfiguration loadConfig = LoadJobConfiguration.of(tableId(), sourceUris, format);
+    LoadJobConfiguration loadConfig = LoadJobConfiguration.of(getTableId(), sourceUris, format);
     return bigquery.create(JobInfo.of(loadConfig), options);
   }
 
   /**
    * Returns the table's {@code BigQuery} object used to issue requests.
    */
+  @Deprecated
   public BigQuery bigquery() {
+    return bigquery;
+  }
+
+  /**
+   * Returns the table's {@code BigQuery} object used to issue requests.
+   */
+  public BigQuery getBigquery() {
     return bigquery;
   }
 

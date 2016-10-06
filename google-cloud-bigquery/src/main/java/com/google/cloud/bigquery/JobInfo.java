@@ -93,22 +93,28 @@ public class JobInfo implements Serializable {
    */
   public abstract static class Builder {
 
-    abstract Builder etag(String etag);
+    abstract Builder setEtag(String etag);
 
-    abstract Builder generatedId(String generatedId);
+    abstract Builder setGeneratedId(String generatedId);
 
     /**
      * Sets the job identity.
      */
+    @Deprecated
     public abstract Builder jobId(JobId jobId);
 
-    abstract Builder selfLink(String selfLink);
+    /**
+     * Sets the job identity.
+     */
+    public abstract Builder setJobId(JobId jobId);
 
-    abstract Builder status(JobStatus status);
+    abstract Builder setSelfLink(String selfLink);
 
-    abstract Builder statistics(JobStatistics statistics);
+    abstract Builder setStatus(JobStatus status);
 
-    abstract Builder userEmail(String userEmail);
+    abstract Builder setStatistics(JobStatistics statistics);
+
+    abstract Builder setUserEmail(String userEmail);
 
     /**
      * Sets a configuration for the {@code JobInfo} object. Use {@link CopyJobConfiguration} for a
@@ -117,7 +123,17 @@ public class JobInfo implements Serializable {
      * from Google Cloud Storage into a table. Use {@link QueryJobConfiguration} for a job that runs
      * a query.
      */
+    @Deprecated
     public abstract Builder configuration(JobConfiguration configuration);
+
+    /**
+     * Sets a configuration for the {@code JobInfo} object. Use {@link CopyJobConfiguration} for a
+     * job that copies an existing table. Use {@link ExtractJobConfiguration} for a job that exports
+     * a table to Google Cloud Storage. Use {@link LoadJobConfiguration} for a job that loads data
+     * from Google Cloud Storage into a table. Use {@link QueryJobConfiguration} for a job that runs
+     * a query.
+     */
+    public abstract Builder setConfiguration(JobConfiguration configuration);
 
     /**
      * Creates a {@code JobInfo} object.
@@ -167,49 +183,63 @@ public class JobInfo implements Serializable {
     }
 
     @Override
-    Builder etag(String etag) {
+    Builder setEtag(String etag) {
       this.etag = etag;
       return this;
     }
 
     @Override
-    Builder generatedId(String generatedId) {
+    Builder setGeneratedId(String generatedId) {
       this.generatedId = generatedId;
       return this;
     }
 
     @Override
+    @Deprecated
     public Builder jobId(JobId jobId) {
       this.jobId = jobId;
       return this;
     }
 
     @Override
-    Builder selfLink(String selfLink) {
+    public Builder setJobId(JobId jobId) {
+      this.jobId = jobId;
+      return this;
+    }
+
+    @Override
+    Builder setSelfLink(String selfLink) {
       this.selfLink = selfLink;
       return this;
     }
 
     @Override
-    Builder status(JobStatus status) {
+    Builder setStatus(JobStatus status) {
       this.status = status;
       return this;
     }
 
     @Override
-    Builder statistics(JobStatistics statistics) {
+    Builder setStatistics(JobStatistics statistics) {
       this.statistics = statistics;
       return this;
     }
 
     @Override
-    Builder userEmail(String userEmail) {
+    Builder setUserEmail(String userEmail) {
       this.userEmail = userEmail;
       return this;
     }
 
     @Override
+    @Deprecated
     public Builder configuration(JobConfiguration configuration) {
+      this.configuration = configuration;
+      return this;
+    }
+
+    @Override
+    public Builder setConfiguration(JobConfiguration configuration) {
       this.configuration = configuration;
       return this;
     }
@@ -234,21 +264,45 @@ public class JobInfo implements Serializable {
   /**
    * Returns the hash of the job resource.
    */
+  @Deprecated
   public String etag() {
+    return etag;
+  }
+
+  /**
+   * Returns the hash of the job resource.
+   */
+  public String getEtag() {
     return etag;
   }
 
   /**
    * Returns the service-generated id for the job.
    */
+  @Deprecated
   public String generatedId() {
+    return generatedId;
+  }
+
+  /**
+   * Returns the service-generated id for the job.
+   */
+  public String getGeneratedId() {
     return generatedId;
   }
 
   /**
    * Returns the job identity.
    */
+  @Deprecated
   public JobId jobId() {
+    return jobId;
+  }
+
+  /**
+   * Returns the job identity.
+   */
+  public JobId getJobId() {
     return jobId;
   }
 
@@ -256,7 +310,16 @@ public class JobInfo implements Serializable {
    * Returns an URL that can be used to access the resource again. The returned URL can be used for
    * GET requests.
    */
+  @Deprecated
   public String selfLink() {
+    return selfLink;
+  }
+
+  /**
+   * Returns an URL that can be used to access the resource again. The returned URL can be used for
+   * GET requests.
+   */
+  public String getSelfLink() {
     return selfLink;
   }
 
@@ -264,7 +327,16 @@ public class JobInfo implements Serializable {
    * Returns the status of this job. Examine this value when polling an asynchronous job to see if
    * the job is complete.
    */
+  @Deprecated
   public JobStatus status() {
+    return status;
+  }
+
+  /**
+   * Returns the status of this job. Examine this value when polling an asynchronous job to see if
+   * the job is complete.
+   */
+  public JobStatus getStatus() {
     return status;
   }
 
@@ -272,14 +344,31 @@ public class JobInfo implements Serializable {
    * Returns information about the job, including starting time and ending time of the job.
    */
   @SuppressWarnings("unchecked")
+  @Deprecated
   public <S extends JobStatistics> S statistics() {
+    return (S) statistics;
+  }
+
+  /**
+   * Returns information about the job, including starting time and ending time of the job.
+   */
+  @SuppressWarnings("unchecked")
+  public <S extends JobStatistics> S getStatistics() {
     return (S) statistics;
   }
 
   /**
    * Returns the email address of the user who ran the job.
    */
+  @Deprecated
   public String userEmail() {
+    return userEmail;
+  }
+
+  /**
+   * Returns the email address of the user who ran the job.
+   */
+  public String getUserEmail() {
     return userEmail;
   }
 
@@ -287,7 +376,16 @@ public class JobInfo implements Serializable {
    * Returns the job's configuration.
    */
   @SuppressWarnings("unchecked")
+  @Deprecated
   public <C extends JobConfiguration> C configuration() {
+    return (C) configuration;
+  }
+
+  /**
+   * Returns the job's configuration.
+   */
+  @SuppressWarnings("unchecked")
+  public <C extends JobConfiguration> C getConfiguration() {
     return (C) configuration;
   }
 
@@ -328,9 +426,9 @@ public class JobInfo implements Serializable {
   JobInfo setProjectId(String projectId) {
     Builder builder = toBuilder();
     if (jobId != null) {
-      builder.jobId(jobId.setProjectId(projectId));
+      builder.setJobId(jobId.setProjectId(projectId));
     }
-    return builder.configuration(configuration.setProjectId(projectId)).build();
+    return builder.setConfiguration(configuration.setProjectId(projectId)).build();
   }
 
   Job toPb() {
@@ -359,8 +457,20 @@ public class JobInfo implements Serializable {
    * {@link LoadJobConfiguration} for a job that loads data from Google Cloud Storage into a table.
    * Use {@link QueryJobConfiguration} for a job that runs a query.
    */
+  @Deprecated
   public static Builder builder(JobConfiguration configuration) {
-    return new BuilderImpl().configuration(configuration);
+    return new BuilderImpl().setConfiguration(configuration);
+  }
+
+  /**
+   * Returns a builder for a {@code JobInfo} object given the job configuration. Use
+   * {@link CopyJobConfiguration} for a job that copies an existing table. Use
+   * {@link ExtractJobConfiguration} for a job that exports a table to Google Cloud Storage. Use
+   * {@link LoadJobConfiguration} for a job that loads data from Google Cloud Storage into a table.
+   * Use {@link QueryJobConfiguration} for a job that runs a query.
+   */
+  public static Builder newBuilder(JobConfiguration configuration) {
+    return new BuilderImpl().setConfiguration(configuration);
   }
 
   /**
@@ -371,7 +481,7 @@ public class JobInfo implements Serializable {
    * runs a query.
    */
   public static JobInfo of(JobConfiguration configuration) {
-    return builder(configuration).build();
+    return newBuilder(configuration).build();
   }
 
   /**
@@ -382,7 +492,7 @@ public class JobInfo implements Serializable {
    * Use {@link QueryJobConfiguration} for a job that runs a query.
    */
   public static JobInfo of(JobId jobId, JobConfiguration configuration) {
-    return builder(configuration).jobId(jobId).build();
+    return newBuilder(configuration).setJobId(jobId).build();
   }
 
   static JobInfo fromPb(Job jobPb) {

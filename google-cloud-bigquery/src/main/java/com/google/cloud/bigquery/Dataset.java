@@ -56,7 +56,7 @@ public class Dataset extends DatasetInfo {
     Builder(BigQuery bigquery, DatasetId datasetId) {
       this.bigquery = bigquery;
       this.infoBuilder = new DatasetInfo.BuilderImpl();
-      this.infoBuilder.datasetId(datasetId);
+      this.infoBuilder.setDatasetId(datasetId);
     }
 
     Builder(Dataset dataset) {
@@ -65,68 +65,110 @@ public class Dataset extends DatasetInfo {
     }
 
     @Override
+    @Deprecated
     public Builder datasetId(DatasetId datasetId) {
-      infoBuilder.datasetId(datasetId);
+      infoBuilder.setDatasetId(datasetId);
       return this;
     }
 
     @Override
+    public Builder setDatasetId(DatasetId datasetId) {
+      infoBuilder.setDatasetId(datasetId);
+      return this;
+    }
+
+    @Override
+    @Deprecated
     public Builder acl(List<Acl> acl) {
-      infoBuilder.acl(acl);
+      infoBuilder.setAcl(acl);
       return this;
     }
 
     @Override
-    Builder creationTime(Long creationTime) {
-      infoBuilder.creationTime(creationTime);
+    public Builder setAcl(List<Acl> acl) {
+      infoBuilder.setAcl(acl);
       return this;
     }
 
     @Override
+    Builder setCreationTime(Long creationTime) {
+      infoBuilder.setCreationTime(creationTime);
+      return this;
+    }
+
+    @Override
+    @Deprecated
     public Builder defaultTableLifetime(Long defaultTableLifetime) {
-      infoBuilder.defaultTableLifetime(defaultTableLifetime);
+      infoBuilder.setDefaultTableLifetime(defaultTableLifetime);
       return this;
     }
 
     @Override
+    public Builder setDefaultTableLifetime(Long defaultTableLifetime) {
+      infoBuilder.setDefaultTableLifetime(defaultTableLifetime);
+      return this;
+    }
+
+    @Override
+    @Deprecated
     public Builder description(String description) {
-      infoBuilder.description(description);
+      infoBuilder.setDescription(description);
       return this;
     }
 
     @Override
-    Builder etag(String etag) {
-      infoBuilder.etag(etag);
+    public Builder setDescription(String description) {
+      infoBuilder.setDescription(description);
       return this;
     }
 
     @Override
+    Builder setEtag(String etag) {
+      infoBuilder.setEtag(etag);
+      return this;
+    }
+
+    @Override
+    @Deprecated
     public Builder friendlyName(String friendlyName) {
-      infoBuilder.friendlyName(friendlyName);
+      infoBuilder.setFriendlyName(friendlyName);
       return this;
     }
 
     @Override
-    Builder generatedId(String generatedId) {
-      infoBuilder.generatedId(generatedId);
+    public Builder setFriendlyName(String friendlyName) {
+      infoBuilder.setFriendlyName(friendlyName);
       return this;
     }
 
     @Override
-    Builder lastModified(Long lastModified) {
-      infoBuilder.lastModified(lastModified);
+    Builder setGeneratedId(String generatedId) {
+      infoBuilder.setGeneratedId(generatedId);
       return this;
     }
 
     @Override
+    Builder setLastModified(Long lastModified) {
+      infoBuilder.setLastModified(lastModified);
+      return this;
+    }
+
+    @Override
+    @Deprecated
     public Builder location(String location) {
-      infoBuilder.location(location);
+      infoBuilder.setLocation(location);
       return this;
     }
 
     @Override
-    Builder selfLink(String selfLink) {
-      infoBuilder.selfLink(selfLink);
+    public Builder setLocation(String location) {
+      infoBuilder.setLocation(location);
+      return this;
+    }
+
+    @Override
+    Builder setSelfLink(String selfLink) {
+      infoBuilder.setSelfLink(selfLink);
       return this;
     }
 
@@ -159,7 +201,7 @@ public class Dataset extends DatasetInfo {
    * @throws BigQueryException upon failure
    */
   public boolean exists() {
-    return bigquery.getDataset(datasetId(), DatasetOption.fields()) != null;
+    return bigquery.getDataset(getDatasetId(), DatasetOption.fields()) != null;
   }
 
   /**
@@ -179,7 +221,7 @@ public class Dataset extends DatasetInfo {
    * @throws BigQueryException upon failure
    */
   public Dataset reload(DatasetOption... options) {
-    return bigquery.getDataset(datasetId().dataset(), options);
+    return bigquery.getDataset(getDatasetId().getDataset(), options);
   }
 
   /**
@@ -219,7 +261,7 @@ public class Dataset extends DatasetInfo {
    * @throws BigQueryException upon failure
    */
   public boolean delete(DatasetDeleteOption... options) {
-    return bigquery.delete(datasetId(), options);
+    return bigquery.delete(getDatasetId(), options);
   }
 
   /**
@@ -239,7 +281,7 @@ public class Dataset extends DatasetInfo {
    * @throws BigQueryException upon failure
    */
   public Page<Table> list(TableListOption... options) {
-    return bigquery.listTables(datasetId(), options);
+    return bigquery.listTables(getDatasetId(), options);
   }
 
   /**
@@ -256,7 +298,7 @@ public class Dataset extends DatasetInfo {
    * @throws BigQueryException upon failure
    */
   public Table get(String tableId, TableOption... options) {
-    return bigquery.getTable(TableId.of(datasetId().dataset(), tableId), options);
+    return bigquery.getTable(TableId.of(getDatasetId().getDataset(), tableId), options);
   }
 
   /**
@@ -281,14 +323,23 @@ public class Dataset extends DatasetInfo {
    * @throws BigQueryException upon failure
    */
   public Table create(String tableId, TableDefinition definition, TableOption... options) {
-    TableInfo tableInfo = TableInfo.of(TableId.of(datasetId().dataset(), tableId), definition);
+    TableInfo tableInfo =
+        TableInfo.of(TableId.of(getDatasetId().getDataset(), tableId), definition);
     return bigquery.create(tableInfo, options);
   }
 
   /**
    * Returns the dataset's {@code BigQuery} object used to issue requests.
    */
+  @Deprecated
   public BigQuery bigquery() {
+    return bigquery;
+  }
+
+  /**
+   * Returns the dataset's {@code BigQuery} object used to issue requests.
+   */
+  public BigQuery getBigquery() {
     return bigquery;
   }
 

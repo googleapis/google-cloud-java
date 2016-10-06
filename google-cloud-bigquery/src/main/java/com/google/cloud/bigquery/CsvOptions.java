@@ -63,7 +63,20 @@ public final class CsvOptions extends FormatOptions {
      * bad records, an invalid error is returned in the job result. By default, rows with missing
      * trailing columns are considered bad records.
      */
+    @Deprecated
     public Builder allowJaggedRows(boolean allowJaggedRows) {
+      this.allowJaggedRows = allowJaggedRows;
+      return this;
+    }
+
+    /**
+     * Set whether BigQuery should accept rows that are missing trailing optional columns. If
+     * {@code true}, BigQuery treats missing trailing columns as null values. If {@code false},
+     * records with missing trailing columns are treated as bad records, and if there are too many
+     * bad records, an invalid error is returned in the job result. By default, rows with missing
+     * trailing columns are considered bad records.
+     */
+    public Builder setAllowJaggedRows(boolean allowJaggedRows) {
       this.allowJaggedRows = allowJaggedRows;
       return this;
     }
@@ -72,7 +85,17 @@ public final class CsvOptions extends FormatOptions {
      * Sets whether BigQuery should allow quoted data sections that contain newline characters in a
      * CSV file. By default quoted newline are not allowed.
      */
+    @Deprecated
     public Builder allowQuotedNewLines(boolean allowQuotedNewLines) {
+      this.allowQuotedNewLines = allowQuotedNewLines;
+      return this;
+    }
+
+    /**
+     * Sets whether BigQuery should allow quoted data sections that contain newline characters in a
+     * CSV file. By default quoted newline are not allowed.
+     */
+    public Builder setAllowQuotedNewLines(boolean allowQuotedNewLines) {
       this.allowQuotedNewLines = allowQuotedNewLines;
       return this;
     }
@@ -82,6 +105,7 @@ public final class CsvOptions extends FormatOptions {
      * default value is UTF-8. BigQuery decodes the data after the raw, binary data has been split
      * using the values set in {@link #quote(String)} and {@link #fieldDelimiter(String)}.
      */
+    @Deprecated
     public Builder encoding(String encoding) {
       this.encoding = encoding;
       return this;
@@ -92,7 +116,28 @@ public final class CsvOptions extends FormatOptions {
      * default value is UTF-8. BigQuery decodes the data after the raw, binary data has been split
      * using the values set in {@link #quote(String)} and {@link #fieldDelimiter(String)}.
      */
+    public Builder setEncoding(String encoding) {
+      this.encoding = encoding;
+      return this;
+    }
+
+    /**
+     * Sets the character encoding of the data. The supported values are UTF-8 or ISO-8859-1. The
+     * default value is UTF-8. BigQuery decodes the data after the raw, binary data has been split
+     * using the values set in {@link #quote(String)} and {@link #fieldDelimiter(String)}.
+     */
+    @Deprecated
     public Builder encoding(Charset encoding) {
+      this.encoding = encoding.name();
+      return this;
+    }
+
+    /**
+     * Sets the character encoding of the data. The supported values are UTF-8 or ISO-8859-1. The
+     * default value is UTF-8. BigQuery decodes the data after the raw, binary data has been split
+     * using the values set in {@link #quote(String)} and {@link #fieldDelimiter(String)}.
+     */
+    public Builder setEncoding(Charset encoding) {
       this.encoding = encoding.name();
       return this;
     }
@@ -103,7 +148,19 @@ public final class CsvOptions extends FormatOptions {
      * binary state. BigQuery also supports the escape sequence "\t" to specify a tab separator.
      * The default value is a comma (',').
      */
+    @Deprecated
     public Builder fieldDelimiter(String fieldDelimiter) {
+      this.fieldDelimiter = fieldDelimiter;
+      return this;
+    }
+
+    /**
+     * Sets the separator for fields in a CSV file. BigQuery converts the string to ISO-8859-1
+     * encoding, and then uses the first byte of the encoded string to split the data in its raw,
+     * binary state. BigQuery also supports the escape sequence "\t" to specify a tab separator.
+     * The default value is a comma (',').
+     */
+    public Builder setFieldDelimiter(String fieldDelimiter) {
       this.fieldDelimiter = fieldDelimiter;
       return this;
     }
@@ -116,7 +173,21 @@ public final class CsvOptions extends FormatOptions {
      * contains quoted newline characters, you must also set {@link #allowQuotedNewLines(boolean)}
      * property to {@code true}.
      */
+    @Deprecated
     public Builder quote(String quote) {
+      this.quote = quote;
+      return this;
+    }
+
+    /**
+     * Sets the value that is used to quote data sections in a CSV file. BigQuery converts the
+     * string to ISO-8859-1 encoding, and then uses the first byte of the encoded string to split
+     * the data in its raw, binary state. The default value is a double-quote ('"'). If your data
+     * does not contain quoted sections, set the property value to an empty string. If your data
+     * contains quoted newline characters, you must also set {@link #allowQuotedNewLines(boolean)}
+     * property to {@code true}.
+     */
+    public Builder setQuote(String quote) {
       this.quote = quote;
       return this;
     }
@@ -126,7 +197,18 @@ public final class CsvOptions extends FormatOptions {
      * data. The default value is 0. This property is useful if you have header rows in the file
      * that should be skipped.
      */
+    @Deprecated
     public Builder skipLeadingRows(long skipLeadingRows) {
+      this.skipLeadingRows = skipLeadingRows;
+      return this;
+    }
+
+    /**
+     * Sets the number of rows at the top of a CSV file that BigQuery will skip when reading the
+     * data. The default value is 0. This property is useful if you have header rows in the file
+     * that should be skipped.
+     */
+    public Builder setSkipLeadingRows(long skipLeadingRows) {
       this.skipLeadingRows = skipLeadingRows;
       return this;
     }
@@ -171,23 +253,49 @@ public final class CsvOptions extends FormatOptions {
   /**
    * Returns the character encoding of the data. The supported values are UTF-8 or ISO-8859-1. If
    * not set, UTF-8 is used. BigQuery decodes the data after the raw, binary data has been split
-   * using the values set in {@link #quote()} and {@link #fieldDelimiter()}.
+   * using the values set in {@link #getQuote()} and {@link #getFieldDelimiter()}.
    */
+  @Deprecated
   public String encoding() {
+    return encoding;
+  }
+
+  /**
+   * Returns the character encoding of the data. The supported values are UTF-8 or ISO-8859-1. If
+   * not set, UTF-8 is used. BigQuery decodes the data after the raw, binary data has been split
+   * using the values set in {@link #getQuote()} and {@link #getFieldDelimiter()}.
+   */
+  public String getEncoding() {
     return encoding;
   }
 
   /**
    * Returns the separator for fields in a CSV file.
    */
+  @Deprecated
   public String fieldDelimiter() {
+    return fieldDelimiter;
+  }
+
+  /**
+   * Returns the separator for fields in a CSV file.
+   */
+  public String getFieldDelimiter() {
     return fieldDelimiter;
   }
 
   /**
    * Returns the value that is used to quote data sections in a CSV file.
    */
+  @Deprecated
   public String quote() {
+    return quote;
+  }
+
+  /**
+   * Returns the value that is used to quote data sections in a CSV file.
+   */
+  public String getQuote() {
     return quote;
   }
 
@@ -195,7 +303,16 @@ public final class CsvOptions extends FormatOptions {
    * Returns the number of rows at the top of a CSV file that BigQuery will skip when reading the
    * data.
    */
+  @Deprecated
   public Long skipLeadingRows() {
+    return skipLeadingRows;
+  }
+
+  /**
+   * Returns the number of rows at the top of a CSV file that BigQuery will skip when reading the
+   * data.
+   */
+  public Long getSkipLeadingRows() {
     return skipLeadingRows;
   }
 
@@ -247,29 +364,37 @@ public final class CsvOptions extends FormatOptions {
   /**
    * Returns a builder for a CsvOptions object.
    */
+  @Deprecated
   public static Builder builder() {
     return new Builder();
   }
 
+  /**
+   * Returns a builder for a CsvOptions object.
+   */
+  public static Builder newBuilder() {
+    return new Builder();
+  }
+
   static CsvOptions fromPb(com.google.api.services.bigquery.model.CsvOptions csvOptions) {
-    Builder builder = builder();
+    Builder builder = newBuilder();
     if (csvOptions.getAllowJaggedRows() != null) {
-      builder.allowJaggedRows(csvOptions.getAllowJaggedRows());
+      builder.setAllowJaggedRows(csvOptions.getAllowJaggedRows());
     }
     if (csvOptions.getAllowQuotedNewlines() != null) {
-      builder.allowQuotedNewLines(csvOptions.getAllowQuotedNewlines());
+      builder.setAllowQuotedNewLines(csvOptions.getAllowQuotedNewlines());
     }
     if (csvOptions.getEncoding() != null) {
-      builder.encoding(csvOptions.getEncoding());
+      builder.setEncoding(csvOptions.getEncoding());
     }
     if (csvOptions.getFieldDelimiter() != null) {
-      builder.fieldDelimiter(csvOptions.getFieldDelimiter());
+      builder.setFieldDelimiter(csvOptions.getFieldDelimiter());
     }
     if (csvOptions.getQuote() != null) {
-      builder.quote(csvOptions.getQuote());
+      builder.setQuote(csvOptions.getQuote());
     }
     if (csvOptions.getSkipLeadingRows() != null) {
-      builder.skipLeadingRows(csvOptions.getSkipLeadingRows());
+      builder.setSkipLeadingRows(csvOptions.getSkipLeadingRows());
     }
     return builder.build();
   }

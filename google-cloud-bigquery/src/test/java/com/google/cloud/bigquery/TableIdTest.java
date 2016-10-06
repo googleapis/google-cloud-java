@@ -27,6 +27,16 @@ public class TableIdTest {
 
   @Test
   public void testOf() {
+    assertEquals(null, TABLE.getProject());
+    assertEquals("dataset", TABLE.getDataset());
+    assertEquals("table", TABLE.getTable());
+    assertEquals("project", TABLE_COMPLETE.getProject());
+    assertEquals("dataset", TABLE_COMPLETE.getDataset());
+    assertEquals("table", TABLE_COMPLETE.getTable());
+  }
+
+  @Test
+  public void testOfDeprecated() {
     assertEquals(null, TABLE.project());
     assertEquals("dataset", TABLE.dataset());
     assertEquals("table", TABLE.table());
@@ -54,8 +64,8 @@ public class TableIdTest {
 
   private void compareTableIds(TableId expected, TableId value) {
     assertEquals(expected, value);
-    assertEquals(expected.project(), value.project());
-    assertEquals(expected.dataset(), value.dataset());
+    assertEquals(expected.getProject(), value.getProject());
+    assertEquals(expected.getDataset(), value.getDataset());
     assertEquals(expected.hashCode(), value.hashCode());
   }
 }

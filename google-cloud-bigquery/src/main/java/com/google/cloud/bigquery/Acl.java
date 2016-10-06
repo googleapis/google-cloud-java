@@ -80,7 +80,12 @@ public final class Acl implements Serializable {
       this.type = type;
     }
 
+    @Deprecated
     public Type type() {
+      return type;
+    }
+
+    public Type getType() {
       return type;
     }
 
@@ -129,7 +134,15 @@ public final class Acl implements Serializable {
     /**
      * Returns the domain name.
      */
+    @Deprecated
     public String domain() {
+      return domain;
+    }
+
+    /**
+     * Returns the domain name.
+     */
+    public String getDomain() {
       return domain;
     }
 
@@ -193,7 +206,17 @@ public final class Acl implements Serializable {
      * <a href="https://cloud.google.com/bigquery/docs/reference/v2/datasets#access.specialGroup">
      *     special group identifier</a> or a group email.
      */
+    @Deprecated
     public String identifier() {
+      return identifier;
+    }
+
+    /**
+     * Returns group's identifier, can be either a
+     * <a href="https://cloud.google.com/bigquery/docs/reference/v2/datasets#access.specialGroup">
+     *     special group identifier</a> or a group email.
+     */
+    public String getIdentifier() {
       return identifier;
     }
 
@@ -285,7 +308,15 @@ public final class Acl implements Serializable {
     /**
      * Returns user's email.
      */
+    @Deprecated
     public String email() {
+      return email;
+    }
+
+    /**
+     * Returns user's email.
+     */
+    public String getEmail() {
       return email;
     }
 
@@ -340,7 +371,15 @@ public final class Acl implements Serializable {
     /**
      * Returns table's identity.
      */
+    @Deprecated
     public TableId id() {
+      return id;
+    }
+
+    /**
+     * Returns table's identity.
+     */
+    public TableId getId() {
       return id;
     }
 
@@ -380,14 +419,30 @@ public final class Acl implements Serializable {
   /**
    * Returns the entity for this ACL.
    */
+  @Deprecated
   public Entity entity() {
+    return entity;
+  }
+
+  /**
+   * Returns the entity for this ACL.
+   */
+  public Entity getEntity() {
     return entity;
   }
 
   /**
    * Returns the role specified by this ACL.
    */
+  @Deprecated
   public Role role() {
+    return role;
+  }
+
+  /**
+   * Returns the role specified by this ACL.
+   */
+  public Role getRole() {
     return role;
   }
 

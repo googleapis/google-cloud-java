@@ -30,7 +30,7 @@ import java.util.logging.Logger;
 
 /**
  * Utility to create a remote BigQuery configuration for testing. BigQuery options can be obtained
- * via the {@link #options()} method. Returned options have custom
+ * via the {@link #getOptions()} method. Returned options have custom
  * {@link BigQueryOptions#retryParams()}: {@link RetryParams#retryMaxAttempts()} is {@code 10},
  * {@link RetryParams#retryMinAttempts()} is {@code 6}, {@link RetryParams#maxRetryDelayMillis()} is
  * {@code 30000}, {@link RetryParams#totalRetryPeriodMillis()} is {@code 120000} and
@@ -51,7 +51,15 @@ public class RemoteBigQueryHelper {
   /**
    * Returns a {@link BigQueryOptions} object to be used for testing.
    */
+  @Deprecated
   public BigQueryOptions options() {
+    return options;
+  }
+
+  /**
+   * Returns a {@link BigQueryOptions} object to be used for testing.
+   */
+  public BigQueryOptions getOptions() {
     return options;
   }
 
