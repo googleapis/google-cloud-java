@@ -16,7 +16,7 @@
 
 package com.example.datastore;
 
-// [START bigquery_quickstart]
+// [START datastore_quickstart]
 // Imports the Google Cloud client library
 import com.google.cloud.datastore.Datastore;
 import com.google.cloud.datastore.DatastoreOptions;
@@ -42,4 +42,4 @@ public class QuickstartSample {
     System.out.printf("Saved %s: %s%n", task.key().name(), task.getString("description"));
   }
 }
-// [END bigquery_quickstart]
+// [END datastore_quickstart]
