@@ -35,6 +35,7 @@ import com.google.cloud.Role;
 import com.google.cloud.pubsub.MessageConsumerImplTest.TestPullFuture;
 import com.google.cloud.pubsub.PubSub.ListOption;
 import com.google.cloud.pubsub.PubSub.MessageConsumer;
+import com.google.cloud.pubsub.PubSub.MessageConsumerOption;
 import com.google.cloud.pubsub.PubSub.MessageProcessor;
 import com.google.cloud.pubsub.PubSub.PullOption;
 import com.google.cloud.pubsub.spi.PubSubRpc;
@@ -1333,6 +1334,44 @@ public class PubSubImplTest {
   }
 
   @Test
+  public void testPullMessagesAsyncWithOptions() throws ExecutionException, InterruptedException {
+    pubsub = new PubSubImpl(options, renewerMock);
+    PullRequest request = PullRequest.newBuilder()
+        .setSubscription(SUBSCRIPTION_NAME_PB)
+        .setMaxMessages(42)
+        .setReturnImmediately(false)
+        .build();
+    List<ReceivedMessage> messageList = ImmutableList.of(
+        ReceivedMessage.fromPb(pubsub, SUBSCRIPTION, MESSAGE_PB1),
+        ReceivedMessage.fromPb(pubsub, SUBSCRIPTION, MESSAGE_PB2));
+    PullResponse response = PullResponse.newBuilder()
+        .addReceivedMessages(MESSAGE_PB1)
+        .addReceivedMessages(MESSAGE_PB2)
+        .build();
+    Capture<PullCallback> callback = Capture.newInstance();
+    PullFuture futureMock = EasyMock.createStrictMock(PullFuture.class);
+    futureMock.addCallback(EasyMock.capture(callback));
+    EasyMock.expectLastCall();
+    EasyMock.expect(futureMock.get()).andReturn(response);
+    EasyMock.expect(pubsubRpcMock.pull(request)).andReturn(futureMock);
+    renewerMock.add(SUBSCRIPTION, ImmutableList.of("ackId1", "ackId2"));
+    EasyMock.replay(pubsubRpcMock, renewerMock, futureMock);
+    Iterator<ReceivedMessage> messageIterator =
+        pubsub.pullAsync(SUBSCRIPTION, 42, PullOption.returnImmediately(false)).get();
+    callback.getValue().success(response);
+    EasyMock.reset(renewerMock);
+    for (ReceivedMessage message : messageList) {
+      renewerMock.remove(SUBSCRIPTION, message.ackId());
+      EasyMock.expectLastCall();
+    }
+    EasyMock.replay(renewerMock);
+    while (messageIterator.hasNext()) {
+      messageIterator.next();
+    }
+    EasyMock.verify(futureMock);
+  }
+
+  @Test
   public void testPullMessagesError() throws ExecutionException, InterruptedException {
     pubsub = new PubSubImpl(options, renewerMock);
     PullRequest request = PullRequest.newBuilder()
@@ -1435,8 +1474,8 @@ public class PubSubImplTest {
       }
     });
     EasyMock.replay(pubsubRpcMock, renewerMock, executorFactoryMock, executorServiceMock);
-    PullOption[] options =
-        {PullOption.maxQueuedCallbacks(42), PullOption.executorFactory(executorFactoryMock)};
+    MessageConsumerOption[] options = {MessageConsumerOption.maxQueuedCallbacks(42),
+        MessageConsumerOption.executorFactory(executorFactoryMock)};
     try (MessageConsumer consumer = pubsub.pullAsync(SUBSCRIPTION, DO_NOTHING, options)) {
       latch.await();
     }

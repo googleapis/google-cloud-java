@@ -18,6 +18,7 @@ package com.google.cloud.pubsub;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import com.google.cloud.pubsub.PubSub.PullOption;
 import com.google.cloud.pubsub.spi.v1.SubscriberApi;
 import com.google.common.base.MoreObjects;
 
@@ -37,11 +38,11 @@ import java.util.concurrent.TimeUnit;
  * indicates that the Pub/Sub server should resend it (implicit "nack").
  *
  * <p>In a pull subscription, the subscribing application must explicitly pull messages using one of
- * {@link PubSub#pull(String, int)}, {@link PubSub#pullAsync(String, int)} or
- * {@link PubSub#pullAsync(String, PubSub.MessageProcessor callback, PubSub.PullOption...)}.
- * When messages are pulled with {@link PubSub#pull(String, int)} or
- * {@link PubSub#pullAsync(String, int)} the subscribing application must also explicitly
- * acknowledge them using one of {@link PubSub#ack(String, Iterable)},
+ * {@link PubSub#pull(String, int)}, {@link PubSub#pullAsync(String, int, PullOption...)} or
+ * {@link PubSub#pullAsync(String, PubSub.MessageProcessor callback,
+ * PubSub.MessageConsumerOption...)}. When messages are pulled with {@link PubSub#pull(String, int)}
+ * or {@link PubSub#pullAsync(String, int, PullOption...)} the subscribing application must also
+ * explicitly acknowledge them using one of {@link PubSub#ack(String, Iterable)},
  * {@link PubSub#ack(String, String, String...)}, {@link PubSub#ackAsync(String, Iterable)} or
  * {@link PubSub#ackAsync(String, String, String...)}.
  *

@@ -21,6 +21,7 @@ import com.google.cloud.BaseSerializationTest;
 import com.google.cloud.GrpcServiceOptions.ExecutorFactory;
 import com.google.cloud.Restorable;
 import com.google.cloud.pubsub.PubSub.ListOption;
+import com.google.cloud.pubsub.PubSub.MessageConsumerOption;
 import com.google.cloud.pubsub.PubSub.PullOption;
 
 import java.io.Serializable;
@@ -50,9 +51,12 @@ public class SerializationTest extends BaseSerializationTest {
       new Topic(PUB_SUB, new TopicInfo.BuilderImpl(TOPIC_INFO));
   private static final ListOption PAGE_TOKEN_OPTION = ListOption.pageToken("cursor");
   private static final ListOption PAGE_SIZE_OPTION = ListOption.pageSize(42);
-  private static final PullOption MAX_QUEUED_CALLBACKS_OPTION = PullOption.maxQueuedCallbacks(42);
-  private static final PullOption EXECUTOR_FACTORY_OPTION =
-      PullOption.executorFactory(new TestExecutorFactory());
+  private static final MessageConsumerOption MAX_QUEUED_CALLBACKS_OPTION =
+      MessageConsumerOption.maxQueuedCallbacks(42);
+  private static final MessageConsumerOption EXECUTOR_FACTORY_OPTION =
+      MessageConsumerOption.executorFactory(new TestExecutorFactory());
+  private static final PullOption RETURN_IMMEDIATELY_OPTION =
+      PullOption.returnImmediately(false);
 
   public static class TestExecutorFactory
       implements ExecutorFactory<ScheduledExecutorService>, Serializable {
@@ -92,7 +96,7 @@ public class SerializationTest extends BaseSerializationTest {
         .build();
     return new Serializable[]{options, otherOptions, MESSAGE, RECEIVED_MESSAGE, SUBSCRIPTION_INFO,
         SUBSCRIPTION, SUBSCRIPTION_ID, TOPIC_INFO, TOPIC, PAGE_TOKEN_OPTION, PAGE_SIZE_OPTION,
-        MAX_QUEUED_CALLBACKS_OPTION, EXECUTOR_FACTORY_OPTION};
+        MAX_QUEUED_CALLBACKS_OPTION, EXECUTOR_FACTORY_OPTION, RETURN_IMMEDIATELY_OPTION};
   }
 
   @Override

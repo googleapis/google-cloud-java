@@ -21,6 +21,7 @@ import static org.junit.Assert.assertSame;
 
 import com.google.cloud.GrpcServiceOptions.ExecutorFactory;
 import com.google.cloud.pubsub.PubSub.ListOption;
+import com.google.cloud.pubsub.PubSub.MessageConsumerOption;
 import com.google.cloud.pubsub.PubSub.PullOption;
 
 import org.easymock.EasyMock;
@@ -31,6 +32,7 @@ public class PubSubTest {
   private static final int PAGE_SIZE = 42;
   private static final String PAGE_TOKEN = "page token";
   private static final int MAX_QUEUED_CALLBACKS = 42;
+  private static final boolean RETURN_IMMEDIATELY = false;
 
   @Test
   public void testListOption() {
@@ -45,15 +47,23 @@ public class PubSubTest {
   }
 
   @Test
-  @SuppressWarnings("unchecked")
-  public void testPullOptions() {
+  public void testMessageConsumerOptions() {
     // max queued callbacks
-    PullOption pullOption = PullOption.maxQueuedCallbacks(MAX_QUEUED_CALLBACKS);
+    MessageConsumerOption pullOption =
+        MessageConsumerOption.maxQueuedCallbacks(MAX_QUEUED_CALLBACKS);
     assertEquals(MAX_QUEUED_CALLBACKS, pullOption.value());
-    assertEquals(PullOption.OptionType.MAX_QUEUED_CALLBACKS, pullOption.optionType());
+    assertEquals(MessageConsumerOption.OptionType.MAX_QUEUED_CALLBACKS, pullOption.optionType());
     ExecutorFactory executorFactory = EasyMock.createStrictMock(ExecutorFactory.class);
-    pullOption = PullOption.executorFactory(executorFactory);
+    // executor factory
+    pullOption = MessageConsumerOption.executorFactory(executorFactory);
     assertSame(executorFactory, pullOption.value());
-    assertEquals(PullOption.OptionType.EXECUTOR_FACTORY, pullOption.optionType());
+    assertEquals(MessageConsumerOption.OptionType.EXECUTOR_FACTORY, pullOption.optionType());
+  }
+
+  @Test
+  public void testPullOptions() {
+    PullOption pullOption = PullOption.returnImmediately(RETURN_IMMEDIATELY);
+    assertEquals(RETURN_IMMEDIATELY, pullOption.value());
+    assertEquals(PullOption.OptionType.RETURN_IMMEDIATELY, pullOption.optionType());
   }
 }
