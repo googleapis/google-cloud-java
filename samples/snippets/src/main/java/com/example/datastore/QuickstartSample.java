@@ -27,18 +27,22 @@ public class QuickstartSample {
   public static void main(String... args) throws Exception {
     // Instantiates a client
     Datastore datastore = DatastoreOptions.defaultInstance().service();
+
     // The kind for the new entity
     String kind = "Task";
     // The name/ID for the new entity
     String name = "sampletask1";
     // The Cloud Datastore key for the new entity
     Key taskKey = datastore.newKeyFactory().kind(kind).newKey(name);
+
     // Prepares the new entity
     Entity task = Entity.builder(taskKey)
       .set("description", "Buy milk")
       .build();
+
     // Saves the entity
     datastore.put(task);
+
     System.out.printf("Saved %s: %s%n", task.key().name(), task.getString("description"));
   }
 }
