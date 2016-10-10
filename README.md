@@ -477,7 +477,7 @@ try (PubSub pubsub = PubSubOptions.defaultInstance().service()) {
   MessageProcessor callback = new MessageProcessor() {
     @Override
     public void process(Message message) throws Exception {
-      System.out.printf("Received message \"%s\"%n", message.payloadAsString());
+      System.out.printf("Received message \"%s\"%n", message.getPayloadAsString());
     }
   };
   // Create a message consumer and pull messages (for 60 seconds)
