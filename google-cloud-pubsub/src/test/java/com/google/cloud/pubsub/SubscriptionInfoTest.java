@@ -28,30 +28,61 @@ public class SubscriptionInfoTest {
   private static final String ENDPOINT = "https://example.com/push";
   private static final PushConfig PUSH_CONFIG = PushConfig.of(ENDPOINT);
   private static final int ACK_DEADLINE = 42;
-  private static final SubscriptionInfo SUBSCRIPTION_INFO = SubscriptionInfo.builder(TOPIC, NAME)
-      .pushConfig(PUSH_CONFIG)
-      .ackDeadLineSeconds(ACK_DEADLINE)
+  private static final SubscriptionInfo SUBSCRIPTION_INFO = SubscriptionInfo.newBuilder(TOPIC, NAME)
+      .setPushConfig(PUSH_CONFIG)
+      .setAckDeadLineSeconds(ACK_DEADLINE)
       .build();
+  private static final SubscriptionInfo DEPRECATED_SUBSCRIPTION_INFO =
+      SubscriptionInfo.builder(TOPIC, NAME)
+          .pushConfig(PUSH_CONFIG)
+          .ackDeadLineSeconds(ACK_DEADLINE)
+          .build();
 
   @Test
   public void testToBuilder() {
     compareSubscriptionInfo(SUBSCRIPTION_INFO, SUBSCRIPTION_INFO.toBuilder().build());
     SubscriptionInfo subscriptionInfo = SUBSCRIPTION_INFO.toBuilder()
-        .topic("newTopic")
-        .name("newSubscription")
+        .setTopic("newTopic")
+        .setName("newSubscription")
         .build();
-    assertEquals(TopicId.of("newTopic"), subscriptionInfo.topic());
-    assertEquals("newSubscription", subscriptionInfo.name());
-    subscriptionInfo = subscriptionInfo.toBuilder().name(NAME).topic(TOPIC).build();
+    assertEquals(TopicId.of("newTopic"), subscriptionInfo.getTopic());
+    assertEquals("newSubscription", subscriptionInfo.getName());
+    subscriptionInfo = subscriptionInfo.toBuilder().setName(NAME).setTopic(TOPIC).build();
     compareSubscriptionInfo(SUBSCRIPTION_INFO, subscriptionInfo);
   }
 
   @Test
   public void testBuilder() {
-    assertEquals(TOPIC, SUBSCRIPTION_INFO.topic());
-    assertEquals(NAME, SUBSCRIPTION_INFO.name());
-    assertEquals(PUSH_CONFIG, SUBSCRIPTION_INFO.pushConfig());
-    assertEquals(ACK_DEADLINE, SUBSCRIPTION_INFO.ackDeadlineSeconds());
+    assertEquals(TOPIC, SUBSCRIPTION_INFO.getTopic());
+    assertEquals(NAME, SUBSCRIPTION_INFO.getName());
+    assertEquals(PUSH_CONFIG, SUBSCRIPTION_INFO.getPushConfig());
+    assertEquals(ACK_DEADLINE, SUBSCRIPTION_INFO.getAckDeadlineSeconds());
+    SubscriptionInfo subscriptionInfo =
+        SubscriptionInfo.newBuilder("topic", "subscription").build();
+    assertEquals(TopicId.of("topic"), subscriptionInfo.getTopic());
+    assertEquals(NAME, subscriptionInfo.getName());
+    assertNull(subscriptionInfo.getPushConfig());
+    assertEquals(0, subscriptionInfo.getAckDeadlineSeconds());
+    subscriptionInfo = SubscriptionInfo.newBuilder("topic", "subscription")
+        .setTopic("project", "topic").build();
+    assertEquals(TOPIC, subscriptionInfo.getTopic());
+    assertEquals(NAME, subscriptionInfo.getName());
+    assertNull(subscriptionInfo.getPushConfig());
+    assertEquals(0, subscriptionInfo.getAckDeadlineSeconds());
+    subscriptionInfo = SubscriptionInfo.newBuilder("topic", "subscription")
+        .setTopic(TOPIC).build();
+    assertEquals(TOPIC, subscriptionInfo.getTopic());
+    assertEquals(NAME, subscriptionInfo.getName());
+    assertNull(subscriptionInfo.getPushConfig());
+    assertEquals(0, subscriptionInfo.getAckDeadlineSeconds());
+  }
+
+  @Test
+  public void testBuilderDeprecated() {
+    assertEquals(TOPIC, DEPRECATED_SUBSCRIPTION_INFO.topic());
+    assertEquals(NAME, DEPRECATED_SUBSCRIPTION_INFO.name());
+    assertEquals(PUSH_CONFIG, DEPRECATED_SUBSCRIPTION_INFO.pushConfig());
+    assertEquals(ACK_DEADLINE, DEPRECATED_SUBSCRIPTION_INFO.ackDeadlineSeconds());
     SubscriptionInfo subscriptionInfo = SubscriptionInfo.builder("topic", "subscription").build();
     assertEquals(TopicId.of("topic"), subscriptionInfo.topic());
     assertEquals(NAME, subscriptionInfo.name());
@@ -74,25 +105,25 @@ public class SubscriptionInfoTest {
   @Test
   public void testOf() {
     SubscriptionInfo subscriptionInfo = SubscriptionInfo.of(TOPIC, NAME);
-    assertEquals(TOPIC, subscriptionInfo.topic());
-    assertEquals(NAME, subscriptionInfo.name());
-    assertNull(subscriptionInfo.pushConfig());
-    assertEquals(0, subscriptionInfo.ackDeadlineSeconds());
+    assertEquals(TOPIC, subscriptionInfo.getTopic());
+    assertEquals(NAME, subscriptionInfo.getName());
+    assertNull(subscriptionInfo.getPushConfig());
+    assertEquals(0, subscriptionInfo.getAckDeadlineSeconds());
     subscriptionInfo = SubscriptionInfo.of("topic", NAME);
-    assertEquals(TopicId.of("topic"), subscriptionInfo.topic());
-    assertEquals(NAME, subscriptionInfo.name());
-    assertNull(subscriptionInfo.pushConfig());
-    assertEquals(0, subscriptionInfo.ackDeadlineSeconds());
+    assertEquals(TopicId.of("topic"), subscriptionInfo.getTopic());
+    assertEquals(NAME, subscriptionInfo.getName());
+    assertNull(subscriptionInfo.getPushConfig());
+    assertEquals(0, subscriptionInfo.getAckDeadlineSeconds());
     subscriptionInfo = SubscriptionInfo.of(TOPIC, NAME, ENDPOINT);
-    assertEquals(TOPIC, subscriptionInfo.topic());
-    assertEquals(NAME, subscriptionInfo.name());
-    assertEquals(PushConfig.of(ENDPOINT), subscriptionInfo.pushConfig());
-    assertEquals(0, subscriptionInfo.ackDeadlineSeconds());
+    assertEquals(TOPIC, subscriptionInfo.getTopic());
+    assertEquals(NAME, subscriptionInfo.getName());
+    assertEquals(PushConfig.of(ENDPOINT), subscriptionInfo.getPushConfig());
+    assertEquals(0, subscriptionInfo.getAckDeadlineSeconds());
     subscriptionInfo = SubscriptionInfo.of("topic", NAME, ENDPOINT);
-    assertEquals(TopicId.of("topic"), subscriptionInfo.topic());
-    assertEquals(NAME, subscriptionInfo.name());
-    assertEquals(PushConfig.of(ENDPOINT), subscriptionInfo.pushConfig());
-    assertEquals(0, subscriptionInfo.ackDeadlineSeconds());
+    assertEquals(TopicId.of("topic"), subscriptionInfo.getTopic());
+    assertEquals(NAME, subscriptionInfo.getName());
+    assertEquals(PushConfig.of(ENDPOINT), subscriptionInfo.getPushConfig());
+    assertEquals(0, subscriptionInfo.getAckDeadlineSeconds());
   }
 
   @Test
@@ -114,18 +145,18 @@ public class SubscriptionInfoTest {
     com.google.pubsub.v1.Subscription subscription = SUBSCRIPTION_INFO.toPb("project");
     subscriptionInfo =
         SubscriptionInfo.fromPb(subscription.toBuilder().setTopic("_deleted-topic_").build());
-    assertEquals(TopicId.deletedTopic(), subscriptionInfo.topic());
-    assertEquals(NAME, subscriptionInfo.name());
-    assertEquals(PUSH_CONFIG, subscriptionInfo.pushConfig());
-    assertEquals(ACK_DEADLINE, subscriptionInfo.ackDeadlineSeconds());
+    assertEquals(TopicId.deletedTopic(), subscriptionInfo.getTopic());
+    assertEquals(NAME, subscriptionInfo.getName());
+    assertEquals(PUSH_CONFIG, subscriptionInfo.getPushConfig());
+    assertEquals(ACK_DEADLINE, subscriptionInfo.getAckDeadlineSeconds());
   }
 
   private void compareSubscriptionInfo(SubscriptionInfo expected, SubscriptionInfo value) {
     assertEquals(expected, value);
-    assertEquals(expected.topic(), value.topic());
-    assertEquals(expected.name(), value.name());
-    assertEquals(expected.pushConfig(), value.pushConfig());
-    assertEquals(expected.ackDeadlineSeconds(), value.ackDeadlineSeconds());
+    assertEquals(expected.getTopic(), value.getTopic());
+    assertEquals(expected.getName(), value.getName());
+    assertEquals(expected.getPushConfig(), value.getPushConfig());
+    assertEquals(expected.getAckDeadlineSeconds(), value.getAckDeadlineSeconds());
     assertEquals(expected.hashCode(), value.hashCode());
   }
 }

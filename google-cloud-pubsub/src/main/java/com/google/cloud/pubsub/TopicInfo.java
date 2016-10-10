@@ -47,7 +47,16 @@ public class TopicInfo implements Serializable {
      * periods ({@code .}), tildes ({@code ~}), plus ({@code +}) or percent signs ({@code %}). It
      * must be between 3 and 255 characters in length and cannot begin with the string {@code goog}.
      */
+    @Deprecated
     public abstract Builder name(String name);
+
+    /**
+     * Sets the name of the topic. The name must start with a letter, and contain only letters
+     * ({@code [A-Za-z]}), numbers ({@code [0-9]}), dashes ({@code -}), underscores ({@code _}),
+     * periods ({@code .}), tildes ({@code ~}), plus ({@code +}) or percent signs ({@code %}). It
+     * must be between 3 and 255 characters in length and cannot begin with the string {@code goog}.
+     */
+    public abstract Builder setName(String name);
 
     /**
      * Creates a topic object.
@@ -68,7 +77,14 @@ public class TopicInfo implements Serializable {
     }
 
     @Override
+    @Deprecated
     public Builder name(String name) {
+      this.name = checkNotNull(name);
+      return this;
+    }
+
+    @Override
+    public Builder setName(String name) {
       this.name = checkNotNull(name);
       return this;
     }
@@ -89,7 +105,18 @@ public class TopicInfo implements Serializable {
    * periods ({@code .}), tildes ({@code ~}), plus ({@code +}) or percent signs ({@code %}). It
    * must be between 3 and 255 characters in length and cannot begin with the string {@code goog}.
    */
+  @Deprecated
   public String name() {
+    return name;
+  }
+
+  /**
+   * Returns the name of the topic. The name must start with a letter, and contain only letters
+   * ({@code [A-Za-z]}), numbers ({@code [0-9]}), dashes ({@code -}), underscores ({@code _}),
+   * periods ({@code .}), tildes ({@code ~}), plus ({@code +}) or percent signs ({@code %}). It
+   * must be between 3 and 255 characters in length and cannot begin with the string {@code goog}.
+   */
+  public String getName() {
     return name;
   }
 
@@ -124,7 +151,7 @@ public class TopicInfo implements Serializable {
   }
 
   static TopicInfo fromPb(com.google.pubsub.v1.Topic topicPb) {
-    return builder(PublisherApi.parseTopicFromTopicName(topicPb.getName())).build();
+    return newBuilder(PublisherApi.parseTopicFromTopicName(topicPb.getName())).build();
   }
 
   /**
@@ -144,7 +171,7 @@ public class TopicInfo implements Serializable {
    *     {@code goog}.
    */
   public static TopicInfo of(String name) {
-    return builder(name).build();
+    return newBuilder(name).build();
   }
 
   /**
@@ -156,7 +183,21 @@ public class TopicInfo implements Serializable {
    *     It must be between 3 and 255 characters in length and cannot begin with the string
    *     {@code goog}.
    */
+  @Deprecated
   public static Builder builder(String name) {
+    return new BuilderImpl(name);
+  }
+
+  /**
+   * Creates a builder for {@code TopicInfo} objects given the name of the topic.
+   *
+   * @param name the name of the topic. The name must start with a letter, and contain only letters
+   *     ({@code [A-Za-z]}), numbers ({@code [0-9]}), dashes ({@code -}), underscores ({@code _}),
+   *     periods ({@code .}), tildes ({@code ~}), plus ({@code +}) or percent signs ({@code %}).
+   *     It must be between 3 and 255 characters in length and cannot begin with the string
+   *     {@code goog}.
+   */
+  public static Builder newBuilder(String name) {
     return new BuilderImpl(name);
   }
 }

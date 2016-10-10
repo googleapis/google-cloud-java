@@ -60,26 +60,47 @@ public final class ReceivedMessage extends Message {
     }
 
     @Override
-    Builder id(String id) {
-      delegate.id(id);
+    Builder setId(String id) {
+      delegate.setId(id);
       return this;
     }
 
     @Override
+    @Deprecated
     public Builder payload(String payload) {
-      delegate.payload(payload);
+      delegate.setPayload(payload);
       return this;
     }
 
     @Override
+    public Builder setPayload(String payload) {
+      delegate.setPayload(payload);
+      return this;
+    }
+
+    @Override
+    @Deprecated
     public Builder payload(ByteArray payload) {
-      delegate.payload(payload);
+      delegate.setPayload(payload);
       return this;
     }
 
     @Override
+    public Builder setPayload(ByteArray payload) {
+      delegate.setPayload(payload);
+      return this;
+    }
+
+    @Override
+    @Deprecated
     public Builder attributes(Map<String, String> attributes) {
-      delegate.attributes(attributes);
+      delegate.setAttributes(attributes);
+      return this;
+    }
+
+    @Override
+    public Builder setAttributes(Map<String, String> attributes) {
+      delegate.setAttributes(attributes);
       return this;
     }
 
@@ -102,8 +123,8 @@ public final class ReceivedMessage extends Message {
     }
 
     @Override
-    Builder publishTime(long publishTime) {
-      delegate.publishTime(publishTime);
+    Builder setPublishTime(long publishTime) {
+      delegate.setPublishTime(publishTime);
       return this;
     }
 
@@ -146,14 +167,30 @@ public final class ReceivedMessage extends Message {
   /**
    * Returns the received message's {@code PubSub} object used to issue requests.
    */
+  @Deprecated
   public PubSub pubsub() {
+    return pubsub;
+  }
+
+  /**
+   * Returns the received message's {@code PubSub} object used to issue requests.
+   */
+  public PubSub getPubsub() {
     return pubsub;
   }
 
   /**
    * Returns the name of the subscription this message was received from.
    */
+  @Deprecated
   public String subscription() {
+    return subscription;
+  }
+
+  /**
+   * Returns the name of the subscription this message was received from.
+   */
+  public String getSubscription() {
     return subscription;
   }
 
@@ -161,7 +198,16 @@ public final class ReceivedMessage extends Message {
    * Returns the acknowledge id of the message. The ack id can be used to acknowledge the received
    * message.
    */
+  @Deprecated
   public String ackId() {
+    return ackId;
+  }
+
+  /**
+   * Returns the acknowledge id of the message. The ack id can be used to acknowledge the received
+   * message.
+   */
+  public String getAckId() {
     return ackId;
   }
 

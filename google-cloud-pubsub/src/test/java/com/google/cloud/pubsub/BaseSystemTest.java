@@ -73,7 +73,7 @@ public abstract class BaseSystemTest {
   public void testCreateGetAndDeleteTopic() {
     String name = formatForTest("test-create-get-delete-topic");
     Topic topic = pubsub().create(TopicInfo.of(name));
-    assertEquals(name, topic.name());
+    assertEquals(name, topic.getName());
     Topic remoteTopic = pubsub().getTopic(name);
     assertEquals(topic, remoteTopic);
     assertTrue(topic.delete());
@@ -95,7 +95,7 @@ public abstract class BaseSystemTest {
     String name = formatForTest("test-create-get-delete-async-topic");
     Future<Topic> topicFuture = pubsub().createAsync(TopicInfo.of(name));
     Topic createdTopic = topicFuture.get();
-    assertEquals(name, createdTopic.name());
+    assertEquals(name, createdTopic.getName());
     topicFuture = pubsub().getTopicAsync(name);
     assertEquals(createdTopic, topicFuture.get());
     assertTrue(createdTopic.deleteAsync().get());
@@ -111,11 +111,11 @@ public abstract class BaseSystemTest {
     Page<Topic> topics = pubsub().listTopics(PubSub.ListOption.pageSize(1));
     Iterator<Topic> iterator = topics.iterateAll();
     while (iterator.hasNext()) {
-      topicNames.add(iterator.next().name());
+      topicNames.add(iterator.next().getName());
     }
-    assertTrue(topicNames.contains(topic1.name()));
-    assertTrue(topicNames.contains(topic2.name()));
-    assertTrue(topicNames.contains(topic3.name()));
+    assertTrue(topicNames.contains(topic1.getName()));
+    assertTrue(topicNames.contains(topic2.getName()));
+    assertTrue(topicNames.contains(topic3.getName()));
     assertTrue(topic1.delete());
     assertTrue(topic2.delete());
     assertTrue(topic3.delete());
@@ -130,11 +130,11 @@ public abstract class BaseSystemTest {
     Future<AsyncPage<Topic>> pageFuture = pubsub().listTopicsAsync(PubSub.ListOption.pageSize(1));
     Iterator<Topic> iterator = pageFuture.get().iterateAll();
     while (iterator.hasNext()) {
-      topicNames.add(iterator.next().name());
+      topicNames.add(iterator.next().getName());
     }
-    assertTrue(topicNames.contains(topic1.name()));
-    assertTrue(topicNames.contains(topic2.name()));
-    assertTrue(topicNames.contains(topic3.name()));
+    assertTrue(topicNames.contains(topic1.getName()));
+    assertTrue(topicNames.contains(topic2.getName()));
+    assertTrue(topicNames.contains(topic3.getName()));
     assertTrue(topic1.delete());
     assertTrue(topic2.delete());
     assertTrue(topic3.delete());
@@ -218,9 +218,9 @@ public abstract class BaseSystemTest {
     pubsub().create(TopicInfo.of(topic));
     String name = formatForTest("test-create-get-delete-subscription");
     Subscription subscription = pubsub().create(SubscriptionInfo.of(topic, name));
-    assertEquals(TopicId.of(pubsub().options().projectId(), topic), subscription.topic());
-    assertEquals(name, subscription.name());
-    assertNull(subscription.pushConfig());
+    assertEquals(TopicId.of(pubsub().options().projectId(), topic), subscription.getTopic());
+    assertEquals(name, subscription.getName());
+    assertNull(subscription.getPushConfig());
     // todo(mziccard) seems not to work on the emulator (returns 60) - see #989
     // assertEquals(10, subscription.ackDeadlineSeconds());
     Subscription remoteSubscription = pubsub().getSubscription(name);
@@ -248,12 +248,12 @@ public abstract class BaseSystemTest {
     String name = formatForTest("test-create-get-delete-async-subscription");
     String endpoint = "https://" + pubsub().options().projectId() + ".appspot.com/push";
     PushConfig pushConfig = PushConfig.of(endpoint);
-    Future<Subscription> subscriptionFuture =
-        pubsub().createAsync(SubscriptionInfo.builder(topic, name).pushConfig(pushConfig).build());
+    Future<Subscription> subscriptionFuture = pubsub().createAsync(
+        SubscriptionInfo.newBuilder(topic, name).setPushConfig(pushConfig).build());
     Subscription subscription = subscriptionFuture.get();
-    assertEquals(TopicId.of(pubsub().options().projectId(), topic), subscription.topic());
-    assertEquals(name, subscription.name());
-    assertEquals(pushConfig, subscription.pushConfig());
+    assertEquals(TopicId.of(pubsub().options().projectId(), topic), subscription.getTopic());
+    assertEquals(name, subscription.getName());
+    assertEquals(pushConfig, subscription.getPushConfig());
     // todo(mziccard) seems not to work on the emulator (returns 60) - see #989
     // assertEquals(10, subscription.ackDeadlineSeconds());
     subscriptionFuture = pubsub().getSubscriptionAsync(name);
@@ -270,17 +270,17 @@ public abstract class BaseSystemTest {
     pubsub().create(TopicInfo.of(topic));
     String name = formatForTest("test-get-deleted-topic-subscription");
     Subscription subscription = pubsub().create(SubscriptionInfo.of(topic, name));
-    assertEquals(TopicId.of(pubsub().options().projectId(), topic), subscription.topic());
-    assertEquals(name, subscription.name());
-    assertNull(subscription.pushConfig());
+    assertEquals(TopicId.of(pubsub().options().projectId(), topic), subscription.getTopic());
+    assertEquals(name, subscription.getName());
+    assertNull(subscription.getPushConfig());
     // todo(mziccard) seems not to work on the emulator (returns 60) - see #989
     // assertEquals(10, subscription.ackDeadlineSeconds());
     assertTrue(pubsub().deleteTopic(topic));
     assertNull(pubsub().getTopic(topic));
     Subscription remoteSubscription = pubsub().getSubscription(name);
-    assertEquals(TopicId.of("_deleted-topic_"), remoteSubscription.topic());
-    assertEquals(name, remoteSubscription.name());
-    assertNull(remoteSubscription.pushConfig());
+    assertEquals(TopicId.of("_deleted-topic_"), remoteSubscription.getTopic());
+    assertEquals(name, remoteSubscription.getName());
+    assertNull(remoteSubscription.getPushConfig());
     assertTrue(subscription.delete());
   }
 
@@ -292,17 +292,17 @@ public abstract class BaseSystemTest {
     String endpoint = "https://" + pubsub().options().projectId() + ".appspot.com/push";
     PushConfig pushConfig = PushConfig.of(endpoint);
     Subscription subscription =
-        pubsub().create(SubscriptionInfo.builder(topic, name).pushConfig(pushConfig).build());
-    assertEquals(TopicId.of(pubsub().options().projectId(), topic), subscription.topic());
-    assertEquals(name, subscription.name());
-    assertEquals(pushConfig, subscription.pushConfig());
+        pubsub().create(SubscriptionInfo.newBuilder(topic, name).setPushConfig(pushConfig).build());
+    assertEquals(TopicId.of(pubsub().options().projectId(), topic), subscription.getTopic());
+    assertEquals(name, subscription.getName());
+    assertEquals(pushConfig, subscription.getPushConfig());
     // todo(mziccard) seems not to work on the emulator (returns 60) - see #989
     // assertEquals(10, subscription.ackDeadlineSeconds());
     pubsub().replacePushConfig(name, null);
     Subscription remoteSubscription = pubsub().getSubscription(name);
-    assertEquals(TopicId.of(pubsub().options().projectId(), topic), remoteSubscription.topic());
-    assertEquals(name, remoteSubscription.name());
-    assertNull(remoteSubscription.pushConfig());
+    assertEquals(TopicId.of(pubsub().options().projectId(), topic), remoteSubscription.getTopic());
+    assertEquals(name, remoteSubscription.getName());
+    assertNull(remoteSubscription.getPushConfig());
     // todo(mziccard) seems not to work on the emulator (returns 60) - see #989
     // assertEquals(10, remoteSubscription.ackDeadlineSeconds());
     assertTrue(subscription.delete());
@@ -325,18 +325,18 @@ public abstract class BaseSystemTest {
     Future<Subscription> subscriptionFuture =
         pubsub().createAsync(SubscriptionInfo.of(topic, name));
     Subscription subscription = subscriptionFuture.get();
-    assertEquals(TopicId.of(pubsub().options().projectId(), topic), subscription.topic());
-    assertEquals(name, subscription.name());
-    assertNull(subscription.pushConfig());
+    assertEquals(TopicId.of(pubsub().options().projectId(), topic), subscription.getTopic());
+    assertEquals(name, subscription.getName());
+    assertNull(subscription.getPushConfig());
     // todo(mziccard) seems not to work on the emulator (returns 60) - see #989
     // assertEquals(10, subscription.ackDeadlineSeconds());
     String endpoint = "https://" + pubsub().options().projectId() + ".appspot.com/push";
     PushConfig pushConfig = PushConfig.of(endpoint);
     pubsub().replacePushConfigAsync(name, pushConfig).get();
     Subscription remoteSubscription = pubsub().getSubscriptionAsync(name).get();
-    assertEquals(TopicId.of(pubsub().options().projectId(), topic), remoteSubscription.topic());
-    assertEquals(name, remoteSubscription.name());
-    assertEquals(pushConfig, remoteSubscription.pushConfig());
+    assertEquals(TopicId.of(pubsub().options().projectId(), topic), remoteSubscription.getTopic());
+    assertEquals(name, remoteSubscription.getName());
+    assertEquals(pushConfig, remoteSubscription.getPushConfig());
     // todo(mziccard) seems not to work on the emulator (returns 60) - see #989
     // assertEquals(10, remoteSubscription.ackDeadlineSeconds());
     assertTrue(subscription.deleteAsync().get());
@@ -363,7 +363,7 @@ public abstract class BaseSystemTest {
     Page<Subscription> subscriptions = pubsub().listSubscriptions(PubSub.ListOption.pageSize(1));
     Iterator<Subscription> iterator = subscriptions.iterateAll();
     while (iterator.hasNext()) {
-      String name = iterator.next().name();
+      String name = iterator.next().getName();
       subscriptionNames.add(name);
     }
     assertTrue(subscriptionNames.contains(subscriptionName1));
@@ -373,12 +373,12 @@ public abstract class BaseSystemTest {
     Page<SubscriptionId> topic1Subscriptions =
         topic1.listSubscriptions(PubSub.ListOption.pageSize(1));
     Iterator<SubscriptionId> firstStringPageIterator = topic1Subscriptions.values().iterator();
-    topicSubscriptionNames.add(firstStringPageIterator.next().subscription());
+    topicSubscriptionNames.add(firstStringPageIterator.next().getSubscription());
     assertFalse(firstStringPageIterator.hasNext());
     Iterator<SubscriptionId> topicSubscriptionsIterator =
         topic1Subscriptions.nextPage().iterateAll();
     while (topicSubscriptionsIterator.hasNext()) {
-      topicSubscriptionNames.add(topicSubscriptionsIterator.next().subscription());
+      topicSubscriptionNames.add(topicSubscriptionsIterator.next().getSubscription());
     }
     assertEquals(2, topicSubscriptionNames.size());
     assertTrue(topicSubscriptionNames.contains(subscriptionName1));
@@ -411,7 +411,7 @@ public abstract class BaseSystemTest {
         pubsub().listSubscriptionsAsync(PubSub.ListOption.pageSize(1));
     Iterator<Subscription> iterator = pageFuture.get().iterateAll();
     while (iterator.hasNext()) {
-      subscriptionNames.add(iterator.next().name());
+      subscriptionNames.add(iterator.next().getName());
     }
     assertTrue(subscriptionNames.contains(subscriptionName1));
     assertTrue(subscriptionNames.contains(subscriptionName2));
@@ -420,12 +420,12 @@ public abstract class BaseSystemTest {
     AsyncPage<SubscriptionId> topic1Subscriptions =
         topic1.listSubscriptionsAsync(PubSub.ListOption.pageSize(1)).get();
     Iterator<SubscriptionId> firstStringPageIterator = topic1Subscriptions.values().iterator();
-    topicSubscriptionNames.add(firstStringPageIterator.next().subscription());
+    topicSubscriptionNames.add(firstStringPageIterator.next().getSubscription());
     assertFalse(firstStringPageIterator.hasNext());
     Iterator<SubscriptionId> topicSubscriptionsIterator =
         topic1Subscriptions.nextPageAsync().get().iterateAll();
     while (topicSubscriptionsIterator.hasNext()) {
-      topicSubscriptionNames.add(topicSubscriptionsIterator.next().subscription());
+      topicSubscriptionNames.add(topicSubscriptionsIterator.next().getSubscription());
     }
     assertEquals(2, topicSubscriptionNames.size());
     assertTrue(topicSubscriptionNames.contains(subscriptionName1));
@@ -448,8 +448,8 @@ public abstract class BaseSystemTest {
     List<String> messageIds = pubsub().publish(topic, ImmutableList.of(message1, message2));
     assertEquals(2, messageIds.size());
     Iterator<ReceivedMessage> iterator = pubsub().pull(subscription, 2);
-    assertEquals(message1.payloadAsString(), iterator.next().payloadAsString());
-    assertEquals(message2.payloadAsString(), iterator.next().payloadAsString());
+    assertEquals(message1.getPayloadAsString(), iterator.next().getPayloadAsString());
+    assertEquals(message2.getPayloadAsString(), iterator.next().getPayloadAsString());
     assertTrue(pubsub().deleteSubscription(subscription));
     assertTrue(pubsub().deleteTopic(topic));
   }
@@ -459,7 +459,8 @@ public abstract class BaseSystemTest {
     String topic = formatForTest("test-pull-messages-and-renew-deadline-topic");
     pubsub().create(TopicInfo.of(topic));
     String subscription = formatForTest("test-pull-messages-and-renew-deadline-subscription");
-    pubsub().create(SubscriptionInfo.builder(topic, subscription).ackDeadLineSeconds(10).build());
+    pubsub().create(
+        SubscriptionInfo.newBuilder(topic, subscription).setAckDeadLineSeconds(10).build());
     Message message1 = Message.of("payload1");
     Message message2 = Message.of("payload2");
     // todo(mziccard): use batch publish if #1017 gets fixed, or remove this comment
@@ -483,7 +484,7 @@ public abstract class BaseSystemTest {
     Iterator<ReceivedMessage> nextIterator = pubsub().pull(subscription, 2);
     assertTrue(nextIterator.hasNext());
     ReceivedMessage message = nextIterator.next();
-    assertEquals(consumedMessage.payloadAsString(), message.payloadAsString());
+    assertEquals(consumedMessage.getPayloadAsString(), message.getPayloadAsString());
     assertFalse(nextIterator.hasNext());
     consumedMessage.ack();
     iterator.next().ack();
@@ -498,7 +499,8 @@ public abstract class BaseSystemTest {
     String topic = formatForTest("test-pull-messages-and-modify-deadline-topic");
     pubsub().create(TopicInfo.of(topic));
     String subscription = formatForTest("test-pull-messages-and-modify-deadline-subscription");
-    pubsub().create(SubscriptionInfo.builder(topic, subscription).ackDeadLineSeconds(10).build());
+    pubsub().create(
+        SubscriptionInfo.newBuilder(topic, subscription).setAckDeadLineSeconds(10).build());
     Message message1 = Message.of("payload1");
     Message message2 = Message.of("payload2");
     // todo(mziccard): use batch publish if #1017 gets fixed, or remove this comment
@@ -516,7 +518,7 @@ public abstract class BaseSystemTest {
     Iterator<ReceivedMessage> nextIterator = pubsub().pull(subscription, 2);
     assertTrue(nextIterator.hasNext());
     ReceivedMessage message = nextIterator.next();
-    assertEquals(receivedMessages.get(1).payloadAsString(), message.payloadAsString());
+    assertEquals(receivedMessages.get(1).getPayloadAsString(), message.getPayloadAsString());
     assertFalse(nextIterator.hasNext());
     assertTrue(pubsub().deleteSubscription(subscription));
     assertTrue(pubsub().deleteTopic(topic));
@@ -539,8 +541,8 @@ public abstract class BaseSystemTest {
     List<String> messageIds = pubsub().publish(topic, ImmutableList.of(message1, message2));
     assertEquals(2, messageIds.size());
     Iterator<ReceivedMessage> iterator = pubsub().pullAsync(subscription, 2).get();
-    assertEquals(message1.payloadAsString(), iterator.next().payloadAsString());
-    assertEquals(message2.payloadAsString(), iterator.next().payloadAsString());
+    assertEquals(message1.getPayloadAsString(), iterator.next().getPayloadAsString());
+    assertEquals(message2.getPayloadAsString(), iterator.next().getPayloadAsString());
     assertTrue(pubsub().deleteSubscription(subscription));
     assertTrue(pubsub().deleteTopic(topic));
   }
@@ -576,7 +578,7 @@ public abstract class BaseSystemTest {
       countDownLatch.await();
     }
     for (Message message : receivedMessages) {
-      payloads.contains(message.payloadAsString());
+      payloads.contains(message.getPayloadAsString());
     }
     // Messages have all been acked, they should not be pulled again
     Iterator<ReceivedMessage> messages = pubsub().pull(subscription, 2);
@@ -610,13 +612,13 @@ public abstract class BaseSystemTest {
       countDownLatch.await();
     }
     for (Message message : receivedMessages) {
-      payloads.contains(message.payloadAsString());
+      payloads.contains(message.getPayloadAsString());
     }
     // Messages have all been nacked, we should be able to pull them again
     Thread.sleep(5000);
     Iterator<ReceivedMessage> messages = pubsub().pull(subscription, 2);
     while (messages.hasNext()) {
-      payloads.contains(messages.next().payloadAsString());
+      payloads.contains(messages.next().getPayloadAsString());
     }
     assertTrue(pubsub().deleteSubscription(subscription));
     assertTrue(pubsub().deleteTopic(topic));
@@ -664,7 +666,8 @@ public abstract class BaseSystemTest {
     pubsub().create(TopicInfo.of(topic));
     final String subscription =
         formatForTest("test-message-consumer-and-renew-deadline-subscription");
-    pubsub().create(SubscriptionInfo.builder(topic, subscription).ackDeadLineSeconds(10).build());
+    pubsub().create(
+        SubscriptionInfo.newBuilder(topic, subscription).setAckDeadLineSeconds(10).build());
     Message message1 = Message.of("payload1");
     Message message2 = Message.of("payload2");
     Set<String> payloads = Sets.newHashSet("payload1", "payload2");
@@ -687,7 +690,7 @@ public abstract class BaseSystemTest {
       countDownLatch.await();
     }
     for (Message message : receivedMessages) {
-      payloads.contains(message.payloadAsString());
+      payloads.contains(message.getPayloadAsString());
     }
     // Messages have all been acked, they should not be pulled again
     Iterator<ReceivedMessage> messages = pubsub().pull(subscription, 2);
@@ -740,9 +743,11 @@ public abstract class BaseSystemTest {
     Message message2 = Message.of("payload2");
     assertNotNull(pubsub().publish(topic, message1, message2));
     Iterator<ReceivedMessage> receivedMessages = pubsub().pull(subscription, 2);
-    pubsub().nack(subscription, receivedMessages.next().ackId(), receivedMessages.next().ackId());
+    pubsub().nack(subscription, receivedMessages.next().getAckId(),
+        receivedMessages.next().getAckId());
     receivedMessages = pubsub().pull(subscription, 2);
-    pubsub().ack(subscription, receivedMessages.next().ackId(), receivedMessages.next().ackId());
+    pubsub().ack(subscription, receivedMessages.next().getAckId(),
+        receivedMessages.next().getAckId());
     assertFalse(pubsub().pull(subscription, 2).hasNext());
     assertTrue(pubsub().deleteSubscription(subscription));
     assertTrue(pubsub().deleteTopic(topic));
@@ -758,12 +763,12 @@ public abstract class BaseSystemTest {
     Message message2 = Message.of("payload2");
     assertNotNull(pubsub().publish(topic, message1, message2));
     Iterator<ReceivedMessage> receivedMessages = pubsub().pull(subscription, 2);
-    pubsub()
-        .nackAsync(subscription, receivedMessages.next().ackId(), receivedMessages.next().ackId())
+    pubsub().nackAsync(subscription, receivedMessages.next().getAckId(),
+        receivedMessages.next().getAckId())
         .get();
     receivedMessages = pubsub().pull(subscription, 2);
-    pubsub()
-        .ackAsync(subscription, receivedMessages.next().ackId(), receivedMessages.next().ackId())
+    pubsub().ackAsync(subscription, receivedMessages.next().getAckId(),
+        receivedMessages.next().getAckId())
         .get();
     assertFalse(pubsub().pull(subscription, 2).hasNext());
     assertTrue(pubsub().deleteSubscription(subscription));
@@ -781,10 +786,10 @@ public abstract class BaseSystemTest {
     assertNotNull(pubsub().publish(topic, ImmutableList.of(message1, message2)));
     Iterator<ReceivedMessage> receivedMessages = pubsub().pull(subscription, 2);
     pubsub().nack(subscription,
-        ImmutableList.of(receivedMessages.next().ackId(), receivedMessages.next().ackId()));
+        ImmutableList.of(receivedMessages.next().getAckId(), receivedMessages.next().getAckId()));
     receivedMessages = pubsub().pull(subscription, 2);
     pubsub().ack(subscription,
-        ImmutableList.of(receivedMessages.next().ackId(), receivedMessages.next().ackId()));
+        ImmutableList.of(receivedMessages.next().getAckId(), receivedMessages.next().getAckId()));
     assertFalse(pubsub().pull(subscription, 2).hasNext());
     assertTrue(pubsub().deleteSubscription(subscription));
     assertTrue(pubsub().deleteTopic(topic));
@@ -800,11 +805,11 @@ public abstract class BaseSystemTest {
     Message message2 = Message.of("payload2");
     assertNotNull(pubsub().publish(topic, ImmutableList.of(message1, message2)));
     Iterator<ReceivedMessage> receivedMessages = pubsub().pull(subscription, 2);
-    pubsub().nackAsync(subscription,
-        ImmutableList.of(receivedMessages.next().ackId(), receivedMessages.next().ackId())).get();
+    pubsub().nackAsync(subscription, ImmutableList.of(receivedMessages.next().getAckId(),
+        receivedMessages.next().getAckId())).get();
     receivedMessages = pubsub().pull(subscription, 2);
-    pubsub().ackAsync(subscription,
-        ImmutableList.of(receivedMessages.next().ackId(), receivedMessages.next().ackId())).get();
+    pubsub().ackAsync(subscription, ImmutableList.of(receivedMessages.next().getAckId(),
+        receivedMessages.next().getAckId())).get();
     assertFalse(pubsub().pull(subscription, 2).hasNext());
     assertTrue(pubsub().deleteSubscription(subscription));
     assertTrue(pubsub().deleteTopic(topic));

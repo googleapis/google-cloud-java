@@ -54,14 +54,31 @@ public final class TopicId implements Serializable {
    * Returns the name of the project where the topic resides. If {@code null} the topic is assumed
    * to reside in the {@link PubSubOptions#projectId()} project.
    */
+  @Deprecated
   public String project() {
+    return project;
+  }
+
+  /**
+   * Returns the name of the project where the topic resides. If {@code null} the topic is assumed
+   * to reside in the {@link PubSubOptions#projectId()} project.
+   */
+  public String getProject() {
     return project;
   }
 
   /**
    * Returns the name of the topic.
    */
+  @Deprecated
   public String topic() {
+    return topic;
+  }
+
+  /**
+   * Returns the name of the topic.
+   */
+  public String getTopic() {
     return topic;
   }
 

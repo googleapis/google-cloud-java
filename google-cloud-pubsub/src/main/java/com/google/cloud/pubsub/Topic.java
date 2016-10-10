@@ -60,8 +60,15 @@ public class Topic extends TopicInfo {
     }
 
     @Override
+    @Deprecated
     public Builder name(String name) {
-      delegate.name(name);
+      delegate.setName(name);
+      return this;
+    }
+
+    @Override
+    public Builder setName(String name) {
+      delegate.setName(name);
       return this;
     }
 
@@ -102,7 +109,15 @@ public class Topic extends TopicInfo {
   /**
    * Returns the topic's {@code PubSub} object used to issue requests.
    */
+  @Deprecated
   public PubSub pubSub() {
+    return pubsub;
+  }
+
+  /**
+   * Returns the topic's {@code PubSub} object used to issue requests.
+   */
+  public PubSub getPubsub() {
     return pubsub;
   }
 
@@ -123,7 +138,7 @@ public class Topic extends TopicInfo {
    * @throws PubSubException upon failure
    */
   public boolean delete() {
-    return pubsub.deleteTopic(name());
+    return pubsub.deleteTopic(getName());
   }
 
   /**
@@ -146,7 +161,7 @@ public class Topic extends TopicInfo {
    * @throws PubSubException upon failure
    */
   public Future<Boolean> deleteAsync() {
-    return pubsub.deleteTopicAsync(name());
+    return pubsub.deleteTopicAsync(getName());
   }
 
   /**
@@ -164,7 +179,7 @@ public class Topic extends TopicInfo {
    * @throws PubSubException upon failure
    */
   public Topic reload() {
-    return pubsub.getTopic(name());
+    return pubsub.getTopic(getName());
   }
 
   /**
@@ -185,7 +200,7 @@ public class Topic extends TopicInfo {
    * @throws PubSubException upon failure
    */
   public Future<Topic> reloadAsync() {
-    return pubsub.getTopicAsync(name());
+    return pubsub.getTopicAsync(getName());
   }
 
   /**
@@ -204,7 +219,7 @@ public class Topic extends TopicInfo {
    *     payload and no attributes
    */
   public String publish(Message message) {
-    return pubsub.publish(name(), message);
+    return pubsub.publish(getName(), message);
   }
 
   /**
@@ -225,7 +240,7 @@ public class Topic extends TopicInfo {
    * @return a {@code Future} for the unique service-generated id for the message
    */
   public Future<String> publishAsync(Message message) {
-    return pubsub.publishAsync(name(), message);
+    return pubsub.publishAsync(getName(), message);
   }
 
   /**
@@ -247,7 +262,7 @@ public class Topic extends TopicInfo {
    *     empty payload and no attributes
    */
   public List<String> publish(Message message, Message... messages) {
-    return pubsub.publish(name(), message, messages);
+    return pubsub.publish(getName(), message, messages);
   }
 
   /**
@@ -271,7 +286,7 @@ public class Topic extends TopicInfo {
    *     the messages.
    */
   public Future<List<String>> publishAsync(Message message, Message... messages) {
-    return pubsub.publishAsync(name(), message, messages);
+    return pubsub.publishAsync(getName(), message, messages);
   }
 
   /**
@@ -293,7 +308,7 @@ public class Topic extends TopicInfo {
    *     empty payload and no attributes
    */
   public List<String> publish(Iterable<Message> messages) {
-    return pubsub.publish(name(), messages);
+    return pubsub.publish(getName(), messages);
   }
 
   /**
@@ -317,7 +332,7 @@ public class Topic extends TopicInfo {
    *     the messages.
    */
   public Future<List<String>> publishAsync(Iterable<Message> messages) {
-    return pubsub.publishAsync(name(), messages);
+    return pubsub.publishAsync(getName(), messages);
   }
 
   /**
@@ -338,7 +353,7 @@ public class Topic extends TopicInfo {
    * @throws PubSubException upon failure
    */
   public Page<SubscriptionId> listSubscriptions(ListOption... options) {
-    return pubsub.listSubscriptions(name(), options);
+    return pubsub.listSubscriptions(getName(), options);
   }
 
   /**
@@ -363,7 +378,7 @@ public class Topic extends TopicInfo {
    *
    */
   public Future<AsyncPage<SubscriptionId>> listSubscriptionsAsync(ListOption... options) {
-    return pubsub.listSubscriptionsAsync(name(), options);
+    return pubsub.listSubscriptionsAsync(getName(), options);
   }
 
   /**
@@ -381,7 +396,7 @@ public class Topic extends TopicInfo {
    * @throws PubSubException upon failure
    */
   public Policy getPolicy() {
-    return pubsub.getTopicPolicy(this.name());
+    return pubsub.getTopicPolicy(this.getName());
   }
 
   /**
@@ -402,7 +417,7 @@ public class Topic extends TopicInfo {
    * @throws PubSubException upon failure
    */
   public Future<Policy> getPolicyAsync() {
-    return pubsub.getTopicPolicyAsync(this.name());
+    return pubsub.getTopicPolicyAsync(this.getName());
   }
 
   /**
@@ -431,7 +446,7 @@ public class Topic extends TopicInfo {
    * @throws PubSubException upon failure
    */
   public Policy replacePolicy(Policy newPolicy) {
-    return pubsub.replaceTopicPolicy(this.name(), newPolicy);
+    return pubsub.replaceTopicPolicy(this.getName(), newPolicy);
   }
 
   /**
@@ -464,7 +479,7 @@ public class Topic extends TopicInfo {
    * @throws PubSubException upon failure
    */
   public Future<Policy> replacePolicyAsync(Policy newPolicy) {
-    return pubsub.replaceTopicPolicyAsync(this.name(), newPolicy);
+    return pubsub.replaceTopicPolicyAsync(this.getName(), newPolicy);
   }
 
   /**
@@ -489,7 +504,7 @@ public class Topic extends TopicInfo {
    *     Permissions and Roles</a>
    */
   public List<Boolean> testPermissions(List<String> permissions) {
-    return pubsub.testTopicPermissions(this.name(), permissions);
+    return pubsub.testTopicPermissions(this.getName(), permissions);
   }
 
   /**
@@ -518,7 +533,7 @@ public class Topic extends TopicInfo {
    *     Permissions and Roles</a>
    */
   public Future<List<Boolean>> testPermissionsAsync(List<String> permissions) {
-    return pubsub.testTopicPermissionsAsync(this.name(), permissions);
+    return pubsub.testTopicPermissionsAsync(this.getName(), permissions);
   }
 
   private void readObject(ObjectInputStream input) throws IOException, ClassNotFoundException {

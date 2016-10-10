@@ -24,6 +24,7 @@ import static org.easymock.EasyMock.verify;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
 import com.google.cloud.AsyncPage;
@@ -77,8 +78,18 @@ public class TopicTest {
   public void testBuilder() {
     initializeExpectedTopic(2);
     replay(pubsub);
+    Topic builtTopic = expectedTopic.toBuilder().setName("newTopic").build();
+    assertEquals("newTopic", builtTopic.getName());
+    assertSame(serviceMockReturnsOptions, expectedTopic.getPubsub());
+  }
+
+  @Test
+  public void testBuilderDeprecated() {
+    initializeExpectedTopic(2);
+    replay(pubsub);
     Topic builtTopic = expectedTopic.toBuilder().name("newTopic").build();
     assertEquals("newTopic", builtTopic.name());
+    assertSame(serviceMockReturnsOptions, expectedTopic.pubSub());
   }
 
   @Test
@@ -91,7 +102,7 @@ public class TopicTest {
   @Test
   public void testReload() {
     initializeExpectedTopic(2);
-    TopicInfo updatedInfo = TOPIC_INFO.toBuilder().name("newTopic").build();
+    TopicInfo updatedInfo = TOPIC_INFO.toBuilder().setName("newTopic").build();
     Topic expectedTopic =
         new Topic(serviceMockReturnsOptions, new TopicInfo.BuilderImpl(updatedInfo));
     expect(pubsub.options()).andReturn(mockOptions);
@@ -115,7 +126,7 @@ public class TopicTest {
   @Test
   public void testReloadAsync() throws ExecutionException, InterruptedException {
     initializeExpectedTopic(2);
-    TopicInfo updatedInfo = TOPIC_INFO.toBuilder().name("newTopic").build();
+    TopicInfo updatedInfo = TOPIC_INFO.toBuilder().setName("newTopic").build();
     Topic expectedTopic =
         new Topic(serviceMockReturnsOptions, new TopicInfo.BuilderImpl(updatedInfo));
     expect(pubsub.options()).andReturn(mockOptions);
@@ -399,7 +410,7 @@ public class TopicTest {
 
   private void compareTopic(Topic expected, Topic value) {
     assertEquals(expected, value);
-    assertEquals(expected.name(), value.name());
+    assertEquals(expected.getName(), value.getName());
     assertEquals(expected.hashCode(), value.hashCode());
   }
 }

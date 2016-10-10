@@ -36,12 +36,12 @@ public class PubSubTest {
   public void testListOption() {
     // page token
     ListOption listOption = ListOption.pageToken(PAGE_TOKEN);
-    assertEquals(PAGE_TOKEN, listOption.value());
-    assertEquals(ListOption.OptionType.PAGE_TOKEN, listOption.optionType());
+    assertEquals(PAGE_TOKEN, listOption.getValue());
+    assertEquals(ListOption.OptionType.PAGE_TOKEN, listOption.getOptionType());
     // page size
     listOption = ListOption.pageSize(PAGE_SIZE);
-    assertEquals(PAGE_SIZE, listOption.value());
-    assertEquals(ListOption.OptionType.PAGE_SIZE, listOption.optionType());
+    assertEquals(PAGE_SIZE, listOption.getValue());
+    assertEquals(ListOption.OptionType.PAGE_SIZE, listOption.getOptionType());
   }
 
   @Test
@@ -49,11 +49,11 @@ public class PubSubTest {
   public void testPullOptions() {
     // max queued callbacks
     PullOption pullOption = PullOption.maxQueuedCallbacks(MAX_QUEUED_CALLBACKS);
-    assertEquals(MAX_QUEUED_CALLBACKS, pullOption.value());
-    assertEquals(PullOption.OptionType.MAX_QUEUED_CALLBACKS, pullOption.optionType());
+    assertEquals(MAX_QUEUED_CALLBACKS, pullOption.getValue());
+    assertEquals(PullOption.OptionType.MAX_QUEUED_CALLBACKS, pullOption.getOptionType());
     ExecutorFactory executorFactory = EasyMock.createStrictMock(ExecutorFactory.class);
     pullOption = PullOption.executorFactory(executorFactory);
-    assertSame(executorFactory, pullOption.value());
-    assertEquals(PullOption.OptionType.EXECUTOR_FACTORY, pullOption.optionType());
+    assertSame(executorFactory, pullOption.getValue());
+    assertEquals(PullOption.OptionType.EXECUTOR_FACTORY, pullOption.getOptionType());
   }
 }

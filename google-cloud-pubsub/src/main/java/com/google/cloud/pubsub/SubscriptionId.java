@@ -46,14 +46,30 @@ public class SubscriptionId implements Serializable {
   /**
    * Returns the name of the project where the subscription resides.
    */
+  @Deprecated
   public String project() {
+    return project;
+  }
+
+  /**
+   * Returns the name of the project where the subscription resides.
+   */
+  public String getProject() {
     return project;
   }
 
   /**
    * Returns the name of the subscription.
    */
+  @Deprecated
   public String subscription() {
+    return subscription;
+  }
+
+  /**
+   * Returns the name of the subscription.
+   */
+  public String getSubscription() {
     return subscription;
   }
 

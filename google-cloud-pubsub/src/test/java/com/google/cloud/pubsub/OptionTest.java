@@ -55,11 +55,11 @@ public class OptionTest {
 
   @Test
   public void testConstructor() {
-    assertEquals(OPTION_TYPE, OPTION.optionType());
-    assertEquals(VALUE, OPTION.value());
+    assertEquals(OPTION_TYPE, OPTION.getOptionType());
+    assertEquals(VALUE, OPTION.getValue());
     Option option = new Option(OPTION_TYPE, null) {};
-    assertEquals(OPTION_TYPE, option.optionType());
-    assertNull(option.value());
+    assertEquals(OPTION_TYPE, option.getOptionType());
+    assertNull(option.getValue());
     thrown.expect(NullPointerException.class);
     new Option(null, VALUE) {};
   }

@@ -145,7 +145,21 @@ public class LocalPubsubHelper {
    * Returns a {@link PubSubOptions} instance that sets the host to use the PubSub emulator on
    * localhost.
    */
+  @Deprecated
   public PubSubOptions options() {
+    return PubSubOptions.builder()
+        .projectId(projectId)
+        .host("localhost:" + port)
+        .authCredentials(AuthCredentials.noAuth())
+        .retryParams(RetryParams.noRetries())
+        .build();
+  }
+
+  /**
+   * Returns a {@link PubSubOptions} instance that sets the host to use the PubSub emulator on
+   * localhost.
+   */
+  public PubSubOptions getOptions() {
     return PubSubOptions.builder()
         .projectId(projectId)
         .host("localhost:" + port)
