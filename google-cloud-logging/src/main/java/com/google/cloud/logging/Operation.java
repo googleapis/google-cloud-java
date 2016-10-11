@@ -67,7 +67,17 @@ public final class Operation implements Serializable {
      * Sets the operation identifier. Log entries with the same identifier are assumed to be part
      * of the same operation. The combination of id and producer must be globally unique.
      */
+    @Deprecated
     public Builder id(String id) {
+      this.id = id;
+      return this;
+    }
+
+    /**
+     * Sets the operation identifier. Log entries with the same identifier are assumed to be part
+     * of the same operation. The combination of id and producer must be globally unique.
+     */
+    public Builder setId(String id) {
       this.id = id;
       return this;
     }
@@ -77,7 +87,18 @@ public final class Operation implements Serializable {
      * unique. Examples: {@code MyDivision.MyBigCompany.com},
      * {@code github.com/MyProject/MyApplication}.
      */
+    @Deprecated
     public Builder producer(String producer) {
+      this.producer = producer;
+      return this;
+    }
+
+    /**
+     * Sets an arbitrary producer identifier. The combination of producer and id must be globally
+     * unique. Examples: {@code MyDivision.MyBigCompany.com},
+     * {@code github.com/MyProject/MyApplication}.
+     */
+    public Builder setProducer(String producer) {
       this.producer = producer;
       return this;
     }
@@ -86,7 +107,17 @@ public final class Operation implements Serializable {
      * Sets whether the corresponding entry is the first log entry in the operation. If not set,
      * {@code false} is used.
      */
+    @Deprecated
     public Builder first(boolean first) {
+      this.first = first;
+      return this;
+    }
+
+    /**
+     * Sets whether the corresponding entry is the first log entry in the operation. If not set,
+     * {@code false} is used.
+     */
+    public Builder setFirst(boolean first) {
       this.first = first;
       return this;
     }
@@ -95,7 +126,17 @@ public final class Operation implements Serializable {
      * Sets whether the corresponding entry is the last log entry in the operation. If not set,
      * {@code false} is used.
      */
+    @Deprecated
     public Builder last(boolean last) {
+      this.last = last;
+      return this;
+    }
+
+    /**
+     * Sets whether the corresponding entry is the last log entry in the operation. If not set,
+     * {@code false} is used.
+     */
+    public Builder setLast(boolean last) {
       this.last = last;
       return this;
     }
@@ -120,7 +161,17 @@ public final class Operation implements Serializable {
    * of the same operation. The combination of this value and {@link #producer()} must be globally
    * unique.
    */
+  @Deprecated
   public String id() {
+    return id;
+  }
+
+  /**
+   * Returns the operation identifier. Log entries with the same identifier are assumed to be part
+   * of the same operation. The combination of this value and {@link #producer()} must be globally
+   * unique.
+   */
+  public String getId() {
     return id;
   }
 
@@ -129,7 +180,17 @@ public final class Operation implements Serializable {
    * must be globally unique. Examples: {@code MyDivision.MyBigCompany.com},
    * {@code github.com/MyProject/MyApplication}.
    */
+  @Deprecated
   public String producer() {
+    return producer;
+  }
+
+  /**
+   * Returns an arbitrary producer identifier. The combination of this value and {@link #id()}
+   * must be globally unique. Examples: {@code MyDivision.MyBigCompany.com},
+   * {@code github.com/MyProject/MyApplication}.
+   */
+  public String getProducer() {
     return producer;
   }
 
@@ -199,7 +260,16 @@ public final class Operation implements Serializable {
    * Returns a builder for {@code Operation} objects given the operation and producer identifiers.
    * The combination of producer and id must be globally unique.
    */
+  @Deprecated
   public static Builder builder(String id, String producer) {
+    return new Builder(id, producer);
+  }
+
+  /**
+   * Returns a builder for {@code Operation} objects given the operation and producer identifiers.
+   * The combination of producer and id must be globally unique.
+   */
+  public static Builder newBuilder(String id, String producer) {
     return new Builder(id, producer);
   }
 
@@ -208,13 +278,13 @@ public final class Operation implements Serializable {
    * combination of producer and id must be globally unique.
    */
   public static Operation of(String id, String producer) {
-    return builder(id, producer).build();
+    return newBuilder(id, producer).build();
   }
 
   static Operation fromPb(LogEntryOperation operationPb) {
-    return builder(operationPb.getId(), operationPb.getProducer())
-        .first(operationPb.getFirst())
-        .last(operationPb.getLast())
+    return newBuilder(operationPb.getId(), operationPb.getProducer())
+        .setFirst(operationPb.getFirst())
+        .setLast(operationPb.getLast())
         .build();
   }
 }

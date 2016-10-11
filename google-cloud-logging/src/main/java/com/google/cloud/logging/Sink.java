@@ -64,26 +64,54 @@ public class Sink extends SinkInfo {
     }
 
     @Override
+    @Deprecated
     public Builder name(String name) {
-      delegate.name(name);
+      delegate.setName(name);
       return this;
     }
 
     @Override
+    public Builder setName(String name) {
+      delegate.setName(name);
+      return this;
+    }
+
+    @Override
+    @Deprecated
     public Builder destination(Destination destination) {
-      delegate.destination(destination);
+      delegate.setDestination(destination);
       return this;
     }
 
     @Override
+    public Builder setDestination(Destination destination) {
+      delegate.setDestination(destination);
+      return this;
+    }
+
+    @Override
+    @Deprecated
     public Builder filter(String filter) {
-      delegate.filter(filter);
+      delegate.setFilter(filter);
       return this;
     }
 
     @Override
+    public Builder setFilter(String filter) {
+      delegate.setFilter(filter);
+      return this;
+    }
+
+    @Override
+    @Deprecated
     public Builder versionFormat(VersionFormat versionFormat) {
-      delegate.versionFormat(versionFormat);
+      delegate.setVersionFormat(versionFormat);
+      return this;
+    }
+
+    @Override
+    public Builder setVersionFormat(VersionFormat versionFormat) {
+      delegate.setVersionFormat(versionFormat);
       return this;
     }
 
@@ -124,7 +152,15 @@ public class Sink extends SinkInfo {
   /**
    * Returns the sinks's {@code Logging} object used to issue requests.
    */
+  @Deprecated
   public Logging logging() {
+    return logging;
+  }
+
+  /**
+   * Returns the sinks's {@code Logging} object used to issue requests.
+   */
+  public Logging getLogging() {
     return logging;
   }
 
@@ -145,7 +181,7 @@ public class Sink extends SinkInfo {
    * @throws LoggingException upon failure
    */
   public boolean delete() {
-    return logging.deleteSink(name());
+    return logging.deleteSink(getName());
   }
 
   /**
@@ -168,7 +204,7 @@ public class Sink extends SinkInfo {
    * @throws LoggingException upon failure
    */
   public Future<Boolean> deleteAsync() {
-    return logging.deleteSinkAsync(name());
+    return logging.deleteSinkAsync(getName());
   }
 
   /**
@@ -186,7 +222,7 @@ public class Sink extends SinkInfo {
    * @throws LoggingException upon failure
    */
   public Sink reload() {
-    return logging.getSink(name());
+    return logging.getSink(getName());
   }
 
   /**
@@ -207,7 +243,7 @@ public class Sink extends SinkInfo {
    * @throws LoggingException upon failure
    */
   public Future<Sink> reloadAsync() {
-    return logging.getSinkAsync(name());
+    return logging.getSinkAsync(getName());
   }
 
   /**

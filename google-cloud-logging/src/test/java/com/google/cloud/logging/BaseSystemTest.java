@@ -91,25 +91,25 @@ public abstract class BaseSystemTest {
   @Test
   public void testCreateGetUpdateAndDeleteSink() {
     String name = formatForTest("test-create-get-update-sink");
-    SinkInfo sinkInfo = SinkInfo.builder(name, DatasetDestination.of("dataset"))
-        .filter("severity>=ERROR")
-        .versionFormat(SinkInfo.VersionFormat.V2)
+    SinkInfo sinkInfo = SinkInfo.newBuilder(name, DatasetDestination.of("dataset"))
+        .setFilter("severity>=ERROR")
+        .setVersionFormat(SinkInfo.VersionFormat.V2)
         .build();
     Sink sink = logging().create(sinkInfo);
-    assertEquals(name, sink.name());
-    assertEquals(SinkInfo.VersionFormat.V2, sink.versionFormat());
-    assertEquals("severity>=ERROR", sink.filter());
-    DatasetDestination datasetDestination = sink.destination();
-    assertEquals(logging().options().projectId(), datasetDestination.project());
-    assertEquals("dataset", datasetDestination.dataset());
+    assertEquals(name, sink.getName());
+    assertEquals(SinkInfo.VersionFormat.V2, sink.getVersionFormat());
+    assertEquals("severity>=ERROR", sink.getFilter());
+    DatasetDestination datasetDestination = sink.getDestination();
+    assertEquals(logging().options().projectId(), datasetDestination.getProject());
+    assertEquals("dataset", datasetDestination.getDataset());
     assertEquals(sink, logging().getSink(name));
     sink = sink.toBuilder()
-        .filter("severity<=ERROR")
+        .setFilter("severity<=ERROR")
         .build()
         .update();
-    assertEquals(name, sink.name());
-    assertEquals(SinkInfo.VersionFormat.V2, sink.versionFormat());
-    assertEquals("severity<=ERROR", sink.filter());
+    assertEquals(name, sink.getName());
+    assertEquals(SinkInfo.VersionFormat.V2, sink.getVersionFormat());
+    assertEquals("severity<=ERROR", sink.getFilter());
     assertTrue(sink.delete());
     assertFalse(sink.delete());
   }
@@ -118,25 +118,25 @@ public abstract class BaseSystemTest {
   public void testCreateGetUpdateAndDeleteSinkAsync()
       throws ExecutionException, InterruptedException {
     String name = formatForTest("test-create-get-update-sink-async");
-    SinkInfo sinkInfo = SinkInfo.builder(name, DatasetDestination.of("dataset"))
-        .filter("severity>=ERROR")
-        .versionFormat(SinkInfo.VersionFormat.V2)
+    SinkInfo sinkInfo = SinkInfo.newBuilder(name, DatasetDestination.of("dataset"))
+        .setFilter("severity>=ERROR")
+        .setVersionFormat(SinkInfo.VersionFormat.V2)
         .build();
     Sink sink = logging().createAsync(sinkInfo).get();
-    assertEquals(name, sink.name());
-    assertEquals(SinkInfo.VersionFormat.V2, sink.versionFormat());
-    assertEquals("severity>=ERROR", sink.filter());
-    DatasetDestination datasetDestination = sink.destination();
-    assertEquals(logging().options().projectId(), datasetDestination.project());
-    assertEquals("dataset", datasetDestination.dataset());
+    assertEquals(name, sink.getName());
+    assertEquals(SinkInfo.VersionFormat.V2, sink.getVersionFormat());
+    assertEquals("severity>=ERROR", sink.getFilter());
+    DatasetDestination datasetDestination = sink.getDestination();
+    assertEquals(logging().options().projectId(), datasetDestination.getProject());
+    assertEquals("dataset", datasetDestination.getDataset());
     assertEquals(sink, logging().getSinkAsync(name).get());
     sink = sink.toBuilder()
-        .filter("severity<=ERROR")
+        .setFilter("severity<=ERROR")
         .build()
         .updateAsync().get();
-    assertEquals(name, sink.name());
-    assertEquals(SinkInfo.VersionFormat.V2, sink.versionFormat());
-    assertEquals("severity<=ERROR", sink.filter());
+    assertEquals(name, sink.getName());
+    assertEquals(SinkInfo.VersionFormat.V2, sink.getVersionFormat());
+    assertEquals("severity<=ERROR", sink.getFilter());
     assertTrue(sink.deleteAsync().get());
     assertFalse(sink.deleteAsync().get());
   }
@@ -144,36 +144,36 @@ public abstract class BaseSystemTest {
   @Test
   public void testUpdateNonExistingSink() {
     String name = formatForTest("test-update-non-existing-sink");
-    SinkInfo sinkInfo = SinkInfo.builder(name, DatasetDestination.of("dataset"))
-        .filter("severity>=ERROR")
-        .versionFormat(SinkInfo.VersionFormat.V2)
+    SinkInfo sinkInfo = SinkInfo.newBuilder(name, DatasetDestination.of("dataset"))
+        .setFilter("severity>=ERROR")
+        .setVersionFormat(SinkInfo.VersionFormat.V2)
         .build();
     assertNull(logging().getSink(name));
     Sink sink = logging().update(sinkInfo);
-    assertEquals(name, sink.name());
-    assertEquals(SinkInfo.VersionFormat.V2, sink.versionFormat());
-    assertEquals("severity>=ERROR", sink.filter());
-    DatasetDestination datasetDestination = sink.destination();
-    assertEquals(logging().options().projectId(), datasetDestination.project());
-    assertEquals("dataset", datasetDestination.dataset());
+    assertEquals(name, sink.getName());
+    assertEquals(SinkInfo.VersionFormat.V2, sink.getVersionFormat());
+    assertEquals("severity>=ERROR", sink.getFilter());
+    DatasetDestination datasetDestination = sink.getDestination();
+    assertEquals(logging().options().projectId(), datasetDestination.getProject());
+    assertEquals("dataset", datasetDestination.getDataset());
     assertTrue(logging().deleteSink(name));
   }
 
   @Test
   public void testUpdateNonExistingSinkAsync() throws ExecutionException, InterruptedException {
     String name = formatForTest("test-update-non-existing-sink-async");
-    SinkInfo sinkInfo = SinkInfo.builder(name, DatasetDestination.of("dataset"))
-        .filter("severity>=ERROR")
-        .versionFormat(SinkInfo.VersionFormat.V2)
+    SinkInfo sinkInfo = SinkInfo.newBuilder(name, DatasetDestination.of("dataset"))
+        .setFilter("severity>=ERROR")
+        .setVersionFormat(SinkInfo.VersionFormat.V2)
         .build();
     assertNull(logging().getSinkAsync(name).get());
     Sink sink = logging().updateAsync(sinkInfo).get();
-    assertEquals(name, sink.name());
-    assertEquals(SinkInfo.VersionFormat.V2, sink.versionFormat());
-    assertEquals("severity>=ERROR", sink.filter());
-    DatasetDestination datasetDestination = sink.destination();
-    assertEquals(logging().options().projectId(), datasetDestination.project());
-    assertEquals("dataset", datasetDestination.dataset());
+    assertEquals(name, sink.getName());
+    assertEquals(SinkInfo.VersionFormat.V2, sink.getVersionFormat());
+    assertEquals("severity>=ERROR", sink.getFilter());
+    DatasetDestination datasetDestination = sink.getDestination();
+    assertEquals(logging().options().projectId(), datasetDestination.getProject());
+    assertEquals("dataset", datasetDestination.getDataset());
     assertTrue(logging().deleteSinkAsync(name).get());
   }
 
@@ -217,7 +217,7 @@ public abstract class BaseSystemTest {
         logging().listMonitoredResourceDescriptors(Logging.ListOption.pageSize(1)).iterateAll();
     Set<String> descriptorTypes = new HashSet<>();
     while (iterator.hasNext()) {
-      descriptorTypes.add(iterator.next().type());
+      descriptorTypes.add(iterator.next().getType());
     }
     for (String type : DESCRIPTOR_TYPES) {
       assertTrue(descriptorTypes.contains(type));
@@ -231,7 +231,7 @@ public abstract class BaseSystemTest {
         .listMonitoredResourceDescriptorsAsync(Logging.ListOption.pageSize(1)).get().iterateAll();
     Set<String> descriptorTypes = new HashSet<>();
     while (iterator.hasNext()) {
-      descriptorTypes.add(iterator.next().type());
+      descriptorTypes.add(iterator.next().getType());
     }
     for (String type : DESCRIPTOR_TYPES) {
       assertTrue(descriptorTypes.contains(type));
@@ -241,22 +241,22 @@ public abstract class BaseSystemTest {
   @Test
   public void testCreateGetUpdateAndDeleteMetric() {
     String name = formatForTest("test-create-get-update-metric");
-    MetricInfo metricInfo = MetricInfo.builder(name, "severity>=ERROR")
-        .description("description")
+    MetricInfo metricInfo = MetricInfo.newBuilder(name, "severity>=ERROR")
+        .setDescription("description")
         .build();
     Metric metric = logging().create(metricInfo);
-    assertEquals(name, metric.name());
-    assertEquals("severity>=ERROR", metric.filter());
-    assertEquals("description", metric.description());
+    assertEquals(name, metric.getName());
+    assertEquals("severity>=ERROR", metric.getFilter());
+    assertEquals("description", metric.getDescription());
     assertEquals(metric, logging().getMetric(name));
     metric = metric.toBuilder()
-        .description("newDescription")
-        .filter("severity>=WARNING")
+        .setDescription("newDescription")
+        .setFilter("severity>=WARNING")
         .build()
         .update();
-    assertEquals(name, metric.name());
-    assertEquals("severity>=WARNING", metric.filter());
-    assertEquals("newDescription", metric.description());
+    assertEquals(name, metric.getName());
+    assertEquals("severity>=WARNING", metric.getFilter());
+    assertEquals("newDescription", metric.getDescription());
     assertTrue(metric.delete());
     assertFalse(metric.delete());
   }
@@ -265,22 +265,22 @@ public abstract class BaseSystemTest {
   public void testCreateGetUpdateAndDeleteMetricAsync()
       throws ExecutionException, InterruptedException {
     String name = formatForTest("test-create-get-update-metric-async");
-    MetricInfo metricInfo = MetricInfo.builder(name, "severity>=ERROR")
-        .description("description")
+    MetricInfo metricInfo = MetricInfo.newBuilder(name, "severity>=ERROR")
+        .setDescription("description")
         .build();
     Metric metric = logging().createAsync(metricInfo).get();
-    assertEquals(name, metric.name());
-    assertEquals("severity>=ERROR", metric.filter());
-    assertEquals("description", metric.description());
+    assertEquals(name, metric.getName());
+    assertEquals("severity>=ERROR", metric.getFilter());
+    assertEquals("description", metric.getDescription());
     assertEquals(metric, logging().getMetricAsync(name).get());
     metric = metric.toBuilder()
-        .description("newDescription")
-        .filter("severity>=WARNING")
+        .setDescription("newDescription")
+        .setFilter("severity>=WARNING")
         .build()
         .updateAsync().get();
-    assertEquals(name, metric.name());
-    assertEquals("severity>=WARNING", metric.filter());
-    assertEquals("newDescription", metric.description());
+    assertEquals(name, metric.getName());
+    assertEquals("severity>=WARNING", metric.getFilter());
+    assertEquals("newDescription", metric.getDescription());
     assertTrue(metric.deleteAsync().get());
     assertFalse(metric.deleteAsync().get());
   }
@@ -288,28 +288,28 @@ public abstract class BaseSystemTest {
   @Test
   public void testUpdateNonExistingMetric() {
     String name = formatForTest("test-update-non-existing-metric");
-    MetricInfo metricInfo = MetricInfo.builder(name, "severity>=ERROR")
-        .description("description")
+    MetricInfo metricInfo = MetricInfo.newBuilder(name, "severity>=ERROR")
+        .setDescription("description")
         .build();
     assertNull(logging().getMetric(name));
     Metric metric = logging().update(metricInfo);
-    assertEquals(name, metric.name());
-    assertEquals("severity>=ERROR", metric.filter());
-    assertEquals("description", metric.description());
+    assertEquals(name, metric.getName());
+    assertEquals("severity>=ERROR", metric.getFilter());
+    assertEquals("description", metric.getDescription());
     assertTrue(metric.delete());
   }
 
   @Test
   public void testUpdateNonExistingMetricAsync() throws ExecutionException, InterruptedException {
     String name = formatForTest("test-update-non-existing-metric-async");
-    MetricInfo metricInfo = MetricInfo.builder(name, "severity>=ERROR")
-        .description("description")
+    MetricInfo metricInfo = MetricInfo.newBuilder(name, "severity>=ERROR")
+        .setDescription("description")
         .build();
     assertNull(logging().getMetricAsync(name).get());
     Metric metric = logging().updateAsync(metricInfo).get();
-    assertEquals(name, metric.name());
-    assertEquals("severity>=ERROR", metric.filter());
-    assertEquals("description", metric.description());
+    assertEquals(name, metric.getName());
+    assertEquals("severity>=ERROR", metric.getFilter());
+    assertEquals("description", metric.getDescription());
     assertTrue(metric.deleteAsync().get());
   }
 
@@ -352,19 +352,19 @@ public abstract class BaseSystemTest {
     String logName = formatForTest("test-write-log-entries-log");
     String filter = "logName = projects/" + logging().options().projectId() + "/logs/" + logName;
     StringPayload firstPayload = StringPayload.of("stringPayload");
-    LogEntry firstEntry = LogEntry.builder(firstPayload)
+    LogEntry firstEntry = LogEntry.newBuilder(firstPayload)
         .addLabel("key1", "value1")
-        .logName(logName)
-        .httpRequest(HttpRequest.builder().status(500).build())
-        .resource(MonitoredResource.builder("global").build())
+        .setLogName(logName)
+        .setHttpRequest(HttpRequest.newBuilder().setStatus(500).build())
+        .setResource(MonitoredResource.newBuilder("global").build())
         .build();
     JsonPayload secondPayload =
         JsonPayload.of(ImmutableMap.<String, Object>of("jsonKey", "jsonValue"));
-    LogEntry secondEntry = LogEntry.builder(secondPayload)
+    LogEntry secondEntry = LogEntry.newBuilder(secondPayload)
         .addLabel("key2", "value2")
-        .logName(logName)
-        .operation(Operation.of("operationId", "operationProducer"))
-        .resource(MonitoredResource.builder("cloudsql_database").build())
+        .setLogName(logName)
+        .setOperation(Operation.of("operationId", "operationProducer"))
+        .setResource(MonitoredResource.newBuilder("cloudsql_database").build())
         .build();
     logging().write(ImmutableList.of(firstEntry));
     logging().write(ImmutableList.of(secondEntry));
@@ -377,32 +377,32 @@ public abstract class BaseSystemTest {
     Iterator<LogEntry> iterator = page.iterateAll();
     assertTrue(iterator.hasNext());
     LogEntry entry = iterator.next();
-    assertEquals(firstPayload, entry.payload());
-    assertEquals(logName, entry.logName());
-    assertEquals(ImmutableMap.of("key1", "value1"), entry.labels());
-    assertEquals("global", entry.resource().type());
-    assertEquals(HttpRequest.builder().status(500).build(), entry.httpRequest());
-    assertEquals(Severity.DEFAULT, entry.severity());
-    assertNull(entry.operation());
-    assertNotNull(entry.insertId());
-    assertNotNull(entry.timestamp());
+    assertEquals(firstPayload, entry.getPayload());
+    assertEquals(logName, entry.getLogName());
+    assertEquals(ImmutableMap.of("key1", "value1"), entry.getLabels());
+    assertEquals("global", entry.getResource().getType());
+    assertEquals(HttpRequest.newBuilder().setStatus(500).build(), entry.getHttpRequest());
+    assertEquals(Severity.DEFAULT, entry.getSeverity());
+    assertNull(entry.getOperation());
+    assertNotNull(entry.getInsertId());
+    assertNotNull(entry.getTimestamp());
     assertTrue(iterator.hasNext());
     entry = iterator.next();
-    assertEquals(secondPayload, entry.payload());
-    assertEquals(logName, entry.logName());
-    assertEquals(ImmutableMap.of("key2", "value2"), entry.labels());
-    assertEquals("cloudsql_database", entry.resource().type());
-    assertEquals(Operation.of("operationId", "operationProducer"), entry.operation());
-    assertEquals(Severity.DEFAULT, entry.severity());
-    assertNull(entry.httpRequest());
-    assertNotNull(entry.insertId());
-    assertNotNull(entry.timestamp());
+    assertEquals(secondPayload, entry.getPayload());
+    assertEquals(logName, entry.getLogName());
+    assertEquals(ImmutableMap.of("key2", "value2"), entry.getLabels());
+    assertEquals("cloudsql_database", entry.getResource().getType());
+    assertEquals(Operation.of("operationId", "operationProducer"), entry.getOperation());
+    assertEquals(Severity.DEFAULT, entry.getSeverity());
+    assertNull(entry.getHttpRequest());
+    assertNotNull(entry.getInsertId());
+    assertNotNull(entry.getTimestamp());
     page = logging().listLogEntries(EntryListOption.filter(filter),
         EntryListOption.sortOrder(SortingField.TIMESTAMP, SortingOrder.DESCENDING));
     iterator = page.iterateAll();
-    Long lastTimestamp = iterator.next().timestamp();
+    Long lastTimestamp = iterator.next().getTimestamp();
     while (iterator.hasNext()) {
-      assertTrue(iterator.next().timestamp() <= lastTimestamp);
+      assertTrue(iterator.next().getTimestamp() <= lastTimestamp);
     }
     assertTrue(logging().deleteLog(logName));
   }
@@ -412,13 +412,13 @@ public abstract class BaseSystemTest {
     String logName = formatForTest("test-write-log-entries-async-log");
     String filter = "logName = projects/" + logging().options().projectId() + "/logs/" + logName;
     StringPayload firstPayload = StringPayload.of("stringPayload");
-    LogEntry firstEntry = LogEntry.builder(firstPayload).severity(Severity.ALERT).build();
+    LogEntry firstEntry = LogEntry.newBuilder(firstPayload).setSeverity(Severity.ALERT).build();
     ProtoPayload secondPayload =
         ProtoPayload.of(Any.pack(StringValue.newBuilder().setValue("protoPayload").build()));
-    LogEntry secondEntry = LogEntry.builder(secondPayload).severity(Severity.DEBUG).build();
+    LogEntry secondEntry = LogEntry.newBuilder(secondPayload).setSeverity(Severity.DEBUG).build();
     logging().writeAsync(ImmutableList.of(firstEntry, secondEntry),
         WriteOption.labels(ImmutableMap.of("key1", "value1")),
-        WriteOption.resource(MonitoredResource.builder("global").build()),
+        WriteOption.resource(MonitoredResource.newBuilder("global").build()),
         WriteOption.logName(logName)).get();
     EntryListOption[] options = {EntryListOption.filter(filter), EntryListOption.pageSize(1)};
     AsyncPage<LogEntry> page = logging().listLogEntriesAsync(options).get();
@@ -429,26 +429,26 @@ public abstract class BaseSystemTest {
     Iterator<LogEntry> iterator = page.iterateAll();
     assertTrue(iterator.hasNext());
     LogEntry entry = iterator.next();
-    assertEquals(firstPayload, entry.payload());
-    assertEquals(logName, entry.logName());
-    assertEquals(ImmutableMap.of("key1", "value1"), entry.labels());
-    assertEquals("global", entry.resource().type());
-    assertNull(entry.httpRequest());
-    assertEquals(Severity.ALERT, entry.severity());
-    assertNull(entry.operation());
-    assertNotNull(entry.insertId());
-    assertNotNull(entry.timestamp());
+    assertEquals(firstPayload, entry.getPayload());
+    assertEquals(logName, entry.getLogName());
+    assertEquals(ImmutableMap.of("key1", "value1"), entry.getLabels());
+    assertEquals("global", entry.getResource().getType());
+    assertNull(entry.getHttpRequest());
+    assertEquals(Severity.ALERT, entry.getSeverity());
+    assertNull(entry.getOperation());
+    assertNotNull(entry.getInsertId());
+    assertNotNull(entry.getTimestamp());
     assertTrue(iterator.hasNext());
     entry = iterator.next();
-    assertEquals(secondPayload, entry.payload());
-    assertEquals(logName, entry.logName());
-    assertEquals(ImmutableMap.of("key1", "value1"), entry.labels());
-    assertEquals("global", entry.resource().type());
-    assertNull(entry.operation());
-    assertEquals(Severity.DEBUG, entry.severity());
-    assertNull(entry.httpRequest());
-    assertNotNull(entry.insertId());
-    assertNotNull(entry.timestamp());
+    assertEquals(secondPayload, entry.getPayload());
+    assertEquals(logName, entry.getLogName());
+    assertEquals(ImmutableMap.of("key1", "value1"), entry.getLabels());
+    assertEquals("global", entry.getResource().getType());
+    assertNull(entry.getOperation());
+    assertEquals(Severity.DEBUG, entry.getSeverity());
+    assertNull(entry.getHttpRequest());
+    assertNotNull(entry.getInsertId());
+    assertNotNull(entry.getTimestamp());
     assertTrue(logging().deleteLogAsync(logName).get());
   }
 
@@ -483,18 +483,19 @@ public abstract class BaseSystemTest {
     }
     assertTrue(iterator.hasNext());
     LogEntry entry = iterator.next();
-    assertTrue(entry.payload() instanceof StringPayload);
-    assertTrue(entry.<StringPayload>payload().data().contains("Message"));
-    assertEquals(logName, entry.logName());
+    assertTrue(entry.getPayload() instanceof StringPayload);
+    assertTrue(entry.<StringPayload>getPayload().getData().contains("Message"));
+    assertEquals(logName, entry.getLogName());
     assertEquals(ImmutableMap.of("levelName", "INFO",
-        "levelValue", String.valueOf(Level.INFO.intValue())), entry.labels());
-    assertEquals("global", entry.resource().type());
-    assertEquals(ImmutableMap.of("project_id", options.projectId()), entry.resource().labels());
-    assertNull(entry.httpRequest());
-    assertEquals(Severity.INFO, entry.severity());
-    assertNull(entry.operation());
-    assertNotNull(entry.insertId());
-    assertNotNull(entry.timestamp());
+        "levelValue", String.valueOf(Level.INFO.intValue())), entry.getLabels());
+    assertEquals("global", entry.getResource().getType());
+    assertEquals(ImmutableMap.of("project_id", options.projectId()),
+        entry.getResource().getLabels());
+    assertNull(entry.getHttpRequest());
+    assertEquals(Severity.INFO, entry.getSeverity());
+    assertNull(entry.getOperation());
+    assertNotNull(entry.getInsertId());
+    assertNotNull(entry.getTimestamp());
     assertFalse(iterator.hasNext());
     logger.removeHandler(handler);
     logging().deleteLog(logName);
@@ -523,17 +524,17 @@ public abstract class BaseSystemTest {
     }
     assertTrue(iterator.hasNext());
     LogEntry entry = iterator.next();
-    assertTrue(entry.payload() instanceof StringPayload);
-    assertTrue(entry.<StringPayload>payload().data().contains("Message"));
-    assertEquals(logName, entry.logName());
+    assertTrue(entry.getPayload() instanceof StringPayload);
+    assertTrue(entry.<StringPayload>getPayload().getData().contains("Message"));
+    assertEquals(logName, entry.getLogName());
     assertEquals(ImmutableMap.of("levelName", "WARNING",
-        "levelValue", String.valueOf(Level.WARNING.intValue())), entry.labels());
-    assertEquals(resource, entry.resource());
-    assertNull(entry.httpRequest());
-    assertEquals(Severity.WARNING, entry.severity());
-    assertNull(entry.operation());
-    assertNotNull(entry.insertId());
-    assertNotNull(entry.timestamp());
+        "levelValue", String.valueOf(Level.WARNING.intValue())), entry.getLabels());
+    assertEquals(resource, entry.getResource());
+    assertNull(entry.getHttpRequest());
+    assertEquals(Severity.WARNING, entry.getSeverity());
+    assertNull(entry.getOperation());
+    assertNotNull(entry.getInsertId());
+    assertNotNull(entry.getTimestamp());
     assertFalse(iterator.hasNext());
     logger.removeHandler(handler);
     logging().deleteLog(logName);

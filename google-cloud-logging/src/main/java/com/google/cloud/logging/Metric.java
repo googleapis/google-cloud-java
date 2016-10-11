@@ -58,20 +58,41 @@ public class Metric extends MetricInfo {
     }
 
     @Override
+    @Deprecated
     public Builder name(String name) {
-      delegate.name(name);
+      delegate.setName(name);
       return this;
     }
 
     @Override
+    public Builder setName(String name) {
+      delegate.setName(name);
+      return this;
+    }
+
+    @Override
+    @Deprecated
     public Builder description(String description) {
-      delegate.description(description);
+      delegate.setDescription(description);
       return this;
     }
 
     @Override
+    public Builder setDescription(String description) {
+      delegate.setDescription(description);
+      return this;
+    }
+
+    @Override
+    @Deprecated
     public Builder filter(String filter) {
-      delegate.filter(filter);
+      delegate.setFilter(filter);
+      return this;
+    }
+
+    @Override
+    public Builder setFilter(String filter) {
+      delegate.setFilter(filter);
       return this;
     }
 
@@ -112,7 +133,15 @@ public class Metric extends MetricInfo {
   /**
    * Returns the metrics's {@code Logging} object used to issue requests.
    */
+  @Deprecated
   public Logging logging() {
+    return logging;
+  }
+
+  /**
+   * Returns the metrics's {@code Logging} object used to issue requests.
+   */
+  public Logging getLogging() {
     return logging;
   }
 
@@ -133,7 +162,7 @@ public class Metric extends MetricInfo {
    * @throws LoggingException upon failure
    */
   public boolean delete() {
-    return logging.deleteMetric(name());
+    return logging.deleteMetric(getName());
   }
 
   /**
@@ -156,7 +185,7 @@ public class Metric extends MetricInfo {
    * @throws LoggingException upon failure
    */
   public Future<Boolean> deleteAsync() {
-    return logging.deleteMetricAsync(name());
+    return logging.deleteMetricAsync(getName());
   }
 
   /**
@@ -174,7 +203,7 @@ public class Metric extends MetricInfo {
    * @throws LoggingException upon failure
    */
   public Metric reload() {
-    return logging.getMetric(name());
+    return logging.getMetric(getName());
   }
 
   /**
@@ -195,7 +224,7 @@ public class Metric extends MetricInfo {
    * @throws LoggingException upon failure
    */
   public Future<Metric> reloadAsync() {
-    return logging.getMetricAsync(name());
+    return logging.getMetricAsync(getName());
   }
 
   /**

@@ -96,6 +96,6 @@ public class AsyncLoggingHandler extends LoggingHandler {
 
   @Override
   void write(List<LogEntry> entries, WriteOption... options) {
-    logging().writeAsync(entries, options);
+    getLogging().writeAsync(entries, options);
   }
 }

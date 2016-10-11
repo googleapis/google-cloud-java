@@ -55,11 +55,11 @@ public class OptionTest {
 
   @Test
   public void testConstructor() {
-    assertEquals(OPTION_TYPE, OPTION.optionType());
-    assertEquals(VALUE, OPTION.value());
+    assertEquals(OPTION_TYPE, OPTION.getOptionType());
+    assertEquals(VALUE, OPTION.getValue());
     Option option = new Option(OPTION_TYPE, null) {};
-    assertEquals(OPTION_TYPE, option.optionType());
-    assertNull(option.value());
+    assertEquals(OPTION_TYPE, option.getOptionType());
+    assertNull(option.getValue());
     thrown.expect(NullPointerException.class);
     new Option(null, VALUE) {};
   }
@@ -67,10 +67,10 @@ public class OptionTest {
   @Test
   public void testListOption() {
     Option option = ListOption.pageSize(42);
-    assertEquals(ListOption.OptionType.PAGE_SIZE, option.optionType());
-    assertEquals(42, option.value());
+    assertEquals(ListOption.OptionType.PAGE_SIZE, option.getOptionType());
+    assertEquals(42, option.getValue());
     option = ListOption.pageToken("cursor");
-    assertEquals(ListOption.OptionType.PAGE_TOKEN, option.optionType());
-    assertEquals("cursor", option.value());
+    assertEquals(ListOption.OptionType.PAGE_TOKEN, option.getOptionType());
+    assertEquals("cursor", option.getValue());
   }
 }

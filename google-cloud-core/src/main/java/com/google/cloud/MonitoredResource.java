@@ -66,7 +66,18 @@ public final class MonitoredResource implements Serializable {
      * {@link MonitoredResourceDescriptor#type()} of a {@code MonitoredResourceDescriptor} object.
      * For example, the type {@code cloudsql_database} represent databases in Google Cloud SQL.
      */
+    @Deprecated
     public Builder type(String type) {
+      this.type = type;
+      return this;
+    }
+
+    /**
+     * Sets the monitored resource type. This value must match the one of
+     * {@link MonitoredResourceDescriptor#type()} of a {@code MonitoredResourceDescriptor} object.
+     * For example, the type {@code cloudsql_database} represent databases in Google Cloud SQL.
+     */
+    public Builder setType(String type) {
       this.type = type;
       return this;
     }
@@ -76,7 +87,18 @@ public final class MonitoredResource implements Serializable {
      * descriptor (see {@link MonitoredResourceDescriptor#labels()}. For example, Google Compute
      * Engine VM instances use the labels {@code instance_id} and {@code zone}.
      */
+    @Deprecated
     public Builder labels(Map<String, String> labels) {
+      this.labels = new HashMap<>(checkNotNull(labels));
+      return this;
+    }
+
+    /**
+     * Sets the values for all the labels required by the corresponding monitored resource
+     * descriptor (see {@link MonitoredResourceDescriptor#labels()}. For example, Google Compute
+     * Engine VM instances use the labels {@code instance_id} and {@code zone}.
+     */
+    public Builder setLabels(Map<String, String> labels) {
       this.labels = new HashMap<>(checkNotNull(labels));
       return this;
     }
@@ -112,7 +134,17 @@ public final class MonitoredResource implements Serializable {
    * {@link MonitoredResourceDescriptor#type()} of a {@code MonitoredResourceDescriptor} object.
    * For example, the type {@code cloudsql_database} represent databases in Google Cloud SQL.
    */
+  @Deprecated
   public String type() {
+    return type;
+  }
+
+  /**
+   * Returns the monitored resource type. This value must match the one of
+   * {@link MonitoredResourceDescriptor#type()} of a {@code MonitoredResourceDescriptor} object.
+   * For example, the type {@code cloudsql_database} represent databases in Google Cloud SQL.
+   */
+  public String getType() {
     return type;
   }
 
@@ -121,7 +153,17 @@ public final class MonitoredResource implements Serializable {
    * descriptor (see {@link MonitoredResourceDescriptor#labels()}. For example, Google Compute
    * Engine VM instances use the labels {@code instance_id} and {@code zone}.
    */
+  @Deprecated
   public Map<String, String> labels() {
+    return labels;
+  }
+
+  /**
+   * Returns the values for all the labels required by the corresponding monitored resource
+   * descriptor (see {@link MonitoredResourceDescriptor#labels()}. For example, Google Compute
+   * Engine VM instances use the labels {@code instance_id} and {@code zone}.
+   */
+  public Map<String, String> getLabels() {
     return labels;
   }
 
@@ -167,7 +209,15 @@ public final class MonitoredResource implements Serializable {
   /**
    * Returns a builder for {@code MonitoredResource} objects given the resource's type.
    */
+  @Deprecated
   public static Builder builder(String type) {
+    return new Builder(type);
+  }
+
+  /**
+   * Returns a builder for {@code MonitoredResource} objects given the resource's type.
+   */
+  public static Builder newBuilder(String type) {
     return new Builder(type);
   }
 
@@ -175,10 +225,10 @@ public final class MonitoredResource implements Serializable {
    * Creates a {@code MonitoredResource} object given the resource's type and labels.
    */
   public static MonitoredResource of(String type, Map<String, String> labels) {
-    return builder(type).labels(labels).build();
+    return newBuilder(type).setLabels(labels).build();
   }
 
   public static MonitoredResource fromPb(com.google.api.MonitoredResource descriptorPb) {
-    return new Builder(descriptorPb.getType()).labels(descriptorPb.getLabels()).build();
+    return new Builder(descriptorPb.getType()).setLabels(descriptorPb.getLabelsMap()).build();
   }
 }
