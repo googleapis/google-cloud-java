@@ -39,10 +39,10 @@ import java.util.logging.Logger;
 
 /**
  * Utility to create a remote storage configuration for testing. Storage options can be obtained via
- * the {@link #options()} method. Returned options have custom {@link StorageOptions#retryParams()}:
- * {@link RetryParams#retryMaxAttempts()} is {@code 10}, {@link RetryParams#retryMinAttempts()} is
- * {@code 6}, {@link RetryParams#maxRetryDelayMillis()} is {@code 30000},
- * {@link RetryParams#totalRetryPeriodMillis()} is {@code 120000} and
+ * the {@link #getOptions()} ()} method. Returned options have custom
+ * {@link StorageOptions#retryParams()}: {@link RetryParams#retryMaxAttempts()} is {@code 10},
+ * {@link RetryParams#retryMinAttempts()} is {@code 6}, {@link RetryParams#maxRetryDelayMillis()} is
+ * {@code 30000}, {@link RetryParams#totalRetryPeriodMillis()} is {@code 120000} and
  * {@link RetryParams#initialRetryDelayMillis()} is {@code 250}.
  * {@link StorageOptions#connectTimeout()} and {@link StorageOptions#readTimeout()} are both set
  * to {@code 60000}.
