@@ -67,7 +67,6 @@ public class ListResourcesTest {
     this.underTest.listMonitoredResourceDescriptors();
     String result = new String(os.toByteArray());
     assertThat(result)
-        .named("output text stream")
         .contains("An application running in Google App Engine");
   }
 
@@ -80,8 +79,7 @@ public class ListResourcesTest {
     this.underTest.listMetricDescriptors();
     String result = new String(os.toByteArray());
     assertThat(result)
-        .named("output text stream")
-        .contains("Delta CPU usage time. Units are second");
+        .contains("agent.googleapis.com/cpu/usage_time");
   }
 
   /**
@@ -93,7 +91,6 @@ public class ListResourcesTest {
     this.underTest.listTimeseries();
     String result = new String(os.toByteArray());
     assertThat(result)
-        .named("output text stream")
         .contains("listTimeseries response");
   }
 }
