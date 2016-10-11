@@ -112,8 +112,8 @@ import com.google.cloud.logging.MetricInfo;
 Then, to create the metric, use the following code:
 
 ```java
-MetricInfo metricInfo = MetricInfo.builder("test-metric", "severity >= ERROR")
-    .description("Log entries with severity higher or equal to ERROR")
+MetricInfo metricInfo = MetricInfo.newBuilder("test-metric", "severity >= ERROR")
+    .setDescription("Log entries with severity higher or equal to ERROR")
     .build();
 logging.create(metricInfo);
 ```
@@ -131,9 +131,9 @@ import java.util.Collections;
 ```
 Then, to write the log entries, use the following code:
 ```java
-LogEntry firstEntry = LogEntry.builder(StringPayload.of("message"))
-    .logName("test-log")
-    .resource(MonitoredResource.builder("global")
+LogEntry firstEntry = LogEntry.newBuilder(StringPayload.of("message"))
+    .setLogName("test-log")
+    .setResource(MonitoredResource.builder("global")
         .addLabel("project_id", options.projectId())
         .build())
     .build();

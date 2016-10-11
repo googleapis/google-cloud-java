@@ -233,7 +233,7 @@ public class Metric extends MetricInfo {
    * <p>Example of updating the metric's information.
    * <pre> {@code
    * Metric updatedMetric = metric.toBuilder()
-   *     .description("A more detailed description")
+   *     .setDescription("A more detailed description")
    *     .build()
    *     .update();
    * }</pre>
@@ -253,7 +253,7 @@ public class Metric extends MetricInfo {
    * <p>Example of asynchronously updating the metric's information.
    * <pre> {@code
    * Future<Metric> future = metric.toBuilder()
-   *     .description("A more detailed description")
+   *     .setDescription("A more detailed description")
    *     .build()
    *     .updateAsync();
    * // ...

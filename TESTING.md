@@ -163,7 +163,7 @@ uses the `RemoteLoggingHelper` to create a metric.
   ```java
   RemoteLoggingHelper loggingHelper =
       RemoteLoggingHelper.create(PROJECT_ID, new FileInputStream("/path/to/my/JSON/key.json"));
-  Logging logging = loggingHelper.options().service();
+  Logging logging = loggingHelper.getOptions().service();
   // Pick a name for the resource with low probability of clashing
   String metricName = RemoteLoggingHelper.formatForTest("test-metric");
   MetricInfo metricInfo = MetricInfo.of(name, "logName:syslog");

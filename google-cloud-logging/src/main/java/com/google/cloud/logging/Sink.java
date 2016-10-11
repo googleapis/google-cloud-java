@@ -252,7 +252,7 @@ public class Sink extends SinkInfo {
    * <p>Example of updating the sink's information.
    * <pre> {@code
    * Sink updatedSink = sink.toBuilder()
-   *     .filter("severity<=ERROR")
+   *     .setFilter("severity<=ERROR")
    *     .build()
    *     .update();
    * }</pre>
@@ -272,7 +272,7 @@ public class Sink extends SinkInfo {
    * <p>Example of asynchronously updating the sink's information.
    * <pre> {@code
    * Future<Sink> future = sink.toBuilder()
-   *     .filter("severity<=ERROR")
+   *     .setFilter("severity<=ERROR")
    *     .build()
    *     .updateAsync();
    * // ...
