@@ -32,7 +32,6 @@ public class BlobValueTest {
     assertEquals(value, value.toBuilder().build());
   }
 
-  @SuppressWarnings("deprecation")
   @Test
   public void testOf() throws Exception {
     BlobValue value = BlobValue.of(CONTENT);
@@ -43,6 +42,15 @@ public class BlobValueTest {
   @SuppressWarnings("deprecation")
   @Test
   public void testBuilder() throws Exception {
+    BlobValue.Builder builder = BlobValue.newBuilder(CONTENT);
+    BlobValue value = builder.setMeaning(1).setExcludeFromIndexes(true).build();
+    assertEquals(CONTENT, value.get());
+    assertEquals(1, value.getMeaning());
+    assertTrue(value.excludeFromIndexes());
+  }
+
+  @Test
+  public void testBuilderDeprecated() throws Exception {
     BlobValue.Builder builder = BlobValue.builder(CONTENT);
     BlobValue value = builder.meaning(1).excludeFromIndexes(true).build();
     assertEquals(CONTENT, value.get());

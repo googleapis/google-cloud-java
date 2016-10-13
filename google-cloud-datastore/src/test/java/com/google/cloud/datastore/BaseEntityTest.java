@@ -36,11 +36,11 @@ public class BaseEntityTest {
   private static final Blob BLOB = Blob.copyFrom(new byte[]{1, 2});
   private static final DateTime DATE_TIME = DateTime.now();
   private static final LatLng LAT_LNG = new LatLng(37.422035, -122.084124);
-  private static final Key KEY = Key.builder("ds1", "k1", "n1").build();
-  private static final Entity ENTITY = Entity.builder(KEY).set("name", "foo").build();
-  private static final IncompleteKey INCOMPLETE_KEY = IncompleteKey.builder("ds1", "k1").build();
+  private static final Key KEY = Key.newBuilder("ds1", "k1", "n1").build();
+  private static final Entity ENTITY = Entity.newBuilder(KEY).set("name", "foo").build();
+  private static final IncompleteKey INCOMPLETE_KEY = IncompleteKey.newBuilder("ds1", "k1").build();
   private static final FullEntity<IncompleteKey> PARTIAL_ENTITY =
-      Entity.builder(INCOMPLETE_KEY).build();
+      Entity.newBuilder(INCOMPLETE_KEY).build();
 
   private Builder builder;
 
@@ -67,8 +67,8 @@ public class BaseEntityTest {
     builder.set("booleanList", true, false, true);
     builder.set("dateTimeList", DateTime.now(), DateTime.now(), DateTime.now());
     builder.set("doubleList", 12.3, 4.56, .789);
-    builder.set("keyList", KEY, Key.builder("ds2", "k2", "n2").build(),
-        Key.builder("ds3", "k3", "n3").build());
+    builder.set("keyList", KEY, Key.newBuilder("ds2", "k2", "n2").build(),
+        Key.newBuilder("ds3", "k3", "n3").build());
     builder.set("entityList", ENTITY, PARTIAL_ENTITY);
     builder.set("stringList", "s1", "s2", "s3");
     builder.set("longList", 1, 23, 456);
@@ -165,7 +165,7 @@ public class BaseEntityTest {
   public void testGetKey() throws Exception {
     BaseEntity<Key> entity = builder.build();
     assertEquals(KEY, entity.getKey("key"));
-    Key key = Key.builder(KEY).name("BLA").build();
+    Key key = Key.newBuilder(KEY).setName("BLA").build();
     entity = builder.set("key", key).build();
     assertEquals(key, entity.getKey("key"));
   }
@@ -228,6 +228,33 @@ public class BaseEntityTest {
             .add("longList", "latLng", "latLngList")
             .build();
     BaseEntity<Key> entity = builder.build();
+    assertEquals(names, entity.getNames());
+  }
+
+  @Test
+  public void testNamesDeprecated() throws Exception {
+    Set<String> names =
+        ImmutableSet.<String>builder()
+            .add("string", "stringValue", "boolean", "double", "long", "list1", "list2", "list3")
+            .add("entity", "partialEntity", "null", "dateTime", "blob", "key", "blobList")
+            .add("booleanList", "dateTimeList", "doubleList", "keyList", "entityList", "stringList")
+            .add("longList", "latLng", "latLngList")
+            .build();
+    BaseEntity<Key> entity = builder.build();
     assertEquals(names, entity.names());
+  }
+
+  @Test
+  public void testKey() throws Exception {
+    builder.setKey(KEY);
+    BaseEntity<Key> entity = builder.build();
+    assertEquals(KEY, entity.getKey());
+  }
+
+  @Test
+  public void testKeyDeprecated() throws Exception {
+    builder.key(KEY);
+    BaseEntity<Key> entity = builder.build();
+    assertEquals(KEY, entity.key());
   }
 }

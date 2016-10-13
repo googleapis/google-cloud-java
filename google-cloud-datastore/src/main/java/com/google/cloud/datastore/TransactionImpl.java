@@ -39,7 +39,19 @@ final class TransactionImpl extends BaseDatastoreBatchWriter implements Transact
     }
 
     @Override
+    @Deprecated
     public List<Key> generatedKeys() {
+      Iterator<com.google.datastore.v1.MutationResult> results =
+          response.getMutationResultsList().iterator();
+      List<Key> generated = new ArrayList<>(numAutoAllocatedIds);
+      for (int i = 0; i < numAutoAllocatedIds; i++) {
+        generated.add(Key.fromPb(results.next().getKey()));
+      }
+      return generated;
+    }
+
+    @Override
+    public List<Key> getGeneratedKeys() {
       Iterator<com.google.datastore.v1.MutationResult> results =
           response.getMutationResultsList().iterator();
       List<Key> generated = new ArrayList<>(numAutoAllocatedIds);
@@ -114,6 +126,11 @@ final class TransactionImpl extends BaseDatastoreBatchWriter implements Transact
 
   @Override
   public Datastore datastore() {
+    return datastore;
+  }
+
+  @Override
+  public Datastore getDatastore() {
     return datastore;
   }
 }

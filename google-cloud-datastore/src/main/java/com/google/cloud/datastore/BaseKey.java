@@ -65,9 +65,9 @@ public abstract class BaseKey implements Serializable {
     }
 
     Builder(BaseKey copyFrom) {
-      projectId = copyFrom.projectId();
-      namespace = copyFrom.namespace();
-      ancestors = new LinkedList<>(copyFrom.ancestors());
+      projectId = copyFrom.getProjectId();
+      namespace = copyFrom.getNamespace();
+      ancestors = new LinkedList<>(copyFrom.getAncestors());
       kind = copyFrom.kind();
     }
 
@@ -76,16 +76,44 @@ public abstract class BaseKey implements Serializable {
       return (B) this;
     }
 
+    /**
+     * Adds an ancestor for this key.
+     */
+    @Deprecated
     public B ancestors(PathElement ancestor) {
       Preconditions.checkState(ancestors.size() < MAX_PATH, "path can have at most 100 elements");
       ancestors.add(ancestor);
       return self();
     }
 
-    public B ancestors(PathElement ancestor, PathElement... other) {
-      return ancestors(ImmutableList.<PathElement>builder().add(ancestor).add(other).build());
+    /**
+     * Adds an ancestor for this key.
+     */
+    public B addAncestor(PathElement ancestor) {
+      Preconditions.checkState(ancestors.size() < MAX_PATH, "path can have at most 100 elements");
+      ancestors.add(ancestor);
+      return self();
     }
 
+    /**
+     * Adds an ancestor to the key.
+     */
+    @Deprecated
+    public B ancestors(PathElement ancestor, PathElement... other) {
+      return addAncestors(ImmutableList.<PathElement>builder().add(ancestor).add(other).build());
+    }
+
+    /**
+     * Adds the provided ancestors to the key.
+     */
+    public B addAncestors(PathElement ancestor, PathElement... other) {
+      return addAncestors(ImmutableList.<PathElement>builder().add(ancestor).add(other).build());
+    }
+
+    /**
+     * Adds the provided ancestors to the key.
+     */
+    @Deprecated
     public B ancestors(Iterable<PathElement> ancestors) {
       ImmutableList<PathElement> list = ImmutableList.copyOf(ancestors);
       Preconditions.checkState(this.ancestors.size() + list.size() < MAX_PATH,
@@ -94,17 +122,64 @@ public abstract class BaseKey implements Serializable {
       return self();
     }
 
+    /**
+     * Adds the provided ancestors to the key.
+     */
+    public B addAncestors(Iterable<PathElement> ancestors) {
+      ImmutableList<PathElement> list = ImmutableList.copyOf(ancestors);
+      Preconditions.checkState(this.ancestors.size() + list.size() < MAX_PATH,
+          "path can have at most 100 elements");
+      this.ancestors.addAll(list);
+      return self();
+    }
+
+    /**
+     * Sets the kind of the key.
+     */
+    @Deprecated
     public B kind(String kind) {
       this.kind = validateKind(kind);
       return self();
     }
 
+    /**
+     * Sets the kind of the key.
+     */
+    public B setKind(String kind) {
+      this.kind = validateKind(kind);
+      return self();
+    }
+
+    /**
+     * Sets the project ID of the key.
+     */
+    @Deprecated
     public B projectId(String projectId) {
       this.projectId = validateDatabase(projectId);
       return self();
     }
 
+    /**
+     * Sets the project ID of the key.
+     */
+    public B setProjectId(String projectId) {
+      this.projectId = validateDatabase(projectId);
+      return self();
+    }
+
+    /**
+     * Sets the namespace of the key.
+     */
+    @Deprecated
     public B namespace(String namespace) {
+      this.namespace = validateNamespace(namespace);
+      return self();
+    }
+
+    /**
+     * Sets the namespace of the key.
+     */
+    public B setNamespace(String namespace) {
       this.namespace = validateNamespace(namespace);
       return self();
     }
@@ -122,43 +197,86 @@ public abstract class BaseKey implements Serializable {
   /**
    * Returns the key's projectId.
    */
+  @Deprecated
   public String projectId() {
+    return projectId;
+  }
+
+  /**
+   * Returns the key's projectId.
+   */
+  public String getProjectId() {
     return projectId;
   }
 
   /**
    * Returns the key's namespace or {@code null} if not provided.
    */
+  @Deprecated
   public String namespace() {
+    return namespace;
+  }
+
+  /**
+   * Returns the key's namespace or {@code null} if not provided.
+   */
+  public String getNamespace() {
     return namespace;
   }
 
   /**
    * Returns an immutable list with the key's ancestors.
    */
+  @Deprecated
   public List<PathElement> ancestors() {
-    return path().subList(0, path().size() - 1);
+    return getPath().subList(0, getPath().size() - 1);
+  }
+
+  /**
+   * Returns an immutable list with the key's ancestors.
+   */
+  public List<PathElement> getAncestors() {
+    return getPath().subList(0, getPath().size() - 1);
   }
 
   /**
    * Returns an immutable list of the key's path (ancestors + self).
    */
+  @Deprecated
   List<PathElement> path() {
     return path;
   }
 
-  PathElement leaf() {
-    return path().get(path().size() - 1);
+  /**
+   * Returns an immutable list of the key's path (ancestors + self).
+   */
+  List<PathElement> getPath() {
+    return path;
+  }
+
+  PathElement getLeaf() {
+    return getPath().get(getPath().size() - 1);
   }
 
   /**
    * Returns the key's kind.
    */
+  @Deprecated
   public String kind() {
-    return leaf().kind();
+    return getLeaf().kind();
   }
 
+  /**
+   * Returns the key's kind.
+   */
+  public String getKind() {
+    return getLeaf().kind();
+  }
+
+  @Deprecated
   abstract BaseKey parent();
+
+  abstract BaseKey getParent();
 
   @Override
   public String toString() {
@@ -171,7 +289,7 @@ public abstract class BaseKey implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(projectId(), namespace(), path());
+    return Objects.hash(getProjectId(), getNamespace(), getPath());
   }
 
   @Override
@@ -183,9 +301,9 @@ public abstract class BaseKey implements Serializable {
       return false;
     }
     BaseKey other = (BaseKey) obj;
-    return Objects.equals(projectId(), other.projectId())
-        && Objects.equals(namespace(), other.namespace())
-        && Objects.equals(path(), other.path());
+    return Objects.equals(getProjectId(), other.getProjectId())
+        && Objects.equals(getNamespace(), other.getNamespace())
+        && Objects.equals(getPath(), other.getPath());
   }
 
   com.google.datastore.v1.Key toPb() {

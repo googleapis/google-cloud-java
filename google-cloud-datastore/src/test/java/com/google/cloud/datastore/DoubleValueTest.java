@@ -43,6 +43,15 @@ public class DoubleValueTest {
   @SuppressWarnings("deprecation")
   @Test
   public void testBuilder() throws Exception {
+    DoubleValue.Builder builder = DoubleValue.newBuilder(CONTENT);
+    DoubleValue value = builder.setMeaning(1).setExcludeFromIndexes(true).build();
+    assertEquals(CONTENT, value.get());
+    assertEquals(1, value.getMeaning());
+    assertTrue(value.excludeFromIndexes());
+  }
+
+  @Test
+  public void testBuilderDeprecated() throws Exception {
     DoubleValue.Builder builder = DoubleValue.builder(CONTENT);
     DoubleValue value = builder.meaning(1).excludeFromIndexes(true).build();
     assertEquals(CONTENT, value.get());

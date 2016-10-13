@@ -24,7 +24,7 @@ import org.junit.Test;
 
 public class KeyValueTest {
 
-  private static final Key CONTENT = Key.builder("ds", "kind", 1).build();
+  private static final Key CONTENT = Key.newBuilder("ds", "kind", 1).build();
 
   @Test
   public void testToBuilder() throws Exception {
@@ -43,7 +43,16 @@ public class KeyValueTest {
   @SuppressWarnings("deprecation")
   @Test
   public void testBuilder() throws Exception {
-    KeyValue.Builder builder = KeyValue.builder(CONTENT);
+    KeyValue.Builder builder = KeyValue.newBuilder(CONTENT);
+    KeyValue value = builder.setMeaning(1).setExcludeFromIndexes(true).build();
+    assertEquals(CONTENT, value.get());
+    assertEquals(1, value.getMeaning());
+    assertTrue(value.excludeFromIndexes());
+  }
+
+  @Test
+  public void testBuilderDeprecated() throws Exception {
+    KeyValue.Builder builder = KeyValue.newBuilder(CONTENT);
     KeyValue value = builder.meaning(1).excludeFromIndexes(true).build();
     assertEquals(CONTENT, value.get());
     assertEquals(1, value.meaning());

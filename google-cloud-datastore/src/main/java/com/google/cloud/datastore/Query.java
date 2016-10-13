@@ -62,7 +62,7 @@ public abstract class Query<V> implements Serializable {
 
       @Override
       Object convert(com.google.datastore.v1.Entity entityPb) {
-        if (entityPb.getProperties().isEmpty()) {
+        if (entityPb.getPropertiesMap().isEmpty()) {
           if (!entityPb.hasKey()) {
             return null;
           }
@@ -193,8 +193,27 @@ public abstract class Query<V> implements Serializable {
    *
    * @see <a href="https://cloud.google.com/datastore/docs/apis/gql/gql_reference">GQL Reference</a>
    */
+  @Deprecated
   public static GqlQuery.Builder<?> gqlQueryBuilder(String gql) {
-    return gqlQueryBuilder(ResultType.UNKNOWN, gql);
+    return newGqlQueryBuilder(ResultType.UNKNOWN, gql);
+  }
+
+  /**
+   * Returns a new {@link GqlQuery} builder.
+   *
+   * <p>Example of creating and running a GQL query.
+   * <pre> {@code
+   * String kind = "my_kind";
+   * String gqlQuery = "select * from " + kind;
+   * Query<?> query = Query.gqlQueryBuilder(gqlQuery).build();
+   * QueryResults<?> results = datastore.run(query);
+   * // Use results
+   * }</pre>
+   *
+   * @see <a href="https://cloud.google.com/datastore/docs/apis/gql/gql_reference">GQL Reference</a>
+   */
+  public static GqlQuery.Builder<?> newGqlQueryBuilder(String gql) {
+    return newGqlQueryBuilder(ResultType.UNKNOWN, gql);
   }
 
   /**
@@ -211,7 +230,26 @@ public abstract class Query<V> implements Serializable {
    *
    * @see <a href="https://cloud.google.com/datastore/docs/apis/gql/gql_reference">GQL Reference</a>
    */
+  @Deprecated
   public static <V> GqlQuery.Builder<V> gqlQueryBuilder(ResultType<V> resultType, String gql) {
+    return new GqlQuery.Builder<>(resultType, gql);
+  }
+
+  /**
+   * Returns a new {@link GqlQuery} builder.
+   *
+   * <p>Example of creating and running a typed GQL query.
+   * <pre> {@code
+   * String kind = "my_kind";
+   * String gqlQuery = "select * from " + kind;
+   * Query<Entity> query = Query.gqlQueryBuilder(Query.ResultType.ENTITY, gqlQuery).build();
+   * QueryResults<Entity> results = datastore.run(query);
+   * // Use results
+   * }</pre>
+   *
+   * @see <a href="https://cloud.google.com/datastore/docs/apis/gql/gql_reference">GQL Reference</a>
+   */
+  public static <V> GqlQuery.Builder<V> newGqlQueryBuilder(ResultType<V> resultType, String gql) {
     return new GqlQuery.Builder<>(resultType, gql);
   }
 
@@ -227,7 +265,24 @@ public abstract class Query<V> implements Serializable {
    * }</pre>
    *
    */
+  @Deprecated
   public static EntityQuery.Builder entityQueryBuilder() {
+    return new EntityQuery.Builder();
+  }
+
+  /**
+   * Returns a new {@link StructuredQuery} builder for full (complete entities) queries.
+   *
+   * <p>Example of creating and running an entity query.
+   * <pre> {@code
+   * String kind = "my_kind";
+   * Query<Entity> query = Query.entityQueryBuilder().kind(kind).build();
+   * QueryResults<Entity> results = datastore.run(query);
+   * // Use results
+   * }</pre>
+   *
+   */
+  public static EntityQuery.Builder newEntityQueryBuilder() {
     return new EntityQuery.Builder();
   }
 
@@ -243,7 +298,24 @@ public abstract class Query<V> implements Serializable {
    * }</pre>
    *
    */
+  @Deprecated
   public static KeyQuery.Builder keyQueryBuilder() {
+    return new KeyQuery.Builder();
+  }
+
+  /**
+   * Returns a new {@link StructuredQuery} builder for key only queries.
+   *
+   * <p>Example of creating and running a key query.
+   * <pre> {@code
+   * String kind = "my_kind";
+   * Query<Key> query = Query.keyQueryBuilder().kind(kind).build();
+   * QueryResults<Key> results = datastore.run(query);
+   * // Use results
+   * }</pre>
+   *
+   */
+  public static KeyQuery.Builder newKeyQueryBuilder() {
     return new KeyQuery.Builder();
   }
 
@@ -263,7 +335,28 @@ public abstract class Query<V> implements Serializable {
    * }</pre>
    *
    */
+  @Deprecated
   public static ProjectionEntityQuery.Builder projectionEntityQueryBuilder() {
+    return new ProjectionEntityQuery.Builder();
+  }
+
+  /**
+   * Returns a new {@link StructuredQuery} builder for projection queries.
+   *
+   * <p>Example of creating and running a projection entity query.
+   * <pre> {@code
+   * String kind = "my_kind";
+   * String property = "my_property";
+   * Query<ProjectionEntity> query = Query.projectionEntityQueryBuilder()
+   *     .kind(kind)
+   *     .addProjection(property)
+   *     .build();
+   * QueryResults<ProjectionEntity> results = datastore.run(query);
+   * // Use results
+   * }</pre>
+   *
+   */
+  public static ProjectionEntityQuery.Builder newProjectionEntityQueryBuilder() {
     return new ProjectionEntityQuery.Builder();
   }
 }

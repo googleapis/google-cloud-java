@@ -51,15 +51,30 @@ public class FullEntity<K extends IncompleteKey> extends BaseEntity<K> {
     super(from);
   }
 
+  @Deprecated
   public static Builder<IncompleteKey> builder() {
     return new Builder<>();
   }
 
+  public static Builder<IncompleteKey> newBuilder() {
+    return new Builder<>();
+  }
+
+  @Deprecated
   public static <K extends IncompleteKey> Builder<K> builder(K key) {
     return new Builder<>(key);
   }
 
+  public static <K extends IncompleteKey> Builder<K> newBuilder(K key) {
+    return new Builder<>(key);
+  }
+
+  @Deprecated
   public static <K extends IncompleteKey> Builder<K> builder(FullEntity<K> copyFrom) {
+    return new Builder<>(copyFrom);
+  }
+
+  public static <K extends IncompleteKey> Builder<K> newBuilder(FullEntity<K> copyFrom) {
     return new Builder<>(copyFrom);
   }
 

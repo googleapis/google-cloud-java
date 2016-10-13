@@ -104,12 +104,24 @@ class QueryResultsImpl<T> extends AbstractIterator<T> implements QueryResults<T>
   }
 
   @Override
+  @Deprecated
   public Class<?> resultClass() {
     return actualResultType.resultClass();
   }
 
   @Override
+  public Class<?> getResultClass() {
+    return actualResultType.resultClass();
+  }
+
+  @Override
+  @Deprecated
   public Cursor cursorAfter() {
+    return new Cursor(cursor);
+  }
+
+  @Override
+  public Cursor getCursorAfter() {
     return new Cursor(cursor);
   }
 }

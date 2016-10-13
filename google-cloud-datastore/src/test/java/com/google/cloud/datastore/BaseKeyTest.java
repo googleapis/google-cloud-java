@@ -47,7 +47,13 @@ public class BaseKeyTest {
       return new BaseKey(projectId, namespace, path.build()) {
 
         @Override
+        @Deprecated
         protected BaseKey parent() {
+          return null;
+        }
+
+        @Override
+        protected BaseKey getParent() {
           return null;
         }
       };
@@ -55,7 +61,16 @@ public class BaseKeyTest {
   }
 
   @Test
-  public void testDataset() throws Exception {
+  public void testProjectId() throws Exception {
+    Builder builder = new Builder("ds1", "k");
+    BaseKey key = builder.build();
+    assertEquals("ds1", key.getProjectId());
+    key = builder.setProjectId("ds2").build();
+    assertEquals("ds2", key.getProjectId());
+  }
+
+  @Test
+  public void testProjectIdDeprecated() throws Exception {
     Builder builder = new Builder("ds1", "k");
     BaseKey key = builder.build();
     assertEquals("ds1", key.projectId());
@@ -71,11 +86,27 @@ public class BaseKeyTest {
   @Test(expected = IllegalArgumentException.class)
   public void testBadDatasetInSetter() throws Exception {
     Builder builder = new Builder("d", "k");
+    builder.setProjectId(" ");
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testBadDatasetInSetterDeprecated() throws Exception {
+    Builder builder = new Builder("d", "k");
     builder.projectId(" ");
   }
 
   @Test
   public void testNamespace() throws Exception {
+    Builder builder = new Builder("ds", "k");
+    BaseKey key = builder.build();
+    assertTrue(key.getNamespace() != null);
+    assertTrue(key.getNamespace().isEmpty());
+    key = builder.setNamespace("ns").build();
+    assertEquals("ns", key.getNamespace());
+  }
+
+  @Test
+  public void testNamespaceDeprecated() throws Exception {
     Builder builder = new Builder("ds", "k");
     BaseKey key = builder.build();
     assertTrue(key.namespace() != null);
@@ -86,6 +117,15 @@ public class BaseKeyTest {
 
   @Test
   public void testKind() throws Exception {
+    Builder builder = new Builder("ds", "k1");
+    BaseKey key = builder.build();
+    assertEquals("k1", key.getKind());
+    key = builder.setKind("k2").build();
+    assertEquals("k2", key.getKind());
+  }
+
+  @Test
+  public void testKindDeprecated() throws Exception {
     Builder builder = new Builder("ds", "k1");
     BaseKey key = builder.build();
     assertEquals("k1", key.kind());
@@ -107,11 +147,31 @@ public class BaseKeyTest {
   @Test(expected = IllegalArgumentException.class)
   public void testBadKindInSetter() throws Exception {
     Builder builder = new Builder("ds", "k1");
+    builder.setKind("");
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testBadKindInSetterDeprecated() throws Exception {
+    Builder builder = new Builder("ds", "k1");
     builder.kind("");
   }
 
   @Test
   public void testAncestors() throws Exception {
+    Builder builder = new Builder("ds", "k");
+    BaseKey key = builder.build();
+    assertTrue(key.getAncestors().isEmpty());
+    List<PathElement> path = new ArrayList<>();
+    path.add(PathElement.of("p1", "v1"));
+    key = builder.addAncestor(path.get(0)).build();
+    assertEquals(path, key.getAncestors());
+    path.add(PathElement.of("p2", "v2"));
+    key = builder.addAncestor(path.get(1)).build();
+    assertEquals(path, key.getAncestors());
+  }
+
+  @Test
+  public void testAncestorsDeprecated() throws Exception {
     Builder builder = new Builder("ds", "k");
     BaseKey key = builder.build();
     assertTrue(key.ancestors().isEmpty());
