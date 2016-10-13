@@ -53,9 +53,9 @@ public class TransactionSnippets {
   // [TARGET get(Key)]
   // [VARIABLE "my_key_name"]
   public Entity get(String keyName) {
-    Datastore datastore = transaction.datastore();
+    Datastore datastore = transaction.getDatastore();
     // [START get]
-    Key key = datastore.newKeyFactory().kind("MyKind").newKey(keyName);
+    Key key = datastore.newKeyFactory().setKind("MyKind").newKey(keyName);
     Entity entity = transaction.get(key);
     transaction.commit();
     // Do something with the entity
@@ -70,10 +70,10 @@ public class TransactionSnippets {
   // [VARIABLE "my_first_key_name"]
   // [VARIABLE "my_second_key_name"]
   public List<Entity> getMultiple(String firstKeyName, String secondKeyName) {
-    Datastore datastore = transaction.datastore();
+    Datastore datastore = transaction.getDatastore();
     // TODO change so that it's not necessary to hold the entities in a list for integration testing
     // [START getMultiple]
-    KeyFactory keyFactory = datastore.newKeyFactory().kind("MyKind");
+    KeyFactory keyFactory = datastore.newKeyFactory().setKind("MyKind");
     Key firstKey = keyFactory.newKey(firstKeyName);
     Key secondKey = keyFactory.newKey(secondKeyName);
     Iterator<Entity> entitiesIterator = transaction.get(firstKey, secondKey);
@@ -95,9 +95,9 @@ public class TransactionSnippets {
   // [VARIABLE "my_first_key_name"]
   // [VARIABLE "my_second_key_name"]
   public List<Entity> fetchEntitiesWithKeys(String firstKeyName, String secondKeyName) {
-    Datastore datastore = transaction.datastore();
+    Datastore datastore = transaction.getDatastore();
     // [START fetchEntitiesWithKeys]
-    KeyFactory keyFactory = datastore.newKeyFactory().kind("MyKind");
+    KeyFactory keyFactory = datastore.newKeyFactory().setKind("MyKind");
     Key firstKey = keyFactory.newKey(firstKeyName);
     Key secondKey = keyFactory.newKey(secondKeyName);
     List<Entity> entities = transaction.fetch(firstKey, secondKey);
@@ -115,14 +115,14 @@ public class TransactionSnippets {
   // [TARGET run(Query)]
   // [VARIABLE "my_parent_key_name"]
   public List<Entity> run(String parentKeyName) {
-    Datastore datastore = transaction.datastore();
+    Datastore datastore = transaction.getDatastore();
     // [START run]
-    KeyFactory keyFactory = datastore.newKeyFactory().kind("ParentKind");
+    KeyFactory keyFactory = datastore.newKeyFactory().setKind("ParentKind");
     Key parentKey = keyFactory.newKey(parentKeyName);
     // Build a query
-    Query<Entity> query = Query.entityQueryBuilder()
-        .kind("MyKind")
-        .filter(PropertyFilter.hasAncestor(parentKey))
+    Query<Entity> query = Query.newEntityQueryBuilder()
+        .setKind("MyKind")
+        .setFilter(PropertyFilter.hasAncestor(parentKey))
         .build();
     QueryResults<Entity> results = transaction.run(query);
     List<Entity> entities = Lists.newArrayList();
@@ -141,12 +141,12 @@ public class TransactionSnippets {
    */
   // [TARGET commit()]
   public Key commit() {
-    Datastore datastore = transaction.datastore();
+    Datastore datastore = transaction.getDatastore();
     // [START commit]
     // create an entity
-    KeyFactory keyFactory = datastore.newKeyFactory().kind("MyKind");
+    KeyFactory keyFactory = datastore.newKeyFactory().setKind("MyKind");
     Key key = datastore.allocateId(keyFactory.newKey());
-    Entity entity = Entity.builder(key).set("description", "commit()").build();
+    Entity entity = Entity.newBuilder(key).set("description", "commit()").build();
 
     // add the entity and commit
     try {
@@ -165,12 +165,12 @@ public class TransactionSnippets {
    */
   // [TARGET rollback()]
   public Key rollback() {
-    Datastore datastore = transaction.datastore();
+    Datastore datastore = transaction.getDatastore();
     // [START rollback]
     // create an entity
-    KeyFactory keyFactory = datastore.newKeyFactory().kind("MyKind");
+    KeyFactory keyFactory = datastore.newKeyFactory().setKind("MyKind");
     Key key = datastore.allocateId(keyFactory.newKey());
-    Entity entity = Entity.builder(key).set("description", "rollback()").build();
+    Entity entity = Entity.newBuilder(key).set("description", "rollback()").build();
 
     // add the entity and rollback
     transaction.put(entity);
@@ -185,12 +185,12 @@ public class TransactionSnippets {
    */
   // [TARGET active()]
   public Key active() {
-    Datastore datastore = transaction.datastore();
+    Datastore datastore = transaction.getDatastore();
     // [START active]
     // create an entity
-    KeyFactory keyFactory = datastore.newKeyFactory().kind("MyKind");
+    KeyFactory keyFactory = datastore.newKeyFactory().setKind("MyKind");
     Key key = datastore.allocateId(keyFactory.newKey());
-    Entity entity = Entity.builder(key).set("description", "active()").build();
+    Entity entity = Entity.newBuilder(key).set("description", "active()").build();
     // calling transaction.active() now would return true
     try {
       // add the entity and commit
@@ -205,6 +205,34 @@ public class TransactionSnippets {
       }
     }
     // [END active]
+    return key;
+  }
+
+  /**
+   * Example of verifying if a transaction is active.
+   */
+  // [TARGET isActive()]
+  public Key isActive() {
+    Datastore datastore = transaction.getDatastore();
+    // [START isActive]
+    // create an entity
+    KeyFactory keyFactory = datastore.newKeyFactory().setKind("MyKind");
+    Key key = datastore.allocateId(keyFactory.newKey());
+    Entity entity = Entity.newBuilder(key).set("description", "active()").build();
+    // calling transaction.active() now would return true
+    try {
+      // add the entity and commit
+      transaction.put(entity);
+      transaction.commit();
+    } finally {
+      // if committing succeeded
+      // then transaction.active() will be false
+      if (transaction.isActive()) {
+        // otherwise it's true and we need to rollback
+        transaction.rollback();
+      }
+    }
+    // [END isActive]
     return key;
   }
 }

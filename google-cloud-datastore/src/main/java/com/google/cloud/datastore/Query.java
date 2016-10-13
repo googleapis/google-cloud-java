@@ -205,7 +205,7 @@ public abstract class Query<V> implements Serializable {
    * <pre> {@code
    * String kind = "my_kind";
    * String gqlQuery = "select * from " + kind;
-   * Query<?> query = Query.gqlQueryBuilder(gqlQuery).build();
+   * Query<?> query = Query.newGqlQueryBuilder(gqlQuery).build();
    * QueryResults<?> results = datastore.run(query);
    * // Use results
    * }</pre>
@@ -242,7 +242,7 @@ public abstract class Query<V> implements Serializable {
    * <pre> {@code
    * String kind = "my_kind";
    * String gqlQuery = "select * from " + kind;
-   * Query<Entity> query = Query.gqlQueryBuilder(Query.ResultType.ENTITY, gqlQuery).build();
+   * Query<Entity> query = Query.newGqlQueryBuilder(Query.ResultType.ENTITY, gqlQuery).build();
    * QueryResults<Entity> results = datastore.run(query);
    * // Use results
    * }</pre>
@@ -259,7 +259,7 @@ public abstract class Query<V> implements Serializable {
    * <p>Example of creating and running an entity query.
    * <pre> {@code
    * String kind = "my_kind";
-   * Query<Entity> query = Query.entityQueryBuilder().kind(kind).build();
+   * Query<Entity> query = Query.entityQueryBuilder().setKind(kind).build();
    * QueryResults<Entity> results = datastore.run(query);
    * // Use results
    * }</pre>
@@ -276,7 +276,7 @@ public abstract class Query<V> implements Serializable {
    * <p>Example of creating and running an entity query.
    * <pre> {@code
    * String kind = "my_kind";
-   * Query<Entity> query = Query.entityQueryBuilder().kind(kind).build();
+   * Query<Entity> query = Query.newEntityQueryBuilder().setKind(kind).build();
    * QueryResults<Entity> results = datastore.run(query);
    * // Use results
    * }</pre>
@@ -292,7 +292,7 @@ public abstract class Query<V> implements Serializable {
    * <p>Example of creating and running a key query.
    * <pre> {@code
    * String kind = "my_kind";
-   * Query<Key> query = Query.keyQueryBuilder().kind(kind).build();
+   * Query<Key> query = Query.keyQueryBuilder().setKind(kind).build();
    * QueryResults<Key> results = datastore.run(query);
    * // Use results
    * }</pre>
@@ -309,7 +309,7 @@ public abstract class Query<V> implements Serializable {
    * <p>Example of creating and running a key query.
    * <pre> {@code
    * String kind = "my_kind";
-   * Query<Key> query = Query.keyQueryBuilder().kind(kind).build();
+   * Query<Key> query = Query.newKeyQueryBuilder().setKind(kind).build();
    * QueryResults<Key> results = datastore.run(query);
    * // Use results
    * }</pre>
@@ -327,7 +327,7 @@ public abstract class Query<V> implements Serializable {
    * String kind = "my_kind";
    * String property = "my_property";
    * Query<ProjectionEntity> query = Query.projectionEntityQueryBuilder()
-   *     .kind(kind)
+   *     .setKind(kind)
    *     .addProjection(property)
    *     .build();
    * QueryResults<ProjectionEntity> results = datastore.run(query);
@@ -347,8 +347,8 @@ public abstract class Query<V> implements Serializable {
    * <pre> {@code
    * String kind = "my_kind";
    * String property = "my_property";
-   * Query<ProjectionEntity> query = Query.projectionEntityQueryBuilder()
-   *     .kind(kind)
+   * Query<ProjectionEntity> query = Query.newProjectionEntityQueryBuilder()
+   *     .setKind(kind)
    *     .addProjection(property)
    *     .build();
    * QueryResults<ProjectionEntity> results = datastore.run(query);

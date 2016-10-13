@@ -79,7 +79,7 @@ public interface Transaction extends DatastoreBatchWriter, DatastoreReaderWriter
    * <p>Example of getting an entity for a given key.
    * <pre> {@code
    * String keyName = "my_key_name";
-   * Key key = datastore.newKeyFactory().kind("MyKind").newKey(keyName);
+   * Key key = datastore.newKeyFactory().setKind("MyKind").newKey(keyName);
    * Entity entity = transaction.get(key);
    * transaction.commit();
    * // Do something with the entity
@@ -100,7 +100,7 @@ public interface Transaction extends DatastoreBatchWriter, DatastoreReaderWriter
    * <pre> {@code
    * String firstKeyName = "my_first_key_name";
    * String secondKeyName = "my_second_key_name";
-   * KeyFactory keyFactory = datastore.newKeyFactory().kind("MyKind");
+   * KeyFactory keyFactory = datastore.newKeyFactory().setKind("MyKind");
    * Key firstKey = keyFactory.newKey(firstKeyName);
    * Key secondKey = keyFactory.newKey(secondKeyName);
    * Iterator<Entity> entitiesIterator = transaction.get(firstKey, secondKey);
@@ -128,7 +128,7 @@ public interface Transaction extends DatastoreBatchWriter, DatastoreReaderWriter
    * <pre> {@code
    * String firstKeyName = "my_first_key_name";
    * String secondKeyName = "my_second_key_name";
-   * KeyFactory keyFactory = datastore.newKeyFactory().kind("MyKind");
+   * KeyFactory keyFactory = datastore.newKeyFactory().setKind("MyKind");
    * Key firstKey = keyFactory.newKey(firstKeyName);
    * Key secondKey = keyFactory.newKey(secondKeyName);
    * List<Entity> entities = transaction.fetch(firstKey, secondKey);
@@ -153,12 +153,12 @@ public interface Transaction extends DatastoreBatchWriter, DatastoreReaderWriter
    * <p>Example of running a query to find all entities with an ancestor.
    * <pre> {@code
    * String parentKeyName = "my_parent_key_name";
-   * KeyFactory keyFactory = datastore.newKeyFactory().kind("ParentKind");
+   * KeyFactory keyFactory = datastore.newKeyFactory().setKind("ParentKind");
    * Key parentKey = keyFactory.newKey(parentKeyName);
    * // Build a query
-   * Query<Entity> query = Query.entityQueryBuilder()
-   *     .kind("MyKind")
-   *     .filter(PropertyFilter.hasAncestor(parentKey))
+   * Query<Entity> query = Query.newEntityQueryBuilder()
+   *     .setKind("MyKind")
+   *     .setFilter(PropertyFilter.hasAncestor(parentKey))
    *     .build();
    * QueryResults<Entity> results = transaction.run(query);
    * List<Entity> entities = Lists.newArrayList();
@@ -181,9 +181,9 @@ public interface Transaction extends DatastoreBatchWriter, DatastoreReaderWriter
    * <p>Example of committing a transaction.
    * <pre> {@code
    * // create an entity
-   * KeyFactory keyFactory = datastore.newKeyFactory().kind("MyKind");
+   * KeyFactory keyFactory = datastore.newKeyFactory().setKind("MyKind");
    * Key key = datastore.allocateId(keyFactory.newKey());
-   * Entity entity = Entity.builder(key).set("description", "commit()").build();
+   * Entity entity = Entity.newBuilder(key).set("description", "commit()").build();
    * 
    * // add the entity and commit
    * try {
@@ -204,9 +204,9 @@ public interface Transaction extends DatastoreBatchWriter, DatastoreReaderWriter
    * <p>Example of rolling back a transaction.
    * <pre> {@code
    * // create an entity
-   * KeyFactory keyFactory = datastore.newKeyFactory().kind("MyKind");
+   * KeyFactory keyFactory = datastore.newKeyFactory().setKind("MyKind");
    * Key key = datastore.allocateId(keyFactory.newKey());
-   * Entity entity = Entity.builder(key).set("description", "rollback()").build();
+   * Entity entity = Entity.newBuilder(key).set("description", "rollback()").build();
    * 
    * // add the entity and rollback
    * transaction.put(entity);
@@ -224,9 +224,9 @@ public interface Transaction extends DatastoreBatchWriter, DatastoreReaderWriter
    * <p>Example of verifying if a transaction is active.
    * <pre> {@code
    * // create an entity
-   * KeyFactory keyFactory = datastore.newKeyFactory().kind("MyKind");
+   * KeyFactory keyFactory = datastore.newKeyFactory().setKind("MyKind");
    * Key key = datastore.allocateId(keyFactory.newKey());
-   * Entity entity = Entity.builder(key).set("description", "active()").build();
+   * Entity entity = Entity.newBuilder(key).set("description", "active()").build();
    * // calling transaction.active() now would return true
    * try {
    *   // add the entity and commit
@@ -253,9 +253,9 @@ public interface Transaction extends DatastoreBatchWriter, DatastoreReaderWriter
    * <p>Example of verifying if a transaction is active.
    * <pre> {@code
    * // create an entity
-   * KeyFactory keyFactory = datastore.newKeyFactory().kind("MyKind");
+   * KeyFactory keyFactory = datastore.newKeyFactory().setKind("MyKind");
    * Key key = datastore.allocateId(keyFactory.newKey());
-   * Entity entity = Entity.builder(key).set("description", "active()").build();
+   * Entity entity = Entity.newBuilder(key).set("description", "active()").build();
    * // calling transaction.active() now would return true
    * try {
    *   // add the entity and commit
@@ -264,7 +264,7 @@ public interface Transaction extends DatastoreBatchWriter, DatastoreReaderWriter
    * } finally {
    *   // if committing succeeded
    *   // then transaction.active() will be false
-   *   if (transaction.active()) {
+   *   if (transaction.isActive()) {
    *     // otherwise it's true and we need to rollback
    *     transaction.rollback();
    *   }

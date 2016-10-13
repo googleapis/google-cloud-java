@@ -92,7 +92,7 @@ Then add the following code to put an entity in Datastore.
 ```java
 KeyFactory keyFactory = datastore.newKeyFactory().kind("Person");
 Key key = keyFactory.newKey("john.doe@gmail.com");
-Entity entity = Entity.builder(key)
+Entity entity = Entity.newBuilder(key)
     .set("name", "John Doe")
     .set("age", 51)
     .set("favorite_food", "pizza")
@@ -126,9 +126,9 @@ import com.google.cloud.datastore.StructuredQuery.PropertyFilter;
 Then add the following code to your program:
 
 ```java
-Query<Entity> query = Query.entityQueryBuilder()
-    .kind("Person")
-    .filter(PropertyFilter.eq("favorite_food", "pizza"))
+Query<Entity> query = Query.newEntityQueryBuilder()
+    .setKind("Person")
+    .setFilter(PropertyFilter.eq("favorite_food", "pizza"))
     .build();
 QueryResults<Entity> results = datastore.run(query);
 while (results.hasNext()) {
