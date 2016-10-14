@@ -114,8 +114,7 @@ public abstract class BaseEntity<K extends IncompleteKey> implements Serializabl
      */
     @Deprecated
     public B key(K key) {
-      this.key = key;
-      return self();
+      return setKey(key);
     }
 
     /**
@@ -508,7 +507,7 @@ public abstract class BaseEntity<K extends IncompleteKey> implements Serializabl
    */
   @Deprecated
   public K key() {
-    return key;
+    return getKey();
   }
 
   /**
@@ -664,7 +663,7 @@ public abstract class BaseEntity<K extends IncompleteKey> implements Serializabl
    */
   @Deprecated
   public Set<String> names() {
-    return properties.keySet();
+    return getNames();
   }
 
   /**

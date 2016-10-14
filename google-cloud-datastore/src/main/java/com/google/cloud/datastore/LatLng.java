@@ -50,7 +50,7 @@ public final class LatLng implements Serializable {
    */
   @Deprecated
   public double latitude() {
-    return latitude;
+    return getLatitude();
   }
 
   /**
@@ -65,7 +65,7 @@ public final class LatLng implements Serializable {
    */
   @Deprecated
   public double longitude() {
-    return longitude;
+    return getLongitude();
   }
 
   /**

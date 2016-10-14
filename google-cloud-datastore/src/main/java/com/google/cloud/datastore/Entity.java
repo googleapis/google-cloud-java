@@ -49,8 +49,7 @@ public final class Entity extends FullEntity<Key> {
     @Override
     @Deprecated
     public Builder key(Key key) {
-      super.setKey(checkNotNull(key));
-      return this;
+      return setKey(key);
     }
 
     @Override
@@ -84,7 +83,7 @@ public final class Entity extends FullEntity<Key> {
 
   @Deprecated
   public static Builder builder(Key key) {
-    return new Builder(key);
+    return newBuilder(key);
   }
 
   public static Builder newBuilder(Key key) {
@@ -93,7 +92,7 @@ public final class Entity extends FullEntity<Key> {
 
   @Deprecated
   public static Builder builder(Entity copyFrom) {
-    return new Builder(copyFrom);
+    return newBuilder(copyFrom);
   }
 
   public static Builder newBuilder(Entity copyFrom) {
@@ -102,7 +101,7 @@ public final class Entity extends FullEntity<Key> {
 
   @Deprecated
   public static Builder builder(Key key, FullEntity<?> copyFrom) {
-    return new Builder(key, copyFrom);
+    return newBuilder(key, copyFrom);
   }
 
   public static Builder newBuilder(Key key, FullEntity<?> copyFrom) {

@@ -206,7 +206,7 @@ public abstract class BaseDatastoreBatchWriter implements DatastoreBatchWriter {
   @Override
   @Deprecated
   public boolean active() {
-    return active;
+    return isActive();
   }
 
   @Override

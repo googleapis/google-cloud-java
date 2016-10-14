@@ -87,7 +87,7 @@ public final class NullValue extends Value<Void> {
 
   @Deprecated
   public static Builder builder() {
-    return new Builder();
+    return newBuilder();
   }
 
   public static Builder newBuilder() {

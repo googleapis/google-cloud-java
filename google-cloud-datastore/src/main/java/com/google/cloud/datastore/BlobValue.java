@@ -79,7 +79,7 @@ public final class BlobValue extends Value<Blob> {
 
   @Deprecated
   public static Builder builder(Blob blob) {
-    return new Builder().set(blob);
+    return newBuilder(blob);
   }
 
   public static Builder newBuilder(Blob blob) {

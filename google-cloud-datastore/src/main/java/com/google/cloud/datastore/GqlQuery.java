@@ -166,8 +166,7 @@ public final class GqlQuery<V> extends Query<V> {
      */
     @Deprecated
     public Builder<V> query(String query) {
-      queryString = checkNotNull(query);
-      return this;
+      return setQuery(query);
     }
 
     /**
@@ -183,8 +182,7 @@ public final class GqlQuery<V> extends Query<V> {
      */
     @Deprecated
     public Builder<V> namespace(String namespace) {
-      this.namespace = validateNamespace(namespace);
-      return this;
+      return setNamespace(namespace);
     }
 
     /**
@@ -201,8 +199,7 @@ public final class GqlQuery<V> extends Query<V> {
      */
     @Deprecated
     public Builder<V> allowLiteral(boolean allowLiteral) {
-      this.allowLiteral = allowLiteral;
-      return this;
+      return setAllowLiteral(allowLiteral);
     }
 
     /**
@@ -347,7 +344,7 @@ public final class GqlQuery<V> extends Query<V> {
    */
   @Deprecated
   public String queryString() {
-    return queryString;
+    return getQueryString();
   }
 
   /**
@@ -361,16 +358,7 @@ public final class GqlQuery<V> extends Query<V> {
    * Returns whether the query string can contain literals.  When {@code false}, the query string
    * must not contain any literals and instead must bind all values.
    */
-  @Deprecated
   public boolean allowLiteral() {
-    return allowLiteral;
-  }
-
-  /**
-   * Returns whether the query string can contain literals.  When {@code false}, the query string
-   * must not contain any literals and instead must bind all values.
-   */
-  public boolean getAllowLiteral() {
     return allowLiteral;
   }
 
@@ -379,11 +367,7 @@ public final class GqlQuery<V> extends Query<V> {
    */
   @Deprecated
   public Map<String, Object> namedBindings() {
-    ImmutableMap.Builder<String, Object> builder = ImmutableSortedMap.naturalOrder();
-    for (Map.Entry<String, Binding> binding : namedBindings.entrySet()) {
-      builder.put(binding.getKey(), binding.getValue().getCursorOrValue());
-    }
-    return builder.build();
+    return getNamedBindings();
   }
 
   /**
@@ -402,11 +386,7 @@ public final class GqlQuery<V> extends Query<V> {
    */
   @Deprecated
   public List<Object> numberArgs() {
-    ImmutableList.Builder<Object> builder = ImmutableList.builder();
-    for (Binding binding : positionalBindings) {
-      builder.add(binding.getCursorOrValue());
-    }
-    return builder.build();
+    return getNumberArgs();
   }
 
   /**

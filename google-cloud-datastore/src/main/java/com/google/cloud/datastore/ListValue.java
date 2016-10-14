@@ -322,7 +322,7 @@ public final class ListValue extends Value<List<? extends Value<?>>> {
    */
   @Deprecated
   public static Builder builder() {
-    return new Builder();
+    return newBuilder();
   }
 
   /**

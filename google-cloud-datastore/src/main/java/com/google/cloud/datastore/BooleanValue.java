@@ -79,7 +79,7 @@ public final class BooleanValue extends Value<Boolean> {
 
   @Deprecated
   public static Builder builder(boolean value) {
-    return new Builder().set(value);
+    return newBuilder(value);
   }
 
   public static Builder newBuilder(boolean value) {

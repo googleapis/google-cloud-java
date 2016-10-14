@@ -103,7 +103,7 @@ public abstract class Value<V> implements Serializable {
     @Override
     @Deprecated
     public boolean getExcludeFromIndexes() {
-      return excludeFromIndexes;
+      return excludeFromIndexes();
     }
 
     @Override
@@ -114,8 +114,7 @@ public abstract class Value<V> implements Serializable {
     @Override
     @Deprecated
     public B excludeFromIndexes(boolean excludeFromIndexes) {
-      this.excludeFromIndexes = excludeFromIndexes;
-      return self();
+      return setExcludeFromIndexes(excludeFromIndexes);
     }
 
     @Override
@@ -123,7 +122,6 @@ public abstract class Value<V> implements Serializable {
       this.excludeFromIndexes = excludeFromIndexes;
       return self();
     }
-
 
     @Deprecated
     @Override
@@ -134,8 +132,7 @@ public abstract class Value<V> implements Serializable {
     @Deprecated
     @Override
     public B meaning(int meaning) {
-      this.meaning = meaning;
-      return self();
+      return setMeaning(meaning);
     }
 
     @Deprecated
@@ -168,7 +165,7 @@ public abstract class Value<V> implements Serializable {
   @SuppressWarnings("deprecation")
   <P extends Value<V>, B extends BaseBuilder<V, P, B>> Value(ValueBuilder<V, P, B> builder) {
     valueType = builder.getValueType();
-    excludeFromIndexes = builder.getExcludeFromIndexes();
+    excludeFromIndexes = builder.excludeFromIndexes();
     meaning = builder.getMeaning();
     value = builder.get();
   }
@@ -178,7 +175,7 @@ public abstract class Value<V> implements Serializable {
    */
   @Deprecated
   public final ValueType type() {
-    return valueType;
+    return getType();
   }
 
   /**
@@ -197,7 +194,7 @@ public abstract class Value<V> implements Serializable {
 
   @Deprecated
   final int meaning() {
-    return meaning;
+    return getMeaning();
   }
 
   @Deprecated

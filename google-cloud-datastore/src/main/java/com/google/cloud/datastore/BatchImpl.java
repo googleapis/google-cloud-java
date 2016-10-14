@@ -79,7 +79,7 @@ class BatchImpl extends BaseDatastoreBatchWriter implements Batch {
   @Override
   @Deprecated
   public Datastore datastore() {
-    return datastore;
+    return getDatastore();
   }
 
   @Override

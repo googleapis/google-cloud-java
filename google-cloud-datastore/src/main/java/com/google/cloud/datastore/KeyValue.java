@@ -79,7 +79,7 @@ public final class KeyValue extends Value<Key> {
 
   @Deprecated
   public static Builder builder(Key key) {
-    return new Builder().set(key);
+    return newBuilder(key);
   }
 
   public static Builder newBuilder(Key key) {

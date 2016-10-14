@@ -125,8 +125,9 @@ final class TransactionImpl extends BaseDatastoreBatchWriter implements Transact
   }
 
   @Override
+  @Deprecated
   public Datastore datastore() {
-    return datastore;
+    return getDatastore();
   }
 
   @Override

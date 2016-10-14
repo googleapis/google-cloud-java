@@ -650,7 +650,7 @@ public class LocalDatastoreHelper {
    */
   @Deprecated
   public DatastoreOptions options() {
-    return optionsBuilder().build();
+    return getOptions();
   }
 
   /**

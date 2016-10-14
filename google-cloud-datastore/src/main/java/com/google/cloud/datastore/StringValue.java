@@ -79,7 +79,7 @@ public final class StringValue extends Value<String> {
 
   @Deprecated
   public static Builder builder(String value) {
-    return new Builder().set(value);
+    return newBuilder(value);
   }
 
   public static Builder newBuilder(String value) {

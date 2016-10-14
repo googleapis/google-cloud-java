@@ -502,7 +502,7 @@ public abstract class StructuredQuery<V> extends Query<V> {
      */
     @Deprecated
     public String property() {
-      return property;
+      return getProperty();
     }
 
     /**
@@ -517,7 +517,7 @@ public abstract class StructuredQuery<V> extends Query<V> {
      */
     @Deprecated
     public Direction direction() {
-      return direction;
+      return getDirection();
     }
 
     /**
@@ -701,8 +701,7 @@ public abstract class StructuredQuery<V> extends Query<V> {
     @Override
     @Deprecated
     public B namespace(String namespace) {
-      this.namespace = namespace;
-      return self();
+      return setNamespace(namespace);
     }
 
     @Override
@@ -714,8 +713,7 @@ public abstract class StructuredQuery<V> extends Query<V> {
     @Override
     @Deprecated
     public B kind(String kind) {
-      this.kind = kind;
-      return self();
+      return setKind(kind);
     }
 
     @Override
@@ -727,8 +725,7 @@ public abstract class StructuredQuery<V> extends Query<V> {
     @Override
     @Deprecated
     public B startCursor(Cursor startCursor) {
-      this.startCursor = startCursor;
-      return self();
+      return setStartCursor(startCursor);
     }
 
     @Override
@@ -740,8 +737,7 @@ public abstract class StructuredQuery<V> extends Query<V> {
     @Override
     @Deprecated
     public B endCursor(Cursor endCursor) {
-      this.endCursor = endCursor;
-      return self();
+      return setEndCursor(endCursor);
     }
 
     @Override
@@ -753,9 +749,7 @@ public abstract class StructuredQuery<V> extends Query<V> {
     @Override
     @Deprecated
     public B offset(int offset) {
-      Preconditions.checkArgument(offset >= 0, "offset must not be negative");
-      this.offset = offset;
-      return self();
+      return setOffset(offset);
     }
 
     @Override
@@ -768,9 +762,7 @@ public abstract class StructuredQuery<V> extends Query<V> {
     @Override
     @Deprecated
     public B limit(Integer limit) {
-      Preconditions.checkArgument(limit == null || limit > 0, "limit must be positive");
-      this.limit = limit;
-      return self();
+      return setLimit(limit);
     }
 
     @Override
@@ -783,8 +775,7 @@ public abstract class StructuredQuery<V> extends Query<V> {
     @Override
     @Deprecated
     public B filter(Filter filter) {
-      this.filter = filter;
-      return self();
+      return setFilter(filter);
     }
 
     @Override
@@ -802,9 +793,7 @@ public abstract class StructuredQuery<V> extends Query<V> {
     @Override
     @Deprecated
     public B orderBy(OrderBy orderBy, OrderBy... others) {
-      clearOrderBy();
-      addOrderBy(orderBy, others);
-      return self();
+      return setOrderBy(orderBy, others);
     }
 
     @Override
@@ -828,9 +817,7 @@ public abstract class StructuredQuery<V> extends Query<V> {
 
     @Deprecated
     B projection(String projection, String... others) {
-      clearProjection();
-      addProjection(projection, others);
-      return self();
+      return setProjection(projection, others);
     }
 
     B setProjection(String projection, String... others) {
@@ -852,9 +839,7 @@ public abstract class StructuredQuery<V> extends Query<V> {
 
     @Deprecated
     B distinctOn(String property, String... others) {
-      clearDistinctOn();
-      addDistinctOn(property, others);
-      return self();
+      return setDistinctOn(property, others);
     }
 
     B setDistinctOn(String property, String... others) {
@@ -963,7 +948,7 @@ public abstract class StructuredQuery<V> extends Query<V> {
    */
   @Deprecated
   public String kind() {
-    return kind;
+    return getKind();
   }
 
   /**
@@ -982,7 +967,7 @@ public abstract class StructuredQuery<V> extends Query<V> {
    */
   @Deprecated
   public List<String> projection() {
-    return projection;
+    return getProjection();
   }
 
   /**
@@ -997,7 +982,7 @@ public abstract class StructuredQuery<V> extends Query<V> {
    */
   @Deprecated
   public Filter filter() {
-    return filter;
+    return getFilter();
   }
 
   /**
@@ -1012,7 +997,7 @@ public abstract class StructuredQuery<V> extends Query<V> {
    */
   @Deprecated
   public List<String> distinctOn() {
-    return distinctOn;
+    return getDistinctOn();
   }
 
   /**
@@ -1027,7 +1012,7 @@ public abstract class StructuredQuery<V> extends Query<V> {
    */
   @Deprecated
   public ImmutableList<OrderBy> orderBy() {
-    return orderBy;
+    return getOrderBy();
   }
 
   /**
@@ -1042,7 +1027,7 @@ public abstract class StructuredQuery<V> extends Query<V> {
    */
   @Deprecated
   public Cursor startCursor() {
-    return startCursor;
+    return getStartCursor();
   }
 
   /**
@@ -1057,7 +1042,7 @@ public abstract class StructuredQuery<V> extends Query<V> {
    */
   @Deprecated
   public Cursor endCursor() {
-    return endCursor;
+    return getEndCursor();
   }
 
   /**
@@ -1072,7 +1057,7 @@ public abstract class StructuredQuery<V> extends Query<V> {
    */
   @Deprecated
   public int offset() {
-    return offset;
+    return getOffset();
   }
 
   /**
@@ -1087,7 +1072,7 @@ public abstract class StructuredQuery<V> extends Query<V> {
    */
   @Deprecated
   public Integer limit() {
-    return limit;
+    return getLimit();
   }
 
   /**

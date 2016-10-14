@@ -68,7 +68,7 @@ public abstract class BaseKey implements Serializable {
       projectId = copyFrom.getProjectId();
       namespace = copyFrom.getNamespace();
       ancestors = new LinkedList<>(copyFrom.getAncestors());
-      kind = copyFrom.kind();
+      kind = copyFrom.getKind();
     }
 
     @SuppressWarnings("unchecked")
@@ -81,9 +81,7 @@ public abstract class BaseKey implements Serializable {
      */
     @Deprecated
     public B ancestors(PathElement ancestor) {
-      Preconditions.checkState(ancestors.size() < MAX_PATH, "path can have at most 100 elements");
-      ancestors.add(ancestor);
-      return self();
+      return addAncestor(ancestor);
     }
 
     /**
@@ -100,7 +98,7 @@ public abstract class BaseKey implements Serializable {
      */
     @Deprecated
     public B ancestors(PathElement ancestor, PathElement... other) {
-      return addAncestors(ImmutableList.<PathElement>builder().add(ancestor).add(other).build());
+      return addAncestors(ancestor, other);
     }
 
     /**
@@ -115,11 +113,7 @@ public abstract class BaseKey implements Serializable {
      */
     @Deprecated
     public B ancestors(Iterable<PathElement> ancestors) {
-      ImmutableList<PathElement> list = ImmutableList.copyOf(ancestors);
-      Preconditions.checkState(this.ancestors.size() + list.size() < MAX_PATH,
-          "path can have at most 100 elements");
-      this.ancestors.addAll(list);
-      return self();
+      return addAncestors(ancestors);
     }
 
     /**
@@ -138,8 +132,7 @@ public abstract class BaseKey implements Serializable {
      */
     @Deprecated
     public B kind(String kind) {
-      this.kind = validateKind(kind);
-      return self();
+      return setKind(kind);
     }
 
     /**
@@ -155,8 +148,7 @@ public abstract class BaseKey implements Serializable {
      */
     @Deprecated
     public B projectId(String projectId) {
-      this.projectId = validateDatabase(projectId);
-      return self();
+      return setProjectId(projectId);
     }
 
     /**
@@ -172,8 +164,7 @@ public abstract class BaseKey implements Serializable {
      */
     @Deprecated
     public B namespace(String namespace) {
-      this.namespace = validateNamespace(namespace);
-      return self();
+      return setNamespace(namespace);
     }
 
     /**
@@ -199,7 +190,7 @@ public abstract class BaseKey implements Serializable {
    */
   @Deprecated
   public String projectId() {
-    return projectId;
+    return getProjectId();
   }
 
   /**
@@ -214,7 +205,7 @@ public abstract class BaseKey implements Serializable {
    */
   @Deprecated
   public String namespace() {
-    return namespace;
+    return getNamespace();
   }
 
   /**
@@ -229,7 +220,7 @@ public abstract class BaseKey implements Serializable {
    */
   @Deprecated
   public List<PathElement> ancestors() {
-    return getPath().subList(0, getPath().size() - 1);
+    return getAncestors();
   }
 
   /**
@@ -244,7 +235,7 @@ public abstract class BaseKey implements Serializable {
    */
   @Deprecated
   List<PathElement> path() {
-    return path;
+    return getPath();
   }
 
   /**
@@ -263,14 +254,14 @@ public abstract class BaseKey implements Serializable {
    */
   @Deprecated
   public String kind() {
-    return getLeaf().kind();
+    return getKind();
   }
 
   /**
    * Returns the key's kind.
    */
   public String getKind() {
-    return getLeaf().kind();
+    return getLeaf().getKind();
   }
 
   @Deprecated

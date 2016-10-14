@@ -79,7 +79,7 @@ public class EntityValue extends Value<FullEntity<?>> {
 
   @Deprecated
   public static Builder builder(FullEntity<?> entity) {
-    return new Builder().set(entity);
+    return newBuilder(entity);
   }
 
   public static Builder newBuilder(FullEntity<?> entity) {

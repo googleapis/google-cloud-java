@@ -56,8 +56,7 @@ public final class ProjectionEntityQuery extends StructuredQuery<ProjectionEntit
     @Override
     @Deprecated
     public Builder projection(String projection, String... others) {
-      super.setProjection(projection, others);
-      return this;
+      return setProjection(projection, others);
     }
 
     /**
@@ -93,8 +92,7 @@ public final class ProjectionEntityQuery extends StructuredQuery<ProjectionEntit
     @Override
     @Deprecated
     public Builder distinctOn(String property, String... others) {
-      super.setDistinctOn(property, others);
-      return this;
+      return setDistinctOn(property, others);
     }
 
     /**

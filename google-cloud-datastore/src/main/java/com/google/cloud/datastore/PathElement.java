@@ -47,7 +47,7 @@ public final class PathElement implements Serializable {
    */
   @Deprecated
   public String kind() {
-    return kind;
+    return getKind();
   }
 
   /**
@@ -66,7 +66,7 @@ public final class PathElement implements Serializable {
    */
   @Deprecated
   public Long id() {
-    return id;
+    return getId();
   }
 
   /**
@@ -85,7 +85,7 @@ public final class PathElement implements Serializable {
    */
   @Deprecated
   public String name() {
-    return name;
+    return getName();
   }
 
   /**
@@ -101,7 +101,7 @@ public final class PathElement implements Serializable {
    */
   @Deprecated
   public Object nameOrId() {
-    return id == null ? name : id;
+    return getNameOrId();
   }
 
   /**

@@ -77,9 +77,7 @@ public final class Key extends IncompleteKey {
      */
     @Deprecated
     public Builder name(String name) {
-      this.name = name;
-      id = null;
-      return this;
+      return setName(name);
     }
 
     /**
@@ -96,9 +94,7 @@ public final class Key extends IncompleteKey {
      */
     @Deprecated
     public Builder id(long id) {
-      this.id = id;
-      name = null;
-      return this;
+      return setId(id);
     }
 
     /**
@@ -137,14 +133,14 @@ public final class Key extends IncompleteKey {
    */
   @Deprecated
   public Long id() {
-    return getLeaf().id();
+    return getId();
   }
 
   /**
    * Returns the key's id or {@code null} if it has a name instead.
    */
   public Long getId() {
-    return getLeaf().id();
+    return getLeaf().getId();
   }
 
   public boolean hasName() {
@@ -156,14 +152,14 @@ public final class Key extends IncompleteKey {
    */
   @Deprecated
   public String name() {
-    return getLeaf().name();
+    return getName();
   }
 
   /**
    * Returns the key's name or {@code null} if it has an id instead.
    */
   public String getName() {
-    return getLeaf().name();
+    return getLeaf().getName();
   }
 
   /**
@@ -218,7 +214,7 @@ public final class Key extends IncompleteKey {
 
   @Deprecated
   public static Builder builder(String projectId, String kind, String name) {
-    return new Builder(projectId, kind, name);
+    return newBuilder(projectId, kind, name);
   }
 
   public static Builder newBuilder(String projectId, String kind, String name) {
@@ -227,7 +223,7 @@ public final class Key extends IncompleteKey {
 
   @Deprecated
   public static Builder builder(String projectId, String kind, long id) {
-    return new Builder(projectId, kind, id);
+    return newBuilder(projectId, kind, id);
   }
 
   public static Builder newBuilder(String projectId, String kind, long id) {
@@ -236,7 +232,7 @@ public final class Key extends IncompleteKey {
 
   @Deprecated
   public static Builder builder(Key copyFrom) {
-    return new Builder(copyFrom);
+    return newBuilder(copyFrom);
   }
 
   public static Builder newBuilder(Key copyFrom) {
@@ -245,7 +241,7 @@ public final class Key extends IncompleteKey {
 
   @Deprecated
   public static Builder builder(IncompleteKey copyFrom, String name) {
-    return new Builder(copyFrom, name);
+    return newBuilder(copyFrom, name);
   }
 
   public static Builder newBuilder(IncompleteKey copyFrom, String name) {
@@ -254,7 +250,7 @@ public final class Key extends IncompleteKey {
 
   @Deprecated
   public static Builder builder(IncompleteKey copyFrom, long id) {
-    return new Builder(copyFrom, id);
+    return newBuilder(copyFrom, id);
   }
 
   public static Builder newBuilder(IncompleteKey copyFrom, long id) {
@@ -263,9 +259,7 @@ public final class Key extends IncompleteKey {
 
   @Deprecated
   public static Builder builder(Key parent, String kind, String name) {
-    Builder builder = newBuilder(parent.getProjectId(), kind, name);
-    addParentToBuilder(parent, builder);
-    return builder;
+    return newBuilder(parent, kind, name);
   }
 
   public static Builder newBuilder(Key parent, String kind, String name) {
@@ -276,9 +270,7 @@ public final class Key extends IncompleteKey {
 
   @Deprecated
   public static Builder builder(Key parent, String kind, long id) {
-    Builder builder = newBuilder(parent.getProjectId(), kind, id);
-    addParentToBuilder(parent, builder);
-    return builder;
+    return newBuilder(parent, kind, id);
   }
 
   public static Builder newBuilder(Key parent, String kind, long id) {
@@ -291,9 +283,9 @@ public final class Key extends IncompleteKey {
     builder.setNamespace(parent.getNamespace());
     builder.addAncestors(parent.getAncestors());
     if (parent.hasId()) {
-      builder.addAncestors(PathElement.of(parent.kind(), parent.getId()));
+      builder.addAncestors(PathElement.of(parent.getKind(), parent.getId()));
     } else {
-      builder.addAncestors(PathElement.of(parent.kind(), parent.getName()));
+      builder.addAncestors(PathElement.of(parent.getKind(), parent.getName()));
     }
   }
 }

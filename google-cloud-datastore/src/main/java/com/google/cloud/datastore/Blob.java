@@ -74,7 +74,7 @@ public final class Blob implements Serializable {
    */
   @Deprecated
   public int length() {
-    return byteString.size();
+    return getLength();
   }
 
   /**

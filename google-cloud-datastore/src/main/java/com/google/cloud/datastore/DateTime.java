@@ -68,7 +68,7 @@ public final class DateTime implements Comparable<DateTime>, Serializable {
    */
   @Deprecated
   public long timestampMicroseconds() {
-    return timestampMicroseconds;
+    return getTimestampMicroseconds();
   }
 
   /**
@@ -83,7 +83,7 @@ public final class DateTime implements Comparable<DateTime>, Serializable {
    */
   @Deprecated
   public long timestampMillis() {
-    return timestampMicroseconds / 1000L;
+    return getTimestampMillis();
   }
 
   /**

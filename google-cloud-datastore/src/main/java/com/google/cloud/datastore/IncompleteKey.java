@@ -79,22 +79,7 @@ public class IncompleteKey extends BaseKey {
   @Override
   @Deprecated
   public Key parent() {
-    List<PathElement> ancestors = getAncestors();
-    if (ancestors.isEmpty()) {
-      return null;
-    }
-    PathElement parent = ancestors.get(ancestors.size() - 1);
-    Key.Builder keyBuilder;
-    if (parent.hasName()) {
-      keyBuilder = Key.newBuilder(getProjectId(), parent.kind(), parent.name());
-    } else {
-      keyBuilder = Key.newBuilder(getProjectId(), parent.kind(), parent.id());
-    }
-    String namespace = getNamespace();
-    if (namespace != null) {
-      keyBuilder.setNamespace(namespace);
-    }
-    return keyBuilder.addAncestors(ancestors.subList(0, ancestors.size() - 1)).build();
+    return getParent();
   }
 
   /**
@@ -109,9 +94,9 @@ public class IncompleteKey extends BaseKey {
     PathElement parent = ancestors.get(ancestors.size() - 1);
     Key.Builder keyBuilder;
     if (parent.hasName()) {
-      keyBuilder = Key.newBuilder(getProjectId(), parent.kind(), parent.name());
+      keyBuilder = Key.newBuilder(getProjectId(), parent.getKind(), parent.getName());
     } else {
-      keyBuilder = Key.newBuilder(getProjectId(), parent.kind(), parent.id());
+      keyBuilder = Key.newBuilder(getProjectId(), parent.getKind(), parent.getId());
     }
     String namespace = getNamespace();
     if (namespace != null) {
@@ -122,7 +107,7 @@ public class IncompleteKey extends BaseKey {
 
   @Deprecated
   public static Builder builder(String projectId, String kind) {
-    return new Builder(projectId, kind);
+    return newBuilder(projectId, kind);
   }
 
   public static Builder newBuilder(String projectId, String kind) {
@@ -131,7 +116,7 @@ public class IncompleteKey extends BaseKey {
 
   @Deprecated
   public static Builder builder(IncompleteKey copyFrom) {
-    return new Builder(copyFrom);
+    return newBuilder(copyFrom);
   }
 
   public static Builder newBuilder(IncompleteKey copyFrom) {
@@ -140,9 +125,7 @@ public class IncompleteKey extends BaseKey {
 
   @Deprecated
   public static Builder builder(Key parent, String kind) {
-    return newBuilder(parent.getProjectId(), kind)
-        .setNamespace(parent.getNamespace())
-        .addAncestors(parent.getPath());
+    return newBuilder(parent, kind);
   }
 
   public static Builder newBuilder(Key parent, String kind) {

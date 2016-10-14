@@ -53,7 +53,7 @@ public class FullEntity<K extends IncompleteKey> extends BaseEntity<K> {
 
   @Deprecated
   public static Builder<IncompleteKey> builder() {
-    return new Builder<>();
+    return newBuilder();
   }
 
   public static Builder<IncompleteKey> newBuilder() {
@@ -62,7 +62,7 @@ public class FullEntity<K extends IncompleteKey> extends BaseEntity<K> {
 
   @Deprecated
   public static <K extends IncompleteKey> Builder<K> builder(K key) {
-    return new Builder<>(key);
+    return newBuilder(key);
   }
 
   public static <K extends IncompleteKey> Builder<K> newBuilder(K key) {
@@ -71,7 +71,7 @@ public class FullEntity<K extends IncompleteKey> extends BaseEntity<K> {
 
   @Deprecated
   public static <K extends IncompleteKey> Builder<K> builder(FullEntity<K> copyFrom) {
-    return new Builder<>(copyFrom);
+    return newBuilder(copyFrom);
   }
 
   public static <K extends IncompleteKey> Builder<K> newBuilder(FullEntity<K> copyFrom) {
