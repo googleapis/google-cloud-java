@@ -39,6 +39,7 @@ import com.google.common.collect.ImmutableSortedMap;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
 import com.google.common.io.ByteStreams;
+
 import com.sun.net.httpserver.Headers;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
@@ -494,7 +495,15 @@ public class LocalDnsHelper {
   /**
    * Returns a {@link DnsOptions} instance that sets the host to use the mock server.
    */
+  @Deprecated
   public DnsOptions options() {
+    return getOptions();
+  }
+
+  /**
+   * Returns a {@link DnsOptions} instance that sets the host to use the mock server.
+   */
+  public DnsOptions getOptions() {
     return DnsOptions.builder()
         .projectId(PROJECT_ID)
         .host("http://localhost:" + port)

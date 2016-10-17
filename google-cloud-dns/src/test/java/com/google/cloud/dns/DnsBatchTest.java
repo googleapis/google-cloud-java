@@ -64,7 +64,7 @@ public class DnsBatchTest {
       Dns.ZoneListOption.pageSize(MAX_SIZE), Dns.ZoneListOption.pageToken(PAGE_TOKEN),
       Dns.ZoneListOption.fields(Dns.ZoneField.DESCRIPTION),
       Dns.ZoneListOption.dnsName(DNS_NAME)};
-  private static final ProjectInfo PROJECT_INFO = ProjectInfo.builder().build();
+  private static final ProjectInfo PROJECT_INFO = ProjectInfo.newBuilder().build();
   private static final Dns.RecordSetListOption[] RECORD_SET_LIST_OPTIONS = {
       Dns.RecordSetListOption.pageSize(MAX_SIZE),
       Dns.RecordSetListOption.pageToken(PAGE_TOKEN),
@@ -72,16 +72,16 @@ public class DnsBatchTest {
       Dns.RecordSetListOption.dnsName(DNS_NAME),
       Dns.RecordSetListOption.type(RecordSet.Type.AAAA)};
   private static final RecordSet RECORD_SET =
-      RecordSet.builder("Something", RecordSet.Type.AAAA).build();
-  private static final ChangeRequestInfo CHANGE_REQUEST_PARTIAL = ChangeRequestInfo.builder()
+      RecordSet.newBuilder("Something", RecordSet.Type.AAAA).build();
+  private static final ChangeRequestInfo CHANGE_REQUEST_PARTIAL = ChangeRequestInfo.newBuilder()
       .add(RECORD_SET)
       .build();
   private static final String CHANGE_ID = "some change id";
-  private static final ChangeRequestInfo CHANGE_REQUEST_COMPLETE = ChangeRequestInfo.builder()
+  private static final ChangeRequestInfo CHANGE_REQUEST_COMPLETE = ChangeRequestInfo.newBuilder()
       .add(RECORD_SET)
-      .startTimeMillis(123L)
-      .status(ChangeRequest.Status.PENDING)
-      .generatedId(CHANGE_ID)
+      .setStartTime(123L)
+      .setStatus(ChangeRequest.Status.PENDING)
+      .setGeneratedId(CHANGE_ID)
       .build();
   private static final Dns.ChangeRequestListOption[] CHANGE_LIST_OPTIONS = {
       Dns.ChangeRequestListOption.pageSize(MAX_SIZE),
@@ -122,9 +122,9 @@ public class DnsBatchTest {
 
   @Test
   public void testConstructor() {
-    assertSame(batchMock, dnsBatch.batch());
-    assertSame(optionsMock, dnsBatch.options());
-    assertSame(dnsRpcMock, dnsBatch.dnsRpc());
+    assertSame(batchMock, dnsBatch.getBatch());
+    assertSame(optionsMock, dnsBatch.getOptions());
+    assertSame(dnsRpcMock, dnsBatch.getDnsRpc());
   }
 
   @Test
@@ -163,14 +163,14 @@ public class DnsBatchTest {
     EasyMock.replay(batchMock);
     DnsBatchResult<Page<Zone>> batchResult = dnsBatch.listZones(ZONE_LIST_OPTIONS);
     assertNotNull(callback.getValue());
-    Integer size = (Integer) capturedOptions.getValue().get(ZONE_LIST_OPTIONS[0].rpcOption());
+    Integer size = (Integer) capturedOptions.getValue().get(ZONE_LIST_OPTIONS[0].getRpcOption());
     assertEquals(MAX_SIZE, size);
-    String selector = (String) capturedOptions.getValue().get(ZONE_LIST_OPTIONS[1].rpcOption());
+    String selector = (String) capturedOptions.getValue().get(ZONE_LIST_OPTIONS[1].getRpcOption());
     assertEquals(PAGE_TOKEN, selector);
-    selector = (String) capturedOptions.getValue().get(ZONE_LIST_OPTIONS[2].rpcOption());
+    selector = (String) capturedOptions.getValue().get(ZONE_LIST_OPTIONS[2].getRpcOption());
     assertTrue(selector.contains(Dns.ZoneField.DESCRIPTION.selector()));
     assertTrue(selector.contains(Dns.ZoneField.NAME.selector()));
-    selector = (String) capturedOptions.getValue().get(ZONE_LIST_OPTIONS[3].rpcOption());
+    selector = (String) capturedOptions.getValue().get(ZONE_LIST_OPTIONS[3].getRpcOption());
     assertEquals(DNS_NAME, selector);
     // check the callback
     ManagedZonesListResponse response = new ManagedZonesListResponse()
@@ -245,7 +245,7 @@ public class DnsBatchTest {
     DnsBatchResult<Zone> batchResult = dnsBatch.createZone(ZONE_INFO, ZONE_FIELDS);
     assertEquals(ZONE_INFO.toPb(), capturedZone.getValue());
     assertNotNull(callback.getValue());
-    String selector = (String) capturedOptions.getValue().get(ZONE_FIELDS.rpcOption());
+    String selector = (String) capturedOptions.getValue().get(ZONE_FIELDS.getRpcOption());
     assertTrue(selector.contains(Dns.ZoneField.CREATION_TIME.selector()));
     assertTrue(selector.contains(Dns.ZoneField.NAME.selector()));
     RpcBatch.Callback<ManagedZone> capturedCallback = callback.getValue();
@@ -311,7 +311,7 @@ public class DnsBatchTest {
     EasyMock.replay(dns, batchMock, optionsMock);
     DnsBatchResult<Zone> batchResult = dnsBatch.getZone(ZONE_NAME, ZONE_FIELDS);
     assertNotNull(callback.getValue());
-    String selector = (String) capturedOptions.getValue().get(ZONE_FIELDS.rpcOption());
+    String selector = (String) capturedOptions.getValue().get(ZONE_FIELDS.getRpcOption());
     assertTrue(selector.contains(Dns.ZoneField.CREATION_TIME.selector()));
     assertTrue(selector.contains(Dns.ZoneField.NAME.selector()));
     RpcBatch.Callback<ManagedZone> capturedCallback = callback.getValue();
@@ -396,7 +396,7 @@ public class DnsBatchTest {
     EasyMock.replay(batchMock);
     DnsBatchResult<ProjectInfo> batchResult = dnsBatch.getProject(PROJECT_FIELDS);
     assertNotNull(callback.getValue());
-    String selector = (String) capturedOptions.getValue().get(PROJECT_FIELDS.rpcOption());
+    String selector = (String) capturedOptions.getValue().get(PROJECT_FIELDS.getRpcOption());
     assertTrue(selector.contains(Dns.ProjectField.QUOTA.selector()));
     assertTrue(selector.contains(Dns.ProjectField.PROJECT_ID.selector()));
     RpcBatch.Callback<Project> capturedCallback = callback.getValue();
@@ -443,19 +443,20 @@ public class DnsBatchTest {
     DnsBatchResult<Page<RecordSet>> batchResult =
         dnsBatch.listRecordSets(ZONE_NAME, RECORD_SET_LIST_OPTIONS);
     assertNotNull(callback.getValue());
-    Integer size = (Integer) capturedOptions.getValue().get(RECORD_SET_LIST_OPTIONS[0].rpcOption());
+    Integer size =
+        (Integer) capturedOptions.getValue().get(RECORD_SET_LIST_OPTIONS[0].getRpcOption());
     assertEquals(MAX_SIZE, size);
     String selector = (String) capturedOptions.getValue()
-        .get(RECORD_SET_LIST_OPTIONS[1].rpcOption());
+        .get(RECORD_SET_LIST_OPTIONS[1].getRpcOption());
     assertEquals(PAGE_TOKEN, selector);
-    selector = (String) capturedOptions.getValue().get(RECORD_SET_LIST_OPTIONS[2].rpcOption());
+    selector = (String) capturedOptions.getValue().get(RECORD_SET_LIST_OPTIONS[2].getRpcOption());
     assertTrue(selector.contains(Dns.RecordSetField.NAME.selector()));
     assertTrue(selector.contains(Dns.RecordSetField.TTL.selector()));
-    selector = (String) capturedOptions.getValue().get(RECORD_SET_LIST_OPTIONS[3].rpcOption());
-    assertEquals(RECORD_SET_LIST_OPTIONS[3].value(), selector);
+    selector = (String) capturedOptions.getValue().get(RECORD_SET_LIST_OPTIONS[3].getRpcOption());
+    assertEquals(RECORD_SET_LIST_OPTIONS[3].getValue(), selector);
     String type = (String) capturedOptions.getValue().get(RECORD_SET_LIST_OPTIONS[4]
-        .rpcOption());
-    assertEquals(RECORD_SET_LIST_OPTIONS[4].value(), type);
+        .getRpcOption());
+    assertEquals(RECORD_SET_LIST_OPTIONS[4].getValue(), type);
     RpcBatch.Callback<ResourceRecordSetsListResponse> capturedCallback = callback.getValue();
     ResourceRecordSetsListResponse response = new ResourceRecordSetsListResponse()
         .setRrsets(RECORD_SET_LIST)
@@ -511,14 +512,15 @@ public class DnsBatchTest {
     DnsBatchResult<Page<ChangeRequest>> batchResult =
         dnsBatch.listChangeRequests(ZONE_NAME, CHANGE_LIST_OPTIONS);
     assertNotNull(callback.getValue());
-    Integer size = (Integer) capturedOptions.getValue().get(CHANGE_LIST_OPTIONS[0].rpcOption());
+    Integer size = (Integer) capturedOptions.getValue().get(CHANGE_LIST_OPTIONS[0].getRpcOption());
     assertEquals(MAX_SIZE, size);
-    String selector = (String) capturedOptions.getValue().get(CHANGE_LIST_OPTIONS[1].rpcOption());
+    String selector =
+        (String) capturedOptions.getValue().get(CHANGE_LIST_OPTIONS[1].getRpcOption());
     assertEquals(PAGE_TOKEN, selector);
-    selector = (String) capturedOptions.getValue().get(CHANGE_LIST_OPTIONS[2].rpcOption());
+    selector = (String) capturedOptions.getValue().get(CHANGE_LIST_OPTIONS[2].getRpcOption());
     assertTrue(selector.contains(Dns.ChangeRequestField.STATUS.selector()));
     assertTrue(selector.contains(Dns.ChangeRequestField.ID.selector()));
-    selector = (String) capturedOptions.getValue().get(CHANGE_LIST_OPTIONS[3].rpcOption());
+    selector = (String) capturedOptions.getValue().get(CHANGE_LIST_OPTIONS[3].getRpcOption());
     assertTrue(selector.contains(Dns.SortingOrder.ASCENDING.selector()));
     // check the callback
     ChangesListResponse response = new ChangesListResponse()
@@ -551,11 +553,11 @@ public class DnsBatchTest {
     Capture<RpcBatch.Callback<Change>> callback = Capture.newInstance();
     Capture<Map<DnsRpc.Option, Object>> capturedOptions = Capture.newInstance();
     batchMock.addGetChangeRequest(EasyMock.eq(ZONE_NAME),
-        EasyMock.eq(CHANGE_REQUEST_COMPLETE.generatedId()), EasyMock.capture(callback),
+        EasyMock.eq(CHANGE_REQUEST_COMPLETE.getGeneratedId()), EasyMock.capture(callback),
         EasyMock.capture(capturedOptions));
     EasyMock.replay(batchMock);
     DnsBatchResult<ChangeRequest> batchResult = dnsBatch.getChangeRequest(ZONE_NAME,
-        CHANGE_REQUEST_COMPLETE.generatedId());
+        CHANGE_REQUEST_COMPLETE.getGeneratedId());
     assertEquals(0, capturedOptions.getValue().size());
     assertNotNull(callback.getValue());
     try {
@@ -582,11 +584,11 @@ public class DnsBatchTest {
     Capture<RpcBatch.Callback<Change>> callback = Capture.newInstance();
     Capture<Map<DnsRpc.Option, Object>> capturedOptions = Capture.newInstance();
     batchMock.addGetChangeRequest(EasyMock.eq(ZONE_NAME),
-        EasyMock.eq(CHANGE_REQUEST_COMPLETE.generatedId()), EasyMock.capture(callback),
+        EasyMock.eq(CHANGE_REQUEST_COMPLETE.getGeneratedId()), EasyMock.capture(callback),
         EasyMock.capture(capturedOptions));
     EasyMock.replay(batchMock);
     DnsBatchResult<ChangeRequest> batchResult = dnsBatch.getChangeRequest(ZONE_NAME,
-        CHANGE_REQUEST_COMPLETE.generatedId());
+        CHANGE_REQUEST_COMPLETE.getGeneratedId());
     assertEquals(0, capturedOptions.getValue().size());
     RpcBatch.Callback<Change> capturedCallback = callback.getValue();
     GoogleJsonError error = new GoogleJsonError();
@@ -607,13 +609,13 @@ public class DnsBatchTest {
     Capture<RpcBatch.Callback<Change>> callback = Capture.newInstance();
     Capture<Map<DnsRpc.Option, Object>> capturedOptions = Capture.newInstance();
     batchMock.addGetChangeRequest(EasyMock.eq(ZONE_NAME),
-        EasyMock.eq(CHANGE_REQUEST_COMPLETE.generatedId()), EasyMock.capture(callback),
+        EasyMock.eq(CHANGE_REQUEST_COMPLETE.getGeneratedId()), EasyMock.capture(callback),
         EasyMock.capture(capturedOptions));
     EasyMock.replay(dns, batchMock, optionsMock);
     DnsBatchResult<ChangeRequest> batchResult = dnsBatch.getChangeRequest(ZONE_NAME,
-        CHANGE_REQUEST_COMPLETE.generatedId(), CHANGE_GET_FIELDS);
+        CHANGE_REQUEST_COMPLETE.getGeneratedId(), CHANGE_GET_FIELDS);
     assertNotNull(callback.getValue());
-    String selector = (String) capturedOptions.getValue().get(CHANGE_GET_FIELDS.rpcOption());
+    String selector = (String) capturedOptions.getValue().get(CHANGE_GET_FIELDS.getRpcOption());
     assertTrue(selector.contains(Dns.ChangeRequestField.STATUS.selector()));
     assertTrue(selector.contains(Dns.ChangeRequestField.ID.selector()));
     RpcBatch.Callback<Change> capturedCallback = callback.getValue();
@@ -630,7 +632,7 @@ public class DnsBatchTest {
         EasyMock.eq(CHANGE_REQUEST_PARTIAL.toPb()), EasyMock.capture(callback),
         EasyMock.capture(capturedOptions));
     EasyMock.replay(batchMock);
-    DnsBatchResult<ChangeRequest> batchResult = dnsBatch.applyChangeRequest(ZONE_INFO.name(),
+    DnsBatchResult<ChangeRequest> batchResult = dnsBatch.applyChangeRequest(ZONE_INFO.getName(),
         CHANGE_REQUEST_PARTIAL);
     assertEquals(0, capturedOptions.getValue().size());
     assertNotNull(callback.getValue());
@@ -665,9 +667,9 @@ public class DnsBatchTest {
         EasyMock.capture(capturedOptions));
     EasyMock.expect(optionsMock.service()).andReturn(dns);
     EasyMock.replay(dns, batchMock, optionsMock);
-    DnsBatchResult<ChangeRequest> batchResult = dnsBatch.applyChangeRequest(ZONE_INFO.name(),
+    DnsBatchResult<ChangeRequest> batchResult = dnsBatch.applyChangeRequest(ZONE_INFO.getName(),
         CHANGE_REQUEST_PARTIAL, CHANGE_GET_FIELDS);
-    String selector = (String) capturedOptions.getValue().get(CHANGE_GET_FIELDS.rpcOption());
+    String selector = (String) capturedOptions.getValue().get(CHANGE_GET_FIELDS.getRpcOption());
     assertTrue(selector.contains(Dns.ChangeRequestField.STATUS.selector()));
     assertTrue(selector.contains(Dns.ChangeRequestField.ID.selector()));
     RpcBatch.Callback<Change> capturedCallback = callback.getValue();

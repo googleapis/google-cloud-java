@@ -38,11 +38,11 @@ abstract class Option implements Serializable {
     this.value = value;
   }
 
-  Object value() {
+  Object getValue() {
     return value;
   }
 
-  DnsRpc.Option rpcOption() {
+  DnsRpc.Option getRpcOption() {
     return rpcOption;
   }
 

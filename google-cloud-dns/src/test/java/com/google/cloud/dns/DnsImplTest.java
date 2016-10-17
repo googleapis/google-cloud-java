@@ -47,21 +47,21 @@ public class DnsImplTest {
   private static final String DESCRIPTION = "desc";
   private static final String CHANGE_ID = "some change id";
   private static final RecordSet DNS_RECORD1 =
-      RecordSet.builder("Something", RecordSet.Type.AAAA).build();
+      RecordSet.newBuilder("Something", RecordSet.Type.AAAA).build();
   private static final RecordSet DNS_RECORD2 =
-      RecordSet.builder("Different", RecordSet.Type.AAAA).build();
+      RecordSet.newBuilder("Different", RecordSet.Type.AAAA).build();
   private static final Integer MAX_SIZE = 20;
   private static final String PAGE_TOKEN = "some token";
   private static final ZoneInfo ZONE_INFO = ZoneInfo.of(ZONE_NAME, DNS_NAME, DESCRIPTION);
-  private static final ProjectInfo PROJECT_INFO = ProjectInfo.builder().build();
-  private static final ChangeRequestInfo CHANGE_REQUEST_PARTIAL = ChangeRequestInfo.builder()
+  private static final ProjectInfo PROJECT_INFO = ProjectInfo.newBuilder().build();
+  private static final ChangeRequestInfo CHANGE_REQUEST_PARTIAL = ChangeRequestInfo.newBuilder()
       .add(DNS_RECORD1)
       .build();
-  private static final ChangeRequestInfo CHANGE_REQUEST_COMPLETE = ChangeRequestInfo.builder()
+  private static final ChangeRequestInfo CHANGE_REQUEST_COMPLETE = ChangeRequestInfo.newBuilder()
       .add(DNS_RECORD1)
-      .startTimeMillis(123L)
-      .status(ChangeRequest.Status.PENDING)
-      .generatedId(CHANGE_ID)
+      .setStartTime(123L)
+      .setStatus(ChangeRequest.Status.PENDING)
+      .setGeneratedId(CHANGE_ID)
       .build();
 
   // Result lists
@@ -150,7 +150,7 @@ public class DnsImplTest {
     EasyMock.replay(dnsRpcMock);
     dns = options.service(); // creates DnsImpl
     Zone zone = dns.create(ZONE_INFO, ZONE_FIELDS);
-    String selector = (String) capturedOptions.getValue().get(ZONE_FIELDS.rpcOption());
+    String selector = (String) capturedOptions.getValue().get(ZONE_FIELDS.getRpcOption());
     assertEquals(new Zone(dns, new ZoneInfo.BuilderImpl(ZONE_INFO)), zone);
     assertTrue(selector.contains(Dns.ZoneField.CREATION_TIME.selector()));
     assertTrue(selector.contains(Dns.ZoneField.NAME.selector()));
@@ -158,23 +158,23 @@ public class DnsImplTest {
 
   @Test
   public void testGetZone() {
-    EasyMock.expect(dnsRpcMock.getZone(ZONE_INFO.name(), EMPTY_RPC_OPTIONS))
+    EasyMock.expect(dnsRpcMock.getZone(ZONE_INFO.getName(), EMPTY_RPC_OPTIONS))
         .andReturn(ZONE_INFO.toPb());
     EasyMock.replay(dnsRpcMock);
     dns = options.service(); // creates DnsImpl
-    Zone zone = dns.getZone(ZONE_INFO.name());
+    Zone zone = dns.getZone(ZONE_INFO.getName());
     assertEquals(new Zone(dns, new ZoneInfo.BuilderImpl(ZONE_INFO)), zone);
   }
 
   @Test
   public void testGetZoneWithOptions() {
     Capture<Map<DnsRpc.Option, Object>> capturedOptions = Capture.newInstance();
-    EasyMock.expect(dnsRpcMock.getZone(EasyMock.eq(ZONE_INFO.name()),
+    EasyMock.expect(dnsRpcMock.getZone(EasyMock.eq(ZONE_INFO.getName()),
         EasyMock.capture(capturedOptions))).andReturn(ZONE_INFO.toPb());
     EasyMock.replay(dnsRpcMock);
     dns = options.service(); // creates DnsImpl
-    Zone zone = dns.getZone(ZONE_INFO.name(), ZONE_FIELDS);
-    String selector = (String) capturedOptions.getValue().get(ZONE_FIELDS.rpcOption());
+    Zone zone = dns.getZone(ZONE_INFO.getName(), ZONE_FIELDS);
+    String selector = (String) capturedOptions.getValue().get(ZONE_FIELDS.getRpcOption());
     assertEquals(new Zone(dns, new ZoneInfo.BuilderImpl(ZONE_INFO)), zone);
     assertTrue(selector.contains(Dns.ZoneField.CREATION_TIME.selector()));
     assertTrue(selector.contains(Dns.ZoneField.NAME.selector()));
@@ -182,11 +182,11 @@ public class DnsImplTest {
 
   @Test
   public void testDeleteZone() {
-    EasyMock.expect(dnsRpcMock.deleteZone(ZONE_INFO.name()))
+    EasyMock.expect(dnsRpcMock.deleteZone(ZONE_INFO.getName()))
         .andReturn(true);
     EasyMock.replay(dnsRpcMock);
     dns = options.service(); // creates DnsImpl
-    assertTrue(dns.delete(ZONE_INFO.name()));
+    assertTrue(dns.delete(ZONE_INFO.getName()));
   }
 
   @Test
@@ -207,7 +207,7 @@ public class DnsImplTest {
     EasyMock.replay(dnsRpcMock);
     dns = options.service(); // creates DnsImpl
     ProjectInfo projectInfo = dns.getProject(PROJECT_FIELDS);
-    String selector = (String) capturedOptions.getValue().get(PROJECT_FIELDS.rpcOption());
+    String selector = (String) capturedOptions.getValue().get(PROJECT_FIELDS.getRpcOption());
     assertEquals(PROJECT_INFO, projectInfo);
     assertTrue(selector.contains(Dns.ProjectField.QUOTA.selector()));
     assertTrue(selector.contains(Dns.ProjectField.PROJECT_ID.selector()));
@@ -215,29 +215,29 @@ public class DnsImplTest {
 
   @Test
   public void testGetChangeRequest() {
-    EasyMock.expect(dnsRpcMock.getChangeRequest(ZONE_INFO.name(),
-        CHANGE_REQUEST_COMPLETE.generatedId(), EMPTY_RPC_OPTIONS))
+    EasyMock.expect(dnsRpcMock.getChangeRequest(ZONE_INFO.getName(),
+        CHANGE_REQUEST_COMPLETE.getGeneratedId(), EMPTY_RPC_OPTIONS))
         .andReturn(CHANGE_REQUEST_COMPLETE.toPb());
     EasyMock.replay(dnsRpcMock);
     dns = options.service(); // creates DnsImpl
-    ChangeRequest changeRequest = dns.getChangeRequest(ZONE_INFO.name(),
-        CHANGE_REQUEST_COMPLETE.generatedId());
-    assertEquals(new ChangeRequest(dns, ZONE_INFO.name(),
+    ChangeRequest changeRequest = dns.getChangeRequest(ZONE_INFO.getName(),
+        CHANGE_REQUEST_COMPLETE.getGeneratedId());
+    assertEquals(new ChangeRequest(dns, ZONE_INFO.getName(),
         new ChangeRequestInfo.BuilderImpl(CHANGE_REQUEST_COMPLETE)), changeRequest);
   }
 
   @Test
   public void testGetChangeRequestWithOptions() {
     Capture<Map<DnsRpc.Option, Object>> capturedOptions = Capture.newInstance();
-    EasyMock.expect(dnsRpcMock.getChangeRequest(EasyMock.eq(ZONE_INFO.name()),
-        EasyMock.eq(CHANGE_REQUEST_COMPLETE.generatedId()), EasyMock.capture(capturedOptions)))
+    EasyMock.expect(dnsRpcMock.getChangeRequest(EasyMock.eq(ZONE_INFO.getName()),
+        EasyMock.eq(CHANGE_REQUEST_COMPLETE.getGeneratedId()), EasyMock.capture(capturedOptions)))
         .andReturn(CHANGE_REQUEST_COMPLETE.toPb());
     EasyMock.replay(dnsRpcMock);
     dns = options.service(); // creates DnsImpl
-    ChangeRequest changeRequest = dns.getChangeRequest(ZONE_INFO.name(),
-        CHANGE_REQUEST_COMPLETE.generatedId(), CHANGE_GET_FIELDS);
-    String selector = (String) capturedOptions.getValue().get(CHANGE_GET_FIELDS.rpcOption());
-    assertEquals(new ChangeRequest(dns, ZONE_INFO.name(),
+    ChangeRequest changeRequest = dns.getChangeRequest(ZONE_INFO.getName(),
+        CHANGE_REQUEST_COMPLETE.getGeneratedId(), CHANGE_GET_FIELDS);
+    String selector = (String) capturedOptions.getValue().get(CHANGE_GET_FIELDS.getRpcOption());
+    assertEquals(new ChangeRequest(dns, ZONE_INFO.getName(),
         new ChangeRequestInfo.BuilderImpl(CHANGE_REQUEST_COMPLETE)), changeRequest);
     assertTrue(selector.contains(Dns.ChangeRequestField.STATUS.selector()));
     assertTrue(selector.contains(Dns.ChangeRequestField.ID.selector()));
@@ -245,28 +245,29 @@ public class DnsImplTest {
 
   @Test
   public void testApplyChangeRequest() {
-    EasyMock.expect(dnsRpcMock.applyChangeRequest(ZONE_INFO.name(), CHANGE_REQUEST_PARTIAL.toPb(),
-        EMPTY_RPC_OPTIONS)).andReturn(CHANGE_REQUEST_COMPLETE.toPb());
+    EasyMock.expect(dnsRpcMock.applyChangeRequest(ZONE_INFO.getName(),
+        CHANGE_REQUEST_PARTIAL.toPb(), EMPTY_RPC_OPTIONS))
+        .andReturn(CHANGE_REQUEST_COMPLETE.toPb());
     EasyMock.replay(dnsRpcMock);
     dns = options.service(); // creates DnsImpl
-    ChangeRequest changeRequest = dns.applyChangeRequest(ZONE_INFO.name(),
+    ChangeRequest changeRequest = dns.applyChangeRequest(ZONE_INFO.getName(),
         CHANGE_REQUEST_PARTIAL);
-    assertEquals(new ChangeRequest(dns, ZONE_INFO.name(),
+    assertEquals(new ChangeRequest(dns, ZONE_INFO.getName(),
         new ChangeRequestInfo.BuilderImpl(CHANGE_REQUEST_COMPLETE)), changeRequest);
   }
 
   @Test
   public void testApplyChangeRequestWithOptions() {
     Capture<Map<DnsRpc.Option, Object>> capturedOptions = Capture.newInstance();
-    EasyMock.expect(dnsRpcMock.applyChangeRequest(EasyMock.eq(ZONE_INFO.name()),
+    EasyMock.expect(dnsRpcMock.applyChangeRequest(EasyMock.eq(ZONE_INFO.getName()),
         EasyMock.eq(CHANGE_REQUEST_PARTIAL.toPb()), EasyMock.capture(capturedOptions)))
         .andReturn(CHANGE_REQUEST_COMPLETE.toPb());
     EasyMock.replay(dnsRpcMock);
     dns = options.service(); // creates DnsImpl
-    ChangeRequest changeRequest = dns.applyChangeRequest(ZONE_INFO.name(),
+    ChangeRequest changeRequest = dns.applyChangeRequest(ZONE_INFO.getName(),
         CHANGE_REQUEST_PARTIAL, CHANGE_GET_FIELDS);
-    String selector = (String) capturedOptions.getValue().get(CHANGE_GET_FIELDS.rpcOption());
-    assertEquals(new ChangeRequest(dns, ZONE_INFO.name(),
+    String selector = (String) capturedOptions.getValue().get(CHANGE_GET_FIELDS.getRpcOption());
+    assertEquals(new ChangeRequest(dns, ZONE_INFO.getName(),
         new ChangeRequestInfo.BuilderImpl(CHANGE_REQUEST_COMPLETE)), changeRequest);
     assertTrue(selector.contains(Dns.ChangeRequestField.STATUS.selector()));
     assertTrue(selector.contains(Dns.ChangeRequestField.ID.selector()));
@@ -275,16 +276,16 @@ public class DnsImplTest {
   // lists
   @Test
   public void testListChangeRequests() {
-    EasyMock.expect(dnsRpcMock.listChangeRequests(ZONE_INFO.name(), EMPTY_RPC_OPTIONS))
+    EasyMock.expect(dnsRpcMock.listChangeRequests(ZONE_INFO.getName(), EMPTY_RPC_OPTIONS))
         .andReturn(LIST_RESULT_OF_PB_CHANGES);
     EasyMock.replay(dnsRpcMock);
     dns = options.service(); // creates DnsImpl
-    Page<ChangeRequest> changeRequestPage = dns.listChangeRequests(ZONE_INFO.name());
+    Page<ChangeRequest> changeRequestPage = dns.listChangeRequests(ZONE_INFO.getName());
     assertTrue(Lists.newArrayList(changeRequestPage.values()).contains(
-        new ChangeRequest(dns, ZONE_INFO.name(),
+        new ChangeRequest(dns, ZONE_INFO.getName(),
             new ChangeRequestInfo.BuilderImpl(CHANGE_REQUEST_COMPLETE))));
     assertTrue(Lists.newArrayList(changeRequestPage.values()).contains(
-        new ChangeRequest(dns, ZONE_INFO.name(),
+        new ChangeRequest(dns, ZONE_INFO.getName(),
             new ChangeRequestInfo.BuilderImpl(CHANGE_REQUEST_PARTIAL))));
     assertEquals(2, Lists.newArrayList(changeRequestPage.values()).size());
   }
@@ -298,20 +299,21 @@ public class DnsImplTest {
     dns = options.service(); // creates DnsImpl
     Page<ChangeRequest> changeRequestPage = dns.listChangeRequests(ZONE_NAME, CHANGE_LIST_OPTIONS);
     assertTrue(Lists.newArrayList(changeRequestPage.values()).contains(
-        new ChangeRequest(dns, ZONE_INFO.name(),
+        new ChangeRequest(dns, ZONE_INFO.getName(),
             new ChangeRequestInfo.BuilderImpl(CHANGE_REQUEST_COMPLETE))));
     assertTrue(Lists.newArrayList(changeRequestPage.values()).contains(
-        new ChangeRequest(dns, ZONE_INFO.name(),
+        new ChangeRequest(dns, ZONE_INFO.getName(),
             new ChangeRequestInfo.BuilderImpl(CHANGE_REQUEST_PARTIAL))));
     assertEquals(2, Lists.newArrayList(changeRequestPage.values()).size());
-    Integer size = (Integer) capturedOptions.getValue().get(CHANGE_LIST_OPTIONS[0].rpcOption());
+    Integer size = (Integer) capturedOptions.getValue().get(CHANGE_LIST_OPTIONS[0].getRpcOption());
     assertEquals(MAX_SIZE, size);
-    String selector = (String) capturedOptions.getValue().get(CHANGE_LIST_OPTIONS[1].rpcOption());
+    String selector =
+        (String) capturedOptions.getValue().get(CHANGE_LIST_OPTIONS[1].getRpcOption());
     assertEquals(PAGE_TOKEN, selector);
-    selector = (String) capturedOptions.getValue().get(CHANGE_LIST_OPTIONS[2].rpcOption());
+    selector = (String) capturedOptions.getValue().get(CHANGE_LIST_OPTIONS[2].getRpcOption());
     assertTrue(selector.contains(Dns.ChangeRequestField.STATUS.selector()));
     assertTrue(selector.contains(Dns.ChangeRequestField.ID.selector()));
-    selector = (String) capturedOptions.getValue().get(CHANGE_LIST_OPTIONS[3].rpcOption());
+    selector = (String) capturedOptions.getValue().get(CHANGE_LIST_OPTIONS[3].getRpcOption());
     assertTrue(selector.contains(Dns.SortingOrder.ASCENDING.selector()));
   }
 
@@ -338,24 +340,24 @@ public class DnsImplTest {
     assertEquals(1, Lists.newArrayList(zonePage.values()).size());
     assertEquals(new Zone(dns, new ZoneInfo.BuilderImpl(ZONE_INFO)),
         Lists.newArrayList(zonePage.values()).get(0));
-    Integer size = (Integer) capturedOptions.getValue().get(ZONE_LIST_OPTIONS[0].rpcOption());
+    Integer size = (Integer) capturedOptions.getValue().get(ZONE_LIST_OPTIONS[0].getRpcOption());
     assertEquals(MAX_SIZE, size);
-    String selector = (String) capturedOptions.getValue().get(ZONE_LIST_OPTIONS[1].rpcOption());
+    String selector = (String) capturedOptions.getValue().get(ZONE_LIST_OPTIONS[1].getRpcOption());
     assertEquals(PAGE_TOKEN, selector);
-    selector = (String) capturedOptions.getValue().get(ZONE_LIST_OPTIONS[2].rpcOption());
+    selector = (String) capturedOptions.getValue().get(ZONE_LIST_OPTIONS[2].getRpcOption());
     assertTrue(selector.contains(Dns.ZoneField.DESCRIPTION.selector()));
     assertTrue(selector.contains(Dns.ZoneField.NAME.selector()));
-    selector = (String) capturedOptions.getValue().get(ZONE_LIST_OPTIONS[3].rpcOption());
+    selector = (String) capturedOptions.getValue().get(ZONE_LIST_OPTIONS[3].getRpcOption());
     assertEquals(DNS_NAME, selector);
   }
 
   @Test
   public void testListRecordSets() {
-    EasyMock.expect(dnsRpcMock.listRecordSets(ZONE_INFO.name(), EMPTY_RPC_OPTIONS))
+    EasyMock.expect(dnsRpcMock.listRecordSets(ZONE_INFO.getName(), EMPTY_RPC_OPTIONS))
         .andReturn(LIST_OF_PB_DNS_RECORDS);
     EasyMock.replay(dnsRpcMock);
     dns = options.service(); // creates DnsImpl
-    Page<RecordSet> dnsPage = dns.listRecordSets(ZONE_INFO.name());
+    Page<RecordSet> dnsPage = dns.listRecordSets(ZONE_INFO.getName());
     assertEquals(2, Lists.newArrayList(dnsPage.values()).size());
     assertTrue(Lists.newArrayList(dnsPage.values()).contains(DNS_RECORD1));
     assertTrue(Lists.newArrayList(dnsPage.values()).contains(DNS_RECORD2));
@@ -372,18 +374,19 @@ public class DnsImplTest {
     assertEquals(2, Lists.newArrayList(dnsPage.values()).size());
     assertTrue(Lists.newArrayList(dnsPage.values()).contains(DNS_RECORD1));
     assertTrue(Lists.newArrayList(dnsPage.values()).contains(DNS_RECORD2));
-    Integer size = (Integer) capturedOptions.getValue().get(RECORD_SET_LIST_OPTIONS[0].rpcOption());
+    Integer size =
+        (Integer) capturedOptions.getValue().get(RECORD_SET_LIST_OPTIONS[0].getRpcOption());
     assertEquals(MAX_SIZE, size);
     String selector = (String) capturedOptions.getValue()
-        .get(RECORD_SET_LIST_OPTIONS[1].rpcOption());
+        .get(RECORD_SET_LIST_OPTIONS[1].getRpcOption());
     assertEquals(PAGE_TOKEN, selector);
-    selector = (String) capturedOptions.getValue().get(RECORD_SET_LIST_OPTIONS[2].rpcOption());
+    selector = (String) capturedOptions.getValue().get(RECORD_SET_LIST_OPTIONS[2].getRpcOption());
     assertTrue(selector.contains(Dns.RecordSetField.NAME.selector()));
     assertTrue(selector.contains(Dns.RecordSetField.TTL.selector()));
-    selector = (String) capturedOptions.getValue().get(RECORD_SET_LIST_OPTIONS[3].rpcOption());
-    assertEquals(RECORD_SET_LIST_OPTIONS[3].value(), selector);
+    selector = (String) capturedOptions.getValue().get(RECORD_SET_LIST_OPTIONS[3].getRpcOption());
+    assertEquals(RECORD_SET_LIST_OPTIONS[3].getValue(), selector);
     String type = (String) capturedOptions.getValue().get(RECORD_SET_LIST_OPTIONS[4]
-        .rpcOption());
-    assertEquals(RECORD_SET_LIST_OPTIONS[4].value(), type);
+        .getRpcOption());
+    assertEquals(RECORD_SET_LIST_OPTIONS[4].getValue(), type);
   }
 }

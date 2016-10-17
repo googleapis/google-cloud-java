@@ -74,8 +74,8 @@ public class LocalDnsHelperTest {
   private static final Change CHANGE_COMPLEX = new Change();
   private static final LocalDnsHelper LOCAL_DNS_HELPER = LocalDnsHelper.create(0L);
   private static final Map<DnsRpc.Option, ?> EMPTY_RPC_OPTIONS = ImmutableMap.of();
-  private static final DnsRpc RPC = new DefaultDnsRpc(LOCAL_DNS_HELPER.options());
-  private static final String REAL_PROJECT_ID = LOCAL_DNS_HELPER.options().projectId();
+  private static final DnsRpc RPC = new DefaultDnsRpc(LOCAL_DNS_HELPER.getOptions());
+  private static final String REAL_PROJECT_ID = LOCAL_DNS_HELPER.getOptions().projectId();
   private Map<String, Object> optionsMap;
 
   private static abstract class FailExpectedCallback<T> implements RpcBatch.Callback<T> {
