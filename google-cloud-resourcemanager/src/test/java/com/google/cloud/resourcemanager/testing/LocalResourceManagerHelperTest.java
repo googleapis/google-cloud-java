@@ -55,7 +55,7 @@ public class LocalResourceManagerHelperTest {
   private static final LocalResourceManagerHelper RESOURCE_MANAGER_HELPER =
       LocalResourceManagerHelper.create();
   private static final ResourceManagerRpc rpc =
-      new DefaultResourceManagerRpc(RESOURCE_MANAGER_HELPER.options());
+      new DefaultResourceManagerRpc(RESOURCE_MANAGER_HELPER.getOptions());
   private static final com.google.api.services.cloudresourcemanager.model.Project PARTIAL_PROJECT =
       new com.google.api.services.cloudresourcemanager.model.Project().setProjectId(
           "partial-project");

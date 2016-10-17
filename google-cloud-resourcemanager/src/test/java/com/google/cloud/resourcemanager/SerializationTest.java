@@ -28,13 +28,13 @@ public class SerializationTest extends BaseSerializationTest {
 
 private static final ResourceManager RESOURCE_MANAGER =
       ResourceManagerOptions.defaultInstance().service();
-  private static final ProjectInfo PARTIAL_PROJECT_INFO = ProjectInfo.builder("id1").build();
-  private static final ProjectInfo FULL_PROJECT_INFO = ProjectInfo.builder("id")
-      .name("name")
-      .labels(ImmutableMap.of("key", "value"))
-      .projectNumber(123L)
-      .state(ProjectInfo.State.ACTIVE)
-      .createTimeMillis(1234L)
+  private static final ProjectInfo PARTIAL_PROJECT_INFO = ProjectInfo.newBuilder("id1").build();
+  private static final ProjectInfo FULL_PROJECT_INFO = ProjectInfo.newBuilder("id")
+      .setName("name")
+      .setLabels(ImmutableMap.of("key", "value"))
+      .setProjectNumber(123L)
+      .setState(ProjectInfo.State.ACTIVE)
+      .setCreateTimeMillis(1234L)
       .build();
   private static final Project PROJECT =
       new Project(RESOURCE_MANAGER, new ProjectInfo.BuilderImpl(FULL_PROJECT_INFO));
