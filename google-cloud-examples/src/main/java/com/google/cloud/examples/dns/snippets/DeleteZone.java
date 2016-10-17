@@ -48,18 +48,19 @@ public class DeleteZone {
     Iterator<RecordSet> recordIterator = dns.listRecordSets(zoneName).iterateAll();
 
     // Make a change for deleting the records
-    ChangeRequestInfo.Builder changeBuilder = ChangeRequestInfo.builder();
+    ChangeRequestInfo.Builder changeBuilder = ChangeRequestInfo.newBuilder();
     while (recordIterator.hasNext()) {
       RecordSet current = recordIterator.next();
       // SOA and NS records cannot be deleted
-      if (!RecordSet.Type.SOA.equals(current.type()) && !RecordSet.Type.NS.equals(current.type())) {
+      if (!RecordSet.Type.SOA.equals(current.getType())
+          && !RecordSet.Type.NS.equals(current.getType())) {
         changeBuilder.delete(current);
       }
     }
 
     // Build and apply the change request to our zone if it contains records to delete
     ChangeRequestInfo changeRequest = changeBuilder.build();
-    if (!changeRequest.deletions().isEmpty()) {
+    if (!changeRequest.getDeletions().isEmpty()) {
       ChangeRequest pendingRequest = dns.applyChangeRequest(zoneName, changeRequest);
 
       // Wait for the change request to complete

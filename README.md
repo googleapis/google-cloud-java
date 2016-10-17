@@ -359,19 +359,19 @@ Dns dns = DnsOptions.defaultInstance().service();
 String zoneName = "my-unique-zone";
 Zone zone = dns.getZone(zoneName);
 String ip = "12.13.14.15";
-RecordSet toCreate = RecordSet.builder("www.someexampledomain.com.", RecordSet.Type.A)
-    .ttl(24, TimeUnit.HOURS)
+RecordSet toCreate = RecordSet.newBuilder("www.someexampledomain.com.", RecordSet.Type.A)
+    .setTtl(24, TimeUnit.HOURS)
     .addRecord(ip)
     .build();
-ChangeRequestInfo.Builder changeBuilder = ChangeRequestInfo.builder().add(toCreate);
+ChangeRequestInfo.Builder changeBuilder = ChangeRequestInfo.newBuilder().add(toCreate);
 
 // Verify that the record does not exist yet.
 // If it does exist, we will overwrite it with our prepared record.
 Iterator<RecordSet> recordSetIterator = zone.listRecordSets().iterateAll();
 while (recordSetIterator.hasNext()) {
   RecordSet current = recordSetIterator.next();
-  if (toCreate.name().equals(current.name()) &&
-      toCreate.type().equals(current.type())) {
+  if (toCreate.name().equals(current.getName()) &&
+      toCreate.type().equals(current.getType())) {
     changeBuilder.delete(current);
   }
 }
