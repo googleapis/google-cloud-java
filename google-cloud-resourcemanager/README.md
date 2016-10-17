@@ -117,7 +117,7 @@ project ID).
 
 ```java
 String projectId = "my-globally-unique-project-id"; // Change to a unique project ID
-Project project = resourceManager.create(ProjectInfo.builder(projectId).build());
+Project project = resourceManager.create(ProjectInfo.newBuilder(projectId).build());
 ```
 
 Note that the return value from `create` is a `Project` that includes additional read-only
@@ -159,7 +159,7 @@ Then add the following code to print a list of projects you can view:
 Iterator<Project> projectIterator = resourceManager.list().iterateAll();
 System.out.println("Projects I can view:");
 while (projectIterator.hasNext()) {
-  System.out.println(projectIterator.next().projectId());
+  System.out.println(projectIterator.next().getProjectId());
 }
 ```
 

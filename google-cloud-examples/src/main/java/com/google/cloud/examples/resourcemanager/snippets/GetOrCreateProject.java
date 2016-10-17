@@ -42,8 +42,8 @@ public class GetOrCreateProject {
     Project project = resourceManager.get(projectId);
     if (project == null) {
       // Create a project.
-      project = resourceManager.create(ProjectInfo.builder(projectId).build());
+      project = resourceManager.create(ProjectInfo.newBuilder(projectId).build());
     }
-    System.out.println("Got project " + project.projectId() + " from the server.");
+    System.out.println("Got project " + project.getProjectId() + " from the server.");
   }
 }

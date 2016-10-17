@@ -64,7 +64,7 @@ public class ResourceManagerExample {
         }
       }
       Project project =
-          resourceManager.create(ProjectInfo.builder(projectId).labels(labels).build());
+          resourceManager.create(ProjectInfo.newBuilder(projectId).setLabels(labels).build());
       System.out.printf(
           "Successfully created project '%s': %s.%n", projectId, projectDetails(project));
     }
@@ -160,15 +160,15 @@ public class ResourceManagerExample {
   private static String projectDetails(ProjectInfo project) {
     return new StringBuilder()
         .append("{projectId:")
-        .append(project.projectId())
+        .append(project.getProjectId())
         .append(", projectNumber:")
-        .append(project.projectNumber())
+        .append(project.getProjectNumber())
         .append(", createTimeMillis:")
-        .append(project.createTimeMillis())
+        .append(project.getCreateTimeMillis())
         .append(", state:")
-        .append(project.state())
+        .append(project.getState())
         .append(", labels:")
-        .append(project.labels())
+        .append(project.getLabels())
         .append("}")
         .toString();
   }
