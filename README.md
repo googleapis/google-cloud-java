@@ -222,7 +222,7 @@ if (disk != null) {
   String snapshotName = "disk-name-snapshot";
   Operation operation = disk.createSnapshot(snapshotName);
   operation = operation.waitFor();
-  if (operation.errors() == null) {
+  if (operation.getErrors() == null) {
     // use snapshot
     Snapshot snapshot = compute.getSnapshot(snapshotName);
   }
@@ -252,7 +252,7 @@ MachineTypeId machineTypeId = MachineTypeId.of("us-central1-a", "n1-standard-1")
 Operation operation =
     compute.create(InstanceInfo.of(instanceId, machineTypeId, attachedDisk, networkInterface));
 operation = operation.waitFor();
-if (operation.errors() == null) {
+if (operation.getErrors() == null) {
   // use instance
   Instance instance = compute.getInstance(instanceId);
 }
