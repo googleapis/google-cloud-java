@@ -13,17 +13,23 @@
  */
 package com.google.cloud.pubsub.spi.v1;
 
+import static com.google.cloud.pubsub.spi.v1.PagedResponseWrappers.ListTopicSubscriptionsPagedResponse;
+import static com.google.cloud.pubsub.spi.v1.PagedResponseWrappers.ListTopicsPagedResponse;
+
 import com.google.api.gax.core.ConnectionSettings;
 import com.google.api.gax.core.RetrySettings;
-import com.google.api.gax.grpc.ApiCallSettings;
 import com.google.api.gax.grpc.BundlingCallSettings;
 import com.google.api.gax.grpc.BundlingDescriptor;
 import com.google.api.gax.grpc.BundlingSettings;
+import com.google.api.gax.grpc.CallContext;
 import com.google.api.gax.grpc.PageStreamingCallSettings;
 import com.google.api.gax.grpc.PageStreamingDescriptor;
+import com.google.api.gax.grpc.PagedListResponseFactory;
 import com.google.api.gax.grpc.RequestIssuer;
 import com.google.api.gax.grpc.ServiceApiSettings;
 import com.google.api.gax.grpc.SimpleCallSettings;
+import com.google.api.gax.grpc.UnaryApiCallSettings;
+import com.google.api.gax.grpc.UnaryApiCallable;
 import com.google.auth.Credentials;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -109,10 +115,12 @@ public class PublisherSettings extends ServiceApiSettings {
   private final SimpleCallSettings<Topic, Topic> createTopicSettings;
   private final BundlingCallSettings<PublishRequest, PublishResponse> publishSettings;
   private final SimpleCallSettings<GetTopicRequest, Topic> getTopicSettings;
-  private final PageStreamingCallSettings<ListTopicsRequest, ListTopicsResponse, Topic>
+  private final PageStreamingCallSettings<
+          ListTopicsRequest, ListTopicsResponse, ListTopicsPagedResponse>
       listTopicsSettings;
   private final PageStreamingCallSettings<
-          ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse, String>
+          ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse,
+          ListTopicSubscriptionsPagedResponse>
       listTopicSubscriptionsSettings;
   private final SimpleCallSettings<DeleteTopicRequest, Empty> deleteTopicSettings;
   private final SimpleCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings;
@@ -136,14 +144,15 @@ public class PublisherSettings extends ServiceApiSettings {
   }
 
   /** Returns the object with the settings used for calls to listTopics. */
-  public PageStreamingCallSettings<ListTopicsRequest, ListTopicsResponse, Topic>
+  public PageStreamingCallSettings<ListTopicsRequest, ListTopicsResponse, ListTopicsPagedResponse>
       listTopicsSettings() {
     return listTopicsSettings;
   }
 
   /** Returns the object with the settings used for calls to listTopicSubscriptions. */
   public PageStreamingCallSettings<
-          ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse, String>
+          ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse,
+          ListTopicSubscriptionsPagedResponse>
       listTopicSubscriptionsSettings() {
     return listTopicSubscriptionsSettings;
   }
@@ -295,6 +304,39 @@ public class PublisherSettings extends ServiceApiSettings {
             }
           };
 
+  private static final PagedListResponseFactory<
+          ListTopicsRequest, ListTopicsResponse, ListTopicsPagedResponse>
+      LIST_TOPICS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListTopicsRequest, ListTopicsResponse, ListTopicsPagedResponse>() {
+            @Override
+            public ListTopicsPagedResponse createPagedListResponse(
+                UnaryApiCallable<ListTopicsRequest, ListTopicsResponse> callable,
+                ListTopicsRequest request,
+                CallContext context) {
+              return new ListTopicsPagedResponse(
+                  callable, LIST_TOPICS_PAGE_STR_DESC, request, context);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse,
+          ListTopicSubscriptionsPagedResponse>
+      LIST_TOPIC_SUBSCRIPTIONS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse,
+              ListTopicSubscriptionsPagedResponse>() {
+            @Override
+            public ListTopicSubscriptionsPagedResponse createPagedListResponse(
+                UnaryApiCallable<ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse>
+                    callable,
+                ListTopicSubscriptionsRequest request,
+                CallContext context) {
+              return new ListTopicSubscriptionsPagedResponse(
+                  callable, LIST_TOPIC_SUBSCRIPTIONS_PAGE_STR_DESC, request, context);
+            }
+          };
+
   private static final BundlingDescriptor<PublishRequest, PublishResponse> PUBLISH_BUNDLING_DESC =
       new BundlingDescriptor<PublishRequest, PublishResponse>() {
         @Override
@@ -359,15 +401,17 @@ public class PublisherSettings extends ServiceApiSettings {
 
   /** Builder for PublisherSettings. */
   public static class Builder extends ServiceApiSettings.Builder {
-    private final ImmutableList<ApiCallSettings.Builder> methodSettingsBuilders;
+    private final ImmutableList<UnaryApiCallSettings.Builder> unaryMethodSettingsBuilders;
 
     private final SimpleCallSettings.Builder<Topic, Topic> createTopicSettings;
     private final BundlingCallSettings.Builder<PublishRequest, PublishResponse> publishSettings;
     private final SimpleCallSettings.Builder<GetTopicRequest, Topic> getTopicSettings;
-    private final PageStreamingCallSettings.Builder<ListTopicsRequest, ListTopicsResponse, Topic>
+    private final PageStreamingCallSettings.Builder<
+            ListTopicsRequest, ListTopicsResponse, ListTopicsPagedResponse>
         listTopicsSettings;
     private final PageStreamingCallSettings.Builder<
-            ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse, String>
+            ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse,
+            ListTopicSubscriptionsPagedResponse>
         listTopicSubscriptionsSettings;
     private final SimpleCallSettings.Builder<DeleteTopicRequest, Empty> deleteTopicSettings;
     private final SimpleCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings;
@@ -434,12 +478,12 @@ public class PublisherSettings extends ServiceApiSettings {
 
       listTopicsSettings =
           PageStreamingCallSettings.newBuilder(
-              PublisherGrpc.METHOD_LIST_TOPICS, LIST_TOPICS_PAGE_STR_DESC);
+              PublisherGrpc.METHOD_LIST_TOPICS, LIST_TOPICS_PAGE_STR_FACT);
 
       listTopicSubscriptionsSettings =
           PageStreamingCallSettings.newBuilder(
               PublisherGrpc.METHOD_LIST_TOPIC_SUBSCRIPTIONS,
-              LIST_TOPIC_SUBSCRIPTIONS_PAGE_STR_DESC);
+              LIST_TOPIC_SUBSCRIPTIONS_PAGE_STR_FACT);
 
       deleteTopicSettings = SimpleCallSettings.newBuilder(PublisherGrpc.METHOD_DELETE_TOPIC);
 
@@ -450,8 +494,8 @@ public class PublisherSettings extends ServiceApiSettings {
       testIamPermissionsSettings =
           SimpleCallSettings.newBuilder(IAMPolicyGrpc.METHOD_TEST_IAM_PERMISSIONS);
 
-      methodSettingsBuilders =
-          ImmutableList.<ApiCallSettings.Builder>of(
+      unaryMethodSettingsBuilders =
+          ImmutableList.<UnaryApiCallSettings.Builder>of(
               createTopicSettings,
               publishSettings,
               getTopicSettings,
@@ -536,8 +580,8 @@ public class PublisherSettings extends ServiceApiSettings {
       getIamPolicySettings = settings.getIamPolicySettings.toBuilder();
       testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
 
-      methodSettingsBuilders =
-          ImmutableList.<ApiCallSettings.Builder>of(
+      unaryMethodSettingsBuilders =
+          ImmutableList.<UnaryApiCallSettings.Builder>of(
               createTopicSettings,
               publishSettings,
               getTopicSettings,
@@ -597,11 +641,14 @@ public class PublisherSettings extends ServiceApiSettings {
     }
 
     /**
-     * Applies the given settings to all of the API methods in this service. Only values that are
-     * non-null will be applied, so this method is not capable of un-setting any values.
+     * Applies the given settings to all of the unary API methods in this service. Only values that
+     * are non-null will be applied, so this method is not capable of un-setting any values.
+     *
+     * <p>Note: This method does not support applying settings to streaming methods.
      */
-    public Builder applyToAllApiMethods(ApiCallSettings.Builder apiCallSettings) throws Exception {
-      super.applyToAllApiMethods(methodSettingsBuilders, apiCallSettings);
+    public Builder applyToAllApiMethods(UnaryApiCallSettings.Builder apiCallSettings)
+        throws Exception {
+      super.applyToAllApiMethods(unaryMethodSettingsBuilders, apiCallSettings);
       return this;
     }
 
@@ -621,14 +668,16 @@ public class PublisherSettings extends ServiceApiSettings {
     }
 
     /** Returns the builder for the settings used for calls to listTopics. */
-    public PageStreamingCallSettings.Builder<ListTopicsRequest, ListTopicsResponse, Topic>
+    public PageStreamingCallSettings.Builder<
+            ListTopicsRequest, ListTopicsResponse, ListTopicsPagedResponse>
         listTopicsSettings() {
       return listTopicsSettings;
     }
 
     /** Returns the builder for the settings used for calls to listTopicSubscriptions. */
     public PageStreamingCallSettings.Builder<
-            ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse, String>
+            ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse,
+            ListTopicSubscriptionsPagedResponse>
         listTopicSubscriptionsSettings() {
       return listTopicSubscriptionsSettings;
     }

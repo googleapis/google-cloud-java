@@ -72,8 +72,25 @@ public class MockSpeechImpl extends SpeechImplBase {
 
   @Override
   public StreamObserver<StreamingRecognizeRequest> streamingRecognize(
-      StreamObserver<StreamingRecognizeResponse> responseObserver) {
-    System.err.println("Streaming method is not supported.");
-    return null;
+      final StreamObserver<StreamingRecognizeResponse> responseObserver) {
+    final StreamingRecognizeResponse response = (StreamingRecognizeResponse) responses.remove();
+    StreamObserver<StreamingRecognizeRequest> requestObserver =
+        new StreamObserver<StreamingRecognizeRequest>() {
+          @Override
+          public void onNext(StreamingRecognizeRequest value) {
+            responseObserver.onNext(response);
+          }
+
+          @Override
+          public void onError(Throwable t) {
+            responseObserver.onError(t);
+          }
+
+          @Override
+          public void onCompleted() {
+            responseObserver.onCompleted();
+          }
+        };
+    return requestObserver;
   }
 }

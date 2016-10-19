@@ -19,7 +19,7 @@ package com.google.cloud.pubsub.spi;
 import static com.google.common.base.MoreObjects.firstNonNull;
 
 import com.google.api.gax.core.ConnectionSettings;
-import com.google.api.gax.grpc.ApiCallSettings;
+import com.google.api.gax.grpc.UnaryApiCallSettings;
 import com.google.api.gax.grpc.ApiException;
 import com.google.cloud.AuthCredentials;
 import com.google.cloud.GrpcServiceOptions.ExecutorFactory;
@@ -94,7 +94,7 @@ public class DefaultPubSubRpc implements PubSubRpc {
     }
 
     @Override
-    protected ApiCallSettings.Builder apiCallSettings() {
+    protected UnaryApiCallSettings.Builder apiCallSettings() {
       return super.apiCallSettings();
     }
 
@@ -154,7 +154,7 @@ public class DefaultPubSubRpc implements PubSubRpc {
         pubBuilder.provideChannelWith(connectionSettings);
         subBuilder.provideChannelWith(connectionSettings);
       }
-      ApiCallSettings.Builder callSettingsBuilder = internalOptions.apiCallSettings();
+      UnaryApiCallSettings.Builder callSettingsBuilder = internalOptions.apiCallSettings();
       pubBuilder.applyToAllApiMethods(callSettingsBuilder);
       subBuilder.applyToAllApiMethods(callSettingsBuilder);
       publisherApi = PublisherApi.create(pubBuilder.build());
@@ -183,7 +183,7 @@ public class DefaultPubSubRpc implements PubSubRpc {
 
   @Override
   public Future<Topic> create(Topic topic) {
-    // TODO: it would be nice if we can get the idempotent information from the ApiCallSettings
+    // TODO: it would be nice if we can get the idempotent information from the UnaryApiCallSettings
     // or from the exception
     return translate(publisherApi.createTopicCallable().futureCall(topic), true);
   }

@@ -15,7 +15,7 @@ package com.google.cloud.monitoring.spi.v3;
 
 import com.google.api.gax.core.ConnectionSettings;
 import com.google.api.gax.core.RetrySettings;
-import com.google.api.gax.grpc.ApiCallSettings;
+import com.google.api.gax.grpc.UnaryApiCallSettings;
 import com.google.api.gax.grpc.ServiceApiSettings;
 import com.google.api.gax.grpc.SimpleCallSettings;
 import com.google.auth.Credentials;
@@ -133,7 +133,7 @@ public class AgentTranslationServiceSettings extends ServiceApiSettings {
 
   /** Builder for AgentTranslationServiceSettings. */
   public static class Builder extends ServiceApiSettings.Builder {
-    private final ImmutableList<ApiCallSettings.Builder> methodSettingsBuilders;
+    private final ImmutableList<UnaryApiCallSettings.Builder> methodSettingsBuilders;
 
     private final SimpleCallSettings.Builder<CreateCollectdTimeSeriesRequest, Empty>
         createCollectdTimeSeriesSettings;
@@ -177,7 +177,7 @@ public class AgentTranslationServiceSettings extends ServiceApiSettings {
               AgentTranslationServiceGrpc.METHOD_CREATE_COLLECTD_TIME_SERIES);
 
       methodSettingsBuilders =
-          ImmutableList.<ApiCallSettings.Builder>of(createCollectdTimeSeriesSettings);
+          ImmutableList.<UnaryApiCallSettings.Builder>of(createCollectdTimeSeriesSettings);
     }
 
     private static Builder createDefault() {
@@ -197,7 +197,7 @@ public class AgentTranslationServiceSettings extends ServiceApiSettings {
       createCollectdTimeSeriesSettings = settings.createCollectdTimeSeriesSettings.toBuilder();
 
       methodSettingsBuilders =
-          ImmutableList.<ApiCallSettings.Builder>of(createCollectdTimeSeriesSettings);
+          ImmutableList.<UnaryApiCallSettings.Builder>of(createCollectdTimeSeriesSettings);
     }
 
     @Override
@@ -251,7 +251,7 @@ public class AgentTranslationServiceSettings extends ServiceApiSettings {
      * Applies the given settings to all of the API methods in this service. Only values that are
      * non-null will be applied, so this method is not capable of un-setting any values.
      */
-    public Builder applyToAllApiMethods(ApiCallSettings.Builder apiCallSettings) throws Exception {
+    public Builder applyToAllApiMethods(UnaryApiCallSettings.Builder apiCallSettings) throws Exception {
       super.applyToAllApiMethods(methodSettingsBuilders, apiCallSettings);
       return this;
     }

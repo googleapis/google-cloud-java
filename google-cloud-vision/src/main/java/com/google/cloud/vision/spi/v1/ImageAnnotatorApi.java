@@ -13,7 +13,7 @@
  */
 package com.google.cloud.vision.spi.v1;
 
-import com.google.api.gax.grpc.ApiCallable;
+import com.google.api.gax.grpc.UnaryApiCallable;
 import com.google.cloud.vision.v1.AnnotateImageRequest;
 import com.google.cloud.vision.v1.BatchAnnotateImagesRequest;
 import com.google.cloud.vision.v1.BatchAnnotateImagesResponse;
@@ -55,8 +55,8 @@ import java.util.concurrent.ScheduledExecutorService;
  *   <li> A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li> A "callable" method. This type of method takes no parameters and returns an immutable
- *       ApiCallable object, which can be used to initiate calls to the service.
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
+ *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
  * <p>See the individual methods for example code.
@@ -84,7 +84,7 @@ public class ImageAnnotatorApi implements AutoCloseable {
   private final ScheduledExecutorService executor;
   private final List<AutoCloseable> closeables = new ArrayList<>();
 
-  private final ApiCallable<BatchAnnotateImagesRequest, BatchAnnotateImagesResponse>
+  private final UnaryApiCallable<BatchAnnotateImagesRequest, BatchAnnotateImagesResponse>
       batchAnnotateImagesCallable;
 
   /** Constructs an instance of ImageAnnotatorApi with default settings. */
@@ -110,7 +110,8 @@ public class ImageAnnotatorApi implements AutoCloseable {
     this.channel = settings.getChannelProvider().getOrBuildChannel(this.executor);
 
     this.batchAnnotateImagesCallable =
-        ApiCallable.create(settings.batchAnnotateImagesSettings(), this.channel, this.executor);
+        UnaryApiCallable.create(
+            settings.batchAnnotateImagesSettings(), this.channel, this.executor);
 
     if (settings.getChannelProvider().shouldAutoClose()) {
       closeables.add(
@@ -201,7 +202,7 @@ public class ImageAnnotatorApi implements AutoCloseable {
    * }
    * </code></pre>
    */
-  public final ApiCallable<BatchAnnotateImagesRequest, BatchAnnotateImagesResponse>
+  public final UnaryApiCallable<BatchAnnotateImagesRequest, BatchAnnotateImagesResponse>
       batchAnnotateImagesCallable() {
     return batchAnnotateImagesCallable;
   }

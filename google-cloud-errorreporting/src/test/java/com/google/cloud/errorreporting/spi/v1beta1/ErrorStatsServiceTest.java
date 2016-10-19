@@ -14,7 +14,9 @@
 
 package com.google.cloud.errorreporting.spi.v1beta1;
 
-import com.google.api.gax.core.PagedListResponse;
+import static com.google.cloud.errorreporting.spi.v1beta1.PagedResponseWrappers.ListEventsPagedResponse;
+import static com.google.cloud.errorreporting.spi.v1beta1.PagedResponseWrappers.ListGroupStatsPagedResponse;
+
 import com.google.api.gax.testing.MockGrpcService;
 import com.google.api.gax.testing.MockServiceHelper;
 import com.google.common.collect.Lists;
@@ -98,8 +100,8 @@ public class ErrorStatsServiceTest {
     String formattedProjectName = ErrorStatsServiceApi.formatProjectName("[PROJECT]");
     QueryTimeRange timeRange = QueryTimeRange.newBuilder().build();
 
-    PagedListResponse<ListGroupStatsRequest, ListGroupStatsResponse, ErrorGroupStats>
-        pagedListResponse = api.listGroupStats(formattedProjectName, timeRange);
+    ListGroupStatsPagedResponse pagedListResponse =
+        api.listGroupStats(formattedProjectName, timeRange);
 
     List<ErrorGroupStats> resources = Lists.newArrayList(pagedListResponse.iterateAllElements());
     Assert.assertEquals(1, resources.size());
@@ -131,8 +133,7 @@ public class ErrorStatsServiceTest {
     String formattedProjectName = ErrorStatsServiceApi.formatProjectName("[PROJECT]");
     String groupId = "groupId506361563";
 
-    PagedListResponse<ListEventsRequest, ListEventsResponse, ErrorEvent> pagedListResponse =
-        api.listEvents(formattedProjectName, groupId);
+    ListEventsPagedResponse pagedListResponse = api.listEvents(formattedProjectName, groupId);
 
     List<ErrorEvent> resources = Lists.newArrayList(pagedListResponse.iterateAllElements());
     Assert.assertEquals(1, resources.size());

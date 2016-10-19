@@ -13,15 +13,22 @@
  */
 package com.google.cloud.monitoring.spi.v3;
 
+import static com.google.cloud.monitoring.spi.v3.PagedResponseWrappers.ListMetricDescriptorsPagedResponse;
+import static com.google.cloud.monitoring.spi.v3.PagedResponseWrappers.ListMonitoredResourceDescriptorsPagedResponse;
+import static com.google.cloud.monitoring.spi.v3.PagedResponseWrappers.ListTimeSeriesPagedResponse;
+
 import com.google.api.MetricDescriptor;
 import com.google.api.MonitoredResourceDescriptor;
 import com.google.api.gax.core.ConnectionSettings;
 import com.google.api.gax.core.RetrySettings;
-import com.google.api.gax.grpc.ApiCallSettings;
+import com.google.api.gax.grpc.CallContext;
 import com.google.api.gax.grpc.PageStreamingCallSettings;
 import com.google.api.gax.grpc.PageStreamingDescriptor;
+import com.google.api.gax.grpc.PagedListResponseFactory;
 import com.google.api.gax.grpc.ServiceApiSettings;
 import com.google.api.gax.grpc.SimpleCallSettings;
+import com.google.api.gax.grpc.UnaryApiCallSettings;
+import com.google.api.gax.grpc.UnaryApiCallable;
 import com.google.auth.Credentials;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -97,13 +104,14 @@ public class MetricServiceSettings extends ServiceApiSettings {
 
   private final PageStreamingCallSettings<
           ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse,
-          MonitoredResourceDescriptor>
+          ListMonitoredResourceDescriptorsPagedResponse>
       listMonitoredResourceDescriptorsSettings;
   private final SimpleCallSettings<
           GetMonitoredResourceDescriptorRequest, MonitoredResourceDescriptor>
       getMonitoredResourceDescriptorSettings;
   private final PageStreamingCallSettings<
-          ListMetricDescriptorsRequest, ListMetricDescriptorsResponse, MetricDescriptor>
+          ListMetricDescriptorsRequest, ListMetricDescriptorsResponse,
+          ListMetricDescriptorsPagedResponse>
       listMetricDescriptorsSettings;
   private final SimpleCallSettings<GetMetricDescriptorRequest, MetricDescriptor>
       getMetricDescriptorSettings;
@@ -111,14 +119,15 @@ public class MetricServiceSettings extends ServiceApiSettings {
       createMetricDescriptorSettings;
   private final SimpleCallSettings<DeleteMetricDescriptorRequest, Empty>
       deleteMetricDescriptorSettings;
-  private final PageStreamingCallSettings<ListTimeSeriesRequest, ListTimeSeriesResponse, TimeSeries>
+  private final PageStreamingCallSettings<
+          ListTimeSeriesRequest, ListTimeSeriesResponse, ListTimeSeriesPagedResponse>
       listTimeSeriesSettings;
   private final SimpleCallSettings<CreateTimeSeriesRequest, Empty> createTimeSeriesSettings;
 
   /** Returns the object with the settings used for calls to listMonitoredResourceDescriptors. */
   public PageStreamingCallSettings<
           ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse,
-          MonitoredResourceDescriptor>
+          ListMonitoredResourceDescriptorsPagedResponse>
       listMonitoredResourceDescriptorsSettings() {
     return listMonitoredResourceDescriptorsSettings;
   }
@@ -131,7 +140,8 @@ public class MetricServiceSettings extends ServiceApiSettings {
 
   /** Returns the object with the settings used for calls to listMetricDescriptors. */
   public PageStreamingCallSettings<
-          ListMetricDescriptorsRequest, ListMetricDescriptorsResponse, MetricDescriptor>
+          ListMetricDescriptorsRequest, ListMetricDescriptorsResponse,
+          ListMetricDescriptorsPagedResponse>
       listMetricDescriptorsSettings() {
     return listMetricDescriptorsSettings;
   }
@@ -154,7 +164,8 @@ public class MetricServiceSettings extends ServiceApiSettings {
   }
 
   /** Returns the object with the settings used for calls to listTimeSeries. */
-  public PageStreamingCallSettings<ListTimeSeriesRequest, ListTimeSeriesResponse, TimeSeries>
+  public PageStreamingCallSettings<
+          ListTimeSeriesRequest, ListTimeSeriesResponse, ListTimeSeriesPagedResponse>
       listTimeSeriesSettings() {
     return listTimeSeriesSettings;
   }
@@ -337,19 +348,73 @@ public class MetricServiceSettings extends ServiceApiSettings {
             }
           };
 
+  private static final PagedListResponseFactory<
+          ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse,
+          ListMonitoredResourceDescriptorsPagedResponse>
+      LIST_MONITORED_RESOURCE_DESCRIPTORS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse,
+              ListMonitoredResourceDescriptorsPagedResponse>() {
+            @Override
+            public ListMonitoredResourceDescriptorsPagedResponse createPagedListResponse(
+                UnaryApiCallable<
+                        ListMonitoredResourceDescriptorsRequest,
+                        ListMonitoredResourceDescriptorsResponse>
+                    callable,
+                ListMonitoredResourceDescriptorsRequest request,
+                CallContext context) {
+              return new ListMonitoredResourceDescriptorsPagedResponse(
+                  callable, LIST_MONITORED_RESOURCE_DESCRIPTORS_PAGE_STR_DESC, request, context);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListMetricDescriptorsRequest, ListMetricDescriptorsResponse,
+          ListMetricDescriptorsPagedResponse>
+      LIST_METRIC_DESCRIPTORS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListMetricDescriptorsRequest, ListMetricDescriptorsResponse,
+              ListMetricDescriptorsPagedResponse>() {
+            @Override
+            public ListMetricDescriptorsPagedResponse createPagedListResponse(
+                UnaryApiCallable<ListMetricDescriptorsRequest, ListMetricDescriptorsResponse>
+                    callable,
+                ListMetricDescriptorsRequest request,
+                CallContext context) {
+              return new ListMetricDescriptorsPagedResponse(
+                  callable, LIST_METRIC_DESCRIPTORS_PAGE_STR_DESC, request, context);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListTimeSeriesRequest, ListTimeSeriesResponse, ListTimeSeriesPagedResponse>
+      LIST_TIME_SERIES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListTimeSeriesRequest, ListTimeSeriesResponse, ListTimeSeriesPagedResponse>() {
+            @Override
+            public ListTimeSeriesPagedResponse createPagedListResponse(
+                UnaryApiCallable<ListTimeSeriesRequest, ListTimeSeriesResponse> callable,
+                ListTimeSeriesRequest request,
+                CallContext context) {
+              return new ListTimeSeriesPagedResponse(
+                  callable, LIST_TIME_SERIES_PAGE_STR_DESC, request, context);
+            }
+          };
+
   /** Builder for MetricServiceSettings. */
   public static class Builder extends ServiceApiSettings.Builder {
-    private final ImmutableList<ApiCallSettings.Builder> methodSettingsBuilders;
+    private final ImmutableList<UnaryApiCallSettings.Builder> unaryMethodSettingsBuilders;
 
     private final PageStreamingCallSettings.Builder<
             ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse,
-            MonitoredResourceDescriptor>
+            ListMonitoredResourceDescriptorsPagedResponse>
         listMonitoredResourceDescriptorsSettings;
     private final SimpleCallSettings.Builder<
             GetMonitoredResourceDescriptorRequest, MonitoredResourceDescriptor>
         getMonitoredResourceDescriptorSettings;
     private final PageStreamingCallSettings.Builder<
-            ListMetricDescriptorsRequest, ListMetricDescriptorsResponse, MetricDescriptor>
+            ListMetricDescriptorsRequest, ListMetricDescriptorsResponse,
+            ListMetricDescriptorsPagedResponse>
         listMetricDescriptorsSettings;
     private final SimpleCallSettings.Builder<GetMetricDescriptorRequest, MetricDescriptor>
         getMetricDescriptorSettings;
@@ -358,7 +423,7 @@ public class MetricServiceSettings extends ServiceApiSettings {
     private final SimpleCallSettings.Builder<DeleteMetricDescriptorRequest, Empty>
         deleteMetricDescriptorSettings;
     private final PageStreamingCallSettings.Builder<
-            ListTimeSeriesRequest, ListTimeSeriesResponse, TimeSeries>
+            ListTimeSeriesRequest, ListTimeSeriesResponse, ListTimeSeriesPagedResponse>
         listTimeSeriesSettings;
     private final SimpleCallSettings.Builder<CreateTimeSeriesRequest, Empty>
         createTimeSeriesSettings;
@@ -400,7 +465,7 @@ public class MetricServiceSettings extends ServiceApiSettings {
       listMonitoredResourceDescriptorsSettings =
           PageStreamingCallSettings.newBuilder(
               MetricServiceGrpc.METHOD_LIST_MONITORED_RESOURCE_DESCRIPTORS,
-              LIST_MONITORED_RESOURCE_DESCRIPTORS_PAGE_STR_DESC);
+              LIST_MONITORED_RESOURCE_DESCRIPTORS_PAGE_STR_FACT);
 
       getMonitoredResourceDescriptorSettings =
           SimpleCallSettings.newBuilder(MetricServiceGrpc.METHOD_GET_MONITORED_RESOURCE_DESCRIPTOR);
@@ -408,7 +473,7 @@ public class MetricServiceSettings extends ServiceApiSettings {
       listMetricDescriptorsSettings =
           PageStreamingCallSettings.newBuilder(
               MetricServiceGrpc.METHOD_LIST_METRIC_DESCRIPTORS,
-              LIST_METRIC_DESCRIPTORS_PAGE_STR_DESC);
+              LIST_METRIC_DESCRIPTORS_PAGE_STR_FACT);
 
       getMetricDescriptorSettings =
           SimpleCallSettings.newBuilder(MetricServiceGrpc.METHOD_GET_METRIC_DESCRIPTOR);
@@ -421,13 +486,13 @@ public class MetricServiceSettings extends ServiceApiSettings {
 
       listTimeSeriesSettings =
           PageStreamingCallSettings.newBuilder(
-              MetricServiceGrpc.METHOD_LIST_TIME_SERIES, LIST_TIME_SERIES_PAGE_STR_DESC);
+              MetricServiceGrpc.METHOD_LIST_TIME_SERIES, LIST_TIME_SERIES_PAGE_STR_FACT);
 
       createTimeSeriesSettings =
           SimpleCallSettings.newBuilder(MetricServiceGrpc.METHOD_CREATE_TIME_SERIES);
 
-      methodSettingsBuilders =
-          ImmutableList.<ApiCallSettings.Builder>of(
+      unaryMethodSettingsBuilders =
+          ImmutableList.<UnaryApiCallSettings.Builder>of(
               listMonitoredResourceDescriptorsSettings,
               getMonitoredResourceDescriptorSettings,
               listMetricDescriptorsSettings,
@@ -498,8 +563,8 @@ public class MetricServiceSettings extends ServiceApiSettings {
       listTimeSeriesSettings = settings.listTimeSeriesSettings.toBuilder();
       createTimeSeriesSettings = settings.createTimeSeriesSettings.toBuilder();
 
-      methodSettingsBuilders =
-          ImmutableList.<ApiCallSettings.Builder>of(
+      unaryMethodSettingsBuilders =
+          ImmutableList.<UnaryApiCallSettings.Builder>of(
               listMonitoredResourceDescriptorsSettings,
               getMonitoredResourceDescriptorSettings,
               listMetricDescriptorsSettings,
@@ -558,18 +623,21 @@ public class MetricServiceSettings extends ServiceApiSettings {
     }
 
     /**
-     * Applies the given settings to all of the API methods in this service. Only values that are
-     * non-null will be applied, so this method is not capable of un-setting any values.
+     * Applies the given settings to all of the unary API methods in this service. Only values that
+     * are non-null will be applied, so this method is not capable of un-setting any values.
+     *
+     * <p>Note: This method does not support applying settings to streaming methods.
      */
-    public Builder applyToAllApiMethods(ApiCallSettings.Builder apiCallSettings) throws Exception {
-      super.applyToAllApiMethods(methodSettingsBuilders, apiCallSettings);
+    public Builder applyToAllApiMethods(UnaryApiCallSettings.Builder apiCallSettings)
+        throws Exception {
+      super.applyToAllApiMethods(unaryMethodSettingsBuilders, apiCallSettings);
       return this;
     }
 
     /** Returns the builder for the settings used for calls to listMonitoredResourceDescriptors. */
     public PageStreamingCallSettings.Builder<
             ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse,
-            MonitoredResourceDescriptor>
+            ListMonitoredResourceDescriptorsPagedResponse>
         listMonitoredResourceDescriptorsSettings() {
       return listMonitoredResourceDescriptorsSettings;
     }
@@ -583,7 +651,8 @@ public class MetricServiceSettings extends ServiceApiSettings {
 
     /** Returns the builder for the settings used for calls to listMetricDescriptors. */
     public PageStreamingCallSettings.Builder<
-            ListMetricDescriptorsRequest, ListMetricDescriptorsResponse, MetricDescriptor>
+            ListMetricDescriptorsRequest, ListMetricDescriptorsResponse,
+            ListMetricDescriptorsPagedResponse>
         listMetricDescriptorsSettings() {
       return listMetricDescriptorsSettings;
     }
@@ -608,7 +677,7 @@ public class MetricServiceSettings extends ServiceApiSettings {
 
     /** Returns the builder for the settings used for calls to listTimeSeries. */
     public PageStreamingCallSettings.Builder<
-            ListTimeSeriesRequest, ListTimeSeriesResponse, TimeSeries>
+            ListTimeSeriesRequest, ListTimeSeriesResponse, ListTimeSeriesPagedResponse>
         listTimeSeriesSettings() {
       return listTimeSeriesSettings;
     }

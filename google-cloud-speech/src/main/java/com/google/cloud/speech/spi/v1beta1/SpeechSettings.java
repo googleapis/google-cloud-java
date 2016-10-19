@@ -15,12 +15,15 @@ package com.google.cloud.speech.spi.v1beta1;
 
 import com.google.api.gax.core.ConnectionSettings;
 import com.google.api.gax.core.RetrySettings;
-import com.google.api.gax.grpc.ApiCallSettings;
 import com.google.api.gax.grpc.ServiceApiSettings;
 import com.google.api.gax.grpc.SimpleCallSettings;
+import com.google.api.gax.grpc.StreamingCallSettings;
+import com.google.api.gax.grpc.UnaryApiCallSettings;
 import com.google.auth.Credentials;
 import com.google.cloud.speech.v1beta1.AsyncRecognizeRequest;
 import com.google.cloud.speech.v1beta1.SpeechGrpc;
+import com.google.cloud.speech.v1beta1.StreamingRecognizeRequest;
+import com.google.cloud.speech.v1beta1.StreamingRecognizeResponse;
 import com.google.cloud.speech.v1beta1.SyncRecognizeRequest;
 import com.google.cloud.speech.v1beta1.SyncRecognizeResponse;
 import com.google.common.collect.ImmutableList;
@@ -85,6 +88,8 @@ public class SpeechSettings extends ServiceApiSettings {
   private final SimpleCallSettings<SyncRecognizeRequest, SyncRecognizeResponse>
       syncRecognizeSettings;
   private final SimpleCallSettings<AsyncRecognizeRequest, Operation> asyncRecognizeSettings;
+  private final StreamingCallSettings<StreamingRecognizeRequest, StreamingRecognizeResponse>
+      streamingRecognizeSettings;
 
   /** Returns the object with the settings used for calls to syncRecognize. */
   public SimpleCallSettings<SyncRecognizeRequest, SyncRecognizeResponse> syncRecognizeSettings() {
@@ -94,6 +99,12 @@ public class SpeechSettings extends ServiceApiSettings {
   /** Returns the object with the settings used for calls to asyncRecognize. */
   public SimpleCallSettings<AsyncRecognizeRequest, Operation> asyncRecognizeSettings() {
     return asyncRecognizeSettings;
+  }
+
+  /** Returns the object with the settings used for calls to streamingRecognize. */
+  public StreamingCallSettings<StreamingRecognizeRequest, StreamingRecognizeResponse>
+      streamingRecognizeSettings() {
+    return streamingRecognizeSettings;
   }
 
   /** Returns the default service address. */
@@ -137,16 +148,20 @@ public class SpeechSettings extends ServiceApiSettings {
 
     syncRecognizeSettings = settingsBuilder.syncRecognizeSettings().build();
     asyncRecognizeSettings = settingsBuilder.asyncRecognizeSettings().build();
+    streamingRecognizeSettings = settingsBuilder.streamingRecognizeSettings().build();
   }
 
   /** Builder for SpeechSettings. */
   public static class Builder extends ServiceApiSettings.Builder {
-    private final ImmutableList<ApiCallSettings.Builder> methodSettingsBuilders;
+    private final ImmutableList<UnaryApiCallSettings.Builder> unaryMethodSettingsBuilders;
 
     private final SimpleCallSettings.Builder<SyncRecognizeRequest, SyncRecognizeResponse>
         syncRecognizeSettings;
     private final SimpleCallSettings.Builder<AsyncRecognizeRequest, Operation>
         asyncRecognizeSettings;
+    private final StreamingCallSettings.Builder<
+            StreamingRecognizeRequest, StreamingRecognizeResponse>
+        streamingRecognizeSettings;
 
     private static final ImmutableMap<String, ImmutableSet<Status.Code>> RETRYABLE_CODE_DEFINITIONS;
 
@@ -186,8 +201,12 @@ public class SpeechSettings extends ServiceApiSettings {
 
       asyncRecognizeSettings = SimpleCallSettings.newBuilder(SpeechGrpc.METHOD_ASYNC_RECOGNIZE);
 
-      methodSettingsBuilders =
-          ImmutableList.<ApiCallSettings.Builder>of(syncRecognizeSettings, asyncRecognizeSettings);
+      streamingRecognizeSettings =
+          StreamingCallSettings.newBuilder(SpeechGrpc.METHOD_STREAMING_RECOGNIZE);
+
+      unaryMethodSettingsBuilders =
+          ImmutableList.<UnaryApiCallSettings.Builder>of(
+              syncRecognizeSettings, asyncRecognizeSettings);
     }
 
     private static Builder createDefault() {
@@ -211,9 +230,11 @@ public class SpeechSettings extends ServiceApiSettings {
 
       syncRecognizeSettings = settings.syncRecognizeSettings.toBuilder();
       asyncRecognizeSettings = settings.asyncRecognizeSettings.toBuilder();
+      streamingRecognizeSettings = settings.streamingRecognizeSettings.toBuilder();
 
-      methodSettingsBuilders =
-          ImmutableList.<ApiCallSettings.Builder>of(syncRecognizeSettings, asyncRecognizeSettings);
+      unaryMethodSettingsBuilders =
+          ImmutableList.<UnaryApiCallSettings.Builder>of(
+              syncRecognizeSettings, asyncRecognizeSettings);
     }
 
     @Override
@@ -264,11 +285,14 @@ public class SpeechSettings extends ServiceApiSettings {
     }
 
     /**
-     * Applies the given settings to all of the API methods in this service. Only values that are
-     * non-null will be applied, so this method is not capable of un-setting any values.
+     * Applies the given settings to all of the unary API methods in this service. Only values that
+     * are non-null will be applied, so this method is not capable of un-setting any values.
+     *
+     * <p>Note: This method does not support applying settings to streaming methods.
      */
-    public Builder applyToAllApiMethods(ApiCallSettings.Builder apiCallSettings) throws Exception {
-      super.applyToAllApiMethods(methodSettingsBuilders, apiCallSettings);
+    public Builder applyToAllApiMethods(UnaryApiCallSettings.Builder apiCallSettings)
+        throws Exception {
+      super.applyToAllApiMethods(unaryMethodSettingsBuilders, apiCallSettings);
       return this;
     }
 
@@ -281,6 +305,12 @@ public class SpeechSettings extends ServiceApiSettings {
     /** Returns the builder for the settings used for calls to asyncRecognize. */
     public SimpleCallSettings.Builder<AsyncRecognizeRequest, Operation> asyncRecognizeSettings() {
       return asyncRecognizeSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to streamingRecognize. */
+    public StreamingCallSettings.Builder<StreamingRecognizeRequest, StreamingRecognizeResponse>
+        streamingRecognizeSettings() {
+      return streamingRecognizeSettings;
     }
 
     @Override

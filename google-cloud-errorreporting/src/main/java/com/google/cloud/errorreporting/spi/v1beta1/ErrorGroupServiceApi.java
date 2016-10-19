@@ -13,7 +13,7 @@
  */
 package com.google.cloud.errorreporting.spi.v1beta1;
 
-import com.google.api.gax.grpc.ApiCallable;
+import com.google.api.gax.grpc.UnaryApiCallable;
 import com.google.api.gax.protobuf.PathTemplate;
 import com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup;
 import com.google.devtools.clouderrorreporting.v1beta1.GetGroupRequest;
@@ -54,8 +54,8 @@ import java.util.concurrent.ScheduledExecutorService;
  *   <li> A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li> A "callable" method. This type of method takes no parameters and returns an immutable
- *       ApiCallable object, which can be used to initiate calls to the service.
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
+ *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
  * <p>See the individual methods for example code.
@@ -83,8 +83,8 @@ public class ErrorGroupServiceApi implements AutoCloseable {
   private final ScheduledExecutorService executor;
   private final List<AutoCloseable> closeables = new ArrayList<>();
 
-  private final ApiCallable<GetGroupRequest, ErrorGroup> getGroupCallable;
-  private final ApiCallable<UpdateGroupRequest, ErrorGroup> updateGroupCallable;
+  private final UnaryApiCallable<GetGroupRequest, ErrorGroup> getGroupCallable;
+  private final UnaryApiCallable<UpdateGroupRequest, ErrorGroup> updateGroupCallable;
 
   private static final PathTemplate GROUP_PATH_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding("projects/{project}/groups/{group}");
@@ -130,9 +130,9 @@ public class ErrorGroupServiceApi implements AutoCloseable {
     this.channel = settings.getChannelProvider().getOrBuildChannel(this.executor);
 
     this.getGroupCallable =
-        ApiCallable.create(settings.getGroupSettings(), this.channel, this.executor);
+        UnaryApiCallable.create(settings.getGroupSettings(), this.channel, this.executor);
     this.updateGroupCallable =
-        ApiCallable.create(settings.updateGroupSettings(), this.channel, this.executor);
+        UnaryApiCallable.create(settings.updateGroupSettings(), this.channel, this.executor);
 
     if (settings.getChannelProvider().shouldAutoClose()) {
       closeables.add(
@@ -226,7 +226,7 @@ public class ErrorGroupServiceApi implements AutoCloseable {
    * }
    * </code></pre>
    */
-  public final ApiCallable<GetGroupRequest, ErrorGroup> getGroupCallable() {
+  public final UnaryApiCallable<GetGroupRequest, ErrorGroup> getGroupCallable() {
     return getGroupCallable;
   }
 
@@ -292,7 +292,7 @@ public class ErrorGroupServiceApi implements AutoCloseable {
    * }
    * </code></pre>
    */
-  public final ApiCallable<UpdateGroupRequest, ErrorGroup> updateGroupCallable() {
+  public final UnaryApiCallable<UpdateGroupRequest, ErrorGroup> updateGroupCallable() {
     return updateGroupCallable;
   }
 

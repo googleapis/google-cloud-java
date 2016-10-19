@@ -14,7 +14,7 @@
 package com.google.cloud.monitoring.spi.v3;
 
 import com.google.api.MonitoredResource;
-import com.google.api.gax.grpc.ApiCallable;
+import com.google.api.gax.grpc.UnaryApiCallable;
 import com.google.api.gax.protobuf.PathTemplate;
 import com.google.monitoring.v3.CollectdPayload;
 import com.google.monitoring.v3.CreateCollectdTimeSeriesRequest;
@@ -61,7 +61,7 @@ import java.util.concurrent.ScheduledExecutorService;
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
  *   <li> A "callable" method. This type of method takes no parameters and returns an immutable
- *       ApiCallable object, which can be used to initiate calls to the service.
+ *       UnaryApiCallable object, which can be used to initiate calls to the service.
  * </ol>
  *
  * <p>See the individual methods for example code.
@@ -89,7 +89,7 @@ public class AgentTranslationServiceApi implements AutoCloseable {
   private final ScheduledExecutorService executor;
   private final List<AutoCloseable> closeables = new ArrayList<>();
 
-  private final ApiCallable<CreateCollectdTimeSeriesRequest, Empty>
+  private final UnaryApiCallable<CreateCollectdTimeSeriesRequest, Empty>
       createCollectdTimeSeriesCallable;
 
   private static final PathTemplate PROJECT_PATH_TEMPLATE =
@@ -131,7 +131,7 @@ public class AgentTranslationServiceApi implements AutoCloseable {
     this.channel = settings.getChannelProvider().getOrBuildChannel(this.executor);
 
     this.createCollectdTimeSeriesCallable =
-        ApiCallable.create(
+        UnaryApiCallable.create(
             settings.createCollectdTimeSeriesSettings(), this.channel, this.executor);
 
     if (settings.getChannelProvider().shouldAutoClose()) {
@@ -265,7 +265,7 @@ public class AgentTranslationServiceApi implements AutoCloseable {
    * }
    * </code></pre>
    */
-  public final ApiCallable<CreateCollectdTimeSeriesRequest, Empty>
+  public final UnaryApiCallable<CreateCollectdTimeSeriesRequest, Empty>
       createCollectdTimeSeriesCallable() {
     return createCollectdTimeSeriesCallable;
   }

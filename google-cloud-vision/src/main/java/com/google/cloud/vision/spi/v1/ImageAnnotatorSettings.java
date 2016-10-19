@@ -15,9 +15,9 @@ package com.google.cloud.vision.spi.v1;
 
 import com.google.api.gax.core.ConnectionSettings;
 import com.google.api.gax.core.RetrySettings;
-import com.google.api.gax.grpc.ApiCallSettings;
 import com.google.api.gax.grpc.ServiceApiSettings;
 import com.google.api.gax.grpc.SimpleCallSettings;
+import com.google.api.gax.grpc.UnaryApiCallSettings;
 import com.google.auth.Credentials;
 import com.google.cloud.vision.v1.BatchAnnotateImagesRequest;
 import com.google.cloud.vision.v1.BatchAnnotateImagesResponse;
@@ -133,7 +133,7 @@ public class ImageAnnotatorSettings extends ServiceApiSettings {
 
   /** Builder for ImageAnnotatorSettings. */
   public static class Builder extends ServiceApiSettings.Builder {
-    private final ImmutableList<ApiCallSettings.Builder> methodSettingsBuilders;
+    private final ImmutableList<UnaryApiCallSettings.Builder> unaryMethodSettingsBuilders;
 
     private final SimpleCallSettings.Builder<
             BatchAnnotateImagesRequest, BatchAnnotateImagesResponse>
@@ -176,8 +176,8 @@ public class ImageAnnotatorSettings extends ServiceApiSettings {
       batchAnnotateImagesSettings =
           SimpleCallSettings.newBuilder(ImageAnnotatorGrpc.METHOD_BATCH_ANNOTATE_IMAGES);
 
-      methodSettingsBuilders =
-          ImmutableList.<ApiCallSettings.Builder>of(batchAnnotateImagesSettings);
+      unaryMethodSettingsBuilders =
+          ImmutableList.<UnaryApiCallSettings.Builder>of(batchAnnotateImagesSettings);
     }
 
     private static Builder createDefault() {
@@ -196,8 +196,8 @@ public class ImageAnnotatorSettings extends ServiceApiSettings {
 
       batchAnnotateImagesSettings = settings.batchAnnotateImagesSettings.toBuilder();
 
-      methodSettingsBuilders =
-          ImmutableList.<ApiCallSettings.Builder>of(batchAnnotateImagesSettings);
+      unaryMethodSettingsBuilders =
+          ImmutableList.<UnaryApiCallSettings.Builder>of(batchAnnotateImagesSettings);
     }
 
     @Override
@@ -248,11 +248,14 @@ public class ImageAnnotatorSettings extends ServiceApiSettings {
     }
 
     /**
-     * Applies the given settings to all of the API methods in this service. Only values that are
-     * non-null will be applied, so this method is not capable of un-setting any values.
+     * Applies the given settings to all of the unary API methods in this service. Only values that
+     * are non-null will be applied, so this method is not capable of un-setting any values.
+     *
+     * <p>Note: This method does not support applying settings to streaming methods.
      */
-    public Builder applyToAllApiMethods(ApiCallSettings.Builder apiCallSettings) throws Exception {
-      super.applyToAllApiMethods(methodSettingsBuilders, apiCallSettings);
+    public Builder applyToAllApiMethods(UnaryApiCallSettings.Builder apiCallSettings)
+        throws Exception {
+      super.applyToAllApiMethods(unaryMethodSettingsBuilders, apiCallSettings);
       return this;
     }
 

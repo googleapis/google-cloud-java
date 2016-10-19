@@ -14,9 +14,12 @@
 
 package com.google.cloud.monitoring.spi.v3;
 
+import static com.google.cloud.monitoring.spi.v3.PagedResponseWrappers.ListMetricDescriptorsPagedResponse;
+import static com.google.cloud.monitoring.spi.v3.PagedResponseWrappers.ListMonitoredResourceDescriptorsPagedResponse;
+import static com.google.cloud.monitoring.spi.v3.PagedResponseWrappers.ListTimeSeriesPagedResponse;
+
 import com.google.api.MetricDescriptor;
 import com.google.api.MonitoredResourceDescriptor;
-import com.google.api.gax.core.PagedListResponse;
 import com.google.api.gax.testing.MockGrpcService;
 import com.google.api.gax.testing.MockServiceHelper;
 import com.google.common.collect.Lists;
@@ -29,6 +32,10 @@ import com.google.monitoring.v3.ListMetricDescriptorsRequest;
 import com.google.monitoring.v3.ListMetricDescriptorsResponse;
 import com.google.monitoring.v3.ListMonitoredResourceDescriptorsRequest;
 import com.google.monitoring.v3.ListMonitoredResourceDescriptorsResponse;
+import com.google.monitoring.v3.ListTimeSeriesRequest;
+import com.google.monitoring.v3.ListTimeSeriesRequest.TimeSeriesView;
+import com.google.monitoring.v3.ListTimeSeriesResponse;
+import com.google.monitoring.v3.TimeInterval;
 import com.google.monitoring.v3.TimeSeries;
 import com.google.protobuf.Empty;
 import com.google.protobuf.GeneratedMessageV3;
@@ -47,7 +54,6 @@ import org.junit.Test;
 public class MetricServiceTest {
   private static MockGroupService mockGroupService;
   private static MockMetricService mockMetricService;
-  private static MockAgentTranslationService mockAgentTranslationService;
   private static MockServiceHelper serviceHelper;
   private MetricServiceApi api;
 
@@ -55,12 +61,9 @@ public class MetricServiceTest {
   public static void startStaticServer() {
     mockGroupService = new MockGroupService();
     mockMetricService = new MockMetricService();
-    mockAgentTranslationService = new MockAgentTranslationService();
     serviceHelper =
         new MockServiceHelper(
-            "in-process-1",
-            Arrays.<MockGrpcService>asList(
-                mockGroupService, mockMetricService, mockAgentTranslationService));
+            "in-process-1", Arrays.<MockGrpcService>asList(mockGroupService, mockMetricService));
     serviceHelper.start();
   }
 
@@ -102,12 +105,9 @@ public class MetricServiceTest {
     mockMetricService.setResponses(expectedResponses);
 
     String formattedName = MetricServiceApi.formatProjectName("[PROJECT]");
-    String filter = "filter-1274492040";
 
-    PagedListResponse<
-            ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse,
-            MonitoredResourceDescriptor>
-        pagedListResponse = api.listMonitoredResourceDescriptors(formattedName, filter);
+    ListMonitoredResourceDescriptorsPagedResponse pagedListResponse =
+        api.listMonitoredResourceDescriptors(formattedName);
 
     List<MonitoredResourceDescriptor> resources =
         Lists.newArrayList(pagedListResponse.iterateAllElements());
@@ -120,7 +120,6 @@ public class MetricServiceTest {
         (ListMonitoredResourceDescriptorsRequest) actualRequests.get(0);
 
     Assert.assertEquals(formattedName, actualRequest.getName());
-    Assert.assertEquals(filter, actualRequest.getFilter());
   }
 
   @Test
@@ -174,10 +173,8 @@ public class MetricServiceTest {
     mockMetricService.setResponses(expectedResponses);
 
     String formattedName = MetricServiceApi.formatProjectName("[PROJECT]");
-    String filter = "filter-1274492040";
 
-    PagedListResponse<ListMetricDescriptorsRequest, ListMetricDescriptorsResponse, MetricDescriptor>
-        pagedListResponse = api.listMetricDescriptors(formattedName, filter);
+    ListMetricDescriptorsPagedResponse pagedListResponse = api.listMetricDescriptors(formattedName);
 
     List<MetricDescriptor> resources = Lists.newArrayList(pagedListResponse.iterateAllElements());
     Assert.assertEquals(1, resources.size());
@@ -189,14 +186,13 @@ public class MetricServiceTest {
         (ListMetricDescriptorsRequest) actualRequests.get(0);
 
     Assert.assertEquals(formattedName, actualRequest.getName());
-    Assert.assertEquals(filter, actualRequest.getFilter());
   }
 
   @Test
   @SuppressWarnings("all")
   public void getMetricDescriptorTest() {
     String formattedName2 =
-        MetricServiceApi.formatMetricDescriptorPathName("[PROJECT]", "[METRIC_DESCRIPTOR_PATH]");
+        MetricServiceApi.formatMetricDescriptorName("[PROJECT]", "[METRIC_DESCRIPTOR]");
     String type = "type3575610";
     String unit = "unit3594628";
     String description = "description-1724546052";
@@ -214,7 +210,7 @@ public class MetricServiceTest {
     mockMetricService.setResponses(expectedResponses);
 
     String formattedName =
-        MetricServiceApi.formatMetricDescriptorPathName("[PROJECT]", "[METRIC_DESCRIPTOR_PATH]");
+        MetricServiceApi.formatMetricDescriptorName("[PROJECT]", "[METRIC_DESCRIPTOR]");
 
     MetricDescriptor actualResponse = api.getMetricDescriptor(formattedName);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -270,7 +266,7 @@ public class MetricServiceTest {
     mockMetricService.setResponses(expectedResponses);
 
     String formattedName =
-        MetricServiceApi.formatMetricDescriptorPathName("[PROJECT]", "[METRIC_DESCRIPTOR_PATH]");
+        MetricServiceApi.formatMetricDescriptorName("[PROJECT]", "[METRIC_DESCRIPTOR]");
 
     api.deleteMetricDescriptor(formattedName);
 
@@ -280,6 +276,43 @@ public class MetricServiceTest {
         (DeleteMetricDescriptorRequest) actualRequests.get(0);
 
     Assert.assertEquals(formattedName, actualRequest.getName());
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void listTimeSeriesTest() {
+    String nextPageToken = "";
+    TimeSeries timeSeriesElement = TimeSeries.newBuilder().build();
+    List<TimeSeries> timeSeries = Arrays.asList(timeSeriesElement);
+    ListTimeSeriesResponse expectedResponse =
+        ListTimeSeriesResponse.newBuilder()
+            .setNextPageToken(nextPageToken)
+            .addAllTimeSeries(timeSeries)
+            .build();
+    List<GeneratedMessageV3> expectedResponses = new ArrayList<>();
+    expectedResponses.add(expectedResponse);
+    mockMetricService.setResponses(expectedResponses);
+
+    String formattedName = MetricServiceApi.formatProjectName("[PROJECT]");
+    String filter = "filter-1274492040";
+    TimeInterval interval = TimeInterval.newBuilder().build();
+    ListTimeSeriesRequest.TimeSeriesView view = ListTimeSeriesRequest.TimeSeriesView.FULL;
+
+    ListTimeSeriesPagedResponse pagedListResponse =
+        api.listTimeSeries(formattedName, filter, interval, view);
+
+    List<TimeSeries> resources = Lists.newArrayList(pagedListResponse.iterateAllElements());
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getTimeSeriesList().get(0), resources.get(0));
+
+    List<GeneratedMessageV3> actualRequests = mockMetricService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListTimeSeriesRequest actualRequest = (ListTimeSeriesRequest) actualRequests.get(0);
+
+    Assert.assertEquals(formattedName, actualRequest.getName());
+    Assert.assertEquals(filter, actualRequest.getFilter());
+    Assert.assertEquals(interval, actualRequest.getInterval());
+    Assert.assertEquals(view, actualRequest.getView());
   }
 
   @Test

@@ -13,7 +13,7 @@
  */
 package com.google.cloud.language.spi.v1beta1;
 
-import com.google.api.gax.grpc.ApiCallable;
+import com.google.api.gax.grpc.UnaryApiCallable;
 import com.google.cloud.language.v1beta1.AnalyzeEntitiesRequest;
 import com.google.cloud.language.v1beta1.AnalyzeEntitiesResponse;
 import com.google.cloud.language.v1beta1.AnalyzeSentimentRequest;
@@ -60,8 +60,8 @@ import java.util.concurrent.ScheduledExecutorService;
  *   <li> A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li> A "callable" method. This type of method takes no parameters and returns an immutable
- *       ApiCallable object, which can be used to initiate calls to the service.
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
+ *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
  * <p>See the individual methods for example code.
@@ -89,11 +89,11 @@ public class LanguageServiceApi implements AutoCloseable {
   private final ScheduledExecutorService executor;
   private final List<AutoCloseable> closeables = new ArrayList<>();
 
-  private final ApiCallable<AnalyzeSentimentRequest, AnalyzeSentimentResponse>
+  private final UnaryApiCallable<AnalyzeSentimentRequest, AnalyzeSentimentResponse>
       analyzeSentimentCallable;
-  private final ApiCallable<AnalyzeEntitiesRequest, AnalyzeEntitiesResponse>
+  private final UnaryApiCallable<AnalyzeEntitiesRequest, AnalyzeEntitiesResponse>
       analyzeEntitiesCallable;
-  private final ApiCallable<AnnotateTextRequest, AnnotateTextResponse> annotateTextCallable;
+  private final UnaryApiCallable<AnnotateTextRequest, AnnotateTextResponse> annotateTextCallable;
 
   /** Constructs an instance of LanguageServiceApi with default settings. */
   public static final LanguageServiceApi create() throws IOException {
@@ -119,11 +119,11 @@ public class LanguageServiceApi implements AutoCloseable {
     this.channel = settings.getChannelProvider().getOrBuildChannel(this.executor);
 
     this.analyzeSentimentCallable =
-        ApiCallable.create(settings.analyzeSentimentSettings(), this.channel, this.executor);
+        UnaryApiCallable.create(settings.analyzeSentimentSettings(), this.channel, this.executor);
     this.analyzeEntitiesCallable =
-        ApiCallable.create(settings.analyzeEntitiesSettings(), this.channel, this.executor);
+        UnaryApiCallable.create(settings.analyzeEntitiesSettings(), this.channel, this.executor);
     this.annotateTextCallable =
-        ApiCallable.create(settings.annotateTextSettings(), this.channel, this.executor);
+        UnaryApiCallable.create(settings.annotateTextSettings(), this.channel, this.executor);
 
     if (settings.getChannelProvider().shouldAutoClose()) {
       closeables.add(
@@ -213,7 +213,7 @@ public class LanguageServiceApi implements AutoCloseable {
    * }
    * </code></pre>
    */
-  public final ApiCallable<AnalyzeSentimentRequest, AnalyzeSentimentResponse>
+  public final UnaryApiCallable<AnalyzeSentimentRequest, AnalyzeSentimentResponse>
       analyzeSentimentCallable() {
     return analyzeSentimentCallable;
   }
@@ -294,7 +294,7 @@ public class LanguageServiceApi implements AutoCloseable {
    * }
    * </code></pre>
    */
-  public final ApiCallable<AnalyzeEntitiesRequest, AnalyzeEntitiesResponse>
+  public final UnaryApiCallable<AnalyzeEntitiesRequest, AnalyzeEntitiesResponse>
       analyzeEntitiesCallable() {
     return analyzeEntitiesCallable;
   }
@@ -385,7 +385,7 @@ public class LanguageServiceApi implements AutoCloseable {
    * }
    * </code></pre>
    */
-  public final ApiCallable<AnnotateTextRequest, AnnotateTextResponse> annotateTextCallable() {
+  public final UnaryApiCallable<AnnotateTextRequest, AnnotateTextResponse> annotateTextCallable() {
     return annotateTextCallable;
   }
 

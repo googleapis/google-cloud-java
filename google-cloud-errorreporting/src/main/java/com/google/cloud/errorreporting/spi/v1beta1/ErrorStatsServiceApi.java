@@ -13,13 +13,13 @@
  */
 package com.google.cloud.errorreporting.spi.v1beta1;
 
-import com.google.api.gax.core.PagedListResponse;
-import com.google.api.gax.grpc.ApiCallable;
+import static com.google.cloud.errorreporting.spi.v1beta1.PagedResponseWrappers.ListEventsPagedResponse;
+import static com.google.cloud.errorreporting.spi.v1beta1.PagedResponseWrappers.ListGroupStatsPagedResponse;
+
+import com.google.api.gax.grpc.UnaryApiCallable;
 import com.google.api.gax.protobuf.PathTemplate;
 import com.google.devtools.clouderrorreporting.v1beta1.DeleteEventsRequest;
 import com.google.devtools.clouderrorreporting.v1beta1.DeleteEventsResponse;
-import com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent;
-import com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats;
 import com.google.devtools.clouderrorreporting.v1beta1.ListEventsRequest;
 import com.google.devtools.clouderrorreporting.v1beta1.ListEventsResponse;
 import com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsRequest;
@@ -62,8 +62,8 @@ import java.util.concurrent.ScheduledExecutorService;
  *   <li> A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li> A "callable" method. This type of method takes no parameters and returns an immutable
- *       ApiCallable object, which can be used to initiate calls to the service.
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
+ *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
  * <p>See the individual methods for example code.
@@ -91,16 +91,14 @@ public class ErrorStatsServiceApi implements AutoCloseable {
   private final ScheduledExecutorService executor;
   private final List<AutoCloseable> closeables = new ArrayList<>();
 
-  private final ApiCallable<ListGroupStatsRequest, ListGroupStatsResponse> listGroupStatsCallable;
-  private final ApiCallable<
-          ListGroupStatsRequest,
-          PagedListResponse<ListGroupStatsRequest, ListGroupStatsResponse, ErrorGroupStats>>
+  private final UnaryApiCallable<ListGroupStatsRequest, ListGroupStatsResponse>
+      listGroupStatsCallable;
+  private final UnaryApiCallable<ListGroupStatsRequest, ListGroupStatsPagedResponse>
       listGroupStatsPagedCallable;
-  private final ApiCallable<ListEventsRequest, ListEventsResponse> listEventsCallable;
-  private final ApiCallable<
-          ListEventsRequest, PagedListResponse<ListEventsRequest, ListEventsResponse, ErrorEvent>>
+  private final UnaryApiCallable<ListEventsRequest, ListEventsResponse> listEventsCallable;
+  private final UnaryApiCallable<ListEventsRequest, ListEventsPagedResponse>
       listEventsPagedCallable;
-  private final ApiCallable<DeleteEventsRequest, DeleteEventsResponse> deleteEventsCallable;
+  private final UnaryApiCallable<DeleteEventsRequest, DeleteEventsResponse> deleteEventsCallable;
 
   private static final PathTemplate PROJECT_PATH_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding("projects/{project}");
@@ -139,16 +137,17 @@ public class ErrorStatsServiceApi implements AutoCloseable {
     this.channel = settings.getChannelProvider().getOrBuildChannel(this.executor);
 
     this.listGroupStatsCallable =
-        ApiCallable.create(settings.listGroupStatsSettings(), this.channel, this.executor);
+        UnaryApiCallable.create(settings.listGroupStatsSettings(), this.channel, this.executor);
     this.listGroupStatsPagedCallable =
-        ApiCallable.createPagedVariant(
+        UnaryApiCallable.createPagedVariant(
             settings.listGroupStatsSettings(), this.channel, this.executor);
     this.listEventsCallable =
-        ApiCallable.create(settings.listEventsSettings(), this.channel, this.executor);
+        UnaryApiCallable.create(settings.listEventsSettings(), this.channel, this.executor);
     this.listEventsPagedCallable =
-        ApiCallable.createPagedVariant(settings.listEventsSettings(), this.channel, this.executor);
+        UnaryApiCallable.createPagedVariant(
+            settings.listEventsSettings(), this.channel, this.executor);
     this.deleteEventsCallable =
-        ApiCallable.create(settings.deleteEventsSettings(), this.channel, this.executor);
+        UnaryApiCallable.create(settings.deleteEventsSettings(), this.channel, this.executor);
 
     if (settings.getChannelProvider().shouldAutoClose()) {
       closeables.add(
@@ -195,13 +194,14 @@ public class ErrorStatsServiceApi implements AutoCloseable {
    *     href="https://support.google.com/cloud/answer/6158840"&gt;Google Cloud Platform project
    *     ID&lt;/a&gt;.
    *     <p>Example: &lt;code&gt;projects/my-project-123&lt;/code&gt;.
-   * @param timeRange [Required] List data for the given time range. The service is tuned for
-   *     retrieving data up to (approximately) 'now'. Retrieving data for arbitrary time periods in
-   *     the past can result in higher response times or in returning incomplete results.
+   * @param timeRange [Required] List data for the given time range. Only
+   *     &lt;code&gt;ErrorGroupStats&lt;/code&gt; with a non-zero count in the given time range are
+   *     returned, unless the request contains an explicit group_id list. If a group_id list is
+   *     given, also &lt;code&gt;ErrorGroupStats&lt;/code&gt; with zero occurrences are returned.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  public final PagedListResponse<ListGroupStatsRequest, ListGroupStatsResponse, ErrorGroupStats>
-      listGroupStats(String projectName, QueryTimeRange timeRange) {
+  public final ListGroupStatsPagedResponse listGroupStats(
+      String projectName, QueryTimeRange timeRange) {
     PROJECT_PATH_TEMPLATE.validate(projectName, "listGroupStats");
     ListGroupStatsRequest request =
         ListGroupStatsRequest.newBuilder()
@@ -234,8 +234,7 @@ public class ErrorStatsServiceApi implements AutoCloseable {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  public final PagedListResponse<ListGroupStatsRequest, ListGroupStatsResponse, ErrorGroupStats>
-      listGroupStats(ListGroupStatsRequest request) {
+  public final ListGroupStatsPagedResponse listGroupStats(ListGroupStatsRequest request) {
     return listGroupStatsPagedCallable().call(request);
   }
 
@@ -253,7 +252,7 @@ public class ErrorStatsServiceApi implements AutoCloseable {
    *     .setProjectName(formattedProjectName)
    *     .setTimeRange(timeRange)
    *     .build();
-   *   ListenableFuture&lt;PagedListResponse&lt;ListGroupStatsRequest,ListGroupStatsResponse,ErrorGroupStats&gt;&gt; future = errorStatsServiceApi.listGroupStatsPagedCallable().futureCall(request);
+   *   ListenableFuture&lt;ListGroupStatsPagedResponse&gt; future = errorStatsServiceApi.listGroupStatsPagedCallable().futureCall(request);
    *   // Do something
    *   for (ErrorGroupStats element : future.get().iterateAllElements()) {
    *     // doThingsWith(element);
@@ -261,9 +260,7 @@ public class ErrorStatsServiceApi implements AutoCloseable {
    * }
    * </code></pre>
    */
-  public final ApiCallable<
-          ListGroupStatsRequest,
-          PagedListResponse<ListGroupStatsRequest, ListGroupStatsResponse, ErrorGroupStats>>
+  public final UnaryApiCallable<ListGroupStatsRequest, ListGroupStatsPagedResponse>
       listGroupStatsPagedCallable() {
     return listGroupStatsPagedCallable;
   }
@@ -297,7 +294,8 @@ public class ErrorStatsServiceApi implements AutoCloseable {
    * }
    * </code></pre>
    */
-  public final ApiCallable<ListGroupStatsRequest, ListGroupStatsResponse> listGroupStatsCallable() {
+  public final UnaryApiCallable<ListGroupStatsRequest, ListGroupStatsResponse>
+      listGroupStatsCallable() {
     return listGroupStatsCallable;
   }
 
@@ -323,8 +321,7 @@ public class ErrorStatsServiceApi implements AutoCloseable {
    * @param groupId [Required] The group for which events shall be returned.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  public final PagedListResponse<ListEventsRequest, ListEventsResponse, ErrorEvent> listEvents(
-      String projectName, String groupId) {
+  public final ListEventsPagedResponse listEvents(String projectName, String groupId) {
     PROJECT_PATH_TEMPLATE.validate(projectName, "listEvents");
     ListEventsRequest request =
         ListEventsRequest.newBuilder().setProjectName(projectName).setGroupId(groupId).build();
@@ -354,8 +351,7 @@ public class ErrorStatsServiceApi implements AutoCloseable {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  public final PagedListResponse<ListEventsRequest, ListEventsResponse, ErrorEvent> listEvents(
-      ListEventsRequest request) {
+  public final ListEventsPagedResponse listEvents(ListEventsRequest request) {
     return listEventsPagedCallable().call(request);
   }
 
@@ -373,7 +369,7 @@ public class ErrorStatsServiceApi implements AutoCloseable {
    *     .setProjectName(formattedProjectName)
    *     .setGroupId(groupId)
    *     .build();
-   *   ListenableFuture&lt;PagedListResponse&lt;ListEventsRequest,ListEventsResponse,ErrorEvent&gt;&gt; future = errorStatsServiceApi.listEventsPagedCallable().futureCall(request);
+   *   ListenableFuture&lt;ListEventsPagedResponse&gt; future = errorStatsServiceApi.listEventsPagedCallable().futureCall(request);
    *   // Do something
    *   for (ErrorEvent element : future.get().iterateAllElements()) {
    *     // doThingsWith(element);
@@ -381,8 +377,7 @@ public class ErrorStatsServiceApi implements AutoCloseable {
    * }
    * </code></pre>
    */
-  public final ApiCallable<
-          ListEventsRequest, PagedListResponse<ListEventsRequest, ListEventsResponse, ErrorEvent>>
+  public final UnaryApiCallable<ListEventsRequest, ListEventsPagedResponse>
       listEventsPagedCallable() {
     return listEventsPagedCallable;
   }
@@ -416,7 +411,7 @@ public class ErrorStatsServiceApi implements AutoCloseable {
    * }
    * </code></pre>
    */
-  public final ApiCallable<ListEventsRequest, ListEventsResponse> listEventsCallable() {
+  public final UnaryApiCallable<ListEventsRequest, ListEventsResponse> listEventsCallable() {
     return listEventsCallable;
   }
 
@@ -486,7 +481,7 @@ public class ErrorStatsServiceApi implements AutoCloseable {
    * }
    * </code></pre>
    */
-  public final ApiCallable<DeleteEventsRequest, DeleteEventsResponse> deleteEventsCallable() {
+  public final UnaryApiCallable<DeleteEventsRequest, DeleteEventsResponse> deleteEventsCallable() {
     return deleteEventsCallable;
   }
 

@@ -13,13 +13,18 @@
  */
 package com.google.cloud.logging.spi.v2;
 
+import static com.google.cloud.logging.spi.v2.PagedResponseWrappers.ListSinksPagedResponse;
+
 import com.google.api.gax.core.ConnectionSettings;
 import com.google.api.gax.core.RetrySettings;
-import com.google.api.gax.grpc.ApiCallSettings;
+import com.google.api.gax.grpc.CallContext;
 import com.google.api.gax.grpc.PageStreamingCallSettings;
 import com.google.api.gax.grpc.PageStreamingDescriptor;
+import com.google.api.gax.grpc.PagedListResponseFactory;
 import com.google.api.gax.grpc.ServiceApiSettings;
 import com.google.api.gax.grpc.SimpleCallSettings;
+import com.google.api.gax.grpc.UnaryApiCallSettings;
+import com.google.api.gax.grpc.UnaryApiCallable;
 import com.google.auth.Credentials;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -94,7 +99,8 @@ public class ConfigServiceV2Settings extends ServiceApiSettings {
           .provideCredentialsWith(DEFAULT_SERVICE_SCOPES)
           .build();
 
-  private final PageStreamingCallSettings<ListSinksRequest, ListSinksResponse, LogSink>
+  private final PageStreamingCallSettings<
+          ListSinksRequest, ListSinksResponse, ListSinksPagedResponse>
       listSinksSettings;
   private final SimpleCallSettings<GetSinkRequest, LogSink> getSinkSettings;
   private final SimpleCallSettings<CreateSinkRequest, LogSink> createSinkSettings;
@@ -102,7 +108,7 @@ public class ConfigServiceV2Settings extends ServiceApiSettings {
   private final SimpleCallSettings<DeleteSinkRequest, Empty> deleteSinkSettings;
 
   /** Returns the object with the settings used for calls to listSinks. */
-  public PageStreamingCallSettings<ListSinksRequest, ListSinksResponse, LogSink>
+  public PageStreamingCallSettings<ListSinksRequest, ListSinksResponse, ListSinksPagedResponse>
       listSinksSettings() {
     return listSinksSettings;
   }
@@ -207,11 +213,27 @@ public class ConfigServiceV2Settings extends ServiceApiSettings {
             }
           };
 
+  private static final PagedListResponseFactory<
+          ListSinksRequest, ListSinksResponse, ListSinksPagedResponse>
+      LIST_SINKS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListSinksRequest, ListSinksResponse, ListSinksPagedResponse>() {
+            @Override
+            public ListSinksPagedResponse createPagedListResponse(
+                UnaryApiCallable<ListSinksRequest, ListSinksResponse> callable,
+                ListSinksRequest request,
+                CallContext context) {
+              return new ListSinksPagedResponse(
+                  callable, LIST_SINKS_PAGE_STR_DESC, request, context);
+            }
+          };
+
   /** Builder for ConfigServiceV2Settings. */
   public static class Builder extends ServiceApiSettings.Builder {
-    private final ImmutableList<ApiCallSettings.Builder> methodSettingsBuilders;
+    private final ImmutableList<UnaryApiCallSettings.Builder> unaryMethodSettingsBuilders;
 
-    private final PageStreamingCallSettings.Builder<ListSinksRequest, ListSinksResponse, LogSink>
+    private final PageStreamingCallSettings.Builder<
+            ListSinksRequest, ListSinksResponse, ListSinksPagedResponse>
         listSinksSettings;
     private final SimpleCallSettings.Builder<GetSinkRequest, LogSink> getSinkSettings;
     private final SimpleCallSettings.Builder<CreateSinkRequest, LogSink> createSinkSettings;
@@ -254,7 +276,7 @@ public class ConfigServiceV2Settings extends ServiceApiSettings {
 
       listSinksSettings =
           PageStreamingCallSettings.newBuilder(
-              ConfigServiceV2Grpc.METHOD_LIST_SINKS, LIST_SINKS_PAGE_STR_DESC);
+              ConfigServiceV2Grpc.METHOD_LIST_SINKS, LIST_SINKS_PAGE_STR_FACT);
 
       getSinkSettings = SimpleCallSettings.newBuilder(ConfigServiceV2Grpc.METHOD_GET_SINK);
 
@@ -264,8 +286,8 @@ public class ConfigServiceV2Settings extends ServiceApiSettings {
 
       deleteSinkSettings = SimpleCallSettings.newBuilder(ConfigServiceV2Grpc.METHOD_DELETE_SINK);
 
-      methodSettingsBuilders =
-          ImmutableList.<ApiCallSettings.Builder>of(
+      unaryMethodSettingsBuilders =
+          ImmutableList.<UnaryApiCallSettings.Builder>of(
               listSinksSettings,
               getSinkSettings,
               createSinkSettings,
@@ -313,8 +335,8 @@ public class ConfigServiceV2Settings extends ServiceApiSettings {
       updateSinkSettings = settings.updateSinkSettings.toBuilder();
       deleteSinkSettings = settings.deleteSinkSettings.toBuilder();
 
-      methodSettingsBuilders =
-          ImmutableList.<ApiCallSettings.Builder>of(
+      unaryMethodSettingsBuilders =
+          ImmutableList.<UnaryApiCallSettings.Builder>of(
               listSinksSettings,
               getSinkSettings,
               createSinkSettings,
@@ -370,16 +392,20 @@ public class ConfigServiceV2Settings extends ServiceApiSettings {
     }
 
     /**
-     * Applies the given settings to all of the API methods in this service. Only values that are
-     * non-null will be applied, so this method is not capable of un-setting any values.
+     * Applies the given settings to all of the unary API methods in this service. Only values that
+     * are non-null will be applied, so this method is not capable of un-setting any values.
+     *
+     * <p>Note: This method does not support applying settings to streaming methods.
      */
-    public Builder applyToAllApiMethods(ApiCallSettings.Builder apiCallSettings) throws Exception {
-      super.applyToAllApiMethods(methodSettingsBuilders, apiCallSettings);
+    public Builder applyToAllApiMethods(UnaryApiCallSettings.Builder apiCallSettings)
+        throws Exception {
+      super.applyToAllApiMethods(unaryMethodSettingsBuilders, apiCallSettings);
       return this;
     }
 
     /** Returns the builder for the settings used for calls to listSinks. */
-    public PageStreamingCallSettings.Builder<ListSinksRequest, ListSinksResponse, LogSink>
+    public PageStreamingCallSettings.Builder<
+            ListSinksRequest, ListSinksResponse, ListSinksPagedResponse>
         listSinksSettings() {
       return listSinksSettings;
     }

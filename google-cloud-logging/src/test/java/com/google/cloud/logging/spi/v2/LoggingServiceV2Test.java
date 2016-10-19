@@ -14,8 +14,9 @@
 
 package com.google.cloud.logging.spi.v2;
 
+import static com.google.cloud.logging.spi.v2.PagedResponseWrappers.ListLogEntriesPagedResponse;
+
 import com.google.api.MonitoredResource;
-import com.google.api.gax.core.PagedListResponse;
 import com.google.api.gax.testing.MockGrpcService;
 import com.google.api.gax.testing.MockServiceHelper;
 import com.google.common.collect.Lists;
@@ -146,8 +147,7 @@ public class LoggingServiceV2Test {
     String filter = "filter-1274492040";
     String orderBy = "orderBy1234304744";
 
-    PagedListResponse<ListLogEntriesRequest, ListLogEntriesResponse, LogEntry> pagedListResponse =
-        api.listLogEntries(projectIds, filter, orderBy);
+    ListLogEntriesPagedResponse pagedListResponse = api.listLogEntries(projectIds, filter, orderBy);
 
     List<LogEntry> resources = Lists.newArrayList(pagedListResponse.iterateAllElements());
     Assert.assertEquals(1, resources.size());

@@ -15,9 +15,9 @@ package com.google.cloud.errorreporting.spi.v1beta1;
 
 import com.google.api.gax.core.ConnectionSettings;
 import com.google.api.gax.core.RetrySettings;
-import com.google.api.gax.grpc.ApiCallSettings;
 import com.google.api.gax.grpc.ServiceApiSettings;
 import com.google.api.gax.grpc.SimpleCallSettings;
+import com.google.api.gax.grpc.UnaryApiCallSettings;
 import com.google.auth.Credentials;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -134,7 +134,7 @@ public class ReportErrorsServiceSettings extends ServiceApiSettings {
 
   /** Builder for ReportErrorsServiceSettings. */
   public static class Builder extends ServiceApiSettings.Builder {
-    private final ImmutableList<ApiCallSettings.Builder> methodSettingsBuilders;
+    private final ImmutableList<UnaryApiCallSettings.Builder> unaryMethodSettingsBuilders;
 
     private final SimpleCallSettings.Builder<ReportErrorEventRequest, ReportErrorEventResponse>
         reportErrorEventSettings;
@@ -176,7 +176,8 @@ public class ReportErrorsServiceSettings extends ServiceApiSettings {
       reportErrorEventSettings =
           SimpleCallSettings.newBuilder(ReportErrorsServiceGrpc.METHOD_REPORT_ERROR_EVENT);
 
-      methodSettingsBuilders = ImmutableList.<ApiCallSettings.Builder>of(reportErrorEventSettings);
+      unaryMethodSettingsBuilders =
+          ImmutableList.<UnaryApiCallSettings.Builder>of(reportErrorEventSettings);
     }
 
     private static Builder createDefault() {
@@ -195,7 +196,8 @@ public class ReportErrorsServiceSettings extends ServiceApiSettings {
 
       reportErrorEventSettings = settings.reportErrorEventSettings.toBuilder();
 
-      methodSettingsBuilders = ImmutableList.<ApiCallSettings.Builder>of(reportErrorEventSettings);
+      unaryMethodSettingsBuilders =
+          ImmutableList.<UnaryApiCallSettings.Builder>of(reportErrorEventSettings);
     }
 
     @Override
@@ -246,11 +248,14 @@ public class ReportErrorsServiceSettings extends ServiceApiSettings {
     }
 
     /**
-     * Applies the given settings to all of the API methods in this service. Only values that are
-     * non-null will be applied, so this method is not capable of un-setting any values.
+     * Applies the given settings to all of the unary API methods in this service. Only values that
+     * are non-null will be applied, so this method is not capable of un-setting any values.
+     *
+     * <p>Note: This method does not support applying settings to streaming methods.
      */
-    public Builder applyToAllApiMethods(ApiCallSettings.Builder apiCallSettings) throws Exception {
-      super.applyToAllApiMethods(methodSettingsBuilders, apiCallSettings);
+    public Builder applyToAllApiMethods(UnaryApiCallSettings.Builder apiCallSettings)
+        throws Exception {
+      super.applyToAllApiMethods(unaryMethodSettingsBuilders, apiCallSettings);
       return this;
     }
 

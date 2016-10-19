@@ -13,7 +13,7 @@
  */
 package com.google.cloud.errorreporting.spi.v1beta1;
 
-import com.google.api.gax.grpc.ApiCallable;
+import com.google.api.gax.grpc.UnaryApiCallable;
 import com.google.api.gax.protobuf.PathTemplate;
 import com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest;
 import com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse;
@@ -56,8 +56,8 @@ import java.util.concurrent.ScheduledExecutorService;
  *   <li> A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li> A "callable" method. This type of method takes no parameters and returns an immutable
- *       ApiCallable object, which can be used to initiate calls to the service.
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
+ *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
  * <p>See the individual methods for example code.
@@ -85,7 +85,7 @@ public class ReportErrorsServiceApi implements AutoCloseable {
   private final ScheduledExecutorService executor;
   private final List<AutoCloseable> closeables = new ArrayList<>();
 
-  private final ApiCallable<ReportErrorEventRequest, ReportErrorEventResponse>
+  private final UnaryApiCallable<ReportErrorEventRequest, ReportErrorEventResponse>
       reportErrorEventCallable;
 
   private static final PathTemplate PROJECT_PATH_TEMPLATE =
@@ -126,7 +126,7 @@ public class ReportErrorsServiceApi implements AutoCloseable {
     this.channel = settings.getChannelProvider().getOrBuildChannel(this.executor);
 
     this.reportErrorEventCallable =
-        ApiCallable.create(settings.reportErrorEventSettings(), this.channel, this.executor);
+        UnaryApiCallable.create(settings.reportErrorEventSettings(), this.channel, this.executor);
 
     if (settings.getChannelProvider().shouldAutoClose()) {
       closeables.add(
@@ -246,7 +246,7 @@ public class ReportErrorsServiceApi implements AutoCloseable {
    * }
    * </code></pre>
    */
-  public final ApiCallable<ReportErrorEventRequest, ReportErrorEventResponse>
+  public final UnaryApiCallable<ReportErrorEventRequest, ReportErrorEventResponse>
       reportErrorEventCallable() {
     return reportErrorEventCallable;
   }

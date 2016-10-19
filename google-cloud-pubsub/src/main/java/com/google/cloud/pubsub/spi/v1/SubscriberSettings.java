@@ -13,13 +13,18 @@
  */
 package com.google.cloud.pubsub.spi.v1;
 
+import static com.google.cloud.pubsub.spi.v1.PagedResponseWrappers.ListSubscriptionsPagedResponse;
+
 import com.google.api.gax.core.ConnectionSettings;
 import com.google.api.gax.core.RetrySettings;
-import com.google.api.gax.grpc.ApiCallSettings;
+import com.google.api.gax.grpc.CallContext;
 import com.google.api.gax.grpc.PageStreamingCallSettings;
 import com.google.api.gax.grpc.PageStreamingDescriptor;
+import com.google.api.gax.grpc.PagedListResponseFactory;
 import com.google.api.gax.grpc.ServiceApiSettings;
 import com.google.api.gax.grpc.SimpleCallSettings;
+import com.google.api.gax.grpc.UnaryApiCallSettings;
+import com.google.api.gax.grpc.UnaryApiCallable;
 import com.google.auth.Credentials;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -103,7 +108,7 @@ public class SubscriberSettings extends ServiceApiSettings {
   private final SimpleCallSettings<Subscription, Subscription> createSubscriptionSettings;
   private final SimpleCallSettings<GetSubscriptionRequest, Subscription> getSubscriptionSettings;
   private final PageStreamingCallSettings<
-          ListSubscriptionsRequest, ListSubscriptionsResponse, Subscription>
+          ListSubscriptionsRequest, ListSubscriptionsResponse, ListSubscriptionsPagedResponse>
       listSubscriptionsSettings;
   private final SimpleCallSettings<DeleteSubscriptionRequest, Empty> deleteSubscriptionSettings;
   private final SimpleCallSettings<ModifyAckDeadlineRequest, Empty> modifyAckDeadlineSettings;
@@ -127,7 +132,7 @@ public class SubscriberSettings extends ServiceApiSettings {
 
   /** Returns the object with the settings used for calls to listSubscriptions. */
   public PageStreamingCallSettings<
-          ListSubscriptionsRequest, ListSubscriptionsResponse, Subscription>
+          ListSubscriptionsRequest, ListSubscriptionsResponse, ListSubscriptionsPagedResponse>
       listSubscriptionsSettings() {
     return listSubscriptionsSettings;
   }
@@ -265,15 +270,31 @@ public class SubscriberSettings extends ServiceApiSettings {
             }
           };
 
+  private static final PagedListResponseFactory<
+          ListSubscriptionsRequest, ListSubscriptionsResponse, ListSubscriptionsPagedResponse>
+      LIST_SUBSCRIPTIONS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListSubscriptionsRequest, ListSubscriptionsResponse,
+              ListSubscriptionsPagedResponse>() {
+            @Override
+            public ListSubscriptionsPagedResponse createPagedListResponse(
+                UnaryApiCallable<ListSubscriptionsRequest, ListSubscriptionsResponse> callable,
+                ListSubscriptionsRequest request,
+                CallContext context) {
+              return new ListSubscriptionsPagedResponse(
+                  callable, LIST_SUBSCRIPTIONS_PAGE_STR_DESC, request, context);
+            }
+          };
+
   /** Builder for SubscriberSettings. */
   public static class Builder extends ServiceApiSettings.Builder {
-    private final ImmutableList<ApiCallSettings.Builder> methodSettingsBuilders;
+    private final ImmutableList<UnaryApiCallSettings.Builder> unaryMethodSettingsBuilders;
 
     private final SimpleCallSettings.Builder<Subscription, Subscription> createSubscriptionSettings;
     private final SimpleCallSettings.Builder<GetSubscriptionRequest, Subscription>
         getSubscriptionSettings;
     private final PageStreamingCallSettings.Builder<
-            ListSubscriptionsRequest, ListSubscriptionsResponse, Subscription>
+            ListSubscriptionsRequest, ListSubscriptionsResponse, ListSubscriptionsPagedResponse>
         listSubscriptionsSettings;
     private final SimpleCallSettings.Builder<DeleteSubscriptionRequest, Empty>
         deleteSubscriptionSettings;
@@ -340,7 +361,7 @@ public class SubscriberSettings extends ServiceApiSettings {
 
       listSubscriptionsSettings =
           PageStreamingCallSettings.newBuilder(
-              SubscriberGrpc.METHOD_LIST_SUBSCRIPTIONS, LIST_SUBSCRIPTIONS_PAGE_STR_DESC);
+              SubscriberGrpc.METHOD_LIST_SUBSCRIPTIONS, LIST_SUBSCRIPTIONS_PAGE_STR_FACT);
 
       deleteSubscriptionSettings =
           SimpleCallSettings.newBuilder(SubscriberGrpc.METHOD_DELETE_SUBSCRIPTION);
@@ -362,8 +383,8 @@ public class SubscriberSettings extends ServiceApiSettings {
       testIamPermissionsSettings =
           SimpleCallSettings.newBuilder(IAMPolicyGrpc.METHOD_TEST_IAM_PERMISSIONS);
 
-      methodSettingsBuilders =
-          ImmutableList.<ApiCallSettings.Builder>of(
+      unaryMethodSettingsBuilders =
+          ImmutableList.<UnaryApiCallSettings.Builder>of(
               createSubscriptionSettings,
               getSubscriptionSettings,
               listSubscriptionsSettings,
@@ -453,8 +474,8 @@ public class SubscriberSettings extends ServiceApiSettings {
       getIamPolicySettings = settings.getIamPolicySettings.toBuilder();
       testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
 
-      methodSettingsBuilders =
-          ImmutableList.<ApiCallSettings.Builder>of(
+      unaryMethodSettingsBuilders =
+          ImmutableList.<UnaryApiCallSettings.Builder>of(
               createSubscriptionSettings,
               getSubscriptionSettings,
               listSubscriptionsSettings,
@@ -516,11 +537,14 @@ public class SubscriberSettings extends ServiceApiSettings {
     }
 
     /**
-     * Applies the given settings to all of the API methods in this service. Only values that are
-     * non-null will be applied, so this method is not capable of un-setting any values.
+     * Applies the given settings to all of the unary API methods in this service. Only values that
+     * are non-null will be applied, so this method is not capable of un-setting any values.
+     *
+     * <p>Note: This method does not support applying settings to streaming methods.
      */
-    public Builder applyToAllApiMethods(ApiCallSettings.Builder apiCallSettings) throws Exception {
-      super.applyToAllApiMethods(methodSettingsBuilders, apiCallSettings);
+    public Builder applyToAllApiMethods(UnaryApiCallSettings.Builder apiCallSettings)
+        throws Exception {
+      super.applyToAllApiMethods(unaryMethodSettingsBuilders, apiCallSettings);
       return this;
     }
 
@@ -537,7 +561,7 @@ public class SubscriberSettings extends ServiceApiSettings {
 
     /** Returns the builder for the settings used for calls to listSubscriptions. */
     public PageStreamingCallSettings.Builder<
-            ListSubscriptionsRequest, ListSubscriptionsResponse, Subscription>
+            ListSubscriptionsRequest, ListSubscriptionsResponse, ListSubscriptionsPagedResponse>
         listSubscriptionsSettings() {
       return listSubscriptionsSettings;
     }
