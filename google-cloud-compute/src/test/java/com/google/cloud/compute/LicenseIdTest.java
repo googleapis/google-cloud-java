@@ -39,6 +39,17 @@ public class LicenseIdTest {
   @Test
   public void testOf() {
     LicenseId licenseId = LicenseId.of(PROJECT, LICENSE);
+    assertEquals(PROJECT, licenseId.getProject());
+    assertEquals(LICENSE, licenseId.getLicense());
+    assertEquals(URL, licenseId.getSelfLink());
+    licenseId = LicenseId.of(LICENSE);
+    assertNull(licenseId.getProject());
+    assertEquals(LICENSE, licenseId.getLicense());
+  }
+
+  @Test
+  public void testOfDeprecated() {
+    LicenseId licenseId = LicenseId.of(PROJECT, LICENSE);
     assertEquals(PROJECT, licenseId.project());
     assertEquals(LICENSE, licenseId.license());
     assertEquals(URL, licenseId.selfLink());
@@ -50,7 +61,7 @@ public class LicenseIdTest {
   @Test
   public void testToAndFromUrl() {
     LicenseId licenseId = LicenseId.of(PROJECT, LICENSE);
-    compareLicenseId(licenseId, LicenseId.fromUrl(licenseId.selfLink()));
+    compareLicenseId(licenseId, LicenseId.fromUrl(licenseId.getSelfLink()));
   }
 
   @Test
@@ -65,15 +76,15 @@ public class LicenseIdTest {
 
   @Test
   public void testMatchesUrl() {
-    assertTrue(LicenseId.matchesUrl(LicenseId.of(PROJECT, LICENSE).selfLink()));
+    assertTrue(LicenseId.matchesUrl(LicenseId.of(PROJECT, LICENSE).getSelfLink()));
     assertFalse(LicenseId.matchesUrl("notMatchingUrl"));
   }
 
   private void compareLicenseId(LicenseId expected, LicenseId value) {
     assertEquals(expected, value);
-    assertEquals(expected.project(), expected.project());
-    assertEquals(expected.license(), expected.license());
-    assertEquals(expected.selfLink(), expected.selfLink());
+    assertEquals(expected.getProject(), expected.getProject());
+    assertEquals(expected.getLicense(), expected.getLicense());
+    assertEquals(expected.getSelfLink(), expected.getSelfLink());
     assertEquals(expected.hashCode(), expected.hashCode());
   }
 }

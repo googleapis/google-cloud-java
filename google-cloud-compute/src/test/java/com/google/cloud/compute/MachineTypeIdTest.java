@@ -40,6 +40,19 @@ public class MachineTypeIdTest {
   @Test
   public void testOf() {
     MachineTypeId machineTypeId = MachineTypeId.of(PROJECT, ZONE, TYPE);
+    assertEquals(PROJECT, machineTypeId.getProject());
+    assertEquals(ZONE, machineTypeId.getZone());
+    assertEquals(TYPE, machineTypeId.getType());
+    assertEquals(URL, machineTypeId.getSelfLink());
+    machineTypeId = MachineTypeId.of(ZONE, TYPE);
+    assertNull(machineTypeId.getProject());
+    assertEquals(ZONE, machineTypeId.getZone());
+    assertEquals(TYPE, machineTypeId.getType());
+  }
+
+  @Test
+  public void testOfDeprecated() {
+    MachineTypeId machineTypeId = MachineTypeId.of(PROJECT, ZONE, TYPE);
     assertEquals(PROJECT, machineTypeId.project());
     assertEquals(ZONE, machineTypeId.zone());
     assertEquals(TYPE, machineTypeId.type());
@@ -53,7 +66,7 @@ public class MachineTypeIdTest {
   @Test
   public void testToAndFromUrl() {
     MachineTypeId machineTypeId = MachineTypeId.of(PROJECT, ZONE, TYPE);
-    compareMachineTypeId(machineTypeId, MachineTypeId.fromUrl(machineTypeId.selfLink()));
+    compareMachineTypeId(machineTypeId, MachineTypeId.fromUrl(machineTypeId.getSelfLink()));
     thrown.expect(IllegalArgumentException.class);
     thrown.expectMessage("notMatchingUrl is not a valid machine type URL");
     MachineTypeId.fromUrl("notMatchingUrl");
@@ -68,16 +81,16 @@ public class MachineTypeIdTest {
 
   @Test
   public void testMatchesUrl() {
-    assertTrue(MachineTypeId.matchesUrl(MachineTypeId.of(PROJECT, ZONE, TYPE).selfLink()));
+    assertTrue(MachineTypeId.matchesUrl(MachineTypeId.of(PROJECT, ZONE, TYPE).getSelfLink()));
     assertFalse(MachineTypeId.matchesUrl("notMatchingUrl"));
   }
 
   private void compareMachineTypeId(MachineTypeId expected, MachineTypeId value) {
     assertEquals(expected, value);
-    assertEquals(expected.project(), expected.project());
-    assertEquals(expected.zone(), expected.zone());
-    assertEquals(expected.type(), expected.type());
-    assertEquals(expected.selfLink(), expected.selfLink());
+    assertEquals(expected.getProject(), expected.getProject());
+    assertEquals(expected.getZone(), expected.getZone());
+    assertEquals(expected.getType(), expected.getType());
+    assertEquals(expected.getSelfLink(), expected.getSelfLink());
     assertEquals(expected.hashCode(), expected.hashCode());
   }
 }

@@ -30,18 +30,29 @@ public class DiskTypeTest {
   private static final DiskTypeId DISK_TYPE_ID = DiskTypeId.of("project", "zone", "diskType");
   private static final DeprecationStatus<DiskTypeId> DEPRECATION_STATUS =
       DeprecationStatus.of(DeprecationStatus.Status.DELETED, DISK_TYPE_ID);
-  private static final DiskType DISK_TYPE = DiskType.builder()
-      .generatedId(GENERATED_ID)
-      .diskTypeId(DISK_TYPE_ID)
-      .creationTimestamp(CREATION_TIMESTAMP)
-      .description(DESCRIPTION)
-      .validDiskSize(VALID_DISK_SIZE)
-      .defaultDiskSizeGb(DEFAULT_DISK_SIZE_GB)
-      .deprecationStatus(DEPRECATION_STATUS)
+  private static final DiskType DISK_TYPE = DiskType.newBuilder()
+      .setGeneratedId(GENERATED_ID)
+      .setDiskTypeId(DISK_TYPE_ID)
+      .setCreationTimestamp(CREATION_TIMESTAMP)
+      .setDescription(DESCRIPTION)
+      .setValidDiskSize(VALID_DISK_SIZE)
+      .setDefaultDiskSizeGb(DEFAULT_DISK_SIZE_GB)
+      .setDeprecationStatus(DEPRECATION_STATUS)
       .build();
 
   @Test
   public void testBuilder() {
+    assertEquals(GENERATED_ID, DISK_TYPE.getGeneratedId());
+    assertEquals(DISK_TYPE_ID, DISK_TYPE.getDiskTypeId());
+    assertEquals(CREATION_TIMESTAMP, DISK_TYPE.getCreationTimestamp());
+    assertEquals(DESCRIPTION, DISK_TYPE.getDescription());
+    assertEquals(VALID_DISK_SIZE, DISK_TYPE.getValidDiskSize());
+    assertEquals(DEFAULT_DISK_SIZE_GB, DISK_TYPE.getDefaultDiskSizeGb());
+    assertEquals(DEPRECATION_STATUS, DISK_TYPE.getDeprecationStatus());
+  }
+
+  @Test
+  public void testBuilderDeprecated() {
     assertEquals(GENERATED_ID, DISK_TYPE.generatedId());
     assertEquals(DISK_TYPE_ID, DISK_TYPE.diskTypeId());
     assertEquals(CREATION_TIMESTAMP, DISK_TYPE.creationTimestamp());
@@ -54,19 +65,19 @@ public class DiskTypeTest {
   @Test
   public void testToPbAndFromPb() {
     compareDiskTypes(DISK_TYPE, DiskType.fromPb(DISK_TYPE.toPb()));
-    DiskType diskType = DiskType.builder().diskTypeId(DISK_TYPE_ID).build();
+    DiskType diskType = DiskType.newBuilder().setDiskTypeId(DISK_TYPE_ID).build();
     compareDiskTypes(diskType, DiskType.fromPb(diskType.toPb()));
   }
 
   private void compareDiskTypes(DiskType expected, DiskType value) {
     assertEquals(expected, value);
-    assertEquals(expected.generatedId(), value.generatedId());
-    assertEquals(expected.diskTypeId(), value.diskTypeId());
-    assertEquals(expected.creationTimestamp(), value.creationTimestamp());
-    assertEquals(expected.description(), value.description());
-    assertEquals(expected.validDiskSize(), value.validDiskSize());
-    assertEquals(expected.defaultDiskSizeGb(), value.defaultDiskSizeGb());
-    assertEquals(expected.deprecationStatus(), value.deprecationStatus());
+    assertEquals(expected.getGeneratedId(), value.getGeneratedId());
+    assertEquals(expected.getDiskTypeId(), value.getDiskTypeId());
+    assertEquals(expected.getCreationTimestamp(), value.getCreationTimestamp());
+    assertEquals(expected.getDescription(), value.getDescription());
+    assertEquals(expected.getValidDiskSize(), value.getValidDiskSize());
+    assertEquals(expected.getDefaultDiskSizeGb(), value.getDefaultDiskSizeGb());
+    assertEquals(expected.getDeprecationStatus(), value.getDeprecationStatus());
     assertEquals(expected.hashCode(), value.hashCode());
   }
 }

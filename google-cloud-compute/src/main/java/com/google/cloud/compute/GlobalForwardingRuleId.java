@@ -37,7 +37,7 @@ public final class GlobalForwardingRuleId extends ForwardingRuleId {
       new Function<GlobalForwardingRuleId, String>() {
         @Override
         public String apply(GlobalForwardingRuleId forwardingRuleId) {
-          return forwardingRuleId.selfLink();
+          return forwardingRuleId.getSelfLink();
         }
       };
 
@@ -50,13 +50,25 @@ public final class GlobalForwardingRuleId extends ForwardingRuleId {
   }
 
   @Override
+  @Deprecated
   public Type type() {
+    return getType();
+  }
+
+  @Override
+  public Type getType() {
     return Type.GLOBAL;
   }
 
   @Override
+  @Deprecated
   public String selfLink() {
-    return super.selfLink() + "/global/forwardingRules/" + rule();
+    return getSelfLink();
+  }
+
+  @Override
+  public String getSelfLink() {
+    return super.getSelfLink() + "/global/forwardingRules/" + getRule();
   }
 
   @Override
@@ -73,10 +85,10 @@ public final class GlobalForwardingRuleId extends ForwardingRuleId {
 
   @Override
   GlobalForwardingRuleId setProjectId(String projectId) {
-    if (project() != null) {
+    if (getProject() != null) {
       return this;
     }
-    return GlobalForwardingRuleId.of(projectId, rule());
+    return GlobalForwardingRuleId.of(projectId, getRule());
   }
 
   /**

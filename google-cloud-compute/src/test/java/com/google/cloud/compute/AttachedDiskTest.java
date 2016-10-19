@@ -47,14 +47,50 @@ public class AttachedDiskTest {
   private static final PersistentDiskConfiguration.Mode MODE =
           PersistentDiskConfiguration.Mode.READ_ONLY;
   private static final PersistentDiskConfiguration PERSISTENT_DISK_CONFIGURATION =
+      PersistentDiskConfiguration.newBuilder(DISK_ID)
+          .setBoot(BOOT)
+          .setAutoDelete(AUTO_DELETE)
+          .setMode(MODE)
+          .build();
+  private static final ScratchDiskConfiguration SCRATCH_DISK_CONFIGURATION =
+      ScratchDiskConfiguration.newBuilder(DISK_TYPE_ID).setInterfaceType(INTERFACE_TYPE).build();
+  private static final CreateDiskConfiguration CREATE_DISK_CONFIGURATION =
+      CreateDiskConfiguration.newBuilder(IMAGE_ID)
+          .setAutoDelete(AUTO_DELETE)
+          .setDiskName(DISK_NAME)
+          .setDiskType(DISK_TYPE_ID)
+          .setDiskSizeGb(DISK_SIZE_GB)
+          .setSourceImage(IMAGE_ID)
+          .build();
+  private static final List<LicenseId> LICENSES = ImmutableList.of(
+      LicenseId.of("project", "license1"), LicenseId.of("project", "license2"));
+  private static final AttachedDisk PERSISTENT_DISK =
+      AttachedDisk.newBuilder(PERSISTENT_DISK_CONFIGURATION)
+          .setDeviceName(DEVICE_NAME)
+          .setIndex(INDEX)
+          .setLicenses(LICENSES)
+          .build();
+  private static final AttachedDisk SCRATCH_DISK  =
+      AttachedDisk.newBuilder(SCRATCH_DISK_CONFIGURATION)
+          .setDeviceName(DEVICE_NAME)
+          .setIndex(INDEX)
+          .setLicenses(LICENSES)
+          .build();
+  private static final AttachedDisk CREATED_DISK  =
+      AttachedDisk.newBuilder(CREATE_DISK_CONFIGURATION)
+          .setDeviceName(DEVICE_NAME)
+          .setIndex(INDEX)
+          .setLicenses(LICENSES)
+          .build();
+  private static final PersistentDiskConfiguration DEPRECATED_PERSISTENT_DISK_CONFIGURATION =
       PersistentDiskConfiguration.builder(DISK_ID)
           .boot(BOOT)
           .autoDelete(AUTO_DELETE)
           .mode(MODE)
           .build();
-  private static final ScratchDiskConfiguration SCRATCH_DISK_CONFIGURATION =
+  private static final ScratchDiskConfiguration DEPRECATED_SCRATCH_DISK_CONFIGURATION =
       ScratchDiskConfiguration.builder(DISK_TYPE_ID).interfaceType(INTERFACE_TYPE).build();
-  private static final CreateDiskConfiguration CREATE_DISK_CONFIGURATION =
+  private static final CreateDiskConfiguration DEPRECATED_CREATE_DISK_CONFIGURATION =
       CreateDiskConfiguration.builder(IMAGE_ID)
           .autoDelete(AUTO_DELETE)
           .diskName(DISK_NAME)
@@ -62,25 +98,23 @@ public class AttachedDiskTest {
           .diskSizeGb(DISK_SIZE_GB)
           .sourceImage(IMAGE_ID)
           .build();
-  private static final List<LicenseId> LICENSES = ImmutableList.of(
-      LicenseId.of("project", "license1"), LicenseId.of("project", "license2"));
-  private static final AttachedDisk PERSISTENT_DISK =
+  private static final AttachedDisk DEPRECATED_PERSISTENT_DISK =
       AttachedDisk.builder(PERSISTENT_DISK_CONFIGURATION)
           .deviceName(DEVICE_NAME)
           .index(INDEX)
-          .licenses(LICENSES)
+          .setLicenses(LICENSES)
           .build();
-  private static final AttachedDisk SCRATCH_DISK  =
+  private static final AttachedDisk DEPRECATED_SCRATCH_DISK  =
       AttachedDisk.builder(SCRATCH_DISK_CONFIGURATION)
           .deviceName(DEVICE_NAME)
           .index(INDEX)
-          .licenses(LICENSES)
+          .setLicenses(LICENSES)
           .build();
-  private static final AttachedDisk CREATED_DISK  =
+  private static final AttachedDisk DEPRECATED_CREATED_DISK  =
       AttachedDisk.builder(CREATE_DISK_CONFIGURATION)
           .deviceName(DEVICE_NAME)
           .index(INDEX)
-          .licenses(LICENSES)
+          .setLicenses(LICENSES)
           .build();
 
   @Test
@@ -92,21 +126,22 @@ public class AttachedDiskTest {
     compareCreateDiskConfiguration(CREATE_DISK_CONFIGURATION,
         CREATE_DISK_CONFIGURATION.toBuilder().build());
     PersistentDiskConfiguration persistentDiskConfiguration =
-        PERSISTENT_DISK_CONFIGURATION.toBuilder().autoDelete(false).build();
+        PERSISTENT_DISK_CONFIGURATION.toBuilder().setAutoDelete(false).build();
     assertFalse(persistentDiskConfiguration.autoDelete());
     persistentDiskConfiguration =
-        persistentDiskConfiguration.toBuilder().autoDelete(AUTO_DELETE).build();
+        persistentDiskConfiguration.toBuilder().setAutoDelete(AUTO_DELETE).build();
     assertEquals(PERSISTENT_DISK_CONFIGURATION, persistentDiskConfiguration);
     ScratchDiskConfiguration scratchDiskConfiguration =
-        SCRATCH_DISK_CONFIGURATION.toBuilder().interfaceType(InterfaceType.SCSI).build();
-    assertEquals(InterfaceType.SCSI, scratchDiskConfiguration.interfaceType());
+        SCRATCH_DISK_CONFIGURATION.toBuilder().setInterfaceType(InterfaceType.SCSI).build();
+    assertEquals(InterfaceType.SCSI, scratchDiskConfiguration.getInterfaceType());
     scratchDiskConfiguration =
-        scratchDiskConfiguration.toBuilder().interfaceType(INTERFACE_TYPE).build();
+        scratchDiskConfiguration.toBuilder().setInterfaceType(INTERFACE_TYPE).build();
     assertEquals(SCRATCH_DISK_CONFIGURATION, scratchDiskConfiguration);
     CreateDiskConfiguration createDiskConfiguration =
-        CREATE_DISK_CONFIGURATION.toBuilder().autoDelete(false).build();
+        CREATE_DISK_CONFIGURATION.toBuilder().setAutoDelete(false).build();
     assertFalse(createDiskConfiguration.autoDelete());
-    createDiskConfiguration = createDiskConfiguration.toBuilder().autoDelete(AUTO_DELETE).build();
+    createDiskConfiguration =
+        createDiskConfiguration.toBuilder().setAutoDelete(AUTO_DELETE).build();
     assertEquals(CREATE_DISK_CONFIGURATION, createDiskConfiguration);
   }
 
@@ -131,9 +166,9 @@ public class AttachedDiskTest {
     compareAttachedDisk(PERSISTENT_DISK, PERSISTENT_DISK.toBuilder().build());
     compareAttachedDisk(SCRATCH_DISK, SCRATCH_DISK.toBuilder().build());
     compareAttachedDisk(CREATED_DISK, CREATED_DISK.toBuilder().build());
-    AttachedDisk attachedDisk = PERSISTENT_DISK.toBuilder().deviceName("newDeviceName").build();
-    assertEquals("newDeviceName", attachedDisk.deviceName());
-    attachedDisk = attachedDisk.toBuilder().deviceName(DEVICE_NAME).build();
+    AttachedDisk attachedDisk = PERSISTENT_DISK.toBuilder().setDeviceName("newDeviceName").build();
+    assertEquals("newDeviceName", attachedDisk.getDeviceName());
+    attachedDisk = attachedDisk.toBuilder().setDeviceName(DEVICE_NAME).build();
     compareAttachedDisk(PERSISTENT_DISK, attachedDisk);
   }
 
@@ -151,103 +186,145 @@ public class AttachedDiskTest {
   public void testConfigurationBuilder() {
     assertTrue(CREATE_DISK_CONFIGURATION.boot());
     assertEquals(AUTO_DELETE, CREATE_DISK_CONFIGURATION.autoDelete());
-    assertNull(CREATE_DISK_CONFIGURATION.interfaceType());
-    assertEquals(Type.PERSISTENT, CREATE_DISK_CONFIGURATION.type());
-    assertEquals(IMAGE_ID, CREATE_DISK_CONFIGURATION.sourceImage());
-    assertEquals(DISK_NAME, CREATE_DISK_CONFIGURATION.diskName());
-    assertEquals(DISK_TYPE_ID, CREATE_DISK_CONFIGURATION.diskType());
-    assertEquals(DISK_SIZE_GB, CREATE_DISK_CONFIGURATION.diskSizeGb());
-    assertEquals(IMAGE_ID, CREATE_DISK_CONFIGURATION.sourceImage());
+    assertNull(CREATE_DISK_CONFIGURATION.getInterfaceType());
+    assertEquals(Type.PERSISTENT, CREATE_DISK_CONFIGURATION.getType());
+    assertEquals(IMAGE_ID, CREATE_DISK_CONFIGURATION.getSourceImage());
+    assertEquals(DISK_NAME, CREATE_DISK_CONFIGURATION.getDiskName());
+    assertEquals(DISK_TYPE_ID, CREATE_DISK_CONFIGURATION.getDiskType());
+    assertEquals(DISK_SIZE_GB, CREATE_DISK_CONFIGURATION.getDiskSizeGb());
+    assertEquals(IMAGE_ID, CREATE_DISK_CONFIGURATION.getSourceImage());
 
     assertEquals(BOOT, PERSISTENT_DISK_CONFIGURATION.boot());
     assertEquals(AUTO_DELETE, PERSISTENT_DISK_CONFIGURATION.autoDelete());
-    assertNull(PERSISTENT_DISK_CONFIGURATION.interfaceType());
-    assertEquals(Type.PERSISTENT, PERSISTENT_DISK_CONFIGURATION.type());
-    assertEquals(MODE, PERSISTENT_DISK_CONFIGURATION.mode());
-    assertEquals(DISK_ID, PERSISTENT_DISK_CONFIGURATION.sourceDisk());
+    assertNull(PERSISTENT_DISK_CONFIGURATION.getInterfaceType());
+    assertEquals(Type.PERSISTENT, PERSISTENT_DISK_CONFIGURATION.getType());
+    assertEquals(MODE, PERSISTENT_DISK_CONFIGURATION.getMode());
+    assertEquals(DISK_ID, PERSISTENT_DISK_CONFIGURATION.getSourceDisk());
 
     assertFalse(SCRATCH_DISK_CONFIGURATION.boot());
     assertTrue(SCRATCH_DISK_CONFIGURATION.autoDelete());
-    assertEquals(INTERFACE_TYPE, SCRATCH_DISK_CONFIGURATION.interfaceType());
-    assertEquals(Type.SCRATCH, SCRATCH_DISK_CONFIGURATION.type());
-    assertEquals(DISK_TYPE_ID, SCRATCH_DISK_CONFIGURATION.diskType());
+    assertEquals(INTERFACE_TYPE, SCRATCH_DISK_CONFIGURATION.getInterfaceType());
+    assertEquals(Type.SCRATCH, SCRATCH_DISK_CONFIGURATION.getType());
+    assertEquals(DISK_TYPE_ID, SCRATCH_DISK_CONFIGURATION.getDiskType());
+  }
+
+  @Test
+  public void testConfigurationBuilderDeprecated() {
+    assertTrue(DEPRECATED_CREATE_DISK_CONFIGURATION.boot());
+    assertEquals(AUTO_DELETE, DEPRECATED_CREATE_DISK_CONFIGURATION.autoDelete());
+    assertNull(DEPRECATED_CREATE_DISK_CONFIGURATION.interfaceType());
+    assertEquals(Type.PERSISTENT, DEPRECATED_CREATE_DISK_CONFIGURATION.type());
+    assertEquals(IMAGE_ID, DEPRECATED_CREATE_DISK_CONFIGURATION.sourceImage());
+    assertEquals(DISK_NAME, DEPRECATED_CREATE_DISK_CONFIGURATION.diskName());
+    assertEquals(DISK_TYPE_ID, DEPRECATED_CREATE_DISK_CONFIGURATION.diskType());
+    assertEquals(DISK_SIZE_GB, DEPRECATED_CREATE_DISK_CONFIGURATION.diskSizeGb());
+    assertEquals(IMAGE_ID, DEPRECATED_CREATE_DISK_CONFIGURATION.sourceImage());
+
+    assertEquals(BOOT, DEPRECATED_PERSISTENT_DISK_CONFIGURATION.boot());
+    assertEquals(AUTO_DELETE, DEPRECATED_PERSISTENT_DISK_CONFIGURATION.autoDelete());
+    assertNull(DEPRECATED_PERSISTENT_DISK_CONFIGURATION.interfaceType());
+    assertEquals(Type.PERSISTENT, DEPRECATED_PERSISTENT_DISK_CONFIGURATION.type());
+    assertEquals(MODE, DEPRECATED_PERSISTENT_DISK_CONFIGURATION.mode());
+    assertEquals(DISK_ID, DEPRECATED_PERSISTENT_DISK_CONFIGURATION.sourceDisk());
+
+    assertFalse(DEPRECATED_SCRATCH_DISK_CONFIGURATION.boot());
+    assertTrue(DEPRECATED_SCRATCH_DISK_CONFIGURATION.autoDelete());
+    assertEquals(INTERFACE_TYPE, DEPRECATED_SCRATCH_DISK_CONFIGURATION.interfaceType());
+    assertEquals(Type.SCRATCH, DEPRECATED_SCRATCH_DISK_CONFIGURATION.type());
+    assertEquals(DISK_TYPE_ID, DEPRECATED_SCRATCH_DISK_CONFIGURATION.diskType());
   }
 
   @Test
   public void testBuilder() {
-    assertEquals(PERSISTENT_DISK_CONFIGURATION, PERSISTENT_DISK.configuration());
-    assertEquals(DEVICE_NAME, PERSISTENT_DISK.deviceName());
-    assertEquals(INDEX, PERSISTENT_DISK.index());
-    assertEquals(LICENSES, PERSISTENT_DISK.licenses());
-    assertEquals(SCRATCH_DISK_CONFIGURATION, SCRATCH_DISK.configuration());
-    assertEquals(DEVICE_NAME, SCRATCH_DISK.deviceName());
-    assertEquals(INDEX, SCRATCH_DISK.index());
-    assertEquals(LICENSES, SCRATCH_DISK.licenses());
-    assertEquals(CREATE_DISK_CONFIGURATION, CREATED_DISK.configuration());
-    assertEquals(DEVICE_NAME, CREATED_DISK.deviceName());
-    assertEquals(INDEX, CREATED_DISK.index());
-    assertEquals(LICENSES, CREATED_DISK.licenses());
+    assertEquals(PERSISTENT_DISK_CONFIGURATION, PERSISTENT_DISK.getConfiguration());
+    assertEquals(DEVICE_NAME, PERSISTENT_DISK.getDeviceName());
+    assertEquals(INDEX, PERSISTENT_DISK.getIndex());
+    assertEquals(LICENSES, PERSISTENT_DISK.getLicenses());
+    assertEquals(SCRATCH_DISK_CONFIGURATION, SCRATCH_DISK.getConfiguration());
+    assertEquals(DEVICE_NAME, SCRATCH_DISK.getDeviceName());
+    assertEquals(INDEX, SCRATCH_DISK.getIndex());
+    assertEquals(LICENSES, SCRATCH_DISK.getLicenses());
+    assertEquals(CREATE_DISK_CONFIGURATION, CREATED_DISK.getConfiguration());
+    assertEquals(DEVICE_NAME, CREATED_DISK.getDeviceName());
+    assertEquals(INDEX, CREATED_DISK.getIndex());
+    assertEquals(LICENSES, CREATED_DISK.getLicenses());
+  }
+
+  @Test
+  public void testBuilderDeprecated() {
+    assertEquals(PERSISTENT_DISK_CONFIGURATION, DEPRECATED_PERSISTENT_DISK.configuration());
+    assertEquals(DEVICE_NAME, DEPRECATED_PERSISTENT_DISK.deviceName());
+    assertEquals(INDEX, DEPRECATED_PERSISTENT_DISK.index());
+    assertEquals(LICENSES, DEPRECATED_PERSISTENT_DISK.licenses());
+    assertEquals(SCRATCH_DISK_CONFIGURATION, DEPRECATED_SCRATCH_DISK.configuration());
+    assertEquals(DEVICE_NAME, DEPRECATED_SCRATCH_DISK.deviceName());
+    assertEquals(INDEX, DEPRECATED_SCRATCH_DISK.index());
+    assertEquals(LICENSES, DEPRECATED_SCRATCH_DISK.licenses());
+    assertEquals(CREATE_DISK_CONFIGURATION, DEPRECATED_CREATED_DISK.configuration());
+    assertEquals(DEVICE_NAME, DEPRECATED_CREATED_DISK.deviceName());
+    assertEquals(INDEX, DEPRECATED_CREATED_DISK.index());
+    assertEquals(LICENSES, DEPRECATED_CREATED_DISK.licenses());
   }
 
   @Test
   public void testConfigurationOf() {
     PersistentDiskConfiguration persistentConfiguration = PersistentDiskConfiguration.of(DISK_ID);
-    assertEquals(DISK_ID, persistentConfiguration.sourceDisk());
-    assertEquals(Type.PERSISTENT, persistentConfiguration.type());
+    assertEquals(DISK_ID, persistentConfiguration.getSourceDisk());
+    assertEquals(Type.PERSISTENT, persistentConfiguration.getType());
     assertNull(persistentConfiguration.autoDelete());
     assertNull(persistentConfiguration.boot());
-    assertNull(persistentConfiguration.interfaceType());
+    assertNull(persistentConfiguration.getInterfaceType());
     ScratchDiskConfiguration scratchDiskConfiguration = ScratchDiskConfiguration.of(DISK_TYPE_ID);
-    assertEquals(DISK_TYPE_ID, scratchDiskConfiguration.diskType());
-    assertNull(scratchDiskConfiguration.interfaceType());
-    assertEquals(Type.SCRATCH, scratchDiskConfiguration.type());
+    assertEquals(DISK_TYPE_ID, scratchDiskConfiguration.getDiskType());
+    assertNull(scratchDiskConfiguration.getInterfaceType());
+    assertEquals(Type.SCRATCH, scratchDiskConfiguration.getType());
     assertTrue(scratchDiskConfiguration.autoDelete());
     assertFalse(scratchDiskConfiguration.boot());
-    assertNull(scratchDiskConfiguration.interfaceType());
+    assertNull(scratchDiskConfiguration.getInterfaceType());
     CreateDiskConfiguration createDiskConfiguration = CreateDiskConfiguration.of(IMAGE_ID);
-    assertEquals(IMAGE_ID, createDiskConfiguration.sourceImage());
-    assertNull(createDiskConfiguration.diskType());
-    assertNull(createDiskConfiguration.diskName());
-    assertNull(createDiskConfiguration.diskSizeGb());
-    assertNull(createDiskConfiguration.interfaceType());
-    assertEquals(Type.PERSISTENT, createDiskConfiguration.type());
+    assertEquals(IMAGE_ID, createDiskConfiguration.getSourceImage());
+    assertNull(createDiskConfiguration.getDiskType());
+    assertNull(createDiskConfiguration.getDiskName());
+    assertNull(createDiskConfiguration.getDiskSizeGb());
+    assertNull(createDiskConfiguration.getInterfaceType());
+    assertEquals(Type.PERSISTENT, createDiskConfiguration.getType());
     assertNull(createDiskConfiguration.autoDelete());
     assertTrue(createDiskConfiguration.boot());
-    assertNull(createDiskConfiguration.interfaceType());
+    assertNull(createDiskConfiguration.getInterfaceType());
   }
 
   @Test
   public void testOf() {
     AttachedDisk attachedDisk = AttachedDisk.of(DEVICE_NAME, PERSISTENT_DISK_CONFIGURATION);
-    assertEquals(PERSISTENT_DISK_CONFIGURATION, attachedDisk.configuration());
-    assertEquals(DEVICE_NAME, attachedDisk.deviceName());
-    assertNull(attachedDisk.index());
-    assertNull(attachedDisk.licenses());
+    assertEquals(PERSISTENT_DISK_CONFIGURATION, attachedDisk.getConfiguration());
+    assertEquals(DEVICE_NAME, attachedDisk.getDeviceName());
+    assertNull(attachedDisk.getIndex());
+    assertNull(attachedDisk.getLicenses());
     attachedDisk = AttachedDisk.of(PERSISTENT_DISK_CONFIGURATION);
-    assertEquals(PERSISTENT_DISK_CONFIGURATION, attachedDisk.configuration());
-    assertNull(attachedDisk.deviceName());
-    assertNull(attachedDisk.index());
-    assertNull(attachedDisk.licenses());
+    assertEquals(PERSISTENT_DISK_CONFIGURATION, attachedDisk.getConfiguration());
+    assertNull(attachedDisk.getDeviceName());
+    assertNull(attachedDisk.getIndex());
+    assertNull(attachedDisk.getLicenses());
     attachedDisk = AttachedDisk.of(DEVICE_NAME, SCRATCH_DISK_CONFIGURATION);
-    assertEquals(SCRATCH_DISK_CONFIGURATION, attachedDisk.configuration());
-    assertEquals(DEVICE_NAME, attachedDisk.deviceName());
-    assertNull(attachedDisk.index());
-    assertNull(attachedDisk.licenses());
+    assertEquals(SCRATCH_DISK_CONFIGURATION, attachedDisk.getConfiguration());
+    assertEquals(DEVICE_NAME, attachedDisk.getDeviceName());
+    assertNull(attachedDisk.getIndex());
+    assertNull(attachedDisk.getLicenses());
     attachedDisk = AttachedDisk.of(SCRATCH_DISK_CONFIGURATION);
-    assertEquals(SCRATCH_DISK_CONFIGURATION, attachedDisk.configuration());
-    assertNull(attachedDisk.deviceName());
-    assertNull(attachedDisk.index());
-    assertNull(attachedDisk.licenses());
+    assertEquals(SCRATCH_DISK_CONFIGURATION, attachedDisk.getConfiguration());
+    assertNull(attachedDisk.getDeviceName());
+    assertNull(attachedDisk.getIndex());
+    assertNull(attachedDisk.getLicenses());
     attachedDisk = AttachedDisk.of(DEVICE_NAME, CREATE_DISK_CONFIGURATION);
-    assertEquals(CREATE_DISK_CONFIGURATION, attachedDisk.configuration());
-    assertEquals(DEVICE_NAME, attachedDisk.deviceName());
-    assertNull(attachedDisk.index());
-    assertNull(attachedDisk.licenses());
+    assertEquals(CREATE_DISK_CONFIGURATION, attachedDisk.getConfiguration());
+    assertEquals(DEVICE_NAME, attachedDisk.getDeviceName());
+    assertNull(attachedDisk.getIndex());
+    assertNull(attachedDisk.getLicenses());
     attachedDisk = AttachedDisk.of(CREATE_DISK_CONFIGURATION);
-    assertEquals(CREATE_DISK_CONFIGURATION, attachedDisk.configuration());
-    assertNull(attachedDisk.deviceName());
-    assertNull(attachedDisk.index());
-    assertNull(attachedDisk.licenses());
+    assertEquals(CREATE_DISK_CONFIGURATION, attachedDisk.getConfiguration());
+    assertNull(attachedDisk.getDeviceName());
+    assertNull(attachedDisk.getIndex());
+    assertNull(attachedDisk.getLicenses());
   }
 
   @Test
@@ -313,8 +390,8 @@ public class AttachedDiskTest {
         ScratchDiskConfiguration.of(DiskTypeId.of("project", "zone", "diskType")),
             scratchDiskConfiguration.setProjectId("project"));
     CreateDiskConfiguration createDiskConfiguration = CREATE_DISK_CONFIGURATION.toBuilder()
-        .diskType(DiskTypeId.of("zone", "diskType"))
-        .sourceImage(ImageId.of("image"))
+        .setDiskType(DiskTypeId.of("zone", "diskType"))
+        .setSourceImage(ImageId.of("image"))
         .build();
     compareCreateDiskConfiguration(CREATE_DISK_CONFIGURATION,
         createDiskConfiguration.setProjectId("project"));
@@ -342,8 +419,8 @@ public class AttachedDiskTest {
     compareAttachedDisk(AttachedDisk.of(createDiskConfigurationWithProject),
         AttachedDisk.of(createDiskConfiguration).setProjectId("project"));
     createDiskConfiguration = CREATE_DISK_CONFIGURATION.toBuilder()
-        .diskType(DiskTypeId.of("zone", "diskType"))
-        .sourceImage(ImageId.of("image"))
+        .setDiskType(DiskTypeId.of("zone", "diskType"))
+        .setSourceImage(ImageId.of("image"))
         .build();
     compareAttachedDisk(AttachedDisk.of(CREATE_DISK_CONFIGURATION),
         AttachedDisk.of(createDiskConfiguration).setProjectId("project"));
@@ -352,8 +429,8 @@ public class AttachedDiskTest {
   public void compareAttachedDiskConfiguration(AttachedDisk.AttachedDiskConfiguration expected,
       AttachedDisk.AttachedDiskConfiguration value) {
     assertEquals(expected, value);
-    assertEquals(expected.type(), value.type());
-    assertEquals(expected.interfaceType(), value.interfaceType());
+    assertEquals(expected.getType(), value.getType());
+    assertEquals(expected.getInterfaceType(), value.getInterfaceType());
     assertEquals(expected.boot(), value.boot());
     assertEquals(expected.autoDelete(), value.autoDelete());
     assertEquals(expected.hashCode(), value.hashCode());
@@ -362,31 +439,31 @@ public class AttachedDiskTest {
   public void comparePersistentDiskConfiguration(PersistentDiskConfiguration expected,
       PersistentDiskConfiguration value) {
     compareAttachedDiskConfiguration(expected, value);
-    assertEquals(expected.mode(), value.mode());
-    assertEquals(expected.sourceDisk(), value.sourceDisk());
+    assertEquals(expected.getMode(), value.getMode());
+    assertEquals(expected.getSourceDisk(), value.getSourceDisk());
   }
 
   public void compareCreateDiskConfiguration(CreateDiskConfiguration expected,
       CreateDiskConfiguration value) {
     compareAttachedDiskConfiguration(expected, value);
-    assertEquals(expected.diskName(), value.diskName());
-    assertEquals(expected.diskType(), value.diskType());
-    assertEquals(expected.diskSizeGb(), value.diskSizeGb());
-    assertEquals(expected.sourceImage(), value.sourceImage());
+    assertEquals(expected.getDiskName(), value.getDiskName());
+    assertEquals(expected.getDiskType(), value.getDiskType());
+    assertEquals(expected.getDiskSizeGb(), value.getDiskSizeGb());
+    assertEquals(expected.getSourceImage(), value.getSourceImage());
   }
 
   public void compareScratchDiskConfiguration(ScratchDiskConfiguration expected,
       ScratchDiskConfiguration value) {
     compareAttachedDiskConfiguration(expected, value);
-    assertEquals(expected.diskType(), value.diskType());
+    assertEquals(expected.getDiskType(), value.getDiskType());
   }
 
   public void compareAttachedDisk(AttachedDisk expected, AttachedDisk value) {
     assertEquals(expected, value);
-    assertEquals(expected.deviceName(), value.deviceName());
-    assertEquals(expected.index(), value.index());
-    assertEquals(expected.configuration(), value.configuration());
-    assertEquals(expected.licenses(), value.licenses());
+    assertEquals(expected.getDeviceName(), value.getDeviceName());
+    assertEquals(expected.getIndex(), value.getIndex());
+    assertEquals(expected.getConfiguration(), value.getConfiguration());
+    assertEquals(expected.getLicenses(), value.getLicenses());
     assertEquals(expected.hashCode(), value.hashCode());
   }
 }

@@ -42,18 +42,30 @@ public class RegionTest {
   private static final DeprecationStatus<RegionId> DEPRECATION_STATUS =
       DeprecationStatus.of(DeprecationStatus.Status.DELETED, REGION_ID);
   private static final Region REGION = Region.builder()
-      .regionId(REGION_ID)
-      .generatedId(GENERATED_ID)
-      .creationTimestamp(CREATION_TIMESTAMP)
-      .description(DESCRIPTION)
-      .status(STATUS)
-      .zones(ZONES)
-      .quotas(QUOTAS)
-      .deprecationStatus(DEPRECATION_STATUS)
+      .setRegionId(REGION_ID)
+      .setGeneratedId(GENERATED_ID)
+      .setCreationTimestamp(CREATION_TIMESTAMP)
+      .setDescription(DESCRIPTION)
+      .setStatus(STATUS)
+      .setZones(ZONES)
+      .setQuotas(QUOTAS)
+      .setDeprecationStatus(DEPRECATION_STATUS)
       .build();
 
   @Test
   public void testBuilder() {
+    assertEquals(REGION_ID, REGION.getRegionId());
+    assertEquals(GENERATED_ID, REGION.getGeneratedId());
+    assertEquals(CREATION_TIMESTAMP, REGION.getCreationTimestamp());
+    assertEquals(DESCRIPTION, REGION.getDescription());
+    assertEquals(STATUS, REGION.getStatus());
+    assertEquals(ZONES, REGION.getZones());
+    assertEquals(QUOTAS, REGION.getQuotas());
+    assertEquals(DEPRECATION_STATUS, REGION.getDeprecationStatus());
+  }
+
+  @Test
+  public void testBuilderDeprecated() {
     assertEquals(REGION_ID, REGION.regionId());
     assertEquals(GENERATED_ID, REGION.generatedId());
     assertEquals(CREATION_TIMESTAMP, REGION.creationTimestamp());
@@ -68,22 +80,22 @@ public class RegionTest {
   public void testToAndFromPb() {
     Region region = Region.fromPb(REGION.toPb());
     compareRegions(REGION, region);
-    assertEquals(REGION_ID.project(), region.regionId().project());
-    assertEquals(REGION_ID.region(), region.regionId().region());
-    region = Region.builder().regionId(REGION_ID).build();
+    assertEquals(REGION_ID.getProject(), region.getRegionId().getProject());
+    assertEquals(REGION_ID.getRegion(), region.getRegionId().getRegion());
+    region = Region.builder().setRegionId(REGION_ID).build();
     compareRegions(region, Region.fromPb(region.toPb()));
   }
 
   private void compareRegions(Region expected, Region value) {
     assertEquals(expected, value);
-    assertEquals(expected.regionId(), value.regionId());
-    assertEquals(expected.generatedId(), value.generatedId());
-    assertEquals(expected.creationTimestamp(), value.creationTimestamp());
-    assertEquals(expected.description(), value.description());
-    assertEquals(expected.status(), value.status());
-    assertEquals(expected.zones(), value.zones());
-    assertEquals(expected.quotas(), value.quotas());
-    assertEquals(expected.deprecationStatus(), value.deprecationStatus());
+    assertEquals(expected.getRegionId(), value.getRegionId());
+    assertEquals(expected.getGeneratedId(), value.getGeneratedId());
+    assertEquals(expected.getCreationTimestamp(), value.getCreationTimestamp());
+    assertEquals(expected.getDescription(), value.getDescription());
+    assertEquals(expected.getStatus(), value.getStatus());
+    assertEquals(expected.getZones(), value.getZones());
+    assertEquals(expected.getQuotas(), value.getQuotas());
+    assertEquals(expected.getDeprecationStatus(), value.getDeprecationStatus());
     assertEquals(expected.hashCode(), value.hashCode());
   }
 }

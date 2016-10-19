@@ -41,7 +41,7 @@ public final class SubnetworkId extends ResourceId {
       new Function<SubnetworkId, String>() {
         @Override
         public String apply(SubnetworkId zoneId) {
-          return zoneId.selfLink();
+          return zoneId.getSelfLink();
         }
       };
 
@@ -61,15 +61,31 @@ public final class SubnetworkId extends ResourceId {
   /**
    * Returns the name of the region this subnetwork belongs to.
    */
+  @Deprecated
   public String region() {
+    return getRegion();
+  }
+
+  /**
+   * Returns the name of the region this subnetwork belongs to.
+   */
+  public String getRegion() {
     return region;
   }
 
   /**
    * Returns the identity of the region this subnetwork belongs to.
    */
+  @Deprecated
   public RegionId regionId() {
-    return RegionId.of(project(), region);
+    return getRegionId();
+  }
+
+  /**
+   * Returns the identity of the region this subnetwork belongs to.
+   */
+  public RegionId getRegionId() {
+    return RegionId.of(getProject(), region);
   }
 
   /**
@@ -81,13 +97,33 @@ public final class SubnetworkId extends ResourceId {
    *
    * @see <a href="https://www.ietf.org/rfc/rfc1035.txt">RFC1035</a>
    */
+  @Deprecated
   public String subnetwork() {
+    return getSubnetwork();
+  }
+
+  /**
+   * Returns the name of the subnetwork. The name must be 1-63 characters long and comply with
+   * RFC1035. Specifically, the name must match the regular expression
+   * {@code [a-z]([-a-z0-9]*[a-z0-9])?} which means the first character must be a lowercase letter,
+   * and all following characters must be a dash, lowercase letter, or digit, except the last
+   * character, which cannot be a dash.
+   *
+   * @see <a href="https://www.ietf.org/rfc/rfc1035.txt">RFC1035</a>
+   */
+  public String getSubnetwork() {
     return subnetwork;
   }
 
   @Override
+  @Deprecated
   public String selfLink() {
-    return super.selfLink() + "/regions/" + region + "/subnetworks/" + subnetwork;
+    return getSelfLink();
+  }
+
+  @Override
+  public String getSelfLink() {
+    return super.getSelfLink() + "/regions/" + region + "/subnetworks/" + subnetwork;
   }
 
   @Override
@@ -116,10 +152,10 @@ public final class SubnetworkId extends ResourceId {
 
   @Override
   SubnetworkId setProjectId(String projectId) {
-    if (project() != null) {
+    if (getProject() != null) {
       return this;
     }
-    return SubnetworkId.of(projectId, region(), subnetwork);
+    return SubnetworkId.of(projectId, getRegion(), subnetwork);
   }
 
   /**
@@ -132,7 +168,7 @@ public final class SubnetworkId extends ResourceId {
    * @see <a href="https://www.ietf.org/rfc/rfc1035.txt">RFC1035</a>
    */
   public static SubnetworkId of(RegionId regionId, String subnetwork) {
-    return new SubnetworkId(regionId.project(), regionId.region(), subnetwork);
+    return new SubnetworkId(regionId.getProject(), regionId.getRegion(), subnetwork);
   }
 
   /**

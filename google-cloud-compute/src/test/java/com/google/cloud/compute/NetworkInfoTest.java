@@ -42,29 +42,41 @@ public class NetworkInfoTest {
   private static final SubnetNetworkConfiguration SUBNET_NETWORK_CONFIGURATION =
       new SubnetNetworkConfiguration(AUTO_CREATE_SUBNETWORKS, SUBNETWORKS);
   private static final NetworkInfo NETWORK_INFO =
-      NetworkInfo.builder(NETWORK_ID, NETWORK_CONFIGURATION)
-          .generatedId(GENERATED_ID)
-          .creationTimestamp(CREATION_TIMESTAMP)
-          .description(DESCRIPTION)
+      NetworkInfo.newBuilder(NETWORK_ID, NETWORK_CONFIGURATION)
+          .setGeneratedId(GENERATED_ID)
+          .setCreationTimestamp(CREATION_TIMESTAMP)
+          .setDescription(DESCRIPTION)
           .build();
   private static final NetworkInfo SUBNET_NETWORK_INFO =
+      NetworkInfo.newBuilder(NETWORK_ID, SUBNET_NETWORK_CONFIGURATION)
+          .setGeneratedId(GENERATED_ID)
+          .setCreationTimestamp(CREATION_TIMESTAMP)
+          .setDescription(DESCRIPTION)
+          .build();
+  private static final NetworkInfo DEPRECATED_NETWORK_INFO =
+      NetworkInfo.builder(NETWORK_ID, NETWORK_CONFIGURATION)
+          .setGeneratedId(GENERATED_ID)
+          .setCreationTimestamp(CREATION_TIMESTAMP)
+          .description(DESCRIPTION)
+          .build();
+  private static final NetworkInfo DEPRECATED_SUBNET_NETWORK_INFO =
       NetworkInfo.builder(NETWORK_ID, SUBNET_NETWORK_CONFIGURATION)
-          .generatedId(GENERATED_ID)
-          .creationTimestamp(CREATION_TIMESTAMP)
+          .setGeneratedId(GENERATED_ID)
+          .setCreationTimestamp(CREATION_TIMESTAMP)
           .description(DESCRIPTION)
           .build();
 
   @Test
   public void testToBuilder() {
     compareNetworkInfo(NETWORK_INFO, NETWORK_INFO.toBuilder().build());
-    NetworkInfo networkInfo = NETWORK_INFO.toBuilder().description("newDescription").build();
-    assertEquals("newDescription", networkInfo.description());
-    networkInfo = networkInfo.toBuilder().description("description").build();
+    NetworkInfo networkInfo = NETWORK_INFO.toBuilder().setDescription("newDescription").build();
+    assertEquals("newDescription", networkInfo.getDescription());
+    networkInfo = networkInfo.toBuilder().setDescription("description").build();
     compareNetworkInfo(NETWORK_INFO, networkInfo);
     compareNetworkInfo(SUBNET_NETWORK_INFO, SUBNET_NETWORK_INFO.toBuilder().build());
-    networkInfo = SUBNET_NETWORK_INFO.toBuilder().description("newDescription").build();
-    assertEquals("newDescription", networkInfo.description());
-    networkInfo = networkInfo.toBuilder().description("description").build();
+    networkInfo = SUBNET_NETWORK_INFO.toBuilder().setDescription("newDescription").build();
+    assertEquals("newDescription", networkInfo.getDescription());
+    networkInfo = networkInfo.toBuilder().setDescription("description").build();
     compareNetworkInfo(SUBNET_NETWORK_INFO, networkInfo);
   }
 
@@ -76,26 +88,40 @@ public class NetworkInfoTest {
 
   @Test
   public void testBuilder() {
-    assertEquals(GENERATED_ID, NETWORK_INFO.generatedId());
-    assertEquals(NETWORK_ID, NETWORK_INFO.networkId());
-    assertEquals(CREATION_TIMESTAMP, NETWORK_INFO.creationTimestamp());
-    assertEquals(DESCRIPTION, NETWORK_INFO.description());
-    assertEquals(NETWORK_CONFIGURATION, NETWORK_INFO.configuration());
-    assertEquals(GENERATED_ID, SUBNET_NETWORK_INFO.generatedId());
-    assertEquals(NETWORK_ID, SUBNET_NETWORK_INFO.networkId());
-    assertEquals(CREATION_TIMESTAMP, SUBNET_NETWORK_INFO.creationTimestamp());
-    assertEquals(DESCRIPTION, SUBNET_NETWORK_INFO.description());
-    assertEquals(SUBNET_NETWORK_CONFIGURATION, SUBNET_NETWORK_INFO.configuration());
+    assertEquals(GENERATED_ID, NETWORK_INFO.getGeneratedId());
+    assertEquals(NETWORK_ID, NETWORK_INFO.getNetworkId());
+    assertEquals(CREATION_TIMESTAMP, NETWORK_INFO.getCreationTimestamp());
+    assertEquals(DESCRIPTION, NETWORK_INFO.getDescription());
+    assertEquals(NETWORK_CONFIGURATION, NETWORK_INFO.getConfiguration());
+    assertEquals(GENERATED_ID, SUBNET_NETWORK_INFO.getGeneratedId());
+    assertEquals(NETWORK_ID, SUBNET_NETWORK_INFO.getNetworkId());
+    assertEquals(CREATION_TIMESTAMP, SUBNET_NETWORK_INFO.getCreationTimestamp());
+    assertEquals(DESCRIPTION, SUBNET_NETWORK_INFO.getDescription());
+    assertEquals(SUBNET_NETWORK_CONFIGURATION, SUBNET_NETWORK_INFO.getConfiguration());
+  }
+
+  @Test
+  public void testBuilderDeprecated() {
+    assertEquals(GENERATED_ID, DEPRECATED_NETWORK_INFO.generatedId());
+    assertEquals(NETWORK_ID, DEPRECATED_NETWORK_INFO.networkId());
+    assertEquals(CREATION_TIMESTAMP, DEPRECATED_NETWORK_INFO.creationTimestamp());
+    assertEquals(DESCRIPTION, DEPRECATED_NETWORK_INFO.description());
+    assertEquals(NETWORK_CONFIGURATION, DEPRECATED_NETWORK_INFO.configuration());
+    assertEquals(GENERATED_ID, DEPRECATED_SUBNET_NETWORK_INFO.generatedId());
+    assertEquals(NETWORK_ID, DEPRECATED_SUBNET_NETWORK_INFO.networkId());
+    assertEquals(CREATION_TIMESTAMP, DEPRECATED_SUBNET_NETWORK_INFO.creationTimestamp());
+    assertEquals(DESCRIPTION, DEPRECATED_SUBNET_NETWORK_INFO.description());
+    assertEquals(SUBNET_NETWORK_CONFIGURATION, DEPRECATED_SUBNET_NETWORK_INFO.configuration());
   }
 
   @Test
   public void testOf() {
     NetworkInfo networkInfo = NetworkInfo.of(NETWORK_ID, NETWORK_CONFIGURATION);
-    assertNull(networkInfo.generatedId());
-    assertEquals(NETWORK_ID, NETWORK_INFO.networkId());
-    assertEquals(NETWORK_CONFIGURATION, NETWORK_INFO.configuration());
-    assertNull(networkInfo.creationTimestamp());
-    assertNull(networkInfo.description());
+    assertNull(networkInfo.getGeneratedId());
+    assertEquals(NETWORK_ID, NETWORK_INFO.getNetworkId());
+    assertEquals(NETWORK_CONFIGURATION, NETWORK_INFO.getConfiguration());
+    assertNull(networkInfo.getCreationTimestamp());
+    assertNull(networkInfo.getDescription());
   }
 
   @Test
@@ -109,18 +135,18 @@ public class NetworkInfoTest {
   @Test
   public void testSetProjectId() {
     NetworkInfo networkInfo = NETWORK_INFO.toBuilder()
-        .networkId(NetworkId.of("network"))
+        .setNetworkId(NetworkId.of("network"))
         .build();
     compareNetworkInfo(NETWORK_INFO, networkInfo.setProjectId("project"));
   }
 
   public void compareNetworkInfo(NetworkInfo expected, NetworkInfo value) {
     assertEquals(expected, value);
-    assertEquals(expected.generatedId(), value.generatedId());
-    assertEquals(expected.networkId(), value.networkId());
-    assertEquals(expected.creationTimestamp(), value.creationTimestamp());
-    assertEquals(expected.description(), value.description());
-    assertEquals(expected.configuration(), value.configuration());
+    assertEquals(expected.getGeneratedId(), value.getGeneratedId());
+    assertEquals(expected.getNetworkId(), value.getNetworkId());
+    assertEquals(expected.getCreationTimestamp(), value.getCreationTimestamp());
+    assertEquals(expected.getDescription(), value.getDescription());
+    assertEquals(expected.getConfiguration(), value.getConfiguration());
     assertEquals(expected.hashCode(), value.hashCode());
   }
 }

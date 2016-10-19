@@ -39,6 +39,17 @@ public class RegionIdTest {
   @Test
   public void testOf() {
     RegionId regionId = RegionId.of(PROJECT, REGION);
+    assertEquals(PROJECT, regionId.getProject());
+    assertEquals(REGION, regionId.getRegion());
+    assertEquals(URL, regionId.getSelfLink());
+    regionId = RegionId.of(REGION);
+    assertNull(regionId.getProject());
+    assertEquals(REGION, regionId.getRegion());
+  }
+
+  @Test
+  public void testOfDeprecated() {
+    RegionId regionId = RegionId.of(PROJECT, REGION);
     assertEquals(PROJECT, regionId.project());
     assertEquals(REGION, regionId.region());
     assertEquals(URL, regionId.selfLink());
@@ -50,7 +61,7 @@ public class RegionIdTest {
   @Test
   public void testToAndFromUrl() {
     RegionId regionId = RegionId.of(PROJECT, REGION);
-    compareRegionId(regionId, RegionId.fromUrl(regionId.selfLink()));
+    compareRegionId(regionId, RegionId.fromUrl(regionId.getSelfLink()));
   }
 
   @Test
@@ -65,15 +76,15 @@ public class RegionIdTest {
 
   @Test
   public void testMatchesUrl() {
-    assertTrue(RegionId.matchesUrl(RegionId.of(PROJECT, REGION).selfLink()));
+    assertTrue(RegionId.matchesUrl(RegionId.of(PROJECT, REGION).getSelfLink()));
     assertFalse(RegionId.matchesUrl("notMatchingUrl"));
   }
 
   private void compareRegionId(RegionId expected, RegionId value) {
     assertEquals(expected, value);
-    assertEquals(expected.project(), expected.project());
-    assertEquals(expected.region(), expected.region());
-    assertEquals(expected.selfLink(), expected.selfLink());
+    assertEquals(expected.getProject(), expected.getProject());
+    assertEquals(expected.getRegion(), expected.getRegion());
+    assertEquals(expected.getSelfLink(), expected.getSelfLink());
     assertEquals(expected.hashCode(), expected.hashCode());
   }
 }

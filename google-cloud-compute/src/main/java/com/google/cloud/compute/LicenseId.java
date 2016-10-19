@@ -39,7 +39,7 @@ public final class LicenseId extends ResourceId {
   static final Function<LicenseId, String> TO_URL_FUNCTION = new Function<LicenseId, String>() {
     @Override
     public String apply(LicenseId licenseId) {
-      return licenseId.selfLink();
+      return licenseId.getSelfLink();
     }
   };
 
@@ -57,13 +57,27 @@ public final class LicenseId extends ResourceId {
   /**
    * Returns the name of the license.
    */
+  @Deprecated
   public String license() {
     return license;
   }
 
+  /**
+   * Returns the name of the license.
+   */
+  public String getLicense() {
+    return license;
+  }
+
   @Override
+  @Deprecated
   public String selfLink() {
-    return super.selfLink() + "/global/licenses/" + license;
+    return getSelfLink();
+  }
+
+  @Override
+  public String getSelfLink() {
+    return super.getSelfLink() + "/global/licenses/" + license;
   }
 
   @Override
@@ -90,7 +104,7 @@ public final class LicenseId extends ResourceId {
 
   @Override
   LicenseId setProjectId(String projectId) {
-    if (project() != null) {
+    if (getProject() != null) {
       return this;
     }
     return LicenseId.of(projectId, license);

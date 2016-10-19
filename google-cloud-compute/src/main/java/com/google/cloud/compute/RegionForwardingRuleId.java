@@ -41,7 +41,7 @@ public final class RegionForwardingRuleId extends ForwardingRuleId {
       new Function<RegionForwardingRuleId, String>() {
         @Override
         public String apply(RegionForwardingRuleId forwardingRuleId) {
-          return forwardingRuleId.selfLink();
+          return forwardingRuleId.getSelfLink();
         }
       };
 
@@ -57,27 +57,55 @@ public final class RegionForwardingRuleId extends ForwardingRuleId {
   }
 
   @Override
+  @Deprecated
   public Type type() {
+    return getType();
+  }
+
+  @Override
+  public Type getType() {
     return Type.REGION;
   }
 
   /**
    * Returns the name of the region this forwarding rule belongs to.
    */
+  @Deprecated
   public String region() {
+    return region;
+  }
+
+  /**
+   * Returns the name of the region this forwarding rule belongs to.
+   */
+  public String getRegion() {
     return region;
   }
 
   /**
    * Returns the identity of the region this forwarding rule belongs to.
    */
+  @Deprecated
   public RegionId regionId() {
-    return RegionId.of(project(), region);
+    return RegionId.of(getProject(), region);
+  }
+
+  /**
+   * Returns the identity of the region this forwarding rule belongs to.
+   */
+  public RegionId getRegionId() {
+    return RegionId.of(getProject(), region);
   }
 
   @Override
+  @Deprecated
   public String selfLink() {
-    return super.selfLink() + "/regions/" + region + "/forwardingRules/" + rule();
+    return getSelfLink();
+  }
+
+  @Override
+  public String getSelfLink() {
+    return super.getSelfLink() + "/regions/" + region + "/forwardingRules/" + getRule();
   }
 
   @Override
@@ -104,10 +132,10 @@ public final class RegionForwardingRuleId extends ForwardingRuleId {
 
   @Override
   RegionForwardingRuleId setProjectId(String projectId) {
-    if (project() != null) {
+    if (getProject() != null) {
       return this;
     }
-    return RegionForwardingRuleId.of(projectId, region, rule());
+    return RegionForwardingRuleId.of(projectId, region, getRule());
   }
 
   /**
@@ -120,7 +148,7 @@ public final class RegionForwardingRuleId extends ForwardingRuleId {
    * @see <a href="https://www.ietf.org/rfc/rfc1035.txt">RFC1035</a>
    */
   public static RegionForwardingRuleId of(RegionId regionId, String rule) {
-    return new RegionForwardingRuleId(regionId.project(), regionId.region(), rule);
+    return new RegionForwardingRuleId(regionId.getProject(), regionId.getRegion(), rule);
   }
 
   /**

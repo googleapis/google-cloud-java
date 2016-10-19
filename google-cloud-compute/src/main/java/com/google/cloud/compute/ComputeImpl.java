@@ -469,7 +469,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
           runWithRetries(new Callable<com.google.api.services.compute.model.DiskType>() {
             @Override
             public com.google.api.services.compute.model.DiskType call() {
-              return computeRpc.getDiskType(diskTypeId.zone(), diskTypeId.type(), optionsMap);
+              return computeRpc.getDiskType(diskTypeId.getZone(), diskTypeId.getType(), optionsMap);
             }
           }, options().retryParams(), EXCEPTION_HANDLER, options().clock());
       return answer == null ? null : DiskType.fromPb(answer);
@@ -557,7 +557,8 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
           runWithRetries(new Callable<com.google.api.services.compute.model.MachineType>() {
             @Override
             public com.google.api.services.compute.model.MachineType call() {
-              return computeRpc.getMachineType(machineType.zone(), machineType.type(), optionsMap);
+              return computeRpc.getMachineType(machineType.getZone(), machineType.getType(),
+                  optionsMap);
             }
           }, options().retryParams(), EXCEPTION_HANDLER, options().clock());
       return answer == null ? null : MachineType.fromPb(answer);
@@ -755,7 +756,8 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
           runWithRetries(new Callable<com.google.api.services.compute.model.License>() {
             @Override
             public com.google.api.services.compute.model.License call() {
-              return computeRpc.getLicense(completeId.project(), completeId.license(), optionsMap);
+              return computeRpc.getLicense(completeId.getProject(), completeId.getLicense(),
+                  optionsMap);
             }
           }, options().retryParams(), EXCEPTION_HANDLER, options().clock());
       return answer == null ? null : License.fromPb(answer);
@@ -772,17 +774,17 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
           runWithRetries(new Callable<com.google.api.services.compute.model.Operation>() {
             @Override
             public com.google.api.services.compute.model.Operation call() {
-              switch (operationId.type()) {
+              switch (operationId.getType()) {
                 case REGION:
                   RegionOperationId regionOperationId = (RegionOperationId) operationId;
-                  return computeRpc.getRegionOperation(regionOperationId.region(),
-                      regionOperationId.operation(), optionsMap);
+                  return computeRpc.getRegionOperation(regionOperationId.getRegion(),
+                      regionOperationId.getOperation(), optionsMap);
                 case ZONE:
                   ZoneOperationId zoneOperationId = (ZoneOperationId) operationId;
-                  return computeRpc.getZoneOperation(zoneOperationId.zone(),
-                      zoneOperationId.operation(), optionsMap);
+                  return computeRpc.getZoneOperation(zoneOperationId.getZone(),
+                      zoneOperationId.getOperation(), optionsMap);
                 case GLOBAL:
-                  return computeRpc.getGlobalOperation(operationId.operation(), optionsMap);
+                  return computeRpc.getGlobalOperation(operationId.getOperation(), optionsMap);
                 default:
                   throw new IllegalArgumentException("Unexpected operation identity type");
               }
@@ -894,17 +896,17 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
       return runWithRetries(new Callable<Boolean>() {
         @Override
         public Boolean call() {
-          switch (operation.type()) {
+          switch (operation.getType()) {
             case REGION:
               RegionOperationId regionOperationId = (RegionOperationId) operation;
-              return computeRpc.deleteRegionOperation(regionOperationId.region(),
-                  regionOperationId.operation());
+              return computeRpc.deleteRegionOperation(regionOperationId.getRegion(),
+                  regionOperationId.getOperation());
             case ZONE:
               ZoneOperationId zoneOperationId = (ZoneOperationId) operation;
-              return computeRpc.deleteZoneOperation(zoneOperationId.zone(),
-                  zoneOperationId.operation());
+              return computeRpc.deleteZoneOperation(zoneOperationId.getZone(),
+                  zoneOperationId.getOperation());
             case GLOBAL:
-              return computeRpc.deleteGlobalOperation(operation.operation());
+              return computeRpc.deleteGlobalOperation(operation.getOperation());
             default:
               throw new IllegalArgumentException("Unexpected operation identity type");
           }
@@ -923,13 +925,13 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
           runWithRetries(new Callable<com.google.api.services.compute.model.Address>() {
             @Override
             public com.google.api.services.compute.model.Address call() {
-              switch (addressId.type()) {
+              switch (addressId.getType()) {
                 case REGION:
                   RegionAddressId regionAddressId = (RegionAddressId) addressId;
-                  return computeRpc.getRegionAddress(regionAddressId.region(),
-                      regionAddressId.address(), optionsMap);
+                  return computeRpc.getRegionAddress(regionAddressId.getRegion(),
+                      regionAddressId.getAddress(), optionsMap);
                 case GLOBAL:
-                  return computeRpc.getGlobalAddress(addressId.address(), optionsMap);
+                  return computeRpc.getGlobalAddress(addressId.getAddress(), optionsMap);
                 default:
                   throw new IllegalArgumentException("Unexpected address identity type");
               }
@@ -951,10 +953,10 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
           runWithRetries(new Callable<com.google.api.services.compute.model.Operation>() {
             @Override
             public com.google.api.services.compute.model.Operation call() {
-              switch (address.addressId().type()) {
+              switch (address.getAddressId().getType()) {
                 case REGION:
-                  RegionAddressId regionAddressId = address.addressId();
-                  return computeRpc.createRegionAddress(regionAddressId.region(), addressPb,
+                  RegionAddressId regionAddressId = address.getAddressId();
+                  return computeRpc.createRegionAddress(regionAddressId.getRegion(), addressPb,
                       optionsMap);
                 case GLOBAL:
                   return computeRpc.createGlobalAddress(addressPb, optionsMap);
@@ -1076,13 +1078,13 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
           runWithRetries(new Callable<com.google.api.services.compute.model.Operation>() {
             @Override
             public com.google.api.services.compute.model.Operation call() {
-              switch (addressId.type()) {
+              switch (addressId.getType()) {
                 case REGION:
                   RegionAddressId regionAddressId = (RegionAddressId) addressId;
-                  return computeRpc.deleteRegionAddress(regionAddressId.region(),
-                      regionAddressId.address(), optionsMap);
+                  return computeRpc.deleteRegionAddress(regionAddressId.getRegion(),
+                      regionAddressId.getAddress(), optionsMap);
                 case GLOBAL:
-                  return computeRpc.deleteGlobalAddress(addressId.address(), optionsMap);
+                  return computeRpc.deleteGlobalAddress(addressId.getAddress(), optionsMap);
                 default:
                   throw new IllegalArgumentException("Unexpected address identity type");
               }
@@ -1103,9 +1105,10 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
           runWithRetries(new Callable<com.google.api.services.compute.model.Operation>() {
             @Override
             public com.google.api.services.compute.model.Operation call() {
-              return computeRpc.createSnapshot(completeSnapshot.sourceDisk().zone(),
-                  completeSnapshot.sourceDisk().disk(), completeSnapshot.snapshotId().snapshot(),
-                  completeSnapshot.description(), optionsMap);
+              return computeRpc.createSnapshot(completeSnapshot.getSourceDisk().getZone(),
+                  completeSnapshot.getSourceDisk().getDisk(),
+                  completeSnapshot.getSnapshotId().getSnapshot(), completeSnapshot.getDescription(),
+                  optionsMap);
             }
           }, options().retryParams(), EXCEPTION_HANDLER, options().clock());
       return answer == null ? null : Operation.fromPb(this, answer);
@@ -1167,7 +1170,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
 
   @Override
   public Operation deleteSnapshot(SnapshotId snapshot, OperationOption... options) {
-    return deleteSnapshot(snapshot.snapshot(), options);
+    return deleteSnapshot(snapshot.getSnapshot(), options);
   }
 
   @Override
@@ -1214,7 +1217,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
           runWithRetries(new Callable<com.google.api.services.compute.model.Image>() {
             @Override
             public com.google.api.services.compute.model.Image call() {
-              return computeRpc.getImage(completeImageId.project(), completeImageId.image(),
+              return computeRpc.getImage(completeImageId.getProject(), completeImageId.getImage(),
                   optionsMap);
             }
           }, options().retryParams(), EXCEPTION_HANDLER, options().clock());
@@ -1272,7 +1275,8 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
           runWithRetries(new Callable<com.google.api.services.compute.model.Operation>() {
             @Override
             public com.google.api.services.compute.model.Operation call() {
-              return computeRpc.deleteImage(completeId.project(), completeId.image(), optionsMap);
+              return computeRpc.deleteImage(completeId.getProject(), completeId.getImage(),
+                  optionsMap);
             }
           }, options().retryParams(), EXCEPTION_HANDLER, options().clock());
       return answer == null ? null : Operation.fromPb(this, answer);
@@ -1291,7 +1295,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
           runWithRetries(new Callable<com.google.api.services.compute.model.Operation>() {
             @Override
             public com.google.api.services.compute.model.Operation call() {
-              return computeRpc.deprecateImage(completeId.project(), completeId.image(),
+              return computeRpc.deprecateImage(completeId.getProject(), completeId.getImage(),
                   deprecationStatus.toPb(), optionsMap);
             }
           }, options().retryParams(), EXCEPTION_HANDLER, options().clock());
@@ -1309,7 +1313,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
           runWithRetries(new Callable<com.google.api.services.compute.model.Disk>() {
             @Override
             public com.google.api.services.compute.model.Disk call() {
-              return computeRpc.getDisk(diskId.zone(), diskId.disk(), optionsMap);
+              return computeRpc.getDisk(diskId.getZone(), diskId.getDisk(), optionsMap);
             }
           }, options().retryParams(), EXCEPTION_HANDLER, options().clock());
       return answer == null ? null : Disk.fromPb(this, answer);
@@ -1328,7 +1332,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
           runWithRetries(new Callable<com.google.api.services.compute.model.Operation>() {
             @Override
             public com.google.api.services.compute.model.Operation call() {
-              return computeRpc.createDisk(disk.diskId().zone(), diskPb, optionsMap);
+              return computeRpc.createDisk(disk.getDiskId().getZone(), diskPb, optionsMap);
             }
           }, options().retryParams(), EXCEPTION_HANDLER, options().clock()));
     } catch (RetryHelper.RetryHelperException e) {
@@ -1410,7 +1414,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
           runWithRetries(new Callable<com.google.api.services.compute.model.Operation>() {
             @Override
             public com.google.api.services.compute.model.Operation call() {
-              return computeRpc.deleteDisk(disk.zone(), disk.disk(), optionsMap);
+              return computeRpc.deleteDisk(disk.getZone(), disk.getDisk(), optionsMap);
             }
           }, options().retryParams(), EXCEPTION_HANDLER, options().clock());
       return answer == null ? null : Operation.fromPb(this, answer);
@@ -1427,7 +1431,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
           runWithRetries(new Callable<com.google.api.services.compute.model.Operation>() {
             @Override
             public com.google.api.services.compute.model.Operation call() {
-              return computeRpc.resizeDisk(disk.zone(), disk.disk(), sizeGb, optionsMap);
+              return computeRpc.resizeDisk(disk.getZone(), disk.getDisk(), sizeGb, optionsMap);
             }
           }, options().retryParams(), EXCEPTION_HANDLER, options().clock());
       return answer == null ? null : Operation.fromPb(this, answer);
@@ -1444,7 +1448,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
           runWithRetries(new Callable<com.google.api.services.compute.model.Operation>() {
             @Override
             public com.google.api.services.compute.model.Operation call() {
-              return computeRpc.createSubnetwork(completeSubnetwork.subnetworkId().region(),
+              return computeRpc.createSubnetwork(completeSubnetwork.getSubnetworkId().getRegion(),
                   completeSubnetwork.toPb(), optionsMap);
             }
           }, options().retryParams(), EXCEPTION_HANDLER, options().clock());
@@ -1462,8 +1466,8 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
           runWithRetries(new Callable<com.google.api.services.compute.model.Subnetwork>() {
             @Override
             public com.google.api.services.compute.model.Subnetwork call() {
-              return computeRpc.getSubnetwork(subnetworkId.region(), subnetworkId.subnetwork(),
-                  optionsMap);
+              return computeRpc.getSubnetwork(subnetworkId.getRegion(),
+                  subnetworkId.getSubnetwork(), optionsMap);
             }
           }, options().retryParams(), EXCEPTION_HANDLER, options().clock());
       return answer == null ? null : Subnetwork.fromPb(this, answer);
@@ -1546,7 +1550,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
           runWithRetries(new Callable<com.google.api.services.compute.model.Operation>() {
             @Override
             public com.google.api.services.compute.model.Operation call() {
-              return computeRpc.deleteSubnetwork(subnetwork.region(), subnetwork.subnetwork(),
+              return computeRpc.deleteSubnetwork(subnetwork.getRegion(), subnetwork.getSubnetwork(),
                   optionsMap);
             }
           }, options().retryParams(), EXCEPTION_HANDLER, options().clock());
@@ -1633,7 +1637,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
           runWithRetries(new Callable<com.google.api.services.compute.model.Operation>() {
             @Override
             public com.google.api.services.compute.model.Operation call() {
-              return computeRpc.deleteNetwork(network.network(), optionsMap);
+              return computeRpc.deleteNetwork(network.getNetwork(), optionsMap);
             }
           }, options().retryParams(), EXCEPTION_HANDLER, options().clock());
       return answer == null ? null : Operation.fromPb(this, answer);
@@ -1656,7 +1660,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
           runWithRetries(new Callable<com.google.api.services.compute.model.Operation>() {
             @Override
             public com.google.api.services.compute.model.Operation call() {
-              return computeRpc.createInstance(completeInstance.instanceId().zone(),
+              return computeRpc.createInstance(completeInstance.getInstanceId().getZone(),
                   completeInstance.toPb(), optionsMap);
             }
           }, options().retryParams(), EXCEPTION_HANDLER, options().clock());
@@ -1674,7 +1678,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
           runWithRetries(new Callable<com.google.api.services.compute.model.Instance>() {
             @Override
             public com.google.api.services.compute.model.Instance call() {
-              return computeRpc.getInstance(instance.zone(), instance.instance(), optionsMap);
+              return computeRpc.getInstance(instance.getZone(), instance.getInstance(), optionsMap);
             }
           }, options().retryParams(), EXCEPTION_HANDLER, options().clock());
       return answer == null ? null : Instance.fromPb(this, answer);
@@ -1757,7 +1761,8 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
           runWithRetries(new Callable<com.google.api.services.compute.model.Operation>() {
             @Override
             public com.google.api.services.compute.model.Operation call() {
-              return computeRpc.deleteInstance(instance.zone(), instance.instance(), optionsMap);
+              return computeRpc.deleteInstance(instance.getZone(), instance.getInstance(),
+                  optionsMap);
             }
           }, options().retryParams(), EXCEPTION_HANDLER, options().clock());
       return answer == null ? null : Operation.fromPb(this, answer);
@@ -1775,7 +1780,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
           runWithRetries(new Callable<com.google.api.services.compute.model.Operation>() {
             @Override
             public com.google.api.services.compute.model.Operation call() {
-              return computeRpc.addAccessConfig(instance.zone(), instance.instance(),
+              return computeRpc.addAccessConfig(instance.getZone(), instance.getInstance(),
                   networkInterface, accessConfig.toPb(), optionsMap);
             }
           }, options().retryParams(), EXCEPTION_HANDLER, options().clock());
@@ -1794,7 +1799,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
           runWithRetries(new Callable<com.google.api.services.compute.model.Operation>() {
             @Override
             public com.google.api.services.compute.model.Operation call() {
-              return computeRpc.attachDisk(instance.zone(), instance.instance(),
+              return computeRpc.attachDisk(instance.getZone(), instance.getInstance(),
                   completeDisk.toPb(), optionsMap);
             }
           }, options().retryParams(), EXCEPTION_HANDLER, options().clock());
@@ -1819,9 +1824,9 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
   @Override
   public Operation attachDisk(InstanceId instance, String deviceName,
       PersistentDiskConfiguration configuration, int index, OperationOption... options) {
-    AttachedDisk attachedDisk = AttachedDisk.builder(configuration)
-        .deviceName(deviceName)
-        .index(index)
+    AttachedDisk attachedDisk = AttachedDisk.newBuilder(configuration)
+        .setDeviceName(deviceName)
+        .setIndex(index)
         .build();
     return attachDisk(instance, attachedDisk, options);
   }
@@ -1835,7 +1840,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
           runWithRetries(new Callable<com.google.api.services.compute.model.Operation>() {
             @Override
             public com.google.api.services.compute.model.Operation call() {
-              return computeRpc.deleteAccessConfig(instance.zone(), instance.instance(),
+              return computeRpc.deleteAccessConfig(instance.getZone(), instance.getInstance(),
                   networkInterface, accessConfig, optionsMap);
             }
           }, options().retryParams(), EXCEPTION_HANDLER, options().clock());
@@ -1854,7 +1859,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
           runWithRetries(new Callable<com.google.api.services.compute.model.Operation>() {
             @Override
             public com.google.api.services.compute.model.Operation call() {
-              return computeRpc.detachDisk(instance.zone(), instance.instance(), deviceName,
+              return computeRpc.detachDisk(instance.getZone(), instance.getInstance(), deviceName,
                   optionsMap);
             }
           }, options().retryParams(), EXCEPTION_HANDLER, options().clock());
@@ -1870,7 +1875,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
       return runWithRetries(new Callable<String>() {
         @Override
         public String call() {
-          return computeRpc.getSerialPortOutput(instance.zone(), instance.instance(), port,
+          return computeRpc.getSerialPortOutput(instance.getZone(), instance.getInstance(), port,
               optionMap());
         }
       }, options().retryParams(), EXCEPTION_HANDLER, options().clock());
@@ -1885,7 +1890,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
       return runWithRetries(new Callable<String>() {
         @Override
         public String call() {
-          return computeRpc.getSerialPortOutput(instance.zone(), instance.instance(), null,
+          return computeRpc.getSerialPortOutput(instance.getZone(), instance.getInstance(), null,
               optionMap());
         }
       }, options().retryParams(), EXCEPTION_HANDLER, options().clock());
@@ -1902,7 +1907,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
           runWithRetries(new Callable<com.google.api.services.compute.model.Operation>() {
             @Override
             public com.google.api.services.compute.model.Operation call() {
-              return computeRpc.reset(instance.zone(), instance.instance(), optionsMap);
+              return computeRpc.reset(instance.getZone(), instance.getInstance(), optionsMap);
             }
           }, options().retryParams(), EXCEPTION_HANDLER, options().clock());
       return answer == null ? null : Operation.fromPb(this, answer);
@@ -1920,8 +1925,8 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
           runWithRetries(new Callable<com.google.api.services.compute.model.Operation>() {
             @Override
             public com.google.api.services.compute.model.Operation call() {
-              return computeRpc.setDiskAutoDelete(instance.zone(), instance.instance(), deviceName,
-                  autoDelete, optionsMap);
+              return computeRpc.setDiskAutoDelete(instance.getZone(), instance.getInstance(),
+                  deviceName, autoDelete, optionsMap);
             }
           }, options().retryParams(), EXCEPTION_HANDLER, options().clock());
       return answer == null ? null : Operation.fromPb(this, answer);
@@ -1933,15 +1938,15 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
   @Override
   public Operation setMachineType(final InstanceId instance, final MachineTypeId machineType,
       OperationOption... options) {
-    final String machineTypeUrl = machineType.setProjectId(options().projectId()).selfLink();
+    final String machineTypeUrl = machineType.setProjectId(options().projectId()).getSelfLink();
     final Map<ComputeRpc.Option, ?> optionsMap = optionMap(options);
     try {
       com.google.api.services.compute.model.Operation answer =
           runWithRetries(new Callable<com.google.api.services.compute.model.Operation>() {
             @Override
             public com.google.api.services.compute.model.Operation call() {
-              return computeRpc.setMachineType(instance.zone(), instance.instance(), machineTypeUrl,
-                  optionsMap);
+              return computeRpc.setMachineType(instance.getZone(), instance.getInstance(),
+                  machineTypeUrl, optionsMap);
             }
           }, options().retryParams(), EXCEPTION_HANDLER, options().clock());
       return answer == null ? null : Operation.fromPb(this, answer);
@@ -1959,8 +1964,8 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
           runWithRetries(new Callable<com.google.api.services.compute.model.Operation>() {
             @Override
             public com.google.api.services.compute.model.Operation call() {
-              return computeRpc.setMetadata(instance.zone(), instance.instance(), metadata.toPb(),
-                  optionsMap);
+              return computeRpc.setMetadata(instance.getZone(), instance.getInstance(),
+                  metadata.toPb(), optionsMap);
             }
           }, options().retryParams(), EXCEPTION_HANDLER, options().clock());
       return answer == null ? null : Operation.fromPb(this, answer);
@@ -1978,7 +1983,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
           runWithRetries(new Callable<com.google.api.services.compute.model.Operation>() {
             @Override
             public com.google.api.services.compute.model.Operation call() {
-              return computeRpc.setScheduling(instance.zone(), instance.instance(),
+              return computeRpc.setScheduling(instance.getZone(), instance.getInstance(),
                   schedulingOptions.toPb(), optionsMap);
             }
           }, options().retryParams(), EXCEPTION_HANDLER, options().clock());
@@ -1996,7 +2001,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
           runWithRetries(new Callable<com.google.api.services.compute.model.Operation>() {
             @Override
             public com.google.api.services.compute.model.Operation call() {
-              return computeRpc.setTags(instance.zone(), instance.instance(), tags.toPb(),
+              return computeRpc.setTags(instance.getZone(), instance.getInstance(), tags.toPb(),
                   optionsMap);
             }
           }, options().retryParams(), EXCEPTION_HANDLER, options().clock());
@@ -2014,7 +2019,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
           runWithRetries(new Callable<com.google.api.services.compute.model.Operation>() {
             @Override
             public com.google.api.services.compute.model.Operation call() {
-              return computeRpc.start(instance.zone(), instance.instance(), optionsMap);
+              return computeRpc.start(instance.getZone(), instance.getInstance(), optionsMap);
             }
           }, options().retryParams(), EXCEPTION_HANDLER, options().clock());
       return answer == null ? null : Operation.fromPb(this, answer);
@@ -2031,7 +2036,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
           runWithRetries(new Callable<com.google.api.services.compute.model.Operation>() {
             @Override
             public com.google.api.services.compute.model.Operation call() {
-              return computeRpc.stop(instance.zone(), instance.instance(), optionsMap);
+              return computeRpc.stop(instance.getZone(), instance.getInstance(), optionsMap);
             }
           }, options().retryParams(), EXCEPTION_HANDLER, options().clock());
       return answer == null ? null : Operation.fromPb(this, answer);
@@ -2043,7 +2048,7 @@ final class ComputeImpl extends BaseService<ComputeOptions> implements Compute {
   private Map<ComputeRpc.Option, ?> optionMap(Option... options) {
     Map<ComputeRpc.Option, Object> optionMap = Maps.newEnumMap(ComputeRpc.Option.class);
     for (Option option : options) {
-      Object prev = optionMap.put(option.rpcOption(), option.value());
+      Object prev = optionMap.put(option.getRpcOption(), option.getValue());
       checkArgument(prev == null, "Duplicate option %s", option);
     }
     return optionMap;

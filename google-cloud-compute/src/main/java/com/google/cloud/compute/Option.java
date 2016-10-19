@@ -39,11 +39,11 @@ class Option implements Serializable {
     this.value = value;
   }
 
-  ComputeRpc.Option rpcOption() {
+  ComputeRpc.Option getRpcOption() {
     return rpcOption;
   }
 
-  Object value() {
+  Object getValue() {
     return value;
   }
 

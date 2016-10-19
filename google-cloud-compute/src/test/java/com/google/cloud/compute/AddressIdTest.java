@@ -42,6 +42,31 @@ public class AddressIdTest {
   @Test
   public void testOf() {
     GlobalAddressId addressId = GlobalAddressId.of(PROJECT, NAME);
+    assertEquals(PROJECT, addressId.getProject());
+    assertEquals(NAME, addressId.getAddress());
+    assertEquals(GLOBAL_URL, addressId.getSelfLink());
+    addressId = GlobalAddressId.of(NAME);
+    assertNull(addressId.getProject());
+    assertEquals(NAME, addressId.getAddress());
+    RegionAddressId regionAddressId = RegionAddressId.of(PROJECT, REGION, NAME);
+    assertEquals(PROJECT, regionAddressId.getProject());
+    assertEquals(REGION, regionAddressId.getRegion());
+    assertEquals(NAME, regionAddressId.getAddress());
+    assertEquals(REGION_URL, regionAddressId.getSelfLink());
+    regionAddressId = RegionAddressId.of(RegionId.of(PROJECT, REGION), NAME);
+    assertEquals(PROJECT, regionAddressId.getProject());
+    assertEquals(REGION, regionAddressId.getRegion());
+    assertEquals(NAME, regionAddressId.getAddress());
+    assertEquals(REGION_URL, regionAddressId.getSelfLink());
+    regionAddressId = RegionAddressId.of(REGION, NAME);
+    assertNull(regionAddressId.getProject());
+    assertEquals(REGION, regionAddressId.getRegion());
+    assertEquals(NAME, regionAddressId.getAddress());
+  }
+
+  @Test
+  public void testOfDeprecated() {
+    GlobalAddressId addressId = GlobalAddressId.of(PROJECT, NAME);
     assertEquals(PROJECT, addressId.project());
     assertEquals(NAME, addressId.address());
     assertEquals(GLOBAL_URL, addressId.selfLink());
@@ -67,7 +92,7 @@ public class AddressIdTest {
   @Test
   public void testToAndFromUrlGlobal() {
     GlobalAddressId addressId = GlobalAddressId.of(PROJECT, NAME);
-    compareAddressId(addressId, GlobalAddressId.fromUrl(addressId.selfLink()));
+    compareAddressId(addressId, GlobalAddressId.fromUrl(addressId.getSelfLink()));
     thrown.expect(IllegalArgumentException.class);
     thrown.expectMessage("notMatchingUrl is not a valid global address URL");
     GlobalAddressId.fromUrl("notMatchingUrl");
@@ -76,7 +101,7 @@ public class AddressIdTest {
   @Test
   public void testToAndFromUrlRegion() {
     RegionAddressId regionAddressId = RegionAddressId.of(PROJECT, REGION, NAME);
-    compareRegionAddressId(regionAddressId, RegionAddressId.fromUrl(regionAddressId.selfLink()));
+    compareRegionAddressId(regionAddressId, RegionAddressId.fromUrl(regionAddressId.getSelfLink()));
     thrown.expect(IllegalArgumentException.class);
     thrown.expectMessage("notMatchingUrl is not a valid region address URL");
     RegionAddressId.fromUrl("notMatchingUrl");
@@ -94,26 +119,26 @@ public class AddressIdTest {
 
   @Test
   public void testMatchesUrl() {
-    assertTrue(GlobalAddressId.matchesUrl(GlobalAddressId.of(PROJECT, NAME).selfLink()));
+    assertTrue(GlobalAddressId.matchesUrl(GlobalAddressId.of(PROJECT, NAME).getSelfLink()));
     assertFalse(GlobalAddressId.matchesUrl("notMatchingUrl"));
-    assertTrue(RegionAddressId.matchesUrl(RegionAddressId.of(PROJECT, REGION, NAME).selfLink()));
+    assertTrue(RegionAddressId.matchesUrl(RegionAddressId.of(PROJECT, REGION, NAME).getSelfLink()));
     assertFalse(RegionAddressId.matchesUrl("notMatchingUrl"));
   }
 
   private void compareAddressId(GlobalAddressId expected, GlobalAddressId value) {
     assertEquals(expected, value);
-    assertEquals(expected.project(), expected.project());
-    assertEquals(expected.address(), expected.address());
-    assertEquals(expected.selfLink(), expected.selfLink());
+    assertEquals(expected.getProject(), expected.getProject());
+    assertEquals(expected.getAddress(), expected.getAddress());
+    assertEquals(expected.getSelfLink(), expected.getSelfLink());
     assertEquals(expected.hashCode(), expected.hashCode());
   }
 
   private void compareRegionAddressId(RegionAddressId expected, RegionAddressId value) {
     assertEquals(expected, value);
-    assertEquals(expected.project(), expected.project());
-    assertEquals(expected.region(), expected.region());
-    assertEquals(expected.address(), expected.address());
-    assertEquals(expected.selfLink(), expected.selfLink());
+    assertEquals(expected.getProject(), expected.getProject());
+    assertEquals(expected.getRegion(), expected.getRegion());
+    assertEquals(expected.getAddress(), expected.getAddress());
+    assertEquals(expected.getSelfLink(), expected.getSelfLink());
     assertEquals(expected.hashCode(), expected.hashCode());
   }
 }
