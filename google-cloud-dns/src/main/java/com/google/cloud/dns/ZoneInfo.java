@@ -55,41 +55,60 @@ public class ZoneInfo implements Serializable {
     /**
      * Sets a mandatory user-provided name for the zone. It must be unique within the project.
      */
+    @Deprecated
     public abstract Builder name(String name);
+
+    /**
+     * Sets a mandatory user-provided name for the zone. It must be unique within the project.
+     */
+    public abstract Builder setName(String name);
 
     /**
      * Sets service-generated id for the zone.
      */
-    abstract Builder generatedId(String generatedId);
+    abstract Builder setGeneratedId(String generatedId);
 
     /**
      * Sets the time when this zone was created.
      */
-    abstract Builder creationTimeMillis(long creationTimeMillis);
+    abstract Builder setCreationTimeMillis(long creationTimeMillis);
 
     /**
      * Sets a mandatory DNS name of this zone, for instance "example.com.".
      */
+    @Deprecated
     public abstract Builder dnsName(String dnsName);
+
+    /**
+     * Sets a mandatory DNS name of this zone, for instance "example.com.".
+     */
+    public abstract Builder setDnsName(String dnsName);
 
     /**
      * Sets a mandatory description for this zone. The value is a string of at most 1024 characters
      * which has no effect on the zone's function.
      */
+    @Deprecated
     public abstract Builder description(String description);
+
+    /**
+     * Sets a mandatory description for this zone. The value is a string of at most 1024 characters
+     * which has no effect on the zone's function.
+     */
+    public abstract Builder setDescription(String description);
 
     /**
      * Optionally specifies the NameServerSet for this zone. A NameServerSet is a set of DNS name
      * servers that all host the same zones. Most users will not need to specify this value.
      */
-    abstract Builder nameServerSet(String nameServerSet);
+    abstract Builder setNameServerSet(String nameServerSet);
     // this should not be included in tooling as per the service owners
 
     /**
      * Sets a list of servers that hold the information about the zone. This information is provided
      * by Google Cloud DNS and is read only.
      */
-    abstract Builder nameServers(List<String> nameServers);
+    abstract Builder setNameServers(List<String> nameServers);
 
     /**
      * Builds the instance of {@code ZoneInfo} based on the information set by this builder.
@@ -126,43 +145,61 @@ public class ZoneInfo implements Serializable {
     }
 
     @Override
+    @Deprecated
     public Builder name(String name) {
+      return setName(name);
+    }
+
+    @Override
+    public Builder setName(String name) {
       this.name = checkNotNull(name);
       return this;
     }
 
     @Override
-    Builder generatedId(String generatedId) {
+    Builder setGeneratedId(String generatedId) {
       this.generatedId = generatedId;
       return this;
     }
 
     @Override
-    Builder creationTimeMillis(long creationTimeMillis) {
+    Builder setCreationTimeMillis(long creationTimeMillis) {
       this.creationTimeMillis = creationTimeMillis;
       return this;
     }
 
     @Override
+    @Deprecated
     public Builder dnsName(String dnsName) {
+      return setDnsName(dnsName);
+    }
+
+    @Override
+    public Builder setDnsName(String dnsName) {
       this.dnsName = checkNotNull(dnsName);
       return this;
     }
 
     @Override
+    @Deprecated
     public Builder description(String description) {
+      return setDescription(description);
+    }
+
+    @Override
+    public Builder setDescription(String description) {
       this.description = checkNotNull(description);
       return this;
     }
 
     @Override
-    Builder nameServerSet(String nameServerSet) {
+    Builder setNameServerSet(String nameServerSet) {
       this.nameServerSet = checkNotNull(nameServerSet);
       return this;
     }
 
     @Override
-    Builder nameServers(List<String> nameServers) {
+    Builder setNameServers(List<String> nameServers) {
       checkNotNull(nameServers);
       this.nameServers = Lists.newLinkedList(nameServers);
       return this;
@@ -189,41 +226,81 @@ public class ZoneInfo implements Serializable {
    * Returns a ZoneInfo object with assigned {@code name}, {@code dnsName} and {@code description}.
    */
   public static ZoneInfo of(String name, String dnsName, String description) {
-    return new BuilderImpl(name).dnsName(dnsName).description(description).build();
+    return new BuilderImpl(name).setDnsName(dnsName).setDescription(description).build();
   }
 
   /**
    * Returns the user-defined name of the zone.
    */
+  @Deprecated
   public String name() {
+    return getName();
+  }
+
+  /**
+   * Returns the user-defined name of the zone.
+   */
+  public String getName() {
     return name;
   }
 
   /**
    * Returns the service-generated id for this zone.
    */
+  @Deprecated
   public String generatedId() {
+    return getGeneratedId();
+  }
+
+  /**
+   * Returns the service-generated id for this zone.
+   */
+  public String getGeneratedId() {
     return generatedId;
   }
 
   /**
    * Returns the time when this zone was created on the server.
    */
+  @Deprecated
   public Long creationTimeMillis() {
+    return getCreationTimeMillis();
+  }
+
+  /**
+   * Returns the time when this zone was created on the server.
+   */
+  public Long getCreationTimeMillis() {
     return creationTimeMillis;
   }
 
   /**
    * Returns the DNS name of this zone, for instance "example.com.".
    */
+  @Deprecated
   public String dnsName() {
+    return getDnsName();
+  }
+
+  /**
+   * Returns the DNS name of this zone, for instance "example.com.".
+   */
+  public String getDnsName() {
     return dnsName;
   }
 
   /**
    * Returns the description of this zone.
    */
+  @Deprecated
   public String description() {
+    return getDescription();
+  }
+
+  /**
+   * Returns the description of this zone.
+   */
+  public String getDescription() {
     return description;
   }
 
@@ -231,14 +308,31 @@ public class ZoneInfo implements Serializable {
    * Returns the optionally specified set of DNS name servers that all host this zone. This value is
    * set only for specific use cases and is left empty for vast majority of users.
    */
+  @Deprecated
   public String nameServerSet() {
+    return getNameServerSet();
+  }
+
+  /**
+   * Returns the optionally specified set of DNS name servers that all host this zone. This value is
+   * set only for specific use cases and is left empty for vast majority of users.
+   */
+  public String getNameServerSet() {
     return nameServerSet;
   }
 
   /**
    * The nameservers that the zone should be delegated to. This is defined by the Google DNS cloud.
    */
+  @Deprecated
   public List<String> nameServers() {
+    return getNameServers();
+  }
+
+  /**
+   * The nameservers that the zone should be delegated to. This is defined by the Google DNS cloud.
+   */
+  public List<String> getNameServers() {
     return nameServers == null ? ImmutableList.<String>of() : nameServers;
   }
 
@@ -252,18 +346,18 @@ public class ZoneInfo implements Serializable {
   ManagedZone toPb() {
     ManagedZone pb =
         new ManagedZone();
-    pb.setDescription(this.description());
-    pb.setDnsName(this.dnsName());
-    if (this.generatedId() != null) {
-      pb.setId(new BigInteger(this.generatedId()));
+    pb.setDescription(this.getDescription());
+    pb.setDnsName(this.getDnsName());
+    if (this.getGeneratedId() != null) {
+      pb.setId(new BigInteger(this.getGeneratedId()));
     }
-    pb.setName(this.name());
+    pb.setName(this.getName());
     pb.setNameServers(this.nameServers); // do use real attribute value which may be null
-    pb.setNameServerSet(this.nameServerSet());
-    if (this.creationTimeMillis() != null) {
+    pb.setNameServerSet(this.getNameServerSet());
+    if (this.getCreationTimeMillis() != null) {
       pb.setCreationTime(ISODateTimeFormat.dateTime()
           .withZoneUTC()
-          .print(this.creationTimeMillis()));
+          .print(this.getCreationTimeMillis()));
     }
     return pb;
   }
@@ -271,22 +365,22 @@ public class ZoneInfo implements Serializable {
   static ZoneInfo fromPb(ManagedZone pb) {
     Builder builder = new BuilderImpl(pb.getName());
     if (pb.getDescription() != null) {
-      builder.description(pb.getDescription());
+      builder.setDescription(pb.getDescription());
     }
     if (pb.getDnsName() != null) {
-      builder.dnsName(pb.getDnsName());
+      builder.setDnsName(pb.getDnsName());
     }
     if (pb.getId() != null) {
-      builder.generatedId(pb.getId().toString());
+      builder.setGeneratedId(pb.getId().toString());
     }
     if (pb.getNameServers() != null) {
-      builder.nameServers(pb.getNameServers());
+      builder.setNameServers(pb.getNameServers());
     }
     if (pb.getNameServerSet() != null) {
-      builder.nameServerSet(pb.getNameServerSet());
+      builder.setNameServerSet(pb.getNameServerSet());
     }
     if (pb.getCreationTime() != null) {
-      builder.creationTimeMillis(DateTime.parse(pb.getCreationTime()).getMillis());
+      builder.setCreationTimeMillis(DateTime.parse(pb.getCreationTime()).getMillis());
     }
     return builder.build();
   }
@@ -308,13 +402,13 @@ public class ZoneInfo implements Serializable {
   @Override
   public String toString() {
     return MoreObjects.toStringHelper(this)
-        .add("name", name())
-        .add("generatedId", generatedId())
-        .add("description", description())
-        .add("dnsName", dnsName())
-        .add("nameServerSet", nameServerSet())
-        .add("nameServers", nameServers())
-        .add("creationTimeMillis", creationTimeMillis())
+        .add("name", getName())
+        .add("generatedId", getGeneratedId())
+        .add("description", getDescription())
+        .add("dnsName", getDnsName())
+        .add("nameServerSet", getNameServerSet())
+        .add("nameServers", getNameServers())
+        .add("creationTimeMillis", getCreationTimeMillis())
         .toString();
   }
 }

@@ -41,22 +41,39 @@ public class ChangeRequestInfoTest {
   private static final RecordSet.Type TYPE2 = RecordSet.Type.AAAA;
   private static final String NAME3 = "dns3";
   private static final RecordSet.Type TYPE3 = RecordSet.Type.MX;
-  private static final RecordSet RECORD1 = RecordSet.builder(NAME1, TYPE1).build();
-  private static final RecordSet RECORD2 = RecordSet.builder(NAME2, TYPE2).build();
-  private static final RecordSet RECORD3 = RecordSet.builder(NAME3, TYPE3).build();
+  private static final RecordSet RECORD1 = RecordSet.newBuilder(NAME1, TYPE1).build();
+  private static final RecordSet RECORD2 = RecordSet.newBuilder(NAME2, TYPE2).build();
+  private static final RecordSet RECORD3 = RecordSet.newBuilder(NAME3, TYPE3).build();
   private static final List<RecordSet> ADDITIONS = ImmutableList.of(RECORD1, RECORD2);
   private static final List<RecordSet> DELETIONS = ImmutableList.of(RECORD3);
-  private static final ChangeRequestInfo CHANGE = ChangeRequest.builder()
+  private static final ChangeRequestInfo CHANGE = ChangeRequest.newBuilder()
       .add(RECORD1)
       .add(RECORD2)
       .delete(RECORD3)
-      .startTimeMillis(START_TIME_MILLIS)
-      .status(STATUS)
-      .generatedId(GENERATED_ID)
+      .setStartTime(START_TIME_MILLIS)
+      .setStatus(STATUS)
+      .setGeneratedId(GENERATED_ID)
+      .build();
+  private static final ChangeRequestInfo DEPRECATED_CHANGE = ChangeRequest.builder()
+      .add(RECORD1)
+      .add(RECORD2)
+      .delete(RECORD3)
+      .setStartTime(START_TIME_MILLIS)
+      .setStatus(STATUS)
+      .setGeneratedId(GENERATED_ID)
       .build();
 
   @Test
   public void testEmptyBuilder() {
+    ChangeRequestInfo cr = ChangeRequest.newBuilder().build();
+    assertNotNull(cr.getDeletions());
+    assertTrue(cr.getDeletions().isEmpty());
+    assertNotNull(cr.getAdditions());
+    assertTrue(cr.getAdditions().isEmpty());
+  }
+
+  @Test
+  public void testEmptyBuilderDeprecated() {
     ChangeRequestInfo cr = ChangeRequest.builder().build();
     assertNotNull(cr.deletions());
     assertTrue(cr.deletions().isEmpty());
@@ -66,18 +83,34 @@ public class ChangeRequestInfoTest {
 
   @Test
   public void testBuilder() {
-    assertEquals(GENERATED_ID, CHANGE.generatedId());
+    assertEquals(GENERATED_ID, CHANGE.getGeneratedId());
     assertEquals(STATUS, CHANGE.status());
-    assertEquals(START_TIME_MILLIS, CHANGE.startTimeMillis());
-    assertEquals(ADDITIONS, CHANGE.additions());
-    assertEquals(DELETIONS, CHANGE.deletions());
+    assertEquals(START_TIME_MILLIS, CHANGE.getStartTimeMillis());
+    assertEquals(ADDITIONS, CHANGE.getAdditions());
+    assertEquals(DELETIONS, CHANGE.getDeletions());
     List<RecordSet> recordList = ImmutableList.of(RECORD1);
-    ChangeRequestInfo another = CHANGE.toBuilder().additions(recordList).build();
+    ChangeRequestInfo another = CHANGE.toBuilder().setAdditions(recordList).build();
+    assertEquals(recordList, another.getAdditions());
+    assertEquals(CHANGE.getDeletions(), another.getDeletions());
+    another = CHANGE.toBuilder().setDeletions(recordList).build();
+    assertEquals(recordList, another.getDeletions());
+    assertEquals(CHANGE.getAdditions(), another.getAdditions());
+  }
+
+  @Test
+  public void testBuilderDeprecated() {
+    assertEquals(GENERATED_ID, DEPRECATED_CHANGE.generatedId());
+    assertEquals(STATUS, DEPRECATED_CHANGE.status());
+    assertEquals(START_TIME_MILLIS, DEPRECATED_CHANGE.startTimeMillis());
+    assertEquals(ADDITIONS, DEPRECATED_CHANGE.additions());
+    assertEquals(DELETIONS, DEPRECATED_CHANGE.deletions());
+    List<RecordSet> recordList = ImmutableList.of(RECORD1);
+    ChangeRequestInfo another = DEPRECATED_CHANGE.toBuilder().additions(recordList).build();
     assertEquals(recordList, another.additions());
-    assertEquals(CHANGE.deletions(), another.deletions());
-    another = CHANGE.toBuilder().deletions(recordList).build();
+    assertEquals(DEPRECATED_CHANGE.deletions(), another.deletions());
+    another = DEPRECATED_CHANGE.toBuilder().deletions(recordList).build();
     assertEquals(recordList, another.deletions());
-    assertEquals(CHANGE.additions(), another.additions());
+    assertEquals(DEPRECATED_CHANGE.additions(), another.additions());
   }
 
   @Test
@@ -86,17 +119,17 @@ public class ChangeRequestInfoTest {
     assertEquals(CHANGE, clone);
     clone = ChangeRequest.fromPb(CHANGE.toPb());
     assertEquals(CHANGE, clone);
-    clone = CHANGE.toBuilder().generatedId("some-other-id").build();
+    clone = CHANGE.toBuilder().setGeneratedId("some-other-id").build();
     assertNotEquals(CHANGE, clone);
-    clone = CHANGE.toBuilder().startTimeMillis(CHANGE.startTimeMillis() + 1).build();
+    clone = CHANGE.toBuilder().setStartTime(CHANGE.getStartTimeMillis() + 1).build();
     assertNotEquals(CHANGE, clone);
     clone = CHANGE.toBuilder().add(RECORD3).build();
     assertNotEquals(CHANGE, clone);
     clone = CHANGE.toBuilder().delete(RECORD1).build();
     assertNotEquals(CHANGE, clone);
-    ChangeRequestInfo empty = ChangeRequest.builder().build();
+    ChangeRequestInfo empty = ChangeRequest.newBuilder().build();
     assertNotEquals(CHANGE, empty);
-    assertEquals(empty, ChangeRequest.builder().build());
+    assertEquals(empty, ChangeRequest.newBuilder().build());
   }
 
   @Test
@@ -104,57 +137,57 @@ public class ChangeRequestInfoTest {
     ChangeRequestInfo clone = CHANGE.toBuilder().build();
     assertEquals(CHANGE, clone);
     assertEquals(CHANGE.hashCode(), clone.hashCode());
-    ChangeRequestInfo empty = ChangeRequest.builder().build();
-    assertEquals(empty.hashCode(), ChangeRequest.builder().build().hashCode());
+    ChangeRequestInfo empty = ChangeRequest.newBuilder().build();
+    assertEquals(empty.hashCode(), ChangeRequest.newBuilder().build().hashCode());
   }
 
   @Test
   public void testToAndFromPb() {
     assertEquals(CHANGE, ChangeRequest.fromPb(CHANGE.toPb()));
-    ChangeRequestInfo partial = ChangeRequest.builder().build();
+    ChangeRequestInfo partial = ChangeRequest.newBuilder().build();
     assertEquals(partial, ChangeRequest.fromPb(partial.toPb()));
-    partial = ChangeRequest.builder().generatedId(GENERATED_ID).build();
+    partial = ChangeRequest.newBuilder().setGeneratedId(GENERATED_ID).build();
     assertEquals(partial, ChangeRequest.fromPb(partial.toPb()));
-    partial = ChangeRequest.builder().add(RECORD1).build();
+    partial = ChangeRequest.newBuilder().add(RECORD1).build();
     assertEquals(partial, ChangeRequest.fromPb(partial.toPb()));
-    partial = ChangeRequest.builder().delete(RECORD1).build();
+    partial = ChangeRequest.newBuilder().delete(RECORD1).build();
     assertEquals(partial, ChangeRequest.fromPb(partial.toPb()));
-    partial = ChangeRequest.builder().additions(ADDITIONS).build();
+    partial = ChangeRequest.newBuilder().setAdditions(ADDITIONS).build();
     assertEquals(partial, ChangeRequest.fromPb(partial.toPb()));
-    partial = ChangeRequest.builder().deletions(DELETIONS).build();
+    partial = ChangeRequest.newBuilder().setDeletions(DELETIONS).build();
     assertEquals(partial, ChangeRequest.fromPb(partial.toPb()));
-    partial = ChangeRequest.builder().startTimeMillis(START_TIME_MILLIS).build();
+    partial = ChangeRequest.newBuilder().setStartTime(START_TIME_MILLIS).build();
     assertEquals(partial, ChangeRequest.fromPb(partial.toPb()));
-    partial = ChangeRequest.builder().status(STATUS).build();
+    partial = ChangeRequest.newBuilder().setStatus(STATUS).build();
     assertEquals(partial, ChangeRequest.fromPb(partial.toPb()));
   }
 
   @Test
   public void testToBuilder() {
     assertEquals(CHANGE, CHANGE.toBuilder().build());
-    ChangeRequestInfo partial = ChangeRequest.builder().build();
+    ChangeRequestInfo partial = ChangeRequest.newBuilder().build();
     assertEquals(partial, partial.toBuilder().build());
-    partial = ChangeRequest.builder().generatedId(GENERATED_ID).build();
+    partial = ChangeRequest.newBuilder().setGeneratedId(GENERATED_ID).build();
     assertEquals(partial, partial.toBuilder().build());
-    partial = ChangeRequest.builder().add(RECORD1).build();
+    partial = ChangeRequest.newBuilder().add(RECORD1).build();
     assertEquals(partial, partial.toBuilder().build());
-    partial = ChangeRequest.builder().delete(RECORD1).build();
+    partial = ChangeRequest.newBuilder().delete(RECORD1).build();
     assertEquals(partial, partial.toBuilder().build());
-    partial = ChangeRequest.builder().additions(ADDITIONS).build();
+    partial = ChangeRequest.newBuilder().setAdditions(ADDITIONS).build();
     assertEquals(partial, partial.toBuilder().build());
-    partial = ChangeRequest.builder().deletions(DELETIONS).build();
+    partial = ChangeRequest.newBuilder().setDeletions(DELETIONS).build();
     assertEquals(partial, partial.toBuilder().build());
-    partial = ChangeRequest.builder().startTimeMillis(START_TIME_MILLIS).build();
+    partial = ChangeRequest.newBuilder().setStartTime(START_TIME_MILLIS).build();
     assertEquals(partial, partial.toBuilder().build());
-    partial = ChangeRequest.builder().status(STATUS).build();
+    partial = ChangeRequest.newBuilder().setStatus(STATUS).build();
     assertEquals(partial, partial.toBuilder().build());
   }
 
   @Test
   public void testClearAdditions() {
     ChangeRequestInfo clone = CHANGE.toBuilder().clearAdditions().build();
-    assertTrue(clone.additions().isEmpty());
-    assertFalse(clone.deletions().isEmpty());
+    assertTrue(clone.getAdditions().isEmpty());
+    assertFalse(clone.getDeletions().isEmpty());
   }
 
   @Test
@@ -166,7 +199,7 @@ public class ChangeRequestInfoTest {
       // expected
     }
     ChangeRequestInfo clone = CHANGE.toBuilder().add(RECORD1).build();
-    assertEquals(CHANGE.additions().size() + 1, clone.additions().size());
+    assertEquals(CHANGE.getAdditions().size() + 1, clone.getAdditions().size());
   }
 
   @Test
@@ -178,33 +211,33 @@ public class ChangeRequestInfoTest {
       // expected
     }
     ChangeRequestInfo clone = CHANGE.toBuilder().delete(RECORD1).build();
-    assertEquals(CHANGE.deletions().size() + 1, clone.deletions().size());
+    assertEquals(CHANGE.getDeletions().size() + 1, clone.getDeletions().size());
   }
 
   @Test
   public void testClearDeletions() {
     ChangeRequestInfo clone = CHANGE.toBuilder().clearDeletions().build();
-    assertTrue(clone.deletions().isEmpty());
-    assertFalse(clone.additions().isEmpty());
+    assertTrue(clone.getDeletions().isEmpty());
+    assertFalse(clone.getAdditions().isEmpty());
   }
 
   @Test
   public void testRemoveAddition() {
     ChangeRequestInfo clone = CHANGE.toBuilder().removeAddition(RECORD1).build();
-    assertTrue(clone.additions().contains(RECORD2));
-    assertFalse(clone.additions().contains(RECORD1));
-    assertTrue(clone.deletions().contains(RECORD3));
+    assertTrue(clone.getAdditions().contains(RECORD2));
+    assertFalse(clone.getAdditions().contains(RECORD1));
+    assertTrue(clone.getDeletions().contains(RECORD3));
     clone = CHANGE.toBuilder().removeAddition(RECORD2).removeAddition(RECORD1).build();
-    assertFalse(clone.additions().contains(RECORD2));
-    assertFalse(clone.additions().contains(RECORD1));
-    assertTrue(clone.additions().isEmpty());
-    assertTrue(clone.deletions().contains(RECORD3));
+    assertFalse(clone.getAdditions().contains(RECORD2));
+    assertFalse(clone.getAdditions().contains(RECORD1));
+    assertTrue(clone.getAdditions().isEmpty());
+    assertTrue(clone.getDeletions().contains(RECORD3));
   }
 
   @Test
   public void testRemoveDeletion() {
     ChangeRequestInfo clone = CHANGE.toBuilder().removeDeletion(RECORD3).build();
-    assertTrue(clone.deletions().isEmpty());
+    assertTrue(clone.getDeletions().isEmpty());
   }
 
   @Test
@@ -212,7 +245,7 @@ public class ChangeRequestInfoTest {
     String startTime = "2016-01-26T18:33:43.512Z"; // obtained from service
     Change change = CHANGE.toPb().setStartTime(startTime);
     ChangeRequestInfo converted = ChangeRequest.fromPb(change);
-    assertNotNull(converted.startTimeMillis());
+    assertNotNull(converted.getStartTimeMillis());
     assertEquals(change, converted.toPb());
     assertEquals(change.getStartTime(), converted.toPb().getStartTime());
   }

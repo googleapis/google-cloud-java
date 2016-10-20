@@ -55,14 +55,26 @@ public class ChangeRequest extends ChangeRequestInfo {
     }
 
     @Override
+    @Deprecated
     public Builder additions(List<RecordSet> additions) {
-      infoBuilder.additions(additions);
+      return setAdditions(additions);
+    }
+
+    @Override
+    public Builder setAdditions(List<RecordSet> additions) {
+      infoBuilder.setAdditions(additions);
       return this;
     }
 
     @Override
+    @Deprecated
     public Builder deletions(List<RecordSet> deletions) {
-      infoBuilder.deletions(deletions);
+      return setDeletions(deletions);
+    }
+
+    @Override
+    public Builder setDeletions(List<RecordSet> deletions) {
+      infoBuilder.setDeletions(deletions);
       return this;
     }
 
@@ -103,20 +115,20 @@ public class ChangeRequest extends ChangeRequestInfo {
     }
 
     @Override
-    Builder generatedId(String generatedId) {
-      infoBuilder.generatedId(generatedId);
+    Builder setGeneratedId(String generatedId) {
+      infoBuilder.setGeneratedId(generatedId);
       return this;
     }
 
     @Override
-    Builder startTimeMillis(long startTimeMillis) {
-      infoBuilder.startTimeMillis(startTimeMillis);
+    Builder setStartTime(long startTimeMillis) {
+      infoBuilder.setStartTime(startTimeMillis);
       return this;
     }
 
     @Override
-    Builder status(Status status) {
-      infoBuilder.status(status);
+    Builder setStatus(Status status) {
+      infoBuilder.setStatus(status);
       return this;
     }
 
@@ -137,6 +149,13 @@ public class ChangeRequest extends ChangeRequestInfo {
    * Returns the name of the {@link Zone} associated with this change request.
    */
   public String zone() {
+    return getZone();
+  }
+
+  /**
+   * Returns the name of the {@link Zone} associated with this change request.
+   */
+  public String getZone() {
     return this.zone;
   }
 
@@ -144,6 +163,13 @@ public class ChangeRequest extends ChangeRequestInfo {
    * Returns the change request's {@code Dns} object used to issue requests.
    */
   public Dns dns() {
+    return getDns();
+  }
+
+  /**
+   * Returns the change request's {@code Dns} object used to issue requests.
+   */
+  public Dns getDns() {
     return dns;
   }
 
@@ -168,7 +194,7 @@ public class ChangeRequest extends ChangeRequestInfo {
    * @throws DnsException upon failure of the API call or if the associated zone was not found
    */
   public ChangeRequest reload(Dns.ChangeRequestOption... options) {
-    return dns.getChangeRequest(zone, generatedId(), options);
+    return dns.getChangeRequest(zone, getGeneratedId(), options);
   }
 
   /**

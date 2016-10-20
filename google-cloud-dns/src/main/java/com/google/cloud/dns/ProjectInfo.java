@@ -79,14 +79,30 @@ public class ProjectInfo implements Serializable {
     /**
      * Returns the maximum allowed number of zones in the project.
      */
+    @Deprecated
     public int zones() {
+      return getZones();
+    }
+
+    /**
+     * Returns the maximum allowed number of zones in the project.
+     */
+    public int getZones() {
       return zones;
     }
 
     /**
      * Returns the maximum allowed number of records per {@link RecordSet}.
      */
+    @Deprecated
     public int resourceRecordsPerRrset() {
+      return getResourceRecordsPerRrset();
+    }
+
+    /**
+     * Returns the maximum allowed number of records per {@link RecordSet}.
+     */
+    public int getResourceRecordsPerRrset() {
       return resourceRecordsPerRrset;
     }
 
@@ -94,7 +110,16 @@ public class ProjectInfo implements Serializable {
      * Returns the maximum allowed number of {@link RecordSet}s to add per {@link
      * ChangeRequest}.
      */
+    @Deprecated
     public int rrsetAdditionsPerChange() {
+      return getRrsetAdditionsPerChange();
+    }
+
+    /**
+     * Returns the maximum allowed number of {@link RecordSet}s to add per {@link
+     * ChangeRequest}.
+     */
+    public int getRrsetAdditionsPerChange() {
       return rrsetAdditionsPerChange;
     }
 
@@ -102,7 +127,16 @@ public class ProjectInfo implements Serializable {
      * Returns the maximum allowed number of {@link RecordSet}s to delete per {@link
      * ChangeRequest}.
      */
+    @Deprecated
     public int rrsetDeletionsPerChange() {
+      return getRrsetDeletionsPerChange();
+    }
+
+    /**
+     * Returns the maximum allowed number of {@link RecordSet}s to delete per {@link
+     * ChangeRequest}.
+     */
+    public int getRrsetDeletionsPerChange() {
       return rrsetDeletionsPerChange;
     }
 
@@ -110,14 +144,31 @@ public class ProjectInfo implements Serializable {
      * Returns the maximum allowed number of {@link RecordSet}s per {@link ZoneInfo} in the
      * project.
      */
+    @Deprecated
     public int rrsetsPerZone() {
+      return getRrsetsPerZone();
+    }
+
+    /**
+     * Returns the maximum allowed number of {@link RecordSet}s per {@link ZoneInfo} in the
+     * project.
+     */
+    public int getRrsetsPerZone() {
       return rrsetsPerZone;
     }
 
     /**
      * Returns the maximum allowed size for total records in one ChangesRequest in bytes.
      */
+    @Deprecated
     public int totalRrdataSizePerChange() {
+      return getTotalRrdataSizePerChange();
+    }
+
+    /**
+     * Returns the maximum allowed size for total records in one ChangesRequest in bytes.
+     */
+    public int getTotalRrdataSizePerChange() {
       return totalRrdataSizePerChange;
     }
 
@@ -180,7 +231,7 @@ public class ProjectInfo implements Serializable {
     /**
      * Sets an id of the project.
      */
-    Builder id(String id) {
+    Builder setId(String id) {
       this.id = checkNotNull(id);
       return this;
     }
@@ -188,7 +239,7 @@ public class ProjectInfo implements Serializable {
     /**
      * Sets a number of the project.
      */
-    Builder number(BigInteger number) {
+    Builder setNumber(BigInteger number) {
       this.number = checkNotNull(number);
       return this;
     }
@@ -196,7 +247,7 @@ public class ProjectInfo implements Serializable {
     /**
      * Sets quotas assigned to the project.
      */
-    Builder quota(Quota quota) {
+    Builder setQuota(Quota quota) {
       this.quota = checkNotNull(quota);
       return this;
     }
@@ -218,28 +269,44 @@ public class ProjectInfo implements Serializable {
   /**
    * Returns a builder for {@code ProjectInfo}.
    */
-  static Builder builder() {
+  static Builder newBuilder() {
     return new Builder();
   }
 
   /**
    * Returns the {@code Quota} object which contains quotas assigned to this project.
    */
+  @Deprecated
   public Quota quota() {
+    return getQuota();
+  }
+
+  /**
+   * Returns the {@code Quota} object which contains quotas assigned to this project.
+   */
+  public Quota getQuota() {
     return quota;
   }
 
   /**
    * Returns project number. For internal use only.
    */
-  BigInteger number() {
+  BigInteger getNumber() {
     return number;
   }
 
   /**
    * Returns project id. For internal use only.
    */
+  @Deprecated
   String id() {
+    return getId();
+  }
+
+  /**
+   * Returns project id. For internal use only.
+   */
+  String getId() {
     return id;
   }
 
@@ -254,15 +321,15 @@ public class ProjectInfo implements Serializable {
   }
 
   static ProjectInfo fromPb(Project pb) {
-    Builder builder = builder();
+    Builder builder = newBuilder();
     if (pb.getId() != null) {
-      builder.id(pb.getId());
+      builder.setId(pb.getId());
     }
     if (pb.getNumber() != null) {
-      builder.number(pb.getNumber());
+      builder.setNumber(pb.getNumber());
     }
     if (pb.getQuota() != null) {
-      builder.quota(Quota.fromPb(pb.getQuota()));
+      builder.setQuota(Quota.fromPb(pb.getQuota()));
     }
     return builder.build();
   }

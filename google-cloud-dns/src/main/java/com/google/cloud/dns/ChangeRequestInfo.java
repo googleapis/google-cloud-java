@@ -74,13 +74,27 @@ public class ChangeRequestInfo implements Serializable {
      * Sets a collection of {@link RecordSet}s which are to be added to the zone upon executing this
      * {@code ChangeRequestInfo}.
      */
+    @Deprecated
     public abstract Builder additions(List<RecordSet> additions);
+
+    /**
+     * Sets a collection of {@link RecordSet}s which are to be added to the zone upon executing this
+     * {@code ChangeRequestInfo}.
+     */
+    public abstract Builder setAdditions(List<RecordSet> additions);
 
     /**
      * Sets a collection of {@link RecordSet}s which are to be deleted from the zone upon executing
      * this {@code ChangeRequestInfo}.
      */
+    @Deprecated
     public abstract Builder deletions(List<RecordSet> deletions);
+
+    /**
+     * Sets a collection of {@link RecordSet}s which are to be deleted from the zone upon executing
+     * this {@code ChangeRequestInfo}.
+     */
+    public abstract Builder setDeletions(List<RecordSet> deletions);
 
     /**
      * Adds a {@link RecordSet} to be <strong>added</strong> to the zone upon executing this {@code
@@ -121,17 +135,17 @@ public class ChangeRequestInfo implements Serializable {
     /**
      * Associates a service-generated id to this {@code ChangeRequestInfo}.
      */
-    abstract Builder generatedId(String generatedId);
+    abstract Builder setGeneratedId(String generatedId);
 
     /**
      * Sets the time when this change request was started by a server.
      */
-    abstract Builder startTimeMillis(long startTimeMillis);
+    abstract Builder setStartTime(long startTimeMillis);
 
     /**
      * Sets the current status of this {@code ChangeRequest}.
      */
-    abstract Builder status(ChangeRequest.Status status);
+    abstract Builder setStatus(ChangeRequest.Status status);
 
     /**
      * Creates a {@code ChangeRequestInfo} instance populated by the values associated with this
@@ -153,21 +167,33 @@ public class ChangeRequestInfo implements Serializable {
     }
 
     BuilderImpl(ChangeRequestInfo info) {
-      this.additions = Lists.newLinkedList(info.additions());
-      this.deletions = Lists.newLinkedList(info.deletions());
+      this.additions = Lists.newLinkedList(info.getAdditions());
+      this.deletions = Lists.newLinkedList(info.getDeletions());
       this.generatedId = info.generatedId;
       this.startTimeMillis = info.startTimeMillis;
       this.status = info.status;
     }
 
     @Override
+    @Deprecated
     public Builder additions(List<RecordSet> additions) {
+      return setAdditions(additions);
+    }
+
+    @Override
+    public Builder setAdditions(List<RecordSet> additions) {
       this.additions = Lists.newLinkedList(checkNotNull(additions));
       return this;
     }
 
     @Override
+    @Deprecated
     public Builder deletions(List<RecordSet> deletions) {
+      return setDeletions(deletions);
+    }
+
+    @Override
+    public Builder setDeletions(List<RecordSet> deletions) {
       this.deletions = Lists.newLinkedList(checkNotNull(deletions));
       return this;
     }
@@ -214,19 +240,19 @@ public class ChangeRequestInfo implements Serializable {
     }
 
     @Override
-    Builder generatedId(String generatedId) {
+    Builder setGeneratedId(String generatedId) {
       this.generatedId = checkNotNull(generatedId);
       return this;
     }
 
     @Override
-    Builder startTimeMillis(long startTimeMillis) {
+    Builder setStartTime(long startTimeMillis) {
       this.startTimeMillis = startTimeMillis;
       return this;
     }
 
     @Override
-    Builder status(ChangeRequestInfo.Status status) {
+    Builder setStatus(ChangeRequestInfo.Status status) {
       this.status = checkNotNull(status);
       return this;
     }
@@ -243,7 +269,15 @@ public class ChangeRequestInfo implements Serializable {
   /**
    * Returns an empty builder for the {@code ChangeRequestInfo} class.
    */
+  @Deprecated
   public static Builder builder() {
+    return newBuilder();
+  }
+
+  /**
+   * Returns an empty builder for the {@code ChangeRequestInfo} class.
+   */
+  public static Builder newBuilder() {
     return new BuilderImpl();
   }
 
@@ -258,7 +292,16 @@ public class ChangeRequestInfo implements Serializable {
    * Returns the list of {@link RecordSet}s to be added to the zone upon submitting this change
    * request.
    */
+  @Deprecated
   public List<RecordSet> additions() {
+    return getAdditions();
+  }
+
+    /**
+   * Returns the list of {@link RecordSet}s to be added to the zone upon submitting this change
+   * request.
+   */
+  public List<RecordSet> getAdditions() {
     return additions;
   }
 
@@ -266,21 +309,46 @@ public class ChangeRequestInfo implements Serializable {
    * Returns the list of {@link RecordSet}s to be deleted from the zone upon submitting this change
    * request.
    */
+  @Deprecated
   public List<RecordSet> deletions() {
+    return getDeletions();
+  }
+
+    /**
+   * Returns the list of {@link RecordSet}s to be deleted from the zone upon submitting this change
+   * request.
+   */
+  public List<RecordSet> getDeletions() {
     return deletions;
   }
 
   /**
    * Returns the service-generated id for this change request.
    */
+  @Deprecated
   public String generatedId() {
+    return getGeneratedId();
+  }
+
+  /**
+   * Returns the service-generated id for this change request.
+   */
+  public String getGeneratedId() {
     return generatedId;
   }
 
   /**
    * Returns the time when this change request was started by the server.
    */
+  @Deprecated
   public Long startTimeMillis() {
+    return getStartTimeMillis();
+  }
+
+  /**
+   * Returns the time when this change request was started by the server.
+   */
+  public Long getStartTimeMillis() {
     return startTimeMillis;
   }
 
@@ -289,47 +357,55 @@ public class ChangeRequestInfo implements Serializable {
    * status is {@code PENDING}.
    */
   public ChangeRequestInfo.Status status() {
+    return getStatus();
+  }
+
+  /**
+   * Returns the status of this change request. If the change request has not been applied yet, the
+   * status is {@code PENDING}.
+   */
+  public ChangeRequestInfo.Status getStatus() {
     return status;
   }
 
   Change toPb() {
     Change pb = new Change();
     // set id
-    if (generatedId() != null) {
-      pb.setId(generatedId());
+    if (getGeneratedId() != null) {
+      pb.setId(getGeneratedId());
     }
     // set timestamp
-    if (startTimeMillis() != null) {
-      pb.setStartTime(ISODateTimeFormat.dateTime().withZoneUTC().print(startTimeMillis()));
+    if (getStartTimeMillis() != null) {
+      pb.setStartTime(ISODateTimeFormat.dateTime().withZoneUTC().print(getStartTimeMillis()));
     }
     // set status
     if (status() != null) {
       pb.setStatus(status().name().toLowerCase());
     }
     // set a list of additions
-    pb.setAdditions(Lists.transform(additions(), RecordSet.TO_PB_FUNCTION));
+    pb.setAdditions(Lists.transform(getAdditions(), RecordSet.TO_PB_FUNCTION));
     // set a list of deletions
-    pb.setDeletions(Lists.transform(deletions(), RecordSet.TO_PB_FUNCTION));
+    pb.setDeletions(Lists.transform(getDeletions(), RecordSet.TO_PB_FUNCTION));
     return pb;
   }
 
   static ChangeRequestInfo fromPb(Change pb) {
-    Builder builder = builder();
+    Builder builder = newBuilder();
     if (pb.getId() != null) {
-      builder.generatedId(pb.getId());
+      builder.setGeneratedId(pb.getId());
     }
     if (pb.getStartTime() != null) {
-      builder.startTimeMillis(DateTime.parse(pb.getStartTime()).getMillis());
+      builder.setStartTime(DateTime.parse(pb.getStartTime()).getMillis());
     }
     if (pb.getStatus() != null) {
       // we are assuming that status indicated in pb is a lower case version of the enum name
-      builder.status(ChangeRequest.Status.valueOf(pb.getStatus().toUpperCase()));
+      builder.setStatus(ChangeRequest.Status.valueOf(pb.getStatus().toUpperCase()));
     }
     if (pb.getDeletions() != null) {
-      builder.deletions(Lists.transform(pb.getDeletions(), RecordSet.FROM_PB_FUNCTION));
+      builder.setDeletions(Lists.transform(pb.getDeletions(), RecordSet.FROM_PB_FUNCTION));
     }
     if (pb.getAdditions() != null) {
-      builder.additions(Lists.transform(pb.getAdditions(), RecordSet.FROM_PB_FUNCTION));
+      builder.setAdditions(Lists.transform(pb.getAdditions(), RecordSet.FROM_PB_FUNCTION));
     }
     return builder.build();
   }
