@@ -72,7 +72,15 @@ public final class Blob implements Serializable {
   /**
    * Returns the size of this blob.
    */
+  @Deprecated
   public int length() {
+    return getLength();
+  }
+
+  /**
+   * Returns the size of this blob.
+   */
+  public int getLength() {
     return byteString.size();
   }
 
@@ -119,10 +127,10 @@ public final class Blob implements Serializable {
    * @throws IndexOutOfBoundsException if an offset or size is negative or too large
    */
   public void copyTo(byte[] target) {
-    byteString.copyTo(target, 0, 0, length());
+    byteString.copyTo(target, 0, 0, getLength());
   }
 
-  ByteString byteString() {
+  ByteString getByteString() {
     return byteString;
   }
 

@@ -648,7 +648,16 @@ public class LocalDatastoreHelper {
    * Returns a {@link DatastoreOptions} instance that sets the host to use the Datastore emulator on
    * localhost.
    */
+  @Deprecated
   public DatastoreOptions options() {
+    return getOptions();
+  }
+
+  /**
+   * Returns a {@link DatastoreOptions} instance that sets the host to use the Datastore emulator on
+   * localhost.
+   */
+  public DatastoreOptions getOptions() {
     return optionsBuilder().build();
   }
 
@@ -656,21 +665,46 @@ public class LocalDatastoreHelper {
    * Returns a {@link DatastoreOptions} instance that sets the host to use the Datastore emulator on
    * localhost. The default namespace is set to {@code namespace}.
    */
+  @Deprecated
   public DatastoreOptions options(String namespace) {
+    return optionsBuilder().namespace(namespace).build();
+  }
+
+  /**
+   * Returns a {@link DatastoreOptions} instance that sets the host to use the Datastore emulator on
+   * localhost. The default namespace is set to {@code namespace}.
+   */
+  public DatastoreOptions getOptions(String namespace) {
     return optionsBuilder().namespace(namespace).build();
   }
 
   /**
    * Returns the project ID associated with this local Datastore emulator.
    */
+  @Deprecated
   public String projectId() {
+    return projectId;
+  }
+
+  /**
+   * Returns the project ID associated with this local Datastore emulator.
+   */
+  public String getProjectId() {
     return projectId;
   }
 
   /**
    * Returns the consistency setting for the local Datastore emulator.
    */
+  @Deprecated
   public double consistency() {
+    return consistency;
+  }
+
+  /**
+   * Returns the consistency setting for the local Datastore emulator.
+   */
+  public double getConsistency() {
     return consistency;
   }
 

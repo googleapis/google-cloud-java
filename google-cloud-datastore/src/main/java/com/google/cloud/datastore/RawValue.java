@@ -27,7 +27,7 @@ public final class RawValue extends Value<com.google.datastore.v1.Value> {
 
         @Override
         public Builder newBuilder(com.google.datastore.v1.Value value) {
-          return builder(value);
+          return RawValue.newBuilder(value);
         }
 
         @Override
@@ -65,7 +65,7 @@ public final class RawValue extends Value<com.google.datastore.v1.Value> {
   }
 
   RawValue(com.google.datastore.v1.Value valuePb) {
-    this(builder(valuePb));
+    this(newBuilder(valuePb));
   }
 
   @Override
@@ -77,10 +77,10 @@ public final class RawValue extends Value<com.google.datastore.v1.Value> {
     return new RawValue(valuePb);
   }
 
-  static Builder builder(com.google.datastore.v1.Value valuePb) {
+  static Builder newBuilder(com.google.datastore.v1.Value valuePb) {
     Builder builder = new Builder();
-    builder.excludeFromIndexes(valuePb.getExcludeFromIndexes());
-    builder.meaning(valuePb.getMeaning());
+    builder.setExcludeFromIndexes(valuePb.getExcludeFromIndexes());
+    builder.setMeaning(valuePb.getMeaning());
     builder.set(valuePb);
     return builder;
   }

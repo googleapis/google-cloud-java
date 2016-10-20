@@ -34,7 +34,7 @@ public final class BlobValue extends Value<Blob> {
 
         @Override
         public Builder newBuilder(Blob value) {
-          return builder(value);
+          return BlobValue.newBuilder(value);
         }
 
         @Override
@@ -44,7 +44,7 @@ public final class BlobValue extends Value<Blob> {
 
         @Override
         protected void setValue(BlobValue from, com.google.datastore.v1.Value.Builder to) {
-          to.setBlobValue(from.get().byteString());
+          to.setBlobValue(from.get().getByteString());
         }
       };
 
@@ -61,7 +61,7 @@ public final class BlobValue extends Value<Blob> {
   }
 
   public BlobValue(Blob blob) {
-    this(builder(blob));
+    this(newBuilder(blob));
   }
 
   private BlobValue(Builder builder) {
@@ -77,7 +77,12 @@ public final class BlobValue extends Value<Blob> {
     return new BlobValue(blob);
   }
 
+  @Deprecated
   public static Builder builder(Blob blob) {
+    return newBuilder(blob);
+  }
+
+  public static Builder newBuilder(Blob blob) {
     return new Builder().set(blob);
   }
 }

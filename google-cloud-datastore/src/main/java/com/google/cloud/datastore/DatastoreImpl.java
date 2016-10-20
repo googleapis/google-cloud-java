@@ -139,7 +139,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
 
   private IncompleteKey trimNameOrId(IncompleteKey key) {
     if (key instanceof Key) {
-      return IncompleteKey.builder(key).build();
+      return IncompleteKey.newBuilder(key).build();
     }
     return key;
   }
@@ -159,13 +159,13 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
     Map<Key, Entity> completeEntities = new LinkedHashMap<>();
     for (FullEntity<?> entity : entities) {
       Entity completeEntity = null;
-      if (entity.key() instanceof Key) {
+      if (entity.getKey() instanceof Key) {
         completeEntity = Entity.convert((FullEntity<Key>) entity);
       }
       if (completeEntity != null) {
-        if (completeEntities.put(completeEntity.key(), completeEntity) != null) {
+        if (completeEntities.put(completeEntity.getKey(), completeEntity) != null) {
           throw DatastoreException.throwInvalidRequest(
-            "Duplicate entity with the key %s", entity.key());
+            "Duplicate entity with the key %s", entity.getKey());
         }
       } else {
         Preconditions.checkArgument(entity.hasKey(), "Entity %s is missing a key", entity);
@@ -178,13 +178,13 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
         commitResponse.getMutationResultsList().iterator();
     ImmutableList.Builder<Entity> responseBuilder = ImmutableList.builder();
     for (FullEntity<?> entity : entities) {
-      Entity completeEntity = completeEntities.get(entity.key());
+      Entity completeEntity = completeEntities.get(entity.getKey());
       if (completeEntity != null) {
         responseBuilder.add(completeEntity);
         mutationResults.next();
       } else {
         responseBuilder.add(
-            Entity.builder(Key.fromPb(mutationResults.next().getKey()), entity).build());
+            Entity.newBuilder(Key.fromPb(mutationResults.next().getKey()), entity).build());
       }
     }
     return responseBuilder.build();
@@ -300,7 +300,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
       List<com.google.datastore.v1.Mutation> mutationsPb = new ArrayList<>();
       Map<Key, Entity> dedupEntities = new LinkedHashMap<>();
       for (Entity entity : entities) {
-        dedupEntities.put(entity.key(), entity);
+        dedupEntities.put(entity.getKey(), entity);
       }
       for (Entity entity : dedupEntities.values()) {
         mutationsPb.add(
@@ -325,9 +325,9 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
     Map<Key, Entity> dedupEntities = new LinkedHashMap<>();
     for (FullEntity<?> entity : entities) {
       Preconditions.checkArgument(entity.hasKey(), "Entity %s is missing a key", entity);
-      if (entity.key() instanceof Key) {
+      if (entity.getKey() instanceof Key) {
         Entity completeEntity = Entity.convert((FullEntity<Key>) entity);
-        dedupEntities.put(completeEntity.key(), completeEntity);
+        dedupEntities.put(completeEntity.getKey(), completeEntity);
       } else {
         mutationsPb.add(
             com.google.datastore.v1.Mutation.newBuilder().setUpsert(entity.toPb()).build());
@@ -342,12 +342,12 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
         commitResponse.getMutationResultsList().iterator();
     ImmutableList.Builder<Entity> responseBuilder = ImmutableList.builder();
     for (FullEntity<?> entity : entities) {
-      Entity completeEntity = dedupEntities.get(entity.key());
+      Entity completeEntity = dedupEntities.get(entity.getKey());
       if (completeEntity != null) {
         responseBuilder.add(completeEntity);
       } else {
         responseBuilder.add(
-            Entity.builder(Key.fromPb(mutationResults.next().getKey()), entity).build());
+            Entity.newBuilder(Key.fromPb(mutationResults.next().getKey()), entity).build());
       }
     }
     return responseBuilder.build();

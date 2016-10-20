@@ -75,7 +75,12 @@ public final class ProjectionEntity extends BaseEntity<Key> {
     return new Builder().fill(entityPb).build();
   }
 
+  @Deprecated
   public static Builder builder(ProjectionEntity copyFrom) {
+    return newBuilder(copyFrom);
+  }
+
+  public static Builder newBuilder(ProjectionEntity copyFrom) {
     return new Builder(copyFrom);
   }
 }

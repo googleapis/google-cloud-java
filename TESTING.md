@@ -84,7 +84,7 @@ You can test against a temporary local Datastore by following these steps:
 
 2. Create and use a `Datastore` object with the options given by the `LocalDatastoreHelper` instance.  For example:
   ```java
-  Datastore localDatastore = helper.options().service();
+  Datastore localDatastore = helper.getOptions().service();
   ```
 
 3. Run your tests.

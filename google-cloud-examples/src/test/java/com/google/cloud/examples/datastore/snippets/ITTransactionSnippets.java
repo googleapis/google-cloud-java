@@ -45,7 +45,7 @@ public class ITTransactionSnippets {
 
   private String registerKey(Key key) {
     registeredKeys.add(key);
-    return key.name();
+    return key.getName();
   }
 
   private String registerKey(String keyName) {
@@ -53,9 +53,9 @@ public class ITTransactionSnippets {
   }
 
   private String registerKey(String keyName, String kind) {
-    Key key = datastore.newKeyFactory().kind(kind).newKey(keyName);
+    Key key = datastore.newKeyFactory().setKind(kind).newKey(keyName);
     registeredKeys.add(key);
-    return key.name();
+    return key.getName();
   }
 
   @BeforeClass
@@ -70,8 +70,8 @@ public class ITTransactionSnippets {
 
   @Test
   public void testGet() {
-    Key key1 = datastore.newKeyFactory().kind("MyKind").newKey("fetch_key_1");
-    Entity entity1 = Entity.builder(key1).set("description", "fetch1").build();
+    Key key1 = datastore.newKeyFactory().setKind("MyKind").newKey("fetch_key_1");
+    Entity entity1 = Entity.newBuilder(key1).set("description", "fetch1").build();
     datastore.put(entity1);
     registerKey("fetch_key_1");
 
@@ -82,10 +82,10 @@ public class ITTransactionSnippets {
 
   @Test
   public void testGetMultiple() {
-    Key key1 = datastore.newKeyFactory().kind("MyKind").newKey("fetch_key_1");
-    Key key2 = datastore.newKeyFactory().kind("MyKind").newKey("fetch_key_2");
-    Entity entity1 = Entity.builder(key1).set("description", "fetch1").build();
-    Entity entity2 = Entity.builder(key2).set("description", "fetch2").build();
+    Key key1 = datastore.newKeyFactory().setKind("MyKind").newKey("fetch_key_1");
+    Key key2 = datastore.newKeyFactory().setKind("MyKind").newKey("fetch_key_2");
+    Entity entity1 = Entity.newBuilder(key1).set("description", "fetch1").build();
+    Entity entity2 = Entity.newBuilder(key2).set("description", "fetch2").build();
     datastore.put(entity1, entity2);
     registerKey("fetch_key_1");
     registerKey("fetch_key_2");
@@ -101,10 +101,10 @@ public class ITTransactionSnippets {
 
   @Test
   public void testFetchEntitiesWithKeys() {
-    Key key1 = datastore.newKeyFactory().kind("MyKind").newKey("fetch_key_1");
-    Key key2 = datastore.newKeyFactory().kind("MyKind").newKey("fetch_key_2");
-    Entity entity1 = Entity.builder(key1).set("description", "fetch1").build();
-    Entity entity2 = Entity.builder(key2).set("description", "fetch2").build();
+    Key key1 = datastore.newKeyFactory().setKind("MyKind").newKey("fetch_key_1");
+    Key key2 = datastore.newKeyFactory().setKind("MyKind").newKey("fetch_key_2");
+    Entity entity1 = Entity.newBuilder(key1).set("description", "fetch1").build();
+    Entity entity2 = Entity.newBuilder(key2).set("description", "fetch2").build();
     datastore.put(entity1, entity2);
     registerKey("fetch_key_1");
     registerKey("fetch_key_2");
@@ -120,17 +120,17 @@ public class ITTransactionSnippets {
 
   @Test
   public void testRun() {
-    Key key1 = datastore.newKeyFactory().kind("ParentKind").newKey("run_key_1");
-    Entity entity1 = Entity.builder(key1).set("description", "run1").build();
+    Key key1 = datastore.newKeyFactory().setKind("ParentKind").newKey("run_key_1");
+    Entity entity1 = Entity.newBuilder(key1).set("description", "run1").build();
     datastore.put(entity1);
     Key key2 = datastore
         .newKeyFactory()
-        .kind("MyKind")
-        .ancestors(PathElement.of("ParentKind", "run_key_1"))
+        .setKind("MyKind")
+        .addAncestor(PathElement.of("ParentKind", "run_key_1"))
         .newKey("run_key_2");
     registerKey(key1);
     registerKey(key2);
-    Entity entity2 = Entity.builder(key2).set("description", "run2").build();
+    Entity entity2 = Entity.newBuilder(key2).set("description", "run2").build();
     datastore.put(entity2);
 
     Transaction transaction = datastore.newTransaction();
@@ -164,6 +164,16 @@ public class ITTransactionSnippets {
     Transaction transaction = datastore.newTransaction();
     TransactionSnippets transactionSnippets = new TransactionSnippets(transaction);
     Key key = transactionSnippets.active();
+    Entity result = datastore.get(key);
+    assertNotNull(result);
+    datastore.delete(key);
+  }
+
+  @Test
+  public void testIsActive() {
+    Transaction transaction = datastore.newTransaction();
+    TransactionSnippets transactionSnippets = new TransactionSnippets(transaction);
+    Key key = transactionSnippets.isActive();
     Entity result = datastore.get(key);
     assertNotNull(result);
     datastore.delete(key);

@@ -36,12 +36,12 @@ public class UpdateEntity {
 
   public static void main(String... args) {
     Datastore datastore = DatastoreOptions.defaultInstance().service();
-    KeyFactory keyFactory = datastore.newKeyFactory().kind("keyKind");
+    KeyFactory keyFactory = datastore.newKeyFactory().setKind("keyKind");
     Key key = keyFactory.newKey("keyName");
     Entity entity = datastore.get(key);
     if (entity != null) {
       System.out.println("Updating access_time for " + entity.getString("name"));
-      entity = Entity.builder(entity)
+      entity = Entity.newBuilder(entity)
           .set("access_time", DateTime.now())
           .build();
       datastore.update(entity);

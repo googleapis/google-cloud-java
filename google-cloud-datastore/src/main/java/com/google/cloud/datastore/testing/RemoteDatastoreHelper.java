@@ -28,7 +28,7 @@ import java.util.UUID;
 
 /**
  * Utility to create a remote datastore configuration for testing. Datastore options can be obtained
- * via the {@link #options()} method. Returned options use a randomly generated namespace
+ * via the {@link #getOptions()} method. Returned options use a randomly generated namespace
  * ({@link DatastoreOptions#namespace()}) that can be used to run the tests. Once the tests are run,
  * all entities in the namespace can be deleted using {@link #deleteNamespace()}. Returned options
  * also have custom {@link DatastoreOptions#retryParams()}: {@link RetryParams#retryMaxAttempts()}
@@ -55,7 +55,16 @@ public class RemoteDatastoreHelper {
    * Returns a {@link DatastoreOptions} object to be used for testing. The options are associated
    * to a randomly generated namespace.
    */
+  @Deprecated
   public DatastoreOptions options() {
+    return options;
+  }
+
+  /**
+   * Returns a {@link DatastoreOptions} object to be used for testing. The options are associated
+   * to a randomly generated namespace.
+   */
+  public DatastoreOptions getOptions() {
     return options;
   }
 
@@ -63,7 +72,7 @@ public class RemoteDatastoreHelper {
    * Deletes all entities in the namespace associated with this {@link RemoteDatastoreHelper}.
    */
   public void deleteNamespace() {
-    StructuredQuery<Key> query = Query.keyQueryBuilder().namespace(namespace).build();
+    StructuredQuery<Key> query = Query.newKeyQueryBuilder().setNamespace(namespace).build();
     QueryResults<Key> keys = datastore.run(query);
     while (keys.hasNext()) {
       datastore.delete(keys.next());

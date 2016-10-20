@@ -50,6 +50,16 @@ public class LocalDatastoreHelperTest {
   @Test
   public void testCreate() {
     LocalDatastoreHelper helper = LocalDatastoreHelper.create(0.75);
+    assertTrue(Math.abs(0.75 - helper.getConsistency()) < TOLERANCE);
+    assertTrue(helper.getProjectId().startsWith(PROJECT_ID_PREFIX));
+    helper = LocalDatastoreHelper.create();
+    assertTrue(Math.abs(0.9 - helper.getConsistency()) < TOLERANCE);
+    assertTrue(helper.getProjectId().startsWith(PROJECT_ID_PREFIX));
+  }
+
+  @Test
+  public void testCreateDeprecated() {
+    LocalDatastoreHelper helper = LocalDatastoreHelper.create(0.75);
     assertTrue(Math.abs(0.75 - helper.consistency()) < TOLERANCE);
     assertTrue(helper.projectId().startsWith(PROJECT_ID_PREFIX));
     helper = LocalDatastoreHelper.create();
@@ -60,11 +70,11 @@ public class LocalDatastoreHelperTest {
   @Test
   public void testOptions() {
     LocalDatastoreHelper helper = LocalDatastoreHelper.create();
-    DatastoreOptions options = helper.options();
+    DatastoreOptions options = helper.getOptions();
     assertTrue(options.projectId().startsWith(PROJECT_ID_PREFIX));
     assertTrue(options.host().startsWith("localhost:"));
     assertSame(AuthCredentials.noAuth(), options.authCredentials());
-    options = helper.options(NAMESPACE);
+    options = helper.getOptions(NAMESPACE);
     assertTrue(options.projectId().startsWith(PROJECT_ID_PREFIX));
     assertTrue(options.host().startsWith("localhost:"));
     assertSame(AuthCredentials.noAuth(), options.authCredentials());
@@ -75,9 +85,9 @@ public class LocalDatastoreHelperTest {
   public void testStartStopReset() throws IOException, InterruptedException {
     LocalDatastoreHelper helper = LocalDatastoreHelper.create();
     helper.start();
-    Datastore datastore = helper.options().service();
-    Key key = datastore.newKeyFactory().kind("kind").newKey("name");
-    datastore.put(Entity.builder(key).build());
+    Datastore datastore = helper.getOptions().service();
+    Key key = datastore.newKeyFactory().setKind("kind").newKey("name");
+    datastore.put(Entity.newBuilder(key).build());
     assertNotNull(datastore.get(key));
     helper.reset();
     assertNull(datastore.get(key));

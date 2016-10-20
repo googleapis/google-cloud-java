@@ -43,15 +43,45 @@ public class QuerySnippets {
   /**
    * Example of creating and running a GQL query.
    */
-  // [TARGET gqlQueryBuilder(String)]
+  // [TARGET newGqlQueryBuilder(String)]
   // [VARIABLE "my_kind"]
   public QueryResults<?> newQuery(String kind) {
     // [START newQuery]
     String gqlQuery = "select * from " + kind;
-    Query<?> query = Query.gqlQueryBuilder(gqlQuery).build();
+    Query<?> query = Query.newGqlQueryBuilder(gqlQuery).build();
     QueryResults<?> results = datastore.run(query);
     // Use results
     // [END newQuery]
+    return results;
+  }
+
+  /**
+   * Example of creating and running a GQL query.
+   */
+  // [TARGET gqlQueryBuilder(String)]
+  // [VARIABLE "my_kind"]
+  public QueryResults<?> newQueryDeprecated(String kind) {
+    // [START newQueryDeprecated]
+    String gqlQuery = "select * from " + kind;
+    Query<?> query = Query.gqlQueryBuilder(gqlQuery).build();
+    QueryResults<?> results = datastore.run(query);
+    // Use results
+    // [END newQueryDeprecated]
+    return results;
+  }
+
+  /**
+   * Example of creating and running a typed GQL query.
+   */
+  // [TARGET newGqlQueryBuilder(ResultType, String)]
+  // [VARIABLE "my_kind"]
+  public QueryResults<Entity> newTypedQuery(String kind) {
+    // [START newTypedQuery]
+    String gqlQuery = "select * from " + kind;
+    Query<Entity> query = Query.newGqlQueryBuilder(Query.ResultType.ENTITY, gqlQuery).build();
+    QueryResults<Entity> results = datastore.run(query);
+    // Use results
+    // [END newTypedQuery]
     return results;
   }
 
@@ -60,13 +90,27 @@ public class QuerySnippets {
    */
   // [TARGET gqlQueryBuilder(ResultType, String)]
   // [VARIABLE "my_kind"]
-  public QueryResults<Entity> newTypedQuery(String kind) {
-    // [START newTypedQuery]
+  public QueryResults<Entity> newTypedQueryDeprecated(String kind) {
+    // [START newTypedQueryDeprecated]
     String gqlQuery = "select * from " + kind;
     Query<Entity> query = Query.gqlQueryBuilder(Query.ResultType.ENTITY, gqlQuery).build();
     QueryResults<Entity> results = datastore.run(query);
     // Use results
-    // [END newTypedQuery]
+    // [END newTypedQueryDeprecated]
+    return results;
+  }
+
+  /**
+   * Example of creating and running an entity query.
+   */
+  // [TARGET newEntityQueryBuilder()]
+  // [VARIABLE "my_kind"]
+  public QueryResults<Entity> newEntityQuery(String kind) {
+    // [START newEntityQuery]
+    Query<Entity> query = Query.newEntityQueryBuilder().setKind(kind).build();
+    QueryResults<Entity> results = datastore.run(query);
+    // Use results
+    // [END newEntityQuery]
     return results;
   }
 
@@ -75,12 +119,26 @@ public class QuerySnippets {
    */
   // [TARGET entityQueryBuilder()]
   // [VARIABLE "my_kind"]
-  public QueryResults<Entity> newEntityQuery(String kind) {
-    // [START newEntityQuery]
-    Query<Entity> query = Query.entityQueryBuilder().kind(kind).build();
+  public QueryResults<Entity> newEntityQueryDeprecated(String kind) {
+    // [START newEntityQueryDeprecated]
+    Query<Entity> query = Query.entityQueryBuilder().setKind(kind).build();
     QueryResults<Entity> results = datastore.run(query);
     // Use results
-    // [END newEntityQuery]
+    // [END newEntityQueryDeprecated]
+    return results;
+  }
+
+  /**
+   * Example of creating and running a key query.
+   */
+  // [TARGET newKeyQueryBuilder()]
+  // [VARIABLE "my_kind"]
+  public QueryResults<Key> newKeyQuery(String kind) {
+    // [START newKeyQuery]
+    Query<Key> query = Query.newKeyQueryBuilder().setKind(kind).build();
+    QueryResults<Key> results = datastore.run(query);
+    // Use results
+    // [END newKeyQuery]
     return results;
   }
 
@@ -89,12 +147,30 @@ public class QuerySnippets {
    */
   // [TARGET keyQueryBuilder()]
   // [VARIABLE "my_kind"]
-  public QueryResults<Key> newKeyQuery(String kind) {
-    // [START newKeyQuery]
-    Query<Key> query = Query.keyQueryBuilder().kind(kind).build();
+  public QueryResults<Key> newKeyQueryDeprecated(String kind) {
+    // [START newKeyQueryDeprecated]
+    Query<Key> query = Query.keyQueryBuilder().setKind(kind).build();
     QueryResults<Key> results = datastore.run(query);
     // Use results
-    // [END newKeyQuery]
+    // [END newKeyQueryDeprecated]
+    return results;
+  }
+
+  /**
+   * Example of creating and running a projection entity query.
+   */
+  // [TARGET newProjectionEntityQueryBuilder()]
+  // [VARIABLE "my_kind"]
+  // [VARIABLE "my_property"]
+  public QueryResults<ProjectionEntity> newProjectionEntityQuery(String kind, String property) {
+    // [START newProjectionEntityQuery]
+    Query<ProjectionEntity> query = Query.newProjectionEntityQueryBuilder()
+        .setKind(kind)
+        .addProjection(property)
+        .build();
+    QueryResults<ProjectionEntity> results = datastore.run(query);
+    // Use results
+    // [END newProjectionEntityQuery]
     return results;
   }
 
@@ -104,10 +180,11 @@ public class QuerySnippets {
   // [TARGET projectionEntityQueryBuilder()]
   // [VARIABLE "my_kind"]
   // [VARIABLE "my_property"]
-  public QueryResults<ProjectionEntity> newProjectionEntityQuery(String kind, String property) {
+  public QueryResults<ProjectionEntity> newProjectionEntityQueryDeprecated(String kind,
+      String property) {
     // [START newProjectionEntityQuery]
     Query<ProjectionEntity> query = Query.projectionEntityQueryBuilder()
-        .kind(kind)
+        .setKind(kind)
         .addProjection(property)
         .build();
     QueryResults<ProjectionEntity> results = datastore.run(query);

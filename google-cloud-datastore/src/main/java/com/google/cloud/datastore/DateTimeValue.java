@@ -34,7 +34,7 @@ public final class DateTimeValue extends Value<DateTime> {
 
         @Override
         public Builder newBuilder(DateTime value) {
-          return builder(value);
+          return DateTimeValue.newBuilder(value);
         }
 
         @Override
@@ -45,7 +45,7 @@ public final class DateTimeValue extends Value<DateTime> {
         @Override
         protected void setValue(DateTimeValue from, com.google.datastore.v1.Value.Builder to) {
           to.setTimestampValue(DateTime.microsecondsToTimestampPb(from.get()
-              .timestampMicroseconds()));
+              .getTimestampMicroseconds()));
         }
       };
 
@@ -62,7 +62,7 @@ public final class DateTimeValue extends Value<DateTime> {
   }
 
   public DateTimeValue(DateTime dateTime) {
-    this(builder(dateTime));
+    this(newBuilder(dateTime));
   }
 
   private DateTimeValue(Builder builder) {
@@ -78,7 +78,12 @@ public final class DateTimeValue extends Value<DateTime> {
     return new DateTimeValue(dateTime);
   }
 
+  @Deprecated
   public static Builder builder(DateTime dateTime) {
+    return newBuilder(dateTime);
+  }
+
+  public static Builder newBuilder(DateTime dateTime) {
     return new Builder().set(dateTime);
   }
 }

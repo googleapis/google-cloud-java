@@ -89,5 +89,11 @@ interface DatastoreBatchWriter extends DatastoreWriter {
   /**
    * Returns {@code true} if still active (write operations were not sent to the Datastore).
    */
+  @Deprecated
   boolean active();
+
+  /**
+   * Returns {@code true} if still active (write operations were not sent to the Datastore).
+   */
+  boolean isActive();
 }
