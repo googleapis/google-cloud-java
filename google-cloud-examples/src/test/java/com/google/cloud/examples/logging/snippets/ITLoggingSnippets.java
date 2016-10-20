@@ -49,8 +49,7 @@ public class ITLoggingSnippets {
       "app_script_function", "dataproc_cluster", "ml_job", "bigquery_resource", "container",
       "gke_cluster", "cloud_debugger_resource", "http_load_balancer", "aws_ec2_instance",
       "client_auth_config_brand", "client_auth_config_client", "logging_log", "logging_sink",
-      "metric", "project", "testservice_matrix", "service_account", "deployment",
-      "dns_managed_zone");
+      "metric", "project", "testservice_matrix", "service_account", "deployment");
 
   private static Logging logging;
   private static LoggingSnippets loggingSnippets;
