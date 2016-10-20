@@ -86,8 +86,7 @@ public final class Acl implements Serializable {
      */
     @Deprecated
     public Builder entity(Entity entity) {
-      this.entity = entity;
-      return this;
+      return setEntity(entity);
     }
 
     /**
@@ -103,8 +102,7 @@ public final class Acl implements Serializable {
      */
     @Deprecated
     public Builder role(Role role) {
-      this.role = role;
-      return this;
+      return setRole(role);
     }
 
     /**
@@ -115,20 +113,8 @@ public final class Acl implements Serializable {
       return this;
     }
 
-    @Deprecated
-    Builder id(String id) {
-      this.id = id;
-      return this;
-    }
-
     Builder setId(String id) {
       this.id = id;
-      return this;
-    }
-
-    @Deprecated
-    Builder etag(String etag) {
-      this.etag = etag;
       return this;
     }
 
@@ -169,7 +155,7 @@ public final class Acl implements Serializable {
      */
     @Deprecated
     public Type type() {
-      return type;
+      return getType();
     }
 
     /**
@@ -184,7 +170,7 @@ public final class Acl implements Serializable {
      */
     @Deprecated
     protected String value() {
-      return value;
+      return getValue();
     }
 
     /**
@@ -267,7 +253,7 @@ public final class Acl implements Serializable {
      */
     @Deprecated
     public String domain() {
-      return getValue();
+      return getDomain();
     }
 
     /**
@@ -299,7 +285,7 @@ public final class Acl implements Serializable {
      */
     @Deprecated
     public String email() {
-      return getValue();
+      return getEmail();
     }
 
     /**
@@ -333,7 +319,7 @@ public final class Acl implements Serializable {
      */
     @Deprecated
     public String email() {
-      return getValue();
+      return getEmail();
     }
 
     /**
@@ -396,6 +382,13 @@ public final class Acl implements Serializable {
      */
     @Deprecated
     public ProjectRole projectRole() {
+      return getProjectRole();
+    }
+
+    /**
+     * Returns the role in the project for this entity.
+     */
+    public ProjectRole getProjectRole() {
       return projectRole;
     }
 
@@ -404,14 +397,7 @@ public final class Acl implements Serializable {
      */
     @Deprecated
     public String projectId() {
-      return projectId;
-    }
-
-    /**
-     * Returns the role in the project for this entity.
-     */
-    public ProjectRole getProjectRole() {
-      return projectRole;
+      return getProjectId();
     }
 
     /**
@@ -448,7 +434,7 @@ public final class Acl implements Serializable {
    */
   @Deprecated
   public Entity entity() {
-    return entity;
+    return getEntity();
   }
 
   /**
@@ -463,7 +449,7 @@ public final class Acl implements Serializable {
    */
   @Deprecated
   public Role role() {
-    return role;
+    return getRole();
   }
 
   /**
@@ -478,7 +464,7 @@ public final class Acl implements Serializable {
    */
   @Deprecated
   public String id() {
-    return id;
+    return getId();
   }
 
   /**
@@ -495,7 +481,7 @@ public final class Acl implements Serializable {
    */
   @Deprecated
   public String etag() {
-    return etag;
+    return getEtag();
   }
 
   /**
@@ -532,7 +518,7 @@ public final class Acl implements Serializable {
    */
   @Deprecated
   public static Builder builder(Entity entity, Role role) {
-    return new Builder(entity, role);
+    return newBuilder(entity, role);
   }
 
   /**

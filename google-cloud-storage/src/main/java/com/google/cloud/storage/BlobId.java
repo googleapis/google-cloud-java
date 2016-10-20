@@ -47,7 +47,7 @@ public final class BlobId implements Serializable {
    */
   @Deprecated
   public String bucket() {
-    return bucket;
+    return getBucket();
   }
 
     /**
@@ -62,7 +62,7 @@ public final class BlobId implements Serializable {
    */
   @Deprecated
   public String name() {
-    return name;
+    return getName();
   }
 
     /**
@@ -77,7 +77,7 @@ public final class BlobId implements Serializable {
    */
   @Deprecated
   public Long generation() {
-    return generation;
+    return getGeneration();
   }
 
     /**

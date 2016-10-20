@@ -104,7 +104,7 @@ public class BucketInfo implements Serializable {
 
     @Deprecated
     public Type type() {
-      return type;
+      return getType();
     }
 
     public Type getType() {
@@ -187,7 +187,7 @@ public class BucketInfo implements Serializable {
 
     @Deprecated
     public int daysToLive() {
-      return daysToLive;
+      return getDaysToLive();
     }
 
     public int getDaysToLive() {
@@ -256,7 +256,7 @@ public class BucketInfo implements Serializable {
 
     @Deprecated
     public long timeMillis() {
-      return timeMillis;
+      return getTimeMillis();
     }
 
     public long getTimeMillis() {
@@ -293,7 +293,7 @@ public class BucketInfo implements Serializable {
 
     @Deprecated
     public int numNewerVersions() {
-      return numNewerVersions;
+      return getNumNewerVersions();
     }
 
     public int getNumNewerVersions() {
@@ -554,8 +554,7 @@ public class BucketInfo implements Serializable {
     @Override
     @Deprecated
     public Builder name(String name) {
-      this.name = checkNotNull(name);
-      return this;
+      return setName(name);
     }
 
     @Override
@@ -585,8 +584,7 @@ public class BucketInfo implements Serializable {
     @Override
     @Deprecated
     public Builder versioningEnabled(Boolean enable) {
-      this.versioningEnabled = firstNonNull(enable, Data.<Boolean>nullOf(Boolean.class));
-      return this;
+      return setVersioningEnabled(enable);
     }
 
     @Override
@@ -598,8 +596,7 @@ public class BucketInfo implements Serializable {
     @Override
     @Deprecated
     public Builder indexPage(String indexPage) {
-      this.indexPage = indexPage;
-      return this;
+      return setIndexPage(indexPage);
     }
 
     @Override
@@ -611,8 +608,7 @@ public class BucketInfo implements Serializable {
     @Override
     @Deprecated
     public Builder notFoundPage(String notFoundPage) {
-      this.notFoundPage = notFoundPage;
-      return this;
+      return setNotFoundPage(notFoundPage);
     }
 
     @Override
@@ -624,8 +620,7 @@ public class BucketInfo implements Serializable {
     @Override
     @Deprecated
     public Builder deleteRules(Iterable<? extends DeleteRule> rules) {
-      this.deleteRules = rules != null ? ImmutableList.copyOf(rules) : null;
-      return this;
+      return setDeleteRules(rules);
     }
 
     @Override
@@ -637,8 +632,7 @@ public class BucketInfo implements Serializable {
     @Override
     @Deprecated
     public Builder storageClass(String storageClass) {
-      this.storageClass = storageClass;
-      return this;
+      return setStorageClass(storageClass);
     }
 
     @Override
@@ -650,8 +644,7 @@ public class BucketInfo implements Serializable {
     @Override
     @Deprecated
     public Builder location(String location) {
-      this.location = location;
-      return this;
+      return setLocation(location);
     }
 
     @Override
@@ -681,8 +674,7 @@ public class BucketInfo implements Serializable {
     @Override
     @Deprecated
     public Builder cors(Iterable<Cors> cors) {
-      this.cors = cors != null ? ImmutableList.copyOf(cors) : null;
-      return this;
+      return setCors(cors);
     }
 
     @Override
@@ -694,8 +686,7 @@ public class BucketInfo implements Serializable {
     @Override
     @Deprecated
     public Builder acl(Iterable<Acl> acl) {
-      this.acl = acl != null ? ImmutableList.copyOf(acl) : null;
-      return this;
+      return setAcl(acl);
     }
 
     @Override
@@ -707,8 +698,7 @@ public class BucketInfo implements Serializable {
     @Override
     @Deprecated
     public Builder defaultAcl(Iterable<Acl> acl) {
-      this.defaultAcl = acl != null ? ImmutableList.copyOf(acl) : null;
-      return this;
+      return setDefaultAcl(acl);
     }
 
     @Override
@@ -748,7 +738,7 @@ public class BucketInfo implements Serializable {
    */
   @Deprecated
   public String generatedId() {
-    return generatedId;
+    return getGeneratedId();
   }
 
   /**
@@ -763,7 +753,7 @@ public class BucketInfo implements Serializable {
    */
   @Deprecated
   public String name() {
-    return name;
+    return getName();
   }
 
   /**
@@ -778,7 +768,7 @@ public class BucketInfo implements Serializable {
    */
   @Deprecated
   public Entity owner() {
-    return owner;
+    return getOwner();
   }
 
   /**
@@ -793,7 +783,7 @@ public class BucketInfo implements Serializable {
    */
   @Deprecated
   public String selfLink() {
-    return selfLink;
+    return getSelfLink();
   }
 
   /**
@@ -806,15 +796,7 @@ public class BucketInfo implements Serializable {
   /**
    * Returns {@code true} if versioning is fully enabled for this bucket, {@code false} otherwise.
    */
-  @Deprecated
   public Boolean versioningEnabled() {
-    return Data.isNull(versioningEnabled) ? null : versioningEnabled;
-  }
-
-  /**
-   * Returns {@code true} if versioning is fully enabled for this bucket, {@code false} otherwise.
-   */
-  public Boolean getVersioningEnabled() {
     return Data.isNull(versioningEnabled) ? null : versioningEnabled;
   }
 
@@ -824,7 +806,7 @@ public class BucketInfo implements Serializable {
    */
   @Deprecated
   public String indexPage() {
-    return indexPage;
+    return getIndexPage();
   }
 
   /**
@@ -840,7 +822,7 @@ public class BucketInfo implements Serializable {
    */
   @Deprecated
   public String notFoundPage() {
-    return notFoundPage;
+    return getNotFoundPage();
   }
 
   /**
@@ -857,7 +839,7 @@ public class BucketInfo implements Serializable {
    */
   @Deprecated
   public List<? extends DeleteRule> deleteRules() {
-    return deleteRules;
+    return getDeleteRules();
   }
 
   /**
@@ -876,7 +858,7 @@ public class BucketInfo implements Serializable {
    */
   @Deprecated
   public String etag() {
-    return etag;
+    return getEtag();
   }
 
   /**
@@ -893,7 +875,7 @@ public class BucketInfo implements Serializable {
    */
   @Deprecated
   public Long createTime() {
-    return createTime;
+    return getCreateTime();
   }
 
   /**
@@ -908,7 +890,7 @@ public class BucketInfo implements Serializable {
    */
   @Deprecated
   public Long metageneration() {
-    return metageneration;
+    return getMetageneration();
   }
 
   /**
@@ -926,7 +908,7 @@ public class BucketInfo implements Serializable {
    */
   @Deprecated
   public String location() {
-    return location;
+    return getLocation();
   }
 
   /**
@@ -947,7 +929,7 @@ public class BucketInfo implements Serializable {
    */
   @Deprecated
   public String storageClass() {
-    return storageClass;
+    return getStorageClass();
   }
 
   /**
@@ -968,7 +950,7 @@ public class BucketInfo implements Serializable {
    */
   @Deprecated
   public List<Cors> cors() {
-    return cors;
+    return getCors();
   }
 
   /**
@@ -989,7 +971,7 @@ public class BucketInfo implements Serializable {
    */
   @Deprecated
   public List<Acl> acl() {
-    return acl;
+    return getAcl();
   }
 
   /**
@@ -1010,7 +992,7 @@ public class BucketInfo implements Serializable {
    */
   @Deprecated
   public List<Acl> defaultAcl() {
-    return defaultAcl;
+    return getDefaultAcl();
   }
 
   /**
@@ -1125,7 +1107,7 @@ public class BucketInfo implements Serializable {
    */
   @Deprecated
   public static Builder builder(String name) {
-    return new BuilderImpl(name);
+    return newBuilder(name);
   }
 
   /**

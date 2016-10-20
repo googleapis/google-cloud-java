@@ -73,10 +73,7 @@ public class CopyWriter implements Restorable<CopyWriter> {
    */
   @Deprecated
   public Blob result() {
-    while (!isDone()) {
-      copyChunk();
-    }
-    return Blob.fromPb(serviceOptions.service(), rewriteResponse.result);
+    return getResult();
   }
 
   /**
@@ -104,7 +101,7 @@ public class CopyWriter implements Restorable<CopyWriter> {
    */
   @Deprecated
   public long blobSize() {
-    return rewriteResponse.blobSize;
+    return getBlobSize();
   }
 
   /**
@@ -126,7 +123,7 @@ public class CopyWriter implements Restorable<CopyWriter> {
    */
   @Deprecated
   public long totalBytesCopied() {
-    return rewriteResponse.totalBytesRewritten;
+    return getTotalBytesCopied();
   }
 
   /**

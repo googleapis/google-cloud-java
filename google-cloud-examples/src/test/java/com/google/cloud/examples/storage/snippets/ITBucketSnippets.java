@@ -86,7 +86,7 @@ public class ITBucketSnippets {
     Bucket bucket = bucketSnippets.reload();
     assertNotNull(bucket);
     Bucket updatedBucket = bucketSnippets.update();
-    assertTrue(updatedBucket.getVersioningEnabled());
+    assertTrue(updatedBucket.versioningEnabled());
     Blob blob1 = bucketSnippets.createBlobFromByteArray(BLOB1);
     assertNotNull(blob1);
     Blob blob2 = bucketSnippets.createBlobFromByteArrayWithContentType(BLOB2);

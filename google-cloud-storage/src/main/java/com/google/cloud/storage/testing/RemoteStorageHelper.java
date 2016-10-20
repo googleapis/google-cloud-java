@@ -62,7 +62,7 @@ public class RemoteStorageHelper {
    */
   @Deprecated
   public StorageOptions options() {
-    return options;
+    return getOptions();
   }
 
   /**

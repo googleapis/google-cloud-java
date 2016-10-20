@@ -39,7 +39,8 @@ public class AclTest {
   private static final String ETAG = "etag";
   private static final String ID = "id";
   private static final Acl ACL = Acl.newBuilder(ENTITY, ROLE).setEtag(ETAG).setId(ID).build();
-  private static final Acl DEPRECATED_ACL = Acl.builder(ENTITY, ROLE).etag(ETAG).id(ID).build();
+  private static final Acl DEPRECATED_ACL =
+      Acl.builder(ENTITY, ROLE).setEtag(ETAG).setId(ID).build();
 
   @Test
   public void testBuilder() {
@@ -76,8 +77,8 @@ public class AclTest {
   public void testToBuilderDeprecated() {
     assertEquals(DEPRECATED_ACL, DEPRECATED_ACL.toBuilder().build());
     Acl acl = DEPRECATED_ACL.toBuilder()
-        .etag("otherEtag")
-        .id("otherId")
+        .setEtag("otherEtag")
+        .setId("otherId")
         .role(Role.READER)
         .entity(User.ofAllUsers())
         .build();

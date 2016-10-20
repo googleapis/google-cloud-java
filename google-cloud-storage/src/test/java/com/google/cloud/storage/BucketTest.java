@@ -676,7 +676,7 @@ public class BucketTest {
     assertEquals(NOT_FOUND_PAGE, bucket.getNotFoundPage());
     assertEquals(LOCATION, bucket.getLocation());
     assertEquals(STORAGE_CLASS, bucket.getStorageClass());
-    assertEquals(VERSIONING_ENABLED, bucket.getVersioningEnabled());
+    assertEquals(VERSIONING_ENABLED, bucket.versioningEnabled());
     assertEquals(storage.options(), bucket.getStorage().options());
   }
 

@@ -149,7 +149,7 @@ public class BucketInfoTest {
     assertEquals(NOT_FOUND_PAGE, BUCKET_INFO.getNotFoundPage());
     assertEquals(LOCATION, BUCKET_INFO.getLocation());
     assertEquals(STORAGE_CLASS, BUCKET_INFO.getStorageClass());
-    assertEquals(VERSIONING_ENABLED, BUCKET_INFO.getVersioningEnabled());
+    assertEquals(VERSIONING_ENABLED, BUCKET_INFO.versioningEnabled());
   }
 
   @Test
@@ -196,7 +196,7 @@ public class BucketInfoTest {
     assertEquals(expected.getNotFoundPage(), value.getNotFoundPage());
     assertEquals(expected.getLocation(), value.getLocation());
     assertEquals(expected.getStorageClass(), value.getStorageClass());
-    assertEquals(expected.getVersioningEnabled(), value.getVersioningEnabled());
+    assertEquals(expected.versioningEnabled(), value.versioningEnabled());
   }
 
   @Test

@@ -114,6 +114,13 @@ public class BlobInfo implements Serializable {
      */
     @Deprecated
     public String encryptionAlgorithm() {
+      return getEncryptionAlgorithm();
+    }
+
+    /**
+     * Returns the algorithm used to encrypt the blob.
+     */
+    public String getEncryptionAlgorithm() {
       return encryptionAlgorithm;
     }
 
@@ -122,14 +129,7 @@ public class BlobInfo implements Serializable {
      */
     @Deprecated
     public String keySha256() {
-      return keySha256;
-    }
-
-    /**
-     * Returns the algorithm used to encrypt the blob.
-     */
-    public String getEncryptionAlgorithm() {
-      return encryptionAlgorithm;
+      return getKeySha256();
     }
 
     /**
@@ -422,8 +422,7 @@ public class BlobInfo implements Serializable {
     @Override
     @Deprecated
     public Builder blobId(BlobId blobId) {
-      this.blobId = checkNotNull(blobId);
-      return this;
+      return setBlobId(blobId);
     }
 
     @Override
@@ -441,8 +440,7 @@ public class BlobInfo implements Serializable {
     @Override
     @Deprecated
     public Builder contentType(String contentType) {
-      this.contentType = firstNonNull(contentType, Data.<String>nullOf(String.class));
-      return this;
+      return setContentType(contentType);
     }
 
     @Override
@@ -454,8 +452,7 @@ public class BlobInfo implements Serializable {
     @Override
     @Deprecated
     public Builder contentDisposition(String contentDisposition) {
-      this.contentDisposition = firstNonNull(contentDisposition, Data.<String>nullOf(String.class));
-      return this;
+      return setContentDisposition(contentDisposition);
     }
 
     @Override
@@ -467,8 +464,7 @@ public class BlobInfo implements Serializable {
     @Override
     @Deprecated
     public Builder contentLanguage(String contentLanguage) {
-      this.contentLanguage = firstNonNull(contentLanguage, Data.<String>nullOf(String.class));
-      return this;
+      return setContentLanguage(contentLanguage);
     }
 
     @Override
@@ -480,8 +476,7 @@ public class BlobInfo implements Serializable {
     @Override
     @Deprecated
     public Builder contentEncoding(String contentEncoding) {
-      this.contentEncoding = firstNonNull(contentEncoding, Data.<String>nullOf(String.class));
-      return this;
+      return setContentEncoding(contentEncoding);
     }
 
     @Override
@@ -499,8 +494,7 @@ public class BlobInfo implements Serializable {
     @Override
     @Deprecated
     public Builder cacheControl(String cacheControl) {
-      this.cacheControl = firstNonNull(cacheControl, Data.<String>nullOf(String.class));
-      return this;
+      return setCacheControl(cacheControl);
     }
 
     @Override
@@ -512,8 +506,7 @@ public class BlobInfo implements Serializable {
     @Override
     @Deprecated
     public Builder acl(List<Acl> acl) {
-      this.acl = acl != null ? ImmutableList.copyOf(acl) : null;
-      return this;
+      return setAcl(acl);
     }
 
     @Override
@@ -549,8 +542,7 @@ public class BlobInfo implements Serializable {
     @Override
     @Deprecated
     public Builder md5(String md5) {
-      this.md5 = firstNonNull(md5, Data.<String>nullOf(String.class));
-      return this;
+      return setMd5(md5);
     }
 
     @Override
@@ -562,8 +554,7 @@ public class BlobInfo implements Serializable {
     @Override
     @Deprecated
     public Builder crc32c(String crc32c) {
-      this.crc32c = firstNonNull(crc32c, Data.<String>nullOf(String.class));
-      return this;
+      return setCrc32c(crc32c);
     }
 
     @Override
@@ -581,9 +572,7 @@ public class BlobInfo implements Serializable {
     @Override
     @Deprecated
     public Builder metadata(Map<String, String> metadata) {
-      this.metadata = metadata != null
-          ? new HashMap<>(metadata) : Data.<Map<String, String>>nullOf(ImmutableEmptyMap.class);
-      return this;
+      return setMetadata(metadata);
     }
 
     @Override
@@ -667,7 +656,7 @@ public class BlobInfo implements Serializable {
    */
   @Deprecated
   public BlobId blobId() {
-    return blobId;
+    return getBlobId();
   }
 
     /**
@@ -682,7 +671,7 @@ public class BlobInfo implements Serializable {
    */
   @Deprecated
   public String bucket() {
-    return getBlobId().getBucket();
+    return getBucket();
   }
 
     /**
@@ -697,7 +686,7 @@ public class BlobInfo implements Serializable {
    */
   @Deprecated
   public String generatedId() {
-    return generatedId;
+    return getGeneratedId();
   }
 
     /**
@@ -712,7 +701,7 @@ public class BlobInfo implements Serializable {
    */
   @Deprecated
   public String name() {
-    return getBlobId().getName();
+    return getName();
   }
 
     /**
@@ -729,7 +718,7 @@ public class BlobInfo implements Serializable {
    */
   @Deprecated
   public String cacheControl() {
-    return Data.isNull(cacheControl) ? null : cacheControl;
+    return getCacheControl();
   }
 
   /**
@@ -749,7 +738,7 @@ public class BlobInfo implements Serializable {
    */
   @Deprecated
   public List<Acl> acl() {
-    return acl;
+    return getAcl();
   }
 
   /**
@@ -767,7 +756,7 @@ public class BlobInfo implements Serializable {
    */
   @Deprecated
   public Acl.Entity owner() {
-    return owner;
+    return getOwner();
   }
 
   /**
@@ -784,7 +773,7 @@ public class BlobInfo implements Serializable {
    */
   @Deprecated
   public Long size() {
-    return size;
+    return getSize();
   }
 
   /**
@@ -803,7 +792,7 @@ public class BlobInfo implements Serializable {
    */
   @Deprecated
   public String contentType() {
-    return Data.isNull(contentType) ? null : contentType;
+    return getContentType();
   }
 
   /**
@@ -822,7 +811,7 @@ public class BlobInfo implements Serializable {
    */
   @Deprecated
   public String contentEncoding() {
-    return Data.isNull(contentEncoding) ? null : contentEncoding;
+    return getContentEncoding();
   }
 
   /**
@@ -841,7 +830,7 @@ public class BlobInfo implements Serializable {
    */
   @Deprecated
   public String contentDisposition() {
-    return Data.isNull(contentDisposition) ? null : contentDisposition;
+    return getContentDisposition();
   }
 
   /**
@@ -860,7 +849,7 @@ public class BlobInfo implements Serializable {
    */
   @Deprecated
   public String contentLanguage() {
-    return Data.isNull(contentLanguage) ? null : contentLanguage;
+    return getContentLanguage();
   }
 
   /**
@@ -883,7 +872,7 @@ public class BlobInfo implements Serializable {
    */
   @Deprecated
   public Integer componentCount() {
-    return componentCount;
+    return getComponentCount();
   }
 
   /**
@@ -906,7 +895,7 @@ public class BlobInfo implements Serializable {
    */
   @Deprecated
   public String etag() {
-    return etag;
+    return getEtag();
   }
 
   /**
@@ -923,7 +912,7 @@ public class BlobInfo implements Serializable {
    */
   @Deprecated
   public String selfLink() {
-    return selfLink;
+    return getSelfLink();
   }
 
   /**
@@ -941,7 +930,7 @@ public class BlobInfo implements Serializable {
    */
   @Deprecated
   public String md5() {
-    return Data.isNull(md5) ? null : md5;
+    return getMd5();
   }
 
   /**
@@ -964,7 +953,7 @@ public class BlobInfo implements Serializable {
    */
   @Deprecated
   public String crc32c() {
-    return Data.isNull(crc32c) ? null : crc32c;
+    return getCrc32c();
   }
 
   /**
@@ -984,7 +973,7 @@ public class BlobInfo implements Serializable {
    */
   @Deprecated
   public String mediaLink() {
-    return mediaLink;
+    return getMediaLink();
   }
 
   /**
@@ -999,7 +988,7 @@ public class BlobInfo implements Serializable {
    */
   @Deprecated
   public Map<String, String> metadata() {
-    return metadata == null || Data.isNull(metadata) ? null : Collections.unmodifiableMap(metadata);
+    return getMetadata();
   }
 
   /**
@@ -1014,7 +1003,7 @@ public class BlobInfo implements Serializable {
    */
   @Deprecated
   public Long generation() {
-    return getBlobId().getGeneration();
+    return getGeneration();
   }
 
   /**
@@ -1031,7 +1020,7 @@ public class BlobInfo implements Serializable {
    */
   @Deprecated
   public Long metageneration() {
-    return metageneration;
+    return getMetageneration();
   }
 
   /**
@@ -1048,7 +1037,7 @@ public class BlobInfo implements Serializable {
    */
   @Deprecated
   public Long deleteTime() {
-    return deleteTime;
+    return getDeleteTime();
   }
 
   /**
@@ -1063,7 +1052,7 @@ public class BlobInfo implements Serializable {
    */
   @Deprecated
   public Long updateTime() {
-    return updateTime;
+    return getUpdateTime();
   }
 
     /**
@@ -1078,7 +1067,7 @@ public class BlobInfo implements Serializable {
    */
   @Deprecated
   public Long createTime() {
-    return createTime;
+    return getCreateTime();
   }
 
     /**
@@ -1106,7 +1095,7 @@ public class BlobInfo implements Serializable {
    */
   @Deprecated
   public CustomerEncryption customerEncryption() {
-    return customerEncryption;
+    return getCustomerEncryption();
   }
 
   /**
@@ -1267,7 +1256,7 @@ public class BlobInfo implements Serializable {
    */
   @Deprecated
   public static Builder builder(BlobId blobId) {
-    return new BuilderImpl(blobId);
+    return newBuilder(blobId);
   }
 
   /**

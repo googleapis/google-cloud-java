@@ -144,8 +144,7 @@ public final class Cors implements Serializable {
      */
     @Deprecated
     public Builder maxAgeSeconds(Integer maxAgeSeconds) {
-      this.maxAgeSeconds = maxAgeSeconds;
-      return this;
+      return setMaxAgeSeconds(maxAgeSeconds);
     }
 
     /**
@@ -162,8 +161,7 @@ public final class Cors implements Serializable {
      */
     @Deprecated
     public Builder methods(Iterable<HttpMethod> methods) {
-      this.methods = methods != null ? ImmutableList.copyOf(methods) : null;
-      return this;
+      return setMethods(methods);
     }
 
     /**
@@ -179,8 +177,7 @@ public final class Cors implements Serializable {
      */
     @Deprecated
     public Builder origins(Iterable<Origin> origins) {
-      this.origins = origins != null ? ImmutableList.copyOf(origins) : null;
-      return this;
+      return setOrigins(origins);
     }
 
     /**
@@ -196,8 +193,7 @@ public final class Cors implements Serializable {
      */
     @Deprecated
     public Builder responseHeaders(Iterable<String> headers) {
-      this.responseHeaders = headers != null ? ImmutableList.copyOf(headers) : null;
-      return this;
+      return setResponseHeaders(headers);
     }
 
     /**
@@ -229,7 +225,7 @@ public final class Cors implements Serializable {
    */
   @Deprecated
   public Integer maxAgeSeconds() {
-    return maxAgeSeconds;
+    return getMaxAgeSeconds();
   }
 
   /**
@@ -245,7 +241,7 @@ public final class Cors implements Serializable {
    */
   @Deprecated
   public List<HttpMethod> methods() {
-    return methods;
+    return getMethods();
   }
 
   /**
@@ -260,7 +256,7 @@ public final class Cors implements Serializable {
    */
   @Deprecated
   public List<Origin> origins() {
-    return origins;
+    return getOrigins();
   }
 
   /**
@@ -275,7 +271,7 @@ public final class Cors implements Serializable {
    */
   @Deprecated
   public List<String> responseHeaders() {
-    return responseHeaders;
+    return getResponseHeaders();
   }
 
   /**
@@ -318,7 +314,7 @@ public final class Cors implements Serializable {
    */
   @Deprecated
   public static Builder builder() {
-    return new Builder();
+    return newBuilder();
   }
 
   /**

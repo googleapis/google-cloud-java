@@ -74,11 +74,6 @@ public interface Storage extends Service<StorageOptions> {
       this.entry = entry;
     }
 
-    @Deprecated
-    String entry() {
-      return entry;
-    }
-
     String getEntry() {
       return entry;
     }
@@ -881,7 +876,7 @@ public interface Storage extends Service<StorageOptions> {
 
       @Deprecated
       public String name() {
-        return name;
+        return getName();
       }
 
       public String getName() {
@@ -890,7 +885,7 @@ public interface Storage extends Service<StorageOptions> {
 
       @Deprecated
       public Long generation() {
-        return generation;
+        return getGeneration();
       }
 
       public Long getGeneration() {
@@ -934,8 +929,7 @@ public interface Storage extends Service<StorageOptions> {
        */
       @Deprecated
       public Builder target(BlobInfo target) {
-        this.target = target;
-        return this;
+        return setTarget(target);
       }
 
       /**
@@ -951,8 +945,7 @@ public interface Storage extends Service<StorageOptions> {
        */
       @Deprecated
       public Builder targetOptions(BlobTargetOption... options) {
-        Collections.addAll(targetOptions, options);
-        return this;
+        return setTargetOptions(options);
       }
 
       /**
@@ -968,8 +961,7 @@ public interface Storage extends Service<StorageOptions> {
        */
       @Deprecated
       public Builder targetOptions(Iterable<BlobTargetOption> options) {
-        Iterables.addAll(targetOptions, options);
-        return this;
+        return setTargetOptions(options);
       }
 
       /**
@@ -1001,7 +993,7 @@ public interface Storage extends Service<StorageOptions> {
      */
     @Deprecated
     public List<SourceBlob> sourceBlobs() {
-      return sourceBlobs;
+      return getSourceBlobs();
     }
 
     /**
@@ -1016,7 +1008,7 @@ public interface Storage extends Service<StorageOptions> {
      */
     @Deprecated
     public BlobInfo target() {
-      return target;
+      return getTarget();
     }
 
     /**
@@ -1031,7 +1023,7 @@ public interface Storage extends Service<StorageOptions> {
      */
     @Deprecated
     public List<BlobTargetOption> targetOptions() {
-      return targetOptions;
+      return getTargetOptions();
     }
 
     /**
@@ -1067,7 +1059,7 @@ public interface Storage extends Service<StorageOptions> {
      */
     @Deprecated
     public static Builder builder() {
-      return new Builder();
+      return newBuilder();
     }
 
     /**
@@ -1108,8 +1100,7 @@ public interface Storage extends Service<StorageOptions> {
        */
       @Deprecated
       public Builder source(String bucket, String blob) {
-        this.source = BlobId.of(bucket, blob);
-        return this;
+        return setSource(bucket, blob);
       }
 
       /**
@@ -1129,8 +1120,7 @@ public interface Storage extends Service<StorageOptions> {
        */
       @Deprecated
       public Builder source(BlobId source) {
-        this.source = source;
-        return this;
+        return setSource(source);
       }
 
       /**
@@ -1150,8 +1140,7 @@ public interface Storage extends Service<StorageOptions> {
        */
       @Deprecated
       public Builder sourceOptions(BlobSourceOption... options) {
-        Collections.addAll(sourceOptions, options);
-        return this;
+        return setSourceOptions(options);
       }
 
       /**
@@ -1171,8 +1160,7 @@ public interface Storage extends Service<StorageOptions> {
        */
       @Deprecated
       public Builder sourceOptions(Iterable<BlobSourceOption> options) {
-        Iterables.addAll(sourceOptions, options);
-        return this;
+        return setSourceOptions(options);
       }
 
       /**
@@ -1192,9 +1180,7 @@ public interface Storage extends Service<StorageOptions> {
        */
       @Deprecated
       public Builder target(BlobId targetId) {
-        this.overrideInfo = false;
-        this.target = BlobInfo.newBuilder(targetId).build();
-        return this;
+        return setTarget(targetId);
       }
 
       /**
@@ -1218,10 +1204,7 @@ public interface Storage extends Service<StorageOptions> {
        */
       @Deprecated
       public Builder target(BlobInfo target, BlobTargetOption... options) {
-        this.overrideInfo = true;
-        this.target = checkNotNull(target);
-        Collections.addAll(targetOptions, options);
-        return this;
+        return setTarget(target, options);
       }
 
       /**
@@ -1249,10 +1232,7 @@ public interface Storage extends Service<StorageOptions> {
        */
       @Deprecated
       public Builder target(BlobInfo target, Iterable<BlobTargetOption> options) {
-        this.overrideInfo = true;
-        this.target = checkNotNull(target);
-        Iterables.addAll(targetOptions, options);
-        return this;
+        return setTarget(target, options);
       }
 
       /**
@@ -1279,8 +1259,7 @@ public interface Storage extends Service<StorageOptions> {
        */
       @Deprecated
       public Builder megabytesCopiedPerChunk(Long megabytesCopiedPerChunk) {
-        this.megabytesCopiedPerChunk = megabytesCopiedPerChunk;
-        return this;
+        return setMegabytesCopiedPerChunk(megabytesCopiedPerChunk);
       }
 
       /**
@@ -1317,7 +1296,7 @@ public interface Storage extends Service<StorageOptions> {
      */
     @Deprecated
     public BlobId source() {
-      return source;
+      return getSource();
     }
 
     /**
@@ -1332,7 +1311,7 @@ public interface Storage extends Service<StorageOptions> {
      */
     @Deprecated
     public List<BlobSourceOption> sourceOptions() {
-      return sourceOptions;
+      return getSourceOptions();
     }
 
     /**
@@ -1347,7 +1326,7 @@ public interface Storage extends Service<StorageOptions> {
      */
     @Deprecated
     public BlobInfo target() {
-      return target;
+      return getTarget();
     }
 
     /**
@@ -1373,7 +1352,7 @@ public interface Storage extends Service<StorageOptions> {
      */
     @Deprecated
     public List<BlobTargetOption> targetOptions() {
-      return targetOptions;
+      return getTargetOptions();
     }
 
     /**
@@ -1390,7 +1369,7 @@ public interface Storage extends Service<StorageOptions> {
      */
     @Deprecated
     public Long megabytesCopiedPerChunk() {
-      return megabytesCopiedPerChunk;
+      return getMegabytesCopiedPerChunk();
     }
 
     /**
@@ -1488,7 +1467,7 @@ public interface Storage extends Service<StorageOptions> {
      */
     @Deprecated
     public static Builder builder() {
-      return new Builder();
+      return newBuilder();
     }
 
     /**

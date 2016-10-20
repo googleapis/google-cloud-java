@@ -472,8 +472,7 @@ public class Bucket extends BucketInfo {
     @Override
     @Deprecated
     public Builder name(String name) {
-      infoBuilder.setName(name);
-      return this;
+      return setName(name);
     }
 
     @Override
@@ -503,8 +502,7 @@ public class Bucket extends BucketInfo {
     @Override
     @Deprecated
     public Builder versioningEnabled(Boolean enable) {
-      infoBuilder.setVersioningEnabled(enable);
-      return this;
+      return setVersioningEnabled(enable);
     }
 
     @Override
@@ -516,8 +514,7 @@ public class Bucket extends BucketInfo {
     @Override
     @Deprecated
     public Builder indexPage(String indexPage) {
-      infoBuilder.setIndexPage(indexPage);
-      return this;
+      return setIndexPage(indexPage);
     }
 
     @Override
@@ -529,8 +526,7 @@ public class Bucket extends BucketInfo {
     @Override
     @Deprecated
     public Builder notFoundPage(String notFoundPage) {
-      infoBuilder.setNotFoundPage(notFoundPage);
-      return this;
+      return setNotFoundPage(notFoundPage);
     }
 
     @Override
@@ -542,8 +538,7 @@ public class Bucket extends BucketInfo {
     @Override
     @Deprecated
     public Builder deleteRules(Iterable<? extends DeleteRule> rules) {
-      infoBuilder.setDeleteRules(rules);
-      return this;
+      return setDeleteRules(rules);
     }
 
     @Override
@@ -555,8 +550,7 @@ public class Bucket extends BucketInfo {
     @Override
     @Deprecated
     public Builder storageClass(String storageClass) {
-      infoBuilder.setStorageClass(storageClass);
-      return this;
+      return setStorageClass(storageClass);
     }
 
     @Override
@@ -568,8 +562,7 @@ public class Bucket extends BucketInfo {
     @Override
     @Deprecated
     public Builder location(String location) {
-      infoBuilder.setLocation(location);
-      return this;
+      return setLocation(location);
     }
 
     @Override
@@ -599,8 +592,7 @@ public class Bucket extends BucketInfo {
     @Override
     @Deprecated
     public Builder cors(Iterable<Cors> cors) {
-      infoBuilder.setCors(cors);
-      return this;
+      return setCors(cors);
     }
 
     @Override
@@ -612,8 +604,7 @@ public class Bucket extends BucketInfo {
     @Override
     @Deprecated
     public Builder acl(Iterable<Acl> acl) {
-      infoBuilder.setAcl(acl);
-      return this;
+      return setAcl(acl);
     }
 
     @Override
@@ -625,8 +616,7 @@ public class Bucket extends BucketInfo {
     @Override
     @Deprecated
     public Builder defaultAcl(Iterable<Acl> acl) {
-      infoBuilder.setDefaultAcl(acl);
-      return this;
+      return setDefaultAcl(acl);
     }
 
     @Override
@@ -1116,7 +1106,7 @@ public class Bucket extends BucketInfo {
    */
   @Deprecated
   public Storage storage() {
-    return storage;
+    return getStorage();
   }
 
   /**

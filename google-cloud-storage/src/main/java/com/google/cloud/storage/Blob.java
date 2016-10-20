@@ -206,8 +206,7 @@ public class Blob extends BlobInfo {
     @Override
     @Deprecated
     public Builder blobId(BlobId blobId) {
-      infoBuilder.setBlobId(blobId);
-      return this;
+      return setBlobId(blobId);
     }
 
     @Override
@@ -223,10 +222,8 @@ public class Blob extends BlobInfo {
     }
 
     @Override
-    @Deprecated
     public Builder contentType(String contentType) {
-      infoBuilder.setContentType(contentType);
-      return this;
+      return setContentType(contentType);
     }
 
     @Override
@@ -238,8 +235,7 @@ public class Blob extends BlobInfo {
     @Override
     @Deprecated
     public Builder contentDisposition(String contentDisposition) {
-      infoBuilder.setContentDisposition(contentDisposition);
-      return this;
+      return setContentDisposition(contentDisposition);
     }
 
     @Override
@@ -251,8 +247,7 @@ public class Blob extends BlobInfo {
     @Override
     @Deprecated
     public Builder contentLanguage(String contentLanguage) {
-      infoBuilder.setContentLanguage(contentLanguage);
-      return this;
+      return setContentLanguage(contentLanguage);
     }
 
     @Override
@@ -264,8 +259,7 @@ public class Blob extends BlobInfo {
     @Override
     @Deprecated
     public Builder contentEncoding(String contentEncoding) {
-      infoBuilder.setContentEncoding(contentEncoding);
-      return this;
+      return setContentEncoding(contentEncoding);
     }
 
     @Override
@@ -283,8 +277,7 @@ public class Blob extends BlobInfo {
     @Override
     @Deprecated
     public Builder cacheControl(String cacheControl) {
-      infoBuilder.setCacheControl(cacheControl);
-      return this;
+      return setCacheControl(cacheControl);
     }
 
     @Override
@@ -296,8 +289,7 @@ public class Blob extends BlobInfo {
     @Override
     @Deprecated
     public Builder acl(List<Acl> acl) {
-      infoBuilder.setAcl(acl);
-      return this;
+      return setAcl(acl);
     }
 
     @Override
@@ -333,8 +325,7 @@ public class Blob extends BlobInfo {
     @Override
     @Deprecated
     public Builder md5(String md5) {
-      infoBuilder.setMd5(md5);
-      return this;
+      return setMd5(md5);
     }
 
     @Override
@@ -346,8 +337,7 @@ public class Blob extends BlobInfo {
     @Override
     @Deprecated
     public Builder crc32c(String crc32c) {
-      infoBuilder.setCrc32c(crc32c);
-      return this;
+      return setCrc32c(crc32c);
     }
 
     @Override
@@ -365,8 +355,7 @@ public class Blob extends BlobInfo {
     @Override
     @Deprecated
     public Builder metadata(Map<String, String> metadata) {
-      infoBuilder.setMetadata(metadata);
-      return this;
+      return setMetadata(metadata);
     }
 
     @Override
@@ -801,7 +790,7 @@ public class Blob extends BlobInfo {
    */
   @Deprecated
   public Storage storage() {
-    return storage;
+    return getStorage();
   }
 
   /**
