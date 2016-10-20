@@ -62,8 +62,7 @@ public final class PushConfig implements Serializable {
      */
     @Deprecated
     public Builder endpoint(String endpoint) {
-      this.endpoint = checkNotNull(endpoint);
-      return this;
+      return setEndpoint(endpoint);
     }
 
     /**
@@ -124,8 +123,7 @@ public final class PushConfig implements Serializable {
      */
     @Deprecated
     public Builder attributes(Map<String, String> attributes) {
-      this.attributes = new HashMap<>(attributes);
-      return this;
+      return setAttributes(attributes);
     }
 
     /**
@@ -189,7 +187,7 @@ public final class PushConfig implements Serializable {
    */
   @Deprecated
   public String endpoint() {
-    return endpoint;
+    return getEndpoint();
   }
 
   /**
@@ -223,7 +221,7 @@ public final class PushConfig implements Serializable {
    */
   @Deprecated
   public Map<String, String> attributes() {
-    return attributes;
+    return getAttributes();
   }
 
   /**
@@ -314,7 +312,7 @@ public final class PushConfig implements Serializable {
    */
   @Deprecated
   public static Builder builder(String endpoint) {
-    return new Builder().setEndpoint(endpoint);
+    return newBuilder(endpoint);
   }
 
   /**
@@ -338,7 +336,7 @@ public final class PushConfig implements Serializable {
    */
   @Deprecated
   public static Builder builder(String endpoint, Map<String, String> attributes) {
-    return newBuilder(endpoint).setAttributes(attributes);
+    return newBuilder(endpoint, attributes);
   }
 
   /**

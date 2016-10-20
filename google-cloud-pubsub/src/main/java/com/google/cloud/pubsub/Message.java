@@ -175,7 +175,7 @@ public class Message implements Serializable {
     @Override
     @Deprecated
     public Builder payload(String payload) {
-      return setPayload(ByteArray.copyFrom(payload));
+      return setPayload(payload);
     }
 
     @Override
@@ -186,8 +186,7 @@ public class Message implements Serializable {
     @Override
     @Deprecated
     public Builder payload(ByteArray payload) {
-      this.payload = payload;
-      return this;
+      return setPayload(payload);
     }
 
     @Override
@@ -205,8 +204,7 @@ public class Message implements Serializable {
     @Override
     @Deprecated
     public Builder attributes(Map<String, String> attributes) {
-      this.attributes = new HashMap<>(attributes);
-      return this;
+      return setAttributes(attributes);
     }
 
     @Override
@@ -252,7 +250,7 @@ public class Message implements Serializable {
    */
   @Deprecated
   public Long publishTime() {
-    return publishTime;
+    return getPublishTime();
   }
 
   /**
@@ -270,7 +268,7 @@ public class Message implements Serializable {
    */
   @Deprecated
   public Map<String, String> attributes() {
-    return attributes;
+    return getAttributes();
   }
 
   /**
@@ -290,7 +288,7 @@ public class Message implements Serializable {
    */
   @Deprecated
   public String id() {
-    return id;
+    return getId();
   }
 
   /**
@@ -308,7 +306,7 @@ public class Message implements Serializable {
    */
   @Deprecated
   public String payloadAsString() {
-    return payload.toStringUtf8();
+    return getPayloadAsString();
   }
 
   /**
@@ -323,7 +321,7 @@ public class Message implements Serializable {
    */
   @Deprecated
   public ByteArray payload() {
-    return payload;
+    return getPayload();
   }
 
   /**
@@ -426,7 +424,7 @@ public class Message implements Serializable {
    */
   @Deprecated
   public static Builder builder(String payload) {
-    return new BuilderImpl().setPayload(payload);
+    return newBuilder(payload);
   }
 
   /**
@@ -443,7 +441,7 @@ public class Message implements Serializable {
    */
   @Deprecated
   public static Builder builder(ByteArray payload) {
-    return new BuilderImpl().setPayload(payload);
+    return newBuilder(payload);
   }
 
   /**

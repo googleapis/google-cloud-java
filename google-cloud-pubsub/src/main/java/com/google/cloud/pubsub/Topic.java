@@ -62,8 +62,7 @@ public class Topic extends TopicInfo {
     @Override
     @Deprecated
     public Builder name(String name) {
-      delegate.setName(name);
-      return this;
+      return setName(name);
     }
 
     @Override
@@ -111,7 +110,7 @@ public class Topic extends TopicInfo {
    */
   @Deprecated
   public PubSub pubSub() {
-    return pubsub;
+    return getPubsub();
   }
 
   /**

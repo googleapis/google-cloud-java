@@ -48,7 +48,7 @@ public class SubscriptionId implements Serializable {
    */
   @Deprecated
   public String project() {
-    return project;
+    return getProject();
   }
 
   /**
@@ -63,7 +63,7 @@ public class SubscriptionId implements Serializable {
    */
   @Deprecated
   public String subscription() {
-    return subscription;
+    return getSubscription();
   }
 
   /**

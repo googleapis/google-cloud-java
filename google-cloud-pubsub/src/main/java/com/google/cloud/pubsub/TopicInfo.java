@@ -79,8 +79,7 @@ public class TopicInfo implements Serializable {
     @Override
     @Deprecated
     public Builder name(String name) {
-      this.name = checkNotNull(name);
-      return this;
+      return setName(name);
     }
 
     @Override
@@ -107,7 +106,7 @@ public class TopicInfo implements Serializable {
    */
   @Deprecated
   public String name() {
-    return name;
+    return getName();
   }
 
   /**
@@ -185,7 +184,7 @@ public class TopicInfo implements Serializable {
    */
   @Deprecated
   public static Builder builder(String name) {
-    return new BuilderImpl(name);
+    return newBuilder(name);
   }
 
   /**

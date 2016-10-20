@@ -68,8 +68,7 @@ public final class ReceivedMessage extends Message {
     @Override
     @Deprecated
     public Builder payload(String payload) {
-      delegate.setPayload(payload);
-      return this;
+      return setPayload(payload);
     }
 
     @Override
@@ -81,8 +80,7 @@ public final class ReceivedMessage extends Message {
     @Override
     @Deprecated
     public Builder payload(ByteArray payload) {
-      delegate.setPayload(payload);
-      return this;
+      return setPayload(payload);
     }
 
     @Override
@@ -94,8 +92,7 @@ public final class ReceivedMessage extends Message {
     @Override
     @Deprecated
     public Builder attributes(Map<String, String> attributes) {
-      delegate.setAttributes(attributes);
-      return this;
+      return setAttributes(attributes);
     }
 
     @Override
@@ -169,7 +166,7 @@ public final class ReceivedMessage extends Message {
    */
   @Deprecated
   public PubSub pubsub() {
-    return pubsub;
+    return getPubsub();
   }
 
   /**
@@ -184,7 +181,7 @@ public final class ReceivedMessage extends Message {
    */
   @Deprecated
   public String subscription() {
-    return subscription;
+    return getSubscription();
   }
 
   /**
@@ -200,7 +197,7 @@ public final class ReceivedMessage extends Message {
    */
   @Deprecated
   public String ackId() {
-    return ackId;
+    return getAckId();
   }
 
   /**

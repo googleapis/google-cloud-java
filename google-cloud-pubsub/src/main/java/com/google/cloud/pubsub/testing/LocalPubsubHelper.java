@@ -147,12 +147,7 @@ public class LocalPubsubHelper {
    */
   @Deprecated
   public PubSubOptions options() {
-    return PubSubOptions.builder()
-        .projectId(projectId)
-        .host("localhost:" + port)
-        .authCredentials(AuthCredentials.noAuth())
-        .retryParams(RetryParams.noRetries())
-        .build();
+    return getOptions();
   }
 
   /**

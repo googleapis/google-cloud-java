@@ -56,7 +56,7 @@ public final class TopicId implements Serializable {
    */
   @Deprecated
   public String project() {
-    return project;
+    return getProject();
   }
 
   /**
@@ -72,7 +72,7 @@ public final class TopicId implements Serializable {
    */
   @Deprecated
   public String topic() {
-    return topic;
+    return getTopic();
   }
 
   /**

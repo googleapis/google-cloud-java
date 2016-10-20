@@ -188,8 +188,7 @@ public class SubscriptionInfo implements Serializable {
     @Override
     @Deprecated
     public Builder name(String name) {
-      this.name = checkNotNull(name);
-      return this;
+      return setName(name);
     }
 
     @Override
@@ -201,7 +200,7 @@ public class SubscriptionInfo implements Serializable {
     @Override
     @Deprecated
     public Builder topic(String project, String topic) {
-      return setTopic(TopicId.of(checkNotNull(project), topic));
+      return setTopic(project, topic);
     }
 
     @Override
@@ -212,7 +211,7 @@ public class SubscriptionInfo implements Serializable {
     @Override
     @Deprecated
     public Builder topic(String topic) {
-      return setTopic(TopicId.of(topic));
+      return setTopic(topic);
     }
 
     @Override
@@ -223,8 +222,7 @@ public class SubscriptionInfo implements Serializable {
     @Override
     @Deprecated
     public Builder topic(TopicId topic) {
-      this.topic = checkNotNull(topic);
-      return this;
+      return setTopic(topic);
     }
 
     @Override
@@ -236,8 +234,7 @@ public class SubscriptionInfo implements Serializable {
     @Override
     @Deprecated
     public Builder pushConfig(PushConfig pushConfig) {
-      this.pushConfig = pushConfig;
-      return this;
+      return setPushConfig(pushConfig);
     }
 
     @Override
@@ -249,8 +246,7 @@ public class SubscriptionInfo implements Serializable {
     @Override
     @Deprecated
     public Builder ackDeadLineSeconds(int ackDeadlineSeconds) {
-      this.ackDeadlineSeconds = ackDeadlineSeconds;
-      return this;
+      return setAckDeadLineSeconds(ackDeadlineSeconds);
     }
 
     @Override
@@ -280,7 +276,7 @@ public class SubscriptionInfo implements Serializable {
    */
   @Deprecated
   public TopicId topic() {
-    return topic;
+    return getTopic();
   }
 
   /**
@@ -302,7 +298,7 @@ public class SubscriptionInfo implements Serializable {
    */
   @Deprecated
   public String name() {
-    return name;
+    return getName();
   }
 
   /**
@@ -323,7 +319,7 @@ public class SubscriptionInfo implements Serializable {
    */
   @Deprecated
   public PushConfig pushConfig() {
-    return pushConfig;
+    return getPushConfig();
   }
 
   /**
@@ -347,7 +343,7 @@ public class SubscriptionInfo implements Serializable {
    */
   @Deprecated
   public long ackDeadlineSeconds() {
-    return ackDeadlineSeconds;
+    return getAckDeadlineSeconds();
   }
 
   /**
@@ -506,7 +502,7 @@ public class SubscriptionInfo implements Serializable {
    */
   @Deprecated
   public static Builder builder(String topic, String name) {
-    return newBuilder(TopicId.of(topic), name);
+    return newBuilder(topic, name);
   }
 
   /**
@@ -539,7 +535,7 @@ public class SubscriptionInfo implements Serializable {
    */
   @Deprecated
   public static Builder builder(TopicId topic, String name) {
-    return new BuilderImpl(topic, name);
+    return newBuilder(topic, name);
   }
 
   /**

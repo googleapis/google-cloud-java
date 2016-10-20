@@ -82,8 +82,7 @@ public class Subscription extends SubscriptionInfo {
     @Override
     @Deprecated
     public Builder topic(TopicId topic) {
-      delegate.setTopic(topic);
-      return this;
+      return setTopic(topic);
     }
 
     @Override
@@ -95,8 +94,7 @@ public class Subscription extends SubscriptionInfo {
     @Override
     @Deprecated
     public Builder topic(String project, String topic) {
-      delegate.setTopic(project, topic);
-      return this;
+      return setTopic(project, topic);
     }
 
     @Override
@@ -108,8 +106,7 @@ public class Subscription extends SubscriptionInfo {
     @Override
     @Deprecated
     public Builder topic(String topic) {
-      delegate.setTopic(topic);
-      return this;
+      return setTopic(topic);
     }
 
     @Override
@@ -121,8 +118,7 @@ public class Subscription extends SubscriptionInfo {
     @Override
     @Deprecated
     public Builder name(String name) {
-      delegate.setName(name);
-      return this;
+      return setName(name);
     }
 
     @Override
@@ -134,8 +130,7 @@ public class Subscription extends SubscriptionInfo {
     @Override
     @Deprecated
     public Builder pushConfig(PushConfig pushConfig) {
-      delegate.setPushConfig(pushConfig);
-      return this;
+      return setPushConfig(pushConfig);
     }
 
     @Override
@@ -147,8 +142,7 @@ public class Subscription extends SubscriptionInfo {
     @Override
     @Deprecated
     public Builder ackDeadLineSeconds(int ackDeadLineSeconds) {
-      delegate.setAckDeadLineSeconds(ackDeadLineSeconds);
-      return this;
+      return setAckDeadLineSeconds(ackDeadLineSeconds);
     }
 
     @Override
@@ -196,7 +190,7 @@ public class Subscription extends SubscriptionInfo {
    */
   @Deprecated
   public PubSub pubSub() {
-    return pubsub;
+    return getPubsub();
   }
 
   /**
