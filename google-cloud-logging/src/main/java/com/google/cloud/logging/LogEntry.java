@@ -104,8 +104,7 @@ public class LogEntry implements Serializable {
      */
     @Deprecated
     public Builder logName(String logName) {
-      this.logName = logName;
-      return this;
+      return setLogName(logName);
     }
 
     /**
@@ -127,8 +126,7 @@ public class LogEntry implements Serializable {
      */
     @Deprecated
     public Builder resource(MonitoredResource resource) {
-      this.resource = resource;
-      return this;
+      return setResource(resource);
     }
 
     /**
@@ -147,8 +145,7 @@ public class LogEntry implements Serializable {
      */
     @Deprecated
     public Builder timestamp(long timestamp) {
-      this.timestamp = timestamp;
-      return this;
+      return setTimestamp(timestamp);
     }
 
     /**
@@ -165,8 +162,7 @@ public class LogEntry implements Serializable {
      */
     @Deprecated
     public Builder severity(Severity severity) {
-      this.severity = severity;
-      return this;
+      return setSeverity(severity);
     }
 
     /**
@@ -184,8 +180,7 @@ public class LogEntry implements Serializable {
      */
     @Deprecated
     public Builder insertId(String insertId) {
-      this.insertId = insertId;
-      return this;
+      return setInsertId(insertId);
     }
 
     /**
@@ -203,8 +198,7 @@ public class LogEntry implements Serializable {
      */
     @Deprecated
     public Builder httpRequest(HttpRequest httpRequest) {
-      this.httpRequest = httpRequest;
-      return this;
+      return setHttpRequest(httpRequest);
     }
 
     /**
@@ -221,8 +215,7 @@ public class LogEntry implements Serializable {
      */
     @Deprecated
     public Builder labels(Map<String, String> labels) {
-      this.labels = new HashMap<>(checkNotNull(labels));
-      return this;
+      return setLabels(labels);
     }
 
     /**
@@ -257,8 +250,7 @@ public class LogEntry implements Serializable {
      */
     @Deprecated
     public Builder operation(Operation operation) {
-      this.operation = operation;
-      return this;
+      return setOperation(operation);
     }
 
     /**
@@ -278,8 +270,7 @@ public class LogEntry implements Serializable {
      */
     @Deprecated
     public Builder payload(Payload payload) {
-      this.payload = payload;
-      return this;
+      return setPayload(payload);
     }
 
     /**
@@ -323,7 +314,7 @@ public class LogEntry implements Serializable {
    */
   @Deprecated
   public String logName() {
-    return logName;
+    return getLogName();
   }
 
   /**
@@ -344,7 +335,7 @@ public class LogEntry implements Serializable {
    */
   @Deprecated
   public MonitoredResource resource() {
-    return resource;
+    return getResource();
   }
 
   /**
@@ -362,7 +353,7 @@ public class LogEntry implements Serializable {
    */
   @Deprecated
   public Long timestamp() {
-    return timestamp;
+    return getTimestamp();
   }
 
   /**
@@ -378,7 +369,7 @@ public class LogEntry implements Serializable {
    */
   @Deprecated
   public Severity severity() {
-    return severity;
+    return getSeverity();
   }
 
   /**
@@ -394,7 +385,7 @@ public class LogEntry implements Serializable {
    */
   @Deprecated
   public String insertId() {
-    return insertId;
+    return getInsertId();
   }
 
   /**
@@ -410,7 +401,7 @@ public class LogEntry implements Serializable {
    */
   @Deprecated
   public HttpRequest httpRequest() {
-    return httpRequest;
+    return getHttpRequest();
   }
 
   /**
@@ -426,7 +417,7 @@ public class LogEntry implements Serializable {
    */
   @Deprecated
   public Map<String, String> labels() {
-    return labels;
+    return getLabels();
   }
 
   /**
@@ -442,7 +433,7 @@ public class LogEntry implements Serializable {
    */
   @Deprecated
   public Operation operation() {
-    return operation;
+    return getOperation();
   }
 
   /**
@@ -462,7 +453,7 @@ public class LogEntry implements Serializable {
   @SuppressWarnings("unchecked")
   @Deprecated
   public <T extends Payload> T payload() {
-    return (T) payload;
+    return getPayload();
   }
 
   /**
@@ -560,7 +551,7 @@ public class LogEntry implements Serializable {
    */
   @Deprecated
   public static Builder builder(Payload<?> payload) {
-    return new Builder(payload);
+    return newBuilder(payload);
   }
 
   /**

@@ -97,7 +97,7 @@ public class SinkInfo implements Serializable {
        */
       @Deprecated
       public String bucket() {
-        return bucket;
+        return getBucket();
       }
 
       /**
@@ -181,7 +181,7 @@ public class SinkInfo implements Serializable {
        */
       @Deprecated
       public String project() {
-        return project;
+        return getProject();
       }
 
       /**
@@ -197,7 +197,7 @@ public class SinkInfo implements Serializable {
        */
       @Deprecated
       public String dataset() {
-        return dataset;
+        return getDataset();
       }
 
       /**
@@ -294,7 +294,7 @@ public class SinkInfo implements Serializable {
        */
       @Deprecated
       public String project() {
-        return project;
+        return getProject();
       }
 
       /**
@@ -310,7 +310,7 @@ public class SinkInfo implements Serializable {
        */
       @Deprecated
       public String topic() {
-        return topic;
+        return getTopic();
       }
 
       /**
@@ -391,7 +391,7 @@ public class SinkInfo implements Serializable {
      */
     @Deprecated
     public Type type() {
-      return type;
+      return getType();
     }
 
     /**
@@ -569,8 +569,7 @@ public class SinkInfo implements Serializable {
     @Override
     @Deprecated
     public Builder name(String name) {
-      this.name = name;
-      return this;
+      return setName(name);
     }
 
     @Override
@@ -582,8 +581,7 @@ public class SinkInfo implements Serializable {
     @Override
     @Deprecated
     public Builder destination(Destination destination) {
-      this.destination = destination;
-      return this;
+      return setDestination(destination);
     }
 
     @Override
@@ -595,8 +593,7 @@ public class SinkInfo implements Serializable {
     @Override
     @Deprecated
     public Builder filter(String filter) {
-      this.filter = filter;
-      return this;
+      return setFilter(filter);
     }
 
     @Override
@@ -608,8 +605,7 @@ public class SinkInfo implements Serializable {
     @Override
     @Deprecated
     public Builder versionFormat(VersionFormat versionFormat) {
-      this.versionFormat = versionFormat;
-      return this;
+      return setVersionFormat(versionFormat);
     }
 
     @Override
@@ -638,7 +634,7 @@ public class SinkInfo implements Serializable {
    */
   @Deprecated
   public String name() {
-    return name;
+    return getName();
   }
 
   /**
@@ -663,7 +659,7 @@ public class SinkInfo implements Serializable {
   @SuppressWarnings("unchecked")
   @Deprecated
   public <T extends Destination> T destination() {
-    return (T) destination;
+    return getDestination();
   }
 
   /**
@@ -692,7 +688,7 @@ public class SinkInfo implements Serializable {
    */
   @Deprecated
   public String filter() {
-    return filter;
+    return getFilter();
   }
 
   /**
@@ -715,7 +711,7 @@ public class SinkInfo implements Serializable {
    */
   @Deprecated
   public VersionFormat versionFormat() {
-    return versionFormat;
+    return getVersionFormat();
   }
 
   /**
@@ -772,7 +768,7 @@ public class SinkInfo implements Serializable {
    */
   @Deprecated
   public static Builder builder(String name, Destination destination) {
-    return new BuilderImpl(name, destination);
+    return newBuilder(name, destination);
   }
 
   /**

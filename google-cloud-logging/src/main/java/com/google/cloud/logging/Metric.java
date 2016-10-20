@@ -60,8 +60,7 @@ public class Metric extends MetricInfo {
     @Override
     @Deprecated
     public Builder name(String name) {
-      delegate.setName(name);
-      return this;
+      return setName(name);
     }
 
     @Override
@@ -73,8 +72,7 @@ public class Metric extends MetricInfo {
     @Override
     @Deprecated
     public Builder description(String description) {
-      delegate.setDescription(description);
-      return this;
+      return setDescription(description);
     }
 
     @Override
@@ -86,8 +84,7 @@ public class Metric extends MetricInfo {
     @Override
     @Deprecated
     public Builder filter(String filter) {
-      delegate.setFilter(filter);
-      return this;
+      return setFilter(filter);
     }
 
     @Override
@@ -135,7 +132,7 @@ public class Metric extends MetricInfo {
    */
   @Deprecated
   public Logging logging() {
-    return logging;
+    return getLogging();
   }
 
   /**

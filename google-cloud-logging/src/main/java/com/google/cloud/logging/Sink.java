@@ -66,8 +66,7 @@ public class Sink extends SinkInfo {
     @Override
     @Deprecated
     public Builder name(String name) {
-      delegate.setName(name);
-      return this;
+      return setName(name);
     }
 
     @Override
@@ -79,8 +78,7 @@ public class Sink extends SinkInfo {
     @Override
     @Deprecated
     public Builder destination(Destination destination) {
-      delegate.setDestination(destination);
-      return this;
+      return setDestination(destination);
     }
 
     @Override
@@ -92,8 +90,7 @@ public class Sink extends SinkInfo {
     @Override
     @Deprecated
     public Builder filter(String filter) {
-      delegate.setFilter(filter);
-      return this;
+      return setFilter(filter);
     }
 
     @Override
@@ -105,8 +102,7 @@ public class Sink extends SinkInfo {
     @Override
     @Deprecated
     public Builder versionFormat(VersionFormat versionFormat) {
-      delegate.setVersionFormat(versionFormat);
-      return this;
+      return setVersionFormat(versionFormat);
     }
 
     @Override
@@ -154,7 +150,7 @@ public class Sink extends SinkInfo {
    */
   @Deprecated
   public Logging logging() {
-    return logging;
+    return getLogging();
   }
 
   /**

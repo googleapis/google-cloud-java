@@ -68,8 +68,7 @@ public final class MonitoredResource implements Serializable {
      */
     @Deprecated
     public Builder type(String type) {
-      this.type = type;
-      return this;
+      return setType(type);
     }
 
     /**
@@ -89,8 +88,7 @@ public final class MonitoredResource implements Serializable {
      */
     @Deprecated
     public Builder labels(Map<String, String> labels) {
-      this.labels = new HashMap<>(checkNotNull(labels));
-      return this;
+      return setLabels(labels);
     }
 
     /**
@@ -136,7 +134,7 @@ public final class MonitoredResource implements Serializable {
    */
   @Deprecated
   public String type() {
-    return type;
+    return getType();
   }
 
   /**
@@ -155,7 +153,7 @@ public final class MonitoredResource implements Serializable {
    */
   @Deprecated
   public Map<String, String> labels() {
-    return labels;
+    return getLabels();
   }
 
   /**
@@ -211,7 +209,7 @@ public final class MonitoredResource implements Serializable {
    */
   @Deprecated
   public static Builder builder(String type) {
-    return new Builder(type);
+    return newBuilder(type);
   }
 
   /**

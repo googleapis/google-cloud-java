@@ -122,7 +122,7 @@ public class MonitoredResourceDescriptor implements Serializable {
      */
     @Deprecated
     public String key() {
-      return key;
+      return getKey();
     }
 
     /**
@@ -137,7 +137,7 @@ public class MonitoredResourceDescriptor implements Serializable {
      */
     @Deprecated
     public ValueType valueType() {
-      return valueType;
+      return getValueType();
     }
 
     /**
@@ -153,7 +153,7 @@ public class MonitoredResourceDescriptor implements Serializable {
      */
     @Deprecated
     public String description() {
-      return description;
+      return getDescription();
     }
 
     /**
@@ -263,7 +263,7 @@ public class MonitoredResourceDescriptor implements Serializable {
    */
   @Deprecated
   public String type() {
-    return type;
+    return getType();
   }
 
   /**
@@ -280,7 +280,7 @@ public class MonitoredResourceDescriptor implements Serializable {
    */
   @Deprecated
   public String name() {
-    return name;
+    return getName();
   }
 
   /**
@@ -298,7 +298,7 @@ public class MonitoredResourceDescriptor implements Serializable {
    */
   @Deprecated
   public String displayName() {
-    return displayName;
+    return getDisplayName();
   }
 
   /**
@@ -316,7 +316,7 @@ public class MonitoredResourceDescriptor implements Serializable {
    */
   @Deprecated
   public String description() {
-    return description;
+    return getDescription();
   }
 
   /**
@@ -334,7 +334,7 @@ public class MonitoredResourceDescriptor implements Serializable {
    */
   @Deprecated
   public List<LabelDescriptor> labels() {
-    return labels;
+    return getLabels();
   }
 
   /**

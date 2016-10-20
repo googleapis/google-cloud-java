@@ -91,7 +91,7 @@ public final class LoggingLevel extends Level {
    */
   @Deprecated
   public Severity severity() {
-    return severity;
+    return getSeverity();
   }
 
   /**

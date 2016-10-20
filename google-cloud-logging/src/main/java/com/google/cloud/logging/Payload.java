@@ -102,7 +102,7 @@ public abstract class Payload<T> implements Serializable {
      */
     @Deprecated
     public Map<String, ?> dataAsMap() {
-      return Structs.asMap(getData());
+      return getDataAsMap();
     }
 
     /**
@@ -194,7 +194,7 @@ public abstract class Payload<T> implements Serializable {
    */
   @Deprecated
   public Type type() {
-    return type;
+    return getType();
   }
 
   /**
@@ -210,7 +210,7 @@ public abstract class Payload<T> implements Serializable {
    */
   @Deprecated
   public T data() {
-    return data;
+    return getData();
   }
 
   /**

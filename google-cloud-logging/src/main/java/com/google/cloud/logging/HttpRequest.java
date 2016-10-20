@@ -99,8 +99,7 @@ public final class HttpRequest implements Serializable {
      */
     @Deprecated
     public Builder requestMethod(RequestMethod requestMethod) {
-      this.requestMethod = requestMethod;
-      return this;
+      return setRequestMethod(requestMethod);
     }
 
     /**
@@ -118,8 +117,7 @@ public final class HttpRequest implements Serializable {
      */
     @Deprecated
     public Builder requestUrl(String requestUrl) {
-      this.requestUrl = requestUrl;
-      return this;
+      return setRequestUrl(requestUrl);
     }
 
     /**
@@ -138,8 +136,7 @@ public final class HttpRequest implements Serializable {
      */
     @Deprecated
     public Builder requestSize(long requestSize) {
-      this.requestSize = requestSize;
-      return this;
+      return setRequestSize(requestSize);
     }
 
     /**
@@ -156,8 +153,7 @@ public final class HttpRequest implements Serializable {
      */
     @Deprecated
     public Builder status(int status) {
-      this.status = status;
-      return this;
+      return setStatus(status);
     }
 
     /**
@@ -174,8 +170,7 @@ public final class HttpRequest implements Serializable {
      */
     @Deprecated
     public Builder responseSize(long responseSize) {
-      this.responseSize = responseSize;
-      return this;
+      return setResponseSize(responseSize);
     }
 
     /**
@@ -193,8 +188,7 @@ public final class HttpRequest implements Serializable {
      */
     @Deprecated
     public Builder userAgent(String userAgent) {
-      this.userAgent = userAgent;
-      return this;
+      return setUserAgent(userAgent);
     }
 
     /**
@@ -212,8 +206,7 @@ public final class HttpRequest implements Serializable {
      */
     @Deprecated
     public Builder remoteIp(String remoteIp) {
-      this.remoteIp = remoteIp;
-      return this;
+      return setRemoteIp(remoteIp);
     }
 
     /**
@@ -231,8 +224,7 @@ public final class HttpRequest implements Serializable {
      */
     @Deprecated
     public Builder serverIp(String serverIp) {
-      this.serverIp = serverIp;
-      return this;
+      return setServerIp(serverIp);
     }
 
     /**
@@ -252,8 +244,7 @@ public final class HttpRequest implements Serializable {
      */
     @Deprecated
     public Builder referer(String referer) {
-      this.referer = referer;
-      return this;
+      return setReferer(referer);
     }
 
     /**
@@ -272,8 +263,7 @@ public final class HttpRequest implements Serializable {
      */
     @Deprecated
     public Builder cacheLookup(boolean cacheLookup) {
-      this.cacheLookup = cacheLookup;
-      return this;
+      return setCacheLookup(cacheLookup);
     }
 
     /**
@@ -290,8 +280,7 @@ public final class HttpRequest implements Serializable {
      */
     @Deprecated
     public Builder cacheHit(boolean cacheHit) {
-      this.cacheHit = cacheHit;
-      return this;
+      return setCacheHit(cacheHit);
     }
 
     /**
@@ -310,8 +299,7 @@ public final class HttpRequest implements Serializable {
      */
     @Deprecated
     public Builder cacheValidatedWithOriginServer(boolean cacheValidatedWithOriginServer) {
-      this.cacheValidatedWithOriginServer = cacheValidatedWithOriginServer;
-      return this;
+      return setCacheValidatedWithOriginServer(cacheValidatedWithOriginServer);
     }
 
     /**
@@ -330,8 +318,7 @@ public final class HttpRequest implements Serializable {
      */
     @Deprecated
     public Builder cacheFillBytes(long cacheFillBytes) {
-      this.cacheFillBytes = cacheFillBytes;
-      return this;
+      return setCacheFillBytes(cacheFillBytes);
     }
 
     /**
@@ -372,7 +359,7 @@ public final class HttpRequest implements Serializable {
    */
   @Deprecated
   public RequestMethod requestMethod() {
-    return requestMethod;
+    return getRequestMethod();
   }
 
   /**
@@ -389,7 +376,7 @@ public final class HttpRequest implements Serializable {
    */
   @Deprecated
   public String requestUrl() {
-    return requestUrl;
+    return getRequestUrl();
   }
 
   /**
@@ -407,7 +394,7 @@ public final class HttpRequest implements Serializable {
    */
   @Deprecated
   public Long requestSize() {
-    return requestSize;
+    return getRequestSize();
   }
 
   /**
@@ -423,7 +410,7 @@ public final class HttpRequest implements Serializable {
    */
   @Deprecated
   public Integer status() {
-    return status;
+    return getStatus();
   }
 
   /**
@@ -439,7 +426,7 @@ public final class HttpRequest implements Serializable {
    */
   @Deprecated
   public Long responseSize() {
-    return responseSize;
+    return getResponseSize();
   }
 
   /**
@@ -456,7 +443,7 @@ public final class HttpRequest implements Serializable {
    */
   @Deprecated
   public String userAgent() {
-    return userAgent;
+    return getUserAgent();
   }
 
   /**
@@ -473,7 +460,7 @@ public final class HttpRequest implements Serializable {
    */
   @Deprecated
   public String remoteIp() {
-    return remoteIp;
+    return getRemoteIp();
   }
 
   /**
@@ -490,7 +477,7 @@ public final class HttpRequest implements Serializable {
    */
   @Deprecated
   public String serverIp() {
-    return serverIp;
+    return getServerIp();
   }
 
   /**
@@ -509,7 +496,7 @@ public final class HttpRequest implements Serializable {
    */
   @Deprecated
   public String referer() {
-    return referer;
+    return getReferer();
   }
 
   /**
@@ -553,7 +540,7 @@ public final class HttpRequest implements Serializable {
    */
   @Deprecated
   public Long cacheFillBytes() {
-    return cacheFillBytes;
+    return getCacheFillBytes();
   }
 
   /**
@@ -665,7 +652,7 @@ public final class HttpRequest implements Serializable {
    */
   @Deprecated
   public static Builder builder() {
-    return new Builder();
+    return newBuilder();
   }
 
   /**

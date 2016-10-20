@@ -49,7 +49,7 @@ public class RemoteLoggingHelper {
    */
   @Deprecated
   public LoggingOptions options() {
-    return options;
+    return getOptions();
   }
 
   /**

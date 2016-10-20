@@ -69,8 +69,7 @@ public final class Operation implements Serializable {
      */
     @Deprecated
     public Builder id(String id) {
-      this.id = id;
-      return this;
+      return setId(id);
     }
 
     /**
@@ -89,8 +88,7 @@ public final class Operation implements Serializable {
      */
     @Deprecated
     public Builder producer(String producer) {
-      this.producer = producer;
-      return this;
+      return setProducer(producer);
     }
 
     /**
@@ -109,8 +107,7 @@ public final class Operation implements Serializable {
      */
     @Deprecated
     public Builder first(boolean first) {
-      this.first = first;
-      return this;
+      return setFirst(first);
     }
 
     /**
@@ -128,8 +125,7 @@ public final class Operation implements Serializable {
      */
     @Deprecated
     public Builder last(boolean last) {
-      this.last = last;
-      return this;
+      return setLast(last);
     }
 
     /**
@@ -163,7 +159,7 @@ public final class Operation implements Serializable {
    */
   @Deprecated
   public String id() {
-    return id;
+    return getId();
   }
 
   /**
@@ -182,7 +178,7 @@ public final class Operation implements Serializable {
    */
   @Deprecated
   public String producer() {
-    return producer;
+    return getProducer();
   }
 
   /**
@@ -262,7 +258,7 @@ public final class Operation implements Serializable {
    */
   @Deprecated
   public static Builder builder(String id, String producer) {
-    return new Builder(id, producer);
+    return newBuilder(id, producer);
   }
 
   /**

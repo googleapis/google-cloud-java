@@ -119,8 +119,7 @@ public class MetricInfo implements Serializable {
     @Override
     @Deprecated
     public Builder name(String name) {
-      this.name = name;
-      return this;
+      return setName(name);
     }
 
     @Override
@@ -132,8 +131,7 @@ public class MetricInfo implements Serializable {
     @Override
     @Deprecated
     public Builder description(String description) {
-      this.description = description;
-      return this;
+      return setDescription(description);
     }
 
     @Override
@@ -145,8 +143,7 @@ public class MetricInfo implements Serializable {
     @Override
     @Deprecated
     public Builder filter(String filter) {
-      this.filter = filter;
-      return this;
+      return setFilter(filter);
     }
 
     @Override
@@ -176,7 +173,7 @@ public class MetricInfo implements Serializable {
    */
   @Deprecated
   public String name() {
-    return name;
+    return getName();
   }
 
   /**
@@ -195,7 +192,7 @@ public class MetricInfo implements Serializable {
    */
   @Deprecated
   public String description() {
-    return description;
+    return getDescription();
   }
 
   /**
@@ -215,7 +212,7 @@ public class MetricInfo implements Serializable {
    */
   @Deprecated
   public String filter() {
-    return filter;
+    return getFilter();
   }
 
   /**
@@ -273,7 +270,7 @@ public class MetricInfo implements Serializable {
    */
   @Deprecated
   public static Builder builder(String name, String filter) {
-    return new BuilderImpl(name, filter);
+    return newBuilder(name, filter);
   }
 
   /**
