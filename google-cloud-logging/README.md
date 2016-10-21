@@ -24,7 +24,7 @@ Standard. `google-cloud-logging` will work on App Engine Flexible.
 Add this to your pom.xml file
 ```xml
 <dependency>
-  <groupId>com.google.gcloud</groupId>
+  <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-logging</artifactId>
   <version>0.4.0</version>
 </dependency>
