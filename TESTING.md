@@ -190,7 +190,7 @@ and `start` methods. This will bind a port for communication with the local Pub/
 2. Create and use a `PubSub` object with the options given by the `LocalPubSubHelper` instance. For
 example:
   ```java
-  PubSub localPubsub = helper.options().service();
+  PubSub localPubsub = helper.getOptions().service();
   ```
 
 3. Run your tests.

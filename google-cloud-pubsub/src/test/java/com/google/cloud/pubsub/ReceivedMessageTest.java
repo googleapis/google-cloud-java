@@ -51,10 +51,10 @@ public class ReceivedMessageTest {
   private static final Map<String, String> ATTRIBUTES =
       ImmutableMap.of("key1", "value1", "key2", "value2");
   private static final Long PUBLISH_TIME = 42L;
-  private static final Message MESSAGE = Message.builder(PAYLOAD)
-      .id(MESSAGE_ID)
-      .attributes(ATTRIBUTES)
-      .publishTime(PUBLISH_TIME)
+  private static final Message MESSAGE = Message.newBuilder(PAYLOAD)
+      .setId(MESSAGE_ID)
+      .setAttributes(ATTRIBUTES)
+      .setPublishTime(PUBLISH_TIME)
       .build();
   private static final com.google.pubsub.v1.ReceivedMessage RECEIVED_MESSAGE_PB =
       com.google.pubsub.v1.ReceivedMessage.newBuilder()
@@ -91,10 +91,46 @@ public class ReceivedMessageTest {
     replay(pubsub);
     Map<String, String> attributes = ImmutableMap.of("newKey1", "newVal1");
     ReceivedMessage builtMessage = expectedMessage.toBuilder()
+        .setPayload("newPayload")
+        .setId("newMessageId")
+        .setAttributes(attributes)
+        .setPublishTime(PUBLISH_TIME + 1)
+        .build();
+    assertSame(serviceMockReturnsOptions, builtMessage.getPubsub());
+    assertEquals(SUBSCRIPTION, builtMessage.getSubscription());
+    assertEquals(ACK_ID, builtMessage.getAckId());
+    assertEquals("newMessageId", builtMessage.getId());
+    assertArrayEquals("newPayload".getBytes(Charsets.UTF_8), builtMessage.getPayload().toByteArray());
+    assertEquals("newPayload", builtMessage.getPayloadAsString());
+    assertEquals(attributes, builtMessage.getAttributes());
+    assertEquals(PUBLISH_TIME + 1, (long) builtMessage.getPublishTime());
+    builtMessage = builtMessage.toBuilder()
+        .setPayload(PAYLOAD)
+        .setId(MESSAGE_ID)
+        .clearAttributes()
+        .addAttribute("key1", "value1")
+        .addAttribute("key2", "value2")
+        .setPublishTime(PUBLISH_TIME)
+        .build();
+    assertSame(serviceMockReturnsOptions, builtMessage.getPubsub());
+    assertEquals(MESSAGE_ID, builtMessage.getId());
+    assertEquals(PAYLOAD, builtMessage.getPayload());
+    assertEquals(PAYLOAD_STRING, builtMessage.getPayloadAsString());
+    assertEquals(ATTRIBUTES, builtMessage.getAttributes());
+    assertEquals(PUBLISH_TIME, builtMessage.getPublishTime());
+    compareReceivedMessage(expectedMessage, builtMessage);
+  }
+
+  @Test
+  public void testBuilderDeprecated() {
+    initializeExpectedMessage(3);
+    replay(pubsub);
+    Map<String, String> attributes = ImmutableMap.of("newKey1", "newVal1");
+    ReceivedMessage builtMessage = expectedMessage.toBuilder()
         .payload("newPayload")
-        .id("newMessageId")
+        .setId("newMessageId")
         .attributes(attributes)
-        .publishTime(PUBLISH_TIME + 1)
+        .setPublishTime(PUBLISH_TIME + 1)
         .build();
     assertSame(serviceMockReturnsOptions, builtMessage.pubsub());
     assertEquals(SUBSCRIPTION, builtMessage.subscription());
@@ -106,11 +142,11 @@ public class ReceivedMessageTest {
     assertEquals(PUBLISH_TIME + 1, (long) builtMessage.publishTime());
     builtMessage = builtMessage.toBuilder()
         .payload(PAYLOAD)
-        .id(MESSAGE_ID)
+        .setId(MESSAGE_ID)
         .clearAttributes()
         .addAttribute("key1", "value1")
         .addAttribute("key2", "value2")
-        .publishTime(PUBLISH_TIME)
+        .setPublishTime(PUBLISH_TIME)
         .build();
     assertSame(serviceMockReturnsOptions, builtMessage.pubsub());
     assertEquals(MESSAGE_ID, builtMessage.id());
@@ -175,13 +211,13 @@ public class ReceivedMessageTest {
 
   private void compareReceivedMessage(ReceivedMessage expected, ReceivedMessage value) {
     assertEquals(expected, value);
-    assertEquals(expected.id(), value.id());
-    assertEquals(expected.payload(), value.payload());
-    assertEquals(expected.payloadAsString(), value.payloadAsString());
-    assertEquals(expected.attributes(), value.attributes());
-    assertEquals(expected.publishTime(), value.publishTime());
-    assertEquals(expected.ackId(), value.ackId());
-    assertEquals(expected.subscription(), value.subscription());
+    assertEquals(expected.getId(), value.getId());
+    assertEquals(expected.getPayload(), value.getPayload());
+    assertEquals(expected.getPayloadAsString(), value.getPayloadAsString());
+    assertEquals(expected.getAttributes(), value.getAttributes());
+    assertEquals(expected.getPublishTime(), value.getPublishTime());
+    assertEquals(expected.getAckId(), value.getAckId());
+    assertEquals(expected.getSubscription(), value.getSubscription());
     assertEquals(expected.hashCode(), value.hashCode());
   }
 }

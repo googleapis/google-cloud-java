@@ -21,5 +21,4 @@ import com.google.cloud.ServiceFactory;
 /**
  * An interface for Pub/Sub factories.
  */
-public interface PubSubFactory
-    extends ServiceFactory<PubSub, PubSubOptions> {}
+public interface PubSubFactory extends ServiceFactory<PubSub, PubSubOptions> {}

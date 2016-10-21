@@ -80,38 +80,74 @@ public class Subscription extends SubscriptionInfo {
     }
 
     @Override
+    @Deprecated
     public Builder topic(TopicId topic) {
-      delegate.topic(topic);
+      return setTopic(topic);
+    }
+
+    @Override
+    public Builder setTopic(TopicId topic) {
+      delegate.setTopic(topic);
       return this;
     }
 
     @Override
+    @Deprecated
     public Builder topic(String project, String topic) {
-      delegate.topic(project, topic);
+      return setTopic(project, topic);
+    }
+
+    @Override
+    public Builder setTopic(String project, String topic) {
+      delegate.setTopic(project, topic);
       return this;
     }
 
     @Override
+    @Deprecated
     public Builder topic(String topic) {
-      delegate.topic(topic);
+      return setTopic(topic);
+    }
+
+    @Override
+    public Builder setTopic(String topic) {
+      delegate.setTopic(topic);
       return this;
     }
 
     @Override
+    @Deprecated
     public Builder name(String name) {
-      delegate.name(name);
+      return setName(name);
+    }
+
+    @Override
+    public Builder setName(String name) {
+      delegate.setName(name);
       return this;
     }
 
     @Override
+    @Deprecated
     public Builder pushConfig(PushConfig pushConfig) {
-      delegate.pushConfig(pushConfig);
+      return setPushConfig(pushConfig);
+    }
+
+    @Override
+    public Builder setPushConfig(PushConfig pushConfig) {
+      delegate.setPushConfig(pushConfig);
       return this;
     }
 
     @Override
+    @Deprecated
     public Builder ackDeadLineSeconds(int ackDeadLineSeconds) {
-      delegate.ackDeadLineSeconds(ackDeadLineSeconds);
+      return setAckDeadLineSeconds(ackDeadLineSeconds);
+    }
+
+    @Override
+    public Builder setAckDeadLineSeconds(int ackDeadLineSeconds) {
+      delegate.setAckDeadLineSeconds(ackDeadLineSeconds);
       return this;
     }
 
@@ -152,7 +188,15 @@ public class Subscription extends SubscriptionInfo {
   /**
    * Returns the subscription's {@code PubSub} object used to issue requests.
    */
+  @Deprecated
   public PubSub pubSub() {
+    return getPubsub();
+  }
+
+  /**
+   * Returns the subscription's {@code PubSub} object used to issue requests.
+   */
+  public PubSub getPubsub() {
     return pubsub;
   }
 
@@ -173,7 +217,7 @@ public class Subscription extends SubscriptionInfo {
    * @throws PubSubException upon failure
    */
   public boolean delete() {
-    return pubsub.deleteSubscription(name());
+    return pubsub.deleteSubscription(getName());
   }
 
   /**
@@ -195,7 +239,7 @@ public class Subscription extends SubscriptionInfo {
    *
    */
   public Future<Boolean> deleteAsync() {
-    return pubsub.deleteSubscriptionAsync(name());
+    return pubsub.deleteSubscriptionAsync(getName());
   }
 
   /**
@@ -214,7 +258,7 @@ public class Subscription extends SubscriptionInfo {
    * @throws PubSubException upon failure
    */
   public Subscription reload() {
-    return pubsub.getSubscription(name());
+    return pubsub.getSubscription(getName());
   }
 
   /**
@@ -236,7 +280,7 @@ public class Subscription extends SubscriptionInfo {
    * @throws PubSubException upon failure
    */
   public Future<Subscription> reloadAsync() {
-    return pubsub.getSubscriptionAsync(name());
+    return pubsub.getSubscriptionAsync(getName());
   }
 
   /**
@@ -263,7 +307,7 @@ public class Subscription extends SubscriptionInfo {
    * @throws PubSubException upon failure, or if the subscription does not exist
    */
   public void replacePushConfig(PushConfig pushConfig) {
-    pubsub.replacePushConfig(name(), pushConfig);
+    pubsub.replacePushConfig(getName(), pushConfig);
   }
 
   /**
@@ -296,7 +340,7 @@ public class Subscription extends SubscriptionInfo {
    * @return a {@code Future} to wait for the replace operation to be completed.
    */
   public Future<Void> replacePushConfigAsync(PushConfig pushConfig) {
-    return pubsub.replacePushConfigAsync(name(), pushConfig);
+    return pubsub.replacePushConfigAsync(getName(), pushConfig);
   }
 
   /**
@@ -322,7 +366,7 @@ public class Subscription extends SubscriptionInfo {
    * @throws PubSubException upon failure
    */
   public Iterator<ReceivedMessage> pull(int maxMessages) {
-    return pubsub.pull(name(), maxMessages);
+    return pubsub.pull(getName(), maxMessages);
   }
 
   /**
@@ -350,7 +394,7 @@ public class Subscription extends SubscriptionInfo {
    * @throws PubSubException upon failure
    */
   public Future<Iterator<ReceivedMessage>> pullAsync(int maxMessages) {
-    return pubsub.pullAsync(name(), maxMessages);
+    return pubsub.pullAsync(getName(), maxMessages);
   }
 
   /**
@@ -388,7 +432,7 @@ public class Subscription extends SubscriptionInfo {
    * @return a message consumer for the provided subscription and options
    */
   public MessageConsumer pullAsync(MessageProcessor callback, PullOption... options) {
-    return pubsub.pullAsync(name(), callback, options);
+    return pubsub.pullAsync(getName(), callback, options);
   }
 
   /**
@@ -406,7 +450,7 @@ public class Subscription extends SubscriptionInfo {
    * @throws PubSubException upon failure
    */
   public Policy getPolicy() {
-    return pubsub.getSubscriptionPolicy(this.name());
+    return pubsub.getSubscriptionPolicy(this.getName());
   }
 
   /**
@@ -427,7 +471,7 @@ public class Subscription extends SubscriptionInfo {
    * @throws PubSubException upon failure
    */
   public Future<Policy> getPolicyAsync() {
-    return pubsub.getSubscriptionPolicyAsync(this.name());
+    return pubsub.getSubscriptionPolicyAsync(this.getName());
   }
 
   /**
@@ -456,7 +500,7 @@ public class Subscription extends SubscriptionInfo {
    * @throws PubSubException upon failure
    */
   public Policy replacePolicy(Policy newPolicy) {
-    return pubsub.replaceSubscriptionPolicy(this.name(), newPolicy);
+    return pubsub.replaceSubscriptionPolicy(this.getName(), newPolicy);
   }
 
   /**
@@ -489,7 +533,7 @@ public class Subscription extends SubscriptionInfo {
    * @throws PubSubException upon failure
    */
   public Future<Policy> replacePolicyAsync(Policy newPolicy) {
-    return pubsub.replaceSubscriptionPolicyAsync(this.name(), newPolicy);
+    return pubsub.replaceSubscriptionPolicyAsync(this.getName(), newPolicy);
   }
 
   /**
@@ -513,7 +557,7 @@ public class Subscription extends SubscriptionInfo {
    *     Permissions and Roles</a>
    */
   public List<Boolean> testPermissions(List<String> permissions) {
-    return pubsub.testSubscriptionPermissions(this.name(), permissions);
+    return pubsub.testSubscriptionPermissions(this.getName(), permissions);
   }
 
   /**
@@ -542,7 +586,7 @@ public class Subscription extends SubscriptionInfo {
    *     Permissions and Roles</a>
    */
   public Future<List<Boolean>> testPermissionsAsync(List<String> permissions) {
-    return pubsub.testSubscriptionPermissionsAsync(this.name(), permissions);
+    return pubsub.testSubscriptionPermissionsAsync(this.getName(), permissions);
   }
 
   private void readObject(ObjectInputStream input) throws IOException, ClassNotFoundException {

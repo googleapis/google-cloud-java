@@ -85,17 +85,29 @@ public class Message implements Serializable {
    */
   public abstract static class Builder {
 
-    abstract Builder id(String id);
+    abstract Builder setId(String id);
 
     /**
      * Sets the message payload to the provided string. The string is enconded {@code UTF-8}.
      */
+    @Deprecated
     public abstract Builder payload(String payload);
+
+    /**
+     * Sets the message payload to the provided string. The string is enconded {@code UTF-8}.
+     */
+    public abstract Builder setPayload(String payload);
 
     /**
      * Sets the message payload to the provided {@link ByteArray}.
      */
+    @Deprecated
     public abstract Builder payload(ByteArray payload);
+
+    /**
+     * Sets the message payload to the provided {@link ByteArray}.
+     */
+    public abstract Builder setPayload(ByteArray payload);
 
     /**
      * Sets the message attributes to the provided map. Message attributes are key-value pairs that
@@ -103,7 +115,16 @@ public class Message implements Serializable {
      * value {@code en} could be added to messages to mark them as readable by an English-speaking
      * subscriber.
      */
+    @Deprecated
     public abstract Builder attributes(Map<String, String> attributes);
+
+    /**
+     * Sets the message attributes to the provided map. Message attributes are key-value pairs that
+     * a publisher can define for a message. For example, a key {@code iana.org/language_tag} and
+     * value {@code en} could be added to messages to mark them as readable by an English-speaking
+     * subscriber.
+     */
+    public abstract Builder setAttributes(Map<String, String> attributes);
 
     /**
      * Adds a new attribute to the message attributes. If an attribute with name {@code name} was
@@ -121,7 +142,7 @@ public class Message implements Serializable {
      */
     public abstract Builder clearAttributes();
 
-    abstract Builder publishTime(long publishTime);
+    abstract Builder setPublishTime(long publishTime);
 
     /**
      * Creates a message object.
@@ -146,18 +167,30 @@ public class Message implements Serializable {
     }
 
     @Override
-    BuilderImpl id(String id) {
+    BuilderImpl setId(String id) {
       this.id = checkNotNull(id);
       return this;
     }
 
     @Override
+    @Deprecated
     public Builder payload(String payload) {
-      return payload(ByteArray.copyFrom(payload));
+      return setPayload(payload);
     }
 
     @Override
+    public Builder setPayload(String payload) {
+      return setPayload(ByteArray.copyFrom(payload));
+    }
+
+    @Override
+    @Deprecated
     public Builder payload(ByteArray payload) {
+      return setPayload(payload);
+    }
+
+    @Override
+    public Builder setPayload(ByteArray payload) {
       this.payload = payload;
       return this;
     }
@@ -169,7 +202,13 @@ public class Message implements Serializable {
     }
 
     @Override
+    @Deprecated
     public Builder attributes(Map<String, String> attributes) {
+      return setAttributes(attributes);
+    }
+
+    @Override
+    public Builder setAttributes(Map<String, String> attributes) {
       this.attributes = new HashMap<>(attributes);
       return this;
     }
@@ -187,7 +226,7 @@ public class Message implements Serializable {
     }
 
     @Override
-    Builder publishTime(long publishTime) {
+    Builder setPublishTime(long publishTime) {
       this.publishTime = publishTime;
       return this;
     }
@@ -209,7 +248,16 @@ public class Message implements Serializable {
    * Returns the time in milliseconds at which the message was published. This value is set by the
    * server when it receives the publish call. If not set, this method returns {@code null}.
    */
+  @Deprecated
   public Long publishTime() {
+    return getPublishTime();
+  }
+
+  /**
+   * Returns the time in milliseconds at which the message was published. This value is set by the
+   * server when it receives the publish call. If not set, this method returns {@code null}.
+   */
+  public Long getPublishTime() {
     return publishTime;
   }
 
@@ -218,7 +266,17 @@ public class Message implements Serializable {
    * define for a message. For example, a key {@code iana.org/language_tag} and value {@code en}
    * could be added to messages to mark them as readable by an English-speaking subscriber.
    */
+  @Deprecated
   public Map<String, String> attributes() {
+    return getAttributes();
+  }
+
+  /**
+   * Returns the message attributes. Message attributes are key-value pairs that a publisher can
+   * define for a message. For example, a key {@code iana.org/language_tag} and value {@code en}
+   * could be added to messages to mark them as readable by an English-speaking subscriber.
+   */
+  public Map<String, String> getAttributes() {
     return attributes;
   }
 
@@ -228,21 +286,48 @@ public class Message implements Serializable {
    * a Pub/Sub message via a pull call or a push delivery. If not set, this method returns
    * {@code null}.
    */
+  @Deprecated
   public String id() {
+    return getId();
+  }
+
+  /**
+   * Returns the id of this message, set by the server when the message is published. The id is
+   * guaranteed to be unique within the topic. This value may be read by a subscriber that receives
+   * a Pub/Sub message via a pull call or a push delivery. If not set, this method returns
+   * {@code null}.
+   */
+  public String getId() {
     return id;
   }
 
   /**
    * Returns the message payload as a string, decoded using {@code UTF-8}.
    */
+  @Deprecated
   public String payloadAsString() {
+    return getPayloadAsString();
+  }
+
+  /**
+   * Returns the message payload as a string, decoded using {@code UTF-8}.
+   */
+  public String getPayloadAsString() {
     return payload.toStringUtf8();
   }
 
   /**
    * Returns the message payload.
    */
+  @Deprecated
   public ByteArray payload() {
+    return getPayload();
+  }
+
+  /**
+   * Returns the message payload.
+   */
+  public ByteArray getPayload() {
     return payload;
   }
 
@@ -293,18 +378,18 @@ public class Message implements Serializable {
   }
 
   static Message fromPb(PubsubMessage messagePb) {
-    Builder builder = builder(new InternalByteArray(messagePb.getData()));
+    Builder builder = newBuilder(new InternalByteArray(messagePb.getData()));
     if (messagePb.hasPublishTime()) {
       Timestamp ts = messagePb.getPublishTime();
       Long millis = ts.getSeconds() * MILLIS_PER_SECOND + ts.getNanos() / NANOS_PER_MILLISECOND;
       if (millis != 0) {
-        builder.publishTime(millis);
+        builder.setPublishTime(millis);
       }
     }
     if (!Objects.equals(messagePb.getMessageId(), "")) {
-      builder.id(messagePb.getMessageId());
+      builder.setId(messagePb.getMessageId());
     }
-    for (Map.Entry<String, String> entry : messagePb.getAttributes().entrySet()) {
+    for (Map.Entry<String, String> entry : messagePb.getAttributesMap().entrySet()) {
       builder.addAttribute(entry.getKey(), entry.getValue());
     }
     return builder.build();
@@ -322,7 +407,7 @@ public class Message implements Serializable {
    * {@code UTF-8}.
    */
   public static Message of(String payload) {
-    return builder(payload).build();
+    return newBuilder(payload).build();
   }
 
   /**
@@ -330,22 +415,40 @@ public class Message implements Serializable {
    * message must have a non-empty payload.
    */
   public static Message of(ByteArray payload) {
-    return builder(payload).build();
+    return newBuilder(payload).build();
   }
 
   /**
    * Creates a builder for {@code Message} objects given the payload as a string. The string is
    * enconded using {@code UTF-8}. To be published a message must have a non-empty payload.
    */
+  @Deprecated
   public static Builder builder(String payload) {
-    return new BuilderImpl().payload(payload);
+    return newBuilder(payload);
+  }
+
+  /**
+   * Creates a builder for {@code Message} objects given the payload as a string. The string is
+   * enconded using {@code UTF-8}. To be published a message must have a non-empty payload.
+   */
+  public static Builder newBuilder(String payload) {
+    return new BuilderImpl().setPayload(payload);
   }
 
   /**
    * Creates a builder for {@code Message} objects given the payload as a {@link ByteArray}. To be
    * published a message must have a non-empty payload, or at least one attribute.
    */
+  @Deprecated
   public static Builder builder(ByteArray payload) {
-    return new BuilderImpl().payload(payload);
+    return newBuilder(payload);
+  }
+
+  /**
+   * Creates a builder for {@code Message} objects given the payload as a {@link ByteArray}. To be
+   * published a message must have a non-empty payload, or at least one attribute.
+   */
+  public static Builder newBuilder(ByteArray payload) {
+    return new BuilderImpl().setPayload(payload);
   }
 }

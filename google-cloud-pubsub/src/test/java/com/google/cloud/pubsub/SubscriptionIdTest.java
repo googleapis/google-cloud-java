@@ -29,6 +29,12 @@ public class SubscriptionIdTest {
 
   @Test
   public void testConstructor() {
+    assertEquals(PROJECT, SUBSCRIPTION_ID.getProject());
+    assertEquals(NAME, SUBSCRIPTION_ID.getSubscription());
+  }
+
+  @Test
+  public void testConstructorDeprecated() {
     assertEquals(PROJECT, SUBSCRIPTION_ID.project());
     assertEquals(NAME, SUBSCRIPTION_ID.subscription());
   }
@@ -37,14 +43,14 @@ public class SubscriptionIdTest {
   public void testToAndFromPb() {
     SubscriptionId subscriptionId = SubscriptionId.fromPb(TOPIC_PB);
     compareSubscriptionId(SUBSCRIPTION_ID, subscriptionId);
-    assertEquals(PROJECT, subscriptionId.project());
-    assertEquals(NAME, subscriptionId.subscription());
+    assertEquals(PROJECT, subscriptionId.getProject());
+    assertEquals(NAME, subscriptionId.getSubscription());
   }
 
   private void compareSubscriptionId(SubscriptionId expected, SubscriptionId value) {
     assertEquals(expected, value);
-    assertEquals(expected.project(), value.project());
-    assertEquals(expected.subscription(), value.subscription());
+    assertEquals(expected.getProject(), value.getProject());
+    assertEquals(expected.getSubscription(), value.getSubscription());
     assertEquals(expected.hashCode(), value.hashCode());
   }
 }
