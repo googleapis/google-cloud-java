@@ -48,15 +48,15 @@ public class UpdateAndListProjects {
           .addLabel("launch-status", "in-development")
           .build()
           .replace();
-      System.out.println("Updated the labels of project " + newProject.projectId()
-          + " to be " + newProject.labels());
+      System.out.println("Updated the labels of project " + newProject.getProjectId()
+          + " to be " + newProject.getLabels());
     }
 
     // List all the projects you have permission to view.
     Iterator<Project> projectIterator = resourceManager.list().iterateAll();
     System.out.println("Projects I can view:");
     while (projectIterator.hasNext()) {
-      System.out.println(projectIterator.next().projectId());
+      System.out.println(projectIterator.next().getProjectId());
     }
   }
 }

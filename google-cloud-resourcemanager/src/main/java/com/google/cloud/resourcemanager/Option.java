@@ -39,11 +39,11 @@ abstract class Option implements Serializable {
     this.value = value;
   }
 
-  ResourceManagerRpc.Option rpcOption() {
+  ResourceManagerRpc.Option getRpcOption() {
     return rpcOption;
   }
 
-  Object value() {
+  Object getValue() {
     return value;
   }
 

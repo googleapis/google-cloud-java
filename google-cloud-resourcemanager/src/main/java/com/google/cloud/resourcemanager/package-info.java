@@ -43,13 +43,13 @@
  *       .addLabel("launch-status", "in-development")
  *       .build()
  *       .replace();
- *   System.out.println("Updated the labels of project " + newProject.projectId()
- *       + " to be " + newProject.labels());
+ *   System.out.println("Updated the labels of project " + newProject.getProjectId()
+ *       + " to be " + newProject.getLabels());
  * }
  * Iterator<Project> projectIterator = resourceManager.list().iterateAll();
  * System.out.println("Projects I can view:");
  * while (projectIterator.hasNext()) {
- *   System.out.println(projectIterator.next().projectId());
+ *   System.out.println(projectIterator.next().getProjectId());
  * }}</pre>
  * <p>Remember that you must authenticate using the Google Cloud SDK. See more about
  * <a href="https://github.com/GoogleCloudPlatform/google-cloud-java#specifying-a-project-id">providing
