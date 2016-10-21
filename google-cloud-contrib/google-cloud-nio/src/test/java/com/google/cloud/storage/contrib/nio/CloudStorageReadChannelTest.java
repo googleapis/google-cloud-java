@@ -59,7 +59,7 @@ public class CloudStorageReadChannelTest {
 
   @Before
   public void before() throws IOException {
-    when(metadata.size()).thenReturn(42L);
+    when(metadata.getSize()).thenReturn(42L);
     when(gcsStorage.get(file)).thenReturn(metadata);
     when(gcsStorage.reader(eq(file))).thenReturn(gcsChannel);
     when(gcsChannel.isOpen()).thenReturn(true);

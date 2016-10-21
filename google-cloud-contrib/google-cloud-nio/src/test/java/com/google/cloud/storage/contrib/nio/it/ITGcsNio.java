@@ -98,7 +98,7 @@ public class ITGcsNio {
   public static void beforeClass() throws IOException {
     // loads the credentials from local disk as par README
     RemoteStorageHelper gcsHelper = RemoteStorageHelper.create();
-    storageOptions = gcsHelper.options();
+    storageOptions = gcsHelper.getOptions();
     storage = storageOptions.service();
     // create and populate test bucket
     storage.create(BucketInfo.of(BUCKET));
@@ -121,7 +121,7 @@ public class ITGcsNio {
   }
 
   private static void fillFile(Storage storage, String fname, int size) throws IOException {
-    storage.create(BlobInfo.builder(BUCKET, fname).build(), randomContents(size));
+    storage.create(BlobInfo.newBuilder(BUCKET, fname).build(), randomContents(size));
   }
 
   @Test

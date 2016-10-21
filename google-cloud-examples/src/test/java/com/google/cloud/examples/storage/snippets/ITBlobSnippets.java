@@ -69,9 +69,9 @@ public class ITBlobSnippets {
   @BeforeClass
   public static void beforeClass() {
     RemoteStorageHelper helper = RemoteStorageHelper.create();
-    storage = helper.options().service();
+    storage = helper.getOptions().service();
     storage.create(BucketInfo.of(BUCKET));
-    blob = storage.create(BlobInfo.builder(BUCKET, BLOB).build());
+    blob = storage.create(BlobInfo.newBuilder(BUCKET, BLOB).build());
   }
 
   @AfterClass
@@ -88,7 +88,7 @@ public class ITBlobSnippets {
   public void testBlob() throws IOException {
     BlobSnippets blobSnippets = new BlobSnippets(blob);
     assertTrue(blobSnippets.exists());
-    assertArrayEquals(EMPTY_CONTENT, blobSnippets.content());
+    assertArrayEquals(EMPTY_CONTENT, blobSnippets.getContent());
     try {
       assertNotNull(blobSnippets.reload());
       fail("Expected StorageException to be thrown");
@@ -96,7 +96,7 @@ public class ITBlobSnippets {
       // expected
     }
     Blob updatedBlob = blobSnippets.update();
-    assertEquals(ImmutableMap.of("key", "value"), updatedBlob.metadata());
+    assertEquals(ImmutableMap.of("key", "value"), updatedBlob.getMetadata());
     Blob copiedBlob = blobSnippets.copyToStrings(BUCKET, "copyBlob");
     assertNotNull(copiedBlob);
     copiedBlob.delete();
@@ -122,11 +122,11 @@ public class ITBlobSnippets {
       assertArrayEquals(CONTENT, readBytes);
     }
     assertFalse(blobSnippets.delete());
-    blobSnippets = new BlobSnippets(storage.get(blob.bucket(), blob.name()));
+    blobSnippets = new BlobSnippets(storage.get(blob.getBucket(), blob.getName()));
     assertNull(blobSnippets.getAcl());
     assertNotNull(blobSnippets.createAcl());
     Acl updatedAcl = blobSnippets.updateAcl();
-    assertEquals(Acl.Role.OWNER, updatedAcl.role());
+    assertEquals(Acl.Role.OWNER, updatedAcl.getRole());
     Set<Acl> acls = Sets.newHashSet(blobSnippets.listAcls());
     assertTrue(acls.contains(updatedAcl));
     assertTrue(blobSnippets.deleteAcl());

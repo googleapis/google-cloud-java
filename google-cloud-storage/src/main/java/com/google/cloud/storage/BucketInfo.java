@@ -102,7 +102,12 @@ public class BucketInfo implements Serializable {
       this.type = type;
     }
 
+    @Deprecated
     public Type type() {
+      return getType();
+    }
+
+    public Type getType() {
       return type;
     }
 
@@ -180,7 +185,12 @@ public class BucketInfo implements Serializable {
       this.daysToLive = daysToLive;
     }
 
+    @Deprecated
     public int daysToLive() {
+      return getDaysToLive();
+    }
+
+    public int getDaysToLive() {
       return daysToLive;
     }
 
@@ -244,7 +254,12 @@ public class BucketInfo implements Serializable {
       this.timeMillis = timeMillis;
     }
 
+    @Deprecated
     public long timeMillis() {
+      return getTimeMillis();
+    }
+
+    public long getTimeMillis() {
       return timeMillis;
     }
 
@@ -276,7 +291,12 @@ public class BucketInfo implements Serializable {
       this.numNewerVersions = numNewerVersions;
     }
 
+    @Deprecated
     public int numNewerVersions() {
+      return getNumNewerVersions();
+    }
+
+    public int getNumNewerVersions() {
       return numNewerVersions;
     }
 
@@ -324,57 +344,107 @@ public class BucketInfo implements Serializable {
     /**
      * Sets the bucket's name.
      */
+    @Deprecated
     public abstract Builder name(String name);
 
-    abstract Builder generatedId(String generatedId);
+    /**
+     * Sets the bucket's name.
+     */
+    public abstract Builder setName(String name);
 
-    abstract Builder owner(Acl.Entity owner);
+    abstract Builder setGeneratedId(String generatedId);
 
-    abstract Builder selfLink(String selfLink);
+    abstract Builder setOwner(Acl.Entity owner);
+
+    abstract Builder setSelfLink(String selfLink);
 
     /**
      * Sets whether versioning should be enabled for this bucket. When set to true, versioning is
      * fully enabled.
      */
+    @Deprecated
     public abstract Builder versioningEnabled(Boolean enable);
+
+    /**
+     * Sets whether versioning should be enabled for this bucket. When set to true, versioning is
+     * fully enabled.
+     */
+    public abstract Builder setVersioningEnabled(Boolean enable);
 
     /**
      * Sets the bucket's website index page. Behaves as the bucket's directory index where missing
      * blobs are treated as potential directories.
      */
+    @Deprecated
     public abstract Builder indexPage(String indexPage);
+
+    /**
+     * Sets the bucket's website index page. Behaves as the bucket's directory index where missing
+     * blobs are treated as potential directories.
+     */
+    public abstract Builder setIndexPage(String indexPage);
 
     /**
      * Sets the custom object to return when a requested resource is not found.
      */
+    @Deprecated
     public abstract Builder notFoundPage(String notFoundPage);
+
+    /**
+     * Sets the custom object to return when a requested resource is not found.
+     */
+    public abstract Builder setNotFoundPage(String notFoundPage);
 
     /**
      * Sets the bucket's lifecycle configuration as a number of delete rules.
      *
      * @see <a href="https://cloud.google.com/storage/docs/lifecycle">Lifecycle Management</a>
      */
+    @Deprecated
     public abstract Builder deleteRules(Iterable<? extends DeleteRule> rules);
+
+    /**
+     * Sets the bucket's lifecycle configuration as a number of delete rules.
+     *
+     * @see <a href="https://cloud.google.com/storage/docs/lifecycle">Lifecycle Management</a>
+     */
+    public abstract Builder setDeleteRules(Iterable<? extends DeleteRule> rules);
 
     /**
      * Sets the bucket's storage class. This defines how blobs in the bucket are stored and
      * determines the SLA and the cost of storage. A list of supported values is available
      * <a href="https://cloud.google.com/storage/docs/storage-classes">here</a>.
      */
+    @Deprecated
     public abstract Builder storageClass(String storageClass);
+
+    /**
+     * Sets the bucket's storage class. This defines how blobs in the bucket are stored and
+     * determines the SLA and the cost of storage. A list of supported values is available
+     * <a href="https://cloud.google.com/storage/docs/storage-classes">here</a>.
+     */
+    public abstract Builder setStorageClass(String storageClass);
 
     /**
      * Sets the bucket's location. Data for blobs in the bucket resides in physical storage within
      * this region. A list of supported values is available
      * <a href="https://cloud.google.com/storage/docs/bucket-locations">here</a>.
      */
+    @Deprecated
     public abstract Builder location(String location);
 
-    abstract Builder etag(String etag);
+    /**
+     * Sets the bucket's location. Data for blobs in the bucket resides in physical storage within
+     * this region. A list of supported values is available
+     * <a href="https://cloud.google.com/storage/docs/bucket-locations">here</a>.
+     */
+    public abstract Builder setLocation(String location);
 
-    abstract Builder createTime(Long createTime);
+    abstract Builder setEtag(String etag);
 
-    abstract Builder metageneration(Long metageneration);
+    abstract Builder setCreateTime(Long createTime);
+
+    abstract Builder setMetageneration(Long metageneration);
 
     /**
      * Sets the bucket's Cross-Origin Resource Sharing (CORS) configuration.
@@ -382,7 +452,16 @@ public class BucketInfo implements Serializable {
      * @see <a href="https://cloud.google.com/storage/docs/cross-origin">
      *     Cross-Origin Resource Sharing (CORS)</a>
      */
+    @Deprecated
     public abstract Builder cors(Iterable<Cors> cors);
+
+    /**
+     * Sets the bucket's Cross-Origin Resource Sharing (CORS) configuration.
+     *
+     * @see <a href="https://cloud.google.com/storage/docs/cross-origin">
+     *     Cross-Origin Resource Sharing (CORS)</a>
+     */
+    public abstract Builder setCors(Iterable<Cors> cors);
 
     /**
      * Sets the bucket's access control configuration.
@@ -391,7 +470,17 @@ public class BucketInfo implements Serializable {
      * href="https://cloud.google.com/storage/docs/access-control#About-Access-Control-Lists">
      *     About Access Control Lists</a>
      */
+    @Deprecated
     public abstract Builder acl(Iterable<Acl> acl);
+
+    /**
+     * Sets the bucket's access control configuration.
+     *
+     * @see <a
+     * href="https://cloud.google.com/storage/docs/access-control#About-Access-Control-Lists">
+     *     About Access Control Lists</a>
+     */
+    public abstract Builder setAcl(Iterable<Acl> acl);
 
     /**
      * Sets the default access control configuration to apply to bucket's blobs when no other
@@ -401,7 +490,18 @@ public class BucketInfo implements Serializable {
      * href="https://cloud.google.com/storage/docs/access-control#About-Access-Control-Lists">
      *     About Access Control Lists</a>
      */
+    @Deprecated
     public abstract Builder defaultAcl(Iterable<Acl> acl);
+
+    /**
+     * Sets the default access control configuration to apply to bucket's blobs when no other
+     * configuration is specified.
+     *
+     * @see <a
+     * href="https://cloud.google.com/storage/docs/access-control#About-Access-Control-Lists">
+     *     About Access Control Lists</a>
+     */
+    public abstract Builder setDefaultAcl(Iterable<Acl> acl);
 
     /**
      * Creates a {@code BucketInfo} object.
@@ -452,97 +552,157 @@ public class BucketInfo implements Serializable {
     }
 
     @Override
+    @Deprecated
     public Builder name(String name) {
+      return setName(name);
+    }
+
+    @Override
+    public Builder setName(String name) {
       this.name = checkNotNull(name);
       return this;
     }
 
     @Override
-    Builder generatedId(String generatedId) {
+    Builder setGeneratedId(String generatedId) {
       this.generatedId = generatedId;
       return this;
     }
 
     @Override
-    Builder owner(Acl.Entity owner) {
+    Builder setOwner(Acl.Entity owner) {
       this.owner = owner;
       return this;
     }
 
     @Override
-    Builder selfLink(String selfLink) {
+    Builder setSelfLink(String selfLink) {
       this.selfLink = selfLink;
       return this;
     }
 
     @Override
+    @Deprecated
     public Builder versioningEnabled(Boolean enable) {
+      return setVersioningEnabled(enable);
+    }
+
+    @Override
+    public Builder setVersioningEnabled(Boolean enable) {
       this.versioningEnabled = firstNonNull(enable, Data.<Boolean>nullOf(Boolean.class));
       return this;
     }
 
     @Override
+    @Deprecated
     public Builder indexPage(String indexPage) {
+      return setIndexPage(indexPage);
+    }
+
+    @Override
+    public Builder setIndexPage(String indexPage) {
       this.indexPage = indexPage;
       return this;
     }
 
     @Override
+    @Deprecated
     public Builder notFoundPage(String notFoundPage) {
+      return setNotFoundPage(notFoundPage);
+    }
+
+    @Override
+    public Builder setNotFoundPage(String notFoundPage) {
       this.notFoundPage = notFoundPage;
       return this;
     }
 
     @Override
+    @Deprecated
     public Builder deleteRules(Iterable<? extends DeleteRule> rules) {
+      return setDeleteRules(rules);
+    }
+
+    @Override
+    public Builder setDeleteRules(Iterable<? extends DeleteRule> rules) {
       this.deleteRules = rules != null ? ImmutableList.copyOf(rules) : null;
       return this;
     }
 
     @Override
+    @Deprecated
     public Builder storageClass(String storageClass) {
+      return setStorageClass(storageClass);
+    }
+
+    @Override
+    public Builder setStorageClass(String storageClass) {
       this.storageClass = storageClass;
       return this;
     }
 
     @Override
+    @Deprecated
     public Builder location(String location) {
+      return setLocation(location);
+    }
+
+    @Override
+    public Builder setLocation(String location) {
       this.location = location;
       return this;
     }
 
     @Override
-    Builder etag(String etag) {
+    Builder setEtag(String etag) {
       this.etag = etag;
       return this;
     }
 
     @Override
-    Builder createTime(Long createTime) {
+    Builder setCreateTime(Long createTime) {
       this.createTime = createTime;
       return this;
     }
 
     @Override
-    Builder metageneration(Long metageneration) {
+    Builder setMetageneration(Long metageneration) {
       this.metageneration = metageneration;
       return this;
     }
 
     @Override
+    @Deprecated
     public Builder cors(Iterable<Cors> cors) {
+      return setCors(cors);
+    }
+
+    @Override
+    public Builder setCors(Iterable<Cors> cors) {
       this.cors = cors != null ? ImmutableList.copyOf(cors) : null;
       return this;
     }
 
     @Override
+    @Deprecated
     public Builder acl(Iterable<Acl> acl) {
+      return setAcl(acl);
+    }
+
+    @Override
+    public Builder setAcl(Iterable<Acl> acl) {
       this.acl = acl != null ? ImmutableList.copyOf(acl) : null;
       return this;
     }
 
     @Override
+    @Deprecated
     public Builder defaultAcl(Iterable<Acl> acl) {
+      return setDefaultAcl(acl);
+    }
+
+    @Override
+    public Builder setDefaultAcl(Iterable<Acl> acl) {
       this.defaultAcl = acl != null ? ImmutableList.copyOf(acl) : null;
       return this;
     }
@@ -576,28 +736,60 @@ public class BucketInfo implements Serializable {
   /**
    * Returns the service-generated id for the bucket.
    */
+  @Deprecated
   public String generatedId() {
+    return getGeneratedId();
+  }
+
+  /**
+   * Returns the service-generated id for the bucket.
+   */
+  public String getGeneratedId() {
     return generatedId;
   }
 
   /**
    * Returns the bucket's name.
    */
+  @Deprecated
   public String name() {
+    return getName();
+  }
+
+  /**
+   * Returns the bucket's name.
+   */
+  public String getName() {
     return name;
   }
 
   /**
    * Returns the bucket's owner. This is always the project team's owner group.
    */
+  @Deprecated
   public Entity owner() {
+    return getOwner();
+  }
+
+  /**
+   * Returns the bucket's owner. This is always the project team's owner group.
+   */
+  public Entity getOwner() {
     return owner;
   }
 
   /**
    * Returns the URI of this bucket as a string.
    */
+  @Deprecated
   public String selfLink() {
+    return getSelfLink();
+  }
+
+  /**
+   * Returns the URI of this bucket as a string.
+   */
+  public String getSelfLink() {
     return selfLink;
   }
 
@@ -612,14 +804,31 @@ public class BucketInfo implements Serializable {
    * Returns bucket's website index page. Behaves as the bucket's directory index where missing
    * blobs are treated as potential directories.
    */
+  @Deprecated
   public String indexPage() {
+    return getIndexPage();
+  }
+
+  /**
+   * Returns bucket's website index page. Behaves as the bucket's directory index where missing
+   * blobs are treated as potential directories.
+   */
+  public String getIndexPage() {
     return indexPage;
   }
 
   /**
    * Returns the custom object to return when a requested resource is not found.
    */
+  @Deprecated
   public String notFoundPage() {
+    return getNotFoundPage();
+  }
+
+  /**
+   * Returns the custom object to return when a requested resource is not found.
+   */
+  public String getNotFoundPage() {
     return notFoundPage;
   }
 
@@ -628,7 +837,17 @@ public class BucketInfo implements Serializable {
    *
    * @see <a href="https://cloud.google.com/storage/docs/lifecycle">Lifecycle Management</a>
    */
+  @Deprecated
   public List<? extends DeleteRule> deleteRules() {
+    return getDeleteRules();
+  }
+
+  /**
+   * Returns bucket's lifecycle configuration as a number of delete rules.
+   *
+   * @see <a href="https://cloud.google.com/storage/docs/lifecycle">Lifecycle Management</a>
+   */
+  public List<? extends DeleteRule> getDeleteRules() {
     return deleteRules;
   }
 
@@ -637,21 +856,47 @@ public class BucketInfo implements Serializable {
    *
    * @see <a href="http://tools.ietf.org/html/rfc2616#section-3.11">Entity Tags</a>
    */
+  @Deprecated
   public String etag() {
+    return getEtag();
+  }
+
+  /**
+   * Returns HTTP 1.1 Entity tag for the bucket.
+   *
+   * @see <a href="http://tools.ietf.org/html/rfc2616#section-3.11">Entity Tags</a>
+   */
+  public String getEtag() {
     return etag;
   }
 
   /**
    * Returns the time at which the bucket was created.
    */
+  @Deprecated
   public Long createTime() {
+    return getCreateTime();
+  }
+
+  /**
+   * Returns the time at which the bucket was created.
+   */
+  public Long getCreateTime() {
     return createTime;
   }
 
   /**
    * Returns the metadata generation of this bucket.
    */
+  @Deprecated
   public Long metageneration() {
+    return getMetageneration();
+  }
+
+  /**
+   * Returns the metadata generation of this bucket.
+   */
+  public Long getMetageneration() {
     return metageneration;
   }
 
@@ -661,7 +906,18 @@ public class BucketInfo implements Serializable {
    *
    * @see <a href="https://cloud.google.com/storage/docs/bucket-locations">Bucket Locations</a>
    */
+  @Deprecated
   public String location() {
+    return getLocation();
+  }
+
+  /**
+   * Returns the bucket's location. Data for blobs in the bucket resides in physical storage within
+   * this region.
+   *
+   * @see <a href="https://cloud.google.com/storage/docs/bucket-locations">Bucket Locations</a>
+   */
+  public String getLocation() {
     return location;
   }
 
@@ -671,7 +927,18 @@ public class BucketInfo implements Serializable {
    *
    * @see <a href="https://cloud.google.com/storage/docs/storage-classes">Storage Classes</a>
    */
+  @Deprecated
   public String storageClass() {
+    return getStorageClass();
+  }
+
+  /**
+   * Returns the bucket's storage class. This defines how blobs in the bucket are stored and
+   * determines the SLA and the cost of storage.
+   *
+   * @see <a href="https://cloud.google.com/storage/docs/storage-classes">Storage Classes</a>
+   */
+  public String getStorageClass() {
     return storageClass;
   }
 
@@ -681,7 +948,18 @@ public class BucketInfo implements Serializable {
    * @see <a href="https://cloud.google.com/storage/docs/cross-origin">
    *     Cross-Origin Resource Sharing (CORS)</a>
    */
+  @Deprecated
   public List<Cors> cors() {
+    return getCors();
+  }
+
+  /**
+   * Returns the bucket's Cross-Origin Resource Sharing (CORS) configuration.
+   *
+   * @see <a href="https://cloud.google.com/storage/docs/cross-origin">
+   *     Cross-Origin Resource Sharing (CORS)</a>
+   */
+  public List<Cors> getCors() {
     return cors;
   }
 
@@ -691,7 +969,18 @@ public class BucketInfo implements Serializable {
    * @see <a href="https://cloud.google.com/storage/docs/access-control#About-Access-Control-Lists">
    *     About Access Control Lists</a>
    */
+  @Deprecated
   public List<Acl> acl() {
+    return getAcl();
+  }
+
+  /**
+   * Returns the bucket's access control configuration.
+   *
+   * @see <a href="https://cloud.google.com/storage/docs/access-control#About-Access-Control-Lists">
+   *     About Access Control Lists</a>
+   */
+  public List<Acl> getAcl() {
     return acl;
   }
 
@@ -701,7 +990,18 @@ public class BucketInfo implements Serializable {
    * @see <a href="https://cloud.google.com/storage/docs/access-control#About-Access-Control-Lists">
    *     About Access Control Lists</a>
    */
+  @Deprecated
   public List<Acl> defaultAcl() {
+    return getDefaultAcl();
+  }
+
+  /**
+   * Returns the default access control configuration for this bucket's blobs.
+   *
+   * @see <a href="https://cloud.google.com/storage/docs/access-control#About-Access-Control-Lists">
+   *     About Access Control Lists</a>
+   */
+  public List<Acl> getDefaultAcl() {
     return defaultAcl;
   }
 
@@ -728,7 +1028,7 @@ public class BucketInfo implements Serializable {
   @Override
   public String toString() {
     return MoreObjects.toStringHelper(this)
-        .add("name", name())
+        .add("name", name)
         .toString();
   }
 
@@ -799,44 +1099,52 @@ public class BucketInfo implements Serializable {
    * Creates a {@code BucketInfo} object for the provided bucket name.
    */
   public static BucketInfo of(String name) {
-    return builder(name).build();
+    return newBuilder(name).build();
   }
 
   /**
    * Returns a {@code BucketInfo} builder where the bucket's name is set to the provided name.
    */
+  @Deprecated
   public static Builder builder(String name) {
+    return newBuilder(name);
+  }
+
+  /**
+   * Returns a {@code BucketInfo} builder where the bucket's name is set to the provided name.
+   */
+  public static Builder newBuilder(String name) {
     return new BuilderImpl(name);
   }
 
   static BucketInfo fromPb(com.google.api.services.storage.model.Bucket bucketPb) {
     Builder builder = new BuilderImpl(bucketPb.getName());
     if (bucketPb.getId() != null) {
-      builder.generatedId(bucketPb.getId());
+      builder.setGeneratedId(bucketPb.getId());
     }
     if (bucketPb.getEtag() != null) {
-      builder.etag(bucketPb.getEtag());
+      builder.setEtag(bucketPb.getEtag());
     }
     if (bucketPb.getMetageneration() != null) {
-      builder.metageneration(bucketPb.getMetageneration());
+      builder.setMetageneration(bucketPb.getMetageneration());
     }
     if (bucketPb.getSelfLink() != null) {
-      builder.selfLink(bucketPb.getSelfLink());
+      builder.setSelfLink(bucketPb.getSelfLink());
     }
     if (bucketPb.getTimeCreated() != null) {
-      builder.createTime(bucketPb.getTimeCreated().getValue());
+      builder.setCreateTime(bucketPb.getTimeCreated().getValue());
     }
     if (bucketPb.getLocation() != null) {
-      builder.location(bucketPb.getLocation());
+      builder.setLocation(bucketPb.getLocation());
     }
     if (bucketPb.getStorageClass() != null) {
-      builder.storageClass(bucketPb.getStorageClass());
+      builder.setStorageClass(bucketPb.getStorageClass());
     }
     if (bucketPb.getCors() != null) {
-      builder.cors(transform(bucketPb.getCors(), Cors.FROM_PB_FUNCTION));
+      builder.setCors(transform(bucketPb.getCors(), Cors.FROM_PB_FUNCTION));
     }
     if (bucketPb.getAcl() != null) {
-      builder.acl(transform(bucketPb.getAcl(), new Function<BucketAccessControl, Acl>() {
+      builder.setAcl(transform(bucketPb.getAcl(), new Function<BucketAccessControl, Acl>() {
         @Override
         public Acl apply(BucketAccessControl bucketAccessControl) {
           return Acl.fromPb(bucketAccessControl);
@@ -844,7 +1152,7 @@ public class BucketInfo implements Serializable {
       }));
     }
     if (bucketPb.getDefaultObjectAcl() != null) {
-      builder.defaultAcl(transform(bucketPb.getDefaultObjectAcl(),
+      builder.setDefaultAcl(transform(bucketPb.getDefaultObjectAcl(),
           new Function<ObjectAccessControl, Acl>() {
             @Override
             public Acl apply(ObjectAccessControl objectAccessControl) {
@@ -853,18 +1161,18 @@ public class BucketInfo implements Serializable {
           }));
     }
     if (bucketPb.getOwner() != null) {
-      builder.owner(Entity.fromPb(bucketPb.getOwner().getEntity()));
+      builder.setOwner(Entity.fromPb(bucketPb.getOwner().getEntity()));
     }
     if (bucketPb.getVersioning() != null) {
-      builder.versioningEnabled(bucketPb.getVersioning().getEnabled());
+      builder.setVersioningEnabled(bucketPb.getVersioning().getEnabled());
     }
     Website website = bucketPb.getWebsite();
     if (website != null) {
-      builder.indexPage(website.getMainPageSuffix());
-      builder.notFoundPage(website.getNotFoundPage());
+      builder.setIndexPage(website.getMainPageSuffix());
+      builder.setNotFoundPage(website.getNotFoundPage());
     }
     if (bucketPb.getLifecycle() != null && bucketPb.getLifecycle().getRule() != null) {
-      builder.deleteRules(transform(bucketPb.getLifecycle().getRule(),
+      builder.setDeleteRules(transform(bucketPb.getLifecycle().getRule(),
           new Function<Rule, DeleteRule>() {
             @Override
             public DeleteRule apply(Rule rule) {

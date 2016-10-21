@@ -39,6 +39,24 @@ public class CorsTest {
     List<Origin> origins = ImmutableList.of(Origin.any(), Origin.of("o"));
     List<String> headers = ImmutableList.of("h1", "h2");
     List<HttpMethod> methods = ImmutableList.of(HttpMethod.GET);
+    Cors cors = Cors.newBuilder()
+        .setMaxAgeSeconds(100)
+        .setOrigins(origins)
+        .setResponseHeaders(headers)
+        .setMethods(methods)
+        .build();
+
+    assertEquals(Integer.valueOf(100), cors.getMaxAgeSeconds());
+    assertEquals(origins, cors.getOrigins());
+    assertEquals(methods, cors.getMethods());
+    assertEquals(headers, cors.getResponseHeaders());
+  }
+
+  @Test
+  public void corsTestDeprecated() {
+    List<Origin> origins = ImmutableList.of(Origin.any(), Origin.of("o"));
+    List<String> headers = ImmutableList.of("h1", "h2");
+    List<HttpMethod> methods = ImmutableList.of(HttpMethod.GET);
     Cors cors = Cors.builder()
         .maxAgeSeconds(100)
         .origins(origins)

@@ -77,11 +77,11 @@ public class BlobSnippets {
    * Example of reading all bytes of the blob, if its generation matches the
    * {@link Blob#generation()} value, otherwise a {@link StorageException} is thrown.
    */
-  // [TARGET content(BlobSourceOption...)]
-  public byte[] content() {
-    // [START content]
-    byte[] content = blob.content(BlobSourceOption.generationMatch());
-    // [END content]
+  // [TARGET getContent(BlobSourceOption...)]
+  public byte[] getContent() {
+    // [START getContent]
+    byte[] content = blob.getContent(BlobSourceOption.generationMatch());
+    // [END getContent]
     return content;
   }
 
@@ -108,8 +108,8 @@ public class BlobSnippets {
     // [START update]
     Map<String, String> newMetadata = new HashMap<>();
     newMetadata.put("key", "value");
-    blob.toBuilder().metadata(null).build().update();
-    Blob updatedBlob = blob.toBuilder().metadata(newMetadata).build().update();
+    blob.toBuilder().setMetadata(null).build().update();
+    Blob updatedBlob = blob.toBuilder().setMetadata(newMetadata).build().update();
     // [END update]
     return updatedBlob;
   }
@@ -140,7 +140,7 @@ public class BlobSnippets {
   public Blob copyToId(String bucketName, String blobName) {
     // [START copyToId]
     CopyWriter copyWriter = blob.copyTo(BlobId.of(bucketName, blobName));
-    Blob copiedBlob = copyWriter.result();
+    Blob copiedBlob = copyWriter.getResult();
     // [END copyToId]
     return copiedBlob;
   }
@@ -153,7 +153,7 @@ public class BlobSnippets {
   public Blob copyToBucket(String bucketName) {
     // [START copyToBucket]
     CopyWriter copyWriter = blob.copyTo(bucketName);
-    Blob copiedBlob = copyWriter.result();
+    Blob copiedBlob = copyWriter.getResult();
     // [END copyToBucket]
     return copiedBlob;
   }
@@ -167,7 +167,7 @@ public class BlobSnippets {
   public Blob copyToStrings(String bucketName, String blobName) {
     // [START copyToStrings]
     CopyWriter copyWriter = blob.copyTo(bucketName, blobName);
-    Blob copiedBlob = copyWriter.result();
+    Blob copiedBlob = copyWriter.getResult();
     // [END copyToStrings]
     return copiedBlob;
   }

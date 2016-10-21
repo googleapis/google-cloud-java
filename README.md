@@ -548,7 +548,7 @@ import com.google.cloud.storage.StorageOptions;
 
 Storage storage = StorageOptions.defaultInstance().service();
 BlobId blobId = BlobId.of("bucket", "blob_name");
-BlobInfo blobInfo = BlobInfo.builder(blobId).contentType("text/plain").build();
+BlobInfo blobInfo = BlobInfo.newBuiler(blobId).setContentType("text/plain").build();
 Blob blob = storage.create(blobInfo, "Hello, Cloud Storage!".getBytes(UTF_8));
 ```
 The second snippet shows how to update a Storage blob if it exists. Complete source code can be
@@ -569,7 +569,7 @@ Storage storage = StorageOptions.defaultInstance().service();
 BlobId blobId = BlobId.of("bucket", "blob_name");
 Blob blob = storage.get(blobId);
 if (blob != null) {
-  byte[] prevContent = blob.content();
+  byte[] prevContent = blob.getContent();
   System.out.println(new String(prevContent, UTF_8));
   WritableByteChannel channel = blob.writer();
   channel.write(ByteBuffer.wrap("Updated content".getBytes(UTF_8)));

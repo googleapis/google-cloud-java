@@ -99,7 +99,7 @@ public class StorageSnippets {
   public Blob createBlob(String bucketName, String blobName) {
     // [START createBlob]
     BlobId blobId = BlobId.of(bucketName, blobName);
-    BlobInfo blobInfo = BlobInfo.builder(blobId).contentType("text/plain").build();
+    BlobInfo blobInfo = BlobInfo.newBuilder(blobId).setContentType("text/plain").build();
     Blob blob = storage.create(blobInfo);
     // [END createBlob]
     return blob;
@@ -114,7 +114,7 @@ public class StorageSnippets {
   public Blob createBlobFromByteArray(String bucketName, String blobName) {
     // [START createBlobFromByteArray]
     BlobId blobId = BlobId.of(bucketName, blobName);
-    BlobInfo blobInfo = BlobInfo.builder(blobId).contentType("text/plain").build();
+    BlobInfo blobInfo = BlobInfo.newBuilder(blobId).setContentType("text/plain").build();
     Blob blob = storage.create(blobInfo, "Hello, World!".getBytes(UTF_8));
     // [END createBlobFromByteArray]
     return blob;
@@ -130,7 +130,7 @@ public class StorageSnippets {
     // [START createBlobFromInputStream]
     InputStream content = new ByteArrayInputStream("Hello, World!".getBytes(UTF_8));
     BlobId blobId = BlobId.of(bucketName, blobName);
-    BlobInfo blobInfo = BlobInfo.builder(blobId).contentType("text/plain").build();
+    BlobInfo blobInfo = BlobInfo.newBuilder(blobId).setContentType("text/plain").build();
     Blob blob = storage.create(blobInfo, content);
     // [END createBlobFromInputStream]
     return blob;
@@ -243,7 +243,7 @@ public class StorageSnippets {
   // [VARIABLE "my_unique_bucket"]
   public Bucket updateBucket(String bucketName) {
     // [START updateBucket]
-    BucketInfo bucketInfo = BucketInfo.builder(bucketName).versioningEnabled(true).build();
+    BucketInfo bucketInfo = BucketInfo.newBuilder(bucketName).setVersioningEnabled(true).build();
     Bucket bucket = storage.update(bucketInfo);
     // [END updateBucket]
     return bucket;
@@ -259,9 +259,9 @@ public class StorageSnippets {
     // [START updateBlob]
     Map<String, String> newMetadata = new HashMap<>();
     newMetadata.put("key", "value");
-    storage.update(BlobInfo.builder(bucketName, blobName).metadata(null).build());
-    Blob blob = storage.update(BlobInfo.builder(bucketName, blobName)
-        .metadata(newMetadata)
+    storage.update(BlobInfo.newBuilder(bucketName, blobName).setMetadata(null).build());
+    Blob blob = storage.update(BlobInfo.newBuilder(bucketName, blobName)
+        .setMetadata(newMetadata)
         .build());
     // [END updateBlob]
     return blob;
@@ -277,7 +277,7 @@ public class StorageSnippets {
   public Blob updateBlobWithMetageneration(String bucketName, String blobName) {
     // [START updateBlobWithMetageneration]
     Blob blob = storage.get(bucketName, blobName);
-    BlobInfo updatedInfo = blob.toBuilder().contentType("text/plain").build();
+    BlobInfo updatedInfo = blob.toBuilder().setContentType("text/plain").build();
     storage.update(updatedInfo, BlobTargetOption.metagenerationMatch());
     // [END updateBlobWithMetageneration]
     return blob;
@@ -378,9 +378,9 @@ public class StorageSnippets {
       String sourceBlob2) {
     // [START composeBlobs]
     BlobId blobId = BlobId.of(bucketName, blobName);
-    BlobInfo blobInfo = BlobInfo.builder(blobId).contentType("text/plain").build();
-    ComposeRequest request = ComposeRequest.builder()
-        .target(blobInfo)
+    BlobInfo blobInfo = BlobInfo.newBuilder(blobId).setContentType("text/plain").build();
+    ComposeRequest request = ComposeRequest.newBuilder()
+        .setTarget(blobInfo)
         .addSource(sourceBlob1)
         .addSource(sourceBlob2)
         .build();
@@ -398,11 +398,11 @@ public class StorageSnippets {
   // [VARIABLE "copy_blob_name"]
   public Blob copyBlob(String bucketName, String blobName, String copyBlobName) {
     // [START copyBlob]
-    CopyRequest request = CopyRequest.builder()
-        .source(BlobId.of(bucketName, blobName))
-        .target(BlobId.of(bucketName, copyBlobName))
+    CopyRequest request = CopyRequest.newBuilder()
+        .setSource(BlobId.of(bucketName, blobName))
+        .setTarget(BlobId.of(bucketName, copyBlobName))
         .build();
-    Blob blob = storage.copy(request).result();
+    Blob blob = storage.copy(request).getResult();
     // [END copyBlob]
     return blob;
   }
@@ -416,15 +416,15 @@ public class StorageSnippets {
   // [VARIABLE "copy_blob_name"]
   public Blob copyBlobInChunks(String bucketName, String blobName, String copyBlobName) {
     // [START copyBlobInChunks]
-    CopyRequest request = CopyRequest.builder()
-        .source(BlobId.of(bucketName, blobName))
-        .target(BlobId.of(bucketName, copyBlobName))
+    CopyRequest request = CopyRequest.newBuilder()
+        .setSource(BlobId.of(bucketName, blobName))
+        .setTarget(BlobId.of(bucketName, copyBlobName))
         .build();
     CopyWriter copyWriter = storage.copy(request);
     while (!copyWriter.isDone()) {
       copyWriter.copyChunk();
     }
-    Blob blob = copyWriter.result();
+    Blob blob = copyWriter.getResult();
     // [END copyBlobInChunks]
     return blob;
   }
@@ -483,7 +483,7 @@ public class StorageSnippets {
         // delete failed
       }
     });
-    batch.update(BlobInfo.builder(secondBlob).contentType("text/plain").build());
+    batch.update(BlobInfo.newBuilder(secondBlob).setContentType("text/plain").build());
     StorageBatchResult<Blob> result = batch.get(secondBlob);
     batch.submit();
     Blob blob = result.get(); // returns get result or throws StorageException
@@ -540,7 +540,7 @@ public class StorageSnippets {
     // [START writer]
     BlobId blobId = BlobId.of(bucketName, blobName);
     byte[] content = "Hello, World!".getBytes(UTF_8);
-    BlobInfo blobInfo = BlobInfo.builder(blobId).contentType("text/plain").build();
+    BlobInfo blobInfo = BlobInfo.newBuilder(blobId).setContentType("text/plain").build();
     try (WriteChannel writer = storage.writer(blobInfo)) {
       try {
         writer.write(ByteBuffer.wrap(content, 0, content.length));
@@ -560,7 +560,7 @@ public class StorageSnippets {
   // [VARIABLE "my_blob_name"]
   public URL signUrl(String bucketName, String blobName) {
     // [START signUrl]
-    URL signedUrl = storage.signUrl(BlobInfo.builder(bucketName, blobName).build(), 14,
+    URL signedUrl = storage.signUrl(BlobInfo.newBuilder(bucketName, blobName).build(), 14,
         TimeUnit.DAYS);
     // [END signUrl]
     return signedUrl;
@@ -578,7 +578,7 @@ public class StorageSnippets {
   public URL signUrlWithSigner(String bucketName, String blobName, String keyPath)
       throws IOException {
     // [START signUrlWithSigner]
-    URL signedUrl = storage.signUrl(BlobInfo.builder(bucketName, blobName).build(),
+    URL signedUrl = storage.signUrl(BlobInfo.newBuilder(bucketName, blobName).build(),
         14, TimeUnit.DAYS, SignUrlOption.signWith(
             AuthCredentials.createForJson(new FileInputStream(keyPath))));
     // [END signUrlWithSigner]
@@ -630,8 +630,8 @@ public class StorageSnippets {
     Blob firstBlob = storage.get(bucketName, blobName1);
     Blob secondBlob = storage.get(bucketName, blobName2);
     List<Blob> updatedBlobs = storage.update(
-        firstBlob.toBuilder().contentType("text/plain").build(),
-        secondBlob.toBuilder().contentType("text/plain").build());
+        firstBlob.toBuilder().setContentType("text/plain").build(),
+        secondBlob.toBuilder().setContentType("text/plain").build());
     // [END batchUpdate]
     return updatedBlobs;
   }
@@ -648,8 +648,8 @@ public class StorageSnippets {
     Blob firstBlob = storage.get(bucketName, blobName1);
     Blob secondBlob = storage.get(bucketName, blobName2);
     List<BlobInfo> blobs = new LinkedList<>();
-    blobs.add(firstBlob.toBuilder().contentType("text/plain").build());
-    blobs.add(secondBlob.toBuilder().contentType("text/plain").build());
+    blobs.add(firstBlob.toBuilder().setContentType("text/plain").build());
+    blobs.add(secondBlob.toBuilder().setContentType("text/plain").build());
     List<Blob> updatedBlobs = storage.update(blobs);
     // [END batchUpdateIterable]
     return updatedBlobs;

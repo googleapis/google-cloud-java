@@ -112,7 +112,7 @@ At this point, you will be able to see your newly created bucket and blob on the
 Now that we have content uploaded to the server, we can see how to read data from the server.  Add the following line to your program to get back the blob we uploaded.
 
 ```java
-String blobContent = new String(blob.content(), UTF_8);
+String blobContent = new String(blob.getContent(), UTF_8);
 ```
 
 #### Listing buckets and contents of buckets
