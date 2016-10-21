@@ -353,9 +353,9 @@ public class LoggingExample {
           default:
             throw new IllegalArgumentException("Second argument must be bucket|dataset|topic.");
         }
-        SinkInfo.Builder builder = SinkInfo.builder(name, destination);
+        SinkInfo.Builder builder = SinkInfo.newBuilder(name, destination);
         if (args.length == 4) {
-          builder.filter(args[3]);
+          builder.setFilter(args[3]);
         }
         return builder.build();
       }
@@ -395,10 +395,10 @@ public class LoggingExample {
 
     @Override
     public void run(Logging logging, LogEntry entry) {
-      MonitoredResource resource = MonitoredResource.builder("global")
+      MonitoredResource resource = MonitoredResource.newBuilder("global")
           .addLabel("project_id", logging.options().projectId())
           .build();
-      LogEntry entryWithResource = entry.toBuilder().resource(resource).build();
+      LogEntry entryWithResource = entry.toBuilder().setResource(resource).build();
       logging.write(Collections.singleton(entryWithResource));
       System.out.printf("Written entry %s%n", entryWithResource);
     }
@@ -416,10 +416,10 @@ public class LoggingExample {
         for (int i = 3; i < args.length; i += 2) {
           labels.put(args[i], args[i + 1]);
         }
-        return LogEntry.builder(StringPayload.of(message))
-            .logName(logName)
-            .severity(severity)
-            .labels(labels)
+        return LogEntry.newBuilder(StringPayload.of(message))
+            .setLogName(logName)
+            .setSeverity(severity)
+            .setLabels(labels)
             .build();
       } else {
         throw new IllegalArgumentException("Missing required arguments.");

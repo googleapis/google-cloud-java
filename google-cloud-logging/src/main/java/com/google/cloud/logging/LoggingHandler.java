@@ -147,7 +147,7 @@ public class LoggingHandler extends Handler {
     setFilter(helper.getFilterProperty(className + ".filter", null));
     setFormatter(helper.getFormatterProperty(className + ".formatter", new SimpleFormatter()));
     String logName = firstNonNull(log, helper.getProperty(className + ".log", "java.log"));
-    MonitoredResource resource = firstNonNull(monitoredResource, defaultResource());
+    MonitoredResource resource = firstNonNull(monitoredResource, getDefaultResource());
     writeOptions = new WriteOption[]{WriteOption.logName(logName), WriteOption.resource(resource)};
     maskLoggers();
   }
@@ -207,7 +207,7 @@ public class LoggingHandler extends Handler {
     return false;
   }
 
-  private MonitoredResource defaultResource() {
+  private MonitoredResource getDefaultResource() {
     return MonitoredResource.of("global", ImmutableMap.of("project_id", options.projectId()));
   }
 
@@ -271,7 +271,7 @@ public class LoggingHandler extends Handler {
   /**
    * Returns an instance of the logging service.
    */
-  Logging logging() {
+  Logging getLogging() {
     if (logging == null) {
       logging = options.service();
     }
@@ -306,15 +306,15 @@ public class LoggingHandler extends Handler {
     Map<String, String> labels = ImmutableMap.of(
         "levelName", level.getName(),
         "levelValue", String.valueOf(level.intValue()));
-    return LogEntry.builder(Payload.StringPayload.of(payload))
-        .labels(labels)
-        .severity(severityFor(level))
+    return LogEntry.newBuilder(Payload.StringPayload.of(payload))
+        .setLabels(labels)
+        .setSeverity(severityFor(level))
         .build();
   }
 
   private static Severity severityFor(Level level) {
     if (level instanceof LoggingLevel) {
-      return ((LoggingLevel) level).severity();
+      return ((LoggingLevel) level).getSeverity();
     }
     switch (level.intValue()) {
       // FINEST
@@ -348,7 +348,7 @@ public class LoggingHandler extends Handler {
    * how entries should be written.
    */
   void write(List<LogEntry> entries, WriteOption... options) {
-    logging().write(entries, options);
+    getLogging().write(entries, options);
   }
 
   @Override

@@ -43,11 +43,11 @@ abstract class Option implements Serializable {
   }
 
   @SuppressWarnings("unchecked")
-  <T extends OptionType> T optionType() {
+  <T extends OptionType> T getOptionType() {
     return (T) optionType;
   }
 
-  Object value() {
+  Object getValue() {
     return value;
   }
 

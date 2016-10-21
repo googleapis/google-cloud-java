@@ -412,9 +412,9 @@ import java.util.Iterator;
 LoggingOptions options = LoggingOptions.defaultInstance();
 try(Logging logging = options.service()) {
 
-  LogEntry firstEntry = LogEntry.builder(StringPayload.of("message"))
-      .logName("test-log")
-      .resource(MonitoredResource.builder("global")
+  LogEntry firstEntry = LogEntry.newBuilder(StringPayload.of("message"))
+      .setLogName("test-log")
+      .setResource(MonitoredResource.builder("global")
           .addLabel("project_id", options.projectId())
           .build())
       .build();

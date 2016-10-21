@@ -44,15 +44,31 @@ public class MonitoredResourceDescriptorTest {
   private static final List<LabelDescriptor> LABELS =
       ImmutableList.of(BOOLEAN_LABEL, STRING_LABEL, INT_LABEL);
   private static final MonitoredResourceDescriptor RESOURCE_DESCRIPTOR =
-      MonitoredResourceDescriptor.builder(TYPE)
-          .name(NAME)
-          .displayName(DISPLAY_NAME)
-          .description(DESCRIPTION)
-          .labels(LABELS)
+      MonitoredResourceDescriptor.newBuilder(TYPE)
+          .setName(NAME)
+          .setDisplayName(DISPLAY_NAME)
+          .setDescription(DESCRIPTION)
+          .setLabels(LABELS)
           .build();
 
   @Test
   public void testLabelDescriptor() {
+    assertEquals("booleanKey", BOOLEAN_LABEL.getKey());
+    assertEquals(ValueType.BOOL, BOOLEAN_LABEL.getValueType());
+    assertEquals("Boolean label", BOOLEAN_LABEL.getDescription());
+    assertEquals("stringKey", STRING_LABEL.getKey());
+    assertEquals(ValueType.STRING, STRING_LABEL.getValueType());
+    assertEquals("String label", STRING_LABEL.getDescription());
+    assertEquals("intKey", INT_LABEL.getKey());
+    assertEquals(ValueType.INT64, INT_LABEL.getValueType());
+    assertEquals("Int label", INT_LABEL.getDescription());
+    assertEquals("intKey", INT_LABEL_NO_DESCRIPTION.getKey());
+    assertEquals(ValueType.INT64, INT_LABEL_NO_DESCRIPTION.getValueType());
+    assertNull(INT_LABEL_NO_DESCRIPTION.getDescription());
+  }
+
+  @Test
+  public void testLabelDescriptorDeprecated() {
     assertEquals("booleanKey", BOOLEAN_LABEL.key());
     assertEquals(ValueType.BOOL, BOOLEAN_LABEL.valueType());
     assertEquals("Boolean label", BOOLEAN_LABEL.description());
@@ -69,20 +85,35 @@ public class MonitoredResourceDescriptorTest {
 
   @Test
   public void testBuilder() {
+    assertEquals(TYPE, RESOURCE_DESCRIPTOR.getType());
+    assertEquals(NAME, RESOURCE_DESCRIPTOR.getName());
+    assertEquals(DISPLAY_NAME, RESOURCE_DESCRIPTOR.getDisplayName());
+    assertEquals(DESCRIPTION, RESOURCE_DESCRIPTOR.getDescription());
+    assertEquals(LABELS, RESOURCE_DESCRIPTOR.getLabels());
+    MonitoredResourceDescriptor resourceDescriptor =
+        MonitoredResourceDescriptor.newBuilder(TYPE).build();
+    assertEquals(TYPE, resourceDescriptor.getType());
+    assertNull(resourceDescriptor.getName());
+    assertNull(resourceDescriptor.getDisplayName());
+    assertNull(resourceDescriptor.getDescription());
+    assertEquals(ImmutableList.of(), resourceDescriptor.getLabels());
+  }
+
+  @Test
+  public void testBuilderDeprecated() {
     assertEquals(TYPE, RESOURCE_DESCRIPTOR.type());
     assertEquals(NAME, RESOURCE_DESCRIPTOR.name());
     assertEquals(DISPLAY_NAME, RESOURCE_DESCRIPTOR.displayName());
     assertEquals(DESCRIPTION, RESOURCE_DESCRIPTOR.description());
     assertEquals(LABELS, RESOURCE_DESCRIPTOR.labels());
     MonitoredResourceDescriptor resourceDescriptor =
-        MonitoredResourceDescriptor.builder(TYPE).build();
+        MonitoredResourceDescriptor.newBuilder(TYPE).build();
     assertEquals(TYPE, resourceDescriptor.type());
     assertNull(resourceDescriptor.name());
     assertNull(resourceDescriptor.displayName());
     assertNull(resourceDescriptor.description());
     assertEquals(ImmutableList.of(), resourceDescriptor.labels());
   }
-
 
   @Test
   public void testToAndFromPbLabelDescriptor() {
@@ -98,16 +129,16 @@ public class MonitoredResourceDescriptorTest {
     compareResourceDescriptor(RESOURCE_DESCRIPTOR,
         MonitoredResourceDescriptor.fromPb(RESOURCE_DESCRIPTOR.toPb()));
     MonitoredResourceDescriptor resourceDescriptor =
-        MonitoredResourceDescriptor.builder(TYPE).build();
+        MonitoredResourceDescriptor.newBuilder(TYPE).build();
     compareResourceDescriptor(resourceDescriptor,
         MonitoredResourceDescriptor.fromPb(resourceDescriptor.toPb()));
   }
 
   private void compareLabelDescriptor(LabelDescriptor expected, LabelDescriptor value) {
     assertEquals(expected, value);
-    assertEquals(expected.key(), value.key());
-    assertEquals(expected.valueType(), value.valueType());
-    assertEquals(expected.description(), value.description());
+    assertEquals(expected.getKey(), value.getKey());
+    assertEquals(expected.getValueType(), value.getValueType());
+    assertEquals(expected.getDescription(), value.getDescription());
     assertEquals(expected.hashCode(), value.hashCode());
     assertEquals(expected.toString(), value.toString());
   }
@@ -115,11 +146,11 @@ public class MonitoredResourceDescriptorTest {
   private void compareResourceDescriptor(MonitoredResourceDescriptor expected,
       MonitoredResourceDescriptor value) {
     assertEquals(expected, value);
-    assertEquals(expected.type(), value.type());
-    assertEquals(expected.name(), value.name());
-    assertEquals(expected.displayName(), value.displayName());
-    assertEquals(expected.description(), value.description());
-    assertEquals(expected.labels(), value.labels());
+    assertEquals(expected.getType(), value.getType());
+    assertEquals(expected.getName(), value.getName());
+    assertEquals(expected.getDisplayName(), value.getDisplayName());
+    assertEquals(expected.getDescription(), value.getDescription());
+    assertEquals(expected.getLabels(), value.getLabels());
     assertEquals(expected.hashCode(), value.hashCode());
     assertEquals(expected.toString(), value.toString());
   }

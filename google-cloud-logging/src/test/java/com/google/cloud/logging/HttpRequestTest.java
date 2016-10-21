@@ -43,7 +43,22 @@ public class HttpRequestTest {
   private static final boolean CACHE_HIT = true;
   private static final boolean CACHE_VALIDATED_WITH_ORIGIN_SERVER = false;
   private static final Long CACHE_FILL_BYTES = 3L;
-  private static final HttpRequest HTTP_REQUEST = HttpRequest.builder()
+  private static final HttpRequest HTTP_REQUEST = HttpRequest.newBuilder()
+      .setRequestMethod(REQUEST_METHOD)
+      .setRequestUrl(REQUEST_URL)
+      .setRequestSize(REQUEST_SIZE)
+      .setStatus(STATUS)
+      .setResponseSize(REPONSE_SIZE)
+      .setUserAgent(USER_AGENT)
+      .setRemoteIp(REMOTE_IP)
+      .setServerIp(SERVER_IP)
+      .setReferer(REFERER)
+      .setCacheLookup(CACHE_LOOKUP)
+      .setCacheHit(CACHE_HIT)
+      .setCacheValidatedWithOriginServer(CACHE_VALIDATED_WITH_ORIGIN_SERVER)
+      .setCacheFillBytes(CACHE_FILL_BYTES)
+      .build();
+  private static final HttpRequest DEPRECATED_HTTP_REQUEST = HttpRequest.builder()
       .requestMethod(REQUEST_METHOD)
       .requestUrl(REQUEST_URL)
       .requestSize(REQUEST_SIZE)
@@ -64,122 +79,140 @@ public class HttpRequestTest {
 
   @Test
   public void testBuilder() {
-    assertEquals(REQUEST_METHOD, HTTP_REQUEST.requestMethod());
-    assertEquals(REQUEST_URL, HTTP_REQUEST.requestUrl());
-    assertEquals(REQUEST_SIZE, HTTP_REQUEST.requestSize());
-    assertEquals(STATUS, HTTP_REQUEST.status());
-    assertEquals(REPONSE_SIZE, HTTP_REQUEST.responseSize());
-    assertEquals(USER_AGENT, HTTP_REQUEST.userAgent());
-    assertEquals(REMOTE_IP, HTTP_REQUEST.remoteIp());
-    assertEquals(SERVER_IP, HTTP_REQUEST.serverIp());
-    assertEquals(REFERER, HTTP_REQUEST.referer());
+    assertEquals(REQUEST_METHOD, HTTP_REQUEST.getRequestMethod());
+    assertEquals(REQUEST_URL, HTTP_REQUEST.getRequestUrl());
+    assertEquals(REQUEST_SIZE, HTTP_REQUEST.getRequestSize());
+    assertEquals(STATUS, HTTP_REQUEST.getStatus());
+    assertEquals(REPONSE_SIZE, HTTP_REQUEST.getResponseSize());
+    assertEquals(USER_AGENT, HTTP_REQUEST.getUserAgent());
+    assertEquals(REMOTE_IP, HTTP_REQUEST.getRemoteIp());
+    assertEquals(SERVER_IP, HTTP_REQUEST.getServerIp());
+    assertEquals(REFERER, HTTP_REQUEST.getReferer());
     assertEquals(CACHE_LOOKUP, HTTP_REQUEST.cacheLookup());
     assertEquals(CACHE_HIT, HTTP_REQUEST.cacheHit());
     assertEquals(CACHE_VALIDATED_WITH_ORIGIN_SERVER, HTTP_REQUEST.cacheValidatedWithOriginServer());
-    assertEquals(CACHE_FILL_BYTES, HTTP_REQUEST.cacheFillBytes());
+    assertEquals(CACHE_FILL_BYTES, HTTP_REQUEST.getCacheFillBytes());
+  }
+
+  @Test
+  public void testBuilderDeprecated() {
+    assertEquals(REQUEST_METHOD, DEPRECATED_HTTP_REQUEST.requestMethod());
+    assertEquals(REQUEST_URL, DEPRECATED_HTTP_REQUEST.requestUrl());
+    assertEquals(REQUEST_SIZE, DEPRECATED_HTTP_REQUEST.requestSize());
+    assertEquals(STATUS, DEPRECATED_HTTP_REQUEST.status());
+    assertEquals(REPONSE_SIZE, DEPRECATED_HTTP_REQUEST.responseSize());
+    assertEquals(USER_AGENT, DEPRECATED_HTTP_REQUEST.userAgent());
+    assertEquals(REMOTE_IP, DEPRECATED_HTTP_REQUEST.remoteIp());
+    assertEquals(SERVER_IP, DEPRECATED_HTTP_REQUEST.serverIp());
+    assertEquals(REFERER, DEPRECATED_HTTP_REQUEST.referer());
+    assertEquals(CACHE_LOOKUP, DEPRECATED_HTTP_REQUEST.cacheLookup());
+    assertEquals(CACHE_HIT, DEPRECATED_HTTP_REQUEST.cacheHit());
+    assertEquals(CACHE_VALIDATED_WITH_ORIGIN_SERVER,
+        DEPRECATED_HTTP_REQUEST.cacheValidatedWithOriginServer());
+    assertEquals(CACHE_FILL_BYTES, DEPRECATED_HTTP_REQUEST.cacheFillBytes());
   }
 
   @Test
   public void testBuilderDefaultValues() {
-    HttpRequest httpRequest = HttpRequest.builder().build();
-    assertNull(httpRequest.requestMethod());
-    assertNull(httpRequest.requestUrl());
-    assertNull(httpRequest.requestSize());
-    assertNull(httpRequest.status());
-    assertNull(httpRequest.responseSize());
-    assertNull(httpRequest.userAgent());
-    assertNull(httpRequest.remoteIp());
-    assertNull(httpRequest.serverIp());
-    assertNull(httpRequest.referer());
+    HttpRequest httpRequest = HttpRequest.newBuilder().build();
+    assertNull(httpRequest.getRequestMethod());
+    assertNull(httpRequest.getRequestUrl());
+    assertNull(httpRequest.getRequestSize());
+    assertNull(httpRequest.getStatus());
+    assertNull(httpRequest.getResponseSize());
+    assertNull(httpRequest.getUserAgent());
+    assertNull(httpRequest.getRemoteIp());
+    assertNull(httpRequest.getServerIp());
+    assertNull(httpRequest.getReferer());
     assertFalse(httpRequest.cacheLookup());
     assertFalse(httpRequest.cacheHit());
     assertFalse(httpRequest.cacheValidatedWithOriginServer());
-    assertNull(httpRequest.cacheFillBytes());
+    assertNull(httpRequest.getCacheFillBytes());
   }
 
   @Test
   public void testToBuilder() {
     compareHttpRequest(HTTP_REQUEST, HTTP_REQUEST.toBuilder().build());
     HttpRequest httpRequest = HTTP_REQUEST.toBuilder()
-        .requestMethod(RequestMethod.POST)
-        .requestUrl("http://www.other-example.com")
-        .requestSize(4)
-        .status(201)
-        .responseSize(5)
-        .userAgent("otherUserAgent")
-        .remoteIp("192.168.1.3")
-        .serverIp("192.168.1.4")
-        .referer("Referer: http://www.other-example.com")
-        .cacheLookup(true)
-        .cacheHit(true)
-        .cacheValidatedWithOriginServer(true)
-        .cacheFillBytes(6)
+        .setRequestMethod(RequestMethod.POST)
+        .setRequestUrl("http://www.other-example.com")
+        .setRequestSize(4)
+        .setStatus(201)
+        .setResponseSize(5)
+        .setUserAgent("otherUserAgent")
+        .setRemoteIp("192.168.1.3")
+        .setServerIp("192.168.1.4")
+        .setReferer("Referer: http://www.other-example.com")
+        .setCacheLookup(true)
+        .setCacheHit(true)
+        .setCacheValidatedWithOriginServer(true)
+        .setCacheFillBytes(6)
         .build();
-    assertEquals(RequestMethod.POST, httpRequest.requestMethod());
-    assertEquals("http://www.other-example.com", httpRequest.requestUrl());
-    assertEquals(4, (long) httpRequest.requestSize());
-    assertEquals(201, (int) httpRequest.status());
-    assertEquals(5, (long) httpRequest.responseSize());
-    assertEquals("otherUserAgent", httpRequest.userAgent());
-    assertEquals("192.168.1.3", httpRequest.remoteIp());
-    assertEquals("192.168.1.4", httpRequest.serverIp());
-    assertEquals("Referer: http://www.other-example.com", httpRequest.referer());
+    assertEquals(RequestMethod.POST, httpRequest.getRequestMethod());
+    assertEquals("http://www.other-example.com", httpRequest.getRequestUrl());
+    assertEquals(4, (long) httpRequest.getRequestSize());
+    assertEquals(201, (int) httpRequest.getStatus());
+    assertEquals(5, (long) httpRequest.getResponseSize());
+    assertEquals("otherUserAgent", httpRequest.getUserAgent());
+    assertEquals("192.168.1.3", httpRequest.getRemoteIp());
+    assertEquals("192.168.1.4", httpRequest.getServerIp());
+    assertEquals("Referer: http://www.other-example.com", httpRequest.getReferer());
     assertTrue(httpRequest.cacheLookup());
     assertTrue(httpRequest.cacheHit());
     assertTrue(httpRequest.cacheValidatedWithOriginServer());
-    assertEquals(6, (long) httpRequest.cacheFillBytes());
+    assertEquals(6, (long) httpRequest.getCacheFillBytes());
   }
 
   @Test
   public void testToAndFromPb() {
     HttpRequest httpRequest = HttpRequest.fromPb(HTTP_REQUEST.toPb());
     compareHttpRequest(HTTP_REQUEST, httpRequest);
-    assertEquals(REQUEST_METHOD, httpRequest.requestMethod());
-    assertEquals(REQUEST_URL, httpRequest.requestUrl());
-    assertEquals(REQUEST_SIZE, httpRequest.requestSize());
-    assertEquals(STATUS, httpRequest.status());
-    assertEquals(REPONSE_SIZE, httpRequest.responseSize());
-    assertEquals(USER_AGENT, httpRequest.userAgent());
-    assertEquals(REMOTE_IP, httpRequest.remoteIp());
-    assertEquals(SERVER_IP, httpRequest.serverIp());
-    assertEquals(REFERER, httpRequest.referer());
+    assertEquals(REQUEST_METHOD, httpRequest.getRequestMethod());
+    assertEquals(REQUEST_URL, httpRequest.getRequestUrl());
+    assertEquals(REQUEST_SIZE, httpRequest.getRequestSize());
+    assertEquals(STATUS, httpRequest.getStatus());
+    assertEquals(REPONSE_SIZE, httpRequest.getResponseSize());
+    assertEquals(USER_AGENT, httpRequest.getUserAgent());
+    assertEquals(REMOTE_IP, httpRequest.getRemoteIp());
+    assertEquals(SERVER_IP, httpRequest.getServerIp());
+    assertEquals(REFERER, httpRequest.getReferer());
     assertEquals(CACHE_LOOKUP, httpRequest.cacheLookup());
     assertEquals(CACHE_HIT, httpRequest.cacheHit());
     assertEquals(CACHE_VALIDATED_WITH_ORIGIN_SERVER, httpRequest.cacheValidatedWithOriginServer());
-    assertEquals(CACHE_FILL_BYTES, httpRequest.cacheFillBytes());
-    HttpRequest incompleteHttpRequest = HttpRequest.builder().build();
+    assertEquals(CACHE_FILL_BYTES, httpRequest.getCacheFillBytes());
+    HttpRequest incompleteHttpRequest = HttpRequest.newBuilder().build();
     httpRequest = HttpRequest.fromPb(incompleteHttpRequest.toPb());
     compareHttpRequest(incompleteHttpRequest, httpRequest);
-    assertNull(httpRequest.requestMethod());
-    assertNull(httpRequest.requestUrl());
-    assertNull(httpRequest.requestSize());
-    assertNull(httpRequest.status());
-    assertNull(httpRequest.responseSize());
-    assertNull(httpRequest.userAgent());
-    assertNull(httpRequest.remoteIp());
-    assertNull(httpRequest.serverIp());
-    assertNull(httpRequest.referer());
+    assertNull(httpRequest.getRequestMethod());
+    assertNull(httpRequest.getRequestUrl());
+    assertNull(httpRequest.getRequestSize());
+    assertNull(httpRequest.getStatus());
+    assertNull(httpRequest.getResponseSize());
+    assertNull(httpRequest.getUserAgent());
+    assertNull(httpRequest.getRemoteIp());
+    assertNull(httpRequest.getServerIp());
+    assertNull(httpRequest.getReferer());
     assertFalse(httpRequest.cacheLookup());
     assertFalse(httpRequest.cacheHit());
     assertFalse(httpRequest.cacheValidatedWithOriginServer());
-    assertNull(httpRequest.cacheFillBytes());
+    assertNull(httpRequest.getCacheFillBytes());
   }
 
   private void compareHttpRequest(HttpRequest expected, HttpRequest value) {
     assertEquals(expected, value);
-    assertEquals(expected.requestMethod(), value.requestMethod());
-    assertEquals(expected.requestUrl(), value.requestUrl());
-    assertEquals(expected.requestSize(), value.requestSize());
-    assertEquals(expected.status(), value.status());
-    assertEquals(expected.responseSize(), value.responseSize());
-    assertEquals(expected.userAgent(), value.userAgent());
-    assertEquals(expected.remoteIp(), value.remoteIp());
-    assertEquals(expected.serverIp(), value.serverIp());
-    assertEquals(expected.referer(), value.referer());
+    assertEquals(expected.getRequestMethod(), value.getRequestMethod());
+    assertEquals(expected.getRequestUrl(), value.getRequestUrl());
+    assertEquals(expected.getRequestSize(), value.getRequestSize());
+    assertEquals(expected.getStatus(), value.getStatus());
+    assertEquals(expected.getResponseSize(), value.getResponseSize());
+    assertEquals(expected.getUserAgent(), value.getUserAgent());
+    assertEquals(expected.getRemoteIp(), value.getRemoteIp());
+    assertEquals(expected.getServerIp(), value.getServerIp());
+    assertEquals(expected.getReferer(), value.getReferer());
     assertEquals(expected.cacheLookup(), value.cacheLookup());
     assertEquals(expected.cacheHit(), value.cacheHit());
     assertEquals(expected.cacheValidatedWithOriginServer(), value.cacheValidatedWithOriginServer());
-    assertEquals(expected.cacheFillBytes(), value.cacheFillBytes());
+    assertEquals(expected.getCacheFillBytes(), value.getCacheFillBytes());
     assertEquals(expected.hashCode(), value.hashCode());
     assertEquals(expected.toString(), value.toString());
   }

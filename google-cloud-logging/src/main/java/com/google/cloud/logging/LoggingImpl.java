@@ -218,7 +218,7 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
   @Override
   public Future<Sink> updateAsync(SinkInfo sink) {
     UpdateSinkRequest request = UpdateSinkRequest.newBuilder()
-        .setSinkName(ConfigServiceV2Api.formatSinkName(options().projectId(), sink.name()))
+        .setSinkName(ConfigServiceV2Api.formatSinkName(options().projectId(), sink.getName()))
         .setSink(sink.toPb(options().projectId()))
         .build();
     return transform(rpc.update(request), Sink.fromPbFunction(this));
@@ -375,7 +375,8 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
   @Override
   public Future<Metric> updateAsync(MetricInfo metric) {
     UpdateLogMetricRequest request = UpdateLogMetricRequest.newBuilder()
-        .setMetricName(MetricsServiceV2Api.formatMetricName(options().projectId(), metric.name()))
+        .setMetricName(MetricsServiceV2Api.formatMetricName(options().projectId(),
+            metric.getName()))
         .setMetric(metric.toPb())
         .build();
     return transform(rpc.update(request), Metric.fromPbFunction(this));
@@ -542,7 +543,7 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
   static <T extends Option.OptionType> Map<Option.OptionType, ?> optionMap(Option... options) {
     Map<Option.OptionType, Object> optionMap = Maps.newHashMap();
     for (Option option : options) {
-      Object prev = optionMap.put(option.optionType(), option.value());
+      Object prev = optionMap.put(option.getOptionType(), option.getValue());
       checkArgument(prev == null, "Duplicate option %s", option);
     }
     return optionMap;

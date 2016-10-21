@@ -61,8 +61,8 @@ public class AsyncLoggingHandlerTest {
   public void testPublish() {
     EasyMock.expect(options.projectId()).andReturn(PROJECT).anyTimes();
     EasyMock.expect(options.service()).andReturn(logging);
-    LogEntry entry = LogEntry.builder(Payload.StringPayload.of(MESSAGE))
-        .severity(Severity.DEBUG)
+    LogEntry entry = LogEntry.newBuilder(Payload.StringPayload.of(MESSAGE))
+        .setSeverity(Severity.DEBUG)
         .addLabel("levelName", "FINEST")
         .addLabel("levelValue", String.valueOf(Level.FINEST.intValue()))
         .build();

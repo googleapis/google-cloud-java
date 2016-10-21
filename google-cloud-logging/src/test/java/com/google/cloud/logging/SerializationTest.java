@@ -44,9 +44,9 @@ public class SerializationTest extends BaseSerializationTest {
       .authCredentials(AuthCredentials.noAuth())
       .host("localhost")
       .build().service();
-  private static final HttpRequest HTTP_REQUEST = HttpRequest.builder()
-      .requestMethod(HttpRequest.RequestMethod.GET)
-      .status(404)
+  private static final HttpRequest HTTP_REQUEST = HttpRequest.newBuilder()
+      .setRequestMethod(HttpRequest.RequestMethod.GET)
+      .setStatus(404)
       .build();
   private static final Operation OPERATION = Operation.of("id", "producer");
   private static final StringPayload STRING_PAYLOAD = StringPayload.of("payload");

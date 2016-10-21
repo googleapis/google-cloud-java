@@ -120,14 +120,30 @@ public class MonitoredResourceDescriptor implements Serializable {
     /**
      * Returns the key associated to this label.
      */
+    @Deprecated
     public String key() {
+      return getKey();
+    }
+
+    /**
+     * Returns the key associated to this label.
+     */
+    public String getKey() {
       return key;
     }
 
     /**
      * Returns the type of data that can be assigned to this label.
      */
+    @Deprecated
     public ValueType valueType() {
+      return getValueType();
+    }
+
+    /**
+     * Returns the type of data that can be assigned to this label.
+     */
+    public ValueType getValueType() {
       return valueType;
     }
 
@@ -135,7 +151,16 @@ public class MonitoredResourceDescriptor implements Serializable {
      * Returns the optional human-readable description for this label. If not set, this method
      * returns {@code null}.
      */
+    @Deprecated
     public String description() {
+      return getDescription();
+    }
+
+    /**
+     * Returns the optional human-readable description for this label. If not set, this method
+     * returns {@code null}.
+     */
+    public String getDescription() {
       return description;
     }
 
@@ -199,22 +224,22 @@ public class MonitoredResourceDescriptor implements Serializable {
       this.type = type;
     }
 
-    Builder name(String name) {
+    Builder setName(String name) {
       this.name = name;
       return this;
     }
 
-    Builder displayName(String displayName) {
+    Builder setDisplayName(String displayName) {
       this.displayName = displayName;
       return this;
     }
 
-    Builder description(String description) {
+    Builder setDescription(String description) {
       this.description = description;
       return this;
     }
 
-    Builder labels(List<LabelDescriptor> labels) {
+    Builder setLabels(List<LabelDescriptor> labels) {
       this.labels = labels;
       return this;
     }
@@ -236,7 +261,16 @@ public class MonitoredResourceDescriptor implements Serializable {
    * Returns the monitored resource type. For example, the type {@code cloudsql_database} represents
    * databases in Google Cloud SQL.
    */
+  @Deprecated
   public String type() {
+    return getType();
+  }
+
+  /**
+   * Returns the monitored resource type. For example, the type {@code cloudsql_database} represents
+   * databases in Google Cloud SQL.
+   */
+  public String getType() {
     return type;
   }
 
@@ -244,7 +278,16 @@ public class MonitoredResourceDescriptor implements Serializable {
    * Returns an optional name for the monitored resource descriptor. If not set, this method returns
    * {@code null}.
    */
+  @Deprecated
   public String name() {
+    return getName();
+  }
+
+  /**
+   * Returns an optional name for the monitored resource descriptor. If not set, this method returns
+   * {@code null}.
+   */
+  public String getName() {
     return name;
   }
 
@@ -253,7 +296,17 @@ public class MonitoredResourceDescriptor implements Serializable {
    * in user interfaces. For example, {@code Google Cloud SQL Database}. If not set, this method
    * returns {@code null}.
    */
+  @Deprecated
   public String displayName() {
+    return getDisplayName();
+  }
+
+  /**
+   * Returns an optional concise name for the monitored resource type. This value might be displayed
+   * in user interfaces. For example, {@code Google Cloud SQL Database}. If not set, this method
+   * returns {@code null}.
+   */
+  public String getDisplayName() {
     return displayName;
   }
 
@@ -261,7 +314,16 @@ public class MonitoredResourceDescriptor implements Serializable {
    * Returns an optional detailed description of the monitored resource type. This value might be
    * used in documentation. If not set, this method returns {@code null}.
    */
+  @Deprecated
   public String description() {
+    return getDescription();
+  }
+
+  /**
+   * Returns an optional detailed description of the monitored resource type. This value might be
+   * used in documentation. If not set, this method returns {@code null}.
+   */
+  public String getDescription() {
     return description;
   }
 
@@ -270,7 +332,17 @@ public class MonitoredResourceDescriptor implements Serializable {
    * example, an individual Google Cloud SQL database is identified by values for the labels
    * {@code database_id} and {@code region}.
    */
+  @Deprecated
   public List<LabelDescriptor> labels() {
+    return getLabels();
+  }
+
+  /**
+   * Returns a list of labels used to describe instances of this monitored resource type. For
+   * example, an individual Google Cloud SQL database is identified by values for the labels
+   * {@code database_id} and {@code region}.
+   */
+  public List<LabelDescriptor> getLabels() {
     return labels;
   }
 
@@ -323,23 +395,24 @@ public class MonitoredResourceDescriptor implements Serializable {
     return builder.build();
   }
 
-  static Builder builder(String type) {
+  static Builder newBuilder(String type) {
     return new Builder(type);
   }
 
   public static MonitoredResourceDescriptor fromPb(
       com.google.api.MonitoredResourceDescriptor descriptorPb) {
-    Builder builder = builder(descriptorPb.getType());
+    Builder builder = newBuilder(descriptorPb.getType());
     if (descriptorPb.getName() != null && !descriptorPb.getName().equals("")) {
-      builder.name(descriptorPb.getName());
+      builder.setName(descriptorPb.getName());
     }
     if (descriptorPb.getDisplayName() != null && !descriptorPb.getDisplayName().equals("")) {
-      builder.displayName(descriptorPb.getDisplayName());
+      builder.setDisplayName(descriptorPb.getDisplayName());
     }
     if (descriptorPb.getDescription() != null && !descriptorPb.getDescription().equals("")) {
-      builder.description(descriptorPb.getDescription());
+      builder.setDescription(descriptorPb.getDescription());
     }
-    builder.labels(Lists.transform(descriptorPb.getLabelsList(), LabelDescriptor.FROM_PB_FUNCTION));
+    builder.setLabels(Lists.transform(descriptorPb.getLabelsList(),
+        LabelDescriptor.FROM_PB_FUNCTION));
     return builder.build();
   }
 }

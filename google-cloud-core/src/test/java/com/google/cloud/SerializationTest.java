@@ -46,11 +46,11 @@ public class SerializationTest extends BaseSerializationTest {
   private static final LabelDescriptor LABEL_DESCRIPTOR =
       new LabelDescriptor("project_id", ValueType.STRING, "The project id");
   private static final MonitoredResourceDescriptor MONITORED_RESOURCE_DESCRIPTOR =
-      MonitoredResourceDescriptor.builder("global")
-          .labels(ImmutableList.of(LABEL_DESCRIPTOR))
+      MonitoredResourceDescriptor.newBuilder("global")
+          .setLabels(ImmutableList.of(LABEL_DESCRIPTOR))
           .build();
-  private static final MonitoredResource MONITORED_RESOURCE = MonitoredResource.builder("global")
-      .labels(ImmutableMap.of("project_id", "project"))
+  private static final MonitoredResource MONITORED_RESOURCE = MonitoredResource.newBuilder("global")
+      .setLabels(ImmutableMap.of("project_id", "project"))
       .build();
   private static final String JSON_KEY = "{\n"
       + "  \"private_key_id\": \"somekeyid\",\n"

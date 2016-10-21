@@ -39,8 +39,8 @@ public class CreateAndListSinks {
     try(Logging logging = LoggingOptions.defaultInstance().service()) {
 
       // Create a sink to back log entries to a BigQuery dataset
-      SinkInfo sinkInfo = SinkInfo.builder("test-sink", DatasetDestination.of("test-dataset"))
-          .filter("severity >= ERROR")
+      SinkInfo sinkInfo = SinkInfo.newBuilder("test-sink", DatasetDestination.of("test-dataset"))
+          .setFilter("severity >= ERROR")
           .build();
       logging.create(sinkInfo);
 
