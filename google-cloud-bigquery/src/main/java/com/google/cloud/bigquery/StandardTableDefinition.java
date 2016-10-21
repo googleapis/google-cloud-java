@@ -66,7 +66,7 @@ public class StandardTableDefinition extends TableDefinition {
      */
     @Deprecated
     public long estimatedRows() {
-      return estimatedRows;
+      return getEstimatedRows();
     }
 
     /**
@@ -81,7 +81,7 @@ public class StandardTableDefinition extends TableDefinition {
      */
     @Deprecated
     public long estimatedBytes() {
-      return estimatedBytes;
+      return getEstimatedBytes();
     }
 
     /**
@@ -97,7 +97,7 @@ public class StandardTableDefinition extends TableDefinition {
      */
     @Deprecated
     public Long oldestEntryTime() {
-      return oldestEntryTime;
+      return getOldestEntryTime();
     }
 
     /**
@@ -209,8 +209,7 @@ public class StandardTableDefinition extends TableDefinition {
      */
     @Deprecated
     public Builder timePartitioning(TimePartitioning timePartitioning) {
-      this.timePartitioning = timePartitioning;
-      return this;
+      return setTimePartitioning(timePartitioning);
     }
 
     /**
@@ -245,7 +244,7 @@ public class StandardTableDefinition extends TableDefinition {
    */
   @Deprecated
   public Long numBytes() {
-    return numBytes;
+    return getNumBytes();
   }
 
   /**
@@ -260,7 +259,7 @@ public class StandardTableDefinition extends TableDefinition {
    */
   @Deprecated
   public Long numRows() {
-    return numRows;
+    return getNumRows();
   }
 
   /**
@@ -279,7 +278,7 @@ public class StandardTableDefinition extends TableDefinition {
    */
   @Deprecated
   public String location() {
-    return location;
+    return getLocation();
   }
 
   /**
@@ -299,7 +298,7 @@ public class StandardTableDefinition extends TableDefinition {
    */
   @Deprecated
   public StreamingBuffer streamingBuffer() {
-    return streamingBuffer;
+    return getStreamingBuffer();
   }
 
   /**
@@ -316,7 +315,7 @@ public class StandardTableDefinition extends TableDefinition {
    */
   @Deprecated
   public TimePartitioning timePartitioning() {
-    return timePartitioning;
+    return getTimePartitioning();
   }
 
   /**
@@ -332,7 +331,7 @@ public class StandardTableDefinition extends TableDefinition {
    */
   @Deprecated
   public static Builder builder() {
-    return new Builder();
+    return newBuilder();
   }
 
   /**

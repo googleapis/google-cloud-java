@@ -112,7 +112,7 @@ public class QueryResult extends PageImpl<List<FieldValue>> {
    */
   @Deprecated
   public Schema schema() {
-    return schema;
+    return getSchema();
   }
 
   /**
@@ -128,7 +128,7 @@ public class QueryResult extends PageImpl<List<FieldValue>> {
    */
   @Deprecated
   public long totalBytesProcessed() {
-    return totalBytesProcessed;
+    return getTotalBytesProcessed();
   }
 
   /**
@@ -146,7 +146,7 @@ public class QueryResult extends PageImpl<List<FieldValue>> {
    */
   @Deprecated
   public long totalRows() {
-    return totalRows;
+    return getTotalRows();
   }
 
   /**

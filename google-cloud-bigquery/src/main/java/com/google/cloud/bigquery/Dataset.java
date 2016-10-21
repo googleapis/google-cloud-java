@@ -67,8 +67,7 @@ public class Dataset extends DatasetInfo {
     @Override
     @Deprecated
     public Builder datasetId(DatasetId datasetId) {
-      infoBuilder.setDatasetId(datasetId);
-      return this;
+      return setDatasetId(datasetId);
     }
 
     @Override
@@ -80,8 +79,7 @@ public class Dataset extends DatasetInfo {
     @Override
     @Deprecated
     public Builder acl(List<Acl> acl) {
-      infoBuilder.setAcl(acl);
-      return this;
+      return setAcl(acl);
     }
 
     @Override
@@ -99,8 +97,7 @@ public class Dataset extends DatasetInfo {
     @Override
     @Deprecated
     public Builder defaultTableLifetime(Long defaultTableLifetime) {
-      infoBuilder.setDefaultTableLifetime(defaultTableLifetime);
-      return this;
+      return setDefaultTableLifetime(defaultTableLifetime);
     }
 
     @Override
@@ -112,8 +109,7 @@ public class Dataset extends DatasetInfo {
     @Override
     @Deprecated
     public Builder description(String description) {
-      infoBuilder.setDescription(description);
-      return this;
+      return setDescription(description);
     }
 
     @Override
@@ -131,8 +127,7 @@ public class Dataset extends DatasetInfo {
     @Override
     @Deprecated
     public Builder friendlyName(String friendlyName) {
-      infoBuilder.setFriendlyName(friendlyName);
-      return this;
+      return setFriendlyName(friendlyName);
     }
 
     @Override
@@ -156,8 +151,7 @@ public class Dataset extends DatasetInfo {
     @Override
     @Deprecated
     public Builder location(String location) {
-      infoBuilder.setLocation(location);
-      return this;
+      return setLocation(location);
     }
 
     @Override
@@ -333,7 +327,7 @@ public class Dataset extends DatasetInfo {
    */
   @Deprecated
   public BigQuery bigquery() {
-    return bigquery;
+    return getBigquery();
   }
 
   /**

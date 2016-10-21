@@ -86,7 +86,7 @@ public final class InsertAllRequest implements Serializable {
      */
     @Deprecated
     public String id() {
-      return id;
+      return getId();
     }
 
     /**
@@ -101,7 +101,7 @@ public final class InsertAllRequest implements Serializable {
      */
     @Deprecated
     public Map<String, Object> content() {
-      return content;
+      return getContent();
     }
 
     /**
@@ -171,8 +171,7 @@ public final class InsertAllRequest implements Serializable {
      */
     @Deprecated
     public Builder table(TableId table) {
-      this.table = checkNotNull(table);
-      return this;
+      return setTable(table);
     }
 
     /**
@@ -188,8 +187,7 @@ public final class InsertAllRequest implements Serializable {
      */
     @Deprecated
     public Builder rows(Iterable<RowToInsert> rows) {
-      this.rows = Lists.newLinkedList(checkNotNull(rows));
-      return this;
+      return setRows(rows);
     }
 
     /**
@@ -264,8 +262,7 @@ public final class InsertAllRequest implements Serializable {
      */
     @Deprecated
     public Builder skipInvalidRows(boolean skipInvalidRows) {
-      this.skipInvalidRows = skipInvalidRows;
-      return this;
+      return setSkipInvalidRows(skipInvalidRows);
     }
 
     /**
@@ -283,8 +280,7 @@ public final class InsertAllRequest implements Serializable {
      */
     @Deprecated
     public Builder ignoreUnknownValues(boolean ignoreUnknownValues) {
-      this.ignoreUnknownValues = ignoreUnknownValues;
-      return this;
+      return setIgnoreUnknownValues(ignoreUnknownValues);
     }
 
     /**
@@ -316,8 +312,7 @@ public final class InsertAllRequest implements Serializable {
      */
     @Deprecated
     public Builder templateSuffix(String templateSuffix) {
-      this.templateSuffix = templateSuffix;
-      return this;
+      return setTemplateSuffix(templateSuffix);
     }
 
     /**
@@ -364,7 +359,7 @@ public final class InsertAllRequest implements Serializable {
    */
   @Deprecated
   public TableId table() {
-    return table;
+    return getTable();
   }
 
   /**
@@ -379,7 +374,7 @@ public final class InsertAllRequest implements Serializable {
    */
   @Deprecated
   public List<RowToInsert> rows() {
-    return rows;
+    return getRows();
   }
 
   /**
@@ -425,7 +420,7 @@ public final class InsertAllRequest implements Serializable {
    */
   @Deprecated
   public String templateSuffix() {
-    return templateSuffix;
+    return getTemplateSuffix();
   }
 
   /**
@@ -455,7 +450,7 @@ public final class InsertAllRequest implements Serializable {
    */
   @Deprecated
   public static Builder builder(TableId table) {
-    return new Builder().setTable(table);
+    return newBuilder(table);
   }
 
   /**
@@ -471,7 +466,7 @@ public final class InsertAllRequest implements Serializable {
    */
   @Deprecated
   public static Builder builder(TableId table, Iterable<RowToInsert> rows) {
-    return newBuilder(table).setRows(rows);
+    return newBuilder(table, rows);
   }
 
   /**
@@ -488,7 +483,7 @@ public final class InsertAllRequest implements Serializable {
    */
   @Deprecated
   public static Builder builder(TableId table, RowToInsert... rows) {
-    return newBuilder(table, ImmutableList.copyOf(rows));
+    return newBuilder(table, rows);
   }
 
   /**
@@ -504,7 +499,7 @@ public final class InsertAllRequest implements Serializable {
    */
   @Deprecated
   public static Builder builder(String datasetId, String tableId) {
-    return new Builder().setTable(TableId.of(datasetId, tableId));
+    return newBuilder(datasetId, tableId);
   }
 
   /**
@@ -520,7 +515,7 @@ public final class InsertAllRequest implements Serializable {
    */
   @Deprecated
   public static Builder builder(String datasetId, String tableId, Iterable<RowToInsert> rows) {
-    return newBuilder(TableId.of(datasetId, tableId), rows);
+    return newBuilder(datasetId, tableId, rows);
   }
 
   /**
@@ -537,7 +532,7 @@ public final class InsertAllRequest implements Serializable {
    */
   @Deprecated
   public static Builder builder(String datasetId, String tableId, RowToInsert... rows) {
-    return newBuilder(TableId.of(datasetId, tableId), rows);
+    return newBuilder(datasetId, tableId, rows);
   }
 
   /**
@@ -554,7 +549,7 @@ public final class InsertAllRequest implements Serializable {
    */
   @Deprecated
   public static Builder builder(TableInfo tableInfo, Iterable<RowToInsert> rows) {
-    return newBuilder(tableInfo.getTableId(), rows);
+    return newBuilder(tableInfo, rows);
   }
 
   /**
@@ -571,7 +566,7 @@ public final class InsertAllRequest implements Serializable {
    */
   @Deprecated
   public static Builder builder(TableInfo tableInfo, RowToInsert... rows) {
-    return newBuilder(tableInfo.getTableId(), rows);
+    return newBuilder(tableInfo, rows);
   }
 
   /**

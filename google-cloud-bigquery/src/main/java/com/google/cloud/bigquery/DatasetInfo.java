@@ -240,8 +240,7 @@ public class DatasetInfo implements Serializable {
     @Override
     @Deprecated
     public Builder datasetId(DatasetId datasetId) {
-      this.datasetId = checkNotNull(datasetId);
-      return this;
+      return setDatasetId(datasetId);
     }
 
     @Override
@@ -253,8 +252,7 @@ public class DatasetInfo implements Serializable {
     @Override
     @Deprecated
     public Builder acl(List<Acl> acl) {
-      this.acl = acl != null ? ImmutableList.copyOf(acl) : null;
-      return this;
+      return setAcl(acl);
     }
 
     @Override
@@ -272,9 +270,7 @@ public class DatasetInfo implements Serializable {
     @Override
     @Deprecated
     public Builder defaultTableLifetime(Long defaultTableLifetime) {
-      this.defaultTableLifetime =
-          firstNonNull(defaultTableLifetime, Data.<Long>nullOf(Long.class));
-      return this;
+      return setDefaultTableLifetime(defaultTableLifetime);
     }
 
     @Override
@@ -287,8 +283,7 @@ public class DatasetInfo implements Serializable {
     @Override
     @Deprecated
     public Builder description(String description) {
-      this.description = firstNonNull(description, Data.<String>nullOf(String.class));
-      return this;
+      return setDescription(description);
     }
 
     @Override
@@ -306,8 +301,7 @@ public class DatasetInfo implements Serializable {
     @Override
     @Deprecated
     public Builder friendlyName(String friendlyName) {
-      this.friendlyName = firstNonNull(friendlyName, Data.<String>nullOf(String.class));
-      return this;
+      return setFriendlyName(friendlyName);
     }
 
     @Override
@@ -331,8 +325,7 @@ public class DatasetInfo implements Serializable {
     @Override
     @Deprecated
     public Builder location(String location) {
-      this.location = firstNonNull(location, Data.<String>nullOf(String.class));
-      return this;
+      return setLocation(location);
     }
 
     @Override
@@ -372,7 +365,7 @@ public class DatasetInfo implements Serializable {
    */
   @Deprecated
   public DatasetId datasetId() {
-    return datasetId;
+    return getDatasetId();
   }
 
   /**
@@ -389,7 +382,7 @@ public class DatasetInfo implements Serializable {
    */
   @Deprecated
   public List<Acl> acl() {
-    return acl;
+    return getAcl();
   }
 
   /**
@@ -406,7 +399,7 @@ public class DatasetInfo implements Serializable {
    */
   @Deprecated
   public Long creationTime() {
-    return creationTime;
+    return getCreationTime();
   }
 
   /**
@@ -427,7 +420,7 @@ public class DatasetInfo implements Serializable {
    */
   @Deprecated
   public Long defaultTableLifetime() {
-    return defaultTableLifetime;
+    return getDefaultTableLifetime();
   }
 
   /**
@@ -448,7 +441,7 @@ public class DatasetInfo implements Serializable {
    */
   @Deprecated
   public String description() {
-    return description;
+    return getDescription();
   }
 
   /**
@@ -463,7 +456,7 @@ public class DatasetInfo implements Serializable {
    */
   @Deprecated
   public String etag() {
-    return etag;
+    return getEtag();
   }
 
   /**
@@ -478,7 +471,7 @@ public class DatasetInfo implements Serializable {
    */
   @Deprecated
   public String friendlyName() {
-    return friendlyName;
+    return getFriendlyName();
   }
 
   /**
@@ -493,7 +486,7 @@ public class DatasetInfo implements Serializable {
    */
   @Deprecated
   public String generatedId() {
-    return generatedId;
+    return getGeneratedId();
   }
 
   /**
@@ -509,7 +502,7 @@ public class DatasetInfo implements Serializable {
    */
   @Deprecated
   public Long lastModified() {
-    return lastModified;
+    return getLastModified();
   }
 
   /**
@@ -528,7 +521,7 @@ public class DatasetInfo implements Serializable {
    */
   @Deprecated
   public String location() {
-    return location;
+    return getLocation();
   }
 
   /**
@@ -547,7 +540,7 @@ public class DatasetInfo implements Serializable {
    */
   @Deprecated
   public String selfLink() {
-    return selfLink;
+    return getSelfLink();
   }
 
   /**
@@ -601,7 +594,7 @@ public class DatasetInfo implements Serializable {
     if (getAcl() != null) {
       List<Acl> acls = Lists.newArrayListWithCapacity(getAcl().size());
       for (Acl acl : getAcl()) {
-        if (acl.getEntity().type() == Acl.Entity.Type.VIEW) {
+        if (acl.getEntity().getType() == Acl.Entity.Type.VIEW) {
           Dataset.Access accessPb = acl.toPb();
           TableReference viewReferencePb = accessPb.getView();
           if (viewReferencePb.getProjectId() == null) {
@@ -645,7 +638,7 @@ public class DatasetInfo implements Serializable {
    */
   @Deprecated
   public static Builder builder(DatasetId datasetId) {
-    return new BuilderImpl().setDatasetId(datasetId);
+    return newBuilder(datasetId);
   }
 
   /**
@@ -660,7 +653,7 @@ public class DatasetInfo implements Serializable {
    */
   @Deprecated
   public static Builder builder(String datasetId) {
-    return newBuilder(DatasetId.of(datasetId));
+    return newBuilder(datasetId);
   }
 
   /**
@@ -675,7 +668,7 @@ public class DatasetInfo implements Serializable {
    */
   @Deprecated
   public static Builder builder(String projectId, String datasetId) {
-    return newBuilder(DatasetId.of(projectId, datasetId));
+    return newBuilder(projectId, datasetId);
   }
 
   /**

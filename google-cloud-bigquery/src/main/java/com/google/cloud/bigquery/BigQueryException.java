@@ -72,7 +72,7 @@ public final class BigQueryException extends BaseServiceException {
    */
   @Deprecated
   public BigQueryError error() {
-    return error;
+    return getError();
   }
 
   /**

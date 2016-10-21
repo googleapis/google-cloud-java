@@ -78,7 +78,7 @@ public final class BigQueryError implements Serializable {
    */
   @Deprecated
   public String reason() {
-    return reason;
+    return getReason();
   }
 
   /**
@@ -96,7 +96,7 @@ public final class BigQueryError implements Serializable {
    */
   @Deprecated
   public String location() {
-    return location;
+    return getLocation();
   }
 
   /**
@@ -115,7 +115,7 @@ public final class BigQueryError implements Serializable {
    */
   @Deprecated
   public String message() {
-    return message;
+    return getMessage();
   }
 
   /**

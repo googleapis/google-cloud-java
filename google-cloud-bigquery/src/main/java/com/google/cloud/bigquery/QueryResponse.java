@@ -114,7 +114,7 @@ public class QueryResponse implements Serializable {
    */
   @Deprecated
   public QueryResult result() {
-    return result;
+    return getResult();
   }
 
   /**
@@ -130,7 +130,7 @@ public class QueryResponse implements Serializable {
    */
   @Deprecated
   public String etag() {
-    return etag;
+    return getEtag();
   }
 
   /**
@@ -146,7 +146,7 @@ public class QueryResponse implements Serializable {
    */
   @Deprecated
   public JobId jobId() {
-    return jobId;
+    return getJobId();
   }
 
   /**
@@ -182,7 +182,7 @@ public class QueryResponse implements Serializable {
    */
   @Deprecated
   public List<BigQueryError> executionErrors() {
-    return executionErrors;
+    return getExecutionErrors();
   }
 
   /**

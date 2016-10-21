@@ -60,7 +60,7 @@ public final class TimePartitioning implements Serializable {
    */
   @Deprecated
   public Type type() {
-    return type;
+    return getType();
   }
 
   /**
@@ -77,7 +77,7 @@ public final class TimePartitioning implements Serializable {
    */
   @Deprecated
   public Long expirationMs() {
-    return expirationMs;
+    return getExpirationMs();
   }
 
   /**

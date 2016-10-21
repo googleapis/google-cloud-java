@@ -85,8 +85,7 @@ public final class CopyJobConfiguration extends JobConfiguration {
      */
     @Deprecated
     public Builder sourceTables(List<TableId> sourceTables) {
-      this.sourceTables = sourceTables != null ? ImmutableList.copyOf(sourceTables) : null;
-      return this;
+      return setSourceTables(sourceTables);
     }
 
     /**
@@ -102,8 +101,7 @@ public final class CopyJobConfiguration extends JobConfiguration {
      */
     @Deprecated
     public Builder destinationTable(TableId destinationTable) {
-      this.destinationTable = destinationTable;
-      return this;
+      return setDestinationTable(destinationTable);
     }
 
     /**
@@ -122,8 +120,7 @@ public final class CopyJobConfiguration extends JobConfiguration {
      */
     @Deprecated
     public Builder createDisposition(JobInfo.CreateDisposition createDisposition) {
-      this.createDisposition = createDisposition;
-      return this;
+      return setCreateDisposition(createDisposition);
     }
 
     /**
@@ -145,8 +142,7 @@ public final class CopyJobConfiguration extends JobConfiguration {
      */
     @Deprecated
     public Builder writeDisposition(JobInfo.WriteDisposition writeDisposition) {
-      this.writeDisposition = writeDisposition;
-      return this;
+      return setWriteDisposition(writeDisposition);
     }
 
     /**
@@ -178,7 +174,7 @@ public final class CopyJobConfiguration extends JobConfiguration {
    */
   @Deprecated
   public List<TableId> sourceTables() {
-    return sourceTables;
+    return getSourceTables();
   }
 
   /**
@@ -193,7 +189,7 @@ public final class CopyJobConfiguration extends JobConfiguration {
    */
   @Deprecated
   public TableId destinationTable() {
-    return destinationTable;
+    return getDestinationTable();
   }
 
   /**
@@ -211,7 +207,7 @@ public final class CopyJobConfiguration extends JobConfiguration {
    */
   @Deprecated
   public JobInfo.CreateDisposition createDisposition() {
-    return this.createDisposition;
+    return this.getCreateDisposition();
   }
 
   /**
@@ -232,7 +228,7 @@ public final class CopyJobConfiguration extends JobConfiguration {
    */
   @Deprecated
   public JobInfo.WriteDisposition writeDisposition() {
-    return writeDisposition;
+    return getWriteDisposition();
   }
 
   /**
@@ -309,7 +305,7 @@ public final class CopyJobConfiguration extends JobConfiguration {
    */
   @Deprecated
   public static Builder builder(TableId destinationTable, TableId sourceTable) {
-    return newBuilder(destinationTable, ImmutableList.of(checkNotNull(sourceTable)));
+    return newBuilder(destinationTable, sourceTable);
   }
 
   /**
@@ -324,7 +320,7 @@ public final class CopyJobConfiguration extends JobConfiguration {
    */
   @Deprecated
   public static Builder builder(TableId destinationTable, List<TableId> sourceTables) {
-    return new Builder().setDestinationTable(destinationTable).setSourceTables(sourceTables);
+    return newBuilder(destinationTable, sourceTables);
   }
 
   /**

@@ -38,7 +38,7 @@ public final class JobId implements Serializable {
    */
   @Deprecated
   public String project() {
-    return project;
+    return getProject();
   }
 
   /**
@@ -53,7 +53,7 @@ public final class JobId implements Serializable {
    */
   @Deprecated
   public String job() {
-    return job;
+    return getJob();
   }
 
   /**

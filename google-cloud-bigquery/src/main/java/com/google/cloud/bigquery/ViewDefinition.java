@@ -72,8 +72,7 @@ public class ViewDefinition extends TableDefinition {
      */
     @Deprecated
     public Builder query(String query) {
-      this.query = checkNotNull(query);
-      return self();
+      return setQuery(query);
     }
 
     /**
@@ -92,8 +91,7 @@ public class ViewDefinition extends TableDefinition {
      */
     @Deprecated
     public Builder userDefinedFunctions(List<UserDefinedFunction> userDefinedFunctions) {
-      this.userDefinedFunctions = ImmutableList.copyOf(checkNotNull(userDefinedFunctions));
-      return self();
+      return setUserDefinedFunctions(userDefinedFunctions);
     }
 
     /**
@@ -115,8 +113,7 @@ public class ViewDefinition extends TableDefinition {
      */
     @Deprecated
     public Builder userDefinedFunctions(UserDefinedFunction... userDefinedFunctions) {
-      this.userDefinedFunctions = ImmutableList.copyOf(userDefinedFunctions);
-      return self();
+      return setUserDefinedFunctions(userDefinedFunctions);
     }
 
     /**
@@ -150,7 +147,7 @@ public class ViewDefinition extends TableDefinition {
    */
   @Deprecated
   public String query() {
-    return query;
+    return getQuery();
   }
 
   /**
@@ -169,7 +166,7 @@ public class ViewDefinition extends TableDefinition {
    */
   @Deprecated
   public List<UserDefinedFunction> userDefinedFunctions() {
-    return userDefinedFunctions;
+    return getUserDefinedFunctions();
   }
 
   /**
@@ -231,7 +228,7 @@ public class ViewDefinition extends TableDefinition {
    */
   @Deprecated
   public static Builder builder(String query) {
-    return new Builder().setQuery(query);
+    return newBuilder(query);
   }
 
   /**
@@ -251,7 +248,7 @@ public class ViewDefinition extends TableDefinition {
    */
   @Deprecated
   public static Builder builder(String query, List<UserDefinedFunction> functions) {
-    return newBuilder(query).setUserDefinedFunctions(functions);
+    return newBuilder(query, functions);
   }
 
   /**
@@ -272,7 +269,7 @@ public class ViewDefinition extends TableDefinition {
    */
   @Deprecated
   public static Builder builder(String query, UserDefinedFunction... functions) {
-    return newBuilder(query).setUserDefinedFunctions(functions);
+    return newBuilder(query, functions);
   }
 
   /**

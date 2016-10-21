@@ -56,7 +56,7 @@ public class InsertAllResponse implements Serializable {
    */
   @Deprecated
   public Map<Long, List<BigQueryError>> insertErrors() {
-    return insertErrors;
+    return getInsertErrors();
   }
 
   /**
@@ -72,7 +72,7 @@ public class InsertAllResponse implements Serializable {
    */
   @Deprecated
   public List<BigQueryError> errorsFor(long index) {
-    return insertErrors.get(index);
+    return getErrorsFor(index);
   }
 
   /**

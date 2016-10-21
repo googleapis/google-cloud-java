@@ -130,7 +130,7 @@ public abstract class JobStatistics implements Serializable {
      */
     @Deprecated
     public List<Long> destinationUriFileCounts() {
-      return destinationUriFileCounts;
+      return getDestinationUriFileCounts();
     }
 
     /**
@@ -247,7 +247,7 @@ public abstract class JobStatistics implements Serializable {
      */
     @Deprecated
     public Long inputBytes() {
-      return inputBytes;
+      return getInputBytes();
     }
 
     /**
@@ -262,7 +262,7 @@ public abstract class JobStatistics implements Serializable {
      */
     @Deprecated
     public Long inputFiles() {
-      return inputFiles;
+      return getInputFiles();
     }
 
     /**
@@ -277,7 +277,7 @@ public abstract class JobStatistics implements Serializable {
      */
     @Deprecated
     public Long outputBytes() {
-      return outputBytes;
+      return getOutputBytes();
     }
 
     /**
@@ -292,7 +292,7 @@ public abstract class JobStatistics implements Serializable {
      */
     @Deprecated
     public Long outputRows() {
-      return outputRows;
+      return getOutputRows();
     }
 
     /**
@@ -424,7 +424,7 @@ public abstract class JobStatistics implements Serializable {
      */
     @Deprecated
     public Integer billingTier() {
-      return billingTier;
+      return getBillingTier();
     }
 
     /**
@@ -442,7 +442,7 @@ public abstract class JobStatistics implements Serializable {
      */
     @Deprecated
     public Boolean cacheHit() {
-      return cacheHit;
+      return getCacheHit();
     }
 
     /**
@@ -460,7 +460,7 @@ public abstract class JobStatistics implements Serializable {
      */
     @Deprecated
     public Long totalBytesBilled() {
-      return totalBytesBilled;
+      return getTotalBytesBilled();
     }
 
     /**
@@ -475,7 +475,7 @@ public abstract class JobStatistics implements Serializable {
      */
     @Deprecated
     public Long totalBytesProcessed() {
-      return totalBytesProcessed;
+      return getTotalBytesProcessed();
     }
 
     /**
@@ -495,7 +495,7 @@ public abstract class JobStatistics implements Serializable {
      */
     @Deprecated
     public List<QueryStage> queryPlan() {
-      return queryPlan;
+      return getQueryPlan();
     }
 
     /**
@@ -606,7 +606,7 @@ public abstract class JobStatistics implements Serializable {
    */
   @Deprecated
   public Long creationTime() {
-    return creationTime;
+    return getCreationTime();
   }
 
   /**
@@ -622,7 +622,7 @@ public abstract class JobStatistics implements Serializable {
    */
   @Deprecated
   public Long endTime() {
-    return endTime;
+    return getEndTime();
   }
 
   /**
@@ -639,7 +639,7 @@ public abstract class JobStatistics implements Serializable {
    */
   @Deprecated
   public Long startTime() {
-    return startTime;
+    return getStartTime();
   }
 
   /**

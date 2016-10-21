@@ -197,8 +197,7 @@ public class JobInfo implements Serializable {
     @Override
     @Deprecated
     public Builder jobId(JobId jobId) {
-      this.jobId = jobId;
-      return this;
+      return setJobId(jobId);
     }
 
     @Override
@@ -234,8 +233,7 @@ public class JobInfo implements Serializable {
     @Override
     @Deprecated
     public Builder configuration(JobConfiguration configuration) {
-      this.configuration = configuration;
-      return this;
+      return setConfiguration(configuration);
     }
 
     @Override
@@ -266,7 +264,7 @@ public class JobInfo implements Serializable {
    */
   @Deprecated
   public String etag() {
-    return etag;
+    return getEtag();
   }
 
   /**
@@ -281,7 +279,7 @@ public class JobInfo implements Serializable {
    */
   @Deprecated
   public String generatedId() {
-    return generatedId;
+    return getGeneratedId();
   }
 
   /**
@@ -296,7 +294,7 @@ public class JobInfo implements Serializable {
    */
   @Deprecated
   public JobId jobId() {
-    return jobId;
+    return getJobId();
   }
 
   /**
@@ -312,7 +310,7 @@ public class JobInfo implements Serializable {
    */
   @Deprecated
   public String selfLink() {
-    return selfLink;
+    return getSelfLink();
   }
 
   /**
@@ -329,7 +327,7 @@ public class JobInfo implements Serializable {
    */
   @Deprecated
   public JobStatus status() {
-    return status;
+    return getStatus();
   }
 
   /**
@@ -346,7 +344,7 @@ public class JobInfo implements Serializable {
   @SuppressWarnings("unchecked")
   @Deprecated
   public <S extends JobStatistics> S statistics() {
-    return (S) statistics;
+    return getStatistics();
   }
 
   /**
@@ -362,7 +360,7 @@ public class JobInfo implements Serializable {
    */
   @Deprecated
   public String userEmail() {
-    return userEmail;
+    return getUserEmail();
   }
 
   /**
@@ -378,7 +376,7 @@ public class JobInfo implements Serializable {
   @SuppressWarnings("unchecked")
   @Deprecated
   public <C extends JobConfiguration> C configuration() {
-    return (C) configuration;
+    return getConfiguration();
   }
 
   /**
@@ -459,7 +457,7 @@ public class JobInfo implements Serializable {
    */
   @Deprecated
   public static Builder builder(JobConfiguration configuration) {
-    return new BuilderImpl().setConfiguration(configuration);
+    return newBuilder(configuration);
   }
 
   /**

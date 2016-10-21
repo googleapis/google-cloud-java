@@ -199,8 +199,7 @@ public class TableInfo implements Serializable {
     @Override
     @Deprecated
     public Builder description(String description) {
-      this.description = firstNonNull(description, Data.<String>nullOf(String.class));
-      return this;
+      return setDescription(description);
     }
 
     @Override
@@ -218,8 +217,7 @@ public class TableInfo implements Serializable {
     @Override
     @Deprecated
     public Builder expirationTime(Long expirationTime) {
-      this.expirationTime = firstNonNull(expirationTime, Data.<Long>nullOf(Long.class));
-      return this;
+      return setExpirationTime(expirationTime);
     }
 
     @Override
@@ -231,8 +229,7 @@ public class TableInfo implements Serializable {
     @Override
     @Deprecated
     public Builder friendlyName(String friendlyName) {
-      this.friendlyName = firstNonNull(friendlyName, Data.<String>nullOf(String.class));
-      return this;
+      return setFriendlyName(friendlyName);
     }
 
     @Override
@@ -262,8 +259,7 @@ public class TableInfo implements Serializable {
     @Override
     @Deprecated
     public Builder tableId(TableId tableId) {
-      this.tableId = checkNotNull(tableId);
-      return this;
+      return setTableId(tableId);
     }
 
     @Override
@@ -275,8 +271,7 @@ public class TableInfo implements Serializable {
     @Override
     @Deprecated
     public Builder definition(TableDefinition definition) {
-      this.definition = checkNotNull(definition);
-      return this;
+      return setDefinition(definition);
     }
 
     @Override
@@ -309,7 +304,7 @@ public class TableInfo implements Serializable {
    */
   @Deprecated
   public String etag() {
-    return etag;
+    return getEtag();
   }
 
   /**
@@ -324,7 +319,7 @@ public class TableInfo implements Serializable {
    */
   @Deprecated
   public String generatedId() {
-    return generatedId;
+    return getGeneratedId();
   }
 
   /**
@@ -340,7 +335,7 @@ public class TableInfo implements Serializable {
    */
   @Deprecated
   public String selfLink() {
-    return selfLink;
+    return getSelfLink();
   }
 
   /**
@@ -356,7 +351,7 @@ public class TableInfo implements Serializable {
    */
   @Deprecated
   public TableId tableId() {
-    return tableId;
+    return getTableId();
   }
 
   /**
@@ -371,7 +366,7 @@ public class TableInfo implements Serializable {
    */
   @Deprecated
   public String friendlyName() {
-    return Data.isNull(friendlyName) ? null : friendlyName;
+    return getFriendlyName();
   }
 
   /**
@@ -386,7 +381,7 @@ public class TableInfo implements Serializable {
    */
   @Deprecated
   public String description() {
-    return Data.isNull(description) ? null : description;
+    return getDescription();
   }
 
   /**
@@ -401,7 +396,7 @@ public class TableInfo implements Serializable {
    */
   @Deprecated
   public Long creationTime() {
-    return creationTime;
+    return getCreationTime();
   }
 
   /**
@@ -417,7 +412,7 @@ public class TableInfo implements Serializable {
    */
   @Deprecated
   public Long expirationTime() {
-    return Data.isNull(expirationTime) ? null : expirationTime;
+    return getExpirationTime();
   }
 
   /**
@@ -433,7 +428,7 @@ public class TableInfo implements Serializable {
    */
   @Deprecated
   public Long lastModifiedTime() {
-    return lastModifiedTime;
+    return getLastModifiedTime();
   }
 
   /**
@@ -449,7 +444,7 @@ public class TableInfo implements Serializable {
   @SuppressWarnings("unchecked")
   @Deprecated
   public <T extends TableDefinition> T definition() {
-    return (T) definition;
+    return getDefinition();
   }
 
   /**
@@ -504,7 +499,7 @@ public class TableInfo implements Serializable {
    */
   @Deprecated
   public static Builder builder(TableId tableId, TableDefinition definition) {
-    return new BuilderImpl().setTableId(tableId).setDefinition(definition);
+    return newBuilder(tableId, definition);
   }
 
   /**

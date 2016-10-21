@@ -76,7 +76,7 @@ public class JobStatus implements Serializable {
    */
   @Deprecated
   public State state() {
-    return state;
+    return getState();
   }
 
   /**
@@ -97,7 +97,7 @@ public class JobStatus implements Serializable {
    */
   @Deprecated
   public BigQueryError error() {
-    return error;
+    return getError();
   }
 
   /**
@@ -120,7 +120,7 @@ public class JobStatus implements Serializable {
    */
   @Deprecated
   public List<BigQueryError> executionErrors() {
-    return executionErrors;
+    return getExecutionErrors();
   }
 
   /**

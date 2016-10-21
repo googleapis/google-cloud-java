@@ -98,7 +98,7 @@ public final class Field implements Serializable {
      */
     @Deprecated
     public Value value() {
-      return value;
+      return getValue();
     }
 
     /**
@@ -117,7 +117,7 @@ public final class Field implements Serializable {
      */
     @Deprecated
     public List<Field> fields() {
-      return fields;
+      return getFields();
     }
 
     /**
@@ -240,8 +240,7 @@ public final class Field implements Serializable {
      */
     @Deprecated
     public Builder name(String name) {
-      this.name = checkNotNull(name);
-      return this;
+      return setName(name);
     }
 
     /**
@@ -262,8 +261,7 @@ public final class Field implements Serializable {
      */
     @Deprecated
     public Builder type(Type type) {
-      this.type = checkNotNull(type);
-      return this;
+      return setType(type);
     }
 
     /**
@@ -282,8 +280,7 @@ public final class Field implements Serializable {
      */
     @Deprecated
     public Builder mode(Mode mode) {
-      this.mode = mode != null ? mode.name() : Data.<String>nullOf(String.class);
-      return this;
+      return setMode(mode);
     }
 
     /**
@@ -299,8 +296,7 @@ public final class Field implements Serializable {
      */
     @Deprecated
     public Builder description(String description) {
-      this.description = firstNonNull(description, Data.<String>nullOf(String.class));
-      return this;
+      return setDescription(description);
     }
 
     /**
@@ -331,7 +327,7 @@ public final class Field implements Serializable {
    */
   @Deprecated
   public String name() {
-    return name;
+    return getName();
   }
 
   /**
@@ -349,7 +345,7 @@ public final class Field implements Serializable {
    */
   @Deprecated
   public Type type() {
-    return type;
+    return getType();
   }
 
   /**
@@ -367,7 +363,7 @@ public final class Field implements Serializable {
    */
   @Deprecated
   public Mode mode() {
-    return mode != null ? Mode.valueOf(mode) : null;
+    return getMode();
   }
 
   /**
@@ -382,7 +378,7 @@ public final class Field implements Serializable {
    */
   @Deprecated
   public String description() {
-    return Data.isNull(description) ? null : description;
+    return getDescription();
   }
 
   /**
@@ -398,7 +394,7 @@ public final class Field implements Serializable {
    */
   @Deprecated
   public List<Field> fields() {
-    return type.getFields();
+    return getFields();
   }
 
   /**
@@ -465,7 +461,7 @@ public final class Field implements Serializable {
    */
   @Deprecated
   public static Builder builder(String name, Type type) {
-    return new Builder().setName(name).setType(type);
+    return newBuilder(name, type);
   }
 
   /**

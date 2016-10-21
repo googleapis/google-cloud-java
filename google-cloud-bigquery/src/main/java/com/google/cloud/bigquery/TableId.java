@@ -54,7 +54,7 @@ public final class TableId implements Serializable {
    */
   @Deprecated
   public String project() {
-    return project;
+    return getProject();
   }
 
   /**
@@ -69,7 +69,7 @@ public final class TableId implements Serializable {
    */
   @Deprecated
   public String dataset() {
-    return dataset;
+    return getDataset();
   }
 
   /**
@@ -84,7 +84,7 @@ public final class TableId implements Serializable {
    */
   @Deprecated
   public String table() {
-    return table;
+    return getTable();
   }
 
   /**

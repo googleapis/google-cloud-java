@@ -73,8 +73,7 @@ public class Table extends TableInfo {
     @Override
     @Deprecated
     public Builder description(String description) {
-      infoBuilder.setDescription(description);
-      return this;
+      return setDescription(description);
     }
 
     @Override
@@ -92,8 +91,7 @@ public class Table extends TableInfo {
     @Override
     @Deprecated
     public Builder expirationTime(Long expirationTime) {
-      infoBuilder.setExpirationTime(expirationTime);
-      return this;
+      return setExpirationTime(expirationTime);
     }
 
     @Override
@@ -105,8 +103,7 @@ public class Table extends TableInfo {
     @Override
     @Deprecated
     public Builder friendlyName(String friendlyName) {
-      infoBuilder.setFriendlyName(friendlyName);
-      return this;
+      return setFriendlyName(friendlyName);
     }
 
     @Override
@@ -136,8 +133,7 @@ public class Table extends TableInfo {
     @Override
     @Deprecated
     public Builder tableId(TableId tableId) {
-      infoBuilder.setTableId(tableId);
-      return this;
+      return setTableId(tableId);
     }
 
     @Override
@@ -149,8 +145,7 @@ public class Table extends TableInfo {
     @Override
     @Deprecated
     public Builder definition(TableDefinition definition) {
-      infoBuilder.setDefinition(definition);
-      return this;
+      return setDefinition(definition);
     }
 
     @Override
@@ -554,7 +549,7 @@ public class Table extends TableInfo {
    */
   @Deprecated
   public BigQuery bigquery() {
-    return bigquery;
+    return getBigquery();
   }
 
   /**

@@ -94,7 +94,7 @@ public class QueryStage implements Serializable {
      */
     @Deprecated
     public String name() {
-      return name;
+      return getName();
     }
 
     /**
@@ -112,7 +112,7 @@ public class QueryStage implements Serializable {
      */
     @Deprecated
     public List<String> substeps() {
-      return substeps;
+      return getSubsteps();
     }
 
     /**
@@ -278,7 +278,7 @@ public class QueryStage implements Serializable {
    */
   @Deprecated
   public double computeRatioAvg() {
-    return computeRatioAvg;
+    return getComputeRatioAvg();
   }
 
   /**
@@ -295,7 +295,7 @@ public class QueryStage implements Serializable {
    */
   @Deprecated
   public double computeRatioMax() {
-    return computeRatioMax;
+    return getComputeRatioMax();
   }
 
   /**
@@ -311,7 +311,7 @@ public class QueryStage implements Serializable {
    */
   @Deprecated
   public long generatedId() {
-    return generatedId;
+    return getGeneratedId();
   }
 
   /**
@@ -326,7 +326,7 @@ public class QueryStage implements Serializable {
    */
   @Deprecated
   public String name() {
-    return name;
+    return getName();
   }
 
   /**
@@ -342,7 +342,7 @@ public class QueryStage implements Serializable {
    */
   @Deprecated
   public double readRatioAvg() {
-    return readRatioAvg;
+    return getReadRatioAvg();
   }
 
   /**
@@ -359,7 +359,7 @@ public class QueryStage implements Serializable {
    */
   @Deprecated
   public double readRatioMax() {
-    return readRatioMax;
+    return getReadRatioMax();
   }
 
   /**
@@ -375,7 +375,7 @@ public class QueryStage implements Serializable {
    */
   @Deprecated
   public long recordsRead() {
-    return recordsRead;
+    return getRecordsRead();
   }
 
   /**
@@ -390,7 +390,7 @@ public class QueryStage implements Serializable {
    */
   @Deprecated
   public long recordsWritten() {
-    return recordsWritten;
+    return getRecordsWritten();
   }
 
   /**
@@ -405,7 +405,7 @@ public class QueryStage implements Serializable {
    */
   @Deprecated
   public List<QueryStep> steps() {
-    return steps;
+    return getSteps();
   }
 
   /**
@@ -421,7 +421,7 @@ public class QueryStage implements Serializable {
    */
   @Deprecated
   public double waitRatioAvg() {
-    return waitRatioAvg;
+    return getWaitRatioAvg();
   }
 
   /**
@@ -438,7 +438,7 @@ public class QueryStage implements Serializable {
    */
   @Deprecated
   public double waitRatioMax() {
-    return waitRatioMax;
+    return getWaitRatioMax();
   }
 
   /**
@@ -455,7 +455,7 @@ public class QueryStage implements Serializable {
    */
   @Deprecated
   public double writeRatioAvg() {
-    return writeRatioAvg;
+    return getWriteRatioAvg();
   }
 
   /**
@@ -472,7 +472,7 @@ public class QueryStage implements Serializable {
    */
   @Deprecated
   public double writeRatioMax() {
-    return writeRatioMax;
+    return getWriteRatioMax();
   }
 
   /**

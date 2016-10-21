@@ -153,8 +153,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
      */
     @Deprecated
     public Builder query(String query) {
-      this.query = query;
-      return this;
+      return setQuery(query);
     }
 
     /**
@@ -171,8 +170,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
      */
     @Deprecated
     public Builder destinationTable(TableId destinationTable) {
-      this.destinationTable = destinationTable;
-      return this;
+      return setDestinationTable(destinationTable);
     }
 
     /**
@@ -192,8 +190,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
      */
     @Deprecated
     public Builder tableDefinitions(Map<String, ExternalTableDefinition> tableDefinitions) {
-      this.tableDefinitions = tableDefinitions != null ? Maps.newHashMap(tableDefinitions) : null;
-      return this;
+      return setTableDefinitions(tableDefinitions);
     }
 
     /**
@@ -229,9 +226,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
      */
     @Deprecated
     public Builder userDefinedFunctions(List<UserDefinedFunction> userDefinedFunctions) {
-      this.userDefinedFunctions =
-          userDefinedFunctions != null ? ImmutableList.copyOf(userDefinedFunctions) : null;
-      return this;
+      return setUserDefinedFunctions(userDefinedFunctions);
     }
 
     /**
@@ -253,8 +248,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
      */
     @Deprecated
     public Builder createDisposition(CreateDisposition createDisposition) {
-      this.createDisposition = createDisposition;
-      return this;
+      return setCreateDisposition(createDisposition);
     }
 
     /**
@@ -276,8 +270,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
      */
     @Deprecated
     public Builder writeDisposition(WriteDisposition writeDisposition) {
-      this.writeDisposition = writeDisposition;
-      return this;
+      return setWriteDisposition(writeDisposition);
     }
 
     /**
@@ -297,8 +290,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
      */
     @Deprecated
     public Builder defaultDataset(DatasetId defaultDataset) {
-      this.defaultDataset = defaultDataset;
-      return this;
+      return setDefaultDataset(defaultDataset);
     }
 
     /**
@@ -333,8 +325,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
      */
     @Deprecated
     public Builder priority(Priority priority) {
-      this.priority = priority;
-      return this;
+      return setPriority(priority);
     }
 
     /**
@@ -356,8 +347,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
      */
     @Deprecated
     public Builder allowLargeResults(Boolean allowLargeResults) {
-      this.allowLargeResults = allowLargeResults;
-      return this;
+      return setAllowLargeResults(allowLargeResults);
     }
 
     /**
@@ -382,8 +372,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
      */
     @Deprecated
     public Builder useQueryCache(Boolean useQueryCache) {
-      this.useQueryCache = useQueryCache;
-      return this;
+      return setUseQueryCache(useQueryCache);
     }
 
     /**
@@ -407,8 +396,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
      */
     @Deprecated
     public Builder flattenResults(Boolean flattenResults) {
-      this.flattenResults = flattenResults;
-      return this;
+      return setFlattenResults(flattenResults);
     }
 
     /**
@@ -430,8 +418,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
      */
     @Deprecated
     public Builder dryRun(Boolean dryRun) {
-      this.dryRun = dryRun;
-      return this;
+      return setDryRun(dryRun);
     }
 
     /**
@@ -455,8 +442,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
      */
     @Deprecated
     public Builder useLegacySql(Boolean useLegacySql) {
-      this.useLegacySql = useLegacySql;
-      return this;
+      return setUseLegacySql(useLegacySql);
     }
 
     /**
@@ -516,7 +502,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
    */
   @Deprecated
   public CreateDisposition createDisposition() {
-    return createDisposition;
+    return getCreateDisposition();
   }
 
   /**
@@ -535,7 +521,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
    */
   @Deprecated
   public DatasetId defaultDataset() {
-    return defaultDataset;
+    return getDefaultDataset();
   }
 
   /**
@@ -552,7 +538,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
    */
   @Deprecated
   public TableId destinationTable() {
-    return destinationTable;
+    return getDestinationTable();
   }
 
   /**
@@ -578,7 +564,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
    */
   @Deprecated
   public Priority priority() {
-    return priority;
+    return getPriority();
   }
 
   /**
@@ -593,7 +579,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
    */
   @Deprecated
   public String query() {
-    return query;
+    return getQuery();
   }
 
   /**
@@ -611,7 +597,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
    */
   @Deprecated
   public Map<String, ExternalTableDefinition> tableDefinitions() {
-    return tableDefinitions;
+    return getTableDefinitions();
   }
 
   /**
@@ -642,7 +628,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
    */
   @Deprecated
   public List<UserDefinedFunction> userDefinedFunctions() {
-    return userDefinedFunctions;
+    return getUserDefinedFunctions();
   }
 
   /**
@@ -662,7 +648,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
    */
   @Deprecated
   public WriteDisposition writeDisposition() {
-    return writeDisposition;
+    return getWriteDisposition();
   }
 
   /**
@@ -795,7 +781,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
    */
   @Deprecated
   public static Builder builder(String query) {
-    return new Builder().setQuery(query);
+    return newBuilder(query);
   }
 
   /**

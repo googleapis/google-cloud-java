@@ -116,8 +116,7 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
     @Override
     @Deprecated
     public Builder destinationTable(TableId destinationTable) {
-      this.destinationTable = destinationTable;
-      return this;
+      return setDestinationTable(destinationTable);
     }
 
     @Override
@@ -129,8 +128,7 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
     @Override
     @Deprecated
     public Builder createDisposition(CreateDisposition createDisposition) {
-      this.createDisposition = createDisposition;
-      return this;
+      return setCreateDisposition(createDisposition);
     }
 
     @Override
@@ -142,8 +140,7 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
     @Override
     @Deprecated
     public Builder writeDisposition(WriteDisposition writeDisposition) {
-      this.writeDisposition = writeDisposition;
-      return this;
+      return setWriteDisposition(writeDisposition);
     }
 
     @Override
@@ -155,8 +152,7 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
     @Override
     @Deprecated
     public Builder formatOptions(FormatOptions formatOptions) {
-      this.formatOptions = formatOptions;
-      return this;
+      return setFormatOptions(formatOptions);
     }
 
     @Override
@@ -168,8 +164,7 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
     @Override
     @Deprecated
     public Builder maxBadRecords(Integer maxBadRecords) {
-      this.maxBadRecords = maxBadRecords;
-      return this;
+      return setMaxBadRecords(maxBadRecords);
     }
 
     @Override
@@ -181,8 +176,7 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
     @Override
     @Deprecated
     public Builder schema(Schema schema) {
-      this.schema = schema;
-      return this;
+      return setSchema(schema);
     }
 
     @Override
@@ -194,8 +188,7 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
     @Override
     @Deprecated
     public Builder ignoreUnknownValues(Boolean ignoreUnknownValues) {
-      this.ignoreUnknownValues = ignoreUnknownValues;
-      return this;
+      return setIgnoreUnknownValues(ignoreUnknownValues);
     }
 
     @Override
@@ -207,9 +200,7 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
     @Override
     @Deprecated
     public Builder projectionFields(List<String> projectionFields) {
-      this.projectionFields =
-          projectionFields != null ? ImmutableList.copyOf(projectionFields) : null;
-      return this;
+      return setProjectionFields(projectionFields);
     }
 
     @Override
@@ -239,7 +230,7 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
   @Override
   @Deprecated
   public TableId destinationTable() {
-    return destinationTable;
+    return getDestinationTable();
   }
 
   @Override
@@ -250,7 +241,7 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
   @Override
   @Deprecated
   public CreateDisposition createDisposition() {
-    return this.createDisposition;
+    return this.getCreateDisposition();
   }
 
   @Override
@@ -261,7 +252,7 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
   @Override
   @Deprecated
   public WriteDisposition writeDisposition() {
-    return writeDisposition;
+    return getWriteDisposition();
   }
 
   @Override
@@ -272,7 +263,7 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
   @Override
   @Deprecated
   public CsvOptions csvOptions() {
-    return formatOptions instanceof CsvOptions ? (CsvOptions) formatOptions : null;
+    return getCsvOptions();
   }
 
   @Override
@@ -283,7 +274,7 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
   @Override
   @Deprecated
   public Integer maxBadRecords() {
-    return maxBadRecords;
+    return getMaxBadRecords();
   }
 
   @Override
@@ -294,7 +285,7 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
   @Override
   @Deprecated
   public Schema schema() {
-    return schema;
+    return getSchema();
   }
 
   @Override
@@ -305,7 +296,7 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
   @Override
   @Deprecated
   public String format() {
-    return formatOptions != null ? formatOptions.getType() : null;
+    return getFormat();
   }
 
   @Override
@@ -321,7 +312,7 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
   @Override
   @Deprecated
   public List<String> projectionFields() {
-    return projectionFields;
+    return getProjectionFields();
   }
 
   @Override
@@ -412,7 +403,7 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
    */
   @Deprecated
   public static Builder builder(TableId destinationTable) {
-    return new Builder().setDestinationTable(destinationTable);
+    return newBuilder(destinationTable);
   }
 
   /**
@@ -427,7 +418,7 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
    */
   @Deprecated
   public static Builder builder(TableId destinationTable, FormatOptions format) {
-    return newBuilder(destinationTable).setFormatOptions(format);
+    return newBuilder(destinationTable, format);
   }
 
   /**

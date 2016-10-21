@@ -65,8 +65,7 @@ public final class CsvOptions extends FormatOptions {
      */
     @Deprecated
     public Builder allowJaggedRows(boolean allowJaggedRows) {
-      this.allowJaggedRows = allowJaggedRows;
-      return this;
+      return setAllowJaggedRows(allowJaggedRows);
     }
 
     /**
@@ -87,8 +86,7 @@ public final class CsvOptions extends FormatOptions {
      */
     @Deprecated
     public Builder allowQuotedNewLines(boolean allowQuotedNewLines) {
-      this.allowQuotedNewLines = allowQuotedNewLines;
-      return this;
+      return setAllowQuotedNewLines(allowQuotedNewLines);
     }
 
     /**
@@ -107,8 +105,7 @@ public final class CsvOptions extends FormatOptions {
      */
     @Deprecated
     public Builder encoding(String encoding) {
-      this.encoding = encoding;
-      return this;
+      return setEncoding(encoding);
     }
 
     /**
@@ -128,8 +125,7 @@ public final class CsvOptions extends FormatOptions {
      */
     @Deprecated
     public Builder encoding(Charset encoding) {
-      this.encoding = encoding.name();
-      return this;
+      return setEncoding(encoding);
     }
 
     /**
@@ -150,8 +146,7 @@ public final class CsvOptions extends FormatOptions {
      */
     @Deprecated
     public Builder fieldDelimiter(String fieldDelimiter) {
-      this.fieldDelimiter = fieldDelimiter;
-      return this;
+      return setFieldDelimiter(fieldDelimiter);
     }
 
     /**
@@ -175,8 +170,7 @@ public final class CsvOptions extends FormatOptions {
      */
     @Deprecated
     public Builder quote(String quote) {
-      this.quote = quote;
-      return this;
+      return setQuote(quote);
     }
 
     /**
@@ -199,8 +193,7 @@ public final class CsvOptions extends FormatOptions {
      */
     @Deprecated
     public Builder skipLeadingRows(long skipLeadingRows) {
-      this.skipLeadingRows = skipLeadingRows;
-      return this;
+      return setSkipLeadingRows(skipLeadingRows);
     }
 
     /**
@@ -257,7 +250,7 @@ public final class CsvOptions extends FormatOptions {
    */
   @Deprecated
   public String encoding() {
-    return encoding;
+    return getEncoding();
   }
 
   /**
@@ -274,7 +267,7 @@ public final class CsvOptions extends FormatOptions {
    */
   @Deprecated
   public String fieldDelimiter() {
-    return fieldDelimiter;
+    return getFieldDelimiter();
   }
 
   /**
@@ -289,7 +282,7 @@ public final class CsvOptions extends FormatOptions {
    */
   @Deprecated
   public String quote() {
-    return quote;
+    return getQuote();
   }
 
   /**
@@ -305,7 +298,7 @@ public final class CsvOptions extends FormatOptions {
    */
   @Deprecated
   public Long skipLeadingRows() {
-    return skipLeadingRows;
+    return getSkipLeadingRows();
   }
 
   /**
@@ -326,7 +319,7 @@ public final class CsvOptions extends FormatOptions {
   @Override
   public String toString() {
     return MoreObjects.toStringHelper(this)
-        .add("type", type())
+        .add("type", getType())
         .add("allowJaggedRows", allowJaggedRows)
         .add("allowQuotedNewLines", allowQuotedNewLines)
         .add("encoding", encoding)
@@ -338,7 +331,7 @@ public final class CsvOptions extends FormatOptions {
 
   @Override
   public int hashCode() {
-    return Objects.hash(type(), allowJaggedRows, allowQuotedNewLines, encoding, fieldDelimiter,
+    return Objects.hash(getType(), allowJaggedRows, allowQuotedNewLines, encoding, fieldDelimiter,
         quote, skipLeadingRows);
   }
 
@@ -366,7 +359,7 @@ public final class CsvOptions extends FormatOptions {
    */
   @Deprecated
   public static Builder builder() {
-    return new Builder();
+    return newBuilder();
   }
 
   /**

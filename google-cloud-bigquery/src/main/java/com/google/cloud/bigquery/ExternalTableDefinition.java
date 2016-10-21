@@ -114,8 +114,7 @@ public class ExternalTableDefinition extends TableDefinition {
      */
     @Deprecated
     public Builder sourceUris(List<String> sourceUris) {
-      this.sourceUris = ImmutableList.copyOf(checkNotNull(sourceUris));
-      return this;
+      return setSourceUris(sourceUris);
     }
 
     /**
@@ -140,8 +139,7 @@ public class ExternalTableDefinition extends TableDefinition {
      */
     @Deprecated
     public Builder formatOptions(FormatOptions formatOptions) {
-      this.formatOptions = checkNotNull(formatOptions);
-      return this;
+      return setFormatOptions(formatOptions);
     }
 
     /**
@@ -163,8 +161,7 @@ public class ExternalTableDefinition extends TableDefinition {
      */
     @Deprecated
     public Builder maxBadRecords(Integer maxBadRecords) {
-      this.maxBadRecords = maxBadRecords;
-      return this;
+      return setMaxBadRecords(maxBadRecords);
     }
 
     /**
@@ -189,8 +186,7 @@ public class ExternalTableDefinition extends TableDefinition {
      */
     @Deprecated
     public Builder ignoreUnknownValues(Boolean ignoreUnknownValues) {
-      this.ignoreUnknownValues = ignoreUnknownValues;
-      return this;
+      return setIgnoreUnknownValues(ignoreUnknownValues);
     }
 
     /**
@@ -216,8 +212,7 @@ public class ExternalTableDefinition extends TableDefinition {
      */
     @Deprecated
     public Builder compression(String compression) {
-      this.compression = compression;
-      return this;
+      return setCompression(compression);
     }
 
     /**
@@ -257,7 +252,7 @@ public class ExternalTableDefinition extends TableDefinition {
    */
   @Deprecated
   public String compression() {
-    return compression;
+    return getCompression();
   }
 
   /**
@@ -290,7 +285,7 @@ public class ExternalTableDefinition extends TableDefinition {
    */
   @Deprecated
   public Integer maxBadRecords() {
-    return maxBadRecords;
+    return getMaxBadRecords();
   }
 
   /**
@@ -311,7 +306,7 @@ public class ExternalTableDefinition extends TableDefinition {
    */
   @Deprecated
   public List<String> sourceUris() {
-    return sourceUris;
+    return getSourceUris();
   }
 
   /**
@@ -333,7 +328,7 @@ public class ExternalTableDefinition extends TableDefinition {
   @SuppressWarnings("unchecked")
   @Deprecated
   public <F extends FormatOptions> F formatOptions() {
-    return (F) formatOptions;
+    return getFormatOptions();
   }
 
   /**
@@ -428,7 +423,7 @@ public class ExternalTableDefinition extends TableDefinition {
    */
   @Deprecated
   public static Builder builder(List<String> sourceUris, Schema schema, FormatOptions format) {
-    return new Builder().setSourceUris(sourceUris).setSchema(schema).setFormatOptions(format);
+    return newBuilder(sourceUris, schema, format);
   }
 
   /**
@@ -466,7 +461,7 @@ public class ExternalTableDefinition extends TableDefinition {
    */
   @Deprecated
   public static Builder builder(String sourceUri, Schema schema, FormatOptions format) {
-    return newBuilder(ImmutableList.of(sourceUri), schema, format);
+    return newBuilder(sourceUri, schema, format);
   }
 
   /**

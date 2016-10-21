@@ -82,7 +82,7 @@ public final class Acl implements Serializable {
 
     @Deprecated
     public Type type() {
-      return type;
+      return getType();
     }
 
     public Type getType() {
@@ -136,7 +136,7 @@ public final class Acl implements Serializable {
      */
     @Deprecated
     public String domain() {
-      return domain;
+      return getDomain();
     }
 
     /**
@@ -155,13 +155,13 @@ public final class Acl implements Serializable {
         return false;
       }
       Domain domainEntity = (Domain) obj;
-      return Objects.equals(type(), domainEntity.type())
-          && Objects.equals(domain, domainEntity.domain());
+      return Objects.equals(getType(), domainEntity.getType())
+          && Objects.equals(domain, domainEntity.getDomain());
     }
 
     @Override
     public int hashCode() {
-      return Objects.hash(type(), domain);
+      return Objects.hash(getType(), domain);
     }
 
     @Override
@@ -208,7 +208,7 @@ public final class Acl implements Serializable {
      */
     @Deprecated
     public String identifier() {
-      return identifier;
+      return getIdentifier();
     }
 
     /**
@@ -229,12 +229,13 @@ public final class Acl implements Serializable {
         return false;
       }
       Group group = (Group) obj;
-      return Objects.equals(type(), group.type()) && Objects.equals(identifier, group.identifier);
+      return Objects.equals(getType(), group.getType())
+          && Objects.equals(identifier, group.identifier);
     }
 
     @Override
     public int hashCode() {
-      return Objects.hash(type(), identifier);
+      return Objects.hash(getType(), identifier);
     }
 
     @Override
@@ -310,7 +311,7 @@ public final class Acl implements Serializable {
      */
     @Deprecated
     public String email() {
-      return email;
+      return getEmail();
     }
 
     /**
@@ -329,12 +330,12 @@ public final class Acl implements Serializable {
         return false;
       }
       User user = (User) obj;
-      return Objects.equals(type(), user.type()) && Objects.equals(email, user.email);
+      return Objects.equals(getType(), user.getType()) && Objects.equals(email, user.email);
     }
 
     @Override
     public int hashCode() {
-      return Objects.hash(type(), email);
+      return Objects.hash(getType(), email);
     }
 
     @Override
@@ -373,7 +374,7 @@ public final class Acl implements Serializable {
      */
     @Deprecated
     public TableId id() {
-      return id;
+      return getId();
     }
 
     /**
@@ -392,12 +393,12 @@ public final class Acl implements Serializable {
         return false;
       }
       View view = (View) obj;
-      return Objects.equals(type(), view.type()) && Objects.equals(id, view.id);
+      return Objects.equals(getType(), view.getType()) && Objects.equals(id, view.id);
     }
 
     @Override
     public int hashCode() {
-      return Objects.hash(type(), id);
+      return Objects.hash(getType(), id);
     }
 
     @Override
@@ -421,7 +422,7 @@ public final class Acl implements Serializable {
    */
   @Deprecated
   public Entity entity() {
-    return entity;
+    return getEntity();
   }
 
   /**
@@ -436,7 +437,7 @@ public final class Acl implements Serializable {
    */
   @Deprecated
   public Role role() {
-    return role;
+    return getRole();
   }
 
   /**

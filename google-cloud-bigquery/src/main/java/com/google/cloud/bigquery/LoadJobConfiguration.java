@@ -126,8 +126,7 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
     @Override
     @Deprecated
     public Builder destinationTable(TableId destinationTable) {
-      this.destinationTable = destinationTable;
-      return this;
+      return setDestinationTable(destinationTable);
     }
 
     @Override
@@ -139,8 +138,7 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
     @Override
     @Deprecated
     public Builder createDisposition(JobInfo.CreateDisposition createDisposition) {
-      this.createDisposition = createDisposition;
-      return this;
+      return setCreateDisposition(createDisposition);
     }
 
     @Override
@@ -152,8 +150,7 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
     @Override
     @Deprecated
     public Builder writeDisposition(JobInfo.WriteDisposition writeDisposition) {
-      this.writeDisposition = writeDisposition;
-      return this;
+      return setWriteDisposition(writeDisposition);
     }
 
     @Override
@@ -165,8 +162,7 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
     @Override
     @Deprecated
     public Builder formatOptions(FormatOptions formatOptions) {
-      this.formatOptions = formatOptions;
-      return this;
+      return setFormatOptions(formatOptions);
     }
 
     @Override
@@ -178,8 +174,7 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
     @Override
     @Deprecated
     public Builder maxBadRecords(Integer maxBadRecords) {
-      this.maxBadRecords = maxBadRecords;
-      return this;
+      return setMaxBadRecords(maxBadRecords);
     }
 
     @Override
@@ -191,8 +186,7 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
     @Override
     @Deprecated
     public Builder schema(Schema schema) {
-      this.schema = schema;
-      return this;
+      return setSchema(schema);
     }
 
     @Override
@@ -204,8 +198,7 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
     @Override
     @Deprecated
     public Builder ignoreUnknownValues(Boolean ignoreUnknownValues) {
-      this.ignoreUnknownValues = ignoreUnknownValues;
-      return this;
+      return setIgnoreUnknownValues(ignoreUnknownValues);
     }
 
     @Override
@@ -217,9 +210,7 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
     @Override
     @Deprecated
     public Builder projectionFields(List<String> projectionFields) {
-      this.projectionFields =
-          projectionFields != null ? ImmutableList.copyOf(projectionFields) : null;
-      return this;
+      return setProjectionFields(projectionFields);
     }
 
     @Override
@@ -236,8 +227,7 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
      */
     @Deprecated
     public Builder sourceUris(List<String> sourceUris) {
-      this.sourceUris = ImmutableList.copyOf(checkNotNull(sourceUris));
-      return this;
+      return setSourceUris(sourceUris);
     }
 
     /**
@@ -272,7 +262,7 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
   @Override
   @Deprecated
   public TableId destinationTable() {
-    return destinationTable;
+    return getDestinationTable();
   }
 
   @Override
@@ -283,7 +273,7 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
   @Override
   @Deprecated
   public JobInfo.CreateDisposition createDisposition() {
-    return this.createDisposition;
+    return this.getCreateDisposition();
   }
 
   @Override
@@ -294,7 +284,7 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
   @Override
   @Deprecated
   public JobInfo.WriteDisposition writeDisposition() {
-    return writeDisposition;
+    return getWriteDisposition();
   }
 
   @Override
@@ -305,7 +295,7 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
   @Override
   @Deprecated
   public CsvOptions csvOptions() {
-    return formatOptions instanceof CsvOptions ? (CsvOptions) formatOptions : null;
+    return getCsvOptions();
   }
 
   @Override
@@ -316,7 +306,7 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
   @Override
   @Deprecated
   public String format() {
-    return formatOptions != null ? formatOptions.getType() : null;
+    return getFormat();
   }
 
   @Override
@@ -327,7 +317,7 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
   @Override
   @Deprecated
   public Integer maxBadRecords() {
-    return maxBadRecords;
+    return getMaxBadRecords();
   }
 
   @Override
@@ -338,7 +328,7 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
   @Override
   @Deprecated
   public Schema schema() {
-    return schema;
+    return getSchema();
   }
 
   @Override
@@ -354,7 +344,7 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
   @Override
   @Deprecated
   public List<String> projectionFields() {
-    return projectionFields;
+    return getProjectionFields();
   }
 
   @Override
@@ -369,7 +359,7 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
    */
   @Deprecated
   public List<String> sourceUris() {
-    return sourceUris;
+    return getSourceUris();
   }
 
   /**
@@ -461,7 +451,7 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
    */
   @Deprecated
   public static Builder builder(TableId destinationTable, List<String> sourceUris) {
-    return new Builder().setDestinationTable(destinationTable).setSourceUris(sourceUris);
+    return newBuilder(destinationTable, sourceUris);
   }
 
   /**
@@ -495,7 +485,7 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
   @Deprecated
   public static Builder builder(TableId destinationTable, List<String> sourceUris,
       FormatOptions format) {
-    return newBuilder(destinationTable, sourceUris).setFormatOptions(format);
+    return newBuilder(destinationTable, sourceUris, format);
   }
 
   /**
@@ -513,7 +503,7 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
    */
   @Deprecated
   public static Builder builder(TableId destinationTable, String sourceUri, FormatOptions format) {
-    return newBuilder(destinationTable, ImmutableList.of(sourceUri), format);
+    return newBuilder(destinationTable, sourceUri, format);
   }
 
   /**

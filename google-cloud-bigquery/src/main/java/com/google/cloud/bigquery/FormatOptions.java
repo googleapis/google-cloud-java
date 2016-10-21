@@ -45,7 +45,7 @@ public class FormatOptions implements Serializable {
    */
   @Deprecated
   public String type() {
-    return type;
+    return getType();
   }
 
   /**

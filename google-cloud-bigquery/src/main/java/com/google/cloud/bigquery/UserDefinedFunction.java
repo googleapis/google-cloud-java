@@ -73,7 +73,7 @@ public abstract class UserDefinedFunction implements Serializable {
    */
   @Deprecated
   public Type type() {
-    return type;
+    return getType();
   }
 
   /**
@@ -89,7 +89,7 @@ public abstract class UserDefinedFunction implements Serializable {
    */
   @Deprecated
   public String content() {
-    return content;
+    return getContent();
   }
 
   /**

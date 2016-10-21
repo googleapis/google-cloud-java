@@ -90,8 +90,7 @@ public final class QueryRequest implements Serializable {
      */
     @Deprecated
     public Builder query(String query) {
-      this.query = checkNotNull(query);
-      return this;
+      return setQuery(query);
     }
 
     /**
@@ -110,8 +109,7 @@ public final class QueryRequest implements Serializable {
      */
     @Deprecated
     public Builder pageSize(Long pageSize) {
-      this.pageSize = pageSize;
-      return this;
+      return setPageSize(pageSize);
     }
 
     /**
@@ -130,8 +128,7 @@ public final class QueryRequest implements Serializable {
      */
     @Deprecated
     public Builder defaultDataset(DatasetId defaultDataset) {
-      this.defaultDataset = defaultDataset;
-      return this;
+      return setDefaultDataset(defaultDataset);
     }
 
     /**
@@ -166,8 +163,7 @@ public final class QueryRequest implements Serializable {
      */
     @Deprecated
     public Builder maxWaitTime(Long maxWaitTime) {
-      this.maxWaitTime = maxWaitTime;
-      return this;
+      return setMaxWaitTime(maxWaitTime);
     }
 
     /**
@@ -189,8 +185,7 @@ public final class QueryRequest implements Serializable {
      */
     @Deprecated
     public Builder dryRun(Boolean dryRun) {
-      this.dryRun = dryRun;
-      return this;
+      return setDryRun(dryRun);
     }
 
     /**
@@ -212,8 +207,7 @@ public final class QueryRequest implements Serializable {
      */
     @Deprecated
     public Builder useQueryCache(Boolean useQueryCache) {
-      this.useQueryCache = useQueryCache;
-      return this;
+      return setUseQueryCache(useQueryCache);
     }
 
     /**
@@ -236,8 +230,7 @@ public final class QueryRequest implements Serializable {
      */
     @Deprecated
     public Builder useLegacySql(Boolean useLegacySql) {
-      this.useLegacySql = useLegacySql;
-      return this;
+      return setUseLegacySql(useLegacySql);
     }
 
     /**
@@ -271,7 +264,7 @@ public final class QueryRequest implements Serializable {
    */
   @Deprecated
   public String query() {
-    return query;
+    return getQuery();
   }
 
   /**
@@ -286,7 +279,7 @@ public final class QueryRequest implements Serializable {
    */
   @Deprecated
   public Long pageSize() {
-    return pageSize;
+    return getPageSize();
   }
 
   /**
@@ -301,7 +294,7 @@ public final class QueryRequest implements Serializable {
    */
   @Deprecated
   public DatasetId defaultDataset() {
-    return defaultDataset;
+    return getDefaultDataset();
   }
 
   /**
@@ -322,7 +315,7 @@ public final class QueryRequest implements Serializable {
    */
   @Deprecated
   public Long maxWaitTime() {
-    return maxWaitTime;
+    return getMaxWaitTime();
   }
 
   /**
@@ -445,7 +438,7 @@ public final class QueryRequest implements Serializable {
    */
   @Deprecated
   public static Builder builder(String query) {
-    return new Builder().setQuery(query);
+    return newBuilder(query);
   }
 
   /**

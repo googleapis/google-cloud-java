@@ -81,8 +81,7 @@ public final class ExtractJobConfiguration extends JobConfiguration {
      */
     @Deprecated
     public Builder sourceTable(TableId sourceTable) {
-      this.sourceTable = sourceTable;
-      return this;
+      return setSourceTable(sourceTable);
     }
 
     /**
@@ -99,8 +98,7 @@ public final class ExtractJobConfiguration extends JobConfiguration {
      */
     @Deprecated
     public Builder destinationUris(List<String> destinationUris) {
-      this.destinationUris = destinationUris != null ? ImmutableList.copyOf(destinationUris) : null;
-      return this;
+      return setDestinationUris(destinationUris);
     }
 
     /**
@@ -117,8 +115,7 @@ public final class ExtractJobConfiguration extends JobConfiguration {
      */
     @Deprecated
     public Builder printHeader(Boolean printHeader) {
-      this.printHeader = printHeader;
-      return this;
+      return setPrintHeader(printHeader);
     }
 
     /**
@@ -134,8 +131,7 @@ public final class ExtractJobConfiguration extends JobConfiguration {
      */
     @Deprecated
     public Builder fieldDelimiter(String fieldDelimiter) {
-      this.fieldDelimiter = fieldDelimiter;
-      return this;
+      return setFieldDelimiter(fieldDelimiter);
     }
 
     /**
@@ -154,8 +150,7 @@ public final class ExtractJobConfiguration extends JobConfiguration {
      */
     @Deprecated
     public Builder format(String format) {
-      this.format = format;
-      return this;
+      return setFormat(format);
     }
 
     /**
@@ -178,8 +173,7 @@ public final class ExtractJobConfiguration extends JobConfiguration {
      */
     @Deprecated
     public Builder compression(String compression) {
-      this.compression = compression;
-      return this;
+      return setCompression(compression);
     }
 
     /**
@@ -214,7 +208,7 @@ public final class ExtractJobConfiguration extends JobConfiguration {
    */
   @Deprecated
   public TableId sourceTable() {
-    return sourceTable;
+    return getSourceTable();
   }
 
   /**
@@ -233,7 +227,7 @@ public final class ExtractJobConfiguration extends JobConfiguration {
    */
   @Deprecated
   public List<String> destinationUris() {
-    return destinationUris;
+    return getDestinationUris();
   }
 
   /**
@@ -259,7 +253,7 @@ public final class ExtractJobConfiguration extends JobConfiguration {
    */
   @Deprecated
   public String fieldDelimiter() {
-    return fieldDelimiter;
+    return getFieldDelimiter();
   }
 
   /**
@@ -274,7 +268,7 @@ public final class ExtractJobConfiguration extends JobConfiguration {
    */
   @Deprecated
   public String format() {
-    return format;
+    return getFormat();
   }
 
   /**
@@ -289,7 +283,7 @@ public final class ExtractJobConfiguration extends JobConfiguration {
    */
   @Deprecated
   public String compression() {
-    return compression;
+    return getCompression();
   }
 
   /**
@@ -352,7 +346,7 @@ public final class ExtractJobConfiguration extends JobConfiguration {
    */
   @Deprecated
   public static Builder builder(TableId sourceTable, String destinationUri) {
-    return builder(sourceTable, ImmutableList.of(checkNotNull(destinationUri)));
+    return newBuilder(sourceTable, destinationUri);
   }
 
   /**
@@ -369,7 +363,7 @@ public final class ExtractJobConfiguration extends JobConfiguration {
    */
   @Deprecated
   public static Builder builder(TableId sourceTable, List<String> destinationUris) {
-    return new Builder().setSourceTable(sourceTable).setDestinationUris(destinationUris);
+    return newBuilder(sourceTable, destinationUris);
   }
 
   /**

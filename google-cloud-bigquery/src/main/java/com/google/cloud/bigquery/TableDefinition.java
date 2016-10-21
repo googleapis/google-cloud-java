@@ -104,8 +104,7 @@ public abstract class TableDefinition implements Serializable {
      */
     @Deprecated
     public B schema(Schema schema) {
-      this.schema = checkNotNull(schema);
-      return self();
+      return setSchema(schema);
     }
 
     /**
@@ -134,7 +133,7 @@ public abstract class TableDefinition implements Serializable {
    */
   @Deprecated
   public Type type() {
-    return type;
+    return getType();
   }
 
   /**
@@ -151,7 +150,7 @@ public abstract class TableDefinition implements Serializable {
    */
   @Deprecated
   public Schema schema() {
-    return schema;
+    return getSchema();
   }
 
   /**

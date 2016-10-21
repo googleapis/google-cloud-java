@@ -90,7 +90,7 @@ public class FieldValue implements Serializable {
    */
   @Deprecated
   public Attribute attribute() {
-    return attribute;
+    return getAttribute();
   }
 
   /**
@@ -121,7 +121,7 @@ public class FieldValue implements Serializable {
    */
   @Deprecated
   public Object value() {
-    return value;
+    return getValue();
   }
 
   /**
@@ -144,8 +144,7 @@ public class FieldValue implements Serializable {
   @SuppressWarnings("unchecked")
   @Deprecated
   public String stringValue() {
-    checkNotNull(value);
-    return (String) value;
+    return getStringValue();
   }
 
   /**
@@ -173,11 +172,7 @@ public class FieldValue implements Serializable {
    */
   @Deprecated
   public byte[] bytesValue() {
-    try {
-      return BaseEncoding.base64().decode(getStringValue());
-    } catch (IllegalArgumentException ex) {
-      throw new IllegalStateException(ex);
-    }
+    return getBytesValue();
   }
 
   /**
@@ -207,7 +202,7 @@ public class FieldValue implements Serializable {
   @SuppressWarnings("unchecked")
   @Deprecated
   public long longValue() {
-    return Long.parseLong(getStringValue());
+    return getLongValue();
   }
 
   /**
@@ -234,7 +229,7 @@ public class FieldValue implements Serializable {
   @SuppressWarnings("unchecked")
   @Deprecated
   public double doubleValue() {
-    return Double.parseDouble(getStringValue());
+    return getDoubleValue();
   }
 
   /**
@@ -261,10 +256,7 @@ public class FieldValue implements Serializable {
   @SuppressWarnings("unchecked")
   @Deprecated
   public boolean booleanValue() {
-    String stringValue = getStringValue();
-    checkState(stringValue.equalsIgnoreCase("true") || stringValue.equalsIgnoreCase("false"),
-        "Field value is not of boolean type");
-    return Boolean.parseBoolean(stringValue);
+    return getBooleanValue();
   }
 
   /**
@@ -295,9 +287,7 @@ public class FieldValue implements Serializable {
   @SuppressWarnings("unchecked")
   @Deprecated
   public long timestampValue() {
-    // timestamps are encoded in the format 1408452095.22 where the integer part is seconds since
-    // epoch (e.g. 1408452095.22 == 2014-08-19 07:41:35.220 -05:00)
-    return new Double(((Double.valueOf(getStringValue())) * MICROSECONDS)).longValue();
+    return getTimestampValue();
   }
 
   /**
@@ -327,8 +317,7 @@ public class FieldValue implements Serializable {
   @SuppressWarnings("unchecked")
   @Deprecated
   public List<FieldValue> repeatedValue() {
-    checkNotNull(value);
-    return (List<FieldValue>) value;
+    return getRepeatedValue();
   }
 
   /**
@@ -356,8 +345,7 @@ public class FieldValue implements Serializable {
   @SuppressWarnings("unchecked")
   @Deprecated
   public List<FieldValue> recordValue() {
-    checkNotNull(value);
-    return (List<FieldValue>) value;
+    return getRecordValue();
   }
 
   /**

@@ -76,8 +76,7 @@ public final class Schema implements Serializable {
      */
     @Deprecated
     public Builder fields(Iterable<Field> fields) {
-      this.fields = Lists.newArrayList(checkNotNull(fields));
-      return this;
+      return setFields(fields);
     }
 
     /**
@@ -93,8 +92,7 @@ public final class Schema implements Serializable {
      */
     @Deprecated
     public Builder fields(Field... fields) {
-      this.fields = Lists.newArrayList(fields);
-      return this;
+      return setFields(fields);
     }
 
     /**
@@ -123,7 +121,7 @@ public final class Schema implements Serializable {
    */
   @Deprecated
   public List<Field> fields() {
-    return fields;
+    return getFields();
   }
 
   /**
@@ -174,7 +172,7 @@ public final class Schema implements Serializable {
    */
   @Deprecated
   public static Builder builder() {
-    return new Builder();
+    return newBuilder();
   }
 
   /**

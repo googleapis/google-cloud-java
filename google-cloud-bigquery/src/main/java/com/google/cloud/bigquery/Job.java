@@ -79,8 +79,7 @@ public class Job extends JobInfo {
     @Override
     @Deprecated
     public Builder jobId(JobId jobId) {
-      infoBuilder.setJobId(jobId);
-      return this;
+      return setJobId(jobId);
     }
 
     @Override
@@ -116,8 +115,7 @@ public class Job extends JobInfo {
     @Override
     @Deprecated
     public Builder configuration(JobConfiguration configuration) {
-      infoBuilder.setConfiguration(configuration);
-      return this;
+      return setConfiguration(configuration);
     }
 
     @Override
@@ -284,7 +282,7 @@ public class Job extends JobInfo {
    */
   @Deprecated
   public BigQuery bigquery() {
-    return bigquery;
+    return getBigquery();
   }
 
   /**
