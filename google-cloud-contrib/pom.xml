@@ -23,7 +23,7 @@
   <dependencies>
     <dependency>
       <groupId>${project.groupId}</groupId>
-      <artifactId>google-cloud</artifactId>
+      <artifactId>google-cloud-storage</artifactId>
       <version>${project.version}</version>
     </dependency>
   </dependencies>
