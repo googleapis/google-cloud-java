@@ -112,6 +112,18 @@
               <shadedPattern>shaded.cloud-nio.org</shadedPattern>
             </relocation>
             <relocation>
+              <pattern>io</pattern>
+              <shadedPattern>shaded.cloud-nio.io</shadedPattern>
+            </relocation>
+            <relocation>
+              <pattern>javax</pattern>
+              <shadedPattern>shaded.cloud-nio.javax</shadedPattern>
+            </relocation>
+            <relocation>
+              <pattern>okio</pattern>
+              <shadedPattern>shaded.cloud-nio.okio</shadedPattern>
+            </relocation>
+            <relocation>
               <pattern>google</pattern>
               <shadedPattern>shaded.cloud-nio.google</shadedPattern>
             </relocation>
