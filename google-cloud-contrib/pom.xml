@@ -21,11 +21,6 @@
     <module>google-cloud-nio-examples</module>
   </modules>
   <dependencies>
-    <dependency>
-      <groupId>${project.groupId}</groupId>
-      <artifactId>google-cloud-storage</artifactId>
-      <version>${project.version}</version>
-    </dependency>
   </dependencies>
   <build>
     <plugins>
