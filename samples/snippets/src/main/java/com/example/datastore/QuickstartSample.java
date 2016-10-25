@@ -37,8 +37,8 @@ public class QuickstartSample {
 
     // Prepares the new entity
     Entity task = Entity.builder(taskKey)
-      .set("description", "Buy milk")
-      .build();
+        .set("description", "Buy milk")
+        .build();
 
     // Saves the entity
     datastore.put(task);
