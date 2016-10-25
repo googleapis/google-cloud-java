@@ -149,7 +149,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
     }
 
     /**
-     * Sets project id.
+     * Sets project ID.
      *
      * @return the builder
      */
@@ -235,7 +235,18 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
     return true;
   }
 
-  private static AuthCredentials defaultAuthCredentials() {
+  /**
+   * Returns the default authentication credentials, or {@code null} if no default credentials could
+   * be found. This method returns the first available credentials among the following sources:
+   * <ol>
+   *   <li>App Engine credentials
+   *   <li>JSON credentials pointed to by the {@code GOOGLE_APPLICATION_CREDENTIALS} environment
+   *   variable
+   *   <li>Google Cloud SDK credentials
+   *   <li>Compute Engine credentials
+   * </ol>
+   */
+  public static AuthCredentials defaultAuthCredentials() {
     // Consider App Engine.
     if (appEngineAppId() != null) {
       try {
@@ -261,6 +272,21 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
   }
 
   protected String defaultProject() {
+    return defaultProjectId();
+  }
+
+  /**
+   * Returns the default project ID, or {@code null} if no default project ID could be found. This
+   * method returns the first available project ID among the following sources:
+   * <ol>
+   *   <li>App Engine project ID
+   *   <li>Project ID specified in the JSON credentials file pointed by the
+   *   {@code GOOGLE_APPLICATION_CREDENTIALS} environment variable
+   *   <li>Google Cloud SDK project ID
+   *   <li>Compute Engine project ID
+   * </ol>
+   */
+  public static String defaultProjectId() {
     String projectId = System.getProperty(PROJECT_ENV_NAME, System.getenv(PROJECT_ENV_NAME));
     if (projectId == null) {
       projectId =
@@ -402,8 +428,8 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
   }
 
   /**
-   * Returns the project id. Return value can be null (for services that don't require a project
-   * id).
+   * Returns the project ID. Return value can be null (for services that don't require a project
+   * ID).
    */
   public String projectId() {
     return projectId;
