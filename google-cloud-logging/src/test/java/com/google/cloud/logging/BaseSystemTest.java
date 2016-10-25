@@ -396,8 +396,13 @@ public abstract class BaseSystemTest {
     assertNull(entry.getHttpRequest());
     assertNotNull(entry.getInsertId());
     assertNotNull(entry.getTimestamp());
-    page = logging().listLogEntries(EntryListOption.filter(filter),
-        EntryListOption.sortOrder(SortingField.TIMESTAMP, SortingOrder.DESCENDING));
+    options = new EntryListOption[]{EntryListOption.filter(filter),
+        EntryListOption.sortOrder(SortingField.TIMESTAMP, SortingOrder.DESCENDING)};
+    page = logging().listLogEntries(options);
+    while (Iterators.size(page.iterateAll()) < 2) {
+      Thread.sleep(500);
+      page = logging().listLogEntries(options);
+    }
     iterator = page.iterateAll();
     Long lastTimestamp = iterator.next().getTimestamp();
     while (iterator.hasNext()) {
