@@ -33,11 +33,11 @@ import java.util.Objects;
  * QueryResponse response = bigquery.query(request);
  * while (!response.jobCompleted()) {
  *   Thread.sleep(1000);
- *   response = bigquery.getQueryResults(response.jobId());
+ *   response = bigquery.getQueryResults(response.getJobId());
  * }
- * List<BigQueryError> executionErrors = response.executionErrors();
+ * List<BigQueryError> executionErrors = response.getExecutionErrors();
  * // look for errors in executionErrors
- * QueryResult result = response.result();
+ * QueryResult result = response.getResult();
  * Iterator<List<FieldValue>> rowIterator = result.iterateAll();
  * while(rowIterator.hasNext()) {
  *   List<FieldValue> row = rowIterator.next();
@@ -69,27 +69,27 @@ public class QueryResponse implements Serializable {
 
     private Builder() {}
 
-    Builder result(QueryResult result) {
+    Builder setResult(QueryResult result) {
       this.result = result;
       return this;
     }
 
-    Builder etag(String etag) {
+    Builder setEtag(String etag) {
       this.etag = etag;
       return this;
     }
 
-    Builder jobId(JobId jobId) {
+    Builder setJobId(JobId jobId) {
       this.jobId = jobId;
       return this;
     }
 
-    Builder jobCompleted(boolean jobCompleted) {
+    Builder setJobCompleted(boolean jobCompleted) {
       this.jobCompleted = jobCompleted;
       return this;
     }
 
-    Builder executionErrors(List<BigQueryError> executionErrors) {
+    Builder setExecutionErrors(List<BigQueryError> executionErrors) {
       this.executionErrors = executionErrors;
       return this;
     }
@@ -112,14 +112,31 @@ public class QueryResponse implements Serializable {
    * Returns the result of the query. Returns {@code null} if {@link #jobCompleted()} is {@code
    * false}.
    */
+  @Deprecated
   public QueryResult result() {
+    return getResult();
+  }
+
+  /**
+   * Returns the result of the query. Returns {@code null} if {@link #jobCompleted()} is {@code
+   * false}.
+   */
+  public QueryResult getResult() {
     return result;
   }
 
   /**
    * Returns the hash of the {@code QueryResponse} resource or {@code null} if not set.
    */
+  @Deprecated
   public String etag() {
+    return getEtag();
+  }
+
+  /**
+   * Returns the hash of the {@code QueryResponse} resource or {@code null} if not set.
+   */
+  public String getEtag() {
     return etag;
   }
 
@@ -127,7 +144,16 @@ public class QueryResponse implements Serializable {
    * Returns the identity of the BigQuery Job that was created to run the query. This field will be
    * present even if the original request timed out.
    */
+  @Deprecated
   public JobId jobId() {
+    return getJobId();
+  }
+
+  /**
+   * Returns the identity of the BigQuery Job that was created to run the query. This field will be
+   * present even if the original request timed out.
+   */
+  public JobId getJobId() {
     return jobId;
   }
 
@@ -154,7 +180,16 @@ public class QueryResponse implements Serializable {
    * Returns errors and warnings encountered during the running of the job, if any. Errors here do
    * not necessarily mean that the job has completed or was unsuccessful.
    */
+  @Deprecated
   public List<BigQueryError> executionErrors() {
+    return getExecutionErrors();
+  }
+
+  /**
+   * Returns errors and warnings encountered during the running of the job, if any. Errors here do
+   * not necessarily mean that the job has completed or was unsuccessful.
+   */
+  public List<BigQueryError> getExecutionErrors() {
     return executionErrors;
   }
 
@@ -190,7 +225,7 @@ public class QueryResponse implements Serializable {
         && Objects.equals(executionErrors, response.executionErrors);
   }
 
-  static Builder builder() {
+  static Builder newBuilder() {
     return new Builder();
   }
 }

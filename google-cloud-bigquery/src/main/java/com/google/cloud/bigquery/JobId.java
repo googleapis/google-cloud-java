@@ -36,14 +36,30 @@ public final class JobId implements Serializable {
   /**
    * Returns project's user-defined id.
    */
+  @Deprecated
   public String project() {
+    return getProject();
+  }
+
+  /**
+   * Returns project's user-defined id.
+   */
+  public String getProject() {
     return project;
   }
 
   /**
    * Returns the job's user-defined id.
    */
+  @Deprecated
   public String job() {
+    return getJob();
+  }
+
+  /**
+   * Returns the job's user-defined id.
+   */
+  public String getJob() {
     return job;
   }
 
@@ -84,7 +100,7 @@ public final class JobId implements Serializable {
   }
 
   JobId setProjectId(String projectId) {
-    return project() != null ? this : JobId.of(projectId, job());
+    return getProject() != null ? this : JobId.of(projectId, getJob());
   }
 
   JobReference toPb() {

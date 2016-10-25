@@ -78,7 +78,7 @@ public abstract class JobConfiguration implements Serializable {
       return (B) this;
     }
 
-    B type(Type type) {
+    B setType(Type type) {
       this.type = checkNotNull(type);
       return self();
     }
@@ -96,7 +96,15 @@ public abstract class JobConfiguration implements Serializable {
   /**
    * Returns the type of the job configuration.
    */
+  @Deprecated
   public Type type() {
+    return getType();
+  }
+
+  /**
+   * Returns the type of the job configuration.
+   */
+  public Type getType() {
     return type;
   }
 

@@ -33,13 +33,25 @@ public class BigQueryErrorTest {
 
   @Test
   public void testConstructor() {
+    assertEquals(REASON, ERROR.getReason());
+    assertEquals(LOCATION, ERROR.getLocation());
+    assertEquals(DEBUG_INFO, ERROR.getDebugInfo());
+    assertEquals(MESSAGE, ERROR.getMessage());
+    assertEquals(REASON, ERROR_INCOMPLETE.getReason());
+    assertEquals(LOCATION, ERROR_INCOMPLETE.getLocation());
+    assertEquals(null, ERROR_INCOMPLETE.getDebugInfo());
+    assertEquals(MESSAGE, ERROR_INCOMPLETE.getMessage());
+  }
+
+  @Test
+  public void testConstructorDeprecated() {
     assertEquals(REASON, ERROR.reason());
     assertEquals(LOCATION, ERROR.location());
-    assertEquals(DEBUG_INFO, ERROR.debugInfo());
+    assertEquals(DEBUG_INFO, ERROR.getDebugInfo());
     assertEquals(MESSAGE, ERROR.message());
     assertEquals(REASON, ERROR_INCOMPLETE.reason());
     assertEquals(LOCATION, ERROR_INCOMPLETE.location());
-    assertEquals(null, ERROR_INCOMPLETE.debugInfo());
+    assertEquals(null, ERROR_INCOMPLETE.getDebugInfo());
     assertEquals(MESSAGE, ERROR_INCOMPLETE.message());
   }
 
@@ -53,9 +65,9 @@ public class BigQueryErrorTest {
     assertEquals(expected, value);
     assertEquals(expected.hashCode(), value.hashCode());
     assertEquals(expected.toString(), value.toString());
-    assertEquals(expected.reason(), value.reason());
-    assertEquals(expected.location(), value.location());
-    assertEquals(expected.debugInfo(), value.debugInfo());
-    assertEquals(expected.message(), value.message());
+    assertEquals(expected.getReason(), value.getReason());
+    assertEquals(expected.getLocation(), value.getLocation());
+    assertEquals(expected.getDebugInfo(), value.getDebugInfo());
+    assertEquals(expected.getMessage(), value.getMessage());
   }
 }

@@ -30,10 +30,10 @@ import java.util.List;
 
 public class WriteChannelConfigurationTest {
 
-  private static final CsvOptions CSV_OPTIONS = CsvOptions.builder()
-      .allowJaggedRows(true)
-      .allowQuotedNewLines(false)
-      .encoding(StandardCharsets.UTF_8)
+  private static final CsvOptions CSV_OPTIONS = CsvOptions.newBuilder()
+      .setAllowJaggedRows(true)
+      .setAllowQuotedNewLines(false)
+      .setEncoding(StandardCharsets.UTF_8)
       .build();
   private static final TableId TABLE_ID = TableId.of("dataset", "table");
   private static final CreateDisposition CREATE_DISPOSITION = CreateDisposition.CREATE_IF_NEEDED;
@@ -42,12 +42,22 @@ public class WriteChannelConfigurationTest {
   private static final String FORMAT = "CSV";
   private static final Boolean IGNORE_UNKNOWN_VALUES = true;
   private static final List<String> PROJECTION_FIELDS = ImmutableList.of("field1", "field2");
-  private static final Field FIELD_SCHEMA = Field.builder("IntegerField", Field.Type.integer())
-      .mode(Field.Mode.REQUIRED)
-      .description("FieldDescription")
+  private static final Field FIELD_SCHEMA = Field.newBuilder("IntegerField", Field.Type.integer())
+      .setMode(Field.Mode.REQUIRED)
+      .setDescription("FieldDescription")
       .build();
   private static final Schema TABLE_SCHEMA = Schema.of(FIELD_SCHEMA);
   private static final WriteChannelConfiguration LOAD_CONFIGURATION =
+      WriteChannelConfiguration.newBuilder(TABLE_ID)
+          .setCreateDisposition(CREATE_DISPOSITION)
+          .setWriteDisposition(WRITE_DISPOSITION)
+          .setFormatOptions(CSV_OPTIONS)
+          .setIgnoreUnknownValues(IGNORE_UNKNOWN_VALUES)
+          .setMaxBadRecords(MAX_BAD_RECORDS)
+          .setProjectionFields(PROJECTION_FIELDS)
+          .setSchema(TABLE_SCHEMA)
+          .build();
+  private static final WriteChannelConfiguration DEPRECATED_LOAD_CONFIGURATION =
       WriteChannelConfiguration.builder(TABLE_ID)
           .createDisposition(CREATE_DISPOSITION)
           .writeDisposition(WRITE_DISPOSITION)
@@ -62,21 +72,21 @@ public class WriteChannelConfigurationTest {
   public void testToBuilder() {
     compareLoadConfiguration(LOAD_CONFIGURATION, LOAD_CONFIGURATION.toBuilder().build());
     WriteChannelConfiguration configuration = LOAD_CONFIGURATION.toBuilder()
-        .destinationTable(TableId.of("dataset", "newTable"))
+        .setDestinationTable(TableId.of("dataset", "newTable"))
         .build();
-    assertEquals("newTable", configuration.destinationTable().table());
-    configuration = configuration.toBuilder().destinationTable(TABLE_ID).build();
+    assertEquals("newTable", configuration.getDestinationTable().getTable());
+    configuration = configuration.toBuilder().setDestinationTable(TABLE_ID).build();
     compareLoadConfiguration(LOAD_CONFIGURATION, configuration);
   }
 
   @Test
   public void testOf() {
     WriteChannelConfiguration configuration = WriteChannelConfiguration.of(TABLE_ID);
-    assertEquals(TABLE_ID, configuration.destinationTable());
+    assertEquals(TABLE_ID, configuration.getDestinationTable());
     configuration = WriteChannelConfiguration.of(TABLE_ID, CSV_OPTIONS);
-    assertEquals(TABLE_ID, configuration.destinationTable());
-    assertEquals(FORMAT, configuration.format());
-    assertEquals(CSV_OPTIONS, configuration.csvOptions());
+    assertEquals(TABLE_ID, configuration.getDestinationTable());
+    assertEquals(FORMAT, configuration.getFormat());
+    assertEquals(CSV_OPTIONS, configuration.getCsvOptions());
   }
 
   @Test
@@ -87,15 +97,64 @@ public class WriteChannelConfigurationTest {
 
   @Test
   public void testBuilder() {
-    assertEquals(TABLE_ID, LOAD_CONFIGURATION.destinationTable());
-    assertEquals(CREATE_DISPOSITION, LOAD_CONFIGURATION.createDisposition());
-    assertEquals(WRITE_DISPOSITION, LOAD_CONFIGURATION.writeDisposition());
-    assertEquals(CSV_OPTIONS, LOAD_CONFIGURATION.csvOptions());
-    assertEquals(FORMAT, LOAD_CONFIGURATION.format());
+    assertEquals(TABLE_ID, LOAD_CONFIGURATION.getDestinationTable());
+    assertEquals(CREATE_DISPOSITION, LOAD_CONFIGURATION.getCreateDisposition());
+    assertEquals(WRITE_DISPOSITION, LOAD_CONFIGURATION.getWriteDisposition());
+    assertEquals(CSV_OPTIONS, LOAD_CONFIGURATION.getCsvOptions());
+    assertEquals(FORMAT, LOAD_CONFIGURATION.getFormat());
     assertEquals(IGNORE_UNKNOWN_VALUES, LOAD_CONFIGURATION.ignoreUnknownValues());
-    assertEquals(MAX_BAD_RECORDS, LOAD_CONFIGURATION.maxBadRecords());
-    assertEquals(PROJECTION_FIELDS, LOAD_CONFIGURATION.projectionFields());
-    assertEquals(TABLE_SCHEMA, LOAD_CONFIGURATION.schema());
+    assertEquals(MAX_BAD_RECORDS, LOAD_CONFIGURATION.getMaxBadRecords());
+    assertEquals(PROJECTION_FIELDS, LOAD_CONFIGURATION.getProjectionFields());
+    assertEquals(TABLE_SCHEMA, LOAD_CONFIGURATION.getSchema());
+    WriteChannelConfiguration loadConfiguration =
+        WriteChannelConfiguration.newBuilder(TABLE_ID, CSV_OPTIONS)
+            .setCreateDisposition(CREATE_DISPOSITION)
+            .setWriteDisposition(WRITE_DISPOSITION)
+            .setIgnoreUnknownValues(IGNORE_UNKNOWN_VALUES)
+            .setMaxBadRecords(MAX_BAD_RECORDS)
+            .setProjectionFields(PROJECTION_FIELDS)
+            .setSchema(TABLE_SCHEMA)
+            .build();
+    assertEquals(TABLE_ID, loadConfiguration.getDestinationTable());
+    assertEquals(CREATE_DISPOSITION, loadConfiguration.getCreateDisposition());
+    assertEquals(WRITE_DISPOSITION, loadConfiguration.getWriteDisposition());
+    assertEquals(CSV_OPTIONS, loadConfiguration.getCsvOptions());
+    assertEquals(FORMAT, loadConfiguration.getFormat());
+    assertEquals(IGNORE_UNKNOWN_VALUES, loadConfiguration.ignoreUnknownValues());
+    assertEquals(MAX_BAD_RECORDS, loadConfiguration.getMaxBadRecords());
+    assertEquals(PROJECTION_FIELDS, loadConfiguration.getProjectionFields());
+    assertEquals(TABLE_SCHEMA, loadConfiguration.getSchema());
+  }
+
+  @Test
+  public void testBuilderDeprecated() {
+    assertEquals(TABLE_ID, DEPRECATED_LOAD_CONFIGURATION.destinationTable());
+    assertEquals(CREATE_DISPOSITION, DEPRECATED_LOAD_CONFIGURATION.createDisposition());
+    assertEquals(WRITE_DISPOSITION, DEPRECATED_LOAD_CONFIGURATION.writeDisposition());
+    assertEquals(CSV_OPTIONS, DEPRECATED_LOAD_CONFIGURATION.csvOptions());
+    assertEquals(FORMAT, DEPRECATED_LOAD_CONFIGURATION.format());
+    assertEquals(IGNORE_UNKNOWN_VALUES, DEPRECATED_LOAD_CONFIGURATION.ignoreUnknownValues());
+    assertEquals(MAX_BAD_RECORDS, DEPRECATED_LOAD_CONFIGURATION.maxBadRecords());
+    assertEquals(PROJECTION_FIELDS, DEPRECATED_LOAD_CONFIGURATION.projectionFields());
+    assertEquals(TABLE_SCHEMA, DEPRECATED_LOAD_CONFIGURATION.schema());
+    WriteChannelConfiguration loadConfiguration =
+        WriteChannelConfiguration.builder(TABLE_ID, CSV_OPTIONS)
+            .createDisposition(CREATE_DISPOSITION)
+            .writeDisposition(WRITE_DISPOSITION)
+            .ignoreUnknownValues(IGNORE_UNKNOWN_VALUES)
+            .maxBadRecords(MAX_BAD_RECORDS)
+            .projectionFields(PROJECTION_FIELDS)
+            .schema(TABLE_SCHEMA)
+            .build();
+    assertEquals(TABLE_ID, loadConfiguration.destinationTable());
+    assertEquals(CREATE_DISPOSITION, loadConfiguration.createDisposition());
+    assertEquals(WRITE_DISPOSITION, loadConfiguration.writeDisposition());
+    assertEquals(CSV_OPTIONS, loadConfiguration.csvOptions());
+    assertEquals(FORMAT, loadConfiguration.format());
+    assertEquals(IGNORE_UNKNOWN_VALUES, loadConfiguration.ignoreUnknownValues());
+    assertEquals(MAX_BAD_RECORDS, loadConfiguration.maxBadRecords());
+    assertEquals(PROJECTION_FIELDS, loadConfiguration.projectionFields());
+    assertEquals(TABLE_SCHEMA, loadConfiguration.schema());
   }
 
   @Test
@@ -112,14 +171,14 @@ public class WriteChannelConfigurationTest {
     assertEquals(expected, value);
     assertEquals(expected.hashCode(), value.hashCode());
     assertEquals(expected.toString(), value.toString());
-    assertEquals(expected.destinationTable(), value.destinationTable());
-    assertEquals(expected.createDisposition(), value.createDisposition());
-    assertEquals(expected.writeDisposition(), value.writeDisposition());
-    assertEquals(expected.csvOptions(), value.csvOptions());
-    assertEquals(expected.format(), value.format());
+    assertEquals(expected.getDestinationTable(), value.getDestinationTable());
+    assertEquals(expected.getCreateDisposition(), value.getCreateDisposition());
+    assertEquals(expected.getWriteDisposition(), value.getWriteDisposition());
+    assertEquals(expected.getCsvOptions(), value.getCsvOptions());
+    assertEquals(expected.getFormat(), value.getFormat());
     assertEquals(expected.ignoreUnknownValues(), value.ignoreUnknownValues());
-    assertEquals(expected.maxBadRecords(), value.maxBadRecords());
-    assertEquals(expected.projectionFields(), value.projectionFields());
-    assertEquals(expected.schema(), value.schema());
+    assertEquals(expected.getMaxBadRecords(), value.getMaxBadRecords());
+    assertEquals(expected.getProjectionFields(), value.getProjectionFields());
+    assertEquals(expected.getSchema(), value.getSchema());
   }
 }

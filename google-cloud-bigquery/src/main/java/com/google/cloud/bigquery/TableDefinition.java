@@ -85,7 +85,7 @@ public abstract class TableDefinition implements Serializable {
     Builder(Table tablePb) {
       this.type = Type.valueOf(tablePb.getType());
       if (tablePb.getSchema() != null) {
-        this.schema(Schema.fromPb(tablePb.getSchema()));
+        this.setSchema(Schema.fromPb(tablePb.getSchema()));
       }
     }
 
@@ -94,7 +94,7 @@ public abstract class TableDefinition implements Serializable {
       return (B) this;
     }
 
-    B type(Type type) {
+    B setType(Type type) {
       this.type = type;
       return self();
     }
@@ -102,7 +102,15 @@ public abstract class TableDefinition implements Serializable {
     /**
      * Sets the table schema.
      */
+    @Deprecated
     public B schema(Schema schema) {
+      return setSchema(schema);
+    }
+
+    /**
+     * Sets the table schema.
+     */
+    public B setSchema(Schema schema) {
       this.schema = checkNotNull(schema);
       return self();
     }
@@ -123,14 +131,32 @@ public abstract class TableDefinition implements Serializable {
    * If this table is an external table this method returns {@link Type#EXTERNAL}. If this table is
    * a view table this method returns {@link Type#VIEW}.
    */
+  @Deprecated
   public Type type() {
+    return getType();
+  }
+
+  /**
+   * Returns the table's type. If this table is simple table the method returns {@link Type#TABLE}.
+   * If this table is an external table this method returns {@link Type#EXTERNAL}. If this table is
+   * a view table this method returns {@link Type#VIEW}.
+   */
+  public Type getType() {
     return type;
   }
 
   /**
    * Returns the table's schema.
    */
+  @Deprecated
   public Schema schema() {
+    return getSchema();
+  }
+
+  /**
+   * Returns the table's schema.
+   */
+  public Schema getSchema() {
     return schema;
   }
 

@@ -53,7 +53,7 @@ public final class BigQueryException extends BaseServiceException {
   }
 
   public BigQueryException(int code, String message, BigQueryError error) {
-    super(code, message, error != null ? error.reason() : null, true);
+    super(code, message, error != null ? error.getReason() : null, true);
     this.error = error;
   }
 
@@ -70,7 +70,16 @@ public final class BigQueryException extends BaseServiceException {
    * Returns the {@link BigQueryError} that caused this exception. Returns {@code null} if none
    * exists.
    */
+  @Deprecated
   public BigQueryError error() {
+    return getError();
+  }
+
+  /**
+   * Returns the {@link BigQueryError} that caused this exception. Returns {@code null} if none
+   * exists.
+   */
+  public BigQueryError getError() {
     return error;
   }
 

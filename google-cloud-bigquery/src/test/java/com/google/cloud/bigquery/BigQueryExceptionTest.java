@@ -42,6 +42,7 @@ public class BigQueryExceptionTest {
     assertEquals(500, exception.code());
     assertEquals("message", exception.getMessage());
     assertNull(exception.reason());
+    assertNull(exception.getError());
     assertNull(exception.error());
     assertTrue(exception.retryable());
     assertTrue(exception.idempotent());
@@ -50,6 +51,7 @@ public class BigQueryExceptionTest {
     assertEquals(502, exception.code());
     assertEquals("message", exception.getMessage());
     assertNull(exception.reason());
+    assertNull(exception.getError());
     assertNull(exception.error());
     assertTrue(exception.retryable());
     assertTrue(exception.idempotent());
@@ -58,6 +60,7 @@ public class BigQueryExceptionTest {
     assertEquals(503, exception.code());
     assertEquals("message", exception.getMessage());
     assertNull(exception.reason());
+    assertNull(exception.getError());
     assertNull(exception.error());
     assertTrue(exception.retryable());
     assertTrue(exception.idempotent());
@@ -66,6 +69,7 @@ public class BigQueryExceptionTest {
     assertEquals(504, exception.code());
     assertEquals("message", exception.getMessage());
     assertNull(exception.reason());
+    assertNull(exception.getError());
     assertNull(exception.error());
     assertTrue(exception.retryable());
     assertTrue(exception.idempotent());
@@ -74,6 +78,7 @@ public class BigQueryExceptionTest {
     assertEquals(400, exception.code());
     assertEquals("message", exception.getMessage());
     assertNull(exception.reason());
+    assertNull(exception.getError());
     assertNull(exception.error());
     assertFalse(exception.retryable());
     assertTrue(exception.idempotent());
@@ -83,6 +88,7 @@ public class BigQueryExceptionTest {
     assertEquals(504, exception.code());
     assertEquals("message", exception.getMessage());
     assertEquals("reason", exception.reason());
+    assertEquals(error, exception.getError());
     assertEquals(error, exception.error());
     assertTrue(exception.retryable());
     assertTrue(exception.idempotent());
@@ -101,6 +107,7 @@ public class BigQueryExceptionTest {
     assertEquals(504, exception.code());
     assertEquals("message", exception.getMessage());
     assertNull(exception.reason());
+    assertNull(exception.getError());
     assertNull(exception.error());
     assertTrue(exception.retryable());
     assertTrue(exception.idempotent());

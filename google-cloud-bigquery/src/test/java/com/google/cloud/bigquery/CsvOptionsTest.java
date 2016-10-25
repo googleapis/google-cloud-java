@@ -31,7 +31,15 @@ public class CsvOptionsTest {
   private static final String FIELD_DELIMITER = ",";
   private static final String QUOTE = "\"";
   private static final long SKIP_LEADING_ROWS = 42L;
-  private static final CsvOptions CSV_OPTIONS = CsvOptions.builder()
+  private static final CsvOptions CSV_OPTIONS = CsvOptions.newBuilder()
+      .setAllowJaggedRows(ALLOW_JAGGED_ROWS)
+      .setAllowQuotedNewLines(ALLOW_QUOTED_NEWLINE)
+      .setEncoding(ENCODING)
+      .setFieldDelimiter(FIELD_DELIMITER)
+      .setQuote(QUOTE)
+      .setSkipLeadingRows(SKIP_LEADING_ROWS)
+      .build();
+  private static final CsvOptions DEPRECATED_CSV_OPTIONS = CsvOptions.builder()
       .allowJaggedRows(ALLOW_JAGGED_ROWS)
       .allowQuotedNewLines(ALLOW_QUOTED_NEWLINE)
       .encoding(ENCODING)
@@ -44,34 +52,45 @@ public class CsvOptionsTest {
   public void testToBuilder() {
     compareCsvOptions(CSV_OPTIONS, CSV_OPTIONS.toBuilder().build());
     CsvOptions csvOptions = CSV_OPTIONS.toBuilder()
-        .fieldDelimiter(";")
+        .setFieldDelimiter(";")
         .build();
-    assertEquals(";", csvOptions.fieldDelimiter());
-    csvOptions = csvOptions.toBuilder().fieldDelimiter(",").build();
+    assertEquals(";", csvOptions.getFieldDelimiter());
+    csvOptions = csvOptions.toBuilder().setFieldDelimiter(",").build();
     compareCsvOptions(CSV_OPTIONS, csvOptions);
   }
 
   @Test
   public void testToBuilderIncomplete() {
-    CsvOptions csvOptions = CsvOptions.builder().fieldDelimiter("|").build();
+    CsvOptions csvOptions = CsvOptions.newBuilder().setFieldDelimiter("|").build();
     assertEquals(csvOptions, csvOptions.toBuilder().build());
   }
 
   @Test
   public void testBuilder() {
-    assertEquals(FormatOptions.CSV, CSV_OPTIONS.type());
+    assertEquals(FormatOptions.CSV, CSV_OPTIONS.getType());
     assertEquals(ALLOW_JAGGED_ROWS, CSV_OPTIONS.allowJaggedRows());
     assertEquals(ALLOW_QUOTED_NEWLINE, CSV_OPTIONS.allowQuotedNewLines());
-    assertEquals(ENCODING.name(), CSV_OPTIONS.encoding());
-    assertEquals(FIELD_DELIMITER, CSV_OPTIONS.fieldDelimiter());
-    assertEquals(QUOTE, CSV_OPTIONS.quote());
-    assertEquals(SKIP_LEADING_ROWS, (long) CSV_OPTIONS.skipLeadingRows());
+    assertEquals(ENCODING.name(), CSV_OPTIONS.getEncoding());
+    assertEquals(FIELD_DELIMITER, CSV_OPTIONS.getFieldDelimiter());
+    assertEquals(QUOTE, CSV_OPTIONS.getQuote());
+    assertEquals(SKIP_LEADING_ROWS, (long) CSV_OPTIONS.getSkipLeadingRows());
+  }
+
+  @Test
+  public void testBuilderDeprecated() {
+    assertEquals(FormatOptions.CSV, DEPRECATED_CSV_OPTIONS.type());
+    assertEquals(ALLOW_JAGGED_ROWS, DEPRECATED_CSV_OPTIONS.allowJaggedRows());
+    assertEquals(ALLOW_QUOTED_NEWLINE, DEPRECATED_CSV_OPTIONS.allowQuotedNewLines());
+    assertEquals(ENCODING.name(), DEPRECATED_CSV_OPTIONS.encoding());
+    assertEquals(FIELD_DELIMITER, DEPRECATED_CSV_OPTIONS.fieldDelimiter());
+    assertEquals(QUOTE, DEPRECATED_CSV_OPTIONS.quote());
+    assertEquals(SKIP_LEADING_ROWS, (long) DEPRECATED_CSV_OPTIONS.skipLeadingRows());
   }
 
   @Test
   public void testToAndFromPb() {
     compareCsvOptions(CSV_OPTIONS, CsvOptions.fromPb(CSV_OPTIONS.toPb()));
-    CsvOptions csvOptions = CsvOptions.builder().allowJaggedRows(ALLOW_JAGGED_ROWS).build();
+    CsvOptions csvOptions = CsvOptions.newBuilder().setAllowJaggedRows(ALLOW_JAGGED_ROWS).build();
     compareCsvOptions(csvOptions, CsvOptions.fromPb(csvOptions.toPb()));
   }
 
@@ -79,9 +98,9 @@ public class CsvOptionsTest {
     assertEquals(expected, value);
     assertEquals(expected.allowJaggedRows(), value.allowJaggedRows());
     assertEquals(expected.allowQuotedNewLines(), value.allowQuotedNewLines());
-    assertEquals(expected.encoding(), value.encoding());
-    assertEquals(expected.fieldDelimiter(), value.fieldDelimiter());
-    assertEquals(expected.quote(), value.quote());
-    assertEquals(expected.skipLeadingRows(), value.skipLeadingRows());
+    assertEquals(expected.getEncoding(), value.getEncoding());
+    assertEquals(expected.getFieldDelimiter(), value.getFieldDelimiter());
+    assertEquals(expected.getQuote(), value.getQuote());
+    assertEquals(expected.getSkipLeadingRows(), value.getSkipLeadingRows());
   }
 }

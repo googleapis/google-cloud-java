@@ -80,7 +80,8 @@ public class RemoteBigQueryHelperTest {
   @Test
   public void testCreateFromStream() {
     RemoteBigQueryHelper helper = RemoteBigQueryHelper.create(PROJECT_ID, JSON_KEY_STREAM);
-    BigQueryOptions options = helper.options();
+    BigQueryOptions options = helper.getOptions();
+    assertEquals(options, helper.getOptions());
     assertEquals(PROJECT_ID, options.projectId());
     assertEquals(60000, options.connectTimeout());
     assertEquals(60000, options.readTimeout());

@@ -85,9 +85,9 @@ public class ITTableSnippets {
 
   @BeforeClass
   public static void beforeClass() {
-    bigquery = RemoteBigQueryHelper.create().options().service();
-    bigquery.create(DatasetInfo.builder(DATASET_NAME).build());
-    bigquery.create(DatasetInfo.builder(COPY_DATASET_NAME).build());
+    bigquery = RemoteBigQueryHelper.create().getOptions().service();
+    bigquery.create(DatasetInfo.newBuilder(DATASET_NAME).build());
+    bigquery.create(DatasetInfo.newBuilder(COPY_DATASET_NAME).build());
     storage = RemoteStorageHelper.create().options().service();
     storage.create(BucketInfo.of(BUCKET_NAME));
   }
@@ -95,8 +95,8 @@ public class ITTableSnippets {
   @Before
   public void before() {
     ++nextTableNumber;
-    StandardTableDefinition.Builder builder = StandardTableDefinition.builder();
-    builder.schema(SCHEMA);
+    StandardTableDefinition.Builder builder = StandardTableDefinition.newBuilder();
+    builder.setSchema(SCHEMA);
     table = bigquery.create(TableInfo.of(getTableId(), builder.build()));
     bigquery.create(TableInfo.of(getCopyTableId(), builder.build()));
     tableSnippets = new TableSnippets(table);
@@ -141,13 +141,13 @@ public class ITTableSnippets {
     Table latestTable =
         tableSnippets.reloadTableWithFields(TableField.LAST_MODIFIED_TIME, TableField.NUM_ROWS);
     assertNotNull(latestTable);
-    assertNotNull(latestTable.lastModifiedTime());
+    assertNotNull(latestTable.getLastModifiedTime());
   }
 
   @Test
   public void testUpdate() {
     Table updatedTable = tableSnippets.update();
-    assertEquals("new description", updatedTable.description());
+    assertEquals("new description", updatedTable.getDescription());
   }
 
   @Test
@@ -178,7 +178,7 @@ public class ITTableSnippets {
         FluentIterable.from(rows).transform(new Function<List<FieldValue>, List<?>>() {
           @Override
           public List<?> apply(List<FieldValue> row) {
-            return ImmutableList.of(row.get(0).stringValue(), row.get(1).booleanValue());
+            return ImmutableList.of(row.get(0).getStringValue(), row.get(1).getBooleanValue());
           }
         }).toSet();
     assertEquals(ImmutableSet.of(ROW2), values);
@@ -243,7 +243,7 @@ public class ITTableSnippets {
         FluentIterable.from(rows).transform(new Function<List<FieldValue>, List<?>>() {
           @Override
           public List<?> apply(List<FieldValue> row) {
-            return ImmutableList.of(row.get(0).stringValue(), row.get(1).booleanValue());
+            return ImmutableList.of(row.get(0).getStringValue(), row.get(1).getBooleanValue());
           }
         }).toSet();
     assertEquals(ImmutableSet.of(ROW2, ROW1), values);
@@ -272,6 +272,6 @@ public class ITTableSnippets {
 
   private void assertSuccessful(Job job) {
     assertTrue(job.isDone());
-    assertNull(job.status().error());
+    assertNull(job.getStatus().getError());
   }
 }

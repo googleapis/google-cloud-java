@@ -74,7 +74,17 @@ public class JobStatus implements Serializable {
    * {@link State#RUNNING} is being executed. A {@link State#DONE} job has completed either
    * succeeding or failing. If failed {@link #error()} will be non-null.
    */
+  @Deprecated
   public State state() {
+    return getState();
+  }
+
+  /**
+   * Returns the state of the job. A {@link State#PENDING} job is waiting to be executed. A
+   * {@link State#RUNNING} is being executed. A {@link State#DONE} job has completed either
+   * succeeding or failing. If failed {@link #error()} will be non-null.
+   */
+  public State getState() {
     return state;
   }
 
@@ -85,7 +95,19 @@ public class JobStatus implements Serializable {
    * @see <a href="https://cloud.google.com/bigquery/troubleshooting-errors">
    *     Troubleshooting Errors</a>
    */
+  @Deprecated
   public BigQueryError error() {
+    return getError();
+  }
+
+  /**
+   * Returns the final error result of the job. If present, indicates that the job has completed
+   * and was unsuccessful.
+   *
+   * @see <a href="https://cloud.google.com/bigquery/troubleshooting-errors">
+   *     Troubleshooting Errors</a>
+   */
+  public BigQueryError getError() {
     return error;
   }
 
@@ -96,7 +118,19 @@ public class JobStatus implements Serializable {
    * @see <a href="https://cloud.google.com/bigquery/troubleshooting-errors">
    *     Troubleshooting Errors</a>
    */
+  @Deprecated
   public List<BigQueryError> executionErrors() {
+    return getExecutionErrors();
+  }
+
+  /**
+   * Returns all errors encountered during the running of the job. Errors here do not necessarily
+   * mean that the job has completed or was unsuccessful.
+   *
+   * @see <a href="https://cloud.google.com/bigquery/troubleshooting-errors">
+   *     Troubleshooting Errors</a>
+   */
+  public List<BigQueryError> getExecutionErrors() {
     return executionErrors;
   }
 

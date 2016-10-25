@@ -92,14 +92,33 @@ public class QueryStage implements Serializable {
      * @see <a href="https://cloud.google.com/bigquery/query-plan-explanation#steps_metadata">Steps
      *     Metadata</a>
      */
+    @Deprecated
     public String name() {
+      return getName();
+    }
+
+    /**
+     * Returns a machine-readable name for the operation.
+     *
+     * @see <a href="https://cloud.google.com/bigquery/query-plan-explanation#steps_metadata">Steps
+     *     Metadata</a>
+     */
+    public String getName() {
       return name;
     }
 
     /**
      * Returns a list of human-readable stage descriptions.
      */
+    @Deprecated
     public List<String> substeps() {
+      return getSubsteps();
+    }
+
+    /**
+     * Returns a list of human-readable stage descriptions.
+     */
+    public List<String> getSubsteps() {
       return substeps;
     }
 
@@ -167,67 +186,67 @@ public class QueryStage implements Serializable {
 
     private Builder() {}
 
-    Builder computeRatioAvg(double computeRatioAvg) {
+    Builder setComputeRationAvg(double computeRatioAvg) {
       this.computeRatioAvg = computeRatioAvg;
       return this;
     }
 
-    Builder computeRatioMax(double computeRatioMax) {
+    Builder setComputeRatioMax(double computeRatioMax) {
       this.computeRatioMax = computeRatioMax;
       return this;
     }
 
-    Builder generatedId(long generatedId) {
+    Builder setGeneratedId(long generatedId) {
       this.generatedId = generatedId;
       return this;
     }
 
-    Builder name(String name) {
+    Builder setName(String name) {
       this.name = name;
       return this;
     }
 
-    Builder readRatioAvg(double readRatioAvg) {
+    Builder setReadRatioAvg(double readRatioAvg) {
       this.readRatioAvg = readRatioAvg;
       return this;
     }
 
-    Builder readRatioMax(double readRatioMax) {
+    Builder setReadRatioMax(double readRatioMax) {
       this.readRatioMax = readRatioMax;
       return this;
     }
 
-    Builder recordsRead(long recordsRead) {
+    Builder setRecordsRead(long recordsRead) {
       this.recordsRead = recordsRead;
       return this;
     }
 
-    Builder recordsWritten(long recordsWritten) {
+    Builder setRecordsWritten(long recordsWritten) {
       this.recordsWritten = recordsWritten;
       return this;
     }
 
-    Builder steps(List<QueryStep> steps) {
+    Builder setSteps(List<QueryStep> steps) {
       this.steps = steps;
       return this;
     }
 
-    Builder waitRatioAvg(double waitRatioAvg) {
+    Builder setWaitRatioAvg(double waitRatioAvg) {
       this.waitRatioAvg = waitRatioAvg;
       return this;
     }
 
-    Builder waitRatioMax(double waitRatioMax) {
+    Builder setWaitRatioMax(double waitRatioMax) {
       this.waitRatioMax = waitRatioMax;
       return this;
     }
 
-    Builder writeRatioAvg(double writeRatioAvg) {
+    Builder setWriteRatioAvg(double writeRatioAvg) {
       this.writeRatioAvg = writeRatioAvg;
       return this;
     }
 
-    Builder writeRatioMax(double writeRatioMax) {
+    Builder setWriteRatioMax(double writeRatioMax) {
       this.writeRatioMax = writeRatioMax;
       return this;
     }
@@ -257,7 +276,16 @@ public class QueryStage implements Serializable {
    * Returns the time the average worker spent CPU-bound, divided by the longest time spent by any
    * worker in any segment.
    */
+  @Deprecated
   public double computeRatioAvg() {
+    return getComputeRatioAvg();
+  }
+
+  /**
+   * Returns the time the average worker spent CPU-bound, divided by the longest time spent by any
+   * worker in any segment.
+   */
+  public double getComputeRatioAvg() {
     return computeRatioAvg;
   }
 
@@ -265,21 +293,46 @@ public class QueryStage implements Serializable {
    * Returns the time the slowest worker spent CPU-bound, divided by the longest time spent by any
    * worker in any segment.
    */
+  @Deprecated
   public double computeRatioMax() {
+    return getComputeRatioMax();
+  }
+
+  /**
+   * Returns the time the slowest worker spent CPU-bound, divided by the longest time spent by any
+   * worker in any segment.
+   */
+  public double getComputeRatioMax() {
     return computeRatioMax;
   }
 
   /**
    * Returns a unique, server-generated ID for the stage within its plan.
    */
+  @Deprecated
   public long generatedId() {
+    return getGeneratedId();
+  }
+
+  /**
+   * Returns a unique, server-generated ID for the stage within its plan.
+   */
+  public long getGeneratedId() {
     return generatedId;
   }
 
   /**
    * Returns a human-readable name for the stage.
    */
+  @Deprecated
   public String name() {
+    return getName();
+  }
+
+  /**
+   * Returns a human-readable name for the stage.
+   */
+  public String getName() {
     return name;
   }
 
@@ -287,7 +340,16 @@ public class QueryStage implements Serializable {
    * Returns the time the average worker spent reading input data, divided by the longest time spent
    * by any worker in any segment.
    */
+  @Deprecated
   public double readRatioAvg() {
+    return getReadRatioAvg();
+  }
+
+  /**
+   * Returns the time the average worker spent reading input data, divided by the longest time spent
+   * by any worker in any segment.
+   */
+  public double getReadRatioAvg() {
     return readRatioAvg;
   }
 
@@ -295,28 +357,61 @@ public class QueryStage implements Serializable {
    * Returns the time the slowest worker spent reading input data, divided by the longest time spent
    * by any worker in any segment.
    */
+  @Deprecated
   public double readRatioMax() {
+    return getReadRatioMax();
+  }
+
+  /**
+   * Returns the time the slowest worker spent reading input data, divided by the longest time spent
+   * by any worker in any segment.
+   */
+  public double getReadRatioMax() {
     return readRatioMax;
   }
 
   /**
    * Returns the number of rows (top-level records) read by the stage.
    */
+  @Deprecated
   public long recordsRead() {
+    return getRecordsRead();
+  }
+
+  /**
+   * Returns the number of rows (top-level records) read by the stage.
+   */
+  public long getRecordsRead() {
     return recordsRead;
   }
 
   /**
    * Returns the number of rows (top-level records) written by the stage.
    */
+  @Deprecated
   public long recordsWritten() {
+    return getRecordsWritten();
+  }
+
+  /**
+   * Returns the number of rows (top-level records) written by the stage.
+   */
+  public long getRecordsWritten() {
     return recordsWritten;
   }
 
   /**
    * Returns the list of steps within the stage in dependency order (approximately chronological).
    */
+  @Deprecated
   public List<QueryStep> steps() {
+    return getSteps();
+  }
+
+  /**
+   * Returns the list of steps within the stage in dependency order (approximately chronological).
+   */
+  public List<QueryStep> getSteps() {
     return steps;
   }
 
@@ -324,7 +419,16 @@ public class QueryStage implements Serializable {
    * Returns the time the average worker spent waiting to be scheduled, divided by the longest time
    * spent by any worker in any segment.
    */
+  @Deprecated
   public double waitRatioAvg() {
+    return getWaitRatioAvg();
+  }
+
+  /**
+   * Returns the time the average worker spent waiting to be scheduled, divided by the longest time
+   * spent by any worker in any segment.
+   */
+  public double getWaitRatioAvg() {
     return waitRatioAvg;
   }
 
@@ -332,7 +436,16 @@ public class QueryStage implements Serializable {
    * Returns the time the slowest worker spent waiting to be scheduled, divided by the longest time
    * spent by any worker in any segment.
    */
+  @Deprecated
   public double waitRatioMax() {
+    return getWaitRatioMax();
+  }
+
+  /**
+   * Returns the time the slowest worker spent waiting to be scheduled, divided by the longest time
+   * spent by any worker in any segment.
+   */
+  public double getWaitRatioMax() {
     return waitRatioMax;
   }
 
@@ -340,7 +453,16 @@ public class QueryStage implements Serializable {
    * Returns the time the average worker spent writing output data, divided by the longest time
    * spent by any worker in any segment.
    */
+  @Deprecated
   public double writeRatioAvg() {
+    return getWriteRatioAvg();
+  }
+
+  /**
+   * Returns the time the average worker spent writing output data, divided by the longest time
+   * spent by any worker in any segment.
+   */
+  public double getWriteRatioAvg() {
     return writeRatioAvg;
   }
 
@@ -348,7 +470,16 @@ public class QueryStage implements Serializable {
    * Returns the time the slowest worker spent writing output data, divided by the longest time
    * spent by any worker in any segment.
    */
+  @Deprecated
   public double writeRatioMax() {
+    return getWriteRatioMax();
+  }
+
+  /**
+   * Returns the time the slowest worker spent writing output data, divided by the longest time
+   * spent by any worker in any segment.
+   */
+  public double getWriteRatioMax() {
     return writeRatioMax;
   }
 
@@ -402,7 +533,7 @@ public class QueryStage implements Serializable {
         && Objects.equals(name, other.name);
   }
 
-  static Builder builder() {
+  static Builder newBuilder() {
     return new Builder();
   }
 
@@ -428,21 +559,21 @@ public class QueryStage implements Serializable {
 
   static QueryStage fromPb(com.google.api.services.bigquery.model.ExplainQueryStage stagePb) {
     Builder builder = new QueryStage.Builder();
-    builder.computeRatioAvg(stagePb.getComputeRatioAvg());
-    builder.computeRatioMax(stagePb.getComputeRatioMax());
-    builder.generatedId(stagePb.getId());
-    builder.name(stagePb.getName());
-    builder.readRatioAvg(stagePb.getReadRatioAvg());
-    builder.readRatioMax(stagePb.getReadRatioMax());
-    builder.recordsRead(stagePb.getRecordsRead());
-    builder.recordsWritten(stagePb.getRecordsWritten());
+    builder.setComputeRationAvg(stagePb.getComputeRatioAvg());
+    builder.setComputeRatioMax(stagePb.getComputeRatioMax());
+    builder.setGeneratedId(stagePb.getId());
+    builder.setName(stagePb.getName());
+    builder.setReadRatioAvg(stagePb.getReadRatioAvg());
+    builder.setReadRatioMax(stagePb.getReadRatioMax());
+    builder.setRecordsRead(stagePb.getRecordsRead());
+    builder.setRecordsWritten(stagePb.getRecordsWritten());
     if (stagePb.getSteps() != null) {
-      builder.steps(Lists.transform(stagePb.getSteps(), QueryStep.FROM_PB_FUNCTION));
+      builder.setSteps(Lists.transform(stagePb.getSteps(), QueryStep.FROM_PB_FUNCTION));
     }
-    builder.waitRatioAvg(stagePb.getWaitRatioAvg());
-    builder.waitRatioMax(stagePb.getWaitRatioMax());
-    builder.writeRatioAvg(stagePb.getWriteRatioAvg());
-    builder.writeRatioMax(stagePb.getWriteRatioMax());
+    builder.setWaitRatioAvg(stagePb.getWaitRatioAvg());
+    builder.setWaitRatioMax(stagePb.getWaitRatioMax());
+    builder.setWriteRatioAvg(stagePb.getWriteRatioAvg());
+    builder.setWriteRatioMax(stagePb.getWriteRatioMax());
     return builder.build();
   }
 }

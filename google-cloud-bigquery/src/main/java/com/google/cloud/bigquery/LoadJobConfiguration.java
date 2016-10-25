@@ -97,18 +97,18 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
           || loadConfigurationPb.getFieldDelimiter() != null
           || loadConfigurationPb.getQuote() != null
           || loadConfigurationPb.getSkipLeadingRows() != null) {
-        CsvOptions.Builder builder = CsvOptions.builder()
-            .encoding(loadConfigurationPb.getEncoding())
-            .fieldDelimiter(loadConfigurationPb.getFieldDelimiter())
-            .quote(loadConfigurationPb.getQuote());
+        CsvOptions.Builder builder = CsvOptions.newBuilder()
+            .setEncoding(loadConfigurationPb.getEncoding())
+            .setFieldDelimiter(loadConfigurationPb.getFieldDelimiter())
+            .setQuote(loadConfigurationPb.getQuote());
         if (loadConfigurationPb.getAllowJaggedRows() != null) {
-          builder.allowJaggedRows(loadConfigurationPb.getAllowJaggedRows());
+          builder.setAllowJaggedRows(loadConfigurationPb.getAllowJaggedRows());
         }
         if (loadConfigurationPb.getAllowQuotedNewlines() != null) {
-          builder.allowQuotedNewLines(loadConfigurationPb.getAllowQuotedNewlines());
+          builder.setAllowQuotedNewLines(loadConfigurationPb.getAllowQuotedNewlines());
         }
         if (loadConfigurationPb.getSkipLeadingRows() != null) {
-          builder.skipLeadingRows(loadConfigurationPb.getSkipLeadingRows());
+          builder.setSkipLeadingRows(loadConfigurationPb.getSkipLeadingRows());
         }
         this.formatOptions = builder.build();
       }
@@ -124,49 +124,97 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
     }
 
     @Override
+    @Deprecated
     public Builder destinationTable(TableId destinationTable) {
+      return setDestinationTable(destinationTable);
+    }
+
+    @Override
+    public Builder setDestinationTable(TableId destinationTable) {
       this.destinationTable = destinationTable;
       return this;
     }
 
     @Override
+    @Deprecated
     public Builder createDisposition(JobInfo.CreateDisposition createDisposition) {
+      return setCreateDisposition(createDisposition);
+    }
+
+    @Override
+    public Builder setCreateDisposition(JobInfo.CreateDisposition createDisposition) {
       this.createDisposition = createDisposition;
       return this;
     }
 
     @Override
+    @Deprecated
     public Builder writeDisposition(JobInfo.WriteDisposition writeDisposition) {
+      return setWriteDisposition(writeDisposition);
+    }
+
+    @Override
+    public Builder setWriteDisposition(JobInfo.WriteDisposition writeDisposition) {
       this.writeDisposition = writeDisposition;
       return this;
     }
 
     @Override
+    @Deprecated
     public Builder formatOptions(FormatOptions formatOptions) {
+      return setFormatOptions(formatOptions);
+    }
+
+    @Override
+    public Builder setFormatOptions(FormatOptions formatOptions) {
       this.formatOptions = formatOptions;
       return this;
     }
 
     @Override
+    @Deprecated
     public Builder maxBadRecords(Integer maxBadRecords) {
+      return setMaxBadRecords(maxBadRecords);
+    }
+
+    @Override
+    public Builder setMaxBadRecords(Integer maxBadRecords) {
       this.maxBadRecords = maxBadRecords;
       return this;
     }
 
     @Override
+    @Deprecated
     public Builder schema(Schema schema) {
+      return setSchema(schema);
+    }
+
+    @Override
+    public Builder setSchema(Schema schema) {
       this.schema = schema;
       return this;
     }
 
     @Override
+    @Deprecated
     public Builder ignoreUnknownValues(Boolean ignoreUnknownValues) {
+      return setIgnoreUnknownValues(ignoreUnknownValues);
+    }
+
+    @Override
+    public Builder setIgnoreUnknownValues(Boolean ignoreUnknownValues) {
       this.ignoreUnknownValues = ignoreUnknownValues;
       return this;
     }
 
     @Override
+    @Deprecated
     public Builder projectionFields(List<String> projectionFields) {
+      return setProjectionFields(projectionFields);
+    }
+
+    @Override
+    public Builder setProjectionFields(List<String> projectionFields) {
       this.projectionFields =
           projectionFields != null ? ImmutableList.copyOf(projectionFields) : null;
       return this;
@@ -177,7 +225,17 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
      * gs://bucket/path). Each URI can contain one '*' wildcard character and it must come after the
      * 'bucket' name.
      */
+    @Deprecated
     public Builder sourceUris(List<String> sourceUris) {
+      return setSourceUris(sourceUris);
+    }
+
+    /**
+     * Sets the fully-qualified URIs that point to source data in Google Cloud Storage (e.g.
+     * gs://bucket/path). Each URI can contain one '*' wildcard character and it must come after the
+     * 'bucket' name.
+     */
+    public Builder setSourceUris(List<String> sourceUris) {
       this.sourceUris = ImmutableList.copyOf(checkNotNull(sourceUris));
       return this;
     }
@@ -202,38 +260,80 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
   }
 
   @Override
+  @Deprecated
   public TableId destinationTable() {
+    return getDestinationTable();
+  }
+
+  @Override
+  public TableId getDestinationTable() {
     return destinationTable;
   }
 
   @Override
+  @Deprecated
   public JobInfo.CreateDisposition createDisposition() {
+    return this.getCreateDisposition();
+  }
+
+  @Override
+  public JobInfo.CreateDisposition getCreateDisposition() {
     return this.createDisposition;
   }
 
   @Override
+  @Deprecated
   public JobInfo.WriteDisposition writeDisposition() {
+    return getWriteDisposition();
+  }
+
+  @Override
+  public JobInfo.WriteDisposition getWriteDisposition() {
     return writeDisposition;
   }
 
   @Override
+  @Deprecated
   public CsvOptions csvOptions() {
+    return getCsvOptions();
+  }
+
+  @Override
+  public CsvOptions getCsvOptions() {
     return formatOptions instanceof CsvOptions ? (CsvOptions) formatOptions : null;
   }
 
   @Override
+  @Deprecated
+  public String format() {
+    return getFormat();
+  }
+
+  @Override
+  public String getFormat() {
+    return formatOptions != null ? formatOptions.getType() : null;
+  }
+
+  @Override
+  @Deprecated
   public Integer maxBadRecords() {
+    return getMaxBadRecords();
+  }
+
+  @Override
+  public Integer getMaxBadRecords() {
     return maxBadRecords;
   }
 
   @Override
+  @Deprecated
   public Schema schema() {
-    return schema;
+    return getSchema();
   }
 
   @Override
-  public String format() {
-    return formatOptions != null ? formatOptions.type() : null;
+  public Schema getSchema() {
+    return schema;
   }
 
   @Override
@@ -242,7 +342,13 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
   }
 
   @Override
+  @Deprecated
   public List<String> projectionFields() {
+    return getProjectionFields();
+  }
+
+  @Override
+  public List<String> getProjectionFields() {
     return projectionFields;
   }
 
@@ -251,7 +357,17 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
    * gs://bucket/path). Each URI can contain one '*' wildcard character and it must come after the
    * 'bucket' name.
    */
+  @Deprecated
   public List<String> sourceUris() {
+    return getSourceUris();
+  }
+
+  /**
+   * Returns the fully-qualified URIs that point to source data in Google Cloud Storage (e.g.
+   * gs://bucket/path). Each URI can contain one '*' wildcard character and it must come after the
+   * 'bucket' name.
+   */
+  public List<String> getSourceUris() {
     return sourceUris;
   }
 
@@ -288,7 +404,7 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
 
   @Override
   LoadJobConfiguration setProjectId(String projectId) {
-    return toBuilder().destinationTable(destinationTable().setProjectId(projectId)).build();
+    return toBuilder().setDestinationTable(getDestinationTable().setProjectId(projectId)).build();
   }
 
   @Override
@@ -301,23 +417,23 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
     if (writeDisposition != null) {
       loadConfigurationPb.setWriteDisposition(writeDisposition.toString());
     }
-    if (csvOptions() != null) {
-      CsvOptions csvOptions = csvOptions();
-      loadConfigurationPb.setFieldDelimiter(csvOptions.fieldDelimiter())
+    if (getCsvOptions() != null) {
+      CsvOptions csvOptions = getCsvOptions();
+      loadConfigurationPb.setFieldDelimiter(csvOptions.getFieldDelimiter())
           .setAllowJaggedRows(csvOptions.allowJaggedRows())
           .setAllowQuotedNewlines(csvOptions.allowQuotedNewLines())
-          .setEncoding(csvOptions.encoding())
-          .setQuote(csvOptions.quote());
-      if (csvOptions.skipLeadingRows() != null) {
+          .setEncoding(csvOptions.getEncoding())
+          .setQuote(csvOptions.getQuote());
+      if (csvOptions.getSkipLeadingRows() != null) {
         // todo(mziccard) remove checked cast or comment when #1044 is closed
-        loadConfigurationPb.setSkipLeadingRows(Ints.checkedCast(csvOptions.skipLeadingRows()));
+        loadConfigurationPb.setSkipLeadingRows(Ints.checkedCast(csvOptions.getSkipLeadingRows()));
       }
     }
     if (schema != null) {
       loadConfigurationPb.setSchema(schema.toPb());
     }
     if (formatOptions != null) {
-      loadConfigurationPb.setSourceFormat(formatOptions.type());
+      loadConfigurationPb.setSourceFormat(formatOptions.getType());
     }
     loadConfigurationPb.setMaxBadRecords(maxBadRecords);
     loadConfigurationPb.setIgnoreUnknownValues(ignoreUnknownValues);
@@ -333,8 +449,17 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
    * Creates a builder for a BigQuery Load Job configuration given the destination table and source
    * URIs.
    */
+  @Deprecated
   public static Builder builder(TableId destinationTable, List<String> sourceUris) {
-    return new Builder().destinationTable(destinationTable).sourceUris(sourceUris);
+    return newBuilder(destinationTable, sourceUris);
+  }
+
+  /**
+   * Creates a builder for a BigQuery Load Job configuration given the destination table and source
+   * URIs.
+   */
+  public static Builder newBuilder(TableId destinationTable, List<String> sourceUris) {
+    return new Builder().setDestinationTable(destinationTable).setSourceUris(sourceUris);
   }
 
   /**
@@ -342,31 +467,59 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
    * URI.
    */
   public static Builder builder(TableId destinationTable, String sourceUri) {
-    return builder(destinationTable, ImmutableList.of(sourceUri));
+    return newBuilder(destinationTable, ImmutableList.of(sourceUri));
+  }
+
+  /**
+   * Creates a builder for a BigQuery Load Job configuration given the destination table and source
+   * URI.
+   */
+  public static Builder newBuilder(TableId destinationTable, String sourceUri) {
+    return newBuilder(destinationTable, ImmutableList.of(sourceUri));
   }
 
   /**
    * Creates a builder for a BigQuery Load Job configuration given the destination table, format and
    * source URIs.
    */
+  @Deprecated
   public static Builder builder(TableId destinationTable, List<String> sourceUris,
       FormatOptions format) {
-    return builder(destinationTable, sourceUris).formatOptions(format);
+    return newBuilder(destinationTable, sourceUris, format);
+  }
+
+  /**
+   * Creates a builder for a BigQuery Load Job configuration given the destination table, format and
+   * source URIs.
+   */
+  public static Builder newBuilder(TableId destinationTable, List<String> sourceUris,
+      FormatOptions format) {
+    return newBuilder(destinationTable, sourceUris).setFormatOptions(format);
   }
 
   /**
    * Creates a builder for a BigQuery Load Job configuration given the destination table, format and
    * source URI.
    */
+  @Deprecated
   public static Builder builder(TableId destinationTable, String sourceUri, FormatOptions format) {
-    return builder(destinationTable, ImmutableList.of(sourceUri), format);
+    return newBuilder(destinationTable, sourceUri, format);
+  }
+
+  /**
+   * Creates a builder for a BigQuery Load Job configuration given the destination table, format and
+   * source URI.
+   */
+  public static Builder newBuilder(TableId destinationTable, String sourceUri,
+      FormatOptions format) {
+    return newBuilder(destinationTable, ImmutableList.of(sourceUri), format);
   }
 
   /**
    * Returns a BigQuery Load Job Configuration for the given destination table and source URIs.
    */
   public static LoadJobConfiguration of(TableId destinationTable, List<String> sourceUris) {
-    return builder(destinationTable, sourceUris).build();
+    return newBuilder(destinationTable, sourceUris).build();
   }
 
   /**
@@ -382,7 +535,7 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
    */
   public static LoadJobConfiguration of(TableId destinationTable, List<String> sourceUris,
       FormatOptions format) {
-    return builder(destinationTable, sourceUris, format).build();
+    return newBuilder(destinationTable, sourceUris, format).build();
   }
 
   /**

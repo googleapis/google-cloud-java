@@ -45,24 +45,32 @@ public class QueryStageTest {
   private static final double WAIT_RATIO_MAX = 8.8;
   private static final double WRITE_RATIO_AVG = 9.9;
   private static final double WRITE_RATIO_MAX = 10.10;
-  private static final QueryStage QUERY_STAGE = QueryStage.builder()
-      .computeRatioAvg(COMPUTE_RATIO_AVG)
-      .computeRatioMax(COMPUTE_RATIO_MAX)
-      .generatedId(ID)
-      .name(NAME)
-      .readRatioAvg(READ_RATIO_AVG)
-      .readRatioMax(READ_RATIO_MAX)
-      .recordsRead(RECORDS_READ)
-      .recordsWritten(RECORDS_WRITTEN)
-      .steps(STEPS)
-      .waitRatioAvg(WAIT_RATIO_AVG)
-      .waitRatioMax(WAIT_RATIO_MAX)
-      .writeRatioAvg(WRITE_RATIO_AVG)
-      .writeRatioMax(WRITE_RATIO_MAX)
+  private static final QueryStage QUERY_STAGE = QueryStage.newBuilder()
+      .setComputeRationAvg(COMPUTE_RATIO_AVG)
+      .setComputeRatioMax(COMPUTE_RATIO_MAX)
+      .setGeneratedId(ID)
+      .setName(NAME)
+      .setReadRatioAvg(READ_RATIO_AVG)
+      .setReadRatioMax(READ_RATIO_MAX)
+      .setRecordsRead(RECORDS_READ)
+      .setRecordsWritten(RECORDS_WRITTEN)
+      .setSteps(STEPS)
+      .setWaitRatioAvg(WAIT_RATIO_AVG)
+      .setWaitRatioMax(WAIT_RATIO_MAX)
+      .setWriteRatioAvg(WRITE_RATIO_AVG)
+      .setWriteRatioMax(WRITE_RATIO_MAX)
       .build();
 
   @Test
   public void testQueryStepConstructor() {
+    assertEquals("KIND", QUERY_STEP1.getName());
+    assertEquals("KIND", QUERY_STEP2.getName());
+    assertEquals(SUBSTEPS1, QUERY_STEP1.getSubsteps());
+    assertEquals(SUBSTEPS2, QUERY_STEP2.getSubsteps());
+  }
+
+  @Test
+  public void testQueryStepConstructorDeprecated() {
     assertEquals("KIND", QUERY_STEP1.name());
     assertEquals("KIND", QUERY_STEP2.name());
     assertEquals(SUBSTEPS1, QUERY_STEP1.substeps());
@@ -71,6 +79,23 @@ public class QueryStageTest {
 
   @Test
   public void testBuilder() {
+    assertEquals(COMPUTE_RATIO_AVG, QUERY_STAGE.getComputeRatioAvg(), 0);
+    assertEquals(COMPUTE_RATIO_MAX, QUERY_STAGE.getComputeRatioMax(), 0);
+    assertEquals(ID, QUERY_STAGE.getGeneratedId());
+    assertEquals(NAME, QUERY_STAGE.getName());
+    assertEquals(READ_RATIO_AVG, QUERY_STAGE.getReadRatioAvg(), 0);
+    assertEquals(READ_RATIO_MAX, QUERY_STAGE.getReadRatioMax(), 0);
+    assertEquals(RECORDS_READ, QUERY_STAGE.getRecordsRead());
+    assertEquals(RECORDS_WRITTEN, QUERY_STAGE.getRecordsWritten());
+    assertEquals(STEPS, QUERY_STAGE.getSteps());
+    assertEquals(WAIT_RATIO_AVG, QUERY_STAGE.getWaitRatioAvg(), 0);
+    assertEquals(WAIT_RATIO_MAX, QUERY_STAGE.getWaitRatioMax(), 0);
+    assertEquals(WRITE_RATIO_AVG, QUERY_STAGE.getWriteRatioAvg(), 0);
+    assertEquals(WRITE_RATIO_MAX, QUERY_STAGE.getWriteRatioMax(), 0);
+  }
+
+  @Test
+  public void testBuilderDeprecated() {
     assertEquals(COMPUTE_RATIO_AVG, QUERY_STAGE.computeRatioAvg(), 0);
     assertEquals(COMPUTE_RATIO_MAX, QUERY_STAGE.computeRatioMax(), 0);
     assertEquals(ID, QUERY_STAGE.generatedId());
@@ -106,26 +131,26 @@ public class QueryStageTest {
 
   private void compareQueryStage(QueryStage expected, QueryStage value) {
     assertEquals(expected, value);
-    assertEquals(expected.computeRatioAvg(), value.computeRatioAvg(), 0);
-    assertEquals(expected.computeRatioMax(), value.computeRatioMax(), 0);
-    assertEquals(expected.generatedId(), value.generatedId());
-    assertEquals(expected.name(), value.name());
-    assertEquals(expected.readRatioAvg(), value.readRatioAvg(), 0);
-    assertEquals(expected.readRatioMax(), value.readRatioMax(), 0);
-    assertEquals(expected.recordsRead(), value.recordsRead());
-    assertEquals(expected.recordsWritten(), value.recordsWritten());
-    assertEquals(expected.steps(), value.steps());
-    assertEquals(expected.waitRatioAvg(), value.waitRatioAvg(), 0);
-    assertEquals(expected.waitRatioMax(), value.waitRatioMax(), 0);
-    assertEquals(expected.writeRatioAvg(), value.writeRatioAvg(), 0);
-    assertEquals(expected.writeRatioMax(), value.writeRatioMax(), 0);
+    assertEquals(expected.getComputeRatioAvg(), value.getComputeRatioAvg(), 0);
+    assertEquals(expected.getComputeRatioMax(), value.getComputeRatioMax(), 0);
+    assertEquals(expected.getGeneratedId(), value.getGeneratedId());
+    assertEquals(expected.getName(), value.getName());
+    assertEquals(expected.getReadRatioAvg(), value.getReadRatioAvg(), 0);
+    assertEquals(expected.getReadRatioMax(), value.getReadRatioMax(), 0);
+    assertEquals(expected.getRecordsRead(), value.getRecordsRead());
+    assertEquals(expected.getRecordsWritten(), value.getRecordsWritten());
+    assertEquals(expected.getSteps(), value.getSteps());
+    assertEquals(expected.getWaitRatioAvg(), value.getWaitRatioAvg(), 0);
+    assertEquals(expected.getWaitRatioMax(), value.getWaitRatioMax(), 0);
+    assertEquals(expected.getWriteRatioAvg(), value.getWriteRatioAvg(), 0);
+    assertEquals(expected.getWriteRatioMax(), value.getWriteRatioMax(), 0);
     assertEquals(expected.hashCode(), value.hashCode());
   }
 
   private void compareQueryStep(QueryStep expected, QueryStep value) {
     assertEquals(expected, value);
-    assertEquals(expected.name(), value.name());
-    assertEquals(expected.substeps(), value.substeps());
+    assertEquals(expected.getName(), value.getName());
+    assertEquals(expected.getSubsteps(), value.getSubsteps());
     assertEquals(expected.hashCode(), value.hashCode());
   }
 }
