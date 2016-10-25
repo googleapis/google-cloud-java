@@ -16,7 +16,7 @@ To run this example:
 
 3. Compile the JAR with:
     ```
-    mvn package -DskipTests -Dmaven.javadoc.skip=true  -Dmaven.source.skip=true
+    mvn package -DskipTests -Dmaven.javadoc.skip=true -Dmaven.source.skip=true
     ```
 
 4.    Run the sample with:
