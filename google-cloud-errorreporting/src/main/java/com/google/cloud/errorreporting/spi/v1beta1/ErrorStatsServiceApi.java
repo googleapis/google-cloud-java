@@ -16,7 +16,7 @@ package com.google.cloud.errorreporting.spi.v1beta1;
 import static com.google.cloud.errorreporting.spi.v1beta1.PagedResponseWrappers.ListEventsPagedResponse;
 import static com.google.cloud.errorreporting.spi.v1beta1.PagedResponseWrappers.ListGroupStatsPagedResponse;
 
-import com.google.api.gax.grpc.UnaryApiCallable;
+import com.google.api.gax.grpc.UnaryCallable;
 import com.google.api.gax.protobuf.PathTemplate;
 import com.google.devtools.clouderrorreporting.v1beta1.DeleteEventsRequest;
 import com.google.devtools.clouderrorreporting.v1beta1.DeleteEventsResponse;
@@ -91,14 +91,12 @@ public class ErrorStatsServiceApi implements AutoCloseable {
   private final ScheduledExecutorService executor;
   private final List<AutoCloseable> closeables = new ArrayList<>();
 
-  private final UnaryApiCallable<ListGroupStatsRequest, ListGroupStatsResponse>
-      listGroupStatsCallable;
-  private final UnaryApiCallable<ListGroupStatsRequest, ListGroupStatsPagedResponse>
+  private final UnaryCallable<ListGroupStatsRequest, ListGroupStatsResponse> listGroupStatsCallable;
+  private final UnaryCallable<ListGroupStatsRequest, ListGroupStatsPagedResponse>
       listGroupStatsPagedCallable;
-  private final UnaryApiCallable<ListEventsRequest, ListEventsResponse> listEventsCallable;
-  private final UnaryApiCallable<ListEventsRequest, ListEventsPagedResponse>
-      listEventsPagedCallable;
-  private final UnaryApiCallable<DeleteEventsRequest, DeleteEventsResponse> deleteEventsCallable;
+  private final UnaryCallable<ListEventsRequest, ListEventsResponse> listEventsCallable;
+  private final UnaryCallable<ListEventsRequest, ListEventsPagedResponse> listEventsPagedCallable;
+  private final UnaryCallable<DeleteEventsRequest, DeleteEventsResponse> deleteEventsCallable;
 
   private static final PathTemplate PROJECT_PATH_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding("projects/{project}");
@@ -137,17 +135,17 @@ public class ErrorStatsServiceApi implements AutoCloseable {
     this.channel = settings.getChannelProvider().getOrBuildChannel(this.executor);
 
     this.listGroupStatsCallable =
-        UnaryApiCallable.create(settings.listGroupStatsSettings(), this.channel, this.executor);
+        UnaryCallable.create(settings.listGroupStatsSettings(), this.channel, this.executor);
     this.listGroupStatsPagedCallable =
-        UnaryApiCallable.createPagedVariant(
+        UnaryCallable.createPagedVariant(
             settings.listGroupStatsSettings(), this.channel, this.executor);
     this.listEventsCallable =
-        UnaryApiCallable.create(settings.listEventsSettings(), this.channel, this.executor);
+        UnaryCallable.create(settings.listEventsSettings(), this.channel, this.executor);
     this.listEventsPagedCallable =
-        UnaryApiCallable.createPagedVariant(
+        UnaryCallable.createPagedVariant(
             settings.listEventsSettings(), this.channel, this.executor);
     this.deleteEventsCallable =
-        UnaryApiCallable.create(settings.deleteEventsSettings(), this.channel, this.executor);
+        UnaryCallable.create(settings.deleteEventsSettings(), this.channel, this.executor);
 
     if (settings.getChannelProvider().shouldAutoClose()) {
       closeables.add(
@@ -260,7 +258,7 @@ public class ErrorStatsServiceApi implements AutoCloseable {
    * }
    * </code></pre>
    */
-  public final UnaryApiCallable<ListGroupStatsRequest, ListGroupStatsPagedResponse>
+  public final UnaryCallable<ListGroupStatsRequest, ListGroupStatsPagedResponse>
       listGroupStatsPagedCallable() {
     return listGroupStatsPagedCallable;
   }
@@ -294,7 +292,7 @@ public class ErrorStatsServiceApi implements AutoCloseable {
    * }
    * </code></pre>
    */
-  public final UnaryApiCallable<ListGroupStatsRequest, ListGroupStatsResponse>
+  public final UnaryCallable<ListGroupStatsRequest, ListGroupStatsResponse>
       listGroupStatsCallable() {
     return listGroupStatsCallable;
   }
@@ -377,8 +375,7 @@ public class ErrorStatsServiceApi implements AutoCloseable {
    * }
    * </code></pre>
    */
-  public final UnaryApiCallable<ListEventsRequest, ListEventsPagedResponse>
-      listEventsPagedCallable() {
+  public final UnaryCallable<ListEventsRequest, ListEventsPagedResponse> listEventsPagedCallable() {
     return listEventsPagedCallable;
   }
 
@@ -411,7 +408,7 @@ public class ErrorStatsServiceApi implements AutoCloseable {
    * }
    * </code></pre>
    */
-  public final UnaryApiCallable<ListEventsRequest, ListEventsResponse> listEventsCallable() {
+  public final UnaryCallable<ListEventsRequest, ListEventsResponse> listEventsCallable() {
     return listEventsCallable;
   }
 
@@ -481,7 +478,7 @@ public class ErrorStatsServiceApi implements AutoCloseable {
    * }
    * </code></pre>
    */
-  public final UnaryApiCallable<DeleteEventsRequest, DeleteEventsResponse> deleteEventsCallable() {
+  public final UnaryCallable<DeleteEventsRequest, DeleteEventsResponse> deleteEventsCallable() {
     return deleteEventsCallable;
   }
 

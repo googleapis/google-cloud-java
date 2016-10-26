@@ -13,7 +13,7 @@
  */
 package com.google.cloud.language.spi.v1beta1;
 
-import com.google.api.gax.grpc.UnaryApiCallable;
+import com.google.api.gax.grpc.UnaryCallable;
 import com.google.cloud.language.v1beta1.AnalyzeEntitiesRequest;
 import com.google.cloud.language.v1beta1.AnalyzeEntitiesResponse;
 import com.google.cloud.language.v1beta1.AnalyzeSentimentRequest;
@@ -89,11 +89,11 @@ public class LanguageServiceApi implements AutoCloseable {
   private final ScheduledExecutorService executor;
   private final List<AutoCloseable> closeables = new ArrayList<>();
 
-  private final UnaryApiCallable<AnalyzeSentimentRequest, AnalyzeSentimentResponse>
+  private final UnaryCallable<AnalyzeSentimentRequest, AnalyzeSentimentResponse>
       analyzeSentimentCallable;
-  private final UnaryApiCallable<AnalyzeEntitiesRequest, AnalyzeEntitiesResponse>
+  private final UnaryCallable<AnalyzeEntitiesRequest, AnalyzeEntitiesResponse>
       analyzeEntitiesCallable;
-  private final UnaryApiCallable<AnnotateTextRequest, AnnotateTextResponse> annotateTextCallable;
+  private final UnaryCallable<AnnotateTextRequest, AnnotateTextResponse> annotateTextCallable;
 
   /** Constructs an instance of LanguageServiceApi with default settings. */
   public static final LanguageServiceApi create() throws IOException {
@@ -119,11 +119,11 @@ public class LanguageServiceApi implements AutoCloseable {
     this.channel = settings.getChannelProvider().getOrBuildChannel(this.executor);
 
     this.analyzeSentimentCallable =
-        UnaryApiCallable.create(settings.analyzeSentimentSettings(), this.channel, this.executor);
+        UnaryCallable.create(settings.analyzeSentimentSettings(), this.channel, this.executor);
     this.analyzeEntitiesCallable =
-        UnaryApiCallable.create(settings.analyzeEntitiesSettings(), this.channel, this.executor);
+        UnaryCallable.create(settings.analyzeEntitiesSettings(), this.channel, this.executor);
     this.annotateTextCallable =
-        UnaryApiCallable.create(settings.annotateTextSettings(), this.channel, this.executor);
+        UnaryCallable.create(settings.annotateTextSettings(), this.channel, this.executor);
 
     if (settings.getChannelProvider().shouldAutoClose()) {
       closeables.add(
@@ -213,7 +213,7 @@ public class LanguageServiceApi implements AutoCloseable {
    * }
    * </code></pre>
    */
-  public final UnaryApiCallable<AnalyzeSentimentRequest, AnalyzeSentimentResponse>
+  public final UnaryCallable<AnalyzeSentimentRequest, AnalyzeSentimentResponse>
       analyzeSentimentCallable() {
     return analyzeSentimentCallable;
   }
@@ -294,7 +294,7 @@ public class LanguageServiceApi implements AutoCloseable {
    * }
    * </code></pre>
    */
-  public final UnaryApiCallable<AnalyzeEntitiesRequest, AnalyzeEntitiesResponse>
+  public final UnaryCallable<AnalyzeEntitiesRequest, AnalyzeEntitiesResponse>
       analyzeEntitiesCallable() {
     return analyzeEntitiesCallable;
   }
@@ -385,7 +385,7 @@ public class LanguageServiceApi implements AutoCloseable {
    * }
    * </code></pre>
    */
-  public final UnaryApiCallable<AnnotateTextRequest, AnnotateTextResponse> annotateTextCallable() {
+  public final UnaryCallable<AnnotateTextRequest, AnnotateTextResponse> annotateTextCallable() {
     return annotateTextCallable;
   }
 

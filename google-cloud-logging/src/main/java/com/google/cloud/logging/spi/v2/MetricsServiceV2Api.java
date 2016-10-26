@@ -15,7 +15,7 @@ package com.google.cloud.logging.spi.v2;
 
 import static com.google.cloud.logging.spi.v2.PagedResponseWrappers.ListLogMetricsPagedResponse;
 
-import com.google.api.gax.grpc.UnaryApiCallable;
+import com.google.api.gax.grpc.UnaryCallable;
 import com.google.api.gax.protobuf.PathTemplate;
 import com.google.logging.v2.CreateLogMetricRequest;
 import com.google.logging.v2.DeleteLogMetricRequest;
@@ -90,14 +90,13 @@ public class MetricsServiceV2Api implements AutoCloseable {
   private final ScheduledExecutorService executor;
   private final List<AutoCloseable> closeables = new ArrayList<>();
 
-  private final UnaryApiCallable<ListLogMetricsRequest, ListLogMetricsResponse>
-      listLogMetricsCallable;
-  private final UnaryApiCallable<ListLogMetricsRequest, ListLogMetricsPagedResponse>
+  private final UnaryCallable<ListLogMetricsRequest, ListLogMetricsResponse> listLogMetricsCallable;
+  private final UnaryCallable<ListLogMetricsRequest, ListLogMetricsPagedResponse>
       listLogMetricsPagedCallable;
-  private final UnaryApiCallable<GetLogMetricRequest, LogMetric> getLogMetricCallable;
-  private final UnaryApiCallable<CreateLogMetricRequest, LogMetric> createLogMetricCallable;
-  private final UnaryApiCallable<UpdateLogMetricRequest, LogMetric> updateLogMetricCallable;
-  private final UnaryApiCallable<DeleteLogMetricRequest, Empty> deleteLogMetricCallable;
+  private final UnaryCallable<GetLogMetricRequest, LogMetric> getLogMetricCallable;
+  private final UnaryCallable<CreateLogMetricRequest, LogMetric> createLogMetricCallable;
+  private final UnaryCallable<UpdateLogMetricRequest, LogMetric> updateLogMetricCallable;
+  private final UnaryCallable<DeleteLogMetricRequest, Empty> deleteLogMetricCallable;
 
   private static final PathTemplate PARENT_PATH_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding("projects/{project}");
@@ -156,18 +155,18 @@ public class MetricsServiceV2Api implements AutoCloseable {
     this.channel = settings.getChannelProvider().getOrBuildChannel(this.executor);
 
     this.listLogMetricsCallable =
-        UnaryApiCallable.create(settings.listLogMetricsSettings(), this.channel, this.executor);
+        UnaryCallable.create(settings.listLogMetricsSettings(), this.channel, this.executor);
     this.listLogMetricsPagedCallable =
-        UnaryApiCallable.createPagedVariant(
+        UnaryCallable.createPagedVariant(
             settings.listLogMetricsSettings(), this.channel, this.executor);
     this.getLogMetricCallable =
-        UnaryApiCallable.create(settings.getLogMetricSettings(), this.channel, this.executor);
+        UnaryCallable.create(settings.getLogMetricSettings(), this.channel, this.executor);
     this.createLogMetricCallable =
-        UnaryApiCallable.create(settings.createLogMetricSettings(), this.channel, this.executor);
+        UnaryCallable.create(settings.createLogMetricSettings(), this.channel, this.executor);
     this.updateLogMetricCallable =
-        UnaryApiCallable.create(settings.updateLogMetricSettings(), this.channel, this.executor);
+        UnaryCallable.create(settings.updateLogMetricSettings(), this.channel, this.executor);
     this.deleteLogMetricCallable =
-        UnaryApiCallable.create(settings.deleteLogMetricSettings(), this.channel, this.executor);
+        UnaryCallable.create(settings.deleteLogMetricSettings(), this.channel, this.executor);
 
     if (settings.getChannelProvider().shouldAutoClose()) {
       closeables.add(
@@ -263,7 +262,7 @@ public class MetricsServiceV2Api implements AutoCloseable {
    * }
    * </code></pre>
    */
-  public final UnaryApiCallable<ListLogMetricsRequest, ListLogMetricsPagedResponse>
+  public final UnaryCallable<ListLogMetricsRequest, ListLogMetricsPagedResponse>
       listLogMetricsPagedCallable() {
     return listLogMetricsPagedCallable;
   }
@@ -295,7 +294,7 @@ public class MetricsServiceV2Api implements AutoCloseable {
    * }
    * </code></pre>
    */
-  public final UnaryApiCallable<ListLogMetricsRequest, ListLogMetricsResponse>
+  public final UnaryCallable<ListLogMetricsRequest, ListLogMetricsResponse>
       listLogMetricsCallable() {
     return listLogMetricsCallable;
   }
@@ -365,7 +364,7 @@ public class MetricsServiceV2Api implements AutoCloseable {
    * }
    * </code></pre>
    */
-  public final UnaryApiCallable<GetLogMetricRequest, LogMetric> getLogMetricCallable() {
+  public final UnaryCallable<GetLogMetricRequest, LogMetric> getLogMetricCallable() {
     return getLogMetricCallable;
   }
 
@@ -441,7 +440,7 @@ public class MetricsServiceV2Api implements AutoCloseable {
    * }
    * </code></pre>
    */
-  public final UnaryApiCallable<CreateLogMetricRequest, LogMetric> createLogMetricCallable() {
+  public final UnaryCallable<CreateLogMetricRequest, LogMetric> createLogMetricCallable() {
     return createLogMetricCallable;
   }
 
@@ -519,7 +518,7 @@ public class MetricsServiceV2Api implements AutoCloseable {
    * }
    * </code></pre>
    */
-  public final UnaryApiCallable<UpdateLogMetricRequest, LogMetric> updateLogMetricCallable() {
+  public final UnaryCallable<UpdateLogMetricRequest, LogMetric> updateLogMetricCallable() {
     return updateLogMetricCallable;
   }
 
@@ -588,7 +587,7 @@ public class MetricsServiceV2Api implements AutoCloseable {
    * }
    * </code></pre>
    */
-  public final UnaryApiCallable<DeleteLogMetricRequest, Empty> deleteLogMetricCallable() {
+  public final UnaryCallable<DeleteLogMetricRequest, Empty> deleteLogMetricCallable() {
     return deleteLogMetricCallable;
   }
 

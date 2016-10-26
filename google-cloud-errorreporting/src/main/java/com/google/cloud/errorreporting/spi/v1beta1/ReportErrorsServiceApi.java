@@ -13,7 +13,7 @@
  */
 package com.google.cloud.errorreporting.spi.v1beta1;
 
-import com.google.api.gax.grpc.UnaryApiCallable;
+import com.google.api.gax.grpc.UnaryCallable;
 import com.google.api.gax.protobuf.PathTemplate;
 import com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest;
 import com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse;
@@ -85,7 +85,7 @@ public class ReportErrorsServiceApi implements AutoCloseable {
   private final ScheduledExecutorService executor;
   private final List<AutoCloseable> closeables = new ArrayList<>();
 
-  private final UnaryApiCallable<ReportErrorEventRequest, ReportErrorEventResponse>
+  private final UnaryCallable<ReportErrorEventRequest, ReportErrorEventResponse>
       reportErrorEventCallable;
 
   private static final PathTemplate PROJECT_PATH_TEMPLATE =
@@ -126,7 +126,7 @@ public class ReportErrorsServiceApi implements AutoCloseable {
     this.channel = settings.getChannelProvider().getOrBuildChannel(this.executor);
 
     this.reportErrorEventCallable =
-        UnaryApiCallable.create(settings.reportErrorEventSettings(), this.channel, this.executor);
+        UnaryCallable.create(settings.reportErrorEventSettings(), this.channel, this.executor);
 
     if (settings.getChannelProvider().shouldAutoClose()) {
       closeables.add(
@@ -246,7 +246,7 @@ public class ReportErrorsServiceApi implements AutoCloseable {
    * }
    * </code></pre>
    */
-  public final UnaryApiCallable<ReportErrorEventRequest, ReportErrorEventResponse>
+  public final UnaryCallable<ReportErrorEventRequest, ReportErrorEventResponse>
       reportErrorEventCallable() {
     return reportErrorEventCallable;
   }

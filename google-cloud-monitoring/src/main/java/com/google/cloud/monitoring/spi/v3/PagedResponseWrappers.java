@@ -17,9 +17,9 @@ import com.google.api.MetricDescriptor;
 import com.google.api.MonitoredResource;
 import com.google.api.MonitoredResourceDescriptor;
 import com.google.api.gax.grpc.CallContext;
-import com.google.api.gax.grpc.PageStreamingDescriptor;
+import com.google.api.gax.grpc.PagedListDescriptor;
 import com.google.api.gax.grpc.PagedListResponseImpl;
-import com.google.api.gax.grpc.UnaryApiCallable;
+import com.google.api.gax.grpc.UnaryCallable;
 import com.google.monitoring.v3.Group;
 import com.google.monitoring.v3.ListGroupMembersRequest;
 import com.google.monitoring.v3.ListGroupMembersResponse;
@@ -46,8 +46,8 @@ public class PagedResponseWrappers {
       extends PagedListResponseImpl<ListGroupsRequest, ListGroupsResponse, Group> {
 
     public ListGroupsPagedResponse(
-        UnaryApiCallable<ListGroupsRequest, ListGroupsResponse> callable,
-        PageStreamingDescriptor<ListGroupsRequest, ListGroupsResponse, Group> pageDescriptor,
+        UnaryCallable<ListGroupsRequest, ListGroupsResponse> callable,
+        PagedListDescriptor<ListGroupsRequest, ListGroupsResponse, Group> pageDescriptor,
         ListGroupsRequest request,
         CallContext context) {
       super(callable, pageDescriptor, request, context);
@@ -59,9 +59,8 @@ public class PagedResponseWrappers {
           ListGroupMembersRequest, ListGroupMembersResponse, MonitoredResource> {
 
     public ListGroupMembersPagedResponse(
-        UnaryApiCallable<ListGroupMembersRequest, ListGroupMembersResponse> callable,
-        PageStreamingDescriptor<
-                ListGroupMembersRequest, ListGroupMembersResponse, MonitoredResource>
+        UnaryCallable<ListGroupMembersRequest, ListGroupMembersResponse> callable,
+        PagedListDescriptor<ListGroupMembersRequest, ListGroupMembersResponse, MonitoredResource>
             pageDescriptor,
         ListGroupMembersRequest request,
         CallContext context) {
@@ -75,10 +74,10 @@ public class PagedResponseWrappers {
           MonitoredResourceDescriptor> {
 
     public ListMonitoredResourceDescriptorsPagedResponse(
-        UnaryApiCallable<
+        UnaryCallable<
                 ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse>
             callable,
-        PageStreamingDescriptor<
+        PagedListDescriptor<
                 ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse,
                 MonitoredResourceDescriptor>
             pageDescriptor,
@@ -93,8 +92,8 @@ public class PagedResponseWrappers {
           ListMetricDescriptorsRequest, ListMetricDescriptorsResponse, MetricDescriptor> {
 
     public ListMetricDescriptorsPagedResponse(
-        UnaryApiCallable<ListMetricDescriptorsRequest, ListMetricDescriptorsResponse> callable,
-        PageStreamingDescriptor<
+        UnaryCallable<ListMetricDescriptorsRequest, ListMetricDescriptorsResponse> callable,
+        PagedListDescriptor<
                 ListMetricDescriptorsRequest, ListMetricDescriptorsResponse, MetricDescriptor>
             pageDescriptor,
         ListMetricDescriptorsRequest request,
@@ -107,8 +106,8 @@ public class PagedResponseWrappers {
       extends PagedListResponseImpl<ListTimeSeriesRequest, ListTimeSeriesResponse, TimeSeries> {
 
     public ListTimeSeriesPagedResponse(
-        UnaryApiCallable<ListTimeSeriesRequest, ListTimeSeriesResponse> callable,
-        PageStreamingDescriptor<ListTimeSeriesRequest, ListTimeSeriesResponse, TimeSeries>
+        UnaryCallable<ListTimeSeriesRequest, ListTimeSeriesResponse> callable,
+        PagedListDescriptor<ListTimeSeriesRequest, ListTimeSeriesResponse, TimeSeries>
             pageDescriptor,
         ListTimeSeriesRequest request,
         CallContext context) {

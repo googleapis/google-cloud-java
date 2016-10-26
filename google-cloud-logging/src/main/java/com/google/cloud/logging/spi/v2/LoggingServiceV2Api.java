@@ -17,7 +17,7 @@ import static com.google.cloud.logging.spi.v2.PagedResponseWrappers.ListLogEntri
 import static com.google.cloud.logging.spi.v2.PagedResponseWrappers.ListMonitoredResourceDescriptorsPagedResponse;
 
 import com.google.api.MonitoredResource;
-import com.google.api.gax.grpc.UnaryApiCallable;
+import com.google.api.gax.grpc.UnaryCallable;
 import com.google.api.gax.protobuf.PathTemplate;
 import com.google.logging.v2.DeleteLogRequest;
 import com.google.logging.v2.ListLogEntriesRequest;
@@ -94,17 +94,16 @@ public class LoggingServiceV2Api implements AutoCloseable {
   private final ScheduledExecutorService executor;
   private final List<AutoCloseable> closeables = new ArrayList<>();
 
-  private final UnaryApiCallable<DeleteLogRequest, Empty> deleteLogCallable;
-  private final UnaryApiCallable<WriteLogEntriesRequest, WriteLogEntriesResponse>
+  private final UnaryCallable<DeleteLogRequest, Empty> deleteLogCallable;
+  private final UnaryCallable<WriteLogEntriesRequest, WriteLogEntriesResponse>
       writeLogEntriesCallable;
-  private final UnaryApiCallable<ListLogEntriesRequest, ListLogEntriesResponse>
-      listLogEntriesCallable;
-  private final UnaryApiCallable<ListLogEntriesRequest, ListLogEntriesPagedResponse>
+  private final UnaryCallable<ListLogEntriesRequest, ListLogEntriesResponse> listLogEntriesCallable;
+  private final UnaryCallable<ListLogEntriesRequest, ListLogEntriesPagedResponse>
       listLogEntriesPagedCallable;
-  private final UnaryApiCallable<
+  private final UnaryCallable<
           ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse>
       listMonitoredResourceDescriptorsCallable;
-  private final UnaryApiCallable<
+  private final UnaryCallable<
           ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsPagedResponse>
       listMonitoredResourceDescriptorsPagedCallable;
 
@@ -165,19 +164,19 @@ public class LoggingServiceV2Api implements AutoCloseable {
     this.channel = settings.getChannelProvider().getOrBuildChannel(this.executor);
 
     this.deleteLogCallable =
-        UnaryApiCallable.create(settings.deleteLogSettings(), this.channel, this.executor);
+        UnaryCallable.create(settings.deleteLogSettings(), this.channel, this.executor);
     this.writeLogEntriesCallable =
-        UnaryApiCallable.create(settings.writeLogEntriesSettings(), this.channel, this.executor);
+        UnaryCallable.create(settings.writeLogEntriesSettings(), this.channel, this.executor);
     this.listLogEntriesCallable =
-        UnaryApiCallable.create(settings.listLogEntriesSettings(), this.channel, this.executor);
+        UnaryCallable.create(settings.listLogEntriesSettings(), this.channel, this.executor);
     this.listLogEntriesPagedCallable =
-        UnaryApiCallable.createPagedVariant(
+        UnaryCallable.createPagedVariant(
             settings.listLogEntriesSettings(), this.channel, this.executor);
     this.listMonitoredResourceDescriptorsCallable =
-        UnaryApiCallable.create(
+        UnaryCallable.create(
             settings.listMonitoredResourceDescriptorsSettings(), this.channel, this.executor);
     this.listMonitoredResourceDescriptorsPagedCallable =
-        UnaryApiCallable.createPagedVariant(
+        UnaryCallable.createPagedVariant(
             settings.listMonitoredResourceDescriptorsSettings(), this.channel, this.executor);
 
     if (settings.getChannelProvider().shouldAutoClose()) {
@@ -268,7 +267,7 @@ public class LoggingServiceV2Api implements AutoCloseable {
    * }
    * </code></pre>
    */
-  public final UnaryApiCallable<DeleteLogRequest, Empty> deleteLogCallable() {
+  public final UnaryCallable<DeleteLogRequest, Empty> deleteLogCallable() {
     return deleteLogCallable;
   }
 
@@ -367,7 +366,7 @@ public class LoggingServiceV2Api implements AutoCloseable {
    * }
    * </code></pre>
    */
-  public final UnaryApiCallable<WriteLogEntriesRequest, WriteLogEntriesResponse>
+  public final UnaryCallable<WriteLogEntriesRequest, WriteLogEntriesResponse>
       writeLogEntriesCallable() {
     return writeLogEntriesCallable;
   }
@@ -462,7 +461,7 @@ public class LoggingServiceV2Api implements AutoCloseable {
    * }
    * </code></pre>
    */
-  public final UnaryApiCallable<ListLogEntriesRequest, ListLogEntriesPagedResponse>
+  public final UnaryCallable<ListLogEntriesRequest, ListLogEntriesPagedResponse>
       listLogEntriesPagedCallable() {
     return listLogEntriesPagedCallable;
   }
@@ -495,7 +494,7 @@ public class LoggingServiceV2Api implements AutoCloseable {
    * }
    * </code></pre>
    */
-  public final UnaryApiCallable<ListLogEntriesRequest, ListLogEntriesResponse>
+  public final UnaryCallable<ListLogEntriesRequest, ListLogEntriesResponse>
       listLogEntriesCallable() {
     return listLogEntriesCallable;
   }
@@ -540,7 +539,7 @@ public class LoggingServiceV2Api implements AutoCloseable {
    * }
    * </code></pre>
    */
-  public final UnaryApiCallable<
+  public final UnaryCallable<
           ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsPagedResponse>
       listMonitoredResourceDescriptorsPagedCallable() {
     return listMonitoredResourceDescriptorsPagedCallable;
@@ -570,7 +569,7 @@ public class LoggingServiceV2Api implements AutoCloseable {
    * }
    * </code></pre>
    */
-  public final UnaryApiCallable<
+  public final UnaryCallable<
           ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse>
       listMonitoredResourceDescriptorsCallable() {
     return listMonitoredResourceDescriptorsCallable;

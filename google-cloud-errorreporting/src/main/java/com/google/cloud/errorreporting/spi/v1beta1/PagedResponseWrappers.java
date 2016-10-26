@@ -14,9 +14,9 @@
 package com.google.cloud.errorreporting.spi.v1beta1;
 
 import com.google.api.gax.grpc.CallContext;
-import com.google.api.gax.grpc.PageStreamingDescriptor;
+import com.google.api.gax.grpc.PagedListDescriptor;
 import com.google.api.gax.grpc.PagedListResponseImpl;
-import com.google.api.gax.grpc.UnaryApiCallable;
+import com.google.api.gax.grpc.UnaryCallable;
 import com.google.devtools.clouderrorreporting.v1beta1.ErrorEvent;
 import com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupStats;
 import com.google.devtools.clouderrorreporting.v1beta1.ListEventsRequest;
@@ -38,8 +38,8 @@ public class PagedResponseWrappers {
           ListGroupStatsRequest, ListGroupStatsResponse, ErrorGroupStats> {
 
     public ListGroupStatsPagedResponse(
-        UnaryApiCallable<ListGroupStatsRequest, ListGroupStatsResponse> callable,
-        PageStreamingDescriptor<ListGroupStatsRequest, ListGroupStatsResponse, ErrorGroupStats>
+        UnaryCallable<ListGroupStatsRequest, ListGroupStatsResponse> callable,
+        PagedListDescriptor<ListGroupStatsRequest, ListGroupStatsResponse, ErrorGroupStats>
             pageDescriptor,
         ListGroupStatsRequest request,
         CallContext context) {
@@ -51,8 +51,8 @@ public class PagedResponseWrappers {
       extends PagedListResponseImpl<ListEventsRequest, ListEventsResponse, ErrorEvent> {
 
     public ListEventsPagedResponse(
-        UnaryApiCallable<ListEventsRequest, ListEventsResponse> callable,
-        PageStreamingDescriptor<ListEventsRequest, ListEventsResponse, ErrorEvent> pageDescriptor,
+        UnaryCallable<ListEventsRequest, ListEventsResponse> callable,
+        PagedListDescriptor<ListEventsRequest, ListEventsResponse, ErrorEvent> pageDescriptor,
         ListEventsRequest request,
         CallContext context) {
       super(callable, pageDescriptor, request, context);

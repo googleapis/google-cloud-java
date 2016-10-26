@@ -19,7 +19,7 @@ package com.google.cloud.logging.spi;
 import static com.google.common.base.MoreObjects.firstNonNull;
 
 import com.google.api.gax.core.ConnectionSettings;
-import com.google.api.gax.grpc.UnaryApiCallSettings;
+import com.google.api.gax.grpc.UnaryCallSettings;
 import com.google.api.gax.grpc.ApiException;
 import com.google.cloud.AuthCredentials;
 import com.google.cloud.GrpcServiceOptions.ExecutorFactory;
@@ -92,7 +92,7 @@ public class DefaultLoggingRpc implements LoggingRpc {
     }
 
     @Override
-    protected UnaryApiCallSettings.Builder apiCallSettings() {
+    protected UnaryCallSettings.Builder apiCallSettings() {
       return super.apiCallSettings();
     }
 
@@ -133,7 +133,7 @@ public class DefaultLoggingRpc implements LoggingRpc {
         logBuilder.provideChannelWith(connectionSettings);
         metricsBuilder.provideChannelWith(connectionSettings);
       }
-      UnaryApiCallSettings.Builder callSettingsBuilder = internalOptions.apiCallSettings();
+      UnaryCallSettings.Builder callSettingsBuilder = internalOptions.apiCallSettings();
       confBuilder.applyToAllApiMethods(callSettingsBuilder);
       logBuilder.applyToAllApiMethods(callSettingsBuilder);
       metricsBuilder.applyToAllApiMethods(callSettingsBuilder);

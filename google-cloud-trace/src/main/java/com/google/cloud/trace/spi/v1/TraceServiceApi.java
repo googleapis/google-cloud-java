@@ -15,7 +15,7 @@ package com.google.cloud.trace.spi.v1;
 
 import static com.google.cloud.trace.spi.v1.PagedResponseWrappers.ListTracesPagedResponse;
 
-import com.google.api.gax.grpc.UnaryApiCallable;
+import com.google.api.gax.grpc.UnaryCallable;
 import com.google.devtools.cloudtrace.v1.GetTraceRequest;
 import com.google.devtools.cloudtrace.v1.ListTracesRequest;
 import com.google.devtools.cloudtrace.v1.ListTracesResponse;
@@ -92,11 +92,10 @@ public class TraceServiceApi implements AutoCloseable {
   private final ScheduledExecutorService executor;
   private final List<AutoCloseable> closeables = new ArrayList<>();
 
-  private final UnaryApiCallable<PatchTracesRequest, Empty> patchTracesCallable;
-  private final UnaryApiCallable<GetTraceRequest, Trace> getTraceCallable;
-  private final UnaryApiCallable<ListTracesRequest, ListTracesResponse> listTracesCallable;
-  private final UnaryApiCallable<ListTracesRequest, ListTracesPagedResponse>
-      listTracesPagedCallable;
+  private final UnaryCallable<PatchTracesRequest, Empty> patchTracesCallable;
+  private final UnaryCallable<GetTraceRequest, Trace> getTraceCallable;
+  private final UnaryCallable<ListTracesRequest, ListTracesResponse> listTracesCallable;
+  private final UnaryCallable<ListTracesRequest, ListTracesPagedResponse> listTracesPagedCallable;
 
   /** Constructs an instance of TraceServiceApi with default settings. */
   public static final TraceServiceApi create() throws IOException {
@@ -121,13 +120,13 @@ public class TraceServiceApi implements AutoCloseable {
     this.channel = settings.getChannelProvider().getOrBuildChannel(this.executor);
 
     this.patchTracesCallable =
-        UnaryApiCallable.create(settings.patchTracesSettings(), this.channel, this.executor);
+        UnaryCallable.create(settings.patchTracesSettings(), this.channel, this.executor);
     this.getTraceCallable =
-        UnaryApiCallable.create(settings.getTraceSettings(), this.channel, this.executor);
+        UnaryCallable.create(settings.getTraceSettings(), this.channel, this.executor);
     this.listTracesCallable =
-        UnaryApiCallable.create(settings.listTracesSettings(), this.channel, this.executor);
+        UnaryCallable.create(settings.listTracesSettings(), this.channel, this.executor);
     this.listTracesPagedCallable =
-        UnaryApiCallable.createPagedVariant(
+        UnaryCallable.createPagedVariant(
             settings.listTracesSettings(), this.channel, this.executor);
 
     if (settings.getChannelProvider().shouldAutoClose()) {
@@ -232,7 +231,7 @@ public class TraceServiceApi implements AutoCloseable {
    * }
    * </code></pre>
    */
-  public final UnaryApiCallable<PatchTracesRequest, Empty> patchTracesCallable() {
+  public final UnaryCallable<PatchTracesRequest, Empty> patchTracesCallable() {
     return patchTracesCallable;
   }
 
@@ -305,7 +304,7 @@ public class TraceServiceApi implements AutoCloseable {
    * }
    * </code></pre>
    */
-  public final UnaryApiCallable<GetTraceRequest, Trace> getTraceCallable() {
+  public final UnaryCallable<GetTraceRequest, Trace> getTraceCallable() {
     return getTraceCallable;
   }
 
@@ -377,8 +376,7 @@ public class TraceServiceApi implements AutoCloseable {
    * }
    * </code></pre>
    */
-  public final UnaryApiCallable<ListTracesRequest, ListTracesPagedResponse>
-      listTracesPagedCallable() {
+  public final UnaryCallable<ListTracesRequest, ListTracesPagedResponse> listTracesPagedCallable() {
     return listTracesPagedCallable;
   }
 
@@ -409,7 +407,7 @@ public class TraceServiceApi implements AutoCloseable {
    * }
    * </code></pre>
    */
-  public final UnaryApiCallable<ListTracesRequest, ListTracesResponse> listTracesCallable() {
+  public final UnaryCallable<ListTracesRequest, ListTracesResponse> listTracesCallable() {
     return listTracesCallable;
   }
 

@@ -13,8 +13,8 @@
  */
 package com.google.cloud.speech.spi.v1beta1;
 
-import com.google.api.gax.grpc.StreamingApiCallable;
-import com.google.api.gax.grpc.UnaryApiCallable;
+import com.google.api.gax.grpc.StreamingCallable;
+import com.google.api.gax.grpc.UnaryCallable;
 import com.google.cloud.speech.v1beta1.AsyncRecognizeRequest;
 import com.google.cloud.speech.v1beta1.RecognitionAudio;
 import com.google.cloud.speech.v1beta1.RecognitionConfig;
@@ -89,9 +89,9 @@ public class SpeechApi implements AutoCloseable {
   private final ScheduledExecutorService executor;
   private final List<AutoCloseable> closeables = new ArrayList<>();
 
-  private final UnaryApiCallable<SyncRecognizeRequest, SyncRecognizeResponse> syncRecognizeCallable;
-  private final UnaryApiCallable<AsyncRecognizeRequest, Operation> asyncRecognizeCallable;
-  private final StreamingApiCallable<StreamingRecognizeRequest, StreamingRecognizeResponse>
+  private final UnaryCallable<SyncRecognizeRequest, SyncRecognizeResponse> syncRecognizeCallable;
+  private final UnaryCallable<AsyncRecognizeRequest, Operation> asyncRecognizeCallable;
+  private final StreamingCallable<StreamingRecognizeRequest, StreamingRecognizeResponse>
       streamingRecognizeCallable;
 
   /** Constructs an instance of SpeechApi with default settings. */
@@ -117,11 +117,11 @@ public class SpeechApi implements AutoCloseable {
     this.channel = settings.getChannelProvider().getOrBuildChannel(this.executor);
 
     this.syncRecognizeCallable =
-        UnaryApiCallable.create(settings.syncRecognizeSettings(), this.channel, this.executor);
+        UnaryCallable.create(settings.syncRecognizeSettings(), this.channel, this.executor);
     this.asyncRecognizeCallable =
-        UnaryApiCallable.create(settings.asyncRecognizeSettings(), this.channel, this.executor);
+        UnaryCallable.create(settings.asyncRecognizeSettings(), this.channel, this.executor);
     this.streamingRecognizeCallable =
-        StreamingApiCallable.create(settings.streamingRecognizeSettings(), this.channel);
+        StreamingCallable.create(settings.streamingRecognizeSettings(), this.channel);
 
     if (settings.getChannelProvider().shouldAutoClose()) {
       closeables.add(
@@ -221,8 +221,7 @@ public class SpeechApi implements AutoCloseable {
    * }
    * </code></pre>
    */
-  public final UnaryApiCallable<SyncRecognizeRequest, SyncRecognizeResponse>
-      syncRecognizeCallable() {
+  public final UnaryCallable<SyncRecognizeRequest, SyncRecognizeResponse> syncRecognizeCallable() {
     return syncRecognizeCallable;
   }
 
@@ -302,7 +301,7 @@ public class SpeechApi implements AutoCloseable {
    * }
    * </code></pre>
    */
-  public final UnaryApiCallable<AsyncRecognizeRequest, Operation> asyncRecognizeCallable() {
+  public final UnaryCallable<AsyncRecognizeRequest, Operation> asyncRecognizeCallable() {
     return asyncRecognizeCallable;
   }
 
@@ -340,7 +339,7 @@ public class SpeechApi implements AutoCloseable {
    * }
    * </code></pre>
    */
-  public final StreamingApiCallable<StreamingRecognizeRequest, StreamingRecognizeResponse>
+  public final StreamingCallable<StreamingRecognizeRequest, StreamingRecognizeResponse>
       streamingRecognizeCallable() {
     return streamingRecognizeCallable;
   }

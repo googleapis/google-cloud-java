@@ -16,7 +16,7 @@ package com.google.cloud.monitoring.spi.v3;
 import static com.google.cloud.monitoring.spi.v3.PagedResponseWrappers.ListGroupMembersPagedResponse;
 import static com.google.cloud.monitoring.spi.v3.PagedResponseWrappers.ListGroupsPagedResponse;
 
-import com.google.api.gax.grpc.UnaryApiCallable;
+import com.google.api.gax.grpc.UnaryCallable;
 import com.google.api.gax.protobuf.PathTemplate;
 import com.google.monitoring.v3.CreateGroupRequest;
 import com.google.monitoring.v3.DeleteGroupRequest;
@@ -101,16 +101,15 @@ public class GroupServiceApi implements AutoCloseable {
   private final ScheduledExecutorService executor;
   private final List<AutoCloseable> closeables = new ArrayList<>();
 
-  private final UnaryApiCallable<ListGroupsRequest, ListGroupsResponse> listGroupsCallable;
-  private final UnaryApiCallable<ListGroupsRequest, ListGroupsPagedResponse>
-      listGroupsPagedCallable;
-  private final UnaryApiCallable<GetGroupRequest, Group> getGroupCallable;
-  private final UnaryApiCallable<CreateGroupRequest, Group> createGroupCallable;
-  private final UnaryApiCallable<UpdateGroupRequest, Group> updateGroupCallable;
-  private final UnaryApiCallable<DeleteGroupRequest, Empty> deleteGroupCallable;
-  private final UnaryApiCallable<ListGroupMembersRequest, ListGroupMembersResponse>
+  private final UnaryCallable<ListGroupsRequest, ListGroupsResponse> listGroupsCallable;
+  private final UnaryCallable<ListGroupsRequest, ListGroupsPagedResponse> listGroupsPagedCallable;
+  private final UnaryCallable<GetGroupRequest, Group> getGroupCallable;
+  private final UnaryCallable<CreateGroupRequest, Group> createGroupCallable;
+  private final UnaryCallable<UpdateGroupRequest, Group> updateGroupCallable;
+  private final UnaryCallable<DeleteGroupRequest, Empty> deleteGroupCallable;
+  private final UnaryCallable<ListGroupMembersRequest, ListGroupMembersResponse>
       listGroupMembersCallable;
-  private final UnaryApiCallable<ListGroupMembersRequest, ListGroupMembersPagedResponse>
+  private final UnaryCallable<ListGroupMembersRequest, ListGroupMembersPagedResponse>
       listGroupMembersPagedCallable;
 
   private static final PathTemplate PROJECT_PATH_TEMPLATE =
@@ -169,22 +168,22 @@ public class GroupServiceApi implements AutoCloseable {
     this.channel = settings.getChannelProvider().getOrBuildChannel(this.executor);
 
     this.listGroupsCallable =
-        UnaryApiCallable.create(settings.listGroupsSettings(), this.channel, this.executor);
+        UnaryCallable.create(settings.listGroupsSettings(), this.channel, this.executor);
     this.listGroupsPagedCallable =
-        UnaryApiCallable.createPagedVariant(
+        UnaryCallable.createPagedVariant(
             settings.listGroupsSettings(), this.channel, this.executor);
     this.getGroupCallable =
-        UnaryApiCallable.create(settings.getGroupSettings(), this.channel, this.executor);
+        UnaryCallable.create(settings.getGroupSettings(), this.channel, this.executor);
     this.createGroupCallable =
-        UnaryApiCallable.create(settings.createGroupSettings(), this.channel, this.executor);
+        UnaryCallable.create(settings.createGroupSettings(), this.channel, this.executor);
     this.updateGroupCallable =
-        UnaryApiCallable.create(settings.updateGroupSettings(), this.channel, this.executor);
+        UnaryCallable.create(settings.updateGroupSettings(), this.channel, this.executor);
     this.deleteGroupCallable =
-        UnaryApiCallable.create(settings.deleteGroupSettings(), this.channel, this.executor);
+        UnaryCallable.create(settings.deleteGroupSettings(), this.channel, this.executor);
     this.listGroupMembersCallable =
-        UnaryApiCallable.create(settings.listGroupMembersSettings(), this.channel, this.executor);
+        UnaryCallable.create(settings.listGroupMembersSettings(), this.channel, this.executor);
     this.listGroupMembersPagedCallable =
-        UnaryApiCallable.createPagedVariant(
+        UnaryCallable.createPagedVariant(
             settings.listGroupMembersSettings(), this.channel, this.executor);
 
     if (settings.getChannelProvider().shouldAutoClose()) {
@@ -256,8 +255,7 @@ public class GroupServiceApi implements AutoCloseable {
    * }
    * </code></pre>
    */
-  public final UnaryApiCallable<ListGroupsRequest, ListGroupsPagedResponse>
-      listGroupsPagedCallable() {
+  public final UnaryCallable<ListGroupsRequest, ListGroupsPagedResponse> listGroupsPagedCallable() {
     return listGroupsPagedCallable;
   }
 
@@ -288,7 +286,7 @@ public class GroupServiceApi implements AutoCloseable {
    * }
    * </code></pre>
    */
-  public final UnaryApiCallable<ListGroupsRequest, ListGroupsResponse> listGroupsCallable() {
+  public final UnaryCallable<ListGroupsRequest, ListGroupsResponse> listGroupsCallable() {
     return listGroupsCallable;
   }
 
@@ -356,7 +354,7 @@ public class GroupServiceApi implements AutoCloseable {
    * }
    * </code></pre>
    */
-  public final UnaryApiCallable<GetGroupRequest, Group> getGroupCallable() {
+  public final UnaryCallable<GetGroupRequest, Group> getGroupCallable() {
     return getGroupCallable;
   }
 
@@ -432,7 +430,7 @@ public class GroupServiceApi implements AutoCloseable {
    * }
    * </code></pre>
    */
-  public final UnaryApiCallable<CreateGroupRequest, Group> createGroupCallable() {
+  public final UnaryCallable<CreateGroupRequest, Group> createGroupCallable() {
     return createGroupCallable;
   }
 
@@ -499,7 +497,7 @@ public class GroupServiceApi implements AutoCloseable {
    * }
    * </code></pre>
    */
-  public final UnaryApiCallable<UpdateGroupRequest, Group> updateGroupCallable() {
+  public final UnaryCallable<UpdateGroupRequest, Group> updateGroupCallable() {
     return updateGroupCallable;
   }
 
@@ -567,7 +565,7 @@ public class GroupServiceApi implements AutoCloseable {
    * }
    * </code></pre>
    */
-  public final UnaryApiCallable<DeleteGroupRequest, Empty> deleteGroupCallable() {
+  public final UnaryCallable<DeleteGroupRequest, Empty> deleteGroupCallable() {
     return deleteGroupCallable;
   }
 
@@ -641,7 +639,7 @@ public class GroupServiceApi implements AutoCloseable {
    * }
    * </code></pre>
    */
-  public final UnaryApiCallable<ListGroupMembersRequest, ListGroupMembersPagedResponse>
+  public final UnaryCallable<ListGroupMembersRequest, ListGroupMembersPagedResponse>
       listGroupMembersPagedCallable() {
     return listGroupMembersPagedCallable;
   }
@@ -673,7 +671,7 @@ public class GroupServiceApi implements AutoCloseable {
    * }
    * </code></pre>
    */
-  public final UnaryApiCallable<ListGroupMembersRequest, ListGroupMembersResponse>
+  public final UnaryCallable<ListGroupMembersRequest, ListGroupMembersResponse>
       listGroupMembersCallable() {
     return listGroupMembersCallable;
   }

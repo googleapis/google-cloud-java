@@ -14,9 +14,9 @@
 package com.google.cloud.pubsub.spi.v1;
 
 import com.google.api.gax.grpc.CallContext;
-import com.google.api.gax.grpc.PageStreamingDescriptor;
+import com.google.api.gax.grpc.PagedListDescriptor;
 import com.google.api.gax.grpc.PagedListResponseImpl;
-import com.google.api.gax.grpc.UnaryApiCallable;
+import com.google.api.gax.grpc.UnaryCallable;
 import com.google.pubsub.v1.ListSubscriptionsRequest;
 import com.google.pubsub.v1.ListSubscriptionsResponse;
 import com.google.pubsub.v1.ListTopicSubscriptionsRequest;
@@ -39,8 +39,8 @@ public class PagedResponseWrappers {
       extends PagedListResponseImpl<ListTopicsRequest, ListTopicsResponse, Topic> {
 
     public ListTopicsPagedResponse(
-        UnaryApiCallable<ListTopicsRequest, ListTopicsResponse> callable,
-        PageStreamingDescriptor<ListTopicsRequest, ListTopicsResponse, Topic> pageDescriptor,
+        UnaryCallable<ListTopicsRequest, ListTopicsResponse> callable,
+        PagedListDescriptor<ListTopicsRequest, ListTopicsResponse, Topic> pageDescriptor,
         ListTopicsRequest request,
         CallContext context) {
       super(callable, pageDescriptor, request, context);
@@ -52,9 +52,8 @@ public class PagedResponseWrappers {
           ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse, String> {
 
     public ListTopicSubscriptionsPagedResponse(
-        UnaryApiCallable<ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse> callable,
-        PageStreamingDescriptor<
-                ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse, String>
+        UnaryCallable<ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse> callable,
+        PagedListDescriptor<ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse, String>
             pageDescriptor,
         ListTopicSubscriptionsRequest request,
         CallContext context) {
@@ -67,8 +66,8 @@ public class PagedResponseWrappers {
           ListSubscriptionsRequest, ListSubscriptionsResponse, Subscription> {
 
     public ListSubscriptionsPagedResponse(
-        UnaryApiCallable<ListSubscriptionsRequest, ListSubscriptionsResponse> callable,
-        PageStreamingDescriptor<ListSubscriptionsRequest, ListSubscriptionsResponse, Subscription>
+        UnaryCallable<ListSubscriptionsRequest, ListSubscriptionsResponse> callable,
+        PagedListDescriptor<ListSubscriptionsRequest, ListSubscriptionsResponse, Subscription>
             pageDescriptor,
         ListSubscriptionsRequest request,
         CallContext context) {

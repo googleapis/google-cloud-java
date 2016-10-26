@@ -16,7 +16,7 @@ package com.google.cloud.pubsub.spi.v1;
 import static com.google.cloud.pubsub.spi.v1.PagedResponseWrappers.ListTopicSubscriptionsPagedResponse;
 import static com.google.cloud.pubsub.spi.v1.PagedResponseWrappers.ListTopicsPagedResponse;
 
-import com.google.api.gax.grpc.UnaryApiCallable;
+import com.google.api.gax.grpc.UnaryCallable;
 import com.google.api.gax.protobuf.PathTemplate;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
@@ -100,20 +100,19 @@ public class PublisherApi implements AutoCloseable {
   private final ScheduledExecutorService executor;
   private final List<AutoCloseable> closeables = new ArrayList<>();
 
-  private final UnaryApiCallable<Topic, Topic> createTopicCallable;
-  private final UnaryApiCallable<PublishRequest, PublishResponse> publishCallable;
-  private final UnaryApiCallable<GetTopicRequest, Topic> getTopicCallable;
-  private final UnaryApiCallable<ListTopicsRequest, ListTopicsResponse> listTopicsCallable;
-  private final UnaryApiCallable<ListTopicsRequest, ListTopicsPagedResponse>
-      listTopicsPagedCallable;
-  private final UnaryApiCallable<ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse>
+  private final UnaryCallable<Topic, Topic> createTopicCallable;
+  private final UnaryCallable<PublishRequest, PublishResponse> publishCallable;
+  private final UnaryCallable<GetTopicRequest, Topic> getTopicCallable;
+  private final UnaryCallable<ListTopicsRequest, ListTopicsResponse> listTopicsCallable;
+  private final UnaryCallable<ListTopicsRequest, ListTopicsPagedResponse> listTopicsPagedCallable;
+  private final UnaryCallable<ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse>
       listTopicSubscriptionsCallable;
-  private final UnaryApiCallable<ListTopicSubscriptionsRequest, ListTopicSubscriptionsPagedResponse>
+  private final UnaryCallable<ListTopicSubscriptionsRequest, ListTopicSubscriptionsPagedResponse>
       listTopicSubscriptionsPagedCallable;
-  private final UnaryApiCallable<DeleteTopicRequest, Empty> deleteTopicCallable;
-  private final UnaryApiCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable;
-  private final UnaryApiCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable;
-  private final UnaryApiCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
+  private final UnaryCallable<DeleteTopicRequest, Empty> deleteTopicCallable;
+  private final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable;
+  private final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable;
+  private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable;
 
   private static final PathTemplate PROJECT_PATH_TEMPLATE =
@@ -172,33 +171,33 @@ public class PublisherApi implements AutoCloseable {
     this.channel = settings.getChannelProvider().getOrBuildChannel(this.executor);
 
     this.createTopicCallable =
-        UnaryApiCallable.create(settings.createTopicSettings(), this.channel, this.executor);
+        UnaryCallable.create(settings.createTopicSettings(), this.channel, this.executor);
     this.publishCallable =
-        UnaryApiCallable.create(settings.publishSettings(), this.channel, this.executor);
+        UnaryCallable.create(settings.publishSettings(), this.channel, this.executor);
     if (settings.publishSettings().getBundlerFactory() != null) {
       closeables.add(settings.publishSettings().getBundlerFactory());
     }
     this.getTopicCallable =
-        UnaryApiCallable.create(settings.getTopicSettings(), this.channel, this.executor);
+        UnaryCallable.create(settings.getTopicSettings(), this.channel, this.executor);
     this.listTopicsCallable =
-        UnaryApiCallable.create(settings.listTopicsSettings(), this.channel, this.executor);
+        UnaryCallable.create(settings.listTopicsSettings(), this.channel, this.executor);
     this.listTopicsPagedCallable =
-        UnaryApiCallable.createPagedVariant(
+        UnaryCallable.createPagedVariant(
             settings.listTopicsSettings(), this.channel, this.executor);
     this.listTopicSubscriptionsCallable =
-        UnaryApiCallable.create(
+        UnaryCallable.create(
             settings.listTopicSubscriptionsSettings(), this.channel, this.executor);
     this.listTopicSubscriptionsPagedCallable =
-        UnaryApiCallable.createPagedVariant(
+        UnaryCallable.createPagedVariant(
             settings.listTopicSubscriptionsSettings(), this.channel, this.executor);
     this.deleteTopicCallable =
-        UnaryApiCallable.create(settings.deleteTopicSettings(), this.channel, this.executor);
+        UnaryCallable.create(settings.deleteTopicSettings(), this.channel, this.executor);
     this.setIamPolicyCallable =
-        UnaryApiCallable.create(settings.setIamPolicySettings(), this.channel, this.executor);
+        UnaryCallable.create(settings.setIamPolicySettings(), this.channel, this.executor);
     this.getIamPolicyCallable =
-        UnaryApiCallable.create(settings.getIamPolicySettings(), this.channel, this.executor);
+        UnaryCallable.create(settings.getIamPolicySettings(), this.channel, this.executor);
     this.testIamPermissionsCallable =
-        UnaryApiCallable.create(settings.testIamPermissionsSettings(), this.channel, this.executor);
+        UnaryCallable.create(settings.testIamPermissionsSettings(), this.channel, this.executor);
 
     if (settings.getChannelProvider().shouldAutoClose()) {
       closeables.add(
@@ -291,7 +290,7 @@ public class PublisherApi implements AutoCloseable {
    * }
    * </code></pre>
    */
-  public final UnaryApiCallable<Topic, Topic> createTopicCallable() {
+  public final UnaryCallable<Topic, Topic> createTopicCallable() {
     return createTopicCallable;
   }
 
@@ -383,7 +382,7 @@ public class PublisherApi implements AutoCloseable {
    * }
    * </code></pre>
    */
-  public final UnaryApiCallable<PublishRequest, PublishResponse> publishCallable() {
+  public final UnaryCallable<PublishRequest, PublishResponse> publishCallable() {
     return publishCallable;
   }
 
@@ -450,7 +449,7 @@ public class PublisherApi implements AutoCloseable {
    * }
    * </code></pre>
    */
-  public final UnaryApiCallable<GetTopicRequest, Topic> getTopicCallable() {
+  public final UnaryCallable<GetTopicRequest, Topic> getTopicCallable() {
     return getTopicCallable;
   }
 
@@ -523,8 +522,7 @@ public class PublisherApi implements AutoCloseable {
    * }
    * </code></pre>
    */
-  public final UnaryApiCallable<ListTopicsRequest, ListTopicsPagedResponse>
-      listTopicsPagedCallable() {
+  public final UnaryCallable<ListTopicsRequest, ListTopicsPagedResponse> listTopicsPagedCallable() {
     return listTopicsPagedCallable;
   }
 
@@ -555,7 +553,7 @@ public class PublisherApi implements AutoCloseable {
    * }
    * </code></pre>
    */
-  public final UnaryApiCallable<ListTopicsRequest, ListTopicsResponse> listTopicsCallable() {
+  public final UnaryCallable<ListTopicsRequest, ListTopicsResponse> listTopicsCallable() {
     return listTopicsCallable;
   }
 
@@ -630,7 +628,7 @@ public class PublisherApi implements AutoCloseable {
    * }
    * </code></pre>
    */
-  public final UnaryApiCallable<ListTopicSubscriptionsRequest, ListTopicSubscriptionsPagedResponse>
+  public final UnaryCallable<ListTopicSubscriptionsRequest, ListTopicSubscriptionsPagedResponse>
       listTopicSubscriptionsPagedCallable() {
     return listTopicSubscriptionsPagedCallable;
   }
@@ -662,7 +660,7 @@ public class PublisherApi implements AutoCloseable {
    * }
    * </code></pre>
    */
-  public final UnaryApiCallable<ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse>
+  public final UnaryCallable<ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse>
       listTopicSubscriptionsCallable() {
     return listTopicSubscriptionsCallable;
   }
@@ -739,7 +737,7 @@ public class PublisherApi implements AutoCloseable {
    * }
    * </code></pre>
    */
-  public final UnaryApiCallable<DeleteTopicRequest, Empty> deleteTopicCallable() {
+  public final UnaryCallable<DeleteTopicRequest, Empty> deleteTopicCallable() {
     return deleteTopicCallable;
   }
 
@@ -817,7 +815,7 @@ public class PublisherApi implements AutoCloseable {
    * }
    * </code></pre>
    */
-  public final UnaryApiCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
+  public final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
     return setIamPolicyCallable;
   }
 
@@ -889,7 +887,7 @@ public class PublisherApi implements AutoCloseable {
    * }
    * </code></pre>
    */
-  public final UnaryApiCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
+  public final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
     return getIamPolicyCallable;
   }
 
@@ -971,7 +969,7 @@ public class PublisherApi implements AutoCloseable {
    * }
    * </code></pre>
    */
-  public final UnaryApiCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
+  public final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable() {
     return testIamPermissionsCallable;
   }

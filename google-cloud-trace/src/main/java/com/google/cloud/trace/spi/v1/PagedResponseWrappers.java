@@ -14,9 +14,9 @@
 package com.google.cloud.trace.spi.v1;
 
 import com.google.api.gax.grpc.CallContext;
-import com.google.api.gax.grpc.PageStreamingDescriptor;
+import com.google.api.gax.grpc.PagedListDescriptor;
 import com.google.api.gax.grpc.PagedListResponseImpl;
-import com.google.api.gax.grpc.UnaryApiCallable;
+import com.google.api.gax.grpc.UnaryCallable;
 import com.google.devtools.cloudtrace.v1.ListTracesRequest;
 import com.google.devtools.cloudtrace.v1.ListTracesResponse;
 import com.google.devtools.cloudtrace.v1.Trace;
@@ -34,8 +34,8 @@ public class PagedResponseWrappers {
       extends PagedListResponseImpl<ListTracesRequest, ListTracesResponse, Trace> {
 
     public ListTracesPagedResponse(
-        UnaryApiCallable<ListTracesRequest, ListTracesResponse> callable,
-        PageStreamingDescriptor<ListTracesRequest, ListTracesResponse, Trace> pageDescriptor,
+        UnaryCallable<ListTracesRequest, ListTracesResponse> callable,
+        PagedListDescriptor<ListTracesRequest, ListTracesResponse, Trace> pageDescriptor,
         ListTracesRequest request,
         CallContext context) {
       super(callable, pageDescriptor, request, context);

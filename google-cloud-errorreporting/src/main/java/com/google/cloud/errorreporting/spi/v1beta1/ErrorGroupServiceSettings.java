@@ -17,7 +17,7 @@ import com.google.api.gax.core.ConnectionSettings;
 import com.google.api.gax.core.RetrySettings;
 import com.google.api.gax.grpc.ServiceApiSettings;
 import com.google.api.gax.grpc.SimpleCallSettings;
-import com.google.api.gax.grpc.UnaryApiCallSettings;
+import com.google.api.gax.grpc.UnaryCallSettings;
 import com.google.auth.Credentials;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -73,14 +73,6 @@ public class ErrorGroupServiceSettings extends ServiceApiSettings {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
       ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
-
-  /** The default connection settings of the service. */
-  public static final ConnectionSettings DEFAULT_CONNECTION_SETTINGS =
-      ConnectionSettings.newBuilder()
-          .setServiceAddress(DEFAULT_SERVICE_ADDRESS)
-          .setPort(DEFAULT_SERVICE_PORT)
-          .provideCredentialsWith(DEFAULT_SERVICE_SCOPES)
-          .build();
 
   private final SimpleCallSettings<GetGroupRequest, ErrorGroup> getGroupSettings;
   private final SimpleCallSettings<UpdateGroupRequest, ErrorGroup> updateGroupSettings;
@@ -140,7 +132,7 @@ public class ErrorGroupServiceSettings extends ServiceApiSettings {
 
   /** Builder for ErrorGroupServiceSettings. */
   public static class Builder extends ServiceApiSettings.Builder {
-    private final ImmutableList<UnaryApiCallSettings.Builder> unaryMethodSettingsBuilders;
+    private final ImmutableList<UnaryCallSettings.Builder> unaryMethodSettingsBuilders;
 
     private final SimpleCallSettings.Builder<GetGroupRequest, ErrorGroup> getGroupSettings;
     private final SimpleCallSettings.Builder<UpdateGroupRequest, ErrorGroup> updateGroupSettings;
@@ -177,7 +169,7 @@ public class ErrorGroupServiceSettings extends ServiceApiSettings {
     }
 
     private Builder() {
-      super(DEFAULT_CONNECTION_SETTINGS);
+      super(s_getDefaultConnectionSettingsBuilder().build());
 
       getGroupSettings = SimpleCallSettings.newBuilder(ErrorGroupServiceGrpc.METHOD_GET_GROUP);
 
@@ -185,7 +177,7 @@ public class ErrorGroupServiceSettings extends ServiceApiSettings {
           SimpleCallSettings.newBuilder(ErrorGroupServiceGrpc.METHOD_UPDATE_GROUP);
 
       unaryMethodSettingsBuilders =
-          ImmutableList.<UnaryApiCallSettings.Builder>of(getGroupSettings, updateGroupSettings);
+          ImmutableList.<UnaryCallSettings.Builder>of(getGroupSettings, updateGroupSettings);
     }
 
     private static Builder createDefault() {
@@ -211,12 +203,19 @@ public class ErrorGroupServiceSettings extends ServiceApiSettings {
       updateGroupSettings = settings.updateGroupSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
-          ImmutableList.<UnaryApiCallSettings.Builder>of(getGroupSettings, updateGroupSettings);
+          ImmutableList.<UnaryCallSettings.Builder>of(getGroupSettings, updateGroupSettings);
+    }
+
+    private static ConnectionSettings.Builder s_getDefaultConnectionSettingsBuilder() {
+      return ConnectionSettings.newBuilder()
+          .setServiceAddress(DEFAULT_SERVICE_ADDRESS)
+          .setPort(DEFAULT_SERVICE_PORT)
+          .provideCredentialsWith(DEFAULT_SERVICE_SCOPES);
     }
 
     @Override
-    protected ConnectionSettings getDefaultConnectionSettings() {
-      return DEFAULT_CONNECTION_SETTINGS;
+    protected ConnectionSettings.Builder getDefaultConnectionSettingsBuilder() {
+      return s_getDefaultConnectionSettingsBuilder();
     }
 
     @Override
@@ -267,7 +266,7 @@ public class ErrorGroupServiceSettings extends ServiceApiSettings {
      *
      * <p>Note: This method does not support applying settings to streaming methods.
      */
-    public Builder applyToAllApiMethods(UnaryApiCallSettings.Builder apiCallSettings)
+    public Builder applyToAllApiMethods(UnaryCallSettings.Builder apiCallSettings)
         throws Exception {
       super.applyToAllApiMethods(unaryMethodSettingsBuilders, apiCallSettings);
       return this;

@@ -13,7 +13,7 @@
  */
 package com.google.cloud.vision.spi.v1;
 
-import com.google.api.gax.grpc.UnaryApiCallable;
+import com.google.api.gax.grpc.UnaryCallable;
 import com.google.cloud.vision.v1.AnnotateImageRequest;
 import com.google.cloud.vision.v1.BatchAnnotateImagesRequest;
 import com.google.cloud.vision.v1.BatchAnnotateImagesResponse;
@@ -84,7 +84,7 @@ public class ImageAnnotatorApi implements AutoCloseable {
   private final ScheduledExecutorService executor;
   private final List<AutoCloseable> closeables = new ArrayList<>();
 
-  private final UnaryApiCallable<BatchAnnotateImagesRequest, BatchAnnotateImagesResponse>
+  private final UnaryCallable<BatchAnnotateImagesRequest, BatchAnnotateImagesResponse>
       batchAnnotateImagesCallable;
 
   /** Constructs an instance of ImageAnnotatorApi with default settings. */
@@ -110,8 +110,7 @@ public class ImageAnnotatorApi implements AutoCloseable {
     this.channel = settings.getChannelProvider().getOrBuildChannel(this.executor);
 
     this.batchAnnotateImagesCallable =
-        UnaryApiCallable.create(
-            settings.batchAnnotateImagesSettings(), this.channel, this.executor);
+        UnaryCallable.create(settings.batchAnnotateImagesSettings(), this.channel, this.executor);
 
     if (settings.getChannelProvider().shouldAutoClose()) {
       closeables.add(
@@ -202,7 +201,7 @@ public class ImageAnnotatorApi implements AutoCloseable {
    * }
    * </code></pre>
    */
-  public final UnaryApiCallable<BatchAnnotateImagesRequest, BatchAnnotateImagesResponse>
+  public final UnaryCallable<BatchAnnotateImagesRequest, BatchAnnotateImagesResponse>
       batchAnnotateImagesCallable() {
     return batchAnnotateImagesCallable;
   }

@@ -13,6 +13,7 @@
  */
 package com.google.cloud.language.spi.v1beta1;
 
+
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 /**
  * Wrapper class to contain paged response types for page streaming methods. Each static class

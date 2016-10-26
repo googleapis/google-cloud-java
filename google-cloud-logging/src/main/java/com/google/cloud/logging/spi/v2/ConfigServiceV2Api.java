@@ -15,7 +15,7 @@ package com.google.cloud.logging.spi.v2;
 
 import static com.google.cloud.logging.spi.v2.PagedResponseWrappers.ListSinksPagedResponse;
 
-import com.google.api.gax.grpc.UnaryApiCallable;
+import com.google.api.gax.grpc.UnaryCallable;
 import com.google.api.gax.protobuf.PathTemplate;
 import com.google.logging.v2.CreateSinkRequest;
 import com.google.logging.v2.DeleteSinkRequest;
@@ -91,12 +91,12 @@ public class ConfigServiceV2Api implements AutoCloseable {
   private final ScheduledExecutorService executor;
   private final List<AutoCloseable> closeables = new ArrayList<>();
 
-  private final UnaryApiCallable<ListSinksRequest, ListSinksResponse> listSinksCallable;
-  private final UnaryApiCallable<ListSinksRequest, ListSinksPagedResponse> listSinksPagedCallable;
-  private final UnaryApiCallable<GetSinkRequest, LogSink> getSinkCallable;
-  private final UnaryApiCallable<CreateSinkRequest, LogSink> createSinkCallable;
-  private final UnaryApiCallable<UpdateSinkRequest, LogSink> updateSinkCallable;
-  private final UnaryApiCallable<DeleteSinkRequest, Empty> deleteSinkCallable;
+  private final UnaryCallable<ListSinksRequest, ListSinksResponse> listSinksCallable;
+  private final UnaryCallable<ListSinksRequest, ListSinksPagedResponse> listSinksPagedCallable;
+  private final UnaryCallable<GetSinkRequest, LogSink> getSinkCallable;
+  private final UnaryCallable<CreateSinkRequest, LogSink> createSinkCallable;
+  private final UnaryCallable<UpdateSinkRequest, LogSink> updateSinkCallable;
+  private final UnaryCallable<DeleteSinkRequest, Empty> deleteSinkCallable;
 
   private static final PathTemplate PARENT_PATH_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding("projects/{project}");
@@ -155,18 +155,17 @@ public class ConfigServiceV2Api implements AutoCloseable {
     this.channel = settings.getChannelProvider().getOrBuildChannel(this.executor);
 
     this.listSinksCallable =
-        UnaryApiCallable.create(settings.listSinksSettings(), this.channel, this.executor);
+        UnaryCallable.create(settings.listSinksSettings(), this.channel, this.executor);
     this.listSinksPagedCallable =
-        UnaryApiCallable.createPagedVariant(
-            settings.listSinksSettings(), this.channel, this.executor);
+        UnaryCallable.createPagedVariant(settings.listSinksSettings(), this.channel, this.executor);
     this.getSinkCallable =
-        UnaryApiCallable.create(settings.getSinkSettings(), this.channel, this.executor);
+        UnaryCallable.create(settings.getSinkSettings(), this.channel, this.executor);
     this.createSinkCallable =
-        UnaryApiCallable.create(settings.createSinkSettings(), this.channel, this.executor);
+        UnaryCallable.create(settings.createSinkSettings(), this.channel, this.executor);
     this.updateSinkCallable =
-        UnaryApiCallable.create(settings.updateSinkSettings(), this.channel, this.executor);
+        UnaryCallable.create(settings.updateSinkSettings(), this.channel, this.executor);
     this.deleteSinkCallable =
-        UnaryApiCallable.create(settings.deleteSinkSettings(), this.channel, this.executor);
+        UnaryCallable.create(settings.deleteSinkSettings(), this.channel, this.executor);
 
     if (settings.getChannelProvider().shouldAutoClose()) {
       closeables.add(
@@ -262,7 +261,7 @@ public class ConfigServiceV2Api implements AutoCloseable {
    * }
    * </code></pre>
    */
-  public final UnaryApiCallable<ListSinksRequest, ListSinksPagedResponse> listSinksPagedCallable() {
+  public final UnaryCallable<ListSinksRequest, ListSinksPagedResponse> listSinksPagedCallable() {
     return listSinksPagedCallable;
   }
 
@@ -293,7 +292,7 @@ public class ConfigServiceV2Api implements AutoCloseable {
    * }
    * </code></pre>
    */
-  public final UnaryApiCallable<ListSinksRequest, ListSinksResponse> listSinksCallable() {
+  public final UnaryCallable<ListSinksRequest, ListSinksResponse> listSinksCallable() {
     return listSinksCallable;
   }
 
@@ -361,7 +360,7 @@ public class ConfigServiceV2Api implements AutoCloseable {
    * }
    * </code></pre>
    */
-  public final UnaryApiCallable<GetSinkRequest, LogSink> getSinkCallable() {
+  public final UnaryCallable<GetSinkRequest, LogSink> getSinkCallable() {
     return getSinkCallable;
   }
 
@@ -437,7 +436,7 @@ public class ConfigServiceV2Api implements AutoCloseable {
    * }
    * </code></pre>
    */
-  public final UnaryApiCallable<CreateSinkRequest, LogSink> createSinkCallable() {
+  public final UnaryCallable<CreateSinkRequest, LogSink> createSinkCallable() {
     return createSinkCallable;
   }
 
@@ -514,7 +513,7 @@ public class ConfigServiceV2Api implements AutoCloseable {
    * }
    * </code></pre>
    */
-  public final UnaryApiCallable<UpdateSinkRequest, LogSink> updateSinkCallable() {
+  public final UnaryCallable<UpdateSinkRequest, LogSink> updateSinkCallable() {
     return updateSinkCallable;
   }
 
@@ -583,7 +582,7 @@ public class ConfigServiceV2Api implements AutoCloseable {
    * }
    * </code></pre>
    */
-  public final UnaryApiCallable<DeleteSinkRequest, Empty> deleteSinkCallable() {
+  public final UnaryCallable<DeleteSinkRequest, Empty> deleteSinkCallable() {
     return deleteSinkCallable;
   }
 

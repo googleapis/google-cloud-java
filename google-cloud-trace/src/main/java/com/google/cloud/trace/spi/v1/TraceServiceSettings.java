@@ -18,13 +18,13 @@ import static com.google.cloud.trace.spi.v1.PagedResponseWrappers.ListTracesPage
 import com.google.api.gax.core.ConnectionSettings;
 import com.google.api.gax.core.RetrySettings;
 import com.google.api.gax.grpc.CallContext;
-import com.google.api.gax.grpc.PageStreamingCallSettings;
-import com.google.api.gax.grpc.PageStreamingDescriptor;
+import com.google.api.gax.grpc.PagedCallSettings;
+import com.google.api.gax.grpc.PagedListDescriptor;
 import com.google.api.gax.grpc.PagedListResponseFactory;
 import com.google.api.gax.grpc.ServiceApiSettings;
 import com.google.api.gax.grpc.SimpleCallSettings;
-import com.google.api.gax.grpc.UnaryApiCallSettings;
-import com.google.api.gax.grpc.UnaryApiCallable;
+import com.google.api.gax.grpc.UnaryCallSettings;
+import com.google.api.gax.grpc.UnaryCallable;
 import com.google.auth.Credentials;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -87,18 +87,9 @@ public class TraceServiceSettings extends ServiceApiSettings {
           .add("https://www.googleapis.com/auth/trace.readonly")
           .build();
 
-  /** The default connection settings of the service. */
-  public static final ConnectionSettings DEFAULT_CONNECTION_SETTINGS =
-      ConnectionSettings.newBuilder()
-          .setServiceAddress(DEFAULT_SERVICE_ADDRESS)
-          .setPort(DEFAULT_SERVICE_PORT)
-          .provideCredentialsWith(DEFAULT_SERVICE_SCOPES)
-          .build();
-
   private final SimpleCallSettings<PatchTracesRequest, Empty> patchTracesSettings;
   private final SimpleCallSettings<GetTraceRequest, Trace> getTraceSettings;
-  private final PageStreamingCallSettings<
-          ListTracesRequest, ListTracesResponse, ListTracesPagedResponse>
+  private final PagedCallSettings<ListTracesRequest, ListTracesResponse, ListTracesPagedResponse>
       listTracesSettings;
 
   /** Returns the object with the settings used for calls to patchTraces. */
@@ -112,7 +103,7 @@ public class TraceServiceSettings extends ServiceApiSettings {
   }
 
   /** Returns the object with the settings used for calls to listTraces. */
-  public PageStreamingCallSettings<ListTracesRequest, ListTracesResponse, ListTracesPagedResponse>
+  public PagedCallSettings<ListTracesRequest, ListTracesResponse, ListTracesPagedResponse>
       listTracesSettings() {
     return listTracesSettings;
   }
@@ -161,9 +152,9 @@ public class TraceServiceSettings extends ServiceApiSettings {
     listTracesSettings = settingsBuilder.listTracesSettings().build();
   }
 
-  private static final PageStreamingDescriptor<ListTracesRequest, ListTracesResponse, Trace>
+  private static final PagedListDescriptor<ListTracesRequest, ListTracesResponse, Trace>
       LIST_TRACES_PAGE_STR_DESC =
-          new PageStreamingDescriptor<ListTracesRequest, ListTracesResponse, Trace>() {
+          new PagedListDescriptor<ListTracesRequest, ListTracesResponse, Trace>() {
             @Override
             public Object emptyToken() {
               return "";
@@ -204,7 +195,7 @@ public class TraceServiceSettings extends ServiceApiSettings {
               ListTracesRequest, ListTracesResponse, ListTracesPagedResponse>() {
             @Override
             public ListTracesPagedResponse createPagedListResponse(
-                UnaryApiCallable<ListTracesRequest, ListTracesResponse> callable,
+                UnaryCallable<ListTracesRequest, ListTracesResponse> callable,
                 ListTracesRequest request,
                 CallContext context) {
               return new ListTracesPagedResponse(
@@ -214,11 +205,11 @@ public class TraceServiceSettings extends ServiceApiSettings {
 
   /** Builder for TraceServiceSettings. */
   public static class Builder extends ServiceApiSettings.Builder {
-    private final ImmutableList<UnaryApiCallSettings.Builder> unaryMethodSettingsBuilders;
+    private final ImmutableList<UnaryCallSettings.Builder> unaryMethodSettingsBuilders;
 
     private final SimpleCallSettings.Builder<PatchTracesRequest, Empty> patchTracesSettings;
     private final SimpleCallSettings.Builder<GetTraceRequest, Trace> getTraceSettings;
-    private final PageStreamingCallSettings.Builder<
+    private final PagedCallSettings.Builder<
             ListTracesRequest, ListTracesResponse, ListTracesPagedResponse>
         listTracesSettings;
 
@@ -254,18 +245,18 @@ public class TraceServiceSettings extends ServiceApiSettings {
     }
 
     private Builder() {
-      super(DEFAULT_CONNECTION_SETTINGS);
+      super(s_getDefaultConnectionSettingsBuilder().build());
 
       patchTracesSettings = SimpleCallSettings.newBuilder(TraceServiceGrpc.METHOD_PATCH_TRACES);
 
       getTraceSettings = SimpleCallSettings.newBuilder(TraceServiceGrpc.METHOD_GET_TRACE);
 
       listTracesSettings =
-          PageStreamingCallSettings.newBuilder(
+          PagedCallSettings.newBuilder(
               TraceServiceGrpc.METHOD_LIST_TRACES, LIST_TRACES_PAGE_STR_FACT);
 
       unaryMethodSettingsBuilders =
-          ImmutableList.<UnaryApiCallSettings.Builder>of(
+          ImmutableList.<UnaryCallSettings.Builder>of(
               patchTracesSettings, getTraceSettings, listTracesSettings);
     }
 
@@ -274,7 +265,7 @@ public class TraceServiceSettings extends ServiceApiSettings {
 
       builder
           .patchTracesSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettingsBuilder(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
@@ -298,13 +289,20 @@ public class TraceServiceSettings extends ServiceApiSettings {
       listTracesSettings = settings.listTracesSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
-          ImmutableList.<UnaryApiCallSettings.Builder>of(
+          ImmutableList.<UnaryCallSettings.Builder>of(
               patchTracesSettings, getTraceSettings, listTracesSettings);
     }
 
+    private static ConnectionSettings.Builder s_getDefaultConnectionSettingsBuilder() {
+      return ConnectionSettings.newBuilder()
+          .setServiceAddress(DEFAULT_SERVICE_ADDRESS)
+          .setPort(DEFAULT_SERVICE_PORT)
+          .provideCredentialsWith(DEFAULT_SERVICE_SCOPES);
+    }
+
     @Override
-    protected ConnectionSettings getDefaultConnectionSettings() {
-      return DEFAULT_CONNECTION_SETTINGS;
+    protected ConnectionSettings.Builder getDefaultConnectionSettingsBuilder() {
+      return s_getDefaultConnectionSettingsBuilder();
     }
 
     @Override
@@ -355,7 +353,7 @@ public class TraceServiceSettings extends ServiceApiSettings {
      *
      * <p>Note: This method does not support applying settings to streaming methods.
      */
-    public Builder applyToAllApiMethods(UnaryApiCallSettings.Builder apiCallSettings)
+    public Builder applyToAllApiMethods(UnaryCallSettings.Builder apiCallSettings)
         throws Exception {
       super.applyToAllApiMethods(unaryMethodSettingsBuilders, apiCallSettings);
       return this;
@@ -372,8 +370,7 @@ public class TraceServiceSettings extends ServiceApiSettings {
     }
 
     /** Returns the builder for the settings used for calls to listTraces. */
-    public PageStreamingCallSettings.Builder<
-            ListTracesRequest, ListTracesResponse, ListTracesPagedResponse>
+    public PagedCallSettings.Builder<ListTracesRequest, ListTracesResponse, ListTracesPagedResponse>
         listTracesSettings() {
       return listTracesSettings;
     }

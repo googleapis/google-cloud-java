@@ -13,7 +13,7 @@
  */
 package com.google.cloud.errorreporting.spi.v1beta1;
 
-import com.google.api.gax.grpc.UnaryApiCallable;
+import com.google.api.gax.grpc.UnaryCallable;
 import com.google.api.gax.protobuf.PathTemplate;
 import com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup;
 import com.google.devtools.clouderrorreporting.v1beta1.GetGroupRequest;
@@ -83,8 +83,8 @@ public class ErrorGroupServiceApi implements AutoCloseable {
   private final ScheduledExecutorService executor;
   private final List<AutoCloseable> closeables = new ArrayList<>();
 
-  private final UnaryApiCallable<GetGroupRequest, ErrorGroup> getGroupCallable;
-  private final UnaryApiCallable<UpdateGroupRequest, ErrorGroup> updateGroupCallable;
+  private final UnaryCallable<GetGroupRequest, ErrorGroup> getGroupCallable;
+  private final UnaryCallable<UpdateGroupRequest, ErrorGroup> updateGroupCallable;
 
   private static final PathTemplate GROUP_PATH_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding("projects/{project}/groups/{group}");
@@ -130,9 +130,9 @@ public class ErrorGroupServiceApi implements AutoCloseable {
     this.channel = settings.getChannelProvider().getOrBuildChannel(this.executor);
 
     this.getGroupCallable =
-        UnaryApiCallable.create(settings.getGroupSettings(), this.channel, this.executor);
+        UnaryCallable.create(settings.getGroupSettings(), this.channel, this.executor);
     this.updateGroupCallable =
-        UnaryApiCallable.create(settings.updateGroupSettings(), this.channel, this.executor);
+        UnaryCallable.create(settings.updateGroupSettings(), this.channel, this.executor);
 
     if (settings.getChannelProvider().shouldAutoClose()) {
       closeables.add(
@@ -226,7 +226,7 @@ public class ErrorGroupServiceApi implements AutoCloseable {
    * }
    * </code></pre>
    */
-  public final UnaryApiCallable<GetGroupRequest, ErrorGroup> getGroupCallable() {
+  public final UnaryCallable<GetGroupRequest, ErrorGroup> getGroupCallable() {
     return getGroupCallable;
   }
 
@@ -292,7 +292,7 @@ public class ErrorGroupServiceApi implements AutoCloseable {
    * }
    * </code></pre>
    */
-  public final UnaryApiCallable<UpdateGroupRequest, ErrorGroup> updateGroupCallable() {
+  public final UnaryCallable<UpdateGroupRequest, ErrorGroup> updateGroupCallable() {
     return updateGroupCallable;
   }
 

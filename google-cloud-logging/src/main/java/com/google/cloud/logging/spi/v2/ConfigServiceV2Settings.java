@@ -18,13 +18,13 @@ import static com.google.cloud.logging.spi.v2.PagedResponseWrappers.ListSinksPag
 import com.google.api.gax.core.ConnectionSettings;
 import com.google.api.gax.core.RetrySettings;
 import com.google.api.gax.grpc.CallContext;
-import com.google.api.gax.grpc.PageStreamingCallSettings;
-import com.google.api.gax.grpc.PageStreamingDescriptor;
+import com.google.api.gax.grpc.PagedCallSettings;
+import com.google.api.gax.grpc.PagedListDescriptor;
 import com.google.api.gax.grpc.PagedListResponseFactory;
 import com.google.api.gax.grpc.ServiceApiSettings;
 import com.google.api.gax.grpc.SimpleCallSettings;
-import com.google.api.gax.grpc.UnaryApiCallSettings;
-import com.google.api.gax.grpc.UnaryApiCallable;
+import com.google.api.gax.grpc.UnaryCallSettings;
+import com.google.api.gax.grpc.UnaryCallable;
 import com.google.auth.Credentials;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -91,16 +91,7 @@ public class ConfigServiceV2Settings extends ServiceApiSettings {
           .add("https://www.googleapis.com/auth/logging.write")
           .build();
 
-  /** The default connection settings of the service. */
-  public static final ConnectionSettings DEFAULT_CONNECTION_SETTINGS =
-      ConnectionSettings.newBuilder()
-          .setServiceAddress(DEFAULT_SERVICE_ADDRESS)
-          .setPort(DEFAULT_SERVICE_PORT)
-          .provideCredentialsWith(DEFAULT_SERVICE_SCOPES)
-          .build();
-
-  private final PageStreamingCallSettings<
-          ListSinksRequest, ListSinksResponse, ListSinksPagedResponse>
+  private final PagedCallSettings<ListSinksRequest, ListSinksResponse, ListSinksPagedResponse>
       listSinksSettings;
   private final SimpleCallSettings<GetSinkRequest, LogSink> getSinkSettings;
   private final SimpleCallSettings<CreateSinkRequest, LogSink> createSinkSettings;
@@ -108,7 +99,7 @@ public class ConfigServiceV2Settings extends ServiceApiSettings {
   private final SimpleCallSettings<DeleteSinkRequest, Empty> deleteSinkSettings;
 
   /** Returns the object with the settings used for calls to listSinks. */
-  public PageStreamingCallSettings<ListSinksRequest, ListSinksResponse, ListSinksPagedResponse>
+  public PagedCallSettings<ListSinksRequest, ListSinksResponse, ListSinksPagedResponse>
       listSinksSettings() {
     return listSinksSettings;
   }
@@ -179,9 +170,9 @@ public class ConfigServiceV2Settings extends ServiceApiSettings {
     deleteSinkSettings = settingsBuilder.deleteSinkSettings().build();
   }
 
-  private static final PageStreamingDescriptor<ListSinksRequest, ListSinksResponse, LogSink>
+  private static final PagedListDescriptor<ListSinksRequest, ListSinksResponse, LogSink>
       LIST_SINKS_PAGE_STR_DESC =
-          new PageStreamingDescriptor<ListSinksRequest, ListSinksResponse, LogSink>() {
+          new PagedListDescriptor<ListSinksRequest, ListSinksResponse, LogSink>() {
             @Override
             public Object emptyToken() {
               return "";
@@ -220,7 +211,7 @@ public class ConfigServiceV2Settings extends ServiceApiSettings {
               ListSinksRequest, ListSinksResponse, ListSinksPagedResponse>() {
             @Override
             public ListSinksPagedResponse createPagedListResponse(
-                UnaryApiCallable<ListSinksRequest, ListSinksResponse> callable,
+                UnaryCallable<ListSinksRequest, ListSinksResponse> callable,
                 ListSinksRequest request,
                 CallContext context) {
               return new ListSinksPagedResponse(
@@ -230,9 +221,9 @@ public class ConfigServiceV2Settings extends ServiceApiSettings {
 
   /** Builder for ConfigServiceV2Settings. */
   public static class Builder extends ServiceApiSettings.Builder {
-    private final ImmutableList<UnaryApiCallSettings.Builder> unaryMethodSettingsBuilders;
+    private final ImmutableList<UnaryCallSettings.Builder> unaryMethodSettingsBuilders;
 
-    private final PageStreamingCallSettings.Builder<
+    private final PagedCallSettings.Builder<
             ListSinksRequest, ListSinksResponse, ListSinksPagedResponse>
         listSinksSettings;
     private final SimpleCallSettings.Builder<GetSinkRequest, LogSink> getSinkSettings;
@@ -272,10 +263,10 @@ public class ConfigServiceV2Settings extends ServiceApiSettings {
     }
 
     private Builder() {
-      super(DEFAULT_CONNECTION_SETTINGS);
+      super(s_getDefaultConnectionSettingsBuilder().build());
 
       listSinksSettings =
-          PageStreamingCallSettings.newBuilder(
+          PagedCallSettings.newBuilder(
               ConfigServiceV2Grpc.METHOD_LIST_SINKS, LIST_SINKS_PAGE_STR_FACT);
 
       getSinkSettings = SimpleCallSettings.newBuilder(ConfigServiceV2Grpc.METHOD_GET_SINK);
@@ -287,7 +278,7 @@ public class ConfigServiceV2Settings extends ServiceApiSettings {
       deleteSinkSettings = SimpleCallSettings.newBuilder(ConfigServiceV2Grpc.METHOD_DELETE_SINK);
 
       unaryMethodSettingsBuilders =
-          ImmutableList.<UnaryApiCallSettings.Builder>of(
+          ImmutableList.<UnaryCallSettings.Builder>of(
               listSinksSettings,
               getSinkSettings,
               createSinkSettings,
@@ -336,7 +327,7 @@ public class ConfigServiceV2Settings extends ServiceApiSettings {
       deleteSinkSettings = settings.deleteSinkSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
-          ImmutableList.<UnaryApiCallSettings.Builder>of(
+          ImmutableList.<UnaryCallSettings.Builder>of(
               listSinksSettings,
               getSinkSettings,
               createSinkSettings,
@@ -344,9 +335,16 @@ public class ConfigServiceV2Settings extends ServiceApiSettings {
               deleteSinkSettings);
     }
 
+    private static ConnectionSettings.Builder s_getDefaultConnectionSettingsBuilder() {
+      return ConnectionSettings.newBuilder()
+          .setServiceAddress(DEFAULT_SERVICE_ADDRESS)
+          .setPort(DEFAULT_SERVICE_PORT)
+          .provideCredentialsWith(DEFAULT_SERVICE_SCOPES);
+    }
+
     @Override
-    protected ConnectionSettings getDefaultConnectionSettings() {
-      return DEFAULT_CONNECTION_SETTINGS;
+    protected ConnectionSettings.Builder getDefaultConnectionSettingsBuilder() {
+      return s_getDefaultConnectionSettingsBuilder();
     }
 
     @Override
@@ -397,15 +395,14 @@ public class ConfigServiceV2Settings extends ServiceApiSettings {
      *
      * <p>Note: This method does not support applying settings to streaming methods.
      */
-    public Builder applyToAllApiMethods(UnaryApiCallSettings.Builder apiCallSettings)
+    public Builder applyToAllApiMethods(UnaryCallSettings.Builder apiCallSettings)
         throws Exception {
       super.applyToAllApiMethods(unaryMethodSettingsBuilders, apiCallSettings);
       return this;
     }
 
     /** Returns the builder for the settings used for calls to listSinks. */
-    public PageStreamingCallSettings.Builder<
-            ListSinksRequest, ListSinksResponse, ListSinksPagedResponse>
+    public PagedCallSettings.Builder<ListSinksRequest, ListSinksResponse, ListSinksPagedResponse>
         listSinksSettings() {
       return listSinksSettings;
     }
