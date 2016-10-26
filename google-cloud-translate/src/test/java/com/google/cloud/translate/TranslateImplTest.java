@@ -79,7 +79,7 @@ public class TranslateImplTest {
   private static final LanguageListOption LANGUAGE_LIST_OPTION =
       LanguageListOption.targetLanguage(TARGET_LANGUAGE);
   private static final Map<TranslateRpc.Option, ?> LANGUAGE_LIST_OPTIONS = ImmutableMap.of(
-      TranslateRpc.Option.TARGET_LANGUAGE, LANGUAGE_LIST_OPTION.value());
+      TranslateRpc.Option.TARGET_LANGUAGE, LANGUAGE_LIST_OPTION.getValue());
 
   // Translate options
   private static final TranslateOption TARGET_LANGUAGE_OPTION =
@@ -87,8 +87,8 @@ public class TranslateImplTest {
   private static final TranslateOption SOURCE_LANGUAGE_OPTION =
       TranslateOption.sourceLanguage("de");
   private static final Map<TranslateRpc.Option, ?> TRANSLATE_OPTIONS = ImmutableMap.of(
-      TranslateRpc.Option.TARGET_LANGUAGE, TARGET_LANGUAGE_OPTION.value(),
-      TranslateRpc.Option.SOURCE_LANGUAGE, SOURCE_LANGUAGE_OPTION.value());
+      TranslateRpc.Option.TARGET_LANGUAGE, TARGET_LANGUAGE_OPTION.getValue(),
+      TranslateRpc.Option.SOURCE_LANGUAGE, SOURCE_LANGUAGE_OPTION.getValue());
 
   private TranslateOptions options;
   private TranslateRpcFactory rpcFactoryMock;

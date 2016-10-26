@@ -126,7 +126,7 @@ final class TranslateImpl extends BaseService<TranslateOptions> implements Trans
   private Map<TranslateRpc.Option, ?> optionMap(Option... options) {
     Map<TranslateRpc.Option, Object> optionMap = Maps.newEnumMap(TranslateRpc.Option.class);
     for (Option option : options) {
-      Object prev = optionMap.put(option.rpcOption(), option.value());
+      Object prev = optionMap.put(option.getRpcOption(), option.getValue());
       checkArgument(prev == null, "Duplicate option %s", option);
     }
     return optionMap;
