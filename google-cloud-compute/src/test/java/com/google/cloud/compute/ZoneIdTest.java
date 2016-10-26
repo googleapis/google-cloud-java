@@ -39,6 +39,17 @@ public class ZoneIdTest {
   @Test
   public void testOf() {
     ZoneId zoneId = ZoneId.of(PROJECT, ZONE);
+    assertEquals(PROJECT, zoneId.getProject());
+    assertEquals(ZONE, zoneId.getZone());
+    assertEquals(URL, zoneId.getSelfLink());
+    zoneId = ZoneId.of(ZONE);
+    assertNull(zoneId.getProject());
+    assertEquals(ZONE, zoneId.getZone());
+  }
+
+  @Test
+  public void testOfDeprecated() {
+    ZoneId zoneId = ZoneId.of(PROJECT, ZONE);
     assertEquals(PROJECT, zoneId.project());
     assertEquals(ZONE, zoneId.zone());
     assertEquals(URL, zoneId.selfLink());
@@ -50,7 +61,7 @@ public class ZoneIdTest {
   @Test
   public void testToAndFromUrl() {
     ZoneId zoneId = ZoneId.of(PROJECT, ZONE);
-    compareZoneId(zoneId, ZoneId.fromUrl(zoneId.selfLink()));
+    compareZoneId(zoneId, ZoneId.fromUrl(zoneId.getSelfLink()));
   }
 
   @Test
@@ -65,15 +76,15 @@ public class ZoneIdTest {
 
   @Test
   public void testMatchesUrl() {
-    assertTrue(ZoneId.matchesUrl(ZoneId.of(PROJECT, ZONE).selfLink()));
+    assertTrue(ZoneId.matchesUrl(ZoneId.of(PROJECT, ZONE).getSelfLink()));
     assertFalse(ZoneId.matchesUrl("notMatchingUrl"));
   }
 
   private void compareZoneId(ZoneId expected, ZoneId value) {
     assertEquals(expected, value);
-    assertEquals(expected.project(), expected.project());
-    assertEquals(expected.zone(), expected.zone());
-    assertEquals(expected.selfLink(), expected.selfLink());
+    assertEquals(expected.getProject(), expected.getProject());
+    assertEquals(expected.getZone(), expected.getZone());
+    assertEquals(expected.getSelfLink(), expected.getSelfLink());
     assertEquals(expected.hashCode(), expected.hashCode());
   }
 }

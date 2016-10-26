@@ -72,37 +72,37 @@ public class DiskType implements Serializable {
 
     private Builder() {}
 
-    Builder generatedId(String generatedId) {
+    Builder setGeneratedId(String generatedId) {
       this.generatedId = generatedId;
       return this;
     }
 
-    Builder creationTimestamp(Long creationTimestamp) {
+    Builder setCreationTimestamp(Long creationTimestamp) {
       this.creationTimestamp = creationTimestamp;
       return this;
     }
 
-    Builder diskTypeId(DiskTypeId diskTypeId) {
+    Builder setDiskTypeId(DiskTypeId diskTypeId) {
       this.diskTypeId = diskTypeId;
       return this;
     }
 
-    Builder description(String description) {
+    Builder setDescription(String description) {
       this.description = description;
       return this;
     }
 
-    Builder validDiskSize(String validDiskSize) {
+    Builder setValidDiskSize(String validDiskSize) {
       this.validDiskSize = validDiskSize;
       return this;
     }
 
-    Builder defaultDiskSizeGb(Long defaultDiskSizeGb) {
+    Builder setDefaultDiskSizeGb(Long defaultDiskSizeGb) {
       this.defaultDiskSizeGb = defaultDiskSizeGb;
       return this;
     }
 
-    Builder deprecationStatus(DeprecationStatus<DiskTypeId> deprecationStatus) {
+    Builder setDeprecationStatus(DeprecationStatus<DiskTypeId> deprecationStatus) {
       this.deprecationStatus = deprecationStatus;
       return this;
     }
@@ -125,42 +125,90 @@ public class DiskType implements Serializable {
   /**
    * Returns the creation timestamp in milliseconds since epoch.
    */
+  @Deprecated
   public Long creationTimestamp() {
+    return getCreationTimestamp();
+  }
+
+  /**
+   * Returns the creation timestamp in milliseconds since epoch.
+   */
+  public Long getCreationTimestamp() {
     return creationTimestamp;
   }
 
   /**
    * Returns the disk type's identity.
    */
+  @Deprecated
   public DiskTypeId diskTypeId() {
+    return getDiskTypeId();
+  }
+
+  /**
+   * Returns the disk type's identity.
+   */
+  public DiskTypeId getDiskTypeId() {
     return diskTypeId;
   }
 
   /**
    * Returns the service-generated unique identifier for the disk type.
    */
+  @Deprecated
   public String generatedId() {
+    return getGeneratedId();
+  }
+
+  /**
+   * Returns the service-generated unique identifier for the disk type.
+   */
+  public String getGeneratedId() {
     return generatedId;
   }
 
   /**
    * Returns a textual description of the disk type.
    */
+  @Deprecated
   public String description() {
+    return getDescription();
+  }
+
+  /**
+   * Returns a textual description of the disk type.
+   */
+  public String getDescription() {
     return description;
   }
 
   /**
    * Returns an optional textual description of the valid disk size, such as "10GB-10TB".
    */
+  @Deprecated
   public String validDiskSize() {
+    return getValidDiskSize();
+  }
+
+  /**
+   * Returns an optional textual description of the valid disk size, such as "10GB-10TB".
+   */
+  public String getValidDiskSize() {
     return validDiskSize;
   }
 
   /**
    * Returns the service-defined default disk size in GB.
    */
+  @Deprecated
   public Long defaultDiskSizeGb() {
+    return getDefaultDiskSizeGb();
+  }
+
+  /**
+   * Returns the service-defined default disk size in GB.
+   */
+  public Long getDefaultDiskSizeGb() {
     return defaultDiskSizeGb;
   }
 
@@ -169,7 +217,17 @@ public class DiskType implements Serializable {
    * either {@link DeprecationStatus.Status#DELETED} or {@link DeprecationStatus.Status#OBSOLETE}
    * the disk type should not be used. Returns {@code null} if the disk type is not deprecated.
    */
+  @Deprecated
   public DeprecationStatus<DiskTypeId> deprecationStatus() {
+    return getDeprecationStatus();
+  }
+
+  /**
+   * Returns the deprecation status of the disk type. If {@link DeprecationStatus#status()} is
+   * either {@link DeprecationStatus.Status#DELETED} or {@link DeprecationStatus.Status#OBSOLETE}
+   * the disk type should not be used. Returns {@code null} if the disk type is not deprecated.
+   */
+  public DeprecationStatus<DiskTypeId> getDeprecationStatus() {
     return deprecationStatus;
   }
 
@@ -209,33 +267,34 @@ public class DiskType implements Serializable {
     }
     diskTypePb.setDescription(description);
     diskTypePb.setValidDiskSize(validDiskSize);
-    diskTypePb.setSelfLink(diskTypeId.selfLink());
+    diskTypePb.setSelfLink(diskTypeId.getSelfLink());
     diskTypePb.setDefaultDiskSizeGb(defaultDiskSizeGb);
-    diskTypePb.setZone(diskTypeId.zoneId().selfLink());
+    diskTypePb.setZone(diskTypeId.getZoneId().getSelfLink());
     if (deprecationStatus != null) {
       diskTypePb.setDeprecated(deprecationStatus.toPb());
     }
     return diskTypePb;
   }
 
-  static Builder builder() {
+  static Builder newBuilder() {
     return new Builder();
   }
 
   static DiskType fromPb(com.google.api.services.compute.model.DiskType diskTypePb) {
-    Builder builder = builder();
+    Builder builder = newBuilder();
     if (diskTypePb.getId() != null) {
-      builder.generatedId(diskTypePb.getId().toString());
+      builder.setGeneratedId(diskTypePb.getId().toString());
     }
     if (diskTypePb.getCreationTimestamp() != null) {
-      builder.creationTimestamp(TIMESTAMP_FORMATTER.parseMillis(diskTypePb.getCreationTimestamp()));
+      builder.setCreationTimestamp(
+          TIMESTAMP_FORMATTER.parseMillis(diskTypePb.getCreationTimestamp()));
     }
-    builder.diskTypeId(DiskTypeId.fromUrl(diskTypePb.getSelfLink()));
-    builder.description(diskTypePb.getDescription());
-    builder.validDiskSize(diskTypePb.getValidDiskSize());
-    builder.defaultDiskSizeGb(diskTypePb.getDefaultDiskSizeGb());
+    builder.setDiskTypeId(DiskTypeId.fromUrl(diskTypePb.getSelfLink()));
+    builder.setDescription(diskTypePb.getDescription());
+    builder.setValidDiskSize(diskTypePb.getValidDiskSize());
+    builder.setDefaultDiskSizeGb(diskTypePb.getDefaultDiskSizeGb());
     if (diskTypePb.getDeprecated() != null) {
-      builder.deprecationStatus(
+      builder.setDeprecationStatus(
           DeprecationStatus.fromPb(diskTypePb.getDeprecated(), DiskTypeId.FROM_URL_FUNCTION));
     }
     return builder.build();

@@ -96,88 +96,88 @@ public class OperationTest {
     expect(serviceMockReturnsOptions.options()).andReturn(mockOptions).times(optionsCalls);
     replay(serviceMockReturnsOptions);
     globalOperation = new Operation.Builder(serviceMockReturnsOptions)
-        .generatedId(GENERATED_ID)
-        .operationId(GLOBAL_OPERATION_ID)
-        .clientOperationId(CLIENT_OPERATION_ID)
-        .operationType(OPERATION_TYPE)
-        .targetLink(TARGET_LINK)
-        .targetId(TARGET_ID)
-        .status(STATUS)
-        .statusMessage(STATUS_MESSAGE)
-        .user(USER)
-        .progress(PROGRESS)
-        .insertTime(INSERT_TIME)
-        .startTime(START_TIME)
-        .endTime(END_TIME)
-        .errors(ERRORS)
-        .warnings(WARNINGS)
-        .httpErrorStatusCode(HTTP_ERROR_STATUS_CODE)
-        .httpErrorMessage(HTTP_ERROR_MESSAGE)
-        .description(DESCRIPTION)
+        .getGeneratedId(GENERATED_ID)
+        .setOperationId(GLOBAL_OPERATION_ID)
+        .setClientOperationId(CLIENT_OPERATION_ID)
+        .setOperationType(OPERATION_TYPE)
+        .setTargetLink(TARGET_LINK)
+        .setTargetId(TARGET_ID)
+        .setStatus(STATUS)
+        .setStatusMessage(STATUS_MESSAGE)
+        .setUser(USER)
+        .setProgress(PROGRESS)
+        .setInsertTime(INSERT_TIME)
+        .setStartTime(START_TIME)
+        .setEndTime(END_TIME)
+        .setErrors(ERRORS)
+        .setWarnings(WARNINGS)
+        .setHttpErrorStatusCode(HTTP_ERROR_STATUS_CODE)
+        .setHttpErrorMessage(HTTP_ERROR_MESSAGE)
+        .setDescription(DESCRIPTION)
         .build();
     zoneOperation = new Operation.Builder(serviceMockReturnsOptions)
-        .generatedId(GENERATED_ID)
-        .operationId(ZONE_OPERATION_ID)
-        .clientOperationId(CLIENT_OPERATION_ID)
-        .operationType(OPERATION_TYPE)
-        .targetLink(TARGET_LINK)
-        .targetId(TARGET_ID)
-        .status(STATUS)
-        .statusMessage(STATUS_MESSAGE)
-        .user(USER)
-        .progress(PROGRESS)
-        .insertTime(INSERT_TIME)
-        .startTime(START_TIME)
-        .endTime(END_TIME)
-        .errors(ERRORS)
-        .warnings(WARNINGS)
-        .httpErrorStatusCode(HTTP_ERROR_STATUS_CODE)
-        .httpErrorMessage(HTTP_ERROR_MESSAGE)
-        .description(DESCRIPTION)
+        .getGeneratedId(GENERATED_ID)
+        .setOperationId(ZONE_OPERATION_ID)
+        .setClientOperationId(CLIENT_OPERATION_ID)
+        .setOperationType(OPERATION_TYPE)
+        .setTargetLink(TARGET_LINK)
+        .setTargetId(TARGET_ID)
+        .setStatus(STATUS)
+        .setStatusMessage(STATUS_MESSAGE)
+        .setUser(USER)
+        .setProgress(PROGRESS)
+        .setInsertTime(INSERT_TIME)
+        .setStartTime(START_TIME)
+        .setEndTime(END_TIME)
+        .setErrors(ERRORS)
+        .setWarnings(WARNINGS)
+        .setHttpErrorStatusCode(HTTP_ERROR_STATUS_CODE)
+        .setHttpErrorMessage(HTTP_ERROR_MESSAGE)
+        .setDescription(DESCRIPTION)
         .build();
     regionOperation = new Operation.Builder(serviceMockReturnsOptions)
-        .generatedId(GENERATED_ID)
-        .operationId(REGION_OPERATION_ID)
-        .clientOperationId(CLIENT_OPERATION_ID)
-        .operationType(OPERATION_TYPE)
-        .targetLink(TARGET_LINK)
-        .targetId(TARGET_ID)
-        .status(STATUS)
-        .statusMessage(STATUS_MESSAGE)
-        .user(USER)
-        .progress(PROGRESS)
-        .insertTime(INSERT_TIME)
-        .startTime(START_TIME)
-        .endTime(END_TIME)
-        .errors(ERRORS)
-        .warnings(WARNINGS)
-        .httpErrorStatusCode(HTTP_ERROR_STATUS_CODE)
-        .httpErrorMessage(HTTP_ERROR_MESSAGE)
-        .description(DESCRIPTION)
+        .getGeneratedId(GENERATED_ID)
+        .setOperationId(REGION_OPERATION_ID)
+        .setClientOperationId(CLIENT_OPERATION_ID)
+        .setOperationType(OPERATION_TYPE)
+        .setTargetLink(TARGET_LINK)
+        .setTargetId(TARGET_ID)
+        .setStatus(STATUS)
+        .setStatusMessage(STATUS_MESSAGE)
+        .setUser(USER)
+        .setProgress(PROGRESS)
+        .setInsertTime(INSERT_TIME)
+        .setStartTime(START_TIME)
+        .setEndTime(END_TIME)
+        .setErrors(ERRORS)
+        .setWarnings(WARNINGS)
+        .setHttpErrorStatusCode(HTTP_ERROR_STATUS_CODE)
+        .setHttpErrorMessage(HTTP_ERROR_MESSAGE)
+        .setDescription(DESCRIPTION)
         .build();
     compute = createStrictMock(Compute.class);
   }
 
   private void initializeOperation() {
     operation = new Operation.Builder(compute)
-        .generatedId(GENERATED_ID)
-        .operationId(GLOBAL_OPERATION_ID)
-        .clientOperationId(CLIENT_OPERATION_ID)
-        .operationType(OPERATION_TYPE)
-        .targetLink(TARGET_LINK)
-        .targetId(TARGET_ID)
-        .status(STATUS)
-        .statusMessage(STATUS_MESSAGE)
-        .user(USER)
-        .progress(PROGRESS)
-        .insertTime(INSERT_TIME)
-        .startTime(START_TIME)
-        .endTime(END_TIME)
-        .errors(ERRORS)
-        .warnings(WARNINGS)
-        .httpErrorStatusCode(HTTP_ERROR_STATUS_CODE)
-        .httpErrorMessage(HTTP_ERROR_MESSAGE)
-        .description(DESCRIPTION)
+        .getGeneratedId(GENERATED_ID)
+        .setOperationId(GLOBAL_OPERATION_ID)
+        .setClientOperationId(CLIENT_OPERATION_ID)
+        .setOperationType(OPERATION_TYPE)
+        .setTargetLink(TARGET_LINK)
+        .setTargetId(TARGET_ID)
+        .setStatus(STATUS)
+        .setStatusMessage(STATUS_MESSAGE)
+        .setUser(USER)
+        .setProgress(PROGRESS)
+        .setInsertTime(INSERT_TIME)
+        .setStartTime(START_TIME)
+        .setEndTime(END_TIME)
+        .setErrors(ERRORS)
+        .setWarnings(WARNINGS)
+        .setHttpErrorStatusCode(HTTP_ERROR_STATUS_CODE)
+        .setHttpErrorMessage(HTTP_ERROR_MESSAGE)
+        .setDescription(DESCRIPTION)
         .build();
   }
 
@@ -187,8 +187,29 @@ public class OperationTest {
   }
 
   private void assertEqualsCommonFields(Operation operation) {
+    assertEquals(GENERATED_ID, operation.getGeneratedId());
+    assertEquals(CLIENT_OPERATION_ID, operation.getClientOperationId());
+    assertEquals(OPERATION_TYPE, operation.getOperationType());
+    assertEquals(TARGET_LINK, operation.getTargetLink());
+    assertEquals(TARGET_ID, operation.getTargetId());
+    assertEquals(STATUS, operation.getStatus());
+    assertEquals(STATUS_MESSAGE, operation.getStatusMessage());
+    assertEquals(USER, operation.getUser());
+    assertEquals(PROGRESS, operation.getProgress());
+    assertEquals(INSERT_TIME, operation.getInsertTime());
+    assertEquals(START_TIME, operation.getStartTime());
+    assertEquals(END_TIME, operation.getEndTime());
+    assertEquals(ERRORS, operation.getErrors());
+    assertEquals(WARNINGS, operation.getWarnings());
+    assertEquals(HTTP_ERROR_STATUS_CODE, globalOperation.getHttpErrorStatusCode());
+    assertEquals(HTTP_ERROR_MESSAGE, globalOperation.getHttpErrorMessage());
+    assertEquals(DESCRIPTION, globalOperation.getDescription());
+    assertSame(serviceMockReturnsOptions, globalOperation.getCompute());
+  }
+
+  private void assertEqualsCommonFieldsDeprecated(Operation operation) {
     assertEquals(GENERATED_ID, operation.generatedId());
-    assertEquals(CLIENT_OPERATION_ID, operation.clientOperationId());
+    assertEquals(CLIENT_OPERATION_ID, operation.getClientOperationId());
     assertEquals(OPERATION_TYPE, operation.operationType());
     assertEquals(TARGET_LINK, operation.targetLink());
     assertEquals(TARGET_ID, operation.targetId());
@@ -208,8 +229,29 @@ public class OperationTest {
   }
 
   private void assertNullCommonFields(Operation operation) {
+    assertNull(operation.getGeneratedId());
+    assertNull(operation.getClientOperationId());
+    assertNull(operation.getOperationType());
+    assertNull(operation.getTargetLink());
+    assertNull(operation.getTargetId());
+    assertNull(operation.getStatus());
+    assertNull(operation.getStatusMessage());
+    assertNull(operation.getUser());
+    assertNull(operation.getProgress());
+    assertNull(operation.getInsertTime());
+    assertNull(operation.getStartTime());
+    assertNull(operation.getEndTime());
+    assertNull(operation.getErrors());
+    assertNull(operation.getWarnings());
+    assertNull(operation.getHttpErrorStatusCode());
+    assertNull(operation.getHttpErrorMessage());
+    assertNull(operation.getDescription());
+    assertSame(serviceMockReturnsOptions, operation.getCompute());
+  }
+
+  private void assertNullCommonFieldsDeprecated(Operation operation) {
     assertNull(operation.generatedId());
-    assertNull(operation.clientOperationId());
+    assertNull(operation.getClientOperationId());
     assertNull(operation.operationType());
     assertNull(operation.targetLink());
     assertNull(operation.targetId());
@@ -232,25 +274,51 @@ public class OperationTest {
   public void testBuilder() {
     initializeExpectedOperation(6);
     assertEqualsCommonFields(globalOperation);
-    assertEquals(GLOBAL_OPERATION_ID, globalOperation.operationId());
+    assertEquals(GLOBAL_OPERATION_ID, globalOperation.getOperationId());
     assertEqualsCommonFields(regionOperation);
-    assertEquals(REGION_OPERATION_ID, regionOperation.operationId());
+    assertEquals(REGION_OPERATION_ID, regionOperation.getOperationId());
     assertEqualsCommonFields(zoneOperation);
+    assertEquals(ZONE_OPERATION_ID, zoneOperation.getOperationId());
+    Operation operation = new Operation.Builder(serviceMockReturnsOptions)
+        .setOperationId(GLOBAL_OPERATION_ID)
+        .build();
+    assertNullCommonFields(operation);
+    assertEquals(GLOBAL_OPERATION_ID, operation.getOperationId());
+    operation = new Operation.Builder(serviceMockReturnsOptions)
+        .setOperationId(ZONE_OPERATION_ID)
+        .build();
+    assertNullCommonFields(operation);
+    assertEquals(ZONE_OPERATION_ID, operation.getOperationId());
+    operation = new Operation.Builder(serviceMockReturnsOptions)
+        .setOperationId(REGION_OPERATION_ID)
+        .build();
+    assertNullCommonFields(operation);
+    assertEquals(REGION_OPERATION_ID, operation.getOperationId());
+  }
+
+  @Test
+  public void testBuilderDeprecated() {
+    initializeExpectedOperation(6);
+    assertEqualsCommonFieldsDeprecated(globalOperation);
+    assertEquals(GLOBAL_OPERATION_ID, globalOperation.operationId());
+    assertEqualsCommonFieldsDeprecated(regionOperation);
+    assertEquals(REGION_OPERATION_ID, regionOperation.operationId());
+    assertEqualsCommonFieldsDeprecated(zoneOperation);
     assertEquals(ZONE_OPERATION_ID, zoneOperation.operationId());
     Operation operation = new Operation.Builder(serviceMockReturnsOptions)
-        .operationId(GLOBAL_OPERATION_ID)
+        .setOperationId(GLOBAL_OPERATION_ID)
         .build();
-    assertNullCommonFields(operation);
+    assertNullCommonFieldsDeprecated(operation);
     assertEquals(GLOBAL_OPERATION_ID, operation.operationId());
     operation = new Operation.Builder(serviceMockReturnsOptions)
-        .operationId(ZONE_OPERATION_ID)
+        .setOperationId(ZONE_OPERATION_ID)
         .build();
-    assertNullCommonFields(operation);
+    assertNullCommonFieldsDeprecated(operation);
     assertEquals(ZONE_OPERATION_ID, operation.operationId());
     operation = new Operation.Builder(serviceMockReturnsOptions)
-        .operationId(REGION_OPERATION_ID)
+        .setOperationId(REGION_OPERATION_ID)
         .build();
-    assertNullCommonFields(operation);
+    assertNullCommonFieldsDeprecated(operation);
     assertEquals(REGION_OPERATION_ID, operation.operationId());
   }
 
@@ -266,15 +334,15 @@ public class OperationTest {
     compareOperation(zoneOperation,
         Operation.fromPb(serviceMockReturnsOptions, zoneOperation.toPb()));
     Operation operation = new Operation.Builder(serviceMockReturnsOptions)
-        .operationId(GLOBAL_OPERATION_ID)
+        .setOperationId(GLOBAL_OPERATION_ID)
         .build();
     compareOperation(operation, Operation.fromPb(serviceMockReturnsOptions, operation.toPb()));
     operation = new Operation.Builder(serviceMockReturnsOptions)
-        .operationId(ZONE_OPERATION_ID)
+        .setOperationId(ZONE_OPERATION_ID)
         .build();
     compareOperation(operation, Operation.fromPb(serviceMockReturnsOptions, operation.toPb()));
     operation = new Operation.Builder(serviceMockReturnsOptions)
-        .operationId(REGION_OPERATION_ID)
+        .setOperationId(REGION_OPERATION_ID)
         .build();
     compareOperation(operation, Operation.fromPb(serviceMockReturnsOptions, operation.toPb()));
   }
@@ -505,24 +573,24 @@ public class OperationTest {
 
   private void compareOperation(Operation expected, Operation value) {
     assertEquals(expected, value);
-    assertEquals(expected.compute().options(), value.compute().options());
-    assertEquals(expected.operationId(), value.operationId());
-    assertEquals(expected.clientOperationId(), value.clientOperationId());
-    assertEquals(expected.operationType(), value.operationType());
-    assertEquals(expected.targetLink(), value.targetLink());
-    assertEquals(expected.targetId(), value.targetId());
-    assertEquals(expected.status(), value.status());
-    assertEquals(expected.statusMessage(), value.statusMessage());
-    assertEquals(expected.user(), value.user());
-    assertEquals(expected.progress(), value.progress());
-    assertEquals(expected.insertTime(), value.insertTime());
-    assertEquals(expected.startTime(), value.startTime());
-    assertEquals(expected.endTime(), value.endTime());
-    assertEquals(expected.errors(), value.errors());
-    assertEquals(expected.warnings(), value.warnings());
-    assertEquals(expected.httpErrorStatusCode(), value.httpErrorStatusCode());
-    assertEquals(expected.httpErrorMessage(), value.httpErrorMessage());
-    assertEquals(expected.description(), value.description());
+    assertEquals(expected.getCompute().options(), value.getCompute().options());
+    assertEquals(expected.getOperationId(), value.getOperationId());
+    assertEquals(expected.getClientOperationId(), value.getClientOperationId());
+    assertEquals(expected.getOperationType(), value.getOperationType());
+    assertEquals(expected.getTargetLink(), value.getTargetLink());
+    assertEquals(expected.getTargetId(), value.getTargetId());
+    assertEquals(expected.getStatus(), value.getStatus());
+    assertEquals(expected.getStatusMessage(), value.getStatusMessage());
+    assertEquals(expected.getUser(), value.getUser());
+    assertEquals(expected.getProgress(), value.getProgress());
+    assertEquals(expected.getInsertTime(), value.getInsertTime());
+    assertEquals(expected.getStartTime(), value.getStartTime());
+    assertEquals(expected.getEndTime(), value.getEndTime());
+    assertEquals(expected.getErrors(), value.getErrors());
+    assertEquals(expected.getWarnings(), value.getWarnings());
+    assertEquals(expected.getHttpErrorStatusCode(), value.getHttpErrorStatusCode());
+    assertEquals(expected.getHttpErrorMessage(), value.getHttpErrorMessage());
+    assertEquals(expected.getDescription(), value.getDescription());
     assertEquals(expected.hashCode(), value.hashCode());
   }
 }

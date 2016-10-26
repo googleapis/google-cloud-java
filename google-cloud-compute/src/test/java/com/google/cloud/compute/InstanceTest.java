@@ -43,9 +43,9 @@ public class InstanceTest {
   private static final InstanceId INSTANCE_ID = InstanceId.of("project", "zone", "instance");
   private static final InstanceInfo.Status STATUS = InstanceInfo.Status.RUNNING;
   private static final String STATUS_MESSAGE = "statusMessage";
-  private static final Tags TAGS = Tags.builder()
-      .values("tag1", "tag2")
-      .fingerprint("fingerprint")
+  private static final Tags TAGS = Tags.newBuilder()
+      .setValues("tag1", "tag2")
+      .setFingerprint("fingerprint")
       .build();
   private static final MachineTypeId MACHINE_TYPE = MachineTypeId.of("project", "zone", "type");
   private static final Boolean CAN_IP_FORWARD = true;
@@ -57,10 +57,10 @@ public class InstanceTest {
   private static final AttachedDisk ATTACHED_DISK =
       AttachedDisk.of(AttachedDisk.PersistentDiskConfiguration.of(DISK_ID));
   private static final List<AttachedDisk> ATTACHED_DISKS = ImmutableList.of(ATTACHED_DISK);
-  private static final Metadata METADATA = Metadata.builder()
+  private static final Metadata METADATA = Metadata.newBuilder()
       .add("key1", "value1")
       .add("key2", "value2")
-      .fingerprint("fingerprint")
+      .setFingerprint("fingerprint")
       .build();
   private static final ServiceAccount SERVICE_ACCOUNT =
       ServiceAccount.of("email", ImmutableList.of("scope1"));
@@ -80,17 +80,17 @@ public class InstanceTest {
     replay(serviceMockReturnsOptions);
     expectedInstance = new Instance.Builder(serviceMockReturnsOptions, INSTANCE_ID, MACHINE_TYPE,
         ATTACHED_DISK, NETWORK_INTERFACE)
-            .generatedId(GENERATED_ID)
-            .creationTimestamp(CREATION_TIMESTAMP)
-            .description(DESCRIPTION)
-            .status(STATUS)
-            .statusMessage(STATUS_MESSAGE)
-            .tags(TAGS)
-            .canIpForward(CAN_IP_FORWARD)
-            .metadata(METADATA)
-            .serviceAccounts(SERVICE_ACCOUNTS)
-            .schedulingOptions(SCHEDULING_OPTIONS)
-            .cpuPlatform(CPU_PLATFORM)
+            .setGeneratedId(GENERATED_ID)
+            .setCreationTimestamp(CREATION_TIMESTAMP)
+            .setDescription(DESCRIPTION)
+            .setStatus(STATUS)
+            .setStatusMessage(STATUS_MESSAGE)
+            .setTags(TAGS)
+            .setCanIpForward(CAN_IP_FORWARD)
+            .setMetadata(METADATA)
+            .setServiceAccounts(SERVICE_ACCOUNTS)
+            .setSchedulingOptions(SCHEDULING_OPTIONS)
+            .setCpuPlatform(CPU_PLATFORM)
             .build();
     compute = createStrictMock(Compute.class);
   }
@@ -98,17 +98,17 @@ public class InstanceTest {
   private void initializeInstance() {
     instance = new Instance.Builder(compute, INSTANCE_ID, MACHINE_TYPE,
         ATTACHED_DISK, NETWORK_INTERFACE)
-            .generatedId(GENERATED_ID)
-            .creationTimestamp(CREATION_TIMESTAMP)
-            .description(DESCRIPTION)
-            .status(STATUS)
-            .statusMessage(STATUS_MESSAGE)
-            .tags(TAGS)
-            .canIpForward(CAN_IP_FORWARD)
-            .metadata(METADATA)
-            .serviceAccounts(SERVICE_ACCOUNTS)
-            .schedulingOptions(SCHEDULING_OPTIONS)
-            .cpuPlatform(CPU_PLATFORM)
+            .setGeneratedId(GENERATED_ID)
+            .setCreationTimestamp(CREATION_TIMESTAMP)
+            .setDescription(DESCRIPTION)
+            .setStatus(STATUS)
+            .setStatusMessage(STATUS_MESSAGE)
+            .setTags(TAGS)
+            .setCanIpForward(CAN_IP_FORWARD)
+            .setMetadata(METADATA)
+            .setServiceAccounts(SERVICE_ACCOUNTS)
+            .setSchedulingOptions(SCHEDULING_OPTIONS)
+            .setCpuPlatform(CPU_PLATFORM)
             .build();
   }
 
@@ -116,9 +116,9 @@ public class InstanceTest {
   public void testToBuilder() {
     initializeExpectedInstance(8);
     compareInstance(expectedInstance, expectedInstance.toBuilder().build());
-    Instance newInstance = expectedInstance.toBuilder().description("newDescription").build();
-    assertEquals("newDescription", newInstance.description());
-    newInstance = newInstance.toBuilder().description("description").build();
+    Instance newInstance = expectedInstance.toBuilder().setDescription("newDescription").build();
+    assertEquals("newDescription", newInstance.getDescription());
+    newInstance = newInstance.toBuilder().setDescription("description").build();
     compareInstance(expectedInstance, newInstance);
   }
 
@@ -134,6 +134,47 @@ public class InstanceTest {
 
   @Test
   public void testBuilder() {
+    initializeExpectedInstance(2);
+    assertEquals(GENERATED_ID, expectedInstance.getGeneratedId());
+    assertEquals(INSTANCE_ID, expectedInstance.getInstanceId());
+    assertEquals(CREATION_TIMESTAMP, expectedInstance.getCreationTimestamp());
+    assertEquals(DESCRIPTION, expectedInstance.getDescription());
+    assertEquals(STATUS, expectedInstance.getStatus());
+    assertEquals(STATUS_MESSAGE, expectedInstance.getStatusMessage());
+    assertEquals(TAGS, expectedInstance.getTags());
+    assertEquals(MACHINE_TYPE, expectedInstance.getMachineType());
+    assertEquals(CAN_IP_FORWARD, expectedInstance.canIpForward());
+    assertEquals(NETWORK_INTERFACES, expectedInstance.getNetworkInterfaces());
+    assertEquals(ATTACHED_DISKS, expectedInstance.getAttachedDisks());
+    assertEquals(METADATA, expectedInstance.getMetadata());
+    assertEquals(SERVICE_ACCOUNTS, expectedInstance.getServiceAccounts());
+    assertEquals(SCHEDULING_OPTIONS, expectedInstance.getSchedulingOptions());
+    assertEquals(CPU_PLATFORM, expectedInstance.getCpuPlatform());
+    assertSame(serviceMockReturnsOptions, expectedInstance.getCompute());
+    InstanceInfo instanceInfo =
+        InstanceInfo.of(INSTANCE_ID, MACHINE_TYPE, ATTACHED_DISK, NETWORK_INTERFACE);
+    Instance instance =
+        new Instance(serviceMockReturnsOptions, new InstanceInfo.BuilderImpl(instanceInfo));
+    assertNull(instance.getGeneratedId());
+    assertEquals(INSTANCE_ID, instance.getInstanceId());
+    assertNull(instance.getCreationTimestamp());
+    assertNull(instance.getDescription());
+    assertNull(instance.getStatus());
+    assertNull(instance.getStatusMessage());
+    assertNull(instance.getTags());
+    assertEquals(MACHINE_TYPE, instance.getMachineType());
+    assertNull(instance.canIpForward());
+    assertEquals(NETWORK_INTERFACES, instance.getNetworkInterfaces());
+    assertEquals(ATTACHED_DISKS, instance.getAttachedDisks());
+    assertNull(instance.getMetadata());
+    assertNull(instance.getServiceAccounts());
+    assertNull(instance.getSchedulingOptions());
+    assertNull(instance.getCpuPlatform());
+    assertSame(serviceMockReturnsOptions, instance.getCompute());
+  }
+
+  @Test
+  public void testBuilderDeprecated() {
     initializeExpectedInstance(2);
     assertEquals(GENERATED_ID, expectedInstance.generatedId());
     assertEquals(INSTANCE_ID, expectedInstance.instanceId());
@@ -188,7 +229,7 @@ public class InstanceTest {
     initializeExpectedInstance(2);
     expect(compute.options()).andReturn(mockOptions);
     Operation operation = new Operation.Builder(serviceMockReturnsOptions)
-        .operationId(ZoneOperationId.of("project", "op"))
+        .setOperationId(ZoneOperationId.of("project", "op"))
         .build();
     expect(compute.deleteInstance(INSTANCE_ID)).andReturn(operation);
     replay(compute);
@@ -257,7 +298,8 @@ public class InstanceTest {
   public void testReloadWithOptions() throws Exception {
     initializeExpectedInstance(3);
     expect(compute.options()).andReturn(mockOptions);
-    expect(compute.getInstance(INSTANCE_ID, Compute.InstanceOption.fields())).andReturn(expectedInstance);
+    expect(compute.getInstance(INSTANCE_ID,
+        Compute.InstanceOption.fields())).andReturn(expectedInstance);
     replay(compute);
     initializeInstance();
     Instance updateInstance = instance.reload(Compute.InstanceOption.fields());
@@ -271,7 +313,7 @@ public class InstanceTest {
     expect(compute.options()).andReturn(mockOptions);
     NetworkInterface.AccessConfig accessConfig = NetworkInterface.AccessConfig.of("192.168.1.1");
     Operation operation = new Operation.Builder(serviceMockReturnsOptions)
-        .operationId(ZoneOperationId.of("project", "op"))
+        .setOperationId(ZoneOperationId.of("project", "op"))
         .build();
     expect(compute.addAccessConfig(INSTANCE_ID, "nic0", accessConfig)).andReturn(operation);
     replay(compute);
@@ -296,22 +338,25 @@ public class InstanceTest {
     expect(compute.options()).andReturn(mockOptions);
     NetworkInterface.AccessConfig accessConfig = NetworkInterface.AccessConfig.of("192.168.1.1");
     Operation operation = new Operation.Builder(serviceMockReturnsOptions)
-        .operationId(ZoneOperationId.of("project", "op"))
+        .setOperationId(ZoneOperationId.of("project", "op"))
         .build();
-    expect(compute.addAccessConfig(INSTANCE_ID, "nic0", accessConfig, Compute.OperationOption.fields()))
+    expect(compute.addAccessConfig(
+        INSTANCE_ID, "nic0", accessConfig, Compute.OperationOption.fields()))
         .andReturn(operation);
     replay(compute);
     initializeInstance();
-    assertSame(operation, instance.addAccessConfig("nic0", accessConfig, Compute.OperationOption.fields()));
+    assertSame(operation,
+        instance.addAccessConfig("nic0", accessConfig, Compute.OperationOption.fields()));
   }
 
   @Test
   public void testAttachDisk() throws Exception {
     initializeExpectedInstance(2);
     expect(compute.options()).andReturn(mockOptions);
-    AttachedDisk.PersistentDiskConfiguration configuration = AttachedDisk.PersistentDiskConfiguration.of(DISK_ID);
+    AttachedDisk.PersistentDiskConfiguration configuration =
+        AttachedDisk.PersistentDiskConfiguration.of(DISK_ID);
     Operation operation = new Operation.Builder(serviceMockReturnsOptions)
-        .operationId(ZoneOperationId.of("project", "op"))
+        .setOperationId(ZoneOperationId.of("project", "op"))
         .build();
     expect(compute.attachDisk(INSTANCE_ID, configuration)).andReturn(operation);
     replay(compute);
@@ -323,7 +368,8 @@ public class InstanceTest {
   public void testAttachDisk_Null() throws Exception {
     initializeExpectedInstance(1);
     expect(compute.options()).andReturn(mockOptions);
-    AttachedDisk.PersistentDiskConfiguration configuration = AttachedDisk.PersistentDiskConfiguration.of(DISK_ID);
+    AttachedDisk.PersistentDiskConfiguration configuration =
+        AttachedDisk.PersistentDiskConfiguration.of(DISK_ID);
     expect(compute.attachDisk(INSTANCE_ID, configuration)).andReturn(null);
     replay(compute);
     initializeInstance();
@@ -334,9 +380,10 @@ public class InstanceTest {
   public void testAttachDiskWithOptions() throws Exception {
     initializeExpectedInstance(2);
     expect(compute.options()).andReturn(mockOptions);
-    AttachedDisk.PersistentDiskConfiguration configuration = AttachedDisk.PersistentDiskConfiguration.of(DISK_ID);
+    AttachedDisk.PersistentDiskConfiguration configuration =
+        AttachedDisk.PersistentDiskConfiguration.of(DISK_ID);
     Operation operation = new Operation.Builder(serviceMockReturnsOptions)
-        .operationId(ZoneOperationId.of("project", "op"))
+        .setOperationId(ZoneOperationId.of("project", "op"))
         .build();
     expect(compute.attachDisk(INSTANCE_ID, configuration, Compute.OperationOption.fields()))
         .andReturn(operation);
@@ -349,9 +396,10 @@ public class InstanceTest {
   public void testAttachDiskName() throws Exception {
     initializeExpectedInstance(2);
     expect(compute.options()).andReturn(mockOptions);
-    AttachedDisk.PersistentDiskConfiguration configuration = AttachedDisk.PersistentDiskConfiguration.of(DISK_ID);
+    AttachedDisk.PersistentDiskConfiguration configuration =
+        AttachedDisk.PersistentDiskConfiguration.of(DISK_ID);
     Operation operation = new Operation.Builder(serviceMockReturnsOptions)
-        .operationId(ZoneOperationId.of("project", "op"))
+        .setOperationId(ZoneOperationId.of("project", "op"))
         .build();
     expect(compute.attachDisk(INSTANCE_ID, "dev0", configuration)).andReturn(operation);
     replay(compute);
@@ -363,7 +411,8 @@ public class InstanceTest {
   public void testAttachDiskName_Null() throws Exception {
     initializeExpectedInstance(1);
     expect(compute.options()).andReturn(mockOptions);
-    AttachedDisk.PersistentDiskConfiguration configuration = AttachedDisk.PersistentDiskConfiguration.of(DISK_ID);
+    AttachedDisk.PersistentDiskConfiguration configuration =
+        AttachedDisk.PersistentDiskConfiguration.of(DISK_ID);
     expect(compute.attachDisk(INSTANCE_ID, "dev0", configuration)).andReturn(null);
     replay(compute);
     initializeInstance();
@@ -374,24 +423,27 @@ public class InstanceTest {
   public void testAttachDiskNameWithOptions() throws Exception {
     initializeExpectedInstance(2);
     expect(compute.options()).andReturn(mockOptions);
-    AttachedDisk.PersistentDiskConfiguration configuration = AttachedDisk.PersistentDiskConfiguration.of(DISK_ID);
+    AttachedDisk.PersistentDiskConfiguration configuration =
+        AttachedDisk.PersistentDiskConfiguration.of(DISK_ID);
     Operation operation = new Operation.Builder(serviceMockReturnsOptions)
-        .operationId(ZoneOperationId.of("project", "op"))
+        .setOperationId(ZoneOperationId.of("project", "op"))
         .build();
     expect(compute.attachDisk(INSTANCE_ID, "dev0", configuration, Compute.OperationOption.fields()))
         .andReturn(operation);
     replay(compute);
     initializeInstance();
-    assertSame(operation, instance.attachDisk("dev0", configuration, Compute.OperationOption.fields()));
+    assertSame(operation,
+        instance.attachDisk("dev0", configuration, Compute.OperationOption.fields()));
   }
 
   @Test
   public void testAttachDiskNameIndex() throws Exception {
     initializeExpectedInstance(2);
     expect(compute.options()).andReturn(mockOptions);
-    AttachedDisk.PersistentDiskConfiguration configuration = AttachedDisk.PersistentDiskConfiguration.of(DISK_ID);
+    AttachedDisk.PersistentDiskConfiguration configuration =
+        AttachedDisk.PersistentDiskConfiguration.of(DISK_ID);
     Operation operation = new Operation.Builder(serviceMockReturnsOptions)
-        .operationId(ZoneOperationId.of("project", "op"))
+        .setOperationId(ZoneOperationId.of("project", "op"))
         .build();
     expect(compute.attachDisk(INSTANCE_ID, "dev0", configuration, 1)).andReturn(operation);
     replay(compute);
@@ -403,7 +455,8 @@ public class InstanceTest {
   public void testAttachDiskNameIndex_Null() throws Exception {
     initializeExpectedInstance(1);
     expect(compute.options()).andReturn(mockOptions);
-    AttachedDisk.PersistentDiskConfiguration configuration = AttachedDisk.PersistentDiskConfiguration.of(DISK_ID);
+    AttachedDisk.PersistentDiskConfiguration configuration =
+        AttachedDisk.PersistentDiskConfiguration.of(DISK_ID);
     expect(compute.attachDisk(INSTANCE_ID, "dev0", configuration, 1)).andReturn(null);
     replay(compute);
     initializeInstance();
@@ -414,11 +467,13 @@ public class InstanceTest {
   public void testAttachDiskNameIndexWithOptions() throws Exception {
     initializeExpectedInstance(2);
     expect(compute.options()).andReturn(mockOptions);
-    AttachedDisk.PersistentDiskConfiguration configuration = AttachedDisk.PersistentDiskConfiguration.of(DISK_ID);
+    AttachedDisk.PersistentDiskConfiguration configuration =
+        AttachedDisk.PersistentDiskConfiguration.of(DISK_ID);
     Operation operation = new Operation.Builder(serviceMockReturnsOptions)
-        .operationId(ZoneOperationId.of("project", "op"))
+        .setOperationId(ZoneOperationId.of("project", "op"))
         .build();
-    expect(compute.attachDisk(INSTANCE_ID, "dev0", configuration, 1, Compute.OperationOption.fields()))
+    expect(compute.attachDisk(
+        INSTANCE_ID, "dev0", configuration, 1, Compute.OperationOption.fields()))
         .andReturn(operation);
     replay(compute);
     initializeInstance();
@@ -431,7 +486,7 @@ public class InstanceTest {
     initializeExpectedInstance(2);
     expect(compute.options()).andReturn(mockOptions);
     Operation operation = new Operation.Builder(serviceMockReturnsOptions)
-        .operationId(ZoneOperationId.of("project", "op"))
+        .setOperationId(ZoneOperationId.of("project", "op"))
         .build();
     expect(compute.deleteAccessConfig(INSTANCE_ID, "nic0", "NAT")).andReturn(operation);
     replay(compute);
@@ -454,13 +509,15 @@ public class InstanceTest {
     initializeExpectedInstance(2);
     expect(compute.options()).andReturn(mockOptions);
     Operation operation = new Operation.Builder(serviceMockReturnsOptions)
-        .operationId(ZoneOperationId.of("project", "op"))
+        .setOperationId(ZoneOperationId.of("project", "op"))
         .build();
-    expect(compute.deleteAccessConfig(INSTANCE_ID, "nic0", "NAT", Compute.OperationOption.fields()))
+    expect(compute.deleteAccessConfig(
+        INSTANCE_ID, "nic0", "NAT", Compute.OperationOption.fields()))
         .andReturn(operation);
     replay(compute);
     initializeInstance();
-    assertSame(operation, instance.deleteAccessConfig("nic0", "NAT", Compute.OperationOption.fields()));
+    assertSame(operation,
+        instance.deleteAccessConfig("nic0", "NAT", Compute.OperationOption.fields()));
   }
 
   @Test
@@ -468,7 +525,7 @@ public class InstanceTest {
     initializeExpectedInstance(2);
     expect(compute.options()).andReturn(mockOptions);
     Operation operation = new Operation.Builder(serviceMockReturnsOptions)
-        .operationId(ZoneOperationId.of("project", "op"))
+        .setOperationId(ZoneOperationId.of("project", "op"))
         .build();
     expect(compute.detachDisk(INSTANCE_ID, "dev0")).andReturn(operation);
     replay(compute);
@@ -491,9 +548,10 @@ public class InstanceTest {
     initializeExpectedInstance(2);
     expect(compute.options()).andReturn(mockOptions);
     Operation operation = new Operation.Builder(serviceMockReturnsOptions)
-        .operationId(ZoneOperationId.of("project", "op"))
+        .setOperationId(ZoneOperationId.of("project", "op"))
         .build();
-    expect(compute.detachDisk(INSTANCE_ID, "dev0", Compute.OperationOption.fields())).andReturn(operation);
+    expect(compute.detachDisk(INSTANCE_ID, "dev0", Compute.OperationOption.fields()))
+        .andReturn(operation);
     replay(compute);
     initializeInstance();
     assertSame(operation, instance.detachDisk("dev0", Compute.OperationOption.fields()));
@@ -524,7 +582,7 @@ public class InstanceTest {
     initializeExpectedInstance(2);
     expect(compute.options()).andReturn(mockOptions);
     Operation operation = new Operation.Builder(serviceMockReturnsOptions)
-        .operationId(ZoneOperationId.of("project", "op"))
+        .setOperationId(ZoneOperationId.of("project", "op"))
         .build();
     expect(compute.reset(INSTANCE_ID)).andReturn(operation);
     replay(compute);
@@ -547,7 +605,7 @@ public class InstanceTest {
     initializeExpectedInstance(2);
     expect(compute.options()).andReturn(mockOptions);
     Operation operation = new Operation.Builder(serviceMockReturnsOptions)
-        .operationId(ZoneOperationId.of("project", "op"))
+        .setOperationId(ZoneOperationId.of("project", "op"))
         .build();
     expect(compute.setDiskAutoDelete(INSTANCE_ID, "dev0", true)).andReturn(operation);
     replay(compute);
@@ -570,13 +628,14 @@ public class InstanceTest {
     initializeExpectedInstance(2);
     expect(compute.options()).andReturn(mockOptions);
     Operation operation = new Operation.Builder(serviceMockReturnsOptions)
-        .operationId(ZoneOperationId.of("project", "op"))
+        .setOperationId(ZoneOperationId.of("project", "op"))
         .build();
     expect(compute.setDiskAutoDelete(INSTANCE_ID, "dev0", true, Compute.OperationOption.fields()))
         .andReturn(operation);
     replay(compute);
     initializeInstance();
-    assertSame(operation, instance.setDiskAutoDelete("dev0", true, Compute.OperationOption.fields()));
+    assertSame(operation,
+        instance.setDiskAutoDelete("dev0", true, Compute.OperationOption.fields()));
   }
 
   @Test
@@ -584,7 +643,7 @@ public class InstanceTest {
     initializeExpectedInstance(2);
     expect(compute.options()).andReturn(mockOptions);
     Operation operation = new Operation.Builder(serviceMockReturnsOptions)
-        .operationId(ZoneOperationId.of("project", "op"))
+        .setOperationId(ZoneOperationId.of("project", "op"))
         .build();
     expect(compute.setMachineType(INSTANCE_ID, MACHINE_TYPE)).andReturn(operation);
     replay(compute);
@@ -607,7 +666,7 @@ public class InstanceTest {
     initializeExpectedInstance(2);
     expect(compute.options()).andReturn(mockOptions);
     Operation operation = new Operation.Builder(serviceMockReturnsOptions)
-        .operationId(ZoneOperationId.of("project", "op"))
+        .setOperationId(ZoneOperationId.of("project", "op"))
         .build();
     expect(compute.setMachineType(INSTANCE_ID, MACHINE_TYPE, Compute.OperationOption.fields()))
         .andReturn(operation);
@@ -621,9 +680,9 @@ public class InstanceTest {
     initializeExpectedInstance(2);
     expect(compute.options()).andReturn(mockOptions);
     Operation operation = new Operation.Builder(serviceMockReturnsOptions)
-        .operationId(ZoneOperationId.of("project", "op"))
+        .setOperationId(ZoneOperationId.of("project", "op"))
         .build();
-    Metadata metadata = Metadata.builder().add("k", "v").fingerprint("fingerprint").build();
+    Metadata metadata = Metadata.newBuilder().add("k", "v").setFingerprint("fingerprint").build();
     expect(compute.setMetadata(INSTANCE_ID, metadata)).andReturn(operation);
     replay(compute);
     initializeInstance();
@@ -634,7 +693,7 @@ public class InstanceTest {
   public void testSetMetadata_Null() throws Exception {
     initializeExpectedInstance(2);
     expect(compute.options()).andReturn(mockOptions);
-    Metadata metadata = Metadata.builder().add("k", "v").fingerprint("fingerprint").build();
+    Metadata metadata = Metadata.newBuilder().add("k", "v").setFingerprint("fingerprint").build();
     expect(compute.setMetadata(INSTANCE_ID, metadata)).andReturn(null);
     replay(compute);
     initializeInstance();
@@ -646,9 +705,9 @@ public class InstanceTest {
     initializeExpectedInstance(2);
     expect(compute.options()).andReturn(mockOptions);
     Operation operation = new Operation.Builder(serviceMockReturnsOptions)
-        .operationId(ZoneOperationId.of("project", "op"))
+        .setOperationId(ZoneOperationId.of("project", "op"))
         .build();
-    Metadata metadata = Metadata.builder().add("k", "v").fingerprint("fingerprint").build();
+    Metadata metadata = Metadata.newBuilder().add("k", "v").setFingerprint("fingerprint").build();
     expect(compute.setMetadata(INSTANCE_ID, metadata, Compute.OperationOption.fields()))
         .andReturn(operation);
     replay(compute);
@@ -661,10 +720,11 @@ public class InstanceTest {
     initializeExpectedInstance(2);
     expect(compute.options()).andReturn(mockOptions);
     Operation operation = new Operation.Builder(serviceMockReturnsOptions)
-        .operationId(ZoneOperationId.of("project", "op"))
+        .setOperationId(ZoneOperationId.of("project", "op"))
         .build();
     Map<String, String> metadataMap = ImmutableMap.of("k", "v");
-    Metadata metadata = Metadata.builder().values(metadataMap).fingerprint("fingerprint").build();
+    Metadata metadata =
+        Metadata.newBuilder().setValues(metadataMap).setFingerprint("fingerprint").build();
     expect(compute.setMetadata(INSTANCE_ID, metadata)).andReturn(operation);
     replay(compute);
     initializeInstance();
@@ -676,7 +736,8 @@ public class InstanceTest {
     initializeExpectedInstance(2);
     expect(compute.options()).andReturn(mockOptions);
     Map<String, String> metadataMap = ImmutableMap.of("k", "v");
-    Metadata metadata = Metadata.builder().values(metadataMap).fingerprint("fingerprint").build();
+    Metadata metadata =
+        Metadata.newBuilder().setValues(metadataMap).setFingerprint("fingerprint").build();
     expect(compute.setMetadata(INSTANCE_ID, metadata)).andReturn(null);
     replay(compute);
     initializeInstance();
@@ -688,10 +749,11 @@ public class InstanceTest {
     initializeExpectedInstance(2);
     expect(compute.options()).andReturn(mockOptions);
     Operation operation = new Operation.Builder(serviceMockReturnsOptions)
-        .operationId(ZoneOperationId.of("project", "op"))
+        .setOperationId(ZoneOperationId.of("project", "op"))
         .build();
     Map<String, String> metadataMap = ImmutableMap.of("k", "v");
-    Metadata metadata = Metadata.builder().values(metadataMap).fingerprint("fingerprint").build();
+    Metadata metadata =
+        Metadata.newBuilder().setValues(metadataMap).setFingerprint("fingerprint").build();
     expect(compute.setMetadata(INSTANCE_ID, metadata, Compute.OperationOption.fields()))
         .andReturn(operation);
     replay(compute);
@@ -704,9 +766,10 @@ public class InstanceTest {
     initializeExpectedInstance(2);
     expect(compute.options()).andReturn(mockOptions);
     Operation operation = new Operation.Builder(serviceMockReturnsOptions)
-        .operationId(ZoneOperationId.of("project", "op"))
+        .setOperationId(ZoneOperationId.of("project", "op"))
         .build();
-    SchedulingOptions schedulingOptions = SchedulingOptions.standard(true, SchedulingOptions.Maintenance.MIGRATE);
+    SchedulingOptions schedulingOptions =
+        SchedulingOptions.standard(true, SchedulingOptions.Maintenance.MIGRATE);
     expect(compute.setSchedulingOptions(INSTANCE_ID, schedulingOptions)).andReturn(operation);
     replay(compute);
     initializeInstance();
@@ -717,7 +780,8 @@ public class InstanceTest {
   public void testSetSchedulingOptions_Null() throws Exception {
     initializeExpectedInstance(1);
     expect(compute.options()).andReturn(mockOptions);
-    SchedulingOptions schedulingOptions = SchedulingOptions.standard(true, SchedulingOptions.Maintenance.MIGRATE);
+    SchedulingOptions schedulingOptions =
+        SchedulingOptions.standard(true, SchedulingOptions.Maintenance.MIGRATE);
     expect(compute.setSchedulingOptions(INSTANCE_ID, schedulingOptions)).andReturn(null);
     replay(compute);
     initializeInstance();
@@ -729,10 +793,12 @@ public class InstanceTest {
     initializeExpectedInstance(2);
     expect(compute.options()).andReturn(mockOptions);
     Operation operation = new Operation.Builder(serviceMockReturnsOptions)
-        .operationId(ZoneOperationId.of("project", "op"))
+        .setOperationId(ZoneOperationId.of("project", "op"))
         .build();
-    SchedulingOptions schedulingOptions = SchedulingOptions.standard(true, SchedulingOptions.Maintenance.MIGRATE);
-    expect(compute.setSchedulingOptions(INSTANCE_ID, schedulingOptions, Compute.OperationOption.fields()))
+    SchedulingOptions schedulingOptions =
+        SchedulingOptions.standard(true, SchedulingOptions.Maintenance.MIGRATE);
+    expect(compute.setSchedulingOptions(
+        INSTANCE_ID, schedulingOptions, Compute.OperationOption.fields()))
         .andReturn(operation);
     replay(compute);
     initializeInstance();
@@ -745,9 +811,9 @@ public class InstanceTest {
     initializeExpectedInstance(2);
     expect(compute.options()).andReturn(mockOptions);
     Operation operation = new Operation.Builder(serviceMockReturnsOptions)
-        .operationId(ZoneOperationId.of("project", "op"))
+        .setOperationId(ZoneOperationId.of("project", "op"))
         .build();
-    Tags tags = Tags.builder().values("v1", "v2").fingerprint("fingerprint").build();
+    Tags tags = Tags.newBuilder().setValues("v1", "v2").setFingerprint("fingerprint").build();
     expect(compute.setTags(INSTANCE_ID, tags)).andReturn(operation);
     replay(compute);
     initializeInstance();
@@ -758,7 +824,7 @@ public class InstanceTest {
   public void testSetTags_Null() throws Exception {
     initializeExpectedInstance(2);
     expect(compute.options()).andReturn(mockOptions);
-    Tags tags = Tags.builder().values("v1", "v2").fingerprint("fingerprint").build();
+    Tags tags = Tags.newBuilder().setValues("v1", "v2").setFingerprint("fingerprint").build();
     expect(compute.setTags(INSTANCE_ID, tags)).andReturn(null);
     replay(compute);
     initializeInstance();
@@ -770,10 +836,11 @@ public class InstanceTest {
     initializeExpectedInstance(2);
     expect(compute.options()).andReturn(mockOptions);
     Operation operation = new Operation.Builder(serviceMockReturnsOptions)
-        .operationId(ZoneOperationId.of("project", "op"))
+        .setOperationId(ZoneOperationId.of("project", "op"))
         .build();
-    Tags tags = Tags.builder().values("v1", "v2").fingerprint("fingerprint").build();
-    expect(compute.setTags(INSTANCE_ID, tags, Compute.OperationOption.fields())).andReturn(operation);
+    Tags tags = Tags.newBuilder().setValues("v1", "v2").setFingerprint("fingerprint").build();
+    expect(compute.setTags(INSTANCE_ID, tags, Compute.OperationOption.fields()))
+        .andReturn(operation);
     replay(compute);
     initializeInstance();
     assertSame(operation, instance.setTags(tags, Compute.OperationOption.fields()));
@@ -784,10 +851,10 @@ public class InstanceTest {
     initializeExpectedInstance(2);
     expect(compute.options()).andReturn(mockOptions);
     Operation operation = new Operation.Builder(serviceMockReturnsOptions)
-        .operationId(ZoneOperationId.of("project", "op"))
+        .setOperationId(ZoneOperationId.of("project", "op"))
         .build();
     List<String> tagList = ImmutableList.of("v1", "v2");
-    Tags tags = Tags.builder().values(tagList).fingerprint("fingerprint").build();
+    Tags tags = Tags.newBuilder().setValues(tagList).setFingerprint("fingerprint").build();
     expect(compute.setTags(INSTANCE_ID, tags)).andReturn(operation);
     replay(compute);
     initializeInstance();
@@ -799,7 +866,7 @@ public class InstanceTest {
     initializeExpectedInstance(2);
     expect(compute.options()).andReturn(mockOptions);
     List<String> tagList = ImmutableList.of("v1", "v2");
-    Tags tags = Tags.builder().values(tagList).fingerprint("fingerprint").build();
+    Tags tags = Tags.newBuilder().setValues(tagList).setFingerprint("fingerprint").build();
     expect(compute.setTags(INSTANCE_ID, tags)).andReturn(null);
     replay(compute);
     initializeInstance();
@@ -811,11 +878,12 @@ public class InstanceTest {
     initializeExpectedInstance(2);
     expect(compute.options()).andReturn(mockOptions);
     Operation operation = new Operation.Builder(serviceMockReturnsOptions)
-        .operationId(ZoneOperationId.of("project", "op"))
+        .setOperationId(ZoneOperationId.of("project", "op"))
         .build();
     List<String> tagList = ImmutableList.of("v1", "v2");
-    Tags tags = Tags.builder().values(tagList).fingerprint("fingerprint").build();
-    expect(compute.setTags(INSTANCE_ID, tags, Compute.OperationOption.fields())).andReturn(operation);
+    Tags tags = Tags.newBuilder().setValues(tagList).setFingerprint("fingerprint").build();
+    expect(compute.setTags(INSTANCE_ID, tags, Compute.OperationOption.fields()))
+        .andReturn(operation);
     replay(compute);
     initializeInstance();
     assertSame(operation, instance.setTags(tagList, Compute.OperationOption.fields()));
@@ -826,7 +894,7 @@ public class InstanceTest {
     initializeExpectedInstance(2);
     expect(compute.options()).andReturn(mockOptions);
     Operation operation = new Operation.Builder(serviceMockReturnsOptions)
-        .operationId(ZoneOperationId.of("project", "op"))
+        .setOperationId(ZoneOperationId.of("project", "op"))
         .build();
     expect(compute.start(INSTANCE_ID)).andReturn(operation);
     replay(compute);
@@ -849,7 +917,7 @@ public class InstanceTest {
     initializeExpectedInstance(2);
     expect(compute.options()).andReturn(mockOptions);
     Operation operation = new Operation.Builder(serviceMockReturnsOptions)
-        .operationId(ZoneOperationId.of("project", "op"))
+        .setOperationId(ZoneOperationId.of("project", "op"))
         .build();
     expect(compute.stop(INSTANCE_ID)).andReturn(operation);
     replay(compute);
@@ -869,22 +937,22 @@ public class InstanceTest {
 
   public void compareInstance(Instance expected, Instance value) {
     assertEquals(expected, value);
-    assertEquals(expected.compute().options(), value.compute().options());
-    assertEquals(expected.generatedId(), value.generatedId());
-    assertEquals(expected.instanceId(), value.instanceId());
-    assertEquals(expected.creationTimestamp(), value.creationTimestamp());
-    assertEquals(expected.description(), value.description());
-    assertEquals(expected.status(), value.status());
-    assertEquals(expected.statusMessage(), value.statusMessage());
-    assertEquals(expected.tags(), value.tags());
-    assertEquals(expected.machineType(), value.machineType());
+    assertEquals(expected.getCompute().options(), value.getCompute().options());
+    assertEquals(expected.getGeneratedId(), value.getGeneratedId());
+    assertEquals(expected.getInstanceId(), value.getInstanceId());
+    assertEquals(expected.getCreationTimestamp(), value.getCreationTimestamp());
+    assertEquals(expected.getDescription(), value.getDescription());
+    assertEquals(expected.getStatus(), value.getStatus());
+    assertEquals(expected.getStatusMessage(), value.getStatusMessage());
+    assertEquals(expected.getTags(), value.getTags());
+    assertEquals(expected.getMachineType(), value.getMachineType());
     assertEquals(expected.canIpForward(), value.canIpForward());
-    assertEquals(expected.networkInterfaces(), value.networkInterfaces());
-    assertEquals(expected.attachedDisks(), value.attachedDisks());
-    assertEquals(expected.metadata(), value.metadata());
-    assertEquals(expected.serviceAccounts(), value.serviceAccounts());
-    assertEquals(expected.schedulingOptions(), value.schedulingOptions());
-    assertEquals(expected.cpuPlatform(), value.cpuPlatform());
+    assertEquals(expected.getNetworkInterfaces(), value.getNetworkInterfaces());
+    assertEquals(expected.getAttachedDisks(), value.getAttachedDisks());
+    assertEquals(expected.getMetadata(), value.getMetadata());
+    assertEquals(expected.getServiceAccounts(), value.getServiceAccounts());
+    assertEquals(expected.getSchedulingOptions(), value.getSchedulingOptions());
+    assertEquals(expected.getCpuPlatform(), value.getCpuPlatform());
     assertEquals(expected.hashCode(), value.hashCode());
   }
 }

@@ -33,13 +33,25 @@ public final class GlobalAddressId extends AddressId {
   }
 
   @Override
+  @Deprecated
   public Type type() {
+    return getType();
+  }
+
+  @Override
+  public Type getType() {
     return Type.GLOBAL;
   }
 
   @Override
+  @Deprecated
   public String selfLink() {
-    return super.selfLink() + "/global/addresses/" + address();
+    return getSelfLink();
+  }
+
+  @Override
+  public String getSelfLink() {
+    return super.getSelfLink() + "/global/addresses/" + getAddress();
   }
 
   @Override
@@ -54,10 +66,10 @@ public final class GlobalAddressId extends AddressId {
 
   @Override
   GlobalAddressId setProjectId(String projectId) {
-    if (project() != null) {
+    if (getProject() != null) {
       return this;
     }
-    return GlobalAddressId.of(projectId, address());
+    return GlobalAddressId.of(projectId, getAddress());
   }
 
   /**

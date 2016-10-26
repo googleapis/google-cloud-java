@@ -39,6 +39,17 @@ public class ImageIdTest {
   @Test
   public void testOf() {
     ImageId imageId = ImageId.of(PROJECT, NAME);
+    assertEquals(PROJECT, imageId.getProject());
+    assertEquals(NAME, imageId.getImage());
+    assertEquals(URL, imageId.getSelfLink());
+    imageId = ImageId.of(NAME);
+    assertNull(imageId.getProject());
+    assertEquals(NAME, imageId.getImage());
+  }
+
+  @Test
+  public void testOfDeprecated() {
+    ImageId imageId = ImageId.of(PROJECT, NAME);
     assertEquals(PROJECT, imageId.project());
     assertEquals(NAME, imageId.image());
     assertEquals(URL, imageId.selfLink());
@@ -50,7 +61,7 @@ public class ImageIdTest {
   @Test
   public void testToAndFromUrl() {
     ImageId imageId = ImageId.of(PROJECT, NAME);
-    compareImageId(imageId, ImageId.fromUrl(imageId.selfLink()));
+    compareImageId(imageId, ImageId.fromUrl(imageId.getSelfLink()));
     thrown.expect(IllegalArgumentException.class);
     thrown.expectMessage("notMatchingUrl is not a valid image URL");
     ImageId.fromUrl("notMatchingUrl");
@@ -65,15 +76,15 @@ public class ImageIdTest {
 
   @Test
   public void testMatchesUrl() {
-    assertTrue(ImageId.matchesUrl(ImageId.of(PROJECT, NAME).selfLink()));
+    assertTrue(ImageId.matchesUrl(ImageId.of(PROJECT, NAME).getSelfLink()));
     assertFalse(ImageId.matchesUrl("notMatchingUrl"));
   }
 
   private void compareImageId(ImageId expected, ImageId value) {
     assertEquals(expected, value);
-    assertEquals(expected.project(), expected.project());
-    assertEquals(expected.image(), expected.image());
-    assertEquals(expected.selfLink(), expected.selfLink());
+    assertEquals(expected.getProject(), expected.getProject());
+    assertEquals(expected.getImage(), expected.getImage());
+    assertEquals(expected.getSelfLink(), expected.getSelfLink());
     assertEquals(expected.hashCode(), expected.hashCode());
   }
 }

@@ -41,27 +41,55 @@ public final class RegionOperationId extends OperationId {
   }
 
   @Override
+  @Deprecated
   public Type type() {
+    return getType();
+  }
+
+  @Override
+  public Type getType() {
     return Type.REGION;
   }
 
   /**
    * Returns the name of the region this operation belongs to.
    */
+  @Deprecated
   public String region() {
+    return region;
+  }
+
+  /**
+   * Returns the name of the region this operation belongs to.
+   */
+  public String getRegion() {
     return region;
   }
 
   /**
    * Returns the identity of the region this operation belongs to.
    */
+  @Deprecated
   public RegionId regionId() {
-    return RegionId.of(project(), region);
+    return RegionId.of(getProject(), region);
+  }
+
+  /**
+   * Returns the identity of the region this operation belongs to.
+   */
+  public RegionId getRegionId() {
+    return RegionId.of(getProject(), region);
   }
 
   @Override
+  @Deprecated
   public String selfLink() {
-    return super.selfLink() + "/regions/" + region + "/operations/" + operation();
+    return getSelfLink();
+  }
+
+  @Override
+  public String getSelfLink() {
+    return super.getSelfLink() + "/regions/" + region + "/operations/" + getOperation();
   }
 
   @Override
@@ -88,17 +116,17 @@ public final class RegionOperationId extends OperationId {
 
   @Override
   RegionOperationId setProjectId(String projectId) {
-    if (project() != null) {
+    if (getProject() != null) {
       return this;
     }
-    return RegionOperationId.of(projectId, region, operation());
+    return RegionOperationId.of(projectId, region, getOperation());
   }
 
   /**
    * Returns a region operation identity given the region identity and the operation name.
    */
   public static RegionOperationId of(RegionId regionId, String operation) {
-    return new RegionOperationId(regionId.project(), regionId.region(), operation);
+    return new RegionOperationId(regionId.getProject(), regionId.getRegion(), operation);
   }
 
   /**

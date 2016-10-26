@@ -106,17 +106,23 @@ public class AddressInfo implements Serializable {
     /**
      * Returns the identities of resources currently using this address.
      */
+    @Deprecated
     public abstract List<? extends ResourceId> users();
+
+    /**
+     * Returns the identities of resources currently using this address.
+     */
+    public abstract List<? extends ResourceId> getUsers();
 
     final boolean baseEquals(Usage usage) {
       return Objects.equals(toPb(), usage.toPb());
     }
 
     Address toPb() {
-      return new Address().setUsers(Lists.transform(users(), new Function<ResourceId, String>() {
+      return new Address().setUsers(Lists.transform(getUsers(), new Function<ResourceId, String>() {
         @Override
         public String apply(ResourceId resourceId) {
-          return resourceId.selfLink();
+          return resourceId.getSelfLink();
         }
       }));
     }
@@ -153,12 +159,26 @@ public class AddressInfo implements Serializable {
     /**
      * Returns the identity of the instance using the address.
      */
+    @Deprecated
     public InstanceId instance() {
+      return getInstance();
+    }
+
+    /**
+     * Returns the identity of the instance using the address.
+     */
+    public InstanceId getInstance() {
       return instance;
     }
 
     @Override
+    @Deprecated
     public List<InstanceId> users() {
+      return getUsers();
+    }
+
+    @Override
+    public List<InstanceId> getUsers() {
       return ImmutableList.of(instance);
     }
 
@@ -200,12 +220,26 @@ public class AddressInfo implements Serializable {
     /**
      * Returns a list of identities of region forwarding rules that are currently using the address.
      */
+    @Deprecated
     public List<RegionForwardingRuleId> forwardingRules() {
+      return getForwardingRules();
+    }
+
+    /**
+     * Returns a list of identities of region forwarding rules that are currently using the address.
+     */
+    public List<RegionForwardingRuleId> getForwardingRules() {
       return forwardingRules;
     }
 
     @Override
+    @Deprecated
     public List<RegionForwardingRuleId> users() {
+      return getUsers();
+    }
+
+    @Override
+    public List<RegionForwardingRuleId> getUsers() {
       return forwardingRules;
     }
 
@@ -248,12 +282,26 @@ public class AddressInfo implements Serializable {
     /**
      * Returns a list of identities of global forwarding rules that are currently using the address.
      */
+    @Deprecated
     public List<GlobalForwardingRuleId> forwardingRules() {
+      return getForwardingRules();
+    }
+
+    /**
+     * Returns a list of identities of global forwarding rules that are currently using the address.
+     */
+    public List<GlobalForwardingRuleId> getForwardingRules() {
       return forwardingRules;
     }
 
     @Override
+    @Deprecated
     public List<GlobalForwardingRuleId> users() {
+      return getUsers();
+    }
+
+    @Override
+    public List<GlobalForwardingRuleId> getUsers() {
       return forwardingRules;
     }
 
@@ -287,22 +335,37 @@ public class AddressInfo implements Serializable {
     /**
      * Sets the actual IP address.
      */
+    @Deprecated
     public abstract Builder address(String address);
 
-    abstract Builder creationTimestamp(Long creationTimestamp);
+    /**
+     * Sets the actual IP address.
+     */
+    public abstract Builder setAddress(String address);
+
+    abstract Builder setCreationTimestamp(Long creationTimestamp);
 
     /**
      * Sets an optional textual description of the address.
      */
+    @Deprecated
     public abstract Builder description(String description);
 
-    abstract Builder generatedId(String generatedId);
+    /**
+     * Sets an optional textual description of the address.
+     */
+    public abstract Builder setDescription(String description);
 
+    abstract Builder setGeneratedId(String generatedId);
+
+    @Deprecated
     public abstract Builder addressId(AddressId addressId);
 
-    abstract Builder status(Status status);
+    public abstract Builder setAddressId(AddressId addressId);
 
-    abstract Builder usage(Usage usage);
+    abstract Builder setStatus(Status status);
+
+    abstract Builder setUsage(Usage usage);
 
     /**
      * Creates an {@code AddressInfo} object.
@@ -355,43 +418,61 @@ public class AddressInfo implements Serializable {
     }
 
     @Override
+    @Deprecated
     public BuilderImpl address(String address) {
+      return setAddress(address);
+    }
+
+    @Override
+    public BuilderImpl setAddress(String address) {
       this.address = address;
       return this;
     }
 
     @Override
-    BuilderImpl creationTimestamp(Long creationTimestamp) {
+    BuilderImpl setCreationTimestamp(Long creationTimestamp) {
       this.creationTimestamp = creationTimestamp;
       return this;
     }
 
     @Override
+    @Deprecated
     public BuilderImpl description(String description) {
+      return setDescription(description);
+    }
+
+    @Override
+    public BuilderImpl setDescription(String description) {
       this.description = description;
       return this;
     }
 
     @Override
-    BuilderImpl generatedId(String generatedId) {
+    BuilderImpl setGeneratedId(String generatedId) {
       this.generatedId = generatedId;
       return this;
     }
 
     @Override
+    @Deprecated
     public BuilderImpl addressId(AddressId addressId) {
+      return setAddressId(addressId);
+    }
+
+    @Override
+    public BuilderImpl setAddressId(AddressId addressId) {
       this.addressId = checkNotNull(addressId);
       return this;
     }
 
     @Override
-    BuilderImpl status(Status status) {
+    BuilderImpl setStatus(Status status) {
       this.status = status;
       return this;
     }
 
     @Override
-    BuilderImpl usage(Usage usage) {
+    BuilderImpl setUsage(Usage usage) {
       this.usage = usage;
       return this;
     }
@@ -415,28 +496,60 @@ public class AddressInfo implements Serializable {
   /**
    * Returns the static external IP address represented by this object.
    */
+  @Deprecated
   public String address() {
+    return getAddress();
+  }
+
+  /**
+   * Returns the static external IP address represented by this object.
+   */
+  public String getAddress() {
     return address;
   }
 
   /**
    * Returns the creation timestamp in milliseconds since epoch.
    */
+  @Deprecated
   public Long creationTimestamp() {
+    return getCreationTimestamp();
+  }
+
+  /**
+   * Returns the creation timestamp in milliseconds since epoch.
+   */
+  public Long getCreationTimestamp() {
     return creationTimestamp;
   }
 
   /**
    * Returns an optional textual description of the address.
    */
+  @Deprecated
   public String description() {
+    return getDescription();
+  }
+
+  /**
+   * Returns an optional textual description of the address.
+   */
+  public String getDescription() {
     return description;
   }
 
   /**
    * Returns the service-generated unique identifier for the address.
    */
+  @Deprecated
   public String generatedId() {
+    return getGeneratedId();
+  }
+
+  /**
+   * Returns the service-generated unique identifier for the address.
+   */
+  public String getGeneratedId() {
     return generatedId;
   }
 
@@ -445,14 +558,32 @@ public class AddressInfo implements Serializable {
    * {@link RegionAddressId} for a region address.
    */
   @SuppressWarnings("unchecked")
+  @Deprecated
   public <T extends AddressId> T addressId() {
+    return getAddressId();
+  }
+
+  /**
+   * Returns the address identity. Returns {@link GlobalAddressId} for a global address, returns
+   * {@link RegionAddressId} for a region address.
+   */
+  @SuppressWarnings("unchecked")
+  public <T extends AddressId> T getAddressId() {
     return (T) addressId;
   }
 
   /**
    * Returns the status of the address.
    */
+  @Deprecated
   public Status status() {
+    return getStatus();
+  }
+
+  /**
+   * Returns the status of the address.
+   */
+  public Status getStatus() {
     return status;
   }
 
@@ -464,7 +595,20 @@ public class AddressInfo implements Serializable {
    * Returns {@code null} if the address is not in use.
    */
   @SuppressWarnings("unchecked")
+  @Deprecated
   public <T extends Usage> T usage() {
+    return getUsage();
+  }
+
+  /**
+   * Returns the usage information of the address. Returns an {@link InstanceUsage} object for
+   * region addresses that are assigned to VM instances. Returns a {@link RegionForwardingUsage}
+   * object for region addresses assigned to region forwarding rules. Returns a
+   * {@link GlobalForwardingUsage} object for global addresses assigned to global forwarding rules.
+   * Returns {@code null} if the address is not in use.
+   */
+  @SuppressWarnings("unchecked")
+  public <T extends Usage> T getUsage() {
     return (T) usage;
   }
 
@@ -503,10 +647,10 @@ public class AddressInfo implements Serializable {
   }
 
   AddressInfo setProjectId(String projectId) {
-    if (addressId().project() != null) {
+    if (getAddressId().getProject() != null) {
       return this;
     }
-    return toBuilder().addressId(addressId.setProjectId(projectId)).build();
+    return toBuilder().setAddressId(addressId.setProjectId(projectId)).build();
   }
 
   Address toPb() {
@@ -519,29 +663,37 @@ public class AddressInfo implements Serializable {
     if (generatedId != null) {
       addressPb.setId(new BigInteger(generatedId));
     }
-    addressPb.setName(addressId.address());
-    if (addressId.type() == AddressId.Type.REGION) {
-      addressPb.setRegion(this.<RegionAddressId>addressId().regionId().selfLink());
+    addressPb.setName(addressId.getAddress());
+    if (addressId.getType() == AddressId.Type.REGION) {
+      addressPb.setRegion(this.<RegionAddressId>getAddressId().getRegionId().getSelfLink());
     }
     if (status != null) {
       addressPb.setStatus(status.name());
     }
-    addressPb.setSelfLink(addressId.selfLink());
+    addressPb.setSelfLink(addressId.getSelfLink());
     return addressPb;
   }
 
   /**
    * Returns a builder for the {@code AddressInfo} object given it's identity.
    */
+  @Deprecated
   public static Builder builder(AddressId addressId) {
-    return new BuilderImpl().addressId(addressId);
+    return newBuilder(addressId);
+  }
+
+  /**
+   * Returns a builder for the {@code AddressInfo} object given it's identity.
+   */
+  public static Builder newBuilder(AddressId addressId) {
+    return new BuilderImpl().setAddressId(addressId);
   }
 
   /**
    * Returns an {@code AddressInfo} object for the provided identity.
    */
   public static AddressInfo of(AddressId addressId) {
-    return builder(addressId).build();
+    return newBuilder(addressId).build();
   }
 
   /**

@@ -39,6 +39,17 @@ public class NetworkIdTest {
   @Test
   public void testOf() {
     NetworkId networkId = NetworkId.of(PROJECT, NETWORK);
+    assertEquals(PROJECT, networkId.getProject());
+    assertEquals(NETWORK, networkId.getNetwork());
+    assertEquals(URL, networkId.getSelfLink());
+    networkId = NetworkId.of(NETWORK);
+    assertNull(networkId.getProject());
+    assertEquals(NETWORK, networkId.getNetwork());
+  }
+
+  @Test
+  public void testOfDeprecated() {
+    NetworkId networkId = NetworkId.of(PROJECT, NETWORK);
     assertEquals(PROJECT, networkId.project());
     assertEquals(NETWORK, networkId.network());
     assertEquals(URL, networkId.selfLink());
@@ -50,7 +61,7 @@ public class NetworkIdTest {
   @Test
   public void testToAndFromUrl() {
     NetworkId networkId = NetworkId.of(PROJECT, NETWORK);
-    compareNetworkId(networkId, NetworkId.fromUrl(networkId.selfLink()));
+    compareNetworkId(networkId, NetworkId.fromUrl(networkId.getSelfLink()));
     thrown.expect(IllegalArgumentException.class);
     thrown.expectMessage("notMatchingUrl is not a valid network URL");
     NetworkId.fromUrl("notMatchingUrl");
@@ -65,15 +76,15 @@ public class NetworkIdTest {
 
   @Test
   public void testMatchesUrl() {
-    assertTrue(NetworkId.matchesUrl(NetworkId.of(PROJECT, NETWORK).selfLink()));
+    assertTrue(NetworkId.matchesUrl(NetworkId.of(PROJECT, NETWORK).getSelfLink()));
     assertFalse(NetworkId.matchesUrl("notMatchingUrl"));
   }
 
   private void compareNetworkId(NetworkId expected, NetworkId value) {
     assertEquals(expected, value);
-    assertEquals(expected.project(), expected.project());
-    assertEquals(expected.network(), expected.network());
-    assertEquals(expected.selfLink(), expected.selfLink());
+    assertEquals(expected.getProject(), expected.getProject());
+    assertEquals(expected.getNetwork(), expected.getNetwork());
+    assertEquals(expected.getSelfLink(), expected.getSelfLink());
     assertEquals(expected.hashCode(), expected.hashCode());
   }
 }

@@ -48,7 +48,15 @@ public class RemoteComputeHelper {
   /**
    * Returns a {@link ComputeOptions} object to be used for testing.
    */
+  @Deprecated
   public ComputeOptions options() {
+    return getOptions();
+  }
+
+  /**
+   * Returns a {@link ComputeOptions} object to be used for testing.
+   */
+  public ComputeOptions getOptions() {
     return options;
   }
 

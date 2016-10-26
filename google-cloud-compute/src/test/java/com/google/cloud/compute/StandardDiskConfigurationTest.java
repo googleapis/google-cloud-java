@@ -29,6 +29,11 @@ public class StandardDiskConfigurationTest {
   private static final Long SIZE = 42L;
   private static final DiskTypeId DISK_TYPE = DiskTypeId.of("project", "zone", "type");
   private static final StandardDiskConfiguration DISK_CONFIGURATION =
+      StandardDiskConfiguration.newBuilder()
+          .setSizeGb(SIZE)
+          .setDiskType(DISK_TYPE)
+          .build();
+  private static final StandardDiskConfiguration DEPRECATED_DISK_CONFIGURATION =
       StandardDiskConfiguration.builder()
           .sizeGb(SIZE)
           .diskType(DISK_TYPE)
@@ -38,11 +43,11 @@ public class StandardDiskConfigurationTest {
   public void testToBuilder() {
     compareStandardDiskConfiguration(DISK_CONFIGURATION, DISK_CONFIGURATION.toBuilder().build());
     StandardDiskConfiguration diskConfiguration = DISK_CONFIGURATION.toBuilder()
-        .sizeGb(24L)
+        .setSizeGb(24L)
         .build();
-    assertEquals(24L, diskConfiguration.sizeGb().longValue());
+    assertEquals(24L, diskConfiguration.getSizeGb().longValue());
     diskConfiguration = diskConfiguration.toBuilder()
-        .sizeGb(SIZE)
+        .setSizeGb(SIZE)
         .build();
     compareStandardDiskConfiguration(DISK_CONFIGURATION, diskConfiguration);
   }
@@ -55,9 +60,16 @@ public class StandardDiskConfigurationTest {
 
   @Test
   public void testBuilder() {
-    assertEquals(DISK_TYPE, DISK_CONFIGURATION.diskType());
-    assertEquals(SIZE, DISK_CONFIGURATION.sizeGb());
-    assertEquals(Type.STANDARD, DISK_CONFIGURATION.type());
+    assertEquals(DISK_TYPE, DISK_CONFIGURATION.getDiskType());
+    assertEquals(SIZE, DISK_CONFIGURATION.getSizeGb());
+    assertEquals(Type.STANDARD, DISK_CONFIGURATION.getType());
+  }
+
+  @Test
+  public void testBuilderDeprecated() {
+    assertEquals(DISK_TYPE, DEPRECATED_DISK_CONFIGURATION.diskType());
+    assertEquals(SIZE, DEPRECATED_DISK_CONFIGURATION.sizeGb());
+    assertEquals(Type.STANDARD, DEPRECATED_DISK_CONFIGURATION.type());
   }
 
   @Test
@@ -71,23 +83,23 @@ public class StandardDiskConfigurationTest {
   @Test
   public void testOf() {
     StandardDiskConfiguration configuration = StandardDiskConfiguration.of(DISK_TYPE);
-    assertEquals(DISK_TYPE, configuration.diskType());
-    assertNull(configuration.sizeGb());
-    assertEquals(Type.STANDARD, configuration.type());
+    assertEquals(DISK_TYPE, configuration.getDiskType());
+    assertNull(configuration.getSizeGb());
+    assertEquals(Type.STANDARD, configuration.getType());
     configuration = StandardDiskConfiguration.of(DISK_TYPE, SIZE);
-    assertEquals(DISK_TYPE, configuration.diskType());
-    assertEquals(SIZE, configuration.sizeGb());
-    assertEquals(Type.STANDARD, configuration.type());
+    assertEquals(DISK_TYPE, configuration.getDiskType());
+    assertEquals(SIZE, configuration.getSizeGb());
+    assertEquals(Type.STANDARD, configuration.getType());
     configuration = StandardDiskConfiguration.of(SIZE);
-    assertNull(configuration.diskType());
-    assertEquals(SIZE, configuration.sizeGb());
-    assertEquals(Type.STANDARD, configuration.type());
+    assertNull(configuration.getDiskType());
+    assertEquals(SIZE, configuration.getSizeGb());
+    assertEquals(Type.STANDARD, configuration.getType());
   }
 
   @Test
   public void testSetProjectId() {
     StandardDiskConfiguration configuration = DISK_CONFIGURATION.toBuilder()
-        .diskType(DiskTypeId.of(DISK_TYPE.zone(), DISK_TYPE.type()))
+        .setDiskType(DiskTypeId.of(DISK_TYPE.getZone(), DISK_TYPE.getType()))
         .build();
     compareStandardDiskConfiguration(DISK_CONFIGURATION, configuration.setProjectId("project"));
   }
@@ -95,9 +107,9 @@ public class StandardDiskConfigurationTest {
   private void compareStandardDiskConfiguration(StandardDiskConfiguration expected,
       StandardDiskConfiguration value) {
     assertEquals(expected, value);
-    assertEquals(expected.diskType(), value.diskType());
-    assertEquals(expected.sizeGb(), value.sizeGb());
-    assertEquals(expected.type(), value.type());
+    assertEquals(expected.getDiskType(), value.getDiskType());
+    assertEquals(expected.getSizeGb(), value.getSizeGb());
+    assertEquals(expected.getType(), value.getType());
     assertEquals(expected.hashCode(), value.hashCode());
   }
 }

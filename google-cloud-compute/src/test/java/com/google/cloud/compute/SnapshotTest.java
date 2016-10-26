@@ -59,30 +59,30 @@ public class SnapshotTest {
     expect(serviceMockReturnsOptions.options()).andReturn(mockOptions).times(optionsCalls);
     replay(serviceMockReturnsOptions);
     expectedSnapshot = new Snapshot.Builder(serviceMockReturnsOptions, SNAPSHOT_ID, SOURCE_DISK)
-        .generatedId(GENERATED_ID)
-        .creationTimestamp(CREATION_TIMESTAMP)
-        .description(DESCRIPTION)
-        .status(STATUS)
-        .diskSizeGb(DISK_SIZE_GB)
-        .licenses(LICENSES)
-        .sourceDiskId(SOURCE_DISK_ID)
-        .storageBytes(STORAGE_BYTES)
-        .storageBytesStatus(STORAGE_BYTES_STATUS)
+        .setGeneratedId(GENERATED_ID)
+        .setCreationTimestamp(CREATION_TIMESTAMP)
+        .setDescription(DESCRIPTION)
+        .setStatus(STATUS)
+        .setDiskSizeGb(DISK_SIZE_GB)
+        .setLicenses(LICENSES)
+        .setSourceDiskId(SOURCE_DISK_ID)
+        .setStorageBytes(STORAGE_BYTES)
+        .setStorageBytesStatus(STORAGE_BYTES_STATUS)
         .build();
     compute = createStrictMock(Compute.class);
   }
 
   private void initializeSnapshot() {
     snapshot = new Snapshot.Builder(compute, SNAPSHOT_ID, SOURCE_DISK)
-        .generatedId(GENERATED_ID)
-        .creationTimestamp(CREATION_TIMESTAMP)
-        .description(DESCRIPTION)
-        .status(STATUS)
-        .diskSizeGb(DISK_SIZE_GB)
-        .licenses(LICENSES)
-        .sourceDiskId(SOURCE_DISK_ID)
-        .storageBytes(STORAGE_BYTES)
-        .storageBytesStatus(STORAGE_BYTES_STATUS)
+        .setGeneratedId(GENERATED_ID)
+        .setCreationTimestamp(CREATION_TIMESTAMP)
+        .setDescription(DESCRIPTION)
+        .setStatus(STATUS)
+        .setDiskSizeGb(DISK_SIZE_GB)
+        .setLicenses(LICENSES)
+        .setSourceDiskId(SOURCE_DISK_ID)
+        .setStorageBytes(STORAGE_BYTES)
+        .setStorageBytesStatus(STORAGE_BYTES_STATUS)
         .build();
   }
 
@@ -90,9 +90,9 @@ public class SnapshotTest {
   public void testToBuilder() {
     initializeExpectedSnapshot(8);
     compareSnapshot(expectedSnapshot, expectedSnapshot.toBuilder().build());
-    Snapshot newSnapshot = expectedSnapshot.toBuilder().description("newDescription").build();
-    assertEquals("newDescription", newSnapshot.description());
-    newSnapshot = newSnapshot.toBuilder().description("description").build();
+    Snapshot newSnapshot = expectedSnapshot.toBuilder().setDescription("newDescription").build();
+    assertEquals("newDescription", newSnapshot.getDescription());
+    newSnapshot = newSnapshot.toBuilder().setDescription("description").build();
     compareSnapshot(expectedSnapshot, newSnapshot);
   }
 
@@ -141,6 +141,41 @@ public class SnapshotTest {
   }
 
   @Test
+  public void testBuilderDeprecated() {
+    initializeExpectedSnapshot(2);
+    assertEquals(GENERATED_ID, expectedSnapshot.getGeneratedId());
+    assertEquals(SNAPSHOT_ID, expectedSnapshot.getSnapshotId());
+    assertEquals(CREATION_TIMESTAMP, expectedSnapshot.getCreationTimestamp());
+    assertEquals(DESCRIPTION, expectedSnapshot.getDescription());
+    assertEquals(STATUS, expectedSnapshot.getStatus());
+    assertEquals(DISK_SIZE_GB, expectedSnapshot.getDiskSizeGb());
+    assertEquals(LICENSES, expectedSnapshot.getLicenses());
+    assertEquals(SOURCE_DISK, expectedSnapshot.getSourceDisk());
+    assertEquals(SOURCE_DISK_ID, expectedSnapshot.getSourceDiskId());
+    assertEquals(STORAGE_BYTES, expectedSnapshot.getStorageBytes());
+    assertEquals(STORAGE_BYTES_STATUS, expectedSnapshot.getStorageBytesStatus());
+    assertSame(serviceMockReturnsOptions, expectedSnapshot.getCompute());
+    SnapshotId otherSnapshotId = SnapshotId.of("otherSnapshot");
+    DiskId otherSourceDisk = DiskId.of("zone", "otherDisk");
+    Snapshot snapshot = new Snapshot.Builder(serviceMockReturnsOptions, SNAPSHOT_ID, SOURCE_DISK)
+        .setSnapshotId(otherSnapshotId)
+        .setSourceDisk(otherSourceDisk)
+        .build();
+    assertNull(snapshot.getGeneratedId());
+    assertEquals(otherSnapshotId, snapshot.getSnapshotId());
+    assertNull(snapshot.getCreationTimestamp());
+    assertNull(snapshot.getDescription());
+    assertNull(snapshot.getStatus());
+    assertNull(snapshot.getDiskSizeGb());
+    assertNull(snapshot.getLicenses());
+    assertEquals(otherSourceDisk, snapshot.getSourceDisk());
+    assertNull(snapshot.getSourceDiskId());
+    assertNull(snapshot.getStorageBytes());
+    assertNull(snapshot.getStorageBytesStatus());
+    assertSame(serviceMockReturnsOptions, snapshot.getCompute());
+  }
+
+  @Test
   public void testToAndFromPb() {
     initializeExpectedSnapshot(8);
     compareSnapshot(expectedSnapshot,
@@ -155,7 +190,7 @@ public class SnapshotTest {
     initializeExpectedSnapshot(2);
     expect(compute.options()).andReturn(mockOptions);
     Operation operation = new Operation.Builder(serviceMockReturnsOptions)
-        .operationId(GlobalOperationId.of("project", "op"))
+        .setOperationId(GlobalOperationId.of("project", "op"))
         .build();
     expect(compute.deleteSnapshot(SNAPSHOT_ID)).andReturn(operation);
     replay(compute);
@@ -178,7 +213,7 @@ public class SnapshotTest {
     initializeExpectedSnapshot(1);
     Compute.SnapshotOption[] expectedOptions = {Compute.SnapshotOption.fields()};
     expect(compute.options()).andReturn(mockOptions);
-    expect(compute.getSnapshot(SNAPSHOT_ID.snapshot(), expectedOptions))
+    expect(compute.getSnapshot(SNAPSHOT_ID.getSnapshot(), expectedOptions))
         .andReturn(expectedSnapshot);
     replay(compute);
     initializeSnapshot();
@@ -191,7 +226,7 @@ public class SnapshotTest {
     initializeExpectedSnapshot(1);
     Compute.SnapshotOption[] expectedOptions = {Compute.SnapshotOption.fields()};
     expect(compute.options()).andReturn(mockOptions);
-    expect(compute.getSnapshot(SNAPSHOT_ID.snapshot(), expectedOptions)).andReturn(null);
+    expect(compute.getSnapshot(SNAPSHOT_ID.getSnapshot(), expectedOptions)).andReturn(null);
     replay(compute);
     initializeSnapshot();
     assertFalse(snapshot.exists());
@@ -202,7 +237,7 @@ public class SnapshotTest {
   public void testReload() throws Exception {
     initializeExpectedSnapshot(3);
     expect(compute.options()).andReturn(mockOptions);
-    expect(compute.getSnapshot(SNAPSHOT_ID.snapshot())).andReturn(expectedSnapshot);
+    expect(compute.getSnapshot(SNAPSHOT_ID.getSnapshot())).andReturn(expectedSnapshot);
     replay(compute);
     initializeSnapshot();
     Snapshot updatedSnapshot = snapshot.reload();
@@ -214,7 +249,7 @@ public class SnapshotTest {
   public void testReloadNull() throws Exception {
     initializeExpectedSnapshot(1);
     expect(compute.options()).andReturn(mockOptions);
-    expect(compute.getSnapshot(SNAPSHOT_ID.snapshot())).andReturn(null);
+    expect(compute.getSnapshot(SNAPSHOT_ID.getSnapshot())).andReturn(null);
     replay(compute);
     initializeSnapshot();
     assertNull(snapshot.reload());
@@ -225,7 +260,7 @@ public class SnapshotTest {
   public void testReloadWithOptions() throws Exception {
     initializeExpectedSnapshot(3);
     expect(compute.options()).andReturn(mockOptions);
-    expect(compute.getSnapshot(SNAPSHOT_ID.snapshot(), Compute.SnapshotOption.fields()))
+    expect(compute.getSnapshot(SNAPSHOT_ID.getSnapshot(), Compute.SnapshotOption.fields()))
         .andReturn(expectedSnapshot);
     replay(compute);
     initializeSnapshot();
@@ -236,18 +271,18 @@ public class SnapshotTest {
 
   public void compareSnapshot(Snapshot expected, Snapshot value) {
     assertEquals(expected, value);
-    assertEquals(expected.compute().options(), value.compute().options());
-    assertEquals(expected.generatedId(), value.generatedId());
-    assertEquals(expected.snapshotId(), value.snapshotId());
-    assertEquals(expected.creationTimestamp(), value.creationTimestamp());
-    assertEquals(expected.description(), value.description());
-    assertEquals(expected.status(), value.status());
-    assertEquals(expected.diskSizeGb(), value.diskSizeGb());
-    assertEquals(expected.licenses(), value.licenses());
-    assertEquals(expected.sourceDisk(), value.sourceDisk());
-    assertEquals(expected.sourceDiskId(), value.sourceDiskId());
-    assertEquals(expected.storageBytes(), value.storageBytes());
-    assertEquals(expected.storageBytesStatus(), value.storageBytesStatus());
+    assertEquals(expected.getCompute().options(), value.getCompute().options());
+    assertEquals(expected.getGeneratedId(), value.getGeneratedId());
+    assertEquals(expected.getSnapshotId(), value.getSnapshotId());
+    assertEquals(expected.getCreationTimestamp(), value.getCreationTimestamp());
+    assertEquals(expected.getDescription(), value.getDescription());
+    assertEquals(expected.getStatus(), value.getStatus());
+    assertEquals(expected.getDiskSizeGb(), value.getDiskSizeGb());
+    assertEquals(expected.getLicenses(), value.getLicenses());
+    assertEquals(expected.getSourceDisk(), value.getSourceDisk());
+    assertEquals(expected.getSourceDiskId(), value.getSourceDiskId());
+    assertEquals(expected.getStorageBytes(), value.getStorageBytes());
+    assertEquals(expected.getStorageBytesStatus(), value.getStorageBytesStatus());
     assertEquals(expected.hashCode(), value.hashCode());
   }
 }

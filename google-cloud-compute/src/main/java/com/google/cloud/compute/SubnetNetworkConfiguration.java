@@ -56,7 +56,15 @@ public class SubnetNetworkConfiguration extends NetworkConfiguration {
   /**
    * Returns the identities of all networks in this network.
    */
+  @Deprecated
   public List<SubnetworkId> subnetworks() {
+    return getSubnetworks();
+  }
+
+  /**
+   * Returns the identities of all networks in this network.
+   */
+  public List<SubnetworkId> getSubnetworks() {
     return subnetworks;
   }
 

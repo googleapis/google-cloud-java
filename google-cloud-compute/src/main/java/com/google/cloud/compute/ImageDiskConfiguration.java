@@ -67,20 +67,39 @@ public class ImageDiskConfiguration extends DiskConfiguration {
      * the image's size then disk creation will fail.
      */
     @Override
+    @Deprecated
     public Builder sizeGb(Long sizeGb) {
-      super.sizeGb(sizeGb);
+      return setSizeGb(sizeGb);
+    }
+
+    /**
+     * Sets the size of the persistent disk, in GB. If not set the disk will have the size of the
+     * image. This value can be larger than the image's size. If the provided size is smaller than
+     * the image's size then disk creation will fail.
+     */
+    @Override
+    public Builder setSizeGb(Long sizeGb) {
+      super.setSizeGb(sizeGb);
       return this;
     }
 
     /**
      * Sets the identity of the source image used to create the disk.
      */
+    @Deprecated
     public Builder sourceImage(ImageId sourceImage) {
+      return setSourceImage(sourceImage);
+    }
+
+    /**
+     * Sets the identity of the source image used to create the disk.
+     */
+    public Builder setSourceImage(ImageId sourceImage) {
       this.sourceImage = checkNotNull(sourceImage);
       return this;
     }
 
-    Builder sourceImageId(String sourceImageId) {
+    Builder setSourceImageId(String sourceImageId) {
       this.sourceImageId = sourceImageId;
       return this;
     }
@@ -103,7 +122,15 @@ public class ImageDiskConfiguration extends DiskConfiguration {
   /**
    * Returns the identity of the source image used to create the disk.
    */
+  @Deprecated
   public ImageId sourceImage() {
+    return getSourceImage();
+  }
+
+  /**
+   * Returns the identity of the source image used to create the disk.
+   */
+  public ImageId getSourceImage() {
     return sourceImage;
   }
 
@@ -114,7 +141,19 @@ public class ImageDiskConfiguration extends DiskConfiguration {
    * name, the source image service-generated id would identify the exact version of the image that
    * was used.
    */
+  @Deprecated
   public String sourceImageId() {
+    return getSourceImageId();
+  }
+
+  /**
+   * Returns the service-generated unique id of the image used to create this disk. This value
+   * identifies the exact image that was used to create this persistent disk. For example, if you
+   * created the persistent disk from an image that was later deleted and recreated under the same
+   * name, the source image service-generated id would identify the exact version of the image that
+   * was used.
+   */
+  public String getSourceImageId() {
     return sourceImageId;
   }
 
@@ -145,22 +184,30 @@ public class ImageDiskConfiguration extends DiskConfiguration {
 
   @Override
   ImageDiskConfiguration setProjectId(String projectId) {
-    Builder builder = toBuilder().sourceImage(sourceImage.setProjectId(projectId));
-    if (diskType() != null) {
-      builder.diskType(diskType().setProjectId(projectId));
+    Builder builder = toBuilder().setSourceImage(sourceImage.setProjectId(projectId));
+    if (getDiskType() != null) {
+      builder.setDiskType(getDiskType().setProjectId(projectId));
     }
     return builder.build();
   }
 
   @Override
   Disk toPb() {
-    return super.toPb().setSourceImage(sourceImage.selfLink()).setSourceImageId(sourceImageId);
+    return super.toPb().setSourceImage(sourceImage.getSelfLink()).setSourceImageId(sourceImageId);
   }
 
   /**
    * Returns a builder for an {@code ImageDiskConfiguration} object given the image identity.
    */
+  @Deprecated
   public static Builder builder(ImageId imageId) {
+    return newBuilder(imageId);
+  }
+
+  /**
+   * Returns a builder for an {@code ImageDiskConfiguration} object given the image identity.
+   */
+  public static Builder newBuilder(ImageId imageId) {
     return new Builder(imageId);
   }
 
@@ -168,7 +215,7 @@ public class ImageDiskConfiguration extends DiskConfiguration {
    * Returns an {@code ImageDiskConfiguration} object given the image identity.
    */
   public static ImageDiskConfiguration of(ImageId imageId) {
-    return builder(imageId).build();
+    return newBuilder(imageId).build();
   }
 
   @SuppressWarnings("unchecked")

@@ -39,7 +39,7 @@ public final class RegionId extends ResourceId {
   static final Function<RegionId, String> TO_URL_FUNCTION = new Function<RegionId, String>() {
     @Override
     public String apply(RegionId regionId) {
-      return regionId.selfLink();
+      return regionId.getSelfLink();
     }
   };
 
@@ -55,20 +55,34 @@ public final class RegionId extends ResourceId {
   }
 
   private RegionId(RegionId regionId) {
-    super(regionId.project());
-    this.region = checkNotNull(regionId.region());
+    super(regionId.getProject());
+    this.region = checkNotNull(regionId.getRegion());
   }
 
   /**
    * Returns the name of the region.
    */
+  @Deprecated
   public final String region() {
+    return getRegion();
+  }
+
+  /**
+   * Returns the name of the region.
+   */
+  public String getRegion() {
     return region;
   }
 
   @Override
+  @Deprecated
   public String selfLink() {
-    return super.selfLink() + "/regions/" + region;
+    return getSelfLink();
+  }
+
+  @Override
+  public String getSelfLink() {
+    return super.getSelfLink() + "/regions/" + region;
   }
 
   @Override
@@ -95,7 +109,7 @@ public final class RegionId extends ResourceId {
 
   @Override
   RegionId setProjectId(String projectId) {
-    if (project() != null) {
+    if (getProject() != null) {
       return this;
     }
     return RegionId.of(projectId, region);

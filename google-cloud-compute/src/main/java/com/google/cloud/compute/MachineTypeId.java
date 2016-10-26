@@ -41,7 +41,7 @@ public final class MachineTypeId extends ResourceId {
       new Function<MachineTypeId, String>() {
         @Override
         public String apply(MachineTypeId machineTypeId) {
-          return machineTypeId.selfLink();
+          return machineTypeId.getSelfLink();
         }
       };
 
@@ -61,27 +61,57 @@ public final class MachineTypeId extends ResourceId {
   /**
    * Returns the name of the machine type.
    */
+  @Deprecated
   public String type() {
+    return getType();
+  }
+
+  /**
+   * Returns the name of the machine type.
+   */
+  public String getType() {
     return type;
   }
 
   /**
    * Returns the name of the zone this machine type belongs to.
    */
+  @Deprecated
   public String zone() {
+    return getZone();
+  }
+
+  /**
+   * Returns the name of the zone this machine type belongs to.
+   */
+  public String getZone() {
     return zone;
   }
 
   /**
    * Returns the identity of the zone this machine type belongs to.
    */
+  @Deprecated
   public ZoneId zoneId() {
-    return ZoneId.of(project(), zone);
+    return getZoneId();
+  }
+
+  /**
+   * Returns the identity of the zone this machine type belongs to.
+   */
+  public ZoneId getZoneId() {
+    return ZoneId.of(getProject(), zone);
   }
 
   @Override
+  @Deprecated
   public String selfLink() {
-    return super.selfLink() + "/zones/" + zone + "/machineTypes/" + type;
+    return getSelfLink();
+  }
+
+  @Override
+  public String getSelfLink() {
+    return super.getSelfLink() + "/zones/" + zone + "/machineTypes/" + type;
   }
 
   @Override
@@ -110,7 +140,7 @@ public final class MachineTypeId extends ResourceId {
 
   @Override
   MachineTypeId setProjectId(String projectId) {
-    if (project() != null) {
+    if (getProject() != null) {
       return this;
     }
     return MachineTypeId.of(projectId, zone, type);

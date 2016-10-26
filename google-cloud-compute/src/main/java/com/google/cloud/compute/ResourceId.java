@@ -39,14 +39,30 @@ public abstract class ResourceId implements Serializable {
   /**
    * Returns a fully qualified URL to the entity.
    */
+  @Deprecated
   public String selfLink() {
+    return getSelfLink();
+  }
+
+  /**
+   * Returns a fully qualified URL to the entity.
+   */
+  public String getSelfLink() {
     return BASE_URL + project;
   }
 
   /**
    * Returns the name of the project.
    */
+  @Deprecated
   public final String project() {
+    return getProject();
+  }
+
+  /**
+   * Returns the name of the project.
+   */
+  public final String getProject() {
     return project;
   }
 
