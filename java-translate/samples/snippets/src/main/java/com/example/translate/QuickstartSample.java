@@ -26,7 +26,11 @@ import com.google.cloud.translate.Translation;
 public class QuickstartSample {
   public static void main(String... args) throws Exception {
     // Instantiates a client
-    Translate translate = TranslateOptions.builder().apiKey("YOUR_API_KEY").build().service();
+    Translate translate =
+        TranslateOptions.builder()
+            .apiKey(args[0])  // .apiKey("YOUR_API_KEY")
+            .build()
+            .service();
 
     // The text to translate
     String text = "Hello, world!";
