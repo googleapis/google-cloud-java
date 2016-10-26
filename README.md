@@ -601,14 +601,14 @@ import com.google.cloud.translate.Translation;
 Translate translate = TranslateOptions.defaultInstance().service();
 
 Detection detection = translate.detect("Hola");
-String detectedLanguage = detection.language();
+String detectedLanguage = detection.getLanguage();
 
 Translation translation = translate.translate(
     "World",
     TranslateOption.sourceLanguage("en"),
     TranslateOption.targetLanguage(detectedLanguage));
 
-System.out.printf("Hola %s%n", translation.translatedText());
+System.out.printf("Hola %s%n", translation.getTranslatedText());
 ```
 
 Troubleshooting

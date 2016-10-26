@@ -33,6 +33,16 @@ public class LanguageTest {
 
   @Test
   public void testFromPb() {
+    assertEquals(CODE, LANGUAGE.getCode());
+    assertEquals(NAME, LANGUAGE.getName());
+    Language language = Language.fromPb(new LanguagesResource().setLanguage(CODE));
+    assertEquals(CODE, language.getCode());
+    assertNull(language.getName());
+    compareLanguage(LANGUAGE, Language.fromPb(LANGUAGE_PB));
+  }
+
+  @Test
+  public void testFromPbDeprecated() {
     assertEquals(CODE, LANGUAGE.code());
     assertEquals(NAME, LANGUAGE.name());
     Language language = Language.fromPb(new LanguagesResource().setLanguage(CODE));
@@ -43,8 +53,8 @@ public class LanguageTest {
 
   private void compareLanguage(Language expected, Language value) {
     assertEquals(expected, value);
-    assertEquals(expected.name(), value.name());
-    assertEquals(expected.code(), value.code());
+    assertEquals(expected.getName(), value.getName());
+    assertEquals(expected.getCode(), value.getCode());
     assertEquals(expected.hashCode(), value.hashCode());
     assertEquals(expected.toString(), value.toString());
   }

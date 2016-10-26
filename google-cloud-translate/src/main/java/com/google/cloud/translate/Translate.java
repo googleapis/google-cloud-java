@@ -85,9 +85,9 @@ public interface Translate extends Service<TranslateOptions> {
 
   /**
    * Returns the list of languages supported by Google Translate. If
-   * {@link LanguageListOption#targetLanguage(String)} is provided, {@link Language#name()} values
-   * are localized according to the provided target language. If no such option is passed,
-   * {@link Language#name()} values are localized according to
+   * {@link LanguageListOption#targetLanguage(String)} is provided, {@link Language#getName()}
+   * values are localized according to the provided target language. If no such option is passed,
+   * {@link Language#getName()} values are localized according to
    * {@link TranslateOptions#targetLanguage()}.
    *
    * <p>Example of listing supported languages, localized according to

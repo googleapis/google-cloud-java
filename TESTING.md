@@ -285,7 +285,7 @@ key.
 that uses the `RemoteTranslateHelper` to list supported languages.
   ```java
   RemoteTranslateHelper translateHelper = RemoteTranslateHelper.create(PROJECT_ID, API_KEY);
-  Translate translate = translateHelper.options().service();
+  Translate translate = translateHelper.getOptions().service();
   List<Language> languages = translate.listSupportedLanguages();
   ```
 
