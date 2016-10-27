@@ -92,8 +92,8 @@ code to create your service object:
 import com.google.cloud.logging.Logging;
 import com.google.cloud.logging.LoggingOptions;
 
-LoggingOptions options = LoggingOptions.defaultInstance();
-try(Logging logging = options.service()) {
+LoggingOptions options = LoggingOptions.getDefaultInstance();
+try(Logging logging = options.getService()) {
   // use logging here
 }
 ```
@@ -133,8 +133,8 @@ Then, to write the log entries, use the following code:
 ```java
 LogEntry firstEntry = LogEntry.newBuilder(StringPayload.of("message"))
     .setLogName("test-log")
-    .setResource(MonitoredResource.builder("global")
-        .addLabel("project_id", options.projectId())
+    .setResource(MonitoredResource.newBuilder("global")
+        .addLabel("project_id", options.getProjectId())
         .build())
     .build();
 logging.write(Collections.singleton(firstEntry));

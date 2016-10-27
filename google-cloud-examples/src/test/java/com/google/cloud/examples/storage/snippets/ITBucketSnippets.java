@@ -66,7 +66,7 @@ public class ITBucketSnippets {
   @BeforeClass
   public static void beforeClass() {
     RemoteStorageHelper helper = RemoteStorageHelper.create();
-    storage = helper.getOptions().service();
+    storage = helper.getOptions().getService();
     bucketSnippets = new BucketSnippets(storage.create(BucketInfo.of(BUCKET)));
   }
 

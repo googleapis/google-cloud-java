@@ -41,7 +41,7 @@ public class CreateAndListBucketsAndBlobs {
   public static void main(String... args) {
     // Create a service object
     // Credentials are inferred from the environment.
-    Storage storage = StorageOptions.defaultInstance().service();
+    Storage storage = StorageOptions.getDefaultInstance().getService();
 
     // Create a bucket
     String bucketName = "my_unique_bucket"; // Change this to something unique

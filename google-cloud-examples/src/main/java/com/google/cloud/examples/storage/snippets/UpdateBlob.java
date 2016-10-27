@@ -39,7 +39,7 @@ import java.nio.channels.WritableByteChannel;
 public class UpdateBlob {
 
   public static void main(String... args) throws IOException {
-    Storage storage = StorageOptions.defaultInstance().service();
+    Storage storage = StorageOptions.getDefaultInstance().getService();
     BlobId blobId = BlobId.of("bucket", "blob_name");
     Blob blob = storage.get(blobId);
     if (blob != null) {

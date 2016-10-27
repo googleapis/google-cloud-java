@@ -40,7 +40,7 @@ public class AddEntitiesAndRunQuery {
   public static void main(String... args) {
     // Create datastore service object.
     // By default, credentials are inferred from the runtime environment.
-    Datastore datastore = DatastoreOptions.defaultInstance().service();
+    Datastore datastore = DatastoreOptions.getDefaultInstance().getService();
 
     // Add an entity to Datastore
     KeyFactory keyFactory = datastore.newKeyFactory().setKind("Person");

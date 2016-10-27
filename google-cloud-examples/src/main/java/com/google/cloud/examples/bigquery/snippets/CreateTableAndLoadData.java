@@ -43,7 +43,7 @@ import java.util.concurrent.TimeoutException;
 public class CreateTableAndLoadData {
 
   public static void main(String... args) throws InterruptedException, TimeoutException {
-    BigQuery bigquery = BigQueryOptions.defaultInstance().service();
+    BigQuery bigquery = BigQueryOptions.getDefaultInstance().getService();
     TableId tableId = TableId.of("dataset", "table");
     Table table = bigquery.getTable(tableId);
     if (table == null) {

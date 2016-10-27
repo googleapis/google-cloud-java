@@ -58,7 +58,7 @@ public class LoggingSnippets {
 
   /**
    * Example of creating a sink to export logs to a BigQuery dataset (in the
-   * {@link LoggingOptions#projectId()} project).
+   * {@link LoggingOptions#getProjectId()} project).
    */
   // [TARGET create(SinkInfo)]
   // [VARIABLE "my_sink_name"]
@@ -73,7 +73,7 @@ public class LoggingSnippets {
 
   /**
    * Example of asynchronously creating a sink to export logs to a BigQuery dataset (in the
-   * {@link LoggingOptions#projectId()} project).
+   * {@link LoggingOptions#getProjectId()} project).
    */
   // [TARGET createAsync(SinkInfo)]
   // [VARIABLE "my_sink_name"]

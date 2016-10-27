@@ -35,7 +35,7 @@ import com.google.cloud.datastore.KeyFactory;
 public class UpdateEntity {
 
   public static void main(String... args) {
-    Datastore datastore = DatastoreOptions.defaultInstance().service();
+    Datastore datastore = DatastoreOptions.getDefaultInstance().getService();
     KeyFactory keyFactory = datastore.newKeyFactory().setKind("keyKind");
     Key key = keyFactory.newKey("keyName");
     Entity entity = datastore.get(key);

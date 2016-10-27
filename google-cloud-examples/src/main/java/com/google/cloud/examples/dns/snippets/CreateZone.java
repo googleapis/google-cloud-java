@@ -36,7 +36,7 @@ public class CreateZone {
   public static void main(String... args) {
     // Create a service object
     // The project ID and credentials will be inferred from the environment.
-    Dns dns = DnsOptions.defaultInstance().service();
+    Dns dns = DnsOptions.getDefaultInstance().getService();
 
     // Create a zone metadata object
     String zoneName = "my-unique-zone"; // Change this zone name which is unique within your project

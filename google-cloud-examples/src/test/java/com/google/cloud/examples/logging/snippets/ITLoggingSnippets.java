@@ -55,7 +55,7 @@ public class ITLoggingSnippets {
   @BeforeClass
   public static void beforeClass() {
     RemoteLoggingHelper helper = RemoteLoggingHelper.create();
-    logging = helper.options().service();
+    logging = helper.getOptions().getService();
     loggingSnippets = new LoggingSnippets(logging);
   }
 
@@ -144,7 +144,7 @@ public class ITLoggingSnippets {
   @Test
   public void testWriteAndListLogEntries() throws InterruptedException {
     String logName = RemoteLoggingHelper.formatForTest("log_name");
-    String filter = "logName=projects/" + logging.options().projectId() + "/logs/" + logName;
+    String filter = "logName=projects/" + logging.getOptions().getProjectId() + "/logs/" + logName;
     loggingSnippets.write(logName);
     Iterator<LogEntry> iterator = loggingSnippets.listLogEntries(filter).iterateAll();
     while (Iterators.size(iterator) < 2) {
@@ -157,7 +157,7 @@ public class ITLoggingSnippets {
   @Test
   public void testWriteAndListLogEntriesAsync() throws ExecutionException, InterruptedException {
     String logName = RemoteLoggingHelper.formatForTest("log_name");
-    String filter = "logName=projects/" + logging.options().projectId() + "/logs/" + logName;
+    String filter = "logName=projects/" + logging.getOptions().getProjectId() + "/logs/" + logName;
     loggingSnippets.writeAsync(logName).get();
     Iterator<LogEntry> iterator = loggingSnippets.listLogEntriesAsync(filter).iterateAll();
     while (Iterators.size(iterator) < 2) {

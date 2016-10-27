@@ -60,7 +60,7 @@ public class ITTransactionSnippets {
 
   @BeforeClass
   public static void beforeClass() {
-    datastore = DatastoreOptions.defaultInstance().service();
+    datastore = DatastoreOptions.getDefaultInstance().getService();
   }
 
   @After

@@ -73,7 +73,7 @@ To make authenticated requests to Google Cloud Datastore, you must create a serv
 import com.google.cloud.datastore.Datastore;
 import com.google.cloud.datastore.DatastoreOptions;
 
-Datastore datastore = DatastoreOptions.defaultInstance().service();
+Datastore datastore = DatastoreOptions.getDefaultInstance().getService();
 ```
 
 For other authentication options, see the [Authentication](https://github.com/GoogleCloudPlatform/google-cloud-java#authentication) page.

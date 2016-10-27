@@ -46,10 +46,11 @@ public class ITSinkSnippets {
   @BeforeClass
   public static void beforeClass() {
     RemoteLoggingHelper helper = RemoteLoggingHelper.create();
-    logging = helper.options().service();
-    SinkInfo sinkInfo = SinkInfo.builder(SINK_NAME, Destination.DatasetDestination.of(DESTINATION))
-        .filter(SINK_FILTER)
-        .build();
+    logging = helper.getOptions().getService();
+    SinkInfo sinkInfo =
+        SinkInfo.newBuilder(SINK_NAME, Destination.DatasetDestination.of(DESTINATION))
+            .setFilter(SINK_FILTER)
+            .build();
     sinkSnippets = new SinkSnippets(logging.create(sinkInfo));
   }
 
@@ -65,13 +66,13 @@ public class ITSinkSnippets {
     Sink sink = sinkSnippets.reload();
     assertNotNull(sink);
     Sink updatedSink = sinkSnippets.update();
-    assertEquals(UPDATED_SINK_FILTER, updatedSink.filter());
+    assertEquals(UPDATED_SINK_FILTER, updatedSink.getFilter());
     updatedSink = sinkSnippets.reloadAsync();
     assertNotNull(updatedSink);
-    assertEquals(UPDATED_SINK_FILTER, updatedSink.filter());
+    assertEquals(UPDATED_SINK_FILTER, updatedSink.getFilter());
     sink.update();
     updatedSink = sinkSnippets.updateAsync();
-    assertEquals(UPDATED_SINK_FILTER, updatedSink.filter());
+    assertEquals(UPDATED_SINK_FILTER, updatedSink.getFilter());
     assertTrue(sinkSnippets.delete());
     assertFalse(sinkSnippets.deleteAsync());
   }

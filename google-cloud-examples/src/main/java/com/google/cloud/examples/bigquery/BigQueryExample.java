@@ -755,12 +755,12 @@ public class BigQueryExample {
       printUsage();
       return;
     }
-    BigQueryOptions.Builder optionsBuilder = BigQueryOptions.builder();
+    BigQueryOptions.Builder optionsBuilder = BigQueryOptions.newBuilder();
     BigQueryAction action;
     String actionName;
     if (args.length >= 2 && !ACTIONS.containsKey(args[0])) {
       actionName = args[1];
-      optionsBuilder.projectId(args[0]);
+      optionsBuilder.setProjectId(args[0]);
       action = ACTIONS.get(args[1]);
       args = Arrays.copyOfRange(args, 2, args.length);
     } else {
@@ -773,7 +773,7 @@ public class BigQueryExample {
       printUsage();
       return;
     }
-    BigQuery bigquery = optionsBuilder.build().service();
+    BigQuery bigquery = optionsBuilder.build().getService();
     Object arg;
     try {
       arg = action.parse(args);

@@ -51,7 +51,7 @@ public class ITTopicSnippets {
 
   @BeforeClass
   public static void beforeClass() {
-    pubsub = PubSubOptions.defaultInstance().service();
+    pubsub = PubSubOptions.getDefaultInstance().getService();
     topic = pubsub.create(TopicInfo.of(TOPIC));
   }
 
@@ -84,15 +84,15 @@ public class ITTopicSnippets {
     pubsub.create(SubscriptionInfo.of(TOPIC, SUBSCRIPTION));
     try {
       Page<SubscriptionId> subscriptions = topicSnippets.listSubscriptionsForTopic();
-      while (Iterators.size(subscriptions.values().iterator()) < 1) {
+      while (Iterators.size(subscriptions.getValues().iterator()) < 1) {
         subscriptions = topicSnippets.listSubscriptionsForTopic();
       }
-      assertEquals(SUBSCRIPTION, subscriptions.values().iterator().next().subscription());
+      assertEquals(SUBSCRIPTION, subscriptions.getValues().iterator().next().getSubscription());
       subscriptions = topicSnippets.listSubscriptionsForTopicAsync();
-      while (Iterators.size(subscriptions.values().iterator()) < 1) {
+      while (Iterators.size(subscriptions.getValues().iterator()) < 1) {
         subscriptions = topicSnippets.listSubscriptionsForTopic();
       }
-      assertEquals(SUBSCRIPTION, subscriptions.values().iterator().next().subscription());
+      assertEquals(SUBSCRIPTION, subscriptions.getValues().iterator().next().getSubscription());
     } finally {
       pubsub.deleteSubscription(SUBSCRIPTION);
     }
@@ -105,13 +105,13 @@ public class ITTopicSnippets {
     assertNotNull(policy);
     assertEquals(policy, topicSnippets.getPolicyAsync());
     policy = topicSnippets.replacePolicy();
-    assertTrue(policy.bindings().get(Role.viewer()).contains(Identity.allAuthenticatedUsers()));
+    assertTrue(policy.getBindings().get(Role.viewer()).contains(Identity.allAuthenticatedUsers()));
     policy = topic.replacePolicy(policy.toBuilder()
         .removeIdentity(Role.viewer(), Identity.allAuthenticatedUsers())
         .build());
-    assertFalse(policy.bindings().containsKey(Role.viewer()));
+    assertFalse(policy.getBindings().containsKey(Role.viewer()));
     policy = topicSnippets.replacePolicyAsync();
-    assertTrue(policy.bindings().get(Role.viewer()).contains(Identity.allAuthenticatedUsers()));
+    assertTrue(policy.getBindings().get(Role.viewer()).contains(Identity.allAuthenticatedUsers()));
     assertTrue(topicSnippets.delete());
     assertFalse(topicSnippets.deleteAsync());
   }

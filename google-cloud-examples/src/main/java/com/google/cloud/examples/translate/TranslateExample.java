@@ -42,7 +42,7 @@ import java.util.Map;
  *  translate <text>+"}</pre>
  *
  * <p>The first parameter is an optional {@code targetLanguage}. If the target language is not
- * supplied, {@code en} is used (see {@link TranslateOptions.Builder#targetLanguage(String)}).
+ * supplied, {@code en} is used (see {@link TranslateOptions.Builder#setTargetLanguage(String)}).
  */
 public class TranslateExample {
 
@@ -180,16 +180,16 @@ public class TranslateExample {
       printUsage();
       return;
     }
-    TranslateOptions.Builder optionsBuilder = TranslateOptions.builder();
+    TranslateOptions.Builder optionsBuilder = TranslateOptions.newBuilder();
     TranslateAction action;
     String actionName;
     if (args.length >= 3 && !ACTIONS.containsKey(args[1])) {
-      optionsBuilder.apiKey(args[0]);
+      optionsBuilder.setApiKey(args[0]);
       actionName = args[2];
-      optionsBuilder.targetLanguage(args[1]);
+      optionsBuilder.setTargetLanguage(args[1]);
       args = Arrays.copyOfRange(args, 3, args.length);
     } else if (args.length >= 2 && !ACTIONS.containsKey(args[0])) {
-      optionsBuilder.apiKey(args[0]);
+      optionsBuilder.setApiKey(args[0]);
       actionName = args[1];
       args = Arrays.copyOfRange(args, 2, args.length);
     } else {
@@ -214,7 +214,7 @@ public class TranslateExample {
       ex.printStackTrace();
       return;
     }
-    Translate translate = optionsBuilder.build().service();
+    Translate translate = optionsBuilder.build().getService();
     action.run(translate, arg);
   }
 }

@@ -134,7 +134,7 @@ public class ResourceManagerExample {
     @Override
     public void run(ResourceManager resourceManager, String... args) {
       System.out.println("Projects you can view:");
-      for (ProjectInfo project : resourceManager.list().values()) {
+      for (ProjectInfo project : resourceManager.list().getValues()) {
         System.out.println(projectDetails(project));
       }
     }
@@ -207,8 +207,8 @@ public class ResourceManagerExample {
 
     // If you want to access a local Resource Manager emulator (after creating and starting the
     // LocalResourceManagerHelper), use the following code instead:
-    // ResourceManager resourceManager = LocalResourceManagerHelper.options().service();
-    ResourceManager resourceManager = ResourceManagerOptions.defaultInstance().service();
+    // ResourceManager resourceManager = LocalResourceManagerHelper.getOptions().getService();
+    ResourceManager resourceManager = ResourceManagerOptions.getDefaultInstance().getService();
     args = args.length > 1 ? Arrays.copyOfRange(args, 1, args.length) : new String[] {};
     if (args.length < action.getRequiredParams().length) {
       StringBuilder usage = new StringBuilder();

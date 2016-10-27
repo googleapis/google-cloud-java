@@ -39,7 +39,7 @@ public class ITJobSnippets {
 
   @BeforeClass
   public static void beforeClass() {
-    bigquery = RemoteBigQueryHelper.create().getOptions().service();
+    bigquery = RemoteBigQueryHelper.create().getOptions().getService();
   }
 
   @Test

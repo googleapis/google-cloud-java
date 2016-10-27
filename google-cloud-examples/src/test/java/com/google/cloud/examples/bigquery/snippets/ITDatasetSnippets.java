@@ -54,7 +54,7 @@ public class ITDatasetSnippets {
 
   @BeforeClass
   public static void beforeClass() {
-    bigquery = RemoteBigQueryHelper.create().getOptions().service();
+    bigquery = RemoteBigQueryHelper.create().getOptions().getService();
     dataset = bigquery.create(DatasetInfo.newBuilder(DATASET).build());
     nonExistingDataset = bigquery.create(DatasetInfo.newBuilder(NON_EXISTING_DATASET).build());
     nonExistingDataset.delete(DatasetDeleteOption.deleteContents());

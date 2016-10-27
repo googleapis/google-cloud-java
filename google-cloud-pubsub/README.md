@@ -92,7 +92,7 @@ code to create your service object:
 import com.google.cloud.pubsub.PubSub;
 import com.google.cloud.pubsub.PubSubOptions;
 
-try(PubSub pubsub = PubSubOptions.defaultInstance().service()) {
+try(PubSub pubsub = PubSubOptions.getDefaultInstance().getService()) {
   // use pubsub here
 }
 ```

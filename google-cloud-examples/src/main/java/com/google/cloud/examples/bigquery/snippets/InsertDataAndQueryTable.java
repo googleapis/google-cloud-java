@@ -49,7 +49,7 @@ public class InsertDataAndQueryTable {
 
   public static void main(String... args) throws InterruptedException {
     // Create a service instance
-    BigQuery bigquery = BigQueryOptions.defaultInstance().service();
+    BigQuery bigquery = BigQueryOptions.getDefaultInstance().getService();
 
     // Create a dataset
     String datasetId = "my_dataset_id";

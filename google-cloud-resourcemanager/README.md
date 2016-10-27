@@ -83,7 +83,7 @@ code to create your service object:
 import com.google.cloud.resourcemanager.ResourceManager;
 import com.google.cloud.resourcemanager.ResourceManagerOptions;
 
-ResourceManager resourceManager = ResourceManagerOptions.defaultInstance().service();
+ResourceManager resourceManager = ResourceManagerOptions.getDefaultInstance().getService();
 ```
 
 #### Getting a specific project
