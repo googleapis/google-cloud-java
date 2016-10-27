@@ -57,6 +57,8 @@ import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -74,7 +76,8 @@ import java.util.TimeZone;
 /**
  * Contains Cloud Datastore snippets demonstrating concepts for documentation.
  */
-public class Concepts {
+@RunWith(JUnit4.class)
+public class ConceptsTest {
 
   private static final LocalDatastoreHelper HELPER = LocalDatastoreHelper.create(1.0);
   private static final FullEntity<IncompleteKey> TEST_FULL_ENTITY = FullEntity.builder().build();
@@ -989,7 +992,7 @@ public class Concepts {
     }
     // [END property_filtering_run_query]
     Map<String, ImmutableSet<String>> expected =
-        ImmutableMap.of("Task", ImmutableSet.of("priority", "tag", "category"));
+        ImmutableMap.of("Task", ImmutableSet.of("priority", "tag"));
     assertEquals(expected, propertiesByKind);
   }
 
