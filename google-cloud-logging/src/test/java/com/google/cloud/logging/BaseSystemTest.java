@@ -36,7 +36,6 @@ import com.google.cloud.logging.Payload.StringPayload;
 import com.google.cloud.logging.SinkInfo.Destination.DatasetDestination;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
-import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Iterators;
 import com.google.common.collect.Sets;
 import com.google.protobuf.Any;
@@ -47,7 +46,6 @@ import org.junit.Test;
 import org.junit.rules.ExpectedException;
 import org.junit.rules.Timeout;
 
-import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 import java.util.concurrent.ExecutionException;
@@ -59,13 +57,6 @@ import java.util.logging.Logger;
  * environments (e.g. local emulator or remote Logging service).
  */
 public abstract class BaseSystemTest {
-
-  private static final Set<String> DESCRIPTOR_TYPES = ImmutableSet.of("gce_instance", "gae_app",
-      "cloudsql_database", "api", "gcs_bucket", "global", "dataflow_step", "build",
-      "app_script_function", "dataproc_cluster", "ml_job", "bigquery_resource", "container",
-      "gke_cluster", "cloud_debugger_resource", "http_load_balancer", "aws_ec2_instance",
-      "client_auth_config_brand", "client_auth_config_client", "logging_log", "logging_sink",
-      "metric", "project", "testservice_matrix", "service_account", "deployment");
 
   @Rule
   public ExpectedException thrown = ExpectedException.none();
@@ -214,13 +205,12 @@ public abstract class BaseSystemTest {
   public void testListMonitoredResourceDescriptors() {
     Iterator<MonitoredResourceDescriptor> iterator =
         logging().listMonitoredResourceDescriptors(Logging.ListOption.pageSize(1)).iterateAll();
-    Set<String> descriptorTypes = new HashSet<>();
+    int count = 0;
     while (iterator.hasNext()) {
-      descriptorTypes.add(iterator.next().getType());
+      assertNotNull(iterator.next().getType());
+      count += 1;
     }
-    for (String type : DESCRIPTOR_TYPES) {
-      assertTrue(descriptorTypes.contains(type));
-    }
+    assertTrue(count > 0);
   }
 
   @Test
@@ -228,13 +218,12 @@ public abstract class BaseSystemTest {
       throws ExecutionException, InterruptedException {
     Iterator<MonitoredResourceDescriptor> iterator = logging()
         .listMonitoredResourceDescriptorsAsync(Logging.ListOption.pageSize(1)).get().iterateAll();
-    Set<String> descriptorTypes = new HashSet<>();
+    int count = 0;
     while (iterator.hasNext()) {
-      descriptorTypes.add(iterator.next().getType());
+      assertNotNull(iterator.next().getType());
+      count += 1;
     }
-    for (String type : DESCRIPTOR_TYPES) {
-      assertTrue(descriptorTypes.contains(type));
-    }
+    assertTrue(count > 0);
   }
 
   @Test
