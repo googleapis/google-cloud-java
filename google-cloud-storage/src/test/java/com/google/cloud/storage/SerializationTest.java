@@ -31,7 +31,7 @@ import java.util.Map;
 
 public class SerializationTest extends BaseSerializationTest {
 
-  private static final Storage STORAGE = StorageOptions.builder().projectId("p").build().service();
+  private static final Storage STORAGE = StorageOptions.newBuilder().setProjectId("p").build().getService();
   private static final Acl.Domain ACL_DOMAIN = new Acl.Domain("domain");
   private static final Acl.Group ACL_GROUP = new Acl.Group("group");
   private static final Acl.Project ACL_PROJECT_ = new Acl.Project(ProjectRole.VIEWERS, "pid");
@@ -64,13 +64,13 @@ public class SerializationTest extends BaseSerializationTest {
 
   @Override
   protected Serializable[] serializableObjects() {
-    StorageOptions options = StorageOptions.builder()
-        .projectId("p1")
-        .authCredentials(AuthCredentials.createForAppEngine())
+    StorageOptions options = StorageOptions.newBuilder()
+        .setProjectId("p1")
+        .setAuthCredentials(AuthCredentials.createForAppEngine())
         .build();
     StorageOptions otherOptions = options.toBuilder()
-        .projectId("p2")
-        .authCredentials(null)
+        .setProjectId("p2")
+        .setAuthCredentials(null)
         .build();
     return new Serializable[]{ACL_DOMAIN, ACL_GROUP, ACL_PROJECT_, ACL_USER, ACL_RAW, ACL,
         BLOB_INFO, BLOB, BUCKET_INFO, BUCKET, ORIGIN, CORS, PAGE_RESULT, BLOB_LIST_OPTIONS,
@@ -80,7 +80,7 @@ public class SerializationTest extends BaseSerializationTest {
 
   @Override
   protected Restorable<?>[] restorableObjects() {
-    StorageOptions options = StorageOptions.builder().projectId("p2").build();
+    StorageOptions options = StorageOptions.newBuilder().setProjectId("p2").build();
     ReadChannel reader =
         new BlobReadChannel(options, BlobId.of("b", "n"), EMPTY_RPC_OPTIONS);
     // avoid closing when you don't want partial writes to GCS upon failure

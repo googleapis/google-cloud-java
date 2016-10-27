@@ -252,7 +252,7 @@ public class Instance extends InstanceInfo {
   Instance(Compute compute, Instance.BuilderImpl infoBuilder) {
     super(infoBuilder);
     this.compute = checkNotNull(compute);
-    this.options = compute.options();
+    this.options = compute.getOptions();
   }
 
   /**
@@ -535,7 +535,7 @@ public class Instance extends InstanceInfo {
 
   private void readObject(ObjectInputStream input) throws IOException, ClassNotFoundException {
     input.defaultReadObject();
-    this.compute = options.service();
+    this.compute = options.getService();
   }
 
   static Instance fromPb(Compute compute,

@@ -70,25 +70,33 @@ public class StorageOptions extends HttpServiceOptions<Storage, StorageRpc, Stor
   }
 
   @Override
-  protected StorageFactory defaultServiceFactory() {
+  protected StorageFactory getDefaultServiceFactory() {
     return DefaultStorageFactory.INSTANCE;
   }
 
   @Override
-  protected StorageRpcFactory defaultRpcFactory() {
+  protected StorageRpcFactory getDefaultRpcFactory() {
     return DefaultStorageRpcFactory.INSTANCE;
   }
 
   @Override
-  protected Set<String> scopes() {
+  protected Set<String> getScopes() {
     return SCOPES;
   }
 
   /**
    * Returns a default {@code StorageOptions} instance.
    */
+  @Deprecated
   public static StorageOptions defaultInstance() {
-    return builder().build();
+    return getDefaultInstance();
+  }
+
+  /**
+   * Returns a default {@code StorageOptions} instance.
+   */
+  public static StorageOptions getDefaultInstance() {
+    return newBuilder().build();
   }
 
   @SuppressWarnings("unchecked")
@@ -107,7 +115,12 @@ public class StorageOptions extends HttpServiceOptions<Storage, StorageRpc, Stor
     return obj instanceof StorageOptions && baseEquals((StorageOptions) obj);
   }
 
+  @Deprecated
   public static Builder builder() {
+    return newBuilder();
+  }
+
+  public static Builder newBuilder() {
     return new Builder();
   }
 }

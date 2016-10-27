@@ -55,10 +55,10 @@ public class AckDeadlineRenewerTest {
   @Before
   public void setUp() {
     pubsub = EasyMock.createStrictMock(PubSub.class);
-    PubSubOptions options = PubSubOptions.builder()
-        .projectId("projectId")
+    PubSubOptions options = PubSubOptions.newBuilder()
+        .setProjectId("projectId")
         .build();
-    EasyMock.expect(pubsub.options()).andReturn(options);
+    EasyMock.expect(pubsub.getOptions()).andReturn(options);
     EasyMock.replay(pubsub);
     ackDeadlineRenewer = new AckDeadlineRenewer(pubsub);
   }
@@ -246,11 +246,11 @@ public class AckDeadlineRenewerTest {
     ScheduledExecutorService executor = EasyMock.createStrictMock(ScheduledExecutorService.class);
     ExecutorFactory executorFactory = EasyMock.createStrictMock(ExecutorFactory.class);
     EasyMock.expect(executorFactory.get()).andReturn(executor);
-    PubSubOptions options = PubSubOptions.builder()
-        .projectId("projectId")
-        .executorFactory(executorFactory)
+    PubSubOptions options = PubSubOptions.newBuilder()
+        .setProjectId("projectId")
+        .setExecutorFactory(executorFactory)
         .build();
-    EasyMock.expect(pubsub.options()).andReturn(options);
+    EasyMock.expect(pubsub.getOptions()).andReturn(options);
     executorFactory.release(executor);
     EasyMock.expectLastCall();
     EasyMock.replay(executor, executorFactory, pubsub);
@@ -269,11 +269,11 @@ public class AckDeadlineRenewerTest {
     ScheduledFuture future = EasyMock.createStrictMock(ScheduledFuture.class);
     EasyMock.expect(executor.schedule(EasyMock.<Runnable>anyObject(), EasyMock.anyLong(),
         EasyMock.eq(TimeUnit.MILLISECONDS))).andReturn(future);
-    PubSubOptions options = PubSubOptions.builder()
-        .projectId("projectId")
-        .executorFactory(executorFactory)
+    PubSubOptions options = PubSubOptions.newBuilder()
+        .setProjectId("projectId")
+        .setExecutorFactory(executorFactory)
         .build();
-    EasyMock.expect(pubsub.options()).andReturn(options);
+    EasyMock.expect(pubsub.getOptions()).andReturn(options);
     EasyMock.expect(future.cancel(true)).andReturn(true);
     executorFactory.release(executor);
     EasyMock.expectLastCall();

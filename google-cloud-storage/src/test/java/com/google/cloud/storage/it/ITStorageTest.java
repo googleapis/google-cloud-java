@@ -104,7 +104,7 @@ public class ITStorageTest {
   @BeforeClass
   public static void beforeClass() throws NoSuchAlgorithmException, InvalidKeySpecException {
     RemoteStorageHelper helper = RemoteStorageHelper.create();
-    storage = helper.getOptions().service();
+    storage = helper.getOptions().getService();
     storage.create(BucketInfo.of(BUCKET));
   }
 
@@ -816,7 +816,8 @@ public class ITStorageTest {
     Blob remoteSourceBlob = storage.create(BlobInfo.newBuilder(source).build(), BLOB_BYTE_CONTENT);
     assertNotNull(remoteSourceBlob);
     String targetBlobName = "test-copy-blob-target-fail";
-    BlobInfo target = BlobInfo.newBuilder(BUCKET, targetBlobName).setContentType(CONTENT_TYPE).build();
+    BlobInfo target =
+        BlobInfo.newBuilder(BUCKET, targetBlobName).setContentType(CONTENT_TYPE).build();
     Storage.CopyRequest req = Storage.CopyRequest.newBuilder()
         .setSource(BUCKET, sourceBlobName)
         .setSourceOptions(Storage.BlobSourceOption.generationMatch(-1L))
@@ -1083,7 +1084,7 @@ public class ITStorageTest {
     ByteBuffer readBytes;
     ByteBuffer readStringBytes;
     ReadChannel reader = storage.reader(blob.getBlobId());
-    reader.chunkSize(BLOB_BYTE_CONTENT.length);
+    reader.setChunkSize(BLOB_BYTE_CONTENT.length);
     readBytes = ByteBuffer.allocate(BLOB_BYTE_CONTENT.length);
     reader.read(readBytes);
     RestorableState<ReadChannel> readerState = reader.capture();
@@ -1141,7 +1142,7 @@ public class ITStorageTest {
     assertNotNull(remoteBlob);
     assertEquals(blobSize, (long) remoteBlob.getSize());
     try (ReadChannel reader = storage.reader(blob.getBlobId())) {
-      reader.chunkSize(chunkSize);
+      reader.setChunkSize(chunkSize);
       ByteBuffer readBytes = ByteBuffer.allocate(chunkSize);
       int numReadBytes = reader.read(readBytes);
       assertEquals(chunkSize, numReadBytes);
@@ -1390,14 +1391,14 @@ public class ITStorageTest {
   @Test
   public void testReadCompressedBlob() throws IOException {
     String blobName = "test-read-compressed-blob";
-    BlobInfo blobInfo = BlobInfo.builder(BlobId.of(BUCKET, blobName))
-        .contentType("text/plain")
-        .contentEncoding("gzip")
+    BlobInfo blobInfo = BlobInfo.newBuilder(BlobId.of(BUCKET, blobName))
+        .setContentType("text/plain")
+        .setContentEncoding("gzip")
         .build();
     Blob blob = storage.create(blobInfo, COMPRESSED_CONTENT);
     try (ByteArrayOutputStream output = new ByteArrayOutputStream()) {
       try (ReadChannel reader = storage.reader(BlobId.of(BUCKET, blobName))) {
-        reader.chunkSize(8);
+        reader.setChunkSize(8);
         ByteBuffer buffer = ByteBuffer.allocate(8);
         while (reader.read(buffer) != -1) {
           buffer.flip();

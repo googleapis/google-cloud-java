@@ -133,7 +133,7 @@ public class Job extends JobInfo {
   Job(BigQuery bigquery, JobInfo.BuilderImpl infoBuilder) {
     super(infoBuilder);
     this.bigquery = checkNotNull(bigquery);
-    this.options = bigquery.options();
+    this.options = bigquery.getOptions();
   }
 
   /**
@@ -218,8 +218,8 @@ public class Job extends JobInfo {
   public Job waitFor(WaitForOption... waitOptions) throws InterruptedException, TimeoutException {
     Timeout timeout = Timeout.getOrDefault(waitOptions);
     CheckingPeriod checkingPeriod = CheckingPeriod.getOrDefault(waitOptions);
-    long timeoutMillis = timeout.timeoutMillis();
-    Clock clock = options.clock();
+    long timeoutMillis = timeout.getTimeoutMillis();
+    Clock clock = options.getClock();
     long startTime = clock.millis();
     while (!isDone()) {
       if (timeoutMillis  != -1 && (clock.millis() - startTime)  >= timeoutMillis) {
@@ -317,7 +317,7 @@ public class Job extends JobInfo {
 
   private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
     in.defaultReadObject();
-    this.bigquery = options.service();
+    this.bigquery = options.getService();
   }
 
   static Job fromPb(BigQuery bigquery, com.google.api.services.bigquery.model.Job jobPb) {

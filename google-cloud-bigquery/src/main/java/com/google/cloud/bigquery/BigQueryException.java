@@ -60,8 +60,8 @@ public final class BigQueryException extends BaseServiceException {
   public BigQueryException(IOException exception) {
     super(exception, true);
     BigQueryError error = null;
-    if (reason() != null) {
-      error = new BigQueryError(reason(), location(), getMessage(), debugInfo());
+    if (getReason() != null) {
+      error = new BigQueryError(getReason(), getLocation(), getMessage(), getDebugInfo());
     }
     this.error = error;
   }
@@ -84,7 +84,7 @@ public final class BigQueryException extends BaseServiceException {
   }
 
   @Override
-  protected Set<Error> retryableErrors() {
+  protected Set<Error> getRetryableErrors() {
     return RETRYABLE_ERRORS;
   }
 

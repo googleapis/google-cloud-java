@@ -80,7 +80,7 @@ public class DiskTest {
   private Disk imageDisk;
 
   private void initializeExpectedDisk(int optionsCalls) {
-    expect(serviceMockReturnsOptions.options()).andReturn(mockOptions).times(optionsCalls);
+    expect(serviceMockReturnsOptions.getOptions()).andReturn(mockOptions).times(optionsCalls);
     replay(serviceMockReturnsOptions);
     standardDisk = new Disk.Builder(serviceMockReturnsOptions, DISK_ID, DISK_CONFIGURATION)
         .setGeneratedId(GENERATED_ID)
@@ -276,7 +276,7 @@ public class DiskTest {
   @Test
   public void testDeleteOperation() {
     initializeExpectedDisk(4);
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     Operation operation = new Operation.Builder(serviceMockReturnsOptions)
         .setOperationId(ZoneOperationId.of("project", "zone", "op"))
         .build();
@@ -289,7 +289,7 @@ public class DiskTest {
   @Test
   public void testDeleteNull() {
     initializeExpectedDisk(3);
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     expect(compute.deleteDisk(DISK_ID)).andReturn(null);
     replay(compute);
     initializeDisk();
@@ -300,7 +300,7 @@ public class DiskTest {
   public void testExists_True() throws Exception {
     initializeExpectedDisk(3);
     Compute.DiskOption[] expectedOptions = {Compute.DiskOption.fields()};
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     expect(compute.getDisk(DISK_ID, expectedOptions)).andReturn(imageDisk);
     replay(compute);
     initializeDisk();
@@ -312,7 +312,7 @@ public class DiskTest {
   public void testExists_False() throws Exception {
     initializeExpectedDisk(3);
     Compute.DiskOption[] expectedOptions = {Compute.DiskOption.fields()};
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     expect(compute.getDisk(DISK_ID, expectedOptions)).andReturn(null);
     replay(compute);
     initializeDisk();
@@ -323,7 +323,7 @@ public class DiskTest {
   @Test
   public void testReload() throws Exception {
     initializeExpectedDisk(5);
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     expect(compute.getDisk(DISK_ID)).andReturn(imageDisk);
     replay(compute);
     initializeDisk();
@@ -335,7 +335,7 @@ public class DiskTest {
   @Test
   public void testReloadNull() throws Exception {
     initializeExpectedDisk(3);
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     expect(compute.getDisk(DISK_ID)).andReturn(null);
     replay(compute);
     initializeDisk();
@@ -346,7 +346,7 @@ public class DiskTest {
   @Test
   public void testReloadWithOptions() throws Exception {
     initializeExpectedDisk(5);
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     expect(compute.getDisk(DISK_ID, Compute.DiskOption.fields())).andReturn(imageDisk);
     replay(compute);
     initializeDisk();
@@ -358,7 +358,7 @@ public class DiskTest {
   @Test
   public void testCreateSnapshot() {
     initializeExpectedDisk(4);
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     Operation operation = new Operation.Builder(serviceMockReturnsOptions)
         .setOperationId(ZoneOperationId.of("project", "zone", "op"))
         .build();
@@ -373,7 +373,7 @@ public class DiskTest {
   @Test
   public void testCreateSnapshotWithDescription() {
     initializeExpectedDisk(4);
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     Operation operation = new Operation.Builder(serviceMockReturnsOptions)
         .setOperationId(ZoneOperationId.of("project", "zone", "op"))
         .build();
@@ -390,7 +390,7 @@ public class DiskTest {
   @Test
   public void testCreateSnapshotWithOptions() {
     initializeExpectedDisk(4);
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     Operation operation = new Operation.Builder(serviceMockReturnsOptions)
         .setOperationId(ZoneOperationId.of("project", "zone", "op"))
         .build();
@@ -406,7 +406,7 @@ public class DiskTest {
   @Test
   public void testCreateSnapshotWithDescriptionAndOptions() {
     initializeExpectedDisk(4);
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     Operation operation = new Operation.Builder(serviceMockReturnsOptions)
         .setOperationId(ZoneOperationId.of("project", "zone", "op"))
         .build();
@@ -418,13 +418,14 @@ public class DiskTest {
     replay(compute);
     initializeDisk();
     assertSame(operation,
-        disk.createSnapshot(SNAPSHOT.getSnapshot(), "description", Compute.OperationOption.fields()));
+        disk.createSnapshot(SNAPSHOT.getSnapshot(), "description",
+            Compute.OperationOption.fields()));
   }
 
   @Test
   public void testCreateImage() {
     initializeExpectedDisk(4);
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     Operation operation = new Operation.Builder(serviceMockReturnsOptions)
         .setOperationId(GlobalOperationId.of("project", "op"))
         .build();
@@ -439,7 +440,7 @@ public class DiskTest {
   @Test
   public void testCreateImageWithDescription() {
     initializeExpectedDisk(4);
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     Operation operation = new Operation.Builder(serviceMockReturnsOptions)
         .setOperationId(GlobalOperationId.of("project", "op"))
         .build();
@@ -456,7 +457,7 @@ public class DiskTest {
   @Test
   public void testCreateImageWithOptions() {
     initializeExpectedDisk(4);
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     Operation operation = new Operation.Builder(serviceMockReturnsOptions)
         .setOperationId(GlobalOperationId.of("project", "op"))
         .build();
@@ -471,7 +472,7 @@ public class DiskTest {
   @Test
   public void testCreateImageWithDescriptionAndOptions() {
     initializeExpectedDisk(4);
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     Operation operation = new Operation.Builder(serviceMockReturnsOptions)
         .setOperationId(GlobalOperationId.of("project", "op"))
         .build();
@@ -489,7 +490,7 @@ public class DiskTest {
   @Test
   public void testResizeOperation() {
     initializeExpectedDisk(4);
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     Operation operation = new Operation.Builder(serviceMockReturnsOptions)
         .setOperationId(ZoneOperationId.of("project", "zone", "op"))
         .build();
@@ -502,7 +503,7 @@ public class DiskTest {
   @Test
   public void testResizeNull() {
     initializeExpectedDisk(3);
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     expect(compute.resize(DISK_ID, 42L)).andReturn(null);
     replay(compute);
     initializeDisk();
@@ -511,7 +512,7 @@ public class DiskTest {
 
   public void compareDisk(Disk expected, Disk value) {
     assertEquals(expected, value);
-    assertEquals(expected.getCompute().options(), value.getCompute().options());
+    assertEquals(expected.getCompute().getOptions(), value.getCompute().getOptions());
     assertEquals(expected.getDiskId(), value.getDiskId());
     assertEquals(expected.getConfiguration(), value.getConfiguration());
     assertEquals(expected.getGeneratedId(), value.getGeneratedId());

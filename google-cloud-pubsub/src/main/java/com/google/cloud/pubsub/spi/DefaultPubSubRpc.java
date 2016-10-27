@@ -89,18 +89,18 @@ public class DefaultPubSubRpc implements PubSubRpc {
     }
 
     @Override
-    protected ExecutorFactory<ScheduledExecutorService> executorFactory() {
-      return super.executorFactory();
+    protected ExecutorFactory<ScheduledExecutorService> getExecutorFactory() {
+      return super.getExecutorFactory();
     }
 
     @Override
-    protected UnaryCallSettings.Builder apiCallSettings() {
-      return super.apiCallSettings();
+    protected UnaryCallSettings.Builder getApiCallSettings() {
+      return super.getApiCallSettings();
     }
 
     @Override
-    protected ConnectionSettings.Builder connectionSettings() {
-      return super.connectionSettings();
+    protected ConnectionSettings.Builder getConnectionSettings() {
+      return super.getConnectionSettings();
     }
   }
 
@@ -130,10 +130,10 @@ public class DefaultPubSubRpc implements PubSubRpc {
 
   public DefaultPubSubRpc(PubSubOptions options) throws IOException {
     InternalPubSubOptions internalOptions = new InternalPubSubOptions(options);
-    executorFactory = internalOptions.executorFactory();
+    executorFactory = internalOptions.getExecutorFactory();
     executor = executorFactory.get();
-    String libraryName = options.libraryName();
-    String libraryVersion = firstNonNull(options.libraryVersion(), "");
+    String libraryName = options.getLibraryName();
+    String libraryVersion = firstNonNull(options.getLibraryVersion(), "");
     try {
       PublisherSettings.Builder pubBuilder = PublisherSettings.defaultBuilder()
           .provideExecutorWith(executor, false)
@@ -142,19 +142,19 @@ public class DefaultPubSubRpc implements PubSubRpc {
           .provideExecutorWith(executor, false)
           .setClientLibHeader(libraryName, libraryVersion);
       // todo(mziccard): PublisherSettings should support null/absent credentials for testing
-      if (options.host().contains("localhost")
-          || options.authCredentials().equals(AuthCredentials.noAuth())) {
-        ManagedChannel channel = NettyChannelBuilder.forTarget(options.host())
+      if (options.getHost().contains("localhost")
+          || options.getAuthCredentials().equals(AuthCredentials.noAuth())) {
+        ManagedChannel channel = NettyChannelBuilder.forTarget(options.getHost())
             .negotiationType(NegotiationType.PLAINTEXT)
             .build();
         pubBuilder.provideChannelWith(channel, true);
         subBuilder.provideChannelWith(channel, true);
       } else {
-        ConnectionSettings connectionSettings = internalOptions.connectionSettings().build();
+        ConnectionSettings connectionSettings = internalOptions.getConnectionSettings().build();
         pubBuilder.provideChannelWith(connectionSettings);
         subBuilder.provideChannelWith(connectionSettings);
       }
-      UnaryCallSettings.Builder callSettingsBuilder = internalOptions.apiCallSettings();
+      UnaryCallSettings.Builder callSettingsBuilder = internalOptions.getApiCallSettings();
       pubBuilder.applyToAllApiMethods(callSettingsBuilder);
       subBuilder.applyToAllApiMethods(callSettingsBuilder);
       publisherApi = PublisherApi.create(pubBuilder.build());

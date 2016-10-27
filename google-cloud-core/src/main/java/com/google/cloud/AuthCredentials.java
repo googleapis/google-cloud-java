@@ -130,6 +130,11 @@ public abstract class AuthCredentials implements Restorable<AuthCredentials> {
 
       @Override
       public String account() {
+        return getAccount();
+      }
+
+      @Override
+      public String getAccount() {
         return account;
       }
 
@@ -166,7 +171,13 @@ public abstract class AuthCredentials implements Restorable<AuthCredentials> {
     }
 
     @Override
+    @Deprecated
     public AppEngineCredentials credentials() {
+      return getCredentials();
+    }
+
+    @Override
+    public AppEngineCredentials getCredentials() {
       if (credentials == null) {
         credentials = new AppEngineCredentials();
       }
@@ -179,13 +190,19 @@ public abstract class AuthCredentials implements Restorable<AuthCredentials> {
     }
 
     @Override
+    @Deprecated
     public String account() {
-      return credentials().account();
+      return getAccount();
+    }
+
+    @Override
+    public String getAccount() {
+      return getCredentials().getAccount();
     }
 
     @Override
     public byte[] sign(byte[] toSign) {
-      return credentials().sign(toSign);
+      return getCredentials().sign(toSign);
     }
   }
 
@@ -247,19 +264,39 @@ public abstract class AuthCredentials implements Restorable<AuthCredentials> {
     }
 
     @Override
+    @Deprecated
     public ServiceAccountCredentials credentials() {
+      return getCredentials();
+    }
+
+    @Override
+    public ServiceAccountCredentials getCredentials() {
       return credentials;
     }
 
     @Override
+    @Deprecated
     public String account() {
+      return account;
+    }
+
+    @Override
+    public String getAccount() {
       return account;
     }
 
     /**
      * Returns the private key associated with the service account credentials.
      */
+    @Deprecated
     public PrivateKey privateKey() {
+      return getPrivateKey();
+    }
+
+    /**
+     * Returns the private key associated with the service account credentials.
+     */
+    public PrivateKey getPrivateKey() {
       return privateKey;
     }
 
@@ -267,7 +304,7 @@ public abstract class AuthCredentials implements Restorable<AuthCredentials> {
     public byte[] sign(byte[] toSign) {
       try {
         Signature signer = Signature.getInstance("SHA256withRSA");
-        signer.initSign(privateKey());
+        signer.initSign(getPrivateKey());
         signer.update(toSign);
         return signer.sign();
       } catch (NoSuchAlgorithmException | InvalidKeyException | SignatureException ex) {
@@ -331,7 +368,13 @@ public abstract class AuthCredentials implements Restorable<AuthCredentials> {
     }
 
     @Override
+    @Deprecated
     public GoogleCredentials credentials() {
+      return getCredentials();
+    }
+
+    @Override
+    public GoogleCredentials getCredentials() {
       return googleCredentials;
     }
 
@@ -392,7 +435,13 @@ public abstract class AuthCredentials implements Restorable<AuthCredentials> {
     }
 
     @Override
+    @Deprecated
     public GoogleCredentials credentials() {
+      return getCredentials();
+    }
+
+    @Override
+    public GoogleCredentials getCredentials() {
       return credentials;
     }
 
@@ -436,7 +485,13 @@ public abstract class AuthCredentials implements Restorable<AuthCredentials> {
     private NoAuthCredentials() {}
 
     @Override
+    @Deprecated
     public GoogleCredentials credentials() {
+      return getCredentials();
+    }
+
+    @Override
+    public GoogleCredentials getCredentials() {
       return null;
     }
 
@@ -446,7 +501,10 @@ public abstract class AuthCredentials implements Restorable<AuthCredentials> {
     }
   }
 
+  @Deprecated
   public abstract GoogleCredentials credentials();
+
+  public abstract GoogleCredentials getCredentials();
 
   public static AuthCredentials createForAppEngine() {
     return AppEngineAuthCredentials.INSTANCE;

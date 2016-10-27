@@ -35,7 +35,14 @@ public interface FieldSelector {
    * Returns a string selector. This selector is passed to a Google Cloud service (possibly with
    * other field selectors) to specify which resource fields should be returned by an API call.
    */
+  @Deprecated
   String selector();
+
+  /**
+   * Returns a string selector. This selector is passed to a Google Cloud service (possibly with
+   * other field selectors) to specify which resource fields should be returned by an API call.
+   */
+  String getSelector();
 
   /**
    * A helper class used to build composite selectors given a number of fields. This class is not
@@ -51,7 +58,7 @@ public interface FieldSelector {
         new Function<FieldSelector, String>() {
           @Override
           public String apply(FieldSelector fieldSelector) {
-            return fieldSelector.selector();
+            return fieldSelector.getSelector();
           }
         };
 

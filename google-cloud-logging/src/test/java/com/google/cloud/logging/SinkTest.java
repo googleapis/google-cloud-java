@@ -59,7 +59,7 @@ public class SinkTest {
   private Sink sink;
 
   private void initializeExpectedSink(int optionsCalls) {
-    expect(serviceMockReturnsOptions.options()).andReturn(mockOptions).times(optionsCalls);
+    expect(serviceMockReturnsOptions.getOptions()).andReturn(mockOptions).times(optionsCalls);
     replay(serviceMockReturnsOptions);
     logging = createStrictMock(Logging.class);
     expectedSink = new Sink(serviceMockReturnsOptions, new Sink.BuilderImpl(SINK_INFO));
@@ -119,7 +119,7 @@ public class SinkTest {
     SinkInfo updatedInfo = SINK_INFO.toBuilder().setFilter(NEW_FILTER).build();
     Sink expectedSink =
         new Sink(serviceMockReturnsOptions, new SinkInfo.BuilderImpl(updatedInfo));
-    expect(logging.options()).andReturn(mockOptions);
+    expect(logging.getOptions()).andReturn(mockOptions);
     expect(logging.getSink(NAME)).andReturn(expectedSink);
     replay(logging);
     initializeSink();
@@ -130,7 +130,7 @@ public class SinkTest {
   @Test
   public void testReloadNull() {
     initializeExpectedSink(1);
-    expect(logging.options()).andReturn(mockOptions);
+    expect(logging.getOptions()).andReturn(mockOptions);
     expect(logging.getSink(NAME)).andReturn(null);
     replay(logging);
     initializeSink();
@@ -142,7 +142,7 @@ public class SinkTest {
     initializeExpectedSink(2);
     SinkInfo updatedInfo = SINK_INFO.toBuilder().setFilter(NEW_FILTER).build();
     Sink expectedSink = new Sink(serviceMockReturnsOptions, new SinkInfo.BuilderImpl(updatedInfo));
-    expect(logging.options()).andReturn(mockOptions);
+    expect(logging.getOptions()).andReturn(mockOptions);
     expect(logging.getSinkAsync(NAME))
         .andReturn(Futures.immediateFuture(expectedSink));
     replay(logging);
@@ -154,7 +154,7 @@ public class SinkTest {
   @Test
   public void testReloadAsyncNull() throws ExecutionException, InterruptedException {
     initializeExpectedSink(1);
-    expect(logging.options()).andReturn(mockOptions);
+    expect(logging.getOptions()).andReturn(mockOptions);
     expect(logging.getSinkAsync(NAME)).andReturn(Futures.<Sink>immediateFuture(null));
     replay(logging);
     initializeSink();
@@ -166,7 +166,7 @@ public class SinkTest {
     initializeExpectedSink(2);
     SinkInfo updatedInfo = SINK_INFO.toBuilder().setFilter(NEW_FILTER).build();
     Sink expectedSink = new Sink(serviceMockReturnsOptions, new SinkInfo.BuilderImpl(updatedInfo));
-    expect(logging.options()).andReturn(mockOptions).times(2);
+    expect(logging.getOptions()).andReturn(mockOptions).times(2);
     expect(logging.update(expectedSink)).andReturn(expectedSink);
     replay(logging);
     initializeSink();
@@ -179,7 +179,7 @@ public class SinkTest {
     initializeExpectedSink(2);
     SinkInfo updatedInfo = SINK_INFO.toBuilder().setFilter(NEW_FILTER).build();
     Sink expectedSink = new Sink(serviceMockReturnsOptions, new SinkInfo.BuilderImpl(updatedInfo));
-    expect(logging.options()).andReturn(mockOptions).times(2);
+    expect(logging.getOptions()).andReturn(mockOptions).times(2);
     expect(logging.updateAsync(expectedSink)).andReturn(Futures.immediateFuture(expectedSink));
     replay(logging);
     initializeSink();
@@ -190,7 +190,7 @@ public class SinkTest {
   @Test
   public void testDeleteTrue() {
     initializeExpectedSink(1);
-    expect(logging.options()).andReturn(mockOptions);
+    expect(logging.getOptions()).andReturn(mockOptions);
     expect(logging.deleteSink(NAME)).andReturn(true);
     replay(logging);
     initializeSink();
@@ -200,7 +200,7 @@ public class SinkTest {
   @Test
   public void testDeleteFalse() {
     initializeExpectedSink(1);
-    expect(logging.options()).andReturn(mockOptions);
+    expect(logging.getOptions()).andReturn(mockOptions);
     expect(logging.deleteSink(NAME)).andReturn(false);
     replay(logging);
     initializeSink();
@@ -210,7 +210,7 @@ public class SinkTest {
   @Test
   public void testDeleteAsyncTrue() throws ExecutionException, InterruptedException {
     initializeExpectedSink(1);
-    expect(logging.options()).andReturn(mockOptions);
+    expect(logging.getOptions()).andReturn(mockOptions);
     expect(logging.deleteSinkAsync(NAME)).andReturn(Futures.immediateFuture(true));
     replay(logging);
     initializeSink();
@@ -220,7 +220,7 @@ public class SinkTest {
   @Test
   public void testDeleteAsyncFalse() throws ExecutionException, InterruptedException {
     initializeExpectedSink(1);
-    expect(logging.options()).andReturn(mockOptions);
+    expect(logging.getOptions()).andReturn(mockOptions);
     expect(logging.deleteSinkAsync(NAME)).andReturn(Futures.immediateFuture(false));
     replay(logging);
     initializeSink();

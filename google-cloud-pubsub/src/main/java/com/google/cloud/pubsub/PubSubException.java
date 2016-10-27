@@ -40,7 +40,7 @@ public final class PubSubException extends BaseServiceException {
   }
 
   @Override
-  protected Set<Error> retryableErrors() {
+  protected Set<Error> getRetryableErrors() {
     return null;
   }
 }

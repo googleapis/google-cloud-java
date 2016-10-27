@@ -637,11 +637,11 @@ public class LocalDatastoreHelper {
   }
 
   private DatastoreOptions.Builder optionsBuilder() {
-    return DatastoreOptions.builder()
-        .projectId(projectId)
-        .host("localhost:" + Integer.toString(port))
-        .authCredentials(AuthCredentials.noAuth())
-        .retryParams(RetryParams.noRetries());
+    return DatastoreOptions.newBuilder()
+        .setProjectId(projectId)
+        .setHost("localhost:" + Integer.toString(port))
+        .setAuthCredentials(AuthCredentials.noAuth())
+        .setRetryParams(RetryParams.noRetries());
   }
 
   /**

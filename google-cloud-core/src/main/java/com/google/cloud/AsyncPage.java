@@ -34,10 +34,10 @@ import java.util.concurrent.Future;
  * <pre> {@code
  * AsyncPage<T> page = ...; // get a AsyncPage<T> instance
  * while (page != null) {
- *   for (T value : page.values()) {
+ *   for (T value : page.getValues()) {
  *     // do something with value
  *   }
- *   page = page.nextPageAsync().get();
+ *   page = page.getNextPageAsync().get();
  * }}</pre>
  *
  * @param <T> the value type that the page holds
@@ -48,5 +48,12 @@ public interface AsyncPage<T> extends Page<T> {
    * Returns a {@link Future} object for the next page. {@link Future#get()} returns {@code null} if
    * the last page has been reached.
    */
+  @Deprecated
   Future<AsyncPage<T>> nextPageAsync();
+
+  /**
+   * Returns a {@link Future} object for the next page. {@link Future#get()} returns {@code null} if
+   * the last page has been reached.
+   */
+  Future<AsyncPage<T>> getNextPageAsync();
 }

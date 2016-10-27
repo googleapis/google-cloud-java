@@ -127,7 +127,7 @@ public class PubSubImplTest {
           .setMessage(MESSAGE2.toPb())
           .setAckId("ackId2")
           .build();
-  private static final Policy POLICY = Policy.builder()
+  private static final Policy POLICY = Policy.newBuilder()
       .addIdentity(Role.viewer(), Identity.allAuthenticatedUsers())
       .build();
   private static final com.google.iam.v1.Policy POLICY_PB = PolicyMarshaller.INSTANCE.toPb(POLICY);
@@ -170,9 +170,9 @@ public class PubSubImplTest {
     pubsubRpcMock = EasyMock.createStrictMock(PubSubRpc.class);
     renewerMock = EasyMock.createStrictMock(AckDeadlineRenewer.class);
     options = EasyMock.createMock(PubSubOptions.class);
-    EasyMock.expect(options.projectId()).andReturn(PROJECT).anyTimes();
-    EasyMock.expect(options.rpc()).andReturn(pubsubRpcMock).anyTimes();
-    EasyMock.expect(options.retryParams()).andReturn(RetryParams.noRetries()).anyTimes();
+    EasyMock.expect(options.getProjectId()).andReturn(PROJECT).anyTimes();
+    EasyMock.expect(options.getRpc()).andReturn(pubsubRpcMock).anyTimes();
+    EasyMock.expect(options.getRetryParams()).andReturn(RetryParams.noRetries()).anyTimes();
     EasyMock.replay(rpcFactoryMock, pubsubRpcMock, renewerMock, options);
     EasyMock.reset(pubsubRpcMock, renewerMock);
   }
@@ -184,9 +184,9 @@ public class PubSubImplTest {
 
   private void resetOptionsForList(int pageCount) {
     EasyMock.reset(options);
-    EasyMock.expect(options.projectId()).andReturn(PROJECT).times(pageCount);
-    EasyMock.expect(options.rpc()).andReturn(pubsubRpcMock).times(pageCount);
-    EasyMock.expect(options.service()).andReturn(pubsub).times(pageCount);
+    EasyMock.expect(options.getProjectId()).andReturn(PROJECT).times(pageCount);
+    EasyMock.expect(options.getRpc()).andReturn(pubsubRpcMock).times(pageCount);
+    EasyMock.expect(options.getService()).andReturn(pubsub).times(pageCount);
     EasyMock.replay(options);
   }
 
@@ -194,7 +194,7 @@ public class PubSubImplTest {
   public void testGetOptions() {
     EasyMock.replay(pubsubRpcMock, renewerMock);
     pubsub = new PubSubImpl(options, renewerMock);
-    assertSame(options, pubsub.options());
+    assertSame(options, pubsub.getOptions());
   }
 
   @Test
@@ -320,8 +320,8 @@ public class PubSubImplTest {
     EasyMock.expect(pubsubRpcMock.list(request)).andReturn(futureResponse);
     EasyMock.replay(pubsubRpcMock, renewerMock);
     Page<Topic> page = pubsub.listTopics();
-    assertEquals(cursor, page.nextPageCursor());
-    assertArrayEquals(topicList.toArray(), Iterables.toArray(page.values(), Topic.class));
+    assertEquals(cursor, page.getNextPageCursor());
+    assertArrayEquals(topicList.toArray(), Iterables.toArray(page.getValues(), Topic.class));
   }
 
   @Test
@@ -354,11 +354,11 @@ public class PubSubImplTest {
     EasyMock.expect(pubsubRpcMock.list(request2)).andReturn(futureResponse2);
     EasyMock.replay(pubsubRpcMock, renewerMock);
     Page<Topic> page = pubsub.listTopics();
-    assertEquals(cursor1, page.nextPageCursor());
-    assertArrayEquals(topicList1.toArray(), Iterables.toArray(page.values(), Topic.class));
-    page = page.nextPage();
-    assertEquals(cursor2, page.nextPageCursor());
-    assertArrayEquals(topicList2.toArray(), Iterables.toArray(page.values(), Topic.class));
+    assertEquals(cursor1, page.getNextPageCursor());
+    assertArrayEquals(topicList1.toArray(), Iterables.toArray(page.getValues(), Topic.class));
+    page = page.getNextPage();
+    assertEquals(cursor2, page.getNextPageCursor());
+    assertArrayEquals(topicList2.toArray(), Iterables.toArray(page.getValues(), Topic.class));
   }
 
   @Test
@@ -375,8 +375,8 @@ public class PubSubImplTest {
     EasyMock.expect(pubsubRpcMock.list(request)).andReturn(futureResponse);
     EasyMock.replay(pubsubRpcMock, renewerMock);
     Page<Topic> page = pubsub.listTopics();
-    assertNull(page.nextPageCursor());
-    assertNull(page.nextPage());
+    assertNull(page.getNextPageCursor());
+    assertNull(page.getNextPage());
     assertArrayEquals(topicList.toArray(), Iterators.toArray(page.iterateAll(), Topic.class));
   }
 
@@ -401,9 +401,9 @@ public class PubSubImplTest {
     EasyMock.expect(pubsubRpcMock.list(request)).andReturn(futureResponse);
     EasyMock.replay(pubsubRpcMock, renewerMock);
     Page<Topic> page = pubsub.listTopics(ListOption.pageSize(42), ListOption.pageToken(cursor));
-    assertNull(page.nextPageCursor());
-    assertNull(page.nextPage());
-    assertArrayEquals(topicList.toArray(), Iterables.toArray(page.values(), Topic.class));
+    assertNull(page.getNextPageCursor());
+    assertNull(page.getNextPage());
+    assertArrayEquals(topicList.toArray(), Iterables.toArray(page.getValues(), Topic.class));
   }
 
   @Test
@@ -423,8 +423,8 @@ public class PubSubImplTest {
     EasyMock.expect(pubsubRpcMock.list(request)).andReturn(futureResponse);
     EasyMock.replay(pubsubRpcMock, renewerMock);
     AsyncPage<Topic> page = pubsub.listTopicsAsync().get();
-    assertEquals(cursor, page.nextPageCursor());
-    assertArrayEquals(topicList.toArray(), Iterables.toArray(page.values(), Topic.class));
+    assertEquals(cursor, page.getNextPageCursor());
+    assertArrayEquals(topicList.toArray(), Iterables.toArray(page.getValues(), Topic.class));
   }
 
   @Test
@@ -457,11 +457,11 @@ public class PubSubImplTest {
     EasyMock.expect(pubsubRpcMock.list(request2)).andReturn(futureResponse2);
     EasyMock.replay(pubsubRpcMock, renewerMock);
     AsyncPage<Topic> page = pubsub.listTopicsAsync().get();
-    assertEquals(cursor1, page.nextPageCursor());
-    assertArrayEquals(topicList1.toArray(), Iterables.toArray(page.values(), Topic.class));
-    page = page.nextPageAsync().get();
-    assertEquals(cursor2, page.nextPageCursor());
-    assertArrayEquals(topicList2.toArray(), Iterables.toArray(page.values(), Topic.class));
+    assertEquals(cursor1, page.getNextPageCursor());
+    assertArrayEquals(topicList1.toArray(), Iterables.toArray(page.getValues(), Topic.class));
+    page = page.getNextPageAsync().get();
+    assertEquals(cursor2, page.getNextPageCursor());
+    assertArrayEquals(topicList2.toArray(), Iterables.toArray(page.getValues(), Topic.class));
   }
 
   @Test
@@ -478,9 +478,9 @@ public class PubSubImplTest {
     EasyMock.expect(pubsubRpcMock.list(request)).andReturn(futureResponse);
     EasyMock.replay(pubsubRpcMock, renewerMock);
     AsyncPage<Topic> page = pubsub.listTopicsAsync().get();
-    assertNull(page.nextPageCursor());
-    assertNull(page.nextPageAsync().get());
-    assertNull(page.nextPage());
+    assertNull(page.getNextPageCursor());
+    assertNull(page.getNextPageAsync().get());
+    assertNull(page.getNextPage());
     assertArrayEquals(topicList.toArray(), Iterators.toArray(page.iterateAll(), Topic.class));
   }
 
@@ -506,9 +506,9 @@ public class PubSubImplTest {
     EasyMock.replay(pubsubRpcMock, renewerMock);
     AsyncPage<Topic> page =
         pubsub.listTopicsAsync(ListOption.pageSize(42), ListOption.pageToken(cursor)).get();
-    assertNull(page.nextPageCursor());
-    assertNull(page.nextPageAsync().get());
-    assertArrayEquals(topicList.toArray(), Iterables.toArray(page.values(), Topic.class));
+    assertNull(page.getNextPageCursor());
+    assertNull(page.getNextPageAsync().get());
+    assertArrayEquals(topicList.toArray(), Iterables.toArray(page.getValues(), Topic.class));
   }
 
   @Test
@@ -808,9 +808,9 @@ public class PubSubImplTest {
     EasyMock.expect(pubsubRpcMock.list(request)).andReturn(futureResponse);
     EasyMock.replay(pubsubRpcMock, renewerMock);
     Page<Subscription> page = pubsub.listSubscriptions();
-    assertEquals(cursor, page.nextPageCursor());
+    assertEquals(cursor, page.getNextPageCursor());
     assertArrayEquals(subscriptionList.toArray(),
-        Iterables.toArray(page.values(), Subscription.class));
+        Iterables.toArray(page.getValues(), Subscription.class));
   }
 
   @Test
@@ -845,13 +845,13 @@ public class PubSubImplTest {
     EasyMock.expect(pubsubRpcMock.list(request2)).andReturn(futureResponse2);
     EasyMock.replay(pubsubRpcMock, renewerMock);
     Page<Subscription> page = pubsub.listSubscriptions();
-    assertEquals(cursor1, page.nextPageCursor());
+    assertEquals(cursor1, page.getNextPageCursor());
     assertArrayEquals(subscriptionList1.toArray(),
-        Iterables.toArray(page.values(), Subscription.class));
-    page = page.nextPage();
-    assertEquals(cursor2, page.nextPageCursor());
+        Iterables.toArray(page.getValues(), Subscription.class));
+    page = page.getNextPage();
+    assertEquals(cursor2, page.getNextPageCursor());
     assertArrayEquals(subscriptionList2.toArray(),
-        Iterables.toArray(page.values(), Subscription.class));
+        Iterables.toArray(page.getValues(), Subscription.class));
   }
 
   @Test
@@ -870,10 +870,10 @@ public class PubSubImplTest {
     EasyMock.expect(pubsubRpcMock.list(request)).andReturn(futureResponse);
     EasyMock.replay(pubsubRpcMock, renewerMock);
     Page<Subscription> page = pubsub.listSubscriptions();
-    assertNull(page.nextPageCursor());
-    assertNull(page.nextPage());
+    assertNull(page.getNextPageCursor());
+    assertNull(page.getNextPage());
     assertArrayEquals(subscriptionList.toArray(),
-        Iterables.toArray(page.values(), Subscription.class));
+        Iterables.toArray(page.getValues(), Subscription.class));
   }
 
   @Test
@@ -898,10 +898,10 @@ public class PubSubImplTest {
     EasyMock.replay(pubsubRpcMock, renewerMock);
     Page<Subscription> page =
         pubsub.listSubscriptions(ListOption.pageSize(42), ListOption.pageToken(cursor));
-    assertNull(page.nextPageCursor());
-    assertNull(page.nextPage());
+    assertNull(page.getNextPageCursor());
+    assertNull(page.getNextPage());
     assertArrayEquals(subscriptionList.toArray(),
-        Iterables.toArray(page.values(), Subscription.class));
+        Iterables.toArray(page.getValues(), Subscription.class));
   }
 
   @Test
@@ -923,9 +923,9 @@ public class PubSubImplTest {
     EasyMock.expect(pubsubRpcMock.list(request)).andReturn(futureResponse);
     EasyMock.replay(pubsubRpcMock, renewerMock);
     AsyncPage<Subscription> page = pubsub.listSubscriptionsAsync().get();
-    assertEquals(cursor, page.nextPageCursor());
+    assertEquals(cursor, page.getNextPageCursor());
     assertArrayEquals(subscriptionList.toArray(),
-        Iterables.toArray(page.values(), Subscription.class));
+        Iterables.toArray(page.getValues(), Subscription.class));
   }
 
   @Test
@@ -960,13 +960,13 @@ public class PubSubImplTest {
     EasyMock.expect(pubsubRpcMock.list(request2)).andReturn(futureResponse2);
     EasyMock.replay(pubsubRpcMock, renewerMock);
     AsyncPage<Subscription> page = pubsub.listSubscriptionsAsync().get();
-    assertEquals(cursor1, page.nextPageCursor());
+    assertEquals(cursor1, page.getNextPageCursor());
     assertArrayEquals(subscriptionList1.toArray(),
-        Iterables.toArray(page.values(), Subscription.class));
-    page = page.nextPageAsync().get();
-    assertEquals(cursor2, page.nextPageCursor());
+        Iterables.toArray(page.getValues(), Subscription.class));
+    page = page.getNextPageAsync().get();
+    assertEquals(cursor2, page.getNextPageCursor());
     assertArrayEquals(subscriptionList2.toArray(),
-        Iterables.toArray(page.values(), Subscription.class));
+        Iterables.toArray(page.getValues(), Subscription.class));
   }
 
   @Test
@@ -985,11 +985,11 @@ public class PubSubImplTest {
     EasyMock.expect(pubsubRpcMock.list(request)).andReturn(futureResponse);
     EasyMock.replay(pubsubRpcMock, renewerMock);
     AsyncPage<Subscription> page = pubsub.listSubscriptionsAsync().get();
-    assertNull(page.nextPageCursor());
-    assertNull(page.nextPageAsync().get());
-    assertNull(page.nextPage());
+    assertNull(page.getNextPageCursor());
+    assertNull(page.getNextPageAsync().get());
+    assertNull(page.getNextPage());
     assertArrayEquals(subscriptionList.toArray(),
-        Iterables.toArray(page.values(), Subscription.class));
+        Iterables.toArray(page.getValues(), Subscription.class));
   }
 
   @Test
@@ -1015,11 +1015,11 @@ public class PubSubImplTest {
     EasyMock.replay(pubsubRpcMock, renewerMock);
     AsyncPage<Subscription> page =
         pubsub.listSubscriptionsAsync(ListOption.pageSize(42), ListOption.pageToken(cursor)).get();
-    assertNull(page.nextPageCursor());
-    assertNull(page.nextPage());
-    assertNull(page.nextPageAsync().get());
+    assertNull(page.getNextPageCursor());
+    assertNull(page.getNextPage());
+    assertNull(page.getNextPageAsync().get());
     assertArrayEquals(subscriptionList.toArray(),
-        Iterables.toArray(page.values(), Subscription.class));
+        Iterables.toArray(page.getValues(), Subscription.class));
   }
 
   @Test
@@ -1041,9 +1041,9 @@ public class PubSubImplTest {
     EasyMock.expect(pubsubRpcMock.list(request)).andReturn(futureResponse);
     EasyMock.replay(pubsubRpcMock, renewerMock);
     Page<SubscriptionId> page = pubsub.listSubscriptions(TOPIC);
-    assertEquals(cursor, page.nextPageCursor());
+    assertEquals(cursor, page.getNextPageCursor());
     assertArrayEquals(subscriptionList.toArray(),
-        Iterables.toArray(page.values(), SubscriptionId.class));
+        Iterables.toArray(page.getValues(), SubscriptionId.class));
   }
 
   @Test
@@ -1079,13 +1079,13 @@ public class PubSubImplTest {
     EasyMock.expect(pubsubRpcMock.list(request2)).andReturn(futureResponse2);
     EasyMock.replay(pubsubRpcMock, renewerMock);
     Page<SubscriptionId> page = pubsub.listSubscriptions(TOPIC);
-    assertEquals(cursor1, page.nextPageCursor());
+    assertEquals(cursor1, page.getNextPageCursor());
     assertArrayEquals(subscriptionList1.toArray(),
-        Iterables.toArray(page.values(), SubscriptionId.class));
-    page = page.nextPage();
-    assertEquals(cursor2, page.nextPageCursor());
+        Iterables.toArray(page.getValues(), SubscriptionId.class));
+    page = page.getNextPage();
+    assertEquals(cursor2, page.getNextPageCursor());
     assertArrayEquals(subscriptionList2.toArray(),
-        Iterables.toArray(page.values(), SubscriptionId.class));
+        Iterables.toArray(page.getValues(), SubscriptionId.class));
   }
 
   @Test
@@ -1104,10 +1104,10 @@ public class PubSubImplTest {
     EasyMock.expect(pubsubRpcMock.list(request)).andReturn(futureResponse);
     EasyMock.replay(pubsubRpcMock, renewerMock);
     Page<SubscriptionId> page = pubsub.listSubscriptions(TOPIC);
-    assertNull(page.nextPageCursor());
-    assertNull(page.nextPage());
+    assertNull(page.getNextPageCursor());
+    assertNull(page.getNextPage());
     assertArrayEquals(subscriptionList.toArray(),
-        Iterables.toArray(page.values(), SubscriptionId.class));
+        Iterables.toArray(page.getValues(), SubscriptionId.class));
   }
 
   @Test
@@ -1132,10 +1132,10 @@ public class PubSubImplTest {
     EasyMock.replay(pubsubRpcMock, renewerMock);
     Page<SubscriptionId> page =
         pubsub.listSubscriptions(TOPIC, ListOption.pageSize(42), ListOption.pageToken(cursor));
-    assertNull(page.nextPageCursor());
-    assertNull(page.nextPage());
+    assertNull(page.getNextPageCursor());
+    assertNull(page.getNextPage());
     assertArrayEquals(subscriptionList.toArray(),
-        Iterables.toArray(page.values(), SubscriptionId.class));
+        Iterables.toArray(page.getValues(), SubscriptionId.class));
   }
 
   @Test
@@ -1157,9 +1157,9 @@ public class PubSubImplTest {
     EasyMock.expect(pubsubRpcMock.list(request)).andReturn(futureResponse);
     EasyMock.replay(pubsubRpcMock, renewerMock);
     AsyncPage<SubscriptionId> page = pubsub.listSubscriptionsAsync(TOPIC).get();
-    assertEquals(cursor, page.nextPageCursor());
+    assertEquals(cursor, page.getNextPageCursor());
     assertArrayEquals(subscriptionList.toArray(),
-        Iterables.toArray(page.values(), SubscriptionId.class));
+        Iterables.toArray(page.getValues(), SubscriptionId.class));
   }
 
   @Test
@@ -1196,13 +1196,13 @@ public class PubSubImplTest {
     EasyMock.expect(pubsubRpcMock.list(request2)).andReturn(futureResponse2);
     EasyMock.replay(pubsubRpcMock, renewerMock);
     AsyncPage<SubscriptionId> page = pubsub.listSubscriptionsAsync(TOPIC).get();
-    assertEquals(cursor1, page.nextPageCursor());
+    assertEquals(cursor1, page.getNextPageCursor());
     assertArrayEquals(subscriptionList1.toArray(),
-        Iterables.toArray(page.values(), SubscriptionId.class));
-    page = page.nextPageAsync().get();
-    assertEquals(cursor2, page.nextPageCursor());
+        Iterables.toArray(page.getValues(), SubscriptionId.class));
+    page = page.getNextPageAsync().get();
+    assertEquals(cursor2, page.getNextPageCursor());
     assertArrayEquals(subscriptionList2.toArray(),
-        Iterables.toArray(page.values(), SubscriptionId.class));
+        Iterables.toArray(page.getValues(), SubscriptionId.class));
   }
 
   @Test
@@ -1222,11 +1222,11 @@ public class PubSubImplTest {
     EasyMock.expect(pubsubRpcMock.list(request)).andReturn(futureResponse);
     EasyMock.replay(pubsubRpcMock, renewerMock);
     AsyncPage<SubscriptionId> page = pubsub.listSubscriptionsAsync(TOPIC).get();
-    assertNull(page.nextPageCursor());
-    assertNull(page.nextPage());
-    assertNull(page.nextPageAsync().get());
+    assertNull(page.getNextPageCursor());
+    assertNull(page.getNextPage());
+    assertNull(page.getNextPageAsync().get());
     assertArrayEquals(subscriptionList.toArray(),
-        Iterables.toArray(page.values(), SubscriptionId.class));
+        Iterables.toArray(page.getValues(), SubscriptionId.class));
   }
 
   @Test
@@ -1252,11 +1252,11 @@ public class PubSubImplTest {
     EasyMock.replay(pubsubRpcMock, renewerMock);
     AsyncPage<SubscriptionId> page = pubsub.listSubscriptionsAsync(
         TOPIC, ListOption.pageSize(42), ListOption.pageToken(cursor)).get();
-    assertNull(page.nextPageCursor());
-    assertNull(page.nextPage());
-    assertNull(page.nextPageAsync().get());
+    assertNull(page.getNextPageCursor());
+    assertNull(page.getNextPage());
+    assertNull(page.getNextPageAsync().get());
     assertArrayEquals(subscriptionList.toArray(),
-        Iterables.toArray(page.values(), SubscriptionId.class));
+        Iterables.toArray(page.getValues(), SubscriptionId.class));
   }
 
   @Test
@@ -1385,9 +1385,9 @@ public class PubSubImplTest {
   public void testMessageConsumer() throws Exception {
     pubsub = new PubSubImpl(options, renewerMock);
     EasyMock.reset(options);
-    EasyMock.expect(options.service()).andReturn(pubsub);
-    EasyMock.expect(options.rpc()).andReturn(pubsubRpcMock);
-    EasyMock.expect(options.projectId()).andReturn(PROJECT);
+    EasyMock.expect(options.getService()).andReturn(pubsub);
+    EasyMock.expect(options.getRpc()).andReturn(pubsubRpcMock);
+    EasyMock.expect(options.getProjectId()).andReturn(PROJECT);
     EasyMock.replay(options);
     PullRequest request = PullRequest.newBuilder()
         .setSubscription(SUBSCRIPTION_NAME_PB)
@@ -1413,9 +1413,9 @@ public class PubSubImplTest {
   public void testMessageConsumerWithOptions() throws Exception {
     pubsub = new PubSubImpl(options, renewerMock);
     EasyMock.reset(options);
-    EasyMock.expect(options.service()).andReturn(pubsub);
-    EasyMock.expect(options.rpc()).andReturn(pubsubRpcMock);
-    EasyMock.expect(options.projectId()).andReturn(PROJECT);
+    EasyMock.expect(options.getService()).andReturn(pubsub);
+    EasyMock.expect(options.getRpc()).andReturn(pubsubRpcMock);
+    EasyMock.expect(options.getProjectId()).andReturn(PROJECT);
     EasyMock.replay(options);
     ExecutorFactory executorFactoryMock = EasyMock.createStrictMock(ExecutorFactory.class);
     ExecutorService executorServiceMock = EasyMock.createStrictMock(ExecutorService.class);

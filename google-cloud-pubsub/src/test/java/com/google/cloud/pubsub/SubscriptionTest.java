@@ -68,7 +68,7 @@ public class SubscriptionTest {
           .setMessage(MESSAGE2.toPb())
           .setAckId("ackId2")
           .build();
-  private static final Policy POLICY = Policy.builder()
+  private static final Policy POLICY = Policy.newBuilder()
       .addIdentity(Role.viewer(), Identity.allAuthenticatedUsers())
       .build();
 
@@ -79,7 +79,7 @@ public class SubscriptionTest {
   private Subscription subscription;
 
   private void initializeExpectedSubscription(int optionsCalls) {
-    expect(serviceMockReturnsOptions.options()).andReturn(mockOptions).times(optionsCalls);
+    expect(serviceMockReturnsOptions.getOptions()).andReturn(mockOptions).times(optionsCalls);
     replay(serviceMockReturnsOptions);
     pubsub = createStrictMock(PubSub.class);
     expectedSubscription = new Subscription(serviceMockReturnsOptions,
@@ -150,7 +150,7 @@ public class SubscriptionTest {
     SubscriptionInfo updatedInfo = SUBSCRIPTION_INFO.toBuilder().setName("newSubscription").build();
     Subscription expectedSubscription =
         new Subscription(serviceMockReturnsOptions, new SubscriptionInfo.BuilderImpl(updatedInfo));
-    expect(pubsub.options()).andReturn(mockOptions);
+    expect(pubsub.getOptions()).andReturn(mockOptions);
     expect(pubsub.getSubscription(NAME)).andReturn(expectedSubscription);
     replay(pubsub);
     initializeSubscription();
@@ -161,7 +161,7 @@ public class SubscriptionTest {
   @Test
   public void testReloadNull() {
     initializeExpectedSubscription(1);
-    expect(pubsub.options()).andReturn(mockOptions);
+    expect(pubsub.getOptions()).andReturn(mockOptions);
     expect(pubsub.getSubscription(NAME)).andReturn(null);
     replay(pubsub);
     initializeSubscription();
@@ -174,7 +174,7 @@ public class SubscriptionTest {
     SubscriptionInfo updatedInfo = SUBSCRIPTION_INFO.toBuilder().setName("newSubscription").build();
     Subscription expectedSubscription =
         new Subscription(serviceMockReturnsOptions, new SubscriptionInfo.BuilderImpl(updatedInfo));
-    expect(pubsub.options()).andReturn(mockOptions);
+    expect(pubsub.getOptions()).andReturn(mockOptions);
     expect(pubsub.getSubscriptionAsync(NAME))
         .andReturn(Futures.immediateFuture(expectedSubscription));
     replay(pubsub);
@@ -186,7 +186,7 @@ public class SubscriptionTest {
   @Test
   public void testReloadAsyncNull() throws ExecutionException, InterruptedException {
     initializeExpectedSubscription(1);
-    expect(pubsub.options()).andReturn(mockOptions);
+    expect(pubsub.getOptions()).andReturn(mockOptions);
     expect(pubsub.getSubscriptionAsync(NAME))
         .andReturn(Futures.<Subscription>immediateFuture(null));
     replay(pubsub);
@@ -197,7 +197,7 @@ public class SubscriptionTest {
   @Test
   public void testDeleteTrue() {
     initializeExpectedSubscription(1);
-    expect(pubsub.options()).andReturn(mockOptions);
+    expect(pubsub.getOptions()).andReturn(mockOptions);
     expect(pubsub.deleteSubscription(NAME)).andReturn(true);
     replay(pubsub);
     initializeSubscription();
@@ -207,7 +207,7 @@ public class SubscriptionTest {
   @Test
   public void testDeleteFalse() {
     initializeExpectedSubscription(1);
-    expect(pubsub.options()).andReturn(mockOptions);
+    expect(pubsub.getOptions()).andReturn(mockOptions);
     expect(pubsub.deleteSubscription(NAME)).andReturn(false);
     replay(pubsub);
     initializeSubscription();
@@ -217,7 +217,7 @@ public class SubscriptionTest {
   @Test
   public void testDeleteAsyncTrue() throws ExecutionException, InterruptedException {
     initializeExpectedSubscription(1);
-    expect(pubsub.options()).andReturn(mockOptions);
+    expect(pubsub.getOptions()).andReturn(mockOptions);
     expect(pubsub.deleteSubscriptionAsync(NAME))
         .andReturn(Futures.immediateFuture(true));
     replay(pubsub);
@@ -228,7 +228,7 @@ public class SubscriptionTest {
   @Test
   public void testDeleteAsyncFalse() throws ExecutionException, InterruptedException {
     initializeExpectedSubscription(1);
-    expect(pubsub.options()).andReturn(mockOptions);
+    expect(pubsub.getOptions()).andReturn(mockOptions);
     expect(pubsub.deleteSubscriptionAsync(NAME))
         .andReturn(Futures.immediateFuture(false));
     replay(pubsub);
@@ -239,7 +239,7 @@ public class SubscriptionTest {
   @Test
   public void testReplacePushConfig() {
     initializeExpectedSubscription(1);
-    expect(pubsub.options()).andReturn(mockOptions);
+    expect(pubsub.getOptions()).andReturn(mockOptions);
     PushConfig pushConfig = PushConfig.of("https://example.com/newPush");
     pubsub.replacePushConfig(NAME, pushConfig);
     EasyMock.expectLastCall();
@@ -251,7 +251,7 @@ public class SubscriptionTest {
   @Test
   public void testReplacePushConfig_Null() {
     initializeExpectedSubscription(1);
-    expect(pubsub.options()).andReturn(mockOptions);
+    expect(pubsub.getOptions()).andReturn(mockOptions);
     pubsub.replacePushConfig(NAME, null);
     EasyMock.expectLastCall();
     replay(pubsub);
@@ -262,7 +262,7 @@ public class SubscriptionTest {
   @Test
   public void testReplacePushConfig_Async() throws ExecutionException, InterruptedException {
     initializeExpectedSubscription(1);
-    expect(pubsub.options()).andReturn(mockOptions);
+    expect(pubsub.getOptions()).andReturn(mockOptions);
     PushConfig pushConfig = PushConfig.of("https://example.com/newPush");
     expect(pubsub.replacePushConfigAsync(NAME, pushConfig))
         .andReturn(Futures.<Void>immediateFuture(null));
@@ -275,7 +275,7 @@ public class SubscriptionTest {
   @Test
   public void testReplacePushConfigAsync_Null() throws ExecutionException, InterruptedException {
     initializeExpectedSubscription(1);
-    expect(pubsub.options()).andReturn(mockOptions);
+    expect(pubsub.getOptions()).andReturn(mockOptions);
     expect(pubsub.replacePushConfigAsync(NAME, null))
         .andReturn(Futures.<Void>immediateFuture(null));
     replay(pubsub);
@@ -286,12 +286,12 @@ public class SubscriptionTest {
   @Test
   public void testPull() {
     initializeExpectedSubscription(1);
-    expect(pubsub.options()).andReturn(mockOptions).times(2);
+    expect(pubsub.getOptions()).andReturn(mockOptions).times(2);
     replay(pubsub);
     ReceivedMessage message1 = ReceivedMessage.fromPb(pubsub, NAME, MESSAGE_PB1);
     ReceivedMessage message2 = ReceivedMessage.fromPb(pubsub, NAME, MESSAGE_PB2);
     reset(pubsub);
-    expect(pubsub.options()).andReturn(mockOptions);
+    expect(pubsub.getOptions()).andReturn(mockOptions);
     List<ReceivedMessage> messages = ImmutableList.of(message1, message2);
     expect(pubsub.pull(NAME, 42)).andReturn(messages.iterator());
     replay(pubsub);
@@ -302,12 +302,12 @@ public class SubscriptionTest {
   @Test
   public void testPullAsync() throws ExecutionException, InterruptedException {
     initializeExpectedSubscription(1);
-    expect(pubsub.options()).andReturn(mockOptions).times(2);
+    expect(pubsub.getOptions()).andReturn(mockOptions).times(2);
     replay(pubsub);
     ReceivedMessage message1 = ReceivedMessage.fromPb(pubsub, NAME, MESSAGE_PB1);
     ReceivedMessage message2 = ReceivedMessage.fromPb(pubsub, NAME, MESSAGE_PB2);
     reset(pubsub);
-    expect(pubsub.options()).andReturn(mockOptions);
+    expect(pubsub.getOptions()).andReturn(mockOptions);
     List<ReceivedMessage> messages = ImmutableList.of(message1, message2);
     expect(pubsub.pullAsync(NAME, 42)).andReturn(Futures.immediateFuture(messages.iterator()));
     replay(pubsub);
@@ -321,7 +321,7 @@ public class SubscriptionTest {
     MessageConsumer messageConsumer = createStrictMock(MessageConsumer.class);
     MessageProcessor messageProcessor = createStrictMock(MessageProcessor.class);
     replay(messageConsumer, messageProcessor);
-    expect(pubsub.options()).andReturn(mockOptions);
+    expect(pubsub.getOptions()).andReturn(mockOptions);
     expect(pubsub.pullAsync(NAME, messageProcessor)).andReturn(messageConsumer);
     replay(pubsub);
     initializeSubscription();
@@ -335,7 +335,7 @@ public class SubscriptionTest {
     MessageConsumer messageConsumer = createStrictMock(MessageConsumer.class);
     MessageProcessor messageProcessor = createStrictMock(MessageProcessor.class);
     replay(messageConsumer, messageProcessor);
-    expect(pubsub.options()).andReturn(mockOptions);
+    expect(pubsub.getOptions()).andReturn(mockOptions);
     expect(pubsub.pullAsync(NAME, messageProcessor, PullOption.maxQueuedCallbacks(2)))
         .andReturn(messageConsumer);
     replay(pubsub);
@@ -348,7 +348,7 @@ public class SubscriptionTest {
   @Test
   public void testGetPolicy() {
     initializeExpectedSubscription(1);
-    expect(pubsub.options()).andReturn(mockOptions);
+    expect(pubsub.getOptions()).andReturn(mockOptions);
     expect(pubsub.getSubscriptionPolicy(NAME)).andReturn(POLICY);
     replay(pubsub);
     initializeSubscription();
@@ -359,7 +359,7 @@ public class SubscriptionTest {
   @Test
   public void testGetPolicyNull() {
     initializeExpectedSubscription(1);
-    expect(pubsub.options()).andReturn(mockOptions);
+    expect(pubsub.getOptions()).andReturn(mockOptions);
     expect(pubsub.getSubscriptionPolicy(NAME)).andReturn(null);
     replay(pubsub);
     initializeSubscription();
@@ -369,7 +369,7 @@ public class SubscriptionTest {
   @Test
   public void testGetPolicyAsync() throws ExecutionException, InterruptedException {
     initializeExpectedSubscription(1);
-    expect(pubsub.options()).andReturn(mockOptions);
+    expect(pubsub.getOptions()).andReturn(mockOptions);
     expect(pubsub.getSubscriptionPolicyAsync(NAME)).andReturn(Futures.immediateFuture(POLICY));
     replay(pubsub);
     initializeSubscription();
@@ -380,7 +380,7 @@ public class SubscriptionTest {
   @Test
   public void testReplacePolicy() {
     initializeExpectedSubscription(1);
-    expect(pubsub.options()).andReturn(mockOptions);
+    expect(pubsub.getOptions()).andReturn(mockOptions);
     expect(pubsub.replaceSubscriptionPolicy(NAME, POLICY)).andReturn(POLICY);
     replay(pubsub);
     initializeSubscription();
@@ -391,7 +391,7 @@ public class SubscriptionTest {
   @Test
   public void testReplacePolicyAsync() throws ExecutionException, InterruptedException {
     initializeExpectedSubscription(1);
-    expect(pubsub.options()).andReturn(mockOptions);
+    expect(pubsub.getOptions()).andReturn(mockOptions);
     expect(pubsub.replaceSubscriptionPolicyAsync(NAME, POLICY))
         .andReturn(Futures.immediateFuture(POLICY));
     replay(pubsub);
@@ -405,7 +405,7 @@ public class SubscriptionTest {
     List<String> permissions = ImmutableList.of("pubsub.subscriptions.get");
     List<Boolean> permissionsResult = ImmutableList.of(true);
     initializeExpectedSubscription(1);
-    expect(pubsub.options()).andReturn(mockOptions);
+    expect(pubsub.getOptions()).andReturn(mockOptions);
     expect(pubsub.testSubscriptionPermissions(NAME, permissions)).andReturn(permissionsResult);
     replay(pubsub);
     initializeSubscription();
@@ -417,7 +417,7 @@ public class SubscriptionTest {
     List<String> permissions = ImmutableList.of("pubsub.subscriptions.get");
     List<Boolean> permissionsResult = ImmutableList.of(true);
     initializeExpectedSubscription(1);
-    expect(pubsub.options()).andReturn(mockOptions);
+    expect(pubsub.getOptions()).andReturn(mockOptions);
     expect(pubsub.testSubscriptionPermissionsAsync(NAME, permissions))
         .andReturn(Futures.immediateFuture(permissionsResult));
     replay(pubsub);

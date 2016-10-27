@@ -52,7 +52,7 @@ public final class TopicId implements Serializable {
 
   /**
    * Returns the name of the project where the topic resides. If {@code null} the topic is assumed
-   * to reside in the {@link PubSubOptions#projectId()} project.
+   * to reside in the {@link PubSubOptions#getProjectId()} project.
    */
   @Deprecated
   public String project() {
@@ -61,7 +61,7 @@ public final class TopicId implements Serializable {
 
   /**
    * Returns the name of the project where the topic resides. If {@code null} the topic is assumed
-   * to reside in the {@link PubSubOptions#projectId()} project.
+   * to reside in the {@link PubSubOptions#getProjectId()} project.
    */
   public String getProject() {
     return project;

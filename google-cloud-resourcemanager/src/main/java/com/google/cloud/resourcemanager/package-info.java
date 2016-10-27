@@ -22,13 +22,13 @@
  * <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/src/main/java/com/google/cloud/examples/resourcemanager/snippets/GetOrCreateProject.java">
  * GetOrCreateProject.java</a>.
  * <pre> {@code
- * ResourceManager resourceManager = ResourceManagerOptions.defaultInstance().service();
+ * ResourceManager resourceManager = ResourceManagerOptions.getDefaultInstance().getService();
  * String projectId = "my-globally-unique-project-id"; // Change to a unique project ID.
  * Project project = resourceManager.get(projectId);
  * if (project == null) {
  *   project = resourceManager.create(ProjectInfo.builder(projectId).build());
  * }
- * System.out.println("Got project " + project.projectId() + " from the server.");
+ * System.out.println("Got project " + project.getProjectId() + " from the server.");
  * }</pre>
  * <p>
  * This second example shows how to update a project if it exists and list all projects the user has
@@ -36,7 +36,7 @@
  * <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/src/main/java/com/google/cloud/examples/resourcemanager/snippets/UpdateAndListProjects.java">
  * UpdateAndListProjects.java</a>.
  * <pre> {@code
- * ResourceManager resourceManager = ResourceManagerOptions.defaultInstance().service();
+ * ResourceManager resourceManager = ResourceManagerOptions.getDefaultInstance().getService();
  * Project project = resourceManager.get("some-project-id"); // Use an existing project's ID
  * if (project != null) {
  *   Project newProject = project.toBuilder()

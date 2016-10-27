@@ -634,7 +634,7 @@ public class Bucket extends BucketInfo {
   Bucket(Storage storage, BucketInfo.BuilderImpl infoBuilder) {
     super(infoBuilder);
     this.storage = checkNotNull(storage);
-    this.options = storage.options();
+    this.options = storage.getOptions();
   }
 
   /**
@@ -1141,7 +1141,7 @@ public class Bucket extends BucketInfo {
 
   private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
     in.defaultReadObject();
-    this.storage = options.service();
+    this.storage = options.getService();
   }
 
   static Bucket fromPb(Storage storage, com.google.api.services.storage.model.Bucket bucketPb) {

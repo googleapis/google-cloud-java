@@ -22,7 +22,7 @@
  * <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/src/main/java/com/google/cloud/examples/storage/snippets/GetOrCreateBlob.java">
  * CreateBlob.java</a>.
  * <pre> {@code
- * Storage storage = StorageOptions.defaultInstance().service();
+ * Storage storage = StorageOptions.getDefaultInstance().getService();
  * BlobId blobId = BlobId.of("bucket", "blob_name");
  * BlobInfo blobInfo = BlobInfo.newBuilder(blobId).setContentType("text/plain").build();
  * Blob blob = storage.create(blobInfo, "Hello, Cloud Storage!".getBytes(UTF_8));
@@ -33,7 +33,7 @@
  * <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/src/main/java/com/google/cloud/examples/storage/snippets/UpdateBlob.java">
  * UpdateBlob.java</a>.
  * <pre> {@code
- * Storage storage = StorageOptions.defaultInstance().service();
+ * Storage storage = StorageOptions.getDefaultInstance().getService();
  * BlobId blobId = BlobId.of("bucket", "blob_name");
  * Blob blob = storage.get(blobId);
  * if (blob != null) {

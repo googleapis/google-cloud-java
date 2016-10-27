@@ -56,7 +56,7 @@ class DatastoreHelper {
   }
 
   static KeyFactory newKeyFactory(DatastoreOptions options) {
-    return new KeyFactory(options.projectId(), options.namespace());
+    return new KeyFactory(options.getProjectId(), options.getNamespace());
   }
 
   /**

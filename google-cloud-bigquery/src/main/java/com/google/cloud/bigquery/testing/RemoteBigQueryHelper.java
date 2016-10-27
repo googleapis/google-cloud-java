@@ -31,12 +31,13 @@ import java.util.logging.Logger;
 /**
  * Utility to create a remote BigQuery configuration for testing. BigQuery options can be obtained
  * via the {@link #getOptions()} method. Returned options have custom
- * {@link BigQueryOptions#retryParams()}: {@link RetryParams#retryMaxAttempts()} is {@code 10},
- * {@link RetryParams#retryMinAttempts()} is {@code 6}, {@link RetryParams#maxRetryDelayMillis()} is
- * {@code 30000}, {@link RetryParams#totalRetryPeriodMillis()} is {@code 120000} and
- * {@link RetryParams#initialRetryDelayMillis()} is {@code 250}.
- * {@link BigQueryOptions#connectTimeout()} and {@link BigQueryOptions#readTimeout()} are both set
- * to {@code 60000}.
+ * {@link BigQueryOptions#getRetryParams()}: {@link RetryParams#getRetryMaxAttempts()} is
+ * {@code 10}, {@link RetryParams#getRetryMinAttempts()} is {@code 6},
+ * {@link RetryParams#getMaxRetryDelayMillis()} is {@code 30000},
+ * {@link RetryParams#getTotalRetryPeriodMillis()} is {@code 120000} and
+ * {@link RetryParams#getInitialRetryDelayMillis()} is {@code 250}.
+ * {@link BigQueryOptions#getConnectTimeout()} and {@link BigQueryOptions#getReadTimeout()} are both
+ * set to {@code 60000}.
  */
 public class RemoteBigQueryHelper {
 
@@ -94,12 +95,12 @@ public class RemoteBigQueryHelper {
   public static RemoteBigQueryHelper create(String projectId, InputStream keyStream)
       throws BigQueryHelperException {
     try {
-      BigQueryOptions bigqueryOptions = BigQueryOptions.builder()
-          .authCredentials(AuthCredentials.createForJson(keyStream))
-          .projectId(projectId)
-          .retryParams(retryParams())
-          .connectTimeout(60000)
-          .readTimeout(60000)
+      BigQueryOptions bigqueryOptions = BigQueryOptions.newBuilder()
+          .setAuthCredentials(AuthCredentials.createForJson(keyStream))
+          .setProjectId(projectId)
+          .setRetryParams(retryParams())
+          .setConnectTimeout(60000)
+          .setReadTimeout(60000)
           .build();
       return new RemoteBigQueryHelper(bigqueryOptions);
     } catch (IOException ex) {
@@ -115,21 +116,21 @@ public class RemoteBigQueryHelper {
    * credentials.
    */
   public static RemoteBigQueryHelper create() {
-    BigQueryOptions bigqueryOptions = BigQueryOptions.builder()
-        .retryParams(retryParams())
-        .connectTimeout(60000)
-        .readTimeout(60000)
+    BigQueryOptions bigqueryOptions = BigQueryOptions.newBuilder()
+        .setRetryParams(retryParams())
+        .setConnectTimeout(60000)
+        .setReadTimeout(60000)
         .build();
     return new RemoteBigQueryHelper(bigqueryOptions);
   }
 
   private static RetryParams retryParams() {
-    return RetryParams.builder()
-        .retryMaxAttempts(10)
-        .retryMinAttempts(6)
-        .maxRetryDelayMillis(30000)
-        .totalRetryPeriodMillis(120000)
-        .initialRetryDelayMillis(250)
+    return RetryParams.newBuilder()
+        .setRetryMaxAttempts(10)
+        .setRetryMinAttempts(6)
+        .setMaxRetryDelayMillis(30000)
+        .setTotalRetryPeriodMillis(120000)
+        .setInitialRetryDelayMillis(250)
         .build();
   }
 

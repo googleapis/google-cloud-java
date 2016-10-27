@@ -71,21 +71,21 @@ public class LocalDatastoreHelperTest {
   public void testOptions() {
     LocalDatastoreHelper helper = LocalDatastoreHelper.create();
     DatastoreOptions options = helper.getOptions();
-    assertTrue(options.projectId().startsWith(PROJECT_ID_PREFIX));
-    assertTrue(options.host().startsWith("localhost:"));
-    assertSame(AuthCredentials.noAuth(), options.authCredentials());
+    assertTrue(options.getProjectId().startsWith(PROJECT_ID_PREFIX));
+    assertTrue(options.getHost().startsWith("localhost:"));
+    assertSame(AuthCredentials.noAuth(), options.getAuthCredentials());
     options = helper.getOptions(NAMESPACE);
-    assertTrue(options.projectId().startsWith(PROJECT_ID_PREFIX));
-    assertTrue(options.host().startsWith("localhost:"));
-    assertSame(AuthCredentials.noAuth(), options.authCredentials());
-    assertEquals(NAMESPACE, options.namespace());
+    assertTrue(options.getProjectId().startsWith(PROJECT_ID_PREFIX));
+    assertTrue(options.getHost().startsWith("localhost:"));
+    assertSame(AuthCredentials.noAuth(), options.getAuthCredentials());
+    assertEquals(NAMESPACE, options.getNamespace());
   }
 
   @Test
   public void testStartStopReset() throws IOException, InterruptedException {
     LocalDatastoreHelper helper = LocalDatastoreHelper.create();
     helper.start();
-    Datastore datastore = helper.getOptions().service();
+    Datastore datastore = helper.getOptions().getService();
     Key key = datastore.newKeyFactory().setKind("kind").newKey("name");
     datastore.put(Entity.newBuilder(key).build());
     assertNotNull(datastore.get(key));

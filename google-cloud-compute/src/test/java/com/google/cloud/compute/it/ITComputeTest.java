@@ -108,7 +108,7 @@ public class ITComputeTest {
   @BeforeClass
   public static void beforeClass() {
     RemoteComputeHelper computeHelper = RemoteComputeHelper.create();
-    compute = computeHelper.getOptions().service();
+    compute = computeHelper.getOptions().getService();
   }
 
   @Test

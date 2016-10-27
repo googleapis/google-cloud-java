@@ -140,7 +140,7 @@ public class LoggingHandler extends Handler {
   public LoggingHandler(String log, LoggingOptions options, MonitoredResource monitoredResource) {
     LogConfigHelper helper = new LogConfigHelper();
     String className = getClass().getName();
-    this.options = options != null ? options : LoggingOptions.defaultInstance();
+    this.options = options != null ? options : LoggingOptions.getDefaultInstance();
     this.flushLevel = helper.getLevelProperty(className + ".flushLevel", LoggingLevel.ERROR);
     this.flushSize = helper.getLongProperty(className + ".flushSize", 1L);
     setLevel(helper.getLevelProperty(className + ".level", Level.INFO));
@@ -208,7 +208,7 @@ public class LoggingHandler extends Handler {
   }
 
   private MonitoredResource getDefaultResource() {
-    return MonitoredResource.of("global", ImmutableMap.of("project_id", options.projectId()));
+    return MonitoredResource.of("global", ImmutableMap.of("project_id", options.getProjectId()));
   }
 
   private static class LogConfigHelper {
@@ -273,7 +273,7 @@ public class LoggingHandler extends Handler {
    */
   Logging getLogging() {
     if (logging == null) {
-      logging = options.service();
+      logging = options.getService();
     }
     return logging;
   }

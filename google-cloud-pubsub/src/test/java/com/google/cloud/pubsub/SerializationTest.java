@@ -28,11 +28,11 @@ import java.util.concurrent.ScheduledExecutorService;
 
 public class SerializationTest extends BaseSerializationTest {
 
-  private static final PubSub PUB_SUB = PubSubOptions.builder()
-      .projectId("p")
-      .authCredentials(AuthCredentials.noAuth())
-      .host("localhost")
-      .build().service();
+  private static final PubSub PUB_SUB = PubSubOptions.newBuilder()
+      .setProjectId("p")
+      .setAuthCredentials(AuthCredentials.noAuth())
+      .setHost("localhost")
+      .build().getService();
   private static final Message MESSAGE = Message.of("payload");
   private static final com.google.pubsub.v1.ReceivedMessage RECEIVED_MESSAGE_PB =
       com.google.pubsub.v1.ReceivedMessage.newBuilder()
@@ -82,13 +82,13 @@ public class SerializationTest extends BaseSerializationTest {
 
   @Override
   protected Serializable[] serializableObjects() {
-    PubSubOptions options = PubSubOptions.builder()
-        .projectId("p1")
-        .initialTimeout(1234)
+    PubSubOptions options = PubSubOptions.newBuilder()
+        .setProjectId("p1")
+        .setInitialTimeout(1234)
         .build();
     PubSubOptions otherOptions = options.toBuilder()
-        .projectId("p2")
-        .executorFactory(new TestExecutorFactory())
+        .setProjectId("p2")
+        .setExecutorFactory(new TestExecutorFactory())
         .build();
     return new Serializable[]{options, otherOptions, MESSAGE, RECEIVED_MESSAGE, SUBSCRIPTION_INFO,
         SUBSCRIPTION, SUBSCRIPTION_ID, TOPIC_INFO, TOPIC, PAGE_TOKEN_OPTION, PAGE_SIZE_OPTION,

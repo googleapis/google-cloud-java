@@ -53,7 +53,13 @@ public interface Dns extends Service<DnsOptions> {
     }
 
     @Override
+    @Deprecated
     public String selector() {
+      return getSelector();
+    }
+
+    @Override
+    public String getSelector() {
       return selector;
     }
   }
@@ -83,7 +89,13 @@ public interface Dns extends Service<DnsOptions> {
     }
 
     @Override
+    @Deprecated
     public String selector() {
+      return getSelector();
+    }
+
+    @Override
+    public String getSelector() {
       return selector;
     }
   }
@@ -110,7 +122,13 @@ public interface Dns extends Service<DnsOptions> {
     }
 
     @Override
+    @Deprecated
     public String selector() {
+      return getSelector();
+    }
+
+    @Override
+    public String getSelector() {
       return selector;
     }
   }
@@ -138,7 +156,13 @@ public interface Dns extends Service<DnsOptions> {
     }
 
     @Override
+    @Deprecated
     public String selector() {
+      return getSelector();
+    }
+
+    @Override
+    public String getSelector() {
       return selector;
     }
   }

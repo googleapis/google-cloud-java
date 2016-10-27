@@ -87,27 +87,27 @@ public class DefaultLoggingRpc implements LoggingRpc {
     }
 
     @Override
-    protected ExecutorFactory<ScheduledExecutorService> executorFactory() {
-      return super.executorFactory();
+    protected ExecutorFactory<ScheduledExecutorService> getExecutorFactory() {
+      return super.getExecutorFactory();
     }
 
     @Override
-    protected UnaryCallSettings.Builder apiCallSettings() {
-      return super.apiCallSettings();
+    protected UnaryCallSettings.Builder getApiCallSettings() {
+      return super.getApiCallSettings();
     }
 
     @Override
-    protected ConnectionSettings.Builder connectionSettings() {
-      return super.connectionSettings();
+    protected ConnectionSettings.Builder getConnectionSettings() {
+      return super.getConnectionSettings();
     }
   }
 
   public DefaultLoggingRpc(LoggingOptions options) throws IOException {
     InternalLoggingOptions internalOptions = new InternalLoggingOptions(options);
-    executorFactory = internalOptions.executorFactory();
+    executorFactory = internalOptions.getExecutorFactory();
     executor = executorFactory.get();
-    String libraryName = options.libraryName();
-    String libraryVersion = firstNonNull(options.libraryVersion(), "");
+    String libraryName = options.getLibraryName();
+    String libraryVersion = firstNonNull(options.getLibraryVersion(), "");
     try {
       ConfigServiceV2Settings.Builder confBuilder = ConfigServiceV2Settings.defaultBuilder()
           .provideExecutorWith(executor, false)
@@ -119,21 +119,21 @@ public class DefaultLoggingRpc implements LoggingRpc {
           .provideExecutorWith(executor, false)
           .setClientLibHeader(libraryName, libraryVersion);
       // todo(mziccard): PublisherSettings should support null/absent credentials for testing
-      if (options.host().contains("localhost")
-          || options.authCredentials().equals(AuthCredentials.noAuth())) {
-        ManagedChannel channel = NettyChannelBuilder.forTarget(options.host())
+      if (options.getHost().contains("localhost")
+          || options.getAuthCredentials().equals(AuthCredentials.noAuth())) {
+        ManagedChannel channel = NettyChannelBuilder.forTarget(options.getHost())
             .negotiationType(NegotiationType.PLAINTEXT)
             .build();
         confBuilder.provideChannelWith(channel, true);
         logBuilder.provideChannelWith(channel, true);
         metricsBuilder.provideChannelWith(channel, true);
       } else {
-        ConnectionSettings connectionSettings = internalOptions.connectionSettings().build();
+        ConnectionSettings connectionSettings = internalOptions.getConnectionSettings().build();
         confBuilder.provideChannelWith(connectionSettings);
         logBuilder.provideChannelWith(connectionSettings);
         metricsBuilder.provideChannelWith(connectionSettings);
       }
-      UnaryCallSettings.Builder callSettingsBuilder = internalOptions.apiCallSettings();
+      UnaryCallSettings.Builder callSettingsBuilder = internalOptions.getApiCallSettings();
       confBuilder.applyToAllApiMethods(callSettingsBuilder);
       logBuilder.applyToAllApiMethods(callSettingsBuilder);
       metricsBuilder.applyToAllApiMethods(callSettingsBuilder);

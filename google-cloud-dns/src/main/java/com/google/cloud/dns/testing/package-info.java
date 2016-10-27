@@ -25,7 +25,7 @@
  * long delay = 0;
  * LocalDnsHelper dnsHelper = LocalDnsHelper.create(delay);
  * dnsHelper.start();
- * Dns dns = dnsHelper.options().service();
+ * Dns dns = dnsHelper.getOptions().getService();
  * }</pre>
  *
  * <p>After the test:

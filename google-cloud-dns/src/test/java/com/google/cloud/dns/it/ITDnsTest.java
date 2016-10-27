@@ -57,7 +57,7 @@ import java.util.concurrent.TimeUnit;
 public class ITDnsTest {
 
   private static final String PREFIX = "gcldjvit-";
-  private static final Dns DNS = DnsOptions.defaultInstance().service();
+  private static final Dns DNS = DnsOptions.getDefaultInstance().getService();
   private static final String ZONE_NAME1 = (PREFIX + UUID.randomUUID()).substring(0, 32);
   private static final String ZONE_NAME_EMPTY_DESCRIPTION =
       (PREFIX + UUID.randomUUID()).substring(0, 32);
@@ -209,14 +209,14 @@ public class ITDnsTest {
         fail("Zone name is too long. The service returns an error.");
       } catch (DnsException ex) {
         // expected
-        assertFalse(ex.retryable());
+        assertFalse(ex.isRetryable());
       }
       try {
         DNS.create(ZONE_DNS_NO_PERIOD);
         fail("Zone name is missing a period. The service returns an error.");
       } catch (DnsException ex) {
         // expected
-        assertFalse(ex.retryable());
+        assertFalse(ex.isRetryable());
       }
     } finally {
       DNS.delete(ZONE_NAME_ERROR.getName());
@@ -400,16 +400,16 @@ public class ITDnsTest {
         fail();
       } catch (DnsException ex) {
         // expected
-        assertEquals(400, ex.code());
-        assertFalse(ex.retryable());
+        assertEquals(400, ex.getCode());
+        assertFalse(ex.isRetryable());
       }
       try {
         DNS.listZones(Dns.ZoneListOption.pageSize(-1));
         fail();
       } catch (DnsException ex) {
         // expected
-        assertEquals(400, ex.code());
-        assertFalse(ex.retryable());
+        assertEquals(400, ex.getCode());
+        assertFalse(ex.isRetryable());
       }
       // ok size
       zones = filter(DNS.listZones(Dns.ZoneListOption.pageSize(1000)).iterateAll());
@@ -420,8 +420,8 @@ public class ITDnsTest {
         fail();
       } catch (DnsException ex) {
         // expected
-        assertEquals(400, ex.code());
-        assertFalse(ex.retryable());
+        assertEquals(400, ex.getCode());
+        assertFalse(ex.isRetryable());
       }
       // ok name
       zones = filter(DNS.listZones(Dns.ZoneListOption.dnsName(ZONE1.getDnsName())).iterateAll());
@@ -611,8 +611,8 @@ public class ITDnsTest {
         fail("Created a record set which already exists.");
       } catch (DnsException ex) {
         // expected
-        assertFalse(ex.retryable());
-        assertEquals(409, ex.code());
+        assertFalse(ex.isRetryable());
+        assertEquals(409, ex.getCode());
       }
       // delete with field mismatch
       RecordSet mismatch = validA.toBuilder().setTtl(20, TimeUnit.SECONDS).build();
@@ -622,8 +622,8 @@ public class ITDnsTest {
         fail("Deleted a record set without a complete match.");
       } catch (DnsException ex) {
         // expected
-        assertEquals(412, ex.code());
-        assertFalse(ex.retryable());
+        assertEquals(412, ex.getCode());
+        assertFalse(ex.isRetryable());
       }
       // delete and add SOA
       Iterator<RecordSet> recordSetIterator = zone.listRecordSets().iterateAll();
@@ -646,16 +646,16 @@ public class ITDnsTest {
         fail("Deleted SOA.");
       } catch (DnsException ex) {
         // expected
-        assertFalse(ex.retryable());
-        assertEquals(400, ex.code());
+        assertFalse(ex.isRetryable());
+        assertEquals(400, ex.getCode());
       }
       try {
         zone.applyChangeRequest(addition);
         fail("Added second SOA.");
       } catch (DnsException ex) {
         // expected
-        assertFalse(ex.retryable());
-        assertEquals(400, ex.code());
+        assertFalse(ex.isRetryable());
+        assertEquals(400, ex.getCode());
       }
     } finally {
       if (recordAdded) {
@@ -676,8 +676,8 @@ public class ITDnsTest {
         fail();
       } catch (DnsException ex) {
         // expected
-        assertEquals(404, ex.code());
-        assertFalse(ex.retryable());
+        assertEquals(404, ex.getCode());
+        assertFalse(ex.isRetryable());
       }
       // zone exists but has no changes
       DNS.create(ZONE1);
@@ -701,16 +701,16 @@ public class ITDnsTest {
         fail();
       } catch (DnsException ex) {
         // expected
-        assertEquals(400, ex.code());
-        assertFalse(ex.retryable());
+        assertEquals(400, ex.getCode());
+        assertFalse(ex.isRetryable());
       }
       try {
         DNS.listChangeRequests(ZONE1.getName(), Dns.ChangeRequestListOption.pageSize(-1));
         fail();
       } catch (DnsException ex) {
         // expected
-        assertEquals(400, ex.code());
-        assertFalse(ex.retryable());
+        assertEquals(400, ex.getCode());
+        assertFalse(ex.isRetryable());
       }
       // sorting order
       ImmutableList<ChangeRequest> ascending = ImmutableList.copyOf(DNS.listChangeRequests(
@@ -909,7 +909,7 @@ public class ITDnsTest {
       Page<RecordSet> recordSetPage = DNS.listRecordSets(zone.getName(),
           Dns.RecordSetListOption.fields(RecordSetField.TYPE),
           Dns.RecordSetListOption.pageSize(1));
-      assertEquals(1, ImmutableList.copyOf(recordSetPage.values().iterator()).size());
+      assertEquals(1, ImmutableList.copyOf(recordSetPage.getValues().iterator()).size());
       // test name filter
       ChangeRequest change = DNS.applyChangeRequest(ZONE1.getName(), CHANGE_ADD_ZONE1);
       waitForChangeToComplete(ZONE1.getName(), change.getGeneratedId());
@@ -944,24 +944,24 @@ public class ITDnsTest {
         fail();
       } catch (DnsException ex) {
         // expected
-        assertEquals(400, ex.code());
-        assertFalse(ex.retryable());
+        assertEquals(400, ex.getCode());
+        assertFalse(ex.isRetryable());
       }
       try {
         DNS.listRecordSets(ZONE1.getName(), Dns.RecordSetListOption.pageSize(0));
         fail();
       } catch (DnsException ex) {
         // expected
-        assertEquals(400, ex.code());
-        assertFalse(ex.retryable());
+        assertEquals(400, ex.getCode());
+        assertFalse(ex.isRetryable());
       }
       try {
         DNS.listRecordSets(ZONE1.getName(), Dns.RecordSetListOption.pageSize(-1));
         fail();
       } catch (DnsException ex) {
         // expected
-        assertEquals(400, ex.code());
-        assertFalse(ex.retryable());
+        assertEquals(400, ex.getCode());
+        assertFalse(ex.isRetryable());
       }
       waitForChangeToComplete(ZONE1.getName(), change.getGeneratedId());
     } finally {
@@ -1028,27 +1028,27 @@ public class ITDnsTest {
         fail();
       } catch (DnsException ex) {
         // expected
-        assertEquals(400, ex.code());
-        assertFalse(ex.retryable());
+        assertEquals(400, ex.getCode());
+        assertFalse(ex.isRetryable());
       }
       try {
         negativeSizeError.get();
         fail();
       } catch (DnsException ex) {
         // expected
-        assertEquals(400, ex.code());
-        assertFalse(ex.retryable());
+        assertEquals(400, ex.getCode());
+        assertFalse(ex.isRetryable());
       }
       // ok size
-      assertEquals(1, Iterables.size(okSize.get().values()));
+      assertEquals(1, Iterables.size(okSize.get().getValues()));
       // dns name problems
       try {
         nameError.get();
         fail();
       } catch (DnsException ex) {
         // expected
-        assertEquals(400, ex.code());
-        assertFalse(ex.retryable());
+        assertEquals(400, ex.getCode());
+        assertFalse(ex.isRetryable());
       }
       // ok name
       zones = filter(okName.get().iterateAll());
@@ -1177,14 +1177,14 @@ public class ITDnsTest {
         fail("Zone name is too long. The service returns an error.");
       } catch (DnsException ex) {
         // expected
-        assertFalse(ex.retryable());
+        assertFalse(ex.isRetryable());
       }
       try {
         noPeriodResult.get();
         fail("Zone name is missing a period. The service returns an error.");
       } catch (DnsException ex) {
         // expected
-        assertFalse(ex.retryable());
+        assertFalse(ex.isRetryable());
       }
     } finally {
       DNS.delete(ZONE_NAME_ERROR.getName());
@@ -1599,15 +1599,16 @@ public class ITDnsTest {
         fail("Zone does not exist yet");
       } catch (DnsException ex) {
         // expected
-        assertEquals(404, ex.code());
-        assertFalse(ex.retryable());
+        assertEquals(404, ex.getCode());
+        assertFalse(ex.isRetryable());
       }
       // zone exists but has no changes
       DNS.create(ZONE1);
       batch = DNS.batch();
       result = batch.listChangeRequests(ZONE1.getName());
       batch.submit();
-      assertEquals(1, Iterables.size(result.get().values())); // default change creating SOA and NS
+      // default change creating SOA and NS
+      assertEquals(1, Iterables.size(result.get().getValues()));
       // zone has changes
       ChangeRequest change = DNS.applyChangeRequest(ZONE1.getName(), CHANGE_ADD_ZONE1);
       waitForChangeToComplete(ZONE1.getName(), change.getGeneratedId());
@@ -1644,23 +1645,23 @@ public class ITDnsTest {
           Dns.ChangeRequestListOption.sortOrder(Dns.SortingOrder.ASCENDING),
           Dns.ChangeRequestListOption.fields(ChangeRequestField.STATUS));
       batch.submit();
-      assertEquals(3, Iterables.size(result.get().values()));
+      assertEquals(3, Iterables.size(result.get().getValues()));
       // error in options
       try {
         errorPageSize.get();
         fail();
       } catch (DnsException ex) {
         // expected
-        assertEquals(400, ex.code());
-        assertFalse(ex.retryable());
+        assertEquals(400, ex.getCode());
+        assertFalse(ex.isRetryable());
       }
       try {
         errorPageNegative.get();
         fail();
       } catch (DnsException ex) {
         // expected
-        assertEquals(400, ex.code());
-        assertFalse(ex.retryable());
+        assertEquals(400, ex.getCode());
+        assertFalse(ex.isRetryable());
       }
       // sorting order
       ImmutableList<ChangeRequest> ascending =
@@ -1674,31 +1675,31 @@ public class ITDnsTest {
         assertEquals(descending.get(i), ascending.get(size - i - 1));
       }
       // field options
-      change = Iterables.get(resultAdditions.get().values(), 1);
+      change = Iterables.get(resultAdditions.get().getValues(), 1);
       assertEquals(CHANGE_ADD_ZONE1.getAdditions(), change.getAdditions());
       assertTrue(change.getDeletions().isEmpty());
       assertNotNull(change.getGeneratedId());
       assertNull(change.getStartTimeMillis());
       assertNull(change.status());
-      change = Iterables.get(resultDeletions.get().values(), 2);
+      change = Iterables.get(resultDeletions.get().getValues(), 2);
       assertTrue(change.getAdditions().isEmpty());
       assertNotNull(change.getDeletions());
       assertNotNull(change.getGeneratedId());
       assertNull(change.getStartTimeMillis());
       assertNull(change.status());
-      change = Iterables.get(resultId.get().values(), 1);
+      change = Iterables.get(resultId.get().getValues(), 1);
       assertTrue(change.getAdditions().isEmpty());
       assertTrue(change.getDeletions().isEmpty());
       assertNotNull(change.getGeneratedId());
       assertNull(change.getStartTimeMillis());
       assertNull(change.status());
-      change = Iterables.get(resultTime.get().values(), 1);
+      change = Iterables.get(resultTime.get().getValues(), 1);
       assertTrue(change.getAdditions().isEmpty());
       assertTrue(change.getDeletions().isEmpty());
       assertNotNull(change.getGeneratedId());
       assertNotNull(change.getStartTimeMillis());
       assertNull(change.status());
-      change = Iterables.get(resultStatus.get().values(), 1);
+      change = Iterables.get(resultStatus.get().getValues(), 1);
       assertTrue(change.getAdditions().isEmpty());
       assertTrue(change.getDeletions().isEmpty());
       assertNotNull(change.getGeneratedId());
@@ -1781,7 +1782,7 @@ public class ITDnsTest {
       assertEquals(2, counter);
       // test page size
       Page<RecordSet> recordSetPage = pageSizeResult.get();
-      assertEquals(1, ImmutableList.copyOf(recordSetPage.values().iterator()).size());
+      assertEquals(1, ImmutableList.copyOf(recordSetPage.getValues().iterator()).size());
       // test name filter
       ChangeRequest change = DNS.applyChangeRequest(ZONE1.getName(), CHANGE_ADD_ZONE1);
       waitForChangeToComplete(ZONE1.getName(), change.getGeneratedId());
@@ -1827,24 +1828,24 @@ public class ITDnsTest {
         fail();
       } catch (DnsException ex) {
         // expected
-        assertEquals(400, ex.code());
-        assertFalse(ex.retryable());
+        assertEquals(400, ex.getCode());
+        assertFalse(ex.isRetryable());
       }
       try {
         zeroSizeError.get();
         fail();
       } catch (DnsException ex) {
         // expected
-        assertEquals(400, ex.code());
-        assertFalse(ex.retryable());
+        assertEquals(400, ex.getCode());
+        assertFalse(ex.isRetryable());
       }
       try {
         negativeSizeError.get();
         fail();
       } catch (DnsException ex) {
         // expected
-        assertEquals(400, ex.code());
-        assertFalse(ex.retryable());
+        assertEquals(400, ex.getCode());
+        assertFalse(ex.isRetryable());
       }
       waitForChangeToComplete(ZONE1.getName(), change.getGeneratedId());
     } finally {
@@ -1878,7 +1879,7 @@ public class ITDnsTest {
       assertNull(zoneResult.get().getNameServerSet()); // we did not set it
       assertNotNull(zoneResult.get().getGeneratedId());
       assertNotNull(projectResult.get().getQuota());
-      assertEquals(2, Iterables.size(pageResult.get().values()));
+      assertEquals(2, Iterables.size(pageResult.get().getValues()));
       assertNotNull(changeRequestResult.get());
     } finally {
       DNS.delete(ZONE1.getName());

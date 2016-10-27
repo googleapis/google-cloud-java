@@ -82,7 +82,7 @@ public class ExceptionHandlerTest {
     }
 
     // using default exception handler (retry upon any non-runtime exceptions)
-    ExceptionHandler handler = ExceptionHandler.defaultInstance();
+    ExceptionHandler handler = ExceptionHandler.getDefaultInstance();
     assertValidCallable(new A(), handler);
     assertValidCallable(new B(), handler);
     assertValidCallable(new C(), handler);
@@ -90,7 +90,7 @@ public class ExceptionHandlerTest {
     assertValidCallable(new E(), handler);
     assertInvalidCallable(new F(), handler);
 
-    handler = ExceptionHandler.builder()
+    handler = ExceptionHandler.newBuilder()
         .retryOn(FileNotFoundException.class, NullPointerException.class)
         .build();
     assertInvalidCallable(new A(), handler);
@@ -116,12 +116,12 @@ public class ExceptionHandlerTest {
 
   @Test
   public void testShouldTry() {
-    ExceptionHandler handler = ExceptionHandler.builder().retryOn(IOException.class).build();
+    ExceptionHandler handler = ExceptionHandler.newBuilder().retryOn(IOException.class).build();
     assertTrue(handler.shouldRetry(new IOException()));
     assertTrue(handler.shouldRetry(new ClosedByInterruptException()));
     assertFalse(handler.shouldRetry(new RuntimeException()));
 
-    ExceptionHandler.Builder builder = ExceptionHandler.builder()
+    ExceptionHandler.Builder builder = ExceptionHandler.newBuilder()
         .retryOn(IOException.class, NullPointerException.class)
         .abortOn(RuntimeException.class, ClosedByInterruptException.class,
             InterruptedException.class);
@@ -148,7 +148,7 @@ public class ExceptionHandlerTest {
       }
     };
 
-    builder.interceptor(interceptor);
+    builder.addInterceptors(interceptor);
     handler = builder.build();
     assertFalse(handler.shouldRetry(new IOException()));
     assertFalse(handler.shouldRetry(new ClosedByInterruptException()));
@@ -188,7 +188,7 @@ public class ExceptionHandlerTest {
 
     };
 
-    ExceptionHandler handler = ExceptionHandler.builder().interceptor(interceptor).build();
+    ExceptionHandler handler = ExceptionHandler.newBuilder().addInterceptors(interceptor).build();
     thrown.expect(NullPointerException.class);
     handler.shouldRetry(new Exception());
   }
@@ -210,7 +210,7 @@ public class ExceptionHandlerTest {
 
     };
 
-    ExceptionHandler handler = ExceptionHandler.builder().interceptor(interceptor).build();
+    ExceptionHandler handler = ExceptionHandler.newBuilder().addInterceptors(interceptor).build();
     thrown.expect(NullPointerException.class);
     handler.shouldRetry(new Exception());
   }

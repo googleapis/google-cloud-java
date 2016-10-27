@@ -124,7 +124,7 @@ public class Zone extends ZoneInfo {
   Zone(Dns dns, ZoneInfo.BuilderImpl infoBuilder) {
     super(infoBuilder);
     this.dns = dns;
-    this.options = dns.options();
+    this.options = dns.getOptions();
   }
 
   @Override
@@ -241,7 +241,7 @@ public class Zone extends ZoneInfo {
 
   private void readObject(ObjectInputStream stream) throws IOException, ClassNotFoundException {
     stream.defaultReadObject();
-    this.dns = options.service();
+    this.dns = options.getService();
   }
 
   static Zone fromPb(Dns dns, ManagedZone zone) {

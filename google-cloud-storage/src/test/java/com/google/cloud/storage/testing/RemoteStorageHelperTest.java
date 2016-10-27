@@ -93,17 +93,35 @@ public class RemoteStorageHelperTest {
     blobList = ImmutableList.of(blob1, blob2);
     blobPage = new Page<Blob>() {
       @Override
+      @Deprecated
       public String nextPageCursor() {
         return "nextPageCursor";
       }
 
       @Override
+      public String getNextPageCursor() {
+        return "nextPageCursor";
+      }
+
+      @Override
+      @Deprecated
       public Page<Blob> nextPage() {
         return null;
       }
 
       @Override
+      public Page<Blob> getNextPage() {
+        return null;
+      }
+
+      @Override
+      @Deprecated
       public Iterable<Blob> values() {
+        return blobList;
+      }
+
+      @Override
+      public Iterable<Blob> getValues() {
         return blobList;
       }
 
@@ -203,13 +221,13 @@ public class RemoteStorageHelperTest {
     RemoteStorageHelper helper = RemoteStorageHelper.create(PROJECT_ID, JSON_KEY_STREAM);
     StorageOptions options = helper.getOptions();
     assertEquals(options, helper.options());
-    assertEquals(PROJECT_ID, options.projectId());
-    assertEquals(60000, options.connectTimeout());
-    assertEquals(60000, options.readTimeout());
-    assertEquals(10, options.retryParams().retryMaxAttempts());
-    assertEquals(6, options.retryParams().retryMinAttempts());
-    assertEquals(30000, options.retryParams().maxRetryDelayMillis());
-    assertEquals(120000, options.retryParams().totalRetryPeriodMillis());
-    assertEquals(250, options.retryParams().initialRetryDelayMillis());
+    assertEquals(PROJECT_ID, options.getProjectId());
+    assertEquals(60000, options.getConnectTimeout());
+    assertEquals(60000, options.getReadTimeout());
+    assertEquals(10, options.getRetryParams().getRetryMaxAttempts());
+    assertEquals(6, options.getRetryParams().getRetryMinAttempts());
+    assertEquals(30000, options.getRetryParams().getMaxRetryDelayMillis());
+    assertEquals(120000, options.getRetryParams().getTotalRetryPeriodMillis());
+    assertEquals(250, options.getRetryParams().getInitialRetryDelayMillis());
   }
 }

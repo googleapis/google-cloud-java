@@ -28,6 +28,16 @@ public class RoleTest {
 
   @Test
   public void testOf() {
+    assertEquals("roles/viewer", VIEWER.getValue());
+    assertEquals("roles/editor", EDITOR.getValue());
+    assertEquals("roles/owner", OWNER.getValue());
+    compareRoles(VIEWER, Role.of("roles/viewer"));
+    compareRoles(EDITOR, Role.of("roles/editor"));
+    compareRoles(OWNER, Role.of("roles/owner"));
+  }
+
+  @Test
+  public void testOfDeprecated() {
     assertEquals("roles/viewer", VIEWER.value());
     assertEquals("roles/editor", EDITOR.value());
     assertEquals("roles/owner", OWNER.value());
@@ -38,17 +48,17 @@ public class RoleTest {
 
   @Test
   public void testViewer() {
-    assertEquals("roles/viewer", Role.viewer().value());
+    assertEquals("roles/viewer", Role.viewer().getValue());
   }
 
   @Test
   public void testEditor() {
-    assertEquals("roles/editor", Role.editor().value());
+    assertEquals("roles/editor", Role.editor().getValue());
   }
 
   @Test
   public void testOwner() {
-    assertEquals("roles/owner", Role.owner().value());
+    assertEquals("roles/owner", Role.owner().getValue());
   }
 
   @Test(expected = NullPointerException.class)
@@ -58,7 +68,7 @@ public class RoleTest {
 
   private void compareRoles(Role expected, Role actual) {
     assertEquals(expected, actual);
-    assertEquals(expected.value(), actual.value());
+    assertEquals(expected.getValue(), actual.getValue());
     assertEquals(expected.hashCode(), actual.hashCode());
     assertEquals(expected.toString(), actual.toString());
   }

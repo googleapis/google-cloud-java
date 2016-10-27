@@ -215,7 +215,7 @@ public class SerializationTest extends BaseSerializationTest {
       .setResult(QUERY_RESULT)
       .build();
   private static final BigQuery BIGQUERY =
-      BigQueryOptions.builder().projectId("p1").build().service();
+      BigQueryOptions.newBuilder().setProjectId("p1").build().getService();
   private static final Dataset DATASET =
       new Dataset(BIGQUERY, new DatasetInfo.BuilderImpl(DATASET_INFO));
   private static final Table TABLE = new Table(BIGQUERY, new TableInfo.BuilderImpl(TABLE_INFO));
@@ -227,13 +227,13 @@ public class SerializationTest extends BaseSerializationTest {
 
   @Override
   protected Serializable[] serializableObjects() {
-    BigQueryOptions options = BigQueryOptions.builder()
-        .projectId("p1")
-        .authCredentials(AuthCredentials.createForAppEngine())
+    BigQueryOptions options = BigQueryOptions.newBuilder()
+        .setProjectId("p1")
+        .setAuthCredentials(AuthCredentials.createForAppEngine())
         .build();
     BigQueryOptions otherOptions = options.toBuilder()
-        .projectId("p2")
-        .authCredentials(null)
+        .setProjectId("p2")
+        .setAuthCredentials(null)
         .build();
     return new Serializable[]{DOMAIN_ACCESS, GROUP_ACCESS, USER_ACCESS, VIEW_ACCESS, DATASET_ID,
         DATASET_INFO, TABLE_ID, CSV_OPTIONS, STREAMING_BUFFER, TABLE_DEFINITION,
@@ -252,7 +252,7 @@ public class SerializationTest extends BaseSerializationTest {
 
   @Override
   protected Restorable<?>[] restorableObjects() {
-    BigQueryOptions options = BigQueryOptions.builder().projectId("p2").build();
+    BigQueryOptions options = BigQueryOptions.newBuilder().setProjectId("p2").build();
     // avoid closing when you don't want partial writes upon failure
     @SuppressWarnings("resource")
     TableDataWriteChannel writer =

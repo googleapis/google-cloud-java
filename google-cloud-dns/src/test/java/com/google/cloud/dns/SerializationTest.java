@@ -56,11 +56,11 @@ public class SerializationTest extends BaseSerializationTest {
       Dns.ChangeRequestOption.fields(Dns.ChangeRequestField.STATUS);
   private static final Dns.ProjectOption PROJECT_OPTION =
       Dns.ProjectOption.fields(Dns.ProjectField.QUOTA);
-  private static final DnsOptions OPTIONS = DnsOptions.builder()
-      .projectId("some-unnecessary-project-ID")
-      .retryParams(RetryParams.defaultInstance())
+  private static final DnsOptions OPTIONS = DnsOptions.newBuilder()
+      .setProjectId("some-unnecessary-project-ID")
+      .setRetryParams(RetryParams.getDefaultInstance())
       .build();
-  private static final Dns DNS = OPTIONS.service();
+  private static final Dns DNS = OPTIONS.getService();
   private static final Zone FULL_ZONE = new Zone(DNS, new ZoneInfo.BuilderImpl(FULL_ZONE_INFO));
   private static final Zone PARTIAL_ZONE =
       new Zone(DNS, new ZoneInfo.BuilderImpl(PARTIAL_ZONE_INFO));
@@ -88,12 +88,12 @@ public class SerializationTest extends BaseSerializationTest {
 
   @Override
   protected Serializable[] serializableObjects() {
-    DnsOptions options = DnsOptions.builder()
-        .authCredentials(AuthCredentials.createForAppEngine())
-        .projectId("id1")
+    DnsOptions options = DnsOptions.newBuilder()
+        .setAuthCredentials(AuthCredentials.createForAppEngine())
+        .setProjectId("id1")
         .build();
     DnsOptions otherOptions = options.toBuilder()
-        .authCredentials(null)
+        .setAuthCredentials(null)
         .build();
     return new Serializable[]{FULL_ZONE_INFO, PARTIAL_ZONE_INFO, ZONE_LIST_OPTION,
         RECORD_SET_LIST_OPTION, CHANGE_REQUEST_LIST_OPTION, ZONE_OPTION, CHANGE_REQUEST_OPTION,

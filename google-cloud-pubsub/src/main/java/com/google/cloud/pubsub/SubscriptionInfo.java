@@ -83,14 +83,14 @@ public class SubscriptionInfo implements Serializable {
 
     /**
      * Sets the topic the subscription refers to, given the topic name. The topic is assumed to
-     * reside in the {@link PubSubOptions#projectId()} project.
+     * reside in the {@link PubSubOptions#getProjectId()} project.
      */
     @Deprecated
     public abstract Builder topic(String topic);
 
     /**
      * Sets the topic the subscription refers to, given the topic name. The topic is assumed to
-     * reside in the {@link PubSubOptions#projectId()} project.
+     * reside in the {@link PubSubOptions#getProjectId()} project.
      */
     public abstract Builder setTopic(String topic);
 
@@ -108,7 +108,7 @@ public class SubscriptionInfo implements Serializable {
     /**
      * Sets the topic the subscription refers to, given the topic identity. If
      * {@code topic.project()} is {@code null} the topic is assumed to reside in the
-     * {@link PubSubOptions#projectId()} project.
+     * {@link PubSubOptions#getProjectId()} project.
      */
     @Deprecated
     public abstract Builder topic(TopicId topic);
@@ -116,7 +116,7 @@ public class SubscriptionInfo implements Serializable {
     /**
      * Sets the topic the subscription refers to, given the topic identity. If
      * {@code topic.project()} is {@code null} the topic is assumed to reside in the
-     * {@link PubSubOptions#projectId()} project.
+     * {@link PubSubOptions#getProjectId()} project.
      */
     public abstract Builder setTopic(TopicId topic);
 
@@ -270,9 +270,9 @@ public class SubscriptionInfo implements Serializable {
 
   /**
    * Returns the identity of the topic this subscription refers to. If {@link TopicId#project()} is
-   * {@code null} the topic is assumed to reside in the {@link PubSubOptions#projectId()} project.
-   * After a topic is deleted, existing subscriptions to that topic are not deleted, but their topic
-   * field is set to {@link TopicId#deletedTopic()}.
+   * {@code null} the topic is assumed to reside in the {@link PubSubOptions#getProjectId()}
+   * project. After a topic is deleted, existing subscriptions to that topic are not deleted, but
+   * their topic field is set to {@link TopicId#deletedTopic()}.
    */
   @Deprecated
   public TopicId topic() {
@@ -281,9 +281,9 @@ public class SubscriptionInfo implements Serializable {
 
   /**
    * Returns the identity of the topic this subscription refers to. If {@link TopicId#project()} is
-   * {@code null} the topic is assumed to reside in the {@link PubSubOptions#projectId()} project.
-   * After a topic is deleted, existing subscriptions to that topic are not deleted, but their topic
-   * field is set to {@link TopicId#deletedTopic()}.
+   * {@code null} the topic is assumed to reside in the {@link PubSubOptions#getProjectId()}
+   * project. After a topic is deleted, existing subscriptions to that topic are not deleted, but
+   * their topic field is set to {@link TopicId#deletedTopic()}.
    */
   public TopicId getTopic() {
     return topic;
@@ -423,7 +423,8 @@ public class SubscriptionInfo implements Serializable {
 
   /**
    * Creates a pull {@code SubscriptionInfo} object given the name of the topic and the name of the
-   * subscription. The topic is assumed to reside in the {@link PubSubOptions#projectId()} project.
+   * subscription. The topic is assumed to reside in the {@link PubSubOptions#getProjectId()}
+   * project.
    *
    * @param topic the name of the topic the subscription refers to
    * @param name the name of the subscription. The name must start with a letter, and contain only
@@ -439,7 +440,7 @@ public class SubscriptionInfo implements Serializable {
   /**
    * Creates a pull {@code SubscriptionInfo} object given the identity of the topic and the name of
    * the subscription. If {@code topic.project()} is {@code null} the topic is assumed to reside in
-   * the {@link PubSubOptions#projectId()} project.
+   * the {@link PubSubOptions#getProjectId()} project.
    *
    * @param topic the identity of the topic the subscription refers to
    * @param name the name of the subscription. The name must start with a letter, and contain only
@@ -455,7 +456,7 @@ public class SubscriptionInfo implements Serializable {
   /**
    * Creates a push {@code SubscriptionInfo} object given the name of the topic, the name of the
    * subscription and the push endpoint. The topic is assumed to reside in the
-   * {@link PubSubOptions#projectId()} project.
+   * {@link PubSubOptions#getProjectId()} project.
    *
    * @param topic the name of the topic the subscription refers to
    * @param name the name of the subscription. The name must start with a letter, and contain only
@@ -473,7 +474,7 @@ public class SubscriptionInfo implements Serializable {
   /**
    * Creates a push {@code SubscriptionInfo} object given the identity of the topic, the name of the
    * subscription and the push endpoint. If {@code topic.project()} is {@code null} the topic is
-   * assumed to reside in the {@link PubSubOptions#projectId()} project.
+   * assumed to reside in the {@link PubSubOptions#getProjectId()} project.
    *
    * @param topic the identity of the topic the subscription refers to
    * @param name the name of the subscription. The name must start with a letter, and contain only
@@ -490,7 +491,7 @@ public class SubscriptionInfo implements Serializable {
 
   /**
    * Creates a builder for {@code SubscriptionInfo} objects given the name of the topic and the name
-   * of the subscription. The topic is assumed to reside in the {@link PubSubOptions#projectId()}
+   * of the subscription. The topic is assumed to reside in the {@link PubSubOptions#getProjectId()}
    * project.
    *
    * @param topic the name of the topic the subscription refers to
@@ -507,7 +508,7 @@ public class SubscriptionInfo implements Serializable {
 
   /**
    * Creates a builder for {@code SubscriptionInfo} objects given the name of the topic and the name
-   * of the subscription. The topic is assumed to reside in the {@link PubSubOptions#projectId()}
+   * of the subscription. The topic is assumed to reside in the {@link PubSubOptions#getProjectId()}
    * project.
    *
    * @param topic the name of the topic the subscription refers to
@@ -524,7 +525,7 @@ public class SubscriptionInfo implements Serializable {
   /**
    * Creates a builder for {@code SubscriptionInfo} objects given the identity of the topic and the
    * name of the subscription. If {@code topic.project()} is {@code null} the topic is assumed to
-   * reside in the {@link PubSubOptions#projectId()} project.
+   * reside in the {@link PubSubOptions#getProjectId()} project.
    *
    * @param topic the identity of the topic the subscription refers to
    * @param name the name of the subscription. The name must start with a letter, and contain only
@@ -541,7 +542,7 @@ public class SubscriptionInfo implements Serializable {
   /**
    * Creates a builder for {@code SubscriptionInfo} objects given the identity of the topic and the
    * name of the subscription. If {@code topic.project()} is {@code null} the topic is assumed to
-   * reside in the {@link PubSubOptions#projectId()} project.
+   * reside in the {@link PubSubOptions#getProjectId()} project.
    *
    * @param topic the identity of the topic the subscription refers to
    * @param name the name of the subscription. The name must start with a letter, and contain only

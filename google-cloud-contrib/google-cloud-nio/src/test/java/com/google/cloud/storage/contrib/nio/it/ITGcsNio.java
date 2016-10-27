@@ -99,7 +99,7 @@ public class ITGcsNio {
     // loads the credentials from local disk as par README
     RemoteStorageHelper gcsHelper = RemoteStorageHelper.create();
     storageOptions = gcsHelper.getOptions();
-    storage = storageOptions.service();
+    storage = storageOptions.getService();
     // create and populate test bucket
     storage.create(BucketInfo.of(BUCKET));
     fillFile(storage, SML_FILE, SML_SIZE);

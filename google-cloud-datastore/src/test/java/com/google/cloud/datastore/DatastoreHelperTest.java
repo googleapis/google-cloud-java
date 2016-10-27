@@ -42,8 +42,8 @@ public class DatastoreHelperTest {
   @Test
   public void testNewKeyFactory() {
     DatastoreOptions options = createMock(DatastoreOptions.class);
-    expect(options.projectId()).andReturn("ds1").once();
-    expect(options.namespace()).andReturn("ns1").once();
+    expect(options.getProjectId()).andReturn("ds1").once();
+    expect(options.getNamespace()).andReturn("ns1").once();
     replay(options);
     KeyFactory keyFactory = DatastoreHelper.newKeyFactory(options);
     Key key = keyFactory.setKind("k").newKey("bla");

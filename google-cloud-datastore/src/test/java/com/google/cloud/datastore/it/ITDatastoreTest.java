@@ -74,9 +74,9 @@ public class ITDatastoreTest {
 
   private static final RemoteDatastoreHelper HELPER = RemoteDatastoreHelper.create();
   private static final DatastoreOptions OPTIONS = HELPER.getOptions();
-  private static final Datastore DATASTORE = OPTIONS.service();
-  private static final String PROJECT_ID = OPTIONS.projectId();
-  private static final String NAMESPACE = OPTIONS.namespace();
+  private static final Datastore DATASTORE = OPTIONS.getService();
+  private static final String PROJECT_ID = OPTIONS.getProjectId();
+  private static final String NAMESPACE = OPTIONS.getNamespace();
   private static final String KIND1 = "kind1";
   private static final String KIND2 = "kind2";
   private static final String KIND3 = "kind3";
@@ -178,14 +178,14 @@ public class ITDatastoreTest {
       transaction.commit();
       fail("Expecting a failure");
     } catch (DatastoreException expected) {
-      assertEquals("FAILED_PRECONDITION", expected.reason());
+      assertEquals("FAILED_PRECONDITION", expected.getReason());
     }
 
     try {
       transaction.rollback();
       fail("Expecting a failure");
     } catch (DatastoreException expected) {
-      assertEquals("FAILED_PRECONDITION", expected.reason());
+      assertEquals("FAILED_PRECONDITION", expected.getReason());
     }
   }
 
@@ -206,7 +206,7 @@ public class ITDatastoreTest {
       transaction.commit();
       fail("Expecting a failure");
     } catch (DatastoreException expected) {
-      assertEquals("ABORTED", expected.reason());
+      assertEquals("ABORTED", expected.getReason());
     }
   }
 
@@ -248,7 +248,7 @@ public class ITDatastoreTest {
       transaction.commit();
       fail("Expecting a failure");
     } catch (DatastoreException expected) {
-      assertEquals("ABORTED", expected.reason());
+      assertEquals("ABORTED", expected.getReason());
     }
   }
 
@@ -267,7 +267,7 @@ public class ITDatastoreTest {
       transaction.commit();
       fail("Expecting a failure");
     } catch (DatastoreException expected) {
-      assertEquals("FAILED_PRECONDITION", expected.reason());
+      assertEquals("FAILED_PRECONDITION", expected.getReason());
     }
 
     List<Entity> list = DATASTORE.fetch(KEY1, KEY2, KEY3);
@@ -318,14 +318,15 @@ public class ITDatastoreTest {
       batch.submit();
       fail("Expecting a failure");
     } catch (DatastoreException expected) {
-      assertEquals("FAILED_PRECONDITION", expected.reason());
+      assertEquals("FAILED_PRECONDITION", expected.getReason());
     }
 
     batch = DATASTORE.newBatch();
     batch.delete(entity4.getKey(), entity5.getKey(), entity6.getKey());
     batch.update(ENTITY1, ENTITY2, ENTITY3);
     batch.submit();
-    entities = DATASTORE.fetch(KEY1, KEY2, KEY3, entity4.getKey(), entity5.getKey(), entity6.getKey());
+    entities =
+        DATASTORE.fetch(KEY1, KEY2, KEY3, entity4.getKey(), entity5.getKey(), entity6.getKey());
     assertEquals(ENTITY1, entities.get(0));
     assertEquals(ENTITY2, entities.get(1));
     assertEquals(ENTITY3, entities.get(2));
@@ -373,9 +374,10 @@ public class ITDatastoreTest {
     results1 = DATASTORE.run(query1);
     assertFalse(results1.hasNext());
 
-    Query<Key> keyOnlyQuery = Query.newGqlQueryBuilder(ResultType.KEY, "select __key__ from " + KIND1)
-        .setNamespace(NAMESPACE)
-        .build();
+    Query<Key> keyOnlyQuery =
+        Query.newGqlQueryBuilder(ResultType.KEY, "select __key__ from " + KIND1)
+            .setNamespace(NAMESPACE)
+            .build();
     QueryResults<Key> keyOnlyResults = DATASTORE.run(keyOnlyQuery);
     while (Iterators.size(keyOnlyResults) < 1) {
       Thread.sleep(500);

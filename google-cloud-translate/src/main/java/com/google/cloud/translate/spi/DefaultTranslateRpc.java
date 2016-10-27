@@ -43,12 +43,12 @@ public class DefaultTranslateRpc implements TranslateRpc {
   private final Translate translate;
 
   public DefaultTranslateRpc(TranslateOptions options) {
-    HttpTransport transport = options.httpTransportFactory().create();
-    HttpRequestInitializer initializer = options.httpRequestInitializer();
+    HttpTransport transport = options.getHttpTransportFactory().create();
+    HttpRequestInitializer initializer = options.getHttpRequestInitializer();
     this.options = options;
     translate = new Translate.Builder(transport, new JacksonFactory(), initializer)
-        .setRootUrl(options.host())
-        .setApplicationName(options.applicationName())
+        .setRootUrl(options.getHost())
+        .setApplicationName(options.getApplicationName())
         .build();
   }
 
@@ -60,7 +60,7 @@ public class DefaultTranslateRpc implements TranslateRpc {
   public List<List<DetectionsResourceItems>> detect(List<String> texts) {
     try {
       List<List<DetectionsResourceItems>> detections =
-          translate.detections().list(texts).setKey(options.apiKey()).execute().getDetections();
+          translate.detections().list(texts).setKey(options.getApiKey()).execute().getDetections();
       return detections != null ? detections : ImmutableList.<List<DetectionsResourceItems>>of();
     } catch (IOException ex) {
       throw translate(ex);
@@ -72,8 +72,9 @@ public class DefaultTranslateRpc implements TranslateRpc {
     try {
       List<LanguagesResource> languages = translate.languages()
           .list()
-          .setKey(options.apiKey())
-          .setTarget(firstNonNull(TARGET_LANGUAGE.getString(optionMap), options.targetLanguage()))
+          .setKey(options.getApiKey())
+          .setTarget(
+              firstNonNull(TARGET_LANGUAGE.getString(optionMap), options.getTargetLanguage()))
           .execute().getLanguages();
       return languages != null ? languages : ImmutableList.<LanguagesResource>of();
     } catch (IOException ex) {
@@ -85,13 +86,13 @@ public class DefaultTranslateRpc implements TranslateRpc {
   public List<TranslationsResource> translate(List<String> texts, Map<Option, ?> optionMap) {
     try {
       String targetLanguage =
-          firstNonNull(TARGET_LANGUAGE.getString(optionMap), options.targetLanguage());
+          firstNonNull(TARGET_LANGUAGE.getString(optionMap), options.getTargetLanguage());
       final String sourceLanguage = SOURCE_LANGUAGE.getString(optionMap);
       List<TranslationsResource> translations =
           translate.translations()
               .list(texts, targetLanguage)
               .setSource(sourceLanguage)
-              .setKey(options.apiKey())
+              .setKey(options.getApiKey())
               .execute()
               .getTranslations();
       return Lists.transform(

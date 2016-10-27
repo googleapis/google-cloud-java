@@ -161,7 +161,7 @@ public class StructuredQueryTest {
   }
 
   private void compareBaseBuilderFields(StructuredQuery<?> query) {
-    assertEquals(NAMESPACE, query.namespace());
+    assertEquals(NAMESPACE, query.getNamespace());
     assertEquals(KIND, query.getKind());
     assertEquals(START_CURSOR, query.getStartCursor());
     assertEquals(END_CURSOR, query.getEndCursor());
@@ -172,7 +172,7 @@ public class StructuredQueryTest {
   }
 
   private void compareBaseBuilderFieldsDeprecated(StructuredQuery<?> query) {
-    assertEquals(NAMESPACE, query.namespace());
+    assertEquals(NAMESPACE, query.getNamespace());
     assertEquals(KIND, query.kind());
     assertEquals(START_CURSOR, query.startCursor());
     assertEquals(END_CURSOR, query.endCursor());
@@ -208,13 +208,16 @@ public class StructuredQueryTest {
   public void testToAndFromPb() {
     assertEquals(
         ENTITY_QUERY,
-        StructuredQuery.fromPb(ResultType.ENTITY, ENTITY_QUERY.namespace(), ENTITY_QUERY.toPb()));
+        StructuredQuery.fromPb(ResultType.ENTITY, ENTITY_QUERY.getNamespace(),
+            ENTITY_QUERY.toPb()));
     assertEquals(
-        KEY_QUERY, StructuredQuery.fromPb(ResultType.KEY, KEY_QUERY.namespace(), KEY_QUERY.toPb()));
+        KEY_QUERY, StructuredQuery.fromPb(ResultType.KEY, KEY_QUERY.getNamespace(),
+            KEY_QUERY.toPb()));
     assertEquals(
         PROJECTION_QUERY,
         StructuredQuery.fromPb(
-            ResultType.PROJECTION_ENTITY, PROJECTION_QUERY.namespace(), PROJECTION_QUERY.toPb()));
+            ResultType.PROJECTION_ENTITY, PROJECTION_QUERY.getNamespace(),
+            PROJECTION_QUERY.toPb()));
   }
 
   @Test

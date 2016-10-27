@@ -163,7 +163,7 @@ public class Table extends TableInfo {
   Table(BigQuery bigquery, TableInfo.BuilderImpl infoBuilder) {
     super(infoBuilder);
     this.bigquery = checkNotNull(bigquery);
-    this.options = bigquery.options();
+    this.options = bigquery.getOptions();
   }
 
   /**
@@ -584,7 +584,7 @@ public class Table extends TableInfo {
 
   private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
     in.defaultReadObject();
-    this.bigquery = options.service();
+    this.bigquery = options.getService();
   }
 
   static Table fromPb(BigQuery bigquery, com.google.api.services.bigquery.model.Table tablePb) {

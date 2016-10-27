@@ -80,7 +80,7 @@ public class Topic extends TopicInfo {
   Topic(PubSub pubsub, BuilderImpl builder) {
     super(builder);
     this.pubsub = checkNotNull(pubsub);
-    options = pubsub.options();
+    options = pubsub.getOptions();
   }
 
   @Override
@@ -537,7 +537,7 @@ public class Topic extends TopicInfo {
 
   private void readObject(ObjectInputStream input) throws IOException, ClassNotFoundException {
     input.defaultReadObject();
-    this.pubsub = options.service();
+    this.pubsub = options.getService();
   }
 
   static Topic fromPb(PubSub pubsub, com.google.pubsub.v1.Topic topicPb) {

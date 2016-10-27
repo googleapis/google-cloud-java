@@ -69,8 +69,8 @@ public class DatastoreTest {
 
   private static LocalDatastoreHelper helper = LocalDatastoreHelper.create(1.0);
   private static final DatastoreOptions options = helper.getOptions();
-  private static final Datastore datastore = options.service();
-  private static final String PROJECT_ID = options.projectId();
+  private static final Datastore datastore = options.getService();
+  private static final String PROJECT_ID = options.getProjectId();
   private static final String KIND1 = "kind1";
   private static final String KIND2 = "kind2";
   private static final String KIND3 = "kind3";
@@ -139,8 +139,8 @@ public class DatastoreTest {
     rpcMock = EasyMock.createStrictMock(DatastoreRpc.class);
     rpcMockOptions = options
         .toBuilder()
-        .retryParams(RetryParams.defaultInstance())
-        .serviceRpcFactory(rpcFactoryMock)
+        .setRetryParams(RetryParams.getDefaultInstance())
+        .setServiceRpcFactory(rpcFactoryMock)
         .build();
     EasyMock.expect(rpcFactoryMock.create(rpcMockOptions)).andReturn(rpcMock);
     StructuredQuery<Key> query = Query.newKeyQueryBuilder().build();
@@ -156,7 +156,7 @@ public class DatastoreTest {
 
   @Test
   public void testGetOptions() {
-    assertSame(options, datastore.options());
+    assertSame(options, datastore.getOptions());
   }
 
   @Test
@@ -211,7 +211,7 @@ public class DatastoreTest {
       transaction.commit();
       fail("Expecting a failure");
     } catch (DatastoreException expected) {
-      assertEquals("ABORTED", expected.reason());
+      assertEquals("ABORTED", expected.getReason());
     }
   }
 
@@ -239,7 +239,7 @@ public class DatastoreTest {
       transaction.commit();
       fail("Expecting a failure");
     } catch (DatastoreException expected) {
-      assertEquals("ABORTED", expected.reason());
+      assertEquals("ABORTED", expected.getReason());
     }
   }
 
@@ -440,7 +440,7 @@ public class DatastoreTest {
           .andReturn(responses.get(i));
     }
     EasyMock.replay(rpcFactoryMock, rpcMock);
-    Datastore mockDatastore = rpcMockOptions.service();
+    Datastore mockDatastore = rpcMockOptions.getService();
     QueryResults<Key> results =
         mockDatastore.run(Query.newGqlQueryBuilder(ResultType.KEY, "select __key__ from *").build());
     int count = 0;
@@ -503,7 +503,7 @@ public class DatastoreTest {
           .andReturn(responses.get(i));
     }
     EasyMock.replay(rpcFactoryMock, rpcMock);
-    Datastore datastore = rpcMockOptions.service();
+    Datastore datastore = rpcMockOptions.getService();
     QueryResults<Key> results = datastore.run(Query.newKeyQueryBuilder().build());
     int count = 0;
     while (results.hasNext()) {
@@ -564,7 +564,7 @@ public class DatastoreTest {
       }
     }
     EasyMock.replay(rpcFactoryMock, rpcMock);
-    Datastore datastore = rpcMockOptions.service();
+    Datastore datastore = rpcMockOptions.getService();
     int limit = 2;
     int totalCount = 0;
     Iterator<ByteString> cursorIter = endCursors.iterator();
@@ -593,7 +593,7 @@ public class DatastoreTest {
     Entity entity4 = Entity.newBuilder(KEY4).set("value", StringValue.of("value")).build();
     Entity entity5 = Entity.newBuilder(KEY5).set("value", "value").build();
     datastore.add(ENTITY3, entity4, entity5);
-    DatastoreRpc datastoreRpc = datastore.options().rpc();
+    DatastoreRpc datastoreRpc = datastore.getOptions().getRpc();
     List<RunQueryResponse> responses = new ArrayList<>();
     Query<Entity> query = Query.newEntityQueryBuilder().build();
     RunQueryRequest.Builder requestPb = RunQueryRequest.newBuilder();
@@ -652,7 +652,7 @@ public class DatastoreTest {
     EasyMock.expect(rpcMock.runQuery(expectedRequest.build()))
         .andReturn(RunQueryResponse.newBuilder().build());
     EasyMock.replay(rpcFactoryMock, rpcMock);
-    Datastore datastore = rpcMockOptions.service();
+    Datastore datastore = rpcMockOptions.getService();
     datastore.run(
         Query.newGqlQueryBuilder("FROM * SELECT *").build(), ReadOption.eventualConsistency());
     EasyMock.verify(rpcFactoryMock, rpcMock);
@@ -750,7 +750,7 @@ public class DatastoreTest {
         .andReturn(LookupResponse.newBuilder().build())
         .times(3);
     EasyMock.replay(rpcFactoryMock, rpcMock);
-    Datastore datastore = rpcMockOptions.service();
+    Datastore datastore = rpcMockOptions.getService();
     datastore.get(KEY1, ReadOption.eventualConsistency());
     datastore.get(ImmutableList.of(KEY1), ReadOption.eventualConsistency());
     datastore.fetch(ImmutableList.of(KEY1), ReadOption.eventualConsistency());
@@ -857,7 +857,7 @@ public class DatastoreTest {
       EasyMock.expect(rpcMock.lookup(lookupRequests.get(i))).andReturn(lookupResponses.get(i));
     }
     EasyMock.replay(rpcFactoryMock, rpcMock);
-    return rpcMockOptions.service();
+    return rpcMockOptions.getService();
   }
 
   @Test
@@ -963,7 +963,7 @@ public class DatastoreTest {
         .andThrow(new DatastoreException(14, "UNAVAILABLE", "UNAVAILABLE", null))
         .andReturn(responsePb);
     EasyMock.replay(rpcFactoryMock, rpcMock);
-    Datastore datastore = rpcMockOptions.service();
+    Datastore datastore = rpcMockOptions.getService();
     Entity entity = datastore.get(KEY1);
     assertEquals(ENTITY1, entity);
     EasyMock.verify(rpcFactoryMock, rpcMock);
@@ -977,7 +977,7 @@ public class DatastoreTest {
             new DatastoreException(DatastoreException.UNKNOWN_CODE, "denied", "PERMISSION_DENIED"))
         .times(1);
     EasyMock.replay(rpcFactoryMock, rpcMock);
-    Datastore datastore = rpcMockOptions.service();
+    Datastore datastore = rpcMockOptions.getService();
     thrown.expect(DatastoreException.class);
     thrown.expectMessage("denied");
     datastore.get(KEY1);
@@ -990,7 +990,7 @@ public class DatastoreTest {
     String exceptionMessage = "Artificial runtime exception";
     EasyMock.expect(rpcMock.lookup(requestPb)).andThrow(new RuntimeException(exceptionMessage));
     EasyMock.replay(rpcFactoryMock, rpcMock);
-    Datastore datastore = rpcMockOptions.service();
+    Datastore datastore = rpcMockOptions.getService();
     thrown.expect(DatastoreException.class);
     thrown.expectMessage(exceptionMessage);
     datastore.get(KEY1);

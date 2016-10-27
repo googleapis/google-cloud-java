@@ -23,7 +23,7 @@
  * <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/src/main/java/com/google/cloud/examples/pubsub/snippets/CreateTopicAndPublishMessages.java">
  * CreateTopicAndPublishMessages.java</a>.
  * <pre> {@code
- * try (PubSub pubsub = PubSubOptions.defaultInstance().service()) {
+ * try (PubSub pubsub = PubSubOptions.getDefaultInstance().getService()) {
  *   Topic topic = pubsub.create(TopicInfo.of("test-topic"));
  *   Message message1 = Message.of("First message");
  *   Message message2 = Message.of("Second message");
@@ -35,7 +35,7 @@
  * <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/src/main/java/com/google/cloud/examples/pubsub/snippets/CreateSubscriptionAndPullMessages.java">
  * CreateSubscriptionAndPullMessages.java</a>.
  * <pre> {@code
- * try (PubSub pubsub = PubSubOptions.defaultInstance().service()) {
+ * try (PubSub pubsub = PubSubOptions.getDefaultInstance().getService()) {
  *   Subscription subscription =
  *   pubsub.create(SubscriptionInfo.of("test-topic", "test-subscription"));
  *   MessageProcessor callback = new MessageProcessor() {

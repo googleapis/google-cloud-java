@@ -69,7 +69,7 @@ public class ReceivedMessageTest {
   private ReceivedMessage message;
 
   private void initializeExpectedMessage(int optionsCalls) {
-    expect(serviceMockReturnsOptions.options()).andReturn(mockOptions).times(optionsCalls);
+    expect(serviceMockReturnsOptions.getOptions()).andReturn(mockOptions).times(optionsCalls);
     replay(serviceMockReturnsOptions);
     pubsub = createStrictMock(PubSub.class);
     expectedMessage =
@@ -167,7 +167,7 @@ public class ReceivedMessageTest {
   @Test
   public void testAck() {
     initializeExpectedMessage(1);
-    expect(pubsub.options()).andReturn(mockOptions);
+    expect(pubsub.getOptions()).andReturn(mockOptions);
     pubsub.ack(SUBSCRIPTION, ACK_ID);
     EasyMock.expectLastCall();
     replay(pubsub);
@@ -178,7 +178,7 @@ public class ReceivedMessageTest {
   @Test
   public void testAckAsync() throws ExecutionException, InterruptedException {
     initializeExpectedMessage(1);
-    expect(pubsub.options()).andReturn(mockOptions);
+    expect(pubsub.getOptions()).andReturn(mockOptions);
     expect(pubsub.ackAsync(SUBSCRIPTION, ACK_ID)).andReturn(Futures.<Void>immediateFuture(null));
     EasyMock.expectLastCall();
     replay(pubsub);
@@ -189,7 +189,7 @@ public class ReceivedMessageTest {
   @Test
   public void testModifyAckDeadline() {
     initializeExpectedMessage(1);
-    expect(pubsub.options()).andReturn(mockOptions);
+    expect(pubsub.getOptions()).andReturn(mockOptions);
     pubsub.modifyAckDeadline(SUBSCRIPTION, 10, TimeUnit.SECONDS, ACK_ID);
     EasyMock.expectLastCall();
     replay(pubsub);
@@ -200,7 +200,7 @@ public class ReceivedMessageTest {
   @Test
   public void testModifyAckDeadlineAsync() throws ExecutionException, InterruptedException {
     initializeExpectedMessage(1);
-    expect(pubsub.options()).andReturn(mockOptions);
+    expect(pubsub.getOptions()).andReturn(mockOptions);
     expect(pubsub.modifyAckDeadlineAsync(SUBSCRIPTION, 10, TimeUnit.SECONDS, ACK_ID))
         .andReturn(Futures.<Void>immediateFuture(null));
     EasyMock.expectLastCall();

@@ -119,7 +119,7 @@ public class Network extends NetworkInfo {
   Network(Compute compute, NetworkInfo.BuilderImpl infoBuilder) {
     super(infoBuilder);
     this.compute = checkNotNull(compute);
-    this.options = compute.options();
+    this.options = compute.getOptions();
   }
 
   /**
@@ -210,7 +210,7 @@ public class Network extends NetworkInfo {
 
   private void readObject(ObjectInputStream input) throws IOException, ClassNotFoundException {
     input.defaultReadObject();
-    this.compute = options.service();
+    this.compute = options.getService();
   }
 
   static Network fromPb(Compute compute,

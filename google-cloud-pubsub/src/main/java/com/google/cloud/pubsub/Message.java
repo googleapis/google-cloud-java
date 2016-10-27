@@ -75,8 +75,8 @@ public class Message implements Serializable {
     }
 
     @Override
-    protected ByteString byteString() {
-      return super.byteString();
+    protected ByteString getByteString() {
+      return super.getByteString();
     }
   }
 
@@ -366,7 +366,7 @@ public class Message implements Serializable {
     if (id != null) {
       builder.setMessageId(id);
     }
-    builder.setData(payload.byteString());
+    builder.setData(payload.getByteString());
     builder.putAllAttributes(attributes);
     Timestamp.Builder tsBuilder = Timestamp.newBuilder();
     if (publishTime != null) {

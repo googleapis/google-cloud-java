@@ -140,7 +140,7 @@ public class Project extends ProjectInfo {
   Project(ResourceManager resourceManager, ProjectInfo.BuilderImpl infoBuilder) {
     super(infoBuilder);
     this.resourceManager = checkNotNull(resourceManager);
-    this.options = resourceManager.options();
+    this.options = resourceManager.getOptions();
   }
 
   /**
@@ -304,7 +304,7 @@ public class Project extends ProjectInfo {
 
   private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
     in.defaultReadObject();
-    this.resourceManager = options.service();
+    this.resourceManager = options.getService();
   }
 
   static Project fromPb(ResourceManager resourceManager,

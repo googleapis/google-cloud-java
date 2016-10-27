@@ -120,7 +120,7 @@ public class Sink extends SinkInfo {
   Sink(Logging logging, BuilderImpl builder) {
     super(builder);
     this.logging = checkNotNull(logging);
-    options = logging.options();
+    options = logging.getOptions();
   }
 
   @Override
@@ -283,7 +283,7 @@ public class Sink extends SinkInfo {
 
   private void readObject(ObjectInputStream input) throws IOException, ClassNotFoundException {
     input.defaultReadObject();
-    this.logging = options.service();
+    this.logging = options.getService();
   }
 
   static Sink fromPb(Logging logging, LogSink sinkPb) {

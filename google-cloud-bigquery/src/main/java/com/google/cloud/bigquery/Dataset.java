@@ -175,7 +175,7 @@ public class Dataset extends DatasetInfo {
   Dataset(BigQuery bigquery, DatasetInfo.BuilderImpl infoBuilder) {
     super(infoBuilder);
     this.bigquery = checkNotNull(bigquery);
-    this.options = bigquery.options();
+    this.options = bigquery.getOptions();
   }
 
   /**
@@ -362,7 +362,7 @@ public class Dataset extends DatasetInfo {
 
   private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
     in.defaultReadObject();
-    this.bigquery = options.service();
+    this.bigquery = options.getService();
   }
 
   static Dataset fromPb(BigQuery bigquery,

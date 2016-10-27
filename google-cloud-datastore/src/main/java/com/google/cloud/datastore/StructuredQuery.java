@@ -680,8 +680,8 @@ public abstract class StructuredQuery<V> extends Query<V> {
     }
 
     BuilderImpl(StructuredQuery<V> query) {
-      this(query.type());
-      namespace = query.namespace();
+      this(query.getType());
+      namespace = query.getNamespace();
       kind = query.kind;
       projection.addAll(query.projection);
       filter = query.filter;
@@ -917,8 +917,8 @@ public abstract class StructuredQuery<V> extends Query<V> {
 
   @Override
   public int hashCode() {
-    return Objects.hash(namespace(), kind, startCursor, endCursor, offset, limit, filter, orderBy,
-        projection, distinctOn);
+    return Objects.hash(getNamespace(), kind, startCursor, endCursor, offset, limit, filter,
+        orderBy, projection, distinctOn);
   }
 
   @Override
@@ -930,7 +930,7 @@ public abstract class StructuredQuery<V> extends Query<V> {
       return false;
     }
     StructuredQuery<?> other = (StructuredQuery<?>) obj;
-    return Objects.equals(namespace(), other.namespace())
+    return Objects.equals(getNamespace(), other.getNamespace())
         && Objects.equals(kind, other.kind)
         && Objects.equals(startCursor, other.startCursor)
         && Objects.equals(endCursor, other.endCursor)

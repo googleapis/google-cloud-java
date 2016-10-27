@@ -36,15 +36,25 @@ public class GrpcServiceOptionsTest {
 
   private static final ExecutorFactory MOCK_EXECUTOR_FACTORY =
       EasyMock.createMock(ExecutorFactory.class);
-  private static final TestGrpcServiceOptions OPTIONS = TestGrpcServiceOptions.builder()
-      .projectId("project-id")
-      .initialTimeout(1234)
-      .timeoutMultiplier(1.6)
-      .maxTimeout(5678)
-      .executorFactory(MOCK_EXECUTOR_FACTORY)
+  private static final TestGrpcServiceOptions OPTIONS = TestGrpcServiceOptions.newBuilder()
+      .setProjectId("project-id")
+      .setInitialTimeout(1234)
+      .setTimeoutMultiplier(1.6)
+      .setMaxTimeout(5678)
+      .setExecutorFactory(MOCK_EXECUTOR_FACTORY)
       .build();
+  private static final TestGrpcServiceOptions DEPRECATED_OPTIONS =
+      TestGrpcServiceOptions.newBuilder()
+          .projectId("project-id")
+          .initialTimeout(1234)
+          .timeoutMultiplier(1.6)
+          .maxTimeout(5678)
+          .executorFactory(MOCK_EXECUTOR_FACTORY)
+          .build();
   private static final TestGrpcServiceOptions DEFAULT_OPTIONS =
-      TestGrpcServiceOptions.builder().projectId("project-id").build();
+      TestGrpcServiceOptions.newBuilder().setProjectId("project-id").build();
+  private static final TestGrpcServiceOptions DEPRECATED_DEFAULT_OPTIONS =
+      TestGrpcServiceOptions.newBuilder().projectId("project-id").build();
   private static final TestGrpcServiceOptions OPTIONS_COPY = OPTIONS.toBuilder().build();
 
   private interface TestService extends Service<TestGrpcServiceOptions> {}
@@ -108,17 +118,17 @@ public class GrpcServiceOptionsTest {
     }
 
     @Override
-    protected TestServiceFactory defaultServiceFactory() {
+    protected TestServiceFactory getDefaultServiceFactory() {
       return DefaultTestServiceFactory.INSTANCE;
     }
 
     @Override
-    protected TestServiceRpcFactory defaultRpcFactory() {
+    protected TestServiceRpcFactory getDefaultRpcFactory() {
       return DefaultTestServiceRpcFactory.INSTANCE;
     }
 
     @Override
-    protected Set<String> scopes() {
+    protected Set<String> getScopes() {
       return null;
     }
 
@@ -127,7 +137,7 @@ public class GrpcServiceOptionsTest {
       return new Builder(this);
     }
 
-    private static Builder builder() {
+    private static Builder newBuilder() {
       return new Builder();
     }
 
@@ -144,32 +154,44 @@ public class GrpcServiceOptionsTest {
 
   @Test
   public void testBuilder() {
-    assertEquals(1234, OPTIONS.initialTimeout());
-    assertEquals(1.6, OPTIONS.timeoutMultiplier(), 0.0);
-    assertEquals(5678, OPTIONS.maxTimeout());
-    assertSame(MOCK_EXECUTOR_FACTORY, OPTIONS.executorFactory());
-    assertEquals(20000, DEFAULT_OPTIONS.initialTimeout());
-    assertEquals(1.5, DEFAULT_OPTIONS.timeoutMultiplier(), 0.0);
-    assertEquals(100000, DEFAULT_OPTIONS.maxTimeout());
-    assertTrue(DEFAULT_OPTIONS.executorFactory() instanceof DefaultExecutorFactory);
+    assertEquals(1234, OPTIONS.getInitialTimeout());
+    assertEquals(1.6, OPTIONS.getTimeoutMultiplier(), 0.0);
+    assertEquals(5678, OPTIONS.getMaxTimeout());
+    assertSame(MOCK_EXECUTOR_FACTORY, OPTIONS.getExecutorFactory());
+    assertEquals(20000, DEFAULT_OPTIONS.getInitialTimeout());
+    assertEquals(1.5, DEFAULT_OPTIONS.getTimeoutMultiplier(), 0.0);
+    assertEquals(100000, DEFAULT_OPTIONS.getMaxTimeout());
+    assertTrue(DEFAULT_OPTIONS.getExecutorFactory() instanceof DefaultExecutorFactory);
+  }
+
+  @Test
+  public void testBuilderDeprecated() {
+    assertEquals(1234, DEPRECATED_OPTIONS.initialTimeout());
+    assertEquals(1.6, DEPRECATED_OPTIONS.timeoutMultiplier(), 0.0);
+    assertEquals(5678, DEPRECATED_OPTIONS.maxTimeout());
+    assertSame(MOCK_EXECUTOR_FACTORY, DEPRECATED_OPTIONS.executorFactory());
+    assertEquals(20000, DEPRECATED_DEFAULT_OPTIONS.initialTimeout());
+    assertEquals(1.5, DEPRECATED_DEFAULT_OPTIONS.timeoutMultiplier(), 0.0);
+    assertEquals(100000, DEPRECATED_DEFAULT_OPTIONS.maxTimeout());
+    assertTrue(DEPRECATED_DEFAULT_OPTIONS.executorFactory() instanceof DefaultExecutorFactory);
   }
 
   @Test
   public void testBuilderError() {
     try {
-      TestGrpcServiceOptions.builder().initialTimeout(0);
+      TestGrpcServiceOptions.newBuilder().setInitialTimeout(0);
       fail("IllegalArgumentException expected");
     } catch (IllegalArgumentException ex) {
       assertEquals("Initial timeout must be > 0", ex.getMessage());
     }
     try {
-      TestGrpcServiceOptions.builder().initialTimeout(-1);
+      TestGrpcServiceOptions.newBuilder().setInitialTimeout(-1);
       fail("IllegalArgumentException expected");
     } catch (IllegalArgumentException ex) {
       assertEquals("Initial timeout must be > 0", ex.getMessage());
     }
     try {
-      TestGrpcServiceOptions.builder().timeoutMultiplier(0.9);
+      TestGrpcServiceOptions.newBuilder().setTimeoutMultiplier(0.9);
       fail("IllegalArgumentException expected");
     } catch (IllegalArgumentException ex) {
       assertEquals("Timeout multiplier must be >= 1", ex.getMessage());
@@ -178,15 +200,15 @@ public class GrpcServiceOptionsTest {
 
   @Test
   public void testBuilderInvalidMaxTimeout() {
-    TestGrpcServiceOptions options = TestGrpcServiceOptions.builder()
-        .projectId("project-id")
-        .initialTimeout(1234)
-        .timeoutMultiplier(1.6)
-        .maxTimeout(123)
+    TestGrpcServiceOptions options = TestGrpcServiceOptions.newBuilder()
+        .setProjectId("project-id")
+        .setInitialTimeout(1234)
+        .setTimeoutMultiplier(1.6)
+        .setMaxTimeout(123)
         .build();
-    assertEquals(1234, options.initialTimeout());
-    assertEquals(1.6, options.timeoutMultiplier(), 0.0);
-    assertEquals(1234, options.maxTimeout());
+    assertEquals(1234, options.getInitialTimeout());
+    assertEquals(1.6, options.getTimeoutMultiplier(), 0.0);
+    assertEquals(1234, options.getMaxTimeout());
   }
 
   @Test
@@ -194,7 +216,7 @@ public class GrpcServiceOptionsTest {
     assertEquals(OPTIONS, OPTIONS_COPY);
     assertNotEquals(DEFAULT_OPTIONS, OPTIONS);
     TestGrpcServiceOptions options = OPTIONS.toBuilder()
-        .executorFactory(new DefaultExecutorFactory())
+        .setExecutorFactory(new DefaultExecutorFactory())
         .build();
     assertNotEquals(OPTIONS, options);
   }
@@ -204,7 +226,7 @@ public class GrpcServiceOptionsTest {
     assertEquals(OPTIONS.hashCode(), OPTIONS_COPY.hashCode());
     assertNotEquals(DEFAULT_OPTIONS.hashCode(), OPTIONS.hashCode());
     TestGrpcServiceOptions options = OPTIONS.toBuilder()
-        .executorFactory(new DefaultExecutorFactory())
+        .setExecutorFactory(new DefaultExecutorFactory())
         .build();
     assertNotEquals(OPTIONS.hashCode(), options.hashCode());
   }

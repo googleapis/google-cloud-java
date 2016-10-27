@@ -41,7 +41,7 @@ public class ByteArray implements Iterable<Byte>, Serializable {
   }
 
   protected ByteArray(ByteArray byteArray) {
-    this.byteString = byteArray.byteString();
+    this.byteString = byteArray.getByteString();
   }
 
   @Override
@@ -108,7 +108,12 @@ public class ByteArray implements Iterable<Byte>, Serializable {
     return byteString.newInput();
   }
 
+  @Deprecated
   protected ByteString byteString() {
+    return getByteString();
+  }
+
+  protected ByteString getByteString() {
     return byteString;
   }
 

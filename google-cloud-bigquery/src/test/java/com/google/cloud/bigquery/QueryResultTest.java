@@ -37,7 +37,13 @@ public class QueryResultTest {
   private static final QueryResult.QueryResultsPageFetcher FETCHER =
       new QueryResult.QueryResultsPageFetcher() {
         @Override
+        @Deprecated
         public QueryResult nextPage() {
+          return getNextPage();
+        }
+
+        @Override
+        public QueryResult getNextPage() {
           return null;
         }
       };
@@ -62,14 +68,14 @@ public class QueryResultTest {
     assertEquals(TOTAL_ROWS, QUERY_RESULT.getTotalRows());
     assertEquals(TOTAL_BYTES_PROCESSED, QUERY_RESULT.getTotalBytesProcessed());
     assertEquals(CACHE_HIT, QUERY_RESULT.cacheHit());
-    assertEquals(CURSOR, QUERY_RESULT.nextPageCursor());
-    assertEquals(null, QUERY_RESULT.nextPage());
+    assertEquals(CURSOR, QUERY_RESULT.getNextPageCursor());
+    assertEquals(null, QUERY_RESULT.getNextPage());
     assertEquals(null, QUERY_RESULT_INCOMPLETE.getSchema());
     assertEquals(0L, QUERY_RESULT_INCOMPLETE.getTotalRows());
     assertEquals(TOTAL_BYTES_PROCESSED, QUERY_RESULT_INCOMPLETE.getTotalBytesProcessed());
     assertEquals(false, QUERY_RESULT_INCOMPLETE.cacheHit());
-    assertEquals(null, QUERY_RESULT_INCOMPLETE.nextPageCursor());
-    assertEquals(null, QUERY_RESULT_INCOMPLETE.nextPage());
+    assertEquals(null, QUERY_RESULT_INCOMPLETE.getNextPageCursor());
+    assertEquals(null, QUERY_RESULT_INCOMPLETE.getNextPage());
   }
 
   @Test
@@ -96,9 +102,9 @@ public class QueryResultTest {
 
   private void compareQueryResult(QueryResult expected, QueryResult value) {
     assertEquals(expected, value);
-    assertEquals(expected.nextPage(), value.nextPage());
-    assertEquals(expected.nextPageCursor(), value.nextPageCursor());
-    assertEquals(expected.values(), value.values());
+    assertEquals(expected.getNextPage(), value.getNextPage());
+    assertEquals(expected.getNextPageCursor(), value.getNextPageCursor());
+    assertEquals(expected.getValues(), value.getValues());
     assertEquals(expected.getSchema(), value.getSchema());
     assertEquals(expected.getTotalRows(), value.getTotalRows());
     assertEquals(expected.getTotalBytesProcessed(), value.getTotalBytesProcessed());

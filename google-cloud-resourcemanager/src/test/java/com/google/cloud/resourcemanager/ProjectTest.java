@@ -56,7 +56,7 @@ public class ProjectTest {
   private static final Identity USER = Identity.user("abc@gmail.com");
   private static final Identity SERVICE_ACCOUNT =
       Identity.serviceAccount("service-account@gmail.com");
-  private static final Policy POLICY = Policy.builder()
+  private static final Policy POLICY = Policy.newBuilder()
       .addIdentity(Role.owner(), USER)
       .addIdentity(Role.editor(), SERVICE_ACCOUNT)
       .build();
@@ -78,7 +78,7 @@ public class ProjectTest {
   }
 
   private void initializeExpectedProject(int optionsCalls) {
-    expect(serviceMockReturnsOptions.options()).andReturn(mockOptions).times(optionsCalls);
+    expect(serviceMockReturnsOptions.getOptions()).andReturn(mockOptions).times(optionsCalls);
     replay(serviceMockReturnsOptions);
     expectedProject =
         new Project(serviceMockReturnsOptions, new ProjectInfo.BuilderImpl(PROJECT_INFO));
@@ -97,7 +97,7 @@ public class ProjectTest {
 
   @Test
   public void testBuilder() {
-    expect(resourceManager.options()).andReturn(mockOptions).times(7);
+    expect(resourceManager.getOptions()).andReturn(mockOptions).times(7);
     replay(resourceManager);
     Project.Builder builder =
         new Project.Builder(new Project(resourceManager, new ProjectInfo.BuilderImpl("wrong-id")));
@@ -114,7 +114,7 @@ public class ProjectTest {
     assertEquals(PROJECT_NUMBER, project.getProjectNumber());
     assertEquals(CREATE_TIME_MILLIS, project.getCreateTimeMillis());
     assertEquals(STATE, project.getState());
-    assertEquals(resourceManager.options(), project.getResourceManager().options());
+    assertEquals(resourceManager.getOptions(), project.getResourceManager().getOptions());
     assertNull(project.getParent());
     ResourceId parent = new ResourceId("id", "type");
     project = project.toBuilder()
@@ -130,13 +130,13 @@ public class ProjectTest {
     assertEquals(PROJECT_NUMBER, project.getProjectNumber());
     assertEquals(CREATE_TIME_MILLIS, project.getCreateTimeMillis());
     assertEquals(STATE, project.getState());
-    assertEquals(resourceManager.options(), project.getResourceManager().options());
+    assertEquals(resourceManager.getOptions(), project.getResourceManager().getOptions());
     assertEquals(parent, project.getParent());
   }
 
   @Test
   public void testBuilderDeprecated() {
-    expect(resourceManager.options()).andReturn(mockOptions).times(4);
+    expect(resourceManager.getOptions()).andReturn(mockOptions).times(4);
     replay(resourceManager);
     Project.Builder builder =
         new Project.Builder(new Project(resourceManager, new ProjectInfo.BuilderImpl("wrong-id")));
@@ -153,7 +153,7 @@ public class ProjectTest {
     assertEquals(PROJECT_NUMBER, project.projectNumber());
     assertEquals(CREATE_TIME_MILLIS, project.createTimeMillis());
     assertEquals(STATE, project.state());
-    assertEquals(resourceManager.options(), project.resourceManager().options());
+    assertEquals(resourceManager.getOptions(), project.resourceManager().getOptions());
     assertNull(project.getParent());
   }
 
@@ -172,7 +172,7 @@ public class ProjectTest {
     ProjectInfo newInfo = PROJECT_INFO.toBuilder().addLabel("k3", "v3").build();
     Project expectedProject =
         new Project(serviceMockReturnsOptions, new ProjectInfo.BuilderImpl(newInfo));
-    expect(resourceManager.options()).andReturn(mockOptions);
+    expect(resourceManager.getOptions()).andReturn(mockOptions);
     expect(resourceManager.get(PROJECT_INFO.getProjectId())).andReturn(expectedProject);
     replay(resourceManager);
     initializeProject();
@@ -191,7 +191,7 @@ public class ProjectTest {
   @Test
   public void testReloadNull() {
     initializeExpectedProject(1);
-    expect(resourceManager.options()).andReturn(mockOptions);
+    expect(resourceManager.getOptions()).andReturn(mockOptions);
     expect(resourceManager.get(PROJECT_INFO.getProjectId())).andReturn(null);
     replay(resourceManager);
     Project reloadedProject =
@@ -209,7 +209,7 @@ public class ProjectTest {
   @Test
   public void testDelete() {
     initializeExpectedProject(1);
-    expect(resourceManager.options()).andReturn(mockOptions);
+    expect(resourceManager.getOptions()).andReturn(mockOptions);
     resourceManager.delete(PROJECT_INFO.getProjectId());
     replay(resourceManager);
     initializeProject();
@@ -219,7 +219,7 @@ public class ProjectTest {
   @Test
   public void testUndelete() {
     initializeExpectedProject(1);
-    expect(resourceManager.options()).andReturn(mockOptions);
+    expect(resourceManager.getOptions()).andReturn(mockOptions);
     resourceManager.undelete(PROJECT_INFO.getProjectId());
     replay(resourceManager);
     initializeProject();
@@ -230,7 +230,7 @@ public class ProjectTest {
   public void testReplace() {
     initializeExpectedProject(2);
     Project expectedReplacedProject = expectedProject.toBuilder().addLabel("k3", "v3").build();
-    expect(resourceManager.options()).andReturn(mockOptions).times(2);
+    expect(resourceManager.getOptions()).andReturn(mockOptions).times(2);
     expect(resourceManager.replace(anyObject(Project.class))).andReturn(expectedReplacedProject);
     replay(resourceManager);
     initializeProject();
@@ -242,7 +242,7 @@ public class ProjectTest {
 
   @Test
   public void testGetPolicy() {
-    expect(resourceManager.options()).andReturn(mockOptions).times(1);
+    expect(resourceManager.getOptions()).andReturn(mockOptions).times(1);
     expect(resourceManager.getPolicy(PROJECT_ID)).andReturn(POLICY);
     replay(resourceManager);
     initializeProject();
@@ -251,7 +251,7 @@ public class ProjectTest {
 
   @Test
   public void testReplacePolicy() {
-    expect(resourceManager.options()).andReturn(mockOptions).times(1);
+    expect(resourceManager.getOptions()).andReturn(mockOptions).times(1);
     expect(resourceManager.replacePolicy(PROJECT_ID, POLICY)).andReturn(POLICY);
     replay(resourceManager);
     initializeProject();
@@ -263,7 +263,7 @@ public class ProjectTest {
     List<Boolean> response = ImmutableList.of(true, true);
     String getPermission = "resourcemanager.projects.get";
     String deletePermission = "resourcemanager.projects.delete";
-    expect(resourceManager.options()).andReturn(mockOptions).times(1);
+    expect(resourceManager.getOptions()).andReturn(mockOptions).times(1);
     expect(resourceManager.testPermissions(
             PROJECT_ID, ImmutableList.of(getPermission, deletePermission)))
         .andReturn(response);
@@ -276,7 +276,8 @@ public class ProjectTest {
   private void compareProjects(Project expected, Project value) {
     assertEquals(expected, value);
     compareProjectInfos(expected, value);
-    assertEquals(expected.getResourceManager().options(), value.getResourceManager().options());
+    assertEquals(expected.getResourceManager().getOptions(),
+        value.getResourceManager().getOptions());
   }
 
   private void compareProjectInfos(ProjectInfo expected, ProjectInfo value) {

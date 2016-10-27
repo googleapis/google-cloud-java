@@ -56,7 +56,7 @@ public class CloudStorageFileSystemTest {
 
   @Before
   public void before() {
-    CloudStorageFileSystemProvider.setStorageOptions(LocalStorageHelper.options());
+    CloudStorageFileSystemProvider.setStorageOptions(LocalStorageHelper.getOptions());
   }
 
   @Test
@@ -131,7 +131,7 @@ public class CloudStorageFileSystemTest {
           new NullPointerTester()
               .ignore(CloudStorageFileSystem.class.getMethod("equals", Object.class))
               .setDefault(CloudStorageConfiguration.class, CloudStorageConfiguration.DEFAULT)
-              .setDefault(StorageOptions.class, LocalStorageHelper.options());
+              .setDefault(StorageOptions.class, LocalStorageHelper.getOptions());
       tester.testAllPublicStaticMethods(CloudStorageFileSystem.class);
       tester.testAllPublicInstanceMethods(fs);
     }

@@ -284,11 +284,11 @@ public class StorageImplTest {
     EasyMock.expect(rpcFactoryMock.create(EasyMock.anyObject(StorageOptions.class)))
         .andReturn(storageRpcMock);
     EasyMock.replay(rpcFactoryMock);
-    options = StorageOptions.builder()
-        .projectId("projectId")
-        .clock(TIME_SOURCE)
-        .serviceRpcFactory(rpcFactoryMock)
-        .retryParams(RetryParams.noRetries())
+    options = StorageOptions.newBuilder()
+        .setProjectId("projectId")
+        .setClock(TIME_SOURCE)
+        .setServiceRpcFactory(rpcFactoryMock)
+        .setRetryParams(RetryParams.noRetries())
         .build();
   }
 
@@ -298,7 +298,7 @@ public class StorageImplTest {
   }
 
   private void initializeService() {
-    storage = options.service();
+    storage = options.getService();
     initializeServiceDependentObjects();
   }
 
@@ -314,7 +314,7 @@ public class StorageImplTest {
   public void testGetOptions() {
     EasyMock.replay(storageRpcMock);
     initializeService();
-    assertSame(options, storage.options());
+    assertSame(options, storage.getOptions());
   }
 
   @Test
@@ -611,8 +611,8 @@ public class StorageImplTest {
     initializeService();
     ImmutableList<Bucket> bucketList = ImmutableList.of(expectedBucket1, expectedBucket2);
     Page<Bucket> page = storage.list();
-    assertEquals(cursor, page.nextPageCursor());
-    assertArrayEquals(bucketList.toArray(), Iterables.toArray(page.values(), Bucket.class));
+    assertEquals(cursor, page.getNextPageCursor());
+    assertArrayEquals(bucketList.toArray(), Iterables.toArray(page.getValues(), Bucket.class));
   }
 
   @Test
@@ -622,8 +622,9 @@ public class StorageImplTest {
     EasyMock.replay(storageRpcMock);
     initializeService();
     Page<Bucket> page = storage.list();
-    assertNull(page.nextPageCursor());
-    assertArrayEquals(ImmutableList.of().toArray(), Iterables.toArray(page.values(), Bucket.class));
+    assertNull(page.getNextPageCursor());
+    assertArrayEquals(ImmutableList.of().toArray(),
+        Iterables.toArray(page.getValues(), Bucket.class));
   }
 
   @Test
@@ -637,8 +638,8 @@ public class StorageImplTest {
     initializeService();
     ImmutableList<Bucket> bucketList = ImmutableList.of(expectedBucket1, expectedBucket2);
     Page<Bucket> page = storage.list(BUCKET_LIST_PAGE_SIZE, BUCKET_LIST_PREFIX);
-    assertEquals(cursor, page.nextPageCursor());
-    assertArrayEquals(bucketList.toArray(), Iterables.toArray(page.values(), Bucket.class));
+    assertEquals(cursor, page.getNextPageCursor());
+    assertArrayEquals(bucketList.toArray(), Iterables.toArray(page.getValues(), Bucket.class));
   }
 
   @Test
@@ -661,8 +662,8 @@ public class StorageImplTest {
     assertTrue(selector.contains("nextPageToken"));
     assertTrue(selector.endsWith(")"));
     assertEquals(38, selector.length());
-    assertEquals(cursor, page.nextPageCursor());
-    assertArrayEquals(bucketList.toArray(), Iterables.toArray(page.values(), Bucket.class));
+    assertEquals(cursor, page.getNextPageCursor());
+    assertArrayEquals(bucketList.toArray(), Iterables.toArray(page.getValues(), Bucket.class));
   }
 
   @Test
@@ -677,14 +678,15 @@ public class StorageImplTest {
     initializeService();
     ImmutableList<Bucket> bucketList = ImmutableList.of(expectedBucket1, expectedBucket2);
     Page<Bucket> page = storage.list(BUCKET_LIST_EMPTY_FIELDS);
-    String selector = (String) capturedOptions.getValue().get(BUCKET_LIST_EMPTY_FIELDS.getRpcOption());
+    String selector =
+        (String) capturedOptions.getValue().get(BUCKET_LIST_EMPTY_FIELDS.getRpcOption());
     assertTrue(selector.contains("items("));
     assertTrue(selector.contains("name"));
     assertTrue(selector.contains("nextPageToken"));
     assertTrue(selector.endsWith(")"));
     assertEquals(25, selector.length());
-    assertEquals(cursor, page.nextPageCursor());
-    assertArrayEquals(bucketList.toArray(), Iterables.toArray(page.values(), Bucket.class));
+    assertEquals(cursor, page.getNextPageCursor());
+    assertArrayEquals(bucketList.toArray(), Iterables.toArray(page.getValues(), Bucket.class));
   }
 
   @Test
@@ -698,8 +700,8 @@ public class StorageImplTest {
     initializeService();
     ImmutableList<Blob> blobList = ImmutableList.of(expectedBlob1, expectedBlob2);
     Page<Blob> page = storage.list(BUCKET_NAME1);
-    assertEquals(cursor, page.nextPageCursor());
-    assertArrayEquals(blobList.toArray(), Iterables.toArray(page.values(), Blob.class));
+    assertEquals(cursor, page.getNextPageCursor());
+    assertArrayEquals(blobList.toArray(), Iterables.toArray(page.getValues(), Blob.class));
   }
 
   @Test
@@ -710,8 +712,9 @@ public class StorageImplTest {
     EasyMock.replay(storageRpcMock);
     initializeService();
     Page<Blob> page = storage.list(BUCKET_NAME1);
-    assertNull(page.nextPageCursor());
-    assertArrayEquals(ImmutableList.of().toArray(), Iterables.toArray(page.values(), Blob.class));
+    assertNull(page.getNextPageCursor());
+    assertArrayEquals(ImmutableList.of().toArray(),
+        Iterables.toArray(page.getValues(), Blob.class));
   }
 
   @Test
@@ -726,8 +729,8 @@ public class StorageImplTest {
     ImmutableList<Blob> blobList = ImmutableList.of(expectedBlob1, expectedBlob2);
     Page<Blob> page =
         storage.list(BUCKET_NAME1, BLOB_LIST_PAGE_SIZE, BLOB_LIST_PREFIX, BLOB_LIST_VERSIONS);
-    assertEquals(cursor, page.nextPageCursor());
-    assertArrayEquals(blobList.toArray(), Iterables.toArray(page.values(), Blob.class));
+    assertEquals(cursor, page.getNextPageCursor());
+    assertArrayEquals(blobList.toArray(), Iterables.toArray(page.getValues(), Blob.class));
   }
 
   @Test
@@ -759,8 +762,8 @@ public class StorageImplTest {
     assertTrue(selector.contains("nextPageToken"));
     assertTrue(selector.endsWith(")"));
     assertEquals(61, selector.length());
-    assertEquals(cursor, page.nextPageCursor());
-    assertArrayEquals(blobList.toArray(), Iterables.toArray(page.values(), Blob.class));
+    assertEquals(cursor, page.getNextPageCursor());
+    assertArrayEquals(blobList.toArray(), Iterables.toArray(page.getValues(), Blob.class));
   }
 
   @Test
@@ -782,7 +785,8 @@ public class StorageImplTest {
         capturedOptions.getValue().get(BLOB_LIST_PAGE_SIZE.getRpcOption()));
     assertEquals(BLOB_LIST_PREFIX.getValue(),
         capturedOptions.getValue().get(BLOB_LIST_PREFIX.getRpcOption()));
-    String selector = (String) capturedOptions.getValue().get(BLOB_LIST_EMPTY_FIELDS.getRpcOption());
+    String selector =
+        (String) capturedOptions.getValue().get(BLOB_LIST_EMPTY_FIELDS.getRpcOption());
     assertTrue(selector.contains("prefixes"));
     assertTrue(selector.contains("items("));
     assertTrue(selector.contains("bucket"));
@@ -790,8 +794,8 @@ public class StorageImplTest {
     assertTrue(selector.contains("nextPageToken"));
     assertTrue(selector.endsWith(")"));
     assertEquals(41, selector.length());
-    assertEquals(cursor, page.nextPageCursor());
-    assertArrayEquals(blobList.toArray(), Iterables.toArray(page.values(), Blob.class));
+    assertEquals(cursor, page.getNextPageCursor());
+    assertArrayEquals(blobList.toArray(), Iterables.toArray(page.getValues(), Blob.class));
   }
 
   @Test
@@ -806,8 +810,8 @@ public class StorageImplTest {
     initializeService();
     ImmutableList<Blob> blobList = ImmutableList.of(expectedBlob1, expectedBlob2);
     Page<Blob> page = storage.list(BUCKET_NAME1, Storage.BlobListOption.currentDirectory());
-    assertEquals(cursor, page.nextPageCursor());
-    assertArrayEquals(blobList.toArray(), Iterables.toArray(page.values(), Blob.class));
+    assertEquals(cursor, page.getNextPageCursor());
+    assertArrayEquals(blobList.toArray(), Iterables.toArray(page.getValues(), Blob.class));
   }
 
   @Test
@@ -1118,9 +1122,9 @@ public class StorageImplTest {
     EasyMock.replay(batchMock, storageRpcMock);
     initializeService();
     StorageBatch batch = storage.batch();
-    assertSame(options, batch.options());
-    assertSame(storageRpcMock, batch.storageRpc());
-    assertSame(batchMock, batch.batch());
+    assertSame(options, batch.getOptions());
+    assertSame(storageRpcMock, batch.getStorageRpc());
+    assertSame(batchMock, batch.getBatch());
     EasyMock.verify(batchMock);
   }
 
@@ -1229,7 +1233,7 @@ public class StorageImplTest {
     EasyMock.replay(storageRpcMock);
     ServiceAccountAuthCredentials authCredentials =
         ServiceAccountAuthCredentials.createFor(ACCOUNT, privateKey);
-    storage = options.toBuilder().authCredentials(authCredentials).build().service();
+    storage = options.toBuilder().setAuthCredentials(authCredentials).build().getService();
     URL url = storage.signUrl(BLOB_INFO1, 14, TimeUnit.DAYS);
     String stringUrl = url.toString();
     String expectedUrl = new StringBuilder("https://storage.googleapis.com/").append(BUCKET_NAME1)
@@ -1256,7 +1260,7 @@ public class StorageImplTest {
     EasyMock.replay(storageRpcMock);
     ServiceAccountAuthCredentials authCredentials =
         ServiceAccountAuthCredentials.createFor(ACCOUNT, privateKey);
-    storage = options.toBuilder().authCredentials(authCredentials).build().service();
+    storage = options.toBuilder().setAuthCredentials(authCredentials).build().getService();
     URL url =
         storage.signUrl(BlobInfo.newBuilder(BUCKET_NAME1, blobName).build(), 14, TimeUnit.DAYS);
     String escapedBlobName = UrlEscapers.urlPathSegmentEscaper().escape(blobName);
@@ -1284,7 +1288,7 @@ public class StorageImplTest {
     EasyMock.replay(storageRpcMock);
     ServiceAccountAuthCredentials authCredentials =
         ServiceAccountAuthCredentials.createFor(ACCOUNT, privateKey);
-    storage = options.toBuilder().authCredentials(authCredentials).build().service();
+    storage = options.toBuilder().setAuthCredentials(authCredentials).build().getService();
     URL url = storage.signUrl(BLOB_INFO1, 14, TimeUnit.DAYS,
         Storage.SignUrlOption.httpMethod(HttpMethod.POST), Storage.SignUrlOption.withContentType(),
         Storage.SignUrlOption.withMd5());
@@ -1317,7 +1321,7 @@ public class StorageImplTest {
     EasyMock.replay(storageRpcMock);
     ServiceAccountAuthCredentials authCredentials =
         ServiceAccountAuthCredentials.createFor(ACCOUNT, privateKey);
-    storage = options.toBuilder().authCredentials(authCredentials).build().service();
+    storage = options.toBuilder().setAuthCredentials(authCredentials).build().getService();
 
     for (char specialChar : specialChars) {
       String blobName = "/a" + specialChar + "b";
@@ -1682,7 +1686,8 @@ public class StorageImplTest {
         .andThrow(new StorageException(500, "internalError"))
         .andReturn(BLOB_INFO1.toPb());
     EasyMock.replay(storageRpcMock);
-    storage = options.toBuilder().retryParams(RetryParams.defaultInstance()).build().service();
+    storage =
+        options.toBuilder().setRetryParams(RetryParams.getDefaultInstance()).build().getService();
     initializeServiceDependentObjects();
     Blob readBlob = storage.get(blob);
     assertEquals(expectedBlob1, readBlob);
@@ -1695,7 +1700,8 @@ public class StorageImplTest {
     EasyMock.expect(storageRpcMock.get(blob.toPb(), EMPTY_RPC_OPTIONS))
         .andThrow(new StorageException(501, exceptionMessage));
     EasyMock.replay(storageRpcMock);
-    storage = options.toBuilder().retryParams(RetryParams.defaultInstance()).build().service();
+    storage =
+        options.toBuilder().setRetryParams(RetryParams.getDefaultInstance()).build().getService();
     initializeServiceDependentObjects();
     thrown.expect(StorageException.class);
     thrown.expectMessage(exceptionMessage);
@@ -1709,7 +1715,8 @@ public class StorageImplTest {
     EasyMock.expect(storageRpcMock.get(blob.toPb(), EMPTY_RPC_OPTIONS))
         .andThrow(new RuntimeException(exceptionMessage));
     EasyMock.replay(storageRpcMock);
-    storage = options.toBuilder().retryParams(RetryParams.defaultInstance()).build().service();
+    storage =
+        options.toBuilder().setRetryParams(RetryParams.getDefaultInstance()).build().getService();
     thrown.expect(StorageException.class);
     thrown.expectMessage(exceptionMessage);
     storage.get(blob);

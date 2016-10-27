@@ -22,7 +22,7 @@
  * <pre> {@code
  * LocalPubSubHelper helper = LocalPubSubHelper.create();
  * helper.start();
- * PubSub localPubsub = helper.getOptions().service();
+ * PubSub localPubsub = helper.getOptions().getService();
  * } </pre>
  *
  * <p>After the test:

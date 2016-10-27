@@ -80,12 +80,12 @@ public class CopyWriterTest {
     expect(rpcFactoryMock.create(anyObject(StorageOptions.class)))
         .andReturn(storageRpcMock);
     replay(rpcFactoryMock);
-    options = StorageOptions.builder()
-        .projectId("projectid")
-        .serviceRpcFactory(rpcFactoryMock)
-        .retryParams(RetryParams.noRetries())
+    options = StorageOptions.newBuilder()
+        .setProjectId("projectid")
+        .setServiceRpcFactory(rpcFactoryMock)
+        .setRetryParams(RetryParams.noRetries())
         .build();
-    result = new Blob(options.service(), new BlobInfo.BuilderImpl(RESULT_INFO));
+    result = new Blob(options.getService(), new BlobInfo.BuilderImpl(RESULT_INFO));
   }
 
   @After

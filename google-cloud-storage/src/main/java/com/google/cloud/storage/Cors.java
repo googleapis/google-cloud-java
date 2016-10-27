@@ -118,10 +118,15 @@ public final class Cors implements Serializable {
 
     @Override
     public String toString() {
-      return value();
+      return getValue();
     }
 
+    @Deprecated
     public String value() {
+      return getValue();
+    }
+
+    public String getValue() {
       return value;
     }
   }

@@ -22,7 +22,7 @@ import com.google.cloud.storage.StorageOptions;
 
 /**
  * Utility to create an in-memory storage configuration for testing. Storage options can be
- * obtained via the {@link #options()} method. Returned options will point to FakeStorageRpc.
+ * obtained via the {@link #getOptions()} method. Returned options will point to FakeStorageRpc.
  */
 class LocalStorageHelper {
 
@@ -33,11 +33,11 @@ class LocalStorageHelper {
    * Returns a {@link StorageOptions} that use the static FakeStorageRpc instance, and resets it
    * first so you start from a clean slate. That instance will throw if you pass it any option.
    */
-  public static StorageOptions options() {
+  public static StorageOptions getOptions() {
     instance.reset();
-    return StorageOptions.builder()
-      .projectId("dummy-project-for-testing")
-      .serviceRpcFactory(
+    return StorageOptions.newBuilder()
+      .setProjectId("dummy-project-for-testing")
+      .setServiceRpcFactory(
         new ServiceRpcFactory<StorageRpc, StorageOptions>() {
           @Override
           public StorageRpc create(StorageOptions options) {
@@ -52,9 +52,9 @@ class LocalStorageHelper {
    * option.
    */
   public static StorageOptions customOptions(final boolean throwIfOptions) {
-    return StorageOptions.builder()
-      .projectId("dummy-project-for-testing")
-      .serviceRpcFactory(
+    return StorageOptions.newBuilder()
+      .setProjectId("dummy-project-for-testing")
+      .setServiceRpcFactory(
          new ServiceRpcFactory<StorageRpc, StorageOptions>() {
            @Override
            public StorageRpc create(StorageOptions options) {

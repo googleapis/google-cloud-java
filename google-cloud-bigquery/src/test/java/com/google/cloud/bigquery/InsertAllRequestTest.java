@@ -323,7 +323,8 @@ public class InsertAllRequestTest {
     request = InsertAllRequest.of(TABLE_INFO, ROWS.get(0), ROWS.get(1));
     assertEquals(TABLE_ID, request.getTable());
     assertEquals(ROWS, request.getRows());
-    request = InsertAllRequest.of(TABLE_ID.getDataset(), TABLE_ID.getTable(), ROWS.get(0), ROWS.get(1));
+    request =
+        InsertAllRequest.of(TABLE_ID.getDataset(), TABLE_ID.getTable(), ROWS.get(0), ROWS.get(1));
     assertEquals(TABLE_ID, request.getTable());
     assertEquals(ROWS, request.getRows());
   }

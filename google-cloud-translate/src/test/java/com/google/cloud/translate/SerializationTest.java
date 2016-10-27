@@ -46,12 +46,12 @@ public class SerializationTest extends BaseSerializationTest {
 
   @Override
   protected Serializable[] serializableObjects() {
-    TranslateOptions options = TranslateOptions.builder()
-        .apiKey(API_KEY)
-        .authCredentials(AuthCredentials.createForAppEngine())
+    TranslateOptions options = TranslateOptions.newBuilder()
+        .setApiKey(API_KEY)
+        .setAuthCredentials(AuthCredentials.createForAppEngine())
         .build();
     TranslateOptions otherOptions = options.toBuilder()
-        .authCredentials(null)
+        .setAuthCredentials(null)
         .build();
     return new Serializable[]{DETECTION, TRANSLATION, TRANSLATE_EXCEPTION, LANGUAGE_LIST_OPTION,
         TRANSLATE_OPTION, options, otherOptions};

@@ -146,7 +146,7 @@ public class Disk extends DiskInfo {
   Disk(Compute compute, DiskInfo.BuilderImpl infoBuilder) {
     super(infoBuilder);
     this.compute = checkNotNull(compute);
-    this.options = compute.options();
+    this.options = compute.getOptions();
   }
 
   /**
@@ -279,7 +279,7 @@ public class Disk extends DiskInfo {
 
   private void readObject(ObjectInputStream input) throws IOException, ClassNotFoundException {
     input.defaultReadObject();
-    this.compute = options.service();
+    this.compute = options.getService();
   }
 
   static Disk fromPb(Compute compute, com.google.api.services.compute.model.Disk diskPb) {

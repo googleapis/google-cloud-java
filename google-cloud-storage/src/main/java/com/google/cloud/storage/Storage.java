@@ -104,7 +104,13 @@ public interface Storage extends Service<StorageOptions> {
     }
 
     @Override
+    @Deprecated
     public String selector() {
+      return getSelector();
+    }
+
+    @Override
+    public String getSelector() {
       return selector;
     }
   }
@@ -144,7 +150,13 @@ public interface Storage extends Service<StorageOptions> {
     }
 
     @Override
+    @Deprecated
     public String selector() {
+      return getSelector();
+    }
+
+    @Override
+    public String getSelector() {
       return selector;
     }
   }
@@ -2026,8 +2038,8 @@ public interface Storage extends Service<StorageOptions> {
    * but also don't want to require users to explicitly log in. Signing a URL requires
    * a service account signer. If a {@link ServiceAccountAuthCredentials} or an
    * {@link AppEngineAuthCredentials} was passed to
-   * {@link StorageOptions.Builder#authCredentials(AuthCredentials)} or the default credentials are
-   * being used and the environment variable {@code GOOGLE_APPLICATION_CREDENTIALS} is set, then
+   * {@link StorageOptions.Builder#setAuthCredentials(AuthCredentials)} or the default credentials
+   * are being used and the environment variable {@code GOOGLE_APPLICATION_CREDENTIALS} is set, then
    * {@code signUrl} will use that credentials to sign the URL. If the credentials passed to
    * {@link StorageOptions} do not implement {@link ServiceAccountSigner} (this is the case for
    * Compute Engine credentials and Google Cloud SDK credentials) then {@code signUrl} will throw an
@@ -2037,7 +2049,8 @@ public interface Storage extends Service<StorageOptions> {
    * <p>A service account signer is looked for in the following order:
    * <ol>
    *   <li>The signer passed with the option {@link SignUrlOption#signWith(ServiceAccountSigner)}
-   *   <li>The credentials passed to {@link StorageOptions.Builder#authCredentials(AuthCredentials)}
+   *   <li>The credentials passed to
+   *   {@link StorageOptions.Builder#setAuthCredentials(AuthCredentials)}
    *   <li>The default credentials, if no credentials were passed to {@link StorageOptions}
    * </ol>
    *

@@ -39,33 +39,33 @@ public class ComputeExceptionTest {
   @Test
   public void testResourceManagerException() {
     ComputeException exception = new ComputeException(500, "message");
-    assertEquals(500, exception.code());
+    assertEquals(500, exception.getCode());
     assertEquals("message", exception.getMessage());
-    assertNull(exception.reason());
-    assertTrue(exception.retryable());
-    assertTrue(exception.idempotent());
+    assertNull(exception.getReason());
+    assertTrue(exception.isRetryable());
+    assertTrue(exception.isIdempotent());
 
     exception = new ComputeException(403, "message");
-    assertEquals(403, exception.code());
+    assertEquals(403, exception.getCode());
     assertEquals("message", exception.getMessage());
-    assertNull(exception.reason());
-    assertFalse(exception.retryable());
-    assertTrue(exception.idempotent());
+    assertNull(exception.getReason());
+    assertFalse(exception.isRetryable());
+    assertTrue(exception.isIdempotent());
 
     IOException cause = new SocketTimeoutException();
     exception = new ComputeException(cause);
-    assertNull(exception.reason());
+    assertNull(exception.getReason());
     assertNull(exception.getMessage());
-    assertTrue(exception.retryable());
-    assertTrue(exception.idempotent());
+    assertTrue(exception.isRetryable());
+    assertTrue(exception.isIdempotent());
     assertSame(cause, exception.getCause());
 
     exception = new ComputeException(403, "message", cause);
-    assertEquals(403, exception.code());
+    assertEquals(403, exception.getCode());
     assertEquals("message", exception.getMessage());
-    assertNull(exception.reason());
-    assertFalse(exception.retryable());
-    assertTrue(exception.idempotent());
+    assertNull(exception.getReason());
+    assertFalse(exception.isRetryable());
+    assertTrue(exception.isIdempotent());
     assertSame(cause, exception.getCause());
   }
 
@@ -78,10 +78,10 @@ public class ComputeExceptionTest {
     try {
       ComputeException.translateAndThrow(exceptionMock);
     } catch (BaseServiceException ex) {
-      assertEquals(500, ex.code());
+      assertEquals(500, ex.getCode());
       assertEquals("message", ex.getMessage());
-      assertTrue(ex.retryable());
-      assertTrue(ex.idempotent());
+      assertTrue(ex.isRetryable());
+      assertTrue(ex.isIdempotent());
     } finally {
       verify(exceptionMock);
     }
@@ -93,10 +93,10 @@ public class ComputeExceptionTest {
     try {
       ComputeException.translateAndThrow(exceptionMock);
     } catch (BaseServiceException ex) {
-      assertEquals(ComputeException.UNKNOWN_CODE, ex.code());
+      assertEquals(ComputeException.UNKNOWN_CODE, ex.getCode());
       assertEquals("message", ex.getMessage());
-      assertFalse(ex.retryable());
-      assertTrue(ex.idempotent());
+      assertFalse(ex.isRetryable());
+      assertTrue(ex.isIdempotent());
       assertSame(cause, ex.getCause());
     } finally {
       verify(exceptionMock);

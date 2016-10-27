@@ -39,11 +39,11 @@ import java.io.Serializable;
 
 public class SerializationTest extends BaseSerializationTest {
 
-  private static final Logging LOGGING = LoggingOptions.builder()
-      .projectId("p")
-      .authCredentials(AuthCredentials.noAuth())
-      .host("localhost")
-      .build().service();
+  private static final Logging LOGGING = LoggingOptions.newBuilder()
+      .setProjectId("p")
+      .setAuthCredentials(AuthCredentials.noAuth())
+      .setHost("localhost")
+      .build().getService();
   private static final HttpRequest HTTP_REQUEST = HttpRequest.newBuilder()
       .setRequestMethod(HttpRequest.RequestMethod.GET)
       .setStatus(404)
@@ -80,9 +80,9 @@ public class SerializationTest extends BaseSerializationTest {
 
   @Override
   protected Serializable[] serializableObjects() {
-    LoggingOptions options = LoggingOptions.builder()
-        .projectId("p1")
-        .initialTimeout(1234)
+    LoggingOptions options = LoggingOptions.newBuilder()
+        .setProjectId("p1")
+        .setInitialTimeout(1234)
         .build();
     return new Serializable[]{options, HTTP_REQUEST, OPERATION, STRING_PAYLOAD, JSON_PAYLOAD,
         PROTO_PAYLOAD, ENTRY, METRIC_INFO, METRIC, BUCKET_DESTINATION, DATASET_DESTINATION,

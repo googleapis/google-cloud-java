@@ -58,7 +58,7 @@ public class UserDefinedFunctionTest {
 
   private void compareUserDefinedFunction(UserDefinedFunction expected, UserDefinedFunction value) {
     assertEquals(expected, value);
-    assertEquals(expected.type(), value.type());
-    assertEquals(expected.content(), value.content());
+    assertEquals(expected.getType(), value.getType());
+    assertEquals(expected.getContent(), value.getContent());
   }
 }
