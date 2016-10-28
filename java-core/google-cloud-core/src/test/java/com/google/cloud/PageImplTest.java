@@ -31,17 +31,40 @@ public class PageImplTest {
       .addAll(NEXT_VALUES)
       .build();
 
+  private static class TestPageFetcher implements PageImpl.NextPageFetcher<String> {
+    private static final long serialVersionUID = -8316752901403429976L;
+
+    private final PageImpl<String> nextResult;
+
+    TestPageFetcher(PageImpl<String> nextResult) {
+      this.nextResult = nextResult;
+    }
+
+    @Override
+    public Page<String> nextPage() {
+      return getNextPage();
+    }
+
+    @Override
+    public Page<String> getNextPage() {
+      return nextResult;
+    }
+  }
+
   @Test
   public void testPage() {
     final PageImpl<String> nextResult = new PageImpl<>(null, "c", NEXT_VALUES);
-    PageImpl.NextPageFetcher<String> fetcher = new PageImpl.NextPageFetcher<String>() {
-      private static final long serialVersionUID = -1714571149183431798L;
+    PageImpl.NextPageFetcher<String> fetcher = new TestPageFetcher(nextResult);
+    PageImpl<String> result = new PageImpl<>(fetcher, "c", VALUES);
+    assertEquals(nextResult, result.getNextPage());
+    assertEquals("c", result.getNextPageCursor());
+    assertEquals(VALUES, result.getValues());
+  }
 
-      @Override
-      public PageImpl<String> nextPage() {
-        return nextResult;
-      }
-    };
+  @Test
+  public void testPageDeprecated() {
+    final PageImpl<String> nextResult = new PageImpl<>(null, "c", NEXT_VALUES);
+    PageImpl.NextPageFetcher<String> fetcher = new TestPageFetcher(nextResult);
     PageImpl<String> result = new PageImpl<>(fetcher, "c", VALUES);
     assertEquals(nextResult, result.nextPage());
     assertEquals("c", result.nextPageCursor());
@@ -51,12 +74,7 @@ public class PageImplTest {
   @Test
   public void testIterateAll() {
     final PageImpl<String> nextResult = new PageImpl<>(null, "c", NEXT_VALUES);
-    PageImpl.NextPageFetcher<String> fetcher = new PageImpl.NextPageFetcher<String>() {
-      @Override
-      public PageImpl<String> nextPage() {
-        return nextResult;
-      }
-    };
+    PageImpl.NextPageFetcher<String> fetcher = new TestPageFetcher(nextResult);
     PageImpl<String> result = new PageImpl<>(fetcher, "c", VALUES);
     assertEquals(ALL_VALUES, ImmutableList.copyOf(result.iterateAll()));
   }

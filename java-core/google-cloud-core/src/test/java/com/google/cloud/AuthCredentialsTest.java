@@ -89,11 +89,29 @@ public class AuthCredentialsTest {
   @Test
   public void testNoAuthCredentials() {
     assertSame(NO_AUTH_CREDENTIALS, AuthCredentials.noAuth());
+    assertNull(NO_AUTH_CREDENTIALS.getCredentials());
+  }
+
+  @Test
+  public void testNoAuthCredentialsDeprecated() {
+    assertSame(NO_AUTH_CREDENTIALS, AuthCredentials.noAuth());
     assertNull(NO_AUTH_CREDENTIALS.credentials());
   }
 
   @Test
   public void testOAuth2AuthCredentials() {
+    AccessToken accessToken = OAUTH2_AUTH_CREDENTIALS.getCredentials().getAccessToken();
+    assertEquals(ACCESS_TOKEN, accessToken.getTokenValue());
+    assertEquals(EXPIRATION_DATE, accessToken.getExpirationTime());
+    OAuth2AuthCredentials oAuth2AuthCredentials =
+        AuthCredentials.createFor(ACCESS_TOKEN);
+    accessToken = oAuth2AuthCredentials.getCredentials().getAccessToken();
+    assertEquals(ACCESS_TOKEN, accessToken.getTokenValue());
+    assertNull(accessToken.getExpirationTime());
+  }
+
+  @Test
+  public void testOAuth2AuthCredentialsDeprecated() {
     AccessToken accessToken = OAUTH2_AUTH_CREDENTIALS.credentials().getAccessToken();
     assertEquals(ACCESS_TOKEN, accessToken.getTokenValue());
     assertEquals(EXPIRATION_DATE, accessToken.getExpirationTime());
@@ -108,6 +126,17 @@ public class AuthCredentialsTest {
   public void testServiceAccountFromJson() throws IOException, SignatureException {
     ServiceAccountAuthCredentials serviceAccountAuthCredentials =
         AuthCredentials.createForJson(new ByteArrayInputStream(JSON_KEY.getBytes()));
+    ServiceAccountCredentials credentials = serviceAccountAuthCredentials.getCredentials();
+    assertEquals(SERVICE_ACCOUNT, serviceAccountAuthCredentials.getAccount());
+    assertEquals(SERVICE_ACCOUNT, credentials.getClientEmail());
+    assertEquals(privateKey, credentials.getPrivateKey());
+    assertArrayEquals(signedBytes, serviceAccountAuthCredentials.sign(BYTES_TO_SIGN));
+  }
+
+  @Test
+  public void testServiceAccountFromJsonDeprecated() throws IOException, SignatureException {
+    ServiceAccountAuthCredentials serviceAccountAuthCredentials =
+        AuthCredentials.createForJson(new ByteArrayInputStream(JSON_KEY.getBytes()));
     ServiceAccountCredentials credentials = serviceAccountAuthCredentials.credentials();
     assertEquals(SERVICE_ACCOUNT, serviceAccountAuthCredentials.account());
     assertEquals(SERVICE_ACCOUNT, credentials.getClientEmail());
@@ -117,6 +146,17 @@ public class AuthCredentialsTest {
 
   @Test
   public void testServiceAccountFromKey() throws IOException, SignatureException {
+    ServiceAccountAuthCredentials serviceAccountAuthCredentials =
+        AuthCredentials.createFor(SERVICE_ACCOUNT, privateKey);
+    ServiceAccountCredentials credentials = serviceAccountAuthCredentials.getCredentials();
+    assertEquals(SERVICE_ACCOUNT, serviceAccountAuthCredentials.getAccount());
+    assertEquals(SERVICE_ACCOUNT, credentials.getClientEmail());
+    assertEquals(privateKey, credentials.getPrivateKey());
+    assertArrayEquals(signedBytes, serviceAccountAuthCredentials.sign(BYTES_TO_SIGN));
+  }
+
+  @Test
+  public void testServiceAccountFromKeyDeprecated() throws IOException, SignatureException {
     ServiceAccountAuthCredentials serviceAccountAuthCredentials =
         AuthCredentials.createFor(SERVICE_ACCOUNT, privateKey);
     ServiceAccountCredentials credentials = serviceAccountAuthCredentials.credentials();

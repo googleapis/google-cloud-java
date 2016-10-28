@@ -54,7 +54,13 @@ public interface ServiceAccountSigner {
   /**
    * Returns the service account associated with the signer.
    */
+  @Deprecated
   String account();
+
+  /**
+   * Returns the service account associated with the signer.
+   */
+  String getAccount();
 
   /**
    * Signs the provided bytes using the private key associated with the service account.

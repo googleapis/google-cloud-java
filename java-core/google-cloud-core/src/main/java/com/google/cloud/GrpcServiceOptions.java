@@ -158,19 +158,42 @@ public abstract class GrpcServiceOptions<ServiceT extends Service<OptionsT>, Ser
      *
      * @return the builder
      */
+    @Deprecated
     public B executorFactory(ExecutorFactory<ScheduledExecutorService> executorFactory) {
+      return setExecutorFactory(executorFactory);
+    }
+
+    /**
+     * Sets the scheduled executor factory. This method can be used to provide an user-defined
+     * scheduled executor to execute requests.
+     *
+     * @return the builder
+     */
+    public B setExecutorFactory(ExecutorFactory<ScheduledExecutorService> executorFactory) {
       this.executorFactory = executorFactory;
       return self();
     }
 
     /**
      * Sets the timeout for the initial RPC, in milliseconds. Subsequent calls will use this value
-     * adjusted according to {@link #timeoutMultiplier(double)}. Default value is 20000.
+     * adjusted according to {@link #setTimeoutMultiplier(double)}. Default value is 20000.
      *
      * @return the builder
      * @throws IllegalArgumentException if the provided timeout is &lt; 0
      */
+    @Deprecated
     public B initialTimeout(int initialTimeout) {
+      return setInitialTimeout(initialTimeout);
+    }
+
+    /**
+     * Sets the timeout for the initial RPC, in milliseconds. Subsequent calls will use this value
+     * adjusted according to {@link #setTimeoutMultiplier(double)}. Default value is 20000.
+     *
+     * @return the builder
+     * @throws IllegalArgumentException if the provided timeout is &lt; 0
+     */
+    public B setInitialTimeout(int initialTimeout) {
       Preconditions.checkArgument(initialTimeout > 0, "Initial timeout must be > 0");
       this.initialTimeout = initialTimeout;
       return self();
@@ -183,7 +206,19 @@ public abstract class GrpcServiceOptions<ServiceT extends Service<OptionsT>, Ser
      * @return the builder
      * @throws IllegalArgumentException if the provided timeout multiplier is &lt; 0
      */
+    @Deprecated
     public B timeoutMultiplier(double timeoutMultiplier) {
+      return setTimeoutMultiplier(timeoutMultiplier);
+    }
+
+    /**
+     * Sets the timeout multiplier. This value is used to compute the timeout for a retried RPC.
+     * Timeout is computed as {@code timeoutMultiplier * previousTimeout}. Default value is 1.5.
+     *
+     * @return the builder
+     * @throws IllegalArgumentException if the provided timeout multiplier is &lt; 0
+     */
+    public B setTimeoutMultiplier(double timeoutMultiplier) {
       Preconditions.checkArgument(timeoutMultiplier >= 1.0, "Timeout multiplier must be >= 1");
       this.timeoutMultiplier = timeoutMultiplier;
       return self();
@@ -191,12 +226,24 @@ public abstract class GrpcServiceOptions<ServiceT extends Service<OptionsT>, Ser
 
     /**
      * Sets the maximum timeout for a RPC call, in milliseconds. Default value is 100000. If
-     * {@code maxTimeout} is lower than the initial timeout the {@link #initialTimeout(int)} value
-     * is used instead.
+     * {@code maxTimeout} is lower than the initial timeout the {@link #setInitialTimeout(int)}
+     * value is used instead.
      *
      * @return the builder
      */
+    @Deprecated
     public B maxTimeout(int maxTimeout) {
+      return setMaxTimeout(maxTimeout);
+    }
+
+    /**
+     * Sets the maximum timeout for a RPC call, in milliseconds. Default value is 100000. If
+     * {@code maxTimeout} is lower than the initial timeout the {@link #setInitialTimeout(int)}
+     * value is used instead.
+     *
+     * @return the builder
+     */
+    public B setMaxTimeout(int maxTimeout) {
       this.maxTimeout = maxTimeout;
       return self();
     }
@@ -219,47 +266,80 @@ public abstract class GrpcServiceOptions<ServiceT extends Service<OptionsT>, Ser
   /**
    * Returns a scheduled executor service provider.
    */
+  @Deprecated
   protected ExecutorFactory<ScheduledExecutorService> executorFactory() {
+    return getExecutorFactory();
+  }
+
+  /**
+   * Returns a scheduled executor service provider.
+   */
+  protected ExecutorFactory<ScheduledExecutorService> getExecutorFactory() {
     return executorFactory;
   }
 
   /**
    * Returns a builder for API call settings.
    */
+  @Deprecated
   protected UnaryCallSettings.Builder apiCallSettings() {
+    return getApiCallSettings();
+  }
+
+  /**
+   * Returns a builder for API call settings.
+   */
+  protected UnaryCallSettings.Builder getApiCallSettings() {
     // todo(mziccard): specify timeout these settings:
     // retryParams().retryMaxAttempts(), retryParams().retryMinAttempts()
     final RetrySettings.Builder builder = RetrySettings.newBuilder()
-        .setTotalTimeout(Duration.millis(retryParams().totalRetryPeriodMillis()))
-        .setInitialRpcTimeout(Duration.millis(initialTimeout()))
-        .setRpcTimeoutMultiplier(timeoutMultiplier())
-        .setMaxRpcTimeout(Duration.millis(maxTimeout()))
-        .setInitialRetryDelay(Duration.millis(retryParams().initialRetryDelayMillis()))
-        .setRetryDelayMultiplier(retryParams().retryDelayBackoffFactor())
-        .setMaxRetryDelay(Duration.millis(retryParams().maxRetryDelayMillis()));
+        .setTotalTimeout(Duration.millis(getRetryParams().getTotalRetryPeriodMillis()))
+        .setInitialRpcTimeout(Duration.millis(getInitialTimeout()))
+        .setRpcTimeoutMultiplier(getTimeoutMultiplier())
+        .setMaxRpcTimeout(Duration.millis(getMaxTimeout()))
+        .setInitialRetryDelay(Duration.millis(getRetryParams().getInitialRetryDelayMillis()))
+        .setRetryDelayMultiplier(getRetryParams().getRetryDelayBackoffFactor())
+        .setMaxRetryDelay(Duration.millis(getRetryParams().getMaxRetryDelayMillis()));
     return UnaryCallSettings.newBuilder().setRetrySettingsBuilder(builder);
   }
 
   /**
    * Returns a builder for connection-related settings.
    */
+  @Deprecated
   protected ConnectionSettings.Builder connectionSettings() {
-    HostAndPort hostAndPort = HostAndPort.fromString(host());
+    return getConnectionSettings();
+  }
+
+  /**
+   * Returns a builder for connection-related settings.
+   */
+  protected ConnectionSettings.Builder getConnectionSettings() {
+    HostAndPort hostAndPort = HostAndPort.fromString(getHost());
     ConnectionSettings.Builder builder = ConnectionSettings.newBuilder()
         .setServiceAddress(hostAndPort.getHostText())
         .setPort(hostAndPort.getPort());
-    GoogleCredentials credentials = authCredentials().credentials();
+    GoogleCredentials credentials = getAuthCredentials().getCredentials();
     if (credentials != null) {
-      builder.provideCredentialsWith(credentials.createScoped(scopes()));
+      builder.provideCredentialsWith(credentials.createScoped(getScopes()));
     }
     return builder;
   }
 
   /**
    * Returns the timeout for the initial RPC, in milliseconds. Subsequent calls will use this value
-   * adjusted according to {@link #timeoutMultiplier()}. Default value is 20000.
+   * adjusted according to {@link #getTimeoutMultiplier()}. Default value is 20000.
    */
+  @Deprecated
   public int initialTimeout() {
+    return getInitialTimeout();
+  }
+
+  /**
+   * Returns the timeout for the initial RPC, in milliseconds. Subsequent calls will use this value
+   * adjusted according to {@link #getTimeoutMultiplier()}. Default value is 20000.
+   */
+  public int getInitialTimeout() {
     return initialTimeout;
   }
 
@@ -267,14 +347,31 @@ public abstract class GrpcServiceOptions<ServiceT extends Service<OptionsT>, Ser
    * Returns the timeout multiplier. This values is used to compute the timeout for a RPC. Timeout
    * is computed as {@code timeoutMultiplier * previousTimeout}. Default value is 1.5.
    */
+  @Deprecated
   public double timeoutMultiplier() {
+    return getTimeoutMultiplier();
+  }
+
+  /**
+   * Returns the timeout multiplier. This values is used to compute the timeout for a RPC. Timeout
+   * is computed as {@code timeoutMultiplier * previousTimeout}. Default value is 1.5.
+   */
+  public double getTimeoutMultiplier() {
     return timeoutMultiplier;
   }
 
   /**
    * Returns the maximum timeout for a RPC call, in milliseconds. Default value is 100000.
    */
+  @Deprecated
   public int maxTimeout() {
+    return getMaxTimeout();
+  }
+
+  /**
+   * Returns the maximum timeout for a RPC call, in milliseconds. Default value is 100000.
+   */
+  public int getMaxTimeout() {
     return maxTimeout;
   }
 

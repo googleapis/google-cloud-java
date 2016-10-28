@@ -70,7 +70,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
   private static final String MANIFEST_VERSION_KEY = "Implementation-Version";
   private static final String ARTIFACT_ID = "google-cloud-core";
   private static final String LIBRARY_NAME = "gcloud-java";
-  private static final String LIBRARY_VERSION = getLibraryVersion();
+  private static final String LIBRARY_VERSION = defaultLibraryVersion();
   private static final String APPLICATION_NAME =
       LIBRARY_VERSION == null ? LIBRARY_NAME : LIBRARY_NAME + "/" + LIBRARY_VERSION;
   private static final long serialVersionUID = 3049375916337507361L;
@@ -131,7 +131,15 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
     /**
      * Sets the service factory.
      */
+    @Deprecated
     public B serviceFactory(ServiceFactory<ServiceT, OptionsT> serviceFactory) {
+      return setServiceFactory(serviceFactory);
+    }
+
+    /**
+     * Sets the service factory.
+     */
+    public B setServiceFactory(ServiceFactory<ServiceT, OptionsT> serviceFactory) {
       this.serviceFactory = serviceFactory;
       return self();
     }
@@ -143,7 +151,19 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
      * @param clock the clock to set
      * @return the builder
      */
+    @Deprecated
     public B clock(Clock clock) {
+      return setClock(clock);
+    }
+
+    /**
+     * Sets the service's clock. The clock is mainly used for testing purpose. {@link Clock} will be
+     * replaced by Java8's {@code java.time.Clock}.
+     *
+     * @param clock the clock to set
+     * @return the builder
+     */
+    public B setClock(Clock clock) {
       this.clock = clock;
       return self();
     }
@@ -153,7 +173,17 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
      *
      * @return the builder
      */
+    @Deprecated
     public B projectId(String projectId) {
+      return setProjectId(projectId);
+    }
+
+    /**
+     * Sets project id.
+     *
+     * @return the builder
+     */
+    public B setProjectId(String projectId) {
       this.projectId = projectId;
       return self();
     }
@@ -163,7 +193,17 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
      *
      * @return the builder
      */
+    @Deprecated
     public B host(String host) {
+      return setHost(host);
+    }
+
+    /**
+     * Sets service host.
+     *
+     * @return the builder
+     */
+    public B setHost(String host) {
       this.host = host;
       return self();
     }
@@ -173,19 +213,41 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
      *
      * @return the builder
      */
+    @Deprecated
     public B authCredentials(AuthCredentials authCredentials) {
+      return setAuthCredentials(authCredentials);
+    }
+
+    /**
+     * Sets the service authentication credentials.
+     *
+     * @return the builder
+     */
+    public B setAuthCredentials(AuthCredentials authCredentials) {
       this.authCredentials = authCredentials;
       return self();
     }
 
     /**
      * Sets configuration parameters for request retries. If no configuration is set
-     * {@link RetryParams#defaultInstance()} is used. To disable retries, supply
+     * {@link RetryParams#getDefaultInstance()} is used. To disable retries, supply
      * {@link RetryParams#noRetries()} here.
      *
      * @return the builder
      */
+    @Deprecated
     public B retryParams(RetryParams retryParams) {
+      return setRetryParams(retryParams);
+    }
+
+    /**
+     * Sets configuration parameters for request retries. If no configuration is set
+     * {@link RetryParams#getDefaultInstance()} is used. To disable retries, supply
+     * {@link RetryParams#noRetries()} here.
+     *
+     * @return the builder
+     */
+    public B setRetryParams(RetryParams retryParams) {
       this.retryParams = retryParams;
       return self();
     }
@@ -195,7 +257,17 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
      *
      * @return the builder
      */
+    @Deprecated
     public B serviceRpcFactory(ServiceRpcFactory<ServiceRpcT, OptionsT> serviceRpcFactory) {
+      return setServiceRpcFactory(serviceRpcFactory);
+    }
+
+    /**
+     * Sets the factory for rpc services.
+     *
+     * @return the builder
+     */
+    public B setServiceRpcFactory(ServiceRpcFactory<ServiceRpcT, OptionsT> serviceRpcFactory) {
       this.serviceRpcFactory = serviceRpcFactory;
       return self();
     }
@@ -204,23 +276,23 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
   protected ServiceOptions(Class<? extends ServiceFactory<ServiceT, OptionsT>> serviceFactoryClass,
       Class<? extends ServiceRpcFactory<ServiceRpcT, OptionsT>> rpcFactoryClass,
       Builder<ServiceT, ServiceRpcT, OptionsT, ?> builder) {
-    projectId = builder.projectId != null ? builder.projectId : defaultProject();
+    projectId = builder.projectId != null ? builder.projectId : getDefaultProject();
     if (projectIdRequired()) {
       checkArgument(
           projectId != null,
           "A project ID is required for this service but could not be determined from the builder "
           + "or the environment.  Please set a project ID using the builder.");
     }
-    host = firstNonNull(builder.host, defaultHost());
+    host = firstNonNull(builder.host, getDefaultHost());
     authCredentials =
         builder.authCredentials != null ? builder.authCredentials : defaultAuthCredentials();
     authCredentialsState = authCredentials != null ? authCredentials.capture() : null;
     retryParams = firstNonNull(builder.retryParams, defaultRetryParams());
     serviceFactory = firstNonNull(builder.serviceFactory,
-        getFromServiceLoader(serviceFactoryClass, defaultServiceFactory()));
+        getFromServiceLoader(serviceFactoryClass, getDefaultServiceFactory()));
     serviceFactoryClassName = serviceFactory.getClass().getName();
     serviceRpcFactory = firstNonNull(builder.serviceRpcFactory,
-        getFromServiceLoader(rpcFactoryClass, defaultRpcFactory()));
+        getFromServiceLoader(rpcFactoryClass, getDefaultRpcFactory()));
     serviceRpcFactoryClassName = serviceRpcFactory.getClass().getName();
     clock = firstNonNull(builder.clock, Clock.defaultClock());
   }
@@ -256,11 +328,21 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
     return System.getProperty("com.google.appengine.application.id");
   }
 
+  @Deprecated
   protected String defaultHost() {
+    return getDefaultHost();
+  }
+
+  protected String getDefaultHost() {
     return DEFAULT_HOST;
   }
 
+  @Deprecated
   protected String defaultProject() {
+    return getDefaultProject();
+  }
+
+  protected String getDefaultProject() {
     String projectId = System.getProperty(PROJECT_ENV_NAME, System.getenv(PROJECT_ENV_NAME));
     if (projectId == null) {
       projectId =
@@ -385,16 +467,26 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
     return project;
   }
 
-  @SuppressWarnings("unchecked")
+  @Deprecated
   public ServiceT service() {
+    return getService();
+  }
+
+  @SuppressWarnings("unchecked")
+  public ServiceT getService() {
     if (service == null) {
       service = serviceFactory.create((OptionsT) this);
     }
     return service;
   }
 
-  @SuppressWarnings("unchecked")
+  @Deprecated
   public ServiceRpcT rpc() {
+    return getRpc();
+  }
+
+  @SuppressWarnings("unchecked")
+  public ServiceRpcT getRpc() {
     if (rpc == null) {
       rpc = serviceRpcFactory.create((OptionsT) this);
     }
@@ -405,29 +497,63 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
    * Returns the project id. Return value can be null (for services that don't require a project
    * id).
    */
+  @Deprecated
   public String projectId() {
+    return getProjectId();
+  }
+
+  /**
+   * Returns the project id. Return value can be null (for services that don't require a project
+   * id).
+   */
+  public String getProjectId() {
     return projectId;
   }
 
   /**
    * Returns the service host.
    */
+  @Deprecated
   public String host() {
+    return getHost();
+  }
+
+  /**
+   * Returns the service host.
+   */
+  public String getHost() {
     return host;
   }
 
   /**
    * Returns the authentication credentials.
    */
+  @Deprecated
   public AuthCredentials authCredentials() {
+    return getAuthCredentials();
+  }
+
+  /**
+   * Returns the authentication credentials.
+   */
+  public AuthCredentials getAuthCredentials() {
     return authCredentials;
   }
 
   /**
    * Returns configuration parameters for request retries. By default requests are retried:
-   * {@link RetryParams#defaultInstance()} is used.
+   * {@link RetryParams#getDefaultInstance()} is used.
    */
+  @Deprecated
   public RetryParams retryParams() {
+    return getRetryParams();
+  }
+
+  /**
+   * Returns configuration parameters for request retries. By default requests are retried:
+   * {@link RetryParams#getDefaultInstance()} is used.
+   */
+  public RetryParams getRetryParams() {
     return retryParams;
   }
 
@@ -435,21 +561,46 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
    * Returns the service's clock. Default time source uses {@link System#currentTimeMillis()} to get
    * current time.
    */
+  @Deprecated
   public Clock clock() {
+    return getClock();
+  }
+
+  /**
+   * Returns the service's clock. Default time source uses {@link System#currentTimeMillis()} to get
+   * current time.
+   */
+  public Clock getClock() {
     return clock;
   }
 
   /**
    * Returns the application's name as a string in the format {@code gcloud-java/[version]}.
    */
+  @Deprecated
   public String applicationName() {
+    return getApplicationName();
+  }
+
+  /**
+   * Returns the application's name as a string in the format {@code gcloud-java/[version]}.
+   */
+  public String getApplicationName() {
     return APPLICATION_NAME;
   }
 
   /**
    * Returns the library's name, {@code gcloud-java}, as a string.
    */
+  @Deprecated
   public String libraryName() {
+    return getLibraryName();
+  }
+
+  /**
+   * Returns the library's name, {@code gcloud-java}, as a string.
+   */
+  public String getLibraryName() {
     return LIBRARY_NAME;
   }
 
@@ -457,6 +608,13 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
    * Returns the library's version as a string.
    */
   public String libraryVersion() {
+    return getLibraryVersion();
+  }
+
+  /**
+   * Returns the library's version as a string.
+   */
+  public String getLibraryVersion() {
     return LIBRARY_VERSION;
   }
 
@@ -491,11 +649,26 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
     }
   }
 
-  protected abstract ServiceFactory<ServiceT, OptionsT> defaultServiceFactory();
+  @Deprecated
+  protected ServiceFactory<ServiceT, OptionsT> defaultServiceFactory() {
+    return getDefaultServiceFactory();
+  }
 
-  protected abstract ServiceRpcFactory<ServiceRpcT, OptionsT> defaultRpcFactory();
+  protected abstract ServiceFactory<ServiceT, OptionsT> getDefaultServiceFactory();
 
-  protected abstract Set<String> scopes();
+  @Deprecated
+  protected ServiceRpcFactory<ServiceRpcT, OptionsT> defaultRpcFactory() {
+    return getDefaultRpcFactory();
+  }
+
+  protected abstract ServiceRpcFactory<ServiceRpcT, OptionsT> getDefaultRpcFactory();
+
+  @Deprecated
+  protected Set<String> scopes() {
+    return getScopes();
+  }
+
+  protected abstract Set<String> getScopes();
 
   public abstract <B extends Builder<ServiceT, ServiceRpcT, OptionsT, B>> B toBuilder();
 
@@ -505,14 +678,14 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
    * default parameters listed in {@link RetryParams}.
    */
   protected RetryParams defaultRetryParams() {
-    return RetryParams.defaultInstance();
+    return RetryParams.getDefaultInstance();
   }
 
   static <T> T getFromServiceLoader(Class<? extends T> clazz, T defaultInstance) {
     return Iterables.getFirst(ServiceLoader.load(clazz), defaultInstance);
   }
 
-  private static String getLibraryVersion() {
+  private static String defaultLibraryVersion() {
     String version = null;
     try {
       Enumeration<URL> resources =

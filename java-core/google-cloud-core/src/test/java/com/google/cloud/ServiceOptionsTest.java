@@ -71,7 +71,15 @@ public class ServiceOptionsTest {
   }
   private static final Clock TEST_CLOCK = new TestClock();
   private static final TestServiceOptions OPTIONS =
-      TestServiceOptions.builder()
+      TestServiceOptions.newBuilder()
+          .setAuthCredentials(authCredentials)
+          .setClock(TEST_CLOCK)
+          .setHost("host")
+          .setProjectId("project-id")
+          .setRetryParams(RetryParams.noRetries())
+          .build();
+  private static final TestServiceOptions DEPRECATED_OPTIONS =
+      TestServiceOptions.newBuilder()
           .authCredentials(authCredentials)
           .clock(TEST_CLOCK)
           .host("host")
@@ -79,7 +87,9 @@ public class ServiceOptionsTest {
           .retryParams(RetryParams.noRetries())
           .build();
   private static final TestServiceOptions DEFAULT_OPTIONS =
-      TestServiceOptions.builder().projectId("project-id").build();
+      TestServiceOptions.newBuilder().setProjectId("project-id").build();
+  private static final TestServiceOptions DEPRECATED_DEFAULT_OPTIONS =
+      TestServiceOptions.newBuilder().projectId("project-id").build();
   private static final TestServiceOptions OPTIONS_COPY = OPTIONS.toBuilder().build();
   private static final String LIBRARY_NAME = "gcloud-java";
   private static final Pattern APPLICATION_NAME_PATTERN =
@@ -151,17 +161,17 @@ public class ServiceOptionsTest {
     }
 
     @Override
-    protected TestServiceFactory defaultServiceFactory() {
+    protected TestServiceFactory getDefaultServiceFactory() {
       return DefaultTestServiceFactory.INSTANCE;
     }
 
     @Override
-    protected TestServiceRpcFactory defaultRpcFactory() {
+    protected TestServiceRpcFactory getDefaultRpcFactory() {
       return DefaultTestServiceRpcFactory.INSTANCE;
     }
 
     @Override
-    protected Set<String> scopes() {
+    protected Set<String> getScopes() {
       return null;
     }
 
@@ -170,7 +180,7 @@ public class ServiceOptionsTest {
       return new Builder(this);
     }
 
-    private static Builder builder() {
+    private static Builder newBuilder() {
       return new Builder();
     }
 
@@ -187,14 +197,26 @@ public class ServiceOptionsTest {
 
   @Test
   public void testBuilder() {
-    assertSame(authCredentials, OPTIONS.authCredentials());
-    assertSame(TEST_CLOCK, OPTIONS.clock());
-    assertEquals("host", OPTIONS.host());
-    assertEquals("project-id", OPTIONS.projectId());
-    assertSame(RetryParams.noRetries(), OPTIONS.retryParams());
-    assertSame(Clock.defaultClock(), DEFAULT_OPTIONS.clock());
-    assertEquals("https://www.googleapis.com", DEFAULT_OPTIONS.host());
-    assertSame(RetryParams.defaultInstance(), DEFAULT_OPTIONS.retryParams());
+    assertSame(authCredentials, OPTIONS.getAuthCredentials());
+    assertSame(TEST_CLOCK, OPTIONS.getClock());
+    assertEquals("host", OPTIONS.getHost());
+    assertEquals("project-id", OPTIONS.getProjectId());
+    assertSame(RetryParams.noRetries(), OPTIONS.getRetryParams());
+    assertSame(Clock.defaultClock(), DEFAULT_OPTIONS.getClock());
+    assertEquals("https://www.googleapis.com", DEFAULT_OPTIONS.getHost());
+    assertSame(RetryParams.getDefaultInstance(), DEFAULT_OPTIONS.getRetryParams());
+  }
+
+  @Test
+  public void testBuilderDeprecated() {
+    assertSame(authCredentials, DEPRECATED_OPTIONS.authCredentials());
+    assertSame(TEST_CLOCK, DEPRECATED_OPTIONS.clock());
+    assertEquals("host", DEPRECATED_OPTIONS.host());
+    assertEquals("project-id", DEPRECATED_OPTIONS.projectId());
+    assertSame(RetryParams.noRetries(), DEPRECATED_OPTIONS.retryParams());
+    assertSame(Clock.defaultClock(), DEPRECATED_DEFAULT_OPTIONS.clock());
+    assertEquals("https://www.googleapis.com", DEPRECATED_DEFAULT_OPTIONS.host());
+    assertSame(RetryParams.getDefaultInstance(), DEPRECATED_DEFAULT_OPTIONS.retryParams());
   }
 
   @Test
@@ -204,12 +226,12 @@ public class ServiceOptionsTest {
 
   @Test
   public void testService() {
-    assertTrue(OPTIONS.service() instanceof TestServiceImpl);
+    assertTrue(OPTIONS.getService() instanceof TestServiceImpl);
   }
 
   @Test
   public void testRpc() {
-    assertTrue(OPTIONS.rpc() instanceof DefaultTestServiceRpc);
+    assertTrue(OPTIONS.getRpc() instanceof DefaultTestServiceRpc);
   }
 
   @Test
@@ -220,12 +242,12 @@ public class ServiceOptionsTest {
 
   @Test
   public void testLibraryName() {
-    assertEquals(LIBRARY_NAME, OPTIONS.libraryName());
+    assertEquals(LIBRARY_NAME, OPTIONS.getLibraryName());
   }
 
   @Test
   public void testApplicationName() {
-    assertTrue(APPLICATION_NAME_PATTERN.matcher(OPTIONS.applicationName()).matches());
+    assertTrue(APPLICATION_NAME_PATTERN.matcher(OPTIONS.getApplicationName()).matches());
   }
 
   @Test

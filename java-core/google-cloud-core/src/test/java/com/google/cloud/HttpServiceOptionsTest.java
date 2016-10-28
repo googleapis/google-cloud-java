@@ -34,14 +34,23 @@ public class HttpServiceOptionsTest {
 
   private static final HttpTransportFactory MOCK_HTTP_TRANSPORT_FACTORY =
       EasyMock.createMock(HttpTransportFactory.class);
-  private static final TestHttpServiceOptions OPTIONS = TestHttpServiceOptions.builder()
-      .projectId("project-id")
-      .connectTimeout(1234)
-      .httpTransportFactory(MOCK_HTTP_TRANSPORT_FACTORY)
-      .readTimeout(5678)
+  private static final TestHttpServiceOptions OPTIONS = TestHttpServiceOptions.newBuilder()
+      .setProjectId("project-id")
+      .setConnectTimeout(1234)
+      .setHttpTransportFactory(MOCK_HTTP_TRANSPORT_FACTORY)
+      .setReadTimeout(5678)
       .build();
+  private static final TestHttpServiceOptions DEPRECATED_OPTIONS =
+      TestHttpServiceOptions.newBuilder()
+          .projectId("project-id")
+          .connectTimeout(1234)
+          .httpTransportFactory(MOCK_HTTP_TRANSPORT_FACTORY)
+          .readTimeout(5678)
+          .build();
   private static final TestHttpServiceOptions DEFAULT_OPTIONS =
-      TestHttpServiceOptions.builder().projectId("project-id").build();
+      TestHttpServiceOptions.newBuilder().setProjectId("project-id").build();
+  private static final TestHttpServiceOptions DEPRECATED_DEFAULT_OPTIONS =
+      TestHttpServiceOptions.newBuilder().projectId("project-id").build();
   private static final TestHttpServiceOptions OPTIONS_COPY = OPTIONS.toBuilder().build();
 
   private interface TestService extends Service<TestHttpServiceOptions> {}
@@ -105,17 +114,17 @@ public class HttpServiceOptionsTest {
     }
 
     @Override
-    protected TestServiceFactory defaultServiceFactory() {
+    protected TestServiceFactory getDefaultServiceFactory() {
       return DefaultTestServiceFactory.INSTANCE;
     }
 
     @Override
-    protected TestServiceRpcFactory defaultRpcFactory() {
+    protected TestServiceRpcFactory getDefaultRpcFactory() {
       return DefaultTestServiceRpcFactory.INSTANCE;
     }
 
     @Override
-    protected Set<String> scopes() {
+    protected Set<String> getScopes() {
       return null;
     }
 
@@ -124,7 +133,7 @@ public class HttpServiceOptionsTest {
       return new Builder(this);
     }
 
-    private static Builder builder() {
+    private static Builder newBuilder() {
       return new Builder();
     }
 
@@ -141,12 +150,23 @@ public class HttpServiceOptionsTest {
 
   @Test
   public void testBuilder() {
-    assertEquals(1234, OPTIONS.connectTimeout());
-    assertSame(MOCK_HTTP_TRANSPORT_FACTORY, OPTIONS.httpTransportFactory());
-    assertEquals(5678, OPTIONS.readTimeout());
-    assertEquals(-1, DEFAULT_OPTIONS.connectTimeout());
-    assertTrue(DEFAULT_OPTIONS.httpTransportFactory() instanceof DefaultHttpTransportFactory);
-    assertEquals(-1, DEFAULT_OPTIONS.readTimeout());
+    assertEquals(1234, OPTIONS.getConnectTimeout());
+    assertSame(MOCK_HTTP_TRANSPORT_FACTORY, OPTIONS.getHttpTransportFactory());
+    assertEquals(5678, OPTIONS.getReadTimeout());
+    assertEquals(-1, DEFAULT_OPTIONS.getConnectTimeout());
+    assertTrue(DEFAULT_OPTIONS.getHttpTransportFactory() instanceof DefaultHttpTransportFactory);
+    assertEquals(-1, DEFAULT_OPTIONS.getReadTimeout());
+  }
+
+  @Test
+  public void testBuilderDeprecated() {
+    assertEquals(1234, DEPRECATED_OPTIONS.connectTimeout());
+    assertSame(MOCK_HTTP_TRANSPORT_FACTORY, DEPRECATED_OPTIONS.httpTransportFactory());
+    assertEquals(5678, DEPRECATED_OPTIONS.readTimeout());
+    assertEquals(-1, DEPRECATED_DEFAULT_OPTIONS.connectTimeout());
+    assertTrue(
+        DEPRECATED_DEFAULT_OPTIONS.httpTransportFactory() instanceof DefaultHttpTransportFactory);
+    assertEquals(-1, DEPRECATED_DEFAULT_OPTIONS.readTimeout());
   }
 
   @Test
