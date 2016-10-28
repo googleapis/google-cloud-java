@@ -813,7 +813,7 @@ public class ConceptsTest {
         --retries;
       }
     }
-    // Retry handling can also be configured and automatically applied using gcloud-java.
+    // Retry handling can also be configured and automatically applied using google-cloud-java.
     // [END transactional_retry]
     assertSuccessfulTransfer(keys.get(0), keys.get(1));
   }
