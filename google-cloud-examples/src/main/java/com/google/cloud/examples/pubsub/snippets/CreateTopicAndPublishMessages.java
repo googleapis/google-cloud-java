@@ -29,7 +29,7 @@ import com.google.cloud.pubsub.TopicInfo;
 public class CreateTopicAndPublishMessages {
 
   public static void main(String... args) throws Exception {
-    try (PubSub pubsub = PubSubOptions.defaultInstance().service()) {
+    try (PubSub pubsub = PubSubOptions.getDefaultInstance().getService()) {
       Topic topic = pubsub.create(TopicInfo.of("test-topic"));
       Message message1 = Message.of("First message");
       Message message2 = Message.of("Second message");

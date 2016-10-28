@@ -504,10 +504,10 @@ public class LocalDnsHelper {
    * Returns a {@link DnsOptions} instance that sets the host to use the mock server.
    */
   public DnsOptions getOptions() {
-    return DnsOptions.builder()
-        .projectId(PROJECT_ID)
-        .host("http://localhost:" + port)
-        .authCredentials(AuthCredentials.noAuth())
+    return DnsOptions.newBuilder()
+        .setProjectId(PROJECT_ID)
+        .setHost("http://localhost:" + port)
+        .setAuthCredentials(AuthCredentials.noAuth())
         .build();
   }
 

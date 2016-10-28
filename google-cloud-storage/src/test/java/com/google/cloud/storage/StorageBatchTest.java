@@ -66,7 +66,7 @@ public class StorageBatchTest {
     optionsMock = EasyMock.createMock(StorageOptions.class);
     dnsRpcMock = EasyMock.createMock(StorageRpc.class);
     batchMock = EasyMock.createMock(RpcBatch.class);
-    EasyMock.expect(optionsMock.rpc()).andReturn(dnsRpcMock);
+    EasyMock.expect(optionsMock.getRpc()).andReturn(dnsRpcMock);
     EasyMock.expect(dnsRpcMock.createBatch()).andReturn(batchMock);
     EasyMock.replay(optionsMock, dnsRpcMock, batchMock, storage);
     dnsBatch = new StorageBatch(optionsMock);
@@ -79,9 +79,9 @@ public class StorageBatchTest {
 
   @Test
   public void testConstructor() {
-    assertSame(batchMock, dnsBatch.batch());
-    assertSame(optionsMock, dnsBatch.options());
-    assertSame(dnsRpcMock, dnsBatch.storageRpc());
+    assertSame(batchMock, dnsBatch.getBatch());
+    assertSame(optionsMock, dnsBatch.getOptions());
+    assertSame(dnsRpcMock, dnsBatch.getStorageRpc());
   }
 
   @Test
@@ -159,8 +159,8 @@ public class StorageBatchTest {
   @Test
   public void testUpdateWithOptions() {
     EasyMock.reset(storage, batchMock, optionsMock);
-    EasyMock.expect(storage.options()).andReturn(optionsMock).times(2);
-    EasyMock.expect(optionsMock.service()).andReturn(storage);
+    EasyMock.expect(storage.getOptions()).andReturn(optionsMock).times(2);
+    EasyMock.expect(optionsMock.getService()).andReturn(storage);
     Capture<RpcBatch.Callback<StorageObject>> callback = Capture.newInstance();
     Capture<Map<StorageRpc.Option, Object>> capturedOptions = Capture.newInstance();
     batchMock.addPatch(EasyMock.eq(BLOB_INFO_COMPLETE.toPb()), EasyMock.capture(callback),
@@ -205,8 +205,8 @@ public class StorageBatchTest {
   @Test
   public void testGetWithOptions() {
     EasyMock.reset(storage, batchMock, optionsMock);
-    EasyMock.expect(storage.options()).andReturn(optionsMock).times(2);
-    EasyMock.expect(optionsMock.service()).andReturn(storage);
+    EasyMock.expect(storage.getOptions()).andReturn(optionsMock).times(2);
+    EasyMock.expect(optionsMock.getService()).andReturn(storage);
     Capture<RpcBatch.Callback<StorageObject>> callback = Capture.newInstance();
     Capture<Map<StorageRpc.Option, Object>> capturedOptions = Capture.newInstance();
     batchMock.addGet(EasyMock.eq(BLOB_INFO.toPb()), EasyMock.capture(callback),

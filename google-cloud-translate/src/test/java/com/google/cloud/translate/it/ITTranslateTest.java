@@ -37,7 +37,8 @@ import java.util.Set;
 
 public class ITTranslateTest {
 
-  private static final Translate TRANSLATE = RemoteTranslateHelper.create().getOptions().service();
+  private static final Translate TRANSLATE =
+      RemoteTranslateHelper.create().getOptions().getService();
   private static final String[] LANGUAGES = {"af", "sq", "ar", "hy", "az", "eu", "be", "bn", "bs",
       "bg", "ca", "ceb", "ny", "zh-TW", "hr", "cs", "da", "nl", "en", "eo", "et", "tl", "fi", "fr",
       "gl", "ka", "de", "el", "gu", "ht", "ha", "iw", "hi", "hmn", "hu", "is", "ig", "id", "ga",

@@ -29,7 +29,7 @@ public class CorsTest {
 
   @Test
   public void testOrigin() {
-    assertEquals("bla", Origin.of("bla").value());
+    assertEquals("bla", Origin.of("bla").getValue());
     assertEquals("http://host:8080", Origin.of("http", "host", 8080).toString());
     assertEquals(Origin.of("*"), Origin.any());
   }

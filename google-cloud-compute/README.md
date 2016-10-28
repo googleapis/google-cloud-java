@@ -88,7 +88,7 @@ code to create your service object:
 import com.google.cloud.compute.Compute;
 import com.google.cloud.compute.ComputeOptions;
 
-Compute compute = ComputeOptions.defaultInstance().service();
+Compute compute = ComputeOptions.getDefaultInstance().getService();
 ```
 
 For other authentication options, see the [Authentication](https://github.com/GoogleCloudPlatform/google-cloud-java#authentication)
@@ -116,7 +116,7 @@ RegionAddressId addressId = RegionAddressId.of("us-central1", "test-address");
 Operation operation = compute.create(AddressInfo.of(addressId));
 // Wait for operation to complete
 operation = operation.waitFor();
-if (operation.errors() == null) {
+if (operation.getErrors() == null) {
   System.out.println("Address " + addressId + " was successfully created");
 } else {
   // inspect operation.getErrors()
@@ -153,7 +153,7 @@ operation = operation.waitFor();
 if (operation.getErrors() == null) {
   System.out.println("Disk " + diskId + " was successfully created");
 } else {
-  // inspect operation.errors()
+  // inspect operation.getErrors()
   throw new RuntimeException("Disk creation failed");
 }
 ```
@@ -199,7 +199,7 @@ operation = operation.waitFor();
 if (operation.getErrors() == null) {
   System.out.println("Instance " + instanceId + " was successfully created");
 } else {
-  // inspect operation.errors()
+  // inspect operation.getErrors()
   throw new RuntimeException("Instance creation failed");
 }
 ```

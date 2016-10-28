@@ -36,7 +36,7 @@ public class CreateAndListMetrics {
   public static void main(String... args) throws Exception {
     // Create a service object
     // Credentials are inferred from the environment
-    try(Logging logging = LoggingOptions.defaultInstance().service()) {
+    try(Logging logging = LoggingOptions.getDefaultInstance().getService()) {
 
       // Create a metric
       MetricInfo metricInfo = MetricInfo.newBuilder("test-metric", "severity >= ERROR")

@@ -69,7 +69,7 @@ public class ITBlobSnippets {
   @BeforeClass
   public static void beforeClass() {
     RemoteStorageHelper helper = RemoteStorageHelper.create();
-    storage = helper.getOptions().service();
+    storage = helper.getOptions().getService();
     storage.create(BucketInfo.of(BUCKET));
     blob = storage.create(BlobInfo.newBuilder(BUCKET, BLOB).build());
   }

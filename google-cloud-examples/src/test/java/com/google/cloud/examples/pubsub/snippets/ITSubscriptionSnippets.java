@@ -57,7 +57,7 @@ public class ITSubscriptionSnippets {
 
   @BeforeClass
   public static void beforeClass() {
-    pubsub = PubSubOptions.defaultInstance().service();
+    pubsub = PubSubOptions.getDefaultInstance().getService();
     topic = pubsub.create(TopicInfo.of(TOPIC));
     subscription = pubsub.create(SubscriptionInfo.of(TOPIC, SUBSCRIPTION));
   }
@@ -74,19 +74,19 @@ public class ITSubscriptionSnippets {
   @Test
   public void testPushConfig() throws ExecutionException, InterruptedException {
     SubscriptionSnippets subscriptionSnippets = new SubscriptionSnippets(subscription);
-    String endpoint = "https://" + pubsub.options().projectId() + ".appspot.com/push";
+    String endpoint = "https://" + pubsub.getOptions().getProjectId() + ".appspot.com/push";
     subscriptionSnippets.replacePushConfig(endpoint);
     Subscription updatedSubscription = pubsub.getSubscription(SUBSCRIPTION);
-    assertEquals(endpoint, updatedSubscription.pushConfig().endpoint());
+    assertEquals(endpoint, updatedSubscription.getPushConfig().getEndpoint());
     subscriptionSnippets.replacePushConfigToPull();
     updatedSubscription = pubsub.getSubscription(SUBSCRIPTION);
-    assertNull(updatedSubscription.pushConfig());
+    assertNull(updatedSubscription.getPushConfig());
     subscriptionSnippets.replacePushConfigAsync(endpoint);
     updatedSubscription = pubsub.getSubscription(SUBSCRIPTION);
-    assertEquals(endpoint, updatedSubscription.pushConfig().endpoint());
+    assertEquals(endpoint, updatedSubscription.getPushConfig().getEndpoint());
     subscriptionSnippets.replacePushConfigToPullAsync();
     updatedSubscription = pubsub.getSubscription(SUBSCRIPTION);
-    assertNull(updatedSubscription.pushConfig());
+    assertNull(updatedSubscription.getPushConfig());
   }
 
   @Test
@@ -112,13 +112,13 @@ public class ITSubscriptionSnippets {
     assertNotNull(policy);
     assertEquals(policy, subscriptionSnippets.getPolicyAsync());
     policy = subscriptionSnippets.replacePolicy();
-    assertTrue(policy.bindings().get(Role.viewer()).contains(Identity.allAuthenticatedUsers()));
+    assertTrue(policy.getBindings().get(Role.viewer()).contains(Identity.allAuthenticatedUsers()));
     policy = subscription.replacePolicy(policy.toBuilder()
         .removeIdentity(Role.viewer(), Identity.allAuthenticatedUsers())
         .build());
-    assertFalse(policy.bindings().containsKey(Role.viewer()));
+    assertFalse(policy.getBindings().containsKey(Role.viewer()));
     policy = subscriptionSnippets.replacePolicyAsync();
-    assertTrue(policy.bindings().get(Role.viewer()).contains(Identity.allAuthenticatedUsers()));
+    assertTrue(policy.getBindings().get(Role.viewer()).contains(Identity.allAuthenticatedUsers()));
     assertTrue(subscriptionSnippets.delete());
     assertFalse(subscriptionSnippets.deleteAsync());
   }

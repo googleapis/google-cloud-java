@@ -409,7 +409,7 @@ public class Blob extends BlobInfo {
   Blob(Storage storage, BlobInfo.BuilderImpl infoBuilder) {
     super(infoBuilder);
     this.storage = checkNotNull(storage);
-    this.options = storage.options();
+    this.options = storage.getOptions();
   }
 
   /**
@@ -658,8 +658,8 @@ public class Blob extends BlobInfo {
    * want to require users to explicitly log in. Signing a URL requires
    * a service account signer. If a {@link ServiceAccountAuthCredentials} or an
    * {@link AppEngineAuthCredentials} was passed to
-   * {@link StorageOptions.Builder#authCredentials(AuthCredentials)} or the default credentials are
-   * being used and the environment variable {@code GOOGLE_APPLICATION_CREDENTIALS} is set, then
+   * {@link StorageOptions.Builder#setAuthCredentials(AuthCredentials)} or the default credentials
+   * are being used and the environment variable {@code GOOGLE_APPLICATION_CREDENTIALS} is set, then
    * {@code signUrl} will use that credentials to sign the URL. If the credentials passed to
    * {@link StorageOptions} do not implement {@link ServiceAccountSigner} (this is the case for
    * Compute Engine credentials and Google Cloud SDK credentials) then {@code signUrl} will throw an
@@ -669,7 +669,8 @@ public class Blob extends BlobInfo {
    * <p>A service account signer is looked for in the following order:
    * <ol>
    *   <li>The signer passed with the option {@link SignUrlOption#signWith(ServiceAccountSigner)}
-   *   <li>The credentials passed to {@link StorageOptions.Builder#authCredentials(AuthCredentials)}
+   *   <li>The credentials passed to
+   *   {@link StorageOptions.Builder#setAuthCredentials(AuthCredentials)}
    *   <li>The default credentials, if no credentials were passed to {@link StorageOptions}
    * </ol>
    *
@@ -825,7 +826,7 @@ public class Blob extends BlobInfo {
 
   private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
     in.defaultReadObject();
-    this.storage = options.service();
+    this.storage = options.getService();
   }
 
   static Blob fromPb(Storage storage, StorageObject storageObject) {

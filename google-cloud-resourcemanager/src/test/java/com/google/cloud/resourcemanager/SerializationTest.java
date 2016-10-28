@@ -27,7 +27,7 @@ import java.util.Collections;
 public class SerializationTest extends BaseSerializationTest {
 
 private static final ResourceManager RESOURCE_MANAGER =
-      ResourceManagerOptions.defaultInstance().service();
+      ResourceManagerOptions.getDefaultInstance().getService();
   private static final ProjectInfo PARTIAL_PROJECT_INFO = ProjectInfo.newBuilder("id1").build();
   private static final ProjectInfo FULL_PROJECT_INFO = ProjectInfo.newBuilder("id")
       .setName("name")
@@ -49,9 +49,9 @@ private static final ResourceManager RESOURCE_MANAGER =
 
   @Override
   protected Serializable[] serializableObjects() {
-    ResourceManagerOptions options = ResourceManagerOptions.builder().build();
+    ResourceManagerOptions options = ResourceManagerOptions.newBuilder().build();
     ResourceManagerOptions otherOptions = options.toBuilder()
-        .projectId("some-unnecessary-project-ID")
+        .setProjectId("some-unnecessary-project-ID")
         .build();
     return new Serializable[]{PARTIAL_PROJECT_INFO, FULL_PROJECT_INFO, PROJECT, PAGE_RESULT,
         PROJECT_GET_OPTION, PROJECT_LIST_OPTION, RESOURCE_MANAGER_EXCEPTION, options, otherOptions};

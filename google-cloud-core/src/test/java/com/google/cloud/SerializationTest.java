@@ -32,15 +32,15 @@ public class SerializationTest extends BaseSerializationTest {
 
   private static final BaseServiceException BASE_SERVICE_EXCEPTION =
       new BaseServiceException(42, "message", "reason", true);
-  private static final ExceptionHandler EXCEPTION_HANDLER = ExceptionHandler.defaultInstance();
+  private static final ExceptionHandler EXCEPTION_HANDLER = ExceptionHandler.getDefaultInstance();
   private static final Identity IDENTITY = Identity.allAuthenticatedUsers();
   private static final PageImpl<String> PAGE =
       new PageImpl<>(null, "cursor", ImmutableList.of("string1", "string2"));
   private static final SigningException SIGNING_EXCEPTION =
       new SigningException("message", BASE_SERVICE_EXCEPTION);
-  private static final RetryParams RETRY_PARAMS = RetryParams.defaultInstance();
+  private static final RetryParams RETRY_PARAMS = RetryParams.getDefaultInstance();
   private static final Role SOME_ROLE = Role.viewer();
-  private static final Policy SOME_IAM_POLICY = Policy.builder().build();
+  private static final Policy SOME_IAM_POLICY = Policy.newBuilder().build();
   private static final WaitForOption CHECKING_PERIOD =
       WaitForOption.checkEvery(42, TimeUnit.SECONDS);
   private static final LabelDescriptor LABEL_DESCRIPTOR =

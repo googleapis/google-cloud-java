@@ -54,12 +54,12 @@ public class TableDataWriteChannelTest {
   private static final String UPLOAD_ID = "uploadid";
   private static final TableId TABLE_ID = TableId.of("dataset", "table");
   private static final WriteChannelConfiguration LOAD_CONFIGURATION =
-      WriteChannelConfiguration.builder(TABLE_ID)
-          .createDisposition(JobInfo.CreateDisposition.CREATE_IF_NEEDED)
-          .writeDisposition(JobInfo.WriteDisposition.WRITE_APPEND)
-          .formatOptions(FormatOptions.json())
-          .ignoreUnknownValues(true)
-          .maxBadRecords(10)
+      WriteChannelConfiguration.newBuilder(TABLE_ID)
+          .setCreateDisposition(JobInfo.CreateDisposition.CREATE_IF_NEEDED)
+          .setWriteDisposition(JobInfo.WriteDisposition.WRITE_APPEND)
+          .setFormatOptions(FormatOptions.json())
+          .setIgnoreUnknownValues(true)
+          .setMaxBadRecords(10)
           .build();
   private static final int MIN_CHUNK_SIZE = 256 * 1024;
   private static final int DEFAULT_CHUNK_SIZE = 8 * MIN_CHUNK_SIZE;
@@ -80,9 +80,9 @@ public class TableDataWriteChannelTest {
     bigqueryRpcMock = createMock(BigQueryRpc.class);
     expect(rpcFactoryMock.create(anyObject(BigQueryOptions.class))).andReturn(bigqueryRpcMock);
     replay(rpcFactoryMock);
-    options = BigQueryOptions.builder()
-        .projectId("projectid")
-        .serviceRpcFactory(rpcFactoryMock)
+    options = BigQueryOptions.newBuilder()
+        .setProjectId("projectid")
+        .setServiceRpcFactory(rpcFactoryMock)
         .build();
   }
 
@@ -133,7 +133,7 @@ public class TableDataWriteChannelTest {
         eq(CUSTOM_CHUNK_SIZE), eq(false));
     replay(bigqueryRpcMock);
     writer = new TableDataWriteChannel(options, LOAD_CONFIGURATION);
-    writer.chunkSize(CUSTOM_CHUNK_SIZE);
+    writer.setChunkSize(CUSTOM_CHUNK_SIZE);
     ByteBuffer buffer = randomBuffer(CUSTOM_CHUNK_SIZE);
     assertEquals(CUSTOM_CHUNK_SIZE, writer.write(buffer));
     assertArrayEquals(buffer.array(), capturedBuffer.getValue());
@@ -239,10 +239,10 @@ public class TableDataWriteChannelTest {
     RestorableState<WriteChannel> writerState = writer.capture();
     RestorableState<WriteChannel> expectedWriterState =
         TableDataWriteChannel.StateImpl.builder(options, LOAD_CONFIGURATION, UPLOAD_ID)
-            .buffer(null)
-            .chunkSize(DEFAULT_CHUNK_SIZE)
-            .isOpen(false)
-            .position(0)
+            .setBuffer(null)
+            .setChunkSize(DEFAULT_CHUNK_SIZE)
+            .setIsOpen(false)
+            .setPosition(0)
             .build();
     WriteChannel restoredWriter = writerState.restore();
     assertArrayEquals(new byte[0], capturedBuffer.getValue());

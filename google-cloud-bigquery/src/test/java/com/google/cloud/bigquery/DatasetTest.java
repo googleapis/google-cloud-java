@@ -76,7 +76,7 @@ public class DatasetTest {
   private Dataset dataset;
 
   private void initializeExpectedDataset(int optionsCalls) {
-    expect(serviceMockReturnsOptions.options()).andReturn(mockOptions).times(optionsCalls);
+    expect(serviceMockReturnsOptions.getOptions()).andReturn(mockOptions).times(optionsCalls);
     replay(serviceMockReturnsOptions);
     bigquery = createStrictMock(BigQuery.class);
     expectedDataset = new Dataset(serviceMockReturnsOptions, new Dataset.BuilderImpl(DATASET_INFO));
@@ -160,7 +160,7 @@ public class DatasetTest {
   public void testExists_True() throws Exception {
     initializeExpectedDataset(1);
     BigQuery.DatasetOption[] expectedOptions = {BigQuery.DatasetOption.fields()};
-    expect(bigquery.options()).andReturn(mockOptions);
+    expect(bigquery.getOptions()).andReturn(mockOptions);
     expect(bigquery.getDataset(DATASET_INFO.getDatasetId(), expectedOptions))
         .andReturn(expectedDataset);
     replay(bigquery);
@@ -172,7 +172,7 @@ public class DatasetTest {
   public void testExists_False() throws Exception {
     initializeExpectedDataset(1);
     BigQuery.DatasetOption[] expectedOptions = {BigQuery.DatasetOption.fields()};
-    expect(bigquery.options()).andReturn(mockOptions);
+    expect(bigquery.getOptions()).andReturn(mockOptions);
     expect(bigquery.getDataset(DATASET_INFO.getDatasetId(), expectedOptions)).andReturn(null);
     replay(bigquery);
     initializeDataset();
@@ -185,7 +185,7 @@ public class DatasetTest {
     DatasetInfo updatedInfo = DATASET_INFO.toBuilder().setDescription("Description").build();
     Dataset expectedDataset =
         new Dataset(serviceMockReturnsOptions, new DatasetInfo.BuilderImpl(updatedInfo));
-    expect(bigquery.options()).andReturn(mockOptions);
+    expect(bigquery.getOptions()).andReturn(mockOptions);
     expect(
         bigquery.getDataset(DATASET_INFO.getDatasetId().getDataset())).andReturn(expectedDataset);
     replay(bigquery);
@@ -197,7 +197,7 @@ public class DatasetTest {
   @Test
   public void testReloadNull() throws Exception {
     initializeExpectedDataset(1);
-    expect(bigquery.options()).andReturn(mockOptions);
+    expect(bigquery.getOptions()).andReturn(mockOptions);
     expect(bigquery.getDataset(DATASET_INFO.getDatasetId().getDataset())).andReturn(null);
     replay(bigquery);
     initializeDataset();
@@ -210,7 +210,7 @@ public class DatasetTest {
     DatasetInfo updatedInfo = DATASET_INFO.toBuilder().setDescription("Description").build();
     Dataset expectedDataset =
         new Dataset(serviceMockReturnsOptions, new DatasetInfo.BuilderImpl(updatedInfo));
-    expect(bigquery.options()).andReturn(mockOptions);
+    expect(bigquery.getOptions()).andReturn(mockOptions);
     expect(bigquery.getDataset(DATASET_INFO.getDatasetId().getDataset(),
         BigQuery.DatasetOption.fields())).andReturn(expectedDataset);
     replay(bigquery);
@@ -224,7 +224,7 @@ public class DatasetTest {
     initializeExpectedDataset(4);
     Dataset expectedUpdatedDataset =
         expectedDataset.toBuilder().setDescription("Description").build();
-    expect(bigquery.options()).andReturn(mockOptions);
+    expect(bigquery.getOptions()).andReturn(mockOptions);
     expect(bigquery.update(eq(expectedDataset))).andReturn(expectedUpdatedDataset);
     replay(bigquery);
     initializeDataset();
@@ -237,7 +237,7 @@ public class DatasetTest {
     initializeExpectedDataset(4);
     Dataset expectedUpdatedDataset =
         expectedDataset.toBuilder().setDescription("Description").build();
-    expect(bigquery.options()).andReturn(mockOptions);
+    expect(bigquery.getOptions()).andReturn(mockOptions);
     expect(bigquery.update(eq(expectedDataset), eq(BigQuery.DatasetOption.fields())))
         .andReturn(expectedUpdatedDataset);
     replay(bigquery);
@@ -249,7 +249,7 @@ public class DatasetTest {
   @Test
   public void testDeleteTrue() {
     initializeExpectedDataset(1);
-    expect(bigquery.options()).andReturn(mockOptions);
+    expect(bigquery.getOptions()).andReturn(mockOptions);
     expect(bigquery.delete(DATASET_INFO.getDatasetId())).andReturn(true);
     replay(bigquery);
     initializeDataset();
@@ -259,7 +259,7 @@ public class DatasetTest {
   @Test
   public void testDeleteFalse() {
     initializeExpectedDataset(1);
-    expect(bigquery.options()).andReturn(mockOptions);
+    expect(bigquery.getOptions()).andReturn(mockOptions);
     expect(bigquery.delete(DATASET_INFO.getDatasetId())).andReturn(false);
     replay(bigquery);
     initializeDataset();
@@ -274,13 +274,14 @@ public class DatasetTest {
         new Table(serviceMockReturnsOptions, new Table.BuilderImpl(TABLE_INFO2)),
         new Table(serviceMockReturnsOptions, new Table.BuilderImpl(TABLE_INFO3)));
     PageImpl<Table> expectedPage = new PageImpl<>(null, "c", tableResults);
-    expect(bigquery.options()).andReturn(mockOptions);
+    expect(bigquery.getOptions()).andReturn(mockOptions);
     expect(bigquery.listTables(DATASET_INFO.getDatasetId())).andReturn(expectedPage);
     replay(bigquery);
     initializeDataset();
     Page<Table> tablePage = dataset.list();
-    assertArrayEquals(tableResults.toArray(), Iterables.toArray(tablePage.values(), Table.class));
-    assertEquals(expectedPage.nextPageCursor(), tablePage.nextPageCursor());
+    assertArrayEquals(tableResults.toArray(),
+        Iterables.toArray(tablePage.getValues(), Table.class));
+    assertEquals(expectedPage.getNextPageCursor(), tablePage.getNextPageCursor());
   }
 
   @Test
@@ -291,14 +292,15 @@ public class DatasetTest {
         new Table(serviceMockReturnsOptions, new Table.BuilderImpl(TABLE_INFO2)),
         new Table(serviceMockReturnsOptions, new Table.BuilderImpl(TABLE_INFO3)));
     PageImpl<Table> expectedPage = new PageImpl<>(null, "c", tableResults);
-    expect(bigquery.options()).andReturn(mockOptions);
+    expect(bigquery.getOptions()).andReturn(mockOptions);
     expect(bigquery.listTables(DATASET_INFO.getDatasetId(), BigQuery.TableListOption.pageSize(10L)))
         .andReturn(expectedPage);
     replay(bigquery);
     initializeDataset();
     Page<Table> tablePage = dataset.list(BigQuery.TableListOption.pageSize(10L));
-    assertArrayEquals(tableResults.toArray(), Iterables.toArray(tablePage.values(), Table.class));
-    assertEquals(expectedPage.nextPageCursor(), tablePage.nextPageCursor());
+    assertArrayEquals(tableResults.toArray(),
+        Iterables.toArray(tablePage.getValues(), Table.class));
+    assertEquals(expectedPage.getNextPageCursor(), tablePage.getNextPageCursor());
   }
 
   @Test
@@ -306,7 +308,7 @@ public class DatasetTest {
     initializeExpectedDataset(2);
     Table expectedTable =
         new Table(serviceMockReturnsOptions, new TableInfo.BuilderImpl(TABLE_INFO1));
-    expect(bigquery.options()).andReturn(mockOptions);
+    expect(bigquery.getOptions()).andReturn(mockOptions);
     expect(bigquery.getTable(TABLE_INFO1.getTableId())).andReturn(expectedTable);
     replay(bigquery);
     initializeDataset();
@@ -318,7 +320,7 @@ public class DatasetTest {
   @Test
   public void testGetNull() throws Exception {
     initializeExpectedDataset(1);
-    expect(bigquery.options()).andReturn(mockOptions);
+    expect(bigquery.getOptions()).andReturn(mockOptions);
     expect(bigquery.getTable(TABLE_INFO1.getTableId())).andReturn(null);
     replay(bigquery);
     initializeDataset();
@@ -330,7 +332,7 @@ public class DatasetTest {
     initializeExpectedDataset(2);
     Table expectedTable =
         new Table(serviceMockReturnsOptions, new TableInfo.BuilderImpl(TABLE_INFO1));
-    expect(bigquery.options()).andReturn(mockOptions);
+    expect(bigquery.getOptions()).andReturn(mockOptions);
     expect(bigquery.getTable(TABLE_INFO1.getTableId(), BigQuery.TableOption.fields()))
         .andReturn(expectedTable);
     replay(bigquery);
@@ -345,7 +347,7 @@ public class DatasetTest {
     initializeExpectedDataset(2);
     Table expectedTable =
         new Table(serviceMockReturnsOptions, new TableInfo.BuilderImpl(TABLE_INFO1));
-    expect(bigquery.options()).andReturn(mockOptions);
+    expect(bigquery.getOptions()).andReturn(mockOptions);
     expect(bigquery.create(TABLE_INFO1)).andReturn(expectedTable);
     replay(bigquery);
     initializeDataset();
@@ -358,7 +360,7 @@ public class DatasetTest {
     initializeExpectedDataset(2);
     Table expectedTable =
         new Table(serviceMockReturnsOptions, new TableInfo.BuilderImpl(TABLE_INFO1));
-    expect(bigquery.options()).andReturn(mockOptions);
+    expect(bigquery.getOptions()).andReturn(mockOptions);
     expect(bigquery.create(TABLE_INFO1, BigQuery.TableOption.fields())).andReturn(expectedTable);
     replay(bigquery);
     initializeDataset();
@@ -392,7 +394,7 @@ public class DatasetTest {
   private void compareDataset(Dataset expected, Dataset value) {
     assertEquals(expected, value);
     compareDatasetInfo(expected, value);
-    assertEquals(expected.getBigquery().options(), value.getBigquery().options());
+    assertEquals(expected.getBigquery().getOptions(), value.getBigquery().getOptions());
   }
 
   private void compareDatasetInfo(DatasetInfo expected, DatasetInfo value) {

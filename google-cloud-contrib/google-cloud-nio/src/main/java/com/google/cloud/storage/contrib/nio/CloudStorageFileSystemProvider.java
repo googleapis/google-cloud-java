@@ -149,9 +149,9 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
       return;
     }
     if (storageOptions == null) {
-      this.storage = StorageOptions.defaultInstance().service();
+      this.storage = StorageOptions.getDefaultInstance().getService();
     } else {
-      this.storage = storageOptions.service();
+      this.storage = storageOptions.getService();
     }
   }
 
@@ -653,8 +653,8 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
     // RPC API can only throw StorageException, but CloudStorageFileSystemProvider
     // can only throw IOException. Square peg, round hole.
     // TODO(#810): Research if other codes should be translated similarly.
-    if (oops.code() == 404) {
-      return new NoSuchFileException(oops.reason());
+    if (oops.getCode() == 404) {
+      return new NoSuchFileException(oops.getReason());
     }
 
     Throwable cause = oops.getCause();

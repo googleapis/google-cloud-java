@@ -32,7 +32,7 @@ import java.util.concurrent.TimeoutException;
 public class CreateSnapshot {
 
   public static void main(String... args) throws InterruptedException, TimeoutException {
-    Compute compute = ComputeOptions.defaultInstance().service();
+    Compute compute = ComputeOptions.getDefaultInstance().getService();
     DiskId diskId = DiskId.of("us-central1-a", "disk-name");
     Disk disk = compute.getDisk(diskId, Compute.DiskOption.fields());
     if (disk != null) {

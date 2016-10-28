@@ -85,10 +85,10 @@ public class ITTableSnippets {
 
   @BeforeClass
   public static void beforeClass() {
-    bigquery = RemoteBigQueryHelper.create().getOptions().service();
+    bigquery = RemoteBigQueryHelper.create().getOptions().getService();
     bigquery.create(DatasetInfo.newBuilder(DATASET_NAME).build());
     bigquery.create(DatasetInfo.newBuilder(COPY_DATASET_NAME).build());
-    storage = RemoteStorageHelper.create().options().service();
+    storage = RemoteStorageHelper.create().getOptions().getService();
     storage.create(BucketInfo.of(BUCKET_NAME));
   }
 
@@ -169,10 +169,10 @@ public class ITTableSnippets {
   public void testInsertParams() throws InterruptedException {
     InsertAllResponse response = tableSnippets.insertWithParams("row1", "row2");
     assertTrue(response.hasErrors());
-    List<List<FieldValue>> rows = ImmutableList.copyOf(tableSnippets.list().values());
+    List<List<FieldValue>> rows = ImmutableList.copyOf(tableSnippets.list().getValues());
     while (rows.isEmpty()) {
       Thread.sleep(500);
-      rows = ImmutableList.copyOf(tableSnippets.list().values());
+      rows = ImmutableList.copyOf(tableSnippets.list().getValues());
     }
     Set<List<?>> values =
         FluentIterable.from(rows).transform(new Function<List<FieldValue>, List<?>>() {
@@ -186,15 +186,15 @@ public class ITTableSnippets {
 
   @Test
   public void testList() throws InterruptedException {
-    List<List<FieldValue>> rows = ImmutableList.copyOf(tableSnippets.list().values());
+    List<List<FieldValue>> rows = ImmutableList.copyOf(tableSnippets.list().getValues());
     assertEquals(0, rows.size());
 
     InsertAllResponse response = tableSnippets.insert("row1", "row2");
     assertFalse(response.hasErrors());
-    rows = ImmutableList.copyOf(tableSnippets.list().values());
+    rows = ImmutableList.copyOf(tableSnippets.list().getValues());
     while (rows.isEmpty()) {
       Thread.sleep(500);
-      rows = ImmutableList.copyOf(tableSnippets.list().values());
+      rows = ImmutableList.copyOf(tableSnippets.list().getValues());
     }
     assertEquals(2, rows.size());
   }
@@ -261,11 +261,11 @@ public class ITTableSnippets {
       throws InterruptedException {
     // Wait for the data to appear.
     Page<List<FieldValue>> page = checkTable.list(TableDataListOption.pageSize(100));
-    List<List<FieldValue>> rows = ImmutableList.copyOf(page.values());
+    List<List<FieldValue>> rows = ImmutableList.copyOf(page.getValues());
     while (rows.size() != numRows) {
       Thread.sleep(1000);
       page = checkTable.list(TableDataListOption.pageSize(100));
-      rows = ImmutableList.copyOf(page.values());
+      rows = ImmutableList.copyOf(page.getValues());
     }
     return rows;
   }

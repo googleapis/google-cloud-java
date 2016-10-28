@@ -40,7 +40,14 @@ public class WaitForOptionTest {
 
   @Test
   public void testCheckEvery() {
-    assertEquals(OptionType.CHECKING_PERIOD, CHECKING_PERIOD_OPTION.optionType());
+    assertEquals(OptionType.CHECKING_PERIOD, CHECKING_PERIOD_OPTION.getOptionType());
+    assertEquals(42, CHECKING_PERIOD_OPTION.getPeriod());
+    assertEquals(TimeUnit.MILLISECONDS, CHECKING_PERIOD_OPTION.getUnit());
+  }
+
+  @Test
+  public void testCheckEveryDeprecated() {
+    assertEquals(OptionType.CHECKING_PERIOD, CHECKING_PERIOD_OPTION.getOptionType());
     assertEquals(42, CHECKING_PERIOD_OPTION.period());
     assertEquals(TimeUnit.MILLISECONDS, CHECKING_PERIOD_OPTION.unit());
   }
@@ -53,8 +60,8 @@ public class WaitForOptionTest {
   }
 
   @Test
-  public void testTimeout() {
-    assertEquals(OptionType.TIMEOUT, TIMEOUT_OPTION.optionType());
+  public void testTimeoutDeprecated() {
+    assertEquals(OptionType.TIMEOUT, TIMEOUT_OPTION.getOptionType());
     assertEquals(43, TIMEOUT_OPTION.timeoutMillis());
     Timeout timeoutOption = WaitForOption.timeout(43, TimeUnit.SECONDS);
     assertEquals(43_000, timeoutOption.timeoutMillis());
@@ -102,10 +109,10 @@ public class WaitForOptionTest {
     assertEquals(TIMEOUT_OPTION,
         Timeout.getOrDefault(CHECKING_PERIOD_OPTION, TIMEOUT_OPTION));
     CheckingPeriod checkingPeriod = CheckingPeriod.getOrDefault(TIMEOUT_OPTION);
-    assertEquals(500, checkingPeriod.period());
-    assertEquals(TimeUnit.MILLISECONDS, checkingPeriod.unit());
+    assertEquals(500, checkingPeriod.getPeriod());
+    assertEquals(TimeUnit.MILLISECONDS, checkingPeriod.getUnit());
     Timeout timeout = Timeout.getOrDefault(CHECKING_PERIOD_OPTION);
-    assertEquals(-1, timeout.timeoutMillis());
+    assertEquals(-1, timeout.getTimeoutMillis());
   }
 
   @Test

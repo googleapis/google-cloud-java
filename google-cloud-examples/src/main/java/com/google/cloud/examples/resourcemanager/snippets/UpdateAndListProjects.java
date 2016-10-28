@@ -37,7 +37,7 @@ public class UpdateAndListProjects {
   public static void main(String... args) {
     // Create Resource Manager service object
     // By default, credentials are inferred from the runtime environment.
-    ResourceManager resourceManager = ResourceManagerOptions.defaultInstance().service();
+    ResourceManager resourceManager = ResourceManagerOptions.getDefaultInstance().getService();
 
     // Get a project from the server
     Project project = resourceManager.get("some-project-id"); // Use an existing project's ID

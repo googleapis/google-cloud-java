@@ -110,13 +110,13 @@ public class SerializationTest extends BaseSerializationTest {
 
   @Override
   protected java.io.Serializable[] serializableObjects() {
-    DatastoreOptions options = DatastoreOptions.builder()
-        .authCredentials(AuthCredentials.createForAppEngine())
-        .projectId("ds1")
+    DatastoreOptions options = DatastoreOptions.newBuilder()
+        .setAuthCredentials(AuthCredentials.createForAppEngine())
+        .setProjectId("ds1")
         .build();
     DatastoreOptions otherOptions = options.toBuilder()
         .namespace("ns1")
-        .authCredentials(null)
+        .setAuthCredentials(null)
         .build();
     return new java.io.Serializable[]{KEY1, KEY2, INCOMPLETE_KEY1, INCOMPLETE_KEY2, ENTITY1,
         ENTITY2, ENTITY3, EMBEDDED_ENTITY, PROJECTION_ENTITY, DATE_TIME1, BLOB1, CURSOR1, GQL1,

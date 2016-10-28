@@ -133,7 +133,7 @@ public class Address extends AddressInfo {
   Address(Compute compute, AddressInfo.BuilderImpl infoBuilder) {
     super(infoBuilder);
     this.compute = checkNotNull(compute);
-    this.options = compute.options();
+    this.options = compute.getOptions();
   }
 
   /**
@@ -208,7 +208,7 @@ public class Address extends AddressInfo {
 
   private void readObject(ObjectInputStream input) throws IOException, ClassNotFoundException {
     input.defaultReadObject();
-    this.compute = options.service();
+    this.compute = options.getService();
   }
 
   static Address fromPb(Compute compute, com.google.api.services.compute.model.Address addressPb) {

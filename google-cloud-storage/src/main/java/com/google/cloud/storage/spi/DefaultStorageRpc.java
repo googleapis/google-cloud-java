@@ -99,12 +99,12 @@ public class DefaultStorageRpc implements StorageRpc {
   private static final long MEGABYTE = 1024L * 1024L;
 
   public DefaultStorageRpc(StorageOptions options) {
-    HttpTransport transport = options.httpTransportFactory().create();
-    HttpRequestInitializer initializer = options.httpRequestInitializer();
+    HttpTransport transport = options.getHttpTransportFactory().create();
+    HttpRequestInitializer initializer = options.getHttpRequestInitializer();
     this.options = options;
     storage = new Storage.Builder(transport, new JacksonFactory(), initializer)
-        .setRootUrl(options.host())
-        .setApplicationName(options.applicationName())
+        .setRootUrl(options.getHost())
+        .setApplicationName(options.getApplicationName())
         .build();
   }
 
@@ -223,7 +223,7 @@ public class DefaultStorageRpc implements StorageRpc {
   public Bucket create(Bucket bucket, Map<Option, ?> options) {
     try {
       return storage.buckets()
-          .insert(this.options.projectId(), bucket)
+          .insert(this.options.getProjectId(), bucket)
           .setProjection(DEFAULT_PROJECTION)
           .setPredefinedAcl(PREDEFINED_ACL.getString(options))
           .setPredefinedDefaultObjectAcl(PREDEFINED_DEFAULT_OBJECT_ACL.getString(options))
@@ -258,7 +258,7 @@ public class DefaultStorageRpc implements StorageRpc {
   public Tuple<String, Iterable<Bucket>> list(Map<Option, ?> options) {
     try {
       Buckets buckets = storage.buckets()
-          .list(this.options.projectId())
+          .list(this.options.getProjectId())
           .setProjection(DEFAULT_PROJECTION)
           .setPrefix(PREFIX.getString(options))
           .setMaxResults(MAX_RESULTS.getLong(options))
@@ -320,7 +320,7 @@ public class DefaultStorageRpc implements StorageRpc {
           .execute();
     } catch (IOException ex) {
       StorageException serviceException = translate(ex);
-      if (serviceException.code() == HTTP_NOT_FOUND) {
+      if (serviceException.getCode() == HTTP_NOT_FOUND) {
         return null;
       }
       throw serviceException;
@@ -346,7 +346,7 @@ public class DefaultStorageRpc implements StorageRpc {
       return getCall(object, options).execute();
     } catch (IOException ex) {
       StorageException serviceException = translate(ex);
-      if (serviceException.code() == HTTP_NOT_FOUND) {
+      if (serviceException.getCode() == HTTP_NOT_FOUND) {
         return null;
       }
       throw serviceException;
@@ -401,7 +401,7 @@ public class DefaultStorageRpc implements StorageRpc {
       return true;
     } catch (IOException ex) {
       StorageException serviceException = translate(ex);
-      if (serviceException.code() == HTTP_NOT_FOUND) {
+      if (serviceException.getCode() == HTTP_NOT_FOUND) {
         return false;
       }
       throw serviceException;
@@ -426,7 +426,7 @@ public class DefaultStorageRpc implements StorageRpc {
       return true;
     } catch (IOException ex) {
       StorageException serviceException = translate(ex);
-      if (serviceException.code() == HTTP_NOT_FOUND) {
+      if (serviceException.getCode() == HTTP_NOT_FOUND) {
         return false;
       }
       throw serviceException;
@@ -526,7 +526,7 @@ public class DefaultStorageRpc implements StorageRpc {
       return Tuple.of(etag, output.toByteArray());
     } catch (IOException ex) {
       StorageException serviceException = translate(ex);
-      if (serviceException.code() == SC_REQUESTED_RANGE_NOT_SATISFIABLE) {
+      if (serviceException.getCode() == SC_REQUESTED_RANGE_NOT_SATISFIABLE) {
         return Tuple.of(null, new byte[0]);
       }
       throw serviceException;
@@ -681,7 +681,7 @@ public class DefaultStorageRpc implements StorageRpc {
       return storage.bucketAccessControls().get(bucket, entity).execute();
     } catch (IOException ex) {
       StorageException serviceException = translate(ex);
-      if (serviceException.code() == HTTP_NOT_FOUND) {
+      if (serviceException.getCode() == HTTP_NOT_FOUND) {
         return null;
       }
       throw serviceException;
@@ -695,7 +695,7 @@ public class DefaultStorageRpc implements StorageRpc {
       return true;
     } catch (IOException ex) {
       StorageException serviceException = translate(ex);
-      if (serviceException.code() == HTTP_NOT_FOUND) {
+      if (serviceException.getCode() == HTTP_NOT_FOUND) {
         return false;
       }
       throw serviceException;
@@ -736,7 +736,7 @@ public class DefaultStorageRpc implements StorageRpc {
       return storage.defaultObjectAccessControls().get(bucket, entity).execute();
     } catch (IOException ex) {
       StorageException serviceException = translate(ex);
-      if (serviceException.code() == HTTP_NOT_FOUND) {
+      if (serviceException.getCode() == HTTP_NOT_FOUND) {
         return null;
       }
       throw serviceException;
@@ -750,7 +750,7 @@ public class DefaultStorageRpc implements StorageRpc {
       return true;
     } catch (IOException ex) {
       StorageException serviceException = translate(ex);
-      if (serviceException.code() == HTTP_NOT_FOUND) {
+      if (serviceException.getCode() == HTTP_NOT_FOUND) {
         return false;
       }
       throw serviceException;
@@ -794,7 +794,7 @@ public class DefaultStorageRpc implements StorageRpc {
           .execute();
     } catch (IOException ex) {
       StorageException serviceException = translate(ex);
-      if (serviceException.code() == HTTP_NOT_FOUND) {
+      if (serviceException.getCode() == HTTP_NOT_FOUND) {
         return null;
       }
       throw serviceException;
@@ -810,7 +810,7 @@ public class DefaultStorageRpc implements StorageRpc {
       return true;
     } catch (IOException ex) {
       StorageException serviceException = translate(ex);
-      if (serviceException.code() == HTTP_NOT_FOUND) {
+      if (serviceException.getCode() == HTTP_NOT_FOUND) {
         return false;
       }
       throw serviceException;

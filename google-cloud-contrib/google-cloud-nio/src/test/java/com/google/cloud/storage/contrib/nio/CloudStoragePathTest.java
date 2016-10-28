@@ -46,7 +46,7 @@ public class CloudStoragePathTest {
 
   @Before
   public void before() {
-    CloudStorageFileSystemProvider.setStorageOptions(LocalStorageHelper.options());
+    CloudStorageFileSystemProvider.setStorageOptions(LocalStorageHelper.getOptions());
   }
 
   @Test

@@ -41,62 +41,62 @@ public class DnsExceptionTest {
   public void testDnsException() throws Exception {
     IOException cause = new SocketTimeoutException("socketTimeoutMessage");
     DnsException exception = new DnsException(500, "message", cause);
-    assertEquals(500, exception.code());
+    assertEquals(500, exception.getCode());
     assertEquals("message", exception.getMessage());
-    assertNull(exception.reason());
-    assertTrue(exception.retryable());
-    assertTrue(exception.idempotent());
+    assertNull(exception.getReason());
+    assertTrue(exception.isRetryable());
+    assertTrue(exception.isIdempotent());
     assertSame(cause, exception.getCause());
 
     exception = new DnsException(502, "message", cause);
-    assertEquals(502, exception.code());
+    assertEquals(502, exception.getCode());
     assertEquals("message", exception.getMessage());
-    assertNull(exception.reason());
-    assertTrue(exception.retryable());
-    assertTrue(exception.idempotent());
+    assertNull(exception.getReason());
+    assertTrue(exception.isRetryable());
+    assertTrue(exception.isIdempotent());
     assertSame(cause, exception.getCause());
 
     exception = new DnsException(503, "message", cause);
-    assertEquals(503, exception.code());
+    assertEquals(503, exception.getCode());
     assertEquals("message", exception.getMessage());
-    assertNull(exception.reason());
-    assertTrue(exception.retryable());
-    assertTrue(exception.idempotent());
+    assertNull(exception.getReason());
+    assertTrue(exception.isRetryable());
+    assertTrue(exception.isIdempotent());
     assertSame(cause, exception.getCause());
 
     exception = new DnsException(429, "message", cause);
-    assertEquals(429, exception.code());
+    assertEquals(429, exception.getCode());
     assertEquals("message", exception.getMessage());
-    assertNull(exception.reason());
-    assertTrue(exception.retryable());
-    assertTrue(exception.idempotent());
+    assertNull(exception.getReason());
+    assertTrue(exception.isRetryable());
+    assertTrue(exception.isIdempotent());
     assertSame(cause, exception.getCause());
 
     exception = new DnsException(404, "message", cause);
-    assertEquals(404, exception.code());
+    assertEquals(404, exception.getCode());
     assertEquals("message", exception.getMessage());
-    assertNull(exception.reason());
-    assertFalse(exception.retryable());
-    assertTrue(exception.idempotent());
+    assertNull(exception.getReason());
+    assertFalse(exception.isRetryable());
+    assertTrue(exception.isIdempotent());
     assertSame(cause, exception.getCause());
 
     exception = new DnsException(cause, true);
-    assertEquals(DnsException.UNKNOWN_CODE, exception.code());
-    assertNull(exception.reason());
+    assertEquals(DnsException.UNKNOWN_CODE, exception.getCode());
+    assertNull(exception.getReason());
     assertEquals("socketTimeoutMessage", exception.getMessage());
     assertEquals(cause, exception.getCause());
-    assertTrue(exception.retryable());
-    assertTrue(exception.idempotent());
+    assertTrue(exception.isRetryable());
+    assertTrue(exception.isIdempotent());
     assertSame(cause, exception.getCause());
 
     GoogleJsonError error = new GoogleJsonError();
     error.setCode(503);
     error.setMessage("message");
     exception = new DnsException(error, true);
-    assertEquals(503, exception.code());
+    assertEquals(503, exception.getCode());
     assertEquals("message", exception.getMessage());
-    assertTrue(exception.retryable());
-    assertTrue(exception.idempotent());
+    assertTrue(exception.isRetryable());
+    assertTrue(exception.isIdempotent());
   }
 
   @Test
@@ -109,12 +109,12 @@ public class DnsExceptionTest {
     try {
       DnsException.translateAndThrow(exceptionMock);
     } catch (BaseServiceException ex) {
-      assertEquals(DnsException.UNKNOWN_CODE, ex.code());
-      assertNull(ex.reason());
+      assertEquals(DnsException.UNKNOWN_CODE, ex.getCode());
+      assertNull(ex.getReason());
       assertEquals("message", ex.getMessage());
       assertEquals(timeoutException, ex.getCause());
-      assertTrue(ex.retryable());
-      assertTrue(ex.idempotent());
+      assertTrue(ex.isRetryable());
+      assertTrue(ex.isIdempotent());
     } finally {
       verify(exceptionMock);
     }
@@ -126,10 +126,10 @@ public class DnsExceptionTest {
     try {
       DnsException.translateAndThrow(exceptionMock);
     } catch (BaseServiceException ex) {
-      assertEquals(DnsException.UNKNOWN_CODE, ex.code());
+      assertEquals(DnsException.UNKNOWN_CODE, ex.getCode());
       assertEquals("message", ex.getMessage());
-      assertFalse(ex.retryable());
-      assertTrue(ex.idempotent());
+      assertFalse(ex.isRetryable());
+      assertTrue(ex.isIdempotent());
       assertSame(cause, ex.getCause());
     } finally {
       verify(exceptionMock);

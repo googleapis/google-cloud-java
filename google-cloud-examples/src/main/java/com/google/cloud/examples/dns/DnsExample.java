@@ -404,7 +404,7 @@ public class DnsExample {
     public void run(Dns dns, String... args) {
       ProjectInfo project = dns.getProject();
       ProjectInfo.Quota quota = project.getQuota();
-      System.out.printf("Project id: %s%nQuota:%n", dns.options().projectId());
+      System.out.printf("Project id: %s%nQuota:%n", dns.getOptions().getProjectId());
       System.out.printf("\tZones: %d%n", quota.getZones());
       System.out.printf("\tRecord sets per zone: %d%n", quota.getRrsetsPerZone());
       System.out.printf("\tRecord sets per DNS record: %d%n",
@@ -510,11 +510,11 @@ public class DnsExample {
       return;
     }
     if (valid) {
-      DnsOptions.Builder optionsBuilder = DnsOptions.builder();
+      DnsOptions.Builder optionsBuilder = DnsOptions.newBuilder();
       if (projectId != null) {
-        optionsBuilder.projectId(projectId);
+        optionsBuilder.setProjectId(projectId);
       }
-      Dns dns = optionsBuilder.build().service();
+      Dns dns = optionsBuilder.build().getService();
       action.run(dns, args);
     } else {
       System.out.printf("Invalid input for action '%s'%n", actionName);

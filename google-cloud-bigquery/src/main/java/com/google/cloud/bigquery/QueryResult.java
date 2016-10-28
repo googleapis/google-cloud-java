@@ -34,7 +34,11 @@ public class QueryResult extends PageImpl<List<FieldValue>> {
 
   interface QueryResultsPageFetcher extends PageImpl.NextPageFetcher<List<FieldValue>> {
     @Override
+    @Deprecated
     QueryResult nextPage();
+
+    @Override
+    QueryResult getNextPage();
   }
 
   static final class Builder {
@@ -159,19 +163,25 @@ public class QueryResult extends PageImpl<List<FieldValue>> {
   }
 
   @Override
+  @Deprecated
   public QueryResult nextPage() {
-    return (QueryResult) super.nextPage();
+    return getNextPage();
+  }
+
+  @Override
+  public QueryResult getNextPage() {
+    return (QueryResult) super.getNextPage();
   }
 
   @Override
   public String toString() {
     return MoreObjects.toStringHelper(this)
-        .add("rows", values())
+        .add("rows", getValues())
         .add("cacheHit", cacheHit)
         .add("schema", schema)
         .add("totalBytesProcessed", totalBytesProcessed)
         .add("totalRows", totalRows)
-        .add("cursor", nextPageCursor())
+        .add("cursor", getNextPageCursor())
         .toString();
   }
 
@@ -189,8 +199,8 @@ public class QueryResult extends PageImpl<List<FieldValue>> {
       return false;
     }
     QueryResult response = (QueryResult) obj;
-    return Objects.equals(nextPageCursor(), response.nextPageCursor())
-        && Objects.equals(values(), response.values())
+    return Objects.equals(getNextPageCursor(), response.getNextPageCursor())
+        && Objects.equals(getValues(), response.getValues())
         && Objects.equals(schema, response.schema)
         && totalRows == response.totalRows
         && totalBytesProcessed == response.totalBytesProcessed

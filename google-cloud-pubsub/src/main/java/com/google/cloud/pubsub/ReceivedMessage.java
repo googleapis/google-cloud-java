@@ -136,7 +136,7 @@ public final class ReceivedMessage extends Message {
     subscription = checkNotNull(builder.subscription);
     ackId = checkNotNull(builder.ackId);
     pubsub = checkNotNull(builder.pubsub);
-    options = pubsub.options();
+    options = pubsub.getOptions();
   }
 
   @Override
@@ -285,7 +285,7 @@ public final class ReceivedMessage extends Message {
 
   private void readObject(ObjectInputStream input) throws IOException, ClassNotFoundException {
     input.defaultReadObject();
-    this.pubsub = options.service();
+    this.pubsub = options.getService();
   }
 
   static ReceivedMessage fromPb(PubSub pubsub, String subscription,

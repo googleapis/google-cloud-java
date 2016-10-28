@@ -93,7 +93,7 @@ public class ITBigQuerySnippets {
 
   @BeforeClass
   public static void beforeClass() {
-    bigquery = RemoteBigQueryHelper.create().getOptions().service();
+    bigquery = RemoteBigQueryHelper.create().getOptions().getService();
     bigquerySnippets = new BigQuerySnippets(bigquery);
     bigquery.create(DatasetInfo.newBuilder(DATASET).build());
   }
@@ -110,7 +110,7 @@ public class ITBigQuerySnippets {
     String fieldName = "aField";
     Table table = bigquerySnippets.createTable(DATASET, tableName, fieldName);
     assertNotNull(table);
-    TableId tableId = TableId.of(bigquery.options().projectId(), DATASET, tableName);
+    TableId tableId = TableId.of(bigquery.getOptions().getProjectId(), DATASET, tableName);
     assertEquals(tableId,
         bigquerySnippets.getTable(tableId.getDataset(), tableId.getTable()).getTableId());
     assertNotNull(bigquerySnippets.updateTable(DATASET, tableName, "new friendly name"));
@@ -140,7 +140,7 @@ public class ITBigQuerySnippets {
 
   @Test
   public void testCreateGetAndDeleteDataset() throws InterruptedException {
-    DatasetId datasetId = DatasetId.of(bigquery.options().projectId(), OTHER_DATASET);
+    DatasetId datasetId = DatasetId.of(bigquery.getOptions().getProjectId(), OTHER_DATASET);
     Dataset dataset = bigquerySnippets.createDataset(OTHER_DATASET);
     assertNotNull(dataset);
     assertEquals(datasetId, bigquerySnippets.getDataset(OTHER_DATASET).getDatasetId());
@@ -180,7 +180,7 @@ public class ITBigQuerySnippets {
       Thread.sleep(500);
       listPage = bigquerySnippets.listTableData(DATASET, tableName);
     }
-    Iterator<List<FieldValue>> rowIterator = listPage.values().iterator();
+    Iterator<List<FieldValue>> rowIterator = listPage.getValues().iterator();
     assertEquals("StringValue1", rowIterator.next().get(0).getStringValue());
     assertEquals("StringValue2", rowIterator.next().get(0).getStringValue());
     assertTrue(bigquerySnippets.deleteTable(DATASET, tableName));
@@ -204,7 +204,7 @@ public class ITBigQuerySnippets {
       Thread.sleep(500);
       listPage = bigquerySnippets.listTableDataFromId(DATASET, tableName);
     }
-    List<FieldValue> row = listPage.values().iterator().next();
+    List<FieldValue> row = listPage.getValues().iterator().next();
     assertEquals(true, row.get(0).getBooleanValue());
     assertArrayEquals(new byte[]{0xD, 0xE, 0xA, 0xD}, row.get(1).getBytesValue());
     assertTrue(bigquerySnippets.deleteTable(DATASET, tableName));

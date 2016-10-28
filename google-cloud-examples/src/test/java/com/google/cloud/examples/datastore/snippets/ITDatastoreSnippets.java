@@ -55,7 +55,7 @@ public class ITDatastoreSnippets {
 
   @BeforeClass
   public static void beforeClass() {
-    datastore = DatastoreOptions.defaultInstance().service();
+    datastore = DatastoreOptions.getDefaultInstance().getService();
     datastoreSnippets = new DatastoreSnippets(datastore);
   }
 

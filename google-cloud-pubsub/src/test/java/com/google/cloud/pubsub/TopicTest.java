@@ -48,7 +48,7 @@ public class TopicTest {
 
   private static final String NAME = "topic";
   private static final TopicInfo TOPIC_INFO = TopicInfo.of(NAME);
-  private static final Policy POLICY = Policy.builder()
+  private static final Policy POLICY = Policy.newBuilder()
       .addIdentity(Role.viewer(), Identity.allAuthenticatedUsers())
       .build();
 
@@ -59,7 +59,7 @@ public class TopicTest {
   private Topic topic;
 
   private void initializeExpectedTopic(int optionsCalls) {
-    expect(serviceMockReturnsOptions.options()).andReturn(mockOptions).times(optionsCalls);
+    expect(serviceMockReturnsOptions.getOptions()).andReturn(mockOptions).times(optionsCalls);
     replay(serviceMockReturnsOptions);
     pubsub = createStrictMock(PubSub.class);
     expectedTopic = new Topic(serviceMockReturnsOptions, new Topic.BuilderImpl(TOPIC_INFO));
@@ -105,7 +105,7 @@ public class TopicTest {
     TopicInfo updatedInfo = TOPIC_INFO.toBuilder().setName("newTopic").build();
     Topic expectedTopic =
         new Topic(serviceMockReturnsOptions, new TopicInfo.BuilderImpl(updatedInfo));
-    expect(pubsub.options()).andReturn(mockOptions);
+    expect(pubsub.getOptions()).andReturn(mockOptions);
     expect(pubsub.getTopic(NAME)).andReturn(expectedTopic);
     replay(pubsub);
     initializeTopic();
@@ -116,7 +116,7 @@ public class TopicTest {
   @Test
   public void testReloadNull() {
     initializeExpectedTopic(1);
-    expect(pubsub.options()).andReturn(mockOptions);
+    expect(pubsub.getOptions()).andReturn(mockOptions);
     expect(pubsub.getTopic(NAME)).andReturn(null);
     replay(pubsub);
     initializeTopic();
@@ -129,7 +129,7 @@ public class TopicTest {
     TopicInfo updatedInfo = TOPIC_INFO.toBuilder().setName("newTopic").build();
     Topic expectedTopic =
         new Topic(serviceMockReturnsOptions, new TopicInfo.BuilderImpl(updatedInfo));
-    expect(pubsub.options()).andReturn(mockOptions);
+    expect(pubsub.getOptions()).andReturn(mockOptions);
     expect(pubsub.getTopicAsync(NAME))
         .andReturn(Futures.immediateFuture(expectedTopic));
     replay(pubsub);
@@ -141,7 +141,7 @@ public class TopicTest {
   @Test
   public void testReloadAsyncNull() throws ExecutionException, InterruptedException {
     initializeExpectedTopic(1);
-    expect(pubsub.options()).andReturn(mockOptions);
+    expect(pubsub.getOptions()).andReturn(mockOptions);
     expect(pubsub.getTopicAsync(NAME)).andReturn(Futures.<Topic>immediateFuture(null));
     replay(pubsub);
     initializeTopic();
@@ -151,7 +151,7 @@ public class TopicTest {
   @Test
   public void testDeleteTrue() {
     initializeExpectedTopic(1);
-    expect(pubsub.options()).andReturn(mockOptions);
+    expect(pubsub.getOptions()).andReturn(mockOptions);
     expect(pubsub.deleteTopic(NAME)).andReturn(true);
     replay(pubsub);
     initializeTopic();
@@ -161,7 +161,7 @@ public class TopicTest {
   @Test
   public void testDeleteFalse() {
     initializeExpectedTopic(1);
-    expect(pubsub.options()).andReturn(mockOptions);
+    expect(pubsub.getOptions()).andReturn(mockOptions);
     expect(pubsub.deleteTopic(NAME)).andReturn(false);
     replay(pubsub);
     initializeTopic();
@@ -171,7 +171,7 @@ public class TopicTest {
   @Test
   public void testDeleteAsyncTrue() throws ExecutionException, InterruptedException {
     initializeExpectedTopic(1);
-    expect(pubsub.options()).andReturn(mockOptions);
+    expect(pubsub.getOptions()).andReturn(mockOptions);
     expect(pubsub.deleteTopicAsync(NAME)).andReturn(Futures.immediateFuture(true));
     replay(pubsub);
     initializeTopic();
@@ -181,7 +181,7 @@ public class TopicTest {
   @Test
   public void testDeleteAsyncFalse() throws ExecutionException, InterruptedException {
     initializeExpectedTopic(1);
-    expect(pubsub.options()).andReturn(mockOptions);
+    expect(pubsub.getOptions()).andReturn(mockOptions);
     expect(pubsub.deleteTopicAsync(NAME)).andReturn(Futures.immediateFuture(false));
     replay(pubsub);
     initializeTopic();
@@ -191,7 +191,7 @@ public class TopicTest {
   @Test
   public void testPublishOneMessage() {
     initializeExpectedTopic(1);
-    expect(pubsub.options()).andReturn(mockOptions);
+    expect(pubsub.getOptions()).andReturn(mockOptions);
     Message message = Message.of("payload1");
     String messageId = "messageId";
     expect(pubsub.publish(NAME, message)).andReturn(messageId);
@@ -203,7 +203,7 @@ public class TopicTest {
   @Test
   public void testPublishOneMessageAsync() throws ExecutionException, InterruptedException {
     initializeExpectedTopic(1);
-    expect(pubsub.options()).andReturn(mockOptions);
+    expect(pubsub.getOptions()).andReturn(mockOptions);
     Message message = Message.of("payload1");
     String messageId = "messageId";
     expect(pubsub.publishAsync(NAME, message))
@@ -216,7 +216,7 @@ public class TopicTest {
   @Test
   public void testPublishMoreMessages() {
     initializeExpectedTopic(1);
-    expect(pubsub.options()).andReturn(mockOptions);
+    expect(pubsub.getOptions()).andReturn(mockOptions);
     Message message1 = Message.of("payload1");
     Message message2 = Message.of("payload2");
     List<String> messageIds = ImmutableList.of("messageId1", "messageId2");
@@ -229,7 +229,7 @@ public class TopicTest {
   @Test
   public void testPublishMoreMessagesAsync() throws ExecutionException, InterruptedException {
     initializeExpectedTopic(1);
-    expect(pubsub.options()).andReturn(mockOptions);
+    expect(pubsub.getOptions()).andReturn(mockOptions);
     Message message1 = Message.of("payload1");
     Message message2 = Message.of("payload2");
     List<String> messageIds = ImmutableList.of("messageId1", "messageId2");
@@ -243,7 +243,7 @@ public class TopicTest {
   @Test
   public void testPublishMessageList() {
     initializeExpectedTopic(1);
-    expect(pubsub.options()).andReturn(mockOptions);
+    expect(pubsub.getOptions()).andReturn(mockOptions);
     Message message1 = Message.of("payload1");
     Message message2 = Message.of("payload2");
     List<Message> messages = ImmutableList.of(message1, message2);
@@ -257,7 +257,7 @@ public class TopicTest {
   @Test
   public void testPublishMessageListAsync() throws ExecutionException, InterruptedException {
     initializeExpectedTopic(1);
-    expect(pubsub.options()).andReturn(mockOptions);
+    expect(pubsub.getOptions()).andReturn(mockOptions);
     Message message1 = Message.of("payload1");
     Message message2 = Message.of("payload2");
     List<Message> messages = ImmutableList.of(message1, message2);
@@ -272,7 +272,7 @@ public class TopicTest {
   @Test
   public void testListSubscriptions() {
     initializeExpectedTopic(1);
-    expect(pubsub.options()).andReturn(mockOptions);
+    expect(pubsub.getOptions()).andReturn(mockOptions);
     final List<SubscriptionId> subscriptions = ImmutableList.of(
         new SubscriptionId("project", "subscription1"),
         new SubscriptionId("project", "subscription2"));
@@ -280,13 +280,13 @@ public class TopicTest {
     expect(pubsub.listSubscriptions(NAME)).andReturn(result);
     replay(pubsub);
     initializeTopic();
-    assertEquals(subscriptions, topic.listSubscriptions().values());
+    assertEquals(subscriptions, topic.listSubscriptions().getValues());
   }
 
   @Test
   public void testListSubscriptionsWithOptions() {
     initializeExpectedTopic(1);
-    expect(pubsub.options()).andReturn(mockOptions);
+    expect(pubsub.getOptions()).andReturn(mockOptions);
     final List<SubscriptionId> subscriptions = ImmutableList.of(
         new SubscriptionId("project", "subscription1"),
         new SubscriptionId("project", "subscription2"));
@@ -294,13 +294,13 @@ public class TopicTest {
     expect(pubsub.listSubscriptions(NAME, ListOption.pageSize(42))).andReturn(result);
     replay(pubsub);
     initializeTopic();
-    assertEquals(subscriptions, topic.listSubscriptions(ListOption.pageSize(42)).values());
+    assertEquals(subscriptions, topic.listSubscriptions(ListOption.pageSize(42)).getValues());
   }
 
   @Test
   public void testListSubscriptionsAsync() throws ExecutionException, InterruptedException {
     initializeExpectedTopic(1);
-    expect(pubsub.options()).andReturn(mockOptions);
+    expect(pubsub.getOptions()).andReturn(mockOptions);
     final List<SubscriptionId> subscriptions = ImmutableList.of(
         new SubscriptionId("project", "subscription1"),
         new SubscriptionId("project", "subscription2"));
@@ -309,14 +309,14 @@ public class TopicTest {
         .andReturn(Futures.immediateFuture(result));
     replay(pubsub);
     initializeTopic();
-    assertEquals(subscriptions, topic.listSubscriptionsAsync().get().values());
+    assertEquals(subscriptions, topic.listSubscriptionsAsync().get().getValues());
   }
 
   @Test
   public void testListSubscriptionsAsyncWithOptions()
       throws ExecutionException, InterruptedException {
     initializeExpectedTopic(1);
-    expect(pubsub.options()).andReturn(mockOptions);
+    expect(pubsub.getOptions()).andReturn(mockOptions);
     final List<SubscriptionId> subscriptions = ImmutableList.of(
         new SubscriptionId("project", "subscription1"),
         new SubscriptionId("project", "subscription2"));
@@ -326,13 +326,13 @@ public class TopicTest {
     replay(pubsub);
     initializeTopic();
     assertEquals(subscriptions,
-        topic.listSubscriptionsAsync(ListOption.pageSize(42)).get().values());
+        topic.listSubscriptionsAsync(ListOption.pageSize(42)).get().getValues());
   }
 
   @Test
   public void testGetPolicy() {
     initializeExpectedTopic(1);
-    expect(pubsub.options()).andReturn(mockOptions);
+    expect(pubsub.getOptions()).andReturn(mockOptions);
     expect(pubsub.getTopicPolicy(NAME)).andReturn(POLICY);
     replay(pubsub);
     initializeTopic();
@@ -343,7 +343,7 @@ public class TopicTest {
   @Test
   public void testGetPolicyNull() {
     initializeExpectedTopic(1);
-    expect(pubsub.options()).andReturn(mockOptions);
+    expect(pubsub.getOptions()).andReturn(mockOptions);
     expect(pubsub.getTopicPolicy(NAME)).andReturn(null);
     replay(pubsub);
     initializeTopic();
@@ -353,7 +353,7 @@ public class TopicTest {
   @Test
   public void testGetPolicyAsync() throws ExecutionException, InterruptedException {
     initializeExpectedTopic(1);
-    expect(pubsub.options()).andReturn(mockOptions);
+    expect(pubsub.getOptions()).andReturn(mockOptions);
     expect(pubsub.getTopicPolicyAsync(NAME)).andReturn(Futures.immediateFuture(POLICY));
     replay(pubsub);
     initializeTopic();
@@ -364,7 +364,7 @@ public class TopicTest {
   @Test
   public void testReplacePolicy() {
     initializeExpectedTopic(1);
-    expect(pubsub.options()).andReturn(mockOptions);
+    expect(pubsub.getOptions()).andReturn(mockOptions);
     expect(pubsub.replaceTopicPolicy(NAME, POLICY)).andReturn(POLICY);
     replay(pubsub);
     initializeTopic();
@@ -375,7 +375,7 @@ public class TopicTest {
   @Test
   public void testReplacePolicyAsync() throws ExecutionException, InterruptedException {
     initializeExpectedTopic(1);
-    expect(pubsub.options()).andReturn(mockOptions);
+    expect(pubsub.getOptions()).andReturn(mockOptions);
     expect(pubsub.replaceTopicPolicyAsync(NAME, POLICY)).andReturn(Futures.immediateFuture(POLICY));
     replay(pubsub);
     initializeTopic();
@@ -388,7 +388,7 @@ public class TopicTest {
     List<String> permissions = ImmutableList.of("pubsub.topics.get");
     List<Boolean> permissionsResult = ImmutableList.of(true);
     initializeExpectedTopic(1);
-    expect(pubsub.options()).andReturn(mockOptions);
+    expect(pubsub.getOptions()).andReturn(mockOptions);
     expect(pubsub.testTopicPermissions(NAME, permissions)).andReturn(permissionsResult);
     replay(pubsub);
     initializeTopic();
@@ -400,7 +400,7 @@ public class TopicTest {
     List<String> permissions = ImmutableList.of("pubsub.topics.get");
     List<Boolean> permissionsResult = ImmutableList.of(true);
     initializeExpectedTopic(1);
-    expect(pubsub.options()).andReturn(mockOptions);
+    expect(pubsub.getOptions()).andReturn(mockOptions);
     expect(pubsub.testTopicPermissionsAsync(NAME, permissions))
         .andReturn(Futures.immediateFuture(permissionsResult));
     replay(pubsub);

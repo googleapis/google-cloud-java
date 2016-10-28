@@ -196,7 +196,7 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    * Creates a new sink.
    *
    * <p>Example of creating a sink to export logs to a BigQuery dataset (in the
-   * {@link LoggingOptions#projectId()} project).
+   * {@link LoggingOptions#getProjectId()} project).
    * <pre> {@code
    * String sinkName = "my_sink_name";
    * String datasetName = "my_dataset";
@@ -214,7 +214,7 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    * result. {@link Future#get()} returns the created sink.
    *
    * <p>Example of asynchronously creating a sink to export logs to a BigQuery dataset (in the
-   * {@link LoggingOptions#projectId()} project).
+   * {@link LoggingOptions#getProjectId()} project).
    * <pre> {@code
    * String sinkName = "my_sink_name";
    * String datasetName = "my_dataset";

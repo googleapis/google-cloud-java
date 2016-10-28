@@ -38,7 +38,7 @@ public final class ExceptionHandler implements Serializable {
   private static final long serialVersionUID = -2460707015779532919L;
 
   private static final ExceptionHandler DEFAULT_INSTANCE =
-      builder().retryOn(Exception.class).abortOn(RuntimeException.class).build();
+      newBuilder().retryOn(Exception.class).abortOn(RuntimeException.class).build();
 
   private final ImmutableList<Interceptor> interceptors;
   private final ImmutableSet<Class<? extends Exception>> retriableExceptions;
@@ -93,7 +93,18 @@ public final class ExceptionHandler implements Serializable {
      * @param interceptors the interceptors for this exception handler
      * @return the Builder for chaining
      */
+    @Deprecated
     public Builder interceptor(Interceptor... interceptors) {
+      return addInterceptors(interceptors);
+    }
+
+    /**
+     * Adds the exception handler interceptors. Call order will be maintained.
+     *
+     * @param interceptors the interceptors for this exception handler
+     * @return the Builder for chaining
+     */
+    public Builder addInterceptors(Interceptor... interceptors) {
       for (Interceptor interceptor : interceptors) {
         this.interceptors.add(interceptor);
       }
@@ -232,11 +243,21 @@ public final class ExceptionHandler implements Serializable {
     }
   }
 
+  @Deprecated
   public Set<Class<? extends Exception>> retriableExceptions() {
+    return getRetriableExceptions();
+  }
+
+  public Set<Class<? extends Exception>> getRetriableExceptions() {
     return retriableExceptions;
   }
 
+  @Deprecated
   public Set<Class<? extends Exception>> nonRetriableExceptions() {
+    return nonRetriableExceptions;
+  }
+
+  public Set<Class<? extends Exception>> getNonRetriableExceptions() {
     return nonRetriableExceptions;
   }
 
@@ -283,11 +304,24 @@ public final class ExceptionHandler implements Serializable {
   /**
    * Returns an instance which retry any checked exception and abort on any runtime exception.
    */
+  @Deprecated
   public static ExceptionHandler defaultInstance() {
+    return getDefaultInstance();
+  }
+
+  /**
+   * Returns an instance which retry any checked exception and abort on any runtime exception.
+   */
+  public static ExceptionHandler getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
+  @Deprecated
   public static Builder builder() {
+    return newBuilder();
+  }
+
+  public static Builder newBuilder() {
     return new Builder();
   }
 }

@@ -31,7 +31,7 @@ import com.google.cloud.pubsub.SubscriptionInfo;
 public class CreateSubscriptionAndPullMessages {
 
   public static void main(String... args) throws Exception {
-    try (PubSub pubsub = PubSubOptions.defaultInstance().service()) {
+    try (PubSub pubsub = PubSubOptions.getDefaultInstance().getService()) {
       Subscription subscription =
           pubsub.create(SubscriptionInfo.of("test-topic", "test-subscription"));
       MessageProcessor callback = new MessageProcessor() {

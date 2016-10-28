@@ -142,12 +142,13 @@ public class ChangeRequest extends ChangeRequestInfo {
     super(infoBuilder);
     this.zone = checkNotNull(zone);
     this.dns = checkNotNull(dns);
-    this.options = dns.options();
+    this.options = dns.getOptions();
   }
 
   /**
    * Returns the name of the {@link Zone} associated with this change request.
    */
+  @Deprecated
   public String zone() {
     return getZone();
   }
@@ -162,6 +163,7 @@ public class ChangeRequest extends ChangeRequestInfo {
   /**
    * Returns the change request's {@code Dns} object used to issue requests.
    */
+  @Deprecated
   public Dns dns() {
     return getDns();
   }
@@ -238,7 +240,7 @@ public class ChangeRequest extends ChangeRequestInfo {
 
   private void readObject(ObjectInputStream input) throws IOException, ClassNotFoundException {
     input.defaultReadObject();
-    this.dns = options.service();
+    this.dns = options.getService();
   }
 
   static ChangeRequest fromPb(Dns dns, String zoneName, Change pb) {

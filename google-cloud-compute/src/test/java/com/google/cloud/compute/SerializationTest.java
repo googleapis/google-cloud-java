@@ -32,7 +32,7 @@ import java.util.List;
 
 public class SerializationTest extends BaseSerializationTest {
 
-  private static final Compute COMPUTE = ComputeOptions.builder().projectId("p").build().service();
+  private static final Compute COMPUTE = ComputeOptions.newBuilder().setProjectId("p").build().getService();
   private static final Long CREATION_TIMESTAMP = 1453293540000L;
   private static final String DESCRIPTION = "description";
   private static final String VALID_DISK_SIZE = "10GB-10TB";
@@ -263,14 +263,14 @@ public class SerializationTest extends BaseSerializationTest {
 
   @Override
   protected Serializable[] serializableObjects() {
-    ComputeOptions options = ComputeOptions.builder()
-        .projectId("p1")
-        .authCredentials(AuthCredentials.createForAppEngine())
+    ComputeOptions options = ComputeOptions.newBuilder()
+        .setProjectId("p1")
+        .setAuthCredentials(AuthCredentials.createForAppEngine())
         .build();
     ComputeOptions otherOptions = options.toBuilder()
-        .projectId("p2")
-        .retryParams(RetryParams.defaultInstance())
-        .authCredentials(null)
+        .setProjectId("p2")
+        .setRetryParams(RetryParams.getDefaultInstance())
+        .setAuthCredentials(null)
         .build();
     return new Serializable[]{DISK_TYPE_ID, DISK_TYPE, MACHINE_TYPE_ID, MACHINE_TYPE, REGION_ID,
         REGION, ZONE_ID, ZONE, LICENSE_ID, LICENSE, DEPRECATION_STATUS, GLOBAL_OPERATION_ID,

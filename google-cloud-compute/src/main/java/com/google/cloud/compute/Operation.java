@@ -519,7 +519,7 @@ public class Operation implements Serializable {
 
   private Operation(Builder builder) {
     this.compute = checkNotNull(builder.compute);
-    this.options = compute.options();
+    this.options = compute.getOptions();
     this.generatedId = builder.generatedId;
     this.operationId = checkNotNull(builder.operationId);
     this.clientOperationId = builder.clientOperationId;
@@ -919,8 +919,8 @@ public class Operation implements Serializable {
       throws InterruptedException, TimeoutException {
     WaitForOption.Timeout timeout = WaitForOption.Timeout.getOrDefault(waitOptions);
     CheckingPeriod checkingPeriod = CheckingPeriod.getOrDefault(waitOptions);
-    long timeoutMillis = timeout.timeoutMillis();
-    Clock clock = options.clock();
+    long timeoutMillis = timeout.getTimeoutMillis();
+    Clock clock = options.getClock();
     long startTime = clock.millis();
     while (!isDone()) {
       if (timeoutMillis  != -1 && (clock.millis() - startTime)  >= timeoutMillis) {
@@ -1049,7 +1049,7 @@ public class Operation implements Serializable {
 
   private void readObject(ObjectInputStream input) throws IOException, ClassNotFoundException {
     input.defaultReadObject();
-    this.compute = options.service();
+    this.compute = options.getService();
   }
 
   static Operation fromPb(Compute compute,

@@ -39,7 +39,7 @@ public class PolicyMarshallerTest {
   private static final Role EDITOR = Role.editor();
   private static final Role OWNER = Role.owner();
   private static final Role SOME_ROLE = Role.of("roles/some-role");
-  private static final Policy SIMPLE_POLICY = Policy.builder()
+  private static final Policy SIMPLE_POLICY = Policy.newBuilder()
       .addIdentity(OWNER, USER)
       .addIdentity(VIEWER, ALL_USERS)
       .addIdentity(EDITOR, ALL_AUTH_USERS, DOMAIN)
@@ -58,8 +58,8 @@ public class PolicyMarshallerTest {
     com.google.api.services.cloudresourcemanager.model.Policy policyPb =
         new com.google.api.services.cloudresourcemanager.model.Policy();
     Policy policy = PolicyMarshaller.INSTANCE.fromPb(policyPb);
-    assertTrue(policy.bindings().isEmpty());
-    assertNull(policy.etag());
-    assertEquals(0, policy.version());
+    assertTrue(policy.getBindings().isEmpty());
+    assertNull(policy.getEtag());
+    assertEquals(0, policy.getVersion());
   }
 }

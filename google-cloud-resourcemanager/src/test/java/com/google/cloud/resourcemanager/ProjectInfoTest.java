@@ -44,7 +44,8 @@ public class ProjectInfoTest {
       .setState(STATE)
       .setParent(PARENT)
       .build();
-  private static final ProjectInfo PARTIAL_PROJECT_INFO = ProjectInfo.newBuilder(PROJECT_ID).build();
+  private static final ProjectInfo PARTIAL_PROJECT_INFO =
+      ProjectInfo.newBuilder(PROJECT_ID).build();
   private static final ProjectInfo UNNAMED_PROJECT_FROM_LIST =
       PARTIAL_PROJECT_INFO.toBuilder().setName("Unnamed").build();
   private static final ProjectInfo DEPRECATED_PROJECT_INFO = ProjectInfo.builder(PROJECT_ID)

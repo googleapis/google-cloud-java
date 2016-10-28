@@ -83,6 +83,18 @@ public class BaseWriteChannelTest {
 
   @Test
   public void testConstructor() {
+    assertEquals(null, channel.getOptions());
+    assertEquals(ENTITY, channel.getEntity());
+    assertEquals(0, channel.getPosition());
+    assertEquals(UPLOAD_ID, channel.getUploadId());
+    assertEquals(0, channel.getLimit());
+    assertTrue(channel.isOpen());
+    assertArrayEquals(new byte[0], channel.getBuffer());
+    assertEquals(DEFAULT_CHUNK_SIZE, channel.getChunkSize());
+  }
+
+  @Test
+  public void testConstructorDeprecated() {
     assertEquals(null, channel.options());
     assertEquals(ENTITY, channel.entity());
     assertEquals(0, channel.position());
@@ -97,7 +109,7 @@ public class BaseWriteChannelTest {
   public void testClose() throws IOException {
     channel.close();
     assertFalse(channel.isOpen());
-    assertNull(channel.buffer());
+    assertNull(channel.getBuffer());
   }
 
   @Test
@@ -109,31 +121,31 @@ public class BaseWriteChannelTest {
 
   @Test
   public void testChunkSize() {
-    channel.chunkSize(42);
-    assertEquals(MIN_CHUNK_SIZE, channel.chunkSize());
-    channel.chunkSize(2 * MIN_CHUNK_SIZE);
-    assertEquals(2 * MIN_CHUNK_SIZE, channel.chunkSize());
-    channel.chunkSize(512 * 1025);
-    assertEquals(2 * MIN_CHUNK_SIZE, channel.chunkSize());
+    channel.setChunkSize(42);
+    assertEquals(MIN_CHUNK_SIZE, channel.getChunkSize());
+    channel.setChunkSize(2 * MIN_CHUNK_SIZE);
+    assertEquals(2 * MIN_CHUNK_SIZE, channel.getChunkSize());
+    channel.setChunkSize(512 * 1025);
+    assertEquals(2 * MIN_CHUNK_SIZE, channel.getChunkSize());
   }
 
   @Test
   public void testWrite() throws IOException {
     channel.write(ByteBuffer.wrap(CONTENT));
-    assertEquals(CONTENT.length, channel.limit());
-    assertEquals(DEFAULT_CHUNK_SIZE, channel.buffer().length);
-    assertArrayEquals(Arrays.copyOf(CONTENT, DEFAULT_CHUNK_SIZE), channel.buffer());
+    assertEquals(CONTENT.length, channel.getLimit());
+    assertEquals(DEFAULT_CHUNK_SIZE, channel.getBuffer().length);
+    assertArrayEquals(Arrays.copyOf(CONTENT, DEFAULT_CHUNK_SIZE), channel.getBuffer());
   }
 
   @Test
   public void testWriteAndFlush() throws IOException {
     ByteBuffer content = randomBuffer(DEFAULT_CHUNK_SIZE + 1);
     channel.write(content);
-    assertEquals(DEFAULT_CHUNK_SIZE, channel.position());
-    assertEquals(1, channel.limit());
+    assertEquals(DEFAULT_CHUNK_SIZE, channel.getPosition());
+    assertEquals(1, channel.getLimit());
     byte[] newContent = new byte[DEFAULT_CHUNK_SIZE];
     newContent[0] = content.get(DEFAULT_CHUNK_SIZE);
-    assertArrayEquals(newContent, channel.buffer());
+    assertArrayEquals(newContent, channel.getBuffer());
   }
 
   private static ByteBuffer randomBuffer(int size) {

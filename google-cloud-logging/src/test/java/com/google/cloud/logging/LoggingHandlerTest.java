@@ -136,8 +136,8 @@ public class LoggingHandlerTest {
 
   @Test
   public void testPublishLevels() {
-    EasyMock.expect(options.projectId()).andReturn(PROJECT).anyTimes();
-    EasyMock.expect(options.service()).andReturn(logging);
+    EasyMock.expect(options.getProjectId()).andReturn(PROJECT).anyTimes();
+    EasyMock.expect(options.getService()).andReturn(logging);
     logging.write(ImmutableList.of(FINEST_ENTRY), WriteOption.logName(LOG_NAME),
         WriteOption.resource(DEFAULT_RESOURCE));
     EasyMock.expectLastCall();
@@ -200,8 +200,8 @@ public class LoggingHandlerTest {
 
   @Test
   public void testPublishCustomResource() {
-    EasyMock.expect(options.projectId()).andReturn(PROJECT).anyTimes();
-    EasyMock.expect(options.service()).andReturn(logging);
+    EasyMock.expect(options.getProjectId()).andReturn(PROJECT).anyTimes();
+    EasyMock.expect(options.getService()).andReturn(logging);
     MonitoredResource resource = MonitoredResource.of("custom", ImmutableMap.<String, String>of());
     logging.write(ImmutableList.of(FINEST_ENTRY), WriteOption.logName(LOG_NAME),
         WriteOption.resource(resource));
@@ -215,8 +215,8 @@ public class LoggingHandlerTest {
 
   @Test
   public void testReportFlushError() {
-    EasyMock.expect(options.projectId()).andReturn(PROJECT).anyTimes();
-    EasyMock.expect(options.service()).andReturn(logging);
+    EasyMock.expect(options.getProjectId()).andReturn(PROJECT).anyTimes();
+    EasyMock.expect(options.getService()).andReturn(logging);
     RuntimeException ex = new RuntimeException();
     logging.write(ImmutableList.of(FINEST_ENTRY), WriteOption.logName(LOG_NAME),
         WriteOption.resource(DEFAULT_RESOURCE));
@@ -236,7 +236,7 @@ public class LoggingHandlerTest {
 
   @Test
   public void testReportFormatError() {
-    EasyMock.expect(options.projectId()).andReturn(PROJECT).anyTimes();
+    EasyMock.expect(options.getProjectId()).andReturn(PROJECT).anyTimes();
     EasyMock.replay(options, logging);
     Formatter formatter = EasyMock.createStrictMock(Formatter.class);
     RuntimeException ex = new RuntimeException();
@@ -256,8 +256,8 @@ public class LoggingHandlerTest {
 
   @Test
   public void testFlushSize() {
-    EasyMock.expect(options.projectId()).andReturn(PROJECT).anyTimes();
-    EasyMock.expect(options.service()).andReturn(logging);
+    EasyMock.expect(options.getProjectId()).andReturn(PROJECT).anyTimes();
+    EasyMock.expect(options.getService()).andReturn(logging);
     logging.write(ImmutableList.of(FINEST_ENTRY, FINER_ENTRY, FINE_ENTRY, CONFIG_ENTRY, INFO_ENTRY,
         WARNING_ENTRY), WriteOption.logName(LOG_NAME), WriteOption.resource(DEFAULT_RESOURCE));
     EasyMock.expectLastCall();
@@ -276,8 +276,8 @@ public class LoggingHandlerTest {
 
   @Test
   public void testFlushLevel() {
-    EasyMock.expect(options.projectId()).andReturn(PROJECT).anyTimes();
-    EasyMock.expect(options.service()).andReturn(logging);
+    EasyMock.expect(options.getProjectId()).andReturn(PROJECT).anyTimes();
+    EasyMock.expect(options.getService()).andReturn(logging);
     logging.write(ImmutableList.of(FINEST_ENTRY, FINER_ENTRY, FINE_ENTRY, CONFIG_ENTRY, INFO_ENTRY,
         WARNING_ENTRY), WriteOption.logName(LOG_NAME),
         WriteOption.resource(DEFAULT_RESOURCE));
@@ -298,8 +298,8 @@ public class LoggingHandlerTest {
 
   @Test
   public void testAddHandler() {
-    EasyMock.expect(options.projectId()).andReturn(PROJECT).anyTimes();
-    EasyMock.expect(options.service()).andReturn(logging);
+    EasyMock.expect(options.getProjectId()).andReturn(PROJECT).anyTimes();
+    EasyMock.expect(options.getService()).andReturn(logging);
     logging.write(ImmutableList.of(FINEST_ENTRY), WriteOption.logName(LOG_NAME),
         WriteOption.resource(DEFAULT_RESOURCE));
     EasyMock.expectLastCall();
@@ -315,7 +315,7 @@ public class LoggingHandlerTest {
 
   @Test
   public void testMaskLoggers() {
-    EasyMock.expect(options.projectId()).andReturn(PROJECT);
+    EasyMock.expect(options.getProjectId()).andReturn(PROJECT);
     EasyMock.replay(options, logging);
     LoggingHandler handler = new LoggingHandler(LOG_NAME, options);
     Logger logger = Logger.getLogger("com.google");
@@ -331,8 +331,8 @@ public class LoggingHandlerTest {
 
   @Test
   public void testClose() throws Exception {
-    EasyMock.expect(options.projectId()).andReturn(PROJECT).anyTimes();
-    EasyMock.expect(options.service()).andReturn(logging);
+    EasyMock.expect(options.getProjectId()).andReturn(PROJECT).anyTimes();
+    EasyMock.expect(options.getService()).andReturn(logging);
     logging.write(ImmutableList.of(FINEST_ENTRY), WriteOption.logName(LOG_NAME),
         WriteOption.resource(DEFAULT_RESOURCE));
     EasyMock.expectLastCall();

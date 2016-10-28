@@ -90,7 +90,7 @@ public abstract class BaseSystemTest {
     assertEquals(SinkInfo.VersionFormat.V2, sink.getVersionFormat());
     assertEquals("severity>=ERROR", sink.getFilter());
     DatasetDestination datasetDestination = sink.getDestination();
-    assertEquals(logging().options().projectId(), datasetDestination.getProject());
+    assertEquals(logging().getOptions().getProjectId(), datasetDestination.getProject());
     assertEquals("dataset", datasetDestination.getDataset());
     assertEquals(sink, logging().getSink(name));
     sink = sink.toBuilder()
@@ -117,7 +117,7 @@ public abstract class BaseSystemTest {
     assertEquals(SinkInfo.VersionFormat.V2, sink.getVersionFormat());
     assertEquals("severity>=ERROR", sink.getFilter());
     DatasetDestination datasetDestination = sink.getDestination();
-    assertEquals(logging().options().projectId(), datasetDestination.getProject());
+    assertEquals(logging().getOptions().getProjectId(), datasetDestination.getProject());
     assertEquals("dataset", datasetDestination.getDataset());
     assertEquals(sink, logging().getSinkAsync(name).get());
     sink = sink.toBuilder()
@@ -144,7 +144,7 @@ public abstract class BaseSystemTest {
     assertEquals(SinkInfo.VersionFormat.V2, sink.getVersionFormat());
     assertEquals("severity>=ERROR", sink.getFilter());
     DatasetDestination datasetDestination = sink.getDestination();
-    assertEquals(logging().options().projectId(), datasetDestination.getProject());
+    assertEquals(logging().getOptions().getProjectId(), datasetDestination.getProject());
     assertEquals("dataset", datasetDestination.getDataset());
     assertTrue(logging().deleteSink(name));
   }
@@ -162,7 +162,7 @@ public abstract class BaseSystemTest {
     assertEquals(SinkInfo.VersionFormat.V2, sink.getVersionFormat());
     assertEquals("severity>=ERROR", sink.getFilter());
     DatasetDestination datasetDestination = sink.getDestination();
-    assertEquals(logging().options().projectId(), datasetDestination.getProject());
+    assertEquals(logging().getOptions().getProjectId(), datasetDestination.getProject());
     assertEquals("dataset", datasetDestination.getDataset());
     assertTrue(logging().deleteSinkAsync(name).get());
   }
@@ -338,7 +338,8 @@ public abstract class BaseSystemTest {
   @Test
   public void testWriteAndListLogEntries() throws InterruptedException {
     String logName = formatForTest("test-write-log-entries-log");
-    String filter = "logName = projects/" + logging().options().projectId() + "/logs/" + logName;
+    String filter =
+        "logName = projects/" + logging().getOptions().getProjectId() + "/logs/" + logName;
     StringPayload firstPayload = StringPayload.of("stringPayload");
     LogEntry firstEntry = LogEntry.newBuilder(firstPayload)
         .addLabel("key1", "value1")
@@ -403,7 +404,8 @@ public abstract class BaseSystemTest {
   @Test
   public void testWriteAndListLogEntriesAsync() throws InterruptedException, ExecutionException {
     String logName = formatForTest("test-write-log-entries-async-log");
-    String filter = "logName = projects/" + logging().options().projectId() + "/logs/" + logName;
+    String filter =
+        "logName = projects/" + logging().getOptions().getProjectId() + "/logs/" + logName;
     StringPayload firstPayload = StringPayload.of("stringPayload");
     LogEntry firstEntry = LogEntry.newBuilder(firstPayload).setSeverity(Severity.ALERT).build();
     ProtoPayload secondPayload =
@@ -460,7 +462,7 @@ public abstract class BaseSystemTest {
   @Test
   public void testLoggingHandler() throws InterruptedException {
     String logName = formatForTest("test-logging-handler");
-    LoggingOptions options = logging().options();
+    LoggingOptions options = logging().getOptions();
     LoggingHandler handler = new LoggingHandler(logName, options);
     handler.setLevel(Level.INFO);
     Logger logger = Logger.getLogger(getClass().getName());
@@ -482,7 +484,7 @@ public abstract class BaseSystemTest {
     assertEquals(ImmutableMap.of("levelName", "INFO",
         "levelValue", String.valueOf(Level.INFO.intValue())), entry.getLabels());
     assertEquals("global", entry.getResource().getType());
-    assertEquals(ImmutableMap.of("project_id", options.projectId()),
+    assertEquals(ImmutableMap.of("project_id", options.getProjectId()),
         entry.getResource().getLabels());
     assertNull(entry.getHttpRequest());
     assertEquals(Severity.INFO, entry.getSeverity());
@@ -497,9 +499,9 @@ public abstract class BaseSystemTest {
   @Test
   public void testAsyncLoggingHandler() throws InterruptedException {
     String logName = formatForTest("test-async-logging-handler");
-    LoggingOptions options = logging().options();
+    LoggingOptions options = logging().getOptions();
     MonitoredResource resource = MonitoredResource.of("gce_instance",
-        ImmutableMap.of("project_id", options.projectId(),
+        ImmutableMap.of("project_id", options.getProjectId(),
             "instance_id", "instance",
             "zone", "us-central1-a"));
     LoggingHandler handler = new AsyncLoggingHandler(logName, options, resource);

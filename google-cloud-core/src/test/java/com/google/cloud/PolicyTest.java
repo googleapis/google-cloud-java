@@ -51,31 +51,78 @@ public class PolicyTest {
       ImmutableSet.of(USER, SERVICE_ACCOUNT, ALL_USERS),
       EDITOR,
       ImmutableSet.of(ALL_AUTH_USERS, GROUP, DOMAIN));
-  private static final Policy SIMPLE_POLICY = Policy.builder()
+  private static final Policy SIMPLE_POLICY = Policy.newBuilder()
       .addIdentity(VIEWER, USER, SERVICE_ACCOUNT, ALL_USERS)
       .addIdentity(EDITOR, ALL_AUTH_USERS, GROUP, DOMAIN)
       .build();
-  private static final Policy FULL_POLICY = Policy.builder()
-      .bindings(SIMPLE_POLICY.bindings())
+  private static final Policy DEPRECATED_SIMPLE_POLICY = Policy.builder()
+      .addIdentity(VIEWER, USER, SERVICE_ACCOUNT, ALL_USERS)
+      .addIdentity(EDITOR, ALL_AUTH_USERS, GROUP, DOMAIN)
+      .build();
+  private static final Policy FULL_POLICY = Policy.newBuilder()
+      .setBindings(SIMPLE_POLICY.getBindings())
+      .setEtag("etag")
+      .setVersion(1)
+      .build();
+  private static final Policy DEPRECATED_FULL_POLICY = Policy.builder()
+      .bindings(SIMPLE_POLICY.getBindings())
       .etag("etag")
       .version(1)
       .build();
 
   @Test
   public void testBuilder() {
-    assertEquals(BINDINGS, SIMPLE_POLICY.bindings());
-    assertEquals(null, SIMPLE_POLICY.etag());
-    assertEquals(0, SIMPLE_POLICY.version());
-    assertEquals(BINDINGS, FULL_POLICY.bindings());
-    assertEquals("etag", FULL_POLICY.etag());
-    assertEquals(1, FULL_POLICY.version());
+    assertEquals(BINDINGS, SIMPLE_POLICY.getBindings());
+    assertEquals(null, SIMPLE_POLICY.getEtag());
+    assertEquals(0, SIMPLE_POLICY.getVersion());
+    assertEquals(BINDINGS, FULL_POLICY.getBindings());
+    assertEquals("etag", FULL_POLICY.getEtag());
+    assertEquals(1, FULL_POLICY.getVersion());
     Map<Role, Set<Identity>> editorBinding =
         ImmutableMap.<Role, Set<Identity>>builder().put(EDITOR, BINDINGS.get(EDITOR)).build();
-    Policy policy = FULL_POLICY.toBuilder().bindings(editorBinding).build();
+    Policy policy = FULL_POLICY.toBuilder().setBindings(editorBinding).build();
+    assertEquals(editorBinding, policy.getBindings());
+    assertEquals("etag", policy.getEtag());
+    assertEquals(1, policy.getVersion());
+    policy = SIMPLE_POLICY.toBuilder().removeRole(EDITOR).build();
+    assertEquals(ImmutableMap.of(VIEWER, BINDINGS.get(VIEWER)), policy.getBindings());
+    assertNull(policy.getEtag());
+    assertEquals(0, policy.getVersion());
+    policy = policy.toBuilder()
+        .removeIdentity(VIEWER, USER, ALL_USERS)
+        .addIdentity(VIEWER, DOMAIN, GROUP)
+        .build();
+    assertEquals(ImmutableMap.of(VIEWER, ImmutableSet.of(SERVICE_ACCOUNT, DOMAIN, GROUP)),
+        policy.getBindings());
+    assertNull(policy.getEtag());
+    assertEquals(0, policy.getVersion());
+    policy = Policy.newBuilder()
+        .removeIdentity(VIEWER, USER)
+        .addIdentity(OWNER, USER, SERVICE_ACCOUNT)
+        .addIdentity(EDITOR, GROUP)
+        .removeIdentity(EDITOR, GROUP)
+        .build();
+    assertEquals(ImmutableMap.of(OWNER, ImmutableSet.of(USER, SERVICE_ACCOUNT)),
+        policy.getBindings());
+    assertNull(policy.getEtag());
+    assertEquals(0, policy.getVersion());
+  }
+
+  @Test
+  public void testBuilderDeprecated() {
+    assertEquals(BINDINGS, DEPRECATED_SIMPLE_POLICY.bindings());
+    assertEquals(null, DEPRECATED_SIMPLE_POLICY.etag());
+    assertEquals(0, DEPRECATED_SIMPLE_POLICY.version());
+    assertEquals(BINDINGS, DEPRECATED_FULL_POLICY.bindings());
+    assertEquals("etag", DEPRECATED_FULL_POLICY.etag());
+    assertEquals(1, DEPRECATED_FULL_POLICY.version());
+    Map<Role, Set<Identity>> editorBinding =
+        ImmutableMap.<Role, Set<Identity>>builder().put(EDITOR, BINDINGS.get(EDITOR)).build();
+    Policy policy = DEPRECATED_FULL_POLICY.toBuilder().bindings(editorBinding).build();
     assertEquals(editorBinding, policy.bindings());
     assertEquals("etag", policy.etag());
     assertEquals(1, policy.version());
-    policy = SIMPLE_POLICY.toBuilder().removeRole(EDITOR).build();
+    policy = DEPRECATED_SIMPLE_POLICY.toBuilder().removeRole(EDITOR).build();
     assertEquals(ImmutableMap.of(VIEWER, BINDINGS.get(VIEWER)), policy.bindings());
     assertNull(policy.etag());
     assertEquals(0, policy.version());
@@ -101,25 +148,25 @@ public class PolicyTest {
   @Test
   public void testIllegalPolicies() {
     try {
-      Policy.builder().addIdentity(null, USER);
+      Policy.newBuilder().addIdentity(null, USER);
       fail("Null role should cause exception.");
     } catch (NullPointerException ex) {
       assertEquals("The role cannot be null.", ex.getMessage());
     }
     try {
-      Policy.builder().addIdentity(VIEWER, null, USER);
+      Policy.newBuilder().addIdentity(VIEWER, null, USER);
       fail("Null identity should cause exception.");
     } catch (NullPointerException ex) {
       assertEquals("Null identities are not permitted.", ex.getMessage());
     }
     try {
-      Policy.builder().addIdentity(VIEWER, USER, (Identity[]) null);
+      Policy.newBuilder().addIdentity(VIEWER, USER, (Identity[]) null);
       fail("Null identity should cause exception.");
     } catch (NullPointerException ex) {
       assertEquals("Null identities are not permitted.", ex.getMessage());
     }
     try {
-      Policy.builder().bindings(null);
+      Policy.newBuilder().setBindings(null);
       fail("Null bindings map should cause exception.");
     } catch (NullPointerException ex) {
       assertEquals("The provided map of bindings cannot be null.", ex.getMessage());
@@ -127,7 +174,7 @@ public class PolicyTest {
     try {
       Map<Role, Set<Identity>> bindings = new HashMap<>();
       bindings.put(VIEWER, null);
-      Policy.builder().bindings(bindings);
+      Policy.newBuilder().setBindings(bindings);
       fail("Null set of identities should cause exception.");
     } catch (NullPointerException ex) {
       assertEquals("A role cannot be assigned to a null set of identities.", ex.getMessage());
@@ -137,7 +184,7 @@ public class PolicyTest {
       Set<Identity> identities = new HashSet<>();
       identities.add(null);
       bindings.put(VIEWER, identities);
-      Policy.builder().bindings(bindings);
+      Policy.newBuilder().setBindings(bindings);
       fail("Null identity should cause exception.");
     } catch (IllegalArgumentException ex) {
       assertEquals("Null identities are not permitted.", ex.getMessage());
@@ -147,8 +194,8 @@ public class PolicyTest {
   @Test
   public void testEqualsHashCode() {
     assertNotNull(FULL_POLICY);
-    Policy emptyPolicy = Policy.builder().build();
-    Policy anotherPolicy = Policy.builder().build();
+    Policy emptyPolicy = Policy.newBuilder().build();
+    Policy anotherPolicy = Policy.newBuilder().build();
     assertEquals(emptyPolicy, anotherPolicy);
     assertEquals(emptyPolicy.hashCode(), anotherPolicy.hashCode());
     assertNotEquals(FULL_POLICY, SIMPLE_POLICY);
@@ -160,33 +207,33 @@ public class PolicyTest {
 
   @Test
   public void testBindings() {
-    assertTrue(Policy.builder().build().bindings().isEmpty());
-    assertEquals(BINDINGS, SIMPLE_POLICY.bindings());
+    assertTrue(Policy.newBuilder().build().getBindings().isEmpty());
+    assertEquals(BINDINGS, SIMPLE_POLICY.getBindings());
   }
 
   @Test
   public void testEtag() {
-    assertNull(SIMPLE_POLICY.etag());
-    assertEquals("etag", FULL_POLICY.etag());
+    assertNull(SIMPLE_POLICY.getEtag());
+    assertEquals("etag", FULL_POLICY.getEtag());
   }
 
   @Test
   public void testVersion() {
-    assertEquals(0, SIMPLE_POLICY.version());
-    assertEquals(1, FULL_POLICY.version());
+    assertEquals(0, SIMPLE_POLICY.getVersion());
+    assertEquals(1, FULL_POLICY.getVersion());
   }
 
   @Test
   public void testDefaultMarshaller() {
     DefaultMarshaller marshaller = new DefaultMarshaller();
-    Policy emptyPolicy = Policy.builder().build();
+    Policy emptyPolicy = Policy.newBuilder().build();
     assertEquals(emptyPolicy, marshaller.fromPb(marshaller.toPb(emptyPolicy)));
     assertEquals(SIMPLE_POLICY, marshaller.fromPb(marshaller.toPb(SIMPLE_POLICY)));
     assertEquals(FULL_POLICY, marshaller.fromPb(marshaller.toPb(FULL_POLICY)));
     com.google.iam.v1.Policy policyPb = com.google.iam.v1.Policy.getDefaultInstance();
     Policy policy = marshaller.fromPb(policyPb);
-    assertTrue(policy.bindings().isEmpty());
-    assertNull(policy.etag());
-    assertEquals(0, policy.version());
+    assertTrue(policy.getBindings().isEmpty());
+    assertNull(policy.getEtag());
+    assertEquals(0, policy.getVersion());
   }
 }

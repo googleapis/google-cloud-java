@@ -89,7 +89,7 @@ public class CloudStorageFileSystemProviderTest {
 
   @Before
   public void before() {
-    CloudStorageFileSystemProvider.setStorageOptions(LocalStorageHelper.options());
+    CloudStorageFileSystemProvider.setStorageOptions(LocalStorageHelper.getOptions());
   }
 
   @Test

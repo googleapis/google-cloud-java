@@ -133,7 +133,7 @@ public class Subnetwork extends SubnetworkInfo {
   Subnetwork(Compute compute, SubnetworkInfo.BuilderImpl infoBuilder) {
     super(infoBuilder);
     this.compute = checkNotNull(compute);
-    this.options = compute.options();
+    this.options = compute.getOptions();
   }
 
   /**
@@ -208,7 +208,7 @@ public class Subnetwork extends SubnetworkInfo {
 
   private void readObject(ObjectInputStream input) throws IOException, ClassNotFoundException {
     input.defaultReadObject();
-    this.compute = options.service();
+    this.compute = options.getService();
   }
 
   static Subnetwork fromPb(Compute compute,

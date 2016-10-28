@@ -412,7 +412,8 @@ public final class GqlQuery<V> extends Query<V> {
 
   @Override
   public int hashCode() {
-    return Objects.hash(namespace(), queryString, allowLiteral, namedBindings, positionalBindings);
+    return Objects.hash(getNamespace(), queryString, allowLiteral, namedBindings,
+        positionalBindings);
   }
 
   @Override
@@ -424,7 +425,7 @@ public final class GqlQuery<V> extends Query<V> {
       return false;
     }
     GqlQuery<?> other = (GqlQuery<?>) obj;
-    return Objects.equals(namespace(), other.namespace())
+    return Objects.equals(getNamespace(), other.getNamespace())
         && Objects.equals(queryString, other.queryString)
         && allowLiteral == other.allowLiteral
         && Objects.equals(namedBindings,  other.namedBindings)
@@ -452,7 +453,7 @@ public final class GqlQuery<V> extends Query<V> {
 
   @Override
   Query<V> nextQuery(com.google.datastore.v1.RunQueryResponse responsePb) {
-    return StructuredQuery.<V>fromPb(type(), namespace(), responsePb.getQuery())
+    return StructuredQuery.<V>fromPb(getType(), getNamespace(), responsePb.getQuery())
         .nextQuery(responsePb);
   }
 }

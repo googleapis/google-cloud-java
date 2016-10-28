@@ -94,19 +94,19 @@ public class DatastoreOptions
   }
 
   @Override
-  public HttpRequestInitializer httpRequestInitializer() {
-    final HttpRequestInitializer delegate = super.httpRequestInitializer();
+  public HttpRequestInitializer getHttpRequestInitializer() {
+    final HttpRequestInitializer delegate = super.getHttpRequestInitializer();
     return new HttpRequestInitializer() {
       @Override
       public void initialize(HttpRequest httpRequest) throws IOException {
         delegate.initialize(httpRequest);
-        httpRequest.getHeaders().setUserAgent(applicationName());
+        httpRequest.getHeaders().setUserAgent(getApplicationName());
       }
     };
   }
 
   @Override
-  protected String defaultHost() {
+  protected String getDefaultHost() {
     String host = System.getProperty(
         com.google.datastore.v1.client.DatastoreHelper.LOCAL_HOST_ENV_VAR,
         System.getenv(com.google.datastore.v1.client.DatastoreHelper.LOCAL_HOST_ENV_VAR));
@@ -114,35 +114,51 @@ public class DatastoreOptions
   }
 
   @Override
-  protected String defaultProject() {
+  protected String getDefaultProject() {
     String projectId = System.getProperty(
         com.google.datastore.v1.client.DatastoreHelper.PROJECT_ID_ENV_VAR,
         System.getenv(com.google.datastore.v1.client.DatastoreHelper.PROJECT_ID_ENV_VAR));
-    return projectId != null ? projectId : super.defaultProject();
+    return projectId != null ? projectId : super.getDefaultProject();
   }
 
   @Override
-  protected DatastoreFactory defaultServiceFactory() {
+  protected DatastoreFactory getDefaultServiceFactory() {
     return DefaultDatastoreFactory.INSTANCE;
   }
 
   @Override
-  protected DatastoreRpcFactory defaultRpcFactory() {
+  protected DatastoreRpcFactory getDefaultRpcFactory() {
     return DefaultDatastoreRpcFactory.INSTANCE;
   }
 
   /**
    * Returns the default namespace to be used by the datastore service.
    */
+  @Deprecated
   public String namespace() {
+    return getNamespace();
+  }
+
+  /**
+   * Returns the default namespace to be used by the datastore service.
+   */
+  public String getNamespace() {
     return namespace;
   }
 
   /**
    * Returns a default {@code DatastoreOptions} instance.
    */
+  @Deprecated
   public static DatastoreOptions defaultInstance() {
-    return builder().build();
+    return getDefaultInstance();
+  }
+
+  /**
+   * Returns a default {@code DatastoreOptions} instance.
+   */
+  public static DatastoreOptions getDefaultInstance() {
+    return newBuilder().build();
   }
 
   private static String defaultNamespace() {
@@ -158,7 +174,7 @@ public class DatastoreOptions
   }
 
   @Override
-  protected Set<String> scopes() {
+  protected Set<String> getScopes() {
     return SCOPES;
   }
 
@@ -182,7 +198,12 @@ public class DatastoreOptions
     return baseEquals(other) && Objects.equals(namespace, other.namespace);
   }
 
+  @Deprecated
   public static Builder builder() {
+    return newBuilder();
+  }
+
+  public static Builder newBuilder() {
     return new Builder();
   }
 }

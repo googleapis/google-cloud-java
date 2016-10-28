@@ -41,10 +41,10 @@ final class PolicyMarshaller
   private static class Builder extends Policy.Builder {
 
     private Builder(Map<Role, Set<Identity>> bindings, String etag, Integer version) {
-      bindings(bindings);
-      etag(etag);
+      setBindings(bindings);
+      setEtag(etag);
       if (version != null) {
-        version(version);
+        setVersion(version);
       }
     }
   }
@@ -67,16 +67,16 @@ final class PolicyMarshaller
         new com.google.api.services.cloudresourcemanager.model.Policy();
     List<Binding> bindingPbList =
         new LinkedList<>();
-    for (Map.Entry<Role, Set<Identity>> binding : policy.bindings().entrySet()) {
+    for (Map.Entry<Role, Set<Identity>> binding : policy.getBindings().entrySet()) {
       Binding bindingPb = new Binding();
-      bindingPb.setRole(binding.getKey().value());
+      bindingPb.setRole(binding.getKey().getValue());
       bindingPb.setMembers(
           Lists.transform(new ArrayList<>(binding.getValue()), IDENTITY_STR_VALUE_FUNCTION));
       bindingPbList.add(bindingPb);
     }
     policyPb.setBindings(bindingPbList);
-    policyPb.setEtag(policy.etag());
-    policyPb.setVersion(policy.version());
+    policyPb.setEtag(policy.getEtag());
+    policyPb.setVersion(policy.getVersion());
     return policyPb;
   }
 }

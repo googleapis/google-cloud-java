@@ -94,7 +94,7 @@ Most `google-cloud` libraries require a project ID.  There are multiple ways to 
   * Supply the project ID when building the service options.  For example, to use Datastore from a project with ID "PROJECT_ID", you can write:
 
   ```java
-  Datastore datastore = DatastoreOptions.builder().projectId("PROJECT_ID").build().service(); 
+  Datastore datastore = DatastoreOptions.newBuilder().setProjectId("PROJECT_ID").build().getService();
   ```
   * Specify the environment variable `GOOGLE_CLOUD_PROJECT` to be your desired project ID.
   * Set the project ID using the [Google Cloud SDK](https://cloud.google.com/sdk/?hl=en).  To use the SDK, [download the SDK](https://cloud.google.com/sdk/?hl=en) if you haven't already, and set the project ID from the command line.  For example:
@@ -128,18 +128,18 @@ Next, choose a method for authenticating API requests from within your project:
     ```
     * Supply the JSON credentials file when building the service options.  For example, this Storage object has the necessary permissions to interact with your Google Cloud Storage data:
     ```java
-    Storage storage = StorageOptions.builder()
-        .authCredentials(AuthCredentials.createForJson(new FileInputStream("/path/to/my/key.json"))
+    Storage storage = StorageOptions.newBuilder()
+        .setAuthCredentials(AuthCredentials.createForJson(new FileInputStream("/path/to/my/key.json"))
         .build()
-        .service();
+        .getService();
     ```
   * If running locally for development/testing, you can use Google Cloud SDK.  Download the SDK if you haven't already, then login using the SDK (`gcloud auth login` in command line).  Be sure to set your project ID as described above.
   * If you already have an OAuth2 access token, you can use it to authenticate (notice that in this case the access token will not be automatically refreshed):
   ```java
-  Storage storage = StorageOptions.builder()
-      .authCredentials(AuthCredentials.createFor("your_access_token"))
+  Storage storage = StorageOptions.newBuilder()
+      .setAuthCredentials(AuthCredentials.createFor("your_access_token"))
       .build()
-      .service();
+      .getService();
   ```
 
 `google-cloud` looks for credentials in the following order, stopping once it finds credentials:
@@ -175,7 +175,7 @@ import com.google.cloud.bigquery.Table;
 import com.google.cloud.bigquery.TableId;
 import com.google.cloud.bigquery.TableInfo;
 
-BigQuery bigquery = BigQueryOptions.defaultInstance().service();
+BigQuery bigquery = BigQueryOptions.getDefaultInstance().getService();
 TableId tableId = TableId.of("dataset", "table");
 Table table = bigquery.getTable(tableId);
 if (table == null) {
@@ -216,7 +216,7 @@ import com.google.cloud.compute.Disk;
 import com.google.cloud.compute.DiskId;
 import com.google.cloud.compute.Snapshot;
 
-Compute compute = ComputeOptions.defaultInstance().service();
+Compute compute = ComputeOptions.getDefaultInstance().getService();
 DiskId diskId = DiskId.of("us-central1-a", "disk-name");
 Disk disk = compute.getDisk(diskId, Compute.DiskOption.fields());
 if (disk != null) {
@@ -243,7 +243,7 @@ import com.google.cloud.compute.InstanceInfo;
 import com.google.cloud.compute.MachineTypeId;
 import com.google.cloud.compute.NetworkId;
 
-Compute compute = ComputeOptions.defaultInstance().service();
+Compute compute = ComputeOptions.getDefaultInstance().getService();
 ImageId imageId = ImageId.of("debian-cloud", "debian-8-jessie-v20160329");
 NetworkId networkId = NetworkId.of("default");
 AttachedDisk attachedDisk = AttachedDisk.of(AttachedDisk.CreateDiskConfiguration.of(imageId));
@@ -282,7 +282,7 @@ import com.google.cloud.datastore.Entity;
 import com.google.cloud.datastore.Key;
 import com.google.cloud.datastore.KeyFactory;
 
-Datastore datastore = DatastoreOptions.defaultInstance().service();
+Datastore datastore = DatastoreOptions.getDefaultInstance().getService();
 KeyFactory keyFactory = datastore.newKeyFactory().setKind("keyKind");
 Key key = keyFactory.newKey("keyName");
 Entity entity = Entity.newBuilder(key)
@@ -303,7 +303,7 @@ import com.google.cloud.datastore.Entity;
 import com.google.cloud.datastore.Key;
 import com.google.cloud.datastore.KeyFactory;
 
-Datastore datastore = DatastoreOptions.defaultInstance().service();
+Datastore datastore = DatastoreOptions.getDefaultInstance().getService();
 KeyFactory keyFactory = datastore.newKeyFactory().setKind("keyKind");
 Key key = keyFactory.newKey("keyName");
 Entity entity = datastore.get(key);
@@ -336,7 +336,7 @@ import com.google.cloud.dns.DnsOptions;
 import com.google.cloud.dns.Zone;
 import com.google.cloud.dns.ZoneInfo;
 
-Dns dns = DnsOptions.defaultInstance().service();
+Dns dns = DnsOptions.getDefaultInstance().getService();
 String zoneName = "my-unique-zone";
 String domainName = "someexampledomain.com.";
 String description = "This is a google-cloud-dns sample zone.";
@@ -356,7 +356,7 @@ import com.google.cloud.dns.Zone;
 import java.util.Iterator;
 import java.util.concurrent.TimeUnit;
 
-Dns dns = DnsOptions.defaultInstance().service();
+Dns dns = DnsOptions.getDefaultInstance().getService();
 String zoneName = "my-unique-zone";
 Zone zone = dns.getZone(zoneName);
 String ip = "12.13.14.15";
@@ -371,8 +371,8 @@ ChangeRequestInfo.Builder changeBuilder = ChangeRequestInfo.newBuilder().add(toC
 Iterator<RecordSet> recordSetIterator = zone.listRecordSets().iterateAll();
 while (recordSetIterator.hasNext()) {
   RecordSet current = recordSetIterator.next();
-  if (toCreate.name().equals(current.getName()) &&
-      toCreate.type().equals(current.getType())) {
+  if (toCreate.getName().equals(current.getName()) &&
+      toCreate.getType().equals(current.getType())) {
     changeBuilder.delete(current);
   }
 }
@@ -410,19 +410,19 @@ import com.google.cloud.logging.Payload.StringPayload;
 import java.util.Collections;
 import java.util.Iterator;
 
-LoggingOptions options = LoggingOptions.defaultInstance();
-try(Logging logging = options.service()) {
+LoggingOptions options = LoggingOptions.getDefaultInstance();
+try(Logging logging = options.getService()) {
 
   LogEntry firstEntry = LogEntry.newBuilder(StringPayload.of("message"))
       .setLogName("test-log")
-      .setResource(MonitoredResource.builder("global")
-          .addLabel("project_id", options.projectId())
+      .setResource(MonitoredResource.newBuilder("global")
+          .addLabel("project_id", options.getProjectId())
           .build())
       .build();
   logging.write(Collections.singleton(firstEntry));
 
   Page<LogEntry> entries = logging.listLogEntries(
-      EntryListOption.filter("logName=projects/" + options.projectId() + "/logs/test-log"));
+      EntryListOption.filter("logName=projects/" + options.getProjectId() + "/logs/test-log"));
   Iterator<LogEntry> entryIterator = entries.iterateAll();
   while (entryIterator.hasNext()) {
     System.out.println(entryIterator.next());
@@ -472,7 +472,7 @@ import com.google.cloud.pubsub.PubSubOptions;
 import com.google.cloud.pubsub.Subscription;
 import com.google.cloud.pubsub.SubscriptionInfo;
 
-try (PubSub pubsub = PubSubOptions.defaultInstance().service()) {
+try (PubSub pubsub = PubSubOptions.getDefaultInstance().getService()) {
   Subscription subscription =
       pubsub.create(SubscriptionInfo.of("test-topic", "test-subscription"));
   MessageProcessor callback = new MessageProcessor() {
@@ -506,7 +506,7 @@ import com.google.cloud.resourcemanager.ResourceManagerOptions;
 
 import java.util.Iterator;
 
-ResourceManager resourceManager = ResourceManagerOptions.defaultInstance().service();
+ResourceManager resourceManager = ResourceManagerOptions.getDefaultInstance().getService();
 Project project = resourceManager.get("some-project-id"); // Use an existing project's ID
 if (project != null) {
   Project newProject = project.toBuilder()
@@ -547,7 +547,7 @@ import com.google.cloud.storage.BlobInfo;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageOptions;
 
-Storage storage = StorageOptions.defaultInstance().service();
+Storage storage = StorageOptions.getDefaultInstance().getService();
 BlobId blobId = BlobId.of("bucket", "blob_name");
 BlobInfo blobInfo = BlobInfo.newBuiler(blobId).setContentType("text/plain").build();
 Blob blob = storage.create(blobInfo, "Hello, Cloud Storage!".getBytes(UTF_8));
@@ -566,7 +566,7 @@ import com.google.cloud.storage.StorageOptions;
 import java.nio.ByteBuffer;
 import java.nio.channels.WritableByteChannel;
 
-Storage storage = StorageOptions.defaultInstance().service();
+Storage storage = StorageOptions.getDefaultInstance().getService();
 BlobId blobId = BlobId.of("bucket", "blob_name");
 Blob blob = storage.get(blobId);
 if (blob != null) {
@@ -599,7 +599,7 @@ import com.google.cloud.translate.Translate.TranslateOption;
 import com.google.cloud.translate.TranslateOptions;
 import com.google.cloud.translate.Translation;
 
-Translate translate = TranslateOptions.defaultInstance().service();
+Translate translate = TranslateOptions.getDefaultInstance().getService();
 
 Detection detection = translate.detect("Hola");
 String detectedLanguage = detection.getLanguage();

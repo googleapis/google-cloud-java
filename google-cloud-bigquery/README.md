@@ -85,7 +85,7 @@ code to create your service object:
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQueryOptions;
 
-BigQuery bigquery = BigQueryOptions.defaultInstance().service();
+BigQuery bigquery = BigQueryOptions.getDefaultInstance().getService();
 ```
 
 For other authentication options, see the

@@ -86,7 +86,7 @@ code to create your service object:
 import com.google.cloud.dns.Dns;
 import com.google.cloud.dns.DnsOptions;
 
-Dns dns = DnsOptions.defaultInstance().service();
+Dns dns = DnsOptions.getDefaultInstance().getService();
 ```
 
 For other authentication options, see the [Authentication](https://github.com/GoogleCloudPlatform/google-cloud-java#authentication) page.

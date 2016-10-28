@@ -26,8 +26,10 @@ import org.junit.Test;
 public class StorageImageConfigurationTest {
 
   private static final String SOURCE = "source";
-  private static final ImageConfiguration.SourceType SOURCE_TYPE = ImageConfiguration.SourceType.RAW;
-  private static final StorageImageConfiguration.ContainerType CONTAINER_TYPE = StorageImageConfiguration.ContainerType.TAR;
+  private static final ImageConfiguration.SourceType SOURCE_TYPE =
+      ImageConfiguration.SourceType.RAW;
+  private static final StorageImageConfiguration.ContainerType CONTAINER_TYPE =
+      StorageImageConfiguration.ContainerType.TAR;
   private static final Long ARCHIVE_SIZE_BYTES = 42L;
   private static final String SHA1 = "sha1";
   private static final StorageImageConfiguration CONFIGURATION =

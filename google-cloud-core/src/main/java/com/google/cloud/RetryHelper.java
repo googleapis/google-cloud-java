@@ -192,9 +192,9 @@ public class RetryHelper<V> {
         }
         exception = e;
       }
-      if (attemptNumber >= params.retryMaxAttempts()
-          || attemptNumber >= params.retryMinAttempts()
-          && clock.millis() - start >= params.totalRetryPeriodMillis()) {
+      if (attemptNumber >= params.getRetryMaxAttempts()
+          || attemptNumber >= params.getRetryMinAttempts()
+          && clock.millis() - start >= params.getTotalRetryPeriodMillis()) {
         throw new RetriesExhaustedException(this + ": Too many failures, giving up", exception);
       }
       long sleepDurationMillis = getSleepDuration(params, attemptNumber);
@@ -213,9 +213,9 @@ public class RetryHelper<V> {
 
   @VisibleForTesting
   static long getSleepDuration(RetryParams retryParams, int attemptsSoFar) {
-    long initialDelay = retryParams.initialRetryDelayMillis();
-    double backoffFactor = retryParams.retryDelayBackoffFactor();
-    long maxDelay = retryParams.maxRetryDelayMillis();
+    long initialDelay = retryParams.getInitialRetryDelayMillis();
+    double backoffFactor = retryParams.getRetryDelayBackoffFactor();
+    long maxDelay = retryParams.getMaxRetryDelayMillis();
     long retryDelay = getExponentialValue(initialDelay, backoffFactor, maxDelay, attemptsSoFar);
     return (long) ((random() / 2.0 + .75) * retryDelay);
   }
@@ -226,8 +226,8 @@ public class RetryHelper<V> {
   }
 
   public static <V> V runWithRetries(Callable<V> callable) throws RetryHelperException {
-    return runWithRetries(callable, RetryParams.defaultInstance(),
-        ExceptionHandler.defaultInstance());
+    return runWithRetries(callable, RetryParams.getDefaultInstance(),
+        ExceptionHandler.getDefaultInstance());
   }
 
   public static <V> V runWithRetries(Callable<V> callable, RetryParams params,

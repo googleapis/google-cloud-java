@@ -54,9 +54,9 @@ public class ITQuerySnippets {
 
   @BeforeClass
   public static void beforeClass() {
-    datastore = DatastoreOptions.defaultInstance().service();
-    Key key1 = Key.newBuilder(datastore.options().projectId(), KIND, "key1").build();
-    Key key2 = Key.newBuilder(datastore.options().projectId(), KIND, "key2").build();
+    datastore = DatastoreOptions.getDefaultInstance().getService();
+    Key key1 = Key.newBuilder(datastore.getOptions().getProjectId(), KIND, "key1").build();
+    Key key2 = Key.newBuilder(datastore.getOptions().getProjectId(), KIND, "key2").build();
     entity1 = Entity.newBuilder(key1).set("description", "entity1").build();
     entity2 = Entity.newBuilder(key2).set("description", "entity2").build();
     datastore.put(entity1, entity2);

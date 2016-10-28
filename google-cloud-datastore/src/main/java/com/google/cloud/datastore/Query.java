@@ -163,11 +163,16 @@ public abstract class Query<V> implements Serializable {
     this.namespace = namespace;
   }
 
-  ResultType<V> type() {
+  ResultType<V> getType() {
     return resultType;
   }
 
+  @Deprecated
   public String namespace() {
+    return getNamespace();
+  }
+
+  public String getNamespace() {
     return namespace;
   }
 

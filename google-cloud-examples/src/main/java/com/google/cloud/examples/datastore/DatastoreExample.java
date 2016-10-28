@@ -286,15 +286,16 @@ public class DatastoreExample {
   public static void main(String... args) throws Exception {
     String projectId = args.length > 0 ? args[0] : null;
     // If you want to access a local Datastore running via the Google Cloud SDK, do
-    //   DatastoreOptions options = DatastoreOptions.builder()
-    //       .projectId(projectId)
-    //       .namespace(NAMESPACE)
-    //       .host("http://localhost:8080") // change 8080 to the port that the emulator listens to
+    //   DatastoreOptions options = DatastoreOptions.newBuilder()
+    //       .setProjectId(projectId)
+    //       .setNamespace(NAMESPACE)
+    //       // change 8080 to the port that the emulator listens to
+    //       .setHost("http://localhost:8080")
     //       .build();
     DatastoreOptions options =
-        DatastoreOptions.builder().projectId(projectId).namespace(NAMESPACE).build();
+        DatastoreOptions.newBuilder().setProjectId(projectId).namespace(NAMESPACE).build();
     String name = args.length > 1 ? args[1] : System.getProperty("user.getName");
-    Datastore datastore = options.service();
+    Datastore datastore = options.getService();
     KeyFactory keyFactory = datastore.newKeyFactory().setKind(USER_KIND);
     Key key = keyFactory.newKey(name);
     String actionName = args.length > 2 ? args[2].toLowerCase() : DEFAULT_ACTION;

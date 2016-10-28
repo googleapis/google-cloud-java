@@ -55,7 +55,7 @@ public class CopyWriter implements Restorable<CopyWriter> {
   CopyWriter(StorageOptions serviceOptions, RewriteResponse rewriteResponse) {
     this.serviceOptions = serviceOptions;
     this.rewriteResponse = rewriteResponse;
-    this.storageRpc = serviceOptions.rpc();
+    this.storageRpc = serviceOptions.getRpc();
   }
 
   /**
@@ -93,7 +93,7 @@ public class CopyWriter implements Restorable<CopyWriter> {
     while (!isDone()) {
       copyChunk();
     }
-    return Blob.fromPb(serviceOptions.service(), rewriteResponse.result);
+    return Blob.fromPb(serviceOptions.getService(), rewriteResponse.result);
   }
 
   /**
@@ -147,7 +147,8 @@ public class CopyWriter implements Restorable<CopyWriter> {
           public RewriteResponse call() {
             return storageRpc.continueRewrite(rewriteResponse);
           }
-        }, serviceOptions.retryParams(), StorageImpl.EXCEPTION_HANDLER, serviceOptions.clock());
+        }, serviceOptions.getRetryParams(), StorageImpl.EXCEPTION_HANDLER,
+            serviceOptions.getClock());
       } catch (RetryHelper.RetryHelperException e) {
         throw StorageException.translateAndThrow(e);
       }

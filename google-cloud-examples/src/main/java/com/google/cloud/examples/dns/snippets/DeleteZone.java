@@ -39,7 +39,7 @@ public class DeleteZone {
   public static void main(String... args) {
     // Create a service object.
     // The project ID and credentials will be inferred from the environment.
-    Dns dns = DnsOptions.defaultInstance().service();
+    Dns dns = DnsOptions.getDefaultInstance().getService();
 
     // Change this to a zone name that exists within your project and that you want to delete.
     String zoneName = "my-unique-zone";

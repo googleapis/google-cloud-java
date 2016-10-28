@@ -41,7 +41,13 @@ public class QueryResponseTest {
   private static final QueryResult.QueryResultsPageFetcher FETCHER =
       new QueryResult.QueryResultsPageFetcher() {
         @Override
+        @Deprecated
         public QueryResult nextPage() {
+          return getNextPage();
+        }
+
+        @Override
+        public QueryResult getNextPage() {
           return null;
         }
       };

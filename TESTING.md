@@ -27,7 +27,7 @@ Here is an example that uses the `RemoteBigQueryHelper` to create a dataset.
   ```java
   RemoteBigQueryHelper bigqueryHelper =
       RemoteBigQueryHelper.create(PROJECT_ID, new FileInputStream("/path/to/my/JSON/key.json"));
-  BigQuery bigquery = bigqueryHelper.getOptions().service();
+  BigQuery bigquery = bigqueryHelper.getOptions().getService();
   String dataset = RemoteBigQueryHelper.generateDatasetName();
   bigquery.create(DatasetInfo.newBuilder(dataset).build());
   ```
@@ -56,7 +56,7 @@ uses the `RemoteComputeHelper` to create an address.
   ```java
   RemoteComputeHelper computeHelper =
       RemoteBigQueryHelper.create(PROJECT_ID, new FileInputStream("/path/to/my/JSON/key.json"));
-  Compute compute = computeHelper.options().service();
+  Compute compute = computeHelper.getOptions().getService();
   // Pick a name for the resource with low probability of clashing
   String addressName = RemoteComputeHelper.baseResourceName() + "address";
   AddressId addressId = RegionAddressId.of(REGION, addressName);
@@ -84,7 +84,7 @@ You can test against a temporary local Datastore by following these steps:
 
 2. Create and use a `Datastore` object with the options given by the `LocalDatastoreHelper` instance.  For example:
   ```java
-  Datastore localDatastore = helper.getOptions().service();
+  Datastore localDatastore = helper.getOptions().getService();
   ```
 
 3. Run your tests.
@@ -99,12 +99,12 @@ You can test against a temporary local Datastore by following these steps:
 You can test against a remote Datastore emulator as well.  To do this, set the `DatastoreOptions` project endpoint to the hostname of the remote machine, like the example below.
 
   ```java
-  DatastoreOptions options = DatastoreOptions.builder()
-      .projectId("my-project-id") // must match project ID specified on remote machine
-      .host("http://<hostname of machine>:<port>")
-      .authCredentials(AuthCredentials.noAuth())
+  DatastoreOptions options = DatastoreOptions.newBuilder()
+      .setProjectId("my-project-id") // must match project ID specified on remote machine
+      .setHost("http://<hostname of machine>:<port>")
+      .setAuthCredentials(AuthCredentials.noAuth())
       .build();
-  Datastore localDatastore = options.service();
+  Datastore localDatastore = options.getService();
   ```
 
 We recommend that you start the emulator on the remote machine using the [Google Cloud SDK](https://cloud.google.com/sdk/gcloud/reference/beta/emulators/datastore/) from command line, as shown below:
@@ -135,7 +135,7 @@ You can test against an in-memory local DNS by following these steps:
 For example:
 
   ```java
-  Dns dns = LocalDnsHelper.getOptions().service();
+  Dns dns = LocalDnsHelper.getOptions().getService();
   ```
 
 3. Run your tests.
@@ -164,7 +164,7 @@ uses the `RemoteLoggingHelper` to create a metric.
   ```java
   RemoteLoggingHelper loggingHelper =
       RemoteLoggingHelper.create(PROJECT_ID, new FileInputStream("/path/to/my/JSON/key.json"));
-  Logging logging = loggingHelper.getOptions().service();
+  Logging logging = loggingHelper.getOptions().getService();
   // Pick a name for the resource with low probability of clashing
   String metricName = RemoteLoggingHelper.formatForTest("test-metric");
   MetricInfo metricInfo = MetricInfo.of(name, "logName:syslog");
@@ -190,7 +190,7 @@ and `start` methods. This will bind a port for communication with the local Pub/
 2. Create and use a `PubSub` object with the options given by the `LocalPubSubHelper` instance. For
 example:
   ```java
-  PubSub localPubsub = helper.getOptions().service();
+  PubSub localPubsub = helper.getOptions().getService();
   ```
 
 3. Run your tests.
@@ -206,12 +206,12 @@ You can test against a remote Pub/Sub emulator as well. To do this, set the `Pub
 endpoint to the hostname of the remote machine, like the example below.
 
   ```java
-  PubSubOptions options = PubSubOptions.builder()
-      .projectId("my-project-id") // must match project ID specified on remote machine
-      .host("<hostname of machine>:<port>")
-      .authCredentials(AuthCredentials.noAuth())
+  PubSubOptions options = PubSubOptions.newBuilder()
+      .setProjectId("my-project-id") // must match project ID specified on remote machine
+      .setHost("<hostname of machine>:<port>")
+      .setAuthCredentials(AuthCredentials.noAuth())
       .build();
-  PubSub localPubsub= options.service();
+  PubSub localPubsub = options.getService();
   ```
 
 ### Testing code that uses Resource Manager
@@ -232,7 +232,7 @@ You can test against an in-memory local Resource Manager by following these step
 2. In your program, create and use a Resource Manager service object whose host is set to `localhost` at the appropriate port.  For example:
 
   ```java
-  ResourceManager resourceManager = LocalResourceManagerHelper.options().service();
+  ResourceManager resourceManager = LocalResourceManagerHelper.getOptions().getService();
   ```
 
 3. Run your tests.
@@ -258,7 +258,7 @@ Here is an example that uses the `RemoteStorageHelper` to create a bucket.
   ```java
   RemoteStorageHelper helper =
       RemoteStorageHelper.create(PROJECT_ID, new FileInputStream("/path/to/my/JSON/key.json"));
-  Storage storage = helper.getOptions().service();
+  Storage storage = helper.getOptions().getService();
   String bucket = RemoteStorageHelper.generateBucketName();
   storage.create(BucketInfo.of(bucket));
   ```
@@ -285,7 +285,7 @@ key.
 that uses the `RemoteTranslateHelper` to list supported languages.
   ```java
   RemoteTranslateHelper translateHelper = RemoteTranslateHelper.create(PROJECT_ID, API_KEY);
-  Translate translate = translateHelper.getOptions().service();
+  Translate translate = translateHelper.getOptions().getService();
   List<Language> languages = translate.listSupportedLanguages();
   ```
 

@@ -56,7 +56,7 @@ public class BlobWriteChannelTest {
   private static final String BUCKET_NAME = "b";
   private static final String BLOB_NAME = "n";
   private static final String UPLOAD_ID = "uploadid";
-  private static final BlobInfo BLOB_INFO = BlobInfo.builder(BUCKET_NAME, BLOB_NAME).build();
+  private static final BlobInfo BLOB_INFO = BlobInfo.newBuilder(BUCKET_NAME, BLOB_NAME).build();
   private static final Map<StorageRpc.Option, ?> EMPTY_RPC_OPTIONS = ImmutableMap.of();
   private static final int MIN_CHUNK_SIZE = 256 * 1024;
   private static final int DEFAULT_CHUNK_SIZE = 8 * MIN_CHUNK_SIZE;
@@ -77,9 +77,9 @@ public class BlobWriteChannelTest {
     storageRpcMock = createMock(StorageRpc.class);
     expect(rpcFactoryMock.create(anyObject(StorageOptions.class))).andReturn(storageRpcMock);
     replay(rpcFactoryMock);
-    options = StorageOptions.builder()
-        .projectId("projectid")
-        .serviceRpcFactory(rpcFactoryMock)
+    options = StorageOptions.newBuilder()
+        .setProjectId("projectid")
+        .setServiceRpcFactory(rpcFactoryMock)
         .build();
   }
 
@@ -131,7 +131,7 @@ public class BlobWriteChannelTest {
         eq(CUSTOM_CHUNK_SIZE), eq(false));
     replay(storageRpcMock);
     writer = new BlobWriteChannel(options, BLOB_INFO, EMPTY_RPC_OPTIONS);
-    writer.chunkSize(CUSTOM_CHUNK_SIZE);
+    writer.setChunkSize(CUSTOM_CHUNK_SIZE);
     ByteBuffer buffer = randomBuffer(CUSTOM_CHUNK_SIZE);
     assertEquals(CUSTOM_CHUNK_SIZE, writer.write(buffer));
     assertArrayEquals(buffer.array(), capturedBuffer.getValue());
@@ -237,10 +237,10 @@ public class BlobWriteChannelTest {
     RestorableState<WriteChannel> writerState = writer.capture();
     RestorableState<WriteChannel> expectedWriterState =
         BlobWriteChannel.StateImpl.builder(options, BLOB_INFO, UPLOAD_ID)
-            .buffer(null)
-            .chunkSize(DEFAULT_CHUNK_SIZE)
-            .isOpen(false)
-            .position(0)
+            .setBuffer(null)
+            .setChunkSize(DEFAULT_CHUNK_SIZE)
+            .setIsOpen(false)
+            .setPosition(0)
             .build();
     WriteChannel restoredWriter = writerState.restore();
     assertArrayEquals(new byte[0], capturedBuffer.getValue());

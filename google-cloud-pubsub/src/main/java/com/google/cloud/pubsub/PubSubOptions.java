@@ -48,8 +48,16 @@ public class PubSubOptions extends GrpcServiceOptions<PubSub, PubSubRpc, PubSubO
   /**
    * Returns a default {@code PubSubOptions} instance.
    */
+  @Deprecated
   public static PubSubOptions defaultInstance() {
-    return builder().build();
+    return getDefaultInstance();
+  }
+
+  /**
+   * Returns a default {@code PubSubOptions} instance.
+   */
+  public static PubSubOptions getDefaultInstance() {
+    return newBuilder().build();
   }
 
   public static class DefaultPubSubRpcFactory implements PubSubRpcFactory {
@@ -66,7 +74,7 @@ public class PubSubOptions extends GrpcServiceOptions<PubSub, PubSubRpc, PubSubO
   }
 
   @Override
-  protected String defaultHost() {
+  protected String getDefaultHost() {
     String host = System.getProperty(EMULATOR_HOST_ENV_VAR, System.getenv(EMULATOR_HOST_ENV_VAR));
     return host != null ? host : DEFAULT_HOST;
   }
@@ -91,22 +99,22 @@ public class PubSubOptions extends GrpcServiceOptions<PubSub, PubSubRpc, PubSubO
   }
 
   @Override
-  protected ExecutorFactory<ScheduledExecutorService> executorFactory() {
-    return super.executorFactory();
+  protected ExecutorFactory<ScheduledExecutorService> getExecutorFactory() {
+    return super.getExecutorFactory();
   }
 
   @Override
-  protected PubSubFactory defaultServiceFactory() {
+  protected PubSubFactory getDefaultServiceFactory() {
     return DefaultPubSubFactory.INSTANCE;
   }
 
   @Override
-  protected PubSubRpcFactory defaultRpcFactory() {
+  protected PubSubRpcFactory getDefaultRpcFactory() {
     return DefaultPubSubRpcFactory.INSTANCE;
   }
 
   @Override
-  protected Set<String> scopes() {
+  protected Set<String> getScopes() {
     return SCOPES;
   }
 
@@ -125,7 +133,12 @@ public class PubSubOptions extends GrpcServiceOptions<PubSub, PubSubRpc, PubSubO
     return new Builder(this);
   }
 
+  @Deprecated
   public static Builder builder() {
+    return newBuilder();
+  }
+
+  public static Builder newBuilder() {
     return new Builder();
   }
 }

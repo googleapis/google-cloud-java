@@ -47,9 +47,9 @@ class TableDataWriteChannel extends BaseWriteChannel<BigQueryOptions, WriteChann
       runWithRetries(callable(new Runnable() {
         @Override
         public void run() {
-          options().rpc().write(uploadId(), buffer(), 0, position(), length, last);
+          getOptions().getRpc().write(getUploadId(), getBuffer(), 0, getPosition(), length, last);
         }
-      }), options().retryParams(), BigQueryImpl.EXCEPTION_HANDLER, options().clock());
+      }), getOptions().getRetryParams(), BigQueryImpl.EXCEPTION_HANDLER, getOptions().getClock());
     } catch (RetryHelper.RetryHelperException e) {
       throw BigQueryException.translateAndThrow(e);
     }
@@ -57,7 +57,7 @@ class TableDataWriteChannel extends BaseWriteChannel<BigQueryOptions, WriteChann
 
   @Override
   protected StateImpl.Builder stateBuilder() {
-    return StateImpl.builder(options(), entity(), uploadId());
+    return StateImpl.builder(getOptions(), getEntity(), getUploadId());
   }
 
   private static String open(final BigQueryOptions options,
@@ -66,9 +66,9 @@ class TableDataWriteChannel extends BaseWriteChannel<BigQueryOptions, WriteChann
       return runWithRetries(new Callable<String>() {
         @Override
         public String call() {
-          return options.rpc().open(writeChannelConfiguration.toPb());
+          return options.getRpc().open(writeChannelConfiguration.toPb());
         }
-      }, options.retryParams(), BigQueryImpl.EXCEPTION_HANDLER, options.clock());
+      }, options.getRetryParams(), BigQueryImpl.EXCEPTION_HANDLER, options.getClock());
     } catch (RetryHelper.RetryHelperException e) {
       throw BigQueryException.translateAndThrow(e);
     }

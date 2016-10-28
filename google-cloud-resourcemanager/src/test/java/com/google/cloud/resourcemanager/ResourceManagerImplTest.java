@@ -56,14 +56,15 @@ public class ResourceManagerImplTest {
   private static final LocalResourceManagerHelper RESOURCE_MANAGER_HELPER =
       LocalResourceManagerHelper.create();
   private static final ResourceManager RESOURCE_MANAGER =
-      RESOURCE_MANAGER_HELPER.getOptions().service();
+      RESOURCE_MANAGER_HELPER.getOptions().getService();
   private static final ProjectGetOption GET_FIELDS =
       ProjectGetOption.fields(ProjectField.NAME, ProjectField.CREATE_TIME);
   private static final ProjectListOption LIST_FIELDS =
       ProjectListOption.fields(ProjectField.NAME, ProjectField.LABELS);
   private static final ProjectListOption LIST_FILTER =
       ProjectListOption.filter("id:* name:myProject labels.color:blue LABELS.SIZE:*");
-  private static final ProjectInfo PARTIAL_PROJECT = ProjectInfo.newBuilder("partial-project").build();
+  private static final ProjectInfo PARTIAL_PROJECT =
+      ProjectInfo.newBuilder("partial-project").build();
   private static final ResourceId PARENT = new ResourceId("id", "type");
   private static final ProjectInfo COMPLETE_PROJECT = ProjectInfo.newBuilder("complete-project")
       .setName("name")
@@ -71,7 +72,7 @@ public class ResourceManagerImplTest {
       .setParent(PARENT)
       .build();
   private static final Map<ResourceManagerRpc.Option, ?> EMPTY_RPC_OPTIONS = ImmutableMap.of();
-  private static final Policy POLICY = Policy.builder()
+  private static final Policy POLICY = Policy.newBuilder()
       .addIdentity(Role.owner(), Identity.user("me@gmail.com"))
       .addIdentity(Role.editor(), Identity.serviceAccount("serviceaccount@gmail.com"))
       .build();
@@ -90,7 +91,7 @@ public class ResourceManagerImplTest {
   }
 
   private void clearProjects() {
-    for (Project project : RESOURCE_MANAGER.list().values()) {
+    for (Project project : RESOURCE_MANAGER.list().getValues()) {
       RESOURCE_MANAGER_HELPER.removeProject(project.getProjectId());
     }
   }
@@ -121,7 +122,7 @@ public class ResourceManagerImplTest {
       RESOURCE_MANAGER.create(PARTIAL_PROJECT);
       fail("Should fail, project already exists.");
     } catch (ResourceManagerException e) {
-      assertEquals(409, e.code());
+      assertEquals(409, e.getCode());
       assertTrue(e.getMessage().startsWith("A project with the same project ID")
           && e.getMessage().endsWith("already exists."));
     }
@@ -143,7 +144,7 @@ public class ResourceManagerImplTest {
       RESOURCE_MANAGER.delete("some-nonexistant-project-id");
       fail("Should fail because the project doesn't exist.");
     } catch (ResourceManagerException e) {
-      assertEquals(403, e.code());
+      assertEquals(403, e.getCode());
       assertTrue(e.getMessage().contains("not found."));
     }
   }
@@ -177,10 +178,10 @@ public class ResourceManagerImplTest {
   @Test
   public void testList() {
     Page<Project> projects = RESOURCE_MANAGER.list();
-    assertFalse(projects.values().iterator().hasNext());
+    assertFalse(projects.getValues().iterator().hasNext());
     RESOURCE_MANAGER.create(PARTIAL_PROJECT);
     RESOURCE_MANAGER.create(COMPLETE_PROJECT);
-    for (Project p : RESOURCE_MANAGER.list().values()) {
+    for (Project p : RESOURCE_MANAGER.list().getValues()) {
       if (p.getProjectId().equals(PARTIAL_PROJECT.getProjectId())) {
         compareReadWriteFields(PARTIAL_PROJECT, p);
       } else if (p.getProjectId().equals(COMPLETE_PROJECT.getProjectId())) {
@@ -197,15 +198,15 @@ public class ResourceManagerImplTest {
     RESOURCE_MANAGER.create(PARTIAL_PROJECT);
     RESOURCE_MANAGER.create(COMPLETE_PROJECT);
     Page<Project> page = RESOURCE_MANAGER.list(ProjectListOption.pageSize(1));
-    assertNotNull(page.nextPageCursor());
-    Iterator<Project> iterator = page.values().iterator();
+    assertNotNull(page.getNextPageCursor());
+    Iterator<Project> iterator = page.getValues().iterator();
     compareReadWriteFields(COMPLETE_PROJECT, iterator.next());
     assertFalse(iterator.hasNext());
-    page = page.nextPage();
-    iterator = page.values().iterator();
+    page = page.getNextPage();
+    iterator = page.getValues().iterator();
     compareReadWriteFields(PARTIAL_PROJECT, iterator.next());
     assertFalse(iterator.hasNext());
-    assertNull(page.nextPageCursor());
+    assertNull(page.getNextPageCursor());
   }
 
   @Test
@@ -228,8 +229,8 @@ public class ResourceManagerImplTest {
     RESOURCE_MANAGER.create(PARTIAL_PROJECT);
     RESOURCE_MANAGER.create(COMPLETE_PROJECT);
     Page<Project> projects = RESOURCE_MANAGER.list(LIST_FIELDS, ProjectListOption.pageSize(1));
-    assertNotNull(projects.nextPageCursor());
-    Iterator<Project> iterator = projects.values().iterator();
+    assertNotNull(projects.getNextPageCursor());
+    Iterator<Project> iterator = projects.getValues().iterator();
     Project returnedProject = iterator.next();
     assertEquals(COMPLETE_PROJECT.getProjectId(), returnedProject.getProjectId());
     assertEquals(COMPLETE_PROJECT.getName(), returnedProject.getName());
@@ -240,8 +241,8 @@ public class ResourceManagerImplTest {
     assertNull(returnedProject.getCreateTimeMillis());
     assertSame(RESOURCE_MANAGER, returnedProject.getResourceManager());
     assertFalse(iterator.hasNext());
-    projects = projects.nextPage();
-    iterator = projects.values().iterator();
+    projects = projects.getNextPage();
+    iterator = projects.getValues().iterator();
     returnedProject = iterator.next();
     assertEquals(PARTIAL_PROJECT.getProjectId(), returnedProject.getProjectId());
     assertEquals(PARTIAL_PROJECT.getName(), returnedProject.getName());
@@ -252,7 +253,7 @@ public class ResourceManagerImplTest {
     assertNull(returnedProject.getCreateTimeMillis());
     assertSame(RESOURCE_MANAGER, returnedProject.getResourceManager());
     assertFalse(iterator.hasNext());
-    assertNull(projects.nextPageCursor());
+    assertNull(projects.getNextPageCursor());
   }
 
   @Test
@@ -274,7 +275,7 @@ public class ResourceManagerImplTest {
     RESOURCE_MANAGER.create(nonMatchingProject1);
     RESOURCE_MANAGER.create(nonMatchingProject2);
     RESOURCE_MANAGER.create(nonMatchingProject3);
-    for (Project p : RESOURCE_MANAGER.list(LIST_FILTER).values()) {
+    for (Project p : RESOURCE_MANAGER.list(LIST_FILTER).getValues()) {
       assertFalse(p.equals(nonMatchingProject1));
       assertFalse(p.equals(nonMatchingProject2));
       compareReadWriteFields(matchingProject, p);
@@ -305,7 +306,7 @@ public class ResourceManagerImplTest {
       RESOURCE_MANAGER.replace(nonexistantProject);
       fail("Should fail because the project doesn't exist.");
     } catch (ResourceManagerException e) {
-      assertEquals(403, e.code());
+      assertEquals(403, e.getCode());
       assertTrue(e.getMessage().contains("the project was not found"));
     }
   }
@@ -325,7 +326,7 @@ public class ResourceManagerImplTest {
       RESOURCE_MANAGER.undelete("invalid-project-id");
       fail("Should fail because the project doesn't exist.");
     } catch (ResourceManagerException e) {
-      assertEquals(403, e.code());
+      assertEquals(403, e.getCode());
       assertTrue(e.getMessage().contains("the project was not found"));
     }
   }
@@ -336,9 +337,9 @@ public class ResourceManagerImplTest {
     RESOURCE_MANAGER.create(COMPLETE_PROJECT);
     RESOURCE_MANAGER.replacePolicy(COMPLETE_PROJECT.getProjectId(), POLICY);
     Policy retrieved = RESOURCE_MANAGER.getPolicy(COMPLETE_PROJECT.getProjectId());
-    assertEquals(POLICY.bindings(), retrieved.bindings());
-    assertNotNull(retrieved.etag());
-    assertEquals(0, retrieved.version());
+    assertEquals(POLICY.getBindings(), retrieved.getBindings());
+    assertNotNull(retrieved.getEtag());
+    assertEquals(0, retrieved.getVersion());
   }
 
   @Test
@@ -347,7 +348,7 @@ public class ResourceManagerImplTest {
       RESOURCE_MANAGER.replacePolicy("nonexistent-project", POLICY);
       fail("Project doesn't exist.");
     } catch (ResourceManagerException e) {
-      assertEquals(403, e.code());
+      assertEquals(403, e.getCode());
       assertTrue(e.getMessage().endsWith("project was not found."));
     }
     RESOURCE_MANAGER.create(PARTIAL_PROJECT);
@@ -357,14 +358,14 @@ public class ResourceManagerImplTest {
       RESOURCE_MANAGER.replacePolicy(PARTIAL_PROJECT.getProjectId(), oldPolicy);
       fail("Policy with an invalid etag didn't cause error.");
     } catch (ResourceManagerException e) {
-      assertEquals(409, e.code());
+      assertEquals(409, e.getCode());
       assertTrue(e.getMessage().contains("Policy etag mismatch"));
     }
-    String originalEtag = RESOURCE_MANAGER.getPolicy(PARTIAL_PROJECT.getProjectId()).etag();
+    String originalEtag = RESOURCE_MANAGER.getPolicy(PARTIAL_PROJECT.getProjectId()).getEtag();
     Policy newPolicy = RESOURCE_MANAGER.replacePolicy(PARTIAL_PROJECT.getProjectId(), POLICY);
-    assertEquals(POLICY.bindings(), newPolicy.bindings());
-    assertNotNull(newPolicy.etag());
-    assertNotEquals(originalEtag, newPolicy.etag());
+    assertEquals(POLICY.getBindings(), newPolicy.getBindings());
+    assertNotNull(newPolicy.getEtag());
+    assertNotEquals(originalEtag, newPolicy.getEtag());
   }
 
   @Test
@@ -374,7 +375,7 @@ public class ResourceManagerImplTest {
       RESOURCE_MANAGER.testPermissions("nonexistent-project", permissions);
       fail("Nonexistent project");
     } catch (ResourceManagerException e) {
-      assertEquals(403, e.code());
+      assertEquals(403, e.getCode());
       assertEquals("Project nonexistent-project not found.", e.getMessage());
     }
     RESOURCE_MANAGER.create(PARTIAL_PROJECT);
@@ -389,10 +390,10 @@ public class ResourceManagerImplTest {
     EasyMock.expect(rpcFactoryMock.create(EasyMock.anyObject(ResourceManagerOptions.class)))
         .andReturn(resourceManagerRpcMock);
     EasyMock.replay(rpcFactoryMock);
-    ResourceManager resourceManagerMock = ResourceManagerOptions.builder()
-        .serviceRpcFactory(rpcFactoryMock)
+    ResourceManager resourceManagerMock = ResourceManagerOptions.newBuilder()
+        .setServiceRpcFactory(rpcFactoryMock)
         .build()
-        .service();
+        .getService();
     EasyMock.expect(resourceManagerRpcMock.get(PARTIAL_PROJECT.getProjectId(), EMPTY_RPC_OPTIONS))
         .andThrow(new ResourceManagerException(500, "Internal Error"))
         .andReturn(PARTIAL_PROJECT.toPb());
@@ -410,10 +411,10 @@ public class ResourceManagerImplTest {
     EasyMock.expect(rpcFactoryMock.create(EasyMock.anyObject(ResourceManagerOptions.class)))
         .andReturn(resourceManagerRpcMock);
     EasyMock.replay(rpcFactoryMock);
-    ResourceManager resourceManagerMock = ResourceManagerOptions.builder()
-        .serviceRpcFactory(rpcFactoryMock)
+    ResourceManager resourceManagerMock = ResourceManagerOptions.newBuilder()
+        .setServiceRpcFactory(rpcFactoryMock)
         .build()
-        .service();
+        .getService();
     EasyMock.expect(resourceManagerRpcMock.get(PARTIAL_PROJECT.getProjectId(), EMPTY_RPC_OPTIONS))
         .andThrow(new ResourceManagerException(
             403, "Project " + PARTIAL_PROJECT.getProjectId() + " not found."))
@@ -431,8 +432,10 @@ public class ResourceManagerImplTest {
     EasyMock.expect(rpcFactoryMock.create(EasyMock.anyObject(ResourceManagerOptions.class)))
         .andReturn(resourceManagerRpcMock);
     EasyMock.replay(rpcFactoryMock);
-    ResourceManager resourceManagerMock =
-        ResourceManagerOptions.builder().serviceRpcFactory(rpcFactoryMock).build().service();
+    ResourceManager resourceManagerMock = ResourceManagerOptions.newBuilder()
+        .setServiceRpcFactory(rpcFactoryMock)
+        .build()
+        .getService();
     String exceptionMessage = "Artificial runtime exception";
     EasyMock.expect(resourceManagerRpcMock.get(PARTIAL_PROJECT.getProjectId(), EMPTY_RPC_OPTIONS))
         .andThrow(new RuntimeException(exceptionMessage));

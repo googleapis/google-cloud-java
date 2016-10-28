@@ -193,8 +193,8 @@ public class ITBigQueryTest {
   public static void beforeClass() throws InterruptedException, TimeoutException {
     RemoteBigQueryHelper bigqueryHelper = RemoteBigQueryHelper.create();
     RemoteStorageHelper storageHelper = RemoteStorageHelper.create();
-    bigquery = bigqueryHelper.getOptions().service();
-    storage = storageHelper.getOptions().service();
+    bigquery = bigqueryHelper.getOptions().getService();
+    storage = storageHelper.getOptions().getService();
     storage.create(BucketInfo.of(BUCKET));
     storage.create(BlobInfo.newBuilder(BUCKET, LOAD_FILE).setContentType("text/plain").build(),
         CSV_CONTENT.getBytes(StandardCharsets.UTF_8));
@@ -243,7 +243,7 @@ public class ITBigQueryTest {
   @Test
   public void testGetDataset() {
     Dataset dataset = bigquery.getDataset(DATASET);
-    assertEquals(bigquery.options().projectId(), dataset.getDatasetId().getProject());
+    assertEquals(bigquery.getOptions().getProjectId(), dataset.getDatasetId().getProject());
     assertEquals(DATASET, dataset.getDatasetId().getDataset());
     assertEquals(DESCRIPTION, dataset.getDescription());
     assertNotNull(dataset.getAcl());
@@ -257,7 +257,7 @@ public class ITBigQueryTest {
   public void testGetDatasetWithSelectedFields() {
     Dataset dataset = bigquery.getDataset(DATASET,
         DatasetOption.fields(DatasetField.CREATION_TIME));
-    assertEquals(bigquery.options().projectId(), dataset.getDatasetId().getProject());
+    assertEquals(bigquery.getOptions().getProjectId(), dataset.getDatasetId().getProject());
     assertEquals(DATASET, dataset.getDatasetId().getDataset());
     assertNotNull(dataset.getCreationTime());
     assertNull(dataset.getDescription());
@@ -277,7 +277,7 @@ public class ITBigQueryTest {
         .setDescription("Some Description")
         .build());
     assertNotNull(dataset);
-    assertEquals(bigquery.options().projectId(), dataset.getDatasetId().getProject());
+    assertEquals(bigquery.getOptions().getProjectId(), dataset.getDatasetId().getProject());
     assertEquals(OTHER_DATASET, dataset.getDatasetId().getDataset());
     assertEquals("Some Description", dataset.getDescription());
     Dataset updatedDataset =
@@ -292,7 +292,7 @@ public class ITBigQueryTest {
         .setDescription("Some Description")
         .build());
     assertNotNull(dataset);
-    assertEquals(bigquery.options().projectId(), dataset.getDatasetId().getProject());
+    assertEquals(bigquery.getOptions().getProjectId(), dataset.getDatasetId().getProject());
     assertEquals(OTHER_DATASET, dataset.getDatasetId().getDataset());
     assertEquals("Some Description", dataset.getDescription());
     Dataset updatedDataset =
@@ -398,7 +398,7 @@ public class ITBigQueryTest {
     }
     long integerValue = 0;
     int rowCount = 0;
-    for (List<FieldValue> row : response.getResult().values()) {
+    for (List<FieldValue> row : response.getResult().getValues()) {
       FieldValue timestampCell = row.get(0);
       FieldValue stringCell = row.get(1);
       FieldValue integerCell = row.get(2);
@@ -460,7 +460,7 @@ public class ITBigQueryTest {
       Thread.sleep(1000);
     }
     int rowCount = 0;
-    for (List<FieldValue> row : response.getResult().values()) {
+    for (List<FieldValue> row : response.getResult().getValues()) {
       FieldValue timestampCell = row.get(0);
       FieldValue stringCell = row.get(1);
       FieldValue booleanCell = row.get(2);
@@ -485,7 +485,7 @@ public class ITBigQueryTest {
     assertNotNull(createdTable);
     Page<Table> tables = bigquery.listTables(DATASET);
     boolean found = false;
-    Iterator<Table> tableIterator = tables.values().iterator();
+    Iterator<Table> tableIterator = tables.getValues().iterator();
     while (tableIterator.hasNext() && !found) {
       if (tableIterator.next().getTableId().equals(createdTable.getTableId())) {
         found = true;
@@ -688,7 +688,7 @@ public class ITBigQueryTest {
   public void testListAllTableData() {
     Page<List<FieldValue>> rows = bigquery.listTableData(TABLE_ID);
     int rowCount = 0;
-    for (List<FieldValue> row : rows.values()) {
+    for (List<FieldValue> row : rows.getValues()) {
       FieldValue timestampCell = row.get(0);
       FieldValue stringCell = row.get(1);
       FieldValue integerCell = row.get(2);
@@ -735,7 +735,7 @@ public class ITBigQueryTest {
     }
     assertEquals(QUERY_RESULT_SCHEMA, response.getResult().getSchema());
     int rowCount = 0;
-    for (List<FieldValue> row : response.getResult().values()) {
+    for (List<FieldValue> row : response.getResult().getValues()) {
       FieldValue timestampCell = row.get(0);
       FieldValue stringCell = row.get(1);
       FieldValue booleanCell = row.get(2);
@@ -756,7 +756,7 @@ public class ITBigQueryTest {
   @Test
   public void testListJobs() {
     Page<Job> jobs = bigquery.listJobs();
-    for (Job job : jobs.values()) {
+    for (Job job : jobs.getValues()) {
       assertNotNull(job.getJobId());
       assertNotNull(job.getStatistics());
       assertNotNull(job.getStatus());
@@ -768,7 +768,7 @@ public class ITBigQueryTest {
   @Test
   public void testListJobsWithSelectedFields() {
     Page<Job> jobs = bigquery.listJobs(JobListOption.fields(JobField.USER_EMAIL));
-    for (Job job : jobs.values()) {
+    for (Job job : jobs.getValues()) {
       assertNotNull(job.getJobId());
       assertNotNull(job.getStatus());
       assertNotNull(job.getUserEmail());
@@ -903,7 +903,7 @@ public class ITBigQueryTest {
     assertFalse(response.hasErrors());
     assertEquals(QUERY_RESULT_SCHEMA, response.getResult().getSchema());
     int rowCount = 0;
-    for (List<FieldValue> row : response.getResult().values()) {
+    for (List<FieldValue> row : response.getResult().getValues()) {
       FieldValue timestampCell = row.get(0);
       FieldValue stringCell = row.get(1);
       FieldValue booleanCell = row.get(2);
@@ -986,7 +986,7 @@ public class ITBigQueryTest {
     }
     Page<List<FieldValue>> rows = bigquery.listTableData(tableId);
     int rowCount = 0;
-    for (List<FieldValue> row : rows.values()) {
+    for (List<FieldValue> row : rows.getValues()) {
       FieldValue timestampCell = row.get(0);
       FieldValue stringCell = row.get(1);
       FieldValue integerCell = row.get(2);

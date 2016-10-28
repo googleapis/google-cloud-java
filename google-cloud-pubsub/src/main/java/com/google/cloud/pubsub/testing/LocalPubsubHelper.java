@@ -155,11 +155,11 @@ public class LocalPubsubHelper {
    * localhost.
    */
   public PubSubOptions getOptions() {
-    return PubSubOptions.builder()
-        .projectId(projectId)
-        .host("localhost:" + port)
-        .authCredentials(AuthCredentials.noAuth())
-        .retryParams(RetryParams.noRetries())
+    return PubSubOptions.newBuilder()
+        .setProjectId(projectId)
+        .setHost("localhost:" + port)
+        .setAuthCredentials(AuthCredentials.noAuth())
+        .setRetryParams(RetryParams.noRetries())
         .build();
   }
 }

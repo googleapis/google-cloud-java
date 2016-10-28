@@ -154,7 +154,7 @@ final class MessageConsumerImpl implements MessageConsumer {
 
     private PullRequest createPullRequest() {
       return PullRequest.newBuilder()
-          .setSubscription(formatSubscriptionName(pubsubOptions.projectId(), subscription))
+          .setSubscription(formatSubscriptionName(pubsubOptions.getProjectId(), subscription))
           .setMaxMessages(maxQueuedCallbacks - queuedCallbacks.get())
           .setReturnImmediately(false)
           .build();
@@ -166,11 +166,11 @@ final class MessageConsumerImpl implements MessageConsumer {
         public void run() {
           try {
             messageProcessor.process(receivedMessage);
-            pubsub.ackAsync(receivedMessage.subscription(), receivedMessage.ackId());
+            pubsub.ackAsync(receivedMessage.getSubscription(), receivedMessage.getAckId());
           } catch (Exception ex) {
-            pubsub.nackAsync(receivedMessage.subscription(), receivedMessage.ackId());
+            pubsub.nackAsync(receivedMessage.getSubscription(), receivedMessage.getAckId());
           } finally {
-            deadlineRenewer.remove(receivedMessage.subscription(), receivedMessage.ackId());
+            deadlineRenewer.remove(receivedMessage.getSubscription(), receivedMessage.getAckId());
             queuedCallbacks.decrementAndGet();
             // We can now pull more messages, according to the next pull policy.
             pullIfNeeded();
@@ -184,8 +184,8 @@ final class MessageConsumerImpl implements MessageConsumer {
     this.pubsubOptions = builder.pubsubOptions;
     this.subscription = builder.subscription;
     this.messageProcessor = builder.messageProcessor;
-    this.pubsubRpc = pubsubOptions.rpc();
-    this.pubsub = pubsubOptions.service();
+    this.pubsubRpc = pubsubOptions.getRpc();
+    this.pubsub = pubsubOptions.getService();
     this.deadlineRenewer = builder.deadlineRenewer;
     this.queuedCallbacks = new AtomicInteger();
     this.consumerExecutor = SharedResourceHolder.get(CONSUMER_EXECUTOR);

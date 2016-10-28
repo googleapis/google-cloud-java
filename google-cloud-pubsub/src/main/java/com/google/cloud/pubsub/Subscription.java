@@ -160,7 +160,7 @@ public class Subscription extends SubscriptionInfo {
   Subscription(PubSub pubsub, BuilderImpl builder) {
     super(builder);
     this.pubsub = checkNotNull(pubsub);
-    options = pubsub.options();
+    options = pubsub.getOptions();
   }
 
   @Override
@@ -591,7 +591,7 @@ public class Subscription extends SubscriptionInfo {
 
   private void readObject(ObjectInputStream input) throws IOException, ClassNotFoundException {
     input.defaultReadObject();
-    this.pubsub = options.service();
+    this.pubsub = options.getService();
   }
 
   static Subscription fromPb(PubSub storage, com.google.pubsub.v1.Subscription subscriptionPb) {

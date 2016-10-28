@@ -65,7 +65,7 @@ public class ITPubSubSnippets {
 
   @BeforeClass
   public static void beforeClass() {
-    pubsub = PubSubOptions.defaultInstance().service();
+    pubsub = PubSubOptions.getDefaultInstance().getService();
     pubsubSnippets = new PubSubSnippets(pubsub);
   }
 
@@ -110,25 +110,25 @@ public class ITPubSubSnippets {
     while (Iterators.size(page.iterateAll()) < 1) {
       page = pubsubSnippets.listSubscriptionsForTopic(topicName1);
     }
-    assertEquals(subscriptionName1, page.iterateAll().next().subscription());
+    assertEquals(subscriptionName1, page.iterateAll().next().getSubscription());
     page = pubsubSnippets.listSubscriptionsForTopicAsync(topicName2);
     while (Iterators.size(page.iterateAll()) < 1) {
       page = pubsubSnippets.listSubscriptionsForTopicAsync(topicName2);
     }
-    assertEquals(subscriptionName2, page.iterateAll().next().subscription());
-    String endpoint = "https://" + pubsub.options().projectId() + ".appspot.com/push";
+    assertEquals(subscriptionName2, page.iterateAll().next().getSubscription());
+    String endpoint = "https://" + pubsub.getOptions().getProjectId() + ".appspot.com/push";
     pubsubSnippets.replacePushConfig(subscriptionName1, endpoint);
     pubsubSnippets.replacePushConfigAsync(subscriptionName2, endpoint);
     subscription1 = pubsubSnippets.getSubscription(subscriptionName1);
     subscription2 = pubsubSnippets.getSubscriptionAsync(subscriptionName2);
-    assertEquals(endpoint, subscription1.pushConfig().endpoint());
-    assertEquals(endpoint, subscription2.pushConfig().endpoint());
+    assertEquals(endpoint, subscription1.getPushConfig().getEndpoint());
+    assertEquals(endpoint, subscription2.getPushConfig().getEndpoint());
     pubsubSnippets.replacePushConfigToPull(subscriptionName1);
     pubsubSnippets.replacePushConfigToPullAsync(subscriptionName2);
     subscription1 = pubsubSnippets.getSubscription(subscriptionName1);
     subscription2 = pubsubSnippets.getSubscriptionAsync(subscriptionName2);
-    assertNull(subscription1.pushConfig());
-    assertNull(subscription2.pushConfig());
+    assertNull(subscription1.getPushConfig());
+    assertNull(subscription2.getPushConfig());
     assertTrue(pubsubSnippets.deleteTopic(topicName1));
     assertTrue(pubsubSnippets.deleteTopicAsync(topicName2));
     assertTrue(pubsubSnippets.deleteSubscription(subscriptionName1));
@@ -151,27 +151,27 @@ public class ITPubSubSnippets {
       Iterators.addAll(messages, pubsub.pull(subscriptionName, 100));
     }
     Iterator<ReceivedMessage> messageIterator = messages.iterator();
-    pubsubSnippets.modifyAckDeadlineOneMessage(subscriptionName, messageIterator.next().ackId());
-    pubsubSnippets.modifyAckDeadlineMoreMessages(subscriptionName, messageIterator.next().ackId(),
-        messageIterator.next().ackId());
-    pubsubSnippets.modifyAckDeadlineMessageList(subscriptionName, messageIterator.next().ackId(),
-        messageIterator.next().ackId());
+    pubsubSnippets.modifyAckDeadlineOneMessage(subscriptionName, messageIterator.next().getAckId());
+    pubsubSnippets.modifyAckDeadlineMoreMessages(subscriptionName,
+        messageIterator.next().getAckId(), messageIterator.next().getAckId());
+    pubsubSnippets.modifyAckDeadlineMessageList(subscriptionName, messageIterator.next().getAckId(),
+        messageIterator.next().getAckId());
     messageIterator = messages.iterator();
-    pubsubSnippets.nackOneMessage(subscriptionName, messageIterator.next().ackId());
-    pubsubSnippets.nackMoreMessages(subscriptionName, messageIterator.next().ackId(),
-        messageIterator.next().ackId());
-    pubsubSnippets.nackMessageList(subscriptionName, messageIterator.next().ackId(),
-        messageIterator.next().ackId());
+    pubsubSnippets.nackOneMessage(subscriptionName, messageIterator.next().getAckId());
+    pubsubSnippets.nackMoreMessages(subscriptionName, messageIterator.next().getAckId(),
+        messageIterator.next().getAckId());
+    pubsubSnippets.nackMessageList(subscriptionName, messageIterator.next().getAckId(),
+        messageIterator.next().getAckId());
     messages.clear();
     while (messages.size() < 5) {
       Iterators.addAll(messages, pubsub.pull(subscriptionName, 100));
     }
     messageIterator = messages.iterator();
-    pubsubSnippets.ackOneMessage(subscriptionName, messageIterator.next().ackId());
-    pubsubSnippets.ackMoreMessages(subscriptionName, messageIterator.next().ackId(),
-        messageIterator.next().ackId());
-    pubsubSnippets.ackMessageList(subscriptionName, messageIterator.next().ackId(),
-        messageIterator.next().ackId());
+    pubsubSnippets.ackOneMessage(subscriptionName, messageIterator.next().getAckId());
+    pubsubSnippets.ackMoreMessages(subscriptionName, messageIterator.next().getAckId(),
+        messageIterator.next().getAckId());
+    pubsubSnippets.ackMessageList(subscriptionName, messageIterator.next().getAckId(),
+        messageIterator.next().getAckId());
     assertTrue(pubsubSnippets.deleteTopic(topicName));
     assertTrue(pubsubSnippets.deleteSubscription(subscriptionName));
   }
@@ -194,27 +194,27 @@ public class ITPubSubSnippets {
     }
     Iterator<ReceivedMessage> messageIterator = messages.iterator();
     pubsubSnippets.modifyAckDeadlineOneMessageAsync(subscriptionName,
-        messageIterator.next().ackId());
+        messageIterator.next().getAckId());
     pubsubSnippets.modifyAckDeadlineMoreMessagesAsync(subscriptionName,
-        messageIterator.next().ackId(), messageIterator.next().ackId());
+        messageIterator.next().getAckId(), messageIterator.next().getAckId());
     pubsubSnippets.modifyAckDeadlineMessageListAsync(subscriptionName,
-        messageIterator.next().ackId(), messageIterator.next().ackId());
+        messageIterator.next().getAckId(), messageIterator.next().getAckId());
     messageIterator = messages.iterator();
-    pubsubSnippets.nackOneMessageAsync(subscriptionName, messageIterator.next().ackId());
-    pubsubSnippets.nackMoreMessagesAsync(subscriptionName, messageIterator.next().ackId(),
-        messageIterator.next().ackId());
-    pubsubSnippets.nackMessageListAsync(subscriptionName, messageIterator.next().ackId(),
-        messageIterator.next().ackId());
+    pubsubSnippets.nackOneMessageAsync(subscriptionName, messageIterator.next().getAckId());
+    pubsubSnippets.nackMoreMessagesAsync(subscriptionName, messageIterator.next().getAckId(),
+        messageIterator.next().getAckId());
+    pubsubSnippets.nackMessageListAsync(subscriptionName, messageIterator.next().getAckId(),
+        messageIterator.next().getAckId());
     messages.clear();
     while (messages.size() < 5) {
       Iterators.addAll(messages, pubsub.pull(subscriptionName, 100));
     }
     messageIterator = messages.iterator();
-    pubsubSnippets.ackOneMessageAsync(subscriptionName, messageIterator.next().ackId());
-    pubsubSnippets.ackMoreMessagesAsync(subscriptionName, messageIterator.next().ackId(),
-        messageIterator.next().ackId());
-    pubsubSnippets.ackMessageListAsync(subscriptionName, messageIterator.next().ackId(),
-        messageIterator.next().ackId());
+    pubsubSnippets.ackOneMessageAsync(subscriptionName, messageIterator.next().getAckId());
+    pubsubSnippets.ackMoreMessagesAsync(subscriptionName, messageIterator.next().getAckId(),
+        messageIterator.next().getAckId());
+    pubsubSnippets.ackMessageListAsync(subscriptionName, messageIterator.next().getAckId(),
+        messageIterator.next().getAckId());
     assertTrue(pubsubSnippets.deleteTopicAsync(topicName));
     assertTrue(pubsubSnippets.deleteSubscriptionAsync(subscriptionName));
   }
@@ -226,8 +226,8 @@ public class ITPubSubSnippets {
     Policy policy = pubsubSnippets.getTopicPolicy(topicName);
     assertNotNull(policy);
     policy = pubsubSnippets.replaceTopicPolicy(topicName);
-    assertTrue(policy.bindings().containsKey(Role.viewer()));
-    assertTrue(policy.bindings().get(Role.viewer()).contains(Identity.allAuthenticatedUsers()));
+    assertTrue(policy.getBindings().containsKey(Role.viewer()));
+    assertTrue(policy.getBindings().get(Role.viewer()).contains(Identity.allAuthenticatedUsers()));
     List<Boolean> permissions = pubsubSnippets.testTopicPermissions(topicName);
     assertTrue(permissions.get(0));
     String subscriptionName = formatForTest("test-subscription-policy");
@@ -235,8 +235,8 @@ public class ITPubSubSnippets {
     policy = pubsubSnippets.getSubscriptionPolicy(subscriptionName);
     assertNotNull(policy);
     policy = pubsubSnippets.replaceSubscriptionPolicy(subscriptionName);
-    assertTrue(policy.bindings().containsKey(Role.viewer()));
-    assertTrue(policy.bindings().get(Role.viewer()).contains(Identity.allAuthenticatedUsers()));
+    assertTrue(policy.getBindings().containsKey(Role.viewer()));
+    assertTrue(policy.getBindings().get(Role.viewer()).contains(Identity.allAuthenticatedUsers()));
     permissions = pubsubSnippets.testSubscriptionPermissions(subscriptionName);
     assertTrue(permissions.get(0));
     topic.delete();
@@ -250,8 +250,8 @@ public class ITPubSubSnippets {
     Policy policy = pubsubSnippets.getTopicPolicyAsync(topicName);
     assertNotNull(policy);
     policy = pubsubSnippets.replaceTopicPolicyAsync(topicName);
-    assertTrue(policy.bindings().containsKey(Role.viewer()));
-    assertTrue(policy.bindings().get(Role.viewer()).contains(Identity.allAuthenticatedUsers()));
+    assertTrue(policy.getBindings().containsKey(Role.viewer()));
+    assertTrue(policy.getBindings().get(Role.viewer()).contains(Identity.allAuthenticatedUsers()));
     List<Boolean> permissions = pubsubSnippets.testTopicPermissionsAsync(topicName);
     assertTrue(permissions.get(0));
     String subscriptionName = formatForTest("test-subscription-policy-async");
@@ -259,8 +259,8 @@ public class ITPubSubSnippets {
     policy = pubsubSnippets.getSubscriptionPolicyAsync(subscriptionName);
     assertNotNull(policy);
     policy = pubsubSnippets.replaceSubscriptionPolicyAsync(subscriptionName);
-    assertTrue(policy.bindings().containsKey(Role.viewer()));
-    assertTrue(policy.bindings().get(Role.viewer()).contains(Identity.allAuthenticatedUsers()));
+    assertTrue(policy.getBindings().containsKey(Role.viewer()));
+    assertTrue(policy.getBindings().get(Role.viewer()).contains(Identity.allAuthenticatedUsers()));
     permissions = pubsubSnippets.testSubscriptionPermissionsAsync(subscriptionName);
     assertTrue(permissions.get(0));
     topic.delete();

@@ -46,7 +46,7 @@ public class CreateAddressDiskAndInstance {
   public static void main(String... args) throws InterruptedException, TimeoutException {
     // Create a service object
     // Credentials are inferred from the environment.
-    Compute compute = ComputeOptions.defaultInstance().service();
+    Compute compute = ComputeOptions.getDefaultInstance().getService();
 
     // Create an external region address
     RegionAddressId addressId = RegionAddressId.of("us-central1", "test-address");
@@ -56,7 +56,7 @@ public class CreateAddressDiskAndInstance {
     if (operation.getErrors() == null) {
       System.out.println("Address " + addressId + " was successfully created");
     } else {
-      // inspect operation.errors()
+      // inspect operation.getErrors()
       throw new RuntimeException("Address creation failed");
     }
 
@@ -71,7 +71,7 @@ public class CreateAddressDiskAndInstance {
     if (operation.getErrors() == null) {
       System.out.println("Disk " + diskId + " was successfully created");
     } else {
-      // inspect operation.errors()
+      // inspect operation.getErrors()
       throw new RuntimeException("Disk creation failed");
     }
 
@@ -94,7 +94,7 @@ public class CreateAddressDiskAndInstance {
     if (operation.getErrors() == null) {
       System.out.println("Instance " + instanceId + " was successfully created");
     } else {
-      // inspect operation.errors()
+      // inspect operation.getErrors()
       throw new RuntimeException("Instance creation failed");
     }
   }

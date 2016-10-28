@@ -218,7 +218,7 @@ public abstract class BaseSystemTest {
     pubsub().create(TopicInfo.of(topic));
     String name = formatForTest("test-create-get-delete-subscription");
     Subscription subscription = pubsub().create(SubscriptionInfo.of(topic, name));
-    assertEquals(TopicId.of(pubsub().options().projectId(), topic), subscription.getTopic());
+    assertEquals(TopicId.of(pubsub().getOptions().getProjectId(), topic), subscription.getTopic());
     assertEquals(name, subscription.getName());
     assertNull(subscription.getPushConfig());
     // todo(mziccard) seems not to work on the emulator (returns 60) - see #989
@@ -246,12 +246,12 @@ public abstract class BaseSystemTest {
     String topic = formatForTest("test-create-get-delete-async-subscription-topic");
     pubsub().create(TopicInfo.of(topic));
     String name = formatForTest("test-create-get-delete-async-subscription");
-    String endpoint = "https://" + pubsub().options().projectId() + ".appspot.com/push";
+    String endpoint = "https://" + pubsub().getOptions().getProjectId() + ".appspot.com/push";
     PushConfig pushConfig = PushConfig.of(endpoint);
     Future<Subscription> subscriptionFuture = pubsub().createAsync(
         SubscriptionInfo.newBuilder(topic, name).setPushConfig(pushConfig).build());
     Subscription subscription = subscriptionFuture.get();
-    assertEquals(TopicId.of(pubsub().options().projectId(), topic), subscription.getTopic());
+    assertEquals(TopicId.of(pubsub().getOptions().getProjectId(), topic), subscription.getTopic());
     assertEquals(name, subscription.getName());
     assertEquals(pushConfig, subscription.getPushConfig());
     // todo(mziccard) seems not to work on the emulator (returns 60) - see #989
@@ -270,7 +270,7 @@ public abstract class BaseSystemTest {
     pubsub().create(TopicInfo.of(topic));
     String name = formatForTest("test-get-deleted-topic-subscription");
     Subscription subscription = pubsub().create(SubscriptionInfo.of(topic, name));
-    assertEquals(TopicId.of(pubsub().options().projectId(), topic), subscription.getTopic());
+    assertEquals(TopicId.of(pubsub().getOptions().getProjectId(), topic), subscription.getTopic());
     assertEquals(name, subscription.getName());
     assertNull(subscription.getPushConfig());
     // todo(mziccard) seems not to work on the emulator (returns 60) - see #989
@@ -289,18 +289,19 @@ public abstract class BaseSystemTest {
     String topic = formatForTest("test-replace-push-config-topic");
     pubsub().create(TopicInfo.of(topic));
     String name = formatForTest("test-replace-push-config-subscription");
-    String endpoint = "https://" + pubsub().options().projectId() + ".appspot.com/push";
+    String endpoint = "https://" + pubsub().getOptions().getProjectId() + ".appspot.com/push";
     PushConfig pushConfig = PushConfig.of(endpoint);
     Subscription subscription =
         pubsub().create(SubscriptionInfo.newBuilder(topic, name).setPushConfig(pushConfig).build());
-    assertEquals(TopicId.of(pubsub().options().projectId(), topic), subscription.getTopic());
+    assertEquals(TopicId.of(pubsub().getOptions().getProjectId(), topic), subscription.getTopic());
     assertEquals(name, subscription.getName());
     assertEquals(pushConfig, subscription.getPushConfig());
     // todo(mziccard) seems not to work on the emulator (returns 60) - see #989
     // assertEquals(10, subscription.ackDeadlineSeconds());
     pubsub().replacePushConfig(name, null);
     Subscription remoteSubscription = pubsub().getSubscription(name);
-    assertEquals(TopicId.of(pubsub().options().projectId(), topic), remoteSubscription.getTopic());
+    assertEquals(TopicId.of(pubsub().getOptions().getProjectId(), topic),
+        remoteSubscription.getTopic());
     assertEquals(name, remoteSubscription.getName());
     assertNull(remoteSubscription.getPushConfig());
     // todo(mziccard) seems not to work on the emulator (returns 60) - see #989
@@ -325,16 +326,17 @@ public abstract class BaseSystemTest {
     Future<Subscription> subscriptionFuture =
         pubsub().createAsync(SubscriptionInfo.of(topic, name));
     Subscription subscription = subscriptionFuture.get();
-    assertEquals(TopicId.of(pubsub().options().projectId(), topic), subscription.getTopic());
+    assertEquals(TopicId.of(pubsub().getOptions().getProjectId(), topic), subscription.getTopic());
     assertEquals(name, subscription.getName());
     assertNull(subscription.getPushConfig());
     // todo(mziccard) seems not to work on the emulator (returns 60) - see #989
     // assertEquals(10, subscription.ackDeadlineSeconds());
-    String endpoint = "https://" + pubsub().options().projectId() + ".appspot.com/push";
+    String endpoint = "https://" + pubsub().getOptions().getProjectId() + ".appspot.com/push";
     PushConfig pushConfig = PushConfig.of(endpoint);
     pubsub().replacePushConfigAsync(name, pushConfig).get();
     Subscription remoteSubscription = pubsub().getSubscriptionAsync(name).get();
-    assertEquals(TopicId.of(pubsub().options().projectId(), topic), remoteSubscription.getTopic());
+    assertEquals(TopicId.of(pubsub().getOptions().getProjectId(), topic),
+        remoteSubscription.getTopic());
     assertEquals(name, remoteSubscription.getName());
     assertEquals(pushConfig, remoteSubscription.getPushConfig());
     // todo(mziccard) seems not to work on the emulator (returns 60) - see #989
@@ -372,11 +374,11 @@ public abstract class BaseSystemTest {
     Set<String> topicSubscriptionNames = Sets.newHashSet();
     Page<SubscriptionId> topic1Subscriptions =
         topic1.listSubscriptions(PubSub.ListOption.pageSize(1));
-    Iterator<SubscriptionId> firstStringPageIterator = topic1Subscriptions.values().iterator();
+    Iterator<SubscriptionId> firstStringPageIterator = topic1Subscriptions.getValues().iterator();
     topicSubscriptionNames.add(firstStringPageIterator.next().getSubscription());
     assertFalse(firstStringPageIterator.hasNext());
     Iterator<SubscriptionId> topicSubscriptionsIterator =
-        topic1Subscriptions.nextPage().iterateAll();
+        topic1Subscriptions.getNextPage().iterateAll();
     while (topicSubscriptionsIterator.hasNext()) {
       topicSubscriptionNames.add(topicSubscriptionsIterator.next().getSubscription());
     }
@@ -419,11 +421,11 @@ public abstract class BaseSystemTest {
     Set<String> topicSubscriptionNames = Sets.newHashSet();
     AsyncPage<SubscriptionId> topic1Subscriptions =
         topic1.listSubscriptionsAsync(PubSub.ListOption.pageSize(1)).get();
-    Iterator<SubscriptionId> firstStringPageIterator = topic1Subscriptions.values().iterator();
+    Iterator<SubscriptionId> firstStringPageIterator = topic1Subscriptions.getValues().iterator();
     topicSubscriptionNames.add(firstStringPageIterator.next().getSubscription());
     assertFalse(firstStringPageIterator.hasNext());
     Iterator<SubscriptionId> topicSubscriptionsIterator =
-        topic1Subscriptions.nextPageAsync().get().iterateAll();
+        topic1Subscriptions.getNextPageAsync().get().iterateAll();
     while (topicSubscriptionsIterator.hasNext()) {
       topicSubscriptionNames.add(topicSubscriptionsIterator.next().getSubscription());
     }

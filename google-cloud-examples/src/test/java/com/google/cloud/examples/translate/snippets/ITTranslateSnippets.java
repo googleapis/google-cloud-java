@@ -47,7 +47,7 @@ public class ITTranslateSnippets {
   @BeforeClass
   public static void beforeClass() {
     RemoteTranslateHelper helper = RemoteTranslateHelper.create();
-    translateSnippets = new TranslateSnippets(helper.getOptions().service());
+    translateSnippets = new TranslateSnippets(helper.getOptions().getService());
   }
 
   @Test

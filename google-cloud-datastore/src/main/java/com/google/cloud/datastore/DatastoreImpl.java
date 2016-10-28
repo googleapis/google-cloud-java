@@ -49,8 +49,8 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
 
   DatastoreImpl(DatastoreOptions options) {
     super(options);
-    this.datastoreRpc = options.rpc();
-    retryParams = MoreObjects.firstNonNull(options.retryParams(), RetryParams.noRetries());
+    this.datastoreRpc = options.getRpc();
+    retryParams = MoreObjects.firstNonNull(options.getRetryParams(), RetryParams.noRetries());
   }
 
   @Override
@@ -92,7 +92,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
                 throws DatastoreException {
               return datastoreRpc.runQuery(requestPb);
             }
-          }, retryParams, EXCEPTION_HANDLER, options().clock());
+          }, retryParams, EXCEPTION_HANDLER, getOptions().getClock());
     } catch (RetryHelperException e) {
       throw DatastoreException.translateAndThrow(e);
     }
@@ -131,7 +131,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
                 throws DatastoreException {
               return datastoreRpc.allocateIds(requestPb);
             }
-          }, retryParams, EXCEPTION_HANDLER, options().clock());
+          }, retryParams, EXCEPTION_HANDLER, getOptions().getClock());
     } catch (RetryHelperException e) {
       throw DatastoreException.translateAndThrow(e);
     }
@@ -288,7 +288,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
                 throws DatastoreException {
               return datastoreRpc.lookup(requestPb);
             }
-          }, retryParams, EXCEPTION_HANDLER, options().clock());
+          }, retryParams, EXCEPTION_HANDLER, getOptions().getClock());
     } catch (RetryHelperException e) {
       throw DatastoreException.translateAndThrow(e);
     }
@@ -368,7 +368,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
 
   @Override
   public KeyFactory newKeyFactory() {
-    return DatastoreHelper.newKeyFactory(options());
+    return DatastoreHelper.newKeyFactory(getOptions());
   }
 
   private com.google.datastore.v1.CommitResponse commitMutation(
@@ -391,7 +391,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
             }
           },
           retryParams,
-          EXCEPTION_HANDLER, options().clock());
+          EXCEPTION_HANDLER, getOptions().getClock());
     } catch (RetryHelperException e) {
       throw DatastoreException.translateAndThrow(e);
     }
@@ -414,7 +414,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
             }
           },
           retryParams,
-          EXCEPTION_HANDLER, options().clock());
+          EXCEPTION_HANDLER, getOptions().getClock());
     } catch (RetryHelperException e) {
       throw DatastoreException.translateAndThrow(e);
     }
@@ -434,7 +434,7 @@ final class DatastoreImpl extends BaseService<DatastoreOptions> implements Datas
           datastoreRpc.rollback(requestPb);
           return null;
         }
-      }, retryParams, EXCEPTION_HANDLER, options().clock());
+      }, retryParams, EXCEPTION_HANDLER, getOptions().getClock());
     } catch (RetryHelperException e) {
       throw DatastoreException.translateAndThrow(e);
     }

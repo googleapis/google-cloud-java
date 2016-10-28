@@ -22,7 +22,7 @@
  * <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/src/main/java/com/google/cloud/examples/datastore/snippets/CreateEntity.java">
  * CreateEntity.java</a>.
  * <pre> {@code
- * Datastore datastore = DatastoreOptions.defaultInstance().service();
+ * Datastore datastore = DatastoreOptions.getDefaultInstance().getService();
  * KeyFactory keyFactory = datastore.newKeyFactory().setKind("keyKind");
  * Key key = keyFactory.newKey("keyName");
  * Entity entity = Entity.newBuilder(key)
@@ -38,7 +38,7 @@
  * <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/src/main/java/com/google/cloud/examples/datastore/snippets/UpdateEntity.java">
  * UpdateEntity.java</a>.
  * <pre> {@code
- * Datastore datastore = DatastoreOptions.defaultInstance().service();
+ * Datastore datastore = DatastoreOptions.getDefaultInstance().getService();
  * KeyFactory keyFactory = datastore.newKeyFactory().setKind("keyKind");
  * Key key = keyFactory.newKey("keyName");
  * Entity entity = datastore.get(key);

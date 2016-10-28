@@ -22,7 +22,7 @@
  * <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/src/main/java/com/google/cloud/examples/compute/snippets/CreateSnapshot.java">
  * CreateSnapshot.java</a>.
  * <pre> {@code
- * Compute compute = ComputeOptions.defaultInstance().service();
+ * Compute compute = ComputeOptions.getDefaultInstance().getService();
  * DiskId diskId = DiskId.of("us-central1-a", "disk-name");
  * Disk disk = compute.getDisk(diskId, Compute.DiskOption.fields());
  * if (disk != null) {
@@ -39,7 +39,7 @@
  * <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/src/main/java/com/google/cloud/examples/compute/snippets/CreateInstance.java">
  * CreateInstance.java</a>.
  * <pre> {@code
- * Compute compute = ComputeOptions.defaultInstance().service();
+ * Compute compute = ComputeOptions.getDefaultInstance().getService();
  * ImageId imageId = ImageId.of("debian-cloud", "debian-8-jessie-v20160329");
  * NetworkId networkId = NetworkId.of("default");
  * AttachedDisk attachedDisk = AttachedDisk.of(AttachedDisk.CreateDiskConfiguration.of(imageId));

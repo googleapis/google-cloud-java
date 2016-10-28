@@ -157,7 +157,7 @@ public class Snapshot extends SnapshotInfo {
   Snapshot(Compute compute, SnapshotInfo.BuilderImpl infoBuilder) {
     super(infoBuilder);
     this.compute = checkNotNull(compute);
-    this.options = compute.options();
+    this.options = compute.getOptions();
   }
 
   /**
@@ -232,7 +232,7 @@ public class Snapshot extends SnapshotInfo {
 
   private void readObject(ObjectInputStream input) throws IOException, ClassNotFoundException {
     input.defaultReadObject();
-    this.compute = options.service();
+    this.compute = options.getService();
   }
 
   static Snapshot fromPb(Compute compute,

@@ -396,7 +396,7 @@ public class LoggingExample {
     @Override
     public void run(Logging logging, LogEntry entry) {
       MonitoredResource resource = MonitoredResource.newBuilder("global")
-          .addLabel("project_id", logging.options().projectId())
+          .addLabel("project_id", logging.getOptions().getProjectId())
           .build();
       LogEntry entryWithResource = entry.toBuilder().setResource(resource).build();
       logging.write(Collections.singleton(entryWithResource));
@@ -540,12 +540,12 @@ public class LoggingExample {
       printUsage();
       return;
     }
-    LoggingOptions.Builder optionsBuilder = LoggingOptions.builder();
+    LoggingOptions.Builder optionsBuilder = LoggingOptions.newBuilder();
     LoggingAction action;
     String actionName;
     if (args.length >= 2 && !ACTIONS.containsKey(args[0])) {
       actionName = args[1];
-      optionsBuilder.projectId(args[0]);
+      optionsBuilder.setProjectId(args[0]);
       action = ACTIONS.get(args[1]);
       args = Arrays.copyOfRange(args, 2, args.length);
     } else {
@@ -558,7 +558,7 @@ public class LoggingExample {
       printUsage();
       return;
     }
-    try (Logging logging = optionsBuilder.build().service()) {
+    try (Logging logging = optionsBuilder.build().getService()) {
       Object arg;
       try {
         arg = action.parse(args);

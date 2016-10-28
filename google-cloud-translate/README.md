@@ -83,12 +83,12 @@ service object, given that `GOOGLE_API_KEY` is set, use the following code:
 import com.google.cloud.translate.Translate;
 import com.google.cloud.translate.TranslateOptions;
 
-Translate translate = TranslateOptions.defaultInstance().service();
+Translate translate = TranslateOptions.getDefaultInstance().getService();
 ```
 
 Or you can explicitly set the API key as follows:
 ```java
-Translate translate = TranslateOptions.builder().apiKey("myKey").service();
+Translate translate = TranslateOptions.newBuilder().setApiKey("myKey").getService();
 ```
 
 #### Detecting language

@@ -71,17 +71,17 @@ public class ComputeOptions extends HttpServiceOptions<Compute, ComputeRpc, Comp
   }
 
   @Override
-  protected ComputeFactory defaultServiceFactory() {
+  protected ComputeFactory getDefaultServiceFactory() {
     return DefaultComputeFactory.INSTANCE;
   }
 
   @Override
-  protected ComputeRpcFactory defaultRpcFactory() {
+  protected ComputeRpcFactory getDefaultRpcFactory() {
     return DefaultComputeRpcFactory.INSTANCE;
   }
 
   @Override
-  protected Set<String> scopes() {
+  protected Set<String> getScopes() {
     return SCOPES;
   }
 
@@ -104,11 +104,21 @@ public class ComputeOptions extends HttpServiceOptions<Compute, ComputeRpc, Comp
     return baseEquals(other);
   }
 
+  @Deprecated
   public static ComputeOptions defaultInstance() {
-    return builder().build();
+    return getDefaultInstance();
   }
 
+  public static ComputeOptions getDefaultInstance() {
+    return newBuilder().build();
+  }
+
+  @Deprecated
   public static Builder builder() {
+    return newBuilder();
+  }
+
+  public static Builder newBuilder() {
     return new Builder();
   }
 }

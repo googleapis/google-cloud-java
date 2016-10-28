@@ -145,7 +145,7 @@ public class Image extends ImageInfo {
   Image(Compute compute, ImageInfo.BuilderImpl infoBuilder) {
     super(infoBuilder);
     this.compute = checkNotNull(compute);
-    this.options = compute.options();
+    this.options = compute.getOptions();
   }
 
   /**
@@ -231,7 +231,7 @@ public class Image extends ImageInfo {
 
   private void readObject(ObjectInputStream input) throws IOException, ClassNotFoundException {
     input.defaultReadObject();
-    this.compute = options.service();
+    this.compute = options.getService();
   }
 
   static Image fromPb(Compute compute, com.google.api.services.compute.model.Image imagePb) {

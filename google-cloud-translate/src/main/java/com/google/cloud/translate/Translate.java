@@ -41,7 +41,7 @@ public interface Translate extends Service<TranslateOptions> {
 
     /**
      * Returns an option for setting the target language. If this option is not provided, the value
-     * returned by {@link TranslateOptions#targetLanguage()} is used. When provided, the returned
+     * returned by {@link TranslateOptions#getTargetLanguage()} is used. When provided, the returned
      * {@link Language#name()} will be in the language specified by the {@code targetLanguage} code.
      *
      * @param targetLanguage the target language code
@@ -74,7 +74,7 @@ public interface Translate extends Service<TranslateOptions> {
 
     /**
      * Returns an option for setting the target language. If this option is not provided, the value
-     * returned by {@link TranslateOptions#targetLanguage()} is used.
+     * returned by {@link TranslateOptions#getTargetLanguage()} is used.
      *
      * @param targetLanguage the target language code
      */
@@ -88,10 +88,10 @@ public interface Translate extends Service<TranslateOptions> {
    * {@link LanguageListOption#targetLanguage(String)} is provided, {@link Language#getName()}
    * values are localized according to the provided target language. If no such option is passed,
    * {@link Language#getName()} values are localized according to
-   * {@link TranslateOptions#targetLanguage()}.
+   * {@link TranslateOptions#getTargetLanguage()}.
    *
    * <p>Example of listing supported languages, localized according to
-   * {@link TranslateOptions#targetLanguage()}.
+   * {@link TranslateOptions#getTargetLanguage()}.
    * <pre> {@code
    * List<Language> languages = translate.listSupportedLanguages();
    * }</pre>

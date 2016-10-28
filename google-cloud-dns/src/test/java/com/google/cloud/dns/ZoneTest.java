@@ -75,7 +75,7 @@ public class ZoneTest {
   @Before
   public void setUp() throws Exception {
     dns = createStrictMock(Dns.class);
-    expect(dns.options()).andReturn(OPTIONS).times(3);
+    expect(dns.getOptions()).andReturn(OPTIONS).times(3);
     replay(dns);
     zone = new Zone(dns, new ZoneInfo.BuilderImpl(ZONE_INFO));
     zoneNoId = new Zone(dns, new ZoneInfo.BuilderImpl(NO_ID_INFO));
@@ -476,14 +476,14 @@ public class ZoneTest {
 
   @Test
   public void testFromPb() {
-    expect(dns.options()).andReturn(OPTIONS);
+    expect(dns.getOptions()).andReturn(OPTIONS);
     replay(dns);
     assertEquals(Zone.fromPb(dns, zone.toPb()), zone);
   }
 
   @Test
   public void testEqualsAndToBuilder() {
-    expect(dns.options()).andReturn(OPTIONS).times(2);
+    expect(dns.getOptions()).andReturn(OPTIONS).times(2);
     replay(dns);
     assertEquals(zone, zone.toBuilder().build());
     assertEquals(zone.hashCode(), zone.toBuilder().build().hashCode());
@@ -492,7 +492,7 @@ public class ZoneTest {
   @Test
   public void testBuilder() {
     // one for each build() call because it invokes a constructor
-    expect(dns.options()).andReturn(OPTIONS).times(8);
+    expect(dns.getOptions()).andReturn(OPTIONS).times(8);
     replay(dns);
     assertNotEquals(zone, zone.toBuilder()
         .setGeneratedId(new BigInteger(zone.getGeneratedId()).add(BigInteger.ONE).toString())
@@ -516,7 +516,7 @@ public class ZoneTest {
   @Test
   public void testBuilderDeprecated() {
     // one for each build() call because it invokes a constructor
-    expect(dns.options()).andReturn(OPTIONS).times(8);
+    expect(dns.getOptions()).andReturn(OPTIONS).times(8);
     replay(dns);
     assertNotEquals(zone, zone.toBuilder()
         .setGeneratedId(new BigInteger(zone.generatedId()).add(BigInteger.ONE).toString())

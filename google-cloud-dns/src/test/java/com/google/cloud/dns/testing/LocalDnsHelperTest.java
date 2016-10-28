@@ -75,7 +75,7 @@ public class LocalDnsHelperTest {
   private static final LocalDnsHelper LOCAL_DNS_HELPER = LocalDnsHelper.create(0L);
   private static final Map<DnsRpc.Option, ?> EMPTY_RPC_OPTIONS = ImmutableMap.of();
   private static final DnsRpc RPC = new DefaultDnsRpc(LOCAL_DNS_HELPER.getOptions());
-  private static final String REAL_PROJECT_ID = LOCAL_DNS_HELPER.getOptions().projectId();
+  private static final String REAL_PROJECT_ID = LOCAL_DNS_HELPER.getOptions().getProjectId();
   private Map<String, Object> optionsMap;
 
   private static abstract class FailExpectedCallback<T> implements RpcBatch.Callback<T> {
@@ -162,7 +162,7 @@ public class LocalDnsHelperTest {
       fail("Zone cannot be null");
     } catch (DnsException ex) {
       // expected
-      assertEquals(400, ex.code());
+      assertEquals(400, ex.getCode());
       assertTrue(ex.getMessage().contains("entity.managedZone"));
     }
     // create zone twice
@@ -171,7 +171,7 @@ public class LocalDnsHelperTest {
       fail("Zone already exists.");
     } catch (DnsException ex) {
       // expected
-      assertEquals(409, ex.code());
+      assertEquals(409, ex.getCode());
       assertTrue(ex.getMessage().contains("already exists"));
     }
     // field options
@@ -352,7 +352,7 @@ public class LocalDnsHelperTest {
       fail();
     } catch (DnsException ex) {
       // expected
-      assertEquals(400, ex.code());
+      assertEquals(400, ex.getCode());
       assertTrue(ex.getMessage().contains("not empty"));
     }
   }
@@ -366,7 +366,7 @@ public class LocalDnsHelperTest {
   public void testCreateAndApplyChangeWithThreads() {
     LocalDnsHelper localDnsThreaded = LocalDnsHelper.create(50L);
     localDnsThreaded.start();
-    DnsRpc rpc = new DefaultDnsRpc(localDnsThreaded.options());
+    DnsRpc rpc = new DefaultDnsRpc(localDnsThreaded.getOptions());
     executeCreateAndApplyChangeTest(rpc);
     localDnsThreaded.stop();
   }
@@ -399,7 +399,7 @@ public class LocalDnsHelperTest {
       rpc.applyChangeRequest(ZONE1.getName(), CHANGE1, EMPTY_RPC_OPTIONS);
       fail();
     } catch (DnsException ex) {
-      assertEquals(409, ex.code());
+      assertEquals(409, ex.getCode());
       assertTrue(ex.getMessage().contains("already exists"));
     }
     assertNotNull(rpc.getChangeRequest(ZONE1.getName(), "1", EMPTY_RPC_OPTIONS));
@@ -465,7 +465,7 @@ public class LocalDnsHelperTest {
       RPC.applyChangeRequest(ZONE_NAME1, CHANGE1, EMPTY_RPC_OPTIONS);
       fail("Zone was not created yet.");
     } catch (DnsException ex) {
-      assertEquals(404, ex.code());
+      assertEquals(404, ex.getCode());
     }
     // existent zone
     RPC.create(ZONE1, EMPTY_RPC_OPTIONS);
@@ -527,7 +527,7 @@ public class LocalDnsHelperTest {
       fail();
     } catch (DnsException ex) {
       // expected
-      assertEquals(404, ex.code());
+      assertEquals(404, ex.getCode());
       assertTrue(ex.getMessage().contains("managedZone"));
     }
     // field options
@@ -595,7 +595,7 @@ public class LocalDnsHelperTest {
       fail();
     } catch (DnsException ex) {
       // expected
-      assertEquals(400, ex.code());
+      assertEquals(400, ex.getCode());
       assertTrue(ex.getMessage().contains("parameters.maxResults"));
     }
     options = new HashMap<>();
@@ -605,7 +605,7 @@ public class LocalDnsHelperTest {
       fail();
     } catch (DnsException ex) {
       // expected
-      assertEquals(400, ex.code());
+      assertEquals(400, ex.getCode());
       assertTrue(ex.getMessage().contains("parameters.maxResults"));
     }
     // ok size
@@ -622,7 +622,7 @@ public class LocalDnsHelperTest {
       fail();
     } catch (DnsException ex) {
       // expected
-      assertEquals(400, ex.code());
+      assertEquals(400, ex.getCode());
       assertTrue(ex.getMessage().contains("parameters.dnsName"));
     }
     // ok name
@@ -713,7 +713,7 @@ public class LocalDnsHelperTest {
       fail();
     } catch (DnsException ex) {
       // expected
-      assertEquals(404, ex.code());
+      assertEquals(404, ex.getCode());
       assertTrue(ex.getMessage().contains("managedZone"));
     }
     // zone exists but has no records
@@ -735,7 +735,7 @@ public class LocalDnsHelperTest {
       fail();
     } catch (DnsException ex) {
       // expected
-      assertEquals(400, ex.code());
+      assertEquals(400, ex.getCode());
       assertTrue(ex.getMessage().contains("parameters.maxResults"));
     }
     options.put(DnsRpc.Option.PAGE_SIZE, -1);
@@ -744,7 +744,7 @@ public class LocalDnsHelperTest {
       fail();
     } catch (DnsException ex) {
       // expected
-      assertEquals(400, ex.code());
+      assertEquals(400, ex.getCode());
       assertTrue(ex.getMessage().contains("parameters.maxResults"));
     }
     options.put(DnsRpc.Option.PAGE_SIZE, 15);
@@ -759,7 +759,7 @@ public class LocalDnsHelperTest {
       fail();
     } catch (DnsException ex) {
       // expected
-      assertEquals(400, ex.code());
+      assertEquals(400, ex.getCode());
       assertTrue(ex.getMessage().contains("parameters.name"));
     }
     options.put(DnsRpc.Option.NAME, "aaa.");
@@ -773,7 +773,7 @@ public class LocalDnsHelperTest {
       fail();
     } catch (DnsException ex) {
       // expected
-      assertEquals(400, ex.code());
+      assertEquals(400, ex.getCode());
       assertTrue(ex.getMessage().contains("parameters.name"));
     }
     options.put(DnsRpc.Option.NAME, "aaa.");
@@ -783,7 +783,7 @@ public class LocalDnsHelperTest {
       fail();
     } catch (DnsException ex) {
       // expected
-      assertEquals(400, ex.code());
+      assertEquals(400, ex.getCode());
       assertTrue(ex.getMessage().contains("parameters.type"));
     }
     options.put(DnsRpc.Option.NAME, DNS_NAME);
@@ -860,7 +860,7 @@ public class LocalDnsHelperTest {
       fail();
     } catch (DnsException ex) {
       // expected
-      assertEquals(404, ex.code());
+      assertEquals(404, ex.getCode());
       assertTrue(ex.getMessage().contains("managedZone"));
     }
     // zone exists but has no changes
@@ -883,7 +883,7 @@ public class LocalDnsHelperTest {
       fail();
     } catch (DnsException ex) {
       // expected
-      assertEquals(400, ex.code());
+      assertEquals(400, ex.getCode());
       assertTrue(ex.getMessage().contains("parameters.maxResults"));
     }
     options.put(DnsRpc.Option.PAGE_SIZE, -1);
@@ -892,7 +892,7 @@ public class LocalDnsHelperTest {
       fail();
     } catch (DnsException ex) {
       // expected
-      assertEquals(400, ex.code());
+      assertEquals(400, ex.getCode());
       assertTrue(ex.getMessage().contains("parameters.maxResults"));
     }
     options.put(DnsRpc.Option.PAGE_SIZE, 15);
@@ -916,7 +916,7 @@ public class LocalDnsHelperTest {
       fail();
     } catch (DnsException ex) {
       // expected
-      assertEquals(400, ex.code());
+      assertEquals(400, ex.getCode());
       assertTrue(ex.getMessage().contains("parameters.sortOrder"));
     }
     // field options

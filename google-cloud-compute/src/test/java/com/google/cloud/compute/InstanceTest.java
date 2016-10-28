@@ -76,7 +76,7 @@ public class InstanceTest {
   private Instance expectedInstance;
 
   private void initializeExpectedInstance(int optionsCalls) {
-    expect(serviceMockReturnsOptions.options()).andReturn(mockOptions).times(optionsCalls);
+    expect(serviceMockReturnsOptions.getOptions()).andReturn(mockOptions).times(optionsCalls);
     replay(serviceMockReturnsOptions);
     expectedInstance = new Instance.Builder(serviceMockReturnsOptions, INSTANCE_ID, MACHINE_TYPE,
         ATTACHED_DISK, NETWORK_INTERFACE)
@@ -227,7 +227,7 @@ public class InstanceTest {
   @Test
   public void testDeleteOperation() {
     initializeExpectedInstance(2);
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     Operation operation = new Operation.Builder(serviceMockReturnsOptions)
         .setOperationId(ZoneOperationId.of("project", "op"))
         .build();
@@ -240,7 +240,7 @@ public class InstanceTest {
   @Test
   public void testDeleteNull() {
     initializeExpectedInstance(1);
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     expect(compute.deleteInstance(INSTANCE_ID)).andReturn(null);
     replay(compute);
     initializeInstance();
@@ -251,7 +251,7 @@ public class InstanceTest {
   public void testExists_True() throws Exception {
     initializeExpectedInstance(1);
     Compute.InstanceOption[] expectedOptions = {Compute.InstanceOption.fields()};
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     expect(compute.getInstance(INSTANCE_ID, expectedOptions)).andReturn(expectedInstance);
     replay(compute);
     initializeInstance();
@@ -263,7 +263,7 @@ public class InstanceTest {
   public void testExists_False() throws Exception {
     initializeExpectedInstance(1);
     Compute.InstanceOption[] expectedOptions = {Compute.InstanceOption.fields()};
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     expect(compute.getInstance(INSTANCE_ID, expectedOptions)).andReturn(null);
     replay(compute);
     initializeInstance();
@@ -274,7 +274,7 @@ public class InstanceTest {
   @Test
   public void testReload() throws Exception {
     initializeExpectedInstance(3);
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     expect(compute.getInstance(INSTANCE_ID)).andReturn(expectedInstance);
     replay(compute);
     initializeInstance();
@@ -286,7 +286,7 @@ public class InstanceTest {
   @Test
   public void testReloadNull() throws Exception {
     initializeExpectedInstance(1);
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     expect(compute.getInstance(INSTANCE_ID)).andReturn(null);
     replay(compute);
     initializeInstance();
@@ -297,7 +297,7 @@ public class InstanceTest {
   @Test
   public void testReloadWithOptions() throws Exception {
     initializeExpectedInstance(3);
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     expect(compute.getInstance(INSTANCE_ID,
         Compute.InstanceOption.fields())).andReturn(expectedInstance);
     replay(compute);
@@ -310,7 +310,7 @@ public class InstanceTest {
   @Test
   public void testAddAccessConfig() throws Exception {
     initializeExpectedInstance(2);
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     NetworkInterface.AccessConfig accessConfig = NetworkInterface.AccessConfig.of("192.168.1.1");
     Operation operation = new Operation.Builder(serviceMockReturnsOptions)
         .setOperationId(ZoneOperationId.of("project", "op"))
@@ -324,7 +324,7 @@ public class InstanceTest {
   @Test
   public void testAddAccessConfig_Null() throws Exception {
     initializeExpectedInstance(1);
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     NetworkInterface.AccessConfig accessConfig = NetworkInterface.AccessConfig.of("192.168.1.1");
     expect(compute.addAccessConfig(INSTANCE_ID, "nic0", accessConfig)).andReturn(null);
     replay(compute);
@@ -335,7 +335,7 @@ public class InstanceTest {
   @Test
   public void testAddAccessConfigWithOptions() throws Exception {
     initializeExpectedInstance(2);
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     NetworkInterface.AccessConfig accessConfig = NetworkInterface.AccessConfig.of("192.168.1.1");
     Operation operation = new Operation.Builder(serviceMockReturnsOptions)
         .setOperationId(ZoneOperationId.of("project", "op"))
@@ -352,7 +352,7 @@ public class InstanceTest {
   @Test
   public void testAttachDisk() throws Exception {
     initializeExpectedInstance(2);
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     AttachedDisk.PersistentDiskConfiguration configuration =
         AttachedDisk.PersistentDiskConfiguration.of(DISK_ID);
     Operation operation = new Operation.Builder(serviceMockReturnsOptions)
@@ -367,7 +367,7 @@ public class InstanceTest {
   @Test
   public void testAttachDisk_Null() throws Exception {
     initializeExpectedInstance(1);
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     AttachedDisk.PersistentDiskConfiguration configuration =
         AttachedDisk.PersistentDiskConfiguration.of(DISK_ID);
     expect(compute.attachDisk(INSTANCE_ID, configuration)).andReturn(null);
@@ -379,7 +379,7 @@ public class InstanceTest {
   @Test
   public void testAttachDiskWithOptions() throws Exception {
     initializeExpectedInstance(2);
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     AttachedDisk.PersistentDiskConfiguration configuration =
         AttachedDisk.PersistentDiskConfiguration.of(DISK_ID);
     Operation operation = new Operation.Builder(serviceMockReturnsOptions)
@@ -395,7 +395,7 @@ public class InstanceTest {
   @Test
   public void testAttachDiskName() throws Exception {
     initializeExpectedInstance(2);
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     AttachedDisk.PersistentDiskConfiguration configuration =
         AttachedDisk.PersistentDiskConfiguration.of(DISK_ID);
     Operation operation = new Operation.Builder(serviceMockReturnsOptions)
@@ -410,7 +410,7 @@ public class InstanceTest {
   @Test
   public void testAttachDiskName_Null() throws Exception {
     initializeExpectedInstance(1);
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     AttachedDisk.PersistentDiskConfiguration configuration =
         AttachedDisk.PersistentDiskConfiguration.of(DISK_ID);
     expect(compute.attachDisk(INSTANCE_ID, "dev0", configuration)).andReturn(null);
@@ -422,7 +422,7 @@ public class InstanceTest {
   @Test
   public void testAttachDiskNameWithOptions() throws Exception {
     initializeExpectedInstance(2);
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     AttachedDisk.PersistentDiskConfiguration configuration =
         AttachedDisk.PersistentDiskConfiguration.of(DISK_ID);
     Operation operation = new Operation.Builder(serviceMockReturnsOptions)
@@ -439,7 +439,7 @@ public class InstanceTest {
   @Test
   public void testAttachDiskNameIndex() throws Exception {
     initializeExpectedInstance(2);
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     AttachedDisk.PersistentDiskConfiguration configuration =
         AttachedDisk.PersistentDiskConfiguration.of(DISK_ID);
     Operation operation = new Operation.Builder(serviceMockReturnsOptions)
@@ -454,7 +454,7 @@ public class InstanceTest {
   @Test
   public void testAttachDiskNameIndex_Null() throws Exception {
     initializeExpectedInstance(1);
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     AttachedDisk.PersistentDiskConfiguration configuration =
         AttachedDisk.PersistentDiskConfiguration.of(DISK_ID);
     expect(compute.attachDisk(INSTANCE_ID, "dev0", configuration, 1)).andReturn(null);
@@ -466,7 +466,7 @@ public class InstanceTest {
   @Test
   public void testAttachDiskNameIndexWithOptions() throws Exception {
     initializeExpectedInstance(2);
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     AttachedDisk.PersistentDiskConfiguration configuration =
         AttachedDisk.PersistentDiskConfiguration.of(DISK_ID);
     Operation operation = new Operation.Builder(serviceMockReturnsOptions)
@@ -484,7 +484,7 @@ public class InstanceTest {
   @Test
   public void testDeleteAccessConfig() throws Exception {
     initializeExpectedInstance(2);
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     Operation operation = new Operation.Builder(serviceMockReturnsOptions)
         .setOperationId(ZoneOperationId.of("project", "op"))
         .build();
@@ -497,7 +497,7 @@ public class InstanceTest {
   @Test
   public void testDeleteAccessConfig_Null() throws Exception {
     initializeExpectedInstance(1);
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     expect(compute.deleteAccessConfig(INSTANCE_ID, "nic0", "NAT")).andReturn(null);
     replay(compute);
     initializeInstance();
@@ -507,7 +507,7 @@ public class InstanceTest {
   @Test
   public void testDeleteAccessConfigWithOptions() throws Exception {
     initializeExpectedInstance(2);
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     Operation operation = new Operation.Builder(serviceMockReturnsOptions)
         .setOperationId(ZoneOperationId.of("project", "op"))
         .build();
@@ -523,7 +523,7 @@ public class InstanceTest {
   @Test
   public void testDetachDisk() throws Exception {
     initializeExpectedInstance(2);
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     Operation operation = new Operation.Builder(serviceMockReturnsOptions)
         .setOperationId(ZoneOperationId.of("project", "op"))
         .build();
@@ -536,7 +536,7 @@ public class InstanceTest {
   @Test
   public void testDetachDisk_Null() throws Exception {
     initializeExpectedInstance(1);
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     expect(compute.detachDisk(INSTANCE_ID, "dev0")).andReturn(null);
     replay(compute);
     initializeInstance();
@@ -546,7 +546,7 @@ public class InstanceTest {
   @Test
   public void testDetachDiskWithOptions() throws Exception {
     initializeExpectedInstance(2);
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     Operation operation = new Operation.Builder(serviceMockReturnsOptions)
         .setOperationId(ZoneOperationId.of("project", "op"))
         .build();
@@ -560,7 +560,7 @@ public class InstanceTest {
   @Test
   public void testGetSerialPortOutputWithNumber() throws Exception {
     initializeExpectedInstance(1);
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     expect(compute.getSerialPortOutput(INSTANCE_ID, 2)).andReturn("output");
     replay(compute);
     initializeInstance();
@@ -570,7 +570,7 @@ public class InstanceTest {
   @Test
   public void testGetSerialPortOutput() throws Exception {
     initializeExpectedInstance(1);
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     expect(compute.getSerialPortOutput(INSTANCE_ID)).andReturn("output");
     replay(compute);
     initializeInstance();
@@ -580,7 +580,7 @@ public class InstanceTest {
   @Test
   public void testResetOperation() {
     initializeExpectedInstance(2);
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     Operation operation = new Operation.Builder(serviceMockReturnsOptions)
         .setOperationId(ZoneOperationId.of("project", "op"))
         .build();
@@ -593,7 +593,7 @@ public class InstanceTest {
   @Test
   public void testResetNull() {
     initializeExpectedInstance(1);
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     expect(compute.reset(INSTANCE_ID)).andReturn(null);
     replay(compute);
     initializeInstance();
@@ -603,7 +603,7 @@ public class InstanceTest {
   @Test
   public void testSetDiskAutodelete() throws Exception {
     initializeExpectedInstance(2);
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     Operation operation = new Operation.Builder(serviceMockReturnsOptions)
         .setOperationId(ZoneOperationId.of("project", "op"))
         .build();
@@ -616,7 +616,7 @@ public class InstanceTest {
   @Test
   public void testSetDiskAutodelete_Null() throws Exception {
     initializeExpectedInstance(1);
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     expect(compute.setDiskAutoDelete(INSTANCE_ID, "dev0", false)).andReturn(null);
     replay(compute);
     initializeInstance();
@@ -626,7 +626,7 @@ public class InstanceTest {
   @Test
   public void testSetDiskAutodeleteWithOptions() throws Exception {
     initializeExpectedInstance(2);
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     Operation operation = new Operation.Builder(serviceMockReturnsOptions)
         .setOperationId(ZoneOperationId.of("project", "op"))
         .build();
@@ -641,7 +641,7 @@ public class InstanceTest {
   @Test
   public void testSetMachineType() throws Exception {
     initializeExpectedInstance(2);
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     Operation operation = new Operation.Builder(serviceMockReturnsOptions)
         .setOperationId(ZoneOperationId.of("project", "op"))
         .build();
@@ -654,7 +654,7 @@ public class InstanceTest {
   @Test
   public void testSetMachineType_Null() throws Exception {
     initializeExpectedInstance(1);
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     expect(compute.setMachineType(INSTANCE_ID, MACHINE_TYPE)).andReturn(null);
     replay(compute);
     initializeInstance();
@@ -664,7 +664,7 @@ public class InstanceTest {
   @Test
   public void testSetMachineTypeWithOptions() throws Exception {
     initializeExpectedInstance(2);
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     Operation operation = new Operation.Builder(serviceMockReturnsOptions)
         .setOperationId(ZoneOperationId.of("project", "op"))
         .build();
@@ -678,7 +678,7 @@ public class InstanceTest {
   @Test
   public void testSetMetadata() throws Exception {
     initializeExpectedInstance(2);
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     Operation operation = new Operation.Builder(serviceMockReturnsOptions)
         .setOperationId(ZoneOperationId.of("project", "op"))
         .build();
@@ -692,7 +692,7 @@ public class InstanceTest {
   @Test
   public void testSetMetadata_Null() throws Exception {
     initializeExpectedInstance(2);
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     Metadata metadata = Metadata.newBuilder().add("k", "v").setFingerprint("fingerprint").build();
     expect(compute.setMetadata(INSTANCE_ID, metadata)).andReturn(null);
     replay(compute);
@@ -703,7 +703,7 @@ public class InstanceTest {
   @Test
   public void testSetMetadataWithOptions() throws Exception {
     initializeExpectedInstance(2);
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     Operation operation = new Operation.Builder(serviceMockReturnsOptions)
         .setOperationId(ZoneOperationId.of("project", "op"))
         .build();
@@ -718,7 +718,7 @@ public class InstanceTest {
   @Test
   public void testSetMetadataFromMap() throws Exception {
     initializeExpectedInstance(2);
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     Operation operation = new Operation.Builder(serviceMockReturnsOptions)
         .setOperationId(ZoneOperationId.of("project", "op"))
         .build();
@@ -734,7 +734,7 @@ public class InstanceTest {
   @Test
   public void testSetMetadataFromMap_Null() throws Exception {
     initializeExpectedInstance(2);
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     Map<String, String> metadataMap = ImmutableMap.of("k", "v");
     Metadata metadata =
         Metadata.newBuilder().setValues(metadataMap).setFingerprint("fingerprint").build();
@@ -747,7 +747,7 @@ public class InstanceTest {
   @Test
   public void testSetMetadataFromMapWithOptions() throws Exception {
     initializeExpectedInstance(2);
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     Operation operation = new Operation.Builder(serviceMockReturnsOptions)
         .setOperationId(ZoneOperationId.of("project", "op"))
         .build();
@@ -764,7 +764,7 @@ public class InstanceTest {
   @Test
   public void testSetSchedulingOptions() throws Exception {
     initializeExpectedInstance(2);
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     Operation operation = new Operation.Builder(serviceMockReturnsOptions)
         .setOperationId(ZoneOperationId.of("project", "op"))
         .build();
@@ -779,7 +779,7 @@ public class InstanceTest {
   @Test
   public void testSetSchedulingOptions_Null() throws Exception {
     initializeExpectedInstance(1);
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     SchedulingOptions schedulingOptions =
         SchedulingOptions.standard(true, SchedulingOptions.Maintenance.MIGRATE);
     expect(compute.setSchedulingOptions(INSTANCE_ID, schedulingOptions)).andReturn(null);
@@ -791,7 +791,7 @@ public class InstanceTest {
   @Test
   public void testSetSchedulingOptionsWithOptions() throws Exception {
     initializeExpectedInstance(2);
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     Operation operation = new Operation.Builder(serviceMockReturnsOptions)
         .setOperationId(ZoneOperationId.of("project", "op"))
         .build();
@@ -809,7 +809,7 @@ public class InstanceTest {
   @Test
   public void testSetTags() throws Exception {
     initializeExpectedInstance(2);
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     Operation operation = new Operation.Builder(serviceMockReturnsOptions)
         .setOperationId(ZoneOperationId.of("project", "op"))
         .build();
@@ -823,7 +823,7 @@ public class InstanceTest {
   @Test
   public void testSetTags_Null() throws Exception {
     initializeExpectedInstance(2);
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     Tags tags = Tags.newBuilder().setValues("v1", "v2").setFingerprint("fingerprint").build();
     expect(compute.setTags(INSTANCE_ID, tags)).andReturn(null);
     replay(compute);
@@ -834,7 +834,7 @@ public class InstanceTest {
   @Test
   public void testSetTagsWithOptions() throws Exception {
     initializeExpectedInstance(2);
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     Operation operation = new Operation.Builder(serviceMockReturnsOptions)
         .setOperationId(ZoneOperationId.of("project", "op"))
         .build();
@@ -849,7 +849,7 @@ public class InstanceTest {
   @Test
   public void testSetTagsFromList() throws Exception {
     initializeExpectedInstance(2);
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     Operation operation = new Operation.Builder(serviceMockReturnsOptions)
         .setOperationId(ZoneOperationId.of("project", "op"))
         .build();
@@ -864,7 +864,7 @@ public class InstanceTest {
   @Test
   public void testSetTagsFromList_Null() throws Exception {
     initializeExpectedInstance(2);
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     List<String> tagList = ImmutableList.of("v1", "v2");
     Tags tags = Tags.newBuilder().setValues(tagList).setFingerprint("fingerprint").build();
     expect(compute.setTags(INSTANCE_ID, tags)).andReturn(null);
@@ -876,7 +876,7 @@ public class InstanceTest {
   @Test
   public void testSetTagsFromListWithOptions() throws Exception {
     initializeExpectedInstance(2);
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     Operation operation = new Operation.Builder(serviceMockReturnsOptions)
         .setOperationId(ZoneOperationId.of("project", "op"))
         .build();
@@ -892,7 +892,7 @@ public class InstanceTest {
   @Test
   public void testStartOperation() {
     initializeExpectedInstance(2);
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     Operation operation = new Operation.Builder(serviceMockReturnsOptions)
         .setOperationId(ZoneOperationId.of("project", "op"))
         .build();
@@ -905,7 +905,7 @@ public class InstanceTest {
   @Test
   public void testStartNull() {
     initializeExpectedInstance(1);
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     expect(compute.start(INSTANCE_ID)).andReturn(null);
     replay(compute);
     initializeInstance();
@@ -915,7 +915,7 @@ public class InstanceTest {
   @Test
   public void testStopOperation() {
     initializeExpectedInstance(2);
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     Operation operation = new Operation.Builder(serviceMockReturnsOptions)
         .setOperationId(ZoneOperationId.of("project", "op"))
         .build();
@@ -928,7 +928,7 @@ public class InstanceTest {
   @Test
   public void testStopNull() {
     initializeExpectedInstance(1);
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     expect(compute.stop(INSTANCE_ID)).andReturn(null);
     replay(compute);
     initializeInstance();
@@ -937,7 +937,7 @@ public class InstanceTest {
 
   public void compareInstance(Instance expected, Instance value) {
     assertEquals(expected, value);
-    assertEquals(expected.getCompute().options(), value.getCompute().options());
+    assertEquals(expected.getCompute().getOptions(), value.getCompute().getOptions());
     assertEquals(expected.getGeneratedId(), value.getGeneratedId());
     assertEquals(expected.getInstanceId(), value.getInstanceId());
     assertEquals(expected.getCreationTimestamp(), value.getCreationTimestamp());

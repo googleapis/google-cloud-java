@@ -74,7 +74,7 @@ public class ImageTest {
   private Image storageImage;
 
   private void initializeExpectedImage(int optionsCalls) {
-    expect(serviceMockReturnsOptions.options()).andReturn(mockOptions).times(optionsCalls);
+    expect(serviceMockReturnsOptions.getOptions()).andReturn(mockOptions).times(optionsCalls);
     replay(serviceMockReturnsOptions);
     diskImage = new Image.Builder(serviceMockReturnsOptions, IMAGE_ID, DISK_CONFIGURATION)
         .setGeneratedId(GENERATED_ID)
@@ -224,7 +224,7 @@ public class ImageTest {
   @Test
   public void testDeleteOperation() {
     initializeExpectedImage(3);
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     Operation operation = new Operation.Builder(serviceMockReturnsOptions)
         .setOperationId(GlobalOperationId.of("project", "op"))
         .build();
@@ -237,7 +237,7 @@ public class ImageTest {
   @Test
   public void testDeleteNull() {
     initializeExpectedImage(2);
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     expect(compute.deleteImage(IMAGE_ID)).andReturn(null);
     replay(compute);
     initializeImage();
@@ -248,7 +248,7 @@ public class ImageTest {
   public void testExists_True() throws Exception {
     initializeExpectedImage(2);
     Compute.ImageOption[] expectedOptions = {Compute.ImageOption.fields()};
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     expect(compute.getImage(IMAGE_ID, expectedOptions)).andReturn(diskImage);
     replay(compute);
     initializeImage();
@@ -260,7 +260,7 @@ public class ImageTest {
   public void testExists_False() throws Exception {
     initializeExpectedImage(2);
     Compute.ImageOption[] expectedOptions = {Compute.ImageOption.fields()};
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     expect(compute.getImage(IMAGE_ID, expectedOptions)).andReturn(null);
     replay(compute);
     initializeImage();
@@ -271,7 +271,7 @@ public class ImageTest {
   @Test
   public void testReload() throws Exception {
     initializeExpectedImage(5);
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     expect(compute.getImage(IMAGE_ID)).andReturn(storageImage);
     replay(compute);
     initializeImage();
@@ -283,7 +283,7 @@ public class ImageTest {
   @Test
   public void testReloadNull() throws Exception {
     initializeExpectedImage(2);
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     expect(compute.getImage(IMAGE_ID)).andReturn(null);
     replay(compute);
     initializeImage();
@@ -294,7 +294,7 @@ public class ImageTest {
   @Test
   public void testReloadWithOptions() throws Exception {
     initializeExpectedImage(5);
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     expect(compute.getImage(IMAGE_ID, Compute.ImageOption.fields())).andReturn(storageImage);
     replay(compute);
     initializeImage();
@@ -306,7 +306,7 @@ public class ImageTest {
   @Test
   public void testDeprecateImage() {
     initializeExpectedImage(3);
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     Operation operation = new Operation.Builder(serviceMockReturnsOptions)
         .setOperationId(GlobalOperationId.of("project", "op"))
         .build();
@@ -321,7 +321,7 @@ public class ImageTest {
   @Test
   public void testDeprecateNull() {
     initializeExpectedImage(2);
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     DeprecationStatus<ImageId> status =
         DeprecationStatus.of(DeprecationStatus.Status.DEPRECATED, IMAGE_ID);
     expect(compute.deprecate(IMAGE_ID, status)).andReturn(null);
@@ -332,7 +332,7 @@ public class ImageTest {
 
   public void compareImage(Image expected, Image value) {
     assertEquals(expected, value);
-    assertEquals(expected.getCompute().options(), value.getCompute().options());
+    assertEquals(expected.getCompute().getOptions(), value.getCompute().getOptions());
     assertEquals(expected.getGeneratedId(), value.getGeneratedId());
     assertEquals(expected.getImageId(), value.getImageId());
     assertEquals(expected.getCreationTimestamp(), value.getCreationTimestamp());

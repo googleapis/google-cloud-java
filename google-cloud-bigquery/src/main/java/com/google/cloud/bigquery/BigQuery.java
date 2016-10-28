@@ -65,7 +65,13 @@ public interface BigQuery extends Service<BigQueryOptions> {
     }
 
     @Override
+    @Deprecated
     public String selector() {
+      return getSelector();
+    }
+
+    @Override
+    public String getSelector() {
       return selector;
     }
   }
@@ -106,7 +112,13 @@ public interface BigQuery extends Service<BigQueryOptions> {
     }
 
     @Override
+    @Deprecated
     public String selector() {
+      return getSelector();
+    }
+
+    @Override
+    public String getSelector() {
       return selector;
     }
   }
@@ -137,7 +149,13 @@ public interface BigQuery extends Service<BigQueryOptions> {
     }
 
     @Override
+    @Deprecated
     public String selector() {
+      return getSelector();
+    }
+
+    @Override
+    public String getSelector() {
       return selector;
     }
   }

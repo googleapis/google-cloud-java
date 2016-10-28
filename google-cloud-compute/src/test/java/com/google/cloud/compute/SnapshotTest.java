@@ -56,7 +56,7 @@ public class SnapshotTest {
   private Snapshot expectedSnapshot;
 
   private void initializeExpectedSnapshot(int optionsCalls) {
-    expect(serviceMockReturnsOptions.options()).andReturn(mockOptions).times(optionsCalls);
+    expect(serviceMockReturnsOptions.getOptions()).andReturn(mockOptions).times(optionsCalls);
     replay(serviceMockReturnsOptions);
     expectedSnapshot = new Snapshot.Builder(serviceMockReturnsOptions, SNAPSHOT_ID, SOURCE_DISK)
         .setGeneratedId(GENERATED_ID)
@@ -188,7 +188,7 @@ public class SnapshotTest {
   @Test
   public void testDeleteOperation() {
     initializeExpectedSnapshot(2);
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     Operation operation = new Operation.Builder(serviceMockReturnsOptions)
         .setOperationId(GlobalOperationId.of("project", "op"))
         .build();
@@ -201,7 +201,7 @@ public class SnapshotTest {
   @Test
   public void testDeleteNull() {
     initializeExpectedSnapshot(1);
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     expect(compute.deleteSnapshot(SNAPSHOT_ID)).andReturn(null);
     replay(compute);
     initializeSnapshot();
@@ -212,7 +212,7 @@ public class SnapshotTest {
   public void testExists_True() throws Exception {
     initializeExpectedSnapshot(1);
     Compute.SnapshotOption[] expectedOptions = {Compute.SnapshotOption.fields()};
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     expect(compute.getSnapshot(SNAPSHOT_ID.getSnapshot(), expectedOptions))
         .andReturn(expectedSnapshot);
     replay(compute);
@@ -225,7 +225,7 @@ public class SnapshotTest {
   public void testExists_False() throws Exception {
     initializeExpectedSnapshot(1);
     Compute.SnapshotOption[] expectedOptions = {Compute.SnapshotOption.fields()};
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     expect(compute.getSnapshot(SNAPSHOT_ID.getSnapshot(), expectedOptions)).andReturn(null);
     replay(compute);
     initializeSnapshot();
@@ -236,7 +236,7 @@ public class SnapshotTest {
   @Test
   public void testReload() throws Exception {
     initializeExpectedSnapshot(3);
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     expect(compute.getSnapshot(SNAPSHOT_ID.getSnapshot())).andReturn(expectedSnapshot);
     replay(compute);
     initializeSnapshot();
@@ -248,7 +248,7 @@ public class SnapshotTest {
   @Test
   public void testReloadNull() throws Exception {
     initializeExpectedSnapshot(1);
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     expect(compute.getSnapshot(SNAPSHOT_ID.getSnapshot())).andReturn(null);
     replay(compute);
     initializeSnapshot();
@@ -259,7 +259,7 @@ public class SnapshotTest {
   @Test
   public void testReloadWithOptions() throws Exception {
     initializeExpectedSnapshot(3);
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     expect(compute.getSnapshot(SNAPSHOT_ID.getSnapshot(), Compute.SnapshotOption.fields()))
         .andReturn(expectedSnapshot);
     replay(compute);
@@ -271,7 +271,7 @@ public class SnapshotTest {
 
   public void compareSnapshot(Snapshot expected, Snapshot value) {
     assertEquals(expected, value);
-    assertEquals(expected.getCompute().options(), value.getCompute().options());
+    assertEquals(expected.getCompute().getOptions(), value.getCompute().getOptions());
     assertEquals(expected.getGeneratedId(), value.getGeneratedId());
     assertEquals(expected.getSnapshotId(), value.getSnapshotId());
     assertEquals(expected.getCreationTimestamp(), value.getCreationTimestamp());

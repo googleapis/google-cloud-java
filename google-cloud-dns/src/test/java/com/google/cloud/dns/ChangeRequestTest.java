@@ -49,7 +49,7 @@ public class ChangeRequestTest {
   @Before
   public void setUp() throws Exception {
     dns = createStrictMock(Dns.class);
-    expect(dns.options()).andReturn(OPTIONS).times(3);
+    expect(dns.getOptions()).andReturn(OPTIONS).times(3);
     replay(dns);
     changeRequest = new ChangeRequest(dns, ZONE_NAME, new ChangeRequestInfo.BuilderImpl(
         CHANGE_REQUEST_INFO.toBuilder()
@@ -75,7 +75,19 @@ public class ChangeRequestTest {
 
   @Test
   public void testConstructor() {
-    expect(dns.options()).andReturn(OPTIONS);
+    expect(dns.getOptions()).andReturn(OPTIONS);
+    replay(dns);
+    assertEquals(new ChangeRequest(dns, ZONE_NAME,
+        new ChangeRequestInfo.BuilderImpl(CHANGE_REQUEST_INFO)), changeRequestPartial);
+    assertNotNull(changeRequest.getDns());
+    assertEquals(ZONE_NAME, changeRequest.getZone());
+    assertSame(dns, changeRequestPartial.getDns());
+    assertEquals(ZONE_NAME, changeRequestPartial.getZone());
+  }
+
+  @Test
+  public void testConstructorDeprecated() {
+    expect(dns.getOptions()).andReturn(OPTIONS);
     replay(dns);
     assertEquals(new ChangeRequest(dns, ZONE_NAME,
         new ChangeRequestInfo.BuilderImpl(CHANGE_REQUEST_INFO)), changeRequestPartial);
@@ -87,7 +99,7 @@ public class ChangeRequestTest {
 
   @Test
   public void testFromPb() {
-    expect(dns.options()).andReturn(OPTIONS).times(2);
+    expect(dns.getOptions()).andReturn(OPTIONS).times(2);
     replay(dns);
     assertEquals(changeRequest, ChangeRequest.fromPb(dns, ZONE_NAME, changeRequest.toPb()));
     assertEquals(changeRequestPartial,
@@ -96,7 +108,7 @@ public class ChangeRequestTest {
 
   @Test
   public void testEqualsAndToBuilder() {
-    expect(dns.options()).andReturn(OPTIONS).times(2);
+    expect(dns.getOptions()).andReturn(OPTIONS).times(2);
     replay(dns);
     ChangeRequest compare = changeRequest.toBuilder().build();
     assertEquals(changeRequest, compare);
@@ -110,7 +122,7 @@ public class ChangeRequestTest {
   @Test
   public void testBuilder() {
     // one for each build() call because it invokes a constructor
-    expect(dns.options()).andReturn(OPTIONS).times(9);
+    expect(dns.getOptions()).andReturn(OPTIONS).times(9);
     replay(dns);
     String id = changeRequest.getGeneratedId() + "aaa";
     assertEquals(id, changeRequest.toBuilder().setGeneratedId(id).build().getGeneratedId());
@@ -137,7 +149,7 @@ public class ChangeRequestTest {
   @Test
   public void testBuilderDeprecated() {
     // one for each build() call because it invokes a constructor
-    expect(dns.options()).andReturn(OPTIONS).times(9);
+    expect(dns.getOptions()).andReturn(OPTIONS).times(9);
     replay(dns);
     String id = changeRequest.generatedId() + "aaa";
     assertEquals(id, changeRequest.toBuilder().setGeneratedId(id).build().generatedId());

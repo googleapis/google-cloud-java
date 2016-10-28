@@ -73,7 +73,7 @@ To make authenticated requests to Google Cloud Storage, you must create a servic
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageOptions;
 
-Storage storage = StorageOptions.defaultInstance().service();
+Storage storage = StorageOptions.getDefaultInstance().getService();
 ```
 
 For other authentication options, see the [Authentication](https://github.com/GoogleCloudPlatform/google-cloud-java#authentication) page.

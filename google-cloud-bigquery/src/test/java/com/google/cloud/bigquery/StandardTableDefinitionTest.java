@@ -70,7 +70,8 @@ public class StandardTableDefinitionTest {
   @Test
   public void testToBuilder() {
     compareStandardTableDefinition(TABLE_DEFINITION, TABLE_DEFINITION.toBuilder().build());
-    StandardTableDefinition tableDefinition = TABLE_DEFINITION.toBuilder().setLocation("EU").build();
+    StandardTableDefinition tableDefinition =
+        TABLE_DEFINITION.toBuilder().setLocation("EU").build();
     assertEquals("EU", tableDefinition.getLocation());
     tableDefinition = tableDefinition.toBuilder()
         .setLocation(LOCATION)

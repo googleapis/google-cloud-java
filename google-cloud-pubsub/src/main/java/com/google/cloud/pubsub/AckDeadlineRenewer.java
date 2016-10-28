@@ -154,11 +154,11 @@ class AckDeadlineRenewer implements AutoCloseable {
   }
 
   AckDeadlineRenewer(PubSub pubsub) {
-    PubSubOptions options = pubsub.options();
+    PubSubOptions options = pubsub.getOptions();
     this.pubsub = pubsub;
-    this.executorFactory = options.executorFactory();
+    this.executorFactory = options.getExecutorFactory();
     this.executor = executorFactory.get();
-    this.clock = options.clock();
+    this.clock = options.getClock();
     this.messageQueue = new LinkedList<>();
     this.messageDeadlines = new HashMap<>();
   }
