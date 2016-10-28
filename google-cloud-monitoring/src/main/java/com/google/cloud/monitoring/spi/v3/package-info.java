@@ -15,7 +15,7 @@
 /**
  * A client to Stackdriver Monitoring API.
  *
- * <p>The interfaces provided are listed below, along with a usage sample
+ * <p>The interfaces provided are listed below, along with usage samples.
  *
  * <p>=============== GroupServiceApi ===============
  *
@@ -52,26 +52,6 @@
  * try (MetricServiceApi metricServiceApi = MetricServiceApi.create()) {
  *   String formattedName = MetricServiceApi.formatMonitoredResourceDescriptorName("[PROJECT]", "[MONITORED_RESOURCE_DESCRIPTOR]");
  *   MonitoredResourceDescriptor response = metricServiceApi.getMonitoredResourceDescriptor(formattedName);
- * }
- * </code>
- * </pre>
- *
- * ========================== AgentTranslationServiceApi ==========================
- *
- * <p>Service Description: The AgentTranslation API allows `collectd`-based agents to write time
- * series data to Cloud Monitoring. See [google.monitoring.v3.MetricService.CreateTimeSeries]
- * instead.
- *
- * <p>Sample for AgentTranslationServiceApi:
- *
- * <pre>
- * <code>
- * try (AgentTranslationServiceApi agentTranslationServiceApi = AgentTranslationServiceApi.create()) {
- *   String formattedName = AgentTranslationServiceApi.formatProjectName("[PROJECT]");
- *   MonitoredResource resource = MonitoredResource.newBuilder().build();
- *   String collectdVersion = "";
- *   List&lt;CollectdPayload&gt; collectdPayloads = new ArrayList&lt;&gt;();
- *   agentTranslationServiceApi.createCollectdTimeSeries(formattedName, resource, collectdVersion, collectdPayloads);
  * }
  * </code>
  * </pre>

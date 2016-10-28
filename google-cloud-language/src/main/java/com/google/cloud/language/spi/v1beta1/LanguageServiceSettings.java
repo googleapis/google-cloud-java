@@ -15,9 +15,9 @@ package com.google.cloud.language.spi.v1beta1;
 
 import com.google.api.gax.core.ConnectionSettings;
 import com.google.api.gax.core.RetrySettings;
-import com.google.api.gax.grpc.ApiCallSettings;
 import com.google.api.gax.grpc.ServiceApiSettings;
 import com.google.api.gax.grpc.SimpleCallSettings;
+import com.google.api.gax.grpc.UnaryCallSettings;
 import com.google.auth.Credentials;
 import com.google.cloud.language.v1beta1.AnalyzeEntitiesRequest;
 import com.google.cloud.language.v1beta1.AnalyzeEntitiesResponse;
@@ -75,14 +75,6 @@ public class LanguageServiceSettings extends ServiceApiSettings {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
       ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
-
-  /** The default connection settings of the service. */
-  public static final ConnectionSettings DEFAULT_CONNECTION_SETTINGS =
-      ConnectionSettings.newBuilder()
-          .setServiceAddress(DEFAULT_SERVICE_ADDRESS)
-          .setPort(DEFAULT_SERVICE_PORT)
-          .provideCredentialsWith(DEFAULT_SERVICE_SCOPES)
-          .build();
 
   private final SimpleCallSettings<AnalyzeSentimentRequest, AnalyzeSentimentResponse>
       analyzeSentimentSettings;
@@ -153,7 +145,7 @@ public class LanguageServiceSettings extends ServiceApiSettings {
 
   /** Builder for LanguageServiceSettings. */
   public static class Builder extends ServiceApiSettings.Builder {
-    private final ImmutableList<ApiCallSettings.Builder> methodSettingsBuilders;
+    private final ImmutableList<UnaryCallSettings.Builder> unaryMethodSettingsBuilders;
 
     private final SimpleCallSettings.Builder<AnalyzeSentimentRequest, AnalyzeSentimentResponse>
         analyzeSentimentSettings;
@@ -194,7 +186,7 @@ public class LanguageServiceSettings extends ServiceApiSettings {
     }
 
     private Builder() {
-      super(DEFAULT_CONNECTION_SETTINGS);
+      super(s_getDefaultConnectionSettingsBuilder().build());
 
       analyzeSentimentSettings =
           SimpleCallSettings.newBuilder(LanguageServiceGrpc.METHOD_ANALYZE_SENTIMENT);
@@ -205,8 +197,8 @@ public class LanguageServiceSettings extends ServiceApiSettings {
       annotateTextSettings =
           SimpleCallSettings.newBuilder(LanguageServiceGrpc.METHOD_ANNOTATE_TEXT);
 
-      methodSettingsBuilders =
-          ImmutableList.<ApiCallSettings.Builder>of(
+      unaryMethodSettingsBuilders =
+          ImmutableList.<UnaryCallSettings.Builder>of(
               analyzeSentimentSettings, analyzeEntitiesSettings, annotateTextSettings);
     }
 
@@ -238,14 +230,21 @@ public class LanguageServiceSettings extends ServiceApiSettings {
       analyzeEntitiesSettings = settings.analyzeEntitiesSettings.toBuilder();
       annotateTextSettings = settings.annotateTextSettings.toBuilder();
 
-      methodSettingsBuilders =
-          ImmutableList.<ApiCallSettings.Builder>of(
+      unaryMethodSettingsBuilders =
+          ImmutableList.<UnaryCallSettings.Builder>of(
               analyzeSentimentSettings, analyzeEntitiesSettings, annotateTextSettings);
     }
 
+    private static ConnectionSettings.Builder s_getDefaultConnectionSettingsBuilder() {
+      return ConnectionSettings.newBuilder()
+          .setServiceAddress(DEFAULT_SERVICE_ADDRESS)
+          .setPort(DEFAULT_SERVICE_PORT)
+          .provideCredentialsWith(DEFAULT_SERVICE_SCOPES);
+    }
+
     @Override
-    protected ConnectionSettings getDefaultConnectionSettings() {
-      return DEFAULT_CONNECTION_SETTINGS;
+    protected ConnectionSettings.Builder getDefaultConnectionSettingsBuilder() {
+      return s_getDefaultConnectionSettingsBuilder();
     }
 
     @Override
@@ -291,11 +290,14 @@ public class LanguageServiceSettings extends ServiceApiSettings {
     }
 
     /**
-     * Applies the given settings to all of the API methods in this service. Only values that are
-     * non-null will be applied, so this method is not capable of un-setting any values.
+     * Applies the given settings to all of the unary API methods in this service. Only values that
+     * are non-null will be applied, so this method is not capable of un-setting any values.
+     *
+     * <p>Note: This method does not support applying settings to streaming methods.
      */
-    public Builder applyToAllApiMethods(ApiCallSettings.Builder apiCallSettings) throws Exception {
-      super.applyToAllApiMethods(methodSettingsBuilders, apiCallSettings);
+    public Builder applyToAllApiMethods(UnaryCallSettings.Builder apiCallSettings)
+        throws Exception {
+      super.applyToAllApiMethods(unaryMethodSettingsBuilders, apiCallSettings);
       return this;
     }
 

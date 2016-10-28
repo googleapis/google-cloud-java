@@ -20,7 +20,7 @@ import static com.google.common.base.MoreObjects.firstNonNull;
 
 import com.google.api.gax.core.ConnectionSettings;
 import com.google.api.gax.core.RetrySettings;
-import com.google.api.gax.grpc.ApiCallSettings;
+import com.google.api.gax.grpc.UnaryCallSettings;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.spi.ServiceRpcFactory;
 import com.google.common.annotations.VisibleForTesting;
@@ -226,7 +226,7 @@ public abstract class GrpcServiceOptions<ServiceT extends Service<OptionsT>, Ser
   /**
    * Returns a builder for API call settings.
    */
-  protected ApiCallSettings.Builder apiCallSettings() {
+  protected UnaryCallSettings.Builder apiCallSettings() {
     // todo(mziccard): specify timeout these settings:
     // retryParams().retryMaxAttempts(), retryParams().retryMinAttempts()
     final RetrySettings.Builder builder = RetrySettings.newBuilder()
@@ -237,7 +237,7 @@ public abstract class GrpcServiceOptions<ServiceT extends Service<OptionsT>, Ser
         .setInitialRetryDelay(Duration.millis(retryParams().initialRetryDelayMillis()))
         .setRetryDelayMultiplier(retryParams().retryDelayBackoffFactor())
         .setMaxRetryDelay(Duration.millis(retryParams().maxRetryDelayMillis()));
-    return ApiCallSettings.newBuilder().setRetrySettingsBuilder(builder);
+    return UnaryCallSettings.newBuilder().setRetrySettingsBuilder(builder);
   }
 
   /**

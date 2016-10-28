@@ -15,7 +15,7 @@
 /**
  * A client to Stackdriver Logging API.
  *
- * <p>The interfaces provided are listed below, along with a usage sample
+ * <p>The interfaces provided are listed below, along with usage samples.
  *
  * <p>=================== LoggingServiceV2Api ===================
  *

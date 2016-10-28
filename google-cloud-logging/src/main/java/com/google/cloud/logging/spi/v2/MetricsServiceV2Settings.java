@@ -13,13 +13,18 @@
  */
 package com.google.cloud.logging.spi.v2;
 
+import static com.google.cloud.logging.spi.v2.PagedResponseWrappers.ListLogMetricsPagedResponse;
+
 import com.google.api.gax.core.ConnectionSettings;
 import com.google.api.gax.core.RetrySettings;
-import com.google.api.gax.grpc.ApiCallSettings;
-import com.google.api.gax.grpc.PageStreamingCallSettings;
-import com.google.api.gax.grpc.PageStreamingDescriptor;
+import com.google.api.gax.grpc.CallContext;
+import com.google.api.gax.grpc.PagedCallSettings;
+import com.google.api.gax.grpc.PagedListDescriptor;
+import com.google.api.gax.grpc.PagedListResponseFactory;
 import com.google.api.gax.grpc.ServiceApiSettings;
 import com.google.api.gax.grpc.SimpleCallSettings;
+import com.google.api.gax.grpc.UnaryCallSettings;
+import com.google.api.gax.grpc.UnaryCallable;
 import com.google.auth.Credentials;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -86,15 +91,8 @@ public class MetricsServiceV2Settings extends ServiceApiSettings {
           .add("https://www.googleapis.com/auth/logging.write")
           .build();
 
-  /** The default connection settings of the service. */
-  public static final ConnectionSettings DEFAULT_CONNECTION_SETTINGS =
-      ConnectionSettings.newBuilder()
-          .setServiceAddress(DEFAULT_SERVICE_ADDRESS)
-          .setPort(DEFAULT_SERVICE_PORT)
-          .provideCredentialsWith(DEFAULT_SERVICE_SCOPES)
-          .build();
-
-  private final PageStreamingCallSettings<ListLogMetricsRequest, ListLogMetricsResponse, LogMetric>
+  private final PagedCallSettings<
+          ListLogMetricsRequest, ListLogMetricsResponse, ListLogMetricsPagedResponse>
       listLogMetricsSettings;
   private final SimpleCallSettings<GetLogMetricRequest, LogMetric> getLogMetricSettings;
   private final SimpleCallSettings<CreateLogMetricRequest, LogMetric> createLogMetricSettings;
@@ -102,7 +100,8 @@ public class MetricsServiceV2Settings extends ServiceApiSettings {
   private final SimpleCallSettings<DeleteLogMetricRequest, Empty> deleteLogMetricSettings;
 
   /** Returns the object with the settings used for calls to listLogMetrics. */
-  public PageStreamingCallSettings<ListLogMetricsRequest, ListLogMetricsResponse, LogMetric>
+  public PagedCallSettings<
+          ListLogMetricsRequest, ListLogMetricsResponse, ListLogMetricsPagedResponse>
       listLogMetricsSettings() {
     return listLogMetricsSettings;
   }
@@ -173,10 +172,9 @@ public class MetricsServiceV2Settings extends ServiceApiSettings {
     deleteLogMetricSettings = settingsBuilder.deleteLogMetricSettings().build();
   }
 
-  private static final PageStreamingDescriptor<
-          ListLogMetricsRequest, ListLogMetricsResponse, LogMetric>
+  private static final PagedListDescriptor<ListLogMetricsRequest, ListLogMetricsResponse, LogMetric>
       LIST_LOG_METRICS_PAGE_STR_DESC =
-          new PageStreamingDescriptor<ListLogMetricsRequest, ListLogMetricsResponse, LogMetric>() {
+          new PagedListDescriptor<ListLogMetricsRequest, ListLogMetricsResponse, LogMetric>() {
             @Override
             public Object emptyToken() {
               return "";
@@ -209,12 +207,27 @@ public class MetricsServiceV2Settings extends ServiceApiSettings {
             }
           };
 
+  private static final PagedListResponseFactory<
+          ListLogMetricsRequest, ListLogMetricsResponse, ListLogMetricsPagedResponse>
+      LIST_LOG_METRICS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListLogMetricsRequest, ListLogMetricsResponse, ListLogMetricsPagedResponse>() {
+            @Override
+            public ListLogMetricsPagedResponse createPagedListResponse(
+                UnaryCallable<ListLogMetricsRequest, ListLogMetricsResponse> callable,
+                ListLogMetricsRequest request,
+                CallContext context) {
+              return new ListLogMetricsPagedResponse(
+                  callable, LIST_LOG_METRICS_PAGE_STR_DESC, request, context);
+            }
+          };
+
   /** Builder for MetricsServiceV2Settings. */
   public static class Builder extends ServiceApiSettings.Builder {
-    private final ImmutableList<ApiCallSettings.Builder> methodSettingsBuilders;
+    private final ImmutableList<UnaryCallSettings.Builder> unaryMethodSettingsBuilders;
 
-    private final PageStreamingCallSettings.Builder<
-            ListLogMetricsRequest, ListLogMetricsResponse, LogMetric>
+    private final PagedCallSettings.Builder<
+            ListLogMetricsRequest, ListLogMetricsResponse, ListLogMetricsPagedResponse>
         listLogMetricsSettings;
     private final SimpleCallSettings.Builder<GetLogMetricRequest, LogMetric> getLogMetricSettings;
     private final SimpleCallSettings.Builder<CreateLogMetricRequest, LogMetric>
@@ -255,11 +268,11 @@ public class MetricsServiceV2Settings extends ServiceApiSettings {
     }
 
     private Builder() {
-      super(DEFAULT_CONNECTION_SETTINGS);
+      super(s_getDefaultConnectionSettingsBuilder().build());
 
       listLogMetricsSettings =
-          PageStreamingCallSettings.newBuilder(
-              MetricsServiceV2Grpc.METHOD_LIST_LOG_METRICS, LIST_LOG_METRICS_PAGE_STR_DESC);
+          PagedCallSettings.newBuilder(
+              MetricsServiceV2Grpc.METHOD_LIST_LOG_METRICS, LIST_LOG_METRICS_PAGE_STR_FACT);
 
       getLogMetricSettings =
           SimpleCallSettings.newBuilder(MetricsServiceV2Grpc.METHOD_GET_LOG_METRIC);
@@ -273,8 +286,8 @@ public class MetricsServiceV2Settings extends ServiceApiSettings {
       deleteLogMetricSettings =
           SimpleCallSettings.newBuilder(MetricsServiceV2Grpc.METHOD_DELETE_LOG_METRIC);
 
-      methodSettingsBuilders =
-          ImmutableList.<ApiCallSettings.Builder>of(
+      unaryMethodSettingsBuilders =
+          ImmutableList.<UnaryCallSettings.Builder>of(
               listLogMetricsSettings,
               getLogMetricSettings,
               createLogMetricSettings,
@@ -322,8 +335,8 @@ public class MetricsServiceV2Settings extends ServiceApiSettings {
       updateLogMetricSettings = settings.updateLogMetricSettings.toBuilder();
       deleteLogMetricSettings = settings.deleteLogMetricSettings.toBuilder();
 
-      methodSettingsBuilders =
-          ImmutableList.<ApiCallSettings.Builder>of(
+      unaryMethodSettingsBuilders =
+          ImmutableList.<UnaryCallSettings.Builder>of(
               listLogMetricsSettings,
               getLogMetricSettings,
               createLogMetricSettings,
@@ -331,9 +344,16 @@ public class MetricsServiceV2Settings extends ServiceApiSettings {
               deleteLogMetricSettings);
     }
 
+    private static ConnectionSettings.Builder s_getDefaultConnectionSettingsBuilder() {
+      return ConnectionSettings.newBuilder()
+          .setServiceAddress(DEFAULT_SERVICE_ADDRESS)
+          .setPort(DEFAULT_SERVICE_PORT)
+          .provideCredentialsWith(DEFAULT_SERVICE_SCOPES);
+    }
+
     @Override
-    protected ConnectionSettings getDefaultConnectionSettings() {
-      return DEFAULT_CONNECTION_SETTINGS;
+    protected ConnectionSettings.Builder getDefaultConnectionSettingsBuilder() {
+      return s_getDefaultConnectionSettingsBuilder();
     }
 
     @Override
@@ -379,17 +399,20 @@ public class MetricsServiceV2Settings extends ServiceApiSettings {
     }
 
     /**
-     * Applies the given settings to all of the API methods in this service. Only values that are
-     * non-null will be applied, so this method is not capable of un-setting any values.
+     * Applies the given settings to all of the unary API methods in this service. Only values that
+     * are non-null will be applied, so this method is not capable of un-setting any values.
+     *
+     * <p>Note: This method does not support applying settings to streaming methods.
      */
-    public Builder applyToAllApiMethods(ApiCallSettings.Builder apiCallSettings) throws Exception {
-      super.applyToAllApiMethods(methodSettingsBuilders, apiCallSettings);
+    public Builder applyToAllApiMethods(UnaryCallSettings.Builder apiCallSettings)
+        throws Exception {
+      super.applyToAllApiMethods(unaryMethodSettingsBuilders, apiCallSettings);
       return this;
     }
 
     /** Returns the builder for the settings used for calls to listLogMetrics. */
-    public PageStreamingCallSettings.Builder<
-            ListLogMetricsRequest, ListLogMetricsResponse, LogMetric>
+    public PagedCallSettings.Builder<
+            ListLogMetricsRequest, ListLogMetricsResponse, ListLogMetricsPagedResponse>
         listLogMetricsSettings() {
       return listLogMetricsSettings;
     }

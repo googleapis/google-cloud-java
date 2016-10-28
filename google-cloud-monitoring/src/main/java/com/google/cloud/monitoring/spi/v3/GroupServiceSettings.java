@@ -13,14 +13,20 @@
  */
 package com.google.cloud.monitoring.spi.v3;
 
+import static com.google.cloud.monitoring.spi.v3.PagedResponseWrappers.ListGroupMembersPagedResponse;
+import static com.google.cloud.monitoring.spi.v3.PagedResponseWrappers.ListGroupsPagedResponse;
+
 import com.google.api.MonitoredResource;
 import com.google.api.gax.core.ConnectionSettings;
 import com.google.api.gax.core.RetrySettings;
-import com.google.api.gax.grpc.ApiCallSettings;
-import com.google.api.gax.grpc.PageStreamingCallSettings;
-import com.google.api.gax.grpc.PageStreamingDescriptor;
+import com.google.api.gax.grpc.CallContext;
+import com.google.api.gax.grpc.PagedCallSettings;
+import com.google.api.gax.grpc.PagedListDescriptor;
+import com.google.api.gax.grpc.PagedListResponseFactory;
 import com.google.api.gax.grpc.ServiceApiSettings;
 import com.google.api.gax.grpc.SimpleCallSettings;
+import com.google.api.gax.grpc.UnaryCallSettings;
+import com.google.api.gax.grpc.UnaryCallable;
 import com.google.auth.Credentials;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -83,26 +89,18 @@ public class GroupServiceSettings extends ServiceApiSettings {
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
       ImmutableList.<String>builder().build();
 
-  /** The default connection settings of the service. */
-  public static final ConnectionSettings DEFAULT_CONNECTION_SETTINGS =
-      ConnectionSettings.newBuilder()
-          .setServiceAddress(DEFAULT_SERVICE_ADDRESS)
-          .setPort(DEFAULT_SERVICE_PORT)
-          .provideCredentialsWith(DEFAULT_SERVICE_SCOPES)
-          .build();
-
-  private final PageStreamingCallSettings<ListGroupsRequest, ListGroupsResponse, Group>
+  private final PagedCallSettings<ListGroupsRequest, ListGroupsResponse, ListGroupsPagedResponse>
       listGroupsSettings;
   private final SimpleCallSettings<GetGroupRequest, Group> getGroupSettings;
   private final SimpleCallSettings<CreateGroupRequest, Group> createGroupSettings;
   private final SimpleCallSettings<UpdateGroupRequest, Group> updateGroupSettings;
   private final SimpleCallSettings<DeleteGroupRequest, Empty> deleteGroupSettings;
-  private final PageStreamingCallSettings<
-          ListGroupMembersRequest, ListGroupMembersResponse, MonitoredResource>
+  private final PagedCallSettings<
+          ListGroupMembersRequest, ListGroupMembersResponse, ListGroupMembersPagedResponse>
       listGroupMembersSettings;
 
   /** Returns the object with the settings used for calls to listGroups. */
-  public PageStreamingCallSettings<ListGroupsRequest, ListGroupsResponse, Group>
+  public PagedCallSettings<ListGroupsRequest, ListGroupsResponse, ListGroupsPagedResponse>
       listGroupsSettings() {
     return listGroupsSettings;
   }
@@ -128,8 +126,8 @@ public class GroupServiceSettings extends ServiceApiSettings {
   }
 
   /** Returns the object with the settings used for calls to listGroupMembers. */
-  public PageStreamingCallSettings<
-          ListGroupMembersRequest, ListGroupMembersResponse, MonitoredResource>
+  public PagedCallSettings<
+          ListGroupMembersRequest, ListGroupMembersResponse, ListGroupMembersPagedResponse>
       listGroupMembersSettings() {
     return listGroupMembersSettings;
   }
@@ -181,9 +179,9 @@ public class GroupServiceSettings extends ServiceApiSettings {
     listGroupMembersSettings = settingsBuilder.listGroupMembersSettings().build();
   }
 
-  private static final PageStreamingDescriptor<ListGroupsRequest, ListGroupsResponse, Group>
+  private static final PagedListDescriptor<ListGroupsRequest, ListGroupsResponse, Group>
       LIST_GROUPS_PAGE_STR_DESC =
-          new PageStreamingDescriptor<ListGroupsRequest, ListGroupsResponse, Group>() {
+          new PagedListDescriptor<ListGroupsRequest, ListGroupsResponse, Group>() {
             @Override
             public Object emptyToken() {
               return "";
@@ -215,10 +213,10 @@ public class GroupServiceSettings extends ServiceApiSettings {
             }
           };
 
-  private static final PageStreamingDescriptor<
+  private static final PagedListDescriptor<
           ListGroupMembersRequest, ListGroupMembersResponse, MonitoredResource>
       LIST_GROUP_MEMBERS_PAGE_STR_DESC =
-          new PageStreamingDescriptor<
+          new PagedListDescriptor<
               ListGroupMembersRequest, ListGroupMembersResponse, MonitoredResource>() {
             @Override
             public Object emptyToken() {
@@ -255,18 +253,49 @@ public class GroupServiceSettings extends ServiceApiSettings {
             }
           };
 
+  private static final PagedListResponseFactory<
+          ListGroupsRequest, ListGroupsResponse, ListGroupsPagedResponse>
+      LIST_GROUPS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListGroupsRequest, ListGroupsResponse, ListGroupsPagedResponse>() {
+            @Override
+            public ListGroupsPagedResponse createPagedListResponse(
+                UnaryCallable<ListGroupsRequest, ListGroupsResponse> callable,
+                ListGroupsRequest request,
+                CallContext context) {
+              return new ListGroupsPagedResponse(
+                  callable, LIST_GROUPS_PAGE_STR_DESC, request, context);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListGroupMembersRequest, ListGroupMembersResponse, ListGroupMembersPagedResponse>
+      LIST_GROUP_MEMBERS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListGroupMembersRequest, ListGroupMembersResponse, ListGroupMembersPagedResponse>() {
+            @Override
+            public ListGroupMembersPagedResponse createPagedListResponse(
+                UnaryCallable<ListGroupMembersRequest, ListGroupMembersResponse> callable,
+                ListGroupMembersRequest request,
+                CallContext context) {
+              return new ListGroupMembersPagedResponse(
+                  callable, LIST_GROUP_MEMBERS_PAGE_STR_DESC, request, context);
+            }
+          };
+
   /** Builder for GroupServiceSettings. */
   public static class Builder extends ServiceApiSettings.Builder {
-    private final ImmutableList<ApiCallSettings.Builder> methodSettingsBuilders;
+    private final ImmutableList<UnaryCallSettings.Builder> unaryMethodSettingsBuilders;
 
-    private final PageStreamingCallSettings.Builder<ListGroupsRequest, ListGroupsResponse, Group>
+    private final PagedCallSettings.Builder<
+            ListGroupsRequest, ListGroupsResponse, ListGroupsPagedResponse>
         listGroupsSettings;
     private final SimpleCallSettings.Builder<GetGroupRequest, Group> getGroupSettings;
     private final SimpleCallSettings.Builder<CreateGroupRequest, Group> createGroupSettings;
     private final SimpleCallSettings.Builder<UpdateGroupRequest, Group> updateGroupSettings;
     private final SimpleCallSettings.Builder<DeleteGroupRequest, Empty> deleteGroupSettings;
-    private final PageStreamingCallSettings.Builder<
-            ListGroupMembersRequest, ListGroupMembersResponse, MonitoredResource>
+    private final PagedCallSettings.Builder<
+            ListGroupMembersRequest, ListGroupMembersResponse, ListGroupMembersPagedResponse>
         listGroupMembersSettings;
 
     private static final ImmutableMap<String, ImmutableSet<Status.Code>> RETRYABLE_CODE_DEFINITIONS;
@@ -301,11 +330,11 @@ public class GroupServiceSettings extends ServiceApiSettings {
     }
 
     private Builder() {
-      super(DEFAULT_CONNECTION_SETTINGS);
+      super(s_getDefaultConnectionSettingsBuilder().build());
 
       listGroupsSettings =
-          PageStreamingCallSettings.newBuilder(
-              GroupServiceGrpc.METHOD_LIST_GROUPS, LIST_GROUPS_PAGE_STR_DESC);
+          PagedCallSettings.newBuilder(
+              GroupServiceGrpc.METHOD_LIST_GROUPS, LIST_GROUPS_PAGE_STR_FACT);
 
       getGroupSettings = SimpleCallSettings.newBuilder(GroupServiceGrpc.METHOD_GET_GROUP);
 
@@ -316,11 +345,11 @@ public class GroupServiceSettings extends ServiceApiSettings {
       deleteGroupSettings = SimpleCallSettings.newBuilder(GroupServiceGrpc.METHOD_DELETE_GROUP);
 
       listGroupMembersSettings =
-          PageStreamingCallSettings.newBuilder(
-              GroupServiceGrpc.METHOD_LIST_GROUP_MEMBERS, LIST_GROUP_MEMBERS_PAGE_STR_DESC);
+          PagedCallSettings.newBuilder(
+              GroupServiceGrpc.METHOD_LIST_GROUP_MEMBERS, LIST_GROUP_MEMBERS_PAGE_STR_FACT);
 
-      methodSettingsBuilders =
-          ImmutableList.<ApiCallSettings.Builder>of(
+      unaryMethodSettingsBuilders =
+          ImmutableList.<UnaryCallSettings.Builder>of(
               listGroupsSettings,
               getGroupSettings,
               createGroupSettings,
@@ -375,8 +404,8 @@ public class GroupServiceSettings extends ServiceApiSettings {
       deleteGroupSettings = settings.deleteGroupSettings.toBuilder();
       listGroupMembersSettings = settings.listGroupMembersSettings.toBuilder();
 
-      methodSettingsBuilders =
-          ImmutableList.<ApiCallSettings.Builder>of(
+      unaryMethodSettingsBuilders =
+          ImmutableList.<UnaryCallSettings.Builder>of(
               listGroupsSettings,
               getGroupSettings,
               createGroupSettings,
@@ -385,9 +414,16 @@ public class GroupServiceSettings extends ServiceApiSettings {
               listGroupMembersSettings);
     }
 
+    private static ConnectionSettings.Builder s_getDefaultConnectionSettingsBuilder() {
+      return ConnectionSettings.newBuilder()
+          .setServiceAddress(DEFAULT_SERVICE_ADDRESS)
+          .setPort(DEFAULT_SERVICE_PORT)
+          .provideCredentialsWith(DEFAULT_SERVICE_SCOPES);
+    }
+
     @Override
-    protected ConnectionSettings getDefaultConnectionSettings() {
-      return DEFAULT_CONNECTION_SETTINGS;
+    protected ConnectionSettings.Builder getDefaultConnectionSettingsBuilder() {
+      return s_getDefaultConnectionSettingsBuilder();
     }
 
     @Override
@@ -433,16 +469,19 @@ public class GroupServiceSettings extends ServiceApiSettings {
     }
 
     /**
-     * Applies the given settings to all of the API methods in this service. Only values that are
-     * non-null will be applied, so this method is not capable of un-setting any values.
+     * Applies the given settings to all of the unary API methods in this service. Only values that
+     * are non-null will be applied, so this method is not capable of un-setting any values.
+     *
+     * <p>Note: This method does not support applying settings to streaming methods.
      */
-    public Builder applyToAllApiMethods(ApiCallSettings.Builder apiCallSettings) throws Exception {
-      super.applyToAllApiMethods(methodSettingsBuilders, apiCallSettings);
+    public Builder applyToAllApiMethods(UnaryCallSettings.Builder apiCallSettings)
+        throws Exception {
+      super.applyToAllApiMethods(unaryMethodSettingsBuilders, apiCallSettings);
       return this;
     }
 
     /** Returns the builder for the settings used for calls to listGroups. */
-    public PageStreamingCallSettings.Builder<ListGroupsRequest, ListGroupsResponse, Group>
+    public PagedCallSettings.Builder<ListGroupsRequest, ListGroupsResponse, ListGroupsPagedResponse>
         listGroupsSettings() {
       return listGroupsSettings;
     }
@@ -468,8 +507,8 @@ public class GroupServiceSettings extends ServiceApiSettings {
     }
 
     /** Returns the builder for the settings used for calls to listGroupMembers. */
-    public PageStreamingCallSettings.Builder<
-            ListGroupMembersRequest, ListGroupMembersResponse, MonitoredResource>
+    public PagedCallSettings.Builder<
+            ListGroupMembersRequest, ListGroupMembersResponse, ListGroupMembersPagedResponse>
         listGroupMembersSettings() {
       return listGroupMembersSettings;
     }

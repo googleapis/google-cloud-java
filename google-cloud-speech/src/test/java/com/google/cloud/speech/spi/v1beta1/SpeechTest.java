@@ -14,15 +14,20 @@
 
 package com.google.cloud.speech.spi.v1beta1;
 
+import com.google.api.gax.grpc.StreamingCallable;
 import com.google.api.gax.testing.MockGrpcService;
 import com.google.api.gax.testing.MockServiceHelper;
+import com.google.api.gax.testing.MockStreamObserver;
 import com.google.cloud.speech.v1beta1.AsyncRecognizeRequest;
 import com.google.cloud.speech.v1beta1.RecognitionAudio;
 import com.google.cloud.speech.v1beta1.RecognitionConfig;
+import com.google.cloud.speech.v1beta1.StreamingRecognizeRequest;
+import com.google.cloud.speech.v1beta1.StreamingRecognizeResponse;
 import com.google.cloud.speech.v1beta1.SyncRecognizeRequest;
 import com.google.cloud.speech.v1beta1.SyncRecognizeResponse;
 import com.google.longrunning.Operation;
 import com.google.protobuf.GeneratedMessageV3;
+import io.grpc.stub.StreamObserver;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -112,5 +117,32 @@ public class SpeechTest {
 
     Assert.assertEquals(config, actualRequest.getConfig());
     Assert.assertEquals(audio, actualRequest.getAudio());
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void streamingRecognizeTest() throws Exception {
+    int resultIndex = 520358448;
+    StreamingRecognizeResponse expectedResponse =
+        StreamingRecognizeResponse.newBuilder().setResultIndex(resultIndex).build();
+    List<GeneratedMessageV3> expectedResponses = new ArrayList<>();
+    expectedResponses.add(expectedResponse);
+    mockSpeech.setResponses(expectedResponses);
+    StreamingRecognizeRequest request = StreamingRecognizeRequest.newBuilder().build();
+
+    MockStreamObserver<StreamingRecognizeResponse> responseObserver = new MockStreamObserver<>();
+
+    StreamingCallable<StreamingRecognizeRequest, StreamingRecognizeResponse> callable =
+        api.streamingRecognizeCallable();
+    StreamObserver<StreamingRecognizeRequest> requestObserver =
+        callable.bidiStreamingCall(responseObserver);
+
+    requestObserver.onNext(request);
+    requestObserver.onCompleted();
+
+    List<StreamingRecognizeResponse> actualResponses = responseObserver.future().get();
+    Assert.assertEquals(1, actualResponses.size());
+    Assert.assertEquals(expectedResponse, actualResponses.get(0));
+    Assert.assertEquals(0, responseObserver.errors().size());
   }
 }

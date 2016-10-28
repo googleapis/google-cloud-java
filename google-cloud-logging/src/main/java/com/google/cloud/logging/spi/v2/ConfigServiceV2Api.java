@@ -13,8 +13,9 @@
  */
 package com.google.cloud.logging.spi.v2;
 
-import com.google.api.gax.core.PagedListResponse;
-import com.google.api.gax.grpc.ApiCallable;
+import static com.google.cloud.logging.spi.v2.PagedResponseWrappers.ListSinksPagedResponse;
+
+import com.google.api.gax.grpc.UnaryCallable;
 import com.google.api.gax.protobuf.PathTemplate;
 import com.google.logging.v2.CreateSinkRequest;
 import com.google.logging.v2.DeleteSinkRequest;
@@ -61,8 +62,8 @@ import java.util.concurrent.ScheduledExecutorService;
  *   <li> A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li> A "callable" method. This type of method takes no parameters and returns an immutable
- *       ApiCallable object, which can be used to initiate calls to the service.
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
+ *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
  * <p>See the individual methods for example code.
@@ -90,14 +91,12 @@ public class ConfigServiceV2Api implements AutoCloseable {
   private final ScheduledExecutorService executor;
   private final List<AutoCloseable> closeables = new ArrayList<>();
 
-  private final ApiCallable<ListSinksRequest, ListSinksResponse> listSinksCallable;
-  private final ApiCallable<
-          ListSinksRequest, PagedListResponse<ListSinksRequest, ListSinksResponse, LogSink>>
-      listSinksPagedCallable;
-  private final ApiCallable<GetSinkRequest, LogSink> getSinkCallable;
-  private final ApiCallable<CreateSinkRequest, LogSink> createSinkCallable;
-  private final ApiCallable<UpdateSinkRequest, LogSink> updateSinkCallable;
-  private final ApiCallable<DeleteSinkRequest, Empty> deleteSinkCallable;
+  private final UnaryCallable<ListSinksRequest, ListSinksResponse> listSinksCallable;
+  private final UnaryCallable<ListSinksRequest, ListSinksPagedResponse> listSinksPagedCallable;
+  private final UnaryCallable<GetSinkRequest, LogSink> getSinkCallable;
+  private final UnaryCallable<CreateSinkRequest, LogSink> createSinkCallable;
+  private final UnaryCallable<UpdateSinkRequest, LogSink> updateSinkCallable;
+  private final UnaryCallable<DeleteSinkRequest, Empty> deleteSinkCallable;
 
   private static final PathTemplate PARENT_PATH_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding("projects/{project}");
@@ -156,17 +155,17 @@ public class ConfigServiceV2Api implements AutoCloseable {
     this.channel = settings.getChannelProvider().getOrBuildChannel(this.executor);
 
     this.listSinksCallable =
-        ApiCallable.create(settings.listSinksSettings(), this.channel, this.executor);
+        UnaryCallable.create(settings.listSinksSettings(), this.channel, this.executor);
     this.listSinksPagedCallable =
-        ApiCallable.createPagedVariant(settings.listSinksSettings(), this.channel, this.executor);
+        UnaryCallable.createPagedVariant(settings.listSinksSettings(), this.channel, this.executor);
     this.getSinkCallable =
-        ApiCallable.create(settings.getSinkSettings(), this.channel, this.executor);
+        UnaryCallable.create(settings.getSinkSettings(), this.channel, this.executor);
     this.createSinkCallable =
-        ApiCallable.create(settings.createSinkSettings(), this.channel, this.executor);
+        UnaryCallable.create(settings.createSinkSettings(), this.channel, this.executor);
     this.updateSinkCallable =
-        ApiCallable.create(settings.updateSinkSettings(), this.channel, this.executor);
+        UnaryCallable.create(settings.updateSinkSettings(), this.channel, this.executor);
     this.deleteSinkCallable =
-        ApiCallable.create(settings.deleteSinkSettings(), this.channel, this.executor);
+        UnaryCallable.create(settings.deleteSinkSettings(), this.channel, this.executor);
 
     if (settings.getChannelProvider().shouldAutoClose()) {
       closeables.add(
@@ -207,12 +206,11 @@ public class ConfigServiceV2Api implements AutoCloseable {
    * }
    * </code></pre>
    *
-   * @param parent Required. The resource name containing the sinks. Example:
+   * @param parent Required. The cloud resource containing the sinks. Example:
    *     `"projects/my-logging-project"`.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  public final PagedListResponse<ListSinksRequest, ListSinksResponse, LogSink> listSinks(
-      String parent) {
+  public final ListSinksPagedResponse listSinks(String parent) {
     PARENT_PATH_TEMPLATE.validate(parent, "listSinks");
     ListSinksRequest request = ListSinksRequest.newBuilder().setParent(parent).build();
     return listSinks(request);
@@ -239,8 +237,7 @@ public class ConfigServiceV2Api implements AutoCloseable {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  public final PagedListResponse<ListSinksRequest, ListSinksResponse, LogSink> listSinks(
-      ListSinksRequest request) {
+  public final ListSinksPagedResponse listSinks(ListSinksRequest request) {
     return listSinksPagedCallable().call(request);
   }
 
@@ -256,7 +253,7 @@ public class ConfigServiceV2Api implements AutoCloseable {
    *   ListSinksRequest request = ListSinksRequest.newBuilder()
    *     .setParent(formattedParent)
    *     .build();
-   *   ListenableFuture&lt;PagedListResponse&lt;ListSinksRequest,ListSinksResponse,LogSink&gt;&gt; future = configServiceV2Api.listSinksPagedCallable().futureCall(request);
+   *   ListenableFuture&lt;ListSinksPagedResponse&gt; future = configServiceV2Api.listSinksPagedCallable().futureCall(request);
    *   // Do something
    *   for (LogSink element : future.get().iterateAllElements()) {
    *     // doThingsWith(element);
@@ -264,9 +261,7 @@ public class ConfigServiceV2Api implements AutoCloseable {
    * }
    * </code></pre>
    */
-  public final ApiCallable<
-          ListSinksRequest, PagedListResponse<ListSinksRequest, ListSinksResponse, LogSink>>
-      listSinksPagedCallable() {
+  public final UnaryCallable<ListSinksRequest, ListSinksPagedResponse> listSinksPagedCallable() {
     return listSinksPagedCallable;
   }
 
@@ -297,7 +292,7 @@ public class ConfigServiceV2Api implements AutoCloseable {
    * }
    * </code></pre>
    */
-  public final ApiCallable<ListSinksRequest, ListSinksResponse> listSinksCallable() {
+  public final UnaryCallable<ListSinksRequest, ListSinksResponse> listSinksCallable() {
     return listSinksCallable;
   }
 
@@ -314,7 +309,7 @@ public class ConfigServiceV2Api implements AutoCloseable {
    * }
    * </code></pre>
    *
-   * @param sinkName The resource name of the sink to return. Example:
+   * @param sinkName Required. The resource name of the sink to return. Example:
    *     `"projects/my-project-id/sinks/my-sink-id"`.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
@@ -365,7 +360,7 @@ public class ConfigServiceV2Api implements AutoCloseable {
    * }
    * </code></pre>
    */
-  public final ApiCallable<GetSinkRequest, LogSink> getSinkCallable() {
+  public final UnaryCallable<GetSinkRequest, LogSink> getSinkCallable() {
     return getSinkCallable;
   }
 
@@ -383,9 +378,10 @@ public class ConfigServiceV2Api implements AutoCloseable {
    * }
    * </code></pre>
    *
-   * @param parent The resource in which to create the sink. Example: `"projects/my-project-id"`.
-   *     <p>The new sink must be provided in the request.
-   * @param sink The new sink, which must not have an identifier that already exists.
+   * @param parent Required. The resource in which to create the sink. Example:
+   *     `"projects/my-project-id"`. The new sink must be provided in the request.
+   * @param sink Required. The new sink, whose `name` parameter is a sink identifier that is not
+   *     already in use.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final LogSink createSink(String parent, LogSink sink) {
@@ -440,13 +436,13 @@ public class ConfigServiceV2Api implements AutoCloseable {
    * }
    * </code></pre>
    */
-  public final ApiCallable<CreateSinkRequest, LogSink> createSinkCallable() {
+  public final UnaryCallable<CreateSinkRequest, LogSink> createSinkCallable() {
     return createSinkCallable;
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates or updates a sink.
+   * Updates or creates a sink.
    *
    * <p>Sample code:
    *
@@ -458,12 +454,11 @@ public class ConfigServiceV2Api implements AutoCloseable {
    * }
    * </code></pre>
    *
-   * @param sinkName The resource name of the sink to update. Example:
-   *     `"projects/my-project-id/sinks/my-sink-id"`.
-   *     <p>The updated sink must be provided in the request and have the same name that is
-   *     specified in `sinkName`. If the sink does not exist, it is created.
-   * @param sink The updated sink, whose name must be the same as the sink identifier in `sinkName`.
-   *     If `sinkName` does not exist, then this method creates a new sink.
+   * @param sinkName Required. The resource name of the sink to update, including the parent
+   *     resource and the sink identifier. If the sink does not exist, this method creates the sink.
+   *     Example: `"projects/my-project-id/sinks/my-sink-id"`.
+   * @param sink Required. The updated sink, whose name is the same identifier that appears as part
+   *     of `sinkName`. If `sinkName` does not exist, then this method creates a new sink.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final LogSink updateSink(String sinkName, LogSink sink) {
@@ -475,7 +470,7 @@ public class ConfigServiceV2Api implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates or updates a sink.
+   * Updates or creates a sink.
    *
    * <p>Sample code:
    *
@@ -500,7 +495,7 @@ public class ConfigServiceV2Api implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates or updates a sink.
+   * Updates or creates a sink.
    *
    * <p>Sample code:
    *
@@ -518,7 +513,7 @@ public class ConfigServiceV2Api implements AutoCloseable {
    * }
    * </code></pre>
    */
-  public final ApiCallable<UpdateSinkRequest, LogSink> updateSinkCallable() {
+  public final UnaryCallable<UpdateSinkRequest, LogSink> updateSinkCallable() {
     return updateSinkCallable;
   }
 
@@ -535,8 +530,9 @@ public class ConfigServiceV2Api implements AutoCloseable {
    * }
    * </code></pre>
    *
-   * @param sinkName The resource name of the sink to delete. Example:
-   *     `"projects/my-project-id/sinks/my-sink-id"`.
+   * @param sinkName Required. The resource name of the sink to delete, including the parent
+   *     resource and the sink identifier. Example: `"projects/my-project-id/sinks/my-sink-id"`. It
+   *     is an error if the sink does not exist.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final void deleteSink(String sinkName) {
@@ -586,7 +582,7 @@ public class ConfigServiceV2Api implements AutoCloseable {
    * }
    * </code></pre>
    */
-  public final ApiCallable<DeleteSinkRequest, Empty> deleteSinkCallable() {
+  public final UnaryCallable<DeleteSinkRequest, Empty> deleteSinkCallable() {
     return deleteSinkCallable;
   }
 

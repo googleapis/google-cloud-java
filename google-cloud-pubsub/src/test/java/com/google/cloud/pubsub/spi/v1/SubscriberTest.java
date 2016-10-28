@@ -14,7 +14,8 @@
 
 package com.google.cloud.pubsub.spi.v1;
 
-import com.google.api.gax.core.PagedListResponse;
+import static com.google.cloud.pubsub.spi.v1.PagedResponseWrappers.ListSubscriptionsPagedResponse;
+
 import com.google.api.gax.testing.MockGrpcService;
 import com.google.api.gax.testing.MockServiceHelper;
 import com.google.common.collect.Lists;
@@ -169,8 +170,7 @@ public class SubscriberTest {
 
     String formattedProject = SubscriberApi.formatProjectName("[PROJECT]");
 
-    PagedListResponse<ListSubscriptionsRequest, ListSubscriptionsResponse, Subscription>
-        pagedListResponse = api.listSubscriptions(formattedProject);
+    ListSubscriptionsPagedResponse pagedListResponse = api.listSubscriptions(formattedProject);
 
     List<Subscription> resources = Lists.newArrayList(pagedListResponse.iterateAllElements());
     Assert.assertEquals(1, resources.size());

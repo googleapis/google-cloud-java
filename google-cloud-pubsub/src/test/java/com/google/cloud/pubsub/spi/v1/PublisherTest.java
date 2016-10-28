@@ -14,7 +14,9 @@
 
 package com.google.cloud.pubsub.spi.v1;
 
-import com.google.api.gax.core.PagedListResponse;
+import static com.google.cloud.pubsub.spi.v1.PagedResponseWrappers.ListTopicSubscriptionsPagedResponse;
+import static com.google.cloud.pubsub.spi.v1.PagedResponseWrappers.ListTopicsPagedResponse;
+
 import com.google.api.gax.testing.MockGrpcService;
 import com.google.api.gax.testing.MockServiceHelper;
 import com.google.common.collect.Lists;
@@ -173,8 +175,7 @@ public class PublisherTest {
 
     String formattedProject = PublisherApi.formatProjectName("[PROJECT]");
 
-    PagedListResponse<ListTopicsRequest, ListTopicsResponse, Topic> pagedListResponse =
-        api.listTopics(formattedProject);
+    ListTopicsPagedResponse pagedListResponse = api.listTopics(formattedProject);
 
     List<Topic> resources = Lists.newArrayList(pagedListResponse.iterateAllElements());
     Assert.assertEquals(1, resources.size());
@@ -204,8 +205,8 @@ public class PublisherTest {
 
     String formattedTopic = PublisherApi.formatTopicName("[PROJECT]", "[TOPIC]");
 
-    PagedListResponse<ListTopicSubscriptionsRequest, ListTopicSubscriptionsResponse, String>
-        pagedListResponse = api.listTopicSubscriptions(formattedTopic);
+    ListTopicSubscriptionsPagedResponse pagedListResponse =
+        api.listTopicSubscriptions(formattedTopic);
 
     List<String> resources = Lists.newArrayList(pagedListResponse.iterateAllElements());
     Assert.assertEquals(1, resources.size());

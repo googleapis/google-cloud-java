@@ -13,13 +13,19 @@
  */
 package com.google.cloud.errorreporting.spi.v1beta1;
 
+import static com.google.cloud.errorreporting.spi.v1beta1.PagedResponseWrappers.ListEventsPagedResponse;
+import static com.google.cloud.errorreporting.spi.v1beta1.PagedResponseWrappers.ListGroupStatsPagedResponse;
+
 import com.google.api.gax.core.ConnectionSettings;
 import com.google.api.gax.core.RetrySettings;
-import com.google.api.gax.grpc.ApiCallSettings;
-import com.google.api.gax.grpc.PageStreamingCallSettings;
-import com.google.api.gax.grpc.PageStreamingDescriptor;
+import com.google.api.gax.grpc.CallContext;
+import com.google.api.gax.grpc.PagedCallSettings;
+import com.google.api.gax.grpc.PagedListDescriptor;
+import com.google.api.gax.grpc.PagedListResponseFactory;
 import com.google.api.gax.grpc.ServiceApiSettings;
 import com.google.api.gax.grpc.SimpleCallSettings;
+import com.google.api.gax.grpc.UnaryCallSettings;
+import com.google.api.gax.grpc.UnaryCallable;
 import com.google.auth.Credentials;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -81,29 +87,22 @@ public class ErrorStatsServiceSettings extends ServiceApiSettings {
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
       ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
 
-  /** The default connection settings of the service. */
-  public static final ConnectionSettings DEFAULT_CONNECTION_SETTINGS =
-      ConnectionSettings.newBuilder()
-          .setServiceAddress(DEFAULT_SERVICE_ADDRESS)
-          .setPort(DEFAULT_SERVICE_PORT)
-          .provideCredentialsWith(DEFAULT_SERVICE_SCOPES)
-          .build();
-
-  private final PageStreamingCallSettings<
-          ListGroupStatsRequest, ListGroupStatsResponse, ErrorGroupStats>
+  private final PagedCallSettings<
+          ListGroupStatsRequest, ListGroupStatsResponse, ListGroupStatsPagedResponse>
       listGroupStatsSettings;
-  private final PageStreamingCallSettings<ListEventsRequest, ListEventsResponse, ErrorEvent>
+  private final PagedCallSettings<ListEventsRequest, ListEventsResponse, ListEventsPagedResponse>
       listEventsSettings;
   private final SimpleCallSettings<DeleteEventsRequest, DeleteEventsResponse> deleteEventsSettings;
 
   /** Returns the object with the settings used for calls to listGroupStats. */
-  public PageStreamingCallSettings<ListGroupStatsRequest, ListGroupStatsResponse, ErrorGroupStats>
+  public PagedCallSettings<
+          ListGroupStatsRequest, ListGroupStatsResponse, ListGroupStatsPagedResponse>
       listGroupStatsSettings() {
     return listGroupStatsSettings;
   }
 
   /** Returns the object with the settings used for calls to listEvents. */
-  public PageStreamingCallSettings<ListEventsRequest, ListEventsResponse, ErrorEvent>
+  public PagedCallSettings<ListEventsRequest, ListEventsResponse, ListEventsPagedResponse>
       listEventsSettings() {
     return listEventsSettings;
   }
@@ -157,10 +156,10 @@ public class ErrorStatsServiceSettings extends ServiceApiSettings {
     deleteEventsSettings = settingsBuilder.deleteEventsSettings().build();
   }
 
-  private static final PageStreamingDescriptor<
+  private static final PagedListDescriptor<
           ListGroupStatsRequest, ListGroupStatsResponse, ErrorGroupStats>
       LIST_GROUP_STATS_PAGE_STR_DESC =
-          new PageStreamingDescriptor<
+          new PagedListDescriptor<
               ListGroupStatsRequest, ListGroupStatsResponse, ErrorGroupStats>() {
             @Override
             public Object emptyToken() {
@@ -194,9 +193,9 @@ public class ErrorStatsServiceSettings extends ServiceApiSettings {
             }
           };
 
-  private static final PageStreamingDescriptor<ListEventsRequest, ListEventsResponse, ErrorEvent>
+  private static final PagedListDescriptor<ListEventsRequest, ListEventsResponse, ErrorEvent>
       LIST_EVENTS_PAGE_STR_DESC =
-          new PageStreamingDescriptor<ListEventsRequest, ListEventsResponse, ErrorEvent>() {
+          new PagedListDescriptor<ListEventsRequest, ListEventsResponse, ErrorEvent>() {
             @Override
             public Object emptyToken() {
               return "";
@@ -228,15 +227,45 @@ public class ErrorStatsServiceSettings extends ServiceApiSettings {
             }
           };
 
+  private static final PagedListResponseFactory<
+          ListGroupStatsRequest, ListGroupStatsResponse, ListGroupStatsPagedResponse>
+      LIST_GROUP_STATS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListGroupStatsRequest, ListGroupStatsResponse, ListGroupStatsPagedResponse>() {
+            @Override
+            public ListGroupStatsPagedResponse createPagedListResponse(
+                UnaryCallable<ListGroupStatsRequest, ListGroupStatsResponse> callable,
+                ListGroupStatsRequest request,
+                CallContext context) {
+              return new ListGroupStatsPagedResponse(
+                  callable, LIST_GROUP_STATS_PAGE_STR_DESC, request, context);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListEventsRequest, ListEventsResponse, ListEventsPagedResponse>
+      LIST_EVENTS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListEventsRequest, ListEventsResponse, ListEventsPagedResponse>() {
+            @Override
+            public ListEventsPagedResponse createPagedListResponse(
+                UnaryCallable<ListEventsRequest, ListEventsResponse> callable,
+                ListEventsRequest request,
+                CallContext context) {
+              return new ListEventsPagedResponse(
+                  callable, LIST_EVENTS_PAGE_STR_DESC, request, context);
+            }
+          };
+
   /** Builder for ErrorStatsServiceSettings. */
   public static class Builder extends ServiceApiSettings.Builder {
-    private final ImmutableList<ApiCallSettings.Builder> methodSettingsBuilders;
+    private final ImmutableList<UnaryCallSettings.Builder> unaryMethodSettingsBuilders;
 
-    private final PageStreamingCallSettings.Builder<
-            ListGroupStatsRequest, ListGroupStatsResponse, ErrorGroupStats>
+    private final PagedCallSettings.Builder<
+            ListGroupStatsRequest, ListGroupStatsResponse, ListGroupStatsPagedResponse>
         listGroupStatsSettings;
-    private final PageStreamingCallSettings.Builder<
-            ListEventsRequest, ListEventsResponse, ErrorEvent>
+    private final PagedCallSettings.Builder<
+            ListEventsRequest, ListEventsResponse, ListEventsPagedResponse>
         listEventsSettings;
     private final SimpleCallSettings.Builder<DeleteEventsRequest, DeleteEventsResponse>
         deleteEventsSettings;
@@ -273,21 +302,21 @@ public class ErrorStatsServiceSettings extends ServiceApiSettings {
     }
 
     private Builder() {
-      super(DEFAULT_CONNECTION_SETTINGS);
+      super(s_getDefaultConnectionSettingsBuilder().build());
 
       listGroupStatsSettings =
-          PageStreamingCallSettings.newBuilder(
-              ErrorStatsServiceGrpc.METHOD_LIST_GROUP_STATS, LIST_GROUP_STATS_PAGE_STR_DESC);
+          PagedCallSettings.newBuilder(
+              ErrorStatsServiceGrpc.METHOD_LIST_GROUP_STATS, LIST_GROUP_STATS_PAGE_STR_FACT);
 
       listEventsSettings =
-          PageStreamingCallSettings.newBuilder(
-              ErrorStatsServiceGrpc.METHOD_LIST_EVENTS, LIST_EVENTS_PAGE_STR_DESC);
+          PagedCallSettings.newBuilder(
+              ErrorStatsServiceGrpc.METHOD_LIST_EVENTS, LIST_EVENTS_PAGE_STR_FACT);
 
       deleteEventsSettings =
           SimpleCallSettings.newBuilder(ErrorStatsServiceGrpc.METHOD_DELETE_EVENTS);
 
-      methodSettingsBuilders =
-          ImmutableList.<ApiCallSettings.Builder>of(
+      unaryMethodSettingsBuilders =
+          ImmutableList.<UnaryCallSettings.Builder>of(
               listGroupStatsSettings, listEventsSettings, deleteEventsSettings);
     }
 
@@ -319,14 +348,21 @@ public class ErrorStatsServiceSettings extends ServiceApiSettings {
       listEventsSettings = settings.listEventsSettings.toBuilder();
       deleteEventsSettings = settings.deleteEventsSettings.toBuilder();
 
-      methodSettingsBuilders =
-          ImmutableList.<ApiCallSettings.Builder>of(
+      unaryMethodSettingsBuilders =
+          ImmutableList.<UnaryCallSettings.Builder>of(
               listGroupStatsSettings, listEventsSettings, deleteEventsSettings);
     }
 
+    private static ConnectionSettings.Builder s_getDefaultConnectionSettingsBuilder() {
+      return ConnectionSettings.newBuilder()
+          .setServiceAddress(DEFAULT_SERVICE_ADDRESS)
+          .setPort(DEFAULT_SERVICE_PORT)
+          .provideCredentialsWith(DEFAULT_SERVICE_SCOPES);
+    }
+
     @Override
-    protected ConnectionSettings getDefaultConnectionSettings() {
-      return DEFAULT_CONNECTION_SETTINGS;
+    protected ConnectionSettings.Builder getDefaultConnectionSettingsBuilder() {
+      return s_getDefaultConnectionSettingsBuilder();
     }
 
     @Override
@@ -372,23 +408,26 @@ public class ErrorStatsServiceSettings extends ServiceApiSettings {
     }
 
     /**
-     * Applies the given settings to all of the API methods in this service. Only values that are
-     * non-null will be applied, so this method is not capable of un-setting any values.
+     * Applies the given settings to all of the unary API methods in this service. Only values that
+     * are non-null will be applied, so this method is not capable of un-setting any values.
+     *
+     * <p>Note: This method does not support applying settings to streaming methods.
      */
-    public Builder applyToAllApiMethods(ApiCallSettings.Builder apiCallSettings) throws Exception {
-      super.applyToAllApiMethods(methodSettingsBuilders, apiCallSettings);
+    public Builder applyToAllApiMethods(UnaryCallSettings.Builder apiCallSettings)
+        throws Exception {
+      super.applyToAllApiMethods(unaryMethodSettingsBuilders, apiCallSettings);
       return this;
     }
 
     /** Returns the builder for the settings used for calls to listGroupStats. */
-    public PageStreamingCallSettings.Builder<
-            ListGroupStatsRequest, ListGroupStatsResponse, ErrorGroupStats>
+    public PagedCallSettings.Builder<
+            ListGroupStatsRequest, ListGroupStatsResponse, ListGroupStatsPagedResponse>
         listGroupStatsSettings() {
       return listGroupStatsSettings;
     }
 
     /** Returns the builder for the settings used for calls to listEvents. */
-    public PageStreamingCallSettings.Builder<ListEventsRequest, ListEventsResponse, ErrorEvent>
+    public PagedCallSettings.Builder<ListEventsRequest, ListEventsResponse, ListEventsPagedResponse>
         listEventsSettings() {
       return listEventsSettings;
     }
