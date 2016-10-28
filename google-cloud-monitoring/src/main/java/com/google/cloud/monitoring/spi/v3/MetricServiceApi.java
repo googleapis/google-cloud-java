@@ -15,10 +15,9 @@ package com.google.cloud.monitoring.spi.v3;
 
 import com.google.api.MetricDescriptor;
 import com.google.api.MonitoredResourceDescriptor;
-import com.google.api.gax.core.PageAccessor;
+import com.google.api.gax.core.PagedListResponse;
 import com.google.api.gax.grpc.ApiCallable;
 import com.google.api.gax.protobuf.PathTemplate;
-import com.google.monitoring.v3.Aggregation;
 import com.google.monitoring.v3.CreateMetricDescriptorRequest;
 import com.google.monitoring.v3.CreateTimeSeriesRequest;
 import com.google.monitoring.v3.DeleteMetricDescriptorRequest;
@@ -29,9 +28,7 @@ import com.google.monitoring.v3.ListMetricDescriptorsResponse;
 import com.google.monitoring.v3.ListMonitoredResourceDescriptorsRequest;
 import com.google.monitoring.v3.ListMonitoredResourceDescriptorsResponse;
 import com.google.monitoring.v3.ListTimeSeriesRequest;
-import com.google.monitoring.v3.ListTimeSeriesRequest.TimeSeriesView;
 import com.google.monitoring.v3.ListTimeSeriesResponse;
-import com.google.monitoring.v3.TimeInterval;
 import com.google.monitoring.v3.TimeSeries;
 import com.google.protobuf.Empty;
 import io.grpc.ManagedChannel;
@@ -43,8 +40,8 @@ import java.util.concurrent.ScheduledExecutorService;
 
 // AUTO-GENERATED DOCUMENTATION AND SERVICE
 /**
- * Service Description: Manages metric descriptors, monitored resource descriptors, and
- * time series data.
+ * Service Description: Manages metric descriptors, monitored resource descriptors, and time series
+ * data.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -58,29 +55,28 @@ import java.util.concurrent.ScheduledExecutorService;
  * </code>
  * </pre>
  *
- * <p>Note: close() needs to be called on the metricServiceApi object to clean up resources such
- * as threads. In the example above, try-with-resources is used, which automatically calls
- * close().
+ * <p>Note: close() needs to be called on the metricServiceApi object to clean up resources such as
+ * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
- * <p>The surface of this class includes several types of Java methods for each of the API's methods:
+ * <p>The surface of this class includes several types of Java methods for each of the API's
+ * methods:
  *
  * <ol>
- * <li> A "flattened" method. With this type of method, the fields of the request type have been
- * converted into function parameters. It may be the case that not all fields are available
- * as parameters, and not every API method will have a flattened method entry point.
- * <li> A "request object" method. This type of method only takes one parameter, a request
- * object, which must be constructed before the call. Not every API method will have a request
- * object method.
- * <li> A "callable" method. This type of method takes no parameters and returns an immutable
- * ApiCallable object, which can be used to initiate calls to the service.
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
+ *       converted into function parameters. It may be the case that not all fields are available as
+ *       parameters, and not every API method will have a flattened method entry point.
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
+ *       which must be constructed before the call. Not every API method will have a request object
+ *       method.
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable
+ *       ApiCallable object, which can be used to initiate calls to the service.
  * </ol>
  *
  * <p>See the individual methods for example code.
  *
- * <p>Many parameters require resource names to be formatted in a particular way. To assist
- * with these names, this class includes a format method for each type of name, and additionally
- * a parse method to extract the individual identifiers contained within names that are
- * returned.
+ * <p>Many parameters require resource names to be formatted in a particular way. To assist with
+ * these names, this class includes a format method for each type of name, and additionally a parse
+ * method to extract the individual identifiers contained within names that are returned.
  *
  * <p>This class can be customized by passing in a custom instance of MetricServiceSettings to
  * create(). For example:
@@ -105,13 +101,19 @@ public class MetricServiceApi implements AutoCloseable {
           ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse>
       listMonitoredResourceDescriptorsCallable;
   private final ApiCallable<
-          ListMonitoredResourceDescriptorsRequest, PageAccessor<MonitoredResourceDescriptor>>
+          ListMonitoredResourceDescriptorsRequest,
+          PagedListResponse<
+              ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse,
+              MonitoredResourceDescriptor>>
       listMonitoredResourceDescriptorsPagedCallable;
   private final ApiCallable<GetMonitoredResourceDescriptorRequest, MonitoredResourceDescriptor>
       getMonitoredResourceDescriptorCallable;
   private final ApiCallable<ListMetricDescriptorsRequest, ListMetricDescriptorsResponse>
       listMetricDescriptorsCallable;
-  private final ApiCallable<ListMetricDescriptorsRequest, PageAccessor<MetricDescriptor>>
+  private final ApiCallable<
+          ListMetricDescriptorsRequest,
+          PagedListResponse<
+              ListMetricDescriptorsRequest, ListMetricDescriptorsResponse, MetricDescriptor>>
       listMetricDescriptorsPagedCallable;
   private final ApiCallable<GetMetricDescriptorRequest, MetricDescriptor>
       getMetricDescriptorCallable;
@@ -119,13 +121,11 @@ public class MetricServiceApi implements AutoCloseable {
       createMetricDescriptorCallable;
   private final ApiCallable<DeleteMetricDescriptorRequest, Empty> deleteMetricDescriptorCallable;
   private final ApiCallable<ListTimeSeriesRequest, ListTimeSeriesResponse> listTimeSeriesCallable;
-  private final ApiCallable<ListTimeSeriesRequest, PageAccessor<TimeSeries>>
+  private final ApiCallable<
+          ListTimeSeriesRequest,
+          PagedListResponse<ListTimeSeriesRequest, ListTimeSeriesResponse, TimeSeries>>
       listTimeSeriesPagedCallable;
   private final ApiCallable<CreateTimeSeriesRequest, Empty> createTimeSeriesCallable;
-
-  public final MetricServiceSettings getSettings() {
-    return settings;
-  }
 
   private static final PathTemplate PROJECT_PATH_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding("projects/{project}");
@@ -138,17 +138,14 @@ public class MetricServiceApi implements AutoCloseable {
       PathTemplate.createWithoutUrlEncoding(
           "projects/{project}/monitoredResourceDescriptors/{monitored_resource_descriptor}");
 
-  /**
-   * Formats a string containing the fully-qualified path to represent
-   * a project resource.
-   */
+  /** Formats a string containing the fully-qualified path to represent a project resource. */
   public static final String formatProjectName(String project) {
     return PROJECT_PATH_TEMPLATE.instantiate("project", project);
   }
 
   /**
-   * Formats a string containing the fully-qualified path to represent
-   * a metric_descriptor_path resource.
+   * Formats a string containing the fully-qualified path to represent a metric_descriptor_path
+   * resource.
    */
   public static final String formatMetricDescriptorPathName(
       String project, String metricDescriptorPath) {
@@ -158,8 +155,8 @@ public class MetricServiceApi implements AutoCloseable {
   }
 
   /**
-   * Formats a string containing the fully-qualified path to represent
-   * a monitored_resource_descriptor resource.
+   * Formats a string containing the fully-qualified path to represent a
+   * monitored_resource_descriptor resource.
    */
   public static final String formatMonitoredResourceDescriptorName(
       String project, String monitoredResourceDescriptor) {
@@ -168,17 +165,14 @@ public class MetricServiceApi implements AutoCloseable {
         "monitored_resource_descriptor", monitoredResourceDescriptor);
   }
 
-  /**
-   * Parses the project from the given fully-qualified path which
-   * represents a project resource.
-   */
+  /** Parses the project from the given fully-qualified path which represents a project resource. */
   public static final String parseProjectFromProjectName(String projectName) {
     return PROJECT_PATH_TEMPLATE.parse(projectName).get("project");
   }
 
   /**
-   * Parses the project from the given fully-qualified path which
-   * represents a metricDescriptorPath resource.
+   * Parses the project from the given fully-qualified path which represents a metricDescriptorPath
+   * resource.
    */
   public static final String parseProjectFromMetricDescriptorPathName(
       String metricDescriptorPathName) {
@@ -186,8 +180,8 @@ public class MetricServiceApi implements AutoCloseable {
   }
 
   /**
-   * Parses the metric_descriptor_path from the given fully-qualified path which
-   * represents a metricDescriptorPath resource.
+   * Parses the metric_descriptor_path from the given fully-qualified path which represents a
+   * metricDescriptorPath resource.
    */
   public static final String parseMetricDescriptorPathFromMetricDescriptorPathName(
       String metricDescriptorPathName) {
@@ -197,8 +191,8 @@ public class MetricServiceApi implements AutoCloseable {
   }
 
   /**
-   * Parses the project from the given fully-qualified path which
-   * represents a monitoredResourceDescriptor resource.
+   * Parses the project from the given fully-qualified path which represents a
+   * monitoredResourceDescriptor resource.
    */
   public static final String parseProjectFromMonitoredResourceDescriptorName(
       String monitoredResourceDescriptorName) {
@@ -208,8 +202,8 @@ public class MetricServiceApi implements AutoCloseable {
   }
 
   /**
-   * Parses the monitored_resource_descriptor from the given fully-qualified path which
-   * represents a monitoredResourceDescriptor resource.
+   * Parses the monitored_resource_descriptor from the given fully-qualified path which represents a
+   * monitoredResourceDescriptor resource.
    */
   public static final String parseMonitoredResourceDescriptorFromMonitoredResourceDescriptorName(
       String monitoredResourceDescriptorName) {
@@ -218,26 +212,22 @@ public class MetricServiceApi implements AutoCloseable {
         .get("monitored_resource_descriptor");
   }
 
-  /**
-   * Constructs an instance of MetricServiceApi with default settings.
-   */
+  /** Constructs an instance of MetricServiceApi with default settings. */
   public static final MetricServiceApi create() throws IOException {
     return create(MetricServiceSettings.defaultBuilder().build());
   }
 
   /**
-   * Constructs an instance of MetricServiceApi, using the given settings.
-   * The channels are created based on the settings passed in, or defaults for any
-   * settings that are not set.
+   * Constructs an instance of MetricServiceApi, using the given settings. The channels are created
+   * based on the settings passed in, or defaults for any settings that are not set.
    */
   public static final MetricServiceApi create(MetricServiceSettings settings) throws IOException {
     return new MetricServiceApi(settings);
   }
 
   /**
-   * Constructs an instance of MetricServiceApi, using the given settings.
-   * This is protected so that it easy to make a subclass, but otherwise, the static
-   * factory methods should be preferred.
+   * Constructs an instance of MetricServiceApi, using the given settings. This is protected so that
+   * it easy to make a subclass, but otherwise, the static factory methods should be preferred.
    */
   protected MetricServiceApi(MetricServiceSettings settings) throws IOException {
     this.settings = settings;
@@ -292,34 +282,39 @@ public class MetricServiceApi implements AutoCloseable {
     }
   }
 
+  public final MetricServiceSettings getSettings() {
+    return settings;
+  }
+
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists monitored resource descriptors that match a filter. This method does not require a Stackdriver account.
+   * Lists monitored resource descriptors that match a filter. This method does not require a
+   * Stackdriver account.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (MetricServiceApi metricServiceApi = MetricServiceApi.create()) {
    *   String formattedName = MetricServiceApi.formatProjectName("[PROJECT]");
    *   String filter = "";
-   *   for (MonitoredResourceDescriptor element : metricServiceApi.listMonitoredResourceDescriptors(formattedName, filter)) {
+   *   for (MonitoredResourceDescriptor element : metricServiceApi.listMonitoredResourceDescriptors(formattedName, filter).iterateAllElements()) {
    *     // doThingsWith(element);
    *   }
    * }
    * </code></pre>
    *
    * @param name The project on which to execute the request. The format is
-   * `"projects/{project_id_or_number}"`.
-   * @param filter An optional [filter](/monitoring/api/v3/filters) describing
-   * the descriptors to be returned.  The filter can reference
-   * the descriptor's type and labels. For example, the
-   * following filter returns only Google Compute Engine descriptors
-   * that have an `id` label:
-   *
-   *     resource.type = starts_with("gce_") AND resource.label:id
+   *     `"projects/{project_id_or_number}"`.
+   * @param filter An optional [filter](/monitoring/api/v3/filters) describing the descriptors to be
+   *     returned. The filter can reference the descriptor's type and labels. For example, the
+   *     following filter returns only Google Compute Engine descriptors that have an `id` label:
+   *     <p>resource.type = starts_with("gce_") AND resource.label:id
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  public final PageAccessor<MonitoredResourceDescriptor> listMonitoredResourceDescriptors(
-      String name, String filter) {
+  public final PagedListResponse<
+          ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse,
+          MonitoredResourceDescriptor>
+      listMonitoredResourceDescriptors(String name, String filter) {
     PROJECT_PATH_TEMPLATE.validate(name, "listMonitoredResourceDescriptors");
     ListMonitoredResourceDescriptorsRequest request =
         ListMonitoredResourceDescriptorsRequest.newBuilder()
@@ -331,9 +326,11 @@ public class MetricServiceApi implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists monitored resource descriptors that match a filter. This method does not require a Stackdriver account.
+   * Lists monitored resource descriptors that match a filter. This method does not require a
+   * Stackdriver account.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (MetricServiceApi metricServiceApi = MetricServiceApi.create()) {
    *   String formattedName = MetricServiceApi.formatProjectName("[PROJECT]");
@@ -342,7 +339,7 @@ public class MetricServiceApi implements AutoCloseable {
    *     .setName(formattedName)
    *     .setFilter(filter)
    *     .build();
-   *   for (MonitoredResourceDescriptor element : metricServiceApi.listMonitoredResourceDescriptors(request)) {
+   *   for (MonitoredResourceDescriptor element : metricServiceApi.listMonitoredResourceDescriptors(request).iterateAllElements()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -351,16 +348,20 @@ public class MetricServiceApi implements AutoCloseable {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  public final PageAccessor<MonitoredResourceDescriptor> listMonitoredResourceDescriptors(
-      ListMonitoredResourceDescriptorsRequest request) {
+  public final PagedListResponse<
+          ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse,
+          MonitoredResourceDescriptor>
+      listMonitoredResourceDescriptors(ListMonitoredResourceDescriptorsRequest request) {
     return listMonitoredResourceDescriptorsPagedCallable().call(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists monitored resource descriptors that match a filter. This method does not require a Stackdriver account.
+   * Lists monitored resource descriptors that match a filter. This method does not require a
+   * Stackdriver account.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (MetricServiceApi metricServiceApi = MetricServiceApi.create()) {
    *   String formattedName = MetricServiceApi.formatProjectName("[PROJECT]");
@@ -369,25 +370,30 @@ public class MetricServiceApi implements AutoCloseable {
    *     .setName(formattedName)
    *     .setFilter(filter)
    *     .build();
-   *   ListenableFuture&lt;PageAccessor&lt;MonitoredResourceDescriptor&gt;&gt; future = metricServiceApi.listMonitoredResourceDescriptorsPagedCallable().futureCall(request);
+   *   ListenableFuture&lt;PagedListResponse&lt;ListMonitoredResourceDescriptorsRequest,ListMonitoredResourceDescriptorsResponse,MonitoredResourceDescriptor&gt;&gt; future = metricServiceApi.listMonitoredResourceDescriptorsPagedCallable().futureCall(request);
    *   // Do something
-   *   for (MonitoredResourceDescriptor element : future.get()) {
+   *   for (MonitoredResourceDescriptor element : future.get().iterateAllElements()) {
    *     // doThingsWith(element);
    *   }
    * }
    * </code></pre>
    */
   public final ApiCallable<
-          ListMonitoredResourceDescriptorsRequest, PageAccessor<MonitoredResourceDescriptor>>
+          ListMonitoredResourceDescriptorsRequest,
+          PagedListResponse<
+              ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse,
+              MonitoredResourceDescriptor>>
       listMonitoredResourceDescriptorsPagedCallable() {
     return listMonitoredResourceDescriptorsPagedCallable;
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists monitored resource descriptors that match a filter. This method does not require a Stackdriver account.
+   * Lists monitored resource descriptors that match a filter. This method does not require a
+   * Stackdriver account.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (MetricServiceApi metricServiceApi = MetricServiceApi.create()) {
    *   String formattedName = MetricServiceApi.formatProjectName("[PROJECT]");
@@ -419,9 +425,11 @@ public class MetricServiceApi implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Gets a single monitored resource descriptor. This method does not require a Stackdriver account.
+   * Gets a single monitored resource descriptor. This method does not require a Stackdriver
+   * account.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (MetricServiceApi metricServiceApi = MetricServiceApi.create()) {
    *   String formattedName = MetricServiceApi.formatMonitoredResourceDescriptorName("[PROJECT]", "[MONITORED_RESOURCE_DESCRIPTOR]");
@@ -429,10 +437,9 @@ public class MetricServiceApi implements AutoCloseable {
    * }
    * </code></pre>
    *
-   * @param name The monitored resource descriptor to get.  The format is
-   * `"projects/{project_id_or_number}/monitoredResourceDescriptors/{resource_type}"`.
-   * The `{resource_type}` is a predefined type, such as
-   * `cloudsql_database`.
+   * @param name The monitored resource descriptor to get. The format is
+   *     `"projects/{project_id_or_number}/monitoredResourceDescriptors/{resource_type}"`. The
+   *     `{resource_type}` is a predefined type, such as `cloudsql_database`.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final MonitoredResourceDescriptor getMonitoredResourceDescriptor(String name) {
@@ -444,9 +451,11 @@ public class MetricServiceApi implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Gets a single monitored resource descriptor. This method does not require a Stackdriver account.
+   * Gets a single monitored resource descriptor. This method does not require a Stackdriver
+   * account.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (MetricServiceApi metricServiceApi = MetricServiceApi.create()) {
    *   String formattedName = MetricServiceApi.formatMonitoredResourceDescriptorName("[PROJECT]", "[MONITORED_RESOURCE_DESCRIPTOR]");
@@ -467,9 +476,11 @@ public class MetricServiceApi implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Gets a single monitored resource descriptor. This method does not require a Stackdriver account.
+   * Gets a single monitored resource descriptor. This method does not require a Stackdriver
+   * account.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (MetricServiceApi metricServiceApi = MetricServiceApi.create()) {
    *   String formattedName = MetricServiceApi.formatMonitoredResourceDescriptorName("[PROJECT]", "[MONITORED_RESOURCE_DESCRIPTOR]");
@@ -489,32 +500,33 @@ public class MetricServiceApi implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists metric descriptors that match a filter. This method does not require a Stackdriver account.
+   * Lists metric descriptors that match a filter. This method does not require a Stackdriver
+   * account.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (MetricServiceApi metricServiceApi = MetricServiceApi.create()) {
    *   String formattedName = MetricServiceApi.formatProjectName("[PROJECT]");
    *   String filter = "";
-   *   for (MetricDescriptor element : metricServiceApi.listMetricDescriptors(formattedName, filter)) {
+   *   for (MetricDescriptor element : metricServiceApi.listMetricDescriptors(formattedName, filter).iterateAllElements()) {
    *     // doThingsWith(element);
    *   }
    * }
    * </code></pre>
    *
    * @param name The project on which to execute the request. The format is
-   * `"projects/{project_id_or_number}"`.
-   * @param filter If this field is empty, all custom and
-   * system-defined metric descriptors are returned.
-   * Otherwise, the [filter](/monitoring/api/v3/filters)
-   * specifies which metric descriptors are to be
-   * returned. For example, the following filter matches all
-   * [custom metrics](/monitoring/custom-metrics):
-   *
-   *     metric.type = starts_with("custom.googleapis.com/")
+   *     `"projects/{project_id_or_number}"`.
+   * @param filter If this field is empty, all custom and system-defined metric descriptors are
+   *     returned. Otherwise, the [filter](/monitoring/api/v3/filters) specifies which metric
+   *     descriptors are to be returned. For example, the following filter matches all [custom
+   *     metrics](/monitoring/custom-metrics):
+   *     <p>metric.type = starts_with("custom.googleapis.com/")
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  public final PageAccessor<MetricDescriptor> listMetricDescriptors(String name, String filter) {
+  public final PagedListResponse<
+          ListMetricDescriptorsRequest, ListMetricDescriptorsResponse, MetricDescriptor>
+      listMetricDescriptors(String name, String filter) {
     PROJECT_PATH_TEMPLATE.validate(name, "listMetricDescriptors");
     ListMetricDescriptorsRequest request =
         ListMetricDescriptorsRequest.newBuilder().setName(name).setFilter(filter).build();
@@ -523,9 +535,11 @@ public class MetricServiceApi implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists metric descriptors that match a filter. This method does not require a Stackdriver account.
+   * Lists metric descriptors that match a filter. This method does not require a Stackdriver
+   * account.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (MetricServiceApi metricServiceApi = MetricServiceApi.create()) {
    *   String formattedName = MetricServiceApi.formatProjectName("[PROJECT]");
@@ -534,7 +548,7 @@ public class MetricServiceApi implements AutoCloseable {
    *     .setName(formattedName)
    *     .setFilter(filter)
    *     .build();
-   *   for (MetricDescriptor element : metricServiceApi.listMetricDescriptors(request)) {
+   *   for (MetricDescriptor element : metricServiceApi.listMetricDescriptors(request).iterateAllElements()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -543,16 +557,19 @@ public class MetricServiceApi implements AutoCloseable {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  public final PageAccessor<MetricDescriptor> listMetricDescriptors(
-      ListMetricDescriptorsRequest request) {
+  public final PagedListResponse<
+          ListMetricDescriptorsRequest, ListMetricDescriptorsResponse, MetricDescriptor>
+      listMetricDescriptors(ListMetricDescriptorsRequest request) {
     return listMetricDescriptorsPagedCallable().call(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists metric descriptors that match a filter. This method does not require a Stackdriver account.
+   * Lists metric descriptors that match a filter. This method does not require a Stackdriver
+   * account.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (MetricServiceApi metricServiceApi = MetricServiceApi.create()) {
    *   String formattedName = MetricServiceApi.formatProjectName("[PROJECT]");
@@ -561,24 +578,29 @@ public class MetricServiceApi implements AutoCloseable {
    *     .setName(formattedName)
    *     .setFilter(filter)
    *     .build();
-   *   ListenableFuture&lt;PageAccessor&lt;MetricDescriptor&gt;&gt; future = metricServiceApi.listMetricDescriptorsPagedCallable().futureCall(request);
+   *   ListenableFuture&lt;PagedListResponse&lt;ListMetricDescriptorsRequest,ListMetricDescriptorsResponse,MetricDescriptor&gt;&gt; future = metricServiceApi.listMetricDescriptorsPagedCallable().futureCall(request);
    *   // Do something
-   *   for (MetricDescriptor element : future.get()) {
+   *   for (MetricDescriptor element : future.get().iterateAllElements()) {
    *     // doThingsWith(element);
    *   }
    * }
    * </code></pre>
    */
-  public final ApiCallable<ListMetricDescriptorsRequest, PageAccessor<MetricDescriptor>>
+  public final ApiCallable<
+          ListMetricDescriptorsRequest,
+          PagedListResponse<
+              ListMetricDescriptorsRequest, ListMetricDescriptorsResponse, MetricDescriptor>>
       listMetricDescriptorsPagedCallable() {
     return listMetricDescriptorsPagedCallable;
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists metric descriptors that match a filter. This method does not require a Stackdriver account.
+   * Lists metric descriptors that match a filter. This method does not require a Stackdriver
+   * account.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (MetricServiceApi metricServiceApi = MetricServiceApi.create()) {
    *   String formattedName = MetricServiceApi.formatProjectName("[PROJECT]");
@@ -611,7 +633,8 @@ public class MetricServiceApi implements AutoCloseable {
   /**
    * Gets a single metric descriptor. This method does not require a Stackdriver account.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (MetricServiceApi metricServiceApi = MetricServiceApi.create()) {
    *   String formattedName = MetricServiceApi.formatMetricDescriptorPathName("[PROJECT]", "[METRIC_DESCRIPTOR_PATH]");
@@ -620,9 +643,8 @@ public class MetricServiceApi implements AutoCloseable {
    * </code></pre>
    *
    * @param name The metric descriptor on which to execute the request. The format is
-   * `"projects/{project_id_or_number}/metricDescriptors/{metric_id}"`.
-   * An example value of `{metric_id}` is
-   * `"compute.googleapis.com/instance/disk/read_bytes_count"`.
+   *     `"projects/{project_id_or_number}/metricDescriptors/{metric_id}"`. An example value of
+   *     `{metric_id}` is `"compute.googleapis.com/instance/disk/read_bytes_count"`.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final MetricDescriptor getMetricDescriptor(String name) {
@@ -636,7 +658,8 @@ public class MetricServiceApi implements AutoCloseable {
   /**
    * Gets a single metric descriptor. This method does not require a Stackdriver account.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (MetricServiceApi metricServiceApi = MetricServiceApi.create()) {
    *   String formattedName = MetricServiceApi.formatMetricDescriptorPathName("[PROJECT]", "[METRIC_DESCRIPTOR_PATH]");
@@ -658,7 +681,8 @@ public class MetricServiceApi implements AutoCloseable {
   /**
    * Gets a single metric descriptor. This method does not require a Stackdriver account.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (MetricServiceApi metricServiceApi = MetricServiceApi.create()) {
    *   String formattedName = MetricServiceApi.formatMetricDescriptorPathName("[PROJECT]", "[METRIC_DESCRIPTOR_PATH]");
@@ -678,11 +702,11 @@ public class MetricServiceApi implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a new metric descriptor.
-   * User-created metric descriptors define
-   * [custom metrics](/monitoring/custom-metrics).
+   * Creates a new metric descriptor. User-created metric descriptors define [custom
+   * metrics](/monitoring/custom-metrics).
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (MetricServiceApi metricServiceApi = MetricServiceApi.create()) {
    *   String formattedName = MetricServiceApi.formatProjectName("[PROJECT]");
@@ -692,9 +716,8 @@ public class MetricServiceApi implements AutoCloseable {
    * </code></pre>
    *
    * @param name The project on which to execute the request. The format is
-   * `"projects/{project_id_or_number}"`.
-   * @param metricDescriptor The new [custom metric](/monitoring/custom-metrics)
-   * descriptor.
+   *     `"projects/{project_id_or_number}"`.
+   * @param metricDescriptor The new [custom metric](/monitoring/custom-metrics) descriptor.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final MetricDescriptor createMetricDescriptor(
@@ -710,11 +733,11 @@ public class MetricServiceApi implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a new metric descriptor.
-   * User-created metric descriptors define
-   * [custom metrics](/monitoring/custom-metrics).
+   * Creates a new metric descriptor. User-created metric descriptors define [custom
+   * metrics](/monitoring/custom-metrics).
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (MetricServiceApi metricServiceApi = MetricServiceApi.create()) {
    *   String formattedName = MetricServiceApi.formatProjectName("[PROJECT]");
@@ -736,11 +759,11 @@ public class MetricServiceApi implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a new metric descriptor.
-   * User-created metric descriptors define
-   * [custom metrics](/monitoring/custom-metrics).
+   * Creates a new metric descriptor. User-created metric descriptors define [custom
+   * metrics](/monitoring/custom-metrics).
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (MetricServiceApi metricServiceApi = MetricServiceApi.create()) {
    *   String formattedName = MetricServiceApi.formatProjectName("[PROJECT]");
@@ -762,10 +785,11 @@ public class MetricServiceApi implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes a metric descriptor. Only user-created
-   * [custom metrics](/monitoring/custom-metrics) can be deleted.
+   * Deletes a metric descriptor. Only user-created [custom metrics](/monitoring/custom-metrics) can
+   * be deleted.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (MetricServiceApi metricServiceApi = MetricServiceApi.create()) {
    *   String formattedName = MetricServiceApi.formatMetricDescriptorPathName("[PROJECT]", "[METRIC_DESCRIPTOR_PATH]");
@@ -774,9 +798,8 @@ public class MetricServiceApi implements AutoCloseable {
    * </code></pre>
    *
    * @param name The metric descriptor on which to execute the request. The format is
-   * `"projects/{project_id_or_number}/metricDescriptors/{metric_id}"`.
-   * An example of `{metric_id}` is:
-   * `"custom.googleapis.com/my_test_metric"`.
+   *     `"projects/{project_id_or_number}/metricDescriptors/{metric_id}"`. An example of
+   *     `{metric_id}` is: `"custom.googleapis.com/my_test_metric"`.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final void deleteMetricDescriptor(String name) {
@@ -788,10 +811,11 @@ public class MetricServiceApi implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes a metric descriptor. Only user-created
-   * [custom metrics](/monitoring/custom-metrics) can be deleted.
+   * Deletes a metric descriptor. Only user-created [custom metrics](/monitoring/custom-metrics) can
+   * be deleted.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (MetricServiceApi metricServiceApi = MetricServiceApi.create()) {
    *   String formattedName = MetricServiceApi.formatMetricDescriptorPathName("[PROJECT]", "[METRIC_DESCRIPTOR_PATH]");
@@ -811,10 +835,11 @@ public class MetricServiceApi implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes a metric descriptor. Only user-created
-   * [custom metrics](/monitoring/custom-metrics) can be deleted.
+   * Deletes a metric descriptor. Only user-created [custom metrics](/monitoring/custom-metrics) can
+   * be deleted.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (MetricServiceApi metricServiceApi = MetricServiceApi.create()) {
    *   String formattedName = MetricServiceApi.formatMetricDescriptorPathName("[PROJECT]", "[METRIC_DESCRIPTOR_PATH]");
@@ -835,7 +860,8 @@ public class MetricServiceApi implements AutoCloseable {
   /**
    * Lists time series that match a filter. This method does not require a Stackdriver account.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (MetricServiceApi metricServiceApi = MetricServiceApi.create()) {
    *   String formattedName = MetricServiceApi.formatProjectName("[PROJECT]");
@@ -843,7 +869,7 @@ public class MetricServiceApi implements AutoCloseable {
    *   TimeInterval interval = TimeInterval.newBuilder().build();
    *   Aggregation aggregation = Aggregation.newBuilder().build();
    *   String orderBy = "";
-   *   TimeSeriesView view = TimeSeriesView.FULL;
+   *   ListTimeSeriesRequest.TimeSeriesView view = ListTimeSeriesRequest.TimeSeriesView.FULL;
    *   ListTimeSeriesRequest request = ListTimeSeriesRequest.newBuilder()
    *     .setName(formattedName)
    *     .setFilter(filter)
@@ -852,7 +878,7 @@ public class MetricServiceApi implements AutoCloseable {
    *     .setOrderBy(orderBy)
    *     .setView(view)
    *     .build();
-   *   for (TimeSeries element : metricServiceApi.listTimeSeries(request)) {
+   *   for (TimeSeries element : metricServiceApi.listTimeSeries(request).iterateAllElements()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -861,7 +887,8 @@ public class MetricServiceApi implements AutoCloseable {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  public final PageAccessor<TimeSeries> listTimeSeries(ListTimeSeriesRequest request) {
+  public final PagedListResponse<ListTimeSeriesRequest, ListTimeSeriesResponse, TimeSeries>
+      listTimeSeries(ListTimeSeriesRequest request) {
     return listTimeSeriesPagedCallable().call(request);
   }
 
@@ -869,7 +896,8 @@ public class MetricServiceApi implements AutoCloseable {
   /**
    * Lists time series that match a filter. This method does not require a Stackdriver account.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (MetricServiceApi metricServiceApi = MetricServiceApi.create()) {
    *   String formattedName = MetricServiceApi.formatProjectName("[PROJECT]");
@@ -877,7 +905,7 @@ public class MetricServiceApi implements AutoCloseable {
    *   TimeInterval interval = TimeInterval.newBuilder().build();
    *   Aggregation aggregation = Aggregation.newBuilder().build();
    *   String orderBy = "";
-   *   TimeSeriesView view = TimeSeriesView.FULL;
+   *   ListTimeSeriesRequest.TimeSeriesView view = ListTimeSeriesRequest.TimeSeriesView.FULL;
    *   ListTimeSeriesRequest request = ListTimeSeriesRequest.newBuilder()
    *     .setName(formattedName)
    *     .setFilter(filter)
@@ -886,15 +914,17 @@ public class MetricServiceApi implements AutoCloseable {
    *     .setOrderBy(orderBy)
    *     .setView(view)
    *     .build();
-   *   ListenableFuture&lt;PageAccessor&lt;TimeSeries&gt;&gt; future = metricServiceApi.listTimeSeriesPagedCallable().futureCall(request);
+   *   ListenableFuture&lt;PagedListResponse&lt;ListTimeSeriesRequest,ListTimeSeriesResponse,TimeSeries&gt;&gt; future = metricServiceApi.listTimeSeriesPagedCallable().futureCall(request);
    *   // Do something
-   *   for (TimeSeries element : future.get()) {
+   *   for (TimeSeries element : future.get().iterateAllElements()) {
    *     // doThingsWith(element);
    *   }
    * }
    * </code></pre>
    */
-  public final ApiCallable<ListTimeSeriesRequest, PageAccessor<TimeSeries>>
+  public final ApiCallable<
+          ListTimeSeriesRequest,
+          PagedListResponse<ListTimeSeriesRequest, ListTimeSeriesResponse, TimeSeries>>
       listTimeSeriesPagedCallable() {
     return listTimeSeriesPagedCallable;
   }
@@ -903,7 +933,8 @@ public class MetricServiceApi implements AutoCloseable {
   /**
    * Lists time series that match a filter. This method does not require a Stackdriver account.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (MetricServiceApi metricServiceApi = MetricServiceApi.create()) {
    *   String formattedName = MetricServiceApi.formatProjectName("[PROJECT]");
@@ -911,7 +942,7 @@ public class MetricServiceApi implements AutoCloseable {
    *   TimeInterval interval = TimeInterval.newBuilder().build();
    *   Aggregation aggregation = Aggregation.newBuilder().build();
    *   String orderBy = "";
-   *   TimeSeriesView view = TimeSeriesView.FULL;
+   *   ListTimeSeriesRequest.TimeSeriesView view = ListTimeSeriesRequest.TimeSeriesView.FULL;
    *   ListTimeSeriesRequest request = ListTimeSeriesRequest.newBuilder()
    *     .setName(formattedName)
    *     .setFilter(filter)
@@ -941,12 +972,12 @@ public class MetricServiceApi implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates or adds data to one or more time series.
-   * The response is empty if all time series in the request were written.
-   * If any time series could not be written, a corresponding failure message is
-   * included in the error response.
+   * Creates or adds data to one or more time series. The response is empty if all time series in
+   * the request were written. If any time series could not be written, a corresponding failure
+   * message is included in the error response.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (MetricServiceApi metricServiceApi = MetricServiceApi.create()) {
    *   String formattedName = MetricServiceApi.formatProjectName("[PROJECT]");
@@ -956,12 +987,11 @@ public class MetricServiceApi implements AutoCloseable {
    * </code></pre>
    *
    * @param name The project on which to execute the request. The format is
-   * `"projects/{project_id_or_number}"`.
-   * @param timeSeries The new data to be added to a list of time series.
-   * Adds at most one data point to each of several time series.  The new data
-   * point must be more recent than any other point in its time series.  Each
-   * `TimeSeries` value must fully specify a unique time series by supplying
-   * all label values for the metric and the monitored resource.
+   *     `"projects/{project_id_or_number}"`.
+   * @param timeSeries The new data to be added to a list of time series. Adds at most one data
+   *     point to each of several time series. The new data point must be more recent than any other
+   *     point in its time series. Each `TimeSeries` value must fully specify a unique time series
+   *     by supplying all label values for the metric and the monitored resource.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final void createTimeSeries(String name, List<TimeSeries> timeSeries) {
@@ -973,12 +1003,12 @@ public class MetricServiceApi implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates or adds data to one or more time series.
-   * The response is empty if all time series in the request were written.
-   * If any time series could not be written, a corresponding failure message is
-   * included in the error response.
+   * Creates or adds data to one or more time series. The response is empty if all time series in
+   * the request were written. If any time series could not be written, a corresponding failure
+   * message is included in the error response.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (MetricServiceApi metricServiceApi = MetricServiceApi.create()) {
    *   String formattedName = MetricServiceApi.formatProjectName("[PROJECT]");
@@ -1000,12 +1030,12 @@ public class MetricServiceApi implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates or adds data to one or more time series.
-   * The response is empty if all time series in the request were written.
-   * If any time series could not be written, a corresponding failure message is
-   * included in the error response.
+   * Creates or adds data to one or more time series. The response is empty if all time series in
+   * the request were written. If any time series could not be written, a corresponding failure
+   * message is included in the error response.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (MetricServiceApi metricServiceApi = MetricServiceApi.create()) {
    *   String formattedName = MetricServiceApi.formatProjectName("[PROJECT]");

@@ -39,7 +39,7 @@ public final class ZoneId extends ResourceId {
   static final Function<ZoneId, String> TO_URL_FUNCTION = new Function<ZoneId, String>() {
     @Override
     public String apply(ZoneId zoneId) {
-      return zoneId.selfLink();
+      return zoneId.getSelfLink();
     }
   };
 
@@ -57,13 +57,27 @@ public final class ZoneId extends ResourceId {
   /**
    * Returns the name of the zone.
    */
+  @Deprecated
   public final String zone() {
+    return getZone();
+  }
+
+  /**
+   * Returns the name of the zone.
+   */
+  public String getZone() {
     return zone;
   }
 
   @Override
+  @Deprecated
   public String selfLink() {
-    return super.selfLink() + "/zones/" + zone;
+    return getSelfLink();
+  }
+
+  @Override
+  public String getSelfLink() {
+    return super.getSelfLink() + "/zones/" + zone;
   }
 
   @Override
@@ -90,7 +104,7 @@ public final class ZoneId extends ResourceId {
 
   @Override
   ZoneId setProjectId(String projectId) {
-    if (project() != null) {
+    if (getProject() != null) {
       return this;
     }
     return ZoneId.of(projectId, zone);

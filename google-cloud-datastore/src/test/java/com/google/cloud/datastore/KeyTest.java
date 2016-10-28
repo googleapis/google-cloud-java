@@ -26,6 +26,15 @@ public class KeyTest {
 
   @Test
   public void testHasId() throws Exception {
+    Key.Builder builder = Key.newBuilder("d", "k", 10);
+    Key key = builder.build();
+    assertTrue(key.hasId());
+    key = builder.setName("bla").build();
+    assertFalse(key.hasId());
+  }
+
+  @Test
+  public void testHasIdDeprecated() throws Exception {
     Key.Builder builder = Key.builder("d", "k", 10);
     Key key = builder.build();
     assertTrue(key.hasId());
@@ -35,6 +44,15 @@ public class KeyTest {
 
   @Test
   public void testId() throws Exception {
+    Key.Builder builder = Key.newBuilder("d", "k", 10);
+    Key key = builder.build();
+    assertEquals(Long.valueOf(10), key.getId());
+    key = builder.setId(100).build();
+    assertEquals(Long.valueOf(100), key.getId());
+  }
+
+  @Test
+  public void testIdDeprecated() throws Exception {
     Key.Builder builder = Key.builder("d", "k", 10);
     Key key = builder.build();
     assertEquals(Long.valueOf(10), key.id());
@@ -44,6 +62,15 @@ public class KeyTest {
 
   @Test
   public void testHasName() throws Exception {
+    Key.Builder builder = Key.newBuilder("d", "k", "n");
+    Key key = builder.build();
+    assertTrue(key.hasName());
+    key = builder.setId(1).build();
+    assertFalse(key.hasName());
+  }
+
+  @Test
+  public void testHasNameDeprecated() throws Exception {
     Key.Builder builder = Key.builder("d", "k", "n");
     Key key = builder.build();
     assertTrue(key.hasName());
@@ -53,6 +80,15 @@ public class KeyTest {
 
   @Test
   public void testName() throws Exception {
+    Key.Builder builder = Key.newBuilder("d", "k", "n");
+    Key key = builder.build();
+    assertEquals("n", key.getName());
+    key = builder.setName("o").build();
+    assertEquals("o", key.getName());
+  }
+
+  @Test
+  public void testNameDeprecated() throws Exception {
     Key.Builder builder = Key.builder("d", "k", "n");
     Key key = builder.build();
     assertEquals("n", key.name());
@@ -62,6 +98,15 @@ public class KeyTest {
 
   @Test
   public void testNameOrId() throws Exception {
+    Key.Builder builder = Key.newBuilder("d", "k", "n");
+    Key key = builder.build();
+    assertEquals("n", key.getNameOrId());
+    key = builder.setId(1).build();
+    assertEquals(Long.valueOf(1), key.getNameOrId());
+  }
+
+  @Test
+  public void testNameOrIdDeprecated() throws Exception {
     Key.Builder builder = Key.builder("d", "k", "n");
     Key key = builder.build();
     assertEquals("n", key.nameOrId());
@@ -71,7 +116,7 @@ public class KeyTest {
 
   @Test
   public void testToAndFromUrlSafe() throws Exception {
-    Key key = Key.builder("d", "k", "n").build();
+    Key key = Key.newBuilder("d", "k", "n").build();
     String urlSafe = key.toUrlSafe();
     Key copy = Key.fromUrlSafe(urlSafe);
     assertEquals(key, copy);

@@ -23,6 +23,7 @@ import com.google.cloud.AuthCredentials;
 import com.google.cloud.RetryParams;
 import com.google.cloud.datastore.DatastoreOptions;
 import com.google.common.base.Strings;
+import com.google.common.io.CharStreams;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
@@ -54,9 +55,11 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
+import java.util.Objects;
 import java.util.UUID;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
@@ -66,11 +69,11 @@ import java.util.zip.ZipInputStream;
  */
 public class LocalDatastoreHelper {
   private static final Logger log = Logger.getLogger(LocalDatastoreHelper.class.getName());
-  private static final String GCD_VERSION = "1.2.0";
+  private static final Version GCD_VERSION = Version.fromString("1.2.0");
   private static final double DEFAULT_CONSISTENCY = 0.9;
   private static final String GCD_BASENAME = "cloud-datastore-emulator-" + GCD_VERSION;
   private static final String GCD_FILENAME = GCD_BASENAME + ".zip";
-  private static final String MD5_CHECKSUM = "e68695ff005421ccb7144689d9633df1";
+  private static final String MD5_CHECKSUM = "ec2237a0f0ac54964c6bd95e12c73720";
   private static final URL GCD_URL;
   private static final String GCLOUD = "gcloud";
   private static final Path INSTALLED_GCD_PATH;
@@ -119,8 +122,8 @@ public class LocalDatastoreHelper {
     Path installedGcdPath = gcloudPath.resolve("platform").resolve("cloud-datastore-emulator");
     if (Files.exists(installedGcdPath)) {
       try {
-        String installedVersion = installedGcdVersion();
-        if (installedVersion != null && installedVersion.startsWith(GCD_VERSION)) {
+        Version installedVersion = installedGcdVersion();
+        if (installedVersion != null && installedVersion.compareTo(GCD_VERSION) >= 0) {
           if (log.isLoggable(Level.FINE)) {
             log.fine("SDK datastore emulator found");
           }
@@ -130,14 +133,14 @@ public class LocalDatastoreHelper {
             log.fine("SDK datastore emulator found but version mismatch");
           }
         }
-      } catch (IOException | InterruptedException ignore) {
+      } catch (IOException | InterruptedException | IllegalArgumentException ignore) {
         // ignore
       }
     }
     return null;
   }
 
-  private static String installedGcdVersion() throws IOException, InterruptedException {
+  private static Version installedGcdVersion() throws IOException, InterruptedException {
     Process process =
         CommandWrapper.create().command("gcloud", "version").redirectErrorStream().start();
     process.waitFor();
@@ -147,7 +150,7 @@ public class LocalDatastoreHelper {
         if (line.startsWith(GCD_VERSION_PREFIX)) {
           String[] lineComponents = line.split(" ");
           if (lineComponents.length > 1) {
-            return lineComponents[1];
+            return Version.fromString(lineComponents[1]);
           }
         }
       }
@@ -168,6 +171,59 @@ public class LocalDatastoreHelper {
       }
     }
     return null;
+  }
+
+  private static class Version implements Comparable<Version> {
+
+    private static final Pattern VERSION_PATTERN = Pattern.compile("^(\\d+)\\.(\\d+)\\.(\\d+)$");
+
+    final int major;
+    final int minor;
+    final int patch;
+
+    Version(int major, int minor, int patch) {
+      this.major = major;
+      this.minor = minor;
+      this.patch = patch;
+    }
+
+    @Override
+    public int compareTo(Version version) {
+      int result = major - version.major;
+      if (result == 0) {
+        result = minor - version.minor;
+        if (result == 0) {
+          result = patch - version.patch;
+        }
+      }
+      return result;
+    }
+
+    @Override
+    public String toString() {
+      return String.format("%d.%d.%d", major, minor, patch);
+    }
+
+    @Override
+    public boolean equals(Object other) {
+      return this == other || other instanceof Version && compareTo((Version) other) == 0;
+    }
+
+    @Override
+    public int hashCode() {
+      return Objects.hash(major, minor, patch);
+    }
+
+    static Version fromString(String version) {
+      Matcher matcher = VERSION_PATTERN.matcher(version);
+      if (matcher.matches()) {
+        return new Version(
+            Integer.valueOf(matcher.group(1)),
+            Integer.valueOf(matcher.group(2)),
+            Integer.valueOf(matcher.group(3)));
+      }
+      throw new IllegalArgumentException("Invalid version format");
+    }
   }
 
   private static class ProcessStreamReader extends Thread {
@@ -508,6 +564,24 @@ public class LocalDatastoreHelper {
     return result.toString().startsWith(shutdownMsg);
   }
 
+  public String sendPostRequest(String request) throws IOException {
+    URL url = new URL("http", "localhost", this.port, request);
+    HttpURLConnection con = (HttpURLConnection) url.openConnection();
+    con.setRequestMethod("POST");
+    con.setDoOutput(true);
+    OutputStream out = con.getOutputStream();
+    out.write("".getBytes());
+    out.flush();
+
+    InputStream in = con.getInputStream();
+    String response = CharStreams.toString(new InputStreamReader(con.getInputStream()));
+    in.close();
+    return response;
+  }
+
+  /**
+   * Quit the local emulator and related local service.
+   */
   public void stop() throws IOException, InterruptedException {
     sendQuitRequest(port);
     if (processReader != null) {
@@ -519,6 +593,13 @@ public class LocalDatastoreHelper {
     if (gcdPath != null) {
       deleteRecurse(gcdPath);
     }
+  }
+
+  /**
+   * Reset the internal state of the emulator.
+   */
+  public void reset() throws IOException {
+    sendPostRequest("/reset");
   }
 
   private static void deleteRecurse(Path path) throws IOException {
@@ -567,7 +648,16 @@ public class LocalDatastoreHelper {
    * Returns a {@link DatastoreOptions} instance that sets the host to use the Datastore emulator on
    * localhost.
    */
+  @Deprecated
   public DatastoreOptions options() {
+    return getOptions();
+  }
+
+  /**
+   * Returns a {@link DatastoreOptions} instance that sets the host to use the Datastore emulator on
+   * localhost.
+   */
+  public DatastoreOptions getOptions() {
     return optionsBuilder().build();
   }
 
@@ -575,21 +665,46 @@ public class LocalDatastoreHelper {
    * Returns a {@link DatastoreOptions} instance that sets the host to use the Datastore emulator on
    * localhost. The default namespace is set to {@code namespace}.
    */
+  @Deprecated
   public DatastoreOptions options(String namespace) {
+    return optionsBuilder().namespace(namespace).build();
+  }
+
+  /**
+   * Returns a {@link DatastoreOptions} instance that sets the host to use the Datastore emulator on
+   * localhost. The default namespace is set to {@code namespace}.
+   */
+  public DatastoreOptions getOptions(String namespace) {
     return optionsBuilder().namespace(namespace).build();
   }
 
   /**
    * Returns the project ID associated with this local Datastore emulator.
    */
+  @Deprecated
   public String projectId() {
+    return projectId;
+  }
+
+  /**
+   * Returns the project ID associated with this local Datastore emulator.
+   */
+  public String getProjectId() {
     return projectId;
   }
 
   /**
    * Returns the consistency setting for the local Datastore emulator.
    */
+  @Deprecated
   public double consistency() {
+    return consistency;
+  }
+
+  /**
+   * Returns the consistency setting for the local Datastore emulator.
+   */
+  public double getConsistency() {
     return consistency;
   }
 

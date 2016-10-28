@@ -143,8 +143,8 @@ final class CloudStorageReadChannel implements SeekableByteChannel {
   private static long fetchSize(Storage gcsStorage, BlobId file) throws IOException {
     BlobInfo blobInfo = gcsStorage.get(file);
     if (blobInfo == null) {
-      throw new NoSuchFileException(String.format("gs://%s/%s", file.bucket(), file.name()));
+      throw new NoSuchFileException(String.format("gs://%s/%s", file.getBucket(), file.getName()));
     }
-    return blobInfo.size();
+    return blobInfo.getSize();
   }
 }

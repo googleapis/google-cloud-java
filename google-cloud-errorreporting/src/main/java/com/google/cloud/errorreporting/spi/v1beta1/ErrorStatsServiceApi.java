@@ -13,7 +13,7 @@
  */
 package com.google.cloud.errorreporting.spi.v1beta1;
 
-import com.google.api.gax.core.PageAccessor;
+import com.google.api.gax.core.PagedListResponse;
 import com.google.api.gax.grpc.ApiCallable;
 import com.google.api.gax.protobuf.PathTemplate;
 import com.google.devtools.clouderrorreporting.v1beta1.DeleteEventsRequest;
@@ -50,28 +50,27 @@ import java.util.concurrent.ScheduledExecutorService;
  * </pre>
  *
  * <p>Note: close() needs to be called on the errorStatsServiceApi object to clean up resources such
- * as threads. In the example above, try-with-resources is used, which automatically calls
- * close().
+ * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
- * <p>The surface of this class includes several types of Java methods for each of the API's methods:
+ * <p>The surface of this class includes several types of Java methods for each of the API's
+ * methods:
  *
  * <ol>
- * <li> A "flattened" method. With this type of method, the fields of the request type have been
- * converted into function parameters. It may be the case that not all fields are available
- * as parameters, and not every API method will have a flattened method entry point.
- * <li> A "request object" method. This type of method only takes one parameter, a request
- * object, which must be constructed before the call. Not every API method will have a request
- * object method.
- * <li> A "callable" method. This type of method takes no parameters and returns an immutable
- * ApiCallable object, which can be used to initiate calls to the service.
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
+ *       converted into function parameters. It may be the case that not all fields are available as
+ *       parameters, and not every API method will have a flattened method entry point.
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
+ *       which must be constructed before the call. Not every API method will have a request object
+ *       method.
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable
+ *       ApiCallable object, which can be used to initiate calls to the service.
  * </ol>
  *
  * <p>See the individual methods for example code.
  *
- * <p>Many parameters require resource names to be formatted in a particular way. To assist
- * with these names, this class includes a format method for each type of name, and additionally
- * a parse method to extract the individual identifiers contained within names that are
- * returned.
+ * <p>Many parameters require resource names to be formatted in a particular way. To assist with
+ * these names, this class includes a format method for each type of name, and additionally a parse
+ * method to extract the individual identifiers contained within names that are returned.
  *
  * <p>This class can be customized by passing in a custom instance of ErrorStatsServiceSettings to
  * create(). For example:
@@ -93,46 +92,37 @@ public class ErrorStatsServiceApi implements AutoCloseable {
   private final List<AutoCloseable> closeables = new ArrayList<>();
 
   private final ApiCallable<ListGroupStatsRequest, ListGroupStatsResponse> listGroupStatsCallable;
-  private final ApiCallable<ListGroupStatsRequest, PageAccessor<ErrorGroupStats>>
+  private final ApiCallable<
+          ListGroupStatsRequest,
+          PagedListResponse<ListGroupStatsRequest, ListGroupStatsResponse, ErrorGroupStats>>
       listGroupStatsPagedCallable;
   private final ApiCallable<ListEventsRequest, ListEventsResponse> listEventsCallable;
-  private final ApiCallable<ListEventsRequest, PageAccessor<ErrorEvent>> listEventsPagedCallable;
+  private final ApiCallable<
+          ListEventsRequest, PagedListResponse<ListEventsRequest, ListEventsResponse, ErrorEvent>>
+      listEventsPagedCallable;
   private final ApiCallable<DeleteEventsRequest, DeleteEventsResponse> deleteEventsCallable;
-
-  public final ErrorStatsServiceSettings getSettings() {
-    return settings;
-  }
 
   private static final PathTemplate PROJECT_PATH_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding("projects/{project}");
 
-  /**
-   * Formats a string containing the fully-qualified path to represent
-   * a project resource.
-   */
+  /** Formats a string containing the fully-qualified path to represent a project resource. */
   public static final String formatProjectName(String project) {
     return PROJECT_PATH_TEMPLATE.instantiate("project", project);
   }
 
-  /**
-   * Parses the project from the given fully-qualified path which
-   * represents a project resource.
-   */
+  /** Parses the project from the given fully-qualified path which represents a project resource. */
   public static final String parseProjectFromProjectName(String projectName) {
     return PROJECT_PATH_TEMPLATE.parse(projectName).get("project");
   }
 
-  /**
-   * Constructs an instance of ErrorStatsServiceApi with default settings.
-   */
+  /** Constructs an instance of ErrorStatsServiceApi with default settings. */
   public static final ErrorStatsServiceApi create() throws IOException {
     return create(ErrorStatsServiceSettings.defaultBuilder().build());
   }
 
   /**
-   * Constructs an instance of ErrorStatsServiceApi, using the given settings.
-   * The channels are created based on the settings passed in, or defaults for any
-   * settings that are not set.
+   * Constructs an instance of ErrorStatsServiceApi, using the given settings. The channels are
+   * created based on the settings passed in, or defaults for any settings that are not set.
    */
   public static final ErrorStatsServiceApi create(ErrorStatsServiceSettings settings)
       throws IOException {
@@ -140,9 +130,8 @@ public class ErrorStatsServiceApi implements AutoCloseable {
   }
 
   /**
-   * Constructs an instance of ErrorStatsServiceApi, using the given settings.
-   * This is protected so that it easy to make a subclass, but otherwise, the static
-   * factory methods should be preferred.
+   * Constructs an instance of ErrorStatsServiceApi, using the given settings. This is protected so
+   * that it easy to make a subclass, but otherwise, the static factory methods should be preferred.
    */
   protected ErrorStatsServiceApi(ErrorStatsServiceSettings settings) throws IOException {
     this.settings = settings;
@@ -181,35 +170,38 @@ public class ErrorStatsServiceApi implements AutoCloseable {
     }
   }
 
+  public final ErrorStatsServiceSettings getSettings() {
+    return settings;
+  }
+
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Lists the specified groups.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (ErrorStatsServiceApi errorStatsServiceApi = ErrorStatsServiceApi.create()) {
    *   String formattedProjectName = ErrorStatsServiceApi.formatProjectName("[PROJECT]");
    *   QueryTimeRange timeRange = QueryTimeRange.newBuilder().build();
-   *   for (ErrorGroupStats element : errorStatsServiceApi.listGroupStats(formattedProjectName, timeRange)) {
+   *   for (ErrorGroupStats element : errorStatsServiceApi.listGroupStats(formattedProjectName, timeRange).iterateAllElements()) {
    *     // doThingsWith(element);
    *   }
    * }
    * </code></pre>
    *
    * @param projectName [Required] The resource name of the Google Cloud Platform project. Written
-   * as &lt;code&gt;projects/&lt;/code&gt; plus the
-   * &lt;a href="https://support.google.com/cloud/answer/6158840"&gt;Google Cloud
-   * Platform project ID&lt;/a&gt;.
-   *
-   * Example: &lt;code&gt;projects/my-project-123&lt;/code&gt;.
-   * @param timeRange [Required] List data for the given time range.
-   * The service is tuned for retrieving data up to (approximately) 'now'.
-   * Retrieving data for arbitrary time periods in the past can result in
-   * higher response times or in returning incomplete results.
+   *     as &lt;code&gt;projects/&lt;/code&gt; plus the &lt;a
+   *     href="https://support.google.com/cloud/answer/6158840"&gt;Google Cloud Platform project
+   *     ID&lt;/a&gt;.
+   *     <p>Example: &lt;code&gt;projects/my-project-123&lt;/code&gt;.
+   * @param timeRange [Required] List data for the given time range. The service is tuned for
+   *     retrieving data up to (approximately) 'now'. Retrieving data for arbitrary time periods in
+   *     the past can result in higher response times or in returning incomplete results.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  public final PageAccessor<ErrorGroupStats> listGroupStats(
-      String projectName, QueryTimeRange timeRange) {
+  public final PagedListResponse<ListGroupStatsRequest, ListGroupStatsResponse, ErrorGroupStats>
+      listGroupStats(String projectName, QueryTimeRange timeRange) {
     PROJECT_PATH_TEMPLATE.validate(projectName, "listGroupStats");
     ListGroupStatsRequest request =
         ListGroupStatsRequest.newBuilder()
@@ -223,7 +215,8 @@ public class ErrorStatsServiceApi implements AutoCloseable {
   /**
    * Lists the specified groups.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (ErrorStatsServiceApi errorStatsServiceApi = ErrorStatsServiceApi.create()) {
    *   String formattedProjectName = ErrorStatsServiceApi.formatProjectName("[PROJECT]");
@@ -232,7 +225,7 @@ public class ErrorStatsServiceApi implements AutoCloseable {
    *     .setProjectName(formattedProjectName)
    *     .setTimeRange(timeRange)
    *     .build();
-   *   for (ErrorGroupStats element : errorStatsServiceApi.listGroupStats(request)) {
+   *   for (ErrorGroupStats element : errorStatsServiceApi.listGroupStats(request).iterateAllElements()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -241,7 +234,8 @@ public class ErrorStatsServiceApi implements AutoCloseable {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  public final PageAccessor<ErrorGroupStats> listGroupStats(ListGroupStatsRequest request) {
+  public final PagedListResponse<ListGroupStatsRequest, ListGroupStatsResponse, ErrorGroupStats>
+      listGroupStats(ListGroupStatsRequest request) {
     return listGroupStatsPagedCallable().call(request);
   }
 
@@ -249,7 +243,8 @@ public class ErrorStatsServiceApi implements AutoCloseable {
   /**
    * Lists the specified groups.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (ErrorStatsServiceApi errorStatsServiceApi = ErrorStatsServiceApi.create()) {
    *   String formattedProjectName = ErrorStatsServiceApi.formatProjectName("[PROJECT]");
@@ -258,15 +253,17 @@ public class ErrorStatsServiceApi implements AutoCloseable {
    *     .setProjectName(formattedProjectName)
    *     .setTimeRange(timeRange)
    *     .build();
-   *   ListenableFuture&lt;PageAccessor&lt;ErrorGroupStats&gt;&gt; future = errorStatsServiceApi.listGroupStatsPagedCallable().futureCall(request);
+   *   ListenableFuture&lt;PagedListResponse&lt;ListGroupStatsRequest,ListGroupStatsResponse,ErrorGroupStats&gt;&gt; future = errorStatsServiceApi.listGroupStatsPagedCallable().futureCall(request);
    *   // Do something
-   *   for (ErrorGroupStats element : future.get()) {
+   *   for (ErrorGroupStats element : future.get().iterateAllElements()) {
    *     // doThingsWith(element);
    *   }
    * }
    * </code></pre>
    */
-  public final ApiCallable<ListGroupStatsRequest, PageAccessor<ErrorGroupStats>>
+  public final ApiCallable<
+          ListGroupStatsRequest,
+          PagedListResponse<ListGroupStatsRequest, ListGroupStatsResponse, ErrorGroupStats>>
       listGroupStatsPagedCallable() {
     return listGroupStatsPagedCallable;
   }
@@ -275,7 +272,8 @@ public class ErrorStatsServiceApi implements AutoCloseable {
   /**
    * Lists the specified groups.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (ErrorStatsServiceApi errorStatsServiceApi = ErrorStatsServiceApi.create()) {
    *   String formattedProjectName = ErrorStatsServiceApi.formatProjectName("[PROJECT]");
@@ -307,25 +305,26 @@ public class ErrorStatsServiceApi implements AutoCloseable {
   /**
    * Lists the specified events.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (ErrorStatsServiceApi errorStatsServiceApi = ErrorStatsServiceApi.create()) {
    *   String formattedProjectName = ErrorStatsServiceApi.formatProjectName("[PROJECT]");
    *   String groupId = "";
-   *   for (ErrorEvent element : errorStatsServiceApi.listEvents(formattedProjectName, groupId)) {
+   *   for (ErrorEvent element : errorStatsServiceApi.listEvents(formattedProjectName, groupId).iterateAllElements()) {
    *     // doThingsWith(element);
    *   }
    * }
    * </code></pre>
    *
    * @param projectName [Required] The resource name of the Google Cloud Platform project. Written
-   * as `projects/` plus the
-   * [Google Cloud Platform project ID](https://support.google.com/cloud/answer/6158840).
-   * Example: `projects/my-project-123`.
+   *     as `projects/` plus the [Google Cloud Platform project
+   *     ID](https://support.google.com/cloud/answer/6158840). Example: `projects/my-project-123`.
    * @param groupId [Required] The group for which events shall be returned.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  public final PageAccessor<ErrorEvent> listEvents(String projectName, String groupId) {
+  public final PagedListResponse<ListEventsRequest, ListEventsResponse, ErrorEvent> listEvents(
+      String projectName, String groupId) {
     PROJECT_PATH_TEMPLATE.validate(projectName, "listEvents");
     ListEventsRequest request =
         ListEventsRequest.newBuilder().setProjectName(projectName).setGroupId(groupId).build();
@@ -336,7 +335,8 @@ public class ErrorStatsServiceApi implements AutoCloseable {
   /**
    * Lists the specified events.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (ErrorStatsServiceApi errorStatsServiceApi = ErrorStatsServiceApi.create()) {
    *   String formattedProjectName = ErrorStatsServiceApi.formatProjectName("[PROJECT]");
@@ -345,7 +345,7 @@ public class ErrorStatsServiceApi implements AutoCloseable {
    *     .setProjectName(formattedProjectName)
    *     .setGroupId(groupId)
    *     .build();
-   *   for (ErrorEvent element : errorStatsServiceApi.listEvents(request)) {
+   *   for (ErrorEvent element : errorStatsServiceApi.listEvents(request).iterateAllElements()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -354,7 +354,8 @@ public class ErrorStatsServiceApi implements AutoCloseable {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  public final PageAccessor<ErrorEvent> listEvents(ListEventsRequest request) {
+  public final PagedListResponse<ListEventsRequest, ListEventsResponse, ErrorEvent> listEvents(
+      ListEventsRequest request) {
     return listEventsPagedCallable().call(request);
   }
 
@@ -362,7 +363,8 @@ public class ErrorStatsServiceApi implements AutoCloseable {
   /**
    * Lists the specified events.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (ErrorStatsServiceApi errorStatsServiceApi = ErrorStatsServiceApi.create()) {
    *   String formattedProjectName = ErrorStatsServiceApi.formatProjectName("[PROJECT]");
@@ -371,15 +373,17 @@ public class ErrorStatsServiceApi implements AutoCloseable {
    *     .setProjectName(formattedProjectName)
    *     .setGroupId(groupId)
    *     .build();
-   *   ListenableFuture&lt;PageAccessor&lt;ErrorEvent&gt;&gt; future = errorStatsServiceApi.listEventsPagedCallable().futureCall(request);
+   *   ListenableFuture&lt;PagedListResponse&lt;ListEventsRequest,ListEventsResponse,ErrorEvent&gt;&gt; future = errorStatsServiceApi.listEventsPagedCallable().futureCall(request);
    *   // Do something
-   *   for (ErrorEvent element : future.get()) {
+   *   for (ErrorEvent element : future.get().iterateAllElements()) {
    *     // doThingsWith(element);
    *   }
    * }
    * </code></pre>
    */
-  public final ApiCallable<ListEventsRequest, PageAccessor<ErrorEvent>> listEventsPagedCallable() {
+  public final ApiCallable<
+          ListEventsRequest, PagedListResponse<ListEventsRequest, ListEventsResponse, ErrorEvent>>
+      listEventsPagedCallable() {
     return listEventsPagedCallable;
   }
 
@@ -387,7 +391,8 @@ public class ErrorStatsServiceApi implements AutoCloseable {
   /**
    * Lists the specified events.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (ErrorStatsServiceApi errorStatsServiceApi = ErrorStatsServiceApi.create()) {
    *   String formattedProjectName = ErrorStatsServiceApi.formatProjectName("[PROJECT]");
@@ -419,7 +424,8 @@ public class ErrorStatsServiceApi implements AutoCloseable {
   /**
    * Deletes all error events of a given project.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (ErrorStatsServiceApi errorStatsServiceApi = ErrorStatsServiceApi.create()) {
    *   String formattedProjectName = ErrorStatsServiceApi.formatProjectName("[PROJECT]");
@@ -428,9 +434,8 @@ public class ErrorStatsServiceApi implements AutoCloseable {
    * </code></pre>
    *
    * @param projectName [Required] The resource name of the Google Cloud Platform project. Written
-   * as `projects/` plus the
-   * [Google Cloud Platform project ID](https://support.google.com/cloud/answer/6158840).
-   * Example: `projects/my-project-123`.
+   *     as `projects/` plus the [Google Cloud Platform project
+   *     ID](https://support.google.com/cloud/answer/6158840). Example: `projects/my-project-123`.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final DeleteEventsResponse deleteEvents(String projectName) {
@@ -444,7 +449,8 @@ public class ErrorStatsServiceApi implements AutoCloseable {
   /**
    * Deletes all error events of a given project.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (ErrorStatsServiceApi errorStatsServiceApi = ErrorStatsServiceApi.create()) {
    *   String formattedProjectName = ErrorStatsServiceApi.formatProjectName("[PROJECT]");
@@ -466,7 +472,8 @@ public class ErrorStatsServiceApi implements AutoCloseable {
   /**
    * Deletes all error events of a given project.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (ErrorStatsServiceApi errorStatsServiceApi = ErrorStatsServiceApi.create()) {
    *   String formattedProjectName = ErrorStatsServiceApi.formatProjectName("[PROJECT]");

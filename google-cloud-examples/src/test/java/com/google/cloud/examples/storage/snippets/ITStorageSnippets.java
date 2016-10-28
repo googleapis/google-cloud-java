@@ -74,7 +74,7 @@ public class ITStorageSnippets {
   @BeforeClass
   public static void beforeClass() {
     RemoteStorageHelper helper = RemoteStorageHelper.create();
-    storage = helper.options().service();
+    storage = helper.getOptions().service();
     storageSnippets = new StorageSnippets(storage);
     storageSnippets.createBucket(BUCKET);
   }
@@ -110,7 +110,7 @@ public class ITStorageSnippets {
     Set<String> blobNames = new HashSet<>();
     Iterator<Blob> blobIterator = blobs.iterateAll();
     while (blobIterator.hasNext()) {
-      blobNames.add(blobIterator.next().name());
+      blobNames.add(blobIterator.next().getName());
     }
     assertTrue(blobNames.contains(blobName));
     assertTrue(blobNames.contains("directory/copy-blob"));
@@ -137,7 +137,8 @@ public class ITStorageSnippets {
     } catch (StorageException ex) {
       // expected
     }
-    assertTrue(storageSnippets.deleteBlobFromIdWithGeneration(BUCKET, blobName, blob.generation()));
+    assertTrue(
+        storageSnippets.deleteBlobFromIdWithGeneration(BUCKET, blobName, blob.getGeneration()));
     copiedBlob.delete();
   }
 
@@ -147,7 +148,7 @@ public class ITStorageSnippets {
         storageSnippets.createBlobFromInputStream(BUCKET, "test-create-blob-from-input-stream");
     assertNotNull(blob);
     assertTrue(storageSnippets.deleteBlobFromIdWithGeneration(
-        BUCKET, "test-create-blob-from-input-stream", blob.generation()));
+        BUCKET, "test-create-blob-from-input-stream", blob.getGeneration()));
   }
 
   @Test
@@ -165,7 +166,7 @@ public class ITStorageSnippets {
     }
     Iterator<Bucket> bucketIterator = buckets.iterateAll();
     while (bucketIterator.hasNext()) {
-      assertTrue(bucketIterator.next().name().startsWith(BUCKET));
+      assertTrue(bucketIterator.next().getName().startsWith(BUCKET));
     }
   }
 
@@ -185,8 +186,8 @@ public class ITStorageSnippets {
     String blobName = "my_blob_name";
     String sourceBlobName1 = "source_blob_1";
     String sourceBlobName2 = "source_blob_2";
-    BlobInfo blobInfo1 = BlobInfo.builder(BUCKET, sourceBlobName1).build();
-    BlobInfo blobInfo2 = BlobInfo.builder(BUCKET, sourceBlobName2).build();
+    BlobInfo blobInfo1 = BlobInfo.newBuilder(BUCKET, sourceBlobName1).build();
+    BlobInfo blobInfo2 = BlobInfo.newBuilder(BUCKET, sourceBlobName2).build();
     storage.create(blobInfo1);
     storage.create(blobInfo2);
     assertNotNull(storageSnippets.composeBlobs(BUCKET, blobName, sourceBlobName1, sourceBlobName2));
@@ -197,10 +198,11 @@ public class ITStorageSnippets {
     String blobName = "text-read-write-sign-url";
     byte[] content = "Hello, World!".getBytes(UTF_8);
     Blob blob = storage.create(
-        BlobInfo.builder(BUCKET, blobName).build(), content);
-    assertArrayEquals(content, storageSnippets.readBlobFromId(BUCKET, blobName, blob.generation()));
+        BlobInfo.newBuilder(BUCKET, blobName).build(), content);
     assertArrayEquals(content,
-        storageSnippets.readBlobFromStringsWithGeneration(BUCKET, blobName, blob.generation()));
+        storageSnippets.readBlobFromId(BUCKET, blobName, blob.getGeneration()));
+    assertArrayEquals(content,
+        storageSnippets.readBlobFromStringsWithGeneration(BUCKET, blobName, blob.getGeneration()));
     storageSnippets.readerFromId(BUCKET, blobName);
     storageSnippets.readerFromStrings(BUCKET, blobName);
     storageSnippets.writer(BUCKET, blobName);
@@ -225,16 +227,16 @@ public class ITStorageSnippets {
   public void testBatch() throws IOException {
     String blobName1 = "test-batch1";
     String blobName2 = "test-batch2";
-    storage.create(BlobInfo.builder(BUCKET, blobName1).build());
-    storage.create(BlobInfo.builder(BUCKET, blobName2).build());
+    storage.create(BlobInfo.newBuilder(BUCKET, blobName1).build());
+    storage.create(BlobInfo.newBuilder(BUCKET, blobName2).build());
     List<Blob> blobs = storageSnippets.batchGet(BUCKET, blobName1, blobName2);
-    assertEquals(blobName1, blobs.get(0).name());
-    assertEquals(blobName2, blobs.get(1).name());
+    assertEquals(blobName1, blobs.get(0).getName());
+    assertEquals(blobName2, blobs.get(1).getName());
     blobs = storageSnippets.batchUpdate(BUCKET, blobName1, blobName2);
-    assertEquals(blobName1, blobs.get(0).name());
-    assertEquals(blobName2, blobs.get(1).name());
-    assertEquals("text/plain", blobs.get(0).contentType());
-    assertEquals("text/plain", blobs.get(1).contentType());
+    assertEquals(blobName1, blobs.get(0).getName());
+    assertEquals(blobName2, blobs.get(1).getName());
+    assertEquals("text/plain", blobs.get(0).getContentType());
+    assertEquals("text/plain", blobs.get(1).getContentType());
     assertNotNull(storageSnippets.batch(BUCKET, blobName1, blobName2));
     List<Boolean> deleted = storageSnippets.batchDelete(BUCKET, blobName1, blobName2);
     assertFalse(deleted.get(0));
@@ -245,16 +247,16 @@ public class ITStorageSnippets {
   public void testBatchIterable() throws IOException {
     String blobName1 = "test-batch-iterable1";
     String blobName2 = "test-batch-iterable2";
-    storage.create(BlobInfo.builder(BUCKET, blobName1).build());
-    storage.create(BlobInfo.builder(BUCKET, blobName2).build());
+    storage.create(BlobInfo.newBuilder(BUCKET, blobName1).build());
+    storage.create(BlobInfo.newBuilder(BUCKET, blobName2).build());
     List<Blob> blobs = storageSnippets.batchGetIterable(BUCKET, blobName1, blobName2);
-    assertEquals(blobName1, blobs.get(0).name());
-    assertEquals(blobName2, blobs.get(1).name());
+    assertEquals(blobName1, blobs.get(0).getName());
+    assertEquals(blobName2, blobs.get(1).getName());
     blobs = storageSnippets.batchUpdateIterable(BUCKET, blobName1, blobName2);
-    assertEquals(blobName1, blobs.get(0).name());
-    assertEquals(blobName2, blobs.get(1).name());
-    assertEquals("text/plain", blobs.get(0).contentType());
-    assertEquals("text/plain", blobs.get(1).contentType());
+    assertEquals(blobName1, blobs.get(0).getName());
+    assertEquals(blobName2, blobs.get(1).getName());
+    assertEquals("text/plain", blobs.get(0).getContentType());
+    assertEquals("text/plain", blobs.get(1).getContentType());
     assertNotNull(storageSnippets.batch(BUCKET, blobName1, blobName2));
     List<Boolean> deleted = storageSnippets.batchDeleteIterable(BUCKET, blobName1, blobName2);
     assertFalse(deleted.get(0));
@@ -267,7 +269,7 @@ public class ITStorageSnippets {
     assertFalse(storageSnippets.deleteBucketAcl(BUCKET));
     assertNotNull(storageSnippets.createBucketAcl(BUCKET));
     Acl updatedAcl = storageSnippets.updateBucketAcl(BUCKET);
-    assertEquals(Acl.Role.OWNER, updatedAcl.role());
+    assertEquals(Acl.Role.OWNER, updatedAcl.getRole());
     Set<Acl> acls = Sets.newHashSet(storageSnippets.listBucketAcls(BUCKET));
     assertTrue(acls.contains(updatedAcl));
     assertTrue(storageSnippets.deleteBucketAcl(BUCKET));
@@ -280,7 +282,7 @@ public class ITStorageSnippets {
     assertFalse(storageSnippets.deleteDefaultBucketAcl(BUCKET));
     assertNotNull(storageSnippets.createDefaultBucketAcl(BUCKET));
     Acl updatedAcl = storageSnippets.updateDefaultBucketAcl(BUCKET);
-    assertEquals(Acl.Role.OWNER, updatedAcl.role());
+    assertEquals(Acl.Role.OWNER, updatedAcl.getRole());
     Set<Acl> acls = Sets.newHashSet(storageSnippets.listDefaultBucketAcls(BUCKET));
     assertTrue(acls.contains(updatedAcl));
     assertTrue(storageSnippets.deleteDefaultBucketAcl(BUCKET));
@@ -291,17 +293,17 @@ public class ITStorageSnippets {
   public void testBlobAcl() {
     String blobName = "test-blob-acl";
     BlobId blobId = BlobId.of(BUCKET, "test-blob-acl");
-    BlobInfo blob = BlobInfo.builder(blobId).build();
+    BlobInfo blob = BlobInfo.newBuilder(blobId).build();
     Blob createdBlob = storage.create(blob);
-    assertNull(storageSnippets.getBlobAcl(BUCKET, blobName, createdBlob.generation()));
-    assertNotNull(storageSnippets.createBlobAcl(BUCKET, blobName, createdBlob.generation()));
-    Acl updatedAcl = storageSnippets.updateBlobAcl(BUCKET, blobName, createdBlob.generation());
-    assertEquals(Acl.Role.OWNER, updatedAcl.role());
-    Set<Acl> acls =
-        Sets.newHashSet(storageSnippets.listBlobAcls(BUCKET, blobName, createdBlob.generation()));
+    assertNull(storageSnippets.getBlobAcl(BUCKET, blobName, createdBlob.getGeneration()));
+    assertNotNull(storageSnippets.createBlobAcl(BUCKET, blobName, createdBlob.getGeneration()));
+    Acl updatedAcl = storageSnippets.updateBlobAcl(BUCKET, blobName, createdBlob.getGeneration());
+    assertEquals(Acl.Role.OWNER, updatedAcl.getRole());
+    Set<Acl> acls = Sets.newHashSet(
+        storageSnippets.listBlobAcls(BUCKET, blobName, createdBlob.getGeneration()));
     assertTrue(acls.contains(updatedAcl));
-    assertTrue(storageSnippets.deleteBlobAcl(BUCKET, blobName, createdBlob.generation()));
-    assertNull(storageSnippets.getBlobAcl(BUCKET, blobName, createdBlob.generation()));
+    assertTrue(storageSnippets.deleteBlobAcl(BUCKET, blobName, createdBlob.getGeneration()));
+    assertNull(storageSnippets.getBlobAcl(BUCKET, blobName, createdBlob.getGeneration()));
     // test non-existing blob
     String nonExistingBlob = "test-blob-acl";
     assertNull(storageSnippets.getBlobAcl(BUCKET, nonExistingBlob, -1L));

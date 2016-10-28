@@ -42,6 +42,15 @@ public class StringValueTest {
   @SuppressWarnings("deprecation")
   @Test
   public void testBuilder() throws Exception {
+    StringValue.Builder builder = StringValue.newBuilder(CONTENT);
+    StringValue value = builder.setMeaning(1).setExcludeFromIndexes(true).build();
+    assertEquals(CONTENT, value.get());
+    assertEquals(1, value.getMeaning());
+    assertTrue(value.excludeFromIndexes());
+  }
+
+  @Test
+  public void testBuilderDeprecated() throws Exception {
     StringValue.Builder builder = StringValue.builder(CONTENT);
     StringValue value = builder.meaning(1).excludeFromIndexes(true).build();
     assertEquals(CONTENT, value.get());

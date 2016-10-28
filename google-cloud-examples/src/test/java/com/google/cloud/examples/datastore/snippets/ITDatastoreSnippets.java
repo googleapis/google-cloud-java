@@ -69,22 +69,22 @@ public class ITDatastoreSnippets {
   }
 
   private String registerKey(String keyName, String kind) {
-    Key key = datastore.newKeyFactory().kind(kind).newKey(keyName);
+    Key key = datastore.newKeyFactory().setKind(kind).newKey(keyName);
     registeredKeys.add(key);
-    return key.name();
+    return key.getName();
   }
 
   private Map<String, Entity> createEntityMap(List<Entity> entities) {
     Map<String, Entity> entityMap = new HashMap<>();
     for (Entity entity : entities) {
-      entityMap.put(entity.key().name(), entity);
+      entityMap.put(entity.getKey().getName(), entity);
     }
     return entityMap;
   }
 
   private void addEntity(String keyName, String keyClass, String property, String value) {
-    Key key = datastore.newKeyFactory().kind(keyClass).newKey(keyName);
-    Entity.Builder entityBuilder = Entity.builder(key);
+    Key key = datastore.newKeyFactory().setKind(keyClass).newKey(keyName);
+    Entity.Builder entityBuilder = Entity.newBuilder(key);
     entityBuilder.set(property, value);
     Entity entity = entityBuilder.build();
     datastore.put(entity);

@@ -771,7 +771,6 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
    * <pre> {@code
    * String subscriptionName = "my_subscription_name";
    * MessageProcessor callback = new MessageProcessor() {
-   *   @Override
    *   public void process(Message message) throws Exception {
    *     // Ack deadline is renewed until this method returns
    *     // Message is acked if this method returns successfully

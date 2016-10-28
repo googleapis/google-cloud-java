@@ -76,25 +76,52 @@ public final class BigQueryError implements Serializable {
    * @see <a href="https://cloud.google.com/bigquery/troubleshooting-errors">Troubleshooting
    *     Errors</a>
    */
+  @Deprecated
   public String reason() {
+    return getReason();
+  }
+
+  /**
+   * Returns short error code that summarizes the error.
+   *
+   * @see <a href="https://cloud.google.com/bigquery/troubleshooting-errors">Troubleshooting
+   *     Errors</a>
+   */
+  public String getReason() {
     return reason;
   }
 
   /**
    * Returns where the error occurred, if present.
    */
+  @Deprecated
   public String location() {
+    return getLocation();
+  }
+
+  /**
+   * Returns where the error occurred, if present.
+   */
+  public String getLocation() {
     return location;
   }
 
-  String debugInfo() {
+  String getDebugInfo() {
     return debugInfo;
   }
 
   /**
    * Returns a human-readable description of the error.
    */
+  @Deprecated
   public String message() {
+    return getMessage();
+  }
+
+  /**
+   * Returns a human-readable description of the error.
+   */
+  public String getMessage() {
     return message;
   }
 

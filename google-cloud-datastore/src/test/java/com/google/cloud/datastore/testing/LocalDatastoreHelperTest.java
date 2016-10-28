@@ -17,15 +17,25 @@
 package com.google.cloud.datastore.testing;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
 import com.google.cloud.AuthCredentials;
+import com.google.cloud.datastore.Datastore;
+import com.google.cloud.datastore.DatastoreException;
 import com.google.cloud.datastore.DatastoreOptions;
+import com.google.cloud.datastore.Entity;
+import com.google.cloud.datastore.Key;
 
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
+
+import java.io.IOException;
 
 @RunWith(JUnit4.class)
 public class LocalDatastoreHelperTest {
@@ -34,8 +44,21 @@ public class LocalDatastoreHelperTest {
   private static final String PROJECT_ID_PREFIX = "test-project-";
   private static final String NAMESPACE = "namespace";
 
+  @Rule
+  public ExpectedException thrown = ExpectedException.none();
+
   @Test
   public void testCreate() {
+    LocalDatastoreHelper helper = LocalDatastoreHelper.create(0.75);
+    assertTrue(Math.abs(0.75 - helper.getConsistency()) < TOLERANCE);
+    assertTrue(helper.getProjectId().startsWith(PROJECT_ID_PREFIX));
+    helper = LocalDatastoreHelper.create();
+    assertTrue(Math.abs(0.9 - helper.getConsistency()) < TOLERANCE);
+    assertTrue(helper.getProjectId().startsWith(PROJECT_ID_PREFIX));
+  }
+
+  @Test
+  public void testCreateDeprecated() {
     LocalDatastoreHelper helper = LocalDatastoreHelper.create(0.75);
     assertTrue(Math.abs(0.75 - helper.consistency()) < TOLERANCE);
     assertTrue(helper.projectId().startsWith(PROJECT_ID_PREFIX));
@@ -47,14 +70,29 @@ public class LocalDatastoreHelperTest {
   @Test
   public void testOptions() {
     LocalDatastoreHelper helper = LocalDatastoreHelper.create();
-    DatastoreOptions options = helper.options();
+    DatastoreOptions options = helper.getOptions();
     assertTrue(options.projectId().startsWith(PROJECT_ID_PREFIX));
     assertTrue(options.host().startsWith("localhost:"));
     assertSame(AuthCredentials.noAuth(), options.authCredentials());
-    options = helper.options(NAMESPACE);
+    options = helper.getOptions(NAMESPACE);
     assertTrue(options.projectId().startsWith(PROJECT_ID_PREFIX));
     assertTrue(options.host().startsWith("localhost:"));
     assertSame(AuthCredentials.noAuth(), options.authCredentials());
     assertEquals(NAMESPACE, options.namespace());
+  }
+
+  @Test
+  public void testStartStopReset() throws IOException, InterruptedException {
+    LocalDatastoreHelper helper = LocalDatastoreHelper.create();
+    helper.start();
+    Datastore datastore = helper.getOptions().service();
+    Key key = datastore.newKeyFactory().setKind("kind").newKey("name");
+    datastore.put(Entity.newBuilder(key).build());
+    assertNotNull(datastore.get(key));
+    helper.reset();
+    assertNull(datastore.get(key));
+    helper.stop();
+    thrown.expect(DatastoreException.class);
+    datastore.get(key);
   }
 }

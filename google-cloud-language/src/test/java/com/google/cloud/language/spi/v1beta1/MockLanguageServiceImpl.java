@@ -20,9 +20,9 @@ import com.google.cloud.language.v1beta1.AnalyzeSentimentRequest;
 import com.google.cloud.language.v1beta1.AnalyzeSentimentResponse;
 import com.google.cloud.language.v1beta1.AnnotateTextRequest;
 import com.google.cloud.language.v1beta1.AnnotateTextResponse;
-import com.google.cloud.language.v1beta1.LanguageServiceGrpc.LanguageService;
+import com.google.cloud.language.v1beta1.LanguageServiceGrpc.LanguageServiceImplBase;
 import com.google.common.collect.Lists;
-import com.google.protobuf.GeneratedMessage;
+import com.google.protobuf.GeneratedMessageV3;
 import io.grpc.stub.StreamObserver;
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -30,20 +30,20 @@ import java.util.List;
 import java.util.Queue;
 
 @javax.annotation.Generated("by GAPIC")
-public class MockLanguageServiceImpl implements LanguageService {
-  private ArrayList<GeneratedMessage> requests;
-  private Queue<GeneratedMessage> responses;
+public class MockLanguageServiceImpl extends LanguageServiceImplBase {
+  private ArrayList<GeneratedMessageV3> requests;
+  private Queue<GeneratedMessageV3> responses;
 
   public MockLanguageServiceImpl() {
     requests = new ArrayList<>();
     responses = new LinkedList<>();
   }
 
-  public List<GeneratedMessage> getRequests() {
+  public List<GeneratedMessageV3> getRequests() {
     return requests;
   }
 
-  public void setResponses(List<GeneratedMessage> responses) {
+  public void setResponses(List<GeneratedMessageV3> responses) {
     this.responses = Lists.newLinkedList(responses);
   }
 

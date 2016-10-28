@@ -43,10 +43,10 @@ public class ListValueTest {
   private static final DateTime DATETIME2 = new DateTime(2);
   private static final LatLng LATLNG1 = LatLng.of(DOUBLE1, DOUBLE2);
   private static final LatLng LATLNG2 = LatLng.of(DOUBLE2, DOUBLE1);
-  private static final Key KEY1 = Key.builder("project", "kind", "name1").build();
-  private static final Key KEY2 = Key.builder("project", "kind", "name2").build();
-  private static final FullEntity<Key> ENTITY1 = FullEntity.builder(KEY1).build();
-  private static final FullEntity<Key> ENTITY2 = FullEntity.builder(KEY2).build();
+  private static final Key KEY1 = Key.newBuilder("project", "kind", "name1").build();
+  private static final Key KEY2 = Key.newBuilder("project", "kind", "name2").build();
+  private static final FullEntity<Key> ENTITY1 = FullEntity.newBuilder(KEY1).build();
+  private static final FullEntity<Key> ENTITY2 = FullEntity.newBuilder(KEY2).build();
   private static final Blob BLOB1 = Blob.copyFrom(new byte[]{0xD, 0xE, 0xA, 0xD});
   private static final Blob BLOB2 = Blob.copyFrom(new byte[]{0xB, 0x0, 0x0, 0x0});
 
@@ -107,13 +107,13 @@ public class ListValueTest {
   @SuppressWarnings("deprecation")
   @Test
   public void testBuilder() throws Exception {
-    ListValue.Builder builder = ListValue.builder().set(CONTENT);
-    ListValue value = builder.meaning(1).excludeFromIndexes(true).build();
+    ListValue.Builder builder = ListValue.newBuilder().set(CONTENT);
+    ListValue value = builder.setMeaning(1).setExcludeFromIndexes(true).build();
     assertEquals(CONTENT, value.get());
-    assertEquals(1, value.meaning());
+    assertEquals(1, value.getMeaning());
     assertTrue(value.excludeFromIndexes());
 
-    builder = ListValue.builder();
+    builder = ListValue.newBuilder();
     for (Value<?> v : CONTENT) {
       builder.addValue(v);
     }
@@ -198,5 +198,20 @@ public class ListValueTest {
 
     builder = builder.addValue(BLOB1, BLOB2);
     assertEquals(ImmutableList.of(BlobValue.of(BLOB1), BlobValue.of(BLOB2)), builder.build().get());
+  }
+
+  @Test
+  public void testBuilderDeprecated() throws Exception {
+    ListValue.Builder builder = ListValue.builder().set(CONTENT);
+    ListValue value = builder.meaning(1).excludeFromIndexes(true).build();
+    assertEquals(CONTENT, value.get());
+    assertEquals(1, value.meaning());
+    assertTrue(value.excludeFromIndexes());
+
+    builder = ListValue.builder();
+    for (Value<?> v : CONTENT) {
+      builder.addValue(v);
+    }
+    assertEquals(CONTENT, builder.build().get());
   }
 }

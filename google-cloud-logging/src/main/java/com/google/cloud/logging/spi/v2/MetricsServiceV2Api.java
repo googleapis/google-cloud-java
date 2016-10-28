@@ -13,7 +13,7 @@
  */
 package com.google.cloud.logging.spi.v2;
 
-import com.google.api.gax.core.PageAccessor;
+import com.google.api.gax.core.PagedListResponse;
 import com.google.api.gax.grpc.ApiCallable;
 import com.google.api.gax.protobuf.PathTemplate;
 import com.google.logging.v2.CreateLogMetricRequest;
@@ -48,28 +48,27 @@ import java.util.concurrent.ScheduledExecutorService;
  * </pre>
  *
  * <p>Note: close() needs to be called on the metricsServiceV2Api object to clean up resources such
- * as threads. In the example above, try-with-resources is used, which automatically calls
- * close().
+ * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
- * <p>The surface of this class includes several types of Java methods for each of the API's methods:
+ * <p>The surface of this class includes several types of Java methods for each of the API's
+ * methods:
  *
  * <ol>
- * <li> A "flattened" method. With this type of method, the fields of the request type have been
- * converted into function parameters. It may be the case that not all fields are available
- * as parameters, and not every API method will have a flattened method entry point.
- * <li> A "request object" method. This type of method only takes one parameter, a request
- * object, which must be constructed before the call. Not every API method will have a request
- * object method.
- * <li> A "callable" method. This type of method takes no parameters and returns an immutable
- * ApiCallable object, which can be used to initiate calls to the service.
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
+ *       converted into function parameters. It may be the case that not all fields are available as
+ *       parameters, and not every API method will have a flattened method entry point.
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
+ *       which must be constructed before the call. Not every API method will have a request object
+ *       method.
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable
+ *       ApiCallable object, which can be used to initiate calls to the service.
  * </ol>
  *
  * <p>See the individual methods for example code.
  *
- * <p>Many parameters require resource names to be formatted in a particular way. To assist
- * with these names, this class includes a format method for each type of name, and additionally
- * a parse method to extract the individual identifiers contained within names that are
- * returned.
+ * <p>Many parameters require resource names to be formatted in a particular way. To assist with
+ * these names, this class includes a format method for each type of name, and additionally a parse
+ * method to extract the individual identifiers contained within names that are returned.
  *
  * <p>This class can be customized by passing in a custom instance of MetricsServiceV2Settings to
  * create(). For example:
@@ -91,16 +90,14 @@ public class MetricsServiceV2Api implements AutoCloseable {
   private final List<AutoCloseable> closeables = new ArrayList<>();
 
   private final ApiCallable<ListLogMetricsRequest, ListLogMetricsResponse> listLogMetricsCallable;
-  private final ApiCallable<ListLogMetricsRequest, PageAccessor<LogMetric>>
+  private final ApiCallable<
+          ListLogMetricsRequest,
+          PagedListResponse<ListLogMetricsRequest, ListLogMetricsResponse, LogMetric>>
       listLogMetricsPagedCallable;
   private final ApiCallable<GetLogMetricRequest, LogMetric> getLogMetricCallable;
   private final ApiCallable<CreateLogMetricRequest, LogMetric> createLogMetricCallable;
   private final ApiCallable<UpdateLogMetricRequest, LogMetric> updateLogMetricCallable;
   private final ApiCallable<DeleteLogMetricRequest, Empty> deleteLogMetricCallable;
-
-  public final MetricsServiceV2Settings getSettings() {
-    return settings;
-  }
 
   private static final PathTemplate PARENT_PATH_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding("projects/{project}");
@@ -108,59 +105,41 @@ public class MetricsServiceV2Api implements AutoCloseable {
   private static final PathTemplate METRIC_PATH_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding("projects/{project}/metrics/{metric}");
 
-  /**
-   * Formats a string containing the fully-qualified path to represent
-   * a parent resource.
-   */
+  /** Formats a string containing the fully-qualified path to represent a parent resource. */
   public static final String formatParentName(String project) {
     return PARENT_PATH_TEMPLATE.instantiate("project", project);
   }
 
-  /**
-   * Formats a string containing the fully-qualified path to represent
-   * a metric resource.
-   */
+  /** Formats a string containing the fully-qualified path to represent a metric resource. */
   public static final String formatMetricName(String project, String metric) {
     return METRIC_PATH_TEMPLATE.instantiate(
         "project", project,
         "metric", metric);
   }
 
-  /**
-   * Parses the project from the given fully-qualified path which
-   * represents a parent resource.
-   */
+  /** Parses the project from the given fully-qualified path which represents a parent resource. */
   public static final String parseProjectFromParentName(String parentName) {
     return PARENT_PATH_TEMPLATE.parse(parentName).get("project");
   }
 
-  /**
-   * Parses the project from the given fully-qualified path which
-   * represents a metric resource.
-   */
+  /** Parses the project from the given fully-qualified path which represents a metric resource. */
   public static final String parseProjectFromMetricName(String metricName) {
     return METRIC_PATH_TEMPLATE.parse(metricName).get("project");
   }
 
-  /**
-   * Parses the metric from the given fully-qualified path which
-   * represents a metric resource.
-   */
+  /** Parses the metric from the given fully-qualified path which represents a metric resource. */
   public static final String parseMetricFromMetricName(String metricName) {
     return METRIC_PATH_TEMPLATE.parse(metricName).get("metric");
   }
 
-  /**
-   * Constructs an instance of MetricsServiceV2Api with default settings.
-   */
+  /** Constructs an instance of MetricsServiceV2Api with default settings. */
   public static final MetricsServiceV2Api create() throws IOException {
     return create(MetricsServiceV2Settings.defaultBuilder().build());
   }
 
   /**
-   * Constructs an instance of MetricsServiceV2Api, using the given settings.
-   * The channels are created based on the settings passed in, or defaults for any
-   * settings that are not set.
+   * Constructs an instance of MetricsServiceV2Api, using the given settings. The channels are
+   * created based on the settings passed in, or defaults for any settings that are not set.
    */
   public static final MetricsServiceV2Api create(MetricsServiceV2Settings settings)
       throws IOException {
@@ -168,9 +147,8 @@ public class MetricsServiceV2Api implements AutoCloseable {
   }
 
   /**
-   * Constructs an instance of MetricsServiceV2Api, using the given settings.
-   * This is protected so that it easy to make a subclass, but otherwise, the static
-   * factory methods should be preferred.
+   * Constructs an instance of MetricsServiceV2Api, using the given settings. This is protected so
+   * that it easy to make a subclass, but otherwise, the static factory methods should be preferred.
    */
   protected MetricsServiceV2Api(MetricsServiceV2Settings settings) throws IOException {
     this.settings = settings;
@@ -211,25 +189,31 @@ public class MetricsServiceV2Api implements AutoCloseable {
     }
   }
 
+  public final MetricsServiceV2Settings getSettings() {
+    return settings;
+  }
+
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Lists logs-based metrics.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (MetricsServiceV2Api metricsServiceV2Api = MetricsServiceV2Api.create()) {
    *   String formattedParent = MetricsServiceV2Api.formatParentName("[PROJECT]");
-   *   for (LogMetric element : metricsServiceV2Api.listLogMetrics(formattedParent)) {
+   *   for (LogMetric element : metricsServiceV2Api.listLogMetrics(formattedParent).iterateAllElements()) {
    *     // doThingsWith(element);
    *   }
    * }
    * </code></pre>
    *
-   * @param parent Required. The resource name containing the metrics.
-   * Example: `"projects/my-project-id"`.
+   * @param parent Required. The resource name containing the metrics. Example:
+   *     `"projects/my-project-id"`.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  public final PageAccessor<LogMetric> listLogMetrics(String parent) {
+  public final PagedListResponse<ListLogMetricsRequest, ListLogMetricsResponse, LogMetric>
+      listLogMetrics(String parent) {
     PARENT_PATH_TEMPLATE.validate(parent, "listLogMetrics");
     ListLogMetricsRequest request = ListLogMetricsRequest.newBuilder().setParent(parent).build();
     return listLogMetrics(request);
@@ -239,14 +223,15 @@ public class MetricsServiceV2Api implements AutoCloseable {
   /**
    * Lists logs-based metrics.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (MetricsServiceV2Api metricsServiceV2Api = MetricsServiceV2Api.create()) {
    *   String formattedParent = MetricsServiceV2Api.formatParentName("[PROJECT]");
    *   ListLogMetricsRequest request = ListLogMetricsRequest.newBuilder()
    *     .setParent(formattedParent)
    *     .build();
-   *   for (LogMetric element : metricsServiceV2Api.listLogMetrics(request)) {
+   *   for (LogMetric element : metricsServiceV2Api.listLogMetrics(request).iterateAllElements()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -255,7 +240,8 @@ public class MetricsServiceV2Api implements AutoCloseable {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  public final PageAccessor<LogMetric> listLogMetrics(ListLogMetricsRequest request) {
+  public final PagedListResponse<ListLogMetricsRequest, ListLogMetricsResponse, LogMetric>
+      listLogMetrics(ListLogMetricsRequest request) {
     return listLogMetricsPagedCallable().call(request);
   }
 
@@ -263,22 +249,25 @@ public class MetricsServiceV2Api implements AutoCloseable {
   /**
    * Lists logs-based metrics.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (MetricsServiceV2Api metricsServiceV2Api = MetricsServiceV2Api.create()) {
    *   String formattedParent = MetricsServiceV2Api.formatParentName("[PROJECT]");
    *   ListLogMetricsRequest request = ListLogMetricsRequest.newBuilder()
    *     .setParent(formattedParent)
    *     .build();
-   *   ListenableFuture&lt;PageAccessor&lt;LogMetric&gt;&gt; future = metricsServiceV2Api.listLogMetricsPagedCallable().futureCall(request);
+   *   ListenableFuture&lt;PagedListResponse&lt;ListLogMetricsRequest,ListLogMetricsResponse,LogMetric&gt;&gt; future = metricsServiceV2Api.listLogMetricsPagedCallable().futureCall(request);
    *   // Do something
-   *   for (LogMetric element : future.get()) {
+   *   for (LogMetric element : future.get().iterateAllElements()) {
    *     // doThingsWith(element);
    *   }
    * }
    * </code></pre>
    */
-  public final ApiCallable<ListLogMetricsRequest, PageAccessor<LogMetric>>
+  public final ApiCallable<
+          ListLogMetricsRequest,
+          PagedListResponse<ListLogMetricsRequest, ListLogMetricsResponse, LogMetric>>
       listLogMetricsPagedCallable() {
     return listLogMetricsPagedCallable;
   }
@@ -287,7 +276,8 @@ public class MetricsServiceV2Api implements AutoCloseable {
   /**
    * Lists logs-based metrics.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (MetricsServiceV2Api metricsServiceV2Api = MetricsServiceV2Api.create()) {
    *   String formattedParent = MetricsServiceV2Api.formatParentName("[PROJECT]");
@@ -317,7 +307,8 @@ public class MetricsServiceV2Api implements AutoCloseable {
   /**
    * Gets a logs-based metric.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (MetricsServiceV2Api metricsServiceV2Api = MetricsServiceV2Api.create()) {
    *   String formattedMetricName = MetricsServiceV2Api.formatMetricName("[PROJECT]", "[METRIC]");
@@ -325,8 +316,8 @@ public class MetricsServiceV2Api implements AutoCloseable {
    * }
    * </code></pre>
    *
-   * @param metricName The resource name of the desired metric.
-   * Example: `"projects/my-project-id/metrics/my-metric-id"`.
+   * @param metricName The resource name of the desired metric. Example:
+   *     `"projects/my-project-id/metrics/my-metric-id"`.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final LogMetric getLogMetric(String metricName) {
@@ -340,7 +331,8 @@ public class MetricsServiceV2Api implements AutoCloseable {
   /**
    * Gets a logs-based metric.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (MetricsServiceV2Api metricsServiceV2Api = MetricsServiceV2Api.create()) {
    *   String formattedMetricName = MetricsServiceV2Api.formatMetricName("[PROJECT]", "[METRIC]");
@@ -362,7 +354,8 @@ public class MetricsServiceV2Api implements AutoCloseable {
   /**
    * Gets a logs-based metric.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (MetricsServiceV2Api metricsServiceV2Api = MetricsServiceV2Api.create()) {
    *   String formattedMetricName = MetricsServiceV2Api.formatMetricName("[PROJECT]", "[METRIC]");
@@ -383,7 +376,8 @@ public class MetricsServiceV2Api implements AutoCloseable {
   /**
    * Creates a logs-based metric.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (MetricsServiceV2Api metricsServiceV2Api = MetricsServiceV2Api.create()) {
    *   String formattedParent = MetricsServiceV2Api.formatParentName("[PROJECT]");
@@ -392,12 +386,10 @@ public class MetricsServiceV2Api implements AutoCloseable {
    * }
    * </code></pre>
    *
-   * @param parent The resource name of the project in which to create the metric.
-   * Example: `"projects/my-project-id"`.
-   *
-   * The new metric must be provided in the request.
-   * @param metric The new logs-based metric, which must not have an identifier that
-   * already exists.
+   * @param parent The resource name of the project in which to create the metric. Example:
+   *     `"projects/my-project-id"`.
+   *     <p>The new metric must be provided in the request.
+   * @param metric The new logs-based metric, which must not have an identifier that already exists.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final LogMetric createLogMetric(String parent, LogMetric metric) {
@@ -411,7 +403,8 @@ public class MetricsServiceV2Api implements AutoCloseable {
   /**
    * Creates a logs-based metric.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (MetricsServiceV2Api metricsServiceV2Api = MetricsServiceV2Api.create()) {
    *   String formattedParent = MetricsServiceV2Api.formatParentName("[PROJECT]");
@@ -435,7 +428,8 @@ public class MetricsServiceV2Api implements AutoCloseable {
   /**
    * Creates a logs-based metric.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (MetricsServiceV2Api metricsServiceV2Api = MetricsServiceV2Api.create()) {
    *   String formattedParent = MetricsServiceV2Api.formatParentName("[PROJECT]");
@@ -458,7 +452,8 @@ public class MetricsServiceV2Api implements AutoCloseable {
   /**
    * Creates or updates a logs-based metric.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (MetricsServiceV2Api metricsServiceV2Api = MetricsServiceV2Api.create()) {
    *   String formattedMetricName = MetricsServiceV2Api.formatMetricName("[PROJECT]", "[METRIC]");
@@ -467,15 +462,12 @@ public class MetricsServiceV2Api implements AutoCloseable {
    * }
    * </code></pre>
    *
-   * @param metricName The resource name of the metric to update.
-   * Example: `"projects/my-project-id/metrics/my-metric-id"`.
-   *
-   * The updated metric must be provided in the request and have the
-   * same identifier that is specified in `metricName`.
-   * If the metric does not exist, it is created.
-   * @param metric The updated metric, whose name must be the same as the
-   * metric identifier in `metricName`. If `metricName` does not
-   * exist, then a new metric is created.
+   * @param metricName The resource name of the metric to update. Example:
+   *     `"projects/my-project-id/metrics/my-metric-id"`.
+   *     <p>The updated metric must be provided in the request and have the same identifier that is
+   *     specified in `metricName`. If the metric does not exist, it is created.
+   * @param metric The updated metric, whose name must be the same as the metric identifier in
+   *     `metricName`. If `metricName` does not exist, then a new metric is created.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final LogMetric updateLogMetric(String metricName, LogMetric metric) {
@@ -489,7 +481,8 @@ public class MetricsServiceV2Api implements AutoCloseable {
   /**
    * Creates or updates a logs-based metric.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (MetricsServiceV2Api metricsServiceV2Api = MetricsServiceV2Api.create()) {
    *   String formattedMetricName = MetricsServiceV2Api.formatMetricName("[PROJECT]", "[METRIC]");
@@ -513,7 +506,8 @@ public class MetricsServiceV2Api implements AutoCloseable {
   /**
    * Creates or updates a logs-based metric.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (MetricsServiceV2Api metricsServiceV2Api = MetricsServiceV2Api.create()) {
    *   String formattedMetricName = MetricsServiceV2Api.formatMetricName("[PROJECT]", "[METRIC]");
@@ -536,7 +530,8 @@ public class MetricsServiceV2Api implements AutoCloseable {
   /**
    * Deletes a logs-based metric.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (MetricsServiceV2Api metricsServiceV2Api = MetricsServiceV2Api.create()) {
    *   String formattedMetricName = MetricsServiceV2Api.formatMetricName("[PROJECT]", "[METRIC]");
@@ -544,8 +539,8 @@ public class MetricsServiceV2Api implements AutoCloseable {
    * }
    * </code></pre>
    *
-   * @param metricName The resource name of the metric to delete.
-   * Example: `"projects/my-project-id/metrics/my-metric-id"`.
+   * @param metricName The resource name of the metric to delete. Example:
+   *     `"projects/my-project-id/metrics/my-metric-id"`.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final void deleteLogMetric(String metricName) {
@@ -559,7 +554,8 @@ public class MetricsServiceV2Api implements AutoCloseable {
   /**
    * Deletes a logs-based metric.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (MetricsServiceV2Api metricsServiceV2Api = MetricsServiceV2Api.create()) {
    *   String formattedMetricName = MetricsServiceV2Api.formatMetricName("[PROJECT]", "[METRIC]");
@@ -581,7 +577,8 @@ public class MetricsServiceV2Api implements AutoCloseable {
   /**
    * Deletes a logs-based metric.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (MetricsServiceV2Api metricsServiceV2Api = MetricsServiceV2Api.create()) {
    *   String formattedMetricName = MetricsServiceV2Api.formatMetricName("[PROJECT]", "[METRIC]");

@@ -79,7 +79,15 @@ public final class ExtractJobConfiguration extends JobConfiguration {
     /**
      * Sets the table to export.
      */
+    @Deprecated
     public Builder sourceTable(TableId sourceTable) {
+      return setSourceTable(sourceTable);
+    }
+
+    /**
+     * Sets the table to export.
+     */
+    public Builder setSourceTable(TableId sourceTable) {
       this.sourceTable = sourceTable;
       return this;
     }
@@ -88,7 +96,16 @@ public final class ExtractJobConfiguration extends JobConfiguration {
      * Sets the list of fully-qualified Google Cloud Storage URIs (e.g. gs://bucket/path) where the
      * extracted table should be written.
      */
+    @Deprecated
     public Builder destinationUris(List<String> destinationUris) {
+      return setDestinationUris(destinationUris);
+    }
+
+    /**
+     * Sets the list of fully-qualified Google Cloud Storage URIs (e.g. gs://bucket/path) where the
+     * extracted table should be written.
+     */
+    public Builder setDestinationUris(List<String> destinationUris) {
       this.destinationUris = destinationUris != null ? ImmutableList.copyOf(destinationUris) : null;
       return this;
     }
@@ -96,7 +113,15 @@ public final class ExtractJobConfiguration extends JobConfiguration {
     /**
      * Sets whether to print out a header row in the results. By default an header is printed.
      */
+    @Deprecated
     public Builder printHeader(Boolean printHeader) {
+      return setPrintHeader(printHeader);
+    }
+
+    /**
+     * Sets whether to print out a header row in the results. By default an header is printed.
+     */
+    public Builder setPrintHeader(Boolean printHeader) {
       this.printHeader = printHeader;
       return this;
     }
@@ -104,7 +129,15 @@ public final class ExtractJobConfiguration extends JobConfiguration {
     /**
      * Sets the delimiter to use between fields in the exported data. By default "," is used.
      */
+    @Deprecated
     public Builder fieldDelimiter(String fieldDelimiter) {
+      return setFieldDelimiter(fieldDelimiter);
+    }
+
+    /**
+     * Sets the delimiter to use between fields in the exported data. By default "," is used.
+     */
+    public Builder setFieldDelimiter(String fieldDelimiter) {
       this.fieldDelimiter = fieldDelimiter;
       return this;
     }
@@ -115,7 +148,18 @@ public final class ExtractJobConfiguration extends JobConfiguration {
      * <a href="https://cloud.google.com/bigquery/docs/reference/v2/jobs#configuration.extract.destinationFormat">
      *     Destination Format</a>
      */
+    @Deprecated
     public Builder format(String format) {
+      return setFormat(format);
+    }
+
+    /**
+     * Sets the exported file format. If not set table is exported in CSV format.
+     *
+     * <a href="https://cloud.google.com/bigquery/docs/reference/v2/jobs#configuration.extract.destinationFormat">
+     *     Destination Format</a>
+     */
+    public Builder setFormat(String format) {
       this.format = format;
       return this;
     }
@@ -127,7 +171,19 @@ public final class ExtractJobConfiguration extends JobConfiguration {
      * <a href="https://cloud.google.com/bigquery/docs/reference/v2/jobs#configuration.extract.compression">
      *     Compression</a>
      */
+    @Deprecated
     public Builder compression(String compression) {
+      return setCompression(compression);
+    }
+
+    /**
+     * Sets the compression value to use for exported files. If not set exported files are not
+     * compressed.
+     *
+     * <a href="https://cloud.google.com/bigquery/docs/reference/v2/jobs#configuration.extract.compression">
+     *     Compression</a>
+     */
+    public Builder setCompression(String compression) {
       this.compression = compression;
       return this;
     }
@@ -150,7 +206,15 @@ public final class ExtractJobConfiguration extends JobConfiguration {
   /**
    * Returns the table to export.
    */
+  @Deprecated
   public TableId sourceTable() {
+    return getSourceTable();
+  }
+
+  /**
+   * Returns the table to export.
+   */
+  public TableId getSourceTable() {
     return sourceTable;
   }
 
@@ -161,7 +225,19 @@ public final class ExtractJobConfiguration extends JobConfiguration {
    * @see <a href="https://cloud.google.com/bigquery/exporting-data-from-bigquery#exportingmultiple">
    *     Exporting Data Into One or More Files</a>
    */
+  @Deprecated
   public List<String> destinationUris() {
+    return getDestinationUris();
+  }
+
+  /**
+   * Returns the list of fully-qualified Google Cloud Storage URIs where the extracted table should
+   * be written.
+   *
+   * @see <a href="https://cloud.google.com/bigquery/exporting-data-from-bigquery#exportingmultiple">
+   *     Exporting Data Into One or More Files</a>
+   */
+  public List<String> getDestinationUris() {
     return destinationUris;
   }
 
@@ -175,21 +251,45 @@ public final class ExtractJobConfiguration extends JobConfiguration {
   /**
    * Returns the delimiter used between fields in the exported data.
    */
+  @Deprecated
   public String fieldDelimiter() {
+    return getFieldDelimiter();
+  }
+
+  /**
+   * Returns the delimiter used between fields in the exported data.
+   */
+  public String getFieldDelimiter() {
     return fieldDelimiter;
   }
 
   /**
    * Returns the exported files format.
    */
+  @Deprecated
   public String format() {
+    return getFormat();
+  }
+
+  /**
+   * Returns the exported files format.
+   */
+  public String getFormat() {
     return format;
   }
 
   /**
    * Returns the compression value of exported files.
    */
+  @Deprecated
   public String compression() {
+    return getCompression();
+  }
+
+  /**
+   * Returns the compression value of exported files.
+   */
+  public String getCompression() {
     return compression;
   }
 
@@ -224,7 +324,7 @@ public final class ExtractJobConfiguration extends JobConfiguration {
 
   @Override
   ExtractJobConfiguration setProjectId(String projectId) {
-    return toBuilder().sourceTable(sourceTable().setProjectId(projectId)).build();
+    return toBuilder().setSourceTable(getSourceTable().setProjectId(projectId)).build();
   }
 
   @Override
@@ -244,30 +344,48 @@ public final class ExtractJobConfiguration extends JobConfiguration {
    * Creates a builder for a BigQuery Extract Job configuration given source table and destination
    * URI.
    */
+  @Deprecated
   public static Builder builder(TableId sourceTable, String destinationUri) {
-    return builder(sourceTable, ImmutableList.of(checkNotNull(destinationUri)));
+    return newBuilder(sourceTable, destinationUri);
+  }
+
+  /**
+   * Creates a builder for a BigQuery Extract Job configuration given source table and destination
+   * URI.
+   */
+  public static Builder newBuilder(TableId sourceTable, String destinationUri) {
+    return newBuilder(sourceTable, ImmutableList.of(checkNotNull(destinationUri)));
   }
 
   /**
    * Creates a builder for a BigQuery Extract Job configuration given source table and destination
    * URIs.
    */
+  @Deprecated
   public static Builder builder(TableId sourceTable, List<String> destinationUris) {
-    return new Builder().sourceTable(sourceTable).destinationUris(destinationUris);
+    return newBuilder(sourceTable, destinationUris);
+  }
+
+  /**
+   * Creates a builder for a BigQuery Extract Job configuration given source table and destination
+   * URIs.
+   */
+  public static Builder newBuilder(TableId sourceTable, List<String> destinationUris) {
+    return new Builder().setSourceTable(sourceTable).setDestinationUris(destinationUris);
   }
 
   /**
    * Returns a BigQuery Extract Job configuration for the given source table and destination URI.
    */
   public static ExtractJobConfiguration of(TableId sourceTable, String destinationUri) {
-    return builder(sourceTable, destinationUri).build();
+    return newBuilder(sourceTable, destinationUri).build();
   }
 
   /**
    * Returns a BigQuery Extract Job configuration for the given source table and destination URIs.
    */
   public static ExtractJobConfiguration of(TableId sourceTable, List<String> destinationUris) {
-    return builder(sourceTable, destinationUris).build();
+    return newBuilder(sourceTable, destinationUris).build();
   }
 
   /**
@@ -276,7 +394,7 @@ public final class ExtractJobConfiguration extends JobConfiguration {
    */
   public static ExtractJobConfiguration of(TableId sourceTable, String destinationUri,
       String format) {
-    return builder(sourceTable, destinationUri).format(format).build();
+    return newBuilder(sourceTable, destinationUri).setFormat(format).build();
   }
 
   /**
@@ -285,7 +403,7 @@ public final class ExtractJobConfiguration extends JobConfiguration {
    */
   public static ExtractJobConfiguration of(TableId sourceTable, List<String> destinationUris,
       String format) {
-    return builder(sourceTable, destinationUris).format(format).build();
+    return newBuilder(sourceTable, destinationUris).setFormat(format).build();
   }
 
   @SuppressWarnings("unchecked")

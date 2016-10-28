@@ -360,7 +360,7 @@ public class PubSubExample {
     @Override
     public void run(PubSub pubsub, SubscriptionInfo subscription) {
       pubsub.create(subscription);
-      System.out.printf("Created subscription %s%n", subscription.name());
+      System.out.printf("Created subscription %s%n", subscription.getName());
     }
 
     @Override
@@ -371,9 +371,9 @@ public class PubSubExample {
       } else if (args.length < 2) {
         message = "Missing required topic or subscription name";
       } else {
-        SubscriptionInfo.Builder builder = SubscriptionInfo.builder(args[0], args[1]);
+        SubscriptionInfo.Builder builder = SubscriptionInfo.newBuilder(args[0], args[1]);
         if (args.length == 3) {
-          builder.pushConfig(PushConfig.of(args[2]));
+          builder.setPushConfig(PushConfig.of(args[2]));
         }
         return builder.build();
       }

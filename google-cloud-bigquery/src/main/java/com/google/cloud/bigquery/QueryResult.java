@@ -49,37 +49,37 @@ public class QueryResult extends PageImpl<List<FieldValue>> {
 
     private Builder() {}
 
-    Builder cacheHit(boolean cacheHit) {
+    Builder setCacheHit(boolean cacheHit) {
       this.cacheHit = cacheHit;
       return this;
     }
 
-    Builder schema(Schema schema) {
+    Builder setSchema(Schema schema) {
       this.schema = schema;
       return this;
     }
 
-    Builder totalBytesProcessed(long totalBytesProcessed) {
+    Builder setTotalBytesProcessed(long totalBytesProcessed) {
       this.totalBytesProcessed = totalBytesProcessed;
       return this;
     }
 
-    Builder totalRows(long totalRows) {
+    Builder setTotalRows(long totalRows) {
       this.totalRows = totalRows;
       return this;
     }
 
-    Builder pageFetcher(QueryResultsPageFetcher pageFetcher) {
+    Builder setPageFetcher(QueryResultsPageFetcher pageFetcher) {
       this.pageFetcher = pageFetcher;
       return this;
     }
 
-    Builder cursor(String cursor) {
+    Builder setCursor(String cursor) {
       this.cursor = cursor;
       return this;
     }
 
-    Builder results(Iterable<List<FieldValue>> results) {
+    Builder setResults(Iterable<List<FieldValue>> results) {
       this.results = results;
       return this;
     }
@@ -110,7 +110,15 @@ public class QueryResult extends PageImpl<List<FieldValue>> {
   /**
    * Returns the schema of the results. This is present only when the query completes successfully.
    */
+  @Deprecated
   public Schema schema() {
+    return getSchema();
+  }
+
+  /**
+   * Returns the schema of the results. This is present only when the query completes successfully.
+   */
+  public Schema getSchema() {
     return schema;
   }
 
@@ -118,7 +126,16 @@ public class QueryResult extends PageImpl<List<FieldValue>> {
    * Returns the total number of bytes processed for the query. If this query was a dry run, this is
    * the number of bytes that would be processed if the query were run.
    */
+  @Deprecated
   public long totalBytesProcessed() {
+    return getTotalBytesProcessed();
+  }
+
+  /**
+   * Returns the total number of bytes processed for the query. If this query was a dry run, this is
+   * the number of bytes that would be processed if the query were run.
+   */
+  public long getTotalBytesProcessed() {
     return totalBytesProcessed;
   }
 
@@ -127,7 +144,17 @@ public class QueryResult extends PageImpl<List<FieldValue>> {
    * number of rows in the first page of results returned by {@link #values()}. Returns {@code 0}
    * if the query was a dry run.
    */
+  @Deprecated
   public long totalRows() {
+    return getTotalRows();
+  }
+
+  /**
+   * Returns the total number of rows in the complete query result set, which can be more than the
+   * number of rows in the first page of results returned by {@link #values()}. Returns {@code 0}
+   * if the query was a dry run.
+   */
+  public long getTotalRows() {
     return totalRows;
   }
 
@@ -170,7 +197,7 @@ public class QueryResult extends PageImpl<List<FieldValue>> {
         && cacheHit == response.cacheHit;
   }
 
-  static Builder builder() {
+  static Builder newBuilder() {
     return new Builder();
   }
 }

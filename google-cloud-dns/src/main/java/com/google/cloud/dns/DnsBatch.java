@@ -53,17 +53,17 @@ public class DnsBatch {
   }
 
   @VisibleForTesting
-  Object batch() {
+  Object getBatch() {
     return batch;
   }
 
   @VisibleForTesting
-  DnsRpc dnsRpc() {
+  DnsRpc getDnsRpc() {
     return dnsRpc;
   }
 
   @VisibleForTesting
-  DnsOptions options() {
+  DnsOptions getOptions() {
     return options;
   }
 

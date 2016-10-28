@@ -24,18 +24,18 @@ Standard. `google-cloud-logging` will work on App Engine Flexible.
 Add this to your pom.xml file
 ```xml
 <dependency>
-  <groupId>com.google.gcloud</groupId>
+  <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-logging</artifactId>
-  <version>0.3.0</version>
+  <version>0.4.0</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-logging:0.3.0'
+compile 'com.google.cloud:google-cloud-logging:0.4.0'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-logging" % "0.3.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-logging" % "0.4.0"
 ```
 
 Example Application
@@ -112,8 +112,8 @@ import com.google.cloud.logging.MetricInfo;
 Then, to create the metric, use the following code:
 
 ```java
-MetricInfo metricInfo = MetricInfo.builder("test-metric", "severity >= ERROR")
-    .description("Log entries with severity higher or equal to ERROR")
+MetricInfo metricInfo = MetricInfo.newBuilder("test-metric", "severity >= ERROR")
+    .setDescription("Log entries with severity higher or equal to ERROR")
     .build();
 logging.create(metricInfo);
 ```
@@ -131,9 +131,9 @@ import java.util.Collections;
 ```
 Then, to write the log entries, use the following code:
 ```java
-LogEntry firstEntry = LogEntry.builder(StringPayload.of("message"))
-    .logName("test-log")
-    .resource(MonitoredResource.builder("global")
+LogEntry firstEntry = LogEntry.newBuilder(StringPayload.of("message"))
+    .setLogName("test-log")
+    .setResource(MonitoredResource.builder("global")
         .addLabel("project_id", options.projectId())
         .build())
     .build();

@@ -41,27 +41,55 @@ public final class ZoneOperationId extends OperationId  {
   }
 
   @Override
+  @Deprecated
   public Type type() {
+    return getType();
+  }
+
+  @Override
+  public Type getType() {
     return Type.ZONE;
   }
 
   /**
    * Returns the name of the zone this operation belongs to.
    */
+  @Deprecated
   public String zone() {
+    return getZone();
+  }
+
+  /**
+   * Returns the name of the zone this operation belongs to.
+   */
+  public String getZone() {
     return zone;
   }
 
   /**
    * Returns the identity of the zone this address belongs to.
    */
+  @Deprecated
   public ZoneId zoneId() {
-    return ZoneId.of(project(), zone);
+    return getZoneId();
+  }
+
+  /**
+   * Returns the identity of the zone this address belongs to.
+   */
+  public ZoneId getZoneId() {
+    return ZoneId.of(getProject(), zone);
   }
 
   @Override
+  @Deprecated
   public String selfLink() {
-    return super.selfLink() + "/zones/" + zone + "/operations/" + operation();
+    return getSelfLink();
+  }
+
+  @Override
+  public String getSelfLink() {
+    return super.getSelfLink() + "/zones/" + zone + "/operations/" + getOperation();
   }
 
   @Override
@@ -88,17 +116,17 @@ public final class ZoneOperationId extends OperationId  {
 
   @Override
   ZoneOperationId setProjectId(String projectId) {
-    if (project() != null) {
+    if (getProject() != null) {
       return this;
     }
-    return ZoneOperationId.of(projectId, zone, operation());
+    return ZoneOperationId.of(projectId, zone, getOperation());
   }
 
   /**
    * Returns a zone operation identity given the zone identity and the operation name.
    */
   public static ZoneOperationId of(ZoneId zoneId, String operation) {
-    return new ZoneOperationId(zoneId.project(), zoneId.zone(), operation);
+    return new ZoneOperationId(zoneId.getProject(), zoneId.getZone(), operation);
   }
 
   /**

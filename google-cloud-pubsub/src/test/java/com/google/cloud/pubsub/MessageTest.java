@@ -36,55 +36,94 @@ public class MessageTest {
   private static final Map<String, String> ATTRIBUTES =
       ImmutableMap.of("key1", "value1", "key2", "value2");
   private static final Long PUBLISH_TIME = 42L;
-  private static final Message MESSAGE_STRING = Message.builder(PAYLOAD_STRING)
-      .id(MESSAGE_ID)
-      .attributes(ATTRIBUTES)
-      .publishTime(PUBLISH_TIME)
+  private static final Message MESSAGE_STRING = Message.newBuilder(PAYLOAD_STRING)
+      .setId(MESSAGE_ID)
+      .setAttributes(ATTRIBUTES)
+      .setPublishTime(PUBLISH_TIME)
       .build();
-  private static final Message MESSAGE = Message.builder(PAYLOAD)
-      .id(MESSAGE_ID)
+  private static final Message MESSAGE = Message.newBuilder(PAYLOAD)
+      .setId(MESSAGE_ID)
+      .setAttributes(ATTRIBUTES)
+      .setPublishTime(PUBLISH_TIME)
+      .build();
+  private static final Message DEPRECATED_MESSAGE_STRING = Message.builder(PAYLOAD_STRING)
+      .setId(MESSAGE_ID)
       .attributes(ATTRIBUTES)
-      .publishTime(PUBLISH_TIME)
+      .setPublishTime(PUBLISH_TIME)
+      .build();
+  private static final Message DEPRECATED_MESSAGE = Message.builder(PAYLOAD)
+      .setId(MESSAGE_ID)
+      .attributes(ATTRIBUTES)
+      .setPublishTime(PUBLISH_TIME)
       .build();
 
   @Test
   public void testToBuilder() {
     compareMessage(MESSAGE, MESSAGE.toBuilder().build());
     Message message = MESSAGE.toBuilder()
-        .payload("newPayload")
+        .setPayload("newPayload")
         .clearAttributes()
         .addAttribute("key1", "value1")
         .build();
-    assertEquals("newPayload", message.payloadAsString());
-    assertEquals(ImmutableMap.of("key1", "value1"), message.attributes());
+    assertEquals("newPayload", message.getPayloadAsString());
+    assertEquals(ImmutableMap.of("key1", "value1"), message.getAttributes());
     message = message.toBuilder()
-        .payload(PAYLOAD_STRING)
+        .setPayload(PAYLOAD_STRING)
         .removeAttribute("key1")
-        .attributes(ATTRIBUTES)
+        .setAttributes(ATTRIBUTES)
         .build();
     compareMessage(MESSAGE, message);
   }
 
   @Test
   public void testBuilder() {
-    assertEquals(MESSAGE_ID, MESSAGE.id());
-    assertEquals(PAYLOAD, MESSAGE.payload());
-    assertEquals(PAYLOAD_STRING, MESSAGE.payloadAsString());
-    assertEquals(ATTRIBUTES, MESSAGE.attributes());
-    assertEquals(PUBLISH_TIME, MESSAGE.publishTime());
-    assertEquals(MESSAGE_ID, MESSAGE_STRING.id());
-    assertEquals(PAYLOAD, MESSAGE_STRING.payload());
-    assertEquals(PAYLOAD_STRING, MESSAGE_STRING.payloadAsString());
-    assertEquals(ATTRIBUTES, MESSAGE_STRING.attributes());
-    assertEquals(PUBLISH_TIME, MESSAGE_STRING.publishTime());
+    assertEquals(MESSAGE_ID, MESSAGE.getId());
+    assertEquals(PAYLOAD, MESSAGE.getPayload());
+    assertEquals(PAYLOAD_STRING, MESSAGE.getPayloadAsString());
+    assertEquals(ATTRIBUTES, MESSAGE.getAttributes());
+    assertEquals(PUBLISH_TIME, MESSAGE.getPublishTime());
+    assertEquals(MESSAGE_ID, MESSAGE_STRING.getId());
+    assertEquals(PAYLOAD, MESSAGE_STRING.getPayload());
+    assertEquals(PAYLOAD_STRING, MESSAGE_STRING.getPayloadAsString());
+    assertEquals(ATTRIBUTES, MESSAGE_STRING.getAttributes());
+    assertEquals(PUBLISH_TIME, MESSAGE_STRING.getPublishTime());
     compareMessage(MESSAGE, MESSAGE_STRING);
+    Message message = Message.newBuilder(PAYLOAD)
+        .setId(MESSAGE_ID)
+        .setAttributes(ATTRIBUTES)
+        .clearAttributes()
+        .addAttribute("key1", "value1")
+        .addAttribute("key2", "value2")
+        .setPublishTime(PUBLISH_TIME)
+        .build();
+    assertEquals(MESSAGE_ID, message.getId());
+    assertEquals(PAYLOAD, message.getPayload());
+    assertEquals(PAYLOAD_STRING, message.getPayloadAsString());
+    assertEquals(ATTRIBUTES, message.getAttributes());
+    assertEquals(PUBLISH_TIME, message.getPublishTime());
+    compareMessage(MESSAGE, message);
+  }
+
+  @Test
+  public void testBuilderDeprecated() {
+    assertEquals(MESSAGE_ID, DEPRECATED_MESSAGE.id());
+    assertEquals(PAYLOAD, DEPRECATED_MESSAGE.payload());
+    assertEquals(PAYLOAD_STRING, DEPRECATED_MESSAGE.payloadAsString());
+    assertEquals(ATTRIBUTES, DEPRECATED_MESSAGE.attributes());
+    assertEquals(PUBLISH_TIME, DEPRECATED_MESSAGE.publishTime());
+    assertEquals(MESSAGE_ID, DEPRECATED_MESSAGE_STRING.id());
+    assertEquals(PAYLOAD, DEPRECATED_MESSAGE_STRING.payload());
+    assertEquals(PAYLOAD_STRING, DEPRECATED_MESSAGE_STRING.payloadAsString());
+    assertEquals(ATTRIBUTES, DEPRECATED_MESSAGE_STRING.attributes());
+    assertEquals(PUBLISH_TIME, DEPRECATED_MESSAGE_STRING.publishTime());
+    compareMessage(MESSAGE, DEPRECATED_MESSAGE_STRING);
     Message message = Message.builder(PAYLOAD)
-        .id(MESSAGE_ID)
+        .setId(MESSAGE_ID)
         .attributes(ATTRIBUTES)
         .clearAttributes()
         .addAttribute("key1", "value1")
         .addAttribute("key2", "value2")
-        .publishTime(PUBLISH_TIME)
+        .setPublishTime(PUBLISH_TIME)
         .build();
     assertEquals(MESSAGE_ID, message.id());
     assertEquals(PAYLOAD, message.payload());
@@ -97,17 +136,17 @@ public class MessageTest {
   @Test
   public void testOf() {
     Message message1 = Message.of(PAYLOAD_STRING);
-    assertNull(message1.id());
-    assertEquals(PAYLOAD, message1.payload());
-    assertEquals(PAYLOAD_STRING, message1.payloadAsString());
-    assertEquals(ImmutableMap.of(), message1.attributes());
-    assertNull(message1.publishTime());
+    assertNull(message1.getId());
+    assertEquals(PAYLOAD, message1.getPayload());
+    assertEquals(PAYLOAD_STRING, message1.getPayloadAsString());
+    assertEquals(ImmutableMap.of(), message1.getAttributes());
+    assertNull(message1.getPublishTime());
     Message message2 = Message.of(PAYLOAD);
-    assertNull(message2.id());
-    assertEquals(PAYLOAD, message2.payload());
-    assertEquals(PAYLOAD_STRING, message2.payloadAsString());
-    assertEquals(ImmutableMap.of(), message2.attributes());
-    assertNull(message2.publishTime());
+    assertNull(message2.getId());
+    assertEquals(PAYLOAD, message2.getPayload());
+    assertEquals(PAYLOAD_STRING, message2.getPayloadAsString());
+    assertEquals(ImmutableMap.of(), message2.getAttributes());
+    assertNull(message2.getPublishTime());
     compareMessage(message1 ,message2);
   }
 
@@ -127,11 +166,11 @@ public class MessageTest {
 
   private void compareMessage(Message expected, Message value) {
     assertEquals(expected, value);
-    assertEquals(expected.id(), value.id());
-    assertEquals(expected.payload(), value.payload());
-    assertEquals(expected.payloadAsString(), value.payloadAsString());
-    assertEquals(expected.attributes(), value.attributes());
-    assertEquals(expected.publishTime(), value.publishTime());
+    assertEquals(expected.getId(), value.getId());
+    assertEquals(expected.getPayload(), value.getPayload());
+    assertEquals(expected.getPayloadAsString(), value.getPayloadAsString());
+    assertEquals(expected.getAttributes(), value.getAttributes());
+    assertEquals(expected.getPublishTime(), value.getPublishTime());
     assertEquals(expected.hashCode(), value.hashCode());
   }
 }

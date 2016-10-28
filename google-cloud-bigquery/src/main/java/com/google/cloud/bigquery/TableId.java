@@ -52,21 +52,45 @@ public final class TableId implements Serializable {
   /**
    * Returns project's user-defined id.
    */
+  @Deprecated
   public String project() {
+    return getProject();
+  }
+
+  /**
+   * Returns project's user-defined id.
+   */
+  public String getProject() {
     return project;
   }
 
   /**
    * Returns dataset's user-defined id.
    */
+  @Deprecated
   public String dataset() {
+    return getDataset();
+  }
+
+  /**
+   * Returns dataset's user-defined id.
+   */
+  public String getDataset() {
     return dataset;
   }
 
   /**
    * Returns table's user-defined id.
    */
+  @Deprecated
   public String table() {
+    return getTable();
+  }
+
+  /**
+   * Returns table's user-defined id.
+   */
+  public String getTable() {
     return table;
   }
 
@@ -108,7 +132,7 @@ public final class TableId implements Serializable {
   }
 
   TableId setProjectId(String projectId) {
-    return project() != null ? this : TableId.of(projectId, dataset(), table());
+    return getProject() != null ? this : TableId.of(projectId, getDataset(), getTable());
   }
 
   TableReference toPb() {

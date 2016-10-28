@@ -66,19 +66,41 @@ public final class Key extends IncompleteKey {
     private Builder(Key copyFrom) {
       super(copyFrom);
       if (copyFrom.hasId()) {
-        id = copyFrom.id();
+        id = copyFrom.getId();
       } else {
-        name = copyFrom.name();
+        name = copyFrom.getName();
       }
     }
 
+    /**
+     * Sets the name of this key.
+     */
+    @Deprecated
     public Builder name(String name) {
+      return setName(name);
+    }
+
+    /**
+     * Sets the name of this key.
+     */
+    public Builder setName(String name) {
       this.name = name;
       id = null;
       return this;
     }
 
+    /**
+     * Sets the ID of this key.
+     */
+    @Deprecated
     public Builder id(long id) {
+      return setId(id);
+    }
+
+    /**
+     * Sets the ID of this key.
+     */
+    public Builder setId(long id) {
       this.id = id;
       name = null;
       return this;
@@ -99,37 +121,60 @@ public final class Key extends IncompleteKey {
 
   Key(String projectId, String namespace, ImmutableList<PathElement> path) {
     super(projectId, namespace, path);
-    Preconditions.checkArgument(nameOrId() != null);
+    Preconditions.checkArgument(getNameOrId() != null);
   }
 
   public boolean hasId() {
-    return leaf().hasId();
+    return getLeaf().hasId();
   }
 
   /**
    * Returns the key's id or {@code null} if it has a name instead.
    */
+  @Deprecated
   public Long id() {
-    return leaf().id();
+    return getId();
+  }
+
+  /**
+   * Returns the key's id or {@code null} if it has a name instead.
+   */
+  public Long getId() {
+    return getLeaf().getId();
   }
 
   public boolean hasName() {
-    return leaf().hasName();
+    return getLeaf().hasName();
   }
 
   /**
    * Returns the key's name or {@code null} if it has an id instead.
    */
+  @Deprecated
   public String name() {
-    return leaf().name();
+    return getName();
   }
 
   /**
-   * Returns the key's id (as {@link Long}) or name (as {@link String}).
-   * Never {@code null}.
+   * Returns the key's name or {@code null} if it has an id instead.
    */
+  public String getName() {
+    return getLeaf().getName();
+  }
+
+  /**
+   * Returns the key's ID (as {@link Long}) or name (as {@link String}). Never {@code null}.
+   */
+  @Deprecated
   public Object nameOrId() {
-    return leaf().nameOrId();
+    return getLeaf().getNameOrId();
+  }
+
+  /**
+   * Returns the key's ID (as {@link Long}) or name (as {@link String}). Never {@code null}.
+   */
+  public Object getNameOrId() {
+    return getLeaf().getNameOrId();
   }
 
   /**
@@ -167,45 +212,80 @@ public final class Key extends IncompleteKey {
     return (Key) key;
   }
 
+  @Deprecated
   public static Builder builder(String projectId, String kind, String name) {
+    return newBuilder(projectId, kind, name);
+  }
+
+  public static Builder newBuilder(String projectId, String kind, String name) {
     return new Builder(projectId, kind, name);
   }
 
+  @Deprecated
   public static Builder builder(String projectId, String kind, long id) {
+    return newBuilder(projectId, kind, id);
+  }
+
+  public static Builder newBuilder(String projectId, String kind, long id) {
     return new Builder(projectId, kind, id);
   }
 
+  @Deprecated
   public static Builder builder(Key copyFrom) {
+    return newBuilder(copyFrom);
+  }
+
+  public static Builder newBuilder(Key copyFrom) {
     return new Builder(copyFrom);
   }
 
+  @Deprecated
   public static Builder builder(IncompleteKey copyFrom, String name) {
+    return newBuilder(copyFrom, name);
+  }
+
+  public static Builder newBuilder(IncompleteKey copyFrom, String name) {
     return new Builder(copyFrom, name);
   }
 
+  @Deprecated
   public static Builder builder(IncompleteKey copyFrom, long id) {
+    return newBuilder(copyFrom, id);
+  }
+
+  public static Builder newBuilder(IncompleteKey copyFrom, long id) {
     return new Builder(copyFrom, id);
   }
 
+  @Deprecated
   public static Builder builder(Key parent, String kind, String name) {
-    Builder builder = builder(parent.projectId(), kind, name);
+    return newBuilder(parent, kind, name);
+  }
+
+  public static Builder newBuilder(Key parent, String kind, String name) {
+    Builder builder = newBuilder(parent.getProjectId(), kind, name);
     addParentToBuilder(parent, builder);
     return builder;
   }
 
+  @Deprecated
   public static Builder builder(Key parent, String kind, long id) {
-    Builder builder = builder(parent.projectId(), kind, id);
+    return newBuilder(parent, kind, id);
+  }
+
+  public static Builder newBuilder(Key parent, String kind, long id) {
+    Builder builder = newBuilder(parent.getProjectId(), kind, id);
     addParentToBuilder(parent, builder);
     return builder;
   }
 
   private static void addParentToBuilder(Key parent, Builder builder) {
-    builder.namespace(parent.namespace());
-    builder.ancestors(parent.ancestors());
+    builder.setNamespace(parent.getNamespace());
+    builder.addAncestors(parent.getAncestors());
     if (parent.hasId()) {
-      builder.ancestors(PathElement.of(parent.kind(), parent.id()));
+      builder.addAncestors(PathElement.of(parent.getKind(), parent.getId()));
     } else {
-      builder.ancestors(PathElement.of(parent.kind(), parent.name()));
+      builder.addAncestors(PathElement.of(parent.getKind(), parent.getName()));
     }
   }
 }

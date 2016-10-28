@@ -28,6 +28,12 @@ public class LicenseTest {
 
   @Test
   public void testBuilder() {
+    assertEquals(LICENSE_ID, LICENSE.getLicenseId());
+    assertEquals(CHARGES_USE_FEE, LICENSE.chargesUseFee());
+  }
+
+  @Test
+  public void testBuilderDeprecated() {
     assertEquals(LICENSE_ID, LICENSE.licenseId());
     assertEquals(CHARGES_USE_FEE, LICENSE.chargesUseFee());
   }
@@ -36,13 +42,13 @@ public class LicenseTest {
   public void testToAndFromPb() {
     License license = License.fromPb(LICENSE.toPb());
     compareLicenses(LICENSE, license);
-    assertEquals(LICENSE_ID.project(), license.licenseId().project());
-    assertEquals(LICENSE_ID.license(), license.licenseId().license());
+    assertEquals(LICENSE_ID.getProject(), license.getLicenseId().getProject());
+    assertEquals(LICENSE_ID.getLicense(), license.getLicenseId().getLicense());
   }
 
   private void compareLicenses(License expected, License value) {
     assertEquals(expected, value);
-    assertEquals(expected.licenseId(), value.licenseId());
+    assertEquals(expected.getLicenseId(), value.getLicenseId());
     assertEquals(expected.chargesUseFee(), value.chargesUseFee());
     assertEquals(expected.hashCode(), value.hashCode());
   }

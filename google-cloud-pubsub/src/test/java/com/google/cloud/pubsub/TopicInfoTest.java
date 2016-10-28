@@ -23,22 +23,30 @@ import org.junit.Test;
 public class TopicInfoTest {
 
   private static final String NAME = "topic";
-  private static final TopicInfo TOPIC_INFO = TopicInfo.builder("topic").build();
+  private static final TopicInfo TOPIC_INFO = TopicInfo.newBuilder("topic").build();
+  private static final TopicInfo DEPRECATED_TOPIC_INFO = TopicInfo.builder("topic").build();
 
   @Test
   public void testToBuilder() {
     compareTopicInfo(TOPIC_INFO, TOPIC_INFO.toBuilder().build());
     TopicInfo topicInfo = TOPIC_INFO.toBuilder()
-        .name("newTopic")
+        .setName("newTopic")
         .build();
-    assertEquals("newTopic", topicInfo.name());
-    topicInfo = topicInfo.toBuilder().name(NAME).build();
+    assertEquals("newTopic", topicInfo.getName());
+    topicInfo = topicInfo.toBuilder().setName(NAME).build();
     compareTopicInfo(TOPIC_INFO, topicInfo);
   }
 
   @Test
   public void testBuilder() {
-    assertEquals(NAME, TOPIC_INFO.name());
+    assertEquals(NAME, TOPIC_INFO.getName());
+    TopicInfo topicInfo = TopicInfo.newBuilder("wrongName").setName(NAME).build();
+    compareTopicInfo(TOPIC_INFO, topicInfo);
+  }
+
+  @Test
+  public void testBuilderDeprecated() {
+    assertEquals(NAME, DEPRECATED_TOPIC_INFO.name());
     TopicInfo topicInfo = TopicInfo.builder("wrongName").name(NAME).build();
     compareTopicInfo(TOPIC_INFO, topicInfo);
   }
@@ -56,7 +64,7 @@ public class TopicInfoTest {
 
   private void compareTopicInfo(TopicInfo expected, TopicInfo value) {
     assertEquals(expected, value);
-    assertEquals(expected.name(), value.name());
+    assertEquals(expected.getName(), value.getName());
     assertEquals(expected.hashCode(), value.hashCode());
   }
 }

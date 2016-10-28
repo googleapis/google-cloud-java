@@ -83,7 +83,15 @@ public final class CopyJobConfiguration extends JobConfiguration {
     /**
      * Sets the source tables to copy.
      */
+    @Deprecated
     public Builder sourceTables(List<TableId> sourceTables) {
+      return setSourceTables(sourceTables);
+    }
+
+    /**
+     * Sets the source tables to copy.
+     */
+    public Builder setSourceTables(List<TableId> sourceTables) {
       this.sourceTables = sourceTables != null ? ImmutableList.copyOf(sourceTables) : null;
       return this;
     }
@@ -91,7 +99,15 @@ public final class CopyJobConfiguration extends JobConfiguration {
     /**
      * Sets the destination table of the copy job.
      */
+    @Deprecated
     public Builder destinationTable(TableId destinationTable) {
+      return setDestinationTable(destinationTable);
+    }
+
+    /**
+     * Sets the destination table of the copy job.
+     */
+    public Builder setDestinationTable(TableId destinationTable) {
       this.destinationTable = destinationTable;
       return this;
     }
@@ -102,7 +118,18 @@ public final class CopyJobConfiguration extends JobConfiguration {
      * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/jobs#configuration.copy.createDisposition">
      *     Create Disposition</a>
      */
+    @Deprecated
     public Builder createDisposition(JobInfo.CreateDisposition createDisposition) {
+      return setCreateDisposition(createDisposition);
+    }
+
+    /**
+     * Sets whether the job is allowed to create new tables.
+     *
+     * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/jobs#configuration.copy.createDisposition">
+     *     Create Disposition</a>
+     */
+    public Builder setCreateDisposition(JobInfo.CreateDisposition createDisposition) {
       this.createDisposition = createDisposition;
       return this;
     }
@@ -113,7 +140,18 @@ public final class CopyJobConfiguration extends JobConfiguration {
      * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/jobs#configuration.copy.writeDisposition">
      *     Write Disposition</a>
      */
+    @Deprecated
     public Builder writeDisposition(JobInfo.WriteDisposition writeDisposition) {
+      return setWriteDisposition(writeDisposition);
+    }
+
+    /**
+     * Sets the action that should occur if the destination table already exists.
+     *
+     * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/jobs#configuration.copy.writeDisposition">
+     *     Write Disposition</a>
+     */
+    public Builder setWriteDisposition(JobInfo.WriteDisposition writeDisposition) {
       this.writeDisposition = writeDisposition;
       return this;
     }
@@ -134,14 +172,30 @@ public final class CopyJobConfiguration extends JobConfiguration {
   /**
    * Returns the source tables to copy.
    */
+  @Deprecated
   public List<TableId> sourceTables() {
+    return getSourceTables();
+  }
+
+  /**
+   * Returns the source tables to copy.
+   */
+  public List<TableId> getSourceTables() {
     return sourceTables;
   }
 
   /**
    * Returns the destination table to load the data into.
    */
+  @Deprecated
   public TableId destinationTable() {
+    return getDestinationTable();
+  }
+
+  /**
+   * Returns the destination table to load the data into.
+   */
+  public TableId getDestinationTable() {
     return destinationTable;
   }
 
@@ -151,7 +205,18 @@ public final class CopyJobConfiguration extends JobConfiguration {
    * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/jobs#configuration.copy.createDisposition">
    *     Create Disposition</a>
    */
+  @Deprecated
   public JobInfo.CreateDisposition createDisposition() {
+    return this.getCreateDisposition();
+  }
+
+  /**
+   * Returns whether the job is allowed to create new tables.
+   *
+   * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/jobs#configuration.copy.createDisposition">
+   *     Create Disposition</a>
+   */
+  public JobInfo.CreateDisposition getCreateDisposition() {
     return this.createDisposition;
   }
 
@@ -161,7 +226,18 @@ public final class CopyJobConfiguration extends JobConfiguration {
    * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/jobs#configuration.copy.writeDisposition">
    *     Write Disposition</a>
    */
+  @Deprecated
   public JobInfo.WriteDisposition writeDisposition() {
+    return getWriteDisposition();
+  }
+
+  /**
+   * Returns the action that should occur if the destination table already exists.
+   *
+   * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/jobs#configuration.copy.writeDisposition">
+   *     Write Disposition</a>
+   */
+  public JobInfo.WriteDisposition getWriteDisposition() {
     return writeDisposition;
   }
 
@@ -195,14 +271,14 @@ public final class CopyJobConfiguration extends JobConfiguration {
   @Override
   CopyJobConfiguration setProjectId(final String projectId) {
     Builder builder = toBuilder();
-    builder.sourceTables(
-        Lists.transform(sourceTables(), new Function<TableId, TableId>() {
+    builder.setSourceTables(
+        Lists.transform(getSourceTables(), new Function<TableId, TableId>() {
           @Override
           public TableId apply(TableId tableId) {
             return tableId.setProjectId(projectId);
           }
         }));
-    builder.destinationTable(destinationTable().setProjectId(projectId));
+    builder.setDestinationTable(getDestinationTable().setProjectId(projectId));
     return builder.build();
   }
 
@@ -227,29 +303,45 @@ public final class CopyJobConfiguration extends JobConfiguration {
   /**
    * Creates a builder for a BigQuery Copy Job configuration given destination and source table.
    */
+  @Deprecated
   public static Builder builder(TableId destinationTable, TableId sourceTable) {
-    return builder(destinationTable, ImmutableList.of(checkNotNull(sourceTable)));
+    return newBuilder(destinationTable, sourceTable);
+  }
+
+  /**
+   * Creates a builder for a BigQuery Copy Job configuration given destination and source table.
+   */
+  public static Builder newBuilder(TableId destinationTable, TableId sourceTable) {
+    return newBuilder(destinationTable, ImmutableList.of(checkNotNull(sourceTable)));
   }
 
   /**
    * Creates a builder for a BigQuery Copy Job configuration given destination and source tables.
    */
+  @Deprecated
   public static Builder builder(TableId destinationTable, List<TableId> sourceTables) {
-    return new Builder().destinationTable(destinationTable).sourceTables(sourceTables);
+    return newBuilder(destinationTable, sourceTables);
+  }
+
+  /**
+   * Creates a builder for a BigQuery Copy Job configuration given destination and source tables.
+   */
+  public static Builder newBuilder(TableId destinationTable, List<TableId> sourceTables) {
+    return new Builder().setDestinationTable(destinationTable).setSourceTables(sourceTables);
   }
 
   /**
    * Returns a BigQuery Copy Job configuration for the given destination and source table.
    */
   public static CopyJobConfiguration of(TableId destinationTable, TableId sourceTable) {
-    return builder(destinationTable, sourceTable).build();
+    return newBuilder(destinationTable, sourceTable).build();
   }
 
   /**
    * Returns a BigQuery Copy Job configuration for the given destination and source tables.
    */
   public static CopyJobConfiguration of(TableId destinationTable, List<TableId> sourceTables) {
-    return builder(destinationTable, sourceTables).build();
+    return newBuilder(destinationTable, sourceTables).build();
   }
 
   @SuppressWarnings("unchecked")

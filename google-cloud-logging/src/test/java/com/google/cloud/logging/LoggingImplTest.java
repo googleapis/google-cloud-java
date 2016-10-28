@@ -89,8 +89,8 @@ public class LoggingImplTest {
   private static final String METRIC_NAME_PB = "projects/" + PROJECT + "/metrics/" + METRIC_NAME;
   private static final String FILTER = "logName=projects/my-projectid/logs/syslog";
   private static final String DESCRIPTION = "description";
-  private static final MetricInfo METRIC_INFO = MetricInfo.builder(METRIC_NAME, FILTER)
-      .description(DESCRIPTION)
+  private static final MetricInfo METRIC_INFO = MetricInfo.newBuilder(METRIC_NAME, FILTER)
+      .setDescription(DESCRIPTION)
       .build();
   private static final com.google.api.MonitoredResourceDescriptor DESCRIPTOR_PB =
       com.google.api.MonitoredResourceDescriptor.getDefaultInstance();
@@ -99,14 +99,14 @@ public class LoggingImplTest {
   private static final String LOG_NAME = "log";
   private static final String LOG_NAME_PB = "projects/" + PROJECT + "/logs/" + LOG_NAME;
   private static final MonitoredResource MONITORED_RESOURCE =
-      MonitoredResource.builder("global").addLabel("project-id", PROJECT).build();
-  private static final LogEntry LOG_ENTRY1 = LogEntry.builder(StringPayload.of("entry1"))
-      .logName(LOG_NAME)
-      .resource(MONITORED_RESOURCE)
+      MonitoredResource.newBuilder("global").addLabel("project-id", PROJECT).build();
+  private static final LogEntry LOG_ENTRY1 = LogEntry.newBuilder(StringPayload.of("entry1"))
+      .setLogName(LOG_NAME)
+      .setResource(MONITORED_RESOURCE)
       .build();
-  private static final LogEntry LOG_ENTRY2 = LogEntry.builder(StringPayload.of("entry2"))
-      .logName(LOG_NAME)
-      .resource(MONITORED_RESOURCE)
+  private static final LogEntry LOG_ENTRY2 = LogEntry.newBuilder(StringPayload.of("entry2"))
+      .setLogName(LOG_NAME)
+      .setResource(MONITORED_RESOURCE)
       .build();
   private static final Function<SinkInfo, LogSink> SINK_TO_PB_FUNCTION =
       new Function<SinkInfo, LogSink>() {

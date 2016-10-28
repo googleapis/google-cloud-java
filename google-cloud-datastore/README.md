@@ -22,16 +22,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-datastore</artifactId>
-  <version>0.3.0</version>
+  <version>0.4.0</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-datastore:0.3.0'
+compile 'com.google.cloud:google-cloud-datastore:0.4.0'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-datastore" % "0.3.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-datastore" % "0.4.0"
 ```
 
 Example Application
@@ -92,7 +92,7 @@ Then add the following code to put an entity in Datastore.
 ```java
 KeyFactory keyFactory = datastore.newKeyFactory().kind("Person");
 Key key = keyFactory.newKey("john.doe@gmail.com");
-Entity entity = Entity.builder(key)
+Entity entity = Entity.newBuilder(key)
     .set("name", "John Doe")
     .set("age", 51)
     .set("favorite_food", "pizza")
@@ -126,9 +126,9 @@ import com.google.cloud.datastore.StructuredQuery.PropertyFilter;
 Then add the following code to your program:
 
 ```java
-Query<Entity> query = Query.entityQueryBuilder()
-    .kind("Person")
-    .filter(PropertyFilter.eq("favorite_food", "pizza"))
+Query<Entity> query = Query.newEntityQueryBuilder()
+    .setKind("Person")
+    .setFilter(PropertyFilter.eq("favorite_food", "pizza"))
     .build();
 QueryResults<Entity> results = datastore.run(query);
 while (results.hasNext()) {

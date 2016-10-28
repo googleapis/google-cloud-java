@@ -22,16 +22,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-storage</artifactId>
-  <version>0.3.0</version>
+  <version>0.4.0</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-storage:0.3.0'
+compile 'com.google.cloud:google-cloud-storage:0.4.0'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-storage" % "0.3.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-storage" % "0.4.0"
 ```
 
 Example Application
@@ -112,7 +112,7 @@ At this point, you will be able to see your newly created bucket and blob on the
 Now that we have content uploaded to the server, we can see how to read data from the server.  Add the following line to your program to get back the blob we uploaded.
 
 ```java
-String blobContent = new String(blob.content(), UTF_8);
+String blobContent = new String(blob.getContent(), UTF_8);
 ```
 
 #### Listing buckets and contents of buckets

@@ -15,7 +15,7 @@ package com.google.cloud.logging.spi.v2;
 
 import com.google.api.MonitoredResource;
 import com.google.api.MonitoredResourceDescriptor;
-import com.google.api.gax.core.PageAccessor;
+import com.google.api.gax.core.PagedListResponse;
 import com.google.api.gax.grpc.ApiCallable;
 import com.google.api.gax.protobuf.PathTemplate;
 import com.google.logging.v2.DeleteLogRequest;
@@ -31,7 +31,6 @@ import io.grpc.ManagedChannel;
 import java.io.Closeable;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ScheduledExecutorService;
@@ -53,28 +52,27 @@ import java.util.concurrent.ScheduledExecutorService;
  * </pre>
  *
  * <p>Note: close() needs to be called on the loggingServiceV2Api object to clean up resources such
- * as threads. In the example above, try-with-resources is used, which automatically calls
- * close().
+ * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
- * <p>The surface of this class includes several types of Java methods for each of the API's methods:
+ * <p>The surface of this class includes several types of Java methods for each of the API's
+ * methods:
  *
  * <ol>
- * <li> A "flattened" method. With this type of method, the fields of the request type have been
- * converted into function parameters. It may be the case that not all fields are available
- * as parameters, and not every API method will have a flattened method entry point.
- * <li> A "request object" method. This type of method only takes one parameter, a request
- * object, which must be constructed before the call. Not every API method will have a request
- * object method.
- * <li> A "callable" method. This type of method takes no parameters and returns an immutable
- * ApiCallable object, which can be used to initiate calls to the service.
+ *   <li> A "flattened" method. With this type of method, the fields of the request type have been
+ *       converted into function parameters. It may be the case that not all fields are available as
+ *       parameters, and not every API method will have a flattened method entry point.
+ *   <li> A "request object" method. This type of method only takes one parameter, a request object,
+ *       which must be constructed before the call. Not every API method will have a request object
+ *       method.
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable
+ *       ApiCallable object, which can be used to initiate calls to the service.
  * </ol>
  *
  * <p>See the individual methods for example code.
  *
- * <p>Many parameters require resource names to be formatted in a particular way. To assist
- * with these names, this class includes a format method for each type of name, and additionally
- * a parse method to extract the individual identifiers contained within names that are
- * returned.
+ * <p>Many parameters require resource names to be formatted in a particular way. To assist with
+ * these names, this class includes a format method for each type of name, and additionally a parse
+ * method to extract the individual identifiers contained within names that are returned.
  *
  * <p>This class can be customized by passing in a custom instance of LoggingServiceV2Settings to
  * create(). For example:
@@ -99,18 +97,19 @@ public class LoggingServiceV2Api implements AutoCloseable {
   private final ApiCallable<WriteLogEntriesRequest, WriteLogEntriesResponse>
       writeLogEntriesCallable;
   private final ApiCallable<ListLogEntriesRequest, ListLogEntriesResponse> listLogEntriesCallable;
-  private final ApiCallable<ListLogEntriesRequest, PageAccessor<LogEntry>>
+  private final ApiCallable<
+          ListLogEntriesRequest,
+          PagedListResponse<ListLogEntriesRequest, ListLogEntriesResponse, LogEntry>>
       listLogEntriesPagedCallable;
   private final ApiCallable<
           ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse>
       listMonitoredResourceDescriptorsCallable;
   private final ApiCallable<
-          ListMonitoredResourceDescriptorsRequest, PageAccessor<MonitoredResourceDescriptor>>
+          ListMonitoredResourceDescriptorsRequest,
+          PagedListResponse<
+              ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse,
+              MonitoredResourceDescriptor>>
       listMonitoredResourceDescriptorsPagedCallable;
-
-  public final LoggingServiceV2Settings getSettings() {
-    return settings;
-  }
 
   private static final PathTemplate PARENT_PATH_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding("projects/{project}");
@@ -118,59 +117,41 @@ public class LoggingServiceV2Api implements AutoCloseable {
   private static final PathTemplate LOG_PATH_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding("projects/{project}/logs/{log}");
 
-  /**
-   * Formats a string containing the fully-qualified path to represent
-   * a parent resource.
-   */
+  /** Formats a string containing the fully-qualified path to represent a parent resource. */
   public static final String formatParentName(String project) {
     return PARENT_PATH_TEMPLATE.instantiate("project", project);
   }
 
-  /**
-   * Formats a string containing the fully-qualified path to represent
-   * a log resource.
-   */
+  /** Formats a string containing the fully-qualified path to represent a log resource. */
   public static final String formatLogName(String project, String log) {
     return LOG_PATH_TEMPLATE.instantiate(
         "project", project,
         "log", log);
   }
 
-  /**
-   * Parses the project from the given fully-qualified path which
-   * represents a parent resource.
-   */
+  /** Parses the project from the given fully-qualified path which represents a parent resource. */
   public static final String parseProjectFromParentName(String parentName) {
     return PARENT_PATH_TEMPLATE.parse(parentName).get("project");
   }
 
-  /**
-   * Parses the project from the given fully-qualified path which
-   * represents a log resource.
-   */
+  /** Parses the project from the given fully-qualified path which represents a log resource. */
   public static final String parseProjectFromLogName(String logName) {
     return LOG_PATH_TEMPLATE.parse(logName).get("project");
   }
 
-  /**
-   * Parses the log from the given fully-qualified path which
-   * represents a log resource.
-   */
+  /** Parses the log from the given fully-qualified path which represents a log resource. */
   public static final String parseLogFromLogName(String logName) {
     return LOG_PATH_TEMPLATE.parse(logName).get("log");
   }
 
-  /**
-   * Constructs an instance of LoggingServiceV2Api with default settings.
-   */
+  /** Constructs an instance of LoggingServiceV2Api with default settings. */
   public static final LoggingServiceV2Api create() throws IOException {
     return create(LoggingServiceV2Settings.defaultBuilder().build());
   }
 
   /**
-   * Constructs an instance of LoggingServiceV2Api, using the given settings.
-   * The channels are created based on the settings passed in, or defaults for any
-   * settings that are not set.
+   * Constructs an instance of LoggingServiceV2Api, using the given settings. The channels are
+   * created based on the settings passed in, or defaults for any settings that are not set.
    */
   public static final LoggingServiceV2Api create(LoggingServiceV2Settings settings)
       throws IOException {
@@ -178,9 +159,8 @@ public class LoggingServiceV2Api implements AutoCloseable {
   }
 
   /**
-   * Constructs an instance of LoggingServiceV2Api, using the given settings.
-   * This is protected so that it easy to make a subclass, but otherwise, the static
-   * factory methods should be preferred.
+   * Constructs an instance of LoggingServiceV2Api, using the given settings. This is protected so
+   * that it easy to make a subclass, but otherwise, the static factory methods should be preferred.
    */
   protected LoggingServiceV2Api(LoggingServiceV2Settings settings) throws IOException {
     this.settings = settings;
@@ -223,12 +203,16 @@ public class LoggingServiceV2Api implements AutoCloseable {
     }
   }
 
+  public final LoggingServiceV2Settings getSettings() {
+    return settings;
+  }
+
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes a log and all its log entries.
-   * The log will reappear if it receives new entries.
+   * Deletes a log and all its log entries. The log will reappear if it receives new entries.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (LoggingServiceV2Api loggingServiceV2Api = LoggingServiceV2Api.create()) {
    *   String formattedLogName = LoggingServiceV2Api.formatLogName("[PROJECT]", "[LOG]");
@@ -236,8 +220,8 @@ public class LoggingServiceV2Api implements AutoCloseable {
    * }
    * </code></pre>
    *
-   * @param logName Required. The resource name of the log to delete.  Example:
-   * `"projects/my-project/logs/syslog"`.
+   * @param logName Required. The resource name of the log to delete. Example:
+   *     `"projects/my-project/logs/syslog"`.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final void deleteLog(String logName) {
@@ -248,10 +232,10 @@ public class LoggingServiceV2Api implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes a log and all its log entries.
-   * The log will reappear if it receives new entries.
+   * Deletes a log and all its log entries. The log will reappear if it receives new entries.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (LoggingServiceV2Api loggingServiceV2Api = LoggingServiceV2Api.create()) {
    *   String formattedLogName = LoggingServiceV2Api.formatLogName("[PROJECT]", "[LOG]");
@@ -271,10 +255,10 @@ public class LoggingServiceV2Api implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes a log and all its log entries.
-   * The log will reappear if it receives new entries.
+   * Deletes a log and all its log entries. The log will reappear if it receives new entries.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (LoggingServiceV2Api loggingServiceV2Api = LoggingServiceV2Api.create()) {
    *   String formattedLogName = LoggingServiceV2Api.formatLogName("[PROJECT]", "[LOG]");
@@ -293,36 +277,33 @@ public class LoggingServiceV2Api implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Writes log entries to Stackdriver Logging.  All log entries are
-   * written by this method.
+   * Writes log entries to Stackdriver Logging. All log entries are written by this method.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (LoggingServiceV2Api loggingServiceV2Api = LoggingServiceV2Api.create()) {
-   *   String logName = "";
+   *   String formattedLogName = LoggingServiceV2Api.formatLogName("[PROJECT]", "[LOG]");
    *   MonitoredResource resource = MonitoredResource.newBuilder().build();
    *   Map&lt;String, String&gt; labels = new HashMap&lt;&gt;();
    *   List&lt;LogEntry&gt; entries = new ArrayList&lt;&gt;();
-   *   WriteLogEntriesResponse response = loggingServiceV2Api.writeLogEntries(logName, resource, labels, entries);
+   *   WriteLogEntriesResponse response = loggingServiceV2Api.writeLogEntries(formattedLogName, resource, labels, entries);
    * }
    * </code></pre>
    *
-   * @param logName Optional. A default log resource name for those log entries in `entries`
-   * that do not specify their own `logName`.  Example:
-   * `"projects/my-project/logs/syslog"`.  See
-   * [LogEntry][google.logging.v2.LogEntry].
-   * @param resource Optional. A default monitored resource for those log entries in `entries`
-   * that do not specify their own `resource`.
-   * @param labels Optional. User-defined `key:value` items that are added to
-   * the `labels` field of each log entry in `entries`, except when a log
-   * entry specifies its own `key:value` item with the same key.
-   * Example: `{ "size": "large", "color":"red" }`
-   * @param entries Required. The log entries to write. The log entries must have values for
-   * all required fields.
-   *
-   * To improve throughput and to avoid exceeding the quota limit for calls
-   * to `entries.write`, use this field to write multiple log entries at once
-   * rather than  // calling this method for each log entry.
+   * @param logName Optional. A default log resource name for those log entries in `entries` that do
+   *     not specify their own `logName`. Example: `"projects/my-project/logs/syslog"`. See
+   *     [LogEntry][google.logging.v2.LogEntry].
+   * @param resource Optional. A default monitored resource for those log entries in `entries` that
+   *     do not specify their own `resource`.
+   * @param labels Optional. User-defined `key:value` items that are added to the `labels` field of
+   *     each log entry in `entries`, except when a log entry specifies its own `key:value` item
+   *     with the same key. Example: `{ "size": "large", "color":"red" }`
+   * @param entries Required. The log entries to write. The log entries must have values for all
+   *     required fields.
+   *     <p>To improve throughput and to avoid exceeding the quota limit for calls to
+   *     `entries.write`, use this field to write multiple log entries at once rather than //
+   *     calling this method for each log entry.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final WriteLogEntriesResponse writeLogEntries(
@@ -330,7 +311,9 @@ public class LoggingServiceV2Api implements AutoCloseable {
       MonitoredResource resource,
       Map<String, String> labels,
       List<LogEntry> entries) {
-    LOG_PATH_TEMPLATE.validate(logName, "writeLogEntries");
+    if (!logName.isEmpty()) {
+      LOG_PATH_TEMPLATE.validate(logName, "writeLogEntries");
+    }
     WriteLogEntriesRequest request =
         WriteLogEntriesRequest.newBuilder()
             .setLogName(logName)
@@ -343,10 +326,10 @@ public class LoggingServiceV2Api implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Writes log entries to Stackdriver Logging.  All log entries are
-   * written by this method.
+   * Writes log entries to Stackdriver Logging. All log entries are written by this method.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (LoggingServiceV2Api loggingServiceV2Api = LoggingServiceV2Api.create()) {
    *   List&lt;LogEntry&gt; entries = new ArrayList&lt;&gt;();
@@ -366,10 +349,10 @@ public class LoggingServiceV2Api implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Writes log entries to Stackdriver Logging.  All log entries are
-   * written by this method.
+   * Writes log entries to Stackdriver Logging. All log entries are written by this method.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (LoggingServiceV2Api loggingServiceV2Api = LoggingServiceV2Api.create()) {
    *   List&lt;LogEntry&gt; entries = new ArrayList&lt;&gt;();
@@ -389,38 +372,36 @@ public class LoggingServiceV2Api implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists log entries.  Use this method to retrieve log entries from Cloud
-   * Logging.  For ways to export log entries, see
-   * [Exporting Logs](/logging/docs/export).
+   * Lists log entries. Use this method to retrieve log entries from Cloud Logging. For ways to
+   * export log entries, see [Exporting Logs](/logging/docs/export).
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (LoggingServiceV2Api loggingServiceV2Api = LoggingServiceV2Api.create()) {
    *   List&lt;String&gt; projectIds = new ArrayList&lt;&gt;();
    *   String filter = "";
    *   String orderBy = "";
-   *   for (LogEntry element : loggingServiceV2Api.listLogEntries(projectIds, filter, orderBy)) {
+   *   for (LogEntry element : loggingServiceV2Api.listLogEntries(projectIds, filter, orderBy).iterateAllElements()) {
    *     // doThingsWith(element);
    *   }
    * }
    * </code></pre>
    *
    * @param projectIds Required. One or more project IDs or project numbers from which to retrieve
-   * log entries.  Examples of a project ID: `"my-project-1A"`, `"1234567890"`.
-   * @param filter Optional. An [advanced logs filter](/logging/docs/view/advanced_filters).
-   * The filter is compared against all log entries in the projects specified by
-   * `projectIds`.  Only entries that match the filter are retrieved.  An empty
-   * filter matches all log entries.
-   * @param orderBy Optional. How the results should be sorted.  Presently, the only permitted
-   * values are `"timestamp asc"` (default) and `"timestamp desc"`. The first
-   * option returns entries in order of increasing values of
-   * `LogEntry.timestamp` (oldest first), and the second option returns entries
-   * in order of decreasing timestamps (newest first).  Entries with equal
-   * timestamps are returned in order of `LogEntry.insertId`.
+   *     log entries. Examples of a project ID: `"my-project-1A"`, `"1234567890"`.
+   * @param filter Optional. An [advanced logs filter](/logging/docs/view/advanced_filters). The
+   *     filter is compared against all log entries in the projects specified by `projectIds`. Only
+   *     entries that match the filter are retrieved. An empty filter matches all log entries.
+   * @param orderBy Optional. How the results should be sorted. Presently, the only permitted values
+   *     are `"timestamp asc"` (default) and `"timestamp desc"`. The first option returns entries in
+   *     order of increasing values of `LogEntry.timestamp` (oldest first), and the second option
+   *     returns entries in order of decreasing timestamps (newest first). Entries with equal
+   *     timestamps are returned in order of `LogEntry.insertId`.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  public final PageAccessor<LogEntry> listLogEntries(
-      List<String> projectIds, String filter, String orderBy) {
+  public final PagedListResponse<ListLogEntriesRequest, ListLogEntriesResponse, LogEntry>
+      listLogEntries(List<String> projectIds, String filter, String orderBy) {
     ListLogEntriesRequest request =
         ListLogEntriesRequest.newBuilder()
             .addAllProjectIds(projectIds)
@@ -432,18 +413,18 @@ public class LoggingServiceV2Api implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists log entries.  Use this method to retrieve log entries from Cloud
-   * Logging.  For ways to export log entries, see
-   * [Exporting Logs](/logging/docs/export).
+   * Lists log entries. Use this method to retrieve log entries from Cloud Logging. For ways to
+   * export log entries, see [Exporting Logs](/logging/docs/export).
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (LoggingServiceV2Api loggingServiceV2Api = LoggingServiceV2Api.create()) {
    *   List&lt;String&gt; projectIds = new ArrayList&lt;&gt;();
    *   ListLogEntriesRequest request = ListLogEntriesRequest.newBuilder()
    *     .addAllProjectIds(projectIds)
    *     .build();
-   *   for (LogEntry element : loggingServiceV2Api.listLogEntries(request)) {
+   *   for (LogEntry element : loggingServiceV2Api.listLogEntries(request).iterateAllElements()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -452,43 +433,46 @@ public class LoggingServiceV2Api implements AutoCloseable {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  public final PageAccessor<LogEntry> listLogEntries(ListLogEntriesRequest request) {
+  public final PagedListResponse<ListLogEntriesRequest, ListLogEntriesResponse, LogEntry>
+      listLogEntries(ListLogEntriesRequest request) {
     return listLogEntriesPagedCallable().call(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists log entries.  Use this method to retrieve log entries from Cloud
-   * Logging.  For ways to export log entries, see
-   * [Exporting Logs](/logging/docs/export).
+   * Lists log entries. Use this method to retrieve log entries from Cloud Logging. For ways to
+   * export log entries, see [Exporting Logs](/logging/docs/export).
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (LoggingServiceV2Api loggingServiceV2Api = LoggingServiceV2Api.create()) {
    *   List&lt;String&gt; projectIds = new ArrayList&lt;&gt;();
    *   ListLogEntriesRequest request = ListLogEntriesRequest.newBuilder()
    *     .addAllProjectIds(projectIds)
    *     .build();
-   *   ListenableFuture&lt;PageAccessor&lt;LogEntry&gt;&gt; future = loggingServiceV2Api.listLogEntriesPagedCallable().futureCall(request);
+   *   ListenableFuture&lt;PagedListResponse&lt;ListLogEntriesRequest,ListLogEntriesResponse,LogEntry&gt;&gt; future = loggingServiceV2Api.listLogEntriesPagedCallable().futureCall(request);
    *   // Do something
-   *   for (LogEntry element : future.get()) {
+   *   for (LogEntry element : future.get().iterateAllElements()) {
    *     // doThingsWith(element);
    *   }
    * }
    * </code></pre>
    */
-  public final ApiCallable<ListLogEntriesRequest, PageAccessor<LogEntry>>
+  public final ApiCallable<
+          ListLogEntriesRequest,
+          PagedListResponse<ListLogEntriesRequest, ListLogEntriesResponse, LogEntry>>
       listLogEntriesPagedCallable() {
     return listLogEntriesPagedCallable;
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists log entries.  Use this method to retrieve log entries from Cloud
-   * Logging.  For ways to export log entries, see
-   * [Exporting Logs](/logging/docs/export).
+   * Lists log entries. Use this method to retrieve log entries from Cloud Logging. For ways to
+   * export log entries, see [Exporting Logs](/logging/docs/export).
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (LoggingServiceV2Api loggingServiceV2Api = LoggingServiceV2Api.create()) {
    *   List&lt;String&gt; projectIds = new ArrayList&lt;&gt;();
@@ -518,12 +502,12 @@ public class LoggingServiceV2Api implements AutoCloseable {
   /**
    * Lists the monitored resource descriptors used by Stackdriver Logging.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (LoggingServiceV2Api loggingServiceV2Api = LoggingServiceV2Api.create()) {
-   *   ListMonitoredResourceDescriptorsRequest request = ListMonitoredResourceDescriptorsRequest.newBuilder()
-   *     .build();
-   *   for (MonitoredResourceDescriptor element : loggingServiceV2Api.listMonitoredResourceDescriptors(request)) {
+   *   ListMonitoredResourceDescriptorsRequest request = ListMonitoredResourceDescriptorsRequest.newBuilder().build();
+   *   for (MonitoredResourceDescriptor element : loggingServiceV2Api.listMonitoredResourceDescriptors(request).iterateAllElements()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -532,8 +516,10 @@ public class LoggingServiceV2Api implements AutoCloseable {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  public final PageAccessor<MonitoredResourceDescriptor> listMonitoredResourceDescriptors(
-      ListMonitoredResourceDescriptorsRequest request) {
+  public final PagedListResponse<
+          ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse,
+          MonitoredResourceDescriptor>
+      listMonitoredResourceDescriptors(ListMonitoredResourceDescriptorsRequest request) {
     return listMonitoredResourceDescriptorsPagedCallable().call(request);
   }
 
@@ -541,21 +527,24 @@ public class LoggingServiceV2Api implements AutoCloseable {
   /**
    * Lists the monitored resource descriptors used by Stackdriver Logging.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (LoggingServiceV2Api loggingServiceV2Api = LoggingServiceV2Api.create()) {
-   *   ListMonitoredResourceDescriptorsRequest request = ListMonitoredResourceDescriptorsRequest.newBuilder()
-   *     .build();
-   *   ListenableFuture&lt;PageAccessor&lt;MonitoredResourceDescriptor&gt;&gt; future = loggingServiceV2Api.listMonitoredResourceDescriptorsPagedCallable().futureCall(request);
+   *   ListMonitoredResourceDescriptorsRequest request = ListMonitoredResourceDescriptorsRequest.newBuilder().build();
+   *   ListenableFuture&lt;PagedListResponse&lt;ListMonitoredResourceDescriptorsRequest,ListMonitoredResourceDescriptorsResponse,MonitoredResourceDescriptor&gt;&gt; future = loggingServiceV2Api.listMonitoredResourceDescriptorsPagedCallable().futureCall(request);
    *   // Do something
-   *   for (MonitoredResourceDescriptor element : future.get()) {
+   *   for (MonitoredResourceDescriptor element : future.get().iterateAllElements()) {
    *     // doThingsWith(element);
    *   }
    * }
    * </code></pre>
    */
   public final ApiCallable<
-          ListMonitoredResourceDescriptorsRequest, PageAccessor<MonitoredResourceDescriptor>>
+          ListMonitoredResourceDescriptorsRequest,
+          PagedListResponse<
+              ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse,
+              MonitoredResourceDescriptor>>
       listMonitoredResourceDescriptorsPagedCallable() {
     return listMonitoredResourceDescriptorsPagedCallable;
   }
@@ -564,11 +553,11 @@ public class LoggingServiceV2Api implements AutoCloseable {
   /**
    * Lists the monitored resource descriptors used by Stackdriver Logging.
    *
-   * Sample code:
+   * <p>Sample code:
+   *
    * <pre><code>
    * try (LoggingServiceV2Api loggingServiceV2Api = LoggingServiceV2Api.create()) {
-   *   ListMonitoredResourceDescriptorsRequest request = ListMonitoredResourceDescriptorsRequest.newBuilder()
-   *     .build();
+   *   ListMonitoredResourceDescriptorsRequest request = ListMonitoredResourceDescriptorsRequest.newBuilder().build();
    *   while (true) {
    *     ListMonitoredResourceDescriptorsResponse response = loggingServiceV2Api.listMonitoredResourceDescriptorsCallable().call(request);
    *     for (MonitoredResourceDescriptor element : response.getResourceDescriptorsList()) {

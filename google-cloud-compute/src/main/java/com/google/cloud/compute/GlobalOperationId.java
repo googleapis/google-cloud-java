@@ -33,13 +33,25 @@ public final class GlobalOperationId extends OperationId {
   }
 
   @Override
+  @Deprecated
   public Type type() {
+    return getType();
+  }
+
+  @Override
+  public Type getType() {
     return Type.GLOBAL;
   }
 
   @Override
+  @Deprecated
   public String selfLink() {
-    return super.selfLink() + "/global/operations/" + operation();
+    return getSelfLink();
+  }
+
+  @Override
+  public String getSelfLink() {
+    return super.getSelfLink() + "/global/operations/" + getOperation();
   }
 
   @Override
@@ -54,10 +66,10 @@ public final class GlobalOperationId extends OperationId {
 
   @Override
   GlobalOperationId setProjectId(String projectId) {
-    if (project() != null) {
+    if (getProject() != null) {
       return this;
     }
-    return GlobalOperationId.of(projectId, operation());
+    return GlobalOperationId.of(projectId, getOperation());
   }
 
   /**

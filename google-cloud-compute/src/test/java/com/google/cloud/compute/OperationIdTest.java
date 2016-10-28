@@ -45,6 +45,51 @@ public class OperationIdTest {
   @Test
   public void testOf() {
     GlobalOperationId operationId = GlobalOperationId.of(PROJECT, NAME);
+    assertEquals(OperationId.Type.GLOBAL, operationId.getType());
+    assertEquals(PROJECT, operationId.getProject());
+    assertEquals(NAME, operationId.getOperation());
+    assertEquals(GLOBAL_URL, operationId.getSelfLink());
+    operationId = GlobalOperationId.of(NAME);
+    assertEquals(OperationId.Type.GLOBAL, operationId.getType());
+    assertNull(operationId.getProject());
+    assertEquals(NAME, operationId.getOperation());
+    ZoneOperationId zoneOperationId = ZoneOperationId.of(PROJECT, ZONE, NAME);
+    assertEquals(OperationId.Type.ZONE, zoneOperationId.getType());
+    assertEquals(PROJECT, zoneOperationId.getProject());
+    assertEquals(ZONE, zoneOperationId.getZone());
+    assertEquals(NAME, zoneOperationId.getOperation());
+    assertEquals(ZONE_URL, zoneOperationId.getSelfLink());
+    zoneOperationId = ZoneOperationId.of(ZONE, NAME);
+    assertEquals(OperationId.Type.ZONE, zoneOperationId.getType());
+    assertNull(zoneOperationId.getProject());
+    assertEquals(ZONE, zoneOperationId.getZone());
+    assertEquals(NAME, zoneOperationId.getOperation());
+    zoneOperationId = ZoneOperationId.of(ZoneId.of(PROJECT, ZONE), NAME);
+    assertEquals(OperationId.Type.ZONE, zoneOperationId.getType());
+    assertEquals(PROJECT, zoneOperationId.getProject());
+    assertEquals(ZONE, zoneOperationId.getZone());
+    assertEquals(NAME, zoneOperationId.getOperation());
+    RegionOperationId regionOperationId = RegionOperationId.of(PROJECT, REGION, NAME);
+    assertEquals(OperationId.Type.REGION, regionOperationId.getType());
+    assertEquals(PROJECT, regionOperationId.getProject());
+    assertEquals(REGION, regionOperationId.getRegion());
+    assertEquals(NAME, regionOperationId.getOperation());
+    assertEquals(REGION_URL, regionOperationId.getSelfLink());
+    regionOperationId = RegionOperationId.of(REGION, NAME);
+    assertEquals(OperationId.Type.REGION, regionOperationId.getType());
+    assertNull(regionOperationId.getProject());
+    assertEquals(REGION, regionOperationId.getRegion());
+    assertEquals(NAME, regionOperationId.getOperation());
+    regionOperationId = RegionOperationId.of(RegionId.of(PROJECT, REGION), NAME);
+    assertEquals(OperationId.Type.REGION, regionOperationId.getType());
+    assertEquals(PROJECT, regionOperationId.getProject());
+    assertEquals(REGION, regionOperationId.getRegion());
+    assertEquals(NAME, regionOperationId.getOperation());
+  }
+
+  @Test
+  public void testOfDeprecated() {
+    GlobalOperationId operationId = GlobalOperationId.of(PROJECT, NAME);
     assertEquals(OperationId.Type.GLOBAL, operationId.type());
     assertEquals(PROJECT, operationId.project());
     assertEquals(NAME, operationId.operation());
@@ -90,7 +135,7 @@ public class OperationIdTest {
   @Test
   public void testToAndFromUrlGlobal() {
     GlobalOperationId operationId = GlobalOperationId.of(PROJECT, NAME);
-    compareOperationId(operationId, GlobalOperationId.fromUrl(operationId.selfLink()));
+    compareOperationId(operationId, GlobalOperationId.fromUrl(operationId.getSelfLink()));
     thrown.expect(IllegalArgumentException.class);
     thrown.expectMessage("notMatchingUrl is not a valid global operation URL");
     GlobalOperationId.fromUrl("notMatchingUrl");
@@ -100,7 +145,7 @@ public class OperationIdTest {
   public void testToAndFromUrlRegion() {
     RegionOperationId regionOperationId = RegionOperationId.of(PROJECT, REGION, NAME);
     compareRegionOperationId(regionOperationId,
-        RegionOperationId.fromUrl(regionOperationId.selfLink()));
+        RegionOperationId.fromUrl(regionOperationId.getSelfLink()));
     thrown.expect(IllegalArgumentException.class);
     thrown.expectMessage("notMatchingUrl is not a valid region operation URL");
     RegionOperationId.fromUrl("notMatchingUrl");
@@ -109,7 +154,7 @@ public class OperationIdTest {
   @Test
   public void testToAndFromUrlZone() {
     ZoneOperationId zoneOperationId = ZoneOperationId.of(PROJECT, ZONE, NAME);
-    compareZoneOperationId(zoneOperationId, ZoneOperationId.fromUrl(zoneOperationId.selfLink()));
+    compareZoneOperationId(zoneOperationId, ZoneOperationId.fromUrl(zoneOperationId.getSelfLink()));
     thrown.expect(IllegalArgumentException.class);
     thrown.expectMessage("notMatchingUrl is not a valid zone operation URL");
     ZoneOperationId.fromUrl("notMatchingUrl");
@@ -131,39 +176,39 @@ public class OperationIdTest {
 
   @Test
   public void testMatchesUrl() {
-    assertTrue(GlobalOperationId.matchesUrl(GlobalOperationId.of(PROJECT, NAME).selfLink()));
+    assertTrue(GlobalOperationId.matchesUrl(GlobalOperationId.of(PROJECT, NAME).getSelfLink()));
     assertFalse(GlobalOperationId.matchesUrl("notMatchingUrl"));
     assertTrue(
-        RegionOperationId.matchesUrl(RegionOperationId.of(PROJECT, REGION, NAME).selfLink()));
+        RegionOperationId.matchesUrl(RegionOperationId.of(PROJECT, REGION, NAME).getSelfLink()));
     assertFalse(RegionOperationId.matchesUrl("notMatchingUrl"));
-    assertTrue(ZoneOperationId.matchesUrl(ZoneOperationId.of(PROJECT, REGION, NAME).selfLink()));
+    assertTrue(ZoneOperationId.matchesUrl(ZoneOperationId.of(PROJECT, REGION, NAME).getSelfLink()));
     assertFalse(ZoneOperationId.matchesUrl("notMatchingUrl"));
   }
 
   private void compareOperationId(GlobalOperationId expected, GlobalOperationId value) {
     assertEquals(expected, value);
-    assertEquals(expected.project(), expected.project());
-    assertEquals(expected.operation(), expected.operation());
-    assertEquals(expected.selfLink(), expected.selfLink());
+    assertEquals(expected.getProject(), expected.getProject());
+    assertEquals(expected.getOperation(), expected.getOperation());
+    assertEquals(expected.getSelfLink(), expected.getSelfLink());
     assertEquals(expected.hashCode(), expected.hashCode());
   }
 
   private void compareZoneOperationId(ZoneOperationId expected, ZoneOperationId value) {
     assertEquals(expected, value);
-    assertEquals(expected.project(), expected.project());
-    assertEquals(expected.zone(), expected.zone());
-    assertEquals(expected.operation(), expected.operation());
-    assertEquals(expected.selfLink(), expected.selfLink());
+    assertEquals(expected.getProject(), expected.getProject());
+    assertEquals(expected.getZone(), expected.getZone());
+    assertEquals(expected.getOperation(), expected.getOperation());
+    assertEquals(expected.getSelfLink(), expected.getSelfLink());
     assertEquals(expected.hashCode(), expected.hashCode());
   }
 
   private void compareRegionOperationId(RegionOperationId expected, RegionOperationId value) {
     assertEquals(expected, value);
-    assertEquals(expected.type(), value.type());
-    assertEquals(expected.project(), expected.project());
-    assertEquals(expected.region(), expected.region());
-    assertEquals(expected.operation(), expected.operation());
-    assertEquals(expected.selfLink(), expected.selfLink());
+    assertEquals(expected.getType(), value.getType());
+    assertEquals(expected.getProject(), expected.getProject());
+    assertEquals(expected.getRegion(), expected.getRegion());
+    assertEquals(expected.getOperation(), expected.getOperation());
+    assertEquals(expected.getSelfLink(), expected.getSelfLink());
     assertEquals(expected.hashCode(), expected.hashCode());
   }
 }

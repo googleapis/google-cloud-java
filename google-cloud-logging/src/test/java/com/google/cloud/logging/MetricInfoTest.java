@@ -29,29 +29,34 @@ public class MetricInfoTest {
   private static final String NEW_NAME = "newName";
   private static final String NEW_FILTER = "logName=projects/my-projectid/logs/newSyslog";
   private static final String NEW_DESCRIPTION = "newDescription";
-  private static final MetricInfo METRIC_INFO = MetricInfo.builder(NAME, FILTER)
+  private static final MetricInfo METRIC_INFO = MetricInfo.newBuilder(NAME, FILTER)
+      .setDescription(DESCRIPTION)
+      .build();
+  private static final MetricInfo DEPRECATED_METRIC_INFO = MetricInfo.builder(NAME, FILTER)
       .description(DESCRIPTION)
       .build();
 
   @Test
   public void testOf() {
     MetricInfo metricInfo = MetricInfo.of(NAME, FILTER);
-    assertEquals(NAME, metricInfo.name());
-    assertEquals(FILTER, metricInfo.filter());
-    assertNull(metricInfo.description());
+    assertEquals(NAME, metricInfo.getName());
+    assertEquals(FILTER, metricInfo.getFilter());
+    assertNull(metricInfo.getDescription());
   }
 
   @Test
   public void testBuilder() {
-    assertEquals(NAME, METRIC_INFO.name());
-    assertEquals(FILTER, METRIC_INFO.filter());
-    assertEquals(DESCRIPTION, METRIC_INFO.description());
+    assertEquals(NAME, METRIC_INFO.getName());
+    assertEquals(FILTER, METRIC_INFO.getFilter());
+    assertEquals(DESCRIPTION, METRIC_INFO.getDescription());
   }
 
   @Test
-  public void testToBuilder() {
-    compareMetricInfo(METRIC_INFO, METRIC_INFO.toBuilder().build());
-    MetricInfo metricInfo = METRIC_INFO.toBuilder()
+  public void testBuilderDeprecated() {
+    assertEquals(NAME, DEPRECATED_METRIC_INFO.getName());
+    assertEquals(FILTER, DEPRECATED_METRIC_INFO.getFilter());
+    assertEquals(DESCRIPTION, DEPRECATED_METRIC_INFO.getDescription());
+    MetricInfo metricInfo = DEPRECATED_METRIC_INFO.toBuilder()
         .name(NEW_NAME)
         .description(NEW_DESCRIPTION)
         .filter(NEW_FILTER)
@@ -59,10 +64,23 @@ public class MetricInfoTest {
     assertEquals(NEW_NAME, metricInfo.name());
     assertEquals(NEW_FILTER, metricInfo.filter());
     assertEquals(NEW_DESCRIPTION, metricInfo.description());
+  }
+
+  @Test
+  public void testToBuilder() {
+    compareMetricInfo(METRIC_INFO, METRIC_INFO.toBuilder().build());
+    MetricInfo metricInfo = METRIC_INFO.toBuilder()
+        .setName(NEW_NAME)
+        .setDescription(NEW_DESCRIPTION)
+        .setFilter(NEW_FILTER)
+        .build();
+    assertEquals(NEW_NAME, metricInfo.getName());
+    assertEquals(NEW_FILTER, metricInfo.getFilter());
+    assertEquals(NEW_DESCRIPTION, metricInfo.getDescription());
     metricInfo = metricInfo.toBuilder()
-        .name(NAME)
-        .description(DESCRIPTION)
-        .filter(FILTER)
+        .setName(NAME)
+        .setDescription(DESCRIPTION)
+        .setFilter(FILTER)
         .build();
     compareMetricInfo(METRIC_INFO, metricInfo);
   }
@@ -76,9 +94,9 @@ public class MetricInfoTest {
 
   private void compareMetricInfo(MetricInfo expected, MetricInfo value) {
     assertEquals(expected, value);
-    assertEquals(expected.name(), value.name());
-    assertEquals(expected.description(), value.description());
-    assertEquals(expected.filter(), value.filter());
+    assertEquals(expected.getName(), value.getName());
+    assertEquals(expected.getDescription(), value.getDescription());
+    assertEquals(expected.getFilter(), value.getFilter());
     assertEquals(expected.hashCode(), value.hashCode());
     assertEquals(expected.toString(), value.toString());
   }

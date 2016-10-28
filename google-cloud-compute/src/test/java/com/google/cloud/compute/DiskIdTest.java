@@ -40,6 +40,23 @@ public class DiskIdTest {
   @Test
   public void testOf() {
     DiskId diskId = DiskId.of(PROJECT, ZONE, NAME);
+    assertEquals(PROJECT, diskId.getProject());
+    assertEquals(ZONE, diskId.getZone());
+    assertEquals(NAME, diskId.getDisk());
+    assertEquals(URL, diskId.getSelfLink());
+    diskId = DiskId.of(ZONE, NAME);
+    assertNull(diskId.getProject());
+    assertEquals(ZONE, diskId.getZone());
+    assertEquals(NAME, diskId.getDisk());
+    diskId = DiskId.of(ZoneId.of(ZONE), NAME);
+    assertNull(diskId.getProject());
+    assertEquals(ZONE, diskId.getZone());
+    assertEquals(NAME, diskId.getDisk());
+  }
+
+  @Test
+  public void testOfDeprecated() {
+    DiskId diskId = DiskId.of(PROJECT, ZONE, NAME);
     assertEquals(PROJECT, diskId.project());
     assertEquals(ZONE, diskId.zone());
     assertEquals(NAME, diskId.disk());
@@ -57,7 +74,7 @@ public class DiskIdTest {
   @Test
   public void testToAndFromUrl() {
     DiskId diskId = DiskId.of(PROJECT, ZONE, NAME);
-    compareDiskId(diskId, DiskId.fromUrl(diskId.selfLink()));
+    compareDiskId(diskId, DiskId.fromUrl(diskId.getSelfLink()));
     thrown.expect(IllegalArgumentException.class);
     thrown.expectMessage("notMatchingUrl is not a valid disk URL");
     DiskId.fromUrl("notMatchingUrl");
@@ -72,16 +89,16 @@ public class DiskIdTest {
 
   @Test
   public void testMatchesUrl() {
-    assertTrue(DiskId.matchesUrl(DiskId.of(PROJECT, ZONE, NAME).selfLink()));
+    assertTrue(DiskId.matchesUrl(DiskId.of(PROJECT, ZONE, NAME).getSelfLink()));
     assertFalse(DiskId.matchesUrl("notMatchingUrl"));
   }
 
   private void compareDiskId(DiskId expected, DiskId value) {
     assertEquals(expected, value);
-    assertEquals(expected.project(), expected.project());
-    assertEquals(expected.zone(), expected.zone());
-    assertEquals(expected.disk(), expected.disk());
-    assertEquals(expected.selfLink(), expected.selfLink());
+    assertEquals(expected.getProject(), expected.getProject());
+    assertEquals(expected.getZone(), expected.getZone());
+    assertEquals(expected.getDisk(), expected.getDisk());
+    assertEquals(expected.getSelfLink(), expected.getSelfLink());
     assertEquals(expected.hashCode(), expected.hashCode());
   }
 }

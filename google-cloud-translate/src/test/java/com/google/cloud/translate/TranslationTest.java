@@ -33,6 +33,13 @@ public class TranslationTest {
 
   @Test
   public void testFromPb() {
+    assertEquals(TRANSLATED_TEXT, TRANSLATION.getTranslatedText());
+    assertEquals(SOURCE_LANGUAGE, TRANSLATION.getSourceLanguage());
+    compareTranslation(TRANSLATION, Translation.fromPb(TRANSLATION_PB));
+  }
+
+  @Test
+  public void testFromPbDeprecated() {
     assertEquals(TRANSLATED_TEXT, TRANSLATION.translatedText());
     assertEquals(SOURCE_LANGUAGE, TRANSLATION.sourceLanguage());
     compareTranslation(TRANSLATION, Translation.fromPb(TRANSLATION_PB));
@@ -40,8 +47,8 @@ public class TranslationTest {
 
   private void compareTranslation(Translation expected, Translation value) {
     assertEquals(expected, value);
-    assertEquals(expected.translatedText(), value.translatedText());
-    assertEquals(expected.sourceLanguage(), value.sourceLanguage());
+    assertEquals(expected.getTranslatedText(), value.getTranslatedText());
+    assertEquals(expected.getSourceLanguage(), value.getSourceLanguage());
     assertEquals(expected.hashCode(), value.hashCode());
     assertEquals(expected.toString(), value.toString());
   }

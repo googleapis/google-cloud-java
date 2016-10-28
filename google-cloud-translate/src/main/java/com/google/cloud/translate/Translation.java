@@ -52,7 +52,15 @@ public class Translation implements Serializable {
   /**
    * Returns the translated text.
    */
+  @Deprecated
   public String translatedText() {
+    return translatedText;
+  }
+
+  /**
+   * Returns the translated text.
+   */
+  public String getTranslatedText() {
     return translatedText;
   }
 
@@ -60,7 +68,16 @@ public class Translation implements Serializable {
    * Returns the language code of the source text. If no source language was provided this value is
    * the source language as detected by the Google Translate service.
    */
+  @Deprecated
   public String sourceLanguage() {
+    return getSourceLanguage();
+  }
+
+  /**
+   * Returns the language code of the source text. If no source language was provided this value is
+   * the source language as detected by the Google Translate service.
+   */
+  public String getSourceLanguage() {
     return sourceLanguage;
   }
 

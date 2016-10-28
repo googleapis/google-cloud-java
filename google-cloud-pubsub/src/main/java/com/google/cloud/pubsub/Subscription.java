@@ -80,38 +80,74 @@ public class Subscription extends SubscriptionInfo {
     }
 
     @Override
+    @Deprecated
     public Builder topic(TopicId topic) {
-      delegate.topic(topic);
+      return setTopic(topic);
+    }
+
+    @Override
+    public Builder setTopic(TopicId topic) {
+      delegate.setTopic(topic);
       return this;
     }
 
     @Override
+    @Deprecated
     public Builder topic(String project, String topic) {
-      delegate.topic(project, topic);
+      return setTopic(project, topic);
+    }
+
+    @Override
+    public Builder setTopic(String project, String topic) {
+      delegate.setTopic(project, topic);
       return this;
     }
 
     @Override
+    @Deprecated
     public Builder topic(String topic) {
-      delegate.topic(topic);
+      return setTopic(topic);
+    }
+
+    @Override
+    public Builder setTopic(String topic) {
+      delegate.setTopic(topic);
       return this;
     }
 
     @Override
+    @Deprecated
     public Builder name(String name) {
-      delegate.name(name);
+      return setName(name);
+    }
+
+    @Override
+    public Builder setName(String name) {
+      delegate.setName(name);
       return this;
     }
 
     @Override
+    @Deprecated
     public Builder pushConfig(PushConfig pushConfig) {
-      delegate.pushConfig(pushConfig);
+      return setPushConfig(pushConfig);
+    }
+
+    @Override
+    public Builder setPushConfig(PushConfig pushConfig) {
+      delegate.setPushConfig(pushConfig);
       return this;
     }
 
     @Override
+    @Deprecated
     public Builder ackDeadLineSeconds(int ackDeadLineSeconds) {
-      delegate.ackDeadLineSeconds(ackDeadLineSeconds);
+      return setAckDeadLineSeconds(ackDeadLineSeconds);
+    }
+
+    @Override
+    public Builder setAckDeadLineSeconds(int ackDeadLineSeconds) {
+      delegate.setAckDeadLineSeconds(ackDeadLineSeconds);
       return this;
     }
 
@@ -152,38 +188,77 @@ public class Subscription extends SubscriptionInfo {
   /**
    * Returns the subscription's {@code PubSub} object used to issue requests.
    */
+  @Deprecated
   public PubSub pubSub() {
+    return getPubsub();
+  }
+
+  /**
+   * Returns the subscription's {@code PubSub} object used to issue requests.
+   */
+  public PubSub getPubsub() {
     return pubsub;
   }
 
   /**
    * Deletes this subscription.
    *
+   * <p>Example of deleting the subscription.
+   * <pre> {@code
+   * boolean deleted = subscription.delete();
+   * if (deleted) {
+   *   // the subscription was deleted
+   * } else {
+   *   // the subscription was not found
+   * }
+   * }</pre>
+   *
    * @return {@code true} if the subscription was deleted, {@code false} if it was not found
    * @throws PubSubException upon failure
    */
   public boolean delete() {
-    return pubsub.deleteSubscription(name());
+    return pubsub.deleteSubscription(getName());
   }
 
   /**
    * Sends a request for deleting this subscription. This method returns a {@code Future} object to
    * consume the result. {@link Future#get()} returns {@code true} if the subscription was deleted,
    * {@code false} if it was not found.
+   *
+   * <p>Example of asynchronously deleting the subscription.
+   * <pre> {@code
+   * Future<Boolean> future = subscription.deleteAsync();
+   * // ...
+   * boolean deleted = future.get();
+   * if (deleted) {
+   *   // the subscription was deleted
+   * } else {
+   *   // the subscription was not found
+   * }
+   * }</pre>
+   *
    */
   public Future<Boolean> deleteAsync() {
-    return pubsub.deleteSubscriptionAsync(name());
+    return pubsub.deleteSubscriptionAsync(getName());
   }
 
   /**
    * Fetches current subscription's latest information. Returns {@code null} if the subscription
    * does not exist.
    *
+   * <p>Example of getting the subscription's latest information.
+   * <pre> {@code
+   * Subscription latestSubscription = subscription.reload();
+   * if (latestSubscription == null) {
+   *   // the subscription was not found
+   * }
+   * }</pre>
+   *
    * @return a {@code Subscription} object with latest information or {@code null} if not found
    * @throws PubSubException upon failure
    */
   public Subscription reload() {
-    return pubsub.getSubscription(name());
+    return pubsub.getSubscription(getName());
   }
 
   /**
@@ -191,11 +266,21 @@ public class Subscription extends SubscriptionInfo {
    * {@code Future} object to consume the result. {@link Future#get()} returns the requested
    * subscription or {@code null} if not found.
    *
+   * <p>Example of asynchronously getting the subscription's latest information.
+   * <pre> {@code
+   * Future<Subscription> future = subscription.reloadAsync();
+   * // ...
+   * Subscription latestSubscription = future.get();
+   * if (latestSubscription == null) {
+   *   // the subscription was not found
+   * }
+   * }</pre>
+   *
    * @return a {@code Subscription} object with latest information or {@code null} if not found
    * @throws PubSubException upon failure
    */
   public Future<Subscription> reloadAsync() {
-    return pubsub.getSubscriptionAsync(name());
+    return pubsub.getSubscriptionAsync(getName());
   }
 
   /**
@@ -205,11 +290,24 @@ public class Subscription extends SubscriptionInfo {
    * subscription. Messages will accumulate for delivery regardless of changes to the push
    * configuration.
    *
+   * <p>Example of replacing the push configuration of the subscription, setting the push endpoint.
+   * <pre> {@code
+   * String endpoint = "https://www.example.com/push";
+   * PushConfig pushConfig = PushConfig.of(endpoint);
+   * subscription.replacePushConfig(pushConfig);
+   * }</pre>
+   *
+   * <p>Example of replacing the push configuration of the subscription, making it a pull
+   * subscription.
+   * <pre> {@code
+   * subscription.replacePushConfig(null);
+   * }</pre>
+   *
    * @param pushConfig the new push configuration. Use {@code null} to unset it
    * @throws PubSubException upon failure, or if the subscription does not exist
    */
   public void replacePushConfig(PushConfig pushConfig) {
-    pubsub.replacePushConfig(name(), pushConfig);
+    pubsub.replacePushConfig(getName(), pushConfig);
   }
 
   /**
@@ -220,11 +318,29 @@ public class Subscription extends SubscriptionInfo {
    * to the push configuration. The method returns a {@code Future} object that can be used to wait
    * for the replace operation to be completed.
    *
+   * <p>Example of asynchronously replacing the push configuration of the subscription, setting the
+   * push endpoint.
+   * <pre> {@code
+   * String endpoint = "https://www.example.com/push";
+   * PushConfig pushConfig = PushConfig.of(endpoint);
+   * Future<Void> future = subscription.replacePushConfigAsync(pushConfig);
+   * // ...
+   * future.get();
+   * }</pre>
+   *
+   * <p>Example of asynchronously replacing the push configuration of the subscription, making it a
+   * pull subscription.
+   * <pre> {@code
+   * Future<Void> future = subscription.replacePushConfigAsync(null);
+   * // ...
+   * future.get();
+   * }</pre>
+   *
    * @param pushConfig the new push configuration. Use {@code null} to unset it
    * @return a {@code Future} to wait for the replace operation to be completed.
    */
   public Future<Void> replacePushConfigAsync(PushConfig pushConfig) {
-    return pubsub.replacePushConfigAsync(name(), pushConfig);
+    return pubsub.replacePushConfigAsync(getName(), pushConfig);
   }
 
   /**
@@ -234,23 +350,23 @@ public class Subscription extends SubscriptionInfo {
    * acknowledge deadline automatically renewed until they are explicitly consumed using
    * {@link Iterator#next()}.
    *
-   * <p>Example usage of synchronous message pulling:
+   * <p>Example of pulling a maximum number of messages from the subscription.
    * <pre> {@code
-   * Iterator<ReceivedMessage> messageIterator = pubsub.pull("subscription", 100);
-   * while (messageIterator.hasNext()) {
-   *   ReceivedMessage message = messageIterator.next();
-   *   // message's acknowledge deadline is no longer automatically renewed. If processing takes
-   *   // long pubsub.modifyAckDeadline(String, String, long, TimeUnit) can be used to extend it.
-   *   doSomething(message);
+   * Iterator<ReceivedMessage> messages = subscription.pull(100);
+   * // Ack deadline is renewed until the message is consumed
+   * while (messages.hasNext()) {
+   *   ReceivedMessage message = messages.next();
+   *   // do something with message and ack/nack it
    *   message.ack(); // or message.nack()
-   * }}</pre>
+   * }
+   * }</pre>
    *
    * @param maxMessages the maximum number of messages pulled by this method. This method can
    *     possibly return fewer messages.
    * @throws PubSubException upon failure
    */
   public Iterator<ReceivedMessage> pull(int maxMessages) {
-    return pubsub.pull(name(), maxMessages);
+    return pubsub.pull(getName(), maxMessages);
   }
 
   /**
@@ -260,25 +376,25 @@ public class Subscription extends SubscriptionInfo {
    * was processed by the Pub/Sub service (i.e. the system is not allowed to wait until at least one
    * message is available).
    *
-   * <p>Example usage of asynchronous message pulling:
+   * <p>Example of asynchronously pulling a maximum number of messages from the subscription.
    * <pre> {@code
-   * Future<Iterator<ReceivedMessage>> future = pubsub.pull("subscription", 100);
-   * // do something while the request gets processed
-   * Iterator<ReceivedMessage> messageIterator = future.get();
-   * while (messageIterator.hasNext()) {
-   *   ReceivedMessage message = messageIterator.next();
-   *   // message's acknowledge deadline is no longer automatically renewed. If processing takes
-   *   // long pubsub.modifyAckDeadline(String, String, long, TimeUnit) can be used to extend it.
-   *   doSomething(message);
+   * Future<Iterator<ReceivedMessage>> future = subscription.pullAsync(100);
+   * // ...
+   * Iterator<ReceivedMessage> messages = future.get();
+   * // Ack deadline is renewed until the message is consumed
+   * while (messages.hasNext()) {
+   *   ReceivedMessage message = messages.next();
+   *   // do something with message and ack/nack it
    *   message.ack(); // or message.nack()
-   * }}</pre>
+   * }
+   * }</pre>
    *
    * @param maxMessages the maximum number of messages pulled by this method. This method can
    *     possibly return fewer messages.
    * @throws PubSubException upon failure
    */
   public Future<Iterator<ReceivedMessage>> pullAsync(int maxMessages) {
-    return pubsub.pullAsync(name(), maxMessages);
+    return pubsub.pullAsync(getName(), maxMessages);
   }
 
   /**
@@ -295,22 +411,46 @@ public class Subscription extends SubscriptionInfo {
    * {@link PullOption#executorFactory(GrpcServiceOptions.ExecutorFactory)} can be used to provide
    * an executor to run message processor callbacks.
    *
+   * <p>Example of continuously pulling messages from the subscription.
+   * <pre> {@code
+   * String subscriptionName = "my_subscription_name";
+   * MessageProcessor callback = new MessageProcessor() {
+   *   public void process(Message message) throws Exception {
+   *     // Ack deadline is renewed until this method returns
+   *     // Message is acked if this method returns successfully
+   *     // Message is nacked if this method throws an exception
+   *   }
+   * };
+   * MessageConsumer consumer = subscription.pullAsync(callback);
+   * // ...
+   * // Stop pulling
+   * consumer.close();
+   * }</pre>
+   *
    * @param callback the callback to be executed on each message
    * @param options pulling options
    * @return a message consumer for the provided subscription and options
    */
   public MessageConsumer pullAsync(MessageProcessor callback, PullOption... options) {
-    return pubsub.pullAsync(name(), callback, options);
+    return pubsub.pullAsync(getName(), callback, options);
   }
 
   /**
    * Returns the IAM access control policy for this subscription. Returns {@code null} if the
    * subscription was not found.
    *
+   * <p>Example of getting the subscription's policy.
+   * <pre> {@code
+   * Policy policy = subscription.getPolicy();
+   * if (policy == null) {
+   *   // subscription was not found
+   * }
+   * }</pre>
+   *
    * @throws PubSubException upon failure
    */
   public Policy getPolicy() {
-    return pubsub.getSubscriptionPolicy(this.name());
+    return pubsub.getSubscriptionPolicy(this.getName());
   }
 
   /**
@@ -318,10 +458,20 @@ public class Subscription extends SubscriptionInfo {
    * returns a {@code Future} object to consume the result. {@link Future#get()} returns the
    * requested policy or {@code null} if the subscription was not found.
    *
+   * <p>Example of asynchronously getting the subscription's policy.
+   * <pre> {@code
+   * Future<Policy> future = subscription.getPolicyAsync();
+   * // ...
+   * Policy policy = future.get();
+   * if (policy == null) {
+   *   // subscription was not found
+   * }
+   * }</pre>
+   *
    * @throws PubSubException upon failure
    */
   public Future<Policy> getPolicyAsync() {
-    return pubsub.getSubscriptionPolicyAsync(this.name());
+    return pubsub.getSubscriptionPolicyAsync(this.getName());
   }
 
   /**
@@ -338,10 +488,19 @@ public class Subscription extends SubscriptionInfo {
    * {@code PubSubException} is thrown, denoting that the server aborted update. If an etag is not
    * provided, the policy is overwritten blindly.
    *
+   * <p>Example of replacing the subscription's policy.
+   * <pre> {@code
+   * Policy policy = subscription.getPolicy();
+   * Policy updatedPolicy = policy.toBuilder()
+   *     .addIdentity(Role.viewer(), Identity.allAuthenticatedUsers())
+   *     .build();
+   * updatedPolicy = subscription.replacePolicy(updatedPolicy);
+   * }</pre>
+   *
    * @throws PubSubException upon failure
    */
   public Policy replacePolicy(Policy newPolicy) {
-    return pubsub.replaceSubscriptionPolicy(this.name(), newPolicy);
+    return pubsub.replaceSubscriptionPolicy(this.getName(), newPolicy);
   }
 
   /**
@@ -360,10 +519,21 @@ public class Subscription extends SubscriptionInfo {
    * {@code PubSubException}, denoting that the server aborted update. If an etag is not provided,
    * the policy is overwritten blindly.
    *
+   * <p>Example of asynchronously replacing the subscription's policy.
+   * <pre> {@code
+   * Policy policy = subscription.getPolicy();
+   * Policy updatedPolicy = policy.toBuilder()
+   *     .addIdentity(Role.viewer(), Identity.allAuthenticatedUsers())
+   *     .build();
+   * Future<Policy> future = subscription.replacePolicyAsync(updatedPolicy);
+   * // ...
+   * updatedPolicy = future.get();
+   * }</pre>
+   *
    * @throws PubSubException upon failure
    */
   public Future<Policy> replacePolicyAsync(Policy newPolicy) {
-    return pubsub.replaceSubscriptionPolicyAsync(this.name(), newPolicy);
+    return pubsub.replaceSubscriptionPolicyAsync(this.getName(), newPolicy);
   }
 
   /**
@@ -373,6 +543,13 @@ public class Subscription extends SubscriptionInfo {
    * interface. For example, the Cloud Platform Console tests IAM permissions internally to
    * determine which UI should be available to the logged-in user.
    *
+   * <p>Example of testing whether the caller has the provided permissions on the subscription.
+   * <pre> {@code
+   * List<String> permissions = new LinkedList<>();
+   * permissions.add("pubsub.subscriptions.get");
+   * List<Boolean> testedPermissions = subscription.testPermissions(permissions);
+   * }</pre>
+   *
    * @return A list of booleans representing whether the caller has the permissions specified (in
    *     the order of the given permissions)
    * @throws PubSubException upon failure
@@ -380,7 +557,7 @@ public class Subscription extends SubscriptionInfo {
    *     Permissions and Roles</a>
    */
   public List<Boolean> testPermissions(List<String> permissions) {
-    return pubsub.testSubscriptionPermissions(this.name(), permissions);
+    return pubsub.testSubscriptionPermissions(this.getName(), permissions);
   }
 
   /**
@@ -391,6 +568,16 @@ public class Subscription extends SubscriptionInfo {
    * such as a customized graphical user interface. For example, the Cloud Platform Console tests
    * IAM permissions internally to determine which UI should be available to the logged-in user.
    *
+   * <p>Example of asynchronously testing whether the caller has the provided permissions on the
+   * subscription.
+   * <pre> {@code
+   * List<String> permissions = new LinkedList<>();
+   * permissions.add("pubsub.subscriptions.get");
+   * Future<List<Boolean>> future = subscription.testPermissionsAsync(permissions);
+   * // ...
+   * List<Boolean> testedPermissions = future.get();
+   * }</pre>
+   *
    * @return A {@code Future} object to consume the result. {@link Future#get()} returns a list of
    *     booleans representing whether the caller has the permissions specified (in the order of the
    *     given permissions)
@@ -399,7 +586,7 @@ public class Subscription extends SubscriptionInfo {
    *     Permissions and Roles</a>
    */
   public Future<List<Boolean>> testPermissionsAsync(List<String> permissions) {
-    return pubsub.testSubscriptionPermissionsAsync(this.name(), permissions);
+    return pubsub.testSubscriptionPermissionsAsync(this.getName(), permissions);
   }
 
   private void readObject(ObjectInputStream input) throws IOException, ClassNotFoundException {

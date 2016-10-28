@@ -315,7 +315,7 @@ final class DnsImpl extends BaseService<DnsOptions> implements Dns {
   static Map<DnsRpc.Option, ?> optionMap(Option... options) {
     Map<DnsRpc.Option, Object> temp = Maps.newEnumMap(DnsRpc.Option.class);
     for (Option option : options) {
-      Object prev = temp.put(option.rpcOption(), option.value());
+      Object prev = temp.put(option.getRpcOption(), option.getValue());
       checkArgument(prev == null, "Duplicate option %s", option);
     }
     return ImmutableMap.copyOf(temp);

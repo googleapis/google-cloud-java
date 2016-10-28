@@ -234,7 +234,7 @@ final class ResourceManagerImpl
   private Map<ResourceManagerRpc.Option, ?> optionMap(Option... options) {
     Map<ResourceManagerRpc.Option, Object> temp = Maps.newEnumMap(ResourceManagerRpc.Option.class);
     for (Option option : options) {
-      Object prev = temp.put(option.rpcOption(), option.value());
+      Object prev = temp.put(option.getRpcOption(), option.getValue());
       checkArgument(prev == null, "Duplicate option %s", option);
     }
     return ImmutableMap.copyOf(temp);

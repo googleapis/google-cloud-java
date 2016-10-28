@@ -27,9 +27,9 @@ Here is an example that uses the `RemoteBigQueryHelper` to create a dataset.
   ```java
   RemoteBigQueryHelper bigqueryHelper =
       RemoteBigQueryHelper.create(PROJECT_ID, new FileInputStream("/path/to/my/JSON/key.json"));
-  BigQuery bigquery = bigqueryHelper.options().service();
+  BigQuery bigquery = bigqueryHelper.getOptions().service();
   String dataset = RemoteBigQueryHelper.generateDatasetName();
-  bigquery.create(DatasetInfo.builder(dataset).build());
+  bigquery.create(DatasetInfo.newBuilder(dataset).build());
   ```
 
 4. Run your tests.
@@ -84,7 +84,7 @@ You can test against a temporary local Datastore by following these steps:
 
 2. Create and use a `Datastore` object with the options given by the `LocalDatastoreHelper` instance.  For example:
   ```java
-  Datastore localDatastore = helper.options().service();
+  Datastore localDatastore = helper.getOptions().service();
   ```
 
 3. Run your tests.
@@ -131,10 +131,11 @@ You can test against an in-memory local DNS by following these steps:
   The `delay` parameter determines if change requests should be processed synchronously
   (value `0`) or in a separate thread with a minimum of delay of `delay` milliseconds.
 
-2. In your program, create the DNS service by using the helper's `options()` method.  For example:
+2. In your program, create the DNS service by using the helper's `getOptions()` method.
+For example:
 
   ```java
-  Dns dns = LocalDnsHelper.options().service();
+  Dns dns = LocalDnsHelper.getOptions().service();
   ```
 
 3. Run your tests.
@@ -163,7 +164,7 @@ uses the `RemoteLoggingHelper` to create a metric.
   ```java
   RemoteLoggingHelper loggingHelper =
       RemoteLoggingHelper.create(PROJECT_ID, new FileInputStream("/path/to/my/JSON/key.json"));
-  Logging logging = loggingHelper.options().service();
+  Logging logging = loggingHelper.getOptions().service();
   // Pick a name for the resource with low probability of clashing
   String metricName = RemoteLoggingHelper.formatForTest("test-metric");
   MetricInfo metricInfo = MetricInfo.of(name, "logName:syslog");
@@ -189,7 +190,7 @@ and `start` methods. This will bind a port for communication with the local Pub/
 2. Create and use a `PubSub` object with the options given by the `LocalPubSubHelper` instance. For
 example:
   ```java
-  PubSub localPubsub = helper.options().service();
+  PubSub localPubsub = helper.getOptions().service();
   ```
 
 3. Run your tests.
@@ -257,7 +258,7 @@ Here is an example that uses the `RemoteStorageHelper` to create a bucket.
   ```java
   RemoteStorageHelper helper =
       RemoteStorageHelper.create(PROJECT_ID, new FileInputStream("/path/to/my/JSON/key.json"));
-  Storage storage = helper.options().service();
+  Storage storage = helper.getOptions().service();
   String bucket = RemoteStorageHelper.generateBucketName();
   storage.create(BucketInfo.of(bucket));
   ```
@@ -284,7 +285,7 @@ key.
 that uses the `RemoteTranslateHelper` to list supported languages.
   ```java
   RemoteTranslateHelper translateHelper = RemoteTranslateHelper.create(PROJECT_ID, API_KEY);
-  Translate translate = translateHelper.options().service();
+  Translate translate = translateHelper.getOptions().service();
   List<Language> languages = translate.listSupportedLanguages();
   ```
 

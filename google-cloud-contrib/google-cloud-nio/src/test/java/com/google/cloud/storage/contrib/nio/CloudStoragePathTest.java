@@ -76,14 +76,14 @@ public class CloudStoragePathTest {
   @Test
   public void testGetGcsFilename_stripsPrefixSlash() throws IOException {
     try (CloudStorageFileSystem fs = CloudStorageFileSystem.forBucket("doodle")) {
-      assertThat(fs.getPath("/hi").getBlobId().name()).isEqualTo("hi");
+      assertThat(fs.getPath("/hi").getBlobId().getName()).isEqualTo("hi");
     }
   }
 
   @Test
   public void testGetGcsFilename_overrideStripPrefixSlash_doesntStripPrefixSlash() throws IOException {
     try (CloudStorageFileSystem fs = CloudStorageFileSystem.forBucket("doodle", stripPrefixSlash(false))) {
-      assertThat(fs.getPath("/hi").getBlobId().name()).isEqualTo("/hi");
+      assertThat(fs.getPath("/hi").getBlobId().getName()).isEqualTo("/hi");
     }
   }
 
@@ -91,14 +91,14 @@ public class CloudStoragePathTest {
   public void testGetGcsFilename_extraSlashes_throwsIae() throws IOException {
     try (CloudStorageFileSystem fs = CloudStorageFileSystem.forBucket("doodle")) {
       thrown.expect(IllegalArgumentException.class);
-      fs.getPath("a//b").getBlobId().name();
+      fs.getPath("a//b").getBlobId().getName();
     }
   }
 
   @Test
   public void testGetGcsFilename_overridepermitEmptyPathComponents() throws IOException {
     try (CloudStorageFileSystem fs = CloudStorageFileSystem.forBucket("doodle", permitEmptyPathComponents(true))) {
-      assertThat(fs.getPath("a//b").getBlobId().name()).isEqualTo("a//b");
+      assertThat(fs.getPath("a//b").getBlobId().getName()).isEqualTo("a//b");
     }
   }
 
@@ -106,7 +106,7 @@ public class CloudStoragePathTest {
   public void testGetGcsFilename_freaksOutOnExtraSlashesAndDotDirs() throws IOException {
     try (CloudStorageFileSystem fs = CloudStorageFileSystem.forBucket("doodle")) {
       thrown.expect(IllegalArgumentException.class);
-      fs.getPath("a//b/..").getBlobId().name();
+      fs.getPath("a//b/..").getBlobId().getName();
     }
   }
 

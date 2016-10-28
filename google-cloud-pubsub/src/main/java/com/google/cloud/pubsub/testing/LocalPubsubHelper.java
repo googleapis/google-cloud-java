@@ -33,6 +33,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Locale;
 import java.util.UUID;
 
 /**
@@ -70,14 +71,22 @@ public class LocalPubsubHelper {
     }
   }
 
+  private static boolean isWindows() {
+    return System.getProperty("os.name").toLowerCase(Locale.ENGLISH).contains("windows");
+  }
+
   private LocalPubsubHelper() {
     port = LocalServiceHelper.findAvailablePort(DEFAULT_PORT);
+    String binName = BIN_NAME;
+    if (isWindows()) {
+      binName = BIN_NAME.replace("/", "\\");
+    }
     List<String> gcloudCommand = new ArrayList<>(Arrays.asList(GCLOUD_CMD_TEXT.split(" ")));
     gcloudCommand.add(GCLOUD_CMD_PORT_FLAG + "localhost:" + port);
     GCloudEmulatorRunner gcloudRunner =
         new GCloudEmulatorRunner(gcloudCommand, VERSION_PREFIX, MIN_VERSION);
     DownloadableEmulatorRunner downloadRunner =
-        new DownloadableEmulatorRunner(Arrays.asList(BIN_NAME, BIN_CMD_PORT_FLAG + port),
+        new DownloadableEmulatorRunner(Arrays.asList(binName, BIN_CMD_PORT_FLAG + port),
             EMULATOR_URL, MD5_CHECKSUM);
     serviceHelper = new LocalServiceHelper(Arrays.asList(gcloudRunner, downloadRunner), port);
     projectId = PROJECT_ID_PREFIX + UUID.randomUUID().toString();
@@ -136,7 +145,16 @@ public class LocalPubsubHelper {
    * Returns a {@link PubSubOptions} instance that sets the host to use the PubSub emulator on
    * localhost.
    */
+  @Deprecated
   public PubSubOptions options() {
+    return getOptions();
+  }
+
+  /**
+   * Returns a {@link PubSubOptions} instance that sets the host to use the PubSub emulator on
+   * localhost.
+   */
+  public PubSubOptions getOptions() {
     return PubSubOptions.builder()
         .projectId(projectId)
         .host("localhost:" + port)

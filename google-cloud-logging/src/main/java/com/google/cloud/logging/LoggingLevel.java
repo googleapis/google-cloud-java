@@ -89,7 +89,15 @@ public final class LoggingLevel extends Level {
   /**
    * Returns the Stackdriver Logging severity associated with this logging level.
    */
+  @Deprecated
   public Severity severity() {
+    return getSeverity();
+  }
+
+  /**
+   * Returns the Stackdriver Logging severity associated with this logging level.
+   */
+  public Severity getSeverity() {
     return severity;
   }
 }

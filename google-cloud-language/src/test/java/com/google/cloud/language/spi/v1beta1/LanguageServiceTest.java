@@ -14,7 +14,6 @@
 
 package com.google.cloud.language.spi.v1beta1;
 
-import com.google.api.gax.core.PageAccessor;
 import com.google.api.gax.testing.MockGrpcService;
 import com.google.api.gax.testing.MockServiceHelper;
 import com.google.cloud.language.v1beta1.AnalyzeEntitiesRequest;
@@ -26,8 +25,7 @@ import com.google.cloud.language.v1beta1.AnnotateTextRequest.Features;
 import com.google.cloud.language.v1beta1.AnnotateTextResponse;
 import com.google.cloud.language.v1beta1.Document;
 import com.google.cloud.language.v1beta1.EncodingType;
-import com.google.common.collect.Lists;
-import com.google.protobuf.GeneratedMessage;
+import com.google.protobuf.GeneratedMessageV3;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -79,7 +77,7 @@ public class LanguageServiceTest {
     String language = "language-1613589672";
     AnalyzeSentimentResponse expectedResponse =
         AnalyzeSentimentResponse.newBuilder().setLanguage(language).build();
-    List<GeneratedMessage> expectedResponses = new ArrayList<>();
+    List<GeneratedMessageV3> expectedResponses = new ArrayList<>();
     expectedResponses.add(expectedResponse);
     mockLanguageService.setResponses(expectedResponses);
 
@@ -88,7 +86,7 @@ public class LanguageServiceTest {
     AnalyzeSentimentResponse actualResponse = api.analyzeSentiment(document);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessage> actualRequests = mockLanguageService.getRequests();
+    List<GeneratedMessageV3> actualRequests = mockLanguageService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     AnalyzeSentimentRequest actualRequest = (AnalyzeSentimentRequest) actualRequests.get(0);
 
@@ -101,7 +99,7 @@ public class LanguageServiceTest {
     String language = "language-1613589672";
     AnalyzeEntitiesResponse expectedResponse =
         AnalyzeEntitiesResponse.newBuilder().setLanguage(language).build();
-    List<GeneratedMessage> expectedResponses = new ArrayList<>();
+    List<GeneratedMessageV3> expectedResponses = new ArrayList<>();
     expectedResponses.add(expectedResponse);
     mockLanguageService.setResponses(expectedResponses);
 
@@ -111,7 +109,7 @@ public class LanguageServiceTest {
     AnalyzeEntitiesResponse actualResponse = api.analyzeEntities(document, encodingType);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessage> actualRequests = mockLanguageService.getRequests();
+    List<GeneratedMessageV3> actualRequests = mockLanguageService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     AnalyzeEntitiesRequest actualRequest = (AnalyzeEntitiesRequest) actualRequests.get(0);
 
@@ -125,18 +123,18 @@ public class LanguageServiceTest {
     String language = "language-1613589672";
     AnnotateTextResponse expectedResponse =
         AnnotateTextResponse.newBuilder().setLanguage(language).build();
-    List<GeneratedMessage> expectedResponses = new ArrayList<>();
+    List<GeneratedMessageV3> expectedResponses = new ArrayList<>();
     expectedResponses.add(expectedResponse);
     mockLanguageService.setResponses(expectedResponses);
 
     Document document = Document.newBuilder().build();
-    Features features = Features.newBuilder().build();
+    AnnotateTextRequest.Features features = AnnotateTextRequest.Features.newBuilder().build();
     EncodingType encodingType = EncodingType.NONE;
 
     AnnotateTextResponse actualResponse = api.annotateText(document, features, encodingType);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessage> actualRequests = mockLanguageService.getRequests();
+    List<GeneratedMessageV3> actualRequests = mockLanguageService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     AnnotateTextRequest actualRequest = (AnnotateTextRequest) actualRequests.get(0);
 

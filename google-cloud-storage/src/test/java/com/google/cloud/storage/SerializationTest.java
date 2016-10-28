@@ -38,13 +38,13 @@ public class SerializationTest extends BaseSerializationTest {
   private static final Acl.User ACL_USER = new Acl.User("user");
   private static final Acl.RawEntity ACL_RAW = new Acl.RawEntity("raw");
   private static final Acl ACL = Acl.of(ACL_DOMAIN, Acl.Role.OWNER);
-  private static final BlobInfo BLOB_INFO = BlobInfo.builder("b", "n").build();
+  private static final BlobInfo BLOB_INFO = BlobInfo.newBuilder("b", "n").build();
   private static final BucketInfo BUCKET_INFO = BucketInfo.of("b");
   private static final Blob BLOB = new Blob(STORAGE, new BlobInfo.BuilderImpl(BLOB_INFO));
   private static final Bucket BUCKET = new Bucket(STORAGE, new BucketInfo.BuilderImpl(BUCKET_INFO));
   private static final Cors.Origin ORIGIN = Cors.Origin.any();
   private static final Cors CORS =
-      Cors.builder().maxAgeSeconds(1).origins(Collections.singleton(ORIGIN)).build();
+      Cors.newBuilder().setMaxAgeSeconds(1).setOrigins(Collections.singleton(ORIGIN)).build();
   private static final PageImpl<Blob> PAGE_RESULT =
       new PageImpl<>(null, "c", Collections.singletonList(BLOB));
   private static final StorageException STORAGE_EXCEPTION = new StorageException(42, "message");
@@ -85,8 +85,8 @@ public class SerializationTest extends BaseSerializationTest {
         new BlobReadChannel(options, BlobId.of("b", "n"), EMPTY_RPC_OPTIONS);
     // avoid closing when you don't want partial writes to GCS upon failure
     @SuppressWarnings("resource")
-    BlobWriteChannel writer =
-        new BlobWriteChannel(options, BlobInfo.builder(BlobId.of("b", "n")).build(), "upload-id");
+    BlobWriteChannel writer = new BlobWriteChannel(options,
+        BlobInfo.newBuilder(BlobId.of("b", "n")).build(), "upload-id");
     return new Restorable<?>[]{reader, writer};
   }
 }

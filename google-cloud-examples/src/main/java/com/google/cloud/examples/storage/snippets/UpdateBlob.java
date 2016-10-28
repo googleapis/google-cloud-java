@@ -43,7 +43,7 @@ public class UpdateBlob {
     BlobId blobId = BlobId.of("bucket", "blob_name");
     Blob blob = storage.get(blobId);
     if (blob != null) {
-      byte[] prevContent = blob.content();
+      byte[] prevContent = blob.getContent();
       System.out.println(new String(prevContent, UTF_8));
       WritableByteChannel channel = blob.writer();
       channel.write(ByteBuffer.wrap("Updated content".getBytes(UTF_8)));

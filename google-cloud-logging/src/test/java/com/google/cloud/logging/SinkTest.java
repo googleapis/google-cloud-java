@@ -48,9 +48,9 @@ public class SinkTest {
   private static final VersionFormat NEW_VERSION = VersionFormat.V2;
   private static final BucketDestination BUCKET_DESTINATION = BucketDestination.of("bucket");
   private static final DatasetDestination DATASET_DESTINATION = DatasetDestination.of("dataset");
-  private static final SinkInfo SINK_INFO = SinkInfo.builder(NAME, BUCKET_DESTINATION)
-      .filter(FILTER)
-      .versionFormat(VERSION)
+  private static final SinkInfo SINK_INFO = SinkInfo.newBuilder(NAME, BUCKET_DESTINATION)
+      .setFilter(FILTER)
+      .setVersionFormat(VERSION)
       .build();
   private final Logging serviceMockReturnsOptions = createStrictMock(Logging.class);
   private final LoggingOptions mockOptions = createMock(LoggingOptions.class);
@@ -78,7 +78,23 @@ public class SinkTest {
   public void testBuilder() {
     initializeExpectedSink(2);
     replay(logging);
-    SinkInfo builtSink = expectedSink.toBuilder()
+    Sink builtSink = expectedSink.toBuilder()
+        .setName(NEW_NAME)
+        .setFilter(NEW_FILTER)
+        .setDestination(DATASET_DESTINATION)
+        .setVersionFormat(NEW_VERSION)
+        .build();
+    assertEquals(NEW_NAME, builtSink.getName());
+    assertEquals(DATASET_DESTINATION, builtSink.getDestination());
+    assertEquals(NEW_FILTER, builtSink.getFilter());
+    assertEquals(NEW_VERSION, builtSink.getVersionFormat());
+  }
+
+  @Test
+  public void testBuilderDeprecated() {
+    initializeExpectedSink(2);
+    replay(logging);
+    Sink builtSink = expectedSink.toBuilder()
         .name(NEW_NAME)
         .filter(NEW_FILTER)
         .destination(DATASET_DESTINATION)
@@ -100,7 +116,7 @@ public class SinkTest {
   @Test
   public void testReload() {
     initializeExpectedSink(2);
-    SinkInfo updatedInfo = SINK_INFO.toBuilder().filter(NEW_FILTER).build();
+    SinkInfo updatedInfo = SINK_INFO.toBuilder().setFilter(NEW_FILTER).build();
     Sink expectedSink =
         new Sink(serviceMockReturnsOptions, new SinkInfo.BuilderImpl(updatedInfo));
     expect(logging.options()).andReturn(mockOptions);
@@ -124,7 +140,7 @@ public class SinkTest {
   @Test
   public void testReloadAsync() throws ExecutionException, InterruptedException {
     initializeExpectedSink(2);
-    SinkInfo updatedInfo = SINK_INFO.toBuilder().filter(NEW_FILTER).build();
+    SinkInfo updatedInfo = SINK_INFO.toBuilder().setFilter(NEW_FILTER).build();
     Sink expectedSink = new Sink(serviceMockReturnsOptions, new SinkInfo.BuilderImpl(updatedInfo));
     expect(logging.options()).andReturn(mockOptions);
     expect(logging.getSinkAsync(NAME))
@@ -148,26 +164,26 @@ public class SinkTest {
   @Test
   public void testUpdate() {
     initializeExpectedSink(2);
-    SinkInfo updatedInfo = SINK_INFO.toBuilder().filter(NEW_FILTER).build();
+    SinkInfo updatedInfo = SINK_INFO.toBuilder().setFilter(NEW_FILTER).build();
     Sink expectedSink = new Sink(serviceMockReturnsOptions, new SinkInfo.BuilderImpl(updatedInfo));
     expect(logging.options()).andReturn(mockOptions).times(2);
     expect(logging.update(expectedSink)).andReturn(expectedSink);
     replay(logging);
     initializeSink();
-    Sink updatedSink = sink.toBuilder().filter(NEW_FILTER).build().update();
+    Sink updatedSink = sink.toBuilder().setFilter(NEW_FILTER).build().update();
     compareSink(expectedSink, updatedSink);
   }
 
   @Test
   public void testUpdateAsync() throws ExecutionException, InterruptedException {
     initializeExpectedSink(2);
-    SinkInfo updatedInfo = SINK_INFO.toBuilder().filter(NEW_FILTER).build();
+    SinkInfo updatedInfo = SINK_INFO.toBuilder().setFilter(NEW_FILTER).build();
     Sink expectedSink = new Sink(serviceMockReturnsOptions, new SinkInfo.BuilderImpl(updatedInfo));
     expect(logging.options()).andReturn(mockOptions).times(2);
     expect(logging.updateAsync(expectedSink)).andReturn(Futures.immediateFuture(expectedSink));
     replay(logging);
     initializeSink();
-    Sink updatedSink = sink.toBuilder().filter(NEW_FILTER).build().updateAsync().get();
+    Sink updatedSink = sink.toBuilder().setFilter(NEW_FILTER).build().updateAsync().get();
     compareSink(expectedSink, updatedSink);
   }
 
@@ -213,10 +229,10 @@ public class SinkTest {
 
   private void compareSink(Sink expected, Sink value) {
     assertEquals(expected, value);
-    assertEquals(expected.name(), value.name());
-    assertEquals(expected.destination(), value.destination());
-    assertEquals(expected.filter(), value.filter());
-    assertEquals(expected.versionFormat(), value.versionFormat());
+    assertEquals(expected.getName(), value.getName());
+    assertEquals(expected.getDestination(), value.getDestination());
+    assertEquals(expected.getFilter(), value.getFilter());
+    assertEquals(expected.getVersionFormat(), value.getVersionFormat());
     assertEquals(expected.hashCode(), value.hashCode());
     assertEquals(expected.toString(), value.toString());
   }

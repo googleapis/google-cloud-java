@@ -34,7 +34,7 @@ public class EntityValue extends Value<FullEntity<?>> {
 
         @Override
         public Builder newBuilder(FullEntity<?> value) {
-          return builder(value);
+          return EntityValue.newBuilder(value);
         }
 
         @Override
@@ -61,7 +61,7 @@ public class EntityValue extends Value<FullEntity<?>> {
   }
 
   public EntityValue(FullEntity<?> entity) {
-    this(builder(entity));
+    this(newBuilder(entity));
   }
 
   private EntityValue(Builder builder) {
@@ -77,7 +77,12 @@ public class EntityValue extends Value<FullEntity<?>> {
     return new EntityValue(entity);
   }
 
+  @Deprecated
   public static Builder builder(FullEntity<?> entity) {
+    return newBuilder(entity);
+  }
+
+  public static Builder newBuilder(FullEntity<?> entity) {
     return new Builder().set(entity);
   }
 }

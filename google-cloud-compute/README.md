@@ -22,16 +22,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-compute</artifactId>
-  <version>0.3.0</version>
+  <version>0.4.0</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-compute:0.3.0'
+compile 'com.google.cloud:google-cloud-compute:0.4.0'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-compute" % "0.3.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-compute" % "0.4.0"
 ```
 
 Example Application
@@ -119,7 +119,7 @@ operation = operation.waitFor();
 if (operation.errors() == null) {
   System.out.println("Address " + addressId + " was successfully created");
 } else {
-  // inspect operation.errors()
+  // inspect operation.getErrors()
   throw new RuntimeException("Address creation failed");
 }
 ```
@@ -150,7 +150,7 @@ DiskInfo disk = DiskInfo.of(diskId, diskConfiguration);
 Operation operation = compute.create(disk);
 // Wait for operation to complete
 operation = operation.waitFor();
-if (operation.errors() == null) {
+if (operation.getErrors() == null) {
   System.out.println("Disk " + diskId + " was successfully created");
 } else {
   // inspect operation.errors()
@@ -185,10 +185,10 @@ Address externalIp = compute.getAddress(addressId);
 InstanceId instanceId = InstanceId.of("us-central1-a", "test-instance");
 NetworkId networkId = NetworkId.of("default");
 PersistentDiskConfiguration attachConfiguration =
-    PersistentDiskConfiguration.builder(diskId).boot(true).build();
+    PersistentDiskConfiguration.newBuilder(diskId).setBoot(true).build();
 AttachedDisk attachedDisk = AttachedDisk.of("dev0", attachConfiguration);
-NetworkInterface networkInterface = NetworkInterface.builder(networkId)
-    .accessConfigurations(AccessConfig.of(externalIp.address()))
+NetworkInterface networkInterface = NetworkInterface.newBuilder(networkId)
+    .setAccessConfigurations(AccessConfig.of(externalIp.getAddress()))
     .build();
 MachineTypeId machineTypeId = MachineTypeId.of("us-central1-a", "n1-standard-1");
 InstanceInfo instance =
@@ -196,7 +196,7 @@ InstanceInfo instance =
 Operation operation = compute.create(instance);
 // Wait for operation to complete
 operation = operation.waitFor();
-if (operation.errors() == null) {
+if (operation.getErrors() == null) {
   System.out.println("Instance " + instanceId + " was successfully created");
 } else {
   // inspect operation.errors()

@@ -27,6 +27,13 @@ public class BlobIdTest {
   @Test
   public void testOf() {
     BlobId blobId = BlobId.of("b", "n");
+    assertEquals("b", blobId.getBucket());
+    assertEquals("n", blobId.getName());
+  }
+
+  @Test
+  public void testOfDeprecated() {
+    BlobId blobId = BlobId.of("b", "n");
     assertEquals("b", blobId.bucket());
     assertEquals("n", blobId.name());
   }
@@ -38,8 +45,8 @@ public class BlobIdTest {
 
   private void compareBlobIds(BlobId expected, BlobId value) {
     assertEquals(expected, value);
-    assertEquals(expected.bucket(), value.bucket());
-    assertEquals(expected.name(), value.name());
+    assertEquals(expected.getBucket(), value.getBucket());
+    assertEquals(expected.getName(), value.getName());
     assertEquals(expected.hashCode(), value.hashCode());
   }
 

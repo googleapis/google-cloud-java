@@ -39,7 +39,7 @@ public final class DiskTypeId extends ResourceId {
   static final Function<DiskTypeId, String> TO_URL_FUNCTION = new Function<DiskTypeId, String>() {
     @Override
     public String apply(DiskTypeId diskTypeId) {
-      return diskTypeId.selfLink();
+      return diskTypeId.getSelfLink();
     }
   };
 
@@ -59,27 +59,57 @@ public final class DiskTypeId extends ResourceId {
   /**
    * Returns the name of the disk type.
    */
+  @Deprecated
   public String type() {
+    return getType();
+  }
+
+  /**
+   * Returns the name of the disk type.
+   */
+  public String getType() {
     return type;
   }
 
   /**
    * Returns the name of the zone this disk type belongs to.
    */
+  @Deprecated
   public String zone() {
+    return getZone();
+  }
+
+  /**
+   * Returns the name of the zone this disk type belongs to.
+   */
+  public String getZone() {
     return zone;
   }
 
   /**
    * Returns the identity of the zone this disk type belongs to.
    */
+  @Deprecated
   public ZoneId zoneId() {
-    return ZoneId.of(project(), zone);
+    return getZoneId();
+  }
+
+  /**
+   * Returns the identity of the zone this disk type belongs to.
+   */
+  public ZoneId getZoneId() {
+    return ZoneId.of(getProject(), zone);
   }
 
   @Override
+  @Deprecated
   public String selfLink() {
-    return super.selfLink() + "/zones/" + zone + "/diskTypes/" + type;
+    return getSelfLink();
+  }
+
+  @Override
+  public String getSelfLink() {
+    return super.getSelfLink() + "/zones/" + zone + "/diskTypes/" + type;
   }
 
   @Override
@@ -108,7 +138,7 @@ public final class DiskTypeId extends ResourceId {
 
   @Override
   DiskTypeId setProjectId(String projectId) {
-    if (project() != null) {
+    if (getProject() != null) {
       return this;
     }
     return DiskTypeId.of(projectId, zone, type);
@@ -118,7 +148,7 @@ public final class DiskTypeId extends ResourceId {
    * Returns a disk type identity given the zone identity and the disk type name.
    */
   public static DiskTypeId of(ZoneId zoneId, String type) {
-    return new DiskTypeId(zoneId.project(), zoneId.zone(), type);
+    return new DiskTypeId(zoneId.getProject(), zoneId.getZone(), type);
   }
 
   /**

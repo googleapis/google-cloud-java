@@ -80,7 +80,12 @@ public final class Acl implements Serializable {
       this.type = type;
     }
 
+    @Deprecated
     public Type type() {
+      return getType();
+    }
+
+    public Type getType() {
       return type;
     }
 
@@ -129,7 +134,15 @@ public final class Acl implements Serializable {
     /**
      * Returns the domain name.
      */
+    @Deprecated
     public String domain() {
+      return getDomain();
+    }
+
+    /**
+     * Returns the domain name.
+     */
+    public String getDomain() {
       return domain;
     }
 
@@ -142,13 +155,13 @@ public final class Acl implements Serializable {
         return false;
       }
       Domain domainEntity = (Domain) obj;
-      return Objects.equals(type(), domainEntity.type())
-          && Objects.equals(domain, domainEntity.domain());
+      return Objects.equals(getType(), domainEntity.getType())
+          && Objects.equals(domain, domainEntity.getDomain());
     }
 
     @Override
     public int hashCode() {
-      return Objects.hash(type(), domain);
+      return Objects.hash(getType(), domain);
     }
 
     @Override
@@ -193,7 +206,17 @@ public final class Acl implements Serializable {
      * <a href="https://cloud.google.com/bigquery/docs/reference/v2/datasets#access.specialGroup">
      *     special group identifier</a> or a group email.
      */
+    @Deprecated
     public String identifier() {
+      return getIdentifier();
+    }
+
+    /**
+     * Returns group's identifier, can be either a
+     * <a href="https://cloud.google.com/bigquery/docs/reference/v2/datasets#access.specialGroup">
+     *     special group identifier</a> or a group email.
+     */
+    public String getIdentifier() {
       return identifier;
     }
 
@@ -206,12 +229,13 @@ public final class Acl implements Serializable {
         return false;
       }
       Group group = (Group) obj;
-      return Objects.equals(type(), group.type()) && Objects.equals(identifier, group.identifier);
+      return Objects.equals(getType(), group.getType())
+          && Objects.equals(identifier, group.identifier);
     }
 
     @Override
     public int hashCode() {
-      return Objects.hash(type(), identifier);
+      return Objects.hash(getType(), identifier);
     }
 
     @Override
@@ -285,7 +309,15 @@ public final class Acl implements Serializable {
     /**
      * Returns user's email.
      */
+    @Deprecated
     public String email() {
+      return getEmail();
+    }
+
+    /**
+     * Returns user's email.
+     */
+    public String getEmail() {
       return email;
     }
 
@@ -298,12 +330,12 @@ public final class Acl implements Serializable {
         return false;
       }
       User user = (User) obj;
-      return Objects.equals(type(), user.type()) && Objects.equals(email, user.email);
+      return Objects.equals(getType(), user.getType()) && Objects.equals(email, user.email);
     }
 
     @Override
     public int hashCode() {
-      return Objects.hash(type(), email);
+      return Objects.hash(getType(), email);
     }
 
     @Override
@@ -340,7 +372,15 @@ public final class Acl implements Serializable {
     /**
      * Returns table's identity.
      */
+    @Deprecated
     public TableId id() {
+      return getId();
+    }
+
+    /**
+     * Returns table's identity.
+     */
+    public TableId getId() {
       return id;
     }
 
@@ -353,12 +393,12 @@ public final class Acl implements Serializable {
         return false;
       }
       View view = (View) obj;
-      return Objects.equals(type(), view.type()) && Objects.equals(id, view.id);
+      return Objects.equals(getType(), view.getType()) && Objects.equals(id, view.id);
     }
 
     @Override
     public int hashCode() {
-      return Objects.hash(type(), id);
+      return Objects.hash(getType(), id);
     }
 
     @Override
@@ -380,14 +420,30 @@ public final class Acl implements Serializable {
   /**
    * Returns the entity for this ACL.
    */
+  @Deprecated
   public Entity entity() {
+    return getEntity();
+  }
+
+  /**
+   * Returns the entity for this ACL.
+   */
+  public Entity getEntity() {
     return entity;
   }
 
   /**
    * Returns the role specified by this ACL.
    */
+  @Deprecated
   public Role role() {
+    return getRole();
+  }
+
+  /**
+   * Returns the role specified by this ACL.
+   */
+  public Role getRole() {
     return role;
   }
 

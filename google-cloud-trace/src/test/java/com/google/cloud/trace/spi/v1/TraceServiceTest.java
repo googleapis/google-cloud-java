@@ -14,7 +14,7 @@
 
 package com.google.cloud.trace.spi.v1;
 
-import com.google.api.gax.core.PageAccessor;
+import com.google.api.gax.core.PagedListResponse;
 import com.google.api.gax.testing.MockGrpcService;
 import com.google.api.gax.testing.MockServiceHelper;
 import com.google.common.collect.Lists;
@@ -25,7 +25,7 @@ import com.google.devtools.cloudtrace.v1.PatchTracesRequest;
 import com.google.devtools.cloudtrace.v1.Trace;
 import com.google.devtools.cloudtrace.v1.Traces;
 import com.google.protobuf.Empty;
-import com.google.protobuf.GeneratedMessage;
+import com.google.protobuf.GeneratedMessageV3;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -75,7 +75,7 @@ public class TraceServiceTest {
   @SuppressWarnings("all")
   public void patchTracesTest() {
     Empty expectedResponse = Empty.newBuilder().build();
-    List<GeneratedMessage> expectedResponses = new ArrayList<>();
+    List<GeneratedMessageV3> expectedResponses = new ArrayList<>();
     expectedResponses.add(expectedResponse);
     mockTraceService.setResponses(expectedResponses);
 
@@ -84,7 +84,7 @@ public class TraceServiceTest {
 
     api.patchTraces(projectId, traces);
 
-    List<GeneratedMessage> actualRequests = mockTraceService.getRequests();
+    List<GeneratedMessageV3> actualRequests = mockTraceService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     PatchTracesRequest actualRequest = (PatchTracesRequest) actualRequests.get(0);
 
@@ -99,7 +99,7 @@ public class TraceServiceTest {
     String traceId2 = "traceId2987826376";
     Trace expectedResponse =
         Trace.newBuilder().setProjectId(projectId2).setTraceId(traceId2).build();
-    List<GeneratedMessage> expectedResponses = new ArrayList<>();
+    List<GeneratedMessageV3> expectedResponses = new ArrayList<>();
     expectedResponses.add(expectedResponse);
     mockTraceService.setResponses(expectedResponses);
 
@@ -109,7 +109,7 @@ public class TraceServiceTest {
     Trace actualResponse = api.getTrace(projectId, traceId);
     Assert.assertEquals(expectedResponse, actualResponse);
 
-    List<GeneratedMessage> actualRequests = mockTraceService.getRequests();
+    List<GeneratedMessageV3> actualRequests = mockTraceService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetTraceRequest actualRequest = (GetTraceRequest) actualRequests.get(0);
 
@@ -120,29 +120,28 @@ public class TraceServiceTest {
   @Test
   @SuppressWarnings("all")
   public void listTracesTest() {
+    String nextPageToken = "";
     Trace tracesElement = Trace.newBuilder().build();
     List<Trace> traces = Arrays.asList(tracesElement);
-    String nextPageToken = "nextPageToken-1530815211";
     ListTracesResponse expectedResponse =
         ListTracesResponse.newBuilder()
-            .addAllTraces(traces)
             .setNextPageToken(nextPageToken)
+            .addAllTraces(traces)
             .build();
-    List<GeneratedMessage> expectedResponses = new ArrayList<>();
+    List<GeneratedMessageV3> expectedResponses = new ArrayList<>();
     expectedResponses.add(expectedResponse);
     mockTraceService.setResponses(expectedResponses);
 
     String projectId = "projectId-1969970175";
 
-    PageAccessor<Trace> pageAccessor = api.listTraces(projectId);
+    PagedListResponse<ListTracesRequest, ListTracesResponse, Trace> pagedListResponse =
+        api.listTraces(projectId);
 
-    // PageAccessor will not make actual request until it is being used.
-    // Add all the pages here in order to make grpc requests.
-    List<Trace> resources = Lists.newArrayList(pageAccessor.getPageValues());
+    List<Trace> resources = Lists.newArrayList(pagedListResponse.iterateAllElements());
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getTracesList().get(0), resources.get(0));
 
-    List<GeneratedMessage> actualRequests = mockTraceService.getRequests();
+    List<GeneratedMessageV3> actualRequests = mockTraceService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ListTracesRequest actualRequest = (ListTracesRequest) actualRequests.get(0);
 

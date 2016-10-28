@@ -51,9 +51,11 @@ import com.google.api.client.http.HttpResponse;
 import com.google.api.client.http.HttpResponseException;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.InputStreamContent;
+import com.google.api.client.http.LowLevelHttpResponse;
 import com.google.api.client.http.json.JsonHttpContent;
 import com.google.api.client.json.JsonFactory;
 import com.google.api.client.json.jackson.JacksonFactory;
+import com.google.api.client.util.IOUtils;
 import com.google.api.services.storage.Storage;
 import com.google.api.services.storage.Storage.Objects.Get;
 import com.google.api.services.storage.Storage.Objects.Insert;
@@ -65,6 +67,7 @@ import com.google.api.services.storage.model.ComposeRequest.SourceObjects.Object
 import com.google.api.services.storage.model.ObjectAccessControl;
 import com.google.api.services.storage.model.Objects;
 import com.google.api.services.storage.model.StorageObject;
+import com.google.cloud.BaseServiceException;
 import com.google.cloud.storage.StorageException;
 import com.google.cloud.storage.StorageOptions;
 import com.google.common.base.Function;
@@ -78,6 +81,7 @@ import com.google.common.io.BaseEncoding;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.lang.reflect.Field;
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -93,32 +97,6 @@ public class DefaultStorageRpc implements StorageRpc {
   private final Storage storage;
 
   private static final long MEGABYTE = 1024L * 1024L;
-  private static final Function<Object, ObjectAccessControl> FROM_OBJECT_TO_ACL_FUNCTION =
-      new Function<Object, ObjectAccessControl>() {
-        @Override
-        @SuppressWarnings("unchecked")
-        public ObjectAccessControl apply(Object obj) {
-          ObjectAccessControl acl = new ObjectAccessControl();
-          Map<String, ?> map = (Map<String, ?>) obj;
-          for (Map.Entry<String, ?> entry : map.entrySet()) {
-            String key = entry.getKey();
-            switch (key) {
-              case "projectTeam":
-                ObjectAccessControl.ProjectTeam projectTeam = new ObjectAccessControl.ProjectTeam();
-                projectTeam.putAll((Map<String, ?>) entry.getValue());
-                acl.set(key, projectTeam);
-                break;
-              case "generation":
-                acl.set(entry.getKey(), Long.parseLong((String) entry.getValue()));
-                break;
-              default:
-                acl.set(entry.getKey(), entry.getValue());
-                break;
-            }
-          }
-          return acl;
-        }
-      };
 
   public DefaultStorageRpc(StorageOptions options) {
     HttpTransport transport = options.httpTransportFactory().create();
@@ -526,7 +504,24 @@ public class DefaultStorageRpc implements StorageRpc {
       requestHeaders.setRange(range.toString());
       setEncryptionHeaders(requestHeaders, ENCRYPTION_KEY_PREFIX, options);
       ByteArrayOutputStream output = new ByteArrayOutputStream(bytes);
-      req.executeMedia().download(output);
+      HttpResponse httpResponse = req.executeMedia();
+      // todo(mziccard) remove when
+      // https://github.com/GoogleCloudPlatform/google-cloud-java/issues/982 is fixed
+      String contentEncoding = httpResponse.getContentEncoding();
+      if (contentEncoding != null && contentEncoding.contains("gzip")) {
+        try {
+          Field responseField = httpResponse.getClass().getDeclaredField("response");
+          responseField.setAccessible(true);
+          LowLevelHttpResponse lowLevelHttpResponse =
+              (LowLevelHttpResponse) responseField.get(httpResponse);
+          IOUtils.copy(lowLevelHttpResponse.getContent(), output);
+        } catch (IllegalAccessException|NoSuchFieldException ex) {
+          throw new StorageException(
+              BaseServiceException.UNKNOWN_CODE, "Error parsing gzip response", ex);
+        }
+      } else {
+        httpResponse.download(output);
+      }
       String etag = req.getLastResponseHeaders().getETag();
       return Tuple.of(etag, output.toByteArray());
     } catch (IOException ex) {
@@ -785,11 +780,7 @@ public class DefaultStorageRpc implements StorageRpc {
   @Override
   public List<ObjectAccessControl> listDefaultAcls(String bucket) {
     try {
-      // TODO(mziccard) remove when https://github.com/google/google-api-java-client/issues/1022 is
-      // fixed
-      return Lists.transform(
-          storage.defaultObjectAccessControls().list(bucket).execute().getItems(),
-          FROM_OBJECT_TO_ACL_FUNCTION);
+      return storage.defaultObjectAccessControls().list(bucket).execute().getItems();
     } catch (IOException ex) {
       throw translate(ex);
     }
@@ -852,13 +843,9 @@ public class DefaultStorageRpc implements StorageRpc {
   @Override
   public List<ObjectAccessControl> listAcls(String bucket, String object, Long generation) {
     try {
-      // TODO(mziccard) remove when https://github.com/google/google-api-java-client/issues/1022 is
-      // fixed
-      return Lists.transform(
-          storage.objectAccessControls().list(bucket, object)
-              .setGeneration(generation)
-              .execute().getItems(),
-          FROM_OBJECT_TO_ACL_FUNCTION);
+      return storage.objectAccessControls().list(bucket, object)
+          .setGeneration(generation)
+          .execute().getItems();
     } catch (IOException ex) {
       throw translate(ex);
     }

@@ -55,7 +55,7 @@ public class CreateTableAndLoadData {
     System.out.println("Loading data into table " + tableId);
     Job loadJob = table.load(FormatOptions.csv(), "gs://bucket/path");
     loadJob = loadJob.waitFor();
-    if (loadJob.status().error() != null) {
+    if (loadJob.getStatus().getError() != null) {
       System.out.println("Job completed with errors");
     } else {
       System.out.println("Job succeeded");

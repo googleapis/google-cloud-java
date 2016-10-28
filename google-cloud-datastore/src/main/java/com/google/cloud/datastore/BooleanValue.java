@@ -34,7 +34,7 @@ public final class BooleanValue extends Value<Boolean> {
 
         @Override
         public Builder newBuilder(Boolean value) {
-          return builder(value);
+          return BooleanValue.newBuilder(value);
         }
 
         @Override
@@ -61,7 +61,7 @@ public final class BooleanValue extends Value<Boolean> {
   }
 
   public BooleanValue(boolean value) {
-    this(builder(value));
+    this(newBuilder(value));
   }
 
   private BooleanValue(Builder builder) {
@@ -77,7 +77,12 @@ public final class BooleanValue extends Value<Boolean> {
     return new BooleanValue(value);
   }
 
+  @Deprecated
   public static Builder builder(boolean value) {
+    return newBuilder(value);
+  }
+
+  public static Builder newBuilder(boolean value) {
     return new Builder().set(value);
   }
 }

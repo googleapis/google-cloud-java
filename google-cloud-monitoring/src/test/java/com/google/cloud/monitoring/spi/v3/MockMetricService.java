@@ -15,32 +15,31 @@
 package com.google.cloud.monitoring.spi.v3;
 
 import com.google.api.gax.testing.MockGrpcService;
-import com.google.monitoring.v3.MetricServiceGrpc;
-import com.google.protobuf.GeneratedMessage;
+import com.google.protobuf.GeneratedMessageV3;
 import io.grpc.ServerServiceDefinition;
 import java.util.List;
 
 @javax.annotation.Generated("by GAPIC")
 public class MockMetricService implements MockGrpcService {
-  private MockMetricServiceImpl serviceImpl;
+  private final MockMetricServiceImpl serviceImpl;
 
   public MockMetricService() {
     serviceImpl = new MockMetricServiceImpl();
   }
 
   @Override
-  public List<GeneratedMessage> getRequests() {
+  public List<GeneratedMessageV3> getRequests() {
     return serviceImpl.getRequests();
   }
 
   @Override
-  public void setResponses(List<GeneratedMessage> responses) {
+  public void setResponses(List<GeneratedMessageV3> responses) {
     serviceImpl.setResponses(responses);
   }
 
   @Override
   public ServerServiceDefinition getServiceDefinition() {
-    return MetricServiceGrpc.bindService(serviceImpl);
+    return serviceImpl.bindService();
   }
 
   @Override

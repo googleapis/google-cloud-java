@@ -34,6 +34,17 @@ public class TopicIdTest {
   @Test
   public void testOf() {
     TopicId topicId = TopicId.of(PROJECT, NAME);
+    assertEquals(PROJECT, topicId.getProject());
+    assertEquals(NAME, topicId.getTopic());
+    topicId = TopicId.of(NAME);
+    assertNull(topicId.getProject());
+    assertEquals(NAME, topicId.getTopic());
+    assertFalse(topicId.isDeleted());
+  }
+
+  @Test
+  public void testOfDeprecated() {
+    TopicId topicId = TopicId.of(PROJECT, NAME);
     assertEquals(PROJECT, topicId.project());
     assertEquals(NAME, topicId.topic());
     topicId = TopicId.of(NAME);
@@ -45,8 +56,8 @@ public class TopicIdTest {
   @Test
   public void testDeletedTopic() {
     TopicId deletedTopic = TopicId.deletedTopic();
-    assertNull(deletedTopic.project());
-    assertEquals(DELETED_TOPIC_NAME, deletedTopic.topic());
+    assertNull(deletedTopic.getProject());
+    assertEquals(DELETED_TOPIC_NAME, deletedTopic.getTopic());
     assertTrue(deletedTopic.isDeleted());
     assertSame(deletedTopic, TopicId.deletedTopic());
   }
@@ -66,8 +77,8 @@ public class TopicIdTest {
 
   private void compareTopicId(TopicId expected, TopicId value) {
     assertEquals(expected, value);
-    assertEquals(expected.project(), value.project());
-    assertEquals(expected.topic(), value.topic());
+    assertEquals(expected.getProject(), value.getProject());
+    assertEquals(expected.getTopic(), value.getTopic());
     assertEquals(expected.isDeleted(), value.isDeleted());
     assertEquals(expected.toPb("project"), value.toPb("project"));
     assertEquals(expected.hashCode(), value.hashCode());

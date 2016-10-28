@@ -97,7 +97,15 @@ public final class HttpRequest implements Serializable {
     /**
      * Sets the HTTP request method.
      */
+    @Deprecated
     public Builder requestMethod(RequestMethod requestMethod) {
+      return setRequestMethod(requestMethod);
+    }
+
+    /**
+     * Sets the HTTP request method.
+     */
+    public Builder setRequestMethod(RequestMethod requestMethod) {
       this.requestMethod = requestMethod;
       return this;
     }
@@ -107,7 +115,17 @@ public final class HttpRequest implements Serializable {
      * host name, the path and the query portion of the URL that was requested. Example:
      * {@code http://example.com/some/info?color=red}.
      */
+    @Deprecated
     public Builder requestUrl(String requestUrl) {
+      return setRequestUrl(requestUrl);
+    }
+
+    /**
+     * Sets the requested URL. Request URL contains the scheme ({@code http}, {@code https}), the
+     * host name, the path and the query portion of the URL that was requested. Example:
+     * {@code http://example.com/some/info?color=red}.
+     */
+    public Builder setRequestUrl(String requestUrl) {
       this.requestUrl = requestUrl;
       return this;
     }
@@ -116,7 +134,16 @@ public final class HttpRequest implements Serializable {
      * Sets the size of the HTTP request message in bytes, including the request headers and the
      * request body.
      */
+    @Deprecated
     public Builder requestSize(long requestSize) {
+      return setRequestSize(requestSize);
+    }
+
+    /**
+     * Sets the size of the HTTP request message in bytes, including the request headers and the
+     * request body.
+     */
+    public Builder setRequestSize(long requestSize) {
       this.requestSize = requestSize;
       return this;
     }
@@ -124,7 +151,15 @@ public final class HttpRequest implements Serializable {
     /**
      * Sets the response code indicating the status of response.
      */
+    @Deprecated
     public Builder status(int status) {
+      return setStatus(status);
+    }
+
+    /**
+     * Sets the response code indicating the status of response.
+     */
+    public Builder setStatus(int status) {
       this.status = status;
       return this;
     }
@@ -133,7 +168,16 @@ public final class HttpRequest implements Serializable {
      * Sets the size of the HTTP response message sent back to the client, in bytes, including the
      * response headers and the response body.
      */
+    @Deprecated
     public Builder responseSize(long responseSize) {
+      return setResponseSize(responseSize);
+    }
+
+    /**
+     * Sets the size of the HTTP response message sent back to the client, in bytes, including the
+     * response headers and the response body.
+     */
+    public Builder setResponseSize(long responseSize) {
       this.responseSize = responseSize;
       return this;
     }
@@ -142,7 +186,16 @@ public final class HttpRequest implements Serializable {
      * Sets the user agent sent by the client. Example:
      * {@code Mozilla/4.0 (compatible; MSIE 6.0; Windows 98; Q312461; .NET CLR 1.0.3705)}.
      */
+    @Deprecated
     public Builder userAgent(String userAgent) {
+      return setUserAgent(userAgent);
+    }
+
+    /**
+     * Sets the user agent sent by the client. Example:
+     * {@code Mozilla/4.0 (compatible; MSIE 6.0; Windows 98; Q312461; .NET CLR 1.0.3705)}.
+     */
+    public Builder setUserAgent(String userAgent) {
       this.userAgent = userAgent;
       return this;
     }
@@ -151,7 +204,16 @@ public final class HttpRequest implements Serializable {
      * Sets the IP address (IPv4 or IPv6) of the client that issued the HTTP request. Examples:
      * {@code 192.168.1.1}, {@code FE80::0202:B3FF:FE1E:8329}.
      */
+    @Deprecated
     public Builder remoteIp(String remoteIp) {
+      return setRemoteIp(remoteIp);
+    }
+
+    /**
+     * Sets the IP address (IPv4 or IPv6) of the client that issued the HTTP request. Examples:
+     * {@code 192.168.1.1}, {@code FE80::0202:B3FF:FE1E:8329}.
+     */
+    public Builder setRemoteIp(String remoteIp) {
       this.remoteIp = remoteIp;
       return this;
     }
@@ -160,7 +222,16 @@ public final class HttpRequest implements Serializable {
      * Sets the IP address (IPv4 or IPv6) of the origin server that the request was sent to.
      * Examples: {@code 192.168.1.1}, {@code FE80::0202:B3FF:FE1E:8329}.
      */
+    @Deprecated
     public Builder serverIp(String serverIp) {
+      return setServerIp(serverIp);
+    }
+
+    /**
+     * Sets the IP address (IPv4 or IPv6) of the origin server that the request was sent to.
+     * Examples: {@code 192.168.1.1}, {@code FE80::0202:B3FF:FE1E:8329}.
+     */
+    public Builder setServerIp(String serverIp) {
       this.serverIp = serverIp;
       return this;
     }
@@ -171,7 +242,18 @@ public final class HttpRequest implements Serializable {
      * @see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html">HTTP/1.1 Header Field
      *     Definitions</a>
      */
+    @Deprecated
     public Builder referer(String referer) {
+      return setReferer(referer);
+    }
+
+    /**
+     * Sets the referer URL of the request, as defined in HTTP/1.1 Header Field Definitions.
+     *
+     * @see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html">HTTP/1.1 Header Field
+     *     Definitions</a>
+     */
+    public Builder setReferer(String referer) {
       this.referer = referer;
       return this;
     }
@@ -179,7 +261,15 @@ public final class HttpRequest implements Serializable {
     /**
      * Sets whether or not a cache lookup was attempted. If not set, {@code false} is used.
      */
+    @Deprecated
     public Builder cacheLookup(boolean cacheLookup) {
+      return setCacheLookup(cacheLookup);
+    }
+
+    /**
+     * Sets whether or not a cache lookup was attempted. If not set, {@code false} is used.
+     */
+    public Builder setCacheLookup(boolean cacheLookup) {
       this.cacheLookup = cacheLookup;
       return this;
     }
@@ -188,7 +278,16 @@ public final class HttpRequest implements Serializable {
      * Sets whether or not an entity was served from cache (with or without validation). If not set,
      * {@code false} is used.
      */
+    @Deprecated
     public Builder cacheHit(boolean cacheHit) {
+      return setCacheHit(cacheHit);
+    }
+
+    /**
+     * Sets whether or not an entity was served from cache (with or without validation). If not set,
+     * {@code false} is used.
+     */
+    public Builder setCacheHit(boolean cacheHit) {
       this.cacheHit = cacheHit;
       return this;
     }
@@ -198,7 +297,17 @@ public final class HttpRequest implements Serializable {
      * from cache. This field is only meaningful if {@link #cacheHit(boolean)} is set to
      * {@code true}. If not set, {@code false} is used.
      */
+    @Deprecated
     public Builder cacheValidatedWithOriginServer(boolean cacheValidatedWithOriginServer) {
+      return setCacheValidatedWithOriginServer(cacheValidatedWithOriginServer);
+    }
+
+    /**
+     * Sets whether or not the response was validated with the origin server before being served
+     * from cache. This field is only meaningful if {@link #cacheHit(boolean)} is set to
+     * {@code true}. If not set, {@code false} is used.
+     */
+    public Builder setCacheValidatedWithOriginServer(boolean cacheValidatedWithOriginServer) {
       this.cacheValidatedWithOriginServer = cacheValidatedWithOriginServer;
       return this;
     }
@@ -207,7 +316,16 @@ public final class HttpRequest implements Serializable {
      * Sets the number of HTTP response bytes inserted into cache. Set only when a cache fill was
      * attempted.
      */
+    @Deprecated
     public Builder cacheFillBytes(long cacheFillBytes) {
+      return setCacheFillBytes(cacheFillBytes);
+    }
+
+    /**
+     * Sets the number of HTTP response bytes inserted into cache. Set only when a cache fill was
+     * attempted.
+     */
+    public Builder setCacheFillBytes(long cacheFillBytes) {
       this.cacheFillBytes = cacheFillBytes;
       return this;
     }
@@ -239,7 +357,15 @@ public final class HttpRequest implements Serializable {
   /**
    * Returns the HTTP request method.
    */
+  @Deprecated
   public RequestMethod requestMethod() {
+    return getRequestMethod();
+  }
+
+  /**
+   * Returns the HTTP request method.
+   */
+  public RequestMethod getRequestMethod() {
     return requestMethod;
   }
 
@@ -248,7 +374,17 @@ public final class HttpRequest implements Serializable {
    * host name, the path and the query portion of the URL that was requested. Example:
    * {@code http://example.com/some/info?color=red}.
    */
+  @Deprecated
   public String requestUrl() {
+    return getRequestUrl();
+  }
+
+  /**
+   * Returns the requested URL. Request URL contains the scheme ({@code http}, {@code https}), the
+   * host name, the path and the query portion of the URL that was requested. Example:
+   * {@code http://example.com/some/info?color=red}.
+   */
+  public String getRequestUrl() {
     return requestUrl;
   }
 
@@ -256,14 +392,31 @@ public final class HttpRequest implements Serializable {
    * Returns the size of the HTTP request message in bytes, including the request headers and the
    * request body.
    */
+  @Deprecated
   public Long requestSize() {
+    return getRequestSize();
+  }
+
+  /**
+   * Returns the size of the HTTP request message in bytes, including the request headers and the
+   * request body.
+   */
+  public Long getRequestSize() {
     return requestSize;
   }
 
   /**
    * Returns the response code indicating the status of response.
    */
+  @Deprecated
   public Integer status() {
+    return getStatus();
+  }
+
+  /**
+   * Returns the response code indicating the status of response.
+   */
+  public Integer getStatus() {
     return status;
   }
 
@@ -271,7 +424,16 @@ public final class HttpRequest implements Serializable {
    * Returns the size of the HTTP response message sent back to the client, in bytes, including the
    * response headers and the response body.
    */
+  @Deprecated
   public Long responseSize() {
+    return getResponseSize();
+  }
+
+  /**
+   * Returns the size of the HTTP response message sent back to the client, in bytes, including the
+   * response headers and the response body.
+   */
+  public Long getResponseSize() {
     return responseSize;
   }
 
@@ -279,7 +441,16 @@ public final class HttpRequest implements Serializable {
    * Returns the user agent sent by the client. Example:
    * {@code Mozilla/4.0 (compatible; MSIE 6.0; Windows 98; Q312461; .NET CLR 1.0.3705)}.
    */
+  @Deprecated
   public String userAgent() {
+    return getUserAgent();
+  }
+
+  /**
+   * Returns the user agent sent by the client. Example:
+   * {@code Mozilla/4.0 (compatible; MSIE 6.0; Windows 98; Q312461; .NET CLR 1.0.3705)}.
+   */
+  public String getUserAgent() {
     return userAgent;
   }
 
@@ -287,7 +458,16 @@ public final class HttpRequest implements Serializable {
    * Returns the IP address (IPv4 or IPv6) of the client that issued the HTTP request. Examples:
    * {@code 192.168.1.1}, {@code FE80::0202:B3FF:FE1E:8329}.
    */
+  @Deprecated
   public String remoteIp() {
+    return getRemoteIp();
+  }
+
+  /**
+   * Returns the IP address (IPv4 or IPv6) of the client that issued the HTTP request. Examples:
+   * {@code 192.168.1.1}, {@code FE80::0202:B3FF:FE1E:8329}.
+   */
+  public String getRemoteIp() {
     return remoteIp;
   }
 
@@ -295,7 +475,16 @@ public final class HttpRequest implements Serializable {
    * Returns the IP address (IPv4 or IPv6) of the origin server that the request was sent to.
    * Examples: {@code 192.168.1.1}, {@code FE80::0202:B3FF:FE1E:8329}.
    */
+  @Deprecated
   public String serverIp() {
+    return getServerIp();
+  }
+
+  /**
+   * Returns the IP address (IPv4 or IPv6) of the origin server that the request was sent to.
+   * Examples: {@code 192.168.1.1}, {@code FE80::0202:B3FF:FE1E:8329}.
+   */
+  public String getServerIp() {
     return serverIp;
   }
 
@@ -305,7 +494,18 @@ public final class HttpRequest implements Serializable {
    * @see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html">HTTP/1.1 Header Field
    *     Definitions</a>
    */
+  @Deprecated
   public String referer() {
+    return getReferer();
+  }
+
+  /**
+   * Returns the referer URL of the request, as defined in HTTP/1.1 Header Field Definitions.
+   *
+   * @see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html">HTTP/1.1 Header Field
+   *     Definitions</a>
+   */
+  public String getReferer() {
     return referer;
   }
 
@@ -338,7 +538,16 @@ public final class HttpRequest implements Serializable {
    * Returns the number of HTTP response bytes inserted into cache. Set only when a cache fill was
    * attempted.
    */
+  @Deprecated
   public Long cacheFillBytes() {
+    return getCacheFillBytes();
+  }
+
+  /**
+   * Returns the number of HTTP response bytes inserted into cache. Set only when a cache fill was
+   * attempted.
+   */
+  public Long getCacheFillBytes() {
     return cacheFillBytes;
   }
 
@@ -423,7 +632,7 @@ public final class HttpRequest implements Serializable {
     if (remoteIp != null) {
       builder.setRemoteIp(remoteIp);
     }
-     if (serverIp != null) {
+    if (serverIp != null) {
       builder.setServerIp(serverIp);
     }
     if (referer != null) {
@@ -441,44 +650,52 @@ public final class HttpRequest implements Serializable {
   /**
    * Returns a builder for {@code HttpRequest} objects.
    */
+  @Deprecated
   public static Builder builder() {
+    return newBuilder();
+  }
+
+  /**
+   * Returns a builder for {@code HttpRequest} objects.
+   */
+  public static Builder newBuilder() {
     return new Builder();
   }
 
   static HttpRequest fromPb(com.google.logging.type.HttpRequest requestPb) {
-    Builder builder = builder();
+    Builder builder = newBuilder();
     if (requestPb.getRequestMethod() != null && !requestPb.getRequestMethod().equals("")) {
-      builder.requestMethod(RequestMethod.valueOf(requestPb.getRequestMethod()));
+      builder.setRequestMethod(RequestMethod.valueOf(requestPb.getRequestMethod()));
     }
     if (requestPb.getRequestUrl() != null && !requestPb.getRequestUrl().equals("")) {
-      builder.requestUrl(requestPb.getRequestUrl());
+      builder.setRequestUrl(requestPb.getRequestUrl());
     }
     if (requestPb.getRequestSize() != 0L) {
-      builder.requestSize(requestPb.getRequestSize());
+      builder.setRequestSize(requestPb.getRequestSize());
     }
     if (requestPb.getStatus() != 0L) {
-      builder.status(requestPb.getStatus());
+      builder.setStatus(requestPb.getStatus());
     }
     if (requestPb.getResponseSize() != 0L) {
-      builder.responseSize(requestPb.getResponseSize());
+      builder.setResponseSize(requestPb.getResponseSize());
     }
     if (requestPb.getUserAgent() != null && !requestPb.getRequestUrl().equals("")) {
-      builder.userAgent(requestPb.getUserAgent());
+      builder.setUserAgent(requestPb.getUserAgent());
     }
     if (requestPb.getServerIp() != null && !requestPb.getServerIp().equals("")) {
-      builder.serverIp(requestPb.getServerIp());
+      builder.setServerIp(requestPb.getServerIp());
     }
     if (requestPb.getRemoteIp() != null && !requestPb.getRemoteIp().equals("")) {
-      builder.remoteIp(requestPb.getRemoteIp());
+      builder.setRemoteIp(requestPb.getRemoteIp());
     }
     if (requestPb.getReferer() != null && !requestPb.getReferer().equals("")) {
-      builder.referer(requestPb.getReferer());
+      builder.setReferer(requestPb.getReferer());
     }
-    builder.cacheLookup(requestPb.getCacheLookup());
-    builder.cacheHit(requestPb.getCacheHit());
-    builder.cacheValidatedWithOriginServer(requestPb.getCacheValidatedWithOriginServer());
+    builder.setCacheLookup(requestPb.getCacheLookup());
+    builder.setCacheHit(requestPb.getCacheHit());
+    builder.setCacheValidatedWithOriginServer(requestPb.getCacheValidatedWithOriginServer());
     if (requestPb.getCacheFillBytes() != 0L) {
-      builder.cacheFillBytes(requestPb.getCacheFillBytes());
+      builder.setCacheFillBytes(requestPb.getCacheFillBytes());
     }
     return builder.build();
   }

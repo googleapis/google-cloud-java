@@ -40,6 +40,23 @@ public class SubnetworkIdTest {
   @Test
   public void testOf() {
     SubnetworkId subnetworkId = SubnetworkId.of(PROJECT, REGION, NAME);
+    assertEquals(PROJECT, subnetworkId.getProject());
+    assertEquals(REGION, subnetworkId.getRegion());
+    assertEquals(NAME, subnetworkId.getSubnetwork());
+    assertEquals(URL, subnetworkId.getSelfLink());
+    subnetworkId = SubnetworkId.of(REGION, NAME);
+    assertNull(subnetworkId.getProject());
+    assertEquals(REGION, subnetworkId.getRegion());
+    assertEquals(NAME, subnetworkId.getSubnetwork());
+    subnetworkId = SubnetworkId.of(RegionId.of(PROJECT, REGION), NAME);
+    assertEquals(PROJECT, subnetworkId.getProject());
+    assertEquals(REGION, subnetworkId.getRegion());
+    assertEquals(NAME, subnetworkId.getSubnetwork());
+  }
+
+  @Test
+  public void testOfDeprecated() {
+    SubnetworkId subnetworkId = SubnetworkId.of(PROJECT, REGION, NAME);
     assertEquals(PROJECT, subnetworkId.project());
     assertEquals(REGION, subnetworkId.region());
     assertEquals(NAME, subnetworkId.subnetwork());
@@ -57,7 +74,7 @@ public class SubnetworkIdTest {
   @Test
   public void testToAndFromUrl() {
     SubnetworkId subnetworkId = SubnetworkId.of(PROJECT, REGION, NAME);
-    compareSubnetworkId(subnetworkId, SubnetworkId.fromUrl(subnetworkId.selfLink()));
+    compareSubnetworkId(subnetworkId, SubnetworkId.fromUrl(subnetworkId.getSelfLink()));
     thrown.expect(IllegalArgumentException.class);
     thrown.expectMessage("notMatchingUrl is not a valid subnetwork URL");
     SubnetworkId.fromUrl("notMatchingUrl");
@@ -72,16 +89,16 @@ public class SubnetworkIdTest {
 
   @Test
   public void testMatchesUrl() {
-    assertTrue(SubnetworkId.matchesUrl(SubnetworkId.of(PROJECT, REGION, NAME).selfLink()));
+    assertTrue(SubnetworkId.matchesUrl(SubnetworkId.of(PROJECT, REGION, NAME).getSelfLink()));
     assertFalse(SubnetworkId.matchesUrl("notMatchingUrl"));
   }
 
   private void compareSubnetworkId(SubnetworkId expected, SubnetworkId value) {
     assertEquals(expected, value);
-    assertEquals(expected.project(), expected.project());
-    assertEquals(expected.region(), expected.region());
-    assertEquals(expected.subnetwork(), expected.subnetwork());
-    assertEquals(expected.selfLink(), expected.selfLink());
+    assertEquals(expected.getProject(), expected.getProject());
+    assertEquals(expected.getRegion(), expected.getRegion());
+    assertEquals(expected.getSubnetwork(), expected.getSubnetwork());
+    assertEquals(expected.getSelfLink(), expected.getSelfLink());
     assertEquals(expected.hashCode(), expected.hashCode());
   }
 }

@@ -21,7 +21,7 @@ import com.google.cloud.translate.TranslateOptions;
 
 /**
  * Utility to create a remote translate configuration for testing. Translate options can be obtained
- * via the {@link #options()} method. Returned options have custom
+ * via the {@link #getOptions()} method. Returned options have custom
  * {@link TranslateOptions#retryParams()}: {@link RetryParams#retryMaxAttempts()} is {@code 10},
  * {@link RetryParams#retryMinAttempts()} is {@code 6}, {@link RetryParams#maxRetryDelayMillis()}
  * is {@code 30000}, {@link RetryParams#totalRetryPeriodMillis()} is {@code 120000} and
@@ -40,7 +40,15 @@ public class RemoteTranslateHelper {
   /**
    * Returns a {@link TranslateOptions} object to be used for testing.
    */
+  @Deprecated
   public TranslateOptions options() {
+    return getOptions();
+  }
+
+  /**
+   * Returns a {@link TranslateOptions} object to be used for testing.
+   */
+  public TranslateOptions getOptions() {
     return options;
   }
 

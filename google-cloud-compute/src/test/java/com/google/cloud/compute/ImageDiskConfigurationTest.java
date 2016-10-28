@@ -31,10 +31,16 @@ public class ImageDiskConfigurationTest {
   private static final ImageId IMAGE = ImageId.of("project", "image");
   private static final String IMAGE_ID = "imageId";
   private static final ImageDiskConfiguration DISK_CONFIGURATION =
+      ImageDiskConfiguration.newBuilder(IMAGE)
+          .setSizeGb(SIZE)
+          .setDiskType(DISK_TYPE)
+          .setSourceImageId(IMAGE_ID)
+          .build();
+  private static final ImageDiskConfiguration DEPRECATED_DISK_CONFIGURATION =
       ImageDiskConfiguration.builder(IMAGE)
           .sizeGb(SIZE)
           .diskType(DISK_TYPE)
-          .sourceImageId(IMAGE_ID)
+          .setSourceImageId(IMAGE_ID)
           .build();
 
   @Test
@@ -42,17 +48,17 @@ public class ImageDiskConfigurationTest {
     compareImageDiskConfiguration(DISK_CONFIGURATION, DISK_CONFIGURATION.toBuilder().build());
     ImageId newImageId = ImageId.of("newProject", "newImage");
     ImageDiskConfiguration diskConfiguration = DISK_CONFIGURATION.toBuilder()
-        .sizeGb(24L)
-        .sourceImage(newImageId)
-        .sourceImageId("newImageId")
+        .setSizeGb(24L)
+        .setSourceImage(newImageId)
+        .setSourceImageId("newImageId")
         .build();
-    assertEquals(24L, diskConfiguration.sizeGb().longValue());
-    assertEquals(newImageId, diskConfiguration.sourceImage());
-    assertEquals("newImageId", diskConfiguration.sourceImageId());
+    assertEquals(24L, diskConfiguration.getSizeGb().longValue());
+    assertEquals(newImageId, diskConfiguration.getSourceImage());
+    assertEquals("newImageId", diskConfiguration.getSourceImageId());
     diskConfiguration = diskConfiguration.toBuilder()
-        .sizeGb(SIZE)
-        .sourceImage(IMAGE)
-        .sourceImageId(IMAGE_ID)
+        .setSizeGb(SIZE)
+        .setSourceImage(IMAGE)
+        .setSourceImageId(IMAGE_ID)
         .build();
     compareImageDiskConfiguration(DISK_CONFIGURATION, diskConfiguration);
   }
@@ -65,11 +71,20 @@ public class ImageDiskConfigurationTest {
 
   @Test
   public void testBuilder() {
-    assertEquals(DISK_TYPE, DISK_CONFIGURATION.diskType());
-    assertEquals(SIZE, DISK_CONFIGURATION.sizeGb());
-    assertEquals(IMAGE, DISK_CONFIGURATION.sourceImage());
-    assertEquals(IMAGE_ID, DISK_CONFIGURATION.sourceImageId());
-    assertEquals(Type.IMAGE, DISK_CONFIGURATION.type());
+    assertEquals(DISK_TYPE, DISK_CONFIGURATION.getDiskType());
+    assertEquals(SIZE, DISK_CONFIGURATION.getSizeGb());
+    assertEquals(IMAGE, DISK_CONFIGURATION.getSourceImage());
+    assertEquals(IMAGE_ID, DISK_CONFIGURATION.getSourceImageId());
+    assertEquals(Type.IMAGE, DISK_CONFIGURATION.getType());
+  }
+
+  @Test
+  public void testBuilderDeprecated() {
+    assertEquals(DISK_TYPE, DEPRECATED_DISK_CONFIGURATION.diskType());
+    assertEquals(SIZE, DEPRECATED_DISK_CONFIGURATION.sizeGb());
+    assertEquals(IMAGE, DEPRECATED_DISK_CONFIGURATION.sourceImage());
+    assertEquals(IMAGE_ID, DEPRECATED_DISK_CONFIGURATION.sourceImageId());
+    assertEquals(Type.IMAGE, DEPRECATED_DISK_CONFIGURATION.type());
   }
 
   @Test
@@ -83,18 +98,18 @@ public class ImageDiskConfigurationTest {
   @Test
   public void testOf() {
     ImageDiskConfiguration configuration = ImageDiskConfiguration.of(IMAGE);
-    assertNull(configuration.diskType());
-    assertNull(configuration.sizeGb());
-    assertNull(configuration.sourceImageId());
-    assertEquals(IMAGE, configuration.sourceImage());
-    assertEquals(Type.IMAGE, configuration.type());
+    assertNull(configuration.getDiskType());
+    assertNull(configuration.getSizeGb());
+    assertNull(configuration.getSourceImageId());
+    assertEquals(IMAGE, configuration.getSourceImage());
+    assertEquals(Type.IMAGE, configuration.getType());
   }
 
   @Test
   public void testSetProjectId() {
     ImageDiskConfiguration diskConfiguration = DISK_CONFIGURATION.toBuilder()
-        .diskType(DiskTypeId.of(DISK_TYPE.zone(), DISK_TYPE.type()))
-        .sourceImage(ImageId.of(IMAGE.image()))
+        .setDiskType(DiskTypeId.of(DISK_TYPE.getZone(), DISK_TYPE.getType()))
+        .setSourceImage(ImageId.of(IMAGE.getImage()))
         .build();
     compareImageDiskConfiguration(DISK_CONFIGURATION, diskConfiguration.setProjectId("project"));
   }
@@ -102,11 +117,11 @@ public class ImageDiskConfigurationTest {
   private void compareImageDiskConfiguration(ImageDiskConfiguration expected,
       ImageDiskConfiguration value) {
     assertEquals(expected, value);
-    assertEquals(expected.diskType(), value.diskType());
-    assertEquals(expected.sizeGb(), value.sizeGb());
-    assertEquals(expected.sourceImage(), value.sourceImage());
-    assertEquals(expected.sourceImageId(), value.sourceImageId());
-    assertEquals(expected.type(), value.type());
+    assertEquals(expected.getDiskType(), value.getDiskType());
+    assertEquals(expected.getSizeGb(), value.getSizeGb());
+    assertEquals(expected.getSourceImage(), value.getSourceImage());
+    assertEquals(expected.getSourceImageId(), value.getSourceImageId());
+    assertEquals(expected.getType(), value.getType());
     assertEquals(expected.hashCode(), value.hashCode());
   }
 }

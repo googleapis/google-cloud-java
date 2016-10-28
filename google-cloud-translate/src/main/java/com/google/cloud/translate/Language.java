@@ -54,14 +54,30 @@ public class Language implements Serializable {
   /**
    * Returns the code of the language.
    */
+  @Deprecated
   public String code() {
+    return getCode();
+  }
+
+  /**
+   * Returns the code of the language.
+   */
+  public String getCode() {
     return code;
   }
 
   /**
    * Returns the name of the language.
    */
+  @Deprecated
   public String name() {
+    return getName();
+  }
+
+  /**
+   * Returns the name of the language.
+   */
+  public String getName() {
     return name;
   }
 

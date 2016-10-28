@@ -15,16 +15,15 @@
 /**
  * A client to Google Cloud Natural Language API.
  *
- * The interfaces provided are listed below, along with a usage sample
+ * <p>The interfaces provided are listed below, along with a usage sample
  *
- * ==================
- * LanguageServiceApi
- * ==================
+ * <p>================== LanguageServiceApi ==================
  *
- * Service Description: Provides text analysis operations such as sentiment analysis and entity
+ * <p>Service Description: Provides text analysis operations such as sentiment analysis and entity
  * recognition.
  *
- * Sample for LanguageServiceApi:
+ * <p>Sample for LanguageServiceApi:
+ *
  * <pre>
  * <code>
  * try (LanguageServiceApi languageServiceApi = LanguageServiceApi.create()) {
@@ -33,6 +32,5 @@
  * }
  * </code>
  * </pre>
- *
  */
 package com.google.cloud.language.spi.v1beta1;

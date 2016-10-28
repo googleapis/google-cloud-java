@@ -675,7 +675,15 @@ public class LocalResourceManagerHelper {
   /**
    * Returns a {@link ResourceManagerOptions} instance that sets the host to use the mock server.
    */
+  @Deprecated
   public ResourceManagerOptions options() {
+    return getOptions();
+  }
+
+  /**
+   * Returns a {@link ResourceManagerOptions} instance that sets the host to use the mock server.
+   */
+  public ResourceManagerOptions getOptions() {
     return ResourceManagerOptions.builder()
         .host("http://localhost:" + port)
         .authCredentials(AuthCredentials.noAuth())

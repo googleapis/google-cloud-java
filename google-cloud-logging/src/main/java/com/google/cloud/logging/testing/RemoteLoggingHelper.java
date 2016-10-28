@@ -28,8 +28,8 @@ import java.util.logging.Logger;
 
 /**
  * Utility to create a remote logging configuration for testing. Logging options can be obtained via
- * the {@link #options()} method. Returned options have custom {@link LoggingOptions#retryParams()}:
- * {@link RetryParams#maxRetryDelayMillis()} is {@code 30000},
+ * the {@link #getOptions()} method. Returned options have custom
+ * {@link LoggingOptions#retryParams()}: {@link RetryParams#maxRetryDelayMillis()} is {@code 30000},
  * {@link RetryParams#totalRetryPeriodMillis()} is {@code 120000} and
  * {@link RetryParams#initialRetryDelayMillis()} is {@code 250}.
  * {@link LoggingOptions#initialTimeout()} is set to 60000, {@link LoggingOptions#maxTimeout()} is
@@ -47,7 +47,15 @@ public class RemoteLoggingHelper {
   /**
    * Returns a {@link LoggingOptions} object to be used for testing.
    */
+  @Deprecated
   public LoggingOptions options() {
+    return getOptions();
+  }
+
+  /**
+   * Returns a {@link LoggingOptions} object to be used for testing.
+   */
+  public LoggingOptions getOptions() {
     return options;
   }
 

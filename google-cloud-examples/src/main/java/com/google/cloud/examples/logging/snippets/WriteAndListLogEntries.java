@@ -42,9 +42,9 @@ public class WriteAndListLogEntries {
     try(Logging logging = options.service()) {
 
       // Create a log entry
-      LogEntry firstEntry = LogEntry.builder(StringPayload.of("message"))
-          .logName("test-log")
-          .resource(MonitoredResource.builder("global")
+      LogEntry firstEntry = LogEntry.newBuilder(StringPayload.of("message"))
+          .setLogName("test-log")
+          .setResource(MonitoredResource.newBuilder("global")
               .addLabel("project_id", options.projectId())
               .build())
           .build();

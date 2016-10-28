@@ -714,7 +714,7 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
   static <T extends Option.OptionType> Map<Option.OptionType, ?> optionMap(Option... options) {
     Map<Option.OptionType, Object> optionMap = Maps.newHashMap();
     for (Option option : options) {
-      Object prev = optionMap.put(option.optionType(), option.value());
+      Object prev = optionMap.put(option.getOptionType(), option.getValue());
       checkArgument(prev == null, "Duplicate option %s", option);
     }
     return optionMap;

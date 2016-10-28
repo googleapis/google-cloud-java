@@ -51,10 +51,11 @@ public class SubscriptionTest {
   private static final String ENDPOINT = "https://example.com/push";
   private static final PushConfig PUSH_CONFIG = PushConfig.of(ENDPOINT);
   private static final int ACK_DEADLINE = 42;
-  private static final SubscriptionInfo SUBSCRIPTION_INFO =SubscriptionInfo.builder(TOPIC_ID, NAME)
-      .pushConfig(PUSH_CONFIG)
-      .ackDeadLineSeconds(ACK_DEADLINE)
-      .build();
+  private static final SubscriptionInfo SUBSCRIPTION_INFO =
+      SubscriptionInfo.newBuilder(TOPIC_ID, NAME)
+          .setPushConfig(PUSH_CONFIG)
+          .setAckDeadLineSeconds(ACK_DEADLINE)
+          .build();
   private static final Message MESSAGE1 = Message.of("payload1");
   private static final com.google.pubsub.v1.ReceivedMessage MESSAGE_PB1 =
       com.google.pubsub.v1.ReceivedMessage.newBuilder()
@@ -98,10 +99,32 @@ public class SubscriptionTest {
   public void testBuilder() {
     initializeExpectedSubscription(2);
     replay(pubsub);
+    assertEquals(TOPIC_ID, expectedSubscription.getTopic());
+    assertEquals(NAME, expectedSubscription.getName());
+    assertEquals(PUSH_CONFIG, expectedSubscription.getPushConfig());
+    assertEquals(ACK_DEADLINE, expectedSubscription.getAckDeadlineSeconds());
+    assertSame(serviceMockReturnsOptions, expectedSubscription.getPubsub());
+    Subscription builtSubscription = expectedSubscription.toBuilder()
+        .setName("newSubscription")
+        .setTopic("newProject", "newTopic")
+        .setPushConfig(null)
+        .setAckDeadLineSeconds(10)
+        .build();
+    assertEquals(TopicId.of("newProject", "newTopic"), builtSubscription.getTopic());
+    assertEquals("newSubscription", builtSubscription.getName());
+    assertEquals(null, builtSubscription.getPushConfig());
+    assertEquals(10, builtSubscription.getAckDeadlineSeconds());
+  }
+
+  @Test
+  public void testBuilderDeprecated() {
+    initializeExpectedSubscription(2);
+    replay(pubsub);
     assertEquals(TOPIC_ID, expectedSubscription.topic());
     assertEquals(NAME, expectedSubscription.name());
     assertEquals(PUSH_CONFIG, expectedSubscription.pushConfig());
     assertEquals(ACK_DEADLINE, expectedSubscription.ackDeadlineSeconds());
+    assertSame(serviceMockReturnsOptions, expectedSubscription.pubSub());
     Subscription builtSubscription = expectedSubscription.toBuilder()
         .name("newSubscription")
         .topic("newProject", "newTopic")
@@ -124,7 +147,7 @@ public class SubscriptionTest {
   @Test
   public void testReload() {
     initializeExpectedSubscription(2);
-    SubscriptionInfo updatedInfo = SUBSCRIPTION_INFO.toBuilder().name("newSubscription").build();
+    SubscriptionInfo updatedInfo = SUBSCRIPTION_INFO.toBuilder().setName("newSubscription").build();
     Subscription expectedSubscription =
         new Subscription(serviceMockReturnsOptions, new SubscriptionInfo.BuilderImpl(updatedInfo));
     expect(pubsub.options()).andReturn(mockOptions);
@@ -148,7 +171,7 @@ public class SubscriptionTest {
   @Test
   public void testReloadAsync() throws ExecutionException, InterruptedException {
     initializeExpectedSubscription(2);
-    SubscriptionInfo updatedInfo = SUBSCRIPTION_INFO.toBuilder().name("newSubscription").build();
+    SubscriptionInfo updatedInfo = SUBSCRIPTION_INFO.toBuilder().setName("newSubscription").build();
     Subscription expectedSubscription =
         new Subscription(serviceMockReturnsOptions, new SubscriptionInfo.BuilderImpl(updatedInfo));
     expect(pubsub.options()).andReturn(mockOptions);
@@ -404,10 +427,10 @@ public class SubscriptionTest {
 
   private void compareSubscription(Subscription expected, Subscription value) {
     assertEquals(expected, value);
-    assertEquals(expected.topic(), value.topic());
-    assertEquals(expected.name(), value.name());
-    assertEquals(expected.pushConfig(), value.pushConfig());
-    assertEquals(expected.ackDeadlineSeconds(), value.ackDeadlineSeconds());
+    assertEquals(expected.getTopic(), value.getTopic());
+    assertEquals(expected.getName(), value.getName());
+    assertEquals(expected.getPushConfig(), value.getPushConfig());
+    assertEquals(expected.getAckDeadlineSeconds(), value.getAckDeadlineSeconds());
     assertEquals(expected.hashCode(), value.hashCode());
   }
 }

@@ -34,7 +34,7 @@ public final class DoubleValue extends Value<Double> {
 
         @Override
         public Builder newBuilder(Double value) {
-          return builder(value);
+          return DoubleValue.newBuilder(value);
         }
 
         @Override
@@ -61,7 +61,7 @@ public final class DoubleValue extends Value<Double> {
   }
 
   public DoubleValue(double value) {
-    this(builder(value));
+    this(newBuilder(value));
   }
 
   private DoubleValue(Builder builder) {
@@ -77,7 +77,12 @@ public final class DoubleValue extends Value<Double> {
     return new DoubleValue(value);
   }
 
+  @Deprecated
   public static Builder builder(double value) {
+    return newBuilder(value);
+  }
+
+  public static Builder newBuilder(double value) {
     return new Builder().set(value);
   }
 }

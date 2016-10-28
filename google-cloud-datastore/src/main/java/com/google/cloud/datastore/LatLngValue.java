@@ -34,7 +34,7 @@ public final class LatLngValue extends Value<LatLng> {
 
         @Override
         public Builder newBuilder(LatLng value) {
-          return builder(value);
+          return LatLngValue.newBuilder(value);
         }
 
         @Override
@@ -62,7 +62,7 @@ public final class LatLngValue extends Value<LatLng> {
   }
 
   public LatLngValue(LatLng value) {
-    this(builder(value));
+    this(newBuilder(value));
   }
 
   private LatLngValue(Builder builder) {
@@ -78,7 +78,12 @@ public final class LatLngValue extends Value<LatLng> {
     return new LatLngValue(value);
   }
 
+  @Deprecated
   public static Builder builder(LatLng value) {
+    return newBuilder(value);
+  }
+
+  public static Builder newBuilder(LatLng value) {
     return new Builder().set(value);
   }
 }

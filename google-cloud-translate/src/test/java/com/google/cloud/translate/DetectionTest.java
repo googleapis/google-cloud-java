@@ -32,6 +32,13 @@ public class DetectionTest {
 
   @Test
   public void testFromPb() {
+    assertEquals(LANGUAGE, DETECTION.getLanguage());
+    assertEquals(CONFIDENCE, DETECTION.getConfidence(), 0);
+    compareDetection(DETECTION, Detection.fromPb(DETECTION_PB));
+  }
+
+  @Test
+  public void testFromPbDeprecated() {
     assertEquals(LANGUAGE, DETECTION.language());
     assertEquals(CONFIDENCE, DETECTION.confidence(), 0);
     compareDetection(DETECTION, Detection.fromPb(DETECTION_PB));
@@ -39,8 +46,8 @@ public class DetectionTest {
 
   private void compareDetection(Detection expected, Detection value) {
     assertEquals(expected, value);
-    assertEquals(expected.language(), value.language());
-    assertEquals(expected.confidence(), value.confidence(), 0);
+    assertEquals(expected.getLanguage(), value.getLanguage());
+    assertEquals(expected.getConfidence(), value.getConfidence(), 0);
     assertEquals(expected.hashCode(), value.hashCode());
     assertEquals(expected.toString(), value.toString());
   }

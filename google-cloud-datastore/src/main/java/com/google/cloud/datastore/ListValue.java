@@ -43,7 +43,7 @@ public final class ListValue extends Value<List<? extends Value<?>>> {
 
         @Override
         public Builder newBuilder(List<? extends Value<?>> values) {
-          return builder().set(values);
+          return ListValue.newBuilder().set(values);
         }
 
         @Override
@@ -77,7 +77,7 @@ public final class ListValue extends Value<List<? extends Value<?>>> {
 
     private void addValueHelper(Value<?> value) {
       // see datastore.proto definition for list_value
-      Preconditions.checkArgument(value.type() != ValueType.LIST, "Cannot contain another list");
+      Preconditions.checkArgument(value.getType() != ValueType.LIST, "Cannot contain another list");
       listBuilder.add(value);
     }
 
@@ -221,7 +221,7 @@ public final class ListValue extends Value<List<? extends Value<?>>> {
   }
 
   public ListValue(List<? extends Value<?>> values) {
-    this(builder().set(values));
+    this(newBuilder().set(values));
   }
 
   public ListValue(Value<?> first, Value<?>... other) {
@@ -258,69 +258,77 @@ public final class ListValue extends Value<List<? extends Value<?>>> {
    * Creates a {@code ListValue} object given a number of string values.
    */
   public static ListValue of(String first, String... other) {
-    return builder().addValue(first, other).build();
+    return newBuilder().addValue(first, other).build();
   }
 
   /**
    * Creates a {@code ListValue} object given a number of long values.
    */
   public static ListValue of(long first, long... other) {
-    return builder().addValue(first, other).build();
+    return newBuilder().addValue(first, other).build();
   }
 
   /**
    * Creates a {@code ListValue} object given a number of double values.
    */
   public static ListValue of(double first, double... other) {
-    return builder().addValue(first, other).build();
+    return newBuilder().addValue(first, other).build();
   }
 
   /**
    * Creates a {@code ListValue} object given a number of boolean values.
    */
   public static ListValue of(boolean first, boolean... other) {
-    return builder().addValue(first, other).build();
+    return newBuilder().addValue(first, other).build();
   }
 
   /**
    * Creates a {@code ListValue} object given a number of {@code DateTime} values.
    */
   public static ListValue of(DateTime first, DateTime... other) {
-    return builder().addValue(first, other).build();
+    return newBuilder().addValue(first, other).build();
   }
 
   /**
    * Creates a {@code ListValue} object given a number of {@code LatLng} values.
    */
   public static ListValue of(LatLng first, LatLng... other) {
-    return builder().addValue(first, other).build();
+    return newBuilder().addValue(first, other).build();
   }
 
   /**
    * Creates a {@code ListValue} object given a number of {@code Key} values.
    */
   public static ListValue of(Key first, Key... other) {
-    return builder().addValue(first, other).build();
+    return newBuilder().addValue(first, other).build();
   }
 
   /**
    * Creates a {@code ListValue} object given a number of {@code FullEntity} values.
    */
   public static ListValue of(FullEntity<?> first, FullEntity<?>... other) {
-    return builder().addValue(first, other).build();
+    return newBuilder().addValue(first, other).build();
   }
 
   /**
    * Creates a {@code ListValue} object given a number of {@code Blob} values.
    */
   public static ListValue of(Blob first, Blob... other) {
-    return builder().addValue(first, other).build();
+    return newBuilder().addValue(first, other).build();
   }
 
   /**
    * Returns a builder for {@code ListValue} objects.
    */
+  @Deprecated
   public static Builder builder() {
+    return newBuilder();
+  }
+
+  /**
+   * Returns a builder for {@code ListValue} objects.
+   */
+  public static Builder newBuilder() {
     return new Builder();
   }
 }

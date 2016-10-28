@@ -47,53 +47,86 @@ public class DiskInfoTest {
   private static final Long LAST_ATTACH_TIMESTAMP = 1453293600000L;
   private static final Long LAST_DETACH_TIMESTAMP = 1453293660000L;
   private static final StandardDiskConfiguration DISK_CONFIGURATION =
-      StandardDiskConfiguration.builder()
-          .sizeGb(SIZE_GB)
-          .diskType(TYPE)
+      StandardDiskConfiguration.newBuilder()
+          .setSizeGb(SIZE_GB)
+          .setDiskType(TYPE)
           .build();
   private static final SnapshotDiskConfiguration SNAPSHOT_DISK_CONFIGURATION =
-      SnapshotDiskConfiguration.builder(SNAPSHOT)
-          .sizeGb(SIZE_GB)
-          .diskType(TYPE)
-          .sourceSnapshotId(SNAPSHOT_ID)
+      SnapshotDiskConfiguration.newBuilder(SNAPSHOT)
+          .setSizeGb(SIZE_GB)
+          .setDiskType(TYPE)
+          .setSourceSnapshotId(SNAPSHOT_ID)
           .build();
   private static final ImageDiskConfiguration IMAGE_DISK_CONFIGURATION =
-      ImageDiskConfiguration.builder(IMAGE)
-          .sizeGb(SIZE_GB)
-          .diskType(TYPE)
-          .sourceImageId(IMAGE_ID)
+      ImageDiskConfiguration.newBuilder(IMAGE)
+          .setSizeGb(SIZE_GB)
+          .setDiskType(TYPE)
+          .setSourceImageId(IMAGE_ID)
           .build();
-  private static final DiskInfo DISK_INFO = DiskInfo.builder(DISK_ID, DISK_CONFIGURATION)
-      .generatedId(GENERATED_ID)
-      .creationTimestamp(CREATION_TIMESTAMP)
-      .creationStatus(CREATION_STATUS)
-      .description(DESCRIPTION)
-      .licenses(LICENSES)
-      .attachedInstances(ATTACHED_INSTANCES)
-      .lastAttachTimestamp(LAST_ATTACH_TIMESTAMP)
-      .lastDetachTimestamp(LAST_DETACH_TIMESTAMP)
+  private static final DiskInfo DISK_INFO = DiskInfo.newBuilder(DISK_ID, DISK_CONFIGURATION)
+      .setGeneratedId(GENERATED_ID)
+      .setCreationTimestamp(CREATION_TIMESTAMP)
+      .setCreationStatus(CREATION_STATUS)
+      .setDescription(DESCRIPTION)
+      .setLicenses(LICENSES)
+      .setAttachedInstances(ATTACHED_INSTANCES)
+      .setLastAttachTimestamp(LAST_ATTACH_TIMESTAMP)
+      .setLastDetachTimestamp(LAST_DETACH_TIMESTAMP)
       .build();
   private static final DiskInfo SNAPSHOT_DISK_INFO =
-      DiskInfo.builder(DISK_ID, SNAPSHOT_DISK_CONFIGURATION)
-          .generatedId(GENERATED_ID)
-          .creationTimestamp(CREATION_TIMESTAMP)
-          .creationStatus(CREATION_STATUS)
-          .description(DESCRIPTION)
-          .licenses(LICENSES)
-          .attachedInstances(ATTACHED_INSTANCES)
-          .lastAttachTimestamp(LAST_ATTACH_TIMESTAMP)
-          .lastDetachTimestamp(LAST_DETACH_TIMESTAMP)
+      DiskInfo.newBuilder(DISK_ID, SNAPSHOT_DISK_CONFIGURATION)
+          .setGeneratedId(GENERATED_ID)
+          .setCreationTimestamp(CREATION_TIMESTAMP)
+          .setCreationStatus(CREATION_STATUS)
+          .setDescription(DESCRIPTION)
+          .setLicenses(LICENSES)
+          .setAttachedInstances(ATTACHED_INSTANCES)
+          .setLastAttachTimestamp(LAST_ATTACH_TIMESTAMP)
+          .setLastDetachTimestamp(LAST_DETACH_TIMESTAMP)
           .build();
   private static final DiskInfo IMAGE_DISK_INFO =
-      DiskInfo.builder(DISK_ID, IMAGE_DISK_CONFIGURATION)
-          .generatedId(GENERATED_ID)
-          .creationTimestamp(CREATION_TIMESTAMP)
-          .creationStatus(CREATION_STATUS)
+      DiskInfo.newBuilder(DISK_ID, IMAGE_DISK_CONFIGURATION)
+          .setGeneratedId(GENERATED_ID)
+          .setCreationTimestamp(CREATION_TIMESTAMP)
+          .setCreationStatus(CREATION_STATUS)
+          .setDescription(DESCRIPTION)
+          .setLicenses(LICENSES)
+          .setAttachedInstances(ATTACHED_INSTANCES)
+          .setLastAttachTimestamp(LAST_ATTACH_TIMESTAMP)
+          .setLastDetachTimestamp(LAST_DETACH_TIMESTAMP)
+          .build();
+  private static final DiskInfo DEPRECATED_DISK_INFO =
+      DiskInfo.builder(DISK_ID, DISK_CONFIGURATION)
+          .setGeneratedId(GENERATED_ID)
+          .setCreationTimestamp(CREATION_TIMESTAMP)
+          .setCreationStatus(CREATION_STATUS)
           .description(DESCRIPTION)
-          .licenses(LICENSES)
-          .attachedInstances(ATTACHED_INSTANCES)
-          .lastAttachTimestamp(LAST_ATTACH_TIMESTAMP)
-          .lastDetachTimestamp(LAST_DETACH_TIMESTAMP)
+          .setLicenses(LICENSES)
+          .setAttachedInstances(ATTACHED_INSTANCES)
+          .setLastAttachTimestamp(LAST_ATTACH_TIMESTAMP)
+          .setLastDetachTimestamp(LAST_DETACH_TIMESTAMP)
+          .build();
+  private static final DiskInfo DEPRECATED_SNAPSHOT_DISK_INFO =
+      DiskInfo.builder(DISK_ID, SNAPSHOT_DISK_CONFIGURATION)
+          .setGeneratedId(GENERATED_ID)
+          .setCreationTimestamp(CREATION_TIMESTAMP)
+          .setCreationStatus(CREATION_STATUS)
+          .description(DESCRIPTION)
+          .setLicenses(LICENSES)
+          .setAttachedInstances(ATTACHED_INSTANCES)
+          .setLastAttachTimestamp(LAST_ATTACH_TIMESTAMP)
+          .setLastDetachTimestamp(LAST_DETACH_TIMESTAMP)
+          .build();
+  private static final DiskInfo DEPRECATED_IMAGE_DISK_INFO =
+      DiskInfo.builder(DISK_ID, IMAGE_DISK_CONFIGURATION)
+          .setGeneratedId(GENERATED_ID)
+          .setCreationTimestamp(CREATION_TIMESTAMP)
+          .setCreationStatus(CREATION_STATUS)
+          .description(DESCRIPTION)
+          .setLicenses(LICENSES)
+          .setAttachedInstances(ATTACHED_INSTANCES)
+          .setLastAttachTimestamp(LAST_ATTACH_TIMESTAMP)
+          .setLastDetachTimestamp(LAST_DETACH_TIMESTAMP)
           .build();
 
   @Test
@@ -101,9 +134,9 @@ public class DiskInfoTest {
     compareDiskInfo(DISK_INFO, DISK_INFO.toBuilder().build());
     compareDiskInfo(IMAGE_DISK_INFO, IMAGE_DISK_INFO.toBuilder().build());
     compareDiskInfo(SNAPSHOT_DISK_INFO, SNAPSHOT_DISK_INFO.toBuilder().build());
-    DiskInfo diskInfo = DISK_INFO.toBuilder().description("newDescription").build();
-    assertEquals("newDescription", diskInfo.description());
-    diskInfo = diskInfo.toBuilder().description("description").build();
+    DiskInfo diskInfo = DISK_INFO.toBuilder().setDescription("newDescription").build();
+    assertEquals("newDescription", diskInfo.getDescription());
+    diskInfo = diskInfo.toBuilder().setDescription("description").build();
     compareDiskInfo(DISK_INFO, diskInfo);
   }
 
@@ -119,73 +152,107 @@ public class DiskInfoTest {
 
   @Test
   public void testBuilder() {
-    assertEquals(GENERATED_ID, DISK_INFO.generatedId());
-    assertEquals(DISK_ID, DISK_INFO.diskId());
-    assertEquals(DISK_CONFIGURATION, DISK_INFO.configuration());
-    assertEquals(CREATION_TIMESTAMP, DISK_INFO.creationTimestamp());
-    assertEquals(CREATION_STATUS, DISK_INFO.creationStatus());
-    assertEquals(DESCRIPTION, DISK_INFO.description());
-    assertEquals(LICENSES, DISK_INFO.licenses());
-    assertEquals(ATTACHED_INSTANCES, DISK_INFO.attachedInstances());
-    assertEquals(LAST_ATTACH_TIMESTAMP, DISK_INFO.lastAttachTimestamp());
-    assertEquals(LAST_DETACH_TIMESTAMP, DISK_INFO.lastDetachTimestamp());
-    assertEquals(GENERATED_ID, IMAGE_DISK_INFO.generatedId());
-    assertEquals(DISK_ID, IMAGE_DISK_INFO.diskId());
-    assertEquals(IMAGE_DISK_CONFIGURATION, IMAGE_DISK_INFO.configuration());
-    assertEquals(CREATION_TIMESTAMP, IMAGE_DISK_INFO.creationTimestamp());
-    assertEquals(CREATION_STATUS, IMAGE_DISK_INFO.creationStatus());
-    assertEquals(DESCRIPTION, IMAGE_DISK_INFO.description());
-    assertEquals(LICENSES, IMAGE_DISK_INFO.licenses());
-    assertEquals(ATTACHED_INSTANCES, IMAGE_DISK_INFO.attachedInstances());
-    assertEquals(LAST_ATTACH_TIMESTAMP, IMAGE_DISK_INFO.lastAttachTimestamp());
-    assertEquals(LAST_DETACH_TIMESTAMP, IMAGE_DISK_INFO.lastDetachTimestamp());
-    assertEquals(GENERATED_ID, SNAPSHOT_DISK_INFO.generatedId());
-    assertEquals(DISK_ID, SNAPSHOT_DISK_INFO.diskId());
-    assertEquals(SNAPSHOT_DISK_CONFIGURATION, SNAPSHOT_DISK_INFO.configuration());
-    assertEquals(CREATION_TIMESTAMP, SNAPSHOT_DISK_INFO.creationTimestamp());
-    assertEquals(CREATION_STATUS, SNAPSHOT_DISK_INFO.creationStatus());
-    assertEquals(DESCRIPTION, SNAPSHOT_DISK_INFO.description());
-    assertEquals(LICENSES, SNAPSHOT_DISK_INFO.licenses());
-    assertEquals(ATTACHED_INSTANCES, SNAPSHOT_DISK_INFO.attachedInstances());
-    assertEquals(LAST_ATTACH_TIMESTAMP, SNAPSHOT_DISK_INFO.lastAttachTimestamp());
-    assertEquals(LAST_DETACH_TIMESTAMP, SNAPSHOT_DISK_INFO.lastDetachTimestamp());
+    assertEquals(GENERATED_ID, DISK_INFO.getGeneratedId());
+    assertEquals(DISK_ID, DISK_INFO.getDiskId());
+    assertEquals(DISK_CONFIGURATION, DISK_INFO.getConfiguration());
+    assertEquals(CREATION_TIMESTAMP, DISK_INFO.getCreationTimestamp());
+    assertEquals(CREATION_STATUS, DISK_INFO.getCreationStatus());
+    assertEquals(DESCRIPTION, DISK_INFO.getDescription());
+    assertEquals(LICENSES, DISK_INFO.getLicenses());
+    assertEquals(ATTACHED_INSTANCES, DISK_INFO.getAttachedInstances());
+    assertEquals(LAST_ATTACH_TIMESTAMP, DISK_INFO.getLastAttachTimestamp());
+    assertEquals(LAST_DETACH_TIMESTAMP, DISK_INFO.getLastDetachTimestamp());
+    assertEquals(GENERATED_ID, IMAGE_DISK_INFO.getGeneratedId());
+    assertEquals(DISK_ID, IMAGE_DISK_INFO.getDiskId());
+    assertEquals(IMAGE_DISK_CONFIGURATION, IMAGE_DISK_INFO.getConfiguration());
+    assertEquals(CREATION_TIMESTAMP, IMAGE_DISK_INFO.getCreationTimestamp());
+    assertEquals(CREATION_STATUS, IMAGE_DISK_INFO.getCreationStatus());
+    assertEquals(DESCRIPTION, IMAGE_DISK_INFO.getDescription());
+    assertEquals(LICENSES, IMAGE_DISK_INFO.getLicenses());
+    assertEquals(ATTACHED_INSTANCES, IMAGE_DISK_INFO.getAttachedInstances());
+    assertEquals(LAST_ATTACH_TIMESTAMP, IMAGE_DISK_INFO.getLastAttachTimestamp());
+    assertEquals(LAST_DETACH_TIMESTAMP, IMAGE_DISK_INFO.getLastDetachTimestamp());
+    assertEquals(GENERATED_ID, SNAPSHOT_DISK_INFO.getGeneratedId());
+    assertEquals(DISK_ID, SNAPSHOT_DISK_INFO.getDiskId());
+    assertEquals(SNAPSHOT_DISK_CONFIGURATION, SNAPSHOT_DISK_INFO.getConfiguration());
+    assertEquals(CREATION_TIMESTAMP, SNAPSHOT_DISK_INFO.getCreationTimestamp());
+    assertEquals(CREATION_STATUS, SNAPSHOT_DISK_INFO.getCreationStatus());
+    assertEquals(DESCRIPTION, SNAPSHOT_DISK_INFO.getDescription());
+    assertEquals(LICENSES, SNAPSHOT_DISK_INFO.getLicenses());
+    assertEquals(ATTACHED_INSTANCES, SNAPSHOT_DISK_INFO.getAttachedInstances());
+    assertEquals(LAST_ATTACH_TIMESTAMP, SNAPSHOT_DISK_INFO.getLastAttachTimestamp());
+    assertEquals(LAST_DETACH_TIMESTAMP, SNAPSHOT_DISK_INFO.getLastDetachTimestamp());
+  }
+
+  @Test
+  public void testBuilderDeprecated() {
+    assertEquals(GENERATED_ID, DEPRECATED_DISK_INFO.generatedId());
+    assertEquals(DISK_ID, DEPRECATED_DISK_INFO.diskId());
+    assertEquals(DISK_CONFIGURATION, DEPRECATED_DISK_INFO.configuration());
+    assertEquals(CREATION_TIMESTAMP, DEPRECATED_DISK_INFO.creationTimestamp());
+    assertEquals(CREATION_STATUS, DEPRECATED_DISK_INFO.creationStatus());
+    assertEquals(DESCRIPTION, DEPRECATED_DISK_INFO.description());
+    assertEquals(LICENSES, DEPRECATED_DISK_INFO.licenses());
+    assertEquals(ATTACHED_INSTANCES, DEPRECATED_DISK_INFO.attachedInstances());
+    assertEquals(LAST_ATTACH_TIMESTAMP, DEPRECATED_DISK_INFO.lastAttachTimestamp());
+    assertEquals(LAST_DETACH_TIMESTAMP, DEPRECATED_DISK_INFO.lastDetachTimestamp());
+    assertEquals(GENERATED_ID, DEPRECATED_IMAGE_DISK_INFO.generatedId());
+    assertEquals(DISK_ID, DEPRECATED_IMAGE_DISK_INFO.diskId());
+    assertEquals(IMAGE_DISK_CONFIGURATION, DEPRECATED_IMAGE_DISK_INFO.configuration());
+    assertEquals(CREATION_TIMESTAMP, DEPRECATED_IMAGE_DISK_INFO.creationTimestamp());
+    assertEquals(CREATION_STATUS, DEPRECATED_IMAGE_DISK_INFO.creationStatus());
+    assertEquals(DESCRIPTION, DEPRECATED_IMAGE_DISK_INFO.description());
+    assertEquals(LICENSES, DEPRECATED_IMAGE_DISK_INFO.licenses());
+    assertEquals(ATTACHED_INSTANCES, DEPRECATED_IMAGE_DISK_INFO.attachedInstances());
+    assertEquals(LAST_ATTACH_TIMESTAMP, DEPRECATED_IMAGE_DISK_INFO.lastAttachTimestamp());
+    assertEquals(LAST_DETACH_TIMESTAMP, DEPRECATED_IMAGE_DISK_INFO.lastDetachTimestamp());
+    assertEquals(GENERATED_ID, DEPRECATED_SNAPSHOT_DISK_INFO.generatedId());
+    assertEquals(DISK_ID, DEPRECATED_SNAPSHOT_DISK_INFO.diskId());
+    assertEquals(SNAPSHOT_DISK_CONFIGURATION, DEPRECATED_SNAPSHOT_DISK_INFO.configuration());
+    assertEquals(CREATION_TIMESTAMP, DEPRECATED_SNAPSHOT_DISK_INFO.creationTimestamp());
+    assertEquals(CREATION_STATUS, DEPRECATED_SNAPSHOT_DISK_INFO.creationStatus());
+    assertEquals(DESCRIPTION, DEPRECATED_SNAPSHOT_DISK_INFO.description());
+    assertEquals(LICENSES, DEPRECATED_SNAPSHOT_DISK_INFO.licenses());
+    assertEquals(ATTACHED_INSTANCES, DEPRECATED_SNAPSHOT_DISK_INFO.attachedInstances());
+    assertEquals(LAST_ATTACH_TIMESTAMP, DEPRECATED_SNAPSHOT_DISK_INFO.lastAttachTimestamp());
+    assertEquals(LAST_DETACH_TIMESTAMP, DEPRECATED_SNAPSHOT_DISK_INFO.lastDetachTimestamp());
   }
 
   @Test
   public void testOf() {
     DiskInfo diskInfo = DiskInfo.of(DISK_ID, DISK_CONFIGURATION);
-    assertNull(diskInfo.generatedId());
-    assertEquals(DISK_ID, diskInfo.diskId());
-    assertEquals(DISK_CONFIGURATION, diskInfo.configuration());
-    assertNull(diskInfo.creationTimestamp());
-    assertNull(diskInfo.creationStatus());
-    assertNull(diskInfo.description());
-    assertNull(diskInfo.licenses());
-    assertNull(diskInfo.attachedInstances());
-    assertNull(diskInfo.lastAttachTimestamp());
-    assertNull(diskInfo.lastDetachTimestamp());
+    assertNull(diskInfo.getGeneratedId());
+    assertEquals(DISK_ID, diskInfo.getDiskId());
+    assertEquals(DISK_CONFIGURATION, diskInfo.getConfiguration());
+    assertNull(diskInfo.getCreationTimestamp());
+    assertNull(diskInfo.getCreationStatus());
+    assertNull(diskInfo.getDescription());
+    assertNull(diskInfo.getLicenses());
+    assertNull(diskInfo.getAttachedInstances());
+    assertNull(diskInfo.getLastAttachTimestamp());
+    assertNull(diskInfo.getLastDetachTimestamp());
     diskInfo = DiskInfo.of(DISK_ID, IMAGE_DISK_CONFIGURATION);
-    assertNull(diskInfo.generatedId());
-    assertEquals(DISK_ID, diskInfo.diskId());
-    assertEquals(IMAGE_DISK_CONFIGURATION, diskInfo.configuration());
-    assertNull(diskInfo.creationTimestamp());
-    assertNull(diskInfo.creationStatus());
-    assertNull(diskInfo.description());
-    assertNull(diskInfo.licenses());
-    assertNull(diskInfo.attachedInstances());
-    assertNull(diskInfo.lastAttachTimestamp());
-    assertNull(diskInfo.lastDetachTimestamp());
+    assertNull(diskInfo.getGeneratedId());
+    assertEquals(DISK_ID, diskInfo.getDiskId());
+    assertEquals(IMAGE_DISK_CONFIGURATION, diskInfo.getConfiguration());
+    assertNull(diskInfo.getCreationTimestamp());
+    assertNull(diskInfo.getCreationStatus());
+    assertNull(diskInfo.getDescription());
+    assertNull(diskInfo.getLicenses());
+    assertNull(diskInfo.getAttachedInstances());
+    assertNull(diskInfo.getLastAttachTimestamp());
+    assertNull(diskInfo.getLastDetachTimestamp());
     diskInfo = DiskInfo.of(DISK_ID, SNAPSHOT_DISK_CONFIGURATION);
-    assertNull(diskInfo.generatedId());
-    assertEquals(DISK_ID, diskInfo.diskId());
-    assertEquals(SNAPSHOT_DISK_CONFIGURATION, diskInfo.configuration());
-    assertNull(diskInfo.creationTimestamp());
-    assertNull(diskInfo.creationStatus());
-    assertNull(diskInfo.description());
-    assertNull(diskInfo.licenses());
-    assertNull(diskInfo.attachedInstances());
-    assertNull(diskInfo.lastAttachTimestamp());
-    assertNull(diskInfo.lastDetachTimestamp());
+    assertNull(diskInfo.getGeneratedId());
+    assertEquals(DISK_ID, diskInfo.getDiskId());
+    assertEquals(SNAPSHOT_DISK_CONFIGURATION, diskInfo.getConfiguration());
+    assertNull(diskInfo.getCreationTimestamp());
+    assertNull(diskInfo.getCreationStatus());
+    assertNull(diskInfo.getDescription());
+    assertNull(diskInfo.getLicenses());
+    assertNull(diskInfo.getAttachedInstances());
+    assertNull(diskInfo.getLastAttachTimestamp());
+    assertNull(diskInfo.getLastDetachTimestamp());
   }
 
   @Test
@@ -197,25 +264,25 @@ public class DiskInfoTest {
     diskInfo = DiskInfo.fromPb(IMAGE_DISK_INFO.toPb());
     compareDiskInfo(IMAGE_DISK_INFO, diskInfo);
     Disk disk = new Disk()
-        .setSelfLink(DISK_ID.selfLink())
-        .setType(TYPE.selfLink())
+        .setSelfLink(DISK_ID.getSelfLink())
+        .setType(TYPE.getSelfLink())
         .setSizeGb(SIZE_GB);
     diskInfo = DiskInfo.of(DISK_ID, DISK_CONFIGURATION);
     compareDiskInfo(diskInfo, DiskInfo.fromPb(disk));
     disk = new Disk()
-        .setType(TYPE.selfLink())
+        .setType(TYPE.getSelfLink())
         .setSizeGb(SIZE_GB)
-        .setSelfLink(DISK_ID.selfLink())
+        .setSelfLink(DISK_ID.getSelfLink())
         .setSourceSnapshotId(SNAPSHOT_ID)
-        .setSourceSnapshot(SNAPSHOT.selfLink());
+        .setSourceSnapshot(SNAPSHOT.getSelfLink());
     diskInfo = DiskInfo.of(DISK_ID, SNAPSHOT_DISK_CONFIGURATION);
     compareDiskInfo(diskInfo, DiskInfo.fromPb(disk));
     disk = new Disk()
-        .setType(TYPE.selfLink())
+        .setType(TYPE.getSelfLink())
         .setSizeGb(SIZE_GB)
-        .setSelfLink(DISK_ID.selfLink())
+        .setSelfLink(DISK_ID.getSelfLink())
         .setSourceImageId(IMAGE_ID)
-        .setSourceImage(IMAGE.selfLink());
+        .setSourceImage(IMAGE.getSelfLink());
     diskInfo = DiskInfo.of(DISK_ID, IMAGE_DISK_CONFIGURATION);
     compareDiskInfo(diskInfo, DiskInfo.fromPb(disk));
   }
@@ -223,45 +290,45 @@ public class DiskInfoTest {
   @Test
   public void testSetProjectId() {
     StandardDiskConfiguration standardDiskConfiguration = DISK_CONFIGURATION.toBuilder()
-        .diskType(DiskTypeId.of(TYPE.zone(), TYPE.type()))
+        .setDiskType(DiskTypeId.of(TYPE.getZone(), TYPE.getType()))
         .build();
     DiskInfo diskInfo = DISK_INFO.toBuilder()
-        .diskId(DiskId.of(DISK_ID.zone(), DISK_ID.disk()))
-        .configuration(standardDiskConfiguration)
+        .setDiskId(DiskId.of(DISK_ID.getZone(), DISK_ID.getDisk()))
+        .setConfiguration(standardDiskConfiguration)
         .build();
     compareDiskInfo(DISK_INFO, diskInfo.setProjectId("project"));
     SnapshotDiskConfiguration snapshotDiskConfiguration = SNAPSHOT_DISK_CONFIGURATION.toBuilder()
-        .diskType(DiskTypeId.of(TYPE.zone(), TYPE.type()))
-        .sourceSnapshot(SnapshotId.of(SNAPSHOT.snapshot()))
+        .setDiskType(DiskTypeId.of(TYPE.getZone(), TYPE.getType()))
+        .setSourceSnapshot(SnapshotId.of(SNAPSHOT.getSnapshot()))
         .build();
     diskInfo = SNAPSHOT_DISK_INFO.toBuilder()
-        .diskId(DiskId.of(DISK_ID.zone(), DISK_ID.disk()))
-        .configuration(snapshotDiskConfiguration)
+        .setDiskId(DiskId.of(DISK_ID.getZone(), DISK_ID.getDisk()))
+        .setConfiguration(snapshotDiskConfiguration)
         .build();
     compareDiskInfo(SNAPSHOT_DISK_INFO, diskInfo.setProjectId("project"));
     ImageDiskConfiguration imageDiskConfiguration = IMAGE_DISK_CONFIGURATION.toBuilder()
-        .diskType(DiskTypeId.of(TYPE.zone(), TYPE.type()))
-        .sourceImage(ImageId.of(IMAGE.image()))
+        .setDiskType(DiskTypeId.of(TYPE.getZone(), TYPE.getType()))
+        .setSourceImage(ImageId.of(IMAGE.getImage()))
         .build();
     diskInfo = IMAGE_DISK_INFO.toBuilder()
-        .diskId(DiskId.of(DISK_ID.zone(), DISK_ID.disk()))
-        .configuration(imageDiskConfiguration)
+        .setDiskId(DiskId.of(DISK_ID.getZone(), DISK_ID.getDisk()))
+        .setConfiguration(imageDiskConfiguration)
         .build();
     compareDiskInfo(IMAGE_DISK_INFO, diskInfo.setProjectId("project"));
   }
 
   public void compareDiskInfo(DiskInfo expected, DiskInfo value) {
     assertEquals(expected, value);
-    assertEquals(expected.configuration(), value.configuration());
-    assertEquals(expected.generatedId(), value.generatedId());
-    assertEquals(expected.diskId(), value.diskId());
-    assertEquals(expected.creationTimestamp(), value.creationTimestamp());
-    assertEquals(expected.creationStatus(), value.creationStatus());
-    assertEquals(expected.description(), value.description());
-    assertEquals(expected.licenses(), value.licenses());
-    assertEquals(expected.attachedInstances(), value.attachedInstances());
-    assertEquals(expected.lastAttachTimestamp(), value.lastAttachTimestamp());
-    assertEquals(expected.lastDetachTimestamp(), value.lastDetachTimestamp());
+    assertEquals(expected.getConfiguration(), value.getConfiguration());
+    assertEquals(expected.getGeneratedId(), value.getGeneratedId());
+    assertEquals(expected.getDiskId(), value.getDiskId());
+    assertEquals(expected.getCreationTimestamp(), value.getCreationTimestamp());
+    assertEquals(expected.getCreationStatus(), value.getCreationStatus());
+    assertEquals(expected.getDescription(), value.getDescription());
+    assertEquals(expected.getLicenses(), value.getLicenses());
+    assertEquals(expected.getAttachedInstances(), value.getAttachedInstances());
+    assertEquals(expected.getLastAttachTimestamp(), value.getLastAttachTimestamp());
+    assertEquals(expected.getLastDetachTimestamp(), value.getLastDetachTimestamp());
     assertEquals(expected.hashCode(), value.hashCode());
   }
 }

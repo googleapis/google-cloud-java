@@ -36,14 +36,30 @@ public final class DatasetId implements Serializable {
   /**
    * Returns project's user-defined id.
    */
+  @Deprecated
   public String project() {
+    return getProject();
+  }
+
+  /**
+   * Returns project's user-defined id.
+   */
+  public String getProject() {
     return project;
   }
 
   /**
    * Returns dataset's user-defined id.
    */
+  @Deprecated
   public String dataset() {
+    return getDataset();
+  }
+
+  /**
+   * Returns dataset's user-defined id.
+   */
+  public String getDataset() {
     return dataset;
   }
 
@@ -84,7 +100,7 @@ public final class DatasetId implements Serializable {
   }
 
   DatasetId setProjectId(String projectId) {
-    return project() != null ? this : DatasetId.of(projectId, dataset());
+    return getProject() != null ? this : DatasetId.of(projectId, getDataset());
   }
 
   DatasetReference toPb() {

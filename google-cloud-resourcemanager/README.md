@@ -22,16 +22,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-resourcemanager</artifactId>
-  <version>0.3.0</version>
+  <version>0.4.0</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-resourcemanager:0.3.0'
+compile 'com.google.cloud:google-cloud-resourcemanager:0.4.0'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-resourcemanager" % "0.3.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-resourcemanager" % "0.4.0"
 ```
 
 Example Application
@@ -117,7 +117,7 @@ project ID).
 
 ```java
 String projectId = "my-globally-unique-project-id"; // Change to a unique project ID
-Project project = resourceManager.create(ProjectInfo.builder(projectId).build());
+Project project = resourceManager.create(ProjectInfo.newBuilder(projectId).build());
 ```
 
 Note that the return value from `create` is a `Project` that includes additional read-only
@@ -159,7 +159,7 @@ Then add the following code to print a list of projects you can view:
 Iterator<Project> projectIterator = resourceManager.list().iterateAll();
 System.out.println("Projects I can view:");
 while (projectIterator.hasNext()) {
-  System.out.println(projectIterator.next().projectId());
+  System.out.println(projectIterator.next().getProjectId());
 }
 ```
 

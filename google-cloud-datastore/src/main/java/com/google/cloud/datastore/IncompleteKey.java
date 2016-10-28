@@ -67,7 +67,7 @@ public class IncompleteKey extends BaseKey {
     }
     ImmutableList<PathElement> path = pathBuilder.build();
     PathElement leaf = path.get(path.size() - 1);
-    if (leaf.nameOrId() != null) {
+    if (leaf.getNameOrId() != null) {
       return new Key(projectId, namespace, path);
     }
     return new IncompleteKey(projectId, namespace, path);
@@ -77,34 +77,60 @@ public class IncompleteKey extends BaseKey {
    * Returns the key's parent.
    */
   @Override
+  @Deprecated
   public Key parent() {
-    List<PathElement> ancestors = ancestors();
+    return getParent();
+  }
+
+  /**
+   * Returns the key's parent.
+   */
+  @Override
+  public Key getParent() {
+    List<PathElement> ancestors = getAncestors();
     if (ancestors.isEmpty()) {
       return null;
     }
     PathElement parent = ancestors.get(ancestors.size() - 1);
     Key.Builder keyBuilder;
     if (parent.hasName()) {
-      keyBuilder = Key.builder(projectId(), parent.kind(), parent.name());
+      keyBuilder = Key.newBuilder(getProjectId(), parent.getKind(), parent.getName());
     } else {
-      keyBuilder = Key.builder(projectId(), parent.kind(), parent.id());
+      keyBuilder = Key.newBuilder(getProjectId(), parent.getKind(), parent.getId());
     }
-    String namespace = namespace();
+    String namespace = getNamespace();
     if (namespace != null) {
-      keyBuilder.namespace(namespace);
+      keyBuilder.setNamespace(namespace);
     }
-    return keyBuilder.ancestors(ancestors.subList(0, ancestors.size() - 1)).build();
+    return keyBuilder.addAncestors(ancestors.subList(0, ancestors.size() - 1)).build();
   }
 
+  @Deprecated
   public static Builder builder(String projectId, String kind) {
+    return newBuilder(projectId, kind);
+  }
+
+  public static Builder newBuilder(String projectId, String kind) {
     return new Builder(projectId, kind);
   }
 
+  @Deprecated
   public static Builder builder(IncompleteKey copyFrom) {
+    return newBuilder(copyFrom);
+  }
+
+  public static Builder newBuilder(IncompleteKey copyFrom) {
     return new Builder(copyFrom);
   }
 
+  @Deprecated
   public static Builder builder(Key parent, String kind) {
-    return builder(parent.projectId(), kind).namespace(parent.namespace()).ancestors(parent.path());
+    return newBuilder(parent, kind);
+  }
+
+  public static Builder newBuilder(Key parent, String kind) {
+    return newBuilder(parent.getProjectId(), kind)
+        .setNamespace(parent.getNamespace())
+        .addAncestors(parent.getPath());
   }
 }

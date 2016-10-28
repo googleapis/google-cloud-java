@@ -40,16 +40,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud</artifactId>
-  <version>0.3.0</version>
+  <version>0.4.0</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud:0.3.0'
+compile 'com.google.cloud:google-cloud:0.4.0'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud" % "0.3.0"
+libraryDependencies += "com.google.cloud" % "google-cloud" % "0.4.0"
 ```
 
 Example Applications
@@ -186,7 +186,7 @@ if (table == null) {
 System.out.println("Loading data into table " + tableId);
 Job loadJob = table.load(FormatOptions.csv(), "gs://bucket/path");
 loadJob = loadJob.waitFor();
-if (loadJob.status().error() != null) {
+if (loadJob.getStatus().getError() != null) {
   System.out.println("Job completed with errors");
 } else {
   System.out.println("Job succeeded");
@@ -222,7 +222,7 @@ if (disk != null) {
   String snapshotName = "disk-name-snapshot";
   Operation operation = disk.createSnapshot(snapshotName);
   operation = operation.waitFor();
-  if (operation.errors() == null) {
+  if (operation.getErrors() == null) {
     // use snapshot
     Snapshot snapshot = compute.getSnapshot(snapshotName);
   }
@@ -252,7 +252,7 @@ MachineTypeId machineTypeId = MachineTypeId.of("us-central1-a", "n1-standard-1")
 Operation operation =
     compute.create(InstanceInfo.of(instanceId, machineTypeId, attachedDisk, networkInterface));
 operation = operation.waitFor();
-if (operation.errors() == null) {
+if (operation.getErrors() == null) {
   // use instance
   Instance instance = compute.getInstance(instanceId);
 }
@@ -282,9 +282,9 @@ import com.google.cloud.datastore.Key;
 import com.google.cloud.datastore.KeyFactory;
 
 Datastore datastore = DatastoreOptions.defaultInstance().service();
-KeyFactory keyFactory = datastore.newKeyFactory().kind("keyKind");
+KeyFactory keyFactory = datastore.newKeyFactory().setKind("keyKind");
 Key key = keyFactory.newKey("keyName");
-Entity entity = Entity.builder(key)
+Entity entity = Entity.newBuilder(key)
     .set("name", "John Doe")
     .set("age", 30)
     .set("access_time", DateTime.now())
@@ -303,12 +303,12 @@ import com.google.cloud.datastore.Key;
 import com.google.cloud.datastore.KeyFactory;
 
 Datastore datastore = DatastoreOptions.defaultInstance().service();
-KeyFactory keyFactory = datastore.newKeyFactory().kind("keyKind");
+KeyFactory keyFactory = datastore.newKeyFactory().setKind("keyKind");
 Key key = keyFactory.newKey("keyName");
 Entity entity = datastore.get(key);
 if (entity != null) {
   System.out.println("Updating access_time for " + entity.getString("name"));
-  entity = Entity.builder(entity)
+  entity = Entity.newBuilder(entity)
       .set("access_time", DateTime.now())
       .build();
   datastore.update(entity);
@@ -359,19 +359,19 @@ Dns dns = DnsOptions.defaultInstance().service();
 String zoneName = "my-unique-zone";
 Zone zone = dns.getZone(zoneName);
 String ip = "12.13.14.15";
-RecordSet toCreate = RecordSet.builder("www.someexampledomain.com.", RecordSet.Type.A)
-    .ttl(24, TimeUnit.HOURS)
+RecordSet toCreate = RecordSet.newBuilder("www.someexampledomain.com.", RecordSet.Type.A)
+    .setTtl(24, TimeUnit.HOURS)
     .addRecord(ip)
     .build();
-ChangeRequestInfo.Builder changeBuilder = ChangeRequestInfo.builder().add(toCreate);
+ChangeRequestInfo.Builder changeBuilder = ChangeRequestInfo.newBuilder().add(toCreate);
 
 // Verify that the record does not exist yet.
 // If it does exist, we will overwrite it with our prepared record.
 Iterator<RecordSet> recordSetIterator = zone.listRecordSets().iterateAll();
 while (recordSetIterator.hasNext()) {
   RecordSet current = recordSetIterator.next();
-  if (toCreate.name().equals(current.name()) &&
-      toCreate.type().equals(current.type())) {
+  if (toCreate.name().equals(current.getName()) &&
+      toCreate.type().equals(current.getType())) {
     changeBuilder.delete(current);
   }
 }
@@ -412,9 +412,9 @@ import java.util.Iterator;
 LoggingOptions options = LoggingOptions.defaultInstance();
 try(Logging logging = options.service()) {
 
-  LogEntry firstEntry = LogEntry.builder(StringPayload.of("message"))
-      .logName("test-log")
-      .resource(MonitoredResource.builder("global")
+  LogEntry firstEntry = LogEntry.newBuilder(StringPayload.of("message"))
+      .setLogName("test-log")
+      .setResource(MonitoredResource.builder("global")
           .addLabel("project_id", options.projectId())
           .build())
       .build();
@@ -477,7 +477,7 @@ try (PubSub pubsub = PubSubOptions.defaultInstance().service()) {
   MessageProcessor callback = new MessageProcessor() {
     @Override
     public void process(Message message) throws Exception {
-      System.out.printf("Received message \"%s\"%n", message.payloadAsString());
+      System.out.printf("Received message \"%s\"%n", message.getPayloadAsString());
     }
   };
   // Create a message consumer and pull messages (for 60 seconds)
@@ -512,13 +512,13 @@ if (project != null) {
       .addLabel("launch-status", "in-development")
       .build()
       .replace();
-  System.out.println("Updated the labels of project " + newProject.projectId()
-      + " to be " + newProject.labels());
+  System.out.println("Updated the labels of project " + newProject.getProjectId()
+      + " to be " + newProject.getLabels());
 }
 Iterator<Project> projectIterator = resourceManager.list().iterateAll();
 System.out.println("Projects I can view:");
 while (projectIterator.hasNext()) {
-  System.out.println(projectIterator.next().projectId());
+  System.out.println(projectIterator.next().getProjectId());
 }
 ```
 
@@ -548,7 +548,7 @@ import com.google.cloud.storage.StorageOptions;
 
 Storage storage = StorageOptions.defaultInstance().service();
 BlobId blobId = BlobId.of("bucket", "blob_name");
-BlobInfo blobInfo = BlobInfo.builder(blobId).contentType("text/plain").build();
+BlobInfo blobInfo = BlobInfo.newBuiler(blobId).setContentType("text/plain").build();
 Blob blob = storage.create(blobInfo, "Hello, Cloud Storage!".getBytes(UTF_8));
 ```
 The second snippet shows how to update a Storage blob if it exists. Complete source code can be
@@ -569,7 +569,7 @@ Storage storage = StorageOptions.defaultInstance().service();
 BlobId blobId = BlobId.of("bucket", "blob_name");
 Blob blob = storage.get(blobId);
 if (blob != null) {
-  byte[] prevContent = blob.content();
+  byte[] prevContent = blob.getContent();
   System.out.println(new String(prevContent, UTF_8));
   WritableByteChannel channel = blob.writer();
   channel.write(ByteBuffer.wrap("Updated content".getBytes(UTF_8)));
@@ -601,14 +601,14 @@ import com.google.cloud.translate.Translation;
 Translate translate = TranslateOptions.defaultInstance().service();
 
 Detection detection = translate.detect("Hola");
-String detectedLanguage = detection.language();
+String detectedLanguage = detection.getLanguage();
 
 Translation translation = translate.translate(
     "World",
     TranslateOption.sourceLanguage("en"),
     TranslateOption.targetLanguage(detectedLanguage));
 
-System.out.printf("Hola %s%n", translation.translatedText());
+System.out.printf("Hola %s%n", translation.getTranslatedText());
 ```
 
 Troubleshooting

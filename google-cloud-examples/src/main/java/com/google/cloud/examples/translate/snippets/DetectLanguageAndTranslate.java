@@ -41,7 +41,7 @@ public class DetectLanguageAndTranslate {
 
     // Detect the language of some text
     Detection detection = translate.detect("Hola");
-    String detectedLanguage = detection.language();
+    String detectedLanguage = detection.getLanguage();
 
     // Translate some text
     Translation translation = translate.translate(
@@ -49,6 +49,6 @@ public class DetectLanguageAndTranslate {
         TranslateOption.sourceLanguage("en"),
         TranslateOption.targetLanguage(detectedLanguage));
 
-    System.out.printf("Hola %s%n", translation.translatedText());
+    System.out.printf("Hola %s%n", translation.getTranslatedText());
   }
 }

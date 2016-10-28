@@ -42,7 +42,7 @@ public class LocalSystemTest extends BaseSystemTest {
   public static void startServer() throws IOException, InterruptedException {
     pubsubHelper = LocalPubsubHelper.create();
     pubsubHelper.start();
-    pubsub = pubsubHelper.options().service();
+    pubsub = pubsubHelper.getOptions().service();
   }
 
   @AfterClass

@@ -73,7 +73,7 @@ public class JobSnippets {
       Job completedJob = job.waitFor();
       if (completedJob == null) {
         // job no longer exists
-      } else if (completedJob.status().error() != null) {
+      } else if (completedJob.getStatus().getError() != null) {
         // job failed, handle error
       } else {
         // job completed successfully
@@ -99,7 +99,7 @@ public class JobSnippets {
               WaitForOption.timeout(60, TimeUnit.SECONDS));
       if (completedJob == null) {
         // job no longer exists
-      } else if (completedJob.status().error() != null) {
+      } else if (completedJob.getStatus().getError() != null) {
         // job failed, handle error
       } else {
         // job completed successfully
@@ -117,12 +117,12 @@ public class JobSnippets {
   // [TARGET reload(JobOption...)]
   public JobStatus.State reload() throws InterruptedException {
     // [START reload]
-    while (job.status().state() != JobStatus.State.DONE) {
+    while (job.getStatus().getState() != JobStatus.State.DONE) {
       Thread.sleep(1000L);
       job = job.reload();
     }
     // [END reload]
-    return job.status().state();
+    return job.getStatus().getState();
   }
 
   /**
@@ -131,12 +131,12 @@ public class JobSnippets {
   // [TARGET reload(JobOption...)]
   public JobStatus.State reloadStatus() throws InterruptedException {
     // [START reloadStatus]
-    while (job.status().state() != JobStatus.State.DONE) {
+    while (job.getStatus().getState() != JobStatus.State.DONE) {
       Thread.sleep(1000L);
       job = job.reload(BigQuery.JobOption.fields(BigQuery.JobField.STATUS));
     }
     // [END reloadStatus]
-    return job.status().state();
+    return job.getStatus().getState();
   }
 
   /**

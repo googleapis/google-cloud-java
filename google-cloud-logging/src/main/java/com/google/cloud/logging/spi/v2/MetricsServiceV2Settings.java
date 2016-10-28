@@ -49,15 +49,14 @@ import org.joda.time.Duration;
  * <p>The default instance has everything set to sensible defaults:
  *
  * <ul>
- * <li>The default service address (logging.googleapis.com) and default port (443)
- * are used.
- * <li>Credentials are acquired automatically through Application Default Credentials.
- * <li>Retries are configured for idempotent methods but not for non-idempotent methods.
+ *   <li>The default service address (logging.googleapis.com) and default port (443) are used.
+ *   <li>Credentials are acquired automatically through Application Default Credentials.
+ *   <li>Retries are configured for idempotent methods but not for non-idempotent methods.
  * </ul>
  *
- * <p>The builder of this class is recursive, so contained classes are themselves builders.
- * When build() is called, the tree of builders is called to create the complete settings
- * object. For example, to set the total timeout of getLogMetric to 30 seconds:
+ * <p>The builder of this class is recursive, so contained classes are themselves builders. When
+ * build() is called, the tree of builders is called to create the complete settings object. For
+ * example, to set the total timeout of getLogMetric to 30 seconds:
  *
  * <pre>
  * <code>
@@ -71,19 +70,13 @@ import org.joda.time.Duration;
  */
 @javax.annotation.Generated("by GAPIC")
 public class MetricsServiceV2Settings extends ServiceApiSettings {
-  /**
-   * The default address of the service.
-   */
+  /** The default address of the service. */
   private static final String DEFAULT_SERVICE_ADDRESS = "logging.googleapis.com";
 
-  /**
-   * The default port of the service.
-   */
+  /** The default port of the service. */
   private static final int DEFAULT_SERVICE_PORT = 443;
 
-  /**
-   * The default scopes of the service.
-   */
+  /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
       ImmutableList.<String>builder()
           .add("https://www.googleapis.com/auth/cloud-platform")
@@ -93,9 +86,7 @@ public class MetricsServiceV2Settings extends ServiceApiSettings {
           .add("https://www.googleapis.com/auth/logging.write")
           .build();
 
-  /**
-   * The default connection settings of the service.
-   */
+  /** The default connection settings of the service. */
   public static final ConnectionSettings DEFAULT_CONNECTION_SETTINGS =
       ConnectionSettings.newBuilder()
           .setServiceAddress(DEFAULT_SERVICE_ADDRESS)
@@ -110,80 +101,58 @@ public class MetricsServiceV2Settings extends ServiceApiSettings {
   private final SimpleCallSettings<UpdateLogMetricRequest, LogMetric> updateLogMetricSettings;
   private final SimpleCallSettings<DeleteLogMetricRequest, Empty> deleteLogMetricSettings;
 
-  /**
-   * Returns the object with the settings used for calls to listLogMetrics.
-   */
+  /** Returns the object with the settings used for calls to listLogMetrics. */
   public PageStreamingCallSettings<ListLogMetricsRequest, ListLogMetricsResponse, LogMetric>
       listLogMetricsSettings() {
     return listLogMetricsSettings;
   }
 
-  /**
-   * Returns the object with the settings used for calls to getLogMetric.
-   */
+  /** Returns the object with the settings used for calls to getLogMetric. */
   public SimpleCallSettings<GetLogMetricRequest, LogMetric> getLogMetricSettings() {
     return getLogMetricSettings;
   }
 
-  /**
-   * Returns the object with the settings used for calls to createLogMetric.
-   */
+  /** Returns the object with the settings used for calls to createLogMetric. */
   public SimpleCallSettings<CreateLogMetricRequest, LogMetric> createLogMetricSettings() {
     return createLogMetricSettings;
   }
 
-  /**
-   * Returns the object with the settings used for calls to updateLogMetric.
-   */
+  /** Returns the object with the settings used for calls to updateLogMetric. */
   public SimpleCallSettings<UpdateLogMetricRequest, LogMetric> updateLogMetricSettings() {
     return updateLogMetricSettings;
   }
 
-  /**
-   * Returns the object with the settings used for calls to deleteLogMetric.
-   */
+  /** Returns the object with the settings used for calls to deleteLogMetric. */
   public SimpleCallSettings<DeleteLogMetricRequest, Empty> deleteLogMetricSettings() {
     return deleteLogMetricSettings;
   }
 
-  /**
-   * Returns the default service address.
-   */
+  /** Returns the default service address. */
   public static String getDefaultServiceAddress() {
     return DEFAULT_SERVICE_ADDRESS;
   }
 
-  /**
-   * Returns the default service port.
-   */
+  /** Returns the default service port. */
   public static int getDefaultServicePort() {
     return DEFAULT_SERVICE_PORT;
   }
 
-  /**
-   * Returns the default service scopes.
-   */
+  /** Returns the default service scopes. */
   public static ImmutableList<String> getDefaultServiceScopes() {
     return DEFAULT_SERVICE_SCOPES;
   }
 
-  /**
-   * Returns a builder for this class with recommended defaults.
-   */
+  /** Returns a builder for this class with recommended defaults. */
   public static Builder defaultBuilder() {
     return Builder.createDefault();
   }
 
-  /**
-   * Returns a new builder for this class.
-   */
+  /** Returns a new builder for this class. */
   public static Builder newBuilder() {
     return new Builder();
   }
 
-  /**
-   * Returns a builder containing all the values of this settings class.
-   */
+  /** Returns a builder containing all the values of this settings class. */
   public Builder toBuilder() {
     return new Builder(this);
   }
@@ -204,7 +173,8 @@ public class MetricsServiceV2Settings extends ServiceApiSettings {
     deleteLogMetricSettings = settingsBuilder.deleteLogMetricSettings().build();
   }
 
-  private static PageStreamingDescriptor<ListLogMetricsRequest, ListLogMetricsResponse, LogMetric>
+  private static final PageStreamingDescriptor<
+          ListLogMetricsRequest, ListLogMetricsResponse, LogMetric>
       LIST_LOG_METRICS_PAGE_STR_DESC =
           new PageStreamingDescriptor<ListLogMetricsRequest, ListLogMetricsResponse, LogMetric>() {
             @Override
@@ -218,6 +188,17 @@ public class MetricsServiceV2Settings extends ServiceApiSettings {
             }
 
             @Override
+            public ListLogMetricsRequest injectPageSize(
+                ListLogMetricsRequest payload, int pageSize) {
+              return ListLogMetricsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListLogMetricsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
             public Object extractNextToken(ListLogMetricsResponse payload) {
               return payload.getNextPageToken();
             }
@@ -228,19 +209,19 @@ public class MetricsServiceV2Settings extends ServiceApiSettings {
             }
           };
 
-  /**
-   * Builder for MetricsServiceV2Settings.
-   */
+  /** Builder for MetricsServiceV2Settings. */
   public static class Builder extends ServiceApiSettings.Builder {
     private final ImmutableList<ApiCallSettings.Builder> methodSettingsBuilders;
 
-    private PageStreamingCallSettings.Builder<
+    private final PageStreamingCallSettings.Builder<
             ListLogMetricsRequest, ListLogMetricsResponse, LogMetric>
         listLogMetricsSettings;
-    private SimpleCallSettings.Builder<GetLogMetricRequest, LogMetric> getLogMetricSettings;
-    private SimpleCallSettings.Builder<CreateLogMetricRequest, LogMetric> createLogMetricSettings;
-    private SimpleCallSettings.Builder<UpdateLogMetricRequest, LogMetric> updateLogMetricSettings;
-    private SimpleCallSettings.Builder<DeleteLogMetricRequest, Empty> deleteLogMetricSettings;
+    private final SimpleCallSettings.Builder<GetLogMetricRequest, LogMetric> getLogMetricSettings;
+    private final SimpleCallSettings.Builder<CreateLogMetricRequest, LogMetric>
+        createLogMetricSettings;
+    private final SimpleCallSettings.Builder<UpdateLogMetricRequest, LogMetric>
+        updateLogMetricSettings;
+    private final SimpleCallSettings.Builder<DeleteLogMetricRequest, Empty> deleteLogMetricSettings;
 
     private static final ImmutableMap<String, ImmutableSet<Status.Code>> RETRYABLE_CODE_DEFINITIONS;
 
@@ -398,48 +379,37 @@ public class MetricsServiceV2Settings extends ServiceApiSettings {
     }
 
     /**
-     * Applies the given settings to all of the API methods in this service. Only
-     * values that are non-null will be applied, so this method is not capable
-     * of un-setting any values.
+     * Applies the given settings to all of the API methods in this service. Only values that are
+     * non-null will be applied, so this method is not capable of un-setting any values.
      */
     public Builder applyToAllApiMethods(ApiCallSettings.Builder apiCallSettings) throws Exception {
       super.applyToAllApiMethods(methodSettingsBuilders, apiCallSettings);
       return this;
     }
 
-    /**
-     * Returns the builder for the settings used for calls to listLogMetrics.
-     */
+    /** Returns the builder for the settings used for calls to listLogMetrics. */
     public PageStreamingCallSettings.Builder<
             ListLogMetricsRequest, ListLogMetricsResponse, LogMetric>
         listLogMetricsSettings() {
       return listLogMetricsSettings;
     }
 
-    /**
-     * Returns the builder for the settings used for calls to getLogMetric.
-     */
+    /** Returns the builder for the settings used for calls to getLogMetric. */
     public SimpleCallSettings.Builder<GetLogMetricRequest, LogMetric> getLogMetricSettings() {
       return getLogMetricSettings;
     }
 
-    /**
-     * Returns the builder for the settings used for calls to createLogMetric.
-     */
+    /** Returns the builder for the settings used for calls to createLogMetric. */
     public SimpleCallSettings.Builder<CreateLogMetricRequest, LogMetric> createLogMetricSettings() {
       return createLogMetricSettings;
     }
 
-    /**
-     * Returns the builder for the settings used for calls to updateLogMetric.
-     */
+    /** Returns the builder for the settings used for calls to updateLogMetric. */
     public SimpleCallSettings.Builder<UpdateLogMetricRequest, LogMetric> updateLogMetricSettings() {
       return updateLogMetricSettings;
     }
 
-    /**
-     * Returns the builder for the settings used for calls to deleteLogMetric.
-     */
+    /** Returns the builder for the settings used for calls to deleteLogMetric. */
     public SimpleCallSettings.Builder<DeleteLogMetricRequest, Empty> deleteLogMetricSettings() {
       return deleteLogMetricSettings;
     }

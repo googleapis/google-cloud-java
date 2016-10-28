@@ -15,48 +15,14 @@
 /**
  * A client to Stackdriver Logging API.
  *
- * The interfaces provided are listed below, along with a usage sample
+ * <p>The interfaces provided are listed below, along with a usage sample
  *
- * ==================
- * ConfigServiceV2Api
- * ==================
+ * <p>=================== LoggingServiceV2Api ===================
  *
- * Service Description: Service for configuring sinks used to export log entries outside Stackdriver
- * Logging.
+ * <p>Service Description: Service for ingesting and querying logs.
  *
- * Sample for ConfigServiceV2Api:
- * <pre>
- * <code>
- * try (ConfigServiceV2Api configServiceV2Api = ConfigServiceV2Api.create()) {
- *   String formattedSinkName = ConfigServiceV2Api.formatSinkName("[PROJECT]", "[SINK]");
- *   LogSink response = configServiceV2Api.getSink(formattedSinkName);
- * }
- * </code>
- * </pre>
+ * <p>Sample for LoggingServiceV2Api:
  *
- * ===================
- * MetricsServiceV2Api
- * ===================
- *
- * Service Description: Service for configuring logs-based metrics.
- *
- * Sample for MetricsServiceV2Api:
- * <pre>
- * <code>
- * try (MetricsServiceV2Api metricsServiceV2Api = MetricsServiceV2Api.create()) {
- *   String formattedMetricName = MetricsServiceV2Api.formatMetricName("[PROJECT]", "[METRIC]");
- *   LogMetric response = metricsServiceV2Api.getLogMetric(formattedMetricName);
- * }
- * </code>
- * </pre>
- *
- * ===================
- * LoggingServiceV2Api
- * ===================
- *
- * Service Description: Service for ingesting and querying logs.
- *
- * Sample for LoggingServiceV2Api:
  * <pre>
  * <code>
  * try (LoggingServiceV2Api loggingServiceV2Api = LoggingServiceV2Api.create()) {
@@ -66,5 +32,35 @@
  * </code>
  * </pre>
  *
+ * ================== ConfigServiceV2Api ==================
+ *
+ * <p>Service Description: Service for configuring sinks used to export log entries outside
+ * Stackdriver Logging.
+ *
+ * <p>Sample for ConfigServiceV2Api:
+ *
+ * <pre>
+ * <code>
+ * try (ConfigServiceV2Api configServiceV2Api = ConfigServiceV2Api.create()) {
+ *   String formattedSinkName = ConfigServiceV2Api.formatSinkName("[PROJECT]", "[SINK]");
+ *   LogSink response = configServiceV2Api.getSink(formattedSinkName);
+ * }
+ * </code>
+ * </pre>
+ *
+ * =================== MetricsServiceV2Api ===================
+ *
+ * <p>Service Description: Service for configuring logs-based metrics.
+ *
+ * <p>Sample for MetricsServiceV2Api:
+ *
+ * <pre>
+ * <code>
+ * try (MetricsServiceV2Api metricsServiceV2Api = MetricsServiceV2Api.create()) {
+ *   String formattedMetricName = MetricsServiceV2Api.formatMetricName("[PROJECT]", "[METRIC]");
+ *   LogMetric response = metricsServiceV2Api.getLogMetric(formattedMetricName);
+ * }
+ * </code>
+ * </pre>
  */
 package com.google.cloud.logging.spi.v2;

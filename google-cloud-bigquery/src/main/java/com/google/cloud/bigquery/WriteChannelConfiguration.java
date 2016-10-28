@@ -90,18 +90,18 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
           || loadConfigurationPb.getFieldDelimiter() != null
           || loadConfigurationPb.getQuote() != null
           || loadConfigurationPb.getSkipLeadingRows() != null) {
-        CsvOptions.Builder builder = CsvOptions.builder()
-            .encoding(loadConfigurationPb.getEncoding())
-            .fieldDelimiter(loadConfigurationPb.getFieldDelimiter())
-            .quote(loadConfigurationPb.getQuote());
+        CsvOptions.Builder builder = CsvOptions.newBuilder()
+            .setEncoding(loadConfigurationPb.getEncoding())
+            .setFieldDelimiter(loadConfigurationPb.getFieldDelimiter())
+            .setQuote(loadConfigurationPb.getQuote());
         if (loadConfigurationPb.getAllowJaggedRows() != null) {
-          builder.allowJaggedRows(loadConfigurationPb.getAllowJaggedRows());
+          builder.setAllowJaggedRows(loadConfigurationPb.getAllowJaggedRows());
         }
         if (loadConfigurationPb.getAllowQuotedNewlines() != null) {
-          builder.allowQuotedNewLines(loadConfigurationPb.getAllowQuotedNewlines());
+          builder.setAllowQuotedNewLines(loadConfigurationPb.getAllowQuotedNewlines());
         }
         if (loadConfigurationPb.getSkipLeadingRows() != null) {
-          builder.skipLeadingRows(loadConfigurationPb.getSkipLeadingRows());
+          builder.setSkipLeadingRows(loadConfigurationPb.getSkipLeadingRows());
         }
         this.formatOptions = builder.build();
       }
@@ -114,49 +114,97 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
     }
 
     @Override
+    @Deprecated
     public Builder destinationTable(TableId destinationTable) {
+      return setDestinationTable(destinationTable);
+    }
+
+    @Override
+    public Builder setDestinationTable(TableId destinationTable) {
       this.destinationTable = destinationTable;
       return this;
     }
 
     @Override
+    @Deprecated
     public Builder createDisposition(CreateDisposition createDisposition) {
+      return setCreateDisposition(createDisposition);
+    }
+
+    @Override
+    public Builder setCreateDisposition(CreateDisposition createDisposition) {
       this.createDisposition = createDisposition;
       return this;
     }
 
     @Override
+    @Deprecated
     public Builder writeDisposition(WriteDisposition writeDisposition) {
+      return setWriteDisposition(writeDisposition);
+    }
+
+    @Override
+    public Builder setWriteDisposition(WriteDisposition writeDisposition) {
       this.writeDisposition = writeDisposition;
       return this;
     }
 
     @Override
+    @Deprecated
     public Builder formatOptions(FormatOptions formatOptions) {
+      return setFormatOptions(formatOptions);
+    }
+
+    @Override
+    public Builder setFormatOptions(FormatOptions formatOptions) {
       this.formatOptions = formatOptions;
       return this;
     }
 
     @Override
+    @Deprecated
     public Builder maxBadRecords(Integer maxBadRecords) {
+      return setMaxBadRecords(maxBadRecords);
+    }
+
+    @Override
+    public Builder setMaxBadRecords(Integer maxBadRecords) {
       this.maxBadRecords = maxBadRecords;
       return this;
     }
 
     @Override
+    @Deprecated
     public Builder schema(Schema schema) {
+      return setSchema(schema);
+    }
+
+    @Override
+    public Builder setSchema(Schema schema) {
       this.schema = schema;
       return this;
     }
 
     @Override
+    @Deprecated
     public Builder ignoreUnknownValues(Boolean ignoreUnknownValues) {
+      return setIgnoreUnknownValues(ignoreUnknownValues);
+    }
+
+    @Override
+    public Builder setIgnoreUnknownValues(Boolean ignoreUnknownValues) {
       this.ignoreUnknownValues = ignoreUnknownValues;
       return this;
     }
 
     @Override
+    @Deprecated
     public Builder projectionFields(List<String> projectionFields) {
+      return setProjectionFields(projectionFields);
+    }
+
+    @Override
+    public Builder setProjectionFields(List<String> projectionFields) {
       this.projectionFields =
           projectionFields != null ? ImmutableList.copyOf(projectionFields) : null;
       return this;
@@ -180,38 +228,80 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
   }
 
   @Override
+  @Deprecated
   public TableId destinationTable() {
+    return getDestinationTable();
+  }
+
+  @Override
+  public TableId getDestinationTable() {
     return destinationTable;
   }
 
   @Override
+  @Deprecated
   public CreateDisposition createDisposition() {
+    return this.getCreateDisposition();
+  }
+
+  @Override
+  public CreateDisposition getCreateDisposition() {
     return this.createDisposition;
   }
 
   @Override
+  @Deprecated
   public WriteDisposition writeDisposition() {
+    return getWriteDisposition();
+  }
+
+  @Override
+  public WriteDisposition getWriteDisposition() {
     return writeDisposition;
   }
 
   @Override
+  @Deprecated
   public CsvOptions csvOptions() {
+    return getCsvOptions();
+  }
+
+  @Override
+  public CsvOptions getCsvOptions() {
     return formatOptions instanceof CsvOptions ? (CsvOptions) formatOptions : null;
   }
 
   @Override
+  @Deprecated
   public Integer maxBadRecords() {
+    return getMaxBadRecords();
+  }
+
+  @Override
+  public Integer getMaxBadRecords() {
     return maxBadRecords;
   }
 
   @Override
+  @Deprecated
   public Schema schema() {
+    return getSchema();
+  }
+
+  @Override
+  public Schema getSchema() {
     return schema;
   }
 
   @Override
+  @Deprecated
   public String format() {
-    return formatOptions != null ? formatOptions.type() : null;
+    return getFormat();
+  }
+
+  @Override
+  public String getFormat() {
+    return formatOptions != null ? formatOptions.getType() : null;
   }
 
   @Override
@@ -220,7 +310,13 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
   }
 
   @Override
+  @Deprecated
   public List<String> projectionFields() {
+    return getProjectionFields();
+  }
+
+  @Override
+  public List<String> getProjectionFields() {
     return projectionFields;
   }
 
@@ -260,7 +356,7 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
   }
 
   WriteChannelConfiguration setProjectId(String projectId) {
-    return toBuilder().destinationTable(destinationTable().setProjectId(projectId)).build();
+    return toBuilder().setDestinationTable(getDestinationTable().setProjectId(projectId)).build();
   }
 
   com.google.api.services.bigquery.model.JobConfiguration toPb() {
@@ -272,23 +368,23 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
     if (writeDisposition != null) {
       loadConfigurationPb.setWriteDisposition(writeDisposition.toString());
     }
-    if (csvOptions() != null) {
-      CsvOptions csvOptions = csvOptions();
-      loadConfigurationPb.setFieldDelimiter(csvOptions.fieldDelimiter())
+    if (getCsvOptions() != null) {
+      CsvOptions csvOptions = getCsvOptions();
+      loadConfigurationPb.setFieldDelimiter(csvOptions.getFieldDelimiter())
           .setAllowJaggedRows(csvOptions.allowJaggedRows())
           .setAllowQuotedNewlines(csvOptions.allowQuotedNewLines())
-          .setEncoding(csvOptions.encoding())
-          .setQuote(csvOptions.quote());
-      if (csvOptions.skipLeadingRows() != null) {
+          .setEncoding(csvOptions.getEncoding())
+          .setQuote(csvOptions.getQuote());
+      if (csvOptions.getSkipLeadingRows() != null) {
         // todo(mziccard) remove checked cast or comment when #1044 is closed
-        loadConfigurationPb.setSkipLeadingRows(Ints.checkedCast(csvOptions.skipLeadingRows()));
+        loadConfigurationPb.setSkipLeadingRows(Ints.checkedCast(csvOptions.getSkipLeadingRows()));
       }
     }
     if (schema != null) {
       loadConfigurationPb.setSchema(schema.toPb());
     }
     if (formatOptions != null) {
-      loadConfigurationPb.setSourceFormat(formatOptions.type());
+      loadConfigurationPb.setSourceFormat(formatOptions.getType());
     }
     loadConfigurationPb.setMaxBadRecords(maxBadRecords);
     loadConfigurationPb.setIgnoreUnknownValues(ignoreUnknownValues);
@@ -305,28 +401,44 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
   /**
    * Creates a builder for a BigQuery Load Configuration given the destination table.
    */
+  @Deprecated
   public static Builder builder(TableId destinationTable) {
-    return new Builder().destinationTable(destinationTable);
+    return newBuilder(destinationTable);
+  }
+
+  /**
+   * Creates a builder for a BigQuery Load Configuration given the destination table.
+   */
+  public static Builder newBuilder(TableId destinationTable) {
+    return new Builder().setDestinationTable(destinationTable);
   }
 
   /**
    * Creates a builder for a BigQuery Load Configuration given the destination table and format.
    */
+  @Deprecated
   public static Builder builder(TableId destinationTable, FormatOptions format) {
-    return builder(destinationTable).formatOptions(format);
+    return newBuilder(destinationTable, format);
+  }
+
+  /**
+   * Creates a builder for a BigQuery Load Configuration given the destination table and format.
+   */
+  public static Builder newBuilder(TableId destinationTable, FormatOptions format) {
+    return newBuilder(destinationTable).setFormatOptions(format);
   }
 
   /**
    * Returns a BigQuery Load Configuration for the given destination table.
    */
   public static WriteChannelConfiguration of(TableId destinationTable) {
-    return builder(destinationTable).build();
+    return newBuilder(destinationTable).build();
   }
 
   /**
    * Returns a BigQuery Load Configuration for the given destination table and format.
    */
   public static WriteChannelConfiguration of(TableId destinationTable, FormatOptions format) {
-    return builder(destinationTable).formatOptions(format).build();
+    return newBuilder(destinationTable).setFormatOptions(format).build();
   }
 }

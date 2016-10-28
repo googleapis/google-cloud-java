@@ -99,34 +99,54 @@ public class ImageInfo implements Serializable {
    */
   public abstract static class Builder {
 
-    abstract Builder generatedId(String generatedId);
+    abstract Builder setGeneratedId(String generatedId);
 
-    abstract Builder creationTimestamp(Long creationTimestamp);
+    abstract Builder getCreationTimestamp(Long creationTimestamp);
 
     /**
      * Sets the image identity.
      */
+    @Deprecated
     public abstract Builder imageId(ImageId imageId);
+
+    /**
+     * Sets the image identity.
+     */
+    public abstract Builder setImageId(ImageId imageId);
 
     /**
      * Sets an optional textual description of the image.
      */
+    @Deprecated
     public abstract Builder description(String description);
+
+    /**
+     * Sets an optional textual description of the image.
+     */
+    public abstract Builder setDescription(String description);
 
     /**
      * Sets the image configuration. Use {@link DiskImageConfiguration} to create an image from an
      * existing disk. Use {@link StorageImageConfiguration} to create an image from a file stored in
      * Google Cloud Storage.
      */
+    @Deprecated
     public abstract  Builder configuration(ImageConfiguration configuration);
 
-    abstract Builder status(Status status);
+    /**
+     * Sets the image configuration. Use {@link DiskImageConfiguration} to create an image from an
+     * existing disk. Use {@link StorageImageConfiguration} to create an image from a file stored in
+     * Google Cloud Storage.
+     */
+    public abstract  Builder setConfiguration(ImageConfiguration configuration);
 
-    abstract Builder diskSizeGb(Long diskSizeGb);
+    abstract Builder setStatus(Status status);
 
-    abstract Builder licenses(List<LicenseId> licenses);
+    abstract Builder setDiskSizeGb(Long diskSizeGb);
 
-    abstract Builder deprecationStatus(DeprecationStatus<ImageId> deprecationStatus);
+    abstract Builder setLicenses(List<LicenseId> licenses);
+
+    abstract Builder setDeprecationStatus(DeprecationStatus<ImageId> deprecationStatus);
 
     /**
      * Creates a {@code ImageInfo} object.
@@ -184,55 +204,73 @@ public class ImageInfo implements Serializable {
     }
 
     @Override
-    BuilderImpl generatedId(String generatedId) {
+    BuilderImpl setGeneratedId(String generatedId) {
       this.generatedId = generatedId;
       return this;
     }
 
     @Override
-    BuilderImpl creationTimestamp(Long creationTimestamp) {
+    BuilderImpl getCreationTimestamp(Long creationTimestamp) {
       this.creationTimestamp = creationTimestamp;
       return this;
     }
 
     @Override
+    @Deprecated
     public BuilderImpl imageId(ImageId imageId) {
+      return setImageId(imageId);
+    }
+
+    @Override
+    public BuilderImpl setImageId(ImageId imageId) {
       this.imageId = checkNotNull(imageId);
       return this;
     }
 
     @Override
+    @Deprecated
     public BuilderImpl description(String description) {
+      return setDescription(description);
+    }
+
+    @Override
+    public BuilderImpl setDescription(String description) {
       this.description = description;
       return this;
     }
 
     @Override
+    @Deprecated
     public BuilderImpl configuration(ImageConfiguration configuration) {
+      return setConfiguration(configuration);
+    }
+
+    @Override
+    public BuilderImpl setConfiguration(ImageConfiguration configuration) {
       this.configuration = checkNotNull(configuration);
       return this;
     }
 
     @Override
-    BuilderImpl status(Status status) {
+    BuilderImpl setStatus(Status status) {
       this.status = status;
       return this;
     }
 
     @Override
-    BuilderImpl diskSizeGb(Long diskSizeGb) {
+    BuilderImpl setDiskSizeGb(Long diskSizeGb) {
       this.diskSizeGb = diskSizeGb;
       return this;
     }
 
     @Override
-    BuilderImpl licenses(List<LicenseId> licenses) {
+    BuilderImpl setLicenses(List<LicenseId> licenses) {
       this.licenses = licenses != null ? ImmutableList.copyOf(licenses) : null;
       return this;
     }
 
     @Override
-    BuilderImpl deprecationStatus(DeprecationStatus<ImageId> deprecationStatus) {
+    BuilderImpl setDeprecationStatus(DeprecationStatus<ImageId> deprecationStatus) {
       this.deprecationStatus = deprecationStatus;
       return this;
     }
@@ -258,28 +296,60 @@ public class ImageInfo implements Serializable {
   /**
    * Returns the service-generated unique identifier for the image.
    */
+  @Deprecated
   public String generatedId() {
+    return getGeneratedId();
+  }
+
+  /**
+   * Returns the service-generated unique identifier for the image.
+   */
+  public String getGeneratedId() {
     return generatedId;
   }
 
   /**
    * Returns the creation timestamp in milliseconds since epoch.
    */
+  @Deprecated
   public Long creationTimestamp() {
+    return getCreationTimestamp();
+  }
+
+  /**
+   * Returns the creation timestamp in milliseconds since epoch.
+   */
+  public Long getCreationTimestamp() {
     return creationTimestamp;
   }
 
   /**
    * Returns the image identity.
    */
+  @Deprecated
   public ImageId imageId() {
+    return getImageId();
+  }
+
+  /**
+   * Returns the image identity.
+   */
+  public ImageId getImageId() {
     return imageId;
   }
 
   /**
    * Returns a textual description of the image.
    */
+  @Deprecated
   public String description() {
+    return getDescription();
+  }
+
+  /**
+   * Returns a textual description of the image.
+   */
+  public String getDescription() {
     return description;
   }
 
@@ -290,14 +360,34 @@ public class ImageInfo implements Serializable {
    * from a file stored in Google Cloud Storage.
    */
   @SuppressWarnings("unchecked")
+  @Deprecated
   public <T extends ImageConfiguration> T configuration() {
+    return getConfiguration();
+  }
+
+  /**
+   * Returns the image configuration. This method returns an instance of
+   * {@link DiskImageConfiguration} if the the image was created from a Google Compute Engine disk.
+   * This method returns an instance of {@link StorageImageConfiguration} if the image was created
+   * from a file stored in Google Cloud Storage.
+   */
+  @SuppressWarnings("unchecked")
+  public <T extends ImageConfiguration> T getConfiguration() {
     return (T) configuration;
   }
 
   /**
    * Returns all applicable publicly visible licenses.
    */
+  @Deprecated
   public List<LicenseId> licenses() {
+    return getLicenses();
+  }
+
+  /**
+   * Returns all applicable publicly visible licenses.
+   */
+  public List<LicenseId> getLicenses() {
     return licenses;
   }
 
@@ -305,14 +395,31 @@ public class ImageInfo implements Serializable {
    * Returns the status of the image. An image can be used to create other disks only after it has
    * been successfully created and its status is set to {@link Status#READY}.
    */
+  @Deprecated
   public Status status() {
+    return getStatus();
+  }
+
+  /**
+   * Returns the status of the image. An image can be used to create other disks only after it has
+   * been successfully created and its status is set to {@link Status#READY}.
+   */
+  public Status getStatus() {
     return status;
   }
 
   /**
    * Returns the size of the image when restored onto a persistent disk (in GB).
    */
+  @Deprecated
   public Long diskSizeGb() {
+    return getDiskSizeGb();
+  }
+
+  /**
+   * Returns the size of the image when restored onto a persistent disk (in GB).
+   */
+  public Long getDiskSizeGb() {
     return diskSizeGb;
   }
 
@@ -321,7 +428,17 @@ public class ImageInfo implements Serializable {
    * {@link DeprecationStatus.Status#DELETED} or {@link DeprecationStatus.Status#OBSOLETE} the
    * image must not be used. Returns {@code null} if the image is not deprecated.
    */
+  @Deprecated
   public DeprecationStatus<ImageId> deprecationStatus() {
+    return getDeprecationStatus();
+  }
+
+  /**
+   * Returns the deprecation status of the image. If {@link DeprecationStatus#status()} is either
+   * {@link DeprecationStatus.Status#DELETED} or {@link DeprecationStatus.Status#OBSOLETE} the
+   * image must not be used. Returns {@code null} if the image is not deprecated.
+   */
+  public DeprecationStatus<ImageId> getDeprecationStatus() {
     return deprecationStatus;
   }
 
@@ -362,8 +479,8 @@ public class ImageInfo implements Serializable {
 
   ImageInfo setProjectId(String projectId) {
     return toBuilder()
-        .imageId(imageId.setProjectId(projectId))
-        .configuration(configuration.setProjectId(projectId))
+        .setImageId(imageId.setProjectId(projectId))
+        .setConfiguration(configuration.setProjectId(projectId))
         .build();
   }
 
@@ -375,9 +492,9 @@ public class ImageInfo implements Serializable {
     if (creationTimestamp != null) {
       imagePb.setCreationTimestamp(TIMESTAMP_FORMATTER.print(creationTimestamp));
     }
-    imagePb.setName(imageId.image());
+    imagePb.setName(imageId.getImage());
     imagePb.setDescription(description);
-    imagePb.setSelfLink(imageId.selfLink());
+    imagePb.setSelfLink(imageId.getSelfLink());
     if (status != null) {
       imagePb.setStatus(status.name());
     }
@@ -397,8 +514,19 @@ public class ImageInfo implements Serializable {
    * {@link StorageImageConfiguration} to create an image from a file stored in Google Cloud
    * Storage.
    */
+  @Deprecated
   public static Builder builder(ImageId imageId, ImageConfiguration configuration) {
-    return new BuilderImpl().imageId(imageId).configuration(configuration);
+    return newBuilder(imageId, configuration);
+  }
+
+  /**
+   * Returns a builder for an {@code ImageInfo} object given the image identity and an image
+   * configuration. Use {@link DiskImageConfiguration} to create an image from an existing disk. Use
+   * {@link StorageImageConfiguration} to create an image from a file stored in Google Cloud
+   * Storage.
+   */
+  public static Builder newBuilder(ImageId imageId, ImageConfiguration configuration) {
+    return new BuilderImpl().setImageId(imageId).setConfiguration(configuration);
   }
 
   /**
@@ -408,7 +536,7 @@ public class ImageInfo implements Serializable {
    * Storage.
    */
   public static ImageInfo of(ImageId imageId, ImageConfiguration configuration) {
-    return builder(imageId, configuration).build();
+    return newBuilder(imageId, configuration).build();
   }
 
   static ImageInfo fromPb(Image imagePb) {

@@ -52,8 +52,17 @@ public class StandardDiskConfiguration extends DiskConfiguration {
      * Sets the size of the persistent disk, in GB. If not set, 500GB is used.
      */
     @Override
+    @Deprecated
     public Builder sizeGb(Long sizeGb) {
-      super.sizeGb(sizeGb);
+      return setSizeGb(sizeGb);
+    }
+
+    /**
+     * Sets the size of the persistent disk, in GB. If not set, 500GB is used.
+     */
+    @Override
+    public Builder setSizeGb(Long sizeGb) {
+      super.setSizeGb(sizeGb);
       return this;
     }
 
@@ -90,16 +99,24 @@ public class StandardDiskConfiguration extends DiskConfiguration {
 
   @Override
   StandardDiskConfiguration setProjectId(String projectId) {
-    if (diskType() == null || diskType().project() != null) {
+    if (getDiskType() == null || getDiskType().getProject() != null) {
       return this;
     }
-    return toBuilder().diskType(diskType().setProjectId(projectId)).build();
+    return toBuilder().setDiskType(getDiskType().setProjectId(projectId)).build();
   }
 
   /**
    * Returns a builder for a {@code StandardDiskConfiguration} object.
    */
+  @Deprecated
   public static Builder builder() {
+    return newBuilder();
+  }
+
+  /**
+   * Returns a builder for a {@code StandardDiskConfiguration} object.
+   */
+  public static Builder newBuilder() {
     return new Builder();
   }
 
@@ -107,21 +124,21 @@ public class StandardDiskConfiguration extends DiskConfiguration {
    * Returns a {@code StandardDiskConfiguration} object given the disk type.
    */
   public static StandardDiskConfiguration of(DiskTypeId diskType) {
-    return builder().diskType(diskType).build();
+    return newBuilder().setDiskType(diskType).build();
   }
 
   /**
    * Returns a {@code StandardDiskConfiguration} object given the disk size in GB.
    */
   public static StandardDiskConfiguration of(long sizeGb) {
-    return builder().sizeGb(sizeGb).build();
+    return newBuilder().setSizeGb(sizeGb).build();
   }
 
   /**
    * Returns a {@code StandardDiskConfiguration} object given the disk type and size in GB.
    */
   public static StandardDiskConfiguration of(DiskTypeId diskType, long sizeGb) {
-    return builder().diskType(diskType).sizeGb(sizeGb).build();
+    return newBuilder().setDiskType(diskType).setSizeGb(sizeGb).build();
   }
 
   @SuppressWarnings("unchecked")
