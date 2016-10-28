@@ -14,7 +14,8 @@
 
 package com.google.cloud.trace.spi.v1;
 
-import com.google.api.gax.core.PagedListResponse;
+import static com.google.cloud.trace.spi.v1.PagedResponseWrappers.ListTracesPagedResponse;
+
 import com.google.api.gax.testing.MockGrpcService;
 import com.google.api.gax.testing.MockServiceHelper;
 import com.google.common.collect.Lists;
@@ -134,8 +135,7 @@ public class TraceServiceTest {
 
     String projectId = "projectId-1969970175";
 
-    PagedListResponse<ListTracesRequest, ListTracesResponse, Trace> pagedListResponse =
-        api.listTraces(projectId);
+    ListTracesPagedResponse pagedListResponse = api.listTraces(projectId);
 
     List<Trace> resources = Lists.newArrayList(pagedListResponse.iterateAllElements());
     Assert.assertEquals(1, resources.size());
