@@ -528,7 +528,7 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
     if (blobInfo.getName().startsWith("/")) {
       path.setLength(path.length() - 1);
     }
-    path.append(UrlEscapers.urlPathSegmentEscaper().escape(blobInfo.getName()));
+    path.append(UrlEscapers.urlFragmentEscaper().escape(blobInfo.name()));
     stBuilder.append(path);
     try {
       byte[] signatureBytes = authCredentials.sign(stBuilder.toString().getBytes(UTF_8));

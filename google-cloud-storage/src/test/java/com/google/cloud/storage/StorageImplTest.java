@@ -1259,7 +1259,7 @@ public class StorageImplTest {
     storage = options.toBuilder().authCredentials(authCredentials).build().service();
     URL url =
         storage.signUrl(BlobInfo.newBuilder(BUCKET_NAME1, blobName).build(), 14, TimeUnit.DAYS);
-    String escapedBlobName = UrlEscapers.urlPathSegmentEscaper().escape(blobName);
+    String escapedBlobName = UrlEscapers.urlFragmentEscaper().escape(blobName);
     String stringUrl = url.toString();
     String expectedUrl = new StringBuilder("https://storage.googleapis.com/").append(BUCKET_NAME1)
         .append(escapedBlobName).append("?GoogleAccessId=").append(ACCOUNT).append("&Expires=")
@@ -1323,7 +1323,7 @@ public class StorageImplTest {
       String blobName = "/a" + specialChar + "b";
       URL url =
           storage.signUrl(BlobInfo.newBuilder(BUCKET_NAME1, blobName).build(), 14, TimeUnit.DAYS);
-      String escapedBlobName = UrlEscapers.urlPathSegmentEscaper().escape(blobName);
+      String escapedBlobName = UrlEscapers.urlFragmentEscaper().escape(blobName);
       String stringUrl = url.toString();
       String expectedUrl = new StringBuilder("https://storage.googleapis.com/").append(BUCKET_NAME1)
           .append(escapedBlobName).append("?GoogleAccessId=").append(ACCOUNT).append("&Expires=")
@@ -1341,6 +1341,37 @@ public class StorageImplTest {
       assertTrue(signer.verify(BaseEncoding.base64().decode(
           URLDecoder.decode(signature, UTF_8.name()))));
     }
+  }
+
+  @Test
+  public void testSignUrlForBlobWithSlashes() throws NoSuchAlgorithmException,
+          InvalidKeyException, SignatureException, UnsupportedEncodingException {
+    EasyMock.replay(storageRpcMock);
+    ServiceAccountAuthCredentials authCredentials =
+        ServiceAccountAuthCredentials.createFor(ACCOUNT, privateKey);
+    storage = options.toBuilder().authCredentials(authCredentials).build().service();
+
+    String blobName = "/foo/bar/baz #%20other cool stuff.txt";
+    URL url =
+      storage.signUrl(BlobInfo.newBuilder(BUCKET_NAME1, blobName).build(), 14, TimeUnit.DAYS);
+
+    String escapedBlobName = UrlEscapers.urlFragmentEscaper().escape(blobName);
+    String stringUrl = url.toString();
+    String expectedUrl = new StringBuilder("https://storage.googleapis.com/").append(BUCKET_NAME1)
+        .append(escapedBlobName).append("?GoogleAccessId=").append(ACCOUNT).append("&Expires=")
+        .append(42L + 1209600).append("&Signature=").toString();
+    assertTrue(stringUrl.startsWith(expectedUrl));
+    String signature = stringUrl.substring(expectedUrl.length());
+
+    StringBuilder signedMessageBuilder = new StringBuilder();
+    signedMessageBuilder.append(HttpMethod.GET).append("\n\n\n").append(42L + 1209600)
+        .append("\n/").append(BUCKET_NAME1).append(escapedBlobName);
+
+    Signature signer = Signature.getInstance("SHA256withRSA");
+    signer.initVerify(publicKey);
+    signer.update(signedMessageBuilder.toString().getBytes(UTF_8));
+    assertTrue(signer.verify(BaseEncoding.base64().decode(
+        URLDecoder.decode(signature, UTF_8.name()))));
   }
 
   @Test
