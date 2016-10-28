@@ -13,10 +13,13 @@
  */
 package com.google.cloud.speech.spi.v1beta1;
 
-import com.google.api.gax.grpc.ApiCallable;
+import com.google.api.gax.grpc.StreamingCallable;
+import com.google.api.gax.grpc.UnaryCallable;
 import com.google.cloud.speech.v1beta1.AsyncRecognizeRequest;
 import com.google.cloud.speech.v1beta1.RecognitionAudio;
 import com.google.cloud.speech.v1beta1.RecognitionConfig;
+import com.google.cloud.speech.v1beta1.StreamingRecognizeRequest;
+import com.google.cloud.speech.v1beta1.StreamingRecognizeResponse;
 import com.google.cloud.speech.v1beta1.SyncRecognizeRequest;
 import com.google.cloud.speech.v1beta1.SyncRecognizeResponse;
 import com.google.longrunning.Operation;
@@ -57,8 +60,8 @@ import java.util.concurrent.ScheduledExecutorService;
  *   <li> A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li> A "callable" method. This type of method takes no parameters and returns an immutable
- *       ApiCallable object, which can be used to initiate calls to the service.
+ *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
+ *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
  * <p>See the individual methods for example code.
@@ -86,8 +89,10 @@ public class SpeechApi implements AutoCloseable {
   private final ScheduledExecutorService executor;
   private final List<AutoCloseable> closeables = new ArrayList<>();
 
-  private final ApiCallable<SyncRecognizeRequest, SyncRecognizeResponse> syncRecognizeCallable;
-  private final ApiCallable<AsyncRecognizeRequest, Operation> asyncRecognizeCallable;
+  private final UnaryCallable<SyncRecognizeRequest, SyncRecognizeResponse> syncRecognizeCallable;
+  private final UnaryCallable<AsyncRecognizeRequest, Operation> asyncRecognizeCallable;
+  private final StreamingCallable<StreamingRecognizeRequest, StreamingRecognizeResponse>
+      streamingRecognizeCallable;
 
   /** Constructs an instance of SpeechApi with default settings. */
   public static final SpeechApi create() throws IOException {
@@ -112,9 +117,11 @@ public class SpeechApi implements AutoCloseable {
     this.channel = settings.getChannelProvider().getOrBuildChannel(this.executor);
 
     this.syncRecognizeCallable =
-        ApiCallable.create(settings.syncRecognizeSettings(), this.channel, this.executor);
+        UnaryCallable.create(settings.syncRecognizeSettings(), this.channel, this.executor);
     this.asyncRecognizeCallable =
-        ApiCallable.create(settings.asyncRecognizeSettings(), this.channel, this.executor);
+        UnaryCallable.create(settings.asyncRecognizeSettings(), this.channel, this.executor);
+    this.streamingRecognizeCallable =
+        StreamingCallable.create(settings.streamingRecognizeSettings(), this.channel);
 
     if (settings.getChannelProvider().shouldAutoClose()) {
       closeables.add(
@@ -214,7 +221,7 @@ public class SpeechApi implements AutoCloseable {
    * }
    * </code></pre>
    */
-  public final ApiCallable<SyncRecognizeRequest, SyncRecognizeResponse> syncRecognizeCallable() {
+  public final UnaryCallable<SyncRecognizeRequest, SyncRecognizeResponse> syncRecognizeCallable() {
     return syncRecognizeCallable;
   }
 
@@ -294,8 +301,47 @@ public class SpeechApi implements AutoCloseable {
    * }
    * </code></pre>
    */
-  public final ApiCallable<AsyncRecognizeRequest, Operation> asyncRecognizeCallable() {
+  public final UnaryCallable<AsyncRecognizeRequest, Operation> asyncRecognizeCallable() {
     return asyncRecognizeCallable;
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Perform bidirectional streaming speech-recognition: receive results while sending audio. This
+   * method is only available via the gRPC API (not REST).
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SpeechApi speechApi = SpeechApi.create()) {
+   *   StreamObserver&lt;StreamingRecognizeResponse&gt; responseObserver =
+   *       new StreamObserver&lt;StreamingRecognizeResponse&gt;() {
+   *         @Override
+   *         public void onNext(StreamingRecognizeResponse response) {
+   *           // Do something when receive a response
+   *         }
+   *
+   *         @Override
+   *         public void onError(Throwable t) {
+   *           // Add error-handling
+   *         }
+   *
+   *         @Override
+   *         public void onCompleted() {
+   *           // Do something when complete.
+   *         }
+   *       };
+   *   StreamObserver&lt;StreamingRecognizeRequest&gt; requestObserver =
+   *       speechApi.streamingRecognizeCallable().bidiStreamingCall(responseObserver)});
+   *
+   *   StreamingRecognizeRequest request = StreamingRecognizeRequest.newBuilder().build();
+   *   requestObserver.onNext(request);
+   * }
+   * </code></pre>
+   */
+  public final StreamingCallable<StreamingRecognizeRequest, StreamingRecognizeResponse>
+      streamingRecognizeCallable() {
+    return streamingRecognizeCallable;
   }
 
   /**
