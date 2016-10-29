@@ -416,7 +416,7 @@
                   </group>
                   <group>
                     <title>SPI packages</title>
-                    <packages>com.google.cloud.spi:com.google.cloud.bigquery.spi:com.google.cloud.compute.spi:com.google.cloud.datastore.spi:com.google.cloud.dns.spi:com.google.cloud.errorreporting.spi:com.google.cloud.errorreporting.spi.*:com.google.cloud.language.spi:com.google.cloud.language.spi.*:com.google.cloud.logging.spi:com.google.cloud.logging.spi.*:com.google.cloud.pubsub.spi:com.google.cloud.pubsub.spi.*:com.google.cloud.resourcemanager.spi:com.google.cloud.speech.spi:com.google.cloud.speech.spi.*:com.google.cloud.storage.spi:com.google.cloud.trace.spi:com.google.cloud.trace.spi.*:com.google.cloud.translate.spi:com.google.cloud.vision.spi:com.google.cloud.vision.spi.*</packages>
+                    <packages>com.google.cloud.spi:com.google.cloud.bigquery.spi:com.google.cloud.compute.spi:com.google.cloud.datastore.spi:com.google.cloud.dns.spi:com.google.cloud.errorreporting.spi:com.google.cloud.errorreporting.spi.*:com.google.cloud.language.spi:com.google.cloud.language.spi.*:com.google.cloud.logging.spi:com.google.cloud.monitoring.spi:com.google.cloud.monitoring.spi.*:com.google.cloud.logging.spi.*:com.google.cloud.pubsub.spi:com.google.cloud.pubsub.spi.*:com.google.cloud.resourcemanager.spi:com.google.cloud.speech.spi:com.google.cloud.speech.spi.*:com.google.cloud.storage.spi:com.google.cloud.trace.spi:com.google.cloud.trace.spi.*:com.google.cloud.translate.spi:com.google.cloud.vision.spi:com.google.cloud.vision.spi.*</packages>
                   </group>
                 </groups>
               </configuration>
