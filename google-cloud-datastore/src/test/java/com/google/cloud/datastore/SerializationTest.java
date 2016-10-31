@@ -115,7 +115,7 @@ public class SerializationTest extends BaseSerializationTest {
         .setProjectId("ds1")
         .build();
     DatastoreOptions otherOptions = options.toBuilder()
-        .namespace("ns1")
+        .setNamespace("ns1")
         .setAuthCredentials(null)
         .build();
     return new java.io.Serializable[]{KEY1, KEY2, INCOMPLETE_KEY1, INCOMPLETE_KEY2, ENTITY1,

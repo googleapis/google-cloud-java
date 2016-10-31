@@ -82,7 +82,15 @@ public class DatastoreOptions
     /**
      * Sets the default namespace to be used by the datastore service.
      */
+    @Deprecated
     public Builder namespace(String namespace) {
+      return setNamespace(namespace);
+    }
+
+    /**
+     * Sets the default namespace to be used by the datastore service.
+     */
+    public Builder setNamespace(String namespace) {
       this.namespace = validateNamespace(namespace);
       return this;
     }

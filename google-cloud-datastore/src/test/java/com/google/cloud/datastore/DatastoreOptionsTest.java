@@ -62,7 +62,7 @@ public class DatastoreOptionsTest {
   @Test
   public void testNamespace() throws Exception {
     assertTrue(options.build().getNamespace().isEmpty());
-    assertEquals("ns1", options.namespace("ns1").build().getNamespace());
+    assertEquals("ns1", options.setNamespace("ns1").build().getNamespace());
   }
 
   @Test
@@ -72,7 +72,7 @@ public class DatastoreOptionsTest {
 
   @Test
   public void testToBuilder() throws Exception {
-    DatastoreOptions original = options.namespace("ns1").build();
+    DatastoreOptions original = options.setNamespace("ns1").build();
     DatastoreOptions copy = original.toBuilder().build();
     assertEquals(original.getProjectId(), copy.getProjectId());
     assertEquals(original.getNamespace(), copy.getNamespace());
