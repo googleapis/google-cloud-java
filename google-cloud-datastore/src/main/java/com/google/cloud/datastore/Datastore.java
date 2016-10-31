@@ -128,6 +128,72 @@ public interface Datastore extends Service<DatastoreOptions>, DatastoreReaderWri
   /**
    * {@inheritDoc}
    *
+   * <p>If an entity for {@code entity.getKey()} does not exists, {@code entity} is inserted.
+   * Otherwise, a {@link DatastoreException} is thrown with {@link DatastoreException#getReason()}
+   * equal to {@code "ALREADY_EXISTS"}.
+   *
+   * <p>Example of adding a single entity.
+   * <pre> {@code
+   * String keyName = "my_key_name";
+   * Key key = datastore.newKeyFactory().setKind("MyKind").newKey(keyName);
+   * Entity.Builder entityBuilder = Entity.newBuilder(key);
+   * entityBuilder.set("propertyName", "value");
+   * Entity entity = entityBuilder.build();
+   * try {
+   *   datastore.add(entity);
+   * } catch (DatastoreException ex) {
+   *   if ("ALREADY_EXISTS".equals(ex.getReason())) {
+   *     // entity.getKey() already exists
+   *   }
+   * }
+   * }</pre>
+   *
+   * @throws DatastoreException upon failure or if an entity for {@code entity.getKey()} already
+   *     exists
+   */
+  @Override
+  Entity add(FullEntity<?> entity);
+
+  /**
+   * {@inheritDoc}
+   *
+   * <p>If none of entities' keys exist, all entities are inserted. If any of entities' keys already
+   * exists the method throws a {@link DatastoreException} with
+   * {@link DatastoreException#getReason()} equal to {@code "ALREADY_EXISTS"}. All entities in
+   * {@code entities} whose key did not exist are inserted. To achieve a transactional behavior,
+   * use {@link Transaction}.
+   *
+   * <p>Example of adding multiple entities.
+   * <pre> {@code
+   * String keyName1 = "my_key_name1";
+   * String keyName2 = "my_key_name2";
+   * Key key1 = datastore.newKeyFactory().setKind("MyKind").newKey(keyName1);
+   * Entity.Builder entityBuilder1 = Entity.newBuilder(key1);
+   * entityBuilder1.set("propertyName", "value1");
+   * Entity entity1 = entityBuilder1.build();
+   * 
+   * Key key2 = datastore.newKeyFactory().setKind("MyKind").newKey(keyName2);
+   * Entity.Builder entityBuilder2 = Entity.newBuilder(key2);
+   * entityBuilder2.set("propertyName", "value2");
+   * Entity entity2 = entityBuilder2.build();
+   * 
+   * try {
+   *   datastore.add(entity1, entity2);
+   * } catch (DatastoreException ex) {
+   *   if ("ALREADY_EXISTS".equals(ex.getReason())) {
+   *     // at least one of entity1.getKey() and entity2.getKey() already exists
+   *   }
+   * }
+   * }</pre>
+   *
+   * @throws DatastoreException upon failure or if any of entities' keys already exists
+   */
+  @Override
+  List<Entity> add(FullEntity<?>... entities);
+
+  /**
+   * {@inheritDoc}
+   *
    * <p>Example of updating multiple entities.
    * <pre> {@code
    * String keyName1 = "my_key_name_1";

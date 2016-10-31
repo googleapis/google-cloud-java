@@ -50,6 +50,27 @@ public interface Batch extends DatastoreBatchWriter {
   }
 
   /**
+   * {@inheritDoc}
+   *
+   * <p>If an entity for {@code entity.getKey()} does not exists, {@code entity} is inserted.
+   * Otherwise, {@link #submit()} will throw a {@link DatastoreException} with
+   * {@link DatastoreException#getReason()} equal to {@code "ALREADY_EXISTS"}.
+   */
+  @Override
+  Entity add(FullEntity<?> entity);
+
+  /**
+   * {@inheritDoc}
+   *
+   * <p>If none of entities' keys exist, all entities are inserted. If any of entities' keys already
+   * exists, {@link #submit()} will throw a {@link DatastoreException} with
+   * {@link DatastoreException#getReason()} equal to {@code "ALREADY_EXISTS"}. All entities in
+   * {@code entities} whose key did not exist are inserted.
+   */
+  @Override
+  List<Entity> add(FullEntity<?>... entities);
+
+  /**
    * Submit the batch to the Datastore.
    *
    * @throws DatastoreException if there was any failure or if batch is not longer active
