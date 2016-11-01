@@ -85,7 +85,7 @@ public class RemoteDatastoreHelper {
    */
   public static RemoteDatastoreHelper create() {
     DatastoreOptions datastoreOption = DatastoreOptions.newBuilder()
-        .namespace(UUID.randomUUID().toString())
+        .setNamespace(UUID.randomUUID().toString())
         .setRetryParams(retryParams())
         .setConnectTimeout(60000)
         .setReadTimeout(60000)

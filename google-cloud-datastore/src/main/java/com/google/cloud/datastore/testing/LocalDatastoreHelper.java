@@ -667,7 +667,7 @@ public class LocalDatastoreHelper {
    */
   @Deprecated
   public DatastoreOptions options(String namespace) {
-    return optionsBuilder().namespace(namespace).build();
+    return optionsBuilder().setNamespace(namespace).build();
   }
 
   /**
@@ -675,7 +675,7 @@ public class LocalDatastoreHelper {
    * localhost. The default namespace is set to {@code namespace}.
    */
   public DatastoreOptions getOptions(String namespace) {
-    return optionsBuilder().namespace(namespace).build();
+    return optionsBuilder().setNamespace(namespace).build();
   }
 
   /**

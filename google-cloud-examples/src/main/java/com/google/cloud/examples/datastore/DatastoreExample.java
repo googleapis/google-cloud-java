@@ -293,7 +293,7 @@ public class DatastoreExample {
     //       .setHost("http://localhost:8080")
     //       .build();
     DatastoreOptions options =
-        DatastoreOptions.newBuilder().setProjectId(projectId).namespace(NAMESPACE).build();
+        DatastoreOptions.newBuilder().setProjectId(projectId).setNamespace(NAMESPACE).build();
     String name = args.length > 1 ? args[1] : System.getProperty("user.getName");
     Datastore datastore = options.getService();
     KeyFactory keyFactory = datastore.newKeyFactory().setKind(USER_KIND);
