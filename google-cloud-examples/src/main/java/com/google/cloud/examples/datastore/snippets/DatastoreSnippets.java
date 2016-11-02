@@ -25,6 +25,7 @@ package com.google.cloud.examples.datastore.snippets;
 import com.google.cloud.datastore.Batch;
 import com.google.cloud.datastore.Datastore;
 import com.google.cloud.datastore.Datastore.TransactionCallable;
+import com.google.cloud.datastore.DatastoreException;
 import com.google.cloud.datastore.DatastoreReaderWriter;
 import com.google.cloud.datastore.Entity;
 import com.google.cloud.datastore.IncompleteKey;
@@ -139,6 +140,55 @@ public class DatastoreSnippets {
 
     datastore.update(entity1, entity2);
     // [END batchUpdateEntities]
+  }
+
+  /**
+   * Example of adding a single entity.
+   */
+  // [TARGET add(FullEntity)]
+  // [VARIABLE "my_key_name"]
+  public void addSingleEntity(String keyName) {
+    // [START addSingleEntity]
+    Key key = datastore.newKeyFactory().setKind("MyKind").newKey(keyName);
+    Entity.Builder entityBuilder = Entity.newBuilder(key);
+    entityBuilder.set("propertyName", "value");
+    Entity entity = entityBuilder.build();
+    try {
+      datastore.add(entity);
+    } catch (DatastoreException ex) {
+      if ("ALREADY_EXISTS".equals(ex.getReason())) {
+        // entity.getKey() already exists
+      }
+    }
+    // [END addSingleEntity]
+  }
+
+  /**
+   * Example of adding multiple entities.
+   */
+  // [TARGET add(FullEntity...)]
+  // [VARIABLE "my_key_name1"]
+  // [VARIABLE "my_key_name2"]
+  public void batchAddEntities(String keyName1, String keyName2) {
+    // [START batchAddEntities]
+    Key key1 = datastore.newKeyFactory().setKind("MyKind").newKey(keyName1);
+    Entity.Builder entityBuilder1 = Entity.newBuilder(key1);
+    entityBuilder1.set("propertyName", "value1");
+    Entity entity1 = entityBuilder1.build();
+
+    Key key2 = datastore.newKeyFactory().setKind("MyKind").newKey(keyName2);
+    Entity.Builder entityBuilder2 = Entity.newBuilder(key2);
+    entityBuilder2.set("propertyName", "value2");
+    Entity entity2 = entityBuilder2.build();
+
+    try {
+      datastore.add(entity1, entity2);
+    } catch (DatastoreException ex) {
+      if ("ALREADY_EXISTS".equals(ex.getReason())) {
+        // at least one of entity1.getKey() and entity2.getKey() already exists
+      }
+    }
+    // [END batchAddEntities]
   }
 
   /**

@@ -175,6 +175,205 @@ public interface Transaction extends DatastoreBatchWriter, DatastoreReaderWriter
   <T> QueryResults<T> run(Query<T> query);
 
   /**
+   * Datastore add operation. This method will also allocate id for any entity with an incomplete
+   * key. As opposed to {@link #add(FullEntity)} and {@link #add(FullEntity...)}, this method will
+   * defer any necessary id allocation to commit time.
+   *
+   * <p>Example of adding multiple entities with deferred id allocation.
+   * <pre> {@code
+   * IncompleteKey key1 = datastore.newKeyFactory().setKind("MyKind").newKey();
+   * FullEntity.Builder entityBuilder1 = FullEntity.newBuilder(key1);
+   * entityBuilder1.set("propertyName", "value1");
+   * FullEntity entity1 = entityBuilder1.build();
+   * 
+   * IncompleteKey key2 = datastore.newKeyFactory().setKind("MyKind").newKey();
+   * FullEntity.Builder entityBuilder2 = FullEntity.newBuilder(key2);
+   * entityBuilder2.set("propertyName", "value2");
+   * FullEntity entity2 = entityBuilder2.build();
+   * 
+   * transaction.addWithDeferredIdAllocation(entity1, entity2);
+   * Response response = transaction.commit();
+   * }</pre>
+   *
+   * @throws DatastoreException if a given entity with a complete key was already added to this
+   *     transaction or if the transaction is no longer active
+   */
+  void addWithDeferredIdAllocation(FullEntity<?>... entities);
+
+  /**
+   * {@inheritDoc}
+   *
+   * <p>Example of adding a single entity.
+   * <pre> {@code
+   * String keyName = "my_key_name";
+   * Key key = datastore.newKeyFactory().setKind("MyKind").newKey(keyName);
+   * Entity.Builder entityBuilder = Entity.newBuilder(key);
+   * entityBuilder.set("propertyName", "value");
+   * Entity entity = entityBuilder.build();
+   * transaction.add(entity);
+   * transaction.commit();
+   * }</pre>
+   *
+   * @throws DatastoreException if a given entity with the same complete key was already added to
+   *     this writer, if the transaction is no longer active or if id allocation for an entity with
+   *     an incomplete key failed
+   */
+  @Override
+  Entity add(FullEntity<?> entity);
+
+  /**
+   * {@inheritDoc}
+   *
+   * <p>Example of adding multiple entities.
+   * <pre> {@code
+   * String keyName1 = "my_key_name1";
+   * String keyName2 = "my_key_name2";
+   * Key key1 = datastore.newKeyFactory().setKind("MyKind").newKey(keyName1);
+   * Entity.Builder entityBuilder1 = Entity.newBuilder(key1);
+   * entityBuilder1.set("propertyName", "value1");
+   * Entity entity1 = entityBuilder1.build();
+   * 
+   * Key key2 = datastore.newKeyFactory().setKind("MyKind").newKey(keyName2);
+   * Entity.Builder entityBuilder2 = Entity.newBuilder(key2);
+   * entityBuilder2.set("propertyName", "value2");
+   * Entity entity2 = entityBuilder2.build();
+   * 
+   * transaction.add(entity1, entity2);
+   * transaction.commit();
+   * }</pre>
+   *
+   * @throws DatastoreException if a given entity with the same complete key was already added to
+   *     this writer, if the transaction is no longer active or if id allocation for an entity with
+   *     an incomplete key failed
+   */
+  @Override
+  List<Entity> add(FullEntity<?>... entities);
+
+  /**
+   * {@inheritDoc}
+   * This operation will be converted to {@link #put} operation for entities that were already
+   * added or put in this writer.
+   *
+   * <p>Example of updating multiple entities.
+   * <pre> {@code
+   * String keyName1 = "my_key_name1";
+   * String keyName2 = "my_key_name2";
+   * Key key1 = datastore.newKeyFactory().setKind("MyKind").newKey(keyName1);
+   * Entity.Builder entityBuilder1 = Entity.newBuilder(key1);
+   * entityBuilder1.set("propertyName", "value3");
+   * Entity entity1 = entityBuilder1.build();
+   * 
+   * Key key2 = datastore.newKeyFactory().setKind("MyKind").newKey(keyName2);
+   * Entity.Builder entityBuilder2 = Entity.newBuilder(key2);
+   * entityBuilder2.set("propertyName", "value4");
+   * Entity entity2 = entityBuilder2.build();
+   * 
+   * transaction.update(entity1, entity2);
+   * transaction.commit();
+   * }</pre>
+   *
+   * @throws DatastoreException if an entity is marked for deletion in this transaction or if the
+   *     transaction is no longer active
+   */
+  @Override
+  void update(Entity... entities);
+
+  /**
+   * {@inheritDoc}
+   * This operation will also remove from this transaction any prior writes for entities with the
+   * same keys.
+   *
+   * <p>Example of deleting multiple entities.
+   * <pre> {@code
+   * String keyName1 = "my_key_name1";
+   * String keyName2 = "my_key_name2";
+   * Key key1 = datastore.newKeyFactory().setKind("MyKind").newKey(keyName1);
+   * Key key2 = datastore.newKeyFactory().setKind("MyKind").newKey(keyName2);
+   * transaction.delete(key1, key2);
+   * transaction.commit();
+   * }</pre>
+   *
+   * @throws DatastoreException upon failure or if no longer active
+   */
+  @Override
+  void delete(Key... keys);
+
+  /**
+   * Datastore put operation. This method will also allocate id for any entity with an incomplete
+   * key. As opposed to {@link #put(FullEntity)} and {@link #put(FullEntity...)}, this method will
+   * defer any necessary id allocation to commit time.
+   *
+   * <p>Example of putting multiple entities with deferred id allocation.
+   * <pre> {@code
+   * IncompleteKey key1 = datastore.newKeyFactory().setKind("MyKind").newKey();
+   * FullEntity.Builder entityBuilder1 = FullEntity.newBuilder(key1);
+   * entityBuilder1.set("propertyName", "value1");
+   * FullEntity entity1 = entityBuilder1.build();
+   * 
+   * IncompleteKey key2 = datastore.newKeyFactory().setKind("MyKind").newKey();
+   * FullEntity.Builder entityBuilder2 = FullEntity.newBuilder(key2);
+   * entityBuilder2.set("propertyName", "value2");
+   * FullEntity entity2 = entityBuilder2.build();
+   * 
+   * transaction.putWithDeferredIdAllocation(entity1, entity2);
+   * Response response = transaction.commit();
+   * }</pre>
+   *
+   * @throws IllegalArgumentException if any of the given entities is missing a key
+   * @throws DatastoreException if no longer active
+   */
+  void putWithDeferredIdAllocation(FullEntity<?>... entities);
+
+  /**
+   * {@inheritDoc}
+   * This operation will also remove from this transaction any prior writes for the same entity.
+   *
+   * <p>Example of putting a single entity.
+   * <pre> {@code
+   * String keyName = "my_key_name";
+   * Key key = datastore.newKeyFactory().setKind("MyKind").newKey(keyName);
+   * Entity.Builder entityBuilder = Entity.newBuilder(key);
+   * entityBuilder.set("propertyName", "value");
+   * Entity entity = entityBuilder.build();
+   * transaction.put(entity);
+   * transaction.commit();
+   * }</pre>
+   *
+   * @throws DatastoreException if id allocation for an entity with an incomplete key failed or if
+   *     the transaction is no longer active
+   */
+  @Override
+  Entity put(FullEntity<?> entity);
+
+  /**
+   * {@inheritDoc}
+   * This operation will also remove from this transaction any prior writes for the same entities.
+   *
+   * <p>Example of putting multiple entities.
+   * <pre> {@code
+   * String keyName1 = "my_key_name1";
+   * String keyName2 = "my_key_name2";
+   * Key key1 = datastore.newKeyFactory().setKind("MyKind").newKey(keyName1);
+   * Entity.Builder entityBuilder1 = Entity.newBuilder(key1);
+   * entityBuilder1.set("propertyName", "value1");
+   * Entity entity1 = entityBuilder1.build();
+   * 
+   * Key key2 = datastore.newKeyFactory().setKind("MyKind").newKey(keyName2);
+   * Entity.Builder entityBuilder2 = Entity.newBuilder(key2);
+   * entityBuilder2.set("propertyName", "value2");
+   * Entity entity2 = entityBuilder2.build();
+   * 
+   * transaction.put(entity1, entity2);
+   * transaction.commit();
+   * }</pre>
+   *
+   * @throws DatastoreException if id allocation for an entity with an incomplete key failed or if
+   *     the transaction is no longer active
+   */
+  @Override
+  List<Entity> put(FullEntity<?>... entities);
+
+  /**
    * Commit the transaction.
    *
    * <p>Example of committing a transaction.

@@ -118,8 +118,16 @@ public class ITDatastoreSnippets {
   }
 
   @Test
+  public void testEntityAddGet() {
+    String key = registerKey("my_single_key_add");
+    datastoreSnippets.addSingleEntity(key);
+    Entity entity = datastoreSnippets.getEntityWithKey(key);
+    assertEquals("value", entity.getString("propertyName"));
+  }
+
+  @Test
   public void testEntityPutGet() {
-    String key = registerKey("my_single_key");
+    String key = registerKey("my_single_key_put");
     datastoreSnippets.putSingleEntity(key);
     Entity entity = datastoreSnippets.getEntityWithKey(key);
     assertEquals("value", entity.getString("propertyName"));
@@ -129,6 +137,17 @@ public class ITDatastoreSnippets {
   public void testBatchEntityCrud() {
     String key1 = registerKey("batch_key1");
     String key2 = registerKey("batch_key2");
+
+    datastoreSnippets.batchAddEntities(key1, key2);
+
+    assertNotNull(datastoreSnippets.getEntityWithKey(key1));
+    assertNotNull(datastoreSnippets.getEntityWithKey(key2));
+
+    datastoreSnippets.batchDeleteEntities(key1, key2);
+
+    assertNull(datastoreSnippets.getEntityWithKey(key1));
+    assertNull(datastoreSnippets.getEntityWithKey(key2));
+
     datastoreSnippets.batchPutEntities(key1, key2);
 
     assertNotNull(datastoreSnippets.getEntityWithKey(key1));

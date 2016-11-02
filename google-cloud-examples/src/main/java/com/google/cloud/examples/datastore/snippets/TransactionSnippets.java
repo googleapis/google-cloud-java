@@ -26,12 +26,15 @@ import com.google.api.client.util.Lists;
 import com.google.cloud.datastore.Datastore;
 import com.google.cloud.datastore.DatastoreException;
 import com.google.cloud.datastore.Entity;
+import com.google.cloud.datastore.FullEntity;
+import com.google.cloud.datastore.IncompleteKey;
 import com.google.cloud.datastore.Key;
 import com.google.cloud.datastore.KeyFactory;
 import com.google.cloud.datastore.Query;
 import com.google.cloud.datastore.QueryResults;
 import com.google.cloud.datastore.StructuredQuery.PropertyFilter;
 import com.google.cloud.datastore.Transaction;
+import com.google.cloud.datastore.Transaction.Response;
 
 import java.util.Iterator;
 import java.util.List;
@@ -134,6 +137,174 @@ public class TransactionSnippets {
     transaction.commit();
     // [END run]
     return entities;
+  }
+
+  /**
+   * Example of adding a single entity.
+   */
+  // [TARGET add(FullEntity)]
+  // [VARIABLE "my_key_name"]
+  public void addSingleEntity(String keyName) {
+    Datastore datastore = transaction.getDatastore();
+    // [START addSingleEntity]
+    Key key = datastore.newKeyFactory().setKind("MyKind").newKey(keyName);
+    Entity.Builder entityBuilder = Entity.newBuilder(key);
+    entityBuilder.set("propertyName", "value");
+    Entity entity = entityBuilder.build();
+    transaction.add(entity);
+    transaction.commit();
+    // [END addSingleEntity]
+  }
+
+  /**
+   * Example of adding multiple entities.
+   */
+  // [TARGET add(FullEntity...)]
+  // [VARIABLE "my_key_name1"]
+  // [VARIABLE "my_key_name2"]
+  public void multipleAddEntities(String keyName1, String keyName2) {
+    Datastore datastore = transaction.getDatastore();
+    // [START multipleAddEntities]
+    Key key1 = datastore.newKeyFactory().setKind("MyKind").newKey(keyName1);
+    Entity.Builder entityBuilder1 = Entity.newBuilder(key1);
+    entityBuilder1.set("propertyName", "value1");
+    Entity entity1 = entityBuilder1.build();
+
+    Key key2 = datastore.newKeyFactory().setKind("MyKind").newKey(keyName2);
+    Entity.Builder entityBuilder2 = Entity.newBuilder(key2);
+    entityBuilder2.set("propertyName", "value2");
+    Entity entity2 = entityBuilder2.build();
+
+    transaction.add(entity1, entity2);
+    transaction.commit();
+    // [END multipleAddEntities]
+  }
+
+  /**
+   * Example of updating multiple entities.
+   */
+  // [TARGET update(Entity...)]
+  // [VARIABLE "my_key_name1"]
+  // [VARIABLE "my_key_name2"]
+  public void multipleUpdateEntities(String keyName1, String keyName2) {
+    Datastore datastore = transaction.getDatastore();
+    // [START multipleUpdateEntities]
+    Key key1 = datastore.newKeyFactory().setKind("MyKind").newKey(keyName1);
+    Entity.Builder entityBuilder1 = Entity.newBuilder(key1);
+    entityBuilder1.set("propertyName", "value3");
+    Entity entity1 = entityBuilder1.build();
+
+    Key key2 = datastore.newKeyFactory().setKind("MyKind").newKey(keyName2);
+    Entity.Builder entityBuilder2 = Entity.newBuilder(key2);
+    entityBuilder2.set("propertyName", "value4");
+    Entity entity2 = entityBuilder2.build();
+
+    transaction.update(entity1, entity2);
+    transaction.commit();
+    // [END multipleUpdateEntities]
+  }
+
+  /**
+   * Example of adding multiple entities with deferred id allocation.
+   */
+  // [TARGET addWithDeferredIdAllocation(FullEntity...)]
+  public List<Key> multipleAddEntitiesDeferredId() {
+    Datastore datastore = transaction.getDatastore();
+    // [START multipleAddEntitiesDeferredId]
+    IncompleteKey key1 = datastore.newKeyFactory().setKind("MyKind").newKey();
+    FullEntity.Builder entityBuilder1 = FullEntity.newBuilder(key1);
+    entityBuilder1.set("propertyName", "value1");
+    FullEntity entity1 = entityBuilder1.build();
+
+    IncompleteKey key2 = datastore.newKeyFactory().setKind("MyKind").newKey();
+    FullEntity.Builder entityBuilder2 = FullEntity.newBuilder(key2);
+    entityBuilder2.set("propertyName", "value2");
+    FullEntity entity2 = entityBuilder2.build();
+
+    transaction.addWithDeferredIdAllocation(entity1, entity2);
+    Response response = transaction.commit();
+    // [END multipleAddEntitiesDeferredId]
+    return response.getGeneratedKeys();
+  }
+
+  /**
+   * Example of putting multiple entities with deferred id allocation.
+   */
+  // [TARGET putWithDeferredIdAllocation(FullEntity...)]
+  public List<Key> multiplePutEntitiesDeferredId() {
+    Datastore datastore = transaction.getDatastore();
+    // [START multiplePutEntitiesDeferredId]
+    IncompleteKey key1 = datastore.newKeyFactory().setKind("MyKind").newKey();
+    FullEntity.Builder entityBuilder1 = FullEntity.newBuilder(key1);
+    entityBuilder1.set("propertyName", "value1");
+    FullEntity entity1 = entityBuilder1.build();
+
+    IncompleteKey key2 = datastore.newKeyFactory().setKind("MyKind").newKey();
+    FullEntity.Builder entityBuilder2 = FullEntity.newBuilder(key2);
+    entityBuilder2.set("propertyName", "value2");
+    FullEntity entity2 = entityBuilder2.build();
+
+    transaction.putWithDeferredIdAllocation(entity1, entity2);
+    Response response = transaction.commit();
+    // [END multiplePutEntitiesDeferredId]
+    return response.getGeneratedKeys();
+  }
+
+  /**
+   * Example of deleting multiple entities.
+   */
+  // [TARGET delete(Key...)]
+  // [VARIABLE "my_key_name1"]
+  // [VARIABLE "my_key_name2"]
+  public void multipleDeleteEntities(String keyName1, String keyName2) {
+    Datastore datastore = transaction.getDatastore();
+    // [START multipleDeleteEntities]
+    Key key1 = datastore.newKeyFactory().setKind("MyKind").newKey(keyName1);
+    Key key2 = datastore.newKeyFactory().setKind("MyKind").newKey(keyName2);
+    transaction.delete(key1, key2);
+    transaction.commit();
+    // [END multipleDeleteEntities]
+  }
+
+  /**
+   * Example of putting a single entity.
+   */
+  // [TARGET put(FullEntity)]
+  // [VARIABLE "my_key_name"]
+  public void putSingleEntity(String keyName) {
+    Datastore datastore = transaction.getDatastore();
+    // [START putSingleEntity]
+    Key key = datastore.newKeyFactory().setKind("MyKind").newKey(keyName);
+    Entity.Builder entityBuilder = Entity.newBuilder(key);
+    entityBuilder.set("propertyName", "value");
+    Entity entity = entityBuilder.build();
+    transaction.put(entity);
+    transaction.commit();
+    // [END putSingleEntity]
+  }
+
+  /**
+   * Example of putting multiple entities.
+   */
+  // [TARGET put(FullEntity...)]
+  // [VARIABLE "my_key_name1"]
+  // [VARIABLE "my_key_name2"]
+  public void multiplePutEntities(String keyName1, String keyName2) {
+    Datastore datastore = transaction.getDatastore();
+    // [START multiplePutEntities]
+    Key key1 = datastore.newKeyFactory().setKind("MyKind").newKey(keyName1);
+    Entity.Builder entityBuilder1 = Entity.newBuilder(key1);
+    entityBuilder1.set("propertyName", "value1");
+    Entity entity1 = entityBuilder1.build();
+
+    Key key2 = datastore.newKeyFactory().setKind("MyKind").newKey(keyName2);
+    Entity.Builder entityBuilder2 = Entity.newBuilder(key2);
+    entityBuilder2.set("propertyName", "value2");
+    Entity entity2 = entityBuilder2.build();
+
+    transaction.put(entity1, entity2);
+    transaction.commit();
+    // [END multiplePutEntities]
   }
 
   /**
