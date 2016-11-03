@@ -90,6 +90,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <github.global.server>github</github.global.server>
+    <grpc.version>1.0.1</grpc.version>
     <site.installationModule>google-cloud</site.installationModule>
   </properties>
   <modules>
