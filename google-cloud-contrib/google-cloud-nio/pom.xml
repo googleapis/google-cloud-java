@@ -106,6 +106,7 @@
               <shadedPattern>shaded.cloud-nio.com</shadedPattern>
               <excludes>
                 <exclude>com.google.cloud.**</exclude>
+                <exclude>com.google.auto.**</exclude>
               </excludes>
             </relocation>
             <relocation>
@@ -115,10 +116,6 @@
             <relocation>
               <pattern>io</pattern>
               <shadedPattern>shaded.cloud-nio.io</shadedPattern>
-            </relocation>
-            <relocation>
-              <pattern>javax</pattern>
-              <shadedPattern>shaded.cloud-nio.javax</shadedPattern>
             </relocation>
             <relocation>
               <pattern>okio</pattern>
