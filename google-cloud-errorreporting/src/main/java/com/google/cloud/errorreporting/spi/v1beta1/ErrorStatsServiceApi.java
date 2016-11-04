@@ -1,21 +1,24 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016, Google Inc. All rights reserved.
  *
- * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
- * in compliance with the License. You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- * http://www.apache.org/licenses/LICENSE-2.0
+ *     http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing, software distributed under the License
- * is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
- * or implied. See the License for the specific language governing permissions and limitations under
- * the License.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
 package com.google.cloud.errorreporting.spi.v1beta1;
 
 import static com.google.cloud.errorreporting.spi.v1beta1.PagedResponseWrappers.ListEventsPagedResponse;
 import static com.google.cloud.errorreporting.spi.v1beta1.PagedResponseWrappers.ListGroupStatsPagedResponse;
 
+import com.google.api.gax.grpc.ChannelAndExecutor;
 import com.google.api.gax.grpc.UnaryCallable;
 import com.google.api.gax.protobuf.PathTemplate;
 import com.google.devtools.clouderrorreporting.v1beta1.DeleteEventsRequest;
@@ -77,18 +80,22 @@ import java.util.concurrent.ScheduledExecutorService;
  *
  * <pre>
  * <code>
- * ErrorStatsServiceSettings errorStatsServiceSettings = ErrorStatsServiceSettings.defaultBuilder()
- *     .provideChannelWith(myCredentials)
- *     .build();
- * ErrorStatsServiceApi errorStatsServiceApi = ErrorStatsServiceApi.create(errorStatsServiceSettings);
+ * InstantiatingChannelProvider channelProvider =
+ *     ErrorStatsServiceSettings.defaultChannelProviderBuilder()
+ *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
+ *         .build();
+ * ErrorStatsServiceSettings errorStatsServiceSettings =
+ *     ErrorStatsServiceSettings.defaultBuilder().setChannelProvider(channelProvider).build();
+ * ErrorStatsServiceApi errorStatsServiceApi =
+ *     ErrorStatsServiceApi.create(errorStatsServiceSettings);
  * </code>
  * </pre>
  */
 @javax.annotation.Generated("by GAPIC")
 public class ErrorStatsServiceApi implements AutoCloseable {
   private final ErrorStatsServiceSettings settings;
-  private final ManagedChannel channel;
   private final ScheduledExecutorService executor;
+  private final ManagedChannel channel;
   private final List<AutoCloseable> closeables = new ArrayList<>();
 
   private final UnaryCallable<ListGroupStatsRequest, ListGroupStatsResponse> listGroupStatsCallable;
@@ -98,12 +105,32 @@ public class ErrorStatsServiceApi implements AutoCloseable {
   private final UnaryCallable<ListEventsRequest, ListEventsPagedResponse> listEventsPagedCallable;
   private final UnaryCallable<DeleteEventsRequest, DeleteEventsResponse> deleteEventsCallable;
 
+  private static final PathTemplate GROUP_PATH_TEMPLATE =
+      PathTemplate.createWithoutUrlEncoding("projects/{project}/groups/{group}");
+
   private static final PathTemplate PROJECT_PATH_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding("projects/{project}");
+
+  /** Formats a string containing the fully-qualified path to represent a group resource. */
+  public static final String formatGroupName(String project, String group) {
+    return GROUP_PATH_TEMPLATE.instantiate(
+        "project", project,
+        "group", group);
+  }
 
   /** Formats a string containing the fully-qualified path to represent a project resource. */
   public static final String formatProjectName(String project) {
     return PROJECT_PATH_TEMPLATE.instantiate("project", project);
+  }
+
+  /** Parses the project from the given fully-qualified path which represents a group resource. */
+  public static final String parseProjectFromGroupName(String groupName) {
+    return GROUP_PATH_TEMPLATE.parse(groupName).get("project");
+  }
+
+  /** Parses the group from the given fully-qualified path which represents a group resource. */
+  public static final String parseGroupFromGroupName(String groupName) {
+    return GROUP_PATH_TEMPLATE.parse(groupName).get("group");
   }
 
   /** Parses the project from the given fully-qualified path which represents a project resource. */
@@ -131,8 +158,9 @@ public class ErrorStatsServiceApi implements AutoCloseable {
    */
   protected ErrorStatsServiceApi(ErrorStatsServiceSettings settings) throws IOException {
     this.settings = settings;
-    this.executor = settings.getExecutorProvider().getOrBuildExecutor();
-    this.channel = settings.getChannelProvider().getOrBuildChannel(this.executor);
+    ChannelAndExecutor channelAndExecutor = settings.getChannelAndExecutor();
+    this.executor = channelAndExecutor.getExecutor();
+    this.channel = channelAndExecutor.getChannel();
 
     this.listGroupStatsCallable =
         UnaryCallable.create(settings.listGroupStatsSettings(), this.channel, this.executor);
