@@ -1,23 +1,29 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016, Google Inc. All rights reserved.
  *
- * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
- * in compliance with the License. You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- * http://www.apache.org/licenses/LICENSE-2.0
+ *     http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing, software distributed under the License
- * is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
- * or implied. See the License for the specific language governing permissions and limitations under
- * the License.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
 package com.google.cloud.trace.spi.v1;
 
 import static com.google.cloud.trace.spi.v1.PagedResponseWrappers.ListTracesPagedResponse;
 
-import com.google.api.gax.core.ConnectionSettings;
+import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.RetrySettings;
 import com.google.api.gax.grpc.CallContext;
+import com.google.api.gax.grpc.ChannelProvider;
+import com.google.api.gax.grpc.ExecutorProvider;
+import com.google.api.gax.grpc.InstantiatingChannelProvider;
+import com.google.api.gax.grpc.InstantiatingExecutorProvider;
 import com.google.api.gax.grpc.PagedCallSettings;
 import com.google.api.gax.grpc.PagedListDescriptor;
 import com.google.api.gax.grpc.PagedListResponseFactory;
@@ -25,7 +31,6 @@ import com.google.api.gax.grpc.ServiceApiSettings;
 import com.google.api.gax.grpc.SimpleCallSettings;
 import com.google.api.gax.grpc.UnaryCallSettings;
 import com.google.api.gax.grpc.UnaryCallable;
-import com.google.auth.Credentials;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -38,11 +43,8 @@ import com.google.devtools.cloudtrace.v1.PatchTracesRequest;
 import com.google.devtools.cloudtrace.v1.Trace;
 import com.google.devtools.cloudtrace.v1.TraceServiceGrpc;
 import com.google.protobuf.Empty;
-import io.grpc.ManagedChannel;
 import io.grpc.Status;
 import java.io.IOException;
-import java.util.List;
-import java.util.concurrent.ScheduledExecutorService;
 import org.joda.time.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
@@ -108,6 +110,11 @@ public class TraceServiceSettings extends ServiceApiSettings {
     return listTracesSettings;
   }
 
+  /** Returns a builder for the default ExecutorProvider for this service. */
+  public static InstantiatingExecutorProvider.Builder defaultExecutorProviderBuilder() {
+    return InstantiatingExecutorProvider.newBuilder();
+  }
+
   /** Returns the default service address. */
   public static String getDefaultServiceAddress() {
     return DEFAULT_SERVICE_ADDRESS;
@@ -121,6 +128,19 @@ public class TraceServiceSettings extends ServiceApiSettings {
   /** Returns the default service scopes. */
   public static ImmutableList<String> getDefaultServiceScopes() {
     return DEFAULT_SERVICE_SCOPES;
+  }
+
+  /** Returns a builder for the default credentials for this service. */
+  public static GoogleCredentialsProvider.Builder defaultCredentialsProviderBuilder() {
+    return GoogleCredentialsProvider.newBuilder().setScopesToApply(DEFAULT_SERVICE_SCOPES);
+  }
+
+  /** Returns a builder for the default ChannelProvider for this service. */
+  public static InstantiatingChannelProvider.Builder defaultChannelProviderBuilder() {
+    return InstantiatingChannelProvider.newBuilder()
+        .setServiceAddress(DEFAULT_SERVICE_ADDRESS)
+        .setPort(DEFAULT_SERVICE_PORT)
+        .setCredentialsProvider(defaultCredentialsProviderBuilder().build());
   }
 
   /** Returns a builder for this class with recommended defaults. */
@@ -139,13 +159,7 @@ public class TraceServiceSettings extends ServiceApiSettings {
   }
 
   private TraceServiceSettings(Builder settingsBuilder) throws IOException {
-    super(
-        settingsBuilder.getChannelProvider(),
-        settingsBuilder.getExecutorProvider(),
-        settingsBuilder.getGeneratorName(),
-        settingsBuilder.getGeneratorVersion(),
-        settingsBuilder.getClientLibName(),
-        settingsBuilder.getClientLibVersion());
+    super(settingsBuilder.getExecutorProvider(), settingsBuilder.getChannelProvider());
 
     patchTracesSettings = settingsBuilder.patchTracesSettings().build();
     getTraceSettings = settingsBuilder.getTraceSettings().build();
@@ -245,7 +259,7 @@ public class TraceServiceSettings extends ServiceApiSettings {
     }
 
     private Builder() {
-      super(s_getDefaultConnectionSettingsBuilder().build());
+      super(defaultChannelProviderBuilder().build());
 
       patchTracesSettings = SimpleCallSettings.newBuilder(TraceServiceGrpc.METHOD_PATCH_TRACES);
 
@@ -293,57 +307,15 @@ public class TraceServiceSettings extends ServiceApiSettings {
               patchTracesSettings, getTraceSettings, listTracesSettings);
     }
 
-    private static ConnectionSettings.Builder s_getDefaultConnectionSettingsBuilder() {
-      return ConnectionSettings.newBuilder()
-          .setServiceAddress(DEFAULT_SERVICE_ADDRESS)
-          .setPort(DEFAULT_SERVICE_PORT)
-          .provideCredentialsWith(DEFAULT_SERVICE_SCOPES);
-    }
-
     @Override
-    protected ConnectionSettings.Builder getDefaultConnectionSettingsBuilder() {
-      return s_getDefaultConnectionSettingsBuilder();
-    }
-
-    @Override
-    public Builder provideExecutorWith(ScheduledExecutorService executor, boolean shouldAutoClose) {
-      super.provideExecutorWith(executor, shouldAutoClose);
+    public Builder setExecutorProvider(ExecutorProvider executorProvider) {
+      super.setExecutorProvider(executorProvider);
       return this;
     }
 
     @Override
-    public Builder provideChannelWith(ManagedChannel channel, boolean shouldAutoClose) {
-      super.provideChannelWith(channel, shouldAutoClose);
-      return this;
-    }
-
-    @Override
-    public Builder provideChannelWith(ConnectionSettings settings) {
-      super.provideChannelWith(settings);
-      return this;
-    }
-
-    @Override
-    public Builder provideChannelWith(Credentials credentials) {
-      super.provideChannelWith(credentials);
-      return this;
-    }
-
-    @Override
-    public Builder provideChannelWith(List<String> scopes) {
-      super.provideChannelWith(scopes);
-      return this;
-    }
-
-    @Override
-    public Builder setGeneratorHeader(String name, String version) {
-      super.setGeneratorHeader(name, version);
-      return this;
-    }
-
-    @Override
-    public Builder setClientLibHeader(String name, String version) {
-      super.setClientLibHeader(name, version);
+    public Builder setChannelProvider(ChannelProvider channelProvider) {
+      super.setChannelProvider(channelProvider);
       return this;
     }
 
