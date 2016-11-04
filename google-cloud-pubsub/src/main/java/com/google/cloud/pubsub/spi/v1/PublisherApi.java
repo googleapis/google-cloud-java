@@ -1,21 +1,24 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016, Google Inc. All rights reserved.
  *
- * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
- * in compliance with the License. You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- * http://www.apache.org/licenses/LICENSE-2.0
+ *     http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing, software distributed under the License
- * is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
- * or implied. See the License for the specific language governing permissions and limitations under
- * the License.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
 package com.google.cloud.pubsub.spi.v1;
 
 import static com.google.cloud.pubsub.spi.v1.PagedResponseWrappers.ListTopicSubscriptionsPagedResponse;
 import static com.google.cloud.pubsub.spi.v1.PagedResponseWrappers.ListTopicsPagedResponse;
 
+import com.google.api.gax.grpc.ChannelAndExecutor;
 import com.google.api.gax.grpc.UnaryCallable;
 import com.google.api.gax.protobuf.PathTemplate;
 import com.google.iam.v1.GetIamPolicyRequest;
@@ -86,18 +89,22 @@ import java.util.concurrent.ScheduledExecutorService;
  *
  * <pre>
  * <code>
- * PublisherSettings publisherSettings = PublisherSettings.defaultBuilder()
- *     .provideChannelWith(myCredentials)
- *     .build();
- * PublisherApi publisherApi = PublisherApi.create(publisherSettings);
+ * InstantiatingChannelProvider channelProvider =
+ *     PublisherSettings.defaultChannelProviderBuilder()
+ *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
+ *         .build();
+ * PublisherSettings publisherSettings =
+ *     PublisherSettings.defaultBuilder().setChannelProvider(channelProvider).build();
+ * PublisherApi publisherApi =
+ *     PublisherApi.create(publisherSettings);
  * </code>
  * </pre>
  */
 @javax.annotation.Generated("by GAPIC")
 public class PublisherApi implements AutoCloseable {
   private final PublisherSettings settings;
-  private final ManagedChannel channel;
   private final ScheduledExecutorService executor;
+  private final ManagedChannel channel;
   private final List<AutoCloseable> closeables = new ArrayList<>();
 
   private final UnaryCallable<Topic, Topic> createTopicCallable;
@@ -118,12 +125,22 @@ public class PublisherApi implements AutoCloseable {
   private static final PathTemplate PROJECT_PATH_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding("projects/{project}");
 
+  private static final PathTemplate SUBSCRIPTION_PATH_TEMPLATE =
+      PathTemplate.createWithoutUrlEncoding("projects/{project}/subscriptions/{subscription}");
+
   private static final PathTemplate TOPIC_PATH_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding("projects/{project}/topics/{topic}");
 
   /** Formats a string containing the fully-qualified path to represent a project resource. */
   public static final String formatProjectName(String project) {
     return PROJECT_PATH_TEMPLATE.instantiate("project", project);
+  }
+
+  /** Formats a string containing the fully-qualified path to represent a subscription resource. */
+  public static final String formatSubscriptionName(String project, String subscription) {
+    return SUBSCRIPTION_PATH_TEMPLATE.instantiate(
+        "project", project,
+        "subscription", subscription);
   }
 
   /** Formats a string containing the fully-qualified path to represent a topic resource. */
@@ -136,6 +153,22 @@ public class PublisherApi implements AutoCloseable {
   /** Parses the project from the given fully-qualified path which represents a project resource. */
   public static final String parseProjectFromProjectName(String projectName) {
     return PROJECT_PATH_TEMPLATE.parse(projectName).get("project");
+  }
+
+  /**
+   * Parses the project from the given fully-qualified path which represents a subscription
+   * resource.
+   */
+  public static final String parseProjectFromSubscriptionName(String subscriptionName) {
+    return SUBSCRIPTION_PATH_TEMPLATE.parse(subscriptionName).get("project");
+  }
+
+  /**
+   * Parses the subscription from the given fully-qualified path which represents a subscription
+   * resource.
+   */
+  public static final String parseSubscriptionFromSubscriptionName(String subscriptionName) {
+    return SUBSCRIPTION_PATH_TEMPLATE.parse(subscriptionName).get("subscription");
   }
 
   /** Parses the project from the given fully-qualified path which represents a topic resource. */
@@ -167,8 +200,9 @@ public class PublisherApi implements AutoCloseable {
    */
   protected PublisherApi(PublisherSettings settings) throws IOException {
     this.settings = settings;
-    this.executor = settings.getExecutorProvider().getOrBuildExecutor();
-    this.channel = settings.getChannelProvider().getOrBuildChannel(this.executor);
+    ChannelAndExecutor channelAndExecutor = settings.getChannelAndExecutor();
+    this.executor = channelAndExecutor.getExecutor();
+    this.channel = channelAndExecutor.getChannel();
 
     this.createTopicCallable =
         UnaryCallable.create(settings.createTopicSettings(), this.channel, this.executor);
