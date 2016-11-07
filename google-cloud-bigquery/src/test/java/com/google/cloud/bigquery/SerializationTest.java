@@ -17,6 +17,7 @@
 package com.google.cloud.bigquery;
 
 import com.google.cloud.BaseSerializationTest;
+import com.google.cloud.NoCredentials;
 import com.google.cloud.Restorable;
 import com.google.cloud.bigquery.StandardTableDefinition.StreamingBuffer;
 import com.google.common.collect.ImmutableList;
@@ -228,7 +229,7 @@ public class SerializationTest extends BaseSerializationTest {
   protected Serializable[] serializableObjects() {
     BigQueryOptions options = BigQueryOptions.newBuilder()
         .setProjectId("p1")
-        .setNoCredentials()
+        .setCredentials(NoCredentials.getInstance())
         .build();
     BigQueryOptions otherOptions = options.toBuilder().setProjectId("p2").build();
     return new Serializable[]{DOMAIN_ACCESS, GROUP_ACCESS, USER_ACCESS, VIEW_ACCESS, DATASET_ID,

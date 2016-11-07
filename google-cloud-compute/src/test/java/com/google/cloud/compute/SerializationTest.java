@@ -17,6 +17,7 @@
 package com.google.cloud.compute;
 
 import com.google.cloud.BaseSerializationTest;
+import com.google.cloud.NoCredentials;
 import com.google.cloud.Restorable;
 import com.google.cloud.RetryParams;
 import com.google.cloud.compute.AttachedDisk.CreateDiskConfiguration;
@@ -264,7 +265,7 @@ public class SerializationTest extends BaseSerializationTest {
   protected Serializable[] serializableObjects() {
     ComputeOptions options = ComputeOptions.newBuilder()
         .setProjectId("p1")
-        .setNoCredentials()
+        .setCredentials(NoCredentials.getInstance())
         .build();
     ComputeOptions otherOptions = options.toBuilder()
         .setProjectId("p2")

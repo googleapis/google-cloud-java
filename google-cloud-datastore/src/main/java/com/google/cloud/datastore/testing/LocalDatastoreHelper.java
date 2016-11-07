@@ -19,6 +19,7 @@ package com.google.cloud.datastore.testing;
 import static com.google.common.base.MoreObjects.firstNonNull;
 import static com.google.common.base.Preconditions.checkArgument;
 
+import com.google.cloud.NoCredentials;
 import com.google.cloud.RetryParams;
 import com.google.cloud.datastore.DatastoreOptions;
 import com.google.common.base.Strings;
@@ -639,7 +640,7 @@ public class LocalDatastoreHelper {
     return DatastoreOptions.newBuilder()
         .setProjectId(projectId)
         .setHost("localhost:" + Integer.toString(port))
-        .setNoCredentials()
+        .setCredentials(NoCredentials.getInstance())
         .setRetryParams(RetryParams.noRetries());
   }
 

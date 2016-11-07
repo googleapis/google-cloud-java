@@ -320,7 +320,7 @@ public abstract class GrpcServiceOptions<ServiceT extends Service<OptionsT>, Ser
         .setServiceAddress(hostAndPort.getHostText())
         .setPort(hostAndPort.getPort());
     Credentials scopedCredentials = getScopedCredentials();
-    if (scopedCredentials != null) {
+    if (scopedCredentials != null && scopedCredentials != NoCredentials.getInstance()) {
       builder.provideCredentialsWith(scopedCredentials);
     }
     return builder;

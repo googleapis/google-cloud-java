@@ -18,6 +18,7 @@ package com.google.cloud.pubsub;
 
 import com.google.cloud.BaseSerializationTest;
 import com.google.cloud.GrpcServiceOptions.ExecutorFactory;
+import com.google.cloud.NoCredentials;
 import com.google.cloud.Restorable;
 import com.google.cloud.pubsub.PubSub.ListOption;
 import com.google.cloud.pubsub.PubSub.PullOption;
@@ -29,7 +30,7 @@ public class SerializationTest extends BaseSerializationTest {
 
   private static final PubSub PUB_SUB = PubSubOptions.newBuilder()
       .setProjectId("p")
-      .setNoCredentials()
+      .setCredentials(NoCredentials.getInstance())
       .setHost("localhost")
       .build().getService();
   private static final Message MESSAGE = Message.of("payload");

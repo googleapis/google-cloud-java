@@ -84,7 +84,6 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
   private final String serviceRpcFactoryClassName;
   private final String serviceFactoryClassName;
   private final Clock clock;
-  private final boolean noCredentials;
   private final Credentials credentials;
 
   private transient ServiceRpcFactory<ServiceRpcT, OptionsT> serviceRpcFactory;
@@ -106,7 +105,6 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
 
     private String projectId;
     private String host;
-    private boolean noCredentials;
     private Credentials credentials;
     private RetryParams retryParams;
     private ServiceFactory<ServiceT, OptionsT> serviceFactory;
@@ -118,7 +116,6 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
     protected Builder(ServiceOptions<ServiceT, ServiceRpcT, OptionsT> options) {
       projectId = options.projectId;
       host = options.host;
-      noCredentials = options.noCredentials;
       credentials = options.credentials;
       retryParams = options.retryParams;
       serviceFactory = options.serviceFactory;
@@ -214,29 +211,18 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
     }
 
     /**
-     * Sets the service authentication credentials. If this method or {@link #setNoCredentials() are
-     * not used on the builder, {@link GoogleCredentials#getApplicationDefault()} will be used to
-     * attempt getting credentials from the environment.
+     * Sets the service authentication credentials. If no credentials are set,
+     * {@link GoogleCredentials#getApplicationDefault()} will be used to attempt getting credentials
+     * from the environment. Use {@link NoCredentials#getInstance()} to skip authentication, this is
+     * typically useful when using local service emulators.
      *
      * @param credentials authentication credentials, should not be {@code null}
      * @return the builder
      * @throws NullPointerException if {@code credentials} is {@code null}. To disable
-     *     authentication use {@link Builder#setNoCredentials()}
+     *     authentication use {@link NoCredentials#getInstance()}
      */
     public B setCredentials(Credentials credentials) {
       this.credentials = checkNotNull(credentials);
-      this.noCredentials = false;
-      return self();
-    }
-
-    /**
-     * Sets that no credentials should be used. This is typically useful when using the local
-     * service emulators, such as {@code LocalDatastoreHelper}, {@code LocalPubsubHelper} and
-     * {@code LocalResourceManagerHelper}.
-     */
-    public B setNoCredentials() {
-      this.noCredentials = true;
-      this.credentials = null;
       return self();
     }
 
@@ -296,9 +282,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
           + "or the environment.  Please set a project ID using the builder.");
     }
     host = firstNonNull(builder.host, getDefaultHost());
-    noCredentials = builder.noCredentials;
-    credentials = builder.credentials != null || noCredentials
-        ? builder.credentials : defaultCredentials();
+    credentials = builder.credentials != null ? builder.credentials : defaultCredentials();
     retryParams = firstNonNull(builder.retryParams, defaultRetryParams());
     serviceFactory = firstNonNull(builder.serviceFactory,
         getFromServiceLoader(serviceFactoryClass, getDefaultServiceFactory()));
@@ -540,8 +524,8 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
    */
   public Credentials getScopedCredentials() {
     Credentials credentialsToReturn = credentials;
-    if (credentials instanceof GoogleCredentials &&
-        ((GoogleCredentials) credentials).createScopedRequired()) {
+    if (credentials instanceof GoogleCredentials
+        && ((GoogleCredentials) credentials).createScopedRequired()) {
       credentialsToReturn = ((GoogleCredentials) credentials).createScoped(getScopes());
     }
     return credentialsToReturn;
@@ -626,13 +610,12 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
   }
 
   protected int baseHashCode() {
-    return Objects.hash(projectId, host, noCredentials, credentials, retryParams,
-        serviceFactoryClassName, serviceRpcFactoryClassName, clock);
+    return Objects.hash(projectId, host, credentials, retryParams, serviceFactoryClassName,
+        serviceRpcFactoryClassName, clock);
   }
 
   protected boolean baseEquals(ServiceOptions<?, ?, ?> other) {
-    return noCredentials == other.noCredentials
-        && Objects.equals(projectId, other.projectId)
+    return Objects.equals(projectId, other.projectId)
         && Objects.equals(host, other.host)
         && Objects.equals(credentials, other.credentials)
         && Objects.equals(retryParams, other.retryParams)

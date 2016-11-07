@@ -18,7 +18,6 @@ package com.google.cloud;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
-import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
@@ -84,7 +83,7 @@ public class ServiceOptionsTest {
           .build();
   private static final TestServiceOptions OPTIONS_NO_CREDENTIALS =
       TestServiceOptions.newBuilder()
-          .setNoCredentials()
+          .setCredentials(NoCredentials.getInstance())
           .setClock(TEST_CLOCK)
           .setHost("host")
           .setProjectId("project-id")
@@ -224,7 +223,7 @@ public class ServiceOptionsTest {
 
   @Test
   public void testBuilderNoCredentials() {
-    assertNull(OPTIONS_NO_CREDENTIALS.getCredentials());
+    assertEquals(NoCredentials.getInstance(), OPTIONS_NO_CREDENTIALS.getCredentials());
     assertSame(TEST_CLOCK, OPTIONS_NO_CREDENTIALS.getClock());
     assertEquals("host", OPTIONS_NO_CREDENTIALS.getHost());
     assertEquals("project-id", OPTIONS_NO_CREDENTIALS.getProjectId());

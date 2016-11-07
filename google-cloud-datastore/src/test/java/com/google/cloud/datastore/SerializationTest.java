@@ -19,6 +19,7 @@ package com.google.cloud.datastore;
 import static java.nio.charset.StandardCharsets.UTF_8;
 
 import com.google.cloud.BaseSerializationTest;
+import com.google.cloud.NoCredentials;
 import com.google.cloud.Restorable;
 import com.google.cloud.datastore.StructuredQuery.CompositeFilter;
 import com.google.cloud.datastore.StructuredQuery.OrderBy;
@@ -110,7 +111,7 @@ public class SerializationTest extends BaseSerializationTest {
   @Override
   protected java.io.Serializable[] serializableObjects() {
     DatastoreOptions options = DatastoreOptions.newBuilder()
-        .setNoCredentials()
+        .setCredentials(NoCredentials.getInstance())
         .setProjectId("ds1")
         .build();
     DatastoreOptions otherOptions = options.toBuilder().setNamespace("ns1").build();

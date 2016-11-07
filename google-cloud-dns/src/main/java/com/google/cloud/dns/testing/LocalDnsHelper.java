@@ -28,6 +28,7 @@ import com.google.api.services.dns.model.ManagedZone;
 import com.google.api.services.dns.model.Project;
 import com.google.api.services.dns.model.Quota;
 import com.google.api.services.dns.model.ResourceRecordSet;
+import com.google.cloud.NoCredentials;
 import com.google.cloud.dns.DnsOptions;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Joiner;
@@ -506,7 +507,7 @@ public class LocalDnsHelper {
     return DnsOptions.newBuilder()
         .setProjectId(PROJECT_ID)
         .setHost("http://localhost:" + port)
-        .setNoCredentials()
+        .setCredentials(NoCredentials.getInstance())
         .build();
   }
 

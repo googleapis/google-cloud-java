@@ -21,6 +21,7 @@ import static com.google.common.base.Preconditions.checkArgument;
 
 import com.google.auth.Credentials;
 import com.google.cloud.HttpServiceOptions;
+import com.google.cloud.NoCredentials;
 import com.google.cloud.translate.Translate.TranslateOption;
 import com.google.cloud.translate.spi.DefaultTranslateRpc;
 import com.google.cloud.translate.spi.TranslateRpc;
@@ -158,7 +159,7 @@ public class TranslateOptions extends
     @Override
     public TranslateOptions build() {
       // Auth credentials are not used by Translate
-      setNoCredentials();
+      setCredentials(NoCredentials.getInstance());
       return new TranslateOptions(this);
     }
   }

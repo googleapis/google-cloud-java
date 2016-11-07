@@ -17,6 +17,7 @@
 package com.google.cloud.dns;
 
 import com.google.cloud.BaseSerializationTest;
+import com.google.cloud.NoCredentials;
 import com.google.cloud.Restorable;
 import com.google.cloud.RetryParams;
 import com.google.common.collect.ImmutableList;
@@ -88,7 +89,7 @@ public class SerializationTest extends BaseSerializationTest {
   @Override
   protected Serializable[] serializableObjects() {
     DnsOptions options = DnsOptions.newBuilder()
-        .setNoCredentials()
+        .setCredentials(NoCredentials.getInstance())
         .setProjectId("id1")
         .build();
     DnsOptions otherOptions = options.toBuilder().build();

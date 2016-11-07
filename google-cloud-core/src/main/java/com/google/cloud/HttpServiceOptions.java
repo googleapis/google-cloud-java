@@ -215,7 +215,8 @@ public abstract class HttpServiceOptions<ServiceT extends Service<OptionsT>, Ser
   public HttpRequestInitializer getHttpRequestInitializer() {
     Credentials scopedCredentials = getScopedCredentials();
     final HttpRequestInitializer delegate =
-        scopedCredentials != null ? new HttpCredentialsAdapter(scopedCredentials) : null;
+        scopedCredentials != null && scopedCredentials != NoCredentials.getInstance()
+            ? new HttpCredentialsAdapter(scopedCredentials) : null;
     return new HttpRequestInitializer() {
       @Override
       public void initialize(HttpRequest httpRequest) throws IOException {
