@@ -117,7 +117,7 @@ Authentication
 
 `google-cloud-java` uses
 [https://github.com/google/google-auth-library-java](https://github.com/google/google-auth-library-java)
-to authenticate requests. `google-auth-library-java` supports a wide range of authentication types,
+to authenticate requests. `google-auth-library-java` supports a wide range of authentication types;
 see the project's [README](https://github.com/google/google-auth-library-java/blob/master/README.md)
 and [javadoc](http://google.github.io/google-auth-library-java/releases/0.6.0/apidocs/) for more
 details.
@@ -152,10 +152,10 @@ Storage storage = StorageOptions.getDefaultInstance().getService();
     ```
   * If running locally for development/testing, you can use the
   [Google Cloud SDK](https://cloud.google.com/sdk/). Create Application Default Credentials with
-  `gcloud auth application-default login`, `google-cloud` will automatically detect such
+  `gcloud auth application-default login`, and then `google-cloud` will automatically detect such
   credentials.
   * If you already have an OAuth2 access token, you can use it to authenticate (notice that in this
-  case the access token will not be automatically refreshed):
+  case, the access token will not be automatically refreshed):
   ```java
   Storage storage = StorageOptions.newBuilder()
       .setCredentials(new GoogleCredentials(new AccessToken(accessToken, expirationTime)))
@@ -167,7 +167,7 @@ If no credentials are provided, `google-cloud` will attempt to detect them from 
 using `GoogleCredentials.getApplicationDefault()` which will search for Default Application
 Credentials in the following locations (in order):
 
-1. Credentials file pointed to by the `GOOGLE_APPLICATION_CREDENTIALS` environment variable
+1. The credentials file pointed to by the `GOOGLE_APPLICATION_CREDENTIALS` environment variable
 2. Credentials provided by the Google Cloud SDK `gcloud auth application-default login` command
 3. Google App Engine built-in credentials
 4. Google Cloud Shell built-in credentials
