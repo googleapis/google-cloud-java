@@ -115,40 +115,63 @@ Most `google-cloud` libraries require a project ID.  There are multiple ways to 
 Authentication
 --------------
 
-First, ensure that the necessary Google Cloud APIs are enabled for your project. To do this, follow the instructions on the [authentication document](https://github.com/GoogleCloudPlatform/gcloud-common/blob/master/authentication/readme.md#authentication) shared by all the gcloud language libraries.
+`google-cloud-java` uses
+[https://github.com/google/google-auth-library-java](https://github.com/google/google-auth-library-java)
+to authenticate requests. `google-auth-library-java` supports a wide range of authentication types,
+see the project's [README](https://github.com/google/google-auth-library-java/blob/master/README.md)
+and [javadoc](http://google.github.io/google-auth-library-java/releases/0.6.0/apidocs/) for more
+details.
+
+To access Google Cloud services, you first need to ensure that the necessary Google Cloud APIs are
+enabled for your project. To do this, follow the instructions on the
+[authentication document](https://github.com/GoogleCloudPlatform/gcloud-common/blob/master/authentication/readme.md#authentication)
+shared by all the Google Cloud language libraries.
 
 Next, choose a method for authenticating API requests from within your project:
 
-1. When using `google-cloud` libraries from within Compute/App Engine, no additional authentication steps are necessary.
-2. When using `google-cloud` libraries elsewhere, there are three options:
-  * [Generate a JSON service account key](https://cloud.google.com/storage/docs/authentication?hl=en#service_accounts).  After downloading that key, you must do one of the following:
-    * Define the environment variable GOOGLE_APPLICATION_CREDENTIALS to be the location of the key.  For example:
+1. When using `google-cloud` libraries from within Compute/App Engine, no additional authentication
+steps are necessary. For example:
+```java
+Storage storage = StorageOptions.getDefaultInstance().getService();
+```
+2. When using `google-cloud` libraries elsewhere, there are several options:
+  * [Generate a JSON service account key](https://cloud.google.com/storage/docs/authentication?hl=en#service_accounts).
+  After downloading that key, you must do one of the following:
+    * Define the environment variable GOOGLE_APPLICATION_CREDENTIALS to be the location of the key.
+    For example:
     ```bash
     export GOOGLE_APPLICATION_CREDENTIALS=/path/to/my/key.json
     ```
-    * Supply the JSON credentials file when building the service options.  For example, this Storage object has the necessary permissions to interact with your Google Cloud Storage data:
+    * Supply the JSON credentials file when building the service options. For example, this Storage
+    object has the necessary permissions to interact with your Google Cloud Storage data:
     ```java
     Storage storage = StorageOptions.newBuilder()
-        .setAuthCredentials(AuthCredentials.createForJson(new FileInputStream("/path/to/my/key.json"))
+        .setCredentials(ServiceAccountCredentials.fromStream(new FileInputStream("/path/to/my/key.json"))
         .build()
         .getService();
     ```
-  * If running locally for development/testing, you can use Google Cloud SDK.  Download the SDK if you haven't already, then login using the SDK (`gcloud auth login` in command line).  Be sure to set your project ID as described above.
-  * If you already have an OAuth2 access token, you can use it to authenticate (notice that in this case the access token will not be automatically refreshed):
+  * If running locally for development/testing, you can use the
+  [Google Cloud SDK](https://cloud.google.com/sdk/). Create Application Default Credentials with
+  `gcloud auth application-default login`, `google-cloud` will automatically detect such
+  credentials.
+  * If you already have an OAuth2 access token, you can use it to authenticate (notice that in this
+  case the access token will not be automatically refreshed):
   ```java
   Storage storage = StorageOptions.newBuilder()
-      .setAuthCredentials(AuthCredentials.createFor("your_access_token"))
+      .setCredentials(new GoogleCredentials(new AccessToken(accessToken, expirationTime)))
       .build()
       .getService();
   ```
 
-`google-cloud` looks for credentials in the following order, stopping once it finds credentials:
+If no credentials are provided, `google-cloud` will attempt to detect them from the environment
+using `GoogleCredentials.getApplicationDefault()` which will search for Default Application
+Credentials in the following locations (in order):
 
-1. Credentials supplied when building the service options
-2. App Engine credentials
-3. Key file pointed to by the GOOGLE_APPLICATION_CREDENTIALS environment variable
-4. Google Cloud SDK credentials
-5. Compute Engine credentials
+1. Credentials file pointed to by the `GOOGLE_APPLICATION_CREDENTIALS` environment variable
+2. Credentials provided by the Google Cloud SDK `gcloud auth application-default login` command
+3. Google App Engine built-in credentials
+4. Google Cloud Shell built-in credentials
+5. Google Compute Engine built-in credentials
 
 Google Cloud BigQuery (Alpha)
 ----------------------

@@ -19,7 +19,7 @@ package com.google.cloud.translate;
 import static com.google.common.base.MoreObjects.firstNonNull;
 import static com.google.common.base.Preconditions.checkArgument;
 
-import com.google.cloud.AuthCredentials;
+import com.google.auth.Credentials;
 import com.google.cloud.HttpServiceOptions;
 import com.google.cloud.translate.Translate.TranslateOption;
 import com.google.cloud.translate.spi.DefaultTranslateRpc;
@@ -34,7 +34,7 @@ import java.util.Set;
 public class TranslateOptions extends
     HttpServiceOptions<Translate, TranslateRpc, TranslateOptions> {
 
-  private static final long serialVersionUID = 5997441123713672886L;
+  private static final long serialVersionUID = -572597134540398216L;
   private static final String API_KEY_ENV_NAME = "GOOGLE_API_KEY";
   private static final Set<String> SCOPES = ImmutableSet.of();
 
@@ -102,19 +102,8 @@ public class TranslateOptions extends
      *
      * @return the builder
      */
-    @Deprecated
-    public Builder authCredentials(AuthCredentials authCredentials) {
-      return setAuthCredentials(authCredentials);
-    }
-
-    /**
-     * Sets the service authentication credentials. Setting credentials has no impact on the
-     * {@link Translate} service.
-     *
-     * @return the builder
-     */
-    public Builder setAuthCredentials(AuthCredentials authCredentials) {
-      super.setAuthCredentials(authCredentials);
+    public Builder setCredentials(Credentials credentials) {
+      super.setCredentials(credentials);
       return self();
     }
 
@@ -169,7 +158,7 @@ public class TranslateOptions extends
     @Override
     public TranslateOptions build() {
       // Auth credentials are not used by Translate
-      setAuthCredentials(AuthCredentials.noAuth());
+      setNoCredentials();
       return new TranslateOptions(this);
     }
   }

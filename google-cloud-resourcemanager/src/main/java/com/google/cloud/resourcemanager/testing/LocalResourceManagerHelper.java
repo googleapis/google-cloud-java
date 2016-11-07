@@ -27,7 +27,6 @@ import com.google.api.services.cloudresourcemanager.model.Project;
 import com.google.api.services.cloudresourcemanager.model.SetIamPolicyRequest;
 import com.google.api.services.cloudresourcemanager.model.TestIamPermissionsRequest;
 import com.google.api.services.cloudresourcemanager.model.TestIamPermissionsResponse;
-import com.google.cloud.AuthCredentials;
 import com.google.cloud.resourcemanager.ResourceManagerOptions;
 import com.google.common.base.Joiner;
 import com.google.common.base.Objects;
@@ -686,7 +685,7 @@ public class LocalResourceManagerHelper {
   public ResourceManagerOptions getOptions() {
     return ResourceManagerOptions.newBuilder()
         .setHost("http://localhost:" + port)
-        .setAuthCredentials(AuthCredentials.noAuth())
+        .setNoCredentials()
         .build();
   }
 

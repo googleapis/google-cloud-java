@@ -19,16 +19,13 @@ package com.google.cloud.storage;
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 
-import com.google.cloud.AuthCredentials;
-import com.google.cloud.AuthCredentials.AppEngineAuthCredentials;
-import com.google.cloud.AuthCredentials.ServiceAccountAuthCredentials;
+import com.google.auth.ServiceAccountSigner;
+import com.google.auth.ServiceAccountSigner.SigningException;
 import com.google.cloud.FieldSelector;
 import com.google.cloud.FieldSelector.Helper;
 import com.google.cloud.Page;
 import com.google.cloud.ReadChannel;
 import com.google.cloud.Service;
-import com.google.cloud.ServiceAccountSigner;
-import com.google.cloud.ServiceAccountSigner.SigningException;
 import com.google.cloud.WriteChannel;
 import com.google.cloud.storage.Acl.Entity;
 import com.google.cloud.storage.spi.StorageRpc;
@@ -2036,21 +2033,21 @@ public interface Storage extends Service<StorageOptions> {
    * fixed amount of time, you can use this method to generate a URL that is only valid within a
    * certain time period. This is particularly useful if you don't want publicly accessible blobs,
    * but also don't want to require users to explicitly log in. Signing a URL requires
-   * a service account signer. If a {@link ServiceAccountAuthCredentials} or an
-   * {@link AppEngineAuthCredentials} was passed to
-   * {@link StorageOptions.Builder#setAuthCredentials(AuthCredentials)} or the default credentials
-   * are being used and the environment variable {@code GOOGLE_APPLICATION_CREDENTIALS} is set, then
-   * {@code signUrl} will use that credentials to sign the URL. If the credentials passed to
-   * {@link StorageOptions} do not implement {@link ServiceAccountSigner} (this is the case for
-   * Compute Engine credentials and Google Cloud SDK credentials) then {@code signUrl} will throw an
-   * {@link IllegalStateException} unless an implementation of {@link ServiceAccountSigner} is
-   * passed using the {@link SignUrlOption#signWith(ServiceAccountSigner)} option.
+   * a service account signer. If an instance of {@link com.google.auth.ServiceAccountSigner} was
+   * passed to {@link StorageOptions}' builder via {@code setCredentials(Credentials)} or the
+   * default credentials are being used and the environment variable
+   * {@code GOOGLE_APPLICATION_CREDENTIALS} is set or your application is running in App Engine,
+   * then {@code signUrl} will use that credentials to sign the URL. If the credentials passed to
+   * {@link StorageOptions} do not implement {@link ServiceAccountSigner} (this is the case, for
+   * instance, for Compute Engine credentials and Google Cloud SDK credentials) then {@code signUrl}
+   * will throw an {@link IllegalStateException} unless an implementation of
+   * {@link ServiceAccountSigner} is passed using the
+   * {@link SignUrlOption#signWith(ServiceAccountSigner)} option.
    *
    * <p>A service account signer is looked for in the following order:
    * <ol>
    *   <li>The signer passed with the option {@link SignUrlOption#signWith(ServiceAccountSigner)}
-   *   <li>The credentials passed to
-   *   {@link StorageOptions.Builder#setAuthCredentials(AuthCredentials)}
+   *   <li>The credentials passed to {@link StorageOptions}
    *   <li>The default credentials, if no credentials were passed to {@link StorageOptions}
    * </ol>
    *
@@ -2072,7 +2069,7 @@ public interface Storage extends Service<StorageOptions> {
    * String keyPath = "/path/to/key.json";
    * URL signedUrl = storage.signUrl(BlobInfo.newBuilder(bucketName, blobName).build(),
    *     14, TimeUnit.DAYS, SignUrlOption.signWith(
-   *         AuthCredentials.createForJson(new FileInputStream(keyPath))));
+   *         ServiceAccountCredentials.fromStream(new FileInputStream(keyPath))));
    * }</pre>
    *
    * @param blobInfo the blob associated with the signed URL

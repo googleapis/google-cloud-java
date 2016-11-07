@@ -16,7 +16,6 @@
 
 package com.google.cloud.bigquery;
 
-import com.google.cloud.AuthCredentials;
 import com.google.cloud.BaseSerializationTest;
 import com.google.cloud.Restorable;
 import com.google.cloud.bigquery.StandardTableDefinition.StreamingBuffer;
@@ -229,11 +228,11 @@ public class SerializationTest extends BaseSerializationTest {
   protected Serializable[] serializableObjects() {
     BigQueryOptions options = BigQueryOptions.newBuilder()
         .setProjectId("p1")
-        .setAuthCredentials(AuthCredentials.createForAppEngine())
+        .setNoCredentials()
         .build();
     BigQueryOptions otherOptions = options.toBuilder()
         .setProjectId("p2")
-        .setAuthCredentials(null)
+        .setCredentials(null)
         .build();
     return new Serializable[]{DOMAIN_ACCESS, GROUP_ACCESS, USER_ACCESS, VIEW_ACCESS, DATASET_ID,
         DATASET_INFO, TABLE_ID, CSV_OPTIONS, STREAMING_BUFFER, TABLE_DEFINITION,

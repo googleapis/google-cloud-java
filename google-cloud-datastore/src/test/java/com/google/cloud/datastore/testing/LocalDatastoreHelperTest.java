@@ -22,7 +22,6 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
-import com.google.cloud.AuthCredentials;
 import com.google.cloud.datastore.Datastore;
 import com.google.cloud.datastore.DatastoreException;
 import com.google.cloud.datastore.DatastoreOptions;
@@ -73,11 +72,11 @@ public class LocalDatastoreHelperTest {
     DatastoreOptions options = helper.getOptions();
     assertTrue(options.getProjectId().startsWith(PROJECT_ID_PREFIX));
     assertTrue(options.getHost().startsWith("localhost:"));
-    assertSame(AuthCredentials.noAuth(), options.getAuthCredentials());
+    assertNull(options.getCredentials());
     options = helper.getOptions(NAMESPACE);
     assertTrue(options.getProjectId().startsWith(PROJECT_ID_PREFIX));
     assertTrue(options.getHost().startsWith("localhost:"));
-    assertSame(AuthCredentials.noAuth(), options.getAuthCredentials());
+    assertNull(options.getCredentials());
     assertEquals(NAMESPACE, options.getNamespace());
   }
 

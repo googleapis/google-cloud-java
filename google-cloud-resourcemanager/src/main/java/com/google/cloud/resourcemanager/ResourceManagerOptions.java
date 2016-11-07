@@ -27,7 +27,7 @@ import java.util.Set;
 public class ResourceManagerOptions
     extends HttpServiceOptions<ResourceManager, ResourceManagerRpc, ResourceManagerOptions> {
 
-  private static final long serialVersionUID = -109855112863688882L;
+  private static final long serialVersionUID = 624147474447836183L;
   private static final String GCRM_SCOPE = "https://www.googleapis.com/auth/cloud-platform";
   private static final Set<String> SCOPES = ImmutableSet.of(GCRM_SCOPE);
   private static final String DEFAULT_HOST = "https://cloudresourcemanager.googleapis.com";

@@ -16,7 +16,7 @@
 
 package com.google.cloud.storage.testing;
 
-import com.google.cloud.AuthCredentials;
+import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.RetryParams;
 import com.google.cloud.storage.BlobInfo;
 import com.google.cloud.storage.Storage;
@@ -133,7 +133,7 @@ public class RemoteStorageHelper {
       throws StorageHelperException {
     try {
       StorageOptions storageOptions = StorageOptions.newBuilder()
-          .setAuthCredentials(AuthCredentials.createForJson(keyStream))
+          .setCredentials(GoogleCredentials.fromStream(keyStream))
           .setProjectId(projectId)
           .setRetryParams(retryParams())
           .setConnectTimeout(60000)

@@ -28,7 +28,7 @@ public class ComputeOptions extends HttpServiceOptions<Compute, ComputeRpc, Comp
 
   private static final String COMPUTE_SCOPE = "https://www.googleapis.com/auth/compute";
   private static final Set<String> SCOPES = ImmutableSet.of(COMPUTE_SCOPE);
-  private static final long serialVersionUID = 5074781985597996770L;
+  private static final long serialVersionUID = 6983703596543425691L;
 
   public static class DefaultComputeFactory implements ComputeFactory {
 

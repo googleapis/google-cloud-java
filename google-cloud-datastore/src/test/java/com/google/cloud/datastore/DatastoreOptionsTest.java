@@ -78,6 +78,6 @@ public class DatastoreOptionsTest {
     assertEquals(original.getNamespace(), copy.getNamespace());
     assertEquals(original.getHost(), copy.getHost());
     assertEquals(original.getRetryParams(), copy.getRetryParams());
-    assertEquals(original.getAuthCredentials(), copy.getAuthCredentials());
+    assertEquals(original.getCredentials(), copy.getCredentials());
   }
 }

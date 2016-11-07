@@ -26,7 +26,7 @@ import java.util.Set;
 
 public class DnsOptions extends HttpServiceOptions<Dns, DnsRpc, DnsOptions> {
 
-  private static final long serialVersionUID = -8639966476950724880L;
+  private static final long serialVersionUID = -2501790264435912627L;
   private static final String GC_DNS_RW = "https://www.googleapis.com/auth/ndev.clouddns.readwrite";
   private static final Set<String> SCOPES = ImmutableSet.of(GC_DNS_RW);
 

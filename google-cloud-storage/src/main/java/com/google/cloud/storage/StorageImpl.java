@@ -34,6 +34,7 @@ import static java.nio.charset.StandardCharsets.UTF_8;
 import com.google.api.services.storage.model.BucketAccessControl;
 import com.google.api.services.storage.model.ObjectAccessControl;
 import com.google.api.services.storage.model.StorageObject;
+import com.google.auth.ServiceAccountSigner;
 import com.google.cloud.BaseService;
 import com.google.cloud.BatchResult;
 import com.google.cloud.Page;
@@ -41,7 +42,6 @@ import com.google.cloud.PageImpl;
 import com.google.cloud.PageImpl.NextPageFetcher;
 import com.google.cloud.ReadChannel;
 import com.google.cloud.RetryHelper.RetryHelperException;
-import com.google.cloud.ServiceAccountSigner;
 import com.google.cloud.storage.Acl.Entity;
 import com.google.cloud.storage.spi.StorageRpc;
 import com.google.cloud.storage.spi.StorageRpc.RewriteResponse;
@@ -501,12 +501,12 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
     for (SignUrlOption option : options) {
       optionMap.put(option.getOption(), option.getValue());
     }
-    ServiceAccountSigner authCredentials =
+    ServiceAccountSigner credentials =
         (ServiceAccountSigner) optionMap.get(SignUrlOption.Option.SERVICE_ACCOUNT_CRED);
-    if (authCredentials == null) {
-      checkState(this.getOptions().getAuthCredentials() instanceof ServiceAccountSigner,
+    if (credentials == null) {
+      checkState(this.getOptions().getCredentials() instanceof ServiceAccountSigner,
           "Signing key was not provided and could not be derived");
-      authCredentials = (ServiceAccountSigner) this.getOptions().getAuthCredentials();
+      credentials = (ServiceAccountSigner) this.getOptions().getCredentials();
     }
     // construct signature - see https://cloud.google.com/storage/docs/access-control#Signed-URLs
     StringBuilder stBuilder = new StringBuilder();
@@ -544,11 +544,11 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
     path.append(escapedName.replace("?", "%3F"));
     stBuilder.append(path);
     try {
-      byte[] signatureBytes = authCredentials.sign(stBuilder.toString().getBytes(UTF_8));
+      byte[] signatureBytes = credentials.sign(stBuilder.toString().getBytes(UTF_8));
       stBuilder = new StringBuilder("https://storage.googleapis.com").append(path);
       String signature =
           URLEncoder.encode(BaseEncoding.base64().encode(signatureBytes), UTF_8.name());
-      stBuilder.append("?GoogleAccessId=").append(authCredentials.getAccount());
+      stBuilder.append("?GoogleAccessId=").append(credentials.getAccount());
       stBuilder.append("&Expires=").append(expiration);
       stBuilder.append("&Signature=").append(signature);
       return new URL(stBuilder.toString());

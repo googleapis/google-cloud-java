@@ -16,7 +16,7 @@
 
 package com.google.cloud.logging.testing;
 
-import com.google.cloud.AuthCredentials;
+import com.google.auth.oauth2.ServiceAccountCredentials;
 import com.google.cloud.RetryParams;
 import com.google.cloud.logging.LoggingOptions;
 
@@ -74,7 +74,7 @@ public class RemoteLoggingHelper {
       throws LoggingHelperException {
     try {
       LoggingOptions storageOptions = LoggingOptions.newBuilder()
-          .setAuthCredentials(AuthCredentials.createForJson(keyStream))
+          .setCredentials(ServiceAccountCredentials.fromStream(keyStream))
           .setProjectId(projectId)
           .setRetryParams(retryParams())
           .setInitialTimeout(60000)

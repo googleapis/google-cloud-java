@@ -28,7 +28,7 @@ public class BigQueryOptions extends HttpServiceOptions<BigQuery, BigQueryRpc, B
 
   private static final String BIGQUERY_SCOPE = "https://www.googleapis.com/auth/bigquery";
   private static final Set<String> SCOPES = ImmutableSet.of(BIGQUERY_SCOPE);
-  private static final long serialVersionUID = -8592198255032667206L;
+  private static final long serialVersionUID = -2437598817433266049L;
 
   public static class DefaultBigqueryFactory implements BigQueryFactory {
 
