@@ -18,6 +18,7 @@ package com.google.cloud;
 
 import static com.google.common.base.MoreObjects.firstNonNull;
 import static com.google.common.base.Preconditions.checkArgument;
+import static com.google.common.base.Preconditions.checkNotNull;
 import static java.nio.charset.StandardCharsets.UTF_8;
 
 import com.google.auth.Credentials;
@@ -213,13 +214,18 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
     }
 
     /**
-     * Sets the service authentication credentials.
+     * Sets the service authentication credentials. If this method or {@link #setNoCredentials() are
+     * not used on the builder, {@link GoogleCredentials#getApplicationDefault()} will be used to
+     * attempt getting credentials from the environment.
      *
+     * @param credentials authentication credentials, should not be {@code null}
      * @return the builder
+     * @throws NullPointerException if {@code credentials} is {@code null}. To disable
+     *     authentication use {@link Builder#setNoCredentials()}
      */
     public B setCredentials(Credentials credentials) {
+      this.credentials = checkNotNull(credentials);
       this.noCredentials = false;
-      this.credentials = credentials;
       return self();
     }
 

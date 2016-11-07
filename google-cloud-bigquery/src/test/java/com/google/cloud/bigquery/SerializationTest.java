@@ -230,10 +230,7 @@ public class SerializationTest extends BaseSerializationTest {
         .setProjectId("p1")
         .setNoCredentials()
         .build();
-    BigQueryOptions otherOptions = options.toBuilder()
-        .setProjectId("p2")
-        .setCredentials(null)
-        .build();
+    BigQueryOptions otherOptions = options.toBuilder().setProjectId("p2").build();
     return new Serializable[]{DOMAIN_ACCESS, GROUP_ACCESS, USER_ACCESS, VIEW_ACCESS, DATASET_ID,
         DATASET_INFO, TABLE_ID, CSV_OPTIONS, STREAMING_BUFFER, TABLE_DEFINITION,
         EXTERNAL_TABLE_DEFINITION, VIEW_DEFINITION, TABLE_SCHEMA, TABLE_INFO, VIEW_INFO,

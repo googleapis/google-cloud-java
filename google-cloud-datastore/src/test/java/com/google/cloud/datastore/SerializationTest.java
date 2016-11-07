@@ -113,10 +113,7 @@ public class SerializationTest extends BaseSerializationTest {
         .setNoCredentials()
         .setProjectId("ds1")
         .build();
-    DatastoreOptions otherOptions = options.toBuilder()
-        .setNamespace("ns1")
-        .setCredentials(null)
-        .build();
+    DatastoreOptions otherOptions = options.toBuilder().setNamespace("ns1").build();
     return new java.io.Serializable[]{KEY1, KEY2, INCOMPLETE_KEY1, INCOMPLETE_KEY2, ENTITY1,
         ENTITY2, ENTITY3, EMBEDDED_ENTITY, PROJECTION_ENTITY, DATE_TIME1, BLOB1, CURSOR1, GQL1,
         GQL2, QUERY1, QUERY2, QUERY3, NULL_VALUE, KEY_VALUE, STRING_VALUE, EMBEDDED_ENTITY_VALUE1,

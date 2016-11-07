@@ -269,7 +269,6 @@ public class SerializationTest extends BaseSerializationTest {
     ComputeOptions otherOptions = options.toBuilder()
         .setProjectId("p2")
         .setRetryParams(RetryParams.getDefaultInstance())
-        .setCredentials(null)
         .build();
     return new Serializable[]{DISK_TYPE_ID, DISK_TYPE, MACHINE_TYPE_ID, MACHINE_TYPE, REGION_ID,
         REGION, ZONE_ID, ZONE, LICENSE_ID, LICENSE, DEPRECATION_STATUS, GLOBAL_OPERATION_ID,

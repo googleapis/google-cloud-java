@@ -91,9 +91,7 @@ public class SerializationTest extends BaseSerializationTest {
         .setNoCredentials()
         .setProjectId("id1")
         .build();
-    DnsOptions otherOptions = options.toBuilder()
-        .setCredentials(null)
-        .build();
+    DnsOptions otherOptions = options.toBuilder().build();
     return new Serializable[]{FULL_ZONE_INFO, PARTIAL_ZONE_INFO, ZONE_LIST_OPTION,
         RECORD_SET_LIST_OPTION, CHANGE_REQUEST_LIST_OPTION, ZONE_OPTION, CHANGE_REQUEST_OPTION,
         PROJECT_OPTION, PARTIAL_PROJECT_INFO, FULL_PROJECT_INFO, OPTIONS, FULL_ZONE, PARTIAL_ZONE,

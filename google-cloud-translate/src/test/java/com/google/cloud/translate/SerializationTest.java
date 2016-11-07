@@ -49,9 +49,7 @@ public class SerializationTest extends BaseSerializationTest {
         .setApiKey(API_KEY)
         .setNoCredentials()
         .build();
-    TranslateOptions otherOptions = options.toBuilder()
-        .setCredentials(null)
-        .build();
+    TranslateOptions otherOptions = options.toBuilder().build();
     return new Serializable[]{DETECTION, TRANSLATION, TRANSLATE_EXCEPTION, LANGUAGE_LIST_OPTION,
         TRANSLATE_OPTION, options, otherOptions};
   }

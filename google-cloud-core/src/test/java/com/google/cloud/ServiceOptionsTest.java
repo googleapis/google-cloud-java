@@ -26,7 +26,9 @@ import static org.junit.Assert.fail;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.spi.ServiceRpcFactory;
 
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -104,6 +106,9 @@ public class ServiceOptionsTest {
   private static final String LIBRARY_NAME = "gcloud-java";
   private static final Pattern APPLICATION_NAME_PATTERN =
       Pattern.compile(LIBRARY_NAME + "(/[0-9]+.[0-9]+.[0-9]+)?");
+
+  @Rule
+  public ExpectedException thrown = ExpectedException.none();
 
   private static class TestClock extends Clock {
     @Override
@@ -224,6 +229,12 @@ public class ServiceOptionsTest {
     assertEquals("host", OPTIONS_NO_CREDENTIALS.getHost());
     assertEquals("project-id", OPTIONS_NO_CREDENTIALS.getProjectId());
     assertSame(RetryParams.noRetries(), OPTIONS_NO_CREDENTIALS.getRetryParams());
+  }
+
+  @Test
+  public void testBuilderNullCredentials() {
+    thrown.expect(NullPointerException.class);
+    TestServiceOptions.newBuilder().setCredentials(null).build();
   }
 
   @Test
