@@ -26,7 +26,7 @@ import com.google.cloud.datastore.Key;
 public class QuickstartSample {
   public static void main(String... args) throws Exception {
     // Instantiates a client
-    Datastore datastore = DatastoreOptions.defaultInstance().service();
+    Datastore datastore = DatastoreOptions.getDefaultInstance().getService();
 
     // The kind for the new entity
     String kind = "Task";
