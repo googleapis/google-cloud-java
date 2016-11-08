@@ -19,7 +19,7 @@ package com.google.cloud.pubsub.testing;
 import com.google.api.gax.testing.DownloadableEmulatorRunner;
 import com.google.api.gax.testing.GCloudEmulatorRunner;
 import com.google.api.gax.testing.LocalServiceHelper;
-import com.google.cloud.AuthCredentials;
+import com.google.cloud.NoCredentials;
 import com.google.cloud.RetryParams;
 import com.google.cloud.pubsub.PubSubOptions;
 
@@ -158,7 +158,7 @@ public class LocalPubsubHelper {
     return PubSubOptions.newBuilder()
         .setProjectId(projectId)
         .setHost("localhost:" + port)
-        .setAuthCredentials(AuthCredentials.noAuth())
+        .setCredentials(NoCredentials.getInstance())
         .setRetryParams(RetryParams.noRetries())
         .build();
   }

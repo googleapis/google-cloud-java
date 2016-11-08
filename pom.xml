@@ -90,6 +90,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <github.global.server>github</github.global.server>
+    <google.auth.version>0.6.0</google.auth.version>
     <grpc.version>1.0.1</grpc.version>
     <site.installationModule>google-cloud</site.installationModule>
   </properties>
@@ -420,6 +421,9 @@
                     <packages>com.google.cloud.spi:com.google.cloud.bigquery.spi:com.google.cloud.compute.spi:com.google.cloud.datastore.spi:com.google.cloud.dns.spi:com.google.cloud.errorreporting.spi:com.google.cloud.errorreporting.spi.*:com.google.cloud.language.spi:com.google.cloud.language.spi.*:com.google.cloud.logging.spi:com.google.cloud.monitoring.spi:com.google.cloud.monitoring.spi.*:com.google.cloud.logging.spi.*:com.google.cloud.pubsub.spi:com.google.cloud.pubsub.spi.*:com.google.cloud.resourcemanager.spi:com.google.cloud.speech.spi:com.google.cloud.speech.spi.*:com.google.cloud.storage.spi:com.google.cloud.trace.spi:com.google.cloud.trace.spi.*:com.google.cloud.translate.spi:com.google.cloud.vision.spi:com.google.cloud.vision.spi.*</packages>
                   </group>
                 </groups>
+                <links>
+                  <link>http://google.github.io/google-auth-library-java/releases/${google.auth.version}/apidocs/</link>
+                </links>
               </configuration>
             </plugin>
             <plugin>
@@ -484,6 +488,11 @@
                 </goals>
               </execution>
             </executions>
+            <configuration>
+              <links>
+                <link>http://google.github.io/google-auth-library-java/releases/${google.auth.version}/apidocs/</link>
+              </links>
+            </configuration>
           </plugin>
         </plugins>
       </build>

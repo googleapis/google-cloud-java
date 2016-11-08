@@ -16,8 +16,8 @@
 
 package com.google.cloud.storage;
 
-import com.google.cloud.AuthCredentials;
 import com.google.cloud.BaseSerializationTest;
+import com.google.cloud.NoCredentials;
 import com.google.cloud.PageImpl;
 import com.google.cloud.ReadChannel;
 import com.google.cloud.Restorable;
@@ -66,12 +66,9 @@ public class SerializationTest extends BaseSerializationTest {
   protected Serializable[] serializableObjects() {
     StorageOptions options = StorageOptions.newBuilder()
         .setProjectId("p1")
-        .setAuthCredentials(AuthCredentials.createForAppEngine())
+        .setCredentials(NoCredentials.getInstance())
         .build();
-    StorageOptions otherOptions = options.toBuilder()
-        .setProjectId("p2")
-        .setAuthCredentials(null)
-        .build();
+    StorageOptions otherOptions = options.toBuilder().setProjectId("p2").build();
     return new Serializable[]{ACL_DOMAIN, ACL_GROUP, ACL_PROJECT_, ACL_USER, ACL_RAW, ACL,
         BLOB_INFO, BLOB, BUCKET_INFO, BUCKET, ORIGIN, CORS, PAGE_RESULT, BLOB_LIST_OPTIONS,
         BLOB_SOURCE_OPTIONS, BLOB_TARGET_OPTIONS, BUCKET_LIST_OPTIONS, BUCKET_SOURCE_OPTIONS,

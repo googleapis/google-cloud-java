@@ -16,9 +16,9 @@
 
 package com.google.cloud.logging;
 
-import com.google.cloud.AuthCredentials;
 import com.google.cloud.BaseSerializationTest;
 import com.google.cloud.MonitoredResource;
+import com.google.cloud.NoCredentials;
 import com.google.cloud.Restorable;
 import com.google.cloud.logging.Logging.EntryListOption;
 import com.google.cloud.logging.Logging.ListOption;
@@ -41,7 +41,7 @@ public class SerializationTest extends BaseSerializationTest {
 
   private static final Logging LOGGING = LoggingOptions.newBuilder()
       .setProjectId("p")
-      .setAuthCredentials(AuthCredentials.noAuth())
+      .setCredentials(NoCredentials.getInstance())
       .setHost("localhost")
       .build().getService();
   private static final HttpRequest HTTP_REQUEST = HttpRequest.newBuilder()

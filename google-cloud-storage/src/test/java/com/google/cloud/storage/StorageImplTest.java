@@ -27,7 +27,7 @@ import static org.junit.Assert.assertTrue;
 
 import com.google.api.client.googleapis.json.GoogleJsonError;
 import com.google.api.services.storage.model.StorageObject;
-import com.google.cloud.AuthCredentials.ServiceAccountAuthCredentials;
+import com.google.auth.oauth2.ServiceAccountCredentials;
 import com.google.cloud.Clock;
 import com.google.cloud.Page;
 import com.google.cloud.ReadChannel;
@@ -1231,9 +1231,9 @@ public class StorageImplTest {
   public void testSignUrl() throws NoSuchAlgorithmException, InvalidKeyException,
       SignatureException, UnsupportedEncodingException {
     EasyMock.replay(storageRpcMock);
-    ServiceAccountAuthCredentials authCredentials =
-        ServiceAccountAuthCredentials.createFor(ACCOUNT, privateKey);
-    storage = options.toBuilder().setAuthCredentials(authCredentials).build().getService();
+    ServiceAccountCredentials credentials =
+        new ServiceAccountCredentials(null, ACCOUNT, privateKey, null, null);
+    storage = options.toBuilder().setCredentials(credentials).build().getService();
     URL url = storage.signUrl(BLOB_INFO1, 14, TimeUnit.DAYS);
     String stringUrl = url.toString();
     String expectedUrl = new StringBuilder("https://storage.googleapis.com/").append(BUCKET_NAME1)
@@ -1258,9 +1258,9 @@ public class StorageImplTest {
       SignatureException, UnsupportedEncodingException {
     String blobName = "/b1";
     EasyMock.replay(storageRpcMock);
-    ServiceAccountAuthCredentials authCredentials =
-        ServiceAccountAuthCredentials.createFor(ACCOUNT, privateKey);
-    storage = options.toBuilder().setAuthCredentials(authCredentials).build().getService();
+    ServiceAccountCredentials credentials =
+        new ServiceAccountCredentials(null, ACCOUNT, privateKey, null, null);
+    storage = options.toBuilder().setCredentials(credentials).build().getService();
     URL url =
         storage.signUrl(BlobInfo.newBuilder(BUCKET_NAME1, blobName).build(), 14, TimeUnit.DAYS);
     String escapedBlobName = UrlEscapers.urlFragmentEscaper().escape(blobName);
@@ -1286,9 +1286,9 @@ public class StorageImplTest {
   public void testSignUrlWithOptions() throws NoSuchAlgorithmException, InvalidKeyException,
       SignatureException, UnsupportedEncodingException {
     EasyMock.replay(storageRpcMock);
-    ServiceAccountAuthCredentials authCredentials =
-        ServiceAccountAuthCredentials.createFor(ACCOUNT, privateKey);
-    storage = options.toBuilder().setAuthCredentials(authCredentials).build().getService();
+    ServiceAccountCredentials credentials =
+        new ServiceAccountCredentials(null, ACCOUNT, privateKey, null, null);
+    storage = options.toBuilder().setCredentials(credentials).build().getService();
     URL url = storage.signUrl(BLOB_INFO1, 14, TimeUnit.DAYS,
         Storage.SignUrlOption.httpMethod(HttpMethod.POST), Storage.SignUrlOption.withContentType(),
         Storage.SignUrlOption.withMd5());
@@ -1319,9 +1319,9 @@ public class StorageImplTest {
     char[] specialChars =
             new char[]{'!','#','$','&','\'','(',')','*','+',',',':',';','=','?','@','[',']'};
     EasyMock.replay(storageRpcMock);
-    ServiceAccountAuthCredentials authCredentials =
-        ServiceAccountAuthCredentials.createFor(ACCOUNT, privateKey);
-    storage = options.toBuilder().setAuthCredentials(authCredentials).build().getService();
+    ServiceAccountCredentials credentials =
+        new ServiceAccountCredentials(null, ACCOUNT, privateKey, null, null);
+    storage = options.toBuilder().setCredentials(credentials).build().getService();
 
     for (char specialChar : specialChars) {
       String blobName = "/a" + specialChar + "b";
@@ -1352,9 +1352,9 @@ public class StorageImplTest {
   public void testSignUrlForBlobWithSlashes() throws NoSuchAlgorithmException,
           InvalidKeyException, SignatureException, UnsupportedEncodingException {
     EasyMock.replay(storageRpcMock);
-    ServiceAccountAuthCredentials authCredentials =
-        ServiceAccountAuthCredentials.createFor(ACCOUNT, privateKey);
-    storage = options.toBuilder().authCredentials(authCredentials).build().service();
+    ServiceAccountCredentials credentials =
+        new ServiceAccountCredentials(null, ACCOUNT, privateKey, null, null);
+    storage = options.toBuilder().setCredentials(credentials).build().getService();
 
     String blobName = "/foo/bar/baz #%20other cool stuff.txt";
     URL url =

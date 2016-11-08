@@ -16,8 +16,8 @@
 
 package com.google.cloud.dns;
 
-import com.google.cloud.AuthCredentials;
 import com.google.cloud.BaseSerializationTest;
+import com.google.cloud.NoCredentials;
 import com.google.cloud.Restorable;
 import com.google.cloud.RetryParams;
 import com.google.common.collect.ImmutableList;
@@ -89,12 +89,10 @@ public class SerializationTest extends BaseSerializationTest {
   @Override
   protected Serializable[] serializableObjects() {
     DnsOptions options = DnsOptions.newBuilder()
-        .setAuthCredentials(AuthCredentials.createForAppEngine())
+        .setCredentials(NoCredentials.getInstance())
         .setProjectId("id1")
         .build();
-    DnsOptions otherOptions = options.toBuilder()
-        .setAuthCredentials(null)
-        .build();
+    DnsOptions otherOptions = options.toBuilder().build();
     return new Serializable[]{FULL_ZONE_INFO, PARTIAL_ZONE_INFO, ZONE_LIST_OPTION,
         RECORD_SET_LIST_OPTION, CHANGE_REQUEST_LIST_OPTION, ZONE_OPTION, CHANGE_REQUEST_OPTION,
         PROJECT_OPTION, PARTIAL_PROJECT_INFO, FULL_PROJECT_INFO, OPTIONS, FULL_ZONE, PARTIAL_ZONE,

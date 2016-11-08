@@ -18,8 +18,8 @@ package com.google.cloud.translate;
 
 import com.google.api.services.translate.model.DetectionsResourceItems;
 import com.google.api.services.translate.model.TranslationsResource;
-import com.google.cloud.AuthCredentials;
 import com.google.cloud.BaseSerializationTest;
+import com.google.cloud.NoCredentials;
 import com.google.cloud.Restorable;
 
 import java.io.Serializable;
@@ -48,11 +48,9 @@ public class SerializationTest extends BaseSerializationTest {
   protected Serializable[] serializableObjects() {
     TranslateOptions options = TranslateOptions.newBuilder()
         .setApiKey(API_KEY)
-        .setAuthCredentials(AuthCredentials.createForAppEngine())
+        .setCredentials(NoCredentials.getInstance())
         .build();
-    TranslateOptions otherOptions = options.toBuilder()
-        .setAuthCredentials(null)
-        .build();
+    TranslateOptions otherOptions = options.toBuilder().build();
     return new Serializable[]{DETECTION, TRANSLATION, TRANSLATE_EXCEPTION, LANGUAGE_LIST_OPTION,
         TRANSLATE_OPTION, options, otherOptions};
   }

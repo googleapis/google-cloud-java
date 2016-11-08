@@ -24,11 +24,11 @@ package com.google.cloud.examples.storage.snippets;
 
 import static java.nio.charset.StandardCharsets.UTF_8;
 
-import com.google.cloud.AuthCredentials;
+import com.google.auth.ServiceAccountSigner;
+import com.google.auth.oauth2.ServiceAccountCredentials;
 import com.google.cloud.BatchResult;
 import com.google.cloud.Page;
 import com.google.cloud.ReadChannel;
-import com.google.cloud.ServiceAccountSigner;
 import com.google.cloud.WriteChannel;
 import com.google.cloud.storage.Acl;
 import com.google.cloud.storage.Acl.Role;
@@ -580,7 +580,7 @@ public class StorageSnippets {
     // [START signUrlWithSigner]
     URL signedUrl = storage.signUrl(BlobInfo.newBuilder(bucketName, blobName).build(),
         14, TimeUnit.DAYS, SignUrlOption.signWith(
-            AuthCredentials.createForJson(new FileInputStream(keyPath))));
+            ServiceAccountCredentials.fromStream(new FileInputStream(keyPath))));
     // [END signUrlWithSigner]
     return signedUrl;
   }

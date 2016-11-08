@@ -16,7 +16,7 @@
 
 package com.google.cloud.compute.testing;
 
-import com.google.cloud.AuthCredentials;
+import com.google.auth.oauth2.ServiceAccountCredentials;
 import com.google.cloud.RetryParams;
 import com.google.cloud.compute.ComputeOptions;
 
@@ -83,7 +83,7 @@ public class RemoteComputeHelper {
   public static RemoteComputeHelper create(String projectId, InputStream keyStream) {
     try {
       ComputeOptions computeOptions = ComputeOptions.newBuilder()
-          .setAuthCredentials(AuthCredentials.createForJson(keyStream))
+          .setCredentials(ServiceAccountCredentials.fromStream(keyStream))
           .setProjectId(projectId)
           .setRetryParams(retryParams())
           .setConnectTimeout(60000)

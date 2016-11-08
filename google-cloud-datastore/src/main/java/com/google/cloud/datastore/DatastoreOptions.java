@@ -35,7 +35,7 @@ import java.util.Set;
 public class DatastoreOptions
     extends HttpServiceOptions<Datastore, DatastoreRpc, DatastoreOptions> {
 
-  private static final long serialVersionUID = -7859275434360052450L;
+  private static final long serialVersionUID = -1018382430058137336L;
   private static final String DATASTORE_SCOPE = "https://www.googleapis.com/auth/datastore";
   private static final Set<String> SCOPES = ImmutableSet.of(DATASTORE_SCOPE);
 

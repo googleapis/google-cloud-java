@@ -23,7 +23,9 @@ import com.google.api.client.http.HttpRequest;
 import com.google.api.client.http.HttpRequestInitializer;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.javanet.NetHttpTransport;
+import com.google.auth.Credentials;
 import com.google.auth.http.HttpCredentialsAdapter;
+import com.google.auth.http.HttpTransportFactory;
 import com.google.cloud.spi.ServiceRpcFactory;
 
 import java.io.IOException;
@@ -42,22 +44,12 @@ public abstract class HttpServiceOptions<ServiceT extends Service<OptionsT>, Ser
     OptionsT extends HttpServiceOptions<ServiceT, ServiceRpcT, OptionsT>>
     extends ServiceOptions<ServiceT, ServiceRpcT, OptionsT> {
 
-  private static final long serialVersionUID = 3652819407083815771L;
+  private static final long serialVersionUID = 4765436436821178975L;
   private final int connectTimeout;
   private final int readTimeout;
   private final String httpTransportFactoryClassName;
 
   private transient HttpTransportFactory httpTransportFactory;
-
-  /**
-   * A base interface for all {@link HttpTransport} factories.
-   *
-   * <p>Implementation must provide a public no-arg constructor. Loading of a factory implementation
-   * is done via {@link java.util.ServiceLoader}.
-   */
-  public interface HttpTransportFactory {
-    HttpTransport create();
-  }
 
   public static class DefaultHttpTransportFactory implements HttpTransportFactory {
 
@@ -221,11 +213,10 @@ public abstract class HttpServiceOptions<ServiceT extends Service<OptionsT>, Ser
    * options.
    */
   public HttpRequestInitializer getHttpRequestInitializer() {
+    Credentials scopedCredentials = getScopedCredentials();
     final HttpRequestInitializer delegate =
-        getAuthCredentials() != null && getAuthCredentials().getCredentials() != null
-            ? new HttpCredentialsAdapter(
-                getAuthCredentials().getCredentials().createScoped(getScopes()))
-            : null;
+        scopedCredentials != null && scopedCredentials != NoCredentials.getInstance()
+            ? new HttpCredentialsAdapter(scopedCredentials) : null;
     return new HttpRequestInitializer() {
       @Override
       public void initialize(HttpRequest httpRequest) throws IOException {

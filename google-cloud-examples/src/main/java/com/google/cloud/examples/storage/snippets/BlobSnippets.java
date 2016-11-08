@@ -24,9 +24,9 @@ package com.google.cloud.examples.storage.snippets;
 
 import static java.nio.charset.StandardCharsets.UTF_8;
 
-import com.google.cloud.AuthCredentials;
+import com.google.auth.ServiceAccountSigner;
+import com.google.auth.oauth2.ServiceAccountCredentials;
 import com.google.cloud.ReadChannel;
-import com.google.cloud.ServiceAccountSigner;
 import com.google.cloud.WriteChannel;
 import com.google.cloud.storage.Acl;
 import com.google.cloud.storage.Acl.User;
@@ -227,7 +227,7 @@ public class BlobSnippets {
   public URL signUrlWithSigner(String keyPath) throws IOException {
     // [START signUrlWithSigner]
     URL signedUrl = blob.signUrl(14, TimeUnit.DAYS, SignUrlOption.signWith(
-        AuthCredentials.createForJson(new FileInputStream(keyPath))));
+        ServiceAccountCredentials.fromStream(new FileInputStream(keyPath))));
     // [END signUrlWithSigner]
     return signedUrl;
   }

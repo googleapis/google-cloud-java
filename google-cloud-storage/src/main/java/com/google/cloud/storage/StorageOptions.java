@@ -26,7 +26,7 @@ import java.util.Set;
 
 public class StorageOptions extends HttpServiceOptions<Storage, StorageRpc, StorageOptions> {
 
-  private static final long serialVersionUID = -7456495262640805964L;
+  private static final long serialVersionUID = -2907268477247502947L;
   private static final String GCS_SCOPE = "https://www.googleapis.com/auth/devstorage.full_control";
   private static final Set<String> SCOPES = ImmutableSet.of(GCS_SCOPE);
 

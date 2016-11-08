@@ -16,7 +16,7 @@
 
 package com.google.cloud.bigquery.testing;
 
-import com.google.cloud.AuthCredentials;
+import com.google.auth.oauth2.ServiceAccountCredentials;
 import com.google.cloud.RetryParams;
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQueryException;
@@ -96,7 +96,7 @@ public class RemoteBigQueryHelper {
       throws BigQueryHelperException {
     try {
       BigQueryOptions bigqueryOptions = BigQueryOptions.newBuilder()
-          .setAuthCredentials(AuthCredentials.createForJson(keyStream))
+          .setCredentials(ServiceAccountCredentials.fromStream(keyStream))
           .setProjectId(projectId)
           .setRetryParams(retryParams())
           .setConnectTimeout(60000)

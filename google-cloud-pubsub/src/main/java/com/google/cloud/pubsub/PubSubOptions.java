@@ -29,7 +29,7 @@ import java.util.concurrent.ScheduledExecutorService;
 
 public class PubSubOptions extends GrpcServiceOptions<PubSub, PubSubRpc, PubSubOptions> {
 
-  private static final long serialVersionUID = 5640180400046623305L;
+  private static final long serialVersionUID = 5598666986447361352L;
   private static final String PUBSUB_SCOPE = "https://www.googleapis.com/auth/pubsub";
   private static final Set<String> SCOPES = ImmutableSet.of(PUBSUB_SCOPE);
   private static final String EMULATOR_HOST_ENV_VAR = "PUBSUB_EMULATOR_HOST";

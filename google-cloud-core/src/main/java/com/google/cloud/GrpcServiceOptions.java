@@ -21,7 +21,7 @@ import static com.google.common.base.MoreObjects.firstNonNull;
 import com.google.api.gax.core.ConnectionSettings;
 import com.google.api.gax.core.RetrySettings;
 import com.google.api.gax.grpc.UnaryCallSettings;
-import com.google.auth.oauth2.GoogleCredentials;
+import com.google.auth.Credentials;
 import com.google.cloud.spi.ServiceRpcFactory;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
@@ -52,7 +52,7 @@ public abstract class GrpcServiceOptions<ServiceT extends Service<OptionsT>, Ser
     OptionsT extends GrpcServiceOptions<ServiceT, ServiceRpcT, OptionsT>>
     extends ServiceOptions<ServiceT, ServiceRpcT, OptionsT> {
 
-  private static final long serialVersionUID = 6415982522610509549L;
+  private static final long serialVersionUID = -3093986242928037007L;
   private final String executorFactoryClassName;
   private final int initialTimeout;
   private final double timeoutMultiplier;
@@ -319,9 +319,9 @@ public abstract class GrpcServiceOptions<ServiceT extends Service<OptionsT>, Ser
     ConnectionSettings.Builder builder = ConnectionSettings.newBuilder()
         .setServiceAddress(hostAndPort.getHostText())
         .setPort(hostAndPort.getPort());
-    GoogleCredentials credentials = getAuthCredentials().getCredentials();
-    if (credentials != null) {
-      builder.provideCredentialsWith(credentials.createScoped(getScopes()));
+    Credentials scopedCredentials = getScopedCredentials();
+    if (scopedCredentials != null && scopedCredentials != NoCredentials.getInstance()) {
+      builder.provideCredentialsWith(scopedCredentials);
     }
     return builder;
   }

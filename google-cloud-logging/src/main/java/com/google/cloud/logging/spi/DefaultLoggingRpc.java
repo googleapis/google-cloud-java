@@ -19,9 +19,8 @@ package com.google.cloud.logging.spi;
 import static com.google.common.base.MoreObjects.firstNonNull;
 
 import com.google.api.gax.core.ConnectionSettings;
-import com.google.api.gax.grpc.UnaryCallSettings;
 import com.google.api.gax.grpc.ApiException;
-import com.google.cloud.AuthCredentials;
+import com.google.api.gax.grpc.UnaryCallSettings;
 import com.google.cloud.GrpcServiceOptions.ExecutorFactory;
 import com.google.cloud.logging.LoggingException;
 import com.google.cloud.logging.LoggingOptions;
@@ -119,8 +118,7 @@ public class DefaultLoggingRpc implements LoggingRpc {
           .provideExecutorWith(executor, false)
           .setClientLibHeader(libraryName, libraryVersion);
       // todo(mziccard): PublisherSettings should support null/absent credentials for testing
-      if (options.getHost().contains("localhost")
-          || options.getAuthCredentials().equals(AuthCredentials.noAuth())) {
+      if (options.getHost().contains("localhost") || options.getCredentials() == null) {
         ManagedChannel channel = NettyChannelBuilder.forTarget(options.getHost())
             .negotiationType(NegotiationType.PLAINTEXT)
             .build();

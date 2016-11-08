@@ -29,7 +29,7 @@ import java.util.concurrent.ScheduledExecutorService;
 
 public class LoggingOptions extends GrpcServiceOptions<Logging, LoggingRpc, LoggingOptions> {
 
-  private static final long serialVersionUID = -2996451684945061075L;
+  private static final long serialVersionUID = -5117984564582881668L;
   private static final String LOGGING_SCOPE = "https://www.googleapis.com/auth/logging.admin";
   private static final Set<String> SCOPES = ImmutableSet.of(LOGGING_SCOPE);
   private static final String DEFAULT_HOST = LoggingServiceV2Settings.getDefaultServiceAddress()

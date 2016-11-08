@@ -102,7 +102,7 @@ You can test against a remote Datastore emulator as well.  To do this, set the `
   DatastoreOptions options = DatastoreOptions.newBuilder()
       .setProjectId("my-project-id") // must match project ID specified on remote machine
       .setHost("http://<hostname of machine>:<port>")
-      .setAuthCredentials(AuthCredentials.noAuth())
+      .setCredentials(NoCredentials.getInstance())
       .build();
   Datastore localDatastore = options.getService();
   ```
@@ -209,7 +209,7 @@ endpoint to the hostname of the remote machine, like the example below.
   PubSubOptions options = PubSubOptions.newBuilder()
       .setProjectId("my-project-id") // must match project ID specified on remote machine
       .setHost("<hostname of machine>:<port>")
-      .setAuthCredentials(AuthCredentials.noAuth())
+      .setCredentials(NoCredentials.getInstance())
       .build();
   PubSub localPubsub = options.getService();
   ```

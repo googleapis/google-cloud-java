@@ -16,8 +16,7 @@
 
 package com.google.cloud.examples.storage;
 
-import com.google.cloud.AuthCredentials;
-import com.google.cloud.AuthCredentials.ServiceAccountAuthCredentials;
+import com.google.auth.oauth2.ServiceAccountCredentials;
 import com.google.cloud.ReadChannel;
 import com.google.cloud.WriteChannel;
 import com.google.cloud.storage.Acl;
@@ -531,24 +530,24 @@ public class StorageExample {
    * @see <a href="https://cloud.google.com/storage/docs/access-control#Signed-URLs">Signed URLs</a>
    */
   private static class SignUrlAction extends
-      StorageAction<Tuple<ServiceAccountAuthCredentials, BlobInfo>> {
+      StorageAction<Tuple<ServiceAccountCredentials, BlobInfo>> {
 
     private static final char[] PASSWORD = "notasecret".toCharArray();
 
     @Override
-    public void run(Storage storage, Tuple<ServiceAccountAuthCredentials, BlobInfo> tuple)
+    public void run(Storage storage, Tuple<ServiceAccountCredentials, BlobInfo> tuple)
         throws Exception {
       run(storage, tuple.x(), tuple.y());
     }
 
-    private void run(Storage storage, ServiceAccountAuthCredentials cred, BlobInfo blobInfo) {
+    private void run(Storage storage, ServiceAccountCredentials cred, BlobInfo blobInfo) {
       Blob blob = storage.get(blobInfo.getBlobId());
       System.out.printf("Signed URL: %s%n",
           blob.signUrl(1, TimeUnit.DAYS, SignUrlOption.signWith(cred)));
     }
 
     @Override
-    Tuple<ServiceAccountAuthCredentials, BlobInfo> parse(String... args) throws IOException,
+    Tuple<ServiceAccountCredentials, BlobInfo> parse(String... args) throws IOException,
         KeyStoreException, CertificateException, NoSuchAlgorithmException,
         UnrecoverableKeyException {
       if (args.length != 4) {
@@ -557,8 +556,9 @@ public class StorageExample {
       KeyStore keystore = KeyStore.getInstance("PKCS12");
       keystore.load(Files.newInputStream(Paths.get(args[0])), PASSWORD);
       PrivateKey privateKey = (PrivateKey) keystore.getKey("privatekey", PASSWORD);
-      ServiceAccountAuthCredentials cred = AuthCredentials.createFor(args[1], privateKey);
-      return Tuple.of(cred, BlobInfo.newBuilder(BlobId.of(args[2], args[3])).build());
+      ServiceAccountCredentials credentials =
+          new ServiceAccountCredentials(null, args[1], privateKey, null, null);
+      return Tuple.of(credentials, BlobInfo.newBuilder(BlobId.of(args[2], args[3])).build());
     }
 
     @Override

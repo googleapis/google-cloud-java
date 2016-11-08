@@ -18,14 +18,10 @@ package com.google.cloud;
 
 import com.google.cloud.MonitoredResourceDescriptor.LabelDescriptor;
 import com.google.cloud.MonitoredResourceDescriptor.LabelDescriptor.ValueType;
-import com.google.cloud.ServiceAccountSigner.SigningException;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 
-import java.io.ByteArrayInputStream;
-import java.io.IOException;
 import java.io.Serializable;
-import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 public class SerializationTest extends BaseSerializationTest {
@@ -36,8 +32,6 @@ public class SerializationTest extends BaseSerializationTest {
   private static final Identity IDENTITY = Identity.allAuthenticatedUsers();
   private static final PageImpl<String> PAGE =
       new PageImpl<>(null, "cursor", ImmutableList.of("string1", "string2"));
-  private static final SigningException SIGNING_EXCEPTION =
-      new SigningException("message", BASE_SERVICE_EXCEPTION);
   private static final RetryParams RETRY_PARAMS = RetryParams.getDefaultInstance();
   private static final Role SOME_ROLE = Role.viewer();
   private static final Policy SOME_IAM_POLICY = Policy.newBuilder().build();
@@ -82,19 +76,12 @@ public class SerializationTest extends BaseSerializationTest {
   @Override
   protected Serializable[] serializableObjects() {
     return new Serializable[]{BASE_SERVICE_EXCEPTION, EXCEPTION_HANDLER, IDENTITY, PAGE,
-        RETRY_PARAMS, SOME_ROLE, SOME_IAM_POLICY, SIGNING_EXCEPTION, CHECKING_PERIOD,
-        LABEL_DESCRIPTOR, MONITORED_RESOURCE_DESCRIPTOR, MONITORED_RESOURCE};
+        RETRY_PARAMS, SOME_ROLE, SOME_IAM_POLICY, CHECKING_PERIOD, LABEL_DESCRIPTOR,
+        MONITORED_RESOURCE_DESCRIPTOR, MONITORED_RESOURCE};
   }
 
   @Override
   protected Restorable<?>[] restorableObjects() {
-    try {
-      return new Restorable<?>[]{AuthCredentials.createForAppEngine(), AuthCredentials.noAuth(),
-          AuthCredentials.createForJson(new ByteArrayInputStream(JSON_KEY.getBytes())),
-          AuthCredentials.createFor("accessToken", new Date())};
-    } catch (IOException ex) {
-      // never reached
-      throw new RuntimeException(ex);
-    }
+    return null;
   }
 }
