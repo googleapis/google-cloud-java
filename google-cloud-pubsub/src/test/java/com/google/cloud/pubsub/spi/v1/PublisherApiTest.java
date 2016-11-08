@@ -15,7 +15,7 @@
 package com.google.cloud.pubsub.spi.v1;
 
 import com.google.api.gax.grpc.BundlingSettings;
-import com.google.cloud.pubsub.testing.LocalPubsubHelper;
+import com.google.cloud.pubsub.testing.LocalPubSubHelper;
 import com.google.protobuf.ByteString;
 import com.google.pubsub.v1.PubsubMessage;
 import com.google.pubsub.v1.PullResponse;
@@ -38,14 +38,14 @@ import java.util.Collections;
 import java.util.List;
 
 public class PublisherApiTest {
-  private static LocalPubsubHelper pubsubHelper;
+  private static LocalPubSubHelper pubsubHelper;
   private PublisherApi publisherApi;
   private PublisherApi bundledPublisherApi;
   private SubscriberApi subscriberApi;
 
   @BeforeClass
   public static void startServer() throws IOException, InterruptedException {
-    pubsubHelper = LocalPubsubHelper.create();
+    pubsubHelper = LocalPubSubHelper.create();
     pubsubHelper.start();
   }
 
