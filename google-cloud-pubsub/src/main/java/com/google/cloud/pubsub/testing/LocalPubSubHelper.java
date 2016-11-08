@@ -83,7 +83,7 @@ public class LocalPubSubHelper extends BaseEmulatorHelper<PubSubOptions> {
   }
 
   @Override
-  protected List<EmulatorRunner> emulatorRunners() {
+  protected List<EmulatorRunner> getEmulatorRunners() {
     return emulatorRunners;
   }
 

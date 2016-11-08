@@ -73,7 +73,7 @@ public abstract class BaseEmulatorHelper<T extends ServiceOptions> {
    * Returns the emulator runners supported by this emulator. Runners are evaluated in order, the
    * first available runner is selected and executed
    */
-  protected abstract List<EmulatorRunner> emulatorRunners();
+  protected abstract List<EmulatorRunner> getEmulatorRunners();
 
   /**
    * Returns a logger.
@@ -86,7 +86,7 @@ public abstract class BaseEmulatorHelper<T extends ServiceOptions> {
    */
   protected final void startProcess(String blockUntilOutput)
       throws IOException, InterruptedException {
-    for (EmulatorRunner runner : emulatorRunners()) {
+    for (EmulatorRunner runner : getEmulatorRunners()) {
       // Iterate through all emulator runners until find first available runner.
       if (runner.isAvailable()) {
         activeRunner = runner;
@@ -262,11 +262,11 @@ public abstract class BaseEmulatorHelper<T extends ServiceOptions> {
     }
 
     private boolean isEmulatorUpToDate() throws IOException, InterruptedException {
-      Version currentVersion = installedEmulatorVersion(versionPrefix);
+      Version currentVersion = getInstalledEmulatorVersion(versionPrefix);
       return currentVersion != null && currentVersion.compareTo(minVersion) >= 0;
     }
 
-    private Version installedEmulatorVersion(String versionPrefix)
+    private Version getInstalledEmulatorVersion(String versionPrefix)
         throws IOException, InterruptedException {
       Process process =
           CommandWrapper.create()

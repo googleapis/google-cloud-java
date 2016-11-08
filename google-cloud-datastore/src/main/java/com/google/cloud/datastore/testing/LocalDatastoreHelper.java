@@ -107,7 +107,7 @@ public class LocalDatastoreHelper extends BaseEmulatorHelper<DatastoreOptions> {
   }
 
   @Override
-  protected List<EmulatorRunner> emulatorRunners() {
+  protected List<EmulatorRunner> getEmulatorRunners() {
     return emulatorRunners;
   }
 
