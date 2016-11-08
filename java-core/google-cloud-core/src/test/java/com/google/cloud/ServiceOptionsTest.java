@@ -22,9 +22,12 @@ import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
+import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.spi.ServiceRpcFactory;
 
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -61,10 +64,10 @@ public class ServiceOptionsTest {
       + "  \"type\": \"service_account\"\n"
       + "}";
   private static final InputStream JSON_KEY_STREAM = new ByteArrayInputStream(JSON_KEY.getBytes());
-  private static AuthCredentials authCredentials;
+  private static GoogleCredentials credentials;
   static {
     try {
-      authCredentials = AuthCredentials.createForJson(JSON_KEY_STREAM);
+      credentials = GoogleCredentials.fromStream(JSON_KEY_STREAM);
     } catch (IOException e) {
       fail("Couldn't create fake JSON credentials.");
     }
@@ -72,7 +75,15 @@ public class ServiceOptionsTest {
   private static final Clock TEST_CLOCK = new TestClock();
   private static final TestServiceOptions OPTIONS =
       TestServiceOptions.newBuilder()
-          .setAuthCredentials(authCredentials)
+          .setCredentials(credentials)
+          .setClock(TEST_CLOCK)
+          .setHost("host")
+          .setProjectId("project-id")
+          .setRetryParams(RetryParams.noRetries())
+          .build();
+  private static final TestServiceOptions OPTIONS_NO_CREDENTIALS =
+      TestServiceOptions.newBuilder()
+          .setCredentials(NoCredentials.getInstance())
           .setClock(TEST_CLOCK)
           .setHost("host")
           .setProjectId("project-id")
@@ -80,7 +91,7 @@ public class ServiceOptionsTest {
           .build();
   private static final TestServiceOptions DEPRECATED_OPTIONS =
       TestServiceOptions.newBuilder()
-          .authCredentials(authCredentials)
+          .setCredentials(credentials)
           .clock(TEST_CLOCK)
           .host("host")
           .projectId("project-id")
@@ -94,6 +105,9 @@ public class ServiceOptionsTest {
   private static final String LIBRARY_NAME = "gcloud-java";
   private static final Pattern APPLICATION_NAME_PATTERN =
       Pattern.compile(LIBRARY_NAME + "(/[0-9]+.[0-9]+.[0-9]+)?");
+
+  @Rule
+  public ExpectedException thrown = ExpectedException.none();
 
   private static class TestClock extends Clock {
     @Override
@@ -197,7 +211,7 @@ public class ServiceOptionsTest {
 
   @Test
   public void testBuilder() {
-    assertSame(authCredentials, OPTIONS.getAuthCredentials());
+    assertSame(credentials, OPTIONS.getCredentials());
     assertSame(TEST_CLOCK, OPTIONS.getClock());
     assertEquals("host", OPTIONS.getHost());
     assertEquals("project-id", OPTIONS.getProjectId());
@@ -208,8 +222,23 @@ public class ServiceOptionsTest {
   }
 
   @Test
+  public void testBuilderNoCredentials() {
+    assertEquals(NoCredentials.getInstance(), OPTIONS_NO_CREDENTIALS.getCredentials());
+    assertSame(TEST_CLOCK, OPTIONS_NO_CREDENTIALS.getClock());
+    assertEquals("host", OPTIONS_NO_CREDENTIALS.getHost());
+    assertEquals("project-id", OPTIONS_NO_CREDENTIALS.getProjectId());
+    assertSame(RetryParams.noRetries(), OPTIONS_NO_CREDENTIALS.getRetryParams());
+  }
+
+  @Test
+  public void testBuilderNullCredentials() {
+    thrown.expect(NullPointerException.class);
+    TestServiceOptions.newBuilder().setCredentials(null).build();
+  }
+
+  @Test
   public void testBuilderDeprecated() {
-    assertSame(authCredentials, DEPRECATED_OPTIONS.authCredentials());
+    assertSame(credentials, DEPRECATED_OPTIONS.getCredentials());
     assertSame(TEST_CLOCK, DEPRECATED_OPTIONS.clock());
     assertEquals("host", DEPRECATED_OPTIONS.host());
     assertEquals("project-id", DEPRECATED_OPTIONS.projectId());

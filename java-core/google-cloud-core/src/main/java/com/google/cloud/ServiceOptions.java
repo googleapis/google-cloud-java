@@ -18,8 +18,11 @@ package com.google.cloud;
 
 import static com.google.common.base.MoreObjects.firstNonNull;
 import static com.google.common.base.Preconditions.checkArgument;
+import static com.google.common.base.Preconditions.checkNotNull;
 import static java.nio.charset.StandardCharsets.UTF_8;
 
+import com.google.auth.Credentials;
+import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.spi.ServiceRpcFactory;
 import com.google.common.collect.Iterables;
 import com.google.common.io.Files;
@@ -73,17 +76,16 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
   private static final String LIBRARY_VERSION = defaultLibraryVersion();
   private static final String APPLICATION_NAME =
       LIBRARY_VERSION == null ? LIBRARY_NAME : LIBRARY_NAME + "/" + LIBRARY_VERSION;
-  private static final long serialVersionUID = 3049375916337507361L;
+  private static final long serialVersionUID = -5714029257168617973L;
 
   private final String projectId;
   private final String host;
-  private final RestorableState<AuthCredentials> authCredentialsState;
   private final RetryParams retryParams;
   private final String serviceRpcFactoryClassName;
   private final String serviceFactoryClassName;
   private final Clock clock;
+  private final Credentials credentials;
 
-  private transient AuthCredentials authCredentials;
   private transient ServiceRpcFactory<ServiceRpcT, OptionsT> serviceRpcFactory;
   private transient ServiceFactory<ServiceT, OptionsT> serviceFactory;
   private transient ServiceT service;
@@ -103,7 +105,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
 
     private String projectId;
     private String host;
-    private AuthCredentials authCredentials;
+    private Credentials credentials;
     private RetryParams retryParams;
     private ServiceFactory<ServiceT, OptionsT> serviceFactory;
     private ServiceRpcFactory<ServiceRpcT, OptionsT> serviceRpcFactory;
@@ -114,7 +116,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
     protected Builder(ServiceOptions<ServiceT, ServiceRpcT, OptionsT> options) {
       projectId = options.projectId;
       host = options.host;
-      authCredentials = options.authCredentials;
+      credentials = options.credentials;
       retryParams = options.retryParams;
       serviceFactory = options.serviceFactory;
       serviceRpcFactory = options.serviceRpcFactory;
@@ -209,22 +211,18 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
     }
 
     /**
-     * Sets the service authentication credentials.
+     * Sets the service authentication credentials. If no credentials are set,
+     * {@link GoogleCredentials#getApplicationDefault()} will be used to attempt getting credentials
+     * from the environment. Use {@link NoCredentials#getInstance()} to skip authentication, this is
+     * typically useful when using local service emulators.
      *
+     * @param credentials authentication credentials, should not be {@code null}
      * @return the builder
+     * @throws NullPointerException if {@code credentials} is {@code null}. To disable
+     *     authentication use {@link NoCredentials#getInstance()}
      */
-    @Deprecated
-    public B authCredentials(AuthCredentials authCredentials) {
-      return setAuthCredentials(authCredentials);
-    }
-
-    /**
-     * Sets the service authentication credentials.
-     *
-     * @return the builder
-     */
-    public B setAuthCredentials(AuthCredentials authCredentials) {
-      this.authCredentials = authCredentials;
+    public B setCredentials(Credentials credentials) {
+      this.credentials = checkNotNull(credentials);
       return self();
     }
 
@@ -284,9 +282,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
           + "or the environment.  Please set a project ID using the builder.");
     }
     host = firstNonNull(builder.host, getDefaultHost());
-    authCredentials =
-        builder.authCredentials != null ? builder.authCredentials : defaultAuthCredentials();
-    authCredentialsState = authCredentials != null ? authCredentials.capture() : null;
+    credentials = builder.credentials != null ? builder.credentials : defaultCredentials();
     retryParams = firstNonNull(builder.retryParams, defaultRetryParams());
     serviceFactory = firstNonNull(builder.serviceFactory,
         getFromServiceLoader(serviceFactoryClass, getDefaultServiceFactory()));
@@ -307,18 +303,9 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
     return true;
   }
 
-  private static AuthCredentials defaultAuthCredentials() {
-    // Consider App Engine.
-    if (appEngineAppId() != null) {
-      try {
-        return AuthCredentials.createForAppEngine();
-      } catch (Exception ignore) {
-        // Maybe not on App Engine
-      }
-    }
-
+  private static GoogleCredentials defaultCredentials() {
     try {
-      return AuthCredentials.createApplicationDefaults();
+      return GoogleCredentials.getApplicationDefault();
     } catch (Exception ex) {
       return null;
     }
@@ -528,16 +515,20 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
   /**
    * Returns the authentication credentials.
    */
-  @Deprecated
-  public AuthCredentials authCredentials() {
-    return getAuthCredentials();
+  public Credentials getCredentials() {
+    return credentials;
   }
 
   /**
-   * Returns the authentication credentials.
+   * Returns the authentication credentials. If required, credentials are scoped.
    */
-  public AuthCredentials getAuthCredentials() {
-    return authCredentials;
+  public Credentials getScopedCredentials() {
+    Credentials credentialsToReturn = credentials;
+    if (credentials instanceof GoogleCredentials
+        && ((GoogleCredentials) credentials).createScopedRequired()) {
+      credentialsToReturn = ((GoogleCredentials) credentials).createScoped(getScopes());
+    }
+    return credentialsToReturn;
   }
 
   /**
@@ -619,14 +610,14 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
   }
 
   protected int baseHashCode() {
-    return Objects.hash(projectId, host, authCredentialsState, retryParams, serviceFactoryClassName,
+    return Objects.hash(projectId, host, credentials, retryParams, serviceFactoryClassName,
         serviceRpcFactoryClassName, clock);
   }
 
   protected boolean baseEquals(ServiceOptions<?, ?, ?> other) {
     return Objects.equals(projectId, other.projectId)
         && Objects.equals(host, other.host)
-        && Objects.equals(authCredentialsState, other.authCredentialsState)
+        && Objects.equals(credentials, other.credentials)
         && Objects.equals(retryParams, other.retryParams)
         && Objects.equals(serviceFactoryClassName, other.serviceFactoryClassName)
         && Objects.equals(serviceRpcFactoryClassName, other.serviceRpcFactoryClassName)
@@ -637,7 +628,6 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
     input.defaultReadObject();
     serviceFactory = newInstance(serviceFactoryClassName);
     serviceRpcFactory = newInstance(serviceRpcFactoryClassName);
-    authCredentials = authCredentialsState != null ? authCredentialsState.restore() : null;
   }
 
   @SuppressWarnings("unchecked")
