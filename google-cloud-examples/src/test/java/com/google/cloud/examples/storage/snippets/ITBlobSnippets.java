@@ -31,12 +31,15 @@ import com.google.cloud.storage.BlobId;
 import com.google.cloud.storage.BlobInfo;
 import com.google.cloud.storage.BucketInfo;
 import com.google.cloud.storage.Storage;
+import com.google.cloud.storage.Storage.BlobListOption;
 import com.google.cloud.storage.StorageException;
 import com.google.cloud.storage.testing.RemoteStorageHelper;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Sets;
 
+import org.junit.After;
 import org.junit.AfterClass;
+import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
@@ -46,6 +49,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.Iterator;
 import java.util.Set;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
@@ -71,7 +75,6 @@ public class ITBlobSnippets {
     RemoteStorageHelper helper = RemoteStorageHelper.create();
     storage = helper.getOptions().getService();
     storage.create(BucketInfo.of(BUCKET));
-    blob = storage.create(BlobInfo.newBuilder(BUCKET, BLOB).build());
   }
 
   @AfterClass
@@ -81,6 +84,18 @@ public class ITBlobSnippets {
       if (!wasDeleted && log.isLoggable(Level.WARNING)) {
         log.log(Level.WARNING, "Deletion of bucket {0} timed out, bucket is not empty", BUCKET);
       }
+    }
+  }
+
+  @Before
+  public void before() {
+    blob = storage.create(BlobInfo.newBuilder(BUCKET, BLOB).build());
+  }
+
+  @After
+  public void after() {
+    for (BlobInfo info : storage.list(BUCKET, BlobListOption.versions(true)).getValues()) {
+      storage.delete(info.getBlobId());
     }
   }
 
@@ -136,5 +151,22 @@ public class ITBlobSnippets {
     assertTrue(blobSnippets.deleteAcl());
     assertNull(blobSnippets.getAcl());
     storage.delete(BlobId.of(BUCKET, BLOB));
+  }
+
+  @Test
+  public void testMoveBlob() throws IOException {
+    BlobSnippets blobSnippets = new BlobSnippets(blob);
+
+    Blob movedBlob = blobSnippets.moveTo(BUCKET, "moveBlob");
+    assertNotNull(movedBlob);
+
+    // Assert that the destination blob exists
+    Iterator<Blob> blobs = storage.list(BUCKET).iterateAll();
+    Blob moveBlob = blobs.next();
+    assertEquals(BUCKET, moveBlob.getBucket());
+    assertEquals("moveBlob", moveBlob.getName());
+
+    // Assert that the old blob doesn't exist
+    assertFalse(blobs.hasNext());
   }
 }
