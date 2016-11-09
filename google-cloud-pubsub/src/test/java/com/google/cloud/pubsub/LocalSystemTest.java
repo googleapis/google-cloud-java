@@ -16,7 +16,7 @@
 
 package com.google.cloud.pubsub;
 
-import com.google.cloud.pubsub.testing.LocalPubsubHelper;
+import com.google.cloud.pubsub.testing.LocalPubSubHelper;
 
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
@@ -25,7 +25,7 @@ import java.io.IOException;
 
 public class LocalSystemTest extends BaseSystemTest {
 
-  private static LocalPubsubHelper pubsubHelper;
+  private static LocalPubSubHelper pubsubHelper;
   private static PubSub pubsub;
 
   @Override
@@ -40,7 +40,7 @@ public class LocalSystemTest extends BaseSystemTest {
 
   @BeforeClass
   public static void startServer() throws IOException, InterruptedException {
-    pubsubHelper = LocalPubsubHelper.create();
+    pubsubHelper = LocalPubSubHelper.create();
     pubsubHelper.start();
     pubsub = pubsubHelper.getOptions().getService();
   }

@@ -39,7 +39,7 @@ public class LocalLoggingHelper {
   private final LocalLoggingImpl loggingImpl;
 
   /**
-   * Constructs a new LocalPubsubHelper. The method start() must
+   * Constructs a new LocalLoggingHelper. The method start() must
    * be called before it is used.
    */
   public LocalLoggingHelper(String addressString) {
