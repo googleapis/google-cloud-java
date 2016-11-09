@@ -1496,6 +1496,17 @@ public interface Storage extends Service<StorageOptions> {
    * Bucket bucket = storage.create(BucketInfo.of(bucketName));
    * }</pre>
    *
+   * <p>Example of creating a bucket with storage class and location.
+   * <pre> {@code
+   * String bucketName = "my_unique_bucket";
+   * Bucket bucket = storage.create(BucketInfo.newBuilder(bucketName)
+   *     // See here for possible values: http://g.co/cloud/storage/docs/storage-classes
+   *     .setStorageClass("COLDLINE")
+   *     // Possible values: http://g.co/cloud/storage/docs/bucket-locations#location-mr
+   *     .setLocation("asia")
+   *     .build());
+   * }</pre>
+   *
    * @return a complete bucket
    * @throws StorageException upon failure
    */

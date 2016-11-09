@@ -123,6 +123,10 @@ public class ITBlobSnippets {
     }
     assertFalse(blobSnippets.delete());
     blobSnippets = new BlobSnippets(storage.get(blob.getBucket(), blob.getName()));
+
+    byte[] subcontent = blobSnippets.readContentRange(1, 8);
+    assertArrayEquals("ello, W".getBytes(UTF_8), subcontent);
+
     assertNull(blobSnippets.getAcl());
     assertNotNull(blobSnippets.createAcl());
     Acl updatedAcl = blobSnippets.updateAcl();

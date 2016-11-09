@@ -190,6 +190,23 @@ public class BlobSnippets {
   }
 
   /**
+   * Example of reading just a portion of the blob's content.
+   */
+  // [TARGET reader(BlobSourceOption...)]
+  // [VARIABLE 1]
+  // [VARIABLE 8]
+  public byte[] readContentRange(int start, int end) throws IOException {
+    // [START readContentRange]
+    try (ReadChannel reader = blob.reader()) {
+      reader.seek(start);
+      ByteBuffer bytes = ByteBuffer.allocate(end - start);
+      reader.read(bytes);
+      return bytes.array();
+    }
+    // [END readContentRange]
+  }
+
+  /**
    * Example of writing the blob's content through a writer.
    */
   // [TARGET writer(BlobWriteOption...)]
