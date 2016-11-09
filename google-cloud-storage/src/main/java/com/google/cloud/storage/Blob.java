@@ -617,6 +617,18 @@ public class Blob extends BlobInfo {
    * }
    * }</pre>
    *
+   * <p>Example of reading just a portion of the blob's content.
+   * <pre> {@code
+   * int start = 1;
+   * int end = 8;
+   * try (ReadChannel reader = blob.reader()) {
+   *   reader.seek(start);
+   *   ByteBuffer bytes = ByteBuffer.allocate(end - start);
+   *   reader.read(bytes);
+   *   return bytes.array();
+   * }
+   * }</pre>
+   *
    * @param options blob read options
    * @throws StorageException upon failure
    */
