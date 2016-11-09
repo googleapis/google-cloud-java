@@ -48,6 +48,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
@@ -64,6 +65,7 @@ public class ITStorageSnippets {
 
   private static Storage storage;
   private static StorageSnippets storageSnippets;
+  private static List<String> bucketsToCleanUp;
 
   @Rule
   public ExpectedException thrown = ExpectedException.none();
@@ -75,18 +77,33 @@ public class ITStorageSnippets {
   public static void beforeClass() {
     RemoteStorageHelper helper = RemoteStorageHelper.create();
     storage = helper.getOptions().getService();
+    bucketsToCleanUp = new ArrayList<String>();
     storageSnippets = new StorageSnippets(storage);
     storageSnippets.createBucket(BUCKET);
+    bucketsToCleanUp.add(BUCKET);
   }
 
   @AfterClass
   public static void afterClass() throws ExecutionException, InterruptedException {
     if (storage != null) {
-      boolean wasDeleted = RemoteStorageHelper.forceDelete(storage, BUCKET, 5, TimeUnit.SECONDS);
-      if (!wasDeleted && log.isLoggable(Level.WARNING)) {
-        log.log(Level.WARNING, "Deletion of bucket {0} timed out, bucket is not empty", BUCKET);
+      for (String bucket : bucketsToCleanUp) {
+        boolean wasDeleted = RemoteStorageHelper.forceDelete(storage, bucket, 5, TimeUnit.SECONDS);
+        if (!wasDeleted && log.isLoggable(Level.WARNING)) {
+          log.log(Level.WARNING, "Deletion of bucket {0} timed out, bucket is not empty", bucket);
+        }
       }
     }
+  }
+
+  @Test
+  public void testCreateBucketWithStorageClassAndLocation()
+      throws ExecutionException, InterruptedException {
+    String tempBucket = RemoteStorageHelper.generateBucketName();
+    bucketsToCleanUp.add(tempBucket);
+
+    Bucket bucket = storageSnippets.createBucketWithStorageClassAndLocation(tempBucket);
+
+    assertNotNull(bucket);
   }
 
   @Test
