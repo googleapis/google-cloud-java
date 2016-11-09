@@ -58,7 +58,7 @@ public abstract class HttpServiceOptions<ServiceT extends Service<OptionsT>, Ser
     @Override
     public HttpTransport create() {
       // Consider App Engine
-      if (appEngineAppId() != null) {
+      if (getAppEngineAppId() != null) {
         try {
           return new UrlFetchTransport();
         } catch (Exception ignore) {
