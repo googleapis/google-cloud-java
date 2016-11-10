@@ -332,6 +332,12 @@ public class ITStorageSnippets {
         storageSnippets.listBlobAcls(BUCKET, blobName, createdBlob.getGeneration()));
     assertTrue(acls.contains(updatedAcl));
 
+    assertNull(storageSnippets.getBlobAcl(BUCKET, blobName, USER_EMAIL));
+    storage.createAcl(BlobId.of(BUCKET, blobName), Acl.of(new User(USER_EMAIL), Role.READER));
+    Acl userAcl = storageSnippets.getBlobAcl(BUCKET, blobName, USER_EMAIL);
+    assertNotNull(userAcl);
+    assertEquals(USER_EMAIL, ((User)userAcl.getEntity()).getEmail());
+
     updatedAcl = storageSnippets.blobToPublicRead(BUCKET, blobName, createdBlob.getGeneration());
     assertEquals(Acl.Role.READER, updatedAcl.getRole());
     assertEquals(User.ofAllUsers(), updatedAcl.getEntity());
@@ -339,6 +345,7 @@ public class ITStorageSnippets {
         storageSnippets.listBlobAcls(BUCKET, blobName, createdBlob.getGeneration()));
     assertTrue(acls.contains(updatedAcl));
 
+    assertNotNull(storageSnippets.getBlobAcl(BUCKET, blobName, createdBlob.getGeneration()));
     assertTrue(storageSnippets.deleteBlobAcl(BUCKET, blobName, createdBlob.getGeneration()));
     assertNull(storageSnippets.getBlobAcl(BUCKET, blobName, createdBlob.getGeneration()));
     // test non-existing blob

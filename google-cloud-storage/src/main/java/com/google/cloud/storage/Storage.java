@@ -2425,6 +2425,15 @@ public interface Storage extends Service<StorageOptions> {
    * Acl acl = storage.getAcl(blobId, User.ofAllAuthenticatedUsers());
    * }</pre>
    *
+   * <p>Example of getting the ACL entry for a specific user on a blob.
+   * <pre> {@code
+   * String bucketName = "my_unique_bucket";
+   * String blobName = "my_blob_name";
+   * String userEmail = "google-cloud-java-tests@java-docs-samples-tests.iam.gserviceaccount.com";
+   * BlobId blobId = BlobId.of(bucketName, blobName);
+   * Acl acl = storage.getAcl(blobId, new User(userEmail));
+   * }</pre>
+   *
    * @throws StorageException upon failure
    */
   Acl getAcl(BlobId blob, Entity entity);
