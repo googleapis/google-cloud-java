@@ -15,12 +15,15 @@
 package com.google.cloud.pubsub.spi.v1;
 
 import com.google.api.gax.grpc.BundlingSettings;
+import com.google.api.gax.grpc.FixedChannelProvider;
 import com.google.cloud.pubsub.testing.LocalPubSubHelper;
 import com.google.protobuf.ByteString;
 import com.google.pubsub.v1.PubsubMessage;
 import com.google.pubsub.v1.PullResponse;
 import com.google.pubsub.v1.PushConfig;
 import com.google.pubsub.v1.Topic;
+
+import io.grpc.ManagedChannel;
 
 import org.joda.time.Duration;
 import org.junit.After;
@@ -29,8 +32,6 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-
-import io.grpc.ManagedChannel;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -42,6 +43,7 @@ public class PublisherApiTest {
   private PublisherApi publisherApi;
   private PublisherApi bundledPublisherApi;
   private SubscriberApi subscriberApi;
+  private ManagedChannel channel;
 
   @BeforeClass
   public static void startServer() throws IOException, InterruptedException {
@@ -56,11 +58,12 @@ public class PublisherApiTest {
 
   @Before
   public void setUp() throws Exception {
-    ManagedChannel channel = pubsubHelper.createChannel();
+    channel = pubsubHelper.createChannel();
+    FixedChannelProvider fixedChannelProvider = FixedChannelProvider.create(channel);
 
     PublisherSettings publisherSettings =
         PublisherSettings.defaultBuilder()
-            .provideChannelWith(channel, true)
+            .setChannelProvider(fixedChannelProvider)
             .build();
     publisherApi = PublisherApi.create(publisherSettings);
 
@@ -71,7 +74,7 @@ public class PublisherApiTest {
 
     PublisherSettings.Builder bundledPublisherSettingsBuilder = PublisherSettings.defaultBuilder();
     bundledPublisherSettingsBuilder
-        .provideChannelWith(channel, true)
+        .setChannelProvider(fixedChannelProvider)
         .publishSettings()
         .setBundlingSettingsBuilder(bundlingSettings);
 
@@ -79,7 +82,7 @@ public class PublisherApiTest {
     bundledPublisherApi = PublisherApi.create(bundledPublisherSettings);
 
     SubscriberSettings subscriberSettings = SubscriberSettings.defaultBuilder()
-        .provideChannelWith(channel, true)
+        .setChannelProvider(fixedChannelProvider)
         .build();
     subscriberApi = SubscriberApi.create(subscriberSettings);
   }
@@ -94,6 +97,9 @@ public class PublisherApiTest {
     }
     if (bundledPublisherApi != null) {
       bundledPublisherApi.close();
+    }
+    if (channel != null) {
+      channel.shutdown();
     }
     pubsubHelper.reset();
   }

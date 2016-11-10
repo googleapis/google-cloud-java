@@ -16,12 +16,15 @@
 
 package com.google.cloud.pubsub.spi;
 
-import static com.google.common.base.MoreObjects.firstNonNull;
-
-import com.google.api.gax.core.ConnectionSettings;
 import com.google.api.gax.grpc.ApiException;
+import com.google.api.gax.grpc.ChannelProvider;
+import com.google.api.gax.grpc.ExecutorProvider;
+import com.google.api.gax.grpc.FixedChannelProvider;
+import com.google.api.gax.grpc.FixedExecutorProvider;
+import com.google.api.gax.grpc.ProviderManager;
 import com.google.api.gax.grpc.UnaryCallSettings;
 import com.google.cloud.GrpcServiceOptions.ExecutorFactory;
+import com.google.cloud.NoCredentials;
 import com.google.cloud.pubsub.PubSubException;
 import com.google.cloud.pubsub.PubSubOptions;
 import com.google.cloud.pubsub.spi.v1.PublisherApi;
@@ -75,6 +78,7 @@ public class DefaultPubSubRpc implements PubSubRpc {
   private final PublisherApi publisherApi;
   private final SubscriberApi subscriberApi;
   private final ScheduledExecutorService executor;
+  private final ProviderManager providerManager;
   private final ExecutorFactory<ScheduledExecutorService> executorFactory;
 
   private boolean closed;
@@ -98,8 +102,8 @@ public class DefaultPubSubRpc implements PubSubRpc {
     }
 
     @Override
-    protected ConnectionSettings.Builder getConnectionSettings() {
-      return super.getConnectionSettings();
+    protected ChannelProvider getChannelProvider() {
+      return super.getChannelProvider();
     }
   }
 
@@ -131,30 +135,33 @@ public class DefaultPubSubRpc implements PubSubRpc {
     InternalPubSubOptions internalOptions = new InternalPubSubOptions(options);
     executorFactory = internalOptions.getExecutorFactory();
     executor = executorFactory.get();
-    String libraryName = options.getLibraryName();
-    String libraryVersion = firstNonNull(options.getLibraryVersion(), "");
     try {
-      PublisherSettings.Builder pubBuilder = PublisherSettings.defaultBuilder()
-          .provideExecutorWith(executor, false)
-          .setClientLibHeader(libraryName, libraryVersion);
-      SubscriberSettings.Builder subBuilder = SubscriberSettings.defaultBuilder()
-          .provideExecutorWith(executor, false)
-          .setClientLibHeader(libraryName, libraryVersion);
-      // todo(mziccard): PublisherSettings should support null/absent credentials for testing
-      if (options.getHost().contains("localhost") || options.getCredentials() == null) {
-        ManagedChannel channel = NettyChannelBuilder.forTarget(options.getHost())
+      ExecutorProvider executorProvider = FixedExecutorProvider.create(executor);
+      ChannelProvider channelProvider;
+      // todo(mziccard): ChannelProvider should support null/absent credentials for testing
+      if (options.getHost().contains("localhost")
+          || options.getCredentials().equals(NoCredentials.getInstance())) {
+        ManagedChannel managedChannel = NettyChannelBuilder.forTarget(options.getHost())
             .negotiationType(NegotiationType.PLAINTEXT)
+            .executor(executor)
             .build();
-        pubBuilder.provideChannelWith(channel, true);
-        subBuilder.provideChannelWith(channel, true);
+        channelProvider = FixedChannelProvider.create(managedChannel);
       } else {
-        ConnectionSettings connectionSettings = internalOptions.getConnectionSettings().build();
-        pubBuilder.provideChannelWith(connectionSettings);
-        subBuilder.provideChannelWith(connectionSettings);
+        channelProvider = internalOptions.getChannelProvider();
       }
+      providerManager = ProviderManager.newBuilder()
+          .setChannelProvider(channelProvider)
+          .setExecutorProvider(executorProvider)
+          .build();
       UnaryCallSettings.Builder callSettingsBuilder = internalOptions.getApiCallSettings();
-      pubBuilder.applyToAllApiMethods(callSettingsBuilder);
-      subBuilder.applyToAllApiMethods(callSettingsBuilder);
+      PublisherSettings.Builder pubBuilder = PublisherSettings.defaultBuilder()
+          .setExecutorProvider(providerManager)
+          .setChannelProvider(providerManager)
+          .applyToAllApiMethods(callSettingsBuilder);
+      SubscriberSettings.Builder subBuilder = SubscriberSettings.defaultBuilder()
+          .setExecutorProvider(providerManager)
+          .setChannelProvider(providerManager)
+          .applyToAllApiMethods(callSettingsBuilder);
       publisherApi = PublisherApi.create(pubBuilder.build());
       subscriberApi = SubscriberApi.create(subBuilder.build());
     } catch (Exception ex) {
@@ -284,6 +291,7 @@ public class DefaultPubSubRpc implements PubSubRpc {
     closed = true;
     subscriberApi.close();
     publisherApi.close();
+    providerManager.getChannel().shutdown();
     executorFactory.release(executor);
   }
 }

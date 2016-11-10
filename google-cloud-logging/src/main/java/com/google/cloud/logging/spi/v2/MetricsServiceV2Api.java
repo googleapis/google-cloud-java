@@ -1,20 +1,23 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016, Google Inc. All rights reserved.
  *
- * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
- * in compliance with the License. You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- * http://www.apache.org/licenses/LICENSE-2.0
+ *     http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing, software distributed under the License
- * is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
- * or implied. See the License for the specific language governing permissions and limitations under
- * the License.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
 package com.google.cloud.logging.spi.v2;
 
 import static com.google.cloud.logging.spi.v2.PagedResponseWrappers.ListLogMetricsPagedResponse;
 
+import com.google.api.gax.grpc.ChannelAndExecutor;
 import com.google.api.gax.grpc.UnaryCallable;
 import com.google.api.gax.protobuf.PathTemplate;
 import com.google.logging.v2.CreateLogMetricRequest;
@@ -76,18 +79,22 @@ import java.util.concurrent.ScheduledExecutorService;
  *
  * <pre>
  * <code>
- * MetricsServiceV2Settings metricsServiceV2Settings = MetricsServiceV2Settings.defaultBuilder()
- *     .provideChannelWith(myCredentials)
- *     .build();
- * MetricsServiceV2Api metricsServiceV2Api = MetricsServiceV2Api.create(metricsServiceV2Settings);
+ * InstantiatingChannelProvider channelProvider =
+ *     MetricsServiceV2Settings.defaultChannelProviderBuilder()
+ *         .setCredentialsProvider(FixedCredentialsProvider.create(myCredentials))
+ *         .build();
+ * MetricsServiceV2Settings metricsServiceV2Settings =
+ *     MetricsServiceV2Settings.defaultBuilder().setChannelProvider(channelProvider).build();
+ * MetricsServiceV2Api metricsServiceV2Api =
+ *     MetricsServiceV2Api.create(metricsServiceV2Settings);
  * </code>
  * </pre>
  */
 @javax.annotation.Generated("by GAPIC")
 public class MetricsServiceV2Api implements AutoCloseable {
   private final MetricsServiceV2Settings settings;
-  private final ManagedChannel channel;
   private final ScheduledExecutorService executor;
+  private final ManagedChannel channel;
   private final List<AutoCloseable> closeables = new ArrayList<>();
 
   private final UnaryCallable<ListLogMetricsRequest, ListLogMetricsResponse> listLogMetricsCallable;
@@ -101,12 +108,25 @@ public class MetricsServiceV2Api implements AutoCloseable {
   private static final PathTemplate PARENT_PATH_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding("projects/{project}");
 
+  private static final PathTemplate SINK_PATH_TEMPLATE =
+      PathTemplate.createWithoutUrlEncoding("projects/{project}/sinks/{sink}");
+
   private static final PathTemplate METRIC_PATH_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding("projects/{project}/metrics/{metric}");
+
+  private static final PathTemplate LOG_PATH_TEMPLATE =
+      PathTemplate.createWithoutUrlEncoding("projects/{project}/logs/{log}");
 
   /** Formats a string containing the fully-qualified path to represent a parent resource. */
   public static final String formatParentName(String project) {
     return PARENT_PATH_TEMPLATE.instantiate("project", project);
+  }
+
+  /** Formats a string containing the fully-qualified path to represent a sink resource. */
+  public static final String formatSinkName(String project, String sink) {
+    return SINK_PATH_TEMPLATE.instantiate(
+        "project", project,
+        "sink", sink);
   }
 
   /** Formats a string containing the fully-qualified path to represent a metric resource. */
@@ -116,9 +136,26 @@ public class MetricsServiceV2Api implements AutoCloseable {
         "metric", metric);
   }
 
+  /** Formats a string containing the fully-qualified path to represent a log resource. */
+  public static final String formatLogName(String project, String log) {
+    return LOG_PATH_TEMPLATE.instantiate(
+        "project", project,
+        "log", log);
+  }
+
   /** Parses the project from the given fully-qualified path which represents a parent resource. */
   public static final String parseProjectFromParentName(String parentName) {
     return PARENT_PATH_TEMPLATE.parse(parentName).get("project");
+  }
+
+  /** Parses the project from the given fully-qualified path which represents a sink resource. */
+  public static final String parseProjectFromSinkName(String sinkName) {
+    return SINK_PATH_TEMPLATE.parse(sinkName).get("project");
+  }
+
+  /** Parses the sink from the given fully-qualified path which represents a sink resource. */
+  public static final String parseSinkFromSinkName(String sinkName) {
+    return SINK_PATH_TEMPLATE.parse(sinkName).get("sink");
   }
 
   /** Parses the project from the given fully-qualified path which represents a metric resource. */
@@ -129,6 +166,16 @@ public class MetricsServiceV2Api implements AutoCloseable {
   /** Parses the metric from the given fully-qualified path which represents a metric resource. */
   public static final String parseMetricFromMetricName(String metricName) {
     return METRIC_PATH_TEMPLATE.parse(metricName).get("metric");
+  }
+
+  /** Parses the project from the given fully-qualified path which represents a log resource. */
+  public static final String parseProjectFromLogName(String logName) {
+    return LOG_PATH_TEMPLATE.parse(logName).get("project");
+  }
+
+  /** Parses the log from the given fully-qualified path which represents a log resource. */
+  public static final String parseLogFromLogName(String logName) {
+    return LOG_PATH_TEMPLATE.parse(logName).get("log");
   }
 
   /** Constructs an instance of MetricsServiceV2Api with default settings. */
@@ -151,8 +198,9 @@ public class MetricsServiceV2Api implements AutoCloseable {
    */
   protected MetricsServiceV2Api(MetricsServiceV2Settings settings) throws IOException {
     this.settings = settings;
-    this.executor = settings.getExecutorProvider().getOrBuildExecutor();
-    this.channel = settings.getChannelProvider().getOrBuildChannel(this.executor);
+    ChannelAndExecutor channelAndExecutor = settings.getChannelAndExecutor();
+    this.executor = channelAndExecutor.getExecutor();
+    this.channel = channelAndExecutor.getChannel();
 
     this.listLogMetricsCallable =
         UnaryCallable.create(settings.listLogMetricsSettings(), this.channel, this.executor);
