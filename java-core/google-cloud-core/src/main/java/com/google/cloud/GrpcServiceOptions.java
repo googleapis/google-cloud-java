@@ -18,8 +18,10 @@ package com.google.cloud;
 
 import static com.google.common.base.MoreObjects.firstNonNull;
 
-import com.google.api.gax.core.ConnectionSettings;
+import com.google.api.gax.core.FixedCredentialsProvider;
 import com.google.api.gax.core.RetrySettings;
+import com.google.api.gax.grpc.ChannelProvider;
+import com.google.api.gax.grpc.InstantiatingChannelProvider;
 import com.google.api.gax.grpc.UnaryCallSettings;
 import com.google.auth.Credentials;
 import com.google.cloud.spi.ServiceRpcFactory;
@@ -304,26 +306,19 @@ public abstract class GrpcServiceOptions<ServiceT extends Service<OptionsT>, Ser
   }
 
   /**
-   * Returns a builder for connection-related settings.
+   * Returns a channel provider.
    */
-  @Deprecated
-  protected ConnectionSettings.Builder connectionSettings() {
-    return getConnectionSettings();
-  }
-
-  /**
-   * Returns a builder for connection-related settings.
-   */
-  protected ConnectionSettings.Builder getConnectionSettings() {
+  protected ChannelProvider getChannelProvider() {
     HostAndPort hostAndPort = HostAndPort.fromString(getHost());
-    ConnectionSettings.Builder builder = ConnectionSettings.newBuilder()
+    InstantiatingChannelProvider.Builder builder = InstantiatingChannelProvider.newBuilder()
         .setServiceAddress(hostAndPort.getHostText())
-        .setPort(hostAndPort.getPort());
+        .setPort(hostAndPort.getPort())
+        .setClientLibHeader(getLibraryName(), firstNonNull(getLibraryVersion(), ""));
     Credentials scopedCredentials = getScopedCredentials();
     if (scopedCredentials != null && scopedCredentials != NoCredentials.getInstance()) {
-      builder.provideCredentialsWith(scopedCredentials);
+      builder.setCredentialsProvider(FixedCredentialsProvider.create(scopedCredentials));
     }
-    return builder;
+    return builder.build();
   }
 
   /**
