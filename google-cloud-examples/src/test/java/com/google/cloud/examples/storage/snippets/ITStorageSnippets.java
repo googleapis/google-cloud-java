@@ -27,6 +27,7 @@ import static org.junit.Assert.fail;
 
 import com.google.cloud.Page;
 import com.google.cloud.storage.Acl;
+import com.google.cloud.storage.Acl.Role;
 import com.google.cloud.storage.Acl.User;
 import com.google.cloud.storage.Blob;
 import com.google.cloud.storage.BlobId;
@@ -63,6 +64,8 @@ public class ITStorageSnippets {
 
   private static final Logger log = Logger.getLogger(ITStorageSnippets.class.getName());
   private static final String BUCKET = RemoteStorageHelper.generateBucketName();
+  private static final String USER_EMAIL = "google-cloud-java-tests@"
+      + "java-docs-samples-tests.iam.gserviceaccount.com";
 
   private static Storage storage;
   private static StorageSnippets storageSnippets;
@@ -290,6 +293,14 @@ public class ITStorageSnippets {
     assertEquals(Acl.Role.OWNER, updatedAcl.getRole());
     Set<Acl> acls = Sets.newHashSet(storageSnippets.listBucketAcls(BUCKET));
     assertTrue(acls.contains(updatedAcl));
+
+    assertNotNull(storageSnippets.getBucketAcl(BUCKET));
+    assertNull(storageSnippets.getBucketAcl(BUCKET, USER_EMAIL));
+    storage.createAcl(BUCKET, Acl.of(new User(USER_EMAIL), Role.READER));
+    Acl userAcl = storageSnippets.getBucketAcl(BUCKET, USER_EMAIL);
+    assertNotNull(userAcl);
+    assertEquals(USER_EMAIL, ((User)userAcl.getEntity()).getEmail());
+
     assertTrue(storageSnippets.deleteBucketAcl(BUCKET));
     assertNull(storageSnippets.getBucketAcl(BUCKET));
   }
