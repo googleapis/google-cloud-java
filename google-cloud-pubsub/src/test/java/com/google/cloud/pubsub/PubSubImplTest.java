@@ -1302,7 +1302,7 @@ public class PubSubImplTest {
     PullRequest request = PullRequest.newBuilder()
         .setSubscription(SUBSCRIPTION_NAME_PB)
         .setMaxMessages(42)
-        .setReturnImmediately(true)
+        .setReturnImmediately(false)
         .build();
     List<ReceivedMessage> messageList = ImmutableList.of(
         ReceivedMessage.fromPb(pubsub, SUBSCRIPTION, MESSAGE_PB1),
@@ -1363,7 +1363,7 @@ public class PubSubImplTest {
     PullRequest request = PullRequest.newBuilder()
         .setSubscription(SUBSCRIPTION_NAME_PB)
         .setMaxMessages(42)
-        .setReturnImmediately(true)
+        .setReturnImmediately(false)
         .build();
     PubSubException exception = new PubSubException(new IOException(), false);
     PullFuture futureMock = EasyMock.createStrictMock(PullFuture.class);

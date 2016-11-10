@@ -702,9 +702,10 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
   /**
    * Pulls messages from the provided subscription. This method possibly returns no messages if no
    * message was available at the time the request was processed by the Pub/Sub service (i.e. the
-   * system is not allowed to wait until at least one message is available). Pulled messages have
-   * their acknowledge deadline automatically renewed until they are explicitly consumed using
-   * {@link Iterator#next()}.
+   * system is not allowed to wait until at least one message is available -
+   * <a href="https://cloud.google.com/pubsub/docs/reference/rpc/google.pubsub.v1#google.pubsub.v1.PullRequest.FIELDS.bool.google.pubsub.v1.PullRequest.return_immediately">return_immediately</a>
+   * option is set to {@code true}). Pulled messages have their acknowledge deadline automatically
+   * renewed until they are explicitly consumed using {@link Iterator#next()}.
    *
    * <p>Example of pulling a maximum number of messages from a subscription.
    * <pre> {@code
@@ -728,9 +729,12 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
   /**
    * Sends a request for pulling messages from the provided subscription. This method returns a
    * {@code Future} object to consume the result. {@link Future#get()} returns a message iterator.
-   * This method possibly returns no messages if no message was available at the time the request
-   * was processed by the Pub/Sub service (i.e. the system is not allowed to wait until at least one
-   * message is available).
+   * When using this method the system is allowed to wait until at least one message is available
+   * rather than returning no messages (i.e.
+   * <a href="https://cloud.google.com/pubsub/docs/reference/rpc/google.pubsub.v1#google.pubsub.v1.PullRequest.FIELDS.bool.google.pubsub.v1.PullRequest.return_immediately">return_immediately</a>
+   * option is set to {@code false}). The client may cancel the request by calling
+   * {@link Future#cancel(boolean)} if it does not wish to wait any longer. Notice that the Pub/Sub
+   * service might still return no messages if a timeout is reached on the service side.
    *
    * <p>Example of asynchronously pulling a maximum number of messages from a subscription.
    * <pre> {@code
