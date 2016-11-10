@@ -293,7 +293,7 @@ public class LoggingHandler extends Handler {
     }
   }
 
-  private LogEntry entryFor(LogRecord record) {
+  protected LogEntry entryFor(LogRecord record) {
     String payload;
     try {
       payload = getFormatter().format(record);
@@ -303,15 +303,17 @@ public class LoggingHandler extends Handler {
       return null;
     }
     Level level = record.getLevel();
-    Map<String, String> labels = ImmutableMap.of(
-        "levelName", level.getName(),
-        "levelValue", String.valueOf(level.intValue()));
-    return LogEntry.newBuilder(Payload.StringPayload.of(payload))
-        .setLabels(labels)
-        .setSeverity(severityFor(level))
-        .build();
+    LogEntry.Builder builder = LogEntry.newBuilder(Payload.StringPayload.of(payload))
+        .addLabel("levelName", level.getName())
+        .addLabel("levelValue", String.valueOf(level.intValue()))
+        .setSeverity(severityFor(level));
+    return buildEntryFor(record, builder);
   }
 
+  protected LogEntry buildEntryFor(LogRecord record, LogEntry.Builder builder) {
+    return builder.build();
+  }
+  
   private static Severity severityFor(Level level) {
     if (level instanceof LoggingLevel) {
       return ((LoggingLevel) level).getSeverity();
