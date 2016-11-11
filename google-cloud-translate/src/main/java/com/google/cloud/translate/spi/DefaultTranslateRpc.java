@@ -16,6 +16,7 @@
 
 package com.google.cloud.translate.spi;
 
+import static com.google.cloud.translate.spi.TranslateRpc.Option.MODEL;
 import static com.google.cloud.translate.spi.TranslateRpc.Option.SOURCE_LANGUAGE;
 import static com.google.cloud.translate.spi.TranslateRpc.Option.TARGET_LANGUAGE;
 import static com.google.common.base.MoreObjects.firstNonNull;
@@ -118,12 +119,16 @@ public class DefaultTranslateRpc implements TranslateRpc {
   public List<TranslationsResource> translate(List<String> texts, Map<Option, ?> optionMap) {
     try {
       final String sourceLanguage = SOURCE_LANGUAGE.getString(optionMap);
+      String model = MODEL.getString(optionMap);
       ImmutableMap.Builder<String, Object> contentBuilder = ImmutableMap.builder();
       contentBuilder.put("target",
           firstNonNull(TARGET_LANGUAGE.getString(optionMap), options.getTargetLanguage()));
       contentBuilder.put("q", texts);
       if (sourceLanguage != null) {
         contentBuilder.put("source", sourceLanguage);
+      }
+      if (model != null) {
+        contentBuilder.put("model", model);
       }
       HttpRequest httpRequest = translate.getRequestFactory()
           .buildPostRequest(buildTargetUrl(""),

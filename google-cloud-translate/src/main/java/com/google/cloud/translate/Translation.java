@@ -21,6 +21,7 @@ import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
 
 import java.io.Serializable;
+import java.util.List;
 import java.util.Objects;
 
 /**
@@ -43,10 +44,12 @@ public class Translation implements Serializable {
 
   private final String translatedText;
   private final String sourceLanguage;
+  private final String model;
 
-  private Translation(String translatedText, String sourceLanguage) {
+  private Translation(String translatedText, String sourceLanguage, String model) {
     this.translatedText = translatedText;
     this.sourceLanguage = sourceLanguage;
+    this.model = model;
   }
 
   /**
@@ -81,6 +84,18 @@ public class Translation implements Serializable {
     return sourceLanguage;
   }
 
+  /**
+   * Returns the translation model used to translate the text. This value is only available if
+   * {@link Translate.TranslateOption#model(String)} was passed to
+   * {@link Translate#translate(List, Translate.TranslateOption...)}.
+   *
+   * <p>Please notice that you must be whitelisted to use the
+   * {@link Translate.TranslateOption#model(String)} option, otherwise it will be ignored.
+   */
+  public String getModel() {
+    return model;
+  }
+
   @Override
   public String toString() {
     return MoreObjects.toStringHelper(this)
@@ -108,7 +123,8 @@ public class Translation implements Serializable {
   }
 
   static Translation fromPb(TranslationsResource translationPb) {
+    // todo remove get("model") as soon as REST apiary supports model
     return new Translation(translationPb.getTranslatedText(),
-        translationPb.getDetectedSourceLanguage());
+        translationPb.getDetectedSourceLanguage(), (String) translationPb.get("model"));
   }
 }
