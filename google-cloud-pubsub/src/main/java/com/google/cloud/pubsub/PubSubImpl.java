@@ -514,7 +514,7 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
 
   private Future<Iterator<ReceivedMessage>> pullAsync(final String subscription,
       int maxMessages, boolean returnImmediately) {
-    PullRequest request = PullRequest.newBuilder().setReturnImmediately(true)
+    PullRequest request = PullRequest.newBuilder()
         .setSubscription(
             SubscriberApi.formatSubscriptionName(getOptions().getProjectId(), subscription))
         .setMaxMessages(maxMessages)
