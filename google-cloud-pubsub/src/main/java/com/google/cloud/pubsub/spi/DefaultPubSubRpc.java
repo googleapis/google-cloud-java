@@ -68,6 +68,8 @@ import io.grpc.Status.Code;
 import io.grpc.netty.NegotiationType;
 import io.grpc.netty.NettyChannelBuilder;
 
+import org.joda.time.Duration;
+
 import java.io.IOException;
 import java.util.Set;
 import java.util.concurrent.Future;
@@ -77,6 +79,7 @@ public class DefaultPubSubRpc implements PubSubRpc {
 
   private final PublisherApi publisherApi;
   private final SubscriberApi subscriberApi;
+  private final SubscriberApi noTimeoutSubscriberApi;
   private final ScheduledExecutorService executor;
   private final ProviderManager providerManager;
   private final ExecutorFactory<ScheduledExecutorService> executorFactory;
@@ -164,6 +167,12 @@ public class DefaultPubSubRpc implements PubSubRpc {
           .applyToAllApiMethods(callSettingsBuilder);
       publisherApi = PublisherApi.create(pubBuilder.build());
       subscriberApi = SubscriberApi.create(subBuilder.build());
+      callSettingsBuilder.setRetrySettingsBuilder(callSettingsBuilder.getRetrySettingsBuilder()
+          .setTotalTimeout(Duration.millis(Long.MAX_VALUE))
+          .setInitialRpcTimeout(Duration.millis(Long.MAX_VALUE))
+          .setMaxRpcTimeout(Duration.millis(Long.MAX_VALUE)));
+      subBuilder.applyToAllApiMethods(callSettingsBuilder);
+      noTimeoutSubscriberApi = SubscriberApi.create(subBuilder.build());
     } catch (Exception ex) {
       throw new IOException(ex);
     }
@@ -256,9 +265,14 @@ public class DefaultPubSubRpc implements PubSubRpc {
     return translate(subscriberApi.acknowledgeCallable().futureCall(request), false);
   }
 
+  private static PullFuture pull(SubscriberApi subscriberApi, PullRequest request) {
+    return new PullFutureImpl(translate(subscriberApi.pullCallable().futureCall(request), false));
+  }
+
   @Override
   public PullFuture pull(PullRequest request) {
-    return new PullFutureImpl(translate(subscriberApi.pullCallable().futureCall(request), false));
+    return request.getReturnImmediately()
+        ? pull(subscriberApi, request) : pull(noTimeoutSubscriberApi, request);
   }
 
   @Override
@@ -290,6 +304,7 @@ public class DefaultPubSubRpc implements PubSubRpc {
     }
     closed = true;
     subscriberApi.close();
+    noTimeoutSubscriberApi.close();
     publisherApi.close();
     providerManager.getChannel().shutdown();
     executorFactory.release(executor);
