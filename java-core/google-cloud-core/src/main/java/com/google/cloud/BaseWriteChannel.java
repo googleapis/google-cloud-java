@@ -41,7 +41,7 @@ public abstract class BaseWriteChannel<
   private final ServiceOptionsT options;
   private final EntityT entity;
   private final String uploadId;
-  private int position;
+  private long position;
   private byte[] buffer = new byte[0];
   private int limit;
   private boolean isOpen = true;
@@ -101,11 +101,11 @@ public abstract class BaseWriteChannel<
   }
 
   @Deprecated
-  protected int position() {
+  protected long position() {
     return getPosition();
   }
 
-  protected int getPosition() {
+  protected long getPosition() {
     return position;
   }
 
@@ -119,7 +119,7 @@ public abstract class BaseWriteChannel<
   }
 
   @Deprecated
-  protected int limit() {
+  protected long limit() {
     return getLimit();
   }
 
@@ -245,7 +245,7 @@ public abstract class BaseWriteChannel<
     protected final ServiceOptionsT serviceOptions;
     protected final EntityT entity;
     protected final String uploadId;
-    protected final int position;
+    protected final long position;
     protected final byte[] buffer;
     protected final boolean isOpen;
     protected final int chunkSize;
@@ -274,7 +274,7 @@ public abstract class BaseWriteChannel<
       private final ServiceOptionsT serviceOptions;
       private final EntityT entity;
       private final String uploadId;
-      private int position;
+      private long position;
       private byte[] buffer;
       private boolean isOpen;
       private int chunkSize;
@@ -290,7 +290,7 @@ public abstract class BaseWriteChannel<
         return setPosition(position);
       }
 
-      public Builder<ServiceOptionsT, EntityT> setPosition(int position) {
+      public Builder<ServiceOptionsT, EntityT> setPosition(long position) {
         this.position = position;
         return this;
       }
