@@ -27,6 +27,7 @@ import static org.junit.Assert.fail;
 
 import com.google.cloud.Page;
 import com.google.cloud.storage.Acl;
+import com.google.cloud.storage.Acl.User;
 import com.google.cloud.storage.Blob;
 import com.google.cloud.storage.BlobId;
 import com.google.cloud.storage.BlobInfo;
@@ -319,6 +320,14 @@ public class ITStorageSnippets {
     Set<Acl> acls = Sets.newHashSet(
         storageSnippets.listBlobAcls(BUCKET, blobName, createdBlob.getGeneration()));
     assertTrue(acls.contains(updatedAcl));
+
+    updatedAcl = storageSnippets.blobToPublicRead(BUCKET, blobName, createdBlob.getGeneration());
+    assertEquals(Acl.Role.READER, updatedAcl.getRole());
+    assertEquals(User.ofAllUsers(), updatedAcl.getEntity());
+    acls = Sets.newHashSet(
+        storageSnippets.listBlobAcls(BUCKET, blobName, createdBlob.getGeneration()));
+    assertTrue(acls.contains(updatedAcl));
+
     assertTrue(storageSnippets.deleteBlobAcl(BUCKET, blobName, createdBlob.getGeneration()));
     assertNull(storageSnippets.getBlobAcl(BUCKET, blobName, createdBlob.getGeneration()));
     // test non-existing blob
