@@ -468,6 +468,28 @@ public class StorageSnippets {
   }
 
   /**
+   * Example of rotating the encryption key of a blob.
+   */
+  // [TARGET copy(CopyRequest)]
+  // [VARIABLE "my_unique_bucket"]
+  // [VARIABLE "my_blob_name"]
+  // [VARIABLE "old_encryption_key"]
+  // [VARIABLE "new_encryption_key"]
+  public Blob rotateBlobEncryptionKey(
+      String bucketName, String blobName, String oldEncryptionKey, String newEncryptionKey) {
+    // [START storageRotateEncryptionKey]
+    BlobId blobId = BlobId.of(bucketName, blobName);
+    CopyRequest request = CopyRequest.newBuilder()
+        .setSource(blobId)
+        .setSourceOptions(BlobSourceOption.decryptionKey(oldEncryptionKey))
+        .setTarget(blobId, BlobTargetOption.encryptionKey(newEncryptionKey))
+        .build();
+    Blob blob = storage.copy(request).getResult();
+    // [END storageRotateEncryptionKey]
+    return blob;
+  }
+
+  /**
    * Example of reading all bytes of a blob, if generation matches a value, otherwise a
    * {@link StorageException} is thrown.
    */
