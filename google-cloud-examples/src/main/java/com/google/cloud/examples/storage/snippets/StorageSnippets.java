@@ -44,6 +44,7 @@ import com.google.cloud.storage.Storage.BlobGetOption;
 import com.google.cloud.storage.Storage.BlobListOption;
 import com.google.cloud.storage.Storage.BlobSourceOption;
 import com.google.cloud.storage.Storage.BlobTargetOption;
+import com.google.cloud.storage.Storage.BlobWriteOption;
 import com.google.cloud.storage.Storage.BucketGetOption;
 import com.google.cloud.storage.Storage.BucketListOption;
 import com.google.cloud.storage.Storage.BucketSourceOption;
@@ -150,6 +151,26 @@ public class StorageSnippets {
     BlobInfo blobInfo = BlobInfo.newBuilder(blobId).setContentType("text/plain").build();
     Blob blob = storage.create(blobInfo, content);
     // [END createBlobFromInputStream]
+    return blob;
+  }
+
+  /**
+   * Example of uploading an encrypted blob.
+   */
+  // [TARGET create(BlobInfo, InputStream, BlobWriteOption...)]
+  // [VARIABLE "my_unique_bucket"]
+  // [VARIABLE "my_blob_name"]
+  // [VARIABLE "my_encryption_key"]
+  public Blob createEncryptedBlob(String bucketName, String blobName, String encryptionKey) {
+    // [START storageUploadEncryptedFile]
+    InputStream content = new ByteArrayInputStream("Hello, World!".getBytes(UTF_8));
+
+    BlobId blobId = BlobId.of(bucketName, blobName);
+    BlobInfo blobInfo = BlobInfo.newBuilder(blobId)
+        .setContentType("text/plain")
+        .build();
+    Blob blob = storage.create(blobInfo, content, BlobWriteOption.encryptionKey(encryptionKey));
+    // [END storageUploadEncryptedFile]
     return blob;
   }
 
@@ -470,12 +491,27 @@ public class StorageSnippets {
   // [TARGET readAllBytes(BlobId, BlobSourceOption...)]
   // [VARIABLE "my_unique_bucket"]
   // [VARIABLE "my_blob_name"]
-  // [VARIABLE 42"]
+  // [VARIABLE 42]
   public byte[] readBlobFromId(String bucketName, String blobName, long blobGeneration) {
     // [START readBlobFromId]
     BlobId blobId = BlobId.of(bucketName, blobName, blobGeneration);
     byte[] content = storage.readAllBytes(blobId);
     // [END readBlobFromId]
+    return content;
+  }
+
+  /**
+   * Example of reading all bytes of an encrypted blob.
+   */
+  // [TARGET readAllBytes(BlobId, BlobSourceOption...)]
+  // [VARIABLE "my_unique_bucket"]
+  // [VARIABLE "my_blob_name"]
+  // [VARIABLE "my_encryption_key"]
+  public byte[] readEncryptedBlob(String bucketName, String blobName, String decryptionKey) {
+    // [START readEncryptedBlob]
+    byte[] content = storage.readAllBytes(
+        bucketName, blobName, BlobSourceOption.decryptionKey(decryptionKey));
+    // [END readEncryptedBlob]
     return content;
   }
 

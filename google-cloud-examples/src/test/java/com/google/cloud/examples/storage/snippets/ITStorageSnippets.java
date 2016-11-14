@@ -146,6 +146,20 @@ public class ITStorageSnippets {
   }
 
   @Test
+  public void testCreateEncryptedBlob() throws InterruptedException {
+    // Note: DO NOT put your encryption key in your code, like it is here. Store it somewhere safe,
+    // and read it in when you need it. This key is just here to make the code easier to read.
+    String encryptionKey = "0mMWhFvQOdS4AmxRpo8SJxXn5MjFhbz7DkKBUdUIef8=";
+
+    String blobName = "encrypted-blob";
+    Blob blob = storageSnippets.createEncryptedBlob(BUCKET, blobName, encryptionKey);
+
+    assertNotNull(blob);
+    byte[] encryptedContent = storageSnippets.readEncryptedBlob(BUCKET, blobName, encryptionKey);
+    assertEquals("Hello, World!", new String(encryptedContent));
+  }
+
+  @Test
   public void testCreateCopyAndGetBlob() {
     String blobName = "test-create-copy-get-blob";
     Blob blob = storageSnippets.createBlobFromByteArray(BUCKET, blobName);
