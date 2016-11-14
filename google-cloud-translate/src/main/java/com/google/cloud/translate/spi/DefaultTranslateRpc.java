@@ -118,35 +118,18 @@ public class DefaultTranslateRpc implements TranslateRpc {
   @Override
   public List<TranslationsResource> translate(List<String> texts, Map<Option, ?> optionMap) {
     try {
-      final String sourceLanguage = SOURCE_LANGUAGE.getString(optionMap);
-      String model = MODEL.getString(optionMap);
-      ImmutableMap.Builder<String, Object> contentBuilder = ImmutableMap.builder();
-      contentBuilder.put("target",
-          firstNonNull(TARGET_LANGUAGE.getString(optionMap), options.getTargetLanguage()));
-      contentBuilder.put("q", texts);
-      if (sourceLanguage != null) {
-        contentBuilder.put("source", sourceLanguage);
-      }
-      if (model != null) {
-        contentBuilder.put("model", model);
-      }
-      HttpRequest httpRequest = translate.getRequestFactory()
-          .buildPostRequest(buildTargetUrl(""),
-              new JsonHttpContent(translate.getJsonFactory(), contentBuilder.build()))
-          .setParser(translate.getObjectParser());
-      List<TranslationsResource> translations =
-          httpRequest.execute().parseAs(TranslationsListResponse.class).getTranslations();
-      // TODO use REST apiary as soon as it supports POST
-      // String targetLanguage =
-      //     firstNonNull(TARGET_LANGUAGE.getString(optionMap), options.getTargetLanguage());
-      // final String sourceLanguage = SOURCE_LANGUAGE.getString(optionMap);
-      // List<TranslationsResource> translations =
-      //     translate.translations()
-      //         .list(texts, targetLanguage)
-      //         .setSource(sourceLanguage)
-      //         .setKey(options.getApiKey())
-      //         .execute()
-      //         .getTranslations();
+      // TODO use POST as soon as usage of "model" causes error in non-whitelisted projects
+       String targetLanguage =
+           firstNonNull(TARGET_LANGUAGE.getString(optionMap), options.getTargetLanguage());
+       final String sourceLanguage = SOURCE_LANGUAGE.getString(optionMap);
+       List<TranslationsResource> translations =
+           translate.translations()
+               .list(texts, targetLanguage)
+               .setSource(sourceLanguage)
+               .setKey(options.getApiKey())
+               .set("model", MODEL.getString(optionMap))
+               .execute()
+               .getTranslations();
       return Lists.transform(
           translations != null ? translations : ImmutableList.<TranslationsResource>of(),
           new Function<TranslationsResource, TranslationsResource>() {

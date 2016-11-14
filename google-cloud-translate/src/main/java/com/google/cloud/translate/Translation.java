@@ -90,7 +90,7 @@ public class Translation implements Serializable {
    * {@link Translate#translate(List, Translate.TranslateOption...)}.
    *
    * <p>Please notice that you must be whitelisted to use the
-   * {@link Translate.TranslateOption#model(String)} option, otherwise it will be ignored.
+   * {@link Translate.TranslateOption#model(String)} option, otherwise translation will fail.
    */
   public String getModel() {
     return model;

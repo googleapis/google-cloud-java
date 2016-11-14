@@ -87,7 +87,7 @@ public interface Translate extends Service<TranslateOptions> {
      * Machine Translation. Possible values are {@code base} and {@code nmt}. Google Translate could
      * use a different model to translate your text, use {@link Translation#getModel()} to know
      * which model was used for translation. Please notice that you must be whitelisted to use this
-     * option, otherwise it will be ignored.
+     * option, otherwise translation will fail.
      *
      * @param model the language translation model
      */
@@ -183,6 +183,8 @@ public interface Translate extends Service<TranslateOptions> {
    * @param texts the texts to translate
    * @return a list of objects containing information on the language translation, one for each
    *     provided text, in order.
+   * @throws TranslateException upon failure or if {@link TranslateOption#model(String)} is used by
+   *     a non-whitelisted user
    */
   List<Translation> translate(List<String> texts, TranslateOption... options);
 
@@ -202,6 +204,8 @@ public interface Translate extends Service<TranslateOptions> {
    *
    * @param text the text to translate
    * @return an object containing information on the language translation
+   * @throws TranslateException upon failure or if {@link TranslateOption#model(String)} is used by
+   *     a non-whitelisted user
    */
   Translation translate(String text, TranslateOption... options);
 }
