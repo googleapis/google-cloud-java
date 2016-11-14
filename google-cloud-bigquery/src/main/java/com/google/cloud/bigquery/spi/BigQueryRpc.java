@@ -242,7 +242,8 @@ public interface BigQueryRpc {
   String open(JobConfiguration configuration);
 
   /**
-   * Uploads the provided data to the resumable upload session at the specified position.
+   * Uploads the provided data to the resumable upload session at the specified position. This
+   * method returns the job created to insert the rows, only when {@code last} is {@code true}.
    *
    * @param uploadId the resumable upload session URI
    * @param toWrite a byte array of data to upload
@@ -250,8 +251,10 @@ public interface BigQueryRpc {
    * @param destOffset offset in the destination where to upload data to
    * @param length the number of bytes to upload
    * @param last {@code true} indicates that the last chunk is being uploaded
+   * @return returns the job created to insert the rows, only when {@code last} is {@code true}.
+   *     Returns {@code null} otherwise
    * @throws BigQueryException upon failure
    */
-  void write(String uploadId, byte[] toWrite, int toWriteOffset, long destOffset, int length,
+  Job write(String uploadId, byte[] toWrite, int toWriteOffset, long destOffset, int length,
       boolean last);
 }

@@ -432,12 +432,13 @@ public class DefaultBigQueryRpc implements BigQueryRpc {
   }
 
   @Override
-  public void write(String uploadId, byte[] toWrite, int toWriteOffset, long destOffset, int length,
+  public Job write(String uploadId, byte[] toWrite, int toWriteOffset, long destOffset, int length,
       boolean last) {
     try {
       GenericUrl url = new GenericUrl(uploadId);
-      HttpRequest httpRequest = bigquery.getRequestFactory().buildPutRequest(url,
-          new ByteArrayContent(null, toWrite, toWriteOffset, length));
+      HttpRequest httpRequest = bigquery.getRequestFactory()
+          .buildPutRequest(url, new ByteArrayContent(null, toWrite, toWriteOffset, length));
+      httpRequest.setParser(bigquery.getObjectParser());
       long limit = destOffset + length;
       StringBuilder range = new StringBuilder("bytes ");
       range.append(destOffset).append('-').append(limit - 1).append('/');
@@ -450,8 +451,9 @@ public class DefaultBigQueryRpc implements BigQueryRpc {
       int code;
       String message;
       IOException exception = null;
+      HttpResponse response = null;
       try {
-        HttpResponse response = httpRequest.execute();
+        response = httpRequest.execute();
         code = response.getStatusCode();
         message = response.getStatusMessage();
       } catch (HttpResponseException ex) {
@@ -466,6 +468,7 @@ public class DefaultBigQueryRpc implements BigQueryRpc {
         }
         throw new BigQueryException(code, message);
       }
+      return last && response != null ? response.parseAs(Job.class) : null;
     } catch (IOException ex) {
       throw translate(ex);
     }
