@@ -32,7 +32,6 @@ import com.google.api.services.translate.model.DetectionsListResponse;
 import com.google.api.services.translate.model.DetectionsResourceItems;
 import com.google.api.services.translate.model.LanguagesListResponse;
 import com.google.api.services.translate.model.LanguagesResource;
-import com.google.api.services.translate.model.TranslationsListResponse;
 import com.google.api.services.translate.model.TranslationsResource;
 import com.google.cloud.translate.TranslateException;
 import com.google.cloud.translate.TranslateOptions;
@@ -118,18 +117,19 @@ public class DefaultTranslateRpc implements TranslateRpc {
   @Override
   public List<TranslationsResource> translate(List<String> texts, Map<Option, ?> optionMap) {
     try {
-      // TODO use POST as soon as usage of "model" causes error in non-whitelisted projects
-       String targetLanguage =
-           firstNonNull(TARGET_LANGUAGE.getString(optionMap), options.getTargetLanguage());
-       final String sourceLanguage = SOURCE_LANGUAGE.getString(optionMap);
-       List<TranslationsResource> translations =
-           translate.translations()
-               .list(texts, targetLanguage)
-               .setSource(sourceLanguage)
-               .setKey(options.getApiKey())
-               .set("model", MODEL.getString(optionMap))
-               .execute()
-               .getTranslations();
+      // TODO use POST as soon as usage of "model" correctly reports an error in non-whitelisted
+      // projects
+      String targetLanguage =
+          firstNonNull(TARGET_LANGUAGE.getString(optionMap), options.getTargetLanguage());
+      final String sourceLanguage = SOURCE_LANGUAGE.getString(optionMap);
+      List<TranslationsResource> translations =
+          translate.translations()
+              .list(texts, targetLanguage)
+              .setSource(sourceLanguage)
+              .setKey(options.getApiKey())
+              .set("model", MODEL.getString(optionMap))
+              .execute()
+              .getTranslations();
       return Lists.transform(
           translations != null ? translations : ImmutableList.<TranslationsResource>of(),
           new Function<TranslationsResource, TranslationsResource>() {
