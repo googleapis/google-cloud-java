@@ -1567,6 +1567,20 @@ public interface Storage extends Service<StorageOptions> {
    * Blob blob = storage.create(blobInfo, content);
    * }</pre>
    *
+   * <p>Example of uploading an encrypted blob.
+   * <pre> {@code
+   * String bucketName = "my_unique_bucket";
+   * String blobName = "my_blob_name";
+   * String encryptionKey = "my_encryption_key";
+   * InputStream content = new ByteArrayInputStream("Hello, World!".getBytes(UTF_8));
+   * 
+   * BlobId blobId = BlobId.of(bucketName, blobName);
+   * BlobInfo blobInfo = BlobInfo.newBuilder(blobId)
+   *     .setContentType("text/plain")
+   *     .build();
+   * Blob blob = storage.create(blobInfo, content, BlobWriteOption.encryptionKey(encryptionKey));
+   * }</pre>
+   *
    * @return a [@code Blob} with complete information
    * @throws StorageException upon failure
    */
@@ -1922,9 +1936,18 @@ public interface Storage extends Service<StorageOptions> {
    * <pre> {@code
    * String bucketName = "my_unique_bucket";
    * String blobName = "my_blob_name";
-   * long blobGeneration = 42";
+   * long blobGeneration = 42;
    * BlobId blobId = BlobId.of(bucketName, blobName, blobGeneration);
    * byte[] content = storage.readAllBytes(blobId);
+   * }</pre>
+   *
+   * <p>Example of reading all bytes of an encrypted blob.
+   * <pre> {@code
+   * String bucketName = "my_unique_bucket";
+   * String blobName = "my_blob_name";
+   * String decryptionKey = "my_encryption_key";
+   * byte[] content = storage.readAllBytes(
+   *     bucketName, blobName, BlobSourceOption.decryptionKey(decryptionKey));
    * }</pre>
    *
    * @return the blob's content
