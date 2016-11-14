@@ -146,17 +146,31 @@ public class ITStorageSnippets {
   }
 
   @Test
-  public void testCreateEncryptedBlob() throws InterruptedException {
+  public void testCreateUpdateEncryptedBlob() throws InterruptedException {
     // Note: DO NOT put your encryption key in your code, like it is here. Store it somewhere safe,
     // and read it in when you need it. This key is just here to make the code easier to read.
-    String encryptionKey = "0mMWhFvQOdS4AmxRpo8SJxXn5MjFhbz7DkKBUdUIef8=";
-
+    String encryptionKey1 = "0mMWhFvQOdS4AmxRpo8SJxXn5MjFhbz7DkKBUdUIef8=";
     String blobName = "encrypted-blob";
-    Blob blob = storageSnippets.createEncryptedBlob(BUCKET, blobName, encryptionKey);
+
+    Blob blob = storageSnippets.createEncryptedBlob(BUCKET, blobName, encryptionKey1);
 
     assertNotNull(blob);
-    byte[] encryptedContent = storageSnippets.readEncryptedBlob(BUCKET, blobName, encryptionKey);
+    assertEquals("text/plain", blob.getContentType());
+    byte[] encryptedContent = storageSnippets.readEncryptedBlob(BUCKET, blobName, encryptionKey1);
     assertEquals("Hello, World!", new String(encryptedContent));
+    blob = storageSnippets.getBlobFromId(BUCKET, blobName);
+    assertEquals("text/plain", blob.getContentType());
+
+    String encryptionKey2 = "wnxMO0w+dmxribu7rICJ+Q2ES9TLpFRIDy3/L7HN5ZA=";
+
+    blob = storageSnippets.rotateBlobEncryptionKey(
+        BUCKET, blobName, encryptionKey1, encryptionKey2);
+
+    assertNotNull(blob);
+    encryptedContent = storageSnippets.readEncryptedBlob(BUCKET, blobName, encryptionKey2);
+    assertEquals("Hello, World!", new String(encryptedContent));
+    blob = storageSnippets.getBlobFromId(BUCKET, blobName);
+    assertEquals("text/plain", blob.getContentType());
   }
 
   @Test
