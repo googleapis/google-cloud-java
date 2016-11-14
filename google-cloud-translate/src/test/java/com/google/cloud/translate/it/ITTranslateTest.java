@@ -110,6 +110,20 @@ public class ITTranslateTest {
   }
 
   @Test
+  public void testTranslateTextListWithModel() {
+    List<Translation> translations = TRANSLATE.translate(ImmutableList.of("Hola", "Hallo"),
+        TranslateOption.model("nmt"));
+    Translation translation = translations.get(0);
+    assertEquals("Hello", translation.getTranslatedText());
+    assertEquals("es", translation.getSourceLanguage());
+    assertEquals("nmt", translation.getModel());
+    translation = translations.get(1);
+    assertEquals("Hello", translation.getTranslatedText());
+    assertEquals("de", translation.getSourceLanguage());
+    assertEquals("nmt", translation.getModel());
+  }
+
+  @Test
   public void testTranslateText() {
     Translation translation = TRANSLATE.translate("Hola");
     assertEquals("Hello", translation.getTranslatedText());

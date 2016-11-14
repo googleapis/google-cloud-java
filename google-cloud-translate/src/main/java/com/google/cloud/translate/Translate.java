@@ -81,6 +81,19 @@ public interface Translate extends Service<TranslateOptions> {
     public static TranslateOption targetLanguage(String targetLanguage) {
       return new TranslateOption(TranslateRpc.Option.TARGET_LANGUAGE, targetLanguage);
     }
+
+    /**
+     * Sets the language translation model. You can use this parameter to take advantage of Neural
+     * Machine Translation. Possible values are {@code base} and {@code nmt}. Google Translate could
+     * use a different model to translate your text, use {@link Translation#getModel()} to know
+     * which model was used for translation. Please notice that you must be whitelisted to use this
+     * option, otherwise translation will fail.
+     *
+     * @param model the language translation model
+     */
+    public static TranslateOption model(String model) {
+      return new TranslateOption(TranslateRpc.Option.MODEL, model);
+    }
   }
 
   /**
@@ -170,6 +183,8 @@ public interface Translate extends Service<TranslateOptions> {
    * @param texts the texts to translate
    * @return a list of objects containing information on the language translation, one for each
    *     provided text, in order.
+   * @throws TranslateException upon failure or if {@link TranslateOption#model(String)} is used by
+   *     a non-whitelisted user
    */
   List<Translation> translate(List<String> texts, TranslateOption... options);
 
@@ -189,6 +204,8 @@ public interface Translate extends Service<TranslateOptions> {
    *
    * @param text the text to translate
    * @return an object containing information on the language translation
+   * @throws TranslateException upon failure or if {@link TranslateOption#model(String)} is used by
+   *     a non-whitelisted user
    */
   Translation translate(String text, TranslateOption... options);
 }

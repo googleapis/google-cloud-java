@@ -30,14 +30,17 @@ import com.google.common.collect.ImmutableSet;
 
 import java.util.List;
 import java.util.Locale;
+import java.util.Objects;
 import java.util.Set;
 
 public class TranslateOptions extends
     HttpServiceOptions<Translate, TranslateRpc, TranslateOptions> {
 
   private static final long serialVersionUID = -572597134540398216L;
+  private static final String DEFAULT_HOST = "https://translation.googleapis.com";
   private static final String API_KEY_ENV_NAME = "GOOGLE_API_KEY";
-  private static final Set<String> SCOPES = ImmutableSet.of();
+  private static final Set<String> SCOPES =
+      ImmutableSet.of("https://www.googleapis.com/auth/cloud-platform");
 
   private final String apiKey;
   private final String targetLanguage;
@@ -98,17 +101,6 @@ public class TranslateOptions extends
     }
 
     /**
-     * Sets the service authentication credentials. Setting credentials has no impact on the
-     * {@link Translate} service.
-     *
-     * @return the builder
-     */
-    public Builder setCredentials(Credentials credentials) {
-      super.setCredentials(credentials);
-      return self();
-    }
-
-    /**
      * Sets the API key used to issue requets. If not set, the API key is looked for in the
      * {@code GOOGLE_API_KEY} environment variable. For instructions on how to get an API key see
      * <a href="https://cloud.google.com/translate/v2/quickstart">Translate quickstart</a>.
@@ -158,8 +150,6 @@ public class TranslateOptions extends
 
     @Override
     public TranslateOptions build() {
-      // Auth credentials are not used by Translate
-      setCredentials(NoCredentials.getInstance());
       return new TranslateOptions(this);
     }
   }
@@ -167,9 +157,6 @@ public class TranslateOptions extends
   private TranslateOptions(Builder builder) {
     super(TranslateFactory.class, TranslateRpcFactory.class, builder);
     this.apiKey = builder.apiKey != null ? builder.apiKey : getDefaultApiKey();
-    checkArgument(this.apiKey != null,
-        "An API key is required for this service but could not be determined from the builder "
-            + "or the environment. Please set an API key using the builder.");
     this.targetLanguage = firstNonNull(builder.targetLanguage, Locale.ENGLISH.getLanguage());
   }
 
@@ -191,6 +178,11 @@ public class TranslateOptions extends
   @Override
   protected Set<String> getScopes() {
     return SCOPES;
+  }
+
+  @Override
+  protected String getDefaultHost() {
+    return DEFAULT_HOST;
   }
 
   @Deprecated
@@ -250,8 +242,8 @@ public class TranslateOptions extends
     }
     TranslateOptions options = (TranslateOptions) obj;
     return baseEquals(options)
-        && apiKey.equals(options.apiKey)
-        && targetLanguage.equals(options.targetLanguage);
+        && Objects.equals(apiKey, options.apiKey)
+        && Objects.equals(targetLanguage, options.targetLanguage);
   }
 
   /**

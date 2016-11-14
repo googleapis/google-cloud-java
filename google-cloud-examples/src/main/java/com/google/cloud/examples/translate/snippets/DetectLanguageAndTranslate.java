@@ -36,7 +36,8 @@ public class DetectLanguageAndTranslate {
 
   public static void main(String... args) {
     // Create a service object
-    // API key is read from the GOOGLE_API_KEY environment variable
+    // Default application credentials or an API key from the GOOGLE_API_KEY environment variable
+    // are used to authenticate requests
     Translate translate = TranslateOptions.getDefaultInstance().getService();
 
     // Detect the language of some text
