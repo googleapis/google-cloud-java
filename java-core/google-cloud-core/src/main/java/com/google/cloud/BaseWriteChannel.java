@@ -352,14 +352,17 @@ public abstract class BaseWriteChannel<
           && this.chunkSize == other.chunkSize;
     }
 
-    @Override
-    public String toString() {
+    protected MoreObjects.ToStringHelper toStringHelper() {
       return MoreObjects.toStringHelper(this)
           .add("entity", entity)
           .add("uploadId", uploadId)
           .add("position", position)
-          .add("isOpen", isOpen)
-          .toString();
+          .add("isOpen", isOpen);
+    }
+
+    @Override
+    public String toString() {
+      return toStringHelper().toString();
     }
   }
 }
