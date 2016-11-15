@@ -15,7 +15,6 @@
  */
 package com.google.cloud.pubsub.spi.v1;
 
-import com.google.common.collect.Lists;
 import com.google.protobuf.Empty;
 import com.google.protobuf.GeneratedMessageV3;
 import com.google.pubsub.v1.AcknowledgeRequest;
@@ -38,7 +37,7 @@ import java.util.Queue;
 @javax.annotation.Generated("by GAPIC")
 public class MockSubscriberImpl extends SubscriberImplBase {
   private ArrayList<GeneratedMessageV3> requests;
-  private Queue<GeneratedMessageV3> responses;
+  private Queue<Object> responses;
 
   public MockSubscriberImpl() {
     requests = new ArrayList<>();
@@ -49,8 +48,16 @@ public class MockSubscriberImpl extends SubscriberImplBase {
     return requests;
   }
 
+  public void addResponse(GeneratedMessageV3 response) {
+    responses.add(response);
+  }
+
   public void setResponses(List<GeneratedMessageV3> responses) {
-    this.responses = Lists.newLinkedList(responses);
+    this.responses = new LinkedList<Object>(responses);
+  }
+
+  public void addException(Exception exception) {
+    responses.add(exception);
   }
 
   public void reset() {
@@ -61,71 +68,119 @@ public class MockSubscriberImpl extends SubscriberImplBase {
   @Override
   public void createSubscription(
       Subscription request, StreamObserver<Subscription> responseObserver) {
-    Subscription response = (Subscription) responses.remove();
-    requests.add(request);
-    responseObserver.onNext(response);
-    responseObserver.onCompleted();
+    Object response = responses.remove();
+    if (response instanceof Subscription) {
+      requests.add(request);
+      responseObserver.onNext((Subscription) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
   }
 
   @Override
   public void getSubscription(
       GetSubscriptionRequest request, StreamObserver<Subscription> responseObserver) {
-    Subscription response = (Subscription) responses.remove();
-    requests.add(request);
-    responseObserver.onNext(response);
-    responseObserver.onCompleted();
+    Object response = responses.remove();
+    if (response instanceof Subscription) {
+      requests.add(request);
+      responseObserver.onNext((Subscription) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
   }
 
   @Override
   public void listSubscriptions(
       ListSubscriptionsRequest request,
       StreamObserver<ListSubscriptionsResponse> responseObserver) {
-    ListSubscriptionsResponse response = (ListSubscriptionsResponse) responses.remove();
-    requests.add(request);
-    responseObserver.onNext(response);
-    responseObserver.onCompleted();
+    Object response = responses.remove();
+    if (response instanceof ListSubscriptionsResponse) {
+      requests.add(request);
+      responseObserver.onNext((ListSubscriptionsResponse) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
   }
 
   @Override
   public void deleteSubscription(
       DeleteSubscriptionRequest request, StreamObserver<Empty> responseObserver) {
-    Empty response = (Empty) responses.remove();
-    requests.add(request);
-    responseObserver.onNext(response);
-    responseObserver.onCompleted();
+    Object response = responses.remove();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext((Empty) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
   }
 
   @Override
   public void modifyAckDeadline(
       ModifyAckDeadlineRequest request, StreamObserver<Empty> responseObserver) {
-    Empty response = (Empty) responses.remove();
-    requests.add(request);
-    responseObserver.onNext(response);
-    responseObserver.onCompleted();
+    Object response = responses.remove();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext((Empty) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
   }
 
   @Override
   public void acknowledge(AcknowledgeRequest request, StreamObserver<Empty> responseObserver) {
-    Empty response = (Empty) responses.remove();
-    requests.add(request);
-    responseObserver.onNext(response);
-    responseObserver.onCompleted();
+    Object response = responses.remove();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext((Empty) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
   }
 
   @Override
   public void pull(PullRequest request, StreamObserver<PullResponse> responseObserver) {
-    PullResponse response = (PullResponse) responses.remove();
-    requests.add(request);
-    responseObserver.onNext(response);
-    responseObserver.onCompleted();
+    Object response = responses.remove();
+    if (response instanceof PullResponse) {
+      requests.add(request);
+      responseObserver.onNext((PullResponse) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
   }
 
   @Override
   public void modifyPushConfig(
       ModifyPushConfigRequest request, StreamObserver<Empty> responseObserver) {
-    Empty response = (Empty) responses.remove();
-    requests.add(request);
-    responseObserver.onNext(response);
-    responseObserver.onCompleted();
+    Object response = responses.remove();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext((Empty) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
   }
 }

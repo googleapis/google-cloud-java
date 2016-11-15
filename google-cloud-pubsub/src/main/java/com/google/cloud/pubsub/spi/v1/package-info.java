@@ -29,8 +29,8 @@
  * <pre>
  * <code>
  * try (PublisherApi publisherApi = PublisherApi.create()) {
- *   String formattedName = PublisherApi.formatTopicName("[PROJECT]", "[TOPIC]");
- *   Topic response = publisherApi.createTopic(formattedName);
+ *   TopicName name = TopicName.create("[PROJECT]", "[TOPIC]");
+ *   Topic response = publisherApi.createTopic(name);
  * }
  * </code>
  * </pre>
@@ -45,11 +45,11 @@
  * <pre>
  * <code>
  * try (SubscriberApi subscriberApi = SubscriberApi.create()) {
- *   String formattedName = SubscriberApi.formatSubscriptionName("[PROJECT]", "[SUBSCRIPTION]");
- *   String formattedTopic = SubscriberApi.formatTopicName("[PROJECT]", "[TOPIC]");
+ *   SubscriptionName name = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]");
+ *   TopicName topic = TopicName.create("[PROJECT]", "[TOPIC]");
  *   PushConfig pushConfig = PushConfig.newBuilder().build();
  *   int ackDeadlineSeconds = 0;
- *   Subscription response = subscriberApi.createSubscription(formattedName, formattedTopic, pushConfig, ackDeadlineSeconds);
+ *   Subscription response = subscriberApi.createSubscription(name, topic, pushConfig, ackDeadlineSeconds);
  * }
  * </code>
  * </pre>

@@ -22,6 +22,9 @@ import com.google.pubsub.v1.PubsubMessage;
 import com.google.pubsub.v1.PullResponse;
 import com.google.pubsub.v1.PushConfig;
 import com.google.pubsub.v1.Topic;
+import com.google.pubsub.v1.ProjectName;
+import com.google.pubsub.v1.TopicName;
+import com.google.pubsub.v1.SubscriptionName;
 
 import io.grpc.ManagedChannel;
 
@@ -106,18 +109,17 @@ public class PublisherApiTest {
 
   @Test
   public void testCreateTopic() throws Exception {
-    String topicName = PublisherApi.formatTopicName("my-project", "my-topic");
+    TopicName topicName = TopicName.create("my-project", "my-topic");
     Topic result = publisherApi.createTopic(topicName);
-    Assert.assertEquals(topicName, result.getName());
+    Assert.assertEquals(topicName, result.getNameAsTopicName());
   }
 
   @Test
   public void testPublish() throws Exception {
-    String topicName = PublisherApi.formatTopicName("my-project", "publish-topic");
+    TopicName topicName = TopicName.create("my-project", "my-topic");
     publisherApi.createTopic(topicName);
 
-    String subscriberName =
-        SubscriberApi.formatSubscriptionName("my-project", "my-subscribe");
+    SubscriptionName subscriberName = SubscriptionName.create("my-project", "my-subscribe");
     PushConfig config = PushConfig.getDefaultInstance();
     subscriberApi.createSubscription(subscriberName, topicName, config, 5);
 
@@ -133,11 +135,10 @@ public class PublisherApiTest {
 
   @Test
   public void testBundledPublish() throws Exception {
-    String topicName = PublisherApi.formatTopicName("my-project", "publish-topic");
+    TopicName topicName = TopicName.create("my-project", "my-topic");
     bundledPublisherApi.createTopic(topicName);
 
-    String subscriberName =
-        SubscriberApi.formatSubscriptionName("my-project", "my-subscribe");
+    SubscriptionName subscriberName = SubscriptionName.create("my-project", "my-subscribe");
     PushConfig config = PushConfig.getDefaultInstance();
     subscriberApi.createSubscription(subscriberName, topicName, config, 5);
 
@@ -154,19 +155,19 @@ public class PublisherApiTest {
 
   @Test
   public void testGetTopic() throws Exception {
-    String topicName = PublisherApi.formatTopicName("my-project", "fun-topic");
+    TopicName topicName = TopicName.create("my-project", "my-topic");
     publisherApi.createTopic(topicName);
     Topic result = publisherApi.getTopic(topicName);
     Assert.assertNotNull(result);
-    Assert.assertEquals(topicName, result.getName());
+    Assert.assertEquals(topicName, result.getNameAsTopicName());
   }
 
   @Test
   public void testListTopics() throws Exception {
-    String project1 = PublisherApi.formatProjectName("project.1");
-    String topicName1 = PublisherApi.formatTopicName("project.1", "topic.1");
-    String topicName2 = PublisherApi.formatTopicName("project.1", "topic.2");
-    String topicName3 = PublisherApi.formatTopicName("project.2", "topic.3");
+    ProjectName project1 = ProjectName.create("project.1");
+    TopicName topicName1 = TopicName.create("project.1", "topic.1");
+    TopicName topicName2 = TopicName.create("project.1", "topic.2");
+    TopicName topicName3 = TopicName.create("project.2", "topic.3");
     publisherApi.createTopic(topicName1);
     publisherApi.createTopic(topicName2);
     publisherApi.createTopic(topicName3);
@@ -175,14 +176,14 @@ public class PublisherApiTest {
       topics.add(topic);
     }
     Assert.assertEquals(2, topics.size());
-    Assert.assertEquals(topicName1, topics.get(0).getName());
-    Assert.assertEquals(topicName2, topics.get(1).getName());
+    Assert.assertEquals(topicName1, topics.get(0).getNameAsTopicName());
+    Assert.assertEquals(topicName2, topics.get(1).getNameAsTopicName());
   }
 
   @Test
   public void testDeleteTopic() throws Exception {
-    String project = PublisherApi.formatProjectName("project.1");
-    String topicName = PublisherApi.formatTopicName("my-project", "fun-topic");
+    ProjectName project = ProjectName.create("project.1");
+    TopicName topicName = TopicName.create("my-project", "my-topic");
     publisherApi.createTopic(topicName);
     publisherApi.deleteTopic(topicName);
     List<Topic> topics = new ArrayList<>();

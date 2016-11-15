@@ -33,10 +33,12 @@ import com.google.pubsub.v1.ListTopicSubscriptionsRequest;
 import com.google.pubsub.v1.ListTopicSubscriptionsResponse;
 import com.google.pubsub.v1.ListTopicsRequest;
 import com.google.pubsub.v1.ListTopicsResponse;
+import com.google.pubsub.v1.ProjectName;
 import com.google.pubsub.v1.PublishRequest;
 import com.google.pubsub.v1.PublishResponse;
 import com.google.pubsub.v1.PubsubMessage;
 import com.google.pubsub.v1.Topic;
+import com.google.pubsub.v1.TopicName;
 import io.grpc.ManagedChannel;
 import java.io.Closeable;
 import java.io.IOException;
@@ -55,8 +57,8 @@ import java.util.concurrent.ScheduledExecutorService;
  * <pre>
  * <code>
  * try (PublisherApi publisherApi = PublisherApi.create()) {
- *   String formattedName = PublisherApi.formatTopicName("[PROJECT]", "[TOPIC]");
- *   Topic response = publisherApi.createTopic(formattedName);
+ *   TopicName name = TopicName.create("[PROJECT]", "[TOPIC]");
+ *   Topic response = publisherApi.createTopic(name);
  * }
  * </code>
  * </pre>
@@ -265,8 +267,8 @@ public class PublisherApi implements AutoCloseable {
    *
    * <pre><code>
    * try (PublisherApi publisherApi = PublisherApi.create()) {
-   *   String formattedName = PublisherApi.formatTopicName("[PROJECT]", "[TOPIC]");
-   *   Topic response = publisherApi.createTopic(formattedName);
+   *   TopicName name = TopicName.create("[PROJECT]", "[TOPIC]");
+   *   Topic response = publisherApi.createTopic(name);
    * }
    * </code></pre>
    *
@@ -277,9 +279,8 @@ public class PublisherApi implements AutoCloseable {
    *     length, and it must not start with `"goog"`.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  public final Topic createTopic(String name) {
-    TOPIC_PATH_TEMPLATE.validate(name, "createTopic");
-    Topic request = Topic.newBuilder().setName(name).build();
+  public final Topic createTopic(TopicName name) {
+    Topic request = Topic.newBuilder().setNameWithTopicName(name).build();
     return createTopic(request);
   }
 
@@ -291,9 +292,9 @@ public class PublisherApi implements AutoCloseable {
    *
    * <pre><code>
    * try (PublisherApi publisherApi = PublisherApi.create()) {
-   *   String formattedName = PublisherApi.formatTopicName("[PROJECT]", "[TOPIC]");
+   *   TopicName name = TopicName.create("[PROJECT]", "[TOPIC]");
    *   Topic request = Topic.newBuilder()
-   *     .setName(formattedName)
+   *     .setNameWithTopicName(name)
    *     .build();
    *   Topic response = publisherApi.createTopic(request);
    * }
@@ -314,9 +315,9 @@ public class PublisherApi implements AutoCloseable {
    *
    * <pre><code>
    * try (PublisherApi publisherApi = PublisherApi.create()) {
-   *   String formattedName = PublisherApi.formatTopicName("[PROJECT]", "[TOPIC]");
+   *   TopicName name = TopicName.create("[PROJECT]", "[TOPIC]");
    *   Topic request = Topic.newBuilder()
-   *     .setName(formattedName)
+   *     .setNameWithTopicName(name)
    *     .build();
    *   ListenableFuture&lt;Topic&gt; future = publisherApi.createTopicCallable().futureCall(request);
    *   // Do something
@@ -338,13 +339,13 @@ public class PublisherApi implements AutoCloseable {
    *
    * <pre><code>
    * try (PublisherApi publisherApi = PublisherApi.create()) {
-   *   String formattedTopic = PublisherApi.formatTopicName("[PROJECT]", "[TOPIC]");
+   *   TopicName topic = TopicName.create("[PROJECT]", "[TOPIC]");
    *   ByteString data = ByteString.copyFromUtf8("");
    *   PubsubMessage messagesElement = PubsubMessage.newBuilder()
    *     .setData(data)
    *     .build();
    *   List&lt;PubsubMessage&gt; messages = Arrays.asList(messagesElement);
-   *   PublishResponse response = publisherApi.publish(formattedTopic, messages);
+   *   PublishResponse response = publisherApi.publish(topic, messages);
    * }
    * </code></pre>
    *
@@ -352,10 +353,9 @@ public class PublisherApi implements AutoCloseable {
    * @param messages The messages to publish.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  public final PublishResponse publish(String topic, List<PubsubMessage> messages) {
-    TOPIC_PATH_TEMPLATE.validate(topic, "publish");
+  public final PublishResponse publish(TopicName topic, List<PubsubMessage> messages) {
     PublishRequest request =
-        PublishRequest.newBuilder().setTopic(topic).addAllMessages(messages).build();
+        PublishRequest.newBuilder().setTopicWithTopicName(topic).addAllMessages(messages).build();
     return publish(request);
   }
 
@@ -369,14 +369,14 @@ public class PublisherApi implements AutoCloseable {
    *
    * <pre><code>
    * try (PublisherApi publisherApi = PublisherApi.create()) {
-   *   String formattedTopic = PublisherApi.formatTopicName("[PROJECT]", "[TOPIC]");
+   *   TopicName topic = TopicName.create("[PROJECT]", "[TOPIC]");
    *   ByteString data = ByteString.copyFromUtf8("");
    *   PubsubMessage messagesElement = PubsubMessage.newBuilder()
    *     .setData(data)
    *     .build();
    *   List&lt;PubsubMessage&gt; messages = Arrays.asList(messagesElement);
    *   PublishRequest request = PublishRequest.newBuilder()
-   *     .setTopic(formattedTopic)
+   *     .setTopicWithTopicName(topic)
    *     .addAllMessages(messages)
    *     .build();
    *   PublishResponse response = publisherApi.publish(request);
@@ -400,14 +400,14 @@ public class PublisherApi implements AutoCloseable {
    *
    * <pre><code>
    * try (PublisherApi publisherApi = PublisherApi.create()) {
-   *   String formattedTopic = PublisherApi.formatTopicName("[PROJECT]", "[TOPIC]");
+   *   TopicName topic = TopicName.create("[PROJECT]", "[TOPIC]");
    *   ByteString data = ByteString.copyFromUtf8("");
    *   PubsubMessage messagesElement = PubsubMessage.newBuilder()
    *     .setData(data)
    *     .build();
    *   List&lt;PubsubMessage&gt; messages = Arrays.asList(messagesElement);
    *   PublishRequest request = PublishRequest.newBuilder()
-   *     .setTopic(formattedTopic)
+   *     .setTopicWithTopicName(topic)
    *     .addAllMessages(messages)
    *     .build();
    *   ListenableFuture&lt;PublishResponse&gt; future = publisherApi.publishCallable().futureCall(request);
@@ -428,17 +428,16 @@ public class PublisherApi implements AutoCloseable {
    *
    * <pre><code>
    * try (PublisherApi publisherApi = PublisherApi.create()) {
-   *   String formattedTopic = PublisherApi.formatTopicName("[PROJECT]", "[TOPIC]");
-   *   Topic response = publisherApi.getTopic(formattedTopic);
+   *   TopicName topic = TopicName.create("[PROJECT]", "[TOPIC]");
+   *   Topic response = publisherApi.getTopic(topic);
    * }
    * </code></pre>
    *
    * @param topic The name of the topic to get.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  public final Topic getTopic(String topic) {
-    TOPIC_PATH_TEMPLATE.validate(topic, "getTopic");
-    GetTopicRequest request = GetTopicRequest.newBuilder().setTopic(topic).build();
+  public final Topic getTopic(TopicName topic) {
+    GetTopicRequest request = GetTopicRequest.newBuilder().setTopicWithTopicName(topic).build();
     return getTopic(request);
   }
 
@@ -450,9 +449,9 @@ public class PublisherApi implements AutoCloseable {
    *
    * <pre><code>
    * try (PublisherApi publisherApi = PublisherApi.create()) {
-   *   String formattedTopic = PublisherApi.formatTopicName("[PROJECT]", "[TOPIC]");
+   *   TopicName topic = TopicName.create("[PROJECT]", "[TOPIC]");
    *   GetTopicRequest request = GetTopicRequest.newBuilder()
-   *     .setTopic(formattedTopic)
+   *     .setTopicWithTopicName(topic)
    *     .build();
    *   Topic response = publisherApi.getTopic(request);
    * }
@@ -473,9 +472,9 @@ public class PublisherApi implements AutoCloseable {
    *
    * <pre><code>
    * try (PublisherApi publisherApi = PublisherApi.create()) {
-   *   String formattedTopic = PublisherApi.formatTopicName("[PROJECT]", "[TOPIC]");
+   *   TopicName topic = TopicName.create("[PROJECT]", "[TOPIC]");
    *   GetTopicRequest request = GetTopicRequest.newBuilder()
-   *     .setTopic(formattedTopic)
+   *     .setTopicWithTopicName(topic)
    *     .build();
    *   ListenableFuture&lt;Topic&gt; future = publisherApi.getTopicCallable().futureCall(request);
    *   // Do something
@@ -495,8 +494,8 @@ public class PublisherApi implements AutoCloseable {
    *
    * <pre><code>
    * try (PublisherApi publisherApi = PublisherApi.create()) {
-   *   String formattedProject = PublisherApi.formatProjectName("[PROJECT]");
-   *   for (Topic element : publisherApi.listTopics(formattedProject).iterateAllElements()) {
+   *   ProjectName project = ProjectName.create("[PROJECT]");
+   *   for (Topic element : publisherApi.listTopics(project).iterateAllElements()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -505,9 +504,9 @@ public class PublisherApi implements AutoCloseable {
    * @param project The name of the cloud project that topics belong to.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  public final ListTopicsPagedResponse listTopics(String project) {
-    PROJECT_PATH_TEMPLATE.validate(project, "listTopics");
-    ListTopicsRequest request = ListTopicsRequest.newBuilder().setProject(project).build();
+  public final ListTopicsPagedResponse listTopics(ProjectName project) {
+    ListTopicsRequest request =
+        ListTopicsRequest.newBuilder().setProjectWithProjectName(project).build();
     return listTopics(request);
   }
 
@@ -519,9 +518,9 @@ public class PublisherApi implements AutoCloseable {
    *
    * <pre><code>
    * try (PublisherApi publisherApi = PublisherApi.create()) {
-   *   String formattedProject = PublisherApi.formatProjectName("[PROJECT]");
+   *   ProjectName project = ProjectName.create("[PROJECT]");
    *   ListTopicsRequest request = ListTopicsRequest.newBuilder()
-   *     .setProject(formattedProject)
+   *     .setProjectWithProjectName(project)
    *     .build();
    *   for (Topic element : publisherApi.listTopics(request).iterateAllElements()) {
    *     // doThingsWith(element);
@@ -544,9 +543,9 @@ public class PublisherApi implements AutoCloseable {
    *
    * <pre><code>
    * try (PublisherApi publisherApi = PublisherApi.create()) {
-   *   String formattedProject = PublisherApi.formatProjectName("[PROJECT]");
+   *   ProjectName project = ProjectName.create("[PROJECT]");
    *   ListTopicsRequest request = ListTopicsRequest.newBuilder()
-   *     .setProject(formattedProject)
+   *     .setProjectWithProjectName(project)
    *     .build();
    *   ListenableFuture&lt;ListTopicsPagedResponse&gt; future = publisherApi.listTopicsPagedCallable().futureCall(request);
    *   // Do something
@@ -568,9 +567,9 @@ public class PublisherApi implements AutoCloseable {
    *
    * <pre><code>
    * try (PublisherApi publisherApi = PublisherApi.create()) {
-   *   String formattedProject = PublisherApi.formatProjectName("[PROJECT]");
+   *   ProjectName project = ProjectName.create("[PROJECT]");
    *   ListTopicsRequest request = ListTopicsRequest.newBuilder()
-   *     .setProject(formattedProject)
+   *     .setProjectWithProjectName(project)
    *     .build();
    *   while (true) {
    *     ListTopicsResponse response = publisherApi.listTopicsCallable().call(request);
@@ -599,8 +598,8 @@ public class PublisherApi implements AutoCloseable {
    *
    * <pre><code>
    * try (PublisherApi publisherApi = PublisherApi.create()) {
-   *   String formattedTopic = PublisherApi.formatTopicName("[PROJECT]", "[TOPIC]");
-   *   for (String element : publisherApi.listTopicSubscriptions(formattedTopic).iterateAllElements()) {
+   *   TopicName topic = TopicName.create("[PROJECT]", "[TOPIC]");
+   *   for (SubscriptionName element : publisherApi.listTopicSubscriptions(topic).iterateAllAsSubscriptionName()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -609,10 +608,9 @@ public class PublisherApi implements AutoCloseable {
    * @param topic The name of the topic that subscriptions are attached to.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  public final ListTopicSubscriptionsPagedResponse listTopicSubscriptions(String topic) {
-    TOPIC_PATH_TEMPLATE.validate(topic, "listTopicSubscriptions");
+  public final ListTopicSubscriptionsPagedResponse listTopicSubscriptions(TopicName topic) {
     ListTopicSubscriptionsRequest request =
-        ListTopicSubscriptionsRequest.newBuilder().setTopic(topic).build();
+        ListTopicSubscriptionsRequest.newBuilder().setTopicWithTopicName(topic).build();
     return listTopicSubscriptions(request);
   }
 
@@ -624,11 +622,11 @@ public class PublisherApi implements AutoCloseable {
    *
    * <pre><code>
    * try (PublisherApi publisherApi = PublisherApi.create()) {
-   *   String formattedTopic = PublisherApi.formatTopicName("[PROJECT]", "[TOPIC]");
+   *   TopicName topic = TopicName.create("[PROJECT]", "[TOPIC]");
    *   ListTopicSubscriptionsRequest request = ListTopicSubscriptionsRequest.newBuilder()
-   *     .setTopic(formattedTopic)
+   *     .setTopicWithTopicName(topic)
    *     .build();
-   *   for (String element : publisherApi.listTopicSubscriptions(request).iterateAllElements()) {
+   *   for (SubscriptionName element : publisherApi.listTopicSubscriptions(request).iterateAllAsSubscriptionName()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -650,13 +648,13 @@ public class PublisherApi implements AutoCloseable {
    *
    * <pre><code>
    * try (PublisherApi publisherApi = PublisherApi.create()) {
-   *   String formattedTopic = PublisherApi.formatTopicName("[PROJECT]", "[TOPIC]");
+   *   TopicName topic = TopicName.create("[PROJECT]", "[TOPIC]");
    *   ListTopicSubscriptionsRequest request = ListTopicSubscriptionsRequest.newBuilder()
-   *     .setTopic(formattedTopic)
+   *     .setTopicWithTopicName(topic)
    *     .build();
    *   ListenableFuture&lt;ListTopicSubscriptionsPagedResponse&gt; future = publisherApi.listTopicSubscriptionsPagedCallable().futureCall(request);
    *   // Do something
-   *   for (String element : future.get().iterateAllElements()) {
+   *   for (SubscriptionName element : future.get().iterateAllAsSubscriptionName()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -675,13 +673,13 @@ public class PublisherApi implements AutoCloseable {
    *
    * <pre><code>
    * try (PublisherApi publisherApi = PublisherApi.create()) {
-   *   String formattedTopic = PublisherApi.formatTopicName("[PROJECT]", "[TOPIC]");
+   *   TopicName topic = TopicName.create("[PROJECT]", "[TOPIC]");
    *   ListTopicSubscriptionsRequest request = ListTopicSubscriptionsRequest.newBuilder()
-   *     .setTopic(formattedTopic)
+   *     .setTopicWithTopicName(topic)
    *     .build();
    *   while (true) {
    *     ListTopicSubscriptionsResponse response = publisherApi.listTopicSubscriptionsCallable().call(request);
-   *     for (String element : response.getSubscriptionsList()) {
+   *     for (SubscriptionName element : response.getSubscriptionsListAsSubscriptionNameList()) {
    *       // doThingsWith(element);
    *     }
    *     String nextPageToken = response.getNextPageToken();
@@ -710,17 +708,17 @@ public class PublisherApi implements AutoCloseable {
    *
    * <pre><code>
    * try (PublisherApi publisherApi = PublisherApi.create()) {
-   *   String formattedTopic = PublisherApi.formatTopicName("[PROJECT]", "[TOPIC]");
-   *   publisherApi.deleteTopic(formattedTopic);
+   *   TopicName topic = TopicName.create("[PROJECT]", "[TOPIC]");
+   *   publisherApi.deleteTopic(topic);
    * }
    * </code></pre>
    *
    * @param topic Name of the topic to delete.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  public final void deleteTopic(String topic) {
-    TOPIC_PATH_TEMPLATE.validate(topic, "deleteTopic");
-    DeleteTopicRequest request = DeleteTopicRequest.newBuilder().setTopic(topic).build();
+  public final void deleteTopic(TopicName topic) {
+    DeleteTopicRequest request =
+        DeleteTopicRequest.newBuilder().setTopicWithTopicName(topic).build();
     deleteTopic(request);
   }
 
@@ -735,9 +733,9 @@ public class PublisherApi implements AutoCloseable {
    *
    * <pre><code>
    * try (PublisherApi publisherApi = PublisherApi.create()) {
-   *   String formattedTopic = PublisherApi.formatTopicName("[PROJECT]", "[TOPIC]");
+   *   TopicName topic = TopicName.create("[PROJECT]", "[TOPIC]");
    *   DeleteTopicRequest request = DeleteTopicRequest.newBuilder()
-   *     .setTopic(formattedTopic)
+   *     .setTopicWithTopicName(topic)
    *     .build();
    *   publisherApi.deleteTopic(request);
    * }
@@ -761,9 +759,9 @@ public class PublisherApi implements AutoCloseable {
    *
    * <pre><code>
    * try (PublisherApi publisherApi = PublisherApi.create()) {
-   *   String formattedTopic = PublisherApi.formatTopicName("[PROJECT]", "[TOPIC]");
+   *   TopicName topic = TopicName.create("[PROJECT]", "[TOPIC]");
    *   DeleteTopicRequest request = DeleteTopicRequest.newBuilder()
-   *     .setTopic(formattedTopic)
+   *     .setTopicWithTopicName(topic)
    *     .build();
    *   ListenableFuture&lt;Void&gt; future = publisherApi.deleteTopicCallable().futureCall(request);
    *   // Do something
@@ -943,7 +941,7 @@ public class PublisherApi implements AutoCloseable {
    *     `resource` is usually specified as a path. For example, a Project resource is specified as
    *     `projects/{project}`.
    * @param permissions The set of permissions to check for the `resource`. Permissions with
-   *     wildcards (such as '&ast;' or 'storage.&ast;') are not allowed. For more information see
+   *     wildcards (such as '&#42;' or 'storage.&#42;') are not allowed. For more information see
    *     [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions).
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
