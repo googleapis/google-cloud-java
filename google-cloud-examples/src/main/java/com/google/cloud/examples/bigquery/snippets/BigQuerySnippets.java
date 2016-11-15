@@ -23,7 +23,6 @@
 package com.google.cloud.examples.bigquery.snippets;
 
 import com.google.api.client.util.Charsets;
-import com.google.cloud.BaseWriteChannel;
 import com.google.cloud.Page;
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQuery.DatasetDeleteOption;
@@ -33,7 +32,6 @@ import com.google.cloud.bigquery.BigQuery.TableDataListOption;
 import com.google.cloud.bigquery.BigQuery.TableListOption;
 import com.google.cloud.bigquery.BigQueryError;
 import com.google.cloud.bigquery.BigQueryException;
-import com.google.cloud.bigquery.BigQueryOptions;
 import com.google.cloud.bigquery.Dataset;
 import com.google.cloud.bigquery.DatasetId;
 import com.google.cloud.bigquery.DatasetInfo;
@@ -53,6 +51,7 @@ import com.google.cloud.bigquery.QueryResult;
 import com.google.cloud.bigquery.Schema;
 import com.google.cloud.bigquery.StandardTableDefinition;
 import com.google.cloud.bigquery.Table;
+import com.google.cloud.bigquery.TableDataWriteChannel;
 import com.google.cloud.bigquery.TableDefinition;
 import com.google.cloud.bigquery.TableId;
 import com.google.cloud.bigquery.TableInfo;
@@ -332,16 +331,15 @@ public class BigQuerySnippets {
   // [VARIABLE "my_dataset_name"]
   // [VARIABLE "my_table_name"]
   // [VARIABLE "StringValue1\nStringValue2\n"]
-  public BaseWriteChannel<BigQueryOptions, WriteChannelConfiguration> writeToTable(
-      String datasetName, String tableName, String csvData) throws IOException {
+  public TableDataWriteChannel writeToTable(String datasetName, String tableName, String csvData)
+      throws IOException {
     // [START writeToTable]
     TableId tableId = TableId.of(datasetName, tableName);
     WriteChannelConfiguration writeChannelConfiguration =
         WriteChannelConfiguration.newBuilder(tableId)
             .setFormatOptions(FormatOptions.csv())
             .build();
-    BaseWriteChannel<BigQueryOptions, WriteChannelConfiguration> writer =
-        bigquery.writer(writeChannelConfiguration);
+    TableDataWriteChannel writer = bigquery.writer(writeChannelConfiguration);
     // Write data to writer
     try {
       writer.write(ByteBuffer.wrap(csvData.getBytes(Charsets.UTF_8)));
@@ -349,6 +347,8 @@ public class BigQuerySnippets {
       // Unable to write data
     }
     writer.close();
+    // Get load job
+    Job job = writer.getJob();
     // [END writeToTable]
     return writer;
   }

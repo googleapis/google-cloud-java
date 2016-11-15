@@ -25,7 +25,6 @@ import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 import com.google.cloud.Page;
-import com.google.cloud.WriteChannel;
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQuery.DatasetField;
 import com.google.cloud.bigquery.BigQuery.DatasetOption;
@@ -50,6 +49,7 @@ import com.google.cloud.bigquery.InsertAllResponse;
 import com.google.cloud.bigquery.Job;
 import com.google.cloud.bigquery.JobInfo;
 import com.google.cloud.bigquery.JobStatistics;
+import com.google.cloud.bigquery.JobStatistics.LoadStatistics;
 import com.google.cloud.bigquery.LoadJobConfiguration;
 import com.google.cloud.bigquery.QueryJobConfiguration;
 import com.google.cloud.bigquery.QueryRequest;
@@ -57,6 +57,7 @@ import com.google.cloud.bigquery.QueryResponse;
 import com.google.cloud.bigquery.Schema;
 import com.google.cloud.bigquery.StandardTableDefinition;
 import com.google.cloud.bigquery.Table;
+import com.google.cloud.bigquery.TableDataWriteChannel;
 import com.google.cloud.bigquery.TableDefinition;
 import com.google.cloud.bigquery.TableId;
 import com.google.cloud.bigquery.TableInfo;
@@ -180,6 +181,7 @@ public class ITBigQueryTest {
       + "\"BytesField\": \"" + BYTES_BASE64 + "\""
       + "}"
       + "}";
+
   private static final Set<String> PUBLIC_DATASETS = ImmutableSet.of("github_repos", "hacker_news",
       "noaa_gsod", "samples", "usa_names");
 
@@ -967,7 +969,7 @@ public class ITBigQueryTest {
   }
 
   @Test
-  public void testInsertFromFile() throws InterruptedException {
+  public void testInsertFromFile() throws InterruptedException, IOException, TimeoutException {
     String destinationTableName = "test_insert_from_file_table";
     TableId tableId = TableId.of(DATASET, destinationTableName);
     WriteChannelConfiguration configuration = WriteChannelConfiguration.newBuilder(tableId)
@@ -975,15 +977,20 @@ public class ITBigQueryTest {
         .setCreateDisposition(JobInfo.CreateDisposition.CREATE_IF_NEEDED)
         .setSchema(TABLE_SCHEMA)
         .build();
-    try (WriteChannel channel = bigquery.writer(configuration)) {
+    TableDataWriteChannel channel = bigquery.writer(configuration);
+    try {
       channel.write(ByteBuffer.wrap(JSON_CONTENT.getBytes(StandardCharsets.UTF_8)));
-    } catch (IOException e) {
-      fail("IOException was not expected");
+    } finally {
+      channel.close();
     }
-    // wait until the new table is created. If the table is never created the test will time-out
-    while (bigquery.getTable(tableId) == null) {
-      Thread.sleep(1000L);
-    }
+    Job job = channel.getJob().waitFor();
+    LoadStatistics statistics = job.getStatistics();
+    assertEquals(1L, statistics.getInputFiles().longValue());
+    assertEquals(2L, statistics.getOutputRows().longValue());
+    LoadJobConfiguration jobConfiguration = job.getConfiguration();
+    assertEquals(TABLE_SCHEMA, jobConfiguration.getSchema());
+    assertNull(jobConfiguration.getSourceUris());
+    assertNull(job.getStatus().getError());
     Page<List<FieldValue>> rows = bigquery.listTableData(tableId);
     int rowCount = 0;
     for (List<FieldValue> row : rows.getValues()) {

@@ -39,6 +39,7 @@ import com.google.cloud.bigquery.QueryResult;
 import com.google.cloud.bigquery.Schema;
 import com.google.cloud.bigquery.StandardTableDefinition;
 import com.google.cloud.bigquery.Table;
+import com.google.cloud.bigquery.TableDataWriteChannel;
 import com.google.cloud.bigquery.TableId;
 import com.google.cloud.bigquery.TableInfo;
 import com.google.cloud.bigquery.testing.RemoteBigQueryHelper;
@@ -57,6 +58,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeoutException;
 
 public class ITBigQuerySnippets {
 
@@ -170,16 +172,15 @@ public class ITBigQuerySnippets {
   }
 
   @Test
-  public void testWriteAndListTableData() throws IOException, InterruptedException {
+  public void testWriteAndListTableData()
+      throws IOException, InterruptedException, TimeoutException {
     String tableName = "test_write_and_list_table_data";
     String fieldName = "string_field";
     assertNotNull(bigquerySnippets.createTable(DATASET, tableName, fieldName));
-    bigquerySnippets.writeToTable(DATASET, tableName, "StringValue1\nStringValue2\n");
+    TableDataWriteChannel channel =
+        bigquerySnippets.writeToTable(DATASET, tableName, "StringValue1\nStringValue2\n");
+    channel.getJob().waitFor();
     Page<List<FieldValue>> listPage = bigquerySnippets.listTableData(DATASET, tableName);
-    while (Iterators.size(listPage.iterateAll()) < 2) {
-      Thread.sleep(500);
-      listPage = bigquerySnippets.listTableData(DATASET, tableName);
-    }
     Iterator<List<FieldValue>> rowIterator = listPage.getValues().iterator();
     assertEquals("StringValue1", rowIterator.next().get(0).getStringValue());
     assertEquals("StringValue2", rowIterator.next().get(0).getStringValue());
