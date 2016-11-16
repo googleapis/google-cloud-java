@@ -202,9 +202,14 @@ public class ITBigQuerySnippets {
     String tableName = "test_insert_all_and_list_table_data";
     String fieldName1 = "booleanField";
     String fieldName2 = "bytesField";
+    String fieldName3 = "recordField";
+    String fieldName4 = "stringField";
     TableId tableId = TableId.of(DATASET, tableName);
     Schema schema =
-        Schema.of(Field.of(fieldName1, Type.bool()), Field.of(fieldName2, Type.bytes()));
+        Schema.of(
+            Field.of(fieldName1, Type.bool()),
+            Field.of(fieldName2, Type.bytes()),
+            Field.of(fieldName3, Type.record(Field.of(fieldName4, Type.string()))));
     TableInfo table = TableInfo.of(tableId, StandardTableDefinition.of(schema));
     assertNotNull(bigquery.create(table));
     InsertAllResponse response = bigquerySnippets.insertAll(DATASET, tableName);
@@ -217,7 +222,8 @@ public class ITBigQuerySnippets {
     }
     List<FieldValue> row = listPage.getValues().iterator().next();
     assertEquals(true, row.get(0).getBooleanValue());
-    assertArrayEquals(new byte[]{0xD, 0xE, 0xA, 0xD}, row.get(1).getBytesValue());
+    assertArrayEquals(new byte[]{0xA, 0xD, 0xD, 0xE, 0xD}, row.get(1).getBytesValue());
+    assertEquals("Hello, World!", row.get(2).getRecordValue().get(0).getStringValue());
     assertTrue(bigquerySnippets.deleteTable(DATASET, tableName));
   }
 
