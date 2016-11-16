@@ -15,7 +15,6 @@
  */
 package com.google.cloud.trace.spi.v1;
 
-import com.google.common.collect.Lists;
 import com.google.devtools.cloudtrace.v1.GetTraceRequest;
 import com.google.devtools.cloudtrace.v1.ListTracesRequest;
 import com.google.devtools.cloudtrace.v1.ListTracesResponse;
@@ -33,7 +32,7 @@ import java.util.Queue;
 @javax.annotation.Generated("by GAPIC")
 public class MockTraceServiceImpl extends TraceServiceImplBase {
   private ArrayList<GeneratedMessageV3> requests;
-  private Queue<GeneratedMessageV3> responses;
+  private Queue<Object> responses;
 
   public MockTraceServiceImpl() {
     requests = new ArrayList<>();
@@ -44,8 +43,16 @@ public class MockTraceServiceImpl extends TraceServiceImplBase {
     return requests;
   }
 
+  public void addResponse(GeneratedMessageV3 response) {
+    responses.add(response);
+  }
+
   public void setResponses(List<GeneratedMessageV3> responses) {
-    this.responses = Lists.newLinkedList(responses);
+    this.responses = new LinkedList<Object>(responses);
+  }
+
+  public void addException(Exception exception) {
+    responses.add(exception);
   }
 
   public void reset() {
@@ -56,25 +63,43 @@ public class MockTraceServiceImpl extends TraceServiceImplBase {
   @Override
   public void listTraces(
       ListTracesRequest request, StreamObserver<ListTracesResponse> responseObserver) {
-    ListTracesResponse response = (ListTracesResponse) responses.remove();
-    requests.add(request);
-    responseObserver.onNext(response);
-    responseObserver.onCompleted();
+    Object response = responses.remove();
+    if (response instanceof ListTracesResponse) {
+      requests.add(request);
+      responseObserver.onNext((ListTracesResponse) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
   }
 
   @Override
   public void getTrace(GetTraceRequest request, StreamObserver<Trace> responseObserver) {
-    Trace response = (Trace) responses.remove();
-    requests.add(request);
-    responseObserver.onNext(response);
-    responseObserver.onCompleted();
+    Object response = responses.remove();
+    if (response instanceof Trace) {
+      requests.add(request);
+      responseObserver.onNext((Trace) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
   }
 
   @Override
   public void patchTraces(PatchTracesRequest request, StreamObserver<Empty> responseObserver) {
-    Empty response = (Empty) responses.remove();
-    requests.add(request);
-    responseObserver.onNext(response);
-    responseObserver.onCompleted();
+    Object response = responses.remove();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext((Empty) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
   }
 }
