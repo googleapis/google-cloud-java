@@ -53,7 +53,11 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.Timeout;
 
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.nio.channels.Channels;
+import java.nio.charset.StandardCharsets;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
@@ -177,13 +181,19 @@ public class ITBigQuerySnippets {
     String tableName = "test_write_and_list_table_data";
     String fieldName = "string_field";
     assertNotNull(bigquerySnippets.createTable(DATASET, tableName, fieldName));
-    TableDataWriteChannel channel =
+    long outputRows =
         bigquerySnippets.writeToTable(DATASET, tableName, "StringValue1\nStringValue2\n");
-    channel.getJob().waitFor();
+    assertEquals(2L, outputRows);
+    InputStream stream =
+        new ByteArrayInputStream("StringValue3\nStringValue4\n".getBytes(StandardCharsets.UTF_8));
+    outputRows = bigquerySnippets.writeFileToTable(DATASET, tableName, Channels.newChannel(stream));
+    assertEquals(2L, outputRows);
     Page<List<FieldValue>> listPage = bigquerySnippets.listTableData(DATASET, tableName);
     Iterator<List<FieldValue>> rowIterator = listPage.getValues().iterator();
     assertEquals("StringValue1", rowIterator.next().get(0).getStringValue());
     assertEquals("StringValue2", rowIterator.next().get(0).getStringValue());
+    assertEquals("StringValue3", rowIterator.next().get(0).getStringValue());
+    assertEquals("StringValue4", rowIterator.next().get(0).getStringValue());
     assertTrue(bigquerySnippets.deleteTable(DATASET, tableName));
   }
 
