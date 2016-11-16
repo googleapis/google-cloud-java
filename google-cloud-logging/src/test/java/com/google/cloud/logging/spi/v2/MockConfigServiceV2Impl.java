@@ -15,7 +15,6 @@
  */
 package com.google.cloud.logging.spi.v2;
 
-import com.google.common.collect.Lists;
 import com.google.logging.v2.ConfigServiceV2Grpc.ConfigServiceV2ImplBase;
 import com.google.logging.v2.CreateSinkRequest;
 import com.google.logging.v2.DeleteSinkRequest;
@@ -35,7 +34,7 @@ import java.util.Queue;
 @javax.annotation.Generated("by GAPIC")
 public class MockConfigServiceV2Impl extends ConfigServiceV2ImplBase {
   private ArrayList<GeneratedMessageV3> requests;
-  private Queue<GeneratedMessageV3> responses;
+  private Queue<Object> responses;
 
   public MockConfigServiceV2Impl() {
     requests = new ArrayList<>();
@@ -46,8 +45,16 @@ public class MockConfigServiceV2Impl extends ConfigServiceV2ImplBase {
     return requests;
   }
 
+  public void addResponse(GeneratedMessageV3 response) {
+    responses.add(response);
+  }
+
   public void setResponses(List<GeneratedMessageV3> responses) {
-    this.responses = Lists.newLinkedList(responses);
+    this.responses = new LinkedList<Object>(responses);
+  }
+
+  public void addException(Exception exception) {
+    responses.add(exception);
   }
 
   public void reset() {
@@ -58,41 +65,71 @@ public class MockConfigServiceV2Impl extends ConfigServiceV2ImplBase {
   @Override
   public void listSinks(
       ListSinksRequest request, StreamObserver<ListSinksResponse> responseObserver) {
-    ListSinksResponse response = (ListSinksResponse) responses.remove();
-    requests.add(request);
-    responseObserver.onNext(response);
-    responseObserver.onCompleted();
+    Object response = responses.remove();
+    if (response instanceof ListSinksResponse) {
+      requests.add(request);
+      responseObserver.onNext((ListSinksResponse) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
   }
 
   @Override
   public void getSink(GetSinkRequest request, StreamObserver<LogSink> responseObserver) {
-    LogSink response = (LogSink) responses.remove();
-    requests.add(request);
-    responseObserver.onNext(response);
-    responseObserver.onCompleted();
+    Object response = responses.remove();
+    if (response instanceof LogSink) {
+      requests.add(request);
+      responseObserver.onNext((LogSink) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
   }
 
   @Override
   public void createSink(CreateSinkRequest request, StreamObserver<LogSink> responseObserver) {
-    LogSink response = (LogSink) responses.remove();
-    requests.add(request);
-    responseObserver.onNext(response);
-    responseObserver.onCompleted();
+    Object response = responses.remove();
+    if (response instanceof LogSink) {
+      requests.add(request);
+      responseObserver.onNext((LogSink) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
   }
 
   @Override
   public void updateSink(UpdateSinkRequest request, StreamObserver<LogSink> responseObserver) {
-    LogSink response = (LogSink) responses.remove();
-    requests.add(request);
-    responseObserver.onNext(response);
-    responseObserver.onCompleted();
+    Object response = responses.remove();
+    if (response instanceof LogSink) {
+      requests.add(request);
+      responseObserver.onNext((LogSink) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
   }
 
   @Override
   public void deleteSink(DeleteSinkRequest request, StreamObserver<Empty> responseObserver) {
-    Empty response = (Empty) responses.remove();
-    requests.add(request);
-    responseObserver.onNext(response);
-    responseObserver.onCompleted();
+    Object response = responses.remove();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext((Empty) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
   }
 }

@@ -17,6 +17,7 @@ package com.google.cloud.logging.spi.v2;
 
 import static com.google.cloud.logging.spi.v2.PagedResponseWrappers.ListSinksPagedResponse;
 
+import com.google.api.gax.grpc.ApiException;
 import com.google.api.gax.testing.MockGrpcService;
 import com.google.api.gax.testing.MockServiceHelper;
 import com.google.common.collect.Lists;
@@ -29,8 +30,9 @@ import com.google.logging.v2.LogSink;
 import com.google.logging.v2.UpdateSinkRequest;
 import com.google.protobuf.Empty;
 import com.google.protobuf.GeneratedMessageV3;
+import io.grpc.Status;
+import io.grpc.StatusRuntimeException;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import org.junit.After;
@@ -89,9 +91,7 @@ public class ConfigServiceV2Test {
     List<LogSink> sinks = Arrays.asList(sinksElement);
     ListSinksResponse expectedResponse =
         ListSinksResponse.newBuilder().setNextPageToken(nextPageToken).addAllSinks(sinks).build();
-    List<GeneratedMessageV3> expectedResponses = new ArrayList<>();
-    expectedResponses.add(expectedResponse);
-    mockConfigServiceV2.setResponses(expectedResponses);
+    mockConfigServiceV2.addResponse(expectedResponse);
 
     String formattedParent = ConfigServiceV2Api.formatParentName("[PROJECT]");
 
@@ -110,6 +110,22 @@ public class ConfigServiceV2Test {
 
   @Test
   @SuppressWarnings("all")
+  public void listSinksExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
+    mockConfigServiceV2.addException(exception);
+
+    try {
+      String formattedParent = ConfigServiceV2Api.formatParentName("[PROJECT]");
+
+      api.listSinks(formattedParent);
+      Assert.fail("No exception raised");
+    } catch (ApiException e) {
+      Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
   public void getSinkTest() {
     String name = "name3373707";
     String destination = "destination-1429847026";
@@ -122,9 +138,7 @@ public class ConfigServiceV2Test {
             .setFilter(filter)
             .setWriterIdentity(writerIdentity)
             .build();
-    List<GeneratedMessageV3> expectedResponses = new ArrayList<>();
-    expectedResponses.add(expectedResponse);
-    mockConfigServiceV2.setResponses(expectedResponses);
+    mockConfigServiceV2.addResponse(expectedResponse);
 
     String formattedSinkName = ConfigServiceV2Api.formatSinkName("[PROJECT]", "[SINK]");
 
@@ -136,6 +150,22 @@ public class ConfigServiceV2Test {
     GetSinkRequest actualRequest = (GetSinkRequest) actualRequests.get(0);
 
     Assert.assertEquals(formattedSinkName, actualRequest.getSinkName());
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void getSinkExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
+    mockConfigServiceV2.addException(exception);
+
+    try {
+      String formattedSinkName = ConfigServiceV2Api.formatSinkName("[PROJECT]", "[SINK]");
+
+      api.getSink(formattedSinkName);
+      Assert.fail("No exception raised");
+    } catch (ApiException e) {
+      Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
+    }
   }
 
   @Test
@@ -152,9 +182,7 @@ public class ConfigServiceV2Test {
             .setFilter(filter)
             .setWriterIdentity(writerIdentity)
             .build();
-    List<GeneratedMessageV3> expectedResponses = new ArrayList<>();
-    expectedResponses.add(expectedResponse);
-    mockConfigServiceV2.setResponses(expectedResponses);
+    mockConfigServiceV2.addResponse(expectedResponse);
 
     String formattedParent = ConfigServiceV2Api.formatParentName("[PROJECT]");
     LogSink sink = LogSink.newBuilder().build();
@@ -172,6 +200,23 @@ public class ConfigServiceV2Test {
 
   @Test
   @SuppressWarnings("all")
+  public void createSinkExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
+    mockConfigServiceV2.addException(exception);
+
+    try {
+      String formattedParent = ConfigServiceV2Api.formatParentName("[PROJECT]");
+      LogSink sink = LogSink.newBuilder().build();
+
+      api.createSink(formattedParent, sink);
+      Assert.fail("No exception raised");
+    } catch (ApiException e) {
+      Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
   public void updateSinkTest() {
     String name = "name3373707";
     String destination = "destination-1429847026";
@@ -184,9 +229,7 @@ public class ConfigServiceV2Test {
             .setFilter(filter)
             .setWriterIdentity(writerIdentity)
             .build();
-    List<GeneratedMessageV3> expectedResponses = new ArrayList<>();
-    expectedResponses.add(expectedResponse);
-    mockConfigServiceV2.setResponses(expectedResponses);
+    mockConfigServiceV2.addResponse(expectedResponse);
 
     String formattedSinkName = ConfigServiceV2Api.formatSinkName("[PROJECT]", "[SINK]");
     LogSink sink = LogSink.newBuilder().build();
@@ -204,11 +247,26 @@ public class ConfigServiceV2Test {
 
   @Test
   @SuppressWarnings("all")
+  public void updateSinkExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
+    mockConfigServiceV2.addException(exception);
+
+    try {
+      String formattedSinkName = ConfigServiceV2Api.formatSinkName("[PROJECT]", "[SINK]");
+      LogSink sink = LogSink.newBuilder().build();
+
+      api.updateSink(formattedSinkName, sink);
+      Assert.fail("No exception raised");
+    } catch (ApiException e) {
+      Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
   public void deleteSinkTest() {
     Empty expectedResponse = Empty.newBuilder().build();
-    List<GeneratedMessageV3> expectedResponses = new ArrayList<>();
-    expectedResponses.add(expectedResponse);
-    mockConfigServiceV2.setResponses(expectedResponses);
+    mockConfigServiceV2.addResponse(expectedResponse);
 
     String formattedSinkName = ConfigServiceV2Api.formatSinkName("[PROJECT]", "[SINK]");
 
@@ -219,5 +277,21 @@ public class ConfigServiceV2Test {
     DeleteSinkRequest actualRequest = (DeleteSinkRequest) actualRequests.get(0);
 
     Assert.assertEquals(formattedSinkName, actualRequest.getSinkName());
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteSinkExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
+    mockConfigServiceV2.addException(exception);
+
+    try {
+      String formattedSinkName = ConfigServiceV2Api.formatSinkName("[PROJECT]", "[SINK]");
+
+      api.deleteSink(formattedSinkName);
+      Assert.fail("No exception raised");
+    } catch (ApiException e) {
+      Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
+    }
   }
 }
