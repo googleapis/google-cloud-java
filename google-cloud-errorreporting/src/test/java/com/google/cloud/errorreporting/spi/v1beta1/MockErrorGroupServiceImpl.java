@@ -15,7 +15,6 @@
  */
 package com.google.cloud.errorreporting.spi.v1beta1;
 
-import com.google.common.collect.Lists;
 import com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup;
 import com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupServiceGrpc.ErrorGroupServiceImplBase;
 import com.google.devtools.clouderrorreporting.v1beta1.GetGroupRequest;
@@ -30,7 +29,7 @@ import java.util.Queue;
 @javax.annotation.Generated("by GAPIC")
 public class MockErrorGroupServiceImpl extends ErrorGroupServiceImplBase {
   private ArrayList<GeneratedMessageV3> requests;
-  private Queue<GeneratedMessageV3> responses;
+  private Queue<Object> responses;
 
   public MockErrorGroupServiceImpl() {
     requests = new ArrayList<>();
@@ -41,8 +40,16 @@ public class MockErrorGroupServiceImpl extends ErrorGroupServiceImplBase {
     return requests;
   }
 
+  public void addResponse(GeneratedMessageV3 response) {
+    responses.add(response);
+  }
+
   public void setResponses(List<GeneratedMessageV3> responses) {
-    this.responses = Lists.newLinkedList(responses);
+    this.responses = new LinkedList<Object>(responses);
+  }
+
+  public void addException(Exception exception) {
+    responses.add(exception);
   }
 
   public void reset() {
@@ -52,17 +59,29 @@ public class MockErrorGroupServiceImpl extends ErrorGroupServiceImplBase {
 
   @Override
   public void getGroup(GetGroupRequest request, StreamObserver<ErrorGroup> responseObserver) {
-    ErrorGroup response = (ErrorGroup) responses.remove();
-    requests.add(request);
-    responseObserver.onNext(response);
-    responseObserver.onCompleted();
+    Object response = responses.remove();
+    if (response instanceof ErrorGroup) {
+      requests.add(request);
+      responseObserver.onNext((ErrorGroup) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
   }
 
   @Override
   public void updateGroup(UpdateGroupRequest request, StreamObserver<ErrorGroup> responseObserver) {
-    ErrorGroup response = (ErrorGroup) responses.remove();
-    requests.add(request);
-    responseObserver.onNext(response);
-    responseObserver.onCompleted();
+    Object response = responses.remove();
+    if (response instanceof ErrorGroup) {
+      requests.add(request);
+      responseObserver.onNext((ErrorGroup) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
   }
 }

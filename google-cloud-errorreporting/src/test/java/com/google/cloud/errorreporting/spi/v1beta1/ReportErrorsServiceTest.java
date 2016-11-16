@@ -15,14 +15,16 @@
  */
 package com.google.cloud.errorreporting.spi.v1beta1;
 
+import com.google.api.gax.grpc.ApiException;
 import com.google.api.gax.testing.MockGrpcService;
 import com.google.api.gax.testing.MockServiceHelper;
 import com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest;
 import com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse;
 import com.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent;
 import com.google.protobuf.GeneratedMessageV3;
+import io.grpc.Status;
+import io.grpc.StatusRuntimeException;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import org.junit.After;
@@ -77,9 +79,7 @@ public class ReportErrorsServiceTest {
   @SuppressWarnings("all")
   public void reportErrorEventTest() {
     ReportErrorEventResponse expectedResponse = ReportErrorEventResponse.newBuilder().build();
-    List<GeneratedMessageV3> expectedResponses = new ArrayList<>();
-    expectedResponses.add(expectedResponse);
-    mockReportErrorsService.setResponses(expectedResponses);
+    mockReportErrorsService.addResponse(expectedResponse);
 
     String formattedProjectName = ReportErrorsServiceApi.formatProjectName("[PROJECT]");
     ReportedErrorEvent event = ReportedErrorEvent.newBuilder().build();
@@ -93,5 +93,22 @@ public class ReportErrorsServiceTest {
 
     Assert.assertEquals(formattedProjectName, actualRequest.getProjectName());
     Assert.assertEquals(event, actualRequest.getEvent());
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void reportErrorEventExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
+    mockReportErrorsService.addException(exception);
+
+    try {
+      String formattedProjectName = ReportErrorsServiceApi.formatProjectName("[PROJECT]");
+      ReportedErrorEvent event = ReportedErrorEvent.newBuilder().build();
+
+      api.reportErrorEvent(formattedProjectName, event);
+      Assert.fail("No exception raised");
+    } catch (ApiException e) {
+      Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
+    }
   }
 }
