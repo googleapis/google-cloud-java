@@ -23,7 +23,6 @@
 package com.google.cloud.examples.bigquery.snippets;
 
 import com.google.api.client.util.Charsets;
-import com.google.api.services.bigquery.model.JobStatistics;
 import com.google.cloud.Page;
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQuery.DatasetDeleteOption;
@@ -63,9 +62,6 @@ import com.google.common.io.ByteStreams;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.channels.ReadableByteChannel;
-import java.nio.channels.WritableByteChannel;
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
