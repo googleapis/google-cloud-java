@@ -133,22 +133,6 @@ public class PublisherTest {
 
   @Test
   @SuppressWarnings("all")
-  public void createTopicExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
-    mockPublisher.addException(exception);
-
-    try {
-      String formattedName = PublisherApi.formatTopicName("[PROJECT]", "[TOPIC]");
-
-      api.createTopic(formattedName);
-      Assert.fail("No exception raised");
-    } catch (ApiException e) {
-      Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
   public void publishTest() {
     String messageIdsElement = "messageIdsElement-744837059";
     List<String> messageIds = Arrays.asList(messageIdsElement);
@@ -228,22 +212,6 @@ public class PublisherTest {
 
   @Test
   @SuppressWarnings("all")
-  public void getTopicExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
-    mockPublisher.addException(exception);
-
-    try {
-      String formattedTopic = PublisherApi.formatTopicName("[PROJECT]", "[TOPIC]");
-
-      api.getTopic(formattedTopic);
-      Assert.fail("No exception raised");
-    } catch (ApiException e) {
-      Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
   public void listTopicsTest() {
     String nextPageToken = "";
     Topic topicsElement = Topic.newBuilder().build();
@@ -280,22 +248,6 @@ public class PublisherTest {
       ProjectName project = ProjectName.create("[PROJECT]");
 
       api.listTopics(project);
-      Assert.fail("No exception raised");
-    } catch (ApiException e) {
-      Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void listTopicsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
-    mockPublisher.addException(exception);
-
-    try {
-      String formattedProject = PublisherApi.formatProjectName("[PROJECT]");
-
-      api.listTopics(formattedProject);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
       Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
@@ -354,22 +306,6 @@ public class PublisherTest {
 
   @Test
   @SuppressWarnings("all")
-  public void listTopicSubscriptionsExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
-    mockPublisher.addException(exception);
-
-    try {
-      String formattedTopic = PublisherApi.formatTopicName("[PROJECT]", "[TOPIC]");
-
-      api.listTopicSubscriptions(formattedTopic);
-      Assert.fail("No exception raised");
-    } catch (ApiException e) {
-      Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
   public void deleteTopicTest() {
     Empty expectedResponse = Empty.newBuilder().build();
     mockPublisher.addResponse(expectedResponse);
@@ -395,22 +331,6 @@ public class PublisherTest {
       TopicName topic = TopicName.create("[PROJECT]", "[TOPIC]");
 
       api.deleteTopic(topic);
-      Assert.fail("No exception raised");
-    } catch (ApiException e) {
-      Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
-    }
-  }
-
-  @Test
-  @SuppressWarnings("all")
-  public void deleteTopicExceptionTest() throws Exception {
-    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
-    mockPublisher.addException(exception);
-
-    try {
-      String formattedTopic = PublisherApi.formatTopicName("[PROJECT]", "[TOPIC]");
-
-      api.deleteTopic(formattedTopic);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
       Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
