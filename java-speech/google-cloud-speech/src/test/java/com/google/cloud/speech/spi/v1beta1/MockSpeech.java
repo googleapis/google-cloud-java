@@ -34,6 +34,16 @@ public class MockSpeech implements MockGrpcService {
   }
 
   @Override
+  public void addResponse(GeneratedMessageV3 response) {
+    serviceImpl.addResponse(response);
+  }
+
+  @Override
+  public void addException(Exception exception) {
+    serviceImpl.addException(exception);
+  }
+
+  @Override
   public void setResponses(List<GeneratedMessageV3> responses) {
     serviceImpl.setResponses(responses);
   }

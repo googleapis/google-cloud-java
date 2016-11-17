@@ -21,7 +21,6 @@ import com.google.cloud.speech.v1beta1.StreamingRecognizeRequest;
 import com.google.cloud.speech.v1beta1.StreamingRecognizeResponse;
 import com.google.cloud.speech.v1beta1.SyncRecognizeRequest;
 import com.google.cloud.speech.v1beta1.SyncRecognizeResponse;
-import com.google.common.collect.Lists;
 import com.google.longrunning.Operation;
 import com.google.protobuf.GeneratedMessageV3;
 import io.grpc.stub.StreamObserver;
@@ -33,7 +32,7 @@ import java.util.Queue;
 @javax.annotation.Generated("by GAPIC")
 public class MockSpeechImpl extends SpeechImplBase {
   private ArrayList<GeneratedMessageV3> requests;
-  private Queue<GeneratedMessageV3> responses;
+  private Queue<Object> responses;
 
   public MockSpeechImpl() {
     requests = new ArrayList<>();
@@ -44,8 +43,16 @@ public class MockSpeechImpl extends SpeechImplBase {
     return requests;
   }
 
+  public void addResponse(GeneratedMessageV3 response) {
+    responses.add(response);
+  }
+
   public void setResponses(List<GeneratedMessageV3> responses) {
-    this.responses = Lists.newLinkedList(responses);
+    this.responses = new LinkedList<Object>(responses);
+  }
+
+  public void addException(Exception exception) {
+    responses.add(exception);
   }
 
   public void reset() {
@@ -56,30 +63,48 @@ public class MockSpeechImpl extends SpeechImplBase {
   @Override
   public void syncRecognize(
       SyncRecognizeRequest request, StreamObserver<SyncRecognizeResponse> responseObserver) {
-    SyncRecognizeResponse response = (SyncRecognizeResponse) responses.remove();
-    requests.add(request);
-    responseObserver.onNext(response);
-    responseObserver.onCompleted();
+    Object response = responses.remove();
+    if (response instanceof SyncRecognizeResponse) {
+      requests.add(request);
+      responseObserver.onNext((SyncRecognizeResponse) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
   }
 
   @Override
   public void asyncRecognize(
       AsyncRecognizeRequest request, StreamObserver<Operation> responseObserver) {
-    Operation response = (Operation) responses.remove();
-    requests.add(request);
-    responseObserver.onNext(response);
-    responseObserver.onCompleted();
+    Object response = responses.remove();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext((Operation) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
   }
 
   @Override
   public StreamObserver<StreamingRecognizeRequest> streamingRecognize(
       final StreamObserver<StreamingRecognizeResponse> responseObserver) {
-    final StreamingRecognizeResponse response = (StreamingRecognizeResponse) responses.remove();
+    final Object response = responses.remove();
     StreamObserver<StreamingRecognizeRequest> requestObserver =
         new StreamObserver<StreamingRecognizeRequest>() {
           @Override
           public void onNext(StreamingRecognizeRequest value) {
-            responseObserver.onNext(response);
+            if (response instanceof StreamingRecognizeResponse) {
+              responseObserver.onNext((StreamingRecognizeResponse) response);
+            } else if (response instanceof Exception) {
+              responseObserver.onError((Exception) response);
+            } else {
+              responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+            }
           }
 
           @Override
