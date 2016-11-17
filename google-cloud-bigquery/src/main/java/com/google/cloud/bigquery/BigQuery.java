@@ -1014,15 +1014,42 @@ public interface BigQuery extends Service<BigQueryOptions> {
    *     WriteChannelConfiguration.newBuilder(tableId)
    *         .setFormatOptions(FormatOptions.csv())
    *         .build();
-   * BaseWriteChannel<BigQueryOptions, WriteChannelConfiguration> writer =
-   *     bigquery.writer(writeChannelConfiguration);
+   * TableDataWriteChannel writer = bigquery.writer(writeChannelConfiguration);
+   *   // Write data to writer
+   *  try {
+   *     writer.write(ByteBuffer.wrap(csvData.getBytes(Charsets.UTF_8)));
+   *   } finally {
+   *     writer.close();
+   *   }
+   *   // Get load job
+   *   Job job = writer.getJob();
+   *   job = job.waitFor();
+   *   LoadStatistics stats = job.getStatistics();
+   *   return stats.getOutputRows();
+   * }</pre>
+   *
+   * <p>Example of writing a local file to a table.
+   * <pre> {@code
+   * String datasetName = "my_dataset_name";
+   * String tableName = "my_table_name";
+   * ReadableByteChannel csvReader = Files.newByteChannel(FileSystems.getDefault().getPath(".", "my-data.csv"));
+   * TableId tableId = TableId.of(datasetName, tableName);
+   * WriteChannelConfiguration writeChannelConfiguration =
+   *     WriteChannelConfiguration.newBuilder(tableId)
+   *         .setFormatOptions(FormatOptions.csv())
+   *         .build();
+   * TableDataWriteChannel writer = bigquery.writer(writeChannelConfiguration);
    * // Write data to writer
    * try {
-   *   writer.write(ByteBuffer.wrap(csvData.getBytes(Charsets.UTF_8)));
-   * } catch (IOException e) {
-   *   // Unable to write data
+   *   ByteStreams.copy(csvReader, writer);
+   * } finally {
+   *   writer.close();
    * }
-   * writer.close();
+   * // Get load job
+   * Job job = writer.getJob();
+   * job = job.waitFor();
+   * LoadStatistics stats = job.getStatistics();
+   * return stats.getOutputRows();
    * }</pre>
    *
    * @throws BigQueryException upon failure
