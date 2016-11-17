@@ -26,7 +26,6 @@ import com.google.common.collect.ImmutableSet;
 
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
 import java.util.logging.ErrorManager;
 import java.util.logging.Filter;
