@@ -314,10 +314,6 @@ public class LoggingHandler extends Handler {
   protected void enhanceLogEntry(LogEntry.Builder builder, LogRecord record) {
     // no-op in this class
   }
-
-  protected LogEntry buildEntryFor(LogRecord record, LogEntry.Builder builder) {
-    return builder.build();
-  }
   
   private static Severity severityFor(Level level) {
     if (level instanceof LoggingLevel) {
