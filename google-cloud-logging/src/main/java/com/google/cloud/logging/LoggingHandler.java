@@ -293,7 +293,7 @@ public class LoggingHandler extends Handler {
     }
   }
 
-  protected LogEntry entryFor(LogRecord record) {
+  private LogEntry entryFor(LogRecord record) {
     String payload;
     try {
       payload = getFormatter().format(record);
@@ -307,7 +307,12 @@ public class LoggingHandler extends Handler {
         .addLabel("levelName", level.getName())
         .addLabel("levelValue", String.valueOf(level.intValue()))
         .setSeverity(severityFor(level));
-    return buildEntryFor(record, builder);
+    enhanceLogEntry(builder, record);
+    return builder.build();
+  }
+  
+  protected void enhanceLogEntry(LogEntry.Builder builder, LogRecord record) {
+    // no-op in this class
   }
 
   protected LogEntry buildEntryFor(LogRecord record, LogEntry.Builder builder) {
