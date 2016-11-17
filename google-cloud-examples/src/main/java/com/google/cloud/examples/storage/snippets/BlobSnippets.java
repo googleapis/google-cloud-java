@@ -173,6 +173,25 @@ public class BlobSnippets {
   }
 
   /**
+   * Example of moving a blob to a different bucket with a different name.
+   */
+  // [TARGET copyTo(String, String, BlobSourceOption...)]
+  // [VARIABLE "my_unique_bucket"]
+  // [VARIABLE "move_blob_name"]
+  public Blob moveTo(String destBucket, String destBlob) {
+    // [START storageMoveFile]
+    CopyWriter copyWriter = blob.copyTo(destBucket, destBlob);
+    Blob copiedBlob = copyWriter.getResult();
+    boolean deleted = blob.delete();
+    // [END storageMoveFile]
+    if (deleted) {
+      return copiedBlob;
+    } else {
+      return null;
+    }
+  }
+
+  /**
    * Example of reading the blob's content through a reader.
    */
   // [TARGET reader(BlobSourceOption...)]

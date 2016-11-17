@@ -550,6 +550,24 @@ public abstract class BaseSystemTest {
   }
 
   @Test
+  public void testPullMessagesAsyncNonImmediately() throws ExecutionException, InterruptedException {
+    String topic = formatForTest("test-pull-messages-async-non-immediately-topic");
+    pubsub().create(TopicInfo.of(topic));
+    String subscription = formatForTest("test-pull-messages-async-subscription");
+    pubsub().create(SubscriptionInfo.of(topic, subscription));
+    Future<Iterator<ReceivedMessage>> future = pubsub().pullAsync(subscription, 2);
+    Message message1 = Message.of("payload1");
+    Message message2 = Message.of("payload2");
+    List<String> messageIds = pubsub().publish(topic, ImmutableList.of(message1, message2));
+    assertEquals(2, messageIds.size());
+    Iterator<ReceivedMessage> iterator = future.get();
+    assertEquals(message1.getPayloadAsString(), iterator.next().getPayloadAsString());
+    assertEquals(message2.getPayloadAsString(), iterator.next().getPayloadAsString());
+    assertTrue(pubsub().deleteSubscription(subscription));
+    assertTrue(pubsub().deleteTopic(topic));
+  }
+
+  @Test
   public void testPullAsyncNonExistingSubscription()
       throws ExecutionException, InterruptedException {
     thrown.expect(ExecutionException.class);

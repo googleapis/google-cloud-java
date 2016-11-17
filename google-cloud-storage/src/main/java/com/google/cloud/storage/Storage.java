@@ -2456,6 +2456,15 @@ public interface Storage extends Service<StorageOptions> {
    * Acl acl = storage.createAcl(blobId, Acl.of(User.ofAllAuthenticatedUsers(), Role.READER));
    * }</pre>
    *
+   * <p>Example of updating a blob to be public-read.
+   * <pre> {@code
+   * String bucketName = "my_unique_bucket";
+   * String blobName = "my_blob_name";
+   * long blobGeneration = 42;
+   * BlobId blobId = BlobId.of(bucketName, blobName, blobGeneration);
+   * Acl acl = storage.createAcl(blobId, Acl.of(User.ofAllUsers(), Role.READER));
+   * }</pre>
+   *
    * @throws StorageException upon failure
    */
   Acl createAcl(BlobId blob, Acl acl);

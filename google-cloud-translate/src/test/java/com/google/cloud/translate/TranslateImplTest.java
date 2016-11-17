@@ -86,9 +86,11 @@ public class TranslateImplTest {
       TranslateOption.targetLanguage("en");
   private static final TranslateOption SOURCE_LANGUAGE_OPTION =
       TranslateOption.sourceLanguage("de");
+  private static final TranslateOption MODEL_OPTION = TranslateOption.model("nmt");
   private static final Map<TranslateRpc.Option, ?> TRANSLATE_OPTIONS = ImmutableMap.of(
       TranslateRpc.Option.TARGET_LANGUAGE, TARGET_LANGUAGE_OPTION.getValue(),
-      TranslateRpc.Option.SOURCE_LANGUAGE, SOURCE_LANGUAGE_OPTION.getValue());
+      TranslateRpc.Option.SOURCE_LANGUAGE, SOURCE_LANGUAGE_OPTION.getValue(),
+      TranslateRpc.Option.MODEL, "nmt");
 
   private TranslateOptions options;
   private TranslateRpcFactory rpcFactoryMock;
@@ -285,7 +287,7 @@ public class TranslateImplTest {
     EasyMock.replay(translateRpcMock);
     initializeService();
     assertEquals(TRANSLATION2,
-        translate.translate(text, TARGET_LANGUAGE_OPTION, SOURCE_LANGUAGE_OPTION));
+        translate.translate(text, TARGET_LANGUAGE_OPTION, SOURCE_LANGUAGE_OPTION, MODEL_OPTION));
   }
 
   @Test
@@ -309,7 +311,7 @@ public class TranslateImplTest {
     EasyMock.replay(translateRpcMock);
     initializeService();
     assertEquals(ImmutableList.of(TRANSLATION2),
-        translate.translate(texts, TARGET_LANGUAGE_OPTION, SOURCE_LANGUAGE_OPTION));
+        translate.translate(texts, TARGET_LANGUAGE_OPTION, SOURCE_LANGUAGE_OPTION, MODEL_OPTION));
   }
 
   @Test

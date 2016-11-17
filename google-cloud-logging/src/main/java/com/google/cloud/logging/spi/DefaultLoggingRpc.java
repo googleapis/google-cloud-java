@@ -16,12 +16,15 @@
 
 package com.google.cloud.logging.spi;
 
-import static com.google.common.base.MoreObjects.firstNonNull;
-
-import com.google.api.gax.core.ConnectionSettings;
 import com.google.api.gax.grpc.ApiException;
+import com.google.api.gax.grpc.ChannelProvider;
+import com.google.api.gax.grpc.ExecutorProvider;
+import com.google.api.gax.grpc.FixedChannelProvider;
+import com.google.api.gax.grpc.FixedExecutorProvider;
+import com.google.api.gax.grpc.ProviderManager;
 import com.google.api.gax.grpc.UnaryCallSettings;
 import com.google.cloud.GrpcServiceOptions.ExecutorFactory;
+import com.google.cloud.NoCredentials;
 import com.google.cloud.logging.LoggingException;
 import com.google.cloud.logging.LoggingOptions;
 import com.google.cloud.logging.spi.v2.ConfigServiceV2Api;
@@ -73,6 +76,7 @@ public class DefaultLoggingRpc implements LoggingRpc {
   private final LoggingServiceV2Api loggingApi;
   private final MetricsServiceV2Api metricsApi;
   private final ScheduledExecutorService executor;
+  private final ProviderManager providerManager;
   private final ExecutorFactory<ScheduledExecutorService> executorFactory;
 
   private boolean closed;
@@ -96,8 +100,8 @@ public class DefaultLoggingRpc implements LoggingRpc {
     }
 
     @Override
-    protected ConnectionSettings.Builder getConnectionSettings() {
-      return super.getConnectionSettings();
+    protected ChannelProvider getChannelProvider() {
+      return super.getChannelProvider();
     }
   }
 
@@ -105,36 +109,37 @@ public class DefaultLoggingRpc implements LoggingRpc {
     InternalLoggingOptions internalOptions = new InternalLoggingOptions(options);
     executorFactory = internalOptions.getExecutorFactory();
     executor = executorFactory.get();
-    String libraryName = options.getLibraryName();
-    String libraryVersion = firstNonNull(options.getLibraryVersion(), "");
     try {
-      ConfigServiceV2Settings.Builder confBuilder = ConfigServiceV2Settings.defaultBuilder()
-          .provideExecutorWith(executor, false)
-          .setClientLibHeader(libraryName, libraryVersion);
-      LoggingServiceV2Settings.Builder logBuilder = LoggingServiceV2Settings.defaultBuilder()
-          .provideExecutorWith(executor, false)
-          .setClientLibHeader(libraryName, libraryVersion);
-      MetricsServiceV2Settings.Builder metricsBuilder = MetricsServiceV2Settings.defaultBuilder()
-          .provideExecutorWith(executor, false)
-          .setClientLibHeader(libraryName, libraryVersion);
-      // todo(mziccard): PublisherSettings should support null/absent credentials for testing
-      if (options.getHost().contains("localhost") || options.getCredentials() == null) {
-        ManagedChannel channel = NettyChannelBuilder.forTarget(options.getHost())
+      ExecutorProvider executorProvider = FixedExecutorProvider.create(executor);
+      ChannelProvider channelProvider;
+      // todo(mziccard): ChannelProvider should support null/absent credentials for testing
+      if (options.getHost().contains("localhost")
+          || options.getCredentials().equals(NoCredentials.getInstance())) {
+        ManagedChannel managedChannel = NettyChannelBuilder.forTarget(options.getHost())
             .negotiationType(NegotiationType.PLAINTEXT)
+            .executor(executor)
             .build();
-        confBuilder.provideChannelWith(channel, true);
-        logBuilder.provideChannelWith(channel, true);
-        metricsBuilder.provideChannelWith(channel, true);
+        channelProvider = FixedChannelProvider.create(managedChannel);
       } else {
-        ConnectionSettings connectionSettings = internalOptions.getConnectionSettings().build();
-        confBuilder.provideChannelWith(connectionSettings);
-        logBuilder.provideChannelWith(connectionSettings);
-        metricsBuilder.provideChannelWith(connectionSettings);
+        channelProvider = internalOptions.getChannelProvider();
       }
+      providerManager = ProviderManager.newBuilder()
+          .setChannelProvider(channelProvider)
+          .setExecutorProvider(executorProvider)
+          .build();
       UnaryCallSettings.Builder callSettingsBuilder = internalOptions.getApiCallSettings();
-      confBuilder.applyToAllApiMethods(callSettingsBuilder);
-      logBuilder.applyToAllApiMethods(callSettingsBuilder);
-      metricsBuilder.applyToAllApiMethods(callSettingsBuilder);
+      ConfigServiceV2Settings.Builder confBuilder = ConfigServiceV2Settings.defaultBuilder()
+          .setExecutorProvider(providerManager)
+          .setChannelProvider(providerManager)
+          .applyToAllApiMethods(callSettingsBuilder);
+      LoggingServiceV2Settings.Builder logBuilder = LoggingServiceV2Settings.defaultBuilder()
+          .setExecutorProvider(providerManager)
+          .setChannelProvider(providerManager)
+          .applyToAllApiMethods(callSettingsBuilder);
+      MetricsServiceV2Settings.Builder metricsBuilder = MetricsServiceV2Settings.defaultBuilder()
+          .setExecutorProvider(providerManager)
+          .setChannelProvider(providerManager)
+          .applyToAllApiMethods(callSettingsBuilder);
       configApi = ConfigServiceV2Api.create(confBuilder.build());
       loggingApi = LoggingServiceV2Api.create(logBuilder.build());
       metricsApi = MetricsServiceV2Api.create(metricsBuilder.build());
@@ -245,6 +250,7 @@ public class DefaultLoggingRpc implements LoggingRpc {
     configApi.close();
     loggingApi.close();
     metricsApi.close();
+    providerManager.getChannel().shutdown();
     executorFactory.release(executor);
   }
 }

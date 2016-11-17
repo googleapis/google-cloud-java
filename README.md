@@ -40,16 +40,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud</artifactId>
-  <version>0.5.1</version>
+  <version>0.6.0</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud:0.5.1'
+compile 'com.google.cloud:google-cloud:0.6.0'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud" % "0.5.1"
+libraryDependencies += "com.google.cloud" % "google-cloud" % "0.6.0"
 ```
 
 Example Applications
@@ -610,9 +610,10 @@ Google Translate
 #### Preview
 
 Here's a snippet showing a simple usage example. The example shows how to detect the language of
-some text and how to translate some text. The example assumes that the `GOOGLE_API_KEY` is set and
-contains a valid API key. Alternatively, you can use the `apiKey(String)` setter in
-`TranslateOptions.Builder` to set the API key. Complete source code can be found at
+some text and how to translate some text. The example assumes that either default application
+credentials or a valid api key are available. An api key stored in the `GOOGLE_API_KEY` environment
+variable will be automatically detected. Alternatively, you can use the `apiKey(String)` setter in
+`TranslateOptions.Builder`. Complete source code can be found at
 [DetectLanguageAndTranslate.java](./google-cloud-examples/src/main/java/com/google/cloud/examples/translate/snippets/DetectLanguageAndTranslate.java).
 
 ```java

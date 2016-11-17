@@ -23,7 +23,6 @@
 package com.google.cloud.examples.bigquery.snippets;
 
 import com.google.api.client.util.Charsets;
-import com.google.cloud.BaseWriteChannel;
 import com.google.cloud.Page;
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQuery.DatasetDeleteOption;
@@ -33,7 +32,6 @@ import com.google.cloud.bigquery.BigQuery.TableDataListOption;
 import com.google.cloud.bigquery.BigQuery.TableListOption;
 import com.google.cloud.bigquery.BigQueryError;
 import com.google.cloud.bigquery.BigQueryException;
-import com.google.cloud.bigquery.BigQueryOptions;
 import com.google.cloud.bigquery.Dataset;
 import com.google.cloud.bigquery.DatasetId;
 import com.google.cloud.bigquery.DatasetInfo;
@@ -46,6 +44,7 @@ import com.google.cloud.bigquery.Job;
 import com.google.cloud.bigquery.JobConfiguration;
 import com.google.cloud.bigquery.JobId;
 import com.google.cloud.bigquery.JobInfo;
+import com.google.cloud.bigquery.JobStatistics.LoadStatistics;
 import com.google.cloud.bigquery.QueryJobConfiguration;
 import com.google.cloud.bigquery.QueryRequest;
 import com.google.cloud.bigquery.QueryResponse;
@@ -53,18 +52,23 @@ import com.google.cloud.bigquery.QueryResult;
 import com.google.cloud.bigquery.Schema;
 import com.google.cloud.bigquery.StandardTableDefinition;
 import com.google.cloud.bigquery.Table;
+import com.google.cloud.bigquery.TableDataWriteChannel;
 import com.google.cloud.bigquery.TableDefinition;
 import com.google.cloud.bigquery.TableId;
 import com.google.cloud.bigquery.TableInfo;
 import com.google.cloud.bigquery.WriteChannelConfiguration;
+import com.google.common.io.BaseEncoding;
+import com.google.common.io.ByteStreams;
 
 import java.io.IOException;
 import java.nio.ByteBuffer;
+import java.nio.channels.ReadableByteChannel;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.concurrent.TimeoutException;
 
 /**
  * This class contains a number of snippets for the {@link BigQuery} interface.
@@ -332,25 +336,57 @@ public class BigQuerySnippets {
   // [VARIABLE "my_dataset_name"]
   // [VARIABLE "my_table_name"]
   // [VARIABLE "StringValue1\nStringValue2\n"]
-  public BaseWriteChannel<BigQueryOptions, WriteChannelConfiguration> writeToTable(
-      String datasetName, String tableName, String csvData) throws IOException {
+  public long writeToTable(String datasetName, String tableName, String csvData)
+      throws IOException, InterruptedException, TimeoutException {
     // [START writeToTable]
     TableId tableId = TableId.of(datasetName, tableName);
     WriteChannelConfiguration writeChannelConfiguration =
         WriteChannelConfiguration.newBuilder(tableId)
             .setFormatOptions(FormatOptions.csv())
             .build();
-    BaseWriteChannel<BigQueryOptions, WriteChannelConfiguration> writer =
-        bigquery.writer(writeChannelConfiguration);
+    TableDataWriteChannel writer = bigquery.writer(writeChannelConfiguration);
+      // Write data to writer
+     try {
+        writer.write(ByteBuffer.wrap(csvData.getBytes(Charsets.UTF_8)));
+      } finally {
+        writer.close();
+      }
+      // Get load job
+      Job job = writer.getJob();
+      job = job.waitFor();
+      LoadStatistics stats = job.getStatistics();
+      return stats.getOutputRows();
+      // [END writeToTable]
+    }
+
+  /**
+   * Example of writing a local file to a table.
+   */
+  // [TARGET writer(WriteChannelConfiguration)]
+  // [VARIABLE "my_dataset_name"]
+  // [VARIABLE "my_table_name"]
+  // [VARIABLE Files.newByteChannel(FileSystems.getDefault().getPath(".", "my-data.csv"))]
+  public long writeFileToTable(String datasetName, String tableName, ReadableByteChannel csvReader)
+      throws IOException, InterruptedException, TimeoutException {
+    // [START writeFileToTable]
+    TableId tableId = TableId.of(datasetName, tableName);
+    WriteChannelConfiguration writeChannelConfiguration =
+        WriteChannelConfiguration.newBuilder(tableId)
+            .setFormatOptions(FormatOptions.csv())
+            .build();
+    TableDataWriteChannel writer = bigquery.writer(writeChannelConfiguration);
     // Write data to writer
     try {
-      writer.write(ByteBuffer.wrap(csvData.getBytes(Charsets.UTF_8)));
-    } catch (IOException e) {
-      // Unable to write data
+      ByteStreams.copy(csvReader, writer);
+    } finally {
+      writer.close();
     }
-    writer.close();
-    // [END writeToTable]
-    return writer;
+    // Get load job
+    Job job = writer.getJob();
+    job = job.waitFor();
+    LoadStatistics stats = job.getStatistics();
+    return stats.getOutputRows();
+    // [END writeFileToTable]
   }
 
   /**
@@ -366,7 +402,11 @@ public class BigQuerySnippets {
     Map<String, Object> rowContent = new HashMap<>();
     rowContent.put("booleanField", true);
     // Bytes are passed in base64
-    rowContent.put("bytesField", "DQ4KDQ==");
+    rowContent.put("bytesField", BaseEncoding.base64().encode(new byte[]{0xA, 0xD, 0xD, 0xE, 0xD}));
+    // Records are passed as a map
+    Map<String, Object> recordsContent = new HashMap<>();
+    recordsContent.put("stringField", "Hello, World!");
+    rowContent.put("recordField", recordsContent);
     InsertAllResponse response = bigquery.insertAll(InsertAllRequest.newBuilder(tableId)
         .addRow("rowId", rowContent)
         // More rows can be added in the same RPC by invoking .addRow() on the builder

@@ -1,22 +1,24 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016, Google Inc. All rights reserved.
  *
- * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
- * in compliance with the License. You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- * http://www.apache.org/licenses/LICENSE-2.0
+ *     http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing, software distributed under the License
- * is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
- * or implied. See the License for the specific language governing permissions and limitations under
- * the License.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
-
 package com.google.cloud.errorreporting.spi.v1beta1;
 
 import static com.google.cloud.errorreporting.spi.v1beta1.PagedResponseWrappers.ListEventsPagedResponse;
 import static com.google.cloud.errorreporting.spi.v1beta1.PagedResponseWrappers.ListGroupStatsPagedResponse;
 
+import com.google.api.gax.grpc.ApiException;
 import com.google.api.gax.testing.MockGrpcService;
 import com.google.api.gax.testing.MockServiceHelper;
 import com.google.common.collect.Lists;
@@ -30,8 +32,9 @@ import com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsRequest;
 import com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse;
 import com.google.devtools.clouderrorreporting.v1beta1.QueryTimeRange;
 import com.google.protobuf.GeneratedMessageV3;
+import io.grpc.Status;
+import io.grpc.StatusRuntimeException;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import org.junit.After;
@@ -72,7 +75,7 @@ public class ErrorStatsServiceTest {
     serviceHelper.reset();
     ErrorStatsServiceSettings settings =
         ErrorStatsServiceSettings.defaultBuilder()
-            .provideChannelWith(serviceHelper.createChannel(), true)
+            .setChannelProvider(serviceHelper.createChannelProvider())
             .build();
     api = ErrorStatsServiceApi.create(settings);
   }
@@ -93,9 +96,7 @@ public class ErrorStatsServiceTest {
             .setNextPageToken(nextPageToken)
             .addAllErrorGroupStats(errorGroupStats)
             .build();
-    List<GeneratedMessageV3> expectedResponses = new ArrayList<>();
-    expectedResponses.add(expectedResponse);
-    mockErrorStatsService.setResponses(expectedResponses);
+    mockErrorStatsService.addResponse(expectedResponse);
 
     String formattedProjectName = ErrorStatsServiceApi.formatProjectName("[PROJECT]");
     QueryTimeRange timeRange = QueryTimeRange.newBuilder().build();
@@ -117,6 +118,23 @@ public class ErrorStatsServiceTest {
 
   @Test
   @SuppressWarnings("all")
+  public void listGroupStatsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
+    mockErrorStatsService.addException(exception);
+
+    try {
+      String formattedProjectName = ErrorStatsServiceApi.formatProjectName("[PROJECT]");
+      QueryTimeRange timeRange = QueryTimeRange.newBuilder().build();
+
+      api.listGroupStats(formattedProjectName, timeRange);
+      Assert.fail("No exception raised");
+    } catch (ApiException e) {
+      Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
   public void listEventsTest() {
     String nextPageToken = "";
     ErrorEvent errorEventsElement = ErrorEvent.newBuilder().build();
@@ -126,9 +144,7 @@ public class ErrorStatsServiceTest {
             .setNextPageToken(nextPageToken)
             .addAllErrorEvents(errorEvents)
             .build();
-    List<GeneratedMessageV3> expectedResponses = new ArrayList<>();
-    expectedResponses.add(expectedResponse);
-    mockErrorStatsService.setResponses(expectedResponses);
+    mockErrorStatsService.addResponse(expectedResponse);
 
     String formattedProjectName = ErrorStatsServiceApi.formatProjectName("[PROJECT]");
     String groupId = "groupId506361563";
@@ -149,11 +165,26 @@ public class ErrorStatsServiceTest {
 
   @Test
   @SuppressWarnings("all")
+  public void listEventsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
+    mockErrorStatsService.addException(exception);
+
+    try {
+      String formattedProjectName = ErrorStatsServiceApi.formatProjectName("[PROJECT]");
+      String groupId = "groupId506361563";
+
+      api.listEvents(formattedProjectName, groupId);
+      Assert.fail("No exception raised");
+    } catch (ApiException e) {
+      Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
   public void deleteEventsTest() {
     DeleteEventsResponse expectedResponse = DeleteEventsResponse.newBuilder().build();
-    List<GeneratedMessageV3> expectedResponses = new ArrayList<>();
-    expectedResponses.add(expectedResponse);
-    mockErrorStatsService.setResponses(expectedResponses);
+    mockErrorStatsService.addResponse(expectedResponse);
 
     String formattedProjectName = ErrorStatsServiceApi.formatProjectName("[PROJECT]");
 
@@ -165,5 +196,21 @@ public class ErrorStatsServiceTest {
     DeleteEventsRequest actualRequest = (DeleteEventsRequest) actualRequests.get(0);
 
     Assert.assertEquals(formattedProjectName, actualRequest.getProjectName());
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteEventsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
+    mockErrorStatsService.addException(exception);
+
+    try {
+      String formattedProjectName = ErrorStatsServiceApi.formatProjectName("[PROJECT]");
+
+      api.deleteEvents(formattedProjectName);
+      Assert.fail("No exception raised");
+    } catch (ApiException e) {
+      Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
+    }
   }
 }

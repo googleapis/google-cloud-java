@@ -16,12 +16,15 @@
 
 package com.google.cloud.pubsub.spi;
 
-import static com.google.common.base.MoreObjects.firstNonNull;
-
-import com.google.api.gax.core.ConnectionSettings;
 import com.google.api.gax.grpc.ApiException;
+import com.google.api.gax.grpc.ChannelProvider;
+import com.google.api.gax.grpc.ExecutorProvider;
+import com.google.api.gax.grpc.FixedChannelProvider;
+import com.google.api.gax.grpc.FixedExecutorProvider;
+import com.google.api.gax.grpc.ProviderManager;
 import com.google.api.gax.grpc.UnaryCallSettings;
 import com.google.cloud.GrpcServiceOptions.ExecutorFactory;
+import com.google.cloud.NoCredentials;
 import com.google.cloud.pubsub.PubSubException;
 import com.google.cloud.pubsub.PubSubOptions;
 import com.google.cloud.pubsub.spi.v1.PublisherApi;
@@ -65,6 +68,8 @@ import io.grpc.Status.Code;
 import io.grpc.netty.NegotiationType;
 import io.grpc.netty.NettyChannelBuilder;
 
+import org.joda.time.Duration;
+
 import java.io.IOException;
 import java.util.Set;
 import java.util.concurrent.Future;
@@ -74,7 +79,9 @@ public class DefaultPubSubRpc implements PubSubRpc {
 
   private final PublisherApi publisherApi;
   private final SubscriberApi subscriberApi;
+  private final SubscriberApi noTimeoutSubscriberApi;
   private final ScheduledExecutorService executor;
+  private final ProviderManager providerManager;
   private final ExecutorFactory<ScheduledExecutorService> executorFactory;
 
   private boolean closed;
@@ -98,8 +105,8 @@ public class DefaultPubSubRpc implements PubSubRpc {
     }
 
     @Override
-    protected ConnectionSettings.Builder getConnectionSettings() {
-      return super.getConnectionSettings();
+    protected ChannelProvider getChannelProvider() {
+      return super.getChannelProvider();
     }
   }
 
@@ -131,32 +138,41 @@ public class DefaultPubSubRpc implements PubSubRpc {
     InternalPubSubOptions internalOptions = new InternalPubSubOptions(options);
     executorFactory = internalOptions.getExecutorFactory();
     executor = executorFactory.get();
-    String libraryName = options.getLibraryName();
-    String libraryVersion = firstNonNull(options.getLibraryVersion(), "");
     try {
-      PublisherSettings.Builder pubBuilder = PublisherSettings.defaultBuilder()
-          .provideExecutorWith(executor, false)
-          .setClientLibHeader(libraryName, libraryVersion);
-      SubscriberSettings.Builder subBuilder = SubscriberSettings.defaultBuilder()
-          .provideExecutorWith(executor, false)
-          .setClientLibHeader(libraryName, libraryVersion);
-      // todo(mziccard): PublisherSettings should support null/absent credentials for testing
-      if (options.getHost().contains("localhost") || options.getCredentials() == null) {
-        ManagedChannel channel = NettyChannelBuilder.forTarget(options.getHost())
+      ExecutorProvider executorProvider = FixedExecutorProvider.create(executor);
+      ChannelProvider channelProvider;
+      // todo(mziccard): ChannelProvider should support null/absent credentials for testing
+      if (options.getHost().contains("localhost")
+          || options.getCredentials().equals(NoCredentials.getInstance())) {
+        ManagedChannel managedChannel = NettyChannelBuilder.forTarget(options.getHost())
             .negotiationType(NegotiationType.PLAINTEXT)
+            .executor(executor)
             .build();
-        pubBuilder.provideChannelWith(channel, true);
-        subBuilder.provideChannelWith(channel, true);
+        channelProvider = FixedChannelProvider.create(managedChannel);
       } else {
-        ConnectionSettings connectionSettings = internalOptions.getConnectionSettings().build();
-        pubBuilder.provideChannelWith(connectionSettings);
-        subBuilder.provideChannelWith(connectionSettings);
+        channelProvider = internalOptions.getChannelProvider();
       }
+      providerManager = ProviderManager.newBuilder()
+          .setChannelProvider(channelProvider)
+          .setExecutorProvider(executorProvider)
+          .build();
       UnaryCallSettings.Builder callSettingsBuilder = internalOptions.getApiCallSettings();
-      pubBuilder.applyToAllApiMethods(callSettingsBuilder);
-      subBuilder.applyToAllApiMethods(callSettingsBuilder);
+      PublisherSettings.Builder pubBuilder = PublisherSettings.defaultBuilder()
+          .setExecutorProvider(providerManager)
+          .setChannelProvider(providerManager)
+          .applyToAllApiMethods(callSettingsBuilder);
+      SubscriberSettings.Builder subBuilder = SubscriberSettings.defaultBuilder()
+          .setExecutorProvider(providerManager)
+          .setChannelProvider(providerManager)
+          .applyToAllApiMethods(callSettingsBuilder);
       publisherApi = PublisherApi.create(pubBuilder.build());
       subscriberApi = SubscriberApi.create(subBuilder.build());
+      callSettingsBuilder.setRetrySettingsBuilder(callSettingsBuilder.getRetrySettingsBuilder()
+          .setTotalTimeout(Duration.millis(Long.MAX_VALUE))
+          .setInitialRpcTimeout(Duration.millis(Long.MAX_VALUE))
+          .setMaxRpcTimeout(Duration.millis(Long.MAX_VALUE)));
+      subBuilder.applyToAllApiMethods(callSettingsBuilder);
+      noTimeoutSubscriberApi = SubscriberApi.create(subBuilder.build());
     } catch (Exception ex) {
       throw new IOException(ex);
     }
@@ -249,9 +265,14 @@ public class DefaultPubSubRpc implements PubSubRpc {
     return translate(subscriberApi.acknowledgeCallable().futureCall(request), false);
   }
 
+  private static PullFuture pull(SubscriberApi subscriberApi, PullRequest request) {
+    return new PullFutureImpl(translate(subscriberApi.pullCallable().futureCall(request), false));
+  }
+
   @Override
   public PullFuture pull(PullRequest request) {
-    return new PullFutureImpl(translate(subscriberApi.pullCallable().futureCall(request), false));
+    return request.getReturnImmediately()
+        ? pull(subscriberApi, request) : pull(noTimeoutSubscriberApi, request);
   }
 
   @Override
@@ -283,7 +304,9 @@ public class DefaultPubSubRpc implements PubSubRpc {
     }
     closed = true;
     subscriberApi.close();
+    noTimeoutSubscriberApi.close();
     publisherApi.close();
+    providerManager.getChannel().shutdown();
     executorFactory.release(executor);
   }
 }

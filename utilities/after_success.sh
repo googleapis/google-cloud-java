@@ -33,7 +33,7 @@ if [ "${TRAVIS_JDK_VERSION}" == "oraclejdk7" ]; then
             git config --global user.email "travis@travis-ci.org"
             git clone --branch gh-pages --single-branch https://github.com/GoogleCloudPlatform/google-cloud-java/ tmp_gh-pages
             mkdir -p tmp_gh-pages/$SITE_VERSION
-            mvn site -DskipTests=true --quiet -Djava.util.logging.config.file=logging.properties
+            mvn site -DskipTests=true -Djava.util.logging.config.file=logging.properties
             mvn site:stage --quiet -Djava.util.logging.config.file=logging.properties -DtopSiteURL=http://googlecloudplatform.github.io/google-cloud-java/site/${SITE_VERSION}/
             cd tmp_gh-pages
             cp -r ../target/staging/$SITE_VERSION/* $SITE_VERSION/

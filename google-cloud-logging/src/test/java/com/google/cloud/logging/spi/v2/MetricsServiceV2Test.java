@@ -1,21 +1,23 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2016, Google Inc. All rights reserved.
  *
- * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
- * in compliance with the License. You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- * http://www.apache.org/licenses/LICENSE-2.0
+ *     http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing, software distributed under the License
- * is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
- * or implied. See the License for the specific language governing permissions and limitations under
- * the License.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
-
 package com.google.cloud.logging.spi.v2;
 
 import static com.google.cloud.logging.spi.v2.PagedResponseWrappers.ListLogMetricsPagedResponse;
 
+import com.google.api.gax.grpc.ApiException;
 import com.google.api.gax.testing.MockGrpcService;
 import com.google.api.gax.testing.MockServiceHelper;
 import com.google.common.collect.Lists;
@@ -28,8 +30,9 @@ import com.google.logging.v2.LogMetric;
 import com.google.logging.v2.UpdateLogMetricRequest;
 import com.google.protobuf.Empty;
 import com.google.protobuf.GeneratedMessageV3;
+import io.grpc.Status;
+import io.grpc.StatusRuntimeException;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import org.junit.After;
@@ -70,7 +73,7 @@ public class MetricsServiceV2Test {
     serviceHelper.reset();
     MetricsServiceV2Settings settings =
         MetricsServiceV2Settings.defaultBuilder()
-            .provideChannelWith(serviceHelper.createChannel(), true)
+            .setChannelProvider(serviceHelper.createChannelProvider())
             .build();
     api = MetricsServiceV2Api.create(settings);
   }
@@ -91,9 +94,7 @@ public class MetricsServiceV2Test {
             .setNextPageToken(nextPageToken)
             .addAllMetrics(metrics)
             .build();
-    List<GeneratedMessageV3> expectedResponses = new ArrayList<>();
-    expectedResponses.add(expectedResponse);
-    mockMetricsServiceV2.setResponses(expectedResponses);
+    mockMetricsServiceV2.addResponse(expectedResponse);
 
     String formattedParent = MetricsServiceV2Api.formatParentName("[PROJECT]");
 
@@ -112,15 +113,29 @@ public class MetricsServiceV2Test {
 
   @Test
   @SuppressWarnings("all")
+  public void listLogMetricsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
+    mockMetricsServiceV2.addException(exception);
+
+    try {
+      String formattedParent = MetricsServiceV2Api.formatParentName("[PROJECT]");
+
+      api.listLogMetrics(formattedParent);
+      Assert.fail("No exception raised");
+    } catch (ApiException e) {
+      Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
   public void getLogMetricTest() {
     String name = "name3373707";
     String description = "description-1724546052";
     String filter = "filter-1274492040";
     LogMetric expectedResponse =
         LogMetric.newBuilder().setName(name).setDescription(description).setFilter(filter).build();
-    List<GeneratedMessageV3> expectedResponses = new ArrayList<>();
-    expectedResponses.add(expectedResponse);
-    mockMetricsServiceV2.setResponses(expectedResponses);
+    mockMetricsServiceV2.addResponse(expectedResponse);
 
     String formattedMetricName = MetricsServiceV2Api.formatMetricName("[PROJECT]", "[METRIC]");
 
@@ -136,15 +151,29 @@ public class MetricsServiceV2Test {
 
   @Test
   @SuppressWarnings("all")
+  public void getLogMetricExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
+    mockMetricsServiceV2.addException(exception);
+
+    try {
+      String formattedMetricName = MetricsServiceV2Api.formatMetricName("[PROJECT]", "[METRIC]");
+
+      api.getLogMetric(formattedMetricName);
+      Assert.fail("No exception raised");
+    } catch (ApiException e) {
+      Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
   public void createLogMetricTest() {
     String name = "name3373707";
     String description = "description-1724546052";
     String filter = "filter-1274492040";
     LogMetric expectedResponse =
         LogMetric.newBuilder().setName(name).setDescription(description).setFilter(filter).build();
-    List<GeneratedMessageV3> expectedResponses = new ArrayList<>();
-    expectedResponses.add(expectedResponse);
-    mockMetricsServiceV2.setResponses(expectedResponses);
+    mockMetricsServiceV2.addResponse(expectedResponse);
 
     String formattedParent = MetricsServiceV2Api.formatParentName("[PROJECT]");
     LogMetric metric = LogMetric.newBuilder().build();
@@ -162,15 +191,30 @@ public class MetricsServiceV2Test {
 
   @Test
   @SuppressWarnings("all")
+  public void createLogMetricExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
+    mockMetricsServiceV2.addException(exception);
+
+    try {
+      String formattedParent = MetricsServiceV2Api.formatParentName("[PROJECT]");
+      LogMetric metric = LogMetric.newBuilder().build();
+
+      api.createLogMetric(formattedParent, metric);
+      Assert.fail("No exception raised");
+    } catch (ApiException e) {
+      Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
   public void updateLogMetricTest() {
     String name = "name3373707";
     String description = "description-1724546052";
     String filter = "filter-1274492040";
     LogMetric expectedResponse =
         LogMetric.newBuilder().setName(name).setDescription(description).setFilter(filter).build();
-    List<GeneratedMessageV3> expectedResponses = new ArrayList<>();
-    expectedResponses.add(expectedResponse);
-    mockMetricsServiceV2.setResponses(expectedResponses);
+    mockMetricsServiceV2.addResponse(expectedResponse);
 
     String formattedMetricName = MetricsServiceV2Api.formatMetricName("[PROJECT]", "[METRIC]");
     LogMetric metric = LogMetric.newBuilder().build();
@@ -188,11 +232,26 @@ public class MetricsServiceV2Test {
 
   @Test
   @SuppressWarnings("all")
+  public void updateLogMetricExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
+    mockMetricsServiceV2.addException(exception);
+
+    try {
+      String formattedMetricName = MetricsServiceV2Api.formatMetricName("[PROJECT]", "[METRIC]");
+      LogMetric metric = LogMetric.newBuilder().build();
+
+      api.updateLogMetric(formattedMetricName, metric);
+      Assert.fail("No exception raised");
+    } catch (ApiException e) {
+      Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
   public void deleteLogMetricTest() {
     Empty expectedResponse = Empty.newBuilder().build();
-    List<GeneratedMessageV3> expectedResponses = new ArrayList<>();
-    expectedResponses.add(expectedResponse);
-    mockMetricsServiceV2.setResponses(expectedResponses);
+    mockMetricsServiceV2.addResponse(expectedResponse);
 
     String formattedMetricName = MetricsServiceV2Api.formatMetricName("[PROJECT]", "[METRIC]");
 
@@ -203,5 +262,21 @@ public class MetricsServiceV2Test {
     DeleteLogMetricRequest actualRequest = (DeleteLogMetricRequest) actualRequests.get(0);
 
     Assert.assertEquals(formattedMetricName, actualRequest.getMetricName());
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteLogMetricExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
+    mockMetricsServiceV2.addException(exception);
+
+    try {
+      String formattedMetricName = MetricsServiceV2Api.formatMetricName("[PROJECT]", "[METRIC]");
+
+      api.deleteLogMetric(formattedMetricName);
+      Assert.fail("No exception raised");
+    } catch (ApiException e) {
+      Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
+    }
   }
 }

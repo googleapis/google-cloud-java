@@ -39,6 +39,7 @@ import com.google.cloud.bigquery.QueryResult;
 import com.google.cloud.bigquery.Schema;
 import com.google.cloud.bigquery.StandardTableDefinition;
 import com.google.cloud.bigquery.Table;
+import com.google.cloud.bigquery.TableDataWriteChannel;
 import com.google.cloud.bigquery.TableId;
 import com.google.cloud.bigquery.TableInfo;
 import com.google.cloud.bigquery.testing.RemoteBigQueryHelper;
@@ -52,11 +53,16 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.Timeout;
 
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.nio.channels.Channels;
+import java.nio.charset.StandardCharsets;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeoutException;
 
 public class ITBigQuerySnippets {
 
@@ -170,19 +176,24 @@ public class ITBigQuerySnippets {
   }
 
   @Test
-  public void testWriteAndListTableData() throws IOException, InterruptedException {
+  public void testWriteAndListTableData()
+      throws IOException, InterruptedException, TimeoutException {
     String tableName = "test_write_and_list_table_data";
     String fieldName = "string_field";
     assertNotNull(bigquerySnippets.createTable(DATASET, tableName, fieldName));
-    bigquerySnippets.writeToTable(DATASET, tableName, "StringValue1\nStringValue2\n");
+    long outputRows =
+        bigquerySnippets.writeToTable(DATASET, tableName, "StringValue1\nStringValue2\n");
+    assertEquals(2L, outputRows);
+    InputStream stream =
+        new ByteArrayInputStream("StringValue3\nStringValue4\n".getBytes(StandardCharsets.UTF_8));
+    outputRows = bigquerySnippets.writeFileToTable(DATASET, tableName, Channels.newChannel(stream));
+    assertEquals(2L, outputRows);
     Page<List<FieldValue>> listPage = bigquerySnippets.listTableData(DATASET, tableName);
-    while (Iterators.size(listPage.iterateAll()) < 2) {
-      Thread.sleep(500);
-      listPage = bigquerySnippets.listTableData(DATASET, tableName);
-    }
     Iterator<List<FieldValue>> rowIterator = listPage.getValues().iterator();
     assertEquals("StringValue1", rowIterator.next().get(0).getStringValue());
     assertEquals("StringValue2", rowIterator.next().get(0).getStringValue());
+    assertEquals("StringValue3", rowIterator.next().get(0).getStringValue());
+    assertEquals("StringValue4", rowIterator.next().get(0).getStringValue());
     assertTrue(bigquerySnippets.deleteTable(DATASET, tableName));
   }
 
@@ -191,9 +202,14 @@ public class ITBigQuerySnippets {
     String tableName = "test_insert_all_and_list_table_data";
     String fieldName1 = "booleanField";
     String fieldName2 = "bytesField";
+    String fieldName3 = "recordField";
+    String fieldName4 = "stringField";
     TableId tableId = TableId.of(DATASET, tableName);
     Schema schema =
-        Schema.of(Field.of(fieldName1, Type.bool()), Field.of(fieldName2, Type.bytes()));
+        Schema.of(
+            Field.of(fieldName1, Type.bool()),
+            Field.of(fieldName2, Type.bytes()),
+            Field.of(fieldName3, Type.record(Field.of(fieldName4, Type.string()))));
     TableInfo table = TableInfo.of(tableId, StandardTableDefinition.of(schema));
     assertNotNull(bigquery.create(table));
     InsertAllResponse response = bigquerySnippets.insertAll(DATASET, tableName);
@@ -206,7 +222,8 @@ public class ITBigQuerySnippets {
     }
     List<FieldValue> row = listPage.getValues().iterator().next();
     assertEquals(true, row.get(0).getBooleanValue());
-    assertArrayEquals(new byte[]{0xD, 0xE, 0xA, 0xD}, row.get(1).getBytesValue());
+    assertArrayEquals(new byte[]{0xA, 0xD, 0xD, 0xE, 0xD}, row.get(1).getBytesValue());
+    assertEquals("Hello, World!", row.get(2).getRecordValue().get(0).getStringValue());
     assertTrue(bigquerySnippets.deleteTable(DATASET, tableName));
   }
 

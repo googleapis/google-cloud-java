@@ -591,6 +591,15 @@ public class Blob extends BlobInfo {
    * Blob copiedBlob = copyWriter.getResult();
    * }</pre>
    *
+   * <p>Example of moving a blob to a different bucket with a different name.
+   * <pre> {@code
+   * String destBucket = "my_unique_bucket";
+   * String destBlob = "move_blob_name";
+   * CopyWriter copyWriter = blob.copyTo(destBucket, destBlob);
+   * Blob copiedBlob = copyWriter.getResult();
+   * boolean deleted = blob.delete();
+   * }</pre>
+   *
    * @param targetBucket target bucket's name
    * @param targetBlob target blob's name
    * @param options source blob options

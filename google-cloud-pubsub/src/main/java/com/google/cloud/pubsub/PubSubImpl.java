@@ -512,18 +512,13 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
     return listSubscriptionsAsync(topic, getOptions(), optionMap(options));
   }
 
-  @Override
-  public Iterator<ReceivedMessage> pull(String subscription, int maxMessages) {
-    return get(pullAsync(subscription, maxMessages));
-  }
-
-  @Override
-  public Future<Iterator<ReceivedMessage>> pullAsync(final String subscription, int maxMessages) {
-    PullRequest request = PullRequest.newBuilder().setReturnImmediately(true)
+  private Future<Iterator<ReceivedMessage>> pullAsync(final String subscription,
+      int maxMessages, boolean returnImmediately) {
+    PullRequest request = PullRequest.newBuilder()
         .setSubscription(
             SubscriberApi.formatSubscriptionName(getOptions().getProjectId(), subscription))
         .setMaxMessages(maxMessages)
-        .setReturnImmediately(true)
+        .setReturnImmediately(returnImmediately)
         .build();
     PullFuture future = rpc.pull(request);
     future.addCallback(new PubSubRpc.PullCallback() {
@@ -553,6 +548,16 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
             });
       }
     });
+  }
+
+  @Override
+  public Iterator<ReceivedMessage> pull(String subscription, int maxMessages) {
+    return get(pullAsync(subscription, maxMessages, true));
+  }
+
+  @Override
+  public Future<Iterator<ReceivedMessage>> pullAsync(String subscription, int maxMessages) {
+    return pullAsync(subscription, maxMessages, false);
   }
 
   @Override
