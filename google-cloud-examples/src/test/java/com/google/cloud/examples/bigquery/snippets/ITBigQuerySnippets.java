@@ -39,13 +39,13 @@ import com.google.cloud.bigquery.QueryResult;
 import com.google.cloud.bigquery.Schema;
 import com.google.cloud.bigquery.StandardTableDefinition;
 import com.google.cloud.bigquery.Table;
-import com.google.cloud.bigquery.TableDataWriteChannel;
 import com.google.cloud.bigquery.TableId;
 import com.google.cloud.bigquery.TableInfo;
 import com.google.cloud.bigquery.testing.RemoteBigQueryHelper;
 import com.google.common.base.Function;
 import com.google.common.collect.Iterators;
 import com.google.common.collect.Sets;
+import com.google.common.io.Resources;
 
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
@@ -56,8 +56,11 @@ import org.junit.rules.Timeout;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.URISyntaxException;
 import java.nio.channels.Channels;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
@@ -177,17 +180,21 @@ public class ITBigQuerySnippets {
 
   @Test
   public void testWriteAndListTableData()
-      throws IOException, InterruptedException, TimeoutException {
+      throws IOException, InterruptedException, TimeoutException, URISyntaxException {
+    // Create table
     String tableName = "test_write_and_list_table_data";
     String fieldName = "string_field";
     assertNotNull(bigquerySnippets.createTable(DATASET, tableName, fieldName));
+    // Add rows from string
     long outputRows =
         bigquerySnippets.writeToTable(DATASET, tableName, "StringValue1\nStringValue2\n");
     assertEquals(2L, outputRows);
-    InputStream stream =
-        new ByteArrayInputStream("StringValue3\nStringValue4\n".getBytes(StandardCharsets.UTF_8));
-    outputRows = bigquerySnippets.writeFileToTable(DATASET, tableName, Channels.newChannel(stream));
+    // Add rows from file
+    Path csvPath =
+        Paths.get(Resources.getResource("bigquery/test_write_and_list_table_data.csv").toURI());
+    outputRows = bigquerySnippets.writeFileToTable(DATASET, tableName, csvPath);
     assertEquals(2L, outputRows);
+    // List all rows
     Page<List<FieldValue>> listPage = bigquerySnippets.listTableData(DATASET, tableName);
     Iterator<List<FieldValue>> rowIterator = listPage.getValues().iterator();
     assertEquals("StringValue1", rowIterator.next().get(0).getStringValue());
