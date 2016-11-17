@@ -790,7 +790,11 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * Map<String, Object> rowContent = new HashMap<>();
    * rowContent.put("booleanField", true);
    * // Bytes are passed in base64
-   * rowContent.put("bytesField", "DQ4KDQ==");
+   * rowContent.put("bytesField", BaseEncoding.base64().encode(new byte[]{0xA, 0xD, 0xD, 0xE, 0xD}));
+   * // Records are passed as a map
+   * Map<String, Object> recordsContent = new HashMap<>();
+   * recordsContent.put("stringField", "Hello, World!");
+   * rowContent.put("recordField", recordsContent);
    * InsertAllResponse response = bigquery.insertAll(InsertAllRequest.newBuilder(tableId)
    *     .addRow("rowId", rowContent)
    *     // More rows can be added in the same RPC by invoking .addRow() on the builder
