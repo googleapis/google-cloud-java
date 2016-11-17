@@ -15,7 +15,6 @@
  */
 package com.google.cloud.logging.spi.v2;
 
-import com.google.common.collect.Lists;
 import com.google.logging.v2.DeleteLogRequest;
 import com.google.logging.v2.ListLogEntriesRequest;
 import com.google.logging.v2.ListLogEntriesResponse;
@@ -35,7 +34,7 @@ import java.util.Queue;
 @javax.annotation.Generated("by GAPIC")
 public class MockLoggingServiceV2Impl extends LoggingServiceV2ImplBase {
   private ArrayList<GeneratedMessageV3> requests;
-  private Queue<GeneratedMessageV3> responses;
+  private Queue<Object> responses;
 
   public MockLoggingServiceV2Impl() {
     requests = new ArrayList<>();
@@ -46,8 +45,16 @@ public class MockLoggingServiceV2Impl extends LoggingServiceV2ImplBase {
     return requests;
   }
 
+  public void addResponse(GeneratedMessageV3 response) {
+    responses.add(response);
+  }
+
   public void setResponses(List<GeneratedMessageV3> responses) {
-    this.responses = Lists.newLinkedList(responses);
+    this.responses = new LinkedList<Object>(responses);
+  }
+
+  public void addException(Exception exception) {
+    responses.add(exception);
   }
 
   public void reset() {
@@ -57,38 +64,61 @@ public class MockLoggingServiceV2Impl extends LoggingServiceV2ImplBase {
 
   @Override
   public void deleteLog(DeleteLogRequest request, StreamObserver<Empty> responseObserver) {
-    Empty response = (Empty) responses.remove();
-    requests.add(request);
-    responseObserver.onNext(response);
-    responseObserver.onCompleted();
+    Object response = responses.remove();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext((Empty) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
   }
 
   @Override
   public void writeLogEntries(
       WriteLogEntriesRequest request, StreamObserver<WriteLogEntriesResponse> responseObserver) {
-    WriteLogEntriesResponse response = (WriteLogEntriesResponse) responses.remove();
-    requests.add(request);
-    responseObserver.onNext(response);
-    responseObserver.onCompleted();
+    Object response = responses.remove();
+    if (response instanceof WriteLogEntriesResponse) {
+      requests.add(request);
+      responseObserver.onNext((WriteLogEntriesResponse) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
   }
 
   @Override
   public void listLogEntries(
       ListLogEntriesRequest request, StreamObserver<ListLogEntriesResponse> responseObserver) {
-    ListLogEntriesResponse response = (ListLogEntriesResponse) responses.remove();
-    requests.add(request);
-    responseObserver.onNext(response);
-    responseObserver.onCompleted();
+    Object response = responses.remove();
+    if (response instanceof ListLogEntriesResponse) {
+      requests.add(request);
+      responseObserver.onNext((ListLogEntriesResponse) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
   }
 
   @Override
   public void listMonitoredResourceDescriptors(
       ListMonitoredResourceDescriptorsRequest request,
       StreamObserver<ListMonitoredResourceDescriptorsResponse> responseObserver) {
-    ListMonitoredResourceDescriptorsResponse response =
-        (ListMonitoredResourceDescriptorsResponse) responses.remove();
-    requests.add(request);
-    responseObserver.onNext(response);
-    responseObserver.onCompleted();
+    Object response = responses.remove();
+    if (response instanceof ListMonitoredResourceDescriptorsResponse) {
+      requests.add(request);
+      responseObserver.onNext((ListMonitoredResourceDescriptorsResponse) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
   }
 }

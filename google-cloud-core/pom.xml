@@ -111,7 +111,7 @@
     <dependency>
       <groupId>com.google.api</groupId>
       <artifactId>gax</artifactId>
-      <version>0.0.22</version>
+      <version>0.0.23</version>
       <exclusions>
         <exclusion>
           <groupId>io.grpc</groupId>

@@ -17,6 +17,7 @@ package com.google.cloud.pubsub.spi.v1;
 
 import static com.google.cloud.pubsub.spi.v1.PagedResponseWrappers.ListSubscriptionsPagedResponse;
 
+import com.google.api.gax.grpc.ApiException;
 import com.google.api.gax.testing.MockGrpcService;
 import com.google.api.gax.testing.MockServiceHelper;
 import com.google.common.collect.Lists;
@@ -39,6 +40,8 @@ import com.google.pubsub.v1.PullRequest;
 import com.google.pubsub.v1.PullResponse;
 import com.google.pubsub.v1.PushConfig;
 import com.google.pubsub.v1.Subscription;
+import io.grpc.Status;
+import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -102,9 +105,7 @@ public class SubscriberTest {
             .setTopic(formattedTopic2)
             .setAckDeadlineSeconds(ackDeadlineSeconds2)
             .build();
-    List<GeneratedMessageV3> expectedResponses = new ArrayList<>();
-    expectedResponses.add(expectedResponse);
-    mockSubscriber.setResponses(expectedResponses);
+    mockSubscriber.addResponse(expectedResponse);
 
     String formattedName = SubscriberApi.formatSubscriptionName("[PROJECT]", "[SUBSCRIPTION]");
     String formattedTopic = SubscriberApi.formatTopicName("[PROJECT]", "[TOPIC]");
@@ -127,6 +128,25 @@ public class SubscriberTest {
 
   @Test
   @SuppressWarnings("all")
+  public void createSubscriptionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
+    mockSubscriber.addException(exception);
+
+    try {
+      String formattedName = SubscriberApi.formatSubscriptionName("[PROJECT]", "[SUBSCRIPTION]");
+      String formattedTopic = SubscriberApi.formatTopicName("[PROJECT]", "[TOPIC]");
+      PushConfig pushConfig = PushConfig.newBuilder().build();
+      int ackDeadlineSeconds = 2135351438;
+
+      api.createSubscription(formattedName, formattedTopic, pushConfig, ackDeadlineSeconds);
+      Assert.fail("No exception raised");
+    } catch (ApiException e) {
+      Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
   public void getSubscriptionTest() {
     String name = "name3373707";
     String topic = "topic110546223";
@@ -137,9 +157,7 @@ public class SubscriberTest {
             .setTopic(topic)
             .setAckDeadlineSeconds(ackDeadlineSeconds)
             .build();
-    List<GeneratedMessageV3> expectedResponses = new ArrayList<>();
-    expectedResponses.add(expectedResponse);
-    mockSubscriber.setResponses(expectedResponses);
+    mockSubscriber.addResponse(expectedResponse);
 
     String formattedSubscription =
         SubscriberApi.formatSubscriptionName("[PROJECT]", "[SUBSCRIPTION]");
@@ -156,6 +174,23 @@ public class SubscriberTest {
 
   @Test
   @SuppressWarnings("all")
+  public void getSubscriptionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
+    mockSubscriber.addException(exception);
+
+    try {
+      String formattedSubscription =
+          SubscriberApi.formatSubscriptionName("[PROJECT]", "[SUBSCRIPTION]");
+
+      api.getSubscription(formattedSubscription);
+      Assert.fail("No exception raised");
+    } catch (ApiException e) {
+      Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
   public void listSubscriptionsTest() {
     String nextPageToken = "";
     Subscription subscriptionsElement = Subscription.newBuilder().build();
@@ -165,9 +200,7 @@ public class SubscriberTest {
             .setNextPageToken(nextPageToken)
             .addAllSubscriptions(subscriptions)
             .build();
-    List<GeneratedMessageV3> expectedResponses = new ArrayList<>();
-    expectedResponses.add(expectedResponse);
-    mockSubscriber.setResponses(expectedResponses);
+    mockSubscriber.addResponse(expectedResponse);
 
     String formattedProject = SubscriberApi.formatProjectName("[PROJECT]");
 
@@ -186,11 +219,25 @@ public class SubscriberTest {
 
   @Test
   @SuppressWarnings("all")
+  public void listSubscriptionsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
+    mockSubscriber.addException(exception);
+
+    try {
+      String formattedProject = SubscriberApi.formatProjectName("[PROJECT]");
+
+      api.listSubscriptions(formattedProject);
+      Assert.fail("No exception raised");
+    } catch (ApiException e) {
+      Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
   public void deleteSubscriptionTest() {
     Empty expectedResponse = Empty.newBuilder().build();
-    List<GeneratedMessageV3> expectedResponses = new ArrayList<>();
-    expectedResponses.add(expectedResponse);
-    mockSubscriber.setResponses(expectedResponses);
+    mockSubscriber.addResponse(expectedResponse);
 
     String formattedSubscription =
         SubscriberApi.formatSubscriptionName("[PROJECT]", "[SUBSCRIPTION]");
@@ -206,11 +253,26 @@ public class SubscriberTest {
 
   @Test
   @SuppressWarnings("all")
+  public void deleteSubscriptionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
+    mockSubscriber.addException(exception);
+
+    try {
+      String formattedSubscription =
+          SubscriberApi.formatSubscriptionName("[PROJECT]", "[SUBSCRIPTION]");
+
+      api.deleteSubscription(formattedSubscription);
+      Assert.fail("No exception raised");
+    } catch (ApiException e) {
+      Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
   public void modifyAckDeadlineTest() {
     Empty expectedResponse = Empty.newBuilder().build();
-    List<GeneratedMessageV3> expectedResponses = new ArrayList<>();
-    expectedResponses.add(expectedResponse);
-    mockSubscriber.setResponses(expectedResponses);
+    mockSubscriber.addResponse(expectedResponse);
 
     String formattedSubscription =
         SubscriberApi.formatSubscriptionName("[PROJECT]", "[SUBSCRIPTION]");
@@ -230,11 +292,28 @@ public class SubscriberTest {
 
   @Test
   @SuppressWarnings("all")
+  public void modifyAckDeadlineExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
+    mockSubscriber.addException(exception);
+
+    try {
+      String formattedSubscription =
+          SubscriberApi.formatSubscriptionName("[PROJECT]", "[SUBSCRIPTION]");
+      List<String> ackIds = new ArrayList<>();
+      int ackDeadlineSeconds = 2135351438;
+
+      api.modifyAckDeadline(formattedSubscription, ackIds, ackDeadlineSeconds);
+      Assert.fail("No exception raised");
+    } catch (ApiException e) {
+      Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
   public void acknowledgeTest() {
     Empty expectedResponse = Empty.newBuilder().build();
-    List<GeneratedMessageV3> expectedResponses = new ArrayList<>();
-    expectedResponses.add(expectedResponse);
-    mockSubscriber.setResponses(expectedResponses);
+    mockSubscriber.addResponse(expectedResponse);
 
     String formattedSubscription =
         SubscriberApi.formatSubscriptionName("[PROJECT]", "[SUBSCRIPTION]");
@@ -252,11 +331,27 @@ public class SubscriberTest {
 
   @Test
   @SuppressWarnings("all")
+  public void acknowledgeExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
+    mockSubscriber.addException(exception);
+
+    try {
+      String formattedSubscription =
+          SubscriberApi.formatSubscriptionName("[PROJECT]", "[SUBSCRIPTION]");
+      List<String> ackIds = new ArrayList<>();
+
+      api.acknowledge(formattedSubscription, ackIds);
+      Assert.fail("No exception raised");
+    } catch (ApiException e) {
+      Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
   public void pullTest() {
     PullResponse expectedResponse = PullResponse.newBuilder().build();
-    List<GeneratedMessageV3> expectedResponses = new ArrayList<>();
-    expectedResponses.add(expectedResponse);
-    mockSubscriber.setResponses(expectedResponses);
+    mockSubscriber.addResponse(expectedResponse);
 
     String formattedSubscription =
         SubscriberApi.formatSubscriptionName("[PROJECT]", "[SUBSCRIPTION]");
@@ -277,11 +372,28 @@ public class SubscriberTest {
 
   @Test
   @SuppressWarnings("all")
+  public void pullExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
+    mockSubscriber.addException(exception);
+
+    try {
+      String formattedSubscription =
+          SubscriberApi.formatSubscriptionName("[PROJECT]", "[SUBSCRIPTION]");
+      boolean returnImmediately = false;
+      int maxMessages = 496131527;
+
+      api.pull(formattedSubscription, returnImmediately, maxMessages);
+      Assert.fail("No exception raised");
+    } catch (ApiException e) {
+      Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
   public void modifyPushConfigTest() {
     Empty expectedResponse = Empty.newBuilder().build();
-    List<GeneratedMessageV3> expectedResponses = new ArrayList<>();
-    expectedResponses.add(expectedResponse);
-    mockSubscriber.setResponses(expectedResponses);
+    mockSubscriber.addResponse(expectedResponse);
 
     String formattedSubscription =
         SubscriberApi.formatSubscriptionName("[PROJECT]", "[SUBSCRIPTION]");
@@ -299,13 +411,29 @@ public class SubscriberTest {
 
   @Test
   @SuppressWarnings("all")
+  public void modifyPushConfigExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
+    mockSubscriber.addException(exception);
+
+    try {
+      String formattedSubscription =
+          SubscriberApi.formatSubscriptionName("[PROJECT]", "[SUBSCRIPTION]");
+      PushConfig pushConfig = PushConfig.newBuilder().build();
+
+      api.modifyPushConfig(formattedSubscription, pushConfig);
+      Assert.fail("No exception raised");
+    } catch (ApiException e) {
+      Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
   public void setIamPolicyTest() {
     int version = 351608024;
     ByteString etag = ByteString.copyFromUtf8("21");
     Policy expectedResponse = Policy.newBuilder().setVersion(version).setEtag(etag).build();
-    List<GeneratedMessageV3> expectedResponses = new ArrayList<>();
-    expectedResponses.add(expectedResponse);
-    mockIAMPolicy.setResponses(expectedResponses);
+    mockIAMPolicy.addResponse(expectedResponse);
 
     String formattedResource = SubscriberApi.formatSubscriptionName("[PROJECT]", "[SUBSCRIPTION]");
     Policy policy = Policy.newBuilder().build();
@@ -323,13 +451,29 @@ public class SubscriberTest {
 
   @Test
   @SuppressWarnings("all")
+  public void setIamPolicyExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
+    mockIAMPolicy.addException(exception);
+
+    try {
+      String formattedResource =
+          SubscriberApi.formatSubscriptionName("[PROJECT]", "[SUBSCRIPTION]");
+      Policy policy = Policy.newBuilder().build();
+
+      api.setIamPolicy(formattedResource, policy);
+      Assert.fail("No exception raised");
+    } catch (ApiException e) {
+      Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
   public void getIamPolicyTest() {
     int version = 351608024;
     ByteString etag = ByteString.copyFromUtf8("21");
     Policy expectedResponse = Policy.newBuilder().setVersion(version).setEtag(etag).build();
-    List<GeneratedMessageV3> expectedResponses = new ArrayList<>();
-    expectedResponses.add(expectedResponse);
-    mockIAMPolicy.setResponses(expectedResponses);
+    mockIAMPolicy.addResponse(expectedResponse);
 
     String formattedResource = SubscriberApi.formatSubscriptionName("[PROJECT]", "[SUBSCRIPTION]");
 
@@ -345,11 +489,26 @@ public class SubscriberTest {
 
   @Test
   @SuppressWarnings("all")
+  public void getIamPolicyExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
+    mockIAMPolicy.addException(exception);
+
+    try {
+      String formattedResource =
+          SubscriberApi.formatSubscriptionName("[PROJECT]", "[SUBSCRIPTION]");
+
+      api.getIamPolicy(formattedResource);
+      Assert.fail("No exception raised");
+    } catch (ApiException e) {
+      Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
   public void testIamPermissionsTest() {
     TestIamPermissionsResponse expectedResponse = TestIamPermissionsResponse.newBuilder().build();
-    List<GeneratedMessageV3> expectedResponses = new ArrayList<>();
-    expectedResponses.add(expectedResponse);
-    mockIAMPolicy.setResponses(expectedResponses);
+    mockIAMPolicy.addResponse(expectedResponse);
 
     String formattedResource = SubscriberApi.formatSubscriptionName("[PROJECT]", "[SUBSCRIPTION]");
     List<String> permissions = new ArrayList<>();
@@ -364,5 +523,23 @@ public class SubscriberTest {
 
     Assert.assertEquals(formattedResource, actualRequest.getResource());
     Assert.assertEquals(permissions, actualRequest.getPermissionsList());
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void testIamPermissionsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
+    mockIAMPolicy.addException(exception);
+
+    try {
+      String formattedResource =
+          SubscriberApi.formatSubscriptionName("[PROJECT]", "[SUBSCRIPTION]");
+      List<String> permissions = new ArrayList<>();
+
+      api.testIamPermissions(formattedResource, permissions);
+      Assert.fail("No exception raised");
+    } catch (ApiException e) {
+      Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
+    }
   }
 }

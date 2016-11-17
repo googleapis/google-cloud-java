@@ -15,12 +15,15 @@
  */
 package com.google.cloud.vision.spi.v1;
 
+import com.google.api.gax.grpc.ApiException;
 import com.google.api.gax.testing.MockGrpcService;
 import com.google.api.gax.testing.MockServiceHelper;
 import com.google.cloud.vision.v1.AnnotateImageRequest;
 import com.google.cloud.vision.v1.BatchAnnotateImagesRequest;
 import com.google.cloud.vision.v1.BatchAnnotateImagesResponse;
 import com.google.protobuf.GeneratedMessageV3;
+import io.grpc.Status;
+import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -70,9 +73,7 @@ public class ImageAnnotatorTest {
   @SuppressWarnings("all")
   public void batchAnnotateImagesTest() {
     BatchAnnotateImagesResponse expectedResponse = BatchAnnotateImagesResponse.newBuilder().build();
-    List<GeneratedMessageV3> expectedResponses = new ArrayList<>();
-    expectedResponses.add(expectedResponse);
-    mockImageAnnotator.setResponses(expectedResponses);
+    mockImageAnnotator.addResponse(expectedResponse);
 
     List<AnnotateImageRequest> requests = new ArrayList<>();
 
@@ -84,5 +85,21 @@ public class ImageAnnotatorTest {
     BatchAnnotateImagesRequest actualRequest = (BatchAnnotateImagesRequest) actualRequests.get(0);
 
     Assert.assertEquals(requests, actualRequest.getRequestsList());
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void batchAnnotateImagesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
+    mockImageAnnotator.addException(exception);
+
+    try {
+      List<AnnotateImageRequest> requests = new ArrayList<>();
+
+      api.batchAnnotateImages(requests);
+      Assert.fail("No exception raised");
+    } catch (ApiException e) {
+      Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
+    }
   }
 }

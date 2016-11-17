@@ -1165,7 +1165,7 @@ public class SubscriberApi implements AutoCloseable {
    *     `resource` is usually specified as a path. For example, a Project resource is specified as
    *     `projects/{project}`.
    * @param permissions The set of permissions to check for the `resource`. Permissions with
-   *     wildcards (such as '&ast;' or 'storage.&ast;') are not allowed. For more information see
+   *     wildcards (such as '&#42;' or 'storage.&#42;') are not allowed. For more information see
    *     [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions).
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
