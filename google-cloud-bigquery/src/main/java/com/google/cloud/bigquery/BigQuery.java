@@ -790,7 +790,11 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * Map<String, Object> rowContent = new HashMap<>();
    * rowContent.put("booleanField", true);
    * // Bytes are passed in base64
-   * rowContent.put("bytesField", "DQ4KDQ==");
+   * rowContent.put("bytesField", BaseEncoding.base64().encode(new byte[]{0xA, 0xD, 0xD, 0xE, 0xD}));
+   * // Records are passed as a map
+   * Map<String, Object> recordsContent = new HashMap<>();
+   * recordsContent.put("stringField", "Hello, World!");
+   * rowContent.put("recordField", recordsContent);
    * InsertAllResponse response = bigquery.insertAll(InsertAllRequest.newBuilder(tableId)
    *     .addRow("rowId", rowContent)
    *     // More rows can be added in the same RPC by invoking .addRow() on the builder
@@ -1014,15 +1018,42 @@ public interface BigQuery extends Service<BigQueryOptions> {
    *     WriteChannelConfiguration.newBuilder(tableId)
    *         .setFormatOptions(FormatOptions.csv())
    *         .build();
-   * BaseWriteChannel<BigQueryOptions, WriteChannelConfiguration> writer =
-   *     bigquery.writer(writeChannelConfiguration);
+   * TableDataWriteChannel writer = bigquery.writer(writeChannelConfiguration);
+   *   // Write data to writer
+   *  try {
+   *     writer.write(ByteBuffer.wrap(csvData.getBytes(Charsets.UTF_8)));
+   *   } finally {
+   *     writer.close();
+   *   }
+   *   // Get load job
+   *   Job job = writer.getJob();
+   *   job = job.waitFor();
+   *   LoadStatistics stats = job.getStatistics();
+   *   return stats.getOutputRows();
+   * }</pre>
+   *
+   * <p>Example of writing a local file to a table.
+   * <pre> {@code
+   * String datasetName = "my_dataset_name";
+   * String tableName = "my_table_name";
+   * ReadableByteChannel csvReader = Files.newByteChannel(FileSystems.getDefault().getPath(".", "my-data.csv"));
+   * TableId tableId = TableId.of(datasetName, tableName);
+   * WriteChannelConfiguration writeChannelConfiguration =
+   *     WriteChannelConfiguration.newBuilder(tableId)
+   *         .setFormatOptions(FormatOptions.csv())
+   *         .build();
+   * TableDataWriteChannel writer = bigquery.writer(writeChannelConfiguration);
    * // Write data to writer
    * try {
-   *   writer.write(ByteBuffer.wrap(csvData.getBytes(Charsets.UTF_8)));
-   * } catch (IOException e) {
-   *   // Unable to write data
+   *   ByteStreams.copy(csvReader, writer);
+   * } finally {
+   *   writer.close();
    * }
-   * writer.close();
+   * // Get load job
+   * Job job = writer.getJob();
+   * job = job.waitFor();
+   * LoadStatistics stats = job.getStatistics();
+   * return stats.getOutputRows();
    * }</pre>
    *
    * @throws BigQueryException upon failure

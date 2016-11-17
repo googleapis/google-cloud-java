@@ -193,6 +193,23 @@ public class SubscriberTest {
 
   @Test
   @SuppressWarnings("all")
+  public void getSubscriptionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
+    mockSubscriber.addException(exception);
+
+    try {
+      String formattedSubscription =
+          SubscriberApi.formatSubscriptionName("[PROJECT]", "[SUBSCRIPTION]");
+
+      api.getSubscription(formattedSubscription);
+      Assert.fail("No exception raised");
+    } catch (ApiException e) {
+      Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
   public void listSubscriptionsTest() {
     String nextPageToken = "";
     Subscription subscriptionsElement = Subscription.newBuilder().build();
@@ -237,6 +254,22 @@ public class SubscriberTest {
 
   @Test
   @SuppressWarnings("all")
+  public void listSubscriptionsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
+    mockSubscriber.addException(exception);
+
+    try {
+      String formattedProject = SubscriberApi.formatProjectName("[PROJECT]");
+
+      api.listSubscriptions(formattedProject);
+      Assert.fail("No exception raised");
+    } catch (ApiException e) {
+      Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
   public void deleteSubscriptionTest() {
     Empty expectedResponse = Empty.newBuilder().build();
     mockSubscriber.addResponse(expectedResponse);
@@ -262,6 +295,23 @@ public class SubscriberTest {
       SubscriptionName subscription = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]");
 
       api.deleteSubscription(subscription);
+      Assert.fail("No exception raised");
+    } catch (ApiException e) {
+      Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void deleteSubscriptionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
+    mockSubscriber.addException(exception);
+
+    try {
+      String formattedSubscription =
+          SubscriberApi.formatSubscriptionName("[PROJECT]", "[SUBSCRIPTION]");
+
+      api.deleteSubscription(formattedSubscription);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
       Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());

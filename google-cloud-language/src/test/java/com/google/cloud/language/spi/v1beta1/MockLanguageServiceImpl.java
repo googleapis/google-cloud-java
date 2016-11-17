@@ -22,7 +22,6 @@ import com.google.cloud.language.v1beta1.AnalyzeSentimentResponse;
 import com.google.cloud.language.v1beta1.AnnotateTextRequest;
 import com.google.cloud.language.v1beta1.AnnotateTextResponse;
 import com.google.cloud.language.v1beta1.LanguageServiceGrpc.LanguageServiceImplBase;
-import com.google.common.collect.Lists;
 import com.google.protobuf.GeneratedMessageV3;
 import io.grpc.stub.StreamObserver;
 import java.util.ArrayList;
@@ -33,7 +32,7 @@ import java.util.Queue;
 @javax.annotation.Generated("by GAPIC")
 public class MockLanguageServiceImpl extends LanguageServiceImplBase {
   private ArrayList<GeneratedMessageV3> requests;
-  private Queue<GeneratedMessageV3> responses;
+  private Queue<Object> responses;
 
   public MockLanguageServiceImpl() {
     requests = new ArrayList<>();
@@ -44,8 +43,16 @@ public class MockLanguageServiceImpl extends LanguageServiceImplBase {
     return requests;
   }
 
+  public void addResponse(GeneratedMessageV3 response) {
+    responses.add(response);
+  }
+
   public void setResponses(List<GeneratedMessageV3> responses) {
-    this.responses = Lists.newLinkedList(responses);
+    this.responses = new LinkedList<Object>(responses);
+  }
+
+  public void addException(Exception exception) {
+    responses.add(exception);
   }
 
   public void reset() {
@@ -56,27 +63,45 @@ public class MockLanguageServiceImpl extends LanguageServiceImplBase {
   @Override
   public void analyzeSentiment(
       AnalyzeSentimentRequest request, StreamObserver<AnalyzeSentimentResponse> responseObserver) {
-    AnalyzeSentimentResponse response = (AnalyzeSentimentResponse) responses.remove();
-    requests.add(request);
-    responseObserver.onNext(response);
-    responseObserver.onCompleted();
+    Object response = responses.remove();
+    if (response instanceof AnalyzeSentimentResponse) {
+      requests.add(request);
+      responseObserver.onNext((AnalyzeSentimentResponse) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
   }
 
   @Override
   public void analyzeEntities(
       AnalyzeEntitiesRequest request, StreamObserver<AnalyzeEntitiesResponse> responseObserver) {
-    AnalyzeEntitiesResponse response = (AnalyzeEntitiesResponse) responses.remove();
-    requests.add(request);
-    responseObserver.onNext(response);
-    responseObserver.onCompleted();
+    Object response = responses.remove();
+    if (response instanceof AnalyzeEntitiesResponse) {
+      requests.add(request);
+      responseObserver.onNext((AnalyzeEntitiesResponse) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
   }
 
   @Override
   public void annotateText(
       AnnotateTextRequest request, StreamObserver<AnnotateTextResponse> responseObserver) {
-    AnnotateTextResponse response = (AnnotateTextResponse) responses.remove();
-    requests.add(request);
-    responseObserver.onNext(response);
-    responseObserver.onCompleted();
+    Object response = responses.remove();
+    if (response instanceof AnnotateTextResponse) {
+      requests.add(request);
+      responseObserver.onNext((AnnotateTextResponse) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
   }
 }

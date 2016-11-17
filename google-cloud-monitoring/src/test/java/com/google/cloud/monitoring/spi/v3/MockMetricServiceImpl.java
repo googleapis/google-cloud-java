@@ -17,7 +17,6 @@ package com.google.cloud.monitoring.spi.v3;
 
 import com.google.api.MetricDescriptor;
 import com.google.api.MonitoredResourceDescriptor;
-import com.google.common.collect.Lists;
 import com.google.monitoring.v3.CreateMetricDescriptorRequest;
 import com.google.monitoring.v3.CreateTimeSeriesRequest;
 import com.google.monitoring.v3.DeleteMetricDescriptorRequest;
@@ -41,7 +40,7 @@ import java.util.Queue;
 @javax.annotation.Generated("by GAPIC")
 public class MockMetricServiceImpl extends MetricServiceImplBase {
   private ArrayList<GeneratedMessageV3> requests;
-  private Queue<GeneratedMessageV3> responses;
+  private Queue<Object> responses;
 
   public MockMetricServiceImpl() {
     requests = new ArrayList<>();
@@ -52,8 +51,16 @@ public class MockMetricServiceImpl extends MetricServiceImplBase {
     return requests;
   }
 
+  public void addResponse(GeneratedMessageV3 response) {
+    responses.add(response);
+  }
+
   public void setResponses(List<GeneratedMessageV3> responses) {
-    this.responses = Lists.newLinkedList(responses);
+    this.responses = new LinkedList<Object>(responses);
+  }
+
+  public void addException(Exception exception) {
+    responses.add(exception);
   }
 
   public void reset() {
@@ -65,75 +72,122 @@ public class MockMetricServiceImpl extends MetricServiceImplBase {
   public void listMonitoredResourceDescriptors(
       ListMonitoredResourceDescriptorsRequest request,
       StreamObserver<ListMonitoredResourceDescriptorsResponse> responseObserver) {
-    ListMonitoredResourceDescriptorsResponse response =
-        (ListMonitoredResourceDescriptorsResponse) responses.remove();
-    requests.add(request);
-    responseObserver.onNext(response);
-    responseObserver.onCompleted();
+    Object response = responses.remove();
+    if (response instanceof ListMonitoredResourceDescriptorsResponse) {
+      requests.add(request);
+      responseObserver.onNext((ListMonitoredResourceDescriptorsResponse) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
   }
 
   @Override
   public void getMonitoredResourceDescriptor(
       GetMonitoredResourceDescriptorRequest request,
       StreamObserver<MonitoredResourceDescriptor> responseObserver) {
-    MonitoredResourceDescriptor response = (MonitoredResourceDescriptor) responses.remove();
-    requests.add(request);
-    responseObserver.onNext(response);
-    responseObserver.onCompleted();
+    Object response = responses.remove();
+    if (response instanceof MonitoredResourceDescriptor) {
+      requests.add(request);
+      responseObserver.onNext((MonitoredResourceDescriptor) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
   }
 
   @Override
   public void listMetricDescriptors(
       ListMetricDescriptorsRequest request,
       StreamObserver<ListMetricDescriptorsResponse> responseObserver) {
-    ListMetricDescriptorsResponse response = (ListMetricDescriptorsResponse) responses.remove();
-    requests.add(request);
-    responseObserver.onNext(response);
-    responseObserver.onCompleted();
+    Object response = responses.remove();
+    if (response instanceof ListMetricDescriptorsResponse) {
+      requests.add(request);
+      responseObserver.onNext((ListMetricDescriptorsResponse) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
   }
 
   @Override
   public void getMetricDescriptor(
       GetMetricDescriptorRequest request, StreamObserver<MetricDescriptor> responseObserver) {
-    MetricDescriptor response = (MetricDescriptor) responses.remove();
-    requests.add(request);
-    responseObserver.onNext(response);
-    responseObserver.onCompleted();
+    Object response = responses.remove();
+    if (response instanceof MetricDescriptor) {
+      requests.add(request);
+      responseObserver.onNext((MetricDescriptor) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
   }
 
   @Override
   public void createMetricDescriptor(
       CreateMetricDescriptorRequest request, StreamObserver<MetricDescriptor> responseObserver) {
-    MetricDescriptor response = (MetricDescriptor) responses.remove();
-    requests.add(request);
-    responseObserver.onNext(response);
-    responseObserver.onCompleted();
+    Object response = responses.remove();
+    if (response instanceof MetricDescriptor) {
+      requests.add(request);
+      responseObserver.onNext((MetricDescriptor) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
   }
 
   @Override
   public void deleteMetricDescriptor(
       DeleteMetricDescriptorRequest request, StreamObserver<Empty> responseObserver) {
-    Empty response = (Empty) responses.remove();
-    requests.add(request);
-    responseObserver.onNext(response);
-    responseObserver.onCompleted();
+    Object response = responses.remove();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext((Empty) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
   }
 
   @Override
   public void listTimeSeries(
       ListTimeSeriesRequest request, StreamObserver<ListTimeSeriesResponse> responseObserver) {
-    ListTimeSeriesResponse response = (ListTimeSeriesResponse) responses.remove();
-    requests.add(request);
-    responseObserver.onNext(response);
-    responseObserver.onCompleted();
+    Object response = responses.remove();
+    if (response instanceof ListTimeSeriesResponse) {
+      requests.add(request);
+      responseObserver.onNext((ListTimeSeriesResponse) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
   }
 
   @Override
   public void createTimeSeries(
       CreateTimeSeriesRequest request, StreamObserver<Empty> responseObserver) {
-    Empty response = (Empty) responses.remove();
-    requests.add(request);
-    responseObserver.onNext(response);
-    responseObserver.onCompleted();
+    Object response = responses.remove();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext((Empty) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
   }
 }

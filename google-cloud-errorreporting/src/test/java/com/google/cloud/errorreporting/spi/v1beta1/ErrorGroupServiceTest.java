@@ -15,14 +15,16 @@
  */
 package com.google.cloud.errorreporting.spi.v1beta1;
 
+import com.google.api.gax.grpc.ApiException;
 import com.google.api.gax.testing.MockGrpcService;
 import com.google.api.gax.testing.MockServiceHelper;
 import com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup;
 import com.google.devtools.clouderrorreporting.v1beta1.GetGroupRequest;
 import com.google.devtools.clouderrorreporting.v1beta1.UpdateGroupRequest;
 import com.google.protobuf.GeneratedMessageV3;
+import io.grpc.Status;
+import io.grpc.StatusRuntimeException;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import org.junit.After;
@@ -79,9 +81,7 @@ public class ErrorGroupServiceTest {
     String name = "name3373707";
     String groupId = "groupId506361563";
     ErrorGroup expectedResponse = ErrorGroup.newBuilder().setName(name).setGroupId(groupId).build();
-    List<GeneratedMessageV3> expectedResponses = new ArrayList<>();
-    expectedResponses.add(expectedResponse);
-    mockErrorGroupService.setResponses(expectedResponses);
+    mockErrorGroupService.addResponse(expectedResponse);
 
     String formattedGroupName = ErrorGroupServiceApi.formatGroupName("[PROJECT]", "[GROUP]");
 
@@ -97,13 +97,27 @@ public class ErrorGroupServiceTest {
 
   @Test
   @SuppressWarnings("all")
+  public void getGroupExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
+    mockErrorGroupService.addException(exception);
+
+    try {
+      String formattedGroupName = ErrorGroupServiceApi.formatGroupName("[PROJECT]", "[GROUP]");
+
+      api.getGroup(formattedGroupName);
+      Assert.fail("No exception raised");
+    } catch (ApiException e) {
+      Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
   public void updateGroupTest() {
     String name = "name3373707";
     String groupId = "groupId506361563";
     ErrorGroup expectedResponse = ErrorGroup.newBuilder().setName(name).setGroupId(groupId).build();
-    List<GeneratedMessageV3> expectedResponses = new ArrayList<>();
-    expectedResponses.add(expectedResponse);
-    mockErrorGroupService.setResponses(expectedResponses);
+    mockErrorGroupService.addResponse(expectedResponse);
 
     ErrorGroup group = ErrorGroup.newBuilder().build();
 
@@ -115,5 +129,21 @@ public class ErrorGroupServiceTest {
     UpdateGroupRequest actualRequest = (UpdateGroupRequest) actualRequests.get(0);
 
     Assert.assertEquals(group, actualRequest.getGroup());
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void updateGroupExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
+    mockErrorGroupService.addException(exception);
+
+    try {
+      ErrorGroup group = ErrorGroup.newBuilder().build();
+
+      api.updateGroup(group);
+      Assert.fail("No exception raised");
+    } catch (ApiException e) {
+      Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
+    }
   }
 }
