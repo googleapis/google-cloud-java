@@ -26,7 +26,6 @@ import com.google.common.collect.ImmutableSet;
 
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
 import java.util.logging.ErrorManager;
 import java.util.logging.Filter;
@@ -303,15 +302,18 @@ public class LoggingHandler extends Handler {
       return null;
     }
     Level level = record.getLevel();
-    Map<String, String> labels = ImmutableMap.of(
-        "levelName", level.getName(),
-        "levelValue", String.valueOf(level.intValue()));
-    return LogEntry.newBuilder(Payload.StringPayload.of(payload))
-        .setLabels(labels)
-        .setSeverity(severityFor(level))
-        .build();
+    LogEntry.Builder builder = LogEntry.newBuilder(Payload.StringPayload.of(payload))
+        .addLabel("levelName", level.getName())
+        .addLabel("levelValue", String.valueOf(level.intValue()))
+        .setSeverity(severityFor(level));
+    enhanceLogEntry(builder, record);
+    return builder.build();
   }
-
+  
+  protected void enhanceLogEntry(LogEntry.Builder builder, LogRecord record) {
+    // no-op in this class
+  }
+  
   private static Severity severityFor(Level level) {
     if (level instanceof LoggingLevel) {
       return ((LoggingLevel) level).getSeverity();
