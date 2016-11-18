@@ -36,10 +36,14 @@ import com.google.pubsub.v1.ListSubscriptionsRequest;
 import com.google.pubsub.v1.ListSubscriptionsResponse;
 import com.google.pubsub.v1.ModifyAckDeadlineRequest;
 import com.google.pubsub.v1.ModifyPushConfigRequest;
+import com.google.pubsub.v1.ProjectName;
 import com.google.pubsub.v1.PullRequest;
 import com.google.pubsub.v1.PullResponse;
 import com.google.pubsub.v1.PushConfig;
 import com.google.pubsub.v1.Subscription;
+import com.google.pubsub.v1.SubscriptionName;
+import com.google.pubsub.v1.TopicName;
+import com.google.pubsub.v1.TopicNameOneof;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
@@ -96,32 +100,32 @@ public class SubscriberTest {
   @Test
   @SuppressWarnings("all")
   public void createSubscriptionTest() {
-    String formattedName2 = SubscriberApi.formatSubscriptionName("[PROJECT]", "[SUBSCRIPTION]");
-    String formattedTopic2 = SubscriberApi.formatTopicName("[PROJECT]", "[TOPIC]");
+    SubscriptionName name2 = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]");
+    TopicNameOneof topic2 = TopicNameOneof.from(TopicName.create("[PROJECT]", "[TOPIC]"));
     int ackDeadlineSeconds2 = -921632575;
     Subscription expectedResponse =
         Subscription.newBuilder()
-            .setName(formattedName2)
-            .setTopic(formattedTopic2)
+            .setNameWithSubscriptionName(name2)
+            .setTopicWithTopicNameOneof(topic2)
             .setAckDeadlineSeconds(ackDeadlineSeconds2)
             .build();
     mockSubscriber.addResponse(expectedResponse);
 
-    String formattedName = SubscriberApi.formatSubscriptionName("[PROJECT]", "[SUBSCRIPTION]");
-    String formattedTopic = SubscriberApi.formatTopicName("[PROJECT]", "[TOPIC]");
+    SubscriptionName name = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]");
+    TopicName topic = TopicName.create("[PROJECT]", "[TOPIC]");
     PushConfig pushConfig = PushConfig.newBuilder().build();
     int ackDeadlineSeconds = 2135351438;
 
     Subscription actualResponse =
-        api.createSubscription(formattedName, formattedTopic, pushConfig, ackDeadlineSeconds);
+        api.createSubscription(name, topic, pushConfig, ackDeadlineSeconds);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<GeneratedMessageV3> actualRequests = mockSubscriber.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     Subscription actualRequest = (Subscription) actualRequests.get(0);
 
-    Assert.assertEquals(formattedName, actualRequest.getName());
-    Assert.assertEquals(formattedTopic, actualRequest.getTopic());
+    Assert.assertEquals(name, actualRequest.getNameAsSubscriptionName());
+    Assert.assertEquals(TopicNameOneof.from(topic), actualRequest.getTopicAsTopicNameOneof());
     Assert.assertEquals(pushConfig, actualRequest.getPushConfig());
     Assert.assertEquals(ackDeadlineSeconds, actualRequest.getAckDeadlineSeconds());
   }
@@ -133,12 +137,12 @@ public class SubscriberTest {
     mockSubscriber.addException(exception);
 
     try {
-      String formattedName = SubscriberApi.formatSubscriptionName("[PROJECT]", "[SUBSCRIPTION]");
-      String formattedTopic = SubscriberApi.formatTopicName("[PROJECT]", "[TOPIC]");
+      SubscriptionName name = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]");
+      TopicName topic = TopicName.create("[PROJECT]", "[TOPIC]");
       PushConfig pushConfig = PushConfig.newBuilder().build();
       int ackDeadlineSeconds = 2135351438;
 
-      api.createSubscription(formattedName, formattedTopic, pushConfig, ackDeadlineSeconds);
+      api.createSubscription(name, topic, pushConfig, ackDeadlineSeconds);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
       Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
@@ -148,28 +152,27 @@ public class SubscriberTest {
   @Test
   @SuppressWarnings("all")
   public void getSubscriptionTest() {
-    String name = "name3373707";
-    String topic = "topic110546223";
+    SubscriptionName name = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]");
+    TopicNameOneof topic = TopicNameOneof.from(TopicName.create("[PROJECT]", "[TOPIC]"));
     int ackDeadlineSeconds = 2135351438;
     Subscription expectedResponse =
         Subscription.newBuilder()
-            .setName(name)
-            .setTopic(topic)
+            .setNameWithSubscriptionName(name)
+            .setTopicWithTopicNameOneof(topic)
             .setAckDeadlineSeconds(ackDeadlineSeconds)
             .build();
     mockSubscriber.addResponse(expectedResponse);
 
-    String formattedSubscription =
-        SubscriberApi.formatSubscriptionName("[PROJECT]", "[SUBSCRIPTION]");
+    SubscriptionName subscription = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]");
 
-    Subscription actualResponse = api.getSubscription(formattedSubscription);
+    Subscription actualResponse = api.getSubscription(subscription);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<GeneratedMessageV3> actualRequests = mockSubscriber.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetSubscriptionRequest actualRequest = (GetSubscriptionRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedSubscription, actualRequest.getSubscription());
+    Assert.assertEquals(subscription, actualRequest.getSubscriptionAsSubscriptionName());
   }
 
   @Test
@@ -179,10 +182,9 @@ public class SubscriberTest {
     mockSubscriber.addException(exception);
 
     try {
-      String formattedSubscription =
-          SubscriberApi.formatSubscriptionName("[PROJECT]", "[SUBSCRIPTION]");
+      SubscriptionName subscription = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]");
 
-      api.getSubscription(formattedSubscription);
+      api.getSubscription(subscription);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
       Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
@@ -202,9 +204,9 @@ public class SubscriberTest {
             .build();
     mockSubscriber.addResponse(expectedResponse);
 
-    String formattedProject = SubscriberApi.formatProjectName("[PROJECT]");
+    ProjectName project = ProjectName.create("[PROJECT]");
 
-    ListSubscriptionsPagedResponse pagedListResponse = api.listSubscriptions(formattedProject);
+    ListSubscriptionsPagedResponse pagedListResponse = api.listSubscriptions(project);
 
     List<Subscription> resources = Lists.newArrayList(pagedListResponse.iterateAllElements());
     Assert.assertEquals(1, resources.size());
@@ -214,7 +216,7 @@ public class SubscriberTest {
     Assert.assertEquals(1, actualRequests.size());
     ListSubscriptionsRequest actualRequest = (ListSubscriptionsRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedProject, actualRequest.getProject());
+    Assert.assertEquals(project, actualRequest.getProjectAsProjectName());
   }
 
   @Test
@@ -224,9 +226,9 @@ public class SubscriberTest {
     mockSubscriber.addException(exception);
 
     try {
-      String formattedProject = SubscriberApi.formatProjectName("[PROJECT]");
+      ProjectName project = ProjectName.create("[PROJECT]");
 
-      api.listSubscriptions(formattedProject);
+      api.listSubscriptions(project);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
       Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
@@ -239,16 +241,15 @@ public class SubscriberTest {
     Empty expectedResponse = Empty.newBuilder().build();
     mockSubscriber.addResponse(expectedResponse);
 
-    String formattedSubscription =
-        SubscriberApi.formatSubscriptionName("[PROJECT]", "[SUBSCRIPTION]");
+    SubscriptionName subscription = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]");
 
-    api.deleteSubscription(formattedSubscription);
+    api.deleteSubscription(subscription);
 
     List<GeneratedMessageV3> actualRequests = mockSubscriber.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     DeleteSubscriptionRequest actualRequest = (DeleteSubscriptionRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedSubscription, actualRequest.getSubscription());
+    Assert.assertEquals(subscription, actualRequest.getSubscriptionAsSubscriptionName());
   }
 
   @Test
@@ -258,10 +259,9 @@ public class SubscriberTest {
     mockSubscriber.addException(exception);
 
     try {
-      String formattedSubscription =
-          SubscriberApi.formatSubscriptionName("[PROJECT]", "[SUBSCRIPTION]");
+      SubscriptionName subscription = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]");
 
-      api.deleteSubscription(formattedSubscription);
+      api.deleteSubscription(subscription);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
       Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
@@ -274,18 +274,17 @@ public class SubscriberTest {
     Empty expectedResponse = Empty.newBuilder().build();
     mockSubscriber.addResponse(expectedResponse);
 
-    String formattedSubscription =
-        SubscriberApi.formatSubscriptionName("[PROJECT]", "[SUBSCRIPTION]");
+    SubscriptionName subscription = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]");
     List<String> ackIds = new ArrayList<>();
     int ackDeadlineSeconds = 2135351438;
 
-    api.modifyAckDeadline(formattedSubscription, ackIds, ackDeadlineSeconds);
+    api.modifyAckDeadline(subscription, ackIds, ackDeadlineSeconds);
 
     List<GeneratedMessageV3> actualRequests = mockSubscriber.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ModifyAckDeadlineRequest actualRequest = (ModifyAckDeadlineRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedSubscription, actualRequest.getSubscription());
+    Assert.assertEquals(subscription, actualRequest.getSubscriptionAsSubscriptionName());
     Assert.assertEquals(ackIds, actualRequest.getAckIdsList());
     Assert.assertEquals(ackDeadlineSeconds, actualRequest.getAckDeadlineSeconds());
   }
@@ -297,12 +296,11 @@ public class SubscriberTest {
     mockSubscriber.addException(exception);
 
     try {
-      String formattedSubscription =
-          SubscriberApi.formatSubscriptionName("[PROJECT]", "[SUBSCRIPTION]");
+      SubscriptionName subscription = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]");
       List<String> ackIds = new ArrayList<>();
       int ackDeadlineSeconds = 2135351438;
 
-      api.modifyAckDeadline(formattedSubscription, ackIds, ackDeadlineSeconds);
+      api.modifyAckDeadline(subscription, ackIds, ackDeadlineSeconds);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
       Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
@@ -315,17 +313,16 @@ public class SubscriberTest {
     Empty expectedResponse = Empty.newBuilder().build();
     mockSubscriber.addResponse(expectedResponse);
 
-    String formattedSubscription =
-        SubscriberApi.formatSubscriptionName("[PROJECT]", "[SUBSCRIPTION]");
+    SubscriptionName subscription = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]");
     List<String> ackIds = new ArrayList<>();
 
-    api.acknowledge(formattedSubscription, ackIds);
+    api.acknowledge(subscription, ackIds);
 
     List<GeneratedMessageV3> actualRequests = mockSubscriber.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     AcknowledgeRequest actualRequest = (AcknowledgeRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedSubscription, actualRequest.getSubscription());
+    Assert.assertEquals(subscription, actualRequest.getSubscriptionAsSubscriptionName());
     Assert.assertEquals(ackIds, actualRequest.getAckIdsList());
   }
 
@@ -336,11 +333,10 @@ public class SubscriberTest {
     mockSubscriber.addException(exception);
 
     try {
-      String formattedSubscription =
-          SubscriberApi.formatSubscriptionName("[PROJECT]", "[SUBSCRIPTION]");
+      SubscriptionName subscription = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]");
       List<String> ackIds = new ArrayList<>();
 
-      api.acknowledge(formattedSubscription, ackIds);
+      api.acknowledge(subscription, ackIds);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
       Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
@@ -353,19 +349,18 @@ public class SubscriberTest {
     PullResponse expectedResponse = PullResponse.newBuilder().build();
     mockSubscriber.addResponse(expectedResponse);
 
-    String formattedSubscription =
-        SubscriberApi.formatSubscriptionName("[PROJECT]", "[SUBSCRIPTION]");
+    SubscriptionName subscription = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]");
     boolean returnImmediately = false;
     int maxMessages = 496131527;
 
-    PullResponse actualResponse = api.pull(formattedSubscription, returnImmediately, maxMessages);
+    PullResponse actualResponse = api.pull(subscription, returnImmediately, maxMessages);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<GeneratedMessageV3> actualRequests = mockSubscriber.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     PullRequest actualRequest = (PullRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedSubscription, actualRequest.getSubscription());
+    Assert.assertEquals(subscription, actualRequest.getSubscriptionAsSubscriptionName());
     Assert.assertEquals(returnImmediately, actualRequest.getReturnImmediately());
     Assert.assertEquals(maxMessages, actualRequest.getMaxMessages());
   }
@@ -377,12 +372,11 @@ public class SubscriberTest {
     mockSubscriber.addException(exception);
 
     try {
-      String formattedSubscription =
-          SubscriberApi.formatSubscriptionName("[PROJECT]", "[SUBSCRIPTION]");
+      SubscriptionName subscription = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]");
       boolean returnImmediately = false;
       int maxMessages = 496131527;
 
-      api.pull(formattedSubscription, returnImmediately, maxMessages);
+      api.pull(subscription, returnImmediately, maxMessages);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
       Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
@@ -395,17 +389,16 @@ public class SubscriberTest {
     Empty expectedResponse = Empty.newBuilder().build();
     mockSubscriber.addResponse(expectedResponse);
 
-    String formattedSubscription =
-        SubscriberApi.formatSubscriptionName("[PROJECT]", "[SUBSCRIPTION]");
+    SubscriptionName subscription = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]");
     PushConfig pushConfig = PushConfig.newBuilder().build();
 
-    api.modifyPushConfig(formattedSubscription, pushConfig);
+    api.modifyPushConfig(subscription, pushConfig);
 
     List<GeneratedMessageV3> actualRequests = mockSubscriber.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ModifyPushConfigRequest actualRequest = (ModifyPushConfigRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedSubscription, actualRequest.getSubscription());
+    Assert.assertEquals(subscription, actualRequest.getSubscriptionAsSubscriptionName());
     Assert.assertEquals(pushConfig, actualRequest.getPushConfig());
   }
 
@@ -416,11 +409,10 @@ public class SubscriberTest {
     mockSubscriber.addException(exception);
 
     try {
-      String formattedSubscription =
-          SubscriberApi.formatSubscriptionName("[PROJECT]", "[SUBSCRIPTION]");
+      SubscriptionName subscription = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]");
       PushConfig pushConfig = PushConfig.newBuilder().build();
 
-      api.modifyPushConfig(formattedSubscription, pushConfig);
+      api.modifyPushConfig(subscription, pushConfig);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
       Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());

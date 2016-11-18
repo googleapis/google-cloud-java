@@ -36,10 +36,13 @@ import com.google.pubsub.v1.ListTopicSubscriptionsRequest;
 import com.google.pubsub.v1.ListTopicSubscriptionsResponse;
 import com.google.pubsub.v1.ListTopicsRequest;
 import com.google.pubsub.v1.ListTopicsResponse;
+import com.google.pubsub.v1.ProjectName;
 import com.google.pubsub.v1.PublishRequest;
 import com.google.pubsub.v1.PublishResponse;
 import com.google.pubsub.v1.PubsubMessage;
+import com.google.pubsub.v1.SubscriptionName;
 import com.google.pubsub.v1.Topic;
+import com.google.pubsub.v1.TopicName;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
@@ -96,20 +99,20 @@ public class PublisherTest {
   @Test
   @SuppressWarnings("all")
   public void createTopicTest() {
-    String formattedName2 = PublisherApi.formatTopicName("[PROJECT]", "[TOPIC]");
-    Topic expectedResponse = Topic.newBuilder().setName(formattedName2).build();
+    TopicName name2 = TopicName.create("[PROJECT]", "[TOPIC]");
+    Topic expectedResponse = Topic.newBuilder().setNameWithTopicName(name2).build();
     mockPublisher.addResponse(expectedResponse);
 
-    String formattedName = PublisherApi.formatTopicName("[PROJECT]", "[TOPIC]");
+    TopicName name = TopicName.create("[PROJECT]", "[TOPIC]");
 
-    Topic actualResponse = api.createTopic(formattedName);
+    Topic actualResponse = api.createTopic(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<GeneratedMessageV3> actualRequests = mockPublisher.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     Topic actualRequest = (Topic) actualRequests.get(0);
 
-    Assert.assertEquals(formattedName, actualRequest.getName());
+    Assert.assertEquals(name, actualRequest.getNameAsTopicName());
   }
 
   @Test
@@ -119,9 +122,9 @@ public class PublisherTest {
     mockPublisher.addException(exception);
 
     try {
-      String formattedName = PublisherApi.formatTopicName("[PROJECT]", "[TOPIC]");
+      TopicName name = TopicName.create("[PROJECT]", "[TOPIC]");
 
-      api.createTopic(formattedName);
+      api.createTopic(name);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
       Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
@@ -137,19 +140,19 @@ public class PublisherTest {
         PublishResponse.newBuilder().addAllMessageIds(messageIds).build();
     mockPublisher.addResponse(expectedResponse);
 
-    String formattedTopic = PublisherApi.formatTopicName("[PROJECT]", "[TOPIC]");
+    TopicName topic = TopicName.create("[PROJECT]", "[TOPIC]");
     ByteString data = ByteString.copyFromUtf8("-86");
     PubsubMessage messagesElement = PubsubMessage.newBuilder().setData(data).build();
     List<PubsubMessage> messages = Arrays.asList(messagesElement);
 
-    PublishResponse actualResponse = api.publish(formattedTopic, messages);
+    PublishResponse actualResponse = api.publish(topic, messages);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<GeneratedMessageV3> actualRequests = mockPublisher.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     PublishRequest actualRequest = (PublishRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedTopic, actualRequest.getTopic());
+    Assert.assertEquals(topic, actualRequest.getTopicAsTopicName());
     Assert.assertEquals(messages, actualRequest.getMessagesList());
   }
 
@@ -160,12 +163,12 @@ public class PublisherTest {
     mockPublisher.addException(exception);
 
     try {
-      String formattedTopic = PublisherApi.formatTopicName("[PROJECT]", "[TOPIC]");
+      TopicName topic = TopicName.create("[PROJECT]", "[TOPIC]");
       ByteString data = ByteString.copyFromUtf8("-86");
       PubsubMessage messagesElement = PubsubMessage.newBuilder().setData(data).build();
       List<PubsubMessage> messages = Arrays.asList(messagesElement);
 
-      api.publish(formattedTopic, messages);
+      api.publish(topic, messages);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
       Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
@@ -175,20 +178,20 @@ public class PublisherTest {
   @Test
   @SuppressWarnings("all")
   public void getTopicTest() {
-    String name = "name3373707";
-    Topic expectedResponse = Topic.newBuilder().setName(name).build();
+    TopicName name = TopicName.create("[PROJECT]", "[TOPIC]");
+    Topic expectedResponse = Topic.newBuilder().setNameWithTopicName(name).build();
     mockPublisher.addResponse(expectedResponse);
 
-    String formattedTopic = PublisherApi.formatTopicName("[PROJECT]", "[TOPIC]");
+    TopicName topic = TopicName.create("[PROJECT]", "[TOPIC]");
 
-    Topic actualResponse = api.getTopic(formattedTopic);
+    Topic actualResponse = api.getTopic(topic);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<GeneratedMessageV3> actualRequests = mockPublisher.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetTopicRequest actualRequest = (GetTopicRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedTopic, actualRequest.getTopic());
+    Assert.assertEquals(topic, actualRequest.getTopicAsTopicName());
   }
 
   @Test
@@ -198,9 +201,9 @@ public class PublisherTest {
     mockPublisher.addException(exception);
 
     try {
-      String formattedTopic = PublisherApi.formatTopicName("[PROJECT]", "[TOPIC]");
+      TopicName topic = TopicName.create("[PROJECT]", "[TOPIC]");
 
-      api.getTopic(formattedTopic);
+      api.getTopic(topic);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
       Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
@@ -220,9 +223,9 @@ public class PublisherTest {
             .build();
     mockPublisher.addResponse(expectedResponse);
 
-    String formattedProject = PublisherApi.formatProjectName("[PROJECT]");
+    ProjectName project = ProjectName.create("[PROJECT]");
 
-    ListTopicsPagedResponse pagedListResponse = api.listTopics(formattedProject);
+    ListTopicsPagedResponse pagedListResponse = api.listTopics(project);
 
     List<Topic> resources = Lists.newArrayList(pagedListResponse.iterateAllElements());
     Assert.assertEquals(1, resources.size());
@@ -232,7 +235,7 @@ public class PublisherTest {
     Assert.assertEquals(1, actualRequests.size());
     ListTopicsRequest actualRequest = (ListTopicsRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedProject, actualRequest.getProject());
+    Assert.assertEquals(project, actualRequest.getProjectAsProjectName());
   }
 
   @Test
@@ -242,9 +245,9 @@ public class PublisherTest {
     mockPublisher.addException(exception);
 
     try {
-      String formattedProject = PublisherApi.formatProjectName("[PROJECT]");
+      ProjectName project = ProjectName.create("[PROJECT]");
 
-      api.listTopics(formattedProject);
+      api.listTopics(project);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
       Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
@@ -255,30 +258,34 @@ public class PublisherTest {
   @SuppressWarnings("all")
   public void listTopicSubscriptionsTest() {
     String nextPageToken = "";
-    String subscriptionsElement = "subscriptionsElement1698708147";
-    List<String> subscriptions = Arrays.asList(subscriptionsElement);
+    SubscriptionName subscriptionsElement = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]");
+    List<SubscriptionName> subscriptions = Arrays.asList(subscriptionsElement);
     ListTopicSubscriptionsResponse expectedResponse =
         ListTopicSubscriptionsResponse.newBuilder()
             .setNextPageToken(nextPageToken)
-            .addAllSubscriptions(subscriptions)
+            .addAllSubscriptionsWithSubscriptionNameList(subscriptions)
             .build();
     mockPublisher.addResponse(expectedResponse);
 
-    String formattedTopic = PublisherApi.formatTopicName("[PROJECT]", "[TOPIC]");
+    TopicName topic = TopicName.create("[PROJECT]", "[TOPIC]");
 
-    ListTopicSubscriptionsPagedResponse pagedListResponse =
-        api.listTopicSubscriptions(formattedTopic);
+    ListTopicSubscriptionsPagedResponse pagedListResponse = api.listTopicSubscriptions(topic);
 
     List<String> resources = Lists.newArrayList(pagedListResponse.iterateAllElements());
     Assert.assertEquals(1, resources.size());
     Assert.assertEquals(expectedResponse.getSubscriptionsList().get(0), resources.get(0));
+    List<SubscriptionName> resourceNames =
+        Lists.newArrayList(pagedListResponse.iterateAllAsSubscriptionName());
+    Assert.assertEquals(1, resourceNames.size());
+    Assert.assertEquals(
+        expectedResponse.getSubscriptionsListAsSubscriptionNameList().get(0), resourceNames.get(0));
 
     List<GeneratedMessageV3> actualRequests = mockPublisher.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ListTopicSubscriptionsRequest actualRequest =
         (ListTopicSubscriptionsRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedTopic, actualRequest.getTopic());
+    Assert.assertEquals(topic, actualRequest.getTopicAsTopicName());
   }
 
   @Test
@@ -288,9 +295,9 @@ public class PublisherTest {
     mockPublisher.addException(exception);
 
     try {
-      String formattedTopic = PublisherApi.formatTopicName("[PROJECT]", "[TOPIC]");
+      TopicName topic = TopicName.create("[PROJECT]", "[TOPIC]");
 
-      api.listTopicSubscriptions(formattedTopic);
+      api.listTopicSubscriptions(topic);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
       Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
@@ -303,15 +310,15 @@ public class PublisherTest {
     Empty expectedResponse = Empty.newBuilder().build();
     mockPublisher.addResponse(expectedResponse);
 
-    String formattedTopic = PublisherApi.formatTopicName("[PROJECT]", "[TOPIC]");
+    TopicName topic = TopicName.create("[PROJECT]", "[TOPIC]");
 
-    api.deleteTopic(formattedTopic);
+    api.deleteTopic(topic);
 
     List<GeneratedMessageV3> actualRequests = mockPublisher.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     DeleteTopicRequest actualRequest = (DeleteTopicRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedTopic, actualRequest.getTopic());
+    Assert.assertEquals(topic, actualRequest.getTopicAsTopicName());
   }
 
   @Test
@@ -321,9 +328,9 @@ public class PublisherTest {
     mockPublisher.addException(exception);
 
     try {
-      String formattedTopic = PublisherApi.formatTopicName("[PROJECT]", "[TOPIC]");
+      TopicName topic = TopicName.create("[PROJECT]", "[TOPIC]");
 
-      api.deleteTopic(formattedTopic);
+      api.deleteTopic(topic);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
       Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
