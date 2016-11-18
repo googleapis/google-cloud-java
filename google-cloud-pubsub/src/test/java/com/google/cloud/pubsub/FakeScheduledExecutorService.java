@@ -19,7 +19,6 @@ package com.google.cloud.pubsub;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Vector;
 import java.util.concurrent.Callable;
 import java.util.concurrent.Delayed;
 import java.util.concurrent.ExecutionException;
@@ -34,7 +33,7 @@ import java.util.concurrent.TimeoutException;
  */
 class FakeScheduledExecutorService extends ScheduledThreadPoolExecutor {
   private final FakeClock clock;
-  private final List<FakeScheduledFuture> futures = new Vector<>();
+  private final List<FakeScheduledFuture> futures = new ArrayList<>();
 
   public FakeScheduledExecutorService(int corePoolSize, FakeClock clock) {
     super(corePoolSize);
@@ -106,10 +105,10 @@ class FakeScheduledExecutorService extends ScheduledThreadPoolExecutor {
     final TimeUnit unit;
     final long runAtMillis;
 
-    volatile boolean isDone = false;
-    volatile boolean isCancelled = false;
-    volatile Exception exception = null;
-    volatile Object result = null;
+    volatile boolean isDone;
+    volatile boolean isCancelled;
+    volatile Exception exception;
+    volatile Object result;
 
     FakeScheduledFuture(Runnable runnable, long delay, TimeUnit unit, long runAtMillis) {
       this.callable = Executors.callable(runnable);

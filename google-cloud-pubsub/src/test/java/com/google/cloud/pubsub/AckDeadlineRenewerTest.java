@@ -49,7 +49,7 @@ public class AckDeadlineRenewerTest {
   private PubSub pubsub;
   private FakeScheduledExecutorService executorService;
   private AckDeadlineRenewer ackDeadlineRenewer;
-  private FakeClock clock = new FakeClock();
+  private final FakeClock clock = new FakeClock();
 
   @Rule
   public Timeout globalTimeout = Timeout.seconds(60);
