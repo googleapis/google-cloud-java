@@ -22,7 +22,7 @@ package com.google.cloud.storage.contrib.nio;
  */
 public class SeekableByteChannelPrefetcherOptions implements java.nio.file.OpenOption {
   // normal-case number of parallel reads.
-  public int prefetchingThreads = 4;
+  public int prefetchingThreads = 2;
   // in case the data we need isn't being prefetched, we can use up to this many
   // extra threads to fetch user-requested data.
   public int extraThreads = 1;
@@ -30,5 +30,5 @@ public class SeekableByteChannelPrefetcherOptions implements java.nio.file.OpenO
   public int bufferSize = 50 * 1024 * 1024;
   // how many buffers we keep around. Should be at least prefetchingThreads + extraThreads.
   // bufferSize * bufferCount is how much memory this class'll allocate.
-  public int bufferCount = 6;
+  public int bufferCount = 4;
 }

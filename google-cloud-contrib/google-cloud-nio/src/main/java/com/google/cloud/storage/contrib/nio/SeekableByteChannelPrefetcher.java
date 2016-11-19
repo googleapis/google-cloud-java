@@ -16,6 +16,7 @@
 
 package com.google.cloud.storage.contrib.nio;
 
+import com.google.common.collect.ImmutableList;
 import com.google.common.util.concurrent.Futures;
 
 import java.io.Closeable;
@@ -72,6 +73,7 @@ public class SeekableByteChannelPrefetcher implements SeekableByteChannel {
   private final ExecutorService exec;
   private final Sorted buffers;
   private final ArrayList<Worker> idleWorkers;
+  private final int workerCount;
 
   private class Buffer {
     // index*bufferSize = file position. Set to -1 when we haven't yet decided.
@@ -139,6 +141,7 @@ public class SeekableByteChannelPrefetcher implements SeekableByteChannel {
 
     public ByteBuffer call() throws IOException, ExecutionException, InterruptedException {
       if (pos > chan.size()) {
+        reassignWorker(this);
         return null;
       }
       chan.position(pos);
@@ -163,10 +166,12 @@ public class SeekableByteChannelPrefetcher implements SeekableByteChannel {
     this.idleWorkers = new ArrayList<>(this.prefetchingThreads + this.extraThreads);
     this.exec = Executors.newFixedThreadPool(prefetchingThreads + extraThreads);
     SeekableByteChannel chan = null;
-    for (SeekableByteChannel bc : channels) {
+    ImmutableList<SeekableByteChannel> underlyingChannels = ImmutableList.copyOf(channels);
+    for (SeekableByteChannel bc : underlyingChannels) {
       chan = bc;
       idleWorkers.add(new Worker(bc));
     }
+    workerCount = underlyingChannels.size();
     size = chan.size();
     position = 0;
   }
@@ -323,19 +328,26 @@ public class SeekableByteChannelPrefetcher implements SeekableByteChannel {
   public void close() throws IOException {
     if (open) {
       closing = true;
-      while (true) {
-        synchronized (idleWorkers) {
-          if (idleWorkers.size() == prefetchingThreads + extraThreads) {
+      exec.shutdown();
+      try {
+        while (true) synchronized (idleWorkers) {
+          if (idleWorkers.size() >= workerCount) {
             // every thread is idle, we're done.
             break;
           }
+          idleWorkers.wait(60_000);
         }
+      } catch (InterruptedException e) {
+        System.out.println("Timed out while waiting for channels to close.");
       }
-      exec.shutdown();
       try {
         exec.awaitTermination(60, TimeUnit.SECONDS);
       } catch (InterruptedException e) {
         exec.shutdownNow();
+      }
+      // Close all underlying channels
+      for (Worker w : idleWorkers) {
+        w.close();
       }
       open = false;
     }
@@ -417,7 +429,9 @@ public class SeekableByteChannelPrefetcher implements SeekableByteChannel {
     long curIndex = index(position);
     if (!closing) {
       for (int i = 0; i < prefetchingThreads; i++) {
-        if (i > lastIndex) break;
+        if (i > lastIndex) {
+          break;
+        }
         if (buffers.get(curIndex + i) == null) {
           // work for you!
           Buffer buf = getEmptyBuffer();
@@ -440,7 +454,9 @@ public class SeekableByteChannelPrefetcher implements SeekableByteChannel {
     long lastIndex = index(size);
     long curIndex = index(position);
     for (int i = 0; i < prefetchingThreads; i++) {
-      if (i > lastIndex) break;
+      if (i > lastIndex) {
+        break;
+      }
       if (buffers.get(curIndex + i) == null) {
         // work available!
         Worker w = tryGetIdleWorker();
@@ -449,7 +465,6 @@ public class SeekableByteChannelPrefetcher implements SeekableByteChannel {
         }
         Buffer buf = getEmptyBuffer();
         sicWorker(w, bufferSize * (curIndex + i), buf);
-        return;
       }
     }
   }
