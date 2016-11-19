@@ -177,6 +177,7 @@ public class ITGcsNio {
     byte[] expected = new byte[SML_SIZE];
     new Random(SML_SIZE).nextBytes(expected);
     assertThat(Arrays.equals(buf.array(), expected)).isTrue();
+    chan.close();
   }
 
   @Test
@@ -220,6 +221,7 @@ public class ITGcsNio {
     // if the two spots in the file have the same contents, then this isn't a good file for this
     // test.
     assertThat(wanted).isNotEqualTo(wanted2);
+    chan.close();
   }
 
   @Test

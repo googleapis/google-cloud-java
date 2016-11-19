@@ -16,7 +16,6 @@
 
 package com.google.cloud.storage.contrib.nio;
 
-import com.google.common.base.Stopwatch;
 import com.google.common.util.concurrent.Futures;
 
 import java.io.Closeable;
@@ -65,7 +64,7 @@ public class SeekableByteChannelPrefetcher implements SeekableByteChannel {
   // size of the underlying channel(s).
   private final long size;
   // where we pretend to be, wrt returning bytes from read()
-  private long position = 0;
+  private long position;
   // whether we're open.
   private boolean open = true;
   private boolean closing = false;
@@ -169,6 +168,7 @@ public class SeekableByteChannelPrefetcher implements SeekableByteChannel {
       idleWorkers.add(new Worker(bc));
     }
     size = chan.size();
+    position = 0;
   }
 
   /**
@@ -178,7 +178,9 @@ public class SeekableByteChannelPrefetcher implements SeekableByteChannel {
    */
   @Override
   public int read(ByteBuffer dst) throws IOException {
-    if (!open) throw new ClosedChannelException();
+    if (!open) {
+      throw new ClosedChannelException();
+    }
     ByteBuffer src;
     try {
       src = fetch(position);
@@ -229,7 +231,9 @@ public class SeekableByteChannelPrefetcher implements SeekableByteChannel {
    */
   @Override
   public long position() throws IOException {
-    if (!open) throw new ClosedChannelException();
+    if (!open) {
+      throw new ClosedChannelException();
+    }
     return position;
   }
 
@@ -258,7 +262,9 @@ public class SeekableByteChannelPrefetcher implements SeekableByteChannel {
    */
   @Override
   public SeekableByteChannel position(long newPosition) throws IOException {
-    if (!open) throw new ClosedChannelException();
+    if (!open) {
+      throw new ClosedChannelException();
+    }
     position = newPosition;
     return this;
   }
@@ -272,7 +278,9 @@ public class SeekableByteChannelPrefetcher implements SeekableByteChannel {
    */
   @Override
   public long size() throws IOException {
-    if (!open) throw new ClosedChannelException();
+    if (!open) {
+      throw new ClosedChannelException();
+    }
     return size;
   }
 
@@ -314,7 +322,15 @@ public class SeekableByteChannelPrefetcher implements SeekableByteChannel {
   @Override
   public void close() throws IOException {
     if (open) {
-      // TODO: quiet everything, close all channels.
+      closing = true;
+      while (true) {
+        synchronized (idleWorkers) {
+          if (idleWorkers.size() == prefetchingThreads + extraThreads) {
+            // every thread is idle, we're done.
+            break;
+          }
+        }
+      }
       exec.shutdown();
       try {
         exec.awaitTermination(60, TimeUnit.SECONDS);
@@ -345,10 +361,10 @@ public class SeekableByteChannelPrefetcher implements SeekableByteChannel {
   private Worker getIdleWorker() throws InterruptedException {
     while (true) {
       synchronized (idleWorkers) {
-        while (idleWorkers.size() == 0) {
+        while (idleWorkers.isEmpty()) {
           idleWorkers.wait();
         }
-        if (idleWorkers.size() > 0) {
+        if (!idleWorkers.isEmpty()) {
           return idleWorkers.remove(0);
         }
       }
@@ -358,7 +374,10 @@ public class SeekableByteChannelPrefetcher implements SeekableByteChannel {
   private Worker tryGetIdleWorker() throws InterruptedException {
     while (true) {
       synchronized (idleWorkers) {
-        if (idleWorkers.size() > 0) {
+        if (closing) {
+          return null;
+        }
+        if (!idleWorkers.isEmpty()) {
           return idleWorkers.remove(0);
         }
         return null;
@@ -367,11 +386,11 @@ public class SeekableByteChannelPrefetcher implements SeekableByteChannel {
   }
 
   private void sicWorker(Worker worker, long pos, Buffer toFill) throws ExecutionException, InterruptedException {
-    pos = beginningOfBucket(pos);
-    worker.init(pos, toFill);
+    long bucketStart = beginningOfBucket(pos);
+    worker.init(bucketStart, toFill);
     Future<ByteBuffer> promise = exec.submit(worker);
     toFill.promise = promise;
-    buffers.put(index(pos), toFill);
+    buffers.put(index(bucketStart), toFill);
   }
 
   private long index(long pos) {
@@ -410,7 +429,7 @@ public class SeekableByteChannelPrefetcher implements SeekableByteChannel {
     // nothing to do, return to idle pool
     synchronized (idleWorkers) {
       idleWorkers.add(w);
-      idleWorkers.notify();
+      idleWorkers.notifyAll();
     }
   }
 
