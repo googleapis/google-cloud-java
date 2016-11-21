@@ -176,11 +176,12 @@ public class LoggingServiceV2Test {
             .build();
     mockLoggingServiceV2.addResponse(expectedResponse);
 
-    List<String> projectIds = new ArrayList<>();
+    List<String> resourceNames = new ArrayList<>();
     String filter = "filter-1274492040";
     String orderBy = "orderBy1234304744";
 
-    ListLogEntriesPagedResponse pagedListResponse = api.listLogEntries(projectIds, filter, orderBy);
+    ListLogEntriesPagedResponse pagedListResponse =
+        api.listLogEntries(resourceNames, filter, orderBy);
 
     List<LogEntry> resources = Lists.newArrayList(pagedListResponse.iterateAllElements());
     Assert.assertEquals(1, resources.size());
@@ -190,7 +191,7 @@ public class LoggingServiceV2Test {
     Assert.assertEquals(1, actualRequests.size());
     ListLogEntriesRequest actualRequest = (ListLogEntriesRequest) actualRequests.get(0);
 
-    Assert.assertEquals(projectIds, actualRequest.getProjectIdsList());
+    Assert.assertEquals(resourceNames, actualRequest.getResourceNamesList());
     Assert.assertEquals(filter, actualRequest.getFilter());
     Assert.assertEquals(orderBy, actualRequest.getOrderBy());
   }
@@ -202,11 +203,11 @@ public class LoggingServiceV2Test {
     mockLoggingServiceV2.addException(exception);
 
     try {
-      List<String> projectIds = new ArrayList<>();
+      List<String> resourceNames = new ArrayList<>();
       String filter = "filter-1274492040";
       String orderBy = "orderBy1234304744";
 
-      api.listLogEntries(projectIds, filter, orderBy);
+      api.listLogEntries(resourceNames, filter, orderBy);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
       Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());

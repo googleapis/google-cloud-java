@@ -134,9 +134,6 @@ public class MetricServiceApi implements AutoCloseable {
   private static final PathTemplate PROJECT_PATH_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding("projects/{project}");
 
-  private static final PathTemplate GROUP_PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding("projects/{project}/groups/{group}");
-
   private static final PathTemplate METRIC_DESCRIPTOR_PATH_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding(
           "projects/{project}/metricDescriptors/{metric_descriptor=**}");
@@ -148,13 +145,6 @@ public class MetricServiceApi implements AutoCloseable {
   /** Formats a string containing the fully-qualified path to represent a project resource. */
   public static final String formatProjectName(String project) {
     return PROJECT_PATH_TEMPLATE.instantiate("project", project);
-  }
-
-  /** Formats a string containing the fully-qualified path to represent a group resource. */
-  public static final String formatGroupName(String project, String group) {
-    return GROUP_PATH_TEMPLATE.instantiate(
-        "project", project,
-        "group", group);
   }
 
   /**
@@ -180,16 +170,6 @@ public class MetricServiceApi implements AutoCloseable {
   /** Parses the project from the given fully-qualified path which represents a project resource. */
   public static final String parseProjectFromProjectName(String projectName) {
     return PROJECT_PATH_TEMPLATE.parse(projectName).get("project");
-  }
-
-  /** Parses the project from the given fully-qualified path which represents a group resource. */
-  public static final String parseProjectFromGroupName(String groupName) {
-    return GROUP_PATH_TEMPLATE.parse(groupName).get("project");
-  }
-
-  /** Parses the group from the given fully-qualified path which represents a group resource. */
-  public static final String parseGroupFromGroupName(String groupName) {
-    return GROUP_PATH_TEMPLATE.parse(groupName).get("group");
   }
 
   /**

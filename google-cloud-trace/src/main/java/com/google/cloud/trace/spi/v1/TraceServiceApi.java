@@ -183,6 +183,7 @@ public class TraceServiceApi implements AutoCloseable {
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final void patchTraces(String projectId, Traces traces) {
+
     PatchTracesRequest request =
         PatchTracesRequest.newBuilder().setProjectId(projectId).setTraces(traces).build();
     patchTraces(request);
@@ -262,6 +263,7 @@ public class TraceServiceApi implements AutoCloseable {
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final Trace getTrace(String projectId, String traceId) {
+
     GetTraceRequest request =
         GetTraceRequest.newBuilder().setProjectId(projectId).setTraceId(traceId).build();
     return getTrace(request);
