@@ -50,7 +50,7 @@ See [SUPPORTING_NEW_SERVICES](./SUPPORTING_NEW_SERVICES.md) for guidelines on ho
 Coding Style
 ------------
 Maintain the coding style in the project and in particular the modified files.
-Follow the Google Java [style](http://google-styleguide.googlecode.com/svn/trunk/javaguide.html).
+Follow the Google Java [style](https://google.github.io/styleguide/javaguide.html).
 
 
 ## Contributor License Agreements
