@@ -26,12 +26,14 @@ import com.google.cloud.speech.v1beta1.StreamingRecognizeResponse;
 import com.google.cloud.speech.v1beta1.SyncRecognizeRequest;
 import com.google.cloud.speech.v1beta1.SyncRecognizeResponse;
 import com.google.longrunning.Operation;
+import com.google.protobuf.ExperimentalApi;
 import io.grpc.ManagedChannel;
 import java.io.Closeable;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ScheduledExecutorService;
+import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND SERVICE
 /**
@@ -42,15 +44,15 @@ import java.util.concurrent.ScheduledExecutorService;
  *
  * <pre>
  * <code>
- * try (SpeechApi speechApi = SpeechApi.create()) {
+ * try (SpeechClient speechClient = SpeechClient.create()) {
  *   RecognitionConfig config = RecognitionConfig.newBuilder().build();
  *   RecognitionAudio audio = RecognitionAudio.newBuilder().build();
- *   SyncRecognizeResponse response = speechApi.syncRecognize(config, audio);
+ *   SyncRecognizeResponse response = speechClient.syncRecognize(config, audio);
  * }
  * </code>
  * </pre>
  *
- * <p>Note: close() needs to be called on the speechApi object to clean up resources such as
+ * <p>Note: close() needs to be called on the speechClient object to clean up resources such as
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <p>The surface of this class includes several types of Java methods for each of the API's
@@ -84,13 +86,14 @@ import java.util.concurrent.ScheduledExecutorService;
  *         .build();
  * SpeechSettings speechSettings =
  *     SpeechSettings.defaultBuilder().setChannelProvider(channelProvider).build();
- * SpeechApi speechApi =
- *     SpeechApi.create(speechSettings);
+ * SpeechClient speechClient =
+ *     SpeechClient.create(speechSettings);
  * </code>
  * </pre>
  */
-@javax.annotation.Generated("by GAPIC")
-public class SpeechApi implements AutoCloseable {
+@Generated("by GAPIC")
+@ExperimentalApi
+public class SpeechClient implements AutoCloseable {
   private final SpeechSettings settings;
   private final ScheduledExecutorService executor;
   private final ManagedChannel channel;
@@ -101,24 +104,24 @@ public class SpeechApi implements AutoCloseable {
   private final StreamingCallable<StreamingRecognizeRequest, StreamingRecognizeResponse>
       streamingRecognizeCallable;
 
-  /** Constructs an instance of SpeechApi with default settings. */
-  public static final SpeechApi create() throws IOException {
+  /** Constructs an instance of SpeechClient with default settings. */
+  public static final SpeechClient create() throws IOException {
     return create(SpeechSettings.defaultBuilder().build());
   }
 
   /**
-   * Constructs an instance of SpeechApi, using the given settings. The channels are created based
-   * on the settings passed in, or defaults for any settings that are not set.
+   * Constructs an instance of SpeechClient, using the given settings. The channels are created
+   * based on the settings passed in, or defaults for any settings that are not set.
    */
-  public static final SpeechApi create(SpeechSettings settings) throws IOException {
-    return new SpeechApi(settings);
+  public static final SpeechClient create(SpeechSettings settings) throws IOException {
+    return new SpeechClient(settings);
   }
 
   /**
-   * Constructs an instance of SpeechApi, using the given settings. This is protected so that it
+   * Constructs an instance of SpeechClient, using the given settings. This is protected so that it
    * easy to make a subclass, but otherwise, the static factory methods should be preferred.
    */
-  protected SpeechApi(SpeechSettings settings) throws IOException {
+  protected SpeechClient(SpeechSettings settings) throws IOException {
     this.settings = settings;
     ChannelAndExecutor channelAndExecutor = settings.getChannelAndExecutor();
     this.executor = channelAndExecutor.getExecutor();
@@ -163,10 +166,10 @@ public class SpeechApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (SpeechApi speechApi = SpeechApi.create()) {
+   * try (SpeechClient speechClient = SpeechClient.create()) {
    *   RecognitionConfig config = RecognitionConfig.newBuilder().build();
    *   RecognitionAudio audio = RecognitionAudio.newBuilder().build();
-   *   SyncRecognizeResponse response = speechApi.syncRecognize(config, audio);
+   *   SyncRecognizeResponse response = speechClient.syncRecognize(config, audio);
    * }
    * </code></pre>
    *
@@ -191,14 +194,14 @@ public class SpeechApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (SpeechApi speechApi = SpeechApi.create()) {
+   * try (SpeechClient speechClient = SpeechClient.create()) {
    *   RecognitionConfig config = RecognitionConfig.newBuilder().build();
    *   RecognitionAudio audio = RecognitionAudio.newBuilder().build();
    *   SyncRecognizeRequest request = SyncRecognizeRequest.newBuilder()
    *     .setConfig(config)
    *     .setAudio(audio)
    *     .build();
-   *   SyncRecognizeResponse response = speechApi.syncRecognize(request);
+   *   SyncRecognizeResponse response = speechClient.syncRecognize(request);
    * }
    * </code></pre>
    *
@@ -217,14 +220,14 @@ public class SpeechApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (SpeechApi speechApi = SpeechApi.create()) {
+   * try (SpeechClient speechClient = SpeechClient.create()) {
    *   RecognitionConfig config = RecognitionConfig.newBuilder().build();
    *   RecognitionAudio audio = RecognitionAudio.newBuilder().build();
    *   SyncRecognizeRequest request = SyncRecognizeRequest.newBuilder()
    *     .setConfig(config)
    *     .setAudio(audio)
    *     .build();
-   *   ListenableFuture&lt;SyncRecognizeResponse&gt; future = speechApi.syncRecognizeCallable().futureCall(request);
+   *   ListenableFuture&lt;SyncRecognizeResponse&gt; future = speechClient.syncRecognizeCallable().futureCall(request);
    *   // Do something
    *   SyncRecognizeResponse response = future.get();
    * }
@@ -243,10 +246,10 @@ public class SpeechApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (SpeechApi speechApi = SpeechApi.create()) {
+   * try (SpeechClient speechClient = SpeechClient.create()) {
    *   RecognitionConfig config = RecognitionConfig.newBuilder().build();
    *   RecognitionAudio audio = RecognitionAudio.newBuilder().build();
-   *   Operation response = speechApi.asyncRecognize(config, audio);
+   *   Operation response = speechClient.asyncRecognize(config, audio);
    * }
    * </code></pre>
    *
@@ -271,14 +274,14 @@ public class SpeechApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (SpeechApi speechApi = SpeechApi.create()) {
+   * try (SpeechClient speechClient = SpeechClient.create()) {
    *   RecognitionConfig config = RecognitionConfig.newBuilder().build();
    *   RecognitionAudio audio = RecognitionAudio.newBuilder().build();
    *   AsyncRecognizeRequest request = AsyncRecognizeRequest.newBuilder()
    *     .setConfig(config)
    *     .setAudio(audio)
    *     .build();
-   *   Operation response = speechApi.asyncRecognize(request);
+   *   Operation response = speechClient.asyncRecognize(request);
    * }
    * </code></pre>
    *
@@ -298,14 +301,14 @@ public class SpeechApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (SpeechApi speechApi = SpeechApi.create()) {
+   * try (SpeechClient speechClient = SpeechClient.create()) {
    *   RecognitionConfig config = RecognitionConfig.newBuilder().build();
    *   RecognitionAudio audio = RecognitionAudio.newBuilder().build();
    *   AsyncRecognizeRequest request = AsyncRecognizeRequest.newBuilder()
    *     .setConfig(config)
    *     .setAudio(audio)
    *     .build();
-   *   ListenableFuture&lt;Operation&gt; future = speechApi.asyncRecognizeCallable().futureCall(request);
+   *   ListenableFuture&lt;Operation&gt; future = speechClient.asyncRecognizeCallable().futureCall(request);
    *   // Do something
    *   Operation response = future.get();
    * }
@@ -323,7 +326,7 @@ public class SpeechApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (SpeechApi speechApi = SpeechApi.create()) {
+   * try (SpeechClient speechClient = SpeechClient.create()) {
    *   StreamObserver&lt;StreamingRecognizeResponse&gt; responseObserver =
    *       new StreamObserver&lt;StreamingRecognizeResponse&gt;() {
    *         @Override
@@ -342,7 +345,7 @@ public class SpeechApi implements AutoCloseable {
    *         }
    *       };
    *   StreamObserver&lt;StreamingRecognizeRequest&gt; requestObserver =
-   *       speechApi.streamingRecognizeCallable().bidiStreamingCall(responseObserver)});
+   *       speechClient.streamingRecognizeCallable().bidiStreamingCall(responseObserver)});
    *
    *   StreamingRecognizeRequest request = StreamingRecognizeRequest.newBuilder().build();
    *   requestObserver.onNext(request);
