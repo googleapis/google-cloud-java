@@ -29,8 +29,8 @@
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
-      <artifactId>grpc-google-devtools-cloudtrace-v1</artifactId>
-      <version>0.1.0</version>
+      <artifactId>grpc-google-cloud-trace-v1</artifactId>
+      <version>0.1.3</version>
       <exclusions>
         <exclusion>
           <groupId>io.grpc</groupId>

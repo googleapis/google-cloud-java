@@ -45,7 +45,7 @@ import org.junit.Test;
 public class TraceServiceTest {
   private static MockTraceService mockTraceService;
   private static MockServiceHelper serviceHelper;
-  private TraceServiceApi api;
+  private TraceServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {
@@ -67,12 +67,12 @@ public class TraceServiceTest {
         TraceServiceSettings.defaultBuilder()
             .setChannelProvider(serviceHelper.createChannelProvider())
             .build();
-    api = TraceServiceApi.create(settings);
+    client = TraceServiceClient.create(settings);
   }
 
   @After
   public void tearDown() throws Exception {
-    api.close();
+    client.close();
   }
 
   @Test
@@ -84,7 +84,7 @@ public class TraceServiceTest {
     String projectId = "projectId-1969970175";
     Traces traces = Traces.newBuilder().build();
 
-    api.patchTraces(projectId, traces);
+    client.patchTraces(projectId, traces);
 
     List<GeneratedMessageV3> actualRequests = mockTraceService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
@@ -104,7 +104,7 @@ public class TraceServiceTest {
       String projectId = "projectId-1969970175";
       Traces traces = Traces.newBuilder().build();
 
-      api.patchTraces(projectId, traces);
+      client.patchTraces(projectId, traces);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
       Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
@@ -123,7 +123,7 @@ public class TraceServiceTest {
     String projectId = "projectId-1969970175";
     String traceId = "traceId1270300245";
 
-    Trace actualResponse = api.getTrace(projectId, traceId);
+    Trace actualResponse = client.getTrace(projectId, traceId);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<GeneratedMessageV3> actualRequests = mockTraceService.getRequests();
@@ -144,7 +144,7 @@ public class TraceServiceTest {
       String projectId = "projectId-1969970175";
       String traceId = "traceId1270300245";
 
-      api.getTrace(projectId, traceId);
+      client.getTrace(projectId, traceId);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
       Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
@@ -166,7 +166,7 @@ public class TraceServiceTest {
 
     String projectId = "projectId-1969970175";
 
-    ListTracesPagedResponse pagedListResponse = api.listTraces(projectId);
+    ListTracesPagedResponse pagedListResponse = client.listTraces(projectId);
 
     List<Trace> resources = Lists.newArrayList(pagedListResponse.iterateAllElements());
     Assert.assertEquals(1, resources.size());
@@ -188,7 +188,7 @@ public class TraceServiceTest {
     try {
       String projectId = "projectId-1969970175";
 
-      api.listTraces(projectId);
+      client.listTraces(projectId);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
       Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
