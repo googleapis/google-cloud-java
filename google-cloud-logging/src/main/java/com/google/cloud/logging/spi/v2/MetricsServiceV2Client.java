@@ -220,8 +220,8 @@ public class MetricsServiceV2Client implements AutoCloseable {
    * }
    * </code></pre>
    *
-   * @param parent Required. The resource name containing the metrics. Example:
-   *     `"projects/my-project-id"`.
+   * @param parent Required. The name of the project containing the metrics:
+   *     <p>"projects/[PROJECT_ID]"
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final ListLogMetricsPagedResponse listLogMetrics(String parent) {
@@ -325,8 +325,8 @@ public class MetricsServiceV2Client implements AutoCloseable {
    * }
    * </code></pre>
    *
-   * @param metricName The resource name of the desired metric. Example:
-   *     `"projects/my-project-id/metrics/my-metric-id"`.
+   * @param metricName The resource name of the desired metric:
+   *     <p>"projects/[PROJECT_ID]/metrics/[METRIC_ID]"
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final LogMetric getLogMetric(String metricName) {
@@ -395,8 +395,8 @@ public class MetricsServiceV2Client implements AutoCloseable {
    * }
    * </code></pre>
    *
-   * @param parent The resource name of the project in which to create the metric. Example:
-   *     `"projects/my-project-id"`.
+   * @param parent The resource name of the project in which to create the metric:
+   *     <p>"projects/[PROJECT_ID]"
    *     <p>The new metric must be provided in the request.
    * @param metric The new logs-based metric, which must not have an identifier that already exists.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
@@ -471,12 +471,12 @@ public class MetricsServiceV2Client implements AutoCloseable {
    * }
    * </code></pre>
    *
-   * @param metricName The resource name of the metric to update. Example:
-   *     `"projects/my-project-id/metrics/my-metric-id"`.
-   *     <p>The updated metric must be provided in the request and have the same identifier that is
-   *     specified in `metricName`. If the metric does not exist, it is created.
-   * @param metric The updated metric, whose name must be the same as the metric identifier in
-   *     `metricName`. If `metricName` does not exist, then a new metric is created.
+   * @param metricName The resource name of the metric to update:
+   *     <p>"projects/[PROJECT_ID]/metrics/[METRIC_ID]"
+   *     <p>The updated metric must be provided in the request and it's `name` field must be the
+   *     same as `[METRIC_ID]` If the metric does not exist in `[PROJECT_ID]`, then a new metric is
+   *     created.
+   * @param metric The updated metric.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final LogMetric updateLogMetric(String metricName, LogMetric metric) {
@@ -548,8 +548,8 @@ public class MetricsServiceV2Client implements AutoCloseable {
    * }
    * </code></pre>
    *
-   * @param metricName The resource name of the metric to delete. Example:
-   *     `"projects/my-project-id/metrics/my-metric-id"`.
+   * @param metricName The resource name of the metric to delete:
+   *     <p>"projects/[PROJECT_ID]/metrics/[METRIC_ID]"
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final void deleteLogMetric(String metricName) {
