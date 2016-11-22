@@ -27,6 +27,7 @@ import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.protobuf.Empty;
+import com.google.protobuf.ExperimentalApi;
 import com.google.pubsub.v1.DeleteTopicRequest;
 import com.google.pubsub.v1.GetTopicRequest;
 import com.google.pubsub.v1.ListTopicSubscriptionsRequest;
@@ -45,6 +46,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ScheduledExecutorService;
+import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND SERVICE
 /**
@@ -56,14 +58,14 @@ import java.util.concurrent.ScheduledExecutorService;
  *
  * <pre>
  * <code>
- * try (PublisherApi publisherApi = PublisherApi.create()) {
+ * try (PublisherClient publisherClient = PublisherClient.create()) {
  *   TopicName name = TopicName.create("[PROJECT]", "[TOPIC]");
- *   Topic response = publisherApi.createTopic(name);
+ *   Topic response = publisherClient.createTopic(name);
  * }
  * </code>
  * </pre>
  *
- * <p>Note: close() needs to be called on the publisherApi object to clean up resources such as
+ * <p>Note: close() needs to be called on the publisherClient object to clean up resources such as
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <p>The surface of this class includes several types of Java methods for each of the API's
@@ -97,13 +99,14 @@ import java.util.concurrent.ScheduledExecutorService;
  *         .build();
  * PublisherSettings publisherSettings =
  *     PublisherSettings.defaultBuilder().setChannelProvider(channelProvider).build();
- * PublisherApi publisherApi =
- *     PublisherApi.create(publisherSettings);
+ * PublisherClient publisherClient =
+ *     PublisherClient.create(publisherSettings);
  * </code>
  * </pre>
  */
-@javax.annotation.Generated("by GAPIC")
-public class PublisherApi implements AutoCloseable {
+@Generated("by GAPIC")
+@ExperimentalApi
+public class PublisherClient implements AutoCloseable {
   private final PublisherSettings settings;
   private final ScheduledExecutorService executor;
   private final ManagedChannel channel;
@@ -157,24 +160,24 @@ public class PublisherApi implements AutoCloseable {
     return TOPIC_PATH_TEMPLATE.parse(topicName).get("topic");
   }
 
-  /** Constructs an instance of PublisherApi with default settings. */
-  public static final PublisherApi create() throws IOException {
+  /** Constructs an instance of PublisherClient with default settings. */
+  public static final PublisherClient create() throws IOException {
     return create(PublisherSettings.defaultBuilder().build());
   }
 
   /**
-   * Constructs an instance of PublisherApi, using the given settings. The channels are created
+   * Constructs an instance of PublisherClient, using the given settings. The channels are created
    * based on the settings passed in, or defaults for any settings that are not set.
    */
-  public static final PublisherApi create(PublisherSettings settings) throws IOException {
-    return new PublisherApi(settings);
+  public static final PublisherClient create(PublisherSettings settings) throws IOException {
+    return new PublisherClient(settings);
   }
 
   /**
-   * Constructs an instance of PublisherApi, using the given settings. This is protected so that it
-   * easy to make a subclass, but otherwise, the static factory methods should be preferred.
+   * Constructs an instance of PublisherClient, using the given settings. This is protected so that
+   * it easy to make a subclass, but otherwise, the static factory methods should be preferred.
    */
-  protected PublisherApi(PublisherSettings settings) throws IOException {
+  protected PublisherClient(PublisherSettings settings) throws IOException {
     this.settings = settings;
     ChannelAndExecutor channelAndExecutor = settings.getChannelAndExecutor();
     this.executor = channelAndExecutor.getExecutor();
@@ -240,9 +243,9 @@ public class PublisherApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (PublisherApi publisherApi = PublisherApi.create()) {
+   * try (PublisherClient publisherClient = PublisherClient.create()) {
    *   TopicName name = TopicName.create("[PROJECT]", "[TOPIC]");
-   *   Topic response = publisherApi.createTopic(name);
+   *   Topic response = publisherClient.createTopic(name);
    * }
    * </code></pre>
    *
@@ -266,12 +269,12 @@ public class PublisherApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (PublisherApi publisherApi = PublisherApi.create()) {
+   * try (PublisherClient publisherClient = PublisherClient.create()) {
    *   TopicName name = TopicName.create("[PROJECT]", "[TOPIC]");
    *   Topic request = Topic.newBuilder()
    *     .setNameWithTopicName(name)
    *     .build();
-   *   Topic response = publisherApi.createTopic(request);
+   *   Topic response = publisherClient.createTopic(request);
    * }
    * </code></pre>
    *
@@ -289,12 +292,12 @@ public class PublisherApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (PublisherApi publisherApi = PublisherApi.create()) {
+   * try (PublisherClient publisherClient = PublisherClient.create()) {
    *   TopicName name = TopicName.create("[PROJECT]", "[TOPIC]");
    *   Topic request = Topic.newBuilder()
    *     .setNameWithTopicName(name)
    *     .build();
-   *   ListenableFuture&lt;Topic&gt; future = publisherApi.createTopicCallable().futureCall(request);
+   *   ListenableFuture&lt;Topic&gt; future = publisherClient.createTopicCallable().futureCall(request);
    *   // Do something
    *   Topic response = future.get();
    * }
@@ -313,14 +316,14 @@ public class PublisherApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (PublisherApi publisherApi = PublisherApi.create()) {
+   * try (PublisherClient publisherClient = PublisherClient.create()) {
    *   TopicName topic = TopicName.create("[PROJECT]", "[TOPIC]");
    *   ByteString data = ByteString.copyFromUtf8("");
    *   PubsubMessage messagesElement = PubsubMessage.newBuilder()
    *     .setData(data)
    *     .build();
    *   List&lt;PubsubMessage&gt; messages = Arrays.asList(messagesElement);
-   *   PublishResponse response = publisherApi.publish(topic, messages);
+   *   PublishResponse response = publisherClient.publish(topic, messages);
    * }
    * </code></pre>
    *
@@ -344,7 +347,7 @@ public class PublisherApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (PublisherApi publisherApi = PublisherApi.create()) {
+   * try (PublisherClient publisherClient = PublisherClient.create()) {
    *   TopicName topic = TopicName.create("[PROJECT]", "[TOPIC]");
    *   ByteString data = ByteString.copyFromUtf8("");
    *   PubsubMessage messagesElement = PubsubMessage.newBuilder()
@@ -355,7 +358,7 @@ public class PublisherApi implements AutoCloseable {
    *     .setTopicWithTopicName(topic)
    *     .addAllMessages(messages)
    *     .build();
-   *   PublishResponse response = publisherApi.publish(request);
+   *   PublishResponse response = publisherClient.publish(request);
    * }
    * </code></pre>
    *
@@ -375,7 +378,7 @@ public class PublisherApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (PublisherApi publisherApi = PublisherApi.create()) {
+   * try (PublisherClient publisherClient = PublisherClient.create()) {
    *   TopicName topic = TopicName.create("[PROJECT]", "[TOPIC]");
    *   ByteString data = ByteString.copyFromUtf8("");
    *   PubsubMessage messagesElement = PubsubMessage.newBuilder()
@@ -386,7 +389,7 @@ public class PublisherApi implements AutoCloseable {
    *     .setTopicWithTopicName(topic)
    *     .addAllMessages(messages)
    *     .build();
-   *   ListenableFuture&lt;PublishResponse&gt; future = publisherApi.publishCallable().futureCall(request);
+   *   ListenableFuture&lt;PublishResponse&gt; future = publisherClient.publishCallable().futureCall(request);
    *   // Do something
    *   PublishResponse response = future.get();
    * }
@@ -403,9 +406,9 @@ public class PublisherApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (PublisherApi publisherApi = PublisherApi.create()) {
+   * try (PublisherClient publisherClient = PublisherClient.create()) {
    *   TopicName topic = TopicName.create("[PROJECT]", "[TOPIC]");
-   *   Topic response = publisherApi.getTopic(topic);
+   *   Topic response = publisherClient.getTopic(topic);
    * }
    * </code></pre>
    *
@@ -425,12 +428,12 @@ public class PublisherApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (PublisherApi publisherApi = PublisherApi.create()) {
+   * try (PublisherClient publisherClient = PublisherClient.create()) {
    *   TopicName topic = TopicName.create("[PROJECT]", "[TOPIC]");
    *   GetTopicRequest request = GetTopicRequest.newBuilder()
    *     .setTopicWithTopicName(topic)
    *     .build();
-   *   Topic response = publisherApi.getTopic(request);
+   *   Topic response = publisherClient.getTopic(request);
    * }
    * </code></pre>
    *
@@ -448,12 +451,12 @@ public class PublisherApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (PublisherApi publisherApi = PublisherApi.create()) {
+   * try (PublisherClient publisherClient = PublisherClient.create()) {
    *   TopicName topic = TopicName.create("[PROJECT]", "[TOPIC]");
    *   GetTopicRequest request = GetTopicRequest.newBuilder()
    *     .setTopicWithTopicName(topic)
    *     .build();
-   *   ListenableFuture&lt;Topic&gt; future = publisherApi.getTopicCallable().futureCall(request);
+   *   ListenableFuture&lt;Topic&gt; future = publisherClient.getTopicCallable().futureCall(request);
    *   // Do something
    *   Topic response = future.get();
    * }
@@ -470,9 +473,9 @@ public class PublisherApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (PublisherApi publisherApi = PublisherApi.create()) {
+   * try (PublisherClient publisherClient = PublisherClient.create()) {
    *   ProjectName project = ProjectName.create("[PROJECT]");
-   *   for (Topic element : publisherApi.listTopics(project).iterateAllElements()) {
+   *   for (Topic element : publisherClient.listTopics(project).iterateAllElements()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -494,12 +497,12 @@ public class PublisherApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (PublisherApi publisherApi = PublisherApi.create()) {
+   * try (PublisherClient publisherClient = PublisherClient.create()) {
    *   ProjectName project = ProjectName.create("[PROJECT]");
    *   ListTopicsRequest request = ListTopicsRequest.newBuilder()
    *     .setProjectWithProjectName(project)
    *     .build();
-   *   for (Topic element : publisherApi.listTopics(request).iterateAllElements()) {
+   *   for (Topic element : publisherClient.listTopics(request).iterateAllElements()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -519,12 +522,12 @@ public class PublisherApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (PublisherApi publisherApi = PublisherApi.create()) {
+   * try (PublisherClient publisherClient = PublisherClient.create()) {
    *   ProjectName project = ProjectName.create("[PROJECT]");
    *   ListTopicsRequest request = ListTopicsRequest.newBuilder()
    *     .setProjectWithProjectName(project)
    *     .build();
-   *   ListenableFuture&lt;ListTopicsPagedResponse&gt; future = publisherApi.listTopicsPagedCallable().futureCall(request);
+   *   ListenableFuture&lt;ListTopicsPagedResponse&gt; future = publisherClient.listTopicsPagedCallable().futureCall(request);
    *   // Do something
    *   for (Topic element : future.get().iterateAllElements()) {
    *     // doThingsWith(element);
@@ -543,13 +546,13 @@ public class PublisherApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (PublisherApi publisherApi = PublisherApi.create()) {
+   * try (PublisherClient publisherClient = PublisherClient.create()) {
    *   ProjectName project = ProjectName.create("[PROJECT]");
    *   ListTopicsRequest request = ListTopicsRequest.newBuilder()
    *     .setProjectWithProjectName(project)
    *     .build();
    *   while (true) {
-   *     ListTopicsResponse response = publisherApi.listTopicsCallable().call(request);
+   *     ListTopicsResponse response = publisherClient.listTopicsCallable().call(request);
    *     for (Topic element : response.getTopicsList()) {
    *       // doThingsWith(element);
    *     }
@@ -574,9 +577,9 @@ public class PublisherApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (PublisherApi publisherApi = PublisherApi.create()) {
+   * try (PublisherClient publisherClient = PublisherClient.create()) {
    *   TopicName topic = TopicName.create("[PROJECT]", "[TOPIC]");
-   *   for (SubscriptionName element : publisherApi.listTopicSubscriptions(topic).iterateAllAsSubscriptionName()) {
+   *   for (SubscriptionName element : publisherClient.listTopicSubscriptions(topic).iterateAllAsSubscriptionName()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -598,12 +601,12 @@ public class PublisherApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (PublisherApi publisherApi = PublisherApi.create()) {
+   * try (PublisherClient publisherClient = PublisherClient.create()) {
    *   TopicName topic = TopicName.create("[PROJECT]", "[TOPIC]");
    *   ListTopicSubscriptionsRequest request = ListTopicSubscriptionsRequest.newBuilder()
    *     .setTopicWithTopicName(topic)
    *     .build();
-   *   for (SubscriptionName element : publisherApi.listTopicSubscriptions(request).iterateAllAsSubscriptionName()) {
+   *   for (SubscriptionName element : publisherClient.listTopicSubscriptions(request).iterateAllAsSubscriptionName()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -624,12 +627,12 @@ public class PublisherApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (PublisherApi publisherApi = PublisherApi.create()) {
+   * try (PublisherClient publisherClient = PublisherClient.create()) {
    *   TopicName topic = TopicName.create("[PROJECT]", "[TOPIC]");
    *   ListTopicSubscriptionsRequest request = ListTopicSubscriptionsRequest.newBuilder()
    *     .setTopicWithTopicName(topic)
    *     .build();
-   *   ListenableFuture&lt;ListTopicSubscriptionsPagedResponse&gt; future = publisherApi.listTopicSubscriptionsPagedCallable().futureCall(request);
+   *   ListenableFuture&lt;ListTopicSubscriptionsPagedResponse&gt; future = publisherClient.listTopicSubscriptionsPagedCallable().futureCall(request);
    *   // Do something
    *   for (SubscriptionName element : future.get().iterateAllAsSubscriptionName()) {
    *     // doThingsWith(element);
@@ -649,13 +652,13 @@ public class PublisherApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (PublisherApi publisherApi = PublisherApi.create()) {
+   * try (PublisherClient publisherClient = PublisherClient.create()) {
    *   TopicName topic = TopicName.create("[PROJECT]", "[TOPIC]");
    *   ListTopicSubscriptionsRequest request = ListTopicSubscriptionsRequest.newBuilder()
    *     .setTopicWithTopicName(topic)
    *     .build();
    *   while (true) {
-   *     ListTopicSubscriptionsResponse response = publisherApi.listTopicSubscriptionsCallable().call(request);
+   *     ListTopicSubscriptionsResponse response = publisherClient.listTopicSubscriptionsCallable().call(request);
    *     for (SubscriptionName element : response.getSubscriptionsListAsSubscriptionNameList()) {
    *       // doThingsWith(element);
    *     }
@@ -684,9 +687,9 @@ public class PublisherApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (PublisherApi publisherApi = PublisherApi.create()) {
+   * try (PublisherClient publisherClient = PublisherClient.create()) {
    *   TopicName topic = TopicName.create("[PROJECT]", "[TOPIC]");
-   *   publisherApi.deleteTopic(topic);
+   *   publisherClient.deleteTopic(topic);
    * }
    * </code></pre>
    *
@@ -710,12 +713,12 @@ public class PublisherApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (PublisherApi publisherApi = PublisherApi.create()) {
+   * try (PublisherClient publisherClient = PublisherClient.create()) {
    *   TopicName topic = TopicName.create("[PROJECT]", "[TOPIC]");
    *   DeleteTopicRequest request = DeleteTopicRequest.newBuilder()
    *     .setTopicWithTopicName(topic)
    *     .build();
-   *   publisherApi.deleteTopic(request);
+   *   publisherClient.deleteTopic(request);
    * }
    * </code></pre>
    *
@@ -736,12 +739,12 @@ public class PublisherApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (PublisherApi publisherApi = PublisherApi.create()) {
+   * try (PublisherClient publisherClient = PublisherClient.create()) {
    *   TopicName topic = TopicName.create("[PROJECT]", "[TOPIC]");
    *   DeleteTopicRequest request = DeleteTopicRequest.newBuilder()
    *     .setTopicWithTopicName(topic)
    *     .build();
-   *   ListenableFuture&lt;Void&gt; future = publisherApi.deleteTopicCallable().futureCall(request);
+   *   ListenableFuture&lt;Void&gt; future = publisherClient.deleteTopicCallable().futureCall(request);
    *   // Do something
    *   future.get();
    * }
@@ -758,10 +761,10 @@ public class PublisherApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (PublisherApi publisherApi = PublisherApi.create()) {
-   *   String formattedResource = PublisherApi.formatTopicName("[PROJECT]", "[TOPIC]");
+   * try (PublisherClient publisherClient = PublisherClient.create()) {
+   *   String formattedResource = PublisherClient.formatTopicName("[PROJECT]", "[TOPIC]");
    *   Policy policy = Policy.newBuilder().build();
-   *   Policy response = publisherApi.setIamPolicy(formattedResource, policy);
+   *   Policy response = publisherClient.setIamPolicy(formattedResource, policy);
    * }
    * </code></pre>
    *
@@ -787,14 +790,14 @@ public class PublisherApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (PublisherApi publisherApi = PublisherApi.create()) {
-   *   String formattedResource = PublisherApi.formatTopicName("[PROJECT]", "[TOPIC]");
+   * try (PublisherClient publisherClient = PublisherClient.create()) {
+   *   String formattedResource = PublisherClient.formatTopicName("[PROJECT]", "[TOPIC]");
    *   Policy policy = Policy.newBuilder().build();
    *   SetIamPolicyRequest request = SetIamPolicyRequest.newBuilder()
    *     .setResource(formattedResource)
    *     .setPolicy(policy)
    *     .build();
-   *   Policy response = publisherApi.setIamPolicy(request);
+   *   Policy response = publisherClient.setIamPolicy(request);
    * }
    * </code></pre>
    *
@@ -812,14 +815,14 @@ public class PublisherApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (PublisherApi publisherApi = PublisherApi.create()) {
-   *   String formattedResource = PublisherApi.formatTopicName("[PROJECT]", "[TOPIC]");
+   * try (PublisherClient publisherClient = PublisherClient.create()) {
+   *   String formattedResource = PublisherClient.formatTopicName("[PROJECT]", "[TOPIC]");
    *   Policy policy = Policy.newBuilder().build();
    *   SetIamPolicyRequest request = SetIamPolicyRequest.newBuilder()
    *     .setResource(formattedResource)
    *     .setPolicy(policy)
    *     .build();
-   *   ListenableFuture&lt;Policy&gt; future = publisherApi.setIamPolicyCallable().futureCall(request);
+   *   ListenableFuture&lt;Policy&gt; future = publisherClient.setIamPolicyCallable().futureCall(request);
    *   // Do something
    *   Policy response = future.get();
    * }
@@ -837,9 +840,9 @@ public class PublisherApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (PublisherApi publisherApi = PublisherApi.create()) {
-   *   String formattedResource = PublisherApi.formatTopicName("[PROJECT]", "[TOPIC]");
-   *   Policy response = publisherApi.getIamPolicy(formattedResource);
+   * try (PublisherClient publisherClient = PublisherClient.create()) {
+   *   String formattedResource = PublisherClient.formatTopicName("[PROJECT]", "[TOPIC]");
+   *   Policy response = publisherClient.getIamPolicy(formattedResource);
    * }
    * </code></pre>
    *
@@ -862,12 +865,12 @@ public class PublisherApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (PublisherApi publisherApi = PublisherApi.create()) {
-   *   String formattedResource = PublisherApi.formatTopicName("[PROJECT]", "[TOPIC]");
+   * try (PublisherClient publisherClient = PublisherClient.create()) {
+   *   String formattedResource = PublisherClient.formatTopicName("[PROJECT]", "[TOPIC]");
    *   GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder()
    *     .setResource(formattedResource)
    *     .build();
-   *   Policy response = publisherApi.getIamPolicy(request);
+   *   Policy response = publisherClient.getIamPolicy(request);
    * }
    * </code></pre>
    *
@@ -886,12 +889,12 @@ public class PublisherApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (PublisherApi publisherApi = PublisherApi.create()) {
-   *   String formattedResource = PublisherApi.formatTopicName("[PROJECT]", "[TOPIC]");
+   * try (PublisherClient publisherClient = PublisherClient.create()) {
+   *   String formattedResource = PublisherClient.formatTopicName("[PROJECT]", "[TOPIC]");
    *   GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder()
    *     .setResource(formattedResource)
    *     .build();
-   *   ListenableFuture&lt;Policy&gt; future = publisherApi.getIamPolicyCallable().futureCall(request);
+   *   ListenableFuture&lt;Policy&gt; future = publisherClient.getIamPolicyCallable().futureCall(request);
    *   // Do something
    *   Policy response = future.get();
    * }
@@ -908,10 +911,10 @@ public class PublisherApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (PublisherApi publisherApi = PublisherApi.create()) {
-   *   String formattedResource = PublisherApi.formatTopicName("[PROJECT]", "[TOPIC]");
+   * try (PublisherClient publisherClient = PublisherClient.create()) {
+   *   String formattedResource = PublisherClient.formatTopicName("[PROJECT]", "[TOPIC]");
    *   List&lt;String&gt; permissions = new ArrayList&lt;&gt;();
-   *   TestIamPermissionsResponse response = publisherApi.testIamPermissions(formattedResource, permissions);
+   *   TestIamPermissionsResponse response = publisherClient.testIamPermissions(formattedResource, permissions);
    * }
    * </code></pre>
    *
@@ -941,14 +944,14 @@ public class PublisherApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (PublisherApi publisherApi = PublisherApi.create()) {
-   *   String formattedResource = PublisherApi.formatTopicName("[PROJECT]", "[TOPIC]");
+   * try (PublisherClient publisherClient = PublisherClient.create()) {
+   *   String formattedResource = PublisherClient.formatTopicName("[PROJECT]", "[TOPIC]");
    *   List&lt;String&gt; permissions = new ArrayList&lt;&gt;();
    *   TestIamPermissionsRequest request = TestIamPermissionsRequest.newBuilder()
    *     .setResource(formattedResource)
    *     .addAllPermissions(permissions)
    *     .build();
-   *   TestIamPermissionsResponse response = publisherApi.testIamPermissions(request);
+   *   TestIamPermissionsResponse response = publisherClient.testIamPermissions(request);
    * }
    * </code></pre>
    *
@@ -966,14 +969,14 @@ public class PublisherApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (PublisherApi publisherApi = PublisherApi.create()) {
-   *   String formattedResource = PublisherApi.formatTopicName("[PROJECT]", "[TOPIC]");
+   * try (PublisherClient publisherClient = PublisherClient.create()) {
+   *   String formattedResource = PublisherClient.formatTopicName("[PROJECT]", "[TOPIC]");
    *   List&lt;String&gt; permissions = new ArrayList&lt;&gt;();
    *   TestIamPermissionsRequest request = TestIamPermissionsRequest.newBuilder()
    *     .setResource(formattedResource)
    *     .addAllPermissions(permissions)
    *     .build();
-   *   ListenableFuture&lt;TestIamPermissionsResponse&gt; future = publisherApi.testIamPermissionsCallable().futureCall(request);
+   *   ListenableFuture&lt;TestIamPermissionsResponse&gt; future = publisherClient.testIamPermissionsCallable().futureCall(request);
    *   // Do something
    *   TestIamPermissionsResponse response = future.get();
    * }

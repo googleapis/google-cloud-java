@@ -21,12 +21,14 @@ import com.google.api.gax.protobuf.PathTemplate;
 import com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup;
 import com.google.devtools.clouderrorreporting.v1beta1.GetGroupRequest;
 import com.google.devtools.clouderrorreporting.v1beta1.UpdateGroupRequest;
+import com.google.protobuf.ExperimentalApi;
 import io.grpc.ManagedChannel;
 import java.io.Closeable;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ScheduledExecutorService;
+import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND SERVICE
 /**
@@ -37,15 +39,16 @@ import java.util.concurrent.ScheduledExecutorService;
  *
  * <pre>
  * <code>
- * try (ErrorGroupServiceApi errorGroupServiceApi = ErrorGroupServiceApi.create()) {
- *   String formattedGroupName = ErrorGroupServiceApi.formatGroupName("[PROJECT]", "[GROUP]");
- *   ErrorGroup response = errorGroupServiceApi.getGroup(formattedGroupName);
+ * try (ErrorGroupServiceClient errorGroupServiceClient = ErrorGroupServiceClient.create()) {
+ *   String formattedGroupName = ErrorGroupServiceClient.formatGroupName("[PROJECT]", "[GROUP]");
+ *   ErrorGroup response = errorGroupServiceClient.getGroup(formattedGroupName);
  * }
  * </code>
  * </pre>
  *
- * <p>Note: close() needs to be called on the errorGroupServiceApi object to clean up resources such
- * as threads. In the example above, try-with-resources is used, which automatically calls close().
+ * <p>Note: close() needs to be called on the errorGroupServiceClient object to clean up resources
+ * such as threads. In the example above, try-with-resources is used, which automatically calls
+ * close().
  *
  * <p>The surface of this class includes several types of Java methods for each of the API's
  * methods:
@@ -78,13 +81,14 @@ import java.util.concurrent.ScheduledExecutorService;
  *         .build();
  * ErrorGroupServiceSettings errorGroupServiceSettings =
  *     ErrorGroupServiceSettings.defaultBuilder().setChannelProvider(channelProvider).build();
- * ErrorGroupServiceApi errorGroupServiceApi =
- *     ErrorGroupServiceApi.create(errorGroupServiceSettings);
+ * ErrorGroupServiceClient errorGroupServiceClient =
+ *     ErrorGroupServiceClient.create(errorGroupServiceSettings);
  * </code>
  * </pre>
  */
-@javax.annotation.Generated("by GAPIC")
-public class ErrorGroupServiceApi implements AutoCloseable {
+@Generated("by GAPIC")
+@ExperimentalApi
+public class ErrorGroupServiceClient implements AutoCloseable {
   private final ErrorGroupServiceSettings settings;
   private final ScheduledExecutorService executor;
   private final ManagedChannel channel;
@@ -113,25 +117,26 @@ public class ErrorGroupServiceApi implements AutoCloseable {
     return GROUP_PATH_TEMPLATE.parse(groupName).get("group");
   }
 
-  /** Constructs an instance of ErrorGroupServiceApi with default settings. */
-  public static final ErrorGroupServiceApi create() throws IOException {
+  /** Constructs an instance of ErrorGroupServiceClient with default settings. */
+  public static final ErrorGroupServiceClient create() throws IOException {
     return create(ErrorGroupServiceSettings.defaultBuilder().build());
   }
 
   /**
-   * Constructs an instance of ErrorGroupServiceApi, using the given settings. The channels are
+   * Constructs an instance of ErrorGroupServiceClient, using the given settings. The channels are
    * created based on the settings passed in, or defaults for any settings that are not set.
    */
-  public static final ErrorGroupServiceApi create(ErrorGroupServiceSettings settings)
+  public static final ErrorGroupServiceClient create(ErrorGroupServiceSettings settings)
       throws IOException {
-    return new ErrorGroupServiceApi(settings);
+    return new ErrorGroupServiceClient(settings);
   }
 
   /**
-   * Constructs an instance of ErrorGroupServiceApi, using the given settings. This is protected so
-   * that it easy to make a subclass, but otherwise, the static factory methods should be preferred.
+   * Constructs an instance of ErrorGroupServiceClient, using the given settings. This is protected
+   * so that it easy to make a subclass, but otherwise, the static factory methods should be
+   * preferred.
    */
-  protected ErrorGroupServiceApi(ErrorGroupServiceSettings settings) throws IOException {
+  protected ErrorGroupServiceClient(ErrorGroupServiceSettings settings) throws IOException {
     this.settings = settings;
     ChannelAndExecutor channelAndExecutor = settings.getChannelAndExecutor();
     this.executor = channelAndExecutor.getExecutor();
@@ -173,9 +178,9 @@ public class ErrorGroupServiceApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (ErrorGroupServiceApi errorGroupServiceApi = ErrorGroupServiceApi.create()) {
-   *   String formattedGroupName = ErrorGroupServiceApi.formatGroupName("[PROJECT]", "[GROUP]");
-   *   ErrorGroup response = errorGroupServiceApi.getGroup(formattedGroupName);
+   * try (ErrorGroupServiceClient errorGroupServiceClient = ErrorGroupServiceClient.create()) {
+   *   String formattedGroupName = ErrorGroupServiceClient.formatGroupName("[PROJECT]", "[GROUP]");
+   *   ErrorGroup response = errorGroupServiceClient.getGroup(formattedGroupName);
    * }
    * </code></pre>
    *
@@ -200,12 +205,12 @@ public class ErrorGroupServiceApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (ErrorGroupServiceApi errorGroupServiceApi = ErrorGroupServiceApi.create()) {
-   *   String formattedGroupName = ErrorGroupServiceApi.formatGroupName("[PROJECT]", "[GROUP]");
+   * try (ErrorGroupServiceClient errorGroupServiceClient = ErrorGroupServiceClient.create()) {
+   *   String formattedGroupName = ErrorGroupServiceClient.formatGroupName("[PROJECT]", "[GROUP]");
    *   GetGroupRequest request = GetGroupRequest.newBuilder()
    *     .setGroupName(formattedGroupName)
    *     .build();
-   *   ErrorGroup response = errorGroupServiceApi.getGroup(request);
+   *   ErrorGroup response = errorGroupServiceClient.getGroup(request);
    * }
    * </code></pre>
    *
@@ -223,12 +228,12 @@ public class ErrorGroupServiceApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (ErrorGroupServiceApi errorGroupServiceApi = ErrorGroupServiceApi.create()) {
-   *   String formattedGroupName = ErrorGroupServiceApi.formatGroupName("[PROJECT]", "[GROUP]");
+   * try (ErrorGroupServiceClient errorGroupServiceClient = ErrorGroupServiceClient.create()) {
+   *   String formattedGroupName = ErrorGroupServiceClient.formatGroupName("[PROJECT]", "[GROUP]");
    *   GetGroupRequest request = GetGroupRequest.newBuilder()
    *     .setGroupName(formattedGroupName)
    *     .build();
-   *   ListenableFuture&lt;ErrorGroup&gt; future = errorGroupServiceApi.getGroupCallable().futureCall(request);
+   *   ListenableFuture&lt;ErrorGroup&gt; future = errorGroupServiceClient.getGroupCallable().futureCall(request);
    *   // Do something
    *   ErrorGroup response = future.get();
    * }
@@ -245,9 +250,9 @@ public class ErrorGroupServiceApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (ErrorGroupServiceApi errorGroupServiceApi = ErrorGroupServiceApi.create()) {
+   * try (ErrorGroupServiceClient errorGroupServiceClient = ErrorGroupServiceClient.create()) {
    *   ErrorGroup group = ErrorGroup.newBuilder().build();
-   *   ErrorGroup response = errorGroupServiceApi.updateGroup(group);
+   *   ErrorGroup response = errorGroupServiceClient.updateGroup(group);
    * }
    * </code></pre>
    *
@@ -267,12 +272,12 @@ public class ErrorGroupServiceApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (ErrorGroupServiceApi errorGroupServiceApi = ErrorGroupServiceApi.create()) {
+   * try (ErrorGroupServiceClient errorGroupServiceClient = ErrorGroupServiceClient.create()) {
    *   ErrorGroup group = ErrorGroup.newBuilder().build();
    *   UpdateGroupRequest request = UpdateGroupRequest.newBuilder()
    *     .setGroup(group)
    *     .build();
-   *   ErrorGroup response = errorGroupServiceApi.updateGroup(request);
+   *   ErrorGroup response = errorGroupServiceClient.updateGroup(request);
    * }
    * </code></pre>
    *
@@ -290,12 +295,12 @@ public class ErrorGroupServiceApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (ErrorGroupServiceApi errorGroupServiceApi = ErrorGroupServiceApi.create()) {
+   * try (ErrorGroupServiceClient errorGroupServiceClient = ErrorGroupServiceClient.create()) {
    *   ErrorGroup group = ErrorGroup.newBuilder().build();
    *   UpdateGroupRequest request = UpdateGroupRequest.newBuilder()
    *     .setGroup(group)
    *     .build();
-   *   ListenableFuture&lt;ErrorGroup&gt; future = errorGroupServiceApi.updateGroupCallable().futureCall(request);
+   *   ListenableFuture&lt;ErrorGroup&gt; future = errorGroupServiceClient.updateGroupCallable().futureCall(request);
    *   // Do something
    *   ErrorGroup response = future.get();
    * }

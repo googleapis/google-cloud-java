@@ -18,10 +18,10 @@ package com.google.cloud.errorreporting.spi.v1beta1;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.RetrySettings;
 import com.google.api.gax.grpc.ChannelProvider;
+import com.google.api.gax.grpc.ClientSettings;
 import com.google.api.gax.grpc.ExecutorProvider;
 import com.google.api.gax.grpc.InstantiatingChannelProvider;
 import com.google.api.gax.grpc.InstantiatingExecutorProvider;
-import com.google.api.gax.grpc.ServiceApiSettings;
 import com.google.api.gax.grpc.SimpleCallSettings;
 import com.google.api.gax.grpc.UnaryCallSettings;
 import com.google.common.collect.ImmutableList;
@@ -33,13 +33,15 @@ import com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup;
 import com.google.devtools.clouderrorreporting.v1beta1.ErrorGroupServiceGrpc;
 import com.google.devtools.clouderrorreporting.v1beta1.GetGroupRequest;
 import com.google.devtools.clouderrorreporting.v1beta1.UpdateGroupRequest;
+import com.google.protobuf.ExperimentalApi;
 import io.grpc.Status;
 import java.io.IOException;
+import javax.annotation.Generated;
 import org.joda.time.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 /**
- * Settings class to configure an instance of {@link ErrorGroupServiceApi}.
+ * Settings class to configure an instance of {@link ErrorGroupServiceClient}.
  *
  * <p>The default instance has everything set to sensible defaults:
  *
@@ -64,8 +66,9 @@ import org.joda.time.Duration;
  * </code>
  * </pre>
  */
-@javax.annotation.Generated("by GAPIC")
-public class ErrorGroupServiceSettings extends ServiceApiSettings {
+@Generated("by GAPIC")
+@ExperimentalApi
+public class ErrorGroupServiceSettings extends ClientSettings {
   /** The default address of the service. */
   private static final String DEFAULT_SERVICE_ADDRESS = "clouderrorreporting.googleapis.com";
 
@@ -145,7 +148,7 @@ public class ErrorGroupServiceSettings extends ServiceApiSettings {
   }
 
   /** Builder for ErrorGroupServiceSettings. */
-  public static class Builder extends ServiceApiSettings.Builder {
+  public static class Builder extends ClientSettings.Builder {
     private final ImmutableList<UnaryCallSettings.Builder> unaryMethodSettingsBuilders;
 
     private final SimpleCallSettings.Builder<GetGroupRequest, ErrorGroup> getGroupSettings;
@@ -238,9 +241,9 @@ public class ErrorGroupServiceSettings extends ServiceApiSettings {
      *
      * <p>Note: This method does not support applying settings to streaming methods.
      */
-    public Builder applyToAllApiMethods(UnaryCallSettings.Builder apiCallSettings)
+    public Builder applyToAllUnaryMethods(UnaryCallSettings.Builder unaryCallSettings)
         throws Exception {
-      super.applyToAllApiMethods(unaryMethodSettingsBuilders, apiCallSettings);
+      super.applyToAllUnaryMethods(unaryMethodSettingsBuilders, unaryCallSettings);
       return this;
     }
 

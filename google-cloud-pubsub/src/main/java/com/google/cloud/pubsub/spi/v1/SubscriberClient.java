@@ -26,6 +26,7 @@ import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.protobuf.Empty;
+import com.google.protobuf.ExperimentalApi;
 import com.google.pubsub.v1.AcknowledgeRequest;
 import com.google.pubsub.v1.DeleteSubscriptionRequest;
 import com.google.pubsub.v1.GetSubscriptionRequest;
@@ -47,6 +48,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ScheduledExecutorService;
+import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND SERVICE
 /**
@@ -58,17 +60,17 @@ import java.util.concurrent.ScheduledExecutorService;
  *
  * <pre>
  * <code>
- * try (SubscriberApi subscriberApi = SubscriberApi.create()) {
+ * try (SubscriberClient subscriberClient = SubscriberClient.create()) {
  *   SubscriptionName name = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]");
  *   TopicName topic = TopicName.create("[PROJECT]", "[TOPIC]");
  *   PushConfig pushConfig = PushConfig.newBuilder().build();
  *   int ackDeadlineSeconds = 0;
- *   Subscription response = subscriberApi.createSubscription(name, topic, pushConfig, ackDeadlineSeconds);
+ *   Subscription response = subscriberClient.createSubscription(name, topic, pushConfig, ackDeadlineSeconds);
  * }
  * </code>
  * </pre>
  *
- * <p>Note: close() needs to be called on the subscriberApi object to clean up resources such as
+ * <p>Note: close() needs to be called on the subscriberClient object to clean up resources such as
  * threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <p>The surface of this class includes several types of Java methods for each of the API's
@@ -102,13 +104,14 @@ import java.util.concurrent.ScheduledExecutorService;
  *         .build();
  * SubscriberSettings subscriberSettings =
  *     SubscriberSettings.defaultBuilder().setChannelProvider(channelProvider).build();
- * SubscriberApi subscriberApi =
- *     SubscriberApi.create(subscriberSettings);
+ * SubscriberClient subscriberClient =
+ *     SubscriberClient.create(subscriberSettings);
  * </code>
  * </pre>
  */
-@javax.annotation.Generated("by GAPIC")
-public class SubscriberApi implements AutoCloseable {
+@Generated("by GAPIC")
+@ExperimentalApi
+public class SubscriberClient implements AutoCloseable {
   private final SubscriberSettings settings;
   private final ScheduledExecutorService executor;
   private final ManagedChannel channel;
@@ -189,24 +192,24 @@ public class SubscriberApi implements AutoCloseable {
     return TOPIC_PATH_TEMPLATE.parse(topicName).get("topic");
   }
 
-  /** Constructs an instance of SubscriberApi with default settings. */
-  public static final SubscriberApi create() throws IOException {
+  /** Constructs an instance of SubscriberClient with default settings. */
+  public static final SubscriberClient create() throws IOException {
     return create(SubscriberSettings.defaultBuilder().build());
   }
 
   /**
-   * Constructs an instance of SubscriberApi, using the given settings. The channels are created
+   * Constructs an instance of SubscriberClient, using the given settings. The channels are created
    * based on the settings passed in, or defaults for any settings that are not set.
    */
-  public static final SubscriberApi create(SubscriberSettings settings) throws IOException {
-    return new SubscriberApi(settings);
+  public static final SubscriberClient create(SubscriberSettings settings) throws IOException {
+    return new SubscriberClient(settings);
   }
 
   /**
-   * Constructs an instance of SubscriberApi, using the given settings. This is protected so that it
-   * easy to make a subclass, but otherwise, the static factory methods should be preferred.
+   * Constructs an instance of SubscriberClient, using the given settings. This is protected so that
+   * it easy to make a subclass, but otherwise, the static factory methods should be preferred.
    */
-  protected SubscriberApi(SubscriberSettings settings) throws IOException {
+  protected SubscriberClient(SubscriberSettings settings) throws IOException {
     this.settings = settings;
     ChannelAndExecutor channelAndExecutor = settings.getChannelAndExecutor();
     this.executor = channelAndExecutor.getExecutor();
@@ -273,12 +276,12 @@ public class SubscriberApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (SubscriberApi subscriberApi = SubscriberApi.create()) {
+   * try (SubscriberClient subscriberClient = SubscriberClient.create()) {
    *   SubscriptionName name = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]");
    *   TopicName topic = TopicName.create("[PROJECT]", "[TOPIC]");
    *   PushConfig pushConfig = PushConfig.newBuilder().build();
    *   int ackDeadlineSeconds = 0;
-   *   Subscription response = subscriberApi.createSubscription(name, topic, pushConfig, ackDeadlineSeconds);
+   *   Subscription response = subscriberClient.createSubscription(name, topic, pushConfig, ackDeadlineSeconds);
    * }
    * </code></pre>
    *
@@ -332,14 +335,14 @@ public class SubscriberApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (SubscriberApi subscriberApi = SubscriberApi.create()) {
+   * try (SubscriberClient subscriberClient = SubscriberClient.create()) {
    *   SubscriptionName name = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]");
    *   TopicNameOneof topic = TopicNameOneof.from(TopicName.create("[PROJECT]", "[TOPIC]"));
    *   Subscription request = Subscription.newBuilder()
    *     .setNameWithSubscriptionName(name)
    *     .setTopicWithTopicName(topic)
    *     .build();
-   *   Subscription response = subscriberApi.createSubscription(request);
+   *   Subscription response = subscriberClient.createSubscription(request);
    * }
    * </code></pre>
    *
@@ -362,14 +365,14 @@ public class SubscriberApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (SubscriberApi subscriberApi = SubscriberApi.create()) {
+   * try (SubscriberClient subscriberClient = SubscriberClient.create()) {
    *   SubscriptionName name = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]");
    *   TopicNameOneof topic = TopicNameOneof.from(TopicName.create("[PROJECT]", "[TOPIC]"));
    *   Subscription request = Subscription.newBuilder()
    *     .setNameWithSubscriptionName(name)
    *     .setTopicWithTopicName(topic)
    *     .build();
-   *   ListenableFuture&lt;Subscription&gt; future = subscriberApi.createSubscriptionCallable().futureCall(request);
+   *   ListenableFuture&lt;Subscription&gt; future = subscriberClient.createSubscriptionCallable().futureCall(request);
    *   // Do something
    *   Subscription response = future.get();
    * }
@@ -386,9 +389,9 @@ public class SubscriberApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (SubscriberApi subscriberApi = SubscriberApi.create()) {
+   * try (SubscriberClient subscriberClient = SubscriberClient.create()) {
    *   SubscriptionName subscription = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]");
-   *   Subscription response = subscriberApi.getSubscription(subscription);
+   *   Subscription response = subscriberClient.getSubscription(subscription);
    * }
    * </code></pre>
    *
@@ -411,12 +414,12 @@ public class SubscriberApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (SubscriberApi subscriberApi = SubscriberApi.create()) {
+   * try (SubscriberClient subscriberClient = SubscriberClient.create()) {
    *   SubscriptionName subscription = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]");
    *   GetSubscriptionRequest request = GetSubscriptionRequest.newBuilder()
    *     .setSubscriptionWithSubscriptionName(subscription)
    *     .build();
-   *   Subscription response = subscriberApi.getSubscription(request);
+   *   Subscription response = subscriberClient.getSubscription(request);
    * }
    * </code></pre>
    *
@@ -434,12 +437,12 @@ public class SubscriberApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (SubscriberApi subscriberApi = SubscriberApi.create()) {
+   * try (SubscriberClient subscriberClient = SubscriberClient.create()) {
    *   SubscriptionName subscription = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]");
    *   GetSubscriptionRequest request = GetSubscriptionRequest.newBuilder()
    *     .setSubscriptionWithSubscriptionName(subscription)
    *     .build();
-   *   ListenableFuture&lt;Subscription&gt; future = subscriberApi.getSubscriptionCallable().futureCall(request);
+   *   ListenableFuture&lt;Subscription&gt; future = subscriberClient.getSubscriptionCallable().futureCall(request);
    *   // Do something
    *   Subscription response = future.get();
    * }
@@ -456,9 +459,9 @@ public class SubscriberApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (SubscriberApi subscriberApi = SubscriberApi.create()) {
+   * try (SubscriberClient subscriberClient = SubscriberClient.create()) {
    *   ProjectName project = ProjectName.create("[PROJECT]");
-   *   for (Subscription element : subscriberApi.listSubscriptions(project).iterateAllElements()) {
+   *   for (Subscription element : subscriberClient.listSubscriptions(project).iterateAllElements()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -480,12 +483,12 @@ public class SubscriberApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (SubscriberApi subscriberApi = SubscriberApi.create()) {
+   * try (SubscriberClient subscriberClient = SubscriberClient.create()) {
    *   ProjectName project = ProjectName.create("[PROJECT]");
    *   ListSubscriptionsRequest request = ListSubscriptionsRequest.newBuilder()
    *     .setProjectWithProjectName(project)
    *     .build();
-   *   for (Subscription element : subscriberApi.listSubscriptions(request).iterateAllElements()) {
+   *   for (Subscription element : subscriberClient.listSubscriptions(request).iterateAllElements()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -505,12 +508,12 @@ public class SubscriberApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (SubscriberApi subscriberApi = SubscriberApi.create()) {
+   * try (SubscriberClient subscriberClient = SubscriberClient.create()) {
    *   ProjectName project = ProjectName.create("[PROJECT]");
    *   ListSubscriptionsRequest request = ListSubscriptionsRequest.newBuilder()
    *     .setProjectWithProjectName(project)
    *     .build();
-   *   ListenableFuture&lt;ListSubscriptionsPagedResponse&gt; future = subscriberApi.listSubscriptionsPagedCallable().futureCall(request);
+   *   ListenableFuture&lt;ListSubscriptionsPagedResponse&gt; future = subscriberClient.listSubscriptionsPagedCallable().futureCall(request);
    *   // Do something
    *   for (Subscription element : future.get().iterateAllElements()) {
    *     // doThingsWith(element);
@@ -530,13 +533,13 @@ public class SubscriberApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (SubscriberApi subscriberApi = SubscriberApi.create()) {
+   * try (SubscriberClient subscriberClient = SubscriberClient.create()) {
    *   ProjectName project = ProjectName.create("[PROJECT]");
    *   ListSubscriptionsRequest request = ListSubscriptionsRequest.newBuilder()
    *     .setProjectWithProjectName(project)
    *     .build();
    *   while (true) {
-   *     ListSubscriptionsResponse response = subscriberApi.listSubscriptionsCallable().call(request);
+   *     ListSubscriptionsResponse response = subscriberClient.listSubscriptionsCallable().call(request);
    *     for (Subscription element : response.getSubscriptionsList()) {
    *       // doThingsWith(element);
    *     }
@@ -565,9 +568,9 @@ public class SubscriberApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (SubscriberApi subscriberApi = SubscriberApi.create()) {
+   * try (SubscriberClient subscriberClient = SubscriberClient.create()) {
    *   SubscriptionName subscription = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]");
-   *   subscriberApi.deleteSubscription(subscription);
+   *   subscriberClient.deleteSubscription(subscription);
    * }
    * </code></pre>
    *
@@ -593,12 +596,12 @@ public class SubscriberApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (SubscriberApi subscriberApi = SubscriberApi.create()) {
+   * try (SubscriberClient subscriberClient = SubscriberClient.create()) {
    *   SubscriptionName subscription = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]");
    *   DeleteSubscriptionRequest request = DeleteSubscriptionRequest.newBuilder()
    *     .setSubscriptionWithSubscriptionName(subscription)
    *     .build();
-   *   subscriberApi.deleteSubscription(request);
+   *   subscriberClient.deleteSubscription(request);
    * }
    * </code></pre>
    *
@@ -619,12 +622,12 @@ public class SubscriberApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (SubscriberApi subscriberApi = SubscriberApi.create()) {
+   * try (SubscriberClient subscriberClient = SubscriberClient.create()) {
    *   SubscriptionName subscription = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]");
    *   DeleteSubscriptionRequest request = DeleteSubscriptionRequest.newBuilder()
    *     .setSubscriptionWithSubscriptionName(subscription)
    *     .build();
-   *   ListenableFuture&lt;Void&gt; future = subscriberApi.deleteSubscriptionCallable().futureCall(request);
+   *   ListenableFuture&lt;Void&gt; future = subscriberClient.deleteSubscriptionCallable().futureCall(request);
    *   // Do something
    *   future.get();
    * }
@@ -644,11 +647,11 @@ public class SubscriberApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (SubscriberApi subscriberApi = SubscriberApi.create()) {
+   * try (SubscriberClient subscriberClient = SubscriberClient.create()) {
    *   SubscriptionName subscription = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]");
    *   List&lt;String&gt; ackIds = new ArrayList&lt;&gt;();
    *   int ackDeadlineSeconds = 0;
-   *   subscriberApi.modifyAckDeadline(subscription, ackIds, ackDeadlineSeconds);
+   *   subscriberClient.modifyAckDeadline(subscription, ackIds, ackDeadlineSeconds);
    * }
    * </code></pre>
    *
@@ -682,7 +685,7 @@ public class SubscriberApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (SubscriberApi subscriberApi = SubscriberApi.create()) {
+   * try (SubscriberClient subscriberClient = SubscriberClient.create()) {
    *   SubscriptionName subscription = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]");
    *   List&lt;String&gt; ackIds = new ArrayList&lt;&gt;();
    *   int ackDeadlineSeconds = 0;
@@ -691,7 +694,7 @@ public class SubscriberApi implements AutoCloseable {
    *     .addAllAckIds(ackIds)
    *     .setAckDeadlineSeconds(ackDeadlineSeconds)
    *     .build();
-   *   subscriberApi.modifyAckDeadline(request);
+   *   subscriberClient.modifyAckDeadline(request);
    * }
    * </code></pre>
    *
@@ -712,7 +715,7 @@ public class SubscriberApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (SubscriberApi subscriberApi = SubscriberApi.create()) {
+   * try (SubscriberClient subscriberClient = SubscriberClient.create()) {
    *   SubscriptionName subscription = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]");
    *   List&lt;String&gt; ackIds = new ArrayList&lt;&gt;();
    *   int ackDeadlineSeconds = 0;
@@ -721,7 +724,7 @@ public class SubscriberApi implements AutoCloseable {
    *     .addAllAckIds(ackIds)
    *     .setAckDeadlineSeconds(ackDeadlineSeconds)
    *     .build();
-   *   ListenableFuture&lt;Void&gt; future = subscriberApi.modifyAckDeadlineCallable().futureCall(request);
+   *   ListenableFuture&lt;Void&gt; future = subscriberClient.modifyAckDeadlineCallable().futureCall(request);
    *   // Do something
    *   future.get();
    * }
@@ -742,10 +745,10 @@ public class SubscriberApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (SubscriberApi subscriberApi = SubscriberApi.create()) {
+   * try (SubscriberClient subscriberClient = SubscriberClient.create()) {
    *   SubscriptionName subscription = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]");
    *   List&lt;String&gt; ackIds = new ArrayList&lt;&gt;();
-   *   subscriberApi.acknowledge(subscription, ackIds);
+   *   subscriberClient.acknowledge(subscription, ackIds);
    * }
    * </code></pre>
    *
@@ -775,14 +778,14 @@ public class SubscriberApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (SubscriberApi subscriberApi = SubscriberApi.create()) {
+   * try (SubscriberClient subscriberClient = SubscriberClient.create()) {
    *   SubscriptionName subscription = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]");
    *   List&lt;String&gt; ackIds = new ArrayList&lt;&gt;();
    *   AcknowledgeRequest request = AcknowledgeRequest.newBuilder()
    *     .setSubscriptionWithSubscriptionName(subscription)
    *     .addAllAckIds(ackIds)
    *     .build();
-   *   subscriberApi.acknowledge(request);
+   *   subscriberClient.acknowledge(request);
    * }
    * </code></pre>
    *
@@ -804,14 +807,14 @@ public class SubscriberApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (SubscriberApi subscriberApi = SubscriberApi.create()) {
+   * try (SubscriberClient subscriberClient = SubscriberClient.create()) {
    *   SubscriptionName subscription = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]");
    *   List&lt;String&gt; ackIds = new ArrayList&lt;&gt;();
    *   AcknowledgeRequest request = AcknowledgeRequest.newBuilder()
    *     .setSubscriptionWithSubscriptionName(subscription)
    *     .addAllAckIds(ackIds)
    *     .build();
-   *   ListenableFuture&lt;Void&gt; future = subscriberApi.acknowledgeCallable().futureCall(request);
+   *   ListenableFuture&lt;Void&gt; future = subscriberClient.acknowledgeCallable().futureCall(request);
    *   // Do something
    *   future.get();
    * }
@@ -830,11 +833,11 @@ public class SubscriberApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (SubscriberApi subscriberApi = SubscriberApi.create()) {
+   * try (SubscriberClient subscriberClient = SubscriberClient.create()) {
    *   SubscriptionName subscription = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]");
    *   boolean returnImmediately = false;
    *   int maxMessages = 0;
-   *   PullResponse response = subscriberApi.pull(subscription, returnImmediately, maxMessages);
+   *   PullResponse response = subscriberClient.pull(subscription, returnImmediately, maxMessages);
    * }
    * </code></pre>
    *
@@ -868,14 +871,14 @@ public class SubscriberApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (SubscriberApi subscriberApi = SubscriberApi.create()) {
+   * try (SubscriberClient subscriberClient = SubscriberClient.create()) {
    *   SubscriptionName subscription = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]");
    *   int maxMessages = 0;
    *   PullRequest request = PullRequest.newBuilder()
    *     .setSubscriptionWithSubscriptionName(subscription)
    *     .setMaxMessages(maxMessages)
    *     .build();
-   *   PullResponse response = subscriberApi.pull(request);
+   *   PullResponse response = subscriberClient.pull(request);
    * }
    * </code></pre>
    *
@@ -895,14 +898,14 @@ public class SubscriberApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (SubscriberApi subscriberApi = SubscriberApi.create()) {
+   * try (SubscriberClient subscriberClient = SubscriberClient.create()) {
    *   SubscriptionName subscription = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]");
    *   int maxMessages = 0;
    *   PullRequest request = PullRequest.newBuilder()
    *     .setSubscriptionWithSubscriptionName(subscription)
    *     .setMaxMessages(maxMessages)
    *     .build();
-   *   ListenableFuture&lt;PullResponse&gt; future = subscriberApi.pullCallable().futureCall(request);
+   *   ListenableFuture&lt;PullResponse&gt; future = subscriberClient.pullCallable().futureCall(request);
    *   // Do something
    *   PullResponse response = future.get();
    * }
@@ -924,10 +927,10 @@ public class SubscriberApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (SubscriberApi subscriberApi = SubscriberApi.create()) {
+   * try (SubscriberClient subscriberClient = SubscriberClient.create()) {
    *   SubscriptionName subscription = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]");
    *   PushConfig pushConfig = PushConfig.newBuilder().build();
-   *   subscriberApi.modifyPushConfig(subscription, pushConfig);
+   *   subscriberClient.modifyPushConfig(subscription, pushConfig);
    * }
    * </code></pre>
    *
@@ -960,14 +963,14 @@ public class SubscriberApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (SubscriberApi subscriberApi = SubscriberApi.create()) {
+   * try (SubscriberClient subscriberClient = SubscriberClient.create()) {
    *   SubscriptionName subscription = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]");
    *   PushConfig pushConfig = PushConfig.newBuilder().build();
    *   ModifyPushConfigRequest request = ModifyPushConfigRequest.newBuilder()
    *     .setSubscriptionWithSubscriptionName(subscription)
    *     .setPushConfig(pushConfig)
    *     .build();
-   *   subscriberApi.modifyPushConfig(request);
+   *   subscriberClient.modifyPushConfig(request);
    * }
    * </code></pre>
    *
@@ -990,14 +993,14 @@ public class SubscriberApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (SubscriberApi subscriberApi = SubscriberApi.create()) {
+   * try (SubscriberClient subscriberClient = SubscriberClient.create()) {
    *   SubscriptionName subscription = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]");
    *   PushConfig pushConfig = PushConfig.newBuilder().build();
    *   ModifyPushConfigRequest request = ModifyPushConfigRequest.newBuilder()
    *     .setSubscriptionWithSubscriptionName(subscription)
    *     .setPushConfig(pushConfig)
    *     .build();
-   *   ListenableFuture&lt;Void&gt; future = subscriberApi.modifyPushConfigCallable().futureCall(request);
+   *   ListenableFuture&lt;Void&gt; future = subscriberClient.modifyPushConfigCallable().futureCall(request);
    *   // Do something
    *   future.get();
    * }
@@ -1014,10 +1017,10 @@ public class SubscriberApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (SubscriberApi subscriberApi = SubscriberApi.create()) {
-   *   String formattedResource = SubscriberApi.formatSubscriptionName("[PROJECT]", "[SUBSCRIPTION]");
+   * try (SubscriberClient subscriberClient = SubscriberClient.create()) {
+   *   String formattedResource = SubscriberClient.formatSubscriptionName("[PROJECT]", "[SUBSCRIPTION]");
    *   Policy policy = Policy.newBuilder().build();
-   *   Policy response = subscriberApi.setIamPolicy(formattedResource, policy);
+   *   Policy response = subscriberClient.setIamPolicy(formattedResource, policy);
    * }
    * </code></pre>
    *
@@ -1043,14 +1046,14 @@ public class SubscriberApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (SubscriberApi subscriberApi = SubscriberApi.create()) {
-   *   String formattedResource = SubscriberApi.formatSubscriptionName("[PROJECT]", "[SUBSCRIPTION]");
+   * try (SubscriberClient subscriberClient = SubscriberClient.create()) {
+   *   String formattedResource = SubscriberClient.formatSubscriptionName("[PROJECT]", "[SUBSCRIPTION]");
    *   Policy policy = Policy.newBuilder().build();
    *   SetIamPolicyRequest request = SetIamPolicyRequest.newBuilder()
    *     .setResource(formattedResource)
    *     .setPolicy(policy)
    *     .build();
-   *   Policy response = subscriberApi.setIamPolicy(request);
+   *   Policy response = subscriberClient.setIamPolicy(request);
    * }
    * </code></pre>
    *
@@ -1068,14 +1071,14 @@ public class SubscriberApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (SubscriberApi subscriberApi = SubscriberApi.create()) {
-   *   String formattedResource = SubscriberApi.formatSubscriptionName("[PROJECT]", "[SUBSCRIPTION]");
+   * try (SubscriberClient subscriberClient = SubscriberClient.create()) {
+   *   String formattedResource = SubscriberClient.formatSubscriptionName("[PROJECT]", "[SUBSCRIPTION]");
    *   Policy policy = Policy.newBuilder().build();
    *   SetIamPolicyRequest request = SetIamPolicyRequest.newBuilder()
    *     .setResource(formattedResource)
    *     .setPolicy(policy)
    *     .build();
-   *   ListenableFuture&lt;Policy&gt; future = subscriberApi.setIamPolicyCallable().futureCall(request);
+   *   ListenableFuture&lt;Policy&gt; future = subscriberClient.setIamPolicyCallable().futureCall(request);
    *   // Do something
    *   Policy response = future.get();
    * }
@@ -1093,9 +1096,9 @@ public class SubscriberApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (SubscriberApi subscriberApi = SubscriberApi.create()) {
-   *   String formattedResource = SubscriberApi.formatSubscriptionName("[PROJECT]", "[SUBSCRIPTION]");
-   *   Policy response = subscriberApi.getIamPolicy(formattedResource);
+   * try (SubscriberClient subscriberClient = SubscriberClient.create()) {
+   *   String formattedResource = SubscriberClient.formatSubscriptionName("[PROJECT]", "[SUBSCRIPTION]");
+   *   Policy response = subscriberClient.getIamPolicy(formattedResource);
    * }
    * </code></pre>
    *
@@ -1118,12 +1121,12 @@ public class SubscriberApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (SubscriberApi subscriberApi = SubscriberApi.create()) {
-   *   String formattedResource = SubscriberApi.formatSubscriptionName("[PROJECT]", "[SUBSCRIPTION]");
+   * try (SubscriberClient subscriberClient = SubscriberClient.create()) {
+   *   String formattedResource = SubscriberClient.formatSubscriptionName("[PROJECT]", "[SUBSCRIPTION]");
    *   GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder()
    *     .setResource(formattedResource)
    *     .build();
-   *   Policy response = subscriberApi.getIamPolicy(request);
+   *   Policy response = subscriberClient.getIamPolicy(request);
    * }
    * </code></pre>
    *
@@ -1142,12 +1145,12 @@ public class SubscriberApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (SubscriberApi subscriberApi = SubscriberApi.create()) {
-   *   String formattedResource = SubscriberApi.formatSubscriptionName("[PROJECT]", "[SUBSCRIPTION]");
+   * try (SubscriberClient subscriberClient = SubscriberClient.create()) {
+   *   String formattedResource = SubscriberClient.formatSubscriptionName("[PROJECT]", "[SUBSCRIPTION]");
    *   GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder()
    *     .setResource(formattedResource)
    *     .build();
-   *   ListenableFuture&lt;Policy&gt; future = subscriberApi.getIamPolicyCallable().futureCall(request);
+   *   ListenableFuture&lt;Policy&gt; future = subscriberClient.getIamPolicyCallable().futureCall(request);
    *   // Do something
    *   Policy response = future.get();
    * }
@@ -1164,10 +1167,10 @@ public class SubscriberApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (SubscriberApi subscriberApi = SubscriberApi.create()) {
-   *   String formattedResource = SubscriberApi.formatSubscriptionName("[PROJECT]", "[SUBSCRIPTION]");
+   * try (SubscriberClient subscriberClient = SubscriberClient.create()) {
+   *   String formattedResource = SubscriberClient.formatSubscriptionName("[PROJECT]", "[SUBSCRIPTION]");
    *   List&lt;String&gt; permissions = new ArrayList&lt;&gt;();
-   *   TestIamPermissionsResponse response = subscriberApi.testIamPermissions(formattedResource, permissions);
+   *   TestIamPermissionsResponse response = subscriberClient.testIamPermissions(formattedResource, permissions);
    * }
    * </code></pre>
    *
@@ -1197,14 +1200,14 @@ public class SubscriberApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (SubscriberApi subscriberApi = SubscriberApi.create()) {
-   *   String formattedResource = SubscriberApi.formatSubscriptionName("[PROJECT]", "[SUBSCRIPTION]");
+   * try (SubscriberClient subscriberClient = SubscriberClient.create()) {
+   *   String formattedResource = SubscriberClient.formatSubscriptionName("[PROJECT]", "[SUBSCRIPTION]");
    *   List&lt;String&gt; permissions = new ArrayList&lt;&gt;();
    *   TestIamPermissionsRequest request = TestIamPermissionsRequest.newBuilder()
    *     .setResource(formattedResource)
    *     .addAllPermissions(permissions)
    *     .build();
-   *   TestIamPermissionsResponse response = subscriberApi.testIamPermissions(request);
+   *   TestIamPermissionsResponse response = subscriberClient.testIamPermissions(request);
    * }
    * </code></pre>
    *
@@ -1222,14 +1225,14 @@ public class SubscriberApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (SubscriberApi subscriberApi = SubscriberApi.create()) {
-   *   String formattedResource = SubscriberApi.formatSubscriptionName("[PROJECT]", "[SUBSCRIPTION]");
+   * try (SubscriberClient subscriberClient = SubscriberClient.create()) {
+   *   String formattedResource = SubscriberClient.formatSubscriptionName("[PROJECT]", "[SUBSCRIPTION]");
    *   List&lt;String&gt; permissions = new ArrayList&lt;&gt;();
    *   TestIamPermissionsRequest request = TestIamPermissionsRequest.newBuilder()
    *     .setResource(formattedResource)
    *     .addAllPermissions(permissions)
    *     .build();
-   *   ListenableFuture&lt;TestIamPermissionsResponse&gt; future = subscriberApi.testIamPermissionsCallable().futureCall(request);
+   *   ListenableFuture&lt;TestIamPermissionsResponse&gt; future = subscriberClient.testIamPermissionsCallable().futureCall(request);
    *   // Do something
    *   TestIamPermissionsResponse response = future.get();
    * }

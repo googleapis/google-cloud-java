@@ -28,12 +28,14 @@ import com.google.devtools.clouderrorreporting.v1beta1.ListEventsResponse;
 import com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsRequest;
 import com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse;
 import com.google.devtools.clouderrorreporting.v1beta1.QueryTimeRange;
+import com.google.protobuf.ExperimentalApi;
 import io.grpc.ManagedChannel;
 import java.io.Closeable;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ScheduledExecutorService;
+import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND SERVICE
 /**
@@ -45,15 +47,16 @@ import java.util.concurrent.ScheduledExecutorService;
  *
  * <pre>
  * <code>
- * try (ErrorStatsServiceApi errorStatsServiceApi = ErrorStatsServiceApi.create()) {
- *   String formattedProjectName = ErrorStatsServiceApi.formatProjectName("[PROJECT]");
- *   DeleteEventsResponse response = errorStatsServiceApi.deleteEvents(formattedProjectName);
+ * try (ErrorStatsServiceClient errorStatsServiceClient = ErrorStatsServiceClient.create()) {
+ *   String formattedProjectName = ErrorStatsServiceClient.formatProjectName("[PROJECT]");
+ *   DeleteEventsResponse response = errorStatsServiceClient.deleteEvents(formattedProjectName);
  * }
  * </code>
  * </pre>
  *
- * <p>Note: close() needs to be called on the errorStatsServiceApi object to clean up resources such
- * as threads. In the example above, try-with-resources is used, which automatically calls close().
+ * <p>Note: close() needs to be called on the errorStatsServiceClient object to clean up resources
+ * such as threads. In the example above, try-with-resources is used, which automatically calls
+ * close().
  *
  * <p>The surface of this class includes several types of Java methods for each of the API's
  * methods:
@@ -86,13 +89,14 @@ import java.util.concurrent.ScheduledExecutorService;
  *         .build();
  * ErrorStatsServiceSettings errorStatsServiceSettings =
  *     ErrorStatsServiceSettings.defaultBuilder().setChannelProvider(channelProvider).build();
- * ErrorStatsServiceApi errorStatsServiceApi =
- *     ErrorStatsServiceApi.create(errorStatsServiceSettings);
+ * ErrorStatsServiceClient errorStatsServiceClient =
+ *     ErrorStatsServiceClient.create(errorStatsServiceSettings);
  * </code>
  * </pre>
  */
-@javax.annotation.Generated("by GAPIC")
-public class ErrorStatsServiceApi implements AutoCloseable {
+@Generated("by GAPIC")
+@ExperimentalApi
+public class ErrorStatsServiceClient implements AutoCloseable {
   private final ErrorStatsServiceSettings settings;
   private final ScheduledExecutorService executor;
   private final ManagedChannel channel;
@@ -118,25 +122,26 @@ public class ErrorStatsServiceApi implements AutoCloseable {
     return PROJECT_PATH_TEMPLATE.parse(projectName).get("project");
   }
 
-  /** Constructs an instance of ErrorStatsServiceApi with default settings. */
-  public static final ErrorStatsServiceApi create() throws IOException {
+  /** Constructs an instance of ErrorStatsServiceClient with default settings. */
+  public static final ErrorStatsServiceClient create() throws IOException {
     return create(ErrorStatsServiceSettings.defaultBuilder().build());
   }
 
   /**
-   * Constructs an instance of ErrorStatsServiceApi, using the given settings. The channels are
+   * Constructs an instance of ErrorStatsServiceClient, using the given settings. The channels are
    * created based on the settings passed in, or defaults for any settings that are not set.
    */
-  public static final ErrorStatsServiceApi create(ErrorStatsServiceSettings settings)
+  public static final ErrorStatsServiceClient create(ErrorStatsServiceSettings settings)
       throws IOException {
-    return new ErrorStatsServiceApi(settings);
+    return new ErrorStatsServiceClient(settings);
   }
 
   /**
-   * Constructs an instance of ErrorStatsServiceApi, using the given settings. This is protected so
-   * that it easy to make a subclass, but otherwise, the static factory methods should be preferred.
+   * Constructs an instance of ErrorStatsServiceClient, using the given settings. This is protected
+   * so that it easy to make a subclass, but otherwise, the static factory methods should be
+   * preferred.
    */
-  protected ErrorStatsServiceApi(ErrorStatsServiceSettings settings) throws IOException {
+  protected ErrorStatsServiceClient(ErrorStatsServiceSettings settings) throws IOException {
     this.settings = settings;
     ChannelAndExecutor channelAndExecutor = settings.getChannelAndExecutor();
     this.executor = channelAndExecutor.getExecutor();
@@ -186,10 +191,10 @@ public class ErrorStatsServiceApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (ErrorStatsServiceApi errorStatsServiceApi = ErrorStatsServiceApi.create()) {
-   *   String formattedProjectName = ErrorStatsServiceApi.formatProjectName("[PROJECT]");
+   * try (ErrorStatsServiceClient errorStatsServiceClient = ErrorStatsServiceClient.create()) {
+   *   String formattedProjectName = ErrorStatsServiceClient.formatProjectName("[PROJECT]");
    *   QueryTimeRange timeRange = QueryTimeRange.newBuilder().build();
-   *   for (ErrorGroupStats element : errorStatsServiceApi.listGroupStats(formattedProjectName, timeRange).iterateAllElements()) {
+   *   for (ErrorGroupStats element : errorStatsServiceClient.listGroupStats(formattedProjectName, timeRange).iterateAllElements()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -224,14 +229,14 @@ public class ErrorStatsServiceApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (ErrorStatsServiceApi errorStatsServiceApi = ErrorStatsServiceApi.create()) {
-   *   String formattedProjectName = ErrorStatsServiceApi.formatProjectName("[PROJECT]");
+   * try (ErrorStatsServiceClient errorStatsServiceClient = ErrorStatsServiceClient.create()) {
+   *   String formattedProjectName = ErrorStatsServiceClient.formatProjectName("[PROJECT]");
    *   QueryTimeRange timeRange = QueryTimeRange.newBuilder().build();
    *   ListGroupStatsRequest request = ListGroupStatsRequest.newBuilder()
    *     .setProjectName(formattedProjectName)
    *     .setTimeRange(timeRange)
    *     .build();
-   *   for (ErrorGroupStats element : errorStatsServiceApi.listGroupStats(request).iterateAllElements()) {
+   *   for (ErrorGroupStats element : errorStatsServiceClient.listGroupStats(request).iterateAllElements()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -251,14 +256,14 @@ public class ErrorStatsServiceApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (ErrorStatsServiceApi errorStatsServiceApi = ErrorStatsServiceApi.create()) {
-   *   String formattedProjectName = ErrorStatsServiceApi.formatProjectName("[PROJECT]");
+   * try (ErrorStatsServiceClient errorStatsServiceClient = ErrorStatsServiceClient.create()) {
+   *   String formattedProjectName = ErrorStatsServiceClient.formatProjectName("[PROJECT]");
    *   QueryTimeRange timeRange = QueryTimeRange.newBuilder().build();
    *   ListGroupStatsRequest request = ListGroupStatsRequest.newBuilder()
    *     .setProjectName(formattedProjectName)
    *     .setTimeRange(timeRange)
    *     .build();
-   *   ListenableFuture&lt;ListGroupStatsPagedResponse&gt; future = errorStatsServiceApi.listGroupStatsPagedCallable().futureCall(request);
+   *   ListenableFuture&lt;ListGroupStatsPagedResponse&gt; future = errorStatsServiceClient.listGroupStatsPagedCallable().futureCall(request);
    *   // Do something
    *   for (ErrorGroupStats element : future.get().iterateAllElements()) {
    *     // doThingsWith(element);
@@ -278,15 +283,15 @@ public class ErrorStatsServiceApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (ErrorStatsServiceApi errorStatsServiceApi = ErrorStatsServiceApi.create()) {
-   *   String formattedProjectName = ErrorStatsServiceApi.formatProjectName("[PROJECT]");
+   * try (ErrorStatsServiceClient errorStatsServiceClient = ErrorStatsServiceClient.create()) {
+   *   String formattedProjectName = ErrorStatsServiceClient.formatProjectName("[PROJECT]");
    *   QueryTimeRange timeRange = QueryTimeRange.newBuilder().build();
    *   ListGroupStatsRequest request = ListGroupStatsRequest.newBuilder()
    *     .setProjectName(formattedProjectName)
    *     .setTimeRange(timeRange)
    *     .build();
    *   while (true) {
-   *     ListGroupStatsResponse response = errorStatsServiceApi.listGroupStatsCallable().call(request);
+   *     ListGroupStatsResponse response = errorStatsServiceClient.listGroupStatsCallable().call(request);
    *     for (ErrorGroupStats element : response.getErrorGroupStatsList()) {
    *       // doThingsWith(element);
    *     }
@@ -312,10 +317,10 @@ public class ErrorStatsServiceApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (ErrorStatsServiceApi errorStatsServiceApi = ErrorStatsServiceApi.create()) {
-   *   String formattedProjectName = ErrorStatsServiceApi.formatProjectName("[PROJECT]");
+   * try (ErrorStatsServiceClient errorStatsServiceClient = ErrorStatsServiceClient.create()) {
+   *   String formattedProjectName = ErrorStatsServiceClient.formatProjectName("[PROJECT]");
    *   String groupId = "";
-   *   for (ErrorEvent element : errorStatsServiceApi.listEvents(formattedProjectName, groupId).iterateAllElements()) {
+   *   for (ErrorEvent element : errorStatsServiceClient.listEvents(formattedProjectName, groupId).iterateAllElements()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -341,14 +346,14 @@ public class ErrorStatsServiceApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (ErrorStatsServiceApi errorStatsServiceApi = ErrorStatsServiceApi.create()) {
-   *   String formattedProjectName = ErrorStatsServiceApi.formatProjectName("[PROJECT]");
+   * try (ErrorStatsServiceClient errorStatsServiceClient = ErrorStatsServiceClient.create()) {
+   *   String formattedProjectName = ErrorStatsServiceClient.formatProjectName("[PROJECT]");
    *   String groupId = "";
    *   ListEventsRequest request = ListEventsRequest.newBuilder()
    *     .setProjectName(formattedProjectName)
    *     .setGroupId(groupId)
    *     .build();
-   *   for (ErrorEvent element : errorStatsServiceApi.listEvents(request).iterateAllElements()) {
+   *   for (ErrorEvent element : errorStatsServiceClient.listEvents(request).iterateAllElements()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -368,14 +373,14 @@ public class ErrorStatsServiceApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (ErrorStatsServiceApi errorStatsServiceApi = ErrorStatsServiceApi.create()) {
-   *   String formattedProjectName = ErrorStatsServiceApi.formatProjectName("[PROJECT]");
+   * try (ErrorStatsServiceClient errorStatsServiceClient = ErrorStatsServiceClient.create()) {
+   *   String formattedProjectName = ErrorStatsServiceClient.formatProjectName("[PROJECT]");
    *   String groupId = "";
    *   ListEventsRequest request = ListEventsRequest.newBuilder()
    *     .setProjectName(formattedProjectName)
    *     .setGroupId(groupId)
    *     .build();
-   *   ListenableFuture&lt;ListEventsPagedResponse&gt; future = errorStatsServiceApi.listEventsPagedCallable().futureCall(request);
+   *   ListenableFuture&lt;ListEventsPagedResponse&gt; future = errorStatsServiceClient.listEventsPagedCallable().futureCall(request);
    *   // Do something
    *   for (ErrorEvent element : future.get().iterateAllElements()) {
    *     // doThingsWith(element);
@@ -394,15 +399,15 @@ public class ErrorStatsServiceApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (ErrorStatsServiceApi errorStatsServiceApi = ErrorStatsServiceApi.create()) {
-   *   String formattedProjectName = ErrorStatsServiceApi.formatProjectName("[PROJECT]");
+   * try (ErrorStatsServiceClient errorStatsServiceClient = ErrorStatsServiceClient.create()) {
+   *   String formattedProjectName = ErrorStatsServiceClient.formatProjectName("[PROJECT]");
    *   String groupId = "";
    *   ListEventsRequest request = ListEventsRequest.newBuilder()
    *     .setProjectName(formattedProjectName)
    *     .setGroupId(groupId)
    *     .build();
    *   while (true) {
-   *     ListEventsResponse response = errorStatsServiceApi.listEventsCallable().call(request);
+   *     ListEventsResponse response = errorStatsServiceClient.listEventsCallable().call(request);
    *     for (ErrorEvent element : response.getErrorEventsList()) {
    *       // doThingsWith(element);
    *     }
@@ -427,9 +432,9 @@ public class ErrorStatsServiceApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (ErrorStatsServiceApi errorStatsServiceApi = ErrorStatsServiceApi.create()) {
-   *   String formattedProjectName = ErrorStatsServiceApi.formatProjectName("[PROJECT]");
-   *   DeleteEventsResponse response = errorStatsServiceApi.deleteEvents(formattedProjectName);
+   * try (ErrorStatsServiceClient errorStatsServiceClient = ErrorStatsServiceClient.create()) {
+   *   String formattedProjectName = ErrorStatsServiceClient.formatProjectName("[PROJECT]");
+   *   DeleteEventsResponse response = errorStatsServiceClient.deleteEvents(formattedProjectName);
    * }
    * </code></pre>
    *
@@ -452,12 +457,12 @@ public class ErrorStatsServiceApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (ErrorStatsServiceApi errorStatsServiceApi = ErrorStatsServiceApi.create()) {
-   *   String formattedProjectName = ErrorStatsServiceApi.formatProjectName("[PROJECT]");
+   * try (ErrorStatsServiceClient errorStatsServiceClient = ErrorStatsServiceClient.create()) {
+   *   String formattedProjectName = ErrorStatsServiceClient.formatProjectName("[PROJECT]");
    *   DeleteEventsRequest request = DeleteEventsRequest.newBuilder()
    *     .setProjectName(formattedProjectName)
    *     .build();
-   *   DeleteEventsResponse response = errorStatsServiceApi.deleteEvents(request);
+   *   DeleteEventsResponse response = errorStatsServiceClient.deleteEvents(request);
    * }
    * </code></pre>
    *
@@ -475,12 +480,12 @@ public class ErrorStatsServiceApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (ErrorStatsServiceApi errorStatsServiceApi = ErrorStatsServiceApi.create()) {
-   *   String formattedProjectName = ErrorStatsServiceApi.formatProjectName("[PROJECT]");
+   * try (ErrorStatsServiceClient errorStatsServiceClient = ErrorStatsServiceClient.create()) {
+   *   String formattedProjectName = ErrorStatsServiceClient.formatProjectName("[PROJECT]");
    *   DeleteEventsRequest request = DeleteEventsRequest.newBuilder()
    *     .setProjectName(formattedProjectName)
    *     .build();
-   *   ListenableFuture&lt;DeleteEventsResponse&gt; future = errorStatsServiceApi.deleteEventsCallable().futureCall(request);
+   *   ListenableFuture&lt;DeleteEventsResponse&gt; future = errorStatsServiceClient.deleteEventsCallable().futureCall(request);
    *   // Do something
    *   DeleteEventsResponse response = future.get();
    * }

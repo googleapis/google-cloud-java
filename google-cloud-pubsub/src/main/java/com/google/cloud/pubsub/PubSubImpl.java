@@ -31,8 +31,8 @@ import com.google.cloud.PageImpl;
 import com.google.cloud.Policy;
 import com.google.cloud.pubsub.spi.PubSubRpc;
 import com.google.cloud.pubsub.spi.PubSubRpc.PullFuture;
-import com.google.cloud.pubsub.spi.v1.PublisherApi;
-import com.google.cloud.pubsub.spi.v1.SubscriberApi;
+import com.google.cloud.pubsub.spi.v1.PublisherClient;
+import com.google.cloud.pubsub.spi.v1.SubscriberClient;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Function;
 import com.google.common.base.Throwables;
@@ -247,7 +247,7 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
   @Override
   public Future<Topic> getTopicAsync(String topic) {
     GetTopicRequest request = GetTopicRequest.newBuilder()
-        .setTopic(PublisherApi.formatTopicName(getOptions().getProjectId(), topic))
+        .setTopic(PublisherClient.formatTopicName(getOptions().getProjectId(), topic))
         .build();
     return transform(rpc.get(request), Topic.fromPbFunction(this));
   }
@@ -260,7 +260,7 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
   @Override
   public Future<Boolean> deleteTopicAsync(String topic) {
     DeleteTopicRequest request = DeleteTopicRequest.newBuilder()
-        .setTopic(PublisherApi.formatTopicName(getOptions().getProjectId(), topic))
+        .setTopic(PublisherClient.formatTopicName(getOptions().getProjectId(), topic))
         .build();
     return transform(rpc.delete(request), EMPTY_TO_BOOLEAN_FUNCTION);
   }
@@ -268,7 +268,7 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
   private static ListTopicsRequest listTopicsRequest(PubSubOptions serviceOptions,
       Map<Option.OptionType, ?> options) {
     ListTopicsRequest.Builder builder = ListTopicsRequest.newBuilder();
-    builder.setProject(SubscriberApi.formatProjectName(serviceOptions.getProjectId()));
+    builder.setProject(SubscriberClient.formatProjectName(serviceOptions.getProjectId()));
     Integer pageSize = PAGE_SIZE.get(options);
     String pageToken = PAGE_TOKEN.get(options);
     if (pageSize != null) {
@@ -316,7 +316,7 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
   private static PublishRequest publishRequest(PubSubOptions serviceOptions, String topic,
       Iterable<Message> messages) {
     PublishRequest.Builder builder = PublishRequest.newBuilder();
-    builder.setTopic(PublisherApi.formatTopicName(serviceOptions.getProjectId(), topic));
+    builder.setTopic(PublisherClient.formatTopicName(serviceOptions.getProjectId(), topic));
     builder.addAllMessages(Iterables.transform(messages, Message.TO_PB_FUNCTION));
     return builder.build();
   }
@@ -379,7 +379,7 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
   public Future<Subscription> getSubscriptionAsync(String subscription) {
     GetSubscriptionRequest request = GetSubscriptionRequest.newBuilder()
         .setSubscription(
-            SubscriberApi.formatSubscriptionName(getOptions().getProjectId(), subscription))
+            SubscriberClient.formatSubscriptionName(getOptions().getProjectId(), subscription))
         .build();
     return transform(rpc.get(request), Subscription.fromPbFunction(this));
   }
@@ -393,7 +393,7 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
   public Future<Void> replacePushConfigAsync(String subscription, PushConfig pushConfig) {
     ModifyPushConfigRequest request = ModifyPushConfigRequest.newBuilder()
         .setSubscription(
-            SubscriberApi.formatSubscriptionName(getOptions().getProjectId(), subscription))
+            SubscriberClient.formatSubscriptionName(getOptions().getProjectId(), subscription))
         .setPushConfig(pushConfig != null ? pushConfig.toPb()
             : com.google.pubsub.v1.PushConfig.getDefaultInstance())
         .build();
@@ -409,7 +409,7 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
   public Future<Boolean> deleteSubscriptionAsync(String subscription) {
     DeleteSubscriptionRequest request = DeleteSubscriptionRequest.newBuilder()
         .setSubscription(
-            SubscriberApi.formatSubscriptionName(getOptions().getProjectId(), subscription))
+            SubscriberClient.formatSubscriptionName(getOptions().getProjectId(), subscription))
         .build();
     return transform(rpc.delete(request), EMPTY_TO_BOOLEAN_FUNCTION);
   }
@@ -417,7 +417,7 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
   private static ListSubscriptionsRequest listSubscriptionsRequest(PubSubOptions serviceOptions,
       Map<Option.OptionType, ?> options) {
     ListSubscriptionsRequest.Builder builder = ListSubscriptionsRequest.newBuilder();
-    builder.setProject(SubscriberApi.formatProjectName(serviceOptions.getProjectId()));
+    builder.setProject(SubscriberClient.formatProjectName(serviceOptions.getProjectId()));
     Integer pageSize = PAGE_SIZE.getInteger(options);
     String pageToken = PAGE_TOKEN.getString(options);
     if (pageSize != null) {
@@ -460,7 +460,7 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
   private static ListTopicSubscriptionsRequest listSubscriptionsRequest(String topic,
       PubSubOptions serviceOptions, Map<Option.OptionType, ?> options) {
     ListTopicSubscriptionsRequest.Builder builder = ListTopicSubscriptionsRequest.newBuilder();
-    builder.setTopic(PublisherApi.formatTopicName(serviceOptions.getProjectId(), topic));
+    builder.setTopic(PublisherClient.formatTopicName(serviceOptions.getProjectId(), topic));
     Integer pageSize = PAGE_SIZE.getInteger(options);
     String pageToken = PAGE_TOKEN.getString(options);
     if (pageSize != null) {
@@ -516,7 +516,7 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
       int maxMessages, boolean returnImmediately) {
     PullRequest request = PullRequest.newBuilder()
         .setSubscription(
-            SubscriberApi.formatSubscriptionName(getOptions().getProjectId(), subscription))
+            SubscriberClient.formatSubscriptionName(getOptions().getProjectId(), subscription))
         .setMaxMessages(maxMessages)
         .setReturnImmediately(returnImmediately)
         .build();
@@ -589,7 +589,7 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
   public Future<Void> ackAsync(String subscription, Iterable<String> ackIds) {
     AcknowledgeRequest request = AcknowledgeRequest.newBuilder()
         .setSubscription(
-            SubscriberApi.formatSubscriptionName(getOptions().getProjectId(), subscription))
+            SubscriberClient.formatSubscriptionName(getOptions().getProjectId(), subscription))
         .addAllAckIds(ackIds)
         .build();
     return transform(rpc.acknowledge(request), EMPTY_TO_VOID_FUNCTION);
@@ -638,7 +638,7 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
       Iterable<String> ackIds) {
     ModifyAckDeadlineRequest request = ModifyAckDeadlineRequest.newBuilder()
         .setSubscription(
-            SubscriberApi.formatSubscriptionName(getOptions().getProjectId(), subscription))
+            SubscriberClient.formatSubscriptionName(getOptions().getProjectId(), subscription))
         .setAckDeadlineSeconds((int) TimeUnit.SECONDS.convert(deadline, unit))
         .addAllAckIds(ackIds)
         .build();
@@ -653,7 +653,7 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
   @Override
   public Future<Policy> getTopicPolicyAsync(String topic) {
     return transform(
-        rpc.getIamPolicy(PublisherApi.formatTopicName(getOptions().getProjectId(), topic)),
+        rpc.getIamPolicy(PublisherClient.formatTopicName(getOptions().getProjectId(), topic)),
         POLICY_TO_PB_FUNCTION);
   }
 
@@ -666,7 +666,7 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
   public Future<Policy> replaceTopicPolicyAsync(String topic, Policy newPolicy) {
     SetIamPolicyRequest request = SetIamPolicyRequest.newBuilder()
         .setPolicy(PolicyMarshaller.INSTANCE.toPb(newPolicy))
-        .setResource(PublisherApi.formatTopicName(getOptions().getProjectId(), topic))
+        .setResource(PublisherClient.formatTopicName(getOptions().getProjectId(), topic))
         .build();
     return transform(rpc.setIamPolicy(request), POLICY_TO_PB_FUNCTION);
   }
@@ -679,7 +679,7 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
   @Override
   public Future<List<Boolean>> testTopicPermissionsAsync(String topic, List<String> permissions) {
     TestIamPermissionsRequest request = TestIamPermissionsRequest.newBuilder()
-        .setResource(PublisherApi.formatTopicName(getOptions().getProjectId(), topic))
+        .setResource(PublisherClient.formatTopicName(getOptions().getProjectId(), topic))
         .addAllPermissions(permissions)
         .build();
     return transform(rpc.testIamPermissions(request), permissionsFromPbFunction(permissions));
@@ -694,7 +694,7 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
   public Future<Policy> getSubscriptionPolicyAsync(String subscription) {
     return transform(
         rpc.getIamPolicy(
-            SubscriberApi.formatSubscriptionName(getOptions().getProjectId(), subscription)),
+            SubscriberClient.formatSubscriptionName(getOptions().getProjectId(), subscription)),
         POLICY_TO_PB_FUNCTION);
   }
 
@@ -708,7 +708,7 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
     SetIamPolicyRequest request = SetIamPolicyRequest.newBuilder()
         .setPolicy(PolicyMarshaller.INSTANCE.toPb(newPolicy))
         .setResource(
-            SubscriberApi.formatSubscriptionName(getOptions().getProjectId(), subscription))
+            SubscriberClient.formatSubscriptionName(getOptions().getProjectId(), subscription))
         .build();
     return transform(rpc.setIamPolicy(request), POLICY_TO_PB_FUNCTION);
   }
@@ -723,7 +723,7 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
       List<String> permissions) {
     TestIamPermissionsRequest request = TestIamPermissionsRequest.newBuilder()
         .setResource(
-            SubscriberApi.formatSubscriptionName(getOptions().getProjectId(), subscription))
+            SubscriberClient.formatSubscriptionName(getOptions().getProjectId(), subscription))
         .addAllPermissions(permissions)
         .build();
     return transform(rpc.testIamPermissions(request), permissionsFromPbFunction(permissions));

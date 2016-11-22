@@ -21,6 +21,7 @@ import com.google.api.gax.grpc.PagedListResponseImpl;
 import com.google.api.gax.grpc.UnaryCallable;
 import com.google.common.base.Function;
 import com.google.common.collect.Iterables;
+import com.google.protobuf.ExperimentalApi;
 import com.google.pubsub.v1.ListSubscriptionsRequest;
 import com.google.pubsub.v1.ListSubscriptionsResponse;
 import com.google.pubsub.v1.ListTopicSubscriptionsRequest;
@@ -30,6 +31,7 @@ import com.google.pubsub.v1.ListTopicsResponse;
 import com.google.pubsub.v1.Subscription;
 import com.google.pubsub.v1.SubscriptionName;
 import com.google.pubsub.v1.Topic;
+import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 /**
@@ -37,7 +39,8 @@ import com.google.pubsub.v1.Topic;
  * inside this wrapper class is used as the return type of one of an API method that implements the
  * page streaming pattern.
  */
-@javax.annotation.Generated("by GAPIC")
+@Generated("by GAPIC")
+@ExperimentalApi
 public class PagedResponseWrappers {
 
   public static class ListTopicsPagedResponse

@@ -19,18 +19,18 @@
  *
  * <p>The interfaces provided are listed below, along with usage samples.
  *
- * <p>========= SpeechApi =========
+ * <p>============ SpeechClient ============
  *
  * <p>Service Description: Service that implements Google Cloud Speech API.
  *
- * <p>Sample for SpeechApi:
+ * <p>Sample for SpeechClient:
  *
  * <pre>
  * <code>
- * try (SpeechApi speechApi = SpeechApi.create()) {
+ * try (SpeechClient speechClient = SpeechClient.create()) {
  *   RecognitionConfig config = RecognitionConfig.newBuilder().build();
  *   RecognitionAudio audio = RecognitionAudio.newBuilder().build();
- *   SyncRecognizeResponse response = speechApi.syncRecognize(config, audio);
+ *   SyncRecognizeResponse response = speechClient.syncRecognize(config, audio);
  * }
  * </code>
  * </pre>

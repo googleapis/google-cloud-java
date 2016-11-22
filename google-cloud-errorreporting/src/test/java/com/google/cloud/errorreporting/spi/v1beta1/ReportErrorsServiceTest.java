@@ -40,7 +40,7 @@ public class ReportErrorsServiceTest {
   private static MockErrorStatsService mockErrorStatsService;
   private static MockReportErrorsService mockReportErrorsService;
   private static MockServiceHelper serviceHelper;
-  private ReportErrorsServiceApi api;
+  private ReportErrorsServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {
@@ -67,12 +67,12 @@ public class ReportErrorsServiceTest {
         ReportErrorsServiceSettings.defaultBuilder()
             .setChannelProvider(serviceHelper.createChannelProvider())
             .build();
-    api = ReportErrorsServiceApi.create(settings);
+    client = ReportErrorsServiceClient.create(settings);
   }
 
   @After
   public void tearDown() throws Exception {
-    api.close();
+    client.close();
   }
 
   @Test
@@ -81,10 +81,10 @@ public class ReportErrorsServiceTest {
     ReportErrorEventResponse expectedResponse = ReportErrorEventResponse.newBuilder().build();
     mockReportErrorsService.addResponse(expectedResponse);
 
-    String formattedProjectName = ReportErrorsServiceApi.formatProjectName("[PROJECT]");
+    String formattedProjectName = ReportErrorsServiceClient.formatProjectName("[PROJECT]");
     ReportedErrorEvent event = ReportedErrorEvent.newBuilder().build();
 
-    ReportErrorEventResponse actualResponse = api.reportErrorEvent(formattedProjectName, event);
+    ReportErrorEventResponse actualResponse = client.reportErrorEvent(formattedProjectName, event);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<GeneratedMessageV3> actualRequests = mockReportErrorsService.getRequests();
@@ -102,10 +102,10 @@ public class ReportErrorsServiceTest {
     mockReportErrorsService.addException(exception);
 
     try {
-      String formattedProjectName = ReportErrorsServiceApi.formatProjectName("[PROJECT]");
+      String formattedProjectName = ReportErrorsServiceClient.formatProjectName("[PROJECT]");
       ReportedErrorEvent event = ReportedErrorEvent.newBuilder().build();
 
-      api.reportErrorEvent(formattedProjectName, event);
+      client.reportErrorEvent(formattedProjectName, event);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
       Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());

@@ -16,9 +16,9 @@
 
 package com.google.cloud.pubsub;
 
-import static com.google.cloud.pubsub.spi.v1.PublisherApi.formatTopicName;
-import static com.google.cloud.pubsub.spi.v1.PublisherApi.parseProjectFromTopicName;
-import static com.google.cloud.pubsub.spi.v1.PublisherApi.parseTopicFromTopicName;
+import static com.google.cloud.pubsub.spi.v1.PublisherClient.formatTopicName;
+import static com.google.cloud.pubsub.spi.v1.PublisherClient.parseProjectFromTopicName;
+import static com.google.cloud.pubsub.spi.v1.PublisherClient.parseTopicFromTopicName;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.common.base.MoreObjects;

@@ -28,12 +28,14 @@ import com.google.logging.v2.ListLogMetricsResponse;
 import com.google.logging.v2.LogMetric;
 import com.google.logging.v2.UpdateLogMetricRequest;
 import com.google.protobuf.Empty;
+import com.google.protobuf.ExperimentalApi;
 import io.grpc.ManagedChannel;
 import java.io.Closeable;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ScheduledExecutorService;
+import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND SERVICE
 /**
@@ -44,15 +46,16 @@ import java.util.concurrent.ScheduledExecutorService;
  *
  * <pre>
  * <code>
- * try (MetricsServiceV2Api metricsServiceV2Api = MetricsServiceV2Api.create()) {
- *   String formattedMetricName = MetricsServiceV2Api.formatMetricName("[PROJECT]", "[METRIC]");
- *   LogMetric response = metricsServiceV2Api.getLogMetric(formattedMetricName);
+ * try (MetricsServiceV2Client metricsServiceV2Client = MetricsServiceV2Client.create()) {
+ *   String formattedMetricName = MetricsServiceV2Client.formatMetricName("[PROJECT]", "[METRIC]");
+ *   LogMetric response = metricsServiceV2Client.getLogMetric(formattedMetricName);
  * }
  * </code>
  * </pre>
  *
- * <p>Note: close() needs to be called on the metricsServiceV2Api object to clean up resources such
- * as threads. In the example above, try-with-resources is used, which automatically calls close().
+ * <p>Note: close() needs to be called on the metricsServiceV2Client object to clean up resources
+ * such as threads. In the example above, try-with-resources is used, which automatically calls
+ * close().
  *
  * <p>The surface of this class includes several types of Java methods for each of the API's
  * methods:
@@ -85,13 +88,14 @@ import java.util.concurrent.ScheduledExecutorService;
  *         .build();
  * MetricsServiceV2Settings metricsServiceV2Settings =
  *     MetricsServiceV2Settings.defaultBuilder().setChannelProvider(channelProvider).build();
- * MetricsServiceV2Api metricsServiceV2Api =
- *     MetricsServiceV2Api.create(metricsServiceV2Settings);
+ * MetricsServiceV2Client metricsServiceV2Client =
+ *     MetricsServiceV2Client.create(metricsServiceV2Settings);
  * </code>
  * </pre>
  */
-@javax.annotation.Generated("by GAPIC")
-public class MetricsServiceV2Api implements AutoCloseable {
+@Generated("by GAPIC")
+@ExperimentalApi
+public class MetricsServiceV2Client implements AutoCloseable {
   private final MetricsServiceV2Settings settings;
   private final ScheduledExecutorService executor;
   private final ManagedChannel channel;
@@ -138,25 +142,26 @@ public class MetricsServiceV2Api implements AutoCloseable {
     return METRIC_PATH_TEMPLATE.parse(metricName).get("metric");
   }
 
-  /** Constructs an instance of MetricsServiceV2Api with default settings. */
-  public static final MetricsServiceV2Api create() throws IOException {
+  /** Constructs an instance of MetricsServiceV2Client with default settings. */
+  public static final MetricsServiceV2Client create() throws IOException {
     return create(MetricsServiceV2Settings.defaultBuilder().build());
   }
 
   /**
-   * Constructs an instance of MetricsServiceV2Api, using the given settings. The channels are
+   * Constructs an instance of MetricsServiceV2Client, using the given settings. The channels are
    * created based on the settings passed in, or defaults for any settings that are not set.
    */
-  public static final MetricsServiceV2Api create(MetricsServiceV2Settings settings)
+  public static final MetricsServiceV2Client create(MetricsServiceV2Settings settings)
       throws IOException {
-    return new MetricsServiceV2Api(settings);
+    return new MetricsServiceV2Client(settings);
   }
 
   /**
-   * Constructs an instance of MetricsServiceV2Api, using the given settings. This is protected so
-   * that it easy to make a subclass, but otherwise, the static factory methods should be preferred.
+   * Constructs an instance of MetricsServiceV2Client, using the given settings. This is protected
+   * so that it easy to make a subclass, but otherwise, the static factory methods should be
+   * preferred.
    */
-  protected MetricsServiceV2Api(MetricsServiceV2Settings settings) throws IOException {
+  protected MetricsServiceV2Client(MetricsServiceV2Settings settings) throws IOException {
     this.settings = settings;
     ChannelAndExecutor channelAndExecutor = settings.getChannelAndExecutor();
     this.executor = channelAndExecutor.getExecutor();
@@ -207,9 +212,9 @@ public class MetricsServiceV2Api implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (MetricsServiceV2Api metricsServiceV2Api = MetricsServiceV2Api.create()) {
-   *   String formattedParent = MetricsServiceV2Api.formatParentName("[PROJECT]");
-   *   for (LogMetric element : metricsServiceV2Api.listLogMetrics(formattedParent).iterateAllElements()) {
+   * try (MetricsServiceV2Client metricsServiceV2Client = MetricsServiceV2Client.create()) {
+   *   String formattedParent = MetricsServiceV2Client.formatParentName("[PROJECT]");
+   *   for (LogMetric element : metricsServiceV2Client.listLogMetrics(formattedParent).iterateAllElements()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -232,12 +237,12 @@ public class MetricsServiceV2Api implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (MetricsServiceV2Api metricsServiceV2Api = MetricsServiceV2Api.create()) {
-   *   String formattedParent = MetricsServiceV2Api.formatParentName("[PROJECT]");
+   * try (MetricsServiceV2Client metricsServiceV2Client = MetricsServiceV2Client.create()) {
+   *   String formattedParent = MetricsServiceV2Client.formatParentName("[PROJECT]");
    *   ListLogMetricsRequest request = ListLogMetricsRequest.newBuilder()
    *     .setParent(formattedParent)
    *     .build();
-   *   for (LogMetric element : metricsServiceV2Api.listLogMetrics(request).iterateAllElements()) {
+   *   for (LogMetric element : metricsServiceV2Client.listLogMetrics(request).iterateAllElements()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -257,12 +262,12 @@ public class MetricsServiceV2Api implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (MetricsServiceV2Api metricsServiceV2Api = MetricsServiceV2Api.create()) {
-   *   String formattedParent = MetricsServiceV2Api.formatParentName("[PROJECT]");
+   * try (MetricsServiceV2Client metricsServiceV2Client = MetricsServiceV2Client.create()) {
+   *   String formattedParent = MetricsServiceV2Client.formatParentName("[PROJECT]");
    *   ListLogMetricsRequest request = ListLogMetricsRequest.newBuilder()
    *     .setParent(formattedParent)
    *     .build();
-   *   ListenableFuture&lt;ListLogMetricsPagedResponse&gt; future = metricsServiceV2Api.listLogMetricsPagedCallable().futureCall(request);
+   *   ListenableFuture&lt;ListLogMetricsPagedResponse&gt; future = metricsServiceV2Client.listLogMetricsPagedCallable().futureCall(request);
    *   // Do something
    *   for (LogMetric element : future.get().iterateAllElements()) {
    *     // doThingsWith(element);
@@ -282,13 +287,13 @@ public class MetricsServiceV2Api implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (MetricsServiceV2Api metricsServiceV2Api = MetricsServiceV2Api.create()) {
-   *   String formattedParent = MetricsServiceV2Api.formatParentName("[PROJECT]");
+   * try (MetricsServiceV2Client metricsServiceV2Client = MetricsServiceV2Client.create()) {
+   *   String formattedParent = MetricsServiceV2Client.formatParentName("[PROJECT]");
    *   ListLogMetricsRequest request = ListLogMetricsRequest.newBuilder()
    *     .setParent(formattedParent)
    *     .build();
    *   while (true) {
-   *     ListLogMetricsResponse response = metricsServiceV2Api.listLogMetricsCallable().call(request);
+   *     ListLogMetricsResponse response = metricsServiceV2Client.listLogMetricsCallable().call(request);
    *     for (LogMetric element : response.getMetricsList()) {
    *       // doThingsWith(element);
    *     }
@@ -314,9 +319,9 @@ public class MetricsServiceV2Api implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (MetricsServiceV2Api metricsServiceV2Api = MetricsServiceV2Api.create()) {
-   *   String formattedMetricName = MetricsServiceV2Api.formatMetricName("[PROJECT]", "[METRIC]");
-   *   LogMetric response = metricsServiceV2Api.getLogMetric(formattedMetricName);
+   * try (MetricsServiceV2Client metricsServiceV2Client = MetricsServiceV2Client.create()) {
+   *   String formattedMetricName = MetricsServiceV2Client.formatMetricName("[PROJECT]", "[METRIC]");
+   *   LogMetric response = metricsServiceV2Client.getLogMetric(formattedMetricName);
    * }
    * </code></pre>
    *
@@ -338,12 +343,12 @@ public class MetricsServiceV2Api implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (MetricsServiceV2Api metricsServiceV2Api = MetricsServiceV2Api.create()) {
-   *   String formattedMetricName = MetricsServiceV2Api.formatMetricName("[PROJECT]", "[METRIC]");
+   * try (MetricsServiceV2Client metricsServiceV2Client = MetricsServiceV2Client.create()) {
+   *   String formattedMetricName = MetricsServiceV2Client.formatMetricName("[PROJECT]", "[METRIC]");
    *   GetLogMetricRequest request = GetLogMetricRequest.newBuilder()
    *     .setMetricName(formattedMetricName)
    *     .build();
-   *   LogMetric response = metricsServiceV2Api.getLogMetric(request);
+   *   LogMetric response = metricsServiceV2Client.getLogMetric(request);
    * }
    * </code></pre>
    *
@@ -361,12 +366,12 @@ public class MetricsServiceV2Api implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (MetricsServiceV2Api metricsServiceV2Api = MetricsServiceV2Api.create()) {
-   *   String formattedMetricName = MetricsServiceV2Api.formatMetricName("[PROJECT]", "[METRIC]");
+   * try (MetricsServiceV2Client metricsServiceV2Client = MetricsServiceV2Client.create()) {
+   *   String formattedMetricName = MetricsServiceV2Client.formatMetricName("[PROJECT]", "[METRIC]");
    *   GetLogMetricRequest request = GetLogMetricRequest.newBuilder()
    *     .setMetricName(formattedMetricName)
    *     .build();
-   *   ListenableFuture&lt;LogMetric&gt; future = metricsServiceV2Api.getLogMetricCallable().futureCall(request);
+   *   ListenableFuture&lt;LogMetric&gt; future = metricsServiceV2Client.getLogMetricCallable().futureCall(request);
    *   // Do something
    *   LogMetric response = future.get();
    * }
@@ -383,10 +388,10 @@ public class MetricsServiceV2Api implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (MetricsServiceV2Api metricsServiceV2Api = MetricsServiceV2Api.create()) {
-   *   String formattedParent = MetricsServiceV2Api.formatParentName("[PROJECT]");
+   * try (MetricsServiceV2Client metricsServiceV2Client = MetricsServiceV2Client.create()) {
+   *   String formattedParent = MetricsServiceV2Client.formatParentName("[PROJECT]");
    *   LogMetric metric = LogMetric.newBuilder().build();
-   *   LogMetric response = metricsServiceV2Api.createLogMetric(formattedParent, metric);
+   *   LogMetric response = metricsServiceV2Client.createLogMetric(formattedParent, metric);
    * }
    * </code></pre>
    *
@@ -410,14 +415,14 @@ public class MetricsServiceV2Api implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (MetricsServiceV2Api metricsServiceV2Api = MetricsServiceV2Api.create()) {
-   *   String formattedParent = MetricsServiceV2Api.formatParentName("[PROJECT]");
+   * try (MetricsServiceV2Client metricsServiceV2Client = MetricsServiceV2Client.create()) {
+   *   String formattedParent = MetricsServiceV2Client.formatParentName("[PROJECT]");
    *   LogMetric metric = LogMetric.newBuilder().build();
    *   CreateLogMetricRequest request = CreateLogMetricRequest.newBuilder()
    *     .setParent(formattedParent)
    *     .setMetric(metric)
    *     .build();
-   *   LogMetric response = metricsServiceV2Api.createLogMetric(request);
+   *   LogMetric response = metricsServiceV2Client.createLogMetric(request);
    * }
    * </code></pre>
    *
@@ -435,14 +440,14 @@ public class MetricsServiceV2Api implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (MetricsServiceV2Api metricsServiceV2Api = MetricsServiceV2Api.create()) {
-   *   String formattedParent = MetricsServiceV2Api.formatParentName("[PROJECT]");
+   * try (MetricsServiceV2Client metricsServiceV2Client = MetricsServiceV2Client.create()) {
+   *   String formattedParent = MetricsServiceV2Client.formatParentName("[PROJECT]");
    *   LogMetric metric = LogMetric.newBuilder().build();
    *   CreateLogMetricRequest request = CreateLogMetricRequest.newBuilder()
    *     .setParent(formattedParent)
    *     .setMetric(metric)
    *     .build();
-   *   ListenableFuture&lt;LogMetric&gt; future = metricsServiceV2Api.createLogMetricCallable().futureCall(request);
+   *   ListenableFuture&lt;LogMetric&gt; future = metricsServiceV2Client.createLogMetricCallable().futureCall(request);
    *   // Do something
    *   LogMetric response = future.get();
    * }
@@ -459,10 +464,10 @@ public class MetricsServiceV2Api implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (MetricsServiceV2Api metricsServiceV2Api = MetricsServiceV2Api.create()) {
-   *   String formattedMetricName = MetricsServiceV2Api.formatMetricName("[PROJECT]", "[METRIC]");
+   * try (MetricsServiceV2Client metricsServiceV2Client = MetricsServiceV2Client.create()) {
+   *   String formattedMetricName = MetricsServiceV2Client.formatMetricName("[PROJECT]", "[METRIC]");
    *   LogMetric metric = LogMetric.newBuilder().build();
-   *   LogMetric response = metricsServiceV2Api.updateLogMetric(formattedMetricName, metric);
+   *   LogMetric response = metricsServiceV2Client.updateLogMetric(formattedMetricName, metric);
    * }
    * </code></pre>
    *
@@ -488,14 +493,14 @@ public class MetricsServiceV2Api implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (MetricsServiceV2Api metricsServiceV2Api = MetricsServiceV2Api.create()) {
-   *   String formattedMetricName = MetricsServiceV2Api.formatMetricName("[PROJECT]", "[METRIC]");
+   * try (MetricsServiceV2Client metricsServiceV2Client = MetricsServiceV2Client.create()) {
+   *   String formattedMetricName = MetricsServiceV2Client.formatMetricName("[PROJECT]", "[METRIC]");
    *   LogMetric metric = LogMetric.newBuilder().build();
    *   UpdateLogMetricRequest request = UpdateLogMetricRequest.newBuilder()
    *     .setMetricName(formattedMetricName)
    *     .setMetric(metric)
    *     .build();
-   *   LogMetric response = metricsServiceV2Api.updateLogMetric(request);
+   *   LogMetric response = metricsServiceV2Client.updateLogMetric(request);
    * }
    * </code></pre>
    *
@@ -513,14 +518,14 @@ public class MetricsServiceV2Api implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (MetricsServiceV2Api metricsServiceV2Api = MetricsServiceV2Api.create()) {
-   *   String formattedMetricName = MetricsServiceV2Api.formatMetricName("[PROJECT]", "[METRIC]");
+   * try (MetricsServiceV2Client metricsServiceV2Client = MetricsServiceV2Client.create()) {
+   *   String formattedMetricName = MetricsServiceV2Client.formatMetricName("[PROJECT]", "[METRIC]");
    *   LogMetric metric = LogMetric.newBuilder().build();
    *   UpdateLogMetricRequest request = UpdateLogMetricRequest.newBuilder()
    *     .setMetricName(formattedMetricName)
    *     .setMetric(metric)
    *     .build();
-   *   ListenableFuture&lt;LogMetric&gt; future = metricsServiceV2Api.updateLogMetricCallable().futureCall(request);
+   *   ListenableFuture&lt;LogMetric&gt; future = metricsServiceV2Client.updateLogMetricCallable().futureCall(request);
    *   // Do something
    *   LogMetric response = future.get();
    * }
@@ -537,9 +542,9 @@ public class MetricsServiceV2Api implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (MetricsServiceV2Api metricsServiceV2Api = MetricsServiceV2Api.create()) {
-   *   String formattedMetricName = MetricsServiceV2Api.formatMetricName("[PROJECT]", "[METRIC]");
-   *   metricsServiceV2Api.deleteLogMetric(formattedMetricName);
+   * try (MetricsServiceV2Client metricsServiceV2Client = MetricsServiceV2Client.create()) {
+   *   String formattedMetricName = MetricsServiceV2Client.formatMetricName("[PROJECT]", "[METRIC]");
+   *   metricsServiceV2Client.deleteLogMetric(formattedMetricName);
    * }
    * </code></pre>
    *
@@ -561,12 +566,12 @@ public class MetricsServiceV2Api implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (MetricsServiceV2Api metricsServiceV2Api = MetricsServiceV2Api.create()) {
-   *   String formattedMetricName = MetricsServiceV2Api.formatMetricName("[PROJECT]", "[METRIC]");
+   * try (MetricsServiceV2Client metricsServiceV2Client = MetricsServiceV2Client.create()) {
+   *   String formattedMetricName = MetricsServiceV2Client.formatMetricName("[PROJECT]", "[METRIC]");
    *   DeleteLogMetricRequest request = DeleteLogMetricRequest.newBuilder()
    *     .setMetricName(formattedMetricName)
    *     .build();
-   *   metricsServiceV2Api.deleteLogMetric(request);
+   *   metricsServiceV2Client.deleteLogMetric(request);
    * }
    * </code></pre>
    *
@@ -584,12 +589,12 @@ public class MetricsServiceV2Api implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (MetricsServiceV2Api metricsServiceV2Api = MetricsServiceV2Api.create()) {
-   *   String formattedMetricName = MetricsServiceV2Api.formatMetricName("[PROJECT]", "[METRIC]");
+   * try (MetricsServiceV2Client metricsServiceV2Client = MetricsServiceV2Client.create()) {
+   *   String formattedMetricName = MetricsServiceV2Client.formatMetricName("[PROJECT]", "[METRIC]");
    *   DeleteLogMetricRequest request = DeleteLogMetricRequest.newBuilder()
    *     .setMetricName(formattedMetricName)
    *     .build();
-   *   ListenableFuture&lt;Void&gt; future = metricsServiceV2Api.deleteLogMetricCallable().futureCall(request);
+   *   ListenableFuture&lt;Void&gt; future = metricsServiceV2Client.deleteLogMetricCallable().futureCall(request);
    *   // Do something
    *   future.get();
    * }

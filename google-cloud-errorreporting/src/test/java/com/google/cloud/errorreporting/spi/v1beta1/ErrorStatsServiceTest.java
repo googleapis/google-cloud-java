@@ -50,7 +50,7 @@ public class ErrorStatsServiceTest {
   private static MockErrorStatsService mockErrorStatsService;
   private static MockReportErrorsService mockReportErrorsService;
   private static MockServiceHelper serviceHelper;
-  private ErrorStatsServiceApi api;
+  private ErrorStatsServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {
@@ -77,12 +77,12 @@ public class ErrorStatsServiceTest {
         ErrorStatsServiceSettings.defaultBuilder()
             .setChannelProvider(serviceHelper.createChannelProvider())
             .build();
-    api = ErrorStatsServiceApi.create(settings);
+    client = ErrorStatsServiceClient.create(settings);
   }
 
   @After
   public void tearDown() throws Exception {
-    api.close();
+    client.close();
   }
 
   @Test
@@ -98,11 +98,11 @@ public class ErrorStatsServiceTest {
             .build();
     mockErrorStatsService.addResponse(expectedResponse);
 
-    String formattedProjectName = ErrorStatsServiceApi.formatProjectName("[PROJECT]");
+    String formattedProjectName = ErrorStatsServiceClient.formatProjectName("[PROJECT]");
     QueryTimeRange timeRange = QueryTimeRange.newBuilder().build();
 
     ListGroupStatsPagedResponse pagedListResponse =
-        api.listGroupStats(formattedProjectName, timeRange);
+        client.listGroupStats(formattedProjectName, timeRange);
 
     List<ErrorGroupStats> resources = Lists.newArrayList(pagedListResponse.iterateAllElements());
     Assert.assertEquals(1, resources.size());
@@ -123,10 +123,10 @@ public class ErrorStatsServiceTest {
     mockErrorStatsService.addException(exception);
 
     try {
-      String formattedProjectName = ErrorStatsServiceApi.formatProjectName("[PROJECT]");
+      String formattedProjectName = ErrorStatsServiceClient.formatProjectName("[PROJECT]");
       QueryTimeRange timeRange = QueryTimeRange.newBuilder().build();
 
-      api.listGroupStats(formattedProjectName, timeRange);
+      client.listGroupStats(formattedProjectName, timeRange);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
       Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
@@ -146,10 +146,10 @@ public class ErrorStatsServiceTest {
             .build();
     mockErrorStatsService.addResponse(expectedResponse);
 
-    String formattedProjectName = ErrorStatsServiceApi.formatProjectName("[PROJECT]");
+    String formattedProjectName = ErrorStatsServiceClient.formatProjectName("[PROJECT]");
     String groupId = "groupId506361563";
 
-    ListEventsPagedResponse pagedListResponse = api.listEvents(formattedProjectName, groupId);
+    ListEventsPagedResponse pagedListResponse = client.listEvents(formattedProjectName, groupId);
 
     List<ErrorEvent> resources = Lists.newArrayList(pagedListResponse.iterateAllElements());
     Assert.assertEquals(1, resources.size());
@@ -170,10 +170,10 @@ public class ErrorStatsServiceTest {
     mockErrorStatsService.addException(exception);
 
     try {
-      String formattedProjectName = ErrorStatsServiceApi.formatProjectName("[PROJECT]");
+      String formattedProjectName = ErrorStatsServiceClient.formatProjectName("[PROJECT]");
       String groupId = "groupId506361563";
 
-      api.listEvents(formattedProjectName, groupId);
+      client.listEvents(formattedProjectName, groupId);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
       Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
@@ -186,9 +186,9 @@ public class ErrorStatsServiceTest {
     DeleteEventsResponse expectedResponse = DeleteEventsResponse.newBuilder().build();
     mockErrorStatsService.addResponse(expectedResponse);
 
-    String formattedProjectName = ErrorStatsServiceApi.formatProjectName("[PROJECT]");
+    String formattedProjectName = ErrorStatsServiceClient.formatProjectName("[PROJECT]");
 
-    DeleteEventsResponse actualResponse = api.deleteEvents(formattedProjectName);
+    DeleteEventsResponse actualResponse = client.deleteEvents(formattedProjectName);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<GeneratedMessageV3> actualRequests = mockErrorStatsService.getRequests();
@@ -205,9 +205,9 @@ public class ErrorStatsServiceTest {
     mockErrorStatsService.addException(exception);
 
     try {
-      String formattedProjectName = ErrorStatsServiceApi.formatProjectName("[PROJECT]");
+      String formattedProjectName = ErrorStatsServiceClient.formatProjectName("[PROJECT]");
 
-      api.deleteEvents(formattedProjectName);
+      client.deleteEvents(formattedProjectName);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
       Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());

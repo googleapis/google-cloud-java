@@ -16,7 +16,7 @@
 
 package com.google.cloud.pubsub;
 
-import static com.google.cloud.pubsub.spi.v1.SubscriberApi.formatSubscriptionName;
+import static com.google.cloud.pubsub.spi.v1.SubscriberClient.formatSubscriptionName;
 import static com.google.common.base.MoreObjects.firstNonNull;
 
 import com.google.cloud.GrpcServiceOptions.ExecutorFactory;

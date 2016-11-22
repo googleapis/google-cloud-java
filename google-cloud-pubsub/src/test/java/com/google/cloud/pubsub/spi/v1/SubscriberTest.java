@@ -63,7 +63,7 @@ public class SubscriberTest {
   private static MockIAMPolicy mockIAMPolicy;
   private static MockSubscriber mockSubscriber;
   private static MockServiceHelper serviceHelper;
-  private SubscriberApi api;
+  private SubscriberClient client;
 
   @BeforeClass
   public static void startStaticServer() {
@@ -89,12 +89,12 @@ public class SubscriberTest {
         SubscriberSettings.defaultBuilder()
             .setChannelProvider(serviceHelper.createChannelProvider())
             .build();
-    api = SubscriberApi.create(settings);
+    client = SubscriberClient.create(settings);
   }
 
   @After
   public void tearDown() throws Exception {
-    api.close();
+    client.close();
   }
 
   @Test
@@ -117,7 +117,7 @@ public class SubscriberTest {
     int ackDeadlineSeconds = 2135351438;
 
     Subscription actualResponse =
-        api.createSubscription(name, topic, pushConfig, ackDeadlineSeconds);
+        client.createSubscription(name, topic, pushConfig, ackDeadlineSeconds);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<GeneratedMessageV3> actualRequests = mockSubscriber.getRequests();
@@ -142,7 +142,7 @@ public class SubscriberTest {
       PushConfig pushConfig = PushConfig.newBuilder().build();
       int ackDeadlineSeconds = 2135351438;
 
-      api.createSubscription(name, topic, pushConfig, ackDeadlineSeconds);
+      client.createSubscription(name, topic, pushConfig, ackDeadlineSeconds);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
       Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
@@ -165,7 +165,7 @@ public class SubscriberTest {
 
     SubscriptionName subscription = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]");
 
-    Subscription actualResponse = api.getSubscription(subscription);
+    Subscription actualResponse = client.getSubscription(subscription);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<GeneratedMessageV3> actualRequests = mockSubscriber.getRequests();
@@ -184,7 +184,7 @@ public class SubscriberTest {
     try {
       SubscriptionName subscription = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]");
 
-      api.getSubscription(subscription);
+      client.getSubscription(subscription);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
       Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
@@ -206,7 +206,7 @@ public class SubscriberTest {
 
     ProjectName project = ProjectName.create("[PROJECT]");
 
-    ListSubscriptionsPagedResponse pagedListResponse = api.listSubscriptions(project);
+    ListSubscriptionsPagedResponse pagedListResponse = client.listSubscriptions(project);
 
     List<Subscription> resources = Lists.newArrayList(pagedListResponse.iterateAllElements());
     Assert.assertEquals(1, resources.size());
@@ -228,7 +228,7 @@ public class SubscriberTest {
     try {
       ProjectName project = ProjectName.create("[PROJECT]");
 
-      api.listSubscriptions(project);
+      client.listSubscriptions(project);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
       Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
@@ -243,7 +243,7 @@ public class SubscriberTest {
 
     SubscriptionName subscription = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]");
 
-    api.deleteSubscription(subscription);
+    client.deleteSubscription(subscription);
 
     List<GeneratedMessageV3> actualRequests = mockSubscriber.getRequests();
     Assert.assertEquals(1, actualRequests.size());
@@ -261,7 +261,7 @@ public class SubscriberTest {
     try {
       SubscriptionName subscription = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]");
 
-      api.deleteSubscription(subscription);
+      client.deleteSubscription(subscription);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
       Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
@@ -278,7 +278,7 @@ public class SubscriberTest {
     List<String> ackIds = new ArrayList<>();
     int ackDeadlineSeconds = 2135351438;
 
-    api.modifyAckDeadline(subscription, ackIds, ackDeadlineSeconds);
+    client.modifyAckDeadline(subscription, ackIds, ackDeadlineSeconds);
 
     List<GeneratedMessageV3> actualRequests = mockSubscriber.getRequests();
     Assert.assertEquals(1, actualRequests.size());
@@ -300,7 +300,7 @@ public class SubscriberTest {
       List<String> ackIds = new ArrayList<>();
       int ackDeadlineSeconds = 2135351438;
 
-      api.modifyAckDeadline(subscription, ackIds, ackDeadlineSeconds);
+      client.modifyAckDeadline(subscription, ackIds, ackDeadlineSeconds);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
       Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
@@ -316,7 +316,7 @@ public class SubscriberTest {
     SubscriptionName subscription = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]");
     List<String> ackIds = new ArrayList<>();
 
-    api.acknowledge(subscription, ackIds);
+    client.acknowledge(subscription, ackIds);
 
     List<GeneratedMessageV3> actualRequests = mockSubscriber.getRequests();
     Assert.assertEquals(1, actualRequests.size());
@@ -336,7 +336,7 @@ public class SubscriberTest {
       SubscriptionName subscription = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]");
       List<String> ackIds = new ArrayList<>();
 
-      api.acknowledge(subscription, ackIds);
+      client.acknowledge(subscription, ackIds);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
       Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
@@ -353,7 +353,7 @@ public class SubscriberTest {
     boolean returnImmediately = false;
     int maxMessages = 496131527;
 
-    PullResponse actualResponse = api.pull(subscription, returnImmediately, maxMessages);
+    PullResponse actualResponse = client.pull(subscription, returnImmediately, maxMessages);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<GeneratedMessageV3> actualRequests = mockSubscriber.getRequests();
@@ -376,7 +376,7 @@ public class SubscriberTest {
       boolean returnImmediately = false;
       int maxMessages = 496131527;
 
-      api.pull(subscription, returnImmediately, maxMessages);
+      client.pull(subscription, returnImmediately, maxMessages);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
       Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
@@ -392,7 +392,7 @@ public class SubscriberTest {
     SubscriptionName subscription = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]");
     PushConfig pushConfig = PushConfig.newBuilder().build();
 
-    api.modifyPushConfig(subscription, pushConfig);
+    client.modifyPushConfig(subscription, pushConfig);
 
     List<GeneratedMessageV3> actualRequests = mockSubscriber.getRequests();
     Assert.assertEquals(1, actualRequests.size());
@@ -412,7 +412,7 @@ public class SubscriberTest {
       SubscriptionName subscription = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]");
       PushConfig pushConfig = PushConfig.newBuilder().build();
 
-      api.modifyPushConfig(subscription, pushConfig);
+      client.modifyPushConfig(subscription, pushConfig);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
       Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
@@ -427,10 +427,11 @@ public class SubscriberTest {
     Policy expectedResponse = Policy.newBuilder().setVersion(version).setEtag(etag).build();
     mockIAMPolicy.addResponse(expectedResponse);
 
-    String formattedResource = SubscriberApi.formatSubscriptionName("[PROJECT]", "[SUBSCRIPTION]");
+    String formattedResource =
+        SubscriberClient.formatSubscriptionName("[PROJECT]", "[SUBSCRIPTION]");
     Policy policy = Policy.newBuilder().build();
 
-    Policy actualResponse = api.setIamPolicy(formattedResource, policy);
+    Policy actualResponse = client.setIamPolicy(formattedResource, policy);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<GeneratedMessageV3> actualRequests = mockIAMPolicy.getRequests();
@@ -449,10 +450,10 @@ public class SubscriberTest {
 
     try {
       String formattedResource =
-          SubscriberApi.formatSubscriptionName("[PROJECT]", "[SUBSCRIPTION]");
+          SubscriberClient.formatSubscriptionName("[PROJECT]", "[SUBSCRIPTION]");
       Policy policy = Policy.newBuilder().build();
 
-      api.setIamPolicy(formattedResource, policy);
+      client.setIamPolicy(formattedResource, policy);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
       Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
@@ -467,9 +468,10 @@ public class SubscriberTest {
     Policy expectedResponse = Policy.newBuilder().setVersion(version).setEtag(etag).build();
     mockIAMPolicy.addResponse(expectedResponse);
 
-    String formattedResource = SubscriberApi.formatSubscriptionName("[PROJECT]", "[SUBSCRIPTION]");
+    String formattedResource =
+        SubscriberClient.formatSubscriptionName("[PROJECT]", "[SUBSCRIPTION]");
 
-    Policy actualResponse = api.getIamPolicy(formattedResource);
+    Policy actualResponse = client.getIamPolicy(formattedResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<GeneratedMessageV3> actualRequests = mockIAMPolicy.getRequests();
@@ -487,9 +489,9 @@ public class SubscriberTest {
 
     try {
       String formattedResource =
-          SubscriberApi.formatSubscriptionName("[PROJECT]", "[SUBSCRIPTION]");
+          SubscriberClient.formatSubscriptionName("[PROJECT]", "[SUBSCRIPTION]");
 
-      api.getIamPolicy(formattedResource);
+      client.getIamPolicy(formattedResource);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
       Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
@@ -502,11 +504,12 @@ public class SubscriberTest {
     TestIamPermissionsResponse expectedResponse = TestIamPermissionsResponse.newBuilder().build();
     mockIAMPolicy.addResponse(expectedResponse);
 
-    String formattedResource = SubscriberApi.formatSubscriptionName("[PROJECT]", "[SUBSCRIPTION]");
+    String formattedResource =
+        SubscriberClient.formatSubscriptionName("[PROJECT]", "[SUBSCRIPTION]");
     List<String> permissions = new ArrayList<>();
 
     TestIamPermissionsResponse actualResponse =
-        api.testIamPermissions(formattedResource, permissions);
+        client.testIamPermissions(formattedResource, permissions);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<GeneratedMessageV3> actualRequests = mockIAMPolicy.getRequests();
@@ -525,10 +528,10 @@ public class SubscriberTest {
 
     try {
       String formattedResource =
-          SubscriberApi.formatSubscriptionName("[PROJECT]", "[SUBSCRIPTION]");
+          SubscriberClient.formatSubscriptionName("[PROJECT]", "[SUBSCRIPTION]");
       List<String> permissions = new ArrayList<>();
 
-      api.testIamPermissions(formattedResource, permissions);
+      client.testIamPermissions(formattedResource, permissions);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
       Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());

@@ -21,12 +21,14 @@ import com.google.api.gax.protobuf.PathTemplate;
 import com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest;
 import com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse;
 import com.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent;
+import com.google.protobuf.ExperimentalApi;
 import io.grpc.ManagedChannel;
 import java.io.Closeable;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ScheduledExecutorService;
+import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND SERVICE
 /**
@@ -37,15 +39,15 @@ import java.util.concurrent.ScheduledExecutorService;
  *
  * <pre>
  * <code>
- * try (ReportErrorsServiceApi reportErrorsServiceApi = ReportErrorsServiceApi.create()) {
- *   String formattedProjectName = ReportErrorsServiceApi.formatProjectName("[PROJECT]");
+ * try (ReportErrorsServiceClient reportErrorsServiceClient = ReportErrorsServiceClient.create()) {
+ *   String formattedProjectName = ReportErrorsServiceClient.formatProjectName("[PROJECT]");
  *   ReportedErrorEvent event = ReportedErrorEvent.newBuilder().build();
- *   ReportErrorEventResponse response = reportErrorsServiceApi.reportErrorEvent(formattedProjectName, event);
+ *   ReportErrorEventResponse response = reportErrorsServiceClient.reportErrorEvent(formattedProjectName, event);
  * }
  * </code>
  * </pre>
  *
- * <p>Note: close() needs to be called on the reportErrorsServiceApi object to clean up resources
+ * <p>Note: close() needs to be called on the reportErrorsServiceClient object to clean up resources
  * such as threads. In the example above, try-with-resources is used, which automatically calls
  * close().
  *
@@ -80,13 +82,14 @@ import java.util.concurrent.ScheduledExecutorService;
  *         .build();
  * ReportErrorsServiceSettings reportErrorsServiceSettings =
  *     ReportErrorsServiceSettings.defaultBuilder().setChannelProvider(channelProvider).build();
- * ReportErrorsServiceApi reportErrorsServiceApi =
- *     ReportErrorsServiceApi.create(reportErrorsServiceSettings);
+ * ReportErrorsServiceClient reportErrorsServiceClient =
+ *     ReportErrorsServiceClient.create(reportErrorsServiceSettings);
  * </code>
  * </pre>
  */
-@javax.annotation.Generated("by GAPIC")
-public class ReportErrorsServiceApi implements AutoCloseable {
+@Generated("by GAPIC")
+@ExperimentalApi
+public class ReportErrorsServiceClient implements AutoCloseable {
   private final ReportErrorsServiceSettings settings;
   private final ScheduledExecutorService executor;
   private final ManagedChannel channel;
@@ -108,26 +111,26 @@ public class ReportErrorsServiceApi implements AutoCloseable {
     return PROJECT_PATH_TEMPLATE.parse(projectName).get("project");
   }
 
-  /** Constructs an instance of ReportErrorsServiceApi with default settings. */
-  public static final ReportErrorsServiceApi create() throws IOException {
+  /** Constructs an instance of ReportErrorsServiceClient with default settings. */
+  public static final ReportErrorsServiceClient create() throws IOException {
     return create(ReportErrorsServiceSettings.defaultBuilder().build());
   }
 
   /**
-   * Constructs an instance of ReportErrorsServiceApi, using the given settings. The channels are
+   * Constructs an instance of ReportErrorsServiceClient, using the given settings. The channels are
    * created based on the settings passed in, or defaults for any settings that are not set.
    */
-  public static final ReportErrorsServiceApi create(ReportErrorsServiceSettings settings)
+  public static final ReportErrorsServiceClient create(ReportErrorsServiceSettings settings)
       throws IOException {
-    return new ReportErrorsServiceApi(settings);
+    return new ReportErrorsServiceClient(settings);
   }
 
   /**
-   * Constructs an instance of ReportErrorsServiceApi, using the given settings. This is protected
-   * so that it easy to make a subclass, but otherwise, the static factory methods should be
-   * preferred.
+   * Constructs an instance of ReportErrorsServiceClient, using the given settings. This is
+   * protected so that it easy to make a subclass, but otherwise, the static factory methods should
+   * be preferred.
    */
-  protected ReportErrorsServiceApi(ReportErrorsServiceSettings settings) throws IOException {
+  protected ReportErrorsServiceClient(ReportErrorsServiceSettings settings) throws IOException {
     this.settings = settings;
     ChannelAndExecutor channelAndExecutor = settings.getChannelAndExecutor();
     this.executor = channelAndExecutor.getExecutor();
@@ -174,10 +177,10 @@ public class ReportErrorsServiceApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (ReportErrorsServiceApi reportErrorsServiceApi = ReportErrorsServiceApi.create()) {
-   *   String formattedProjectName = ReportErrorsServiceApi.formatProjectName("[PROJECT]");
+   * try (ReportErrorsServiceClient reportErrorsServiceClient = ReportErrorsServiceClient.create()) {
+   *   String formattedProjectName = ReportErrorsServiceClient.formatProjectName("[PROJECT]");
    *   ReportedErrorEvent event = ReportedErrorEvent.newBuilder().build();
-   *   ReportErrorEventResponse response = reportErrorsServiceApi.reportErrorEvent(formattedProjectName, event);
+   *   ReportErrorEventResponse response = reportErrorsServiceClient.reportErrorEvent(formattedProjectName, event);
    * }
    * </code></pre>
    *
@@ -209,14 +212,14 @@ public class ReportErrorsServiceApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (ReportErrorsServiceApi reportErrorsServiceApi = ReportErrorsServiceApi.create()) {
-   *   String formattedProjectName = ReportErrorsServiceApi.formatProjectName("[PROJECT]");
+   * try (ReportErrorsServiceClient reportErrorsServiceClient = ReportErrorsServiceClient.create()) {
+   *   String formattedProjectName = ReportErrorsServiceClient.formatProjectName("[PROJECT]");
    *   ReportedErrorEvent event = ReportedErrorEvent.newBuilder().build();
    *   ReportErrorEventRequest request = ReportErrorEventRequest.newBuilder()
    *     .setProjectName(formattedProjectName)
    *     .setEvent(event)
    *     .build();
-   *   ReportErrorEventResponse response = reportErrorsServiceApi.reportErrorEvent(request);
+   *   ReportErrorEventResponse response = reportErrorsServiceClient.reportErrorEvent(request);
    * }
    * </code></pre>
    *
@@ -241,14 +244,14 @@ public class ReportErrorsServiceApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (ReportErrorsServiceApi reportErrorsServiceApi = ReportErrorsServiceApi.create()) {
-   *   String formattedProjectName = ReportErrorsServiceApi.formatProjectName("[PROJECT]");
+   * try (ReportErrorsServiceClient reportErrorsServiceClient = ReportErrorsServiceClient.create()) {
+   *   String formattedProjectName = ReportErrorsServiceClient.formatProjectName("[PROJECT]");
    *   ReportedErrorEvent event = ReportedErrorEvent.newBuilder().build();
    *   ReportErrorEventRequest request = ReportErrorEventRequest.newBuilder()
    *     .setProjectName(formattedProjectName)
    *     .setEvent(event)
    *     .build();
-   *   ListenableFuture&lt;ReportErrorEventResponse&gt; future = reportErrorsServiceApi.reportErrorEventCallable().futureCall(request);
+   *   ListenableFuture&lt;ReportErrorEventResponse&gt; future = reportErrorsServiceClient.reportErrorEventCallable().futureCall(request);
    *   // Do something
    *   ReportErrorEventResponse response = future.get();
    * }

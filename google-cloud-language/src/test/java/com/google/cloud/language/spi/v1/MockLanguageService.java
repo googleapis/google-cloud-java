@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.google.cloud.language.spi.v1beta1;
+package com.google.cloud.language.spi.v1;
 
 import com.google.api.gax.testing.MockGrpcService;
 import com.google.protobuf.GeneratedMessageV3;
@@ -43,7 +43,6 @@ public class MockLanguageService implements MockGrpcService {
     serviceImpl.addException(exception);
   }
 
-  @Override
   public void setResponses(List<GeneratedMessageV3> responses) {
     serviceImpl.setResponses(responses);
   }

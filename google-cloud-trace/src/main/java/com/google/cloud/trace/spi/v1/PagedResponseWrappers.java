@@ -22,6 +22,8 @@ import com.google.api.gax.grpc.UnaryCallable;
 import com.google.devtools.cloudtrace.v1.ListTracesRequest;
 import com.google.devtools.cloudtrace.v1.ListTracesResponse;
 import com.google.devtools.cloudtrace.v1.Trace;
+import com.google.protobuf.ExperimentalApi;
+import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 /**
@@ -29,7 +31,8 @@ import com.google.devtools.cloudtrace.v1.Trace;
  * inside this wrapper class is used as the return type of one of an API method that implements the
  * page streaming pattern.
  */
-@javax.annotation.Generated("by GAPIC")
+@Generated("by GAPIC")
+@ExperimentalApi
 public class PagedResponseWrappers {
 
   public static class ListTracesPagedResponse

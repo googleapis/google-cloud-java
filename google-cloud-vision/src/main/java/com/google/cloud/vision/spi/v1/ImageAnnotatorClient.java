@@ -20,12 +20,14 @@ import com.google.api.gax.grpc.UnaryCallable;
 import com.google.cloud.vision.v1.AnnotateImageRequest;
 import com.google.cloud.vision.v1.BatchAnnotateImagesRequest;
 import com.google.cloud.vision.v1.BatchAnnotateImagesResponse;
+import com.google.protobuf.ExperimentalApi;
 import io.grpc.ManagedChannel;
 import java.io.Closeable;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ScheduledExecutorService;
+import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND SERVICE
 /**
@@ -38,15 +40,15 @@ import java.util.concurrent.ScheduledExecutorService;
  *
  * <pre>
  * <code>
- * try (ImageAnnotatorApi imageAnnotatorApi = ImageAnnotatorApi.create()) {
+ * try (ImageAnnotatorClient imageAnnotatorClient = ImageAnnotatorClient.create()) {
  *   List&lt;AnnotateImageRequest&gt; requests = new ArrayList&lt;&gt;();
- *   BatchAnnotateImagesResponse response = imageAnnotatorApi.batchAnnotateImages(requests);
+ *   BatchAnnotateImagesResponse response = imageAnnotatorClient.batchAnnotateImages(requests);
  * }
  * </code>
  * </pre>
  *
- * <p>Note: close() needs to be called on the imageAnnotatorApi object to clean up resources such as
- * threads. In the example above, try-with-resources is used, which automatically calls close().
+ * <p>Note: close() needs to be called on the imageAnnotatorClient object to clean up resources such
+ * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <p>The surface of this class includes several types of Java methods for each of the API's
  * methods:
@@ -79,13 +81,14 @@ import java.util.concurrent.ScheduledExecutorService;
  *         .build();
  * ImageAnnotatorSettings imageAnnotatorSettings =
  *     ImageAnnotatorSettings.defaultBuilder().setChannelProvider(channelProvider).build();
- * ImageAnnotatorApi imageAnnotatorApi =
- *     ImageAnnotatorApi.create(imageAnnotatorSettings);
+ * ImageAnnotatorClient imageAnnotatorClient =
+ *     ImageAnnotatorClient.create(imageAnnotatorSettings);
  * </code>
  * </pre>
  */
-@javax.annotation.Generated("by GAPIC")
-public class ImageAnnotatorApi implements AutoCloseable {
+@Generated("by GAPIC")
+@ExperimentalApi
+public class ImageAnnotatorClient implements AutoCloseable {
   private final ImageAnnotatorSettings settings;
   private final ScheduledExecutorService executor;
   private final ManagedChannel channel;
@@ -94,24 +97,25 @@ public class ImageAnnotatorApi implements AutoCloseable {
   private final UnaryCallable<BatchAnnotateImagesRequest, BatchAnnotateImagesResponse>
       batchAnnotateImagesCallable;
 
-  /** Constructs an instance of ImageAnnotatorApi with default settings. */
-  public static final ImageAnnotatorApi create() throws IOException {
+  /** Constructs an instance of ImageAnnotatorClient with default settings. */
+  public static final ImageAnnotatorClient create() throws IOException {
     return create(ImageAnnotatorSettings.defaultBuilder().build());
   }
 
   /**
-   * Constructs an instance of ImageAnnotatorApi, using the given settings. The channels are created
-   * based on the settings passed in, or defaults for any settings that are not set.
+   * Constructs an instance of ImageAnnotatorClient, using the given settings. The channels are
+   * created based on the settings passed in, or defaults for any settings that are not set.
    */
-  public static final ImageAnnotatorApi create(ImageAnnotatorSettings settings) throws IOException {
-    return new ImageAnnotatorApi(settings);
+  public static final ImageAnnotatorClient create(ImageAnnotatorSettings settings)
+      throws IOException {
+    return new ImageAnnotatorClient(settings);
   }
 
   /**
-   * Constructs an instance of ImageAnnotatorApi, using the given settings. This is protected so
+   * Constructs an instance of ImageAnnotatorClient, using the given settings. This is protected so
    * that it easy to make a subclass, but otherwise, the static factory methods should be preferred.
    */
-  protected ImageAnnotatorApi(ImageAnnotatorSettings settings) throws IOException {
+  protected ImageAnnotatorClient(ImageAnnotatorSettings settings) throws IOException {
     this.settings = settings;
     ChannelAndExecutor channelAndExecutor = settings.getChannelAndExecutor();
     this.executor = channelAndExecutor.getExecutor();
@@ -151,9 +155,9 @@ public class ImageAnnotatorApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (ImageAnnotatorApi imageAnnotatorApi = ImageAnnotatorApi.create()) {
+   * try (ImageAnnotatorClient imageAnnotatorClient = ImageAnnotatorClient.create()) {
    *   List&lt;AnnotateImageRequest&gt; requests = new ArrayList&lt;&gt;();
-   *   BatchAnnotateImagesResponse response = imageAnnotatorApi.batchAnnotateImages(requests);
+   *   BatchAnnotateImagesResponse response = imageAnnotatorClient.batchAnnotateImages(requests);
    * }
    * </code></pre>
    *
@@ -175,12 +179,12 @@ public class ImageAnnotatorApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (ImageAnnotatorApi imageAnnotatorApi = ImageAnnotatorApi.create()) {
+   * try (ImageAnnotatorClient imageAnnotatorClient = ImageAnnotatorClient.create()) {
    *   List&lt;AnnotateImageRequest&gt; requests = new ArrayList&lt;&gt;();
    *   BatchAnnotateImagesRequest request = BatchAnnotateImagesRequest.newBuilder()
    *     .addAllRequests(requests)
    *     .build();
-   *   BatchAnnotateImagesResponse response = imageAnnotatorApi.batchAnnotateImages(request);
+   *   BatchAnnotateImagesResponse response = imageAnnotatorClient.batchAnnotateImages(request);
    * }
    * </code></pre>
    *
@@ -199,12 +203,12 @@ public class ImageAnnotatorApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (ImageAnnotatorApi imageAnnotatorApi = ImageAnnotatorApi.create()) {
+   * try (ImageAnnotatorClient imageAnnotatorClient = ImageAnnotatorClient.create()) {
    *   List&lt;AnnotateImageRequest&gt; requests = new ArrayList&lt;&gt;();
    *   BatchAnnotateImagesRequest request = BatchAnnotateImagesRequest.newBuilder()
    *     .addAllRequests(requests)
    *     .build();
-   *   ListenableFuture&lt;BatchAnnotateImagesResponse&gt; future = imageAnnotatorApi.batchAnnotateImagesCallable().futureCall(request);
+   *   ListenableFuture&lt;BatchAnnotateImagesResponse&gt; future = imageAnnotatorClient.batchAnnotateImagesCallable().futureCall(request);
    *   // Do something
    *   BatchAnnotateImagesResponse response = future.get();
    * }
