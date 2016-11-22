@@ -125,14 +125,6 @@ public class GroupServiceApi implements AutoCloseable {
   private static final PathTemplate GROUP_PATH_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding("projects/{project}/groups/{group}");
 
-  private static final PathTemplate METRIC_DESCRIPTOR_PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding(
-          "projects/{project}/metricDescriptors/{metric_descriptor=**}");
-
-  private static final PathTemplate MONITORED_RESOURCE_DESCRIPTOR_PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding(
-          "projects/{project}/monitoredResourceDescriptors/{monitored_resource_descriptor}");
-
   /** Formats a string containing the fully-qualified path to represent a project resource. */
   public static final String formatProjectName(String project) {
     return PROJECT_PATH_TEMPLATE.instantiate("project", project);
@@ -143,26 +135,6 @@ public class GroupServiceApi implements AutoCloseable {
     return GROUP_PATH_TEMPLATE.instantiate(
         "project", project,
         "group", group);
-  }
-
-  /**
-   * Formats a string containing the fully-qualified path to represent a metric_descriptor resource.
-   */
-  public static final String formatMetricDescriptorName(String project, String metricDescriptor) {
-    return METRIC_DESCRIPTOR_PATH_TEMPLATE.instantiate(
-        "project", project,
-        "metric_descriptor", metricDescriptor);
-  }
-
-  /**
-   * Formats a string containing the fully-qualified path to represent a
-   * monitored_resource_descriptor resource.
-   */
-  public static final String formatMonitoredResourceDescriptorName(
-      String project, String monitoredResourceDescriptor) {
-    return MONITORED_RESOURCE_DESCRIPTOR_PATH_TEMPLATE.instantiate(
-        "project", project,
-        "monitored_resource_descriptor", monitoredResourceDescriptor);
   }
 
   /** Parses the project from the given fully-qualified path which represents a project resource. */
@@ -178,45 +150,6 @@ public class GroupServiceApi implements AutoCloseable {
   /** Parses the group from the given fully-qualified path which represents a group resource. */
   public static final String parseGroupFromGroupName(String groupName) {
     return GROUP_PATH_TEMPLATE.parse(groupName).get("group");
-  }
-
-  /**
-   * Parses the project from the given fully-qualified path which represents a metric_descriptor
-   * resource.
-   */
-  public static final String parseProjectFromMetricDescriptorName(String metricDescriptorName) {
-    return METRIC_DESCRIPTOR_PATH_TEMPLATE.parse(metricDescriptorName).get("project");
-  }
-
-  /**
-   * Parses the metric_descriptor from the given fully-qualified path which represents a
-   * metric_descriptor resource.
-   */
-  public static final String parseMetricDescriptorFromMetricDescriptorName(
-      String metricDescriptorName) {
-    return METRIC_DESCRIPTOR_PATH_TEMPLATE.parse(metricDescriptorName).get("metric_descriptor");
-  }
-
-  /**
-   * Parses the project from the given fully-qualified path which represents a
-   * monitored_resource_descriptor resource.
-   */
-  public static final String parseProjectFromMonitoredResourceDescriptorName(
-      String monitoredResourceDescriptorName) {
-    return MONITORED_RESOURCE_DESCRIPTOR_PATH_TEMPLATE
-        .parse(monitoredResourceDescriptorName)
-        .get("project");
-  }
-
-  /**
-   * Parses the monitored_resource_descriptor from the given fully-qualified path which represents a
-   * monitored_resource_descriptor resource.
-   */
-  public static final String parseMonitoredResourceDescriptorFromMonitoredResourceDescriptorName(
-      String monitoredResourceDescriptorName) {
-    return MONITORED_RESOURCE_DESCRIPTOR_PATH_TEMPLATE
-        .parse(monitoredResourceDescriptorName)
-        .get("monitored_resource_descriptor");
   }
 
   /** Constructs an instance of GroupServiceApi with default settings. */
@@ -527,6 +460,7 @@ public class GroupServiceApi implements AutoCloseable {
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final Group updateGroup(Group group) {
+
     UpdateGroupRequest request = UpdateGroupRequest.newBuilder().setGroup(group).build();
     return updateGroup(request);
   }

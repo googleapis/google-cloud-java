@@ -105,32 +105,12 @@ public class ErrorStatsServiceApi implements AutoCloseable {
   private final UnaryCallable<ListEventsRequest, ListEventsPagedResponse> listEventsPagedCallable;
   private final UnaryCallable<DeleteEventsRequest, DeleteEventsResponse> deleteEventsCallable;
 
-  private static final PathTemplate GROUP_PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding("projects/{project}/groups/{group}");
-
   private static final PathTemplate PROJECT_PATH_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding("projects/{project}");
-
-  /** Formats a string containing the fully-qualified path to represent a group resource. */
-  public static final String formatGroupName(String project, String group) {
-    return GROUP_PATH_TEMPLATE.instantiate(
-        "project", project,
-        "group", group);
-  }
 
   /** Formats a string containing the fully-qualified path to represent a project resource. */
   public static final String formatProjectName(String project) {
     return PROJECT_PATH_TEMPLATE.instantiate("project", project);
-  }
-
-  /** Parses the project from the given fully-qualified path which represents a group resource. */
-  public static final String parseProjectFromGroupName(String groupName) {
-    return GROUP_PATH_TEMPLATE.parse(groupName).get("project");
-  }
-
-  /** Parses the group from the given fully-qualified path which represents a group resource. */
-  public static final String parseGroupFromGroupName(String groupName) {
-    return GROUP_PATH_TEMPLATE.parse(groupName).get("group");
   }
 
   /** Parses the project from the given fully-qualified path which represents a project resource. */

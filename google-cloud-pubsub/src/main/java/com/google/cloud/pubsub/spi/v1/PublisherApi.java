@@ -254,6 +254,7 @@ public class PublisherApi implements AutoCloseable {
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final Topic createTopic(TopicName name) {
+
     Topic request = Topic.newBuilder().setNameWithTopicName(name).build();
     return createTopic(request);
   }
@@ -328,6 +329,7 @@ public class PublisherApi implements AutoCloseable {
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final PublishResponse publish(TopicName topic, List<PubsubMessage> messages) {
+
     PublishRequest request =
         PublishRequest.newBuilder().setTopicWithTopicName(topic).addAllMessages(messages).build();
     return publish(request);
@@ -411,6 +413,7 @@ public class PublisherApi implements AutoCloseable {
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final Topic getTopic(TopicName topic) {
+
     GetTopicRequest request = GetTopicRequest.newBuilder().setTopicWithTopicName(topic).build();
     return getTopic(request);
   }
@@ -691,6 +694,7 @@ public class PublisherApi implements AutoCloseable {
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final void deleteTopic(TopicName topic) {
+
     DeleteTopicRequest request =
         DeleteTopicRequest.newBuilder().setTopicWithTopicName(topic).build();
     deleteTopic(request);

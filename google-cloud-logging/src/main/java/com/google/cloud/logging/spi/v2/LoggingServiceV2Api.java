@@ -117,32 +117,12 @@ public class LoggingServiceV2Api implements AutoCloseable {
   private static final PathTemplate PARENT_PATH_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding("projects/{project}");
 
-  private static final PathTemplate SINK_PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding("projects/{project}/sinks/{sink}");
-
-  private static final PathTemplate METRIC_PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding("projects/{project}/metrics/{metric}");
-
   private static final PathTemplate LOG_PATH_TEMPLATE =
       PathTemplate.createWithoutUrlEncoding("projects/{project}/logs/{log}");
 
   /** Formats a string containing the fully-qualified path to represent a parent resource. */
   public static final String formatParentName(String project) {
     return PARENT_PATH_TEMPLATE.instantiate("project", project);
-  }
-
-  /** Formats a string containing the fully-qualified path to represent a sink resource. */
-  public static final String formatSinkName(String project, String sink) {
-    return SINK_PATH_TEMPLATE.instantiate(
-        "project", project,
-        "sink", sink);
-  }
-
-  /** Formats a string containing the fully-qualified path to represent a metric resource. */
-  public static final String formatMetricName(String project, String metric) {
-    return METRIC_PATH_TEMPLATE.instantiate(
-        "project", project,
-        "metric", metric);
   }
 
   /** Formats a string containing the fully-qualified path to represent a log resource. */
@@ -155,26 +135,6 @@ public class LoggingServiceV2Api implements AutoCloseable {
   /** Parses the project from the given fully-qualified path which represents a parent resource. */
   public static final String parseProjectFromParentName(String parentName) {
     return PARENT_PATH_TEMPLATE.parse(parentName).get("project");
-  }
-
-  /** Parses the project from the given fully-qualified path which represents a sink resource. */
-  public static final String parseProjectFromSinkName(String sinkName) {
-    return SINK_PATH_TEMPLATE.parse(sinkName).get("project");
-  }
-
-  /** Parses the sink from the given fully-qualified path which represents a sink resource. */
-  public static final String parseSinkFromSinkName(String sinkName) {
-    return SINK_PATH_TEMPLATE.parse(sinkName).get("sink");
-  }
-
-  /** Parses the project from the given fully-qualified path which represents a metric resource. */
-  public static final String parseProjectFromMetricName(String metricName) {
-    return METRIC_PATH_TEMPLATE.parse(metricName).get("project");
-  }
-
-  /** Parses the metric from the given fully-qualified path which represents a metric resource. */
-  public static final String parseMetricFromMetricName(String metricName) {
-    return METRIC_PATH_TEMPLATE.parse(metricName).get("metric");
   }
 
   /** Parses the project from the given fully-qualified path which represents a log resource. */
@@ -428,19 +388,18 @@ public class LoggingServiceV2Api implements AutoCloseable {
    *
    * <pre><code>
    * try (LoggingServiceV2Api loggingServiceV2Api = LoggingServiceV2Api.create()) {
-   *   List&lt;String&gt; projectIds = new ArrayList&lt;&gt;();
+   *   List&lt;String&gt; resourceNames = new ArrayList&lt;&gt;();
    *   String filter = "";
    *   String orderBy = "";
-   *   for (LogEntry element : loggingServiceV2Api.listLogEntries(projectIds, filter, orderBy).iterateAllElements()) {
+   *   for (LogEntry element : loggingServiceV2Api.listLogEntries(resourceNames, filter, orderBy).iterateAllElements()) {
    *     // doThingsWith(element);
    *   }
    * }
    * </code></pre>
    *
-   * @param projectIds Deprecated. One or more project identifiers or project numbers from which to
-   *     retrieve log entries. Examples: `"my-project-1A"`, `"1234567890"`. If present, these
-   *     project identifiers are converted to resource format and added to the list of resources in
-   *     `resourceNames`. Callers should use `resourceNames` rather than this parameter.
+   * @param resourceNames Optional. One or more cloud resources from which to retrieve log entries.
+   *     Example: `"projects/my-project-1A"`, `"projects/1234567890"`. Projects listed in
+   *     `projectIds` are added to this list.
    * @param filter Optional. A filter that chooses which log entries to return. See [Advanced Logs
    *     Filters](/logging/docs/view/advanced_filters). Only log entries that match the filter are
    *     returned. An empty filter matches all log entries.
@@ -452,10 +411,10 @@ public class LoggingServiceV2Api implements AutoCloseable {
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final ListLogEntriesPagedResponse listLogEntries(
-      List<String> projectIds, String filter, String orderBy) {
+      List<String> resourceNames, String filter, String orderBy) {
     ListLogEntriesRequest request =
         ListLogEntriesRequest.newBuilder()
-            .addAllProjectIds(projectIds)
+            .addAllResourceNames(resourceNames)
             .setFilter(filter)
             .setOrderBy(orderBy)
             .build();
@@ -471,9 +430,9 @@ public class LoggingServiceV2Api implements AutoCloseable {
    *
    * <pre><code>
    * try (LoggingServiceV2Api loggingServiceV2Api = LoggingServiceV2Api.create()) {
-   *   List&lt;String&gt; projectIds = new ArrayList&lt;&gt;();
+   *   List&lt;String&gt; resourceNames = new ArrayList&lt;&gt;();
    *   ListLogEntriesRequest request = ListLogEntriesRequest.newBuilder()
-   *     .addAllProjectIds(projectIds)
+   *     .addAllResourceNames(resourceNames)
    *     .build();
    *   for (LogEntry element : loggingServiceV2Api.listLogEntries(request).iterateAllElements()) {
    *     // doThingsWith(element);
@@ -497,9 +456,9 @@ public class LoggingServiceV2Api implements AutoCloseable {
    *
    * <pre><code>
    * try (LoggingServiceV2Api loggingServiceV2Api = LoggingServiceV2Api.create()) {
-   *   List&lt;String&gt; projectIds = new ArrayList&lt;&gt;();
+   *   List&lt;String&gt; resourceNames = new ArrayList&lt;&gt;();
    *   ListLogEntriesRequest request = ListLogEntriesRequest.newBuilder()
-   *     .addAllProjectIds(projectIds)
+   *     .addAllResourceNames(resourceNames)
    *     .build();
    *   ListenableFuture&lt;ListLogEntriesPagedResponse&gt; future = loggingServiceV2Api.listLogEntriesPagedCallable().futureCall(request);
    *   // Do something
@@ -523,9 +482,9 @@ public class LoggingServiceV2Api implements AutoCloseable {
    *
    * <pre><code>
    * try (LoggingServiceV2Api loggingServiceV2Api = LoggingServiceV2Api.create()) {
-   *   List&lt;String&gt; projectIds = new ArrayList&lt;&gt;();
+   *   List&lt;String&gt; resourceNames = new ArrayList&lt;&gt;();
    *   ListLogEntriesRequest request = ListLogEntriesRequest.newBuilder()
-   *     .addAllProjectIds(projectIds)
+   *     .addAllResourceNames(resourceNames)
    *     .build();
    *   while (true) {
    *     ListLogEntriesResponse response = loggingServiceV2Api.listLogEntriesCallable().call(request);

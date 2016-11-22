@@ -309,6 +309,7 @@ public class SubscriberApi implements AutoCloseable {
    */
   public final Subscription createSubscription(
       SubscriptionName name, TopicName topic, PushConfig pushConfig, int ackDeadlineSeconds) {
+
     Subscription request =
         Subscription.newBuilder()
             .setNameWithSubscriptionName(name)
@@ -395,6 +396,7 @@ public class SubscriberApi implements AutoCloseable {
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final Subscription getSubscription(SubscriptionName subscription) {
+
     GetSubscriptionRequest request =
         GetSubscriptionRequest.newBuilder()
             .setSubscriptionWithSubscriptionName(subscription)
@@ -573,6 +575,7 @@ public class SubscriberApi implements AutoCloseable {
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final void deleteSubscription(SubscriptionName subscription) {
+
     DeleteSubscriptionRequest request =
         DeleteSubscriptionRequest.newBuilder()
             .setSubscriptionWithSubscriptionName(subscription)
@@ -659,6 +662,7 @@ public class SubscriberApi implements AutoCloseable {
    */
   public final void modifyAckDeadline(
       SubscriptionName subscription, List<String> ackIds, int ackDeadlineSeconds) {
+
     ModifyAckDeadlineRequest request =
         ModifyAckDeadlineRequest.newBuilder()
             .setSubscriptionWithSubscriptionName(subscription)
@@ -751,6 +755,7 @@ public class SubscriberApi implements AutoCloseable {
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final void acknowledge(SubscriptionName subscription, List<String> ackIds) {
+
     AcknowledgeRequest request =
         AcknowledgeRequest.newBuilder()
             .setSubscriptionWithSubscriptionName(subscription)
@@ -844,6 +849,7 @@ public class SubscriberApi implements AutoCloseable {
    */
   public final PullResponse pull(
       SubscriptionName subscription, boolean returnImmediately, int maxMessages) {
+
     PullRequest request =
         PullRequest.newBuilder()
             .setSubscriptionWithSubscriptionName(subscription)
@@ -933,6 +939,7 @@ public class SubscriberApi implements AutoCloseable {
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final void modifyPushConfig(SubscriptionName subscription, PushConfig pushConfig) {
+
     ModifyPushConfigRequest request =
         ModifyPushConfigRequest.newBuilder()
             .setSubscriptionWithSubscriptionName(subscription)
