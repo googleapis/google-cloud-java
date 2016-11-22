@@ -16,8 +16,8 @@
 
 package com.google.cloud.pubsub;
 
-import static com.google.cloud.pubsub.spi.v1.SubscriberApi.parseProjectFromSubscriptionName;
-import static com.google.cloud.pubsub.spi.v1.SubscriberApi.parseSubscriptionFromSubscriptionName;
+import static com.google.cloud.pubsub.spi.v1.SubscriberClient.parseProjectFromSubscriptionName;
+import static com.google.cloud.pubsub.spi.v1.SubscriberClient.parseSubscriptionFromSubscriptionName;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.common.base.MoreObjects;

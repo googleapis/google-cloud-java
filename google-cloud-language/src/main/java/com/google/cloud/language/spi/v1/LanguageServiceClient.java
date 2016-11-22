@@ -13,25 +13,29 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.google.cloud.language.spi.v1beta1;
+package com.google.cloud.language.spi.v1;
 
 import com.google.api.gax.grpc.ChannelAndExecutor;
 import com.google.api.gax.grpc.UnaryCallable;
-import com.google.cloud.language.v1beta1.AnalyzeEntitiesRequest;
-import com.google.cloud.language.v1beta1.AnalyzeEntitiesResponse;
-import com.google.cloud.language.v1beta1.AnalyzeSentimentRequest;
-import com.google.cloud.language.v1beta1.AnalyzeSentimentResponse;
-import com.google.cloud.language.v1beta1.AnnotateTextRequest;
-import com.google.cloud.language.v1beta1.AnnotateTextRequest.Features;
-import com.google.cloud.language.v1beta1.AnnotateTextResponse;
-import com.google.cloud.language.v1beta1.Document;
-import com.google.cloud.language.v1beta1.EncodingType;
+import com.google.cloud.language.v1.AnalyzeEntitiesRequest;
+import com.google.cloud.language.v1.AnalyzeEntitiesResponse;
+import com.google.cloud.language.v1.AnalyzeSentimentRequest;
+import com.google.cloud.language.v1.AnalyzeSentimentResponse;
+import com.google.cloud.language.v1.AnalyzeSyntaxRequest;
+import com.google.cloud.language.v1.AnalyzeSyntaxResponse;
+import com.google.cloud.language.v1.AnnotateTextRequest;
+import com.google.cloud.language.v1.AnnotateTextRequest.Features;
+import com.google.cloud.language.v1.AnnotateTextResponse;
+import com.google.cloud.language.v1.Document;
+import com.google.cloud.language.v1.EncodingType;
+import com.google.protobuf.ExperimentalApi;
 import io.grpc.ManagedChannel;
 import java.io.Closeable;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ScheduledExecutorService;
+import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND SERVICE
 /**
@@ -43,15 +47,16 @@ import java.util.concurrent.ScheduledExecutorService;
  *
  * <pre>
  * <code>
- * try (LanguageServiceApi languageServiceApi = LanguageServiceApi.create()) {
+ * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.create()) {
  *   Document document = Document.newBuilder().build();
- *   AnalyzeSentimentResponse response = languageServiceApi.analyzeSentiment(document);
+ *   AnalyzeSentimentResponse response = languageServiceClient.analyzeSentiment(document);
  * }
  * </code>
  * </pre>
  *
- * <p>Note: close() needs to be called on the languageServiceApi object to clean up resources such
- * as threads. In the example above, try-with-resources is used, which automatically calls close().
+ * <p>Note: close() needs to be called on the languageServiceClient object to clean up resources
+ * such as threads. In the example above, try-with-resources is used, which automatically calls
+ * close().
  *
  * <p>The surface of this class includes several types of Java methods for each of the API's
  * methods:
@@ -84,13 +89,14 @@ import java.util.concurrent.ScheduledExecutorService;
  *         .build();
  * LanguageServiceSettings languageServiceSettings =
  *     LanguageServiceSettings.defaultBuilder().setChannelProvider(channelProvider).build();
- * LanguageServiceApi languageServiceApi =
- *     LanguageServiceApi.create(languageServiceSettings);
+ * LanguageServiceClient languageServiceClient =
+ *     LanguageServiceClient.create(languageServiceSettings);
  * </code>
  * </pre>
  */
-@javax.annotation.Generated("by GAPIC")
-public class LanguageServiceApi implements AutoCloseable {
+@Generated("by GAPIC")
+@ExperimentalApi
+public class LanguageServiceClient implements AutoCloseable {
   private final LanguageServiceSettings settings;
   private final ScheduledExecutorService executor;
   private final ManagedChannel channel;
@@ -100,27 +106,28 @@ public class LanguageServiceApi implements AutoCloseable {
       analyzeSentimentCallable;
   private final UnaryCallable<AnalyzeEntitiesRequest, AnalyzeEntitiesResponse>
       analyzeEntitiesCallable;
+  private final UnaryCallable<AnalyzeSyntaxRequest, AnalyzeSyntaxResponse> analyzeSyntaxCallable;
   private final UnaryCallable<AnnotateTextRequest, AnnotateTextResponse> annotateTextCallable;
 
-  /** Constructs an instance of LanguageServiceApi with default settings. */
-  public static final LanguageServiceApi create() throws IOException {
+  /** Constructs an instance of LanguageServiceClient with default settings. */
+  public static final LanguageServiceClient create() throws IOException {
     return create(LanguageServiceSettings.defaultBuilder().build());
   }
 
   /**
-   * Constructs an instance of LanguageServiceApi, using the given settings. The channels are
+   * Constructs an instance of LanguageServiceClient, using the given settings. The channels are
    * created based on the settings passed in, or defaults for any settings that are not set.
    */
-  public static final LanguageServiceApi create(LanguageServiceSettings settings)
+  public static final LanguageServiceClient create(LanguageServiceSettings settings)
       throws IOException {
-    return new LanguageServiceApi(settings);
+    return new LanguageServiceClient(settings);
   }
 
   /**
-   * Constructs an instance of LanguageServiceApi, using the given settings. This is protected so
+   * Constructs an instance of LanguageServiceClient, using the given settings. This is protected so
    * that it easy to make a subclass, but otherwise, the static factory methods should be preferred.
    */
-  protected LanguageServiceApi(LanguageServiceSettings settings) throws IOException {
+  protected LanguageServiceClient(LanguageServiceSettings settings) throws IOException {
     this.settings = settings;
     ChannelAndExecutor channelAndExecutor = settings.getChannelAndExecutor();
     this.executor = channelAndExecutor.getExecutor();
@@ -130,6 +137,8 @@ public class LanguageServiceApi implements AutoCloseable {
         UnaryCallable.create(settings.analyzeSentimentSettings(), this.channel, this.executor);
     this.analyzeEntitiesCallable =
         UnaryCallable.create(settings.analyzeEntitiesSettings(), this.channel, this.executor);
+    this.analyzeSyntaxCallable =
+        UnaryCallable.create(settings.analyzeSyntaxSettings(), this.channel, this.executor);
     this.annotateTextCallable =
         UnaryCallable.create(settings.annotateTextSettings(), this.channel, this.executor);
 
@@ -164,17 +173,18 @@ public class LanguageServiceApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (LanguageServiceApi languageServiceApi = LanguageServiceApi.create()) {
+   * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.create()) {
    *   Document document = Document.newBuilder().build();
-   *   AnalyzeSentimentResponse response = languageServiceApi.analyzeSentiment(document);
+   *   AnalyzeSentimentResponse response = languageServiceClient.analyzeSentiment(document);
    * }
    * </code></pre>
    *
    * @param document Input document. Currently, `analyzeSentiment` only supports English text
-   *     ([Document.language][google.cloud.language.v1beta1.Document.language]="EN").
+   *     ([Document.language][google.cloud.language.v1.Document.language]="EN").
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final AnalyzeSentimentResponse analyzeSentiment(Document document) {
+
     AnalyzeSentimentRequest request =
         AnalyzeSentimentRequest.newBuilder().setDocument(document).build();
     return analyzeSentiment(request);
@@ -187,12 +197,12 @@ public class LanguageServiceApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (LanguageServiceApi languageServiceApi = LanguageServiceApi.create()) {
+   * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.create()) {
    *   Document document = Document.newBuilder().build();
    *   AnalyzeSentimentRequest request = AnalyzeSentimentRequest.newBuilder()
    *     .setDocument(document)
    *     .build();
-   *   AnalyzeSentimentResponse response = languageServiceApi.analyzeSentiment(request);
+   *   AnalyzeSentimentResponse response = languageServiceClient.analyzeSentiment(request);
    * }
    * </code></pre>
    *
@@ -210,12 +220,12 @@ public class LanguageServiceApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (LanguageServiceApi languageServiceApi = LanguageServiceApi.create()) {
+   * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.create()) {
    *   Document document = Document.newBuilder().build();
    *   AnalyzeSentimentRequest request = AnalyzeSentimentRequest.newBuilder()
    *     .setDocument(document)
    *     .build();
-   *   ListenableFuture&lt;AnalyzeSentimentResponse&gt; future = languageServiceApi.analyzeSentimentCallable().futureCall(request);
+   *   ListenableFuture&lt;AnalyzeSentimentResponse&gt; future = languageServiceClient.analyzeSentimentCallable().futureCall(request);
    *   // Do something
    *   AnalyzeSentimentResponse response = future.get();
    * }
@@ -234,10 +244,10 @@ public class LanguageServiceApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (LanguageServiceApi languageServiceApi = LanguageServiceApi.create()) {
+   * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.create()) {
    *   Document document = Document.newBuilder().build();
    *   EncodingType encodingType = EncodingType.NONE;
-   *   AnalyzeEntitiesResponse response = languageServiceApi.analyzeEntities(document, encodingType);
+   *   AnalyzeEntitiesResponse response = languageServiceClient.analyzeEntities(document, encodingType);
    * }
    * </code></pre>
    *
@@ -247,6 +257,7 @@ public class LanguageServiceApi implements AutoCloseable {
    */
   public final AnalyzeEntitiesResponse analyzeEntities(
       Document document, EncodingType encodingType) {
+
     AnalyzeEntitiesRequest request =
         AnalyzeEntitiesRequest.newBuilder()
             .setDocument(document)
@@ -263,14 +274,14 @@ public class LanguageServiceApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (LanguageServiceApi languageServiceApi = LanguageServiceApi.create()) {
+   * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.create()) {
    *   Document document = Document.newBuilder().build();
    *   EncodingType encodingType = EncodingType.NONE;
    *   AnalyzeEntitiesRequest request = AnalyzeEntitiesRequest.newBuilder()
    *     .setDocument(document)
    *     .setEncodingType(encodingType)
    *     .build();
-   *   AnalyzeEntitiesResponse response = languageServiceApi.analyzeEntities(request);
+   *   AnalyzeEntitiesResponse response = languageServiceClient.analyzeEntities(request);
    * }
    * </code></pre>
    *
@@ -289,14 +300,14 @@ public class LanguageServiceApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (LanguageServiceApi languageServiceApi = LanguageServiceApi.create()) {
+   * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.create()) {
    *   Document document = Document.newBuilder().build();
    *   EncodingType encodingType = EncodingType.NONE;
    *   AnalyzeEntitiesRequest request = AnalyzeEntitiesRequest.newBuilder()
    *     .setDocument(document)
    *     .setEncodingType(encodingType)
    *     .build();
-   *   ListenableFuture&lt;AnalyzeEntitiesResponse&gt; future = languageServiceApi.analyzeEntitiesCallable().futureCall(request);
+   *   ListenableFuture&lt;AnalyzeEntitiesResponse&gt; future = languageServiceClient.analyzeEntitiesCallable().futureCall(request);
    *   // Do something
    *   AnalyzeEntitiesResponse response = future.get();
    * }
@@ -309,18 +320,97 @@ public class LanguageServiceApi implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Advanced API that analyzes the document and provides a full set of text annotations, including
-   * semantic, syntactic, and sentiment information. This API is intended for users who are familiar
-   * with machine learning and need in-depth text features to build upon.
+   * Analyzes the syntax of the text and provides sentence boundaries and tokenization along with
+   * part of speech tags, dependency trees, and other properties.
    *
    * <p>Sample code:
    *
    * <pre><code>
-   * try (LanguageServiceApi languageServiceApi = LanguageServiceApi.create()) {
+   * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.create()) {
+   *   Document document = Document.newBuilder().build();
+   *   EncodingType encodingType = EncodingType.NONE;
+   *   AnalyzeSyntaxResponse response = languageServiceClient.analyzeSyntax(document, encodingType);
+   * }
+   * </code></pre>
+   *
+   * @param document Input document.
+   * @param encodingType The encoding type used by the API to calculate offsets.
+   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   */
+  public final AnalyzeSyntaxResponse analyzeSyntax(Document document, EncodingType encodingType) {
+
+    AnalyzeSyntaxRequest request =
+        AnalyzeSyntaxRequest.newBuilder()
+            .setDocument(document)
+            .setEncodingType(encodingType)
+            .build();
+    return analyzeSyntax(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Analyzes the syntax of the text and provides sentence boundaries and tokenization along with
+   * part of speech tags, dependency trees, and other properties.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.create()) {
+   *   Document document = Document.newBuilder().build();
+   *   EncodingType encodingType = EncodingType.NONE;
+   *   AnalyzeSyntaxRequest request = AnalyzeSyntaxRequest.newBuilder()
+   *     .setDocument(document)
+   *     .setEncodingType(encodingType)
+   *     .build();
+   *   AnalyzeSyntaxResponse response = languageServiceClient.analyzeSyntax(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   */
+  public final AnalyzeSyntaxResponse analyzeSyntax(AnalyzeSyntaxRequest request) {
+    return analyzeSyntaxCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Analyzes the syntax of the text and provides sentence boundaries and tokenization along with
+   * part of speech tags, dependency trees, and other properties.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.create()) {
+   *   Document document = Document.newBuilder().build();
+   *   EncodingType encodingType = EncodingType.NONE;
+   *   AnalyzeSyntaxRequest request = AnalyzeSyntaxRequest.newBuilder()
+   *     .setDocument(document)
+   *     .setEncodingType(encodingType)
+   *     .build();
+   *   ListenableFuture&lt;AnalyzeSyntaxResponse&gt; future = languageServiceClient.analyzeSyntaxCallable().futureCall(request);
+   *   // Do something
+   *   AnalyzeSyntaxResponse response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<AnalyzeSyntaxRequest, AnalyzeSyntaxResponse> analyzeSyntaxCallable() {
+    return analyzeSyntaxCallable;
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * A convenience method that provides all the features that analyzeSentiment, analyzeEntities, and
+   * analyzeSyntax provide in one call.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.create()) {
    *   Document document = Document.newBuilder().build();
    *   AnnotateTextRequest.Features features = AnnotateTextRequest.Features.newBuilder().build();
    *   EncodingType encodingType = EncodingType.NONE;
-   *   AnnotateTextResponse response = languageServiceApi.annotateText(document, features, encodingType);
+   *   AnnotateTextResponse response = languageServiceClient.annotateText(document, features, encodingType);
    * }
    * </code></pre>
    *
@@ -331,6 +421,7 @@ public class LanguageServiceApi implements AutoCloseable {
    */
   public final AnnotateTextResponse annotateText(
       Document document, AnnotateTextRequest.Features features, EncodingType encodingType) {
+
     AnnotateTextRequest request =
         AnnotateTextRequest.newBuilder()
             .setDocument(document)
@@ -342,14 +433,13 @@ public class LanguageServiceApi implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Advanced API that analyzes the document and provides a full set of text annotations, including
-   * semantic, syntactic, and sentiment information. This API is intended for users who are familiar
-   * with machine learning and need in-depth text features to build upon.
+   * A convenience method that provides all the features that analyzeSentiment, analyzeEntities, and
+   * analyzeSyntax provide in one call.
    *
    * <p>Sample code:
    *
    * <pre><code>
-   * try (LanguageServiceApi languageServiceApi = LanguageServiceApi.create()) {
+   * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.create()) {
    *   Document document = Document.newBuilder().build();
    *   AnnotateTextRequest.Features features = AnnotateTextRequest.Features.newBuilder().build();
    *   EncodingType encodingType = EncodingType.NONE;
@@ -358,7 +448,7 @@ public class LanguageServiceApi implements AutoCloseable {
    *     .setFeatures(features)
    *     .setEncodingType(encodingType)
    *     .build();
-   *   AnnotateTextResponse response = languageServiceApi.annotateText(request);
+   *   AnnotateTextResponse response = languageServiceClient.annotateText(request);
    * }
    * </code></pre>
    *
@@ -371,14 +461,13 @@ public class LanguageServiceApi implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Advanced API that analyzes the document and provides a full set of text annotations, including
-   * semantic, syntactic, and sentiment information. This API is intended for users who are familiar
-   * with machine learning and need in-depth text features to build upon.
+   * A convenience method that provides all the features that analyzeSentiment, analyzeEntities, and
+   * analyzeSyntax provide in one call.
    *
    * <p>Sample code:
    *
    * <pre><code>
-   * try (LanguageServiceApi languageServiceApi = LanguageServiceApi.create()) {
+   * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.create()) {
    *   Document document = Document.newBuilder().build();
    *   AnnotateTextRequest.Features features = AnnotateTextRequest.Features.newBuilder().build();
    *   EncodingType encodingType = EncodingType.NONE;
@@ -387,7 +476,7 @@ public class LanguageServiceApi implements AutoCloseable {
    *     .setFeatures(features)
    *     .setEncodingType(encodingType)
    *     .build();
-   *   ListenableFuture&lt;AnnotateTextResponse&gt; future = languageServiceApi.annotateTextCallable().futureCall(request);
+   *   ListenableFuture&lt;AnnotateTextResponse&gt; future = languageServiceClient.annotateTextCallable().futureCall(request);
    *   // Do something
    *   AnnotateTextResponse response = future.get();
    * }

@@ -62,7 +62,7 @@ public class PublisherTest {
   private static MockIAMPolicy mockIAMPolicy;
   private static MockSubscriber mockSubscriber;
   private static MockServiceHelper serviceHelper;
-  private PublisherApi api;
+  private PublisherClient client;
 
   @BeforeClass
   public static void startStaticServer() {
@@ -88,12 +88,12 @@ public class PublisherTest {
         PublisherSettings.defaultBuilder()
             .setChannelProvider(serviceHelper.createChannelProvider())
             .build();
-    api = PublisherApi.create(settings);
+    client = PublisherClient.create(settings);
   }
 
   @After
   public void tearDown() throws Exception {
-    api.close();
+    client.close();
   }
 
   @Test
@@ -105,7 +105,7 @@ public class PublisherTest {
 
     TopicName name = TopicName.create("[PROJECT]", "[TOPIC]");
 
-    Topic actualResponse = api.createTopic(name);
+    Topic actualResponse = client.createTopic(name);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<GeneratedMessageV3> actualRequests = mockPublisher.getRequests();
@@ -124,7 +124,7 @@ public class PublisherTest {
     try {
       TopicName name = TopicName.create("[PROJECT]", "[TOPIC]");
 
-      api.createTopic(name);
+      client.createTopic(name);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
       Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
@@ -145,7 +145,7 @@ public class PublisherTest {
     PubsubMessage messagesElement = PubsubMessage.newBuilder().setData(data).build();
     List<PubsubMessage> messages = Arrays.asList(messagesElement);
 
-    PublishResponse actualResponse = api.publish(topic, messages);
+    PublishResponse actualResponse = client.publish(topic, messages);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<GeneratedMessageV3> actualRequests = mockPublisher.getRequests();
@@ -168,7 +168,7 @@ public class PublisherTest {
       PubsubMessage messagesElement = PubsubMessage.newBuilder().setData(data).build();
       List<PubsubMessage> messages = Arrays.asList(messagesElement);
 
-      api.publish(topic, messages);
+      client.publish(topic, messages);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
       Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
@@ -184,7 +184,7 @@ public class PublisherTest {
 
     TopicName topic = TopicName.create("[PROJECT]", "[TOPIC]");
 
-    Topic actualResponse = api.getTopic(topic);
+    Topic actualResponse = client.getTopic(topic);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<GeneratedMessageV3> actualRequests = mockPublisher.getRequests();
@@ -203,7 +203,7 @@ public class PublisherTest {
     try {
       TopicName topic = TopicName.create("[PROJECT]", "[TOPIC]");
 
-      api.getTopic(topic);
+      client.getTopic(topic);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
       Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
@@ -225,7 +225,7 @@ public class PublisherTest {
 
     ProjectName project = ProjectName.create("[PROJECT]");
 
-    ListTopicsPagedResponse pagedListResponse = api.listTopics(project);
+    ListTopicsPagedResponse pagedListResponse = client.listTopics(project);
 
     List<Topic> resources = Lists.newArrayList(pagedListResponse.iterateAllElements());
     Assert.assertEquals(1, resources.size());
@@ -247,7 +247,7 @@ public class PublisherTest {
     try {
       ProjectName project = ProjectName.create("[PROJECT]");
 
-      api.listTopics(project);
+      client.listTopics(project);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
       Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
@@ -269,7 +269,7 @@ public class PublisherTest {
 
     TopicName topic = TopicName.create("[PROJECT]", "[TOPIC]");
 
-    ListTopicSubscriptionsPagedResponse pagedListResponse = api.listTopicSubscriptions(topic);
+    ListTopicSubscriptionsPagedResponse pagedListResponse = client.listTopicSubscriptions(topic);
 
     List<String> resources = Lists.newArrayList(pagedListResponse.iterateAllElements());
     Assert.assertEquals(1, resources.size());
@@ -297,7 +297,7 @@ public class PublisherTest {
     try {
       TopicName topic = TopicName.create("[PROJECT]", "[TOPIC]");
 
-      api.listTopicSubscriptions(topic);
+      client.listTopicSubscriptions(topic);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
       Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
@@ -312,7 +312,7 @@ public class PublisherTest {
 
     TopicName topic = TopicName.create("[PROJECT]", "[TOPIC]");
 
-    api.deleteTopic(topic);
+    client.deleteTopic(topic);
 
     List<GeneratedMessageV3> actualRequests = mockPublisher.getRequests();
     Assert.assertEquals(1, actualRequests.size());
@@ -330,7 +330,7 @@ public class PublisherTest {
     try {
       TopicName topic = TopicName.create("[PROJECT]", "[TOPIC]");
 
-      api.deleteTopic(topic);
+      client.deleteTopic(topic);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
       Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
@@ -345,10 +345,10 @@ public class PublisherTest {
     Policy expectedResponse = Policy.newBuilder().setVersion(version).setEtag(etag).build();
     mockIAMPolicy.addResponse(expectedResponse);
 
-    String formattedResource = PublisherApi.formatTopicName("[PROJECT]", "[TOPIC]");
+    String formattedResource = PublisherClient.formatTopicName("[PROJECT]", "[TOPIC]");
     Policy policy = Policy.newBuilder().build();
 
-    Policy actualResponse = api.setIamPolicy(formattedResource, policy);
+    Policy actualResponse = client.setIamPolicy(formattedResource, policy);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<GeneratedMessageV3> actualRequests = mockIAMPolicy.getRequests();
@@ -366,10 +366,10 @@ public class PublisherTest {
     mockIAMPolicy.addException(exception);
 
     try {
-      String formattedResource = PublisherApi.formatTopicName("[PROJECT]", "[TOPIC]");
+      String formattedResource = PublisherClient.formatTopicName("[PROJECT]", "[TOPIC]");
       Policy policy = Policy.newBuilder().build();
 
-      api.setIamPolicy(formattedResource, policy);
+      client.setIamPolicy(formattedResource, policy);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
       Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
@@ -384,9 +384,9 @@ public class PublisherTest {
     Policy expectedResponse = Policy.newBuilder().setVersion(version).setEtag(etag).build();
     mockIAMPolicy.addResponse(expectedResponse);
 
-    String formattedResource = PublisherApi.formatTopicName("[PROJECT]", "[TOPIC]");
+    String formattedResource = PublisherClient.formatTopicName("[PROJECT]", "[TOPIC]");
 
-    Policy actualResponse = api.getIamPolicy(formattedResource);
+    Policy actualResponse = client.getIamPolicy(formattedResource);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<GeneratedMessageV3> actualRequests = mockIAMPolicy.getRequests();
@@ -403,9 +403,9 @@ public class PublisherTest {
     mockIAMPolicy.addException(exception);
 
     try {
-      String formattedResource = PublisherApi.formatTopicName("[PROJECT]", "[TOPIC]");
+      String formattedResource = PublisherClient.formatTopicName("[PROJECT]", "[TOPIC]");
 
-      api.getIamPolicy(formattedResource);
+      client.getIamPolicy(formattedResource);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
       Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
@@ -418,11 +418,11 @@ public class PublisherTest {
     TestIamPermissionsResponse expectedResponse = TestIamPermissionsResponse.newBuilder().build();
     mockIAMPolicy.addResponse(expectedResponse);
 
-    String formattedResource = PublisherApi.formatTopicName("[PROJECT]", "[TOPIC]");
+    String formattedResource = PublisherClient.formatTopicName("[PROJECT]", "[TOPIC]");
     List<String> permissions = new ArrayList<>();
 
     TestIamPermissionsResponse actualResponse =
-        api.testIamPermissions(formattedResource, permissions);
+        client.testIamPermissions(formattedResource, permissions);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<GeneratedMessageV3> actualRequests = mockIAMPolicy.getRequests();
@@ -440,10 +440,10 @@ public class PublisherTest {
     mockIAMPolicy.addException(exception);
 
     try {
-      String formattedResource = PublisherApi.formatTopicName("[PROJECT]", "[TOPIC]");
+      String formattedResource = PublisherClient.formatTopicName("[PROJECT]", "[TOPIC]");
       List<String> permissions = new ArrayList<>();
 
-      api.testIamPermissions(formattedResource, permissions);
+      client.testIamPermissions(formattedResource, permissions);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
       Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());

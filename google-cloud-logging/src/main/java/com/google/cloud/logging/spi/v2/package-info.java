@@ -19,48 +19,48 @@
  *
  * <p>The interfaces provided are listed below, along with usage samples.
  *
- * <p>=================== LoggingServiceV2Api ===================
+ * <p>====================== LoggingServiceV2Client ======================
  *
  * <p>Service Description: Service for ingesting and querying logs.
  *
- * <p>Sample for LoggingServiceV2Api:
+ * <p>Sample for LoggingServiceV2Client:
  *
  * <pre>
  * <code>
- * try (LoggingServiceV2Api loggingServiceV2Api = LoggingServiceV2Api.create()) {
- *   String formattedLogName = LoggingServiceV2Api.formatLogName("[PROJECT]", "[LOG]");
- *   loggingServiceV2Api.deleteLog(formattedLogName);
+ * try (LoggingServiceV2Client loggingServiceV2Client = LoggingServiceV2Client.create()) {
+ *   String formattedLogName = LoggingServiceV2Client.formatLogName("[PROJECT]", "[LOG]");
+ *   loggingServiceV2Client.deleteLog(formattedLogName);
  * }
  * </code>
  * </pre>
  *
- * ================== ConfigServiceV2Api ==================
+ * ===================== ConfigServiceV2Client =====================
  *
  * <p>Service Description: Service for configuring sinks used to export log entries outside
  * Stackdriver Logging.
  *
- * <p>Sample for ConfigServiceV2Api:
+ * <p>Sample for ConfigServiceV2Client:
  *
  * <pre>
  * <code>
- * try (ConfigServiceV2Api configServiceV2Api = ConfigServiceV2Api.create()) {
- *   String formattedSinkName = ConfigServiceV2Api.formatSinkName("[PROJECT]", "[SINK]");
- *   LogSink response = configServiceV2Api.getSink(formattedSinkName);
+ * try (ConfigServiceV2Client configServiceV2Client = ConfigServiceV2Client.create()) {
+ *   String formattedSinkName = ConfigServiceV2Client.formatSinkName("[PROJECT]", "[SINK]");
+ *   LogSink response = configServiceV2Client.getSink(formattedSinkName);
  * }
  * </code>
  * </pre>
  *
- * =================== MetricsServiceV2Api ===================
+ * ====================== MetricsServiceV2Client ======================
  *
  * <p>Service Description: Service for configuring logs-based metrics.
  *
- * <p>Sample for MetricsServiceV2Api:
+ * <p>Sample for MetricsServiceV2Client:
  *
  * <pre>
  * <code>
- * try (MetricsServiceV2Api metricsServiceV2Api = MetricsServiceV2Api.create()) {
- *   String formattedMetricName = MetricsServiceV2Api.formatMetricName("[PROJECT]", "[METRIC]");
- *   LogMetric response = metricsServiceV2Api.getLogMetric(formattedMetricName);
+ * try (MetricsServiceV2Client metricsServiceV2Client = MetricsServiceV2Client.create()) {
+ *   String formattedMetricName = MetricsServiceV2Client.formatMetricName("[PROJECT]", "[METRIC]");
+ *   LogMetric response = metricsServiceV2Client.getLogMetric(formattedMetricName);
  * }
  * </code>
  * </pre>

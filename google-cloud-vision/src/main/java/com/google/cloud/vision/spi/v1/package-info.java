@@ -19,19 +19,19 @@
  *
  * <p>The interfaces provided are listed below, along with usage samples.
  *
- * <p>================= ImageAnnotatorApi =================
+ * <p>==================== ImageAnnotatorClient ====================
  *
  * <p>Service Description: Service that performs Google Cloud Vision API detection tasks, such as
  * face, landmark, logo, label, and text detection, over client images, and returns detected
  * entities from the images.
  *
- * <p>Sample for ImageAnnotatorApi:
+ * <p>Sample for ImageAnnotatorClient:
  *
  * <pre>
  * <code>
- * try (ImageAnnotatorApi imageAnnotatorApi = ImageAnnotatorApi.create()) {
+ * try (ImageAnnotatorClient imageAnnotatorClient = ImageAnnotatorClient.create()) {
  *   List&lt;AnnotateImageRequest&gt; requests = new ArrayList&lt;&gt;();
- *   BatchAnnotateImagesResponse response = imageAnnotatorApi.batchAnnotateImages(requests);
+ *   BatchAnnotateImagesResponse response = imageAnnotatorClient.batchAnnotateImages(requests);
  * }
  * </code>
  * </pre>

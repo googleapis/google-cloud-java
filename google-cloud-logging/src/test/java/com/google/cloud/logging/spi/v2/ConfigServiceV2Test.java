@@ -48,7 +48,7 @@ public class ConfigServiceV2Test {
   private static MockConfigServiceV2 mockConfigServiceV2;
   private static MockMetricsServiceV2 mockMetricsServiceV2;
   private static MockServiceHelper serviceHelper;
-  private ConfigServiceV2Api api;
+  private ConfigServiceV2Client client;
 
   @BeforeClass
   public static void startStaticServer() {
@@ -75,12 +75,12 @@ public class ConfigServiceV2Test {
         ConfigServiceV2Settings.defaultBuilder()
             .setChannelProvider(serviceHelper.createChannelProvider())
             .build();
-    api = ConfigServiceV2Api.create(settings);
+    client = ConfigServiceV2Client.create(settings);
   }
 
   @After
   public void tearDown() throws Exception {
-    api.close();
+    client.close();
   }
 
   @Test
@@ -93,9 +93,9 @@ public class ConfigServiceV2Test {
         ListSinksResponse.newBuilder().setNextPageToken(nextPageToken).addAllSinks(sinks).build();
     mockConfigServiceV2.addResponse(expectedResponse);
 
-    String formattedParent = ConfigServiceV2Api.formatParentName("[PROJECT]");
+    String formattedParent = ConfigServiceV2Client.formatParentName("[PROJECT]");
 
-    ListSinksPagedResponse pagedListResponse = api.listSinks(formattedParent);
+    ListSinksPagedResponse pagedListResponse = client.listSinks(formattedParent);
 
     List<LogSink> resources = Lists.newArrayList(pagedListResponse.iterateAllElements());
     Assert.assertEquals(1, resources.size());
@@ -115,9 +115,9 @@ public class ConfigServiceV2Test {
     mockConfigServiceV2.addException(exception);
 
     try {
-      String formattedParent = ConfigServiceV2Api.formatParentName("[PROJECT]");
+      String formattedParent = ConfigServiceV2Client.formatParentName("[PROJECT]");
 
-      api.listSinks(formattedParent);
+      client.listSinks(formattedParent);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
       Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
@@ -140,9 +140,9 @@ public class ConfigServiceV2Test {
             .build();
     mockConfigServiceV2.addResponse(expectedResponse);
 
-    String formattedSinkName = ConfigServiceV2Api.formatSinkName("[PROJECT]", "[SINK]");
+    String formattedSinkName = ConfigServiceV2Client.formatSinkName("[PROJECT]", "[SINK]");
 
-    LogSink actualResponse = api.getSink(formattedSinkName);
+    LogSink actualResponse = client.getSink(formattedSinkName);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<GeneratedMessageV3> actualRequests = mockConfigServiceV2.getRequests();
@@ -159,9 +159,9 @@ public class ConfigServiceV2Test {
     mockConfigServiceV2.addException(exception);
 
     try {
-      String formattedSinkName = ConfigServiceV2Api.formatSinkName("[PROJECT]", "[SINK]");
+      String formattedSinkName = ConfigServiceV2Client.formatSinkName("[PROJECT]", "[SINK]");
 
-      api.getSink(formattedSinkName);
+      client.getSink(formattedSinkName);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
       Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
@@ -184,10 +184,10 @@ public class ConfigServiceV2Test {
             .build();
     mockConfigServiceV2.addResponse(expectedResponse);
 
-    String formattedParent = ConfigServiceV2Api.formatParentName("[PROJECT]");
+    String formattedParent = ConfigServiceV2Client.formatParentName("[PROJECT]");
     LogSink sink = LogSink.newBuilder().build();
 
-    LogSink actualResponse = api.createSink(formattedParent, sink);
+    LogSink actualResponse = client.createSink(formattedParent, sink);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<GeneratedMessageV3> actualRequests = mockConfigServiceV2.getRequests();
@@ -205,10 +205,10 @@ public class ConfigServiceV2Test {
     mockConfigServiceV2.addException(exception);
 
     try {
-      String formattedParent = ConfigServiceV2Api.formatParentName("[PROJECT]");
+      String formattedParent = ConfigServiceV2Client.formatParentName("[PROJECT]");
       LogSink sink = LogSink.newBuilder().build();
 
-      api.createSink(formattedParent, sink);
+      client.createSink(formattedParent, sink);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
       Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
@@ -231,10 +231,10 @@ public class ConfigServiceV2Test {
             .build();
     mockConfigServiceV2.addResponse(expectedResponse);
 
-    String formattedSinkName = ConfigServiceV2Api.formatSinkName("[PROJECT]", "[SINK]");
+    String formattedSinkName = ConfigServiceV2Client.formatSinkName("[PROJECT]", "[SINK]");
     LogSink sink = LogSink.newBuilder().build();
 
-    LogSink actualResponse = api.updateSink(formattedSinkName, sink);
+    LogSink actualResponse = client.updateSink(formattedSinkName, sink);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<GeneratedMessageV3> actualRequests = mockConfigServiceV2.getRequests();
@@ -252,10 +252,10 @@ public class ConfigServiceV2Test {
     mockConfigServiceV2.addException(exception);
 
     try {
-      String formattedSinkName = ConfigServiceV2Api.formatSinkName("[PROJECT]", "[SINK]");
+      String formattedSinkName = ConfigServiceV2Client.formatSinkName("[PROJECT]", "[SINK]");
       LogSink sink = LogSink.newBuilder().build();
 
-      api.updateSink(formattedSinkName, sink);
+      client.updateSink(formattedSinkName, sink);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
       Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
@@ -268,9 +268,9 @@ public class ConfigServiceV2Test {
     Empty expectedResponse = Empty.newBuilder().build();
     mockConfigServiceV2.addResponse(expectedResponse);
 
-    String formattedSinkName = ConfigServiceV2Api.formatSinkName("[PROJECT]", "[SINK]");
+    String formattedSinkName = ConfigServiceV2Client.formatSinkName("[PROJECT]", "[SINK]");
 
-    api.deleteSink(formattedSinkName);
+    client.deleteSink(formattedSinkName);
 
     List<GeneratedMessageV3> actualRequests = mockConfigServiceV2.getRequests();
     Assert.assertEquals(1, actualRequests.size());
@@ -286,9 +286,9 @@ public class ConfigServiceV2Test {
     mockConfigServiceV2.addException(exception);
 
     try {
-      String formattedSinkName = ConfigServiceV2Api.formatSinkName("[PROJECT]", "[SINK]");
+      String formattedSinkName = ConfigServiceV2Client.formatSinkName("[PROJECT]", "[SINK]");
 
-      api.deleteSink(formattedSinkName);
+      client.deleteSink(formattedSinkName);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
       Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());

@@ -23,13 +23,13 @@ import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.RetrySettings;
 import com.google.api.gax.grpc.CallContext;
 import com.google.api.gax.grpc.ChannelProvider;
+import com.google.api.gax.grpc.ClientSettings;
 import com.google.api.gax.grpc.ExecutorProvider;
 import com.google.api.gax.grpc.InstantiatingChannelProvider;
 import com.google.api.gax.grpc.InstantiatingExecutorProvider;
 import com.google.api.gax.grpc.PagedCallSettings;
 import com.google.api.gax.grpc.PagedListDescriptor;
 import com.google.api.gax.grpc.PagedListResponseFactory;
-import com.google.api.gax.grpc.ServiceApiSettings;
 import com.google.api.gax.grpc.SimpleCallSettings;
 import com.google.api.gax.grpc.UnaryCallSettings;
 import com.google.api.gax.grpc.UnaryCallable;
@@ -48,13 +48,15 @@ import com.google.logging.v2.LoggingServiceV2Grpc;
 import com.google.logging.v2.WriteLogEntriesRequest;
 import com.google.logging.v2.WriteLogEntriesResponse;
 import com.google.protobuf.Empty;
+import com.google.protobuf.ExperimentalApi;
 import io.grpc.Status;
 import java.io.IOException;
+import javax.annotation.Generated;
 import org.joda.time.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 /**
- * Settings class to configure an instance of {@link LoggingServiceV2Api}.
+ * Settings class to configure an instance of {@link LoggingServiceV2Client}.
  *
  * <p>The default instance has everything set to sensible defaults:
  *
@@ -78,8 +80,9 @@ import org.joda.time.Duration;
  * </code>
  * </pre>
  */
-@javax.annotation.Generated("by GAPIC")
-public class LoggingServiceV2Settings extends ServiceApiSettings {
+@Generated("by GAPIC")
+@ExperimentalApi
+public class LoggingServiceV2Settings extends ClientSettings {
   /** The default address of the service. */
   private static final String DEFAULT_SERVICE_ADDRESS = "logging.googleapis.com";
 
@@ -307,7 +310,7 @@ public class LoggingServiceV2Settings extends ServiceApiSettings {
           };
 
   /** Builder for LoggingServiceV2Settings. */
-  public static class Builder extends ServiceApiSettings.Builder {
+  public static class Builder extends ClientSettings.Builder {
     private final ImmutableList<UnaryCallSettings.Builder> unaryMethodSettingsBuilders;
 
     private final SimpleCallSettings.Builder<DeleteLogRequest, Empty> deleteLogSettings;
@@ -448,9 +451,9 @@ public class LoggingServiceV2Settings extends ServiceApiSettings {
      *
      * <p>Note: This method does not support applying settings to streaming methods.
      */
-    public Builder applyToAllApiMethods(UnaryCallSettings.Builder apiCallSettings)
+    public Builder applyToAllUnaryMethods(UnaryCallSettings.Builder unaryCallSettings)
         throws Exception {
-      super.applyToAllApiMethods(unaryMethodSettingsBuilders, apiCallSettings);
+      super.applyToAllUnaryMethods(unaryMethodSettingsBuilders, unaryCallSettings);
       return this;
     }
 

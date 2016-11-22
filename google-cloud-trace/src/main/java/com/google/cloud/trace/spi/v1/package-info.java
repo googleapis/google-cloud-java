@@ -19,21 +19,21 @@
  *
  * <p>The interfaces provided are listed below, along with usage samples.
  *
- * <p>=============== TraceServiceApi ===============
+ * <p>================== TraceServiceClient ==================
  *
  * <p>Service Description: This file describes an API for collecting and viewing traces and spans
  * within a trace. A Trace is a collection of spans corresponding to a single operation or set of
  * operations for an application. A span is an individual timed event which forms a node of the
  * trace tree. Spans for a single trace may span multiple services.
  *
- * <p>Sample for TraceServiceApi:
+ * <p>Sample for TraceServiceClient:
  *
  * <pre>
  * <code>
- * try (TraceServiceApi traceServiceApi = TraceServiceApi.create()) {
+ * try (TraceServiceClient traceServiceClient = TraceServiceClient.create()) {
  *   String projectId = "";
  *   Traces traces = Traces.newBuilder().build();
- *   traceServiceApi.patchTraces(projectId, traces);
+ *   traceServiceClient.patchTraces(projectId, traces);
  * }
  * </code>
  * </pre>

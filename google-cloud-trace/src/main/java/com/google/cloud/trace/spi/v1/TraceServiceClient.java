@@ -26,12 +26,14 @@ import com.google.devtools.cloudtrace.v1.PatchTracesRequest;
 import com.google.devtools.cloudtrace.v1.Trace;
 import com.google.devtools.cloudtrace.v1.Traces;
 import com.google.protobuf.Empty;
+import com.google.protobuf.ExperimentalApi;
 import io.grpc.ManagedChannel;
 import java.io.Closeable;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ScheduledExecutorService;
+import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND SERVICE
 /**
@@ -45,16 +47,16 @@ import java.util.concurrent.ScheduledExecutorService;
  *
  * <pre>
  * <code>
- * try (TraceServiceApi traceServiceApi = TraceServiceApi.create()) {
+ * try (TraceServiceClient traceServiceClient = TraceServiceClient.create()) {
  *   String projectId = "";
  *   Traces traces = Traces.newBuilder().build();
- *   traceServiceApi.patchTraces(projectId, traces);
+ *   traceServiceClient.patchTraces(projectId, traces);
  * }
  * </code>
  * </pre>
  *
- * <p>Note: close() needs to be called on the traceServiceApi object to clean up resources such as
- * threads. In the example above, try-with-resources is used, which automatically calls close().
+ * <p>Note: close() needs to be called on the traceServiceClient object to clean up resources such
+ * as threads. In the example above, try-with-resources is used, which automatically calls close().
  *
  * <p>The surface of this class includes several types of Java methods for each of the API's
  * methods:
@@ -87,13 +89,14 @@ import java.util.concurrent.ScheduledExecutorService;
  *         .build();
  * TraceServiceSettings traceServiceSettings =
  *     TraceServiceSettings.defaultBuilder().setChannelProvider(channelProvider).build();
- * TraceServiceApi traceServiceApi =
- *     TraceServiceApi.create(traceServiceSettings);
+ * TraceServiceClient traceServiceClient =
+ *     TraceServiceClient.create(traceServiceSettings);
  * </code>
  * </pre>
  */
-@javax.annotation.Generated("by GAPIC")
-public class TraceServiceApi implements AutoCloseable {
+@Generated("by GAPIC")
+@ExperimentalApi
+public class TraceServiceClient implements AutoCloseable {
   private final TraceServiceSettings settings;
   private final ScheduledExecutorService executor;
   private final ManagedChannel channel;
@@ -104,24 +107,24 @@ public class TraceServiceApi implements AutoCloseable {
   private final UnaryCallable<ListTracesRequest, ListTracesResponse> listTracesCallable;
   private final UnaryCallable<ListTracesRequest, ListTracesPagedResponse> listTracesPagedCallable;
 
-  /** Constructs an instance of TraceServiceApi with default settings. */
-  public static final TraceServiceApi create() throws IOException {
+  /** Constructs an instance of TraceServiceClient with default settings. */
+  public static final TraceServiceClient create() throws IOException {
     return create(TraceServiceSettings.defaultBuilder().build());
   }
 
   /**
-   * Constructs an instance of TraceServiceApi, using the given settings. The channels are created
-   * based on the settings passed in, or defaults for any settings that are not set.
+   * Constructs an instance of TraceServiceClient, using the given settings. The channels are
+   * created based on the settings passed in, or defaults for any settings that are not set.
    */
-  public static final TraceServiceApi create(TraceServiceSettings settings) throws IOException {
-    return new TraceServiceApi(settings);
+  public static final TraceServiceClient create(TraceServiceSettings settings) throws IOException {
+    return new TraceServiceClient(settings);
   }
 
   /**
-   * Constructs an instance of TraceServiceApi, using the given settings. This is protected so that
-   * it easy to make a subclass, but otherwise, the static factory methods should be preferred.
+   * Constructs an instance of TraceServiceClient, using the given settings. This is protected so
+   * that it easy to make a subclass, but otherwise, the static factory methods should be preferred.
    */
-  protected TraceServiceApi(TraceServiceSettings settings) throws IOException {
+  protected TraceServiceClient(TraceServiceSettings settings) throws IOException {
     this.settings = settings;
     ChannelAndExecutor channelAndExecutor = settings.getChannelAndExecutor();
     this.executor = channelAndExecutor.getExecutor();
@@ -171,10 +174,10 @@ public class TraceServiceApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (TraceServiceApi traceServiceApi = TraceServiceApi.create()) {
+   * try (TraceServiceClient traceServiceClient = TraceServiceClient.create()) {
    *   String projectId = "";
    *   Traces traces = Traces.newBuilder().build();
-   *   traceServiceApi.patchTraces(projectId, traces);
+   *   traceServiceClient.patchTraces(projectId, traces);
    * }
    * </code></pre>
    *
@@ -199,14 +202,14 @@ public class TraceServiceApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (TraceServiceApi traceServiceApi = TraceServiceApi.create()) {
+   * try (TraceServiceClient traceServiceClient = TraceServiceClient.create()) {
    *   String projectId = "";
    *   Traces traces = Traces.newBuilder().build();
    *   PatchTracesRequest request = PatchTracesRequest.newBuilder()
    *     .setProjectId(projectId)
    *     .setTraces(traces)
    *     .build();
-   *   traceServiceApi.patchTraces(request);
+   *   traceServiceClient.patchTraces(request);
    * }
    * </code></pre>
    *
@@ -227,14 +230,14 @@ public class TraceServiceApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (TraceServiceApi traceServiceApi = TraceServiceApi.create()) {
+   * try (TraceServiceClient traceServiceClient = TraceServiceClient.create()) {
    *   String projectId = "";
    *   Traces traces = Traces.newBuilder().build();
    *   PatchTracesRequest request = PatchTracesRequest.newBuilder()
    *     .setProjectId(projectId)
    *     .setTraces(traces)
    *     .build();
-   *   ListenableFuture&lt;Void&gt; future = traceServiceApi.patchTracesCallable().futureCall(request);
+   *   ListenableFuture&lt;Void&gt; future = traceServiceClient.patchTracesCallable().futureCall(request);
    *   // Do something
    *   future.get();
    * }
@@ -251,10 +254,10 @@ public class TraceServiceApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (TraceServiceApi traceServiceApi = TraceServiceApi.create()) {
+   * try (TraceServiceClient traceServiceClient = TraceServiceClient.create()) {
    *   String projectId = "";
    *   String traceId = "";
-   *   Trace response = traceServiceApi.getTrace(projectId, traceId);
+   *   Trace response = traceServiceClient.getTrace(projectId, traceId);
    * }
    * </code></pre>
    *
@@ -276,14 +279,14 @@ public class TraceServiceApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (TraceServiceApi traceServiceApi = TraceServiceApi.create()) {
+   * try (TraceServiceClient traceServiceClient = TraceServiceClient.create()) {
    *   String projectId = "";
    *   String traceId = "";
    *   GetTraceRequest request = GetTraceRequest.newBuilder()
    *     .setProjectId(projectId)
    *     .setTraceId(traceId)
    *     .build();
-   *   Trace response = traceServiceApi.getTrace(request);
+   *   Trace response = traceServiceClient.getTrace(request);
    * }
    * </code></pre>
    *
@@ -301,14 +304,14 @@ public class TraceServiceApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (TraceServiceApi traceServiceApi = TraceServiceApi.create()) {
+   * try (TraceServiceClient traceServiceClient = TraceServiceClient.create()) {
    *   String projectId = "";
    *   String traceId = "";
    *   GetTraceRequest request = GetTraceRequest.newBuilder()
    *     .setProjectId(projectId)
    *     .setTraceId(traceId)
    *     .build();
-   *   ListenableFuture&lt;Trace&gt; future = traceServiceApi.getTraceCallable().futureCall(request);
+   *   ListenableFuture&lt;Trace&gt; future = traceServiceClient.getTraceCallable().futureCall(request);
    *   // Do something
    *   Trace response = future.get();
    * }
@@ -325,9 +328,9 @@ public class TraceServiceApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (TraceServiceApi traceServiceApi = TraceServiceApi.create()) {
+   * try (TraceServiceClient traceServiceClient = TraceServiceClient.create()) {
    *   String projectId = "";
-   *   for (Trace element : traceServiceApi.listTraces(projectId).iterateAllElements()) {
+   *   for (Trace element : traceServiceClient.listTraces(projectId).iterateAllElements()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -348,12 +351,12 @@ public class TraceServiceApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (TraceServiceApi traceServiceApi = TraceServiceApi.create()) {
+   * try (TraceServiceClient traceServiceClient = TraceServiceClient.create()) {
    *   String projectId = "";
    *   ListTracesRequest request = ListTracesRequest.newBuilder()
    *     .setProjectId(projectId)
    *     .build();
-   *   for (Trace element : traceServiceApi.listTraces(request).iterateAllElements()) {
+   *   for (Trace element : traceServiceClient.listTraces(request).iterateAllElements()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -373,12 +376,12 @@ public class TraceServiceApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (TraceServiceApi traceServiceApi = TraceServiceApi.create()) {
+   * try (TraceServiceClient traceServiceClient = TraceServiceClient.create()) {
    *   String projectId = "";
    *   ListTracesRequest request = ListTracesRequest.newBuilder()
    *     .setProjectId(projectId)
    *     .build();
-   *   ListenableFuture&lt;ListTracesPagedResponse&gt; future = traceServiceApi.listTracesPagedCallable().futureCall(request);
+   *   ListenableFuture&lt;ListTracesPagedResponse&gt; future = traceServiceClient.listTracesPagedCallable().futureCall(request);
    *   // Do something
    *   for (Trace element : future.get().iterateAllElements()) {
    *     // doThingsWith(element);
@@ -397,13 +400,13 @@ public class TraceServiceApi implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (TraceServiceApi traceServiceApi = TraceServiceApi.create()) {
+   * try (TraceServiceClient traceServiceClient = TraceServiceClient.create()) {
    *   String projectId = "";
    *   ListTracesRequest request = ListTracesRequest.newBuilder()
    *     .setProjectId(projectId)
    *     .build();
    *   while (true) {
-   *     ListTracesResponse response = traceServiceApi.listTracesCallable().call(request);
+   *     ListTracesResponse response = traceServiceClient.listTracesCallable().call(request);
    *     for (Trace element : response.getTracesList()) {
    *       // doThingsWith(element);
    *     }

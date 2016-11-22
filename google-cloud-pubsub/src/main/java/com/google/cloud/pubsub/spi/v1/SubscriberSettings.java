@@ -21,13 +21,13 @@ import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.RetrySettings;
 import com.google.api.gax.grpc.CallContext;
 import com.google.api.gax.grpc.ChannelProvider;
+import com.google.api.gax.grpc.ClientSettings;
 import com.google.api.gax.grpc.ExecutorProvider;
 import com.google.api.gax.grpc.InstantiatingChannelProvider;
 import com.google.api.gax.grpc.InstantiatingExecutorProvider;
 import com.google.api.gax.grpc.PagedCallSettings;
 import com.google.api.gax.grpc.PagedListDescriptor;
 import com.google.api.gax.grpc.PagedListResponseFactory;
-import com.google.api.gax.grpc.ServiceApiSettings;
 import com.google.api.gax.grpc.SimpleCallSettings;
 import com.google.api.gax.grpc.UnaryCallSettings;
 import com.google.api.gax.grpc.UnaryCallable;
@@ -43,6 +43,7 @@ import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.protobuf.Empty;
+import com.google.protobuf.ExperimentalApi;
 import com.google.pubsub.v1.AcknowledgeRequest;
 import com.google.pubsub.v1.DeleteSubscriptionRequest;
 import com.google.pubsub.v1.GetSubscriptionRequest;
@@ -56,11 +57,12 @@ import com.google.pubsub.v1.SubscriberGrpc;
 import com.google.pubsub.v1.Subscription;
 import io.grpc.Status;
 import java.io.IOException;
+import javax.annotation.Generated;
 import org.joda.time.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 /**
- * Settings class to configure an instance of {@link SubscriberApi}.
+ * Settings class to configure an instance of {@link SubscriberClient}.
  *
  * <p>The default instance has everything set to sensible defaults:
  *
@@ -84,8 +86,9 @@ import org.joda.time.Duration;
  * </code>
  * </pre>
  */
-@javax.annotation.Generated("by GAPIC")
-public class SubscriberSettings extends ServiceApiSettings {
+@Generated("by GAPIC")
+@ExperimentalApi
+public class SubscriberSettings extends ClientSettings {
   /** The default address of the service. */
   private static final String DEFAULT_SERVICE_ADDRESS = "pubsub.googleapis.com";
 
@@ -293,7 +296,7 @@ public class SubscriberSettings extends ServiceApiSettings {
           };
 
   /** Builder for SubscriberSettings. */
-  public static class Builder extends ServiceApiSettings.Builder {
+  public static class Builder extends ClientSettings.Builder {
     private final ImmutableList<UnaryCallSettings.Builder> unaryMethodSettingsBuilders;
 
     private final SimpleCallSettings.Builder<Subscription, Subscription> createSubscriptionSettings;
@@ -513,9 +516,9 @@ public class SubscriberSettings extends ServiceApiSettings {
      *
      * <p>Note: This method does not support applying settings to streaming methods.
      */
-    public Builder applyToAllApiMethods(UnaryCallSettings.Builder apiCallSettings)
+    public Builder applyToAllUnaryMethods(UnaryCallSettings.Builder unaryCallSettings)
         throws Exception {
-      super.applyToAllApiMethods(unaryMethodSettingsBuilders, apiCallSettings);
+      super.applyToAllUnaryMethods(unaryMethodSettingsBuilders, unaryCallSettings);
       return this;
     }
 

@@ -19,49 +19,49 @@
  *
  * <p>The interfaces provided are listed below, along with usage samples.
  *
- * <p>==================== ErrorGroupServiceApi ====================
+ * <p>======================= ErrorGroupServiceClient =======================
  *
  * <p>Service Description: Service for retrieving and updating individual error groups.
  *
- * <p>Sample for ErrorGroupServiceApi:
+ * <p>Sample for ErrorGroupServiceClient:
  *
  * <pre>
  * <code>
- * try (ErrorGroupServiceApi errorGroupServiceApi = ErrorGroupServiceApi.create()) {
- *   String formattedGroupName = ErrorGroupServiceApi.formatGroupName("[PROJECT]", "[GROUP]");
- *   ErrorGroup response = errorGroupServiceApi.getGroup(formattedGroupName);
+ * try (ErrorGroupServiceClient errorGroupServiceClient = ErrorGroupServiceClient.create()) {
+ *   String formattedGroupName = ErrorGroupServiceClient.formatGroupName("[PROJECT]", "[GROUP]");
+ *   ErrorGroup response = errorGroupServiceClient.getGroup(formattedGroupName);
  * }
  * </code>
  * </pre>
  *
- * ==================== ErrorStatsServiceApi ====================
+ * ======================= ErrorStatsServiceClient =======================
  *
  * <p>Service Description: An API for retrieving and managing error statistics as well as data for
  * individual events.
  *
- * <p>Sample for ErrorStatsServiceApi:
+ * <p>Sample for ErrorStatsServiceClient:
  *
  * <pre>
  * <code>
- * try (ErrorStatsServiceApi errorStatsServiceApi = ErrorStatsServiceApi.create()) {
- *   String formattedProjectName = ErrorStatsServiceApi.formatProjectName("[PROJECT]");
- *   DeleteEventsResponse response = errorStatsServiceApi.deleteEvents(formattedProjectName);
+ * try (ErrorStatsServiceClient errorStatsServiceClient = ErrorStatsServiceClient.create()) {
+ *   String formattedProjectName = ErrorStatsServiceClient.formatProjectName("[PROJECT]");
+ *   DeleteEventsResponse response = errorStatsServiceClient.deleteEvents(formattedProjectName);
  * }
  * </code>
  * </pre>
  *
- * ====================== ReportErrorsServiceApi ======================
+ * ========================= ReportErrorsServiceClient =========================
  *
  * <p>Service Description: An API for reporting error events.
  *
- * <p>Sample for ReportErrorsServiceApi:
+ * <p>Sample for ReportErrorsServiceClient:
  *
  * <pre>
  * <code>
- * try (ReportErrorsServiceApi reportErrorsServiceApi = ReportErrorsServiceApi.create()) {
- *   String formattedProjectName = ReportErrorsServiceApi.formatProjectName("[PROJECT]");
+ * try (ReportErrorsServiceClient reportErrorsServiceClient = ReportErrorsServiceClient.create()) {
+ *   String formattedProjectName = ReportErrorsServiceClient.formatProjectName("[PROJECT]");
  *   ReportedErrorEvent event = ReportedErrorEvent.newBuilder().build();
- *   ReportErrorEventResponse response = reportErrorsServiceApi.reportErrorEvent(formattedProjectName, event);
+ *   ReportErrorEventResponse response = reportErrorsServiceClient.reportErrorEvent(formattedProjectName, event);
  * }
  * </code>
  * </pre>

@@ -13,20 +13,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.google.cloud.language.spi.v1beta1;
+package com.google.cloud.language.spi.v1;
 
 import com.google.api.gax.grpc.ApiException;
 import com.google.api.gax.testing.MockGrpcService;
 import com.google.api.gax.testing.MockServiceHelper;
-import com.google.cloud.language.v1beta1.AnalyzeEntitiesRequest;
-import com.google.cloud.language.v1beta1.AnalyzeEntitiesResponse;
-import com.google.cloud.language.v1beta1.AnalyzeSentimentRequest;
-import com.google.cloud.language.v1beta1.AnalyzeSentimentResponse;
-import com.google.cloud.language.v1beta1.AnnotateTextRequest;
-import com.google.cloud.language.v1beta1.AnnotateTextRequest.Features;
-import com.google.cloud.language.v1beta1.AnnotateTextResponse;
-import com.google.cloud.language.v1beta1.Document;
-import com.google.cloud.language.v1beta1.EncodingType;
+import com.google.cloud.language.v1.AnalyzeEntitiesRequest;
+import com.google.cloud.language.v1.AnalyzeEntitiesResponse;
+import com.google.cloud.language.v1.AnalyzeSentimentRequest;
+import com.google.cloud.language.v1.AnalyzeSentimentResponse;
+import com.google.cloud.language.v1.AnalyzeSyntaxRequest;
+import com.google.cloud.language.v1.AnalyzeSyntaxResponse;
+import com.google.cloud.language.v1.AnnotateTextRequest;
+import com.google.cloud.language.v1.AnnotateTextRequest.Features;
+import com.google.cloud.language.v1.AnnotateTextResponse;
+import com.google.cloud.language.v1.Document;
+import com.google.cloud.language.v1.EncodingType;
 import com.google.protobuf.GeneratedMessageV3;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
@@ -44,7 +46,7 @@ import org.junit.Test;
 public class LanguageServiceTest {
   private static MockLanguageService mockLanguageService;
   private static MockServiceHelper serviceHelper;
-  private LanguageServiceApi api;
+  private LanguageServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {
@@ -66,12 +68,12 @@ public class LanguageServiceTest {
         LanguageServiceSettings.defaultBuilder()
             .setChannelProvider(serviceHelper.createChannelProvider())
             .build();
-    api = LanguageServiceApi.create(settings);
+    client = LanguageServiceClient.create(settings);
   }
 
   @After
   public void tearDown() throws Exception {
-    api.close();
+    client.close();
   }
 
   @Test
@@ -84,7 +86,7 @@ public class LanguageServiceTest {
 
     Document document = Document.newBuilder().build();
 
-    AnalyzeSentimentResponse actualResponse = api.analyzeSentiment(document);
+    AnalyzeSentimentResponse actualResponse = client.analyzeSentiment(document);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<GeneratedMessageV3> actualRequests = mockLanguageService.getRequests();
@@ -103,7 +105,7 @@ public class LanguageServiceTest {
     try {
       Document document = Document.newBuilder().build();
 
-      api.analyzeSentiment(document);
+      client.analyzeSentiment(document);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
       Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
@@ -121,7 +123,7 @@ public class LanguageServiceTest {
     Document document = Document.newBuilder().build();
     EncodingType encodingType = EncodingType.NONE;
 
-    AnalyzeEntitiesResponse actualResponse = api.analyzeEntities(document, encodingType);
+    AnalyzeEntitiesResponse actualResponse = client.analyzeEntities(document, encodingType);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<GeneratedMessageV3> actualRequests = mockLanguageService.getRequests();
@@ -142,7 +144,46 @@ public class LanguageServiceTest {
       Document document = Document.newBuilder().build();
       EncodingType encodingType = EncodingType.NONE;
 
-      api.analyzeEntities(document, encodingType);
+      client.analyzeEntities(document, encodingType);
+      Assert.fail("No exception raised");
+    } catch (ApiException e) {
+      Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void analyzeSyntaxTest() {
+    String language = "language-1613589672";
+    AnalyzeSyntaxResponse expectedResponse =
+        AnalyzeSyntaxResponse.newBuilder().setLanguage(language).build();
+    mockLanguageService.addResponse(expectedResponse);
+
+    Document document = Document.newBuilder().build();
+    EncodingType encodingType = EncodingType.NONE;
+
+    AnalyzeSyntaxResponse actualResponse = client.analyzeSyntax(document, encodingType);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<GeneratedMessageV3> actualRequests = mockLanguageService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    AnalyzeSyntaxRequest actualRequest = (AnalyzeSyntaxRequest) actualRequests.get(0);
+
+    Assert.assertEquals(document, actualRequest.getDocument());
+    Assert.assertEquals(encodingType, actualRequest.getEncodingType());
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void analyzeSyntaxExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
+    mockLanguageService.addException(exception);
+
+    try {
+      Document document = Document.newBuilder().build();
+      EncodingType encodingType = EncodingType.NONE;
+
+      client.analyzeSyntax(document, encodingType);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
       Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
@@ -161,7 +202,7 @@ public class LanguageServiceTest {
     AnnotateTextRequest.Features features = AnnotateTextRequest.Features.newBuilder().build();
     EncodingType encodingType = EncodingType.NONE;
 
-    AnnotateTextResponse actualResponse = api.annotateText(document, features, encodingType);
+    AnnotateTextResponse actualResponse = client.annotateText(document, features, encodingType);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<GeneratedMessageV3> actualRequests = mockLanguageService.getRequests();
@@ -184,7 +225,7 @@ public class LanguageServiceTest {
       AnnotateTextRequest.Features features = AnnotateTextRequest.Features.newBuilder().build();
       EncodingType encodingType = EncodingType.NONE;
 
-      api.annotateText(document, features, encodingType);
+      client.annotateText(document, features, encodingType);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
       Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());

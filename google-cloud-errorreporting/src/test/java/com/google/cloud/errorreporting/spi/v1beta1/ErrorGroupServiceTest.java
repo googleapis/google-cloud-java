@@ -40,7 +40,7 @@ public class ErrorGroupServiceTest {
   private static MockErrorStatsService mockErrorStatsService;
   private static MockReportErrorsService mockReportErrorsService;
   private static MockServiceHelper serviceHelper;
-  private ErrorGroupServiceApi api;
+  private ErrorGroupServiceClient client;
 
   @BeforeClass
   public static void startStaticServer() {
@@ -67,12 +67,12 @@ public class ErrorGroupServiceTest {
         ErrorGroupServiceSettings.defaultBuilder()
             .setChannelProvider(serviceHelper.createChannelProvider())
             .build();
-    api = ErrorGroupServiceApi.create(settings);
+    client = ErrorGroupServiceClient.create(settings);
   }
 
   @After
   public void tearDown() throws Exception {
-    api.close();
+    client.close();
   }
 
   @Test
@@ -83,9 +83,9 @@ public class ErrorGroupServiceTest {
     ErrorGroup expectedResponse = ErrorGroup.newBuilder().setName(name).setGroupId(groupId).build();
     mockErrorGroupService.addResponse(expectedResponse);
 
-    String formattedGroupName = ErrorGroupServiceApi.formatGroupName("[PROJECT]", "[GROUP]");
+    String formattedGroupName = ErrorGroupServiceClient.formatGroupName("[PROJECT]", "[GROUP]");
 
-    ErrorGroup actualResponse = api.getGroup(formattedGroupName);
+    ErrorGroup actualResponse = client.getGroup(formattedGroupName);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<GeneratedMessageV3> actualRequests = mockErrorGroupService.getRequests();
@@ -102,9 +102,9 @@ public class ErrorGroupServiceTest {
     mockErrorGroupService.addException(exception);
 
     try {
-      String formattedGroupName = ErrorGroupServiceApi.formatGroupName("[PROJECT]", "[GROUP]");
+      String formattedGroupName = ErrorGroupServiceClient.formatGroupName("[PROJECT]", "[GROUP]");
 
-      api.getGroup(formattedGroupName);
+      client.getGroup(formattedGroupName);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
       Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
@@ -121,7 +121,7 @@ public class ErrorGroupServiceTest {
 
     ErrorGroup group = ErrorGroup.newBuilder().build();
 
-    ErrorGroup actualResponse = api.updateGroup(group);
+    ErrorGroup actualResponse = client.updateGroup(group);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<GeneratedMessageV3> actualRequests = mockErrorGroupService.getRequests();
@@ -140,7 +140,7 @@ public class ErrorGroupServiceTest {
     try {
       ErrorGroup group = ErrorGroup.newBuilder().build();
 
-      api.updateGroup(group);
+      client.updateGroup(group);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
       Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());

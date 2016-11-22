@@ -19,37 +19,37 @@
  *
  * <p>The interfaces provided are listed below, along with usage samples.
  *
- * <p>============ PublisherApi ============
+ * <p>=============== PublisherClient ===============
  *
  * <p>Service Description: The service that an application uses to manipulate topics, and to send
  * messages to a topic.
  *
- * <p>Sample for PublisherApi:
+ * <p>Sample for PublisherClient:
  *
  * <pre>
  * <code>
- * try (PublisherApi publisherApi = PublisherApi.create()) {
+ * try (PublisherClient publisherClient = PublisherClient.create()) {
  *   TopicName name = TopicName.create("[PROJECT]", "[TOPIC]");
- *   Topic response = publisherApi.createTopic(name);
+ *   Topic response = publisherClient.createTopic(name);
  * }
  * </code>
  * </pre>
  *
- * ============= SubscriberApi =============
+ * ================ SubscriberClient ================
  *
  * <p>Service Description: The service that an application uses to manipulate subscriptions and to
  * consume messages from a subscription via the `Pull` method.
  *
- * <p>Sample for SubscriberApi:
+ * <p>Sample for SubscriberClient:
  *
  * <pre>
  * <code>
- * try (SubscriberApi subscriberApi = SubscriberApi.create()) {
+ * try (SubscriberClient subscriberClient = SubscriberClient.create()) {
  *   SubscriptionName name = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]");
  *   TopicName topic = TopicName.create("[PROJECT]", "[TOPIC]");
  *   PushConfig pushConfig = PushConfig.newBuilder().build();
  *   int ackDeadlineSeconds = 0;
- *   Subscription response = subscriberApi.createSubscription(name, topic, pushConfig, ackDeadlineSeconds);
+ *   Subscription response = subscriberClient.createSubscription(name, topic, pushConfig, ackDeadlineSeconds);
  * }
  * </code>
  * </pre>

@@ -39,7 +39,7 @@ import org.junit.Test;
 public class ImageAnnotatorTest {
   private static MockImageAnnotator mockImageAnnotator;
   private static MockServiceHelper serviceHelper;
-  private ImageAnnotatorApi api;
+  private ImageAnnotatorClient client;
 
   @BeforeClass
   public static void startStaticServer() {
@@ -61,12 +61,12 @@ public class ImageAnnotatorTest {
         ImageAnnotatorSettings.defaultBuilder()
             .setChannelProvider(serviceHelper.createChannelProvider())
             .build();
-    api = ImageAnnotatorApi.create(settings);
+    client = ImageAnnotatorClient.create(settings);
   }
 
   @After
   public void tearDown() throws Exception {
-    api.close();
+    client.close();
   }
 
   @Test
@@ -77,7 +77,7 @@ public class ImageAnnotatorTest {
 
     List<AnnotateImageRequest> requests = new ArrayList<>();
 
-    BatchAnnotateImagesResponse actualResponse = api.batchAnnotateImages(requests);
+    BatchAnnotateImagesResponse actualResponse = client.batchAnnotateImages(requests);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<GeneratedMessageV3> actualRequests = mockImageAnnotator.getRequests();
@@ -96,7 +96,7 @@ public class ImageAnnotatorTest {
     try {
       List<AnnotateImageRequest> requests = new ArrayList<>();
 
-      api.batchAnnotateImages(requests);
+      client.batchAnnotateImages(requests);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
       Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());

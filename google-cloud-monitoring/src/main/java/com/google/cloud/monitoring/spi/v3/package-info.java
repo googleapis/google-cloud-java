@@ -19,7 +19,7 @@
  *
  * <p>The interfaces provided are listed below, along with usage samples.
  *
- * <p>=============== GroupServiceApi ===============
+ * <p>================== GroupServiceClient ==================
  *
  * <p>Service Description: The Group API lets you inspect and manage your
  * [groups](google.monitoring.v3.Group).
@@ -31,29 +31,29 @@
  * example, an alert policy, the target of that alert policy is updated automatically as monitored
  * resources are added and removed from the infrastructure.
  *
- * <p>Sample for GroupServiceApi:
+ * <p>Sample for GroupServiceClient:
  *
  * <pre>
  * <code>
- * try (GroupServiceApi groupServiceApi = GroupServiceApi.create()) {
- *   String formattedName = GroupServiceApi.formatGroupName("[PROJECT]", "[GROUP]");
- *   Group response = groupServiceApi.getGroup(formattedName);
+ * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
+ *   String formattedName = GroupServiceClient.formatGroupName("[PROJECT]", "[GROUP]");
+ *   Group response = groupServiceClient.getGroup(formattedName);
  * }
  * </code>
  * </pre>
  *
- * ================ MetricServiceApi ================
+ * =================== MetricServiceClient ===================
  *
  * <p>Service Description: Manages metric descriptors, monitored resource descriptors, and time
  * series data.
  *
- * <p>Sample for MetricServiceApi:
+ * <p>Sample for MetricServiceClient:
  *
  * <pre>
  * <code>
- * try (MetricServiceApi metricServiceApi = MetricServiceApi.create()) {
- *   String formattedName = MetricServiceApi.formatMonitoredResourceDescriptorName("[PROJECT]", "[MONITORED_RESOURCE_DESCRIPTOR]");
- *   MonitoredResourceDescriptor response = metricServiceApi.getMonitoredResourceDescriptor(formattedName);
+ * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
+ *   String formattedName = MetricServiceClient.formatMonitoredResourceDescriptorName("[PROJECT]", "[MONITORED_RESOURCE_DESCRIPTOR]");
+ *   MonitoredResourceDescriptor response = metricServiceClient.getMonitoredResourceDescriptor(formattedName);
  * }
  * </code>
  * </pre>

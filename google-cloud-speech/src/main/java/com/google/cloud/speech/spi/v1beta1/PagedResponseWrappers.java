@@ -15,6 +15,8 @@
  */
 package com.google.cloud.speech.spi.v1beta1;
 
+import com.google.protobuf.ExperimentalApi;
+import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 /**
@@ -22,5 +24,6 @@ package com.google.cloud.speech.spi.v1beta1;
  * inside this wrapper class is used as the return type of one of an API method that implements the
  * page streaming pattern.
  */
-@javax.annotation.Generated("by GAPIC")
+@Generated("by GAPIC")
+@ExperimentalApi
 public class PagedResponseWrappers {}

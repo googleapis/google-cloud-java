@@ -33,9 +33,9 @@ import com.google.cloud.MonitoredResourceDescriptor;
 import com.google.cloud.Page;
 import com.google.cloud.PageImpl;
 import com.google.cloud.logging.spi.LoggingRpc;
-import com.google.cloud.logging.spi.v2.ConfigServiceV2Api;
-import com.google.cloud.logging.spi.v2.LoggingServiceV2Api;
-import com.google.cloud.logging.spi.v2.MetricsServiceV2Api;
+import com.google.cloud.logging.spi.v2.ConfigServiceV2Client;
+import com.google.cloud.logging.spi.v2.LoggingServiceV2Client;
+import com.google.cloud.logging.spi.v2.MetricsServiceV2Client;
 import com.google.common.base.Function;
 import com.google.common.base.Throwables;
 import com.google.common.collect.ImmutableList;
@@ -228,7 +228,7 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
   @Override
   public Future<Sink> createAsync(SinkInfo sink) {
     CreateSinkRequest request = CreateSinkRequest.newBuilder()
-        .setParent(ConfigServiceV2Api.formatParentName(getOptions().getProjectId()))
+        .setParent(ConfigServiceV2Client.formatParentName(getOptions().getProjectId()))
         .setSink(sink.toPb(getOptions().getProjectId()))
         .build();
     return transform(rpc.create(request), Sink.fromPbFunction(this));
@@ -242,7 +242,7 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
   @Override
   public Future<Sink> updateAsync(SinkInfo sink) {
     UpdateSinkRequest request = UpdateSinkRequest.newBuilder()
-        .setSinkName(ConfigServiceV2Api.formatSinkName(getOptions().getProjectId(), sink.getName()))
+        .setSinkName(ConfigServiceV2Client.formatSinkName(getOptions().getProjectId(), sink.getName()))
         .setSink(sink.toPb(getOptions().getProjectId()))
         .build();
     return transform(rpc.update(request), Sink.fromPbFunction(this));
@@ -256,7 +256,7 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
   @Override
   public Future<Sink> getSinkAsync(String sink) {
     GetSinkRequest request = GetSinkRequest.newBuilder()
-        .setSinkName(ConfigServiceV2Api.formatSinkName(getOptions().getProjectId(), sink))
+        .setSinkName(ConfigServiceV2Client.formatSinkName(getOptions().getProjectId(), sink))
         .build();
     return transform(rpc.get(request), Sink.fromPbFunction(this));
   }
@@ -264,7 +264,7 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
   private static ListSinksRequest listSinksRequest(LoggingOptions serviceOptions,
       Map<Option.OptionType, ?> options) {
     ListSinksRequest.Builder builder = ListSinksRequest.newBuilder();
-    builder.setParent(ConfigServiceV2Api.formatParentName(serviceOptions.getProjectId()));
+    builder.setParent(ConfigServiceV2Client.formatParentName(serviceOptions.getProjectId()));
     Integer pageSize = PAGE_SIZE.get(options);
     String pageToken = PAGE_TOKEN.get(options);
     if (pageSize != null) {
@@ -312,7 +312,7 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
   @Override
   public Future<Boolean> deleteSinkAsync(String sink) {
     DeleteSinkRequest request = DeleteSinkRequest.newBuilder()
-        .setSinkName(ConfigServiceV2Api.formatSinkName(getOptions().getProjectId(), sink))
+        .setSinkName(ConfigServiceV2Client.formatSinkName(getOptions().getProjectId(), sink))
         .build();
     return transform(rpc.delete(request), EMPTY_TO_BOOLEAN_FUNCTION);
   }
@@ -323,7 +323,7 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
 
   public Future<Boolean> deleteLogAsync(String log) {
     DeleteLogRequest request = DeleteLogRequest.newBuilder()
-        .setLogName(LoggingServiceV2Api.formatLogName(getOptions().getProjectId(), log))
+        .setLogName(LoggingServiceV2Client.formatLogName(getOptions().getProjectId(), log))
         .build();
     return transform(rpc.delete(request), EMPTY_TO_BOOLEAN_FUNCTION);
   }
@@ -385,7 +385,7 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
   @Override
   public Future<Metric> createAsync(MetricInfo metric) {
     CreateLogMetricRequest request = CreateLogMetricRequest.newBuilder()
-        .setParent(MetricsServiceV2Api.formatParentName(getOptions().getProjectId()))
+        .setParent(MetricsServiceV2Client.formatParentName(getOptions().getProjectId()))
         .setMetric(metric.toPb())
         .build();
     return transform(rpc.create(request), Metric.fromPbFunction(this));
@@ -399,7 +399,7 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
   @Override
   public Future<Metric> updateAsync(MetricInfo metric) {
     UpdateLogMetricRequest request = UpdateLogMetricRequest.newBuilder()
-        .setMetricName(MetricsServiceV2Api.formatMetricName(getOptions().getProjectId(),
+        .setMetricName(MetricsServiceV2Client.formatMetricName(getOptions().getProjectId(),
             metric.getName()))
         .setMetric(metric.toPb())
         .build();
@@ -414,7 +414,7 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
   @Override
   public Future<Metric> getMetricAsync(String metric) {
     GetLogMetricRequest request = GetLogMetricRequest.newBuilder()
-        .setMetricName(MetricsServiceV2Api.formatMetricName(getOptions().getProjectId(), metric))
+        .setMetricName(MetricsServiceV2Client.formatMetricName(getOptions().getProjectId(), metric))
         .build();
     return transform(rpc.get(request), Metric.fromPbFunction(this));
   }
@@ -422,7 +422,7 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
   private static ListLogMetricsRequest listMetricsRequest(LoggingOptions serviceOptions,
       Map<Option.OptionType, ?> options) {
     ListLogMetricsRequest.Builder builder = ListLogMetricsRequest.newBuilder();
-    builder.setParent(MetricsServiceV2Api.formatParentName(serviceOptions.getProjectId()));
+    builder.setParent(MetricsServiceV2Client.formatParentName(serviceOptions.getProjectId()));
     Integer pageSize = PAGE_SIZE.get(options);
     String pageToken = PAGE_TOKEN.get(options);
     if (pageSize != null) {
@@ -470,7 +470,7 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
   @Override
   public Future<Boolean> deleteMetricAsync(String metric) {
     DeleteLogMetricRequest request = DeleteLogMetricRequest.newBuilder()
-        .setMetricName(MetricsServiceV2Api.formatMetricName(getOptions().getProjectId(), metric))
+        .setMetricName(MetricsServiceV2Client.formatMetricName(getOptions().getProjectId(), metric))
         .build();
     return transform(rpc.delete(request), EMPTY_TO_BOOLEAN_FUNCTION);
   }
@@ -481,7 +481,7 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
     WriteLogEntriesRequest.Builder builder = WriteLogEntriesRequest.newBuilder();
     String logName = LOG_NAME.get(options);
     if (logName != null) {
-      builder.setLogName(LoggingServiceV2Api.formatLogName(projectId, logName));
+      builder.setLogName(LoggingServiceV2Client.formatLogName(projectId, logName));
     }
     MonitoredResource resource = RESOURCE.get(options);
     if (resource != null) {

@@ -27,11 +27,11 @@ import com.google.cloud.GrpcServiceOptions.ExecutorFactory;
 import com.google.cloud.NoCredentials;
 import com.google.cloud.logging.LoggingException;
 import com.google.cloud.logging.LoggingOptions;
-import com.google.cloud.logging.spi.v2.ConfigServiceV2Api;
+import com.google.cloud.logging.spi.v2.ConfigServiceV2Client;
 import com.google.cloud.logging.spi.v2.ConfigServiceV2Settings;
-import com.google.cloud.logging.spi.v2.LoggingServiceV2Api;
+import com.google.cloud.logging.spi.v2.LoggingServiceV2Client;
 import com.google.cloud.logging.spi.v2.LoggingServiceV2Settings;
-import com.google.cloud.logging.spi.v2.MetricsServiceV2Api;
+import com.google.cloud.logging.spi.v2.MetricsServiceV2Client;
 import com.google.cloud.logging.spi.v2.MetricsServiceV2Settings;
 import com.google.common.base.Function;
 import com.google.common.collect.Sets;
@@ -72,9 +72,9 @@ import java.util.concurrent.ScheduledExecutorService;
 
 public class DefaultLoggingRpc implements LoggingRpc {
 
-  private final ConfigServiceV2Api configApi;
-  private final LoggingServiceV2Api loggingApi;
-  private final MetricsServiceV2Api metricsApi;
+  private final ConfigServiceV2Client configClient;
+  private final LoggingServiceV2Client loggingClient;
+  private final MetricsServiceV2Client metricsClient;
   private final ScheduledExecutorService executor;
   private final ProviderManager providerManager;
   private final ExecutorFactory<ScheduledExecutorService> executorFactory;
@@ -131,18 +131,18 @@ public class DefaultLoggingRpc implements LoggingRpc {
       ConfigServiceV2Settings.Builder confBuilder = ConfigServiceV2Settings.defaultBuilder()
           .setExecutorProvider(providerManager)
           .setChannelProvider(providerManager)
-          .applyToAllApiMethods(callSettingsBuilder);
+          .applyToAllUnaryMethods(callSettingsBuilder);
       LoggingServiceV2Settings.Builder logBuilder = LoggingServiceV2Settings.defaultBuilder()
           .setExecutorProvider(providerManager)
           .setChannelProvider(providerManager)
-          .applyToAllApiMethods(callSettingsBuilder);
+          .applyToAllUnaryMethods(callSettingsBuilder);
       MetricsServiceV2Settings.Builder metricsBuilder = MetricsServiceV2Settings.defaultBuilder()
           .setExecutorProvider(providerManager)
           .setChannelProvider(providerManager)
-          .applyToAllApiMethods(callSettingsBuilder);
-      configApi = ConfigServiceV2Api.create(confBuilder.build());
-      loggingApi = LoggingServiceV2Api.create(logBuilder.build());
-      metricsApi = MetricsServiceV2Api.create(metricsBuilder.build());
+          .applyToAllUnaryMethods(callSettingsBuilder);
+      configClient = ConfigServiceV2Client.create(confBuilder.build());
+      loggingClient = LoggingServiceV2Client.create(logBuilder.build());
+      metricsClient = MetricsServiceV2Client.create(metricsBuilder.build());
     } catch (Exception ex) {
       throw new IOException(ex);
     }
@@ -167,77 +167,77 @@ public class DefaultLoggingRpc implements LoggingRpc {
 
   @Override
   public Future<LogSink> create(CreateSinkRequest request) {
-    return translate(configApi.createSinkCallable().futureCall(request), true);
+    return translate(configClient.createSinkCallable().futureCall(request), true);
   }
 
   @Override
   public Future<LogSink> update(UpdateSinkRequest request) {
-    return translate(configApi.updateSinkCallable().futureCall(request), true);
+    return translate(configClient.updateSinkCallable().futureCall(request), true);
   }
 
   @Override
   public Future<LogSink> get(GetSinkRequest request) {
-    return translate(configApi.getSinkCallable().futureCall(request), true, Code.NOT_FOUND.value());
+    return translate(configClient.getSinkCallable().futureCall(request), true, Code.NOT_FOUND.value());
   }
 
   @Override
   public Future<ListSinksResponse> list(ListSinksRequest request) {
-    return translate(configApi.listSinksCallable().futureCall(request), true);
+    return translate(configClient.listSinksCallable().futureCall(request), true);
   }
 
   @Override
   public Future<Empty> delete(DeleteSinkRequest request) {
-    return translate(configApi.deleteSinkCallable().futureCall(request), true,
+    return translate(configClient.deleteSinkCallable().futureCall(request), true,
         Code.NOT_FOUND.value());
   }
 
   @Override
   public Future<Empty> delete(DeleteLogRequest request) {
-    return translate(loggingApi.deleteLogCallable().futureCall(request), true,
+    return translate(loggingClient.deleteLogCallable().futureCall(request), true,
         Code.NOT_FOUND.value());
   }
 
   @Override
   public Future<WriteLogEntriesResponse> write(WriteLogEntriesRequest request) {
-    return translate(loggingApi.writeLogEntriesCallable().futureCall(request), false);
+    return translate(loggingClient.writeLogEntriesCallable().futureCall(request), false);
   }
 
   @Override
   public Future<ListLogEntriesResponse> list(ListLogEntriesRequest request) {
-    return translate(loggingApi.listLogEntriesCallable().futureCall(request), true);
+    return translate(loggingClient.listLogEntriesCallable().futureCall(request), true);
   }
 
   @Override
   public Future<ListMonitoredResourceDescriptorsResponse> list(
       ListMonitoredResourceDescriptorsRequest request) {
-    return translate(loggingApi.listMonitoredResourceDescriptorsCallable().futureCall(request),
+    return translate(loggingClient.listMonitoredResourceDescriptorsCallable().futureCall(request),
         true);
   }
 
   @Override
   public Future<LogMetric> create(CreateLogMetricRequest request) {
-    return translate(metricsApi.createLogMetricCallable().futureCall(request), true);
+    return translate(metricsClient.createLogMetricCallable().futureCall(request), true);
   }
 
   @Override
   public Future<LogMetric> update(UpdateLogMetricRequest request) {
-    return translate(metricsApi.updateLogMetricCallable().futureCall(request), true);
+    return translate(metricsClient.updateLogMetricCallable().futureCall(request), true);
   }
 
   @Override
   public Future<LogMetric> get(GetLogMetricRequest request) {
-    return translate(metricsApi.getLogMetricCallable().futureCall(request), true,
+    return translate(metricsClient.getLogMetricCallable().futureCall(request), true,
         Code.NOT_FOUND.value());
   }
 
   @Override
   public Future<ListLogMetricsResponse> list(ListLogMetricsRequest request) {
-    return translate(metricsApi.listLogMetricsCallable().futureCall(request), true);
+    return translate(metricsClient.listLogMetricsCallable().futureCall(request), true);
   }
 
   @Override
   public Future<Empty> delete(DeleteLogMetricRequest request) {
-    return translate(metricsApi.deleteLogMetricCallable().futureCall(request), true,
+    return translate(metricsClient.deleteLogMetricCallable().futureCall(request), true,
         Code.NOT_FOUND.value());
   }
 
@@ -247,9 +247,9 @@ public class DefaultLoggingRpc implements LoggingRpc {
       return;
     }
     closed = true;
-    configApi.close();
-    loggingApi.close();
-    metricsApi.close();
+    configClient.close();
+    loggingClient.close();
+    metricsClient.close();
     providerManager.getChannel().shutdown();
     executorFactory.release(executor);
   }

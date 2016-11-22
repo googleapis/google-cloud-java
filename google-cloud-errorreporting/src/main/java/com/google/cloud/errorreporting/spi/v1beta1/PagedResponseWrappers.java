@@ -25,6 +25,8 @@ import com.google.devtools.clouderrorreporting.v1beta1.ListEventsRequest;
 import com.google.devtools.clouderrorreporting.v1beta1.ListEventsResponse;
 import com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsRequest;
 import com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse;
+import com.google.protobuf.ExperimentalApi;
+import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 /**
@@ -32,7 +34,8 @@ import com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse;
  * inside this wrapper class is used as the return type of one of an API method that implements the
  * page streaming pattern.
  */
-@javax.annotation.Generated("by GAPIC")
+@Generated("by GAPIC")
+@ExperimentalApi
 public class PagedResponseWrappers {
 
   public static class ListGroupStatsPagedResponse

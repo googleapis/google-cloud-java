@@ -34,6 +34,8 @@ import com.google.monitoring.v3.ListMonitoredResourceDescriptorsResponse;
 import com.google.monitoring.v3.ListTimeSeriesRequest;
 import com.google.monitoring.v3.ListTimeSeriesResponse;
 import com.google.monitoring.v3.TimeSeries;
+import com.google.protobuf.ExperimentalApi;
+import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 /**
@@ -41,7 +43,8 @@ import com.google.monitoring.v3.TimeSeries;
  * inside this wrapper class is used as the return type of one of an API method that implements the
  * page streaming pattern.
  */
-@javax.annotation.Generated("by GAPIC")
+@Generated("by GAPIC")
+@ExperimentalApi
 public class PagedResponseWrappers {
 
   public static class ListGroupsPagedResponse

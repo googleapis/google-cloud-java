@@ -28,12 +28,14 @@ import com.google.logging.v2.ListSinksResponse;
 import com.google.logging.v2.LogSink;
 import com.google.logging.v2.UpdateSinkRequest;
 import com.google.protobuf.Empty;
+import com.google.protobuf.ExperimentalApi;
 import io.grpc.ManagedChannel;
 import java.io.Closeable;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ScheduledExecutorService;
+import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND SERVICE
 /**
@@ -45,15 +47,16 @@ import java.util.concurrent.ScheduledExecutorService;
  *
  * <pre>
  * <code>
- * try (ConfigServiceV2Api configServiceV2Api = ConfigServiceV2Api.create()) {
- *   String formattedSinkName = ConfigServiceV2Api.formatSinkName("[PROJECT]", "[SINK]");
- *   LogSink response = configServiceV2Api.getSink(formattedSinkName);
+ * try (ConfigServiceV2Client configServiceV2Client = ConfigServiceV2Client.create()) {
+ *   String formattedSinkName = ConfigServiceV2Client.formatSinkName("[PROJECT]", "[SINK]");
+ *   LogSink response = configServiceV2Client.getSink(formattedSinkName);
  * }
  * </code>
  * </pre>
  *
- * <p>Note: close() needs to be called on the configServiceV2Api object to clean up resources such
- * as threads. In the example above, try-with-resources is used, which automatically calls close().
+ * <p>Note: close() needs to be called on the configServiceV2Client object to clean up resources
+ * such as threads. In the example above, try-with-resources is used, which automatically calls
+ * close().
  *
  * <p>The surface of this class includes several types of Java methods for each of the API's
  * methods:
@@ -86,13 +89,14 @@ import java.util.concurrent.ScheduledExecutorService;
  *         .build();
  * ConfigServiceV2Settings configServiceV2Settings =
  *     ConfigServiceV2Settings.defaultBuilder().setChannelProvider(channelProvider).build();
- * ConfigServiceV2Api configServiceV2Api =
- *     ConfigServiceV2Api.create(configServiceV2Settings);
+ * ConfigServiceV2Client configServiceV2Client =
+ *     ConfigServiceV2Client.create(configServiceV2Settings);
  * </code>
  * </pre>
  */
-@javax.annotation.Generated("by GAPIC")
-public class ConfigServiceV2Api implements AutoCloseable {
+@Generated("by GAPIC")
+@ExperimentalApi
+public class ConfigServiceV2Client implements AutoCloseable {
   private final ConfigServiceV2Settings settings;
   private final ScheduledExecutorService executor;
   private final ManagedChannel channel;
@@ -138,25 +142,25 @@ public class ConfigServiceV2Api implements AutoCloseable {
     return SINK_PATH_TEMPLATE.parse(sinkName).get("sink");
   }
 
-  /** Constructs an instance of ConfigServiceV2Api with default settings. */
-  public static final ConfigServiceV2Api create() throws IOException {
+  /** Constructs an instance of ConfigServiceV2Client with default settings. */
+  public static final ConfigServiceV2Client create() throws IOException {
     return create(ConfigServiceV2Settings.defaultBuilder().build());
   }
 
   /**
-   * Constructs an instance of ConfigServiceV2Api, using the given settings. The channels are
+   * Constructs an instance of ConfigServiceV2Client, using the given settings. The channels are
    * created based on the settings passed in, or defaults for any settings that are not set.
    */
-  public static final ConfigServiceV2Api create(ConfigServiceV2Settings settings)
+  public static final ConfigServiceV2Client create(ConfigServiceV2Settings settings)
       throws IOException {
-    return new ConfigServiceV2Api(settings);
+    return new ConfigServiceV2Client(settings);
   }
 
   /**
-   * Constructs an instance of ConfigServiceV2Api, using the given settings. This is protected so
+   * Constructs an instance of ConfigServiceV2Client, using the given settings. This is protected so
    * that it easy to make a subclass, but otherwise, the static factory methods should be preferred.
    */
-  protected ConfigServiceV2Api(ConfigServiceV2Settings settings) throws IOException {
+  protected ConfigServiceV2Client(ConfigServiceV2Settings settings) throws IOException {
     this.settings = settings;
     ChannelAndExecutor channelAndExecutor = settings.getChannelAndExecutor();
     this.executor = channelAndExecutor.getExecutor();
@@ -206,9 +210,9 @@ public class ConfigServiceV2Api implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (ConfigServiceV2Api configServiceV2Api = ConfigServiceV2Api.create()) {
-   *   String formattedParent = ConfigServiceV2Api.formatParentName("[PROJECT]");
-   *   for (LogSink element : configServiceV2Api.listSinks(formattedParent).iterateAllElements()) {
+   * try (ConfigServiceV2Client configServiceV2Client = ConfigServiceV2Client.create()) {
+   *   String formattedParent = ConfigServiceV2Client.formatParentName("[PROJECT]");
+   *   for (LogSink element : configServiceV2Client.listSinks(formattedParent).iterateAllElements()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -231,12 +235,12 @@ public class ConfigServiceV2Api implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (ConfigServiceV2Api configServiceV2Api = ConfigServiceV2Api.create()) {
-   *   String formattedParent = ConfigServiceV2Api.formatParentName("[PROJECT]");
+   * try (ConfigServiceV2Client configServiceV2Client = ConfigServiceV2Client.create()) {
+   *   String formattedParent = ConfigServiceV2Client.formatParentName("[PROJECT]");
    *   ListSinksRequest request = ListSinksRequest.newBuilder()
    *     .setParent(formattedParent)
    *     .build();
-   *   for (LogSink element : configServiceV2Api.listSinks(request).iterateAllElements()) {
+   *   for (LogSink element : configServiceV2Client.listSinks(request).iterateAllElements()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -256,12 +260,12 @@ public class ConfigServiceV2Api implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (ConfigServiceV2Api configServiceV2Api = ConfigServiceV2Api.create()) {
-   *   String formattedParent = ConfigServiceV2Api.formatParentName("[PROJECT]");
+   * try (ConfigServiceV2Client configServiceV2Client = ConfigServiceV2Client.create()) {
+   *   String formattedParent = ConfigServiceV2Client.formatParentName("[PROJECT]");
    *   ListSinksRequest request = ListSinksRequest.newBuilder()
    *     .setParent(formattedParent)
    *     .build();
-   *   ListenableFuture&lt;ListSinksPagedResponse&gt; future = configServiceV2Api.listSinksPagedCallable().futureCall(request);
+   *   ListenableFuture&lt;ListSinksPagedResponse&gt; future = configServiceV2Client.listSinksPagedCallable().futureCall(request);
    *   // Do something
    *   for (LogSink element : future.get().iterateAllElements()) {
    *     // doThingsWith(element);
@@ -280,13 +284,13 @@ public class ConfigServiceV2Api implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (ConfigServiceV2Api configServiceV2Api = ConfigServiceV2Api.create()) {
-   *   String formattedParent = ConfigServiceV2Api.formatParentName("[PROJECT]");
+   * try (ConfigServiceV2Client configServiceV2Client = ConfigServiceV2Client.create()) {
+   *   String formattedParent = ConfigServiceV2Client.formatParentName("[PROJECT]");
    *   ListSinksRequest request = ListSinksRequest.newBuilder()
    *     .setParent(formattedParent)
    *     .build();
    *   while (true) {
-   *     ListSinksResponse response = configServiceV2Api.listSinksCallable().call(request);
+   *     ListSinksResponse response = configServiceV2Client.listSinksCallable().call(request);
    *     for (LogSink element : response.getSinksList()) {
    *       // doThingsWith(element);
    *     }
@@ -311,9 +315,9 @@ public class ConfigServiceV2Api implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (ConfigServiceV2Api configServiceV2Api = ConfigServiceV2Api.create()) {
-   *   String formattedSinkName = ConfigServiceV2Api.formatSinkName("[PROJECT]", "[SINK]");
-   *   LogSink response = configServiceV2Api.getSink(formattedSinkName);
+   * try (ConfigServiceV2Client configServiceV2Client = ConfigServiceV2Client.create()) {
+   *   String formattedSinkName = ConfigServiceV2Client.formatSinkName("[PROJECT]", "[SINK]");
+   *   LogSink response = configServiceV2Client.getSink(formattedSinkName);
    * }
    * </code></pre>
    *
@@ -334,12 +338,12 @@ public class ConfigServiceV2Api implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (ConfigServiceV2Api configServiceV2Api = ConfigServiceV2Api.create()) {
-   *   String formattedSinkName = ConfigServiceV2Api.formatSinkName("[PROJECT]", "[SINK]");
+   * try (ConfigServiceV2Client configServiceV2Client = ConfigServiceV2Client.create()) {
+   *   String formattedSinkName = ConfigServiceV2Client.formatSinkName("[PROJECT]", "[SINK]");
    *   GetSinkRequest request = GetSinkRequest.newBuilder()
    *     .setSinkName(formattedSinkName)
    *     .build();
-   *   LogSink response = configServiceV2Api.getSink(request);
+   *   LogSink response = configServiceV2Client.getSink(request);
    * }
    * </code></pre>
    *
@@ -357,12 +361,12 @@ public class ConfigServiceV2Api implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (ConfigServiceV2Api configServiceV2Api = ConfigServiceV2Api.create()) {
-   *   String formattedSinkName = ConfigServiceV2Api.formatSinkName("[PROJECT]", "[SINK]");
+   * try (ConfigServiceV2Client configServiceV2Client = ConfigServiceV2Client.create()) {
+   *   String formattedSinkName = ConfigServiceV2Client.formatSinkName("[PROJECT]", "[SINK]");
    *   GetSinkRequest request = GetSinkRequest.newBuilder()
    *     .setSinkName(formattedSinkName)
    *     .build();
-   *   ListenableFuture&lt;LogSink&gt; future = configServiceV2Api.getSinkCallable().futureCall(request);
+   *   ListenableFuture&lt;LogSink&gt; future = configServiceV2Client.getSinkCallable().futureCall(request);
    *   // Do something
    *   LogSink response = future.get();
    * }
@@ -379,10 +383,10 @@ public class ConfigServiceV2Api implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (ConfigServiceV2Api configServiceV2Api = ConfigServiceV2Api.create()) {
-   *   String formattedParent = ConfigServiceV2Api.formatParentName("[PROJECT]");
+   * try (ConfigServiceV2Client configServiceV2Client = ConfigServiceV2Client.create()) {
+   *   String formattedParent = ConfigServiceV2Client.formatParentName("[PROJECT]");
    *   LogSink sink = LogSink.newBuilder().build();
-   *   LogSink response = configServiceV2Api.createSink(formattedParent, sink);
+   *   LogSink response = configServiceV2Client.createSink(formattedParent, sink);
    * }
    * </code></pre>
    *
@@ -406,14 +410,14 @@ public class ConfigServiceV2Api implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (ConfigServiceV2Api configServiceV2Api = ConfigServiceV2Api.create()) {
-   *   String formattedParent = ConfigServiceV2Api.formatParentName("[PROJECT]");
+   * try (ConfigServiceV2Client configServiceV2Client = ConfigServiceV2Client.create()) {
+   *   String formattedParent = ConfigServiceV2Client.formatParentName("[PROJECT]");
    *   LogSink sink = LogSink.newBuilder().build();
    *   CreateSinkRequest request = CreateSinkRequest.newBuilder()
    *     .setParent(formattedParent)
    *     .setSink(sink)
    *     .build();
-   *   LogSink response = configServiceV2Api.createSink(request);
+   *   LogSink response = configServiceV2Client.createSink(request);
    * }
    * </code></pre>
    *
@@ -431,14 +435,14 @@ public class ConfigServiceV2Api implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (ConfigServiceV2Api configServiceV2Api = ConfigServiceV2Api.create()) {
-   *   String formattedParent = ConfigServiceV2Api.formatParentName("[PROJECT]");
+   * try (ConfigServiceV2Client configServiceV2Client = ConfigServiceV2Client.create()) {
+   *   String formattedParent = ConfigServiceV2Client.formatParentName("[PROJECT]");
    *   LogSink sink = LogSink.newBuilder().build();
    *   CreateSinkRequest request = CreateSinkRequest.newBuilder()
    *     .setParent(formattedParent)
    *     .setSink(sink)
    *     .build();
-   *   ListenableFuture&lt;LogSink&gt; future = configServiceV2Api.createSinkCallable().futureCall(request);
+   *   ListenableFuture&lt;LogSink&gt; future = configServiceV2Client.createSinkCallable().futureCall(request);
    *   // Do something
    *   LogSink response = future.get();
    * }
@@ -455,10 +459,10 @@ public class ConfigServiceV2Api implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (ConfigServiceV2Api configServiceV2Api = ConfigServiceV2Api.create()) {
-   *   String formattedSinkName = ConfigServiceV2Api.formatSinkName("[PROJECT]", "[SINK]");
+   * try (ConfigServiceV2Client configServiceV2Client = ConfigServiceV2Client.create()) {
+   *   String formattedSinkName = ConfigServiceV2Client.formatSinkName("[PROJECT]", "[SINK]");
    *   LogSink sink = LogSink.newBuilder().build();
-   *   LogSink response = configServiceV2Api.updateSink(formattedSinkName, sink);
+   *   LogSink response = configServiceV2Client.updateSink(formattedSinkName, sink);
    * }
    * </code></pre>
    *
@@ -483,14 +487,14 @@ public class ConfigServiceV2Api implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (ConfigServiceV2Api configServiceV2Api = ConfigServiceV2Api.create()) {
-   *   String formattedSinkName = ConfigServiceV2Api.formatSinkName("[PROJECT]", "[SINK]");
+   * try (ConfigServiceV2Client configServiceV2Client = ConfigServiceV2Client.create()) {
+   *   String formattedSinkName = ConfigServiceV2Client.formatSinkName("[PROJECT]", "[SINK]");
    *   LogSink sink = LogSink.newBuilder().build();
    *   UpdateSinkRequest request = UpdateSinkRequest.newBuilder()
    *     .setSinkName(formattedSinkName)
    *     .setSink(sink)
    *     .build();
-   *   LogSink response = configServiceV2Api.updateSink(request);
+   *   LogSink response = configServiceV2Client.updateSink(request);
    * }
    * </code></pre>
    *
@@ -508,14 +512,14 @@ public class ConfigServiceV2Api implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (ConfigServiceV2Api configServiceV2Api = ConfigServiceV2Api.create()) {
-   *   String formattedSinkName = ConfigServiceV2Api.formatSinkName("[PROJECT]", "[SINK]");
+   * try (ConfigServiceV2Client configServiceV2Client = ConfigServiceV2Client.create()) {
+   *   String formattedSinkName = ConfigServiceV2Client.formatSinkName("[PROJECT]", "[SINK]");
    *   LogSink sink = LogSink.newBuilder().build();
    *   UpdateSinkRequest request = UpdateSinkRequest.newBuilder()
    *     .setSinkName(formattedSinkName)
    *     .setSink(sink)
    *     .build();
-   *   ListenableFuture&lt;LogSink&gt; future = configServiceV2Api.updateSinkCallable().futureCall(request);
+   *   ListenableFuture&lt;LogSink&gt; future = configServiceV2Client.updateSinkCallable().futureCall(request);
    *   // Do something
    *   LogSink response = future.get();
    * }
@@ -532,9 +536,9 @@ public class ConfigServiceV2Api implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (ConfigServiceV2Api configServiceV2Api = ConfigServiceV2Api.create()) {
-   *   String formattedSinkName = ConfigServiceV2Api.formatSinkName("[PROJECT]", "[SINK]");
-   *   configServiceV2Api.deleteSink(formattedSinkName);
+   * try (ConfigServiceV2Client configServiceV2Client = ConfigServiceV2Client.create()) {
+   *   String formattedSinkName = ConfigServiceV2Client.formatSinkName("[PROJECT]", "[SINK]");
+   *   configServiceV2Client.deleteSink(formattedSinkName);
    * }
    * </code></pre>
    *
@@ -556,12 +560,12 @@ public class ConfigServiceV2Api implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (ConfigServiceV2Api configServiceV2Api = ConfigServiceV2Api.create()) {
-   *   String formattedSinkName = ConfigServiceV2Api.formatSinkName("[PROJECT]", "[SINK]");
+   * try (ConfigServiceV2Client configServiceV2Client = ConfigServiceV2Client.create()) {
+   *   String formattedSinkName = ConfigServiceV2Client.formatSinkName("[PROJECT]", "[SINK]");
    *   DeleteSinkRequest request = DeleteSinkRequest.newBuilder()
    *     .setSinkName(formattedSinkName)
    *     .build();
-   *   configServiceV2Api.deleteSink(request);
+   *   configServiceV2Client.deleteSink(request);
    * }
    * </code></pre>
    *
@@ -579,12 +583,12 @@ public class ConfigServiceV2Api implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre><code>
-   * try (ConfigServiceV2Api configServiceV2Api = ConfigServiceV2Api.create()) {
-   *   String formattedSinkName = ConfigServiceV2Api.formatSinkName("[PROJECT]", "[SINK]");
+   * try (ConfigServiceV2Client configServiceV2Client = ConfigServiceV2Client.create()) {
+   *   String formattedSinkName = ConfigServiceV2Client.formatSinkName("[PROJECT]", "[SINK]");
    *   DeleteSinkRequest request = DeleteSinkRequest.newBuilder()
    *     .setSinkName(formattedSinkName)
    *     .build();
-   *   ListenableFuture&lt;Void&gt; future = configServiceV2Api.deleteSinkCallable().futureCall(request);
+   *   ListenableFuture&lt;Void&gt; future = configServiceV2Client.deleteSinkCallable().futureCall(request);
    *   // Do something
    *   future.get();
    * }

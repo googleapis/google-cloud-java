@@ -19,20 +19,20 @@
  *
  * <p>The interfaces provided are listed below, along with usage samples.
  *
- * <p>================== LanguageServiceApi ==================
+ * <p>===================== LanguageServiceClient =====================
  *
  * <p>Service Description: Provides text analysis operations such as sentiment analysis and entity
  * recognition.
  *
- * <p>Sample for LanguageServiceApi:
+ * <p>Sample for LanguageServiceClient:
  *
  * <pre>
  * <code>
- * try (LanguageServiceApi languageServiceApi = LanguageServiceApi.create()) {
+ * try (LanguageServiceClient languageServiceClient = LanguageServiceClient.create()) {
  *   Document document = Document.newBuilder().build();
- *   AnalyzeSentimentResponse response = languageServiceApi.analyzeSentiment(document);
+ *   AnalyzeSentimentResponse response = languageServiceClient.analyzeSentiment(document);
  * }
  * </code>
  * </pre>
  */
-package com.google.cloud.language.spi.v1beta1;
+package com.google.cloud.language.spi.v1;
