@@ -21,6 +21,7 @@ import com.google.api.gax.testing.MockGrpcService;
 import com.google.api.gax.testing.MockServiceHelper;
 import com.google.api.gax.testing.MockStreamObserver;
 import com.google.cloud.speech.v1beta1.AsyncRecognizeRequest;
+import com.google.cloud.speech.v1beta1.AsyncRecognizeResponse;
 import com.google.cloud.speech.v1beta1.RecognitionAudio;
 import com.google.cloud.speech.v1beta1.RecognitionConfig;
 import com.google.cloud.speech.v1beta1.StreamingRecognizeRequest;
@@ -28,6 +29,7 @@ import com.google.cloud.speech.v1beta1.StreamingRecognizeResponse;
 import com.google.cloud.speech.v1beta1.SyncRecognizeRequest;
 import com.google.cloud.speech.v1beta1.SyncRecognizeResponse;
 import com.google.longrunning.Operation;
+import com.google.protobuf.Any;
 import com.google.protobuf.GeneratedMessageV3;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
@@ -116,16 +118,20 @@ public class SpeechTest {
 
   @Test
   @SuppressWarnings("all")
-  public void asyncRecognizeTest() {
-    String name = "name3373707";
-    boolean done = true;
-    Operation expectedResponse = Operation.newBuilder().setName(name).setDone(done).build();
-    mockSpeech.addResponse(expectedResponse);
+  public void asyncRecognizeTest() throws Exception {
+    AsyncRecognizeResponse expectedResponse = AsyncRecognizeResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("asyncRecognizeTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockSpeech.addResponse(resultOperation);
 
     RecognitionConfig config = RecognitionConfig.newBuilder().build();
     RecognitionAudio audio = RecognitionAudio.newBuilder().build();
 
-    Operation actualResponse = client.asyncRecognize(config, audio);
+    AsyncRecognizeResponse actualResponse = client.asyncRecognizeAsync(config, audio).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<GeneratedMessageV3> actualRequests = mockSpeech.getRequests();
@@ -146,10 +152,12 @@ public class SpeechTest {
       RecognitionConfig config = RecognitionConfig.newBuilder().build();
       RecognitionAudio audio = RecognitionAudio.newBuilder().build();
 
-      client.asyncRecognize(config, audio);
+      client.asyncRecognizeAsync(config, audio).get();
       Assert.fail("No exception raised");
-    } catch (ApiException e) {
-      Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
+    } catch (ExecutionException e) {
+      Assert.assertEquals(ApiException.class, e.getCause().getClass());
+      ApiException apiException = (ApiException) e.getCause();
+      Assert.assertEquals(Status.INTERNAL.getCode(), apiException.getStatusCode());
     }
   }
 

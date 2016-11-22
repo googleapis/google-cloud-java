@@ -16,9 +16,14 @@
 package com.google.cloud.speech.spi.v1beta1;
 
 import com.google.api.gax.grpc.ChannelAndExecutor;
+import com.google.api.gax.grpc.FixedChannelProvider;
+import com.google.api.gax.grpc.FixedExecutorProvider;
+import com.google.api.gax.grpc.OperationCallable;
+import com.google.api.gax.grpc.OperationFuture;
 import com.google.api.gax.grpc.StreamingCallable;
 import com.google.api.gax.grpc.UnaryCallable;
 import com.google.cloud.speech.v1beta1.AsyncRecognizeRequest;
+import com.google.cloud.speech.v1beta1.AsyncRecognizeResponse;
 import com.google.cloud.speech.v1beta1.RecognitionAudio;
 import com.google.cloud.speech.v1beta1.RecognitionConfig;
 import com.google.cloud.speech.v1beta1.StreamingRecognizeRequest;
@@ -26,6 +31,8 @@ import com.google.cloud.speech.v1beta1.StreamingRecognizeResponse;
 import com.google.cloud.speech.v1beta1.SyncRecognizeRequest;
 import com.google.cloud.speech.v1beta1.SyncRecognizeResponse;
 import com.google.longrunning.Operation;
+import com.google.longrunning.OperationsClient;
+import com.google.longrunning.OperationsSettings;
 import com.google.protobuf.ExperimentalApi;
 import io.grpc.ManagedChannel;
 import java.io.Closeable;
@@ -97,10 +104,13 @@ public class SpeechClient implements AutoCloseable {
   private final SpeechSettings settings;
   private final ScheduledExecutorService executor;
   private final ManagedChannel channel;
+  private final OperationsClient operationsClient;
   private final List<AutoCloseable> closeables = new ArrayList<>();
 
   private final UnaryCallable<SyncRecognizeRequest, SyncRecognizeResponse> syncRecognizeCallable;
   private final UnaryCallable<AsyncRecognizeRequest, Operation> asyncRecognizeCallable;
+  private final OperationCallable<AsyncRecognizeRequest, AsyncRecognizeResponse>
+      asyncRecognizeOperationCallable;
   private final StreamingCallable<StreamingRecognizeRequest, StreamingRecognizeResponse>
       streamingRecognizeCallable;
 
@@ -127,10 +137,25 @@ public class SpeechClient implements AutoCloseable {
     this.executor = channelAndExecutor.getExecutor();
     this.channel = channelAndExecutor.getChannel();
 
+    FixedExecutorProvider executorProvider = FixedExecutorProvider.create(this.executor);
+    FixedChannelProvider channelProvider = FixedChannelProvider.create(this.channel);
+    OperationsSettings operationsSettings =
+        OperationsSettings.defaultBuilder()
+            .setExecutorProvider(executorProvider)
+            .setChannelProvider(channelProvider)
+            .build();
+    this.operationsClient = OperationsClient.create(operationsSettings);
+
     this.syncRecognizeCallable =
         UnaryCallable.create(settings.syncRecognizeSettings(), this.channel, this.executor);
     this.asyncRecognizeCallable =
-        UnaryCallable.create(settings.asyncRecognizeSettings(), this.channel, this.executor);
+        UnaryCallable.create(
+            settings.asyncRecognizeSettings().getInitialCallSettings(),
+            this.channel,
+            this.executor);
+    this.asyncRecognizeOperationCallable =
+        OperationCallable.create(
+            settings.asyncRecognizeSettings(), this.channel, this.executor, this.operationsClient);
     this.streamingRecognizeCallable =
         StreamingCallable.create(settings.streamingRecognizeSettings(), this.channel);
 
@@ -156,6 +181,14 @@ public class SpeechClient implements AutoCloseable {
 
   public final SpeechSettings getSettings() {
     return settings;
+  }
+
+  /**
+   * Returns the OperationsClient that can be used to query the status of a long-running operation
+   * returned by another API method call.
+   */
+  public final OperationsClient getOperationsClient() {
+    return operationsClient;
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -249,7 +282,7 @@ public class SpeechClient implements AutoCloseable {
    * try (SpeechClient speechClient = SpeechClient.create()) {
    *   RecognitionConfig config = RecognitionConfig.newBuilder().build();
    *   RecognitionAudio audio = RecognitionAudio.newBuilder().build();
-   *   Operation response = speechClient.asyncRecognize(config, audio);
+   *   AsyncRecognizeResponse response = speechClient.asyncRecognizeAsync(config, audio).get();
    * }
    * </code></pre>
    *
@@ -258,11 +291,12 @@ public class SpeechClient implements AutoCloseable {
    * @param audio [Required] The audio data to be recognized.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  public final Operation asyncRecognize(RecognitionConfig config, RecognitionAudio audio) {
+  public final OperationFuture<AsyncRecognizeResponse> asyncRecognizeAsync(
+      RecognitionConfig config, RecognitionAudio audio) {
 
     AsyncRecognizeRequest request =
         AsyncRecognizeRequest.newBuilder().setConfig(config).setAudio(audio).build();
-    return asyncRecognize(request);
+    return asyncRecognizeAsync(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -281,15 +315,43 @@ public class SpeechClient implements AutoCloseable {
    *     .setConfig(config)
    *     .setAudio(audio)
    *     .build();
-   *   Operation response = speechClient.asyncRecognize(request);
+   *   AsyncRecognizeResponse response = speechClient.asyncRecognizeAsync(request).get();
    * }
    * </code></pre>
    *
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  public final Operation asyncRecognize(AsyncRecognizeRequest request) {
-    return asyncRecognizeCallable().call(request);
+  public final OperationFuture<AsyncRecognizeResponse> asyncRecognizeAsync(
+      AsyncRecognizeRequest request) {
+    return asyncRecognizeOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Perform asynchronous speech-recognition: receive results via the google.longrunning.Operations
+   * interface. Returns either an `Operation.error` or an `Operation.response` which contains an
+   * `AsyncRecognizeResponse` message.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SpeechClient speechClient = SpeechClient.create()) {
+   *   RecognitionConfig config = RecognitionConfig.newBuilder().build();
+   *   RecognitionAudio audio = RecognitionAudio.newBuilder().build();
+   *   AsyncRecognizeRequest request = AsyncRecognizeRequest.newBuilder()
+   *     .setConfig(config)
+   *     .setAudio(audio)
+   *     .build();
+   *   OperationFuture&lt;Operation&gt; future = speechClient.asyncRecognizeOperationCallable().futureCall(request);
+   *   // Do something
+   *   AsyncRecognizeResponse response = future.get();
+   * }
+   * </code></pre>
+   */
+  public final OperationCallable<AsyncRecognizeRequest, AsyncRecognizeResponse>
+      asyncRecognizeOperationCallable() {
+    return asyncRecognizeOperationCallable;
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD

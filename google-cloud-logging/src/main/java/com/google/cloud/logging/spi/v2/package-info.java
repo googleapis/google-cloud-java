@@ -36,7 +36,7 @@
  *
  * ===================== ConfigServiceV2Client =====================
  *
- * <p>Service Description: Service for configuring sinks used to export log entries outside
+ * <p>Service Description: Service for configuring sinks used to export log entries outside of
  * Stackdriver Logging.
  *
  * <p>Sample for ConfigServiceV2Client:

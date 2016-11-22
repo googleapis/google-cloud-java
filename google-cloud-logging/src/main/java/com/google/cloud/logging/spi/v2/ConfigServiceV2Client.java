@@ -39,8 +39,8 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND SERVICE
 /**
- * Service Description: Service for configuring sinks used to export log entries outside Stackdriver
- * Logging.
+ * Service Description: Service for configuring sinks used to export log entries outside of
+ * Stackdriver Logging.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -218,12 +218,11 @@ public class ConfigServiceV2Client implements AutoCloseable {
    * }
    * </code></pre>
    *
-   * @param parent Required. The cloud resource containing the sinks. Example:
-   *     `"projects/my-logging-project"`.
+   * @param parent Required. The resource name where this sink was created:
+   *     <p>"projects/[PROJECT_ID]" "organizations/[ORGANIZATION_ID]"
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final ListSinksPagedResponse listSinks(String parent) {
-    PARENT_PATH_TEMPLATE.validate(parent, "listSinks");
     ListSinksRequest request = ListSinksRequest.newBuilder().setParent(parent).build();
     return listSinks(request);
   }
@@ -321,12 +320,13 @@ public class ConfigServiceV2Client implements AutoCloseable {
    * }
    * </code></pre>
    *
-   * @param sinkName Required. The resource name of the sink to return. Example:
-   *     `"projects/my-project-id/sinks/my-sink-id"`.
+   * @param sinkName Required. The resource name of the sink to return:
+   *     <p>"projects/[PROJECT_ID]/sinks/[SINK_ID]"
+   *     "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]"
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final LogSink getSink(String sinkName) {
-    SINK_PATH_TEMPLATE.validate(sinkName, "getSink");
+
     GetSinkRequest request = GetSinkRequest.newBuilder().setSinkName(sinkName).build();
     return getSink(request);
   }
@@ -390,14 +390,14 @@ public class ConfigServiceV2Client implements AutoCloseable {
    * }
    * </code></pre>
    *
-   * @param parent Required. The resource in which to create the sink. Example:
-   *     `"projects/my-project-id"`. The new sink must be provided in the request.
+   * @param parent Required. The resource in which to create the sink:
+   *     <p>"projects/[PROJECT_ID]" "organizations/[ORGANIZATION_ID]"
    * @param sink Required. The new sink, whose `name` parameter is a sink identifier that is not
    *     already in use.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final LogSink createSink(String parent, LogSink sink) {
-    PARENT_PATH_TEMPLATE.validate(parent, "createSink");
+
     CreateSinkRequest request =
         CreateSinkRequest.newBuilder().setParent(parent).setSink(sink).build();
     return createSink(request);
@@ -467,14 +467,16 @@ public class ConfigServiceV2Client implements AutoCloseable {
    * </code></pre>
    *
    * @param sinkName Required. The resource name of the sink to update, including the parent
-   *     resource and the sink identifier. If the sink does not exist, this method creates the sink.
-   *     Example: `"projects/my-project-id/sinks/my-sink-id"`.
+   *     resource and the sink identifier:
+   *     <p>"projects/[PROJECT_ID]/sinks/[SINK_ID]"
+   *     "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]"
+   *     <p>Example: `"projects/my-project-id/sinks/my-sink-id"`.
    * @param sink Required. The updated sink, whose name is the same identifier that appears as part
    *     of `sinkName`. If `sinkName` does not exist, then this method creates a new sink.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final LogSink updateSink(String sinkName, LogSink sink) {
-    SINK_PATH_TEMPLATE.validate(sinkName, "updateSink");
+
     UpdateSinkRequest request =
         UpdateSinkRequest.newBuilder().setSinkName(sinkName).setSink(sink).build();
     return updateSink(request);
@@ -543,12 +545,14 @@ public class ConfigServiceV2Client implements AutoCloseable {
    * </code></pre>
    *
    * @param sinkName Required. The resource name of the sink to delete, including the parent
-   *     resource and the sink identifier. Example: `"projects/my-project-id/sinks/my-sink-id"`. It
-   *     is an error if the sink does not exist.
+   *     resource and the sink identifier:
+   *     <p>"projects/[PROJECT_ID]/sinks/[SINK_ID]"
+   *     "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]"
+   *     <p>It is an error if the sink does not exist.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final void deleteSink(String sinkName) {
-    SINK_PATH_TEMPLATE.validate(sinkName, "deleteSink");
+
     DeleteSinkRequest request = DeleteSinkRequest.newBuilder().setSinkName(sinkName).build();
     deleteSink(request);
   }

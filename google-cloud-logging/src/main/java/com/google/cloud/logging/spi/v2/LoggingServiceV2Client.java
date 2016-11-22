@@ -218,7 +218,7 @@ public class LoggingServiceV2Client implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes a log and all its log entries. The log will reappear if it receives new entries.
+   * Deletes all the log entries in a log. The log reappears if it receives new entries.
    *
    * <p>Sample code:
    *
@@ -229,19 +229,22 @@ public class LoggingServiceV2Client implements AutoCloseable {
    * }
    * </code></pre>
    *
-   * @param logName Required. The resource name of the log to delete. Example:
-   *     `"projects/my-project/logs/syslog"`.
+   * @param logName Required. The resource name of the log to delete:
+   *     <p>"projects/[PROJECT_ID]/logs/[LOG_ID]" "organizations/[ORGANIZATION_ID]/logs/[LOG_ID]"
+   *     <p>`[LOG_ID]` must be URL-encoded. For example, `"projects/my-project-id/logs/syslog"`,
+   *     `"organizations/1234567890/logs/cloudresourcemanager.googleapis.com%2Factivity"`. For more
+   *     information about log names, see [LogEntry][google.logging.v2.LogEntry].
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final void deleteLog(String logName) {
-    LOG_PATH_TEMPLATE.validate(logName, "deleteLog");
+
     DeleteLogRequest request = DeleteLogRequest.newBuilder().setLogName(logName).build();
     deleteLog(request);
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes a log and all its log entries. The log will reappear if it receives new entries.
+   * Deletes all the log entries in a log. The log reappears if it receives new entries.
    *
    * <p>Sample code:
    *
@@ -264,7 +267,7 @@ public class LoggingServiceV2Client implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes a log and all its log entries. The log will reappear if it receives new entries.
+   * Deletes all the log entries in a log. The log reappears if it receives new entries.
    *
    * <p>Sample code:
    *
@@ -301,8 +304,11 @@ public class LoggingServiceV2Client implements AutoCloseable {
    * </code></pre>
    *
    * @param logName Optional. A default log resource name that is assigned to all log entries in
-   *     `entries` that do not specify a value for `log_name`. Example:
-   *     `"projects/my-project/logs/syslog"`. See [LogEntry][google.logging.v2.LogEntry].
+   *     `entries` that do not specify a value for `log_name`:
+   *     <p>"projects/[PROJECT_ID]/logs/[LOG_ID]" "organizations/[ORGANIZATION_ID]/logs/[LOG_ID]"
+   *     <p>`[LOG_ID]` must be URL-encoded. For example, `"projects/my-project-id/logs/syslog"` or
+   *     `"organizations/1234567890/logs/cloudresourcemanager.googleapis.com%2Factivity"`. For more
+   *     information about log names, see [LogEntry][google.logging.v2.LogEntry].
    * @param resource Optional. A default monitored resource object that is assigned to all log
    *     entries in `entries` that do not specify a value for `resource`. Example:
    *     <p>{ "type": "gce_instance", "labels": { "zone": "us-central1-a", "instance_id":
@@ -325,9 +331,7 @@ public class LoggingServiceV2Client implements AutoCloseable {
       MonitoredResource resource,
       Map<String, String> labels,
       List<LogEntry> entries) {
-    if (!logName.isEmpty()) {
-      LOG_PATH_TEMPLATE.validate(logName, "writeLogEntries");
-    }
+
     WriteLogEntriesRequest request =
         WriteLogEntriesRequest.newBuilder()
             .setLogName(logName)
@@ -402,12 +406,13 @@ public class LoggingServiceV2Client implements AutoCloseable {
    * }
    * </code></pre>
    *
-   * @param resourceNames Optional. One or more cloud resources from which to retrieve log entries.
-   *     Example: `"projects/my-project-1A"`, `"projects/1234567890"`. Projects listed in
-   *     `projectIds` are added to this list.
+   * @param resourceNames Required. One or more cloud resources from which to retrieve log entries:
+   *     <p>"projects/[PROJECT_ID]" "organizations/[ORGANIZATION_ID]"
+   *     <p>Projects listed in the `project_ids` field are added to this list.
    * @param filter Optional. A filter that chooses which log entries to return. See [Advanced Logs
    *     Filters](/logging/docs/view/advanced_filters). Only log entries that match the filter are
-   *     returned. An empty filter matches all log entries.
+   *     returned. An empty filter matches all log entries. The maximum length of the filter is
+   *     20000 characters.
    * @param orderBy Optional. How the results should be sorted. Presently, the only permitted values
    *     are `"timestamp asc"` (default) and `"timestamp desc"`. The first option returns entries in
    *     order of increasing values of `LogEntry.timestamp` (oldest first), and the second option
