@@ -790,7 +790,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * Map<String, Object> rowContent = new HashMap<>();
    * rowContent.put("booleanField", true);
    * // Bytes are passed in base64
-   * rowContent.put("bytesField", BaseEncoding.base64().encode(new byte[]{0xA, 0xD, 0xD, 0xE, 0xD}));
+   * rowContent.put("bytesField", "Cg0NDg0="); // 0xA, 0xD, 0xD, 0xE, 0xD in base64
    * // Records are passed as a map
    * Map<String, Object> recordsContent = new HashMap<>();
    * recordsContent.put("stringField", "Hello, World!");
@@ -1036,7 +1036,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * <pre> {@code
    * String datasetName = "my_dataset_name";
    * String tableName = "my_table_name";
-   * ReadableByteChannel csvReader = Files.newByteChannel(FileSystems.getDefault().getPath(".", "my-data.csv"));
+   * Path csvPath = FileSystems.getDefault().getPath(".", "my-data.csv");
    * TableId tableId = TableId.of(datasetName, tableName);
    * WriteChannelConfiguration writeChannelConfiguration =
    *     WriteChannelConfiguration.newBuilder(tableId)
@@ -1044,10 +1044,8 @@ public interface BigQuery extends Service<BigQueryOptions> {
    *         .build();
    * TableDataWriteChannel writer = bigquery.writer(writeChannelConfiguration);
    * // Write data to writer
-   * try {
-   *   ByteStreams.copy(csvReader, writer);
-   * } finally {
-   *   writer.close();
+   * try (OutputStream stream = Channels.newOutputStream(writer)) {
+   *   Files.copy(csvPath, stream);
    * }
    * // Get load job
    * Job job = writer.getJob();

@@ -57,12 +57,13 @@ import com.google.cloud.bigquery.TableDefinition;
 import com.google.cloud.bigquery.TableId;
 import com.google.cloud.bigquery.TableInfo;
 import com.google.cloud.bigquery.WriteChannelConfiguration;
-import com.google.common.io.BaseEncoding;
-import com.google.common.io.ByteStreams;
 
 import java.io.IOException;
+import java.io.OutputStream;
 import java.nio.ByteBuffer;
-import java.nio.channels.ReadableByteChannel;
+import java.nio.channels.Channels;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -365,8 +366,8 @@ public class BigQuerySnippets {
   // [TARGET writer(WriteChannelConfiguration)]
   // [VARIABLE "my_dataset_name"]
   // [VARIABLE "my_table_name"]
-  // [VARIABLE Files.newByteChannel(FileSystems.getDefault().getPath(".", "my-data.csv"))]
-  public long writeFileToTable(String datasetName, String tableName, ReadableByteChannel csvReader)
+  // [VARIABLE FileSystems.getDefault().getPath(".", "my-data.csv")]
+  public long writeFileToTable(String datasetName, String tableName, Path csvPath)
       throws IOException, InterruptedException, TimeoutException {
     // [START writeFileToTable]
     TableId tableId = TableId.of(datasetName, tableName);
@@ -376,10 +377,8 @@ public class BigQuerySnippets {
             .build();
     TableDataWriteChannel writer = bigquery.writer(writeChannelConfiguration);
     // Write data to writer
-    try {
-      ByteStreams.copy(csvReader, writer);
-    } finally {
-      writer.close();
+    try (OutputStream stream = Channels.newOutputStream(writer)) {
+      Files.copy(csvPath, stream);
     }
     // Get load job
     Job job = writer.getJob();
@@ -402,7 +401,7 @@ public class BigQuerySnippets {
     Map<String, Object> rowContent = new HashMap<>();
     rowContent.put("booleanField", true);
     // Bytes are passed in base64
-    rowContent.put("bytesField", BaseEncoding.base64().encode(new byte[]{0xA, 0xD, 0xD, 0xE, 0xD}));
+    rowContent.put("bytesField", "Cg0NDg0="); // 0xA, 0xD, 0xD, 0xE, 0xD in base64
     // Records are passed as a map
     Map<String, Object> recordsContent = new HashMap<>();
     recordsContent.put("stringField", "Hello, World!");
