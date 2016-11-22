@@ -225,7 +225,6 @@ public class MetricsServiceV2Client implements AutoCloseable {
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final ListLogMetricsPagedResponse listLogMetrics(String parent) {
-    PARENT_PATH_TEMPLATE.validate(parent, "listLogMetrics");
     ListLogMetricsRequest request = ListLogMetricsRequest.newBuilder().setParent(parent).build();
     return listLogMetrics(request);
   }
@@ -402,7 +401,7 @@ public class MetricsServiceV2Client implements AutoCloseable {
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final LogMetric createLogMetric(String parent, LogMetric metric) {
-    PARENT_PATH_TEMPLATE.validate(parent, "createLogMetric");
+
     CreateLogMetricRequest request =
         CreateLogMetricRequest.newBuilder().setParent(parent).setMetric(metric).build();
     return createLogMetric(request);
