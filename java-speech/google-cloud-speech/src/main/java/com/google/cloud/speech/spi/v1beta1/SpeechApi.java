@@ -177,6 +177,7 @@ public class SpeechApi implements AutoCloseable {
    */
   public final SyncRecognizeResponse syncRecognize(
       RecognitionConfig config, RecognitionAudio audio) {
+
     SyncRecognizeRequest request =
         SyncRecognizeRequest.newBuilder().setConfig(config).setAudio(audio).build();
     return syncRecognize(request);
@@ -255,6 +256,7 @@ public class SpeechApi implements AutoCloseable {
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final Operation asyncRecognize(RecognitionConfig config, RecognitionAudio audio) {
+
     AsyncRecognizeRequest request =
         AsyncRecognizeRequest.newBuilder().setConfig(config).setAudio(audio).build();
     return asyncRecognize(request);

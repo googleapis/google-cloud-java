@@ -43,7 +43,6 @@ public class MockSpeech implements MockGrpcService {
     serviceImpl.addException(exception);
   }
 
-  @Override
   public void setResponses(List<GeneratedMessageV3> responses) {
     serviceImpl.setResponses(responses);
   }
