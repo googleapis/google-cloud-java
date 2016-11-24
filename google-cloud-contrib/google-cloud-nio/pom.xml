@@ -11,7 +11,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-contrib</artifactId>
-    <version>0.6.1-SNAPSHOT</version>
+    <version>0.7.0</version>
   </parent>
   <properties>
     <site.installationModule>google-cloud-nio</site.installationModule>
