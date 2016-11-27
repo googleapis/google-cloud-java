@@ -718,6 +718,19 @@ public class StorageSnippets {
   }
 
   /**
+   * Example of getting the ACL entry for a specific user on a bucket.
+   */
+  // [TARGET getAcl(String, Entity)]
+  // [VARIABLE "my_unique_bucket"]
+  // [VARIABLE "google-cloud-java-tests@java-docs-samples-tests.iam.gserviceaccount.com"]
+  public Acl getBucketAcl(String bucketName, String userEmail) {
+    // [START storagePrintBucketAclForUser]
+    Acl acl = storage.getAcl(bucketName, new User(userEmail));
+    // [END storagePrintBucketAclForUser]
+    return acl;
+  }
+
+  /**
    * Example of deleting the ACL entry for an entity on a bucket.
    */
   // [TARGET deleteAcl(String, Entity)]
@@ -855,6 +868,21 @@ public class StorageSnippets {
     BlobId blobId = BlobId.of(bucketName, blobName, blobGeneration);
     Acl acl = storage.getAcl(blobId, User.ofAllAuthenticatedUsers());
     // [END getBlobAcl]
+    return acl;
+  }
+
+  /**
+   * Example of getting the ACL entry for a specific user on a blob.
+   */
+  // [TARGET getAcl(BlobId, Entity)]
+  // [VARIABLE "my_unique_bucket"]
+  // [VARIABLE "my_blob_name"]
+  // [VARIABLE "google-cloud-java-tests@java-docs-samples-tests.iam.gserviceaccount.com"]
+  public Acl getBlobAcl(String bucketName, String blobName, String userEmail) {
+    // [START storagePrintFileAclForUser]
+    BlobId blobId = BlobId.of(bucketName, blobName);
+    Acl acl = storage.getAcl(blobId, new User(userEmail));
+    // [END storagePrintFileAclForUser]
     return acl;
   }
 
