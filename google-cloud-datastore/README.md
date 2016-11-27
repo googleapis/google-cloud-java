@@ -90,7 +90,7 @@ import com.google.cloud.datastore.KeyFactory;
 Then add the following code to put an entity in Datastore.
 
 ```java
-KeyFactory keyFactory = datastore.newKeyFactory().kind("Person");
+KeyFactory keyFactory = datastore.newKeyFactory().setKind("Person");
 Key key = keyFactory.newKey("john.doe@gmail.com");
 Entity entity = Entity.newBuilder(key)
     .set("name", "John Doe")
