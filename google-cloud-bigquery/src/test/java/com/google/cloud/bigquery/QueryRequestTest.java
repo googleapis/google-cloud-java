@@ -16,7 +16,10 @@
 
 package com.google.cloud.bigquery;
 
+import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
@@ -32,7 +35,9 @@ public class QueryRequestTest {
   private static final Boolean DRY_RUN = false;
   private static final Long PAGE_SIZE = 42L;
   private static final Long MAX_WAIT_TIME = 42000L;
-  private static final Boolean USE_LEGACY_SQL = true;
+  private static final Boolean USE_LEGACY_SQL = false;
+  private static final QueryParameter QUERY_PARAMETER =
+      QueryParameter.named("paramName", QueryParameterValue.int64(7));
   private static final QueryRequest QUERY_REQUEST = QueryRequest.newBuilder(QUERY)
       .setUseQueryCache(USE_QUERY_CACHE)
       .setDefaultDataset(DATASET_ID)
@@ -40,6 +45,7 @@ public class QueryRequestTest {
       .setPageSize(PAGE_SIZE)
       .setMaxWaitTime(MAX_WAIT_TIME)
       .setUseLegacySql(USE_LEGACY_SQL)
+      .addQueryParameter(QUERY_PARAMETER)
       .build();
   private static final QueryRequest DEPRECATED_QUERY_REQUEST = QueryRequest.builder(QUERY)
       .useQueryCache(USE_QUERY_CACHE)
@@ -78,7 +84,9 @@ public class QueryRequestTest {
     assertEquals(DRY_RUN, QUERY_REQUEST.dryRun());
     assertEquals(PAGE_SIZE, QUERY_REQUEST.getPageSize());
     assertEquals(MAX_WAIT_TIME, QUERY_REQUEST.getMaxWaitTime());
-    assertTrue(QUERY_REQUEST.useLegacySql());
+    assertEquals(1, QUERY_REQUEST.getQueryParameters().size());
+    assertEquals(QUERY_PARAMETER, QUERY_REQUEST.getQueryParameters().get(0));
+    assertFalse(QUERY_REQUEST.useLegacySql());
     thrown.expect(NullPointerException.class);
     QueryRequest.newBuilder(null);
   }
@@ -91,7 +99,8 @@ public class QueryRequestTest {
     assertEquals(DRY_RUN, DEPRECATED_QUERY_REQUEST.dryRun());
     assertEquals(PAGE_SIZE, DEPRECATED_QUERY_REQUEST.pageSize());
     assertEquals(MAX_WAIT_TIME, DEPRECATED_QUERY_REQUEST.maxWaitTime());
-    assertTrue(DEPRECATED_QUERY_REQUEST.useLegacySql());
+    assertEquals(0, DEPRECATED_QUERY_REQUEST.getQueryParameters().size());
+    assertFalse(DEPRECATED_QUERY_REQUEST.useLegacySql());
     thrown.expect(NullPointerException.class);
     QueryRequest.builder(null);
   }
@@ -106,6 +115,8 @@ public class QueryRequestTest {
     assertNull(request.getPageSize());
     assertNull(request.getMaxWaitTime());
     assertNull(request.useLegacySql());
+    assertNotNull(request.getQueryParameters());
+    assertEquals(0, request.getQueryParameters().size());
     thrown.expect(NullPointerException.class);
     QueryRequest.of(null);
   }
@@ -131,5 +142,7 @@ public class QueryRequestTest {
     assertEquals(expected.getPageSize(), value.getPageSize());
     assertEquals(expected.getMaxWaitTime(), value.getMaxWaitTime());
     assertEquals(expected.useLegacySql(), value.useLegacySql());
+    assertArrayEquals(expected.getQueryParameters().toArray(new QueryParameter[0]),
+        value.getQueryParameters().toArray(new QueryParameter[0]));
   }
 }

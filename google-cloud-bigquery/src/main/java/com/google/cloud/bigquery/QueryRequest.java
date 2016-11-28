@@ -20,8 +20,12 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.common.base.MoreObjects;
 
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.Lists;
 import java.io.Serializable;
+import java.util.List;
 import java.util.Objects;
+import javax.annotation.concurrent.Immutable;
 
 /**
  * Google Cloud BigQuery Query Request. This class can be used to run a BigQuery SQL query and
@@ -66,6 +70,7 @@ public final class QueryRequest implements Serializable {
   private static final long serialVersionUID = -8727328332415880852L;
 
   private final String query;
+  private final ImmutableList<QueryParameter> queryParameters;
   private final Long pageSize;
   private final DatasetId defaultDataset;
   private final Long maxWaitTime;
@@ -76,6 +81,7 @@ public final class QueryRequest implements Serializable {
   public static final class Builder {
 
     private String query;
+    private List<QueryParameter> queryParameters;
     private Long pageSize;
     private DatasetId defaultDataset;
     private Long maxWaitTime;
@@ -98,6 +104,33 @@ public final class QueryRequest implements Serializable {
      */
     public Builder setQuery(String query) {
       this.query = checkNotNull(query);
+      return this;
+    }
+
+    /**
+     * Adds a QueryParameter to the list of query parameters. See
+     * {@link #setQueryParameters(Iterable)} for more details on the input requirements.
+     */
+    public Builder addQueryParameter(QueryParameter queryParameter) {
+      if (queryParameters == null) {
+        queryParameters = Lists.newArrayList();
+      }
+      queryParameters.add(checkNotNull(queryParameter));
+      return this;
+    }
+
+    /**
+     * Sets the query parameters for the query.
+     *
+     * The set of query parameters must either be all positional or all named parameters.
+     * Positional parameters are denoted in the query with a question mark (?), and named
+     * parameters are denoted using an @ prefix, e.g. @myParam for a parameter named "myParam".
+     *
+     * Additionally, useLegacySql must be set to false; query parameters cannot be used with
+     * legacy SQL.
+     */
+    public Builder setQueryParameters(Iterable<QueryParameter> queryParameters) {
+      this.queryParameters = Lists.newArrayList(checkNotNull(queryParameters));
       return this;
     }
 
@@ -251,6 +284,10 @@ public final class QueryRequest implements Serializable {
 
   private QueryRequest(Builder builder) {
     query = builder.query;
+    queryParameters =
+        builder.queryParameters != null
+            ? ImmutableList.copyOf(builder.queryParameters)
+            : ImmutableList.<QueryParameter>of();
     pageSize = builder.pageSize;
     defaultDataset = builder.defaultDataset;
     maxWaitTime = builder.maxWaitTime;
@@ -272,6 +309,13 @@ public final class QueryRequest implements Serializable {
    */
   public String getQuery() {
     return query;
+  }
+
+  /**
+   * Returns the query parameters to use for the query.
+   */
+  public List<QueryParameter> getQueryParameters() {
+    return queryParameters;
   }
 
   /**
@@ -367,6 +411,7 @@ public final class QueryRequest implements Serializable {
   public Builder toBuilder() {
     return new Builder()
         .setQuery(query)
+        .setQueryParameters(queryParameters)
         .setPageSize(pageSize)
         .setDefaultDataset(defaultDataset)
         .setMaxWaitTime(maxWaitTime)
@@ -379,6 +424,7 @@ public final class QueryRequest implements Serializable {
   public String toString() {
     return MoreObjects.toStringHelper(this)
         .add("query", query)
+        .add("queryParameters", queryParameters)
         .add("pageSize", pageSize)
         .add("defaultDataset", defaultDataset)
         .add("maxWaitTime", maxWaitTime)
@@ -390,8 +436,8 @@ public final class QueryRequest implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(query, pageSize, defaultDataset, maxWaitTime, dryRun, useQueryCache,
-        useLegacySql);
+    return Objects.hash(query, queryParameters, pageSize, defaultDataset, maxWaitTime, dryRun,
+        useQueryCache, useLegacySql);
   }
 
   @Override
@@ -412,6 +458,11 @@ public final class QueryRequest implements Serializable {
   com.google.api.services.bigquery.model.QueryRequest toPb() {
     com.google.api.services.bigquery.model.QueryRequest queryRequestPb =
         new com.google.api.services.bigquery.model.QueryRequest().setQuery(query);
+    if (queryParameters != null) {
+      List<com.google.api.services.bigquery.model.QueryParameter> queryParametersPb
+          = Lists.transform(queryParameters, QueryParameter.TO_PB_FUNCTION);
+      queryRequestPb.setQueryParameters(queryParametersPb);
+    }
     if (pageSize != null) {
       queryRequestPb.setMaxResults(pageSize);
     }
@@ -457,6 +508,11 @@ public final class QueryRequest implements Serializable {
 
   static QueryRequest fromPb(com.google.api.services.bigquery.model.QueryRequest queryRequestPb) {
     Builder builder = newBuilder(queryRequestPb.getQuery());
+    if (queryRequestPb.getQueryParameters() != null) {
+      List<QueryParameter> queryParameters =
+          Lists.transform(queryRequestPb.getQueryParameters(), QueryParameter.FROM_PB_FUNCTION);
+      builder.setQueryParameters(queryParameters);
+    }
     if (queryRequestPb.getMaxResults() != null) {
       builder.setPageSize(queryRequestPb.getMaxResults());
     }
