@@ -207,6 +207,13 @@ public class ITStorageSnippets {
   }
 
   @Test
+  public void testGetBucketStorageClassAndLocation() {
+    Bucket bucket = storageSnippets.getBucketStorageClassAndLocation(BUCKET);
+    assertEquals("STANDARD", bucket.getStorageClass());
+    assertEquals("US", bucket.getLocation());
+  }
+
+  @Test
   public void testListBucketsWithSizeAndPrefix() throws InterruptedException {
     Page<Bucket> buckets = storageSnippets.listBucketsWithSizeAndPrefix(BUCKET);
     while (Iterators.size(buckets.iterateAll()) < 1) {

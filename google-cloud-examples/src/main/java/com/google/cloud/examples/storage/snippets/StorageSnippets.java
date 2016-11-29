@@ -45,6 +45,7 @@ import com.google.cloud.storage.Storage.BlobListOption;
 import com.google.cloud.storage.Storage.BlobSourceOption;
 import com.google.cloud.storage.Storage.BlobTargetOption;
 import com.google.cloud.storage.Storage.BlobWriteOption;
+import com.google.cloud.storage.Storage.BucketField;
 import com.google.cloud.storage.Storage.BucketGetOption;
 import com.google.cloud.storage.Storage.BucketListOption;
 import com.google.cloud.storage.Storage.BucketSourceOption;
@@ -186,6 +187,20 @@ public class StorageSnippets {
     Bucket bucket = storage.get(bucketName,
         BucketGetOption.metagenerationMatch(bucketMetageneration));
     // [END getBucketWithMetageneration]
+    return bucket;
+  }
+
+  /**
+   * Example of getting storage class and location of a bucket.
+   */
+  // [TARGET get(String, BucketGetOption...)]
+  // [VARIABLE "my_unique_bucket"]
+  // [VARIABLE 42]
+  public Bucket getBucketStorageClassAndLocation(String bucketName) {
+    // [START storageGetClassLocation]
+    Bucket bucket = storage.get(bucketName, BucketGetOption.fields(
+        BucketField.STORAGE_CLASS, BucketField.LOCATION));
+    // [END storageGetClassLocation]
     return bucket;
   }
 
