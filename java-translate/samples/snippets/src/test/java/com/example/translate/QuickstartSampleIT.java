@@ -50,11 +50,8 @@ public class QuickstartSampleIT {
 
   @Test
   public void testQuickstart() throws Exception {
-    // Arrange
-    String apiKey = System.getenv("GOOGLE_API_KEY");
-
     // Act
-    QuickstartSample.main(apiKey);
+    QuickstartSample.main();
 
     // Assert
     String got = bout.toString();
