@@ -111,6 +111,17 @@ public class ITStorageSnippets {
   }
 
   @Test
+  public void testChangeBucketStorageClass()
+      throws ExecutionException, InterruptedException {
+    Bucket bucket = storageSnippets.changeBucketStorageClass(BUCKET, "nearline");
+    assertEquals("NEARLINE", bucket.getStorageClass());
+
+    // Restore it to regional for the sake of the rest of the tests
+    bucket = storageSnippets.changeBucketStorageClass(BUCKET, "standard");
+    assertEquals("STANDARD", bucket.getStorageClass());
+  }
+
+  @Test
   public void testBlob() throws InterruptedException {
     String blobName = "directory/test-blob";
     Blob blob = storageSnippets.createBlob(BUCKET, blobName);

@@ -110,6 +110,22 @@ public class StorageSnippets {
   }
 
   /**
+   * Example of changing a bucket's default storage class.
+   */
+  // [TARGET update(BucketInfo, BucketTargetOption...)]
+  // [VARIABLE "my_unique_bucket"]
+  // [VARIABLE "nearline"]
+  public Bucket changeBucketStorageClass(String bucketName, String storageClass) {
+    // [START storageChangeStorageClass]
+    Bucket bucket = storage.update(BucketInfo.newBuilder(bucketName)
+        // See here for possible values: http://g.co/cloud/storage/docs/storage-classes
+        .setStorageClass(storageClass)
+        .build());
+    // [END storageChangeStorageClass]
+    return bucket;
+  }
+
+  /**
    * Example of creating a blob with no content.
    */
   // [TARGET create(BlobInfo, BlobTargetOption...)]
