@@ -48,6 +48,7 @@ import java.nio.charset.Charset;
 import java.util.Enumeration;
 import java.util.Locale;
 import java.util.Objects;
+import java.util.Properties;
 import java.util.ServiceLoader;
 import java.util.Set;
 import java.util.jar.Attributes;
@@ -77,6 +78,9 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
   private static final String APPLICATION_NAME =
       LIBRARY_VERSION == null ? LIBRARY_NAME : LIBRARY_NAME + "/" + LIBRARY_VERSION;
   private static final long serialVersionUID = -5714029257168617973L;
+
+  private static final String META_FILE_ROOT = "/META-INF/maven/";
+  private static final String META_VERSION_KEY = "version";
 
   private final String projectId;
   private final String host;
@@ -676,21 +680,40 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
   }
 
   private static String defaultLibraryVersion() {
-    String version = null;
-    try {
-      Enumeration<URL> resources =
-          ServiceOptions.class.getClassLoader().getResources(JarFile.MANIFEST_NAME);
-      while (resources.hasMoreElements() && version == null) {
-        Manifest manifest = new Manifest(resources.nextElement().openStream());
-        Attributes manifestAttributes = manifest.getMainAttributes();
-        String artifactId = manifestAttributes.getValue(MANIFEST_ARTIFACT_ID_KEY);
-        if (artifactId != null && artifactId.equals(ARTIFACT_ID)) {
-          version = manifestAttributes.getValue(MANIFEST_VERSION_KEY);
+    String version = getMavenVersion();
+    if (version == null) {
+      try {
+        Enumeration<URL> resources =
+            ServiceOptions.class.getClassLoader().getResources(JarFile.MANIFEST_NAME);
+        while (resources.hasMoreElements() && version == null) {
+          Manifest manifest = new Manifest(resources.nextElement().openStream());
+          Attributes manifestAttributes = manifest.getMainAttributes();
+          String artifactId = manifestAttributes.getValue(MANIFEST_ARTIFACT_ID_KEY);
+          if (artifactId != null && artifactId.equals(ARTIFACT_ID)) {
+            version = manifestAttributes.getValue(MANIFEST_VERSION_KEY);
+          }
         }
+      } catch (IOException e) {
+        // ignore
       }
-    } catch (IOException e) {
-      // ignore
     }
     return version;
+  }
+
+  private static String getMavenVersion() {
+    try {
+        Properties properties = new Properties();
+        String mavenPropertiesPath = META_FILE_ROOT
+            + ServiceOptions.class.getPackage().getName() + "/"
+            + ARTIFACT_ID + "/pom.properties";
+        InputStream inputStream = ServiceOptions.class.getResourceAsStream(mavenPropertiesPath);
+        if (inputStream != null) {
+            properties.load(inputStream);
+            return properties.getProperty(META_VERSION_KEY, "");
+        }
+    } catch (Exception e) {
+        // ignore
+    }
+    return null;
   }
 }
