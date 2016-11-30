@@ -33,6 +33,7 @@ import com.google.cloud.storage.Blob;
 import com.google.cloud.storage.BlobId;
 import com.google.cloud.storage.BlobInfo;
 import com.google.cloud.storage.Bucket;
+import com.google.cloud.storage.BucketInfo;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageException;
 import com.google.cloud.storage.testing.RemoteStorageHelper;
@@ -119,6 +120,15 @@ public class ITStorageSnippets {
     // Restore it to regional for the sake of the rest of the tests
     bucket = storageSnippets.changeBucketStorageClass(BUCKET, "standard");
     assertEquals("STANDARD", bucket.getStorageClass());
+  }
+
+  @Test
+  public void testEnableBucketLifecycleManagement() {
+    Bucket bucket = storageSnippets.enableBucketLifecycleManagement(BUCKET);
+    List<? extends BucketInfo.DeleteRule> deleteRules = bucket.getDeleteRules();
+    assertEquals(2, deleteRules.size());
+    assertEquals(BucketInfo.DeleteRule.Type.AGE, deleteRules.get(0).getType());
+    assertEquals(BucketInfo.DeleteRule.Type.NUM_NEWER_VERSIONS, deleteRules.get(1).getType());
   }
 
   @Test

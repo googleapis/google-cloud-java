@@ -62,6 +62,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 import java.nio.ByteBuffer;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -122,6 +123,24 @@ public class StorageSnippets {
         .setStorageClass(storageClass)
         .build());
     // [END storageChangeStorageClass]
+    return bucket;
+  }
+
+  /**
+   * Example of enabling lifecycle management rules on a bucket.
+   */
+  // [TARGET update(BucketInfo, BucketTargetOption...)]
+  // [VARIABLE "my_unique_bucket"]
+  public Bucket enableBucketLifecycleManagement(String bucketName) {
+    // [START storageEnableLifecycleManagement]
+    Bucket bucket = storage.update(BucketInfo.newBuilder(bucketName)
+        .setDeleteRules(Arrays.asList(
+            // Delete objects older than a week
+            new BucketInfo.AgeDeleteRule(7),
+            // Only keep up to 3 versions of a given object
+            new BucketInfo.NumNewerVersionsDeleteRule(3)))
+        .build());
+    // [END storageEnableLifecycleManagement]
     return bucket;
   }
 
