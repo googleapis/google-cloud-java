@@ -44,7 +44,7 @@ import java.util.concurrent.TimeUnit;
  * (Of course this is only worthwhile if the underlying SeekableByteChannel doesn't already
  * implement prefetching).
  *
- * The prefetcher can read with multiple threads in parallel, and it can keep a buffered
+ * <p> The prefetcher can read with multiple threads in parallel, and it can keep a buffered
  * copy of already-read bytes just in case the caller doesn't follow a strictly linear pattern.
  * It can also optionally use an extra thread in case of out-of-order reads to fetch the data at
  * once even if all prefetching threads are busy.
@@ -68,7 +68,7 @@ public class SeekableByteChannelPrefetcher implements SeekableByteChannel {
   private long position;
   // whether we're open.
   private boolean open = true;
-  private boolean closing = false;
+  private boolean closing;
 
   private final ExecutorService exec;
   private final Sorted buffers;
@@ -120,7 +120,7 @@ public class SeekableByteChannelPrefetcher implements SeekableByteChannel {
   }
 
   private class Worker implements Callable<ByteBuffer>, Closeable {
-    ByteBuffer bb = null;
+    ByteBuffer bb;
     long pos;
     SeekableByteChannel chan;
 
@@ -146,8 +146,9 @@ public class SeekableByteChannelPrefetcher implements SeekableByteChannel {
       }
       chan.position(pos);
       ByteBuffer b = this.bb;
-      // read until buffer is full, or EOF
-      while (chan.read(b) > 0 && !closing) {}
+      while (chan.read(b) > 0 && !closing) {
+        // read until buffer is full, or EOF
+      }
       reassignWorker(this);
       return b;
     }
@@ -179,7 +180,7 @@ public class SeekableByteChannelPrefetcher implements SeekableByteChannel {
   /**
    * Reads a sequence of bytes from this channel into the given buffer.
    *
-   * @param dst
+   * @param dst destination buffer
    */
   @Override
   public int read(ByteBuffer dst) throws IOException {
@@ -244,7 +245,7 @@ public class SeekableByteChannelPrefetcher implements SeekableByteChannel {
 
   /**
    * Sets this channel's position.
-   * <p>
+   *
    * <p> Setting the position to a value that is greater than the current size
    * is legal but does not change the size of the entity.  A later attempt to
    * read bytes at such a position will immediately return an end-of-file
@@ -252,10 +253,10 @@ public class SeekableByteChannelPrefetcher implements SeekableByteChannel {
    * the entity to grow to accommodate the new bytes; the values of any bytes
    * between the previous end-of-file and the newly-written bytes are
    * unspecified.
-   * <p>
+   *
    * <p> Setting the channel's position is not recommended when connected to
-   * an entity, typically a file, that is opened with the {@link
-   * StandardOpenOption#APPEND APPEND} option. When opened for
+   * an entity, typically a file, that is opened with the
+   * StandardOpenOption.APPEND option. When opened for
    * append, the position is first advanced to the end before writing.
    *
    * @param newPosition The new position, a non-negative integer counting
@@ -309,14 +310,14 @@ public class SeekableByteChannelPrefetcher implements SeekableByteChannel {
 
   /**
    * Closes this channel.
-   * <p>
+   *
    * <p> After a channel is closed, any further attempt to invoke I/O
    * operations upon it will cause a {@link ClosedChannelException} to be
    * thrown.
-   * <p>
+   *
    * <p> If this channel is already closed then invoking this method has no
    * effect.
-   * <p>
+   *
    * <p> This method may be invoked at any time.  If some other thread has
    * already invoked it, however, then another invocation will block until
    * the first invocation is complete, after which it will return without
@@ -330,12 +331,14 @@ public class SeekableByteChannelPrefetcher implements SeekableByteChannel {
       closing = true;
       exec.shutdown();
       try {
-        while (true) synchronized (idleWorkers) {
-          if (idleWorkers.size() >= workerCount) {
-            // every thread is idle, we're done.
-            break;
+        while (true) {
+            synchronized (idleWorkers) {
+            if (idleWorkers.size() >= workerCount) {
+              // every thread is idle, we're done.
+              break;
+            }
+            idleWorkers.wait(60_000);
           }
-          idleWorkers.wait(60_000);
         }
       } catch (InterruptedException e) {
         System.out.println("Timed out while waiting for channels to close.");

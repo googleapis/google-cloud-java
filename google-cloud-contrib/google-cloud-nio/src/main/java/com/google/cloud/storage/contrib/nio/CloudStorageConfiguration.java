@@ -91,6 +91,7 @@ public abstract class CloudStorageConfiguration {
      * {@link CloudStorageFileSystem} object.
      *
      * @throws IllegalArgumentException if {@code path} is not absolute.
+     * @param path the new current working directory
      * @return builder
      */
     public Builder workingDirectory(String path) {
@@ -103,6 +104,7 @@ public abstract class CloudStorageConfiguration {
      * Configures whether or not we should throw an exception when encountering object names
      * containing superfluous slashes, e.g. {@code a//b}.
      *
+     * @param value whether to permit empty path components (will throw if false)
      * @return builder
      */
     public Builder permitEmptyPathComponents(boolean value) {
@@ -116,7 +118,7 @@ public abstract class CloudStorageConfiguration {
      * <p>If you disable this feature, please take into consideration that all paths created from a
      * URI will have the leading slash.
      *
-     * @parm value if true, remove the '/' prefix on absolute object names
+     * @param value if true, remove the '/' prefix on absolute object names
      * @return builder
      */
     public Builder stripPrefixSlash(boolean value) {
@@ -127,7 +129,7 @@ public abstract class CloudStorageConfiguration {
     /**
      * Configures if paths with a trailing slash should be treated as fake directories.
      *
-     * @parm value whether paths with a trailing slash should be treated as fake directories.
+     * @param value whether paths with a trailing slash should be treated as fake directories.
      * @return builder
      */
     public Builder usePseudoDirectories(boolean value) {
@@ -140,7 +142,7 @@ public abstract class CloudStorageConfiguration {
      *
      * <p>The default is {@value CloudStorageFileSystem#BLOCK_SIZE_DEFAULT}.
      *
-     * @parm value block size in bytes that should be used for each HTTP request to the API.
+     * @param value block size in bytes that should be used for each HTTP request to the API.
      * @return builder
      */
     public Builder blockSize(int value) {
