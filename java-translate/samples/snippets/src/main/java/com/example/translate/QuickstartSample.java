@@ -40,7 +40,7 @@ public class QuickstartSample {
 
 
     System.out.printf("Text: %s%n", text);
-    System.out.printf("Translation: %s%n", translation.translatedText());
+    System.out.printf("Translation: %s%n", translation.getTranslatedText());
   }
 }
 // [END translate_quickstart]
