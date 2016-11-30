@@ -40,10 +40,10 @@ public class QuickstartSampleIT {
   private PrintStream out;
 
   private static final void deleteTestEntity() {
-    Datastore datastore = DatastoreOptions.defaultInstance().service();
+    Datastore datastore = DatastoreOptions.getDefaultInstance().getService();
     String kind = "Task";
     String name = "sampletask1";
-    Key taskKey = datastore.newKeyFactory().kind(kind).newKey(name);
+    Key taskKey = datastore.newKeyFactory().setKind(kind).newKey(name);
     datastore.delete(taskKey);
   }
 
