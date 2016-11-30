@@ -39,10 +39,10 @@ public class TaskList {
 
   // [START build_service]
   // Create an authorized Datastore service using Application Default Credentials.
-  private final Datastore datastore = DatastoreOptions.defaultInstance().service();
+  private final Datastore datastore = DatastoreOptions.getDefaultInstance().getService();
 
   // Create a Key factory to construct keys associated with this project.
-  private final KeyFactory keyFactory = datastore.newKeyFactory().kind("Task");
+  private final KeyFactory keyFactory = datastore.newKeyFactory().setKind("Task");
   // [END build_service]
 
   // [START add_entity]
@@ -55,8 +55,8 @@ public class TaskList {
    */
   Key addTask(String description) {
     Key key = datastore.allocateId(keyFactory.newKey());
-    Entity task = Entity.builder(key)
-        .set("description", StringValue.builder(description).excludeFromIndexes(true).build())
+    Entity task = Entity.newBuilder(key)
+        .set("description", StringValue.newBuilder(description).setExcludeFromIndexes(true).build())
         .set("created", DateTime.now())
         .set("done", false)
         .build();
@@ -78,12 +78,12 @@ public class TaskList {
     try {
       Entity task = transaction.get(keyFactory.newKey(id));
       if (task != null) {
-        transaction.put(Entity.builder(task).set("done", true).build());
+        transaction.put(Entity.newBuilder(task).set("done", true).build());
       }
       transaction.commit();
       return task != null;
     } finally {
-      if (transaction.active()) {
+      if (transaction.isActive()) {
         transaction.rollback();
       }
     }
@@ -98,7 +98,7 @@ public class TaskList {
    */
   Iterator<Entity> listTasks() {
     Query<Entity> query =
-        Query.entityQueryBuilder().kind("Task").orderBy(OrderBy.asc("created")).build();
+        Query.newEntityQueryBuilder().setKind("Task").setOrderBy(OrderBy.asc("created")).build();
     return datastore.run(query);
   }
   // [END retrieve_entities]
@@ -128,9 +128,9 @@ public class TaskList {
       Entity task = tasks.next();
       if (task.getBoolean("done")) {
         strings.add(
-            String.format("%d : %s (done)", task.key().id(), task.getString("description")));
+            String.format("%d : %s (done)", task.getKey().getId(), task.getString("description")));
       } else {
-        strings.add(String.format("%d : %s (created %s)", task.key().id(),
+        strings.add(String.format("%d : %s (created %s)", task.getKey().getId(),
             task.getString("description"), task.getDateTime("created")));
       }
     }
