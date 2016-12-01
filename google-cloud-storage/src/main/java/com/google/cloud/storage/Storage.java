@@ -90,7 +90,8 @@ public interface Storage extends Service<StorageOptions> {
     VERSIONING("versioning"),
     CORS("cors"),
     STORAGE_CLASS("storageClass"),
-    ETAG("etag");
+    ETAG("etag"),
+    LIFECYCLE("lifecycle");
 
     static final List<? extends FieldSelector> REQUIRED_FIELDS = ImmutableList.of(NAME);
 
