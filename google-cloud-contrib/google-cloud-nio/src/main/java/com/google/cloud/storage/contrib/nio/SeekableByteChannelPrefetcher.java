@@ -191,6 +191,7 @@ public class SeekableByteChannelPrefetcher implements SeekableByteChannel {
     try {
       src = fetch(position);
     } catch (InterruptedException e) {
+      Thread.currentThread().interrupt();
       return 0;
     } catch (ExecutionException e) {
       throw new RuntimeException(e);
@@ -341,11 +342,12 @@ public class SeekableByteChannelPrefetcher implements SeekableByteChannel {
           }
         }
       } catch (InterruptedException e) {
-        System.out.println("Timed out while waiting for channels to close.");
+        Thread.currentThread().interrupt();
       }
       try {
         exec.awaitTermination(60, TimeUnit.SECONDS);
       } catch (InterruptedException e) {
+        Thread.currentThread().interrupt();
         exec.shutdownNow();
       }
       // Close all underlying channels
