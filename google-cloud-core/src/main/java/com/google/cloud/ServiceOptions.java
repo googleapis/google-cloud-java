@@ -73,7 +73,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
   private static final String MANIFEST_ARTIFACT_ID_KEY = "artifactId";
   private static final String MANIFEST_VERSION_KEY = "Implementation-Version";
   private static final String ARTIFACT_ID = "google-cloud-core";
-  private static final String LIBRARY_NAME = "gcloud-java";
+  private static final String LIBRARY_NAME = "google-cloud-java";
   private static final String LIBRARY_VERSION = defaultLibraryVersion();
   private static final String APPLICATION_NAME =
       LIBRARY_VERSION == null ? LIBRARY_NAME : LIBRARY_NAME + "/" + LIBRARY_VERSION;
@@ -570,7 +570,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
   }
 
   /**
-   * Returns the application's name as a string in the format {@code gcloud-java/[version]}.
+   * Returns the application's name as a string in the format {@code google-cloud-java/[version]}.
    */
   @Deprecated
   public String applicationName() {
@@ -578,14 +578,14 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
   }
 
   /**
-   * Returns the application's name as a string in the format {@code gcloud-java/[version]}.
+   * Returns the application's name as a string in the format {@code google-cloud-java/[version]}.
    */
   public String getApplicationName() {
     return APPLICATION_NAME;
   }
 
   /**
-   * Returns the library's name, {@code gcloud-java}, as a string.
+   * Returns the library's name, {@code google-cloud-java}, as a string.
    */
   @Deprecated
   public String libraryName() {
@@ -593,7 +593,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
   }
 
   /**
-   * Returns the library's name, {@code gcloud-java}, as a string.
+   * Returns the library's name, {@code google-cloud-java}, as a string.
    */
   public String getLibraryName() {
     return LIBRARY_NAME;
@@ -680,7 +680,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
   }
 
   private static String defaultLibraryVersion() {
-    String version = getMavenVersion();
+    String version = getPomVersion();
     if (version == null) {
       try {
         Enumeration<URL> resources =
@@ -700,19 +700,19 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
     return version;
   }
 
-  private static String getMavenVersion() {
+  private static String getPomVersion() {
     try {
-        Properties properties = new Properties();
-        String mavenPropertiesPath = META_FILE_ROOT
-            + ServiceOptions.class.getPackage().getName() + "/"
-            + ARTIFACT_ID + "/pom.properties";
-        InputStream inputStream = ServiceOptions.class.getResourceAsStream(mavenPropertiesPath);
-        if (inputStream != null) {
-            properties.load(inputStream);
-            return properties.getProperty(META_VERSION_KEY, "");
-        }
+      Properties properties = new Properties();
+      String mavenPropertiesPath = META_FILE_ROOT
+          + ServiceOptions.class.getPackage().getName() + "/"
+          + ARTIFACT_ID + "/pom.properties";
+      InputStream inputStream = ServiceOptions.class.getResourceAsStream(mavenPropertiesPath);
+      if (inputStream != null) {
+        properties.load(inputStream);
+        return properties.getProperty(META_VERSION_KEY, "");
+      }
     } catch (Exception e) {
-        // ignore
+      // ignore
     }
     return null;
   }
