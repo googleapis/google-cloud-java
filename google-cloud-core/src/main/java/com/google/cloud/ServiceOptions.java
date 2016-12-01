@@ -682,20 +682,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
   private static String defaultLibraryVersion() {
     String version = getPomVersion();
     if (version == null) {
-      try {
-        Enumeration<URL> resources =
-            ServiceOptions.class.getClassLoader().getResources(JarFile.MANIFEST_NAME);
-        while (resources.hasMoreElements() && version == null) {
-          Manifest manifest = new Manifest(resources.nextElement().openStream());
-          Attributes manifestAttributes = manifest.getMainAttributes();
-          String artifactId = manifestAttributes.getValue(MANIFEST_ARTIFACT_ID_KEY);
-          if (artifactId != null && artifactId.equals(ARTIFACT_ID)) {
-            version = manifestAttributes.getValue(MANIFEST_VERSION_KEY);
-          }
-        }
-      } catch (IOException e) {
-        // ignore
-      }
+      version = getManifestVersion();
     }
     return version;
   }
@@ -715,5 +702,24 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
       // ignore
     }
     return null;
+  }
+
+  private static String getManifestVersion() {
+    String version = null;
+    try {
+      Enumeration<URL> resources =
+          ServiceOptions.class.getClassLoader().getResources(JarFile.MANIFEST_NAME);
+      while (resources.hasMoreElements() && version == null) {
+        Manifest manifest = new Manifest(resources.nextElement().openStream());
+        Attributes manifestAttributes = manifest.getMainAttributes();
+        String artifactId = manifestAttributes.getValue(MANIFEST_ARTIFACT_ID_KEY);
+        if (artifactId != null && artifactId.equals(ARTIFACT_ID)) {
+          version = manifestAttributes.getValue(MANIFEST_VERSION_KEY);
+        }
+      }
+    } catch (IOException e) {
+      // ignore
+    }
+    return version;
   }
 }
