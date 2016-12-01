@@ -44,6 +44,8 @@ import com.google.cloud.storage.Storage.BlobGetOption;
 import com.google.cloud.storage.Storage.BlobListOption;
 import com.google.cloud.storage.Storage.BlobSourceOption;
 import com.google.cloud.storage.Storage.BlobTargetOption;
+import com.google.cloud.storage.Storage.BlobWriteOption;
+import com.google.cloud.storage.Storage.BucketField;
 import com.google.cloud.storage.Storage.BucketGetOption;
 import com.google.cloud.storage.Storage.BucketListOption;
 import com.google.cloud.storage.Storage.BucketSourceOption;
@@ -60,6 +62,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 import java.nio.ByteBuffer;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -104,6 +108,66 @@ public class StorageSnippets {
         .setLocation("asia")
         .build());
     // [END createBucketWithStorageClassAndLocation]
+    return bucket;
+  }
+
+  /**
+   * Example of changing a bucket's default storage class.
+   */
+  // [TARGET update(BucketInfo, BucketTargetOption...)]
+  // [VARIABLE "my_unique_bucket"]
+  // [VARIABLE "nearline"]
+  public Bucket changeBucketStorageClass(String bucketName, String storageClass) {
+    // [START storageChangeStorageClass]
+    Bucket bucket = storage.update(BucketInfo.newBuilder(bucketName)
+        // See here for possible values: http://g.co/cloud/storage/docs/storage-classes
+        .setStorageClass(storageClass)
+        .build());
+    // [END storageChangeStorageClass]
+    return bucket;
+  }
+
+  /**
+   * Example of enabling lifecycle management rules on a bucket.
+   */
+  // [TARGET update(BucketInfo, BucketTargetOption...)]
+  // [VARIABLE "my_unique_bucket"]
+  public Bucket enableBucketLifecycleManagement(String bucketName) {
+    // [START storageEnableLifecycleManagement]
+    Bucket bucket = storage.update(BucketInfo.newBuilder(bucketName)
+        .setDeleteRules(Arrays.asList(
+            // Delete objects older than a week
+            new BucketInfo.AgeDeleteRule(7),
+            // Only keep up to 3 versions of a given object
+            new BucketInfo.NumNewerVersionsDeleteRule(3)))
+        .build());
+    // [END storageEnableLifecycleManagement]
+    return bucket;
+  }
+
+  /**
+   * Example of getting lifecycle management rules on a bucket.
+   */
+  // [TARGET update(BucketInfo, BucketTargetOption...)]
+  // [VARIABLE "my_unique_bucket"]
+  public List<? extends BucketInfo.DeleteRule> getBucketLifecycleManagement(String bucketName) {
+    // [START storageGetLifecycleManagement]
+    Bucket bucket = storage.get(bucketName, BucketGetOption.fields(BucketField.LIFECYCLE));
+    return bucket.getDeleteRules();
+    // [END storageGetLifecycleManagement]
+  }
+
+  /**
+   * Example of disabling lifecycle management rules on a bucket.
+   */
+  // [TARGET update(BucketInfo, BucketTargetOption...)]
+  // [VARIABLE "my_unique_bucket"]
+  public Bucket disableBucketLifecycleManagement(String bucketName) {
+    // [START storageDisableLifecycleManagement]
+    Bucket bucket = storage.update(BucketInfo.newBuilder(bucketName)
+        .setDeleteRules(Collections.EMPTY_LIST)
+        .build());
+    // [END storageDisableLifecycleManagement]
     return bucket;
   }
 
@@ -154,6 +218,26 @@ public class StorageSnippets {
   }
 
   /**
+   * Example of uploading an encrypted blob.
+   */
+  // [TARGET create(BlobInfo, InputStream, BlobWriteOption...)]
+  // [VARIABLE "my_unique_bucket"]
+  // [VARIABLE "my_blob_name"]
+  // [VARIABLE "my_encryption_key"]
+  public Blob createEncryptedBlob(String bucketName, String blobName, String encryptionKey) {
+    // [START storageUploadEncryptedFile]
+    InputStream content = new ByteArrayInputStream("Hello, World!".getBytes(UTF_8));
+
+    BlobId blobId = BlobId.of(bucketName, blobName);
+    BlobInfo blobInfo = BlobInfo.newBuilder(blobId)
+        .setContentType("text/plain")
+        .build();
+    Blob blob = storage.create(blobInfo, content, BlobWriteOption.encryptionKey(encryptionKey));
+    // [END storageUploadEncryptedFile]
+    return blob;
+  }
+
+  /**
    * Example of getting information on a bucket, only if its metageneration matches a value,
    * otherwise a {@link StorageException} is thrown.
    */
@@ -165,6 +249,20 @@ public class StorageSnippets {
     Bucket bucket = storage.get(bucketName,
         BucketGetOption.metagenerationMatch(bucketMetageneration));
     // [END getBucketWithMetageneration]
+    return bucket;
+  }
+
+  /**
+   * Example of getting storage class and location of a bucket.
+   */
+  // [TARGET get(String, BucketGetOption...)]
+  // [VARIABLE "my_unique_bucket"]
+  // [VARIABLE 42]
+  public Bucket getBucketStorageClassAndLocation(String bucketName) {
+    // [START storageGetClassLocation]
+    Bucket bucket = storage.get(bucketName, BucketGetOption.fields(
+        BucketField.STORAGE_CLASS, BucketField.LOCATION));
+    // [END storageGetClassLocation]
     return bucket;
   }
 
@@ -447,6 +545,28 @@ public class StorageSnippets {
   }
 
   /**
+   * Example of rotating the encryption key of a blob.
+   */
+  // [TARGET copy(CopyRequest)]
+  // [VARIABLE "my_unique_bucket"]
+  // [VARIABLE "my_blob_name"]
+  // [VARIABLE "old_encryption_key"]
+  // [VARIABLE "new_encryption_key"]
+  public Blob rotateBlobEncryptionKey(
+      String bucketName, String blobName, String oldEncryptionKey, String newEncryptionKey) {
+    // [START storageRotateEncryptionKey]
+    BlobId blobId = BlobId.of(bucketName, blobName);
+    CopyRequest request = CopyRequest.newBuilder()
+        .setSource(blobId)
+        .setSourceOptions(BlobSourceOption.decryptionKey(oldEncryptionKey))
+        .setTarget(blobId, BlobTargetOption.encryptionKey(newEncryptionKey))
+        .build();
+    Blob blob = storage.copy(request).getResult();
+    // [END storageRotateEncryptionKey]
+    return blob;
+  }
+
+  /**
    * Example of reading all bytes of a blob, if generation matches a value, otherwise a
    * {@link StorageException} is thrown.
    */
@@ -470,12 +590,27 @@ public class StorageSnippets {
   // [TARGET readAllBytes(BlobId, BlobSourceOption...)]
   // [VARIABLE "my_unique_bucket"]
   // [VARIABLE "my_blob_name"]
-  // [VARIABLE 42"]
+  // [VARIABLE 42]
   public byte[] readBlobFromId(String bucketName, String blobName, long blobGeneration) {
     // [START readBlobFromId]
     BlobId blobId = BlobId.of(bucketName, blobName, blobGeneration);
     byte[] content = storage.readAllBytes(blobId);
     // [END readBlobFromId]
+    return content;
+  }
+
+  /**
+   * Example of reading all bytes of an encrypted blob.
+   */
+  // [TARGET readAllBytes(BlobId, BlobSourceOption...)]
+  // [VARIABLE "my_unique_bucket"]
+  // [VARIABLE "my_blob_name"]
+  // [VARIABLE "my_encryption_key"]
+  public byte[] readEncryptedBlob(String bucketName, String blobName, String decryptionKey) {
+    // [START readEncryptedBlob]
+    byte[] content = storage.readAllBytes(
+        bucketName, blobName, BlobSourceOption.decryptionKey(decryptionKey));
+    // [END readEncryptedBlob]
     return content;
   }
 

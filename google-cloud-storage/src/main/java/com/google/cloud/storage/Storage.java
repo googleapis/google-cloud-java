@@ -90,7 +90,8 @@ public interface Storage extends Service<StorageOptions> {
     VERSIONING("versioning"),
     CORS("cors"),
     STORAGE_CLASS("storageClass"),
-    ETAG("etag");
+    ETAG("etag"),
+    LIFECYCLE("lifecycle");
 
     static final List<? extends FieldSelector> REQUIRED_FIELDS = ImmutableList.of(NAME);
 
@@ -1217,6 +1218,19 @@ public interface Storage extends Service<StorageOptions> {
       }
 
       /**
+       * Sets the copy target. Target blob information is copied from source, except for those
+       * options specified in {@code options}.
+       *
+       * @return the builder
+       */
+      public Builder setTarget(BlobId targetId, BlobTargetOption... options) {
+        this.overrideInfo = false;
+        this.target = BlobInfo.newBuilder(targetId).build();
+        Collections.addAll(targetOptions, options);
+        return this;
+      }
+
+      /**
        * Sets the copy target and target options. {@code target} parameter is used to override
        * source blob information (e.g. {@code contentType}, {@code contentLanguage}). Target blob
        * information is set exactly to {@code target}, no information is inherited from the source
@@ -1255,6 +1269,19 @@ public interface Storage extends Service<StorageOptions> {
       public Builder setTarget(BlobInfo target, Iterable<BlobTargetOption> options) {
         this.overrideInfo = true;
         this.target = checkNotNull(target);
+        Iterables.addAll(targetOptions, options);
+        return this;
+      }
+
+      /**
+       * Sets the copy target and target options. Target blob information is copied from source,
+       * except for those options specified in {@code options}.
+       *
+       * @return the builder
+       */
+      public Builder setTarget(BlobId targetId, Iterable<BlobTargetOption> options) {
+        this.overrideInfo = false;
+        this.target = BlobInfo.newBuilder(targetId).build();
         Iterables.addAll(targetOptions, options);
         return this;
       }
@@ -1564,6 +1591,20 @@ public interface Storage extends Service<StorageOptions> {
    * BlobId blobId = BlobId.of(bucketName, blobName);
    * BlobInfo blobInfo = BlobInfo.newBuilder(blobId).setContentType("text/plain").build();
    * Blob blob = storage.create(blobInfo, content);
+   * }</pre>
+   *
+   * <p>Example of uploading an encrypted blob.
+   * <pre> {@code
+   * String bucketName = "my_unique_bucket";
+   * String blobName = "my_blob_name";
+   * String encryptionKey = "my_encryption_key";
+   * InputStream content = new ByteArrayInputStream("Hello, World!".getBytes(UTF_8));
+   * 
+   * BlobId blobId = BlobId.of(bucketName, blobName);
+   * BlobInfo blobInfo = BlobInfo.newBuilder(blobId)
+   *     .setContentType("text/plain")
+   *     .build();
+   * Blob blob = storage.create(blobInfo, content, BlobWriteOption.encryptionKey(encryptionKey));
    * }</pre>
    *
    * @return a [@code Blob} with complete information
@@ -1888,6 +1929,21 @@ public interface Storage extends Service<StorageOptions> {
    * Blob blob = copyWriter.getResult();
    * }</pre>
    *
+   * <p>Example of rotating the encryption key of a blob.
+   * <pre> {@code
+   * String bucketName = "my_unique_bucket";
+   * String blobName = "my_blob_name";
+   * String oldEncryptionKey = "old_encryption_key";
+   * String newEncryptionKey = "new_encryption_key";
+   * BlobId blobId = BlobId.of(bucketName, blobName);
+   * CopyRequest request = CopyRequest.newBuilder()
+   *     .setSource(blobId)
+   *     .setSourceOptions(BlobSourceOption.decryptionKey(oldEncryptionKey))
+   *     .setTarget(blobId, BlobTargetOption.encryptionKey(newEncryptionKey))
+   *     .build();
+   * Blob blob = storage.copy(request).getResult();
+   * }</pre>
+   *
    * @return a {@link CopyWriter} object that can be used to get information on the newly created
    *     blob or to complete the copy if more than one RPC request is needed
    * @throws StorageException upon failure
@@ -1921,9 +1977,18 @@ public interface Storage extends Service<StorageOptions> {
    * <pre> {@code
    * String bucketName = "my_unique_bucket";
    * String blobName = "my_blob_name";
-   * long blobGeneration = 42";
+   * long blobGeneration = 42;
    * BlobId blobId = BlobId.of(bucketName, blobName, blobGeneration);
    * byte[] content = storage.readAllBytes(blobId);
+   * }</pre>
+   *
+   * <p>Example of reading all bytes of an encrypted blob.
+   * <pre> {@code
+   * String bucketName = "my_unique_bucket";
+   * String blobName = "my_blob_name";
+   * String decryptionKey = "my_encryption_key";
+   * byte[] content = storage.readAllBytes(
+   *     bucketName, blobName, BlobSourceOption.decryptionKey(decryptionKey));
    * }</pre>
    *
    * @return the blob's content

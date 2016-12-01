@@ -33,6 +33,7 @@ import com.google.cloud.storage.Blob;
 import com.google.cloud.storage.BlobId;
 import com.google.cloud.storage.BlobInfo;
 import com.google.cloud.storage.Bucket;
+import com.google.cloud.storage.BucketInfo;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageException;
 import com.google.cloud.storage.testing.RemoteStorageHelper;
@@ -111,6 +112,36 @@ public class ITStorageSnippets {
   }
 
   @Test
+  public void testChangeBucketStorageClass()
+      throws ExecutionException, InterruptedException {
+    Bucket bucket = storageSnippets.changeBucketStorageClass(BUCKET, "nearline");
+    assertEquals("NEARLINE", bucket.getStorageClass());
+
+    // Restore it to regional for the sake of the rest of the tests
+    bucket = storageSnippets.changeBucketStorageClass(BUCKET, "standard");
+    assertEquals("STANDARD", bucket.getStorageClass());
+  }
+
+  @Test
+  public void testEnableDisableBucketLifecycleManagement() {
+    Bucket bucket = storageSnippets.enableBucketLifecycleManagement(BUCKET);
+    List<? extends BucketInfo.DeleteRule> deleteRules = bucket.getDeleteRules();
+    assertEquals(2, deleteRules.size());
+    assertEquals(BucketInfo.DeleteRule.Type.AGE, deleteRules.get(0).getType());
+    assertEquals(BucketInfo.DeleteRule.Type.NUM_NEWER_VERSIONS, deleteRules.get(1).getType());
+
+    deleteRules = storageSnippets.getBucketLifecycleManagement(BUCKET);
+    assertEquals(2, deleteRules.size());
+
+    bucket = storageSnippets.disableBucketLifecycleManagement(BUCKET);
+    deleteRules = bucket.getDeleteRules();
+    assertNull(deleteRules);
+
+    deleteRules = storageSnippets.getBucketLifecycleManagement(BUCKET);
+    assertNull(deleteRules);
+  }
+
+  @Test
   public void testBlob() throws InterruptedException {
     String blobName = "directory/test-blob";
     Blob blob = storageSnippets.createBlob(BUCKET, blobName);
@@ -146,6 +177,34 @@ public class ITStorageSnippets {
   }
 
   @Test
+  public void testCreateUpdateEncryptedBlob() throws InterruptedException {
+    // Note: DO NOT put your encryption key in your code, like it is here. Store it somewhere safe,
+    // and read it in when you need it. This key is just here to make the code easier to read.
+    String encryptionKey1 = "0mMWhFvQOdS4AmxRpo8SJxXn5MjFhbz7DkKBUdUIef8=";
+    String blobName = "encrypted-blob";
+
+    Blob blob = storageSnippets.createEncryptedBlob(BUCKET, blobName, encryptionKey1);
+
+    assertNotNull(blob);
+    assertEquals("text/plain", blob.getContentType());
+    byte[] encryptedContent = storageSnippets.readEncryptedBlob(BUCKET, blobName, encryptionKey1);
+    assertEquals("Hello, World!", new String(encryptedContent));
+    blob = storageSnippets.getBlobFromId(BUCKET, blobName);
+    assertEquals("text/plain", blob.getContentType());
+
+    String encryptionKey2 = "wnxMO0w+dmxribu7rICJ+Q2ES9TLpFRIDy3/L7HN5ZA=";
+
+    blob = storageSnippets.rotateBlobEncryptionKey(
+        BUCKET, blobName, encryptionKey1, encryptionKey2);
+
+    assertNotNull(blob);
+    encryptedContent = storageSnippets.readEncryptedBlob(BUCKET, blobName, encryptionKey2);
+    assertEquals("Hello, World!", new String(encryptedContent));
+    blob = storageSnippets.getBlobFromId(BUCKET, blobName);
+    assertEquals("text/plain", blob.getContentType());
+  }
+
+  @Test
   public void testCreateCopyAndGetBlob() {
     String blobName = "test-create-copy-get-blob";
     Blob blob = storageSnippets.createBlobFromByteArray(BUCKET, blobName);
@@ -176,6 +235,13 @@ public class ITStorageSnippets {
   public void testGetBucketWithMetageneration() {
     thrown.expect(StorageException.class);
     storageSnippets.getBucketWithMetageneration(BUCKET, -1);
+  }
+
+  @Test
+  public void testGetBucketStorageClassAndLocation() {
+    Bucket bucket = storageSnippets.getBucketStorageClassAndLocation(BUCKET);
+    assertEquals("STANDARD", bucket.getStorageClass());
+    assertEquals("US", bucket.getLocation());
   }
 
   @Test
