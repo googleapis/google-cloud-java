@@ -146,6 +146,18 @@ public class StorageSnippets {
   }
 
   /**
+   * Example of getting lifecycle management rules on a bucket.
+   */
+  // [TARGET update(BucketInfo, BucketTargetOption...)]
+  // [VARIABLE "my_unique_bucket"]
+  public List<? extends BucketInfo.DeleteRule> getBucketLifecycleManagement(String bucketName) {
+    // [START storageGetLifecycleManagement]
+    Bucket bucket = storage.get(bucketName, BucketGetOption.fields(BucketField.LIFECYCLE));
+    return bucket.getDeleteRules();
+    // [END storageGetLifecycleManagement]
+  }
+
+  /**
    * Example of disabling lifecycle management rules on a bucket.
    */
   // [TARGET update(BucketInfo, BucketTargetOption...)]

@@ -130,9 +130,15 @@ public class ITStorageSnippets {
     assertEquals(BucketInfo.DeleteRule.Type.AGE, deleteRules.get(0).getType());
     assertEquals(BucketInfo.DeleteRule.Type.NUM_NEWER_VERSIONS, deleteRules.get(1).getType());
 
+    deleteRules = storageSnippets.getBucketLifecycleManagement(BUCKET);
+    assertEquals(2, deleteRules.size());
+
     bucket = storageSnippets.disableBucketLifecycleManagement(BUCKET);
     deleteRules = bucket.getDeleteRules();
-    assertEquals(null, deleteRules);
+    assertNull(deleteRules);
+
+    deleteRules = storageSnippets.getBucketLifecycleManagement(BUCKET);
+    assertNull(deleteRules);
   }
 
   @Test
