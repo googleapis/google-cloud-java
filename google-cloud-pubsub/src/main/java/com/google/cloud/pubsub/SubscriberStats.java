@@ -17,7 +17,6 @@
 package com.google.cloud.pubsub;
 
 import com.google.common.math.Stats;
-import java.time.LocalDateTime;
 import javax.annotation.concurrent.Immutable;
 
 /**
@@ -27,15 +26,13 @@ import javax.annotation.concurrent.Immutable;
 //TODO: Finish implementation.
 @Immutable
 public class SubscriberStats {
-  private final LocalDateTime startTime;
   private final long totalReceivedMessages;
   private final long totalAckedMessages;
   private final Stats endToEndLatency;
   private final Stats ackLatency;
   private final long numberOfAutoExtendedAckDeadlines;
 
-  SubscriberStats(LocalDateTime startTime) {
-    this.startTime = startTime;
+  SubscriberStats() {
     this.totalReceivedMessages = 0;
     this.totalAckedMessages = 0;
     this.numberOfAutoExtendedAckDeadlines = 0;
@@ -51,11 +48,6 @@ public class SubscriberStats {
   /** Number of successfully published messages. */
   public long getAckedMessages() {
     return totalAckedMessages;
-  }
-
-  /** Time when the subscriber started. */
-  public LocalDateTime getStartTime() {
-    return startTime;
   }
 
   /** Number of received messages. */
