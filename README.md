@@ -146,7 +146,7 @@ Storage storage = StorageOptions.getDefaultInstance().getService();
     object has the necessary permissions to interact with your Google Cloud Storage data:
     ```java
     Storage storage = StorageOptions.newBuilder()
-        .setCredentials(ServiceAccountCredentials.fromStream(new FileInputStream("/path/to/my/key.json"))
+        .setCredentials(ServiceAccountCredentials.fromStream(new FileInputStream("/path/to/my/key.json")))
         .build()
         .getService();
     ```
