@@ -102,7 +102,7 @@ public class ServiceOptionsTest {
   private static final TestServiceOptions DEPRECATED_DEFAULT_OPTIONS =
       TestServiceOptions.newBuilder().projectId("project-id").build();
   private static final TestServiceOptions OPTIONS_COPY = OPTIONS.toBuilder().build();
-  private static final String LIBRARY_NAME = "google-cloud-java";
+  private static final String LIBRARY_NAME = "gcloud-java";
   private static final Pattern APPLICATION_NAME_PATTERN =
       Pattern.compile(LIBRARY_NAME + "(/[0-9]+.[0-9]+.[0-9]+)?");
 
