@@ -138,8 +138,8 @@ public interface Subscriber extends Service {
 
   /** Builder of {@link Subscriber Subscribers}. */
   final class Builder {
-    Duration MIN_ACK_EXPIRATION_PADDING = Duration.millis(100);
-    Duration DEFAULT_ACK_EXPIRATION_PADDING = Duration.millis(500);
+    private static final Duration MIN_ACK_EXPIRATION_PADDING = Duration.millis(100);
+    private static final Duration DEFAULT_ACK_EXPIRATION_PADDING = Duration.millis(500);
 
     String subscription;
     Optional<Credentials> credentials;

@@ -146,7 +146,7 @@ public class SubscriberImpl extends AbstractService implements Subscriber {
     try {
       subscribersStarting.await();
     } catch (InterruptedException e) {
-      throw new RuntimeException(e);
+      throw new IllegalStateException(e);
     }
 
     ackDeadlineUpdater =
