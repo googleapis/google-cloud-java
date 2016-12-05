@@ -35,14 +35,15 @@ import org.joda.time.Duration;
  * messages, controlling memory utilization, and retrying API calls on transient errors.
  *
  * <p>With customizable options that control:
+ *
  * <ul>
- * <li>Message batching: such as number of messages or max batch byte size.
- * <li>Flow control: such as max outstanding messages and maximum outstanding bytes.
- * <li>Retries: such as the maximum duration of retries for a failing batch of messages.
+ *   <li>Message batching: such as number of messages or max batch byte size.
+ *   <li>Flow control: such as max outstanding messages and maximum outstanding bytes.
+ *   <li>Retries: such as the maximum duration of retries for a failing batch of messages.
  * </ul>
  *
- * <p>If no credentials are provided, the {@link Publisher} will use application default
- * credentials through {@link GoogleCredentials#getApplicationDefault}.
+ * <p>If no credentials are provided, the {@link Publisher} will use application default credentials
+ * through {@link GoogleCredentials#getApplicationDefault}.
  *
  * <p>For example, a {@link Publisher} can be constructed and used to publish a list of messages as
  * follows:
@@ -76,21 +77,20 @@ import org.joda.time.Duration;
  * </pre>
  */
 public interface Publisher {
-  static final String PUBSUB_API_ADDRESS = "pubsub.googleapis.com";
-  static final String PUBSUB_API_SCOPE = "https://www.googleapis.com/auth/pubsub";
+  String PUBSUB_API_ADDRESS = "pubsub.googleapis.com";
+  String PUBSUB_API_SCOPE = "https://www.googleapis.com/auth/pubsub";
 
   // API limits.
-  static final int MAX_BATCH_MESSAGES = 1000;
-  static final int MAX_BATCH_BYTES =
-      10 * 1000 * 1000; // 10 megabytes (https://en.wikipedia.org/wiki/Megabyte)
+  int MAX_BATCH_MESSAGES = 1000;
+  int MAX_BATCH_BYTES = 10 * 1000 * 1000; // 10 megabytes (https://en.wikipedia.org/wiki/Megabyte)
 
   // Meaningful defaults.
-  static final int DEFAULT_MAX_BATCH_MESSAGES = 100;
-  static final int DEFAULT_MAX_BATCH_BYTES = 1000; // 1 kB
-  static final Duration DEFAULT_MAX_BATCH_DURATION = new Duration(1); // 1ms
-  static final Duration DEFAULT_REQUEST_TIMEOUT = new Duration(10 * 1000); // 10 seconds
-  static final Duration MIN_SEND_BATCH_DURATION = new Duration(10 * 1000); // 10 seconds
-  static final Duration MIN_REQUEST_TIMEOUT = new Duration(10); // 10 milliseconds
+  int DEFAULT_MAX_BATCH_MESSAGES = 100;
+  int DEFAULT_MAX_BATCH_BYTES = 1000; // 1 kB
+  Duration DEFAULT_MAX_BATCH_DURATION = new Duration(1); // 1ms
+  Duration DEFAULT_REQUEST_TIMEOUT = new Duration(10 * 1000); // 10 seconds
+  Duration MIN_SEND_BATCH_DURATION = new Duration(10 * 1000); // 10 seconds
+  Duration MIN_REQUEST_TIMEOUT = new Duration(10); // 10 milliseconds
 
   /** Topic to which the publisher publishes to. */
   String getTopic();
@@ -118,17 +118,17 @@ public interface Publisher {
   long getMaxBatchMessages();
 
   /**
-   * Maximum number of outstanding (i.e. pending to publish) messages before limits are
-   * enforced. See {@link #failOnFlowControlLimits()}.
+   * Maximum number of outstanding (i.e. pending to publish) messages before limits are enforced.
+   * See {@link #failOnFlowControlLimits()}.
    */
   Optional<Integer> getMaxOutstandingMessages();
 
   /**
-   * Maximum number of outstanding (i.e. pending to publish) bytes before limits are enforced.
-   * See {@link #failOnFlowControlLimits()}.
-   */   
+   * Maximum number of outstanding (i.e. pending to publish) bytes before limits are enforced. See
+   * {@link #failOnFlowControlLimits()}.
+   */
   Optional<Integer> getMaxOutstandingBytes();
-  
+
   /**
    * Whether to block publish calls when reaching flow control limits (see {@link
    * #getMaxOutstandingBytes()} & {@link #getMaxOutstandingMessages()}).
@@ -138,7 +138,6 @@ public interface Publisher {
    * appropriate, when flow control limits are reached.
    */
   boolean failOnFlowControlLimits();
-  
 
   /** Retrieves a snapshot of the publisher current {@link PublisherStats statistics}. */
   PublisherStats getStats();
@@ -178,9 +177,7 @@ public interface Publisher {
 
     Optional<ScheduledExecutorService> executor;
 
-    /**
-     * Constructs a new {@link Builder} using the given topic.
-     */
+    /** Constructs a new {@link Builder} using the given topic. */
     public static Builder newBuilder(String topic) {
       return new Builder(topic);
     }
@@ -265,18 +262,14 @@ public interface Publisher {
 
     // Flow control options
 
-    /**
-     * Maximum number of outstanding messages to keep in memory before enforcing flow control.
-     */
+    /** Maximum number of outstanding messages to keep in memory before enforcing flow control. */
     public Builder setMaxOutstandingMessages(int messages) {
       Preconditions.checkArgument(messages > 0);
       maxOutstandingMessages = Optional.of(messages);
       return this;
     }
 
-    /**
-     * Maximum number of outstanding messages to keep in memory before enforcing flow control.
-     */
+    /** Maximum number of outstanding messages to keep in memory before enforcing flow control. */
     public Builder setMaxOutstandingBytes(int bytes) {
       Preconditions.checkArgument(bytes > 0);
       maxOutstandingBytes = Optional.of(bytes);
@@ -296,9 +289,7 @@ public interface Publisher {
       return this;
     }
 
-    /**
-     * Maximum time to attempt sending (and retrying) a batch of messages before giving up.
-     */
+    /** Maximum time to attempt sending (and retrying) a batch of messages before giving up. */
     public Builder setSendBatchDeadline(Duration deadline) {
       Preconditions.checkArgument(deadline.compareTo(MIN_SEND_BATCH_DURATION) >= 0);
       sendBatchDeadline = deadline;
@@ -326,13 +317,12 @@ public interface Publisher {
 
   /** Base exception that signals a flow control state. */
   abstract class CloudPubsubFlowControlException extends Exception {}
-  
+
   /**
    * Returned as a future exception when client-side flow control is enforced based on the maximum
    * number of outstanding in-memory messages.
    */
-  final class MaxOutstandingMessagesReachedException
-      extends CloudPubsubFlowControlException {
+  final class MaxOutstandingMessagesReachedException extends CloudPubsubFlowControlException {
     private final int currentMaxMessages;
 
     public MaxOutstandingMessagesReachedException(int currentMaxMessages) {
@@ -354,8 +344,7 @@ public interface Publisher {
    * Returned as a future exception when client-side flow control is enforced based on the maximum
    * number of unacknowledged in-memory bytes.
    */
-  final class MaxOutstandingBytesReachedException
-      extends CloudPubsubFlowControlException {
+  final class MaxOutstandingBytesReachedException extends CloudPubsubFlowControlException {
     private final int currentMaxBytes;
 
     public MaxOutstandingBytesReachedException(int currentMaxBytes) {

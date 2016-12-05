@@ -227,8 +227,9 @@ final class SubscriberConnection extends AbstractService {
           flowController.release(1, outstandingBytes);
           messagesWaiter.incrementPendingMessages(-1);
           return;
+        default:
+          throw new IllegalArgumentException(String.format("AckReply: %s not supported", reply));
       }
-      throw new IllegalArgumentException(String.format("AckReply: %s not supported", reply));
     }
   }
 
@@ -435,6 +436,82 @@ final class SubscriberConnection extends AbstractService {
     }
   }
 
+  private class AckDeadlineAlarm implements Runnable {
+    @Override
+    public void run() {
+      alarmsLock.lock();
+      try {
+        nextAckDeadlineExtensionAlarmTime = new Instant(Long.MAX_VALUE);
+        ackDeadlineExtensionAlarm = null;
+        if (pendingAcksAlarm != null) {
+          pendingAcksAlarm.cancel(false);
+          pendingAcksAlarm = null;
+        }
+      } finally {
+        alarmsLock.unlock();
+      }
+
+      Instant now = Instant.now();
+      // Rounded to the next second, so we only schedule future alarms at the second
+      // resolution.
+      Instant cutOverTime =
+          new Instant(
+              ((long) Math.ceil(now.plus(ackExpirationPadding).plus(500).getMillis() / 1000.0))
+                  * 1000L);
+      logger.debug(
+          "Running alarm sent outstanding acks, at now time: {}, with cutover "
+              + "time: {}, padding: {}",
+          now,
+          cutOverTime,
+          ackExpirationPadding);
+      ExpirationInfo nextScheduleExpiration = null;
+      List<PendingModifyAckDeadline> modifyAckDeadlinesToSend = new ArrayList<>();
+
+      synchronized (outstandingAckHandlers) {
+        for (ExpirationInfo messageExpiration : outstandingAckHandlers.keySet()) {
+          if (messageExpiration.expiration.compareTo(cutOverTime) <= 0) {
+            Collection<AckHandler> expiringAcks = outstandingAckHandlers.get(messageExpiration);
+            outstandingAckHandlers.remove(messageExpiration);
+            List<AckHandler> renewedAckHandlers = new ArrayList<>(expiringAcks.size());
+            messageExpiration.extendExpiration();
+            int extensionSeconds =
+                Ints.saturatedCast(
+                    new Interval(now, messageExpiration.expiration)
+                        .toDuration()
+                        .getStandardSeconds());
+            for (AckHandler ackHandler : expiringAcks) {
+              if (ackHandler.acked.get()) {
+                continue;
+              }
+              modifyAckDeadlinesToSend.add(
+                  new PendingModifyAckDeadline(ackHandler.ackId, extensionSeconds));
+              renewedAckHandlers.add(ackHandler);
+            }
+            if (!renewedAckHandlers.isEmpty()) {
+              addOutstadingAckHandlers(messageExpiration, renewedAckHandlers);
+            } else {
+              outstandingAckHandlers.remove(messageExpiration);
+            }
+          }
+          if (nextScheduleExpiration == null
+              || nextScheduleExpiration.expiration.isAfter(messageExpiration.expiration)) {
+            nextScheduleExpiration = messageExpiration;
+          }
+        }
+      }
+
+      sendOutstandingAckOperations(modifyAckDeadlinesToSend);
+
+      if (nextScheduleExpiration != null) {
+        logger.debug(
+            "Scheduling based on outstanding, now time: {}, " + "next schedule time: {}",
+            now,
+            nextScheduleExpiration);
+        setupNextAckDeadlineExtensionAlarm(nextScheduleExpiration);
+      }
+    }
+  }
+
   private void setupNextAckDeadlineExtensionAlarm(ExpirationInfo messageExpiration) {
     Instant possibleNextAlarmTime = messageExpiration.expiration.minus(ackExpirationPadding);
     alarmsLock.lock();
@@ -453,88 +530,7 @@ final class SubscriberConnection extends AbstractService {
 
         ackDeadlineExtensionAlarm =
             executor.schedule(
-                new Runnable() {
-                  @Override
-                  public void run() {
-                    alarmsLock.lock();
-                    try {
-                      nextAckDeadlineExtensionAlarmTime = new Instant(Long.MAX_VALUE);
-                      ackDeadlineExtensionAlarm = null;
-                      if (pendingAcksAlarm != null) {
-                        pendingAcksAlarm.cancel(false);
-                        pendingAcksAlarm = null;
-                      }
-                    } finally {
-                      alarmsLock.unlock();
-                    }
-
-                    Instant now = Instant.now();
-                    // Rounded to the next second, so we only schedule future alarms at the second
-                    // resolution.
-                    Instant cutOverTime =
-                        new Instant(
-                            ((long)
-                                    Math.ceil(
-                                        now.plus(ackExpirationPadding).plus(500).getMillis()
-                                            / 1000.0))
-                                * 1000L);
-                    logger.debug(
-                        "Running alarm sent outstanding acks, at now time: {}, with cutover "
-                            + "time: {}, padding: {}",
-                        now,
-                        cutOverTime,
-                        ackExpirationPadding);
-                    ExpirationInfo nextScheduleExpiration = null;
-                    List<PendingModifyAckDeadline> modifyAckDeadlinesToSend = new ArrayList<>();
-
-                    synchronized (outstandingAckHandlers) {
-                      for (ExpirationInfo messageExpiration : outstandingAckHandlers.keySet()) {
-                        if (messageExpiration.expiration.compareTo(cutOverTime) <= 0) {
-                          Collection<AckHandler> expiringAcks =
-                              outstandingAckHandlers.get(messageExpiration);
-                          outstandingAckHandlers.remove(messageExpiration);
-                          List<AckHandler> renewedAckHandlers =
-                              new ArrayList<>(expiringAcks.size());
-                          messageExpiration.extendExpiration();
-                          int extensionSeconds =
-                              Ints.saturatedCast(
-                                  new Interval(now, messageExpiration.expiration)
-                                      .toDuration()
-                                      .getStandardSeconds());
-                          for (AckHandler ackHandler : expiringAcks) {
-                            if (ackHandler.acked.get()) {
-                              continue;
-                            }
-                            modifyAckDeadlinesToSend.add(
-                                new PendingModifyAckDeadline(ackHandler.ackId, extensionSeconds));
-                            renewedAckHandlers.add(ackHandler);
-                          }
-                          if (!renewedAckHandlers.isEmpty()) {
-                            addOutstadingAckHandlers(messageExpiration, renewedAckHandlers);
-                          } else {
-                            outstandingAckHandlers.remove(messageExpiration);
-                          }
-                        }
-                        if (nextScheduleExpiration == null
-                            || nextScheduleExpiration.expiration.isAfter(
-                                messageExpiration.expiration)) {
-                          nextScheduleExpiration = messageExpiration;
-                        }
-                      }
-                    }
-
-                    sendOutstandingAckOperations(modifyAckDeadlinesToSend);
-
-                    if (nextScheduleExpiration != null) {
-                      logger.debug(
-                          "Scheduling based on outstanding, now time: {}, "
-                              + "next schedule time: {}",
-                          now,
-                          nextScheduleExpiration);
-                      setupNextAckDeadlineExtensionAlarm(nextScheduleExpiration);
-                    }
-                  }
-                },
+                new AckDeadlineAlarm(),
                 nextAckDeadlineExtensionAlarmTime.getMillis() - Instant.now().getMillis(),
                 TimeUnit.MILLISECONDS);
       }

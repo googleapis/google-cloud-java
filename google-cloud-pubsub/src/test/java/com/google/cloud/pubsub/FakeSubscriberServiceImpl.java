@@ -100,10 +100,8 @@ class FakeSubscriberServiceImpl extends SubscriberImplBase {
     @Override
     public void onNext(StreamingPullRequest request) {
       synchronized (stream) {
-        if (!request.getSubscription().isEmpty()) {
-          if (!initializeStream(request)) {
-            return;
-          }
+        if (!request.getSubscription().isEmpty() && !initializeStream(request)) {
+          return;
         }
 
         if (request.getStreamAckDeadlineSeconds() > 0) {

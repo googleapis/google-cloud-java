@@ -25,6 +25,7 @@ import com.google.common.util.concurrent.ListenableFuture;
 import com.google.common.util.concurrent.Service;
 import com.google.pubsub.v1.PubsubMessage;
 import io.grpc.ManagedChannelBuilder;
+import java.io.IOException;
 import java.util.concurrent.ScheduledExecutorService;
 import org.joda.time.Duration;
 
@@ -85,8 +86,8 @@ import org.joda.time.Duration;
  * </pre>
  */
 public interface Subscriber extends Service {
-  static final String PUBSUB_API_ADDRESS = "pubsub.googleapis.com";
-  static final String PUBSUB_API_SCOPE = "https://www.googleapis.com/auth/pubsub";
+  String PUBSUB_API_ADDRESS = "pubsub.googleapis.com";
+  String PUBSUB_API_SCOPE = "https://www.googleapis.com/auth/pubsub";
 
   /** Retrieves a snapshot of the current subscriber statistics. */
   SubscriberStats getStats();
@@ -137,8 +138,8 @@ public interface Subscriber extends Service {
 
   /** Builder of {@link Subscriber Subscribers}. */
   final class Builder {
-    static final Duration MIN_ACK_EXPIRATION_PADDING = Duration.millis(100);
-    static final Duration DEFAULT_ACK_EXPIRATION_PADDING = Duration.millis(500);
+    Duration MIN_ACK_EXPIRATION_PADDING = Duration.millis(100);
+    Duration DEFAULT_ACK_EXPIRATION_PADDING = Duration.millis(500);
 
     String subscription;
     Optional<Credentials> credentials;
@@ -258,7 +259,7 @@ public interface Subscriber extends Service {
       return this;
     }
 
-    public Subscriber build() {
+    public Subscriber build() throws IOException {
       return new SubscriberImpl(this);
     }
   }

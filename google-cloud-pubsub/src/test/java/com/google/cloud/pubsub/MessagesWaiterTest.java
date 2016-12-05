@@ -19,7 +19,6 @@ package com.google.cloud.pubsub;
 import static org.junit.Assert.assertEquals;
 
 import java.util.concurrent.atomic.AtomicBoolean;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -30,15 +29,12 @@ import org.junit.runners.JUnit4;
 @RunWith(JUnit4.class)
 public class MessagesWaiterTest {
 
-  @Before
-  public void setUp() throws Exception {}
-
   @Test
   public void test() throws Exception {
-    MessagesWaiter waiter = new MessagesWaiter();
+    final MessagesWaiter waiter = new MessagesWaiter();
     waiter.incrementPendingMessages(1);
     
-    AtomicBoolean waitReached = new AtomicBoolean();
+    final AtomicBoolean waitReached = new AtomicBoolean();
     
     Thread t = new Thread(new Runnable(){
       @Override

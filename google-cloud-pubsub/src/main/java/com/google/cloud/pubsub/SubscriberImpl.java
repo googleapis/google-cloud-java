@@ -34,7 +34,6 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
-import javax.net.ssl.SSLException;
 import org.joda.time.Duration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -64,7 +63,7 @@ public class SubscriberImpl extends AbstractService implements Subscriber {
   private ScheduledFuture<?> ackDeadlineUpdater;
   private int streamAckDeadlineSeconds;
 
-  public SubscriberImpl(SubscriberImpl.Builder builder) {
+  public SubscriberImpl(SubscriberImpl.Builder builder) throws IOException {
     maxOutstandingBytes = builder.maxOutstandingBytes;
     maxOutstandingMessages = builder.maxOutstandingMessages;
     subscription = builder.subscription;
@@ -73,9 +72,6 @@ public class SubscriberImpl extends AbstractService implements Subscriber {
         Math.max(
             INITIAL_ACK_DEADLINE_SECONDS,
             Ints.saturatedCast(ackExpirationPadding.getStandardSeconds()));
-
-    FlowController flowController =
-        new FlowController(builder.maxOutstandingBytes, builder.maxOutstandingBytes, false);
 
     int numChannels = Math.max(1, Runtime.getRuntime().availableProcessors()) * CHANNELS_PER_CORE;
     executor =
@@ -87,33 +83,25 @@ public class SubscriberImpl extends AbstractService implements Subscriber {
                     .setDaemon(true)
                     .setNameFormat("cloud-pubsub-subscriber-thread-%d")
                     .build());
+    ManagedChannelBuilder<? extends ManagedChannelBuilder<?>> channelBuilder =
+        builder.channelBuilder.isPresent()
+            ? builder.channelBuilder.get()
+            : NettyChannelBuilder.forAddress(PUBSUB_API_ADDRESS, 443)
+                .maxMessageSize(MAX_INBOUND_MESSAGE_SIZE)
+                .flowControlWindow(5000000) // 2.5 MB
+                .negotiationType(NegotiationType.TLS)
+                .sslContext(GrpcSslContexts.forClient().ciphers(null).build())
+                .executor(executor);
+
+    Credentials credentials =
+        builder.credentials.isPresent()
+            ? builder.credentials.get()
+            : GoogleCredentials.getApplicationDefault()
+                .createScoped(Collections.singletonList(PUBSUB_API_SCOPE));
+
+    FlowController flowController =
+        new FlowController(builder.maxOutstandingBytes, builder.maxOutstandingBytes, false);
     subscriberConnections = new SubscriberConnection[numChannels];
-
-    ManagedChannelBuilder<? extends ManagedChannelBuilder<?>> channelBuilder;
-    try {
-      channelBuilder =
-          builder.channelBuilder.isPresent()
-              ? builder.channelBuilder.get()
-              : NettyChannelBuilder.forAddress(PUBSUB_API_ADDRESS, 443)
-                  .maxMessageSize(MAX_INBOUND_MESSAGE_SIZE)
-                  .flowControlWindow(5000000) // 2.5 MB
-                  .negotiationType(NegotiationType.TLS)
-                  .sslContext(GrpcSslContexts.forClient().ciphers(null).build())
-                  .executor(executor);
-    } catch (SSLException e) {
-      throw new RuntimeException("Failed to initialize gRPC channel.", e);
-    }
-
-    Credentials credentials;
-    try {
-      credentials =
-          builder.credentials.isPresent()
-              ? builder.credentials.get()
-              : GoogleCredentials.getApplicationDefault()
-                  .createScoped(Collections.singletonList(PUBSUB_API_SCOPE));
-    } catch (IOException e) {
-      throw new RuntimeException("Failed to get application default credentials.", e);
-    }
     for (int i = 0; i < subscriberConnections.length; i++) {
       subscriberConnections[i] =
           new SubscriberConnection(
@@ -219,7 +207,7 @@ public class SubscriberImpl extends AbstractService implements Subscriber {
     try {
       connectionsStopping.await();
     } catch (InterruptedException e) {
-      throw new RuntimeException(e);
+      throw new IllegalStateException(e);
     }
   }
 

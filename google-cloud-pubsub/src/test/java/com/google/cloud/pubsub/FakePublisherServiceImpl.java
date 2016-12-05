@@ -30,37 +30,37 @@ import java.util.concurrent.LinkedBlockingQueue;
  */
 class FakePublisherServiceImpl extends PublisherImplBase {
 
+  private final Queue<Response> publishResponses = new LinkedBlockingQueue<>();
+
   /**
    * Class used to save the state of a possible response. 
    */
   private static class Response {
     Optional<PublishResponse> publishResponse;
     Optional<Throwable> error;
-
+  
     public Response(PublishResponse publishResponse) {
       this.publishResponse = Optional.of(publishResponse);
       this.error = Optional.absent();
     }
-
+  
     public Response(Throwable exception) {
       this.publishResponse = Optional.absent();
       this.error = Optional.of(exception);
     }
-
+  
     public PublishResponse getPublishResponse() {
       return publishResponse.get();
     }
-
+  
     public Throwable getError() {
       return error.get();
     }
-
+  
     boolean isError() {
       return error.isPresent();
     }
   }
-
-  private final Queue<Response> publishResponses = new LinkedBlockingQueue<>();
 
   @Override
   public void publish(PublishRequest request, StreamObserver<PublishResponse> responseObserver) {

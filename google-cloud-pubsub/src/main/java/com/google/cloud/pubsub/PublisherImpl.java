@@ -200,7 +200,6 @@ final class PublisherImpl implements Publisher {
       throw new IllegalStateException("Cannot publish on a shut-down publisher.");
     }
 
-    SettableFuture<String> publishResult = SettableFuture.create();
     final int messageSize = message.getSerializedSize();
     try {
       flowController.reserve(1, messageSize);
@@ -208,6 +207,7 @@ final class PublisherImpl implements Publisher {
       return Futures.immediateFailedFuture(e);
     }
     OutstandingBatch batchToSend = null;
+    SettableFuture<String> publishResult = SettableFuture.create();
     final OutstandingPublish outstandingPublish = new OutstandingPublish(publishResult, message);
     messagesBatchLock.lock();
     try {

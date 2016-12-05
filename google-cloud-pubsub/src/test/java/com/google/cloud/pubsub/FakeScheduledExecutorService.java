@@ -89,7 +89,7 @@ public class FakeScheduledExecutorService extends AbstractExecutorService
       throw new IllegalStateException("This executor has been shutdown already");
     }
     List<Runnable> pending = new ArrayList<>();
-    for (PendingCallable<?> pendingCallable : pendingCallables) {
+    for (final PendingCallable<?> pendingCallable : pendingCallables) {
       pending.add(
           new Runnable() {
             @Override
@@ -190,7 +190,7 @@ public class FakeScheduledExecutorService extends AbstractExecutorService
     AtomicBoolean done = new AtomicBoolean(false);
     PendingCallableType type;
 
-    PendingCallable(Duration delay, Runnable runnable, PendingCallableType type) {
+    PendingCallable(Duration delay, final Runnable runnable, PendingCallableType type) {
       pendingCallable =
           new Callable<T>() {
             @Override
@@ -283,7 +283,7 @@ public class FakeScheduledExecutorService extends AbstractExecutorService
               schedulePendingCallable(this);
               break;
             default:
-              throw new IllegalArgumentException("Type " + type + " not expected.");
+              // Nothing to do
           }
         }
       }
