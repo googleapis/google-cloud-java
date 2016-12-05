@@ -52,5 +52,7 @@ class FakeCredentials extends Credentials {
   }
 
   @Override
-  public void refresh() throws IOException {}
+  public void refresh() throws IOException { 
+    // No-op
+  }
 }

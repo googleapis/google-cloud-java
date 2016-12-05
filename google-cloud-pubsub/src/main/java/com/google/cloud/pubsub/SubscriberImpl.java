@@ -133,8 +133,8 @@ public class SubscriberImpl extends AbstractService implements Subscriber {
   protected void doStart() {
     logger.debug("Starting subscriber group.");
 
-    CountDownLatch subscribersStarting = new CountDownLatch(subscriberConnections.length);
-    for (SubscriberConnection subscriber : subscriberConnections) {
+    final CountDownLatch subscribersStarting = new CountDownLatch(subscriberConnections.length);
+    for (final SubscriberConnection subscriber : subscriberConnections) {
       executor.submit(
           new Runnable() {
             @Override
@@ -200,8 +200,8 @@ public class SubscriberImpl extends AbstractService implements Subscriber {
   }
 
   private void stopAllConnections() {
-    CountDownLatch connectionsStopping = new CountDownLatch(subscriberConnections.length);
-    for (SubscriberConnection subscriberConnection : subscriberConnections) {
+    final CountDownLatch connectionsStopping = new CountDownLatch(subscriberConnections.length);
+    for (final SubscriberConnection subscriberConnection : subscriberConnections) {
       executor.submit(
           new Runnable() {
             @Override

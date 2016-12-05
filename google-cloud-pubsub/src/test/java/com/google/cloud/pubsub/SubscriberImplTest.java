@@ -85,7 +85,7 @@ public class SubscriberImplTest {
     private AckReply ackReply = AckReply.ACK;
     private Optional<CountDownLatch> messageCountLatch = Optional.absent();
     private Optional<Throwable> error = Optional.absent();
-    private boolean explicitAckReplies = false;
+    private boolean explicitAckReplies;
 
     void setReply(AckReply ackReply) {
       this.ackReply = ackReply;
@@ -331,7 +331,7 @@ public class SubscriberImplTest {
     // Send more messages to be acked
     testReceiver.setExplicitAck(true);
     for (int i = 0; i < 999; i++) {
-      sendMessages(ImmutableList.of("" + i));
+      sendMessages(ImmutableList.of(Integer.toString(i)));
     }
 
     // Reduce the 99th% ack latency of the receiver to 10 seconds
@@ -377,7 +377,7 @@ public class SubscriberImplTest {
         expectedChannelCount, fakeSubscriberServiceImpl.waitForOpenedStreams(expectedChannelCount));
   }
 
-  @Test
+  @Test(expected = IllegalStateException.class)
   public void testFailedChannel_fatalError_subscriberFails() throws Exception {
     Subscriber subscriber =
         getTestSubscriberBuilder(testReceiver)
@@ -390,13 +390,13 @@ public class SubscriberImplTest {
 
     try {
       subscriber.awaitTerminated();
-      fail("Must not terminate normally");
-    } catch (IllegalStateException e) {
+    } finally {
       // The subscriber must finish with an state error because its FAILED status.
+      assertEquals(State.FAILED, subscriber.state());
+      assertEquals(
+          Status.INVALID_ARGUMENT,
+          ((StatusRuntimeException) subscriber.failureCause()).getStatus());
     }
-    assertEquals(State.FAILED, subscriber.state());
-    assertEquals(
-        Status.INVALID_ARGUMENT, ((StatusRuntimeException) subscriber.failureCause()).getStatus());
   }
 
   private void sendMessages(Iterable<String> ackIds) throws InterruptedException {

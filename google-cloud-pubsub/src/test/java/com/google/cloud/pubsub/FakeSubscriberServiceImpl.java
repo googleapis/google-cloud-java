@@ -38,6 +38,15 @@ import java.util.concurrent.atomic.AtomicInteger;
  * Pub/Sub Publisher.
  */
 class FakeSubscriberServiceImpl extends SubscriberImplBase {
+  private final AtomicBoolean subscriptionInitialized = new AtomicBoolean(false);
+  private String subscription = "";
+  private final AtomicInteger streamAckDeadline = new AtomicInteger();
+  private final List<Stream> openedStreams = new ArrayList<>();
+  private final List<Stream> closedStreams = new ArrayList<>();
+  private final List<String> acks = new ArrayList<>();
+  private final List<ModifyAckDeadline> modAckDeadlines = new ArrayList<>();
+  private int currentStream;
+
   public static enum CloseSide {
     SERVER,
     CLIENT
@@ -46,21 +55,21 @@ class FakeSubscriberServiceImpl extends SubscriberImplBase {
   public static final class ModifyAckDeadline {
     private final String ackId;
     private final long seconds;
-
+  
     public ModifyAckDeadline(String ackId, long seconds) {
       Preconditions.checkNotNull(ackId);
       this.ackId = ackId;
       this.seconds = seconds;
     }
-
+  
     public String getAckId() {
       return ackId;
     }
-
+  
     public long getSeconds() {
       return seconds;
     }
-
+  
     @Override
     public boolean equals(Object obj) {
       if (!(obj instanceof ModifyAckDeadline)) {
@@ -69,7 +78,7 @@ class FakeSubscriberServiceImpl extends SubscriberImplBase {
       ModifyAckDeadline other = (ModifyAckDeadline) obj;
       return other.ackId.equals(this.ackId) && other.seconds == this.seconds;
     }
-
+  
     @Override
     public int hashCode() {
       return ackId.hashCode();
@@ -81,104 +90,111 @@ class FakeSubscriberServiceImpl extends SubscriberImplBase {
     private StreamObserver<StreamingPullResponse> responseObserver;
   }
 
-  private final AtomicBoolean subscriptionInitialized = new AtomicBoolean(false);
-  private String subscription = "";
-  private final AtomicInteger streamAckDeadline = new AtomicInteger();
-  private final List<Stream> openedStreams = new ArrayList<>();
-  private final List<Stream> closedStreams = new ArrayList<>();
-  private final List<String> acks = new ArrayList<>();
-  private final List<ModifyAckDeadline> modAckDeadlines = new ArrayList<>();
-  private int currentStream;
+  private class PullStreamObserver implements StreamObserver<StreamingPullRequest> {
+    private final Stream stream;
+
+    public PullStreamObserver(Stream stream) {
+      this.stream = stream;
+    }
+
+    @Override
+    public void onNext(StreamingPullRequest request) {
+      synchronized (stream) {
+        if (!request.getSubscription().isEmpty()) {
+          if (!initializeStream(request)) {
+            return;
+          }
+        }
+
+        if (request.getStreamAckDeadlineSeconds() > 0) {
+          synchronized (streamAckDeadline) {
+            streamAckDeadline.set(request.getStreamAckDeadlineSeconds());
+            streamAckDeadline.notifyAll();
+          }
+        }
+        if (subscription.isEmpty()) {
+          closeStream(stream);
+          stream.responseObserver.onError(
+              new StatusException(
+                  Status.fromCode(Code.ABORTED)
+                      .withDescription(
+                          "The stream has not been properly initialized with a "
+                              + "subscription.")));
+          return;
+        }
+        if (request.getAckIdsCount() > 0) {
+          addReceivedAcks(request.getAckIdsList());
+        }
+        if (request.getModifyDeadlineAckIdsCount() > 0) {
+          processModifyAckDeadlines(request);
+        }
+      }
+    }
+
+    private boolean processModifyAckDeadlines(StreamingPullRequest request) {
+      if (request.getModifyDeadlineAckIdsCount() != request.getModifyDeadlineSecondsCount()) {
+        closeStream(stream);
+        stream.responseObserver.onError(
+            new StatusException(
+                Status.fromCode(Code.ABORTED)
+                    .withDescription("Invalid modify ack deadline request.")));
+        return false;
+      }
+      Iterator<String> ackIds = request.getModifyDeadlineAckIdsList().iterator();
+      Iterator<Integer> seconds = request.getModifyDeadlineSecondsList().iterator();
+      while (ackIds.hasNext() && seconds.hasNext()) {
+        addReceivedModifyAckDeadline(new ModifyAckDeadline(ackIds.next(), seconds.next()));
+      }
+      return true;
+    }
+
+    private boolean initializeStream(StreamingPullRequest request) {
+      if (!subscription.isEmpty() && !subscription.equals(request.getSubscription())) {
+        stream.responseObserver.onError(
+            new StatusException(
+                Status.fromCode(Code.ABORTED)
+                    .withDescription("Can only set one subscription.")));
+        return false;
+      }
+
+      synchronized (subscriptionInitialized) {
+        if (subscription.isEmpty()) {
+          if (request.getStreamAckDeadlineSeconds() == 0) {
+            stream.responseObserver.onError(
+                new StatusException(
+                    Status.fromCode(Code.INVALID_ARGUMENT)
+                        .withDescription("A stream must be initialized with a ack deadline.")));
+            return false;
+          }
+
+          subscription = request.getSubscription();
+          subscriptionInitialized.set(true);
+          subscriptionInitialized.notifyAll();
+        }
+      }
+      addOpenedStream(stream);
+      stream.notifyAll();
+      return true;
+    }
+
+    @Override
+    public void onError(Throwable error) {
+      closeStream(stream);
+    }
+
+    @Override
+    public void onCompleted() {
+      closeStream(stream);
+      stream.responseObserver.onCompleted();
+    }
+  }
 
   @Override
   public StreamObserver<StreamingPullRequest> streamingPull(
       StreamObserver<StreamingPullResponse> responseObserver) {
     final Stream stream = new Stream();
-    stream.requestObserver =
-        new StreamObserver<StreamingPullRequest>() {
-          @Override
-          public void onNext(StreamingPullRequest request) {
-            synchronized (stream) {
-              if (!request.getSubscription().isEmpty()) {
-                if (!subscription.isEmpty() && !subscription.equals(request.getSubscription())) {
-                  responseObserver.onError(
-                      new StatusException(
-                          Status.fromCode(Code.ABORTED)
-                              .withDescription("Can only set one subscription.")));
-                  return;
-                }
-
-                synchronized (subscriptionInitialized) {
-                  if (subscription.isEmpty()) {
-                    if (request.getStreamAckDeadlineSeconds() == 0) {
-                      responseObserver.onError(
-                          new StatusException(
-                              Status.fromCode(Code.INVALID_ARGUMENT)
-                                  .withDescription(
-                                      "A stream must be initialized with a ack deadline.")));
-                    }
-
-                    subscription = request.getSubscription();
-                    subscriptionInitialized.set(true);
-                    subscriptionInitialized.notifyAll();
-                  }
-                }
-                addOpenedStream(stream);
-                stream.notifyAll();
-              }
-
-              if (request.getStreamAckDeadlineSeconds() > 0) {
-                synchronized (streamAckDeadline) {
-                  streamAckDeadline.set(request.getStreamAckDeadlineSeconds());
-                  streamAckDeadline.notifyAll();
-                }
-              }
-              if (subscription.isEmpty()) {
-                closeStream(stream);
-                responseObserver.onError(
-                    new StatusException(
-                        Status.fromCode(Code.ABORTED)
-                            .withDescription(
-                                "The stream has not been properly initialized with a "
-                                    + "subscription.")));
-                return;
-              }
-              if (request.getAckIdsCount() > 0) {
-                addReceivedAcks(request.getAckIdsList());
-              }
-              if (request.getModifyDeadlineAckIdsCount() > 0) {
-                if (request.getModifyDeadlineAckIdsCount()
-                    != request.getModifyDeadlineSecondsCount()) {
-                  closeStream(stream);
-                  responseObserver.onError(
-                      new StatusException(
-                          Status.fromCode(Code.ABORTED)
-                              .withDescription("Invalid modify ack deadline request.")));
-                  return;
-                }
-                Iterator<String> ackIds = request.getModifyDeadlineAckIdsList().iterator();
-                Iterator<Integer> seconds = request.getModifyDeadlineSecondsList().iterator();
-                while (ackIds.hasNext() && seconds.hasNext()) {
-                  addReceivedModifyAckDeadline(
-                      new ModifyAckDeadline(ackIds.next(), seconds.next()));
-                }
-              }
-            }
-          }
-
-          @Override
-          public void onError(Throwable error) {
-            closeStream(stream);
-          }
-
-          @Override
-          public void onCompleted() {
-            closeStream(stream);
-            stream.responseObserver.onCompleted();
-          }
-        };
     stream.responseObserver = responseObserver;
-
+    stream.requestObserver = new PullStreamObserver(stream);
     return stream.requestObserver;
   }
 

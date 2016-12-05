@@ -35,9 +35,6 @@ import org.junit.runners.JUnit4;
 @RunWith(JUnit4.class)
 public class FlowControllerTest {
 
-  @Before
-  public void setUp() throws Exception {}
-
   @Test
   public void testReserveRelease_ok() throws Exception {
     FlowController flowController = new FlowController(Optional.of(10), Optional.of(10), false);

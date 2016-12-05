@@ -404,7 +404,7 @@ final class SubscriberConnection extends AbstractService {
   private void addOutstadingAckHandlers(
       ExpirationInfo expiration, final List<AckHandler> ackHandlers) {
     if (!outstandingAckHandlers.containsKey(expiration)) {
-      outstandingAckHandlers.put(expiration, new ArrayList<>(ackHandlers.size()));
+      outstandingAckHandlers.put(expiration, new ArrayList<AckHandler>(ackHandlers.size()));
     }
     outstandingAckHandlers.get(expiration).addAll(ackHandlers);
   }
@@ -545,7 +545,7 @@ final class SubscriberConnection extends AbstractService {
   }
 
   private void sendOutstandingAckOperations() {
-    sendOutstandingAckOperations(new ArrayList<>());
+    sendOutstandingAckOperations(new ArrayList<PendingModifyAckDeadline>());
   }
 
   private void sendOutstandingAckOperations(List<PendingModifyAckDeadline> ackDeadlineExtensions) {
@@ -586,8 +586,7 @@ final class SubscriberConnection extends AbstractService {
         modifyAckDeadlineChunks.iterator();
 
     while (ackChunksIt.hasNext() || modifyAckDeadlineChunksIt.hasNext()) {
-      com.google.pubsub.v1.StreamingPullRequest.Builder requestBuilder =
-          StreamingPullRequest.newBuilder();
+      StreamingPullRequest.Builder requestBuilder = StreamingPullRequest.newBuilder();
       if (modifyAckDeadlineChunksIt.hasNext()) {
         List<PendingModifyAckDeadline> modAckChunk = modifyAckDeadlineChunksIt.next();
         for (PendingModifyAckDeadline modifyAckDeadline : modAckChunk) {

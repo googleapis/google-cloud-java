@@ -136,7 +136,7 @@ public interface Subscriber extends Service {
   Optional<Integer> getMaxOutstandingBytes();
 
   /** Builder of {@link Subscriber Subscribers}. */
-  public static final class Builder {
+  final class Builder {
     static final Duration MIN_ACK_EXPIRATION_PADDING = Duration.millis(100);
     static final Duration DEFAULT_ACK_EXPIRATION_PADDING = Duration.millis(500);
 
@@ -198,7 +198,9 @@ public interface Subscriber extends Service {
      */
     public Builder setChannelBuilder(
         ManagedChannelBuilder<? extends ManagedChannelBuilder<?>> channelBuilder) {
-      this.channelBuilder = Optional.of(Preconditions.checkNotNull(channelBuilder));
+      this.channelBuilder =
+          Optional.<ManagedChannelBuilder<? extends ManagedChannelBuilder<?>>>of(
+              Preconditions.checkNotNull(channelBuilder));
       return this;
     }
 

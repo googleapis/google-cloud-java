@@ -28,9 +28,9 @@ import java.util.concurrent.atomic.AtomicLong;
 public class Distribution {
 
   private final AtomicLong[] bucketCounts;
-  private long count = 0;
-  private double mean = 0;
-  private double sumOfSquaredDeviation = 0;
+  private long count;
+  private double mean;
+  private double sumOfSquaredDeviation;
 
   public Distribution(int totalBuckets) {
     Preconditions.checkArgument(totalBuckets > 0);

@@ -23,6 +23,7 @@ import com.google.common.base.Preconditions;
 import com.google.common.util.concurrent.ListenableFuture;
 import com.google.pubsub.v1.PubsubMessage;
 import io.grpc.ManagedChannelBuilder;
+import java.io.IOException;
 import java.util.concurrent.ScheduledExecutorService;
 import org.joda.time.Duration;
 
@@ -152,7 +153,7 @@ public interface Publisher {
   void shutdown();
 
   /** A builder of {@link Publisher}s. */
-  public static final class Builder {
+  final class Builder {
     String topic;
 
     // Batching options
@@ -220,7 +221,9 @@ public interface Publisher {
      */
     public Builder setChannelBuilder(
         ManagedChannelBuilder<? extends ManagedChannelBuilder<?>> channelBuilder) {
-      this.channelBuilder = Optional.of(Preconditions.checkNotNull(channelBuilder));
+      this.channelBuilder =
+          Optional.<ManagedChannelBuilder<? extends ManagedChannelBuilder<?>>>of(
+              Preconditions.checkNotNull(channelBuilder));
       return this;
     }
 
@@ -316,19 +319,19 @@ public interface Publisher {
       return this;
     }
 
-    public Publisher build() {
+    public Publisher build() throws IOException {
       return new PublisherImpl(this);
     }
   }
 
   /** Base exception that signals a flow control state. */
-  public abstract static class CloudPubsubFlowControlException extends Exception {}
+  abstract class CloudPubsubFlowControlException extends Exception {}
   
   /**
    * Returned as a future exception when client-side flow control is enforced based on the maximum
    * number of outstanding in-memory messages.
    */
-  public static final class MaxOutstandingMessagesReachedException
+  final class MaxOutstandingMessagesReachedException
       extends CloudPubsubFlowControlException {
     private final int currentMaxMessages;
 
@@ -351,7 +354,7 @@ public interface Publisher {
    * Returned as a future exception when client-side flow control is enforced based on the maximum
    * number of unacknowledged in-memory bytes.
    */
-  public static final class MaxOutstandingBytesReachedException
+  final class MaxOutstandingBytesReachedException
       extends CloudPubsubFlowControlException {
     private final int currentMaxBytes;
 

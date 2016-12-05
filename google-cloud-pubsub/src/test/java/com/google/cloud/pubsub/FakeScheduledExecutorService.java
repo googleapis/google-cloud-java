@@ -49,10 +49,10 @@ public class FakeScheduledExecutorService extends AbstractExecutorService
   private final MutableDateTime currentTime = MutableDateTime.now();
   private final ExecutorService delegate = Executors.newSingleThreadExecutor();
 
-  public  FakeScheduledExecutorService() {
+  public FakeScheduledExecutorService() {
     DateTimeUtils.setCurrentMillisFixed(currentTime.getMillis());
   }
-  
+
   /**
    * This will advance the reference time of the executor and execute (in the same thread) any
    * outstanding callable which execution time has passed.
@@ -189,7 +189,7 @@ public class FakeScheduledExecutorService extends AbstractExecutorService
     AtomicBoolean cancelled = new AtomicBoolean(false);
     AtomicBoolean done = new AtomicBoolean(false);
     PendingCallableType type;
-  
+
     PendingCallable(Duration delay, Runnable runnable, PendingCallableType type) {
       pendingCallable =
           new Callable<T>() {
@@ -202,7 +202,7 @@ public class FakeScheduledExecutorService extends AbstractExecutorService
       this.type = type;
       this.delay = delay;
     }
-  
+
     PendingCallable(Duration delay, Callable<T> callable, PendingCallableType type) {
       pendingCallable = callable;
       this.type = type;
@@ -218,16 +218,15 @@ public class FakeScheduledExecutorService extends AbstractExecutorService
         @Override
         public long getDelay(TimeUnit unit) {
           return unit.convert(
-              new Duration(currentTime, getScheduledTime()).getMillis(),
-              TimeUnit.MILLISECONDS);
+              new Duration(currentTime, getScheduledTime()).getMillis(), TimeUnit.MILLISECONDS);
         }
-  
+
         @Override
         public int compareTo(Delayed o) {
           return Ints.saturatedCast(
               getDelay(TimeUnit.MILLISECONDS) - o.getDelay(TimeUnit.MILLISECONDS));
         }
-  
+
         @Override
         public boolean cancel(boolean mayInterruptIfRunning) {
           synchronized (this) {
@@ -235,22 +234,22 @@ public class FakeScheduledExecutorService extends AbstractExecutorService
             return !done.get();
           }
         }
-  
+
         @Override
         public boolean isCancelled() {
           return cancelled.get();
         }
-  
+
         @Override
         public boolean isDone() {
           return done.get();
         }
-  
+
         @Override
         public T get() throws InterruptedException, ExecutionException {
           return future.get();
         }
-  
+
         @Override
         public T get(long timeout, TimeUnit unit)
             throws InterruptedException, ExecutionException, TimeoutException {
@@ -258,7 +257,7 @@ public class FakeScheduledExecutorService extends AbstractExecutorService
         }
       };
     }
-  
+
     T call() {
       T result = null;
       synchronized (this) {
@@ -283,12 +282,14 @@ public class FakeScheduledExecutorService extends AbstractExecutorService
               this.creationTime = this.creationTime.plus(delay);
               schedulePendingCallable(this);
               break;
+            default:
+              throw new IllegalArgumentException("Type " + type + " not expected.");
           }
         }
       }
       return result;
     }
-  
+
     @Override
     public int compareTo(PendingCallable<T> other) {
       return getScheduledTime().compareTo(other.getScheduledTime());
