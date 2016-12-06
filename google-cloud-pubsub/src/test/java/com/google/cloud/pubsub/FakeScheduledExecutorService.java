@@ -53,6 +53,40 @@ public class FakeScheduledExecutorService extends AbstractExecutorService
     DateTimeUtils.setCurrentMillisFixed(currentTime.getMillis());
   }
 
+  @Override
+  public ScheduledFuture<?> schedule(Runnable command, long delay, TimeUnit unit) {
+    return schedulePendingCallable(
+        new PendingCallable<>(
+            new Duration(unit.toMillis(delay)), command, PendingCallableType.NORMAL));
+  }
+
+  @Override
+  public <V> ScheduledFuture<V> schedule(Callable<V> callable, long delay, TimeUnit unit) {
+    return schedulePendingCallable(
+        new PendingCallable<>(
+            new Duration(unit.toMillis(delay)), callable, PendingCallableType.NORMAL));
+  }
+
+  @Override
+  public ScheduledFuture<?> scheduleAtFixedRate(
+      Runnable command, long initialDelay, long period, TimeUnit unit) {
+    return schedulePendingCallable(
+        new PendingCallable<>(
+            new Duration(unit.toMillis(initialDelay)), command, PendingCallableType.FIXED_RATE));
+  }
+
+  @Override
+  public ScheduledFuture<?> scheduleWithFixedDelay(
+      Runnable command, long initialDelay, long delay, TimeUnit unit) {
+    return schedulePendingCallable(
+        new PendingCallable<>(
+            new Duration(unit.toMillis(initialDelay)), command, PendingCallableType.FIXED_DELAY));
+  }
+
+  public void tick(long time, TimeUnit unit) {
+    advanceTime(Duration.millis(unit.toMillis(time)));
+  }
+
   /**
    * This will advance the reference time of the executor and execute (in the same thread) any
    * outstanding callable which execution time has passed.
@@ -132,36 +166,6 @@ public class FakeScheduledExecutorService extends AbstractExecutorService
       throw new IllegalStateException("This executor has been shutdown");
     }
     delegate.execute(command);
-  }
-
-  @Override
-  public ScheduledFuture<?> schedule(Runnable command, long delay, TimeUnit unit) {
-    return schedulePendingCallable(
-        new PendingCallable<>(
-            new Duration(unit.toMillis(delay)), command, PendingCallableType.NORMAL));
-  }
-
-  @Override
-  public <V> ScheduledFuture<V> schedule(Callable<V> callable, long delay, TimeUnit unit) {
-    return schedulePendingCallable(
-        new PendingCallable<>(
-            new Duration(unit.toMillis(delay)), callable, PendingCallableType.NORMAL));
-  }
-
-  @Override
-  public ScheduledFuture<?> scheduleAtFixedRate(
-      Runnable command, long initialDelay, long period, TimeUnit unit) {
-    return schedulePendingCallable(
-        new PendingCallable<>(
-            new Duration(unit.toMillis(initialDelay)), command, PendingCallableType.FIXED_RATE));
-  }
-
-  @Override
-  public ScheduledFuture<?> scheduleWithFixedDelay(
-      Runnable command, long initialDelay, long delay, TimeUnit unit) {
-    return schedulePendingCallable(
-        new PendingCallable<>(
-            new Duration(unit.toMillis(initialDelay)), command, PendingCallableType.FIXED_DELAY));
   }
 
   <V> ScheduledFuture<V> schedulePendingCallable(PendingCallable<V> callable) {

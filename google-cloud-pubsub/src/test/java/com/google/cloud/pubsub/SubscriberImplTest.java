@@ -17,7 +17,6 @@
 package com.google.cloud.pubsub;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.fail;
 
 import com.google.cloud.pubsub.FakeSubscriberServiceImpl.ModifyAckDeadline;
 import com.google.cloud.pubsub.Subscriber.Builder;
