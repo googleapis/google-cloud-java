@@ -33,6 +33,18 @@ public enum LegacySQLTypeName {
   BOOLEAN(StandardSQLTypeName.BOOL),
   /** Represents an absolute point in time, with microsecond precision. */
   TIMESTAMP(StandardSQLTypeName.TIMESTAMP),
+  /** Represents a logical calendar date. Note, support for this type is limited in legacy SQL. */
+  DATE(StandardSQLTypeName.DATE),
+  /**
+   * Represents a time, independent of a specific date, to microsecond precision. Note, support for
+   * this type is limited in legacy SQL.
+   */
+  TIME(StandardSQLTypeName.TIME),
+  /**
+   * Represents a year, month, day, hour, minute, second, and subsecond (microsecond precision).
+   * Note, support for this type is limited in legacy SQL.
+   */
+  DATETIME(StandardSQLTypeName.DATETIME),
   /** A record type with a nested schema. */
   RECORD(StandardSQLTypeName.STRUCT);
 
