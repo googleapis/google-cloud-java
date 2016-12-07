@@ -972,6 +972,30 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * }
    * }</pre>
    *
+   * <p>Example of running a query with query parameters.
+   * <pre> {@code
+   * String query = "SELECT distinct(corpus) FROM `bigquery-public-data.samples.shakespeare` where word_count > ?";
+   * QueryRequest request = QueryRequest.newBuilder(query)
+   *     .setUseLegacySql(false) // standard SQL is required to use query parameters
+   *     .addPositionalParameter(QueryParameterValue.int64(5))
+   *     .build();
+   * QueryResponse response = bigquery.query(request);
+   * // Wait for things to finish
+   * while (!response.jobCompleted()) {
+   *   Thread.sleep(1000);
+   *   response = bigquery.getQueryResults(response.getJobId());
+   * }
+   * if (response.hasErrors()) {
+   *   // handle errors
+   * }
+   * QueryResult result = response.getResult();
+   * Iterator<List<FieldValue>> rowIterator = result.iterateAll();
+   * while (rowIterator.hasNext()) {
+   *   List<FieldValue> row = rowIterator.next();
+   *   // do something with the data
+   * }
+   * }</pre>
+   *
    * @throws BigQueryException upon failure
    */
   QueryResponse query(QueryRequest request);
