@@ -19,11 +19,11 @@ package com.google.cloud.logging;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.cloud.MonitoredResource;
-import com.google.cloud.logging.spi.v2.LoggingServiceV2Client;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableMap;
 import com.google.logging.v2.LogEntryOperation;
+import com.google.logging.v2.LogName;
 import com.google.protobuf.Timestamp;
 
 import java.io.Serializable;
@@ -520,7 +520,7 @@ public class LogEntry implements Serializable {
     com.google.logging.v2.LogEntry.Builder builder = payload.toPb();
     builder.putAllLabels(labels);
     if (logName != null) {
-      builder.setLogName(LoggingServiceV2Client.formatLogName(projectId, logName));
+      builder.setLogName(LogName.create(projectId, logName).toString());
     }
     if (resource != null) {
       builder.setResource(resource.toPb());
@@ -581,7 +581,7 @@ public class LogEntry implements Serializable {
     builder.setLabels(entryPb.getLabelsMap());
     builder.setSeverity(Severity.fromPb(entryPb.getSeverity()));
     if (!entryPb.getLogName().equals("")) {
-      builder.setLogName(LoggingServiceV2Client.parseLogFromLogName(entryPb.getLogName()));
+      builder.setLogName(LogName.parse(entryPb.getLogName()).getLog());
     }
     if (!entryPb.getResource().equals(com.google.api.MonitoredResource.getDefaultInstance())) {
       builder.setResource(MonitoredResource.fromPb(entryPb.getResource()));

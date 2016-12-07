@@ -28,8 +28,8 @@
  * <pre>
  * <code>
  * try (LoggingServiceV2Client loggingServiceV2Client = LoggingServiceV2Client.create()) {
- *   String formattedLogName = LoggingServiceV2Client.formatLogName("[PROJECT]", "[LOG]");
- *   loggingServiceV2Client.deleteLog(formattedLogName);
+ *   LogNameOneof logName = LogNameOneof.from(LogName.create("[PROJECT]", "[LOG]"));
+ *   loggingServiceV2Client.deleteLog(logName);
  * }
  * </code>
  * </pre>
@@ -44,8 +44,8 @@
  * <pre>
  * <code>
  * try (ConfigServiceV2Client configServiceV2Client = ConfigServiceV2Client.create()) {
- *   String formattedSinkName = ConfigServiceV2Client.formatSinkName("[PROJECT]", "[SINK]");
- *   LogSink response = configServiceV2Client.getSink(formattedSinkName);
+ *   SinkNameOneof sinkName = SinkNameOneof.from(SinkName.create("[PROJECT]", "[SINK]"));
+ *   LogSink response = configServiceV2Client.getSink(sinkName);
  * }
  * </code>
  * </pre>
@@ -59,8 +59,8 @@
  * <pre>
  * <code>
  * try (MetricsServiceV2Client metricsServiceV2Client = MetricsServiceV2Client.create()) {
- *   String formattedMetricName = MetricsServiceV2Client.formatMetricName("[PROJECT]", "[METRIC]");
- *   LogMetric response = metricsServiceV2Client.getLogMetric(formattedMetricName);
+ *   MetricNameOneof metricName = MetricNameOneof.from(MetricName.create("[PROJECT]", "[METRIC]"));
+ *   LogMetric response = metricsServiceV2Client.getLogMetric(metricName);
  * }
  * </code>
  * </pre>

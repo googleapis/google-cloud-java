@@ -26,6 +26,8 @@ import com.google.logging.v2.DeleteLogRequest;
 import com.google.logging.v2.ListLogEntriesRequest;
 import com.google.logging.v2.ListLogEntriesResponse;
 import com.google.logging.v2.LogEntry;
+import com.google.logging.v2.LogName;
+import com.google.logging.v2.LogNameOneof;
 import com.google.logging.v2.WriteLogEntriesRequest;
 import com.google.logging.v2.WriteLogEntriesResponse;
 import com.google.protobuf.Empty;
@@ -92,15 +94,15 @@ public class LoggingServiceV2Test {
     Empty expectedResponse = Empty.newBuilder().build();
     mockLoggingServiceV2.addResponse(expectedResponse);
 
-    String formattedLogName = LoggingServiceV2Client.formatLogName("[PROJECT]", "[LOG]");
+    LogNameOneof logName = LogNameOneof.from(LogName.create("[PROJECT]", "[LOG]"));
 
-    client.deleteLog(formattedLogName);
+    client.deleteLog(logName);
 
     List<GeneratedMessageV3> actualRequests = mockLoggingServiceV2.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     DeleteLogRequest actualRequest = (DeleteLogRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedLogName, actualRequest.getLogName());
+    Assert.assertEquals(logName, actualRequest.getLogNameAsLogNameOneof());
   }
 
   @Test
@@ -110,9 +112,9 @@ public class LoggingServiceV2Test {
     mockLoggingServiceV2.addException(exception);
 
     try {
-      String formattedLogName = LoggingServiceV2Client.formatLogName("[PROJECT]", "[LOG]");
+      LogNameOneof logName = LogNameOneof.from(LogName.create("[PROJECT]", "[LOG]"));
 
-      client.deleteLog(formattedLogName);
+      client.deleteLog(logName);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
       Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
@@ -125,20 +127,20 @@ public class LoggingServiceV2Test {
     WriteLogEntriesResponse expectedResponse = WriteLogEntriesResponse.newBuilder().build();
     mockLoggingServiceV2.addResponse(expectedResponse);
 
-    String formattedLogName = LoggingServiceV2Client.formatLogName("[PROJECT]", "[LOG]");
+    LogNameOneof logName = LogNameOneof.from(LogName.create("[PROJECT]", "[LOG]"));
     MonitoredResource resource = MonitoredResource.newBuilder().build();
     Map<String, String> labels = new HashMap<>();
     List<LogEntry> entries = new ArrayList<>();
 
     WriteLogEntriesResponse actualResponse =
-        client.writeLogEntries(formattedLogName, resource, labels, entries);
+        client.writeLogEntries(logName, resource, labels, entries);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<GeneratedMessageV3> actualRequests = mockLoggingServiceV2.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     WriteLogEntriesRequest actualRequest = (WriteLogEntriesRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedLogName, actualRequest.getLogName());
+    Assert.assertEquals(logName, actualRequest.getLogNameAsLogNameOneof());
     Assert.assertEquals(resource, actualRequest.getResource());
     Assert.assertEquals(labels, actualRequest.getLabels());
     Assert.assertEquals(entries, actualRequest.getEntriesList());
@@ -151,12 +153,12 @@ public class LoggingServiceV2Test {
     mockLoggingServiceV2.addException(exception);
 
     try {
-      String formattedLogName = LoggingServiceV2Client.formatLogName("[PROJECT]", "[LOG]");
+      LogNameOneof logName = LogNameOneof.from(LogName.create("[PROJECT]", "[LOG]"));
       MonitoredResource resource = MonitoredResource.newBuilder().build();
       Map<String, String> labels = new HashMap<>();
       List<LogEntry> entries = new ArrayList<>();
 
-      client.writeLogEntries(formattedLogName, resource, labels, entries);
+      client.writeLogEntries(logName, resource, labels, entries);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
       Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
