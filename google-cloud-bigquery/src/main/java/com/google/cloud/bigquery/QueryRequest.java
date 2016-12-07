@@ -16,11 +16,20 @@
 
 package com.google.cloud.bigquery;
 
+import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import com.google.api.services.bigquery.model.QueryParameter;
+import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
-
+import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableMap;
+import com.google.common.collect.Iterables;
+import com.google.common.collect.Lists;
+import com.google.common.collect.Maps;
 import java.io.Serializable;
+import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -66,6 +75,8 @@ public final class QueryRequest implements Serializable {
   private static final long serialVersionUID = -8727328332415880852L;
 
   private final String query;
+  private final ImmutableList<QueryParameterValue> positionalParameters;
+  private final ImmutableMap<String, QueryParameterValue> namedParameters;
   private final Long pageSize;
   private final DatasetId defaultDataset;
   private final Long maxWaitTime;
@@ -76,6 +87,8 @@ public final class QueryRequest implements Serializable {
   public static final class Builder {
 
     private String query;
+    private List<QueryParameterValue> positionalParameters = Lists.newArrayList();
+    private Map<String, QueryParameterValue> namedParameters = Maps.newHashMap();
     private Long pageSize;
     private DatasetId defaultDataset;
     private Long maxWaitTime;
@@ -98,6 +111,88 @@ public final class QueryRequest implements Serializable {
      */
     public Builder setQuery(String query) {
       this.query = checkNotNull(query);
+      return this;
+    }
+
+    /**
+     * Adds a positional query parameter to the list of query parameters. See
+     * {@link #setPositionalParameters(Iterable)} for more details on the input requirements.
+     *
+     * <p>A positional parameter cannot be added after named parameters have been added.
+     */
+    public Builder addPositionalParameter(QueryParameterValue value) {
+      checkNotNull(value);
+      if (!namedParameters.isEmpty()) {
+        throw new IllegalStateException(
+            "Positional parameters can't be combined with named parameters");
+      }
+      positionalParameters.add(value);
+      return this;
+    }
+
+    /**
+     * Sets the query parameters to a list of positional query parameters to use in the query.
+     *
+     * <p>The set of query parameters must either be all positional or all named parameters.
+     * Positional parameters are denoted in the query with a question mark (?).
+     *
+     * <p>Additionally, useLegacySql must be set to false; query parameters cannot be used with
+     * legacy SQL.
+     *
+     * <p>The values parameter can be set to null to clear out the positional
+     * parameters so that named parameters can be used instead.
+     */
+    public Builder setPositionalParameters(Iterable<QueryParameterValue> values) {
+      if (values == null || Iterables.isEmpty(values)) {
+        positionalParameters = Lists.newArrayList();
+      } else {
+        if (!this.namedParameters.isEmpty()) {
+          throw new IllegalStateException(
+              "Positional parameters can't be combined with named parameters");
+        }
+        this.positionalParameters = Lists.newArrayList(values);
+      }
+      return this;
+    }
+
+    /**
+     * Adds a named query parameter to the set of query parameters. See
+     * {@link #setNamedParameters(Map)} for more details on the input requirements.
+     *
+     * <p>A named parameter cannot be added after positional parameters have been added.
+     */
+    public Builder addNamedParameter(String name, QueryParameterValue value) {
+      checkNotNull(value);
+      if (!this.positionalParameters.isEmpty()) {
+        throw new IllegalStateException(
+            "Named parameters can't be combined with positional parameters");
+      }
+      namedParameters.put(name, value);
+      return this;
+    }
+
+    /**
+     * Sets the query parameters to a set of named query parameters to use in the query.
+     *
+     * <p>The set of query parameters must either be all positional or all named parameters. Named
+     * parameters are denoted using an @ prefix, e.g. @myParam for a parameter named "myParam".
+     *
+     * <p>Additionally, useLegacySql must be set to false; query parameters cannot be used with
+     * legacy SQL.
+     *
+     * <p>The values parameter can be set to null to clear out the named parameters so that
+     * positional parameters can be used instead.
+     */
+    public Builder setNamedParameters(Map<String, QueryParameterValue> values) {
+      if (values == null || values.isEmpty()) {
+        namedParameters = Maps.newHashMap();
+      } else {
+        if (!this.positionalParameters.isEmpty()) {
+          throw new IllegalStateException(
+              "Named parameters can't be combined with positional parameters");
+        }
+        this.namedParameters = Maps.newHashMap(values);
+      }
       return this;
     }
 
@@ -251,6 +346,16 @@ public final class QueryRequest implements Serializable {
 
   private QueryRequest(Builder builder) {
     query = builder.query;
+    checkNotNull(builder.positionalParameters);
+    checkNotNull(builder.namedParameters);
+    if (!builder.positionalParameters.isEmpty()) {
+      checkArgument(builder.namedParameters.isEmpty());
+    }
+    if (!builder.namedParameters.isEmpty()) {
+      checkArgument(builder.positionalParameters.isEmpty());
+    }
+    positionalParameters = ImmutableList.copyOf(builder.positionalParameters);
+    namedParameters = ImmutableMap.copyOf(builder.namedParameters);
     pageSize = builder.pageSize;
     defaultDataset = builder.defaultDataset;
     maxWaitTime = builder.maxWaitTime;
@@ -272,6 +377,20 @@ public final class QueryRequest implements Serializable {
    */
   public String getQuery() {
     return query;
+  }
+
+  /**
+   * Returns the positional query parameters to use for the query.
+   */
+  public List<QueryParameterValue> getPositionalParameters() {
+    return positionalParameters;
+  }
+
+  /**
+   * Returns the named query parameters to use for the query.
+   */
+  public Map<String, QueryParameterValue> getNamedParameters() {
+    return namedParameters;
   }
 
   /**
@@ -367,6 +486,8 @@ public final class QueryRequest implements Serializable {
   public Builder toBuilder() {
     return new Builder()
         .setQuery(query)
+        .setPositionalParameters(positionalParameters)
+        .setNamedParameters(namedParameters)
         .setPageSize(pageSize)
         .setDefaultDataset(defaultDataset)
         .setMaxWaitTime(maxWaitTime)
@@ -379,6 +500,8 @@ public final class QueryRequest implements Serializable {
   public String toString() {
     return MoreObjects.toStringHelper(this)
         .add("query", query)
+        .add("positionalParameters", positionalParameters)
+        .add("namedParameters", namedParameters)
         .add("pageSize", pageSize)
         .add("defaultDataset", defaultDataset)
         .add("maxWaitTime", maxWaitTime)
@@ -390,7 +513,15 @@ public final class QueryRequest implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(query, pageSize, defaultDataset, maxWaitTime, dryRun, useQueryCache,
+    return Objects.hash(
+        query,
+        positionalParameters,
+        namedParameters,
+        pageSize,
+        defaultDataset,
+        maxWaitTime,
+        dryRun,
+        useQueryCache,
         useLegacySql);
   }
 
@@ -412,6 +543,15 @@ public final class QueryRequest implements Serializable {
   com.google.api.services.bigquery.model.QueryRequest toPb() {
     com.google.api.services.bigquery.model.QueryRequest queryRequestPb =
         new com.google.api.services.bigquery.model.QueryRequest().setQuery(query);
+    if (!positionalParameters.isEmpty()) {
+      List<QueryParameter> queryParametersPb
+          = Lists.transform(positionalParameters, POSITIONAL_PARAMETER_TO_PB_FUNCTION);
+      queryRequestPb.setQueryParameters(queryParametersPb);
+    } else if (!namedParameters.isEmpty()) {
+      List<QueryParameter> queryParametersPb
+          = Lists.transform(namedParameters.entrySet().asList(), NAMED_PARAMETER_TO_PB_FUNCTION);
+      queryRequestPb.setQueryParameters(queryParametersPb);
+    }
     if (pageSize != null) {
       queryRequestPb.setMaxResults(pageSize);
     }
@@ -457,6 +597,21 @@ public final class QueryRequest implements Serializable {
 
   static QueryRequest fromPb(com.google.api.services.bigquery.model.QueryRequest queryRequestPb) {
     Builder builder = newBuilder(queryRequestPb.getQuery());
+    if (queryRequestPb.getQueryParameters() != null && !queryRequestPb.getQueryParameters().isEmpty()) {
+      if (queryRequestPb.getQueryParameters().get(0).getName() == null) {
+        builder.setPositionalParameters(
+            Lists.transform(queryRequestPb.getQueryParameters(), POSITIONAL_PARAMETER_FROM_PB_FUNCTION));
+      } else {
+        Map<String, QueryParameterValue> values = Maps.newHashMap();
+        for (QueryParameter queryParameterPb : queryRequestPb.getQueryParameters()) {
+          checkNotNull(queryParameterPb.getName());
+          QueryParameterValue value = QueryParameterValue.fromPb(
+              queryParameterPb.getParameterValue(), queryParameterPb.getParameterType());
+          values.put(queryParameterPb.getName(), value);
+        }
+        builder.setNamedParameters(values);
+      }
+    }
     if (queryRequestPb.getMaxResults() != null) {
       builder.setPageSize(queryRequestPb.getMaxResults());
     }
@@ -477,4 +632,54 @@ public final class QueryRequest implements Serializable {
     }
     return builder.build();
   }
+
+  static QueryParameter namedParameterToPb(Map.Entry<String, QueryParameterValue> entry) {
+    QueryParameter queryParameterPb =
+        new QueryParameter();
+    queryParameterPb.setName(entry.getKey());
+    queryParameterPb.setParameterValue(entry.getValue().toValuePb());
+    queryParameterPb.setParameterType(entry.getValue().toTypePb());
+    return queryParameterPb;
+  }
+
+  static QueryParameter positionalParameterToPb(QueryParameterValue value) {
+    QueryParameter queryParameterPb =
+        new QueryParameter();
+    queryParameterPb.setParameterValue(value.toValuePb());
+    queryParameterPb.setParameterType(value.toTypePb());
+    return queryParameterPb;
+  }
+
+  static QueryParameterValue positionalParameterFromPb(QueryParameter queryParameterPb) {
+    checkArgument(queryParameterPb.getName() == null);
+    return QueryParameterValue.fromPb(
+        queryParameterPb.getParameterValue(), queryParameterPb.getParameterType());
+  }
+
+  static final Function<QueryParameter, QueryParameterValue>
+      POSITIONAL_PARAMETER_FROM_PB_FUNCTION =
+      new Function<QueryParameter, QueryParameterValue>() {
+        @Override
+        public QueryParameterValue apply(QueryParameter pb) {
+          return positionalParameterFromPb(pb);
+        }
+      };
+  static final Function<QueryParameterValue, QueryParameter>
+      POSITIONAL_PARAMETER_TO_PB_FUNCTION =
+      new Function<QueryParameterValue, QueryParameter>() {
+        @Override
+        public QueryParameter apply(
+            QueryParameterValue value) {
+          return positionalParameterToPb(value);
+        }
+      };
+  static final Function<Map.Entry<String, QueryParameterValue>, QueryParameter>
+      NAMED_PARAMETER_TO_PB_FUNCTION =
+      new Function<Map.Entry<String, QueryParameterValue>, QueryParameter>() {
+        @Override
+        public QueryParameter apply(
+            Map.Entry<String, QueryParameterValue> value) {
+          return namedParameterToPb(value);
+        }
+      };
 }

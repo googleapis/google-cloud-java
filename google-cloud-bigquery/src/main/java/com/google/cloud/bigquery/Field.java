@@ -72,19 +72,15 @@ public final class Field implements Serializable {
 
     private static final long serialVersionUID = 2841484762609576959L;
 
-    public enum Value {
-      BYTES, STRING, INTEGER, FLOAT, BOOLEAN, TIMESTAMP, RECORD
-    }
-
-    private final Value value;
+    private final LegacySQLTypeName value;
     private final List<Field> fields;
 
-    private Type(Value value) {
+    private Type(LegacySQLTypeName value) {
       this.value = checkNotNull(value);
       this.fields = null;
     }
 
-    private Type(Value value, List<Field> fields) {
+    private Type(LegacySQLTypeName value, List<Field> fields) {
       checkArgument(fields.size() > 0, "Record must have at least one field");
       this.value = value;
       this.fields = fields;
@@ -97,7 +93,7 @@ public final class Field implements Serializable {
      *     Data Types</a>
      */
     @Deprecated
-    public Value value() {
+    public LegacySQLTypeName value() {
       return getValue();
     }
 
@@ -107,13 +103,13 @@ public final class Field implements Serializable {
      * @see <a href="https://cloud.google.com/bigquery/preparing-data-for-bigquery#datatypes">
      *     Data Types</a>
      */
-    public Value getValue() {
+    public LegacySQLTypeName getValue() {
       return value;
     }
 
     /**
-     * Returns the list of sub-fields if {@link #value()} is set to {@link Value#RECORD}. Returns
-     * {@code null} otherwise.
+     * Returns the list of sub-fields if {@link #value()} is set to {@link
+     * LegacySQLTypeName#RECORD}. Returns {@code null} otherwise.
      */
     @Deprecated
     public List<Field> fields() {
@@ -121,67 +117,67 @@ public final class Field implements Serializable {
     }
 
     /**
-     * Returns the list of sub-fields if {@link #value()} is set to {@link Value#RECORD}. Returns
-     * {@code null} otherwise.
+     * Returns the list of sub-fields if {@link #value()} is set to {@link
+     * LegacySQLTypeName#RECORD}. Returns {@code null} otherwise.
      */
     public List<Field> getFields() {
       return fields;
     }
 
     /**
-     * Returns a {@link Value#BYTES} field value.
+     * Returns a {@link LegacySQLTypeName#BYTES} field value.
      */
     public static Type bytes() {
-      return new Type(Value.BYTES);
+      return new Type(LegacySQLTypeName.BYTES);
     }
 
     /**
-     * Returns a {@link Value#STRING} field value.
+     * Returns a {@link LegacySQLTypeName#STRING} field value.
      */
     public static Type string() {
-      return new Type(Value.STRING);
+      return new Type(LegacySQLTypeName.STRING);
     }
 
     /**
-     * Returns an {@link Value#INTEGER} field value.
+     * Returns an {@link LegacySQLTypeName#INTEGER} field value.
      */
     public static Type integer() {
-      return new Type(Value.INTEGER);
+      return new Type(LegacySQLTypeName.INTEGER);
     }
 
     /**
-     * Returns a {@link Value#FLOAT} field value.
+     * Returns a {@link LegacySQLTypeName#FLOAT} field value.
      */
     public static Type floatingPoint() {
-      return new Type(Value.FLOAT);
+      return new Type(LegacySQLTypeName.FLOAT);
     }
 
     /**
-     * Returns a {@link Value#BOOLEAN} field value.
+     * Returns a {@link LegacySQLTypeName#BOOLEAN} field value.
      */
     public static Type bool() {
-      return new Type(Value.BOOLEAN);
+      return new Type(LegacySQLTypeName.BOOLEAN);
     }
 
     /**
-     * Returns a {@link Value#TIMESTAMP} field value.
+     * Returns a {@link LegacySQLTypeName#TIMESTAMP} field value.
      */
     public static Type timestamp() {
-      return new Type(Value.TIMESTAMP);
+      return new Type(LegacySQLTypeName.TIMESTAMP);
     }
 
     /**
-     * Returns a {@link Value#RECORD} field value with associated list of sub-fields.
+     * Returns a {@link LegacySQLTypeName#RECORD} field value with associated list of sub-fields.
      */
     public static Type record(Field... fields) {
-      return new Type(Value.RECORD, ImmutableList.copyOf(fields));
+      return new Type(LegacySQLTypeName.RECORD, ImmutableList.copyOf(fields));
     }
 
     /**
-     * Returns a {@link Value#RECORD} field value with associated list of sub-fields.
+     * Returns a {@link LegacySQLTypeName#RECORD} field value with associated list of sub-fields.
      */
     public static Type record(List<Field> fields) {
-      return new Type(Value.RECORD, ImmutableList.copyOf(checkNotNull(fields)));
+      return new Type(LegacySQLTypeName.RECORD, ImmutableList.copyOf(checkNotNull(fields)));
     }
 
     @Override
@@ -389,8 +385,8 @@ public final class Field implements Serializable {
   }
 
   /**
-   * Returns the list of sub-fields if {@link #type()} is a {@link Type.Value#RECORD}. Returns
-   * {@code null} otherwise.
+   * Returns the list of sub-fields if {@link #type()} is a {@link LegacySQLTypeName#RECORD}.
+   * Returns {@code null} otherwise.
    */
   @Deprecated
   public List<Field> fields() {
@@ -398,8 +394,8 @@ public final class Field implements Serializable {
   }
 
   /**
-   * Returns the list of sub-fields if {@link #type()} is a {@link Type.Value#RECORD}. Returns
-   * {@code null} otherwise.
+   * Returns the list of sub-fields if {@link #type()} is a {@link LegacySQLTypeName#RECORD}.
+   * Returns {@code null} otherwise.
    */
   public List<Field> getFields() {
     return type.getFields();
@@ -474,7 +470,7 @@ public final class Field implements Serializable {
   static Field fromPb(TableFieldSchema fieldSchemaPb) {
     Builder fieldBuilder = new Builder();
     fieldBuilder.setName(fieldSchemaPb.getName());
-    Type.Value enumValue = Type.Value.valueOf(fieldSchemaPb.getType());
+    LegacySQLTypeName enumValue = LegacySQLTypeName.valueOf(fieldSchemaPb.getType());
     if (fieldSchemaPb.getMode() != null) {
       fieldBuilder.setMode(Mode.valueOf(fieldSchemaPb.getMode()));
     }
