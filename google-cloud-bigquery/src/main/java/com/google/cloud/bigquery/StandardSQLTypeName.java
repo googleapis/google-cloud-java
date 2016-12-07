@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google Inc. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,6 +19,8 @@ package com.google.cloud.bigquery;
 /**
  * A type used in standard SQL contexts. For example, these types are used in queries
  * with query parameters, which requires usage of standard SQL.
+ *
+ * @see <a href="https://cloud.google.com/bigquery/docs/reference/standard-sql/data-types">https://cloud.google.com/bigquery/docs/reference/standard-sql/data-types</a>
  */
 public enum StandardSQLTypeName {
   /** A Boolean value (true or false). */

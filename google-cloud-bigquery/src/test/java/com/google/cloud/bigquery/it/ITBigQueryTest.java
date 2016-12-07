@@ -829,11 +829,7 @@ public class ITBigQueryTest {
         .build();
     QueryResponse response = queryAndWaitForResponse(request);
     assertEquals(QUERY_RESULT_SCHEMA, response.getResult().getSchema());
-    int rowCount = 0;
-    for (List<FieldValue> row : response.getResult().getValues()) {
-      rowCount++;
-    }
-    assertEquals(2, rowCount);
+    assertEquals(2, Iterables.size(response.getResult().getValues()));
   }
 
   @Test
@@ -859,7 +855,6 @@ public class ITBigQueryTest {
         .build();
     QueryResponse response = queryAndWaitForResponse(request);
     assertEquals(QUERY_RESULT_SCHEMA, response.getResult().getSchema());
-    int rowCount = 0;
     assertEquals(2, Iterables.size(response.getResult().getValues()));
   }
 

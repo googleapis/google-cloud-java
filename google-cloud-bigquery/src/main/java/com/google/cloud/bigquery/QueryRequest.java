@@ -110,10 +110,11 @@ public final class QueryRequest implements Serializable {
      * {@link #setQueryParameters(Iterable)} for more details on the input requirements.
      */
     public Builder addQueryParameter(QueryParameter queryParameter) {
+      checkNotNull(queryParameter);
       if (queryParameters == null) {
         queryParameters = Lists.newArrayList();
       }
-      queryParameters.add(checkNotNull(queryParameter));
+      queryParameters.add(queryParameter);
       return this;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google Inc. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -134,16 +134,23 @@ public class QueryParameterValue implements Serializable {
   }
 
   private QueryParameterValue(Builder builder) {
-    checkArgument(
-        (builder.arrayValues != null) == (StandardSQLTypeName.ARRAY.equals(builder.type)));
-    checkArgument(
-        (builder.arrayValues != null) == (builder.arrayType != null));
-    checkArgument(
-        (builder.arrayValues != null) == (builder.value == null));
-    this.value = builder.value;
-    this.arrayValues =
-        builder.arrayValues == null ? null : ImmutableList.copyOf(builder.arrayValues);
+    if (builder.arrayValues != null) {
+      checkArgument(
+          StandardSQLTypeName.ARRAY.equals(builder.type),
+          "type must be ARRAY if arrayValues is set");
+      checkArgument(builder.arrayType != null, "arrayType must be set if arrayValues is set");
+      checkArgument(builder.value == null, "value can't be set if arrayValues is set");
+      this.arrayValues = ImmutableList.copyOf(builder.arrayValues);
+    } else {
+      checkArgument(
+          !StandardSQLTypeName.ARRAY.equals(builder.type),
+          "type can't be ARRAY if arrayValues is not set");
+      checkArgument(builder.arrayType == null, "arrayType can't be set if arrayValues is not set");
+      checkArgument(builder.value != null, "value must be set if arrayValues is not set");
+      this.arrayValues = null;
+    }
     this.type = checkNotNull(builder.type);
+    this.value = builder.value;
     this.arrayType = builder.arrayType;
   }
 

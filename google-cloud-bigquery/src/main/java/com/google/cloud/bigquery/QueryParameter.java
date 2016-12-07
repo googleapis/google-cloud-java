@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google Inc. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -63,7 +63,7 @@ public class QueryParameter implements Serializable {
     this.parameterValue = checkNotNull(parameterValue);
   }
 
-  /** Returns the query parameter name. */
+  /** Returns the query parameter name. This is null if the parameter is positional. */
   public String getName() {
     return name;
   }
@@ -84,7 +84,7 @@ public class QueryParameter implements Serializable {
    * Creates a named {@code QueryParameter} object with the given value.
    */
   public static QueryParameter named(String name, QueryParameterValue value) {
-    return new QueryParameter(name, value);
+    return new QueryParameter(checkNotNull(name), value);
   }
 
   @Override

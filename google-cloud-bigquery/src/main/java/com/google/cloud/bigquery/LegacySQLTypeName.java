@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google Inc. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,8 +17,10 @@
 package com.google.cloud.bigquery;
 
 /**
- * A type used in legacy SQL contexts. For example, these types are used in query results,
- * even if the query is a standard SQL query.
+ * A type used in legacy SQL contexts. NOTE: some contexts use a mix of types; for example,
+ * for queries that use standard SQL, the return types are the legacy SQL types.
+ *
+ * @see <a href="https://cloud.google.com/bigquery/data-types">https://cloud.google.com/bigquery/data-types</a>
  */
 public enum LegacySQLTypeName {
   /** Variable-length binary data. */
