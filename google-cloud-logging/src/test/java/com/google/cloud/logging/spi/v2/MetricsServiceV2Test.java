@@ -27,6 +27,10 @@ import com.google.logging.v2.GetLogMetricRequest;
 import com.google.logging.v2.ListLogMetricsRequest;
 import com.google.logging.v2.ListLogMetricsResponse;
 import com.google.logging.v2.LogMetric;
+import com.google.logging.v2.MetricName;
+import com.google.logging.v2.MetricNameOneof;
+import com.google.logging.v2.ParentNameOneof;
+import com.google.logging.v2.ProjectName;
 import com.google.logging.v2.UpdateLogMetricRequest;
 import com.google.protobuf.Empty;
 import com.google.protobuf.GeneratedMessageV3;
@@ -96,9 +100,9 @@ public class MetricsServiceV2Test {
             .build();
     mockMetricsServiceV2.addResponse(expectedResponse);
 
-    String formattedParent = MetricsServiceV2Client.formatParentName("[PROJECT]");
+    ParentNameOneof parent = ParentNameOneof.from(ProjectName.create("[PROJECT]"));
 
-    ListLogMetricsPagedResponse pagedListResponse = client.listLogMetrics(formattedParent);
+    ListLogMetricsPagedResponse pagedListResponse = client.listLogMetrics(parent);
 
     List<LogMetric> resources = Lists.newArrayList(pagedListResponse.iterateAllElements());
     Assert.assertEquals(1, resources.size());
@@ -108,7 +112,7 @@ public class MetricsServiceV2Test {
     Assert.assertEquals(1, actualRequests.size());
     ListLogMetricsRequest actualRequest = (ListLogMetricsRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedParent, actualRequest.getParent());
+    Assert.assertEquals(parent, actualRequest.getParentAsParentNameOneof());
   }
 
   @Test
@@ -118,9 +122,9 @@ public class MetricsServiceV2Test {
     mockMetricsServiceV2.addException(exception);
 
     try {
-      String formattedParent = MetricsServiceV2Client.formatParentName("[PROJECT]");
+      ParentNameOneof parent = ParentNameOneof.from(ProjectName.create("[PROJECT]"));
 
-      client.listLogMetrics(formattedParent);
+      client.listLogMetrics(parent);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
       Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
@@ -137,16 +141,16 @@ public class MetricsServiceV2Test {
         LogMetric.newBuilder().setName(name).setDescription(description).setFilter(filter).build();
     mockMetricsServiceV2.addResponse(expectedResponse);
 
-    String formattedMetricName = MetricsServiceV2Client.formatMetricName("[PROJECT]", "[METRIC]");
+    MetricNameOneof metricName = MetricNameOneof.from(MetricName.create("[PROJECT]", "[METRIC]"));
 
-    LogMetric actualResponse = client.getLogMetric(formattedMetricName);
+    LogMetric actualResponse = client.getLogMetric(metricName);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<GeneratedMessageV3> actualRequests = mockMetricsServiceV2.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetLogMetricRequest actualRequest = (GetLogMetricRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedMetricName, actualRequest.getMetricName());
+    Assert.assertEquals(metricName, actualRequest.getMetricNameAsMetricNameOneof());
   }
 
   @Test
@@ -156,9 +160,9 @@ public class MetricsServiceV2Test {
     mockMetricsServiceV2.addException(exception);
 
     try {
-      String formattedMetricName = MetricsServiceV2Client.formatMetricName("[PROJECT]", "[METRIC]");
+      MetricNameOneof metricName = MetricNameOneof.from(MetricName.create("[PROJECT]", "[METRIC]"));
 
-      client.getLogMetric(formattedMetricName);
+      client.getLogMetric(metricName);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
       Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
@@ -175,17 +179,17 @@ public class MetricsServiceV2Test {
         LogMetric.newBuilder().setName(name).setDescription(description).setFilter(filter).build();
     mockMetricsServiceV2.addResponse(expectedResponse);
 
-    String formattedParent = MetricsServiceV2Client.formatParentName("[PROJECT]");
+    ParentNameOneof parent = ParentNameOneof.from(ProjectName.create("[PROJECT]"));
     LogMetric metric = LogMetric.newBuilder().build();
 
-    LogMetric actualResponse = client.createLogMetric(formattedParent, metric);
+    LogMetric actualResponse = client.createLogMetric(parent, metric);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<GeneratedMessageV3> actualRequests = mockMetricsServiceV2.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     CreateLogMetricRequest actualRequest = (CreateLogMetricRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedParent, actualRequest.getParent());
+    Assert.assertEquals(parent, actualRequest.getParentAsParentNameOneof());
     Assert.assertEquals(metric, actualRequest.getMetric());
   }
 
@@ -196,10 +200,10 @@ public class MetricsServiceV2Test {
     mockMetricsServiceV2.addException(exception);
 
     try {
-      String formattedParent = MetricsServiceV2Client.formatParentName("[PROJECT]");
+      ParentNameOneof parent = ParentNameOneof.from(ProjectName.create("[PROJECT]"));
       LogMetric metric = LogMetric.newBuilder().build();
 
-      client.createLogMetric(formattedParent, metric);
+      client.createLogMetric(parent, metric);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
       Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
@@ -216,17 +220,17 @@ public class MetricsServiceV2Test {
         LogMetric.newBuilder().setName(name).setDescription(description).setFilter(filter).build();
     mockMetricsServiceV2.addResponse(expectedResponse);
 
-    String formattedMetricName = MetricsServiceV2Client.formatMetricName("[PROJECT]", "[METRIC]");
+    MetricNameOneof metricName = MetricNameOneof.from(MetricName.create("[PROJECT]", "[METRIC]"));
     LogMetric metric = LogMetric.newBuilder().build();
 
-    LogMetric actualResponse = client.updateLogMetric(formattedMetricName, metric);
+    LogMetric actualResponse = client.updateLogMetric(metricName, metric);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<GeneratedMessageV3> actualRequests = mockMetricsServiceV2.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     UpdateLogMetricRequest actualRequest = (UpdateLogMetricRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedMetricName, actualRequest.getMetricName());
+    Assert.assertEquals(metricName, actualRequest.getMetricNameAsMetricNameOneof());
     Assert.assertEquals(metric, actualRequest.getMetric());
   }
 
@@ -237,10 +241,10 @@ public class MetricsServiceV2Test {
     mockMetricsServiceV2.addException(exception);
 
     try {
-      String formattedMetricName = MetricsServiceV2Client.formatMetricName("[PROJECT]", "[METRIC]");
+      MetricNameOneof metricName = MetricNameOneof.from(MetricName.create("[PROJECT]", "[METRIC]"));
       LogMetric metric = LogMetric.newBuilder().build();
 
-      client.updateLogMetric(formattedMetricName, metric);
+      client.updateLogMetric(metricName, metric);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
       Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
@@ -253,15 +257,15 @@ public class MetricsServiceV2Test {
     Empty expectedResponse = Empty.newBuilder().build();
     mockMetricsServiceV2.addResponse(expectedResponse);
 
-    String formattedMetricName = MetricsServiceV2Client.formatMetricName("[PROJECT]", "[METRIC]");
+    MetricNameOneof metricName = MetricNameOneof.from(MetricName.create("[PROJECT]", "[METRIC]"));
 
-    client.deleteLogMetric(formattedMetricName);
+    client.deleteLogMetric(metricName);
 
     List<GeneratedMessageV3> actualRequests = mockMetricsServiceV2.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     DeleteLogMetricRequest actualRequest = (DeleteLogMetricRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedMetricName, actualRequest.getMetricName());
+    Assert.assertEquals(metricName, actualRequest.getMetricNameAsMetricNameOneof());
   }
 
   @Test
@@ -271,9 +275,9 @@ public class MetricsServiceV2Test {
     mockMetricsServiceV2.addException(exception);
 
     try {
-      String formattedMetricName = MetricsServiceV2Client.formatMetricName("[PROJECT]", "[METRIC]");
+      MetricNameOneof metricName = MetricNameOneof.from(MetricName.create("[PROJECT]", "[METRIC]"));
 
-      client.deleteLogMetric(formattedMetricName);
+      client.deleteLogMetric(metricName);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
       Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());

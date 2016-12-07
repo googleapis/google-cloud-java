@@ -19,13 +19,14 @@ import static com.google.cloud.logging.spi.v2.PagedResponseWrappers.ListLogMetri
 
 import com.google.api.gax.grpc.ChannelAndExecutor;
 import com.google.api.gax.grpc.UnaryCallable;
-import com.google.api.gax.protobuf.PathTemplate;
 import com.google.logging.v2.CreateLogMetricRequest;
 import com.google.logging.v2.DeleteLogMetricRequest;
 import com.google.logging.v2.GetLogMetricRequest;
 import com.google.logging.v2.ListLogMetricsRequest;
 import com.google.logging.v2.ListLogMetricsResponse;
 import com.google.logging.v2.LogMetric;
+import com.google.logging.v2.MetricNameOneof;
+import com.google.logging.v2.ParentNameOneof;
 import com.google.logging.v2.UpdateLogMetricRequest;
 import com.google.protobuf.Empty;
 import com.google.protobuf.ExperimentalApi;
@@ -47,8 +48,8 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (MetricsServiceV2Client metricsServiceV2Client = MetricsServiceV2Client.create()) {
- *   String formattedMetricName = MetricsServiceV2Client.formatMetricName("[PROJECT]", "[METRIC]");
- *   LogMetric response = metricsServiceV2Client.getLogMetric(formattedMetricName);
+ *   MetricNameOneof metricName = MetricNameOneof.from(MetricName.create("[PROJECT]", "[METRIC]"));
+ *   LogMetric response = metricsServiceV2Client.getLogMetric(metricName);
  * }
  * </code>
  * </pre>
@@ -108,39 +109,6 @@ public class MetricsServiceV2Client implements AutoCloseable {
   private final UnaryCallable<CreateLogMetricRequest, LogMetric> createLogMetricCallable;
   private final UnaryCallable<UpdateLogMetricRequest, LogMetric> updateLogMetricCallable;
   private final UnaryCallable<DeleteLogMetricRequest, Empty> deleteLogMetricCallable;
-
-  private static final PathTemplate PARENT_PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding("projects/{project}");
-
-  private static final PathTemplate METRIC_PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding("projects/{project}/metrics/{metric}");
-
-  /** Formats a string containing the fully-qualified path to represent a parent resource. */
-  public static final String formatParentName(String project) {
-    return PARENT_PATH_TEMPLATE.instantiate("project", project);
-  }
-
-  /** Formats a string containing the fully-qualified path to represent a metric resource. */
-  public static final String formatMetricName(String project, String metric) {
-    return METRIC_PATH_TEMPLATE.instantiate(
-        "project", project,
-        "metric", metric);
-  }
-
-  /** Parses the project from the given fully-qualified path which represents a parent resource. */
-  public static final String parseProjectFromParentName(String parentName) {
-    return PARENT_PATH_TEMPLATE.parse(parentName).get("project");
-  }
-
-  /** Parses the project from the given fully-qualified path which represents a metric resource. */
-  public static final String parseProjectFromMetricName(String metricName) {
-    return METRIC_PATH_TEMPLATE.parse(metricName).get("project");
-  }
-
-  /** Parses the metric from the given fully-qualified path which represents a metric resource. */
-  public static final String parseMetricFromMetricName(String metricName) {
-    return METRIC_PATH_TEMPLATE.parse(metricName).get("metric");
-  }
 
   /** Constructs an instance of MetricsServiceV2Client with default settings. */
   public static final MetricsServiceV2Client create() throws IOException {
@@ -213,8 +181,8 @@ public class MetricsServiceV2Client implements AutoCloseable {
    *
    * <pre><code>
    * try (MetricsServiceV2Client metricsServiceV2Client = MetricsServiceV2Client.create()) {
-   *   String formattedParent = MetricsServiceV2Client.formatParentName("[PROJECT]");
-   *   for (LogMetric element : metricsServiceV2Client.listLogMetrics(formattedParent).iterateAllElements()) {
+   *   ParentNameOneof parent = ParentNameOneof.from(ProjectName.create("[PROJECT]"));
+   *   for (LogMetric element : metricsServiceV2Client.listLogMetrics(parent).iterateAllElements()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -224,8 +192,9 @@ public class MetricsServiceV2Client implements AutoCloseable {
    *     <p>"projects/[PROJECT_ID]"
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  public final ListLogMetricsPagedResponse listLogMetrics(String parent) {
-    ListLogMetricsRequest request = ListLogMetricsRequest.newBuilder().setParent(parent).build();
+  public final ListLogMetricsPagedResponse listLogMetrics(ParentNameOneof parent) {
+    ListLogMetricsRequest request =
+        ListLogMetricsRequest.newBuilder().setParentWithParentNameOneof(parent).build();
     return listLogMetrics(request);
   }
 
@@ -237,9 +206,9 @@ public class MetricsServiceV2Client implements AutoCloseable {
    *
    * <pre><code>
    * try (MetricsServiceV2Client metricsServiceV2Client = MetricsServiceV2Client.create()) {
-   *   String formattedParent = MetricsServiceV2Client.formatParentName("[PROJECT]");
+   *   ParentNameOneof parent = ParentNameOneof.from(ProjectName.create("[PROJECT]"));
    *   ListLogMetricsRequest request = ListLogMetricsRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParentWithParentNameOneof(parent)
    *     .build();
    *   for (LogMetric element : metricsServiceV2Client.listLogMetrics(request).iterateAllElements()) {
    *     // doThingsWith(element);
@@ -262,9 +231,9 @@ public class MetricsServiceV2Client implements AutoCloseable {
    *
    * <pre><code>
    * try (MetricsServiceV2Client metricsServiceV2Client = MetricsServiceV2Client.create()) {
-   *   String formattedParent = MetricsServiceV2Client.formatParentName("[PROJECT]");
+   *   ParentNameOneof parent = ParentNameOneof.from(ProjectName.create("[PROJECT]"));
    *   ListLogMetricsRequest request = ListLogMetricsRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParentWithParentNameOneof(parent)
    *     .build();
    *   ListenableFuture&lt;ListLogMetricsPagedResponse&gt; future = metricsServiceV2Client.listLogMetricsPagedCallable().futureCall(request);
    *   // Do something
@@ -287,9 +256,9 @@ public class MetricsServiceV2Client implements AutoCloseable {
    *
    * <pre><code>
    * try (MetricsServiceV2Client metricsServiceV2Client = MetricsServiceV2Client.create()) {
-   *   String formattedParent = MetricsServiceV2Client.formatParentName("[PROJECT]");
+   *   ParentNameOneof parent = ParentNameOneof.from(ProjectName.create("[PROJECT]"));
    *   ListLogMetricsRequest request = ListLogMetricsRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParentWithParentNameOneof(parent)
    *     .build();
    *   while (true) {
    *     ListLogMetricsResponse response = metricsServiceV2Client.listLogMetricsCallable().call(request);
@@ -319,8 +288,8 @@ public class MetricsServiceV2Client implements AutoCloseable {
    *
    * <pre><code>
    * try (MetricsServiceV2Client metricsServiceV2Client = MetricsServiceV2Client.create()) {
-   *   String formattedMetricName = MetricsServiceV2Client.formatMetricName("[PROJECT]", "[METRIC]");
-   *   LogMetric response = metricsServiceV2Client.getLogMetric(formattedMetricName);
+   *   MetricNameOneof metricName = MetricNameOneof.from(MetricName.create("[PROJECT]", "[METRIC]"));
+   *   LogMetric response = metricsServiceV2Client.getLogMetric(metricName);
    * }
    * </code></pre>
    *
@@ -328,10 +297,10 @@ public class MetricsServiceV2Client implements AutoCloseable {
    *     <p>"projects/[PROJECT_ID]/metrics/[METRIC_ID]"
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  public final LogMetric getLogMetric(String metricName) {
-    METRIC_PATH_TEMPLATE.validate(metricName, "getLogMetric");
+  public final LogMetric getLogMetric(MetricNameOneof metricName) {
+
     GetLogMetricRequest request =
-        GetLogMetricRequest.newBuilder().setMetricName(metricName).build();
+        GetLogMetricRequest.newBuilder().setMetricNameWithMetricNameOneof(metricName).build();
     return getLogMetric(request);
   }
 
@@ -343,9 +312,9 @@ public class MetricsServiceV2Client implements AutoCloseable {
    *
    * <pre><code>
    * try (MetricsServiceV2Client metricsServiceV2Client = MetricsServiceV2Client.create()) {
-   *   String formattedMetricName = MetricsServiceV2Client.formatMetricName("[PROJECT]", "[METRIC]");
+   *   MetricNameOneof metricName = MetricNameOneof.from(MetricName.create("[PROJECT]", "[METRIC]"));
    *   GetLogMetricRequest request = GetLogMetricRequest.newBuilder()
-   *     .setMetricName(formattedMetricName)
+   *     .setMetricNameWithMetricNameOneof(metricName)
    *     .build();
    *   LogMetric response = metricsServiceV2Client.getLogMetric(request);
    * }
@@ -366,9 +335,9 @@ public class MetricsServiceV2Client implements AutoCloseable {
    *
    * <pre><code>
    * try (MetricsServiceV2Client metricsServiceV2Client = MetricsServiceV2Client.create()) {
-   *   String formattedMetricName = MetricsServiceV2Client.formatMetricName("[PROJECT]", "[METRIC]");
+   *   MetricNameOneof metricName = MetricNameOneof.from(MetricName.create("[PROJECT]", "[METRIC]"));
    *   GetLogMetricRequest request = GetLogMetricRequest.newBuilder()
-   *     .setMetricName(formattedMetricName)
+   *     .setMetricNameWithMetricNameOneof(metricName)
    *     .build();
    *   ListenableFuture&lt;LogMetric&gt; future = metricsServiceV2Client.getLogMetricCallable().futureCall(request);
    *   // Do something
@@ -388,9 +357,9 @@ public class MetricsServiceV2Client implements AutoCloseable {
    *
    * <pre><code>
    * try (MetricsServiceV2Client metricsServiceV2Client = MetricsServiceV2Client.create()) {
-   *   String formattedParent = MetricsServiceV2Client.formatParentName("[PROJECT]");
+   *   ParentNameOneof parent = ParentNameOneof.from(ProjectName.create("[PROJECT]"));
    *   LogMetric metric = LogMetric.newBuilder().build();
-   *   LogMetric response = metricsServiceV2Client.createLogMetric(formattedParent, metric);
+   *   LogMetric response = metricsServiceV2Client.createLogMetric(parent, metric);
    * }
    * </code></pre>
    *
@@ -400,10 +369,13 @@ public class MetricsServiceV2Client implements AutoCloseable {
    * @param metric The new logs-based metric, which must not have an identifier that already exists.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  public final LogMetric createLogMetric(String parent, LogMetric metric) {
+  public final LogMetric createLogMetric(ParentNameOneof parent, LogMetric metric) {
 
     CreateLogMetricRequest request =
-        CreateLogMetricRequest.newBuilder().setParent(parent).setMetric(metric).build();
+        CreateLogMetricRequest.newBuilder()
+            .setParentWithParentNameOneof(parent)
+            .setMetric(metric)
+            .build();
     return createLogMetric(request);
   }
 
@@ -415,10 +387,10 @@ public class MetricsServiceV2Client implements AutoCloseable {
    *
    * <pre><code>
    * try (MetricsServiceV2Client metricsServiceV2Client = MetricsServiceV2Client.create()) {
-   *   String formattedParent = MetricsServiceV2Client.formatParentName("[PROJECT]");
+   *   ParentNameOneof parent = ParentNameOneof.from(ProjectName.create("[PROJECT]"));
    *   LogMetric metric = LogMetric.newBuilder().build();
    *   CreateLogMetricRequest request = CreateLogMetricRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParentWithParentNameOneof(parent)
    *     .setMetric(metric)
    *     .build();
    *   LogMetric response = metricsServiceV2Client.createLogMetric(request);
@@ -440,10 +412,10 @@ public class MetricsServiceV2Client implements AutoCloseable {
    *
    * <pre><code>
    * try (MetricsServiceV2Client metricsServiceV2Client = MetricsServiceV2Client.create()) {
-   *   String formattedParent = MetricsServiceV2Client.formatParentName("[PROJECT]");
+   *   ParentNameOneof parent = ParentNameOneof.from(ProjectName.create("[PROJECT]"));
    *   LogMetric metric = LogMetric.newBuilder().build();
    *   CreateLogMetricRequest request = CreateLogMetricRequest.newBuilder()
-   *     .setParent(formattedParent)
+   *     .setParentWithParentNameOneof(parent)
    *     .setMetric(metric)
    *     .build();
    *   ListenableFuture&lt;LogMetric&gt; future = metricsServiceV2Client.createLogMetricCallable().futureCall(request);
@@ -464,9 +436,9 @@ public class MetricsServiceV2Client implements AutoCloseable {
    *
    * <pre><code>
    * try (MetricsServiceV2Client metricsServiceV2Client = MetricsServiceV2Client.create()) {
-   *   String formattedMetricName = MetricsServiceV2Client.formatMetricName("[PROJECT]", "[METRIC]");
+   *   MetricNameOneof metricName = MetricNameOneof.from(MetricName.create("[PROJECT]", "[METRIC]"));
    *   LogMetric metric = LogMetric.newBuilder().build();
-   *   LogMetric response = metricsServiceV2Client.updateLogMetric(formattedMetricName, metric);
+   *   LogMetric response = metricsServiceV2Client.updateLogMetric(metricName, metric);
    * }
    * </code></pre>
    *
@@ -478,10 +450,13 @@ public class MetricsServiceV2Client implements AutoCloseable {
    * @param metric The updated metric.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  public final LogMetric updateLogMetric(String metricName, LogMetric metric) {
-    METRIC_PATH_TEMPLATE.validate(metricName, "updateLogMetric");
+  public final LogMetric updateLogMetric(MetricNameOneof metricName, LogMetric metric) {
+
     UpdateLogMetricRequest request =
-        UpdateLogMetricRequest.newBuilder().setMetricName(metricName).setMetric(metric).build();
+        UpdateLogMetricRequest.newBuilder()
+            .setMetricNameWithMetricNameOneof(metricName)
+            .setMetric(metric)
+            .build();
     return updateLogMetric(request);
   }
 
@@ -493,10 +468,10 @@ public class MetricsServiceV2Client implements AutoCloseable {
    *
    * <pre><code>
    * try (MetricsServiceV2Client metricsServiceV2Client = MetricsServiceV2Client.create()) {
-   *   String formattedMetricName = MetricsServiceV2Client.formatMetricName("[PROJECT]", "[METRIC]");
+   *   MetricNameOneof metricName = MetricNameOneof.from(MetricName.create("[PROJECT]", "[METRIC]"));
    *   LogMetric metric = LogMetric.newBuilder().build();
    *   UpdateLogMetricRequest request = UpdateLogMetricRequest.newBuilder()
-   *     .setMetricName(formattedMetricName)
+   *     .setMetricNameWithMetricNameOneof(metricName)
    *     .setMetric(metric)
    *     .build();
    *   LogMetric response = metricsServiceV2Client.updateLogMetric(request);
@@ -518,10 +493,10 @@ public class MetricsServiceV2Client implements AutoCloseable {
    *
    * <pre><code>
    * try (MetricsServiceV2Client metricsServiceV2Client = MetricsServiceV2Client.create()) {
-   *   String formattedMetricName = MetricsServiceV2Client.formatMetricName("[PROJECT]", "[METRIC]");
+   *   MetricNameOneof metricName = MetricNameOneof.from(MetricName.create("[PROJECT]", "[METRIC]"));
    *   LogMetric metric = LogMetric.newBuilder().build();
    *   UpdateLogMetricRequest request = UpdateLogMetricRequest.newBuilder()
-   *     .setMetricName(formattedMetricName)
+   *     .setMetricNameWithMetricNameOneof(metricName)
    *     .setMetric(metric)
    *     .build();
    *   ListenableFuture&lt;LogMetric&gt; future = metricsServiceV2Client.updateLogMetricCallable().futureCall(request);
@@ -542,8 +517,8 @@ public class MetricsServiceV2Client implements AutoCloseable {
    *
    * <pre><code>
    * try (MetricsServiceV2Client metricsServiceV2Client = MetricsServiceV2Client.create()) {
-   *   String formattedMetricName = MetricsServiceV2Client.formatMetricName("[PROJECT]", "[METRIC]");
-   *   metricsServiceV2Client.deleteLogMetric(formattedMetricName);
+   *   MetricNameOneof metricName = MetricNameOneof.from(MetricName.create("[PROJECT]", "[METRIC]"));
+   *   metricsServiceV2Client.deleteLogMetric(metricName);
    * }
    * </code></pre>
    *
@@ -551,10 +526,10 @@ public class MetricsServiceV2Client implements AutoCloseable {
    *     <p>"projects/[PROJECT_ID]/metrics/[METRIC_ID]"
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  public final void deleteLogMetric(String metricName) {
-    METRIC_PATH_TEMPLATE.validate(metricName, "deleteLogMetric");
+  public final void deleteLogMetric(MetricNameOneof metricName) {
+
     DeleteLogMetricRequest request =
-        DeleteLogMetricRequest.newBuilder().setMetricName(metricName).build();
+        DeleteLogMetricRequest.newBuilder().setMetricNameWithMetricNameOneof(metricName).build();
     deleteLogMetric(request);
   }
 
@@ -566,9 +541,9 @@ public class MetricsServiceV2Client implements AutoCloseable {
    *
    * <pre><code>
    * try (MetricsServiceV2Client metricsServiceV2Client = MetricsServiceV2Client.create()) {
-   *   String formattedMetricName = MetricsServiceV2Client.formatMetricName("[PROJECT]", "[METRIC]");
+   *   MetricNameOneof metricName = MetricNameOneof.from(MetricName.create("[PROJECT]", "[METRIC]"));
    *   DeleteLogMetricRequest request = DeleteLogMetricRequest.newBuilder()
-   *     .setMetricName(formattedMetricName)
+   *     .setMetricNameWithMetricNameOneof(metricName)
    *     .build();
    *   metricsServiceV2Client.deleteLogMetric(request);
    * }
@@ -589,9 +564,9 @@ public class MetricsServiceV2Client implements AutoCloseable {
    *
    * <pre><code>
    * try (MetricsServiceV2Client metricsServiceV2Client = MetricsServiceV2Client.create()) {
-   *   String formattedMetricName = MetricsServiceV2Client.formatMetricName("[PROJECT]", "[METRIC]");
+   *   MetricNameOneof metricName = MetricNameOneof.from(MetricName.create("[PROJECT]", "[METRIC]"));
    *   DeleteLogMetricRequest request = DeleteLogMetricRequest.newBuilder()
-   *     .setMetricName(formattedMetricName)
+   *     .setMetricNameWithMetricNameOneof(metricName)
    *     .build();
    *   ListenableFuture&lt;Void&gt; future = metricsServiceV2Client.deleteLogMetricCallable().futureCall(request);
    *   // Do something
