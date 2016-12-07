@@ -104,15 +104,16 @@ public abstract class BaseEmulatorHelper<T extends ServiceOptions> {
   }
 
   /**
-   * Stops the local service's subprocess and any possible thread listening for its output.
+   * Waits for the local service's subprocess to terminate,
+   * and stop any possible thread listening for its output.
    */
-  protected final void stopProcess() throws IOException, InterruptedException {
+  protected final void waitForProcess() throws IOException, InterruptedException {
     if (blockingProcessReader != null) {
       blockingProcessReader.terminate();
       blockingProcessReader = null;
     }
     if (activeRunner != null) {
-      activeRunner.stop();
+      activeRunner.waitFor();
       activeRunner = null;
     }
   }
@@ -195,9 +196,9 @@ public abstract class BaseEmulatorHelper<T extends ServiceOptions> {
     void start() throws IOException;
 
     /**
-     * Stops the emulator associated to this runner.
+     * Wait for the emulator associated to this runner to terminate.
      */
-    void stop() throws InterruptedException;
+    void waitFor() throws InterruptedException;
 
     /**
      * Returns the process associated to the emulator, if any.
@@ -239,9 +240,8 @@ public abstract class BaseEmulatorHelper<T extends ServiceOptions> {
     }
 
     @Override
-    public void stop() throws InterruptedException {
+    public void waitFor() throws InterruptedException {
       if (process != null) {
-        process.destroy();
         process.waitFor();
       }
     }
@@ -337,9 +337,8 @@ public abstract class BaseEmulatorHelper<T extends ServiceOptions> {
     }
 
     @Override
-    public void stop() throws InterruptedException {
+    public void waitFor() throws InterruptedException {
       if (process != null) {
-        process.destroy();
         process.waitFor();
       }
     }

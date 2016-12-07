@@ -227,7 +227,7 @@ public class LocalDatastoreHelper extends BaseEmulatorHelper<DatastoreOptions> {
    */
   public void stop() throws IOException, InterruptedException {
     sendPostRequest("/shutdown");
-    stopProcess();
+    waitForProcess();
     deleteRecursively(gcdPath);
   }
 

@@ -67,7 +67,7 @@ public class BaseEmulatorHelperTest {
 
     @Override
     public void stop() throws IOException, InterruptedException {
-      stopProcess();
+      waitForProcess();
     }
 
     @Override
@@ -86,7 +86,7 @@ public class BaseEmulatorHelperTest {
     emulatorRunner.start();
     EasyMock.expectLastCall();
     EasyMock.expect(emulatorRunner.getProcess()).andReturn(process);
-    emulatorRunner.stop();
+    emulatorRunner.waitFor();
     EasyMock.expectLastCall();
     EasyMock.replay(process, emulatorRunner);
     TestEmulatorHelper helper =
@@ -108,7 +108,7 @@ public class BaseEmulatorHelperTest {
     secondRunner.start();
     EasyMock.expectLastCall();
     EasyMock.expect(secondRunner.getProcess()).andReturn(process);
-    secondRunner.stop();
+    secondRunner.waitFor();
     EasyMock.expectLastCall();
     EasyMock.replay(process, secondRunner);
     TestEmulatorHelper helper =

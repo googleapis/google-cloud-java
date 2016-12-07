@@ -146,6 +146,6 @@ public class LocalPubSubHelper extends BaseEmulatorHelper<PubSubOptions> {
   @Override
   public void stop() throws IOException, InterruptedException {
     sendPostRequest("/shutdown");
-    stopProcess();
+    waitForProcess();
   }
 }
