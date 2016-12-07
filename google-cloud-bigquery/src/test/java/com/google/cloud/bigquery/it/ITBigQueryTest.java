@@ -75,6 +75,7 @@ import com.google.cloud.storage.testing.RemoteStorageHelper;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
+import com.google.common.collect.Iterables;
 import com.google.common.io.BaseEncoding;
 import java.io.IOException;
 import java.nio.ByteBuffer;
@@ -89,7 +90,6 @@ import java.util.concurrent.TimeoutException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.junit.AfterClass;
-import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
@@ -860,10 +860,7 @@ public class ITBigQueryTest {
     QueryResponse response = queryAndWaitForResponse(request);
     assertEquals(QUERY_RESULT_SCHEMA, response.getResult().getSchema());
     int rowCount = 0;
-    for (List<FieldValue> row : response.getResult().getValues()) {
-      rowCount++;
-    }
-    assertEquals(2, rowCount);
+    assertEquals(2, Iterables.size(response.getResult().getValues()));
   }
 
   @Test

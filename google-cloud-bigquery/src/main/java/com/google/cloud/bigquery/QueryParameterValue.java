@@ -394,7 +394,7 @@ public class QueryParameterValue implements Serializable {
     com.google.api.services.bigquery.model.QueryParameterValue valuePb =
         new com.google.api.services.bigquery.model.QueryParameterValue();
     valuePb.setValue(value);
-    if (arrayValues != null && arrayValues.size() > 0) {
+    if (arrayValues != null && !arrayValues.isEmpty()) {
       valuePb.setArrayValues(
           Lists.transform(arrayValues, QueryParameterValue.TO_VALUE_PB_FUNCTION));
     }

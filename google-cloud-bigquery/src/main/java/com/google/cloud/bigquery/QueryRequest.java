@@ -19,13 +19,11 @@ package com.google.cloud.bigquery;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.common.base.MoreObjects;
-
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import java.io.Serializable;
 import java.util.List;
 import java.util.Objects;
-import javax.annotation.concurrent.Immutable;
 
 /**
  * Google Cloud BigQuery Query Request. This class can be used to run a BigQuery SQL query and

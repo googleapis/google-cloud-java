@@ -18,18 +18,9 @@ package com.google.cloud.bigquery;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
-import com.google.api.services.bigquery.Bigquery.Jobs.Query;
-import com.google.cloud.bigquery.Field.Builder;
-import com.google.cloud.bigquery.Field.Mode;
-import com.google.cloud.bigquery.Field.Type;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.Lists;
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 import java.util.Objects;
 
 /**
