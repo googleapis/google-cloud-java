@@ -23,6 +23,10 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+import java.util.Map;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
@@ -36,8 +40,10 @@ public class QueryRequestTest {
   private static final Long PAGE_SIZE = 42L;
   private static final Long MAX_WAIT_TIME = 42000L;
   private static final Boolean USE_LEGACY_SQL = false;
-  private static final QueryParameter QUERY_PARAMETER =
-      QueryParameter.named("paramName", QueryParameterValue.int64(7));
+  private static final String QUERY_PARAMETER_NAME = "paramName";
+  private static final QueryParameterValue QUERY_PARAMETER_VALUE = QueryParameterValue.int64(7);
+  private static final List<QueryParameterValue> POSITIONAL_PARAMETERS =
+      Arrays.asList(QUERY_PARAMETER_VALUE);
   private static final QueryRequest QUERY_REQUEST = QueryRequest.newBuilder(QUERY)
       .setUseQueryCache(USE_QUERY_CACHE)
       .setDefaultDataset(DATASET_ID)
@@ -45,7 +51,7 @@ public class QueryRequestTest {
       .setPageSize(PAGE_SIZE)
       .setMaxWaitTime(MAX_WAIT_TIME)
       .setUseLegacySql(USE_LEGACY_SQL)
-      .addQueryParameter(QUERY_PARAMETER)
+      .setPositionalParameters(POSITIONAL_PARAMETERS)
       .build();
   private static final QueryRequest DEPRECATED_QUERY_REQUEST = QueryRequest.builder(QUERY)
       .useQueryCache(USE_QUERY_CACHE)
@@ -84,8 +90,9 @@ public class QueryRequestTest {
     assertEquals(DRY_RUN, QUERY_REQUEST.dryRun());
     assertEquals(PAGE_SIZE, QUERY_REQUEST.getPageSize());
     assertEquals(MAX_WAIT_TIME, QUERY_REQUEST.getMaxWaitTime());
-    assertEquals(1, QUERY_REQUEST.getQueryParameters().size());
-    assertEquals(QUERY_PARAMETER, QUERY_REQUEST.getQueryParameters().get(0));
+    assertEquals(1, QUERY_REQUEST.getPositionalParameters().size());
+    assertEquals(QUERY_PARAMETER_VALUE, QUERY_REQUEST.getPositionalParameters().get(0));
+    assertTrue(QUERY_REQUEST.getNamedParameters().isEmpty());
     assertFalse(QUERY_REQUEST.useLegacySql());
     thrown.expect(NullPointerException.class);
     QueryRequest.newBuilder(null);
@@ -99,10 +106,53 @@ public class QueryRequestTest {
     assertEquals(DRY_RUN, DEPRECATED_QUERY_REQUEST.dryRun());
     assertEquals(PAGE_SIZE, DEPRECATED_QUERY_REQUEST.pageSize());
     assertEquals(MAX_WAIT_TIME, DEPRECATED_QUERY_REQUEST.maxWaitTime());
-    assertEquals(0, DEPRECATED_QUERY_REQUEST.getQueryParameters().size());
+    assertTrue(DEPRECATED_QUERY_REQUEST.getNamedParameters().isEmpty());
+    assertTrue(DEPRECATED_QUERY_REQUEST.getPositionalParameters().isEmpty());
     assertFalse(DEPRECATED_QUERY_REQUEST.useLegacySql());
     thrown.expect(NullPointerException.class);
     QueryRequest.builder(null);
+  }
+
+  @Test
+  public void testNamedParameters() {
+    QueryRequest queryRequestNamedParams =
+        QueryRequest.newBuilder(QUERY)
+            .addNamedParameter(QUERY_PARAMETER_NAME, QUERY_PARAMETER_VALUE)
+            .build();
+    assertEquals(1, queryRequestNamedParams.getNamedParameters().size());
+    assertTrue(queryRequestNamedParams.getNamedParameters().containsKey(QUERY_PARAMETER_NAME));
+    assertEquals(
+        QUERY_PARAMETER_VALUE,
+        queryRequestNamedParams.getNamedParameters().get(QUERY_PARAMETER_NAME));
+    assertTrue(queryRequestNamedParams.getPositionalParameters().isEmpty());
+  }
+
+  @Test(expected = IllegalStateException.class)
+  public void testAddNamedAfterAddPositional() {
+    QueryRequest.newBuilder(QUERY)
+        .addPositionalParameter(QUERY_PARAMETER_VALUE)
+        .addNamedParameter(QUERY_PARAMETER_NAME, QUERY_PARAMETER_VALUE);
+  }
+
+  @Test(expected = IllegalStateException.class)
+  public void testSetNamedAfterAddPositional() {
+    QueryRequest.newBuilder(QUERY)
+        .addPositionalParameter(QUERY_PARAMETER_VALUE)
+        .setNamedParameters(Collections.singletonMap(QUERY_PARAMETER_NAME, QUERY_PARAMETER_VALUE));
+  }
+
+  @Test(expected = IllegalStateException.class)
+  public void testAddPositionalAfterNamed() {
+    QueryRequest.newBuilder(QUERY)
+        .addNamedParameter(QUERY_PARAMETER_NAME, QUERY_PARAMETER_VALUE)
+        .addPositionalParameter(QUERY_PARAMETER_VALUE);
+  }
+
+  @Test(expected = IllegalStateException.class)
+  public void testSetPositionalAfterNamed() {
+    QueryRequest.newBuilder(QUERY)
+        .addNamedParameter(QUERY_PARAMETER_NAME, QUERY_PARAMETER_VALUE)
+        .setPositionalParameters(Arrays.asList(QUERY_PARAMETER_VALUE));
   }
 
   @Test
@@ -115,8 +165,10 @@ public class QueryRequestTest {
     assertNull(request.getPageSize());
     assertNull(request.getMaxWaitTime());
     assertNull(request.useLegacySql());
-    assertNotNull(request.getQueryParameters());
-    assertEquals(0, request.getQueryParameters().size());
+    assertNotNull(request.getPositionalParameters());
+    assertTrue(request.getPositionalParameters().isEmpty());
+    assertNotNull(request.getNamedParameters());
+    assertTrue(request.getNamedParameters().isEmpty());
     thrown.expect(NullPointerException.class);
     QueryRequest.of(null);
   }
@@ -126,6 +178,17 @@ public class QueryRequestTest {
     compareQueryRequest(QUERY_REQUEST, QueryRequest.fromPb(QUERY_REQUEST.toPb()));
     QueryRequest queryRequest = QueryRequest.of(QUERY);
     compareQueryRequest(queryRequest, QueryRequest.fromPb(queryRequest.toPb()));
+  }
+
+  @Test
+  public void testToPbAndFromPbWithNamedParameters() {
+    QueryRequest withNamedParams =
+        QUERY_REQUEST
+            .toBuilder()
+            .setPositionalParameters(null)
+            .addNamedParameter(QUERY_PARAMETER_NAME, QUERY_PARAMETER_VALUE)
+            .build();
+    compareQueryRequest(withNamedParams, QueryRequest.fromPb(withNamedParams.toPb()));
   }
 
   @Test
@@ -142,7 +205,13 @@ public class QueryRequestTest {
     assertEquals(expected.getPageSize(), value.getPageSize());
     assertEquals(expected.getMaxWaitTime(), value.getMaxWaitTime());
     assertEquals(expected.useLegacySql(), value.useLegacySql());
-    assertArrayEquals(expected.getQueryParameters().toArray(new QueryParameter[0]),
-        value.getQueryParameters().toArray(new QueryParameter[0]));
+    assertArrayEquals(expected.getPositionalParameters().toArray(new QueryParameterValue[0]),
+        value.getPositionalParameters().toArray(new QueryParameterValue[0]));
+    assertEquals(expected.getNamedParameters().size(), value.getNamedParameters().size());
+    for (Map.Entry<String, QueryParameterValue> entry : expected.getNamedParameters().entrySet()) {
+      QueryParameterValue paramValue = value.getNamedParameters().get(entry.getKey());
+      assertNotNull(paramValue);
+      assertEquals(entry.getValue(), paramValue);
+    }
   }
 }

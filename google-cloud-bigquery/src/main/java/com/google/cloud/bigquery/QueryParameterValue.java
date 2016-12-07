@@ -19,6 +19,7 @@ package com.google.cloud.bigquery;
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 
+import com.google.api.services.bigquery.model.QueryParameterType;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
@@ -408,13 +409,11 @@ public class QueryParameterValue implements Serializable {
     return valuePb;
   }
 
-  com.google.api.services.bigquery.model.QueryParameterType toTypePb() {
-    com.google.api.services.bigquery.model.QueryParameterType typePb =
-        new com.google.api.services.bigquery.model.QueryParameterType();
+  QueryParameterType toTypePb() {
+    QueryParameterType typePb = new QueryParameterType();
     typePb.setType(type.toString());
     if (arrayType != null) {
-      com.google.api.services.bigquery.model.QueryParameterType arrayTypePb =
-          new com.google.api.services.bigquery.model.QueryParameterType();
+      QueryParameterType arrayTypePb = new QueryParameterType();
       arrayTypePb.setType(arrayType.toString());
       typePb.setArrayType(arrayTypePb);
     }
@@ -423,7 +422,7 @@ public class QueryParameterValue implements Serializable {
 
   static QueryParameterValue fromPb(
       com.google.api.services.bigquery.model.QueryParameterValue valuePb,
-      com.google.api.services.bigquery.model.QueryParameterType typePb) {
+      QueryParameterType typePb) {
     Builder valueBuilder = new Builder();
     valueBuilder.setValue(valuePb.getValue());
     if (valuePb.getArrayValues() != null && valuePb.getArrayValues().size() > 0) {

@@ -52,7 +52,6 @@ import com.google.cloud.bigquery.JobStatistics;
 import com.google.cloud.bigquery.JobStatistics.LoadStatistics;
 import com.google.cloud.bigquery.LoadJobConfiguration;
 import com.google.cloud.bigquery.QueryJobConfiguration;
-import com.google.cloud.bigquery.QueryParameter;
 import com.google.cloud.bigquery.QueryParameterValue;
 import com.google.cloud.bigquery.QueryRequest;
 import com.google.cloud.bigquery.QueryResponse;
@@ -806,26 +805,23 @@ public class ITBigQueryTest {
         .append(" AND IntegerField < ?")
         .append(" AND FloatField > ?")
         .toString();
-    QueryParameter stringParameter =
-        QueryParameter.of(QueryParameterValue.string("stringValue"));
-    QueryParameter timestampParameter =
-        QueryParameter.of(QueryParameterValue.timestamp("2014-01-01 07:00:00.000000+00:00"));
-    QueryParameter intArrayParameter =
-        QueryParameter.of(QueryParameterValue.array(new Integer[]{3, 4}, Integer.class));
-    QueryParameter int64Parameter =
-        QueryParameter.of(QueryParameterValue.int64(5));
-    QueryParameter float64Parameter =
-        QueryParameter.of(QueryParameterValue.float64(0.5));
+    QueryParameterValue stringParameter = QueryParameterValue.string("stringValue");
+    QueryParameterValue timestampParameter =
+        QueryParameterValue.timestamp("2014-01-01 07:00:00.000000+00:00");
+    QueryParameterValue intArrayParameter =
+        QueryParameterValue.array(new Integer[] {3, 4}, Integer.class);
+    QueryParameterValue int64Parameter = QueryParameterValue.int64(5);
+    QueryParameterValue float64Parameter = QueryParameterValue.float64(0.5);
     QueryRequest request = QueryRequest.newBuilder(query)
         .setDefaultDataset(DatasetId.of(DATASET))
         .setMaxWaitTime(60000L)
         .setPageSize(1000L)
         .setUseLegacySql(false)
-        .addQueryParameter(stringParameter)
-        .addQueryParameter(timestampParameter)
-        .addQueryParameter(intArrayParameter)
-        .addQueryParameter(int64Parameter)
-        .addQueryParameter(float64Parameter)
+        .addPositionalParameter(stringParameter)
+        .addPositionalParameter(timestampParameter)
+        .addPositionalParameter(intArrayParameter)
+        .addPositionalParameter(int64Parameter)
+        .addPositionalParameter(float64Parameter)
         .build();
     QueryResponse response = queryAndWaitForResponse(request);
     assertEquals(QUERY_RESULT_SCHEMA, response.getResult().getSchema());
@@ -840,18 +836,16 @@ public class ITBigQueryTest {
         .append(" WHERE StringField = @stringParam")
         .append(" AND IntegerField IN UNNEST(@integerList)")
         .toString();
-    QueryParameter stringParameter =
-        QueryParameter.named("stringParam", QueryParameterValue.string("stringValue"));
-    QueryParameter intArrayParameter =
-        QueryParameter.named("integerList",
-            QueryParameterValue.array(new Integer[]{3, 4}, Integer.class));
+    QueryParameterValue stringParameter = QueryParameterValue.string("stringValue");
+    QueryParameterValue intArrayParameter =
+            QueryParameterValue.array(new Integer[]{3, 4}, Integer.class);
     QueryRequest request = QueryRequest.newBuilder(query)
         .setDefaultDataset(DatasetId.of(DATASET))
         .setMaxWaitTime(60000L)
         .setPageSize(1000L)
         .setUseLegacySql(false)
-        .addQueryParameter(stringParameter)
-        .addQueryParameter(intArrayParameter)
+        .addNamedParameter("stringParam", stringParameter)
+        .addNamedParameter("integerList", intArrayParameter)
         .build();
     QueryResponse response = queryAndWaitForResponse(request);
     assertEquals(QUERY_RESULT_SCHEMA, response.getResult().getSchema());
@@ -863,14 +857,13 @@ public class ITBigQueryTest {
     String query = new StringBuilder()
         .append("SELECT BYTE_LENGTH(@p) AS length")
         .toString();
-    QueryParameter bytesParameter =
-        QueryParameter.named("p", QueryParameterValue.bytes(new byte[] { 1, 3 }));
+    QueryParameterValue bytesParameter = QueryParameterValue.bytes(new byte[] { 1, 3 });
     QueryRequest request = QueryRequest.newBuilder(query)
         .setDefaultDataset(DatasetId.of(DATASET))
         .setMaxWaitTime(60000L)
         .setPageSize(1000L)
         .setUseLegacySql(false)
-        .addQueryParameter(bytesParameter)
+        .addNamedParameter("p", bytesParameter)
         .build();
     QueryResponse response = queryAndWaitForResponse(request);
     int rowCount = 0;
