@@ -35,7 +35,6 @@ import java.util.regex.Pattern;
  */
 class BlockingProcessStreamReader extends Thread {
 
-  private static final int STREAM_READER_SLEEP_INTERVAL_IN_MS = 200;
   private static final int LOG_LENGTH_LIMIT = 50000;
 
   private final BufferedReader errorReader;
@@ -43,7 +42,6 @@ class BlockingProcessStreamReader extends Thread {
   private StringBuilder currentLog;
   private Level currentLogLevel;
   private boolean collectionMode;
-  private volatile boolean terminated;
   private final String emulatorTag;
   private final Pattern logLinePattern;
 
@@ -64,8 +62,6 @@ class BlockingProcessStreamReader extends Thread {
   }
 
   void terminate() throws IOException {
-    terminated = true;
-    errorReader.close();
     interrupt();
   }
 
@@ -73,25 +69,18 @@ class BlockingProcessStreamReader extends Thread {
   public void run() {
     String previousLine = "";
     String nextLine = "";
-    while (!terminated) {
-      try {
-        if (errorReader.ready()) {
-          previousLine = nextLine;
-          nextLine = errorReader.readLine();
-          if (nextLine == null) {
-            terminated = true;
-          } else {
-            processLogLine(previousLine, nextLine);
-          }
-        } else {
-          sleep(STREAM_READER_SLEEP_INTERVAL_IN_MS);
-        }
-      } catch (IOException e) {
-        e.printStackTrace(System.err);
-      } catch (InterruptedException e) {
+    try {
+      for (;;) {
         previousLine = nextLine;
-        nextLine = null;
-        break;
+        nextLine = errorReader.readLine();
+        if (nextLine == null) {
+          break;
+        }
+        processLogLine(previousLine, nextLine);
+      }
+    } catch (IOException e) {
+      if (!isInterrupted()) {
+        e.printStackTrace(System.err);
       }
     }
     processLogLine(previousLine, firstNonNull(nextLine, ""));
