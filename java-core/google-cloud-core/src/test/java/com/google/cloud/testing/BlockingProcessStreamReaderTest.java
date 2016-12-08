@@ -87,17 +87,9 @@ public class BlockingProcessStreamReaderTest {
   public void testForwardLogEntry() throws IOException, InterruptedException {
     TestLogger logger = new TestLogger();
     InputStream stream = new ByteArrayInputStream(OUTPUT_WITH_LOGS.getBytes(Charsets.UTF_8));
-    BlockingProcessStreamReader thread =
-        BlockingProcessStreamReader.start("emulator", stream, BLOCK_UNTIL, logger);
-    while (logger.getLogs().get(Level.INFO).isEmpty()) {
-      Thread.sleep(200);
-    }
+    BlockingProcessStreamReader.start("emulator", stream, BLOCK_UNTIL, logger).join();
     assertEquals("[emulator] log line 1" + System.lineSeparator() + "[emulator] log line 2",
         logger.getLogs().get(Level.INFO).iterator().next());
-    thread.terminate();
-    while (logger.getLogs().get(Level.FINE).isEmpty()) {
-      Thread.sleep(200);
-    }
     assertEquals("[emulator] log line 3", logger.getLogs().get(Level.FINE).iterator().next());
     stream.close();
   }
@@ -106,17 +98,9 @@ public class BlockingProcessStreamReaderTest {
   public void testForwardAlreadyTaggedLogs() throws IOException, InterruptedException {
     TestLogger logger = new TestLogger();
     InputStream stream = new ByteArrayInputStream(TAGGED_OUTPUT_WITH_LOGS.getBytes(Charsets.UTF_8));
-    BlockingProcessStreamReader thread =
-        BlockingProcessStreamReader.start("emulator", stream, BLOCK_UNTIL, logger);
-    while (logger.getLogs().get(Level.INFO).isEmpty()) {
-      Thread.sleep(200);
-    }
+    BlockingProcessStreamReader.start("emulator", stream, BLOCK_UNTIL, logger).join();
     assertEquals("[emulator] log line 1" + System.lineSeparator() + "[emulator] log line 2",
         logger.getLogs().get(Level.INFO).iterator().next());
-    thread.terminate();
-    while (logger.getLogs().get(Level.FINE).isEmpty()) {
-      Thread.sleep(200);
-    }
     assertEquals("[emulator] log line 3", logger.getLogs().get(Level.FINE).iterator().next());
     stream.close();
   }
