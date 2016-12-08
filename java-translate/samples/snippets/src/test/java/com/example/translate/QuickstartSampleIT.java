@@ -59,4 +59,3 @@ public class QuickstartSampleIT {
     assertThat(got).contains("Translation: ");
   }
 }
-// [END datastore_quickstart]
