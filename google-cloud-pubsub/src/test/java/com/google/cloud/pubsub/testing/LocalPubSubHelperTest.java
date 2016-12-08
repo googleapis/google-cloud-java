@@ -27,11 +27,13 @@ import com.google.cloud.pubsub.PubSubException;
 import com.google.cloud.pubsub.PubSubOptions;
 import com.google.cloud.pubsub.TopicInfo;
 
+import org.joda.time.Duration;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
 import java.io.IOException;
+import java.util.concurrent.TimeoutException;
 
 public class LocalPubSubHelperTest {
 
@@ -57,7 +59,7 @@ public class LocalPubSubHelperTest {
   }
 
   @Test
-  public void testStartStopReset() throws IOException, InterruptedException {
+  public void testStartStopReset() throws IOException, InterruptedException, TimeoutException {
     LocalPubSubHelper helper = LocalPubSubHelper.create();
     helper.start();
     PubSub pubsub = helper.getOptions().getService();
@@ -65,7 +67,7 @@ public class LocalPubSubHelperTest {
     assertNotNull(pubsub.getTopic(TOPIC));
     helper.reset();
     assertNull(pubsub.getTopic(TOPIC));
-    helper.stop();
+    helper.stop(Duration.standardMinutes(1));
     thrown.expect(PubSubException.class);
     pubsub.getTopic(TOPIC);
   }

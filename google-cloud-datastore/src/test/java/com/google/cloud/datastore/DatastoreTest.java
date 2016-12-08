@@ -47,14 +47,15 @@ import com.google.datastore.v1.RunQueryResponse;
 import com.google.protobuf.ByteString;
 
 import org.easymock.EasyMock;
+import org.joda.time.Duration;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Rule;
-import org.junit.Test;
 import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
+import org.junit.Test;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -63,6 +64,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
+import java.util.concurrent.TimeoutException;
 
 @RunWith(JUnit4.class)
 public class DatastoreTest {
@@ -150,8 +152,8 @@ public class DatastoreTest {
   }
 
   @AfterClass
-  public static void afterClass() throws IOException, InterruptedException {
-    helper.stop();
+  public static void afterClass() throws IOException, InterruptedException, TimeoutException {
+    helper.stop(Duration.standardMinutes(1));
   }
 
   @Test

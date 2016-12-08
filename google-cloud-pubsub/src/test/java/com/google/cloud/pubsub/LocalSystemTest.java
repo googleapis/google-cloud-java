@@ -18,6 +18,7 @@ package com.google.cloud.pubsub;
 
 import com.google.cloud.pubsub.testing.LocalPubSubHelper;
 
+import org.joda.time.Duration;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 
@@ -49,6 +50,6 @@ public class LocalSystemTest extends BaseSystemTest {
   public static void stopServer() throws Exception {
     pubsub.close();
     pubsubHelper.reset();
-    pubsubHelper.stop();
+    pubsubHelper.stop(Duration.standardMinutes(1));
   }
 }
