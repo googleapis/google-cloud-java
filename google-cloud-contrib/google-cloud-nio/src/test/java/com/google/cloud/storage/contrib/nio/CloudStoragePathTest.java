@@ -494,6 +494,11 @@ public class CloudStoragePathTest {
       // we can also go via a URI. Decoding should give us the space back.
       String toUri = URLDecoder.decode(path.toUri().toString(), "UTF-8");
       assertThat(toUri).contains(" ");
+
+      Path path2 = fs.getPath("/with/a%20percent");
+      String toUri2 = URLDecoder.decode(path2.toUri().toString(), "UTF-8");
+      assertThat(toUri2).doesNotContain(" ");
+      assertThat(toUri2).contains("%");
     }
   }
 

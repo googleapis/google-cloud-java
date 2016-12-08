@@ -41,6 +41,7 @@ import org.junit.runners.JUnit4;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.io.UnsupportedEncodingException;
 import java.net.URI;
 import java.nio.ByteBuffer;
 import java.nio.channels.ReadableByteChannel;
@@ -652,7 +653,7 @@ public class CloudStorageFileSystemProviderTest {
   }
 
   @Test
-  public void testFromSpace() {
+  public void testFromSpace() throws UnsupportedEncodingException {
     // User should be able to create paths to files whose name contains a space.
     // Traditional way 1: manually escape the spaces
     Path path1 = Paths.get(URI.create("gs://bucket/with/a%20space"));
@@ -669,6 +670,11 @@ public class CloudStorageFileSystemProviderTest {
     assertThat(path2.getFileSystem().provider()).isEqualTo(path3.getFileSystem().provider());
     assertThat(path1.toUri()).isEqualTo(path2.toUri());
     assertThat(path2.toUri()).isEqualTo(path3.toUri());
+
+    Path path4 = provider.getPath("gs://bucket/with/a%20percent");
+    String toString = path4.toString();
+    assertThat(toString).doesNotContain(" ");
+    assertThat(toString).contains("%");
   }
 
   private static CloudStorageConfiguration permitEmptyPathComponents(boolean value) {

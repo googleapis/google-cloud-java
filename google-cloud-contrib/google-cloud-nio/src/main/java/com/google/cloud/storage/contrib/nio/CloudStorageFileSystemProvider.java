@@ -213,7 +213,7 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
 
   /** Convenience method: replaces spaces with "%20", builds a URI, and calls getPath(uri). */
   public CloudStoragePath getPath(String uriInStringForm) {
-    String escaped = UrlEscapers.urlFragmentEscaper().escape("gs://bucket/with/a space");
+    String escaped = UrlEscapers.urlFragmentEscaper().escape(uriInStringForm);
     return getPath(URI.create(escaped));
   }
 
