@@ -1,4 +1,4 @@
-Google Cloud Java Client for Compute (Alpha)
+Google Cloud Java Client for Compute
 ====================================
 
 Java idiomatic client for [Google Cloud Compute](https://cloud.google.com/compute).

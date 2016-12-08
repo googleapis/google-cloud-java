@@ -1,4 +1,4 @@
-Google Cloud Java Client for Pub/Sub (Alpha)
+Google Cloud Java Client for Pub/Sub
 ====================================
 
 Java idiomatic client for [Google Cloud Pub/Sub] (https://cloud.google.com/pubsub/).

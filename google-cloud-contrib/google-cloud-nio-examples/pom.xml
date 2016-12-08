@@ -11,7 +11,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-contrib</artifactId>
-    <version>0.7.1-SNAPSHOT</version>
+    <version>0.8.0</version>
   </parent>
   <properties>
     <site.installationModule>google-cloud-nio-examples</site.installationModule>
@@ -20,7 +20,7 @@
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>google-cloud-storage</artifactId>
-      <version>${project.version}</version>
+      <version>${storage.version}</version>
     </dependency>
 
     <dependency>

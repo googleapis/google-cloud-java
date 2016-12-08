@@ -1,4 +1,4 @@
-Google Cloud Java Client for BigQuery (Alpha)
+Google Cloud Java Client for BigQuery
 ====================================
 
 Java idiomatic client for [Google Cloud BigQuery] (https://cloud.google.com/bigquery).
