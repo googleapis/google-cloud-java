@@ -614,12 +614,12 @@ public class BigQuerySnippets {
    * Example of running a query with query parameters.
    */
   // [TARGET query(QueryRequest)]
-  // [VARIABLE "SELECT distinct(corpus) FROM `bigquery-public-data.samples.shakespeare` where word_count > ?"]
+  // [VARIABLE "SELECT distinct(corpus) FROM `bigquery-public-data.samples.shakespeare` where word_count > @wordCount"]
   public QueryResponse runQueryWithParameters(String query) throws InterruptedException {
     // [START runQueryWithParameters]
     QueryRequest request = QueryRequest.newBuilder(query)
         .setUseLegacySql(false) // standard SQL is required to use query parameters
-        .addPositionalParameter(QueryParameterValue.int64(5))
+        .addNamedParameter("wordCount", QueryParameterValue.int64(5))
         .build();
     QueryResponse response = bigquery.query(request);
     // Wait for things to finish
