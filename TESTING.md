@@ -5,6 +5,7 @@ This library provides tools to help write tests for code that uses the following
 -  [BigQuery] (#testing-code-that-uses-bigquery)
 -  [Compute] (#testing-code-that-uses-compute)
 -  [Datastore] (#testing-code-that-uses-datastore)
+-  [DNS] (#testing-code-that-uses-dns)
 -  [Logging] (#testing-code-that-uses-logging)
 -  [PubSub] (#testing-code-that-uses-pubsub)
 -  [Resource Manager] (#testing-code-that-uses-resource-manager)
@@ -111,6 +112,10 @@ We recommend that you start the emulator on the remote machine using the [Google
 ```
 gcloud beta emulators datastore start --host-port <hostname of machine>:<port>
 ```
+
+### Testing code that uses DNS
+
+Currently, there isn't an emulator for DNS. An alternative is to create a test project.
 
 ### Testing code that uses Logging
 
