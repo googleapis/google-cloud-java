@@ -12,17 +12,20 @@ Java idiomatic client for [Google Cloud Platform][cloud-platform] services.
 -  [Homepage] (https://googlecloudplatform.github.io/google-cloud-java/)
 -  [API Documentation] (https://googlecloudplatform.github.io/google-cloud-java/apidocs)
 
-This client supports the following Google Cloud Platform services:
+This client supports the following Google Cloud Platform services at a [Beta](#versioning) quality level:
 
--  [Google Cloud BigQuery] (#google-cloud-bigquery-alpha) (Alpha)
+-  [Google Cloud BigQuery] (#google-cloud-bigquery-beta) (Beta)
+-  [Stackdriver Logging] (#stackdriver-logging-beta) (Beta - Not working on App Engine Standard)
+-  [Google Cloud Datastore] (#google-cloud-datastore-beta) (Beta)
+-  [Google Cloud Storage] (#google-cloud-storage-beta) (Beta)
+
+This client supports the following Google Cloud Platform services at an [Alpha](#versioning) quality level:
+
 -  [Google Cloud Compute] (#google-cloud-compute-alpha) (Alpha)
--  [Google Cloud Datastore] (#google-cloud-datastore)
 -  [Google Cloud DNS] (#google-cloud-dns-alpha) (Alpha)
--  [Stackdriver Logging] (#stackdriver-logging-alpha) (Alpha - Not working on App Engine Standard)
 -  [Google Cloud Pub/Sub] (#google-cloud-pubsub-alpha) (Alpha - Not working on App Engine Standard)
 -  [Google Cloud Resource Manager] (#google-cloud-resource-manager-alpha) (Alpha)
--  [Google Cloud Storage] (#google-cloud-storage)
--  [Google Cloud Translate] (#google-translate) (Alpha)
+-  [Google Cloud Translate] (#google-translate-alpha) (Alpha)
 
 > Note: This client is a work-in-progress, and may occasionally
 > make backwards-incompatible changes.
@@ -173,7 +176,7 @@ Credentials in the following locations (in order):
 4. Google Cloud Shell built-in credentials
 5. Google Compute Engine built-in credentials
 
-Google Cloud BigQuery (Alpha)
+Google Cloud BigQuery (Beta)
 ----------------------
 
 - [API Documentation][bigquery-api]
@@ -214,6 +217,187 @@ if (loadJob.getStatus().getError() != null) {
   System.out.println("Job completed with errors");
 } else {
   System.out.println("Job succeeded");
+}
+```
+
+Stackdriver Logging (Beta)
+----------------------
+- [API Documentation][logging-api]
+- [Official Documentation][stackdriver-logging-docs]
+
+*Follow the [activation instructions][stackdriver-logging-activation] to use the Stackdriver Logging
+API with your project.*
+
+#### Preview
+
+Here are two code snippets showing simple usage examples from within Compute Engine/App Engine
+Flexible. Note that you must [supply credentials](#authentication) and a project ID if running this
+snippet elsewhere.
+
+The first snippet shows how to write and list log entries. Complete source code can be found on
+[WriteAndListLogEntries.java](./google-cloud-examples/src/main/java/com/google/cloud/examples/logging/snippets/WriteAndListLogEntries.java).
+
+```java
+import com.google.cloud.MonitoredResource;
+import com.google.cloud.Page;
+import com.google.cloud.logging.LogEntry;
+import com.google.cloud.logging.Logging;
+import com.google.cloud.logging.Logging.EntryListOption;
+import com.google.cloud.logging.LoggingOptions;
+import com.google.cloud.logging.Payload.StringPayload;
+
+import java.util.Collections;
+import java.util.Iterator;
+
+LoggingOptions options = LoggingOptions.getDefaultInstance();
+try(Logging logging = options.getService()) {
+
+  LogEntry firstEntry = LogEntry.newBuilder(StringPayload.of("message"))
+      .setLogName("test-log")
+      .setResource(MonitoredResource.newBuilder("global")
+          .addLabel("project_id", options.getProjectId())
+          .build())
+      .build();
+  logging.write(Collections.singleton(firstEntry));
+
+  Page<LogEntry> entries = logging.listLogEntries(
+      EntryListOption.filter("logName=projects/" + options.getProjectId() + "/logs/test-log"));
+  Iterator<LogEntry> entryIterator = entries.iterateAll();
+  while (entryIterator.hasNext()) {
+    System.out.println(entryIterator.next());
+  }
+}
+```
+
+The second snippet shows how to use a `java.util.logging.Logger` to write log entries to Stackdriver
+Logging. The snippet installs a Stackdriver Logging handler using
+`LoggingHandler.addHandler(Logger, LoggingHandler)`. Notice that this could also be done through the
+`logging.properties` file, adding the following line:
+```
+com.google.cloud.examples.logging.snippets.AddLoggingHandler.handlers=com.google.cloud.logging.LoggingHandler
+```
+The complete code can be found on
+[AddLoggingHandler.java](./google-cloud-examples/src/main/java/com/google/cloud/examples/logging/snippets/AddLoggingHandler.java).
+
+```java
+import com.google.cloud.logging.LoggingHandler;
+
+import java.util.logging.Logger;
+
+Logger logger = Logger.getLogger(AddLoggingHandler.class.getName());
+LoggingHandler.addHandler(logger, new LoggingHandler());
+logger.warning("test warning");
+```
+
+Google Cloud Datastore (Beta)
+----------------------
+
+- [API Documentation][datastore-api]
+- [Official Documentation][cloud-datastore-docs]
+
+*Follow the [activation instructions][cloud-datastore-activation] to use the Google Cloud Datastore API with your project.*
+
+#### Preview
+
+Here are two code snippets showing simple usage examples from within Compute/App Engine. Note that you must [supply credentials](#authentication) and a project ID if running this snippet elsewhere.
+
+The first snippet shows how to create a Datastore entity. Complete source code can be found at
+[CreateEntity.java](./google-cloud-examples/src/main/java/com/google/cloud/examples/datastore/snippets/CreateEntity.java).
+
+```java
+import com.google.cloud.datastore.Datastore;
+import com.google.cloud.datastore.DatastoreOptions;
+import com.google.cloud.datastore.DateTime;
+import com.google.cloud.datastore.Entity;
+import com.google.cloud.datastore.Key;
+import com.google.cloud.datastore.KeyFactory;
+
+Datastore datastore = DatastoreOptions.getDefaultInstance().getService();
+KeyFactory keyFactory = datastore.newKeyFactory().setKind("keyKind");
+Key key = keyFactory.newKey("keyName");
+Entity entity = Entity.newBuilder(key)
+    .set("name", "John Doe")
+    .set("age", 30)
+    .set("access_time", DateTime.now())
+    .build();
+datastore.put(entity);
+```
+The second snippet shows how to update a Datastore entity if it exists. Complete source code can be
+found at
+[UpdateEntity.java](./google-cloud-examples/src/main/java/com/google/cloud/examples/datastore/snippets/UpdateEntity.java).
+```java
+import com.google.cloud.datastore.Datastore;
+import com.google.cloud.datastore.DatastoreOptions;
+import com.google.cloud.datastore.DateTime;
+import com.google.cloud.datastore.Entity;
+import com.google.cloud.datastore.Key;
+import com.google.cloud.datastore.KeyFactory;
+
+Datastore datastore = DatastoreOptions.getDefaultInstance().getService();
+KeyFactory keyFactory = datastore.newKeyFactory().setKind("keyKind");
+Key key = keyFactory.newKey("keyName");
+Entity entity = datastore.get(key);
+if (entity != null) {
+  System.out.println("Updating access_time for " + entity.getString("name"));
+  entity = Entity.newBuilder(entity)
+      .set("access_time", DateTime.now())
+      .build();
+  datastore.update(entity);
+}
+```
+
+Google Cloud Storage (Beta)
+----------------------
+
+- [API Documentation][storage-api]
+- [Official Documentation][cloud-storage-docs]
+
+*Follow the [activation instructions][cloud-storage-activation] to use the Google Cloud Storage API with your project.*
+
+#### Preview
+
+Here are two code snippets showing simple usage examples from within Compute/App Engine.  Note that you must [supply credentials](#authentication) and a project ID if running this snippet elsewhere.
+
+The first snippet shows how to create a Storage blob. Complete source code can be found at
+[CreateBlob.java](./google-cloud-examples/src/main/java/com/google/cloud/examples/storage/snippets/CreateBlob.java).
+
+```java
+import static java.nio.charset.StandardCharsets.UTF_8;
+
+import com.google.cloud.storage.Blob;
+import com.google.cloud.storage.BlobId;
+import com.google.cloud.storage.BlobInfo;
+import com.google.cloud.storage.Storage;
+import com.google.cloud.storage.StorageOptions;
+
+Storage storage = StorageOptions.getDefaultInstance().getService();
+BlobId blobId = BlobId.of("bucket", "blob_name");
+BlobInfo blobInfo = BlobInfo.newBuiler(blobId).setContentType("text/plain").build();
+Blob blob = storage.create(blobInfo, "Hello, Cloud Storage!".getBytes(UTF_8));
+```
+The second snippet shows how to update a Storage blob if it exists. Complete source code can be
+found at
+[UpdateBlob.java](./google-cloud-examples/src/main/java/com/google/cloud/examples/storage/snippets/UpdateBlob.java).
+```java
+import static java.nio.charset.StandardCharsets.UTF_8;
+
+import com.google.cloud.storage.Blob;
+import com.google.cloud.storage.BlobId;
+import com.google.cloud.storage.Storage;
+import com.google.cloud.storage.StorageOptions;
+
+import java.nio.ByteBuffer;
+import java.nio.channels.WritableByteChannel;
+
+Storage storage = StorageOptions.getDefaultInstance().getService();
+BlobId blobId = BlobId.of("bucket", "blob_name");
+Blob blob = storage.get(blobId);
+if (blob != null) {
+  byte[] prevContent = blob.getContent();
+  System.out.println(new String(prevContent, UTF_8));
+  WritableByteChannel channel = blob.writer();
+  channel.write(ByteBuffer.wrap("Updated content".getBytes(UTF_8)));
+  channel.close();
 }
 ```
 
@@ -282,63 +466,6 @@ if (operation.getErrors() == null) {
 }
 ```
 
-Google Cloud Datastore
-----------------------
-
-- [API Documentation][datastore-api]
-- [Official Documentation][cloud-datastore-docs]
-
-*Follow the [activation instructions][cloud-datastore-activation] to use the Google Cloud Datastore API with your project.*
-
-#### Preview
-
-Here are two code snippets showing simple usage examples from within Compute/App Engine. Note that you must [supply credentials](#authentication) and a project ID if running this snippet elsewhere.
-
-The first snippet shows how to create a Datastore entity. Complete source code can be found at
-[CreateEntity.java](./google-cloud-examples/src/main/java/com/google/cloud/examples/datastore/snippets/CreateEntity.java).
-
-```java
-import com.google.cloud.datastore.Datastore;
-import com.google.cloud.datastore.DatastoreOptions;
-import com.google.cloud.datastore.DateTime;
-import com.google.cloud.datastore.Entity;
-import com.google.cloud.datastore.Key;
-import com.google.cloud.datastore.KeyFactory;
-
-Datastore datastore = DatastoreOptions.getDefaultInstance().getService();
-KeyFactory keyFactory = datastore.newKeyFactory().setKind("keyKind");
-Key key = keyFactory.newKey("keyName");
-Entity entity = Entity.newBuilder(key)
-    .set("name", "John Doe")
-    .set("age", 30)
-    .set("access_time", DateTime.now())
-    .build();
-datastore.put(entity);
-```
-The second snippet shows how to update a Datastore entity if it exists. Complete source code can be
-found at
-[UpdateEntity.java](./google-cloud-examples/src/main/java/com/google/cloud/examples/datastore/snippets/UpdateEntity.java).
-```java
-import com.google.cloud.datastore.Datastore;
-import com.google.cloud.datastore.DatastoreOptions;
-import com.google.cloud.datastore.DateTime;
-import com.google.cloud.datastore.Entity;
-import com.google.cloud.datastore.Key;
-import com.google.cloud.datastore.KeyFactory;
-
-Datastore datastore = DatastoreOptions.getDefaultInstance().getService();
-KeyFactory keyFactory = datastore.newKeyFactory().setKind("keyKind");
-Key key = keyFactory.newKey("keyName");
-Entity entity = datastore.get(key);
-if (entity != null) {
-  System.out.println("Updating access_time for " + entity.getString("name"));
-  entity = Entity.newBuilder(entity)
-      .set("access_time", DateTime.now())
-      .build();
-  datastore.update(entity);
-}
-```
-
 Google Cloud DNS (Alpha)
 ----------------------
 - [API Documentation][dns-api]
@@ -402,75 +529,6 @@ while (recordSetIterator.hasNext()) {
 
 ChangeRequestInfo changeRequest = changeBuilder.build();
 zone.applyChangeRequest(changeRequest);
-```
-
-Stackdriver Logging (Alpha)
-----------------------
-- [API Documentation][logging-api]
-- [Official Documentation][stackdriver-logging-docs]
-
-*Follow the [activation instructions][stackdriver-logging-activation] to use the Stackdriver Logging
-API with your project.*
-
-#### Preview
-
-Here are two code snippets showing simple usage examples from within Compute Engine/App Engine
-Flexible. Note that you must [supply credentials](#authentication) and a project ID if running this
-snippet elsewhere.
-
-The first snippet shows how to write and list log entries. Complete source code can be found on
-[WriteAndListLogEntries.java](./google-cloud-examples/src/main/java/com/google/cloud/examples/logging/snippets/WriteAndListLogEntries.java).
-
-```java
-import com.google.cloud.MonitoredResource;
-import com.google.cloud.Page;
-import com.google.cloud.logging.LogEntry;
-import com.google.cloud.logging.Logging;
-import com.google.cloud.logging.Logging.EntryListOption;
-import com.google.cloud.logging.LoggingOptions;
-import com.google.cloud.logging.Payload.StringPayload;
-
-import java.util.Collections;
-import java.util.Iterator;
-
-LoggingOptions options = LoggingOptions.getDefaultInstance();
-try(Logging logging = options.getService()) {
-
-  LogEntry firstEntry = LogEntry.newBuilder(StringPayload.of("message"))
-      .setLogName("test-log")
-      .setResource(MonitoredResource.newBuilder("global")
-          .addLabel("project_id", options.getProjectId())
-          .build())
-      .build();
-  logging.write(Collections.singleton(firstEntry));
-
-  Page<LogEntry> entries = logging.listLogEntries(
-      EntryListOption.filter("logName=projects/" + options.getProjectId() + "/logs/test-log"));
-  Iterator<LogEntry> entryIterator = entries.iterateAll();
-  while (entryIterator.hasNext()) {
-    System.out.println(entryIterator.next());
-  }
-}
-```
-
-The second snippet shows how to use a `java.util.logging.Logger` to write log entries to Stackdriver
-Logging. The snippet installs a Stackdriver Logging handler using
-`LoggingHandler.addHandler(Logger, LoggingHandler)`. Notice that this could also be done through the
-`logging.properties` file, adding the following line:
-```
-com.google.cloud.examples.logging.snippets.AddLoggingHandler.handlers=com.google.cloud.logging.LoggingHandler
-```
-The complete code can be found on
-[AddLoggingHandler.java](./google-cloud-examples/src/main/java/com/google/cloud/examples/logging/snippets/AddLoggingHandler.java).
-
-```java
-import com.google.cloud.logging.LoggingHandler;
-
-import java.util.logging.Logger;
-
-Logger logger = Logger.getLogger(AddLoggingHandler.class.getName());
-LoggingHandler.addHandler(logger, new LoggingHandler());
-logger.warning("test warning");
 ```
 
 Google Cloud Pub/Sub (Alpha)
@@ -546,62 +604,7 @@ while (projectIterator.hasNext()) {
 }
 ```
 
-Google Cloud Storage
-----------------------
-
-- [API Documentation][storage-api]
-- [Official Documentation][cloud-storage-docs]
-
-*Follow the [activation instructions][cloud-storage-activation] to use the Google Cloud Storage API with your project.*
-
-#### Preview
-
-Here are two code snippets showing simple usage examples from within Compute/App Engine.  Note that you must [supply credentials](#authentication) and a project ID if running this snippet elsewhere.
-
-The first snippet shows how to create a Storage blob. Complete source code can be found at
-[CreateBlob.java](./google-cloud-examples/src/main/java/com/google/cloud/examples/storage/snippets/CreateBlob.java).
-
-```java
-import static java.nio.charset.StandardCharsets.UTF_8;
-
-import com.google.cloud.storage.Blob;
-import com.google.cloud.storage.BlobId;
-import com.google.cloud.storage.BlobInfo;
-import com.google.cloud.storage.Storage;
-import com.google.cloud.storage.StorageOptions;
-
-Storage storage = StorageOptions.getDefaultInstance().getService();
-BlobId blobId = BlobId.of("bucket", "blob_name");
-BlobInfo blobInfo = BlobInfo.newBuiler(blobId).setContentType("text/plain").build();
-Blob blob = storage.create(blobInfo, "Hello, Cloud Storage!".getBytes(UTF_8));
-```
-The second snippet shows how to update a Storage blob if it exists. Complete source code can be
-found at
-[UpdateBlob.java](./google-cloud-examples/src/main/java/com/google/cloud/examples/storage/snippets/UpdateBlob.java).
-```java
-import static java.nio.charset.StandardCharsets.UTF_8;
-
-import com.google.cloud.storage.Blob;
-import com.google.cloud.storage.BlobId;
-import com.google.cloud.storage.Storage;
-import com.google.cloud.storage.StorageOptions;
-
-import java.nio.ByteBuffer;
-import java.nio.channels.WritableByteChannel;
-
-Storage storage = StorageOptions.getDefaultInstance().getService();
-BlobId blobId = BlobId.of("bucket", "blob_name");
-Blob blob = storage.get(blobId);
-if (blob != null) {
-  byte[] prevContent = blob.getContent();
-  System.out.println(new String(prevContent, UTF_8));
-  WritableByteChannel channel = blob.writer();
-  channel.write(ByteBuffer.wrap("Updated content".getBytes(UTF_8)));
-  channel.close();
-}
-```
-
-Google Translate
+Google Translate (Alpha)
 ----------------
 
 - [API Documentation][translate-api]
@@ -658,9 +661,15 @@ Versioning
 
 This library follows [Semantic Versioning] (http://semver.org/).
 
-It is currently in major version zero (``0.y.z``), which means that anything
-may change at any time and the public API should not be considered
-stable.
+Please note it is currently under active development. Any release versioned 0.x.y is
+subject to backwards incompatible changes at any time.
+
+**Beta**: Libraries defined at a Beta quality level are expected to be mostly stable and
+we're working towards their release candidate. We will address issues and requests with
+a higher priority.
+
+**Alpha**: Libraries defined at an Alpha quality level are still a work-in-progress and
+are more likely to get backwards-incompatible updates.
 
 Contributing
 ------------
