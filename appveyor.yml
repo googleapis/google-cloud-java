@@ -37,9 +37,12 @@ install:
 build_script:
   - mvn clean install -DskipTests
 
-# verify artifacts (no integration tests on PR)
+# verify artifacts
 test_script:
-  - IF DEFINED APPVEYOR_PULL_REQUEST_NUMBER (mvn verify -DskipITs) ELSE (mvn verify)
+  - mvn verify -DskipITs
+  # TODO fix integration tests in AppVeyor:
+  # https://github.com/GoogleCloudPlatform/google-cloud-java/issues/1429
+  #- IF DEFINED APPVEYOR_PULL_REQUEST_NUMBER (mvn verify -DskipITs) ELSE (mvn verify)
 
 # preserve dependencies between builds
 cache:
