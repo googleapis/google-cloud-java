@@ -25,6 +25,7 @@ import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 import com.google.cloud.Page;
+import com.google.cloud.WaitForOption;
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQuery.DatasetField;
 import com.google.cloud.bigquery.BigQuery.DatasetOption;
@@ -899,7 +900,7 @@ public class ITBigQueryTest {
   }
 
   @Test
-  public void testCreateAndGetJob() {
+  public void testCreateAndGetJob() throws InterruptedException, TimeoutException {
     String sourceTableName = "test_create_and_get_job_source_table";
     String destinationTableName = "test_create_and_get_job_destination_table";
     TableId sourceTable = TableId.of(DATASET, sourceTableName);
@@ -930,11 +931,18 @@ public class ITBigQueryTest {
     assertEquals(createdJob.getSelfLink(), remoteJob.getSelfLink());
     assertEquals(createdJob.getUserEmail(), remoteJob.getUserEmail());
     assertTrue(createdTable.delete());
+
+    Job completedJob =
+        remoteJob.waitFor(
+            WaitForOption.checkEvery(1, TimeUnit.SECONDS),
+            WaitForOption.timeout(1, TimeUnit.MINUTES));
+    assertNotNull(completedJob);
+    assertNull(completedJob.getStatus().getError());
     assertTrue(bigquery.delete(DATASET, destinationTableName));
   }
 
   @Test
-  public void testCreateAndGetJobWithSelectedFields() {
+  public void testCreateAndGetJobWithSelectedFields() throws InterruptedException, TimeoutException {
     String sourceTableName = "test_create_and_get_job_with_selected_fields_source_table";
     String destinationTableName = "test_create_and_get_job_with_selected_fields_destination_table";
     TableId sourceTable = TableId.of(DATASET, sourceTableName);
@@ -972,6 +980,13 @@ public class ITBigQueryTest {
     assertNull(remoteJob.getSelfLink());
     assertNull(remoteJob.getUserEmail());
     assertTrue(createdTable.delete());
+
+    Job completedJob =
+        remoteJob.waitFor(
+            WaitForOption.checkEvery(1, TimeUnit.SECONDS),
+            WaitForOption.timeout(1, TimeUnit.MINUTES));
+    assertNotNull(completedJob);
+    assertNull(completedJob.getStatus().getError());
     assertTrue(bigquery.delete(DATASET, destinationTableName));
   }
 
