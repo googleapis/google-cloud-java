@@ -1,4 +1,4 @@
-NIO Filesystem Provider for Google Cloud Storage (Alpha)
+NIO Filesystem Provider for Google Cloud Storage
 ========================================================
 
 Implementation of Java 7 `java.nio.file.FileSystem` for

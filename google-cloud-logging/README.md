@@ -1,4 +1,4 @@
-Google Cloud Java Client for Logging (Alpha)
+Google Cloud Java Client for Logging
 ====================================
 
 Java idiomatic client for [Stackdriver Logging][stackdriver-logging].
