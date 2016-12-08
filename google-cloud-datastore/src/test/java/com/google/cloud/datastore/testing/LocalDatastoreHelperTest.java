@@ -29,6 +29,7 @@ import com.google.cloud.datastore.DatastoreOptions;
 import com.google.cloud.datastore.Entity;
 import com.google.cloud.datastore.Key;
 
+import org.joda.time.Duration;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
@@ -36,6 +37,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
 import java.io.IOException;
+import java.util.concurrent.TimeoutException;
 
 @RunWith(JUnit4.class)
 public class LocalDatastoreHelperTest {
@@ -82,7 +84,7 @@ public class LocalDatastoreHelperTest {
   }
 
   @Test
-  public void testStartStopReset() throws IOException, InterruptedException {
+  public void testStartStopReset() throws IOException, InterruptedException, TimeoutException {
     LocalDatastoreHelper helper = LocalDatastoreHelper.create();
     helper.start();
     Datastore datastore = helper.getOptions().getService();
@@ -91,7 +93,7 @@ public class LocalDatastoreHelperTest {
     assertNotNull(datastore.get(key));
     helper.reset();
     assertNull(datastore.get(key));
-    helper.stop();
+    helper.stop(Duration.standardMinutes(1));
     thrown.expect(DatastoreException.class);
     datastore.get(key);
   }

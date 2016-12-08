@@ -40,6 +40,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.concurrent.TimeoutException;
 
 public class PublisherClientTest {
   private static LocalPubSubHelper pubsubHelper;
@@ -55,8 +56,8 @@ public class PublisherClientTest {
   }
 
   @AfterClass
-  public static void stopServer() throws IOException, InterruptedException {
-    pubsubHelper.stop();
+  public static void stopServer() throws IOException, InterruptedException, TimeoutException {
+    pubsubHelper.stop(Duration.standardMinutes(1));
   }
 
   @Before

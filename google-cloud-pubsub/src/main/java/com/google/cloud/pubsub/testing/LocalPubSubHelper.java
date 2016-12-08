@@ -33,7 +33,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
+import java.util.concurrent.TimeoutException;
 import java.util.logging.Logger;
+
+import org.joda.time.Duration;
 
 /**
  * A class that runs a Pubsub emulator instance for use in tests.
@@ -144,8 +147,8 @@ public class LocalPubSubHelper extends BaseEmulatorHelper<PubSubOptions> {
    * Stops the PubSub emulator and related local service.
    */
   @Override
-  public void stop() throws IOException, InterruptedException {
+  public void stop(Duration timeout) throws IOException, InterruptedException, TimeoutException {
     sendPostRequest("/shutdown");
-    stopProcess();
+    waitForProcess(timeout);
   }
 }

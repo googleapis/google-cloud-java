@@ -22,6 +22,8 @@ import com.google.cloud.datastore.DatastoreOptions;
 import com.google.cloud.testing.BaseEmulatorHelper;
 import com.google.common.collect.ImmutableList;
 
+import org.joda.time.Duration;
+
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -34,6 +36,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
+import java.util.concurrent.TimeoutException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -225,9 +228,9 @@ public class LocalDatastoreHelper extends BaseEmulatorHelper<DatastoreOptions> {
   /**
    * Stops the Datastore emulator.
    */
-  public void stop() throws IOException, InterruptedException {
+  public void stop(Duration timeout) throws IOException, InterruptedException, TimeoutException {
     sendPostRequest("/shutdown");
-    stopProcess();
+    waitForProcess(timeout);
     deleteRecursively(gcdPath);
   }
 
