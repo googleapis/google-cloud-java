@@ -115,38 +115,7 @@ gcloud beta emulators datastore start --host-port <hostname of machine>:<port>
 
 ### Testing code that uses DNS
 
-#### On your machine
-
-You can test against an in-memory local DNS by following these steps:
-
-1. Before running your testing code, start the DNS emulator `LocalDnsHelper`. This can be done as follows:
-
-  ```java
-  long delay = 0;
-  LocalDnsHelper helper = LocalDnsHelper.create(delay);
-  helper.start();
-  ```
-
-  This will spawn a server thread that listens to `localhost` at an ephemeral port for DNS requests.
-  The `delay` parameter determines if change requests should be processed synchronously
-  (value `0`) or in a separate thread with a minimum of delay of `delay` milliseconds.
-
-2. In your program, create the DNS service by using the helper's `getOptions()` method.
-For example:
-
-  ```java
-  Dns dns = LocalDnsHelper.getOptions().getService();
-  ```
-
-3. Run your tests.
-
-4. Stop the DNS emulator.
-
-  ```java
-  helper.stop();
-  ```
-
-  This method will block until the server thread has been terminated.
+Currently, there isn't an emulator for DNS. An alternative is to create a test project.
 
 ### Testing code that uses Logging
 
@@ -251,7 +220,7 @@ Currently, there isn't an emulator for Google Cloud Storage, so an alternative i
 
 1. Create a test Google Cloud project.
 
-2. Download a JSON service account credentials file from the Google Developer's Console.  See more about this on the [Google Cloud Platform Storage Authentication page][cloud-platform-storage-authentication]. 
+2. Download a JSON service account credentials file from the Google Developer's Console.  See more about this on the [Google Cloud Platform Storage Authentication page][cloud-platform-storage-authentication].
 
 3. Create a `RemoteStorageHelper` object using your project ID and JSON key.
 Here is an example that uses the `RemoteStorageHelper` to create a bucket.
