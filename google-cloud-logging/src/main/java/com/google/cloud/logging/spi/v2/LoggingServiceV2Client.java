@@ -31,7 +31,6 @@ import com.google.logging.v2.LogNameOneof;
 import com.google.logging.v2.WriteLogEntriesRequest;
 import com.google.logging.v2.WriteLogEntriesResponse;
 import com.google.protobuf.Empty;
-import com.google.protobuf.ExperimentalApi;
 import io.grpc.ManagedChannel;
 import java.io.Closeable;
 import java.io.IOException;
@@ -98,7 +97,6 @@ import javax.annotation.Generated;
  * </pre>
  */
 @Generated("by GAPIC")
-@ExperimentalApi
 public class LoggingServiceV2Client implements AutoCloseable {
   private final LoggingServiceV2Settings settings;
   private final ScheduledExecutorService executor;
