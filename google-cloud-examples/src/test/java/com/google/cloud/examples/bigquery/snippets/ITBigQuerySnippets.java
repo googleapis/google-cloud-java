@@ -73,6 +73,8 @@ public class ITBigQuerySnippets {
   private static final String OTHER_DATASET = RemoteBigQueryHelper.generateDatasetName();
   private static final String QUERY =
       "SELECT unique(corpus) FROM [bigquery-public-data:samples.shakespeare]";
+  private static final String QUERY_WITH_PARAMETERS =
+      "SELECT distinct(corpus) FROM `bigquery-public-data.samples.shakespeare` where word_count > @wordCount";
   private static final Function<Job, JobId> TO_JOB_ID_FUNCTION = new Function<Job, JobId>() {
     @Override
     public JobId apply(Job job) {
@@ -270,5 +272,16 @@ public class ITBigQuerySnippets {
     result = queryResponse.getResult();
     assertNotNull(result);
     assertTrue(bigquerySnippets.cancelJobFromId(queryResponse.getJobId().getJob()));
+  }
+
+  @Test
+  public void testRunQueryWithParameters() throws InterruptedException {
+    QueryResponse queryResponse = bigquerySnippets.runQueryWithParameters(QUERY_WITH_PARAMETERS);
+    assertNotNull(queryResponse);
+    assertTrue(queryResponse.jobCompleted());
+    assertFalse(queryResponse.hasErrors());
+    QueryResult result = queryResponse.getResult();
+    assertNotNull(result);
+    assertTrue(bigquerySnippets.cancelJob(queryResponse.getJobId().getJob()));
   }
 }

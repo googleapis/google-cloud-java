@@ -46,6 +46,7 @@ import com.google.cloud.bigquery.JobId;
 import com.google.cloud.bigquery.JobInfo;
 import com.google.cloud.bigquery.JobStatistics.LoadStatistics;
 import com.google.cloud.bigquery.QueryJobConfiguration;
+import com.google.cloud.bigquery.QueryParameterValue;
 import com.google.cloud.bigquery.QueryRequest;
 import com.google.cloud.bigquery.QueryResponse;
 import com.google.cloud.bigquery.QueryResult;
@@ -606,6 +607,36 @@ public class BigQuerySnippets {
       // do something with the data
     }
     // [END runQuery]
+    return response;
+  }
+
+  /**
+   * Example of running a query with query parameters.
+   */
+  // [TARGET query(QueryRequest)]
+  // [VARIABLE "SELECT distinct(corpus) FROM `bigquery-public-data.samples.shakespeare` where word_count > @wordCount"]
+  public QueryResponse runQueryWithParameters(String query) throws InterruptedException {
+    // [START runQueryWithParameters]
+    QueryRequest request = QueryRequest.newBuilder(query)
+        .setUseLegacySql(false) // standard SQL is required to use query parameters
+        .addNamedParameter("wordCount", QueryParameterValue.int64(5))
+        .build();
+    QueryResponse response = bigquery.query(request);
+    // Wait for things to finish
+    while (!response.jobCompleted()) {
+      Thread.sleep(1000);
+      response = bigquery.getQueryResults(response.getJobId());
+    }
+    if (response.hasErrors()) {
+      // handle errors
+    }
+    QueryResult result = response.getResult();
+    Iterator<List<FieldValue>> rowIterator = result.iterateAll();
+    while (rowIterator.hasNext()) {
+      List<FieldValue> row = rowIterator.next();
+      // do something with the data
+    }
+    // [END runQueryWithParameters]
     return response;
   }
 
