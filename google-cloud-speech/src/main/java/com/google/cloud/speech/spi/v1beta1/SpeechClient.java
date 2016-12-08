@@ -391,17 +391,17 @@ public class SpeechClient implements AutoCloseable {
    * try (SpeechClient speechClient = SpeechClient.create()) {
    *   StreamObserver&lt;StreamingRecognizeResponse&gt; responseObserver =
    *       new StreamObserver&lt;StreamingRecognizeResponse&gt;() {
-   *         @Override
+   *         {@literal @}Override
    *         public void onNext(StreamingRecognizeResponse response) {
    *           // Do something when receive a response
    *         }
    *
-   *         @Override
+   *         {@literal @}Override
    *         public void onError(Throwable t) {
    *           // Add error-handling
    *         }
    *
-   *         @Override
+   *         {@literal @}Override
    *         public void onCompleted() {
    *           // Do something when complete.
    *         }
