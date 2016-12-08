@@ -29,7 +29,6 @@ import com.google.logging.v2.ParentNameOneof;
 import com.google.logging.v2.SinkNameOneof;
 import com.google.logging.v2.UpdateSinkRequest;
 import com.google.protobuf.Empty;
-import com.google.protobuf.ExperimentalApi;
 import io.grpc.ManagedChannel;
 import java.io.Closeable;
 import java.io.IOException;
@@ -96,7 +95,6 @@ import javax.annotation.Generated;
  * </pre>
  */
 @Generated("by GAPIC")
-@ExperimentalApi
 public class ConfigServiceV2Client implements AutoCloseable {
   private final ConfigServiceV2Settings settings;
   private final ScheduledExecutorService executor;
