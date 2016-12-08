@@ -18,6 +18,8 @@ package com.google.cloud.testing;
 
 import com.google.cloud.ServiceOptions;
 import com.google.common.io.CharStreams;
+import com.google.common.util.concurrent.SettableFuture;
+import com.google.common.util.concurrent.UncheckedExecutionException;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
@@ -43,10 +45,14 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
+import org.joda.time.Duration;
 
 /**
  * Utility class to start and stop a local service which is used by unit testing.
@@ -104,16 +110,50 @@ public abstract class BaseEmulatorHelper<T extends ServiceOptions> {
   }
 
   /**
-   * Stops the local service's subprocess and any possible thread listening for its output.
+   * Waits for the local service's subprocess to terminate,
+   * and stop any possible thread listening for its output.
    */
-  protected final void stopProcess() throws IOException, InterruptedException {
+  protected final int waitForProcess(Duration timeout) throws IOException, InterruptedException, TimeoutException {
     if (blockingProcessReader != null) {
       blockingProcessReader.terminate();
       blockingProcessReader = null;
     }
     if (activeRunner != null) {
-      activeRunner.stop();
+      int exitCode = activeRunner.waitFor(timeout);
       activeRunner = null;
+      return exitCode;
+    }
+    return 0;
+  }
+
+  private static int waitForProcess(final Process process, Duration timeout) throws InterruptedException, TimeoutException {
+    if (process == null) {
+      return 0;
+    }
+
+    final SettableFuture<Integer> exitValue = SettableFuture.create();
+
+    Thread waiter = new Thread(new Runnable() {
+      @Override
+      public void run() {
+        try {
+          exitValue.set(process.waitFor());
+        } catch (InterruptedException e) {
+          exitValue.setException(e);
+        }
+      }
+    });
+    waiter.start();
+
+    try {
+      return exitValue.get(timeout.getMillis(), TimeUnit.MILLISECONDS);
+    } catch (ExecutionException e) {
+      if (e.getCause() instanceof InterruptedException) {
+        throw (InterruptedException) e.getCause();
+      }
+      throw new UncheckedExecutionException(e);
+    } finally {
+      waiter.interrupt();
     }
   }
 
@@ -144,7 +184,7 @@ public abstract class BaseEmulatorHelper<T extends ServiceOptions> {
   /**
    * Stops the local emulator.
    */
-  public abstract void stop() throws IOException, InterruptedException;
+  public abstract void stop(Duration timeout) throws IOException, InterruptedException, TimeoutException;
 
   /**
    * Resets the internal state of the emulator.
@@ -195,9 +235,10 @@ public abstract class BaseEmulatorHelper<T extends ServiceOptions> {
     void start() throws IOException;
 
     /**
-     * Stops the emulator associated to this runner.
+     * Wait for the emulator associated to this runner to terminate,
+     * returning the exit status.
      */
-    void stop() throws InterruptedException;
+    int waitFor(Duration timeout) throws InterruptedException, TimeoutException;
 
     /**
      * Returns the process associated to the emulator, if any.
@@ -239,11 +280,8 @@ public abstract class BaseEmulatorHelper<T extends ServiceOptions> {
     }
 
     @Override
-    public void stop() throws InterruptedException {
-      if (process != null) {
-        process.destroy();
-        process.waitFor();
-      }
+    public int waitFor(Duration timeout) throws InterruptedException, TimeoutException {
+      return waitForProcess(process, timeout);
     }
 
     @Override
@@ -337,11 +375,8 @@ public abstract class BaseEmulatorHelper<T extends ServiceOptions> {
     }
 
     @Override
-    public void stop() throws InterruptedException {
-      if (process != null) {
-        process.destroy();
-        process.waitFor();
-      }
+    public int waitFor(Duration timeout) throws InterruptedException, TimeoutException {
+      return waitForProcess(process, timeout);
     }
 
     @Override

@@ -22,12 +22,14 @@ import com.google.cloud.testing.BaseEmulatorHelper.EmulatorRunner;
 import com.google.common.collect.ImmutableList;
 
 import org.easymock.EasyMock;
+import org.joda.time.Duration;
 import org.junit.Test;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
+import java.util.concurrent.TimeoutException;
 import java.util.logging.Logger;
 
 public class BaseEmulatorHelperTest {
@@ -66,8 +68,8 @@ public class BaseEmulatorHelperTest {
     }
 
     @Override
-    public void stop() throws IOException, InterruptedException {
-      stopProcess();
+    public void stop(Duration timeout) throws IOException, InterruptedException, TimeoutException {
+      waitForProcess(timeout);
     }
 
     @Override
@@ -77,7 +79,7 @@ public class BaseEmulatorHelperTest {
   }
 
   @Test
-  public void testEmulatorHelper() throws IOException, InterruptedException {
+  public void testEmulatorHelper() throws IOException, InterruptedException, TimeoutException {
     Process process = EasyMock.createStrictMock(Process.class);
     InputStream stream = new ByteArrayInputStream(BLOCK_UNTIL.getBytes(Charsets.UTF_8));
     EmulatorRunner emulatorRunner = EasyMock.createStrictMock(EmulatorRunner.class);
@@ -86,18 +88,18 @@ public class BaseEmulatorHelperTest {
     emulatorRunner.start();
     EasyMock.expectLastCall();
     EasyMock.expect(emulatorRunner.getProcess()).andReturn(process);
-    emulatorRunner.stop();
-    EasyMock.expectLastCall();
+    emulatorRunner.waitFor(Duration.standardMinutes(1));
+    EasyMock.expectLastCall().andReturn(0);
     EasyMock.replay(process, emulatorRunner);
     TestEmulatorHelper helper =
         new TestEmulatorHelper(ImmutableList.of(emulatorRunner), BLOCK_UNTIL);
     helper.start();
-    helper.stop();
+    helper.stop(Duration.standardMinutes(1));
     EasyMock.verify();
   }
 
   @Test
-  public void testEmulatorHelperMultipleRunners() throws IOException, InterruptedException {
+  public void testEmulatorHelperMultipleRunners() throws IOException, InterruptedException, TimeoutException {
     Process process = EasyMock.createStrictMock(Process.class);
     InputStream stream = new ByteArrayInputStream(BLOCK_UNTIL.getBytes(Charsets.UTF_8));
     EmulatorRunner firstRunner = EasyMock.createStrictMock(EmulatorRunner.class);
@@ -108,13 +110,13 @@ public class BaseEmulatorHelperTest {
     secondRunner.start();
     EasyMock.expectLastCall();
     EasyMock.expect(secondRunner.getProcess()).andReturn(process);
-    secondRunner.stop();
-    EasyMock.expectLastCall();
+    secondRunner.waitFor(Duration.standardMinutes(1));
+    EasyMock.expectLastCall().andReturn(0);
     EasyMock.replay(process, secondRunner);
     TestEmulatorHelper helper =
         new TestEmulatorHelper(ImmutableList.of(firstRunner, secondRunner), BLOCK_UNTIL);
     helper.start();
-    helper.stop();
+    helper.stop(Duration.standardMinutes(1));
     EasyMock.verify();
   }
 }
