@@ -69,4 +69,3 @@ public class QuickstartSampleIT {
     assertThat(got).contains("Saved sampletask1: Buy milk");
   }
 }
-// [END datastore_quickstart]
