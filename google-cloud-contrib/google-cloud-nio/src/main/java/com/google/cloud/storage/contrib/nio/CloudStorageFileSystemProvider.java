@@ -176,8 +176,8 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
    * @param env map of configuration options, whose keys correspond to the method names of
    *     {@link CloudStorageConfiguration.Builder}. However you are not allowed to set the working
    *     directory, as that should be provided in the {@code uri}
-   * @throws IllegalArgumentException if {@code uri} specifies a user, query, fragment, or scheme is
-   *     not {@value CloudStorageFileSystem#URI_SCHEME}
+   * @throws IllegalArgumentException if {@code uri} specifies a port, user, query, or fragment, or
+   *     if scheme is not {@value CloudStorageFileSystem#URI_SCHEME}
    */
   @Override
   public CloudStorageFileSystem newFileSystem(URI uri, Map<String, ?> env) {
@@ -191,11 +191,10 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
         CloudStorageFileSystem.URI_SCHEME, uri);
     checkArgument(
         uri.getPort() == -1
-            && isNullOrEmpty(uri.getPath())
             && isNullOrEmpty(uri.getQuery())
             && isNullOrEmpty(uri.getFragment())
             && isNullOrEmpty(uri.getUserInfo()),
-        "GCS FileSystem URIs mustn't have: port, userinfo, path, query, or fragment: %s",
+        "GCS FileSystem URIs mustn't have: port, userinfo, query, or fragment: %s",
         uri);
     CloudStorageUtil.checkBucket(uri.getHost());
     initStorage();
