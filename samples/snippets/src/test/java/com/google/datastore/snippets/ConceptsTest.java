@@ -51,6 +51,7 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Iterators;
 
+import org.joda.time.Duration;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -72,6 +73,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.TimeZone;
+import java.util.concurrent.TimeoutException;
 
 /**
  * Contains Cloud Datastore snippets demonstrating concepts for documentation.
@@ -133,8 +135,8 @@ public class ConceptsTest {
    * @throws InterruptedException if there are errors stopping the local Datastore
    */
   @AfterClass
-  public static void afterClass() throws IOException, InterruptedException {
-    HELPER.stop();
+  public static void afterClass() throws IOException, InterruptedException, TimeoutException {
+    HELPER.stop(Duration.standardMinutes(1));
   }
 
   private void assertValidKey(Key taskKey) {
