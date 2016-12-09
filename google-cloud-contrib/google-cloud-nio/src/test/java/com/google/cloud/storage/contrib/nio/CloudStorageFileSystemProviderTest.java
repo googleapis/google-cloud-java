@@ -649,7 +649,7 @@ public class CloudStorageFileSystemProviderTest {
   @Test
   public void testNewFileSystem() throws IOException {
     Map<String,String> env = new HashMap<>();
-    FileSystem fs = FileSystems.newFileSystem(URI.create("gs://bucket/path/to/file"), env);
+    FileSystems.newFileSystem(URI.create("gs://bucket/path/to/file"), env);
   }
 
   private static CloudStorageConfiguration permitEmptyPathComponents(boolean value) {
