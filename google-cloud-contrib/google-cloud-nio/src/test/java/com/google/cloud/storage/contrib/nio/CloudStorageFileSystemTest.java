@@ -17,9 +17,11 @@
 package com.google.cloud.storage.contrib.nio;
 
 import static com.google.common.truth.Truth.assertThat;
+import static com.google.common.truth.Truth.assertWithMessage;
 import static java.nio.charset.StandardCharsets.UTF_8;
 
 import com.google.cloud.storage.StorageOptions;
+import com.google.common.collect.ImmutableList;
 import com.google.common.testing.EqualsTester;
 import com.google.common.testing.NullPointerTester;
 
@@ -34,6 +36,7 @@ import java.nio.file.FileSystem;
 import java.nio.file.FileSystems;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.PathMatcher;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
@@ -157,6 +160,24 @@ public class CloudStorageFileSystemTest {
         got.add(path);
       }
       assertThat(got).containsExactlyElementsIn(goodPaths);
+    }
+  }
+
+  @Test
+  public void testMatcher() throws IOException {
+    try (FileSystem fs = CloudStorageFileSystem.forBucket("bucket")) {
+      List<String> paths = ImmutableList.of("a.java", "a.text", "folder/c.java", "d");
+      String pattern1 = "glob:*.java";
+      PathMatcher matcher1 = fs.getPathMatcher(pattern1);
+      List<Boolean> matches1 = ImmutableList.of(true, false, true, false);
+      String pattern2 = "glob:*.{java,text}";
+      PathMatcher matcher2 = fs.getPathMatcher(pattern2);
+      List<Boolean> matches2 = ImmutableList.of(true, true, true, false);
+      for (int i=0; i<paths.size(); i++) {
+        Path input = fs.getPath(paths.get(i)).getFileName();
+        assertWithMessage(pattern1 + " on " + paths.get(i)).that(matcher1.matches(input)).isEqualTo(matches1.get(i));
+        assertWithMessage(pattern2 + " on " + paths.get(i)).that(matcher2.matches(input)).isEqualTo(matches2.get(i));
+      }
     }
   }
 }
