@@ -18,6 +18,7 @@ package com.google.cloud.pubsub;
 
 import static org.junit.Assert.assertTrue;
 
+import com.google.cloud.Clock;
 import com.google.cloud.GrpcServiceOptions.ExecutorFactory;
 import com.google.common.collect.ImmutableList;
 import java.util.concurrent.CountDownLatch;
@@ -29,11 +30,12 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicLong;
 import org.easymock.EasyMock;
 import org.easymock.IAnswer;
+import org.joda.time.DateTimeUtils;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
-import org.junit.Test;
 import org.junit.rules.Timeout;
+import org.junit.Test;
 
 public class AckDeadlineRenewerTest {
 
@@ -49,7 +51,12 @@ public class AckDeadlineRenewerTest {
   private PubSub pubsub;
   private FakeScheduledExecutorService executorService;
   private AckDeadlineRenewer ackDeadlineRenewer;
-  private final FakeClock clock = new FakeClock();
+  private final Clock clock = new Clock() {
+    @Override
+    public long millis() {
+      return DateTimeUtils.currentTimeMillis();
+    }
+  };
 
   @Rule
   public Timeout globalTimeout = Timeout.seconds(60);
