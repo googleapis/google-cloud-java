@@ -57,7 +57,7 @@ public class AckDeadlineRenewerTest {
   @Before
   public void setUp() {
     pubsub = EasyMock.createStrictMock(PubSub.class);
-    executorService = new FakeScheduledExecutorService(4, clock);
+    executorService = new FakeScheduledExecutorService();
     ExecutorFactory executorFactory = new ExecutorFactory() {
       @Override
       public ExecutorService get() {
