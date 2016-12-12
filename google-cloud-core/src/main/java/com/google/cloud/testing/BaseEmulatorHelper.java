@@ -114,14 +114,14 @@ public abstract class BaseEmulatorHelper<T extends ServiceOptions> {
    * and stop any possible thread listening for its output.
    */
   protected final int waitForProcess(Duration timeout) throws IOException, InterruptedException, TimeoutException {
-    if (blockingProcessReader != null) {
-      blockingProcessReader.terminate();
-      blockingProcessReader = null;
-    }
     if (activeRunner != null) {
       int exitCode = activeRunner.waitFor(timeout);
       activeRunner = null;
       return exitCode;
+    }
+    if (blockingProcessReader != null) {
+      blockingProcessReader.join();
+      blockingProcessReader = null;
     }
     return 0;
   }
