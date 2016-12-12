@@ -50,6 +50,6 @@ public class LocalSystemTest extends BaseSystemTest {
   public static void stopServer() throws Exception {
     pubsub.close();
     pubsubHelper.reset();
-    pubsubHelper.stop(Duration.standardMinutes(1));
+    pubsubHelper.stop(Duration.standardMinutes(3));
   }
 }
