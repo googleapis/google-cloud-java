@@ -75,15 +75,6 @@ public class BlockingProcessStreamReaderTest {
   }
 
   @Test
-  public void testBlockUntil() throws IOException {
-    InputStream stream = new ByteArrayInputStream(OUTPUT.getBytes(Charsets.UTF_8));
-    BlockingProcessStreamReader thread =
-        BlockingProcessStreamReader.start("emulator", stream, BLOCK_UNTIL, null);
-    thread.terminate();
-    stream.close();
-  }
-
-  @Test
   public void testForwardLogEntry() throws IOException, InterruptedException {
     TestLogger logger = new TestLogger();
     InputStream stream = new ByteArrayInputStream(OUTPUT_WITH_LOGS.getBytes(Charsets.UTF_8));

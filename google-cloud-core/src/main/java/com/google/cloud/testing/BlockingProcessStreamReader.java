@@ -61,10 +61,6 @@ class BlockingProcessStreamReader extends Thread {
     }
   }
 
-  void terminate() throws IOException {
-    interrupt();
-  }
-
   @Override
   public void run() {
     String previousLine = "";
@@ -79,9 +75,7 @@ class BlockingProcessStreamReader extends Thread {
         processLogLine(previousLine, nextLine);
       }
     } catch (IOException e) {
-      if (!isInterrupted()) {
-        e.printStackTrace(System.err);
-      }
+      e.printStackTrace(System.err);
     }
     processLogLine(previousLine, firstNonNull(nextLine, ""));
     writeLog();
