@@ -55,21 +55,21 @@ class FakeSubscriberServiceImpl extends SubscriberImplBase {
   public static final class ModifyAckDeadline {
     private final String ackId;
     private final long seconds;
-  
+
     public ModifyAckDeadline(String ackId, long seconds) {
       Preconditions.checkNotNull(ackId);
       this.ackId = ackId;
       this.seconds = seconds;
     }
-  
+
     public String getAckId() {
       return ackId;
     }
-  
+
     public long getSeconds() {
       return seconds;
     }
-  
+
     @Override
     public boolean equals(Object obj) {
       if (!(obj instanceof ModifyAckDeadline)) {
@@ -78,7 +78,7 @@ class FakeSubscriberServiceImpl extends SubscriberImplBase {
       ModifyAckDeadline other = (ModifyAckDeadline) obj;
       return other.ackId.equals(this.ackId) && other.seconds == this.seconds;
     }
-  
+
     @Override
     public int hashCode() {
       return ackId.hashCode();

@@ -17,6 +17,7 @@
 package com.google.cloud.pubsub;
 
 import com.google.auth.Credentials;
+import com.google.cloud.Clock;
 import com.google.cloud.pubsub.Subscriber.MessageReceiver;
 import com.google.cloud.pubsub.Subscriber.MessageReceiver.AckReply;
 import com.google.common.annotations.VisibleForTesting;
@@ -70,6 +71,7 @@ final class SubscriberConnection extends AbstractService {
 
   private final Duration ackExpirationPadding;
   private final ScheduledExecutorService executor;
+  private final Clock clock;
   private final MessageReceiver receiver;
   private final String subscription;
   private Duration channelReconnectBackoff = INITIAL_CHANNEL_RECONNECT_BACKOFF;
@@ -96,7 +98,7 @@ final class SubscriberConnection extends AbstractService {
   // To keep track of number of seconds the receiver takes to process messages.
   private final Distribution ackLatencyDistribution;
 
-  public SubscriberConnection(
+  SubscriberConnection(
       String subscription,
       Credentials credentials,
       MessageReceiver receiver,
@@ -105,8 +107,10 @@ final class SubscriberConnection extends AbstractService {
       Distribution ackLatencyDistribution,
       Channel channel,
       FlowController flowController,
-      ScheduledExecutorService executor) {
+      ScheduledExecutorService executor,
+      Clock clock) {
     this.executor = executor;
+    this.clock = clock;
     this.credentials = credentials;
     this.ackExpirationPadding = ackExpirationPadding;
     this.streamAckDeadlineSeconds = streamAckDeadlineSeconds;
@@ -125,16 +129,18 @@ final class SubscriberConnection extends AbstractService {
   }
 
   private static class ExpirationInfo implements Comparable<ExpirationInfo> {
+    private final Clock clock;
     Instant expiration;
     int nextExtensionSeconds;
 
-    ExpirationInfo(Instant expiration, int initialAckDeadlineExtension) {
+    ExpirationInfo(Clock clock, Instant expiration, int initialAckDeadlineExtension) {
+      this.clock = clock;
       this.expiration = expiration;
       nextExtensionSeconds = initialAckDeadlineExtension;
     }
 
     void extendExpiration() {
-      expiration = Instant.now().plus(Duration.standardSeconds(nextExtensionSeconds));
+      expiration = new Instant(clock.millis()).plus(Duration.standardSeconds(nextExtensionSeconds));
       nextExtensionSeconds = 2 * nextExtensionSeconds;
     }
 
@@ -181,7 +187,7 @@ final class SubscriberConnection extends AbstractService {
       this.ackId = ackId;
       this.outstandingBytes = outstandingBytes;
       acked = new AtomicBoolean(false);
-      receivedTime = Instant.now();
+      receivedTime = new Instant(clock.millis());
     }
 
     @Override
@@ -216,7 +222,7 @@ final class SubscriberConnection extends AbstractService {
           // Record the latency rounded to the next closest integer.
           ackLatencyDistribution.record(
               Ints.saturatedCast(
-                  (long) Math.ceil(new Duration(receivedTime, Instant.now()).getMillis() / 1000D)));
+                  (long) Math.ceil((clock.millis() - receivedTime.getMillis()) / 1000D)));
           messagesWaiter.incrementPendingMessages(-1);
           return;
         case NACK:
@@ -361,7 +367,7 @@ final class SubscriberConnection extends AbstractService {
     final List<com.google.pubsub.v1.ReceivedMessage> responseMessages =
         response.getReceivedMessagesList();
     try {
-      Instant now = Instant.now();
+      Instant now = new Instant(clock.millis());
       int receivedMessagesCount = response.getReceivedMessagesCount();
       int totalByteCount = 0;
       final List<AckHandler> ackHandlers = new ArrayList<>(responseMessages.size());
@@ -372,7 +378,9 @@ final class SubscriberConnection extends AbstractService {
       }
       ExpirationInfo expiration =
           new ExpirationInfo(
-              now.plus(streamAckDeadlineSeconds * 1000), INITIAL_ACK_DEADLINE_EXTENSION_SECONDS);
+              clock,
+              now.plus(streamAckDeadlineSeconds * 1000),
+              INITIAL_ACK_DEADLINE_EXTENSION_SECONDS);
       synchronized (outstandingAckHandlers) {
         addOutstadingAckHandlers(expiration, ackHandlers);
       }
@@ -451,7 +459,7 @@ final class SubscriberConnection extends AbstractService {
         alarmsLock.unlock();
       }
 
-      Instant now = Instant.now();
+      Instant now = new Instant(clock.millis());
       // Rounded to the next second, so we only schedule future alarms at the second
       // resolution.
       Instant cutOverTime =
@@ -531,7 +539,7 @@ final class SubscriberConnection extends AbstractService {
         ackDeadlineExtensionAlarm =
             executor.schedule(
                 new AckDeadlineAlarm(),
-                nextAckDeadlineExtensionAlarmTime.getMillis() - Instant.now().getMillis(),
+                nextAckDeadlineExtensionAlarmTime.getMillis() - clock.millis(),
                 TimeUnit.MILLISECONDS);
       }
 

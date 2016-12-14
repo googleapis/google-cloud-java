@@ -16,6 +16,8 @@
 
 package com.google.cloud.pubsub;
 
+import com.google.cloud.Clock;
+import com.google.cloud.pubsub.FakeClock;
 import com.google.common.primitives.Ints;
 import com.google.common.util.concurrent.SettableFuture;
 import java.util.ArrayList;
@@ -33,7 +35,6 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import java.util.concurrent.atomic.AtomicBoolean;
 import org.joda.time.DateTime;
-import org.joda.time.DateTimeUtils;
 import org.joda.time.Duration;
 import org.joda.time.MutableDateTime;
 
@@ -46,11 +47,11 @@ public class FakeScheduledExecutorService extends AbstractExecutorService
 
   private final AtomicBoolean shutdown = new AtomicBoolean(false);
   private final PriorityQueue<PendingCallable<?>> pendingCallables = new PriorityQueue<>();
-  private final MutableDateTime currentTime = MutableDateTime.now();
   private final ExecutorService delegate = Executors.newSingleThreadExecutor();
+  private final FakeClock clock = new FakeClock();
 
-  public FakeScheduledExecutorService() {
-    DateTimeUtils.setCurrentMillisFixed(currentTime.getMillis());
+  public Clock getClock() {
+    return clock;
   }
 
   @Override
@@ -92,11 +93,12 @@ public class FakeScheduledExecutorService extends AbstractExecutorService
    * outstanding callable which execution time has passed.
    */
   public void advanceTime(Duration toAdvance) {
-    currentTime.add(toAdvance);
-    DateTimeUtils.setCurrentMillisFixed(currentTime.getMillis());
+    clock.advance(toAdvance.getMillis(), TimeUnit.MILLISECONDS);
+    DateTime cmpTime = new DateTime(clock.millis());
+
     synchronized (pendingCallables) {
       while (!pendingCallables.isEmpty()
-          && pendingCallables.peek().getScheduledTime().compareTo(currentTime) <= 0) {
+          && pendingCallables.peek().getScheduledTime().compareTo(cmpTime) <= 0) {
         try {
           pendingCallables.poll().call();
           if (shutdown.get() && pendingCallables.isEmpty()) {
@@ -186,7 +188,7 @@ public class FakeScheduledExecutorService extends AbstractExecutorService
 
   /** Class that saves the state of an scheduled pending callable. */
   class PendingCallable<T> implements Comparable<PendingCallable<T>> {
-    DateTime creationTime = currentTime.toDateTime();
+    DateTime creationTime = new DateTime(clock.millis());
     Duration delay;
     Callable<T> pendingCallable;
     SettableFuture<T> future = SettableFuture.create();
@@ -221,8 +223,7 @@ public class FakeScheduledExecutorService extends AbstractExecutorService
       return new ScheduledFuture<T>() {
         @Override
         public long getDelay(TimeUnit unit) {
-          return unit.convert(
-              new Duration(currentTime, getScheduledTime()).getMillis(), TimeUnit.MILLISECONDS);
+          return unit.convert(getScheduledTime().getMillis() - clock.millis(), TimeUnit.MILLISECONDS);
         }
 
         @Override
@@ -279,7 +280,7 @@ public class FakeScheduledExecutorService extends AbstractExecutorService
               done.set(true);
               break;
             case FIXED_DELAY:
-              this.creationTime = currentTime.toDateTime();
+              this.creationTime = new DateTime(clock.millis());
               schedulePendingCallable(this);
               break;
             case FIXED_RATE:

@@ -18,6 +18,7 @@ package com.google.cloud.pubsub;
 
 import com.google.auth.Credentials;
 import com.google.auth.oauth2.GoogleCredentials;
+import com.google.cloud.Clock;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Optional;
 import com.google.common.primitives.Ints;
@@ -60,6 +61,7 @@ public class SubscriberImpl extends AbstractService implements Subscriber {
   private final ScheduledExecutorService executor;
   private final Distribution ackLatencyDistribution =
       new Distribution(MAX_ACK_DEADLINE_SECONDS + 1);
+  private final Clock clock;
   private ScheduledFuture<?> ackDeadlineUpdater;
   private int streamAckDeadlineSeconds;
 
@@ -72,6 +74,7 @@ public class SubscriberImpl extends AbstractService implements Subscriber {
         Math.max(
             INITIAL_ACK_DEADLINE_SECONDS,
             Ints.saturatedCast(ackExpirationPadding.getStandardSeconds()));
+    clock = builder.clock.isPresent() ? builder.clock.get() : Clock.defaultClock();
 
     int numChannels = Math.max(1, Runtime.getRuntime().availableProcessors()) * CHANNELS_PER_CORE;
     executor =
@@ -113,7 +116,8 @@ public class SubscriberImpl extends AbstractService implements Subscriber {
               ackLatencyDistribution,
               channelBuilder.build(),
               flowController,
-              executor);
+              executor,
+              clock);
     }
   }
 

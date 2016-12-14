@@ -18,6 +18,7 @@ package com.google.cloud.pubsub;
 
 import com.google.auth.Credentials;
 import com.google.auth.oauth2.GoogleCredentials;
+import com.google.cloud.Clock;
 import com.google.cloud.pubsub.Subscriber.MessageReceiver.AckReply;
 import com.google.common.base.Optional;
 import com.google.common.base.Preconditions;
@@ -152,6 +153,7 @@ public interface Subscriber extends Service {
 
     Optional<ScheduledExecutorService> executor;
     Optional<ManagedChannelBuilder<? extends ManagedChannelBuilder<?>>> channelBuilder;
+    Optional<Clock> clock;
 
     /**
      * Constructs a new {@link Builder}.
@@ -180,6 +182,7 @@ public interface Subscriber extends Service {
       maxOutstandingBytes = Optional.absent();
       maxOutstandingMessages = Optional.absent();
       executor = Optional.absent();
+      clock = Optional.absent();
     }
 
     /**
@@ -238,7 +241,7 @@ public interface Subscriber extends Service {
     /**
      * Set acknowledgement expiration padding.
      *
-     * <p>This is the time accounted before a message expiration is to happen, so the 
+     * <p>This is the time accounted before a message expiration is to happen, so the
      * {@link Subscriber} is able to send an ack extension beforehand.
      *
      * <p>This padding duration is configurable so you can account for network latency. A reasonable
@@ -256,6 +259,12 @@ public interface Subscriber extends Service {
     /** Gives the ability to set a custom executor. */
     public Builder setExecutor(ScheduledExecutorService executor) {
       this.executor = Optional.of(executor);
+      return this;
+    }
+
+    /** Gives the ability to set a custom executor. */
+    public Builder setClock(Clock clock) {
+      this.clock = Optional.of(clock);
       return this;
     }
 
