@@ -465,7 +465,7 @@ public abstract class BaseSystemTest {
         SubscriptionInfo.newBuilder(topic, subscription).setAckDeadLineSeconds(10).build());
     Message message1 = Message.of("payload1");
     Message message2 = Message.of("payload2");
-    // todo(mziccard): use batch publish if #1017 gets fixed, or remove this comment
+    // todo(mziccard): use bundle publish if #1017 gets fixed, or remove this comment
     pubsub().publish(topic, message1);
     pubsub().publish(topic, message2);
     Iterator<ReceivedMessage> iterator = pubsub().pull(subscription, 2);
@@ -505,7 +505,7 @@ public abstract class BaseSystemTest {
         SubscriptionInfo.newBuilder(topic, subscription).setAckDeadLineSeconds(10).build());
     Message message1 = Message.of("payload1");
     Message message2 = Message.of("payload2");
-    // todo(mziccard): use batch publish if #1017 gets fixed, or remove this comment
+    // todo(mziccard): use bundle publish if #1017 gets fixed, or remove this comment
     pubsub().publish(topic, message1);
     pubsub().publish(topic, message2);
     // Consume all messages and stop ack renewal

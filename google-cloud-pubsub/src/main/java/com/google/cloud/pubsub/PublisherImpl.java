@@ -63,18 +63,18 @@ final class PublisherImpl implements Publisher {
 
   private final String topic;
 
-  private final int maxBatchMessages;
-  private final int maxBatchBytes;
-  private final Duration maxBatchDuration;
-  private final boolean hasBatchingBytes;
+  private final int maxBundleMessages;
+  private final int maxBundleBytes;
+  private final Duration maxBundleDuration;
+  private final boolean hasBundlingBytes;
 
   private final Optional<Integer> maxOutstandingMessages;
   private final Optional<Integer> maxOutstandingBytes;
   private final boolean failOnFlowControlLimits;
 
-  private final Lock messagesBatchLock;
-  private List<OutstandingPublish> messagesBatch;
-  private int batchedBytes;
+  private final Lock messagesBundleLock;
+  private List<OutstandingPublish> messagesBundle;
+  private int bundledBytes;
 
   private final AtomicBoolean activeAlarm;
 
@@ -87,16 +87,16 @@ final class PublisherImpl implements Publisher {
   private final ScheduledExecutorService executor;
   private final AtomicBoolean shutdown;
   private final MessagesWaiter messagesWaiter;
-  private final Duration sendBatchDeadline;
+  private final Duration sendBundleDeadline;
   private ScheduledFuture<?> currentAlarmFuture;
 
   PublisherImpl(Builder builder) throws IOException {
     topic = builder.topic;
 
-    maxBatchMessages = builder.maxBatchMessages;
-    maxBatchBytes = builder.maxBatchBytes;
-    maxBatchDuration = builder.maxBatchDuration;
-    hasBatchingBytes = maxBatchBytes > 0;
+    maxBundleMessages = builder.maxBundleMessages;
+    maxBundleBytes = builder.maxBundleBytes;
+    maxBundleDuration = builder.maxBundleDuration;
+    hasBundlingBytes = maxBundleBytes > 0;
 
     maxOutstandingMessages = builder.maxOutstandingMessages;
     maxOutstandingBytes = builder.maxOutstandingBytes;
@@ -104,12 +104,12 @@ final class PublisherImpl implements Publisher {
     this.flowController =
         new FlowController(maxOutstandingMessages, maxOutstandingBytes, failOnFlowControlLimits);
 
-    sendBatchDeadline = builder.sendBatchDeadline;
+    sendBundleDeadline = builder.sendBundleDeadline;
 
     requestTimeout = builder.requestTimeout;
 
-    messagesBatch = new LinkedList<>();
-    messagesBatchLock = new ReentrantLock();
+    messagesBundle = new LinkedList<>();
+    messagesBundleLock = new ReentrantLock();
     activeAlarm = new AtomicBoolean(false);
     int numCores = Math.max(1, Runtime.getRuntime().availableProcessors());
     executor =
@@ -150,18 +150,18 @@ final class PublisherImpl implements Publisher {
   }
 
   @Override
-  public Duration getMaxBatchDuration() {
-    return maxBatchDuration;
+  public Duration getMaxBundleDuration() {
+    return maxBundleDuration;
   }
 
   @Override
-  public long getMaxBatchBytes() {
-    return maxBatchBytes;
+  public long getMaxBundleBytes() {
+    return maxBundleBytes;
   }
 
   @Override
-  public long getMaxBatchMessages() {
-    return maxBatchMessages;
+  public long getMaxBundleMessages() {
+    return maxBundleMessages;
   }
 
   @Override
@@ -206,36 +206,36 @@ final class PublisherImpl implements Publisher {
     } catch (CloudPubsubFlowControlException e) {
       return Futures.immediateFailedFuture(e);
     }
-    OutstandingBatch batchToSend = null;
+    OutstandingBundle bundleToSend = null;
     SettableFuture<String> publishResult = SettableFuture.create();
     final OutstandingPublish outstandingPublish = new OutstandingPublish(publishResult, message);
-    messagesBatchLock.lock();
+    messagesBundleLock.lock();
     try {
-      // Check if the next message makes the batch exceed the current batch byte size.
-      if (!messagesBatch.isEmpty()
-          && hasBatchingBytes
-          && batchedBytes + messageSize >= getMaxBatchBytes()) {
-        batchToSend = new OutstandingBatch(messagesBatch, batchedBytes);
-        messagesBatch = new LinkedList<>();
-        batchedBytes = 0;
+      // Check if the next message makes the bundle exceed the current bundle byte size.
+      if (!messagesBundle.isEmpty()
+          && hasBundlingBytes
+          && bundledBytes + messageSize >= getMaxBundleBytes()) {
+        bundleToSend = new OutstandingBundle(messagesBundle, bundledBytes);
+        messagesBundle = new LinkedList<>();
+        bundledBytes = 0;
       }
 
-      // Border case if the message to send is greater equals to the max batch size then can't be
-      // included in the current batch and instead sent immediately.
-      if (!hasBatchingBytes || messageSize < getMaxBatchBytes()) {
-        batchedBytes += messageSize;
-        messagesBatch.add(outstandingPublish);
+      // Border case if the message to send is greater equals to the max bundle size then can't be
+      // included in the current bundle and instead sent immediately.
+      if (!hasBundlingBytes || messageSize < getMaxBundleBytes()) {
+        bundledBytes += messageSize;
+        messagesBundle.add(outstandingPublish);
 
-        // If after adding the message we have reached the batch max messages then we have a batch
+        // If after adding the message we have reached the bundle max messages then we have a bundle
         // to send.
-        if (messagesBatch.size() == getMaxBatchMessages()) {
-          batchToSend = new OutstandingBatch(messagesBatch, batchedBytes);
-          messagesBatch = new LinkedList<>();
-          batchedBytes = 0;
+        if (messagesBundle.size() == getMaxBundleMessages()) {
+          bundleToSend = new OutstandingBundle(messagesBundle, bundledBytes);
+          messagesBundle = new LinkedList<>();
+          bundledBytes = 0;
         }
       }
-      // Setup the next duration based delivery alarm if there are messages batched.
-      if (!messagesBatch.isEmpty()) {
+      // Setup the next duration based delivery alarm if there are messages bundled.
+      if (!messagesBundle.isEmpty()) {
         setupDurationBasedPublishAlarm();
       } else if (currentAlarmFuture != null) {
         logger.debug("Cancelling alarm");
@@ -244,33 +244,33 @@ final class PublisherImpl implements Publisher {
         }
       }
     } finally {
-      messagesBatchLock.unlock();
+      messagesBundleLock.unlock();
     }
 
     messagesWaiter.incrementPendingMessages(1);
 
-    if (batchToSend != null) {
-      logger.debug("Scheduling a batch for immediate sending.");
-      final OutstandingBatch finalBatchToSend = batchToSend;
+    if (bundleToSend != null) {
+      logger.debug("Scheduling a bundle for immediate sending.");
+      final OutstandingBundle finalBundleToSend = bundleToSend;
       executor.execute(
           new Runnable() {
             @Override
             public void run() {
-              publishOutstandingBatch(finalBatchToSend);
+              publishOutstandingBundle(finalBundleToSend);
             }
           });
     }
 
     // If the message is over the size limit, it was not added to the pending messages and it will
-    // be sent in its own batch immediately.
-    if (hasBatchingBytes && messageSize >= getMaxBatchBytes()) {
-      logger.debug("Message exceeds the max batch bytes, scheduling it for immediate send.");
+    // be sent in its own bundle immediately.
+    if (hasBundlingBytes && messageSize >= getMaxBundleBytes()) {
+      logger.debug("Message exceeds the max bundle bytes, scheduling it for immediate send.");
       executor.execute(
           new Runnable() {
             @Override
             public void run() {
-              publishOutstandingBatch(
-                  new OutstandingBatch(ImmutableList.of(outstandingPublish), messageSize));
+              publishOutstandingBundle(
+                  new OutstandingBundle(ImmutableList.of(outstandingPublish), messageSize));
             }
           });
     }
@@ -280,7 +280,7 @@ final class PublisherImpl implements Publisher {
 
   private void setupDurationBasedPublishAlarm() {
     if (!activeAlarm.getAndSet(true)) {
-      logger.debug("Setting up alarm for the next %d ms.", getMaxBatchDuration().getMillis());
+      logger.debug("Setting up alarm for the next %d ms.", getMaxBundleDuration().getMillis());
       currentAlarmFuture =
           executor.schedule(
               new Runnable() {
@@ -291,31 +291,31 @@ final class PublisherImpl implements Publisher {
                   publishAllOustanding();
                 }
               },
-              getMaxBatchDuration().getMillis(),
+              getMaxBundleDuration().getMillis(),
               TimeUnit.MILLISECONDS);
     }
   }
 
   private void publishAllOustanding() {
-    messagesBatchLock.lock();
-    OutstandingBatch batchToSend;
+    messagesBundleLock.lock();
+    OutstandingBundle bundleToSend;
     try {
-      if (messagesBatch.isEmpty()) {
+      if (messagesBundle.isEmpty()) {
         return;
       }
-      batchToSend = new OutstandingBatch(messagesBatch, batchedBytes);
-      messagesBatch = new LinkedList<>();
-      batchedBytes = 0;
+      bundleToSend = new OutstandingBundle(messagesBundle, bundledBytes);
+      messagesBundle = new LinkedList<>();
+      bundledBytes = 0;
     } finally {
-      messagesBatchLock.unlock();
+      messagesBundleLock.unlock();
     }
-    publishOutstandingBatch(batchToSend);
+    publishOutstandingBundle(bundleToSend);
   }
 
-  private void publishOutstandingBatch(final OutstandingBatch outstandingBatch) {
+  private void publishOutstandingBundle(final OutstandingBundle outstandingBundle) {
     PublishRequest.Builder publishRequest = PublishRequest.newBuilder();
     publishRequest.setTopic(topic);
-    for (OutstandingPublish outstandingPublish : outstandingBatch.outstandingPublishes) {
+    for (OutstandingPublish outstandingPublish : outstandingBundle.outstandingPublishes) {
       publishRequest.addMessages(outstandingPublish.message);
     }
     int currentChannel = (int) (channelIndex.getAndIncrement() % channels.length);
@@ -328,46 +328,46 @@ final class PublisherImpl implements Publisher {
           @Override
           public void onSuccess(PublishResponse result) {
             try {
-              if (result.getMessageIdsCount() != outstandingBatch.size()) {
+              if (result.getMessageIdsCount() != outstandingBundle.size()) {
                 Throwable t =
                     new IllegalStateException(
                         String.format(
                             "The publish result count %s does not match "
                                 + "the expected %s results. Please contact Cloud Pub/Sub support "
                                 + "if this frequently occurs",
-                            result.getMessageIdsCount(), outstandingBatch.size()));
-                for (OutstandingPublish oustandingMessage : outstandingBatch.outstandingPublishes) {
+                            result.getMessageIdsCount(), outstandingBundle.size()));
+                for (OutstandingPublish oustandingMessage : outstandingBundle.outstandingPublishes) {
                   oustandingMessage.publishResult.setException(t);
                 }
                 return;
               }
 
               Iterator<OutstandingPublish> messagesResultsIt =
-                  outstandingBatch.outstandingPublishes.iterator();
+                  outstandingBundle.outstandingPublishes.iterator();
               for (String messageId : result.getMessageIdsList()) {
                 messagesResultsIt.next().publishResult.set(messageId);
               }
             } finally {
-              flowController.release(outstandingBatch.size(), outstandingBatch.batchSizeBytes);
-              messagesWaiter.incrementPendingMessages(-outstandingBatch.size());
+              flowController.release(outstandingBundle.size(), outstandingBundle.bundleSizeBytes);
+              messagesWaiter.incrementPendingMessages(-outstandingBundle.size());
             }
           }
 
           @Override
           public void onFailure(Throwable t) {
-            long nextBackoffDelay = computeNextBackoffDelayMs(outstandingBatch);
+            long nextBackoffDelay = computeNextBackoffDelayMs(outstandingBundle);
 
             if (!isRetryable(t)
                 || System.currentTimeMillis() + nextBackoffDelay
-                    > outstandingBatch.creationTime
-                        + PublisherImpl.this.sendBatchDeadline.getMillis()) {
+                    > outstandingBundle.creationTime
+                        + PublisherImpl.this.sendBundleDeadline.getMillis()) {
               try {
                 for (OutstandingPublish outstandingPublish :
-                    outstandingBatch.outstandingPublishes) {
+                    outstandingBundle.outstandingPublishes) {
                   outstandingPublish.publishResult.setException(t);
                 }
               } finally {
-                messagesWaiter.incrementPendingMessages(-outstandingBatch.size());
+                messagesWaiter.incrementPendingMessages(-outstandingBundle.size());
               }
               return;
             }
@@ -376,7 +376,7 @@ final class PublisherImpl implements Publisher {
                 new Runnable() {
                   @Override
                   public void run() {
-                    publishOutstandingBatch(outstandingBatch);
+                    publishOutstandingBundle(outstandingBundle);
                   }
                 },
                 nextBackoffDelay,
@@ -385,17 +385,17 @@ final class PublisherImpl implements Publisher {
         });
   }
 
-  private static final class OutstandingBatch {
+  private static final class OutstandingBundle {
     final List<OutstandingPublish> outstandingPublishes;
     final long creationTime;
     int attempt;
-    int batchSizeBytes;
+    int bundleSizeBytes;
 
-    OutstandingBatch(List<OutstandingPublish> outstandingPublishes, int batchSizeBytes) {
+    OutstandingBundle(List<OutstandingPublish> outstandingPublishes, int bundleSizeBytes) {
       this.outstandingPublishes = outstandingPublishes;
       attempt = 1;
       creationTime = System.currentTimeMillis();
-      this.batchSizeBytes = batchSizeBytes;
+      this.bundleSizeBytes = bundleSizeBytes;
     }
 
     public int size() {
@@ -425,12 +425,12 @@ final class PublisherImpl implements Publisher {
     messagesWaiter.waitNoMessages();
   }
 
-  private static long computeNextBackoffDelayMs(OutstandingBatch outstandingBatch) {
-    long delayMillis = Math.round(Math.scalb(INITIAL_BACKOFF_MS, outstandingBatch.attempt));
+  private static long computeNextBackoffDelayMs(OutstandingBundle outstandingBundle) {
+    long delayMillis = Math.round(Math.scalb(INITIAL_BACKOFF_MS, outstandingBundle.attempt));
     int randomWaitMillis =
         Ints.saturatedCast(
             (long) ((Math.random() - 0.5) * 2 * delayMillis * BACKOFF_RANDOMNESS_FACTOR));
-    ++outstandingBatch.attempt;
+    ++outstandingBundle.attempt;
     return delayMillis + randomWaitMillis;
   }
 

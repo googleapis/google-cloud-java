@@ -401,7 +401,7 @@ final class SubscriberConnection extends AbstractService {
             });
       }
       flowController.reserve(receivedMessagesCount, totalByteCount);
-      // Only if not shutdown we will request one more batch of messages to be delivered.
+      // Only if not shutdown we will request one more bundle of messages to be delivered.
       if (isAlive()) {
         requestObserver.request(1);
       }
@@ -580,7 +580,7 @@ final class SubscriberConnection extends AbstractService {
       }
     }
 
-    // Send the modify ack deadlines in batches as not to exceed the max request
+    // Send the modify ack deadlines in bundles as not to exceed the max request
     // size.
     List<List<String>> ackChunks = Lists.partition(acksToSend, MAX_PER_REQUEST_CHANGES);
     List<List<PendingModifyAckDeadline>> modifyAckDeadlineChunks =

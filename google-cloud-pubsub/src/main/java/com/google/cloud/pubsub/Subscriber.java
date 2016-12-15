@@ -67,7 +67,7 @@ import org.joda.time.Duration;
  *
  *  Subscriber subscriber =
  *      Subscriber.Builder.newBuilder(MY_SUBSCRIPTION, receiver)
- *          .setMaxBatchAcks(100)
+ *          .setMaxBundleAcks(100)
  *          .build();
  *
  *  subscriber.startAsync();
