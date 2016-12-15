@@ -18,7 +18,6 @@ package com.google.cloud.pubsub;
 
 import static org.junit.Assert.assertTrue;
 
-import com.google.cloud.Clock;
 import com.google.cloud.GrpcServiceOptions.ExecutorFactory;
 import com.google.common.collect.ImmutableList;
 import java.util.concurrent.CountDownLatch;
@@ -30,7 +29,6 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicLong;
 import org.easymock.EasyMock;
 import org.easymock.IAnswer;
-import org.joda.time.DateTimeUtils;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
@@ -51,12 +49,6 @@ public class AckDeadlineRenewerTest {
   private PubSub pubsub;
   private FakeScheduledExecutorService executorService;
   private AckDeadlineRenewer ackDeadlineRenewer;
-  private final Clock clock = new Clock() {
-    @Override
-    public long millis() {
-      return DateTimeUtils.currentTimeMillis();
-    }
-  };
 
   @Rule
   public Timeout globalTimeout = Timeout.seconds(60);
@@ -78,7 +70,7 @@ public class AckDeadlineRenewerTest {
     PubSubOptions options = PubSubOptions.newBuilder()
         .setProjectId("projectId")
         .setExecutorFactory(executorFactory)
-        .setClock(clock)
+        .setClock(executorService.getClock())
         .build();
     EasyMock.expect(pubsub.getOptions()).andReturn(options);
     EasyMock.replay(pubsub);
@@ -97,7 +89,7 @@ public class AckDeadlineRenewerTest {
       @Override
       public Future<Void> answer() throws Throwable {
         latch.countDown();
-        renewal.set(clock.millis());
+        renewal.set(executorService.getClock().millis());
         return null;
       }
     };
@@ -117,7 +109,7 @@ public class AckDeadlineRenewerTest {
         TimeUnit.MILLISECONDS, ImmutableList.of(ACK_ID1)))
             .andAnswer(createAnswer(secondLatch, secondRenewal));
     EasyMock.replay(pubsub);
-    long addTime = clock.millis();
+    long addTime = executorService.getClock().millis();
     ackDeadlineRenewer.add(SUBSCRIPTION1, ACK_ID1);
     executorService.tick(TIME_ADVANCE, TimeUnit.MILLISECONDS);
     firstLatch.await();
@@ -149,7 +141,7 @@ public class AckDeadlineRenewerTest {
         TimeUnit.MILLISECONDS, ImmutableList.of(ACK_ID1, ACK_ID3)))
             .andAnswer(createAnswer(secondLatch, secondRenewalSub2));
     EasyMock.replay(pubsub);
-    long addTime1 = clock.millis();
+    long addTime1 = executorService.getClock().millis();
     ackDeadlineRenewer.add(SUBSCRIPTION1, ImmutableList.of(ACK_ID1, ACK_ID2));
     ackDeadlineRenewer.add(SUBSCRIPTION2, ACK_ID1);
     executorService.tick(TIME_ADVANCE, TimeUnit.MILLISECONDS);
@@ -185,7 +177,7 @@ public class AckDeadlineRenewerTest {
         TimeUnit.MILLISECONDS, ImmutableList.of(ACK_ID1)))
         .andAnswer(createAnswer(secondLatch, secondRenewalSub2));
     EasyMock.replay(pubsub);
-    long addTime1 = clock.millis();
+    long addTime1 = executorService.getClock().millis();
     ackDeadlineRenewer.add(SUBSCRIPTION1, ImmutableList.of(ACK_ID1, ACK_ID2));
     ackDeadlineRenewer.add(SUBSCRIPTION2, ACK_ID1);
     executorService.tick(TIME_ADVANCE, TimeUnit.MILLISECONDS);
@@ -221,7 +213,7 @@ public class AckDeadlineRenewerTest {
         TimeUnit.MILLISECONDS, ImmutableList.of(ACK_ID1)))
         .andAnswer(createAnswer(secondLatch, secondRenewalSub2));
     EasyMock.replay(pubsub);
-    long addTime1 = clock.millis();
+    long addTime1 = executorService.getClock().millis();
     ackDeadlineRenewer.add(SUBSCRIPTION1, ImmutableList.of(ACK_ID1, ACK_ID2));
     ackDeadlineRenewer.add(SUBSCRIPTION2, ACK_ID1);
     executorService.tick(TIME_ADVANCE, TimeUnit.MILLISECONDS);
@@ -257,7 +249,7 @@ public class AckDeadlineRenewerTest {
         TimeUnit.MILLISECONDS, ImmutableList.of(ACK_ID1)))
         .andAnswer(createAnswer(secondLatch, secondRenewalSub2));
     EasyMock.replay(pubsub);
-    long addTime1 = clock.millis();
+    long addTime1 = executorService.getClock().millis();
     ackDeadlineRenewer.add(SUBSCRIPTION1, ImmutableList.of(ACK_ID1, ACK_ID2));
     ackDeadlineRenewer.add(SUBSCRIPTION2, ACK_ID1);
     executorService.tick(TIME_ADVANCE, TimeUnit.MILLISECONDS);

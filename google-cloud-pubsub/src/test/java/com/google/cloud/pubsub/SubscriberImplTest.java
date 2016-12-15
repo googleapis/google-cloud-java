@@ -413,7 +413,8 @@ public class SubscriberImplTest {
     return Subscriber.Builder.newBuilder(TEST_SUBSCRIPTION, receiver)
         .setExecutor(fakeExecutor)
         .setCredentials(testCredentials)
-        .setChannelBuilder(testChannelBuilder);
+        .setChannelBuilder(testChannelBuilder)
+        .setClock(fakeExecutor.getClock());
   }
 
   @SuppressWarnings("unchecked")
