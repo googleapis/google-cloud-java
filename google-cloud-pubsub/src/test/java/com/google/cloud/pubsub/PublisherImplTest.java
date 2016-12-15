@@ -99,9 +99,9 @@ public class PublisherImplTest {
   public void testPublishByDuration() throws Exception {
     Publisher publisher =
         getTestPublisherBuilder()
-            .setMaxBatchDuration(Duration.standardSeconds(5))
+            .setMaxBundleDuration(Duration.standardSeconds(5))
             // To demonstrate that reaching duration will trigger publish
-            .setMaxBatchMessages(10)
+            .setMaxBundleMessages(10)
             .build();
 
     testPublisherServiceImpl.addPublishResponse(
@@ -124,11 +124,11 @@ public class PublisherImplTest {
   }
 
   @Test
-  public void testPublishByNumBatchedMessages() throws Exception {
+  public void testPublishByNumBundledMessages() throws Exception {
     Publisher publisher =
         getTestPublisherBuilder()
-            .setMaxBatchDuration(Duration.standardSeconds(100))
-            .setMaxBatchMessages(2)
+            .setMaxBundleDuration(Duration.standardSeconds(100))
+            .setMaxBundleMessages(2)
             .build();
 
     testPublisherServiceImpl
@@ -162,8 +162,8 @@ public class PublisherImplTest {
   public void testSinglePublishByNumBytes() throws Exception {
     Publisher publisher =
         getTestPublisherBuilder()
-            .setMaxBatchDuration(Duration.standardSeconds(100))
-            .setMaxBatchMessages(2)
+            .setMaxBundleDuration(Duration.standardSeconds(100))
+            .setMaxBundleMessages(2)
             .build();
 
     testPublisherServiceImpl
@@ -192,9 +192,9 @@ public class PublisherImplTest {
   public void testPublishMixedSizeAndDuration() throws Exception {
     Publisher publisher =
         getTestPublisherBuilder()
-            .setMaxBatchDuration(Duration.standardSeconds(5))
+            .setMaxBundleDuration(Duration.standardSeconds(5))
             // To demonstrate that reaching duration will trigger publish
-            .setMaxBatchMessages(2)
+            .setMaxBundleMessages(2)
             .build();
 
     testPublisherServiceImpl.addPublishResponse(
@@ -208,7 +208,7 @@ public class PublisherImplTest {
 
     ListenableFuture<String> publishFuture2 = sendTestMessage(publisher, "B");
 
-    // Publishing triggered by batch size
+    // Publishing triggered by bundle size
     assertEquals("1", publishFuture1.get());
     assertEquals("2", publishFuture2.get());
 
@@ -237,8 +237,8 @@ public class PublisherImplTest {
     Publisher publisher =
         getTestPublisherBuilder()
             .setExecutor(Executors.newSingleThreadScheduledExecutor())
-            .setMaxBatchDuration(Duration.standardSeconds(5))
-            .setMaxBatchMessages(1)
+            .setMaxBundleDuration(Duration.standardSeconds(5))
+            .setMaxBundleMessages(1)
             .build(); // To demonstrate that reaching duration will trigger publish
 
     ListenableFuture<String> publishFuture1 = sendTestMessage(publisher, "A");
@@ -257,9 +257,9 @@ public class PublisherImplTest {
     Publisher publisher =
         getTestPublisherBuilder()
             .setExecutor(Executors.newSingleThreadScheduledExecutor())
-            .setSendBatchDeadline(Duration.standardSeconds(10))
-            .setMaxBatchDuration(Duration.standardSeconds(5))
-            .setMaxBatchMessages(1)
+            .setSendBundleDeadline(Duration.standardSeconds(10))
+            .setMaxBundleDuration(Duration.standardSeconds(5))
+            .setMaxBundleMessages(1)
             .build(); // To demonstrate that reaching duration will trigger publish
 
     ListenableFuture<String> publishFuture1 = sendTestMessage(publisher, "A");
@@ -282,9 +282,9 @@ public class PublisherImplTest {
     Publisher publisher =
         getTestPublisherBuilder()
             .setExecutor(Executors.newSingleThreadScheduledExecutor())
-            .setSendBatchDeadline(Duration.standardSeconds(10))
-            .setMaxBatchDuration(Duration.standardSeconds(5))
-            .setMaxBatchMessages(1)
+            .setSendBundleDeadline(Duration.standardSeconds(10))
+            .setMaxBundleDuration(Duration.standardSeconds(5))
+            .setMaxBundleMessages(1)
             .build(); // To demonstrate that reaching duration will trigger publish
 
     ListenableFuture<String> publishFuture1 = sendTestMessage(publisher, "A");
@@ -309,19 +309,19 @@ public class PublisherImplTest {
     builder.setCredentials(credentials);
     builder.setExecutor(executor);
     builder.setFailOnFlowControlLimits(true);
-    builder.setMaxBatchBytes(10);
-    builder.setMaxBatchDuration(new Duration(11));
-    builder.setMaxBatchMessages(12);
+    builder.setMaxBundleBytes(10);
+    builder.setMaxBundleDuration(new Duration(11));
+    builder.setMaxBundleMessages(12);
     builder.setMaxOutstandingBytes(13);
     builder.setMaxOutstandingMessages(14);
     builder.setRequestTimeout(new Duration(15));
-    builder.setSendBatchDeadline(new Duration(16000));
+    builder.setSendBundleDeadline(new Duration(16000));
     Publisher publisher = builder.build();
 
     assertEquals(TEST_TOPIC, publisher.getTopic());
-    assertEquals(10, publisher.getMaxBatchBytes());
-    assertEquals(new Duration(11), publisher.getMaxBatchDuration());
-    assertEquals(12, publisher.getMaxBatchMessages());
+    assertEquals(10, publisher.getMaxBundleBytes());
+    assertEquals(new Duration(11), publisher.getMaxBundleDuration());
+    assertEquals(12, publisher.getMaxBundleMessages());
     assertEquals(Optional.of(13), publisher.getMaxOutstandingBytes());
     assertEquals(Optional.of(14), publisher.getMaxOutstandingMessages());
     assertTrue(publisher.failOnFlowControlLimits());
@@ -334,13 +334,13 @@ public class PublisherImplTest {
     assertEquals(Optional.absent(), builder.channelBuilder);
     assertEquals(Optional.absent(), builder.executor);
     assertFalse(builder.failOnFlowControlLimits);
-    assertEquals(Publisher.DEFAULT_MAX_BATCH_BYTES, builder.maxBatchBytes);
-    assertEquals(Publisher.DEFAULT_MAX_BATCH_DURATION, builder.maxBatchDuration);
-    assertEquals(Publisher.DEFAULT_MAX_BATCH_MESSAGES, builder.maxBatchMessages);
+    assertEquals(Publisher.DEFAULT_MAX_BUNDLE_BYTES, builder.maxBundleBytes);
+    assertEquals(Publisher.DEFAULT_MAX_BUNDLE_DURATION, builder.maxBundleDuration);
+    assertEquals(Publisher.DEFAULT_MAX_BUNDLE_MESSAGES, builder.maxBundleMessages);
     assertEquals(Optional.absent(), builder.maxOutstandingBytes);
     assertEquals(Optional.absent(), builder.maxOutstandingMessages);
     assertEquals(Publisher.DEFAULT_REQUEST_TIMEOUT, builder.requestTimeout);
-    assertEquals(Publisher.MIN_SEND_BATCH_DURATION, builder.sendBatchDeadline);
+    assertEquals(Publisher.MIN_SEND_BUNDLE_DURATION, builder.sendBundleDeadline);
     assertEquals(Optional.absent(), builder.userCredentials);
   }
 
@@ -369,41 +369,41 @@ public class PublisherImplTest {
       // Expected
     }
     try {
-      builder.setMaxBatchBytes(0);
+      builder.setMaxBundleBytes(0);
       fail("Should have thrown an IllegalArgumentException");
     } catch (IllegalArgumentException expected) {
       // Expected
     }
     try {
-      builder.setMaxBatchBytes(-1);
+      builder.setMaxBundleBytes(-1);
       fail("Should have thrown an IllegalArgumentException");
     } catch (IllegalArgumentException expected) {
       // Expected
     }
 
-    builder.setMaxBatchDuration(new Duration(1));
+    builder.setMaxBundleDuration(new Duration(1));
     try {
-      builder.setMaxBatchDuration(null);
+      builder.setMaxBundleDuration(null);
       fail("Should have thrown an IllegalArgumentException");
     } catch (NullPointerException expected) {
       // Expected
     }
     try {
-      builder.setMaxBatchDuration(new Duration(-1));
+      builder.setMaxBundleDuration(new Duration(-1));
       fail("Should have thrown an IllegalArgumentException");
     } catch (IllegalArgumentException expected) {
       // Expected
     }
 
-    builder.setMaxBatchMessages(1);
+    builder.setMaxBundleMessages(1);
     try {
-      builder.setMaxBatchMessages(0);
+      builder.setMaxBundleMessages(0);
       fail("Should have thrown an IllegalArgumentException");
     } catch (IllegalArgumentException expected) {
       // Expected
     }
     try {
-      builder.setMaxBatchMessages(-1);
+      builder.setMaxBundleMessages(-1);
       fail("Should have thrown an IllegalArgumentException");
     } catch (IllegalArgumentException expected) {
       // Expected
@@ -444,9 +444,9 @@ public class PublisherImplTest {
     } catch (IllegalArgumentException expected) {
       // Expected
     }
-    builder.setSendBatchDeadline(Publisher.MIN_SEND_BATCH_DURATION);
+    builder.setSendBundleDeadline(Publisher.MIN_SEND_BUNDLE_DURATION);
     try {
-      builder.setSendBatchDeadline(Publisher.MIN_SEND_BATCH_DURATION.minus(1));
+      builder.setSendBundleDeadline(Publisher.MIN_SEND_BUNDLE_DURATION.minus(1));
       fail("Should have thrown an IllegalArgumentException");
     } catch (IllegalArgumentException expected) {
       // Expected
