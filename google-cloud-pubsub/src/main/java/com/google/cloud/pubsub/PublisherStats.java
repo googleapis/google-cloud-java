@@ -16,24 +16,44 @@
 
 package com.google.cloud.pubsub;
 
-import com.google.auto.value.AutoValue;
+import javax.annotation.concurrent.Immutable;
 
 /**
  * A snapshot of the publisher statistics at the time they were requested from the {@link
  * Publisher}.
  */
 //TODO: Finish implementation.
-@AutoValue
-public abstract class PublisherStats {
+@Immutable
+public class PublisherStats {
+  private final long sentMessages;
+  private final long ackedMessages;
+  private final long failedMessages;
+  private final long pendingMessages;
+
+  PublisherStats(long sentMessages, long ackedMessages, long failedMessages, long pendingMessages) {
+    this.sentMessages = sentMessages;
+    this.ackedMessages = ackedMessages;
+    this.failedMessages = failedMessages;
+    this.pendingMessages = pendingMessages;
+  }
+
   /** Number of successfully published messages. */
-  public abstract long getAckedMessages();
+  public long getAckedMessages() {
+    return ackedMessages;
+  }
 
   /** Number of messages that failed to publish. */
-  public abstract long getFailedMessages();
+  public long getFailedMessages() {
+    return failedMessages;
+  }
 
   /** Number of messages pending to publish, includes message in-flight. */
-  public abstract long getPendingMessages();
+  public long getPendingMessages() {
+    return pendingMessages;
+  }
 
   /** Total messages sent, equal to pending + acked + failed messages. */
-  public abstract long getSentMessages();
+  public long getSentMessages() {
+    return sentMessages;
+  }
 }
