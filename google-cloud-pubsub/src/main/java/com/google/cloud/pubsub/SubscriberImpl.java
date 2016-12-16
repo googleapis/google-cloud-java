@@ -40,7 +40,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /** Implementation of {@link Subscriber}. */
-public class SubscriberImpl extends AbstractService implements Subscriber {
+class SubscriberImpl extends AbstractService implements Subscriber {
   private static final int THREADS_PER_CHANNEL = 5;
   @VisibleForTesting static final int CHANNELS_PER_CORE = 10;
   private static final int MAX_INBOUND_MESSAGE_SIZE =

@@ -16,7 +16,6 @@
 
 package com.google.cloud.pubsub;
 
-import com.google.common.math.Stats;
 import javax.annotation.concurrent.Immutable;
 
 /**
@@ -26,6 +25,9 @@ import javax.annotation.concurrent.Immutable;
 //TODO: Finish implementation.
 @Immutable
 public class SubscriberStats {
+  @Immutable
+  public static class Stats {}
+
   private final long totalReceivedMessages;
   private final long totalAckedMessages;
   private final Stats endToEndLatency;
