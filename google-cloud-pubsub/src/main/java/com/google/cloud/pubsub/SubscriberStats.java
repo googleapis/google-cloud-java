@@ -16,67 +16,39 @@
 
 package com.google.cloud.pubsub;
 
-import javax.annotation.concurrent.Immutable;
+import com.google.auto.value.AutoValue;
 
 /**
  * A snapshot of the subscriber statistics at the time they were requested from the {@link
  * Subscriber}.
  */
 //TODO: Finish implementation.
-@Immutable
-public class SubscriberStats {
-  @Immutable
-  public static class Stats {}
-
-  private final long totalReceivedMessages;
-  private final long totalAckedMessages;
-  private final Stats endToEndLatency;
-  private final Stats ackLatency;
-  private final long numberOfAutoExtendedAckDeadlines;
-
-  SubscriberStats() {
-    this.totalReceivedMessages = 0;
-    this.totalAckedMessages = 0;
-    this.numberOfAutoExtendedAckDeadlines = 0;
-    this.endToEndLatency = null;
-    this.ackLatency = null;
-  }
+@AutoValue
+public abstract class SubscriberStats {
+  @AutoValue
+  public abstract static class Stats {}
 
   /** Number of successfully published messages. */
-  public long getReceivedMessages() {
-    return totalReceivedMessages;
-  }
+  public abstract long getReceivedMessages();
 
   /** Number of successfully published messages. */
-  public long getAckedMessages() {
-    return totalAckedMessages;
-  }
+  public abstract long getAckedMessages();
 
   /** Number of received messages. */
-  public long getTotalReceivedMessages() {
-    return totalReceivedMessages;
-  }
+  public abstract long getTotalReceivedMessages();
 
   /** Number messages acked. */
-  public long getTotalAckedMessages() {
-    return totalAckedMessages;
-  }
+  public abstract long getTotalAckedMessages();
 
   /** End to end latency. */
-  public Stats getEndToEndLatency() {
-    return endToEndLatency;
-  }
+  public abstract Stats getEndToEndLatency();
 
   /**
    * Acknowledgement latency; time in between the message has been received and then acknowledged or
    * rejected.
    */
-  public Stats getAckLatency() {
-    return ackLatency;
-  }
+  public abstract Stats getAckLatency();
 
   /** Number of messages for which we have auto extended its acknowledgement deadline. */
-  public long getNumberOfAutoExtendedAckDeadlines() {
-    return numberOfAutoExtendedAckDeadlines;
-  }
+  public abstract long getNumberOfAutoExtendedAckDeadlines();
 }
