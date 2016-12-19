@@ -30,6 +30,7 @@ import com.google.common.util.concurrent.ListenableFuture;
 import com.google.common.util.concurrent.Service.State;
 import com.google.common.util.concurrent.SettableFuture;
 import com.google.pubsub.v1.PubsubMessage;
+import com.google.pubsub.v1.PullResponse;
 import com.google.pubsub.v1.ReceivedMessage;
 import com.google.pubsub.v1.StreamingPullResponse;
 import io.grpc.Status;
@@ -39,6 +40,7 @@ import io.grpc.inprocess.InProcessChannelBuilder;
 import io.grpc.inprocess.InProcessServerBuilder;
 import io.grpc.internal.ServerImpl;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Deque;
 import java.util.List;
@@ -47,17 +49,18 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.Executors;
 import org.joda.time.Duration;
 import org.junit.After;
-import org.junit.AfterClass;
 import org.junit.Before;
-import org.junit.BeforeClass;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.TestName;
 import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
+import org.junit.runners.Parameterized;
+import org.junit.runners.Parameterized.Parameters;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 
 /** Tests for {@link SubscriberImpl}. */
-@RunWith(JUnit4.class)
+@RunWith(Parameterized.class)
 public class SubscriberImplTest {
 
   private static final String TEST_SUBSCRIPTION =
@@ -66,16 +69,19 @@ public class SubscriberImplTest {
   private static final PubsubMessage TEST_MESSAGE =
       PubsubMessage.newBuilder().setMessageId("1").build();
 
-  private static InProcessChannelBuilder testChannelBuilder;
+  @Parameters
+  public static Collection<Object[]> data() {
+    return Arrays.asList(new Object[][] {{true}, {false}});
+  }
 
-  private static FakeScheduledExecutorService fakeExecutor;
+  private final boolean isStreamingTest;
+
+  private InProcessChannelBuilder testChannelBuilder;
+  private FakeScheduledExecutorService fakeExecutor;
+  private FakeSubscriberServiceImpl fakeSubscriberServiceImpl;
+  private ServerImpl testServer;
 
   private FakeCredentials testCredentials;
-
-  private static FakeSubscriberServiceImpl fakeSubscriberServiceImpl;
-
-  private static ServerImpl testServer;
-
   private TestReceiver testReceiver;
 
   static class TestReceiver implements MessageReceiver {
@@ -138,41 +144,46 @@ public class SubscriberImplTest {
         reply.set(ackReply);
       }
     }
+
+    public void replyAllOutstandingMessage() {
+      Preconditions.checkState(explicitAckReplies);
+
+      while (!outstandingMessageReplies.isEmpty()) {
+        replyNextOutstandingMessage();
+      }
+    }
   }
 
-  @BeforeClass
-  public static void setUpClass() throws Exception {
+  public SubscriberImplTest(boolean streamingTest) {
+    this.isStreamingTest = streamingTest;
+  }
+
+  @Rule public TestName testName = new TestName();
+
+  @Before
+  public void setUp() throws Exception {
+    MockitoAnnotations.initMocks(this);
+
+    InProcessServerBuilder serverBuilder = InProcessServerBuilder.forName(testName.getMethodName());
     fakeSubscriberServiceImpl = Mockito.spy(new FakeSubscriberServiceImpl());
-    InProcessServerBuilder serverBuilder = InProcessServerBuilder.forName("test-server");
     fakeExecutor = new FakeScheduledExecutorService();
-    testChannelBuilder = InProcessChannelBuilder.forName("test-server");
+    testChannelBuilder = InProcessChannelBuilder.forName(testName.getMethodName());
     serverBuilder.addService(fakeSubscriberServiceImpl);
     testServer = serverBuilder.build();
     testServer.start();
-  }
 
-  @Before
-  public void setUp() {
-    MockitoAnnotations.initMocks(this);
-    Mockito.reset(fakeSubscriberServiceImpl);
-    testCredentials = new FakeCredentials();
     testReceiver = new TestReceiver();
+    testCredentials = new FakeCredentials();
   }
 
   @After
-  public void tearDown() {
-    fakeSubscriberServiceImpl.reset();
-  }
-
-  @AfterClass
-  public static void tearDownClass() throws Exception {
+  public void tearDown() throws Exception {
     testServer.shutdownNow().awaitTermination();
   }
 
   @Test
   public void testAckSingleMessage() throws Exception {
-    Subscriber subscriber = getTestSubscriberBuilder(testReceiver).build();
-    subscriber.startAsync().awaitRunning();
+    Subscriber subscriber = startSubscriber(getTestSubscriberBuilder(testReceiver));
 
     List<String> testAckIds = ImmutableList.of("A");
     sendMessages(testAckIds);
@@ -180,13 +191,12 @@ public class SubscriberImplTest {
     // Trigger ack sending
     subscriber.stopAsync().awaitTerminated();
 
-    assertEquivalent(testAckIds, fakeSubscriberServiceImpl.getAcks());
+    assertEquivalent(testAckIds, fakeSubscriberServiceImpl.waitAndConsumeReceivedAcks(1));
   }
 
   @Test
   public void testNackSingleMessage() throws Exception {
-    Subscriber subscriber = getTestSubscriberBuilder(testReceiver).build();
-    subscriber.startAsync().awaitRunning();
+    Subscriber subscriber = startSubscriber(getTestSubscriberBuilder(testReceiver));
 
     testReceiver.setReply(AckReply.NACK);
     sendMessages(ImmutableList.of("A"));
@@ -196,15 +206,14 @@ public class SubscriberImplTest {
 
     assertEquivalent(
         ImmutableList.of(new ModifyAckDeadline("A", 0)),
-        fakeSubscriberServiceImpl.getModifyAckDeadlines());
+        fakeSubscriberServiceImpl.waitAndConsumeModifyAckDeadlines(1));
   }
 
   @Test
   public void testReceiverError_NacksMessage() throws Exception {
     testReceiver.setErrorReply(new Exception("Can't process message"));
 
-    Subscriber subscriber = getTestSubscriberBuilder(testReceiver).build();
-    subscriber.startAsync().awaitRunning();
+    Subscriber subscriber = startSubscriber(getTestSubscriberBuilder(testReceiver));
 
     sendMessages(ImmutableList.of("A"));
 
@@ -213,19 +222,18 @@ public class SubscriberImplTest {
 
     assertEquivalent(
         ImmutableList.of(new ModifyAckDeadline("A", 0)),
-        fakeSubscriberServiceImpl.getModifyAckDeadlines());
+        fakeSubscriberServiceImpl.waitAndConsumeModifyAckDeadlines(1));
   }
 
   @Test
   public void testBundleAcks() throws Exception {
-    Subscriber subscriber = getTestSubscriberBuilder(testReceiver).build();
-    subscriber.startAsync().awaitRunning();
+    Subscriber subscriber = startSubscriber(getTestSubscriberBuilder(testReceiver));
 
     List<String> testAckIdsBundle1 = ImmutableList.of("A", "B", "C");
     sendMessages(testAckIdsBundle1);
 
     // Trigger ack sending
-    fakeExecutor.advanceTime(SubscriberConnection.PENDING_ACKS_SEND_DELAY);
+    fakeExecutor.advanceTime(StreamingSubscriberConnection.PENDING_ACKS_SEND_DELAY);
 
     assertEquivalent(testAckIdsBundle1, fakeSubscriberServiceImpl.waitAndConsumeReceivedAcks(3));
 
@@ -233,7 +241,7 @@ public class SubscriberImplTest {
     List<String> testAckIdsBundle2 = ImmutableList.of("D", "E");
     sendMessages(testAckIdsBundle2);
 
-    fakeExecutor.advanceTime(SubscriberConnection.PENDING_ACKS_SEND_DELAY);
+    fakeExecutor.advanceTime(StreamingSubscriberConnection.PENDING_ACKS_SEND_DELAY);
 
     assertEquivalent(testAckIdsBundle2, fakeSubscriberServiceImpl.waitAndConsumeReceivedAcks(2));
 
@@ -242,8 +250,7 @@ public class SubscriberImplTest {
 
   @Test
   public void testBundleAcksAndNacks() throws Exception {
-    Subscriber subscriber = getTestSubscriberBuilder(testReceiver).build();
-    subscriber.startAsync().awaitRunning();
+    Subscriber subscriber = startSubscriber(getTestSubscriberBuilder(testReceiver));
 
     // Send messages to be acked
     List<String> testAckIdsBundle1 = ImmutableList.of("A", "B", "C");
@@ -256,21 +263,22 @@ public class SubscriberImplTest {
     sendMessages(testAckIdsBundle2);
 
     // Trigger ack sending
-    fakeExecutor.advanceTime(SubscriberConnection.PENDING_ACKS_SEND_DELAY);
+    fakeExecutor.advanceTime(StreamingSubscriberConnection.PENDING_ACKS_SEND_DELAY);
 
     assertEquivalent(testAckIdsBundle1, fakeSubscriberServiceImpl.waitAndConsumeReceivedAcks(3));
     assertEquivalent(
         ImmutableList.of(new ModifyAckDeadline("D", 0), new ModifyAckDeadline("E", 0)),
         fakeSubscriberServiceImpl.waitAndConsumeModifyAckDeadlines(2));
+
+    subscriber.stopAsync().awaitTerminated();
   }
 
   @Test
   public void testModifyAckDeadline() throws Exception {
     Subscriber subscriber =
-        getTestSubscriberBuilder(testReceiver)
-            .setAckExpirationPadding(Duration.standardSeconds(1))
-            .build();
-    subscriber.startAsync().awaitRunning();
+        startSubscriber(
+            getTestSubscriberBuilder(testReceiver)
+                .setAckExpirationPadding(Duration.standardSeconds(1)));
 
     // Send messages to be acked
     List<String> testAckIdsBundle = ImmutableList.of("A", "B", "C");
@@ -302,15 +310,22 @@ public class SubscriberImplTest {
             return new ModifyAckDeadline(ack, 4);
           }
         });
+
+    testReceiver.replyAllOutstandingMessage();
+    subscriber.stopAsync().awaitTerminated();
   }
 
   @Test
   public void testStreamAckDeadlineUpdate() throws Exception {
+    if (!isStreamingTest) {
+      // This test is not applicable to polling.
+      return;
+    }
+
     Subscriber subscriber =
-        getTestSubscriberBuilder(testReceiver)
-            .setAckExpirationPadding(Duration.standardSeconds(1))
-            .build();
-    subscriber.startAsync().awaitRunning();
+        startSubscriber(
+            getTestSubscriberBuilder(testReceiver)
+                .setAckExpirationPadding(Duration.standardSeconds(1)));
 
     fakeSubscriberServiceImpl.waitForStreamAckDeadline(10);
 
@@ -343,30 +358,42 @@ public class SubscriberImplTest {
     fakeExecutor.advanceTime(Duration.standardSeconds(60));
 
     fakeSubscriberServiceImpl.waitForStreamAckDeadline(10);
+
+    subscriber.stopAsync().awaitTerminated();
   }
 
   @Test
   public void testOpenedChannels() throws Exception {
+    if (!isStreamingTest) {
+      // This test is not applicable to polling.
+      return;
+    }
+
     final int expectedChannelCount =
         Runtime.getRuntime().availableProcessors() * SubscriberImpl.CHANNELS_PER_CORE;
 
-    Subscriber subscriber = getTestSubscriberBuilder(testReceiver).build();
-    subscriber.startAsync().awaitRunning();
+    Subscriber subscriber = startSubscriber(getTestSubscriberBuilder(testReceiver));
 
     assertEquals(
         expectedChannelCount, fakeSubscriberServiceImpl.waitForOpenedStreams(expectedChannelCount));
+
+    subscriber.stopAsync().awaitTerminated();
   }
 
   @Test
   public void testFailedChannel_recoverableError_channelReopened() throws Exception {
+    if (!isStreamingTest) {
+      // This test is not applicable to polling.
+      return;
+    }
+
     final int expectedChannelCount =
         Runtime.getRuntime().availableProcessors() * SubscriberImpl.CHANNELS_PER_CORE;
 
     Subscriber subscriber =
-        getTestSubscriberBuilder(testReceiver)
-            .setExecutor(Executors.newSingleThreadScheduledExecutor())
-            .build();
-    subscriber.startAsync().awaitRunning();
+        startSubscriber(
+            getTestSubscriberBuilder(testReceiver)
+                .setExecutor(Executors.newSingleThreadScheduledExecutor()));
 
     // Recoverable error
     fakeSubscriberServiceImpl.sendError(new StatusException(Status.INTERNAL));
@@ -374,15 +401,21 @@ public class SubscriberImplTest {
     assertEquals(1, fakeSubscriberServiceImpl.waitForClosedStreams(1));
     assertEquals(
         expectedChannelCount, fakeSubscriberServiceImpl.waitForOpenedStreams(expectedChannelCount));
+
+    subscriber.stopAsync().awaitTerminated();
   }
 
   @Test(expected = IllegalStateException.class)
   public void testFailedChannel_fatalError_subscriberFails() throws Exception {
+    if (!isStreamingTest) {
+      // This test is not applicable to polling.
+      throw new IllegalStateException("To fullfil test expectation");
+    }
+
     Subscriber subscriber =
-        getTestSubscriberBuilder(testReceiver)
-            .setExecutor(Executors.newScheduledThreadPool(10))
-            .build();
-    subscriber.startAsync().awaitRunning();
+        startSubscriber(
+            getTestSubscriberBuilder(testReceiver)
+                .setExecutor(Executors.newScheduledThreadPool(10)));
 
     // Fatal error
     fakeSubscriberServiceImpl.sendError(new StatusException(Status.INVALID_ARGUMENT));
@@ -398,14 +431,29 @@ public class SubscriberImplTest {
     }
   }
 
-  private void sendMessages(Iterable<String> ackIds) throws InterruptedException {
-    StreamingPullResponse.Builder responseBuilder = StreamingPullResponse.newBuilder();
-    for (String ackId : ackIds) {
-      responseBuilder.addReceivedMessages(
-          ReceivedMessage.newBuilder().setAckId(ackId).setMessage(TEST_MESSAGE));
+  private Subscriber startSubscriber(Builder testSubscriberBuilder) throws Exception {
+    Subscriber subscriber = testSubscriberBuilder.build();
+    subscriber.startAsync().awaitRunning();
+    if (!isStreamingTest) {
+      // Shutdown streaming
+      fakeSubscriberServiceImpl.sendError(new StatusException(Status.UNIMPLEMENTED));
     }
-    testReceiver.setExpectedMessages(responseBuilder.getReceivedMessagesCount());
-    fakeSubscriberServiceImpl.sendResponse(responseBuilder.build());
+    return subscriber;
+  }
+
+  private void sendMessages(Iterable<String> ackIds) throws InterruptedException {
+    List<ReceivedMessage> messages = new ArrayList<ReceivedMessage>();
+    for (String ackId : ackIds) {
+      messages.add(ReceivedMessage.newBuilder().setAckId(ackId).setMessage(TEST_MESSAGE).build());
+    }
+    testReceiver.setExpectedMessages(messages.size());
+    if (isStreamingTest) {
+      fakeSubscriberServiceImpl.sendStreamingResponse(
+          StreamingPullResponse.newBuilder().addAllReceivedMessages(messages).build());
+    } else {
+      fakeSubscriberServiceImpl.enqueuePullResponse(
+          PullResponse.newBuilder().addAllReceivedMessages(messages).build());
+    }
     testReceiver.waitForExpectedMessages();
   }
 

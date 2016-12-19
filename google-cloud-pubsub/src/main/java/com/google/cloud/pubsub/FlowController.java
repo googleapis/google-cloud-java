@@ -59,7 +59,7 @@ class FlowController {
     // Will always allow to send a message even if it is larger than the flow control limit,
     // if it doesn't then it will deadlock the thread.
     if (outstandingByteCount != null) {
-      int permitsToDraw = maxOutstandingBytes.get() > bytes ? bytes : maxOutstandingBytes.get();
+      int permitsToDraw = Math.min(bytes, maxOutstandingBytes.get());
       if (!failOnLimits) {
         outstandingByteCount.acquireUninterruptibly(permitsToDraw);
       } else if (!outstandingByteCount.tryAcquire(permitsToDraw)) {
@@ -76,7 +76,7 @@ class FlowController {
     }
     if (outstandingByteCount != null) {
       // Need to return at most as much bytes as it can be drawn.
-      int permitsToReturn = maxOutstandingBytes.get() > bytes ? bytes : maxOutstandingBytes.get();
+      int permitsToReturn = Math.min(bytes, maxOutstandingBytes.get());
       outstandingByteCount.release(permitsToReturn);
     }
   }
