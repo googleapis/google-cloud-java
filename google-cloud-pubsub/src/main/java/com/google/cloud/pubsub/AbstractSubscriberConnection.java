@@ -98,10 +98,7 @@ abstract class AbstractSubscriberConnection extends AbstractService {
 
     void extendExpiration() {
       expiration = new Instant(clock.millis()).plus(Duration.standardSeconds(nextExtensionSeconds));
-      nextExtensionSeconds = 2 * nextExtensionSeconds;
-      if (nextExtensionSeconds > MAX_ACK_DEADLINE_EXTENSION_SECS) {
-        nextExtensionSeconds = MAX_ACK_DEADLINE_EXTENSION_SECS;
-      }
+      nextExtensionSeconds = Math.min(2 * nextExtensionSeconds, MAX_ACK_DEADLINE_EXTENSION_SECS);
     }
 
     @Override

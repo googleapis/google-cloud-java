@@ -184,10 +184,7 @@ final class PollingSubscriberConnection extends AbstractSubscriberConnection {
       }
     }
 
-    List<List<String>> ackChunks = Lists.partition(acksToSend, MAX_PER_REQUEST_CHANGES);
-    Iterator<List<String>> ackChunksIt = ackChunks.iterator();
-    while (ackChunksIt.hasNext()) {
-      List<String> ackChunk = ackChunksIt.next();
+    for (List<String> ackChunk : Lists.partition(acksToSend, MAX_PER_REQUEST_CHANGES)) {
       stub.withDeadlineAfter(DEFAULT_TIMEOUT.getMillis(), TimeUnit.MILLISECONDS)
           .acknowledge(
               AcknowledgeRequest.newBuilder()
