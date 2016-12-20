@@ -16,44 +16,40 @@
 
 package com.google.cloud.pubsub;
 
-import javax.annotation.concurrent.Immutable;
+import com.google.auto.value.AutoValue;
 
 /**
  * A snapshot of the publisher statistics at the time they were requested from the {@link
  * Publisher}.
  */
-//TODO: Finish implementation.
-@Immutable
-public class PublisherStats {
-  private final long sentMessages;
-  private final long ackedMessages;
-  private final long failedMessages;
-  private final long pendingMessages;
-
-  PublisherStats(long sentMessages, long ackedMessages, long failedMessages, long pendingMessages) {
-    this.sentMessages = sentMessages;
-    this.ackedMessages = ackedMessages;
-    this.failedMessages = failedMessages;
-    this.pendingMessages = pendingMessages;
-  }
-
+@AutoValue
+public abstract class PublisherStats {
   /** Number of successfully published messages. */
-  public long getAckedMessages() {
-    return ackedMessages;
-  }
+  public abstract long getAckedMessages();
 
   /** Number of messages that failed to publish. */
-  public long getFailedMessages() {
-    return failedMessages;
-  }
+  public abstract long getFailedMessages();
 
   /** Number of messages pending to publish, includes message in-flight. */
-  public long getPendingMessages() {
-    return pendingMessages;
-  }
+  public abstract long getPendingMessages();
 
   /** Total messages sent, equal to pending + acked + failed messages. */
-  public long getSentMessages() {
-    return sentMessages;
+  public abstract long getSentMessages();
+
+  public static Builder newBuilder() {
+    return new AutoValue_PublisherStats.Builder();
+  }
+
+  @AutoValue.Builder
+  public static abstract class Builder {
+    public abstract Builder setAckedMessages(long value);
+
+    public abstract Builder setFailedMessages(long value);
+
+    public abstract Builder setPendingMessages(long value);
+
+    public abstract Builder setSentMessages(long value);
+
+    public abstract PublisherStats build();
   }
 }
