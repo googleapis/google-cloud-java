@@ -23,6 +23,7 @@ import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Optional;
 import com.google.common.primitives.Ints;
 import com.google.common.util.concurrent.AbstractService;
+import com.google.common.util.concurrent.Service;
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.Status;
@@ -248,10 +249,9 @@ class SubscriberImpl extends AbstractService implements Subscriber {
   }
 
   private void startConnections(
-      List<? extends AbstractSubscriberConnection> connections,
-      final Listener connectionsListener) {
+      List<? extends Service> connections, final Listener connectionsListener) {
     final CountDownLatch subscribersStarting = new CountDownLatch(numChannels);
-    for (final AbstractSubscriberConnection subscriber : connections) {
+    for (final Service subscriber : connections) {
       executor.submit(
           new Runnable() {
             @Override
@@ -269,14 +269,14 @@ class SubscriberImpl extends AbstractService implements Subscriber {
     }
   }
 
-  private void stopConnections(List<? extends AbstractSubscriberConnection> connections) {
-    ArrayList<AbstractSubscriberConnection> liveConnections;
+  private void stopConnections(List<? extends Service> connections) {
+    ArrayList<Service> liveConnections;
     synchronized (connections) {
-      liveConnections = new ArrayList<AbstractSubscriberConnection>(connections);
+      liveConnections = new ArrayList<Service>(connections);
       connections.clear();
     }
     final CountDownLatch connectionsStopping = new CountDownLatch(liveConnections.size());
-    for (final AbstractSubscriberConnection subscriberConnection : liveConnections) {
+    for (final Service subscriberConnection : liveConnections) {
       executor.submit(
           new Runnable() {
             @Override

@@ -51,22 +51,22 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Abstract base implementation class of a subscriber connection in charge of receiving subscription
- * messages.
+ * Dispatches messages to a message receiver while handling the messages acking and lease
+ * extensions.
  */
-abstract class AbstractSubscriberConnection extends AbstractService {
-  private static final Logger logger = LoggerFactory.getLogger(AbstractSubscriberConnection.class);
+class MessagesProcessor {
+  private static final Logger logger = LoggerFactory.getLogger(MessagesProcessor.class);
 
   private static final int INITIAL_ACK_DEADLINE_EXTENSION_SECONDS = 2;
   @VisibleForTesting static final Duration PENDING_ACKS_SEND_DELAY = Duration.millis(100);
-  private static final int MAX_ACK_DEADLINE_EXTENSION_SECS = 10 * 60;  // 10m
+  private static final int MAX_ACK_DEADLINE_EXTENSION_SECS = 10 * 60; // 10m
 
-  protected final String subscription;
   protected final ScheduledExecutorService executor;
   private final Clock clock;
 
   private final Duration ackExpirationPadding;
   private final MessageReceiver receiver;
+  private final AcksProcessor acksProcessor;
 
   private final FlowController flowController;
   private final MessagesWaiter messagesWaiter;
@@ -199,9 +199,14 @@ abstract class AbstractSubscriberConnection extends AbstractService {
     }
   }
 
-  AbstractSubscriberConnection(
-      String subscription,
+  public interface AcksProcessor {
+    void sendAckOperations(
+        List<String> acksToSend, List<PendingModifyAckDeadline> ackDeadlineExtensions);
+  }
+
+  MessagesProcessor(
       MessageReceiver receiver,
+      AcksProcessor acksProcessor,
       Duration ackExpirationPadding,
       Distribution ackLatencyDistribution,
       FlowController flowController,
@@ -210,7 +215,7 @@ abstract class AbstractSubscriberConnection extends AbstractService {
     this.executor = executor;
     this.ackExpirationPadding = ackExpirationPadding;
     this.receiver = receiver;
-    this.subscription = subscription;
+    this.acksProcessor = acksProcessor;
     this.flowController = flowController;
     outstandingAckHandlers = new HashMap<>();
     pendingAcks = new HashSet<>();
@@ -223,17 +228,7 @@ abstract class AbstractSubscriberConnection extends AbstractService {
     this.clock = clock;
   }
 
-  @Override
-  protected void doStart() {
-    logger.debug("Starting subscriber.");
-    initialize();
-    notifyStarted();
-  }
-
-  abstract void initialize();
-
-  @Override
-  protected void doStop() {
+  protected void stop() {
     messagesWaiter.waitNoMessages();
     alarmsLock.lock();
     try {
@@ -245,7 +240,6 @@ abstract class AbstractSubscriberConnection extends AbstractService {
       alarmsLock.unlock();
     }
     processOutstandingAckOperations();
-    notifyStopped();
   }
 
   protected boolean isRetryable(Status status) {
@@ -261,16 +255,15 @@ abstract class AbstractSubscriberConnection extends AbstractService {
     }
   }
 
-  protected void setMessageDeadlineSeconds(int messageDeadlineSeconds) {
+  public void setMessageDeadlineSeconds(int messageDeadlineSeconds) {
     this.messageDeadlineSeconds = messageDeadlineSeconds;
   }
 
-  protected int getMessageDeadlineSeconds() {
+  public int getMessageDeadlineSeconds() {
     return messageDeadlineSeconds;
   }
 
-  protected void processReceivedMessages(
-      List<com.google.pubsub.v1.ReceivedMessage> responseMessages) {
+  public void processReceivedMessages(List<com.google.pubsub.v1.ReceivedMessage> responseMessages) {
     int receivedMessagesCount = responseMessages.size();
     if (receivedMessagesCount == 0) {
       return;
@@ -486,9 +479,6 @@ abstract class AbstractSubscriberConnection extends AbstractService {
       }
     }
 
-    sendAckOperations(acksToSend, modifyAckDeadlinesToSend);
+    acksProcessor.sendAckOperations(acksToSend, modifyAckDeadlinesToSend);
   }
-
-  abstract void sendAckOperations(
-      List<String> acksToSend, List<PendingModifyAckDeadline> ackDeadlineExtensions);
 }

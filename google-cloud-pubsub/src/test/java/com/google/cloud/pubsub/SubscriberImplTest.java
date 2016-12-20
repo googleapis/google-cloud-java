@@ -16,6 +16,7 @@
 
 package com.google.cloud.pubsub;
 
+import static com.google.cloud.pubsub.MessagesProcessor.PENDING_ACKS_SEND_DELAY;
 import static org.junit.Assert.assertEquals;
 
 import com.google.cloud.pubsub.FakeSubscriberServiceImpl.ModifyAckDeadline;
@@ -233,7 +234,7 @@ public class SubscriberImplTest {
     sendMessages(testAckIdsBundle1);
 
     // Trigger ack sending
-    fakeExecutor.advanceTime(StreamingSubscriberConnection.PENDING_ACKS_SEND_DELAY);
+    fakeExecutor.advanceTime(PENDING_ACKS_SEND_DELAY);
 
     assertEquivalent(testAckIdsBundle1, fakeSubscriberServiceImpl.waitAndConsumeReceivedAcks(3));
 
@@ -241,7 +242,7 @@ public class SubscriberImplTest {
     List<String> testAckIdsBundle2 = ImmutableList.of("D", "E");
     sendMessages(testAckIdsBundle2);
 
-    fakeExecutor.advanceTime(StreamingSubscriberConnection.PENDING_ACKS_SEND_DELAY);
+    fakeExecutor.advanceTime(PENDING_ACKS_SEND_DELAY);
 
     assertEquivalent(testAckIdsBundle2, fakeSubscriberServiceImpl.waitAndConsumeReceivedAcks(2));
 
@@ -263,7 +264,7 @@ public class SubscriberImplTest {
     sendMessages(testAckIdsBundle2);
 
     // Trigger ack sending
-    fakeExecutor.advanceTime(StreamingSubscriberConnection.PENDING_ACKS_SEND_DELAY);
+    fakeExecutor.advanceTime(PENDING_ACKS_SEND_DELAY);
 
     assertEquivalent(testAckIdsBundle1, fakeSubscriberServiceImpl.waitAndConsumeReceivedAcks(3));
     assertEquivalent(

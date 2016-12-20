@@ -16,10 +16,15 @@
 
 package com.google.cloud.pubsub;
 
+import static com.google.cloud.pubsub.StatusUtil.isRetryable;
+
 import com.google.auth.Credentials;
 import com.google.cloud.Clock;
+import com.google.cloud.pubsub.MessagesProcessor.AcksProcessor;
+import com.google.cloud.pubsub.MessagesProcessor.PendingModifyAckDeadline;
 import com.google.cloud.pubsub.Subscriber.MessageReceiver;
 import com.google.common.collect.Lists;
+import com.google.common.util.concurrent.AbstractService;
 import com.google.common.util.concurrent.FutureCallback;
 import com.google.common.util.concurrent.Futures;
 import com.google.common.util.concurrent.ListenableFuture;
@@ -46,7 +51,7 @@ import org.slf4j.LoggerFactory;
  * Implementation of {@link AbstractSubscriberConnection} based on Cloud Pub/Sub pull and
  * acknowledge operations.
  */
-final class PollingSubscriberConnection extends AbstractSubscriberConnection {
+final class PollingSubscriberConnection extends AbstractService implements AcksProcessor {
   private static final int MAX_PER_REQUEST_CHANGES = 1000;
   private static final Duration DEFAULT_TIMEOUT = Duration.standardSeconds(10);
   private static final int DEFAULT_MAX_MESSAGES = 1000;
@@ -55,7 +60,10 @@ final class PollingSubscriberConnection extends AbstractSubscriberConnection {
 
   private static final Logger logger = LoggerFactory.getLogger(PollingSubscriberConnection.class);
 
+  private final String subscription;
+  private final ScheduledExecutorService executor;
   private final SubscriberFutureStub stub;
+  private final MessagesProcessor messagesProcessor;
 
   public PollingSubscriberConnection(
       String subscription,
@@ -67,32 +75,41 @@ final class PollingSubscriberConnection extends AbstractSubscriberConnection {
       FlowController flowController,
       ScheduledExecutorService executor,
       Clock clock) {
-    super(
-        subscription,
-        receiver,
-        ackExpirationPadding,
-        ackLatencyDistribution,
-        flowController,
-        executor,
-        clock);
+    this.subscription = subscription;
+    this.executor = executor;
     stub =
         SubscriberGrpc.newFutureStub(channel)
             .withCallCredentials(MoreCallCredentials.from(credentials));
+    messagesProcessor =
+        new MessagesProcessor(
+            receiver,
+            this,
+            ackExpirationPadding,
+            ackLatencyDistribution,
+            flowController,
+            executor,
+            clock);
   }
 
   @Override
-  void initialize() {
+  protected void doStart() {
+    logger.debug("Starting subscriber.");
+    initialize();
+    notifyStarted();
+  }
+
+  private void initialize() {
     ListenableFuture<Subscription> subscriptionInfo =
         stub.withDeadlineAfter(DEFAULT_TIMEOUT.getMillis(), TimeUnit.MILLISECONDS)
             .getSubscription(
                 GetSubscriptionRequest.newBuilder().setSubscription(subscription).build());
-    
+
     Futures.addCallback(
         subscriptionInfo,
         new FutureCallback<Subscription>() {
           @Override
           public void onSuccess(Subscription result) {
-            setMessageDeadlineSeconds(result.getAckDeadlineSeconds());
+            messagesProcessor.setMessageDeadlineSeconds(result.getAckDeadlineSeconds());
             pullMessages(INITIAL_BACKOFF);
           }
 
@@ -101,6 +118,12 @@ final class PollingSubscriberConnection extends AbstractSubscriberConnection {
             notifyFailed(cause);
           }
         });
+  }
+
+  @Override
+  protected void doStop() {
+    messagesProcessor.stop();
+    notifyStopped();
   }
 
   private void pullMessages(final Duration backoff) {
@@ -118,9 +141,9 @@ final class PollingSubscriberConnection extends AbstractSubscriberConnection {
         new FutureCallback<PullResponse>() {
           @Override
           public void onSuccess(PullResponse pullResponse) {
-            processReceivedMessages(pullResponse.getReceivedMessagesList());
+            messagesProcessor.processReceivedMessages(pullResponse.getReceivedMessagesList());
             if (pullResponse.getReceivedMessagesCount() == 0) {
-              // No messages in response, possibly caught up in backlog, we backoff to avoid 
+              // No messages in response, possibly caught up in backlog, we backoff to avoid
               // slamming the server.
               executor.schedule(
                   new Runnable() {
@@ -166,7 +189,7 @@ final class PollingSubscriberConnection extends AbstractSubscriberConnection {
   }
 
   @Override
-  void sendAckOperations(
+  public void sendAckOperations(
       List<String> acksToSend, List<PendingModifyAckDeadline> ackDeadlineExtensions) {
     // Send the modify ack deadlines in bundles as not to exceed the max request
     // size.

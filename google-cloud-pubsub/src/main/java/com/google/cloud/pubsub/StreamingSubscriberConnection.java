@@ -16,10 +16,15 @@
 
 package com.google.cloud.pubsub;
 
+import static com.google.cloud.pubsub.StatusUtil.isRetryable;
+
 import com.google.auth.Credentials;
 import com.google.cloud.Clock;
+import com.google.cloud.pubsub.MessagesProcessor.AcksProcessor;
+import com.google.cloud.pubsub.MessagesProcessor.PendingModifyAckDeadline;
 import com.google.cloud.pubsub.Subscriber.MessageReceiver;
 import com.google.common.collect.Lists;
+import com.google.common.util.concurrent.AbstractService;
 import com.google.common.util.concurrent.FutureCallback;
 import com.google.common.util.concurrent.Futures;
 import com.google.common.util.concurrent.SettableFuture;
@@ -43,7 +48,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /** Implementation of {@link AbstractSubscriberConnection} based on Cloud Pub/Sub streaming pull. */
-final class StreamingSubscriberConnection extends AbstractSubscriberConnection {
+final class StreamingSubscriberConnection extends AbstractService implements AcksProcessor {
   private static final Logger logger = LoggerFactory.getLogger(StreamingSubscriberConnection.class);
 
   private static final Duration INITIAL_CHANNEL_RECONNECT_BACKOFF = new Duration(100); // 100ms
@@ -54,6 +59,9 @@ final class StreamingSubscriberConnection extends AbstractSubscriberConnection {
   private final Channel channel;
   private final Credentials credentials;
 
+  private final String subscription;
+  private final ScheduledExecutorService executor;
+  private final MessagesProcessor messagesProcessor;
   private ClientCallStreamObserver<StreamingPullRequest> requestObserver;
 
   public StreamingSubscriberConnection(
@@ -67,57 +75,77 @@ final class StreamingSubscriberConnection extends AbstractSubscriberConnection {
       FlowController flowController,
       ScheduledExecutorService executor,
       Clock clock) {
-    super(
-        subscription,
-        receiver,
-        ackExpirationPadding,
-        ackLatencyDistribution,
-        flowController,
-        executor,
-        clock);
+    this.subscription = subscription;
+    this.executor = executor;
     this.credentials = credentials;
     this.channel = channel;
-    setMessageDeadlineSeconds(streamAckDeadlineSeconds);
+    this.messagesProcessor =
+        new MessagesProcessor(
+            receiver,
+            this,
+            ackExpirationPadding,
+            ackLatencyDistribution,
+            flowController,
+            executor,
+            clock);
+    messagesProcessor.setMessageDeadlineSeconds(streamAckDeadlineSeconds);
+  }
+
+  @Override
+  protected void doStart() {
+    logger.debug("Starting subscriber.");
+    initialize();
+    notifyStarted();
   }
 
   @Override
   protected void doStop() {
-    super.doStop();
+    messagesProcessor.stop();
     requestObserver.onError(Status.CANCELLED.asException());
+    notifyStopped();
   }
 
-  @Override
-  void initialize() {
+  private class StreamingPullResponseObserver
+      implements ClientResponseObserver<StreamingPullRequest, StreamingPullResponse> {
+
+    final SettableFuture<Void> errorFuture;
+
+    StreamingPullResponseObserver(SettableFuture<Void> errorFuture) {
+      this.errorFuture = errorFuture;
+    }
+
+    @Override
+    public void beforeStart(ClientCallStreamObserver<StreamingPullRequest> requestObserver) {
+      StreamingSubscriberConnection.this.requestObserver = requestObserver;
+      requestObserver.disableAutoInboundFlowControl();
+    }
+
+    @Override
+    public void onNext(StreamingPullResponse response) {
+      messagesProcessor.processReceivedMessages(response.getReceivedMessagesList());
+      // Only if not shutdown we will request one more bundles of messages to be delivered.
+      if (isAlive()) {
+        requestObserver.request(1);
+      }
+    }
+
+    @Override
+    public void onError(Throwable t) {
+      logger.debug("Terminated streaming with exception", t);
+      errorFuture.setException(t);
+    }
+
+    @Override
+    public void onCompleted() {
+      logger.debug("Streaming pull terminated successfully!");
+      errorFuture.set(null);
+    }
+  }
+
+  private void initialize() {
     final SettableFuture<Void> errorFuture = SettableFuture.create();
     final ClientResponseObserver<StreamingPullRequest, StreamingPullResponse> responseObserver =
-        new ClientResponseObserver<StreamingPullRequest, StreamingPullResponse>() {
-          @Override
-          public void beforeStart(ClientCallStreamObserver<StreamingPullRequest> requestObserver) {
-            StreamingSubscriberConnection.this.requestObserver = requestObserver;
-            requestObserver.disableAutoInboundFlowControl();
-          }
-
-          @Override
-          public void onNext(StreamingPullResponse response) {
-            processReceivedMessages(response.getReceivedMessagesList());
-            // Only if not shutdown we will request one more bundles of messages to be delivered.
-            if (isAlive()) {
-              requestObserver.request(1);
-            }
-          }
-
-          @Override
-          public void onError(Throwable t) {
-            logger.debug("Terminated streaming with exception", t);
-            errorFuture.setException(t);
-          }
-
-          @Override
-          public void onCompleted() {
-            logger.debug("Streaming pull terminated successfully!");
-            errorFuture.set(null);
-          }
-        };
+        new StreamingPullResponseObserver(errorFuture);
     final ClientCallStreamObserver<StreamingPullRequest> requestObserver =
         (ClientCallStreamObserver<StreamingPullRequest>)
             (ClientCalls.asyncBidiStreamingCall(
@@ -128,11 +156,11 @@ final class StreamingSubscriberConnection extends AbstractSubscriberConnection {
     logger.debug(
         "Initializing stream to subscription {} with deadline {}",
         subscription,
-        getMessageDeadlineSeconds());
+        messagesProcessor.getMessageDeadlineSeconds());
     requestObserver.onNext(
         StreamingPullRequest.newBuilder()
             .setSubscription(subscription)
-            .setStreamAckDeadlineSeconds(getMessageDeadlineSeconds())
+            .setStreamAckDeadlineSeconds(messagesProcessor.getMessageDeadlineSeconds())
             .build());
     requestObserver.request(1);
 
@@ -177,7 +205,7 @@ final class StreamingSubscriberConnection extends AbstractSubscriberConnection {
   }
 
   @Override
-  void sendAckOperations(
+  public void sendAckOperations(
       List<String> acksToSend, List<PendingModifyAckDeadline> ackDeadlineExtensions) {
 
     // Send the modify ack deadlines in batches as not to exceed the max request
@@ -196,8 +224,9 @@ final class StreamingSubscriberConnection extends AbstractSubscriberConnection {
         List<PendingModifyAckDeadline> modAckChunk = modifyAckDeadlineChunksIt.next();
         for (PendingModifyAckDeadline modifyAckDeadline : modAckChunk) {
           for (String ackId : modifyAckDeadline.ackIds) {
-            requestBuilder.addModifyDeadlineSeconds(modifyAckDeadline.deadlineExtensionSeconds)
-                          .addModifyDeadlineAckIds(ackId);
+            requestBuilder
+                .addModifyDeadlineSeconds(modifyAckDeadline.deadlineExtensionSeconds)
+                .addModifyDeadlineAckIds(ackId);
           }
         }
       }
@@ -210,7 +239,7 @@ final class StreamingSubscriberConnection extends AbstractSubscriberConnection {
   }
 
   public void updateStreamAckDeadline(int newAckDeadlineSeconds) {
-    setMessageDeadlineSeconds(newAckDeadlineSeconds);
+    messagesProcessor.setMessageDeadlineSeconds(newAckDeadlineSeconds);
     requestObserver.onNext(
         StreamingPullRequest.newBuilder()
             .setStreamAckDeadlineSeconds(newAckDeadlineSeconds)
