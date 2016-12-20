@@ -101,8 +101,8 @@ final class StreamingSubscriberConnection extends AbstractService implements Ack
   @Override
   protected void doStop() {
     messagesProcessor.stop();
-    requestObserver.onError(Status.CANCELLED.asException());
     notifyStopped();
+    requestObserver.onError(Status.CANCELLED.asException());
   }
 
   private class StreamingPullResponseObserver
