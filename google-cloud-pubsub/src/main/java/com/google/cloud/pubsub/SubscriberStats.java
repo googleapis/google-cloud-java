@@ -22,10 +22,11 @@ import com.google.auto.value.AutoValue;
  * A snapshot of the subscriber statistics at the time they were requested from the {@link
  * Subscriber}.
  */
-//TODO: Finish implementation.
 @AutoValue
 public abstract class SubscriberStats {
+  
   @AutoValue
+  //TODO: Finish implementation.
   public abstract static class Stats {}
 
   /** Number of successfully published messages. */
@@ -51,4 +52,27 @@ public abstract class SubscriberStats {
 
   /** Number of messages for which we have auto extended its acknowledgement deadline. */
   public abstract long getNumberOfAutoExtendedAckDeadlines();
+
+  public static Builder newBuilder() {
+    return new AutoValue_SubscriberStats.Builder();
+  }
+
+  @AutoValue.Builder
+  public static abstract class Builder {
+    public abstract Builder setReceivedMessages(long value);
+
+    public abstract Builder setAckedMessages(long value);
+
+    public abstract Builder setTotalReceivedMessages(long value);
+
+    public abstract Builder setTotalAckedMessages(long value);
+
+    public abstract Builder setEndToEndLatency(Stats value);
+
+    public abstract Builder setAckLatency(Stats value);
+
+    public abstract Builder setNumberOfAutoExtendedAckDeadlines(long value);
+
+    public abstract SubscriberStats build();
+  }
 }
