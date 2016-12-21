@@ -451,63 +451,6 @@ public class PubSubExample {
     }
   }
 
-  /**
-   * This class demonstrates how modify the acknowledge deadline for messages in a Pub/Sub
-   * subscription.
-   *
-   * @see <a href="https://cloud.google.com/pubsub/subscriber#receiving-pull-messages">Message
-   *     acknowledgement deadline</a>
-   */
-  private static class ModifyAckDeadlineAction
-      extends PubSubAction<Tuple<ModifyAckDeadlineAction.SubscriptionAndDeadline, List<String>>> {
-
-    static class SubscriptionAndDeadline {
-
-      private final String subscription;
-      private final int deadlineMillis;
-
-      private SubscriptionAndDeadline(String subscription, int deadlineMillis) {
-        this.subscription = subscription;
-        this.deadlineMillis = deadlineMillis;
-      }
-
-      String subscription() {
-        return subscription;
-      }
-
-      int deadlineMillis() {
-        return deadlineMillis;
-      }
-    }
-
-    @Override
-    public void run(PubSub pubsub, Tuple<SubscriptionAndDeadline, List<String>> params)
-        throws Exception {
-      String subscription = params.x().subscription();
-      int deadline = params.x().deadlineMillis();
-      List<String> ackIds = params.y();
-      pubsub.modifyAckDeadline(subscription, deadline, TimeUnit.MILLISECONDS, ackIds);
-      System.out.printf("Ack deadline set to %d for %d messages in subscription %s%n", deadline,
-          ackIds.size(), subscription);
-    }
-
-    @Override
-    Tuple<SubscriptionAndDeadline, List<String>> parse(String... args) throws Exception {
-      if (args.length < 3) {
-        throw new IllegalArgumentException("Missing required subscription, deadline and ack IDs");
-      }
-      String subscription = args[0];
-      int deadline = Integer.parseInt(args[1]);
-      return Tuple.of(new SubscriptionAndDeadline(subscription, deadline),
-          Arrays.asList(Arrays.copyOfRange(args, 2, args.length)));
-    }
-
-    @Override
-    public String params() {
-      return "<subscription> <deadlineMillis> <ackId>+";
-    }
-  }
-
   private abstract static class GetPolicyAction extends PubSubAction<String> {
     @Override
     String parse(String... args) throws Exception {
@@ -702,7 +645,6 @@ public class PubSubExample {
     ACTIONS.put("test-permissions", new ParentAction(TEST_IAM_ACTIONS));
     ACTIONS.put("publish", new PublishMessagesAction());
     ACTIONS.put("replace-push-config", new ReplacePushConfigAction());
-    ACTIONS.put("modify-ack-deadline", new ModifyAckDeadlineAction());
   }
 
   private static void printUsage() {

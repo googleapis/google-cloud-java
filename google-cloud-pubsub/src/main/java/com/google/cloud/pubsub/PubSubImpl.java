@@ -515,36 +515,6 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
   }
 
   @Override
-  public void modifyAckDeadline(String subscription, int deadline, TimeUnit unit, String ackId,
-      String... ackIds) {
-    get(modifyAckDeadlineAsync(subscription, deadline, unit, Lists.asList(ackId, ackIds)));
-  }
-
-  @Override
-  public Future<Void> modifyAckDeadlineAsync(String subscription, int deadline, TimeUnit unit,
-      String ackId, String... ackIds) {
-    return modifyAckDeadlineAsync(subscription, deadline, unit, Lists.asList(ackId, ackIds));
-  }
-
-  @Override
-  public void modifyAckDeadline(String subscription, int deadline, TimeUnit unit,
-      Iterable<String> ackIds) {
-    get(modifyAckDeadlineAsync(subscription, deadline, unit, ackIds));
-  }
-
-  @Override
-  public Future<Void> modifyAckDeadlineAsync(String subscription, int deadline, TimeUnit unit,
-      Iterable<String> ackIds) {
-    ModifyAckDeadlineRequest request = ModifyAckDeadlineRequest.newBuilder()
-        .setSubscription(
-            SubscriberClient.formatSubscriptionName(getOptions().getProjectId(), subscription))
-        .setAckDeadlineSeconds((int) TimeUnit.SECONDS.convert(deadline, unit))
-        .addAllAckIds(ackIds)
-        .build();
-    return transform(rpc.modify(request), EMPTY_TO_VOID_FUNCTION);
-  }
-
-  @Override
   public Policy getTopicPolicy(String topic) {
     return get(getTopicPolicyAsync(topic));
   }
