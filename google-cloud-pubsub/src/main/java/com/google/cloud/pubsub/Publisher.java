@@ -16,6 +16,7 @@
 
 package com.google.cloud.pubsub;
 
+import com.google.api.gax.grpc.BundlingSettings;
 import com.google.auth.Credentials;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.common.base.Optional;
@@ -92,6 +93,13 @@ public interface Publisher {
   Duration MIN_SEND_BUNDLE_DURATION = new Duration(10 * 1000); // 10 seconds
   Duration MIN_REQUEST_TIMEOUT = new Duration(10); // 10 milliseconds
 
+  BundlingSettings DEFAULT_BUNDLING_SETTINGS =
+      BundlingSettings.newBuilder()
+          .setDelayThreshold(DEFAULT_MAX_BUNDLE_DURATION)
+          .setRequestByteThreshold(DEFAULT_MAX_BUNDLE_BYTES)
+          .setElementCountThreshold(DEFAULT_MAX_BUNDLE_MESSAGES)
+          .build();
+
   /** Topic to which the publisher publishes to. */
   String getTopic();
 
@@ -156,9 +164,7 @@ public interface Publisher {
     String topic;
 
     // Bundling options
-    int maxBundleMessages;
-    int maxBundleBytes;
-    Duration maxBundleDuration;
+    BundlingSettings bundlingSettings;
 
     // Client-side flow control options
     Optional<Integer> maxOutstandingMessages;
@@ -192,9 +198,7 @@ public interface Publisher {
       channelBuilder = Optional.absent();
       maxOutstandingMessages = Optional.absent();
       maxOutstandingBytes = Optional.absent();
-      maxBundleMessages = DEFAULT_MAX_BUNDLE_MESSAGES;
-      maxBundleBytes = DEFAULT_MAX_BUNDLE_BYTES;
-      maxBundleDuration = DEFAULT_MAX_BUNDLE_DURATION;
+      bundlingSettings = DEFAULT_BUNDLING_SETTINGS;
       requestTimeout = DEFAULT_REQUEST_TIMEOUT;
       sendBundleDeadline = MIN_SEND_BUNDLE_DURATION;
       failOnFlowControlLimits = false;
@@ -225,38 +229,26 @@ public interface Publisher {
     }
 
     // Bundling options
+    public Builder setBundlingSettings(BundlingSettings bundlingSettings) {
+      Preconditions.checkNotNull(bundlingSettings);
+      Preconditions.checkNotNull(bundlingSettings.getElementCountThreshold());
+      Preconditions.checkArgument(bundlingSettings.getElementCountThreshold() > 0);
+      Preconditions.checkNotNull(bundlingSettings.getRequestByteThreshold());
+      Preconditions.checkArgument(bundlingSettings.getRequestByteThreshold() > 0);
+      Preconditions.checkNotNull(bundlingSettings.getDelayThreshold());
+      Preconditions.checkArgument(bundlingSettings.getDelayThreshold().getMillis() > 0);
 
-    /**
-     * Maximum number of messages to send per publish call.
-     *
-     * <p>It also sets a target to when to trigger a publish.
-     */
-    public Builder setMaxBundleMessages(int messages) {
-      Preconditions.checkArgument(messages > 0);
-      maxBundleMessages = messages;
-      return this;
-    }
+      Preconditions.checkArgument(
+          bundlingSettings.getElementCountLimit() == null,
+          "elementCountLimit option not honored by current implementation");
+      Preconditions.checkArgument(
+          bundlingSettings.getRequestByteLimit() == null,
+          "requestByteLimit option not honored by current implementation");
+      Preconditions.checkArgument(
+          bundlingSettings.getBlockingCallCountThreshold() == null,
+          "blockingCallCountThreshold option not honored by current implementation");
 
-    /**
-     * Maximum number of bytes to send per publish call.
-     *
-     * <p>It also sets a target to when to trigger a publish.
-     *
-     * <p>This will not be honored if a single message is published that exceeds this maximum.
-     */
-    public Builder setMaxBundleBytes(int bytes) {
-      Preconditions.checkArgument(bytes > 0);
-      maxBundleBytes = bytes;
-      return this;
-    }
-
-    /**
-     * Time to wait, since the first message is kept in memory for bundling, before triggering a
-     * publish call.
-     */
-    public Builder setMaxBundleDuration(Duration duration) {
-      Preconditions.checkArgument(duration.getMillis() >= 0);
-      maxBundleDuration = duration;
+      this.bundlingSettings = bundlingSettings;
       return this;
     }
 
