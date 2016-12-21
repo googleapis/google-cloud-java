@@ -26,10 +26,7 @@ import com.google.cloud.Identity;
 import com.google.cloud.Policy;
 import com.google.cloud.Role;
 import com.google.cloud.pubsub.Message;
-import com.google.cloud.pubsub.PubSub.MessageConsumer;
-import com.google.cloud.pubsub.PubSub.MessageProcessor;
 import com.google.cloud.pubsub.PushConfig;
-import com.google.cloud.pubsub.ReceivedMessage;
 import com.google.cloud.pubsub.Subscription;
 
 import java.util.Iterator;
@@ -164,61 +161,6 @@ public class SubscriptionSnippets {
     // ...
     future.get();
     // [END replacePushConfigToPullAsync]
-  }
-
-  /**
-   * Example of pulling a maximum number of messages from the subscription.
-   */
-  // [TARGET pull(int)]
-  public void pull() {
-    // [START pull]
-    Iterator<ReceivedMessage> messages = subscription.pull(100);
-    // Ack deadline is renewed until the message is consumed
-    while (messages.hasNext()) {
-      ReceivedMessage message = messages.next();
-      // do something with message and ack/nack it
-      message.ack(); // or message.nack()
-    }
-    // [END pull]
-  }
-
-  /**
-   * Example of asynchronously pulling a maximum number of messages from the subscription.
-   */
-  // [TARGET pullAsync(int)]
-  public void pullAsync() throws ExecutionException, InterruptedException {
-    // [START pullAsync]
-    Future<Iterator<ReceivedMessage>> future = subscription.pullAsync(100);
-    // ...
-    Iterator<ReceivedMessage> messages = future.get();
-    // Ack deadline is renewed until the message is consumed
-    while (messages.hasNext()) {
-      ReceivedMessage message = messages.next();
-      // do something with message and ack/nack it
-      message.ack(); // or message.nack()
-    }
-    // [END pullAsync]
-  }
-
-  /**
-   * Example of continuously pulling messages from the subscription.
-   */
-  // [TARGET pullAsync(MessageProcessor, PullOption...)]
-  // [VARIABLE "my_subscription_name"]
-  public void pullWithMessageConsumer(String subscriptionName) throws Exception {
-    // [START pullWithMessageConsumer]
-    MessageProcessor callback = new MessageProcessor() {
-      public void process(Message message) throws Exception {
-        // Ack deadline is renewed until this method returns
-        // Message is acked if this method returns successfully
-        // Message is nacked if this method throws an exception
-      }
-    };
-    MessageConsumer consumer = subscription.pullAsync(callback);
-    // ...
-    // Stop pulling
-    consumer.close();
-    // [END pullWithMessageConsumer]
   }
 
   /**
