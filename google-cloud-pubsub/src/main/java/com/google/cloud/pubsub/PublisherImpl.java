@@ -63,8 +63,8 @@ final class PublisherImpl implements Publisher {
 
   private final String topic;
 
-  private final int maxBundleMessages;
-  private final int maxBundleBytes;
+  private final long maxBundleMessages;
+  private final long maxBundleBytes;
   private final Duration maxBundleDuration;
   private final boolean hasBundlingBytes;
 
@@ -93,9 +93,9 @@ final class PublisherImpl implements Publisher {
   PublisherImpl(Builder builder) throws IOException {
     topic = builder.topic;
 
-    maxBundleMessages = builder.maxBundleMessages;
-    maxBundleBytes = builder.maxBundleBytes;
-    maxBundleDuration = builder.maxBundleDuration;
+    maxBundleMessages = builder.bundlingSettings.getElementCountThreshold();
+    maxBundleBytes = builder.bundlingSettings.getRequestByteThreshold();
+    maxBundleDuration = builder.bundlingSettings.getDelayThreshold();
     hasBundlingBytes = maxBundleBytes > 0;
 
     maxOutstandingMessages = builder.maxOutstandingMessages;
