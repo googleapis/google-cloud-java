@@ -21,14 +21,11 @@ import com.google.cloud.GrpcServiceOptions.ExecutorFactory;
 import com.google.cloud.Page;
 import com.google.cloud.Policy;
 import com.google.cloud.Service;
-
 import java.io.IOException;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Future;
-import java.util.concurrent.TimeUnit;
 
 /**
  * An interface for Google Cloud Pub/Sub.
@@ -675,7 +672,8 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
    */
   Future<AsyncPage<SubscriptionId>> listSubscriptionsAsync(String topic, ListOption... options);
 
-  Subscriber subscriber(SubscriptionInfo subscription, Subscriber.MessageReceiver receiver) throws IOException;
+  Subscriber subscriber(SubscriptionInfo subscription, Subscriber.MessageReceiver receiver)
+      throws IOException;
 
   /**
    * Returns the IAM access control policy for the specified topic. Returns {@code null} if the
