@@ -67,6 +67,7 @@ import com.google.pubsub.v1.PublishResponse;
 import com.google.pubsub.v1.PullRequest;
 import com.google.pubsub.v1.PullResponse;
 
+import java.io.IOException;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
@@ -504,7 +505,7 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
   }
 
   @Override
-  public Subscriber subscriber(SubscriptionInfo subscription, Subscriber.MessageReceiver receiver) {
+  public Subscriber subscriber(SubscriptionInfo subscription, Subscriber.MessageReceiver receiver) throws IOException {
     // TODO(pongad): Provide a way to pass in the rest of the options.
     String subName = SubscriberClient.formatSubscriptionName(getOptions().getProjectId(), subscription.getName());
     return Subscriber.Builder.newBuilder(subName, receiver)

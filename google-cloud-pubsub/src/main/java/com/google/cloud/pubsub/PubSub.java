@@ -22,6 +22,7 @@ import com.google.cloud.Page;
 import com.google.cloud.Policy;
 import com.google.cloud.Service;
 
+import java.io.IOException;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -674,7 +675,7 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
    */
   Future<AsyncPage<SubscriptionId>> listSubscriptionsAsync(String topic, ListOption... options);
 
-  Subscriber subscriber(SubscriptionId subscription, Subscriber.MessageReceiver receiver);
+  Subscriber subscriber(SubscriptionInfo subscription, Subscriber.MessageReceiver receiver) throws IOException;
 
   /**
    * Modifies the acknowledge deadline of the given messages. {@code deadline} must be &gt;= 0 and
