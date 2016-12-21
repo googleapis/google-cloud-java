@@ -61,7 +61,7 @@ class MessagesProcessor {
   @VisibleForTesting static final Duration PENDING_ACKS_SEND_DELAY = Duration.millis(100);
   private static final int MAX_ACK_DEADLINE_EXTENSION_SECS = 10 * 60; // 10m
 
-  protected final ScheduledExecutorService executor;
+  private final ScheduledExecutorService executor;
   private final Clock clock;
 
   private final Duration ackExpirationPadding;
@@ -228,7 +228,7 @@ class MessagesProcessor {
     this.clock = clock;
   }
 
-  protected void stop() {
+  public void stop() {
     messagesWaiter.waitNoMessages();
     alarmsLock.lock();
     try {
@@ -240,19 +240,6 @@ class MessagesProcessor {
       alarmsLock.unlock();
     }
     processOutstandingAckOperations();
-  }
-
-  protected boolean isRetryable(Status status) {
-    switch (status.getCode()) {
-      case DEADLINE_EXCEEDED:
-      case INTERNAL:
-      case CANCELLED:
-      case RESOURCE_EXHAUSTED:
-      case UNAVAILABLE:
-        return true;
-      default:
-        return false;
-    }
   }
 
   public void setMessageDeadlineSeconds(int messageDeadlineSeconds) {
