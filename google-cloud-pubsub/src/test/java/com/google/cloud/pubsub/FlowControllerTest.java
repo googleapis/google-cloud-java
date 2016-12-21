@@ -106,7 +106,7 @@ public class FlowControllerTest {
     testBlockingReserveRelease(flowController, 10, 10);
   }
 
-  private void testBlockingReserveRelease(
+  private static void testBlockingReserveRelease(
       final FlowController flowController, final int maxNumMessages, final int maxNumBytes)
       throws Exception {
 

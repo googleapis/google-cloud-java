@@ -18,6 +18,7 @@ package com.google.cloud.pubsub;
 
 import com.google.auth.Credentials;
 import com.google.cloud.Clock;
+import com.google.cloud.pubsub.Publisher.CloudPubsubFlowControlException;
 import com.google.cloud.pubsub.Subscriber.MessageReceiver;
 import com.google.cloud.pubsub.Subscriber.MessageReceiver.AckReply;
 import com.google.common.annotations.VisibleForTesting;
@@ -26,19 +27,9 @@ import com.google.common.primitives.Ints;
 import com.google.common.util.concurrent.AbstractService;
 import com.google.common.util.concurrent.FutureCallback;
 import com.google.common.util.concurrent.Futures;
-import com.google.common.util.concurrent.SettableFuture;
 import com.google.pubsub.v1.PubsubMessage;
 import com.google.pubsub.v1.ReceivedMessage;
-import com.google.pubsub.v1.StreamingPullRequest;
-import com.google.pubsub.v1.StreamingPullResponse;
-import com.google.pubsub.v1.SubscriberGrpc;
-import io.grpc.CallOptions;
-import io.grpc.Channel;
 import io.grpc.Status;
-import io.grpc.auth.MoreCallCredentials;
-import io.grpc.stub.ClientCallStreamObserver;
-import io.grpc.stub.ClientCalls;
-import io.grpc.stub.ClientResponseObserver;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
@@ -53,30 +44,30 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
-import javax.annotation.Nullable;
 import org.joda.time.Duration;
 import org.joda.time.Instant;
 import org.joda.time.Interval;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/** Implementation of {@link Subscriber}. */
-final class SubscriberConnection extends AbstractService {
-  private static final Logger logger = LoggerFactory.getLogger(SubscriberConnection.class);
+/**
+ * Dispatches messages to a message receiver while handling the messages acking and lease
+ * extensions.
+ */
+class MessagesProcessor {
+  private static final Logger logger = LoggerFactory.getLogger(MessagesProcessor.class);
 
-  private static final Duration INITIAL_CHANNEL_RECONNECT_BACKOFF = new Duration(100); // 100ms
-  private static final int MAX_PER_REQUEST_CHANGES = 10000;
   private static final int INITIAL_ACK_DEADLINE_EXTENSION_SECONDS = 2;
   @VisibleForTesting static final Duration PENDING_ACKS_SEND_DELAY = Duration.millis(100);
+  private static final int MAX_ACK_DEADLINE_EXTENSION_SECS = 10 * 60; // 10m
 
-  private final Duration ackExpirationPadding;
   private final ScheduledExecutorService executor;
   private final Clock clock;
-  private final MessageReceiver receiver;
-  private final String subscription;
-  private Duration channelReconnectBackoff = INITIAL_CHANNEL_RECONNECT_BACKOFF;
 
-  private int streamAckDeadlineSeconds;
+  private final Duration ackExpirationPadding;
+  private final MessageReceiver receiver;
+  private final AcksProcessor acksProcessor;
+
   private final FlowController flowController;
   private final MessagesWaiter messagesWaiter;
 
@@ -85,48 +76,14 @@ final class SubscriberConnection extends AbstractService {
   private final Set<String> pendingAcks;
   private final Set<String> pendingNacks;
 
-  private final Channel channel;
-  private final Credentials credentials;
-
-  private ClientCallStreamObserver<StreamingPullRequest> requestObserver;
-
   private final Lock alarmsLock;
+  private int messageDeadlineSeconds;
   private ScheduledFuture<?> ackDeadlineExtensionAlarm;
   private Instant nextAckDeadlineExtensionAlarmTime;
   private ScheduledFuture<?> pendingAcksAlarm;
 
   // To keep track of number of seconds the receiver takes to process messages.
   private final Distribution ackLatencyDistribution;
-
-  SubscriberConnection(
-      String subscription,
-      Credentials credentials,
-      MessageReceiver receiver,
-      Duration ackExpirationPadding,
-      int streamAckDeadlineSeconds,
-      Distribution ackLatencyDistribution,
-      Channel channel,
-      FlowController flowController,
-      ScheduledExecutorService executor,
-      Clock clock) {
-    this.executor = executor;
-    this.clock = clock;
-    this.credentials = credentials;
-    this.ackExpirationPadding = ackExpirationPadding;
-    this.streamAckDeadlineSeconds = streamAckDeadlineSeconds;
-    this.receiver = receiver;
-    this.subscription = subscription;
-    this.flowController = flowController;
-    outstandingAckHandlers = new HashMap<>();
-    pendingAcks = new HashSet<>(MAX_PER_REQUEST_CHANGES * 2);
-    pendingNacks = new HashSet<>(MAX_PER_REQUEST_CHANGES * 2);
-    // 601 buckets of 1s resolution from 0s to MAX_ACK_DEADLINE_SECONDS
-    this.ackLatencyDistribution = ackLatencyDistribution;
-    this.channel = channel;
-    alarmsLock = new ReentrantLock();
-    nextAckDeadlineExtensionAlarmTime = new Instant(Long.MAX_VALUE);
-    messagesWaiter = new MessagesWaiter();
-  }
 
   private static class ExpirationInfo implements Comparable<ExpirationInfo> {
     private final Clock clock;
@@ -141,7 +98,7 @@ final class SubscriberConnection extends AbstractService {
 
     void extendExpiration() {
       expiration = new Instant(clock.millis()).plus(Duration.standardSeconds(nextExtensionSeconds));
-      nextExtensionSeconds = 2 * nextExtensionSeconds;
+      nextExtensionSeconds = Math.min(2 * nextExtensionSeconds, MAX_ACK_DEADLINE_EXTENSION_SECS);
     }
 
     @Override
@@ -166,18 +123,27 @@ final class SubscriberConnection extends AbstractService {
   }
 
   /** Stores the data needed to asynchronously modify acknowledgement deadlines. */
-  private static class PendingModifyAckDeadline {
-    final String ackId;
+  static class PendingModifyAckDeadline {
+    final List<String> ackIds;
     final int deadlineExtensionSeconds;
 
-    PendingModifyAckDeadline(String ackId, int deadlineExtensionSeconds) {
-      this.ackId = ackId;
+    PendingModifyAckDeadline(int deadlineExtensionSeconds) {
+      this.ackIds = new ArrayList<String>();
       this.deadlineExtensionSeconds = deadlineExtensionSeconds;
+    }
+
+    PendingModifyAckDeadline(String ackId, int deadlineExtensionSeconds) {
+      this(deadlineExtensionSeconds);
+      addAckId(ackId);
+    }
+
+    public void addAckId(String ackId) {
+      ackIds.add(ackId);
     }
   }
 
   /** Handles callbacks for acking/nacking messages from the {@link MessageReceiver}. */
-  private class AckHandler implements FutureCallback<AckReply>, Comparable<AckHandler> {
+  private class AckHandler implements FutureCallback<AckReply> {
     private final String ackId;
     private final int outstandingBytes;
     private final AtomicBoolean acked;
@@ -188,12 +154,6 @@ final class SubscriberConnection extends AbstractService {
       this.outstandingBytes = outstandingBytes;
       acked = new AtomicBoolean(false);
       receivedTime = new Instant(clock.millis());
-    }
-
-    @Override
-    public int compareTo(AckHandler arg0) {
-      // We don't care about the ordering between AcknowledgeHandlers.
-      return 0;
     }
 
     @Override
@@ -239,17 +199,36 @@ final class SubscriberConnection extends AbstractService {
     }
   }
 
-  @Override
-  protected void doStart() {
-    logger.debug("Starting subscriber.");
-
-    initializeStreaming();
-
-    notifyStarted();
+  public interface AcksProcessor {
+    void sendAckOperations(
+        List<String> acksToSend, List<PendingModifyAckDeadline> ackDeadlineExtensions);
   }
 
-  @Override
-  protected void doStop() {
+  MessagesProcessor(
+      MessageReceiver receiver,
+      AcksProcessor acksProcessor,
+      Duration ackExpirationPadding,
+      Distribution ackLatencyDistribution,
+      FlowController flowController,
+      ScheduledExecutorService executor,
+      Clock clock) {
+    this.executor = executor;
+    this.ackExpirationPadding = ackExpirationPadding;
+    this.receiver = receiver;
+    this.acksProcessor = acksProcessor;
+    this.flowController = flowController;
+    outstandingAckHandlers = new HashMap<>();
+    pendingAcks = new HashSet<>();
+    pendingNacks = new HashSet<>();
+    // 601 buckets of 1s resolution from 0s to MAX_ACK_DEADLINE_SECONDS
+    this.ackLatencyDistribution = ackLatencyDistribution;
+    alarmsLock = new ReentrantLock();
+    nextAckDeadlineExtensionAlarmTime = new Instant(Long.MAX_VALUE);
+    messagesWaiter = new MessagesWaiter();
+    this.clock = clock;
+  }
+
+  public void stop() {
     messagesWaiter.waitNoMessages();
     alarmsLock.lock();
     try {
@@ -260,153 +239,56 @@ final class SubscriberConnection extends AbstractService {
     } finally {
       alarmsLock.unlock();
     }
-    sendOutstandingAckOperations();
-    requestObserver.onError(Status.CANCELLED.asException());
-    notifyStopped();
+    processOutstandingAckOperations();
   }
 
-  private void initializeStreaming() {
-    final SettableFuture<Void> errorFuture = SettableFuture.create();
-    final ClientResponseObserver<StreamingPullRequest, StreamingPullResponse> responseObserver =
-        new ClientResponseObserver<StreamingPullRequest, StreamingPullResponse>() {
-          @Override
-          public void beforeStart(ClientCallStreamObserver<StreamingPullRequest> requestObserver) {
-            SubscriberConnection.this.requestObserver = requestObserver;
-            requestObserver.disableAutoInboundFlowControl();
-          }
-
-          @Override
-          public void onNext(StreamingPullResponse response) {
-            processReceivedMessages(response);
-          }
-
-          @Override
-          public void onError(Throwable t) {
-            logger.debug("Terminated streaming with exception", t);
-            errorFuture.setException(t);
-          }
-
-          @Override
-          public void onCompleted() {
-            logger.debug("Streaming pull terminated successfully!");
-            errorFuture.set(null);
-          }
-        };
-    final ClientCallStreamObserver<StreamingPullRequest> requestObserver =
-        (ClientCallStreamObserver<StreamingPullRequest>)
-            (ClientCalls.asyncBidiStreamingCall(
-                channel.newCall(
-                    SubscriberGrpc.METHOD_STREAMING_PULL,
-                    CallOptions.DEFAULT.withCallCredentials(MoreCallCredentials.from(credentials))),
-                responseObserver));
-    logger.debug(
-        "Initializing stream to subscription {} with deadline {}",
-        subscription,
-        streamAckDeadlineSeconds);
-    requestObserver.onNext(
-        StreamingPullRequest.newBuilder()
-            .setSubscription(subscription)
-            .setStreamAckDeadlineSeconds(streamAckDeadlineSeconds)
-            .build());
-    requestObserver.request(1);
-
-    Futures.addCallback(
-        errorFuture,
-        new FutureCallback<Void>() {
-          @Override
-          public void onSuccess(@Nullable Void result) {
-            channelReconnectBackoff = INITIAL_CHANNEL_RECONNECT_BACKOFF;
-            // The stream was closed. And any case we want to reopen it to continue receiving
-            // messages.
-            initializeStreaming();
-          }
-
-          @Override
-          public void onFailure(Throwable t) {
-            Status errorStatus = Status.fromThrowable(t);
-            if (isRetryable(errorStatus) && isAlive()) {
-              long backoffMillis = channelReconnectBackoff.getMillis();
-              channelReconnectBackoff = channelReconnectBackoff.plus(backoffMillis);
-              executor.schedule(
-                  new Runnable() {
-                    @Override
-                    public void run() {
-                      initializeStreaming();
-                    }
-                  },
-                  backoffMillis,
-                  TimeUnit.MILLISECONDS);
-            } else {
-              if (isAlive()) {
-                notifyFailed(t);
-              }
-            }
-          }
-        },
-        executor);
+  public void setMessageDeadlineSeconds(int messageDeadlineSeconds) {
+    this.messageDeadlineSeconds = messageDeadlineSeconds;
   }
 
-  private boolean isAlive() {
-    return state() == State.RUNNING || state() == State.STARTING;
+  public int getMessageDeadlineSeconds() {
+    return messageDeadlineSeconds;
   }
 
-  private boolean isRetryable(Status status) {
-    switch (status.getCode()) {
-      case DEADLINE_EXCEEDED:
-      case INTERNAL:
-      case CANCELLED:
-      case RESOURCE_EXHAUSTED:
-      case UNAVAILABLE:
-        return true;
-      default:
-        return false;
+  public void processReceivedMessages(List<com.google.pubsub.v1.ReceivedMessage> responseMessages) {
+    int receivedMessagesCount = responseMessages.size();
+    if (receivedMessagesCount == 0) {
+      return;
     }
-  }
+    Instant now = new Instant(clock.millis());
+    int totalByteCount = 0;
+    final List<AckHandler> ackHandlers = new ArrayList<>(responseMessages.size());
+    for (ReceivedMessage pubsubMessage : responseMessages) {
+      int messageSize = pubsubMessage.getMessage().getSerializedSize();
+      totalByteCount += messageSize;
+      ackHandlers.add(new AckHandler(pubsubMessage.getAckId(), messageSize));
+    }
+    ExpirationInfo expiration =
+        new ExpirationInfo(
+            clock, now.plus(messageDeadlineSeconds * 1000), INITIAL_ACK_DEADLINE_EXTENSION_SECONDS);
+    synchronized (outstandingAckHandlers) {
+      addOutstadingAckHandlers(expiration, ackHandlers);
+    }
+    logger.debug("Received {} messages at {}", responseMessages.size(), now);
+    setupNextAckDeadlineExtensionAlarm(expiration);
 
-  private void processReceivedMessages(StreamingPullResponse response) {
-    final List<com.google.pubsub.v1.ReceivedMessage> responseMessages =
-        response.getReceivedMessagesList();
+    messagesWaiter.incrementPendingMessages(responseMessages.size());
+    Iterator<AckHandler> acksIterator = ackHandlers.iterator();
+    for (ReceivedMessage userMessage : responseMessages) {
+      final PubsubMessage message = userMessage.getMessage();
+      final AckHandler ackHandler = acksIterator.next();
+      executor.submit(
+          new Runnable() {
+            @Override
+            public void run() {
+              Futures.addCallback(receiver.receiveMessage(message), ackHandler);
+            }
+          });
+    }
     try {
-      Instant now = new Instant(clock.millis());
-      int receivedMessagesCount = response.getReceivedMessagesCount();
-      int totalByteCount = 0;
-      final List<AckHandler> ackHandlers = new ArrayList<>(responseMessages.size());
-      for (ReceivedMessage pubsubMessage : responseMessages) {
-        int messageSize = pubsubMessage.getMessage().getSerializedSize();
-        totalByteCount += messageSize;
-        ackHandlers.add(new AckHandler(pubsubMessage.getAckId(), messageSize));
-      }
-      ExpirationInfo expiration =
-          new ExpirationInfo(
-              clock,
-              now.plus(streamAckDeadlineSeconds * 1000),
-              INITIAL_ACK_DEADLINE_EXTENSION_SECONDS);
-      synchronized (outstandingAckHandlers) {
-        addOutstadingAckHandlers(expiration, ackHandlers);
-      }
-      logger.debug("Received {} messages at {}", responseMessages.size(), now);
-      setupNextAckDeadlineExtensionAlarm(expiration);
-
-      messagesWaiter.incrementPendingMessages(responseMessages.size());
-      Iterator<AckHandler> acksIterator = ackHandlers.iterator();
-      for (ReceivedMessage userMessage : responseMessages) {
-        final PubsubMessage message = userMessage.getMessage();
-        final AckHandler ackHandler = acksIterator.next();
-        executor.submit(
-            new Runnable() {
-              @Override
-              public void run() {
-                Futures.addCallback(receiver.receiveMessage(message), ackHandler);
-              }
-            });
-      }
       flowController.reserve(receivedMessagesCount, totalByteCount);
-      // Only if not shutdown we will request one more bundle of messages to be delivered.
-      if (isAlive()) {
-        requestObserver.request(1);
-      }
-    } catch (Exception e) {
-      requestObserver.onError(e);
+    } catch (CloudPubsubFlowControlException unexpectedException) {
+      throw new IllegalStateException("Flow control unexpected exception", unexpectedException);
     }
   }
 
@@ -433,7 +315,7 @@ final class SubscriberConnection extends AbstractService {
                     } finally {
                       alarmsLock.unlock();
                     }
-                    sendOutstandingAckOperations();
+                    processOutstandingAckOperations();
                   }
                 },
                 PENDING_ACKS_SEND_DELAY.getMillis(),
@@ -487,14 +369,16 @@ final class SubscriberConnection extends AbstractService {
                     new Interval(now, messageExpiration.expiration)
                         .toDuration()
                         .getStandardSeconds());
+            PendingModifyAckDeadline pendingModAckDeadline =
+                new PendingModifyAckDeadline(extensionSeconds);
             for (AckHandler ackHandler : expiringAcks) {
               if (ackHandler.acked.get()) {
                 continue;
               }
-              modifyAckDeadlinesToSend.add(
-                  new PendingModifyAckDeadline(ackHandler.ackId, extensionSeconds));
+              pendingModAckDeadline.addAckId(ackHandler.ackId);
               renewedAckHandlers.add(ackHandler);
             }
+            modifyAckDeadlinesToSend.add(pendingModAckDeadline);
             if (!renewedAckHandlers.isEmpty()) {
               addOutstadingAckHandlers(messageExpiration, renewedAckHandlers);
             } else {
@@ -508,7 +392,7 @@ final class SubscriberConnection extends AbstractService {
         }
       }
 
-      sendOutstandingAckOperations(modifyAckDeadlinesToSend);
+      processOutstandingAckOperations(modifyAckDeadlinesToSend);
 
       if (nextScheduleExpiration != null) {
         logger.debug(
@@ -548,11 +432,12 @@ final class SubscriberConnection extends AbstractService {
     }
   }
 
-  private void sendOutstandingAckOperations() {
-    sendOutstandingAckOperations(new ArrayList<PendingModifyAckDeadline>());
+  private void processOutstandingAckOperations() {
+    processOutstandingAckOperations(new ArrayList<PendingModifyAckDeadline>());
   }
 
-  private void sendOutstandingAckOperations(List<PendingModifyAckDeadline> ackDeadlineExtensions) {
+  private void processOutstandingAckOperations(
+      List<PendingModifyAckDeadline> ackDeadlineExtensions) {
     List<PendingModifyAckDeadline> modifyAckDeadlinesToSend =
         Lists.newArrayList(ackDeadlineExtensions);
     List<String> acksToSend = new ArrayList<>(pendingAcks.size());
@@ -566,51 +451,21 @@ final class SubscriberConnection extends AbstractService {
         }
       }
     }
-    List<PendingModifyAckDeadline> nacksToSend = new ArrayList<>(pendingNacks.size());
+    PendingModifyAckDeadline nacksToSend = new PendingModifyAckDeadline(0);
     synchronized (pendingNacks) {
       if (!pendingNacks.isEmpty()) {
         try {
           for (String ackId : pendingNacks) {
-            modifyAckDeadlinesToSend.add(new PendingModifyAckDeadline(ackId, 0));
+            nacksToSend.addAckId(ackId);
           }
-          logger.debug("Sending {} nacks", nacksToSend.size());
+          logger.debug("Sending {} nacks", pendingNacks.size());
         } finally {
           pendingNacks.clear();
         }
+        modifyAckDeadlinesToSend.add(nacksToSend);
       }
     }
 
-    // Send the modify ack deadlines in bundles as not to exceed the max request
-    // size.
-    List<List<String>> ackChunks = Lists.partition(acksToSend, MAX_PER_REQUEST_CHANGES);
-    List<List<PendingModifyAckDeadline>> modifyAckDeadlineChunks =
-        Lists.partition(modifyAckDeadlinesToSend, MAX_PER_REQUEST_CHANGES);
-    Iterator<List<String>> ackChunksIt = ackChunks.iterator();
-    Iterator<List<PendingModifyAckDeadline>> modifyAckDeadlineChunksIt =
-        modifyAckDeadlineChunks.iterator();
-
-    while (ackChunksIt.hasNext() || modifyAckDeadlineChunksIt.hasNext()) {
-      StreamingPullRequest.Builder requestBuilder = StreamingPullRequest.newBuilder();
-      if (modifyAckDeadlineChunksIt.hasNext()) {
-        List<PendingModifyAckDeadline> modAckChunk = modifyAckDeadlineChunksIt.next();
-        for (PendingModifyAckDeadline modifyAckDeadline : modAckChunk) {
-          requestBuilder.addModifyDeadlineSeconds(modifyAckDeadline.deadlineExtensionSeconds);
-          requestBuilder.addModifyDeadlineAckIds(modifyAckDeadline.ackId);
-        }
-      }
-      if (ackChunksIt.hasNext()) {
-        List<String> ackChunk = ackChunksIt.next();
-        requestBuilder.addAllAckIds(ackChunk);
-      }
-      requestObserver.onNext(requestBuilder.build());
-    }
-  }
-
-  public void updateStreamAckDeadline(int newAckDeadlineSeconds) {
-    streamAckDeadlineSeconds = newAckDeadlineSeconds;
-    requestObserver.onNext(
-        StreamingPullRequest.newBuilder()
-            .setStreamAckDeadlineSeconds(streamAckDeadlineSeconds)
-            .build());
+    acksProcessor.sendAckOperations(acksToSend, modifyAckDeadlinesToSend);
   }
 }

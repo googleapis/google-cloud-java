@@ -27,8 +27,6 @@ import java.util.concurrent.AbstractExecutorService;
 import java.util.concurrent.Callable;
 import java.util.concurrent.Delayed;
 import java.util.concurrent.ExecutionException;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
@@ -47,7 +45,6 @@ public class FakeScheduledExecutorService extends AbstractExecutorService
 
   private final AtomicBoolean shutdown = new AtomicBoolean(false);
   private final PriorityQueue<PendingCallable<?>> pendingCallables = new PriorityQueue<>();
-  private final ExecutorService delegate = Executors.newSingleThreadExecutor();
   private final FakeClock clock = new FakeClock();
 
   public Clock getClock() {
@@ -58,14 +55,14 @@ public class FakeScheduledExecutorService extends AbstractExecutorService
   public ScheduledFuture<?> schedule(Runnable command, long delay, TimeUnit unit) {
     return schedulePendingCallable(
         new PendingCallable<>(
-            new Duration(unit.toMillis(delay)), command, PendingCallableType.NORMAL));
+            Duration.millis(unit.toMillis(delay)), command, PendingCallableType.NORMAL));
   }
 
   @Override
   public <V> ScheduledFuture<V> schedule(Callable<V> callable, long delay, TimeUnit unit) {
     return schedulePendingCallable(
         new PendingCallable<>(
-            new Duration(unit.toMillis(delay)), callable, PendingCallableType.NORMAL));
+            Duration.millis(unit.toMillis(delay)), callable, PendingCallableType.NORMAL));
   }
 
   @Override
@@ -73,7 +70,7 @@ public class FakeScheduledExecutorService extends AbstractExecutorService
       Runnable command, long initialDelay, long period, TimeUnit unit) {
     return schedulePendingCallable(
         new PendingCallable<>(
-            new Duration(unit.toMillis(initialDelay)), command, PendingCallableType.FIXED_RATE));
+            Duration.millis(unit.toMillis(initialDelay)), command, PendingCallableType.FIXED_RATE));
   }
 
   @Override
@@ -81,7 +78,7 @@ public class FakeScheduledExecutorService extends AbstractExecutorService
       Runnable command, long initialDelay, long delay, TimeUnit unit) {
     return schedulePendingCallable(
         new PendingCallable<>(
-            new Duration(unit.toMillis(initialDelay)), command, PendingCallableType.FIXED_DELAY));
+            Duration.millis(unit.toMillis(initialDelay)), command, PendingCallableType.FIXED_DELAY));
   }
 
   public void tick(long time, TimeUnit unit) {
@@ -167,7 +164,7 @@ public class FakeScheduledExecutorService extends AbstractExecutorService
     if (shutdown.get()) {
       throw new IllegalStateException("This executor has been shutdown");
     }
-    delegate.execute(command);
+    command.run();
   }
 
   <V> ScheduledFuture<V> schedulePendingCallable(PendingCallable<V> callable) {
