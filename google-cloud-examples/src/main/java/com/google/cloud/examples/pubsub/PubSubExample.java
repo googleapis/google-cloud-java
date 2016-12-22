@@ -285,40 +285,6 @@ public class PubSubExample {
     }
   }
 
-  /**
-   * This class demonstrates how to publish messages to a Pub/Sub topic.
-   *
-   * @see <a href="https://cloud.google.com/pubsub/publisher#publish-messages-to-a-topic">Publish
-   *     messages to a topic</a>
-   */
-  private static class PublishMessagesAction extends PubSubAction<Tuple<String, List<Message>>> {
-    @Override
-    public void run(PubSub pubsub, Tuple<String, List<Message>> params) {
-      String topic = params.x();
-      List<Message> messages = params.y();
-      pubsub.publish(topic, messages);
-      System.out.printf("Published %d messages to topic %s%n", messages.size(), topic);
-    }
-
-    @Override
-    Tuple<String, List<Message>> parse(String... args) throws Exception {
-      if (args.length < 2) {
-        throw new IllegalArgumentException("Missing required topic and messages");
-      }
-      String topic = args[0];
-      List<Message> messages = new ArrayList<>();
-      for (String payload : Arrays.copyOfRange(args, 1, args.length)) {
-        messages.add(Message.of(payload));
-      }
-      return Tuple.of(topic, messages);
-    }
-
-    @Override
-    public String params() {
-      return "<topic> <message>+";
-    }
-  }
-
   private abstract static class SubscriptionAction extends PubSubAction<String> {
     @Override
     String parse(String... args) throws Exception {
@@ -643,7 +609,6 @@ public class PubSubExample {
     ACTIONS.put("get-policy", new ParentAction(GET_IAM_ACTIONS));
     ACTIONS.put("add-identity", new ParentAction(REPLACE_IAM_ACTIONS));
     ACTIONS.put("test-permissions", new ParentAction(TEST_IAM_ACTIONS));
-    ACTIONS.put("publish", new PublishMessagesAction());
     ACTIONS.put("replace-push-config", new ReplacePushConfigAction());
   }
 

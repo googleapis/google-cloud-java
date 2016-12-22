@@ -34,7 +34,6 @@ import com.google.common.base.Function;
 import com.google.common.base.Throwables;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
-import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.google.common.util.concurrent.Futures;
@@ -55,10 +54,7 @@ import com.google.pubsub.v1.ListTopicSubscriptionsResponse;
 import com.google.pubsub.v1.ListTopicsRequest;
 import com.google.pubsub.v1.ListTopicsResponse;
 import com.google.pubsub.v1.ModifyPushConfigRequest;
-import com.google.pubsub.v1.PublishRequest;
-import com.google.pubsub.v1.PublishResponse;
 import java.io.IOException;
-import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -289,54 +285,13 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
   }
 
   @Override
-  public String publish(String topic, Message message) {
-    return get(publishAsync(topic, message));
-  }
-
-  private static PublishRequest publishRequest(PubSubOptions serviceOptions, String topic,
-      Iterable<Message> messages) {
-    PublishRequest.Builder builder = PublishRequest.newBuilder();
-    builder.setTopic(PublisherClient.formatTopicName(serviceOptions.getProjectId(), topic));
-    builder.addAllMessages(Iterables.transform(messages, Message.TO_PB_FUNCTION));
-    return builder.build();
-  }
-
-  @Override
-  public Future<String> publishAsync(String topic, Message message) {
-    return transform(
-        rpc.publish(publishRequest(getOptions(), topic, Collections.singletonList(message))),
-        new Function<PublishResponse, String>() {
-          @Override
-          public String apply(PublishResponse publishResponse) {
-            return publishResponse.getMessageIdsList().get(0);
-          }
-        });
-  }
-
-  @Override
-  public List<String> publish(String topic, Message message, Message... messages) {
-    return publish(topic, Lists.asList(message, messages));
-  }
-
-  @Override
-  public Future<List<String>> publishAsync(String topic, Message message, Message... messages) {
-    return publishAsync(topic, Lists.asList(message, messages));
-  }
-
-  @Override
-  public List<String> publish(String topic, Iterable<Message> messages) {
-    return get(publishAsync(topic, messages));
-  }
-
-  @Override
-  public Future<List<String>> publishAsync(String topic, Iterable<Message> messages) {
-    return transform(rpc.publish(publishRequest(getOptions(), topic, messages)),
-        new Function<PublishResponse, List<String>>() {
-          @Override
-          public List<String> apply(PublishResponse publishResponse) {
-            return publishResponse.getMessageIdsList();
-          }
-        });
+  public Publisher publisher(TopicInfo topic) throws IOException {
+    // TODO(pongad): Provide a way to pass in the rest of the options.
+    String topicName =
+        PublisherClient.formatTopicName(getOptions().getProjectId(), topic.getName());
+    return Publisher.Builder.newBuilder(topicName)
+        .setCredentials(getOptions().getCredentials())
+        .build();
   }
 
   @Override

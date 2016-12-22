@@ -70,12 +70,6 @@ public class ITTopicSnippets {
     assertEquals(topic, updatedTopic);
     updatedTopic = topicSnippets.reloadAsync();
     assertEquals(topic, updatedTopic);
-    assertNotNull(topicSnippets.publishOneMessage());
-    assertNotNull(topicSnippets.publishOneMessageAsync());
-    assertEquals(2, topicSnippets.publishMessageList().size());
-    assertEquals(2, topicSnippets.publishMessageListAsync().size());
-    assertEquals(2, topicSnippets.publishMessages().size());
-    assertEquals(2, topicSnippets.publishMessagesAsync().size());
   }
 
   @Test
