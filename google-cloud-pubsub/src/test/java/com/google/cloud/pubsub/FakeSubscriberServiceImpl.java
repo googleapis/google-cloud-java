@@ -264,6 +264,7 @@ class FakeSubscriberServiceImpl extends SubscriberImplBase {
   public void sendError(Throwable error) throws InterruptedException {
     waitForRegistedSubscription();
     synchronized (openedStreams) {
+      waitForOpenedStreams(1);
       Stream stream = openedStreams.get(getAndAdvanceCurrentStream());
       stream.responseObserver.onError(error);
       closeStream(stream);
