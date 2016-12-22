@@ -16,11 +16,14 @@
 
 package com.google.cloud.pubsub;
 
+import com.google.auto.value.AutoValue;
 import com.google.cloud.AsyncPage;
 import com.google.cloud.GrpcServiceOptions.ExecutorFactory;
 import com.google.cloud.Page;
 import com.google.cloud.Policy;
 import com.google.cloud.Service;
+import com.google.common.base.Optional;
+import com.google.common.base.Preconditions;
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
@@ -134,6 +137,49 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
      */
     public static PullOption executorFactory(ExecutorFactory executorFactory) {
       return new PullOption(OptionType.EXECUTOR_FACTORY, executorFactory);
+    }
+  }
+
+  @AutoValue
+  public abstract static class FlowControlSettings {
+    static FlowControlSettings DEFAULT =
+        newBuilder()
+            .setMaxOutstandingBytes(Optional.<Integer>absent())
+            .setMaxOutstandingMessages(Optional.<Integer>absent())
+            .build();
+
+    /** Maximum number of outstanding messages to keep in memory before enforcing flow control. */
+    abstract Optional<Integer> getMaxOutstandingMessages();
+
+    /** Maximum number of outstanding bytes to keep in memory before enforcing flow control. */
+    abstract Optional<Integer> getMaxOutstandingBytes();
+
+    Builder toBuilder() {
+      return new AutoValue_PubSub_FlowControlSettings.Builder(this);
+    }
+
+    static Builder newBuilder() {
+      return new AutoValue_PubSub_FlowControlSettings.Builder();
+    }
+
+    @AutoValue.Builder
+    public abstract static class Builder {
+      abstract Builder setMaxOutstandingMessages(Optional<Integer> value);
+
+      abstract Builder setMaxOutstandingBytes(Optional<Integer> value);
+
+      abstract FlowControlSettings autoBuild();
+
+      FlowControlSettings build() {
+        FlowControlSettings settings = autoBuild();
+        Preconditions.checkArgument(
+            settings.getMaxOutstandingMessages().or(1) > 0,
+            "maxOutstandingMessages limit is disabled by default, but if set it must be set to a value greater than 0.");
+        Preconditions.checkArgument(
+            settings.getMaxOutstandingBytes().or(1) > 0,
+            "maxOutstandingBytes limit is disabled by default, but if set it must be set to a value greater than 0.");
+        return settings;
+      }
     }
   }
 

@@ -68,8 +68,7 @@ final class PublisherImpl implements Publisher {
   private final Duration maxBundleDuration;
   private final boolean hasBundlingBytes;
 
-  private final Optional<Integer> maxOutstandingMessages;
-  private final Optional<Integer> maxOutstandingBytes;
+  private final PubSub.FlowControlSettings flowControlSettings;
   private final boolean failOnFlowControlLimits;
 
   private final Lock messagesBundleLock;
@@ -98,11 +97,9 @@ final class PublisherImpl implements Publisher {
     maxBundleDuration = builder.bundlingSettings.getDelayThreshold();
     hasBundlingBytes = maxBundleBytes > 0;
 
-    maxOutstandingMessages = builder.maxOutstandingMessages;
-    maxOutstandingBytes = builder.maxOutstandingBytes;
+    flowControlSettings = builder.flowControlSettings;
     failOnFlowControlLimits = builder.failOnFlowControlLimits;
-    this.flowController =
-        new FlowController(maxOutstandingMessages, maxOutstandingBytes, failOnFlowControlLimits);
+    this.flowController = new FlowController(flowControlSettings, failOnFlowControlLimits);
 
     sendBundleDeadline = builder.sendBundleDeadline;
 
@@ -166,12 +163,12 @@ final class PublisherImpl implements Publisher {
 
   @Override
   public Optional<Integer> getMaxOutstandingMessages() {
-    return maxOutstandingMessages;
+    return flowControlSettings.getMaxOutstandingMessages();
   }
 
   @Override
   public Optional<Integer> getMaxOutstandingBytes() {
-    return maxOutstandingBytes;
+    return flowControlSettings.getMaxOutstandingBytes();
   }
 
   @Override
@@ -181,12 +178,12 @@ final class PublisherImpl implements Publisher {
 
   /** Whether flow control kicks in on a per outstanding messages basis. */
   boolean isPerMessageEnforced() {
-    return maxOutstandingMessages.isPresent();
+    return getMaxOutstandingMessages().isPresent();
   }
 
   /** Whether flow control kicks in on a per outstanding bytes basis. */
   boolean isPerBytesEnforced() {
-    return maxOutstandingBytes.isPresent();
+    return getMaxOutstandingBytes().isPresent();
   }
 
   @Override

@@ -164,24 +164,24 @@ public interface Publisher {
     String topic;
 
     // Bundling options
-    BundlingSettings bundlingSettings;
+    BundlingSettings bundlingSettings = DEFAULT_BUNDLING_SETTINGS;
 
     // Client-side flow control options
-    Optional<Integer> maxOutstandingMessages;
-    Optional<Integer> maxOutstandingBytes;
-    boolean failOnFlowControlLimits;
+    PubSub.FlowControlSettings flowControlSettings = PubSub.FlowControlSettings.DEFAULT;
+    boolean failOnFlowControlLimits = false;
 
     // Send bundle deadline
-    Duration sendBundleDeadline;
+    Duration sendBundleDeadline = MIN_SEND_BUNDLE_DURATION;
 
     // RPC options
-    Duration requestTimeout;
+    Duration requestTimeout = DEFAULT_REQUEST_TIMEOUT;
 
     // Channels and credentials
-    Optional<Credentials> userCredentials;
-    Optional<ManagedChannelBuilder<? extends ManagedChannelBuilder<?>>> channelBuilder;
+    Optional<Credentials> userCredentials = Optional.absent();
+    Optional<ManagedChannelBuilder<? extends ManagedChannelBuilder<?>>> channelBuilder =
+        Optional.absent();
 
-    Optional<ScheduledExecutorService> executor;
+    Optional<ScheduledExecutorService> executor = Optional.absent();
 
     /** Constructs a new {@link Builder} using the given topic. */
     public static Builder newBuilder(String topic) {
@@ -190,19 +190,6 @@ public interface Publisher {
 
     Builder(String topic) {
       this.topic = Preconditions.checkNotNull(topic);
-      setDefaults();
-    }
-
-    private void setDefaults() {
-      userCredentials = Optional.absent();
-      channelBuilder = Optional.absent();
-      maxOutstandingMessages = Optional.absent();
-      maxOutstandingBytes = Optional.absent();
-      bundlingSettings = DEFAULT_BUNDLING_SETTINGS;
-      requestTimeout = DEFAULT_REQUEST_TIMEOUT;
-      sendBundleDeadline = MIN_SEND_BUNDLE_DURATION;
-      failOnFlowControlLimits = false;
-      executor = Optional.absent();
     }
 
     /**
@@ -254,17 +241,9 @@ public interface Publisher {
 
     // Flow control options
 
-    /** Maximum number of outstanding messages to keep in memory before enforcing flow control. */
-    public Builder setMaxOutstandingMessages(int messages) {
-      Preconditions.checkArgument(messages > 0);
-      maxOutstandingMessages = Optional.of(messages);
-      return this;
-    }
-
-    /** Maximum number of outstanding messages to keep in memory before enforcing flow control. */
-    public Builder setMaxOutstandingBytes(int bytes) {
-      Preconditions.checkArgument(bytes > 0);
-      maxOutstandingBytes = Optional.of(bytes);
+    /** Sets the flow control settings. */
+    public Builder setFlowControlSettings(PubSub.FlowControlSettings flowControlSettings) {
+      this.flowControlSettings = Preconditions.checkNotNull(flowControlSettings);
       return this;
     }
 

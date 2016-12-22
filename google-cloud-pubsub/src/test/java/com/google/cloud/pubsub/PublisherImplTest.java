@@ -344,8 +344,11 @@ public class PublisherImplTest {
             .setDelayThreshold(new Duration(11))
             .setElementCountThreshold(12)
             .build());
-    builder.setMaxOutstandingBytes(13);
-    builder.setMaxOutstandingMessages(14);
+    builder.setFlowControlSettings(
+        PubSub.FlowControlSettings.newBuilder()
+            .setMaxOutstandingBytes(Optional.of(13))
+            .setMaxOutstandingMessages(Optional.of(14))
+            .build());
     builder.setRequestTimeout(new Duration(15));
     builder.setSendBundleDeadline(new Duration(16000));
     Publisher publisher = builder.build();
@@ -374,8 +377,7 @@ public class PublisherImplTest {
     assertEquals(
         Publisher.DEFAULT_MAX_BUNDLE_MESSAGES,
         builder.bundlingSettings.getElementCountThreshold().longValue());
-    assertEquals(Optional.absent(), builder.maxOutstandingBytes);
-    assertEquals(Optional.absent(), builder.maxOutstandingMessages);
+    assertEquals(PubSub.FlowControlSettings.DEFAULT, builder.flowControlSettings);
     assertEquals(Publisher.DEFAULT_REQUEST_TIMEOUT, builder.requestTimeout);
     assertEquals(Publisher.MIN_SEND_BUNDLE_DURATION, builder.sendBundleDeadline);
     assertEquals(Optional.absent(), builder.userCredentials);
@@ -471,29 +473,53 @@ public class PublisherImplTest {
       // Expected
     }
 
-    builder.setMaxOutstandingBytes(1);
+    builder.setFlowControlSettings(
+        PubSub.FlowControlSettings.DEFAULT
+            .toBuilder()
+            .setMaxOutstandingBytes(Optional.of(1))
+            .build());
     try {
-      builder.setMaxOutstandingBytes(0);
+      builder.setFlowControlSettings(
+          PubSub.FlowControlSettings.DEFAULT
+              .toBuilder()
+              .setMaxOutstandingBytes(Optional.of(0))
+              .build());
       fail("Should have thrown an IllegalArgumentException");
     } catch (IllegalArgumentException expected) {
       // Expected
     }
     try {
-      builder.setMaxOutstandingBytes(-1);
+      builder.setFlowControlSettings(
+          PubSub.FlowControlSettings.DEFAULT
+              .toBuilder()
+              .setMaxOutstandingBytes(Optional.of(-1))
+              .build());
       fail("Should have thrown an IllegalArgumentException");
     } catch (IllegalArgumentException expected) {
       // Expected
     }
 
-    builder.setMaxOutstandingMessages(1);
+    builder.setFlowControlSettings(
+        PubSub.FlowControlSettings.DEFAULT
+            .toBuilder()
+            .setMaxOutstandingMessages(Optional.of(1))
+            .build());
     try {
-      builder.setMaxOutstandingMessages(0);
+      builder.setFlowControlSettings(
+          PubSub.FlowControlSettings.DEFAULT
+              .toBuilder()
+              .setMaxOutstandingMessages(Optional.of(0))
+              .build());
       fail("Should have thrown an IllegalArgumentException");
     } catch (IllegalArgumentException expected) {
       // Expected
     }
     try {
-      builder.setMaxOutstandingMessages(-1);
+      builder.setFlowControlSettings(
+          PubSub.FlowControlSettings.DEFAULT
+              .toBuilder()
+              .setMaxOutstandingMessages(Optional.of(-1))
+              .build());
       fail("Should have thrown an IllegalArgumentException");
     } catch (IllegalArgumentException expected) {
       // Expected
