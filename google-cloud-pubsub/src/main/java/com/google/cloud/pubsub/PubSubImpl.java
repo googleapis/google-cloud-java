@@ -18,8 +18,6 @@ package com.google.cloud.pubsub;
 
 import static com.google.cloud.pubsub.PubSub.ListOption.OptionType.PAGE_SIZE;
 import static com.google.cloud.pubsub.PubSub.ListOption.OptionType.PAGE_TOKEN;
-import static com.google.cloud.pubsub.PubSub.PullOption.OptionType.EXECUTOR_FACTORY;
-import static com.google.cloud.pubsub.PubSub.PullOption.OptionType.MAX_QUEUED_CALLBACKS;
 import static com.google.common.base.MoreObjects.firstNonNull;
 import static com.google.common.base.Preconditions.checkArgument;
 
@@ -30,16 +28,13 @@ import com.google.cloud.Page;
 import com.google.cloud.PageImpl;
 import com.google.cloud.Policy;
 import com.google.cloud.pubsub.spi.PubSubRpc;
-import com.google.cloud.pubsub.spi.PubSubRpc.PullFuture;
 import com.google.cloud.pubsub.spi.v1.PublisherClient;
 import com.google.cloud.pubsub.spi.v1.SubscriberClient;
-import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Function;
 import com.google.common.base.Throwables;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Iterables;
-import com.google.common.collect.Iterators;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.google.common.util.concurrent.Futures;
@@ -49,7 +44,6 @@ import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.protobuf.Empty;
-import com.google.pubsub.v1.AcknowledgeRequest;
 import com.google.pubsub.v1.DeleteSubscriptionRequest;
 import com.google.pubsub.v1.DeleteTopicRequest;
 import com.google.pubsub.v1.GetSubscriptionRequest;
@@ -60,26 +54,20 @@ import com.google.pubsub.v1.ListTopicSubscriptionsRequest;
 import com.google.pubsub.v1.ListTopicSubscriptionsResponse;
 import com.google.pubsub.v1.ListTopicsRequest;
 import com.google.pubsub.v1.ListTopicsResponse;
-import com.google.pubsub.v1.ModifyAckDeadlineRequest;
 import com.google.pubsub.v1.ModifyPushConfigRequest;
 import com.google.pubsub.v1.PublishRequest;
 import com.google.pubsub.v1.PublishResponse;
-import com.google.pubsub.v1.PullRequest;
-import com.google.pubsub.v1.PullResponse;
-
+import java.io.IOException;
 import java.util.Collections;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
-import java.util.concurrent.TimeUnit;
 
 class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
 
   private final PubSubRpc rpc;
-  private final AckDeadlineRenewer ackDeadlineRenewer;
   private boolean closed;
 
   private static final Function<Empty, Void> EMPTY_TO_VOID_FUNCTION = new Function<Empty, Void>() {
@@ -113,14 +101,6 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
   PubSubImpl(PubSubOptions options) {
     super(options);
     rpc = options.getRpc();
-    ackDeadlineRenewer = new AckDeadlineRenewer(this);
-  }
-
-  @VisibleForTesting
-  PubSubImpl(PubSubOptions options, AckDeadlineRenewer ackDeadlineRenewer) {
-    super(options);
-    rpc = options.getRpc();
-    this.ackDeadlineRenewer = ackDeadlineRenewer;
   }
 
   private abstract static class BasePageFetcher<T> implements AsyncPageImpl.NextPageFetcher<T> {
@@ -512,137 +492,17 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
     return listSubscriptionsAsync(topic, getOptions(), optionMap(options));
   }
 
-  private Future<Iterator<ReceivedMessage>> pullAsync(final String subscription,
-      int maxMessages, boolean returnImmediately) {
-    PullRequest request = PullRequest.newBuilder()
-        .setSubscription(
-            SubscriberClient.formatSubscriptionName(getOptions().getProjectId(), subscription))
-        .setMaxMessages(maxMessages)
-        .setReturnImmediately(returnImmediately)
+  @Override
+  public Subscriber subscriber(SubscriptionInfo subscription, Subscriber.MessageReceiver receiver)
+      throws IOException {
+    // TODO(pongad): Provide a way to pass in the rest of the options.
+    String subName =
+        SubscriberClient.formatSubscriptionName(
+            getOptions().getProjectId(), subscription.getName());
+    return Subscriber.Builder.newBuilder(subName, receiver)
+        .setCredentials(getOptions().getCredentials())
+        .setClock(getOptions().getClock())
         .build();
-    PullFuture future = rpc.pull(request);
-    future.addCallback(new PubSubRpc.PullCallback() {
-      @Override
-      public void success(PullResponse response) {
-        List<String> ackIds = Lists.transform(response.getReceivedMessagesList(),
-            MESSAGE_TO_ACK_ID_FUNCTION);
-        ackDeadlineRenewer.add(subscription, ackIds);
-      }
-
-      @Override
-      public void failure(Throwable error) {
-        // ignore
-      }
-    });
-    return transform(future, new Function<PullResponse, Iterator<ReceivedMessage>>() {
-      @Override
-      public Iterator<ReceivedMessage> apply(PullResponse response) {
-        return Iterators.transform(response.getReceivedMessagesList().iterator(),
-            new Function<com.google.pubsub.v1.ReceivedMessage, ReceivedMessage>() {
-              @Override
-              public ReceivedMessage apply(com.google.pubsub.v1.ReceivedMessage receivedMessage) {
-                // Remove consumed message from automatic ack deadline renewer
-                ackDeadlineRenewer.remove(subscription, receivedMessage.getAckId());
-                return ReceivedMessage.fromPb(PubSubImpl.this, subscription, receivedMessage);
-              }
-            });
-      }
-    });
-  }
-
-  @Override
-  public Iterator<ReceivedMessage> pull(String subscription, int maxMessages) {
-    return get(pullAsync(subscription, maxMessages, true));
-  }
-
-  @Override
-  public Future<Iterator<ReceivedMessage>> pullAsync(String subscription, int maxMessages) {
-    return pullAsync(subscription, maxMessages, false);
-  }
-
-  @Override
-  public MessageConsumer pullAsync(String subscription, MessageProcessor callback,
-      PullOption... options) {
-    Map<Option.OptionType, ?> optionMap = optionMap(options);
-    return MessageConsumerImpl.builder(getOptions(), subscription, ackDeadlineRenewer, callback)
-        .maxQueuedCallbacks(MAX_QUEUED_CALLBACKS.getInteger(optionMap))
-        .executorFactory(EXECUTOR_FACTORY.getExecutorFactory(optionMap))
-        .build();
-  }
-
-  @Override
-  public void ack(String subscription, String ackId, String... ackIds) {
-    ack(subscription, Lists.asList(ackId, ackIds));
-  }
-
-  @Override
-  public Future<Void> ackAsync(String subscription, String ackId, String... ackIds) {
-    return ackAsync(subscription, Lists.asList(ackId, ackIds));
-  }
-
-  @Override
-  public void ack(String subscription, Iterable<String> ackIds) {
-    get(ackAsync(subscription, ackIds));
-  }
-
-  @Override
-  public Future<Void> ackAsync(String subscription, Iterable<String> ackIds) {
-    AcknowledgeRequest request = AcknowledgeRequest.newBuilder()
-        .setSubscription(
-            SubscriberClient.formatSubscriptionName(getOptions().getProjectId(), subscription))
-        .addAllAckIds(ackIds)
-        .build();
-    return transform(rpc.acknowledge(request), EMPTY_TO_VOID_FUNCTION);
-  }
-
-  @Override
-  public void nack(String subscription, String ackId, String... ackIds) {
-    nack(subscription, Lists.asList(ackId, ackIds));
-  }
-
-  @Override
-  public Future<Void> nackAsync(String subscription, String ackId, String... ackIds) {
-    return nackAsync(subscription, Lists.asList(ackId, ackIds));
-  }
-
-  @Override
-  public void nack(String subscription, Iterable<String> ackIds) {
-    get(nackAsync(subscription, ackIds));
-  }
-
-  @Override
-  public Future<Void> nackAsync(String subscription, Iterable<String> ackIds) {
-    return modifyAckDeadlineAsync(subscription, 0, TimeUnit.SECONDS, ackIds);
-  }
-
-  @Override
-  public void modifyAckDeadline(String subscription, int deadline, TimeUnit unit, String ackId,
-      String... ackIds) {
-    get(modifyAckDeadlineAsync(subscription, deadline, unit, Lists.asList(ackId, ackIds)));
-  }
-
-  @Override
-  public Future<Void> modifyAckDeadlineAsync(String subscription, int deadline, TimeUnit unit,
-      String ackId, String... ackIds) {
-    return modifyAckDeadlineAsync(subscription, deadline, unit, Lists.asList(ackId, ackIds));
-  }
-
-  @Override
-  public void modifyAckDeadline(String subscription, int deadline, TimeUnit unit,
-      Iterable<String> ackIds) {
-    get(modifyAckDeadlineAsync(subscription, deadline, unit, ackIds));
-  }
-
-  @Override
-  public Future<Void> modifyAckDeadlineAsync(String subscription, int deadline, TimeUnit unit,
-      Iterable<String> ackIds) {
-    ModifyAckDeadlineRequest request = ModifyAckDeadlineRequest.newBuilder()
-        .setSubscription(
-            SubscriberClient.formatSubscriptionName(getOptions().getProjectId(), subscription))
-        .setAckDeadlineSeconds((int) TimeUnit.SECONDS.convert(deadline, unit))
-        .addAllAckIds(ackIds)
-        .build();
-    return transform(rpc.modify(request), EMPTY_TO_VOID_FUNCTION);
   }
 
   @Override
@@ -761,8 +621,5 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
     }
     closed = true;
     rpc.close();
-    if (ackDeadlineRenewer != null) {
-      ackDeadlineRenewer.close();
-    }
   }
 }

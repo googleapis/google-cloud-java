@@ -30,8 +30,6 @@ import static org.junit.Assert.assertTrue;
 import com.google.cloud.Identity;
 import com.google.cloud.Policy;
 import com.google.cloud.Role;
-import com.google.cloud.pubsub.PubSub.MessageConsumer;
-import com.google.cloud.pubsub.PubSub.MessageProcessor;
 import com.google.cloud.pubsub.PubSub.PullOption;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
@@ -281,68 +279,6 @@ public class SubscriptionTest {
     replay(pubsub);
     initializeSubscription();
     assertNull(subscription.replacePushConfigAsync(null).get());
-  }
-
-  @Test
-  public void testPull() {
-    initializeExpectedSubscription(1);
-    expect(pubsub.getOptions()).andReturn(mockOptions).times(2);
-    replay(pubsub);
-    ReceivedMessage message1 = ReceivedMessage.fromPb(pubsub, NAME, MESSAGE_PB1);
-    ReceivedMessage message2 = ReceivedMessage.fromPb(pubsub, NAME, MESSAGE_PB2);
-    reset(pubsub);
-    expect(pubsub.getOptions()).andReturn(mockOptions);
-    List<ReceivedMessage> messages = ImmutableList.of(message1, message2);
-    expect(pubsub.pull(NAME, 42)).andReturn(messages.iterator());
-    replay(pubsub);
-    initializeSubscription();
-    assertEquals(messages, Lists.newArrayList(subscription.pull(42)));
-  }
-
-  @Test
-  public void testPullAsync() throws ExecutionException, InterruptedException {
-    initializeExpectedSubscription(1);
-    expect(pubsub.getOptions()).andReturn(mockOptions).times(2);
-    replay(pubsub);
-    ReceivedMessage message1 = ReceivedMessage.fromPb(pubsub, NAME, MESSAGE_PB1);
-    ReceivedMessage message2 = ReceivedMessage.fromPb(pubsub, NAME, MESSAGE_PB2);
-    reset(pubsub);
-    expect(pubsub.getOptions()).andReturn(mockOptions);
-    List<ReceivedMessage> messages = ImmutableList.of(message1, message2);
-    expect(pubsub.pullAsync(NAME, 42)).andReturn(Futures.immediateFuture(messages.iterator()));
-    replay(pubsub);
-    initializeSubscription();
-    assertEquals(messages, Lists.newArrayList(subscription.pullAsync(42).get()));
-  }
-
-  @Test
-  public void testMessageConsumer() throws ExecutionException, InterruptedException {
-    initializeExpectedSubscription(1);
-    MessageConsumer messageConsumer = createStrictMock(MessageConsumer.class);
-    MessageProcessor messageProcessor = createStrictMock(MessageProcessor.class);
-    replay(messageConsumer, messageProcessor);
-    expect(pubsub.getOptions()).andReturn(mockOptions);
-    expect(pubsub.pullAsync(NAME, messageProcessor)).andReturn(messageConsumer);
-    replay(pubsub);
-    initializeSubscription();
-    assertSame(messageConsumer, subscription.pullAsync(messageProcessor));
-    verify(messageConsumer, messageProcessor);
-  }
-
-  @Test
-  public void testMessageConsumerWithOptions() throws ExecutionException, InterruptedException {
-    initializeExpectedSubscription(1);
-    MessageConsumer messageConsumer = createStrictMock(MessageConsumer.class);
-    MessageProcessor messageProcessor = createStrictMock(MessageProcessor.class);
-    replay(messageConsumer, messageProcessor);
-    expect(pubsub.getOptions()).andReturn(mockOptions);
-    expect(pubsub.pullAsync(NAME, messageProcessor, PullOption.maxQueuedCallbacks(2)))
-        .andReturn(messageConsumer);
-    replay(pubsub);
-    initializeSubscription();
-    assertSame(messageConsumer,
-        subscription.pullAsync(messageProcessor, PullOption.maxQueuedCallbacks(2)));
-    verify(messageConsumer, messageProcessor);
   }
 
   @Test

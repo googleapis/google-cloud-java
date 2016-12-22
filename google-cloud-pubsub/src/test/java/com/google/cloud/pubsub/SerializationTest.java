@@ -22,7 +22,6 @@ import com.google.cloud.NoCredentials;
 import com.google.cloud.Restorable;
 import com.google.cloud.pubsub.PubSub.ListOption;
 import com.google.cloud.pubsub.PubSub.PullOption;
-
 import java.io.Serializable;
 import java.util.concurrent.ScheduledExecutorService;
 
@@ -39,8 +38,6 @@ public class SerializationTest extends BaseSerializationTest {
           .setMessage(MESSAGE.toPb())
           .setAckId("ackId")
           .build();
-  private static final ReceivedMessage RECEIVED_MESSAGE =
-      ReceivedMessage.fromPb(PUB_SUB, "subscription", RECEIVED_MESSAGE_PB);
   private static final SubscriptionInfo SUBSCRIPTION_INFO = SubscriptionInfo.of("topic", "sub");
   private static final Subscription SUBSCRIPTION =
       new Subscription(PUB_SUB, new SubscriptionInfo.BuilderImpl(SUBSCRIPTION_INFO));
@@ -90,9 +87,20 @@ public class SerializationTest extends BaseSerializationTest {
         .setProjectId("p2")
         .setExecutorFactory(new TestExecutorFactory())
         .build();
-    return new Serializable[]{options, otherOptions, MESSAGE, RECEIVED_MESSAGE, SUBSCRIPTION_INFO,
-        SUBSCRIPTION, SUBSCRIPTION_ID, TOPIC_INFO, TOPIC, PAGE_TOKEN_OPTION, PAGE_SIZE_OPTION,
-        MAX_QUEUED_CALLBACKS_OPTION, EXECUTOR_FACTORY_OPTION};
+    return new Serializable[] {
+      options,
+      otherOptions,
+      MESSAGE,
+      SUBSCRIPTION_INFO,
+      SUBSCRIPTION,
+      SUBSCRIPTION_ID,
+      TOPIC_INFO,
+      TOPIC,
+      PAGE_TOKEN_OPTION,
+      PAGE_SIZE_OPTION,
+      MAX_QUEUED_CALLBACKS_OPTION,
+      EXECUTOR_FACTORY_OPTION
+    };
   }
 
   @Override

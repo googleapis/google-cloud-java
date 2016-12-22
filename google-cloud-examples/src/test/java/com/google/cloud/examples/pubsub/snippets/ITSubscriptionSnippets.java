@@ -28,7 +28,6 @@ import com.google.cloud.Role;
 import com.google.cloud.pubsub.Message;
 import com.google.cloud.pubsub.PubSub;
 import com.google.cloud.pubsub.PubSubOptions;
-import com.google.cloud.pubsub.ReceivedMessage;
 import com.google.cloud.pubsub.Subscription;
 import com.google.cloud.pubsub.SubscriptionInfo;
 import com.google.cloud.pubsub.Topic;
@@ -87,22 +86,6 @@ public class ITSubscriptionSnippets {
     subscriptionSnippets.replacePushConfigToPullAsync();
     updatedSubscription = pubsub.getSubscription(SUBSCRIPTION);
     assertNull(updatedSubscription.getPushConfig());
-  }
-
-  @Test
-  public void testPull() throws ExecutionException, InterruptedException {
-    SubscriptionSnippets subscriptionSnippets = new SubscriptionSnippets(subscription);
-    pubsub.publish(TOPIC, MESSAGE1, MESSAGE2);
-    subscriptionSnippets.pull();
-    // messages have been acked, we should pull nothing
-    Iterator<ReceivedMessage> iterator = pubsub.pull(SUBSCRIPTION, 2);
-    assertFalse(iterator.hasNext());
-    pubsub.publish(TOPIC, MESSAGE1, MESSAGE2);
-    subscriptionSnippets.pullAsync();
-    // messages have been acked, we should pull nothing
-    iterator = pubsub.pull(SUBSCRIPTION, 2);
-    assertFalse(iterator.hasNext());
-    subscriptionSnippets.pullAsync();
   }
 
   @Test

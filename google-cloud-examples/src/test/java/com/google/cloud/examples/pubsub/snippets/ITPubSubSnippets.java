@@ -27,7 +27,6 @@ import com.google.cloud.Policy;
 import com.google.cloud.Role;
 import com.google.cloud.pubsub.PubSub;
 import com.google.cloud.pubsub.PubSubOptions;
-import com.google.cloud.pubsub.ReceivedMessage;
 import com.google.cloud.pubsub.Subscription;
 import com.google.cloud.pubsub.SubscriptionId;
 import com.google.cloud.pubsub.SubscriptionInfo;
@@ -133,90 +132,6 @@ public class ITPubSubSnippets {
     assertTrue(pubsubSnippets.deleteTopicAsync(topicName2));
     assertTrue(pubsubSnippets.deleteSubscription(subscriptionName1));
     assertTrue(pubsubSnippets.deleteSubscriptionAsync(subscriptionName2));
-  }
-
-  @Test
-  public void testPublishAndPullMessage() throws Exception {
-    String topicName = formatForTest("topic-name");
-    String subscriptionName = formatForTest("subscription-name");
-    pubsub.create(TopicInfo.of(topicName));
-    pubsub.create(SubscriptionInfo.of(topicName, subscriptionName));
-    assertNotNull(pubsubSnippets.publishOneMessage(topicName));
-    pubsubSnippets.pull(subscriptionName);
-    assertNotNull(pubsubSnippets.publishOneMessage(topicName));
-    assertEquals(2, pubsubSnippets.publishMessages(topicName).size());
-    assertEquals(2, pubsubSnippets.publishMessageList(topicName).size());
-    Set<ReceivedMessage> messages = new HashSet<>();
-    while (messages.size() < 5) {
-      Iterators.addAll(messages, pubsub.pull(subscriptionName, 100));
-    }
-    Iterator<ReceivedMessage> messageIterator = messages.iterator();
-    pubsubSnippets.modifyAckDeadlineOneMessage(subscriptionName, messageIterator.next().getAckId());
-    pubsubSnippets.modifyAckDeadlineMoreMessages(subscriptionName,
-        messageIterator.next().getAckId(), messageIterator.next().getAckId());
-    pubsubSnippets.modifyAckDeadlineMessageList(subscriptionName, messageIterator.next().getAckId(),
-        messageIterator.next().getAckId());
-    messageIterator = messages.iterator();
-    pubsubSnippets.nackOneMessage(subscriptionName, messageIterator.next().getAckId());
-    pubsubSnippets.nackMoreMessages(subscriptionName, messageIterator.next().getAckId(),
-        messageIterator.next().getAckId());
-    pubsubSnippets.nackMessageList(subscriptionName, messageIterator.next().getAckId(),
-        messageIterator.next().getAckId());
-    messages.clear();
-    while (messages.size() < 5) {
-      Iterators.addAll(messages, pubsub.pull(subscriptionName, 100));
-    }
-    messageIterator = messages.iterator();
-    pubsubSnippets.ackOneMessage(subscriptionName, messageIterator.next().getAckId());
-    pubsubSnippets.ackMoreMessages(subscriptionName, messageIterator.next().getAckId(),
-        messageIterator.next().getAckId());
-    pubsubSnippets.ackMessageList(subscriptionName, messageIterator.next().getAckId(),
-        messageIterator.next().getAckId());
-    assertTrue(pubsubSnippets.deleteTopic(topicName));
-    assertTrue(pubsubSnippets.deleteSubscription(subscriptionName));
-  }
-
-  @Test
-  public void testPublishAndPullMessageAsync() throws Exception {
-    String topicName = formatForTest("topic-name-async");
-    String subscriptionName = formatForTest("subscription-name-async");
-    pubsub.create(TopicInfo.of(topicName));
-    pubsub.create(SubscriptionInfo.of(topicName, subscriptionName));
-    pubsubSnippets.pullWithMessageConsumer(subscriptionName);
-    assertNotNull(pubsubSnippets.publishOneMessageAsync(topicName));
-    pubsubSnippets.pullAsync(subscriptionName);
-    assertNotNull(pubsubSnippets.publishOneMessageAsync(topicName));
-    assertEquals(2, pubsubSnippets.publishMessagesAsync(topicName).size());
-    assertEquals(2, pubsubSnippets.publishMessageListAsync(topicName).size());
-    Set<ReceivedMessage> messages = new HashSet<>();
-    while (messages.size() < 5) {
-      Iterators.addAll(messages, pubsub.pull(subscriptionName, 100));
-    }
-    Iterator<ReceivedMessage> messageIterator = messages.iterator();
-    pubsubSnippets.modifyAckDeadlineOneMessageAsync(subscriptionName,
-        messageIterator.next().getAckId());
-    pubsubSnippets.modifyAckDeadlineMoreMessagesAsync(subscriptionName,
-        messageIterator.next().getAckId(), messageIterator.next().getAckId());
-    pubsubSnippets.modifyAckDeadlineMessageListAsync(subscriptionName,
-        messageIterator.next().getAckId(), messageIterator.next().getAckId());
-    messageIterator = messages.iterator();
-    pubsubSnippets.nackOneMessageAsync(subscriptionName, messageIterator.next().getAckId());
-    pubsubSnippets.nackMoreMessagesAsync(subscriptionName, messageIterator.next().getAckId(),
-        messageIterator.next().getAckId());
-    pubsubSnippets.nackMessageListAsync(subscriptionName, messageIterator.next().getAckId(),
-        messageIterator.next().getAckId());
-    messages.clear();
-    while (messages.size() < 5) {
-      Iterators.addAll(messages, pubsub.pull(subscriptionName, 100));
-    }
-    messageIterator = messages.iterator();
-    pubsubSnippets.ackOneMessageAsync(subscriptionName, messageIterator.next().getAckId());
-    pubsubSnippets.ackMoreMessagesAsync(subscriptionName, messageIterator.next().getAckId(),
-        messageIterator.next().getAckId());
-    pubsubSnippets.ackMessageListAsync(subscriptionName, messageIterator.next().getAckId(),
-        messageIterator.next().getAckId());
-    assertTrue(pubsubSnippets.deleteTopicAsync(topicName));
-    assertTrue(pubsubSnippets.deleteSubscriptionAsync(subscriptionName));
   }
 
   @Test

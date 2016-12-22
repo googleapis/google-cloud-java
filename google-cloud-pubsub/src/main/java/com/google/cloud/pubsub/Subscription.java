@@ -20,8 +20,6 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.cloud.GrpcServiceOptions;
 import com.google.cloud.Policy;
-import com.google.cloud.pubsub.PubSub.MessageConsumer;
-import com.google.cloud.pubsub.PubSub.MessageProcessor;
 import com.google.cloud.pubsub.PubSub.PullOption;
 import com.google.common.base.Function;
 
@@ -341,98 +339,6 @@ public class Subscription extends SubscriptionInfo {
    */
   public Future<Void> replacePushConfigAsync(PushConfig pushConfig) {
     return pubsub.replacePushConfigAsync(getName(), pushConfig);
-  }
-
-  /**
-   * Pulls messages from this subscription. This method possibly returns no messages if no message
-   * was available at the time the request was processed by the Pub/Sub service (i.e. the system is
-   * not allowed to wait until at least one message is available). Pulled messages have their
-   * acknowledge deadline automatically renewed until they are explicitly consumed using
-   * {@link Iterator#next()}.
-   *
-   * <p>Example of pulling a maximum number of messages from the subscription.
-   * <pre> {@code
-   * Iterator<ReceivedMessage> messages = subscription.pull(100);
-   * // Ack deadline is renewed until the message is consumed
-   * while (messages.hasNext()) {
-   *   ReceivedMessage message = messages.next();
-   *   // do something with message and ack/nack it
-   *   message.ack(); // or message.nack()
-   * }
-   * }</pre>
-   *
-   * @param maxMessages the maximum number of messages pulled by this method. This method can
-   *     possibly return fewer messages.
-   * @throws PubSubException upon failure
-   */
-  public Iterator<ReceivedMessage> pull(int maxMessages) {
-    return pubsub.pull(getName(), maxMessages);
-  }
-
-  /**
-   * Sends a request for pulling messages from this subscription. This method returns a
-   * {@code Future} object to consume the result. {@link Future#get()} returns a message iterator.
-   * This method possibly returns no messages if no message was available at the time the request
-   * was processed by the Pub/Sub service (i.e. the system is not allowed to wait until at least one
-   * message is available).
-   *
-   * <p>Example of asynchronously pulling a maximum number of messages from the subscription.
-   * <pre> {@code
-   * Future<Iterator<ReceivedMessage>> future = subscription.pullAsync(100);
-   * // ...
-   * Iterator<ReceivedMessage> messages = future.get();
-   * // Ack deadline is renewed until the message is consumed
-   * while (messages.hasNext()) {
-   *   ReceivedMessage message = messages.next();
-   *   // do something with message and ack/nack it
-   *   message.ack(); // or message.nack()
-   * }
-   * }</pre>
-   *
-   * @param maxMessages the maximum number of messages pulled by this method. This method can
-   *     possibly return fewer messages.
-   * @throws PubSubException upon failure
-   */
-  public Future<Iterator<ReceivedMessage>> pullAsync(int maxMessages) {
-    return pubsub.pullAsync(getName(), maxMessages);
-  }
-
-  /**
-   * Creates a message consumer that pulls messages from this subscription. You can stop pulling
-   * messages by calling {@link MessageConsumer#close()}. The returned message consumer executes
-   * {@link MessageProcessor#process(Message)} on each pulled message. If
-   * {@link MessageProcessor#process(Message)} executes correctly, the message is acknowledged. If
-   * {@link MessageProcessor#process(Message)} throws an exception, the message is "nacked". For
-   * all pulled messages, the ack deadline is automatically renewed until the message is either
-   * acknowledged or "nacked".
-   *
-   * <p>The {@link PullOption#maxQueuedCallbacks(int)} option can be used to control the maximum
-   * number of queued messages (messages either being processed or waiting to be processed). The
-   * {@link PullOption#executorFactory(GrpcServiceOptions.ExecutorFactory)} can be used to provide
-   * an executor to run message processor callbacks.
-   *
-   * <p>Example of continuously pulling messages from the subscription.
-   * <pre> {@code
-   * String subscriptionName = "my_subscription_name";
-   * MessageProcessor callback = new MessageProcessor() {
-   *   public void process(Message message) throws Exception {
-   *     // Ack deadline is renewed until this method returns
-   *     // Message is acked if this method returns successfully
-   *     // Message is nacked if this method throws an exception
-   *   }
-   * };
-   * MessageConsumer consumer = subscription.pullAsync(callback);
-   * // ...
-   * // Stop pulling
-   * consumer.close();
-   * }</pre>
-   *
-   * @param callback the callback to be executed on each message
-   * @param options pulling options
-   * @return a message consumer for the provided subscription and options
-   */
-  public MessageConsumer pullAsync(MessageProcessor callback, PullOption... options) {
-    return pubsub.pullAsync(getName(), callback, options);
   }
 
   /**
