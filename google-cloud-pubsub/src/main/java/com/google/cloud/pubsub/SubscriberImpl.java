@@ -59,8 +59,7 @@ class SubscriberImpl extends AbstractService implements Subscriber {
   private static final Logger logger = LoggerFactory.getLogger(SubscriberImpl.class);
 
   private final String subscription;
-  private final Optional<Integer> maxOutstandingBytes;
-  private final Optional<Integer> maxOutstandingMessages;
+  private final PubSub.FlowControlSettings flowControlSettings;
   private final Duration ackExpirationPadding;
   private final ScheduledExecutorService executor;
   private final Distribution ackLatencyDistribution =
@@ -78,8 +77,7 @@ class SubscriberImpl extends AbstractService implements Subscriber {
 
   public SubscriberImpl(SubscriberImpl.Builder builder) throws IOException {
     receiver = builder.receiver;
-    maxOutstandingBytes = builder.maxOutstandingBytes;
-    maxOutstandingMessages = builder.maxOutstandingMessages;
+    flowControlSettings = builder.flowControlSettings;
     subscription = builder.subscription;
     ackExpirationPadding = builder.ackExpirationPadding;
     streamAckDeadlineSeconds =
@@ -88,8 +86,7 @@ class SubscriberImpl extends AbstractService implements Subscriber {
             Ints.saturatedCast(ackExpirationPadding.getStandardSeconds()));
     clock = builder.clock.isPresent() ? builder.clock.get() : Clock.defaultClock();
 
-    flowController =
-        new FlowController(builder.maxOutstandingBytes, builder.maxOutstandingBytes, false);
+    flowController = new FlowController(builder.flowControlSettings, false);
 
     numChannels = Math.max(1, Runtime.getRuntime().availableProcessors()) * CHANNELS_PER_CORE;
     executor =
@@ -316,11 +313,11 @@ class SubscriberImpl extends AbstractService implements Subscriber {
 
   @Override
   public Optional<Integer> getMaxOutstandingMessages() {
-    return maxOutstandingMessages;
+    return flowControlSettings.getMaxOutstandingMessages();
   }
 
   @Override
   public Optional<Integer> getMaxOutstandingBytes() {
-    return maxOutstandingBytes;
+    return flowControlSettings.getMaxOutstandingBytes();
   }
 }

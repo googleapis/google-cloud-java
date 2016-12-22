@@ -143,17 +143,17 @@ public interface Subscriber extends Service {
     private static final Duration DEFAULT_ACK_EXPIRATION_PADDING = Duration.millis(500);
 
     String subscription;
-    Optional<Credentials> credentials;
+    Optional<Credentials> credentials = Optional.absent();
     MessageReceiver receiver;
 
-    Duration ackExpirationPadding;
+    Duration ackExpirationPadding = DEFAULT_ACK_EXPIRATION_PADDING;
 
-    Optional<Integer> maxOutstandingMessages;
-    Optional<Integer> maxOutstandingBytes;
+    PubSub.FlowControlSettings flowControlSettings = PubSub.FlowControlSettings.DEFAULT;
 
-    Optional<ScheduledExecutorService> executor;
-    Optional<ManagedChannelBuilder<? extends ManagedChannelBuilder<?>>> channelBuilder;
-    Optional<Clock> clock;
+    Optional<ScheduledExecutorService> executor = Optional.absent();
+    Optional<ManagedChannelBuilder<? extends ManagedChannelBuilder<?>>> channelBuilder =
+        Optional.absent();
+    Optional<Clock> clock = Optional.absent();
 
     /**
      * Constructs a new {@link Builder}.
@@ -170,19 +170,8 @@ public interface Subscriber extends Service {
     }
 
     Builder(String subscription, MessageReceiver receiver) {
-      setDefaults();
       this.subscription = subscription;
       this.receiver = receiver;
-    }
-
-    private void setDefaults() {
-      credentials = Optional.absent();
-      channelBuilder = Optional.absent();
-      ackExpirationPadding = DEFAULT_ACK_EXPIRATION_PADDING;
-      maxOutstandingBytes = Optional.absent();
-      maxOutstandingMessages = Optional.absent();
-      executor = Optional.absent();
-      clock = Optional.absent();
     }
 
     /**
@@ -208,33 +197,9 @@ public interface Subscriber extends Service {
       return this;
     }
 
-    /**
-     * Sets the maximum number of outstanding messages; messages delivered to the {@link
-     * MessageReceiver} that have not been acknowledged or rejected.
-     *
-     * @param maxOutstandingMessages must be greater than 0
-     */
-    public Builder setMaxOutstandingMessages(int maxOutstandingMessages) {
-      Preconditions.checkArgument(
-          maxOutstandingMessages > 0,
-          "maxOutstandingMessages limit is disabled by default, but if set it must be set to a "
-              + "value greater to 0.");
-      this.maxOutstandingMessages = Optional.of(maxOutstandingMessages);
-      return this;
-    }
-
-    /**
-     * Sets the maximum number of outstanding bytes; bytes delivered to the {@link MessageReceiver}
-     * that have not been acknowledged or rejected.
-     *
-     * @param maxOutstandingBytes must be greater than 0
-     */
-    public Builder setMaxOutstandingBytes(int maxOutstandingBytes) {
-      Preconditions.checkArgument(
-          maxOutstandingBytes > 0,
-          "maxOutstandingBytes limit is disabled by default, but if set it must be set to a value "
-              + "greater than 0.");
-      this.maxOutstandingBytes = Optional.of(maxOutstandingBytes);
+    /** Sets the flow control settings. */
+    public Builder setFlowControlSettings(PubSub.FlowControlSettings flowControlSettings) {
+      this.flowControlSettings = Preconditions.checkNotNull(flowControlSettings);
       return this;
     }
 
