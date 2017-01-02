@@ -282,7 +282,7 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
    */
   Future<AsyncPage<Topic>> listTopicsAsync(ListOption... options);
 
-  Publisher publisher(TopicInfo topic) throws IOException;
+  Publisher getPublisher(TopicInfo topic) throws IOException;
 
   /**
    * Creates a new subscription.
@@ -542,7 +542,7 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
    */
   Future<AsyncPage<SubscriptionId>> listSubscriptionsAsync(String topic, ListOption... options);
 
-  Subscriber subscriber(SubscriptionInfo subscription, Subscriber.MessageReceiver receiver)
+  Subscriber getSubscriber(SubscriptionInfo subscription, Subscriber.MessageReceiver receiver)
       throws IOException;
 
   /**

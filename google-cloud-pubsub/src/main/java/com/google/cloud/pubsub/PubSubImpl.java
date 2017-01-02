@@ -285,7 +285,7 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
   }
 
   @Override
-  public Publisher publisher(TopicInfo topic) throws IOException {
+  public Publisher getPublisher(TopicInfo topic) throws IOException {
     // TODO(pongad): Provide a way to pass in the rest of the options.
     String topicName =
         PublisherClient.formatTopicName(getOptions().getProjectId(), topic.getName());
@@ -448,8 +448,8 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
   }
 
   @Override
-  public Subscriber subscriber(SubscriptionInfo subscription, Subscriber.MessageReceiver receiver)
-      throws IOException {
+  public Subscriber getSubscriber(
+      SubscriptionInfo subscription, Subscriber.MessageReceiver receiver) throws IOException {
     // TODO(pongad): Provide a way to pass in the rest of the options.
     String subName =
         SubscriberClient.formatSubscriptionName(
