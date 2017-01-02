@@ -282,137 +282,7 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
    */
   Future<AsyncPage<Topic>> listTopicsAsync(ListOption... options);
 
-  /**
-   * Publishes a message to the provided topic. This method returns a service-generated id for the
-   * published message. Service-generated ids are guaranteed to be unique within the topic.
-   *
-   * <p>Example of publishing one message to a topic.
-   * <pre> {@code
-   * String topicName = "my_topic_name";
-   * Message message = Message.of("payload");
-   * String messageId = pubsub.publish(topicName, message);
-   * }</pre>
-   *
-   * @param topic the topic where the message is published
-   * @param message the message to publish
-   * @return a unique service-generated id for the message
-   * @throws PubSubException upon failure, if the topic does not exist or if the message has empty
-   *     payload and no attributes
-   */
-  String publish(String topic, Message message);
-
-  /**
-   * Sends a request for publishing a message to the provided topic. This method returns a
-   * {@code Future} object to consume the result. {@link Future#get()} returns a service-generated
-   * id for the published message. Service-generated ids are guaranteed to be unique within the
-   * topic.
-   *
-   * <p>Example of asynchronously publishing one message to a topic.
-   * <pre> {@code
-   * String topicName = "my_topic_name";
-   * Message message = Message.of("payload");
-   * Future<String> future = pubsub.publishAsync(topicName, message);
-   * // ...
-   * String messageId = future.get();
-   * }</pre>
-   *
-   * @param topic the topic where the message is published
-   * @param message the message to publish
-   * @return a {@code Future} for the unique service-generated id for the message
-   */
-  Future<String> publishAsync(String topic, Message message);
-
-  /**
-   * Publishes a number of messages to the provided topic. This method returns a list of
-   * service-generated ids for the published messages. Service-generated ids are guaranteed to be
-   * unique within the topic.
-   *
-   * <p>Example of publishing some messages to a topic.
-   * <pre> {@code
-   * String topicName = "my_topic_name";
-   * Message message1 = Message.of("payload1");
-   * Message message2 = Message.of("payload2");
-   * List<String> messageIds = pubsub.publish(topicName, message1, message2);
-   * }</pre>
-   *
-   * @param topic the topic where the message is published
-   * @param message the first message to publish
-   * @param messages other messages to publish
-   * @return a list of unique, service-generated, ids. Ids are in the same order as the messages.
-   * @throws PubSubException upon failure, if the topic does not exist or if one of the messages has
-   *     empty payload and no attributes
-   */
-  List<String> publish(String topic, Message message, Message... messages);
-
-  /**
-   * Sends a request to publish a number of messages to the provided topic. This method returns a
-   * {@code Future} object to consume the result. {@link Future#get()} returns a list of
-   * service-generated ids for the published messages. Service-generated ids are guaranteed to be
-   * unique within the topic.
-   *
-   * <p>Example of asynchronously publishing some messages to a topic.
-   * <pre> {@code
-   * String topicName = "my_topic_name";
-   * Message message1 = Message.of("payload1");
-   * Message message2 = Message.of("payload2");
-   * Future<List<String>> future = pubsub.publishAsync(topicName, message1, message2);
-   * // ...
-   * List<String> messageIds = future.get();
-   * }</pre>
-   *
-   * @param topic the topic where the message is published
-   * @param message the first message to publish
-   * @param messages other messages to publish
-   * @return a {@code Future} for the unique, service-generated ids. Ids are in the same order as
-   *     the messages.
-   */
-  Future<List<String>> publishAsync(String topic, Message message, Message... messages);
-
-  /**
-   * Publishes a number of messages to the provided topic. This method returns a list of
-   * service-generated ids for the published messages. Service-generated ids are guaranteed to be
-   * unique within the topic.
-   *
-   * <p>Example of publishing a list of messages to a topic.
-   * <pre> {@code
-   * String topicName = "my_topic_name";
-   * List<Message> messages = new LinkedList<>();
-   * messages.add(Message.of("payload1"));
-   * messages.add(Message.of("payload2"));
-   * List<String> messageIds = pubsub.publish(topicName, messages);
-   * }</pre>
-   *
-   * @param topic the topic where the message is published
-   * @param messages the messages to publish
-   * @return a list of unique, service-generated, ids. Ids are in the same order as the messages.
-   * @throws PubSubException upon failure, if the topic does not exist or if one of the messages has
-   *     empty payload and no attributes
-   */
-  List<String> publish(String topic, Iterable<Message> messages);
-
-  /**
-   * Sends a request to publish a number of messages to the provided topic. This method returns a
-   * {@code Future} object to consume the result. {@link Future#get()} returns a list of
-   * service-generated ids for the published messages. Service-generated ids are guaranteed to be
-   * unique within the topic.
-   *
-   * <p>Example of asynchronously publishing a list of messages to a topic.
-   * <pre> {@code
-   * String topicName = "my_topic_name";
-   * List<Message> messages = new LinkedList<>();
-   * messages.add(Message.of("payload1"));
-   * messages.add(Message.of("payload2"));
-   * Future<List<String>> future = pubsub.publishAsync(topicName, messages);
-   * // ...
-   * List<String> messageIds = future.get();
-   * }</pre>
-   *
-   * @param topic the topic where the message is published
-   * @param messages the messages to publish
-   * @return a {@code Future} for the unique, service-generated ids. Ids are in the same order as
-   *     the messages
-   */
-  Future<List<String>> publishAsync(String topic, Iterable<Message> messages);
+  Publisher getPublisher(TopicInfo topic) throws IOException;
 
   /**
    * Creates a new subscription.
@@ -672,7 +542,7 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
    */
   Future<AsyncPage<SubscriptionId>> listSubscriptionsAsync(String topic, ListOption... options);
 
-  Subscriber subscriber(SubscriptionInfo subscription, Subscriber.MessageReceiver receiver)
+  Subscriber getSubscriber(SubscriptionInfo subscription, Subscriber.MessageReceiver receiver)
       throws IOException;
 
   /**
