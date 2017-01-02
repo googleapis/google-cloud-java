@@ -32,12 +32,9 @@ class FlowController {
   private final Optional<Integer> maxOutstandingMessages;
   private final Optional<Integer> maxOutstandingBytes;
 
-  FlowController(
-      Optional<Integer> maxOutstandingMessages,
-      Optional<Integer> maxOutstandingBytes,
-      boolean failOnFlowControlLimits) {
-    this.maxOutstandingMessages = Preconditions.checkNotNull(maxOutstandingMessages);
-    this.maxOutstandingBytes = Preconditions.checkNotNull(maxOutstandingBytes);
+  FlowController(PubSub.FlowControlSettings settings, boolean failOnFlowControlLimits) {
+    this.maxOutstandingMessages = settings.getMaxOutstandingMessages();
+    this.maxOutstandingBytes = settings.getMaxOutstandingBytes();
     outstandingMessageCount =
         maxOutstandingMessages.isPresent() ? new Semaphore(maxOutstandingMessages.get()) : null;
     outstandingByteCount =
@@ -47,7 +44,7 @@ class FlowController {
 
   void reserve(int messages, int bytes) throws CloudPubsubFlowControlException {
     Preconditions.checkArgument(messages > 0);
-    
+
     if (outstandingMessageCount != null) {
       if (!failOnLimits) {
         outstandingMessageCount.acquireUninterruptibly(messages);
@@ -70,7 +67,7 @@ class FlowController {
 
   void release(int messages, int bytes) {
     Preconditions.checkArgument(messages > 0);
-    
+
     if (outstandingMessageCount != null) {
       outstandingMessageCount.release(messages);
     }
