@@ -16,12 +16,10 @@
 
 package com.google.cloud.pubsub;
 
-import static com.google.cloud.pubsub.spi.v1.SubscriberClient.parseProjectFromSubscriptionName;
-import static com.google.cloud.pubsub.spi.v1.SubscriberClient.parseSubscriptionFromSubscriptionName;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.common.base.MoreObjects;
-
+import com.google.pubsub.v1.SubscriptionName;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -99,7 +97,8 @@ public class SubscriptionId implements Serializable {
   }
 
   static SubscriptionId fromPb(String pb) {
-    return new SubscriptionId(parseProjectFromSubscriptionName(pb),
-        parseSubscriptionFromSubscriptionName(pb));
+    SubscriptionName subscriptionName = SubscriptionName.parse(pb);
+    return new SubscriptionId(subscriptionName.getProject(),
+        subscriptionName.getSubscription());
   }
 }

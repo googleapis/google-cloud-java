@@ -16,13 +16,11 @@
 
 package com.google.cloud.pubsub;
 
-import static com.google.cloud.pubsub.spi.v1.PublisherClient.formatTopicName;
-import static com.google.cloud.pubsub.spi.v1.PublisherClient.parseProjectFromTopicName;
-import static com.google.cloud.pubsub.spi.v1.PublisherClient.parseTopicFromTopicName;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.common.base.MoreObjects;
 
+import com.google.pubsub.v1.TopicName;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -120,7 +118,7 @@ public final class TopicId implements Serializable {
   }
 
   String toPb(String projectId) {
-    return formatTopicName(project != null ? project : projectId, topic);
+    return TopicName.create(project != null ? project : projectId, topic).toString();
   }
 
   /**
@@ -150,6 +148,7 @@ public final class TopicId implements Serializable {
     if (Objects.equals(pb, DELETED_TOPIC_NAME)) {
       return DELETED_TOPIC;
     }
-    return TopicId.of(parseProjectFromTopicName(pb), parseTopicFromTopicName(pb));
+    TopicName topicName = TopicName.parse(pb);
+    return TopicId.of(topicName.getProject(), topicName.getTopic());
   }
 }

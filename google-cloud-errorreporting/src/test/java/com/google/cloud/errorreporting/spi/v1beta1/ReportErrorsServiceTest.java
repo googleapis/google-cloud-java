@@ -18,6 +18,7 @@ package com.google.cloud.errorreporting.spi.v1beta1;
 import com.google.api.gax.grpc.ApiException;
 import com.google.api.gax.testing.MockGrpcService;
 import com.google.api.gax.testing.MockServiceHelper;
+import com.google.devtools.clouderrorreporting.v1beta1.ProjectName;
 import com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest;
 import com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse;
 import com.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent;
@@ -81,17 +82,17 @@ public class ReportErrorsServiceTest {
     ReportErrorEventResponse expectedResponse = ReportErrorEventResponse.newBuilder().build();
     mockReportErrorsService.addResponse(expectedResponse);
 
-    String formattedProjectName = ReportErrorsServiceClient.formatProjectName("[PROJECT]");
+    ProjectName projectName = ProjectName.create("[PROJECT]");
     ReportedErrorEvent event = ReportedErrorEvent.newBuilder().build();
 
-    ReportErrorEventResponse actualResponse = client.reportErrorEvent(formattedProjectName, event);
+    ReportErrorEventResponse actualResponse = client.reportErrorEvent(projectName, event);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<GeneratedMessageV3> actualRequests = mockReportErrorsService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     ReportErrorEventRequest actualRequest = (ReportErrorEventRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedProjectName, actualRequest.getProjectName());
+    Assert.assertEquals(projectName, actualRequest.getProjectNameAsProjectName());
     Assert.assertEquals(event, actualRequest.getEvent());
   }
 
@@ -102,10 +103,10 @@ public class ReportErrorsServiceTest {
     mockReportErrorsService.addException(exception);
 
     try {
-      String formattedProjectName = ReportErrorsServiceClient.formatProjectName("[PROJECT]");
+      ProjectName projectName = ProjectName.create("[PROJECT]");
       ReportedErrorEvent event = ReportedErrorEvent.newBuilder().build();
 
-      client.reportErrorEvent(formattedProjectName, event);
+      client.reportErrorEvent(projectName, event);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
       Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());

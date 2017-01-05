@@ -16,7 +16,6 @@
 
 package com.google.cloud.pubsub;
 
-import static com.google.cloud.pubsub.spi.v1.SubscriberClient.formatSubscriptionName;
 import static com.google.common.base.MoreObjects.firstNonNull;
 
 import com.google.cloud.GrpcServiceOptions.ExecutorFactory;
@@ -28,6 +27,7 @@ import com.google.cloud.pubsub.spi.PubSubRpc.PullFuture;
 import com.google.pubsub.v1.PullRequest;
 import com.google.pubsub.v1.PullResponse;
 
+import com.google.pubsub.v1.SubscriptionName;
 import io.grpc.internal.SharedResourceHolder;
 
 import java.util.List;
@@ -154,7 +154,8 @@ final class MessageConsumerImpl implements MessageConsumer {
 
     private PullRequest createPullRequest() {
       return PullRequest.newBuilder()
-          .setSubscription(formatSubscriptionName(pubsubOptions.getProjectId(), subscription))
+          .setSubscriptionWithSubscriptionName(
+              SubscriptionName.create(pubsubOptions.getProjectId(), subscription))
           .setMaxMessages(maxQueuedCallbacks - queuedCallbacks.get())
           .setReturnImmediately(false)
           .build();

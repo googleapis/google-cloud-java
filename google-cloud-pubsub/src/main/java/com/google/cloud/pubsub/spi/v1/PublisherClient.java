@@ -20,7 +20,6 @@ import static com.google.cloud.pubsub.spi.v1.PagedResponseWrappers.ListTopicsPag
 
 import com.google.api.gax.grpc.ChannelAndExecutor;
 import com.google.api.gax.grpc.UnaryCallable;
-import com.google.api.gax.protobuf.PathTemplate;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -126,39 +125,6 @@ public class PublisherClient implements AutoCloseable {
   private final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable;
   private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable;
-
-  private static final PathTemplate PROJECT_PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding("projects/{project}");
-
-  private static final PathTemplate TOPIC_PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding("projects/{project}/topics/{topic}");
-
-  /** Formats a string containing the fully-qualified path to represent a project resource. */
-  public static final String formatProjectName(String project) {
-    return PROJECT_PATH_TEMPLATE.instantiate("project", project);
-  }
-
-  /** Formats a string containing the fully-qualified path to represent a topic resource. */
-  public static final String formatTopicName(String project, String topic) {
-    return TOPIC_PATH_TEMPLATE.instantiate(
-        "project", project,
-        "topic", topic);
-  }
-
-  /** Parses the project from the given fully-qualified path which represents a project resource. */
-  public static final String parseProjectFromProjectName(String projectName) {
-    return PROJECT_PATH_TEMPLATE.parse(projectName).get("project");
-  }
-
-  /** Parses the project from the given fully-qualified path which represents a topic resource. */
-  public static final String parseProjectFromTopicName(String topicName) {
-    return TOPIC_PATH_TEMPLATE.parse(topicName).get("project");
-  }
-
-  /** Parses the topic from the given fully-qualified path which represents a topic resource. */
-  public static final String parseTopicFromTopicName(String topicName) {
-    return TOPIC_PATH_TEMPLATE.parse(topicName).get("topic");
-  }
 
   /** Constructs an instance of PublisherClient with default settings. */
   public static final PublisherClient create() throws IOException {
@@ -327,7 +293,8 @@ public class PublisherClient implements AutoCloseable {
    * }
    * </code></pre>
    *
-   * @param topic The messages in the request will be published on this topic.
+   * @param topic The messages in the request will be published on this topic. Format is
+   *     `projects/{project}/topics/{topic}`.
    * @param messages The messages to publish.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
@@ -412,7 +379,7 @@ public class PublisherClient implements AutoCloseable {
    * }
    * </code></pre>
    *
-   * @param topic The name of the topic to get.
+   * @param topic The name of the topic to get. Format is `projects/{project}/topics/{topic}`.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final Topic getTopic(TopicName topic) {
@@ -481,7 +448,8 @@ public class PublisherClient implements AutoCloseable {
    * }
    * </code></pre>
    *
-   * @param project The name of the cloud project that topics belong to.
+   * @param project The name of the cloud project that topics belong to. Format is
+   *     `projects/{project}`.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final ListTopicsPagedResponse listTopics(ProjectName project) {
@@ -585,7 +553,8 @@ public class PublisherClient implements AutoCloseable {
    * }
    * </code></pre>
    *
-   * @param topic The name of the topic that subscriptions are attached to.
+   * @param topic The name of the topic that subscriptions are attached to. Format is
+   *     `projects/{project}/topics/{topic}`.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final ListTopicSubscriptionsPagedResponse listTopicSubscriptions(TopicName topic) {
@@ -693,7 +662,7 @@ public class PublisherClient implements AutoCloseable {
    * }
    * </code></pre>
    *
-   * @param topic Name of the topic to delete.
+   * @param topic Name of the topic to delete. Format is `projects/{project}/topics/{topic}`.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final void deleteTopic(TopicName topic) {
@@ -762,7 +731,7 @@ public class PublisherClient implements AutoCloseable {
    *
    * <pre><code>
    * try (PublisherClient publisherClient = PublisherClient.create()) {
-   *   String formattedResource = PublisherClient.formatTopicName("[PROJECT]", "[TOPIC]");
+   *   String formattedResource = TopicName.create("[PROJECT]", "[TOPIC]").toString();
    *   Policy policy = Policy.newBuilder().build();
    *   Policy response = publisherClient.setIamPolicy(formattedResource, policy);
    * }
@@ -777,7 +746,7 @@ public class PublisherClient implements AutoCloseable {
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final Policy setIamPolicy(String resource, Policy policy) {
-    TOPIC_PATH_TEMPLATE.validate(resource, "setIamPolicy");
+
     SetIamPolicyRequest request =
         SetIamPolicyRequest.newBuilder().setResource(resource).setPolicy(policy).build();
     return setIamPolicy(request);
@@ -791,7 +760,7 @@ public class PublisherClient implements AutoCloseable {
    *
    * <pre><code>
    * try (PublisherClient publisherClient = PublisherClient.create()) {
-   *   String formattedResource = PublisherClient.formatTopicName("[PROJECT]", "[TOPIC]");
+   *   String formattedResource = TopicName.create("[PROJECT]", "[TOPIC]").toString();
    *   Policy policy = Policy.newBuilder().build();
    *   SetIamPolicyRequest request = SetIamPolicyRequest.newBuilder()
    *     .setResource(formattedResource)
@@ -816,7 +785,7 @@ public class PublisherClient implements AutoCloseable {
    *
    * <pre><code>
    * try (PublisherClient publisherClient = PublisherClient.create()) {
-   *   String formattedResource = PublisherClient.formatTopicName("[PROJECT]", "[TOPIC]");
+   *   String formattedResource = TopicName.create("[PROJECT]", "[TOPIC]").toString();
    *   Policy policy = Policy.newBuilder().build();
    *   SetIamPolicyRequest request = SetIamPolicyRequest.newBuilder()
    *     .setResource(formattedResource)
@@ -841,7 +810,7 @@ public class PublisherClient implements AutoCloseable {
    *
    * <pre><code>
    * try (PublisherClient publisherClient = PublisherClient.create()) {
-   *   String formattedResource = PublisherClient.formatTopicName("[PROJECT]", "[TOPIC]");
+   *   String formattedResource = TopicName.create("[PROJECT]", "[TOPIC]").toString();
    *   Policy response = publisherClient.getIamPolicy(formattedResource);
    * }
    * </code></pre>
@@ -852,7 +821,7 @@ public class PublisherClient implements AutoCloseable {
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final Policy getIamPolicy(String resource) {
-    TOPIC_PATH_TEMPLATE.validate(resource, "getIamPolicy");
+
     GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder().setResource(resource).build();
     return getIamPolicy(request);
   }
@@ -866,7 +835,7 @@ public class PublisherClient implements AutoCloseable {
    *
    * <pre><code>
    * try (PublisherClient publisherClient = PublisherClient.create()) {
-   *   String formattedResource = PublisherClient.formatTopicName("[PROJECT]", "[TOPIC]");
+   *   String formattedResource = TopicName.create("[PROJECT]", "[TOPIC]").toString();
    *   GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder()
    *     .setResource(formattedResource)
    *     .build();
@@ -890,7 +859,7 @@ public class PublisherClient implements AutoCloseable {
    *
    * <pre><code>
    * try (PublisherClient publisherClient = PublisherClient.create()) {
-   *   String formattedResource = PublisherClient.formatTopicName("[PROJECT]", "[TOPIC]");
+   *   String formattedResource = TopicName.create("[PROJECT]", "[TOPIC]").toString();
    *   GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder()
    *     .setResource(formattedResource)
    *     .build();
@@ -906,13 +875,14 @@ public class PublisherClient implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns permissions that a caller has on the specified resource.
+   * Returns permissions that a caller has on the specified resource. If the resource does not
+   * exist, this will return an empty set of permissions, not a NOT_FOUND error.
    *
    * <p>Sample code:
    *
    * <pre><code>
    * try (PublisherClient publisherClient = PublisherClient.create()) {
-   *   String formattedResource = PublisherClient.formatTopicName("[PROJECT]", "[TOPIC]");
+   *   String formattedResource = TopicName.create("[PROJECT]", "[TOPIC]").toString();
    *   List&lt;String&gt; permissions = new ArrayList&lt;&gt;();
    *   TestIamPermissionsResponse response = publisherClient.testIamPermissions(formattedResource, permissions);
    * }
@@ -928,7 +898,7 @@ public class PublisherClient implements AutoCloseable {
    */
   public final TestIamPermissionsResponse testIamPermissions(
       String resource, List<String> permissions) {
-    TOPIC_PATH_TEMPLATE.validate(resource, "testIamPermissions");
+
     TestIamPermissionsRequest request =
         TestIamPermissionsRequest.newBuilder()
             .setResource(resource)
@@ -939,13 +909,14 @@ public class PublisherClient implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns permissions that a caller has on the specified resource.
+   * Returns permissions that a caller has on the specified resource. If the resource does not
+   * exist, this will return an empty set of permissions, not a NOT_FOUND error.
    *
    * <p>Sample code:
    *
    * <pre><code>
    * try (PublisherClient publisherClient = PublisherClient.create()) {
-   *   String formattedResource = PublisherClient.formatTopicName("[PROJECT]", "[TOPIC]");
+   *   String formattedResource = TopicName.create("[PROJECT]", "[TOPIC]").toString();
    *   List&lt;String&gt; permissions = new ArrayList&lt;&gt;();
    *   TestIamPermissionsRequest request = TestIamPermissionsRequest.newBuilder()
    *     .setResource(formattedResource)
@@ -964,13 +935,14 @@ public class PublisherClient implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns permissions that a caller has on the specified resource.
+   * Returns permissions that a caller has on the specified resource. If the resource does not
+   * exist, this will return an empty set of permissions, not a NOT_FOUND error.
    *
    * <p>Sample code:
    *
    * <pre><code>
    * try (PublisherClient publisherClient = PublisherClient.create()) {
-   *   String formattedResource = PublisherClient.formatTopicName("[PROJECT]", "[TOPIC]");
+   *   String formattedResource = TopicName.create("[PROJECT]", "[TOPIC]").toString();
    *   List&lt;String&gt; permissions = new ArrayList&lt;&gt;();
    *   TestIamPermissionsRequest request = TestIamPermissionsRequest.newBuilder()
    *     .setResource(formattedResource)

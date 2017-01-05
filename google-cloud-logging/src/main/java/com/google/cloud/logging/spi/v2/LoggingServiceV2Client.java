@@ -16,6 +16,7 @@
 package com.google.cloud.logging.spi.v2;
 
 import static com.google.cloud.logging.spi.v2.PagedResponseWrappers.ListLogEntriesPagedResponse;
+import static com.google.cloud.logging.spi.v2.PagedResponseWrappers.ListLogsPagedResponse;
 import static com.google.cloud.logging.spi.v2.PagedResponseWrappers.ListMonitoredResourceDescriptorsPagedResponse;
 
 import com.google.api.MonitoredResource;
@@ -24,10 +25,13 @@ import com.google.api.gax.grpc.UnaryCallable;
 import com.google.logging.v2.DeleteLogRequest;
 import com.google.logging.v2.ListLogEntriesRequest;
 import com.google.logging.v2.ListLogEntriesResponse;
+import com.google.logging.v2.ListLogsRequest;
+import com.google.logging.v2.ListLogsResponse;
 import com.google.logging.v2.ListMonitoredResourceDescriptorsRequest;
 import com.google.logging.v2.ListMonitoredResourceDescriptorsResponse;
 import com.google.logging.v2.LogEntry;
 import com.google.logging.v2.LogNameOneof;
+import com.google.logging.v2.ParentNameOneof;
 import com.google.logging.v2.WriteLogEntriesRequest;
 import com.google.logging.v2.WriteLogEntriesResponse;
 import com.google.protobuf.Empty;
@@ -115,6 +119,8 @@ public class LoggingServiceV2Client implements AutoCloseable {
   private final UnaryCallable<
           ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsPagedResponse>
       listMonitoredResourceDescriptorsPagedCallable;
+  private final UnaryCallable<ListLogsRequest, ListLogsResponse> listLogsCallable;
+  private final UnaryCallable<ListLogsRequest, ListLogsPagedResponse> listLogsPagedCallable;
 
   /** Constructs an instance of LoggingServiceV2Client with default settings. */
   public static final LoggingServiceV2Client create() throws IOException {
@@ -156,6 +162,10 @@ public class LoggingServiceV2Client implements AutoCloseable {
     this.listMonitoredResourceDescriptorsPagedCallable =
         UnaryCallable.createPagedVariant(
             settings.listMonitoredResourceDescriptorsSettings(), this.channel, this.executor);
+    this.listLogsCallable =
+        UnaryCallable.create(settings.listLogsSettings(), this.channel, this.executor);
+    this.listLogsPagedCallable =
+        UnaryCallable.createPagedVariant(settings.listLogsSettings(), this.channel, this.executor);
 
     if (settings.getChannelProvider().shouldAutoClose()) {
       closeables.add(
@@ -356,8 +366,8 @@ public class LoggingServiceV2Client implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists log entries. Use this method to retrieve log entries from Cloud Logging. For ways to
-   * export log entries, see [Exporting Logs](/logging/docs/export).
+   * Lists log entries. Use this method to retrieve log entries from Stackdriver Logging. For ways
+   * to export log entries, see [Exporting Logs](/logging/docs/export).
    *
    * <p>Sample code:
    *
@@ -372,13 +382,16 @@ public class LoggingServiceV2Client implements AutoCloseable {
    * }
    * </code></pre>
    *
-   * @param resourceNames Required. One or more cloud resources from which to retrieve log entries:
+   * @param resourceNames Required. Names of one or more resources from which to retrieve log
+   *     entries:
    *     <p>"projects/[PROJECT_ID]" "organizations/[ORGANIZATION_ID]"
    *     <p>Projects listed in the `project_ids` field are added to this list.
    * @param filter Optional. A filter that chooses which log entries to return. See [Advanced Logs
    *     Filters](/logging/docs/view/advanced_filters). Only log entries that match the filter are
-   *     returned. An empty filter matches all log entries. The maximum length of the filter is
-   *     20000 characters.
+   *     returned. An empty filter matches all log entries in the resources listed in
+   *     `resource_names`. Referencing a parent resource that is not listed in `resource_names` will
+   *     cause the filter to return no results. The maximum length of the filter is 20000
+   *     characters.
    * @param orderBy Optional. How the results should be sorted. Presently, the only permitted values
    *     are `"timestamp asc"` (default) and `"timestamp desc"`. The first option returns entries in
    *     order of increasing values of `LogEntry.timestamp` (oldest first), and the second option
@@ -399,8 +412,8 @@ public class LoggingServiceV2Client implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists log entries. Use this method to retrieve log entries from Cloud Logging. For ways to
-   * export log entries, see [Exporting Logs](/logging/docs/export).
+   * Lists log entries. Use this method to retrieve log entries from Stackdriver Logging. For ways
+   * to export log entries, see [Exporting Logs](/logging/docs/export).
    *
    * <p>Sample code:
    *
@@ -425,8 +438,8 @@ public class LoggingServiceV2Client implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists log entries. Use this method to retrieve log entries from Cloud Logging. For ways to
-   * export log entries, see [Exporting Logs](/logging/docs/export).
+   * Lists log entries. Use this method to retrieve log entries from Stackdriver Logging. For ways
+   * to export log entries, see [Exporting Logs](/logging/docs/export).
    *
    * <p>Sample code:
    *
@@ -451,8 +464,8 @@ public class LoggingServiceV2Client implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists log entries. Use this method to retrieve log entries from Cloud Logging. For ways to
-   * export log entries, see [Exporting Logs](/logging/docs/export).
+   * Lists log entries. Use this method to retrieve log entries from Stackdriver Logging. For ways
+   * to export log entries, see [Exporting Logs](/logging/docs/export).
    *
    * <p>Sample code:
    *
@@ -484,7 +497,7 @@ public class LoggingServiceV2Client implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists the monitored resource descriptors used by Stackdriver Logging.
+   * Lists the descriptors for monitored resource types used by Stackdriver Logging.
    *
    * <p>Sample code:
    *
@@ -507,7 +520,7 @@ public class LoggingServiceV2Client implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists the monitored resource descriptors used by Stackdriver Logging.
+   * Lists the descriptors for monitored resource types used by Stackdriver Logging.
    *
    * <p>Sample code:
    *
@@ -530,7 +543,7 @@ public class LoggingServiceV2Client implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Lists the monitored resource descriptors used by Stackdriver Logging.
+   * Lists the descriptors for monitored resource types used by Stackdriver Logging.
    *
    * <p>Sample code:
    *
@@ -556,6 +569,111 @@ public class LoggingServiceV2Client implements AutoCloseable {
           ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse>
       listMonitoredResourceDescriptorsCallable() {
     return listMonitoredResourceDescriptorsCallable;
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists the logs in projects or organizations. Only logs that have entries are listed.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (LoggingServiceV2Client loggingServiceV2Client = LoggingServiceV2Client.create()) {
+   *   ParentNameOneof parent = ParentNameOneof.from(ProjectName.create("[PROJECT]"));
+   *   for (String element : loggingServiceV2Client.listLogs(parent).iterateAllElements()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param parent Required. The resource name that owns the logs:
+   *     <p>"projects/[PROJECT_ID]" "organizations/[ORGANIZATION_ID]"
+   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   */
+  public final ListLogsPagedResponse listLogs(ParentNameOneof parent) {
+    ListLogsRequest request =
+        ListLogsRequest.newBuilder().setParentWithParentNameOneof(parent).build();
+    return listLogs(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists the logs in projects or organizations. Only logs that have entries are listed.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (LoggingServiceV2Client loggingServiceV2Client = LoggingServiceV2Client.create()) {
+   *   ParentNameOneof parent = ParentNameOneof.from(ProjectName.create("[PROJECT]"));
+   *   ListLogsRequest request = ListLogsRequest.newBuilder()
+   *     .setParentWithParentNameOneof(parent)
+   *     .build();
+   *   for (String element : loggingServiceV2Client.listLogs(request).iterateAllElements()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.grpc.ApiException if the remote call fails
+   */
+  public final ListLogsPagedResponse listLogs(ListLogsRequest request) {
+    return listLogsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists the logs in projects or organizations. Only logs that have entries are listed.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (LoggingServiceV2Client loggingServiceV2Client = LoggingServiceV2Client.create()) {
+   *   ParentNameOneof parent = ParentNameOneof.from(ProjectName.create("[PROJECT]"));
+   *   ListLogsRequest request = ListLogsRequest.newBuilder()
+   *     .setParentWithParentNameOneof(parent)
+   *     .build();
+   *   ListenableFuture&lt;ListLogsPagedResponse&gt; future = loggingServiceV2Client.listLogsPagedCallable().futureCall(request);
+   *   // Do something
+   *   for (String element : future.get().iterateAllElements()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<ListLogsRequest, ListLogsPagedResponse> listLogsPagedCallable() {
+    return listLogsPagedCallable;
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Lists the logs in projects or organizations. Only logs that have entries are listed.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (LoggingServiceV2Client loggingServiceV2Client = LoggingServiceV2Client.create()) {
+   *   ParentNameOneof parent = ParentNameOneof.from(ProjectName.create("[PROJECT]"));
+   *   ListLogsRequest request = ListLogsRequest.newBuilder()
+   *     .setParentWithParentNameOneof(parent)
+   *     .build();
+   *   while (true) {
+   *     ListLogsResponse response = loggingServiceV2Client.listLogsCallable().call(request);
+   *     for (String element : response.getLogNamesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * </code></pre>
+   */
+  public final UnaryCallable<ListLogsRequest, ListLogsResponse> listLogsCallable() {
+    return listLogsCallable;
   }
 
   /**

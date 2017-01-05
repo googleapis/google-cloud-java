@@ -18,9 +18,8 @@ package com.google.cloud.pubsub;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
-import com.google.cloud.pubsub.spi.v1.SubscriberClient;
 import com.google.common.base.MoreObjects;
-
+import com.google.pubsub.v1.SubscriptionName;
 import java.io.Serializable;
 import java.util.Objects;
 import java.util.concurrent.TimeUnit;
@@ -394,7 +393,7 @@ public class SubscriptionInfo implements Serializable {
     com.google.pubsub.v1.Subscription.Builder builder =
         com.google.pubsub.v1.Subscription.newBuilder();
     builder.setTopic(topic.toPb(projectId));
-    builder.setName(SubscriberClient.formatSubscriptionName(projectId, name));
+    builder.setNameWithSubscriptionName(SubscriptionName.create(projectId, name));
     builder.setAckDeadlineSeconds(ackDeadlineSeconds);
     if (pushConfig != null) {
       builder.setPushConfig(pushConfig.toPb());
@@ -404,7 +403,7 @@ public class SubscriptionInfo implements Serializable {
 
   static SubscriptionInfo fromPb(com.google.pubsub.v1.Subscription subscription) {
     Builder builder = newBuilder(TopicId.fromPb(subscription.getTopic()),
-        SubscriberClient.parseSubscriptionFromSubscriptionName(subscription.getName()));
+        subscription.getNameAsSubscriptionName().getSubscription());
     builder.setAckDeadLineSeconds(subscription.getAckDeadlineSeconds());
     // A subscription with an "empty" push config is a pull subscription
     if (subscription.hasPushConfig()

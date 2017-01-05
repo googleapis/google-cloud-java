@@ -18,9 +18,8 @@ package com.google.cloud.pubsub;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
-import com.google.cloud.pubsub.spi.v1.PublisherClient;
 import com.google.common.base.MoreObjects;
-
+import com.google.pubsub.v1.TopicName;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -145,12 +144,12 @@ public class TopicInfo implements Serializable {
 
   com.google.pubsub.v1.Topic toPb(String projectId) {
     return com.google.pubsub.v1.Topic.newBuilder()
-        .setName(PublisherClient.formatTopicName(projectId, name))
+        .setNameWithTopicName(TopicName.create(projectId, name))
         .build();
   }
 
   static TopicInfo fromPb(com.google.pubsub.v1.Topic topicPb) {
-    return newBuilder(PublisherClient.parseTopicFromTopicName(topicPb.getName())).build();
+    return newBuilder(topicPb.getNameAsTopicName().getTopic()).build();
   }
 
   /**

@@ -18,8 +18,8 @@ package com.google.cloud.pubsub.spi.v1;
 import static com.google.cloud.pubsub.spi.v1.PagedResponseWrappers.ListSubscriptionsPagedResponse;
 
 import com.google.api.gax.grpc.ChannelAndExecutor;
+import com.google.api.gax.grpc.StreamingCallable;
 import com.google.api.gax.grpc.UnaryCallable;
-import com.google.api.gax.protobuf.PathTemplate;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -38,6 +38,8 @@ import com.google.pubsub.v1.ProjectName;
 import com.google.pubsub.v1.PullRequest;
 import com.google.pubsub.v1.PullResponse;
 import com.google.pubsub.v1.PushConfig;
+import com.google.pubsub.v1.StreamingPullRequest;
+import com.google.pubsub.v1.StreamingPullResponse;
 import com.google.pubsub.v1.Subscription;
 import com.google.pubsub.v1.SubscriptionName;
 import com.google.pubsub.v1.TopicName;
@@ -127,70 +129,13 @@ public class SubscriberClient implements AutoCloseable {
   private final UnaryCallable<ModifyAckDeadlineRequest, Empty> modifyAckDeadlineCallable;
   private final UnaryCallable<AcknowledgeRequest, Empty> acknowledgeCallable;
   private final UnaryCallable<PullRequest, PullResponse> pullCallable;
+  private final StreamingCallable<StreamingPullRequest, StreamingPullResponse>
+      streamingPullCallable;
   private final UnaryCallable<ModifyPushConfigRequest, Empty> modifyPushConfigCallable;
   private final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable;
   private final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable;
   private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsCallable;
-
-  private static final PathTemplate PROJECT_PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding("projects/{project}");
-
-  private static final PathTemplate SUBSCRIPTION_PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding("projects/{project}/subscriptions/{subscription}");
-
-  private static final PathTemplate TOPIC_PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding("projects/{project}/topics/{topic}");
-
-  /** Formats a string containing the fully-qualified path to represent a project resource. */
-  public static final String formatProjectName(String project) {
-    return PROJECT_PATH_TEMPLATE.instantiate("project", project);
-  }
-
-  /** Formats a string containing the fully-qualified path to represent a subscription resource. */
-  public static final String formatSubscriptionName(String project, String subscription) {
-    return SUBSCRIPTION_PATH_TEMPLATE.instantiate(
-        "project", project,
-        "subscription", subscription);
-  }
-
-  /** Formats a string containing the fully-qualified path to represent a topic resource. */
-  public static final String formatTopicName(String project, String topic) {
-    return TOPIC_PATH_TEMPLATE.instantiate(
-        "project", project,
-        "topic", topic);
-  }
-
-  /** Parses the project from the given fully-qualified path which represents a project resource. */
-  public static final String parseProjectFromProjectName(String projectName) {
-    return PROJECT_PATH_TEMPLATE.parse(projectName).get("project");
-  }
-
-  /**
-   * Parses the project from the given fully-qualified path which represents a subscription
-   * resource.
-   */
-  public static final String parseProjectFromSubscriptionName(String subscriptionName) {
-    return SUBSCRIPTION_PATH_TEMPLATE.parse(subscriptionName).get("project");
-  }
-
-  /**
-   * Parses the subscription from the given fully-qualified path which represents a subscription
-   * resource.
-   */
-  public static final String parseSubscriptionFromSubscriptionName(String subscriptionName) {
-    return SUBSCRIPTION_PATH_TEMPLATE.parse(subscriptionName).get("subscription");
-  }
-
-  /** Parses the project from the given fully-qualified path which represents a topic resource. */
-  public static final String parseProjectFromTopicName(String topicName) {
-    return TOPIC_PATH_TEMPLATE.parse(topicName).get("project");
-  }
-
-  /** Parses the topic from the given fully-qualified path which represents a topic resource. */
-  public static final String parseTopicFromTopicName(String topicName) {
-    return TOPIC_PATH_TEMPLATE.parse(topicName).get("topic");
-  }
 
   /** Constructs an instance of SubscriberClient with default settings. */
   public static final SubscriberClient create() throws IOException {
@@ -231,6 +176,8 @@ public class SubscriberClient implements AutoCloseable {
     this.acknowledgeCallable =
         UnaryCallable.create(settings.acknowledgeSettings(), this.channel, this.executor);
     this.pullCallable = UnaryCallable.create(settings.pullSettings(), this.channel, this.executor);
+    this.streamingPullCallable =
+        StreamingCallable.create(settings.streamingPullSettings(), this.channel);
     this.modifyPushConfigCallable =
         UnaryCallable.create(settings.modifyPushConfigSettings(), this.channel, this.executor);
     this.setIamPolicyCallable =
@@ -270,8 +217,10 @@ public class SubscriberClient implements AutoCloseable {
    * `ALREADY_EXISTS`. If the corresponding topic doesn't exist, returns `NOT_FOUND`.
    *
    * <p>If the name is not provided in the request, the server will assign a random name for this
-   * subscription on the same project as the topic. Note that for REST API requests, you must
-   * specify a name.
+   * subscription on the same project as the topic, conforming to the [resource name
+   * format](https://cloud.google.com/pubsub/docs/overview#names). The generated name is populated
+   * in the returned Subscription object. Note that for REST API requests, you must specify a name
+   * in the request.
    *
    * <p>Sample code:
    *
@@ -290,8 +239,9 @@ public class SubscriberClient implements AutoCloseable {
    *     letter, and contain only letters (`[A-Za-z]`), numbers (`[0-9]`), dashes (`-`), underscores
    *     (`_`), periods (`.`), tildes (`~`), plus (`+`) or percent signs (`%`). It must be between 3
    *     and 255 characters in length, and it must not start with `"goog"`.
-   * @param topic The name of the topic from which this subscription is receiving messages. The
-   *     value of this field will be `_deleted-topic_` if the topic has been deleted.
+   * @param topic The name of the topic from which this subscription is receiving messages. Format
+   *     is `projects/{project}/topics/{topic}`. The value of this field will be `_deleted-topic_`
+   *     if the topic has been deleted.
    * @param pushConfig If push delivery is used with this subscription, this field is used to
    *     configure it. An empty `pushConfig` signifies that the subscriber will pull and ack
    *     messages using API methods.
@@ -301,13 +251,13 @@ public class SubscriberClient implements AutoCloseable {
    *     and will not be delivered again during that time (on a best-effort basis).
    *     <p>For pull subscriptions, this value is used as the initial value for the ack deadline. To
    *     override this value for a given message, call `ModifyAckDeadline` with the corresponding
-   *     `ack_id` if using pull. The maximum custom deadline you can specify is 600 seconds (10
-   *     minutes).
+   *     `ack_id` if using pull. The minimum custom deadline you can specify is 10 seconds. The
+   *     maximum custom deadline you can specify is 600 seconds (10 minutes). If this parameter is
+   *     0, a default value of 10 seconds is used.
    *     <p>For push delivery, this value is also used to set the request timeout for the call to
    *     the push endpoint.
    *     <p>If the subscriber never acknowledges the message, the Pub/Sub system will eventually
    *     redeliver the message.
-   *     <p>If this parameter is 0, a default value of 10 seconds is used.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final Subscription createSubscription(
@@ -316,7 +266,7 @@ public class SubscriberClient implements AutoCloseable {
     Subscription request =
         Subscription.newBuilder()
             .setNameWithSubscriptionName(name)
-            .setTopicWithTopicNameOneof(TopicNameOneof.from(topic))
+            .setTopicWithTopicNameOneof(topic == null ? null : TopicNameOneof.from(topic))
             .setPushConfig(pushConfig)
             .setAckDeadlineSeconds(ackDeadlineSeconds)
             .build();
@@ -329,8 +279,10 @@ public class SubscriberClient implements AutoCloseable {
    * `ALREADY_EXISTS`. If the corresponding topic doesn't exist, returns `NOT_FOUND`.
    *
    * <p>If the name is not provided in the request, the server will assign a random name for this
-   * subscription on the same project as the topic. Note that for REST API requests, you must
-   * specify a name.
+   * subscription on the same project as the topic, conforming to the [resource name
+   * format](https://cloud.google.com/pubsub/docs/overview#names). The generated name is populated
+   * in the returned Subscription object. Note that for REST API requests, you must specify a name
+   * in the request.
    *
    * <p>Sample code:
    *
@@ -359,8 +311,10 @@ public class SubscriberClient implements AutoCloseable {
    * `ALREADY_EXISTS`. If the corresponding topic doesn't exist, returns `NOT_FOUND`.
    *
    * <p>If the name is not provided in the request, the server will assign a random name for this
-   * subscription on the same project as the topic. Note that for REST API requests, you must
-   * specify a name.
+   * subscription on the same project as the topic, conforming to the [resource name
+   * format](https://cloud.google.com/pubsub/docs/overview#names). The generated name is populated
+   * in the returned Subscription object. Note that for REST API requests, you must specify a name
+   * in the request.
    *
    * <p>Sample code:
    *
@@ -395,7 +349,8 @@ public class SubscriberClient implements AutoCloseable {
    * }
    * </code></pre>
    *
-   * @param subscription The name of the subscription to get.
+   * @param subscription The name of the subscription to get. Format is
+   *     `projects/{project}/subscriptions/{sub}`.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final Subscription getSubscription(SubscriptionName subscription) {
@@ -467,7 +422,8 @@ public class SubscriberClient implements AutoCloseable {
    * }
    * </code></pre>
    *
-   * @param project The name of the cloud project that subscriptions belong to.
+   * @param project The name of the cloud project that subscriptions belong to. Format is
+   *     `projects/{project}`.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final ListSubscriptionsPagedResponse listSubscriptions(ProjectName project) {
@@ -560,10 +516,10 @@ public class SubscriberClient implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes an existing subscription. All pending messages in the subscription are immediately
+   * Deletes an existing subscription. All messages retained in the subscription are immediately
    * dropped. Calls to `Pull` after deletion will return `NOT_FOUND`. After a subscription is
    * deleted, a new one may be created with the same name, but the new one has no association with
-   * the old subscription, or its topic unless the same topic is specified.
+   * the old subscription or its topic unless the same topic is specified.
    *
    * <p>Sample code:
    *
@@ -574,7 +530,8 @@ public class SubscriberClient implements AutoCloseable {
    * }
    * </code></pre>
    *
-   * @param subscription The subscription to delete.
+   * @param subscription The subscription to delete. Format is
+   *     `projects/{project}/subscriptions/{sub}`.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final void deleteSubscription(SubscriptionName subscription) {
@@ -588,10 +545,10 @@ public class SubscriberClient implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes an existing subscription. All pending messages in the subscription are immediately
+   * Deletes an existing subscription. All messages retained in the subscription are immediately
    * dropped. Calls to `Pull` after deletion will return `NOT_FOUND`. After a subscription is
    * deleted, a new one may be created with the same name, but the new one has no association with
-   * the old subscription, or its topic unless the same topic is specified.
+   * the old subscription or its topic unless the same topic is specified.
    *
    * <p>Sample code:
    *
@@ -614,10 +571,10 @@ public class SubscriberClient implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes an existing subscription. All pending messages in the subscription are immediately
+   * Deletes an existing subscription. All messages retained in the subscription are immediately
    * dropped. Calls to `Pull` after deletion will return `NOT_FOUND`. After a subscription is
    * deleted, a new one may be created with the same name, but the new one has no association with
-   * the old subscription, or its topic unless the same topic is specified.
+   * the old subscription or its topic unless the same topic is specified.
    *
    * <p>Sample code:
    *
@@ -655,12 +612,14 @@ public class SubscriberClient implements AutoCloseable {
    * }
    * </code></pre>
    *
-   * @param subscription The name of the subscription.
+   * @param subscription The name of the subscription. Format is
+   *     `projects/{project}/subscriptions/{sub}`.
    * @param ackIds List of acknowledgment IDs.
    * @param ackDeadlineSeconds The new ack deadline with respect to the time this request was sent
-   *     to the Pub/Sub system. Must be &gt;= 0. For example, if the value is 10, the new ack
-   *     deadline will expire 10 seconds after the `ModifyAckDeadline` call was made. Specifying
-   *     zero may immediately make the message available for another pull request.
+   *     to the Pub/Sub system. For example, if the value is 10, the new ack deadline will expire 10
+   *     seconds after the `ModifyAckDeadline` call was made. Specifying zero may immediately make
+   *     the message available for another pull request. The minimum deadline you can specify is 0
+   *     seconds. The maximum deadline you can specify is 600 seconds (10 minutes).
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final void modifyAckDeadline(
@@ -752,7 +711,8 @@ public class SubscriberClient implements AutoCloseable {
    * }
    * </code></pre>
    *
-   * @param subscription The subscription whose message is being acknowledged.
+   * @param subscription The subscription whose message is being acknowledged. Format is
+   *     `projects/{project}/subscriptions/{sub}`.
    * @param ackIds The acknowledgment ID for the messages being acknowledged that was returned by
    *     the Pub/Sub system in the `Pull` response. Must not be empty.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
@@ -841,11 +801,13 @@ public class SubscriberClient implements AutoCloseable {
    * }
    * </code></pre>
    *
-   * @param subscription The subscription from which messages should be pulled.
-   * @param returnImmediately If this is specified as true the system will respond immediately even
-   *     if it is not able to return a message in the `Pull` response. Otherwise the system is
-   *     allowed to wait until at least one message is available rather than returning no messages.
-   *     The client may cancel the request if it does not wish to wait any longer for the response.
+   * @param subscription The subscription from which messages should be pulled. Format is
+   *     `projects/{project}/subscriptions/{sub}`.
+   * @param returnImmediately If this field set to true, the system will respond immediately even if
+   *     it there are no messages available to return in the `Pull` response. Otherwise, the system
+   *     may wait (for a bounded amount of time) until at least one message is available, rather
+   *     than returning no messages. The client may cancel the request if it does not wish to wait
+   *     any longer for the response.
    * @param maxMessages The maximum number of messages returned for this request. The Pub/Sub system
    *     may return fewer than the number specified.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
@@ -917,6 +879,59 @@ public class SubscriberClient implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
+   * (EXPERIMENTAL) StreamingPull is an experimental feature. This RPC will respond with
+   * UNIMPLEMENTED errors unless you have been invited to test this feature. Contact
+   * cloud-pubsub{@literal @}google.com with any questions.
+   *
+   * <p>Establishes a stream with the server, which sends messages down to the client. The client
+   * streams acknowledgements and ack deadline modifications back to the server. The server will
+   * close the stream and return the status on any error. The server may close the stream with
+   * status `OK` to reassign server-side resources, in which case, the client should re-establish
+   * the stream. `UNAVAILABLE` may also be returned in the case of a transient error (e.g., a server
+   * restart). These should also be retried by the client. Flow control can be achieved by
+   * configuring the underlying RPC channel.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (SubscriberClient subscriberClient = SubscriberClient.create()) {
+   *   StreamObserver&lt;StreamingPullResponse&gt; responseObserver =
+   *       new StreamObserver&lt;StreamingPullResponse&gt;() {
+   *         {@literal @}Override
+   *         public void onNext(StreamingPullResponse response) {
+   *           // Do something when receive a response
+   *         }
+   *
+   *         {@literal @}Override
+   *         public void onError(Throwable t) {
+   *           // Add error-handling
+   *         }
+   *
+   *         {@literal @}Override
+   *         public void onCompleted() {
+   *           // Do something when complete.
+   *         }
+   *       };
+   *   StreamObserver&lt;StreamingRecognizeRequest&gt; requestObserver =
+   *       subscriberClient.streamingPullCallable().bidiStreamingCall(responseObserver)});
+   *
+   *   SubscriptionName subscription = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]");
+   *   int streamAckDeadlineSeconds = 0;
+   *   StreamingPullRequest request = StreamingPullRequest.newBuilder()
+   *     .setSubscriptionWithSubscriptionName(subscription)
+   *     .setStreamAckDeadlineSeconds(streamAckDeadlineSeconds)
+   *     .build();
+   *   requestObserver.onNext(request);
+   * }
+   * </code></pre>
+   */
+  public final StreamingCallable<StreamingPullRequest, StreamingPullResponse>
+      streamingPullCallable() {
+    return streamingPullCallable;
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
    * Modifies the `PushConfig` for a specified subscription.
    *
    * <p>This may be used to change a push subscription to a pull one (signified by an empty
@@ -934,7 +949,8 @@ public class SubscriberClient implements AutoCloseable {
    * }
    * </code></pre>
    *
-   * @param subscription The name of the subscription.
+   * @param subscription The name of the subscription. Format is
+   *     `projects/{project}/subscriptions/{sub}`.
    * @param pushConfig The push configuration for future deliveries.
    *     <p>An empty `pushConfig` indicates that the Pub/Sub system should stop pushing messages
    *     from the given subscription and allow messages to be pulled and acknowledged - effectively
@@ -1018,7 +1034,7 @@ public class SubscriberClient implements AutoCloseable {
    *
    * <pre><code>
    * try (SubscriberClient subscriberClient = SubscriberClient.create()) {
-   *   String formattedResource = SubscriberClient.formatSubscriptionName("[PROJECT]", "[SUBSCRIPTION]");
+   *   String formattedResource = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]").toString();
    *   Policy policy = Policy.newBuilder().build();
    *   Policy response = subscriberClient.setIamPolicy(formattedResource, policy);
    * }
@@ -1033,7 +1049,7 @@ public class SubscriberClient implements AutoCloseable {
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final Policy setIamPolicy(String resource, Policy policy) {
-    SUBSCRIPTION_PATH_TEMPLATE.validate(resource, "setIamPolicy");
+
     SetIamPolicyRequest request =
         SetIamPolicyRequest.newBuilder().setResource(resource).setPolicy(policy).build();
     return setIamPolicy(request);
@@ -1047,7 +1063,7 @@ public class SubscriberClient implements AutoCloseable {
    *
    * <pre><code>
    * try (SubscriberClient subscriberClient = SubscriberClient.create()) {
-   *   String formattedResource = SubscriberClient.formatSubscriptionName("[PROJECT]", "[SUBSCRIPTION]");
+   *   String formattedResource = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]").toString();
    *   Policy policy = Policy.newBuilder().build();
    *   SetIamPolicyRequest request = SetIamPolicyRequest.newBuilder()
    *     .setResource(formattedResource)
@@ -1072,7 +1088,7 @@ public class SubscriberClient implements AutoCloseable {
    *
    * <pre><code>
    * try (SubscriberClient subscriberClient = SubscriberClient.create()) {
-   *   String formattedResource = SubscriberClient.formatSubscriptionName("[PROJECT]", "[SUBSCRIPTION]");
+   *   String formattedResource = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]").toString();
    *   Policy policy = Policy.newBuilder().build();
    *   SetIamPolicyRequest request = SetIamPolicyRequest.newBuilder()
    *     .setResource(formattedResource)
@@ -1097,7 +1113,7 @@ public class SubscriberClient implements AutoCloseable {
    *
    * <pre><code>
    * try (SubscriberClient subscriberClient = SubscriberClient.create()) {
-   *   String formattedResource = SubscriberClient.formatSubscriptionName("[PROJECT]", "[SUBSCRIPTION]");
+   *   String formattedResource = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]").toString();
    *   Policy response = subscriberClient.getIamPolicy(formattedResource);
    * }
    * </code></pre>
@@ -1108,7 +1124,7 @@ public class SubscriberClient implements AutoCloseable {
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final Policy getIamPolicy(String resource) {
-    SUBSCRIPTION_PATH_TEMPLATE.validate(resource, "getIamPolicy");
+
     GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder().setResource(resource).build();
     return getIamPolicy(request);
   }
@@ -1122,7 +1138,7 @@ public class SubscriberClient implements AutoCloseable {
    *
    * <pre><code>
    * try (SubscriberClient subscriberClient = SubscriberClient.create()) {
-   *   String formattedResource = SubscriberClient.formatSubscriptionName("[PROJECT]", "[SUBSCRIPTION]");
+   *   String formattedResource = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]").toString();
    *   GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder()
    *     .setResource(formattedResource)
    *     .build();
@@ -1146,7 +1162,7 @@ public class SubscriberClient implements AutoCloseable {
    *
    * <pre><code>
    * try (SubscriberClient subscriberClient = SubscriberClient.create()) {
-   *   String formattedResource = SubscriberClient.formatSubscriptionName("[PROJECT]", "[SUBSCRIPTION]");
+   *   String formattedResource = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]").toString();
    *   GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder()
    *     .setResource(formattedResource)
    *     .build();
@@ -1162,13 +1178,14 @@ public class SubscriberClient implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns permissions that a caller has on the specified resource.
+   * Returns permissions that a caller has on the specified resource. If the resource does not
+   * exist, this will return an empty set of permissions, not a NOT_FOUND error.
    *
    * <p>Sample code:
    *
    * <pre><code>
    * try (SubscriberClient subscriberClient = SubscriberClient.create()) {
-   *   String formattedResource = SubscriberClient.formatSubscriptionName("[PROJECT]", "[SUBSCRIPTION]");
+   *   String formattedResource = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]").toString();
    *   List&lt;String&gt; permissions = new ArrayList&lt;&gt;();
    *   TestIamPermissionsResponse response = subscriberClient.testIamPermissions(formattedResource, permissions);
    * }
@@ -1184,7 +1201,7 @@ public class SubscriberClient implements AutoCloseable {
    */
   public final TestIamPermissionsResponse testIamPermissions(
       String resource, List<String> permissions) {
-    SUBSCRIPTION_PATH_TEMPLATE.validate(resource, "testIamPermissions");
+
     TestIamPermissionsRequest request =
         TestIamPermissionsRequest.newBuilder()
             .setResource(resource)
@@ -1195,13 +1212,14 @@ public class SubscriberClient implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns permissions that a caller has on the specified resource.
+   * Returns permissions that a caller has on the specified resource. If the resource does not
+   * exist, this will return an empty set of permissions, not a NOT_FOUND error.
    *
    * <p>Sample code:
    *
    * <pre><code>
    * try (SubscriberClient subscriberClient = SubscriberClient.create()) {
-   *   String formattedResource = SubscriberClient.formatSubscriptionName("[PROJECT]", "[SUBSCRIPTION]");
+   *   String formattedResource = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]").toString();
    *   List&lt;String&gt; permissions = new ArrayList&lt;&gt;();
    *   TestIamPermissionsRequest request = TestIamPermissionsRequest.newBuilder()
    *     .setResource(formattedResource)
@@ -1220,13 +1238,14 @@ public class SubscriberClient implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns permissions that a caller has on the specified resource.
+   * Returns permissions that a caller has on the specified resource. If the resource does not
+   * exist, this will return an empty set of permissions, not a NOT_FOUND error.
    *
    * <p>Sample code:
    *
    * <pre><code>
    * try (SubscriberClient subscriberClient = SubscriberClient.create()) {
-   *   String formattedResource = SubscriberClient.formatSubscriptionName("[PROJECT]", "[SUBSCRIPTION]");
+   *   String formattedResource = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]").toString();
    *   List&lt;String&gt; permissions = new ArrayList&lt;&gt;();
    *   TestIamPermissionsRequest request = TestIamPermissionsRequest.newBuilder()
    *     .setResource(formattedResource)

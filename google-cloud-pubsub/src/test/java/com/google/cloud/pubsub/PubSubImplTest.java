@@ -16,7 +16,6 @@
 
 package com.google.cloud.pubsub;
 
-import static com.google.cloud.pubsub.spi.v1.SubscriberClient.formatSubscriptionName;
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -68,16 +67,7 @@ import com.google.pubsub.v1.PublishRequest;
 import com.google.pubsub.v1.PublishResponse;
 import com.google.pubsub.v1.PullRequest;
 import com.google.pubsub.v1.PullResponse;
-
-import org.easymock.Capture;
-import org.easymock.EasyMock;
-import org.easymock.IAnswer;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Rule;
-import org.junit.Test;
-import org.junit.rules.ExpectedException;
-
+import com.google.pubsub.v1.SubscriptionName;
 import java.io.IOException;
 import java.util.Iterator;
 import java.util.List;
@@ -86,6 +76,14 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
+import org.easymock.Capture;
+import org.easymock.EasyMock;
+import org.easymock.IAnswer;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Rule;
+import org.junit.Test;
+import org.junit.rules.ExpectedException;
 
 public class PubSubImplTest {
 
@@ -143,8 +141,8 @@ public class PubSubImplTest {
       new Function<SubscriptionId, String>() {
         @Override
         public String apply(SubscriptionId subscriptionId) {
-          return formatSubscriptionName(subscriptionId.getProject(),
-              subscriptionId.getSubscription());
+          return SubscriptionName.create(subscriptionId.getProject(),
+              subscriptionId.getSubscription()).toString();
         }
       };
   private static final MessageProcessor DO_NOTHING = new MessageProcessor() {
