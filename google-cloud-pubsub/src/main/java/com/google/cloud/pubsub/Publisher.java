@@ -16,6 +16,7 @@
 
 package com.google.cloud.pubsub;
 
+import com.google.api.gax.bundling.FlowController;
 import com.google.api.gax.grpc.BundlingSettings;
 import com.google.auth.Credentials;
 import com.google.auth.oauth2.GoogleCredentials;
@@ -86,8 +87,8 @@ public interface Publisher {
   int MAX_BUNDLE_BYTES = 10 * 1000 * 1000; // 10 megabytes (https://en.wikipedia.org/wiki/Megabyte)
 
   // Meaningful defaults.
-  int DEFAULT_MAX_BUNDLE_MESSAGES = 100;
-  int DEFAULT_MAX_BUNDLE_BYTES = 1000; // 1 kB
+  long DEFAULT_MAX_BUNDLE_MESSAGES = 100L;
+  long DEFAULT_MAX_BUNDLE_BYTES = 1000L; // 1 kB
   Duration DEFAULT_MAX_BUNDLE_DURATION = new Duration(1); // 1ms
   Duration DEFAULT_REQUEST_TIMEOUT = new Duration(10 * 1000); // 10 seconds
   Duration MIN_SEND_BUNDLE_DURATION = new Duration(10 * 1000); // 10 seconds
@@ -129,20 +130,20 @@ public interface Publisher {
    * Maximum number of outstanding (i.e. pending to publish) messages before limits are enforced.
    * See {@link #failOnFlowControlLimits()}.
    */
-  Optional<Integer> getMaxOutstandingMessages();
+  Optional<Integer> getMaxOutstandingElementCount();
 
   /**
    * Maximum number of outstanding (i.e. pending to publish) bytes before limits are enforced. See
    * {@link #failOnFlowControlLimits()}.
    */
-  Optional<Integer> getMaxOutstandingBytes();
+  Optional<Integer> getMaxOutstandingRequestBytes();
 
   /**
    * Whether to block publish calls when reaching flow control limits (see {@link
-   * #getMaxOutstandingBytes()} & {@link #getMaxOutstandingMessages()}).
+   * #getMaxOutstandingRequestBytes()} & {@link #getMaxOutstandingElementCount()}).
    *
    * <p>If set to false, a publish call will fail with either {@link
-   * MaxOutstandingBytesReachedException} or {@link MaxOutstandingMessagesReachedException}, as
+   * RequestByteMaxOutstandingReachedException} or {@link ElementCountMaxOutstandingReachedException}, as
    * appropriate, when flow control limits are reached.
    */
   boolean failOnFlowControlLimits();
@@ -167,7 +168,7 @@ public interface Publisher {
     BundlingSettings bundlingSettings = DEFAULT_BUNDLING_SETTINGS;
 
     // Client-side flow control options
-    PubSub.FlowControlSettings flowControlSettings = PubSub.FlowControlSettings.DEFAULT;
+    FlowController.Settings flowControlSettings = FlowController.Settings.DEFAULT;
     boolean failOnFlowControlLimits = false;
 
     // Send bundle deadline
@@ -242,14 +243,14 @@ public interface Publisher {
     // Flow control options
 
     /** Sets the flow control settings. */
-    public Builder setFlowControlSettings(PubSub.FlowControlSettings flowControlSettings) {
+    public Builder setFlowControlSettings(FlowController.Settings flowControlSettings) {
       this.flowControlSettings = Preconditions.checkNotNull(flowControlSettings);
       return this;
     }
 
     /**
      * Whether to fail publish when reaching any of the flow control limits, with either a {@link
-     * MaxOutstandingBytesReachedException} or {@link MaxOutstandingMessagesReachedException} as
+     * RequestByteMaxOutstandingReachedException} or {@link ElementCountMaxOutstandingReachedException} as
      * appropriate.
      *
      * <p>If set to false, then publish operations will block the current thread until the
@@ -283,53 +284,6 @@ public interface Publisher {
 
     public Publisher build() throws IOException {
       return new PublisherImpl(this);
-    }
-  }
-
-  /** Base exception that signals a flow control state. */
-  abstract class CloudPubsubFlowControlException extends Exception {}
-
-  /**
-   * Returned as a future exception when client-side flow control is enforced based on the maximum
-   * number of outstanding in-memory messages.
-   */
-  final class MaxOutstandingMessagesReachedException extends CloudPubsubFlowControlException {
-    private final int currentMaxMessages;
-
-    public MaxOutstandingMessagesReachedException(int currentMaxMessages) {
-      this.currentMaxMessages = currentMaxMessages;
-    }
-
-    public int getCurrentMaxBundleMessages() {
-      return currentMaxMessages;
-    }
-
-    @Override
-    public String toString() {
-      return String.format(
-          "The maximum number of bundle messages: %d have been reached.", currentMaxMessages);
-    }
-  }
-
-  /**
-   * Returned as a future exception when client-side flow control is enforced based on the maximum
-   * number of unacknowledged in-memory bytes.
-   */
-  final class MaxOutstandingBytesReachedException extends CloudPubsubFlowControlException {
-    private final int currentMaxBytes;
-
-    public MaxOutstandingBytesReachedException(int currentMaxBytes) {
-      this.currentMaxBytes = currentMaxBytes;
-    }
-
-    public int getCurrentMaxBundleBytes() {
-      return currentMaxBytes;
-    }
-
-    @Override
-    public String toString() {
-      return String.format(
-          "The maximum number of bundle bytes: %d have been reached.", currentMaxBytes);
     }
   }
 }

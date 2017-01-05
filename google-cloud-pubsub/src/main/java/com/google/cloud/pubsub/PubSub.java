@@ -140,49 +140,6 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
     }
   }
 
-  @AutoValue
-  public abstract static class FlowControlSettings {
-    static FlowControlSettings DEFAULT =
-        newBuilder()
-            .setMaxOutstandingBytes(Optional.<Integer>absent())
-            .setMaxOutstandingMessages(Optional.<Integer>absent())
-            .build();
-
-    /** Maximum number of outstanding messages to keep in memory before enforcing flow control. */
-    abstract Optional<Integer> getMaxOutstandingMessages();
-
-    /** Maximum number of outstanding bytes to keep in memory before enforcing flow control. */
-    abstract Optional<Integer> getMaxOutstandingBytes();
-
-    Builder toBuilder() {
-      return new AutoValue_PubSub_FlowControlSettings.Builder(this);
-    }
-
-    static Builder newBuilder() {
-      return new AutoValue_PubSub_FlowControlSettings.Builder();
-    }
-
-    @AutoValue.Builder
-    public abstract static class Builder {
-      abstract Builder setMaxOutstandingMessages(Optional<Integer> value);
-
-      abstract Builder setMaxOutstandingBytes(Optional<Integer> value);
-
-      abstract FlowControlSettings autoBuild();
-
-      FlowControlSettings build() {
-        FlowControlSettings settings = autoBuild();
-        Preconditions.checkArgument(
-            settings.getMaxOutstandingMessages().or(1) > 0,
-            "maxOutstandingMessages limit is disabled by default, but if set it must be set to a value greater than 0.");
-        Preconditions.checkArgument(
-            settings.getMaxOutstandingBytes().or(1) > 0,
-            "maxOutstandingBytes limit is disabled by default, but if set it must be set to a value greater than 0.");
-        return settings;
-      }
-    }
-  }
-
   /**
    * Creates a new topic.
    *

@@ -16,6 +16,7 @@
 
 package com.google.cloud.pubsub;
 
+import com.google.api.gax.bundling.FlowController;
 import com.google.auth.Credentials;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.Clock;
@@ -130,12 +131,12 @@ public interface Subscriber extends Service {
    * MessageReceiver} but due to the gRPC and HTTP/2 buffering and congestion control window
    * management, still some extra bytes could be kept at lower layers.
    */
-  Optional<Integer> getMaxOutstandingMessages();
+  Optional<Integer> getMaxOutstandingElementCount();
 
   /**
    * Maximum number of outstanding (i.e. pending to process) bytes before limits are enforced.
    */
-  Optional<Integer> getMaxOutstandingBytes();
+  Optional<Integer> getMaxOutstandingRequestBytes();
 
   /** Builder of {@link Subscriber Subscribers}. */
   final class Builder {
@@ -148,7 +149,7 @@ public interface Subscriber extends Service {
 
     Duration ackExpirationPadding = DEFAULT_ACK_EXPIRATION_PADDING;
 
-    PubSub.FlowControlSettings flowControlSettings = PubSub.FlowControlSettings.DEFAULT;
+    FlowController.Settings flowControlSettings = FlowController.Settings.DEFAULT;
 
     Optional<ScheduledExecutorService> executor = Optional.absent();
     Optional<ManagedChannelBuilder<? extends ManagedChannelBuilder<?>>> channelBuilder =
@@ -198,7 +199,7 @@ public interface Subscriber extends Service {
     }
 
     /** Sets the flow control settings. */
-    public Builder setFlowControlSettings(PubSub.FlowControlSettings flowControlSettings) {
+    public Builder setFlowControlSettings(FlowController.Settings flowControlSettings) {
       this.flowControlSettings = Preconditions.checkNotNull(flowControlSettings);
       return this;
     }

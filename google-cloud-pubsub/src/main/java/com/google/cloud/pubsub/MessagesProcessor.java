@@ -16,9 +16,9 @@
 
 package com.google.cloud.pubsub;
 
+import com.google.api.gax.bundling.FlowController;
 import com.google.auth.Credentials;
 import com.google.cloud.Clock;
-import com.google.cloud.pubsub.Publisher.CloudPubsubFlowControlException;
 import com.google.cloud.pubsub.Subscriber.MessageReceiver;
 import com.google.cloud.pubsub.Subscriber.MessageReceiver.AckReply;
 import com.google.common.annotations.VisibleForTesting;
@@ -287,7 +287,7 @@ class MessagesProcessor {
     }
     try {
       flowController.reserve(receivedMessagesCount, totalByteCount);
-    } catch (CloudPubsubFlowControlException unexpectedException) {
+    } catch (FlowController.FlowControlException unexpectedException) {
       throw new IllegalStateException("Flow control unexpected exception", unexpectedException);
     }
   }

@@ -23,6 +23,7 @@ import static org.junit.Assert.fail;
 import static org.mockito.Mockito.atLeast;
 import static org.mockito.Mockito.times;
 
+import com.google.api.gax.bundling.FlowController;
 import com.google.api.gax.grpc.BundlingSettings;
 import com.google.cloud.pubsub.Publisher.Builder;
 import com.google.common.base.Optional;
@@ -345,9 +346,9 @@ public class PublisherImplTest {
             .setElementCountThreshold(12)
             .build());
     builder.setFlowControlSettings(
-        PubSub.FlowControlSettings.newBuilder()
-            .setMaxOutstandingBytes(Optional.of(13))
-            .setMaxOutstandingMessages(Optional.of(14))
+        FlowController.Settings.newBuilder()
+            .setMaxOutstandingRequestBytes(Optional.of(13))
+            .setMaxOutstandingElementCount(Optional.of(14))
             .build());
     builder.setRequestTimeout(new Duration(15));
     builder.setSendBundleDeadline(new Duration(16000));
@@ -357,8 +358,8 @@ public class PublisherImplTest {
     assertEquals(10, publisher.getMaxBundleBytes());
     assertEquals(new Duration(11), publisher.getMaxBundleDuration());
     assertEquals(12, publisher.getMaxBundleMessages());
-    assertEquals(Optional.of(13), publisher.getMaxOutstandingBytes());
-    assertEquals(Optional.of(14), publisher.getMaxOutstandingMessages());
+    assertEquals(Optional.of(13), publisher.getMaxOutstandingRequestBytes());
+    assertEquals(Optional.of(14), publisher.getMaxOutstandingElementCount());
     assertTrue(publisher.failOnFlowControlLimits());
   }
 
@@ -377,7 +378,7 @@ public class PublisherImplTest {
     assertEquals(
         Publisher.DEFAULT_MAX_BUNDLE_MESSAGES,
         builder.bundlingSettings.getElementCountThreshold().longValue());
-    assertEquals(PubSub.FlowControlSettings.DEFAULT, builder.flowControlSettings);
+    assertEquals(FlowController.Settings.DEFAULT, builder.flowControlSettings);
     assertEquals(Publisher.DEFAULT_REQUEST_TIMEOUT, builder.requestTimeout);
     assertEquals(Publisher.MIN_SEND_BUNDLE_DURATION, builder.sendBundleDeadline);
     assertEquals(Optional.absent(), builder.userCredentials);
@@ -409,7 +410,7 @@ public class PublisherImplTest {
     }
     try {
       builder.setBundlingSettings(
-          Publisher.DEFAULT_BUNDLING_SETTINGS.toBuilder().setRequestByteThreshold(null).build());
+          Publisher.DEFAULT_BUNDLING_SETTINGS.toBuilder().setRequestByteThreshold((Long)null).build());
       fail("Should have thrown an NullPointerException");
     } catch (NullPointerException expected) {
       // Expected
@@ -453,7 +454,7 @@ public class PublisherImplTest {
         Publisher.DEFAULT_BUNDLING_SETTINGS.toBuilder().setElementCountThreshold(1).build());
     try {
       builder.setBundlingSettings(
-          Publisher.DEFAULT_BUNDLING_SETTINGS.toBuilder().setElementCountThreshold(null).build());
+          Publisher.DEFAULT_BUNDLING_SETTINGS.toBuilder().setElementCountThreshold((Long)null).build());
       fail("Should have thrown an NullPointerException");
     } catch (NullPointerException expected) {
       // Expected
@@ -474,15 +475,15 @@ public class PublisherImplTest {
     }
 
     builder.setFlowControlSettings(
-        PubSub.FlowControlSettings.DEFAULT
+        FlowController.Settings.DEFAULT
             .toBuilder()
-            .setMaxOutstandingBytes(Optional.of(1))
+            .setMaxOutstandingRequestBytes(Optional.of(1))
             .build());
     try {
       builder.setFlowControlSettings(
-          PubSub.FlowControlSettings.DEFAULT
+          FlowController.Settings.DEFAULT
               .toBuilder()
-              .setMaxOutstandingBytes(Optional.of(0))
+              .setMaxOutstandingRequestBytes(Optional.of(0))
               .build());
       fail("Should have thrown an IllegalArgumentException");
     } catch (IllegalArgumentException expected) {
@@ -490,9 +491,9 @@ public class PublisherImplTest {
     }
     try {
       builder.setFlowControlSettings(
-          PubSub.FlowControlSettings.DEFAULT
+          FlowController.Settings.DEFAULT
               .toBuilder()
-              .setMaxOutstandingBytes(Optional.of(-1))
+              .setMaxOutstandingRequestBytes(Optional.of(-1))
               .build());
       fail("Should have thrown an IllegalArgumentException");
     } catch (IllegalArgumentException expected) {
@@ -500,15 +501,15 @@ public class PublisherImplTest {
     }
 
     builder.setFlowControlSettings(
-        PubSub.FlowControlSettings.DEFAULT
+        FlowController.Settings.DEFAULT
             .toBuilder()
-            .setMaxOutstandingMessages(Optional.of(1))
+            .setMaxOutstandingElementCount(Optional.of(1))
             .build());
     try {
       builder.setFlowControlSettings(
-          PubSub.FlowControlSettings.DEFAULT
+          FlowController.Settings.DEFAULT
               .toBuilder()
-              .setMaxOutstandingMessages(Optional.of(0))
+              .setMaxOutstandingElementCount(Optional.of(0))
               .build());
       fail("Should have thrown an IllegalArgumentException");
     } catch (IllegalArgumentException expected) {
@@ -516,9 +517,9 @@ public class PublisherImplTest {
     }
     try {
       builder.setFlowControlSettings(
-          PubSub.FlowControlSettings.DEFAULT
+          FlowController.Settings.DEFAULT
               .toBuilder()
-              .setMaxOutstandingMessages(Optional.of(-1))
+              .setMaxOutstandingElementCount(Optional.of(-1))
               .build());
       fail("Should have thrown an IllegalArgumentException");
     } catch (IllegalArgumentException expected) {

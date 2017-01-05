@@ -16,6 +16,7 @@
 
 package com.google.cloud.pubsub;
 
+import com.google.api.gax.bundling.FlowController;
 import com.google.auth.Credentials;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.Clock;
@@ -59,7 +60,7 @@ class SubscriberImpl extends AbstractService implements Subscriber {
   private static final Logger logger = LoggerFactory.getLogger(SubscriberImpl.class);
 
   private final String subscription;
-  private final PubSub.FlowControlSettings flowControlSettings;
+  private final FlowController.Settings flowControlSettings;
   private final Duration ackExpirationPadding;
   private final ScheduledExecutorService executor;
   private final Distribution ackLatencyDistribution =
@@ -312,12 +313,12 @@ class SubscriberImpl extends AbstractService implements Subscriber {
   }
 
   @Override
-  public Optional<Integer> getMaxOutstandingMessages() {
-    return flowControlSettings.getMaxOutstandingMessages();
+  public Optional<Integer> getMaxOutstandingElementCount() {
+    return flowControlSettings.getMaxOutstandingElementCount();
   }
 
   @Override
-  public Optional<Integer> getMaxOutstandingBytes() {
-    return flowControlSettings.getMaxOutstandingBytes();
+  public Optional<Integer> getMaxOutstandingRequestBytes() {
+    return flowControlSettings.getMaxOutstandingRequestBytes();
   }
 }

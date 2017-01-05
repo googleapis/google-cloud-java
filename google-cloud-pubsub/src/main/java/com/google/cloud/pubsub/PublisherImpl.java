@@ -16,6 +16,7 @@
 
 package com.google.cloud.pubsub;
 
+import com.google.api.gax.bundling.FlowController;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.common.base.Optional;
 import com.google.common.collect.ImmutableList;
@@ -68,7 +69,7 @@ final class PublisherImpl implements Publisher {
   private final Duration maxBundleDuration;
   private final boolean hasBundlingBytes;
 
-  private final PubSub.FlowControlSettings flowControlSettings;
+  private final FlowController.Settings flowControlSettings;
   private final boolean failOnFlowControlLimits;
 
   private final Lock messagesBundleLock;
@@ -162,13 +163,13 @@ final class PublisherImpl implements Publisher {
   }
 
   @Override
-  public Optional<Integer> getMaxOutstandingMessages() {
-    return flowControlSettings.getMaxOutstandingMessages();
+  public Optional<Integer> getMaxOutstandingElementCount() {
+    return flowControlSettings.getMaxOutstandingElementCount();
   }
 
   @Override
-  public Optional<Integer> getMaxOutstandingBytes() {
-    return flowControlSettings.getMaxOutstandingBytes();
+  public Optional<Integer> getMaxOutstandingRequestBytes() {
+    return flowControlSettings.getMaxOutstandingRequestBytes();
   }
 
   @Override
@@ -178,12 +179,12 @@ final class PublisherImpl implements Publisher {
 
   /** Whether flow control kicks in on a per outstanding messages basis. */
   boolean isPerMessageEnforced() {
-    return getMaxOutstandingMessages().isPresent();
+    return getMaxOutstandingElementCount().isPresent();
   }
 
   /** Whether flow control kicks in on a per outstanding bytes basis. */
   boolean isPerBytesEnforced() {
-    return getMaxOutstandingBytes().isPresent();
+    return getMaxOutstandingRequestBytes().isPresent();
   }
 
   @Override
@@ -200,7 +201,7 @@ final class PublisherImpl implements Publisher {
     final int messageSize = message.getSerializedSize();
     try {
       flowController.reserve(1, messageSize);
-    } catch (CloudPubsubFlowControlException e) {
+    } catch (FlowController.FlowControlException e) {
       return Futures.immediateFailedFuture(e);
     }
     OutstandingBundle bundleToSend = null;
