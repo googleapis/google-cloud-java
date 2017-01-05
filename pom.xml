@@ -91,7 +91,7 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <github.global.server>github</github.global.server>
     <google.auth.version>0.6.0</google.auth.version>
-    <grpc.version>1.0.1</grpc.version>
+    <grpc.version>1.0.3</grpc.version>
     <core.version>0.8.1-SNAPSHOT</core.version>
     <beta.version>0.8.1-beta-SNAPSHOT</beta.version>
     <storage.version>${beta.version}</storage.version>
