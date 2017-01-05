@@ -17,9 +17,9 @@ package com.google.cloud.errorreporting.spi.v1beta1;
 
 import com.google.api.gax.grpc.ChannelAndExecutor;
 import com.google.api.gax.grpc.UnaryCallable;
-import com.google.api.gax.protobuf.PathTemplate;
 import com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup;
 import com.google.devtools.clouderrorreporting.v1beta1.GetGroupRequest;
+import com.google.devtools.clouderrorreporting.v1beta1.GroupName;
 import com.google.devtools.clouderrorreporting.v1beta1.UpdateGroupRequest;
 import com.google.protobuf.ExperimentalApi;
 import io.grpc.ManagedChannel;
@@ -40,8 +40,8 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (ErrorGroupServiceClient errorGroupServiceClient = ErrorGroupServiceClient.create()) {
- *   String formattedGroupName = ErrorGroupServiceClient.formatGroupName("[PROJECT]", "[GROUP]");
- *   ErrorGroup response = errorGroupServiceClient.getGroup(formattedGroupName);
+ *   GroupName groupName = GroupName.create("[PROJECT]", "[GROUP]");
+ *   ErrorGroup response = errorGroupServiceClient.getGroup(groupName);
  * }
  * </code>
  * </pre>
@@ -96,26 +96,6 @@ public class ErrorGroupServiceClient implements AutoCloseable {
 
   private final UnaryCallable<GetGroupRequest, ErrorGroup> getGroupCallable;
   private final UnaryCallable<UpdateGroupRequest, ErrorGroup> updateGroupCallable;
-
-  private static final PathTemplate GROUP_PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding("projects/{project}/groups/{group}");
-
-  /** Formats a string containing the fully-qualified path to represent a group resource. */
-  public static final String formatGroupName(String project, String group) {
-    return GROUP_PATH_TEMPLATE.instantiate(
-        "project", project,
-        "group", group);
-  }
-
-  /** Parses the project from the given fully-qualified path which represents a group resource. */
-  public static final String parseProjectFromGroupName(String groupName) {
-    return GROUP_PATH_TEMPLATE.parse(groupName).get("project");
-  }
-
-  /** Parses the group from the given fully-qualified path which represents a group resource. */
-  public static final String parseGroupFromGroupName(String groupName) {
-    return GROUP_PATH_TEMPLATE.parse(groupName).get("group");
-  }
 
   /** Constructs an instance of ErrorGroupServiceClient with default settings. */
   public static final ErrorGroupServiceClient create() throws IOException {
@@ -179,8 +159,8 @@ public class ErrorGroupServiceClient implements AutoCloseable {
    *
    * <pre><code>
    * try (ErrorGroupServiceClient errorGroupServiceClient = ErrorGroupServiceClient.create()) {
-   *   String formattedGroupName = ErrorGroupServiceClient.formatGroupName("[PROJECT]", "[GROUP]");
-   *   ErrorGroup response = errorGroupServiceClient.getGroup(formattedGroupName);
+   *   GroupName groupName = GroupName.create("[PROJECT]", "[GROUP]");
+   *   ErrorGroup response = errorGroupServiceClient.getGroup(groupName);
    * }
    * </code></pre>
    *
@@ -192,9 +172,10 @@ public class ErrorGroupServiceClient implements AutoCloseable {
    *     <p>Example: &lt;code&gt;projects/my-project-123/groups/my-group&lt;/code&gt;
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  public final ErrorGroup getGroup(String groupName) {
-    GROUP_PATH_TEMPLATE.validate(groupName, "getGroup");
-    GetGroupRequest request = GetGroupRequest.newBuilder().setGroupName(groupName).build();
+  public final ErrorGroup getGroup(GroupName groupName) {
+
+    GetGroupRequest request =
+        GetGroupRequest.newBuilder().setGroupNameWithGroupName(groupName).build();
     return getGroup(request);
   }
 
@@ -206,9 +187,9 @@ public class ErrorGroupServiceClient implements AutoCloseable {
    *
    * <pre><code>
    * try (ErrorGroupServiceClient errorGroupServiceClient = ErrorGroupServiceClient.create()) {
-   *   String formattedGroupName = ErrorGroupServiceClient.formatGroupName("[PROJECT]", "[GROUP]");
+   *   GroupName groupName = GroupName.create("[PROJECT]", "[GROUP]");
    *   GetGroupRequest request = GetGroupRequest.newBuilder()
-   *     .setGroupName(formattedGroupName)
+   *     .setGroupNameWithGroupName(groupName)
    *     .build();
    *   ErrorGroup response = errorGroupServiceClient.getGroup(request);
    * }
@@ -229,9 +210,9 @@ public class ErrorGroupServiceClient implements AutoCloseable {
    *
    * <pre><code>
    * try (ErrorGroupServiceClient errorGroupServiceClient = ErrorGroupServiceClient.create()) {
-   *   String formattedGroupName = ErrorGroupServiceClient.formatGroupName("[PROJECT]", "[GROUP]");
+   *   GroupName groupName = GroupName.create("[PROJECT]", "[GROUP]");
    *   GetGroupRequest request = GetGroupRequest.newBuilder()
-   *     .setGroupName(formattedGroupName)
+   *     .setGroupNameWithGroupName(groupName)
    *     .build();
    *   ListenableFuture&lt;ErrorGroup&gt; future = errorGroupServiceClient.getGroupCallable().futureCall(request);
    *   // Do something

@@ -18,6 +18,8 @@ package com.google.cloud.logging.spi.v2;
 import com.google.logging.v2.DeleteLogRequest;
 import com.google.logging.v2.ListLogEntriesRequest;
 import com.google.logging.v2.ListLogEntriesResponse;
+import com.google.logging.v2.ListLogsRequest;
+import com.google.logging.v2.ListLogsResponse;
 import com.google.logging.v2.ListMonitoredResourceDescriptorsRequest;
 import com.google.logging.v2.ListMonitoredResourceDescriptorsResponse;
 import com.google.logging.v2.LoggingServiceV2Grpc.LoggingServiceV2ImplBase;
@@ -114,6 +116,20 @@ public class MockLoggingServiceV2Impl extends LoggingServiceV2ImplBase {
     if (response instanceof ListMonitoredResourceDescriptorsResponse) {
       requests.add(request);
       responseObserver.onNext((ListMonitoredResourceDescriptorsResponse) response);
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError((Exception) response);
+    } else {
+      responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+    }
+  }
+
+  @Override
+  public void listLogs(ListLogsRequest request, StreamObserver<ListLogsResponse> responseObserver) {
+    Object response = responses.remove();
+    if (response instanceof ListLogsResponse) {
+      requests.add(request);
+      responseObserver.onNext((ListLogsResponse) response);
       responseObserver.onCompleted();
     } else if (response instanceof Exception) {
       responseObserver.onError((Exception) response);

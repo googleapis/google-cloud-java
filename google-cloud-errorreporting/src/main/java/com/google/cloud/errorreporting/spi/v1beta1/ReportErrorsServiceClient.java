@@ -17,7 +17,7 @@ package com.google.cloud.errorreporting.spi.v1beta1;
 
 import com.google.api.gax.grpc.ChannelAndExecutor;
 import com.google.api.gax.grpc.UnaryCallable;
-import com.google.api.gax.protobuf.PathTemplate;
+import com.google.devtools.clouderrorreporting.v1beta1.ProjectName;
 import com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest;
 import com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse;
 import com.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent;
@@ -40,9 +40,9 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (ReportErrorsServiceClient reportErrorsServiceClient = ReportErrorsServiceClient.create()) {
- *   String formattedProjectName = ReportErrorsServiceClient.formatProjectName("[PROJECT]");
+ *   ProjectName projectName = ProjectName.create("[PROJECT]");
  *   ReportedErrorEvent event = ReportedErrorEvent.newBuilder().build();
- *   ReportErrorEventResponse response = reportErrorsServiceClient.reportErrorEvent(formattedProjectName, event);
+ *   ReportErrorEventResponse response = reportErrorsServiceClient.reportErrorEvent(projectName, event);
  * }
  * </code>
  * </pre>
@@ -97,19 +97,6 @@ public class ReportErrorsServiceClient implements AutoCloseable {
 
   private final UnaryCallable<ReportErrorEventRequest, ReportErrorEventResponse>
       reportErrorEventCallable;
-
-  private static final PathTemplate PROJECT_PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding("projects/{project}");
-
-  /** Formats a string containing the fully-qualified path to represent a project resource. */
-  public static final String formatProjectName(String project) {
-    return PROJECT_PATH_TEMPLATE.instantiate("project", project);
-  }
-
-  /** Parses the project from the given fully-qualified path which represents a project resource. */
-  public static final String parseProjectFromProjectName(String projectName) {
-    return PROJECT_PATH_TEMPLATE.parse(projectName).get("project");
-  }
 
   /** Constructs an instance of ReportErrorsServiceClient with default settings. */
   public static final ReportErrorsServiceClient create() throws IOException {
@@ -178,9 +165,9 @@ public class ReportErrorsServiceClient implements AutoCloseable {
    *
    * <pre><code>
    * try (ReportErrorsServiceClient reportErrorsServiceClient = ReportErrorsServiceClient.create()) {
-   *   String formattedProjectName = ReportErrorsServiceClient.formatProjectName("[PROJECT]");
+   *   ProjectName projectName = ProjectName.create("[PROJECT]");
    *   ReportedErrorEvent event = ReportedErrorEvent.newBuilder().build();
-   *   ReportErrorEventResponse response = reportErrorsServiceClient.reportErrorEvent(formattedProjectName, event);
+   *   ReportErrorEventResponse response = reportErrorsServiceClient.reportErrorEvent(projectName, event);
    * }
    * </code></pre>
    *
@@ -191,10 +178,13 @@ public class ReportErrorsServiceClient implements AutoCloseable {
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final ReportErrorEventResponse reportErrorEvent(
-      String projectName, ReportedErrorEvent event) {
-    PROJECT_PATH_TEMPLATE.validate(projectName, "reportErrorEvent");
+      ProjectName projectName, ReportedErrorEvent event) {
+
     ReportErrorEventRequest request =
-        ReportErrorEventRequest.newBuilder().setProjectName(projectName).setEvent(event).build();
+        ReportErrorEventRequest.newBuilder()
+            .setProjectNameWithProjectName(projectName)
+            .setEvent(event)
+            .build();
     return reportErrorEvent(request);
   }
 
@@ -213,10 +203,10 @@ public class ReportErrorsServiceClient implements AutoCloseable {
    *
    * <pre><code>
    * try (ReportErrorsServiceClient reportErrorsServiceClient = ReportErrorsServiceClient.create()) {
-   *   String formattedProjectName = ReportErrorsServiceClient.formatProjectName("[PROJECT]");
+   *   ProjectName projectName = ProjectName.create("[PROJECT]");
    *   ReportedErrorEvent event = ReportedErrorEvent.newBuilder().build();
    *   ReportErrorEventRequest request = ReportErrorEventRequest.newBuilder()
-   *     .setProjectName(formattedProjectName)
+   *     .setProjectNameWithProjectName(projectName)
    *     .setEvent(event)
    *     .build();
    *   ReportErrorEventResponse response = reportErrorsServiceClient.reportErrorEvent(request);
@@ -245,10 +235,10 @@ public class ReportErrorsServiceClient implements AutoCloseable {
    *
    * <pre><code>
    * try (ReportErrorsServiceClient reportErrorsServiceClient = ReportErrorsServiceClient.create()) {
-   *   String formattedProjectName = ReportErrorsServiceClient.formatProjectName("[PROJECT]");
+   *   ProjectName projectName = ProjectName.create("[PROJECT]");
    *   ReportedErrorEvent event = ReportedErrorEvent.newBuilder().build();
    *   ReportErrorEventRequest request = ReportErrorEventRequest.newBuilder()
-   *     .setProjectName(formattedProjectName)
+   *     .setProjectNameWithProjectName(projectName)
    *     .setEvent(event)
    *     .build();
    *   ListenableFuture&lt;ReportErrorEventResponse&gt; future = reportErrorsServiceClient.reportErrorEventCallable().futureCall(request);

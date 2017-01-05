@@ -20,6 +20,7 @@ import com.google.api.gax.testing.MockGrpcService;
 import com.google.api.gax.testing.MockServiceHelper;
 import com.google.devtools.clouderrorreporting.v1beta1.ErrorGroup;
 import com.google.devtools.clouderrorreporting.v1beta1.GetGroupRequest;
+import com.google.devtools.clouderrorreporting.v1beta1.GroupName;
 import com.google.devtools.clouderrorreporting.v1beta1.UpdateGroupRequest;
 import com.google.protobuf.GeneratedMessageV3;
 import io.grpc.Status;
@@ -78,21 +79,22 @@ public class ErrorGroupServiceTest {
   @Test
   @SuppressWarnings("all")
   public void getGroupTest() {
-    String name = "name3373707";
+    GroupName name = GroupName.create("[PROJECT]", "[GROUP]");
     String groupId = "groupId506361563";
-    ErrorGroup expectedResponse = ErrorGroup.newBuilder().setName(name).setGroupId(groupId).build();
+    ErrorGroup expectedResponse =
+        ErrorGroup.newBuilder().setNameWithGroupName(name).setGroupId(groupId).build();
     mockErrorGroupService.addResponse(expectedResponse);
 
-    String formattedGroupName = ErrorGroupServiceClient.formatGroupName("[PROJECT]", "[GROUP]");
+    GroupName groupName = GroupName.create("[PROJECT]", "[GROUP]");
 
-    ErrorGroup actualResponse = client.getGroup(formattedGroupName);
+    ErrorGroup actualResponse = client.getGroup(groupName);
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<GeneratedMessageV3> actualRequests = mockErrorGroupService.getRequests();
     Assert.assertEquals(1, actualRequests.size());
     GetGroupRequest actualRequest = (GetGroupRequest) actualRequests.get(0);
 
-    Assert.assertEquals(formattedGroupName, actualRequest.getGroupName());
+    Assert.assertEquals(groupName, actualRequest.getGroupNameAsGroupName());
   }
 
   @Test
@@ -102,9 +104,9 @@ public class ErrorGroupServiceTest {
     mockErrorGroupService.addException(exception);
 
     try {
-      String formattedGroupName = ErrorGroupServiceClient.formatGroupName("[PROJECT]", "[GROUP]");
+      GroupName groupName = GroupName.create("[PROJECT]", "[GROUP]");
 
-      client.getGroup(formattedGroupName);
+      client.getGroup(groupName);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
       Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
@@ -114,9 +116,10 @@ public class ErrorGroupServiceTest {
   @Test
   @SuppressWarnings("all")
   public void updateGroupTest() {
-    String name = "name3373707";
+    GroupName name = GroupName.create("[PROJECT]", "[GROUP]");
     String groupId = "groupId506361563";
-    ErrorGroup expectedResponse = ErrorGroup.newBuilder().setName(name).setGroupId(groupId).build();
+    ErrorGroup expectedResponse =
+        ErrorGroup.newBuilder().setNameWithGroupName(name).setGroupId(groupId).build();
     mockErrorGroupService.addResponse(expectedResponse);
 
     ErrorGroup group = ErrorGroup.newBuilder().build();

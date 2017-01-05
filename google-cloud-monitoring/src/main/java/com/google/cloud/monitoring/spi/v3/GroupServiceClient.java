@@ -20,15 +20,16 @@ import static com.google.cloud.monitoring.spi.v3.PagedResponseWrappers.ListGroup
 
 import com.google.api.gax.grpc.ChannelAndExecutor;
 import com.google.api.gax.grpc.UnaryCallable;
-import com.google.api.gax.protobuf.PathTemplate;
 import com.google.monitoring.v3.CreateGroupRequest;
 import com.google.monitoring.v3.DeleteGroupRequest;
 import com.google.monitoring.v3.GetGroupRequest;
 import com.google.monitoring.v3.Group;
+import com.google.monitoring.v3.GroupName;
 import com.google.monitoring.v3.ListGroupMembersRequest;
 import com.google.monitoring.v3.ListGroupMembersResponse;
 import com.google.monitoring.v3.ListGroupsRequest;
 import com.google.monitoring.v3.ListGroupsResponse;
+import com.google.monitoring.v3.ProjectName;
 import com.google.monitoring.v3.UpdateGroupRequest;
 import com.google.protobuf.Empty;
 import com.google.protobuf.ExperimentalApi;
@@ -58,8 +59,8 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
- *   String formattedName = GroupServiceClient.formatGroupName("[PROJECT]", "[GROUP]");
- *   Group response = groupServiceClient.getGroup(formattedName);
+ *   GroupName name = GroupName.create("[PROJECT]", "[GROUP]");
+ *   Group response = groupServiceClient.getGroup(name);
  * }
  * </code>
  * </pre>
@@ -121,39 +122,6 @@ public class GroupServiceClient implements AutoCloseable {
       listGroupMembersCallable;
   private final UnaryCallable<ListGroupMembersRequest, ListGroupMembersPagedResponse>
       listGroupMembersPagedCallable;
-
-  private static final PathTemplate PROJECT_PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding("projects/{project}");
-
-  private static final PathTemplate GROUP_PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding("projects/{project}/groups/{group}");
-
-  /** Formats a string containing the fully-qualified path to represent a project resource. */
-  public static final String formatProjectName(String project) {
-    return PROJECT_PATH_TEMPLATE.instantiate("project", project);
-  }
-
-  /** Formats a string containing the fully-qualified path to represent a group resource. */
-  public static final String formatGroupName(String project, String group) {
-    return GROUP_PATH_TEMPLATE.instantiate(
-        "project", project,
-        "group", group);
-  }
-
-  /** Parses the project from the given fully-qualified path which represents a project resource. */
-  public static final String parseProjectFromProjectName(String projectName) {
-    return PROJECT_PATH_TEMPLATE.parse(projectName).get("project");
-  }
-
-  /** Parses the project from the given fully-qualified path which represents a group resource. */
-  public static final String parseProjectFromGroupName(String groupName) {
-    return GROUP_PATH_TEMPLATE.parse(groupName).get("project");
-  }
-
-  /** Parses the group from the given fully-qualified path which represents a group resource. */
-  public static final String parseGroupFromGroupName(String groupName) {
-    return GROUP_PATH_TEMPLATE.parse(groupName).get("group");
-  }
 
   /** Constructs an instance of GroupServiceClient with default settings. */
   public static final GroupServiceClient create() throws IOException {
@@ -229,9 +197,9 @@ public class GroupServiceClient implements AutoCloseable {
    *
    * <pre><code>
    * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
-   *   String formattedName = GroupServiceClient.formatProjectName("[PROJECT]");
+   *   ProjectName name = ProjectName.create("[PROJECT]");
    *   ListGroupsRequest request = ListGroupsRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setNameWithProjectName(name)
    *     .build();
    *   for (Group element : groupServiceClient.listGroups(request).iterateAllElements()) {
    *     // doThingsWith(element);
@@ -254,9 +222,9 @@ public class GroupServiceClient implements AutoCloseable {
    *
    * <pre><code>
    * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
-   *   String formattedName = GroupServiceClient.formatProjectName("[PROJECT]");
+   *   ProjectName name = ProjectName.create("[PROJECT]");
    *   ListGroupsRequest request = ListGroupsRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setNameWithProjectName(name)
    *     .build();
    *   ListenableFuture&lt;ListGroupsPagedResponse&gt; future = groupServiceClient.listGroupsPagedCallable().futureCall(request);
    *   // Do something
@@ -278,9 +246,9 @@ public class GroupServiceClient implements AutoCloseable {
    *
    * <pre><code>
    * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
-   *   String formattedName = GroupServiceClient.formatProjectName("[PROJECT]");
+   *   ProjectName name = ProjectName.create("[PROJECT]");
    *   ListGroupsRequest request = ListGroupsRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setNameWithProjectName(name)
    *     .build();
    *   while (true) {
    *     ListGroupsResponse response = groupServiceClient.listGroupsCallable().call(request);
@@ -309,8 +277,8 @@ public class GroupServiceClient implements AutoCloseable {
    *
    * <pre><code>
    * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
-   *   String formattedName = GroupServiceClient.formatGroupName("[PROJECT]", "[GROUP]");
-   *   Group response = groupServiceClient.getGroup(formattedName);
+   *   GroupName name = GroupName.create("[PROJECT]", "[GROUP]");
+   *   Group response = groupServiceClient.getGroup(name);
    * }
    * </code></pre>
    *
@@ -318,9 +286,9 @@ public class GroupServiceClient implements AutoCloseable {
    *     `"projects/{project_id_or_number}/groups/{group_id}"`.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  public final Group getGroup(String name) {
-    GROUP_PATH_TEMPLATE.validate(name, "getGroup");
-    GetGroupRequest request = GetGroupRequest.newBuilder().setName(name).build();
+  public final Group getGroup(GroupName name) {
+
+    GetGroupRequest request = GetGroupRequest.newBuilder().setNameWithGroupName(name).build();
     return getGroup(request);
   }
 
@@ -332,9 +300,9 @@ public class GroupServiceClient implements AutoCloseable {
    *
    * <pre><code>
    * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
-   *   String formattedName = GroupServiceClient.formatGroupName("[PROJECT]", "[GROUP]");
+   *   GroupName name = GroupName.create("[PROJECT]", "[GROUP]");
    *   GetGroupRequest request = GetGroupRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setNameWithGroupName(name)
    *     .build();
    *   Group response = groupServiceClient.getGroup(request);
    * }
@@ -355,9 +323,9 @@ public class GroupServiceClient implements AutoCloseable {
    *
    * <pre><code>
    * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
-   *   String formattedName = GroupServiceClient.formatGroupName("[PROJECT]", "[GROUP]");
+   *   GroupName name = GroupName.create("[PROJECT]", "[GROUP]");
    *   GetGroupRequest request = GetGroupRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setNameWithGroupName(name)
    *     .build();
    *   ListenableFuture&lt;Group&gt; future = groupServiceClient.getGroupCallable().futureCall(request);
    *   // Do something
@@ -377,9 +345,9 @@ public class GroupServiceClient implements AutoCloseable {
    *
    * <pre><code>
    * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
-   *   String formattedName = GroupServiceClient.formatProjectName("[PROJECT]");
+   *   ProjectName name = ProjectName.create("[PROJECT]");
    *   Group group = Group.newBuilder().build();
-   *   Group response = groupServiceClient.createGroup(formattedName, group);
+   *   Group response = groupServiceClient.createGroup(name, group);
    * }
    * </code></pre>
    *
@@ -389,10 +357,10 @@ public class GroupServiceClient implements AutoCloseable {
    *     assigns the name.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  public final Group createGroup(String name, Group group) {
-    PROJECT_PATH_TEMPLATE.validate(name, "createGroup");
+  public final Group createGroup(ProjectName name, Group group) {
+
     CreateGroupRequest request =
-        CreateGroupRequest.newBuilder().setName(name).setGroup(group).build();
+        CreateGroupRequest.newBuilder().setNameWithProjectName(name).setGroup(group).build();
     return createGroup(request);
   }
 
@@ -404,10 +372,10 @@ public class GroupServiceClient implements AutoCloseable {
    *
    * <pre><code>
    * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
-   *   String formattedName = GroupServiceClient.formatProjectName("[PROJECT]");
+   *   ProjectName name = ProjectName.create("[PROJECT]");
    *   Group group = Group.newBuilder().build();
    *   CreateGroupRequest request = CreateGroupRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setNameWithProjectName(name)
    *     .setGroup(group)
    *     .build();
    *   Group response = groupServiceClient.createGroup(request);
@@ -429,10 +397,10 @@ public class GroupServiceClient implements AutoCloseable {
    *
    * <pre><code>
    * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
-   *   String formattedName = GroupServiceClient.formatProjectName("[PROJECT]");
+   *   ProjectName name = ProjectName.create("[PROJECT]");
    *   Group group = Group.newBuilder().build();
    *   CreateGroupRequest request = CreateGroupRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setNameWithProjectName(name)
    *     .setGroup(group)
    *     .build();
    *   ListenableFuture&lt;Group&gt; future = groupServiceClient.createGroupCallable().futureCall(request);
@@ -521,8 +489,8 @@ public class GroupServiceClient implements AutoCloseable {
    *
    * <pre><code>
    * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
-   *   String formattedName = GroupServiceClient.formatGroupName("[PROJECT]", "[GROUP]");
-   *   groupServiceClient.deleteGroup(formattedName);
+   *   GroupName name = GroupName.create("[PROJECT]", "[GROUP]");
+   *   groupServiceClient.deleteGroup(name);
    * }
    * </code></pre>
    *
@@ -530,9 +498,9 @@ public class GroupServiceClient implements AutoCloseable {
    *     `"projects/{project_id_or_number}/groups/{group_id}"`.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  public final void deleteGroup(String name) {
-    GROUP_PATH_TEMPLATE.validate(name, "deleteGroup");
-    DeleteGroupRequest request = DeleteGroupRequest.newBuilder().setName(name).build();
+  public final void deleteGroup(GroupName name) {
+
+    DeleteGroupRequest request = DeleteGroupRequest.newBuilder().setNameWithGroupName(name).build();
     deleteGroup(request);
   }
 
@@ -544,9 +512,9 @@ public class GroupServiceClient implements AutoCloseable {
    *
    * <pre><code>
    * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
-   *   String formattedName = GroupServiceClient.formatGroupName("[PROJECT]", "[GROUP]");
+   *   GroupName name = GroupName.create("[PROJECT]", "[GROUP]");
    *   DeleteGroupRequest request = DeleteGroupRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setNameWithGroupName(name)
    *     .build();
    *   groupServiceClient.deleteGroup(request);
    * }
@@ -567,9 +535,9 @@ public class GroupServiceClient implements AutoCloseable {
    *
    * <pre><code>
    * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
-   *   String formattedName = GroupServiceClient.formatGroupName("[PROJECT]", "[GROUP]");
+   *   GroupName name = GroupName.create("[PROJECT]", "[GROUP]");
    *   DeleteGroupRequest request = DeleteGroupRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setNameWithGroupName(name)
    *     .build();
    *   ListenableFuture&lt;Void&gt; future = groupServiceClient.deleteGroupCallable().futureCall(request);
    *   // Do something
@@ -589,8 +557,8 @@ public class GroupServiceClient implements AutoCloseable {
    *
    * <pre><code>
    * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
-   *   String formattedName = GroupServiceClient.formatGroupName("[PROJECT]", "[GROUP]");
-   *   for (MonitoredResource element : groupServiceClient.listGroupMembers(formattedName).iterateAllElements()) {
+   *   GroupName name = GroupName.create("[PROJECT]", "[GROUP]");
+   *   for (MonitoredResource element : groupServiceClient.listGroupMembers(name).iterateAllElements()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -600,9 +568,9 @@ public class GroupServiceClient implements AutoCloseable {
    *     `"projects/{project_id_or_number}/groups/{group_id}"`.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  public final ListGroupMembersPagedResponse listGroupMembers(String name) {
-    GROUP_PATH_TEMPLATE.validate(name, "listGroupMembers");
-    ListGroupMembersRequest request = ListGroupMembersRequest.newBuilder().setName(name).build();
+  public final ListGroupMembersPagedResponse listGroupMembers(GroupName name) {
+    ListGroupMembersRequest request =
+        ListGroupMembersRequest.newBuilder().setNameWithGroupName(name).build();
     return listGroupMembers(request);
   }
 
@@ -614,9 +582,9 @@ public class GroupServiceClient implements AutoCloseable {
    *
    * <pre><code>
    * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
-   *   String formattedName = GroupServiceClient.formatGroupName("[PROJECT]", "[GROUP]");
+   *   GroupName name = GroupName.create("[PROJECT]", "[GROUP]");
    *   ListGroupMembersRequest request = ListGroupMembersRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setNameWithGroupName(name)
    *     .build();
    *   for (MonitoredResource element : groupServiceClient.listGroupMembers(request).iterateAllElements()) {
    *     // doThingsWith(element);
@@ -639,9 +607,9 @@ public class GroupServiceClient implements AutoCloseable {
    *
    * <pre><code>
    * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
-   *   String formattedName = GroupServiceClient.formatGroupName("[PROJECT]", "[GROUP]");
+   *   GroupName name = GroupName.create("[PROJECT]", "[GROUP]");
    *   ListGroupMembersRequest request = ListGroupMembersRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setNameWithGroupName(name)
    *     .build();
    *   ListenableFuture&lt;ListGroupMembersPagedResponse&gt; future = groupServiceClient.listGroupMembersPagedCallable().futureCall(request);
    *   // Do something
@@ -664,9 +632,9 @@ public class GroupServiceClient implements AutoCloseable {
    *
    * <pre><code>
    * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
-   *   String formattedName = GroupServiceClient.formatGroupName("[PROJECT]", "[GROUP]");
+   *   GroupName name = GroupName.create("[PROJECT]", "[GROUP]");
    *   ListGroupMembersRequest request = ListGroupMembersRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setNameWithGroupName(name)
    *     .build();
    *   while (true) {
    *     ListGroupMembersResponse response = groupServiceClient.listGroupMembersCallable().call(request);

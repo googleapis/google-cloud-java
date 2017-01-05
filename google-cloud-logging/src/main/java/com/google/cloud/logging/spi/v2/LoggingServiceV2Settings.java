@@ -16,6 +16,7 @@
 package com.google.cloud.logging.spi.v2;
 
 import static com.google.cloud.logging.spi.v2.PagedResponseWrappers.ListLogEntriesPagedResponse;
+import static com.google.cloud.logging.spi.v2.PagedResponseWrappers.ListLogsPagedResponse;
 import static com.google.cloud.logging.spi.v2.PagedResponseWrappers.ListMonitoredResourceDescriptorsPagedResponse;
 
 import com.google.api.MonitoredResourceDescriptor;
@@ -41,6 +42,8 @@ import com.google.common.collect.Sets;
 import com.google.logging.v2.DeleteLogRequest;
 import com.google.logging.v2.ListLogEntriesRequest;
 import com.google.logging.v2.ListLogEntriesResponse;
+import com.google.logging.v2.ListLogsRequest;
+import com.google.logging.v2.ListLogsResponse;
 import com.google.logging.v2.ListMonitoredResourceDescriptorsRequest;
 import com.google.logging.v2.ListMonitoredResourceDescriptorsResponse;
 import com.google.logging.v2.LogEntry;
@@ -109,6 +112,8 @@ public class LoggingServiceV2Settings extends ClientSettings {
           ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse,
           ListMonitoredResourceDescriptorsPagedResponse>
       listMonitoredResourceDescriptorsSettings;
+  private final PagedCallSettings<ListLogsRequest, ListLogsResponse, ListLogsPagedResponse>
+      listLogsSettings;
 
   /** Returns the object with the settings used for calls to deleteLog. */
   public SimpleCallSettings<DeleteLogRequest, Empty> deleteLogSettings() {
@@ -134,6 +139,12 @@ public class LoggingServiceV2Settings extends ClientSettings {
           ListMonitoredResourceDescriptorsPagedResponse>
       listMonitoredResourceDescriptorsSettings() {
     return listMonitoredResourceDescriptorsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listLogs. */
+  public PagedCallSettings<ListLogsRequest, ListLogsResponse, ListLogsPagedResponse>
+      listLogsSettings() {
+    return listLogsSettings;
   }
 
   /** Returns a builder for the default ExecutorProvider for this service. */
@@ -192,6 +203,7 @@ public class LoggingServiceV2Settings extends ClientSettings {
     listLogEntriesSettings = settingsBuilder.listLogEntriesSettings().build();
     listMonitoredResourceDescriptorsSettings =
         settingsBuilder.listMonitoredResourceDescriptorsSettings().build();
+    listLogsSettings = settingsBuilder.listLogsSettings().build();
   }
 
   private static final PagedListDescriptor<ListLogEntriesRequest, ListLogEntriesResponse, LogEntry>
@@ -274,6 +286,40 @@ public class LoggingServiceV2Settings extends ClientSettings {
             }
           };
 
+  private static final PagedListDescriptor<ListLogsRequest, ListLogsResponse, String>
+      LIST_LOGS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListLogsRequest, ListLogsResponse, String>() {
+            @Override
+            public Object emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListLogsRequest injectToken(ListLogsRequest payload, Object token) {
+              return ListLogsRequest.newBuilder(payload).setPageToken((String) token).build();
+            }
+
+            @Override
+            public ListLogsRequest injectPageSize(ListLogsRequest payload, int pageSize) {
+              return ListLogsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListLogsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public Object extractNextToken(ListLogsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<String> extractResources(ListLogsResponse payload) {
+              return payload.getLogNamesList();
+            }
+          };
+
   private static final PagedListResponseFactory<
           ListLogEntriesRequest, ListLogEntriesResponse, ListLogEntriesPagedResponse>
       LIST_LOG_ENTRIES_PAGE_STR_FACT =
@@ -309,6 +355,19 @@ public class LoggingServiceV2Settings extends ClientSettings {
             }
           };
 
+  private static final PagedListResponseFactory<
+          ListLogsRequest, ListLogsResponse, ListLogsPagedResponse>
+      LIST_LOGS_PAGE_STR_FACT =
+          new PagedListResponseFactory<ListLogsRequest, ListLogsResponse, ListLogsPagedResponse>() {
+            @Override
+            public ListLogsPagedResponse createPagedListResponse(
+                UnaryCallable<ListLogsRequest, ListLogsResponse> callable,
+                ListLogsRequest request,
+                CallContext context) {
+              return new ListLogsPagedResponse(callable, LIST_LOGS_PAGE_STR_DESC, request, context);
+            }
+          };
+
   /** Builder for LoggingServiceV2Settings. */
   public static class Builder extends ClientSettings.Builder {
     private final ImmutableList<UnaryCallSettings.Builder> unaryMethodSettingsBuilders;
@@ -323,6 +382,9 @@ public class LoggingServiceV2Settings extends ClientSettings {
             ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse,
             ListMonitoredResourceDescriptorsPagedResponse>
         listMonitoredResourceDescriptorsSettings;
+    private final PagedCallSettings.Builder<
+            ListLogsRequest, ListLogsResponse, ListLogsPagedResponse>
+        listLogsSettings;
 
     private static final ImmutableMap<String, ImmutableSet<Status.Code>> RETRYABLE_CODE_DEFINITIONS;
 
@@ -382,12 +444,17 @@ public class LoggingServiceV2Settings extends ClientSettings {
               LoggingServiceV2Grpc.METHOD_LIST_MONITORED_RESOURCE_DESCRIPTORS,
               LIST_MONITORED_RESOURCE_DESCRIPTORS_PAGE_STR_FACT);
 
+      listLogsSettings =
+          PagedCallSettings.newBuilder(
+              LoggingServiceV2Grpc.METHOD_LIST_LOGS, LIST_LOGS_PAGE_STR_FACT);
+
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder>of(
               deleteLogSettings,
               writeLogEntriesSettings,
               listLogEntriesSettings,
-              listMonitoredResourceDescriptorsSettings);
+              listMonitoredResourceDescriptorsSettings,
+              listLogsSettings);
     }
 
     private static Builder createDefault() {
@@ -413,6 +480,11 @@ public class LoggingServiceV2Settings extends ClientSettings {
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettingsBuilder(RETRY_PARAM_DEFINITIONS.get("default"));
 
+      builder
+          .listLogsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettingsBuilder(RETRY_PARAM_DEFINITIONS.get("default"));
+
       return builder;
     }
 
@@ -424,13 +496,15 @@ public class LoggingServiceV2Settings extends ClientSettings {
       listLogEntriesSettings = settings.listLogEntriesSettings.toBuilder();
       listMonitoredResourceDescriptorsSettings =
           settings.listMonitoredResourceDescriptorsSettings.toBuilder();
+      listLogsSettings = settings.listLogsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder>of(
               deleteLogSettings,
               writeLogEntriesSettings,
               listLogEntriesSettings,
-              listMonitoredResourceDescriptorsSettings);
+              listMonitoredResourceDescriptorsSettings,
+              listLogsSettings);
     }
 
     @Override
@@ -481,6 +555,12 @@ public class LoggingServiceV2Settings extends ClientSettings {
             ListMonitoredResourceDescriptorsPagedResponse>
         listMonitoredResourceDescriptorsSettings() {
       return listMonitoredResourceDescriptorsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listLogs. */
+    public PagedCallSettings.Builder<ListLogsRequest, ListLogsResponse, ListLogsPagedResponse>
+        listLogsSettings() {
+      return listLogsSettings;
     }
 
     @Override
