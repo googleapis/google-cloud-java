@@ -143,8 +143,9 @@ public interface Publisher {
    * #getMaxOutstandingRequestBytes()} & {@link #getMaxOutstandingElementCount()}).
    *
    * <p>If set to false, a publish call will fail with either {@link
-   * RequestByteMaxOutstandingReachedException} or {@link ElementCountMaxOutstandingReachedException}, as
-   * appropriate, when flow control limits are reached.
+   * RequestByteMaxOutstandingReachedException} or {@link
+   * ElementCountMaxOutstandingReachedException}, as appropriate, when flow control limits are
+   * reached.
    */
   boolean failOnFlowControlLimits();
 
@@ -250,8 +251,8 @@ public interface Publisher {
 
     /**
      * Whether to fail publish when reaching any of the flow control limits, with either a {@link
-     * RequestByteMaxOutstandingReachedException} or {@link ElementCountMaxOutstandingReachedException} as
-     * appropriate.
+     * RequestByteMaxOutstandingReachedException} or {@link
+     * ElementCountMaxOutstandingReachedException} as appropriate.
      *
      * <p>If set to false, then publish operations will block the current thread until the
      * outstanding requests go under the limits.

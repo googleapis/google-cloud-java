@@ -410,7 +410,10 @@ public class PublisherImplTest {
     }
     try {
       builder.setBundlingSettings(
-          Publisher.DEFAULT_BUNDLING_SETTINGS.toBuilder().setRequestByteThreshold((Long)null).build());
+          Publisher.DEFAULT_BUNDLING_SETTINGS
+              .toBuilder()
+              .setRequestByteThreshold((Long) null)
+              .build());
       fail("Should have thrown an NullPointerException");
     } catch (NullPointerException expected) {
       // Expected
@@ -454,7 +457,10 @@ public class PublisherImplTest {
         Publisher.DEFAULT_BUNDLING_SETTINGS.toBuilder().setElementCountThreshold(1).build());
     try {
       builder.setBundlingSettings(
-          Publisher.DEFAULT_BUNDLING_SETTINGS.toBuilder().setElementCountThreshold((Long)null).build());
+          Publisher.DEFAULT_BUNDLING_SETTINGS
+              .toBuilder()
+              .setElementCountThreshold((Long) null)
+              .build());
       fail("Should have thrown an NullPointerException");
     } catch (NullPointerException expected) {
       // Expected

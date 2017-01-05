@@ -40,7 +40,6 @@ import com.google.pubsub.v1.Subscription;
 import io.grpc.Channel;
 import io.grpc.StatusRuntimeException;
 import io.grpc.auth.MoreCallCredentials;
-import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
