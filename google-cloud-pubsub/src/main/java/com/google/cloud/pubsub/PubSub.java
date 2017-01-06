@@ -77,9 +77,7 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
     }
   }
 
-  /**
-   * Class for specifying options for pulling messages.
-   */
+  /** Class for specifying options for pulling messages. */
   final class PullOption extends Option {
 
     private static final long serialVersionUID = 4792164134340316582L;

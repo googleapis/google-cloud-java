@@ -27,7 +27,6 @@ import com.google.cloud.Identity;
 import com.google.cloud.Page;
 import com.google.cloud.Policy;
 import com.google.cloud.Role;
-import com.google.cloud.pubsub.Message;
 import com.google.cloud.pubsub.PubSub.ListOption;
 import com.google.cloud.pubsub.SubscriptionId;
 import com.google.cloud.pubsub.Topic;

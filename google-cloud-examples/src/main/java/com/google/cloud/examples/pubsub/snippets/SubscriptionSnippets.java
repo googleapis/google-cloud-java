@@ -25,7 +25,6 @@ package com.google.cloud.examples.pubsub.snippets;
 import com.google.cloud.Identity;
 import com.google.cloud.Policy;
 import com.google.cloud.Role;
-import com.google.cloud.pubsub.Message;
 import com.google.cloud.pubsub.PushConfig;
 import com.google.cloud.pubsub.Subscription;
 

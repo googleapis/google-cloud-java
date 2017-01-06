@@ -80,7 +80,6 @@ public class PubSubImplTest {
           return topicInfo.toPb(PROJECT);
         }
       };
-  private static final Message MESSAGE = Message.of("payload");
   private static final String SUBSCRIPTION = "subscription";
   private static final String SUBSCRIPTION_NAME_PB = "projects/project/subscriptions/subscription";
   private static final PushConfig PUSH_CONFIG = PushConfig.of("endpoint");
@@ -93,18 +92,6 @@ public class PubSubImplTest {
       SubscriptionInfo.newBuilder(TopicId.of(PROJECT, TOPIC), SUBSCRIPTION)
           .setAckDeadLineSeconds(42)
           .setPushConfig(PUSH_CONFIG)
-          .build();
-  private static final Message MESSAGE1 = Message.of("payload1");
-  private static final com.google.pubsub.v1.ReceivedMessage MESSAGE_PB1 =
-      com.google.pubsub.v1.ReceivedMessage.newBuilder()
-          .setMessage(MESSAGE1.toPb())
-          .setAckId("ackId1")
-          .build();
-  private static final Message MESSAGE2 = Message.of("payload2");
-  private static final com.google.pubsub.v1.ReceivedMessage MESSAGE_PB2 =
-      com.google.pubsub.v1.ReceivedMessage.newBuilder()
-          .setMessage(MESSAGE2.toPb())
-          .setAckId("ackId2")
           .build();
   private static final Policy POLICY = Policy.newBuilder()
       .addIdentity(Role.viewer(), Identity.allAuthenticatedUsers())
