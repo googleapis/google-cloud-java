@@ -17,6 +17,7 @@
 package com.google.cloud.pubsub;
 
 import com.google.api.gax.bundling.FlowController;
+import com.google.api.stats.Distribution;
 import com.google.auth.Credentials;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.Clock;
