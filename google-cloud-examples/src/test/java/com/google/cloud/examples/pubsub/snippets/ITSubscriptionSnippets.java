@@ -25,7 +25,6 @@ import static org.junit.Assert.assertTrue;
 import com.google.cloud.Identity;
 import com.google.cloud.Policy;
 import com.google.cloud.Role;
-import com.google.cloud.pubsub.Message;
 import com.google.cloud.pubsub.PubSub;
 import com.google.cloud.pubsub.PubSubOptions;
 import com.google.cloud.pubsub.Subscription;
@@ -47,8 +46,6 @@ public class ITSubscriptionSnippets {
       "it-subscription-snippets-topic-" + UUID.randomUUID().toString();
   private static final String SUBSCRIPTION =
       "it-subscription-snippets-subscription-" + UUID.randomUUID().toString();
-  private static final Message MESSAGE1 = Message.of("message1");
-  private static final Message MESSAGE2 = Message.of("message2");
 
   private static PubSub pubsub;
   private static Topic topic;
