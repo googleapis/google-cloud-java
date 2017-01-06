@@ -20,10 +20,8 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.cloud.pubsub.spi.v1.SubscriberClient;
 import com.google.common.base.MoreObjects;
-
 import java.io.Serializable;
 import java.util.Objects;
-import java.util.concurrent.TimeUnit;
 
 /**
  * A Google Cloud Pub/Sub subscription. A subscription represents the stream of messages from a
@@ -36,14 +34,8 @@ import java.util.concurrent.TimeUnit;
  * processed and the Pub/Sub system can delete it from the subscription; a non-success response
  * indicates that the Pub/Sub server should resend it (implicit "nack").
  *
- * <p>In a pull subscription, the subscribing application must explicitly pull messages using one of
- * {@link PubSub#pull(String, int)}, {@link PubSub#pullAsync(String, int)} or
- * {@link PubSub#pullAsync(String, PubSub.MessageProcessor callback, PubSub.PullOption...)}.
- * When messages are pulled with {@link PubSub#pull(String, int)} or
- * {@link PubSub#pullAsync(String, int)} the subscribing application must also explicitly
- * acknowledge them using one of {@link PubSub#ack(String, Iterable)},
- * {@link PubSub#ack(String, String, String...)}, {@link PubSub#ackAsync(String, Iterable)} or
- * {@link PubSub#ackAsync(String, String, String...)}.
+ * <p>In a pull subscription, the subscribing application must pull messages using {@link
+ * PubSub#getSubscriber(SubscriptionInfo, Subscriber.MessageReceiver)}.
  *
  * @see <a href="https://cloud.google.com/pubsub/overview#data_model">Pub/Sub Data Model</a>
  * @see <a href="https://cloud.google.com/pubsub/subscriber">Subscriber Guide</a>
@@ -140,10 +132,10 @@ public class SubscriptionInfo implements Serializable {
      * acknowledge the message. After message delivery but before the ack deadline expires and
      * before the message is acknowledged, it is an outstanding message and will not be delivered
      * again during that time (on a best-effort basis). For pull subscriptions, this value is used
-     * as the initial value for the ack deadline. To override the ack deadline value for a given
-     * message, use {@link PubSub#modifyAckDeadline(String, int, TimeUnit, Iterable)}. For push
-     * delivery, this value is used to set the request timeout for the call to the push endpoint.
-     * This value must be between 10 and 600 seconds, if not specified, 10 seconds is used.
+     * as the initial value for the ack deadline, and {@link Subscriber} automatically renews
+     * unprocessed messages. For push delivery, this value is used to set the request timeout for
+     * the call to the push endpoint. This value must be between 10 and 600 seconds, if not
+     * specified, 10 seconds is used.
      */
     @Deprecated
     public abstract Builder ackDeadLineSeconds(int ackDeadLineSeconds);
@@ -153,10 +145,10 @@ public class SubscriptionInfo implements Serializable {
      * acknowledge the message. After message delivery but before the ack deadline expires and
      * before the message is acknowledged, it is an outstanding message and will not be delivered
      * again during that time (on a best-effort basis). For pull subscriptions, this value is used
-     * as the initial value for the ack deadline. To override the ack deadline value for a given
-     * message, use {@link PubSub#modifyAckDeadline(String, int, TimeUnit, Iterable)}. For push
-     * delivery, this value is used to set the request timeout for the call to the push endpoint.
-     * This value must be between 10 and 600 seconds, if not specified, 10 seconds is used.
+     * as the initial value for the ack deadline. , and {@link Subscriber} automatically renews
+     * unprocessed messages. For push delivery, this value is used to set the request timeout for
+     * the call to the push endpoint. This value must be between 10 and 600 seconds, if not
+     * specified, 10 seconds is used.
      */
     public abstract Builder setAckDeadLineSeconds(int ackDeadLineSeconds);
 
@@ -333,13 +325,13 @@ public class SubscriptionInfo implements Serializable {
 
   /**
    * Returns the maximum time after a subscriber receives a message before the subscriber should
-   * acknowledge the message. After message delivery but before the ack deadline expires and
-   * before the message is acknowledged, it is an outstanding message and will not be delivered
-   * again during that time (on a best-effort basis). For pull subscriptions, this value is used
-   * as the initial value for the ack deadline. To override the ack deadline value for a given
-   * message, use {@link PubSub#modifyAckDeadline(String, int, TimeUnit, Iterable)}. For push
-   * delivery, this value is used to set the request timeout for the call to the push endpoint. This
-   * value must be between 10 and 600 seconds, if not specified, 10 seconds is used.
+   * acknowledge the message. After message delivery but before the ack deadline expires and before
+   * the message is acknowledged, it is an outstanding message and will not be delivered again
+   * during that time (on a best-effort basis). For pull subscriptions, this value is used as the
+   * initial value for the ack deadline, and {@link Subscriber} automatically renews unprocessed
+   * messages. For push delivery, this value is used to set the request timeout for the call to the
+   * push endpoint. This value must be between 10 and 600 seconds, if not specified, 10 seconds is
+   * used.
    */
   @Deprecated
   public long ackDeadlineSeconds() {
@@ -348,13 +340,13 @@ public class SubscriptionInfo implements Serializable {
 
   /**
    * Returns the maximum time after a subscriber receives a message before the subscriber should
-   * acknowledge the message. After message delivery but before the ack deadline expires and
-   * before the message is acknowledged, it is an outstanding message and will not be delivered
-   * again during that time (on a best-effort basis). For pull subscriptions, this value is used
-   * as the initial value for the ack deadline. To override the ack deadline value for a given
-   * message, use {@link PubSub#modifyAckDeadline(String, int, TimeUnit, Iterable)}. For push
-   * delivery, this value is used to set the request timeout for the call to the push endpoint. This
-   * value must be between 10 and 600 seconds, if not specified, 10 seconds is used.
+   * acknowledge the message. After message delivery but before the ack deadline expires and before
+   * the message is acknowledged, it is an outstanding message and will not be delivered again
+   * during that time (on a best-effort basis). For pull subscriptions, this value is used as the
+   * initial value for the ack deadline, and {@link Subscriber} automatically renews unprocessed
+   * messages. For push delivery, this value is used to set the request timeout for the call to the
+   * push endpoint. This value must be between 10 and 600 seconds, if not specified, 10 seconds is
+   * used.
    */
   public long getAckDeadlineSeconds() {
     return ackDeadlineSeconds;

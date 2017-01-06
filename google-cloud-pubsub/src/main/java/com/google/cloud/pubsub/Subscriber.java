@@ -16,6 +16,7 @@
 
 package com.google.cloud.pubsub;
 
+import com.google.api.gax.bundling.FlowController;
 import com.google.auth.Credentials;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.Clock;
@@ -36,9 +37,9 @@ import org.joda.time.Duration;
  *
  * <p>A {@link Subscriber} allows you to provide an implementation of a {@link MessageReceiver
  * receiver} to which messages are going to be delivered as soon as they are received by the
- * subscriber. The delivered messages then can be {@link AckReply#ACK acked} or {@link
- * AckReply#NACK nacked} at will as they get processed by the receiver. Nacking a
- * messages implies a later redelivery of such message.
+ * subscriber. The delivered messages then can be {@link AckReply#ACK acked} or {@link AckReply#NACK
+ * nacked} at will as they get processed by the receiver. Nacking a messages implies a later
+ * redelivery of such message.
  *
  * <p>The subscriber handles the ack management, by automatically extending the ack deadline while
  * the message is being processed, to then issue the ack or nack of such message when the processing
@@ -53,38 +54,38 @@ import org.joda.time.Duration;
  *       in memory before the receiver either ack or nack them.
  * </ul>
  *
- * <p>If no credentials are provided, the {@link Publisher} will use application default
- * credentials through {@link GoogleCredentials#getApplicationDefault}.
+ * <p>If no credentials are provided, the {@link Publisher} will use application default credentials
+ * through {@link GoogleCredentials#getApplicationDefault}.
  *
  * <p>For example, a {@link Subscriber} can be constructed and used to receive messages as follows:
  *
- * <pre>
- *  MessageReceiver receiver =
- *      message -> {
- *        // ... process message ...
- *        return Futures.immediateFuture(AckReply.ACK);
- *      });
+ * <pre>{@code
+ * MessageReceiver receiver = new MessageReceiver() {
+ *   @Override
+ *   public ListenableFuture<AckReply> receiveMessage(PubsubMessage message) {
+ *     // ... process message ...
+ *     return Futures.immediateFuture(AckReply.ACK);
+ *   }
+ * }
  *
- *  Subscriber subscriber =
- *      Subscriber.Builder.newBuilder(MY_SUBSCRIPTION, receiver)
- *          .setMaxBundleAcks(100)
- *          .build();
+ * Subscriber subscriber =
+ *     Subscriber.Builder.newBuilder(MY_SUBSCRIPTION, receiver)
+ *         .setMaxBundleAcks(100)
+ *         .build();
  *
- *  subscriber.startAsync();
+ * subscriber.startAsync();
  *
- *  ... recommended, listen for fatal errors that break the subscriber streaming ...
- *  subscriber.addListener(
-        new Listener() {
-          @Override
-          public void failed(State from, Throwable failure) {
-            System.out.println("Subscriber faile with error: " + failure);
-          }
-        },
-        Executors.newSingleThreadExecutor());
+ * // ... recommended, listen for fatal errors that break the subscriber streaming ...
+ * subscriber.addListener(new Listener() {
+ *   @Override
+ *   public void failed(State from, Throwable failure) {
+ *     System.out.println("Subscriber faile with error: " + failure);
+ *   }
+ * }, Executors.newSingleThreadExecutor());
  *
- *  ... and when done with the subscriber ...
- *  subscriber.stopAsync();
- * </pre>
+ * // ... and when done with the subscriber ...
+ * subscriber.stopAsync();
+ * }</pre>
  */
 public interface Subscriber extends Service {
   String PUBSUB_API_ADDRESS = "pubsub.googleapis.com";
@@ -128,14 +129,12 @@ public interface Subscriber extends Service {
    *
    * <p><b>When limits are enforced, no more messages will be dispatched to the {@link
    * MessageReceiver} but due to the gRPC and HTTP/2 buffering and congestion control window
-   * management, still some extra bytes could be kept at lower layers.
+   * management, still some extra bytes could be kept at lower layers.</b>
    */
-  Optional<Integer> getMaxOutstandingMessages();
+  Optional<Integer> getMaxOutstandingElementCount();
 
-  /**
-   * Maximum number of outstanding (i.e. pending to process) bytes before limits are enforced.
-   */
-  Optional<Integer> getMaxOutstandingBytes();
+  /** Maximum number of outstanding (i.e. pending to process) bytes before limits are enforced. */
+  Optional<Integer> getMaxOutstandingRequestBytes();
 
   /** Builder of {@link Subscriber Subscribers}. */
   final class Builder {
@@ -143,17 +142,17 @@ public interface Subscriber extends Service {
     private static final Duration DEFAULT_ACK_EXPIRATION_PADDING = Duration.millis(500);
 
     String subscription;
-    Optional<Credentials> credentials;
+    Optional<Credentials> credentials = Optional.absent();
     MessageReceiver receiver;
 
-    Duration ackExpirationPadding;
+    Duration ackExpirationPadding = DEFAULT_ACK_EXPIRATION_PADDING;
 
-    Optional<Integer> maxOutstandingMessages;
-    Optional<Integer> maxOutstandingBytes;
+    FlowController.Settings flowControlSettings = FlowController.Settings.DEFAULT;
 
-    Optional<ScheduledExecutorService> executor;
-    Optional<ManagedChannelBuilder<? extends ManagedChannelBuilder<?>>> channelBuilder;
-    Optional<Clock> clock;
+    Optional<ScheduledExecutorService> executor = Optional.absent();
+    Optional<ManagedChannelBuilder<? extends ManagedChannelBuilder<?>>> channelBuilder =
+        Optional.absent();
+    Optional<Clock> clock = Optional.absent();
 
     /**
      * Constructs a new {@link Builder}.
@@ -170,19 +169,8 @@ public interface Subscriber extends Service {
     }
 
     Builder(String subscription, MessageReceiver receiver) {
-      setDefaults();
       this.subscription = subscription;
       this.receiver = receiver;
-    }
-
-    private void setDefaults() {
-      credentials = Optional.absent();
-      channelBuilder = Optional.absent();
-      ackExpirationPadding = DEFAULT_ACK_EXPIRATION_PADDING;
-      maxOutstandingBytes = Optional.absent();
-      maxOutstandingMessages = Optional.absent();
-      executor = Optional.absent();
-      clock = Optional.absent();
     }
 
     /**
@@ -208,33 +196,9 @@ public interface Subscriber extends Service {
       return this;
     }
 
-    /**
-     * Sets the maximum number of outstanding messages; messages delivered to the {@link
-     * MessageReceiver} that have not been acknowledged or rejected.
-     *
-     * @param maxOutstandingMessages must be greater than 0
-     */
-    public Builder setMaxOutstandingMessages(int maxOutstandingMessages) {
-      Preconditions.checkArgument(
-          maxOutstandingMessages > 0,
-          "maxOutstandingMessages limit is disabled by default, but if set it must be set to a "
-              + "value greater to 0.");
-      this.maxOutstandingMessages = Optional.of(maxOutstandingMessages);
-      return this;
-    }
-
-    /**
-     * Sets the maximum number of outstanding bytes; bytes delivered to the {@link MessageReceiver}
-     * that have not been acknowledged or rejected.
-     *
-     * @param maxOutstandingBytes must be greater than 0
-     */
-    public Builder setMaxOutstandingBytes(int maxOutstandingBytes) {
-      Preconditions.checkArgument(
-          maxOutstandingBytes > 0,
-          "maxOutstandingBytes limit is disabled by default, but if set it must be set to a value "
-              + "greater than 0.");
-      this.maxOutstandingBytes = Optional.of(maxOutstandingBytes);
+    /** Sets the flow control settings. */
+    public Builder setFlowControlSettings(FlowController.Settings flowControlSettings) {
+      this.flowControlSettings = Preconditions.checkNotNull(flowControlSettings);
       return this;
     }
 

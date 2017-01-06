@@ -18,14 +18,10 @@ package com.google.cloud.pubsub;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
-import com.google.cloud.GrpcServiceOptions;
 import com.google.cloud.Policy;
-import com.google.cloud.pubsub.PubSub.PullOption;
 import com.google.common.base.Function;
-
 import java.io.IOException;
 import java.io.ObjectInputStream;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Objects;
 import java.util.concurrent.Future;
@@ -41,18 +37,12 @@ import java.util.concurrent.Future;
  * processed and the Pub/Sub system can delete it from the subscription; a non-success response
  * indicates that the Pub/Sub server should resend it (implicit "nack").
  *
- * <p>In a pull subscription, the subscribing application must explicitly pull messages using one of
- * {@link PubSub#pull(String, int)}, {@link PubSub#pullAsync(String, int)} or
- * {@link PubSub#pullAsync(String, PubSub.MessageProcessor callback, PubSub.PullOption...)}.
- * When messages are pulled with {@link PubSub#pull(String, int)} or
- * {@link PubSub#pullAsync(String, int)} the subscribing application must also explicitly
- * acknowledge them using one of {@link PubSub#ack(String, Iterable)},
- * {@link PubSub#ack(String, String, String...)}, {@link PubSub#ackAsync(String, Iterable)} or
- * {@link PubSub#ackAsync(String, String, String...)}.
+ * <p>In a pull subscription, the subscribing application must pull messages using {@link
+ * PubSub#getSubscriber(SubscriptionInfo, Subscriber.MessageReceiver)}.
  *
- * <p>{@code Subscription} adds a layer of service-related functionality over
- * {@link SubscriptionInfo}. Objects of this class are immutable. To get a {@code Subscription}
- * object with the most recent information use {@link #reload} or {@link #reloadAsync}.
+ * <p>{@code Subscription} adds a layer of service-related functionality over {@link
+ * SubscriptionInfo}. Objects of this class are immutable. To get a {@code Subscription} object with
+ * the most recent information use {@link #reload} or {@link #reloadAsync}.
  *
  * @see <a href="https://cloud.google.com/pubsub/overview#data_model">Pub/Sub Data Model</a>
  * @see <a href="https://cloud.google.com/pubsub/subscriber">Subscriber Guide</a>

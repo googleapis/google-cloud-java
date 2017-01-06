@@ -16,6 +16,7 @@
 
 package com.google.cloud.pubsub;
 
+import com.google.api.gax.bundling.FlowController;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.common.base.Optional;
 import com.google.common.collect.ImmutableList;
@@ -68,8 +69,7 @@ final class PublisherImpl implements Publisher {
   private final Duration maxBundleDuration;
   private final boolean hasBundlingBytes;
 
-  private final Optional<Integer> maxOutstandingMessages;
-  private final Optional<Integer> maxOutstandingBytes;
+  private final FlowController.Settings flowControlSettings;
   private final boolean failOnFlowControlLimits;
 
   private final Lock messagesBundleLock;
@@ -98,11 +98,9 @@ final class PublisherImpl implements Publisher {
     maxBundleDuration = builder.bundlingSettings.getDelayThreshold();
     hasBundlingBytes = maxBundleBytes > 0;
 
-    maxOutstandingMessages = builder.maxOutstandingMessages;
-    maxOutstandingBytes = builder.maxOutstandingBytes;
+    flowControlSettings = builder.flowControlSettings;
     failOnFlowControlLimits = builder.failOnFlowControlLimits;
-    this.flowController =
-        new FlowController(maxOutstandingMessages, maxOutstandingBytes, failOnFlowControlLimits);
+    this.flowController = new FlowController(flowControlSettings, failOnFlowControlLimits);
 
     sendBundleDeadline = builder.sendBundleDeadline;
 
@@ -165,13 +163,13 @@ final class PublisherImpl implements Publisher {
   }
 
   @Override
-  public Optional<Integer> getMaxOutstandingMessages() {
-    return maxOutstandingMessages;
+  public Optional<Integer> getMaxOutstandingElementCount() {
+    return flowControlSettings.getMaxOutstandingElementCount();
   }
 
   @Override
-  public Optional<Integer> getMaxOutstandingBytes() {
-    return maxOutstandingBytes;
+  public Optional<Integer> getMaxOutstandingRequestBytes() {
+    return flowControlSettings.getMaxOutstandingRequestBytes();
   }
 
   @Override
@@ -181,12 +179,12 @@ final class PublisherImpl implements Publisher {
 
   /** Whether flow control kicks in on a per outstanding messages basis. */
   boolean isPerMessageEnforced() {
-    return maxOutstandingMessages.isPresent();
+    return getMaxOutstandingElementCount().isPresent();
   }
 
   /** Whether flow control kicks in on a per outstanding bytes basis. */
   boolean isPerBytesEnforced() {
-    return maxOutstandingBytes.isPresent();
+    return getMaxOutstandingRequestBytes().isPresent();
   }
 
   @Override
@@ -203,7 +201,7 @@ final class PublisherImpl implements Publisher {
     final int messageSize = message.getSerializedSize();
     try {
       flowController.reserve(1, messageSize);
-    } catch (CloudPubsubFlowControlException e) {
+    } catch (FlowController.FlowControlException e) {
       return Futures.immediateFailedFuture(e);
     }
     OutstandingBundle bundleToSend = null;

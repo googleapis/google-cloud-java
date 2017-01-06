@@ -18,6 +18,7 @@ package com.google.cloud.pubsub;
 
 import static com.google.cloud.pubsub.StatusUtil.isRetryable;
 
+import com.google.api.gax.bundling.FlowController;
 import com.google.auth.Credentials;
 import com.google.cloud.Clock;
 import com.google.cloud.pubsub.MessagesProcessor.AcksProcessor;
@@ -39,7 +40,6 @@ import com.google.pubsub.v1.Subscription;
 import io.grpc.Channel;
 import io.grpc.StatusRuntimeException;
 import io.grpc.auth.MoreCallCredentials;
-import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
