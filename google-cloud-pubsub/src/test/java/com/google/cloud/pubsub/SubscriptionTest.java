@@ -19,7 +19,6 @@ package com.google.cloud.pubsub;
 import static org.easymock.EasyMock.createStrictMock;
 import static org.easymock.EasyMock.expect;
 import static org.easymock.EasyMock.replay;
-import static org.easymock.EasyMock.reset;
 import static org.easymock.EasyMock.verify;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -31,22 +30,21 @@ import com.google.cloud.Identity;
 import com.google.cloud.Policy;
 import com.google.cloud.Role;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.Lists;
 import com.google.common.util.concurrent.Futures;
-
+import com.google.pubsub.v1.PushConfig;
+import java.util.List;
+import java.util.concurrent.ExecutionException;
 import org.easymock.EasyMock;
 import org.junit.After;
 import org.junit.Test;
-
-import java.util.List;
-import java.util.concurrent.ExecutionException;
 
 public class SubscriptionTest {
 
   private static final TopicId TOPIC_ID = TopicId.of("project", "topic");
   private static final String NAME = "subscription";
   private static final String ENDPOINT = "https://example.com/push";
-  private static final PushConfig PUSH_CONFIG = PushConfig.of(ENDPOINT);
+  private static final PushConfig PUSH_CONFIG =
+      PushConfig.newBuilder().setPushEndpoint(ENDPOINT).build();
   private static final int ACK_DEADLINE = 42;
   private static final SubscriptionInfo SUBSCRIPTION_INFO =
       SubscriptionInfo.newBuilder(TOPIC_ID, NAME)
@@ -225,7 +223,8 @@ public class SubscriptionTest {
   public void testReplacePushConfig() {
     initializeExpectedSubscription(1);
     expect(pubsub.getOptions()).andReturn(mockOptions);
-    PushConfig pushConfig = PushConfig.of("https://example.com/newPush");
+    PushConfig pushConfig =
+        PushConfig.newBuilder().setPushEndpoint("https://example.com/newPush").build();
     pubsub.replacePushConfig(NAME, pushConfig);
     EasyMock.expectLastCall();
     replay(pubsub);
@@ -248,7 +247,8 @@ public class SubscriptionTest {
   public void testReplacePushConfig_Async() throws ExecutionException, InterruptedException {
     initializeExpectedSubscription(1);
     expect(pubsub.getOptions()).andReturn(mockOptions);
-    PushConfig pushConfig = PushConfig.of("https://example.com/newPush");
+    PushConfig pushConfig =
+        PushConfig.newBuilder().setPushEndpoint("https://example.com/newPush").build();
     expect(pubsub.replacePushConfigAsync(NAME, pushConfig))
         .andReturn(Futures.<Void>immediateFuture(null));
     EasyMock.expectLastCall();

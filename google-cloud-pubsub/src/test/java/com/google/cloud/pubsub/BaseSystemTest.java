@@ -18,31 +18,21 @@ package com.google.cloud.pubsub;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 import com.google.cloud.AsyncPage;
 import com.google.cloud.Page;
-import com.google.common.collect.ImmutableList;
-import com.google.common.collect.Iterators;
-import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
-
+import com.google.pubsub.v1.PushConfig;
+import java.util.Iterator;
+import java.util.Set;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Future;
 import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Set;
-import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Future;
-import java.util.concurrent.TimeUnit;
 
 /**
  * A base class for system tests. This class can be extended to run system tests in different
@@ -173,7 +163,7 @@ public abstract class BaseSystemTest {
     pubsub().create(TopicInfo.of(topic));
     String name = formatForTest("test-create-get-delete-async-subscription");
     String endpoint = "https://" + pubsub().getOptions().getProjectId() + ".appspot.com/push";
-    PushConfig pushConfig = PushConfig.of(endpoint);
+    PushConfig pushConfig = PushConfig.newBuilder().setPushEndpoint(endpoint).build();
     Future<Subscription> subscriptionFuture = pubsub().createAsync(
         SubscriptionInfo.newBuilder(topic, name).setPushConfig(pushConfig).build());
     Subscription subscription = subscriptionFuture.get();
@@ -216,7 +206,7 @@ public abstract class BaseSystemTest {
     pubsub().create(TopicInfo.of(topic));
     String name = formatForTest("test-replace-push-config-subscription");
     String endpoint = "https://" + pubsub().getOptions().getProjectId() + ".appspot.com/push";
-    PushConfig pushConfig = PushConfig.of(endpoint);
+    PushConfig pushConfig = PushConfig.newBuilder().setPushEndpoint(endpoint).build();
     Subscription subscription =
         pubsub().create(SubscriptionInfo.newBuilder(topic, name).setPushConfig(pushConfig).build());
     assertEquals(TopicId.of(pubsub().getOptions().getProjectId(), topic), subscription.getTopic());
@@ -258,7 +248,7 @@ public abstract class BaseSystemTest {
     // todo(mziccard) seems not to work on the emulator (returns 60) - see #989
     // assertEquals(10, subscription.ackDeadlineSeconds());
     String endpoint = "https://" + pubsub().getOptions().getProjectId() + ".appspot.com/push";
-    PushConfig pushConfig = PushConfig.of(endpoint);
+    PushConfig pushConfig = PushConfig.newBuilder().setPushEndpoint(endpoint).build();
     pubsub().replacePushConfigAsync(name, pushConfig).get();
     Subscription remoteSubscription = pubsub().getSubscriptionAsync(name).get();
     assertEquals(TopicId.of(pubsub().getOptions().getProjectId(), topic),
