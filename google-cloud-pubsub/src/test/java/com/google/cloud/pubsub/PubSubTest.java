@@ -21,7 +21,6 @@ import static org.junit.Assert.assertSame;
 
 import com.google.cloud.GrpcServiceOptions.ExecutorFactory;
 import com.google.cloud.pubsub.PubSub.ListOption;
-import com.google.cloud.pubsub.PubSub.PullOption;
 
 import org.easymock.EasyMock;
 import org.junit.Test;
@@ -42,18 +41,5 @@ public class PubSubTest {
     listOption = ListOption.pageSize(PAGE_SIZE);
     assertEquals(PAGE_SIZE, listOption.getValue());
     assertEquals(ListOption.OptionType.PAGE_SIZE, listOption.getOptionType());
-  }
-
-  @Test
-  @SuppressWarnings("unchecked")
-  public void testPullOptions() {
-    // max queued callbacks
-    PullOption pullOption = PullOption.maxQueuedCallbacks(MAX_QUEUED_CALLBACKS);
-    assertEquals(MAX_QUEUED_CALLBACKS, pullOption.getValue());
-    assertEquals(PullOption.OptionType.MAX_QUEUED_CALLBACKS, pullOption.getOptionType());
-    ExecutorFactory executorFactory = EasyMock.createStrictMock(ExecutorFactory.class);
-    pullOption = PullOption.executorFactory(executorFactory);
-    assertSame(executorFactory, pullOption.getValue());
-    assertEquals(PullOption.OptionType.EXECUTOR_FACTORY, pullOption.getOptionType());
   }
 }

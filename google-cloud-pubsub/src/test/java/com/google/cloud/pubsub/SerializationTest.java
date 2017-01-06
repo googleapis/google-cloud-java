@@ -21,7 +21,6 @@ import com.google.cloud.GrpcServiceOptions.ExecutorFactory;
 import com.google.cloud.NoCredentials;
 import com.google.cloud.Restorable;
 import com.google.cloud.pubsub.PubSub.ListOption;
-import com.google.cloud.pubsub.PubSub.PullOption;
 import java.io.Serializable;
 import java.util.concurrent.ScheduledExecutorService;
 
@@ -41,9 +40,6 @@ public class SerializationTest extends BaseSerializationTest {
       new Topic(PUB_SUB, new TopicInfo.BuilderImpl(TOPIC_INFO));
   private static final ListOption PAGE_TOKEN_OPTION = ListOption.pageToken("cursor");
   private static final ListOption PAGE_SIZE_OPTION = ListOption.pageSize(42);
-  private static final PullOption MAX_QUEUED_CALLBACKS_OPTION = PullOption.maxQueuedCallbacks(42);
-  private static final PullOption EXECUTOR_FACTORY_OPTION =
-      PullOption.executorFactory(new TestExecutorFactory());
 
   public static class TestExecutorFactory
       implements ExecutorFactory<ScheduledExecutorService>, Serializable {
@@ -91,8 +87,6 @@ public class SerializationTest extends BaseSerializationTest {
       TOPIC,
       PAGE_TOKEN_OPTION,
       PAGE_SIZE_OPTION,
-      MAX_QUEUED_CALLBACKS_OPTION,
-      EXECUTOR_FACTORY_OPTION
     };
   }
 
