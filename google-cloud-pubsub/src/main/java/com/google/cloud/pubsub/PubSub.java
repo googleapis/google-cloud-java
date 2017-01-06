@@ -77,64 +77,6 @@ public interface PubSub extends AutoCloseable, Service<PubSubOptions> {
     }
   }
 
-  /** Class for specifying options for pulling messages. */
-  final class PullOption extends Option {
-
-    private static final long serialVersionUID = 4792164134340316582L;
-
-    enum OptionType implements Option.OptionType {
-      EXECUTOR_FACTORY,
-      MAX_QUEUED_CALLBACKS;
-
-      @SuppressWarnings("unchecked")
-      <T> T get(Map<Option.OptionType, ?> options) {
-        return (T) options.get(this);
-      }
-
-      Integer getInteger(Map<Option.OptionType, ?> options) {
-        return get(options);
-      }
-
-      ExecutorFactory<ExecutorService> getExecutorFactory(Map<Option.OptionType, ?> options) {
-        return get(options);
-      }
-    }
-
-    private PullOption(Option.OptionType option, Object value) {
-      super(option, value);
-    }
-
-    /**
-     * Returns an option to specify the maximum number of messages that can be queued in the message
-     * consumer at any time. Queued messages are already pulled messages that are either waiting to
-     * be processed or being processed. Queued messages will have their acknowledge deadline renewed
-     * until they are acknowledged or "nacked". If not provided, at most 100 messages can be in the
-     * queue.
-     */
-    public static PullOption maxQueuedCallbacks(int maxQueuedCallbacks) {
-      return new PullOption(OptionType.MAX_QUEUED_CALLBACKS, maxQueuedCallbacks);
-    }
-
-    /**
-     * Returns an option to specify the executor used to execute message processor callbacks. The
-     * executor determines the number of messages that can be processed at the same time. If not
-     * provided, a single-threaded executor is used to execute message processor callbacks.
-     *
-     * <p>The {@link ExecutorFactory} object can be used to handle creation and release of the
-     * executor, possibly reusing existing executors. {@link ExecutorFactory#get()} is called when
-     * the message consumer is created. {@link ExecutorFactory#release(ExecutorService)} is called
-     * when the message consumer is closed.
-     *
-     * <p>For the created option to be serializable, the provided executor factory should implement
-     * {@link java.io.Serializable}.
-     *
-     * @param executorFactory the executor factory.
-     */
-    public static PullOption executorFactory(ExecutorFactory executorFactory) {
-      return new PullOption(OptionType.EXECUTOR_FACTORY, executorFactory);
-    }
-  }
-
   /**
    * Creates a new topic.
    *
