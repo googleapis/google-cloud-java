@@ -18,14 +18,10 @@ package com.google.cloud.pubsub;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
-import com.google.cloud.GrpcServiceOptions;
 import com.google.cloud.Policy;
-import com.google.cloud.pubsub.PubSub.PullOption;
 import com.google.common.base.Function;
-
 import java.io.IOException;
 import java.io.ObjectInputStream;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Objects;
 import java.util.concurrent.Future;

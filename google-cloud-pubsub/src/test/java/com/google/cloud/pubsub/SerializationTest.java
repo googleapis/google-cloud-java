@@ -32,12 +32,6 @@ public class SerializationTest extends BaseSerializationTest {
       .setCredentials(NoCredentials.getInstance())
       .setHost("localhost")
       .build().getService();
-  private static final Message MESSAGE = Message.of("payload");
-  private static final com.google.pubsub.v1.ReceivedMessage RECEIVED_MESSAGE_PB =
-      com.google.pubsub.v1.ReceivedMessage.newBuilder()
-          .setMessage(MESSAGE.toPb())
-          .setAckId("ackId")
-          .build();
   private static final SubscriptionInfo SUBSCRIPTION_INFO = SubscriptionInfo.of("topic", "sub");
   private static final Subscription SUBSCRIPTION =
       new Subscription(PUB_SUB, new SubscriptionInfo.BuilderImpl(SUBSCRIPTION_INFO));
@@ -90,7 +84,6 @@ public class SerializationTest extends BaseSerializationTest {
     return new Serializable[] {
       options,
       otherOptions,
-      MESSAGE,
       SUBSCRIPTION_INFO,
       SUBSCRIPTION,
       SUBSCRIPTION_ID,
