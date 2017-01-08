@@ -19,6 +19,7 @@ package com.google.cloud.pubsub;
 import static com.google.cloud.pubsub.StatusUtil.isRetryable;
 
 import com.google.api.gax.bundling.FlowController;
+import com.google.api.stats.Distribution;
 import com.google.auth.Credentials;
 import com.google.cloud.Clock;
 import com.google.cloud.pubsub.MessagesProcessor.AcksProcessor;
