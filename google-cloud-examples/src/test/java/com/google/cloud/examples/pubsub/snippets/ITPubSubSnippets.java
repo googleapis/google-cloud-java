@@ -29,24 +29,18 @@ import com.google.cloud.pubsub.PubSub;
 import com.google.cloud.pubsub.PubSubOptions;
 import com.google.cloud.pubsub.Subscription;
 import com.google.cloud.pubsub.SubscriptionId;
-import com.google.cloud.pubsub.SubscriptionInfo;
 import com.google.cloud.pubsub.Topic;
-import com.google.cloud.pubsub.TopicInfo;
 import com.google.common.collect.Iterators;
 import com.google.common.collect.Sets;
-
+import java.util.List;
+import java.util.Set;
+import java.util.UUID;
+import java.util.concurrent.ExecutionException;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.Timeout;
-
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Set;
-import java.util.UUID;
-import java.util.concurrent.ExecutionException;
 
 public class ITPubSubSnippets {
 
@@ -120,8 +114,8 @@ public class ITPubSubSnippets {
     pubsubSnippets.replacePushConfigAsync(subscriptionName2, endpoint);
     subscription1 = pubsubSnippets.getSubscription(subscriptionName1);
     subscription2 = pubsubSnippets.getSubscriptionAsync(subscriptionName2);
-    assertEquals(endpoint, subscription1.getPushConfig().getEndpoint());
-    assertEquals(endpoint, subscription2.getPushConfig().getEndpoint());
+    assertEquals(endpoint, subscription1.getPushConfig().getPushEndpoint());
+    assertEquals(endpoint, subscription2.getPushConfig().getPushEndpoint());
     pubsubSnippets.replacePushConfigToPull(subscriptionName1);
     pubsubSnippets.replacePushConfigToPullAsync(subscriptionName2);
     subscription1 = pubsubSnippets.getSubscription(subscriptionName1);

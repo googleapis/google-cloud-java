@@ -31,14 +31,11 @@ import com.google.cloud.pubsub.Subscription;
 import com.google.cloud.pubsub.SubscriptionInfo;
 import com.google.cloud.pubsub.Topic;
 import com.google.cloud.pubsub.TopicInfo;
-
+import java.util.UUID;
+import java.util.concurrent.ExecutionException;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
-
-import java.util.Iterator;
-import java.util.UUID;
-import java.util.concurrent.ExecutionException;
 
 public class ITSubscriptionSnippets {
 
@@ -73,13 +70,13 @@ public class ITSubscriptionSnippets {
     String endpoint = "https://" + pubsub.getOptions().getProjectId() + ".appspot.com/push";
     subscriptionSnippets.replacePushConfig(endpoint);
     Subscription updatedSubscription = pubsub.getSubscription(SUBSCRIPTION);
-    assertEquals(endpoint, updatedSubscription.getPushConfig().getEndpoint());
+    assertEquals(endpoint, updatedSubscription.getPushConfig().getPushEndpoint());
     subscriptionSnippets.replacePushConfigToPull();
     updatedSubscription = pubsub.getSubscription(SUBSCRIPTION);
     assertNull(updatedSubscription.getPushConfig());
     subscriptionSnippets.replacePushConfigAsync(endpoint);
     updatedSubscription = pubsub.getSubscription(SUBSCRIPTION);
-    assertEquals(endpoint, updatedSubscription.getPushConfig().getEndpoint());
+    assertEquals(endpoint, updatedSubscription.getPushConfig().getPushEndpoint());
     subscriptionSnippets.replacePushConfigToPullAsync();
     updatedSubscription = pubsub.getSubscription(SUBSCRIPTION);
     assertNull(updatedSubscription.getPushConfig());

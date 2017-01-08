@@ -17,7 +17,6 @@
 package com.google.cloud.pubsub;
 
 import com.google.cloud.AsyncPage;
-import com.google.cloud.GrpcServiceOptions.ExecutorFactory;
 import com.google.cloud.Page;
 import com.google.cloud.Policy;
 import com.google.cloud.Service;
@@ -25,7 +24,6 @@ import com.google.pubsub.v1.PushConfig;
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Future;
 
 /**

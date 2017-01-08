@@ -25,10 +25,8 @@ package com.google.cloud.examples.pubsub.snippets;
 import com.google.cloud.Identity;
 import com.google.cloud.Policy;
 import com.google.cloud.Role;
-import com.google.cloud.pubsub.PushConfig;
 import com.google.cloud.pubsub.Subscription;
-
-import java.util.Iterator;
+import com.google.pubsub.v1.PushConfig;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
@@ -116,7 +114,7 @@ public class SubscriptionSnippets {
   // [VARIABLE "https://www.example.com/push"]
   public void replacePushConfig(String endpoint) {
     // [START replacePushConfig]
-    PushConfig pushConfig = PushConfig.of(endpoint);
+    PushConfig pushConfig = PushConfig.newBuilder().setPushEndpoint(endpoint).build();
     subscription.replacePushConfig(pushConfig);
     // [END replacePushConfig]
   }
@@ -141,7 +139,7 @@ public class SubscriptionSnippets {
   public void replacePushConfigAsync(String endpoint)
       throws ExecutionException, InterruptedException {
     // [START replacePushConfigAsync]
-    PushConfig pushConfig = PushConfig.of(endpoint);
+    PushConfig pushConfig = PushConfig.newBuilder().setPushEndpoint(endpoint).build();
     Future<Void> future = subscription.replacePushConfigAsync(pushConfig);
     // ...
     future.get();

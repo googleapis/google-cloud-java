@@ -21,22 +21,18 @@ import com.google.cloud.Policy;
 import com.google.cloud.Role;
 import com.google.cloud.pubsub.PubSub;
 import com.google.cloud.pubsub.PubSubOptions;
-import com.google.cloud.pubsub.PushConfig;
 import com.google.cloud.pubsub.Subscription;
 import com.google.cloud.pubsub.SubscriptionId;
 import com.google.cloud.pubsub.SubscriptionInfo;
 import com.google.cloud.pubsub.Topic;
 import com.google.cloud.pubsub.TopicInfo;
 import com.google.common.collect.ImmutableMap;
-
-import java.util.ArrayList;
+import com.google.pubsub.v1.PushConfig;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * An example of using Google BigQuery.
@@ -336,7 +332,7 @@ public class PubSubExample {
       } else {
         SubscriptionInfo.Builder builder = SubscriptionInfo.newBuilder(args[0], args[1]);
         if (args.length == 3) {
-          builder.setPushConfig(PushConfig.of(args[2]));
+          builder.setPushConfig(PushConfig.newBuilder().setPushEndpoint(args[2]).build());
         }
         return builder.build();
       }
@@ -387,7 +383,7 @@ public class PubSubExample {
         String subscription = args[0];
         PushConfig pushConfig = null;
         if (args.length == 2) {
-          pushConfig = PushConfig.of(args[1]);
+          pushConfig = PushConfig.newBuilder().setPushEndpoint(args[2]).build();
         }
         return Tuple.of(subscription, pushConfig);
       }
