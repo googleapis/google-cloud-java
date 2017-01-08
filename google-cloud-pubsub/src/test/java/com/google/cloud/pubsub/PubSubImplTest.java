@@ -54,8 +54,7 @@ import com.google.pubsub.v1.ListTopicSubscriptionsResponse;
 import com.google.pubsub.v1.ListTopicsRequest;
 import com.google.pubsub.v1.ListTopicsResponse;
 import com.google.pubsub.v1.ModifyPushConfigRequest;
-import com.google.pubsub.v1.PublishRequest;
-import com.google.pubsub.v1.PublishResponse;
+import com.google.pubsub.v1.PushConfig;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
@@ -82,7 +81,8 @@ public class PubSubImplTest {
       };
   private static final String SUBSCRIPTION = "subscription";
   private static final String SUBSCRIPTION_NAME_PB = "projects/project/subscriptions/subscription";
-  private static final PushConfig PUSH_CONFIG = PushConfig.of("endpoint");
+  private static final PushConfig PUSH_CONFIG =
+      PushConfig.newBuilder().setPushEndpoint("endpoint").build();
   private static final SubscriptionInfo SUBSCRIPTION_INFO =
       SubscriptionInfo.newBuilder(TOPIC, SUBSCRIPTION)
           .setAckDeadLineSeconds(42)
@@ -599,10 +599,11 @@ public class PubSubImplTest {
 
   @Test
   public void testReplacePushConfig() {
-    ModifyPushConfigRequest request = ModifyPushConfigRequest.newBuilder()
-        .setSubscription(SUBSCRIPTION_NAME_PB)
-        .setPushConfig(PUSH_CONFIG.toPb())
-        .build();
+    ModifyPushConfigRequest request =
+        ModifyPushConfigRequest.newBuilder()
+            .setSubscription(SUBSCRIPTION_NAME_PB)
+            .setPushConfig(PUSH_CONFIG)
+            .build();
     Future<Empty> response = Futures.immediateFuture(Empty.getDefaultInstance());
     EasyMock.expect(pubsubRpcMock.modify(request)).andReturn(response);
     EasyMock.replay(pubsubRpcMock);
@@ -625,10 +626,11 @@ public class PubSubImplTest {
 
   @Test
   public void testReplacePushConfigAsync() throws ExecutionException, InterruptedException {
-    ModifyPushConfigRequest request = ModifyPushConfigRequest.newBuilder()
-        .setSubscription(SUBSCRIPTION_NAME_PB)
-        .setPushConfig(PUSH_CONFIG.toPb())
-        .build();
+    ModifyPushConfigRequest request =
+        ModifyPushConfigRequest.newBuilder()
+            .setSubscription(SUBSCRIPTION_NAME_PB)
+            .setPushConfig(PUSH_CONFIG)
+            .build();
     Future<Empty> response = Futures.immediateFuture(Empty.getDefaultInstance());
     EasyMock.expect(pubsubRpcMock.modify(request)).andReturn(response);
     EasyMock.replay(pubsubRpcMock);

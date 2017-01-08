@@ -29,19 +29,17 @@ import com.google.cloud.Policy;
 import com.google.cloud.Role;
 import com.google.cloud.pubsub.PubSub;
 import com.google.cloud.pubsub.PubSub.ListOption;
-import com.google.cloud.pubsub.PushConfig;
 import com.google.cloud.pubsub.Subscription;
 import com.google.cloud.pubsub.SubscriptionId;
 import com.google.cloud.pubsub.SubscriptionInfo;
 import com.google.cloud.pubsub.Topic;
 import com.google.cloud.pubsub.TopicInfo;
-
+import com.google.pubsub.v1.PushConfig;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
-import java.util.concurrent.TimeUnit;
 
 /**
  * This class contains a number of snippets for the {@link PubSub} interface.
@@ -224,7 +222,7 @@ public class PubSubSnippets {
   // [VARIABLE "https://www.example.com/push"]
   public void replacePushConfig(String subscriptionName, String endpoint) {
     // [START replacePushConfig]
-    PushConfig pushConfig = PushConfig.of(endpoint);
+    PushConfig pushConfig = PushConfig.newBuilder().setPushEndpoint(endpoint).build();
     pubsub.replacePushConfig(subscriptionName, pushConfig);
     // [END replacePushConfig]
   }
@@ -251,7 +249,7 @@ public class PubSubSnippets {
   public void replacePushConfigAsync(String subscriptionName, String endpoint)
       throws ExecutionException, InterruptedException {
     // [START replacePushConfigAsync]
-    PushConfig pushConfig = PushConfig.of(endpoint);
+    PushConfig pushConfig = PushConfig.newBuilder().setPushEndpoint(endpoint).build();
     Future<Void> future = pubsub.replacePushConfigAsync(subscriptionName, pushConfig);
     // ...
     future.get();

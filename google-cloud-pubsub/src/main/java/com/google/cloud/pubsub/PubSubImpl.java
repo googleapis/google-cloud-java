@@ -54,6 +54,7 @@ import com.google.pubsub.v1.ListTopicSubscriptionsResponse;
 import com.google.pubsub.v1.ListTopicsRequest;
 import com.google.pubsub.v1.ListTopicsResponse;
 import com.google.pubsub.v1.ModifyPushConfigRequest;
+import com.google.pubsub.v1.PushConfig;
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
@@ -326,12 +327,12 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
 
   @Override
   public Future<Void> replacePushConfigAsync(String subscription, PushConfig pushConfig) {
-    ModifyPushConfigRequest request = ModifyPushConfigRequest.newBuilder()
-        .setSubscription(
-            SubscriberClient.formatSubscriptionName(getOptions().getProjectId(), subscription))
-        .setPushConfig(pushConfig != null ? pushConfig.toPb()
-            : com.google.pubsub.v1.PushConfig.getDefaultInstance())
-        .build();
+    ModifyPushConfigRequest request =
+        ModifyPushConfigRequest.newBuilder()
+            .setSubscription(
+                SubscriberClient.formatSubscriptionName(getOptions().getProjectId(), subscription))
+            .setPushConfig(pushConfig != null ? pushConfig : PushConfig.getDefaultInstance())
+            .build();
     return transform(rpc.modify(request), EMPTY_TO_VOID_FUNCTION);
   }
 

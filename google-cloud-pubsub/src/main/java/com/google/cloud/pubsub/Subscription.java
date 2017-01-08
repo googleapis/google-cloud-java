@@ -20,6 +20,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.cloud.Policy;
 import com.google.common.base.Function;
+import com.google.pubsub.v1.PushConfig;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.util.List;

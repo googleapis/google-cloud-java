@@ -20,6 +20,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.cloud.pubsub.spi.v1.SubscriberClient;
 import com.google.common.base.MoreObjects;
+import com.google.pubsub.v1.PushConfig;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -389,7 +390,7 @@ public class SubscriptionInfo implements Serializable {
     builder.setName(SubscriberClient.formatSubscriptionName(projectId, name));
     builder.setAckDeadlineSeconds(ackDeadlineSeconds);
     if (pushConfig != null) {
-      builder.setPushConfig(pushConfig.toPb());
+      builder.setPushConfig(pushConfig);
     }
     return builder.build();
   }
@@ -401,7 +402,7 @@ public class SubscriptionInfo implements Serializable {
     // A subscription with an "empty" push config is a pull subscription
     if (subscription.hasPushConfig()
         && !subscription.getPushConfig().getPushEndpoint().equals("")) {
-      builder.setPushConfig(PushConfig.fromPb(subscription.getPushConfig()));
+      builder.setPushConfig(subscription.getPushConfig());
     }
     return builder.build();
   }
@@ -460,7 +461,9 @@ public class SubscriptionInfo implements Serializable {
    *     an endpoint might use {@code https://example.com/push}.
    */
   public static SubscriptionInfo of(String topic, String name, String endpoint) {
-    return newBuilder(topic, name).setPushConfig(PushConfig.of(endpoint)).build();
+    return newBuilder(topic, name)
+        .setPushConfig(PushConfig.newBuilder().setPushEndpoint(endpoint).build())
+        .build();
   }
 
   /**
@@ -478,7 +481,9 @@ public class SubscriptionInfo implements Serializable {
    *     an endpoint might use {@code https://example.com/push}.
    */
   public static SubscriptionInfo of(TopicId topic, String name, String endpoint) {
-    return newBuilder(topic, name).setPushConfig(PushConfig.of(endpoint)).build();
+    return newBuilder(topic, name)
+        .setPushConfig(PushConfig.newBuilder().setPushEndpoint(endpoint).build())
+        .build();
   }
 
   /**

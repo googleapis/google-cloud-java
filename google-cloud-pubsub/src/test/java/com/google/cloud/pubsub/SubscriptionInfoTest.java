@@ -19,6 +19,7 @@ package com.google.cloud.pubsub;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 
+import com.google.pubsub.v1.PushConfig;
 import org.junit.Test;
 
 public class SubscriptionInfoTest {
@@ -26,7 +27,8 @@ public class SubscriptionInfoTest {
   private static final TopicId TOPIC = TopicId.of("project", "topic");
   private static final String NAME = "subscription";
   private static final String ENDPOINT = "https://example.com/push";
-  private static final PushConfig PUSH_CONFIG = PushConfig.of(ENDPOINT);
+  private static final PushConfig PUSH_CONFIG =
+      PushConfig.newBuilder().setPushEndpoint(ENDPOINT).build();
   private static final int ACK_DEADLINE = 42;
   private static final SubscriptionInfo SUBSCRIPTION_INFO = SubscriptionInfo.newBuilder(TOPIC, NAME)
       .setPushConfig(PUSH_CONFIG)
@@ -117,12 +119,16 @@ public class SubscriptionInfoTest {
     subscriptionInfo = SubscriptionInfo.of(TOPIC, NAME, ENDPOINT);
     assertEquals(TOPIC, subscriptionInfo.getTopic());
     assertEquals(NAME, subscriptionInfo.getName());
-    assertEquals(PushConfig.of(ENDPOINT), subscriptionInfo.getPushConfig());
+    assertEquals(
+        PushConfig.newBuilder().setPushEndpoint(ENDPOINT).build(),
+        subscriptionInfo.getPushConfig());
     assertEquals(0, subscriptionInfo.getAckDeadlineSeconds());
     subscriptionInfo = SubscriptionInfo.of("topic", NAME, ENDPOINT);
     assertEquals(TopicId.of("topic"), subscriptionInfo.getTopic());
     assertEquals(NAME, subscriptionInfo.getName());
-    assertEquals(PushConfig.of(ENDPOINT), subscriptionInfo.getPushConfig());
+    assertEquals(
+        PushConfig.newBuilder().setPushEndpoint(ENDPOINT).build(),
+        subscriptionInfo.getPushConfig());
     assertEquals(0, subscriptionInfo.getAckDeadlineSeconds());
   }
 
