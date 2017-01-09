@@ -286,13 +286,13 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
   }
 
   @Override
-  public Publisher getPublisher(TopicInfo topic) throws IOException {
-    // TODO(pongad): Provide a way to pass in the rest of the options.
-    String topicName =
-        PublisherClient.formatTopicName(getOptions().getProjectId(), topic.getName());
-    return Publisher.Builder.newBuilder(topicName)
-        .setCredentials(getOptions().getCredentials())
-        .build();
+  public Publisher newPublisher(String topic, Publisher.Settings settings) throws PubSubException {
+    String topicName = PublisherClient.formatTopicName(getOptions().getProjectId(), topic);
+    try {
+      return new PublisherImpl(topicName, settings);
+    } catch (IOException e) {
+      throw new PubSubException(e, false);
+    }
   }
 
   @Override

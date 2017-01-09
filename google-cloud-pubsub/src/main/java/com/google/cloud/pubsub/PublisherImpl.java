@@ -90,29 +90,28 @@ final class PublisherImpl implements Publisher {
   private final Duration sendBundleDeadline;
   private ScheduledFuture<?> currentAlarmFuture;
 
-  PublisherImpl(Builder builder) throws IOException {
-    topic = builder.topic;
-
-    maxBundleMessages = builder.bundlingSettings.getElementCountThreshold();
-    maxBundleBytes = builder.bundlingSettings.getRequestByteThreshold();
-    maxBundleDuration = builder.bundlingSettings.getDelayThreshold();
+  PublisherImpl(String topic, Settings settings) throws IOException {
+    this.topic = topic;
+    maxBundleMessages = settings.getBundlingSettings().getElementCountThreshold();
+    maxBundleBytes = settings.getBundlingSettings().getRequestByteThreshold();
+    maxBundleDuration = settings.getBundlingSettings().getDelayThreshold();
     hasBundlingBytes = maxBundleBytes > 0;
 
-    flowControlSettings = builder.flowControlSettings;
-    failOnFlowControlLimits = builder.failOnFlowControlLimits;
+    flowControlSettings = settings.getFlowControlSettings();
+    failOnFlowControlLimits = settings.getFailOnFlowControlLimits();
     this.flowController = new FlowController(flowControlSettings, failOnFlowControlLimits);
 
-    sendBundleDeadline = builder.sendBundleDeadline;
+    sendBundleDeadline = settings.getSendBundleDeadline();
 
-    requestTimeout = builder.requestTimeout;
+    requestTimeout = settings.getRequestTimeout();
 
     messagesBundle = new LinkedList<>();
     messagesBundleLock = new ReentrantLock();
     activeAlarm = new AtomicBoolean(false);
     int numCores = Math.max(1, Runtime.getRuntime().availableProcessors());
     executor =
-        builder.executor.isPresent()
-            ? builder.executor.get()
+        settings.getExecutor().isPresent()
+            ? settings.getExecutor().get()
             : Executors.newScheduledThreadPool(
                 numCores * DEFAULT_MIN_THREAD_POOL_SIZE,
                 new ThreadFactoryBuilder()
@@ -123,9 +122,9 @@ final class PublisherImpl implements Publisher {
     channelIndex = new AtomicLong(0);
     for (int i = 0; i < numCores; i++) {
       channels[i] =
-          builder.channelBuilder.isPresent()
-              ? builder.channelBuilder.get().build()
-              : NettyChannelBuilder.forAddress(PUBSUB_API_ADDRESS, 443)
+          settings.getChannelBuilder().isPresent()
+              ? settings.getChannelBuilder().get().build()
+              : NettyChannelBuilder.forAddress(Publisher.Settings.PUBSUB_API_ADDRESS, 443)
                   .negotiationType(NegotiationType.TLS)
                   .sslContext(GrpcSslContexts.forClient().ciphers(null).build())
                   .executor(executor)
@@ -133,10 +132,10 @@ final class PublisherImpl implements Publisher {
     }
     credentials =
         MoreCallCredentials.from(
-            builder.userCredentials.isPresent()
-                ? builder.userCredentials.get()
+            settings.getUserCredentials().isPresent()
+                ? settings.getUserCredentials().get()
                 : GoogleCredentials.getApplicationDefault()
-                    .createScoped(Collections.singletonList(PUBSUB_API_SCOPE)));
+                    .createScoped(Collections.singletonList(Publisher.Settings.PUBSUB_API_SCOPE)));
     shutdown = new AtomicBoolean(false);
     messagesWaiter = new MessagesWaiter();
   }
