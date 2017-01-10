@@ -17,7 +17,6 @@
 package com.google.cloud.pubsub;
 
 import com.google.api.gax.bundling.FlowController;
-import com.google.auth.oauth2.GoogleCredentials;
 import com.google.common.base.Optional;
 import com.google.common.collect.ImmutableList;
 import com.google.common.primitives.Ints;
@@ -25,24 +24,18 @@ import com.google.common.util.concurrent.FutureCallback;
 import com.google.common.util.concurrent.Futures;
 import com.google.common.util.concurrent.ListenableFuture;
 import com.google.common.util.concurrent.SettableFuture;
-import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import com.google.pubsub.v1.PublishRequest;
 import com.google.pubsub.v1.PublishResponse;
 import com.google.pubsub.v1.PublisherGrpc;
 import com.google.pubsub.v1.PubsubMessage;
 import io.grpc.CallCredentials;
-import io.grpc.Channel;
+import io.grpc.ManagedChannel;
 import io.grpc.Status;
 import io.grpc.auth.MoreCallCredentials;
-import io.grpc.netty.GrpcSslContexts;
-import io.grpc.netty.NegotiationType;
-import io.grpc.netty.NettyChannelBuilder;
 import java.io.IOException;
-import java.util.Collections;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
@@ -63,6 +56,7 @@ final class PublisherImpl implements Publisher {
   private static final Logger logger = LoggerFactory.getLogger(PublisherImpl.class);
 
   private final String topic;
+  private final PubSubOptions psOptions;
 
   private final long maxBundleMessages;
   private final long maxBundleBytes;
@@ -79,7 +73,7 @@ final class PublisherImpl implements Publisher {
   private final AtomicBoolean activeAlarm;
 
   private final FlowController flowController;
-  private final Channel[] channels;
+  private final ManagedChannel[] channels;
   private final AtomicLong channelIndex;
   private final CallCredentials credentials;
   private final Duration requestTimeout;
@@ -90,8 +84,9 @@ final class PublisherImpl implements Publisher {
   private final Duration sendBundleDeadline;
   private ScheduledFuture<?> currentAlarmFuture;
 
-  PublisherImpl(String topic, Settings settings) throws IOException {
+  PublisherImpl(String topic, PubSubOptions psOptions, Settings settings) throws IOException {
     this.topic = topic;
+    this.psOptions = psOptions;
     maxBundleMessages = settings.getBundlingSettings().getElementCountThreshold();
     maxBundleBytes = settings.getBundlingSettings().getRequestByteThreshold();
     maxBundleDuration = settings.getBundlingSettings().getDelayThreshold();
@@ -108,36 +103,23 @@ final class PublisherImpl implements Publisher {
     messagesBundle = new LinkedList<>();
     messagesBundleLock = new ReentrantLock();
     activeAlarm = new AtomicBoolean(false);
-    int numCores = Math.max(1, Runtime.getRuntime().availableProcessors());
-    executor =
-        settings.getExecutor().isPresent()
-            ? settings.getExecutor().get()
-            : Executors.newScheduledThreadPool(
-                numCores * DEFAULT_MIN_THREAD_POOL_SIZE,
-                new ThreadFactoryBuilder()
-                    .setDaemon(true)
-                    .setNameFormat("cloud-pubsub-publisher-thread-%d")
-                    .build());
-    channels = new Channel[numCores];
-    channelIndex = new AtomicLong(0);
-    for (int i = 0; i < numCores; i++) {
-      channels[i] =
-          settings.getChannelBuilder().isPresent()
-              ? settings.getChannelBuilder().get().build()
-              : NettyChannelBuilder.forAddress(Publisher.Settings.PUBSUB_API_ADDRESS, 443)
-                  .negotiationType(NegotiationType.TLS)
-                  .sslContext(GrpcSslContexts.forClient().ciphers(null).build())
-                  .executor(executor)
-                  .build();
-    }
-    credentials =
-        MoreCallCredentials.from(
-            settings.getUserCredentials().isPresent()
-                ? settings.getUserCredentials().get()
-                : GoogleCredentials.getApplicationDefault()
-                    .createScoped(Collections.singletonList(Publisher.Settings.PUBSUB_API_SCOPE)));
     shutdown = new AtomicBoolean(false);
     messagesWaiter = new MessagesWaiter();
+
+    int numCores = Runtime.getRuntime().availableProcessors();
+    executor = psOptions.getExecutorFactory().get();
+
+    channels = new ManagedChannel[numCores];
+    for (int i = 0; i < numCores; i++) {
+      if (psOptions.getChannelProvider().needsExecutor()) {
+        channels[i] = psOptions.getChannelProvider().getChannel(executor);
+      } else {
+        channels[i] = psOptions.getChannelProvider().getChannel();
+      }
+    }
+    channelIndex = new AtomicLong(0);
+
+    credentials = MoreCallCredentials.from(psOptions.getCredentials());
   }
 
   @Override
@@ -420,6 +402,13 @@ final class PublisherImpl implements Publisher {
     }
     publishAllOustanding();
     messagesWaiter.waitNoMessages();
+
+    if (psOptions.getChannelProvider().shouldAutoClose()) {
+      for (ManagedChannel channel : channels) {
+        channel.shutdown();
+      }
+    }
+    psOptions.getExecutorFactory().release(executor);
   }
 
   private static long computeNextBackoffDelayMs(OutstandingBundle outstandingBundle) {

@@ -25,12 +25,15 @@ import static org.mockito.Mockito.times;
 
 import com.google.api.gax.bundling.FlowController;
 import com.google.api.gax.grpc.BundlingSettings;
+import com.google.api.gax.grpc.ChannelProvider;
+import com.google.cloud.GrpcServiceOptions.ExecutorFactory;
 import com.google.common.base.Optional;
 import com.google.common.util.concurrent.ListenableFuture;
 import com.google.protobuf.ByteString;
 import com.google.pubsub.v1.PublishRequest;
 import com.google.pubsub.v1.PublishResponse;
 import com.google.pubsub.v1.PubsubMessage;
+import io.grpc.ManagedChannel;
 import io.grpc.Status;
 import io.grpc.StatusException;
 import io.grpc.inprocess.InProcessChannelBuilder;
@@ -38,6 +41,7 @@ import io.grpc.inprocess.InProcessServerBuilder;
 import io.grpc.internal.ServerImpl;
 import io.grpc.stub.StreamObserver;
 import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import org.joda.time.Duration;
@@ -56,6 +60,7 @@ import org.mockito.MockitoAnnotations;
 @RunWith(JUnit4.class)
 public class PublisherImplTest {
 
+  private static final String TEST_PROJECT_NAME = "test-project";
   private static final String TEST_TOPIC = "projects/test-project/topics/test-topic";
 
   private static InProcessChannelBuilder testChannelBuilder;
@@ -101,7 +106,8 @@ public class PublisherImplTest {
     Publisher publisher =
         new PublisherImpl(
             TEST_TOPIC,
-            getTestSettingsBuilder()
+            getTestOptions(fakeExecutor),
+            Publisher.Settings.newBuilder()
                 // To demonstrate that reaching duration will trigger publish
                 .setBundlingSettings(
                     Publisher.Settings.DEFAULT_BUNDLING_SETTINGS
@@ -135,7 +141,8 @@ public class PublisherImplTest {
     Publisher publisher =
         new PublisherImpl(
             TEST_TOPIC,
-            getTestSettingsBuilder()
+            getTestOptions(fakeExecutor),
+            Publisher.Settings.newBuilder()
                 .setBundlingSettings(
                     Publisher.Settings.DEFAULT_BUNDLING_SETTINGS
                         .toBuilder()
@@ -176,7 +183,8 @@ public class PublisherImplTest {
     Publisher publisher =
         new PublisherImpl(
             TEST_TOPIC,
-            getTestSettingsBuilder()
+            getTestOptions(fakeExecutor),
+            Publisher.Settings.newBuilder()
                 .setBundlingSettings(
                     Publisher.Settings.DEFAULT_BUNDLING_SETTINGS
                         .toBuilder()
@@ -212,7 +220,8 @@ public class PublisherImplTest {
     Publisher publisher =
         new PublisherImpl(
             TEST_TOPIC,
-            getTestSettingsBuilder()
+            getTestOptions(fakeExecutor),
+            Publisher.Settings.newBuilder()
                 // To demonstrate that reaching duration will trigger publish
                 .setBundlingSettings(
                     Publisher.Settings.DEFAULT_BUNDLING_SETTINGS
@@ -262,8 +271,8 @@ public class PublisherImplTest {
     Publisher publisher =
         new PublisherImpl(
             TEST_TOPIC,
-            getTestSettingsBuilder()
-                .setExecutor(Executors.newSingleThreadScheduledExecutor())
+            getTestOptions(Executors.newSingleThreadScheduledExecutor()),
+            Publisher.Settings.newBuilder()
                 .setBundlingSettings(
                     Publisher.Settings.DEFAULT_BUNDLING_SETTINGS
                         .toBuilder()
@@ -288,8 +297,8 @@ public class PublisherImplTest {
     Publisher publisher =
         new PublisherImpl(
             TEST_TOPIC,
-            getTestSettingsBuilder()
-                .setExecutor(Executors.newSingleThreadScheduledExecutor())
+            getTestOptions(Executors.newSingleThreadScheduledExecutor()),
+            Publisher.Settings.newBuilder()
                 .setSendBundleDeadline(Duration.standardSeconds(10))
                 .setBundlingSettings(
                     Publisher.Settings.DEFAULT_BUNDLING_SETTINGS
@@ -319,8 +328,8 @@ public class PublisherImplTest {
     Publisher publisher =
         new PublisherImpl(
             TEST_TOPIC,
-            getTestSettingsBuilder()
-                .setExecutor(Executors.newSingleThreadScheduledExecutor())
+            getTestOptions(Executors.newSingleThreadScheduledExecutor()),
+            Publisher.Settings.newBuilder()
                 .setSendBundleDeadline(Duration.standardSeconds(10))
                 .setBundlingSettings(
                     Publisher.Settings.DEFAULT_BUNDLING_SETTINGS
@@ -344,13 +353,7 @@ public class PublisherImplTest {
 
   @Test
   public void testPublisherGetters() throws Exception {
-    FakeCredentials credentials = new FakeCredentials();
-    ScheduledExecutorService executor = Executors.newSingleThreadScheduledExecutor();
-
     Publisher.Settings.Builder builder = Publisher.Settings.newBuilder();
-    builder.setChannelBuilder(testChannelBuilder);
-    builder.setUserCredentials(credentials);
-    builder.setExecutor(executor);
     builder.setFailOnFlowControlLimits(true);
     builder.setBundlingSettings(
         BundlingSettings.newBuilder()
@@ -365,7 +368,8 @@ public class PublisherImplTest {
             .build());
     builder.setRequestTimeout(new Duration(15));
     builder.setSendBundleDeadline(new Duration(16000));
-    Publisher publisher = new PublisherImpl(TEST_TOPIC, builder.build());
+    Publisher publisher =
+        new PublisherImpl(TEST_TOPIC, getTestOptions(fakeExecutor), builder.build());
 
     assertEquals(TEST_TOPIC, publisher.getTopic());
     assertEquals(10, publisher.getMaxBundleBytes());
@@ -379,8 +383,6 @@ public class PublisherImplTest {
   @Test
   public void testBuilderParametersAndDefaults() {
     Publisher.Settings settings = Publisher.Settings.newBuilder().autoBuild();
-    assertEquals(Optional.absent(), settings.getChannelBuilder());
-    assertEquals(Optional.absent(), settings.getExecutor());
     assertFalse(settings.getFailOnFlowControlLimits());
     assertEquals(
         Publisher.Settings.DEFAULT_MAX_BUNDLE_BYTES,
@@ -394,7 +396,6 @@ public class PublisherImplTest {
     assertEquals(FlowController.Settings.DEFAULT, settings.getFlowControlSettings());
     assertEquals(Publisher.Settings.DEFAULT_REQUEST_TIMEOUT, settings.getRequestTimeout());
     assertEquals(Publisher.Settings.MIN_SEND_BUNDLE_DURATION, settings.getSendBundleDeadline());
-    assertEquals(Optional.absent(), settings.getUserCredentials());
   }
 
   @Test
@@ -425,10 +426,58 @@ public class PublisherImplTest {
     }
   }
 
-  private Publisher.Settings.Builder getTestSettingsBuilder() {
-    return Publisher.Settings.newBuilder()
-        .setUserCredentials(testCredentials)
-        .setExecutor(fakeExecutor)
-        .setChannelBuilder(testChannelBuilder);
+  private PubSubOptions getTestOptions(final ScheduledExecutorService executor) {
+    return new TestPubSubOptions(
+        PubSubOptions.newBuilder()
+            .setProjectId(TEST_PROJECT_NAME)
+            .setCredentials(testCredentials)
+            .setExecutorFactory(
+                new ExecutorFactory<ScheduledExecutorService>() {
+                  @Override
+                  public ScheduledExecutorService get() {
+                    return executor;
+                  }
+
+                  @Override
+                  public void release(ScheduledExecutorService executor) {
+                    // do nothing
+                  }
+                }),
+        new ChannelProvider() {
+          @Override
+          public boolean shouldAutoClose() {
+            return true;
+          }
+
+          @Override
+          public boolean needsExecutor() {
+            return false;
+          }
+
+          @Override
+          public ManagedChannel getChannel() {
+            return testChannelBuilder.build();
+          }
+
+          @Override
+          public ManagedChannel getChannel(Executor executor) {
+            throw new IllegalStateException(
+                "getChannel(Executor) called when needsExecutor() is false.");
+          }
+        });
+  }
+
+  private static class TestPubSubOptions extends PubSubOptions {
+    private final ChannelProvider channelProvider;
+
+    TestPubSubOptions(PubSubOptions.Builder b, ChannelProvider c) {
+      super(b);
+      this.channelProvider = c;
+    }
+
+    @Override
+    protected ChannelProvider getChannelProvider() {
+      return channelProvider;
+    }
   }
 }

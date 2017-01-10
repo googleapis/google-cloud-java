@@ -18,15 +18,12 @@ package com.google.cloud.pubsub;
 
 import com.google.api.gax.bundling.FlowController;
 import com.google.api.gax.grpc.BundlingSettings;
-import com.google.auth.Credentials;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.auto.value.AutoValue;
 import com.google.common.base.Optional;
 import com.google.common.base.Preconditions;
 import com.google.common.util.concurrent.ListenableFuture;
 import com.google.pubsub.v1.PubsubMessage;
-import io.grpc.ManagedChannelBuilder;
-import java.util.concurrent.ScheduledExecutorService;
 import org.joda.time.Duration;
 
 /**
@@ -176,23 +173,12 @@ public interface Publisher {
 
     abstract Duration getRequestTimeout();
 
-    abstract Optional<Credentials> getUserCredentials();
-
-    abstract Optional<ManagedChannelBuilder<? extends ManagedChannelBuilder<?>>>
-        getChannelBuilder();
-
-    abstract Optional<ScheduledExecutorService> getExecutor();
-
     public static Builder newBuilder() {
       return new AutoValue_Publisher_Settings.Builder()
           .setFlowControlSettings(FlowController.Settings.DEFAULT)
           .setFailOnFlowControlLimits(false)
           .setSendBundleDeadline(MIN_SEND_BUNDLE_DURATION)
           .setRequestTimeout(DEFAULT_REQUEST_TIMEOUT)
-          .setUserCredentials(Optional.<Credentials>absent())
-          .setChannelBuilder(
-              Optional.<ManagedChannelBuilder<? extends ManagedChannelBuilder<?>>>absent())
-          .setExecutor(Optional.<ScheduledExecutorService>absent())
           .setBundlingSettings(DEFAULT_BUNDLING_SETTINGS);
     }
 
@@ -207,26 +193,6 @@ public interface Publisher {
       abstract Builder setSendBundleDeadline(Duration value);
 
       abstract Builder setRequestTimeout(Duration value);
-
-      abstract Builder setUserCredentials(Optional<Credentials> value);
-
-      Builder setUserCredentials(Credentials value) {
-        return setUserCredentials(Optional.of(value));
-      }
-
-      abstract Builder setChannelBuilder(
-          Optional<ManagedChannelBuilder<? extends ManagedChannelBuilder<?>>> value);
-
-      Builder setChannelBuilder(ManagedChannelBuilder<? extends ManagedChannelBuilder<?>> value) {
-        return setChannelBuilder(
-            Optional.<ManagedChannelBuilder<? extends ManagedChannelBuilder<?>>>of(value));
-      }
-
-      abstract Builder setExecutor(Optional<ScheduledExecutorService> value);
-
-      Builder setExecutor(ScheduledExecutorService value) {
-        return setExecutor(Optional.of(value));
-      }
 
       abstract Settings autoBuild();
 

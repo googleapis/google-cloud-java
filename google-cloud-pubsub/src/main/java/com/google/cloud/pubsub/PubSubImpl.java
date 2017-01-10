@@ -289,7 +289,7 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
   public Publisher newPublisher(String topic, Publisher.Settings settings) throws PubSubException {
     String topicName = PublisherClient.formatTopicName(getOptions().getProjectId(), topic);
     try {
-      return new PublisherImpl(topicName, settings);
+      return new PublisherImpl(topicName, getOptions(), settings);
     } catch (IOException e) {
       throw new PubSubException(e, false);
     }
