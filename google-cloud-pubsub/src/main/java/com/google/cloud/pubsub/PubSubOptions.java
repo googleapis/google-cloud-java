@@ -16,13 +16,13 @@
 
 package com.google.cloud.pubsub;
 
+import com.google.api.gax.grpc.ChannelProvider;
 import com.google.cloud.GrpcServiceOptions;
 import com.google.cloud.pubsub.spi.DefaultPubSubRpc;
 import com.google.cloud.pubsub.spi.PubSubRpc;
 import com.google.cloud.pubsub.spi.PubSubRpcFactory;
 import com.google.cloud.pubsub.spi.v1.PublisherSettings;
 import com.google.common.collect.ImmutableSet;
-
 import java.io.IOException;
 import java.util.Set;
 import java.util.concurrent.ScheduledExecutorService;
@@ -101,6 +101,11 @@ public class PubSubOptions extends GrpcServiceOptions<PubSub, PubSubRpc, PubSubO
   @Override
   protected ExecutorFactory<ScheduledExecutorService> getExecutorFactory() {
     return super.getExecutorFactory();
+  }
+
+  @Override
+  protected ChannelProvider getChannelProvider() {
+    return super.getChannelProvider();
   }
 
   @Override
