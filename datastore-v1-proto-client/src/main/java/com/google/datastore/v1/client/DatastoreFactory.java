@@ -97,7 +97,10 @@ public class DatastoreFactory {
     }
     // DatastoreOptions ensures either project endpoint or project ID is set.
     String projectId = checkNotNull(options.getProjectId());
-    if (options.getLocalHost() != null) {
+    if (options.getHost() != null) {
+      return validateUrl(String.format("https://%s/%s/projects/%s",
+          options.getHost(), VERSION, projectId));
+    } else if (options.getLocalHost() != null) {
       return validateUrl(String.format("http://%s/%s/projects/%s",
           options.getLocalHost(), VERSION, projectId));
     }

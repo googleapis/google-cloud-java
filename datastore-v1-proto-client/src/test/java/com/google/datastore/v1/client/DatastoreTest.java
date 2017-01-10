@@ -102,10 +102,28 @@ public class DatastoreTest {
   @Test
   public void options_LocalHostAndProjectEndpoint() throws Exception {
     thrown.expect(IllegalArgumentException.class);
-    thrown.expectMessage("Cannot set both project endpoint and local host");
+    thrown.expectMessage("Can set at most one of project endpoint, host, and local host");
     options = new DatastoreOptions.Builder()
         .localHost("localhost:8080")
         .projectEndpoint("http://localhost:1234/datastore/v1beta42/projects/project-id");
+  }
+
+  @Test
+  public void options_HostAndProjectEndpoint() throws Exception {
+    thrown.expect(IllegalArgumentException.class);
+    thrown.expectMessage("Can set at most one of project endpoint, host, and local host");
+    options = new DatastoreOptions.Builder()
+        .host("foo-datastore.googleapis.com")
+        .projectEndpoint("http://localhost:1234/datastore/v1beta42/projects/project-id");
+  }
+
+  @Test
+  public void options_HostAndLocalHost() throws Exception {
+    thrown.expect(IllegalArgumentException.class);
+    thrown.expectMessage("Can set at most one of project endpoint, host, and local host");
+    options = new DatastoreOptions.Builder()
+        .host("foo-datastore.googleapis.com")
+        .localHost("localhost:8080");
   }
 
   @Test
@@ -127,9 +145,38 @@ public class DatastoreTest {
   }
 
   @Test
+  public void options_InvalidHost() throws Exception {
+    thrown.expect(IllegalArgumentException.class);
+    thrown.expectMessage("Illegal character");
+    factory.create(new DatastoreOptions.Builder()
+        .projectId(PROJECT_ID)
+        .host("!not a valid url!")
+        .build());
+  }
+
+  @Test
+  public void options_SchemeInHost() {
+    thrown.expect(IllegalArgumentException.class);
+    thrown.expectMessage(
+        "Host \"http://foo-datastore.googleapis.com\" must not include scheme");
+    new DatastoreOptions.Builder()
+        .host("http://foo-datastore.googleapis.com");
+  }
+
+  @Test
   public void create_NullOptions() throws Exception {
     thrown.expect(NullPointerException.class);
     factory.create(null);
+  }
+
+  @Test
+  public void create_Host() {
+    Datastore datastore = factory.create(new DatastoreOptions.Builder()
+        .projectId(PROJECT_ID)
+        .host("foo-datastore.googleapis.com")
+        .build());
+    assertThat(datastore.remoteRpc.getUrl())
+        .isEqualTo("https://foo-datastore.googleapis.com/v1/projects/project-id");
   }
 
   @Test

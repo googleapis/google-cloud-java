@@ -43,6 +43,7 @@ import java.util.List;
 public class DatastoreOptions {
   private final String projectId;
   private final String projectEndpoint;
+  private final String host;
   private final String localHost;
 
   private final HttpRequestInitializer initializer;
@@ -57,6 +58,7 @@ public class DatastoreOptions {
         "Either project ID or project endpoint must be provided.");
     this.projectId = b.projectId;
     this.projectEndpoint = b.projectEndpoint;
+    this.host = b.host;
     this.localHost = b.localHost;
     this.initializer = b.initializer;
     this.credential = b.credential;
@@ -67,13 +69,14 @@ public class DatastoreOptions {
    * Builder for {@link DatastoreOptions}.
    */
   public static class Builder {
-    private static final String PROJECT_ENDPOINT_AND_PROJECT_ID_ERROR = 
+    private static final String PROJECT_ENDPOINT_AND_PROJECT_ID_ERROR =
         "Cannot set both project endpoint and project ID.";
-    private static final String PROJECT_ENDPOINT_AND_LOCAL_HOST_ERROR =
-        "Cannot set both project endpoint and local host.";
+    private static final String PROJECT_ENDPOINT_AND_HOST_ERROR =
+        "Can set at most one of project endpoint, host, and local host.";
 
     private String projectId;
     private String projectEndpoint;
+    private String host;
     private String localHost;
     private HttpRequestInitializer initializer;
     private Credential credential;
@@ -84,6 +87,7 @@ public class DatastoreOptions {
     public Builder(DatastoreOptions options) {
       this.projectId = options.projectId;
       this.projectEndpoint = options.projectEndpoint;
+      this.host = options.host;
       this.localHost = options.localHost;
       this.initializer = options.initializer;
       this.credential = options.credential;
@@ -95,7 +99,7 @@ public class DatastoreOptions {
     }
 
     /**
-     * Sets the project ID used to access Datastore.
+     * Sets the project ID used to access Cloud Datastore.
      */
     public Builder projectId(String projectId) {
       checkArgument(projectEndpoint == null, PROJECT_ENDPOINT_AND_PROJECT_ID_ERROR);
@@ -104,10 +108,26 @@ public class DatastoreOptions {
     }
 
     /**
-     * Sets the host used to access Datastore.
+     * Sets the host used to access Cloud Datastore. To connect to the Cloud Datastore Emulator,
+     * use {@link #localHost} instead.
+     */
+    public Builder host(String host) {
+      checkArgument(projectEndpoint == null && localHost == null, PROJECT_ENDPOINT_AND_HOST_ERROR);
+      if (includesScheme(host)) {
+        throw new IllegalArgumentException(
+            String.format("Host \"%s\" must not include scheme.", host));
+      }
+      this.host = host;
+      return this;
+    }
+
+    /**
+     * Configures the client to access Cloud Datastore on a local host (typically a Cloud Datastore
+     * Emulator instance). Call this method also configures the client not to attach credentials
+     * to requests.
      */
     public Builder localHost(String localHost) {
-      checkArgument(projectEndpoint == null, PROJECT_ENDPOINT_AND_LOCAL_HOST_ERROR);
+      checkArgument(projectEndpoint == null && host == null, PROJECT_ENDPOINT_AND_HOST_ERROR);
       if (includesScheme(localHost)) {
         throw new IllegalArgumentException(
             String.format("Local host \"%s\" must not include scheme.", localHost));
@@ -117,12 +137,15 @@ public class DatastoreOptions {
     }
 
     /**
-     * Sets the project endpoint used to access Datastore. Prefer using {@link #projectId}
-     * and/or {@link #localHost} when possible.
+     * @deprecated Use {@link #projectId} and/or {@link #host}/{@link #localHost} instead.
+     *
+     * Sets the project endpoint used to access Cloud Datastore. Prefer using {@link #projectId}
+     * and/or {@link #host}/{@link #localHost} when possible.
      */
+    @Deprecated
     public Builder projectEndpoint(String projectEndpoint) {
       checkArgument(projectId == null, PROJECT_ENDPOINT_AND_PROJECT_ID_ERROR);
-      checkArgument(localHost == null, PROJECT_ENDPOINT_AND_LOCAL_HOST_ERROR);
+      checkArgument(localHost == null && host == null, PROJECT_ENDPOINT_AND_HOST_ERROR);
       if (!includesScheme(projectEndpoint)) {
         throw new IllegalArgumentException(String.format(
             "Project endpoint \"%s\" must include scheme.", projectEndpoint));
@@ -132,7 +155,7 @@ public class DatastoreOptions {
     }
 
     /**
-     * Sets the (optional) initializer to run on HTTP requests to Datastore.
+     * Sets the (optional) initializer to run on HTTP requests to Cloud Datastore.
      */
     public Builder initializer(HttpRequestInitializer initializer) {
       this.initializer = initializer;
@@ -140,7 +163,7 @@ public class DatastoreOptions {
     }
 
     /**
-     * Sets the Google APIs {@link Credential} used to access Datastore.
+     * Sets the Google APIs {@link Credential} used to access Cloud Datastore.
      */
     public Builder credential(Credential credential) {
       this.credential = credential;
@@ -148,7 +171,7 @@ public class DatastoreOptions {
     }
 
     /**
-     * Sets the transport used to access Datastore.
+     * Sets the transport used to access Cloud Datastore.
      */
     public Builder transport(HttpTransport transport) {
       this.transport = transport;
@@ -166,6 +189,10 @@ public class DatastoreOptions {
 
   public String getProjectEndpoint() {
     return projectEndpoint;
+  }
+
+  public String getHost() {
+    return host;
   }
 
   public String getLocalHost() {
