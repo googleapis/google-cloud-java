@@ -22,11 +22,8 @@ import com.google.cloud.MonitoredResource;
 import com.google.cloud.logging.Logging.WriteOption;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
-import com.google.common.collect.ImmutableSet;
-
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Set;
 import java.util.logging.ErrorManager;
 import java.util.logging.Filter;
 import java.util.logging.Formatter;
@@ -93,12 +90,12 @@ public class LoggingHandler extends Handler {
   private static final String HANDLERS_PROPERTY = "handlers";
   private static final String ROOT_LOGGER_NAME = "";
   private static final String[] NO_HANDLERS = new String[0];
-  private static final Set<String> EXCLUDED_LOGGERS = ImmutableSet.of("io.grpc", "io.netty",
-      "com.google.api.client.http", "sun.net.www.protocol.http");
+
+  private static final ThreadLocal<Boolean> inPublishCall = new ThreadLocal<>();
 
   private final LoggingOptions options;
-  private final List<LogEntry> buffer = new LinkedList<>();
   private final WriteOption[] writeOptions;
+  private List<LogEntry> buffer = new LinkedList<>();
   private Logging logging;
   private Level flushLevel;
   private long flushSize;
@@ -148,31 +145,6 @@ public class LoggingHandler extends Handler {
     String logName = firstNonNull(log, helper.getProperty(className + ".log", "java.log"));
     MonitoredResource resource = firstNonNull(monitoredResource, getDefaultResource());
     writeOptions = new WriteOption[]{WriteOption.logName(logName), WriteOption.resource(resource)};
-    maskLoggers();
-  }
-
-  private static void maskLoggers() {
-    for (String loggerName : EXCLUDED_LOGGERS) {
-      Logger logger = Logger.getLogger(loggerName);
-      // We remove the Clould Logging handler if it has been registered for a logger that should be
-      // masked
-      List<LoggingHandler> loggingHandlers = getLoggingHandlers(logger);
-      for (LoggingHandler loggingHandler : loggingHandlers) {
-        logger.removeHandler(loggingHandler);
-      }
-      // We mask ancestors if they have a Stackdriver Logging Handler registered
-      Logger currentLogger = logger;
-      Logger ancestor = currentLogger.getParent();
-      boolean masked = false;
-      while (ancestor != null && !masked) {
-        if (hasLoggingHandler(ancestor)) {
-          currentLogger.setUseParentHandlers(false);
-          masked = true;
-        }
-        currentLogger = ancestor;
-        ancestor = ancestor.getParent();
-      }
-    }
   }
 
   private static List<LoggingHandler> getLoggingHandlers(Logger logger) {
@@ -272,23 +244,55 @@ public class LoggingHandler extends Handler {
    */
   Logging getLogging() {
     if (logging == null) {
-      logging = options.getService();
+      synchronized (this) {
+        if (logging == null) {
+          logging = options.getService();
+        }
+      }
     }
     return logging;
   }
 
   @Override
-  public synchronized void publish(LogRecord record) {
+  public void publish(LogRecord record) {
     // check that the log record should be logged
     if (!isLoggable(record)) {
       return;
     }
-    LogEntry entry = entryFor(record);
-    if (entry != null) {
-      buffer.add(entry);
+
+    // HACK warning: this logger doesn't work like normal loggers; the log calls are issued
+    // from another class instead of by itself, so it can't be configured off like normal
+    // loggers. We have to check the source class name instead.
+    if ("io.netty.handler.codec.http2.Http2FrameLogger".equals(record.getSourceClassName())) {
+      return;
     }
-    if (buffer.size() >= flushSize || record.getLevel().intValue() >= flushLevel.intValue()) {
-      flush();
+
+    if (inPublishCall.get() != null) {
+      // ignore all logs generated in the course of logging through this handler
+      return;
+    }
+    inPublishCall.set(true);
+
+    try {
+      LogEntry entry = entryFor(record);
+
+      List<LogEntry> flushBuffer = null;
+      WriteOption[] flushWriteOptions = null;
+
+      synchronized (this) {
+        if (entry != null) {
+          buffer.add(entry);
+        }
+        if (buffer.size() >= flushSize || record.getLevel().intValue() >= flushLevel.intValue()) {
+          flushBuffer = buffer;
+          flushWriteOptions = writeOptions;
+          buffer = new LinkedList<>();
+        }
+      }
+
+      flush(flushBuffer, flushWriteOptions);
+    } finally {
+      inPublishCall.remove();
     }
   }
 
@@ -350,18 +354,35 @@ public class LoggingHandler extends Handler {
    * how entries should be written.
    */
   void write(List<LogEntry> entries, WriteOption... options) {
-    getLogging().write(entries, options);
+    getLogging().writeAsync(entries, options);
   }
 
   @Override
-  public synchronized void flush() {
+  public void flush() {
+    List<LogEntry> flushBuffer;
+    WriteOption[] flushWriteOptions;
+
+    synchronized (this) {
+      if (buffer.isEmpty()) {
+        return;
+      }
+      flushBuffer = buffer;
+      flushWriteOptions = writeOptions;
+      buffer = new LinkedList<>();
+    }
+
+    flush(flushBuffer, flushWriteOptions);
+  }
+
+  private void flush(List<LogEntry> flushBuffer, WriteOption[] flushWriteOptions) {
+    if (flushBuffer == null) {
+      return;
+    }
     try {
-      write(buffer, writeOptions);
+      write(flushBuffer, flushWriteOptions);
     } catch (Exception ex) {
       // writing can fail but we should not throw an exception, we report the error instead
       reportError(null, ex, ErrorManager.FLUSH_FAILURE);
-    } finally {
-      buffer.clear();
     }
   }
 
@@ -369,15 +390,23 @@ public class LoggingHandler extends Handler {
    * Closes the handler and the associated {@link Logging} object.
    */
   @Override
-  public synchronized void close() throws SecurityException {
+  public void close() throws SecurityException {
+    Logging loggingToClose = null;
     if (logging != null) {
+      synchronized (this) {
+        if (logging != null) {
+          loggingToClose = logging;
+          logging = null;
+        }
+      }
+    }
+    if (loggingToClose != null) {
       try {
-        logging.close();
+        loggingToClose.close();
       } catch (Exception ex) {
         // ignore
       }
     }
-    logging = null;
   }
 
   /**
@@ -407,6 +436,5 @@ public class LoggingHandler extends Handler {
    */
   public static void addHandler(Logger logger, LoggingHandler handler) {
     logger.addHandler(handler);
-    maskLoggers();
   }
 }
