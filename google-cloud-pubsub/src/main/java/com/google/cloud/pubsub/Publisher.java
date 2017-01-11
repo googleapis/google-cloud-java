@@ -162,7 +162,7 @@ public interface Publisher {
   void shutdown();
 
   /** A builder of {@link Publisher}s. */
-  final class Builder {
+  public final class Builder {
     String topic;
 
     // Bundling options
