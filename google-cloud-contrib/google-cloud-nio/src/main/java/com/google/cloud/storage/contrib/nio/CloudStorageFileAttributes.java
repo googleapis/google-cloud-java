@@ -29,49 +29,49 @@ import java.util.List;
 public interface CloudStorageFileAttributes extends BasicFileAttributes {
 
   /**
-   * Returns HTTP etag hash of object contents.
+   * @return HTTP etag hash of object contents.
    *
    * @see "https://developers.google.com/storage/docs/hashes-etags"
    */
   Optional<String> etag();
 
   /**
-   * Returns mime type (e.g. text/plain), if set.
+   * @return mime type (e.g. text/plain), if set.
    *
    * @see "http://en.wikipedia.org/wiki/Internet_media_type#List_of_common_media_types"
    */
   Optional<String> mimeType();
 
   /**
-   * Returns access control list.
+   * @return access control list.
    *
    * @see "https://developers.google.com/storage/docs/reference-headers#acl"
    */
   Optional<List<Acl>> acl();
 
   /**
-   * Returns {@code Cache-Control} HTTP header value, if set.
+   * @return {@code Cache-Control} HTTP header value, if set.
    *
    * @see "https://developers.google.com/storage/docs/reference-headers#cachecontrol"
    */
   Optional<String> cacheControl();
 
   /**
-   * Returns {@code Content-Encoding} HTTP header value, if set.
+   * @return {@code Content-Encoding} HTTP header value, if set.
    *
    * @see "https://developers.google.com/storage/docs/reference-headers#contentencoding"
    */
   Optional<String> contentEncoding();
 
   /**
-   * Returns {@code Content-Disposition} HTTP header value, if set.
+   * @return {@code Content-Disposition} HTTP header value, if set.
    *
    * @see "https://developers.google.com/storage/docs/reference-headers#contentdisposition"
    */
   Optional<String> contentDisposition();
 
   /**
-   * Returns user-specified metadata.
+   * @return user-specified metadata.
    *
    * @see "https://developers.google.com/storage/docs/reference-headers#contentdisposition"
    */

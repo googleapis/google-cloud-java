@@ -25,6 +25,9 @@ public final class CloudStorageOptions {
 
   /**
    * Sets the mime type header on an object, e.g. {@code "text/plain"}.
+   *
+   * @param mimeType MIME type
+   * @return the corresponding option
    */
   public static CloudStorageOption.OpenCopy withMimeType(String mimeType) {
     return OptionMimeType.create(mimeType);
@@ -32,6 +35,7 @@ public final class CloudStorageOptions {
 
   /**
    * Disables caching on an object. Same as: {@code withCacheControl("no-cache")}.
+   * @return the corresponding option
    */
   public static CloudStorageOption.OpenCopy withoutCaching() {
     return withCacheControl("no-cache");
@@ -41,6 +45,9 @@ public final class CloudStorageOptions {
    * Sets the {@code Cache-Control} HTTP header on an object.
    *
    * @see "https://developers.google.com/storage/docs/reference-headers#cachecontrol"
+   *
+   * @param cacheControl Cache-Control HTTP header
+   * @return the corresponding option
    */
   public static CloudStorageOption.OpenCopy withCacheControl(String cacheControl) {
     return OptionCacheControl.create(cacheControl);
@@ -50,6 +57,9 @@ public final class CloudStorageOptions {
    * Sets the {@code Content-Disposition} HTTP header on an object.
    *
    * @see "https://developers.google.com/storage/docs/reference-headers#contentdisposition"
+   *
+   * @param contentDisposition Content-Disposition HTTP header
+   * @return the corresponding option
    */
   public static CloudStorageOption.OpenCopy withContentDisposition(String contentDisposition) {
     return OptionContentDisposition.create(contentDisposition);
@@ -59,6 +69,9 @@ public final class CloudStorageOptions {
    * Sets the {@code Content-Encoding} HTTP header on an object.
    *
    * @see "https://developers.google.com/storage/docs/reference-headers#contentencoding"
+   *
+   * @param contentEncoding content encoding
+   * @return the corresponding option
    */
   public static CloudStorageOption.OpenCopy withContentEncoding(String contentEncoding) {
     return OptionContentEncoding.create(contentEncoding);
@@ -68,6 +81,9 @@ public final class CloudStorageOptions {
    * Sets the ACL value on a Cloud Storage object.
    *
    * @see "https://developers.google.com/storage/docs/reference-headers#acl"
+   *
+   * @param acl ACL value
+   * @return the corresponding option
    */
   public static CloudStorageOption.OpenCopy withAcl(Acl acl) {
     return OptionAcl.create(acl);
@@ -77,6 +93,10 @@ public final class CloudStorageOptions {
    * Sets an unmodifiable piece of user metadata on a Cloud Storage object.
    *
    * @see "https://developers.google.com/storage/docs/reference-headers#xgoogmeta"
+   *
+   * @param key metadata key
+   * @param value metadata value
+   * @return the corresponding option
    */
   public static CloudStorageOption.OpenCopy withUserMetadata(String key, String value) {
     return OptionUserMetadata.create(key, value);
@@ -86,6 +106,9 @@ public final class CloudStorageOptions {
    * Sets the block size (in bytes) when talking to the Google Cloud Storage server.
    *
    * <p>The default is {@value CloudStorageFileSystem#BLOCK_SIZE_DEFAULT}.
+   *
+   * @param size block size (in bytes)
+   * @return the corresponding option
    */
   public static CloudStorageOption.OpenCopy withBlockSize(int size) {
     return OptionBlockSize.create(size);

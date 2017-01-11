@@ -121,6 +121,8 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
 
   /**
    * Sets options that are only used by the constructor.
+   *
+   * @param newStorageOptions options that are only used by the constructor
    */
   @VisibleForTesting
   public static void setStorageOptions(StorageOptions newStorageOptions) {
@@ -170,7 +172,7 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
   }
 
   /**
-   * Returns Cloud Storage file system, provided a URI with no path, e.g. {@code gs://bucket}.
+   * @return Cloud Storage file system, provided a URI with no path, e.g. {@code gs://bucket}.
    *
    * @param uri bucket and current working directory, e.g. {@code gs://bucket}
    * @param env map of configuration options, whose keys correspond to the method names of
@@ -226,8 +228,13 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
   private SeekableByteChannel newReadChannel(Path path, Set<? extends OpenOption> options)
       throws IOException {
     initStorage();
+    // null indicates we shouldn't add a prefetcher
+    SeekableByteChannelPrefetcherOptions prefetcherOptions = null;
+
     for (OpenOption option : options) {
-      if (option instanceof StandardOpenOption) {
+      if (option instanceof SeekableByteChannelPrefetcherOptions) {
+        prefetcherOptions = (SeekableByteChannelPrefetcherOptions)option;
+      } else if (option instanceof StandardOpenOption) {
         switch ((StandardOpenOption) option) {
           case READ:
             // Default behavior.
@@ -255,6 +262,15 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
     if (cloudPath.seemsLikeADirectoryAndUsePseudoDirectories()) {
       throw new CloudStoragePseudoDirectoryException(cloudPath);
     }
+    if (prefetcherOptions!=null) {
+      // layer a prefetcher on top, using the provided options
+      List<SeekableByteChannel> chans = new ArrayList<>();
+      for (int i=0; i<prefetcherOptions.extraThreads + prefetcherOptions.prefetchingThreads; i++) {
+        chans.add(CloudStorageReadChannel.create(storage, cloudPath.getBlobId(), 0));
+      }
+      return new SeekableByteChannelPrefetcher(prefetcherOptions, chans);
+    }
+    // normal case
     return CloudStorageReadChannel.create(storage, cloudPath.getBlobId(), 0);
   }
 

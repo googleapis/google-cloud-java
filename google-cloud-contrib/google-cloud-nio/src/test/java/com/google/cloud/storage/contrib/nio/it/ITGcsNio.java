@@ -21,6 +21,7 @@ import static java.nio.charset.StandardCharsets.UTF_8;
 
 import com.google.cloud.storage.contrib.nio.CloudStorageConfiguration;
 import com.google.cloud.storage.contrib.nio.CloudStorageFileSystem;
+import com.google.cloud.storage.contrib.nio.SeekableByteChannelPrefetcherOptions;
 import com.google.common.collect.ImmutableList;
 import com.google.cloud.storage.BlobInfo;
 import com.google.cloud.storage.BucketInfo;
@@ -140,10 +141,24 @@ public class ITGcsNio {
 
   @Test(timeout = 60_000)
   public void testReadByteChannel() throws IOException {
+    innerTestReadByteChannel(false);
+  }
+
+  @Test(timeout = 60_000)
+  public void testReadByteChannelWithPrefetch() throws IOException {
+    innerTestReadByteChannel(true);
+  }
+
+  private void innerTestReadByteChannel(boolean prefetch) throws IOException {
     CloudStorageFileSystem testBucket = getTestBucket();
     Path path = testBucket.getPath(SML_FILE);
     long size = Files.size(path);
-    SeekableByteChannel chan = Files.newByteChannel(path, StandardOpenOption.READ);
+    SeekableByteChannel chan;
+    if (prefetch) {
+      chan = Files.newByteChannel(path, StandardOpenOption.READ, new SeekableByteChannelPrefetcherOptions());
+    } else {
+      chan = Files.newByteChannel(path, StandardOpenOption.READ);
+    }
     assertThat(chan.size()).isEqualTo(size);
     ByteBuffer buf = ByteBuffer.allocate(SML_SIZE);
     int read = 0;
@@ -162,10 +177,20 @@ public class ITGcsNio {
     byte[] expected = new byte[SML_SIZE];
     new Random(SML_SIZE).nextBytes(expected);
     assertThat(Arrays.equals(buf.array(), expected)).isTrue();
+    chan.close();
   }
 
   @Test
   public void testSeek() throws IOException {
+    innerTestSeek(false);
+  }
+
+  @Test
+  public void testSeekWithPrefetch() throws IOException {
+    innerTestSeek(true);
+  }
+
+  private void innerTestSeek(boolean prefetch) throws IOException {
     CloudStorageFileSystem testBucket = getTestBucket();
     Path path = testBucket.getPath(BIG_FILE);
     int size = BIG_SIZE;
@@ -173,7 +198,12 @@ public class ITGcsNio {
     byte[] sample = new byte[100];
     byte[] wanted;
     byte[] wanted2;
-    SeekableByteChannel chan = Files.newByteChannel(path, StandardOpenOption.READ);
+    SeekableByteChannel chan;
+    if (prefetch) {
+      chan = Files.newByteChannel(path, StandardOpenOption.READ, new SeekableByteChannelPrefetcherOptions());
+    } else {
+      chan = Files.newByteChannel(path, StandardOpenOption.READ);
+    }
     assertThat(chan.size()).isEqualTo(size);
 
     // check seek
@@ -191,6 +221,7 @@ public class ITGcsNio {
     // if the two spots in the file have the same contents, then this isn't a good file for this
     // test.
     assertThat(wanted).isNotEqualTo(wanted2);
+    chan.close();
   }
 
   @Test

@@ -16,6 +16,7 @@
 
 package com.google.cloud.examples.nio;
 
+import com.google.cloud.storage.contrib.nio.SeekableByteChannelPrefetcherOptions;
 import com.google.common.base.Stopwatch;
 import com.google.common.io.BaseEncoding;
 
@@ -24,6 +25,7 @@ import java.net.URI;
 import java.nio.ByteBuffer;
 import java.nio.channels.SeekableByteChannel;
 import java.nio.file.Files;
+import java.nio.file.OpenOption;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.security.MessageDigest;
@@ -52,18 +54,29 @@ public class CountBytes {
       help();
       return;
     }
+    boolean prefetch = false;
     for (String a : args) {
-      countFile(a);
+      if ("--prefetch".equals(a)) {
+        prefetch = true;
+        continue;
+      }
+      countFile(a, prefetch);
     }
   }
 
   /**
    * Print the length of the indicated file.
    *
+   * <p>Prefetching here is just an example; in this scenario there isn't that much to be gained.
+   *
+   * <p>Prefetching is most useful in a scenario where the caller issues many small sequential reads
+   * and does some computation in between. Prefetching results in fewer larger reads that are
+   * issued in parallel with the computation.
+   *
    * <p>This uses the normal Java NIO Api, so it can take advantage of any installed
    * NIO Filesystem provider without any extra effort.
    */
-  private static void countFile(String fname) {
+  private static void countFile(String fname, boolean prefetch) {
     // large buffers pay off
     final int bufSize = 50 * 1024 * 1024;
     try {
@@ -71,9 +84,17 @@ public class CountBytes {
       long size = Files.size(path);
       System.out.println(fname + ": " + size + " bytes.");
       ByteBuffer buf = ByteBuffer.allocate(bufSize);
-      System.out.println("Reading the whole file...");
+      System.out.println("Reading the whole file... (prefetch: " + prefetch + ")");
       Stopwatch sw = Stopwatch.createStarted();
-      try (SeekableByteChannel chan = Files.newByteChannel(path)) {
+      OpenOption[] options = new OpenOption[0];
+      if (prefetch) {
+        final SeekableByteChannelPrefetcherOptions opts = new SeekableByteChannelPrefetcherOptions();
+        // Configure for perfectly sequential access.
+        opts.extraThreads = 0;
+        opts.bufferCount = opts.prefetchingThreads;
+        options = new OpenOption[]{opts};
+      }
+      try (SeekableByteChannel chan = Files.newByteChannel(path, options)) {
         long total = 0;
         int readCalls = 0;
         MessageDigest md = MessageDigest.getInstance("MD5");

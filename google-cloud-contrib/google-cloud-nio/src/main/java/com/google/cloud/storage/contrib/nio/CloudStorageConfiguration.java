@@ -31,18 +31,18 @@ public abstract class CloudStorageConfiguration {
   public static final CloudStorageConfiguration DEFAULT = builder().build();
 
   /**
-   * Returns path of current working directory. This defaults to the root directory.
+   * @return path of current working directory. This defaults to the root directory.
    */
   public abstract String workingDirectory();
 
   /**
-   * Returns {@code true} if we <i>shouldn't</i> throw an exception when encountering object names
+   * @return {@code true} if we <i>shouldn't</i> throw an exception when encountering object names
    * containing superfluous slashes, e.g. {@code a//b}.
    */
   public abstract boolean permitEmptyPathComponents();
 
   /**
-   * Returns {@code true} if '/' prefix on absolute object names should be removed before I/O.
+   * @return {@code true} if '/' prefix on absolute object names should be removed before I/O.
    *
    * <p>If you disable this feature, please take into consideration that all paths created from a
    * URI will have the leading slash.
@@ -50,12 +50,12 @@ public abstract class CloudStorageConfiguration {
   public abstract boolean stripPrefixSlash();
 
   /**
-   * Returns {@code true} if paths with a trailing slash should be treated as fake directories.
+   * @return {@code true} if paths with a trailing slash should be treated as fake directories.
    */
   public abstract boolean usePseudoDirectories();
 
   /**
-   * Returns block size (in bytes) used when talking to the Google Cloud Storage HTTP server.
+   * @return block size (in bytes) used when talking to the Google Cloud Storage HTTP server.
    */
   public abstract int blockSize();
 
@@ -67,6 +67,8 @@ public abstract class CloudStorageConfiguration {
    * <li>The prefix slash on absolute paths will be removed when converting to an object name.
    * <li>Pseudo-directories are enabled, so any path with a trailing slash is a fake directory.
    * </ul>
+   *
+   * @return builder
    */
   public static Builder builder() {
     return new Builder();
@@ -89,6 +91,8 @@ public abstract class CloudStorageConfiguration {
      * {@link CloudStorageFileSystem} object.
      *
      * @throws IllegalArgumentException if {@code path} is not absolute.
+     * @param path the new current working directory
+     * @return builder
      */
     public Builder workingDirectory(String path) {
       checkArgument(UnixPath.getPath(false, path).isAbsolute(), "not absolute: %s", path);
@@ -99,6 +103,9 @@ public abstract class CloudStorageConfiguration {
     /**
      * Configures whether or not we should throw an exception when encountering object names
      * containing superfluous slashes, e.g. {@code a//b}.
+     *
+     * @param value whether to permit empty path components (will throw if false)
+     * @return builder
      */
     public Builder permitEmptyPathComponents(boolean value) {
       permitEmptyPathComponents = value;
@@ -110,6 +117,9 @@ public abstract class CloudStorageConfiguration {
      *
      * <p>If you disable this feature, please take into consideration that all paths created from a
      * URI will have the leading slash.
+     *
+     * @param value if true, remove the '/' prefix on absolute object names
+     * @return builder
      */
     public Builder stripPrefixSlash(boolean value) {
       stripPrefixSlash = value;
@@ -118,6 +128,9 @@ public abstract class CloudStorageConfiguration {
 
     /**
      * Configures if paths with a trailing slash should be treated as fake directories.
+     *
+     * @param value whether paths with a trailing slash should be treated as fake directories.
+     * @return builder
      */
     public Builder usePseudoDirectories(boolean value) {
       usePseudoDirectories = value;
@@ -128,6 +141,9 @@ public abstract class CloudStorageConfiguration {
      * Sets the block size in bytes that should be used for each HTTP request to the API.
      *
      * <p>The default is {@value CloudStorageFileSystem#BLOCK_SIZE_DEFAULT}.
+     *
+     * @param value block size in bytes that should be used for each HTTP request to the API.
+     * @return builder
      */
     public Builder blockSize(int value) {
       blockSize = value;
@@ -136,6 +152,8 @@ public abstract class CloudStorageConfiguration {
 
     /**
      * Creates new instance without destroying builder.
+     *
+     * @return CloudStorageConfiguration with the parameters you asked for.
      */
     public CloudStorageConfiguration build() {
       return new AutoValue_CloudStorageConfiguration(

@@ -84,6 +84,8 @@ public final class CloudStorageFileSystem extends FileSystem {
   /**
    * Creates new file system instance for {@code bucket}, with customizable settings.
    *
+   * @param bucket the bucket to access
+   * @param config configuration
    * @see #forBucket(String)
    */
   @CheckReturnValue
@@ -106,6 +108,10 @@ public final class CloudStorageFileSystem extends FileSystem {
    * {@code FileSystems.getFileSystem(URI.create("gs://bucket"))}. We discourage you
    * from using that if possible, for the reasons documented in
    * {@link CloudStorageFileSystemProvider#newFileSystem(URI, java.util.Map)}
+   *
+   * @param bucket the bucket to access
+   * @param config configuration
+   * @param storageOptions storage options
    *
    * @see java.nio.file.FileSystems#getFileSystem(URI)
    */
@@ -132,14 +138,14 @@ public final class CloudStorageFileSystem extends FileSystem {
   }
 
   /**
-   * Returns Cloud Storage bucket name being served by this file system.
+   * @return Cloud Storage bucket name being served by this file system.
    */
   public String bucket() {
     return bucket;
   }
 
   /**
-   * Returns configuration object for this file system instance.
+   * @return configuration object for this file system instance.
    */
   public CloudStorageConfiguration config() {
     return config;
@@ -147,6 +153,9 @@ public final class CloudStorageFileSystem extends FileSystem {
 
   /**
    * Converts Cloud Storage object name to a {@link Path} object.
+   *
+   * @param first cloud storage object name
+   * @return Path object
    */
   @Override
   public CloudStoragePath getPath(String first, String... more) {
@@ -168,7 +177,7 @@ public final class CloudStorageFileSystem extends FileSystem {
   }
 
   /**
-   * Returns {@code true}, even if you previously called the {@link #close()} method.
+   * @return {@code true}, even if you previously called the {@link #close()} method.
    */
   @Override
   public boolean isOpen() {
@@ -176,7 +185,7 @@ public final class CloudStorageFileSystem extends FileSystem {
   }
 
   /**
-   * Returns {@code false}.
+   * @return {@code false}.
    */
   @Override
   public boolean isReadOnly() {
@@ -184,7 +193,7 @@ public final class CloudStorageFileSystem extends FileSystem {
   }
 
   /**
-   * Returns {@value UnixPath#SEPARATOR}.
+   * @return {@value UnixPath#SEPARATOR}.
    */
   @Override
   public String getSeparator() {
