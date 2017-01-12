@@ -91,7 +91,7 @@ public interface Publisher {
    * be delayed based on the publisher bundling options.
    *
    * <p>Depending on chosen flow control {@link #failOnFlowControlLimits option}, the returned
-   * future might immediately fail with a {@link CloudPubsubFlowControlException} or block the
+   * future might immediately fail with a {@link FlowController.FlowControlException} or block the
    * current thread until there are more resources available to publish.
    *
    * @param message the message to publish.
@@ -122,12 +122,12 @@ public interface Publisher {
 
   /**
    * Whether to block publish calls when reaching flow control limits (see {@link
-   * #getMaxOutstandingRequestBytes()} & {@link #getMaxOutstandingElementCount()}).
+   * #getMaxOutstandingRequestBytes()} and {@link #getMaxOutstandingElementCount()}).
    *
    * <p>If set to false, a publish call will fail with either {@link
-   * RequestByteMaxOutstandingReachedException} or {@link
-   * ElementCountMaxOutstandingReachedException}, as appropriate, when flow control limits are
-   * reached.
+   * FlowController.MaxOutstandingRequestBytesReachedException} or {@link
+   * FlowController.MaxOutstandingElementCountReachedException}, as appropriate, when flow control
+   * limits are reached.
    */
   boolean failOnFlowControlLimits();
 
@@ -247,8 +247,8 @@ public interface Publisher {
 
     /**
      * Whether to fail publish when reaching any of the flow control limits, with either a {@link
-     * RequestByteMaxOutstandingReachedException} or {@link
-     * ElementCountMaxOutstandingReachedException} as appropriate.
+     * FlowController.MaxOutstandingRequestBytesReachedException} or {@link
+     * FlowController.MaxOutstandingElementCountReachedException} as appropriate.
      *
      * <p>If set to false, then publish operations will block the current thread until the
      * outstanding requests go under the limits.

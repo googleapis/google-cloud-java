@@ -16,16 +16,12 @@
 
 package com.google.cloud.pubsub.testing;
 
-import com.google.cloud.NoCredentials;
-import com.google.cloud.RetryParams;
+import com.google.cloud.ServiceOptions;
 import com.google.cloud.testing.BaseEmulatorHelper;
 import com.google.common.collect.ImmutableList;
-import com.google.cloud.ServiceOptions;
-
 import io.grpc.ManagedChannel;
 import io.grpc.netty.NegotiationType;
 import io.grpc.netty.NettyChannelBuilder;
-
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -35,7 +31,6 @@ import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.TimeoutException;
 import java.util.logging.Logger;
-
 import org.joda.time.Duration;
 
 /**
@@ -104,10 +99,7 @@ public class LocalPubSubHelper extends BaseEmulatorHelper<ServiceOptions> {
         .build();
   }
 
-  /**
-   * Returns a {@link PubSubOptions} instance that sets the host to use the PubSub emulator on
-   * localhost.
-   */
+  /** Returns a {@link ServiceOptions} describing the emulator. */
   @Override
   public ServiceOptions getOptions() {
     throw new UnsupportedOperationException("not implemented as PubSubOptions no longer exists");
