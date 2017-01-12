@@ -20,9 +20,8 @@ import static com.google.cloud.pubsub.MessagesProcessor.PENDING_ACKS_SEND_DELAY;
 import static org.junit.Assert.assertEquals;
 
 import com.google.cloud.pubsub.FakeSubscriberServiceImpl.ModifyAckDeadline;
+import com.google.cloud.pubsub.MessageReceiver.AckReply;
 import com.google.cloud.pubsub.Subscriber.Builder;
-import com.google.cloud.pubsub.Subscriber.MessageReceiver;
-import com.google.cloud.pubsub.Subscriber.MessageReceiver.AckReply;
 import com.google.common.base.Function;
 import com.google.common.base.Optional;
 import com.google.common.base.Preconditions;

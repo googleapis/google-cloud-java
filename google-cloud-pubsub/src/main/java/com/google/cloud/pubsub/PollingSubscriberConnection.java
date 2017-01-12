@@ -24,7 +24,6 @@ import com.google.auth.Credentials;
 import com.google.cloud.Clock;
 import com.google.cloud.pubsub.MessagesProcessor.AcksProcessor;
 import com.google.cloud.pubsub.MessagesProcessor.PendingModifyAckDeadline;
-import com.google.cloud.pubsub.Subscriber.MessageReceiver;
 import com.google.common.collect.Lists;
 import com.google.common.util.concurrent.AbstractService;
 import com.google.common.util.concurrent.FutureCallback;
