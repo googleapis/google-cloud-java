@@ -137,7 +137,7 @@ public interface Subscriber extends Service {
   Optional<Integer> getMaxOutstandingRequestBytes();
 
   /** Builder of {@link Subscriber Subscribers}. */
-  final class Builder {
+  public final class Builder {
     private static final Duration MIN_ACK_EXPIRATION_PADDING = Duration.millis(100);
     private static final Duration DEFAULT_ACK_EXPIRATION_PADDING = Duration.millis(500);
 

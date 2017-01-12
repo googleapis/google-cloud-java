@@ -22,10 +22,6 @@ import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
 import com.google.cloud.NoCredentials;
-import com.google.cloud.pubsub.PubSub;
-import com.google.cloud.pubsub.PubSubException;
-import com.google.cloud.pubsub.PubSubOptions;
-import com.google.cloud.pubsub.TopicInfo;
 
 import org.joda.time.Duration;
 import org.junit.Rule;
@@ -50,25 +46,10 @@ public class LocalPubSubHelperTest {
   }
 
   @Test
-  public void testOptions() {
-    LocalPubSubHelper helper = LocalPubSubHelper.create();
-    PubSubOptions options = helper.getOptions();
-    assertTrue(options.getProjectId().startsWith(PROJECT_ID_PREFIX));
-    assertTrue(options.getHost().startsWith("localhost:"));
-    assertSame(NoCredentials.getInstance(), options.getCredentials());
-  }
-
-  @Test
   public void testStartStopReset() throws IOException, InterruptedException, TimeoutException {
     LocalPubSubHelper helper = LocalPubSubHelper.create();
     helper.start();
-    PubSub pubsub = helper.getOptions().getService();
-    pubsub.create(TopicInfo.of(TOPIC));
-    assertNotNull(pubsub.getTopic(TOPIC));
     helper.reset();
-    assertNull(pubsub.getTopic(TOPIC));
     helper.stop(Duration.standardMinutes(1));
-    thrown.expect(PubSubException.class);
-    pubsub.getTopic(TOPIC);
   }
 }

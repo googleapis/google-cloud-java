@@ -18,9 +18,9 @@ package com.google.cloud.pubsub.testing;
 
 import com.google.cloud.NoCredentials;
 import com.google.cloud.RetryParams;
-import com.google.cloud.pubsub.PubSubOptions;
 import com.google.cloud.testing.BaseEmulatorHelper;
 import com.google.common.collect.ImmutableList;
+import com.google.cloud.ServiceOptions;
 
 import io.grpc.ManagedChannel;
 import io.grpc.netty.NegotiationType;
@@ -41,7 +41,7 @@ import org.joda.time.Duration;
 /**
  * A class that runs a Pubsub emulator instance for use in tests.
  */
-public class LocalPubSubHelper extends BaseEmulatorHelper<PubSubOptions> {
+public class LocalPubSubHelper extends BaseEmulatorHelper<ServiceOptions> {
 
   private final List<EmulatorRunner> emulatorRunners;
 
@@ -109,13 +109,8 @@ public class LocalPubSubHelper extends BaseEmulatorHelper<PubSubOptions> {
    * localhost.
    */
   @Override
-  public PubSubOptions getOptions() {
-    return PubSubOptions.newBuilder()
-        .setProjectId(getProjectId())
-        .setHost(DEFAULT_HOST + ":" + getPort())
-        .setCredentials(NoCredentials.getInstance())
-        .setRetryParams(RetryParams.noRetries())
-        .build();
+  public ServiceOptions getOptions() {
+    throw new UnsupportedOperationException("not implemented as PubSubOptions no longer exists");
   }
 
   /**
@@ -148,7 +143,9 @@ public class LocalPubSubHelper extends BaseEmulatorHelper<PubSubOptions> {
    */
   @Override
   public void stop(Duration timeout) throws IOException, InterruptedException, TimeoutException {
+    System.err.println("sending");
     sendPostRequest("/shutdown");
+    System.err.println("sent");
     waitForProcess(timeout);
   }
 }
