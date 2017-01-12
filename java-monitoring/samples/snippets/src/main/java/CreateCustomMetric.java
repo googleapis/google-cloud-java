@@ -229,6 +229,7 @@ public class CreateCustomMetric {
    *
    * @throws IOException On network error.
    */
+  // [START write_timeseries]
   void writeCustomMetricTimeseriesValue() throws IOException {
     Map<String, String> metricLabel = ImmutableMap.of(
         "environment", "STAGING"
@@ -264,6 +265,7 @@ public class CreateCustomMetric {
     timeSeriesRequest.setTimeSeries(Lists.<TimeSeries>newArrayList(timeSeries));
     monitoringService.projects().timeSeries().create(projectResource, timeSeriesRequest).execute();
   }
+  // [END write_timeseries]
 
   /**
    * Read the TimeSeries value for the custom metrics created within a window of the
