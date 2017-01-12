@@ -59,10 +59,10 @@ import org.joda.time.Duration;
  *
  * <p>For example, a {@link Subscriber} can be constructed and used to receive messages as follows:
  *
- * <pre>{@code
+ * <pre><code>
  * MessageReceiver receiver = new MessageReceiver() {
- *   @Override
- *   public ListenableFuture<AckReply> receiveMessage(PubsubMessage message) {
+ *   &#64;Override
+ *   public ListenableFuture&lt;AckReply&gt; receiveMessage(PubsubMessage message) {
  *     // ... process message ...
  *     return Futures.immediateFuture(AckReply.ACK);
  *   }
@@ -77,15 +77,15 @@ import org.joda.time.Duration;
  *
  * // ... recommended, listen for fatal errors that break the subscriber streaming ...
  * subscriber.addListener(new Listener() {
- *   @Override
+ *   &#64;Override
  *   public void failed(State from, Throwable failure) {
- *     System.out.println("Subscriber faile with error: " + failure);
+ *     System.out.println("Subscriber failed with error: " + failure);
  *   }
  * }, Executors.newSingleThreadExecutor());
  *
  * // ... and when done with the subscriber ...
  * subscriber.stopAsync();
- * }</pre>
+ * </code></pre>
  */
 public interface Subscriber extends Service {
   String PUBSUB_API_ADDRESS = "pubsub.googleapis.com";
