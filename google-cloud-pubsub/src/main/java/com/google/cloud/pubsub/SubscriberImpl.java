@@ -21,6 +21,7 @@ import com.google.api.stats.Distribution;
 import com.google.auth.Credentials;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.Clock;
+import com.google.cloud.pubsub.spi.v1.SubscriberSettings;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Optional;
 import com.google.common.primitives.Ints;
@@ -35,7 +36,6 @@ import io.grpc.netty.NegotiationType;
 import io.grpc.netty.NettyChannelBuilder;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.Executors;
@@ -104,7 +104,9 @@ class SubscriberImpl extends AbstractService implements Subscriber {
     channelBuilder =
         builder.channelBuilder.isPresent()
             ? builder.channelBuilder.get()
-            : NettyChannelBuilder.forAddress(PUBSUB_API_ADDRESS, 443)
+            : NettyChannelBuilder.forAddress(
+                    SubscriberSettings.getDefaultServiceAddress(),
+                    SubscriberSettings.getDefaultServicePort())
                 .maxMessageSize(MAX_INBOUND_MESSAGE_SIZE)
                 .flowControlWindow(5000000) // 2.5 MB
                 .negotiationType(NegotiationType.TLS)
@@ -115,7 +117,7 @@ class SubscriberImpl extends AbstractService implements Subscriber {
         builder.credentials.isPresent()
             ? builder.credentials.get()
             : GoogleCredentials.getApplicationDefault()
-                .createScoped(Collections.singletonList(PUBSUB_API_SCOPE));
+                .createScoped(SubscriberSettings.getDefaultServiceScopes());
 
     streamingSubscriberConnections = new ArrayList<StreamingSubscriberConnection>(numChannels);
     pollingSubscriberConnections = new ArrayList<PollingSubscriberConnection>(numChannels);

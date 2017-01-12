@@ -50,12 +50,12 @@ import org.joda.time.Duration;
  * <p>For example, a {@link Publisher} can be constructed and used to publish a list of messages as
  * follows:
  *
- * <pre>
+ * <pre><code>
  *  Publisher publisher =
  *       Publisher.Builder.newBuilder(MY_TOPIC)
  *           .setMaxBundleDuration(new Duration(10 * 1000))
  *           .build();
- *  List<ListenableFuture<String>> results = new ArrayList<>();
+ *  List&lt;ListenableFuture&lt;String&gt;&gt; results = new ArrayList&lt;&gt;();
  *
  *  for (PubsubMessage messages : messagesToPublish) {
  *    results.add(publisher.publish(message));
@@ -63,12 +63,12 @@ import org.joda.time.Duration;
  *
  *  Futures.addCallback(
  *  Futures.allAsList(results),
- *  new FutureCallback<List<String>>() {
- *    @Override
- *    public void onSuccess(List<String> messageIds) {
+ *  new FutureCallback&lt;List&lt;String&gt;&gt;() {
+ *    &#64;Override
+ *    public void onSuccess(List&lt;String&gt; messageIds) {
  *      // ... process the acknowledgement of publish ...
  *    }
- *    @Override
+ *    &#64;Override
  *    public void onFailure(Throwable t) {
  *      // .. handle the failure ...
  *    }
@@ -76,30 +76,12 @@ import org.joda.time.Duration;
  *
  *  // Ensure all the outstanding messages have been published before shutting down your process.
  *  publisher.shutdown();
- * </pre>
+ * </code></pre>
  */
 public interface Publisher {
-  String PUBSUB_API_ADDRESS = "pubsub.googleapis.com";
-  String PUBSUB_API_SCOPE = "https://www.googleapis.com/auth/pubsub";
-
   // API limits.
   int MAX_BUNDLE_MESSAGES = 1000;
   int MAX_BUNDLE_BYTES = 10 * 1000 * 1000; // 10 megabytes (https://en.wikipedia.org/wiki/Megabyte)
-
-  // Meaningful defaults.
-  long DEFAULT_MAX_BUNDLE_MESSAGES = 100L;
-  long DEFAULT_MAX_BUNDLE_BYTES = 1000L; // 1 kB
-  Duration DEFAULT_MAX_BUNDLE_DURATION = new Duration(1); // 1ms
-  Duration DEFAULT_REQUEST_TIMEOUT = new Duration(10 * 1000); // 10 seconds
-  Duration MIN_SEND_BUNDLE_DURATION = new Duration(10 * 1000); // 10 seconds
-  Duration MIN_REQUEST_TIMEOUT = new Duration(10); // 10 milliseconds
-
-  BundlingSettings DEFAULT_BUNDLING_SETTINGS =
-      BundlingSettings.newBuilder()
-          .setDelayThreshold(DEFAULT_MAX_BUNDLE_DURATION)
-          .setRequestByteThreshold(DEFAULT_MAX_BUNDLE_BYTES)
-          .setElementCountThreshold(DEFAULT_MAX_BUNDLE_MESSAGES)
-          .build();
 
   /** Topic to which the publisher publishes to. */
   String getTopic();
@@ -163,6 +145,20 @@ public interface Publisher {
 
   /** A builder of {@link Publisher}s. */
   public final class Builder {
+    // Meaningful defaults.
+    static final long DEFAULT_MAX_BUNDLE_MESSAGES = 100L;
+    static final long DEFAULT_MAX_BUNDLE_BYTES = 1000L; // 1 kB
+    static final Duration DEFAULT_MAX_BUNDLE_DURATION = new Duration(1); // 1ms
+    static final Duration DEFAULT_REQUEST_TIMEOUT = new Duration(10 * 1000); // 10 seconds
+    static final Duration MIN_SEND_BUNDLE_DURATION = new Duration(10 * 1000); // 10 seconds
+    static final Duration MIN_REQUEST_TIMEOUT = new Duration(10); // 10 milliseconds
+    static final BundlingSettings DEFAULT_BUNDLING_SETTINGS =
+        BundlingSettings.newBuilder()
+            .setDelayThreshold(DEFAULT_MAX_BUNDLE_DURATION)
+            .setRequestByteThreshold(DEFAULT_MAX_BUNDLE_BYTES)
+            .setElementCountThreshold(DEFAULT_MAX_BUNDLE_MESSAGES)
+            .build();
+
     String topic;
 
     // Bundling options
