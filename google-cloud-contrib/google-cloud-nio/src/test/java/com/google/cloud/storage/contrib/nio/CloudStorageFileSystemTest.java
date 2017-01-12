@@ -17,7 +17,6 @@
 package com.google.cloud.storage.contrib.nio;
 
 import static com.google.common.truth.Truth.assertThat;
-import static com.google.common.truth.Truth.assertWithMessage;
 import static java.nio.charset.StandardCharsets.UTF_8;
 
 import com.google.cloud.storage.StorageOptions;
@@ -166,18 +165,23 @@ public class CloudStorageFileSystemTest {
   @Test
   public void testMatcher() throws IOException {
     try (FileSystem fs = CloudStorageFileSystem.forBucket("bucket")) {
-      List<String> paths = ImmutableList.of("a.java", "a.text", "folder/c.java", "d");
       String pattern1 = "glob:*.java";
       PathMatcher matcher1 = fs.getPathMatcher(pattern1);
-      List<Boolean> matches1 = ImmutableList.of(true, false, true, false);
       String pattern2 = "glob:*.{java,text}";
       PathMatcher matcher2 = fs.getPathMatcher(pattern2);
-      List<Boolean> matches2 = ImmutableList.of(true, true, true, false);
-      for (int i=0; i<paths.size(); i++) {
-        Path input = fs.getPath(paths.get(i)).getFileName();
-        assertWithMessage(pattern1 + " on " + paths.get(i)).that(matcher1.matches(input)).isEqualTo(matches1.get(i));
-        assertWithMessage(pattern2 + " on " + paths.get(i)).that(matcher2.matches(input)).isEqualTo(matches2.get(i));
-      }
+
+      assertMatches(fs, matcher1, "a.java", true);
+      assertMatches(fs, matcher1, "a.text", false);
+      assertMatches(fs, matcher1, "folder/c.java", true);
+      assertMatches(fs, matcher1, "d", false);
+      assertMatches(fs, matcher2, "a.java", true);
+      assertMatches(fs, matcher2, "a.text", true);
+      assertMatches(fs, matcher2, "folder/c.java", true);
+      assertMatches(fs, matcher2, "d", false);
     }
+  }
+
+  private void assertMatches(FileSystem fs, PathMatcher matcher, String toMatch, boolean expected) {
+    assertThat(matcher.matches(fs.getPath(toMatch).getFileName())).isEqualTo(expected);
   }
 }
