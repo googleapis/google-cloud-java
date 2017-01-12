@@ -103,7 +103,7 @@ public class PublisherImplTest {
         getTestPublisherBuilder()
             // To demonstrate that reaching duration will trigger publish
             .setBundlingSettings(
-                Publisher.DEFAULT_BUNDLING_SETTINGS
+                Publisher.Builder.DEFAULT_BUNDLING_SETTINGS
                     .toBuilder()
                     .setDelayThreshold(Duration.standardSeconds(5))
                     .setElementCountThreshold(10)
@@ -134,7 +134,7 @@ public class PublisherImplTest {
     Publisher publisher =
         getTestPublisherBuilder()
             .setBundlingSettings(
-                Publisher.DEFAULT_BUNDLING_SETTINGS
+                Publisher.Builder.DEFAULT_BUNDLING_SETTINGS
                     .toBuilder()
                     .setElementCountThreshold(2)
                     .setDelayThreshold(Duration.standardSeconds(100))
@@ -173,7 +173,7 @@ public class PublisherImplTest {
     Publisher publisher =
         getTestPublisherBuilder()
             .setBundlingSettings(
-                Publisher.DEFAULT_BUNDLING_SETTINGS
+                Publisher.Builder.DEFAULT_BUNDLING_SETTINGS
                     .toBuilder()
                     .setElementCountThreshold(2)
                     .setDelayThreshold(Duration.standardSeconds(100))
@@ -208,7 +208,7 @@ public class PublisherImplTest {
         getTestPublisherBuilder()
             // To demonstrate that reaching duration will trigger publish
             .setBundlingSettings(
-                Publisher.DEFAULT_BUNDLING_SETTINGS
+                Publisher.Builder.DEFAULT_BUNDLING_SETTINGS
                     .toBuilder()
                     .setElementCountThreshold(2)
                     .setDelayThreshold(Duration.standardSeconds(5))
@@ -256,7 +256,7 @@ public class PublisherImplTest {
         getTestPublisherBuilder()
             .setExecutor(Executors.newSingleThreadScheduledExecutor())
             .setBundlingSettings(
-                Publisher.DEFAULT_BUNDLING_SETTINGS
+                Publisher.Builder.DEFAULT_BUNDLING_SETTINGS
                     .toBuilder()
                     .setElementCountThreshold(1)
                     .setDelayThreshold(Duration.standardSeconds(5))
@@ -281,7 +281,7 @@ public class PublisherImplTest {
             .setExecutor(Executors.newSingleThreadScheduledExecutor())
             .setSendBundleDeadline(Duration.standardSeconds(10))
             .setBundlingSettings(
-                Publisher.DEFAULT_BUNDLING_SETTINGS
+                Publisher.Builder.DEFAULT_BUNDLING_SETTINGS
                     .toBuilder()
                     .setElementCountThreshold(1)
                     .setDelayThreshold(Duration.standardSeconds(5))
@@ -310,7 +310,7 @@ public class PublisherImplTest {
             .setExecutor(Executors.newSingleThreadScheduledExecutor())
             .setSendBundleDeadline(Duration.standardSeconds(10))
             .setBundlingSettings(
-                Publisher.DEFAULT_BUNDLING_SETTINGS
+                Publisher.Builder.DEFAULT_BUNDLING_SETTINGS
                     .toBuilder()
                     .setElementCountThreshold(1)
                     .setDelayThreshold(Duration.standardSeconds(5))
@@ -371,16 +371,17 @@ public class PublisherImplTest {
     assertEquals(Optional.absent(), builder.executor);
     assertFalse(builder.failOnFlowControlLimits);
     assertEquals(
-        Publisher.DEFAULT_MAX_BUNDLE_BYTES,
+        Publisher.Builder.DEFAULT_MAX_BUNDLE_BYTES,
         builder.bundlingSettings.getRequestByteThreshold().longValue());
     assertEquals(
-        Publisher.DEFAULT_MAX_BUNDLE_DURATION, builder.bundlingSettings.getDelayThreshold());
+        Publisher.Builder.DEFAULT_MAX_BUNDLE_DURATION,
+        builder.bundlingSettings.getDelayThreshold());
     assertEquals(
-        Publisher.DEFAULT_MAX_BUNDLE_MESSAGES,
+        Publisher.Builder.DEFAULT_MAX_BUNDLE_MESSAGES,
         builder.bundlingSettings.getElementCountThreshold().longValue());
     assertEquals(FlowController.Settings.DEFAULT, builder.flowControlSettings);
-    assertEquals(Publisher.DEFAULT_REQUEST_TIMEOUT, builder.requestTimeout);
-    assertEquals(Publisher.MIN_SEND_BUNDLE_DURATION, builder.sendBundleDeadline);
+    assertEquals(Publisher.Builder.DEFAULT_REQUEST_TIMEOUT, builder.requestTimeout);
+    assertEquals(Publisher.Builder.MIN_SEND_BUNDLE_DURATION, builder.sendBundleDeadline);
     assertEquals(Optional.absent(), builder.userCredentials);
   }
 
@@ -410,7 +411,7 @@ public class PublisherImplTest {
     }
     try {
       builder.setBundlingSettings(
-          Publisher.DEFAULT_BUNDLING_SETTINGS
+          Publisher.Builder.DEFAULT_BUNDLING_SETTINGS
               .toBuilder()
               .setRequestByteThreshold((Long) null)
               .build());
@@ -420,31 +421,40 @@ public class PublisherImplTest {
     }
     try {
       builder.setBundlingSettings(
-          Publisher.DEFAULT_BUNDLING_SETTINGS.toBuilder().setRequestByteThreshold(0).build());
+          Publisher.Builder.DEFAULT_BUNDLING_SETTINGS
+              .toBuilder()
+              .setRequestByteThreshold(0)
+              .build());
       fail("Should have thrown an IllegalArgumentException");
     } catch (IllegalArgumentException expected) {
       // Expected
     }
     try {
       builder.setBundlingSettings(
-          Publisher.DEFAULT_BUNDLING_SETTINGS.toBuilder().setRequestByteThreshold(-1).build());
+          Publisher.Builder.DEFAULT_BUNDLING_SETTINGS
+              .toBuilder()
+              .setRequestByteThreshold(-1)
+              .build());
       fail("Should have thrown an IllegalArgumentException");
     } catch (IllegalArgumentException expected) {
       // Expected
     }
 
     builder.setBundlingSettings(
-        Publisher.DEFAULT_BUNDLING_SETTINGS.toBuilder().setDelayThreshold(new Duration(1)).build());
+        Publisher.Builder.DEFAULT_BUNDLING_SETTINGS
+            .toBuilder()
+            .setDelayThreshold(new Duration(1))
+            .build());
     try {
       builder.setBundlingSettings(
-          Publisher.DEFAULT_BUNDLING_SETTINGS.toBuilder().setDelayThreshold(null).build());
+          Publisher.Builder.DEFAULT_BUNDLING_SETTINGS.toBuilder().setDelayThreshold(null).build());
       fail("Should have thrown an NullPointerException");
     } catch (NullPointerException expected) {
       // Expected
     }
     try {
       builder.setBundlingSettings(
-          Publisher.DEFAULT_BUNDLING_SETTINGS
+          Publisher.Builder.DEFAULT_BUNDLING_SETTINGS
               .toBuilder()
               .setDelayThreshold(new Duration(-1))
               .build());
@@ -454,10 +464,13 @@ public class PublisherImplTest {
     }
 
     builder.setBundlingSettings(
-        Publisher.DEFAULT_BUNDLING_SETTINGS.toBuilder().setElementCountThreshold(1).build());
+        Publisher.Builder.DEFAULT_BUNDLING_SETTINGS
+            .toBuilder()
+            .setElementCountThreshold(1)
+            .build());
     try {
       builder.setBundlingSettings(
-          Publisher.DEFAULT_BUNDLING_SETTINGS
+          Publisher.Builder.DEFAULT_BUNDLING_SETTINGS
               .toBuilder()
               .setElementCountThreshold((Long) null)
               .build());
@@ -467,14 +480,20 @@ public class PublisherImplTest {
     }
     try {
       builder.setBundlingSettings(
-          Publisher.DEFAULT_BUNDLING_SETTINGS.toBuilder().setElementCountThreshold(0).build());
+          Publisher.Builder.DEFAULT_BUNDLING_SETTINGS
+              .toBuilder()
+              .setElementCountThreshold(0)
+              .build());
       fail("Should have thrown an IllegalArgumentException");
     } catch (IllegalArgumentException expected) {
       // Expected
     }
     try {
       builder.setBundlingSettings(
-          Publisher.DEFAULT_BUNDLING_SETTINGS.toBuilder().setElementCountThreshold(-1).build());
+          Publisher.Builder.DEFAULT_BUNDLING_SETTINGS
+              .toBuilder()
+              .setElementCountThreshold(-1)
+              .build());
       fail("Should have thrown an IllegalArgumentException");
     } catch (IllegalArgumentException expected) {
       // Expected
@@ -532,16 +551,16 @@ public class PublisherImplTest {
       // Expected
     }
 
-    builder.setRequestTimeout(Publisher.MIN_REQUEST_TIMEOUT);
+    builder.setRequestTimeout(Publisher.Builder.MIN_REQUEST_TIMEOUT);
     try {
-      builder.setRequestTimeout(Publisher.MIN_REQUEST_TIMEOUT.minus(1));
+      builder.setRequestTimeout(Publisher.Builder.MIN_REQUEST_TIMEOUT.minus(1));
       fail("Should have thrown an IllegalArgumentException");
     } catch (IllegalArgumentException expected) {
       // Expected
     }
-    builder.setSendBundleDeadline(Publisher.MIN_SEND_BUNDLE_DURATION);
+    builder.setSendBundleDeadline(Publisher.Builder.MIN_SEND_BUNDLE_DURATION);
     try {
-      builder.setSendBundleDeadline(Publisher.MIN_SEND_BUNDLE_DURATION.minus(1));
+      builder.setSendBundleDeadline(Publisher.Builder.MIN_SEND_BUNDLE_DURATION.minus(1));
       fail("Should have thrown an IllegalArgumentException");
     } catch (IllegalArgumentException expected) {
       // Expected

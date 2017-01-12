@@ -54,8 +54,8 @@ import org.joda.time.Duration;
  *       in memory before the receiver either ack or nack them.
  * </ul>
  *
- * <p>If no credentials are provided, the {@link Publisher} will use application default credentials
- * through {@link GoogleCredentials#getApplicationDefault}.
+ * <p>If no credentials are provided, the {@link Subscriber} will use application default
+ * credentials through {@link GoogleCredentials#getApplicationDefault}.
  *
  * <p>For example, a {@link Subscriber} can be constructed and used to receive messages as follows:
  *
@@ -88,9 +88,6 @@ import org.joda.time.Duration;
  * </code></pre>
  */
 public interface Subscriber extends Service {
-  String PUBSUB_API_ADDRESS = "pubsub.googleapis.com";
-  String PUBSUB_API_SCOPE = "https://www.googleapis.com/auth/pubsub";
-
   /** Retrieves a snapshot of the current subscriber statistics. */
   SubscriberStats getStats();
 
@@ -125,7 +122,7 @@ public interface Subscriber extends Service {
   Duration getAckExpirationPadding();
 
   /**
-   * Maximum number of outstanding (i.e. pending to process) messages before limits are enforced.
+   * Maximum number of outstanding messages before limits are enforced.
    *
    * <p><b>When limits are enforced, no more messages will be dispatched to the {@link
    * MessageReceiver} but due to the gRPC and HTTP/2 buffering and congestion control window
@@ -133,7 +130,7 @@ public interface Subscriber extends Service {
    */
   Optional<Integer> getMaxOutstandingElementCount();
 
-  /** Maximum number of outstanding (i.e. pending to process) bytes before limits are enforced. */
+  /** Maximum number of outstanding bytes before limits are enforced. */
   Optional<Integer> getMaxOutstandingRequestBytes();
 
   /** Builder of {@link Subscriber Subscribers}. */
@@ -158,7 +155,7 @@ public interface Subscriber extends Service {
      * Constructs a new {@link Builder}.
      *
      * <p>Once {@link #build()} is called a gRPC stub will be created for use of the {@link
-     * Publisher}.
+     * Subscriber}.
      *
      * @param subscription Cloud Pub/Sub subscription to bind the subscriber to
      * @param receiver an implementation of {@link MessageReceiver} used to process the received
@@ -226,8 +223,8 @@ public interface Subscriber extends Service {
       return this;
     }
 
-    /** Gives the ability to set a custom executor. */
-    public Builder setClock(Clock clock) {
+    /** Gives the ability to set a custom clock. */
+    Builder setClock(Clock clock) {
       this.clock = Optional.of(clock);
       return this;
     }

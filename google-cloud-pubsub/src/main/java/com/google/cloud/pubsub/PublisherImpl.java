@@ -18,6 +18,7 @@ package com.google.cloud.pubsub;
 
 import com.google.api.gax.bundling.FlowController;
 import com.google.auth.oauth2.GoogleCredentials;
+import com.google.cloud.pubsub.spi.v1.PublisherSettings;
 import com.google.common.base.Optional;
 import com.google.common.collect.ImmutableList;
 import com.google.common.primitives.Ints;
@@ -38,7 +39,6 @@ import io.grpc.netty.GrpcSslContexts;
 import io.grpc.netty.NegotiationType;
 import io.grpc.netty.NettyChannelBuilder;
 import java.io.IOException;
-import java.util.Collections;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
@@ -125,7 +125,9 @@ final class PublisherImpl implements Publisher {
       channels[i] =
           builder.channelBuilder.isPresent()
               ? builder.channelBuilder.get().build()
-              : NettyChannelBuilder.forAddress(PUBSUB_API_ADDRESS, 443)
+              : NettyChannelBuilder.forAddress(
+                      PublisherSettings.getDefaultServiceAddress(),
+                      PublisherSettings.getDefaultServicePort())
                   .negotiationType(NegotiationType.TLS)
                   .sslContext(GrpcSslContexts.forClient().ciphers(null).build())
                   .executor(executor)
@@ -136,7 +138,7 @@ final class PublisherImpl implements Publisher {
             builder.userCredentials.isPresent()
                 ? builder.userCredentials.get()
                 : GoogleCredentials.getApplicationDefault()
-                    .createScoped(Collections.singletonList(PUBSUB_API_SCOPE)));
+                    .createScoped(PublisherSettings.getDefaultServiceScopes()));
     shutdown = new AtomicBoolean(false);
     messagesWaiter = new MessagesWaiter();
   }
