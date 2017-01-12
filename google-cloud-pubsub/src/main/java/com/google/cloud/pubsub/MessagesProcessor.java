@@ -19,8 +19,7 @@ package com.google.cloud.pubsub;
 import com.google.api.gax.bundling.FlowController;
 import com.google.api.stats.Distribution;
 import com.google.cloud.Clock;
-import com.google.cloud.pubsub.Subscriber.MessageReceiver;
-import com.google.cloud.pubsub.Subscriber.MessageReceiver.AckReply;
+import com.google.cloud.pubsub.MessageReceiver.AckReply;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.collect.Lists;
 import com.google.common.primitives.Ints;
@@ -140,7 +139,10 @@ class MessagesProcessor {
     }
   }
 
-  /** Handles callbacks for acking/nacking messages from the {@link MessageReceiver}. */
+  /**
+   * Handles callbacks for acking/nacking messages from the {@link
+   * com.google.cloud.pubsub.MessageReceiver}.
+   */
   private class AckHandler implements FutureCallback<AckReply> {
     private final String ackId;
     private final int outstandingBytes;
