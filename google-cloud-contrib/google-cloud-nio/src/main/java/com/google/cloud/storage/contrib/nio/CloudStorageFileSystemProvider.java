@@ -170,7 +170,8 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
   }
 
   /**
-   * Returns Cloud Storage file system, provided a URI with no path, e.g. {@code gs://bucket}.
+   * Returns Cloud Storage file system, provided a URI, e.g. {@code gs://bucket}.
+   * The URI can include a path component (that will be ignored).
    *
    * @param uri bucket and current working directory, e.g. {@code gs://bucket}
    * @param env map of configuration options, whose keys correspond to the method names of
