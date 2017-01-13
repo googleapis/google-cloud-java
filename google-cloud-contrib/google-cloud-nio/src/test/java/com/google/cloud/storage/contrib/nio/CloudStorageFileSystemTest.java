@@ -20,7 +20,6 @@ import static com.google.common.truth.Truth.assertThat;
 import static java.nio.charset.StandardCharsets.UTF_8;
 
 import com.google.cloud.storage.StorageOptions;
-import com.google.common.collect.ImmutableList;
 import com.google.common.testing.EqualsTester;
 import com.google.common.testing.NullPointerTester;
 
@@ -166,18 +165,18 @@ public class CloudStorageFileSystemTest {
   public void testMatcher() throws IOException {
     try (FileSystem fs = CloudStorageFileSystem.forBucket("bucket")) {
       String pattern1 = "glob:*.java";
-      PathMatcher matcher1 = fs.getPathMatcher(pattern1);
+      PathMatcher javaFileMatcher = fs.getPathMatcher(pattern1);
+      assertMatches(fs, javaFileMatcher, "a.java", true);
+      assertMatches(fs, javaFileMatcher, "a.text", false);
+      assertMatches(fs, javaFileMatcher, "folder/c.java", true);
+      assertMatches(fs, javaFileMatcher, "d", false);
+      
       String pattern2 = "glob:*.{java,text}";
-      PathMatcher matcher2 = fs.getPathMatcher(pattern2);
-
-      assertMatches(fs, matcher1, "a.java", true);
-      assertMatches(fs, matcher1, "a.text", false);
-      assertMatches(fs, matcher1, "folder/c.java", true);
-      assertMatches(fs, matcher1, "d", false);
-      assertMatches(fs, matcher2, "a.java", true);
-      assertMatches(fs, matcher2, "a.text", true);
-      assertMatches(fs, matcher2, "folder/c.java", true);
-      assertMatches(fs, matcher2, "d", false);
+      PathMatcher javaAndTextFileMatcher = fs.getPathMatcher(pattern2);
+      assertMatches(fs, javaAndTextFileMatcher, "a.java", true);
+      assertMatches(fs, javaAndTextFileMatcher, "a.text", true);
+      assertMatches(fs, javaAndTextFileMatcher, "folder/c.java", true);
+      assertMatches(fs, javaAndTextFileMatcher, "d", false);
     }
   }
 
