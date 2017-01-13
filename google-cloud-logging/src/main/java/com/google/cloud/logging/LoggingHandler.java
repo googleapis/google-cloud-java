@@ -96,7 +96,7 @@ public class LoggingHandler extends Handler {
   private final LoggingOptions options;
   private final WriteOption[] writeOptions;
   private List<LogEntry> buffer = new LinkedList<>();
-  private Logging logging;
+  private volatile Logging logging;
   private Level flushLevel;
   private long flushSize;
 
@@ -390,23 +390,15 @@ public class LoggingHandler extends Handler {
    * Closes the handler and the associated {@link Logging} object.
    */
   @Override
-  public void close() throws SecurityException {
-    Logging loggingToClose = null;
+  public synchronized void close() throws SecurityException {
     if (logging != null) {
-      synchronized (this) {
-        if (logging != null) {
-          loggingToClose = logging;
-          logging = null;
-        }
-      }
-    }
-    if (loggingToClose != null) {
       try {
-        loggingToClose.close();
+        logging.close();
       } catch (Exception ex) {
         // ignore
       }
     }
+    logging = null;
   }
 
   /**
