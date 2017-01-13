@@ -95,6 +95,7 @@ public class LoggingHandler extends Handler {
 
   private final LoggingOptions options;
   private final WriteOption[] writeOptions;
+  private final String gaeInstanceId;
   private List<LogEntry> buffer = new LinkedList<>();
   private volatile Logging logging;
   private Level flushLevel;
@@ -131,7 +132,9 @@ public class LoggingHandler extends Handler {
    *
    * @param log the name of the log to which log entries are written
    * @param options options for the Stackdriver Logging service
-   * @param monitoredResource the monitored resource to which log entries refer
+   * @param monitoredResource the monitored resource to which log entries refer. If null a default
+   * resource is created based on the project ID.  If a Google App Engine environment is detected
+   * then a more comprehensive default resource may be created.
    */
   public LoggingHandler(String log, LoggingOptions options, MonitoredResource monitoredResource) {
     LogConfigHelper helper = new LogConfigHelper();
@@ -143,6 +146,7 @@ public class LoggingHandler extends Handler {
     setFilter(helper.getFilterProperty(className + ".filter", null));
     setFormatter(helper.getFormatterProperty(className + ".formatter", new SimpleFormatter()));
     String logName = firstNonNull(log, helper.getProperty(className + ".log", "java.log"));
+    gaeInstanceId = System.getenv("GAE_INSTANCE");
     MonitoredResource resource = firstNonNull(monitoredResource, getDefaultResource());
     writeOptions = new WriteOption[]{WriteOption.logName(logName), WriteOption.resource(resource)};
   }
@@ -179,6 +183,19 @@ public class LoggingHandler extends Handler {
   }
 
   private MonitoredResource getDefaultResource() {
+    // Are we running on a GAE instance?
+    if (gaeInstanceId!=null && options.getProjectId()!=null) {
+      MonitoredResource.Builder builder = MonitoredResource.newBuilder("gae_app")
+          .addLabel("project_id", options.getProjectId());
+      if (System.getenv("GAE_SERVICE")!=null) {
+        builder.addLabel("module_id", System.getenv("GAE_SERVICE"));
+      }
+      if (System.getenv("GAE_VERSION")!=null) {
+        builder.addLabel("version_id", System.getenv("GAE_VERSION"));
+      }
+      return builder.build();
+    }
+    
     return MonitoredResource.of("global", ImmutableMap.of("project_id", options.getProjectId()));
   }
 
@@ -310,6 +327,10 @@ public class LoggingHandler extends Handler {
         .addLabel("levelName", level.getName())
         .addLabel("levelValue", String.valueOf(level.intValue()))
         .setSeverity(severityFor(level));
+    if (gaeInstanceId != null) {
+      builder.addLabel("appengine.googleapis.com/instance_name", gaeInstanceId);
+    }
+
     enhanceLogEntry(builder, record);
     return builder.build();
   }
