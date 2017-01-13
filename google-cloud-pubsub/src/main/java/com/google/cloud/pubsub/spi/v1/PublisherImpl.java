@@ -14,11 +14,10 @@
  * limitations under the License.
  */
 
-package com.google.cloud.pubsub;
+package com.google.cloud.pubsub.spi.v1;
 
 import com.google.api.gax.bundling.FlowController;
 import com.google.auth.oauth2.GoogleCredentials;
-import com.google.cloud.pubsub.spi.v1.PublisherSettings;
 import com.google.common.base.Optional;
 import com.google.common.collect.ImmutableList;
 import com.google.common.primitives.Ints;

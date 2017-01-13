@@ -14,10 +14,9 @@
  * limitations under the License.
  */
 
-package com.google.cloud.pubsub;
+package com.google.cloud.pubsub.spi.v1;
 
 import com.google.cloud.Clock;
-import com.google.cloud.pubsub.FakeClock;
 import com.google.common.primitives.Ints;
 import com.google.common.util.concurrent.SettableFuture;
 import java.util.ArrayList;
@@ -34,7 +33,6 @@ import java.util.concurrent.TimeoutException;
 import java.util.concurrent.atomic.AtomicBoolean;
 import org.joda.time.DateTime;
 import org.joda.time.Duration;
-import org.joda.time.MutableDateTime;
 
 /**
  * Fake implementation of {@link ScheduledExecutorService} that allows tests control the reference

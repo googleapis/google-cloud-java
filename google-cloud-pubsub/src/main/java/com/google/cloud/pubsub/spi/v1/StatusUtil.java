@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-package com.google.cloud.pubsub;
+package com.google.cloud.pubsub.spi.v1;
 
-import com.google.cloud.Clock;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.atomic.AtomicLong;
+import io.grpc.Status;
 
-/**
- * A Clock to help with testing time-based logic.
- */
-class FakeClock extends Clock {
-
-  private final AtomicLong millis = new AtomicLong();
-
-  // Advances the clock value by {@code time} in {@code timeUnit}.
-  void advance(long time, TimeUnit timeUnit) {
-    millis.addAndGet(timeUnit.toMillis(time));
+/** Utilities for handling gRPC {@link Status}. */
+final class StatusUtil {
+  private StatusUtil() {
+    // Static class, not instatiable.
   }
 
-  @Override
-  public long millis() {
-    return millis.get();
+  public static boolean isRetryable(Status status) {
+    switch (status.getCode()) {
+      case DEADLINE_EXCEEDED:
+      case INTERNAL:
+      case CANCELLED:
+      case RESOURCE_EXHAUSTED:
+      case UNAVAILABLE:
+        return true;
+      default:
+        return false;
+    }
   }
 }
