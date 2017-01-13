@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.cloud.pubsub;
+package com.google.cloud.pubsub.spi.v1;
 
 import com.google.api.gax.bundling.FlowController;
 import com.google.api.gax.grpc.BundlingSettings;

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.cloud.pubsub;
+package com.google.cloud.pubsub.spi.v1;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -25,7 +25,7 @@ import static org.mockito.Mockito.times;
 
 import com.google.api.gax.bundling.FlowController;
 import com.google.api.gax.grpc.BundlingSettings;
-import com.google.cloud.pubsub.Publisher.Builder;
+import com.google.cloud.pubsub.spi.v1.Publisher.Builder;
 import com.google.common.base.Optional;
 import com.google.common.util.concurrent.ListenableFuture;
 import com.google.protobuf.ByteString;

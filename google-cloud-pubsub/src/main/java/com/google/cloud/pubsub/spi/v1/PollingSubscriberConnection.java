@@ -14,16 +14,16 @@
  * limitations under the License.
  */
 
-package com.google.cloud.pubsub;
+package com.google.cloud.pubsub.spi.v1;
 
-import static com.google.cloud.pubsub.StatusUtil.isRetryable;
+import static com.google.cloud.pubsub.spi.v1.StatusUtil.isRetryable;
 
 import com.google.api.gax.bundling.FlowController;
 import com.google.api.stats.Distribution;
 import com.google.auth.Credentials;
 import com.google.cloud.Clock;
-import com.google.cloud.pubsub.MessagesProcessor.AcksProcessor;
-import com.google.cloud.pubsub.MessagesProcessor.PendingModifyAckDeadline;
+import com.google.cloud.pubsub.spi.v1.MessagesProcessor.AcksProcessor;
+import com.google.cloud.pubsub.spi.v1.MessagesProcessor.PendingModifyAckDeadline;
 import com.google.common.collect.Lists;
 import com.google.common.util.concurrent.AbstractService;
 import com.google.common.util.concurrent.FutureCallback;

@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-package com.google.cloud.pubsub;
+package com.google.cloud.pubsub.spi.v1;
 
 import com.google.api.gax.bundling.FlowController;
 import com.google.api.stats.Distribution;
 import com.google.cloud.Clock;
-import com.google.cloud.pubsub.MessageReceiver.AckReply;
+import com.google.cloud.pubsub.spi.v1.MessageReceiver.AckReply;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.collect.Lists;
 import com.google.common.primitives.Ints;

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.cloud.pubsub;
+package com.google.cloud.pubsub.spi.v1;
 
 import com.google.common.base.Optional;
 import com.google.pubsub.v1.PublishRequest;

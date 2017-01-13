@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-package com.google.cloud.pubsub;
+package com.google.cloud.pubsub.spi.v1;
 
-import static com.google.cloud.pubsub.MessagesProcessor.PENDING_ACKS_SEND_DELAY;
+import static com.google.cloud.pubsub.spi.v1.MessagesProcessor.PENDING_ACKS_SEND_DELAY;
 import static org.junit.Assert.assertEquals;
 
-import com.google.cloud.pubsub.FakeSubscriberServiceImpl.ModifyAckDeadline;
-import com.google.cloud.pubsub.MessageReceiver.AckReply;
-import com.google.cloud.pubsub.Subscriber.Builder;
+import com.google.cloud.pubsub.spi.v1.FakeSubscriberServiceImpl.ModifyAckDeadline;
+import com.google.cloud.pubsub.spi.v1.MessageReceiver.AckReply;
+import com.google.cloud.pubsub.spi.v1.Subscriber.Builder;
 import com.google.common.base.Function;
 import com.google.common.base.Optional;
 import com.google.common.base.Preconditions;
