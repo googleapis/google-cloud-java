@@ -309,6 +309,7 @@ public class LoggingHandler extends Handler {
     LogEntry.Builder builder = LogEntry.newBuilder(Payload.StringPayload.of(payload))
         .addLabel("levelName", level.getName())
         .addLabel("levelValue", String.valueOf(level.intValue()))
+        .setTimestamp(record.getMillis())
         .setSeverity(severityFor(level));
     enhanceLogEntry(builder, record);
     return builder.build();
