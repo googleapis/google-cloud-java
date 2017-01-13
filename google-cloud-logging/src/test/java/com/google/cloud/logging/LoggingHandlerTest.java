@@ -16,28 +16,22 @@
 
 package com.google.cloud.logging;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertSame;
-import static org.junit.Assert.assertTrue;
-
 import com.google.cloud.MonitoredResource;
 import com.google.cloud.logging.Logging.WriteOption;
 import com.google.cloud.logging.Payload.StringPayload;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
-
-import org.easymock.EasyMock;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
-
+import com.google.common.util.concurrent.Futures;
 import java.util.logging.ErrorManager;
 import java.util.logging.Formatter;
 import java.util.logging.Handler;
 import java.util.logging.Level;
 import java.util.logging.LogRecord;
 import java.util.logging.Logger;
+import org.easymock.EasyMock;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 
 public class LoggingHandlerTest {
 
@@ -138,45 +132,45 @@ public class LoggingHandlerTest {
   public void testPublishLevels() {
     EasyMock.expect(options.getProjectId()).andReturn(PROJECT).anyTimes();
     EasyMock.expect(options.getService()).andReturn(logging);
-    logging.write(ImmutableList.of(FINEST_ENTRY), WriteOption.logName(LOG_NAME),
+    logging.writeAsync(ImmutableList.of(FINEST_ENTRY), WriteOption.logName(LOG_NAME),
         WriteOption.resource(DEFAULT_RESOURCE));
-    EasyMock.expectLastCall();
-    logging.write(ImmutableList.of(FINER_ENTRY), WriteOption.logName(LOG_NAME),
+    EasyMock.expectLastCall().andReturn(Futures.immediateFuture(null));
+    logging.writeAsync(ImmutableList.of(FINER_ENTRY), WriteOption.logName(LOG_NAME),
         WriteOption.resource(DEFAULT_RESOURCE));
-    EasyMock.expectLastCall();
-    logging.write(ImmutableList.of(FINE_ENTRY), WriteOption.logName(LOG_NAME),
+    EasyMock.expectLastCall().andReturn(Futures.immediateFuture(null));
+    logging.writeAsync(ImmutableList.of(FINE_ENTRY), WriteOption.logName(LOG_NAME),
         WriteOption.resource(DEFAULT_RESOURCE));
-    EasyMock.expectLastCall();
-    logging.write(ImmutableList.of(CONFIG_ENTRY), WriteOption.logName(LOG_NAME),
+    EasyMock.expectLastCall().andReturn(Futures.immediateFuture(null));
+    logging.writeAsync(ImmutableList.of(CONFIG_ENTRY), WriteOption.logName(LOG_NAME),
         WriteOption.resource(DEFAULT_RESOURCE));
-    EasyMock.expectLastCall();
-    logging.write(ImmutableList.of(INFO_ENTRY), WriteOption.logName(LOG_NAME),
+    EasyMock.expectLastCall().andReturn(Futures.immediateFuture(null));
+    logging.writeAsync(ImmutableList.of(INFO_ENTRY), WriteOption.logName(LOG_NAME),
         WriteOption.resource(DEFAULT_RESOURCE));
-    EasyMock.expectLastCall();
-    logging.write(ImmutableList.of(WARNING_ENTRY), WriteOption.logName(LOG_NAME),
+    EasyMock.expectLastCall().andReturn(Futures.immediateFuture(null));
+    logging.writeAsync(ImmutableList.of(WARNING_ENTRY), WriteOption.logName(LOG_NAME),
         WriteOption.resource(DEFAULT_RESOURCE));
-    EasyMock.expectLastCall();
-    logging.write(ImmutableList.of(SEVERE_ENTRY), WriteOption.logName(LOG_NAME),
+    EasyMock.expectLastCall().andReturn(Futures.immediateFuture(null));
+    logging.writeAsync(ImmutableList.of(SEVERE_ENTRY), WriteOption.logName(LOG_NAME),
         WriteOption.resource(DEFAULT_RESOURCE));
-    EasyMock.expectLastCall();
-    logging.write(ImmutableList.of(DEBUG_ENTRY), WriteOption.logName(LOG_NAME),
+    EasyMock.expectLastCall().andReturn(Futures.immediateFuture(null));
+    logging.writeAsync(ImmutableList.of(DEBUG_ENTRY), WriteOption.logName(LOG_NAME),
         WriteOption.resource(DEFAULT_RESOURCE));
-    EasyMock.expectLastCall();
-    logging.write(ImmutableList.of(NOTICE_ENTRY), WriteOption.logName(LOG_NAME),
+    EasyMock.expectLastCall().andReturn(Futures.immediateFuture(null));
+    logging.writeAsync(ImmutableList.of(NOTICE_ENTRY), WriteOption.logName(LOG_NAME),
         WriteOption.resource(DEFAULT_RESOURCE));
-    EasyMock.expectLastCall();
-    logging.write(ImmutableList.of(ERROR_ENTRY), WriteOption.logName(LOG_NAME),
+    EasyMock.expectLastCall().andReturn(Futures.immediateFuture(null));
+    logging.writeAsync(ImmutableList.of(ERROR_ENTRY), WriteOption.logName(LOG_NAME),
         WriteOption.resource(DEFAULT_RESOURCE));
-    EasyMock.expectLastCall();
-    logging.write(ImmutableList.of(CRITICAL_ENTRY), WriteOption.logName(LOG_NAME),
+    EasyMock.expectLastCall().andReturn(Futures.immediateFuture(null));
+    logging.writeAsync(ImmutableList.of(CRITICAL_ENTRY), WriteOption.logName(LOG_NAME),
         WriteOption.resource(DEFAULT_RESOURCE));
-    EasyMock.expectLastCall();
-    logging.write(ImmutableList.of(ALERT_ENTRY), WriteOption.logName(LOG_NAME),
+    EasyMock.expectLastCall().andReturn(Futures.immediateFuture(null));
+    logging.writeAsync(ImmutableList.of(ALERT_ENTRY), WriteOption.logName(LOG_NAME),
         WriteOption.resource(DEFAULT_RESOURCE));
-    EasyMock.expectLastCall();
-    logging.write(ImmutableList.of(EMERGENCY_ENTRY), WriteOption.logName(LOG_NAME),
+    EasyMock.expectLastCall().andReturn(Futures.immediateFuture(null));
+    logging.writeAsync(ImmutableList.of(EMERGENCY_ENTRY), WriteOption.logName(LOG_NAME),
         WriteOption.resource(DEFAULT_RESOURCE));
-    EasyMock.expectLastCall();
+    EasyMock.expectLastCall().andReturn(Futures.immediateFuture(null));
     EasyMock.replay(options, logging);
     Handler handler = new LoggingHandler(LOG_NAME, options);
     handler.setLevel(Level.ALL);
@@ -203,9 +197,9 @@ public class LoggingHandlerTest {
     EasyMock.expect(options.getProjectId()).andReturn(PROJECT).anyTimes();
     EasyMock.expect(options.getService()).andReturn(logging);
     MonitoredResource resource = MonitoredResource.of("custom", ImmutableMap.<String, String>of());
-    logging.write(ImmutableList.of(FINEST_ENTRY), WriteOption.logName(LOG_NAME),
+    logging.writeAsync(ImmutableList.of(FINEST_ENTRY), WriteOption.logName(LOG_NAME),
         WriteOption.resource(resource));
-    EasyMock.expectLastCall();
+    EasyMock.expectLastCall().andReturn(Futures.immediateFuture(null));
     EasyMock.replay(options, logging);
     Handler handler = new LoggingHandler(LOG_NAME, options, resource);
     handler.setLevel(Level.ALL);
@@ -218,13 +212,13 @@ public class LoggingHandlerTest {
     EasyMock.expect(options.getProjectId()).andReturn(PROJECT).anyTimes();
     EasyMock.expect(options.getService()).andReturn(logging);
     RuntimeException ex = new RuntimeException();
-    logging.write(ImmutableList.of(FINEST_ENTRY), WriteOption.logName(LOG_NAME),
+    logging.writeAsync(ImmutableList.of(FINEST_ENTRY), WriteOption.logName(LOG_NAME),
         WriteOption.resource(DEFAULT_RESOURCE));
     EasyMock.expectLastCall().andThrow(ex);
     EasyMock.replay(options, logging);
     ErrorManager errorManager = EasyMock.createStrictMock(ErrorManager.class);
     errorManager.error(null, ex, ErrorManager.FLUSH_FAILURE);
-    EasyMock.expectLastCall();
+    EasyMock.expectLastCall().once();
     EasyMock.replay(errorManager);
     Handler handler = new LoggingHandler(LOG_NAME, options);
     handler.setLevel(Level.ALL);
@@ -242,7 +236,7 @@ public class LoggingHandlerTest {
     RuntimeException ex = new RuntimeException();
     ErrorManager errorManager = EasyMock.createStrictMock(ErrorManager.class);
     errorManager.error(null, ex, ErrorManager.FORMAT_FAILURE);
-    EasyMock.expectLastCall();
+    EasyMock.expectLastCall().once();
     LogRecord record = new LogRecord(Level.FINEST, MESSAGE);
     EasyMock.expect(formatter.format(record)).andThrow(ex);
     EasyMock.replay(errorManager, formatter);
@@ -258,9 +252,9 @@ public class LoggingHandlerTest {
   public void testFlushSize() {
     EasyMock.expect(options.getProjectId()).andReturn(PROJECT).anyTimes();
     EasyMock.expect(options.getService()).andReturn(logging);
-    logging.write(ImmutableList.of(FINEST_ENTRY, FINER_ENTRY, FINE_ENTRY, CONFIG_ENTRY, INFO_ENTRY,
+    logging.writeAsync(ImmutableList.of(FINEST_ENTRY, FINER_ENTRY, FINE_ENTRY, CONFIG_ENTRY, INFO_ENTRY,
         WARNING_ENTRY), WriteOption.logName(LOG_NAME), WriteOption.resource(DEFAULT_RESOURCE));
-    EasyMock.expectLastCall();
+    EasyMock.expectLastCall().andReturn(Futures.immediateFuture(null));
     EasyMock.replay(options, logging);
     LoggingHandler handler = new LoggingHandler(LOG_NAME, options);
     handler.setLevel(Level.ALL);
@@ -278,10 +272,10 @@ public class LoggingHandlerTest {
   public void testFlushLevel() {
     EasyMock.expect(options.getProjectId()).andReturn(PROJECT).anyTimes();
     EasyMock.expect(options.getService()).andReturn(logging);
-    logging.write(ImmutableList.of(FINEST_ENTRY, FINER_ENTRY, FINE_ENTRY, CONFIG_ENTRY, INFO_ENTRY,
+    logging.writeAsync(ImmutableList.of(FINEST_ENTRY, FINER_ENTRY, FINE_ENTRY, CONFIG_ENTRY, INFO_ENTRY,
         WARNING_ENTRY), WriteOption.logName(LOG_NAME),
         WriteOption.resource(DEFAULT_RESOURCE));
-    EasyMock.expectLastCall();
+    EasyMock.expectLastCall().andReturn(Futures.immediateFuture(null));
     EasyMock.replay(options, logging);
     LoggingHandler handler = new LoggingHandler(LOG_NAME, options);
     handler.setLevel(Level.ALL);
@@ -300,9 +294,9 @@ public class LoggingHandlerTest {
   public void testAddHandler() {
     EasyMock.expect(options.getProjectId()).andReturn(PROJECT).anyTimes();
     EasyMock.expect(options.getService()).andReturn(logging);
-    logging.write(ImmutableList.of(FINEST_ENTRY), WriteOption.logName(LOG_NAME),
+    logging.writeAsync(ImmutableList.of(FINEST_ENTRY), WriteOption.logName(LOG_NAME),
         WriteOption.resource(DEFAULT_RESOURCE));
-    EasyMock.expectLastCall();
+    EasyMock.expectLastCall().andReturn(Futures.immediateFuture(null));
     EasyMock.replay(options, logging);
     LoggingHandler handler = new LoggingHandler(LOG_NAME, options);
     handler.setLevel(Level.ALL);
@@ -314,30 +308,14 @@ public class LoggingHandlerTest {
   }
 
   @Test
-  public void testMaskLoggers() {
-    EasyMock.expect(options.getProjectId()).andReturn(PROJECT);
-    EasyMock.replay(options, logging);
-    LoggingHandler handler = new LoggingHandler(LOG_NAME, options);
-    Logger logger = Logger.getLogger("com.google");
-    Logger maskedLogger = Logger.getLogger("com.google.api.client.http");
-    maskedLogger.addHandler(handler);
-    assertTrue(maskedLogger.getUseParentHandlers());
-    assertSame(logger, maskedLogger.getParent());
-    LoggingHandler.addHandler(logger, handler);
-    assertFalse(maskedLogger.getUseParentHandlers());
-    assertEquals(0, maskedLogger.getHandlers().length);
-    logger.removeHandler(handler);
-  }
-
-  @Test
   public void testClose() throws Exception {
     EasyMock.expect(options.getProjectId()).andReturn(PROJECT).anyTimes();
     EasyMock.expect(options.getService()).andReturn(logging);
-    logging.write(ImmutableList.of(FINEST_ENTRY), WriteOption.logName(LOG_NAME),
+    logging.writeAsync(ImmutableList.of(FINEST_ENTRY), WriteOption.logName(LOG_NAME),
         WriteOption.resource(DEFAULT_RESOURCE));
-    EasyMock.expectLastCall();
+    EasyMock.expectLastCall().andReturn(Futures.immediateFuture(null));
     logging.close();
-    EasyMock.expectLastCall();
+    EasyMock.expectLastCall().once();
     EasyMock.replay(options, logging);
     Handler handler = new LoggingHandler(LOG_NAME, options);
     handler.setLevel(Level.ALL);
