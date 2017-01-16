@@ -37,6 +37,8 @@ import com.google.cloud.MonitoredResource.Builder;
 public class GaeFlexLoggingEnhancer implements LoggingHandler.Enhancer {
   
   private static final ThreadLocal<String> traceId = new ThreadLocal<>();
+  
+  private String gaeInstanceId;
 
   /**
    * Set the Trace ID associated with any logging done by 
@@ -56,8 +58,6 @@ public class GaeFlexLoggingEnhancer implements LoggingHandler.Enhancer {
     return traceId.get();
   }
   
-  private String gaeInstanceId;
-
   @Override
   public void enhanceMonitoredResource(Builder builder) {
     gaeInstanceId = System.getenv("GAE_INSTANCE");    // Are we running on a GAE instance?

@@ -277,7 +277,6 @@ public class LoggingHandler extends Handler {
         }
         return enhancers;
       } catch (Exception ex) {
-        ex.printStackTrace();
         // If we cannot create the enhancers we fall back to the default
       }
       return Collections.emptyList();
