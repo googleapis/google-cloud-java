@@ -21,7 +21,9 @@ import static com.google.common.base.MoreObjects.firstNonNull;
 import com.google.cloud.MonitoredResource;
 import com.google.cloud.logging.Logging.WriteOption;
 import com.google.common.collect.ImmutableList;
-import com.google.common.collect.ImmutableMap;
+
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.logging.ErrorManager;
@@ -95,11 +97,11 @@ public class LoggingHandler extends Handler {
 
   private final LoggingOptions options;
   private final WriteOption[] writeOptions;
-  private final String gaeInstanceId;
   private List<LogEntry> buffer = new LinkedList<>();
   private volatile Logging logging;
   private Level flushLevel;
   private long flushSize;
+  private final List<Enhancer> enhancers;
 
   /**
    * Creates an handler that publishes messages to Stackdriver Logging.
@@ -137,6 +139,20 @@ public class LoggingHandler extends Handler {
    * then a more comprehensive default resource may be created.
    */
   public LoggingHandler(String log, LoggingOptions options, MonitoredResource monitoredResource) {
+    this(log, options, monitoredResource,null);
+  }
+  
+  /**
+   * Creates a handler that publishes messages to Stackdriver Logging.
+   *
+   * @param log the name of the log to which log entries are written
+   * @param options options for the Stackdriver Logging service
+   * @param monitoredResource the monitored resource to which log entries refer. If null a default
+   * @param enhancers List of {@link Enhancer} instances.
+   * resource is created based on the project ID.  If a Google App Engine environment is detected
+   * then a more comprehensive default resource may be created.
+   */
+  public LoggingHandler(String log, LoggingOptions options, MonitoredResource monitoredResource, List<Enhancer> enhancers) {
     LogConfigHelper helper = new LogConfigHelper();
     String className = getClass().getName();
     this.options = options != null ? options : LoggingOptions.getDefaultInstance();
@@ -146,8 +162,9 @@ public class LoggingHandler extends Handler {
     setFilter(helper.getFilterProperty(className + ".filter", null));
     setFormatter(helper.getFormatterProperty(className + ".formatter", new SimpleFormatter()));
     String logName = firstNonNull(log, helper.getProperty(className + ".log", "java.log"));
-    gaeInstanceId = System.getenv("GAE_INSTANCE");
-    MonitoredResource resource = firstNonNull(monitoredResource, getDefaultResource());
+    this.enhancers = firstNonNull(enhancers, helper.getEnhancerProperty(className + ".enhancers"));
+    String resourceType = helper.getProperty(className + ".resourceType", "global");
+    MonitoredResource resource = firstNonNull(monitoredResource, getDefaultResource(resourceType));
     writeOptions = new WriteOption[]{WriteOption.logName(logName), WriteOption.resource(resource)};
   }
 
@@ -182,21 +199,13 @@ public class LoggingHandler extends Handler {
     return false;
   }
 
-  private MonitoredResource getDefaultResource() {
-    // Are we running on a GAE instance?
-    if (gaeInstanceId!=null && options.getProjectId()!=null) {
-      MonitoredResource.Builder builder = MonitoredResource.newBuilder("gae_app")
-          .addLabel("project_id", options.getProjectId());
-      if (System.getenv("GAE_SERVICE")!=null) {
-        builder.addLabel("module_id", System.getenv("GAE_SERVICE"));
-      }
-      if (System.getenv("GAE_VERSION")!=null) {
-        builder.addLabel("version_id", System.getenv("GAE_VERSION"));
-      }
-      return builder.build();
+  private MonitoredResource getDefaultResource(String resourceType) {
+    MonitoredResource.Builder builder = MonitoredResource.newBuilder(resourceType);
+    builder.addLabel("project_id", options.getProjectId());
+    for (Enhancer enhancer : enhancers) {
+      enhancer.enhanceMonitoredResource(builder);
     }
-    
-    return MonitoredResource.of("global", ImmutableMap.of("project_id", options.getProjectId()));
+    return builder.build();    
   }
 
   private static class LogConfigHelper {
@@ -253,6 +262,25 @@ public class LoggingHandler extends Handler {
         // If we cannot create the filter we fall back to default value
       }
       return defaultValue;
+    }
+    
+    List<Enhancer> getEnhancerProperty(String name) {
+      String list = manager.getProperty(name);
+      try {
+        List<Enhancer> enhancers = new ArrayList<>();
+        if (list != null) {
+          String[] items = list.split(",");
+          for (String e_name : items) { 
+            Class<? extends Enhancer> clz = (Class<? extends Enhancer>) ClassLoader.getSystemClassLoader().loadClass(e_name);
+            enhancers.add((Enhancer) clz.newInstance());
+          }
+        }
+        return enhancers;
+      } catch (Exception ex) {
+        ex.printStackTrace();
+        // If we cannot create the enhancers we fall back to the default
+      }
+      return Collections.emptyList();
     }
   }
 
@@ -327,16 +355,15 @@ public class LoggingHandler extends Handler {
         .addLabel("levelName", level.getName())
         .addLabel("levelValue", String.valueOf(level.intValue()))
         .setSeverity(severityFor(level));
-    if (gaeInstanceId != null) {
-      builder.addLabel("appengine.googleapis.com/instance_name", gaeInstanceId);
-    }
 
     enhanceLogEntry(builder, record);
     return builder.build();
   }
   
   protected void enhanceLogEntry(LogEntry.Builder builder, LogRecord record) {
-    // no-op in this class
+    for (Enhancer enhancer : enhancers) {
+      enhancer.enhanceLogEntry(builder, record);
+    }
   }
   
   private static Severity severityFor(Level level) {
@@ -450,4 +477,14 @@ public class LoggingHandler extends Handler {
   public static void addHandler(Logger logger, LoggingHandler handler) {
     logger.addHandler(handler);
   }
+  
+  /**
+   * A Log Enhancer.
+   * May be used to enhanced the {@link MonitoredResource} and/or the {@link LogEntry}
+   */
+  interface Enhancer {
+    void enhanceMonitoredResource(MonitoredResource.Builder builder);
+    void enhanceLogEntry(LogEntry.Builder builder, LogRecord record);
+  }
+
 }
