@@ -133,7 +133,7 @@ public class Subscriber extends AbstractService {
   private ScheduledFuture<?> ackDeadlineUpdater;
   private int streamAckDeadlineSeconds;
 
-  public Subscriber(Builder builder) throws IOException {
+  private Subscriber(Builder builder) throws IOException {
     receiver = builder.receiver;
     flowControlSettings = builder.flowControlSettings;
     subscription = builder.subscription;
