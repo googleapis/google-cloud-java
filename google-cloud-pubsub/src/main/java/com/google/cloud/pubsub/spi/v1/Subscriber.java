@@ -24,6 +24,7 @@ import com.google.cloud.pubsub.spi.v1.MessageReceiver.AckReply;
 import com.google.common.base.Optional;
 import com.google.common.base.Preconditions;
 import com.google.common.util.concurrent.Service;
+import com.google.pubsub.v1.SubscriptionName;
 import io.grpc.ManagedChannelBuilder;
 import java.io.IOException;
 import java.util.concurrent.ScheduledExecutorService;
@@ -140,6 +141,10 @@ public interface Subscriber extends Service {
      */
     public static Builder newBuilder(String subscription, MessageReceiver receiver) {
       return new Builder(subscription, receiver);
+    }
+
+    public static Builder newBuilder(SubscriptionName subscription, MessageReceiver receiver) {
+      return newBuilder(subscription.toString(), receiver);
     }
 
     Builder(String subscription, MessageReceiver receiver) {
