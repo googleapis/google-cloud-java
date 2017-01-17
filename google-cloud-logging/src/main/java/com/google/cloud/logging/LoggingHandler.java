@@ -134,8 +134,8 @@ public class LoggingHandler extends Handler {
    *
    * @param log the name of the log to which log entries are written
    * @param options options for the Stackdriver Logging service
-   * @param monitoredResource the monitored resource to which log entries refer. If null a default
-   * resource is created based on the project ID.  If a Google App Engine environment is detected
+   * @param monitoredResource the monitored resource to which log entries refer. If it is null 
+   * then a default resource is created based on the project ID.  If a Google App Engine environment is detected
    * then a more comprehensive default resource may be created.
    */
   public LoggingHandler(String log, LoggingOptions options, MonitoredResource monitoredResource) {
@@ -147,10 +147,10 @@ public class LoggingHandler extends Handler {
    *
    * @param log the name of the log to which log entries are written
    * @param options options for the Stackdriver Logging service
-   * @param monitoredResource the monitored resource to which log entries refer. If null a default
-   * @param enhancers List of {@link Enhancer} instances.
-   * resource is created based on the project ID.  If a Google App Engine environment is detected
+   * @param monitoredResource the monitored resource to which log entries refer. If it is null 
+   * then a default resource is created based on the project ID.  If a Google App Engine environment is detected
    * then a more comprehensive default resource may be created.
+   * @param enhancers List of {@link Enhancer} instances.
    */
   public LoggingHandler(String log, LoggingOptions options, MonitoredResource monitoredResource, List<Enhancer> enhancers) {
     LogConfigHelper helper = new LogConfigHelper();
@@ -479,7 +479,7 @@ public class LoggingHandler extends Handler {
   
   /**
    * A Log Enhancer.
-   * May be used to enhanced the {@link MonitoredResource} and/or the {@link LogEntry}
+   * May be used to enhance the {@link MonitoredResource} and/or the {@link LogEntry}
    */
   interface Enhancer {
     void enhanceMonitoredResource(MonitoredResource.Builder builder);

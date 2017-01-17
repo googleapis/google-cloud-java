@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google Inc. All Rights Reserved.
+ * Copyright 2016 Google Inc. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,9 +21,10 @@ import java.util.logging.LogRecord;
 import com.google.cloud.MonitoredResource.Builder;
 
 /**
- * A Logging {@link Enhancer} that enhances the logging for
- * GAE Flex environment.    This enhance can be configured in
- * a logging.properties file with:
+ * A Logging {@link Enhancer} that enhances the logging for the 
+ * GAE Flex environment. This enhancer can
+ * be configured in a logging.properties file with:
+ * 
  * <pre>
  * handlers=com.google.cloud.logging.LoggingHandler
  * com.google.cloud.logging.LoggingHandler.log=gaeflex.log
@@ -35,14 +36,14 @@ import com.google.cloud.MonitoredResource.Builder;
  *
  */
 public class GaeFlexLoggingEnhancer implements LoggingHandler.Enhancer {
-  
+
   private static final ThreadLocal<String> traceId = new ThreadLocal<>();
-  
+
   private String gaeInstanceId;
 
   /**
-   * Set the Trace ID associated with any logging done by 
-   * the current thread.
+   * Set the Trace ID associated with any logging done by the current thread.
+   * 
    * @param id The traceID
    */
   public static void setCurrentTraceId(String id) {
@@ -50,22 +51,25 @@ public class GaeFlexLoggingEnhancer implements LoggingHandler.Enhancer {
   }
 
   /**
-   * Get the Trace ID associated with any logging done by 
-   * the current thread.
+   * Get the Trace ID associated with any logging done by the current thread.
+   * 
    * @return id The traceID
    */
   public static String getCurrentTraceId() {
     return traceId.get();
   }
-  
+
+  public GaeFlexLoggingEnhancer() {
+    gaeInstanceId = System.getenv("GAE_INSTANCE"); // Are we running on a GAE instance?
+  }
+
   @Override
   public void enhanceMonitoredResource(Builder builder) {
-    gaeInstanceId = System.getenv("GAE_INSTANCE");    // Are we running on a GAE instance?
-    if (gaeInstanceId!=null) {
-      if (System.getenv("GAE_SERVICE")!=null) {
+    if (gaeInstanceId != null) {
+      if (System.getenv("GAE_SERVICE") != null) {
         builder.addLabel("module_id", System.getenv("GAE_SERVICE"));
       }
-      if (System.getenv("GAE_VERSION")!=null) {
+      if (System.getenv("GAE_VERSION") != null) {
         builder.addLabel("version_id", System.getenv("GAE_VERSION"));
       }
     }
@@ -75,10 +79,10 @@ public class GaeFlexLoggingEnhancer implements LoggingHandler.Enhancer {
   public void enhanceLogEntry(com.google.cloud.logging.LogEntry.Builder builder, LogRecord record) {
     if (gaeInstanceId != null) {
       builder.addLabel("appengine.googleapis.com/instance_name", gaeInstanceId);
-    } 
+    }
     String traceId = getCurrentTraceId();
     if (traceId != null) {
       builder.addLabel("appengine.googleapis.com/trace_id", traceId);
-    } 
+    }
   }
 }
