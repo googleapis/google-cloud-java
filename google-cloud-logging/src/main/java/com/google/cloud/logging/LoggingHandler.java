@@ -162,9 +162,9 @@ public class LoggingHandler extends Handler {
     setFilter(helper.getFilterProperty(className + ".filter", null));
     setFormatter(helper.getFormatterProperty(className + ".formatter", new SimpleFormatter()));
     String logName = firstNonNull(log, helper.getProperty(className + ".log", "java.log"));
-    this.enhancers = firstNonNull(enhancers, helper.getEnhancerProperty(className + ".enhancers"));
+    this.enhancers = enhancers != null ? enhancers : helper.getEnhancerProperty(className + ".enhancers");
     String resourceType = helper.getProperty(className + ".resourceType", "global");
-    MonitoredResource resource = firstNonNull(monitoredResource, getDefaultResource(resourceType));
+    MonitoredResource resource = monitoredResource != null ? monitoredResource : getDefaultResource(resourceType);
     writeOptions = new WriteOption[]{WriteOption.logName(logName), WriteOption.resource(resource)};
   }
 
