@@ -227,7 +227,7 @@ public class LoggingHandlerTest {
     EasyMock.replay(options, logging);
     LoggingHandler.Enhancer enhancer = new LoggingHandler.Enhancer() {
       @Override
-      public void enhanceMonitoredResource(com.google.cloud.MonitoredResource.Builder builder) {
+      public void enhanceMonitoredResource(MonitoredResource.Builder builder) {
         throw new IllegalStateException();
       }
 
