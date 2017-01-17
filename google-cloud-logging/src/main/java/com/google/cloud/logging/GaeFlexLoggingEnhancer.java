@@ -39,7 +39,7 @@ public class GaeFlexLoggingEnhancer implements LoggingHandler.Enhancer {
 
   private static final ThreadLocal<String> traceId = new ThreadLocal<>();
 
-  private String gaeInstanceId;
+  private final String gaeInstanceId;
 
   /**
    * Set the Trace ID associated with any logging done by the current thread.
