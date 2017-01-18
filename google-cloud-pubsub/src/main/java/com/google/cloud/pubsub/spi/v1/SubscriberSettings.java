@@ -29,6 +29,7 @@ import com.google.api.gax.grpc.PagedCallSettings;
 import com.google.api.gax.grpc.PagedListDescriptor;
 import com.google.api.gax.grpc.PagedListResponseFactory;
 import com.google.api.gax.grpc.SimpleCallSettings;
+import com.google.api.gax.grpc.StreamingCallSettings;
 import com.google.api.gax.grpc.UnaryCallSettings;
 import com.google.api.gax.grpc.UnaryCallable;
 import com.google.common.collect.ImmutableList;
@@ -53,6 +54,8 @@ import com.google.pubsub.v1.ModifyAckDeadlineRequest;
 import com.google.pubsub.v1.ModifyPushConfigRequest;
 import com.google.pubsub.v1.PullRequest;
 import com.google.pubsub.v1.PullResponse;
+import com.google.pubsub.v1.StreamingPullRequest;
+import com.google.pubsub.v1.StreamingPullResponse;
 import com.google.pubsub.v1.SubscriberGrpc;
 import com.google.pubsub.v1.Subscription;
 import io.grpc.Status;
@@ -111,6 +114,8 @@ public class SubscriberSettings extends ClientSettings {
   private final SimpleCallSettings<ModifyAckDeadlineRequest, Empty> modifyAckDeadlineSettings;
   private final SimpleCallSettings<AcknowledgeRequest, Empty> acknowledgeSettings;
   private final SimpleCallSettings<PullRequest, PullResponse> pullSettings;
+  private final StreamingCallSettings<StreamingPullRequest, StreamingPullResponse>
+      streamingPullSettings;
   private final SimpleCallSettings<ModifyPushConfigRequest, Empty> modifyPushConfigSettings;
   private final SimpleCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings;
   private final SimpleCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings;
@@ -152,6 +157,12 @@ public class SubscriberSettings extends ClientSettings {
   /** Returns the object with the settings used for calls to pull. */
   public SimpleCallSettings<PullRequest, PullResponse> pullSettings() {
     return pullSettings;
+  }
+
+  /** Returns the object with the settings used for calls to streamingPull. */
+  public StreamingCallSettings<StreamingPullRequest, StreamingPullResponse>
+      streamingPullSettings() {
+    return streamingPullSettings;
   }
 
   /** Returns the object with the settings used for calls to modifyPushConfig. */
@@ -233,6 +244,7 @@ public class SubscriberSettings extends ClientSettings {
     modifyAckDeadlineSettings = settingsBuilder.modifyAckDeadlineSettings().build();
     acknowledgeSettings = settingsBuilder.acknowledgeSettings().build();
     pullSettings = settingsBuilder.pullSettings().build();
+    streamingPullSettings = settingsBuilder.streamingPullSettings().build();
     modifyPushConfigSettings = settingsBuilder.modifyPushConfigSettings().build();
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
     getIamPolicySettings = settingsBuilder.getIamPolicySettings().build();
@@ -311,6 +323,8 @@ public class SubscriberSettings extends ClientSettings {
         modifyAckDeadlineSettings;
     private final SimpleCallSettings.Builder<AcknowledgeRequest, Empty> acknowledgeSettings;
     private final SimpleCallSettings.Builder<PullRequest, PullResponse> pullSettings;
+    private final StreamingCallSettings.Builder<StreamingPullRequest, StreamingPullResponse>
+        streamingPullSettings;
     private final SimpleCallSettings.Builder<ModifyPushConfigRequest, Empty>
         modifyPushConfigSettings;
     private final SimpleCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings;
@@ -381,6 +395,9 @@ public class SubscriberSettings extends ClientSettings {
       acknowledgeSettings = SimpleCallSettings.newBuilder(SubscriberGrpc.METHOD_ACKNOWLEDGE);
 
       pullSettings = SimpleCallSettings.newBuilder(SubscriberGrpc.METHOD_PULL);
+
+      streamingPullSettings =
+          StreamingCallSettings.newBuilder(SubscriberGrpc.METHOD_STREAMING_PULL);
 
       modifyPushConfigSettings =
           SimpleCallSettings.newBuilder(SubscriberGrpc.METHOD_MODIFY_PUSH_CONFIG);
@@ -478,6 +495,7 @@ public class SubscriberSettings extends ClientSettings {
       modifyAckDeadlineSettings = settings.modifyAckDeadlineSettings.toBuilder();
       acknowledgeSettings = settings.acknowledgeSettings.toBuilder();
       pullSettings = settings.pullSettings.toBuilder();
+      streamingPullSettings = settings.streamingPullSettings.toBuilder();
       modifyPushConfigSettings = settings.modifyPushConfigSettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
       getIamPolicySettings = settings.getIamPolicySettings.toBuilder();
@@ -559,6 +577,12 @@ public class SubscriberSettings extends ClientSettings {
     /** Returns the builder for the settings used for calls to pull. */
     public SimpleCallSettings.Builder<PullRequest, PullResponse> pullSettings() {
       return pullSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to streamingPull. */
+    public StreamingCallSettings.Builder<StreamingPullRequest, StreamingPullResponse>
+        streamingPullSettings() {
+      return streamingPullSettings;
     }
 
     /** Returns the builder for the settings used for calls to modifyPushConfig. */
