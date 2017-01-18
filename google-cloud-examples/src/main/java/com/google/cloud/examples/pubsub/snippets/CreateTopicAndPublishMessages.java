@@ -44,8 +44,8 @@ public class CreateTopicAndPublishMessages {
       List<String> messages = Arrays.asList("first message", "second message");
       List<ListenableFuture<String>> messageIds = new ArrayList<>();
       for (String message : messages) {
-        PubsubMessage pubsubMessage =
-            PubsubMessage.newBuilder().setData(ByteString.copyFromUtf8(message)).build();
+        ByteString data = ByteString.copyFromUtf8(message);
+        PubsubMessage pubsubMessage = PubsubMessage.newBuilder().setData(data).build();
         messageIds.add(publisher.publish(pubsubMessage));
       }
       for (String messageId : Futures.allAsList(messageIds).get()) {
