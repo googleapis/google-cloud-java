@@ -146,28 +146,30 @@ public interface Publisher {
 
   /** A builder of {@link Publisher}s. */
   public final class Builder {
-    // Meaningful defaults.
-    static final long DEFAULT_MAX_BUNDLE_MESSAGES = 100L;
-    static final long DEFAULT_MAX_BUNDLE_BYTES = 1000L; // 1 kB
-    static final Duration DEFAULT_MAX_BUNDLE_DURATION = new Duration(1); // 1ms
-    static final Duration DEFAULT_REQUEST_TIMEOUT = new Duration(10 * 1000); // 10 seconds
     static final Duration MIN_TOTAL_TIMEOUT = new Duration(10 * 1000); // 10 seconds
     static final Duration MIN_RPC_TIMEOUT = new Duration(10); // 10 milliseconds
+
+    // Meaningful defaults.
+    static final long DEFAULT_ELEMENT_COUNT_THRESHOLD = 100L;
+    static final long DEFAULT_REQUEST_BYTES_THRESHOLD = 1000L; // 1 kB
+    static final Duration DEFAULT_DELAY_THRESHOLD = new Duration(1); // 1ms
+    static final Duration DEFAULT_RPC_TIMEOUT = new Duration(10 * 1000); // 10 seconds
+    static final Duration DEFAULT_TOTAL_TIMEOUT = MIN_TOTAL_TIMEOUT;
     static final BundlingSettings DEFAULT_BUNDLING_SETTINGS =
         BundlingSettings.newBuilder()
-            .setDelayThreshold(DEFAULT_MAX_BUNDLE_DURATION)
-            .setRequestByteThreshold(DEFAULT_MAX_BUNDLE_BYTES)
-            .setElementCountThreshold(DEFAULT_MAX_BUNDLE_MESSAGES)
+            .setDelayThreshold(DEFAULT_DELAY_THRESHOLD)
+            .setRequestByteThreshold(DEFAULT_REQUEST_BYTES_THRESHOLD)
+            .setElementCountThreshold(DEFAULT_ELEMENT_COUNT_THRESHOLD)
             .build();
     static final RetrySettings DEFAULT_RETRY_SETTINGS =
         RetrySettings.newBuilder()
-            .setTotalTimeout(MIN_TOTAL_TIMEOUT)
+            .setTotalTimeout(DEFAULT_TOTAL_TIMEOUT)
             .setInitialRetryDelay(Duration.millis(5))
             .setRetryDelayMultiplier(2)
             .setMaxRetryDelay(Duration.millis(Long.MAX_VALUE))
-            .setInitialRpcTimeout(DEFAULT_REQUEST_TIMEOUT)
+            .setInitialRpcTimeout(DEFAULT_RPC_TIMEOUT)
             .setRpcTimeoutMultiplier(2)
-            .setMaxRpcTimeout(DEFAULT_REQUEST_TIMEOUT)
+            .setMaxRpcTimeout(DEFAULT_RPC_TIMEOUT)
             .build();
 
     String topic;

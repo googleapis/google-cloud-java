@@ -377,13 +377,12 @@ public class PublisherImplTest {
     assertEquals(Optional.absent(), builder.executor);
     assertFalse(builder.failOnFlowControlLimits);
     assertEquals(
-        Publisher.Builder.DEFAULT_MAX_BUNDLE_BYTES,
+        Publisher.Builder.DEFAULT_REQUEST_BYTES_THRESHOLD,
         builder.bundlingSettings.getRequestByteThreshold().longValue());
     assertEquals(
-        Publisher.Builder.DEFAULT_MAX_BUNDLE_DURATION,
-        builder.bundlingSettings.getDelayThreshold());
+        Publisher.Builder.DEFAULT_DELAY_THRESHOLD, builder.bundlingSettings.getDelayThreshold());
     assertEquals(
-        Publisher.Builder.DEFAULT_MAX_BUNDLE_MESSAGES,
+        Publisher.Builder.DEFAULT_ELEMENT_COUNT_THRESHOLD,
         builder.bundlingSettings.getElementCountThreshold().longValue());
     assertEquals(FlowController.Settings.DEFAULT, builder.flowControlSettings);
     assertEquals(Publisher.Builder.DEFAULT_RETRY_SETTINGS, builder.retrySettings);
