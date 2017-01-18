@@ -371,7 +371,7 @@ public class SubscriberImplTest {
     }
 
     final int expectedChannelCount =
-        Runtime.getRuntime().availableProcessors() * SubscriberImpl.CHANNELS_PER_CORE;
+        Runtime.getRuntime().availableProcessors() * Subscriber.CHANNELS_PER_CORE;
 
     Subscriber subscriber = startSubscriber(getTestSubscriberBuilder(testReceiver));
 
@@ -389,7 +389,7 @@ public class SubscriberImplTest {
     }
 
     final int expectedChannelCount =
-        Runtime.getRuntime().availableProcessors() * SubscriberImpl.CHANNELS_PER_CORE;
+        Runtime.getRuntime().availableProcessors() * Subscriber.CHANNELS_PER_CORE;
 
     Subscriber subscriber =
         startSubscriber(
