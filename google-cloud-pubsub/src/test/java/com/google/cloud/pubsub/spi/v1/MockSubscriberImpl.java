@@ -26,6 +26,8 @@ import com.google.pubsub.v1.ModifyAckDeadlineRequest;
 import com.google.pubsub.v1.ModifyPushConfigRequest;
 import com.google.pubsub.v1.PullRequest;
 import com.google.pubsub.v1.PullResponse;
+import com.google.pubsub.v1.StreamingPullRequest;
+import com.google.pubsub.v1.StreamingPullResponse;
 import com.google.pubsub.v1.SubscriberGrpc.SubscriberImplBase;
 import com.google.pubsub.v1.Subscription;
 import io.grpc.stub.StreamObserver;
@@ -167,6 +169,36 @@ public class MockSubscriberImpl extends SubscriberImplBase {
     } else {
       responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
     }
+  }
+
+  @Override
+  public StreamObserver<StreamingPullRequest> streamingPull(
+      final StreamObserver<StreamingPullResponse> responseObserver) {
+    final Object response = responses.remove();
+    StreamObserver<StreamingPullRequest> requestObserver =
+        new StreamObserver<StreamingPullRequest>() {
+          @Override
+          public void onNext(StreamingPullRequest value) {
+            if (response instanceof StreamingPullResponse) {
+              responseObserver.onNext((StreamingPullResponse) response);
+            } else if (response instanceof Exception) {
+              responseObserver.onError((Exception) response);
+            } else {
+              responseObserver.onError(new IllegalArgumentException("Unrecognized response type"));
+            }
+          }
+
+          @Override
+          public void onError(Throwable t) {
+            responseObserver.onError(t);
+          }
+
+          @Override
+          public void onCompleted() {
+            responseObserver.onCompleted();
+          }
+        };
+    return requestObserver;
   }
 
   @Override

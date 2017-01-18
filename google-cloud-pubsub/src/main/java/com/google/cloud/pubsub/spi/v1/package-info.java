@@ -24,6 +24,8 @@
  * <p>Service Description: The service that an application uses to manipulate topics, and to send
  * messages to a topic.
  *
+ * <p>To publish messages to a topic, see the Publisher class.
+ *
  * <p>Sample for PublisherClient:
  *
  * <pre>
@@ -39,6 +41,8 @@
  *
  * <p>Service Description: The service that an application uses to manipulate subscriptions and to
  * consume messages from a subscription via the `Pull` method.
+ *
+ * <p>To retrieve messages from a subscription, see the Subscriber class.
  *
  * <p>Sample for SubscriberClient:
  *
