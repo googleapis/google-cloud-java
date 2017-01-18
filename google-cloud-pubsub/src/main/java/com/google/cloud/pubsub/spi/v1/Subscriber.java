@@ -139,12 +139,8 @@ public interface Subscriber extends Service {
      * @param receiver an implementation of {@link MessageReceiver} used to process the received
      *     messages
      */
-    public static Builder newBuilder(String subscription, MessageReceiver receiver) {
-      return new Builder(subscription, receiver);
-    }
-
     public static Builder newBuilder(SubscriptionName subscription, MessageReceiver receiver) {
-      return newBuilder(subscription.toString(), receiver);
+      return new Builder(subscription.toString(), receiver);
     }
 
     Builder(String subscription, MessageReceiver receiver) {

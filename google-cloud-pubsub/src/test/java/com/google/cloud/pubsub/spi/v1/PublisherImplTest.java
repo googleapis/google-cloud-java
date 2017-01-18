@@ -32,6 +32,7 @@ import com.google.protobuf.ByteString;
 import com.google.pubsub.v1.PublishRequest;
 import com.google.pubsub.v1.PublishResponse;
 import com.google.pubsub.v1.PubsubMessage;
+import com.google.pubsub.v1.TopicName;
 import io.grpc.Status;
 import io.grpc.StatusException;
 import io.grpc.inprocess.InProcessChannelBuilder;
@@ -57,7 +58,7 @@ import org.mockito.MockitoAnnotations;
 @RunWith(JUnit4.class)
 public class PublisherImplTest {
 
-  private static final String TEST_TOPIC = "projects/test-project/topics/test-topic";
+  private static final TopicName TEST_TOPIC = TopicName.create("test-project", "test-topic");
 
   private static InProcessChannelBuilder testChannelBuilder;
 
@@ -354,7 +355,7 @@ public class PublisherImplTest {
     builder.setSendBundleDeadline(new Duration(16000));
     Publisher publisher = builder.build();
 
-    assertEquals(TEST_TOPIC, publisher.getTopic());
+    assertEquals(TEST_TOPIC.toString(), publisher.getTopic());
     assertEquals(10, publisher.getMaxBundleBytes());
     assertEquals(new Duration(11), publisher.getMaxBundleDuration());
     assertEquals(12, publisher.getMaxBundleMessages());
@@ -366,7 +367,7 @@ public class PublisherImplTest {
   @Test
   public void testBuilderParametersAndDefaults() {
     Publisher.Builder builder = Publisher.Builder.newBuilder(TEST_TOPIC);
-    assertEquals(TEST_TOPIC, builder.topic);
+    assertEquals(TEST_TOPIC.toString(), builder.topic);
     assertEquals(Optional.absent(), builder.channelBuilder);
     assertEquals(Optional.absent(), builder.executor);
     assertFalse(builder.failOnFlowControlLimits);

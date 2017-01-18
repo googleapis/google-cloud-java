@@ -33,6 +33,7 @@ import com.google.pubsub.v1.PubsubMessage;
 import com.google.pubsub.v1.PullResponse;
 import com.google.pubsub.v1.ReceivedMessage;
 import com.google.pubsub.v1.StreamingPullResponse;
+import com.google.pubsub.v1.SubscriptionName;
 import io.grpc.Status;
 import io.grpc.StatusException;
 import io.grpc.StatusRuntimeException;
@@ -63,8 +64,8 @@ import org.mockito.MockitoAnnotations;
 @RunWith(Parameterized.class)
 public class SubscriberImplTest {
 
-  private static final String TEST_SUBSCRIPTION =
-      "projects/test-project/subscriptions/test-subscription";
+  private static final SubscriptionName TEST_SUBSCRIPTION =
+      SubscriptionName.create("test-project", "test-subscription");
 
   private static final PubsubMessage TEST_MESSAGE =
       PubsubMessage.newBuilder().setMessageId("1").build();

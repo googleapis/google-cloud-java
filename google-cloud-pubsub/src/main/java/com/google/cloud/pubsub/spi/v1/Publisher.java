@@ -183,12 +183,8 @@ public interface Publisher {
     Optional<ScheduledExecutorService> executor = Optional.absent();
 
     /** Constructs a new {@link Builder} using the given topic. */
-    public static Builder newBuilder(String topic) {
-      return new Builder(topic);
-    }
-
     public static Builder newBuilder(TopicName topic) {
-      return newBuilder(topic.toString());
+      return new Builder(topic.toString());
     }
 
     Builder(String topic) {
