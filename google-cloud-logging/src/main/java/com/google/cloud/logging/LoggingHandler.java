@@ -78,6 +78,11 @@ import java.util.logging.SimpleFormatter;
  * <li>{@code com.google.cloud.logging.LoggingHandler.flushLevel} specifies the flush log level.
  *     When a log with this level is published, logs are transmitted to the Stackdriver Logging
  *     service (defaults to {@link LoggingLevel#ERROR}).
+ * <li>{@code com.google.cloud.logging.LoggingHandler.enhancers} specifies a comma separated list
+ *     of {@link Enhancer} classes. This handler will call each enhancer list whenever it builds
+ *     a {@link MonitoredResource} or {@link LogEntry} instance (defaults to empty list).
+ * <li>{@code com.google.cloud.logging.LoggingHandler.resourceType} the type name to use when 
+ *     creating the default {@link MonitoredResource} (defaults to "global").
  * </ul>
  *
  * <p>To add a {@code LoggingHandler} to an existing {@link Logger} and be sure to avoid infinite
@@ -135,8 +140,10 @@ public class LoggingHandler extends Handler {
    * @param log the name of the log to which log entries are written
    * @param options options for the Stackdriver Logging service
    * @param monitoredResource the monitored resource to which log entries refer. If it is null 
-   * then a default resource is created based on the project ID.  If a Google App Engine environment is detected
-   * then a more comprehensive default resource may be created.
+   * then a default resource is created based on the project ID. When creating a default resource, if
+   * any {@link Enhancer} instances are configured and then each
+   * {@link Enhancer#enhanceMonitoredResource(com.google.cloud.MonitoredResource.Builder)} method
+   * is called before building the default resource.
    */
   public LoggingHandler(String log, LoggingOptions options, MonitoredResource monitoredResource) {
     this(log, options, monitoredResource,null);
@@ -148,9 +155,12 @@ public class LoggingHandler extends Handler {
    * @param log the name of the log to which log entries are written
    * @param options options for the Stackdriver Logging service
    * @param monitoredResource the monitored resource to which log entries refer. If it is null 
-   * then a default resource is created based on the project ID.  If a Google App Engine environment is detected
-   * then a more comprehensive default resource may be created.
-   * @param enhancers List of {@link Enhancer} instances.
+   * then a default resource is created based on the project ID. When creating a default resource, if
+   * any {@link Enhancer} instances are configured and then each
+   * {@link Enhancer#enhanceMonitoredResource(com.google.cloud.MonitoredResource.Builder)} method
+   * is called before building the default resource.
+   * @param enhancers List of {@link Enhancer} instances used to enhance any {@link MonitoredResource}
+   * or {@link LogEntry} instances built by this handler.
    */
   public LoggingHandler(String log, LoggingOptions options, MonitoredResource monitoredResource, List<Enhancer> enhancers) {
     LogConfigHelper helper = new LogConfigHelper();
