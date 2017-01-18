@@ -17,6 +17,7 @@
 package com.google.cloud.pubsub.spi.v1;
 
 import com.google.api.gax.bundling.FlowController;
+import com.google.api.gax.core.RetrySettings;
 import com.google.api.gax.grpc.BundlingSettings;
 import com.google.auth.Credentials;
 import com.google.auth.oauth2.GoogleCredentials;
@@ -145,18 +146,30 @@ public interface Publisher {
 
   /** A builder of {@link Publisher}s. */
   public final class Builder {
+    static final Duration MIN_TOTAL_TIMEOUT = new Duration(10 * 1000); // 10 seconds
+    static final Duration MIN_RPC_TIMEOUT = new Duration(10); // 10 milliseconds
+
     // Meaningful defaults.
-    static final long DEFAULT_MAX_BUNDLE_MESSAGES = 100L;
-    static final long DEFAULT_MAX_BUNDLE_BYTES = 1000L; // 1 kB
-    static final Duration DEFAULT_MAX_BUNDLE_DURATION = new Duration(1); // 1ms
-    static final Duration DEFAULT_REQUEST_TIMEOUT = new Duration(10 * 1000); // 10 seconds
-    static final Duration MIN_SEND_BUNDLE_DURATION = new Duration(10 * 1000); // 10 seconds
-    static final Duration MIN_REQUEST_TIMEOUT = new Duration(10); // 10 milliseconds
+    static final long DEFAULT_ELEMENT_COUNT_THRESHOLD = 100L;
+    static final long DEFAULT_REQUEST_BYTES_THRESHOLD = 1000L; // 1 kB
+    static final Duration DEFAULT_DELAY_THRESHOLD = new Duration(1); // 1ms
+    static final Duration DEFAULT_RPC_TIMEOUT = new Duration(10 * 1000); // 10 seconds
+    static final Duration DEFAULT_TOTAL_TIMEOUT = MIN_TOTAL_TIMEOUT;
     static final BundlingSettings DEFAULT_BUNDLING_SETTINGS =
         BundlingSettings.newBuilder()
-            .setDelayThreshold(DEFAULT_MAX_BUNDLE_DURATION)
-            .setRequestByteThreshold(DEFAULT_MAX_BUNDLE_BYTES)
-            .setElementCountThreshold(DEFAULT_MAX_BUNDLE_MESSAGES)
+            .setDelayThreshold(DEFAULT_DELAY_THRESHOLD)
+            .setRequestByteThreshold(DEFAULT_REQUEST_BYTES_THRESHOLD)
+            .setElementCountThreshold(DEFAULT_ELEMENT_COUNT_THRESHOLD)
+            .build();
+    static final RetrySettings DEFAULT_RETRY_SETTINGS =
+        RetrySettings.newBuilder()
+            .setTotalTimeout(DEFAULT_TOTAL_TIMEOUT)
+            .setInitialRetryDelay(Duration.millis(5))
+            .setRetryDelayMultiplier(2)
+            .setMaxRetryDelay(Duration.millis(Long.MAX_VALUE))
+            .setInitialRpcTimeout(DEFAULT_RPC_TIMEOUT)
+            .setRpcTimeoutMultiplier(2)
+            .setMaxRpcTimeout(DEFAULT_RPC_TIMEOUT)
             .build();
 
     String topic;
@@ -168,11 +181,7 @@ public interface Publisher {
     FlowController.Settings flowControlSettings = FlowController.Settings.DEFAULT;
     boolean failOnFlowControlLimits = false;
 
-    // Send bundle deadline
-    Duration sendBundleDeadline = MIN_SEND_BUNDLE_DURATION;
-
-    // RPC options
-    Duration requestTimeout = DEFAULT_REQUEST_TIMEOUT;
+    RetrySettings retrySettings = DEFAULT_RETRY_SETTINGS;
 
     // Channels and credentials
     Optional<Credentials> userCredentials = Optional.absent();
@@ -258,18 +267,13 @@ public interface Publisher {
       return this;
     }
 
-    /** Maximum time to attempt sending (and retrying) a bundle of messages before giving up. */
-    public Builder setSendBundleDeadline(Duration deadline) {
-      Preconditions.checkArgument(deadline.compareTo(MIN_SEND_BUNDLE_DURATION) >= 0);
-      sendBundleDeadline = deadline;
-      return this;
-    }
-
-    // Runtime options
-    /** Time to wait for a publish call to return from the server. */
-    public Builder setRequestTimeout(Duration timeout) {
-      Preconditions.checkArgument(timeout.compareTo(MIN_REQUEST_TIMEOUT) >= 0);
-      requestTimeout = timeout;
+    /** Configures the Publisher's retry parameters. */
+    public Builder setRetrySettings(RetrySettings retrySettings) {
+      Preconditions.checkArgument(
+          retrySettings.getTotalTimeout().compareTo(MIN_TOTAL_TIMEOUT) >= 0);
+      Preconditions.checkArgument(
+          retrySettings.getInitialRpcTimeout().compareTo(MIN_RPC_TIMEOUT) >= 0);
+      this.retrySettings = retrySettings;
       return this;
     }
 

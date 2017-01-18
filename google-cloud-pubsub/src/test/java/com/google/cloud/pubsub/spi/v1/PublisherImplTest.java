@@ -279,7 +279,11 @@ public class PublisherImplTest {
     Publisher publisher =
         getTestPublisherBuilder()
             .setExecutor(Executors.newSingleThreadScheduledExecutor())
-            .setSendBundleDeadline(Duration.standardSeconds(10))
+            .setRetrySettings(
+                Publisher.Builder.DEFAULT_RETRY_SETTINGS
+                    .toBuilder()
+                    .setTotalTimeout(Duration.standardSeconds(10))
+                    .build())
             .setBundlingSettings(
                 Publisher.Builder.DEFAULT_BUNDLING_SETTINGS
                     .toBuilder()
@@ -308,7 +312,11 @@ public class PublisherImplTest {
     Publisher publisher =
         getTestPublisherBuilder()
             .setExecutor(Executors.newSingleThreadScheduledExecutor())
-            .setSendBundleDeadline(Duration.standardSeconds(10))
+            .setRetrySettings(
+                Publisher.Builder.DEFAULT_RETRY_SETTINGS
+                    .toBuilder()
+                    .setTotalTimeout(Duration.standardSeconds(10))
+                    .build())
             .setBundlingSettings(
                 Publisher.Builder.DEFAULT_BUNDLING_SETTINGS
                     .toBuilder()
@@ -350,8 +358,6 @@ public class PublisherImplTest {
             .setMaxOutstandingRequestBytes(Optional.of(13))
             .setMaxOutstandingElementCount(Optional.of(14))
             .build());
-    builder.setRequestTimeout(new Duration(15));
-    builder.setSendBundleDeadline(new Duration(16000));
     Publisher publisher = builder.build();
 
     assertEquals(TEST_TOPIC, publisher.getTopic());
@@ -371,17 +377,15 @@ public class PublisherImplTest {
     assertEquals(Optional.absent(), builder.executor);
     assertFalse(builder.failOnFlowControlLimits);
     assertEquals(
-        Publisher.Builder.DEFAULT_MAX_BUNDLE_BYTES,
+        Publisher.Builder.DEFAULT_REQUEST_BYTES_THRESHOLD,
         builder.bundlingSettings.getRequestByteThreshold().longValue());
     assertEquals(
-        Publisher.Builder.DEFAULT_MAX_BUNDLE_DURATION,
-        builder.bundlingSettings.getDelayThreshold());
+        Publisher.Builder.DEFAULT_DELAY_THRESHOLD, builder.bundlingSettings.getDelayThreshold());
     assertEquals(
-        Publisher.Builder.DEFAULT_MAX_BUNDLE_MESSAGES,
+        Publisher.Builder.DEFAULT_ELEMENT_COUNT_THRESHOLD,
         builder.bundlingSettings.getElementCountThreshold().longValue());
     assertEquals(FlowController.Settings.DEFAULT, builder.flowControlSettings);
-    assertEquals(Publisher.Builder.DEFAULT_REQUEST_TIMEOUT, builder.requestTimeout);
-    assertEquals(Publisher.Builder.MIN_SEND_BUNDLE_DURATION, builder.sendBundleDeadline);
+    assertEquals(Publisher.Builder.DEFAULT_RETRY_SETTINGS, builder.retrySettings);
     assertEquals(Optional.absent(), builder.userCredentials);
   }
 
@@ -551,16 +555,32 @@ public class PublisherImplTest {
       // Expected
     }
 
-    builder.setRequestTimeout(Publisher.Builder.MIN_REQUEST_TIMEOUT);
+    builder.setRetrySettings(
+        Publisher.Builder.DEFAULT_RETRY_SETTINGS
+            .toBuilder()
+            .setInitialRpcTimeout(Publisher.Builder.MIN_RPC_TIMEOUT)
+            .build());
     try {
-      builder.setRequestTimeout(Publisher.Builder.MIN_REQUEST_TIMEOUT.minus(1));
+      builder.setRetrySettings(
+          Publisher.Builder.DEFAULT_RETRY_SETTINGS
+              .toBuilder()
+              .setInitialRpcTimeout(Publisher.Builder.MIN_RPC_TIMEOUT.minus(1))
+              .build());
       fail("Should have thrown an IllegalArgumentException");
     } catch (IllegalArgumentException expected) {
       // Expected
     }
-    builder.setSendBundleDeadline(Publisher.Builder.MIN_SEND_BUNDLE_DURATION);
+    builder.setRetrySettings(
+        Publisher.Builder.DEFAULT_RETRY_SETTINGS
+            .toBuilder()
+            .setTotalTimeout(Publisher.Builder.MIN_TOTAL_TIMEOUT)
+            .build());
     try {
-      builder.setSendBundleDeadline(Publisher.Builder.MIN_SEND_BUNDLE_DURATION.minus(1));
+      builder.setRetrySettings(
+          Publisher.Builder.DEFAULT_RETRY_SETTINGS
+              .toBuilder()
+              .setTotalTimeout(Publisher.Builder.MIN_TOTAL_TIMEOUT.minus(1))
+              .build());
       fail("Should have thrown an IllegalArgumentException");
     } catch (IllegalArgumentException expected) {
       // Expected
