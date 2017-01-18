@@ -34,6 +34,7 @@ import java.nio.file.FileSystem;
 import java.nio.file.FileSystems;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.PathMatcher;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
@@ -158,5 +159,28 @@ public class CloudStorageFileSystemTest {
       }
       assertThat(got).containsExactlyElementsIn(goodPaths);
     }
+  }
+
+  @Test
+  public void testMatcher() throws IOException {
+    try (FileSystem fs = CloudStorageFileSystem.forBucket("bucket")) {
+      String pattern1 = "glob:*.java";
+      PathMatcher javaFileMatcher = fs.getPathMatcher(pattern1);
+      assertMatches(fs, javaFileMatcher, "a.java", true);
+      assertMatches(fs, javaFileMatcher, "a.text", false);
+      assertMatches(fs, javaFileMatcher, "folder/c.java", true);
+      assertMatches(fs, javaFileMatcher, "d", false);
+      
+      String pattern2 = "glob:*.{java,text}";
+      PathMatcher javaAndTextFileMatcher = fs.getPathMatcher(pattern2);
+      assertMatches(fs, javaAndTextFileMatcher, "a.java", true);
+      assertMatches(fs, javaAndTextFileMatcher, "a.text", true);
+      assertMatches(fs, javaAndTextFileMatcher, "folder/c.java", true);
+      assertMatches(fs, javaAndTextFileMatcher, "d", false);
+    }
+  }
+
+  private void assertMatches(FileSystem fs, PathMatcher matcher, String toMatch, boolean expected) {
+    assertThat(matcher.matches(fs.getPath(toMatch).getFileName())).isEqualTo(expected);
   }
 }

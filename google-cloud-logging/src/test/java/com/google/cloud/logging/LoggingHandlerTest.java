@@ -47,6 +47,7 @@ public class LoggingHandlerTest {
       .setSeverity(Severity.DEBUG)
       .addLabel("levelName", "FINEST")
       .addLabel("levelValue", String.valueOf(Level.FINEST.intValue()))
+      .setTimestamp(123456789L)
       .build();
   private static final LogEntry FINEST_ENHANCED_ENTRY = LogEntry.newBuilder(StringPayload.of(MESSAGE))
       .setSeverity(Severity.DEBUG)
@@ -58,61 +59,73 @@ public class LoggingHandlerTest {
       .setSeverity(Severity.DEBUG)
       .addLabel("levelName", "FINER")
       .addLabel("levelValue", String.valueOf(Level.FINER.intValue()))
+      .setTimestamp(123456789L)
       .build();
   private static final LogEntry FINE_ENTRY = LogEntry.newBuilder(StringPayload.of(MESSAGE))
       .setSeverity(Severity.DEBUG)
       .addLabel("levelName", "FINE")
       .addLabel("levelValue", String.valueOf(Level.FINE.intValue()))
+      .setTimestamp(123456789L)
       .build();
   private static final LogEntry CONFIG_ENTRY = LogEntry.newBuilder(StringPayload.of(MESSAGE))
       .setSeverity(Severity.INFO)
       .addLabel("levelName", "CONFIG")
       .addLabel("levelValue", String.valueOf(Level.CONFIG.intValue()))
+      .setTimestamp(123456789L)
       .build();
   private static final LogEntry INFO_ENTRY = LogEntry.newBuilder(StringPayload.of(MESSAGE))
       .setSeverity(Severity.INFO)
       .addLabel("levelName", "INFO")
       .addLabel("levelValue", String.valueOf(Level.INFO.intValue()))
+      .setTimestamp(123456789L)
       .build();
   private static final LogEntry WARNING_ENTRY = LogEntry.newBuilder(StringPayload.of(MESSAGE))
       .setSeverity(Severity.WARNING)
       .addLabel("levelName", "WARNING")
       .addLabel("levelValue", String.valueOf(Level.WARNING.intValue()))
+      .setTimestamp(123456789L)
       .build();
   private static final LogEntry SEVERE_ENTRY = LogEntry.newBuilder(StringPayload.of(MESSAGE))
       .setSeverity(Severity.ERROR)
       .addLabel("levelName", "SEVERE")
       .addLabel("levelValue", String.valueOf(Level.SEVERE.intValue()))
+      .setTimestamp(123456789L)
       .build();
   private static final LogEntry DEBUG_ENTRY = LogEntry.newBuilder(StringPayload.of(MESSAGE))
       .setSeverity(Severity.DEBUG)
       .addLabel("levelName", "DEBUG")
       .addLabel("levelValue", String.valueOf(LoggingLevel.DEBUG.intValue()))
+      .setTimestamp(123456789L)
       .build();
   private static final LogEntry NOTICE_ENTRY = LogEntry.newBuilder(StringPayload.of(MESSAGE))
       .setSeverity(Severity.NOTICE)
       .addLabel("levelName", "NOTICE")
       .addLabel("levelValue", String.valueOf(LoggingLevel.NOTICE.intValue()))
+      .setTimestamp(123456789L)
       .build();
   private static final LogEntry ERROR_ENTRY = LogEntry.newBuilder(StringPayload.of(MESSAGE))
       .setSeverity(Severity.ERROR)
       .addLabel("levelName", "ERROR")
       .addLabel("levelValue", String.valueOf(LoggingLevel.ERROR.intValue()))
+      .setTimestamp(123456789L)
       .build();
   private static final LogEntry CRITICAL_ENTRY = LogEntry.newBuilder(StringPayload.of(MESSAGE))
       .setSeverity(Severity.CRITICAL)
       .addLabel("levelName", "CRITICAL")
       .addLabel("levelValue", String.valueOf(LoggingLevel.CRITICAL.intValue()))
+      .setTimestamp(123456789L)
       .build();
   private static final LogEntry ALERT_ENTRY = LogEntry.newBuilder(StringPayload.of(MESSAGE))
       .setSeverity(Severity.ALERT)
       .addLabel("levelName", "ALERT")
       .addLabel("levelValue", String.valueOf(LoggingLevel.ALERT.intValue()))
+      .setTimestamp(123456789L)
       .build();
   private static final LogEntry EMERGENCY_ENTRY = LogEntry.newBuilder(StringPayload.of(MESSAGE))
       .setSeverity(Severity.EMERGENCY)
       .addLabel("levelName", "EMERGENCY")
       .addLabel("levelValue", String.valueOf(LoggingLevel.EMERGENCY.intValue()))
+      .setTimestamp(123456789L)
       .build();
 
   private Logging logging;
@@ -135,6 +148,13 @@ public class LoggingHandlerTest {
   @After
   public void afterClass() {
     EasyMock.verify(logging, options);
+  }
+  
+
+  private static LogRecord newLogRecord(Level level, String message) {
+    LogRecord record = new LogRecord(level, message);
+    record.setMillis(123456789L);
+    return record;
   }
 
   @Test
@@ -185,20 +205,20 @@ public class LoggingHandlerTest {
     handler.setLevel(Level.ALL);
     handler.setFormatter(new TestFormatter());
     // default levels
-    handler.publish(new LogRecord(Level.FINEST, MESSAGE));
-    handler.publish(new LogRecord(Level.FINER, MESSAGE));
-    handler.publish(new LogRecord(Level.FINE, MESSAGE));
-    handler.publish(new LogRecord(Level.CONFIG, MESSAGE));
-    handler.publish(new LogRecord(Level.INFO, MESSAGE));
-    handler.publish(new LogRecord(Level.WARNING, MESSAGE));
-    handler.publish(new LogRecord(Level.SEVERE, MESSAGE));
+    handler.publish(newLogRecord(Level.FINEST, MESSAGE));
+    handler.publish(newLogRecord(Level.FINER, MESSAGE));
+    handler.publish(newLogRecord(Level.FINE, MESSAGE));
+    handler.publish(newLogRecord(Level.CONFIG, MESSAGE));
+    handler.publish(newLogRecord(Level.INFO, MESSAGE));
+    handler.publish(newLogRecord(Level.WARNING, MESSAGE));
+    handler.publish(newLogRecord(Level.SEVERE, MESSAGE));
     // Logging levels
-    handler.publish(new LogRecord(LoggingLevel.DEBUG, MESSAGE));
-    handler.publish(new LogRecord(LoggingLevel.NOTICE, MESSAGE));
-    handler.publish(new LogRecord(LoggingLevel.ERROR, MESSAGE));
-    handler.publish(new LogRecord(LoggingLevel.CRITICAL, MESSAGE));
-    handler.publish(new LogRecord(LoggingLevel.ALERT, MESSAGE));
-    handler.publish(new LogRecord(LoggingLevel.EMERGENCY, MESSAGE));
+    handler.publish(newLogRecord(LoggingLevel.DEBUG, MESSAGE));
+    handler.publish(newLogRecord(LoggingLevel.NOTICE, MESSAGE));
+    handler.publish(newLogRecord(LoggingLevel.ERROR, MESSAGE));
+    handler.publish(newLogRecord(LoggingLevel.CRITICAL, MESSAGE));
+    handler.publish(newLogRecord(LoggingLevel.ALERT, MESSAGE));
+    handler.publish(newLogRecord(LoggingLevel.EMERGENCY, MESSAGE));
   }
 
   @Test
@@ -213,7 +233,7 @@ public class LoggingHandlerTest {
     Handler handler = new LoggingHandler(LOG_NAME, options, resource);
     handler.setLevel(Level.ALL);
     handler.setFormatter(new TestFormatter());
-    handler.publish(new LogRecord(Level.FINEST, MESSAGE));
+    handler.publish(newLogRecord(Level.FINEST, MESSAGE));
   }
 
   @Test
@@ -260,7 +280,7 @@ public class LoggingHandlerTest {
     handler.setLevel(Level.ALL);
     handler.setErrorManager(errorManager);
     handler.setFormatter(new TestFormatter());
-    handler.publish(new LogRecord(Level.FINEST, MESSAGE));
+    handler.publish(newLogRecord(Level.FINEST, MESSAGE));
     EasyMock.verify(errorManager);
   }
 
@@ -273,7 +293,7 @@ public class LoggingHandlerTest {
     ErrorManager errorManager = EasyMock.createStrictMock(ErrorManager.class);
     errorManager.error(null, ex, ErrorManager.FORMAT_FAILURE);
     EasyMock.expectLastCall().once();
-    LogRecord record = new LogRecord(Level.FINEST, MESSAGE);
+    LogRecord record = newLogRecord(Level.FINEST, MESSAGE);
     EasyMock.expect(formatter.format(record)).andThrow(ex);
     EasyMock.replay(errorManager, formatter);
     Handler handler = new LoggingHandler(LOG_NAME, options);
@@ -296,12 +316,12 @@ public class LoggingHandlerTest {
     handler.setLevel(Level.ALL);
     handler.setFlushSize(6);
     handler.setFormatter(new TestFormatter());
-    handler.publish(new LogRecord(Level.FINEST, MESSAGE));
-    handler.publish(new LogRecord(Level.FINER, MESSAGE));
-    handler.publish(new LogRecord(Level.FINE, MESSAGE));
-    handler.publish(new LogRecord(Level.CONFIG, MESSAGE));
-    handler.publish(new LogRecord(Level.INFO, MESSAGE));
-    handler.publish(new LogRecord(Level.WARNING, MESSAGE));
+    handler.publish(newLogRecord(Level.FINEST, MESSAGE));
+    handler.publish(newLogRecord(Level.FINER, MESSAGE));
+    handler.publish(newLogRecord(Level.FINE, MESSAGE));
+    handler.publish(newLogRecord(Level.CONFIG, MESSAGE));
+    handler.publish(newLogRecord(Level.INFO, MESSAGE));
+    handler.publish(newLogRecord(Level.WARNING, MESSAGE));
   }
 
   @Test
@@ -318,12 +338,12 @@ public class LoggingHandlerTest {
     handler.setFlushSize(100);
     handler.setFlushLevel(Level.WARNING);
     handler.setFormatter(new TestFormatter());
-    handler.publish(new LogRecord(Level.FINEST, MESSAGE));
-    handler.publish(new LogRecord(Level.FINER, MESSAGE));
-    handler.publish(new LogRecord(Level.FINE, MESSAGE));
-    handler.publish(new LogRecord(Level.CONFIG, MESSAGE));
-    handler.publish(new LogRecord(Level.INFO, MESSAGE));
-    handler.publish(new LogRecord(Level.WARNING, MESSAGE));
+    handler.publish(newLogRecord(Level.FINEST, MESSAGE));
+    handler.publish(newLogRecord(Level.FINER, MESSAGE));
+    handler.publish(newLogRecord(Level.FINE, MESSAGE));
+    handler.publish(newLogRecord(Level.CONFIG, MESSAGE));
+    handler.publish(newLogRecord(Level.INFO, MESSAGE));
+    handler.publish(newLogRecord(Level.WARNING, MESSAGE));
   }
 
   @Test
@@ -334,13 +354,18 @@ public class LoggingHandlerTest {
         WriteOption.resource(DEFAULT_RESOURCE));
     EasyMock.expectLastCall().andReturn(Futures.immediateFuture(null));
     EasyMock.replay(options, logging);
-    LoggingHandler handler = new LoggingHandler(LOG_NAME, options);
+    LoggingHandler handler = new LoggingHandler(LOG_NAME, options) {
+      @Override
+      public void close() {
+        // Make close NOOP to avoid mock close exception
+      }
+    };
     handler.setLevel(Level.ALL);
     handler.setFormatter(new TestFormatter());
     Logger logger = Logger.getLogger(getClass().getName());
     logger.setLevel(Level.ALL);
     LoggingHandler.addHandler(logger, handler);
-    logger.finest(MESSAGE);
+    logger.log(newLogRecord(Level.FINEST, MESSAGE));
   }
 
   @Test
@@ -356,7 +381,7 @@ public class LoggingHandlerTest {
     Handler handler = new LoggingHandler(LOG_NAME, options);
     handler.setLevel(Level.ALL);
     handler.setFormatter(new TestFormatter());
-    handler.publish(new LogRecord(Level.FINEST, MESSAGE));
+    handler.publish(newLogRecord(Level.FINEST, MESSAGE));
     handler.close();
     handler.close();
   }
