@@ -54,6 +54,7 @@ public class LoggingHandlerTest {
       .addLabel("levelName", "FINEST")
       .addLabel("levelValue", String.valueOf(Level.FINEST.intValue()))
       .addLabel("enhanced", "true")
+      .setTimestamp(123456789L)
       .build();
   private static final LogEntry FINER_ENTRY = LogEntry.newBuilder(StringPayload.of(MESSAGE))
       .setSeverity(Severity.DEBUG)
@@ -260,7 +261,7 @@ public class LoggingHandlerTest {
         new LoggingHandler(LOG_NAME, options, resource, Collections.singletonList(enhancer));
     handler.setLevel(Level.ALL);
     handler.setFormatter(new TestFormatter());
-    handler.publish(new LogRecord(Level.FINEST, MESSAGE));
+    handler.publish(newLogRecord(Level.FINEST, MESSAGE));
   }
   
   @Test
