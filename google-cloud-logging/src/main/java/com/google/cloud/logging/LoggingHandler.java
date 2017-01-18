@@ -364,15 +364,16 @@ public class LoggingHandler extends Handler {
         .addLabel("levelName", level.getName())
         .addLabel("levelValue", String.valueOf(level.intValue()))
         .setSeverity(severityFor(level));
-
+    
+    for (Enhancer enhancer : enhancers) {
+      enhancer.enhanceLogEntry(builder, record);
+    }
     enhanceLogEntry(builder, record);
     return builder.build();
   }
   
+  @Deprecated
   protected void enhanceLogEntry(LogEntry.Builder builder, LogRecord record) {
-    for (Enhancer enhancer : enhancers) {
-      enhancer.enhanceLogEntry(builder, record);
-    }
   }
   
   private static Severity severityFor(Level level) {
