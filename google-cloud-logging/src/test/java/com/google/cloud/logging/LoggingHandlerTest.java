@@ -320,7 +320,9 @@ public class LoggingHandlerTest {
     EasyMock.replay(options, logging);
     LoggingHandler handler = new LoggingHandler(LOG_NAME, options) {
       @Override
-      public void close() {}
+      public void close() {
+        // Make close NOOP to avoid mock close exception
+      }
     };
     handler.setLevel(Level.ALL);
     handler.setFormatter(new TestFormatter());
