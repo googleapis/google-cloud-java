@@ -25,6 +25,7 @@ import com.google.common.base.Optional;
 import com.google.common.base.Preconditions;
 import com.google.common.util.concurrent.ListenableFuture;
 import com.google.pubsub.v1.PubsubMessage;
+import com.google.pubsub.v1.TopicName;
 import io.grpc.ManagedChannelBuilder;
 import java.io.IOException;
 import java.util.concurrent.ScheduledExecutorService;
@@ -191,8 +192,8 @@ public interface Publisher {
     Optional<ScheduledExecutorService> executor = Optional.absent();
 
     /** Constructs a new {@link Builder} using the given topic. */
-    public static Builder newBuilder(String topic) {
-      return new Builder(topic);
+    public static Builder newBuilder(TopicName topic) {
+      return new Builder(topic.toString());
     }
 
     Builder(String topic) {

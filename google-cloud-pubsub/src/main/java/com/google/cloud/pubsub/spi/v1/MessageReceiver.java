@@ -20,7 +20,7 @@ import com.google.common.util.concurrent.ListenableFuture;
 import com.google.pubsub.v1.PubsubMessage;
 
 /** Users of the {@link Subscriber} must implement this interface to receive messages. */
-interface MessageReceiver {
+public interface MessageReceiver {
    enum AckReply {
     /** To be used for acking a message. */
     ACK,

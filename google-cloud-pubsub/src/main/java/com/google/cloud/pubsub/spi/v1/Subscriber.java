@@ -29,6 +29,7 @@ import com.google.common.primitives.Ints;
 import com.google.common.util.concurrent.AbstractService;
 import com.google.common.util.concurrent.Service;
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
+import com.google.pubsub.v1.SubscriptionName;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
@@ -401,8 +402,8 @@ public class Subscriber extends AbstractService {
      * @param receiver an implementation of {@link MessageReceiver} used to process the received
      *     messages
      */
-    public static Builder newBuilder(String subscription, MessageReceiver receiver) {
-      return new Builder(subscription, receiver);
+    public static Builder newBuilder(SubscriptionName subscription, MessageReceiver receiver) {
+      return new Builder(subscription.toString(), receiver);
     }
 
     Builder(String subscription, MessageReceiver receiver) {
