@@ -63,7 +63,7 @@ class MessageDispatcher {
 
   private final Duration ackExpirationPadding;
   private final MessageReceiver receiver;
-  private final AcksProcessor acksProcessor;
+  private final AckProcessor acksProcessor;
 
   private final FlowController flowController;
   private final MessagesWaiter messagesWaiter;
@@ -199,14 +199,14 @@ class MessageDispatcher {
     }
   }
 
-  public interface AcksProcessor {
+  public interface AckProcessor {
     void sendAckOperations(
         List<String> acksToSend, List<PendingModifyAckDeadline> ackDeadlineExtensions);
   }
 
   MessageDispatcher(
       MessageReceiver receiver,
-      AcksProcessor acksProcessor,
+      AckProcessor acksProcessor,
       Duration ackExpirationPadding,
       Distribution ackLatencyDistribution,
       FlowController flowController,
