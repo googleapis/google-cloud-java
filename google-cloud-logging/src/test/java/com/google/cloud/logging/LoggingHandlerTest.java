@@ -17,11 +17,14 @@
 package com.google.cloud.logging;
 
 import com.google.cloud.MonitoredResource;
+import com.google.cloud.logging.LogEntry.Builder;
 import com.google.cloud.logging.Logging.WriteOption;
 import com.google.cloud.logging.Payload.StringPayload;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.util.concurrent.Futures;
+
+import java.util.Collections;
 import java.util.logging.ErrorManager;
 import java.util.logging.Formatter;
 import java.util.logging.Handler;
@@ -44,6 +47,13 @@ public class LoggingHandlerTest {
       .setSeverity(Severity.DEBUG)
       .addLabel("levelName", "FINEST")
       .addLabel("levelValue", String.valueOf(Level.FINEST.intValue()))
+      .setTimestamp(123456789L)
+      .build();
+  private static final LogEntry FINEST_ENHANCED_ENTRY = LogEntry.newBuilder(StringPayload.of(MESSAGE))
+      .setSeverity(Severity.DEBUG)
+      .addLabel("levelName", "FINEST")
+      .addLabel("levelValue", String.valueOf(Level.FINEST.intValue()))
+      .addLabel("enhanced", "true")
       .setTimestamp(123456789L)
       .build();
   private static final LogEntry FINER_ENTRY = LogEntry.newBuilder(StringPayload.of(MESSAGE))
@@ -227,6 +237,33 @@ public class LoggingHandlerTest {
     handler.publish(newLogRecord(Level.FINEST, MESSAGE));
   }
 
+  @Test
+  public void testEnhancedLogEntry() {
+    EasyMock.expect(options.getProjectId()).andReturn(PROJECT).anyTimes();
+    EasyMock.expect(options.getService()).andReturn(logging);
+    MonitoredResource resource = MonitoredResource.of("custom", ImmutableMap.<String, String>of());
+    logging.writeAsync(ImmutableList.of(FINEST_ENHANCED_ENTRY), WriteOption.logName(LOG_NAME),
+        WriteOption.resource(resource));
+    EasyMock.expectLastCall().andReturn(Futures.immediateFuture(null));
+    EasyMock.replay(options, logging);
+    LoggingHandler.Enhancer enhancer = new LoggingHandler.Enhancer() {
+      @Override
+      public void enhanceMonitoredResource(MonitoredResource.Builder builder) {
+        throw new IllegalStateException();
+      }
+
+      @Override
+      public void enhanceLogEntry(Builder builder, LogRecord record) {
+        builder.addLabel("enhanced", "true");
+      }
+    };
+    Handler handler =
+        new LoggingHandler(LOG_NAME, options, resource, Collections.singletonList(enhancer));
+    handler.setLevel(Level.ALL);
+    handler.setFormatter(new TestFormatter());
+    handler.publish(newLogRecord(Level.FINEST, MESSAGE));
+  }
+  
   @Test
   public void testReportFlushError() {
     EasyMock.expect(options.getProjectId()).andReturn(PROJECT).anyTimes();
