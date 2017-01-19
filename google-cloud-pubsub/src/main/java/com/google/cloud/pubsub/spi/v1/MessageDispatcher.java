@@ -63,7 +63,7 @@ class MessageDispatcher {
 
   private final Duration ackExpirationPadding;
   private final MessageReceiver receiver;
-  private final AckProcessor acksProcessor;
+  private final AckProcessor ackProcessor;
 
   private final FlowController flowController;
   private final MessagesWaiter messagesWaiter;
@@ -206,7 +206,7 @@ class MessageDispatcher {
 
   MessageDispatcher(
       MessageReceiver receiver,
-      AckProcessor acksProcessor,
+      AckProcessor ackProcessor,
       Duration ackExpirationPadding,
       Distribution ackLatencyDistribution,
       FlowController flowController,
@@ -215,7 +215,7 @@ class MessageDispatcher {
     this.executor = executor;
     this.ackExpirationPadding = ackExpirationPadding;
     this.receiver = receiver;
-    this.acksProcessor = acksProcessor;
+    this.ackProcessor = ackProcessor;
     this.flowController = flowController;
     outstandingAckHandlers = new HashMap<>();
     pendingAcks = new HashSet<>();
@@ -466,6 +466,6 @@ class MessageDispatcher {
       }
     }
 
-    acksProcessor.sendAckOperations(acksToSend, modifyAckDeadlinesToSend);
+    ackProcessor.sendAckOperations(acksToSend, modifyAckDeadlinesToSend);
   }
 }
