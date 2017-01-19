@@ -362,11 +362,13 @@ public class PublisherImplTest {
     Publisher publisher = builder.build();
 
     assertEquals(TEST_TOPIC.toString(), publisher.getTopic());
-    assertEquals(10, publisher.getMaxBundleBytes());
-    assertEquals(new Duration(11), publisher.getMaxBundleDuration());
-    assertEquals(12, publisher.getMaxBundleMessages());
-    assertEquals(Optional.of(13), publisher.getMaxOutstandingRequestBytes());
-    assertEquals(Optional.of(14), publisher.getMaxOutstandingElementCount());
+    assertEquals(10, (long) publisher.getBundlingSettings().getRequestByteThreshold());
+    assertEquals(new Duration(11), publisher.getBundlingSettings().getDelayThreshold());
+    assertEquals(12, (long) publisher.getBundlingSettings().getElementCountThreshold());
+    assertEquals(
+        Optional.of(13), publisher.getFlowControlSettings().getMaxOutstandingRequestBytes());
+    assertEquals(
+        Optional.of(14), publisher.getFlowControlSettings().getMaxOutstandingElementCount());
     assertTrue(publisher.failOnFlowControlLimits());
   }
 
