@@ -16,167 +16,287 @@
 
 package com.google.cloud.pubsub;
 
+import com.google.common.primitives.Ints;
+import com.google.common.util.concurrent.SettableFuture;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
+import java.util.PriorityQueue;
+import java.util.concurrent.AbstractExecutorService;
 import java.util.concurrent.Callable;
 import java.util.concurrent.Delayed;
 import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
-import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
+import java.util.concurrent.atomic.AtomicBoolean;
+import org.joda.time.DateTime;
+import org.joda.time.DateTimeUtils;
+import org.joda.time.Duration;
+import org.joda.time.MutableDateTime;
 
 /**
- * A ScheduledExecutorService to help with testing.
+ * Fake implementation of {@link ScheduledExecutorService} that allows tests control the reference
+ * time of the executor and decide when to execute any outstanding task.
  */
-class FakeScheduledExecutorService extends ScheduledThreadPoolExecutor {
-  private final FakeClock clock;
-  private final List<FakeScheduledFuture> futures = new ArrayList<>();
+public class FakeScheduledExecutorService extends AbstractExecutorService
+    implements ScheduledExecutorService {
 
-  public FakeScheduledExecutorService(int corePoolSize, FakeClock clock) {
-    super(corePoolSize);
-    this.clock = clock;
+  private final AtomicBoolean shutdown = new AtomicBoolean(false);
+  private final PriorityQueue<PendingCallable<?>> pendingCallables = new PriorityQueue<>();
+  private final MutableDateTime currentTime = MutableDateTime.now();
+  private final ExecutorService delegate = Executors.newSingleThreadExecutor();
+
+  public FakeScheduledExecutorService() {
+    DateTimeUtils.setCurrentMillisFixed(currentTime.getMillis());
   }
 
+  @Override
   public ScheduledFuture<?> schedule(Runnable command, long delay, TimeUnit unit) {
-    synchronized (this) {
-      long runAtMillis = clock.millis() + unit.toMillis(delay);
-      FakeScheduledFuture scheduledFuture =
-          new FakeScheduledFuture(command, delay, unit, runAtMillis);
-      futures.add(scheduledFuture);
-      return scheduledFuture;
-    }
+    return schedulePendingCallable(
+        new PendingCallable<>(
+            new Duration(unit.toMillis(delay)), command, PendingCallableType.NORMAL));
   }
 
+  @Override
   public <V> ScheduledFuture<V> schedule(Callable<V> callable, long delay, TimeUnit unit) {
-    throw new UnsupportedOperationException(
-        "FakeScheduledExecutorService.schedule(Callable, long, TimeUnit) not supported");
+    return schedulePendingCallable(
+        new PendingCallable<>(
+            new Duration(unit.toMillis(delay)), callable, PendingCallableType.NORMAL));
   }
 
-  public ScheduledFuture<?> scheduleAtFixedRate(Runnable command, long initialDelay, long period,
-      TimeUnit unit) {
-    throw new UnsupportedOperationException(
-        "FakeScheduledExecutorService.scheduleAtFixedRate not supported");
+  @Override
+  public ScheduledFuture<?> scheduleAtFixedRate(
+      Runnable command, long initialDelay, long period, TimeUnit unit) {
+    return schedulePendingCallable(
+        new PendingCallable<>(
+            new Duration(unit.toMillis(initialDelay)), command, PendingCallableType.FIXED_RATE));
   }
 
-  public ScheduledFuture<?> scheduleWithFixedDelay(Runnable command, long initialDelay, long delay,
-      TimeUnit unit) {
-    throw new UnsupportedOperationException(
-        "FakeScheduledExecutorService.scheduleAtFixedRate not supported");
+  @Override
+  public ScheduledFuture<?> scheduleWithFixedDelay(
+      Runnable command, long initialDelay, long delay, TimeUnit unit) {
+    return schedulePendingCallable(
+        new PendingCallable<>(
+            new Duration(unit.toMillis(initialDelay)), command, PendingCallableType.FIXED_DELAY));
   }
 
   public void tick(long time, TimeUnit unit) {
-    List<FakeScheduledFuture> runnablesToGo = new ArrayList<>();
-    synchronized (this) {
-      clock.advance(time, unit);
-      Iterator<FakeScheduledFuture> iter = futures.iterator();
-      while (iter.hasNext()) {
-        FakeScheduledFuture scheduledFuture = iter.next();
-        if (scheduledFuture.runAtMillis <= clock.millis()) {
-          runnablesToGo.add(scheduledFuture);
-          iter.remove();
+    advanceTime(Duration.millis(unit.toMillis(time)));
+  }
+
+  /**
+   * This will advance the reference time of the executor and execute (in the same thread) any
+   * outstanding callable which execution time has passed.
+   */
+  public void advanceTime(Duration toAdvance) {
+    currentTime.add(toAdvance);
+    DateTimeUtils.setCurrentMillisFixed(currentTime.getMillis());
+    synchronized (pendingCallables) {
+      while (!pendingCallables.isEmpty()
+          && pendingCallables.peek().getScheduledTime().compareTo(currentTime) <= 0) {
+        try {
+          pendingCallables.poll().call();
+          if (shutdown.get() && pendingCallables.isEmpty()) {
+            pendingCallables.notifyAll();
+          }
+        } catch (Exception e) {
+          // We ignore any callable exception, which should be set to the future but not relevant to
+          // advanceTime.
         }
       }
     }
-    for (FakeScheduledFuture scheduledFuture : runnablesToGo) {
-      scheduledFuture.run();
+  }
+
+  @Override
+  public void shutdown() {
+    if (shutdown.getAndSet(true)) {
+      throw new IllegalStateException("This executor has been shutdown already");
     }
   }
 
-  private boolean cancel(FakeScheduledFuture toCancel) {
-    synchronized (this) {
-      Iterator<FakeScheduledFuture> iter = futures.iterator();
-      while (iter.hasNext()) {
-        FakeScheduledFuture scheduledFuture = iter.next();
-        if (scheduledFuture == toCancel) {
-          iter.remove();
-          return true;
-        }
+  @Override
+  public List<Runnable> shutdownNow() {
+    if (shutdown.getAndSet(true)) {
+      throw new IllegalStateException("This executor has been shutdown already");
+    }
+    List<Runnable> pending = new ArrayList<>();
+    for (final PendingCallable<?> pendingCallable : pendingCallables) {
+      pending.add(
+          new Runnable() {
+            @Override
+            public void run() {
+              pendingCallable.call();
+            }
+          });
+    }
+    synchronized (pendingCallables) {
+      pendingCallables.notifyAll();
+      pendingCallables.clear();
+    }
+    return pending;
+  }
+
+  @Override
+  public boolean isShutdown() {
+    return shutdown.get();
+  }
+
+  @Override
+  public boolean isTerminated() {
+    return pendingCallables.isEmpty();
+  }
+
+  @Override
+  public boolean awaitTermination(long timeout, TimeUnit unit) throws InterruptedException {
+    synchronized (pendingCallables) {
+      if (pendingCallables.isEmpty()) {
+        return true;
       }
-      return false;
+      pendingCallables.wait(unit.toMillis(timeout));
+      return pendingCallables.isEmpty();
     }
   }
 
-  private class FakeScheduledFuture implements ScheduledFuture<Object> {
-    final Callable<Object> callable;
-    final long delay;
-    final TimeUnit unit;
-    final long runAtMillis;
+  @Override
+  public void execute(Runnable command) {
+    if (shutdown.get()) {
+      throw new IllegalStateException("This executor has been shutdown");
+    }
+    delegate.execute(command);
+  }
 
-    volatile boolean isDone;
-    volatile boolean isCancelled;
-    volatile Exception exception;
-    volatile Object result;
+  <V> ScheduledFuture<V> schedulePendingCallable(PendingCallable<V> callable) {
+    if (shutdown.get()) {
+      throw new IllegalStateException("This executor has been shutdown");
+    }
+    synchronized (pendingCallables) {
+      pendingCallables.add(callable);
+    }
+    return callable.getScheduledFuture();
+  }
 
-    FakeScheduledFuture(Runnable runnable, long delay, TimeUnit unit, long runAtMillis) {
-      this.callable = Executors.callable(runnable);
+  static enum PendingCallableType {
+    NORMAL,
+    FIXED_RATE,
+    FIXED_DELAY
+  }
+
+  /** Class that saves the state of an scheduled pending callable. */
+  class PendingCallable<T> implements Comparable<PendingCallable<T>> {
+    DateTime creationTime = currentTime.toDateTime();
+    Duration delay;
+    Callable<T> pendingCallable;
+    SettableFuture<T> future = SettableFuture.create();
+    AtomicBoolean cancelled = new AtomicBoolean(false);
+    AtomicBoolean done = new AtomicBoolean(false);
+    PendingCallableType type;
+
+    PendingCallable(Duration delay, final Runnable runnable, PendingCallableType type) {
+      pendingCallable =
+          new Callable<T>() {
+            @Override
+            public T call() throws Exception {
+              runnable.run();
+              return null;
+            }
+          };
+      this.type = type;
       this.delay = delay;
-      this.unit = unit;
-      this.runAtMillis = runAtMillis;
     }
 
-    @Override
-    public long getDelay(TimeUnit requestedUnit) {
-      return unit.convert(delay, requestedUnit);
+    PendingCallable(Duration delay, Callable<T> callable, PendingCallableType type) {
+      pendingCallable = callable;
+      this.type = type;
+      this.delay = delay;
     }
 
-    @Override
-    public int compareTo(Delayed other) {
-      return Long.compare(getDelay(TimeUnit.MILLISECONDS), other.getDelay(TimeUnit.MILLISECONDS));
+    private DateTime getScheduledTime() {
+      return creationTime.plus(delay);
     }
 
-    @Override
-    public boolean cancel(boolean var1) {
-      if (isCancelled) {
-        return isCancelled;
+    ScheduledFuture<T> getScheduledFuture() {
+      return new ScheduledFuture<T>() {
+        @Override
+        public long getDelay(TimeUnit unit) {
+          return unit.convert(
+              new Duration(currentTime, getScheduledTime()).getMillis(), TimeUnit.MILLISECONDS);
+        }
+
+        @Override
+        public int compareTo(Delayed o) {
+          return Ints.saturatedCast(
+              getDelay(TimeUnit.MILLISECONDS) - o.getDelay(TimeUnit.MILLISECONDS));
+        }
+
+        @Override
+        public boolean cancel(boolean mayInterruptIfRunning) {
+          synchronized (this) {
+            cancelled.set(true);
+            return !done.get();
+          }
+        }
+
+        @Override
+        public boolean isCancelled() {
+          return cancelled.get();
+        }
+
+        @Override
+        public boolean isDone() {
+          return done.get();
+        }
+
+        @Override
+        public T get() throws InterruptedException, ExecutionException {
+          return future.get();
+        }
+
+        @Override
+        public T get(long timeout, TimeUnit unit)
+            throws InterruptedException, ExecutionException, TimeoutException {
+          return future.get(timeout, unit);
+        }
+      };
+    }
+
+    T call() {
+      T result = null;
+      synchronized (this) {
+        if (cancelled.get()) {
+          return null;
+        }
+        try {
+          result = pendingCallable.call();
+          future.set(result);
+        } catch (Exception e) {
+          future.setException(e);
+        } finally {
+          switch (type) {
+            case NORMAL:
+              done.set(true);
+              break;
+            case FIXED_DELAY:
+              this.creationTime = currentTime.toDateTime();
+              schedulePendingCallable(this);
+              break;
+            case FIXED_RATE:
+              this.creationTime = this.creationTime.plus(delay);
+              schedulePendingCallable(this);
+              break;
+            default:
+              // Nothing to do
+          }
+        }
       }
-      isCancelled = FakeScheduledExecutorService.this.cancel(this);
-      return isCancelled;
-    }
-
-    @Override
-    public boolean isCancelled() {
-      return isCancelled;
-    }
-
-    @Override
-    public boolean isDone() {
-      return isDone;
-    }
-
-    @Override
-    public Object get() throws InterruptedException, ExecutionException {
-      if (!isDone()) {
-        throw new UnsupportedOperationException("FakeScheduledFuture: blocking get not supported");
-      }
-
-      if (exception != null) {
-        throw new ExecutionException(exception);
-      }
-
       return result;
     }
 
     @Override
-    public Object get(long timeout, TimeUnit unit) throws InterruptedException, ExecutionException,
-        TimeoutException {
-      return get();
-    }
-
-    public void run() {
-      if (isDone()) {
-        throw new UnsupportedOperationException("FakeScheduledFuture already done.");
-      }
-
-      try {
-        result = callable.call();
-      } catch (Exception e) {
-        exception = e;
-      }
-
-      isDone = true;
+    public int compareTo(PendingCallable<T> other) {
+      return getScheduledTime().compareTo(other.getScheduledTime());
     }
   }
 }
