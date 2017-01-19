@@ -63,7 +63,7 @@ final class PollingSubscriberConnection extends AbstractService implements AckPr
   private final String subscription;
   private final ScheduledExecutorService executor;
   private final SubscriberFutureStub stub;
-  private final MessageDispatcher messagesProcessor;
+  private final MessageDispatcher messageProcessor;
 
   public PollingSubscriberConnection(
       String subscription,
@@ -80,7 +80,7 @@ final class PollingSubscriberConnection extends AbstractService implements AckPr
     stub =
         SubscriberGrpc.newFutureStub(channel)
             .withCallCredentials(MoreCallCredentials.from(credentials));
-    messagesProcessor =
+    messageProcessor =
         new MessageDispatcher(
             receiver,
             this,
@@ -109,7 +109,7 @@ final class PollingSubscriberConnection extends AbstractService implements AckPr
         new FutureCallback<Subscription>() {
           @Override
           public void onSuccess(Subscription result) {
-            messagesProcessor.setMessageDeadlineSeconds(result.getAckDeadlineSeconds());
+            messageProcessor.setMessageDeadlineSeconds(result.getAckDeadlineSeconds());
             pullMessages(INITIAL_BACKOFF);
           }
 
@@ -122,7 +122,7 @@ final class PollingSubscriberConnection extends AbstractService implements AckPr
 
   @Override
   protected void doStop() {
-    messagesProcessor.stop();
+    messageProcessor.stop();
     notifyStopped();
   }
 
@@ -141,7 +141,7 @@ final class PollingSubscriberConnection extends AbstractService implements AckPr
         new FutureCallback<PullResponse>() {
           @Override
           public void onSuccess(PullResponse pullResponse) {
-            messagesProcessor.processReceivedMessages(pullResponse.getReceivedMessagesList());
+            messageProcessor.processReceivedMessages(pullResponse.getReceivedMessagesList());
             if (pullResponse.getReceivedMessagesCount() == 0) {
               // No messages in response, possibly caught up in backlog, we backoff to avoid
               // slamming the server.

@@ -62,7 +62,7 @@ final class StreamingSubscriberConnection extends AbstractService implements Ack
 
   private final String subscription;
   private final ScheduledExecutorService executor;
-  private final MessageDispatcher messagesProcessor;
+  private final MessageDispatcher messageProcessor;
   private ClientCallStreamObserver<StreamingPullRequest> requestObserver;
 
   public StreamingSubscriberConnection(
@@ -80,7 +80,7 @@ final class StreamingSubscriberConnection extends AbstractService implements Ack
     this.executor = executor;
     this.credentials = credentials;
     this.channel = channel;
-    this.messagesProcessor =
+    this.messageProcessor =
         new MessageDispatcher(
             receiver,
             this,
@@ -89,7 +89,7 @@ final class StreamingSubscriberConnection extends AbstractService implements Ack
             flowController,
             executor,
             clock);
-    messagesProcessor.setMessageDeadlineSeconds(streamAckDeadlineSeconds);
+    messageProcessor.setMessageDeadlineSeconds(streamAckDeadlineSeconds);
   }
 
   @Override
@@ -101,7 +101,7 @@ final class StreamingSubscriberConnection extends AbstractService implements Ack
 
   @Override
   protected void doStop() {
-    messagesProcessor.stop();
+    messageProcessor.stop();
     notifyStopped();
     requestObserver.onError(Status.CANCELLED.asException());
   }
@@ -123,7 +123,7 @@ final class StreamingSubscriberConnection extends AbstractService implements Ack
 
     @Override
     public void onNext(StreamingPullResponse response) {
-      messagesProcessor.processReceivedMessages(response.getReceivedMessagesList());
+      messageProcessor.processReceivedMessages(response.getReceivedMessagesList());
       // Only if not shutdown we will request one more bundles of messages to be delivered.
       if (isAlive()) {
         requestObserver.request(1);
@@ -157,11 +157,11 @@ final class StreamingSubscriberConnection extends AbstractService implements Ack
     logger.debug(
         "Initializing stream to subscription {} with deadline {}",
         subscription,
-        messagesProcessor.getMessageDeadlineSeconds());
+        messageProcessor.getMessageDeadlineSeconds());
     requestObserver.onNext(
         StreamingPullRequest.newBuilder()
             .setSubscription(subscription)
-            .setStreamAckDeadlineSeconds(messagesProcessor.getMessageDeadlineSeconds())
+            .setStreamAckDeadlineSeconds(messageProcessor.getMessageDeadlineSeconds())
             .build());
     requestObserver.request(1);
 
@@ -240,7 +240,7 @@ final class StreamingSubscriberConnection extends AbstractService implements Ack
   }
 
   public void updateStreamAckDeadline(int newAckDeadlineSeconds) {
-    messagesProcessor.setMessageDeadlineSeconds(newAckDeadlineSeconds);
+    messageProcessor.setMessageDeadlineSeconds(newAckDeadlineSeconds);
     requestObserver.onNext(
         StreamingPullRequest.newBuilder()
             .setStreamAckDeadlineSeconds(newAckDeadlineSeconds)
