@@ -135,9 +135,7 @@ public class LocalPubSubHelper extends BaseEmulatorHelper<ServiceOptions> {
    */
   @Override
   public void stop(Duration timeout) throws IOException, InterruptedException, TimeoutException {
-    System.err.println("sending");
     sendPostRequest("/shutdown");
-    System.err.println("sent");
     waitForProcess(timeout);
   }
 }

@@ -28,12 +28,11 @@ import com.google.common.util.concurrent.Futures;
 import com.google.pubsub.v1.PubsubMessage;
 import com.google.pubsub.v1.ReceivedMessage;
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
+import java.util.PriorityQueue;
 import java.util.Set;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
@@ -68,8 +67,7 @@ class MessageDispatcher {
   private final FlowController flowController;
   private final MessagesWaiter messagesWaiter;
 
-  // Map of outstanding messages (value) ordered by expiration time (key) in ascending order.
-  private final Map<ExpirationInfo, List<AckHandler>> outstandingAckHandlers;
+  private final PriorityQueue<ExtensionJob> outstandingAckHandlers;
   private final Set<String> pendingAcks;
   private final Set<String> pendingNacks;
 
@@ -82,39 +80,32 @@ class MessageDispatcher {
   // To keep track of number of seconds the receiver takes to process messages.
   private final Distribution ackLatencyDistribution;
 
-  private static class ExpirationInfo implements Comparable<ExpirationInfo> {
-    private final Clock clock;
+  // ExtensionJob represents a group of {@code AckHandler}s that shares the same expiration.
+  //
+  // It is Comparable so that it may be put in a PriorityQueue.
+  // For efficiency, it is also mutable, so great care should be taken to make sure
+  // it is not modified while inside the queue.
+  // The hashcode and equals methods are explicitly not implemented to discourage
+  // the use of this class as keys in maps or similar containers.
+  private static class ExtensionJob implements Comparable<ExtensionJob> {
     Instant expiration;
     int nextExtensionSeconds;
+    ArrayList<AckHandler> ackHandlers;
 
-    ExpirationInfo(Clock clock, Instant expiration, int initialAckDeadlineExtension) {
-      this.clock = clock;
+    ExtensionJob(
+        Instant expiration, int initialAckDeadlineExtension, ArrayList<AckHandler> ackHandlers) {
       this.expiration = expiration;
       nextExtensionSeconds = initialAckDeadlineExtension;
+      this.ackHandlers = ackHandlers;
     }
 
-    void extendExpiration() {
-      expiration = new Instant(clock.millis()).plus(Duration.standardSeconds(nextExtensionSeconds));
+    void extendExpiration(Instant now) {
+      expiration = now.plus(Duration.standardSeconds(nextExtensionSeconds));
       nextExtensionSeconds = Math.min(2 * nextExtensionSeconds, MAX_ACK_DEADLINE_EXTENSION_SECS);
     }
 
     @Override
-    public int hashCode() {
-      return expiration.hashCode();
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-      if (!(obj instanceof ExpirationInfo)) {
-        return false;
-      }
-
-      ExpirationInfo other = (ExpirationInfo) obj;
-      return expiration.equals(other.expiration);
-    }
-
-    @Override
-    public int compareTo(ExpirationInfo other) {
+    public int compareTo(ExtensionJob other) {
       return expiration.compareTo(other.expiration);
     }
   }
@@ -217,7 +208,7 @@ class MessageDispatcher {
     this.receiver = receiver;
     this.ackProcessor = ackProcessor;
     this.flowController = flowController;
-    outstandingAckHandlers = new HashMap<>();
+    outstandingAckHandlers = new PriorityQueue<>();
     pendingAcks = new HashSet<>();
     pendingNacks = new HashSet<>();
     // 601 buckets of 1s resolution from 0s to MAX_ACK_DEADLINE_SECONDS
@@ -257,17 +248,16 @@ class MessageDispatcher {
     }
     Instant now = new Instant(clock.millis());
     int totalByteCount = 0;
-    final List<AckHandler> ackHandlers = new ArrayList<>(responseMessages.size());
+    final ArrayList<AckHandler> ackHandlers = new ArrayList<>(responseMessages.size());
     for (ReceivedMessage pubsubMessage : responseMessages) {
       int messageSize = pubsubMessage.getMessage().getSerializedSize();
       totalByteCount += messageSize;
       ackHandlers.add(new AckHandler(pubsubMessage.getAckId(), messageSize));
     }
-    ExpirationInfo expiration =
-        new ExpirationInfo(
-            clock, now.plus(messageDeadlineSeconds * 1000), INITIAL_ACK_DEADLINE_EXTENSION_SECONDS);
+    Instant expiration = now.plus(messageDeadlineSeconds * 1000);
     synchronized (outstandingAckHandlers) {
-      addOutstadingAckHandlers(expiration, ackHandlers);
+      outstandingAckHandlers.add(
+          new ExtensionJob(expiration, INITIAL_ACK_DEADLINE_EXTENSION_SECONDS, ackHandlers));
     }
     logger.debug("Received {} messages at {}", responseMessages.size(), now);
     setupNextAckDeadlineExtensionAlarm(expiration);
@@ -290,14 +280,6 @@ class MessageDispatcher {
     } catch (FlowController.FlowControlException unexpectedException) {
       throw new IllegalStateException("Flow control unexpected exception", unexpectedException);
     }
-  }
-
-  private void addOutstadingAckHandlers(
-      ExpirationInfo expiration, final List<AckHandler> ackHandlers) {
-    if (!outstandingAckHandlers.containsKey(expiration)) {
-      outstandingAckHandlers.put(expiration, new ArrayList<AckHandler>(ackHandlers.size()));
-    }
-    outstandingAckHandlers.get(expiration).addAll(ackHandlers);
   }
 
   private void setupPendingAcksAlarm() {
@@ -354,41 +336,42 @@ class MessageDispatcher {
           now,
           cutOverTime,
           ackExpirationPadding);
-      ExpirationInfo nextScheduleExpiration = null;
+      Instant nextScheduleExpiration = null;
       List<PendingModifyAckDeadline> modifyAckDeadlinesToSend = new ArrayList<>();
 
       synchronized (outstandingAckHandlers) {
-        for (ExpirationInfo messageExpiration : outstandingAckHandlers.keySet()) {
-          if (messageExpiration.expiration.compareTo(cutOverTime) <= 0) {
-            Collection<AckHandler> expiringAcks = outstandingAckHandlers.get(messageExpiration);
-            outstandingAckHandlers.remove(messageExpiration);
-            List<AckHandler> renewedAckHandlers = new ArrayList<>(expiringAcks.size());
-            messageExpiration.extendExpiration();
-            int extensionSeconds =
-                Ints.saturatedCast(
-                    new Interval(now, messageExpiration.expiration)
-                        .toDuration()
-                        .getStandardSeconds());
-            PendingModifyAckDeadline pendingModAckDeadline =
-                new PendingModifyAckDeadline(extensionSeconds);
-            for (AckHandler ackHandler : expiringAcks) {
-              if (ackHandler.acked.get()) {
-                continue;
-              }
-              pendingModAckDeadline.addAckId(ackHandler.ackId);
-              renewedAckHandlers.add(ackHandler);
-            }
-            modifyAckDeadlinesToSend.add(pendingModAckDeadline);
-            if (!renewedAckHandlers.isEmpty()) {
-              addOutstadingAckHandlers(messageExpiration, renewedAckHandlers);
+        if (!outstandingAckHandlers.isEmpty()) {
+          nextScheduleExpiration = outstandingAckHandlers.peek().expiration;
+        }
+        while (!outstandingAckHandlers.isEmpty()
+            && outstandingAckHandlers.peek().expiration.compareTo(cutOverTime) <= 0) {
+          ExtensionJob job = outstandingAckHandlers.poll();
+
+          // If a message has already been acked, remove it, nothing to do.
+          for (int i = 0; i < job.ackHandlers.size(); ) {
+            if (job.ackHandlers.get(i).acked.get()) {
+              Collections.swap(job.ackHandlers, i, job.ackHandlers.size() - 1);
+              job.ackHandlers.remove(job.ackHandlers.size() - 1);
             } else {
-              outstandingAckHandlers.remove(messageExpiration);
+              i++;
             }
           }
-          if (nextScheduleExpiration == null
-              || nextScheduleExpiration.expiration.isAfter(messageExpiration.expiration)) {
-            nextScheduleExpiration = messageExpiration;
+
+          if (job.ackHandlers.isEmpty()) {
+            continue;
           }
+
+          job.extendExpiration(now);
+          int extensionSeconds =
+              Ints.saturatedCast(
+                  new Interval(now, job.expiration).toDuration().getStandardSeconds());
+          PendingModifyAckDeadline pendingModAckDeadline =
+              new PendingModifyAckDeadline(extensionSeconds);
+          for (AckHandler ackHandler : job.ackHandlers) {
+            pendingModAckDeadline.addAckId(ackHandler.ackId);
+          }
+          modifyAckDeadlinesToSend.add(pendingModAckDeadline);
+          outstandingAckHandlers.add(job);
         }
       }
 
@@ -404,8 +387,8 @@ class MessageDispatcher {
     }
   }
 
-  private void setupNextAckDeadlineExtensionAlarm(ExpirationInfo messageExpiration) {
-    Instant possibleNextAlarmTime = messageExpiration.expiration.minus(ackExpirationPadding);
+  private void setupNextAckDeadlineExtensionAlarm(Instant expiration) {
+    Instant possibleNextAlarmTime = expiration.minus(ackExpirationPadding);
     alarmsLock.lock();
     try {
       if (nextAckDeadlineExtensionAlarmTime.isAfter(possibleNextAlarmTime)) {
