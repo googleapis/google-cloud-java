@@ -334,7 +334,11 @@ public class Publisher {
     for (OutstandingPublish outstandingPublish : outstandingBundle.outstandingPublishes) {
       publishRequest.addMessages(outstandingPublish.message);
     }
+
     int currentChannel = channelIndex.getAndIncrement() % channels.length;
+    if (currentChannel < 0) {
+      currentChannel += channels.length;
+    }
 
     long rpcTimeoutMs =
         Math.round(
