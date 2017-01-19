@@ -46,7 +46,8 @@ public class CreateTopicAndPublishMessages {
       for (String message : messages) {
         ByteString data = ByteString.copyFromUtf8(message);
         PubsubMessage pubsubMessage = PubsubMessage.newBuilder().setData(data).build();
-        messageIds.add(publisher.publish(pubsubMessage));
+        ListenableFuture<String> messageIdFuture = publisher.publish(pubsubMessage);
+        messageIds.add(messageIdFuture);
       }
       for (String messageId : Futures.allAsList(messageIds).get()) {
         System.out.println("published with message ID: " + messageId);
