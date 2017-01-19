@@ -22,8 +22,8 @@ import com.google.api.gax.bundling.FlowController;
 import com.google.api.stats.Distribution;
 import com.google.auth.Credentials;
 import com.google.cloud.Clock;
-import com.google.cloud.pubsub.spi.v1.MessagesProcessor.AcksProcessor;
-import com.google.cloud.pubsub.spi.v1.MessagesProcessor.PendingModifyAckDeadline;
+import com.google.cloud.pubsub.spi.v1.MessageDispatcher.AcksProcessor;
+import com.google.cloud.pubsub.spi.v1.MessageDispatcher.PendingModifyAckDeadline;
 import com.google.common.collect.Lists;
 import com.google.common.util.concurrent.AbstractService;
 import com.google.common.util.concurrent.FutureCallback;
@@ -63,7 +63,7 @@ final class PollingSubscriberConnection extends AbstractService implements AcksP
   private final String subscription;
   private final ScheduledExecutorService executor;
   private final SubscriberFutureStub stub;
-  private final MessagesProcessor messagesProcessor;
+  private final MessageDispatcher messagesProcessor;
 
   public PollingSubscriberConnection(
       String subscription,
@@ -81,7 +81,7 @@ final class PollingSubscriberConnection extends AbstractService implements AcksP
         SubscriberGrpc.newFutureStub(channel)
             .withCallCredentials(MoreCallCredentials.from(credentials));
     messagesProcessor =
-        new MessagesProcessor(
+        new MessageDispatcher(
             receiver,
             this,
             ackExpirationPadding,

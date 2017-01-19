@@ -51,8 +51,8 @@ import org.slf4j.LoggerFactory;
  * Dispatches messages to a message receiver while handling the messages acking and lease
  * extensions.
  */
-class MessagesProcessor {
-  private static final Logger logger = LoggerFactory.getLogger(MessagesProcessor.class);
+class MessageDispatcher {
+  private static final Logger logger = LoggerFactory.getLogger(MessageDispatcher.class);
 
   private static final int INITIAL_ACK_DEADLINE_EXTENSION_SECONDS = 2;
   @VisibleForTesting static final Duration PENDING_ACKS_SEND_DELAY = Duration.millis(100);
@@ -204,7 +204,7 @@ class MessagesProcessor {
         List<String> acksToSend, List<PendingModifyAckDeadline> ackDeadlineExtensions);
   }
 
-  MessagesProcessor(
+  MessageDispatcher(
       MessageReceiver receiver,
       AcksProcessor acksProcessor,
       Duration ackExpirationPadding,
