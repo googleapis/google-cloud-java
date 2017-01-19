@@ -52,7 +52,6 @@ import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
-import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 import org.joda.time.Duration;
@@ -139,7 +138,7 @@ public class Publisher {
 
   private final FlowController flowController;
   private final Channel[] channels;
-  private final AtomicInteger channelIndex;
+  private final AtomicRoundRobin channelIndex;
   private final CallCredentials credentials;
 
   private final ScheduledExecutorService executor;
@@ -171,7 +170,7 @@ public class Publisher {
                     .setNameFormat("cloud-pubsub-publisher-thread-%d")
                     .build());
     channels = new Channel[numCores];
-    channelIndex = new AtomicInteger(0);
+    channelIndex = new AtomicRoundRobin(channels.length);
     for (int i = 0; i < numCores; i++) {
       channels[i] =
           builder.channelBuilder.isPresent()
@@ -335,10 +334,7 @@ public class Publisher {
       publishRequest.addMessages(outstandingPublish.message);
     }
 
-    int currentChannel = channelIndex.getAndIncrement() % channels.length;
-    if (currentChannel < 0) {
-      currentChannel += channels.length;
-    }
+    int currentChannel = channelIndex.next();
 
     long rpcTimeoutMs =
         Math.round(
