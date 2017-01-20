@@ -51,8 +51,8 @@ import org.slf4j.LoggerFactory;
  * Dispatches messages to a message receiver while handling the messages acking and lease
  * extensions.
  */
-class MessagesProcessor {
-  private static final Logger logger = LoggerFactory.getLogger(MessagesProcessor.class);
+class MessageDispatcher {
+  private static final Logger logger = LoggerFactory.getLogger(MessageDispatcher.class);
 
   private static final int INITIAL_ACK_DEADLINE_EXTENSION_SECONDS = 2;
   @VisibleForTesting static final Duration PENDING_ACKS_SEND_DELAY = Duration.millis(100);
@@ -63,7 +63,7 @@ class MessagesProcessor {
 
   private final Duration ackExpirationPadding;
   private final MessageReceiver receiver;
-  private final AcksProcessor acksProcessor;
+  private final AckProcessor ackProcessor;
 
   private final FlowController flowController;
   private final MessagesWaiter messagesWaiter;
@@ -199,14 +199,14 @@ class MessagesProcessor {
     }
   }
 
-  public interface AcksProcessor {
+  public interface AckProcessor {
     void sendAckOperations(
         List<String> acksToSend, List<PendingModifyAckDeadline> ackDeadlineExtensions);
   }
 
-  MessagesProcessor(
+  MessageDispatcher(
       MessageReceiver receiver,
-      AcksProcessor acksProcessor,
+      AckProcessor ackProcessor,
       Duration ackExpirationPadding,
       Distribution ackLatencyDistribution,
       FlowController flowController,
@@ -215,7 +215,7 @@ class MessagesProcessor {
     this.executor = executor;
     this.ackExpirationPadding = ackExpirationPadding;
     this.receiver = receiver;
-    this.acksProcessor = acksProcessor;
+    this.ackProcessor = ackProcessor;
     this.flowController = flowController;
     outstandingAckHandlers = new HashMap<>();
     pendingAcks = new HashSet<>();
@@ -466,6 +466,6 @@ class MessagesProcessor {
       }
     }
 
-    acksProcessor.sendAckOperations(acksToSend, modifyAckDeadlinesToSend);
+    ackProcessor.sendAckOperations(acksToSend, modifyAckDeadlinesToSend);
   }
 }

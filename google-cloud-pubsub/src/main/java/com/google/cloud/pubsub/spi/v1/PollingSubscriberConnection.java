@@ -22,8 +22,8 @@ import com.google.api.gax.bundling.FlowController;
 import com.google.api.stats.Distribution;
 import com.google.auth.Credentials;
 import com.google.cloud.Clock;
-import com.google.cloud.pubsub.spi.v1.MessagesProcessor.AcksProcessor;
-import com.google.cloud.pubsub.spi.v1.MessagesProcessor.PendingModifyAckDeadline;
+import com.google.cloud.pubsub.spi.v1.MessageDispatcher.AckProcessor;
+import com.google.cloud.pubsub.spi.v1.MessageDispatcher.PendingModifyAckDeadline;
 import com.google.common.collect.Lists;
 import com.google.common.util.concurrent.AbstractService;
 import com.google.common.util.concurrent.FutureCallback;
@@ -51,7 +51,7 @@ import org.slf4j.LoggerFactory;
  * Implementation of {@link AbstractSubscriberConnection} based on Cloud Pub/Sub pull and
  * acknowledge operations.
  */
-final class PollingSubscriberConnection extends AbstractService implements AcksProcessor {
+final class PollingSubscriberConnection extends AbstractService implements AckProcessor {
   private static final int MAX_PER_REQUEST_CHANGES = 1000;
   private static final Duration DEFAULT_TIMEOUT = Duration.standardSeconds(10);
   private static final int DEFAULT_MAX_MESSAGES = 1000;
@@ -63,7 +63,7 @@ final class PollingSubscriberConnection extends AbstractService implements AcksP
   private final String subscription;
   private final ScheduledExecutorService executor;
   private final SubscriberFutureStub stub;
-  private final MessagesProcessor messagesProcessor;
+  private final MessageDispatcher messageDispatcher;
 
   public PollingSubscriberConnection(
       String subscription,
@@ -80,8 +80,8 @@ final class PollingSubscriberConnection extends AbstractService implements AcksP
     stub =
         SubscriberGrpc.newFutureStub(channel)
             .withCallCredentials(MoreCallCredentials.from(credentials));
-    messagesProcessor =
-        new MessagesProcessor(
+    messageDispatcher =
+        new MessageDispatcher(
             receiver,
             this,
             ackExpirationPadding,
@@ -109,7 +109,7 @@ final class PollingSubscriberConnection extends AbstractService implements AcksP
         new FutureCallback<Subscription>() {
           @Override
           public void onSuccess(Subscription result) {
-            messagesProcessor.setMessageDeadlineSeconds(result.getAckDeadlineSeconds());
+            messageDispatcher.setMessageDeadlineSeconds(result.getAckDeadlineSeconds());
             pullMessages(INITIAL_BACKOFF);
           }
 
@@ -122,7 +122,7 @@ final class PollingSubscriberConnection extends AbstractService implements AcksP
 
   @Override
   protected void doStop() {
-    messagesProcessor.stop();
+    messageDispatcher.stop();
     notifyStopped();
   }
 
@@ -141,7 +141,7 @@ final class PollingSubscriberConnection extends AbstractService implements AcksP
         new FutureCallback<PullResponse>() {
           @Override
           public void onSuccess(PullResponse pullResponse) {
-            messagesProcessor.processReceivedMessages(pullResponse.getReceivedMessagesList());
+            messageDispatcher.processReceivedMessages(pullResponse.getReceivedMessagesList());
             if (pullResponse.getReceivedMessagesCount() == 0) {
               // No messages in response, possibly caught up in backlog, we backoff to avoid
               // slamming the server.

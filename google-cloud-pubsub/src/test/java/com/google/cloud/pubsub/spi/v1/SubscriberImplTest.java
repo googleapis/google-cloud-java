@@ -16,7 +16,7 @@
 
 package com.google.cloud.pubsub.spi.v1;
 
-import static com.google.cloud.pubsub.spi.v1.MessagesProcessor.PENDING_ACKS_SEND_DELAY;
+import static com.google.cloud.pubsub.spi.v1.MessageDispatcher.PENDING_ACKS_SEND_DELAY;
 import static org.junit.Assert.assertEquals;
 
 import com.google.cloud.pubsub.spi.v1.FakeSubscriberServiceImpl.ModifyAckDeadline;

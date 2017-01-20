@@ -22,8 +22,8 @@ import com.google.api.gax.bundling.FlowController;
 import com.google.api.stats.Distribution;
 import com.google.auth.Credentials;
 import com.google.cloud.Clock;
-import com.google.cloud.pubsub.spi.v1.MessagesProcessor.AcksProcessor;
-import com.google.cloud.pubsub.spi.v1.MessagesProcessor.PendingModifyAckDeadline;
+import com.google.cloud.pubsub.spi.v1.MessageDispatcher.AckProcessor;
+import com.google.cloud.pubsub.spi.v1.MessageDispatcher.PendingModifyAckDeadline;
 import com.google.common.collect.Lists;
 import com.google.common.util.concurrent.AbstractService;
 import com.google.common.util.concurrent.FutureCallback;
@@ -49,7 +49,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /** Implementation of {@link AbstractSubscriberConnection} based on Cloud Pub/Sub streaming pull. */
-final class StreamingSubscriberConnection extends AbstractService implements AcksProcessor {
+final class StreamingSubscriberConnection extends AbstractService implements AckProcessor {
   private static final Logger logger = LoggerFactory.getLogger(StreamingSubscriberConnection.class);
 
   private static final Duration INITIAL_CHANNEL_RECONNECT_BACKOFF = new Duration(100); // 100ms
@@ -62,7 +62,7 @@ final class StreamingSubscriberConnection extends AbstractService implements Ack
 
   private final String subscription;
   private final ScheduledExecutorService executor;
-  private final MessagesProcessor messagesProcessor;
+  private final MessageDispatcher messageDispatcher;
   private ClientCallStreamObserver<StreamingPullRequest> requestObserver;
 
   public StreamingSubscriberConnection(
@@ -80,8 +80,8 @@ final class StreamingSubscriberConnection extends AbstractService implements Ack
     this.executor = executor;
     this.credentials = credentials;
     this.channel = channel;
-    this.messagesProcessor =
-        new MessagesProcessor(
+    this.messageDispatcher =
+        new MessageDispatcher(
             receiver,
             this,
             ackExpirationPadding,
@@ -89,7 +89,7 @@ final class StreamingSubscriberConnection extends AbstractService implements Ack
             flowController,
             executor,
             clock);
-    messagesProcessor.setMessageDeadlineSeconds(streamAckDeadlineSeconds);
+    messageDispatcher.setMessageDeadlineSeconds(streamAckDeadlineSeconds);
   }
 
   @Override
@@ -101,7 +101,7 @@ final class StreamingSubscriberConnection extends AbstractService implements Ack
 
   @Override
   protected void doStop() {
-    messagesProcessor.stop();
+    messageDispatcher.stop();
     notifyStopped();
     requestObserver.onError(Status.CANCELLED.asException());
   }
@@ -123,7 +123,7 @@ final class StreamingSubscriberConnection extends AbstractService implements Ack
 
     @Override
     public void onNext(StreamingPullResponse response) {
-      messagesProcessor.processReceivedMessages(response.getReceivedMessagesList());
+      messageDispatcher.processReceivedMessages(response.getReceivedMessagesList());
       // Only if not shutdown we will request one more bundles of messages to be delivered.
       if (isAlive()) {
         requestObserver.request(1);
@@ -157,11 +157,11 @@ final class StreamingSubscriberConnection extends AbstractService implements Ack
     logger.debug(
         "Initializing stream to subscription {} with deadline {}",
         subscription,
-        messagesProcessor.getMessageDeadlineSeconds());
+        messageDispatcher.getMessageDeadlineSeconds());
     requestObserver.onNext(
         StreamingPullRequest.newBuilder()
             .setSubscription(subscription)
-            .setStreamAckDeadlineSeconds(messagesProcessor.getMessageDeadlineSeconds())
+            .setStreamAckDeadlineSeconds(messageDispatcher.getMessageDeadlineSeconds())
             .build());
     requestObserver.request(1);
 
@@ -240,7 +240,7 @@ final class StreamingSubscriberConnection extends AbstractService implements Ack
   }
 
   public void updateStreamAckDeadline(int newAckDeadlineSeconds) {
-    messagesProcessor.setMessageDeadlineSeconds(newAckDeadlineSeconds);
+    messageDispatcher.setMessageDeadlineSeconds(newAckDeadlineSeconds);
     requestObserver.onNext(
         StreamingPullRequest.newBuilder()
             .setStreamAckDeadlineSeconds(newAckDeadlineSeconds)
