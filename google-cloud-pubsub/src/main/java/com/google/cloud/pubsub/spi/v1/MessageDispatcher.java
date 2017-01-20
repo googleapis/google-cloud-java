@@ -108,6 +108,14 @@ class MessageDispatcher {
     public int compareTo(ExtensionJob other) {
       return expiration.compareTo(other.expiration);
     }
+
+    public String toString() {
+      ArrayList<String> ackIds = new ArrayList<>();
+      for (AckHandler ah : ackHandlers) {
+        ackIds.add(ah.ackId);
+      }
+      return String.format("ExtensionJob {expiration: %s, nextExtensionSeconds: %d, ackIds: %s}", expiration, nextExtensionSeconds, ackIds);
+    }
   }
 
   /** Stores the data needed to asynchronously modify acknowledgement deadlines. */
@@ -127,6 +135,10 @@ class MessageDispatcher {
 
     public void addAckId(String ackId) {
       ackIds.add(ackId);
+    }
+
+    public String toString() {
+      return String.format("extend %d sec: %s", deadlineExtensionSeconds, ackIds);
     }
   }
 
@@ -255,10 +267,6 @@ class MessageDispatcher {
       ackHandlers.add(new AckHandler(pubsubMessage.getAckId(), messageSize));
     }
     Instant expiration = now.plus(messageDeadlineSeconds * 1000);
-    synchronized (outstandingAckHandlers) {
-      outstandingAckHandlers.add(
-          new ExtensionJob(expiration, INITIAL_ACK_DEADLINE_EXTENSION_SECONDS, ackHandlers));
-    }
     logger.debug("Received {} messages at {}", responseMessages.size(), now);
     setupNextAckDeadlineExtensionAlarm(expiration);
 
@@ -275,6 +283,12 @@ class MessageDispatcher {
             }
           });
     }
+
+    synchronized (outstandingAckHandlers) {
+      outstandingAckHandlers.add(
+          new ExtensionJob(expiration, INITIAL_ACK_DEADLINE_EXTENSION_SECONDS, ackHandlers));
+    }
+
     try {
       flowController.reserve(receivedMessagesCount, totalByteCount);
     } catch (FlowController.FlowControlException unexpectedException) {
@@ -339,10 +353,11 @@ class MessageDispatcher {
       Instant nextScheduleExpiration = null;
       List<PendingModifyAckDeadline> modifyAckDeadlinesToSend = new ArrayList<>();
 
+      // Holding area for jobs we'll put back into the queue
+      // so we don't process the same job twice.
+      List<ExtensionJob> renewJobs = new ArrayList<>();
+
       synchronized (outstandingAckHandlers) {
-        if (!outstandingAckHandlers.isEmpty()) {
-          nextScheduleExpiration = outstandingAckHandlers.peek().expiration;
-        }
         while (!outstandingAckHandlers.isEmpty()
             && outstandingAckHandlers.peek().expiration.compareTo(cutOverTime) <= 0) {
           ExtensionJob job = outstandingAckHandlers.poll();
@@ -371,7 +386,13 @@ class MessageDispatcher {
             pendingModAckDeadline.addAckId(ackHandler.ackId);
           }
           modifyAckDeadlinesToSend.add(pendingModAckDeadline);
+          renewJobs.add(job);
+        }
+        for (ExtensionJob job : renewJobs) {
           outstandingAckHandlers.add(job);
+        }
+        if (!outstandingAckHandlers.isEmpty()) {
+          nextScheduleExpiration = outstandingAckHandlers.peek().expiration;
         }
       }
 
