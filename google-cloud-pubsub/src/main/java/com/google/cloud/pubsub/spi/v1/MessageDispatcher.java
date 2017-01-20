@@ -272,7 +272,6 @@ class MessageDispatcher {
     }
     Instant expiration = now.plus(messageDeadlineSeconds * 1000);
     logger.debug("Received {} messages at {}", responseMessages.size(), now);
-    setupNextAckDeadlineExtensionAlarm(expiration);
 
     messagesWaiter.incrementPendingMessages(responseMessages.size());
     Iterator<AckHandler> acksIterator = ackHandlers.iterator();
@@ -288,15 +287,11 @@ class MessageDispatcher {
           });
     }
 
-    // There is a race condition. setupNextAckDeadlineExtensionAlarm might set
-    // an alarm that fires before this block can run.
-    // The fix is to move setup below this block, but doing so aggravates another
-    // race condition.
-    // TODO(pongad): Fix both races.
     synchronized (outstandingAckHandlers) {
       outstandingAckHandlers.add(
           new ExtensionJob(expiration, INITIAL_ACK_DEADLINE_EXTENSION_SECONDS, ackHandlers));
     }
+    setupNextAckDeadlineExtensionAlarm(expiration);
 
     try {
       flowController.reserve(receivedMessagesCount, totalByteCount);
