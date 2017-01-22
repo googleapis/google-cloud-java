@@ -17,6 +17,8 @@
 package com.google.cloud.pubsub.spi.v1;
 
 import com.google.api.gax.bundling.FlowController;
+import com.google.api.gax.grpc.ExecutorProvider;
+import com.google.api.gax.grpc.InstantiatingExecutorProvider;
 import com.google.api.stats.Distribution;
 import com.google.auth.Credentials;
 import com.google.auth.oauth2.GoogleCredentials;
@@ -28,7 +30,6 @@ import com.google.common.base.Preconditions;
 import com.google.common.primitives.Ints;
 import com.google.common.util.concurrent.AbstractService;
 import com.google.common.util.concurrent.Service;
-import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import com.google.pubsub.v1.SubscriptionName;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.Status;
@@ -40,7 +41,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
@@ -131,6 +131,7 @@ public class Subscriber extends AbstractService {
   private final List<StreamingSubscriberConnection> streamingSubscriberConnections;
   private final List<PollingSubscriberConnection> pollingSubscriberConnections;
   private final Clock clock;
+  private final List<AutoCloseable> closeables = new ArrayList<>();
   private ScheduledFuture<?> ackDeadlineUpdater;
   private int streamAckDeadlineSeconds;
 
@@ -147,16 +148,16 @@ public class Subscriber extends AbstractService {
 
     flowController = new FlowController(builder.flowControlSettings, false);
 
-    numChannels = Math.max(1, Runtime.getRuntime().availableProcessors()) * CHANNELS_PER_CORE;
-    executor =
-        builder.executor.isPresent()
-            ? builder.executor.get()
-            : Executors.newScheduledThreadPool(
-                numChannels * THREADS_PER_CHANNEL,
-                new ThreadFactoryBuilder()
-                    .setDaemon(true)
-                    .setNameFormat("cloud-pubsub-subscriber-thread-%d")
-                    .build());
+    executor = builder.executorProvider.getExecutor();
+    if (builder.executorProvider.shouldAutoClose()) {
+      closeables.add(
+          new AutoCloseable() {
+            @Override
+            public void close() throws IOException {
+              executor.shutdown();
+            }
+          });
+    }
 
     channelBuilder =
         builder.channelBuilder.isPresent()
@@ -176,6 +177,7 @@ public class Subscriber extends AbstractService {
             : GoogleCredentials.getApplicationDefault()
                 .createScoped(SubscriberSettings.getDefaultServiceScopes());
 
+    numChannels = Math.max(1, Runtime.getRuntime().availableProcessors()) * CHANNELS_PER_CORE;
     streamingSubscriberConnections = new ArrayList<StreamingSubscriberConnection>(numChannels);
     pollingSubscriberConnections = new ArrayList<PollingSubscriberConnection>(numChannels);
   }
@@ -191,7 +193,14 @@ public class Subscriber extends AbstractService {
   protected void doStop() {
     stopAllStreamingConnections();
     stopAllPollingConnections();
-    notifyStopped();
+    try {
+      for (AutoCloseable closeable : closeables) {
+        closeable.close();
+      }
+      notifyStopped();
+    } catch (Exception e) {
+      notifyFailed(e);
+    }
   }
 
   private void startStreamingConnections() {
@@ -379,6 +388,14 @@ public class Subscriber extends AbstractService {
     private static final Duration MIN_ACK_EXPIRATION_PADDING = Duration.millis(100);
     private static final Duration DEFAULT_ACK_EXPIRATION_PADDING = Duration.millis(500);
 
+    static final ExecutorProvider DEFAULT_EXECUTOR_PROVIDER =
+        InstantiatingExecutorProvider.newBuilder()
+            .setExecutorThreadCount(
+                THREADS_PER_CHANNEL
+                    * CHANNELS_PER_CORE
+                    * Runtime.getRuntime().availableProcessors())
+            .build();
+
     String subscription;
     Optional<Credentials> credentials = Optional.absent();
     MessageReceiver receiver;
@@ -387,7 +404,7 @@ public class Subscriber extends AbstractService {
 
     FlowController.Settings flowControlSettings = FlowController.Settings.DEFAULT;
 
-    Optional<ScheduledExecutorService> executor = Optional.absent();
+    ExecutorProvider executorProvider = DEFAULT_EXECUTOR_PROVIDER;
     Optional<ManagedChannelBuilder<? extends ManagedChannelBuilder<?>>> channelBuilder =
         Optional.absent();
     Optional<Clock> clock = Optional.absent();
@@ -459,8 +476,8 @@ public class Subscriber extends AbstractService {
     }
 
     /** Gives the ability to set a custom executor. */
-    public Builder setExecutor(ScheduledExecutorService executor) {
-      this.executor = Optional.of(executor);
+    public Builder setExecutorProvider(ExecutorProvider executorProvider) {
+      this.executorProvider = Preconditions.checkNotNull(executorProvider);
       return this;
     }
 
