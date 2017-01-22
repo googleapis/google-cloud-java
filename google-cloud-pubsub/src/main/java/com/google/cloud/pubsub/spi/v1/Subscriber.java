@@ -361,14 +361,17 @@ public class Subscriber extends AbstractService {
     return null;
   }
 
+  /** Subscription which the subscriber is subscribed to. */
   public String getSubscription() {
     return subscription;
   }
 
+  /** Acknowledgement expiration padding. See {@link Builder.setAckExpirationPadding}. */
   public Duration getAckExpirationPadding() {
     return ackExpirationPadding;
   }
 
+  /** The flow control settings the Subscriber is configured with. */
   public FlowController.Settings getFlowControlSettings() {
     return flowControlSettings;
   }
