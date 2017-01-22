@@ -114,7 +114,9 @@ class MessageDispatcher {
       for (AckHandler ah : ackHandlers) {
         ackIds.add(ah.ackId);
       }
-      return String.format("ExtensionJob {expiration: %s, nextExtensionSeconds: %d, ackIds: %s}", expiration, nextExtensionSeconds, ackIds);
+      return String.format(
+          "ExtensionJob {expiration: %s, nextExtensionSeconds: %d, ackIds: %s}",
+          expiration, nextExtensionSeconds, ackIds);
     }
   }
 
@@ -138,7 +140,9 @@ class MessageDispatcher {
     }
 
     public String toString() {
-      return String.format("extend %d sec: %s", deadlineExtensionSeconds, ackIds);
+      return String.format(
+          "PendingModifyAckDeadline{extension: %d sec, ackIds: %s}",
+          deadlineExtensionSeconds, ackIds);
     }
   }
 
@@ -284,6 +288,11 @@ class MessageDispatcher {
           });
     }
 
+    // There is a race condition. setupNextAckDeadlineExtensionAlarm might set
+    // an alarm that fires before this block can run.
+    // The fix is to move setup below this block, but doing so aggravates another
+    // race condition.
+    // TODO(pongad): Fix both races.
     synchronized (outstandingAckHandlers) {
       outstandingAckHandlers.add(
           new ExtensionJob(expiration, INITIAL_ACK_DEADLINE_EXTENSION_SECONDS, ackHandlers));
