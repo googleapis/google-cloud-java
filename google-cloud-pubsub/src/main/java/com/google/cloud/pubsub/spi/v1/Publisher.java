@@ -467,8 +467,8 @@ public class Publisher {
     return failOnFlowControlLimits;
   }
 
-  /** Retrieves a snapshot of the publisher current {@link PublisherStats statistics}. */
-  public PublisherStats getStats() {
+  /** Retrieves a snapshot of the publisher current statistics. */
+  private PublisherStats getStats() {
     // TODO: Implement this.
     throw new UnsupportedOperationException();
   }

@@ -356,7 +356,7 @@ public class Subscriber extends AbstractService {
     }
   }
 
-  public SubscriberStats getStats() {
+  private SubscriberStats getStats() {
     // TODO: Implement me
     return null;
   }
