@@ -467,12 +467,6 @@ public class Publisher {
     return failOnFlowControlLimits;
   }
 
-  /** Retrieves a snapshot of the publisher current statistics. */
-  private PublisherStats getStats() {
-    // TODO: Implement this.
-    throw new UnsupportedOperationException();
-  }
-
   /**
    * Schedules immediate publishing of any outstanding messages and waits until all are processed.
    *

@@ -356,11 +356,6 @@ public class Subscriber extends AbstractService {
     }
   }
 
-  private SubscriberStats getStats() {
-    // TODO: Implement me
-    return null;
-  }
-
   public String getSubscription() {
     return subscription;
   }
