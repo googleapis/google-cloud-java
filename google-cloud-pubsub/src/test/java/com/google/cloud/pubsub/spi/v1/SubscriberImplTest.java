@@ -145,11 +145,8 @@ public class SubscriberImplTest {
 
     public void replyAllOutstandingMessage() {
       Preconditions.checkState(explicitAckReplies);
-      for (; ; ) {
-        SettableFuture<AckReply> reply = outstandingMessageReplies.poll();
-        if (reply == null) {
-          return;
-        }
+      SettableFuture<AckReply> reply;
+      while ((reply = outstandingMessageReplies.poll()) != null) {
         replyTo(reply);
       }
     }
