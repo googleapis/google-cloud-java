@@ -19,14 +19,22 @@ package com.google.cloud.pubsub.spi.v1;
 import com.google.common.util.concurrent.ListenableFuture;
 import com.google.pubsub.v1.PubsubMessage;
 
-/** Users of the {@link Subscriber} must implement this interface to receive messages. */
+/** This interface can be implemented by users of {@link Subscriber} to receive messages. */
 public interface MessageReceiver {
-   enum AckReply {
-    /** To be used for acking a message. */
+  /** A reply to a message, to be sent back to the service. */
+  enum AckReply {
+    /**
+     * Acknowledges that the message has been successfully processed. The service will not send the
+     * message again.
+     */
     ACK,
-    /** To be used for nacking a message. */
+    /**
+     * Signals that the message has not been successfully processed. The service will resend the
+     * message.
+     */
     NACK
   }
+  
   /**
    * Called when a message is received by the subscriber.
    *
