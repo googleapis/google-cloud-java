@@ -45,10 +45,9 @@ import io.grpc.internal.ServerImpl;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.Deque;
 import java.util.List;
-import java.util.concurrent.ConcurrentLinkedDeque;
 import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.LinkedBlockingQueue;
 import org.joda.time.Duration;
 import org.junit.After;
 import org.junit.Before;
@@ -87,8 +86,8 @@ public class SubscriberImplTest {
   private TestReceiver testReceiver;
 
   static class TestReceiver implements MessageReceiver {
-    private final Deque<SettableFuture<AckReply>> outstandingMessageReplies =
-        new ConcurrentLinkedDeque<>();
+    private final LinkedBlockingQueue<SettableFuture<AckReply>> outstandingMessageReplies =
+        new LinkedBlockingQueue<>();
     private AckReply ackReply = AckReply.ACK;
     private Optional<CountDownLatch> messageCountLatch = Optional.absent();
     private Optional<Throwable> error = Optional.absent();
@@ -124,13 +123,13 @@ public class SubscriberImplTest {
       SettableFuture<AckReply> reply = SettableFuture.create();
 
       if (explicitAckReplies) {
-        outstandingMessageReplies.add(reply);
-      } else {
-        if (error.isPresent()) {
-          reply.setException(error.get());
-        } else {
-          reply.set(ackReply);
+        try {
+          outstandingMessageReplies.put(reply);
+        } catch (InterruptedException e) {
+          throw new IllegalStateException(e);
         }
+      } else {
+        replyTo(reply);
       }
 
       return reply;
@@ -138,20 +137,26 @@ public class SubscriberImplTest {
 
     public void replyNextOutstandingMessage() {
       Preconditions.checkState(explicitAckReplies);
-
-      SettableFuture<AckReply> reply = outstandingMessageReplies.poll();
-      if (error.isPresent()) {
-        reply.setException(error.get());
-      } else {
-        reply.set(ackReply);
+      try {
+        replyTo(outstandingMessageReplies.take());
+      } catch (InterruptedException e) {
+        throw new IllegalStateException(e);
       }
     }
 
     public void replyAllOutstandingMessage() {
       Preconditions.checkState(explicitAckReplies);
+      SettableFuture<AckReply> reply;
+      while ((reply = outstandingMessageReplies.poll()) != null) {
+        replyTo(reply);
+      }
+    }
 
-      while (!outstandingMessageReplies.isEmpty()) {
-        replyNextOutstandingMessage();
+    private void replyTo(SettableFuture<AckReply> reply) {
+      if (error.isPresent()) {
+        reply.setException(error.get());
+      } else {
+        reply.set(ackReply);
       }
     }
   }
