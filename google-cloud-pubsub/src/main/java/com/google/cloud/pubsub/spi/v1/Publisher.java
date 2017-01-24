@@ -19,6 +19,8 @@ package com.google.cloud.pubsub.spi.v1;
 import com.google.api.gax.bundling.FlowController;
 import com.google.api.gax.core.RetrySettings;
 import com.google.api.gax.grpc.BundlingSettings;
+import com.google.api.gax.grpc.ExecutorProvider;
+import com.google.api.gax.grpc.InstantiatingExecutorProvider;
 import com.google.auth.Credentials;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.common.base.Optional;
@@ -28,7 +30,6 @@ import com.google.common.util.concurrent.FutureCallback;
 import com.google.common.util.concurrent.Futures;
 import com.google.common.util.concurrent.ListenableFuture;
 import com.google.common.util.concurrent.SettableFuture;
-import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import com.google.pubsub.v1.PublishRequest;
 import com.google.pubsub.v1.PublishResponse;
 import com.google.pubsub.v1.PublisherGrpc;
@@ -43,16 +44,15 @@ import io.grpc.netty.GrpcSslContexts;
 import io.grpc.netty.NegotiationType;
 import io.grpc.netty.NettyChannelBuilder;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
-import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 import org.joda.time.Duration;
@@ -110,16 +110,14 @@ import org.slf4j.LoggerFactory;
  */
 public class Publisher {
   /** The maximum number of messages in one request. Defined by the API. */
-  public static long getApiMaxBundleMessages() {
+  public static long getApiMaxRequestElementCount() {
     return 1000L;
   }
 
   /** The maximum size of one request. Defined by the API. */
-  public static long getApiMaxBundleBytes() {
+  public static long getApiMaxRequestBytes() {
     return 10L * 1000L * 1000L; // 10 megabytes (https://en.wikipedia.org/wiki/Megabyte)
   }
-
-  private static final int DEFAULT_MIN_THREAD_POOL_SIZE = 5;
 
   private static final Logger logger = LoggerFactory.getLogger(Publisher.class);
 
@@ -139,11 +137,12 @@ public class Publisher {
 
   private final FlowController flowController;
   private final Channel[] channels;
-  private final AtomicInteger channelIndex;
+  private final AtomicRoundRobin channelIndex;
   private final CallCredentials credentials;
 
   private final ScheduledExecutorService executor;
   private final AtomicBoolean shutdown;
+  private final List<AutoCloseable> closeables = new ArrayList<>();
   private final MessagesWaiter messagesWaiter;
   private ScheduledFuture<?> currentAlarmFuture;
 
@@ -161,17 +160,18 @@ public class Publisher {
     messagesBundleLock = new ReentrantLock();
     activeAlarm = new AtomicBoolean(false);
     int numCores = Math.max(1, Runtime.getRuntime().availableProcessors());
-    executor =
-        builder.executor.isPresent()
-            ? builder.executor.get()
-            : Executors.newScheduledThreadPool(
-                numCores * DEFAULT_MIN_THREAD_POOL_SIZE,
-                new ThreadFactoryBuilder()
-                    .setDaemon(true)
-                    .setNameFormat("cloud-pubsub-publisher-thread-%d")
-                    .build());
+    executor = builder.executorProvider.getExecutor();
+    if (builder.executorProvider.shouldAutoClose()) {
+      closeables.add(
+          new AutoCloseable() {
+            @Override
+            public void close() throws IOException {
+              executor.shutdown();
+            }
+          });
+    }
     channels = new Channel[numCores];
-    channelIndex = new AtomicInteger(0);
+    channelIndex = new AtomicRoundRobin(channels.length);
     for (int i = 0; i < numCores; i++) {
       channels[i] =
           builder.channelBuilder.isPresent()
@@ -194,7 +194,7 @@ public class Publisher {
     messagesWaiter = new MessagesWaiter();
   }
 
-  /** Topic to which the publisher publishes to. */
+  /** Topic which the publisher publishes to. */
   public String getTopic() {
     return topic;
   }
@@ -334,7 +334,8 @@ public class Publisher {
     for (OutstandingPublish outstandingPublish : outstandingBundle.outstandingPublishes) {
       publishRequest.addMessages(outstandingPublish.message);
     }
-    int currentChannel = channelIndex.getAndIncrement() % channels.length;
+
+    int currentChannel = channelIndex.next();
 
     long rpcTimeoutMs =
         Math.round(
@@ -467,12 +468,6 @@ public class Publisher {
     return failOnFlowControlLimits;
   }
 
-  /** Retrieves a snapshot of the publisher current {@link PublisherStats statistics}. */
-  public PublisherStats getStats() {
-    // TODO: Implement this.
-    throw new UnsupportedOperationException();
-  }
-
   /**
    * Schedules immediate publishing of any outstanding messages and waits until all are processed.
    *
@@ -480,7 +475,7 @@ public class Publisher {
    * should be invoked prior to deleting the {@link Publisher} object in order to ensure that no
    * pending messages are lost.
    */
-  public void shutdown() {
+  public void shutdown() throws Exception {
     if (shutdown.getAndSet(true)) {
       throw new IllegalStateException("Cannot shut down a publisher already shut-down.");
     }
@@ -489,6 +484,9 @@ public class Publisher {
     }
     publishAllOutstanding();
     messagesWaiter.waitNoMessages();
+    for (AutoCloseable closeable : closeables) {
+      closeable.close();
+    }
   }
 
   private boolean hasBundlingBytes() {
@@ -550,6 +548,12 @@ public class Publisher {
             .setMaxRpcTimeout(DEFAULT_RPC_TIMEOUT)
             .build();
 
+    private static final int THREADS_PER_CPU = 5;
+    static final ExecutorProvider DEFAULT_EXECUTOR_PROVIDER =
+        InstantiatingExecutorProvider.newBuilder()
+            .setExecutorThreadCount(THREADS_PER_CPU * Runtime.getRuntime().availableProcessors())
+            .build();
+
     String topic;
 
     // Bundling options
@@ -566,7 +570,7 @@ public class Publisher {
     Optional<ManagedChannelBuilder<? extends ManagedChannelBuilder<?>>> channelBuilder =
         Optional.absent();
 
-    Optional<ScheduledExecutorService> executor = Optional.absent();
+    ExecutorProvider executorProvider = DEFAULT_EXECUTOR_PROVIDER;
 
     /** Constructs a new {@link Builder} using the given topic. */
     public static Builder newBuilder(TopicName topic) {
@@ -656,8 +660,8 @@ public class Publisher {
     }
 
     /** Gives the ability to set a custom executor to be used by the library. */
-    public Builder setExecutor(ScheduledExecutorService executor) {
-      this.executor = Optional.of(Preconditions.checkNotNull(executor));
+    public Builder setExecutorProvider(ExecutorProvider executorProvider) {
+      this.executorProvider = Preconditions.checkNotNull(executorProvider);
       return this;
     }
 
