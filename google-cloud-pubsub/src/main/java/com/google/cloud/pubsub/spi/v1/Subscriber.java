@@ -365,11 +365,6 @@ public class Subscriber extends AbstractService {
     }
   }
 
-  public SubscriberStats getStats() {
-    // TODO: Implement me
-    return null;
-  }
-
   /** Subscription which the subscriber is subscribed to. */
   public String getSubscription() {
     return subscription;

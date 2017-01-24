@@ -23,7 +23,7 @@ import com.google.auto.value.AutoValue;
  * Publisher}.
  */
 @AutoValue
-public abstract class PublisherStats {
+abstract class PublisherStats {
   /** Number of successfully published messages. */
   public abstract long getAckedMessages();
 
