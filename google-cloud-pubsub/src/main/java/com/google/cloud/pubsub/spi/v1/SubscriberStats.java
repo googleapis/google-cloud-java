@@ -23,8 +23,8 @@ import com.google.auto.value.AutoValue;
  * Subscriber}.
  */
 @AutoValue
-public abstract class SubscriberStats {
-  
+abstract class SubscriberStats {
+
   @AutoValue
   //TODO: Finish implementation.
   public abstract static class Stats {}

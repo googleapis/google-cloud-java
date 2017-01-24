@@ -19,6 +19,8 @@ package com.google.cloud.pubsub.spi.v1;
 import static com.google.cloud.pubsub.spi.v1.MessageDispatcher.PENDING_ACKS_SEND_DELAY;
 import static org.junit.Assert.assertEquals;
 
+import com.google.api.gax.grpc.FixedExecutorProvider;
+import com.google.api.gax.grpc.InstantiatingExecutorProvider;
 import com.google.cloud.pubsub.spi.v1.FakeSubscriberServiceImpl.ModifyAckDeadline;
 import com.google.cloud.pubsub.spi.v1.MessageReceiver.AckReply;
 import com.google.cloud.pubsub.spi.v1.Subscriber.Builder;
@@ -45,7 +47,6 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.Executors;
 import java.util.concurrent.LinkedBlockingQueue;
 import org.joda.time.Duration;
 import org.junit.After;
@@ -399,7 +400,8 @@ public class SubscriberImplTest {
     Subscriber subscriber =
         startSubscriber(
             getTestSubscriberBuilder(testReceiver)
-                .setExecutor(Executors.newSingleThreadScheduledExecutor()));
+                .setExecutorProvider(
+                    InstantiatingExecutorProvider.newBuilder().setExecutorThreadCount(1).build()));
 
     // Recoverable error
     fakeSubscriberServiceImpl.sendError(new StatusException(Status.INTERNAL));
@@ -421,7 +423,8 @@ public class SubscriberImplTest {
     Subscriber subscriber =
         startSubscriber(
             getTestSubscriberBuilder(testReceiver)
-                .setExecutor(Executors.newScheduledThreadPool(10)));
+                .setExecutorProvider(
+                    InstantiatingExecutorProvider.newBuilder().setExecutorThreadCount(10).build()));
 
     // Fatal error
     fakeSubscriberServiceImpl.sendError(new StatusException(Status.INVALID_ARGUMENT));
@@ -465,7 +468,7 @@ public class SubscriberImplTest {
 
   private Builder getTestSubscriberBuilder(MessageReceiver receiver) {
     return Subscriber.Builder.newBuilder(TEST_SUBSCRIPTION, receiver)
-        .setExecutor(fakeExecutor)
+        .setExecutorProvider(FixedExecutorProvider.create(fakeExecutor))
         .setCredentials(testCredentials)
         .setChannelBuilder(testChannelBuilder)
         .setClock(fakeExecutor.getClock());

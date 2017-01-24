@@ -79,30 +79,39 @@ public class FakeScheduledExecutorService extends AbstractExecutorService
             Duration.millis(unit.toMillis(initialDelay)), command, PendingCallableType.FIXED_DELAY));
   }
 
-  public void tick(long time, TimeUnit unit) {
-    advanceTime(Duration.millis(unit.toMillis(time)));
-  }
-
   /**
    * This will advance the reference time of the executor and execute (in the same thread) any
    * outstanding callable which execution time has passed.
    */
   public void advanceTime(Duration toAdvance) {
     clock.advance(toAdvance.getMillis(), TimeUnit.MILLISECONDS);
+    work();
+  }
+
+  private void work() {
     DateTime cmpTime = new DateTime(clock.millis());
 
-    synchronized (pendingCallables) {
-      while (!pendingCallables.isEmpty()
-          && pendingCallables.peek().getScheduledTime().compareTo(cmpTime) <= 0) {
-        try {
-          pendingCallables.poll().call();
-          if (shutdown.get() && pendingCallables.isEmpty()) {
-            pendingCallables.notifyAll();
-          }
+    for (;;) {
+      PendingCallable<?> callable = null;
+      synchronized (pendingCallables) {
+        if (pendingCallables.isEmpty() || pendingCallables.peek().getScheduledTime().isAfter(cmpTime)) {
+          break;
+        }
+        callable = pendingCallables.poll();
+      }
+      if (callable != null) {
+        try{
+          callable.call();
         } catch (Exception e) {
           // We ignore any callable exception, which should be set to the future but not relevant to
           // advanceTime.
         }
+      }
+    }
+
+    synchronized (pendingCallables) {
+      if (shutdown.get() && pendingCallables.isEmpty()) {
+        pendingCallables.notifyAll();
       }
     }
   }
@@ -172,6 +181,7 @@ public class FakeScheduledExecutorService extends AbstractExecutorService
     synchronized (pendingCallables) {
       pendingCallables.add(callable);
     }
+    work();
     return callable.getScheduledFuture();
   }
 
