@@ -501,7 +501,7 @@ public class Publisher {
                 * Math.pow(retrySettings.getRetryDelayMultiplier(), outstandingBundle.attempt - 1));
     delayMillis = Math.min(retrySettings.getMaxRetryDelay().getMillis(), delayMillis);
     outstandingBundle.attempt++;
-    return ThreadLocalRandom.current().nextLong(0, delayMillis);
+    return ThreadLocalRandom.current().nextLong(delayMillis / 2, delayMillis);
   }
 
   private boolean isRetryable(Throwable t) {

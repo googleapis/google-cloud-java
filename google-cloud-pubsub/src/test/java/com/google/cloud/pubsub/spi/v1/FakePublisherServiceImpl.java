@@ -21,98 +21,84 @@ import com.google.pubsub.v1.PublishRequest;
 import com.google.pubsub.v1.PublishResponse;
 import com.google.pubsub.v1.PublisherGrpc.PublisherImplBase;
 import io.grpc.stub.StreamObserver;
-import java.util.Queue;
 import java.util.concurrent.LinkedBlockingQueue;
 
 /**
- * A fake implementation of {@link PublisherImplBase}, that can be used to test clients of a 
- * Cloud Pub/Sub Publisher.
+ * A fake implementation of {@link PublisherImplBase}, that can be used to test clients of a Cloud
+ * Pub/Sub Publisher.
  */
 class FakePublisherServiceImpl extends PublisherImplBase {
 
-  private final Queue<Response> publishResponses = new LinkedBlockingQueue<>();
+  private final LinkedBlockingQueue<Response> publishResponses = new LinkedBlockingQueue<>();
 
-  /**
-   * Class used to save the state of a possible response. 
-   */
+  /** Class used to save the state of a possible response. */
   private static class Response {
     Optional<PublishResponse> publishResponse;
     Optional<Throwable> error;
-  
+
     public Response(PublishResponse publishResponse) {
       this.publishResponse = Optional.of(publishResponse);
       this.error = Optional.absent();
     }
-  
+
     public Response(Throwable exception) {
       this.publishResponse = Optional.absent();
       this.error = Optional.of(exception);
     }
-  
+
     public PublishResponse getPublishResponse() {
       return publishResponse.get();
     }
-  
+
     public Throwable getError() {
       return error.get();
     }
-  
+
     boolean isError() {
       return error.isPresent();
+    }
+
+    @Override
+    public String toString() {
+      if (isError()) {
+        return error.get().toString();
+      }
+      return publishResponse.get().toString();
     }
   }
 
   @Override
   public void publish(PublishRequest request, StreamObserver<PublishResponse> responseObserver) {
-    Response response = null;
-    synchronized (publishResponses) {
-      response = publishResponses.poll();
-      try {
-        if (response.isError()) {
-          responseObserver.onError(response.getError());
-          return;
-        }
-
-        responseObserver.onNext(response.getPublishResponse());
-        responseObserver.onCompleted();
-      } finally {
-        publishResponses.notifyAll();
-      }
+    Response response;
+    try {
+      response = publishResponses.take();
+    } catch (InterruptedException e) {
+      throw new IllegalArgumentException(e);
+    }
+    if (response.isError()) {
+      responseObserver.onError(response.getError());
+    } else {
+      responseObserver.onNext(response.getPublishResponse());
+      responseObserver.onCompleted();
     }
   }
 
   public FakePublisherServiceImpl addPublishResponse(PublishResponse publishResponse) {
-    synchronized (publishResponses) {
-      publishResponses.add(new Response(publishResponse));
-    }
+    publishResponses.add(new Response(publishResponse));
     return this;
   }
 
   public FakePublisherServiceImpl addPublishResponse(
       PublishResponse.Builder publishResponseBuilder) {
-    addPublishResponse(publishResponseBuilder.build());
-    return this;
+    return addPublishResponse(publishResponseBuilder.build());
   }
 
   public FakePublisherServiceImpl addPublishError(Throwable error) {
-    synchronized (publishResponses) {
-      publishResponses.add(new Response(error));
-    }
+    publishResponses.add(new Response(error));
     return this;
   }
 
   public void reset() {
-    synchronized (publishResponses) {
-      publishResponses.clear();
-      publishResponses.notifyAll();
-    }
-  }
-
-  public void waitForNoOutstandingResponses() throws InterruptedException {
-    synchronized (publishResponses) {
-      while (!publishResponses.isEmpty()) {
-        publishResponses.wait();
-      }
-    }
+    publishResponses.clear();
   }
 }
