@@ -299,8 +299,8 @@ public class PublisherImplTest {
                     .build())
             .build(); // To demonstrate that reaching duration will trigger publish
 
-    // We use exponential backoff with randomness. 30 should be more than enough.
-    for (int i = 0; i < 30; ++i) {
+    // With exponential backoff, starting at 5ms we should have no more than 11 retries
+    for (int i = 0; i < 11; ++i) {
       testPublisherServiceImpl.addPublishError(new FakeException());
     }
     ListenableFuture<String> publishFuture1 = sendTestMessage(publisher, "A");
@@ -604,6 +604,13 @@ public class PublisherImplTest {
     return Publisher.Builder.newBuilder(TEST_TOPIC)
         .setCredentials(testCredentials)
         .setExecutorProvider(FixedExecutorProvider.create(fakeExecutor))
-        .setChannelBuilder(testChannelBuilder);
+        .setChannelBuilder(testChannelBuilder)
+        .setLongRandom(
+            new Publisher.LongRandom() {
+              @Override
+              public long nextLong(long least, long bound) {
+                return bound - 1;
+              }
+            });
   }
 }

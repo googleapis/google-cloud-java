@@ -458,8 +458,8 @@ public class Subscriber extends AbstractService {
     /**
      * Set acknowledgement expiration padding.
      *
-     * <p>This is the time accounted before a message expiration is to happen, so the
-     * {@link Subscriber} is able to send an ack extension beforehand.
+     * <p>This is the time accounted before a message expiration is to happen, so the {@link
+     * Subscriber} is able to send an ack extension beforehand.
      *
      * <p>This padding duration is configurable so you can account for network latency. A reasonable
      * number must be provided so messages don't expire because of network latency between when the
