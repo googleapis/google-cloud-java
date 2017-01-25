@@ -44,9 +44,8 @@ import io.grpc.internal.ServerImpl;
 import io.grpc.stub.StreamObserver;
 import java.util.concurrent.ExecutionException;
 import org.joda.time.Duration;
-import org.junit.AfterClass;
+import org.junit.After;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -64,7 +63,7 @@ public class PublisherImplTest {
   private static final ExecutorProvider SINGLE_THREAD_EXECUTOR =
       InstantiatingExecutorProvider.newBuilder().setExecutorThreadCount(1).build();
 
-  private static InProcessChannelBuilder testChannelBuilder;
+  private InProcessChannelBuilder testChannelBuilder;
 
   @Captor private ArgumentCaptor<PublishRequest> requestCaptor;
 
@@ -72,12 +71,14 @@ public class PublisherImplTest {
 
   private FakeCredentials testCredentials;
 
-  private static FakePublisherServiceImpl testPublisherServiceImpl;
+  private FakePublisherServiceImpl testPublisherServiceImpl;
 
-  private static ServerImpl testServer;
+  private ServerImpl testServer;
 
-  @BeforeClass
-  public static void setUpClass() throws Exception {
+  class FakeException extends Exception {}
+
+  @Before
+  public void setUp() throws Exception {
     testPublisherServiceImpl = Mockito.spy(new FakePublisherServiceImpl());
 
     InProcessServerBuilder serverBuilder = InProcessServerBuilder.forName("test-server");
@@ -86,10 +87,7 @@ public class PublisherImplTest {
     serverBuilder.addService(testPublisherServiceImpl);
     testServer = serverBuilder.build();
     testServer.start();
-  }
 
-  @Before
-  public void setUp() throws Exception {
     MockitoAnnotations.initMocks(this);
     testPublisherServiceImpl.reset();
     Mockito.reset(testPublisherServiceImpl);
@@ -97,8 +95,8 @@ public class PublisherImplTest {
     testCredentials = new FakeCredentials();
   }
 
-  @AfterClass
-  public static void tearDownClass() throws Exception {
+  @After
+  public void tearDown() throws Exception {
     testServer.shutdownNow().awaitTermination();
   }
 
@@ -272,10 +270,10 @@ public class PublisherImplTest {
                     .build())
             .build(); // To demonstrate that reaching duration will trigger publish
 
-    ListenableFuture<String> publishFuture1 = sendTestMessage(publisher, "A");
-
     testPublisherServiceImpl.addPublishError(new Throwable("Transiently failing"));
     testPublisherServiceImpl.addPublishResponse(PublishResponse.newBuilder().addMessageIds("1"));
+
+    ListenableFuture<String> publishFuture1 = sendTestMessage(publisher, "A");
 
     assertEquals("1", publishFuture1.get());
 
@@ -284,7 +282,6 @@ public class PublisherImplTest {
     publisher.shutdown();
   }
 
-  @Test(expected = Throwable.class)
   public void testPublishFailureRetries_exceededsRetryDuration() throws Exception {
     Publisher publisher =
         getTestPublisherBuilder()
@@ -302,15 +299,18 @@ public class PublisherImplTest {
                     .build())
             .build(); // To demonstrate that reaching duration will trigger publish
 
-    ListenableFuture<String> publishFuture1 = sendTestMessage(publisher, "A");
-
     // With exponential backoff, starting at 5ms we should have no more than 11 retries
     for (int i = 0; i < 11; ++i) {
-      testPublisherServiceImpl.addPublishError(new Throwable("Transiently failing"));
+      testPublisherServiceImpl.addPublishError(new FakeException());
     }
+    ListenableFuture<String> publishFuture1 = sendTestMessage(publisher, "A");
 
     try {
       publishFuture1.get();
+    } catch (ExecutionException e) {
+      if (!(e.getCause() instanceof FakeException)) {
+        throw new IllegalStateException("unexpected exception", e);
+      }
     } finally {
       Mockito.verify(testPublisherServiceImpl, atLeast(10))
           .publish(Mockito.<PublishRequest>any(), Mockito.<StreamObserver<PublishResponse>>any());
@@ -336,9 +336,8 @@ public class PublisherImplTest {
                     .build())
             .build(); // To demonstrate that reaching duration will trigger publish
 
-    ListenableFuture<String> publishFuture1 = sendTestMessage(publisher, "A");
-
     testPublisherServiceImpl.addPublishError(new StatusException(Status.INVALID_ARGUMENT));
+    ListenableFuture<String> publishFuture1 = sendTestMessage(publisher, "A");
 
     try {
       publishFuture1.get();
@@ -605,6 +604,13 @@ public class PublisherImplTest {
     return Publisher.Builder.newBuilder(TEST_TOPIC)
         .setCredentials(testCredentials)
         .setExecutorProvider(FixedExecutorProvider.create(fakeExecutor))
-        .setChannelBuilder(testChannelBuilder);
+        .setChannelBuilder(testChannelBuilder)
+        .setLongRandom(
+            new Publisher.LongRandom() {
+              @Override
+              public long nextLong(long least, long bound) {
+                return bound - 1;
+              }
+            });
   }
 }
