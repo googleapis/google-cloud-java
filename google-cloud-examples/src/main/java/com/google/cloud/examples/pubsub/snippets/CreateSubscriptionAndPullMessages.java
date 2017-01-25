@@ -22,7 +22,6 @@ import com.google.cloud.pubsub.spi.v1.SubscriberClient;
 import com.google.common.util.concurrent.Futures;
 import com.google.common.util.concurrent.ListenableFuture;
 import com.google.common.util.concurrent.MoreExecutors;
-import com.google.common.util.concurrent.Service;
 import com.google.pubsub.v1.PubsubMessage;
 import com.google.pubsub.v1.PushConfig;
 import com.google.pubsub.v1.SubscriptionName;
@@ -52,7 +51,7 @@ public class CreateSubscriptionAndPullMessages {
         };
     Subscriber subscriber = null;
     try {
-      subscriber = Subscriber.Builder.newBuilder(subscription, receiver).build();
+      subscriber = Subscriber.newBuilder(subscription, receiver).build();
       subscriber.addListener(
           new Subscriber.SubscriberListener() {
             @Override

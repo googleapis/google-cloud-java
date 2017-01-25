@@ -29,7 +29,6 @@ import com.google.common.base.Optional;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import com.google.common.util.concurrent.ListenableFuture;
-import com.google.common.util.concurrent.Service.State;
 import com.google.common.util.concurrent.SettableFuture;
 import com.google.pubsub.v1.PubsubMessage;
 import com.google.pubsub.v1.PullResponse;
@@ -467,7 +466,7 @@ public class SubscriberImplTest {
   }
 
   private Builder getTestSubscriberBuilder(MessageReceiver receiver) {
-    return Subscriber.Builder.newBuilder(TEST_SUBSCRIPTION, receiver)
+    return Subscriber.newBuilder(TEST_SUBSCRIPTION, receiver)
         .setExecutorProvider(FixedExecutorProvider.create(fakeExecutor))
         .setCredentials(testCredentials)
         .setChannelBuilder(testChannelBuilder)
