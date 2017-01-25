@@ -123,7 +123,7 @@ public class Publisher {
   private static final Logger logger = LoggerFactory.getLogger(Publisher.class);
 
   private final TopicName topicName;
-  private final String topic;
+  private final String cachedTopicNameString;
 
   private final BundlingSettings bundlingSettings;
   private final RetrySettings retrySettings;
@@ -151,7 +151,7 @@ public class Publisher {
 
   private Publisher(Builder builder) throws IOException {
     topicName = builder.topicName;
-    topic = topicName.toString();
+    cachedTopicNameString = topicName.toString();
 
     this.bundlingSettings = builder.bundlingSettings;
     this.retrySettings = builder.retrySettings;
@@ -335,7 +335,7 @@ public class Publisher {
 
   private void publishOutstandingBundle(final OutstandingBundle outstandingBundle) {
     PublishRequest.Builder publishRequest = PublishRequest.newBuilder();
-    publishRequest.setTopic(topic);
+    publishRequest.setTopic(cachedTopicNameString);
     for (OutstandingPublish outstandingPublish : outstandingBundle.outstandingPublishes) {
       publishRequest.addMessages(outstandingPublish.message);
     }
@@ -529,7 +529,7 @@ public class Publisher {
   interface LongRandom {
     long nextLong(long least, long bound);
   }
-  
+
   /** Constructs a new {@link Builder} using the given topic. */
   public static Builder newBuilder(TopicName topicName) {
     return new Builder(topicName);

@@ -264,7 +264,7 @@ public class Subscriber {
     private static final Logger logger = LoggerFactory.getLogger(Subscriber.class);
 
     private final SubscriptionName subscriptionName;
-    private final String subscription;
+    private final String cachedSubscriptionNameString;
     private final FlowController.Settings flowControlSettings;
     private final Duration ackExpirationPadding;
     private final ScheduledExecutorService executor;
@@ -286,7 +286,7 @@ public class Subscriber {
       receiver = builder.receiver;
       flowControlSettings = builder.flowControlSettings;
       subscriptionName = builder.subscriptionName;
-      subscription = subscriptionName.toString();
+      cachedSubscriptionNameString = subscriptionName.toString();
       ackExpirationPadding = builder.ackExpirationPadding;
       streamAckDeadlineSeconds =
           Math.max(
@@ -356,7 +356,7 @@ public class Subscriber {
         for (int i = 0; i < numChannels; i++) {
           streamingSubscriberConnections.add(
               new StreamingSubscriberConnection(
-                  subscription,
+                  cachedSubscriptionNameString,
                   credentials,
                   receiver,
                   ackExpirationPadding,
@@ -428,7 +428,7 @@ public class Subscriber {
         for (int i = 0; i < numChannels; i++) {
           pollingSubscriberConnections.add(
               new PollingSubscriberConnection(
-                  subscription,
+                  cachedSubscriptionNameString,
                   credentials,
                   receiver,
                   ackExpirationPadding,
