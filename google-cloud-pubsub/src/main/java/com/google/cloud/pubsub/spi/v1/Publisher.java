@@ -23,6 +23,7 @@ import com.google.api.gax.grpc.ExecutorProvider;
 import com.google.api.gax.grpc.InstantiatingExecutorProvider;
 import com.google.auth.Credentials;
 import com.google.auth.oauth2.GoogleCredentials;
+import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Optional;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
@@ -126,6 +127,7 @@ public class Publisher {
 
   private final BundlingSettings bundlingSettings;
   private final RetrySettings retrySettings;
+  private final LongRandom longRandom;
 
   private final FlowController.Settings flowControlSettings;
   private final boolean failOnFlowControlLimits;
@@ -153,6 +155,7 @@ public class Publisher {
 
     this.bundlingSettings = builder.bundlingSettings;
     this.retrySettings = builder.retrySettings;
+    this.longRandom = builder.longRandom;
 
     flowControlSettings = builder.flowControlSettings;
     failOnFlowControlLimits = builder.failOnFlowControlLimits;
@@ -382,7 +385,8 @@ public class Publisher {
 
           @Override
           public void onFailure(Throwable t) {
-            long nextBackoffDelay = computeNextBackoffDelayMs(outstandingBundle, retrySettings);
+            long nextBackoffDelay =
+                computeNextBackoffDelayMs(outstandingBundle, retrySettings, longRandom);
 
             if (!isRetryable(t)
                 || System.currentTimeMillis() + nextBackoffDelay
@@ -496,14 +500,14 @@ public class Publisher {
   }
 
   private static long computeNextBackoffDelayMs(
-      OutstandingBundle outstandingBundle, RetrySettings retrySettings) {
+      OutstandingBundle outstandingBundle, RetrySettings retrySettings, LongRandom longRandom) {
     long delayMillis =
         Math.round(
             retrySettings.getInitialRetryDelay().getMillis()
                 * Math.pow(retrySettings.getRetryDelayMultiplier(), outstandingBundle.attempt - 1));
     delayMillis = Math.min(retrySettings.getMaxRetryDelay().getMillis(), delayMillis);
     outstandingBundle.attempt++;
-    return ThreadLocalRandom.current().nextLong(0, delayMillis);
+    return longRandom.nextLong(0, delayMillis);
   }
 
   private boolean isRetryable(Throwable t) {
@@ -522,6 +526,10 @@ public class Publisher {
     }
   }
 
+  interface LongRandom {
+    long nextLong(long least, long bound);
+  }
+  
   /** Constructs a new {@link Builder} using the given topic. */
   public static Builder newBuilder(TopicName topicName) {
     return new Builder(topicName);
@@ -554,6 +562,13 @@ public class Publisher {
             .setRpcTimeoutMultiplier(2)
             .setMaxRpcTimeout(DEFAULT_RPC_TIMEOUT)
             .build();
+    static final LongRandom DEFAULT_LONG_RANDOM =
+        new LongRandom() {
+          @Override
+          public long nextLong(long least, long bound) {
+            return ThreadLocalRandom.current().nextLong(least, bound);
+          }
+        };
 
     private static final int THREADS_PER_CPU = 5;
     static final ExecutorProvider DEFAULT_EXECUTOR_PROVIDER =
@@ -571,6 +586,7 @@ public class Publisher {
     boolean failOnFlowControlLimits = false;
 
     RetrySettings retrySettings = DEFAULT_RETRY_SETTINGS;
+    LongRandom longRandom = DEFAULT_LONG_RANDOM;
 
     // Channels and credentials
     Optional<Credentials> userCredentials = Optional.absent();
@@ -658,6 +674,12 @@ public class Publisher {
       Preconditions.checkArgument(
           retrySettings.getInitialRpcTimeout().compareTo(MIN_RPC_TIMEOUT) >= 0);
       this.retrySettings = retrySettings;
+      return this;
+    }
+
+    @VisibleForTesting
+    Builder setLongRandom(LongRandom longRandom) {
+      this.longRandom = Preconditions.checkNotNull(longRandom);
       return this;
     }
 
