@@ -25,6 +25,7 @@ import static org.mockito.Mockito.times;
 
 import com.google.api.gax.bundling.FlowController;
 import com.google.api.gax.grpc.BundlingSettings;
+import com.google.api.gax.grpc.ChannelProvider;
 import com.google.api.gax.grpc.ExecutorProvider;
 import com.google.api.gax.grpc.FixedExecutorProvider;
 import com.google.api.gax.grpc.InstantiatingExecutorProvider;
@@ -36,6 +37,7 @@ import com.google.pubsub.v1.PublishRequest;
 import com.google.pubsub.v1.PublishResponse;
 import com.google.pubsub.v1.PubsubMessage;
 import com.google.pubsub.v1.TopicName;
+import io.grpc.ManagedChannel;
 import io.grpc.Status;
 import io.grpc.StatusException;
 import io.grpc.inprocess.InProcessChannelBuilder;
@@ -43,6 +45,7 @@ import io.grpc.inprocess.InProcessServerBuilder;
 import io.grpc.internal.ServerImpl;
 import io.grpc.stub.StreamObserver;
 import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Executor;
 import org.joda.time.Duration;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -64,13 +67,32 @@ public class PublisherImplTest {
   private static final ExecutorProvider SINGLE_THREAD_EXECUTOR =
       InstantiatingExecutorProvider.newBuilder().setExecutorThreadCount(1).build();
 
-  private static InProcessChannelBuilder testChannelBuilder;
+  private static final ChannelProvider TEST_CHANNEL_PROVIDER =
+      new ChannelProvider() {
+        @Override
+        public boolean shouldAutoClose() {
+          return true;
+        }
+
+        @Override
+        public boolean needsExecutor() {
+          return false;
+        }
+
+        @Override
+        public ManagedChannel getChannel() {
+          return InProcessChannelBuilder.forName("test-server").build();
+        }
+
+        @Override
+        public ManagedChannel getChannel(Executor executor) {
+          throw new IllegalArgumentException("testChannelprovider doesn't need an executor");
+        }
+      };
 
   @Captor private ArgumentCaptor<PublishRequest> requestCaptor;
 
   private FakeScheduledExecutorService fakeExecutor;
-
-  private FakeCredentials testCredentials;
 
   private static FakePublisherServiceImpl testPublisherServiceImpl;
 
@@ -81,8 +103,6 @@ public class PublisherImplTest {
     testPublisherServiceImpl = Mockito.spy(new FakePublisherServiceImpl());
 
     InProcessServerBuilder serverBuilder = InProcessServerBuilder.forName("test-server");
-    testChannelBuilder = InProcessChannelBuilder.forName("test-server");
-    InProcessChannelBuilder.forName("publisher_test");
     serverBuilder.addService(testPublisherServiceImpl);
     testServer = serverBuilder.build();
     testServer.start();
@@ -94,7 +114,6 @@ public class PublisherImplTest {
     testPublisherServiceImpl.reset();
     Mockito.reset(testPublisherServiceImpl);
     fakeExecutor = new FakeScheduledExecutorService();
-    testCredentials = new FakeCredentials();
   }
 
   @AfterClass
@@ -351,11 +370,8 @@ public class PublisherImplTest {
 
   @Test
   public void testPublisherGetters() throws Exception {
-    FakeCredentials credentials = new FakeCredentials();
-
     Publisher.Builder builder = Publisher.Builder.newBuilder(TEST_TOPIC);
-    builder.setChannelBuilder(testChannelBuilder);
-    builder.setCredentials(credentials);
+    builder.setChannelProvider(TEST_CHANNEL_PROVIDER);
     builder.setExecutorProvider(SINGLE_THREAD_EXECUTOR);
     builder.setFailOnFlowControlLimits(true);
     builder.setBundlingSettings(
@@ -387,7 +403,6 @@ public class PublisherImplTest {
   public void testBuilderParametersAndDefaults() {
     Publisher.Builder builder = Publisher.Builder.newBuilder(TEST_TOPIC);
     assertEquals(TEST_TOPIC.toString(), builder.topic);
-    assertEquals(Optional.absent(), builder.channelBuilder);
     assertEquals(Publisher.Builder.DEFAULT_EXECUTOR_PROVIDER, builder.executorProvider);
     assertFalse(builder.failOnFlowControlLimits);
     assertEquals(
@@ -400,7 +415,6 @@ public class PublisherImplTest {
         builder.bundlingSettings.getElementCountThreshold().longValue());
     assertEquals(FlowController.Settings.DEFAULT, builder.flowControlSettings);
     assertEquals(Publisher.Builder.DEFAULT_RETRY_SETTINGS, builder.retrySettings);
-    assertEquals(Optional.absent(), builder.userCredentials);
   }
 
   @Test
@@ -408,14 +422,7 @@ public class PublisherImplTest {
     Publisher.Builder builder = Publisher.Builder.newBuilder(TEST_TOPIC);
 
     try {
-      builder.setChannelBuilder(null);
-      fail("Should have thrown an IllegalArgumentException");
-    } catch (NullPointerException expected) {
-      // Expected
-    }
-
-    try {
-      builder.setCredentials(null);
+      builder.setChannelProvider(null);
       fail("Should have thrown an IllegalArgumentException");
     } catch (NullPointerException expected) {
       // Expected
@@ -603,8 +610,7 @@ public class PublisherImplTest {
 
   private Builder getTestPublisherBuilder() {
     return Publisher.Builder.newBuilder(TEST_TOPIC)
-        .setCredentials(testCredentials)
         .setExecutorProvider(FixedExecutorProvider.create(fakeExecutor))
-        .setChannelBuilder(testChannelBuilder);
+        .setChannelProvider(TEST_CHANNEL_PROVIDER);
   }
 }

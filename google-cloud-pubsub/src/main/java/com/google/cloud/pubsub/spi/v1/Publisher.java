@@ -19,11 +19,10 @@ package com.google.cloud.pubsub.spi.v1;
 import com.google.api.gax.bundling.FlowController;
 import com.google.api.gax.core.RetrySettings;
 import com.google.api.gax.grpc.BundlingSettings;
+import com.google.api.gax.grpc.ChannelProvider;
 import com.google.api.gax.grpc.ExecutorProvider;
 import com.google.api.gax.grpc.InstantiatingExecutorProvider;
-import com.google.auth.Credentials;
 import com.google.auth.oauth2.GoogleCredentials;
-import com.google.common.base.Optional;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import com.google.common.util.concurrent.FutureCallback;
@@ -35,14 +34,8 @@ import com.google.pubsub.v1.PublishResponse;
 import com.google.pubsub.v1.PublisherGrpc;
 import com.google.pubsub.v1.PubsubMessage;
 import com.google.pubsub.v1.TopicName;
-import io.grpc.CallCredentials;
-import io.grpc.Channel;
-import io.grpc.ManagedChannelBuilder;
+import io.grpc.ManagedChannel;
 import io.grpc.Status;
-import io.grpc.auth.MoreCallCredentials;
-import io.grpc.netty.GrpcSslContexts;
-import io.grpc.netty.NegotiationType;
-import io.grpc.netty.NettyChannelBuilder;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -136,9 +129,8 @@ public class Publisher {
   private final AtomicBoolean activeAlarm;
 
   private final FlowController flowController;
-  private final Channel[] channels;
+  private final ManagedChannel[] channels;
   private final AtomicRoundRobin channelIndex;
-  private final CallCredentials credentials;
 
   private final ScheduledExecutorService executor;
   private final AtomicBoolean shutdown;
@@ -159,37 +151,35 @@ public class Publisher {
     messagesBundle = new LinkedList<>();
     messagesBundleLock = new ReentrantLock();
     activeAlarm = new AtomicBoolean(false);
-    int numCores = Math.max(1, Runtime.getRuntime().availableProcessors());
     executor = builder.executorProvider.getExecutor();
     if (builder.executorProvider.shouldAutoClose()) {
       closeables.add(
           new AutoCloseable() {
             @Override
-            public void close() throws IOException {
+            public void close() {
               executor.shutdown();
             }
           });
     }
-    channels = new Channel[numCores];
-    channelIndex = new AtomicRoundRobin(channels.length);
-    for (int i = 0; i < numCores; i++) {
+    channels = new ManagedChannel[Runtime.getRuntime().availableProcessors()];
+    for (int i = 0; i < channels.length; i++) {
       channels[i] =
-          builder.channelBuilder.isPresent()
-              ? builder.channelBuilder.get().build()
-              : NettyChannelBuilder.forAddress(
-                      PublisherSettings.getDefaultServiceAddress(),
-                      PublisherSettings.getDefaultServicePort())
-                  .negotiationType(NegotiationType.TLS)
-                  .sslContext(GrpcSslContexts.forClient().ciphers(null).build())
-                  .executor(executor)
-                  .build();
+          builder.channelProvider.needsExecutor()
+              ? builder.channelProvider.getChannel(executor)
+              : builder.channelProvider.getChannel();
     }
-    credentials =
-        MoreCallCredentials.from(
-            builder.userCredentials.isPresent()
-                ? builder.userCredentials.get()
-                : GoogleCredentials.getApplicationDefault()
-                    .createScoped(PublisherSettings.getDefaultServiceScopes()));
+    if (builder.channelProvider.shouldAutoClose()) {
+      closeables.add(
+          new AutoCloseable() {
+            @Override
+            public void close() {
+              for (int i = 0; i < channels.length; i++) {
+                channels[i].shutdown();
+              }
+            }
+          });
+    }
+    channelIndex = new AtomicRoundRobin(channels.length);
     shutdown = new AtomicBoolean(false);
     messagesWaiter = new MessagesWaiter();
   }
@@ -345,7 +335,6 @@ public class Publisher {
 
     Futures.addCallback(
         PublisherGrpc.newFutureStub(channels[currentChannel])
-            .withCallCredentials(credentials)
             .withDeadlineAfter(rpcTimeoutMs, TimeUnit.MILLISECONDS)
             .publish(publishRequest.build()),
         new FutureCallback<PublishResponse>() {
@@ -565,11 +554,7 @@ public class Publisher {
 
     RetrySettings retrySettings = DEFAULT_RETRY_SETTINGS;
 
-    // Channels and credentials
-    Optional<Credentials> userCredentials = Optional.absent();
-    Optional<ManagedChannelBuilder<? extends ManagedChannelBuilder<?>>> channelBuilder =
-        Optional.absent();
-
+    ChannelProvider channelProvider = PublisherSettings.defaultChannelProviderBuilder().build();
     ExecutorProvider executorProvider = DEFAULT_EXECUTOR_PROVIDER;
 
     /** Constructs a new {@link Builder} using the given topic. */
@@ -582,25 +567,12 @@ public class Publisher {
     }
 
     /**
-     * Credentials to authenticate with.
-     *
-     * <p>Must be properly scoped for accessing Cloud Pub/Sub APIs.
-     */
-    public Builder setCredentials(Credentials userCredentials) {
-      this.userCredentials = Optional.of(Preconditions.checkNotNull(userCredentials));
-      return this;
-    }
-
-    /**
-     * ManagedChannelBuilder to use to create Channels.
+     * ChannelProvider to use to create Channels.
      *
      * <p>Must point at Cloud Pub/Sub endpoint.
      */
-    public Builder setChannelBuilder(
-        ManagedChannelBuilder<? extends ManagedChannelBuilder<?>> channelBuilder) {
-      this.channelBuilder =
-          Optional.<ManagedChannelBuilder<? extends ManagedChannelBuilder<?>>>of(
-              Preconditions.checkNotNull(channelBuilder));
+    public Builder setChannelProvider(ChannelProvider channelProvider) {
+      this.channelProvider = Preconditions.checkNotNull(channelProvider);
       return this;
     }
 
