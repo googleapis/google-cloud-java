@@ -40,7 +40,7 @@ public class CreateTopicAndPublishMessages {
 
     Publisher publisher = null;
     try {
-      publisher = Publisher.Builder.newBuilder(topic).build();
+      publisher = Publisher.newBuilder(topic).build();
       List<String> messages = Arrays.asList("first message", "second message");
       List<ListenableFuture<String>> messageIds = new ArrayList<>();
       for (String message : messages) {

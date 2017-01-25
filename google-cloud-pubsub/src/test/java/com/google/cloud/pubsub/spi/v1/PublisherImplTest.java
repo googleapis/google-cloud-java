@@ -47,9 +47,8 @@ import io.grpc.stub.StreamObserver;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executor;
 import org.joda.time.Duration;
-import org.junit.AfterClass;
+import org.junit.After;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -94,30 +93,31 @@ public class PublisherImplTest {
 
   private FakeScheduledExecutorService fakeExecutor;
 
-  private static FakePublisherServiceImpl testPublisherServiceImpl;
+  private FakeCredentials testCredentials;
 
-  private static ServerImpl testServer;
+  private FakePublisherServiceImpl testPublisherServiceImpl;
 
-  @BeforeClass
-  public static void setUpClass() throws Exception {
+  private ServerImpl testServer;
+
+  class FakeException extends Exception {}
+
+  @Before
+  public void setUp() throws Exception {
     testPublisherServiceImpl = Mockito.spy(new FakePublisherServiceImpl());
 
     InProcessServerBuilder serverBuilder = InProcessServerBuilder.forName("test-server");
     serverBuilder.addService(testPublisherServiceImpl);
     testServer = serverBuilder.build();
     testServer.start();
-  }
 
-  @Before
-  public void setUp() throws Exception {
     MockitoAnnotations.initMocks(this);
     testPublisherServiceImpl.reset();
     Mockito.reset(testPublisherServiceImpl);
     fakeExecutor = new FakeScheduledExecutorService();
   }
 
-  @AfterClass
-  public static void tearDownClass() throws Exception {
+  @After
+  public void tearDown() throws Exception {
     testServer.shutdownNow().awaitTermination();
   }
 
@@ -291,10 +291,10 @@ public class PublisherImplTest {
                     .build())
             .build(); // To demonstrate that reaching duration will trigger publish
 
-    ListenableFuture<String> publishFuture1 = sendTestMessage(publisher, "A");
-
     testPublisherServiceImpl.addPublishError(new Throwable("Transiently failing"));
     testPublisherServiceImpl.addPublishResponse(PublishResponse.newBuilder().addMessageIds("1"));
+
+    ListenableFuture<String> publishFuture1 = sendTestMessage(publisher, "A");
 
     assertEquals("1", publishFuture1.get());
 
@@ -303,7 +303,6 @@ public class PublisherImplTest {
     publisher.shutdown();
   }
 
-  @Test(expected = Throwable.class)
   public void testPublishFailureRetries_exceededsRetryDuration() throws Exception {
     Publisher publisher =
         getTestPublisherBuilder()
@@ -321,15 +320,18 @@ public class PublisherImplTest {
                     .build())
             .build(); // To demonstrate that reaching duration will trigger publish
 
-    ListenableFuture<String> publishFuture1 = sendTestMessage(publisher, "A");
-
     // With exponential backoff, starting at 5ms we should have no more than 11 retries
     for (int i = 0; i < 11; ++i) {
-      testPublisherServiceImpl.addPublishError(new Throwable("Transiently failing"));
+      testPublisherServiceImpl.addPublishError(new FakeException());
     }
+    ListenableFuture<String> publishFuture1 = sendTestMessage(publisher, "A");
 
     try {
       publishFuture1.get();
+    } catch (ExecutionException e) {
+      if (!(e.getCause() instanceof FakeException)) {
+        throw new IllegalStateException("unexpected exception", e);
+      }
     } finally {
       Mockito.verify(testPublisherServiceImpl, atLeast(10))
           .publish(Mockito.<PublishRequest>any(), Mockito.<StreamObserver<PublishResponse>>any());
@@ -355,9 +357,8 @@ public class PublisherImplTest {
                     .build())
             .build(); // To demonstrate that reaching duration will trigger publish
 
-    ListenableFuture<String> publishFuture1 = sendTestMessage(publisher, "A");
-
     testPublisherServiceImpl.addPublishError(new StatusException(Status.INVALID_ARGUMENT));
+    ListenableFuture<String> publishFuture1 = sendTestMessage(publisher, "A");
 
     try {
       publishFuture1.get();
@@ -370,7 +371,7 @@ public class PublisherImplTest {
 
   @Test
   public void testPublisherGetters() throws Exception {
-    Publisher.Builder builder = Publisher.Builder.newBuilder(TEST_TOPIC);
+    Publisher.Builder builder = Publisher.newBuilder(TEST_TOPIC);
     builder.setChannelProvider(TEST_CHANNEL_PROVIDER);
     builder.setExecutorProvider(SINGLE_THREAD_EXECUTOR);
     builder.setFailOnFlowControlLimits(true);
@@ -387,7 +388,7 @@ public class PublisherImplTest {
             .build());
     Publisher publisher = builder.build();
 
-    assertEquals(TEST_TOPIC.toString(), publisher.getTopic());
+    assertEquals(TEST_TOPIC, publisher.getTopicName());
     assertEquals(10, (long) publisher.getBundlingSettings().getRequestByteThreshold());
     assertEquals(new Duration(11), publisher.getBundlingSettings().getDelayThreshold());
     assertEquals(12, (long) publisher.getBundlingSettings().getElementCountThreshold());
@@ -401,8 +402,8 @@ public class PublisherImplTest {
 
   @Test
   public void testBuilderParametersAndDefaults() {
-    Publisher.Builder builder = Publisher.Builder.newBuilder(TEST_TOPIC);
-    assertEquals(TEST_TOPIC.toString(), builder.topic);
+    Publisher.Builder builder = Publisher.newBuilder(TEST_TOPIC);
+    assertEquals(TEST_TOPIC, builder.topicName);
     assertEquals(Publisher.Builder.DEFAULT_EXECUTOR_PROVIDER, builder.executorProvider);
     assertFalse(builder.failOnFlowControlLimits);
     assertEquals(
@@ -419,7 +420,7 @@ public class PublisherImplTest {
 
   @Test
   public void testBuilderInvalidArguments() {
-    Publisher.Builder builder = Publisher.Builder.newBuilder(TEST_TOPIC);
+    Publisher.Builder builder = Publisher.newBuilder(TEST_TOPIC);
 
     try {
       builder.setChannelProvider(null);
@@ -609,8 +610,15 @@ public class PublisherImplTest {
   }
 
   private Builder getTestPublisherBuilder() {
-    return Publisher.Builder.newBuilder(TEST_TOPIC)
+    return Publisher.newBuilder(TEST_TOPIC)
         .setExecutorProvider(FixedExecutorProvider.create(fakeExecutor))
-        .setChannelProvider(TEST_CHANNEL_PROVIDER);
+        .setChannelProvider(TEST_CHANNEL_PROVIDER)
+        .setLongRandom(
+            new Publisher.LongRandom() {
+              @Override
+              public long nextLong(long least, long bound) {
+                return bound - 1;
+              }
+            });
   }
 }

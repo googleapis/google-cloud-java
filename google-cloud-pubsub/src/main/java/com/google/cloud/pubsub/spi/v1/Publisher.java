@@ -23,6 +23,8 @@ import com.google.api.gax.grpc.ChannelProvider;
 import com.google.api.gax.grpc.ExecutorProvider;
 import com.google.api.gax.grpc.InstantiatingExecutorProvider;
 import com.google.auth.oauth2.GoogleCredentials;
+import com.google.common.annotations.VisibleForTesting;
+import com.google.common.base.Optional;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import com.google.common.util.concurrent.FutureCallback;
@@ -75,7 +77,7 @@ import org.slf4j.LoggerFactory;
  *
  * <pre><code>
  *  Publisher publisher =
- *       Publisher.Builder.newBuilder(MY_TOPIC)
+ *       Publisher.newBuilder(MY_TOPIC)
  *           .setMaxBundleDuration(new Duration(10 * 1000))
  *           .build();
  *  List&lt;ListenableFuture&lt;String&gt;&gt; results = new ArrayList&lt;&gt;();
@@ -114,10 +116,12 @@ public class Publisher {
 
   private static final Logger logger = LoggerFactory.getLogger(Publisher.class);
 
-  private final String topic;
+  private final TopicName topicName;
+  private final String cachedTopicNameString;
 
   private final BundlingSettings bundlingSettings;
   private final RetrySettings retrySettings;
+  private final LongRandom longRandom;
 
   private final FlowController.Settings flowControlSettings;
   private final boolean failOnFlowControlLimits;
@@ -139,10 +143,12 @@ public class Publisher {
   private ScheduledFuture<?> currentAlarmFuture;
 
   private Publisher(Builder builder) throws IOException {
-    topic = builder.topic;
+    topicName = builder.topicName;
+    cachedTopicNameString = topicName.toString();
 
     this.bundlingSettings = builder.bundlingSettings;
     this.retrySettings = builder.retrySettings;
+    this.longRandom = builder.longRandom;
 
     flowControlSettings = builder.flowControlSettings;
     failOnFlowControlLimits = builder.failOnFlowControlLimits;
@@ -185,8 +191,8 @@ public class Publisher {
   }
 
   /** Topic which the publisher publishes to. */
-  public String getTopic() {
-    return topic;
+  public TopicName getTopicName() {
+    return topicName;
   }
 
   /**
@@ -320,7 +326,7 @@ public class Publisher {
 
   private void publishOutstandingBundle(final OutstandingBundle outstandingBundle) {
     PublishRequest.Builder publishRequest = PublishRequest.newBuilder();
-    publishRequest.setTopic(topic);
+    publishRequest.setTopic(cachedTopicNameString);
     for (OutstandingPublish outstandingPublish : outstandingBundle.outstandingPublishes) {
       publishRequest.addMessages(outstandingPublish.message);
     }
@@ -369,7 +375,8 @@ public class Publisher {
 
           @Override
           public void onFailure(Throwable t) {
-            long nextBackoffDelay = computeNextBackoffDelayMs(outstandingBundle, retrySettings);
+            long nextBackoffDelay =
+                computeNextBackoffDelayMs(outstandingBundle, retrySettings, longRandom);
 
             if (!isRetryable(t)
                 || System.currentTimeMillis() + nextBackoffDelay
@@ -483,14 +490,14 @@ public class Publisher {
   }
 
   private static long computeNextBackoffDelayMs(
-      OutstandingBundle outstandingBundle, RetrySettings retrySettings) {
+      OutstandingBundle outstandingBundle, RetrySettings retrySettings, LongRandom longRandom) {
     long delayMillis =
         Math.round(
             retrySettings.getInitialRetryDelay().getMillis()
                 * Math.pow(retrySettings.getRetryDelayMultiplier(), outstandingBundle.attempt - 1));
     delayMillis = Math.min(retrySettings.getMaxRetryDelay().getMillis(), delayMillis);
     outstandingBundle.attempt++;
-    return ThreadLocalRandom.current().nextLong(0, delayMillis);
+    return longRandom.nextLong(0, delayMillis);
   }
 
   private boolean isRetryable(Throwable t) {
@@ -507,6 +514,15 @@ public class Publisher {
       default:
         return false;
     }
+  }
+
+  interface LongRandom {
+    long nextLong(long least, long bound);
+  }
+
+  /** Constructs a new {@link Builder} using the given topic. */
+  public static Builder newBuilder(TopicName topicName) {
+    return new Builder(topicName);
   }
 
   /** A builder of {@link Publisher}s. */
@@ -536,6 +552,13 @@ public class Publisher {
             .setRpcTimeoutMultiplier(2)
             .setMaxRpcTimeout(DEFAULT_RPC_TIMEOUT)
             .build();
+    static final LongRandom DEFAULT_LONG_RANDOM =
+        new LongRandom() {
+          @Override
+          public long nextLong(long least, long bound) {
+            return ThreadLocalRandom.current().nextLong(least, bound);
+          }
+        };
 
     private static final int THREADS_PER_CPU = 5;
     static final ExecutorProvider DEFAULT_EXECUTOR_PROVIDER =
@@ -543,7 +566,7 @@ public class Publisher {
             .setExecutorThreadCount(THREADS_PER_CPU * Runtime.getRuntime().availableProcessors())
             .build();
 
-    String topic;
+    TopicName topicName;
 
     // Bundling options
     BundlingSettings bundlingSettings = DEFAULT_BUNDLING_SETTINGS;
@@ -553,17 +576,13 @@ public class Publisher {
     boolean failOnFlowControlLimits = false;
 
     RetrySettings retrySettings = DEFAULT_RETRY_SETTINGS;
+    LongRandom longRandom = DEFAULT_LONG_RANDOM;
 
     ChannelProvider channelProvider = PublisherSettings.defaultChannelProviderBuilder().build();
     ExecutorProvider executorProvider = DEFAULT_EXECUTOR_PROVIDER;
 
-    /** Constructs a new {@link Builder} using the given topic. */
-    public static Builder newBuilder(TopicName topic) {
-      return new Builder(topic.toString());
-    }
-
-    Builder(String topic) {
-      this.topic = Preconditions.checkNotNull(topic);
+    private Builder(TopicName topic) {
+      this.topicName = Preconditions.checkNotNull(topic);
     }
 
     /**
@@ -628,6 +647,12 @@ public class Publisher {
       Preconditions.checkArgument(
           retrySettings.getInitialRpcTimeout().compareTo(MIN_RPC_TIMEOUT) >= 0);
       this.retrySettings = retrySettings;
+      return this;
+    }
+
+    @VisibleForTesting
+    Builder setLongRandom(LongRandom longRandom) {
+      this.longRandom = Preconditions.checkNotNull(longRandom);
       return this;
     }
 

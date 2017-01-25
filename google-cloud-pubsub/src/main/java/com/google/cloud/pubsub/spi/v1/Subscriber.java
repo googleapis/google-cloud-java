@@ -32,8 +32,6 @@ import com.google.common.util.concurrent.AbstractService;
 import com.google.common.util.concurrent.Service;
 import com.google.pubsub.v1.SubscriptionName;
 import io.grpc.ManagedChannelBuilder;
-import java.util.concurrent.Executor;
-import java.util.concurrent.TimeoutException;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import io.grpc.netty.GrpcSslContexts;
@@ -43,9 +41,11 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.Executor;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 import org.joda.time.Duration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -88,7 +88,7 @@ import org.slf4j.LoggerFactory;
  * }
  *
  * Subscriber subscriber =
- *     Subscriber.Builder.newBuilder(MY_SUBSCRIPTION, receiver)
+ *     Subscriber.newBuilder(MY_SUBSCRIPTION, receiver)
  *         .setMaxBundleAcks(100)
  *         .build();
  *
@@ -123,19 +123,33 @@ public class Subscriber {
     impl = new SubscriberImpl(builder);
   }
 
+  /**
+   * Constructs a new {@link Builder}.
+   *
+   * <p>Once {@link #build()} is called a gRPC stub will be created for use of the {@link
+   * Subscriber}.
+   *
+   * @param subscription Cloud Pub/Sub subscription to bind the subscriber to
+   * @param receiver an implementation of {@link MessageReceiver} used to process the received
+   *     messages
+   */
+  public static Builder newBuilder(SubscriptionName subscription, MessageReceiver receiver) {
+    return new Builder(subscription, receiver);
+  }
+
   /** Subscription which the subscriber is subscribed to. */
-  public String getSubscription() {
-    return impl.getSubscription();
+  public SubscriptionName getSubscriptionName() {
+    return impl.subscriptionName;
   }
 
   /** Acknowledgement expiration padding. See {@link Builder.setAckExpirationPadding}. */
   public Duration getAckExpirationPadding() {
-    return impl.getAckExpirationPadding();
+    return impl.ackExpirationPadding;
   }
 
   /** The flow control settings the Subscriber is configured with. */
   public FlowController.Settings getFlowControlSettings() {
-    return impl.getFlowControlSettings();
+    return impl.flowControlSettings;
   }
 
   public void addListener(final SubscriberListener listener, Executor executor) {
@@ -249,7 +263,8 @@ public class Subscriber {
   private static class SubscriberImpl extends AbstractService {
     private static final Logger logger = LoggerFactory.getLogger(Subscriber.class);
 
-    private final String subscription;
+    private final SubscriptionName subscriptionName;
+    private final String cachedSubscriptionNameString;
     private final FlowController.Settings flowControlSettings;
     private final Duration ackExpirationPadding;
     private final ScheduledExecutorService executor;
@@ -270,7 +285,8 @@ public class Subscriber {
     private SubscriberImpl(Builder builder) throws IOException {
       receiver = builder.receiver;
       flowControlSettings = builder.flowControlSettings;
-      subscription = builder.subscription;
+      subscriptionName = builder.subscriptionName;
+      cachedSubscriptionNameString = subscriptionName.toString();
       ackExpirationPadding = builder.ackExpirationPadding;
       streamAckDeadlineSeconds =
           Math.max(
@@ -340,7 +356,7 @@ public class Subscriber {
         for (int i = 0; i < numChannels; i++) {
           streamingSubscriberConnections.add(
               new StreamingSubscriberConnection(
-                  subscription,
+                  cachedSubscriptionNameString,
                   credentials,
                   receiver,
                   ackExpirationPadding,
@@ -412,7 +428,7 @@ public class Subscriber {
         for (int i = 0; i < numChannels; i++) {
           pollingSubscriberConnections.add(
               new PollingSubscriberConnection(
-                  subscription,
+                  cachedSubscriptionNameString,
                   credentials,
                   receiver,
                   ackExpirationPadding,
@@ -496,21 +512,6 @@ public class Subscriber {
         throw new IllegalStateException(e);
       }
     }
-
-    /** Subscription which the subscriber is subscribed to. */
-    public String getSubscription() {
-      return subscription;
-    }
-
-    /** Acknowledgement expiration padding. See {@link Builder.setAckExpirationPadding}. */
-    public Duration getAckExpirationPadding() {
-      return ackExpirationPadding;
-    }
-
-    /** The flow control settings the Subscriber is configured with. */
-    public FlowController.Settings getFlowControlSettings() {
-      return flowControlSettings;
-    }
   }
 
   /** Builder of {@link Subscriber Subscribers}. */
@@ -526,7 +527,7 @@ public class Subscriber {
                     * Runtime.getRuntime().availableProcessors())
             .build();
 
-    String subscription;
+    SubscriptionName subscriptionName;
     Optional<Credentials> credentials = Optional.absent();
     MessageReceiver receiver;
 
@@ -539,22 +540,8 @@ public class Subscriber {
         Optional.absent();
     Optional<Clock> clock = Optional.absent();
 
-    /**
-     * Constructs a new {@link Builder}.
-     *
-     * <p>Once {@link #build()} is called a gRPC stub will be created for use of the {@link
-     * Subscriber}.
-     *
-     * @param subscription Cloud Pub/Sub subscription to bind the subscriber to
-     * @param receiver an implementation of {@link MessageReceiver} used to process the received
-     *     messages
-     */
-    public static Builder newBuilder(SubscriptionName subscription, MessageReceiver receiver) {
-      return new Builder(subscription.toString(), receiver);
-    }
-
-    Builder(String subscription, MessageReceiver receiver) {
-      this.subscription = subscription;
+    Builder(SubscriptionName subscriptionName, MessageReceiver receiver) {
+      this.subscriptionName = subscriptionName;
       this.receiver = receiver;
     }
 
