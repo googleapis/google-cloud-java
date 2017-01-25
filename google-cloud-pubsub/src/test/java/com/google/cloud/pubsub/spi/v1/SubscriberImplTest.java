@@ -433,7 +433,7 @@ public class SubscriberImplTest {
       subscriber.awaitTerminated();
     } finally {
       // The subscriber must finish with an state error because its FAILED status.
-      assertEquals(State.FAILED, subscriber.state());
+      assertEquals(Subscriber.State.FAILED, subscriber.state());
       assertEquals(
           Status.INVALID_ARGUMENT,
           ((StatusRuntimeException) subscriber.failureCause()).getStatus());

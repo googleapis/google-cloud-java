@@ -54,9 +54,9 @@ public class CreateSubscriptionAndPullMessages {
     try {
       subscriber = Subscriber.Builder.newBuilder(subscription, receiver).build();
       subscriber.addListener(
-          new Service.Listener() {
+          new Subscriber.SubscriberListener() {
             @Override
-            public void failed(Service.State from, Throwable failure) {
+            public void failed(Subscriber.State from, Throwable failure) {
               System.err.println(failure);
             }
           },
