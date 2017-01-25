@@ -82,7 +82,7 @@ import org.slf4j.LoggerFactory;
  *
  * <pre><code>
  *  Publisher publisher =
- *       Publisher.Builder.newBuilder(MY_TOPIC)
+ *       Publisher.newBuilder(MY_TOPIC)
  *           .setMaxBundleDuration(new Duration(10 * 1000))
  *           .build();
  *  List&lt;ListenableFuture&lt;String&gt;&gt; results = new ArrayList&lt;&gt;();
@@ -121,6 +121,7 @@ public class Publisher {
 
   private static final Logger logger = LoggerFactory.getLogger(Publisher.class);
 
+  private final TopicName topicName;
   private final String topic;
 
   private final BundlingSettings bundlingSettings;
@@ -147,7 +148,8 @@ public class Publisher {
   private ScheduledFuture<?> currentAlarmFuture;
 
   private Publisher(Builder builder) throws IOException {
-    topic = builder.topic;
+    topicName = builder.topicName;
+    topic = topicName.toString();
 
     this.bundlingSettings = builder.bundlingSettings;
     this.retrySettings = builder.retrySettings;
@@ -195,8 +197,8 @@ public class Publisher {
   }
 
   /** Topic which the publisher publishes to. */
-  public String getTopic() {
-    return topic;
+  public TopicName getTopicName() {
+    return topicName;
   }
 
   /**
@@ -520,6 +522,11 @@ public class Publisher {
     }
   }
 
+  /** Constructs a new {@link Builder} using the given topic. */
+  public static Builder newBuilder(TopicName topicName) {
+    return new Builder(topicName);
+  }
+
   /** A builder of {@link Publisher}s. */
   public static final class Builder {
     static final Duration MIN_TOTAL_TIMEOUT = new Duration(10 * 1000); // 10 seconds
@@ -554,7 +561,7 @@ public class Publisher {
             .setExecutorThreadCount(THREADS_PER_CPU * Runtime.getRuntime().availableProcessors())
             .build();
 
-    String topic;
+    TopicName topicName;
 
     // Bundling options
     BundlingSettings bundlingSettings = DEFAULT_BUNDLING_SETTINGS;
@@ -572,13 +579,8 @@ public class Publisher {
 
     ExecutorProvider executorProvider = DEFAULT_EXECUTOR_PROVIDER;
 
-    /** Constructs a new {@link Builder} using the given topic. */
-    public static Builder newBuilder(TopicName topic) {
-      return new Builder(topic.toString());
-    }
-
-    Builder(String topic) {
-      this.topic = Preconditions.checkNotNull(topic);
+    private Builder(TopicName topic) {
+      this.topicName = Preconditions.checkNotNull(topic);
     }
 
     /**

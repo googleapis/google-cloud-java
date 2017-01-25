@@ -353,7 +353,7 @@ public class PublisherImplTest {
   public void testPublisherGetters() throws Exception {
     FakeCredentials credentials = new FakeCredentials();
 
-    Publisher.Builder builder = Publisher.Builder.newBuilder(TEST_TOPIC);
+    Publisher.Builder builder = Publisher.newBuilder(TEST_TOPIC);
     builder.setChannelBuilder(testChannelBuilder);
     builder.setCredentials(credentials);
     builder.setExecutorProvider(SINGLE_THREAD_EXECUTOR);
@@ -371,7 +371,7 @@ public class PublisherImplTest {
             .build());
     Publisher publisher = builder.build();
 
-    assertEquals(TEST_TOPIC.toString(), publisher.getTopic());
+    assertEquals(TEST_TOPIC, publisher.getTopicName());
     assertEquals(10, (long) publisher.getBundlingSettings().getRequestByteThreshold());
     assertEquals(new Duration(11), publisher.getBundlingSettings().getDelayThreshold());
     assertEquals(12, (long) publisher.getBundlingSettings().getElementCountThreshold());
@@ -385,8 +385,8 @@ public class PublisherImplTest {
 
   @Test
   public void testBuilderParametersAndDefaults() {
-    Publisher.Builder builder = Publisher.Builder.newBuilder(TEST_TOPIC);
-    assertEquals(TEST_TOPIC.toString(), builder.topic);
+    Publisher.Builder builder = Publisher.newBuilder(TEST_TOPIC);
+    assertEquals(TEST_TOPIC, builder.topicName);
     assertEquals(Optional.absent(), builder.channelBuilder);
     assertEquals(Publisher.Builder.DEFAULT_EXECUTOR_PROVIDER, builder.executorProvider);
     assertFalse(builder.failOnFlowControlLimits);
@@ -405,7 +405,7 @@ public class PublisherImplTest {
 
   @Test
   public void testBuilderInvalidArguments() {
-    Publisher.Builder builder = Publisher.Builder.newBuilder(TEST_TOPIC);
+    Publisher.Builder builder = Publisher.newBuilder(TEST_TOPIC);
 
     try {
       builder.setChannelBuilder(null);
@@ -602,7 +602,7 @@ public class PublisherImplTest {
   }
 
   private Builder getTestPublisherBuilder() {
-    return Publisher.Builder.newBuilder(TEST_TOPIC)
+    return Publisher.newBuilder(TEST_TOPIC)
         .setCredentials(testCredentials)
         .setExecutorProvider(FixedExecutorProvider.create(fakeExecutor))
         .setChannelBuilder(testChannelBuilder);
