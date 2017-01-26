@@ -24,7 +24,6 @@ import com.google.api.gax.grpc.ExecutorProvider;
 import com.google.api.gax.grpc.InstantiatingExecutorProvider;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.common.annotations.VisibleForTesting;
-import com.google.common.base.Optional;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import com.google.common.util.concurrent.FutureCallback;
@@ -586,9 +585,12 @@ public class Publisher {
     }
 
     /**
-     * ChannelProvider to use to create Channels.
+     * {@code ChannelProvider} to use to create Channels, which must point at Cloud Pub/Sub
+     * endpoint.
      *
-     * <p>Must point at Cloud Pub/Sub endpoint.
+     * <p>For performance, this client benefits from having multiple channels open at once. Users
+     * are encouraged to provide instances of {@code ChannelProvider} that creates new channels
+     * instead of returning pre-initialized ones.
      */
     public Builder setChannelProvider(ChannelProvider channelProvider) {
       this.channelProvider = Preconditions.checkNotNull(channelProvider);
