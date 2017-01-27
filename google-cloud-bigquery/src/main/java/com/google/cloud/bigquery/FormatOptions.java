@@ -32,7 +32,6 @@ public class FormatOptions implements Serializable {
   static final String CSV = "CSV";
   static final String JSON = "NEWLINE_DELIMITED_JSON";
   static final String DATASTORE_BACKUP = "DATASTORE_BACKUP";
-  static final String AVRO = "AVRO";
   private static final long serialVersionUID = -443376052020423691L;
 
   private final String type;
@@ -93,13 +92,6 @@ public class FormatOptions implements Serializable {
    */
   public static FormatOptions datastoreBackup() {
     return new FormatOptions(DATASTORE_BACKUP);
-  }
-
-  /**
-   * Default options for AVRO format.
-   */
-  public static FormatOptions avro() {
-    return new FormatOptions(AVRO);
   }
 
   /**
