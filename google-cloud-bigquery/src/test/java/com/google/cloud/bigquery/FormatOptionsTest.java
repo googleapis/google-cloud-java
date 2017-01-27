@@ -30,9 +30,12 @@ public class FormatOptionsTest {
     assertEquals(FormatOptions.JSON, options.getType());
     options = new FormatOptions(FormatOptions.DATASTORE_BACKUP);
     assertEquals(FormatOptions.DATASTORE_BACKUP, options.getType());
+    options = new FormatOptions(FormatOptions.AVRO);
+    assertEquals(FormatOptions.AVRO, options.getType());
   }
 
   @Test
+  @SuppressWarnings("deprecation")
   public void testConstructorDeprecated() {
     FormatOptions options = new FormatOptions(FormatOptions.CSV);
     assertEquals(FormatOptions.CSV, options.type());
@@ -40,6 +43,8 @@ public class FormatOptionsTest {
     assertEquals(FormatOptions.JSON, options.type());
     options = new FormatOptions(FormatOptions.DATASTORE_BACKUP);
     assertEquals(FormatOptions.DATASTORE_BACKUP, options.type());
+    options = new FormatOptions(FormatOptions.AVRO);
+    assertEquals(FormatOptions.AVRO, options.type());
   }
 
   @Test
@@ -47,6 +52,7 @@ public class FormatOptionsTest {
     assertEquals(FormatOptions.CSV, FormatOptions.csv().getType());
     assertEquals(FormatOptions.JSON, FormatOptions.json().getType());
     assertEquals(FormatOptions.DATASTORE_BACKUP, FormatOptions.datastoreBackup().getType());
+    assertEquals(FormatOptions.AVRO, FormatOptions.avro().getType());
   }
 
   @Test
