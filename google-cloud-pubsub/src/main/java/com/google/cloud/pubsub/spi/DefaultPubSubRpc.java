@@ -22,6 +22,8 @@ import com.google.api.gax.grpc.ExecutorProvider;
 import com.google.api.gax.grpc.FixedChannelProvider;
 import com.google.api.gax.grpc.FixedExecutorProvider;
 import com.google.api.gax.grpc.ProviderManager;
+import com.google.api.gax.grpc.RpcFuture;
+import com.google.api.gax.grpc.RpcFutureCallback;
 import com.google.api.gax.grpc.UnaryCallSettings;
 import com.google.cloud.GrpcServiceOptions.ExecutorFactory;
 import com.google.cloud.NoCredentials;
@@ -31,12 +33,7 @@ import com.google.cloud.pubsub.spi.v1.PublisherClient;
 import com.google.cloud.pubsub.spi.v1.PublisherSettings;
 import com.google.cloud.pubsub.spi.v1.SubscriberClient;
 import com.google.cloud.pubsub.spi.v1.SubscriberSettings;
-import com.google.common.base.Function;
 import com.google.common.collect.Sets;
-import com.google.common.util.concurrent.ForwardingListenableFuture;
-import com.google.common.util.concurrent.FutureCallback;
-import com.google.common.util.concurrent.Futures;
-import com.google.common.util.concurrent.ListenableFuture;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -62,18 +59,18 @@ import com.google.pubsub.v1.PullRequest;
 import com.google.pubsub.v1.PullResponse;
 import com.google.pubsub.v1.Subscription;
 import com.google.pubsub.v1.Topic;
-
 import io.grpc.ManagedChannel;
 import io.grpc.Status.Code;
 import io.grpc.netty.NegotiationType;
 import io.grpc.netty.NettyChannelBuilder;
-
-import org.joda.time.Duration;
-
 import java.io.IOException;
 import java.util.Set;
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
+import org.joda.time.Duration;
 
 public class DefaultPubSubRpc implements PubSubRpc {
 
@@ -111,26 +108,54 @@ public class DefaultPubSubRpc implements PubSubRpc {
   }
 
   private static final class PullFutureImpl
-      extends ForwardingListenableFuture.SimpleForwardingListenableFuture<PullResponse>
       implements PullFuture {
 
-    PullFutureImpl(ListenableFuture<PullResponse> delegate) {
-      super(delegate);
+    private final RpcFuture<PullResponse> delegate;
+
+    PullFutureImpl(RpcFuture<PullResponse> delegate) {
+      this.delegate = delegate;
+    }
+
+    @Override
+    public boolean cancel(boolean mayInterruptIfRunning) {
+      return delegate.cancel(mayInterruptIfRunning);
+    }
+
+    @Override
+    public PullResponse get() throws InterruptedException, ExecutionException {
+      return delegate.get();
+    }
+
+    @Override
+    public PullResponse get(long timeout, TimeUnit unit)
+        throws InterruptedException, ExecutionException, TimeoutException {
+      return delegate.get(timeout, unit);
+    }
+
+    @Override
+    public boolean isCancelled() {
+      return delegate.isCancelled();
+    }
+
+    @Override
+    public boolean isDone() {
+      return delegate.isDone();
     }
 
     @Override
     public void addCallback(final PullCallback callback) {
-      Futures.addCallback(delegate(), new FutureCallback<PullResponse>() {
-        @Override
-        public void onSuccess(PullResponse result) {
-          callback.success(result);
-        }
+      delegate.addCallback(
+          new RpcFutureCallback<PullResponse>() {
+            @Override
+            public void onSuccess(PullResponse result) {
+              callback.success(result);
+            }
 
-        @Override
-        public void onFailure(Throwable error) {
-          callback.failure(error);
-        }
-      });
+            @Override
+            public void onFailure(Throwable error) {
+              callback.failure(error);
+            }
+          });
     }
   }
 
@@ -178,21 +203,23 @@ public class DefaultPubSubRpc implements PubSubRpc {
     }
   }
 
-  private static <V> ListenableFuture<V> translate(ListenableFuture<V> from,
-      final boolean idempotent, int... returnNullOn) {
+  private static <V> RpcFuture<V> translate(
+      RpcFuture<V> from, final boolean idempotent, int... returnNullOn) {
     final Set<Integer> returnNullOnSet = Sets.newHashSetWithExpectedSize(returnNullOn.length);
     for (int value : returnNullOn) {
       returnNullOnSet.add(value);
     }
-    return Futures.catching(from, ApiException.class, new Function<ApiException, V>() {
-      @Override
-      public V apply(ApiException exception) {
-        if (returnNullOnSet.contains(exception.getStatusCode().value())) {
-          return null;
-        }
-        throw new PubSubException(exception, idempotent);
-      }
-    });
+    return from.catching(
+        ApiException.class,
+        new RpcFuture.Function<ApiException, V>() {
+          @Override
+          public V apply(ApiException exception) {
+            if (returnNullOnSet.contains(exception.getStatusCode().value())) {
+              return null;
+            }
+            throw new PubSubException(exception, idempotent);
+          }
+        });
   }
 
   @Override
