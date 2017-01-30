@@ -16,13 +16,14 @@
 
 package com.google.cloud.logging.spi;
 
+import com.google.api.gax.core.Function;
+import com.google.api.gax.core.RpcFuture;
 import com.google.api.gax.grpc.ApiException;
 import com.google.api.gax.grpc.ChannelProvider;
 import com.google.api.gax.grpc.ExecutorProvider;
 import com.google.api.gax.grpc.FixedChannelProvider;
 import com.google.api.gax.grpc.FixedExecutorProvider;
 import com.google.api.gax.grpc.ProviderManager;
-import com.google.api.gax.grpc.RpcFuture;
 import com.google.api.gax.grpc.UnaryCallSettings;
 import com.google.cloud.GrpcServiceOptions.ExecutorFactory;
 import com.google.cloud.NoCredentials;
@@ -155,7 +156,7 @@ public class DefaultLoggingRpc implements LoggingRpc {
     }
     return from.catching(
         ApiException.class,
-        new RpcFuture.Function<ApiException, V>() {
+        new Function<ApiException, V>() {
           @Override
           public V apply(ApiException exception) {
             if (returnNullOnSet.contains(exception.getStatusCode().value())) {
