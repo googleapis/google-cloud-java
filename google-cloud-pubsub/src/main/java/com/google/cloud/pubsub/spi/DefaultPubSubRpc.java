@@ -16,6 +16,10 @@
 
 package com.google.cloud.pubsub.spi;
 
+import com.google.api.gax.core.ForwardingRpcFuture;
+import com.google.api.gax.core.Function;
+import com.google.api.gax.core.RpcFuture;
+import com.google.api.gax.core.RpcFutureCallback;
 import com.google.api.gax.grpc.ApiException;
 import com.google.api.gax.grpc.ChannelProvider;
 import com.google.api.gax.grpc.ExecutorProvider;
@@ -31,12 +35,7 @@ import com.google.cloud.pubsub.spi.v1.PublisherClient;
 import com.google.cloud.pubsub.spi.v1.PublisherSettings;
 import com.google.cloud.pubsub.spi.v1.SubscriberClient;
 import com.google.cloud.pubsub.spi.v1.SubscriberSettings;
-import com.google.common.base.Function;
 import com.google.common.collect.Sets;
-import com.google.common.util.concurrent.ForwardingListenableFuture;
-import com.google.common.util.concurrent.FutureCallback;
-import com.google.common.util.concurrent.Futures;
-import com.google.common.util.concurrent.ListenableFuture;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -62,18 +61,15 @@ import com.google.pubsub.v1.PullRequest;
 import com.google.pubsub.v1.PullResponse;
 import com.google.pubsub.v1.Subscription;
 import com.google.pubsub.v1.Topic;
-
 import io.grpc.ManagedChannel;
 import io.grpc.Status.Code;
 import io.grpc.netty.NegotiationType;
 import io.grpc.netty.NettyChannelBuilder;
-
-import org.joda.time.Duration;
-
 import java.io.IOException;
 import java.util.Set;
 import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledExecutorService;
+import org.joda.time.Duration;
 
 public class DefaultPubSubRpc implements PubSubRpc {
 
@@ -110,27 +106,26 @@ public class DefaultPubSubRpc implements PubSubRpc {
     }
   }
 
-  private static final class PullFutureImpl
-      extends ForwardingListenableFuture.SimpleForwardingListenableFuture<PullResponse>
+  private static final class PullFutureImpl extends ForwardingRpcFuture<PullResponse>
       implements PullFuture {
-
-    PullFutureImpl(ListenableFuture<PullResponse> delegate) {
+    PullFutureImpl(RpcFuture<PullResponse> delegate) {
       super(delegate);
     }
 
     @Override
     public void addCallback(final PullCallback callback) {
-      Futures.addCallback(delegate(), new FutureCallback<PullResponse>() {
-        @Override
-        public void onSuccess(PullResponse result) {
-          callback.success(result);
-        }
+      addCallback(
+          new RpcFutureCallback<PullResponse>() {
+            @Override
+            public void onSuccess(PullResponse response) {
+              callback.success(response);
+            }
 
-        @Override
-        public void onFailure(Throwable error) {
-          callback.failure(error);
-        }
-      });
+            @Override
+            public void onFailure(Throwable error) {
+              callback.failure(error);
+            }
+          });
     }
   }
 
@@ -178,21 +173,23 @@ public class DefaultPubSubRpc implements PubSubRpc {
     }
   }
 
-  private static <V> ListenableFuture<V> translate(ListenableFuture<V> from,
-      final boolean idempotent, int... returnNullOn) {
+  private static <V> RpcFuture<V> translate(
+      RpcFuture<V> from, final boolean idempotent, int... returnNullOn) {
     final Set<Integer> returnNullOnSet = Sets.newHashSetWithExpectedSize(returnNullOn.length);
     for (int value : returnNullOn) {
       returnNullOnSet.add(value);
     }
-    return Futures.catching(from, ApiException.class, new Function<ApiException, V>() {
-      @Override
-      public V apply(ApiException exception) {
-        if (returnNullOnSet.contains(exception.getStatusCode().value())) {
-          return null;
-        }
-        throw new PubSubException(exception, idempotent);
-      }
-    });
+    return from.catching(
+        ApiException.class,
+        new Function<ApiException, V>() {
+          @Override
+          public V apply(ApiException exception) {
+            if (returnNullOnSet.contains(exception.getStatusCode().value())) {
+              return null;
+            }
+            throw new PubSubException(exception, idempotent);
+          }
+        });
   }
 
   @Override

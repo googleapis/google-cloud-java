@@ -16,6 +16,8 @@
 
 package com.google.cloud.logging.spi;
 
+import com.google.api.gax.core.Function;
+import com.google.api.gax.core.RpcFuture;
 import com.google.api.gax.grpc.ApiException;
 import com.google.api.gax.grpc.ChannelProvider;
 import com.google.api.gax.grpc.ExecutorProvider;
@@ -33,10 +35,6 @@ import com.google.cloud.logging.spi.v2.LoggingServiceV2Client;
 import com.google.cloud.logging.spi.v2.LoggingServiceV2Settings;
 import com.google.cloud.logging.spi.v2.MetricsServiceV2Client;
 import com.google.cloud.logging.spi.v2.MetricsServiceV2Settings;
-import com.google.common.base.Function;
-import com.google.common.collect.Sets;
-import com.google.common.util.concurrent.Futures;
-import com.google.common.util.concurrent.ListenableFuture;
 import com.google.logging.v2.CreateLogMetricRequest;
 import com.google.logging.v2.CreateSinkRequest;
 import com.google.logging.v2.DeleteLogMetricRequest;
@@ -59,13 +57,13 @@ import com.google.logging.v2.UpdateSinkRequest;
 import com.google.logging.v2.WriteLogEntriesRequest;
 import com.google.logging.v2.WriteLogEntriesResponse;
 import com.google.protobuf.Empty;
-
 import io.grpc.ManagedChannel;
 import io.grpc.Status.Code;
 import io.grpc.netty.NegotiationType;
 import io.grpc.netty.NettyChannelBuilder;
-
 import java.io.IOException;
+import java.util.Collections;
+import java.util.EnumSet;
 import java.util.Set;
 import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledExecutorService;
@@ -148,21 +146,25 @@ public class DefaultLoggingRpc implements LoggingRpc {
     }
   }
 
-  private static <V> Future<V> translate(ListenableFuture<V> from, final boolean idempotent,
-      int... returnNullOn) {
-    final Set<Integer> returnNullOnSet = Sets.newHashSetWithExpectedSize(returnNullOn.length);
-    for (int value : returnNullOn) {
-      returnNullOnSet.add(value);
+  private static <V> Future<V> translate(
+      RpcFuture<V> from, final boolean idempotent, Code... returnNullOn) {
+    final Set<Code> returnNullOnSet;
+    if (returnNullOn.length > 0) {
+      returnNullOnSet = EnumSet.of(returnNullOn[0], returnNullOn);
+    } else {
+      returnNullOnSet = Collections.<Code>emptySet();
     }
-    return Futures.catching(from, ApiException.class, new Function<ApiException, V>() {
-      @Override
-      public V apply(ApiException exception) {
-        if (returnNullOnSet.contains(exception.getStatusCode().value())) {
-          return null;
-        }
-        throw new LoggingException(exception, idempotent);
-      }
-    });
+    return from.catching(
+        ApiException.class,
+        new Function<ApiException, V>() {
+          @Override
+          public V apply(ApiException exception) {
+            if (returnNullOnSet.contains(exception.getStatusCode().value())) {
+              return null;
+            }
+            throw new LoggingException(exception, idempotent);
+          }
+        });
   }
 
   @Override
@@ -177,7 +179,7 @@ public class DefaultLoggingRpc implements LoggingRpc {
 
   @Override
   public Future<LogSink> get(GetSinkRequest request) {
-    return translate(configClient.getSinkCallable().futureCall(request), true, Code.NOT_FOUND.value());
+    return translate(configClient.getSinkCallable().futureCall(request), true, Code.NOT_FOUND);
   }
 
   @Override
@@ -187,14 +189,12 @@ public class DefaultLoggingRpc implements LoggingRpc {
 
   @Override
   public Future<Empty> delete(DeleteSinkRequest request) {
-    return translate(configClient.deleteSinkCallable().futureCall(request), true,
-        Code.NOT_FOUND.value());
+    return translate(configClient.deleteSinkCallable().futureCall(request), true, Code.NOT_FOUND);
   }
 
   @Override
   public Future<Empty> delete(DeleteLogRequest request) {
-    return translate(loggingClient.deleteLogCallable().futureCall(request), true,
-        Code.NOT_FOUND.value());
+    return translate(loggingClient.deleteLogCallable().futureCall(request), true, Code.NOT_FOUND);
   }
 
   @Override
@@ -226,8 +226,8 @@ public class DefaultLoggingRpc implements LoggingRpc {
 
   @Override
   public Future<LogMetric> get(GetLogMetricRequest request) {
-    return translate(metricsClient.getLogMetricCallable().futureCall(request), true,
-        Code.NOT_FOUND.value());
+    return translate(
+        metricsClient.getLogMetricCallable().futureCall(request), true, Code.NOT_FOUND);
   }
 
   @Override
@@ -237,8 +237,8 @@ public class DefaultLoggingRpc implements LoggingRpc {
 
   @Override
   public Future<Empty> delete(DeleteLogMetricRequest request) {
-    return translate(metricsClient.deleteLogMetricCallable().futureCall(request), true,
-        Code.NOT_FOUND.value());
+    return translate(
+        metricsClient.deleteLogMetricCallable().futureCall(request), true, Code.NOT_FOUND);
   }
 
   @Override

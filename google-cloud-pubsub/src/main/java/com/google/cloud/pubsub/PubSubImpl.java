@@ -41,7 +41,6 @@ import com.google.common.collect.Iterators;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.google.common.util.concurrent.Futures;
-import com.google.common.util.concurrent.ListenableFuture;
 import com.google.common.util.concurrent.Uninterruptibles;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
@@ -222,9 +221,6 @@ class PubSubImpl extends BaseService<PubSubOptions> implements PubSub {
 
   private static <I, O> Future<O> transform(Future<I> future,
       Function<? super I, ? extends O> function) {
-    if (future instanceof ListenableFuture) {
-      return Futures.transform((ListenableFuture<I>) future, function);
-    }
     return Futures.lazyTransform(future, function);
   }
 

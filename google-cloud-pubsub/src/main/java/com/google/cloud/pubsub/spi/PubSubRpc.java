@@ -40,7 +40,6 @@ import com.google.pubsub.v1.PullRequest;
 import com.google.pubsub.v1.PullResponse;
 import com.google.pubsub.v1.Subscription;
 import com.google.pubsub.v1.Topic;
-
 import java.util.concurrent.Future;
 
 public interface PubSubRpc extends AutoCloseable {
