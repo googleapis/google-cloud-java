@@ -39,5 +39,5 @@ public interface MessageReceiver {
    * Called when a message is received by the subscriber. The implementation must arrange for {@code
    * reponse} to be set after processing the {@code message}.
    */
-  void receiveMessage(PubsubMessage message, SettableFuture<AckReply> response);
+  void receiveMessage(final PubsubMessage message, final SettableFuture<AckReply> response);
 }
