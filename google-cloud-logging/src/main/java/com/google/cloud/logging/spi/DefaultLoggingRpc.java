@@ -159,7 +159,7 @@ public class DefaultLoggingRpc implements LoggingRpc {
         new Function<ApiException, V>() {
           @Override
           public V apply(ApiException exception) {
-            if (returnNullOnSet.contains(exception.getStatusCode().value())) {
+            if (returnNullOnSet.contains(exception.getStatusCode())) {
               return null;
             }
             throw new LoggingException(exception, idempotent);
