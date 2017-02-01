@@ -21,10 +21,10 @@ import java.util.logging.LogRecord;
 import com.google.cloud.MonitoredResource.Builder;
 
 /**
- * A Logging {@link Enhancer} that enhances the logging for the 
+ * A {@link LoggingHandler.Enhancer} that enhances the logging for the
  * GAE Flex environment. This enhancer can
  * be configured in a logging.properties file with:
- * 
+ *
  * <pre>
  * handlers=com.google.cloud.logging.LoggingHandler
  * com.google.cloud.logging.LoggingHandler.log=gaeflex.log
