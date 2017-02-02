@@ -81,9 +81,9 @@ import org.slf4j.LoggerFactory;
  * <pre><code>
  * MessageReceiver receiver = new MessageReceiver() {
  *   &#64;Override
- *   public ListenableFuture&lt;AckReply&gt; receiveMessage(PubsubMessage message) {
+ *   public void receiveMessage(PubsubMessage message, SettableFuture&lt;AckReply&gt; response) {
  *     // ... process message ...
- *     return Futures.immediateFuture(AckReply.ACK);
+ *     return response.set(AckReply.ACK);
  *   }
  * }
  *

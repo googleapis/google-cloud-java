@@ -28,7 +28,6 @@ import com.google.common.base.Function;
 import com.google.common.base.Optional;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
-import com.google.common.util.concurrent.ListenableFuture;
 import com.google.common.util.concurrent.SettableFuture;
 import com.google.pubsub.v1.PubsubMessage;
 import com.google.pubsub.v1.PullResponse;
@@ -115,23 +114,20 @@ public class SubscriberImplTest {
     }
 
     @Override
-    public ListenableFuture<AckReply> receiveMessage(PubsubMessage message) {
+    public void receiveMessage(PubsubMessage message, SettableFuture<AckReply> response) {
       if (messageCountLatch.isPresent()) {
         messageCountLatch.get().countDown();
       }
-      SettableFuture<AckReply> reply = SettableFuture.create();
 
       if (explicitAckReplies) {
         try {
-          outstandingMessageReplies.put(reply);
+          outstandingMessageReplies.put(response);
         } catch (InterruptedException e) {
           throw new IllegalStateException(e);
         }
       } else {
-        replyTo(reply);
+        replyTo(response);
       }
-
-      return reply;
     }
 
     public void replyNextOutstandingMessage() {

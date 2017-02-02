@@ -25,6 +25,7 @@ import com.google.common.collect.Lists;
 import com.google.common.primitives.Ints;
 import com.google.common.util.concurrent.FutureCallback;
 import com.google.common.util.concurrent.Futures;
+import com.google.common.util.concurrent.SettableFuture;
 import com.google.pubsub.v1.PubsubMessage;
 import com.google.pubsub.v1.ReceivedMessage;
 import java.util.ArrayList;
@@ -278,11 +279,13 @@ class MessageDispatcher {
     for (ReceivedMessage userMessage : responseMessages) {
       final PubsubMessage message = userMessage.getMessage();
       final AckHandler ackHandler = acksIterator.next();
+      final SettableFuture<AckReply> response = SettableFuture.create();
+      Futures.addCallback(response, ackHandler);
       executor.submit(
           new Runnable() {
             @Override
             public void run() {
-              Futures.addCallback(receiver.receiveMessage(message), ackHandler);
+              receiver.receiveMessage(message, response);
             }
           });
     }
