@@ -17,13 +17,10 @@
 package com.google.cloud.logging;
 
 import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
-import java.util.NoSuchElementException;
 import java.util.logging.LogRecord;
 
 import com.google.cloud.MonitoredResource.Builder;
