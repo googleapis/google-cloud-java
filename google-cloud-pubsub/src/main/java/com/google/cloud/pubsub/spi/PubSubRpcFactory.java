@@ -14,24 +14,14 @@
  * limitations under the License.
  */
 
-package com.google.cloud.pubsub.spi.v1;
+package com.google.cloud.pubsub.spi;
 
-import com.google.cloud.Clock;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.atomic.AtomicLong;
+import com.google.cloud.pubsub.PubSubOptions;
+import com.google.cloud.spi.ServiceRpcFactory;
 
-/** A Clock to help with testing time-based logic. */
-public class FakeClock extends Clock {
-
-  private final AtomicLong millis = new AtomicLong();
-
-  // Advances the clock value by {@code time} in {@code timeUnit}.
-  public void advance(long time, TimeUnit timeUnit) {
-    millis.addAndGet(timeUnit.toMillis(time));
-  }
-
-  @Override
-  public long millis() {
-    return millis.get();
-  }
+/**
+ * An interface for Pub/Sub RPC factory.
+ * Implementation will be loaded via {@link java.util.ServiceLoader}.
+ */
+public interface PubSubRpcFactory extends ServiceRpcFactory<PubSubRpc, PubSubOptions> {
 }

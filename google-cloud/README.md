@@ -14,8 +14,8 @@ Java idiomatic client for [Google Cloud Platform][cloud-platform] services.
 
 This client supports the following Google Cloud Platform services:
 
--  [Google Cloud Datastore] (https://cloud.google.com/datastore/) [datastore documentation][datastore-api]
--  [Google Cloud Storage] (https://cloud.google.com/storage/) [storage documentation][storage-api]
+-  [Google Cloud Datastore] (https://cloud.google.com/datastore/) [datastore documentation][datastore-api] 
+-  [Google Cloud Storage] (https://cloud.google.com/storage/) [storage documentation][storage-api] 
 
 > Note: This client is a work-in-progress, and may occasionally
 > make backwards-incompatible changes.

@@ -252,3 +252,4 @@ Apache 2.0 - See [LICENSE] for more information.
 [cloud-platform]: https://cloud.google.com/
 [cloud-resourcemanager]: https://cloud.google.com/resource-manager/docs
 [resourcemanager-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/resourcemanager/package-summary.html
+

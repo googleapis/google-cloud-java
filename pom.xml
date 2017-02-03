@@ -175,7 +175,7 @@
                 <requireJavaVersion>
                   <version>[1.7,)</version>
                 </requireJavaVersion>
-              </rules>
+              </rules>    
             </configuration>
           </execution>
         </executions>

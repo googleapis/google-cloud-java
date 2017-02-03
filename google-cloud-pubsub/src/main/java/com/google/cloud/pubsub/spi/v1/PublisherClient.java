@@ -300,8 +300,7 @@ public class PublisherClient implements AutoCloseable {
    * @param messages The messages to publish.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  /* package-private */ final PublishResponse publish(
-      TopicName topic, List<PubsubMessage> messages) {
+  public final PublishResponse publish(TopicName topic, List<PubsubMessage> messages) {
 
     PublishRequest request =
         PublishRequest.newBuilder().setTopicWithTopicName(topic).addAllMessages(messages).build();
@@ -365,7 +364,7 @@ public class PublisherClient implements AutoCloseable {
    * }
    * </code></pre>
    */
-  /* package-private */ final UnaryCallable<PublishRequest, PublishResponse> publishCallable() {
+  public final UnaryCallable<PublishRequest, PublishResponse> publishCallable() {
     return publishCallable;
   }
 

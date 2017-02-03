@@ -14,24 +14,23 @@
  * limitations under the License.
  */
 
-package com.google.cloud.pubsub.spi.v1;
+package com.google.cloud.pubsub;
 
-import com.google.cloud.Clock;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.atomic.AtomicLong;
+import com.google.cloud.Policy;
 
-/** A Clock to help with testing time-based logic. */
-public class FakeClock extends Clock {
+final class PolicyMarshaller extends Policy.DefaultMarshaller {
 
-  private final AtomicLong millis = new AtomicLong();
+  static final PolicyMarshaller INSTANCE = new PolicyMarshaller();
 
-  // Advances the clock value by {@code time} in {@code timeUnit}.
-  public void advance(long time, TimeUnit timeUnit) {
-    millis.addAndGet(timeUnit.toMillis(time));
+  private PolicyMarshaller() {}
+
+  @Override
+  protected com.google.iam.v1.Policy toPb(Policy policy) {
+    return super.toPb(policy);
   }
 
   @Override
-  public long millis() {
-    return millis.get();
+  protected Policy fromPb(com.google.iam.v1.Policy policyPb) {
+    return super.fromPb(policyPb);
   }
 }
