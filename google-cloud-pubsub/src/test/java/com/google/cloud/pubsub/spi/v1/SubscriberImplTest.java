@@ -115,10 +115,6 @@ public class SubscriberImplTest {
 
     @Override
     public void receiveMessage(PubsubMessage message, SettableFuture<AckReply> response) {
-      if (messageCountLatch.isPresent()) {
-        messageCountLatch.get().countDown();
-      }
-
       if (explicitAckReplies) {
         try {
           outstandingMessageReplies.put(response);
@@ -127,6 +123,10 @@ public class SubscriberImplTest {
         }
       } else {
         replyTo(response);
+      }
+      
+      if (messageCountLatch.isPresent()) {
+        messageCountLatch.get().countDown();
       }
     }
 
