@@ -17,10 +17,13 @@
 package com.google.cloud.logging;
 
 import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
+import java.util.NoSuchElementException;
 import java.util.logging.LogRecord;
 
 import com.google.cloud.MonitoredResource.Builder;
@@ -70,29 +73,29 @@ public class GaeFlexLoggingEnhancer implements LoggingHandler.Enhancer {
 
   @Override
   public void enhanceMonitoredResource(Builder builder) {
-    if (gaeInstanceId != null) {
-      if (System.getenv("GAE_SERVICE") != null) {
-        builder.addLabel("module_id", System.getenv("GAE_SERVICE"));
-      }
-      if (System.getenv("GAE_VERSION") != null) {
-        builder.addLabel("version_id", System.getenv("GAE_VERSION"));
-      }
-      try {
-        HttpURLConnection metadata = (HttpURLConnection) new URL(
-            "http://metadata.google.internal/computeMetadata/v1/instance/zone").openConnection();
-        metadata.setRequestProperty("Metadata-Flavor", "Google");
-        if (metadata.getResponseCode() == 200 && metadata.getContentLength() > 0) {
-          String zone = new BufferedReader(
-              new InputStreamReader(metadata.getInputStream(), StandardCharsets.UTF_8)).lines()
-                  .findFirst().get();
-          if (zone.contains("/")) {
-            zone = zone.substring(zone.lastIndexOf('/')+1);
-            builder.addLabel("zone", zone);
-          }
+    if (gaeInstanceId == null) {
+      return;
+    }
+    if (System.getenv("GAE_SERVICE") != null) {
+      builder.addLabel("module_id", System.getenv("GAE_SERVICE"));
+    }
+    if (System.getenv("GAE_VERSION") != null) {
+      builder.addLabel("version_id", System.getenv("GAE_VERSION"));
+    }
+    try {
+      HttpURLConnection metadata = (HttpURLConnection) new URL(
+          "http://metadata.google.internal/computeMetadata/v1/instance/zone").openConnection();
+      metadata.setRequestProperty("Metadata-Flavor", "Google");
+      if (metadata.getResponseCode() == 200 && metadata.getContentLength() > 0) {
+        String zone = new BufferedReader(
+            new InputStreamReader(metadata.getInputStream(), StandardCharsets.UTF_8)).readLine();
+        if (zone.contains("/")) {
+          zone = zone.substring(zone.lastIndexOf('/')+1);
+          builder.addLabel("zone", zone);
         }
-      } catch (Exception e) {
-        // unable to fetch zone;
       }
+    } catch (Exception e) {
+      // unable to fetch zone;
     }
   }
 
