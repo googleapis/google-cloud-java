@@ -60,15 +60,31 @@ public class CryptFile {
   }
 
   /**
-   * Encrypts the given bytes, using the specified crypto key.
+   * Encrypts the given bytes, using the primary version of the specified crypto key.
+   *
+   * The primary version can be updated via the <a
+   * href="https://g.co/cloud/kms/docs/reference/rest/v1beta1/projects.locations.keyRings.cryptoKeys/updatePrimaryVersion">updatePrimaryVersion</a>
+   * method.
    */
   public static byte[] encrypt(String projectId, String ringId, String keyId, byte[] plaintext)
+      throws IOException {
+    return encrypt(projectId, ringId, keyId, null, plaintext);
+  }
+
+  /**
+   * Encrypts the given bytes, using the specified crypto key version.
+   */
+  public static byte[] encrypt(
+      String projectId, String ringId, String keyId, String version, byte[] plaintext)
       throws IOException {
     String location = "global";
     // The resource name of the cryptoKey
     String cryptoKeyName = String.format(
         "projects/%s/locations/%s/keyRings/%s/cryptoKeys/%s",
         projectId, location, ringId, keyId);
+    if (null != version) {
+      cryptoKeyName += "/cryptoKeyVersions/" + version;
+    }
     // Create the Cloud KMS client.
     CloudKMS kms = createAuthorizedClient();
 

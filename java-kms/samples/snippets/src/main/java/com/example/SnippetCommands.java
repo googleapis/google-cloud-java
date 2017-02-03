@@ -68,6 +68,18 @@ class SnippetCommands {
     }
   }
 
+  public static class CreateCryptoKeyVersionCommand extends KeyArgs implements Command {
+    public void run() throws IOException {
+      Snippets.createCryptoKeyVersion(projectId, ringId, keyId);
+    }
+  }
+
+  public static class ListKeyRingsCommand extends ProjectIdArgs implements Command {
+    public void run() throws IOException {
+      Snippets.listKeyRings(projectId);
+    }
+  }
+
   public static class ListCryptoKeysCommand extends KeyRingArgs implements Command {
     public void run() throws IOException {
       Snippets.listCryptoKeys(projectId, ringId);
@@ -173,6 +185,8 @@ class SnippetCommands {
   @SubCommands({
       @SubCommand(name = "createKeyRing", impl = CreateKeyRingCommand.class),
       @SubCommand(name = "createCryptoKey", impl = CreateCryptoKeyCommand.class),
+      @SubCommand(name = "createCryptoKeyVersion", impl = CreateCryptoKeyVersionCommand.class),
+      @SubCommand(name = "listKeyRings", impl = ListKeyRingsCommand.class),
       @SubCommand(name = "listCryptoKeys", impl = ListCryptoKeysCommand.class),
       @SubCommand(name = "listCryptoKeyVersions", impl = ListCryptoKeyVersionsCommand.class),
       @SubCommand(name = "disableCryptoKeyVersion", impl = DisableCryptoKeyVersionCommand.class),

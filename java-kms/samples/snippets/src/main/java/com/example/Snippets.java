@@ -28,6 +28,7 @@ import com.google.api.services.cloudkms.v1beta1.model.DestroyCryptoKeyVersionReq
 import com.google.api.services.cloudkms.v1beta1.model.KeyRing;
 import com.google.api.services.cloudkms.v1beta1.model.ListCryptoKeyVersionsResponse;
 import com.google.api.services.cloudkms.v1beta1.model.ListCryptoKeysResponse;
+import com.google.api.services.cloudkms.v1beta1.model.ListKeyRingsResponse;
 import com.google.api.services.cloudkms.v1beta1.model.Policy;
 import com.google.api.services.cloudkms.v1beta1.model.SetIamPolicyRequest;
 
@@ -112,6 +113,30 @@ public class Snippets {
 
     System.out.println(createdKey);
     return createdKey;
+  }
+
+  /**
+   * Creates a new crypto key version for the given id.
+   */
+  public static void createCryptoKeyVersion(
+      String projectId, String ringId, String keyId) throws IOException {
+    String location = "global";
+    // Create the Cloud KMS client.
+    CloudKMS kms = createAuthorizedClient();
+
+    // The resource name of the cryptoKey
+    String cryptoKeys = String.format(
+        "projects/%s/locations/%s/keyRings/%s/cryptoKeys/%s",
+        projectId, location, ringId, keyId);
+
+    CryptoKeyVersion version = new CryptoKeyVersion();
+
+    CryptoKeyVersion newVersion = kms.projects().locations().keyRings().cryptoKeys()
+        .cryptoKeyVersions()
+        .create(cryptoKeys, version)
+        .execute();
+
+    System.out.println(newVersion);
   }
 
   /**
@@ -263,11 +288,12 @@ public class Snippets {
     iamPolicy.setBindings(bindings);
 
     // Set the new IAM Policy.
-    Policy newIamPolicy = kms.projects().locations().keyRings().cryptoKeys()
+    Policy newIamPolicy = kms.projects().locations().keyRings()
+        .cryptoKeys()
         .setIamPolicy(cryptoKey, new SetIamPolicyRequest().setPolicy(iamPolicy))
         .execute();
 
-    System.out.println(newIamPolicy);
+    System.out.println("Response: " + newIamPolicy);
     return newIamPolicy;
   }
 
@@ -320,11 +346,12 @@ public class Snippets {
     iamPolicy.setBindings(bindings);
 
     // Set the new IAM Policy.
-    Policy newIamPolicy = kms.projects().locations().keyRings()
+    Policy newIamPolicy = kms.projects().locations()
+        .keyRings()
         .setIamPolicy(keyring, new SetIamPolicyRequest().setPolicy(iamPolicy))
         .execute();
 
-    System.out.println(newIamPolicy);
+    System.out.println("Response: " + newIamPolicy);
     return newIamPolicy;
   }
 
@@ -346,21 +373,26 @@ public class Snippets {
     // Get the current IAM policy and add the new account to it.
     Policy iamPolicy = getCryptoKeyPolicy(projectId, ringId, keyId);
 
-    List<Binding> bindings = iamPolicy.getBindings();
+    if (null == iamPolicy.getBindings()) {
+      // Nothing to remove
+      return null;
+    }
+
     // Filter out the given member
-    for (Binding b : bindings) {
+    for (Binding b : iamPolicy.getBindings()) {
       if (role.equals(b.getRole()) && b.getMembers().contains(member)) {
-        b.getMembers().remove(member);
+        b.getMembers().removeAll(Collections.singletonList(member));
         break;
       }
     }
 
     // Set the new IAM Policy.
-    Policy newIamPolicy = kms.projects().locations().keyRings().cryptoKeys()
+    Policy newIamPolicy = kms.projects().locations().keyRings()
+        .cryptoKeys()
         .setIamPolicy(cryptoKey, new SetIamPolicyRequest().setPolicy(iamPolicy))
         .execute();
 
-    System.out.println(newIamPolicy);
+    System.out.println("Response: " + newIamPolicy);
     return newIamPolicy;
   }
 
@@ -382,9 +414,8 @@ public class Snippets {
     // Get the current IAM policy and add the new account to it.
     Policy iamPolicy = getKeyRingPolicy(projectId, ringId);
 
-    List<Binding> bindings = iamPolicy.getBindings();
     // Filter out the given member
-    for (Binding b : bindings) {
+    for (Binding b : iamPolicy.getBindings()) {
       if (role.equals(b.getRole()) && b.getMembers().contains(member)) {
         b.getMembers().remove(member);
         break;
@@ -392,12 +423,43 @@ public class Snippets {
     }
 
     // Set the new IAM Policy.
-    Policy newIamPolicy = kms.projects().locations().keyRings().cryptoKeys()
+    Policy newIamPolicy = kms.projects().locations()
+        .keyRings()
         .setIamPolicy(cryptoKey, new SetIamPolicyRequest().setPolicy(iamPolicy))
         .execute();
 
-    System.out.println(newIamPolicy);
+    System.out.println("Response: " + newIamPolicy);
     return newIamPolicy;
+  }
+
+  /**
+   * Prints all the keyrings in the given project.
+   */
+  public static void listKeyRings(String projectId) throws IOException {
+    String location = "global";
+    // Create the Cloud KMS client.
+    CloudKMS kms = createAuthorizedClient();
+
+    // The resource name of the cryptoKey
+    String keyRingPath = String.format(
+        "projects/%s/locations/%s",
+        projectId, location);
+
+    // Make the RPC call
+    ListKeyRingsResponse response = kms.projects().locations()
+        .keyRings()
+        .list(keyRingPath)
+        .execute();
+
+    // Print the returned key rings
+    if (null != response.getKeyRings()) {
+      System.out.println("Key Rings: ");
+      for (KeyRing keyRing : response.getKeyRings()) {
+        System.out.println(keyRing.getName());
+      }
+    } else {
+      System.out.println("No keyrings defined.");
+    }
   }
 
   /**
