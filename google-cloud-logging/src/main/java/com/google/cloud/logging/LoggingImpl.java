@@ -40,7 +40,6 @@ import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.google.common.util.concurrent.Futures;
-import com.google.common.util.concurrent.ListenableFuture;
 import com.google.common.util.concurrent.Uninterruptibles;
 import com.google.logging.v2.CreateLogMetricRequest;
 import com.google.logging.v2.CreateSinkRequest;
@@ -107,9 +106,6 @@ class LoggingImpl extends BaseService<LoggingOptions> implements Logging {
 
   private static <I, O> Future<O> transform(Future<I> future,
       Function<? super I, ? extends O> function) {
-    if (future instanceof ListenableFuture) {
-      return Futures.transform((ListenableFuture<I>) future, function);
-    }
     return Futures.lazyTransform(future, function);
   }
 

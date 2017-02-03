@@ -36,8 +36,8 @@
  * <pre>
  * <code>
  * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
- *   String formattedName = GroupServiceClient.formatGroupName("[PROJECT]", "[GROUP]");
- *   Group response = groupServiceClient.getGroup(formattedName);
+ *   GroupName name = GroupName.create("[PROJECT]", "[GROUP]");
+ *   Group response = groupServiceClient.getGroup(name);
  * }
  * </code>
  * </pre>
@@ -52,8 +52,8 @@
  * <pre>
  * <code>
  * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
- *   String formattedName = MetricServiceClient.formatMonitoredResourceDescriptorName("[PROJECT]", "[MONITORED_RESOURCE_DESCRIPTOR]");
- *   MonitoredResourceDescriptor response = metricServiceClient.getMonitoredResourceDescriptor(formattedName);
+ *   MonitoredResourceDescriptorName name = MonitoredResourceDescriptorName.create("[PROJECT]", "[MONITORED_RESOURCE_DESCRIPTOR]");
+ *   MonitoredResourceDescriptor response = metricServiceClient.getMonitoredResourceDescriptor(name);
  * }
  * </code>
  * </pre>

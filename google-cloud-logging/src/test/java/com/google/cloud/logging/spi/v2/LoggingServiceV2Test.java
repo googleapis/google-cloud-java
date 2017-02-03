@@ -16,6 +16,7 @@
 package com.google.cloud.logging.spi.v2;
 
 import static com.google.cloud.logging.spi.v2.PagedResponseWrappers.ListLogEntriesPagedResponse;
+import static com.google.cloud.logging.spi.v2.PagedResponseWrappers.ListLogsPagedResponse;
 
 import com.google.api.MonitoredResource;
 import com.google.api.gax.grpc.ApiException;
@@ -25,9 +26,13 @@ import com.google.common.collect.Lists;
 import com.google.logging.v2.DeleteLogRequest;
 import com.google.logging.v2.ListLogEntriesRequest;
 import com.google.logging.v2.ListLogEntriesResponse;
+import com.google.logging.v2.ListLogsRequest;
+import com.google.logging.v2.ListLogsResponse;
 import com.google.logging.v2.LogEntry;
 import com.google.logging.v2.LogName;
 import com.google.logging.v2.LogNameOneof;
+import com.google.logging.v2.ParentNameOneof;
+import com.google.logging.v2.ProjectName;
 import com.google.logging.v2.WriteLogEntriesRequest;
 import com.google.logging.v2.WriteLogEntriesResponse;
 import com.google.protobuf.Empty;
@@ -210,6 +215,50 @@ public class LoggingServiceV2Test {
       String orderBy = "orderBy1234304744";
 
       client.listLogEntries(resourceNames, filter, orderBy);
+      Assert.fail("No exception raised");
+    } catch (ApiException e) {
+      Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());
+    }
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void listLogsTest() {
+    String nextPageToken = "";
+    String logNamesElement = "logNamesElement-1079688374";
+    List<String> logNames = Arrays.asList(logNamesElement);
+    ListLogsResponse expectedResponse =
+        ListLogsResponse.newBuilder()
+            .setNextPageToken(nextPageToken)
+            .addAllLogNames(logNames)
+            .build();
+    mockLoggingServiceV2.addResponse(expectedResponse);
+
+    ParentNameOneof parent = ParentNameOneof.from(ProjectName.create("[PROJECT]"));
+
+    ListLogsPagedResponse pagedListResponse = client.listLogs(parent);
+
+    List<String> resources = Lists.newArrayList(pagedListResponse.iterateAllElements());
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getLogNamesList().get(0), resources.get(0));
+
+    List<GeneratedMessageV3> actualRequests = mockLoggingServiceV2.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListLogsRequest actualRequest = (ListLogsRequest) actualRequests.get(0);
+
+    Assert.assertEquals(parent, actualRequest.getParentAsParentNameOneof());
+  }
+
+  @Test
+  @SuppressWarnings("all")
+  public void listLogsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(Status.INTERNAL);
+    mockLoggingServiceV2.addException(exception);
+
+    try {
+      ParentNameOneof parent = ParentNameOneof.from(ProjectName.create("[PROJECT]"));
+
+      client.listLogs(parent);
       Assert.fail("No exception raised");
     } catch (ApiException e) {
       Assert.assertEquals(Status.INTERNAL.getCode(), e.getStatusCode());

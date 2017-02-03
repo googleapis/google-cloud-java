@@ -527,11 +527,8 @@ public class PublisherSettings extends ClientSettings {
           .publishSettings()
           .getBundlingSettingsBuilder()
           .setElementCountThreshold(10)
-          .setElementCountLimit(1000)
           .setRequestByteThreshold(1024)
-          .setRequestByteLimit(10485760)
-          .setDelayThreshold(Duration.millis(10))
-          .setBlockingCallCountThreshold(1);
+          .setDelayThreshold(Duration.millis(10));
       builder
           .publishSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("one_plus_delivery"))

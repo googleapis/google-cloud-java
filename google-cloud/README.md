@@ -14,8 +14,8 @@ Java idiomatic client for [Google Cloud Platform][cloud-platform] services.
 
 This client supports the following Google Cloud Platform services:
 
--  [Google Cloud Datastore] (https://cloud.google.com/datastore/) [datastore documentation][datastore-api] 
--  [Google Cloud Storage] (https://cloud.google.com/storage/) [storage documentation][storage-api] 
+-  [Google Cloud Datastore] (https://cloud.google.com/datastore/) [datastore documentation][datastore-api]
+-  [Google Cloud Storage] (https://cloud.google.com/storage/) [storage documentation][storage-api]
 
 > Note: This client is a work-in-progress, and may occasionally
 > make backwards-incompatible changes.
@@ -27,16 +27,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud</artifactId>
-  <version>0.8.0</version>
+  <version>0.8.2-alpha</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud:0.8.0'
+compile 'com.google.cloud:google-cloud:0.8.2-alpha'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud" % "0.8.0"
+libraryDependencies += "com.google.cloud" % "google-cloud" % "0.8.2-alpha"
 ```
 
 Troubleshooting

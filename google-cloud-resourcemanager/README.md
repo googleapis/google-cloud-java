@@ -22,16 +22,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-resourcemanager</artifactId>
-  <version>0.8.0</version>
+  <version>0.8.2-alpha</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-resourcemanager:0.8.0'
+compile 'com.google.cloud:google-cloud-resourcemanager:0.8.2-alpha'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-resourcemanager" % "0.8.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-resourcemanager" % "0.8.2-alpha"
 ```
 
 Example Application
@@ -252,4 +252,3 @@ Apache 2.0 - See [LICENSE] for more information.
 [cloud-platform]: https://cloud.google.com/
 [cloud-resourcemanager]: https://cloud.google.com/resource-manager/docs
 [resourcemanager-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/resourcemanager/package-summary.html
-

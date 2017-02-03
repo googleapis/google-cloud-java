@@ -20,13 +20,13 @@ import static com.google.cloud.errorreporting.spi.v1beta1.PagedResponseWrappers.
 
 import com.google.api.gax.grpc.ChannelAndExecutor;
 import com.google.api.gax.grpc.UnaryCallable;
-import com.google.api.gax.protobuf.PathTemplate;
 import com.google.devtools.clouderrorreporting.v1beta1.DeleteEventsRequest;
 import com.google.devtools.clouderrorreporting.v1beta1.DeleteEventsResponse;
 import com.google.devtools.clouderrorreporting.v1beta1.ListEventsRequest;
 import com.google.devtools.clouderrorreporting.v1beta1.ListEventsResponse;
 import com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsRequest;
 import com.google.devtools.clouderrorreporting.v1beta1.ListGroupStatsResponse;
+import com.google.devtools.clouderrorreporting.v1beta1.ProjectName;
 import com.google.devtools.clouderrorreporting.v1beta1.QueryTimeRange;
 import com.google.protobuf.ExperimentalApi;
 import io.grpc.ManagedChannel;
@@ -48,8 +48,8 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (ErrorStatsServiceClient errorStatsServiceClient = ErrorStatsServiceClient.create()) {
- *   String formattedProjectName = ErrorStatsServiceClient.formatProjectName("[PROJECT]");
- *   DeleteEventsResponse response = errorStatsServiceClient.deleteEvents(formattedProjectName);
+ *   ProjectName projectName = ProjectName.create("[PROJECT]");
+ *   DeleteEventsResponse response = errorStatsServiceClient.deleteEvents(projectName);
  * }
  * </code>
  * </pre>
@@ -108,19 +108,6 @@ public class ErrorStatsServiceClient implements AutoCloseable {
   private final UnaryCallable<ListEventsRequest, ListEventsResponse> listEventsCallable;
   private final UnaryCallable<ListEventsRequest, ListEventsPagedResponse> listEventsPagedCallable;
   private final UnaryCallable<DeleteEventsRequest, DeleteEventsResponse> deleteEventsCallable;
-
-  private static final PathTemplate PROJECT_PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding("projects/{project}");
-
-  /** Formats a string containing the fully-qualified path to represent a project resource. */
-  public static final String formatProjectName(String project) {
-    return PROJECT_PATH_TEMPLATE.instantiate("project", project);
-  }
-
-  /** Parses the project from the given fully-qualified path which represents a project resource. */
-  public static final String parseProjectFromProjectName(String projectName) {
-    return PROJECT_PATH_TEMPLATE.parse(projectName).get("project");
-  }
 
   /** Constructs an instance of ErrorStatsServiceClient with default settings. */
   public static final ErrorStatsServiceClient create() throws IOException {
@@ -192,9 +179,9 @@ public class ErrorStatsServiceClient implements AutoCloseable {
    *
    * <pre><code>
    * try (ErrorStatsServiceClient errorStatsServiceClient = ErrorStatsServiceClient.create()) {
-   *   String formattedProjectName = ErrorStatsServiceClient.formatProjectName("[PROJECT]");
+   *   ProjectName projectName = ProjectName.create("[PROJECT]");
    *   QueryTimeRange timeRange = QueryTimeRange.newBuilder().build();
-   *   for (ErrorGroupStats element : errorStatsServiceClient.listGroupStats(formattedProjectName, timeRange).iterateAllElements()) {
+   *   for (ErrorGroupStats element : errorStatsServiceClient.listGroupStats(projectName, timeRange).iterateAllElements()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -205,18 +192,19 @@ public class ErrorStatsServiceClient implements AutoCloseable {
    *     href="https://support.google.com/cloud/answer/6158840"&gt;Google Cloud Platform project
    *     ID&lt;/a&gt;.
    *     <p>Example: &lt;code&gt;projects/my-project-123&lt;/code&gt;.
-   * @param timeRange [Required] List data for the given time range. Only
-   *     &lt;code&gt;ErrorGroupStats&lt;/code&gt; with a non-zero count in the given time range are
-   *     returned, unless the request contains an explicit group_id list. If a group_id list is
-   *     given, also &lt;code&gt;ErrorGroupStats&lt;/code&gt; with zero occurrences are returned.
+   * @param timeRange [Optional] List data for the given time range. If not set a default time range
+   *     is used. The field time_range_begin in the response will specify the beginning of this time
+   *     range. Only &lt;code&gt;ErrorGroupStats&lt;/code&gt; with a non-zero count in the given
+   *     time range are returned, unless the request contains an explicit group_id list. If a
+   *     group_id list is given, also &lt;code&gt;ErrorGroupStats&lt;/code&gt; with zero occurrences
+   *     are returned.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final ListGroupStatsPagedResponse listGroupStats(
-      String projectName, QueryTimeRange timeRange) {
-    PROJECT_PATH_TEMPLATE.validate(projectName, "listGroupStats");
+      ProjectName projectName, QueryTimeRange timeRange) {
     ListGroupStatsRequest request =
         ListGroupStatsRequest.newBuilder()
-            .setProjectName(projectName)
+            .setProjectNameWithProjectName(projectName)
             .setTimeRange(timeRange)
             .build();
     return listGroupStats(request);
@@ -230,10 +218,10 @@ public class ErrorStatsServiceClient implements AutoCloseable {
    *
    * <pre><code>
    * try (ErrorStatsServiceClient errorStatsServiceClient = ErrorStatsServiceClient.create()) {
-   *   String formattedProjectName = ErrorStatsServiceClient.formatProjectName("[PROJECT]");
+   *   ProjectName projectName = ProjectName.create("[PROJECT]");
    *   QueryTimeRange timeRange = QueryTimeRange.newBuilder().build();
    *   ListGroupStatsRequest request = ListGroupStatsRequest.newBuilder()
-   *     .setProjectName(formattedProjectName)
+   *     .setProjectNameWithProjectName(projectName)
    *     .setTimeRange(timeRange)
    *     .build();
    *   for (ErrorGroupStats element : errorStatsServiceClient.listGroupStats(request).iterateAllElements()) {
@@ -257,10 +245,10 @@ public class ErrorStatsServiceClient implements AutoCloseable {
    *
    * <pre><code>
    * try (ErrorStatsServiceClient errorStatsServiceClient = ErrorStatsServiceClient.create()) {
-   *   String formattedProjectName = ErrorStatsServiceClient.formatProjectName("[PROJECT]");
+   *   ProjectName projectName = ProjectName.create("[PROJECT]");
    *   QueryTimeRange timeRange = QueryTimeRange.newBuilder().build();
    *   ListGroupStatsRequest request = ListGroupStatsRequest.newBuilder()
-   *     .setProjectName(formattedProjectName)
+   *     .setProjectNameWithProjectName(projectName)
    *     .setTimeRange(timeRange)
    *     .build();
    *   ListenableFuture&lt;ListGroupStatsPagedResponse&gt; future = errorStatsServiceClient.listGroupStatsPagedCallable().futureCall(request);
@@ -284,10 +272,10 @@ public class ErrorStatsServiceClient implements AutoCloseable {
    *
    * <pre><code>
    * try (ErrorStatsServiceClient errorStatsServiceClient = ErrorStatsServiceClient.create()) {
-   *   String formattedProjectName = ErrorStatsServiceClient.formatProjectName("[PROJECT]");
+   *   ProjectName projectName = ProjectName.create("[PROJECT]");
    *   QueryTimeRange timeRange = QueryTimeRange.newBuilder().build();
    *   ListGroupStatsRequest request = ListGroupStatsRequest.newBuilder()
-   *     .setProjectName(formattedProjectName)
+   *     .setProjectNameWithProjectName(projectName)
    *     .setTimeRange(timeRange)
    *     .build();
    *   while (true) {
@@ -318,9 +306,9 @@ public class ErrorStatsServiceClient implements AutoCloseable {
    *
    * <pre><code>
    * try (ErrorStatsServiceClient errorStatsServiceClient = ErrorStatsServiceClient.create()) {
-   *   String formattedProjectName = ErrorStatsServiceClient.formatProjectName("[PROJECT]");
+   *   ProjectName projectName = ProjectName.create("[PROJECT]");
    *   String groupId = "";
-   *   for (ErrorEvent element : errorStatsServiceClient.listEvents(formattedProjectName, groupId).iterateAllElements()) {
+   *   for (ErrorEvent element : errorStatsServiceClient.listEvents(projectName, groupId).iterateAllElements()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -332,10 +320,12 @@ public class ErrorStatsServiceClient implements AutoCloseable {
    * @param groupId [Required] The group for which events shall be returned.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  public final ListEventsPagedResponse listEvents(String projectName, String groupId) {
-    PROJECT_PATH_TEMPLATE.validate(projectName, "listEvents");
+  public final ListEventsPagedResponse listEvents(ProjectName projectName, String groupId) {
     ListEventsRequest request =
-        ListEventsRequest.newBuilder().setProjectName(projectName).setGroupId(groupId).build();
+        ListEventsRequest.newBuilder()
+            .setProjectNameWithProjectName(projectName)
+            .setGroupId(groupId)
+            .build();
     return listEvents(request);
   }
 
@@ -347,10 +337,10 @@ public class ErrorStatsServiceClient implements AutoCloseable {
    *
    * <pre><code>
    * try (ErrorStatsServiceClient errorStatsServiceClient = ErrorStatsServiceClient.create()) {
-   *   String formattedProjectName = ErrorStatsServiceClient.formatProjectName("[PROJECT]");
+   *   ProjectName projectName = ProjectName.create("[PROJECT]");
    *   String groupId = "";
    *   ListEventsRequest request = ListEventsRequest.newBuilder()
-   *     .setProjectName(formattedProjectName)
+   *     .setProjectNameWithProjectName(projectName)
    *     .setGroupId(groupId)
    *     .build();
    *   for (ErrorEvent element : errorStatsServiceClient.listEvents(request).iterateAllElements()) {
@@ -374,10 +364,10 @@ public class ErrorStatsServiceClient implements AutoCloseable {
    *
    * <pre><code>
    * try (ErrorStatsServiceClient errorStatsServiceClient = ErrorStatsServiceClient.create()) {
-   *   String formattedProjectName = ErrorStatsServiceClient.formatProjectName("[PROJECT]");
+   *   ProjectName projectName = ProjectName.create("[PROJECT]");
    *   String groupId = "";
    *   ListEventsRequest request = ListEventsRequest.newBuilder()
-   *     .setProjectName(formattedProjectName)
+   *     .setProjectNameWithProjectName(projectName)
    *     .setGroupId(groupId)
    *     .build();
    *   ListenableFuture&lt;ListEventsPagedResponse&gt; future = errorStatsServiceClient.listEventsPagedCallable().futureCall(request);
@@ -400,10 +390,10 @@ public class ErrorStatsServiceClient implements AutoCloseable {
    *
    * <pre><code>
    * try (ErrorStatsServiceClient errorStatsServiceClient = ErrorStatsServiceClient.create()) {
-   *   String formattedProjectName = ErrorStatsServiceClient.formatProjectName("[PROJECT]");
+   *   ProjectName projectName = ProjectName.create("[PROJECT]");
    *   String groupId = "";
    *   ListEventsRequest request = ListEventsRequest.newBuilder()
-   *     .setProjectName(formattedProjectName)
+   *     .setProjectNameWithProjectName(projectName)
    *     .setGroupId(groupId)
    *     .build();
    *   while (true) {
@@ -433,8 +423,8 @@ public class ErrorStatsServiceClient implements AutoCloseable {
    *
    * <pre><code>
    * try (ErrorStatsServiceClient errorStatsServiceClient = ErrorStatsServiceClient.create()) {
-   *   String formattedProjectName = ErrorStatsServiceClient.formatProjectName("[PROJECT]");
-   *   DeleteEventsResponse response = errorStatsServiceClient.deleteEvents(formattedProjectName);
+   *   ProjectName projectName = ProjectName.create("[PROJECT]");
+   *   DeleteEventsResponse response = errorStatsServiceClient.deleteEvents(projectName);
    * }
    * </code></pre>
    *
@@ -443,10 +433,10 @@ public class ErrorStatsServiceClient implements AutoCloseable {
    *     ID](https://support.google.com/cloud/answer/6158840). Example: `projects/my-project-123`.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  public final DeleteEventsResponse deleteEvents(String projectName) {
-    PROJECT_PATH_TEMPLATE.validate(projectName, "deleteEvents");
+  public final DeleteEventsResponse deleteEvents(ProjectName projectName) {
+
     DeleteEventsRequest request =
-        DeleteEventsRequest.newBuilder().setProjectName(projectName).build();
+        DeleteEventsRequest.newBuilder().setProjectNameWithProjectName(projectName).build();
     return deleteEvents(request);
   }
 
@@ -458,9 +448,9 @@ public class ErrorStatsServiceClient implements AutoCloseable {
    *
    * <pre><code>
    * try (ErrorStatsServiceClient errorStatsServiceClient = ErrorStatsServiceClient.create()) {
-   *   String formattedProjectName = ErrorStatsServiceClient.formatProjectName("[PROJECT]");
+   *   ProjectName projectName = ProjectName.create("[PROJECT]");
    *   DeleteEventsRequest request = DeleteEventsRequest.newBuilder()
-   *     .setProjectName(formattedProjectName)
+   *     .setProjectNameWithProjectName(projectName)
    *     .build();
    *   DeleteEventsResponse response = errorStatsServiceClient.deleteEvents(request);
    * }
@@ -481,9 +471,9 @@ public class ErrorStatsServiceClient implements AutoCloseable {
    *
    * <pre><code>
    * try (ErrorStatsServiceClient errorStatsServiceClient = ErrorStatsServiceClient.create()) {
-   *   String formattedProjectName = ErrorStatsServiceClient.formatProjectName("[PROJECT]");
+   *   ProjectName projectName = ProjectName.create("[PROJECT]");
    *   DeleteEventsRequest request = DeleteEventsRequest.newBuilder()
-   *     .setProjectName(formattedProjectName)
+   *     .setProjectNameWithProjectName(projectName)
    *     .build();
    *   ListenableFuture&lt;DeleteEventsResponse&gt; future = errorStatsServiceClient.deleteEventsCallable().futureCall(request);
    *   // Do something

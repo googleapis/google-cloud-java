@@ -24,6 +24,8 @@ import com.google.logging.v2.ListLogEntriesRequest;
 import com.google.logging.v2.ListLogEntriesResponse;
 import com.google.logging.v2.ListLogMetricsRequest;
 import com.google.logging.v2.ListLogMetricsResponse;
+import com.google.logging.v2.ListLogsRequest;
+import com.google.logging.v2.ListLogsResponse;
 import com.google.logging.v2.ListMonitoredResourceDescriptorsRequest;
 import com.google.logging.v2.ListMonitoredResourceDescriptorsResponse;
 import com.google.logging.v2.ListSinksRequest;
@@ -70,6 +72,18 @@ public class PagedResponseWrappers {
                 MonitoredResourceDescriptor>
             pageDescriptor,
         ListMonitoredResourceDescriptorsRequest request,
+        CallContext context) {
+      super(callable, pageDescriptor, request, context);
+    }
+  }
+
+  public static class ListLogsPagedResponse
+      extends PagedListResponseImpl<ListLogsRequest, ListLogsResponse, String> {
+
+    public ListLogsPagedResponse(
+        UnaryCallable<ListLogsRequest, ListLogsResponse> callable,
+        PagedListDescriptor<ListLogsRequest, ListLogsResponse, String> pageDescriptor,
+        ListLogsRequest request,
         CallContext context) {
       super(callable, pageDescriptor, request, context);
     }
