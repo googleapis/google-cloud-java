@@ -48,7 +48,7 @@ public class Recognize {
     }
     String command = args[0];
     String path = args.length > 1 ? args[1] : "";
-    
+
     if (command.equals("syncrecognize")) {
       if (path.startsWith("gs://")) {
         syncRecognizeGcs(path);
@@ -62,7 +62,7 @@ public class Recognize {
         asyncRecognizeFile(path);
       }
     }
-    
+
 
   }
 
@@ -138,7 +138,7 @@ public class Recognize {
 
     OperationFuture<AsyncRecognizeResponse> response = speech.asyncRecognizeAsync(config, audio);
 
-    while(!response.isDone()) {
+    while (!response.isDone()) {
       System.out.println("Waiting for response...");
       Thread.sleep(200);
     }
@@ -167,7 +167,7 @@ public class Recognize {
 
     OperationFuture<AsyncRecognizeResponse> response = speech.asyncRecognizeAsync(config, audio);
 
-    while(!response.isDone()) {
+    while (!response.isDone()) {
       System.out.println("Waiting for response...");
       Thread.sleep(200);
     }
