@@ -67,6 +67,7 @@ public class Snippets {
         .build();
   }
 
+  // [START kms_create_keyring]
   /**
    * Creates a new key ring with the given id.
    */
@@ -86,7 +87,9 @@ public class Snippets {
     System.out.println(keyring);
     return keyring;
   }
+  // [END kms_create_keyring]
 
+  // [START kms_create_cryptokey]
   /**
    * Creates a new crypto key with the given id.
    */
@@ -114,7 +117,9 @@ public class Snippets {
     System.out.println(createdKey);
     return createdKey;
   }
+  // [END kms_create_cryptokey]
 
+  // [START kms_create_cryptokey_version]
   /**
    * Creates a new crypto key version for the given id.
    */
@@ -138,7 +143,9 @@ public class Snippets {
 
     System.out.println(newVersion);
   }
+  // [END kms_create_cryptokey_version]
 
+  // [START kms_disable_cryptokey_version]
   /**
    * Disables the given version of the crypto key.
    */
@@ -166,7 +173,9 @@ public class Snippets {
     System.out.println(response);
     return response;
   }
+  // [END kms_disable_cryptokey_version]
 
+  // [START kms_destroy_cryptokey_version]
   /**
    * Marks the given version of a crypto key to be destroyed at a scheduled future point.
    */
@@ -192,7 +201,9 @@ public class Snippets {
     System.out.println(destroyed);
     return destroyed;
   }
+  // [END kms_destroy_cryptokey_version]
 
+  // [START kms_get_cryptokey_policy]
   /**
    * Retrieves the IAM policy for the given crypto key.
    */
@@ -215,7 +226,9 @@ public class Snippets {
     System.out.println(iamPolicy.getBindings());
     return iamPolicy;
   }
+  // [END kms_get_cryptokey_policy]
 
+  // [START kms_get_keyring_policy]
   /**
    * Retrieves the IAM policy for the given crypto key.
    */
@@ -237,7 +250,9 @@ public class Snippets {
     System.out.println(iamPolicy.getBindings());
     return iamPolicy;
   }
+  // [END kms_get_keyring_policy]
 
+  // [START kms_add_member_to_cryptokey_policy]
   /**
    * Adds the given member to the given key, with the given role.
    *
@@ -296,7 +311,9 @@ public class Snippets {
     System.out.println("Response: " + newIamPolicy);
     return newIamPolicy;
   }
+  // [END kms_add_member_to_cryptokey_policy]
 
+  // [START kms_add_member_to_keyring_policy]
   /**
    * Adds the given member to the given keyring, with the given role.
    *
@@ -354,7 +371,9 @@ public class Snippets {
     System.out.println("Response: " + newIamPolicy);
     return newIamPolicy;
   }
+  // [END kms_add_member_to_keyring_policy]
 
+  // [START kms_remove_member_from_cryptokey_policy]
   /**
    * Removes the given member from the given policy.
    */
@@ -395,7 +414,9 @@ public class Snippets {
     System.out.println("Response: " + newIamPolicy);
     return newIamPolicy;
   }
+  // [END kms_remove_member_from_cryptokey_policy]
 
+  // [START kms_remove_member_from_keyring_policy]
   /**
    * Removes the given member from the given policy.
    */
@@ -431,6 +452,7 @@ public class Snippets {
     System.out.println("Response: " + newIamPolicy);
     return newIamPolicy;
   }
+  // [END kms_remove_member_from_keyring_policy]
 
   /**
    * Prints all the keyrings in the given project.

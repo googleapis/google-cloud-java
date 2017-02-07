@@ -71,6 +71,7 @@ public class CryptFile {
     return encrypt(projectId, ringId, keyId, null, plaintext);
   }
 
+  // [START kms_encrypt]
   /**
    * Encrypts the given bytes, using the specified crypto key version.
    */
@@ -95,7 +96,9 @@ public class CryptFile {
 
     return response.decodeCiphertext();
   }
+  // [END kms_encrypt]
 
+  // [START kms_decrypt]
   /**
    * Decrypts the given encrypted bytes, using the specified crypto key.
    */
@@ -117,6 +120,7 @@ public class CryptFile {
 
     return response.decodePlaintext();
   }
+  // [END kms_decrypt]
 
   public static void main(String[] args) throws IOException {
     CryptFileCommands commands = new CryptFileCommands();

@@ -45,9 +45,9 @@ class CryptFileCommands {
     String ringId;
     @Argument(metaVar = "keyId", required = true, index = 1, usage = "The key id")
     String keyId;
-    @Argument(metaVar = "inFile", required = true, index = 1, usage = "The source file")
+    @Argument(metaVar = "inFile", required = true, index = 2, usage = "The source file")
     String inFile;
-    @Argument(metaVar = "outFile", required = true, index = 1, usage = "The destination file")
+    @Argument(metaVar = "outFile", required = true, index = 3, usage = "The destination file")
     String outFile;
   }
 
