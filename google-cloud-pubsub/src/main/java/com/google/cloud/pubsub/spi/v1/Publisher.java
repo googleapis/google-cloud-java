@@ -16,12 +16,12 @@
 
 package com.google.cloud.pubsub.spi.v1;
 
-import com.google.api.gax.grpc.FlowControlSettings;
-import com.google.api.gax.grpc.FlowController;
 import com.google.api.gax.core.RetrySettings;
 import com.google.api.gax.grpc.BundlingSettings;
 import com.google.api.gax.grpc.ChannelProvider;
 import com.google.api.gax.grpc.ExecutorProvider;
+import com.google.api.gax.grpc.FlowControlSettings;
+import com.google.api.gax.grpc.FlowController;
 import com.google.api.gax.grpc.InstantiatingExecutorProvider;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.common.annotations.VisibleForTesting;
@@ -50,9 +50,9 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.joda.time.Duration;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * A Cloud Pub/Sub <a href="https://cloud.google.com/pubsub/docs/publisher">publisher</a>, that is
@@ -114,7 +114,7 @@ public class Publisher {
     return 10L * 1000L * 1000L; // 10 megabytes (https://en.wikipedia.org/wiki/Megabyte)
   }
 
-  private static final Logger logger = LoggerFactory.getLogger(Publisher.class);
+  private static final Logger logger = Logger.getLogger(Publisher.class.getName());
 
   private final TopicName topicName;
   private final String cachedTopicNameString;
@@ -139,7 +139,7 @@ public class Publisher {
   private final ScheduledExecutorService executor;
   private final AtomicBoolean shutdown;
   private final List<AutoCloseable> closeables = new ArrayList<>();
-  private final MessagesWaiter messagesWaiter;
+  private final MessageWaiter messagesWaiter;
   private ScheduledFuture<?> currentAlarmFuture;
 
   private Publisher(Builder builder) throws IOException {
@@ -187,7 +187,7 @@ public class Publisher {
     }
     channelIndex = new AtomicRoundRobin(channels.length);
     shutdown = new AtomicBoolean(false);
-    messagesWaiter = new MessagesWaiter();
+    messagesWaiter = new MessageWaiter();
   }
 
   /** Topic which the publisher publishes to. */
@@ -249,7 +249,7 @@ public class Publisher {
       if (!messagesBundle.isEmpty()) {
         setupDurationBasedPublishAlarm();
       } else if (currentAlarmFuture != null) {
-        logger.debug("Cancelling alarm");
+        logger.log(Level.INFO, "Cancelling alarm");
         if (activeAlarm.getAndSet(false)) {
           currentAlarmFuture.cancel(false);
         }
@@ -261,7 +261,7 @@ public class Publisher {
     messagesWaiter.incrementPendingMessages(1);
 
     if (bundleToSend != null) {
-      logger.debug("Scheduling a bundle for immediate sending.");
+      logger.log(Level.INFO, "Scheduling a bundle for immediate sending.");
       final OutstandingBundle finalBundleToSend = bundleToSend;
       executor.execute(
           new Runnable() {
@@ -275,7 +275,8 @@ public class Publisher {
     // If the message is over the size limit, it was not added to the pending messages and it will
     // be sent in its own bundle immediately.
     if (hasBundlingBytes() && messageSize >= getMaxBundleBytes()) {
-      logger.debug("Message exceeds the max bundle bytes, scheduling it for immediate send.");
+      logger.log(
+          Level.INFO, "Message exceeds the max bundle bytes, scheduling it for immediate send.");
       executor.execute(
           new Runnable() {
             @Override
@@ -292,13 +293,13 @@ public class Publisher {
   private void setupDurationBasedPublishAlarm() {
     if (!activeAlarm.getAndSet(true)) {
       long delayThresholdMs = getBundlingSettings().getDelayThreshold().getMillis();
-      logger.debug("Setting up alarm for the next %d ms.", delayThresholdMs);
+      logger.log(Level.INFO, "Setting up alarm for the next %d ms.", delayThresholdMs);
       currentAlarmFuture =
           executor.schedule(
               new Runnable() {
                 @Override
                 public void run() {
-                  logger.debug("Sending messages based on schedule.");
+                  logger.log(Level.INFO, "Sending messages based on schedule.");
                   activeAlarm.getAndSet(false);
                   publishAllOutstanding();
                 }

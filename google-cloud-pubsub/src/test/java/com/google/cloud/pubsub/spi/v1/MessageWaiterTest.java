@@ -27,11 +27,11 @@ import org.junit.runners.JUnit4;
  * Tests for {@link PublisherImpl}.
  */
 @RunWith(JUnit4.class)
-public class MessagesWaiterTest {
+public class MessageWaiterTest {
 
   @Test
   public void test() throws Exception {
-    final MessagesWaiter waiter = new MessagesWaiter();
+    final MessageWaiter waiter = new MessageWaiter();
     waiter.incrementPendingMessages(1);
     
     final AtomicBoolean waitReached = new AtomicBoolean();

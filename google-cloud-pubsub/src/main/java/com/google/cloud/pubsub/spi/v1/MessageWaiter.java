@@ -22,10 +22,10 @@ import java.util.concurrent.atomic.AtomicBoolean;
 /**
  * A barrier kind of object that helps to keep track and synchronously wait on pending messages.
  */
-class MessagesWaiter {
+class MessageWaiter {
   private int pendingMessages;
 
-  MessagesWaiter() {
+  MessageWaiter() {
     pendingMessages = 0;
   }
 

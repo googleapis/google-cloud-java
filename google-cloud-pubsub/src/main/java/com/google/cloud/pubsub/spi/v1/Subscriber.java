@@ -16,9 +16,9 @@
 
 package com.google.cloud.pubsub.spi.v1;
 
+import com.google.api.gax.grpc.ExecutorProvider;
 import com.google.api.gax.grpc.FlowControlSettings;
 import com.google.api.gax.grpc.FlowController;
-import com.google.api.gax.grpc.ExecutorProvider;
 import com.google.api.gax.grpc.InstantiatingExecutorProvider;
 import com.google.api.stats.Distribution;
 import com.google.auth.Credentials;
@@ -47,9 +47,9 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.joda.time.Duration;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * A Cloud Pub/Sub <a href="https://cloud.google.com/pubsub/docs/subscriber">subscriber</a> that is
@@ -262,7 +262,7 @@ public class Subscriber {
   }
 
   private static class SubscriberImpl extends AbstractService {
-    private static final Logger logger = LoggerFactory.getLogger(Subscriber.class);
+    private static final Logger logger = Logger.getLogger(Subscriber.class.getName());
 
     private final SubscriptionName subscriptionName;
     private final String cachedSubscriptionNameString;
@@ -333,7 +333,7 @@ public class Subscriber {
 
     @Override
     protected void doStart() {
-      logger.debug("Starting subscriber group.");
+      logger.log(Level.INFO, "Starting subscriber group.");
       startStreamingConnections();
       notifyStarted();
     }
@@ -404,8 +404,10 @@ public class Subscriber {
                                 Math.max(ackLatency, ackExpirationPadding.getStandardSeconds())));
                     if (streamAckDeadlineSeconds != possibleStreamAckDeadlineSeconds) {
                       streamAckDeadlineSeconds = possibleStreamAckDeadlineSeconds;
-                      logger.debug(
-                          "Updating stream deadline to {} seconds.", streamAckDeadlineSeconds);
+                      logger.log(
+                          Level.INFO,
+                          "Updating stream deadline to {} seconds.",
+                          streamAckDeadlineSeconds);
                       for (StreamingSubscriberConnection subscriberConnection :
                           streamingSubscriberConnections) {
                         subscriberConnection.updateStreamAckDeadline(streamAckDeadlineSeconds);

@@ -41,18 +41,18 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.joda.time.Duration;
 import org.joda.time.Instant;
 import org.joda.time.Interval;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * Dispatches messages to a message receiver while handling the messages acking and lease
  * extensions.
  */
 class MessageDispatcher {
-  private static final Logger logger = LoggerFactory.getLogger(MessageDispatcher.class);
+  private static final Logger logger = Logger.getLogger(MessageDispatcher.class.getName());
 
   private static final int INITIAL_ACK_DEADLINE_EXTENSION_SECONDS = 2;
   @VisibleForTesting static final Duration PENDING_ACKS_SEND_DELAY = Duration.millis(100);
@@ -66,7 +66,7 @@ class MessageDispatcher {
   private final AckProcessor ackProcessor;
 
   private final FlowController flowController;
-  private final MessagesWaiter messagesWaiter;
+  private final MessageWaiter messagesWaiter;
 
   private final PriorityQueue<ExtensionJob> outstandingAckHandlers;
   private final Set<String> pendingAcks;
@@ -166,7 +166,8 @@ class MessageDispatcher {
 
     @Override
     public void onFailure(Throwable t) {
-      logger.warn(
+      logger.log(
+          Level.WARNING,
           "MessageReceiver failed to processes ack ID: " + ackId + ", the message will be nacked.",
           t);
       synchronized (pendingNacks) {
@@ -232,7 +233,7 @@ class MessageDispatcher {
     this.ackLatencyDistribution = ackLatencyDistribution;
     alarmsLock = new ReentrantLock();
     nextAckDeadlineExtensionAlarmTime = new Instant(Long.MAX_VALUE);
-    messagesWaiter = new MessagesWaiter();
+    messagesWaiter = new MessageWaiter();
     this.clock = clock;
   }
 
@@ -272,7 +273,7 @@ class MessageDispatcher {
       ackHandlers.add(new AckHandler(pubsubMessage.getAckId(), messageSize));
     }
     Instant expiration = now.plus(messageDeadlineSeconds * 1000);
-    logger.debug("Received {} messages at {}", responseMessages.size(), now);
+    logger.log(Level.INFO, "Received " + responseMessages.size() + " messages at " + now);
 
     messagesWaiter.incrementPendingMessages(responseMessages.size());
     Iterator<AckHandler> acksIterator = ackHandlers.iterator();
@@ -351,12 +352,14 @@ class MessageDispatcher {
           new Instant(
               ((long) Math.ceil(now.plus(ackExpirationPadding).plus(500).getMillis() / 1000.0))
                   * 1000L);
-      logger.debug(
-          "Running alarm sent outstanding acks, at now time: {}, with cutover "
-              + "time: {}, padding: {}",
-          now,
-          cutOverTime,
-          ackExpirationPadding);
+      logger.log(
+          Level.INFO,
+          "Running alarm sent outstanding acks, at now time: "
+              + now
+              + ", with cutover time: "
+              + cutOverTime
+              + ", padding: "
+              + ackExpirationPadding);
       Instant nextScheduleExpiration = null;
       List<PendingModifyAckDeadline> modifyAckDeadlinesToSend = new ArrayList<>();
 
@@ -406,10 +409,13 @@ class MessageDispatcher {
       processOutstandingAckOperations(modifyAckDeadlinesToSend);
 
       if (nextScheduleExpiration != null) {
-        logger.debug(
-            "Scheduling based on outstanding, now time: {}, " + "next schedule time: {}",
-            now,
-            nextScheduleExpiration);
+        logger.log(
+            Level.INFO,
+            "Scheduling based on outstanding, now time: "
+                + now
+                + ", "
+                + "next schedule time: "
+                + nextScheduleExpiration);
         setupNextAckDeadlineExtensionAlarm(nextScheduleExpiration);
       }
     }
@@ -420,12 +426,14 @@ class MessageDispatcher {
     alarmsLock.lock();
     try {
       if (nextAckDeadlineExtensionAlarmTime.isAfter(possibleNextAlarmTime)) {
-        logger.debug(
-            "Scheduling next alarm time: {}, last alarm set to time: {}",
-            possibleNextAlarmTime,
-            nextAckDeadlineExtensionAlarmTime);
+        logger.log(
+            Level.INFO,
+            "Scheduling next alarm time: "
+                + possibleNextAlarmTime
+                + ", last alarm set to time: "
+                + nextAckDeadlineExtensionAlarmTime);
         if (ackDeadlineExtensionAlarm != null) {
-          logger.debug("Canceling previous alarm");
+          logger.log(Level.INFO, "Canceling previous alarm");
           ackDeadlineExtensionAlarm.cancel(false);
         }
 
@@ -456,7 +464,7 @@ class MessageDispatcher {
       if (!pendingAcks.isEmpty()) {
         try {
           acksToSend = new ArrayList<>(pendingAcks);
-          logger.debug("Sending {} acks", acksToSend.size());
+          logger.log(Level.INFO, "Sending {} acks", acksToSend.size());
         } finally {
           pendingAcks.clear();
         }
@@ -469,7 +477,7 @@ class MessageDispatcher {
           for (String ackId : pendingNacks) {
             nacksToSend.addAckId(ackId);
           }
-          logger.debug("Sending {} nacks", pendingNacks.size());
+          logger.log(Level.INFO, "Sending {} nacks", pendingNacks.size());
         } finally {
           pendingNacks.clear();
         }

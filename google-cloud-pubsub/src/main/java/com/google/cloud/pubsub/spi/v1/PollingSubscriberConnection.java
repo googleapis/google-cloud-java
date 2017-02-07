@@ -43,9 +43,9 @@ import io.grpc.auth.MoreCallCredentials;
 import java.util.List;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.joda.time.Duration;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /**
  * Implementation of {@link AbstractSubscriberConnection} based on Cloud Pub/Sub pull and
@@ -58,7 +58,8 @@ final class PollingSubscriberConnection extends AbstractService implements AckPr
   private static final Duration INITIAL_BACKOFF = Duration.millis(100); // 100ms
   private static final Duration MAX_BACKOFF = Duration.standardSeconds(10); // 10s
 
-  private static final Logger logger = LoggerFactory.getLogger(PollingSubscriberConnection.class);
+  private static final Logger logger =
+      Logger.getLogger(PollingSubscriberConnection.class.getName());
 
   private final String subscription;
   private final ScheduledExecutorService executor;
@@ -93,7 +94,7 @@ final class PollingSubscriberConnection extends AbstractService implements AckPr
 
   @Override
   protected void doStart() {
-    logger.debug("Starting subscriber.");
+    logger.log(Level.INFO, "Starting subscriber.");
     initialize();
     notifyStarted();
   }
@@ -167,7 +168,7 @@ final class PollingSubscriberConnection extends AbstractService implements AckPr
           public void onFailure(Throwable cause) {
             if (!(cause instanceof StatusRuntimeException)
                 || isRetryable(((StatusRuntimeException) cause).getStatus())) {
-              logger.error("Failed to pull messages (recoverable): " + cause.getMessage(), cause);
+              logger.log(Level.SEVERE, "Failed to pull messages (recoverable): ", cause);
               executor.schedule(
                   new Runnable() {
                     @Override

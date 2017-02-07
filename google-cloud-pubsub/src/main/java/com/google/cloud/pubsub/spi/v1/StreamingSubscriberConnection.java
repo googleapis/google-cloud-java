@@ -43,14 +43,15 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.annotation.Nullable;
 import org.joda.time.Duration;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 /** Implementation of {@link AbstractSubscriberConnection} based on Cloud Pub/Sub streaming pull. */
 final class StreamingSubscriberConnection extends AbstractService implements AckProcessor {
-  private static final Logger logger = LoggerFactory.getLogger(StreamingSubscriberConnection.class);
+  private static final Logger logger =
+      Logger.getLogger(StreamingSubscriberConnection.class.getName());
 
   private static final Duration INITIAL_CHANNEL_RECONNECT_BACKOFF = new Duration(100); // 100ms
   private static final int MAX_PER_REQUEST_CHANGES = 10000;
@@ -94,7 +95,7 @@ final class StreamingSubscriberConnection extends AbstractService implements Ack
 
   @Override
   protected void doStart() {
-    logger.debug("Starting subscriber.");
+    logger.log(Level.INFO, "Starting subscriber.");
     initialize();
     notifyStarted();
   }
@@ -132,13 +133,13 @@ final class StreamingSubscriberConnection extends AbstractService implements Ack
 
     @Override
     public void onError(Throwable t) {
-      logger.debug("Terminated streaming with exception", t);
+      logger.log(Level.INFO, "Terminated streaming with exception", t);
       errorFuture.setException(t);
     }
 
     @Override
     public void onCompleted() {
-      logger.debug("Streaming pull terminated successfully!");
+      logger.log(Level.INFO, "Streaming pull terminated successfully!");
       errorFuture.set(null);
     }
   }
@@ -154,10 +155,12 @@ final class StreamingSubscriberConnection extends AbstractService implements Ack
                     SubscriberGrpc.METHOD_STREAMING_PULL,
                     CallOptions.DEFAULT.withCallCredentials(MoreCallCredentials.from(credentials))),
                 responseObserver));
-    logger.debug(
-        "Initializing stream to subscription {} with deadline {}",
-        subscription,
-        messageDispatcher.getMessageDeadlineSeconds());
+    logger.log(
+        Level.INFO,
+        "Initializing stream to subscription "
+            + subscription
+            + " with deadline "
+            + messageDispatcher.getMessageDeadlineSeconds());
     requestObserver.onNext(
         StreamingPullRequest.newBuilder()
             .setSubscription(subscription)
