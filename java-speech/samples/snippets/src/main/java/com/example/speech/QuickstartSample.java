@@ -64,6 +64,7 @@ public class QuickstartSample {
         System.out.printf("Transcription: %s%n", alternative.getTranscript());
       }
     }
+    speech.close();
   }
 }
 // [END speech_quickstart]
