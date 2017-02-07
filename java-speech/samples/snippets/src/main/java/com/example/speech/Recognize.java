@@ -49,6 +49,7 @@ public class Recognize {
     String command = args[0];
     String path = args.length > 1 ? args[1] : "";
 
+    // Use command and GCS path pattern to invoke transcription.
     if (command.equals("syncrecognize")) {
       if (path.startsWith("gs://")) {
         syncRecognizeGcs(path);
@@ -62,10 +63,13 @@ public class Recognize {
         asyncRecognizeFile(path);
       }
     }
-
-
   }
 
+  /**
+   * Performs speech recognition on raw PCM audio and prints the transcription.
+   *
+   * @param fileName the path to a PCM audio file to transcribe.
+   */
   public static void syncRecognizeFile(String fileName) throws Exception, IOException {
     SpeechClient speech = SpeechClient.create();
 
@@ -73,6 +77,7 @@ public class Recognize {
     byte[] data = Files.readAllBytes(path);
     ByteString audioBytes = ByteString.copyFrom(data);
 
+    // Configure request with local raw PCM audio
     RecognitionConfig config = RecognitionConfig.newBuilder()
         .setEncoding(AudioEncoding.LINEAR16)
         .setSampleRate(16000)
@@ -81,6 +86,7 @@ public class Recognize {
         .setContent(audioBytes)
         .build();
 
+    // Use blocking call to get audio transcript
     SyncRecognizeResponse response = speech.syncRecognize(config, audio);
     List<SpeechRecognitionResult> results = response.getResultsList();
 
@@ -93,11 +99,16 @@ public class Recognize {
     speech.close();
   }
 
+  /**
+   * Performs speech recognition on remote FLAC file and prints the transcription.
+   *
+   * @param gcsUri the path to the remote FLAC audio file to transcribe.
+   */
   public static void syncRecognizeGcs(String gcsUri) throws Exception, IOException {
-    // Instantiates a client
+    // Instantiates a client with GOOGLE_APPLICATION_CREDENTIALS
     SpeechClient speech = SpeechClient.create();
 
-    // Builds the sync recognize request
+    // Builds the request for remote FLAC file
     RecognitionConfig config = RecognitionConfig.newBuilder()
         .setEncoding(AudioEncoding.FLAC)
         .setSampleRate(16000)
@@ -106,7 +117,7 @@ public class Recognize {
         .setUri(gcsUri)
         .build();
 
-    // Performs speech recognition on the audio file
+    // Use blocking call for getting audio transcript
     SyncRecognizeResponse response = speech.syncRecognize(config, audio);
     List<SpeechRecognitionResult> results = response.getResultsList();
 
@@ -116,18 +127,24 @@ public class Recognize {
         System.out.printf("Transcription: %s%n", alternative.getTranscript());
       }
     }
-
-
     speech.close();
   }
 
+  /**
+   * Performs non-blocking speech recognition on raw PCM audio and prints
+   * the transcription.
+   *
+   * @param fileName the path to a PCM audio file to transcribe.
+   */
   public static void asyncRecognizeFile(String fileName) throws Exception, IOException {
+    // Instantiates a client with GOOGLE_APPLICATION_CREDENTIALS
     SpeechClient speech = SpeechClient.create();
 
     Path path = Paths.get(fileName);
     byte[] data = Files.readAllBytes(path);
     ByteString audioBytes = ByteString.copyFrom(data);
 
+    // Configure request with local raw PCM audio
     RecognitionConfig config = RecognitionConfig.newBuilder()
         .setEncoding(AudioEncoding.LINEAR16)
         .setSampleRate(16000)
@@ -136,8 +153,8 @@ public class Recognize {
         .setContent(audioBytes)
         .build();
 
+    // Use non-blocking call for getting file transcription
     OperationFuture<AsyncRecognizeResponse> response = speech.asyncRecognizeAsync(config, audio);
-
     while (!response.isDone()) {
       System.out.println("Waiting for response...");
       Thread.sleep(200);
@@ -154,9 +171,17 @@ public class Recognize {
     speech.close();
   }
 
+  /**
+   * Performs non-blocking speech recognition on remote FLAC file and prints
+   * the transcription.
+   *
+   * @param gcsUri the path to the remote FLAC audio file to transcribe.
+   */
   public static void asyncRecognizeGcs(String gcsUri) throws Exception, IOException {
+    // Instantiates a client with GOOGLE_APPLICATION_CREDENTIALS
     SpeechClient speech = SpeechClient.create();
 
+    // Configure remote file request for FLAC file
     RecognitionConfig config = RecognitionConfig.newBuilder()
         .setEncoding(AudioEncoding.FLAC)
         .setSampleRate(16000)
@@ -165,8 +190,8 @@ public class Recognize {
         .setUri(gcsUri)
         .build();
 
+    // Use non-blocking call for getting file transcription
     OperationFuture<AsyncRecognizeResponse> response = speech.asyncRecognizeAsync(config, audio);
-
     while (!response.isDone()) {
       System.out.println("Waiting for response...");
       Thread.sleep(200);
