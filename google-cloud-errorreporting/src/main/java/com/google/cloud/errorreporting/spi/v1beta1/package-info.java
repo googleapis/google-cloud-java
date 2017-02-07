@@ -28,8 +28,8 @@
  * <pre>
  * <code>
  * try (ErrorGroupServiceClient errorGroupServiceClient = ErrorGroupServiceClient.create()) {
- *   String formattedGroupName = ErrorGroupServiceClient.formatGroupName("[PROJECT]", "[GROUP]");
- *   ErrorGroup response = errorGroupServiceClient.getGroup(formattedGroupName);
+ *   GroupName groupName = GroupName.create("[PROJECT]", "[GROUP]");
+ *   ErrorGroup response = errorGroupServiceClient.getGroup(groupName);
  * }
  * </code>
  * </pre>
@@ -44,8 +44,8 @@
  * <pre>
  * <code>
  * try (ErrorStatsServiceClient errorStatsServiceClient = ErrorStatsServiceClient.create()) {
- *   String formattedProjectName = ErrorStatsServiceClient.formatProjectName("[PROJECT]");
- *   DeleteEventsResponse response = errorStatsServiceClient.deleteEvents(formattedProjectName);
+ *   ProjectName projectName = ProjectName.create("[PROJECT]");
+ *   DeleteEventsResponse response = errorStatsServiceClient.deleteEvents(projectName);
  * }
  * </code>
  * </pre>
@@ -59,9 +59,9 @@
  * <pre>
  * <code>
  * try (ReportErrorsServiceClient reportErrorsServiceClient = ReportErrorsServiceClient.create()) {
- *   String formattedProjectName = ReportErrorsServiceClient.formatProjectName("[PROJECT]");
+ *   ProjectName projectName = ProjectName.create("[PROJECT]");
  *   ReportedErrorEvent event = ReportedErrorEvent.newBuilder().build();
- *   ReportErrorEventResponse response = reportErrorsServiceClient.reportErrorEvent(formattedProjectName, event);
+ *   ReportErrorEventResponse response = reportErrorsServiceClient.reportErrorEvent(projectName, event);
  * }
  * </code>
  * </pre>

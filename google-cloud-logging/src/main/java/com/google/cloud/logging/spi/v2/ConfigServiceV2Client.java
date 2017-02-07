@@ -184,8 +184,8 @@ public class ConfigServiceV2Client implements AutoCloseable {
    * }
    * </code></pre>
    *
-   * @param parent Required. The resource name where this sink was created:
-   *     <p>"projects/[PROJECT_ID]" "organizations/[ORGANIZATION_ID]"
+   * @param parent Required. The parent resource whose sinks are to be listed. Examples:
+   *     `"projects/my-logging-project"`, `"organizations/123456789"`.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final ListSinksPagedResponse listSinks(ParentNameOneof parent) {
@@ -287,9 +287,10 @@ public class ConfigServiceV2Client implements AutoCloseable {
    * }
    * </code></pre>
    *
-   * @param sinkName Required. The resource name of the sink to return:
+   * @param sinkName Required. The parent resource name of the sink:
    *     <p>"projects/[PROJECT_ID]/sinks/[SINK_ID]"
    *     "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]"
+   *     <p>Example: `"projects/my-project-id/sinks/my-sink-id"`.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final LogSink getSink(SinkNameOneof sinkName) {
@@ -346,7 +347,10 @@ public class ConfigServiceV2Client implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a sink.
+   * Creates a sink that exports specified log entries to a destination. The export of
+   * newly-ingested log entries begins immediately, unless the current time is outside the sink's
+   * start and end times or the sink's `writer_identity` is not permitted to write to the
+   * destination. A sink can export log entries only from the resource owning the sink.
    *
    * <p>Sample code:
    *
@@ -360,6 +364,7 @@ public class ConfigServiceV2Client implements AutoCloseable {
    *
    * @param parent Required. The resource in which to create the sink:
    *     <p>"projects/[PROJECT_ID]" "organizations/[ORGANIZATION_ID]"
+   *     <p>Examples: `"projects/my-logging-project"`, `"organizations/123456789"`.
    * @param sink Required. The new sink, whose `name` parameter is a sink identifier that is not
    *     already in use.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
@@ -373,7 +378,10 @@ public class ConfigServiceV2Client implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a sink.
+   * Creates a sink that exports specified log entries to a destination. The export of
+   * newly-ingested log entries begins immediately, unless the current time is outside the sink's
+   * start and end times or the sink's `writer_identity` is not permitted to write to the
+   * destination. A sink can export log entries only from the resource owning the sink.
    *
    * <p>Sample code:
    *
@@ -398,7 +406,10 @@ public class ConfigServiceV2Client implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Creates a sink.
+   * Creates a sink that exports specified log entries to a destination. The export of
+   * newly-ingested log entries begins immediately, unless the current time is outside the sink's
+   * start and end times or the sink's `writer_identity` is not permitted to write to the
+   * destination. A sink can export log entries only from the resource owning the sink.
    *
    * <p>Sample code:
    *
@@ -422,7 +433,12 @@ public class ConfigServiceV2Client implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates or creates a sink.
+   * Updates a sink. If the named sink doesn't exist, then this method is identical to
+   * [sinks.create](/logging/docs/api/reference/rest/v2/projects.sinks/create). If the named sink
+   * does exist, then this method replaces the following fields in the existing sink with values
+   * from the new sink: `destination`, `filter`, `output_version_format`, `start_time`, and
+   * `end_time`. The updated filter might also have a new `writer_identity`; see the
+   * `unique_writer_identity` field.
    *
    * <p>Sample code:
    *
@@ -434,13 +450,13 @@ public class ConfigServiceV2Client implements AutoCloseable {
    * }
    * </code></pre>
    *
-   * @param sinkName Required. The resource name of the sink to update, including the parent
+   * @param sinkName Required. The full resource name of the sink to update, including the parent
    *     resource and the sink identifier:
    *     <p>"projects/[PROJECT_ID]/sinks/[SINK_ID]"
    *     "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]"
    *     <p>Example: `"projects/my-project-id/sinks/my-sink-id"`.
    * @param sink Required. The updated sink, whose name is the same identifier that appears as part
-   *     of `sinkName`. If `sinkName` does not exist, then this method creates a new sink.
+   *     of `sink_name`. If `sink_name` does not exist, then this method creates a new sink.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final LogSink updateSink(SinkNameOneof sinkName, LogSink sink) {
@@ -452,7 +468,12 @@ public class ConfigServiceV2Client implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates or creates a sink.
+   * Updates a sink. If the named sink doesn't exist, then this method is identical to
+   * [sinks.create](/logging/docs/api/reference/rest/v2/projects.sinks/create). If the named sink
+   * does exist, then this method replaces the following fields in the existing sink with values
+   * from the new sink: `destination`, `filter`, `output_version_format`, `start_time`, and
+   * `end_time`. The updated filter might also have a new `writer_identity`; see the
+   * `unique_writer_identity` field.
    *
    * <p>Sample code:
    *
@@ -477,7 +498,12 @@ public class ConfigServiceV2Client implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Updates or creates a sink.
+   * Updates a sink. If the named sink doesn't exist, then this method is identical to
+   * [sinks.create](/logging/docs/api/reference/rest/v2/projects.sinks/create). If the named sink
+   * does exist, then this method replaces the following fields in the existing sink with values
+   * from the new sink: `destination`, `filter`, `output_version_format`, `start_time`, and
+   * `end_time`. The updated filter might also have a new `writer_identity`; see the
+   * `unique_writer_identity` field.
    *
    * <p>Sample code:
    *
@@ -501,7 +527,8 @@ public class ConfigServiceV2Client implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes a sink.
+   * Deletes a sink. If the sink has a unique `writer_identity`, then that service account is also
+   * deleted.
    *
    * <p>Sample code:
    *
@@ -512,11 +539,12 @@ public class ConfigServiceV2Client implements AutoCloseable {
    * }
    * </code></pre>
    *
-   * @param sinkName Required. The resource name of the sink to delete, including the parent
+   * @param sinkName Required. The full resource name of the sink to delete, including the parent
    *     resource and the sink identifier:
    *     <p>"projects/[PROJECT_ID]/sinks/[SINK_ID]"
    *     "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]"
-   *     <p>It is an error if the sink does not exist.
+   *     <p>It is an error if the sink does not exist. Example:
+   *     `"projects/my-project-id/sinks/my-sink-id"`. It is an error if the sink does not exist.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final void deleteSink(SinkNameOneof sinkName) {
@@ -528,7 +556,8 @@ public class ConfigServiceV2Client implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes a sink.
+   * Deletes a sink. If the sink has a unique `writer_identity`, then that service account is also
+   * deleted.
    *
    * <p>Sample code:
    *
@@ -551,7 +580,8 @@ public class ConfigServiceV2Client implements AutoCloseable {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Deletes a sink.
+   * Deletes a sink. If the sink has a unique `writer_identity`, then that service account is also
+   * deleted.
    *
    * <p>Sample code:
    *

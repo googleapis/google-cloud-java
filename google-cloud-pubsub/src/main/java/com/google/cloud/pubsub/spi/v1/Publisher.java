@@ -16,7 +16,8 @@
 
 package com.google.cloud.pubsub.spi.v1;
 
-import com.google.api.gax.bundling.FlowController;
+import com.google.api.gax.grpc.FlowControlSettings;
+import com.google.api.gax.grpc.FlowController;
 import com.google.api.gax.core.RetrySettings;
 import com.google.api.gax.grpc.BundlingSettings;
 import com.google.api.gax.grpc.ChannelProvider;
@@ -122,7 +123,7 @@ public class Publisher {
   private final RetrySettings retrySettings;
   private final LongRandom longRandom;
 
-  private final FlowController.Settings flowControlSettings;
+  private final FlowControlSettings flowControlSettings;
   private final boolean failOnFlowControlLimits;
 
   private final Lock messagesBundleLock;
@@ -446,7 +447,7 @@ public class Publisher {
    * The bundling settings configured on this {@code Publisher}. See {@link
    * #failOnFlowControlLimits()}.
    */
-  public FlowController.Settings getFlowControlSettings() {
+  public FlowControlSettings getFlowControlSettings() {
     return flowControlSettings;
   }
 
@@ -571,7 +572,7 @@ public class Publisher {
     BundlingSettings bundlingSettings = DEFAULT_BUNDLING_SETTINGS;
 
     // Client-side flow control options
-    FlowController.Settings flowControlSettings = FlowController.Settings.DEFAULT;
+    FlowControlSettings flowControlSettings = FlowControlSettings.getDefaultInstance();
     boolean failOnFlowControlLimits = false;
 
     RetrySettings retrySettings = DEFAULT_RETRY_SETTINGS;
@@ -606,17 +607,6 @@ public class Publisher {
       Preconditions.checkArgument(bundlingSettings.getRequestByteThreshold() > 0);
       Preconditions.checkNotNull(bundlingSettings.getDelayThreshold());
       Preconditions.checkArgument(bundlingSettings.getDelayThreshold().getMillis() > 0);
-
-      Preconditions.checkArgument(
-          bundlingSettings.getElementCountLimit() == null,
-          "elementCountLimit option not honored by current implementation");
-      Preconditions.checkArgument(
-          bundlingSettings.getRequestByteLimit() == null,
-          "requestByteLimit option not honored by current implementation");
-      Preconditions.checkArgument(
-          bundlingSettings.getBlockingCallCountThreshold() == null,
-          "blockingCallCountThreshold option not honored by current implementation");
-
       this.bundlingSettings = bundlingSettings;
       return this;
     }
@@ -624,7 +614,7 @@ public class Publisher {
     // Flow control options
 
     /** Sets the flow control settings. */
-    public Builder setFlowControlSettings(FlowController.Settings flowControlSettings) {
+    public Builder setFlowControlSettings(FlowControlSettings flowControlSettings) {
       this.flowControlSettings = Preconditions.checkNotNull(flowControlSettings);
       return this;
     }

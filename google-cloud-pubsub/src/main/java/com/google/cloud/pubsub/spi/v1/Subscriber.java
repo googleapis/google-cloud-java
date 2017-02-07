@@ -16,7 +16,8 @@
 
 package com.google.cloud.pubsub.spi.v1;
 
-import com.google.api.gax.bundling.FlowController;
+import com.google.api.gax.grpc.FlowControlSettings;
+import com.google.api.gax.grpc.FlowController;
 import com.google.api.gax.grpc.ExecutorProvider;
 import com.google.api.gax.grpc.InstantiatingExecutorProvider;
 import com.google.api.stats.Distribution;
@@ -148,7 +149,7 @@ public class Subscriber {
   }
 
   /** The flow control settings the Subscriber is configured with. */
-  public FlowController.Settings getFlowControlSettings() {
+  public FlowControlSettings getFlowControlSettings() {
     return impl.flowControlSettings;
   }
 
@@ -265,7 +266,7 @@ public class Subscriber {
 
     private final SubscriptionName subscriptionName;
     private final String cachedSubscriptionNameString;
-    private final FlowController.Settings flowControlSettings;
+    private final FlowControlSettings flowControlSettings;
     private final Duration ackExpirationPadding;
     private final ScheduledExecutorService executor;
     private final Distribution ackLatencyDistribution =
@@ -533,7 +534,7 @@ public class Subscriber {
 
     Duration ackExpirationPadding = DEFAULT_ACK_EXPIRATION_PADDING;
 
-    FlowController.Settings flowControlSettings = FlowController.Settings.DEFAULT;
+    FlowControlSettings flowControlSettings = FlowControlSettings.getDefaultInstance();
 
     ExecutorProvider executorProvider = DEFAULT_EXECUTOR_PROVIDER;
     Optional<ManagedChannelBuilder<? extends ManagedChannelBuilder<?>>> channelBuilder =
@@ -569,7 +570,7 @@ public class Subscriber {
     }
 
     /** Sets the flow control settings. */
-    public Builder setFlowControlSettings(FlowController.Settings flowControlSettings) {
+    public Builder setFlowControlSettings(FlowControlSettings flowControlSettings) {
       this.flowControlSettings = Preconditions.checkNotNull(flowControlSettings);
       return this;
     }

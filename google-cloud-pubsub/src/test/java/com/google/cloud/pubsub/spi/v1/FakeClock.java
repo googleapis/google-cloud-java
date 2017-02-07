@@ -20,15 +20,13 @@ import com.google.cloud.Clock;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicLong;
 
-/**
- * A Clock to help with testing time-based logic.
- */
-class FakeClock extends Clock {
+/** A Clock to help with testing time-based logic. */
+public class FakeClock extends Clock {
 
   private final AtomicLong millis = new AtomicLong();
 
   // Advances the clock value by {@code time} in {@code timeUnit}.
-  void advance(long time, TimeUnit timeUnit) {
+  public void advance(long time, TimeUnit timeUnit) {
     millis.addAndGet(timeUnit.toMillis(time));
   }
 

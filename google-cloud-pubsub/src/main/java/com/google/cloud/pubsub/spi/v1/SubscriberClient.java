@@ -814,7 +814,7 @@ public class SubscriberClient implements AutoCloseable {
    *     may return fewer than the number specified.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  /* package-private */ final PullResponse pull(
+  public final PullResponse pull(
       SubscriptionName subscription, boolean returnImmediately, int maxMessages) {
 
     PullRequest request =
@@ -875,7 +875,7 @@ public class SubscriberClient implements AutoCloseable {
    * }
    * </code></pre>
    */
-  /* package-private */ final UnaryCallable<PullRequest, PullResponse> pullCallable() {
+  public final UnaryCallable<PullRequest, PullResponse> pullCallable() {
     return pullCallable;
   }
 
@@ -927,7 +927,7 @@ public class SubscriberClient implements AutoCloseable {
    * }
    * </code></pre>
    */
-  /* package-private */ final StreamingCallable<StreamingPullRequest, StreamingPullResponse>
+  public final StreamingCallable<StreamingPullRequest, StreamingPullResponse>
       streamingPullCallable() {
     return streamingPullCallable;
   }

@@ -22,16 +22,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-bigquery</artifactId>
-  <version>0.8.0-beta</version>
+  <version>0.8.2-beta</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-bigquery:0.8.0-beta'
+compile 'com.google.cloud:google-cloud-bigquery:0.8.2-beta'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-bigquery" % "0.8.0-beta"
+libraryDependencies += "com.google.cloud" % "google-cloud-bigquery" % "0.8.2-beta"
 ```
 
 Example Application
@@ -189,7 +189,7 @@ QueryRequest queryRequest =
         .build();
 // Request query to be executed and wait for results
 QueryResponse queryResponse = bigquery.query(queryRequest);
-while (!queryResponse.jobComplete()) {
+while (!queryResponse.jobCompleted()) {
   Thread.sleep(1000L);
   queryResponse = bigquery.getQueryResults(queryResponse.getJobId());
 }

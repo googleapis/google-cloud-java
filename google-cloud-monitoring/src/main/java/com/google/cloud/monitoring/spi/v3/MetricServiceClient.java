@@ -23,7 +23,6 @@ import com.google.api.MetricDescriptor;
 import com.google.api.MonitoredResourceDescriptor;
 import com.google.api.gax.grpc.ChannelAndExecutor;
 import com.google.api.gax.grpc.UnaryCallable;
-import com.google.api.gax.protobuf.PathTemplate;
 import com.google.monitoring.v3.CreateMetricDescriptorRequest;
 import com.google.monitoring.v3.CreateTimeSeriesRequest;
 import com.google.monitoring.v3.DeleteMetricDescriptorRequest;
@@ -36,6 +35,9 @@ import com.google.monitoring.v3.ListMonitoredResourceDescriptorsResponse;
 import com.google.monitoring.v3.ListTimeSeriesRequest;
 import com.google.monitoring.v3.ListTimeSeriesRequest.TimeSeriesView;
 import com.google.monitoring.v3.ListTimeSeriesResponse;
+import com.google.monitoring.v3.MetricDescriptorName;
+import com.google.monitoring.v3.MonitoredResourceDescriptorName;
+import com.google.monitoring.v3.ProjectName;
 import com.google.monitoring.v3.TimeInterval;
 import com.google.monitoring.v3.TimeSeries;
 import com.google.protobuf.Empty;
@@ -59,8 +61,8 @@ import javax.annotation.Generated;
  * <pre>
  * <code>
  * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
- *   String formattedName = MetricServiceClient.formatMonitoredResourceDescriptorName("[PROJECT]", "[MONITORED_RESOURCE_DESCRIPTOR]");
- *   MonitoredResourceDescriptor response = metricServiceClient.getMonitoredResourceDescriptor(formattedName);
+ *   MonitoredResourceDescriptorName name = MonitoredResourceDescriptorName.create("[PROJECT]", "[MONITORED_RESOURCE_DESCRIPTOR]");
+ *   MonitoredResourceDescriptor response = metricServiceClient.getMonitoredResourceDescriptor(name);
  * }
  * </code>
  * </pre>
@@ -133,86 +135,6 @@ public class MetricServiceClient implements AutoCloseable {
   private final UnaryCallable<ListTimeSeriesRequest, ListTimeSeriesPagedResponse>
       listTimeSeriesPagedCallable;
   private final UnaryCallable<CreateTimeSeriesRequest, Empty> createTimeSeriesCallable;
-
-  private static final PathTemplate PROJECT_PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding("projects/{project}");
-
-  private static final PathTemplate METRIC_DESCRIPTOR_PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding(
-          "projects/{project}/metricDescriptors/{metric_descriptor=**}");
-
-  private static final PathTemplate MONITORED_RESOURCE_DESCRIPTOR_PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding(
-          "projects/{project}/monitoredResourceDescriptors/{monitored_resource_descriptor}");
-
-  /** Formats a string containing the fully-qualified path to represent a project resource. */
-  public static final String formatProjectName(String project) {
-    return PROJECT_PATH_TEMPLATE.instantiate("project", project);
-  }
-
-  /**
-   * Formats a string containing the fully-qualified path to represent a metric_descriptor resource.
-   */
-  public static final String formatMetricDescriptorName(String project, String metricDescriptor) {
-    return METRIC_DESCRIPTOR_PATH_TEMPLATE.instantiate(
-        "project", project,
-        "metric_descriptor", metricDescriptor);
-  }
-
-  /**
-   * Formats a string containing the fully-qualified path to represent a
-   * monitored_resource_descriptor resource.
-   */
-  public static final String formatMonitoredResourceDescriptorName(
-      String project, String monitoredResourceDescriptor) {
-    return MONITORED_RESOURCE_DESCRIPTOR_PATH_TEMPLATE.instantiate(
-        "project", project,
-        "monitored_resource_descriptor", monitoredResourceDescriptor);
-  }
-
-  /** Parses the project from the given fully-qualified path which represents a project resource. */
-  public static final String parseProjectFromProjectName(String projectName) {
-    return PROJECT_PATH_TEMPLATE.parse(projectName).get("project");
-  }
-
-  /**
-   * Parses the project from the given fully-qualified path which represents a metric_descriptor
-   * resource.
-   */
-  public static final String parseProjectFromMetricDescriptorName(String metricDescriptorName) {
-    return METRIC_DESCRIPTOR_PATH_TEMPLATE.parse(metricDescriptorName).get("project");
-  }
-
-  /**
-   * Parses the metric_descriptor from the given fully-qualified path which represents a
-   * metric_descriptor resource.
-   */
-  public static final String parseMetricDescriptorFromMetricDescriptorName(
-      String metricDescriptorName) {
-    return METRIC_DESCRIPTOR_PATH_TEMPLATE.parse(metricDescriptorName).get("metric_descriptor");
-  }
-
-  /**
-   * Parses the project from the given fully-qualified path which represents a
-   * monitored_resource_descriptor resource.
-   */
-  public static final String parseProjectFromMonitoredResourceDescriptorName(
-      String monitoredResourceDescriptorName) {
-    return MONITORED_RESOURCE_DESCRIPTOR_PATH_TEMPLATE
-        .parse(monitoredResourceDescriptorName)
-        .get("project");
-  }
-
-  /**
-   * Parses the monitored_resource_descriptor from the given fully-qualified path which represents a
-   * monitored_resource_descriptor resource.
-   */
-  public static final String parseMonitoredResourceDescriptorFromMonitoredResourceDescriptorName(
-      String monitoredResourceDescriptorName) {
-    return MONITORED_RESOURCE_DESCRIPTOR_PATH_TEMPLATE
-        .parse(monitoredResourceDescriptorName)
-        .get("monitored_resource_descriptor");
-  }
 
   /** Constructs an instance of MetricServiceClient with default settings. */
   public static final MetricServiceClient create() throws IOException {
@@ -301,8 +223,8 @@ public class MetricServiceClient implements AutoCloseable {
    *
    * <pre><code>
    * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
-   *   String formattedName = MetricServiceClient.formatProjectName("[PROJECT]");
-   *   for (MonitoredResourceDescriptor element : metricServiceClient.listMonitoredResourceDescriptors(formattedName).iterateAllElements()) {
+   *   ProjectName name = ProjectName.create("[PROJECT]");
+   *   for (MonitoredResourceDescriptor element : metricServiceClient.listMonitoredResourceDescriptors(name).iterateAllElements()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -313,10 +235,9 @@ public class MetricServiceClient implements AutoCloseable {
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final ListMonitoredResourceDescriptorsPagedResponse listMonitoredResourceDescriptors(
-      String name) {
-    PROJECT_PATH_TEMPLATE.validate(name, "listMonitoredResourceDescriptors");
+      ProjectName name) {
     ListMonitoredResourceDescriptorsRequest request =
-        ListMonitoredResourceDescriptorsRequest.newBuilder().setName(name).build();
+        ListMonitoredResourceDescriptorsRequest.newBuilder().setNameWithProjectName(name).build();
     return listMonitoredResourceDescriptors(request);
   }
 
@@ -329,9 +250,9 @@ public class MetricServiceClient implements AutoCloseable {
    *
    * <pre><code>
    * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
-   *   String formattedName = MetricServiceClient.formatProjectName("[PROJECT]");
+   *   ProjectName name = ProjectName.create("[PROJECT]");
    *   ListMonitoredResourceDescriptorsRequest request = ListMonitoredResourceDescriptorsRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setNameWithProjectName(name)
    *     .build();
    *   for (MonitoredResourceDescriptor element : metricServiceClient.listMonitoredResourceDescriptors(request).iterateAllElements()) {
    *     // doThingsWith(element);
@@ -356,9 +277,9 @@ public class MetricServiceClient implements AutoCloseable {
    *
    * <pre><code>
    * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
-   *   String formattedName = MetricServiceClient.formatProjectName("[PROJECT]");
+   *   ProjectName name = ProjectName.create("[PROJECT]");
    *   ListMonitoredResourceDescriptorsRequest request = ListMonitoredResourceDescriptorsRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setNameWithProjectName(name)
    *     .build();
    *   ListenableFuture&lt;ListMonitoredResourceDescriptorsPagedResponse&gt; future = metricServiceClient.listMonitoredResourceDescriptorsPagedCallable().futureCall(request);
    *   // Do something
@@ -383,9 +304,9 @@ public class MetricServiceClient implements AutoCloseable {
    *
    * <pre><code>
    * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
-   *   String formattedName = MetricServiceClient.formatProjectName("[PROJECT]");
+   *   ProjectName name = ProjectName.create("[PROJECT]");
    *   ListMonitoredResourceDescriptorsRequest request = ListMonitoredResourceDescriptorsRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setNameWithProjectName(name)
    *     .build();
    *   while (true) {
    *     ListMonitoredResourceDescriptorsResponse response = metricServiceClient.listMonitoredResourceDescriptorsCallable().call(request);
@@ -417,8 +338,8 @@ public class MetricServiceClient implements AutoCloseable {
    *
    * <pre><code>
    * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
-   *   String formattedName = MetricServiceClient.formatMonitoredResourceDescriptorName("[PROJECT]", "[MONITORED_RESOURCE_DESCRIPTOR]");
-   *   MonitoredResourceDescriptor response = metricServiceClient.getMonitoredResourceDescriptor(formattedName);
+   *   MonitoredResourceDescriptorName name = MonitoredResourceDescriptorName.create("[PROJECT]", "[MONITORED_RESOURCE_DESCRIPTOR]");
+   *   MonitoredResourceDescriptor response = metricServiceClient.getMonitoredResourceDescriptor(name);
    * }
    * </code></pre>
    *
@@ -427,10 +348,13 @@ public class MetricServiceClient implements AutoCloseable {
    *     `{resource_type}` is a predefined type, such as `cloudsql_database`.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  public final MonitoredResourceDescriptor getMonitoredResourceDescriptor(String name) {
-    MONITORED_RESOURCE_DESCRIPTOR_PATH_TEMPLATE.validate(name, "getMonitoredResourceDescriptor");
+  public final MonitoredResourceDescriptor getMonitoredResourceDescriptor(
+      MonitoredResourceDescriptorName name) {
+
     GetMonitoredResourceDescriptorRequest request =
-        GetMonitoredResourceDescriptorRequest.newBuilder().setName(name).build();
+        GetMonitoredResourceDescriptorRequest.newBuilder()
+            .setNameWithMonitoredResourceDescriptorName(name)
+            .build();
     return getMonitoredResourceDescriptor(request);
   }
 
@@ -443,9 +367,9 @@ public class MetricServiceClient implements AutoCloseable {
    *
    * <pre><code>
    * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
-   *   String formattedName = MetricServiceClient.formatMonitoredResourceDescriptorName("[PROJECT]", "[MONITORED_RESOURCE_DESCRIPTOR]");
+   *   MonitoredResourceDescriptorName name = MonitoredResourceDescriptorName.create("[PROJECT]", "[MONITORED_RESOURCE_DESCRIPTOR]");
    *   GetMonitoredResourceDescriptorRequest request = GetMonitoredResourceDescriptorRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setNameWithMonitoredResourceDescriptorName(name)
    *     .build();
    *   MonitoredResourceDescriptor response = metricServiceClient.getMonitoredResourceDescriptor(request);
    * }
@@ -468,9 +392,9 @@ public class MetricServiceClient implements AutoCloseable {
    *
    * <pre><code>
    * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
-   *   String formattedName = MetricServiceClient.formatMonitoredResourceDescriptorName("[PROJECT]", "[MONITORED_RESOURCE_DESCRIPTOR]");
+   *   MonitoredResourceDescriptorName name = MonitoredResourceDescriptorName.create("[PROJECT]", "[MONITORED_RESOURCE_DESCRIPTOR]");
    *   GetMonitoredResourceDescriptorRequest request = GetMonitoredResourceDescriptorRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setNameWithMonitoredResourceDescriptorName(name)
    *     .build();
    *   ListenableFuture&lt;MonitoredResourceDescriptor&gt; future = metricServiceClient.getMonitoredResourceDescriptorCallable().futureCall(request);
    *   // Do something
@@ -492,8 +416,8 @@ public class MetricServiceClient implements AutoCloseable {
    *
    * <pre><code>
    * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
-   *   String formattedName = MetricServiceClient.formatProjectName("[PROJECT]");
-   *   for (MetricDescriptor element : metricServiceClient.listMetricDescriptors(formattedName).iterateAllElements()) {
+   *   ProjectName name = ProjectName.create("[PROJECT]");
+   *   for (MetricDescriptor element : metricServiceClient.listMetricDescriptors(name).iterateAllElements()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -503,10 +427,9 @@ public class MetricServiceClient implements AutoCloseable {
    *     `"projects/{project_id_or_number}"`.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  public final ListMetricDescriptorsPagedResponse listMetricDescriptors(String name) {
-    PROJECT_PATH_TEMPLATE.validate(name, "listMetricDescriptors");
+  public final ListMetricDescriptorsPagedResponse listMetricDescriptors(ProjectName name) {
     ListMetricDescriptorsRequest request =
-        ListMetricDescriptorsRequest.newBuilder().setName(name).build();
+        ListMetricDescriptorsRequest.newBuilder().setNameWithProjectName(name).build();
     return listMetricDescriptors(request);
   }
 
@@ -519,9 +442,9 @@ public class MetricServiceClient implements AutoCloseable {
    *
    * <pre><code>
    * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
-   *   String formattedName = MetricServiceClient.formatProjectName("[PROJECT]");
+   *   ProjectName name = ProjectName.create("[PROJECT]");
    *   ListMetricDescriptorsRequest request = ListMetricDescriptorsRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setNameWithProjectName(name)
    *     .build();
    *   for (MetricDescriptor element : metricServiceClient.listMetricDescriptors(request).iterateAllElements()) {
    *     // doThingsWith(element);
@@ -546,9 +469,9 @@ public class MetricServiceClient implements AutoCloseable {
    *
    * <pre><code>
    * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
-   *   String formattedName = MetricServiceClient.formatProjectName("[PROJECT]");
+   *   ProjectName name = ProjectName.create("[PROJECT]");
    *   ListMetricDescriptorsRequest request = ListMetricDescriptorsRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setNameWithProjectName(name)
    *     .build();
    *   ListenableFuture&lt;ListMetricDescriptorsPagedResponse&gt; future = metricServiceClient.listMetricDescriptorsPagedCallable().futureCall(request);
    *   // Do something
@@ -572,9 +495,9 @@ public class MetricServiceClient implements AutoCloseable {
    *
    * <pre><code>
    * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
-   *   String formattedName = MetricServiceClient.formatProjectName("[PROJECT]");
+   *   ProjectName name = ProjectName.create("[PROJECT]");
    *   ListMetricDescriptorsRequest request = ListMetricDescriptorsRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setNameWithProjectName(name)
    *     .build();
    *   while (true) {
    *     ListMetricDescriptorsResponse response = metricServiceClient.listMetricDescriptorsCallable().call(request);
@@ -604,8 +527,8 @@ public class MetricServiceClient implements AutoCloseable {
    *
    * <pre><code>
    * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
-   *   String formattedName = MetricServiceClient.formatMetricDescriptorName("[PROJECT]", "[METRIC_DESCRIPTOR]");
-   *   MetricDescriptor response = metricServiceClient.getMetricDescriptor(formattedName);
+   *   MetricDescriptorName name = MetricDescriptorName.create("[PROJECT]", "[METRIC_DESCRIPTOR]");
+   *   MetricDescriptor response = metricServiceClient.getMetricDescriptor(name);
    * }
    * </code></pre>
    *
@@ -614,10 +537,10 @@ public class MetricServiceClient implements AutoCloseable {
    *     `{metric_id}` is `"compute.googleapis.com/instance/disk/read_bytes_count"`.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  public final MetricDescriptor getMetricDescriptor(String name) {
-    METRIC_DESCRIPTOR_PATH_TEMPLATE.validate(name, "getMetricDescriptor");
+  public final MetricDescriptor getMetricDescriptor(MetricDescriptorName name) {
+
     GetMetricDescriptorRequest request =
-        GetMetricDescriptorRequest.newBuilder().setName(name).build();
+        GetMetricDescriptorRequest.newBuilder().setNameWithMetricDescriptorName(name).build();
     return getMetricDescriptor(request);
   }
 
@@ -629,9 +552,9 @@ public class MetricServiceClient implements AutoCloseable {
    *
    * <pre><code>
    * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
-   *   String formattedName = MetricServiceClient.formatMetricDescriptorName("[PROJECT]", "[METRIC_DESCRIPTOR]");
+   *   MetricDescriptorName name = MetricDescriptorName.create("[PROJECT]", "[METRIC_DESCRIPTOR]");
    *   GetMetricDescriptorRequest request = GetMetricDescriptorRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setNameWithMetricDescriptorName(name)
    *     .build();
    *   MetricDescriptor response = metricServiceClient.getMetricDescriptor(request);
    * }
@@ -652,9 +575,9 @@ public class MetricServiceClient implements AutoCloseable {
    *
    * <pre><code>
    * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
-   *   String formattedName = MetricServiceClient.formatMetricDescriptorName("[PROJECT]", "[METRIC_DESCRIPTOR]");
+   *   MetricDescriptorName name = MetricDescriptorName.create("[PROJECT]", "[METRIC_DESCRIPTOR]");
    *   GetMetricDescriptorRequest request = GetMetricDescriptorRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setNameWithMetricDescriptorName(name)
    *     .build();
    *   ListenableFuture&lt;MetricDescriptor&gt; future = metricServiceClient.getMetricDescriptorCallable().futureCall(request);
    *   // Do something
@@ -676,9 +599,9 @@ public class MetricServiceClient implements AutoCloseable {
    *
    * <pre><code>
    * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
-   *   String formattedName = MetricServiceClient.formatProjectName("[PROJECT]");
+   *   ProjectName name = ProjectName.create("[PROJECT]");
    *   MetricDescriptor metricDescriptor = MetricDescriptor.newBuilder().build();
-   *   MetricDescriptor response = metricServiceClient.createMetricDescriptor(formattedName, metricDescriptor);
+   *   MetricDescriptor response = metricServiceClient.createMetricDescriptor(name, metricDescriptor);
    * }
    * </code></pre>
    *
@@ -688,11 +611,11 @@ public class MetricServiceClient implements AutoCloseable {
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final MetricDescriptor createMetricDescriptor(
-      String name, MetricDescriptor metricDescriptor) {
-    PROJECT_PATH_TEMPLATE.validate(name, "createMetricDescriptor");
+      ProjectName name, MetricDescriptor metricDescriptor) {
+
     CreateMetricDescriptorRequest request =
         CreateMetricDescriptorRequest.newBuilder()
-            .setName(name)
+            .setNameWithProjectName(name)
             .setMetricDescriptor(metricDescriptor)
             .build();
     return createMetricDescriptor(request);
@@ -707,10 +630,10 @@ public class MetricServiceClient implements AutoCloseable {
    *
    * <pre><code>
    * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
-   *   String formattedName = MetricServiceClient.formatProjectName("[PROJECT]");
+   *   ProjectName name = ProjectName.create("[PROJECT]");
    *   MetricDescriptor metricDescriptor = MetricDescriptor.newBuilder().build();
    *   CreateMetricDescriptorRequest request = CreateMetricDescriptorRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setNameWithProjectName(name)
    *     .setMetricDescriptor(metricDescriptor)
    *     .build();
    *   MetricDescriptor response = metricServiceClient.createMetricDescriptor(request);
@@ -733,10 +656,10 @@ public class MetricServiceClient implements AutoCloseable {
    *
    * <pre><code>
    * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
-   *   String formattedName = MetricServiceClient.formatProjectName("[PROJECT]");
+   *   ProjectName name = ProjectName.create("[PROJECT]");
    *   MetricDescriptor metricDescriptor = MetricDescriptor.newBuilder().build();
    *   CreateMetricDescriptorRequest request = CreateMetricDescriptorRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setNameWithProjectName(name)
    *     .setMetricDescriptor(metricDescriptor)
    *     .build();
    *   ListenableFuture&lt;MetricDescriptor&gt; future = metricServiceClient.createMetricDescriptorCallable().futureCall(request);
@@ -759,8 +682,8 @@ public class MetricServiceClient implements AutoCloseable {
    *
    * <pre><code>
    * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
-   *   String formattedName = MetricServiceClient.formatMetricDescriptorName("[PROJECT]", "[METRIC_DESCRIPTOR]");
-   *   metricServiceClient.deleteMetricDescriptor(formattedName);
+   *   MetricDescriptorName name = MetricDescriptorName.create("[PROJECT]", "[METRIC_DESCRIPTOR]");
+   *   metricServiceClient.deleteMetricDescriptor(name);
    * }
    * </code></pre>
    *
@@ -769,10 +692,10 @@ public class MetricServiceClient implements AutoCloseable {
    *     `{metric_id}` is: `"custom.googleapis.com/my_test_metric"`.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  public final void deleteMetricDescriptor(String name) {
-    METRIC_DESCRIPTOR_PATH_TEMPLATE.validate(name, "deleteMetricDescriptor");
+  public final void deleteMetricDescriptor(MetricDescriptorName name) {
+
     DeleteMetricDescriptorRequest request =
-        DeleteMetricDescriptorRequest.newBuilder().setName(name).build();
+        DeleteMetricDescriptorRequest.newBuilder().setNameWithMetricDescriptorName(name).build();
     deleteMetricDescriptor(request);
   }
 
@@ -785,9 +708,9 @@ public class MetricServiceClient implements AutoCloseable {
    *
    * <pre><code>
    * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
-   *   String formattedName = MetricServiceClient.formatMetricDescriptorName("[PROJECT]", "[METRIC_DESCRIPTOR]");
+   *   MetricDescriptorName name = MetricDescriptorName.create("[PROJECT]", "[METRIC_DESCRIPTOR]");
    *   DeleteMetricDescriptorRequest request = DeleteMetricDescriptorRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setNameWithMetricDescriptorName(name)
    *     .build();
    *   metricServiceClient.deleteMetricDescriptor(request);
    * }
@@ -809,9 +732,9 @@ public class MetricServiceClient implements AutoCloseable {
    *
    * <pre><code>
    * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
-   *   String formattedName = MetricServiceClient.formatMetricDescriptorName("[PROJECT]", "[METRIC_DESCRIPTOR]");
+   *   MetricDescriptorName name = MetricDescriptorName.create("[PROJECT]", "[METRIC_DESCRIPTOR]");
    *   DeleteMetricDescriptorRequest request = DeleteMetricDescriptorRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setNameWithMetricDescriptorName(name)
    *     .build();
    *   ListenableFuture&lt;Void&gt; future = metricServiceClient.deleteMetricDescriptorCallable().futureCall(request);
    *   // Do something
@@ -832,11 +755,11 @@ public class MetricServiceClient implements AutoCloseable {
    *
    * <pre><code>
    * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
-   *   String formattedName = MetricServiceClient.formatProjectName("[PROJECT]");
+   *   ProjectName name = ProjectName.create("[PROJECT]");
    *   String filter = "";
    *   TimeInterval interval = TimeInterval.newBuilder().build();
    *   ListTimeSeriesRequest.TimeSeriesView view = ListTimeSeriesRequest.TimeSeriesView.FULL;
-   *   for (TimeSeries element : metricServiceClient.listTimeSeries(formattedName, filter, interval, view).iterateAllElements()) {
+   *   for (TimeSeries element : metricServiceClient.listTimeSeries(name, filter, interval, view).iterateAllElements()) {
    *     // doThingsWith(element);
    *   }
    * }
@@ -855,14 +778,13 @@ public class MetricServiceClient implements AutoCloseable {
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
   public final ListTimeSeriesPagedResponse listTimeSeries(
-      String name,
+      ProjectName name,
       String filter,
       TimeInterval interval,
       ListTimeSeriesRequest.TimeSeriesView view) {
-    PROJECT_PATH_TEMPLATE.validate(name, "listTimeSeries");
     ListTimeSeriesRequest request =
         ListTimeSeriesRequest.newBuilder()
-            .setName(name)
+            .setNameWithProjectName(name)
             .setFilter(filter)
             .setInterval(interval)
             .setView(view)
@@ -878,12 +800,12 @@ public class MetricServiceClient implements AutoCloseable {
    *
    * <pre><code>
    * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
-   *   String formattedName = MetricServiceClient.formatProjectName("[PROJECT]");
+   *   ProjectName name = ProjectName.create("[PROJECT]");
    *   String filter = "";
    *   TimeInterval interval = TimeInterval.newBuilder().build();
    *   ListTimeSeriesRequest.TimeSeriesView view = ListTimeSeriesRequest.TimeSeriesView.FULL;
    *   ListTimeSeriesRequest request = ListTimeSeriesRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setNameWithProjectName(name)
    *     .setFilter(filter)
    *     .setInterval(interval)
    *     .setView(view)
@@ -909,12 +831,12 @@ public class MetricServiceClient implements AutoCloseable {
    *
    * <pre><code>
    * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
-   *   String formattedName = MetricServiceClient.formatProjectName("[PROJECT]");
+   *   ProjectName name = ProjectName.create("[PROJECT]");
    *   String filter = "";
    *   TimeInterval interval = TimeInterval.newBuilder().build();
    *   ListTimeSeriesRequest.TimeSeriesView view = ListTimeSeriesRequest.TimeSeriesView.FULL;
    *   ListTimeSeriesRequest request = ListTimeSeriesRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setNameWithProjectName(name)
    *     .setFilter(filter)
    *     .setInterval(interval)
    *     .setView(view)
@@ -940,12 +862,12 @@ public class MetricServiceClient implements AutoCloseable {
    *
    * <pre><code>
    * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
-   *   String formattedName = MetricServiceClient.formatProjectName("[PROJECT]");
+   *   ProjectName name = ProjectName.create("[PROJECT]");
    *   String filter = "";
    *   TimeInterval interval = TimeInterval.newBuilder().build();
    *   ListTimeSeriesRequest.TimeSeriesView view = ListTimeSeriesRequest.TimeSeriesView.FULL;
    *   ListTimeSeriesRequest request = ListTimeSeriesRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setNameWithProjectName(name)
    *     .setFilter(filter)
    *     .setInterval(interval)
    *     .setView(view)
@@ -980,9 +902,9 @@ public class MetricServiceClient implements AutoCloseable {
    *
    * <pre><code>
    * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
-   *   String formattedName = MetricServiceClient.formatProjectName("[PROJECT]");
+   *   ProjectName name = ProjectName.create("[PROJECT]");
    *   List&lt;TimeSeries&gt; timeSeries = new ArrayList&lt;&gt;();
-   *   metricServiceClient.createTimeSeries(formattedName, timeSeries);
+   *   metricServiceClient.createTimeSeries(name, timeSeries);
    * }
    * </code></pre>
    *
@@ -994,10 +916,13 @@ public class MetricServiceClient implements AutoCloseable {
    *     by supplying all label values for the metric and the monitored resource.
    * @throws com.google.api.gax.grpc.ApiException if the remote call fails
    */
-  public final void createTimeSeries(String name, List<TimeSeries> timeSeries) {
-    PROJECT_PATH_TEMPLATE.validate(name, "createTimeSeries");
+  public final void createTimeSeries(ProjectName name, List<TimeSeries> timeSeries) {
+
     CreateTimeSeriesRequest request =
-        CreateTimeSeriesRequest.newBuilder().setName(name).addAllTimeSeries(timeSeries).build();
+        CreateTimeSeriesRequest.newBuilder()
+            .setNameWithProjectName(name)
+            .addAllTimeSeries(timeSeries)
+            .build();
     createTimeSeries(request);
   }
 
@@ -1011,10 +936,10 @@ public class MetricServiceClient implements AutoCloseable {
    *
    * <pre><code>
    * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
-   *   String formattedName = MetricServiceClient.formatProjectName("[PROJECT]");
+   *   ProjectName name = ProjectName.create("[PROJECT]");
    *   List&lt;TimeSeries&gt; timeSeries = new ArrayList&lt;&gt;();
    *   CreateTimeSeriesRequest request = CreateTimeSeriesRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setNameWithProjectName(name)
    *     .addAllTimeSeries(timeSeries)
    *     .build();
    *   metricServiceClient.createTimeSeries(request);
@@ -1038,10 +963,10 @@ public class MetricServiceClient implements AutoCloseable {
    *
    * <pre><code>
    * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
-   *   String formattedName = MetricServiceClient.formatProjectName("[PROJECT]");
+   *   ProjectName name = ProjectName.create("[PROJECT]");
    *   List&lt;TimeSeries&gt; timeSeries = new ArrayList&lt;&gt;();
    *   CreateTimeSeriesRequest request = CreateTimeSeriesRequest.newBuilder()
-   *     .setName(formattedName)
+   *     .setNameWithProjectName(name)
    *     .addAllTimeSeries(timeSeries)
    *     .build();
    *   ListenableFuture&lt;Void&gt; future = metricServiceClient.createTimeSeriesCallable().futureCall(request);
