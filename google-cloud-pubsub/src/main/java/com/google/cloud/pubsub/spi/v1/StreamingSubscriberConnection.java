@@ -222,7 +222,7 @@ final class StreamingSubscriberConnection extends AbstractService implements Ack
         modifyAckDeadlineChunks.iterator();
 
     while (ackChunksIt.hasNext() || modifyAckDeadlineChunksIt.hasNext()) {
-      com.google.pubsub.v1.StreamingPullRequest.Builder requestBuilder =
+      StreamingPullRequest.Builder requestBuilder =
           StreamingPullRequest.newBuilder();
       if (modifyAckDeadlineChunksIt.hasNext()) {
         List<PendingModifyAckDeadline> modAckChunk = modifyAckDeadlineChunksIt.next();

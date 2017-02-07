@@ -104,16 +104,6 @@ import org.joda.time.Duration;
  * </code></pre>
  */
 public class Publisher {
-  /** The maximum number of messages in one request. Defined by the API. */
-  public static long getApiMaxRequestElementCount() {
-    return 1000L;
-  }
-
-  /** The maximum size of one request. Defined by the API. */
-  public static long getApiMaxRequestBytes() {
-    return 10L * 1000L * 1000L; // 10 megabytes (https://en.wikipedia.org/wiki/Megabyte)
-  }
-
   private static final Logger logger = Logger.getLogger(Publisher.class.getName());
 
   private final TopicName topicName;
@@ -141,6 +131,16 @@ public class Publisher {
   private final List<AutoCloseable> closeables = new ArrayList<>();
   private final MessageWaiter messagesWaiter;
   private ScheduledFuture<?> currentAlarmFuture;
+
+  /** The maximum number of messages in one request. Defined by the API. */
+  public static long getApiMaxRequestElementCount() {
+    return 1000L;
+  }
+
+  /** The maximum size of one request. Defined by the API. */
+  public static long getApiMaxRequestBytes() {
+    return 10L * 1000L * 1000L; // 10 megabytes (https://en.wikipedia.org/wiki/Megabyte)
+  }
 
   private Publisher(Builder builder) throws IOException {
     topicName = builder.topicName;
@@ -574,7 +574,7 @@ public class Publisher {
 
     // Client-side flow control options
     FlowControlSettings flowControlSettings = FlowControlSettings.getDefaultInstance();
-    boolean failOnFlowControlLimits = false;
+    boolean failOnFlowControlLimits;
 
     RetrySettings retrySettings = DEFAULT_RETRY_SETTINGS;
     LongRandom longRandom = DEFAULT_LONG_RANDOM;
