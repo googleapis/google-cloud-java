@@ -18,14 +18,12 @@ package com.google.cloud.pubsub.testing;
 
 import com.google.cloud.NoCredentials;
 import com.google.cloud.RetryParams;
-import com.google.cloud.pubsub.PubSubOptions;
+import com.google.cloud.pubsub.deprecated.PubSubOptions;
 import com.google.cloud.testing.BaseEmulatorHelper;
 import com.google.common.collect.ImmutableList;
-
 import io.grpc.ManagedChannel;
 import io.grpc.netty.NegotiationType;
 import io.grpc.netty.NettyChannelBuilder;
-
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -35,7 +33,6 @@ import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.TimeoutException;
 import java.util.logging.Logger;
-
 import org.joda.time.Duration;
 
 /**
