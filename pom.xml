@@ -271,7 +271,7 @@
         <configuration>
           <serverId>sonatype-nexus-staging</serverId>
           <nexusUrl>https://oss.sonatype.org/</nexusUrl>
-          <autoReleaseAfterClose>true</autoReleaseAfterClose>
+          <autoReleaseAfterClose>false</autoReleaseAfterClose>
         </configuration>
       </plugin>
       <plugin>
