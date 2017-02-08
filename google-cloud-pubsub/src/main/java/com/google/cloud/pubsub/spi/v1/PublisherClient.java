@@ -52,6 +52,8 @@ import javax.annotation.Generated;
  * Service Description: The service that an application uses to manipulate topics, and to send
  * messages to a topic.
  *
+ * <p>To publish messages to a topic, see the Publisher class.
+ *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *

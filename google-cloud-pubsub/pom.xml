@@ -11,7 +11,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-pom</artifactId>
-    <version>0.8.3-alpha-SNAPSHOT</version>
+    <version>0.8.4-alpha-SNAPSHOT</version>
   </parent>
   <properties>
     <site.installationModule>google-cloud-pubsub</site.installationModule>
@@ -72,6 +72,12 @@
       <version>3.4</version>
       <scope>test</scope>
     </dependency>
+    <dependency>
+        <groupId>org.mockito</groupId>
+        <artifactId>mockito-all</artifactId>
+        <version>1.9.5</version>
+        <scope>test</scope>
+    </dependency>
   </dependencies>
   <profiles>
     <profile>
@@ -121,10 +127,7 @@
       </plugin>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
-        <!-- Downgrading to 3.1 because of https://issues.apache.org/jira/browse/MCOMPILER-236 -->
-        <!-- Upgrade to 3.5.1 which fixes the problem when available -->
-        <!-- <version>3.5.1</version> -->
-        <version>3.1</version>
+        <version>3.5.1</version>
         <configuration>
           <source>1.7</source>
           <target>1.7</target>

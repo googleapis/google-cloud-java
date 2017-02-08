@@ -57,6 +57,8 @@ import javax.annotation.Generated;
  * Service Description: The service that an application uses to manipulate subscriptions and to
  * consume messages from a subscription via the `Pull` method.
  *
+ * <p>To retrieve messages from a subscription, see the Subscriber class.
+ *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
  *
