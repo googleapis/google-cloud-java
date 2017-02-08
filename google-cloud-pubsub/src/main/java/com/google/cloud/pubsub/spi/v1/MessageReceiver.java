@@ -16,7 +16,6 @@
 
 package com.google.cloud.pubsub.spi.v1;
 
-import com.google.common.util.concurrent.SettableFuture;
 import com.google.pubsub.v1.PubsubMessage;
 
 /** This interface can be implemented by users of {@link Subscriber} to receive messages. */
@@ -36,8 +35,18 @@ public interface MessageReceiver {
   }
 
   /**
-   * Called when a message is received by the subscriber. The implementation must arrange for {@code
-   * reponse} to be set after processing the {@code message}.
+   * Accepts a reply, sending it to the service.
+   *
+   * <p>Both the interface and its method is named after the Java 8's {@code BiConsumer} interface
+   * to ease migration when we finally move.
    */
-  void receiveMessage(final PubsubMessage message, final SettableFuture<AckReply> response);
+  interface AckReplyConsumer {
+    void accept(AckReply ackReply, Throwable t);
+  }
+
+  /**
+   * Called when a message is received by the subscriber. The implementation must arrange for {@link
+   * AckReplyConsumer#accept} to be called after processing the {@code message}.
+   */
+  void receiveMessage(final PubsubMessage message, final AckReplyConsumer consumer);
 }

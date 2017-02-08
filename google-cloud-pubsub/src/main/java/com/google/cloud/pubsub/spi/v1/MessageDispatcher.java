@@ -281,12 +281,23 @@ class MessageDispatcher {
       final PubsubMessage message = userMessage.getMessage();
       final AckHandler ackHandler = acksIterator.next();
       final SettableFuture<AckReply> response = SettableFuture.create();
+      final MessageReceiver.AckReplyConsumer consumer =
+          new MessageReceiver.AckReplyConsumer() {
+            @Override
+            public void accept(AckReply reply, Throwable t) {
+              if (reply != null) {
+                response.set(reply);
+              } else {
+                response.setException(t);
+              }
+            }
+          };
       Futures.addCallback(response, ackHandler);
       executor.submit(
           new Runnable() {
             @Override
             public void run() {
-              receiver.receiveMessage(message, response);
+              receiver.receiveMessage(message, consumer);
             }
           });
     }

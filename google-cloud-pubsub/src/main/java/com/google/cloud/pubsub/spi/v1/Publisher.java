@@ -16,17 +16,22 @@
 
 package com.google.cloud.pubsub.spi.v1;
 
+import com.google.api.gax.core.Function;
 import com.google.api.gax.core.RetrySettings;
+import com.google.api.gax.core.RpcFuture;
+import com.google.api.gax.core.RpcFutureCallback;
 import com.google.api.gax.grpc.BundlingSettings;
 import com.google.api.gax.grpc.ChannelProvider;
 import com.google.api.gax.grpc.ExecutorProvider;
 import com.google.api.gax.grpc.FlowControlSettings;
 import com.google.api.gax.grpc.FlowController;
 import com.google.api.gax.grpc.InstantiatingExecutorProvider;
+import com.google.api.gax.grpc.RpcFutures;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
+import com.google.common.util.concurrent.ForwardingListenableFuture.SimpleForwardingListenableFuture;
 import com.google.common.util.concurrent.FutureCallback;
 import com.google.common.util.concurrent.Futures;
 import com.google.common.util.concurrent.ListenableFuture;
@@ -80,7 +85,7 @@ import org.joda.time.Duration;
  *       Publisher.newBuilder(MY_TOPIC)
  *           .setMaxBundleDuration(new Duration(10 * 1000))
  *           .build();
- *  List&lt;ListenableFuture&lt;String&gt;&gt; results = new ArrayList&lt;&gt;();
+ *  List&lt;RpcFuture&lt;String&gt;&gt; results = new ArrayList&lt;&gt;();
  *
  *  for (PubsubMessage messages : messagesToPublish) {
  *    results.add(publisher.publish(message));
@@ -206,7 +211,7 @@ public class Publisher {
    * @param message the message to publish.
    * @return the message ID wrapped in a future.
    */
-  public ListenableFuture<String> publish(PubsubMessage message) {
+  public RpcFuture<String> publish(PubsubMessage message) {
     if (shutdown.get()) {
       throw new IllegalStateException("Cannot publish on a shut-down publisher.");
     }
@@ -215,7 +220,7 @@ public class Publisher {
     try {
       flowController.reserve(1, messageSize);
     } catch (FlowController.FlowControlException e) {
-      return Futures.immediateFailedFuture(e);
+      return RpcFutures.immediateFailedFuture(e);
     }
     OutstandingBundle bundleToSend = null;
     SettableFuture<String> publishResult = SettableFuture.create();
@@ -287,7 +292,44 @@ public class Publisher {
           });
     }
 
-    return publishResult;
+    return new ListenableFutureDelegate<String>(publishResult);
+  }
+
+  private static class ListenableFutureDelegate<V> extends SimpleForwardingListenableFuture<V>
+      implements RpcFuture<V> {
+    ListenableFutureDelegate(ListenableFuture<V> delegate) {
+      super(delegate);
+    }
+
+    public void addCallback(final RpcFutureCallback<? super V> callback) {
+      Futures.addCallback(
+          this,
+          new FutureCallback<V>() {
+            @Override
+            public void onFailure(Throwable t) {
+              callback.onFailure(t);
+            }
+
+            @Override
+            public void onSuccess(V v) {
+              callback.onSuccess(v);
+            }
+          });
+    }
+
+    public <X extends Throwable> RpcFuture catching(
+        Class<X> exceptionType, final Function<? super X, ? extends V> callback) {
+      return new ListenableFutureDelegate<V>(
+          Futures.catching(
+              this,
+              exceptionType,
+              new com.google.common.base.Function<X, V>() {
+                @Override
+                public V apply(X input) {
+                  return callback.apply(input);
+                }
+              }));
+  }
   }
 
   private void setupDurationBasedPublishAlarm() {

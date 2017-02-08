@@ -328,7 +328,7 @@ public class SubscriberClient implements AutoCloseable {
    *     .setNameWithSubscriptionName(name)
    *     .setTopicWithTopicName(topic)
    *     .build();
-   *   ListenableFuture&lt;Subscription&gt; future = subscriberClient.createSubscriptionCallable().futureCall(request);
+   *   RpcFuture&lt;Subscription&gt; future = subscriberClient.createSubscriptionCallable().futureCall(request);
    *   // Do something
    *   Subscription response = future.get();
    * }
@@ -399,7 +399,7 @@ public class SubscriberClient implements AutoCloseable {
    *   GetSubscriptionRequest request = GetSubscriptionRequest.newBuilder()
    *     .setSubscriptionWithSubscriptionName(subscription)
    *     .build();
-   *   ListenableFuture&lt;Subscription&gt; future = subscriberClient.getSubscriptionCallable().futureCall(request);
+   *   RpcFuture&lt;Subscription&gt; future = subscriberClient.getSubscriptionCallable().futureCall(request);
    *   // Do something
    *   Subscription response = future.get();
    * }
@@ -471,7 +471,7 @@ public class SubscriberClient implements AutoCloseable {
    *   ListSubscriptionsRequest request = ListSubscriptionsRequest.newBuilder()
    *     .setProjectWithProjectName(project)
    *     .build();
-   *   ListenableFuture&lt;ListSubscriptionsPagedResponse&gt; future = subscriberClient.listSubscriptionsPagedCallable().futureCall(request);
+   *   RpcFuture&lt;ListSubscriptionsPagedResponse&gt; future = subscriberClient.listSubscriptionsPagedCallable().futureCall(request);
    *   // Do something
    *   for (Subscription element : future.get().iterateAllElements()) {
    *     // doThingsWith(element);
@@ -586,7 +586,7 @@ public class SubscriberClient implements AutoCloseable {
    *   DeleteSubscriptionRequest request = DeleteSubscriptionRequest.newBuilder()
    *     .setSubscriptionWithSubscriptionName(subscription)
    *     .build();
-   *   ListenableFuture&lt;Void&gt; future = subscriberClient.deleteSubscriptionCallable().futureCall(request);
+   *   RpcFuture&lt;Void&gt; future = subscriberClient.deleteSubscriptionCallable().futureCall(request);
    *   // Do something
    *   future.get();
    * }
@@ -685,7 +685,7 @@ public class SubscriberClient implements AutoCloseable {
    *     .addAllAckIds(ackIds)
    *     .setAckDeadlineSeconds(ackDeadlineSeconds)
    *     .build();
-   *   ListenableFuture&lt;Void&gt; future = subscriberClient.modifyAckDeadlineCallable().futureCall(request);
+   *   RpcFuture&lt;Void&gt; future = subscriberClient.modifyAckDeadlineCallable().futureCall(request);
    *   // Do something
    *   future.get();
    * }
@@ -776,7 +776,7 @@ public class SubscriberClient implements AutoCloseable {
    *     .setSubscriptionWithSubscriptionName(subscription)
    *     .addAllAckIds(ackIds)
    *     .build();
-   *   ListenableFuture&lt;Void&gt; future = subscriberClient.acknowledgeCallable().futureCall(request);
+   *   RpcFuture&lt;Void&gt; future = subscriberClient.acknowledgeCallable().futureCall(request);
    *   // Do something
    *   future.get();
    * }
@@ -869,7 +869,7 @@ public class SubscriberClient implements AutoCloseable {
    *     .setSubscriptionWithSubscriptionName(subscription)
    *     .setMaxMessages(maxMessages)
    *     .build();
-   *   ListenableFuture&lt;PullResponse&gt; future = subscriberClient.pullCallable().futureCall(request);
+   *   RpcFuture&lt;PullResponse&gt; future = subscriberClient.pullCallable().futureCall(request);
    *   // Do something
    *   PullResponse response = future.get();
    * }
@@ -1018,7 +1018,7 @@ public class SubscriberClient implements AutoCloseable {
    *     .setSubscriptionWithSubscriptionName(subscription)
    *     .setPushConfig(pushConfig)
    *     .build();
-   *   ListenableFuture&lt;Void&gt; future = subscriberClient.modifyPushConfigCallable().futureCall(request);
+   *   RpcFuture&lt;Void&gt; future = subscriberClient.modifyPushConfigCallable().futureCall(request);
    *   // Do something
    *   future.get();
    * }
@@ -1096,7 +1096,7 @@ public class SubscriberClient implements AutoCloseable {
    *     .setResource(formattedResource)
    *     .setPolicy(policy)
    *     .build();
-   *   ListenableFuture&lt;Policy&gt; future = subscriberClient.setIamPolicyCallable().futureCall(request);
+   *   RpcFuture&lt;Policy&gt; future = subscriberClient.setIamPolicyCallable().futureCall(request);
    *   // Do something
    *   Policy response = future.get();
    * }
@@ -1168,7 +1168,7 @@ public class SubscriberClient implements AutoCloseable {
    *   GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder()
    *     .setResource(formattedResource)
    *     .build();
-   *   ListenableFuture&lt;Policy&gt; future = subscriberClient.getIamPolicyCallable().futureCall(request);
+   *   RpcFuture&lt;Policy&gt; future = subscriberClient.getIamPolicyCallable().futureCall(request);
    *   // Do something
    *   Policy response = future.get();
    * }
@@ -1253,7 +1253,7 @@ public class SubscriberClient implements AutoCloseable {
    *     .setResource(formattedResource)
    *     .addAllPermissions(permissions)
    *     .build();
-   *   ListenableFuture&lt;TestIamPermissionsResponse&gt; future = subscriberClient.testIamPermissionsCallable().futureCall(request);
+   *   RpcFuture&lt;TestIamPermissionsResponse&gt; future = subscriberClient.testIamPermissionsCallable().futureCall(request);
    *   // Do something
    *   TestIamPermissionsResponse response = future.get();
    * }
