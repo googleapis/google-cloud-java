@@ -76,11 +76,35 @@ public class DetectIT {
     assertThat(got).contains("joy: POSSIBLE");
     assertThat(got).contains("surprise: UNLIKELY");
   }
+  
+  @Test
+  public void testFacesGcs() throws Exception {
+    // Act
+    String[] args = {"faces", "gs://cloud-samples-tests/vision/face_no_surprise.jpg"};
+    Detect.argsHelper(args, out);
+
+    // Assert
+    String got = bout.toString();
+    assertThat(got).contains("anger: POSSIBLE");
+    assertThat(got).contains("joy: POSSIBLE");
+    assertThat(got).contains("surprise: UNLIKELY");
+  }
 
   @Test
   public void testLabels() throws Exception {
     // Act
     String[] args = {"labels", "./resources/wakeupcat.jpg"};
+    Detect.argsHelper(args, out);
+
+    // Assert
+    String got = bout.toString();
+    assertThat(got).contains("whiskers");
+  }
+  
+  @Test
+  public void testLabelsGcs() throws Exception {
+    // Act
+    String[] args = {"labels", "gs://cloud-samples-tests/vision/wakeupcat.jpg"};
     Detect.argsHelper(args, out);
 
     // Assert
@@ -100,9 +124,31 @@ public class DetectIT {
   }
 
   @Test
+  public void testLandmarksGcs() throws Exception {
+    // Act
+    String[] args = {"landmarks", "gs://cloud-samples-tests/vision/landmark.jpg"};
+    Detect.argsHelper(args, out);
+
+    // Assert
+    String got = bout.toString();
+    assertThat(got).contains("Palace of Fine Arts");
+  }
+
+  @Test
   public void testLogos() throws Exception {
     // Act
     String[] args = {"logos", "./resources/logos.png"};
+    Detect.argsHelper(args, out);
+
+    // Assert
+    String got = bout.toString();
+    assertThat(got).contains("Google");
+  }
+
+  @Test
+  public void testLogosGcs() throws Exception {
+    // Act
+    String[] args = {"logos", "gs://cloud-samples-tests/vision/logos.png"};
     Detect.argsHelper(args, out);
 
     // Assert
@@ -122,6 +168,17 @@ public class DetectIT {
   }
 
   @Test
+  public void testTextGcs() throws Exception {
+    // Act
+    String[] args = {"text", "gs://cloud-samples-tests/vision/text.jpg"};
+    Detect.argsHelper(args, out);
+
+    // Assert
+    String got = bout.toString();
+    assertThat(got).contains("37%");
+  }
+
+  @Test
   public void testSafeSearch() throws Exception {
     // Act
     String[] args = {"safe-search", "./resources/wakeupcat.jpg"};
@@ -133,9 +190,34 @@ public class DetectIT {
   }
 
   @Test
+  public void testSafeSearchGcs() throws Exception {
+    // Act
+    String[] args = {"safe-search", "gs://cloud-samples-tests/vision/wakeupcat.jpg"};
+    Detect.argsHelper(args, out);
+
+    // Assert
+    String got = bout.toString();
+    assertThat(got).contains("adult: VERY_UNLIKELY");
+  }
+
+  @Test
   public void testProperties() throws Exception {
     // Act
     String[] args = {"properties", "./resources/landmark.jpg"};
+    Detect.argsHelper(args, out);
+
+    // Assert
+    String got = bout.toString();
+    assertThat(got).contains("fraction:");
+    assertThat(got).contains("r:");
+    assertThat(got).contains("g:");
+    assertThat(got).contains("b:");
+  }
+  
+  @Test
+  public void testPropertiesGcs() throws Exception {
+    // Act
+    String[] args = {"properties", "gs://cloud-samples-tests/vision/landmark.jpg"};
     Detect.argsHelper(args, out);
 
     // Assert
