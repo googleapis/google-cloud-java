@@ -34,13 +34,13 @@ import com.google.cloud.vision.v1.LocationInfo;
 import com.google.cloud.vision.v1.SafeSearchAnnotation;
 import com.google.protobuf.ByteString;
 
+import org.joda.time.Duration;
+
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.List;
-
-import org.joda.time.Duration;
 
 public class Detect {
 
