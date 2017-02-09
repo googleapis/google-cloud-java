@@ -17,6 +17,7 @@
 package com.google.cloud.logging;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -91,8 +92,9 @@ public class GaeFlexLoggingEnhancer implements LoggingHandler.Enhancer {
           builder.addLabel("zone", zone);
         }
       }
-    } catch (Exception e) {
-      // unable to fetch zone;
+    } catch (IOException ex) {
+      // report the error, but do not throw as the inclusion of zone is optional
+      ex.printStackTrace();
     }
   }
 
