@@ -14,14 +14,23 @@
  * limitations under the License.
  */
 
-package com.google.cloud.pubsub.spi;
+package com.google.cloud.pubsub.deprecated;
 
-import com.google.cloud.pubsub.deprecated.PubSubOptions;
-import com.google.cloud.spi.ServiceRpcFactory;
+import com.google.cloud.Policy;
 
-/**
- * An interface for Pub/Sub RPC factory.
- * Implementation will be loaded via {@link java.util.ServiceLoader}.
- */
-public interface PubSubRpcFactory extends ServiceRpcFactory<PubSubRpc, PubSubOptions> {
+final class PolicyMarshaller extends Policy.DefaultMarshaller {
+
+  static final PolicyMarshaller INSTANCE = new PolicyMarshaller();
+
+  private PolicyMarshaller() {}
+
+  @Override
+  protected com.google.iam.v1.Policy toPb(Policy policy) {
+    return super.toPb(policy);
+  }
+
+  @Override
+  protected Policy fromPb(com.google.iam.v1.Policy policyPb) {
+    return super.fromPb(policyPb);
+  }
 }

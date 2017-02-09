@@ -127,7 +127,7 @@ public class Subscriber {
   /**
    * Constructs a new {@link Builder}.
    *
-   * <p>Once {@link Builder#build()} is called a gRPC stub will be created for use of the {@link
+   * <p>Once {@link Builder#build} is called a gRPC stub will be created for use of the {@link
    * Subscriber}.
    *
    * @param subscription Cloud Pub/Sub subscription to bind the subscriber to

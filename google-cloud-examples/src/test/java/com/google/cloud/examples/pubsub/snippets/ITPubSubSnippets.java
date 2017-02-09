@@ -25,29 +25,27 @@ import com.google.cloud.Identity;
 import com.google.cloud.Page;
 import com.google.cloud.Policy;
 import com.google.cloud.Role;
-import com.google.cloud.pubsub.PubSub;
-import com.google.cloud.pubsub.PubSubOptions;
-import com.google.cloud.pubsub.ReceivedMessage;
-import com.google.cloud.pubsub.Subscription;
-import com.google.cloud.pubsub.SubscriptionId;
-import com.google.cloud.pubsub.SubscriptionInfo;
-import com.google.cloud.pubsub.Topic;
-import com.google.cloud.pubsub.TopicInfo;
+import com.google.cloud.pubsub.deprecated.PubSub;
+import com.google.cloud.pubsub.deprecated.PubSubOptions;
+import com.google.cloud.pubsub.deprecated.ReceivedMessage;
+import com.google.cloud.pubsub.deprecated.Subscription;
+import com.google.cloud.pubsub.deprecated.SubscriptionId;
+import com.google.cloud.pubsub.deprecated.SubscriptionInfo;
+import com.google.cloud.pubsub.deprecated.Topic;
+import com.google.cloud.pubsub.deprecated.TopicInfo;
 import com.google.common.collect.Iterators;
 import com.google.common.collect.Sets;
-
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
-import org.junit.Rule;
-import org.junit.Test;
-import org.junit.rules.Timeout;
-
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 import java.util.UUID;
 import java.util.concurrent.ExecutionException;
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
+import org.junit.Rule;
+import org.junit.Test;
+import org.junit.rules.Timeout;
 
 public class ITPubSubSnippets {
 
