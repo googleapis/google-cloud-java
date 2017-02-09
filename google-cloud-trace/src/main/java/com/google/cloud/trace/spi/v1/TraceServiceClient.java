@@ -237,7 +237,7 @@ public class TraceServiceClient implements AutoCloseable {
    *     .setProjectId(projectId)
    *     .setTraces(traces)
    *     .build();
-   *   ListenableFuture&lt;Void&gt; future = traceServiceClient.patchTracesCallable().futureCall(request);
+   *   RpcFuture&lt;Void&gt; future = traceServiceClient.patchTracesCallable().futureCall(request);
    *   // Do something
    *   future.get();
    * }
@@ -311,7 +311,7 @@ public class TraceServiceClient implements AutoCloseable {
    *     .setProjectId(projectId)
    *     .setTraceId(traceId)
    *     .build();
-   *   ListenableFuture&lt;Trace&gt; future = traceServiceClient.getTraceCallable().futureCall(request);
+   *   RpcFuture&lt;Trace&gt; future = traceServiceClient.getTraceCallable().futureCall(request);
    *   // Do something
    *   Trace response = future.get();
    * }
@@ -381,7 +381,7 @@ public class TraceServiceClient implements AutoCloseable {
    *   ListTracesRequest request = ListTracesRequest.newBuilder()
    *     .setProjectId(projectId)
    *     .build();
-   *   ListenableFuture&lt;ListTracesPagedResponse&gt; future = traceServiceClient.listTracesPagedCallable().futureCall(request);
+   *   RpcFuture&lt;ListTracesPagedResponse&gt; future = traceServiceClient.listTracesPagedCallable().futureCall(request);
    *   // Do something
    *   for (Trace element : future.get().iterateAllElements()) {
    *     // doThingsWith(element);

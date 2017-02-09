@@ -214,7 +214,7 @@ public class ErrorGroupServiceClient implements AutoCloseable {
    *   GetGroupRequest request = GetGroupRequest.newBuilder()
    *     .setGroupNameWithGroupName(groupName)
    *     .build();
-   *   ListenableFuture&lt;ErrorGroup&gt; future = errorGroupServiceClient.getGroupCallable().futureCall(request);
+   *   RpcFuture&lt;ErrorGroup&gt; future = errorGroupServiceClient.getGroupCallable().futureCall(request);
    *   // Do something
    *   ErrorGroup response = future.get();
    * }
@@ -281,7 +281,7 @@ public class ErrorGroupServiceClient implements AutoCloseable {
    *   UpdateGroupRequest request = UpdateGroupRequest.newBuilder()
    *     .setGroup(group)
    *     .build();
-   *   ListenableFuture&lt;ErrorGroup&gt; future = errorGroupServiceClient.updateGroupCallable().futureCall(request);
+   *   RpcFuture&lt;ErrorGroup&gt; future = errorGroupServiceClient.updateGroupCallable().futureCall(request);
    *   // Do something
    *   ErrorGroup response = future.get();
    * }

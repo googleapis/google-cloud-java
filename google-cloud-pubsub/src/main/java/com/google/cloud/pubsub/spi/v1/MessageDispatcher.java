@@ -19,7 +19,6 @@ package com.google.cloud.pubsub.spi.v1;
 import com.google.api.gax.grpc.FlowController;
 import com.google.api.stats.Distribution;
 import com.google.cloud.Clock;
-import com.google.cloud.pubsub.spi.v1.MessageReceiver.AckReply;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.collect.Lists;
 import com.google.common.primitives.Ints;
@@ -281,12 +280,23 @@ class MessageDispatcher {
       final PubsubMessage message = userMessage.getMessage();
       final AckHandler ackHandler = acksIterator.next();
       final SettableFuture<AckReply> response = SettableFuture.create();
+      final AckReplyConsumer consumer =
+          new AckReplyConsumer() {
+            @Override
+            public void accept(AckReply reply, Throwable t) {
+              if (reply != null) {
+                response.set(reply);
+              } else {
+                response.setException(t);
+              }
+            }
+          };
       Futures.addCallback(response, ackHandler);
       executor.submit(
           new Runnable() {
             @Override
             public void run() {
-              receiver.receiveMessage(message, response);
+              receiver.receiveMessage(message, consumer);
             }
           });
     }

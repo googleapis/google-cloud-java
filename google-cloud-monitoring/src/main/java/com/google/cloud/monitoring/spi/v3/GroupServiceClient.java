@@ -226,7 +226,7 @@ public class GroupServiceClient implements AutoCloseable {
    *   ListGroupsRequest request = ListGroupsRequest.newBuilder()
    *     .setNameWithProjectName(name)
    *     .build();
-   *   ListenableFuture&lt;ListGroupsPagedResponse&gt; future = groupServiceClient.listGroupsPagedCallable().futureCall(request);
+   *   RpcFuture&lt;ListGroupsPagedResponse&gt; future = groupServiceClient.listGroupsPagedCallable().futureCall(request);
    *   // Do something
    *   for (Group element : future.get().iterateAllElements()) {
    *     // doThingsWith(element);
@@ -327,7 +327,7 @@ public class GroupServiceClient implements AutoCloseable {
    *   GetGroupRequest request = GetGroupRequest.newBuilder()
    *     .setNameWithGroupName(name)
    *     .build();
-   *   ListenableFuture&lt;Group&gt; future = groupServiceClient.getGroupCallable().futureCall(request);
+   *   RpcFuture&lt;Group&gt; future = groupServiceClient.getGroupCallable().futureCall(request);
    *   // Do something
    *   Group response = future.get();
    * }
@@ -403,7 +403,7 @@ public class GroupServiceClient implements AutoCloseable {
    *     .setNameWithProjectName(name)
    *     .setGroup(group)
    *     .build();
-   *   ListenableFuture&lt;Group&gt; future = groupServiceClient.createGroupCallable().futureCall(request);
+   *   RpcFuture&lt;Group&gt; future = groupServiceClient.createGroupCallable().futureCall(request);
    *   // Do something
    *   Group response = future.get();
    * }
@@ -471,7 +471,7 @@ public class GroupServiceClient implements AutoCloseable {
    *   UpdateGroupRequest request = UpdateGroupRequest.newBuilder()
    *     .setGroup(group)
    *     .build();
-   *   ListenableFuture&lt;Group&gt; future = groupServiceClient.updateGroupCallable().futureCall(request);
+   *   RpcFuture&lt;Group&gt; future = groupServiceClient.updateGroupCallable().futureCall(request);
    *   // Do something
    *   Group response = future.get();
    * }
@@ -539,7 +539,7 @@ public class GroupServiceClient implements AutoCloseable {
    *   DeleteGroupRequest request = DeleteGroupRequest.newBuilder()
    *     .setNameWithGroupName(name)
    *     .build();
-   *   ListenableFuture&lt;Void&gt; future = groupServiceClient.deleteGroupCallable().futureCall(request);
+   *   RpcFuture&lt;Void&gt; future = groupServiceClient.deleteGroupCallable().futureCall(request);
    *   // Do something
    *   future.get();
    * }
@@ -611,7 +611,7 @@ public class GroupServiceClient implements AutoCloseable {
    *   ListGroupMembersRequest request = ListGroupMembersRequest.newBuilder()
    *     .setNameWithGroupName(name)
    *     .build();
-   *   ListenableFuture&lt;ListGroupMembersPagedResponse&gt; future = groupServiceClient.listGroupMembersPagedCallable().futureCall(request);
+   *   RpcFuture&lt;ListGroupMembersPagedResponse&gt; future = groupServiceClient.listGroupMembersPagedCallable().futureCall(request);
    *   // Do something
    *   for (MonitoredResource element : future.get().iterateAllElements()) {
    *     // doThingsWith(element);

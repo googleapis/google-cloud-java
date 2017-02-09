@@ -16,10 +16,9 @@
 
 package com.google.cloud.examples.pubsub.snippets;
 
+import com.google.api.gax.core.RpcFuture;
 import com.google.cloud.pubsub.spi.v1.Publisher;
 import com.google.cloud.pubsub.spi.v1.PublisherClient;
-import com.google.common.util.concurrent.Futures;
-import com.google.common.util.concurrent.ListenableFuture;
 import com.google.protobuf.ByteString;
 import com.google.pubsub.v1.PubsubMessage;
 import com.google.pubsub.v1.TopicName;
@@ -42,15 +41,15 @@ public class CreateTopicAndPublishMessages {
     try {
       publisher = Publisher.newBuilder(topic).build();
       List<String> messages = Arrays.asList("first message", "second message");
-      List<ListenableFuture<String>> messageIds = new ArrayList<>();
+      List<RpcFuture<String>> messageIds = new ArrayList<>();
       for (String message : messages) {
         ByteString data = ByteString.copyFromUtf8(message);
         PubsubMessage pubsubMessage = PubsubMessage.newBuilder().setData(data).build();
-        ListenableFuture<String> messageIdFuture = publisher.publish(pubsubMessage);
+        RpcFuture<String> messageIdFuture = publisher.publish(pubsubMessage);
         messageIds.add(messageIdFuture);
       }
-      for (String messageId : Futures.allAsList(messageIds).get()) {
-        System.out.println("published with message ID: " + messageId);
+      for (RpcFuture<String> messageId : messageIds) {
+        System.out.println("published with message ID: " + messageId.get());
       }
     } finally {
       if (publisher != null) {

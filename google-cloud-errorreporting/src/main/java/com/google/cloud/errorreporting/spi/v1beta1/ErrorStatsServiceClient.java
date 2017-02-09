@@ -251,7 +251,7 @@ public class ErrorStatsServiceClient implements AutoCloseable {
    *     .setProjectNameWithProjectName(projectName)
    *     .setTimeRange(timeRange)
    *     .build();
-   *   ListenableFuture&lt;ListGroupStatsPagedResponse&gt; future = errorStatsServiceClient.listGroupStatsPagedCallable().futureCall(request);
+   *   RpcFuture&lt;ListGroupStatsPagedResponse&gt; future = errorStatsServiceClient.listGroupStatsPagedCallable().futureCall(request);
    *   // Do something
    *   for (ErrorGroupStats element : future.get().iterateAllElements()) {
    *     // doThingsWith(element);
@@ -370,7 +370,7 @@ public class ErrorStatsServiceClient implements AutoCloseable {
    *     .setProjectNameWithProjectName(projectName)
    *     .setGroupId(groupId)
    *     .build();
-   *   ListenableFuture&lt;ListEventsPagedResponse&gt; future = errorStatsServiceClient.listEventsPagedCallable().futureCall(request);
+   *   RpcFuture&lt;ListEventsPagedResponse&gt; future = errorStatsServiceClient.listEventsPagedCallable().futureCall(request);
    *   // Do something
    *   for (ErrorEvent element : future.get().iterateAllElements()) {
    *     // doThingsWith(element);
@@ -475,7 +475,7 @@ public class ErrorStatsServiceClient implements AutoCloseable {
    *   DeleteEventsRequest request = DeleteEventsRequest.newBuilder()
    *     .setProjectNameWithProjectName(projectName)
    *     .build();
-   *   ListenableFuture&lt;DeleteEventsResponse&gt; future = errorStatsServiceClient.deleteEventsCallable().futureCall(request);
+   *   RpcFuture&lt;DeleteEventsResponse&gt; future = errorStatsServiceClient.deleteEventsCallable().futureCall(request);
    *   // Do something
    *   DeleteEventsResponse response = future.get();
    * }

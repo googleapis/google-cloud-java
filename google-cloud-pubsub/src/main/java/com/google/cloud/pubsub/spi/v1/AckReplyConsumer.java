@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2017 Google Inc. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,13 +16,12 @@
 
 package com.google.cloud.pubsub.spi.v1;
 
-import com.google.pubsub.v1.PubsubMessage;
-
-/** This interface can be implemented by users of {@link Subscriber} to receive messages. */
-public interface MessageReceiver {
-  /**
-   * Called when a message is received by the subscriber. The implementation must arrange for {@link
-   * AckReplyConsumer#accept} to be called after processing the {@code message}.
-   */
-  void receiveMessage(final PubsubMessage message, final AckReplyConsumer consumer);
+/**
+ * Accepts a reply, sending it to the service.
+ *
+ * <p>Both the interface and its method is named after the Java 8's {@code BiConsumer} interface
+ * to make migration to Java 8 and adopting its patterns easier.
+ */
+public interface AckReplyConsumer {
+  void accept(AckReply ackReply, Throwable t);
 }

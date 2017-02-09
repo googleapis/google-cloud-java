@@ -22,13 +22,11 @@ import static org.junit.Assert.assertEquals;
 import com.google.api.gax.grpc.FixedExecutorProvider;
 import com.google.api.gax.grpc.InstantiatingExecutorProvider;
 import com.google.cloud.pubsub.spi.v1.FakeSubscriberServiceImpl.ModifyAckDeadline;
-import com.google.cloud.pubsub.spi.v1.MessageReceiver.AckReply;
 import com.google.cloud.pubsub.spi.v1.Subscriber.Builder;
 import com.google.common.base.Function;
 import com.google.common.base.Optional;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
-import com.google.common.util.concurrent.SettableFuture;
 import com.google.pubsub.v1.PubsubMessage;
 import com.google.pubsub.v1.PullResponse;
 import com.google.pubsub.v1.ReceivedMessage;
@@ -84,7 +82,7 @@ public class SubscriberImplTest {
   private TestReceiver testReceiver;
 
   static class TestReceiver implements MessageReceiver {
-    private final LinkedBlockingQueue<SettableFuture<AckReply>> outstandingMessageReplies =
+    private final LinkedBlockingQueue<AckReplyConsumer> outstandingMessageReplies =
         new LinkedBlockingQueue<>();
     private AckReply ackReply = AckReply.ACK;
     private Optional<CountDownLatch> messageCountLatch = Optional.absent();
@@ -114,17 +112,17 @@ public class SubscriberImplTest {
     }
 
     @Override
-    public void receiveMessage(PubsubMessage message, SettableFuture<AckReply> response) {
+    public void receiveMessage(PubsubMessage message, AckReplyConsumer consumer) {
       if (explicitAckReplies) {
         try {
-          outstandingMessageReplies.put(response);
+          outstandingMessageReplies.put(consumer);
         } catch (InterruptedException e) {
           throw new IllegalStateException(e);
         }
       } else {
-        replyTo(response);
+        replyTo(consumer);
       }
-      
+
       if (messageCountLatch.isPresent()) {
         messageCountLatch.get().countDown();
       }
@@ -141,17 +139,17 @@ public class SubscriberImplTest {
 
     public void replyAllOutstandingMessage() {
       Preconditions.checkState(explicitAckReplies);
-      SettableFuture<AckReply> reply;
+      AckReplyConsumer reply;
       while ((reply = outstandingMessageReplies.poll()) != null) {
         replyTo(reply);
       }
     }
 
-    private void replyTo(SettableFuture<AckReply> reply) {
+    private void replyTo(AckReplyConsumer reply) {
       if (error.isPresent()) {
-        reply.setException(error.get());
+        reply.accept(null, error.get());
       } else {
-        reply.set(ackReply);
+        reply.accept(ackReply, null);
       }
     }
   }

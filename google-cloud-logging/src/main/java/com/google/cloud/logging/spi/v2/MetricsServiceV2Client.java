@@ -233,7 +233,7 @@ public class MetricsServiceV2Client implements AutoCloseable {
    *   ListLogMetricsRequest request = ListLogMetricsRequest.newBuilder()
    *     .setParentWithParentNameOneof(parent)
    *     .build();
-   *   ListenableFuture&lt;ListLogMetricsPagedResponse&gt; future = metricsServiceV2Client.listLogMetricsPagedCallable().futureCall(request);
+   *   RpcFuture&lt;ListLogMetricsPagedResponse&gt; future = metricsServiceV2Client.listLogMetricsPagedCallable().futureCall(request);
    *   // Do something
    *   for (LogMetric element : future.get().iterateAllElements()) {
    *     // doThingsWith(element);
@@ -337,7 +337,7 @@ public class MetricsServiceV2Client implements AutoCloseable {
    *   GetLogMetricRequest request = GetLogMetricRequest.newBuilder()
    *     .setMetricNameWithMetricNameOneof(metricName)
    *     .build();
-   *   ListenableFuture&lt;LogMetric&gt; future = metricsServiceV2Client.getLogMetricCallable().futureCall(request);
+   *   RpcFuture&lt;LogMetric&gt; future = metricsServiceV2Client.getLogMetricCallable().futureCall(request);
    *   // Do something
    *   LogMetric response = future.get();
    * }
@@ -416,7 +416,7 @@ public class MetricsServiceV2Client implements AutoCloseable {
    *     .setParentWithParentNameOneof(parent)
    *     .setMetric(metric)
    *     .build();
-   *   ListenableFuture&lt;LogMetric&gt; future = metricsServiceV2Client.createLogMetricCallable().futureCall(request);
+   *   RpcFuture&lt;LogMetric&gt; future = metricsServiceV2Client.createLogMetricCallable().futureCall(request);
    *   // Do something
    *   LogMetric response = future.get();
    * }
@@ -497,7 +497,7 @@ public class MetricsServiceV2Client implements AutoCloseable {
    *     .setMetricNameWithMetricNameOneof(metricName)
    *     .setMetric(metric)
    *     .build();
-   *   ListenableFuture&lt;LogMetric&gt; future = metricsServiceV2Client.updateLogMetricCallable().futureCall(request);
+   *   RpcFuture&lt;LogMetric&gt; future = metricsServiceV2Client.updateLogMetricCallable().futureCall(request);
    *   // Do something
    *   LogMetric response = future.get();
    * }
@@ -566,7 +566,7 @@ public class MetricsServiceV2Client implements AutoCloseable {
    *   DeleteLogMetricRequest request = DeleteLogMetricRequest.newBuilder()
    *     .setMetricNameWithMetricNameOneof(metricName)
    *     .build();
-   *   ListenableFuture&lt;Void&gt; future = metricsServiceV2Client.deleteLogMetricCallable().futureCall(request);
+   *   RpcFuture&lt;Void&gt; future = metricsServiceV2Client.deleteLogMetricCallable().futureCall(request);
    *   // Do something
    *   future.get();
    * }
