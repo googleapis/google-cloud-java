@@ -22,7 +22,6 @@ import static org.junit.Assert.assertEquals;
 import com.google.api.gax.grpc.FixedExecutorProvider;
 import com.google.api.gax.grpc.InstantiatingExecutorProvider;
 import com.google.cloud.pubsub.spi.v1.FakeSubscriberServiceImpl.ModifyAckDeadline;
-import com.google.cloud.pubsub.spi.v1.MessageReceiver.AckReply;
 import com.google.cloud.pubsub.spi.v1.Subscriber.Builder;
 import com.google.common.base.Function;
 import com.google.common.base.Optional;
@@ -83,7 +82,7 @@ public class SubscriberImplTest {
   private TestReceiver testReceiver;
 
   static class TestReceiver implements MessageReceiver {
-    private final LinkedBlockingQueue<MessageReceiver.AckReplyConsumer> outstandingMessageReplies =
+    private final LinkedBlockingQueue<AckReplyConsumer> outstandingMessageReplies =
         new LinkedBlockingQueue<>();
     private AckReply ackReply = AckReply.ACK;
     private Optional<CountDownLatch> messageCountLatch = Optional.absent();
@@ -113,7 +112,7 @@ public class SubscriberImplTest {
     }
 
     @Override
-    public void receiveMessage(PubsubMessage message, MessageReceiver.AckReplyConsumer consumer) {
+    public void receiveMessage(PubsubMessage message, AckReplyConsumer consumer) {
       if (explicitAckReplies) {
         try {
           outstandingMessageReplies.put(consumer);
@@ -140,13 +139,13 @@ public class SubscriberImplTest {
 
     public void replyAllOutstandingMessage() {
       Preconditions.checkState(explicitAckReplies);
-      MessageReceiver.AckReplyConsumer reply;
+      AckReplyConsumer reply;
       while ((reply = outstandingMessageReplies.poll()) != null) {
         replyTo(reply);
       }
     }
 
-    private void replyTo(MessageReceiver.AckReplyConsumer reply) {
+    private void replyTo(AckReplyConsumer reply) {
       if (error.isPresent()) {
         reply.accept(null, error.get());
       } else {
