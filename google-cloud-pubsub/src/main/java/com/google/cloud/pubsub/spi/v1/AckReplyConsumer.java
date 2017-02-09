@@ -17,7 +17,7 @@
 package com.google.cloud.pubsub.spi.v1;
 
 /**
- * Used by {@link MessageReceiver}, {@code AckReplyConsumer} accepts an {@link MessageReceiver.AckReply}, sending it to the service.
+ * Accepts a reply, sending it to the service.
  *
  * <p>Both the interface and its method is named after the Java 8's {@code BiConsumer} interface
  * to make migration to Java 8 and adopting its patterns easier.
