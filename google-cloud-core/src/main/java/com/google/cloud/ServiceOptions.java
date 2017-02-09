@@ -408,7 +408,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
     try {
       URL url = new URL("http://metadata/computeMetadata/v1/project/project-id");
       HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-      connection.setRequestProperty("X-Google-Metadata-Request", "True");
+      connection.setRequestProperty("Metadata-Flavor", "Google");
       InputStream input = connection.getInputStream();
       if (connection.getResponseCode() == 200) {
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(input, UTF_8))) {
