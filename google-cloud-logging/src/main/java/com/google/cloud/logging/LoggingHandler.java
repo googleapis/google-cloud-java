@@ -163,19 +163,24 @@ public class LoggingHandler extends Handler {
    * or {@link LogEntry} instances built by this handler.
    */
   public LoggingHandler(String log, LoggingOptions options, MonitoredResource monitoredResource, List<Enhancer> enhancers) {
-    LogConfigHelper helper = new LogConfigHelper();
-    String className = getClass().getName();
-    this.options = options != null ? options : LoggingOptions.getDefaultInstance();
-    this.flushLevel = helper.getLevelProperty(className + ".flushLevel", LoggingLevel.ERROR);
-    this.flushSize = helper.getLongProperty(className + ".flushSize", 1L);
-    setLevel(helper.getLevelProperty(className + ".level", Level.INFO));
-    setFilter(helper.getFilterProperty(className + ".filter", null));
-    setFormatter(helper.getFormatterProperty(className + ".formatter", new SimpleFormatter()));
-    String logName = firstNonNull(log, helper.getProperty(className + ".log", "java.log"));
-    this.enhancers = enhancers != null ? enhancers : helper.getEnhancerProperty(className + ".enhancers");
-    String resourceType = helper.getProperty(className + ".resourceType", "global");
-    MonitoredResource resource = monitoredResource != null ? monitoredResource : getDefaultResource(resourceType);
-    writeOptions = new WriteOption[]{WriteOption.logName(logName), WriteOption.resource(resource)};
+    try {
+      LogConfigHelper helper = new LogConfigHelper();
+      String className = getClass().getName();
+      this.options = options != null ? options : LoggingOptions.getDefaultInstance();
+      this.flushLevel = helper.getLevelProperty(className + ".flushLevel", LoggingLevel.ERROR);
+      this.flushSize = helper.getLongProperty(className + ".flushSize", 1L);
+      setLevel(helper.getLevelProperty(className + ".level", Level.INFO));
+      setFilter(helper.getFilterProperty(className + ".filter", null));
+      setFormatter(helper.getFormatterProperty(className + ".formatter", new SimpleFormatter()));
+      String logName = firstNonNull(log, helper.getProperty(className + ".log", "java.log"));
+      this.enhancers = enhancers != null ? enhancers : helper.getEnhancerProperty(className + ".enhancers");
+      String resourceType = helper.getProperty(className + ".resourceType", "global");
+      MonitoredResource resource = monitoredResource != null ? monitoredResource : getDefaultResource(resourceType);
+      writeOptions = new WriteOption[]{WriteOption.logName(logName), WriteOption.resource(resource)};
+    } catch (Exception ex) {
+      reportError(null, ex, ErrorManager.OPEN_FAILURE);
+      throw ex;
+    }
   }
 
   private static List<LoggingHandler> getLoggingHandlers(Logger logger) {
@@ -354,23 +359,24 @@ public class LoggingHandler extends Handler {
     String payload;
     try {
       payload = getFormatter().format(record);
+      Level level = record.getLevel();
+      LogEntry.Builder builder = LogEntry.newBuilder(Payload.StringPayload.of(payload))
+          .addLabel("levelName", level.getName())
+          .addLabel("levelValue", String.valueOf(level.intValue()))
+          .setTimestamp(record.getMillis())
+          .setSeverity(severityFor(level));
+
+      for (Enhancer enhancer : enhancers) {
+        enhancer.enhanceLogEntry(builder, record);
+      }
+      enhanceLogEntry(builder, record);
+      return builder.build();
     } catch (Exception ex) {
-      // Formatting can fail but we should not throw an exception, we report the error instead
+      // Formatting or enhancing can fail but we should not throw an exception, 
+      // we report the error instead
       reportError(null, ex, ErrorManager.FORMAT_FAILURE);
       return null;
     }
-    Level level = record.getLevel();
-    LogEntry.Builder builder = LogEntry.newBuilder(Payload.StringPayload.of(payload))
-        .addLabel("levelName", level.getName())
-        .addLabel("levelValue", String.valueOf(level.intValue()))
-        .setTimestamp(record.getMillis())
-        .setSeverity(severityFor(level));
-    
-    for (Enhancer enhancer : enhancers) {
-      enhancer.enhanceLogEntry(builder, record);
-    }
-    enhanceLogEntry(builder, record);
-    return builder.build();
   }
   
   @Deprecated
