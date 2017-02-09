@@ -177,8 +177,7 @@ public class LoggingHandler extends Handler {
       String resourceType = helper.getProperty(className + ".resourceType", "global");
       MonitoredResource resource = monitoredResource != null ? monitoredResource : getDefaultResource(resourceType);
       writeOptions = new WriteOption[]{WriteOption.logName(logName), WriteOption.resource(resource)};
-    }
-    catch (Exception ex) {
+    } catch (Exception ex) {
       reportError(null, ex, ErrorManager.OPEN_FAILURE);
       throw ex;
     }
