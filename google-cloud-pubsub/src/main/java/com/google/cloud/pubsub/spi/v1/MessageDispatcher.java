@@ -149,7 +149,7 @@ class MessageDispatcher {
 
   /**
    * Handles callbacks for acking/nacking messages from the {@link
-   * com.google.cloud.pubsub.MessageReceiver}.
+   * com.google.cloud.pubsub.deprecated.MessageReceiver}.
    */
   private class AckHandler implements FutureCallback<AckReply> {
     private final String ackId;

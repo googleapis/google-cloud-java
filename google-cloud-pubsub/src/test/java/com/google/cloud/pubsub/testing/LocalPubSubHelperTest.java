@@ -22,18 +22,16 @@ import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
 import com.google.cloud.NoCredentials;
-import com.google.cloud.pubsub.PubSub;
-import com.google.cloud.pubsub.PubSubException;
-import com.google.cloud.pubsub.PubSubOptions;
-import com.google.cloud.pubsub.TopicInfo;
-
+import com.google.cloud.pubsub.deprecated.PubSub;
+import com.google.cloud.pubsub.deprecated.PubSubException;
+import com.google.cloud.pubsub.deprecated.PubSubOptions;
+import com.google.cloud.pubsub.deprecated.TopicInfo;
+import java.io.IOException;
+import java.util.concurrent.TimeoutException;
 import org.joda.time.Duration;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
-
-import java.io.IOException;
-import java.util.concurrent.TimeoutException;
 
 public class LocalPubSubHelperTest {
 

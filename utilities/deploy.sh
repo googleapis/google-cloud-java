@@ -4,7 +4,7 @@ set -e
 
 SITE_VERSION=$1
 
-if [ -n $SITE_VERSION ]; then
+if [ -z $SITE_VERSION ]; then
     echo "First arg (version) not provided, so we're exiting."
     exit 1
 fi
@@ -20,6 +20,6 @@ else
         echo "Existence was checked using the url $URL"
     else
         echo "Deploying Release artifacts..."
-        mvn clean deploy --quiet -Djava.util.logging.config.file=logging.properties -DskipITs --settings ~/.m2/settings.xml -P sign-deploy,release
+        mvn clean deploy --quiet -Djava.util.logging.config.file=logging.properties -DskipTests=true --settings ~/.m2/settings.xml -P release
     fi
 fi
