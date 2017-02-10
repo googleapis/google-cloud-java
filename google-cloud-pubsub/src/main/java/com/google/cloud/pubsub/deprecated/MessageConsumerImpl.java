@@ -21,15 +21,13 @@ import static com.google.common.base.MoreObjects.firstNonNull;
 import com.google.cloud.GrpcServiceOptions.ExecutorFactory;
 import com.google.cloud.pubsub.deprecated.PubSub.MessageConsumer;
 import com.google.cloud.pubsub.deprecated.PubSub.MessageProcessor;
-import com.google.cloud.pubsub.spi.PubSubRpc;
-import com.google.cloud.pubsub.spi.PubSubRpc.PullCallback;
-import com.google.cloud.pubsub.spi.PubSubRpc.PullFuture;
+import com.google.cloud.pubsub.deprecated.spi.PubSubRpc;
+import com.google.cloud.pubsub.deprecated.spi.PubSubRpc.PullCallback;
+import com.google.cloud.pubsub.deprecated.spi.PubSubRpc.PullFuture;
 import com.google.pubsub.v1.PullRequest;
 import com.google.pubsub.v1.PullResponse;
-
 import com.google.pubsub.v1.SubscriptionName;
 import io.grpc.internal.SharedResourceHolder;
-
 import java.util.List;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutorService;

@@ -17,12 +17,11 @@
 package com.google.cloud.pubsub.deprecated;
 
 import com.google.cloud.GrpcServiceOptions;
-import com.google.cloud.pubsub.spi.DefaultPubSubRpc;
-import com.google.cloud.pubsub.spi.PubSubRpc;
-import com.google.cloud.pubsub.spi.PubSubRpcFactory;
+import com.google.cloud.pubsub.deprecated.spi.DefaultPubSubRpc;
+import com.google.cloud.pubsub.deprecated.spi.PubSubRpc;
+import com.google.cloud.pubsub.deprecated.spi.PubSubRpcFactory;
 import com.google.cloud.pubsub.spi.v1.PublisherSettings;
 import com.google.common.collect.ImmutableSet;
-
 import java.io.IOException;
 import java.util.Set;
 import java.util.concurrent.ScheduledExecutorService;

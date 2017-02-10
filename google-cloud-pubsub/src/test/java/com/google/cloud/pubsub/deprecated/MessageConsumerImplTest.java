@@ -19,15 +19,17 @@ package com.google.cloud.pubsub.deprecated;
 import com.google.cloud.GrpcServiceOptions.ExecutorFactory;
 import com.google.cloud.pubsub.deprecated.PubSub.MessageConsumer;
 import com.google.cloud.pubsub.deprecated.PubSub.MessageProcessor;
-import com.google.cloud.pubsub.spi.PubSubRpc;
-import com.google.cloud.pubsub.spi.PubSubRpc.PullCallback;
-import com.google.cloud.pubsub.spi.PubSubRpc.PullFuture;
+import com.google.cloud.pubsub.deprecated.spi.PubSubRpc;
+import com.google.cloud.pubsub.deprecated.spi.PubSubRpc.PullCallback;
+import com.google.cloud.pubsub.deprecated.spi.PubSubRpc.PullFuture;
 import com.google.common.util.concurrent.ForwardingListenableFuture;
 import com.google.common.util.concurrent.FutureCallback;
 import com.google.common.util.concurrent.Futures;
 import com.google.pubsub.v1.PullRequest;
 import com.google.pubsub.v1.PullResponse;
-
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Future;
 import org.easymock.EasyMock;
 import org.easymock.IAnswer;
 import org.junit.After;
@@ -35,10 +37,6 @@ import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.Timeout;
-
-import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Future;
 
 public class MessageConsumerImplTest {
 
