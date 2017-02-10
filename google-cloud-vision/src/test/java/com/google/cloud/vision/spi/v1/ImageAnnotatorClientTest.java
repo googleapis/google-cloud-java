@@ -36,7 +36,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 @javax.annotation.Generated("by GAPIC")
-public class ImageAnnotatorTest {
+public class ImageAnnotatorClientTest {
   private static MockImageAnnotator mockImageAnnotator;
   private static MockServiceHelper serviceHelper;
   private ImageAnnotatorClient client;

@@ -36,7 +36,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 @javax.annotation.Generated("by GAPIC")
-public class ReportErrorsServiceTest {
+public class ReportErrorsServiceClientTest {
   private static MockErrorGroupService mockErrorGroupService;
   private static MockErrorStatsService mockErrorStatsService;
   private static MockReportErrorsService mockReportErrorsService;

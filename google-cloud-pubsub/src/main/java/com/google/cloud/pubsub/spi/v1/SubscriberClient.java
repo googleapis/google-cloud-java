@@ -897,8 +897,8 @@ public class SubscriberClient implements AutoCloseable {
    *
    * <pre><code>
    * try (SubscriberClient subscriberClient = SubscriberClient.create()) {
-   *   StreamObserver&lt;StreamingPullResponse&gt; responseObserver =
-   *       new StreamObserver&lt;StreamingPullResponse&gt;() {
+   *   RpcStreamObserver&lt;StreamingPullResponse&gt; responseObserver =
+   *       new RpcStreamObserver&lt;StreamingPullResponse&gt;() {
    *         {@literal @}Override
    *         public void onNext(StreamingPullResponse response) {
    *           // Do something when receive a response
@@ -914,7 +914,7 @@ public class SubscriberClient implements AutoCloseable {
    *           // Do something when complete.
    *         }
    *       };
-   *   StreamObserver&lt;StreamingRecognizeRequest&gt; requestObserver =
+   *   RpcStreamObserver&lt;StreamingRecognizeRequest&gt; requestObserver =
    *       subscriberClient.streamingPullCallable().bidiStreamingCall(responseObserver)});
    *
    *   SubscriptionName subscription = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]");
@@ -927,7 +927,7 @@ public class SubscriberClient implements AutoCloseable {
    * }
    * </code></pre>
    */
-  public final StreamingCallable<StreamingPullRequest, StreamingPullResponse>
+  /* package-private */ final StreamingCallable<StreamingPullRequest, StreamingPullResponse>
       streamingPullCallable() {
     return streamingPullCallable;
   }

@@ -28,8 +28,16 @@
  * <pre>
  * <code>
  * try (SpeechClient speechClient = SpeechClient.create()) {
- *   RecognitionConfig config = RecognitionConfig.newBuilder().build();
- *   RecognitionAudio audio = RecognitionAudio.newBuilder().build();
+ *   RecognitionConfig.AudioEncoding encoding = RecognitionConfig.AudioEncoding.FLAC;
+ *   int sampleRate = 44100;
+ *   RecognitionConfig config = RecognitionConfig.newBuilder()
+ *     .setEncoding(encoding)
+ *     .setSampleRate(sampleRate)
+ *     .build();
+ *   String uri = "gs://bucket_name/file_name.flac";
+ *   RecognitionAudio audio = RecognitionAudio.newBuilder()
+ *     .setUri(uri)
+ *     .build();
  *   SyncRecognizeResponse response = speechClient.syncRecognize(config, audio);
  * }
  * </code>

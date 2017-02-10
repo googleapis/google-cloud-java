@@ -15,6 +15,7 @@
  */
 package com.google.cloud.speech.spi.v1beta1;
 
+import com.google.api.gax.core.RpcStreamObserver;
 import com.google.api.gax.grpc.ApiException;
 import com.google.api.gax.grpc.StreamingCallable;
 import com.google.api.gax.testing.MockGrpcService;
@@ -24,6 +25,7 @@ import com.google.cloud.speech.v1beta1.AsyncRecognizeRequest;
 import com.google.cloud.speech.v1beta1.AsyncRecognizeResponse;
 import com.google.cloud.speech.v1beta1.RecognitionAudio;
 import com.google.cloud.speech.v1beta1.RecognitionConfig;
+import com.google.cloud.speech.v1beta1.RecognitionConfig.AudioEncoding;
 import com.google.cloud.speech.v1beta1.StreamingRecognizeRequest;
 import com.google.cloud.speech.v1beta1.StreamingRecognizeResponse;
 import com.google.cloud.speech.v1beta1.SyncRecognizeRequest;
@@ -33,7 +35,6 @@ import com.google.protobuf.Any;
 import com.google.protobuf.GeneratedMessageV3;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
-import io.grpc.stub.StreamObserver;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
@@ -46,7 +47,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 @javax.annotation.Generated("by GAPIC")
-public class SpeechTest {
+public class SpeechClientTest {
   private static MockSpeech mockSpeech;
   private static MockServiceHelper serviceHelper;
   private SpeechClient client;
@@ -85,8 +86,12 @@ public class SpeechTest {
     SyncRecognizeResponse expectedResponse = SyncRecognizeResponse.newBuilder().build();
     mockSpeech.addResponse(expectedResponse);
 
-    RecognitionConfig config = RecognitionConfig.newBuilder().build();
-    RecognitionAudio audio = RecognitionAudio.newBuilder().build();
+    RecognitionConfig.AudioEncoding encoding = RecognitionConfig.AudioEncoding.FLAC;
+    int sampleRate = 44100;
+    RecognitionConfig config =
+        RecognitionConfig.newBuilder().setEncoding(encoding).setSampleRate(sampleRate).build();
+    String uri = "gs://bucket_name/file_name.flac";
+    RecognitionAudio audio = RecognitionAudio.newBuilder().setUri(uri).build();
 
     SyncRecognizeResponse actualResponse = client.syncRecognize(config, audio);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -106,8 +111,12 @@ public class SpeechTest {
     mockSpeech.addException(exception);
 
     try {
-      RecognitionConfig config = RecognitionConfig.newBuilder().build();
-      RecognitionAudio audio = RecognitionAudio.newBuilder().build();
+      RecognitionConfig.AudioEncoding encoding = RecognitionConfig.AudioEncoding.FLAC;
+      int sampleRate = 44100;
+      RecognitionConfig config =
+          RecognitionConfig.newBuilder().setEncoding(encoding).setSampleRate(sampleRate).build();
+      String uri = "gs://bucket_name/file_name.flac";
+      RecognitionAudio audio = RecognitionAudio.newBuilder().setUri(uri).build();
 
       client.syncRecognize(config, audio);
       Assert.fail("No exception raised");
@@ -128,8 +137,12 @@ public class SpeechTest {
             .build();
     mockSpeech.addResponse(resultOperation);
 
-    RecognitionConfig config = RecognitionConfig.newBuilder().build();
-    RecognitionAudio audio = RecognitionAudio.newBuilder().build();
+    RecognitionConfig.AudioEncoding encoding = RecognitionConfig.AudioEncoding.FLAC;
+    int sampleRate = 44100;
+    RecognitionConfig config =
+        RecognitionConfig.newBuilder().setEncoding(encoding).setSampleRate(sampleRate).build();
+    String uri = "gs://bucket_name/file_name.flac";
+    RecognitionAudio audio = RecognitionAudio.newBuilder().setUri(uri).build();
 
     AsyncRecognizeResponse actualResponse = client.asyncRecognizeAsync(config, audio).get();
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -149,8 +162,12 @@ public class SpeechTest {
     mockSpeech.addException(exception);
 
     try {
-      RecognitionConfig config = RecognitionConfig.newBuilder().build();
-      RecognitionAudio audio = RecognitionAudio.newBuilder().build();
+      RecognitionConfig.AudioEncoding encoding = RecognitionConfig.AudioEncoding.FLAC;
+      int sampleRate = 44100;
+      RecognitionConfig config =
+          RecognitionConfig.newBuilder().setEncoding(encoding).setSampleRate(sampleRate).build();
+      String uri = "gs://bucket_name/file_name.flac";
+      RecognitionAudio audio = RecognitionAudio.newBuilder().setUri(uri).build();
 
       client.asyncRecognizeAsync(config, audio).get();
       Assert.fail("No exception raised");
@@ -174,7 +191,7 @@ public class SpeechTest {
 
     StreamingCallable<StreamingRecognizeRequest, StreamingRecognizeResponse> callable =
         client.streamingRecognizeCallable();
-    StreamObserver<StreamingRecognizeRequest> requestObserver =
+    RpcStreamObserver<StreamingRecognizeRequest> requestObserver =
         callable.bidiStreamingCall(responseObserver);
 
     requestObserver.onNext(request);
@@ -196,7 +213,7 @@ public class SpeechTest {
 
     StreamingCallable<StreamingRecognizeRequest, StreamingRecognizeResponse> callable =
         client.streamingRecognizeCallable();
-    StreamObserver<StreamingRecognizeRequest> requestObserver =
+    RpcStreamObserver<StreamingRecognizeRequest> requestObserver =
         callable.bidiStreamingCall(responseObserver);
 
     requestObserver.onNext(request);

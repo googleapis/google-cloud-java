@@ -545,7 +545,7 @@ public class LoggingServiceV2Settings extends ClientSettings {
       builder
           .writeLogEntriesSettings()
           .getBundlingSettingsBuilder()
-          .setElementCountThreshold(1)
+          .setElementCountThreshold(100)
           .setRequestByteThreshold(1024)
           .setDelayThreshold(Duration.millis(10));
       builder
