@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.cloud.pubsub.spi;
+package com.google.cloud.pubsub.deprecated.spi;
 
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;

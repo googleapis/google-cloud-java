@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.cloud.pubsub.spi;
+package com.google.cloud.pubsub.deprecated.spi;
 
 import com.google.api.gax.core.ForwardingRpcFuture;
 import com.google.api.gax.core.Function;
