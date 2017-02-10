@@ -208,6 +208,31 @@ public class Publisher {
    * future might immediately fail with a {@link FlowController.FlowControlException} or block the
    * current thread until there are more resources available to publish.
    *
+   * <p>Example of publishing messages.
+   * <pre> {@code
+   * String projectName = "my_project_name";
+   * String topicName = "my_topic_name";
+   * Publisher publisher = Publisher.newBuilder(TopicName.create(projectName, topicName)).build();
+   * List<String> messages = Arrays.asList("message1", "message2");
+   * 
+   * for (String message : messages) {
+   *   ByteString data = ByteString.copyFromUtf8(message);
+   *   PubsubMessage pubsubMessage = PubsubMessage.newBuilder().setData(data).build();
+   *   RpcFuture<String> messageIdFuture = publisher.publish(pubsubMessage);
+   *   messageIdFuture.addCallback(new RpcFutureCallback<String>() {
+   *     public void onSuccess(String messageId) {
+   *       System.out.println("published with message id: " + messageId);
+   *     }
+   * 
+   *     public void onFailure(Throwable t) {
+   *       System.out.println("failed to publish: " + t);
+   *     }
+   *   });
+   * }
+   * 
+   * publisher.shutdown();
+   * }</pre>
+   *
    * @param message the message to publish.
    * @return the message ID wrapped in a future.
    */
