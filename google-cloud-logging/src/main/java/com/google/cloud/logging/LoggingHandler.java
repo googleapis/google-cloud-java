@@ -499,7 +499,7 @@ public class LoggingHandler extends Handler {
    * A Log Enhancer.
    * May be used to enhance the {@link MonitoredResource} and/or the {@link LogEntry}
    */
-  interface Enhancer {
+  public interface Enhancer {
     void enhanceMonitoredResource(MonitoredResource.Builder builder);
     void enhanceLogEntry(LogEntry.Builder builder, LogRecord record);
   }
