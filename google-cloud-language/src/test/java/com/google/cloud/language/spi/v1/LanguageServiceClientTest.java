@@ -43,7 +43,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 @javax.annotation.Generated("by GAPIC")
-public class LanguageServiceTest {
+public class LanguageServiceClientTest {
   private static MockLanguageService mockLanguageService;
   private static MockServiceHelper serviceHelper;
   private LanguageServiceClient client;

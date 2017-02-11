@@ -42,7 +42,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 @javax.annotation.Generated("by GAPIC")
-public class TraceServiceTest {
+public class TraceServiceClientTest {
   private static MockTraceService mockTraceService;
   private static MockServiceHelper serviceHelper;
   private TraceServiceClient client;

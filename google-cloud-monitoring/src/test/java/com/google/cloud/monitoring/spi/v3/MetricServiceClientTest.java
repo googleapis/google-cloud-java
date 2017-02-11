@@ -58,7 +58,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 @javax.annotation.Generated("by GAPIC")
-public class MetricServiceTest {
+public class MetricServiceClientTest {
   private static MockGroupService mockGroupService;
   private static MockMetricService mockMetricService;
   private static MockServiceHelper serviceHelper;
