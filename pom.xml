@@ -114,6 +114,7 @@
     <module>google-cloud-monitoring</module>
     <module>google-cloud-pubsub</module>
     <module>google-cloud-resourcemanager</module>
+    <module>google-cloud-spanner</module>
     <module>google-cloud-speech</module>
     <module>google-cloud-storage</module>
     <module>google-cloud-trace</module>
