@@ -75,36 +75,6 @@ import org.joda.time.Duration;
  *
  * <p>If no credentials are provided, the {@link Subscriber} will use application default
  * credentials through {@link GoogleCredentials#getApplicationDefault}.
- *
- * <p>For example, a {@link Subscriber} can be constructed and used to receive messages as follows:
- *
- * <pre><code>
- * MessageReceiver receiver = new MessageReceiver() {
- *   &#64;Override
- *   public void receiveMessage(PubsubMessage message, SettableFuture&lt;AckReply&gt; response) {
- *     // ... process message ...
- *     return response.set(AckReply.ACK);
- *   }
- * }
- *
- * Subscriber subscriber =
- *     Subscriber.newBuilder(MY_SUBSCRIPTION, receiver)
- *         .setMaxBundleAcks(100)
- *         .build();
- *
- * subscriber.startAsync();
- *
- * // ... recommended, listen for fatal errors that break the subscriber streaming ...
- * subscriber.addListener(new Listener() {
- *   &#64;Override
- *   public void failed(State from, Throwable failure) {
- *     System.out.println("Subscriber failed with error: " + failure);
- *   }
- * }, Executors.newSingleThreadExecutor());
- *
- * // ... and when done with the subscriber ...
- * subscriber.stopAsync();
- * </code></pre>
  */
 public class Subscriber {
   private static final int THREADS_PER_CHANNEL = 5;
@@ -207,6 +177,66 @@ public class Subscriber {
     return impl.isRunning();
   }
 
+  /**
+   * Initiates service startup and returns immediately.
+   *
+   * <p>Example of receiving a specific number of messages.
+   * <pre> {@code
+   * String projectName = "my_project_name";
+   * String subscriptionName = "my_subscription_name";
+   * int receiveNum = 3;
+   * SubscriptionName subscription = SubscriptionName.create(projectName, subscriptionName);
+   * final Lock lock = new ReentrantLock();
+   * final Condition doneCondition = lock.newCondition();
+   * final AtomicInteger pendingReceives = new AtomicInteger(receiveNum);
+   * final AtomicBoolean done = new AtomicBoolean();
+   *
+   * MessageReceiver receiver = new MessageReceiver() {
+   *   public void receiveMessage(final PubsubMessage message, final AckReplyConsumer consumer) {
+   *     System.out.println("got message: " + message);
+   *     consumer.accept(AckReply.ACK, null);
+   *     if (pendingReceives.decrementAndGet() != 0) {
+   *       return;
+   *     }
+   *     lock.lock();
+   *     try {
+   *       done.set(true);
+   *       doneCondition.signal();
+   *     } finally {
+   *       lock.unlock();
+   *     }
+   *   }
+   * };
+   *
+   * Subscriber subscriber = Subscriber.newBuilder(subscription, receiver).build();
+   * subscriber.addListener(new Subscriber.SubscriberListener() {
+   *   public void failed(Subscriber.State from, Throwable failure) {
+   *     System.err.println(failure);
+   *     lock.lock();
+   *     try {
+   *       done.set(true);
+   *       doneCondition.signal();
+   *     } finally {
+   *       lock.unlock();
+   *     }
+   *   }
+   * }, new Executor() {
+   *   public void execute(Runnable command) {
+   *     command.run();
+   *   }
+   * });
+   * subscriber.startAsync();
+   * lock.lock();
+   * try {
+   *   while (!done.get()) {
+   *     doneCondition.await();
+   *   }
+   * } finally {
+   *   lock.unlock();
+   * }
+   * subscriber.stopAsync().awaitTerminated();
+   * }</pre>
+   */
   public Subscriber startAsync() {
     impl.startAsync();
     return this;
