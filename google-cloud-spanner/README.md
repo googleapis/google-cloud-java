@@ -24,11 +24,11 @@ Status](https://www.versioneye.com/user/projects/56bd8ee72a29ed002d2b0969/badge.
 
 If you are using Maven, add this to your pom.xml file `xml <dependency>
 <groupId>com.google.cloud</groupId>
-<artifactId>google-cloud-spanner</artifactId> <version>0.9.1-beta</version>
+<artifactId>google-cloud-spanner</artifactId> <version>0.9.2-beta</version>
 </dependency>` If you are using Gradle, add this to your dependencies `Groovy
-compile 'com.google.cloud:google-cloud-spanner:0.9.1-beta'` If you are using
+compile 'com.google.cloud:google-cloud-spanner:0.9.2-beta'` If you are using
 SBT, add this to your dependencies `Scala libraryDependencies +=
-"com.google.cloud" % "google-cloud-spanner" % "0.9.1-beta"`
+"com.google.cloud" % "google-cloud-spanner" % "0.9.2-beta"`
 
 ## Authentication
 
