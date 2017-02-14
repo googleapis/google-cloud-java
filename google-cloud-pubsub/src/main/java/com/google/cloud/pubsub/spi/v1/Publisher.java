@@ -550,7 +550,23 @@ public class Publisher {
     long nextLong(long least, long bound);
   }
 
-  /** Constructs a new {@link Builder} using the given topic. */
+  /**
+   * Constructs a new {@link Builder} using the given topic.
+   *
+   * <p>Example of creating a {@code Publisher}.
+   *
+   * <pre>{@code
+   * String projectName = "my_project";
+   * String topicName = "my_topic";
+   * TopicName topic = TopicName.create(projectName, topicName);
+   * Publisher publisher = Publisher.newBuilder(topic).build();
+   * try {
+   *   // ...
+   * } finally {
+   *   // When finished with the publisher, make sure to shutdown to free up resources.
+   *   publisher.shutdown();
+   * }
+   */
   public static Builder newBuilder(TopicName topicName) {
     return new Builder(topicName);
   }
@@ -622,30 +638,6 @@ public class Publisher {
      * <p>For performance, this client benefits from having multiple channels open at once. Users
      * are encouraged to provide instances of {@code ChannelProvider} that creates new channels
      * instead of returning pre-initialized ones.
-     *
-     * <p>Example of creating a {@code Publisher}.
-     *
-     * <pre>{@code
-     * String projectName = "my_project";
-     * String topicName = "my_topic";
-     * TopicName topic = TopicName.create(projectName, topicName);
-     * Publisher publisher = Publisher.newBuilder(topic).build();
-     * }</pre>
-     *
-     * <p>Example of creating a {@code Publisher}.
-     *
-     * <pre>{@code
-     * String projectName = "my_project";
-     * String topicName = "my_topic";
-     * TopicName topic = TopicName.create(projectName, topicName);
-     * Publisher publisher = Publisher.newBuilder(topic).build();
-     * try {
-     *   // ...
-     * } finally {
-     *   // When finished with the publisher, make sure to shutdown to free up resources.
-     *   publisher.shutdown();
-     * }
-     * }</pre>
      */
     public Builder setChannelProvider(ChannelProvider channelProvider) {
       this.channelProvider = Preconditions.checkNotNull(channelProvider);
