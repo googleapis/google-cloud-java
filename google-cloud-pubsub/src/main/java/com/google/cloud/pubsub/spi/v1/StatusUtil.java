@@ -17,6 +17,7 @@
 package com.google.cloud.pubsub.spi.v1;
 
 import io.grpc.Status;
+import io.grpc.StatusRuntimeException;
 
 /** Utilities for handling gRPC {@link Status}. */
 final class StatusUtil {
@@ -35,5 +36,17 @@ final class StatusUtil {
       default:
         return false;
     }
+  }
+
+  static boolean fallbackToPolling(Throwable t) {
+    if (!(t instanceof StatusRuntimeException)) {
+      return false;
+    }
+    StatusRuntimeException ex = (StatusRuntimeException) t;
+    if (ex.getStatus().getCode() == Status.Code.UNIMPLEMENTED) {
+      return true;
+    }
+    return ex.getStatus().getCode() == Status.Code.UNAVAILABLE
+        && "UNAVAILABLE: 502:Bad Gateway".equals(ex.getMessage());
   }
 }

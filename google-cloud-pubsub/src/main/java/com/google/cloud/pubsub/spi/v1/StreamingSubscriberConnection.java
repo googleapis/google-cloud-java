@@ -182,7 +182,7 @@ final class StreamingSubscriberConnection extends AbstractService implements Ack
           @Override
           public void onFailure(Throwable t) {
             Status errorStatus = Status.fromThrowable(t);
-            if (isRetryable(errorStatus) && isAlive()) {
+            if (!StatusUtil.fallbackToPolling(t) && isRetryable(errorStatus) && isAlive()) {
               long backoffMillis = channelReconnectBackoff.getMillis();
               channelReconnectBackoff = channelReconnectBackoff.plus(backoffMillis);
               executor.schedule(
