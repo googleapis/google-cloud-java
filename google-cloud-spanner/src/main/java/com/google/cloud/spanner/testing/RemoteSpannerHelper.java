@@ -42,7 +42,7 @@ public class RemoteSpannerHelper {
   private final Spanner client;
   private final InstanceId instanceId;
   private static int dbSeq;
-  private static int dbPrefix = new Random().nextInt();
+  private static int dbPrefix = new Random().nextInt(Integer.MAX_VALUE);
   private final List<Database> dbs = new ArrayList<>();
 
   private RemoteSpannerHelper(SpannerOptions options, InstanceId instanceId, Spanner client) {
