@@ -89,7 +89,7 @@ public class RemoteSpannerHelper {
    * statement generated accordingly.
    */
   public Database createTestDatabase(Iterable<String> statements) throws SpannerException {
-    String dbId = String.format("testdb_%04d", dbSeq++);
+    String dbId = getUniqueDatabaseId();
     Operation<Database, CreateDatabaseMetadata> op =
         client.getDatabaseAdminClient().createDatabase(instanceId.getInstance(), dbId, statements);
     op = op.waitFor();
