@@ -27,6 +27,7 @@ import com.google.spanner.admin.database.v1.CreateDatabaseMetadata;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -41,6 +42,7 @@ public class RemoteSpannerHelper {
   private final Spanner client;
   private final InstanceId instanceId;
   private static int dbSeq;
+  private static int dbPrefix = new Random().nextInt();
   private final List<Database> dbs = new ArrayList<>();
 
   private RemoteSpannerHelper(SpannerOptions options, InstanceId instanceId, Spanner client) {
@@ -78,7 +80,7 @@ public class RemoteSpannerHelper {
    * Returns a database id which is guaranteed to be unique within the context of this environment.
    */
   public String getUniqueDatabaseId() {
-    return String.format("testdb_%04d", dbSeq++);
+    return String.format("testdb_%d_%04d", dbPrefix, dbSeq++);
   }
 
   /**
