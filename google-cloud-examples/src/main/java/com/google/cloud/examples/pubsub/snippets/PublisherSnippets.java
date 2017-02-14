@@ -26,33 +26,50 @@ import java.util.Arrays;
 import java.util.List;
 
 public class PublisherSnippets {
+  private final Publisher publisher;
+
+  public PublisherSnippets(Publisher publisher) {
+    this.publisher = publisher;
+  }
+
   /**
-   * Example of publishing messages.
+   * Example of publishing a message.
    */
   // [TARGET publish(PubsubMessage)]
-  // [VARIABLE "my_project_name"]
-  // [VARIABLE "my_topic_name"]
-  public void publish(String projectName, String topicName) throws Exception {
+  // [VARIABLE "my_message"]
+  public void publish(String message) {
     // [START publish]
-    Publisher publisher = Publisher.newBuilder(TopicName.create(projectName, topicName)).build();
-    List<String> messages = Arrays.asList("message1", "message2");
+    ByteString data = ByteString.copyFromUtf8(message);
+    PubsubMessage pubsubMessage = PubsubMessage.newBuilder().setData(data).build();
+    RpcFuture<String> messageIdFuture = publisher.publish(pubsubMessage);
+    messageIdFuture.addCallback(new RpcFutureCallback<String>() {
+      public void onSuccess(String messageId) {
+        System.out.println("published with message id: " + messageId);
+      }
 
-    for (String message : messages) {
-      ByteString data = ByteString.copyFromUtf8(message);
-      PubsubMessage pubsubMessage = PubsubMessage.newBuilder().setData(data).build();
-      RpcFuture<String> messageIdFuture = publisher.publish(pubsubMessage);
-      messageIdFuture.addCallback(new RpcFutureCallback<String>() {
-        public void onSuccess(String messageId) {
-          System.out.println("published with message id: " + messageId);
-        }
-
-        public void onFailure(Throwable t) {
-          System.out.println("failed to publish: " + t);
-        }
-      });
-    }
-
-    publisher.shutdown();
+      public void onFailure(Throwable t) {
+        System.out.println("failed to publish: " + t);
+      }
+    });
     // [END publish]
+  }
+
+  /**
+   * Example of creating a {@code Publisher}.
+   */
+  // [TARGET newBuilder(TopicName)]
+  // [VARIABLE "my_project"]
+  // [VARIABLE "my_topic"]
+  public static void newBuilder(String projectName, String topicName) throws Exception {
+    // [START newBuilder]
+    TopicName topic = TopicName.create(projectName, topicName);
+    Publisher publisher = Publisher.newBuilder(topic).build();
+    try {
+      // ...
+    } finally {
+      // When finished with the publisher, make sure to shutdown to free up resources.
+      publisher.shutdown();
+    }
+    // [END newBuilder]
   }
 }
