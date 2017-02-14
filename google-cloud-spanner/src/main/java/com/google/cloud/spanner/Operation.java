@@ -117,7 +117,7 @@ public class Operation<R, M> {
   /**
    * Blocks till the operation is complete or maximum time, if specified, has elapsed.
    *
-   * @returns null if operation is not found otherwise the current operation.
+   * @return null if operation is not found otherwise the current operation.
    */
   public Operation<R, M> waitFor(WaitForOption... options) throws SpannerException {
     if (isDone) {

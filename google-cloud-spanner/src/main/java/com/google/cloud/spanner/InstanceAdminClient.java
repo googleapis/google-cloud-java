@@ -111,6 +111,7 @@ public interface InstanceAdminClient {
    *       the requested levels).
    *   <li> All newly-reserved resources are available for serving the instance's tables.
    *   <li> The instance's new resource levels are readable via the API.
+   * </ul>
    */
   Operation<Instance, UpdateInstanceMetadata> updateInstance(
       InstanceInfo instance, InstanceInfo.InstanceField... fieldsToUpdate);
