@@ -67,5 +67,6 @@ public class QuickstartSampleIT {
     QuickstartSample.main();
     String got = bout.toString();
     assertThat(got).contains("Saved sampletask1: Buy milk");
+    assertThat(got).contains("Retrieved sampletask1: Buy milk");
   }
 }
