@@ -333,7 +333,9 @@ public class Subscriber {
     @Override
     protected void doStart() {
       logger.log(Level.INFO, "Starting subscriber group.");
-      startStreamingConnections();
+      // Streaming pull is not enabled on the service yet.
+      // startStreamingConnections();
+      startPollingConnections();
       notifyStarted();
     }
 
@@ -422,7 +424,9 @@ public class Subscriber {
 
     private void stopAllStreamingConnections() {
       stopConnections(streamingSubscriberConnections);
-      ackDeadlineUpdater.cancel(true);
+      if (ackDeadlineUpdater != null) {
+        ackDeadlineUpdater.cancel(true);
+      }
     }
 
     private void startPollingConnections() {

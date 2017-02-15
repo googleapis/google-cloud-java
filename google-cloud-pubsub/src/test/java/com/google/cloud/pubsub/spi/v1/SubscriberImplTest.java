@@ -68,7 +68,7 @@ public class SubscriberImplTest {
 
   @Parameters
   public static Collection<Object[]> data() {
-    return Arrays.asList(new Object[][] {{true}, {false}});
+    return Arrays.asList(new Object[][] {{false}});
   }
 
   private final boolean isStreamingTest;
@@ -436,10 +436,10 @@ public class SubscriberImplTest {
   private Subscriber startSubscriber(Builder testSubscriberBuilder) throws Exception {
     Subscriber subscriber = testSubscriberBuilder.build();
     subscriber.startAsync().awaitRunning();
-    if (!isStreamingTest) {
-      // Shutdown streaming
-      fakeSubscriberServiceImpl.sendError(new StatusException(Status.UNIMPLEMENTED));
-    }
+    // if (!isStreamingTest) {
+    //   // Shutdown streaming
+    //   fakeSubscriberServiceImpl.sendError(new StatusException(Status.UNIMPLEMENTED));
+    // }
     return subscriber;
   }
 

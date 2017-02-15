@@ -169,6 +169,7 @@ class MessageDispatcher {
           Level.WARNING,
           "MessageReceiver failed to processes ack ID: " + ackId + ", the message will be nacked.",
           t);
+      acked.getAndSet(true);
       synchronized (pendingNacks) {
         pendingNacks.add(ackId);
       }
@@ -494,7 +495,6 @@ class MessageDispatcher {
         modifyAckDeadlinesToSend.add(nacksToSend);
       }
     }
-
     ackProcessor.sendAckOperations(acksToSend, modifyAckDeadlinesToSend);
   }
 }
