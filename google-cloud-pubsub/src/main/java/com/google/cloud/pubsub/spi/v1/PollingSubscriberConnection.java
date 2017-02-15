@@ -90,6 +90,7 @@ final class PollingSubscriberConnection extends AbstractService implements AckPr
             flowController,
             executor,
             clock);
+    messageDispatcher.setMessageDeadlineSeconds(Subscriber.MIN_ACK_DEADLINE_SECONDS);
   }
 
   @Override
