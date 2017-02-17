@@ -38,6 +38,9 @@ import java.nio.file.PathMatcher;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+import java.nio.file.SimpleFileVisitor;
+import java.nio.file.FileVisitResult;
+import java.nio.file.attribute.BasicFileAttributes;
 
 /**
  * Unit tests for {@link CloudStorageFileSystem}.
@@ -250,6 +253,45 @@ public class CloudStorageFileSystemTest {
     }
   }
 
+  @Test
+  public void testDeleteRecursive() throws IOException {
+    try (FileSystem fs = CloudStorageFileSystem.forBucket("bucket")) {
+      List<Path> paths = new ArrayList<>();
+      paths.add(fs.getPath("atroot"));
+      paths.add(fs.getPath("dir/angel"));
+      paths.add(fs.getPath("dir/dir2/another_angel"));
+      paths.add(fs.getPath("dir/dir2/angel3"));
+      paths.add(fs.getPath("dir/dir3/cloud"));
+      for (Path path : paths) {
+        Files.write(path, ALONE.getBytes(UTF_8));
+      }
+
+      deleteRecursive(fs.getPath("dir/"));
+      assertThat(Files.exists(fs.getPath("dir/angel"))).isFalse();
+      assertThat(Files.exists(fs.getPath("dir/dir3/cloud"))).isFalse();
+      assertThat(Files.exists(fs.getPath("atroot"))).isTrue();
+    }
+  }
+
+  /**
+   * Delete the given directory and all of its contents if non-empty.
+   * @param directory the directory to delete
+   * @throws IOException
+   */
+  static private void deleteRecursive(Path directory) throws IOException {
+    Files.walkFileTree(directory, new SimpleFileVisitor<Path>() {
+      @Override
+      public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
+        Files.delete(file);
+        return FileVisitResult.CONTINUE;
+      }
+      @Override
+      public FileVisitResult postVisitDirectory(Path dir, IOException exc) throws IOException {
+        Files.delete(dir);
+        return FileVisitResult.CONTINUE;
+      }
+    });
+  }
 
   private void assertMatches(FileSystem fs, PathMatcher matcher, String toMatch, boolean expected) {
     assertThat(matcher.matches(fs.getPath(toMatch).getFileName())).isEqualTo(expected);
