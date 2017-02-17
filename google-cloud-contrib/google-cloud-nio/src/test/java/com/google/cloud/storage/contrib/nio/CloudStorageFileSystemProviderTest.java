@@ -413,7 +413,6 @@ public class CloudStorageFileSystemProviderTest {
 
   @Test
   public void testDelete_trailingSlash() throws IOException {
-    thrown.expect(CloudStoragePseudoDirectoryException.class);
     Files.delete(Paths.get(URI.create("gs://love/passion/")));
   }
 
@@ -442,7 +441,6 @@ public class CloudStorageFileSystemProviderTest {
 
   @Test
   public void testDeleteIfExists_trailingSlash() throws IOException {
-    thrown.expect(CloudStoragePseudoDirectoryException.class);
     Files.deleteIfExists(Paths.get(URI.create("gs://love/passion/")));
   }
 

@@ -180,6 +180,77 @@ public class CloudStorageFileSystemTest {
     }
   }
 
+  @Test
+  public void testDeleteEmptyFolder() throws IOException {
+    try (FileSystem fs = CloudStorageFileSystem.forBucket("bucket")) {
+      List<Path> paths = new ArrayList<>();
+      paths.add(fs.getPath("dir/angel"));
+      paths.add(fs.getPath("dir/dir2/another_angel"));
+      paths.add(fs.getPath("atroot"));
+      for (Path path : paths) {
+        Files.write(path, ALONE.getBytes(UTF_8));
+      }
+      // we can delete non-existent folders, because they are not represented on disk anyways.
+      Files.delete(fs.getPath("ghost/"));
+      Files.delete(fs.getPath("dir/ghost/"));
+      Files.delete(fs.getPath("dir/dir2/ghost/"));
+      // likewise, deleteIfExists works.
+      Files.deleteIfExists(fs.getPath("ghost/"));
+      Files.deleteIfExists(fs.getPath("dir/ghost/"));
+      Files.deleteIfExists(fs.getPath("dir/dir2/ghost/"));
+    }
+  }
+
+  @Test(expected = CloudStoragePseudoDirectoryException.class)
+  public void testDeleteFullFolder() throws IOException {
+    try (FileSystem fs = CloudStorageFileSystem.forBucket("bucket")) {
+      Files.write(fs.getPath("dir/angel"), ALONE.getBytes(UTF_8));
+      // we cannot delete existing folders if they contain something
+      Files.delete(fs.getPath("dir/"));
+    }
+  }
+
+  @Test
+  public void testDelete() throws IOException {
+    try (FileSystem fs = CloudStorageFileSystem.forBucket("bucket")) {
+      List<Path> paths = new ArrayList<>();
+      paths.add(fs.getPath("dir/angel"));
+      paths.add(fs.getPath("dir/dir2/another_angel"));
+      paths.add(fs.getPath("atroot"));
+      for (Path path : paths) {
+        Files.write(path, ALONE.getBytes(UTF_8));
+      }
+      Files.delete(fs.getPath("atroot"));
+      Files.delete(fs.getPath("dir/angel"));
+      Files.deleteIfExists(fs.getPath("dir/dir2/another_angel"));
+
+      for (Path path : paths) {
+        assertThat(Files.exists(path)).isFalse();
+      }
+    }
+  }
+
+  @Test
+  public void testDeleteEmptiedFolder() throws IOException {
+    try (FileSystem fs = CloudStorageFileSystem.forBucket("bucket")) {
+      List<Path> paths = new ArrayList<>();
+      paths.add(fs.getPath("dir/angel"));
+      paths.add(fs.getPath("dir/dir2/another_angel"));
+      for (Path path : paths) {
+        Files.write(path, ALONE.getBytes(UTF_8));
+      }
+      Files.delete(fs.getPath("dir/angel"));
+      Files.deleteIfExists(fs.getPath("dir/dir2/another_angel"));
+      // delete folder (trailing slash is required)
+      Path dir2 = fs.getPath("dir/dir2/");
+      Files.deleteIfExists(dir2);
+      // We can't check Files.exists on a folder (since GCS fakes folders),
+      Path dir = fs.getPath("dir/");
+      Files.deleteIfExists(dir);
+    }
+  }
+
+
   private void assertMatches(FileSystem fs, PathMatcher matcher, String toMatch, boolean expected) {
     assertThat(matcher.matches(fs.getPath(toMatch).getFileName())).isEqualTo(expected);
   }

@@ -48,6 +48,7 @@ import java.nio.file.DirectoryStream;
 import java.nio.file.DirectoryStream.Filter;
 import java.nio.file.FileAlreadyExistsException;
 import java.nio.file.FileStore;
+import java.nio.file.Files;
 import java.nio.file.LinkOption;
 import java.nio.file.NoSuchFileException;
 import java.nio.file.OpenOption;
@@ -351,6 +352,15 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
     initStorage();
     CloudStoragePath cloudPath = CloudStorageUtil.checkPath(path);
     if (cloudPath.seemsLikeADirectoryAndUsePseudoDirectories()) {
+      // if the "folder" is empty then we're fine, otherwise complain
+      // that we cannot act on folders.
+      try (DirectoryStream<Path> paths = Files.newDirectoryStream(path)) {
+        if (!paths.iterator().hasNext()) {
+          // "folder" isn't actually there in the first place, so: success!
+          // (we must return true so delete doesn't freak out)
+          return true;
+        }
+      }
       throw new CloudStoragePseudoDirectoryException(cloudPath);
     }
     return storage.delete(cloudPath.getBlobId());
