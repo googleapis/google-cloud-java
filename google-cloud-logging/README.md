@@ -26,16 +26,16 @@ Add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-logging</artifactId>
-  <version>0.8.3-beta</version>
+  <version>0.9.2-beta</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-logging:0.8.3-beta'
+compile 'com.google.cloud:google-cloud-logging:0.9.2-beta'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-logging" % "0.8.3-beta"
+libraryDependencies += "com.google.cloud" % "google-cloud-logging" % "0.9.2-beta"
 ```
 
 Example Application

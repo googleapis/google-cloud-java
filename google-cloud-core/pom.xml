@@ -11,7 +11,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-pom</artifactId>
-    <version>0.8.4-alpha-SNAPSHOT</version>
+    <version>0.9.3-alpha-SNAPSHOT</version>
   </parent>
   <properties>
     <site.installationModule>google-cloud-core</site.installationModule>

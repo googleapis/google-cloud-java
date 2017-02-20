@@ -18,6 +18,7 @@ This client supports the following Google Cloud Platform services at a [Beta](#v
 -  [Stackdriver Logging] (#stackdriver-logging-beta) (Beta - Not working on App Engine Standard)
 -  [Google Cloud Datastore] (#google-cloud-datastore-beta) (Beta)
 -  [Google Cloud Storage] (#google-cloud-storage-beta) (Beta)
+-  [Cloud Spanner] (#cloud-spanner-beta) (Beta)
 
 This client supports the following Google Cloud Platform services at an [Alpha](#versioning) quality level:
 
@@ -43,16 +44,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud</artifactId>
-  <version>0.8.3-alpha</version>
+  <version>0.9.2-alpha</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud:0.8.3-alpha'
+compile 'com.google.cloud:google-cloud:0.9.2-alpha'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud" % "0.8.3-alpha"
+libraryDependencies += "com.google.cloud" % "google-cloud" % "0.9.2-alpha"
 ```
 
 Example Applications
@@ -400,6 +401,45 @@ if (blob != null) {
   channel.close();
 }
 ```
+Cloud Spanner (Beta)
+--------------------
+
+- [API Documentation][cloud-spanner-api]
+- [Official Documentation][cloud-spanner-docs]
+
+#### Preview
+
+Here is a code snippet showing a simple usage example from within Compute/App Engine Flex. Note that you
+must [supply credentials](#authentication) and a project ID if running this snippet elsewhere.
+
+```java
+import com.google.cloud.spanner.DatabaseClient;
+import com.google.cloud.spanner.DatabaseId;
+import com.google.cloud.spanner.ResultSet;
+import com.google.cloud.spanner.Spanner;
+import com.google.cloud.spanner.SpannerOptions;
+import com.google.cloud.spanner.Statement;
+
+// Instantiates a client
+SpannerOptions options = SpannerOptions.newBuilder().build();
+Spanner spanner = options.getService();
+String instance = "my-instance";
+String database = "my-database";
+try {
+    // Creates a database client
+    DatabaseClient dbClient = spanner.getDatabaseClient(
+      DatabaseId.of(options.getProjectId(), instance, database));
+    // Queries the database
+    ResultSet resultSet = dbClient.singleUse().executeQuery(Statement.of("SELECT 1"));
+    // Prints the results
+    while (resultSet.next()) {
+      System.out.printf("%d\n", resultSet.getLong(0));
+    }
+} finally {
+    // Closes the client which will free up the resources used
+    spanner.closeAsync().get();
+}
+```
 
 Google Cloud Compute (Alpha)
 ----------------------
@@ -727,3 +767,7 @@ Apache 2.0 - See [LICENSE] for more information.
 
 [translate-docs]: https://cloud.google.com/translate/docs/
 [translate-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/translate/package-summary.html
+
+[cloud-spanner]: https://cloud.google.com/spanner/
+[cloud-spanner-docs]: https://cloud.google.com/spanner/docs/
+[cloud-spanner-api]: https://googlecloudplatform.github.io/google-cloud-java/apidocs/index.html?com/google/cloud/spanner/package-summary.html

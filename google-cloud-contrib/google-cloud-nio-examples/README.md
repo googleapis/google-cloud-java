@@ -22,12 +22,12 @@ To run this example:
 4.    Run the sample with:
 
     ```
-    java -cp google-cloud-contrib/google-cloud-nio/target/google-cloud-nio-0.8.4-alpha-SNAPSHOT-shaded.jar:google-cloud-contrib/google-cloud-nio-examples/target/google-cloud-nio-examples-0.8.4-alpha-SNAPSHOT.jar com.google.cloud.nio.examples.ListFilesystems
+    java -cp google-cloud-contrib/google-cloud-nio/target/google-cloud-nio-0.9.3-alpha-SNAPSHOT-shaded.jar:google-cloud-contrib/google-cloud-nio-examples/target/google-cloud-nio-examples-0.9.3-alpha-SNAPSHOT.jar com.google.cloud.nio.examples.ListFilesystems
     ```
 
     Notice that it lists Google Cloud Storage, which it wouldn't if you ran it without the NIO jar:
     ```
-    java -cp google-cloud-contrib/google-cloud-nio-examples/target/google-cloud-nio-examples-0.8.4-alpha-SNAPSHOT.jar com.google.cloud.nio.examples.ListFilesystems
+    java -cp google-cloud-contrib/google-cloud-nio-examples/target/google-cloud-nio-examples-0.9.3-alpha-SNAPSHOT.jar com.google.cloud.nio.examples.ListFilesystems
     ```
 
 The sample doesn't have anything about Google Cloud Storage in it. It gets that ability from the NIO

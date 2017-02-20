@@ -10,6 +10,7 @@ This library provides tools to help write tests for code that uses the following
 -  [PubSub] (#testing-code-that-uses-pubsub)
 -  [Resource Manager] (#testing-code-that-uses-resource-manager)
 -  [Storage] (#testing-code-that-uses-storage)
+-  [Spanner] (#testing-code-that-uses-cloud-spanner)
 
 ### Testing code that uses BigQuery
 
@@ -259,6 +260,36 @@ that uses the `RemoteTranslateHelper` to list supported languages.
   ```
 
 4. Run your tests.
+
+### Testing code that uses Cloud Spanner
+
+Currently, there isn't an emulator for Cloud Spanner, so an alternative is to create a test project.  `RemoteSpannerHelper` contains convenience methods to make setting up and cleaning up the test project easier.  To use this class, follow the steps below:
+
+1. Create a test Google Cloud project.
+
+2. Download a JSON service account credentials file from the Google Developer's Console.  See more about this on the [Google Cloud Platform Storage Authentication page][cloud-platform-storage-authentication].
+
+3. Create or use an existing Cloud Spanner Instance.
+
+4. Create a `RemoteSpannerHelper` object using your instance ID and
+   `SpannerOptions` pointing to the credentials file.
+Here is an example that uses the `RemoteSpannerHelper` to create a database.
+  ```java
+  SpannerOptions options = SpannerOptions.newBuilder()
+      .setCredentials(GoogleCredentials.fromStream(new FileInputStream("/path/to/my/JSON/key.json")))
+      .build()
+  RemoteSpannerHelper helper =
+      RemoteSpannerHelper.create(options, InstanceId.of(options.getProjectId(), INSTANCE_ID),
+        new FileInputStream("/path/to/my/JSON/key.json"));
+  Database db = RemoteSpannerHelper.createTestDatabase("my ddl statements"...);
+  DatabaseClient client = RemoteSpannerHelper.getDatabaseClient(db);
+  ```
+
+5. Run your tests.
+
+6. Clean up the test project by using `cleanUp` to clear any databases created.
+  ```java
+  RemoteSpannerHelper.cleanUp();
 
 [cloud-platform-storage-authentication]:https://cloud.google.com/storage/docs/authentication?hl=en#service_accounts
 [create-service-account]:https://developers.google.com/identity/protocols/OAuth2ServiceAccount#creatinganaccount

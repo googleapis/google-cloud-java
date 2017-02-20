@@ -83,7 +83,7 @@ public class Subscriber {
       20 * 1024 * 1024; // 20MB API maximum message size.
   private static final int INITIAL_ACK_DEADLINE_SECONDS = 10;
   private static final int MAX_ACK_DEADLINE_SECONDS = 600;
-  private static final int MIN_ACK_DEADLINE_SECONDS = 10;
+  static final int MIN_ACK_DEADLINE_SECONDS = 10;
   private static final Duration ACK_DEADLINE_UPDATE_PERIOD = Duration.standardMinutes(1);
   private static final double PERCENTILE_FOR_ACK_DEADLINE_UPDATES = 99.9;
 
@@ -363,7 +363,9 @@ public class Subscriber {
     @Override
     protected void doStart() {
       logger.log(Level.INFO, "Starting subscriber group.");
-      startStreamingConnections();
+      // Streaming pull is not enabled on the service yet.
+      // startStreamingConnections();
+      startPollingConnections();
       notifyStarted();
     }
 
@@ -452,7 +454,9 @@ public class Subscriber {
 
     private void stopAllStreamingConnections() {
       stopConnections(streamingSubscriberConnections);
-      ackDeadlineUpdater.cancel(true);
+      if (ackDeadlineUpdater != null) {
+        ackDeadlineUpdater.cancel(true);
+      }
     }
 
     private void startPollingConnections() {
