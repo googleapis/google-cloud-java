@@ -16,7 +16,7 @@
 
 package com.google.cloud.pubsub.deprecated;
 
-import com.google.cloud.pubsub.testing.LocalPubSubHelper;
+import com.google.cloud.pubsub.deprecated.testing.LocalPubSubHelper;
 
 import org.joda.time.Duration;
 import org.junit.AfterClass;
