@@ -178,8 +178,7 @@ public class Publisher {
    * current thread until there are more resources available to publish.
    *
    * <p>Example of publishing a message.
-   *
-   * <pre>{@code
+   * <pre> {@code
    * String message = "my_message";
    * ByteString data = ByteString.copyFromUtf8(message);
    * PubsubMessage pubsubMessage = PubsubMessage.newBuilder().setData(data).build();
@@ -554,8 +553,7 @@ public class Publisher {
    * Constructs a new {@link Builder} using the given topic.
    *
    * <p>Example of creating a {@code Publisher}.
-   *
-   * <pre>{@code
+   * <pre> {@code
    * String projectName = "my_project";
    * String topicName = "my_topic";
    * TopicName topic = TopicName.create(projectName, topicName);
@@ -566,6 +564,8 @@ public class Publisher {
    *   // When finished with the publisher, make sure to shutdown to free up resources.
    *   publisher.shutdown();
    * }
+   * }</pre>
+   *
    */
   public static Builder newBuilder(TopicName topicName) {
     return new Builder(topicName);
