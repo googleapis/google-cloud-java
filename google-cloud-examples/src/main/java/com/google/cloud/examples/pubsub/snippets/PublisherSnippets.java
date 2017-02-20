@@ -22,8 +22,6 @@ import com.google.cloud.pubsub.spi.v1.Publisher;
 import com.google.protobuf.ByteString;
 import com.google.pubsub.v1.PubsubMessage;
 import com.google.pubsub.v1.TopicName;
-import java.util.Arrays;
-import java.util.List;
 
 public class PublisherSnippets {
   private final Publisher publisher;
