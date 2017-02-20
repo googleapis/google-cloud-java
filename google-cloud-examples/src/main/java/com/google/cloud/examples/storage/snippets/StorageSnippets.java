@@ -317,7 +317,7 @@ public class StorageSnippets {
     Map<String, String> newMetadata = new HashMap<>();
     newMetadata.put("key", "value");
     Blob blob = storage.get(bucketName, blobName);
-    BlobInfo updatedInfo = blob.toBuilder().setContentType("text/plain").setMetadata(map).build();
+    BlobInfo updatedInfo = blob.toBuilder().setContentType("text/plain").setMetadata(newMetadata).build();
     Blob updated=storage.update(updatedInfo, BlobTargetOption.metagenerationMatch());
     // [END updateBlobWithMetageneration]
     return updated;
