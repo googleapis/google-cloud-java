@@ -22,20 +22,25 @@
 
 package com.google.cloud.examples.pubsub.snippets;
 
+import com.google.api.gax.core.SettableRpcFuture;
 import com.google.cloud.pubsub.spi.v1.AckReply;
 import com.google.cloud.pubsub.spi.v1.AckReplyConsumer;
 import com.google.cloud.pubsub.spi.v1.MessageReceiver;
 import com.google.cloud.pubsub.spi.v1.Subscriber;
 import com.google.pubsub.v1.PubsubMessage;
 import com.google.pubsub.v1.SubscriptionName;
-import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.Executor;
-import java.util.concurrent.locks.Condition;
-import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.ReentrantLock;
+import java.util.concurrent.TimeUnit;
 
 public class SubscriberSnippets {
+
+  private final SubscriptionName subscription;
+
+  public SubscriberSnippets(SubscriptionName subscription) {
+    this.subscription = subscription;
+  }
+
   /**
    * Example of receiving a specific number of messages.
    */
@@ -43,27 +48,17 @@ public class SubscriberSnippets {
   // [VARIABLE "my_project_name"]
   // [VARIABLE "my_subscription_name"]
   // [VARIABLE 3]
-  public void startAsync(String projectName, String subscriptionName, int receiveNum) throws Exception {
+  public void startAsync(int receiveNum) throws Exception {
     // [START startAsync]
-    SubscriptionName subscription = SubscriptionName.create(projectName, subscriptionName);
-    final Lock lock = new ReentrantLock();
-    final Condition doneCondition = lock.newCondition();
     final AtomicInteger pendingReceives = new AtomicInteger(receiveNum);
-    final AtomicBoolean done = new AtomicBoolean();
+    final SettableRpcFuture<Void> done = new SettableRpcFuture<>();
 
     MessageReceiver receiver = new MessageReceiver() {
       public void receiveMessage(final PubsubMessage message, final AckReplyConsumer consumer) {
         System.out.println("got message: " + message);
         consumer.accept(AckReply.ACK, null);
-        if (pendingReceives.decrementAndGet() != 0) {
-          return;
-        }
-        lock.lock();
-        try {
-          done.set(true);
-          doneCondition.signal();
-        } finally {
-          lock.unlock();
+        if (pendingReceives.decrementAndGet() == 0) {
+          done.set(null);
         }
       }
     };
@@ -71,14 +66,7 @@ public class SubscriberSnippets {
     Subscriber subscriber = Subscriber.newBuilder(subscription, receiver).build();
     subscriber.addListener(new Subscriber.SubscriberListener() {
       public void failed(Subscriber.State from, Throwable failure) {
-        System.err.println(failure);
-        lock.lock();
-        try {
-          done.set(true);
-          doneCondition.signal();
-        } finally {
-          lock.unlock();
-        }
+        done.setException(failure);
       }
     }, new Executor() {
       public void execute(Runnable command) {
@@ -86,14 +74,8 @@ public class SubscriberSnippets {
       }
     });
     subscriber.startAsync();
-    lock.lock();
-    try {
-      while (!done.get()) {
-        doneCondition.await();
-      }
-    } finally {
-      lock.unlock();
-    }
+
+    done.get(10, TimeUnit.MINUTES);
     subscriber.stopAsync().awaitTerminated();
     // [END startAsync]
   }
