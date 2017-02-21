@@ -605,7 +605,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
   /**
    * Returns the library's name used by x-goog-api-client header as a string.
    */
-  public String getGrpcLibraryName() {
+  public String getGoogApiClientLibName() {
     return X_GOOGLE_CLIENT_HEADER_NAME;
   }
 
