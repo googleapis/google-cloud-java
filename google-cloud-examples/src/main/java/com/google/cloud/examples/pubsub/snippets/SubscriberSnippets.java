@@ -45,8 +45,6 @@ public class SubscriberSnippets {
    * Example of receiving a specific number of messages.
    */
   // [TARGET startAsync()]
-  // [VARIABLE "my_project_name"]
-  // [VARIABLE "my_subscription_name"]
   // [VARIABLE 3]
   public void startAsync(int receiveNum) throws Exception {
     // [START startAsync]

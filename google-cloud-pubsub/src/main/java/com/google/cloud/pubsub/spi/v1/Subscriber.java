@@ -182,43 +182,24 @@ public class Subscriber {
    *
    * <p>Example of receiving a specific number of messages.
    * <pre> {@code
-   * String projectName = "my_project_name";
-   * String subscriptionName = "my_subscription_name";
    * int receiveNum = 3;
-   * SubscriptionName subscription = SubscriptionName.create(projectName, subscriptionName);
-   * final Lock lock = new ReentrantLock();
-   * final Condition doneCondition = lock.newCondition();
    * final AtomicInteger pendingReceives = new AtomicInteger(receiveNum);
-   * final AtomicBoolean done = new AtomicBoolean();
-   *
+   * final SettableRpcFuture<Void> done = new SettableRpcFuture<>();
+   * 
    * MessageReceiver receiver = new MessageReceiver() {
    *   public void receiveMessage(final PubsubMessage message, final AckReplyConsumer consumer) {
    *     System.out.println("got message: " + message);
    *     consumer.accept(AckReply.ACK, null);
-   *     if (pendingReceives.decrementAndGet() != 0) {
-   *       return;
-   *     }
-   *     lock.lock();
-   *     try {
-   *       done.set(true);
-   *       doneCondition.signal();
-   *     } finally {
-   *       lock.unlock();
+   *     if (pendingReceives.decrementAndGet() == 0) {
+   *       done.set(null);
    *     }
    *   }
    * };
-   *
+   * 
    * Subscriber subscriber = Subscriber.newBuilder(subscription, receiver).build();
    * subscriber.addListener(new Subscriber.SubscriberListener() {
    *   public void failed(Subscriber.State from, Throwable failure) {
-   *     System.err.println(failure);
-   *     lock.lock();
-   *     try {
-   *       done.set(true);
-   *       doneCondition.signal();
-   *     } finally {
-   *       lock.unlock();
-   *     }
+   *     done.setException(failure);
    *   }
    * }, new Executor() {
    *   public void execute(Runnable command) {
@@ -226,16 +207,11 @@ public class Subscriber {
    *   }
    * });
    * subscriber.startAsync();
-   * lock.lock();
-   * try {
-   *   while (!done.get()) {
-   *     doneCondition.await();
-   *   }
-   * } finally {
-   *   lock.unlock();
-   * }
+   * 
+   * done.get(10, TimeUnit.MINUTES);
    * subscriber.stopAsync().awaitTerminated();
    * }</pre>
+   *
    */
   public Subscriber startAsync() {
     impl.startAsync();
