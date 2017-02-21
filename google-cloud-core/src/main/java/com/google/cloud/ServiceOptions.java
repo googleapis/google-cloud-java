@@ -73,7 +73,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
   private static final String MANIFEST_ARTIFACT_ID_KEY = "artifactId";
   private static final String MANIFEST_VERSION_KEY = "Implementation-Version";
   private static final String ARTIFACT_ID = "google-cloud-core";
-  private static final String LIBRARY_NAME = "gcloud-java";
+  private static final String LIBRARY_NAME = "gccl";
   private static final String LIBRARY_VERSION = defaultLibraryVersion();
   private static final String APPLICATION_NAME =
       LIBRARY_VERSION == null ? LIBRARY_NAME : LIBRARY_NAME + "/" + LIBRARY_VERSION;
