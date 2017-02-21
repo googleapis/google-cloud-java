@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.cloud.pubsub.testing;
+package com.google.cloud.pubsub.deprecated.testing;
 
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
