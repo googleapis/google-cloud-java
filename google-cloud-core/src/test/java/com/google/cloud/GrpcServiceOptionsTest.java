@@ -22,8 +22,6 @@ import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
-import com.google.api.gax.grpc.ChannelProvider;
-import com.google.api.gax.grpc.InstantiatingChannelProvider;
 import com.google.cloud.GrpcServiceOptions.DefaultExecutorFactory;
 import com.google.cloud.GrpcServiceOptions.ExecutorFactory;
 import com.google.cloud.spi.ServiceRpcFactory;
