@@ -313,7 +313,7 @@ public abstract class GrpcServiceOptions<ServiceT extends Service<OptionsT>, Ser
     InstantiatingChannelProvider.Builder builder = InstantiatingChannelProvider.newBuilder()
         .setServiceAddress(hostAndPort.getHostText())
         .setPort(hostAndPort.getPort())
-        .setClientLibHeader(getLibraryName(), firstNonNull(getLibraryVersion(), ""));
+        .setClientLibHeader(getGoogApiClientLibName(), firstNonNull(getLibraryVersion(), ""));
     Credentials scopedCredentials = getScopedCredentials();
     if (scopedCredentials != null && scopedCredentials != NoCredentials.getInstance()) {
       builder.setCredentialsProvider(FixedCredentialsProvider.create(scopedCredentials));
