@@ -74,6 +74,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
   private static final String MANIFEST_VERSION_KEY = "Implementation-Version";
   private static final String ARTIFACT_ID = "google-cloud-core";
   private static final String LIBRARY_NAME = "gcloud-java";
+  private static final String X_GOOGLE_CLIENT_HEADER_NAME = "gccl";
   private static final String LIBRARY_VERSION = defaultLibraryVersion();
   private static final String APPLICATION_NAME =
       LIBRARY_VERSION == null ? LIBRARY_NAME : LIBRARY_NAME + "/" + LIBRARY_VERSION;
@@ -599,6 +600,13 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
    */
   public String getLibraryName() {
     return LIBRARY_NAME;
+  }
+
+  /**
+   * Returns the library's name used by x-goog-api-client header as a string.
+   */
+  public String getGoogApiClientLibName() {
+    return X_GOOGLE_CLIENT_HEADER_NAME;
   }
 
   /**
