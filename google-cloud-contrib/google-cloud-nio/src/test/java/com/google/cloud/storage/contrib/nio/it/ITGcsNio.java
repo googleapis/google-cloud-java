@@ -347,6 +347,13 @@ public class ITGcsNio {
       }
 
       List<Path> got = new ArrayList<>();
+      for (Path path : Files.newDirectoryStream(fs.getPath("/dir/"))) {
+        got.add(path);
+      }
+      assertThat(got).containsExactlyElementsIn(goodPaths);
+
+      // Must also work with relative path
+      got.clear();
       for (Path path : Files.newDirectoryStream(fs.getPath("dir/"))) {
         got.add(path);
       }
