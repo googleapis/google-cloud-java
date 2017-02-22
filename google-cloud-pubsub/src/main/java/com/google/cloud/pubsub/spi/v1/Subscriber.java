@@ -24,6 +24,7 @@ import com.google.api.stats.Distribution;
 import com.google.auth.Credentials;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.Clock;
+import com.google.cloud.pubsub.spi.v1.Publisher.Builder;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Optional;
 import com.google.common.base.Preconditions;
@@ -279,6 +280,7 @@ public class Subscriber {
     private final List<PollingSubscriberConnection> pollingSubscriberConnections;
     private final Clock clock;
     private final List<AutoCloseable> closeables = new ArrayList<>();
+    private final boolean compressionEnabled;
     private ScheduledFuture<?> ackDeadlineUpdater;
     private int streamAckDeadlineSeconds;
 
@@ -328,6 +330,8 @@ public class Subscriber {
       numChannels = Math.max(1, Runtime.getRuntime().availableProcessors()) * CHANNELS_PER_CORE;
       streamingSubscriberConnections = new ArrayList<StreamingSubscriberConnection>(numChannels);
       pollingSubscriberConnections = new ArrayList<PollingSubscriberConnection>(numChannels);
+      
+      compressionEnabled = builder.compressionEnabled;
     }
 
     @Override
@@ -366,6 +370,7 @@ public class Subscriber {
                   ackLatencyDistribution,
                   channelBuilder.build(),
                   flowController,
+                  compressionEnabled,
                   executor,
                   clock));
         }
@@ -441,6 +446,7 @@ public class Subscriber {
                   ackLatencyDistribution,
                   channelBuilder.build(),
                   flowController,
+                  compressionEnabled,
                   executor,
                   clock));
         }
@@ -546,6 +552,8 @@ public class Subscriber {
         Optional.absent();
     Optional<Clock> clock = Optional.absent();
 
+    boolean compressionEnabled = true;  // client-side compression enabled by default
+
     Builder(SubscriptionName subscriptionName, MessageReceiver receiver) {
       this.subscriptionName = subscriptionName;
       this.receiver = receiver;
@@ -607,6 +615,15 @@ public class Subscriber {
     /** Gives the ability to set a custom clock. */
     Builder setClock(Clock clock) {
       this.clock = Optional.of(clock);
+      return this;
+    }
+    
+    /** 
+     * Gives the ability to disable client-side compression. 
+     * Note compression is enabled by default. 
+     */
+    public Builder setCompressionEnabled(boolean enabled) {
+      this.compressionEnabled = enabled;
       return this;
     }
 
