@@ -22,58 +22,46 @@
 
 package com.google.cloud.examples.pubsub.snippets;
 
-import com.google.api.gax.core.SettableRpcFuture;
-import com.google.cloud.pubsub.spi.v1.AckReply;
-import com.google.cloud.pubsub.spi.v1.AckReplyConsumer;
+import com.google.api.gax.core.RpcFuture;
 import com.google.cloud.pubsub.spi.v1.MessageReceiver;
 import com.google.cloud.pubsub.spi.v1.Subscriber;
-import com.google.pubsub.v1.PubsubMessage;
 import com.google.pubsub.v1.SubscriptionName;
-import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.Executor;
-import java.util.concurrent.TimeUnit;
 
 public class SubscriberSnippets {
 
   private final SubscriptionName subscription;
+  private final MessageReceiver receiver;
+  private final RpcFuture<Void> done;
+  private final Executor executor;
 
-  public SubscriberSnippets(SubscriptionName subscription) {
+  public SubscriberSnippets(
+      SubscriptionName subscription,
+      MessageReceiver receiver,
+      RpcFuture<Void> done,
+      Executor executor) {
     this.subscription = subscription;
+    this.receiver = receiver;
+    this.done = done;
+    this.executor = executor;
   }
 
   /**
    * Example of receiving a specific number of messages.
    */
   // [TARGET startAsync()]
-  // [VARIABLE 3]
-  public void startAsync(int receiveNum) throws Exception {
+  public void startAsync() throws Exception {
     // [START startAsync]
-    final AtomicInteger pendingReceives = new AtomicInteger(receiveNum);
-    final SettableRpcFuture<Void> done = new SettableRpcFuture<>();
-
-    MessageReceiver receiver = new MessageReceiver() {
-      public void receiveMessage(final PubsubMessage message, final AckReplyConsumer consumer) {
-        System.out.println("got message: " + message);
-        consumer.accept(AckReply.ACK, null);
-        if (pendingReceives.decrementAndGet() == 0) {
-          done.set(null);
-        }
-      }
-    };
-
     Subscriber subscriber = Subscriber.newBuilder(subscription, receiver).build();
     subscriber.addListener(new Subscriber.SubscriberListener() {
       public void failed(Subscriber.State from, Throwable failure) {
-        done.setException(failure);
+        // Handle error.
       }
-    }, new Executor() {
-      public void execute(Runnable command) {
-        command.run();
-      }
-    });
+    }, executor);
     subscriber.startAsync();
 
-    done.get(10, TimeUnit.MINUTES);
+    // Wait for a stop signal.
+    done.get();
     subscriber.stopAsync().awaitTerminated();
     // [END startAsync]
   }

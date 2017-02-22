@@ -182,33 +182,16 @@ public class Subscriber {
    *
    * <p>Example of receiving a specific number of messages.
    * <pre> {@code
-   * int receiveNum = 3;
-   * final AtomicInteger pendingReceives = new AtomicInteger(receiveNum);
-   * final SettableRpcFuture<Void> done = new SettableRpcFuture<>();
-   * 
-   * MessageReceiver receiver = new MessageReceiver() {
-   *   public void receiveMessage(final PubsubMessage message, final AckReplyConsumer consumer) {
-   *     System.out.println("got message: " + message);
-   *     consumer.accept(AckReply.ACK, null);
-   *     if (pendingReceives.decrementAndGet() == 0) {
-   *       done.set(null);
-   *     }
-   *   }
-   * };
-   * 
    * Subscriber subscriber = Subscriber.newBuilder(subscription, receiver).build();
    * subscriber.addListener(new Subscriber.SubscriberListener() {
    *   public void failed(Subscriber.State from, Throwable failure) {
-   *     done.setException(failure);
+   *     // Handle error.
    *   }
-   * }, new Executor() {
-   *   public void execute(Runnable command) {
-   *     command.run();
-   *   }
-   * });
+   * }, executor);
    * subscriber.startAsync();
    * 
-   * done.get(10, TimeUnit.MINUTES);
+   * // Wait for a stop signal.
+   * done.get();
    * subscriber.stopAsync().awaitTerminated();
    * }</pre>
    *
