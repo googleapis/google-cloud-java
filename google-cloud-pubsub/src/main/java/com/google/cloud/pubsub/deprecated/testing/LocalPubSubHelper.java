@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.cloud.pubsub.testing;
+package com.google.cloud.pubsub.deprecated.testing;
 
 import com.google.cloud.NoCredentials;
 import com.google.cloud.RetryParams;
