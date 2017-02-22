@@ -23,6 +23,25 @@ public interface MessageReceiver {
   /**
    * Called when a message is received by the subscriber. The implementation must arrange for {@link
    * AckReplyConsumer#accept} to be called after processing the {@code message}.
+   *
+   * <p>This {@code MessageReceiver} passes all messages to a {@link BlockingQueue}.
+   * This method can be called concurrently from multiple threads,
+   * so it is important that the queue be thread-safe.
+   * 
+   * This example is for illustration. Implementations may directly process messages
+   * instead of sending them to queues.
+   * <pre> {@code
+   * MessageReceiver receiver = new MessageReceiver() {
+   *   public void receiveMessage(final PubsubMessage message, final AckReplyConsumer consumer) {
+   *     if (blockingQueue.offer(message)) {
+   *       consumer.accept(AckReply.ACK, null);
+   *     } else {
+   *       consumer.accept(AckReply.NACK, null);
+   *     }
+   *   }
+   * };
+   * }</pre>
+   *
    */
   void receiveMessage(final PubsubMessage message, final AckReplyConsumer consumer);
 }
