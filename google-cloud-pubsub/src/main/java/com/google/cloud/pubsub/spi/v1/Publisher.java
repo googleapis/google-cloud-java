@@ -39,6 +39,7 @@ import com.google.common.util.concurrent.SettableFuture;
 import com.google.pubsub.v1.PublishRequest;
 import com.google.pubsub.v1.PublishResponse;
 import com.google.pubsub.v1.PublisherGrpc;
+import com.google.pubsub.v1.PublisherGrpc.PublisherFutureStub;
 import com.google.pubsub.v1.PubsubMessage;
 import com.google.pubsub.v1.TopicName;
 import io.grpc.ManagedChannel;
@@ -89,6 +90,8 @@ public class Publisher {
 
   private final FlowControlSettings flowControlSettings;
   private final boolean failOnFlowControlLimits;
+  
+  private final boolean compressionEnabled;
 
   private final Lock messagesBundleLock;
   private List<OutstandingPublish> messagesBundle;
@@ -127,6 +130,8 @@ public class Publisher {
     flowControlSettings = builder.flowControlSettings;
     failOnFlowControlLimits = builder.failOnFlowControlLimits;
     this.flowController = new FlowController(flowControlSettings, failOnFlowControlLimits);
+    
+    compressionEnabled = builder.compressionEnabled;
 
     messagesBundle = new LinkedList<>();
     messagesBundleLock = new ReentrantLock();
@@ -368,10 +373,12 @@ public class Publisher {
                 * Math.pow(retrySettings.getRpcTimeoutMultiplier(), outstandingBundle.attempt - 1));
     rpcTimeoutMs = Math.min(rpcTimeoutMs, retrySettings.getMaxRpcTimeout().getMillis());
 
-    Futures.addCallback(
-        PublisherGrpc.newFutureStub(channels[currentChannel])
-            .withDeadlineAfter(rpcTimeoutMs, TimeUnit.MILLISECONDS)
-            .publish(publishRequest.build()),
+    PublisherFutureStub stub = PublisherGrpc.newFutureStub(channels[currentChannel])
+        .withDeadlineAfter(rpcTimeoutMs, TimeUnit.MILLISECONDS);
+    if (compressionEnabled) {
+      stub = stub.withCompression("gzip");
+    }
+    Futures.addCallback(stub.publish(publishRequest.build()),
         new FutureCallback<PublishResponse>() {
           @Override
           public void onSuccess(PublishResponse result) {
@@ -626,6 +633,8 @@ public class Publisher {
 
     ChannelProvider channelProvider = PublisherSettings.defaultChannelProviderBuilder().build();
     ExecutorProvider executorProvider = DEFAULT_EXECUTOR_PROVIDER;
+    
+    boolean compressionEnabled = true;  // client-side compression enabled by default
 
     private Builder(TopicName topic) {
       this.topicName = Preconditions.checkNotNull(topic);
@@ -697,6 +706,15 @@ public class Publisher {
     /** Gives the ability to set a custom executor to be used by the library. */
     public Builder setExecutorProvider(ExecutorProvider executorProvider) {
       this.executorProvider = Preconditions.checkNotNull(executorProvider);
+      return this;
+    }
+    
+    /** 
+     * Gives the ability to disable client-side compression. 
+     * Note compression is enabled by default. 
+     */
+    public Builder setCompressionEnabled(boolean enabled) {
+      this.compressionEnabled = enabled;
       return this;
     }
 
