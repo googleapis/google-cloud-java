@@ -74,18 +74,13 @@ final class PollingSubscriberConnection extends AbstractService implements AckPr
       Distribution ackLatencyDistribution,
       Channel channel,
       FlowController flowController,
-      boolean compressionEnabled,
       ScheduledExecutorService executor,
       Clock clock) {
     this.subscription = subscription;
     this.executor = executor;
-    SubscriberFutureStub subscriberStub =
+    stub =
         SubscriberGrpc.newFutureStub(channel)
             .withCallCredentials(MoreCallCredentials.from(credentials));
-    if (compressionEnabled) {
-      subscriberStub = subscriberStub.withCompression("gzip");
-    }
-    stub = subscriberStub;
     messageDispatcher =
         new MessageDispatcher(
             receiver,

@@ -60,7 +60,6 @@ final class StreamingSubscriberConnection extends AbstractService implements Ack
 
   private final Channel channel;
   private final Credentials credentials;
-  private final boolean compressionEnabled;
 
   private final String subscription;
   private final ScheduledExecutorService executor;
@@ -76,7 +75,6 @@ final class StreamingSubscriberConnection extends AbstractService implements Ack
       Distribution ackLatencyDistribution,
       Channel channel,
       FlowController flowController,
-      boolean compressionEnabled,
       ScheduledExecutorService executor,
       Clock clock) {
     this.subscription = subscription;
@@ -93,7 +91,6 @@ final class StreamingSubscriberConnection extends AbstractService implements Ack
             executor,
             clock);
     messageDispatcher.setMessageDeadlineSeconds(streamAckDeadlineSeconds);
-    this.compressionEnabled = compressionEnabled;
   }
 
   @Override
@@ -151,16 +148,12 @@ final class StreamingSubscriberConnection extends AbstractService implements Ack
     final SettableFuture<Void> errorFuture = SettableFuture.create();
     final ClientResponseObserver<StreamingPullRequest, StreamingPullResponse> responseObserver =
         new StreamingPullResponseObserver(errorFuture);
-    
-    CallOptions callOptions =
-        CallOptions.DEFAULT.withCallCredentials(MoreCallCredentials.from(credentials));
-    if (compressionEnabled) {
-      callOptions = callOptions.withCompression("gzip");
-    }
     final ClientCallStreamObserver<StreamingPullRequest> requestObserver =
         (ClientCallStreamObserver<StreamingPullRequest>)
             (ClientCalls.asyncBidiStreamingCall(
-                channel.newCall(SubscriberGrpc.METHOD_STREAMING_PULL, callOptions),
+                channel.newCall(
+                    SubscriberGrpc.METHOD_STREAMING_PULL,
+                    CallOptions.DEFAULT.withCallCredentials(MoreCallCredentials.from(credentials))),
                 responseObserver));
     logger.log(
         Level.INFO,
