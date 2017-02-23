@@ -18,11 +18,14 @@ package com.google.cloud.examples.pubsub.snippets;
 
 import com.google.cloud.Identity;
 import com.google.cloud.Role;
-import com.google.cloud.pubsub.spi.v1.PagedResponseWrappers;
+import com.google.cloud.pubsub.spi.v1.PagedResponseWrappers.ListTopicsPagedResponse;
+import com.google.cloud.pubsub.spi.v1.PagedResponseWrappers.ListTopicSubscriptionsPagedResponse;
+
 import com.google.cloud.pubsub.spi.v1.PublisherClient;
 import com.google.iam.v1.Binding;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.TestIamPermissionsResponse;
+import com.google.pubsub.v1.ListTopicSubscriptionsRequest;
 import com.google.pubsub.v1.ListTopicsRequest;
 import com.google.pubsub.v1.ProjectName;
 import com.google.pubsub.v1.Topic;
@@ -53,8 +56,30 @@ public class PublisherClientSnippets {
   }
 
   /** Example of listing topics, specifying the page size. */
+  // [TARGET listTopicSubscriptions(int)]
+  public ListTopicSubscriptionsPagedResponse listTopicSubscriptions(String name) throws Exception {
+    try (PublisherClient publisherClient = PublisherClient.create()) {
+      TopicName topicName = TopicName.create(projectId, name);
+      // [START listTopicSubscriptions]
+      ListTopicSubscriptionsRequest request =
+          ListTopicSubscriptionsRequest.newBuilder()
+              .setTopicWithTopicName(topicName)
+              .setPageSize(100)
+              .build();
+      ListTopicSubscriptionsPagedResponse response =
+          publisherClient.listTopicSubscriptions(request);
+      Iterable<String> subscriptions = response.iterateAllElements();
+      for (String subscription : subscriptions) {
+        // do something with the subscription name
+      }
+      // [END listTopicSubscriptions]
+      return response;
+    }
+  }
+
+  /** Example of listing topics, specifying the page size. */
   // [TARGET listTopics(int)]
-  public PagedResponseWrappers.ListTopicsPagedResponse listTopics() throws Exception {
+  public ListTopicsPagedResponse listTopics() throws Exception {
     try (PublisherClient publisherClient = PublisherClient.create()) {
       // [START listTopics]
       ListTopicsRequest listTopicsRequest =
@@ -62,7 +87,7 @@ public class PublisherClientSnippets {
               .setProjectWithProjectName(ProjectName.create(projectId))
               .setPageSize(100)
               .build();
-      PagedResponseWrappers.ListTopicsPagedResponse response =
+      ListTopicsPagedResponse response =
           publisherClient.listTopics(listTopicsRequest);
       Iterable<Topic> topics = response.iterateAllElements();
       for (Topic topic : topics) {
