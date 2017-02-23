@@ -489,16 +489,13 @@ public class CloudStoragePathTest {
   public void testSpaces() throws IOException {
     try (CloudStorageFileSystem fs = CloudStorageFileSystem.forBucket("doodle")) {
       Path path = fs.getPath("/with/a space");
-      String toString = path.toString();
-      assertThat(toString).contains(" ");
       // we can also go via a URI. Decoding should give us the space back.
       String toUri = URLDecoder.decode(path.toUri().toString(), "UTF-8");
-      assertThat(toUri).contains(" ");
+      assertThat(toUri).isEqualTo("gs://doodle/with/a space");
 
       Path path2 = fs.getPath("/with/a%20percent");
       String toUri2 = URLDecoder.decode(path2.toUri().toString(), "UTF-8");
-      assertThat(toUri2).doesNotContain(" ");
-      assertThat(toUri2).contains("%");
+      assertThat(toUri2).isEqualTo("gs://doodle/with/a%20percent");
     }
   }
 

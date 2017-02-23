@@ -28,7 +28,6 @@ import static java.nio.file.StandardOpenOption.TRUNCATE_EXISTING;
 import static java.nio.file.StandardOpenOption.WRITE;
 
 import com.google.common.collect.ImmutableList;
-import com.google.common.net.UrlEscapers;
 import com.google.common.testing.NullPointerTester;
 
 import org.junit.Before;
@@ -653,28 +652,26 @@ public class CloudStorageFileSystemProviderTest {
   }
 
   @Test
-  public void testFromSpace() throws UnsupportedEncodingException {
+  public void testFromSpace() throws UnsupportedEncodingException, IOException {
     // User should be able to create paths to files whose name contains a space.
     // Traditional way 1: manually escape the spaces
     Path path1 = Paths.get(URI.create("gs://bucket/with/a%20space"));
     CloudStorageFileSystemProvider provider =
         (CloudStorageFileSystemProvider)path1.getFileSystem().provider();
-    // Traditional way 2: use a library to escape the spaces
-    String escaped = UrlEscapers.urlFragmentEscaper().escape("gs://bucket/with/a space");
-    Path path2 = Paths.get(URI.create(escaped));
+    // Traditional way 2: use UrlEscapers.urlFragmentEscaper().escape
+    // to escape the string for you.
+    // (Not tested because UrlEscapers isn't the unit under test).
+
     // Non-traditional way: use our convenience method to work around URIs not being allowed to
     // contain spaces.
     Path path3 = provider.getPath("gs://bucket/with/a space");
-    // All 3 should be equivalent
-    assertThat(path1.getFileSystem().provider()).isEqualTo(path2.getFileSystem().provider());
-    assertThat(path2.getFileSystem().provider()).isEqualTo(path3.getFileSystem().provider());
-    assertThat(path1.toUri()).isEqualTo(path2.toUri());
-    assertThat(path2.toUri()).isEqualTo(path3.toUri());
+    // Both approaches should be equivalent
+    assertThat(path1.getFileSystem().provider()).isEqualTo(path3.getFileSystem().provider());
+    assertThat(path1.toUri()).isEqualTo(path3.toUri());
 
+    // getPath does not interpret the string at all.
     Path path4 = provider.getPath("gs://bucket/with/a%20percent");
-    String toString = path4.toString();
-    assertThat(toString).doesNotContain(" ");
-    assertThat(toString).contains("%");
+    assertThat(path4.toString()).isEqualTo("/with/a%20percent");
   }
 
   private static CloudStorageConfiguration permitEmptyPathComponents(boolean value) {
