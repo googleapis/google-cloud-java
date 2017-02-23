@@ -176,7 +176,8 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
     }
 
     /**
-     * Sets project id.
+     * Sets the project ID. If no project ID is set, {@link #getDefaultProjectId()} will be used to
+     * attempt getting the project ID from the environment.
      *
      * @return the builder
      */
@@ -186,7 +187,8 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
     }
 
     /**
-     * Sets project id.
+     * Sets the project ID. If no project ID is set, {@link #getDefaultProjectId()} will be used to
+     * attempt getting the project ID from the environment.
      *
      * @return the builder
      */
@@ -316,10 +318,6 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
     }
   }
 
-  protected static String appEngineAppId() {
-    return System.getProperty("com.google.appengine.application.id");
-  }
-
   @Deprecated
   protected String defaultHost() {
     return getDefaultHost();
@@ -335,21 +333,41 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
   }
 
   protected String getDefaultProject() {
+    return getDefaultProjectId();
+  }
+
+  /**
+   * Returns the default project ID, or {@code null} if no default project ID could be found. This
+   * method returns the first available project ID among the following sources:
+   * <ol>
+   *   <li>The project ID specified by the GOOGLE_CLOUD_PROJECT environment variable
+   *   <li>The App Engine project ID
+   *   <li>The project ID specified in the JSON credentials file pointed by the
+   *   {@code GOOGLE_APPLICATION_CREDENTIALS} environment variable
+   *   <li>The Google Cloud SDK project ID
+   *   <li>The Compute Engine project ID
+   * </ol>
+   */
+  public static String getDefaultProjectId() {
     String projectId = System.getProperty(PROJECT_ENV_NAME, System.getenv(PROJECT_ENV_NAME));
     if (projectId == null) {
       projectId =
           System.getProperty(LEGACY_PROJECT_ENV_NAME, System.getenv(LEGACY_PROJECT_ENV_NAME));
     }
     if (projectId == null) {
-      projectId = appEngineProjectId();
+      projectId = getAppEngineProjectId();
     }
     if (projectId == null) {
-      projectId = serviceAccountProjectId();
+      projectId = getServiceAccountProjectId();
     }
-    return projectId != null ? projectId : googleCloudProjectId();
+    return projectId != null ? projectId : getGoogleCloudProjectId();
   }
 
-  private static String activeGoogleCloudConfig(File configDir) {
+  protected static String getAppEngineAppId() {
+    return System.getProperty("com.google.appengine.application.id");
+  }
+
+  private static String getActiveGoogleCloudConfig(File configDir) {
     String activeGoogleCloudConfig = null;
     try {
       activeGoogleCloudConfig =
@@ -361,7 +379,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
     return firstNonNull(activeGoogleCloudConfig, "default");
   }
 
-  protected static String googleCloudProjectId() {
+  protected static String getGoogleCloudProjectId() {
     File configDir;
     if (System.getenv().containsKey("CLOUDSDK_CONFIG")) {
       configDir = new File(System.getenv("CLOUDSDK_CONFIG"));
@@ -370,7 +388,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
     } else {
       configDir = new File(System.getProperty("user.home"), ".config/gcloud");
     }
-    String activeConfig = activeGoogleCloudConfig(configDir);
+    String activeConfig = getActiveGoogleCloudConfig(configDir);
     FileReader fileReader = null;
     try {
       fileReader = new FileReader(new File(configDir, "configurations/config_" + activeConfig));
@@ -429,7 +447,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
     return System.getProperty("os.name").toLowerCase(Locale.ENGLISH).contains("windows");
   }
 
-  protected static String appEngineProjectId() {
+  protected static String getAppEngineProjectId() {
     try {
       Class<?> factoryClass =
           Class.forName("com.google.appengine.api.appidentity.AppIdentityServiceFactory");
@@ -447,7 +465,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
     }
   }
 
-  protected static String serviceAccountProjectId() {
+  protected static String getServiceAccountProjectId() {
     String project = null;
     String credentialsPath = System.getenv("GOOGLE_APPLICATION_CREDENTIALS");
     if (credentialsPath != null) {
@@ -488,8 +506,8 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
   }
 
   /**
-   * Returns the project id. Return value can be null (for services that don't require a project
-   * id).
+   * Returns the project ID. Return value can be null (for services that don't require a project
+   * ID).
    */
   @Deprecated
   public String projectId() {
@@ -497,8 +515,8 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
   }
 
   /**
-   * Returns the project id. Return value can be null (for services that don't require a project
-   * id).
+   * Returns the project ID. Return value can be null (for services that don't require a project
+   * ID).
    */
   public String getProjectId() {
     return projectId;
