@@ -21,6 +21,7 @@ import static com.google.common.base.Preconditions.checkNotNull;
 import com.google.api.services.bigquery.model.JobConfigurationQuery;
 import com.google.cloud.bigquery.JobInfo.CreateDisposition;
 import com.google.cloud.bigquery.JobInfo.WriteDisposition;
+import com.google.cloud.bigquery.JobInfo.SchemaUpdateOption;
 import com.google.common.base.MoreObjects.ToStringHelper;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -52,6 +53,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
   private final Boolean flattenResults;
   private final Boolean dryRun;
   private final Boolean useLegacySql;
+  private final List<SchemaUpdateOption> schemaUpdateOptions;
 
   /**
    * Priority levels for a query. If not specified the priority is assumed to be
@@ -89,6 +91,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
     private Boolean flattenResults;
     private Boolean dryRun;
     private Boolean useLegacySql;
+    private List<SchemaUpdateOption> schemaUpdateOptions;
 
     private Builder() {
       super(Type.QUERY);
@@ -109,6 +112,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
       this.flattenResults = jobConfiguration.flattenResults;
       this.dryRun = jobConfiguration.dryRun;
       this.useLegacySql = jobConfiguration.useLegacySql;
+      this.schemaUpdateOptions = jobConfiguration.schemaUpdateOptions;
     }
 
     private Builder(com.google.api.services.bigquery.model.JobConfiguration configurationPb) {
@@ -145,6 +149,13 @@ public final class QueryJobConfiguration extends JobConfiguration {
       if (queryConfigurationPb.getWriteDisposition() != null) {
         writeDisposition =
             WriteDisposition.valueOf(queryConfigurationPb.getWriteDisposition());
+      }
+      if (queryConfigurationPb.getSchemaUpdateOptions() != null) {
+        ImmutableList.Builder<JobInfo.SchemaUpdateOption> schemaUpdateOptionsBuilder = new ImmutableList.Builder<>();
+        for (String rawSchemaUpdateOption : queryConfigurationPb.getSchemaUpdateOptions()) {
+          schemaUpdateOptionsBuilder.add(JobInfo.SchemaUpdateOption.valueOf(rawSchemaUpdateOption));
+        }
+        this.schemaUpdateOptions = schemaUpdateOptionsBuilder.build();
       }
     }
 
@@ -325,6 +336,18 @@ public final class QueryJobConfiguration extends JobConfiguration {
       return this;
     }
 
+
+    /**
+     * [Experimental] Sets options allowing the schema of the destination table to be updated as a side effect of the
+     * query job. Schema update options are supported in two cases: when writeDisposition is WRITE_APPEND; when
+     * writeDisposition is WRITE_TRUNCATE and the destination table is a partition of a table, specified by partition
+     * decorators. For normal tables, WRITE_TRUNCATE will always overwrite the schema.
+     */
+    public Builder setSchemaUpdateOptions(List<SchemaUpdateOption> schemaUpdateOptions) {
+      this.schemaUpdateOptions = schemaUpdateOptions;
+      return this;
+    }
+
     public QueryJobConfiguration build() {
       return new QueryJobConfiguration(this);
     }
@@ -346,6 +369,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
         builder.tableDefinitions != null ? ImmutableMap.copyOf(builder.tableDefinitions) : null;
     this.dryRun = builder.dryRun;
     this.useLegacySql = builder.useLegacySql;
+    this.schemaUpdateOptions = builder.schemaUpdateOptions;
   }
 
   /**
@@ -479,6 +503,16 @@ public final class QueryJobConfiguration extends JobConfiguration {
     return useLegacySql;
   }
 
+  /**
+   * [Experimental] Returns options allowing the schema of the destination table to be updated as a side effect of the
+   * query job. Schema update options are supported in two cases: when writeDisposition is WRITE_APPEND; when
+   * writeDisposition is WRITE_TRUNCATE and the destination table is a partition of a table, specified by partition
+   * decorators. For normal tables, WRITE_TRUNCATE will always overwrite the schema.
+   */
+  public List<SchemaUpdateOption> getSchemaUpdateOptions() {
+    return schemaUpdateOptions;
+  }
+
   @Override
   public Builder toBuilder() {
     return new Builder(this);
@@ -499,7 +533,8 @@ public final class QueryJobConfiguration extends JobConfiguration {
         .add("createDisposition", createDisposition)
         .add("writeDisposition", writeDisposition)
         .add("dryRun", dryRun)
-        .add("useLegacySql", useLegacySql);
+        .add("useLegacySql", useLegacySql)
+        .add("schemaUpdateOptions", schemaUpdateOptions);
   }
 
   @Override
@@ -513,7 +548,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
   public int hashCode() {
     return Objects.hash(baseHashCode(), allowLargeResults, createDisposition, destinationTable,
         defaultDataset, flattenResults, priority, query, tableDefinitions, useQueryCache,
-        userDefinedFunctions, writeDisposition, dryRun, useLegacySql);
+        userDefinedFunctions, writeDisposition, dryRun, useLegacySql, schemaUpdateOptions);
   }
 
   @Override
@@ -569,6 +604,13 @@ public final class QueryJobConfiguration extends JobConfiguration {
     }
     if (useLegacySql != null) {
       queryConfigurationPb.setUseLegacySql(useLegacySql);
+    }
+    if (schemaUpdateOptions != null) {
+      ImmutableList.Builder<String> schemaUpdateOptionsBuilder = new ImmutableList.Builder<>();
+      for (JobInfo.SchemaUpdateOption schemaUpdateOption : schemaUpdateOptions) {
+        schemaUpdateOptionsBuilder.add(schemaUpdateOption.name());
+      }
+      queryConfigurationPb.setSchemaUpdateOptions(schemaUpdateOptionsBuilder.build());
     }
     return configurationPb.setQuery(queryConfigurationPb);
   }
