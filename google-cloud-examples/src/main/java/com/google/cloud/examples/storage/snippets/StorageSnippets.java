@@ -318,7 +318,7 @@ public class StorageSnippets {
     newMetadata.put("key", "value");
     Blob blob = storage.get(bucketName, blobName);
     BlobInfo updatedInfo = blob.toBuilder().setContentType("text/plain").setMetadata(newMetadata).build();
-    Blob updated=storage.update(updatedInfo, BlobTargetOption.metagenerationMatch());
+    Blob updated = storage.update(updatedInfo, BlobTargetOption.metagenerationMatch());
     // [END updateBlobWithMetageneration]
     return updated;
   }
