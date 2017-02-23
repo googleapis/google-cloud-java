@@ -77,37 +77,6 @@ import org.joda.time.Duration;
  *
  * <p>If no credentials are provided, the {@link Publisher} will use application default credentials
  * through {@link GoogleCredentials#getApplicationDefault}.
- *
- * <p>For example, a {@link Publisher} can be constructed and used to publish a list of messages as
- * follows:
- *
- * <pre><code>
- *  Publisher publisher =
- *       Publisher.newBuilder(MY_TOPIC)
- *           .setMaxBundleDuration(new Duration(10 * 1000))
- *           .build();
- *  List&lt;RpcFuture&lt;String&gt;&gt; results = new ArrayList&lt;&gt;();
- *
- *  for (PubsubMessage messages : messagesToPublish) {
- *    results.add(publisher.publish(message));
- *  }
- *
- *  Futures.addCallback(
- *  Futures.allAsList(results),
- *  new FutureCallback&lt;List&lt;String&gt;&gt;() {
- *    &#64;Override
- *    public void onSuccess(List&lt;String&gt; messageIds) {
- *      // ... process the acknowledgement of publish ...
- *    }
- *    &#64;Override
- *    public void onFailure(Throwable t) {
- *      // .. handle the failure ...
- *    }
- *  });
- *
- *  // Ensure all the outstanding messages have been published before shutting down your process.
- *  publisher.shutdown();
- * </code></pre>
  */
 public class Publisher {
   private static final Logger logger = Logger.getLogger(Publisher.class.getName());
@@ -212,6 +181,23 @@ public class Publisher {
    * <p>Depending on chosen flow control {@link #failOnFlowControlLimits option}, the returned
    * future might immediately fail with a {@link FlowController.FlowControlException} or block the
    * current thread until there are more resources available to publish.
+   *
+   * <p>Example of publishing a message.
+   * <pre> {@code
+   * String message = "my_message";
+   * ByteString data = ByteString.copyFromUtf8(message);
+   * PubsubMessage pubsubMessage = PubsubMessage.newBuilder().setData(data).build();
+   * RpcFuture<String> messageIdFuture = publisher.publish(pubsubMessage);
+   * messageIdFuture.addCallback(new RpcFutureCallback<String>() {
+   *   public void onSuccess(String messageId) {
+   *     System.out.println("published with message id: " + messageId);
+   *   }
+   *
+   *   public void onFailure(Throwable t) {
+   *     System.out.println("failed to publish: " + t);
+   *   }
+   * });
+   * }</pre>
    *
    * @param message the message to publish.
    * @return the message ID wrapped in a future.
@@ -334,7 +320,7 @@ public class Publisher {
                   return callback.apply(input);
                 }
               }));
-  }
+    }
   }
 
   private void setupDurationBasedPublishAlarm() {
@@ -570,7 +556,24 @@ public class Publisher {
     long nextLong(long least, long bound);
   }
 
-  /** Constructs a new {@link Builder} using the given topic. */
+  /**
+   * Constructs a new {@link Builder} using the given topic.
+   *
+   * <p>Example of creating a {@code Publisher}.
+   * <pre> {@code
+   * String projectName = "my_project";
+   * String topicName = "my_topic";
+   * TopicName topic = TopicName.create(projectName, topicName);
+   * Publisher publisher = Publisher.newBuilder(topic).build();
+   * try {
+   *   // ...
+   * } finally {
+   *   // When finished with the publisher, make sure to shutdown to free up resources.
+   *   publisher.shutdown();
+   * }
+   * }</pre>
+   *
+   */
   public static Builder newBuilder(TopicName topicName) {
     return new Builder(topicName);
   }
