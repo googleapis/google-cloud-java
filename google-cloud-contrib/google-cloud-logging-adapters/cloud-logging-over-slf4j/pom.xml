@@ -5,10 +5,10 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.example</groupId>
   <artifactId>cloud-logging-over-slf4j</artifactId>
-  <version>1.0.0-SNAPSHOT</version>
+  <version>0.1.0-SNAPSHOT</version>
   <properties>
     <slf4jVersion>1.7.21</slf4jVersion>
-    <googleCloudLoggingVersion>0.8.3-beta</googleCloudLoggingVersion>
+    <googleCloudLoggingVersion>0.9.3-beta</googleCloudLoggingVersion>
     <maven.compiler.target>1.7</maven.compiler.target>
     <maven.compiler.source>1.7</maven.compiler.source>
   </properties>

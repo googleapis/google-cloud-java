@@ -19,6 +19,7 @@
   <modules>
     <module>google-cloud-nio</module>
     <module>google-cloud-nio-examples</module>
+    <module>google-cloud-logging-adapters</module>
   </modules>
   <dependencies>
   </dependencies>

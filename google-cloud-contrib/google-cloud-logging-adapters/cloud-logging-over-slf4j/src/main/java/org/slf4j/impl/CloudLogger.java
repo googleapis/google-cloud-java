@@ -20,6 +20,7 @@ import com.google.cloud.MonitoredResource;
 import com.google.cloud.logging.LogEntry;
 import com.google.cloud.logging.Payload.StringPayload;
 import com.google.cloud.logging.Severity;
+import com.google.common.base.Splitter;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.util.ArrayList;
@@ -38,7 +39,6 @@ class CloudLogger {
   // 100kb payload limit : limit string payload to 95 kb (assume 2 bytes per character)
   private static final int MAX_LOG_SIZE_IN_CHARS = 1024 * 95 / 2;
   private static ConfigLoader configLoader;
-  private static boolean INITIALIZED = false;
   private static ILogging logging;
   private MonitoredResource resource;
   private String fileName;
@@ -47,23 +47,15 @@ class CloudLogger {
   private boolean isEnabled;
   private Map<String, String> labels;
 
-  CloudLogger(String loggerName) {
-    try {
+  CloudLogger(String loggerName) throws Exception {
       init(loggerName);
-    } catch (Exception e) {
-      System.err.println("Error initializing cloud logging");
-      e.printStackTrace();
-    }
   }
 
   static void init() {
-    if (!INITIALIZED) {
       String configFile = ConfigLoader.getValue(CLOUD_LOGGING_CONFIG, CONFIGURATION_FILE);
       configLoader = new ConfigLoader(configFile);
       logging = ILoggingFactory.get(configLoader.getDestination());
       logging.init();
-      INITIALIZED = true;
-    }
   }
 
   String getName() {
@@ -113,40 +105,10 @@ class CloudLogger {
         .build();
   }
 
-  private List<String> getChunks(String text) {
-    List<String> chunks = new ArrayList<>();
-    if (text.length() <= MAX_LOG_SIZE_IN_CHARS) {
-      chunks.add(text);
-      return chunks;
-    }
-    String[] splits = text.split("\n");
-    StringBuilder sb = new StringBuilder();
-    for (String s : splits) {
-      if (s.length() + sb.length() < MAX_LOG_SIZE_IN_CHARS) {
-        sb.append("\n");
-        sb.append(s);
-      } else {
-        if (sb.length() > 0) {
-          chunks.add(sb.toString());
-          sb.setLength(0);
-        }
-        if (s.length() <= MAX_LOG_SIZE_IN_CHARS) {
-          sb.append(s);
-        } else {
-          int start = 0;
-          int end;
-          while (start < s.length()) {
-            end = Math.min(s.length() - start, MAX_LOG_SIZE_IN_CHARS - 1);
-            chunks.add(s.substring(start, start + end));
-            start = end;
-          }
-        }
-      }
-    }
-    if (sb.length() > 0) {
-      chunks.add(sb.toString());
-    }
-    return chunks;
+  private Iterable<String> getChunks(String text) {
+    return Splitter.fixedLength(MAX_LOG_SIZE_IN_CHARS)
+        .omitEmptyStrings()
+        .split(text);
   }
 
   private String getStackTrace(Throwable throwable) {
@@ -162,7 +124,7 @@ class CloudLogger {
     if (t != null) {
       text = text + "\n" + getStackTrace(t);
     }
-    List<String> chunks = getChunks(text);
+    Iterable<String> chunks = getChunks(text);
     List<LogEntry> logEntries = new ArrayList<>();
     for (String chunk : chunks) {
       logEntries.add(createLogEntry(marker, level, chunk));

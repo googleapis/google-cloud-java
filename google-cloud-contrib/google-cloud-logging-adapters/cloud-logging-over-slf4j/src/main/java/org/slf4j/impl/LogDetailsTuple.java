@@ -33,15 +33,13 @@ class LogDetailsTuple {
     this.level = level;
     this.labels = new HashMap<>();
     if (marker != null) {
+      add(marker);
       Iterator<Marker> markerIterator = marker.iterator();
       if (!markerIterator.hasNext()) {
-        String[] labelWithValue = getMarkerLabelWithValue(marker);
-        add(labelWithValue[0], labelWithValue[1]);
+        add(marker);
       } else {
         while (markerIterator.hasNext()) {
-          Marker m = markerIterator.next();
-          String[] labelWithValue = getMarkerLabelWithValue(m);
-          add(labelWithValue[0], labelWithValue[1]);
+          add(markerIterator.next());
         }
       }
       if (labels != null) {
@@ -52,15 +50,15 @@ class LogDetailsTuple {
     }
   }
 
-  private String[] getMarkerLabelWithValue(Marker marker) {
+  private void add(Marker marker) {
     String name = marker.getName();
     String value = DEFAULT_LABEL_VALUE;
-    int colonIndex = marker.getName().indexOf(':');
-    if (colonIndex >= 0) {
-      value = marker.getName().substring(colonIndex + 1, name.length());
-      name = marker.getName().substring(0, colonIndex);
+    String[] splits = name.split(":");
+    if (splits.length == 2) {
+      name = splits[0];
+      value = splits[1];
     }
-    return new String[] {name, value};
+    add(name, value);
   }
 
   private void add(String labelName, String labelValue) {
