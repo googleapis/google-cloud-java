@@ -22,16 +22,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-datastore</artifactId>
-  <version>0.9.2-beta</version>
+  <version>0.9.3-beta</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-datastore:0.9.2-beta'
+compile 'com.google.cloud:google-cloud-datastore:0.9.3-beta'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-datastore" % "0.9.2-beta"
+libraryDependencies += "com.google.cloud" % "google-cloud-datastore" % "0.9.3-beta"
 ```
 
 Example Application
