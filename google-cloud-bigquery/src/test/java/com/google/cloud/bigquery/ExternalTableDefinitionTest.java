@@ -46,12 +46,14 @@ public class ExternalTableDefinitionTest {
   private static final Integer MAX_BAD_RECORDS = 42;
   private static final Boolean IGNORE_UNKNOWN_VALUES = true;
   private static final String COMPRESSION = "GZIP";
+  private static final Boolean AUTODETECT = true;
   private static final CsvOptions CSV_OPTIONS = CsvOptions.newBuilder().build();
   private static final ExternalTableDefinition EXTERNAL_TABLE_DEFINITION =
       ExternalTableDefinition.newBuilder(SOURCE_URIS, TABLE_SCHEMA, CSV_OPTIONS)
           .setCompression(COMPRESSION)
           .setIgnoreUnknownValues(IGNORE_UNKNOWN_VALUES)
           .setMaxBadRecords(MAX_BAD_RECORDS)
+          .setAutodetect(AUTODETECT)
           .build();
 
   @Test
@@ -83,6 +85,7 @@ public class ExternalTableDefinitionTest {
     assertEquals(MAX_BAD_RECORDS, EXTERNAL_TABLE_DEFINITION.getMaxBadRecords());
     assertEquals(TABLE_SCHEMA, EXTERNAL_TABLE_DEFINITION.getSchema());
     assertEquals(SOURCE_URIS, EXTERNAL_TABLE_DEFINITION.getSourceUris());
+    assertEquals(AUTODETECT, EXTERNAL_TABLE_DEFINITION.getAutodetect());
   }
 
 
@@ -106,5 +109,6 @@ public class ExternalTableDefinitionTest {
     assertEquals(expected.getSchema(), value.getSchema());
     assertEquals(expected.getSourceUris(), value.getSourceUris());
     assertEquals(expected.hashCode(), value.hashCode());
+    assertEquals(expected.getAutodetect(), value.getAutodetect());
   }
 }

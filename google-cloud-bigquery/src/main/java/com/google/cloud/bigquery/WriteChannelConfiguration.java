@@ -47,6 +47,7 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
   private final Schema schema;
   private final Boolean ignoreUnknownValues;
   private final List<SchemaUpdateOption> schemaUpdateOptions;
+  private final Boolean autodetect;
 
   public static final class Builder implements LoadConfiguration.Builder {
 
@@ -58,6 +59,7 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
     private Schema schema;
     private Boolean ignoreUnknownValues;
     private List<SchemaUpdateOption> schemaUpdateOptions;
+    private Boolean autodetect;
 
     private Builder() {}
 
@@ -70,6 +72,7 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
       this.schema = writeChannelConfiguration.schema;
       this.ignoreUnknownValues = writeChannelConfiguration.ignoreUnknownValues;
       this.schemaUpdateOptions = writeChannelConfiguration.schemaUpdateOptions;
+      this.autodetect = writeChannelConfiguration.autodetect;
     }
 
     private Builder(com.google.api.services.bigquery.model.JobConfiguration configurationPb) {
@@ -123,6 +126,7 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
         }
         this.schemaUpdateOptions = schemaUpdateOptionsBuilder.build();
       }
+      this.autodetect = loadConfigurationPb.getAutodetect();
     }
 
 
@@ -182,6 +186,12 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
     }
 
     @Override
+    public Builder setAutodetect(Boolean autodetect) {
+      this.autodetect = autodetect;
+      return this;
+    }
+
+    @Override
     public WriteChannelConfiguration build() {
       return new WriteChannelConfiguration(this);
     }
@@ -196,6 +206,7 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
     this.schema = builder.schema;
     this.ignoreUnknownValues = builder.ignoreUnknownValues;
     this.schemaUpdateOptions = builder.schemaUpdateOptions;
+    this.autodetect = builder.autodetect;
   }
 
 
@@ -258,6 +269,11 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
   }
 
   @Override
+  public Boolean getAutodetect() {
+    return autodetect;
+  }
+
+  @Override
   public Builder toBuilder() {
     return new Builder(this);
   }
@@ -271,7 +287,8 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
         .add("maxBadRecords", maxBadRecords)
         .add("schema", schema)
         .add("ignoreUnknownValue", ignoreUnknownValues)
-        .add("schemaUpdateOptions", schemaUpdateOptions);
+        .add("schemaUpdateOptions", schemaUpdateOptions)
+        .add("autodetect", autodetect);
   }
 
   @Override
@@ -289,7 +306,7 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
   @Override
   public int hashCode() {
     return Objects.hash(destinationTable, createDisposition, writeDisposition, formatOptions,
-        maxBadRecords, schema, ignoreUnknownValues, schemaUpdateOptions);
+        maxBadRecords, schema, ignoreUnknownValues, schemaUpdateOptions, autodetect);
   }
 
   WriteChannelConfiguration setProjectId(String projectId) {
@@ -336,6 +353,7 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
       }
       loadConfigurationPb.setSchemaUpdateOptions(schemaUpdateOptionsBuilder.build());
     }
+    loadConfigurationPb.setAutodetect(autodetect);
     return new com.google.api.services.bigquery.model.JobConfiguration()
         .setLoad(loadConfigurationPb);
   }
