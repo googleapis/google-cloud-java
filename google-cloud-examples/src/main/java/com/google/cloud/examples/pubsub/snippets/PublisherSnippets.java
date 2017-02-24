@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.cloud.examples.pubsub;
+package com.google.cloud.examples.pubsub.snippets;
 
 import com.google.api.gax.core.RpcFuture;
 import com.google.api.gax.core.RpcFutureCallback;
@@ -35,7 +35,7 @@ public class PublisherSnippets {
    */
   // [TARGET publish(PubsubMessage)]
   // [VARIABLE "my_message"]
-  public void publish(String message) {
+  public RpcFuture<String> publish(String message) {
     // [START publish]
     ByteString data = ByteString.copyFromUtf8(message);
     PubsubMessage pubsubMessage = PubsubMessage.newBuilder().setData(data).build();
@@ -50,6 +50,7 @@ public class PublisherSnippets {
       }
     });
     // [END publish]
+    return messageIdFuture;
   }
 
   /**
