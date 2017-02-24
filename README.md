@@ -44,16 +44,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud</artifactId>
-  <version>0.9.2-alpha</version>
+  <version>0.9.3-alpha</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud:0.9.2-alpha'
+compile 'com.google.cloud:google-cloud:0.9.3-alpha'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud" % "0.9.2-alpha"
+libraryDependencies += "com.google.cloud" % "google-cloud" % "0.9.3-alpha"
 ```
 
 Example Applications
@@ -109,12 +109,12 @@ Most `google-cloud` libraries require a project ID.  There are multiple ways to 
 
 `google-cloud` determines the project ID from the following sources in the listed order, stopping once it finds a value:
 
-1. Project ID supplied when building the service options
+1. The project ID supplied when building the service options
 2. Project ID specified by the environment variable `GOOGLE_CLOUD_PROJECT`
-3. App Engine project ID
-4. Project ID specified in the JSON credentials file pointed by the `GOOGLE_APPLICATION_CREDENTIALS` environment variable
-5. Google Cloud SDK project ID
-6. Compute Engine project ID
+3. The App Engine project ID
+4. The project ID specified in the JSON credentials file pointed by the `GOOGLE_APPLICATION_CREDENTIALS` environment variable
+5. The Google Cloud SDK project ID
+6. The Compute Engine project ID
 
 Authentication
 --------------
