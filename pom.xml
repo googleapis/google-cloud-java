@@ -166,7 +166,7 @@
         <version>1.4.1</version>
         <executions>
           <execution>
-            <id>enforce-maven</id>
+            <id>enforce</id>
             <goals>
               <goal>enforce</goal>
             </goals>
@@ -178,6 +178,7 @@
                 <requireJavaVersion>
                   <version>[1.7,)</version>
                 </requireJavaVersion>
+                <dependencyConvergence/>
               </rules>
             </configuration>
           </execution>
