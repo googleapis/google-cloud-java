@@ -18,9 +18,8 @@ package com.google.cloud.examples.pubsub.snippets;
 
 import com.google.cloud.Identity;
 import com.google.cloud.Role;
-import com.google.cloud.pubsub.spi.v1.PagedResponseWrappers.ListTopicsPagedResponse;
 import com.google.cloud.pubsub.spi.v1.PagedResponseWrappers.ListTopicSubscriptionsPagedResponse;
-
+import com.google.cloud.pubsub.spi.v1.PagedResponseWrappers.ListTopicsPagedResponse;
 import com.google.cloud.pubsub.spi.v1.PublisherClient;
 import com.google.iam.v1.Binding;
 import com.google.iam.v1.Policy;
@@ -43,42 +42,17 @@ public class PublisherClientSnippets {
   }
 
   /** Example of creating a topic. */
-  // [TARGET createTopic(TopicName)]
-  // [VARIABLE "my_topic_name"]
-  public Topic createTopic(String name) throws Exception {
+  public Topic createTopic(String topicName) throws Exception {
     try (PublisherClient publisherClient = PublisherClient.create()) {
       // [START createTopic]
-      TopicName topicName = TopicName.create(projectId, name);
-      Topic topic = publisherClient.createTopic(topicName);
+      TopicName formattedTopicName = TopicName.create(projectId, topicName);
+      Topic topic = publisherClient.createTopic(formattedTopicName);
       // [END createTopic]
       return topic;
     }
   }
 
   /** Example of listing topics, specifying the page size. */
-  // [TARGET listTopicSubscriptions(int)]
-  public ListTopicSubscriptionsPagedResponse listTopicSubscriptions(String name) throws Exception {
-    try (PublisherClient publisherClient = PublisherClient.create()) {
-      TopicName topicName = TopicName.create(projectId, name);
-      // [START listTopicSubscriptions]
-      ListTopicSubscriptionsRequest request =
-          ListTopicSubscriptionsRequest.newBuilder()
-              .setTopicWithTopicName(topicName)
-              .setPageSize(100)
-              .build();
-      ListTopicSubscriptionsPagedResponse response =
-          publisherClient.listTopicSubscriptions(request);
-      Iterable<String> subscriptions = response.iterateAllElements();
-      for (String subscription : subscriptions) {
-        // do something with the subscription name
-      }
-      // [END listTopicSubscriptions]
-      return response;
-    }
-  }
-
-  /** Example of listing topics, specifying the page size. */
-  // [TARGET listTopics(int)]
   public ListTopicsPagedResponse listTopics() throws Exception {
     try (PublisherClient publisherClient = PublisherClient.create()) {
       // [START listTopics]
@@ -98,21 +72,83 @@ public class PublisherClientSnippets {
     }
   }
 
-  /** Example of deleting a topic. */
-  // [TARGET deleteTopic(TopicName)]
-  // [VARIABLE "my_topic_name"]
-  public void deleteTopic(String name) throws Exception {
+  /** Example of listing topics, specifying the page size and a page token. */
+  public ListTopicsPagedResponse listTopicsWithPageToken(String pageToken) throws Exception {
     try (PublisherClient publisherClient = PublisherClient.create()) {
-      TopicName topicName = TopicName.create(projectId, name);
+      // [START listTopicsWithPageToken]
+      ListTopicsRequest listTopicsRequest =
+          ListTopicsRequest.newBuilder()
+              .setProjectWithProjectName(ProjectName.create(projectId))
+              .setPageSize(100)
+              .setPageToken(pageToken)
+              .build();
+      ListTopicsPagedResponse response =
+          publisherClient.listTopics(listTopicsRequest);
+      Iterable<Topic> topics = response.iterateAllElements();
+      for (Topic topic : topics) {
+        // do something with the topic
+      }
+      // [END listTopicsWithPageToken]
+      return response;
+    }
+  }
+
+  /** Example of listing topics for a subscription, specifying the page size. */
+  public ListTopicSubscriptionsPagedResponse listTopicSubscriptions(String topicName) throws Exception {
+    try (PublisherClient publisherClient = PublisherClient.create()) {
+      TopicName formattedTopicName = TopicName.create(projectId, topicName);
+      // [START listTopicSubscriptions]
+      ListTopicSubscriptionsRequest request =
+          ListTopicSubscriptionsRequest.newBuilder()
+              .setTopicWithTopicName(formattedTopicName)
+              .setPageSize(100)
+              .build();
+      ListTopicSubscriptionsPagedResponse response =
+          publisherClient.listTopicSubscriptions(request);
+      Iterable<String> subscriptions = response.iterateAllElements();
+      for (String subscription : subscriptions) {
+        // do something with the subscription name
+      }
+      // [END listTopicSubscriptions]
+      return response;
+    }
+  }
+
+  /** Example of listing topics for a subscription, specifying the page size and page token */
+  public ListTopicSubscriptionsPagedResponse listTopicSubscriptionsWithPageToken(
+      String topicName, String pageToken) throws Exception {
+    try (PublisherClient publisherClient = PublisherClient.create()) {
+      TopicName formattedTopicName = TopicName.create(projectId, topicName);
+      // [START listTopicSubscriptionsWithPageToken]
+      ListTopicSubscriptionsRequest request =
+          ListTopicSubscriptionsRequest.newBuilder()
+              .setTopicWithTopicName(formattedTopicName)
+              .setPageSize(100)
+              .setPageToken(pageToken)
+              .build();
+      ListTopicSubscriptionsPagedResponse response =
+          publisherClient.listTopicSubscriptions(request);
+      Iterable<String> subscriptions = response.iterateAllElements();
+      for (String subscription : subscriptions) {
+        // do something with the subscription name
+      }
+      // [END listTopicSubscriptionsWithPageToken]
+      return response;
+    }
+  }
+
+  /** Example of deleting a topic. */
+  public TopicName deleteTopic(String topicName) throws Exception {
+    try (PublisherClient publisherClient = PublisherClient.create()) {
+      TopicName formattedTopicName = TopicName.create(projectId, topicName);
       // [START deleteTopic]
-      publisherClient.deleteTopic(topicName);
+      publisherClient.deleteTopic(formattedTopicName);
       // [END deleteTopic]
+      return formattedTopicName;
     }
   }
 
   /** Example of getting a topic policy. */
-  // [TARGET getTopicPolicy(TopicName)]
-  // [VARIABLE "my_topic_name"]
   public Policy getTopicPolicy(String name) throws Exception {
     try (PublisherClient publisherClient = PublisherClient.create()) {
       TopicName topicName = TopicName.create(projectId, name);
@@ -127,8 +163,6 @@ public class PublisherClientSnippets {
   }
 
   /** Example of replacing a topic policy. */
-  // [TARGET replaceTopicPolicy(TopicName)]
-  // [VARIABLE "my_topic_name"]
   public Policy replaceTopicPolicy(String name) throws Exception {
     try (PublisherClient publisherClient = PublisherClient.create()) {
       String topicName = TopicName.create(projectId, name).toString();
@@ -148,19 +182,29 @@ public class PublisherClientSnippets {
     }
   }
 
-  /** Example of testing whether the caller has the provided permissions on a topic. */
-  // [TARGET testTopicPermissions(TopicName)]
-  // [VARIABLE "my_topic_name"]
-  public TestIamPermissionsResponse testTopicPermissions(String name) throws Exception {
+  /** Example of testing whether the caller has the provided permissions on a topic.
+   * Only viewer, editor or admin/owner can view results of pubsub.topics.get  */
+  public TestIamPermissionsResponse testTopicPermissions(String topicName) throws Exception {
     try (PublisherClient publisherClient = PublisherClient.create()) {
-      TopicName topicName = TopicName.create(projectId, name);
+      TopicName formattedTopicName = TopicName.create(projectId, topicName);
       // [START testTopicPermissions]
       List<String> permissions = new LinkedList<>();
       permissions.add("pubsub.topics.get");
       TestIamPermissionsResponse testedPermissions =
-          publisherClient.testIamPermissions(topicName.toString(), permissions);
+          publisherClient.testIamPermissions(formattedTopicName.toString(), permissions);
       // [END testTopicPermissions]
       return testedPermissions;
+    }
+  }
+
+  /** Example of getting a topic. */
+  public Topic getTopic(String topicName) throws Exception {
+    try (PublisherClient publisherClient = PublisherClient.create()) {
+      // [START getTopic]
+      TopicName formattedTopicName = TopicName.create(projectId, topicName);
+      Topic topic = publisherClient.getTopic(formattedTopicName);
+      // [END createTopic]
+      return topic;
     }
   }
 }
