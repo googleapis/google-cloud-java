@@ -16,8 +16,8 @@
 
 /*
  * EDITING INSTRUCTIONS
- * This file is referenced in {@link Publisher} javadoc.
- * Any change to this file should be reflected in PubSub's javadoc.
+ * This file is referenced in Publisher's javadoc. Any change to this file should be reflected in
+ * Publisher's javadoc.
  */
 
 package com.google.cloud.examples.pubsub.snippets;
@@ -29,7 +29,7 @@ import com.google.protobuf.ByteString;
 import com.google.pubsub.v1.PubsubMessage;
 import com.google.pubsub.v1.TopicName;
 
-/** This class contains a number of snippets for the {@link Publisher} interface. */
+/** This class contains snippets for the {@link Publisher} interface. */
 public class PublisherSnippets {
   private final Publisher publisher;
 

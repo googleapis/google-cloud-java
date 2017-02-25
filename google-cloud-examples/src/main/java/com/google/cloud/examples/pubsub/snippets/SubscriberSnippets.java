@@ -17,7 +17,7 @@
 /*
  * EDITING INSTRUCTIONS
  * This file is referenced in Subscriber's javadoc. Any change to this file should be reflected in
- * PubSub's javadoc.
+ * Subscriber's javadoc.
  */
 
 package com.google.cloud.examples.pubsub.snippets;
@@ -28,6 +28,7 @@ import com.google.cloud.pubsub.spi.v1.Subscriber;
 import com.google.pubsub.v1.SubscriptionName;
 import java.util.concurrent.Executor;
 
+/** This class contains snippets for the {@link Subscriber} interface. */
 public class SubscriberSnippets {
 
   private final SubscriptionName subscription;
