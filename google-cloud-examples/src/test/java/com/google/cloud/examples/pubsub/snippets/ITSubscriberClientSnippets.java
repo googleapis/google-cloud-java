@@ -189,8 +189,6 @@ public class ITSubscriberClientSnippets {
     assertTrue(response.getPermissionsList().contains("pubsub.subscriptions.get"));
   }
 
-
-
   private void createTopic(String name) throws Exception {
     try (PublisherClient publisherClient = PublisherClient.create()) {
       publisherClient.createTopic(TopicName.create(projectId, name));
@@ -201,7 +199,7 @@ public class ITSubscriberClientSnippets {
     Set<String> messages = new HashSet<>();
     Publisher publisher = Publisher.newBuilder(TopicName.create(projectId, topicName)).build();
     for (int i = 1; i<= numMessages; i++) {
-      String message = formatForTest("message-" + String.valueOf(i));
+      String message = formatForTest("message-" + i);
       PubsubMessage pubsubMessage = PubsubMessage.newBuilder().setData(
           ByteString.copyFromUtf8(message)).build();
       publisher.publish(pubsubMessage);
