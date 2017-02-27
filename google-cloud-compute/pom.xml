@@ -25,7 +25,7 @@
     <dependency>
       <groupId>com.google.apis</groupId>
       <artifactId>google-api-services-compute</artifactId>
-      <version>v1-rev135-1.22.0</version>
+      <version>v1-rev103-1.21.0</version>
       <scope>compile</scope>
       <exclusions>
         <exclusion>
