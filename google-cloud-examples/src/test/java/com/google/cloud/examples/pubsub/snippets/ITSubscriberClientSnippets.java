@@ -137,22 +137,16 @@ public class ITSubscriberClientSnippets {
     addedSubscriptions.add(createSubscription(topicName1, subscriptionName1));
     addedSubscriptions.add(createSubscription(topicName2, subscriptionName2));
 
-    String pageToken;
     boolean[] subFound = {false, false};
     ListSubscriptionsPagedResponse response = subscriberClientSnippets.listSubscriptions();
-    do {
-      assertNotNull(response);
-      pageToken = (String) response.getNextPageToken();
-      Iterable<Subscription> subscriptions = response.iterateAllElements();
-      for (int i = 0; i < 2; i++) {
+    assertNotNull(response);
+    Iterable<Subscription> subscriptions = response.iterateAllElements();
+    for (int i = 0; i < 2; i++) {
         if (!subFound[i]) {
           subFound[i] = Iterables.contains(subscriptions, addedSubscriptions.get(i));
         }
-      }
-      if (pageToken != null) {
-        response = subscriberClientSnippets.listSubscriptionsWithPageToken(pageToken);
-      }
-    } while (!(subFound[0] && subFound[1]));
+    }
+    assertTrue(subFound[0] && subFound[1]);
   }
 
   @Test(expected = ApiException.class)

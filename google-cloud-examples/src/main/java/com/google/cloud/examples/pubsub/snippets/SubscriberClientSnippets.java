@@ -20,7 +20,6 @@ package com.google.cloud.examples.pubsub.snippets;
 
 import com.google.cloud.Identity;
 import com.google.cloud.Role;
-import com.google.cloud.pubsub.spi.v1.PagedResponseWrappers;
 import com.google.cloud.pubsub.spi.v1.PagedResponseWrappers.ListSubscriptionsPagedResponse;
 import com.google.cloud.pubsub.spi.v1.PublisherClient;
 import com.google.cloud.pubsub.spi.v1.SubscriberClient;
@@ -49,31 +48,30 @@ public class SubscriberClientSnippets {
   }
 
   /** Example of creating a pull subscription for a topic. */
-  public Subscription createSubscription(String topic, String subscriptionName) throws Exception {
-    TopicName topicName = TopicName.create(projectId, topic);
-    SubscriptionName formattedSubscriptionName =
-        SubscriptionName.create(projectId, subscriptionName);
+  public Subscription createSubscription(String topic, String mySubscription) throws Exception {
     try (SubscriberClient subscriberClient = SubscriberClient.create()) {
       // [START createSubscription]
+      TopicName topicName = TopicName.create(projectId, topic);
+      SubscriptionName subscriptionName =
+          SubscriptionName.create(projectId, mySubscription);
       Subscription subscription =
           subscriberClient.createSubscription(
-              formattedSubscriptionName, topicName, PushConfig.getDefaultInstance(), 0);
+              subscriptionName, topicName, PushConfig.getDefaultInstance(), 0);
       // [END createSubscription]
       return subscription;
     }
   }
 
   /** Example of pulling a maximum number of messages from a subscription. */
-  public PullResponse pull(String subscriptionName) throws Exception {
+  public PullResponse pull(String mySubscription) throws Exception {
     try (SubscriberClient subscriberClient = SubscriberClient.create()) {
-      SubscriptionName subcriptionFormattedName =
-          SubscriptionName.create(projectId, subscriptionName);
       // [START pull]
-      PullResponse response = subscriberClient.pull(subcriptionFormattedName, true, 100);
+      SubscriptionName subscriptionName = SubscriptionName.create(projectId, mySubscription);
+      PullResponse response = subscriberClient.pull(subscriptionName, true, 100);
       for (ReceivedMessage message : response.getReceivedMessagesList()) {
         // do something with message, then ack or nack
         subscriberClient.acknowledge(
-            subcriptionFormattedName, Collections.singletonList(message.getAckId()));
+            subscriptionName, Collections.singletonList(message.getAckId()));
       }
       // [END pull]
       return response;
@@ -81,28 +79,25 @@ public class SubscriberClientSnippets {
   }
 
   /** Example of replacing the push configuration of a subscription, setting the push endpoint. */
-  public void replacePushConfig(String subscriptionName, String endpoint) throws Exception {
+  public void replacePushConfig(String mySubscription, String endpoint) throws Exception {
     try (SubscriberClient subscriberClient = SubscriberClient.create()) {
-      SubscriptionName formattedSubscriptionName =
-          SubscriptionName.create(projectId, subscriptionName);
       // [START replacePushConfig]
+      SubscriptionName subscriptionName = SubscriptionName.create(projectId, mySubscription);
       PushConfig pushConfig = PushConfig.newBuilder().setPushEndpoint(endpoint).build();
-      subscriberClient.modifyPushConfig(formattedSubscriptionName, pushConfig);
+      subscriberClient.modifyPushConfig(subscriptionName, pushConfig);
       // [END replacePushConfig]
     }
   }
 
-  /** Example of listing subscriptions, specifying the page size. */
+  /** Example of listing subscriptions. */
   public ListSubscriptionsPagedResponse listSubscriptions() throws Exception {
     try (SubscriberClient subscriberClient = SubscriberClient.create()) {
-      ProjectName projectName = ProjectName.create(projectId);
       // [START listSubscriptions]
       ListSubscriptionsRequest listSubscriptionsRequest =
           ListSubscriptionsRequest.newBuilder()
-              .setProjectWithProjectName(projectName)
-              .setPageSize(100)
+              .setProjectWithProjectName(ProjectName.create(projectId))
               .build();
-      PagedResponseWrappers.ListSubscriptionsPagedResponse response =
+      ListSubscriptionsPagedResponse response =
           subscriberClient.listSubscriptions(listSubscriptionsRequest);
       Iterable<Subscription> subscriptions = response.iterateAllElements();
       for (Subscription subscription : subscriptions) {
@@ -113,48 +108,23 @@ public class SubscriberClientSnippets {
     }
   }
 
-  /** Example of listing subscriptions, specifying the page size and page token. */
-  public ListSubscriptionsPagedResponse listSubscriptionsWithPageToken(String pageToken)
-      throws Exception {
-    try (SubscriberClient subscriberClient = SubscriberClient.create()) {
-      ProjectName projectName = ProjectName.create(projectId);
-      // [START listSubscriptionsWithPageToken]
-      ListSubscriptionsRequest listSubscriptionsRequest =
-          ListSubscriptionsRequest.newBuilder()
-              .setProjectWithProjectName(projectName)
-              .setPageSize(100)
-              .setPageToken(pageToken)
-              .build();
-      PagedResponseWrappers.ListSubscriptionsPagedResponse response =
-          subscriberClient.listSubscriptions(listSubscriptionsRequest);
-      Iterable<Subscription> subscriptions = response.iterateAllElements();
-      for (Subscription subscription : subscriptions) {
-        // do something with the subscription
-      }
-      // [END listSubscriptionsWithPageToken]
-      return response;
-    }
-  }
-
   /** Example of deleting a subscription. */
-  public SubscriptionName deleteSubscription(String subscriptionName) throws Exception {
+  public SubscriptionName deleteSubscription(String mySubscription) throws Exception {
     try (SubscriberClient subscriberClient = SubscriberClient.create()) {
-      SubscriptionName formattedSubscriptionName =
-          SubscriptionName.create(projectId, subscriptionName);
       // [START deleteSubscription]
-      subscriberClient.deleteSubscription(formattedSubscriptionName);
+      SubscriptionName subscriptionName = SubscriptionName.create(projectId, mySubscription);
+      subscriberClient.deleteSubscription(subscriptionName);
       // [END deleteSubscription]
-      return formattedSubscriptionName;
+      return subscriptionName;
     }
   }
 
   /** Example of getting a subscription policy. */
-  public Policy getSubscriptionPolicy(String subscriptionName) throws Exception {
+  public Policy getSubscriptionPolicy(String mySubscription) throws Exception {
     try (SubscriberClient subscriberClient = SubscriberClient.create()) {
-      SubscriptionName formattedSubscriptionName =
-          SubscriptionName.create(projectId, subscriptionName);
       // [START getSubscriptionPolicy]
-      Policy policy = subscriberClient.getIamPolicy(formattedSubscriptionName.toString());
+      SubscriptionName subscriptionName = SubscriptionName.create(projectId, mySubscription);
+      Policy policy = subscriberClient.getIamPolicy(subscriptionName.toString());
       if (policy == null) {
         // subscription was not found
       }
@@ -164,12 +134,11 @@ public class SubscriberClientSnippets {
   }
 
   /** Example of replacing a subscription policy. */
-  public Policy replaceSubscriptionPolicy(String subscriptionName) throws Exception {
+  public Policy replaceSubscriptionPolicy(String mySubscription) throws Exception {
     try (SubscriberClient subscriberClient = SubscriberClient.create()) {
-      SubscriptionName formattedSubscriptionName =
-          SubscriptionName.create(projectId, subscriptionName);
       // [START replaceSubscriptionPolicy]
-      Policy policy = subscriberClient.getIamPolicy(formattedSubscriptionName.toString());
+      SubscriptionName subscriptionName = SubscriptionName.create(projectId, mySubscription);
+      Policy policy = subscriberClient.getIamPolicy(subscriptionName.toString());
       // Create a role => members binding
       Binding binding =
           Binding.newBuilder()
@@ -179,36 +148,33 @@ public class SubscriberClientSnippets {
       //Update policy
       Policy updatedPolicy = policy.toBuilder().addBindings(binding).build();
 
-      updatedPolicy = subscriberClient.setIamPolicy(
-          formattedSubscriptionName.toString(), updatedPolicy);
+      updatedPolicy = subscriberClient.setIamPolicy(subscriptionName.toString(), updatedPolicy);
       // [END replaceSubscriptionPolicy]
       return updatedPolicy;
     }
   }
 
   /** Example of testing whether the caller has the provided permissions on a subscription. */
-  public TestIamPermissionsResponse testSubscriptionPermissions(String subscriptionName)
+  public TestIamPermissionsResponse testSubscriptionPermissions(String mySubscription)
       throws Exception {
     try (PublisherClient publisherClient = PublisherClient.create()) {
-      SubscriptionName formattedSubscriptionName =
-          SubscriptionName.create(projectId, subscriptionName);
       // [START testSubscriptionPermissions]
       List<String> permissions = new LinkedList<>();
       permissions.add("pubsub.subscriptions.get");
+      SubscriptionName subscriptionName = SubscriptionName.create(projectId, mySubscription);
       TestIamPermissionsResponse testedPermissions =
-          publisherClient.testIamPermissions(formattedSubscriptionName.toString(), permissions);
+          publisherClient.testIamPermissions(subscriptionName.toString(), permissions);
       // [END testSubscriptionPermissions]
       return testedPermissions;
     }
   }
 
   /** Example of getting a subscription. */
-  public Subscription getSubscription(String subscriptionName) throws Exception {
-    SubscriptionName formattedSubscriptionName =
-        SubscriptionName.create(projectId, subscriptionName);
+  public Subscription getSubscription(String mySubscription) throws Exception {
     try (SubscriberClient subscriberClient = SubscriberClient.create()) {
       // [START getSubscription]
-      Subscription subscription = subscriberClient.getSubscription(formattedSubscriptionName);
+      SubscriptionName subscriptionName = SubscriptionName.create(projectId, mySubscription);
+      Subscription subscription = subscriberClient.getSubscription(subscriptionName);
       // [END getSubscription]
       return subscription;
     }

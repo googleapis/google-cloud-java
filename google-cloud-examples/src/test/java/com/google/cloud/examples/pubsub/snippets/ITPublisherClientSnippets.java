@@ -97,23 +97,19 @@ public class ITPublisherClientSnippets {
     addedTopics.add(publisherClientSnippets.createTopic(topicName1));
     String topicName2 = topics[1];
     addedTopics.add(publisherClientSnippets.createTopic(topicName2));
-    String pageToken;
+
     boolean[] topicFound = {false, false};
     ListTopicsPagedResponse response = publisherClientSnippets.listTopics();
 
-    do {
-      assertNotNull(response);
-      pageToken = (String) response.getNextPageToken();
-      Iterable<Topic> topics = response.iterateAllElements();
-      for (int i = 0; i < 2; i++) {
-        if (!topicFound[i]) {
-          topicFound[i] = Iterables.contains(topics, addedTopics.get(i));
-        }
+    assertNotNull(response);
+    Iterable<Topic> topics = response.iterateAllElements();
+    for (int i = 0; i < 2; i++) {
+      if (!topicFound[i]) {
+        topicFound[i] = Iterables.contains(topics, addedTopics.get(i));
       }
-      if (pageToken != null) {
-        response = publisherClientSnippets.listTopicsWithPageToken(pageToken);
-      }
-    } while (!(topicFound[0] && topicFound[1]));
+    }
+
+    assertTrue(topicFound[0] && topicFound[1]);
   }
 
   @Test
@@ -126,25 +122,20 @@ public class ITPublisherClientSnippets {
     addedSubscriptions.add(createSubscription(topicName1, subscriptionName1));
     addedSubscriptions.add(createSubscription(topicName1, subscriptionName2));
 
-    String pageToken;
     boolean[] subFound = {false, false};
 
     ListTopicSubscriptionsPagedResponse response =
         publisherClientSnippets.listTopicSubscriptions(topicName1);
-    do{
-      assertNotNull(response);
-      pageToken = (String) response.getNextPageToken();
-      Iterable<String> subscriptions = response.iterateAllElements();
-      for (int i = 0; i < 2; i++) {
-        if (!subFound[i]) {
-          subFound[i] = Iterables.contains(subscriptions, addedSubscriptions.get(i));
-        }
+
+
+    assertNotNull(response);
+    Iterable<String> subscriptions = response.iterateAllElements();
+    for (int i = 0; i < 2; i++) {
+      if (!subFound[i]) {
+        subFound[i] = Iterables.contains(subscriptions, addedSubscriptions.get(i));
       }
-      if (pageToken != null) {
-        response = publisherClientSnippets.listTopicSubscriptionsWithPageToken(
-            topicName1, pageToken);
-      }
-    } while (!(subFound[0] && subFound[1]));
+    }
+    assertTrue(subFound[0] && subFound[1]);
   }
 
   @Test(expected = ApiException.class)
