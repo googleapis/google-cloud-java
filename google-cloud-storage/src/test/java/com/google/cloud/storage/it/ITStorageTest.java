@@ -100,6 +100,8 @@ public class ITStorageTest {
       new SecretKeySpec(BaseEncoding.base64().decode(BASE64_KEY), "AES256");
   private static final byte[] COMPRESSED_CONTENT = BaseEncoding.base64()
       .decode("H4sIAAAAAAAAAPNIzcnJV3DPz0/PSVVwzskvTVEILskvSkxPVQQA/LySchsAAAA=");
+  private static final String STORAGE_CLASS_COLDLINE = "COLDLINE";
+  private static final String STORAGE_CLASS_STANDARD = "STANDARD";
 
   @BeforeClass
   public static void beforeClass() throws NoSuchAlgorithmException, InvalidKeySpecException {
@@ -784,6 +786,29 @@ public class ITStorageTest {
     assertEquals(targetBlobName, copyWriter.getResult().getName());
     assertEquals(CONTENT_TYPE, copyWriter.getResult().getContentType());
     assertEquals(metadata, copyWriter.getResult().getMetadata());
+    assertTrue(copyWriter.isDone());
+    assertTrue(remoteSourceBlob.delete());
+    assertTrue(storage.delete(BUCKET, targetBlobName));
+  }
+
+  @Test
+  public void testCopyBlobUpdateStorageClass() {
+    String sourceBlobName = "test-copy-blob-update-storage-class-source";
+    BlobId source = BlobId.of(BUCKET, sourceBlobName);
+    BlobInfo sourceInfo =
+        BlobInfo.newBuilder(source).setStorageClass(STORAGE_CLASS_STANDARD).build();
+    Blob remoteSourceBlob = storage.create(sourceInfo, BLOB_BYTE_CONTENT);
+    assertNotNull(remoteSourceBlob);
+    assertEquals(STORAGE_CLASS_STANDARD, remoteSourceBlob.getStorageClass());
+
+    String targetBlobName = "test-copy-blob-update-storage-class-target";
+    BlobInfo targetInfo = BlobInfo
+        .newBuilder(BUCKET, targetBlobName).setStorageClass(STORAGE_CLASS_COLDLINE).build();
+    Storage.CopyRequest req = Storage.CopyRequest.of(source, targetInfo);
+    CopyWriter copyWriter = storage.copy(req);
+    assertEquals(BUCKET, copyWriter.getResult().getBucket());
+    assertEquals(targetBlobName, copyWriter.getResult().getName());
+    assertEquals(STORAGE_CLASS_COLDLINE, copyWriter.getResult().getStorageClass());
     assertTrue(copyWriter.isDone());
     assertTrue(remoteSourceBlob.delete());
     assertTrue(storage.delete(BUCKET, targetBlobName));
