@@ -51,7 +51,7 @@ public class SubscriberSnippets {
    * Example of receiving a specific number of messages.
    */
   // [TARGET startAsync()]
-  public void startAsync() throws Exception {
+  public void startAndWait() throws Exception {
     // [START startAsync]
     Subscriber subscriber = Subscriber.newBuilder(subscription, receiver).build();
     subscriber.addListener(new Subscriber.SubscriberListener() {

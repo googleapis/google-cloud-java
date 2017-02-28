@@ -40,7 +40,7 @@ public class PublisherSnippets {
   /** Example of publishing a message. */
   // [TARGET publish(PubsubMessage)]
   // [VARIABLE "my_message"]
-  public void publish(String message) {
+  public RpcFuture<String> publish(String message) {
     // [START publish]
     ByteString data = ByteString.copyFromUtf8(message);
     PubsubMessage pubsubMessage = PubsubMessage.newBuilder().setData(data).build();
@@ -56,6 +56,7 @@ public class PublisherSnippets {
           }
         });
     // [END publish]
+    return messageIdFuture;
   }
 
   /** Example of creating a {@code Publisher}. */
