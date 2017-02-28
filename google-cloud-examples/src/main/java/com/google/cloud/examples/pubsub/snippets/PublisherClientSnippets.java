@@ -42,10 +42,10 @@ public class PublisherClientSnippets {
   }
 
   /** Example of creating a topic. */
-  public Topic createTopic(String myTopic) throws Exception {
+  public Topic createTopic(String topicId) throws Exception {
     try (PublisherClient publisherClient = PublisherClient.create()) {
       // [START createTopic]
-      TopicName topicName = TopicName.create(projectId, myTopic);
+      TopicName topicName = TopicName.create(projectId, topicId);
       Topic topic = publisherClient.createTopic(topicName);
       // [END createTopic]
       return topic;
@@ -71,11 +71,11 @@ public class PublisherClientSnippets {
   }
 
   /** Example of listing topics for a subscription. */
-  public ListTopicSubscriptionsPagedResponse listTopicSubscriptions(String myTopic)
+  public ListTopicSubscriptionsPagedResponse listTopicSubscriptions(String topicId)
       throws Exception {
     try (PublisherClient publisherClient = PublisherClient.create()) {
       // [START listTopicSubscriptions]
-      TopicName topicName = TopicName.create(projectId, myTopic);
+      TopicName topicName = TopicName.create(projectId, topicId);
       ListTopicSubscriptionsRequest request =
           ListTopicSubscriptionsRequest.newBuilder()
               .setTopicWithTopicName(topicName)
@@ -92,10 +92,10 @@ public class PublisherClientSnippets {
   }
 
   /** Example of deleting a topic. */
-  public TopicName deleteTopic(String myTopic) throws Exception {
+  public TopicName deleteTopic(String topicId) throws Exception {
     try (PublisherClient publisherClient = PublisherClient.create()) {
       // [START deleteTopic]
-      TopicName topicName = TopicName.create(projectId, myTopic);
+      TopicName topicName = TopicName.create(projectId, topicId);
       publisherClient.deleteTopic(topicName);
       // [END deleteTopic]
       return topicName;
@@ -103,10 +103,10 @@ public class PublisherClientSnippets {
   }
 
   /** Example of getting a topic policy. */
-  public Policy getTopicPolicy(String myTopic) throws Exception {
+  public Policy getTopicPolicy(String topicId) throws Exception {
     try (PublisherClient publisherClient = PublisherClient.create()) {
       // [START getTopicPolicy]
-      TopicName topicName = TopicName.create(projectId, myTopic);
+      TopicName topicName = TopicName.create(projectId, topicId);
       Policy policy = publisherClient.getIamPolicy(topicName.toString());
       if (policy == null) {
         // topic iam policy was not found
@@ -117,10 +117,10 @@ public class PublisherClientSnippets {
   }
 
   /** Example of replacing a topic policy. */
-  public Policy replaceTopicPolicy(String myTopic) throws Exception {
+  public Policy replaceTopicPolicy(String topicId) throws Exception {
     try (PublisherClient publisherClient = PublisherClient.create()) {
       // [START replaceTopicPolicy]
-      String topicName = TopicName.create(projectId, myTopic).toString();
+      String topicName = TopicName.create(projectId, topicId).toString();
       Policy policy = publisherClient.getIamPolicy(topicName);
       // add role -> members binding
       Binding binding =
@@ -138,12 +138,12 @@ public class PublisherClientSnippets {
 
   /** Example of testing whether the caller has the provided permissions on a topic.
    * Only viewer, editor or admin/owner can view results of pubsub.topics.get  */
-  public TestIamPermissionsResponse testTopicPermissions(String myTopic) throws Exception {
+  public TestIamPermissionsResponse testTopicPermissions(String topicId) throws Exception {
     try (PublisherClient publisherClient = PublisherClient.create()) {
       // [START testTopicPermissions]
       List<String> permissions = new LinkedList<>();
       permissions.add("pubsub.topics.get");
-      TopicName topicName = TopicName.create(projectId, myTopic);
+      TopicName topicName = TopicName.create(projectId, topicId);
       TestIamPermissionsResponse testedPermissions =
           publisherClient.testIamPermissions(topicName.toString(), permissions);
       // [END testTopicPermissions]
@@ -152,10 +152,10 @@ public class PublisherClientSnippets {
   }
 
   /** Example of getting a topic. */
-  public Topic getTopic(String myTopic) throws Exception {
+  public Topic getTopic(String topicId) throws Exception {
     try (PublisherClient publisherClient = PublisherClient.create()) {
       // [START getTopic]
-      TopicName topicName = TopicName.create(projectId, myTopic);
+      TopicName topicName = TopicName.create(projectId, topicId);
       Topic topic = publisherClient.getTopic(topicName);
       // [END createTopic]
       return topic;

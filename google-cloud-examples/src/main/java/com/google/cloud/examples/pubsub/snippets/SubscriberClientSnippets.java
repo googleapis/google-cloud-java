@@ -48,12 +48,12 @@ public class SubscriberClientSnippets {
   }
 
   /** Example of creating a pull subscription for a topic. */
-  public Subscription createSubscription(String topic, String mySubscription) throws Exception {
+  public Subscription createSubscription(String topic, String subscriptionId) throws Exception {
     try (SubscriberClient subscriberClient = SubscriberClient.create()) {
       // [START createSubscription]
       TopicName topicName = TopicName.create(projectId, topic);
       SubscriptionName subscriptionName =
-          SubscriptionName.create(projectId, mySubscription);
+          SubscriptionName.create(projectId, subscriptionId);
       Subscription subscription =
           subscriberClient.createSubscription(
               subscriptionName, topicName, PushConfig.getDefaultInstance(), 0);
@@ -63,10 +63,10 @@ public class SubscriberClientSnippets {
   }
 
   /** Example of pulling a maximum number of messages from a subscription. */
-  public PullResponse pull(String mySubscription) throws Exception {
+  public PullResponse pull(String subscriptionId) throws Exception {
     try (SubscriberClient subscriberClient = SubscriberClient.create()) {
       // [START pull]
-      SubscriptionName subscriptionName = SubscriptionName.create(projectId, mySubscription);
+      SubscriptionName subscriptionName = SubscriptionName.create(projectId, subscriptionId);
       PullResponse response = subscriberClient.pull(subscriptionName, true, 100);
       for (ReceivedMessage message : response.getReceivedMessagesList()) {
         // do something with message, then ack or nack
@@ -79,10 +79,10 @@ public class SubscriberClientSnippets {
   }
 
   /** Example of replacing the push configuration of a subscription, setting the push endpoint. */
-  public void replacePushConfig(String mySubscription, String endpoint) throws Exception {
+  public void replacePushConfig(String subscriptionId, String endpoint) throws Exception {
     try (SubscriberClient subscriberClient = SubscriberClient.create()) {
       // [START replacePushConfig]
-      SubscriptionName subscriptionName = SubscriptionName.create(projectId, mySubscription);
+      SubscriptionName subscriptionName = SubscriptionName.create(projectId, subscriptionId);
       PushConfig pushConfig = PushConfig.newBuilder().setPushEndpoint(endpoint).build();
       subscriberClient.modifyPushConfig(subscriptionName, pushConfig);
       // [END replacePushConfig]
@@ -109,10 +109,10 @@ public class SubscriberClientSnippets {
   }
 
   /** Example of deleting a subscription. */
-  public SubscriptionName deleteSubscription(String mySubscription) throws Exception {
+  public SubscriptionName deleteSubscription(String subscriptionId) throws Exception {
     try (SubscriberClient subscriberClient = SubscriberClient.create()) {
       // [START deleteSubscription]
-      SubscriptionName subscriptionName = SubscriptionName.create(projectId, mySubscription);
+      SubscriptionName subscriptionName = SubscriptionName.create(projectId, subscriptionId);
       subscriberClient.deleteSubscription(subscriptionName);
       // [END deleteSubscription]
       return subscriptionName;
@@ -120,10 +120,10 @@ public class SubscriberClientSnippets {
   }
 
   /** Example of getting a subscription policy. */
-  public Policy getSubscriptionPolicy(String mySubscription) throws Exception {
+  public Policy getSubscriptionPolicy(String subscriptionId) throws Exception {
     try (SubscriberClient subscriberClient = SubscriberClient.create()) {
       // [START getSubscriptionPolicy]
-      SubscriptionName subscriptionName = SubscriptionName.create(projectId, mySubscription);
+      SubscriptionName subscriptionName = SubscriptionName.create(projectId, subscriptionId);
       Policy policy = subscriberClient.getIamPolicy(subscriptionName.toString());
       if (policy == null) {
         // subscription was not found
@@ -134,10 +134,10 @@ public class SubscriberClientSnippets {
   }
 
   /** Example of replacing a subscription policy. */
-  public Policy replaceSubscriptionPolicy(String mySubscription) throws Exception {
+  public Policy replaceSubscriptionPolicy(String subscriptionId) throws Exception {
     try (SubscriberClient subscriberClient = SubscriberClient.create()) {
       // [START replaceSubscriptionPolicy]
-      SubscriptionName subscriptionName = SubscriptionName.create(projectId, mySubscription);
+      SubscriptionName subscriptionName = SubscriptionName.create(projectId, subscriptionId);
       Policy policy = subscriberClient.getIamPolicy(subscriptionName.toString());
       // Create a role => members binding
       Binding binding =
@@ -155,13 +155,13 @@ public class SubscriberClientSnippets {
   }
 
   /** Example of testing whether the caller has the provided permissions on a subscription. */
-  public TestIamPermissionsResponse testSubscriptionPermissions(String mySubscription)
+  public TestIamPermissionsResponse testSubscriptionPermissions(String subscriptionId)
       throws Exception {
     try (PublisherClient publisherClient = PublisherClient.create()) {
       // [START testSubscriptionPermissions]
       List<String> permissions = new LinkedList<>();
       permissions.add("pubsub.subscriptions.get");
-      SubscriptionName subscriptionName = SubscriptionName.create(projectId, mySubscription);
+      SubscriptionName subscriptionName = SubscriptionName.create(projectId, subscriptionId);
       TestIamPermissionsResponse testedPermissions =
           publisherClient.testIamPermissions(subscriptionName.toString(), permissions);
       // [END testSubscriptionPermissions]
@@ -170,10 +170,10 @@ public class SubscriberClientSnippets {
   }
 
   /** Example of getting a subscription. */
-  public Subscription getSubscription(String mySubscription) throws Exception {
+  public Subscription getSubscription(String subscriptionId) throws Exception {
     try (SubscriberClient subscriberClient = SubscriberClient.create()) {
       // [START getSubscription]
-      SubscriptionName subscriptionName = SubscriptionName.create(projectId, mySubscription);
+      SubscriptionName subscriptionName = SubscriptionName.create(projectId, subscriptionId);
       Subscription subscription = subscriberClient.getSubscription(subscriptionName);
       // [END getSubscription]
       return subscription;

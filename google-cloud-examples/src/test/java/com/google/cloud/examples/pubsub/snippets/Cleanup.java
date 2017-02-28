@@ -31,10 +31,10 @@ class Cleanup {
 
   private static void deleteTestTopics(String projectId, String[] testTopics) throws Exception {
     try (PublisherClient publisherClient = PublisherClient.create()) {
-      for (String name : testTopics) {
+      for (String topicId : testTopics) {
         try {
-          publisherClient.deleteTopic(TopicName.create(projectId, name));
-          System.out.println("Topic deleted : " + name);
+          publisherClient.deleteTopic(TopicName.create(projectId, topicId));
+          System.out.println("Topic deleted : " + topicId);
         } catch (Exception e) {
           //do nothing catch clause
         }
@@ -45,11 +45,11 @@ class Cleanup {
   private static void deleteTestSubscriptions(String projectId, String[] subscriptions)
       throws Exception {
     try (SubscriberClient subscriberClient = SubscriberClient.create()) {
-      for (String name : subscriptions) {
+      for (String subscriptionId : subscriptions) {
         try {
           subscriberClient.deleteSubscription(
-              SubscriptionName.create(projectId, name));
-          System.out.println("Subscription deleted : " + name);
+              SubscriptionName.create(projectId, subscriptionId));
+          System.out.println("Subscription deleted : " + subscriptionId);
         } catch (Exception e) {
           //do nothing catch clause
         }
