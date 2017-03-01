@@ -44,7 +44,10 @@ public class PageImpl<T> implements Page<T>, Serializable {
    * @param <T> the value type that the page holds
    */
   public interface NextPageFetcher<T> extends Serializable {
+    @Deprecated
     Page<T> nextPage();
+
+    Page<T> getNextPage();
   }
 
   static class PageIterator<T> extends AbstractIterator<T> {
@@ -53,18 +56,18 @@ public class PageImpl<T> implements Page<T>, Serializable {
     private Page<T> currentPage;
 
     PageIterator(Page<T> currentPage) {
-      this.currentPageIterator = currentPage.values().iterator();
+      this.currentPageIterator = currentPage.getValues().iterator();
       this.currentPage = currentPage;
     }
 
     @Override
     protected T computeNext() {
       while (!currentPageIterator.hasNext()) {
-        currentPage = currentPage.nextPage();
+        currentPage = currentPage.getNextPage();
         if (currentPage == null) {
           return endOfData();
         }
-        currentPageIterator = currentPage.values().iterator();
+        currentPageIterator = currentPage.getValues().iterator();
       }
       return currentPageIterator.next();
     }
@@ -81,7 +84,13 @@ public class PageImpl<T> implements Page<T>, Serializable {
   }
 
   @Override
+  @Deprecated
   public Iterable<T> values() {
+    return getValues();
+  }
+
+  @Override
+  public Iterable<T> getValues() {
     return results == null ? Collections.<T>emptyList() : results;
   }
 
@@ -91,16 +100,28 @@ public class PageImpl<T> implements Page<T>, Serializable {
   }
 
   @Override
+  @Deprecated
   public String nextPageCursor() {
+    return getNextPageCursor();
+  }
+
+  @Override
+  public String getNextPageCursor() {
     return cursor;
   }
 
   @Override
+  @Deprecated
   public Page<T> nextPage() {
+    return getNextPage();
+  }
+
+  @Override
+  public Page<T> getNextPage() {
     if (cursor == null || pageFetcher == null) {
       return null;
     }
-    return pageFetcher.nextPage();
+    return pageFetcher.getNextPage();
   }
 
   @Override

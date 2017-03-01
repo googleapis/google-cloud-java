@@ -19,19 +19,18 @@ package com.google.cloud.examples.pubsub;
 import com.google.cloud.Identity;
 import com.google.cloud.Policy;
 import com.google.cloud.Role;
-import com.google.cloud.pubsub.Message;
-import com.google.cloud.pubsub.PubSub;
-import com.google.cloud.pubsub.PubSub.MessageProcessor;
-import com.google.cloud.pubsub.PubSubOptions;
-import com.google.cloud.pubsub.PushConfig;
-import com.google.cloud.pubsub.ReceivedMessage;
-import com.google.cloud.pubsub.Subscription;
-import com.google.cloud.pubsub.SubscriptionId;
-import com.google.cloud.pubsub.SubscriptionInfo;
-import com.google.cloud.pubsub.Topic;
-import com.google.cloud.pubsub.TopicInfo;
+import com.google.cloud.pubsub.deprecated.Message;
+import com.google.cloud.pubsub.deprecated.PubSub;
+import com.google.cloud.pubsub.deprecated.PubSub.MessageProcessor;
+import com.google.cloud.pubsub.deprecated.PubSubOptions;
+import com.google.cloud.pubsub.deprecated.PushConfig;
+import com.google.cloud.pubsub.deprecated.ReceivedMessage;
+import com.google.cloud.pubsub.deprecated.Subscription;
+import com.google.cloud.pubsub.deprecated.SubscriptionId;
+import com.google.cloud.pubsub.deprecated.SubscriptionInfo;
+import com.google.cloud.pubsub.deprecated.Topic;
+import com.google.cloud.pubsub.deprecated.TopicInfo;
 import com.google.common.collect.ImmutableMap;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -42,7 +41,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
- * An example of using Google BigQuery.
+ * An example of using Google Pub/Sub.
  *
  * <p>This example demonstrates a simple/typical Pub/Sub usage.
  *
@@ -360,7 +359,7 @@ public class PubSubExample {
     @Override
     public void run(PubSub pubsub, SubscriptionInfo subscription) {
       pubsub.create(subscription);
-      System.out.printf("Created subscription %s%n", subscription.name());
+      System.out.printf("Created subscription %s%n", subscription.getName());
     }
 
     @Override
@@ -371,9 +370,9 @@ public class PubSubExample {
       } else if (args.length < 2) {
         message = "Missing required topic or subscription name";
       } else {
-        SubscriptionInfo.Builder builder = SubscriptionInfo.builder(args[0], args[1]);
+        SubscriptionInfo.Builder builder = SubscriptionInfo.newBuilder(args[0], args[1]);
         if (args.length == 3) {
-          builder.pushConfig(PushConfig.of(args[2]));
+          builder.setPushConfig(PushConfig.of(args[2]));
         }
         return builder.build();
       }
@@ -861,12 +860,12 @@ public class PubSubExample {
       printUsage();
       return;
     }
-    PubSubOptions.Builder optionsBuilder = PubSubOptions.builder();
+    PubSubOptions.Builder optionsBuilder = PubSubOptions.newBuilder();
     PubSubAction action;
     String actionName;
     if (args.length >= 2 && !ACTIONS.containsKey(args[0])) {
       actionName = args[1];
-      optionsBuilder.projectId(args[0]);
+      optionsBuilder.setProjectId(args[0]);
       action = ACTIONS.get(args[1]);
       args = Arrays.copyOfRange(args, 2, args.length);
     } else {
@@ -879,7 +878,7 @@ public class PubSubExample {
       printUsage();
       return;
     }
-    try (PubSub pubsub = optionsBuilder.build().service()) {
+    try (PubSub pubsub = optionsBuilder.build().getService()) {
       Object arg;
       try {
         arg = action.parse(args);

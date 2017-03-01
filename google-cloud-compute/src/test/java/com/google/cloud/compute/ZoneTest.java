@@ -31,17 +31,28 @@ public class ZoneTest {
   private static final DeprecationStatus<ZoneId> DEPRECATION_STATUS =
       DeprecationStatus.of(DeprecationStatus.Status.DELETED, ZONE_ID);
   private static final Zone ZONE = Zone.builder()
-      .zoneId(ZONE_ID)
-      .generatedId(GENERATED_ID)
-      .creationTimestamp(CREATION_TIMESTAMP)
-      .description(DESCRIPTION)
-      .status(STATUS)
-      .deprecationStatus(DEPRECATION_STATUS)
-      .region(REGION_ID)
+      .setZoneId(ZONE_ID)
+      .setGeneratedId(GENERATED_ID)
+      .setCreationTimestamp(CREATION_TIMESTAMP)
+      .setDescription(DESCRIPTION)
+      .setStatus(STATUS)
+      .setDeprecationStatus(DEPRECATION_STATUS)
+      .setRegion(REGION_ID)
       .build();
 
   @Test
   public void testBuilder() {
+    assertEquals(REGION_ID, ZONE.getRegion());
+    assertEquals(GENERATED_ID, ZONE.getGeneratedId());
+    assertEquals(CREATION_TIMESTAMP, ZONE.getCreationTimestamp());
+    assertEquals(DESCRIPTION, ZONE.getDescription());
+    assertEquals(STATUS, ZONE.getStatus());
+    assertEquals(REGION_ID, ZONE.getRegion());
+    assertEquals(DEPRECATION_STATUS, ZONE.getDeprecationStatus());
+  }
+
+  @Test
+  public void testBuilderDeprecated() {
     assertEquals(REGION_ID, ZONE.region());
     assertEquals(GENERATED_ID, ZONE.generatedId());
     assertEquals(CREATION_TIMESTAMP, ZONE.creationTimestamp());
@@ -54,24 +65,24 @@ public class ZoneTest {
   @Test
   public void testToAndFromPb() {
     com.google.api.services.compute.model.Zone zonePb = ZONE.toPb();
-    assertEquals(REGION_ID.selfLink(), zonePb.getRegion());
+    assertEquals(REGION_ID.getSelfLink(), zonePb.getRegion());
     Zone zone = Zone.fromPb(zonePb);
     compareZones(ZONE, zone);
-    assertEquals(ZONE_ID.project(), zone.zoneId().project());
-    assertEquals(ZONE_ID.zone(), zone.zoneId().zone());
-    zone = Zone.builder().zoneId(ZONE_ID).build();
+    assertEquals(ZONE_ID.getProject(), zone.getZoneId().getProject());
+    assertEquals(ZONE_ID.getZone(), zone.getZoneId().getZone());
+    zone = Zone.builder().setZoneId(ZONE_ID).build();
     compareZones(zone, Zone.fromPb(zone.toPb()));
   }
 
   private void compareZones(Zone expected, Zone value) {
     assertEquals(expected, value);
-    assertEquals(expected.zoneId(), value.zoneId());
-    assertEquals(expected.generatedId(), value.generatedId());
-    assertEquals(expected.creationTimestamp(), value.creationTimestamp());
-    assertEquals(expected.description(), value.description());
-    assertEquals(expected.status(), value.status());
-    assertEquals(expected.region(), value.region());
-    assertEquals(expected.deprecationStatus(), value.deprecationStatus());
+    assertEquals(expected.getZoneId(), value.getZoneId());
+    assertEquals(expected.getGeneratedId(), value.getGeneratedId());
+    assertEquals(expected.getCreationTimestamp(), value.getCreationTimestamp());
+    assertEquals(expected.getDescription(), value.getDescription());
+    assertEquals(expected.getStatus(), value.getStatus());
+    assertEquals(expected.getRegion(), value.getRegion());
+    assertEquals(expected.getDeprecationStatus(), value.getDeprecationStatus());
     assertEquals(expected.hashCode(), value.hashCode());
   }
 }

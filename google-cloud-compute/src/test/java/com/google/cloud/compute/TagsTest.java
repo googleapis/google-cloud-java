@@ -29,13 +29,26 @@ public class TagsTest {
 
   @Test
   public void testToBuilder() {
-    Tags tags = TAGS.toBuilder().values("tag1").build();
-    assertEquals(ImmutableList.of("tag1"), tags.values());
-    compareTags(TAGS, tags.toBuilder().values("tag1", "tag2").build());
+    Tags tags = TAGS.toBuilder().setValues("tag1").build();
+    assertEquals(ImmutableList.of("tag1"), tags.getValues());
+    compareTags(TAGS, tags.toBuilder().setValues("tag1", "tag2").build());
   }
 
   @Test
   public void testBuilder() {
+    Tags tags = Tags.newBuilder().setValues(ImmutableList.of("tag1", "tag2")).build();
+    assertEquals(ImmutableList.of("tag1", "tag2"), tags.getValues());
+    assertNull(tags.getFingerprint());
+    tags = Tags.newBuilder().add("tag1").add("tag2").build();
+    assertEquals(ImmutableList.of("tag1", "tag2"), tags.getValues());
+    assertNull(tags.getFingerprint());
+    tags = Tags.newBuilder().add("tag1").add("tag2").setFingerprint("fingerprint").build();
+    assertEquals(ImmutableList.of("tag1", "tag2"), tags.getValues());
+    assertEquals("fingerprint", tags.getFingerprint());
+  }
+
+  @Test
+  public void testBuilderDeprecated() {
     Tags tags = Tags.builder().values(ImmutableList.of("tag1", "tag2")).build();
     assertEquals(ImmutableList.of("tag1", "tag2"), tags.values());
     assertNull(tags.fingerprint());
@@ -56,14 +69,14 @@ public class TagsTest {
   @Test
   public void testToAndFromPb() {
     compareTags(TAGS, Tags.fromPb(TAGS.toPb()));
-    Tags tags = Tags.builder().add("tag1").add("tag2").fingerprint("fingerprint").build();
+    Tags tags = Tags.newBuilder().add("tag1").add("tag2").setFingerprint("fingerprint").build();
     compareTags(tags, Tags.fromPb(tags.toPb()));
   }
 
   public void compareTags(Tags expected, Tags value) {
     assertEquals(expected, value);
-    assertEquals(expected.fingerprint(), value.fingerprint());
-    assertEquals(expected.values(), value.values());
+    assertEquals(expected.getFingerprint(), value.getFingerprint());
+    assertEquals(expected.getValues(), value.getValues());
     assertEquals(expected.hashCode(), value.hashCode());
   }
 }

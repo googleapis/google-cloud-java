@@ -30,11 +30,25 @@ public class DateTimeTest {
   public void testTimestampMicroseconds() throws Exception {
     Calendar cal = Calendar.getInstance();
     DateTime date = DateTime.copyFrom(cal);
+    assertEquals(cal.getTimeInMillis() * 1000, date.getTimestampMicroseconds());
+  }
+
+  @Test
+  public void testTimestampMicrosecondsDepreated() throws Exception {
+    Calendar cal = Calendar.getInstance();
+    DateTime date = DateTime.copyFrom(cal);
     assertEquals(cal.getTimeInMillis() * 1000, date.timestampMicroseconds());
   }
 
   @Test
   public void testTimestampMillis() throws Exception {
+    Calendar cal = Calendar.getInstance();
+    DateTime date = DateTime.copyFrom(cal);
+    assertEquals(cal.getTimeInMillis(), date.getTimestampMillis());
+  }
+
+  @Test
+  public void testTimestampMillisDepreated() throws Exception {
     Calendar cal = Calendar.getInstance();
     DateTime date = DateTime.copyFrom(cal);
     assertEquals(cal.getTimeInMillis(), date.timestampMillis());
@@ -59,8 +73,8 @@ public class DateTimeTest {
     Calendar cal1 = Calendar.getInstance();
     DateTime now = DateTime.now();
     Calendar cal2 = Calendar.getInstance();
-    assertTrue(now.timestampMillis() >= cal1.getTimeInMillis());
-    assertTrue(now.timestampMillis() <= cal2.getTimeInMillis());
+    assertTrue(now.getTimestampMillis() >= cal1.getTimeInMillis());
+    assertTrue(now.getTimestampMillis() <= cal2.getTimeInMillis());
   }
 
   @Test
@@ -74,4 +88,3 @@ public class DateTimeTest {
     assertNotEquals(date1, date3);
   }
 }
-

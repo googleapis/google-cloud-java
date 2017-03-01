@@ -27,7 +27,7 @@
  * name that you own and the ownership of which you verified with Google.
  *
  * <pre> {@code
- * Dns dns = DnsOptions.defaultInstance().service();
+ * Dns dns = DnsOptions.getDefaultInstance().getService();
  * String zoneName = "my-unique-zone";
  * String domainName = "someexampledomain.com.";
  * String description = "This is a google-cloud-dns sample zone.";
@@ -42,15 +42,15 @@
  * CreateAndListDnsRecords.java</a>.
  *
  * <pre> {@code
- * Dns dns = DnsOptions.defaultInstance().service();
+ * Dns dns = DnsOptions.getDefaultInstance().getService();
  * String zoneName = "my-unique-zone";
  * Zone zone = dns.getZone(zoneName);
  * String ip = "12.13.14.15";
- * RecordSet toCreate = RecordSet.builder("www.someexampledomain.com.", RecordSet.Type.A)
- *   .ttl(24, TimeUnit.HOURS)
+ * RecordSet toCreate = RecordSet.newBuilder("www.someexampledomain.com.", RecordSet.Type.A)
+ *   .setTtl(24, TimeUnit.HOURS)
  *   .addRecord(ip)
  *   .build();
- * ChangeRequestInfo changeRequest = ChangeRequestInfo.builder().add(toCreate).build();
+ * ChangeRequestInfo changeRequest = ChangeRequestInfo.newBuilder().add(toCreate).build();
  * zone.applyChangeRequest(changeRequest);
  * } </pre>
  *

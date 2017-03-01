@@ -32,6 +32,7 @@ public class FormatOptions implements Serializable {
   static final String CSV = "CSV";
   static final String JSON = "NEWLINE_DELIMITED_JSON";
   static final String DATASTORE_BACKUP = "DATASTORE_BACKUP";
+  static final String AVRO = "AVRO";
   private static final long serialVersionUID = -443376052020423691L;
 
   private final String type;
@@ -43,7 +44,15 @@ public class FormatOptions implements Serializable {
   /**
    * Returns the external data format, as a string.
    */
+  @Deprecated
   public String type() {
+    return getType();
+  }
+
+  /**
+   * Returns the external data format, as a string.
+   */
+  public String getType() {
     return type;
   }
 
@@ -62,14 +71,14 @@ public class FormatOptions implements Serializable {
     return obj == this
         || obj != null
         && obj.getClass().equals(FormatOptions.class)
-        && Objects.equals(type, ((FormatOptions) obj).type());
+        && Objects.equals(type, ((FormatOptions) obj).getType());
   }
 
   /**
    * Default options for CSV format.
    */
   public static CsvOptions csv() {
-    return CsvOptions.builder().build();
+    return CsvOptions.newBuilder().build();
   }
 
   /**
@@ -84,6 +93,13 @@ public class FormatOptions implements Serializable {
    */
   public static FormatOptions datastoreBackup() {
     return new FormatOptions(DATASTORE_BACKUP);
+  }
+
+  /**
+   * Default options for AVRO format.
+   */
+  public static FormatOptions avro() {
+    return new FormatOptions(AVRO);
   }
 
   /**

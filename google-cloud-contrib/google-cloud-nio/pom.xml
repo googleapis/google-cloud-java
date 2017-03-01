@@ -11,7 +11,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-contrib</artifactId>
-    <version>0.4.1-SNAPSHOT</version>
+    <version>0.9.4-alpha-SNAPSHOT</version>
   </parent>
   <properties>
     <site.installationModule>google-cloud-nio</site.installationModule>
@@ -19,8 +19,8 @@
   <dependencies>
     <dependency>
       <groupId>${project.groupId}</groupId>
-      <artifactId>google-cloud</artifactId>
-      <version>${project.version}</version>
+      <artifactId>google-cloud-storage</artifactId>
+      <version>${storage.version}</version>
     </dependency>
     <dependency>
       <groupId>com.google.guava</groupId>
@@ -71,6 +71,7 @@
       <groupId>org.mockito</groupId>
       <artifactId>mockito-core</artifactId>
       <version>1.9.5</version>
+      <scope>test</scope>
     </dependency>
   </dependencies>
   <build>
@@ -105,11 +106,20 @@
               <shadedPattern>shaded.cloud-nio.com</shadedPattern>
               <excludes>
                 <exclude>com.google.cloud.**</exclude>
+                <exclude>com.google.auto.**</exclude>
               </excludes>
             </relocation>
             <relocation>
               <pattern>org</pattern>
               <shadedPattern>shaded.cloud-nio.org</shadedPattern>
+            </relocation>
+            <relocation>
+              <pattern>io</pattern>
+              <shadedPattern>shaded.cloud-nio.io</shadedPattern>
+            </relocation>
+            <relocation>
+              <pattern>okio</pattern>
+              <shadedPattern>shaded.cloud-nio.okio</shadedPattern>
             </relocation>
             <relocation>
               <pattern>google</pattern>

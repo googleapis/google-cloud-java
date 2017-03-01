@@ -34,7 +34,7 @@ public final class StringValue extends Value<String> {
 
         @Override
         public Builder newBuilder(String value) {
-          return builder(value);
+          return StringValue.newBuilder(value);
         }
 
         @Override
@@ -61,7 +61,7 @@ public final class StringValue extends Value<String> {
   }
 
   public StringValue(String value) {
-    this(builder(value));
+    this(newBuilder(value));
   }
 
   private StringValue(Builder builder) {
@@ -77,7 +77,12 @@ public final class StringValue extends Value<String> {
     return new StringValue(value);
   }
 
+  @Deprecated
   public static Builder builder(String value) {
+    return newBuilder(value);
+  }
+
+  public static Builder newBuilder(String value) {
     return new Builder().set(value);
   }
 }

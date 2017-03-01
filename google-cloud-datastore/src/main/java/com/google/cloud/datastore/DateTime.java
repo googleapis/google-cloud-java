@@ -43,7 +43,7 @@ public final class DateTime implements Comparable<DateTime>, Serializable {
 
   @Override
   public String toString() {
-    return ISODateTimeFormat.dateTime().print(timestampMillis());
+    return ISODateTimeFormat.dateTime().print(getTimestampMillis());
   }
 
   @Override
@@ -63,21 +63,43 @@ public final class DateTime implements Comparable<DateTime>, Serializable {
             && timestampMicroseconds == ((DateTime) obj).timestampMicroseconds);
   }
 
+  /**
+   * Returns the value of this timestamp in microseconds.
+   */
+  @Deprecated
   public long timestampMicroseconds() {
+    return getTimestampMicroseconds();
+  }
+
+  /**
+   * Returns the value of this timestamp in microseconds.
+   */
+  public long getTimestampMicroseconds() {
     return timestampMicroseconds;
   }
 
+  /**
+   * Returns the value of this timestamp in milliseconds.
+   */
+  @Deprecated
   public long timestampMillis() {
+    return getTimestampMillis();
+  }
+
+  /**
+   * Returns the value of this timestamp in milliseconds.
+   */
+  public long getTimestampMillis() {
     return timestampMicroseconds / 1000L;
   }
 
   public Date toDate() {
-    return new Date(timestampMillis());
+    return new Date(getTimestampMillis());
   }
 
   public Calendar toCalendar() {
     Calendar cal = Calendar.getInstance();
-    cal.setTimeInMillis(timestampMillis());
+    cal.setTimeInMillis(getTimestampMillis());
     return cal;
   }
 

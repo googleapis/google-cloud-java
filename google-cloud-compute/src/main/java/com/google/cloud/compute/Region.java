@@ -108,21 +108,45 @@ public class Region implements Serializable {
     /**
      * Returns the name of the quota metric.
      */
+    @Deprecated
     public String metric() {
+      return getMetric();
+    }
+
+    /**
+     * Returns the name of the quota metric.
+     */
+    public String getMetric() {
       return metric;
     }
 
     /**
      * Returns the quota limit for this metric.
      */
+    @Deprecated
     public double limit() {
+      return getLimit();
+    }
+
+    /**
+     * Returns the quota limit for this metric.
+     */
+    public double getLimit() {
       return limit;
     }
 
     /**
      * Returns the current usage for this quota.
      */
+    @Deprecated
     public double usage() {
+      return getUsage();
+    }
+
+    /**
+     * Returns the current usage for this quota.
+     */
+    public double getUsage() {
       return usage;
     }
 
@@ -177,42 +201,42 @@ public class Region implements Serializable {
 
     private Builder() {}
 
-    Builder regionId(RegionId regionId) {
+    Builder setRegionId(RegionId regionId) {
       this.regionId = regionId;
       return this;
     }
 
-    Builder generatedId(String generatedId) {
+    Builder setGeneratedId(String generatedId) {
       this.generatedId = generatedId;
       return this;
     }
 
-    Builder creationTimestamp(Long creationTimestamp) {
+    Builder setCreationTimestamp(Long creationTimestamp) {
       this.creationTimestamp = creationTimestamp;
       return this;
     }
 
-    Builder description(String description) {
+    Builder setDescription(String description) {
       this.description = description;
       return this;
     }
 
-    Builder status(Status status) {
+    Builder setStatus(Status status) {
       this.status = status;
       return this;
     }
 
-    Builder zones(List<ZoneId> zones) {
+    Builder setZones(List<ZoneId> zones) {
       this.zones = ImmutableList.copyOf(zones);
       return this;
     }
 
-    Builder quotas(List<Quota> quotas) {
+    Builder setQuotas(List<Quota> quotas) {
       this.quotas = ImmutableList.copyOf(quotas);
       return this;
     }
 
-    Builder deprecationStatus(DeprecationStatus<RegionId> deprecationStatus) {
+    Builder setDeprecationStatus(DeprecationStatus<RegionId> deprecationStatus) {
       this.deprecationStatus = deprecationStatus;
       return this;
     }
@@ -236,49 +260,105 @@ public class Region implements Serializable {
   /**
    * Returns the region's identity.
    */
+  @Deprecated
   public RegionId regionId() {
+    return getRegionId();
+  }
+
+  /**
+   * Returns the region's identity.
+   */
+  public RegionId getRegionId() {
     return regionId;
   }
 
   /**
    * Returns the service-generated unique identifier for the region.
    */
+  @Deprecated
   public String generatedId() {
+    return getGeneratedId();
+  }
+
+  /**
+   * Returns the service-generated unique identifier for the region.
+   */
+  public String getGeneratedId() {
     return generatedId;
   }
 
   /**
    * Returns the creation timestamp in milliseconds since epoch.
    */
+  @Deprecated
   public Long creationTimestamp() {
+    return getCreationTimestamp();
+  }
+
+  /**
+   * Returns the creation timestamp in milliseconds since epoch.
+   */
+  public Long getCreationTimestamp() {
     return creationTimestamp;
   }
 
   /**
    * Returns an optional textual description of the region.
    */
+  @Deprecated
   public String description() {
+    return getDescription();
+  }
+
+  /**
+   * Returns an optional textual description of the region.
+   */
+  public String getDescription() {
     return description;
   }
 
   /**
    * Returns the status of the status.
    */
+  @Deprecated
   public Status status() {
+    return getStatus();
+  }
+
+  /**
+   * Returns the status of the status.
+   */
+  public Status getStatus() {
     return status;
   }
 
   /**
    * Returns a list of identities of zones available in this region.
    */
+  @Deprecated
   public List<ZoneId> zones() {
+    return getZones();
+  }
+
+  /**
+   * Returns a list of identities of zones available in this region.
+   */
+  public List<ZoneId> getZones() {
     return zones;
   }
 
   /**
    * Returns quotas assigned to this region.
    */
+  @Deprecated
   public List<Quota> quotas() {
+    return getQuotas();
+  }
+
+  /**
+   * Returns quotas assigned to this region.
+   */
+  public List<Quota> getQuotas() {
     return quotas;
   }
 
@@ -287,7 +367,17 @@ public class Region implements Serializable {
    * {@link DeprecationStatus.Status#DELETED} or {@link DeprecationStatus.Status#OBSOLETE} the
    * region should not be used. Returns {@code null} if the region is not deprecated.
    */
+  @Deprecated
   public DeprecationStatus<RegionId> deprecationStatus() {
+    return getDeprecationStatus();
+  }
+
+  /**
+   * Returns the deprecation status of the region. If {@link DeprecationStatus#status()} is either
+   * {@link DeprecationStatus.Status#DELETED} or {@link DeprecationStatus.Status#OBSOLETE} the
+   * region should not be used. Returns {@code null} if the region is not deprecated.
+   */
+  public DeprecationStatus<RegionId> getDeprecationStatus() {
     return deprecationStatus;
   }
 
@@ -327,9 +417,9 @@ public class Region implements Serializable {
     if (creationTimestamp != null) {
       regionPb.setCreationTimestamp(TIMESTAMP_FORMATTER.print(creationTimestamp));
     }
-    regionPb.setName(regionId.region());
+    regionPb.setName(regionId.getRegion());
     regionPb.setDescription(description);
-    regionPb.setSelfLink(regionId.selfLink());
+    regionPb.setSelfLink(regionId.getSelfLink());
     if (status != null) {
       regionPb.setStatus(status.name());
     }
@@ -351,25 +441,26 @@ public class Region implements Serializable {
 
   static Region fromPb(com.google.api.services.compute.model.Region regionPb) {
     Builder builder = builder();
-    builder.regionId(RegionId.fromUrl(regionPb.getSelfLink()));
+    builder.setRegionId(RegionId.fromUrl(regionPb.getSelfLink()));
     if (regionPb.getId() != null) {
-      builder.generatedId(regionPb.getId().toString());
+      builder.setGeneratedId(regionPb.getId().toString());
     }
     if (regionPb.getCreationTimestamp() != null) {
-      builder.creationTimestamp(TIMESTAMP_FORMATTER.parseMillis(regionPb.getCreationTimestamp()));
+      builder.setCreationTimestamp(
+          TIMESTAMP_FORMATTER.parseMillis(regionPb.getCreationTimestamp()));
     }
-    builder.description(regionPb.getDescription());
+    builder.setDescription(regionPb.getDescription());
     if (regionPb.getStatus() != null) {
-      builder.status(Status.valueOf(regionPb.getStatus()));
+      builder.setStatus(Status.valueOf(regionPb.getStatus()));
     }
     if (regionPb.getZones() != null) {
-      builder.zones(Lists.transform(regionPb.getZones(), ZoneId.FROM_URL_FUNCTION));
+      builder.setZones(Lists.transform(regionPb.getZones(), ZoneId.FROM_URL_FUNCTION));
     }
     if (regionPb.getQuotas() != null) {
-      builder.quotas(Lists.transform(regionPb.getQuotas(), Quota.FROM_PB_FUNCTION));
+      builder.setQuotas(Lists.transform(regionPb.getQuotas(), Quota.FROM_PB_FUNCTION));
     }
     if (regionPb.getDeprecated() != null) {
-      builder.deprecationStatus(
+      builder.setDeprecationStatus(
           DeprecationStatus.fromPb(regionPb.getDeprecated(), RegionId.FROM_URL_FUNCTION));
     }
     return builder.build();

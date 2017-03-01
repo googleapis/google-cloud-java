@@ -44,7 +44,7 @@ import java.util.TreeMap;
  * <p>When the type of the results is known the preferred usage would be:
  * <pre> {@code
  * Query<Entity> query =
- *     Query.gqlQueryBuilder(Query.ResultType.ENTITY, "select * from kind").build();
+ *     Query.newGqlQueryBuilder(Query.ResultType.ENTITY, "select * from kind").build();
  * QueryResults<Entity> results = datastore.run(query);
  * while (results.hasNext()) {
  *   Entity entity = results.next();
@@ -54,9 +54,9 @@ import java.util.TreeMap;
  *
  * <p>When the type of the results is unknown you can use this approach:
  * <pre> {@code
- * Query<?> query = Query.gqlQueryBuilder("select __key__ from kind").build();
+ * Query<?> query = Query.newGqlQueryBuilder("select __key__ from kind").build();
  * QueryResults<?> results = datastore.run(query);
- * if (Key.class.isAssignableFrom(results.resultClass())) {
+ * if (Key.class.isAssignableFrom(results.getResultClass())) {
  *   QueryResults<Key> keys = (QueryResults<Key>) results;
  *   while (keys.hasNext()) {
  *     Key key = keys.next();
@@ -94,7 +94,7 @@ public final class GqlQuery<V> extends Query<V> {
       cursor = null;
     }
 
-    Object cursorOrValue() {
+    Object getCursorOrValue() {
       return MoreObjects.firstNonNull(cursor, value);
     }
 
@@ -124,7 +124,7 @@ public final class GqlQuery<V> extends Query<V> {
       com.google.datastore.v1.GqlQueryParameter.Builder argPb =
           com.google.datastore.v1.GqlQueryParameter.newBuilder();
       if (cursor != null) {
-        argPb.setCursor(cursor.byteString());
+        argPb.setCursor(cursor.getByteString());
       }
       if (value != null) {
         argPb.setValue(value.toPb());
@@ -161,17 +161,52 @@ public final class GqlQuery<V> extends Query<V> {
       queryString = checkNotNull(query);
     }
 
+    /**
+     * Sets the GQL query string.
+     */
+    @Deprecated
     public Builder<V> query(String query) {
+      return setQuery(query);
+    }
+
+    /**
+     * Sets the GQL query.
+     */
+    public Builder<V> setQuery(String query) {
       queryString = checkNotNull(query);
       return this;
     }
 
+    /**
+     * Sets the namespace for the GQL query.
+     */
+    @Deprecated
     public Builder<V> namespace(String namespace) {
+      return setNamespace(namespace);
+    }
+
+    /**
+     * Sets the namespace for the GQL query.
+     */
+    public Builder<V> setNamespace(String namespace) {
       this.namespace = validateNamespace(namespace);
       return this;
     }
 
+    /**
+     * Sets whether the query string can contain literals.  When {@code false}, the query string
+     * must not contain any literals and instead must bind all values.
+     */
+    @Deprecated
     public Builder<V> allowLiteral(boolean allowLiteral) {
+      return setAllowLiteral(allowLiteral);
+    }
+
+    /**
+     * Sets whether the query string can contain literals.  When {@code false}, the query string
+     * must not contain any literals and instead must bind all values.
+     */
+    public Builder<V> setAllowLiteral(boolean allowLiteral) {
       this.allowLiteral = allowLiteral;
       return this;
     }
@@ -304,10 +339,25 @@ public final class GqlQuery<V> extends Query<V> {
     positionalBindings = ImmutableList.copyOf(builder.positionalBindings);
   }
 
+  /**
+   * Returns the query string for this query.
+   */
+  @Deprecated
   public String queryString() {
+    return getQueryString();
+  }
+
+  /**
+   * Returns the query string for this query.
+   */
+  public String getQueryString() {
     return queryString;
   }
 
+  /**
+   * Returns whether the query string can contain literals.  When {@code false}, the query string
+   * must not contain any literals and instead must bind all values.
+   */
   public boolean allowLiteral() {
     return allowLiteral;
   }
@@ -315,10 +365,18 @@ public final class GqlQuery<V> extends Query<V> {
   /**
    * Returns an immutable map of named bindings.
    */
+  @Deprecated
   public Map<String, Object> namedBindings() {
+    return getNamedBindings();
+  }
+
+  /**
+   * Returns an immutable map of named bindings.
+   */
+  public Map<String, Object> getNamedBindings() {
     ImmutableMap.Builder<String, Object> builder = ImmutableSortedMap.naturalOrder();
     for (Map.Entry<String, Binding> binding : namedBindings.entrySet()) {
-      builder.put(binding.getKey(), binding.getValue().cursorOrValue());
+      builder.put(binding.getKey(), binding.getValue().getCursorOrValue());
     }
     return builder.build();
   }
@@ -326,10 +384,18 @@ public final class GqlQuery<V> extends Query<V> {
   /**
    * Returns an immutable list of positional bindings (using original order).
    */
+  @Deprecated
   public List<Object> numberArgs() {
+    return getNumberArgs();
+  }
+
+  /**
+   * Returns an immutable list of positional bindings (using original order).
+   */
+  public List<Object> getNumberArgs() {
     ImmutableList.Builder<Object> builder = ImmutableList.builder();
     for (Binding binding : positionalBindings) {
-      builder.add(binding.cursorOrValue());
+      builder.add(binding.getCursorOrValue());
     }
     return builder.build();
   }
@@ -346,7 +412,8 @@ public final class GqlQuery<V> extends Query<V> {
 
   @Override
   public int hashCode() {
-    return Objects.hash(namespace(), queryString, allowLiteral, namedBindings, positionalBindings);
+    return Objects.hash(getNamespace(), queryString, allowLiteral, namedBindings,
+        positionalBindings);
   }
 
   @Override
@@ -358,7 +425,7 @@ public final class GqlQuery<V> extends Query<V> {
       return false;
     }
     GqlQuery<?> other = (GqlQuery<?>) obj;
-    return Objects.equals(namespace(), other.namespace())
+    return Objects.equals(getNamespace(), other.getNamespace())
         && Objects.equals(queryString, other.queryString)
         && allowLiteral == other.allowLiteral
         && Objects.equals(namedBindings,  other.namedBindings)
@@ -370,10 +437,8 @@ public final class GqlQuery<V> extends Query<V> {
         com.google.datastore.v1.GqlQuery.newBuilder();
     queryPb.setQueryString(queryString);
     queryPb.setAllowLiterals(allowLiteral);
-    Map<String, com.google.datastore.v1.GqlQueryParameter> namedBindingsPb =
-        queryPb.getMutableNamedBindings();
     for (Map.Entry<String, Binding> entry : namedBindings.entrySet()) {
-      namedBindingsPb.put(entry.getKey(), entry.getValue().toPb());
+      queryPb.putNamedBindings(entry.getKey(), entry.getValue().toPb());
     }
     for (Binding argument : positionalBindings) {
       queryPb.addPositionalBindings(argument.toPb());
@@ -388,7 +453,7 @@ public final class GqlQuery<V> extends Query<V> {
 
   @Override
   Query<V> nextQuery(com.google.datastore.v1.RunQueryResponse responsePb) {
-    return StructuredQuery.<V>fromPb(type(), namespace(), responsePb.getQuery())
+    return StructuredQuery.<V>fromPb(getType(), getNamespace(), responsePb.getQuery())
         .nextQuery(responsePb);
   }
 }

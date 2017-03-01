@@ -28,26 +28,32 @@ public class ExternalTableDefinitionTest {
 
   private static final List<String> SOURCE_URIS = ImmutableList.of("uri1", "uri2");
   private static final Field FIELD_SCHEMA1 =
-      Field.builder("StringField", Field.Type.string())
-          .mode(Field.Mode.NULLABLE)
-          .description("FieldDescription1")
+      Field.newBuilder("StringField", Field.Type.string())
+          .setMode(Field.Mode.NULLABLE)
+          .setDescription("FieldDescription1")
           .build();
   private static final Field FIELD_SCHEMA2 =
-      Field.builder("IntegerField", Field.Type.integer())
-          .mode(Field.Mode.REPEATED)
-          .description("FieldDescription2")
+      Field.newBuilder("IntegerField", Field.Type.integer())
+          .setMode(Field.Mode.REPEATED)
+          .setDescription("FieldDescription2")
           .build();
   private static final Field FIELD_SCHEMA3 =
-      Field.builder("RecordField", Field.Type.record(FIELD_SCHEMA1, FIELD_SCHEMA2))
-          .mode(Field.Mode.REQUIRED)
-          .description("FieldDescription3")
+      Field.newBuilder("RecordField", Field.Type.record(FIELD_SCHEMA1, FIELD_SCHEMA2))
+          .setMode(Field.Mode.REQUIRED)
+          .setDescription("FieldDescription3")
           .build();
   private static final Schema TABLE_SCHEMA = Schema.of(FIELD_SCHEMA1, FIELD_SCHEMA2, FIELD_SCHEMA3);
   private static final Integer MAX_BAD_RECORDS = 42;
   private static final Boolean IGNORE_UNKNOWN_VALUES = true;
   private static final String COMPRESSION = "GZIP";
-  private static final CsvOptions CSV_OPTIONS = CsvOptions.builder().build();
+  private static final CsvOptions CSV_OPTIONS = CsvOptions.newBuilder().build();
   private static final ExternalTableDefinition EXTERNAL_TABLE_DEFINITION =
+      ExternalTableDefinition.newBuilder(SOURCE_URIS, TABLE_SCHEMA, CSV_OPTIONS)
+          .setCompression(COMPRESSION)
+          .setIgnoreUnknownValues(IGNORE_UNKNOWN_VALUES)
+          .setMaxBadRecords(MAX_BAD_RECORDS)
+          .build();
+  private static final ExternalTableDefinition DEPRECATED_EXTERNAL_TABLE_DEFINITION =
       ExternalTableDefinition.builder(SOURCE_URIS, TABLE_SCHEMA, CSV_OPTIONS)
           .compression(COMPRESSION)
           .ignoreUnknownValues(IGNORE_UNKNOWN_VALUES)
@@ -59,10 +65,10 @@ public class ExternalTableDefinitionTest {
     compareExternalTableDefinition(EXTERNAL_TABLE_DEFINITION,
         EXTERNAL_TABLE_DEFINITION.toBuilder().build());
     ExternalTableDefinition externalTableDefinition =
-        EXTERNAL_TABLE_DEFINITION.toBuilder().compression("NONE").build();
-    assertEquals("NONE", externalTableDefinition.compression());
+        EXTERNAL_TABLE_DEFINITION.toBuilder().setCompression("NONE").build();
+    assertEquals("NONE", externalTableDefinition.getCompression());
     externalTableDefinition = externalTableDefinition.toBuilder()
-        .compression(COMPRESSION)
+        .setCompression(COMPRESSION)
         .build();
     compareExternalTableDefinition(EXTERNAL_TABLE_DEFINITION, externalTableDefinition);
   }
@@ -76,13 +82,24 @@ public class ExternalTableDefinitionTest {
 
   @Test
   public void testBuilder() {
-    assertEquals(TableDefinition.Type.EXTERNAL, EXTERNAL_TABLE_DEFINITION.type());
-    assertEquals(COMPRESSION, EXTERNAL_TABLE_DEFINITION.compression());
-    assertEquals(CSV_OPTIONS, EXTERNAL_TABLE_DEFINITION.formatOptions());
+    assertEquals(TableDefinition.Type.EXTERNAL, EXTERNAL_TABLE_DEFINITION.getType());
+    assertEquals(COMPRESSION, EXTERNAL_TABLE_DEFINITION.getCompression());
+    assertEquals(CSV_OPTIONS, EXTERNAL_TABLE_DEFINITION.getFormatOptions());
     assertEquals(IGNORE_UNKNOWN_VALUES, EXTERNAL_TABLE_DEFINITION.ignoreUnknownValues());
-    assertEquals(MAX_BAD_RECORDS, EXTERNAL_TABLE_DEFINITION.maxBadRecords());
-    assertEquals(TABLE_SCHEMA, EXTERNAL_TABLE_DEFINITION.schema());
-    assertEquals(SOURCE_URIS, EXTERNAL_TABLE_DEFINITION.sourceUris());
+    assertEquals(MAX_BAD_RECORDS, EXTERNAL_TABLE_DEFINITION.getMaxBadRecords());
+    assertEquals(TABLE_SCHEMA, EXTERNAL_TABLE_DEFINITION.getSchema());
+    assertEquals(SOURCE_URIS, EXTERNAL_TABLE_DEFINITION.getSourceUris());
+  }
+
+  @Test
+  public void testBuilderDeprecated() {
+    assertEquals(TableDefinition.Type.EXTERNAL, DEPRECATED_EXTERNAL_TABLE_DEFINITION.type());
+    assertEquals(COMPRESSION, DEPRECATED_EXTERNAL_TABLE_DEFINITION.compression());
+    assertEquals(CSV_OPTIONS, DEPRECATED_EXTERNAL_TABLE_DEFINITION.formatOptions());
+    assertEquals(IGNORE_UNKNOWN_VALUES, DEPRECATED_EXTERNAL_TABLE_DEFINITION.ignoreUnknownValues());
+    assertEquals(MAX_BAD_RECORDS, DEPRECATED_EXTERNAL_TABLE_DEFINITION.maxBadRecords());
+    assertEquals(TABLE_SCHEMA, DEPRECATED_EXTERNAL_TABLE_DEFINITION.schema());
+    assertEquals(SOURCE_URIS, DEPRECATED_EXTERNAL_TABLE_DEFINITION.sourceUris());
   }
 
   @Test
@@ -90,7 +107,7 @@ public class ExternalTableDefinitionTest {
     compareExternalTableDefinition(EXTERNAL_TABLE_DEFINITION,
         ExternalTableDefinition.fromPb(EXTERNAL_TABLE_DEFINITION.toPb()));
     ExternalTableDefinition externalTableDefinition =
-        ExternalTableDefinition.builder(SOURCE_URIS, TABLE_SCHEMA, CSV_OPTIONS).build();
+        ExternalTableDefinition.newBuilder(SOURCE_URIS, TABLE_SCHEMA, CSV_OPTIONS).build();
     compareExternalTableDefinition(externalTableDefinition,
         ExternalTableDefinition.fromPb(externalTableDefinition.toPb()));
   }
@@ -98,12 +115,12 @@ public class ExternalTableDefinitionTest {
   private void compareExternalTableDefinition(ExternalTableDefinition expected,
       ExternalTableDefinition value) {
     assertEquals(expected, value);
-    assertEquals(expected.compression(), value.compression());
-    assertEquals(expected.formatOptions(), value.formatOptions());
+    assertEquals(expected.getCompression(), value.getCompression());
+    assertEquals(expected.getFormatOptions(), value.getFormatOptions());
     assertEquals(expected.ignoreUnknownValues(), value.ignoreUnknownValues());
-    assertEquals(expected.maxBadRecords(), value.maxBadRecords());
-    assertEquals(expected.schema(), value.schema());
-    assertEquals(expected.sourceUris(), value.sourceUris());
+    assertEquals(expected.getMaxBadRecords(), value.getMaxBadRecords());
+    assertEquals(expected.getSchema(), value.getSchema());
+    assertEquals(expected.getSourceUris(), value.getSourceUris());
     assertEquals(expected.hashCode(), value.hashCode());
   }
 }

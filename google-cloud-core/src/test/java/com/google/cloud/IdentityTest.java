@@ -33,18 +33,36 @@ public class IdentityTest {
 
   @Test
   public void testAllUsers() {
+    assertEquals(Identity.Type.ALL_USERS, ALL_USERS.getType());
+    assertNull(ALL_USERS.getValue());
+  }
+
+  @Test
+  public void testAllUsersDeprecated() {
     assertEquals(Identity.Type.ALL_USERS, ALL_USERS.type());
     assertNull(ALL_USERS.value());
   }
 
   @Test
   public void testAllAuthenticatedUsers() {
+    assertEquals(Identity.Type.ALL_AUTHENTICATED_USERS, ALL_AUTH_USERS.getType());
+    assertNull(ALL_AUTH_USERS.getValue());
+  }
+
+  @Test
+  public void testAllAuthenticatedUsersDeprecated() {
     assertEquals(Identity.Type.ALL_AUTHENTICATED_USERS, ALL_AUTH_USERS.type());
     assertNull(ALL_AUTH_USERS.value());
   }
 
   @Test
   public void testUser() {
+    assertEquals(Identity.Type.USER, USER.getType());
+    assertEquals("abc@gmail.com", USER.getValue());
+  }
+
+  @Test
+  public void testUserDeprecated() {
     assertEquals(Identity.Type.USER, USER.type());
     assertEquals("abc@gmail.com", USER.value());
   }
@@ -56,6 +74,12 @@ public class IdentityTest {
 
   @Test
   public void testServiceAccount() {
+    assertEquals(Identity.Type.SERVICE_ACCOUNT, SERVICE_ACCOUNT.getType());
+    assertEquals("service-account@gmail.com", SERVICE_ACCOUNT.getValue());
+  }
+
+  @Test
+  public void testServiceAccountDeprecated() {
     assertEquals(Identity.Type.SERVICE_ACCOUNT, SERVICE_ACCOUNT.type());
     assertEquals("service-account@gmail.com", SERVICE_ACCOUNT.value());
   }
@@ -67,6 +91,12 @@ public class IdentityTest {
 
   @Test
   public void testGroup() {
+    assertEquals(Identity.Type.GROUP, GROUP.getType());
+    assertEquals("group@gmail.com", GROUP.getValue());
+  }
+
+  @Test
+  public void testGroupDeprecated() {
     assertEquals(Identity.Type.GROUP, GROUP.type());
     assertEquals("group@gmail.com", GROUP.value());
   }
@@ -78,6 +108,12 @@ public class IdentityTest {
 
   @Test
   public void testDomain() {
+    assertEquals(Identity.Type.DOMAIN, DOMAIN.getType());
+    assertEquals("google.com", DOMAIN.getValue());
+  }
+
+  @Test
+  public void testDomainDeprecated() {
     assertEquals(Identity.Type.DOMAIN, DOMAIN.type());
     assertEquals("google.com", DOMAIN.value());
   }
@@ -99,7 +135,7 @@ public class IdentityTest {
 
   private void compareIdentities(Identity expected, Identity actual) {
     assertEquals(expected, actual);
-    assertEquals(expected.type(), actual.type());
-    assertEquals(expected.value(), actual.value());
+    assertEquals(expected.getType(), actual.getType());
+    assertEquals(expected.getValue(), actual.getValue());
   }
 }

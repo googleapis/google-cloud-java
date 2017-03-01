@@ -43,46 +43,68 @@ public class ImageInfoTest {
   private static final String SOURCE_DISK_ID = "diskId";
   private static final SourceType SOURCE_TYPE = SourceType.RAW;
   private static final StorageImageConfiguration STORAGE_CONFIGURATION =
-      StorageImageConfiguration.builder(STORAGE_SOURCE)
-          .archiveSizeBytes(ARCHIVE_SIZE_BYTES)
-          .containerType(StorageImageConfiguration.ContainerType.TAR)
-          .sha1(SHA1_CHECKSUM)
-          .sourceType(SOURCE_TYPE)
+      StorageImageConfiguration.newBuilder(STORAGE_SOURCE)
+          .setArchiveSizeBytes(ARCHIVE_SIZE_BYTES)
+          .setContainerType(StorageImageConfiguration.ContainerType.TAR)
+          .setSha1(SHA1_CHECKSUM)
+          .setSourceType(SOURCE_TYPE)
           .build();
   private static final DiskImageConfiguration DISK_CONFIGURATION =
-      DiskImageConfiguration.builder(SOURCE_DISK)
-          .archiveSizeBytes(ARCHIVE_SIZE_BYTES)
-          .sourceDiskId(SOURCE_DISK_ID)
-          .sourceType(SOURCE_TYPE)
+      DiskImageConfiguration.newBuilder(SOURCE_DISK)
+          .setArchiveSizeBytes(ARCHIVE_SIZE_BYTES)
+          .setSourceDiskId(SOURCE_DISK_ID)
+          .setSourceType(SOURCE_TYPE)
           .build();
   private static final DeprecationStatus<ImageId> DEPRECATION_STATUS =
       DeprecationStatus.of(DeprecationStatus.Status.DELETED, IMAGE_ID);
-  private static final ImageInfo STORAGE_IMAGE = ImageInfo.builder(IMAGE_ID, STORAGE_CONFIGURATION)
-      .generatedId(GENERATED_ID)
-      .creationTimestamp(CREATION_TIMESTAMP)
-      .description(DESCRIPTION)
-      .status(STATUS)
-      .diskSizeGb(DISK_SIZE_GB)
-      .licenses(LICENSES)
-      .deprecationStatus(DEPRECATION_STATUS)
-      .build();
-  private static final ImageInfo DISK_IMAGE = ImageInfo.builder(IMAGE_ID, DISK_CONFIGURATION)
-      .generatedId(GENERATED_ID)
-      .creationTimestamp(CREATION_TIMESTAMP)
-      .description(DESCRIPTION)
-      .status(STATUS)
-      .diskSizeGb(DISK_SIZE_GB)
-      .licenses(LICENSES)
-      .deprecationStatus(DEPRECATION_STATUS)
-      .build();
+  private static final ImageInfo STORAGE_IMAGE =
+      ImageInfo.newBuilder(IMAGE_ID, STORAGE_CONFIGURATION)
+          .setGeneratedId(GENERATED_ID)
+          .getCreationTimestamp(CREATION_TIMESTAMP)
+          .setDescription(DESCRIPTION)
+          .setStatus(STATUS)
+          .setDiskSizeGb(DISK_SIZE_GB)
+          .setLicenses(LICENSES)
+          .setDeprecationStatus(DEPRECATION_STATUS)
+          .build();
+  private static final ImageInfo DISK_IMAGE =
+      ImageInfo.newBuilder(IMAGE_ID, DISK_CONFIGURATION)
+          .setGeneratedId(GENERATED_ID)
+          .getCreationTimestamp(CREATION_TIMESTAMP)
+          .setDescription(DESCRIPTION)
+          .setStatus(STATUS)
+          .setDiskSizeGb(DISK_SIZE_GB)
+          .setLicenses(LICENSES)
+          .setDeprecationStatus(DEPRECATION_STATUS)
+          .build();
+  private static final ImageInfo DEPRECATED_STORAGE_IMAGE =
+      ImageInfo.builder(IMAGE_ID, STORAGE_CONFIGURATION)
+          .setGeneratedId(GENERATED_ID)
+          .getCreationTimestamp(CREATION_TIMESTAMP)
+          .description(DESCRIPTION)
+          .setStatus(STATUS)
+          .setDiskSizeGb(DISK_SIZE_GB)
+          .setLicenses(LICENSES)
+          .setDeprecationStatus(DEPRECATION_STATUS)
+          .build();
+  private static final ImageInfo DEPRECATED_DISK_IMAGE =
+      ImageInfo.builder(IMAGE_ID, DISK_CONFIGURATION)
+          .setGeneratedId(GENERATED_ID)
+          .getCreationTimestamp(CREATION_TIMESTAMP)
+          .description(DESCRIPTION)
+          .setStatus(STATUS)
+          .setDiskSizeGb(DISK_SIZE_GB)
+          .setLicenses(LICENSES)
+          .setDeprecationStatus(DEPRECATION_STATUS)
+          .build();
 
   @Test
   public void testToBuilder() {
     compareImageInfo(STORAGE_IMAGE, STORAGE_IMAGE.toBuilder().build());
     compareImageInfo(DISK_IMAGE, DISK_IMAGE.toBuilder().build());
-    ImageInfo imageInfo = STORAGE_IMAGE.toBuilder().description("newDescription").build();
-    assertEquals("newDescription", imageInfo.description());
-    imageInfo = imageInfo.toBuilder().description("description").build();
+    ImageInfo imageInfo = STORAGE_IMAGE.toBuilder().setDescription("newDescription").build();
+    assertEquals("newDescription", imageInfo.getDescription());
+    imageInfo = imageInfo.toBuilder().setDescription("description").build();
     compareImageInfo(STORAGE_IMAGE, imageInfo);
   }
 
@@ -96,48 +118,70 @@ public class ImageInfoTest {
 
   @Test
   public void testBuilder() {
-    assertEquals(GENERATED_ID, STORAGE_IMAGE.generatedId());
-    assertEquals(IMAGE_ID, STORAGE_IMAGE.imageId());
-    assertEquals(CREATION_TIMESTAMP, STORAGE_IMAGE.creationTimestamp());
-    assertEquals(DESCRIPTION, STORAGE_IMAGE.description());
-    assertEquals(STORAGE_CONFIGURATION, STORAGE_IMAGE.configuration());
-    assertEquals(STATUS, STORAGE_IMAGE.status());
-    assertEquals(DISK_SIZE_GB, STORAGE_IMAGE.diskSizeGb());
-    assertEquals(LICENSES, STORAGE_IMAGE.licenses());
-    assertEquals(DEPRECATION_STATUS, STORAGE_IMAGE.deprecationStatus());
-    assertEquals(GENERATED_ID, DISK_IMAGE.generatedId());
-    assertEquals(IMAGE_ID, DISK_IMAGE.imageId());
-    assertEquals(CREATION_TIMESTAMP, DISK_IMAGE.creationTimestamp());
-    assertEquals(DESCRIPTION, DISK_IMAGE.description());
-    assertEquals(DISK_CONFIGURATION, DISK_IMAGE.configuration());
-    assertEquals(STATUS, DISK_IMAGE.status());
-    assertEquals(DISK_SIZE_GB, DISK_IMAGE.diskSizeGb());
-    assertEquals(LICENSES, DISK_IMAGE.licenses());
-    assertEquals(DEPRECATION_STATUS, DISK_IMAGE.deprecationStatus());
+    assertEquals(GENERATED_ID, STORAGE_IMAGE.getGeneratedId());
+    assertEquals(IMAGE_ID, STORAGE_IMAGE.getImageId());
+    assertEquals(CREATION_TIMESTAMP, STORAGE_IMAGE.getCreationTimestamp());
+    assertEquals(DESCRIPTION, STORAGE_IMAGE.getDescription());
+    assertEquals(STORAGE_CONFIGURATION, STORAGE_IMAGE.getConfiguration());
+    assertEquals(STATUS, STORAGE_IMAGE.getStatus());
+    assertEquals(DISK_SIZE_GB, STORAGE_IMAGE.getDiskSizeGb());
+    assertEquals(LICENSES, STORAGE_IMAGE.getLicenses());
+    assertEquals(DEPRECATION_STATUS, STORAGE_IMAGE.getDeprecationStatus());
+    assertEquals(GENERATED_ID, DISK_IMAGE.getGeneratedId());
+    assertEquals(IMAGE_ID, DISK_IMAGE.getImageId());
+    assertEquals(CREATION_TIMESTAMP, DISK_IMAGE.getCreationTimestamp());
+    assertEquals(DESCRIPTION, DISK_IMAGE.getDescription());
+    assertEquals(DISK_CONFIGURATION, DISK_IMAGE.getConfiguration());
+    assertEquals(STATUS, DISK_IMAGE.getStatus());
+    assertEquals(DISK_SIZE_GB, DISK_IMAGE.getDiskSizeGb());
+    assertEquals(LICENSES, DISK_IMAGE.getLicenses());
+    assertEquals(DEPRECATION_STATUS, DISK_IMAGE.getDeprecationStatus());
+  }
+
+  @Test
+  public void testBuilderDeprecated() {
+    assertEquals(GENERATED_ID, DEPRECATED_STORAGE_IMAGE.generatedId());
+    assertEquals(IMAGE_ID, DEPRECATED_STORAGE_IMAGE.imageId());
+    assertEquals(CREATION_TIMESTAMP, DEPRECATED_STORAGE_IMAGE.creationTimestamp());
+    assertEquals(DESCRIPTION, DEPRECATED_STORAGE_IMAGE.description());
+    assertEquals(STORAGE_CONFIGURATION, DEPRECATED_STORAGE_IMAGE.configuration());
+    assertEquals(STATUS, DEPRECATED_STORAGE_IMAGE.status());
+    assertEquals(DISK_SIZE_GB, DEPRECATED_STORAGE_IMAGE.diskSizeGb());
+    assertEquals(LICENSES, DEPRECATED_STORAGE_IMAGE.licenses());
+    assertEquals(DEPRECATION_STATUS, DEPRECATED_STORAGE_IMAGE.deprecationStatus());
+    assertEquals(GENERATED_ID, DEPRECATED_DISK_IMAGE.generatedId());
+    assertEquals(IMAGE_ID, DEPRECATED_DISK_IMAGE.imageId());
+    assertEquals(CREATION_TIMESTAMP, DEPRECATED_DISK_IMAGE.creationTimestamp());
+    assertEquals(DESCRIPTION, DEPRECATED_DISK_IMAGE.description());
+    assertEquals(DISK_CONFIGURATION, DEPRECATED_DISK_IMAGE.configuration());
+    assertEquals(STATUS, DEPRECATED_DISK_IMAGE.status());
+    assertEquals(DISK_SIZE_GB, DEPRECATED_DISK_IMAGE.diskSizeGb());
+    assertEquals(LICENSES, DEPRECATED_DISK_IMAGE.licenses());
+    assertEquals(DEPRECATION_STATUS, DEPRECATED_DISK_IMAGE.deprecationStatus());
   }
 
   @Test
   public void testOf() {
     ImageInfo imageInfo = ImageInfo.of(IMAGE_ID, STORAGE_CONFIGURATION);
-    assertEquals(IMAGE_ID, imageInfo.imageId());
-    assertEquals(STORAGE_CONFIGURATION, imageInfo.configuration());
-    assertNull(imageInfo.generatedId());
-    assertNull(imageInfo.creationTimestamp());
-    assertNull(imageInfo.description());
-    assertNull(imageInfo.status());
-    assertNull(imageInfo.diskSizeGb());
-    assertNull(imageInfo.licenses());
-    assertNull(imageInfo.deprecationStatus());
+    assertEquals(IMAGE_ID, imageInfo.getImageId());
+    assertEquals(STORAGE_CONFIGURATION, imageInfo.getConfiguration());
+    assertNull(imageInfo.getGeneratedId());
+    assertNull(imageInfo.getCreationTimestamp());
+    assertNull(imageInfo.getDescription());
+    assertNull(imageInfo.getStatus());
+    assertNull(imageInfo.getDiskSizeGb());
+    assertNull(imageInfo.getLicenses());
+    assertNull(imageInfo.getDeprecationStatus());
     imageInfo = ImageInfo.of(IMAGE_ID, DISK_CONFIGURATION);
-    assertEquals(IMAGE_ID, imageInfo.imageId());
-    assertEquals(DISK_CONFIGURATION, imageInfo.configuration());
-    assertNull(imageInfo.generatedId());
-    assertNull(imageInfo.creationTimestamp());
-    assertNull(imageInfo.description());
-    assertNull(imageInfo.status());
-    assertNull(imageInfo.diskSizeGb());
-    assertNull(imageInfo.licenses());
-    assertNull(imageInfo.deprecationStatus());
+    assertEquals(IMAGE_ID, imageInfo.getImageId());
+    assertEquals(DISK_CONFIGURATION, imageInfo.getConfiguration());
+    assertNull(imageInfo.getGeneratedId());
+    assertNull(imageInfo.getCreationTimestamp());
+    assertNull(imageInfo.getDescription());
+    assertNull(imageInfo.getStatus());
+    assertNull(imageInfo.getDiskSizeGb());
+    assertNull(imageInfo.getLicenses());
+    assertNull(imageInfo.getDeprecationStatus());
   }
 
   @Test
@@ -153,23 +197,25 @@ public class ImageInfoTest {
   @Test
   public void testSetProjectId() {
     ImageInfo imageInfo = DISK_IMAGE.toBuilder()
-        .imageId(ImageId.of("image"))
-        .configuration(DISK_CONFIGURATION.toBuilder().sourceDisk(DiskId.of("zone", "disk")).build())
+        .setImageId(ImageId.of("image"))
+        .setConfiguration(DISK_CONFIGURATION.toBuilder()
+            .setSourceDisk(DiskId.of("zone", "disk"))
+            .build())
         .build();
     compareImageInfo(DISK_IMAGE, imageInfo.setProjectId("project"));
   }
 
   public void compareImageInfo(ImageInfo expected, ImageInfo value) {
     assertEquals(expected, value);
-    assertEquals(expected.generatedId(), value.generatedId());
-    assertEquals(expected.imageId(), value.imageId());
-    assertEquals(expected.creationTimestamp(), value.creationTimestamp());
-    assertEquals(expected.description(), value.description());
-    assertEquals(expected.configuration(), value.configuration());
-    assertEquals(expected.status(), value.status());
-    assertEquals(expected.diskSizeGb(), value.diskSizeGb());
-    assertEquals(expected.licenses(), value.licenses());
-    assertEquals(expected.deprecationStatus(), value.deprecationStatus());
+    assertEquals(expected.getGeneratedId(), value.getGeneratedId());
+    assertEquals(expected.getImageId(), value.getImageId());
+    assertEquals(expected.getCreationTimestamp(), value.getCreationTimestamp());
+    assertEquals(expected.getDescription(), value.getDescription());
+    assertEquals(expected.getConfiguration(), value.getConfiguration());
+    assertEquals(expected.getStatus(), value.getStatus());
+    assertEquals(expected.getDiskSizeGb(), value.getDiskSizeGb());
+    assertEquals(expected.getLicenses(), value.getLicenses());
+    assertEquals(expected.getDeprecationStatus(), value.getDeprecationStatus());
     assertEquals(expected.hashCode(), value.hashCode());
   }
 }

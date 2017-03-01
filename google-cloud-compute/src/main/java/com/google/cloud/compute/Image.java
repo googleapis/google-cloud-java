@@ -55,8 +55,8 @@ public class Image extends ImageInfo {
     Builder(Compute compute, ImageId imageId, ImageConfiguration configuration) {
       this.compute = compute;
       this.infoBuilder = new ImageInfo.BuilderImpl();
-      this.infoBuilder.imageId(imageId);
-      this.infoBuilder.configuration(configuration);
+      this.infoBuilder.setImageId(imageId);
+      this.infoBuilder.setConfiguration(configuration);
     }
 
     Builder(Image image) {
@@ -65,56 +65,74 @@ public class Image extends ImageInfo {
     }
 
     @Override
-    Builder generatedId(String generatedId) {
-      infoBuilder.generatedId(generatedId);
+    Builder setGeneratedId(String generatedId) {
+      infoBuilder.setGeneratedId(generatedId);
       return this;
     }
 
     @Override
-    Builder creationTimestamp(Long creationTimestamp) {
-      infoBuilder.creationTimestamp(creationTimestamp);
+    Builder getCreationTimestamp(Long creationTimestamp) {
+      infoBuilder.getCreationTimestamp(creationTimestamp);
       return this;
     }
 
     @Override
+    @Deprecated
     public Builder imageId(ImageId imageId) {
-      infoBuilder.imageId(imageId);
+      return setImageId(imageId);
+    }
+
+    @Override
+    public Builder setImageId(ImageId imageId) {
+      infoBuilder.setImageId(imageId);
       return this;
     }
 
     @Override
+    @Deprecated
     public Builder description(String description) {
-      infoBuilder.description(description);
+      return setDescription(description);
+    }
+
+    @Override
+    public Builder setDescription(String description) {
+      infoBuilder.setDescription(description);
       return this;
     }
 
     @Override
+    @Deprecated
     public Builder configuration(ImageConfiguration configuration) {
-      infoBuilder.configuration(configuration);
+      return setConfiguration(configuration);
+    }
+
+    @Override
+    public Builder setConfiguration(ImageConfiguration configuration) {
+      infoBuilder.setConfiguration(configuration);
       return this;
     }
 
     @Override
-    Builder status(Status status) {
-      infoBuilder.status(status);
+    Builder setStatus(Status status) {
+      infoBuilder.setStatus(status);
       return this;
     }
 
     @Override
-    Builder diskSizeGb(Long diskSizeGb) {
-      infoBuilder.diskSizeGb(diskSizeGb);
+    Builder setDiskSizeGb(Long diskSizeGb) {
+      infoBuilder.setDiskSizeGb(diskSizeGb);
       return this;
     }
 
     @Override
-    Builder licenses(List<LicenseId> licenses) {
-      infoBuilder.licenses(licenses);
+    Builder setLicenses(List<LicenseId> licenses) {
+      infoBuilder.setLicenses(licenses);
       return this;
     }
 
     @Override
-    Builder deprecationStatus(DeprecationStatus<ImageId> deprecationStatus) {
-      infoBuilder.deprecationStatus(deprecationStatus);
+    Builder setDeprecationStatus(DeprecationStatus<ImageId> deprecationStatus) {
+      infoBuilder.setDeprecationStatus(deprecationStatus);
       return this;
     }
 
@@ -127,7 +145,7 @@ public class Image extends ImageInfo {
   Image(Compute compute, ImageInfo.BuilderImpl infoBuilder) {
     super(infoBuilder);
     this.compute = checkNotNull(compute);
-    this.options = compute.options();
+    this.options = compute.getOptions();
   }
 
   /**
@@ -148,7 +166,7 @@ public class Image extends ImageInfo {
    * @throws ComputeException upon failure
    */
   public Image reload(ImageOption... options) {
-    return compute.getImage(imageId(), options);
+    return compute.getImage(getImageId(), options);
   }
 
   /**
@@ -159,7 +177,7 @@ public class Image extends ImageInfo {
    * @throws ComputeException upon failure or if this image is a publicly-available image
    */
   public Operation delete(OperationOption... options) {
-    return compute.deleteImage(imageId(), options);
+    return compute.deleteImage(getImageId(), options);
   }
 
   /**
@@ -171,13 +189,21 @@ public class Image extends ImageInfo {
    */
   public Operation deprecate(DeprecationStatus<ImageId> deprecationStatus,
       OperationOption... options) {
-    return compute.deprecate(imageId(), deprecationStatus, options);
+    return compute.deprecate(getImageId(), deprecationStatus, options);
   }
 
   /**
    * Returns the image's {@code Compute} object used to issue requests.
    */
+  @Deprecated
   public Compute compute() {
+    return getCompute();
+  }
+
+  /**
+   * Returns the image's {@code Compute} object used to issue requests.
+   */
+  public Compute getCompute() {
     return compute;
   }
 
@@ -205,7 +231,7 @@ public class Image extends ImageInfo {
 
   private void readObject(ObjectInputStream input) throws IOException, ClassNotFoundException {
     input.defaultReadObject();
-    this.compute = options.service();
+    this.compute = options.getService();
   }
 
   static Image fromPb(Compute compute, com.google.api.services.compute.model.Image imagePb) {

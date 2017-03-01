@@ -38,15 +38,15 @@ public abstract class BaseService<OptionsT extends ServiceOptions<?, ?, OptionsT
     @Override
     public RetryResult beforeEval(Exception exception) {
       if (exception instanceof BaseServiceException) {
-        boolean retriable = ((BaseServiceException) exception).retryable();
+        boolean retriable = ((BaseServiceException) exception).isRetryable();
         return retriable ? Interceptor.RetryResult.RETRY : Interceptor.RetryResult.NO_RETRY;
       }
       return Interceptor.RetryResult.CONTINUE_EVALUATION;
     }
   };
-  public static final ExceptionHandler EXCEPTION_HANDLER = ExceptionHandler.builder()
+  public static final ExceptionHandler EXCEPTION_HANDLER = ExceptionHandler.newBuilder()
       .abortOn(RuntimeException.class)
-      .interceptor(EXCEPTION_HANDLER_INTERCEPTOR)
+      .addInterceptors(EXCEPTION_HANDLER_INTERCEPTOR)
       .build();
 
   private final OptionsT options;
@@ -56,7 +56,13 @@ public abstract class BaseService<OptionsT extends ServiceOptions<?, ?, OptionsT
   }
 
   @Override
+  @Deprecated
   public OptionsT options() {
+    return options;
+  }
+
+  @Override
+  public OptionsT getOptions() {
     return options;
   }
 }

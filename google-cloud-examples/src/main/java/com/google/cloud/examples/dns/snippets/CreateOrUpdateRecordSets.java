@@ -39,7 +39,7 @@ public class CreateOrUpdateRecordSets {
   public static void main(String... args) {
     // Create a service object.
     // The project ID and credentials will be inferred from the environment.
-    Dns dns = DnsOptions.defaultInstance().service();
+    Dns dns = DnsOptions.getDefaultInstance().getService();
 
     // Change this to a zone name that exists within your project
     String zoneName = "my-unique-zone";
@@ -49,20 +49,21 @@ public class CreateOrUpdateRecordSets {
 
     // Prepare a <i>www.<zone-domain>.</i> type A record set with ttl of 24 hours
     String ip = "12.13.14.15";
-    RecordSet toCreate = RecordSet.builder("www." + zone.dnsName(), RecordSet.Type.A)
-        .ttl(24, TimeUnit.HOURS)
+    RecordSet toCreate = RecordSet.newBuilder("www." + zone.getDnsName(), RecordSet.Type.A)
+        .setTtl(24, TimeUnit.HOURS)
         .addRecord(ip)
         .build();
 
     // Make a change
-    ChangeRequestInfo.Builder changeBuilder = ChangeRequestInfo.builder().add(toCreate);
+    ChangeRequestInfo.Builder changeBuilder = ChangeRequestInfo.newBuilder().add(toCreate);
 
     // Verify a www.<zone-domain>. type A record does not exist yet.
     // If it does exist, we will overwrite it with our prepared record.
     Iterator<RecordSet> recordSetIterator = zone.listRecordSets().iterateAll();
     while (recordSetIterator.hasNext()) {
       RecordSet current = recordSetIterator.next();
-      if (toCreate.name().equals(current.name()) && toCreate.type().equals(current.type())) {
+      if (toCreate.getName().equals(current.getName())
+          && toCreate.getType().equals(current.getType())) {
         changeBuilder.delete(current);
       }
     }

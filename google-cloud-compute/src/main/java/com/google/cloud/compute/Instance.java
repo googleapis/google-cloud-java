@@ -59,9 +59,9 @@ public class Instance extends InstanceInfo {
         AttachedDisk attachedDisk, NetworkInterface networkInterface) {
       this.compute = compute;
       this.infoBuilder = new InstanceInfo.BuilderImpl(instanceId);
-      this.infoBuilder.machineType(machineType);
-      this.infoBuilder.attachedDisks(ImmutableList.of(attachedDisk));
-      this.infoBuilder.networkInterfaces(ImmutableList.of(networkInterface));
+      this.infoBuilder.setMachineType(machineType);
+      this.infoBuilder.setAttachedDisks(ImmutableList.of(attachedDisk));
+      this.infoBuilder.setNetworkInterfaces(ImmutableList.of(networkInterface));
     }
 
     Builder(Instance instance) {
@@ -70,104 +70,176 @@ public class Instance extends InstanceInfo {
     }
 
     @Override
-    Builder generatedId(String generatedId) {
-      this.infoBuilder.generatedId(generatedId);
+    Builder setGeneratedId(String generatedId) {
+      this.infoBuilder.setGeneratedId(generatedId);
       return this;
     }
 
     @Override
+    @Deprecated
     public Builder instanceId(InstanceId instanceId) {
-      this.infoBuilder.instanceId(instanceId);
+      return setInstanceId(instanceId);
+    }
+
+    @Override
+    public Builder setInstanceId(InstanceId instanceId) {
+      this.infoBuilder.setInstanceId(instanceId);
       return this;
     }
 
     @Override
-    Builder creationTimestamp(Long creationTimestamp) {
-      this.infoBuilder.creationTimestamp(creationTimestamp);
+    Builder setCreationTimestamp(Long creationTimestamp) {
+      this.infoBuilder.setCreationTimestamp(creationTimestamp);
       return this;
     }
 
     @Override
+    @Deprecated
     public Builder description(String description) {
-      this.infoBuilder.description(description);
+      return setDescription(description);
+    }
+
+    @Override
+    public Builder setDescription(String description) {
+      this.infoBuilder.setDescription(description);
       return this;
     }
 
     @Override
-    Builder status(Status status) {
-      this.infoBuilder.status(status);
+    Builder setStatus(Status status) {
+      this.infoBuilder.setStatus(status);
       return this;
     }
 
     @Override
-    Builder statusMessage(String statusMessage) {
-      this.infoBuilder.statusMessage(statusMessage);
+    Builder setStatusMessage(String statusMessage) {
+      this.infoBuilder.setStatusMessage(statusMessage);
       return this;
     }
 
     @Override
+    @Deprecated
     public Builder tags(Tags tags) {
-      this.infoBuilder.tags(tags);
+      return setTags(tags);
+    }
+
+    @Override
+    public Builder setTags(Tags tags) {
+      this.infoBuilder.setTags(tags);
       return this;
     }
 
     @Override
+    @Deprecated
     public Builder machineType(MachineTypeId machineType) {
-      this.infoBuilder.machineType(machineType);
+      return setMachineType(machineType);
+    }
+
+    @Override
+    public Builder setMachineType(MachineTypeId machineType) {
+      this.infoBuilder.setMachineType(machineType);
       return this;
     }
 
     @Override
+    @Deprecated
     public Builder canIpForward(Boolean canIpForward) {
-      this.infoBuilder.canIpForward(canIpForward);
+      return setCanIpForward(canIpForward);
+    }
+
+    @Override
+    public Builder setCanIpForward(Boolean canIpForward) {
+      this.infoBuilder.setCanIpForward(canIpForward);
       return this;
     }
 
     @Override
+    @Deprecated
     public Builder networkInterfaces(List<NetworkInterface> networkInterfaces) {
-      this.infoBuilder.networkInterfaces(networkInterfaces);
+      return setNetworkInterfaces(networkInterfaces);
+    }
+
+    @Override
+    public Builder setNetworkInterfaces(List<NetworkInterface> networkInterfaces) {
+      this.infoBuilder.setNetworkInterfaces(networkInterfaces);
       return this;
     }
 
     @Override
+    @Deprecated
     public Builder networkInterfaces(NetworkInterface... networkInterfaces) {
-      this.infoBuilder.networkInterfaces(networkInterfaces);
+      return setNetworkInterfaces(networkInterfaces);
+    }
+
+    @Override
+    public Builder setNetworkInterfaces(NetworkInterface... networkInterfaces) {
+      this.infoBuilder.setNetworkInterfaces(networkInterfaces);
       return this;
     }
 
     @Override
+    @Deprecated
     public Builder attachedDisks(List<AttachedDisk> attachedDisks) {
-      this.infoBuilder.attachedDisks(attachedDisks);
+      return setAttachedDisks(attachedDisks);
+    }
+
+    @Override
+    public Builder setAttachedDisks(List<AttachedDisk> attachedDisks) {
+      this.infoBuilder.setAttachedDisks(attachedDisks);
       return this;
     }
 
     @Override
+    @Deprecated
     public Builder attachedDisks(AttachedDisk... attachedDisks) {
-      this.infoBuilder.attachedDisks(attachedDisks);
+      return setAttachedDisks(attachedDisks);
+    }
+
+    @Override
+    public Builder setAttachedDisks(AttachedDisk... attachedDisks) {
+      this.infoBuilder.setAttachedDisks(attachedDisks);
       return this;
     }
 
     @Override
+    @Deprecated
     public Builder metadata(Metadata metadata) {
-      this.infoBuilder.metadata(metadata);
+      return setMetadata(metadata);
+    }
+
+    @Override
+    public Builder setMetadata(Metadata metadata) {
+      this.infoBuilder.setMetadata(metadata);
       return this;
     }
 
     @Override
+    @Deprecated
     public Builder serviceAccounts(List<ServiceAccount> serviceAccounts) {
-      this.infoBuilder.serviceAccounts(serviceAccounts);
+      return setServiceAccounts(serviceAccounts);
+    }
+
+    @Override
+    public Builder setServiceAccounts(List<ServiceAccount> serviceAccounts) {
+      this.infoBuilder.setServiceAccounts(serviceAccounts);
       return this;
     }
 
     @Override
+    @Deprecated
     public Builder schedulingOptions(SchedulingOptions schedulingOptions) {
-      this.infoBuilder.schedulingOptions(schedulingOptions);
+      return setSchedulingOptions(schedulingOptions);
+    }
+
+    @Override
+    public Builder setSchedulingOptions(SchedulingOptions schedulingOptions) {
+      this.infoBuilder.setSchedulingOptions(schedulingOptions);
       return this;
     }
 
     @Override
-    Builder cpuPlatform(String cpuPlatform) {
-      this.infoBuilder.cpuPlatform(cpuPlatform);
+    Builder setCpuPlatform(String cpuPlatform) {
+      this.infoBuilder.setCpuPlatform(cpuPlatform);
       return this;
     }
 
@@ -180,7 +252,7 @@ public class Instance extends InstanceInfo {
   Instance(Compute compute, Instance.BuilderImpl infoBuilder) {
     super(infoBuilder);
     this.compute = checkNotNull(compute);
-    this.options = compute.options();
+    this.options = compute.getOptions();
   }
 
   /**
@@ -202,7 +274,7 @@ public class Instance extends InstanceInfo {
    * @throws ComputeException upon failure
    */
   public Instance reload(InstanceOption... options) {
-    return compute.getInstance(instanceId(), options);
+    return compute.getInstance(getInstanceId(), options);
   }
 
   /**
@@ -213,7 +285,7 @@ public class Instance extends InstanceInfo {
    * @throws ComputeException upon failure
    */
   public Operation delete(OperationOption... options) {
-    return compute.deleteInstance(instanceId(), options);
+    return compute.deleteInstance(getInstanceId(), options);
   }
 
   /**
@@ -225,7 +297,7 @@ public class Instance extends InstanceInfo {
    */
   public Operation addAccessConfig(String networkInterface, AccessConfig accessConfig,
       OperationOption... options) {
-    return compute.addAccessConfig(instanceId(), networkInterface, accessConfig, options);
+    return compute.addAccessConfig(getInstanceId(), networkInterface, accessConfig, options);
   }
 
   /**
@@ -237,7 +309,7 @@ public class Instance extends InstanceInfo {
    */
   public Operation attachDisk(PersistentDiskConfiguration configuration,
       OperationOption... options) {
-    return compute.attachDisk(instanceId(), configuration, options);
+    return compute.attachDisk(getInstanceId(), configuration, options);
   }
 
   /**
@@ -249,7 +321,7 @@ public class Instance extends InstanceInfo {
    */
   public Operation attachDisk(String deviceName, PersistentDiskConfiguration configuration,
       OperationOption... options) {
-    return compute.attachDisk(instanceId(), deviceName, configuration, options);
+    return compute.attachDisk(getInstanceId(), deviceName, configuration, options);
   }
 
   /**
@@ -262,7 +334,7 @@ public class Instance extends InstanceInfo {
    */
   public Operation attachDisk(String deviceName, PersistentDiskConfiguration configuration,
       int index, OperationOption... options) {
-    return compute.attachDisk(instanceId(), deviceName, configuration, index, options);
+    return compute.attachDisk(getInstanceId(), deviceName, configuration, index, options);
   }
 
   /**
@@ -274,7 +346,7 @@ public class Instance extends InstanceInfo {
    */
   public Operation deleteAccessConfig(String networkInterface, String accessConfig,
       OperationOption... options) {
-    return compute.deleteAccessConfig(instanceId(), networkInterface, accessConfig, options);
+    return compute.deleteAccessConfig(getInstanceId(), networkInterface, accessConfig, options);
   }
 
   /**
@@ -285,7 +357,7 @@ public class Instance extends InstanceInfo {
    * @throws ComputeException upon failure
    */
   public Operation detachDisk(String deviceName, OperationOption... options) {
-    return compute.detachDisk(instanceId(), deviceName, options);
+    return compute.detachDisk(getInstanceId(), deviceName, options);
   }
 
   /**
@@ -296,7 +368,7 @@ public class Instance extends InstanceInfo {
    * @throws ComputeException upon failure
    */
   public String getSerialPortOutput(int port) {
-    return compute.getSerialPortOutput(instanceId(), port);
+    return compute.getSerialPortOutput(getInstanceId(), port);
   }
 
   /**
@@ -307,7 +379,7 @@ public class Instance extends InstanceInfo {
    * @throws ComputeException upon failure
    */
   public String getSerialPortOutput() {
-    return compute.getSerialPortOutput(instanceId());
+    return compute.getSerialPortOutput(getInstanceId());
   }
 
   /**
@@ -318,7 +390,7 @@ public class Instance extends InstanceInfo {
    * @throws ComputeException upon failure
    */
   public Operation reset(OperationOption... options) {
-    return compute.reset(instanceId(), options);
+    return compute.reset(getInstanceId(), options);
   }
 
   /**
@@ -330,7 +402,7 @@ public class Instance extends InstanceInfo {
    */
   public Operation setDiskAutoDelete(String deviceName, boolean autoDelete,
       OperationOption... options) {
-    return compute.setDiskAutoDelete(instanceId(), deviceName, autoDelete, options);
+    return compute.setDiskAutoDelete(getInstanceId(), deviceName, autoDelete, options);
   }
 
   /**
@@ -342,7 +414,7 @@ public class Instance extends InstanceInfo {
    * @throws ComputeException upon failure
    */
   public Operation setMachineType(MachineTypeId machineType, OperationOption... options) {
-    return compute.setMachineType(instanceId(), machineType, options);
+    return compute.setMachineType(getInstanceId(), machineType, options);
   }
 
   /**
@@ -353,7 +425,7 @@ public class Instance extends InstanceInfo {
    * @throws ComputeException upon failure
    */
   public Operation setMetadata(Metadata metadata, OperationOption... options) {
-    return compute.setMetadata(instanceId(), metadata, options);
+    return compute.setMetadata(getInstanceId(), metadata, options);
   }
 
   /**
@@ -365,7 +437,7 @@ public class Instance extends InstanceInfo {
    * @throws ComputeException upon failure
    */
   public Operation setMetadata(Map<String, String> metadata, OperationOption... options) {
-    return setMetadata(metadata().toBuilder().values(metadata).build(), options);
+    return setMetadata(getMetadata().toBuilder().setValues(metadata).build(), options);
   }
 
   /**
@@ -376,7 +448,7 @@ public class Instance extends InstanceInfo {
    * @throws ComputeException upon failure
    */
   public Operation setSchedulingOptions(SchedulingOptions scheduling, OperationOption... options) {
-    return compute.setSchedulingOptions(instanceId(), scheduling, options);
+    return compute.setSchedulingOptions(getInstanceId(), scheduling, options);
   }
 
   /**
@@ -387,7 +459,7 @@ public class Instance extends InstanceInfo {
    * @throws ComputeException upon failure
    */
   public Operation setTags(Tags tags, OperationOption... options) {
-    return compute.setTags(instanceId(), tags, options);
+    return compute.setTags(getInstanceId(), tags, options);
   }
 
   /**
@@ -399,7 +471,7 @@ public class Instance extends InstanceInfo {
    * @throws ComputeException upon failure
    */
   public Operation setTags(Iterable<String> tags, OperationOption... options) {
-    return setTags(tags().toBuilder().values(tags).build(), options);
+    return setTags(getTags().toBuilder().setValues(tags).build(), options);
   }
 
   /**
@@ -410,7 +482,7 @@ public class Instance extends InstanceInfo {
    * @throws ComputeException upon failure
    */
   public Operation start(OperationOption... options) {
-    return compute.start(instanceId(), options);
+    return compute.start(getInstanceId(), options);
   }
 
   /**
@@ -421,13 +493,21 @@ public class Instance extends InstanceInfo {
    * @throws ComputeException upon failure
    */
   public Operation stop(OperationOption... options) {
-    return compute.stop(instanceId(), options);
+    return compute.stop(getInstanceId(), options);
   }
 
   /**
    * Returns the snapshot's {@code Compute} object used to issue requests.
    */
+  @Deprecated
   public Compute compute() {
+    return getCompute();
+  }
+
+  /**
+   * Returns the snapshot's {@code Compute} object used to issue requests.
+   */
+  public Compute getCompute() {
     return compute;
   }
 
@@ -455,7 +535,7 @@ public class Instance extends InstanceInfo {
 
   private void readObject(ObjectInputStream input) throws IOException, ClassNotFoundException {
     input.defaultReadObject();
-    this.compute = options.service();
+    this.compute = options.getService();
   }
 
   static Instance fromPb(Compute compute,

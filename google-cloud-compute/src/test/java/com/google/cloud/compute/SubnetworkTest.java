@@ -46,14 +46,14 @@ public class SubnetworkTest {
   private Subnetwork expectedSubnetwork;
 
   private void initializeExpectedSubnetwork(int optionsCalls) {
-    expect(serviceMockReturnsOptions.options()).andReturn(mockOptions).times(optionsCalls);
+    expect(serviceMockReturnsOptions.getOptions()).andReturn(mockOptions).times(optionsCalls);
     replay(serviceMockReturnsOptions);
     expectedSubnetwork =
         new Subnetwork.Builder(serviceMockReturnsOptions, SUBNETWORK_ID, NETWORK_ID, IP_RANGE)
-            .generatedId(GENERATED_ID)
-            .creationTimestamp(CREATION_TIMESTAMP)
+            .setGeneratedId(GENERATED_ID)
+            .setCreationTimestamp(CREATION_TIMESTAMP)
             .description(DESCRIPTION)
-            .gatewayAddress(GATEWAY_ADDRESS)
+            .setGatewayAddress(GATEWAY_ADDRESS)
             .build();
     compute = createStrictMock(Compute.class);
   }
@@ -61,10 +61,10 @@ public class SubnetworkTest {
   private void initializeSubnetwork() {
     subnetwork =
         new Subnetwork.Builder(compute, SUBNETWORK_ID, NETWORK_ID, IP_RANGE)
-            .generatedId(GENERATED_ID)
-            .creationTimestamp(CREATION_TIMESTAMP)
+            .setGeneratedId(GENERATED_ID)
+            .setCreationTimestamp(CREATION_TIMESTAMP)
             .description(DESCRIPTION)
-            .gatewayAddress(GATEWAY_ADDRESS)
+            .setGatewayAddress(GATEWAY_ADDRESS)
             .build();
   }
 
@@ -73,7 +73,7 @@ public class SubnetworkTest {
     initializeExpectedSubnetwork(8);
     compareSubnetwork(expectedSubnetwork, expectedSubnetwork.toBuilder().build());
     Subnetwork newSubnetwork = expectedSubnetwork.toBuilder().description("newDescription").build();
-    assertEquals("newDescription", newSubnetwork.description());
+    assertEquals("newDescription", newSubnetwork.getDescription());
     newSubnetwork = newSubnetwork.toBuilder().description("description").build();
     compareSubnetwork(expectedSubnetwork, newSubnetwork);
   }
@@ -89,6 +89,19 @@ public class SubnetworkTest {
 
   @Test
   public void testBuilder() {
+    initializeExpectedSubnetwork(1);
+    assertEquals(GENERATED_ID, expectedSubnetwork.getGeneratedId());
+    assertEquals(SUBNETWORK_ID, expectedSubnetwork.getSubnetworkId());
+    assertEquals(CREATION_TIMESTAMP, expectedSubnetwork.getCreationTimestamp());
+    assertEquals(DESCRIPTION, expectedSubnetwork.getDescription());
+    assertEquals(GATEWAY_ADDRESS, expectedSubnetwork.getGatewayAddress());
+    assertEquals(NETWORK_ID, expectedSubnetwork.getNetwork());
+    assertEquals(IP_RANGE, expectedSubnetwork.getIpRange());
+    assertSame(serviceMockReturnsOptions, expectedSubnetwork.getCompute());
+  }
+
+  @Test
+  public void testBuilderDeprecated() {
     initializeExpectedSubnetwork(1);
     assertEquals(GENERATED_ID, expectedSubnetwork.generatedId());
     assertEquals(SUBNETWORK_ID, expectedSubnetwork.subnetworkId());
@@ -114,9 +127,9 @@ public class SubnetworkTest {
   @Test
   public void testDeleteOperation() {
     initializeExpectedSubnetwork(2);
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     Operation operation = new Operation.Builder(serviceMockReturnsOptions)
-        .operationId(GlobalOperationId.of("project", "op"))
+        .setOperationId(GlobalOperationId.of("project", "op"))
         .build();
     expect(compute.deleteSubnetwork(SUBNETWORK_ID)).andReturn(operation);
     replay(compute);
@@ -127,7 +140,7 @@ public class SubnetworkTest {
   @Test
   public void testDeleteNull() {
     initializeExpectedSubnetwork(1);
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     expect(compute.deleteSubnetwork(SUBNETWORK_ID)).andReturn(null);
     replay(compute);
     initializeSubnetwork();
@@ -138,7 +151,7 @@ public class SubnetworkTest {
   public void testExists_True() throws Exception {
     initializeExpectedSubnetwork(1);
     Compute.SubnetworkOption[] expectedOptions = {Compute.SubnetworkOption.fields()};
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     expect(compute.getSubnetwork(SUBNETWORK_ID, expectedOptions))
         .andReturn(expectedSubnetwork);
     replay(compute);
@@ -151,7 +164,7 @@ public class SubnetworkTest {
   public void testExists_False() throws Exception {
     initializeExpectedSubnetwork(1);
     Compute.SubnetworkOption[] expectedOptions = {Compute.SubnetworkOption.fields()};
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     expect(compute.getSubnetwork(SUBNETWORK_ID, expectedOptions)).andReturn(null);
     replay(compute);
     initializeSubnetwork();
@@ -162,7 +175,7 @@ public class SubnetworkTest {
   @Test
   public void testReload() throws Exception {
     initializeExpectedSubnetwork(3);
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     expect(compute.getSubnetwork(SUBNETWORK_ID)).andReturn(expectedSubnetwork);
     replay(compute);
     initializeSubnetwork();
@@ -174,7 +187,7 @@ public class SubnetworkTest {
   @Test
   public void testReloadNull() throws Exception {
     initializeExpectedSubnetwork(1);
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     expect(compute.getSubnetwork(SUBNETWORK_ID)).andReturn(null);
     replay(compute);
     initializeSubnetwork();
@@ -185,7 +198,7 @@ public class SubnetworkTest {
   @Test
   public void testReloadWithOptions() throws Exception {
     initializeExpectedSubnetwork(3);
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     expect(compute.getSubnetwork(SUBNETWORK_ID, Compute.SubnetworkOption.fields()))
         .andReturn(expectedSubnetwork);
     replay(compute);
@@ -197,14 +210,14 @@ public class SubnetworkTest {
 
   public void compareSubnetwork(Subnetwork expected, Subnetwork value) {
     assertEquals(expected, value);
-    assertEquals(expected.compute().options(), value.compute().options());
-    assertEquals(expected.generatedId(), value.generatedId());
-    assertEquals(expected.subnetworkId(), value.subnetworkId());
-    assertEquals(expected.creationTimestamp(), value.creationTimestamp());
-    assertEquals(expected.description(), value.description());
-    assertEquals(expected.gatewayAddress(), value.gatewayAddress());
-    assertEquals(expected.network(), value.network());
-    assertEquals(expected.ipRange(), value.ipRange());
+    assertEquals(expected.getCompute().getOptions(), value.getCompute().getOptions());
+    assertEquals(expected.getGeneratedId(), value.getGeneratedId());
+    assertEquals(expected.getSubnetworkId(), value.getSubnetworkId());
+    assertEquals(expected.getCreationTimestamp(), value.getCreationTimestamp());
+    assertEquals(expected.getDescription(), value.getDescription());
+    assertEquals(expected.getGatewayAddress(), value.getGatewayAddress());
+    assertEquals(expected.getNetwork(), value.getNetwork());
+    assertEquals(expected.getIpRange(), value.getIpRange());
     assertEquals(expected.hashCode(), value.hashCode());
   }
 }

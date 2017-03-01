@@ -34,6 +34,7 @@ import java.nio.file.FileSystem;
 import java.nio.file.FileSystems;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.PathMatcher;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
@@ -56,7 +57,7 @@ public class CloudStorageFileSystemTest {
 
   @Before
   public void before() {
-    CloudStorageFileSystemProvider.setStorageOptions(LocalStorageHelper.options());
+    CloudStorageFileSystemProvider.setStorageOptions(LocalStorageHelper.getOptions());
   }
 
   @Test
@@ -131,7 +132,7 @@ public class CloudStorageFileSystemTest {
           new NullPointerTester()
               .ignore(CloudStorageFileSystem.class.getMethod("equals", Object.class))
               .setDefault(CloudStorageConfiguration.class, CloudStorageConfiguration.DEFAULT)
-              .setDefault(StorageOptions.class, LocalStorageHelper.options());
+              .setDefault(StorageOptions.class, LocalStorageHelper.getOptions());
       tester.testAllPublicStaticMethods(CloudStorageFileSystem.class);
       tester.testAllPublicInstanceMethods(fs);
     }
@@ -157,6 +158,36 @@ public class CloudStorageFileSystemTest {
         got.add(path);
       }
       assertThat(got).containsExactlyElementsIn(goodPaths);
+
+      // Must also work with relative path
+      got.clear();
+      for (Path path : Files.newDirectoryStream(fs.getPath("dir/"))) {
+        got.add(path);
+      }
+      assertThat(got).containsExactlyElementsIn(goodPaths);
     }
+  }
+
+  @Test
+  public void testMatcher() throws IOException {
+    try (FileSystem fs = CloudStorageFileSystem.forBucket("bucket")) {
+      String pattern1 = "glob:*.java";
+      PathMatcher javaFileMatcher = fs.getPathMatcher(pattern1);
+      assertMatches(fs, javaFileMatcher, "a.java", true);
+      assertMatches(fs, javaFileMatcher, "a.text", false);
+      assertMatches(fs, javaFileMatcher, "folder/c.java", true);
+      assertMatches(fs, javaFileMatcher, "d", false);
+      
+      String pattern2 = "glob:*.{java,text}";
+      PathMatcher javaAndTextFileMatcher = fs.getPathMatcher(pattern2);
+      assertMatches(fs, javaAndTextFileMatcher, "a.java", true);
+      assertMatches(fs, javaAndTextFileMatcher, "a.text", true);
+      assertMatches(fs, javaAndTextFileMatcher, "folder/c.java", true);
+      assertMatches(fs, javaAndTextFileMatcher, "d", false);
+    }
+  }
+
+  private void assertMatches(FileSystem fs, PathMatcher matcher, String toMatch, boolean expected) {
+    assertThat(matcher.matches(fs.getPath(toMatch).getFileName())).isEqualTo(expected);
   }
 }

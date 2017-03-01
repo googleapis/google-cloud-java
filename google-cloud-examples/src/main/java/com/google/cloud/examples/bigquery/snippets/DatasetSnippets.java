@@ -83,7 +83,7 @@ public class DatasetSnippets {
   public Dataset updateDataset(String friendlyName) {
     // [START update]
     Builder builder = dataset.toBuilder();
-    builder.friendlyName(friendlyName);
+    builder.setFriendlyName(friendlyName);
     Dataset updatedDataset = builder.build().update();
     // [END update]
     return updatedDataset;
@@ -142,9 +142,9 @@ public class DatasetSnippets {
   public Table createTable(String tableName, String fieldName) {
     // [START createTable]
     Schema schema = Schema.of(Field.of(fieldName, Type.string()));
-    StandardTableDefinition definition = StandardTableDefinition.builder()
-        .schema(schema)
-        .timePartitioning(TimePartitioning.of(TimePartitioning.Type.DAY))
+    StandardTableDefinition definition = StandardTableDefinition.newBuilder()
+        .setSchema(schema)
+        .setTimePartitioning(TimePartitioning.of(TimePartitioning.Type.DAY))
         .build();
     Table table = dataset.create(tableName, definition);
     // [END createTable]

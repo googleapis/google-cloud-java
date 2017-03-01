@@ -54,9 +54,9 @@ public class ITDatasetSnippets {
 
   @BeforeClass
   public static void beforeClass() {
-    bigquery = RemoteBigQueryHelper.create().options().service();
-    dataset = bigquery.create(DatasetInfo.builder(DATASET).build());
-    nonExistingDataset = bigquery.create(DatasetInfo.builder(NON_EXISTING_DATASET).build());
+    bigquery = RemoteBigQueryHelper.create().getOptions().getService();
+    dataset = bigquery.create(DatasetInfo.newBuilder(DATASET).build());
+    nonExistingDataset = bigquery.create(DatasetInfo.newBuilder(NON_EXISTING_DATASET).build());
     nonExistingDataset.delete(DatasetDeleteOption.deleteContents());
   }
 
@@ -88,22 +88,22 @@ public class ITDatasetSnippets {
 
   @Test
   public void testReload() {
-    assertNull(dataset.friendlyName());
+    assertNull(dataset.getFriendlyName());
 
     Builder builder = dataset.toBuilder();
-    builder.friendlyName(FRIENDLY_NAME);
+    builder.setFriendlyName(FRIENDLY_NAME);
     builder.build().update();
 
     Dataset reloadedDataset = datasetSnippets.reloadDataset();
-    assertEquals(FRIENDLY_NAME, reloadedDataset.friendlyName());
+    assertEquals(FRIENDLY_NAME, reloadedDataset.getFriendlyName());
   }
 
   @Test
   public void testUpdate() {
-    assertNull(dataset.friendlyName());
+    assertNull(dataset.getFriendlyName());
 
     Dataset updatedDataset = datasetSnippets.updateDataset(FRIENDLY_NAME);
-    assertEquals(FRIENDLY_NAME, updatedDataset.friendlyName());
+    assertEquals(FRIENDLY_NAME, updatedDataset.getFriendlyName());
   }
 
   @Test
@@ -114,7 +114,7 @@ public class ITDatasetSnippets {
   @Test
   public void testDelete() {
     String datasetName = RemoteBigQueryHelper.generateDatasetName();
-    DatasetInfo dataset = DatasetInfo.builder(datasetName).build();
+    DatasetInfo dataset = DatasetInfo.newBuilder(datasetName).build();
     DatasetSnippets datasetSnippets = new DatasetSnippets(bigquery.create(dataset));
     assertTrue(datasetSnippets.deleteDataset());
   }
@@ -129,13 +129,13 @@ public class ITDatasetSnippets {
   public void testListTablesNotEmpty() {
     String expectedTableName = "test_table";
 
-    dataset.create(expectedTableName, StandardTableDefinition.builder().build());
+    dataset.create(expectedTableName, StandardTableDefinition.newBuilder().build());
     Page<Table> tables = datasetSnippets.list();
     Iterator<Table> iterator = tables.iterateAll();
     assertTrue(iterator.hasNext());
 
     Table actualTable = iterator.next();
-    assertEquals(expectedTableName, actualTable.tableId().table());
+    assertEquals(expectedTableName, actualTable.getTableId().getTable());
     assertFalse(iterator.hasNext());
 
     bigquery.delete(DATASET, expectedTableName);
@@ -145,11 +145,11 @@ public class ITDatasetSnippets {
   public void testGetTable() {
     String expectedTableName = "test_table";
 
-    dataset.create(expectedTableName, StandardTableDefinition.builder().build());
+    dataset.create(expectedTableName, StandardTableDefinition.newBuilder().build());
     Table actualTable = datasetSnippets.getTable(expectedTableName);
 
     assertNotNull(actualTable);
-    assertEquals(expectedTableName, actualTable.tableId().table());
+    assertEquals(expectedTableName, actualTable.getTableId().getTable());
 
     bigquery.delete(DATASET, expectedTableName);
   }
@@ -161,11 +161,11 @@ public class ITDatasetSnippets {
 
     Table actualTable = datasetSnippets.createTable(expectedTableName, expectedFieldName);
     assertNotNull(actualTable);
-    assertEquals(expectedTableName, actualTable.tableId().table());
-    assertEquals(1, actualTable.definition().schema().fields().size());
+    assertEquals(expectedTableName, actualTable.getTableId().getTable());
+    assertEquals(1, actualTable.getDefinition().getSchema().getFields().size());
 
-    Field actualField = actualTable.definition().schema().fields().get(0);
-    assertEquals(expectedFieldName, actualField.name());
+    Field actualField = actualTable.getDefinition().getSchema().getFields().get(0);
+    assertEquals(expectedFieldName, actualField.getName());
 
     bigquery.delete(DATASET, expectedTableName);
   }

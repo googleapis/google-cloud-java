@@ -58,7 +58,16 @@ public final class TimePartitioning implements Serializable {
    * Returns the time partitioning type. Currently, the only type supported is {@link Type#DAY},
    * which will generate one partition per day based on data loading time.
    */
+  @Deprecated
   public Type type() {
+    return getType();
+  }
+
+  /**
+   * Returns the time partitioning type. Currently, the only type supported is {@link Type#DAY},
+   * which will generate one partition per day based on data loading time.
+   */
+  public Type getType() {
     return type;
   }
 
@@ -66,7 +75,16 @@ public final class TimePartitioning implements Serializable {
    * Returns the number of milliseconds for which to keep the storage for a partition. When expired,
    * the storage for the partition is reclaimed.
    */
+  @Deprecated
   public Long expirationMs() {
+    return getExpirationMs();
+  }
+
+  /**
+   * Returns the number of milliseconds for which to keep the storage for a partition. When expired,
+   * the storage for the partition is reclaimed.
+   */
+  public Long getExpirationMs() {
     return expirationMs;
   }
 

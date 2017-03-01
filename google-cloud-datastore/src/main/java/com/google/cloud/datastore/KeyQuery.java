@@ -38,13 +38,13 @@ public final class KeyQuery extends StructuredQuery<Key> {
 
     Builder() {
       super(ResultType.KEY);
-      projection(KEY_PROPERTY_NAME);
+      setProjection(KEY_PROPERTY_NAME);
     }
 
     @Override
     Builder mergeFrom(com.google.datastore.v1.Query queryPb) {
       super.mergeFrom(queryPb);
-      projection(KEY_PROPERTY_NAME);
+      setProjection(KEY_PROPERTY_NAME);
       clearDistinctOn();
       return this;
     }

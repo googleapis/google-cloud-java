@@ -29,7 +29,7 @@ import java.util.concurrent.ScheduledExecutorService;
 
 public class LoggingOptions extends GrpcServiceOptions<Logging, LoggingRpc, LoggingOptions> {
 
-  private static final long serialVersionUID = -2996451684945061075L;
+  private static final long serialVersionUID = -5117984564582881668L;
   private static final String LOGGING_SCOPE = "https://www.googleapis.com/auth/logging.admin";
   private static final Set<String> SCOPES = ImmutableSet.of(LOGGING_SCOPE);
   private static final String DEFAULT_HOST = LoggingServiceV2Settings.getDefaultServiceAddress()
@@ -47,8 +47,16 @@ public class LoggingOptions extends GrpcServiceOptions<Logging, LoggingRpc, Logg
   /**
    * Returns a default {@code LoggingOptions} instance.
    */
+  @Deprecated
   public static LoggingOptions defaultInstance() {
-    return builder().build();
+    return getDefaultInstance();
+  }
+
+  /**
+   * Returns a default {@code LoggingOptions} instance.
+   */
+  public static LoggingOptions getDefaultInstance() {
+    return newBuilder().build();
   }
 
   public static class DefaultLoggingRpcFactory implements LoggingRpcFactory {
@@ -65,7 +73,7 @@ public class LoggingOptions extends GrpcServiceOptions<Logging, LoggingRpc, Logg
   }
 
   @Override
-  protected String defaultHost() {
+  protected String getDefaultHost() {
     return DEFAULT_HOST;
   }
 
@@ -89,22 +97,22 @@ public class LoggingOptions extends GrpcServiceOptions<Logging, LoggingRpc, Logg
   }
 
   @Override
-  protected ExecutorFactory<ScheduledExecutorService> executorFactory() {
-    return super.executorFactory();
+  protected ExecutorFactory<ScheduledExecutorService> getExecutorFactory() {
+    return super.getExecutorFactory();
   }
 
   @Override
-  protected LoggingFactory defaultServiceFactory() {
+  protected LoggingFactory getDefaultServiceFactory() {
     return DefaultLoggingFactory.INSTANCE;
   }
 
   @Override
-  protected LoggingRpcFactory defaultRpcFactory() {
+  protected LoggingRpcFactory getDefaultRpcFactory() {
     return DefaultLoggingRpcFactory.INSTANCE;
   }
 
   @Override
-  protected Set<String> scopes() {
+  protected Set<String> getScopes() {
     return SCOPES;
   }
 
@@ -124,7 +132,12 @@ public class LoggingOptions extends GrpcServiceOptions<Logging, LoggingRpc, Logg
     return new Builder(this);
   }
 
+  @Deprecated
   public static Builder builder() {
+    return newBuilder();
+  }
+
+  public static Builder newBuilder() {
     return new Builder();
   }
 }

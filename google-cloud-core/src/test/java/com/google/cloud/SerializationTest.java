@@ -18,39 +18,33 @@ package com.google.cloud;
 
 import com.google.cloud.MonitoredResourceDescriptor.LabelDescriptor;
 import com.google.cloud.MonitoredResourceDescriptor.LabelDescriptor.ValueType;
-import com.google.cloud.ServiceAccountSigner.SigningException;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 
-import java.io.ByteArrayInputStream;
-import java.io.IOException;
 import java.io.Serializable;
-import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 public class SerializationTest extends BaseSerializationTest {
 
   private static final BaseServiceException BASE_SERVICE_EXCEPTION =
       new BaseServiceException(42, "message", "reason", true);
-  private static final ExceptionHandler EXCEPTION_HANDLER = ExceptionHandler.defaultInstance();
+  private static final ExceptionHandler EXCEPTION_HANDLER = ExceptionHandler.getDefaultInstance();
   private static final Identity IDENTITY = Identity.allAuthenticatedUsers();
   private static final PageImpl<String> PAGE =
       new PageImpl<>(null, "cursor", ImmutableList.of("string1", "string2"));
-  private static final SigningException SIGNING_EXCEPTION =
-      new SigningException("message", BASE_SERVICE_EXCEPTION);
-  private static final RetryParams RETRY_PARAMS = RetryParams.defaultInstance();
+  private static final RetryParams RETRY_PARAMS = RetryParams.getDefaultInstance();
   private static final Role SOME_ROLE = Role.viewer();
-  private static final Policy SOME_IAM_POLICY = Policy.builder().build();
+  private static final Policy SOME_IAM_POLICY = Policy.newBuilder().build();
   private static final WaitForOption CHECKING_PERIOD =
       WaitForOption.checkEvery(42, TimeUnit.SECONDS);
   private static final LabelDescriptor LABEL_DESCRIPTOR =
       new LabelDescriptor("project_id", ValueType.STRING, "The project id");
   private static final MonitoredResourceDescriptor MONITORED_RESOURCE_DESCRIPTOR =
-      MonitoredResourceDescriptor.builder("global")
-          .labels(ImmutableList.of(LABEL_DESCRIPTOR))
+      MonitoredResourceDescriptor.newBuilder("global")
+          .setLabels(ImmutableList.of(LABEL_DESCRIPTOR))
           .build();
-  private static final MonitoredResource MONITORED_RESOURCE = MonitoredResource.builder("global")
-      .labels(ImmutableMap.of("project_id", "project"))
+  private static final MonitoredResource MONITORED_RESOURCE = MonitoredResource.newBuilder("global")
+      .setLabels(ImmutableMap.of("project_id", "project"))
       .build();
   private static final String JSON_KEY = "{\n"
       + "  \"private_key_id\": \"somekeyid\",\n"
@@ -82,19 +76,12 @@ public class SerializationTest extends BaseSerializationTest {
   @Override
   protected Serializable[] serializableObjects() {
     return new Serializable[]{BASE_SERVICE_EXCEPTION, EXCEPTION_HANDLER, IDENTITY, PAGE,
-        RETRY_PARAMS, SOME_ROLE, SOME_IAM_POLICY, SIGNING_EXCEPTION, CHECKING_PERIOD,
-        LABEL_DESCRIPTOR, MONITORED_RESOURCE_DESCRIPTOR, MONITORED_RESOURCE};
+        RETRY_PARAMS, SOME_ROLE, SOME_IAM_POLICY, CHECKING_PERIOD, LABEL_DESCRIPTOR,
+        MONITORED_RESOURCE_DESCRIPTOR, MONITORED_RESOURCE};
   }
 
   @Override
   protected Restorable<?>[] restorableObjects() {
-    try {
-      return new Restorable<?>[]{AuthCredentials.createForAppEngine(), AuthCredentials.noAuth(),
-          AuthCredentials.createForJson(new ByteArrayInputStream(JSON_KEY.getBytes())),
-          AuthCredentials.createFor("accessToken", new Date())};
-    } catch (IOException ex) {
-      // never reached
-      throw new RuntimeException(ex);
-    }
+    return null;
   }
 }

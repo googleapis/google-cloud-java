@@ -80,37 +80,37 @@ public class Zone implements Serializable {
 
     private Builder() {}
 
-    Builder zoneId(ZoneId zoneId) {
+    Builder setZoneId(ZoneId zoneId) {
       this.zoneId = zoneId;
       return this;
     }
 
-    Builder generatedId(String generatedId) {
+    Builder setGeneratedId(String generatedId) {
       this.generatedId = generatedId;
       return this;
     }
 
-    Builder creationTimestamp(Long creationTimestamp) {
+    Builder setCreationTimestamp(Long creationTimestamp) {
       this.creationTimestamp = creationTimestamp;
       return this;
     }
 
-    Builder description(String description) {
+    Builder setDescription(String description) {
       this.description = description;
       return this;
     }
 
-    Builder status(Status status) {
+    Builder setStatus(Status status) {
       this.status = status;
       return this;
     }
 
-    Builder region(RegionId region) {
+    Builder setRegion(RegionId region) {
       this.region = region;
       return this;
     }
 
-    Builder deprecationStatus(DeprecationStatus<ZoneId> deprecationStatus) {
+    Builder setDeprecationStatus(DeprecationStatus<ZoneId> deprecationStatus) {
       this.deprecationStatus = deprecationStatus;
       return this;
     }
@@ -133,42 +133,90 @@ public class Zone implements Serializable {
   /**
    * Returns the zone's identity.
    */
+  @Deprecated
   public ZoneId zoneId() {
+    return getZoneId();
+  }
+
+  /**
+   * Returns the zone's identity.
+   */
+  public ZoneId getZoneId() {
     return zoneId;
   }
 
   /**
    * Returns the creation timestamp in milliseconds since epoch.
    */
+  @Deprecated
   public Long creationTimestamp() {
+    return getCreationTimestamp();
+  }
+
+  /**
+   * Returns the creation timestamp in milliseconds since epoch.
+   */
+  public Long getCreationTimestamp() {
     return creationTimestamp;
   }
 
   /**
    * Returns an optional textual description of the zone.
    */
+  @Deprecated
   public String description() {
+    return getDescription();
+  }
+
+  /**
+   * Returns an optional textual description of the zone.
+   */
+  public String getDescription() {
     return description;
   }
 
   /**
    * Returns the service-generated unique identifier for the zone.
    */
+  @Deprecated
   public String generatedId() {
+    return getGeneratedId();
+  }
+
+  /**
+   * Returns the service-generated unique identifier for the zone.
+   */
+  public String getGeneratedId() {
     return generatedId;
   }
 
   /**
    * Returns the status of the zone.
    */
+  @Deprecated
   public Status status() {
+    return getStatus();
+  }
+
+  /**
+   * Returns the status of the zone.
+   */
+  public Status getStatus() {
     return status;
   }
 
   /**
    * Returns the identity of the region that hosts the zone.
    */
+  @Deprecated
   public RegionId region() {
+    return getRegion();
+  }
+
+  /**
+   * Returns the identity of the region that hosts the zone.
+   */
+  public RegionId getRegion() {
     return region;
   }
 
@@ -177,7 +225,17 @@ public class Zone implements Serializable {
    * {@link DeprecationStatus.Status#DELETED} or {@link DeprecationStatus.Status#OBSOLETE} the zone
    * should not be used. Returns {@code null} if the zone is not deprecated.
    */
+  @Deprecated
   public DeprecationStatus<ZoneId> deprecationStatus() {
+    return getDeprecationStatus();
+  }
+
+  /**
+   * Returns the deprecation status of the zone. If {@link DeprecationStatus#status()} is either
+   * {@link DeprecationStatus.Status#DELETED} or {@link DeprecationStatus.Status#OBSOLETE} the zone
+   * should not be used. Returns {@code null} if the zone is not deprecated.
+   */
+  public DeprecationStatus<ZoneId> getDeprecationStatus() {
     return deprecationStatus;
   }
 
@@ -216,14 +274,14 @@ public class Zone implements Serializable {
     if (creationTimestamp != null) {
       zonePb.setCreationTimestamp(TIMESTAMP_FORMATTER.print(creationTimestamp));
     }
-    zonePb.setName(zoneId.zone());
+    zonePb.setName(zoneId.getZone());
     zonePb.setDescription(description);
-    zonePb.setSelfLink(zoneId.selfLink());
+    zonePb.setSelfLink(zoneId.getSelfLink());
     if (status != null) {
       zonePb.setStatus(status.name());
     }
     if (region != null) {
-      zonePb.setRegion(region.selfLink());
+      zonePb.setRegion(region.getSelfLink());
     }
     if (deprecationStatus != null) {
       zonePb.setDeprecated(deprecationStatus.toPb());
@@ -237,22 +295,22 @@ public class Zone implements Serializable {
 
   static Zone fromPb(com.google.api.services.compute.model.Zone zonePb) {
     Builder builder = builder();
-    builder.zoneId(ZoneId.fromUrl(zonePb.getSelfLink()));
+    builder.setZoneId(ZoneId.fromUrl(zonePb.getSelfLink()));
     if (zonePb.getId() != null) {
-      builder.generatedId(zonePb.getId().toString());
+      builder.setGeneratedId(zonePb.getId().toString());
     }
     if (zonePb.getCreationTimestamp() != null) {
-      builder.creationTimestamp(TIMESTAMP_FORMATTER.parseMillis(zonePb.getCreationTimestamp()));
+      builder.setCreationTimestamp(TIMESTAMP_FORMATTER.parseMillis(zonePb.getCreationTimestamp()));
     }
-    builder.description(zonePb.getDescription());
+    builder.setDescription(zonePb.getDescription());
     if (zonePb.getStatus() != null) {
-      builder.status(Status.valueOf(zonePb.getStatus()));
+      builder.setStatus(Status.valueOf(zonePb.getStatus()));
     }
     if (zonePb.getRegion() != null) {
-      builder.region(RegionId.fromUrl(zonePb.getRegion()));
+      builder.setRegion(RegionId.fromUrl(zonePb.getRegion()));
     }
     if (zonePb.getDeprecated() != null) {
-      builder.deprecationStatus(
+      builder.setDeprecationStatus(
           DeprecationStatus.fromPb(zonePb.getDeprecated(), ZoneId.FROM_URL_FUNCTION));
     }
     return builder.build();

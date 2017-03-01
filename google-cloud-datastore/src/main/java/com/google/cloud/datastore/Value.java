@@ -95,18 +95,30 @@ public abstract class Value<V> implements Serializable {
     @Override
     public B mergeFrom(P other) {
       excludeFromIndexes = other.excludeFromIndexes();
-      meaning = other.meaning();
+      meaning = other.getMeaning();
       set(other.get());
       return self();
     }
 
     @Override
+    @Deprecated
     public boolean getExcludeFromIndexes() {
+      return excludeFromIndexes();
+    }
+
+    @Override
+    public boolean excludeFromIndexes() {
       return excludeFromIndexes;
     }
 
     @Override
+    @Deprecated
     public B excludeFromIndexes(boolean excludeFromIndexes) {
+      return setExcludeFromIndexes(excludeFromIndexes);
+    }
+
+    @Override
+    public B setExcludeFromIndexes(boolean excludeFromIndexes) {
       this.excludeFromIndexes = excludeFromIndexes;
       return self();
     }
@@ -120,6 +132,12 @@ public abstract class Value<V> implements Serializable {
     @Deprecated
     @Override
     public B meaning(int meaning) {
+      return setMeaning(meaning);
+    }
+
+    @Deprecated
+    @Override
+    public B setMeaning(int meaning) {
       this.meaning = meaning;
       return self();
     }
@@ -147,21 +165,40 @@ public abstract class Value<V> implements Serializable {
   @SuppressWarnings("deprecation")
   <P extends Value<V>, B extends BaseBuilder<V, P, B>> Value(ValueBuilder<V, P, B> builder) {
     valueType = builder.getValueType();
-    excludeFromIndexes = builder.getExcludeFromIndexes();
+    excludeFromIndexes = builder.excludeFromIndexes();
     meaning = builder.getMeaning();
     value = builder.get();
   }
 
+  /**
+   * Returns the type of this value.
+   */
+  @Deprecated
   public final ValueType type() {
+    return getType();
+  }
+
+  /**
+   * Returns the type of this value.
+   */
+  public final ValueType getType() {
     return valueType;
   }
 
+  /**
+   * Returns whether this value should be excluded from indexes.
+   */
   public final boolean excludeFromIndexes() {
     return excludeFromIndexes;
   }
 
   @Deprecated
   final int meaning() {
+    return getMeaning();
+  }
+
+  @Deprecated
+  final int getMeaning() {
     return meaning;
   }
 
@@ -204,7 +241,7 @@ public abstract class Value<V> implements Serializable {
 
   @SuppressWarnings("unchecked")
   com.google.datastore.v1.Value toPb() {
-    return type().getMarshaller().toProto(this);
+    return getType().getMarshaller().toProto(this);
   }
 
   static Value<?> fromPb(com.google.datastore.v1.Value proto) {

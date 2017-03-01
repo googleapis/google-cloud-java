@@ -76,11 +76,11 @@ public interface Datastore extends Service<DatastoreOptions>, DatastoreReaderWri
    * <pre> {@code
    * String keyName1 = "my_key_name_1";
    * String keyName2 = "my_key_name_2";
-   * Key key1 = datastore.newKeyFactory().kind("MyKind").newKey(keyName1);
-   * Key key2 = datastore.newKeyFactory().kind("MyKind").newKey(keyName2);
+   * Key key1 = datastore.newKeyFactory().setKind("MyKind").newKey(keyName1);
+   * Key key2 = datastore.newKeyFactory().setKind("MyKind").newKey(keyName2);
    * Batch batch = datastore.newBatch();
-   * Entity entity1 = Entity.builder(key1).set("name", "John").build();
-   * Entity entity2 = Entity.builder(key2).set("title", "title").build();
+   * Entity entity1 = Entity.newBuilder(key1).set("name", "John").build();
+   * Entity entity2 = Entity.newBuilder(key2).set("title", "title").build();
    * batch.add(entity1);
    * batch.add(entity2);
    * batch.submit();
@@ -96,7 +96,7 @@ public interface Datastore extends Service<DatastoreOptions>, DatastoreReaderWri
    *
    * <p>Example of allocating an id.
    * <pre> {@code
-   * KeyFactory keyFactory = datastore.newKeyFactory().kind("MyKind");
+   * KeyFactory keyFactory = datastore.newKeyFactory().setKind("MyKind");
    * IncompleteKey incompleteKey = keyFactory.newKey();
    * 
    * // let cloud datastore automatically assign an id
@@ -112,7 +112,7 @@ public interface Datastore extends Service<DatastoreOptions>, DatastoreReaderWri
    *
    * <p>Example of allocating multiple ids in a single batch.
    * <pre> {@code
-   * KeyFactory keyFactory = datastore.newKeyFactory().kind("MyKind");
+   * KeyFactory keyFactory = datastore.newKeyFactory().setKind("MyKind");
    * IncompleteKey incompleteKey1 = keyFactory.newKey();
    * IncompleteKey incompleteKey2 = keyFactory.newKey();
    * 
@@ -128,17 +128,83 @@ public interface Datastore extends Service<DatastoreOptions>, DatastoreReaderWri
   /**
    * {@inheritDoc}
    *
+   * <p>If an entity for {@code entity.getKey()} does not exists, {@code entity} is inserted.
+   * Otherwise, a {@link DatastoreException} is thrown with {@link DatastoreException#getReason()}
+   * equal to {@code "ALREADY_EXISTS"}.
+   *
+   * <p>Example of adding a single entity.
+   * <pre> {@code
+   * String keyName = "my_key_name";
+   * Key key = datastore.newKeyFactory().setKind("MyKind").newKey(keyName);
+   * Entity.Builder entityBuilder = Entity.newBuilder(key);
+   * entityBuilder.set("propertyName", "value");
+   * Entity entity = entityBuilder.build();
+   * try {
+   *   datastore.add(entity);
+   * } catch (DatastoreException ex) {
+   *   if ("ALREADY_EXISTS".equals(ex.getReason())) {
+   *     // entity.getKey() already exists
+   *   }
+   * }
+   * }</pre>
+   *
+   * @throws DatastoreException upon failure or if an entity for {@code entity.getKey()} already
+   *     exists
+   */
+  @Override
+  Entity add(FullEntity<?> entity);
+
+  /**
+   * {@inheritDoc}
+   *
+   * <p>If none of entities' keys exist, all entities are inserted. If any of entities' keys already
+   * exists the method throws a {@link DatastoreException} with
+   * {@link DatastoreException#getReason()} equal to {@code "ALREADY_EXISTS"}. All entities in
+   * {@code entities} whose key did not exist are inserted. To achieve a transactional behavior,
+   * use {@link Transaction}.
+   *
+   * <p>Example of adding multiple entities.
+   * <pre> {@code
+   * String keyName1 = "my_key_name1";
+   * String keyName2 = "my_key_name2";
+   * Key key1 = datastore.newKeyFactory().setKind("MyKind").newKey(keyName1);
+   * Entity.Builder entityBuilder1 = Entity.newBuilder(key1);
+   * entityBuilder1.set("propertyName", "value1");
+   * Entity entity1 = entityBuilder1.build();
+   * 
+   * Key key2 = datastore.newKeyFactory().setKind("MyKind").newKey(keyName2);
+   * Entity.Builder entityBuilder2 = Entity.newBuilder(key2);
+   * entityBuilder2.set("propertyName", "value2");
+   * Entity entity2 = entityBuilder2.build();
+   * 
+   * try {
+   *   datastore.add(entity1, entity2);
+   * } catch (DatastoreException ex) {
+   *   if ("ALREADY_EXISTS".equals(ex.getReason())) {
+   *     // at least one of entity1.getKey() and entity2.getKey() already exists
+   *   }
+   * }
+   * }</pre>
+   *
+   * @throws DatastoreException upon failure or if any of entities' keys already exists
+   */
+  @Override
+  List<Entity> add(FullEntity<?>... entities);
+
+  /**
+   * {@inheritDoc}
+   *
    * <p>Example of updating multiple entities.
    * <pre> {@code
    * String keyName1 = "my_key_name_1";
    * String keyName2 = "my_key_name_2";
-   * Key key1 = datastore.newKeyFactory().kind("MyKind").newKey(keyName1);
-   * Entity.Builder entityBuilder1 = Entity.builder(key1);
+   * Key key1 = datastore.newKeyFactory().setKind("MyKind").newKey(keyName1);
+   * Entity.Builder entityBuilder1 = Entity.newBuilder(key1);
    * entityBuilder1.set("propertyName", "updatedValue1");
    * Entity entity1 = entityBuilder1.build();
    * 
-   * Key key2 = datastore.newKeyFactory().kind("MyKind").newKey(keyName2);
-   * Entity.Builder entityBuilder2 = Entity.builder(key2);
+   * Key key2 = datastore.newKeyFactory().setKind("MyKind").newKey(keyName2);
+   * Entity.Builder entityBuilder2 = Entity.newBuilder(key2);
    * entityBuilder2.set("propertyName", "updatedValue2");
    * Entity entity2 = entityBuilder2.build();
    * 
@@ -156,8 +222,8 @@ public interface Datastore extends Service<DatastoreOptions>, DatastoreReaderWri
    * <p>Example of putting a single entity.
    * <pre> {@code
    * String keyName = "my_key_name";
-   * Key key = datastore.newKeyFactory().kind("MyKind").newKey(keyName);
-   * Entity.Builder entityBuilder = Entity.builder(key);
+   * Key key = datastore.newKeyFactory().setKind("MyKind").newKey(keyName);
+   * Entity.Builder entityBuilder = Entity.newBuilder(key);
    * entityBuilder.set("propertyName", "value");
    * Entity entity = entityBuilder.build();
    * datastore.put(entity);
@@ -175,13 +241,13 @@ public interface Datastore extends Service<DatastoreOptions>, DatastoreReaderWri
    * <pre> {@code
    * String keyName1 = "my_key_name1";
    * String keyName2 = "my_key_name2";
-   * Key key1 = datastore.newKeyFactory().kind("MyKind").newKey(keyName1);
-   * Entity.Builder entityBuilder1 = Entity.builder(key1);
+   * Key key1 = datastore.newKeyFactory().setKind("MyKind").newKey(keyName1);
+   * Entity.Builder entityBuilder1 = Entity.newBuilder(key1);
    * entityBuilder1.set("propertyName", "value1");
    * Entity entity1 = entityBuilder1.build();
    * 
-   * Key key2 = datastore.newKeyFactory().kind("MyKind").newKey(keyName2);
-   * Entity.Builder entityBuilder2 = Entity.builder(key2);
+   * Key key2 = datastore.newKeyFactory().setKind("MyKind").newKey(keyName2);
+   * Entity.Builder entityBuilder2 = Entity.newBuilder(key2);
    * entityBuilder2.set("propertyName", "value2");
    * Entity entity2 = entityBuilder2.build();
    * 
@@ -200,8 +266,8 @@ public interface Datastore extends Service<DatastoreOptions>, DatastoreReaderWri
    * <pre> {@code
    * String keyName1 = "my_key_name1";
    * String keyName2 = "my_key_name2";
-   * Key key1 = datastore.newKeyFactory().kind("MyKind").newKey(keyName1);
-   * Key key2 = datastore.newKeyFactory().kind("MyKind").newKey(keyName2);
+   * Key key1 = datastore.newKeyFactory().setKind("MyKind").newKey(keyName1);
+   * Key key2 = datastore.newKeyFactory().setKind("MyKind").newKey(keyName2);
    * datastore.delete(key1, key2);
    * }</pre>
    *
@@ -228,7 +294,7 @@ public interface Datastore extends Service<DatastoreOptions>, DatastoreReaderWri
    * <p>Example of getting an entity.
    * <pre> {@code
    * String keyName = "my_key_name";
-   * Key key = datastore.newKeyFactory().kind("MyKind").newKey(keyName);
+   * Key key = datastore.newKeyFactory().setKind("MyKind").newKey(keyName);
    * Entity entity = datastore.get(key);
    * // Do something with the entity
    * }</pre>
@@ -248,7 +314,7 @@ public interface Datastore extends Service<DatastoreOptions>, DatastoreReaderWri
    * <pre> {@code
    * String firstKeyName = "my_first_key_name";
    * String secondKeyName = "my_second_key_name";
-   * KeyFactory keyFactory = datastore.newKeyFactory().kind("MyKind");
+   * KeyFactory keyFactory = datastore.newKeyFactory().setKind("MyKind");
    * Key firstKey = keyFactory.newKey(firstKeyName);
    * Key secondKey = keyFactory.newKey(secondKeyName);
    * Iterator<Entity> entitiesIterator = datastore.get(Lists.newArrayList(firstKey, secondKey));
@@ -274,7 +340,7 @@ public interface Datastore extends Service<DatastoreOptions>, DatastoreReaderWri
    * <pre> {@code
    * String firstKeyName = "my_first_key_name";
    * String secondKeyName = "my_second_key_name";
-   * KeyFactory keyFactory = datastore.newKeyFactory().kind("MyKind");
+   * KeyFactory keyFactory = datastore.newKeyFactory().setKind("MyKind");
    * Key firstKey = keyFactory.newKey(firstKeyName);
    * Key secondKey = keyFactory.newKey(secondKeyName);
    * List<Entity> entities = datastore.fetch(Lists.newArrayList(firstKey, secondKey));
@@ -293,8 +359,8 @@ public interface Datastore extends Service<DatastoreOptions>, DatastoreReaderWri
    * <p>Example of running a query to find all entities of one kind.
    * <pre> {@code
    * String kind = "my_kind";
-   * StructuredQuery<Entity> query = Query.entityQueryBuilder()
-   *     .kind(kind)
+   * StructuredQuery<Entity> query = Query.newEntityQueryBuilder()
+   *     .setKind(kind)
    *     .build();
    * QueryResults<Entity> results = datastore.run(query);
    * List<Entity> entities = Lists.newArrayList();
@@ -310,9 +376,9 @@ public interface Datastore extends Service<DatastoreOptions>, DatastoreReaderWri
    * String kind = "my_kind";
    * String property = "my_property";
    * String value = "my_value";
-   * StructuredQuery<Entity> query = Query.entityQueryBuilder()
-   *     .kind(kind)
-   *     .filter(PropertyFilter.eq(property, value))
+   * StructuredQuery<Entity> query = Query.newEntityQueryBuilder()
+   *     .setKind(kind)
+   *     .setFilter(PropertyFilter.eq(property, value))
    *     .build();
    * QueryResults<Entity> results = datastore.run(query);
    * List<Entity> entities = Lists.newArrayList();

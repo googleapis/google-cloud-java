@@ -86,12 +86,12 @@ final class Structs {
 
       @Override
       public Iterator<Entry<String, Object>> iterator() {
-        return Iterators.transform(struct.getFields().entrySet().iterator(), VALUE_TO_OBJECT);
+        return Iterators.transform(struct.getFieldsMap().entrySet().iterator(), VALUE_TO_OBJECT);
       }
 
       @Override
       public int size() {
-        return struct.getFields().size();
+        return struct.getFieldsMap().size();
       }
     }
 
@@ -114,7 +114,7 @@ final class Structs {
    * <p>Notice that all numbers (int, long, float and double) are serialized as double values.
    * Enums are serialized as strings.
    */
-  static Struct newStruct(Map<String, Object> map) {
+  static Struct newStruct(Map<String, ?> map) {
     Map<String, Value> valueMap = Maps.transformValues(checkNotNull(map), OBJECT_TO_VALUE);
     return Struct.newBuilder().putAllFields(valueMap).build();
   }

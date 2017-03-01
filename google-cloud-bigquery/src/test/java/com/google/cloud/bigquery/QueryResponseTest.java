@@ -31,9 +31,9 @@ public class QueryResponseTest {
 
   private static final String ETAG = "etag";
   private static final Field FIELD_SCHEMA1 =
-      Field.builder("StringField", Field.Type.string())
-          .mode(Field.Mode.NULLABLE)
-          .description("FieldDescription1")
+      Field.newBuilder("StringField", Field.Type.string())
+          .setMode(Field.Mode.NULLABLE)
+          .setDescription("FieldDescription1")
           .build();
   private static final Schema SCHEMA = Schema.of(FIELD_SCHEMA1);
   private static final JobId JOB_ID = JobId.of("project", "job");
@@ -41,7 +41,13 @@ public class QueryResponseTest {
   private static final QueryResult.QueryResultsPageFetcher FETCHER =
       new QueryResult.QueryResultsPageFetcher() {
         @Override
+        @Deprecated
         public QueryResult nextPage() {
+          return getNextPage();
+        }
+
+        @Override
+        public QueryResult getNextPage() {
           return null;
         }
       };
@@ -52,25 +58,35 @@ public class QueryResponseTest {
       new BigQueryError("reason2", "location2", "message2", "debugInfo2")
   );
   private static final Boolean CACHE_HIT = false;
-  private static final QueryResult QUERY_RESULT = QueryResult.builder()
-      .schema(SCHEMA)
-      .totalRows(TOTAL_ROWS)
-      .totalBytesProcessed(TOTAL_BYTES_PROCESSED)
-      .cursor("cursor")
-      .pageFetcher(FETCHER)
-      .results(ImmutableList.<List<FieldValue>>of())
-      .cacheHit(CACHE_HIT)
+  private static final QueryResult QUERY_RESULT = QueryResult.newBuilder()
+      .setSchema(SCHEMA)
+      .setTotalRows(TOTAL_ROWS)
+      .setTotalBytesProcessed(TOTAL_BYTES_PROCESSED)
+      .setCursor("cursor")
+      .setPageFetcher(FETCHER)
+      .setResults(ImmutableList.<List<FieldValue>>of())
+      .setCacheHit(CACHE_HIT)
       .build();
-  private static final QueryResponse QUERY_RESPONSE = QueryResponse.builder()
-      .etag(ETAG)
-      .jobId(JOB_ID)
-      .jobCompleted(JOB_COMPLETE)
-      .executionErrors(ERRORS)
-      .result(QUERY_RESULT)
+  private static final QueryResponse QUERY_RESPONSE = QueryResponse.newBuilder()
+      .setEtag(ETAG)
+      .setJobId(JOB_ID)
+      .setJobCompleted(JOB_COMPLETE)
+      .setExecutionErrors(ERRORS)
+      .setResult(QUERY_RESULT)
       .build();
 
   @Test
   public void testBuilder() {
+    assertEquals(ETAG, QUERY_RESPONSE.getEtag());
+    assertEquals(QUERY_RESULT, QUERY_RESPONSE.getResult());
+    assertEquals(JOB_ID, QUERY_RESPONSE.getJobId());
+    assertEquals(JOB_COMPLETE, QUERY_RESPONSE.jobCompleted());
+    assertEquals(ERRORS, QUERY_RESPONSE.getExecutionErrors());
+    assertTrue(QUERY_RESPONSE.hasErrors());
+  }
+
+  @Test
+  public void testBuilderDeprecated() {
     assertEquals(ETAG, QUERY_RESPONSE.etag());
     assertEquals(QUERY_RESULT, QUERY_RESPONSE.result());
     assertEquals(JOB_ID, QUERY_RESPONSE.jobId());
@@ -81,12 +97,12 @@ public class QueryResponseTest {
 
   @Test
   public void testBuilderIncomplete() {
-    QueryResponse queryResponse = QueryResponse.builder().jobCompleted(false).build();
-    assertNull(queryResponse.etag());
-    assertNull(queryResponse.result());
-    assertNull(queryResponse.jobId());
+    QueryResponse queryResponse = QueryResponse.newBuilder().setJobCompleted(false).build();
+    assertNull(queryResponse.getEtag());
+    assertNull(queryResponse.getResult());
+    assertNull(queryResponse.getJobId());
     assertFalse(queryResponse.jobCompleted());
-    assertEquals(ImmutableList.<BigQueryError>of(), queryResponse.executionErrors());
+    assertEquals(ImmutableList.<BigQueryError>of(), queryResponse.getExecutionErrors());
     assertFalse(queryResponse.hasErrors());
   }
 
@@ -97,11 +113,11 @@ public class QueryResponseTest {
 
   private void compareQueryResponse(QueryResponse expected, QueryResponse value) {
     assertEquals(expected, value);
-    assertEquals(expected.etag(), value.etag());
-    assertEquals(expected.result(), value.result());
-    assertEquals(expected.jobId(), value.jobId());
+    assertEquals(expected.getEtag(), value.getEtag());
+    assertEquals(expected.getResult(), value.getResult());
+    assertEquals(expected.getJobId(), value.getJobId());
     assertEquals(expected.jobCompleted(), value.jobCompleted());
-    assertEquals(expected.executionErrors(), value.executionErrors());
+    assertEquals(expected.getExecutionErrors(), value.getExecutionErrors());
     assertEquals(expected.hasErrors(), value.hasErrors());
   }
 }

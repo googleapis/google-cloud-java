@@ -38,6 +38,21 @@ public class JobStatusTest {
 
   @Test
   public void testConstructor() {
+    assertEquals(STATE, JOB_STATUS.getState());
+    assertEquals(ERROR, JOB_STATUS.getError());
+    assertEquals(ALL_ERRORS, JOB_STATUS.getExecutionErrors());
+
+    assertEquals(STATE, JOB_STATUS_INCOMPLETE1.getState());
+    assertEquals(ERROR, JOB_STATUS_INCOMPLETE1.getError());
+    assertEquals(null, JOB_STATUS_INCOMPLETE1.getExecutionErrors());
+
+    assertEquals(STATE, JOB_STATUS_INCOMPLETE2.getState());
+    assertEquals(null, JOB_STATUS_INCOMPLETE2.getError());
+    assertEquals(null, JOB_STATUS_INCOMPLETE2.getExecutionErrors());
+  }
+
+  @Test
+  public void testConstructorDeprecated() {
     assertEquals(STATE, JOB_STATUS.state());
     assertEquals(ERROR, JOB_STATUS.error());
     assertEquals(ALL_ERRORS, JOB_STATUS.executionErrors());
@@ -60,8 +75,8 @@ public class JobStatusTest {
 
   private void compareStatus(JobStatus expected, JobStatus value) {
     assertEquals(expected, value);
-    assertEquals(expected.state(), value.state());
-    assertEquals(expected.error(), value.error());
-    assertEquals(expected.executionErrors(), value.executionErrors());
+    assertEquals(expected.getState(), value.getState());
+    assertEquals(expected.getError(), value.getError());
+    assertEquals(expected.getExecutionErrors(), value.getExecutionErrors());
   }
 }

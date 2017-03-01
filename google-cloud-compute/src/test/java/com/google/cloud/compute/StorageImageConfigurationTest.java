@@ -21,21 +21,29 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
-import org.junit.Assert;
 import org.junit.Test;
 
 public class StorageImageConfigurationTest {
 
   private static final String SOURCE = "source";
-  private static final ImageConfiguration.SourceType SOURCE_TYPE = ImageConfiguration.SourceType.RAW;
-  private static final StorageImageConfiguration.ContainerType CONTAINER_TYPE = StorageImageConfiguration.ContainerType.TAR;
+  private static final ImageConfiguration.SourceType SOURCE_TYPE =
+      ImageConfiguration.SourceType.RAW;
+  private static final StorageImageConfiguration.ContainerType CONTAINER_TYPE =
+      StorageImageConfiguration.ContainerType.TAR;
   private static final Long ARCHIVE_SIZE_BYTES = 42L;
   private static final String SHA1 = "sha1";
   private static final StorageImageConfiguration CONFIGURATION =
+      StorageImageConfiguration.newBuilder(SOURCE)
+          .setSourceType(SOURCE_TYPE)
+          .setContainerType(CONTAINER_TYPE)
+          .setArchiveSizeBytes(ARCHIVE_SIZE_BYTES)
+          .setSha1(SHA1)
+          .build();
+  private static final StorageImageConfiguration DEPRECATED_CONFIGURATION =
       StorageImageConfiguration.builder(SOURCE)
-          .sourceType(SOURCE_TYPE)
+          .setSourceType(SOURCE_TYPE)
           .containerType(CONTAINER_TYPE)
-          .archiveSizeBytes(ARCHIVE_SIZE_BYTES)
+          .setArchiveSizeBytes(ARCHIVE_SIZE_BYTES)
           .sha1(SHA1)
           .build();
 
@@ -43,9 +51,9 @@ public class StorageImageConfigurationTest {
   public void testToBuilder() {
     compareRawImageConfiguration(CONFIGURATION, CONFIGURATION.toBuilder().build());
     String newSource = "newSource";
-    StorageImageConfiguration configuration = CONFIGURATION.toBuilder().source(newSource).build();
-    assertEquals(newSource, configuration.source());
-    configuration = configuration.toBuilder().source(SOURCE).build();
+    StorageImageConfiguration configuration = CONFIGURATION.toBuilder().setSource(newSource).build();
+    assertEquals(newSource, configuration.getSource());
+    configuration = configuration.toBuilder().setSource(SOURCE).build();
     compareRawImageConfiguration(CONFIGURATION, configuration);
   }
 
@@ -57,12 +65,22 @@ public class StorageImageConfigurationTest {
 
   @Test
   public void testBuilder() {
-    assertEquals(SOURCE_TYPE, CONFIGURATION.sourceType());
-    assertEquals(SOURCE, CONFIGURATION.source());
-    assertEquals(CONTAINER_TYPE, CONFIGURATION.containerType());
-    assertEquals(ARCHIVE_SIZE_BYTES, CONFIGURATION.archiveSizeBytes());
-    assertEquals(SHA1, CONFIGURATION.sha1());
-    Assert.assertEquals(ImageConfiguration.Type.STORAGE, CONFIGURATION.type());
+    assertEquals(SOURCE_TYPE, CONFIGURATION.getSourceType());
+    assertEquals(SOURCE, CONFIGURATION.getSource());
+    assertEquals(CONTAINER_TYPE, CONFIGURATION.getContainerType());
+    assertEquals(ARCHIVE_SIZE_BYTES, CONFIGURATION.getArchiveSizeBytes());
+    assertEquals(SHA1, CONFIGURATION.getSha1());
+    assertEquals(ImageConfiguration.Type.STORAGE, CONFIGURATION.getType());
+  }
+
+  @Test
+  public void testBuilderDeprecated() {
+    assertEquals(SOURCE_TYPE, DEPRECATED_CONFIGURATION.sourceType());
+    assertEquals(SOURCE, DEPRECATED_CONFIGURATION.source());
+    assertEquals(CONTAINER_TYPE, DEPRECATED_CONFIGURATION.containerType());
+    assertEquals(ARCHIVE_SIZE_BYTES, DEPRECATED_CONFIGURATION.archiveSizeBytes());
+    assertEquals(SHA1, DEPRECATED_CONFIGURATION.sha1());
+    assertEquals(ImageConfiguration.Type.STORAGE, DEPRECATED_CONFIGURATION.type());
   }
 
   @Test
@@ -78,12 +96,12 @@ public class StorageImageConfigurationTest {
   @Test
   public void testOf() {
     StorageImageConfiguration configuration = StorageImageConfiguration.of(SOURCE);
-    Assert.assertEquals(ImageConfiguration.Type.STORAGE, configuration.type());
-    assertNull(configuration.sourceType());
-    assertEquals(SOURCE, configuration.source());
-    assertNull(configuration.containerType());
-    assertNull(configuration.archiveSizeBytes());
-    assertNull(configuration.sha1());
+    assertEquals(ImageConfiguration.Type.STORAGE, configuration.getType());
+    assertNull(configuration.getSourceType());
+    assertEquals(SOURCE, configuration.getSource());
+    assertNull(configuration.getContainerType());
+    assertNull(configuration.getArchiveSizeBytes());
+    assertNull(configuration.getSha1());
   }
 
   @Test
@@ -94,12 +112,12 @@ public class StorageImageConfigurationTest {
   private void compareRawImageConfiguration(StorageImageConfiguration expected,
       StorageImageConfiguration value) {
     assertEquals(expected, value);
-    assertEquals(expected.type(), value.type());
-    assertEquals(expected.source(), value.source());
-    assertEquals(expected.sourceType(), value.sourceType());
-    assertEquals(expected.containerType(), value.containerType());
-    assertEquals(expected.archiveSizeBytes(), value.archiveSizeBytes());
-    assertEquals(expected.sha1(), value.sha1());
+    assertEquals(expected.getType(), value.getType());
+    assertEquals(expected.getSource(), value.getSource());
+    assertEquals(expected.getSourceType(), value.getSourceType());
+    assertEquals(expected.getContainerType(), value.getContainerType());
+    assertEquals(expected.getArchiveSizeBytes(), value.getArchiveSizeBytes());
+    assertEquals(expected.getSha1(), value.getSha1());
     assertEquals(expected.hashCode(), value.hashCode());
   }
 }

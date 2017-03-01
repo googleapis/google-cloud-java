@@ -27,6 +27,7 @@ import com.google.cloud.datastore.Entity;
 import com.google.cloud.datastore.Key;
 import com.google.cloud.datastore.PathElement;
 import com.google.cloud.datastore.Transaction;
+import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Sets;
 
 import org.junit.After;
@@ -45,7 +46,7 @@ public class ITTransactionSnippets {
 
   private String registerKey(Key key) {
     registeredKeys.add(key);
-    return key.name();
+    return key.getName();
   }
 
   private String registerKey(String keyName) {
@@ -53,14 +54,14 @@ public class ITTransactionSnippets {
   }
 
   private String registerKey(String keyName, String kind) {
-    Key key = datastore.newKeyFactory().kind(kind).newKey(keyName);
+    Key key = datastore.newKeyFactory().setKind(kind).newKey(keyName);
     registeredKeys.add(key);
-    return key.name();
+    return key.getName();
   }
 
   @BeforeClass
   public static void beforeClass() {
-    datastore = DatastoreOptions.defaultInstance().service();
+    datastore = DatastoreOptions.getDefaultInstance().getService();
   }
 
   @After
@@ -69,42 +70,117 @@ public class ITTransactionSnippets {
   }
 
   @Test
-  public void testGet() {
-    Key key1 = datastore.newKeyFactory().kind("MyKind").newKey("fetch_key_1");
-    Entity entity1 = Entity.builder(key1).set("description", "fetch1").build();
-    datastore.put(entity1);
-    registerKey("fetch_key_1");
-
+  public void testEntityAddGet() {
     Transaction transaction = datastore.newTransaction();
     TransactionSnippets transactionSnippets = new TransactionSnippets(transaction);
-    assertEquals(entity1, transactionSnippets.get("fetch_key_1"));
+    transactionSnippets.addSingleEntity(registerKey("add_get_key"));
+
+    transaction = datastore.newTransaction();
+    transactionSnippets = new TransactionSnippets(transaction);
+    Entity entity = transactionSnippets.get("add_get_key");
+    assertEquals("value", entity.getString("propertyName"));
   }
 
   @Test
-  public void testGetMultiple() {
-    Key key1 = datastore.newKeyFactory().kind("MyKind").newKey("fetch_key_1");
-    Key key2 = datastore.newKeyFactory().kind("MyKind").newKey("fetch_key_2");
-    Entity entity1 = Entity.builder(key1).set("description", "fetch1").build();
-    Entity entity2 = Entity.builder(key2).set("description", "fetch2").build();
-    datastore.put(entity1, entity2);
-    registerKey("fetch_key_1");
-    registerKey("fetch_key_2");
-
+  public void testEntityPutGet() {
     Transaction transaction = datastore.newTransaction();
     TransactionSnippets transactionSnippets = new TransactionSnippets(transaction);
-    Set<Entity> entities =
-        Sets.newHashSet(transactionSnippets.getMultiple("fetch_key_1", "fetch_key_2"));
+    transactionSnippets.putSingleEntity(registerKey("put_get_key"));
+
+    transaction = datastore.newTransaction();
+    transactionSnippets = new TransactionSnippets(transaction);
+    Entity entity = transactionSnippets.get("put_get_key");
+    assertEquals("value", entity.getString("propertyName"));
+  }
+
+  @Test
+  public void testAddGetUpdateMultiple() {
+    Transaction transaction = datastore.newTransaction();
+    TransactionSnippets transactionSnippets = new TransactionSnippets(transaction);
+    transactionSnippets.multipleAddEntities(
+        registerKey("add_get_multiple_key_1"), registerKey("add_get_multiple_key_2"));
+
+    transaction = datastore.newTransaction();
+    transactionSnippets = new TransactionSnippets(transaction);
+    List<Entity> entities =
+        transactionSnippets.getMultiple("add_get_multiple_key_1", "add_get_multiple_key_2");
     assertEquals(2, entities.size());
-    assertTrue(entities.contains(entity1));
-    assertTrue(entities.contains(entity2));
+    Set<String> values = ImmutableSet.of(entities.get(0).getString("propertyName"),
+        entities.get(1).getString("propertyName"));
+    assertTrue(values.contains("value1"));
+    assertTrue(values.contains("value2"));
+
+    transaction = datastore.newTransaction();
+    transactionSnippets = new TransactionSnippets(transaction);
+    transactionSnippets.multipleUpdateEntities(
+        registerKey("add_get_multiple_key_1"), registerKey("add_get_multiple_key_2"));
+
+    transaction = datastore.newTransaction();
+    transactionSnippets = new TransactionSnippets(transaction);
+    entities = transactionSnippets.getMultiple("add_get_multiple_key_1", "add_get_multiple_key_2");
+    assertEquals(2, entities.size());
+    values = ImmutableSet.of(entities.get(0).getString("propertyName"),
+        entities.get(1).getString("propertyName"));
+    assertTrue(values.contains("value3"));
+    assertTrue(values.contains("value4"));
   }
 
   @Test
-  public void testFetchEntitiesWithKeys() {
-    Key key1 = datastore.newKeyFactory().kind("MyKind").newKey("fetch_key_1");
-    Key key2 = datastore.newKeyFactory().kind("MyKind").newKey("fetch_key_2");
-    Entity entity1 = Entity.builder(key1).set("description", "fetch1").build();
-    Entity entity2 = Entity.builder(key2).set("description", "fetch2").build();
+  public void testAddGetMultipleDeferredId() {
+    Transaction transaction = datastore.newTransaction();
+    TransactionSnippets transactionSnippets = new TransactionSnippets(transaction);
+    List<Key> keys = transactionSnippets.multipleAddEntitiesDeferredId();
+    assertEquals(2, keys.size());
+    Key key1 = keys.get(0);
+    registerKey(key1);
+    Entity entity1 = datastore.get(key1);
+    assertEquals("value1", entity1.getString("propertyName"));
+    Key key2 = keys.get(1);
+    registerKey(key2);
+    Entity entity2 = datastore.get(key2);
+    assertEquals("value2", entity2.getString("propertyName"));
+  }
+
+  @Test
+  public void testPutGetMultiple() {
+    Transaction transaction = datastore.newTransaction();
+    TransactionSnippets transactionSnippets = new TransactionSnippets(transaction);
+    transactionSnippets.multipleAddEntities(
+        registerKey("add_get_multiple_key_1"), registerKey("put_get_multiple_key_2"));
+
+    transaction = datastore.newTransaction();
+    transactionSnippets = new TransactionSnippets(transaction);
+    List<Entity> entities =
+        transactionSnippets.getMultiple("add_get_multiple_key_1", "put_get_multiple_key_2");
+    assertEquals(2, entities.size());
+    Set<String> values = ImmutableSet.of(entities.get(0).getString("propertyName"),
+        entities.get(1).getString("propertyName"));
+    assertTrue(values.contains("value1"));
+    assertTrue(values.contains("value2"));
+  }
+
+  @Test
+  public void testPutGetMultipleDeferredId() {
+    Transaction transaction = datastore.newTransaction();
+    TransactionSnippets transactionSnippets = new TransactionSnippets(transaction);
+    List<Key> keys = transactionSnippets.multiplePutEntitiesDeferredId();
+    assertEquals(2, keys.size());
+    Key key1 = keys.get(0);
+    registerKey(key1);
+    Entity entity1 = datastore.get(key1);
+    assertEquals("value1", entity1.getString("propertyName"));
+    Key key2 = keys.get(1);
+    registerKey(key2);
+    Entity entity2 = datastore.get(key2);
+    assertEquals("value2", entity2.getString("propertyName"));
+  }
+
+  @Test
+  public void testFetchDeleteEntitiesWithKeys() {
+    Key key1 = datastore.newKeyFactory().setKind("MyKind").newKey("fetch_key_1");
+    Key key2 = datastore.newKeyFactory().setKind("MyKind").newKey("fetch_key_2");
+    Entity entity1 = Entity.newBuilder(key1).set("description", "fetch1").build();
+    Entity entity2 = Entity.newBuilder(key2).set("description", "fetch2").build();
     datastore.put(entity1, entity2);
     registerKey("fetch_key_1");
     registerKey("fetch_key_2");
@@ -116,21 +192,32 @@ public class ITTransactionSnippets {
     assertEquals(2, entities.size());
     assertTrue(entities.contains(entity1));
     assertTrue(entities.contains(entity2));
+
+    transaction = datastore.newTransaction();
+    transactionSnippets = new TransactionSnippets(transaction);
+    transactionSnippets.multipleDeleteEntities("fetch_key_1", "fetch_key_2");
+
+    transaction = datastore.newTransaction();
+    transactionSnippets = new TransactionSnippets(transaction);
+    List<Entity> deletedEntities =
+        transactionSnippets.fetchEntitiesWithKeys("fetch_key_1", "fetch_key_2");
+    assertNull(deletedEntities.get(0));
+    assertNull(deletedEntities.get(1));
   }
 
   @Test
   public void testRun() {
-    Key key1 = datastore.newKeyFactory().kind("ParentKind").newKey("run_key_1");
-    Entity entity1 = Entity.builder(key1).set("description", "run1").build();
+    Key key1 = datastore.newKeyFactory().setKind("ParentKind").newKey("run_key_1");
+    Entity entity1 = Entity.newBuilder(key1).set("description", "run1").build();
     datastore.put(entity1);
     Key key2 = datastore
         .newKeyFactory()
-        .kind("MyKind")
-        .ancestors(PathElement.of("ParentKind", "run_key_1"))
+        .setKind("MyKind")
+        .addAncestor(PathElement.of("ParentKind", "run_key_1"))
         .newKey("run_key_2");
     registerKey(key1);
     registerKey(key2);
-    Entity entity2 = Entity.builder(key2).set("description", "run2").build();
+    Entity entity2 = Entity.newBuilder(key2).set("description", "run2").build();
     datastore.put(entity2);
 
     Transaction transaction = datastore.newTransaction();
@@ -164,6 +251,16 @@ public class ITTransactionSnippets {
     Transaction transaction = datastore.newTransaction();
     TransactionSnippets transactionSnippets = new TransactionSnippets(transaction);
     Key key = transactionSnippets.active();
+    Entity result = datastore.get(key);
+    assertNotNull(result);
+    datastore.delete(key);
+  }
+
+  @Test
+  public void testIsActive() {
+    Transaction transaction = datastore.newTransaction();
+    TransactionSnippets transactionSnippets = new TransactionSnippets(transaction);
+    Key key = transactionSnippets.isActive();
     Entity result = datastore.get(key);
     assertNotNull(result);
     datastore.delete(key);

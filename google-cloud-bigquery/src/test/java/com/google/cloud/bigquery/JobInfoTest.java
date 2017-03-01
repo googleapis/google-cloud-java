@@ -43,65 +43,65 @@ public class JobInfoTest {
   private static final String EMAIL = "email";
   private static final JobId JOB_ID = JobId.of("job");
   private static final JobStatus JOB_STATUS = new JobStatus(JobStatus.State.DONE);
-  private static final CopyStatistics COPY_JOB_STATISTICS = CopyStatistics.builder()
-      .creationTime(1L)
-      .endTime(3L)
-      .startTime(2L)
+  private static final CopyStatistics COPY_JOB_STATISTICS = CopyStatistics.newBuilder()
+      .setCreationTimestamp(1L)
+      .setEndTime(3L)
+      .setStartTime(2L)
       .build();
   private static final ExtractStatistics EXTRACT_JOB_STATISTICS =
-      ExtractStatistics.builder()
-          .creationTime(1L)
-          .endTime(3L)
-          .startTime(2L)
-          .destinationUriFileCounts(ImmutableList.of(42L))
+      ExtractStatistics.newBuilder()
+          .setCreationTimestamp(1L)
+          .setEndTime(3L)
+          .setStartTime(2L)
+          .setDestinationUriFileCounts(ImmutableList.of(42L))
           .build();
   private static final LoadStatistics LOAD_JOB_STATISTICS =
-      LoadStatistics.builder()
-          .creationTime(1L)
-          .endTime(3L)
-          .startTime(2L)
-          .inputFiles(42L)
-          .outputBytes(1024L)
-          .inputBytes(2048L)
-          .outputRows(24L)
+      LoadStatistics.newBuilder()
+          .setCreationTimestamp(1L)
+          .setEndTime(3L)
+          .setStartTime(2L)
+          .setInputFiles(42L)
+          .setOutputBytes(1024L)
+          .setInputBytes(2048L)
+          .setOutputRows(24L)
           .build();
   private static final QueryStatistics QUERY_JOB_STATISTICS =
-      QueryStatistics.builder()
-          .creationTime(1L)
-          .endTime(3L)
-          .startTime(2L)
-          .totalBytesProcessed(2048L)
-          .totalBytesBilled(1024L)
-          .cacheHit(false)
-          .billingTier(42)
+      QueryStatistics.newBuilder()
+          .setCreationTimestamp(1L)
+          .setEndTime(3L)
+          .setStartTime(2L)
+          .setTotalBytesProcessed(2048L)
+          .setTotalBytesBilled(1024L)
+          .setCacheHit(false)
+          .setBillingTier(42)
           .build();
   private static final TableId SOURCE_TABLE = TableId.of("dataset", "sourceTable");
   private static final TableId DESTINATION_TABLE = TableId.of("dataset", "destinationTable");
   private static final CreateDisposition CREATE_DISPOSITION = CreateDisposition.CREATE_IF_NEEDED;
   private static final WriteDisposition WRITE_DISPOSITION = WriteDisposition.WRITE_APPEND;
   private static final CopyJobConfiguration COPY_CONFIGURATION =
-      CopyJobConfiguration.builder(DESTINATION_TABLE, SOURCE_TABLE)
-          .createDisposition(CREATE_DISPOSITION)
-          .writeDisposition(WRITE_DISPOSITION)
+      CopyJobConfiguration.newBuilder(DESTINATION_TABLE, SOURCE_TABLE)
+          .setCreateDisposition(CREATE_DISPOSITION)
+          .setWriteDisposition(WRITE_DISPOSITION)
           .build();
   private static final List<String> DESTINATION_URIS = ImmutableList.of("uri1", "uri2");
   private static final TableId TABLE_ID = TableId.of("dataset", "table");
   private static final DatasetId DATASET_ID = DatasetId.of("dataset");
   private static final List<String> SOURCE_URIS = ImmutableList.of("uri1", "uri2");
   private static final Field FIELD_SCHEMA1 =
-      Field.builder("StringField", Field.Type.string())
-          .mode(Field.Mode.NULLABLE)
-          .description("FieldDescription1")
+      Field.newBuilder("StringField", Field.Type.string())
+          .setMode(Field.Mode.NULLABLE)
+          .setDescription("FieldDescription1")
           .build();
   private static final Field FIELD_SCHEMA2 =
-      Field.builder("IntegerField", Field.Type.integer())
-          .mode(Field.Mode.REPEATED)
-          .description("FieldDescription2")
+      Field.newBuilder("IntegerField", Field.Type.integer())
+          .setMode(Field.Mode.REPEATED)
+          .setDescription("FieldDescription2")
           .build();
   private static final Field FIELD_SCHEMA3 =
-      Field.builder("RecordField", Field.Type.record(FIELD_SCHEMA1, FIELD_SCHEMA2))
-          .mode(Field.Mode.REQUIRED)
-          .description("FieldDescription3")
+      Field.newBuilder("RecordField", Field.Type.record(FIELD_SCHEMA1, FIELD_SCHEMA2))
+          .setMode(Field.Mode.REQUIRED)
+          .setDescription("FieldDescription3")
           .build();
   private static final Schema TABLE_SCHEMA = Schema.of(FIELD_SCHEMA1, FIELD_SCHEMA2, FIELD_SCHEMA3);
   private static final String FIELD_DELIMITER = ",";
@@ -109,31 +109,31 @@ public class JobInfoTest {
   private static final Boolean PRINT_HEADER = true;
   private static final String COMPRESSION = "GZIP";
   private static final ExtractJobConfiguration EXTRACT_CONFIGURATION =
-      ExtractJobConfiguration.builder(TABLE_ID, DESTINATION_URIS)
-          .printHeader(PRINT_HEADER)
-          .fieldDelimiter(FIELD_DELIMITER)
-          .compression(COMPRESSION)
-          .format(FORMAT)
+      ExtractJobConfiguration.newBuilder(TABLE_ID, DESTINATION_URIS)
+          .setPrintHeader(PRINT_HEADER)
+          .setFieldDelimiter(FIELD_DELIMITER)
+          .setCompression(COMPRESSION)
+          .setFormat(FORMAT)
           .build();
   private static final List<String> PROJECTION_FIELDS = ImmutableList.of("field1", "field2");
   private static final Integer MAX_BAD_RECORDS = 42;
   private static final Boolean IGNORE_UNKNOWN_VALUES = true;
-  private static final CsvOptions CSV_OPTIONS = CsvOptions.builder().build();
+  private static final CsvOptions CSV_OPTIONS = CsvOptions.newBuilder().build();
   private static final ExternalTableDefinition TABLE_CONFIGURATION =
-      ExternalTableDefinition.builder(SOURCE_URIS, TABLE_SCHEMA, CSV_OPTIONS)
-          .compression(COMPRESSION)
-          .ignoreUnknownValues(IGNORE_UNKNOWN_VALUES)
-          .maxBadRecords(MAX_BAD_RECORDS)
+      ExternalTableDefinition.newBuilder(SOURCE_URIS, TABLE_SCHEMA, CSV_OPTIONS)
+          .setCompression(COMPRESSION)
+          .setIgnoreUnknownValues(IGNORE_UNKNOWN_VALUES)
+          .setMaxBadRecords(MAX_BAD_RECORDS)
           .build();
   private static final LoadJobConfiguration LOAD_CONFIGURATION =
-      LoadJobConfiguration.builder(TABLE_ID, SOURCE_URIS)
-          .createDisposition(CREATE_DISPOSITION)
-          .writeDisposition(WRITE_DISPOSITION)
-          .formatOptions(CSV_OPTIONS)
-          .ignoreUnknownValues(IGNORE_UNKNOWN_VALUES)
-          .maxBadRecords(MAX_BAD_RECORDS)
-          .projectionFields(PROJECTION_FIELDS)
-          .schema(TABLE_SCHEMA)
+      LoadJobConfiguration.newBuilder(TABLE_ID, SOURCE_URIS)
+          .setCreateDisposition(CREATE_DISPOSITION)
+          .setWriteDisposition(WRITE_DISPOSITION)
+          .setFormatOptions(CSV_OPTIONS)
+          .setIgnoreUnknownValues(IGNORE_UNKNOWN_VALUES)
+          .setMaxBadRecords(MAX_BAD_RECORDS)
+          .setProjectionFields(PROJECTION_FIELDS)
+          .setSchema(TABLE_SCHEMA)
           .build();
   private static final String QUERY = "BigQuery SQL";
   private static final Map<String, ExternalTableDefinition> TABLE_DEFINITIONS =
@@ -146,60 +146,99 @@ public class JobInfoTest {
   private static final List<UserDefinedFunction> USER_DEFINED_FUNCTIONS = ImmutableList.of(
       UserDefinedFunction.inline("Function"), UserDefinedFunction.fromUri("URI"));
   private static final QueryJobConfiguration QUERY_CONFIGURATION =
-      QueryJobConfiguration.builder(QUERY)
-          .useQueryCache(USE_QUERY_CACHE)
-          .tableDefinitions(TABLE_DEFINITIONS)
-          .allowLargeResults(ALLOW_LARGE_RESULTS)
-          .createDisposition(CREATE_DISPOSITION)
-          .defaultDataset(DATASET_ID)
-          .destinationTable(TABLE_ID)
-          .writeDisposition(WRITE_DISPOSITION)
-          .priority(PRIORITY)
-          .flattenResults(FLATTEN_RESULTS)
-          .userDefinedFunctions(USER_DEFINED_FUNCTIONS)
-          .dryRun(true)
+      QueryJobConfiguration.newBuilder(QUERY)
+          .setUseQueryCache(USE_QUERY_CACHE)
+          .setTableDefinitions(TABLE_DEFINITIONS)
+          .setAllowLargeResults(ALLOW_LARGE_RESULTS)
+          .setCreateDisposition(CREATE_DISPOSITION)
+          .setDefaultDataset(DATASET_ID)
+          .setDestinationTable(TABLE_ID)
+          .setWriteDisposition(WRITE_DISPOSITION)
+          .setPriority(PRIORITY)
+          .setFlattenResults(FLATTEN_RESULTS)
+          .setUserDefinedFunctions(USER_DEFINED_FUNCTIONS)
+          .setDryRun(true)
           .build();
-  private static final JobInfo COPY_JOB = JobInfo.builder(COPY_CONFIGURATION)
-      .jobId(JOB_ID)
-      .statistics(COPY_JOB_STATISTICS)
-      .jobId(JOB_ID)
-      .etag(ETAG)
-      .generatedId(GENERATED_ID)
-      .selfLink(SELF_LINK)
-      .userEmail(EMAIL)
-      .status(JOB_STATUS)
+  private static final JobInfo COPY_JOB = JobInfo.newBuilder(COPY_CONFIGURATION)
+      .setJobId(JOB_ID)
+      .setStatistics(COPY_JOB_STATISTICS)
+      .setJobId(JOB_ID)
+      .setEtag(ETAG)
+      .setGeneratedId(GENERATED_ID)
+      .setSelfLink(SELF_LINK)
+      .setUserEmail(EMAIL)
+      .setStatus(JOB_STATUS)
       .build();
-  private static final JobInfo EXTRACT_JOB = JobInfo.builder(EXTRACT_CONFIGURATION)
-      .jobId(JOB_ID)
-      .statistics(EXTRACT_JOB_STATISTICS)
-      .jobId(JOB_ID)
-      .etag(ETAG)
-      .generatedId(GENERATED_ID)
-      .selfLink(SELF_LINK)
-      .userEmail(EMAIL)
-      .status(JOB_STATUS)
+  private static final JobInfo EXTRACT_JOB = JobInfo.newBuilder(EXTRACT_CONFIGURATION)
+      .setJobId(JOB_ID)
+      .setStatistics(EXTRACT_JOB_STATISTICS)
+      .setJobId(JOB_ID)
+      .setEtag(ETAG)
+      .setGeneratedId(GENERATED_ID)
+      .setSelfLink(SELF_LINK)
+      .setUserEmail(EMAIL)
+      .setStatus(JOB_STATUS)
       .build();
-  private static final JobInfo LOAD_JOB = JobInfo.builder(LOAD_CONFIGURATION)
-      .jobId(JOB_ID)
-      .statistics(LOAD_JOB_STATISTICS)
-      .jobId(JOB_ID)
-      .etag(ETAG)
-      .generatedId(GENERATED_ID)
-      .selfLink(SELF_LINK)
-      .userEmail(EMAIL)
-      .status(JOB_STATUS)
+  private static final JobInfo LOAD_JOB = JobInfo.newBuilder(LOAD_CONFIGURATION)
+      .setJobId(JOB_ID)
+      .setStatistics(LOAD_JOB_STATISTICS)
+      .setJobId(JOB_ID)
+      .setEtag(ETAG)
+      .setGeneratedId(GENERATED_ID)
+      .setSelfLink(SELF_LINK)
+      .setUserEmail(EMAIL)
+      .setStatus(JOB_STATUS)
       .build();
-  private static final JobInfo QUERY_JOB = JobInfo.builder(QUERY_CONFIGURATION)
-      .jobId(JOB_ID)
-      .statistics(QUERY_JOB_STATISTICS)
-      .jobId(JOB_ID)
-      .etag(ETAG)
-      .generatedId(GENERATED_ID)
-      .selfLink(SELF_LINK)
-      .userEmail(EMAIL)
-      .status(JOB_STATUS)
+  private static final JobInfo QUERY_JOB = JobInfo.newBuilder(QUERY_CONFIGURATION)
+      .setJobId(JOB_ID)
+      .setStatistics(QUERY_JOB_STATISTICS)
+      .setJobId(JOB_ID)
+      .setEtag(ETAG)
+      .setGeneratedId(GENERATED_ID)
+      .setSelfLink(SELF_LINK)
+      .setUserEmail(EMAIL)
+      .setStatus(JOB_STATUS)
       .build();
-
+  private static final JobInfo DEPRECATED_COPY_JOB = JobInfo.builder(COPY_CONFIGURATION)
+      .jobId(JOB_ID)
+      .setStatistics(COPY_JOB_STATISTICS)
+      .jobId(JOB_ID)
+      .setEtag(ETAG)
+      .setGeneratedId(GENERATED_ID)
+      .setSelfLink(SELF_LINK)
+      .setUserEmail(EMAIL)
+      .setStatus(JOB_STATUS)
+      .build();
+  private static final JobInfo DEPRECATED_EXTRACT_JOB = JobInfo.builder(EXTRACT_CONFIGURATION)
+      .jobId(JOB_ID)
+      .setStatistics(EXTRACT_JOB_STATISTICS)
+      .jobId(JOB_ID)
+      .setEtag(ETAG)
+      .setGeneratedId(GENERATED_ID)
+      .setSelfLink(SELF_LINK)
+      .setUserEmail(EMAIL)
+      .setStatus(JOB_STATUS)
+      .build();
+  private static final JobInfo DEPRECATED_LOAD_JOB = JobInfo.builder(LOAD_CONFIGURATION)
+      .jobId(JOB_ID)
+      .setStatistics(LOAD_JOB_STATISTICS)
+      .jobId(JOB_ID)
+      .setEtag(ETAG)
+      .setGeneratedId(GENERATED_ID)
+      .setSelfLink(SELF_LINK)
+      .setUserEmail(EMAIL)
+      .setStatus(JOB_STATUS)
+      .build();
+  private static final JobInfo DEPRECATED_QUERY_JOB = JobInfo.builder(QUERY_CONFIGURATION)
+      .jobId(JOB_ID)
+      .setStatistics(QUERY_JOB_STATISTICS)
+      .jobId(JOB_ID)
+      .setEtag(ETAG)
+      .setGeneratedId(GENERATED_ID)
+      .setSelfLink(SELF_LINK)
+      .setUserEmail(EMAIL)
+      .setStatus(JOB_STATUS)
+      .build();
 
   @Test
   public void testToBuilder() {
@@ -208,54 +247,53 @@ public class JobInfoTest {
     compareJobInfo(LOAD_JOB, LOAD_JOB.toBuilder().build());
     compareJobInfo(QUERY_JOB, QUERY_JOB.toBuilder().build());
     JobInfo job = COPY_JOB.toBuilder()
-        .userEmail("newEmail")
+        .setUserEmail("newEmail")
         .build();
-    assertEquals("newEmail", job.userEmail());
-    job = job.toBuilder().userEmail(EMAIL).build();
+    assertEquals("newEmail", job.getUserEmail());
+    job = job.toBuilder().setUserEmail(EMAIL).build();
     compareJobInfo(COPY_JOB, job);
     job = EXTRACT_JOB.toBuilder()
-        .userEmail("newEmail")
+        .setUserEmail("newEmail")
         .build();
-    assertEquals("newEmail", job.userEmail());
-    job = job.toBuilder().userEmail(EMAIL).build();
+    assertEquals("newEmail", job.getUserEmail());
+    job = job.toBuilder().setUserEmail(EMAIL).build();
     compareJobInfo(EXTRACT_JOB, job);
     job = LOAD_JOB.toBuilder()
-        .userEmail("newEmail")
+        .setUserEmail("newEmail")
         .build();
-    assertEquals("newEmail", job.userEmail());
-    job = job.toBuilder().userEmail(EMAIL).build();
+    assertEquals("newEmail", job.getUserEmail());
+    job = job.toBuilder().setUserEmail(EMAIL).build();
     compareJobInfo(LOAD_JOB, job);
     job = QUERY_JOB.toBuilder()
-        .userEmail("newEmail")
+        .setUserEmail("newEmail")
         .build();
-    assertEquals("newEmail", job.userEmail());
-    job = job.toBuilder().userEmail(EMAIL).build();
+    assertEquals("newEmail", job.getUserEmail());
+    job = job.toBuilder().setUserEmail(EMAIL).build();
     compareJobInfo(QUERY_JOB, job);
   }
 
   @Test
   public void testOf() {
     JobInfo job = JobInfo.of(COPY_CONFIGURATION);
-    assertEquals(COPY_CONFIGURATION, job.configuration());
+    assertEquals(COPY_CONFIGURATION, job.getConfiguration());
     job = JobInfo.of(EXTRACT_CONFIGURATION);
-    assertEquals(EXTRACT_CONFIGURATION, job.configuration());
+    assertEquals(EXTRACT_CONFIGURATION, job.getConfiguration());
     job = JobInfo.of(LOAD_CONFIGURATION);
-    assertEquals(LOAD_CONFIGURATION, job.configuration());
+    assertEquals(LOAD_CONFIGURATION, job.getConfiguration());
     job = JobInfo.of(QUERY_CONFIGURATION);
-    assertEquals(QUERY_CONFIGURATION, job.configuration());
+    assertEquals(QUERY_CONFIGURATION, job.getConfiguration());
     job = JobInfo.of(JOB_ID, COPY_CONFIGURATION);
-    assertEquals(JOB_ID, job.jobId());
-    assertEquals(COPY_CONFIGURATION, job.configuration());
+    assertEquals(JOB_ID, job.getJobId());
+    assertEquals(COPY_CONFIGURATION, job.getConfiguration());
     job = JobInfo.of(JOB_ID, EXTRACT_CONFIGURATION);
-    assertEquals(JOB_ID, job.jobId());
-    assertEquals(EXTRACT_CONFIGURATION, job.configuration());
+    assertEquals(JOB_ID, job.getJobId());
+    assertEquals(EXTRACT_CONFIGURATION, job.getConfiguration());
     job = JobInfo.of(JOB_ID, LOAD_CONFIGURATION);
-    assertEquals(JOB_ID, job.jobId());
-    assertEquals(LOAD_CONFIGURATION, job.configuration());
+    assertEquals(JOB_ID, job.getJobId());
+    assertEquals(LOAD_CONFIGURATION, job.getConfiguration());
     job = JobInfo.of(JOB_ID, QUERY_CONFIGURATION);
-    assertEquals(JOB_ID, job.jobId());
-    assertEquals(QUERY_CONFIGURATION, job.configuration());
-
+    assertEquals(JOB_ID, job.getJobId());
+    assertEquals(QUERY_CONFIGURATION, job.getConfiguration());
   }
 
   @Test
@@ -266,41 +304,80 @@ public class JobInfoTest {
 
   @Test
   public void testBuilder() {
-    assertEquals(ETAG, COPY_JOB.etag());
-    assertEquals(GENERATED_ID, COPY_JOB.generatedId());
-    assertEquals(SELF_LINK, COPY_JOB.selfLink());
-    assertEquals(EMAIL, COPY_JOB.userEmail());
-    assertEquals(JOB_ID, COPY_JOB.jobId());
-    assertEquals(JOB_STATUS, COPY_JOB.status());
-    assertEquals(COPY_CONFIGURATION, COPY_JOB.configuration());
-    assertEquals(COPY_JOB_STATISTICS, COPY_JOB.statistics());
+    assertEquals(ETAG, COPY_JOB.getEtag());
+    assertEquals(GENERATED_ID, COPY_JOB.getGeneratedId());
+    assertEquals(SELF_LINK, COPY_JOB.getSelfLink());
+    assertEquals(EMAIL, COPY_JOB.getUserEmail());
+    assertEquals(JOB_ID, COPY_JOB.getJobId());
+    assertEquals(JOB_STATUS, COPY_JOB.getStatus());
+    assertEquals(COPY_CONFIGURATION, COPY_JOB.getConfiguration());
+    assertEquals(COPY_JOB_STATISTICS, COPY_JOB.getStatistics());
 
-    assertEquals(ETAG, EXTRACT_JOB.etag());
-    assertEquals(GENERATED_ID, EXTRACT_JOB.generatedId());
-    assertEquals(SELF_LINK, EXTRACT_JOB.selfLink());
-    assertEquals(EMAIL, EXTRACT_JOB.userEmail());
-    assertEquals(JOB_ID, EXTRACT_JOB.jobId());
-    assertEquals(JOB_STATUS, EXTRACT_JOB.status());
-    assertEquals(EXTRACT_CONFIGURATION, EXTRACT_JOB.configuration());
-    assertEquals(EXTRACT_JOB_STATISTICS, EXTRACT_JOB.statistics());
+    assertEquals(ETAG, EXTRACT_JOB.getEtag());
+    assertEquals(GENERATED_ID, EXTRACT_JOB.getGeneratedId());
+    assertEquals(SELF_LINK, EXTRACT_JOB.getSelfLink());
+    assertEquals(EMAIL, EXTRACT_JOB.getUserEmail());
+    assertEquals(JOB_ID, EXTRACT_JOB.getJobId());
+    assertEquals(JOB_STATUS, EXTRACT_JOB.getStatus());
+    assertEquals(EXTRACT_CONFIGURATION, EXTRACT_JOB.getConfiguration());
+    assertEquals(EXTRACT_JOB_STATISTICS, EXTRACT_JOB.getStatistics());
 
-    assertEquals(ETAG, LOAD_JOB.etag());
-    assertEquals(GENERATED_ID, LOAD_JOB.generatedId());
-    assertEquals(SELF_LINK, LOAD_JOB.selfLink());
-    assertEquals(EMAIL, LOAD_JOB.userEmail());
-    assertEquals(JOB_ID, LOAD_JOB.jobId());
-    assertEquals(JOB_STATUS, LOAD_JOB.status());
-    assertEquals(LOAD_CONFIGURATION, LOAD_JOB.configuration());
-    assertEquals(LOAD_JOB_STATISTICS, LOAD_JOB.statistics());
+    assertEquals(ETAG, LOAD_JOB.getEtag());
+    assertEquals(GENERATED_ID, LOAD_JOB.getGeneratedId());
+    assertEquals(SELF_LINK, LOAD_JOB.getSelfLink());
+    assertEquals(EMAIL, LOAD_JOB.getUserEmail());
+    assertEquals(JOB_ID, LOAD_JOB.getJobId());
+    assertEquals(JOB_STATUS, LOAD_JOB.getStatus());
+    assertEquals(LOAD_CONFIGURATION, LOAD_JOB.getConfiguration());
+    assertEquals(LOAD_JOB_STATISTICS, LOAD_JOB.getStatistics());
 
-    assertEquals(ETAG, QUERY_JOB.etag());
-    assertEquals(GENERATED_ID, QUERY_JOB.generatedId());
-    assertEquals(SELF_LINK, QUERY_JOB.selfLink());
-    assertEquals(EMAIL, QUERY_JOB.userEmail());
-    assertEquals(JOB_ID, QUERY_JOB.jobId());
-    assertEquals(JOB_STATUS, QUERY_JOB.status());
-    assertEquals(QUERY_CONFIGURATION, QUERY_JOB.configuration());
-    assertEquals(QUERY_JOB_STATISTICS, QUERY_JOB.statistics());
+    assertEquals(ETAG, QUERY_JOB.getEtag());
+    assertEquals(GENERATED_ID, QUERY_JOB.getGeneratedId());
+    assertEquals(SELF_LINK, QUERY_JOB.getSelfLink());
+    assertEquals(EMAIL, QUERY_JOB.getUserEmail());
+    assertEquals(JOB_ID, QUERY_JOB.getJobId());
+    assertEquals(JOB_STATUS, QUERY_JOB.getStatus());
+    assertEquals(QUERY_CONFIGURATION, QUERY_JOB.getConfiguration());
+    assertEquals(QUERY_JOB_STATISTICS, QUERY_JOB.getStatistics());
+  }
+
+  @Test
+  public void testBuilderDeprecated() {
+    assertEquals(ETAG, DEPRECATED_COPY_JOB.etag());
+    assertEquals(GENERATED_ID, DEPRECATED_COPY_JOB.generatedId());
+    assertEquals(SELF_LINK, DEPRECATED_COPY_JOB.selfLink());
+    assertEquals(EMAIL, DEPRECATED_COPY_JOB.userEmail());
+    assertEquals(JOB_ID, DEPRECATED_COPY_JOB.jobId());
+    assertEquals(JOB_STATUS, DEPRECATED_COPY_JOB.status());
+    assertEquals(COPY_CONFIGURATION, DEPRECATED_COPY_JOB.configuration());
+    assertEquals(COPY_JOB_STATISTICS, DEPRECATED_COPY_JOB.statistics());
+
+    assertEquals(ETAG, DEPRECATED_EXTRACT_JOB.etag());
+    assertEquals(GENERATED_ID, DEPRECATED_EXTRACT_JOB.generatedId());
+    assertEquals(SELF_LINK, DEPRECATED_EXTRACT_JOB.selfLink());
+    assertEquals(EMAIL, DEPRECATED_EXTRACT_JOB.userEmail());
+    assertEquals(JOB_ID, DEPRECATED_EXTRACT_JOB.jobId());
+    assertEquals(JOB_STATUS, DEPRECATED_EXTRACT_JOB.status());
+    assertEquals(EXTRACT_CONFIGURATION, DEPRECATED_EXTRACT_JOB.configuration());
+    assertEquals(EXTRACT_JOB_STATISTICS, DEPRECATED_EXTRACT_JOB.statistics());
+
+    assertEquals(ETAG, DEPRECATED_LOAD_JOB.etag());
+    assertEquals(GENERATED_ID, DEPRECATED_LOAD_JOB.generatedId());
+    assertEquals(SELF_LINK, DEPRECATED_LOAD_JOB.selfLink());
+    assertEquals(EMAIL, DEPRECATED_LOAD_JOB.userEmail());
+    assertEquals(JOB_ID, DEPRECATED_LOAD_JOB.jobId());
+    assertEquals(JOB_STATUS, DEPRECATED_LOAD_JOB.status());
+    assertEquals(LOAD_CONFIGURATION, DEPRECATED_LOAD_JOB.configuration());
+    assertEquals(LOAD_JOB_STATISTICS, DEPRECATED_LOAD_JOB.statistics());
+
+    assertEquals(ETAG, DEPRECATED_QUERY_JOB.etag());
+    assertEquals(GENERATED_ID, DEPRECATED_QUERY_JOB.generatedId());
+    assertEquals(SELF_LINK, DEPRECATED_QUERY_JOB.selfLink());
+    assertEquals(EMAIL, DEPRECATED_QUERY_JOB.userEmail());
+    assertEquals(JOB_ID, DEPRECATED_QUERY_JOB.jobId());
+    assertEquals(JOB_STATUS, DEPRECATED_QUERY_JOB.status());
+    assertEquals(QUERY_CONFIGURATION, DEPRECATED_QUERY_JOB.configuration());
+    assertEquals(QUERY_JOB_STATISTICS, DEPRECATED_QUERY_JOB.statistics());
   }
 
   @Test
@@ -309,71 +386,72 @@ public class JobInfoTest {
     assertNull(COPY_JOB.toPb().getConfiguration().getExtract());
     assertNull(COPY_JOB.toPb().getConfiguration().getLoad());
     assertNull(COPY_JOB.toPb().getConfiguration().getQuery());
-    assertEquals(COPY_JOB_STATISTICS, JobStatistics.fromPb(COPY_JOB.statistics().toPb()));
+    assertEquals(COPY_JOB_STATISTICS, JobStatistics.fromPb(COPY_JOB.getStatistics().toPb()));
     compareJobInfo(COPY_JOB, JobInfo.fromPb(COPY_JOB.toPb()));
-    assertTrue(JobInfo.fromPb(COPY_JOB.toPb()).configuration() instanceof CopyJobConfiguration);
+    assertTrue(JobInfo.fromPb(COPY_JOB.toPb()).getConfiguration() instanceof CopyJobConfiguration);
     assertNull(EXTRACT_JOB.toPb().getConfiguration().getCopy());
     assertNotNull(EXTRACT_JOB.toPb().getConfiguration().getExtract());
     assertNull(EXTRACT_JOB.toPb().getConfiguration().getLoad());
     assertNull(EXTRACT_JOB.toPb().getConfiguration().getQuery());
-    assertEquals(EXTRACT_JOB_STATISTICS, JobStatistics.fromPb(EXTRACT_JOB.statistics().toPb()));
+    assertEquals(EXTRACT_JOB_STATISTICS, JobStatistics.fromPb(EXTRACT_JOB.getStatistics().toPb()));
     compareJobInfo(EXTRACT_JOB, JobInfo.fromPb(EXTRACT_JOB.toPb()));
     assertTrue(
-        JobInfo.fromPb(EXTRACT_JOB.toPb()).configuration() instanceof ExtractJobConfiguration);
-    assertTrue(JobInfo.fromPb(EXTRACT_JOB.toPb()).statistics() instanceof ExtractStatistics);
+        JobInfo.fromPb(EXTRACT_JOB.toPb()).getConfiguration() instanceof ExtractJobConfiguration);
+    assertTrue(JobInfo.fromPb(EXTRACT_JOB.toPb()).getStatistics() instanceof ExtractStatistics);
     assertNull(LOAD_JOB.toPb().getConfiguration().getCopy());
     assertNull(LOAD_JOB.toPb().getConfiguration().getExtract());
     assertNotNull(LOAD_JOB.toPb().getConfiguration().getLoad());
     assertNull(LOAD_JOB.toPb().getConfiguration().getQuery());
-    assertEquals(LOAD_JOB_STATISTICS, JobStatistics.fromPb(LOAD_JOB.statistics().toPb()));
+    assertEquals(LOAD_JOB_STATISTICS, JobStatistics.fromPb(LOAD_JOB.getStatistics().toPb()));
     compareJobInfo(LOAD_JOB, JobInfo.fromPb(LOAD_JOB.toPb()));
-    assertTrue(JobInfo.fromPb(LOAD_JOB.toPb()).configuration() instanceof LoadJobConfiguration);
-    assertTrue(JobInfo.fromPb(LOAD_JOB.toPb()).statistics() instanceof LoadStatistics);
+    assertTrue(JobInfo.fromPb(LOAD_JOB.toPb()).getConfiguration() instanceof LoadJobConfiguration);
+    assertTrue(JobInfo.fromPb(LOAD_JOB.toPb()).getStatistics() instanceof LoadStatistics);
     assertNull(QUERY_JOB.toPb().getConfiguration().getCopy());
     assertNull(QUERY_JOB.toPb().getConfiguration().getExtract());
     assertNull(QUERY_JOB.toPb().getConfiguration().getLoad());
     assertNotNull(QUERY_JOB.toPb().getConfiguration().getQuery());
-    assertEquals(QUERY_JOB_STATISTICS, JobStatistics.fromPb(QUERY_JOB.statistics().toPb()));
+    assertEquals(QUERY_JOB_STATISTICS, JobStatistics.fromPb(QUERY_JOB.getStatistics().toPb()));
     compareJobInfo(QUERY_JOB, JobInfo.fromPb(QUERY_JOB.toPb()));
-    assertTrue(JobInfo.fromPb(QUERY_JOB.toPb()).configuration() instanceof QueryJobConfiguration);
-    assertTrue(JobInfo.fromPb(QUERY_JOB.toPb()).statistics() instanceof QueryStatistics);
+    assertTrue(
+        JobInfo.fromPb(QUERY_JOB.toPb()).getConfiguration() instanceof QueryJobConfiguration);
+    assertTrue(JobInfo.fromPb(QUERY_JOB.toPb()).getStatistics() instanceof QueryStatistics);
   }
 
   @Test
   public void testSetProjectId() {
     JobInfo jobInfo = COPY_JOB.setProjectId("p");
-    assertEquals("p", jobInfo.jobId().project());
-    CopyJobConfiguration copyConfiguration = jobInfo.configuration();
-    assertEquals("p", copyConfiguration.destinationTable().project());
-    for (TableId sourceTable : copyConfiguration.sourceTables()) {
-      assertEquals("p", sourceTable.project());
+    assertEquals("p", jobInfo.getJobId().getProject());
+    CopyJobConfiguration copyConfiguration = jobInfo.getConfiguration();
+    assertEquals("p", copyConfiguration.getDestinationTable().getProject());
+    for (TableId sourceTable : copyConfiguration.getSourceTables()) {
+      assertEquals("p", sourceTable.getProject());
     }
     jobInfo = EXTRACT_JOB.setProjectId("p");
-    assertEquals("p", jobInfo.jobId().project());
-    ExtractJobConfiguration extractConfiguration = jobInfo.configuration();
-    assertEquals("p", extractConfiguration.sourceTable().project());
+    assertEquals("p", jobInfo.getJobId().getProject());
+    ExtractJobConfiguration extractConfiguration = jobInfo.getConfiguration();
+    assertEquals("p", extractConfiguration.getSourceTable().getProject());
     jobInfo = LOAD_JOB.setProjectId("p");
-    assertEquals("p", jobInfo.jobId().project());
-    LoadJobConfiguration loadConfiguration = jobInfo.configuration();
-    assertEquals("p", loadConfiguration.destinationTable().project());
+    assertEquals("p", jobInfo.getJobId().getProject());
+    LoadJobConfiguration loadConfiguration = jobInfo.getConfiguration();
+    assertEquals("p", loadConfiguration.getDestinationTable().getProject());
     jobInfo = QUERY_JOB.setProjectId("p");
-    assertEquals("p", jobInfo.jobId().project());
-    QueryJobConfiguration queryConfiguration = jobInfo.configuration();
-    assertEquals("p", queryConfiguration.defaultDataset().project());
-    assertEquals("p", queryConfiguration.destinationTable().project());
+    assertEquals("p", jobInfo.getJobId().getProject());
+    QueryJobConfiguration queryConfiguration = jobInfo.getConfiguration();
+    assertEquals("p", queryConfiguration.getDefaultDataset().getProject());
+    assertEquals("p", queryConfiguration.getDestinationTable().getProject());
   }
 
   private void compareJobInfo(JobInfo expected, JobInfo value) {
     assertEquals(expected, value);
     assertEquals(expected.hashCode(), value.hashCode());
     assertEquals(expected.toString(), value.toString());
-    assertEquals(expected.etag(), value.etag());
-    assertEquals(expected.generatedId(), value.generatedId());
-    assertEquals(expected.jobId(), value.jobId());
-    assertEquals(expected.selfLink(), value.selfLink());
-    assertEquals(expected.status(), value.status());
-    assertEquals(expected.statistics(), value.statistics());
-    assertEquals(expected.userEmail(), value.userEmail());
-    assertEquals(expected.configuration(), value.configuration());
+    assertEquals(expected.getEtag(), value.getEtag());
+    assertEquals(expected.getGeneratedId(), value.getGeneratedId());
+    assertEquals(expected.getJobId(), value.getJobId());
+    assertEquals(expected.getSelfLink(), value.getSelfLink());
+    assertEquals(expected.getStatus(), value.getStatus());
+    assertEquals(expected.getStatistics(), value.getStatistics());
+    assertEquals(expected.getUserEmail(), value.getUserEmail());
+    assertEquals(expected.getConfiguration(), value.getConfiguration());
   }
 }

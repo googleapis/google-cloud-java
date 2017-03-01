@@ -24,8 +24,8 @@ import org.junit.Test;
 
 public class EntityValueTest {
 
-  private static final Key KEY = Key.builder("ds", "kind", 1).build();
-  private static final Entity CONTENT = Entity.builder(KEY).set("FOO", "BAR").build();
+  private static final Key KEY = Key.newBuilder("ds", "kind", 1).build();
+  private static final Entity CONTENT = Entity.newBuilder(KEY).set("FOO", "BAR").build();
 
   @Test
   public void testToBuilder() throws Exception {
@@ -44,6 +44,15 @@ public class EntityValueTest {
   @SuppressWarnings("deprecation")
   @Test
   public void testBuilder() throws Exception {
+    EntityValue.Builder builder = EntityValue.newBuilder(CONTENT);
+    EntityValue value = builder.setMeaning(1).setExcludeFromIndexes(true).build();
+    assertEquals(CONTENT, value.get());
+    assertEquals(1, value.getMeaning());
+    assertTrue(value.excludeFromIndexes());
+  }
+
+  @Test
+  public void testBuilderDeprecated() throws Exception {
     EntityValue.Builder builder = EntityValue.builder(CONTENT);
     EntityValue value = builder.meaning(1).excludeFromIndexes(true).build();
     assertEquals(CONTENT, value.get());

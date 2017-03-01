@@ -27,7 +27,7 @@ import com.google.api.services.cloudresourcemanager.model.Project;
 import com.google.api.services.cloudresourcemanager.model.SetIamPolicyRequest;
 import com.google.api.services.cloudresourcemanager.model.TestIamPermissionsRequest;
 import com.google.api.services.cloudresourcemanager.model.TestIamPermissionsResponse;
-import com.google.cloud.AuthCredentials;
+import com.google.cloud.NoCredentials;
 import com.google.cloud.resourcemanager.ResourceManagerOptions;
 import com.google.common.base.Joiner;
 import com.google.common.base.Objects;
@@ -675,10 +675,18 @@ public class LocalResourceManagerHelper {
   /**
    * Returns a {@link ResourceManagerOptions} instance that sets the host to use the mock server.
    */
+  @Deprecated
   public ResourceManagerOptions options() {
-    return ResourceManagerOptions.builder()
-        .host("http://localhost:" + port)
-        .authCredentials(AuthCredentials.noAuth())
+    return getOptions();
+  }
+
+  /**
+   * Returns a {@link ResourceManagerOptions} instance that sets the host to use the mock server.
+   */
+  public ResourceManagerOptions getOptions() {
+    return ResourceManagerOptions.newBuilder()
+        .setHost("http://localhost:" + port)
+        .setCredentials(NoCredentials.getInstance())
         .build();
   }
 

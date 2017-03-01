@@ -64,26 +64,50 @@ public class Sink extends SinkInfo {
     }
 
     @Override
+    @Deprecated
     public Builder name(String name) {
-      delegate.name(name);
+      return setName(name);
+    }
+
+    @Override
+    public Builder setName(String name) {
+      delegate.setName(name);
       return this;
     }
 
     @Override
+    @Deprecated
     public Builder destination(Destination destination) {
-      delegate.destination(destination);
+      return setDestination(destination);
+    }
+
+    @Override
+    public Builder setDestination(Destination destination) {
+      delegate.setDestination(destination);
       return this;
     }
 
     @Override
+    @Deprecated
     public Builder filter(String filter) {
-      delegate.filter(filter);
+      return setFilter(filter);
+    }
+
+    @Override
+    public Builder setFilter(String filter) {
+      delegate.setFilter(filter);
       return this;
     }
 
     @Override
+    @Deprecated
     public Builder versionFormat(VersionFormat versionFormat) {
-      delegate.versionFormat(versionFormat);
+      return setVersionFormat(versionFormat);
+    }
+
+    @Override
+    public Builder setVersionFormat(VersionFormat versionFormat) {
+      delegate.setVersionFormat(versionFormat);
       return this;
     }
 
@@ -96,7 +120,7 @@ public class Sink extends SinkInfo {
   Sink(Logging logging, BuilderImpl builder) {
     super(builder);
     this.logging = checkNotNull(logging);
-    options = logging.options();
+    options = logging.getOptions();
   }
 
   @Override
@@ -124,7 +148,15 @@ public class Sink extends SinkInfo {
   /**
    * Returns the sinks's {@code Logging} object used to issue requests.
    */
+  @Deprecated
   public Logging logging() {
+    return getLogging();
+  }
+
+  /**
+   * Returns the sinks's {@code Logging} object used to issue requests.
+   */
+  public Logging getLogging() {
     return logging;
   }
 
@@ -145,7 +177,7 @@ public class Sink extends SinkInfo {
    * @throws LoggingException upon failure
    */
   public boolean delete() {
-    return logging.deleteSink(name());
+    return logging.deleteSink(getName());
   }
 
   /**
@@ -168,7 +200,7 @@ public class Sink extends SinkInfo {
    * @throws LoggingException upon failure
    */
   public Future<Boolean> deleteAsync() {
-    return logging.deleteSinkAsync(name());
+    return logging.deleteSinkAsync(getName());
   }
 
   /**
@@ -186,7 +218,7 @@ public class Sink extends SinkInfo {
    * @throws LoggingException upon failure
    */
   public Sink reload() {
-    return logging.getSink(name());
+    return logging.getSink(getName());
   }
 
   /**
@@ -207,7 +239,7 @@ public class Sink extends SinkInfo {
    * @throws LoggingException upon failure
    */
   public Future<Sink> reloadAsync() {
-    return logging.getSinkAsync(name());
+    return logging.getSinkAsync(getName());
   }
 
   /**
@@ -216,7 +248,7 @@ public class Sink extends SinkInfo {
    * <p>Example of updating the sink's information.
    * <pre> {@code
    * Sink updatedSink = sink.toBuilder()
-   *     .filter("severity<=ERROR")
+   *     .setFilter("severity<=ERROR")
    *     .build()
    *     .update();
    * }</pre>
@@ -236,7 +268,7 @@ public class Sink extends SinkInfo {
    * <p>Example of asynchronously updating the sink's information.
    * <pre> {@code
    * Future<Sink> future = sink.toBuilder()
-   *     .filter("severity<=ERROR")
+   *     .setFilter("severity<=ERROR")
    *     .build()
    *     .updateAsync();
    * // ...
@@ -251,7 +283,7 @@ public class Sink extends SinkInfo {
 
   private void readObject(ObjectInputStream input) throws IOException, ClassNotFoundException {
     input.defaultReadObject();
-    this.logging = options.service();
+    this.logging = options.getService();
   }
 
   static Sink fromPb(Logging logging, LogSink sinkPb) {

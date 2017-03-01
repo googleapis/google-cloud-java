@@ -20,7 +20,6 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
-import org.junit.Assert;
 import org.junit.Test;
 
 public class DiskImageConfigurationTest {
@@ -28,12 +27,19 @@ public class DiskImageConfigurationTest {
   private static final DiskId SOURCE_DISK =  DiskId.of("project", "zone", "disk");
   private static final String SOURCE_DISK_ID = "diskId";
   private static final Long ARCHIVE_SIZE_BYTES = 42L;
-  private static final ImageConfiguration.SourceType SOURCE_TYPE = ImageConfiguration.SourceType.RAW;
+  private static final ImageConfiguration.SourceType SOURCE_TYPE =
+      ImageConfiguration.SourceType.RAW;
   private static final DiskImageConfiguration CONFIGURATION =
+      DiskImageConfiguration.newBuilder(SOURCE_DISK)
+          .setSourceDiskId(SOURCE_DISK_ID)
+          .setSourceType(SOURCE_TYPE)
+          .setArchiveSizeBytes(ARCHIVE_SIZE_BYTES)
+          .build();
+  private static final DiskImageConfiguration DEPRECATED_CONFIGURATION =
       DiskImageConfiguration.builder(SOURCE_DISK)
-          .sourceDiskId(SOURCE_DISK_ID)
-          .sourceType(SOURCE_TYPE)
-          .archiveSizeBytes(ARCHIVE_SIZE_BYTES)
+          .setSourceDiskId(SOURCE_DISK_ID)
+          .setSourceType(SOURCE_TYPE)
+          .setArchiveSizeBytes(ARCHIVE_SIZE_BYTES)
           .build();
 
   @Test
@@ -42,14 +48,14 @@ public class DiskImageConfigurationTest {
     DiskId newDisk = DiskId.of("newProject", "newZone", "newDisk");
     String newDiskId = "newDiskId";
     DiskImageConfiguration configuration = CONFIGURATION.toBuilder()
-        .sourceDisk(newDisk)
-        .sourceDiskId(newDiskId)
+        .setSourceDisk(newDisk)
+        .setSourceDiskId(newDiskId)
         .build();
-    assertEquals(newDisk, configuration.sourceDisk());
-    assertEquals(newDiskId, configuration.sourceDiskId());
+    assertEquals(newDisk, configuration.getSourceDisk());
+    assertEquals(newDiskId, configuration.getSourceDiskId());
     configuration = configuration.toBuilder()
-        .sourceDiskId(SOURCE_DISK_ID)
-        .sourceDisk(SOURCE_DISK)
+        .setSourceDiskId(SOURCE_DISK_ID)
+        .setSourceDisk(SOURCE_DISK)
         .build();
     compareDiskImageConfiguration(CONFIGURATION, configuration);
   }
@@ -62,11 +68,20 @@ public class DiskImageConfigurationTest {
 
   @Test
   public void testBuilder() {
-    assertEquals(SOURCE_TYPE, CONFIGURATION.sourceType());
-    assertEquals(SOURCE_DISK, CONFIGURATION.sourceDisk());
-    assertEquals(SOURCE_DISK_ID, CONFIGURATION.sourceDiskId());
-    assertEquals(ARCHIVE_SIZE_BYTES, CONFIGURATION.archiveSizeBytes());
-    Assert.assertEquals(ImageConfiguration.Type.DISK, CONFIGURATION.type());
+    assertEquals(SOURCE_TYPE, CONFIGURATION.getSourceType());
+    assertEquals(SOURCE_DISK, CONFIGURATION.getSourceDisk());
+    assertEquals(SOURCE_DISK_ID, CONFIGURATION.getSourceDiskId());
+    assertEquals(ARCHIVE_SIZE_BYTES, CONFIGURATION.getArchiveSizeBytes());
+    assertEquals(ImageConfiguration.Type.DISK, CONFIGURATION.getType());
+  }
+
+  @Test
+  public void testBuilderDeprecated() {
+    assertEquals(SOURCE_TYPE, DEPRECATED_CONFIGURATION.sourceType());
+    assertEquals(SOURCE_DISK, DEPRECATED_CONFIGURATION.sourceDisk());
+    assertEquals(SOURCE_DISK_ID, DEPRECATED_CONFIGURATION.sourceDiskId());
+    assertEquals(ARCHIVE_SIZE_BYTES, DEPRECATED_CONFIGURATION.archiveSizeBytes());
+    assertEquals(ImageConfiguration.Type.DISK, DEPRECATED_CONFIGURATION.type());
   }
 
   @Test
@@ -82,17 +97,17 @@ public class DiskImageConfigurationTest {
   @Test
   public void testOf() {
     DiskImageConfiguration configuration = DiskImageConfiguration.of(SOURCE_DISK);
-    Assert.assertEquals(ImageConfiguration.Type.DISK, configuration.type());
-    assertNull(configuration.sourceDiskId());
-    assertNull(configuration.sourceType());
-    assertNull(configuration.archiveSizeBytes());
-    assertEquals(SOURCE_DISK, configuration.sourceDisk());
+    assertEquals(ImageConfiguration.Type.DISK, configuration.getType());
+    assertNull(configuration.getSourceDiskId());
+    assertNull(configuration.getSourceType());
+    assertNull(configuration.getArchiveSizeBytes());
+    assertEquals(SOURCE_DISK, configuration.getSourceDisk());
   }
 
   @Test
   public void testSetProjectId() {
     DiskImageConfiguration configuration = CONFIGURATION.toBuilder()
-        .sourceDisk(DiskId.of("zone", "disk"))
+        .setSourceDisk(DiskId.of("zone", "disk"))
         .build();
     compareDiskImageConfiguration(CONFIGURATION, configuration.setProjectId("project"));
   }
@@ -100,11 +115,11 @@ public class DiskImageConfigurationTest {
   private void compareDiskImageConfiguration(DiskImageConfiguration expected,
       DiskImageConfiguration value) {
     assertEquals(expected, value);
-    assertEquals(expected.type(), value.type());
-    assertEquals(expected.archiveSizeBytes(), value.archiveSizeBytes());
-    assertEquals(expected.sourceDisk(), value.sourceDisk());
-    assertEquals(expected.sourceDiskId(), value.sourceDiskId());
-    assertEquals(expected.sourceType(), value.sourceType());
+    assertEquals(expected.getType(), value.getType());
+    assertEquals(expected.getArchiveSizeBytes(), value.getArchiveSizeBytes());
+    assertEquals(expected.getSourceDisk(), value.getSourceDisk());
+    assertEquals(expected.getSourceDiskId(), value.getSourceDiskId());
+    assertEquals(expected.getSourceType(), value.getSourceType());
     assertEquals(expected.hashCode(), value.hashCode());
   }
 }

@@ -66,43 +66,43 @@ public class AddressTest {
   private Address address;
 
   private void initializeExpectedAddress(int optionsCalls) {
-    expect(serviceMockReturnsOptions.options()).andReturn(mockOptions).times(optionsCalls);
+    expect(serviceMockReturnsOptions.getOptions()).andReturn(mockOptions).times(optionsCalls);
     replay(serviceMockReturnsOptions);
     instanceAddress = new Address.Builder(serviceMockReturnsOptions, REGION_ADDRESS_ID)
-        .address(ADDRESS)
-        .creationTimestamp(CREATION_TIMESTAMP)
-        .description(DESCRIPTION)
-        .generatedId(GENERATED_ID)
-        .status(STATUS)
-        .usage(INSTANCE_USAGE)
+        .setAddress(ADDRESS)
+        .setCreationTimestamp(CREATION_TIMESTAMP)
+        .setDescription(DESCRIPTION)
+        .setGeneratedId(GENERATED_ID)
+        .setStatus(STATUS)
+        .setUsage(INSTANCE_USAGE)
         .build();
     globalForwardingAddress = new Address.Builder(serviceMockReturnsOptions, GLOBAL_ADDRESS_ID)
-        .address(ADDRESS)
-        .creationTimestamp(CREATION_TIMESTAMP)
-        .description(DESCRIPTION)
-        .generatedId(GENERATED_ID)
-        .status(STATUS)
-        .usage(GLOBAL_FORWARDING_USAGE)
+        .setAddress(ADDRESS)
+        .setCreationTimestamp(CREATION_TIMESTAMP)
+        .setDescription(DESCRIPTION)
+        .setGeneratedId(GENERATED_ID)
+        .setStatus(STATUS)
+        .setUsage(GLOBAL_FORWARDING_USAGE)
         .build();
     regionForwardingAddress = new Address.Builder(serviceMockReturnsOptions, REGION_ADDRESS_ID)
-        .address(ADDRESS)
-        .creationTimestamp(CREATION_TIMESTAMP)
-        .description(DESCRIPTION)
-        .generatedId(GENERATED_ID)
-        .status(STATUS)
-        .usage(REGION_FORWARDING_USAGE)
+        .setAddress(ADDRESS)
+        .setCreationTimestamp(CREATION_TIMESTAMP)
+        .setDescription(DESCRIPTION)
+        .setGeneratedId(GENERATED_ID)
+        .setStatus(STATUS)
+        .setUsage(REGION_FORWARDING_USAGE)
         .build();
     compute = createStrictMock(Compute.class);
   }
 
   private void initializeAddress() {
     address = new Address.Builder(compute, REGION_ADDRESS_ID)
-        .address(ADDRESS)
-        .creationTimestamp(CREATION_TIMESTAMP)
-        .description(DESCRIPTION)
-        .generatedId(GENERATED_ID)
-        .status(STATUS)
-        .usage(REGION_FORWARDING_USAGE)
+        .setAddress(ADDRESS)
+        .setCreationTimestamp(CREATION_TIMESTAMP)
+        .setDescription(DESCRIPTION)
+        .setGeneratedId(GENERATED_ID)
+        .setStatus(STATUS)
+        .setUsage(REGION_FORWARDING_USAGE)
         .build();
   }
 
@@ -113,6 +113,64 @@ public class AddressTest {
 
   @Test
   public void testBuilder() {
+    initializeExpectedAddress(6);
+    assertEquals(ADDRESS, instanceAddress.getAddress());
+    assertEquals(CREATION_TIMESTAMP, instanceAddress.getCreationTimestamp());
+    assertEquals(DESCRIPTION, instanceAddress.getDescription());
+    assertEquals(GENERATED_ID, instanceAddress.getGeneratedId());
+    assertEquals(REGION_ADDRESS_ID, instanceAddress.getAddressId());
+    assertEquals(STATUS, instanceAddress.getStatus());
+    assertEquals(INSTANCE_USAGE, instanceAddress.getUsage());
+    assertSame(serviceMockReturnsOptions, instanceAddress.getCompute());
+    assertEquals(ADDRESS, regionForwardingAddress.getAddress());
+    assertEquals(CREATION_TIMESTAMP, regionForwardingAddress.getCreationTimestamp());
+    assertEquals(DESCRIPTION, regionForwardingAddress.getDescription());
+    assertEquals(GENERATED_ID, regionForwardingAddress.getGeneratedId());
+    assertEquals(REGION_ADDRESS_ID, regionForwardingAddress.getAddressId());
+    assertEquals(STATUS, regionForwardingAddress.getStatus());
+    assertEquals(REGION_FORWARDING_USAGE, regionForwardingAddress.getUsage());
+    assertSame(serviceMockReturnsOptions, regionForwardingAddress.getCompute());
+    assertEquals(ADDRESS, globalForwardingAddress.getAddress());
+    assertEquals(CREATION_TIMESTAMP, globalForwardingAddress.getCreationTimestamp());
+    assertEquals(DESCRIPTION, globalForwardingAddress.getDescription());
+    assertEquals(GENERATED_ID, globalForwardingAddress.getGeneratedId());
+    assertEquals(GLOBAL_ADDRESS_ID, globalForwardingAddress.getAddressId());
+    assertEquals(STATUS, globalForwardingAddress.getStatus());
+    assertEquals(GLOBAL_FORWARDING_USAGE, globalForwardingAddress.getUsage());
+    assertSame(serviceMockReturnsOptions, globalForwardingAddress.getCompute());
+    Address address = new Address.Builder(serviceMockReturnsOptions, GLOBAL_ADDRESS_ID).build();
+    assertEquals(GLOBAL_ADDRESS_ID, address.getAddressId());
+    assertSame(serviceMockReturnsOptions, address.getCompute());
+    assertNull(address.getAddress());
+    assertNull(address.getCreationTimestamp());
+    assertNull(address.getDescription());
+    assertNull(address.getGeneratedId());
+    assertNull(address.getStatus());
+    assertNull(address.getUsage());
+    address = new Address.Builder(serviceMockReturnsOptions, REGION_ADDRESS_ID).build();
+    assertEquals(REGION_ADDRESS_ID, address.getAddressId());
+    assertSame(serviceMockReturnsOptions, address.getCompute());
+    assertNull(address.getAddress());
+    assertNull(address.getCreationTimestamp());
+    assertNull(address.getDescription());
+    assertNull(address.getGeneratedId());
+    assertNull(address.getStatus());
+    assertNull(address.getUsage());
+    address = new Address.Builder(serviceMockReturnsOptions, REGION_ADDRESS_ID)
+        .setAddressId(GLOBAL_ADDRESS_ID)
+        .build();
+    assertEquals(GLOBAL_ADDRESS_ID, address.getAddressId());
+    assertSame(serviceMockReturnsOptions, address.getCompute());
+    assertNull(address.getAddress());
+    assertNull(address.getCreationTimestamp());
+    assertNull(address.getDescription());
+    assertNull(address.getGeneratedId());
+    assertNull(address.getStatus());
+    assertNull(address.getUsage());
+  }
+
+  @Test
+  public void testBuilderDeprecated() {
     initializeExpectedAddress(6);
     assertEquals(ADDRESS, instanceAddress.address());
     assertEquals(CREATION_TIMESTAMP, instanceAddress.creationTimestamp());
@@ -175,9 +233,9 @@ public class AddressTest {
     compareAddress(instanceAddress, instanceAddress.toBuilder().build());
     compareAddress(globalForwardingAddress, globalForwardingAddress.toBuilder().build());
     compareAddress(regionForwardingAddress, regionForwardingAddress.toBuilder().build());
-    Address newAddress = instanceAddress.toBuilder().description("newDescription").build();
-    assertEquals("newDescription", newAddress.description());
-    newAddress = newAddress.toBuilder().description("description").build();
+    Address newAddress = instanceAddress.toBuilder().setDescription("newDescription").build();
+    assertEquals("newDescription", newAddress.getDescription());
+    newAddress = newAddress.toBuilder().setDescription("description").build();
     compareAddress(instanceAddress, newAddress);
   }
 
@@ -199,9 +257,9 @@ public class AddressTest {
   @Test
   public void testDeleteOperation() {
     initializeExpectedAddress(4);
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     Operation operation = new Operation.Builder(serviceMockReturnsOptions)
-        .operationId(GlobalOperationId.of("project", "op"))
+        .setOperationId(GlobalOperationId.of("project", "op"))
         .build();
     expect(compute.deleteAddress(REGION_ADDRESS_ID)).andReturn(operation);
     replay(compute);
@@ -212,7 +270,7 @@ public class AddressTest {
   @Test
   public void testDeleteNull() {
     initializeExpectedAddress(3);
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     expect(compute.deleteAddress(REGION_ADDRESS_ID)).andReturn(null);
     replay(compute);
     initializeAddress();
@@ -223,7 +281,7 @@ public class AddressTest {
   public void testExists_True() throws Exception {
     initializeExpectedAddress(3);
     Compute.AddressOption[] expectedOptions = {Compute.AddressOption.fields()};
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     expect(compute.getAddress(REGION_ADDRESS_ID, expectedOptions)).andReturn(regionForwardingAddress);
     replay(compute);
     initializeAddress();
@@ -235,7 +293,7 @@ public class AddressTest {
   public void testExists_False() throws Exception {
     initializeExpectedAddress(3);
     Compute.AddressOption[] expectedOptions = {Compute.AddressOption.fields()};
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     expect(compute.getAddress(REGION_ADDRESS_ID, expectedOptions)).andReturn(null);
     replay(compute);
     initializeAddress();
@@ -246,7 +304,7 @@ public class AddressTest {
   @Test
   public void testReload() throws Exception {
     initializeExpectedAddress(5);
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     expect(compute.getAddress(REGION_ADDRESS_ID)).andReturn(regionForwardingAddress);
     replay(compute);
     initializeAddress();
@@ -258,7 +316,7 @@ public class AddressTest {
   @Test
   public void testReloadNull() throws Exception {
     initializeExpectedAddress(3);
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     expect(compute.getAddress(REGION_ADDRESS_ID)).andReturn(null);
     replay(compute);
     initializeAddress();
@@ -269,7 +327,7 @@ public class AddressTest {
   @Test
   public void testReloadWithOptions() throws Exception {
     initializeExpectedAddress(5);
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     expect(compute.getAddress(REGION_ADDRESS_ID, Compute.AddressOption.fields()))
         .andReturn(regionForwardingAddress);
     replay(compute);
@@ -281,14 +339,14 @@ public class AddressTest {
 
   private void compareAddress(Address expected, Address value) {
     assertEquals(expected, value);
-    assertEquals(expected.compute().options(), value.compute().options());
-    assertEquals(expected.address(), value.address());
-    assertEquals(expected.creationTimestamp(), value.creationTimestamp());
-    assertEquals(expected.description(), value.description());
-    assertEquals(expected.generatedId(), value.generatedId());
-    assertEquals(expected.addressId(), value.addressId());
-    assertEquals(expected.usage(), value.usage());
-    assertEquals(expected.status(), value.status());
+    assertEquals(expected.getCompute().getOptions(), value.getCompute().getOptions());
+    assertEquals(expected.getAddress(), value.getAddress());
+    assertEquals(expected.getCreationTimestamp(), value.getCreationTimestamp());
+    assertEquals(expected.getDescription(), value.getDescription());
+    assertEquals(expected.getGeneratedId(), value.getGeneratedId());
+    assertEquals(expected.getAddressId(), value.getAddressId());
+    assertEquals(expected.getUsage(), value.getUsage());
+    assertEquals(expected.getStatus(), value.getStatus());
     assertEquals(expected.hashCode(), value.hashCode());
   }
 }

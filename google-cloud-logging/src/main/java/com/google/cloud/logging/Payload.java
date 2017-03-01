@@ -71,7 +71,7 @@ public abstract class Payload<T> implements Serializable {
 
     @Override
     com.google.logging.v2.LogEntry.Builder toPb() {
-      return com.google.logging.v2.LogEntry.newBuilder().setTextPayload(data());
+      return com.google.logging.v2.LogEntry.newBuilder().setTextPayload(getData());
     }
 
     /**
@@ -100,13 +100,21 @@ public abstract class Payload<T> implements Serializable {
     /**
      * Returns the log entry's JSON data as an unmodifiable map.
      */
-    public Map<String, Object> dataAsMap() {
-      return Structs.asMap(data());
+    @Deprecated
+    public Map<String, ?> dataAsMap() {
+      return getDataAsMap();
+    }
+
+    /**
+     * Returns the log entry's JSON data as an unmodifiable map.
+     */
+    public Map<String, Object> getDataAsMap() {
+      return Structs.asMap(getData());
     }
 
     @Override
     com.google.logging.v2.LogEntry.Builder toPb() {
-      return com.google.logging.v2.LogEntry.newBuilder().setJsonPayload(data());
+      return com.google.logging.v2.LogEntry.newBuilder().setJsonPayload(getData());
     }
 
     /**
@@ -131,7 +139,7 @@ public abstract class Payload<T> implements Serializable {
      *   JsonPayload payload = JsonPayload.of(jsonContent);
      * }</pre>
      */
-    public static JsonPayload of(Map<String, Object> data) {
+    public static JsonPayload of(Map<String, ?> data) {
       return new JsonPayload(Structs.newStruct(data));
     }
 
@@ -160,7 +168,7 @@ public abstract class Payload<T> implements Serializable {
 
     @Override
     com.google.logging.v2.LogEntry.Builder toPb() {
-      return com.google.logging.v2.LogEntry.newBuilder().setProtoPayload(data());
+      return com.google.logging.v2.LogEntry.newBuilder().setProtoPayload(getData());
     }
 
     /**
@@ -184,14 +192,31 @@ public abstract class Payload<T> implements Serializable {
    * Returns the payload type. Payload can be an UTF-8 string ({@link Type#STRING}), a JSON object
    * ({@link Type#JSON}) or a protobuf object ({@link Type#PROTO}).
    */
+  @Deprecated
   public Type type() {
+    return getType();
+  }
+
+  /**
+   * Returns the payload type. Payload can be an UTF-8 string ({@link Type#STRING}), a JSON object
+   * ({@link Type#JSON}) or a protobuf object ({@link Type#PROTO}).
+   */
+  public Type getType() {
     return type;
   }
 
   /**
    * Returns the log entry payload's data.
    */
+  @Deprecated
   public T data() {
+    return getData();
+  }
+
+  /**
+   * Returns the log entry payload's data.
+   */
+  public T getData() {
     return data;
   }
 

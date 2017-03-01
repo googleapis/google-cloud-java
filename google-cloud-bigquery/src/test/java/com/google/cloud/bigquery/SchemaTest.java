@@ -27,23 +27,24 @@ import java.util.List;
 public class SchemaTest {
 
   private static final Field FIELD_SCHEMA1 =
-      Field.builder("StringField", Field.Type.string())
-          .mode(Field.Mode.NULLABLE)
-          .description("FieldDescription1")
+      Field.newBuilder("StringField", Field.Type.string())
+          .setMode(Field.Mode.NULLABLE)
+          .setDescription("FieldDescription1")
           .build();
   private static final Field FIELD_SCHEMA2 =
-      Field.builder("IntegerField", Field.Type.integer())
-          .mode(Field.Mode.REPEATED)
-          .description("FieldDescription2")
+      Field.newBuilder("IntegerField", Field.Type.integer())
+          .setMode(Field.Mode.REPEATED)
+          .setDescription("FieldDescription2")
           .build();
   private static final Field FIELD_SCHEMA3 =
-      Field.builder("RecordField", Field.Type.record(FIELD_SCHEMA1, FIELD_SCHEMA2))
-          .mode(Field.Mode.REQUIRED)
-          .description("FieldDescription3")
+      Field.newBuilder("RecordField", Field.Type.record(FIELD_SCHEMA1, FIELD_SCHEMA2))
+          .setMode(Field.Mode.REQUIRED)
+          .setDescription("FieldDescription3")
           .build();
   private static final List<Field> FIELDS = ImmutableList.of(FIELD_SCHEMA1, FIELD_SCHEMA2,
       FIELD_SCHEMA3);
-  private static final Schema TABLE_SCHEMA = Schema.builder().fields(FIELDS).build();
+  private static final Schema TABLE_SCHEMA = Schema.newBuilder().setFields(FIELDS).build();
+  private static final Schema DEPRECATED_TABLE_SCHEMA = Schema.builder().fields(FIELDS).build();
 
   @Test
   public void testToBuilder() {
@@ -52,12 +53,22 @@ public class SchemaTest {
 
   @Test
   public void testBuilder() {
-    assertEquals(FIELDS, TABLE_SCHEMA.fields());
+    assertEquals(FIELDS, TABLE_SCHEMA.getFields());
     Schema schema = TABLE_SCHEMA.toBuilder()
-        .fields(FIELD_SCHEMA1, FIELD_SCHEMA2)
+        .setFields(FIELD_SCHEMA1, FIELD_SCHEMA2)
         .addField(FIELD_SCHEMA3)
         .build();
     compareTableSchema(TABLE_SCHEMA, schema);
+  }
+
+  @Test
+  public void testBuilderDepreacated() {
+    assertEquals(FIELDS, DEPRECATED_TABLE_SCHEMA.fields());
+    Schema schema = DEPRECATED_TABLE_SCHEMA.toBuilder()
+        .fields(FIELD_SCHEMA1, FIELD_SCHEMA2)
+        .addField(FIELD_SCHEMA3)
+        .build();
+    compareTableSchema(DEPRECATED_TABLE_SCHEMA, schema);
   }
 
   @Test
@@ -72,6 +83,6 @@ public class SchemaTest {
 
   private void compareTableSchema(Schema expected, Schema value) {
     assertEquals(expected, value);
-    assertEquals(expected.fields(), value.fields());
+    assertEquals(expected.getFields(), value.getFields());
   }
 }

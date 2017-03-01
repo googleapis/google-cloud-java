@@ -51,7 +51,7 @@ public class CloudStorageFileAttributeViewTest {
 
   @Before
   public void before() {
-    CloudStorageFileSystemProvider.setStorageOptions(LocalStorageHelper.options());
+    CloudStorageFileSystemProvider.setStorageOptions(LocalStorageHelper.getOptions());
     path = Paths.get(URI.create("gs://red/water"));
   }
 

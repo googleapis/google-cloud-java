@@ -47,7 +47,7 @@ public class ITTranslateSnippets {
   @BeforeClass
   public static void beforeClass() {
     RemoteTranslateHelper helper = RemoteTranslateHelper.create();
-    translateSnippets = new TranslateSnippets(helper.options().service());
+    translateSnippets = new TranslateSnippets(helper.getOptions().getService());
   }
 
   @Test
@@ -55,8 +55,8 @@ public class ITTranslateSnippets {
     Set<String> supportedLanguages = new HashSet<>();
     List<Language> languages = translateSnippets.listSupportedLanguages();
     for (Language language : languages) {
-      supportedLanguages.add(language.code());
-      assertNotNull(language.name());
+      supportedLanguages.add(language.getCode());
+      assertNotNull(language.getName());
     }
     for (String code : LANGUAGES) {
       assertTrue(supportedLanguages.contains(code));
@@ -68,8 +68,8 @@ public class ITTranslateSnippets {
     Set<String> supportedLanguages = new HashSet<>();
     List<Language> languages = translateSnippets.listSupportedLanguagesWithTarget();
     for (Language language : languages) {
-      supportedLanguages.add(language.code());
-      assertNotNull(language.name());
+      supportedLanguages.add(language.getCode());
+      assertNotNull(language.getName());
     }
     for (String code : LANGUAGES) {
       assertTrue(supportedLanguages.contains(code));
@@ -80,48 +80,48 @@ public class ITTranslateSnippets {
   public void testDetectLanguageOfTexts() {
     List<Detection> detections = translateSnippets.detectLanguageOfTexts();
     Detection detection = detections.get(0);
-    assertEquals("en", detection.language());
+    assertEquals("en", detection.getLanguage());
     detection = detections.get(1);
-    assertEquals("es", detection.language());
+    assertEquals("es", detection.getLanguage());
   }
 
   @Test
   public void testDetectLanguageOfTextList() {
     List<Detection> detections = translateSnippets.detectLanguageOfTextList();
     Detection detection = detections.get(0);
-    assertEquals("en", detection.language());
+    assertEquals("en", detection.getLanguage());
     detection = detections.get(1);
-    assertEquals("es", detection.language());
+    assertEquals("es", detection.getLanguage());
   }
 
   @Test
   public void testDetectLanguageOfText() {
     Detection detection = translateSnippets.detectLanguageOfText();
-    assertEquals("en", detection.language());
+    assertEquals("en", detection.getLanguage());
   }
 
   @Test
   public void testTranslateTextList() {
     List<Translation> translations = translateSnippets.translateTexts();
     Translation translation = translations.get(0);
-    assertEquals("Hello, World!", translation.translatedText());
-    assertEquals("en", translation.sourceLanguage());
+    assertEquals("Hello, World!", translation.getTranslatedText());
+    assertEquals("en", translation.getSourceLanguage());
     translation = translations.get(1);
-    assertEquals("Hello World!", translation.translatedText());
-    assertEquals("es", translation.sourceLanguage());
+    assertEquals("Hello World!", translation.getTranslatedText());
+    assertEquals("es", translation.getSourceLanguage());
   }
 
   @Test
   public void testTranslateText() {
     Translation translation = translateSnippets.translateText();
-    assertEquals("Hello World!", translation.translatedText());
-    assertEquals("es", translation.sourceLanguage());
+    assertEquals("Hello World!", translation.getTranslatedText());
+    assertEquals("es", translation.getSourceLanguage());
   }
 
   @Test
   public void testTranslateTextWithOptions() {
     Translation translation = translateSnippets.translateTextWithOptions();
-    assertEquals("Hallo Welt!", translation.translatedText());
-    assertEquals("es", translation.sourceLanguage());
+    assertEquals("Hallo Welt!", translation.getTranslatedText());
+    assertEquals("es", translation.getSourceLanguage());
   }
 }

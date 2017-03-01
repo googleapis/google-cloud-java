@@ -30,6 +30,18 @@ public class SchedulingOptionsTest {
   public void testFactoryMethods() {
     assertTrue(SCHEDULING_OPTIONS.isPreemptible());
     assertFalse(SCHEDULING_OPTIONS.automaticRestart());
+    assertEquals(SchedulingOptions.Maintenance.TERMINATE, SCHEDULING_OPTIONS.getMaintenance());
+    SchedulingOptions schedulingOptions =
+        SchedulingOptions.standard(true, SchedulingOptions.Maintenance.MIGRATE);
+    assertFalse(schedulingOptions.isPreemptible());
+    assertTrue(schedulingOptions.automaticRestart());
+    assertEquals(SchedulingOptions.Maintenance.MIGRATE, schedulingOptions.getMaintenance());
+  }
+
+  @Test
+  public void testFactoryMethodsDeprecated() {
+    assertTrue(SCHEDULING_OPTIONS.isPreemptible());
+    assertFalse(SCHEDULING_OPTIONS.automaticRestart());
     assertEquals(SchedulingOptions.Maintenance.TERMINATE, SCHEDULING_OPTIONS.maintenance());
     SchedulingOptions schedulingOptions =
         SchedulingOptions.standard(true, SchedulingOptions.Maintenance.MIGRATE);
@@ -50,7 +62,7 @@ public class SchedulingOptionsTest {
   public void compareSchedulingOptions(SchedulingOptions expected, SchedulingOptions value) {
     assertEquals(expected, value);
     assertEquals(expected.isPreemptible(), value.isPreemptible());
-    assertEquals(expected.maintenance(), value.maintenance());
+    assertEquals(expected.getMaintenance(), value.getMaintenance());
     assertEquals(expected.automaticRestart(), value.automaticRestart());
     assertEquals(expected.hashCode(), value.hashCode());
   }

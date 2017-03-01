@@ -68,7 +68,18 @@ public abstract class UserDefinedFunction implements Serializable {
     this.content = content;
   }
 
+  /**
+   * Returns the type of user defined function.
+   */
+  @Deprecated
   public Type type() {
+    return getType();
+  }
+
+  /**
+   * Returns the type of user defined function.
+   */
+  public Type getType() {
     return type;
   }
 
@@ -76,7 +87,16 @@ public abstract class UserDefinedFunction implements Serializable {
    * If {@link #type()} is {@link Type#INLINE} this method returns a code blob. If {@link #type()}
    * is {@link Type#FROM_URI} the method returns a Google Cloud Storage URI (e.g. gs://bucket/path).
    */
+  @Deprecated
   public String content() {
+    return getContent();
+  }
+
+  /**
+   * If {@link #type()} is {@link Type#INLINE} this method returns a code blob. If {@link #type()}
+   * is {@link Type#FROM_URI} the method returns a Google Cloud Storage URI (e.g. gs://bucket/path).
+   */
+  public String getContent() {
     return content;
   }
 
@@ -93,13 +113,13 @@ public abstract class UserDefinedFunction implements Serializable {
 
     @Override
     public String toString() {
-      return MoreObjects.toStringHelper(this).add("inlineCode", content()).toString();
+      return MoreObjects.toStringHelper(this).add("inlineCode", getContent()).toString();
     }
 
     @Override
     public com.google.api.services.bigquery.model.UserDefinedFunctionResource toPb() {
       return new com.google.api.services.bigquery.model.UserDefinedFunctionResource()
-          .setInlineCode(content());
+          .setInlineCode(getContent());
     }
   }
 
@@ -116,13 +136,13 @@ public abstract class UserDefinedFunction implements Serializable {
 
     @Override
     public String toString() {
-      return MoreObjects.toStringHelper(this).add("functionUri", content()).toString();
+      return MoreObjects.toStringHelper(this).add("functionUri", getContent()).toString();
     }
 
     @Override
     public com.google.api.services.bigquery.model.UserDefinedFunctionResource toPb() {
       return new com.google.api.services.bigquery.model.UserDefinedFunctionResource()
-          .setResourceUri(content());
+          .setResourceUri(getContent());
     }
   }
 

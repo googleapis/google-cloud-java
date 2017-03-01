@@ -22,9 +22,9 @@
  * <p>Before the test:
  * <pre> {@code
  * RemoteBigQueryHelper bigqueryHelper = RemoteBigQueryHelper.create();
- * BigQuery bigquery = bigqueryHelper.options().service();
+ * BigQuery bigquery = bigqueryHelper.getOptions().getService();
  * String dataset = RemoteBigQueryHelper.generateDatasetName();
- * bigquery.create(DatasetInfo.builder(dataset).build());
+ * bigquery.create(DatasetInfo.newBuilder(dataset).build());
  * } </pre>
  *
  * <p>After the test:

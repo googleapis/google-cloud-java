@@ -65,7 +65,15 @@ public class BaseServiceException extends RuntimeException {
     /**
      * Returns the code associated with this exception.
      */
+    @Deprecated
     public Integer code() {
+      return getCode();
+    }
+
+    /**
+     * Returns the code associated with this exception.
+     */
+    public Integer getCode() {
       return code;
     }
 
@@ -74,22 +82,41 @@ public class BaseServiceException extends RuntimeException {
      * server. For instance, if the server returns a rate limit exceeded error, it certainly did not
      * process the request and this method will return {@code true}.
      */
+    @Deprecated
     public boolean rejected() {
+      return isRejected();
+    }
+
+    /**
+     * Returns true if the error indicates that the API call was certainly not accepted by the
+     * server. For instance, if the server returns a rate limit exceeded error, it certainly did not
+     * process the request and this method will return {@code true}.
+     */
+    public boolean isRejected() {
       return rejected;
     }
 
     /**
      * Returns the reason that caused the exception.
      */
+    @Deprecated
     public String reason() {
+      return getReason();
+    }
+
+    /**
+     * Returns the reason that caused the exception.
+     */
+    public String getReason() {
       return reason;
     }
 
     boolean isRetryable(boolean idempotent, Set<Error> retryableErrors) {
       for (Error retryableError : retryableErrors) {
-        if ((retryableError.code() == null || retryableError.code().equals(this.code()))
-            && (retryableError.reason() == null || retryableError.reason().equals(this.reason()))) {
-          return idempotent || retryableError.rejected();
+        if ((retryableError.getCode() == null || retryableError.getCode().equals(this.getCode()))
+            && (retryableError.getReason() == null
+            || retryableError.getReason().equals(this.getReason()))) {
+          return idempotent || retryableError.isRejected();
         }
       }
       return false;
@@ -179,12 +206,17 @@ public class BaseServiceException extends RuntimeException {
     this.debugInfo = null;
   }
 
+  @Deprecated
   protected Set<Error> retryableErrors() {
+    return getRetryableErrors();
+  }
+
+  protected Set<Error> getRetryableErrors() {
     return Collections.emptySet();
   }
 
   protected boolean isRetryable(boolean idempotent, Error error) {
-    return error.isRetryable(idempotent, retryableErrors());
+    return error.isRetryable(idempotent, getRetryableErrors());
   }
 
   protected boolean isRetryable(boolean idempotent, IOException exception) {
@@ -197,28 +229,60 @@ public class BaseServiceException extends RuntimeException {
   /**
    * Returns the code associated with this exception.
    */
+  @Deprecated
   public int code() {
+    return getCode();
+  }
+
+  /**
+   * Returns the code associated with this exception.
+   */
+  public int getCode() {
     return code;
   }
 
   /**
    * Returns the reason that caused the exception.
    */
+  @Deprecated
   public String reason() {
+    return getReason();
+  }
+
+  /**
+   * Returns the reason that caused the exception.
+   */
+  public String getReason() {
     return reason;
   }
 
   /**
    * Returns {@code true} when it is safe to retry the operation that caused this exception.
    */
+  @Deprecated
   public boolean retryable() {
+    return isRetryable();
+  }
+
+  /**
+   * Returns {@code true} when it is safe to retry the operation that caused this exception.
+   */
+  public boolean isRetryable() {
     return retryable;
   }
 
   /**
    * Returns {@code true} when the operation that caused this exception had no side effects.
    */
+  @Deprecated
   public boolean idempotent() {
+    return isIdempotent();
+  }
+
+  /**
+   * Returns {@code true} when the operation that caused this exception had no side effects.
+   */
+  public boolean isIdempotent() {
     return idempotent;
   }
 
@@ -226,11 +290,25 @@ public class BaseServiceException extends RuntimeException {
    * Returns the service location where the error causing the exception occurred. Returns {@code
    * null} if not available.
    */
+  @Deprecated
   public String location() {
+    return getLocation();
+  }
+
+  /**
+   * Returns the service location where the error causing the exception occurred. Returns {@code
+   * null} if not available.
+   */
+  public String getLocation() {
     return location;
   }
 
+  @Deprecated
   protected String debugInfo() {
+    return getDebugInfo();
+  }
+
+  protected String getDebugInfo() {
     return debugInfo;
   }
 

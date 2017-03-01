@@ -52,9 +52,9 @@ public class Subnetwork extends SubnetworkInfo {
     Builder(Compute compute, SubnetworkId subnetworkId, NetworkId networkId, String ipRange) {
       this.compute = compute;
       this.infoBuilder = new SubnetworkInfo.BuilderImpl(subnetworkId, networkId, ipRange);
-      this.infoBuilder.subnetworkId(subnetworkId);
-      this.infoBuilder.network(networkId);
-      this.infoBuilder.ipRange(ipRange);
+      this.infoBuilder.setSubnetworkId(subnetworkId);
+      this.infoBuilder.setNetwork(networkId);
+      this.infoBuilder.setIpRange(ipRange);
     }
 
     Builder(Subnetwork subnetwork) {
@@ -63,44 +63,64 @@ public class Subnetwork extends SubnetworkInfo {
     }
 
     @Override
-    Builder generatedId(String generatedId) {
-      infoBuilder.generatedId(generatedId);
+    Builder setGeneratedId(String generatedId) {
+      infoBuilder.setGeneratedId(generatedId);
       return this;
     }
 
     @Override
-    Builder creationTimestamp(Long creationTimestamp) {
-      infoBuilder.creationTimestamp(creationTimestamp);
+    Builder setCreationTimestamp(Long creationTimestamp) {
+      infoBuilder.setCreationTimestamp(creationTimestamp);
       return this;
+    }
+
+    @Override
+    public Builder setSubnetworkId(SubnetworkId subnetworkId) {
+      return setSubnetworkId(subnetworkId);
     }
 
     @Override
     public Builder subnetworkId(SubnetworkId subnetworkId) {
-      infoBuilder.subnetworkId(subnetworkId);
+      infoBuilder.setSubnetworkId(subnetworkId);
       return this;
+    }
+
+    @Override
+    public Builder setDescription(String description) {
+      return setDescription(description);
     }
 
     @Override
     public Builder description(String description) {
-      infoBuilder.description(description);
+      infoBuilder.setDescription(description);
       return this;
     }
 
     @Override
-    Builder gatewayAddress(String gatewayAddress) {
-      infoBuilder.gatewayAddress(gatewayAddress);
+    Builder setGatewayAddress(String gatewayAddress) {
+      infoBuilder.setGatewayAddress(gatewayAddress);
       return this;
+    }
+
+    @Override
+    public Builder setNetwork(NetworkId network) {
+      return setNetwork(network);
     }
 
     @Override
     public Builder network(NetworkId network) {
-      infoBuilder.network(network);
+      infoBuilder.setNetwork(network);
       return this;
     }
 
     @Override
+    public Builder setIpRange(String ipRange) {
+      return setIpRange(ipRange);
+    }
+
+    @Override
     public Builder ipRange(String ipRange) {
-      infoBuilder.ipRange(ipRange);
+      infoBuilder.setIpRange(ipRange);
       return this;
     }
 
@@ -113,7 +133,7 @@ public class Subnetwork extends SubnetworkInfo {
   Subnetwork(Compute compute, SubnetworkInfo.BuilderImpl infoBuilder) {
     super(infoBuilder);
     this.compute = checkNotNull(compute);
-    this.options = compute.options();
+    this.options = compute.getOptions();
   }
 
   /**
@@ -135,7 +155,7 @@ public class Subnetwork extends SubnetworkInfo {
    * @throws ComputeException upon failure
    */
   public Subnetwork reload(SubnetworkOption... options) {
-    return compute.getSubnetwork(subnetworkId(), options);
+    return compute.getSubnetwork(getSubnetworkId(), options);
   }
 
   /**
@@ -146,13 +166,21 @@ public class Subnetwork extends SubnetworkInfo {
    * @throws ComputeException upon failure
    */
   public Operation delete(OperationOption... options) {
-    return compute.deleteSubnetwork(subnetworkId(), options);
+    return compute.deleteSubnetwork(getSubnetworkId(), options);
   }
 
   /**
    * Returns the subnetwork's {@code Compute} object used to issue requests.
    */
+  @Deprecated
   public Compute compute() {
+    return getCompute();
+  }
+
+  /**
+   * Returns the subnetwork's {@code Compute} object used to issue requests.
+   */
+  public Compute getCompute() {
     return compute;
   }
 
@@ -180,7 +208,7 @@ public class Subnetwork extends SubnetworkInfo {
 
   private void readObject(ObjectInputStream input) throws IOException, ClassNotFoundException {
     input.defaultReadObject();
-    this.compute = options.service();
+    this.compute = options.getService();
   }
 
   static Subnetwork fromPb(Compute compute,

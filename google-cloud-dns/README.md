@@ -22,16 +22,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-dns</artifactId>
-  <version>0.4.0</version>
+  <version>0.9.3-alpha</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-dns:0.4.0'
+compile 'com.google.cloud:google-cloud-dns:0.9.3-alpha'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-dns" % "0.4.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-dns" % "0.9.3-alpha"
 ```
 
 Example Application
@@ -86,7 +86,7 @@ code to create your service object:
 import com.google.cloud.dns.Dns;
 import com.google.cloud.dns.DnsOptions;
 
-Dns dns = DnsOptions.defaultInstance().service();
+Dns dns = DnsOptions.getDefaultInstance().getService();
 ```
 
 For other authentication options, see the [Authentication](https://github.com/GoogleCloudPlatform/google-cloud-java#authentication) page.
@@ -125,7 +125,7 @@ ZoneInfo zoneInfo = ZoneInfo.of(zoneName, domainName, description);
 
 // Create zone in Google Cloud DNS
 Zone zone = dns.create(zoneInfo);
-System.out.printf("Zone was created and assigned ID %s.%n", zone.generatedId());
+System.out.printf("Zone was created and assigned ID %s.%n", zone.getGeneratedId());
 ```
 
 You now have an empty zone hosted in Google Cloud DNS which is ready to be populated with
@@ -142,7 +142,7 @@ and then add
 
 ```java
 // Print assigned name servers
-List<String> nameServers = zone.nameServers();
+List<String> nameServers = zone.getNameServers();
 for(String nameServer : nameServers) {
   System.out.println(nameServer);
 }
@@ -170,13 +170,13 @@ and proceed with:
 ```java
 // Prepare a www.someexampledomain.com. type A record set with ttl of 24 hours
 String ip = "12.13.14.15";
-RecordSet toCreate = RecordSet.builder("www." + zone.dnsName(), RecordSet.Type.A)
-    .ttl(24, TimeUnit.HOURS)
+RecordSet toCreate = RecordSet.newBuilder("www." + zone.dnsName(), RecordSet.Type.A)
+    .setTtl(24, TimeUnit.HOURS)
     .addRecord(ip)
     .build();
 
 // Make a change
-ChangeRequestInfo changeRequest = ChangeRequestInfo.builder().add(toCreate).build();
+ChangeRequestInfo changeRequest = ChangeRequestInfo.newBuilder().add(toCreate).build();
 
 // Build and apply the change request to our zone
 changeRequest = zone.applyChangeRequest(changeRequest);
@@ -205,7 +205,8 @@ ChangeRequestInfo.Builder changeBuilder = ChangeRequestInfo.builder().add(toCrea
 Iterator<RecordSet> recordSetIterator = zone.listRecordSets().iterateAll();
 while (recordSetIterator.hasNext()) {
   RecordSet current = recordSetIterator.next();
-  if (toCreate.name().equals(current.name()) && toCreate.type().equals(current.type())) {
+  if (toCreate.getName().equals(current.getName())
+      && toCreate.getType().equals(current.getType())) {
     changeBuilder.delete(current);
   }
 }
@@ -255,7 +256,7 @@ while (zoneIterator.hasNext()) {
 
 // List the record sets in a particular zone
 recordSetIterator = zone.listRecordSets().iterateAll();
-System.out.println(String.format("Record sets inside %s:", zone.name()));
+System.out.println(String.format("Record sets inside %s:", zone.getName()));
 while (recordSetIterator.hasNext()) {
   System.out.println(recordSetIterator.next());
 }
@@ -274,7 +275,7 @@ and then:
 
 // List the change requests applied to a particular zone
 Iterator<ChangeRequest> changeIterator = zone.listChangeRequests().iterateAll();
-System.out.println(String.format("The history of changes in %s:", zone.name()));
+System.out.println(String.format("The history of changes in %s:", zone.getName()));
 while (changeIterator.hasNext()) {
   System.out.println(changeIterator.next());
 }
@@ -287,18 +288,19 @@ First, you need to empty the zone by deleting all its records except for the def
 
 ```java
 // Make a change for deleting the record sets
-changeBuilder = ChangeRequestInfo.builder();
+changeBuilder = ChangeRequestInfo.newBuilder();
 while (recordIterator.hasNext()) {
   RecordSet current = recordIterator.next();
   // SOA and NS records cannot be deleted
-  if (!RecordSet.Type.SOA.equals(current.type()) && !RecordSet.Type.NS.equals(current.type())) {
+  if (!RecordSet.Type.SOA.equals(current.getType())
+      && !RecordSet.Type.NS.equals(current.getType())) {
     changeBuilder.delete(current);
   }
 }
 
 // Build and apply the change request to our zone if it contains records to delete
 ChangeRequestInfo changeRequest = changeBuilder.build();
-if (!changeRequest.deletions().isEmpty()) {
+if (!changeRequest.getDeletions().isEmpty()) {
   ChangeRequest pendingRequest = dns.applyChangeRequest(zoneName, changeRequest);
 
   // Wait for the change request to complete
@@ -325,7 +327,7 @@ if (result) {
 #### Complete Source Code
 
 We composed some of the aforementioned snippets into complete executable code samples. In
-[CreateZones.java](../google-cloud-examples/src/main/java/com/google/cloud/examples/dns/snippets/CreateZone.java)
+[CreateZone.java](../google-cloud-examples/src/main/java/com/google/cloud/examples/dns/snippets/CreateZone.java)
 we create a zone. In [CreateOrUpdateRecordSets.java](../google-cloud-examples/src/main/java/com/google/cloud/examples/dns/snippets/CreateOrUpdateRecordSets.java)
 we create a type A record set for a zone, or update an existing type A record set to a new IP address. We
 demonstrate how to delete a zone in [DeleteZone.java](../google-cloud-examples/src/main/java/com/google/cloud/examples/dns/snippets/DeleteZone.java).

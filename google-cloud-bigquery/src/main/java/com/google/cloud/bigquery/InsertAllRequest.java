@@ -84,14 +84,30 @@ public final class InsertAllRequest implements Serializable {
     /**
      * Returns the id associated with the row. Returns {@code null} if not set.
      */
+    @Deprecated
     public String id() {
+      return getId();
+    }
+
+    /**
+     * Returns the id associated with the row. Returns {@code null} if not set.
+     */
+    public String getId() {
       return id;
     }
 
     /**
      * Returns the actual content of the row, as a map.
      */
+    @Deprecated
     public Map<String, Object> content() {
+      return getContent();
+    }
+
+    /**
+     * Returns the actual content of the row, as a map.
+     */
+    public Map<String, Object> getContent() {
       return content;
     }
 
@@ -153,7 +169,15 @@ public final class InsertAllRequest implements Serializable {
     /**
      * Sets the destination table for rows insert request.
      */
+    @Deprecated
     public Builder table(TableId table) {
+      return setTable(table);
+    }
+
+    /**
+     * Sets the destination table for rows insert request.
+     */
+    public Builder setTable(TableId table) {
       this.table = checkNotNull(table);
       return this;
     }
@@ -161,7 +185,15 @@ public final class InsertAllRequest implements Serializable {
     /**
      * Sets the rows to insert as a list of {@link RowToInsert} objects.
      */
+    @Deprecated
     public Builder rows(Iterable<RowToInsert> rows) {
+      return setRows(rows);
+    }
+
+    /**
+     * Sets the rows to insert as a list of {@link RowToInsert} objects.
+     */
+    public Builder setRows(Iterable<RowToInsert> rows) {
       this.rows = Lists.newLinkedList(checkNotNull(rows));
       return this;
     }
@@ -228,7 +260,16 @@ public final class InsertAllRequest implements Serializable {
      * Sets whether to insert all valid rows of a request, even if invalid rows exist. If not set
      * the entire insert request will fail if it contains an invalid row.
      */
+    @Deprecated
     public Builder skipInvalidRows(boolean skipInvalidRows) {
+      return setSkipInvalidRows(skipInvalidRows);
+    }
+
+    /**
+     * Sets whether to insert all valid rows of a request, even if invalid rows exist. If not set
+     * the entire insert request will fail if it contains an invalid row.
+     */
+    public Builder setSkipInvalidRows(boolean skipInvalidRows) {
       this.skipInvalidRows = skipInvalidRows;
       return this;
     }
@@ -237,7 +278,16 @@ public final class InsertAllRequest implements Serializable {
      * Sets whether to accept rows that contain values that do not match the schema. The unknown
      * values are ignored. If not set, rows with unknown values are considered to be invalid.
      */
+    @Deprecated
     public Builder ignoreUnknownValues(boolean ignoreUnknownValues) {
+      return setIgnoreUnknownValues(ignoreUnknownValues);
+    }
+
+    /**
+     * Sets whether to accept rows that contain values that do not match the schema. The unknown
+     * values are ignored. If not set, rows with unknown values are considered to be invalid.
+     */
+    public Builder setIgnoreUnknownValues(boolean ignoreUnknownValues) {
       this.ignoreUnknownValues = ignoreUnknownValues;
       return this;
     }
@@ -260,11 +310,37 @@ public final class InsertAllRequest implements Serializable {
      *     href="https://cloud.google.com/bigquery/streaming-data-into-bigquery#template-tables">
      *     Template Tables</a>
      */
+    @Deprecated
     public Builder templateSuffix(String templateSuffix) {
+      return setTemplateSuffix(templateSuffix);
+    }
+
+    /**
+     * If specified, the destination table is treated as a base template. Rows are inserted into an
+     * instance table named "{destination}{templateSuffix}". BigQuery will manage the creation of
+     * the instance table, using the schema of the base template table. Table creation might take
+     * some time. To obtain table's information after {@link BigQuery#insertAll(InsertAllRequest)}
+     * is called use:
+     * <pre> {@code
+     * String suffixTableId = ...;
+     * TableInfo suffixTable = bigquery.getTable(DATASET, suffixTableId);
+     * while (suffixTable == null) {
+     *   Thread.sleep(1000L);
+     *   suffixTable = bigquery.getTable(DATASET, suffixTableId);
+     * }}</pre>
+     *
+     * @see <a
+     *     href="https://cloud.google.com/bigquery/streaming-data-into-bigquery#template-tables">
+     *     Template Tables</a>
+     */
+    public Builder setTemplateSuffix(String templateSuffix) {
       this.templateSuffix = templateSuffix;
       return this;
     }
 
+    /**
+     * Creates an {@code InsertAllRequest} object.
+     */
     public InsertAllRequest build() {
       return new InsertAllRequest(this);
     }
@@ -281,14 +357,30 @@ public final class InsertAllRequest implements Serializable {
   /**
    * Returns the destination table for rows insert request.
    */
+  @Deprecated
   public TableId table() {
+    return getTable();
+  }
+
+  /**
+   * Returns the destination table for rows insert request.
+   */
+  public TableId getTable() {
     return table;
   }
 
   /**
    * Returns the rows to be inserted.
    */
+  @Deprecated
   public List<RowToInsert> rows() {
+    return getRows();
+  }
+
+  /**
+   * Returns the rows to be inserted.
+   */
+  public List<RowToInsert> getRows() {
     return rows;
   }
 
@@ -326,112 +418,205 @@ public final class InsertAllRequest implements Serializable {
    *     href="https://cloud.google.com/bigquery/streaming-data-into-bigquery#template-tables">
    *     Template Tables</a>
    */
+  @Deprecated
   public String templateSuffix() {
+    return getTemplateSuffix();
+  }
+
+  /**
+   * If specified, the destination table is treated as a base template. Rows are inserted into an
+   * instance table named "{destination}{templateSuffix}". BigQuery will manage the creation of the
+   * instance table, using the schema of the base template table. Table creation might take some
+   * time. To obtain table's information after {@link BigQuery#insertAll(InsertAllRequest)} is
+   * called use:
+   * <pre> {@code
+   * String suffixTableId = ...;
+   * TableInfo suffixTable = bigquery.getTable(DATASET, suffixTableId);
+   * while (suffixTable == null) {
+   *   Thread.sleep(1000L);
+   *   suffixTable = bigquery.getTable(DATASET, suffixTableId);
+   * }}</pre>
+   *
+   * @see <a
+   *     href="https://cloud.google.com/bigquery/streaming-data-into-bigquery#template-tables">
+   *     Template Tables</a>
+   */
+  public String getTemplateSuffix() {
     return templateSuffix;
   }
 
   /**
    * Returns a builder for an {@code InsertAllRequest} object given the destination table.
    */
+  @Deprecated
   public static Builder builder(TableId table) {
-    return new Builder().table(table);
-  }
-
-  /**
-   * Returns a builder for an {@code InsertAllRequest} object given the destination table and the
-   * rows to insert.
-   */
-  public static Builder builder(TableId table, Iterable<RowToInsert> rows) {
-    return builder(table).rows(rows);
-  }
-
-  /**
-   * Returns a builder for an {@code InsertAllRequest} object given the destination table and the
-   * rows to insert.
-   */
-  public static Builder builder(TableId table, RowToInsert... rows) {
-    return builder(table, ImmutableList.copyOf(rows));
+    return newBuilder(table);
   }
 
   /**
    * Returns a builder for an {@code InsertAllRequest} object given the destination table.
    */
+  public static Builder newBuilder(TableId table) {
+    return new Builder().setTable(table);
+  }
+
+  /**
+   * Returns a builder for an {@code InsertAllRequest} object given the destination table and the
+   * rows to insert.
+   */
+  @Deprecated
+  public static Builder builder(TableId table, Iterable<RowToInsert> rows) {
+    return newBuilder(table, rows);
+  }
+
+  /**
+   * Returns a builder for an {@code InsertAllRequest} object given the destination table and the
+   * rows to insert.
+   */
+  public static Builder newBuilder(TableId table, Iterable<RowToInsert> rows) {
+    return newBuilder(table).setRows(rows);
+  }
+
+  /**
+   * Returns a builder for an {@code InsertAllRequest} object given the destination table and the
+   * rows to insert.
+   */
+  @Deprecated
+  public static Builder builder(TableId table, RowToInsert... rows) {
+    return newBuilder(table, rows);
+  }
+
+  /**
+   * Returns a builder for an {@code InsertAllRequest} object given the destination table and the
+   * rows to insert.
+   */
+  public static Builder newBuilder(TableId table, RowToInsert... rows) {
+    return newBuilder(table, ImmutableList.copyOf(rows));
+  }
+
+  /**
+   * Returns a builder for an {@code InsertAllRequest} object given the destination table.
+   */
+  @Deprecated
   public static Builder builder(String datasetId, String tableId) {
-    return new Builder().table(TableId.of(datasetId, tableId));
+    return newBuilder(datasetId, tableId);
+  }
+
+  /**
+   * Returns a builder for an {@code InsertAllRequest} object given the destination table.
+   */
+  public static Builder newBuilder(String datasetId, String tableId) {
+    return new Builder().setTable(TableId.of(datasetId, tableId));
   }
 
   /**
    * Returns a builder for an {@code InsertAllRequest} object given the destination table and the
    * rows to insert.
    */
+  @Deprecated
   public static Builder builder(String datasetId, String tableId, Iterable<RowToInsert> rows) {
-    return builder(TableId.of(datasetId, tableId), rows);
+    return newBuilder(datasetId, tableId, rows);
   }
 
   /**
    * Returns a builder for an {@code InsertAllRequest} object given the destination table and the
    * rows to insert.
    */
+  public static Builder newBuilder(String datasetId, String tableId, Iterable<RowToInsert> rows) {
+    return newBuilder(TableId.of(datasetId, tableId), rows);
+  }
+
+  /**
+   * Returns a builder for an {@code InsertAllRequest} object given the destination table and the
+   * rows to insert.
+   */
+  @Deprecated
   public static Builder builder(String datasetId, String tableId, RowToInsert... rows) {
-    return builder(TableId.of(datasetId, tableId), rows);
+    return newBuilder(datasetId, tableId, rows);
   }
 
   /**
    * Returns a builder for an {@code InsertAllRequest} object given the destination table and the
    * rows to insert.
    */
+  public static Builder newBuilder(String datasetId, String tableId, RowToInsert... rows) {
+    return newBuilder(TableId.of(datasetId, tableId), rows);
+  }
+
+  /**
+   * Returns a builder for an {@code InsertAllRequest} object given the destination table and the
+   * rows to insert.
+   */
+  @Deprecated
   public static Builder builder(TableInfo tableInfo, Iterable<RowToInsert> rows) {
-    return builder(tableInfo.tableId(), rows);
+    return newBuilder(tableInfo, rows);
   }
 
   /**
    * Returns a builder for an {@code InsertAllRequest} object given the destination table and the
    * rows to insert.
    */
+  public static Builder newBuilder(TableInfo tableInfo, Iterable<RowToInsert> rows) {
+    return newBuilder(tableInfo.getTableId(), rows);
+  }
+
+  /**
+   * Returns a builder for an {@code InsertAllRequest} object given the destination table and the
+   * rows to insert.
+   */
+  @Deprecated
   public static Builder builder(TableInfo tableInfo, RowToInsert... rows) {
-    return builder(tableInfo.tableId(), rows);
+    return newBuilder(tableInfo, rows);
+  }
+
+  /**
+   * Returns a builder for an {@code InsertAllRequest} object given the destination table and the
+   * rows to insert.
+   */
+  public static Builder newBuilder(TableInfo tableInfo, RowToInsert... rows) {
+    return newBuilder(tableInfo.getTableId(), rows);
   }
 
   /**
    * Returns a {@code InsertAllRequest} object given the destination table and the rows to insert.
    */
   public static InsertAllRequest of(TableId tableId, Iterable<RowToInsert> rows) {
-    return builder(tableId, rows).build();
+    return newBuilder(tableId, rows).build();
   }
 
   /**
    * Returns a {@code InsertAllRequest} object given the destination table and the rows to insert.
    */
   public static InsertAllRequest of(TableId tableId, RowToInsert... rows) {
-    return builder(tableId, rows).build();
+    return newBuilder(tableId, rows).build();
   }
 
   /**
    * Returns a {@code InsertAllRequest} object given the destination table and the rows to insert.
    */
   public static InsertAllRequest of(String datasetId, String tableId, Iterable<RowToInsert> rows) {
-    return builder(datasetId, tableId, rows).build();
+    return newBuilder(datasetId, tableId, rows).build();
   }
 
   /**
    * Returns a {@code InsertAllRequest} object given the destination table and the rows to insert.
    */
   public static InsertAllRequest of(String datasetId, String tableId, RowToInsert... rows) {
-    return builder(datasetId, tableId, rows).build();
+    return newBuilder(datasetId, tableId, rows).build();
   }
 
   /**
    * Returns a {@code InsertAllRequest} object given the destination table and the rows to insert.
    */
   public static InsertAllRequest of(TableInfo tableInfo, Iterable<RowToInsert> rows) {
-    return builder(tableInfo.tableId(), rows).build();
+    return newBuilder(tableInfo.getTableId(), rows).build();
   }
 
   /**
    * Returns a {@code InsertAllRequest} object given the destination table and the rows to insert.
    */
   public static InsertAllRequest of(TableInfo tableInfo, RowToInsert... rows) {
-    return builder(tableInfo.tableId(), rows).build();
+    return newBuilder(tableInfo.getTableId(), rows).build();
   }
 
   @Override

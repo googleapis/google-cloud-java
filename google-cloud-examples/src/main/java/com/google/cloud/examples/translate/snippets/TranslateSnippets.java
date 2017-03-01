@@ -46,7 +46,7 @@ public class TranslateSnippets {
 
   /**
    * Example of listing supported languages, localized according to
-   * {@link TranslateOptions#targetLanguage()}.
+   * {@link TranslateOptions#getTargetLanguage()}.
    */
   // [TARGET listSupportedLanguages(LanguageListOption...)]
   public List<Language> listSupportedLanguages() {

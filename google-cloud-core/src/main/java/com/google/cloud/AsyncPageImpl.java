@@ -41,7 +41,10 @@ public class AsyncPageImpl<T> extends PageImpl<T> implements AsyncPage<T> {
    * @param <T> the value type that the page holds
    */
   public interface NextPageFetcher<T> extends Serializable {
+    @Deprecated
     Future<AsyncPage<T>> nextPage();
+
+    Future<AsyncPage<T>> getNextPage();
   }
 
   private static class SyncNextPageFetcher<T> implements PageImpl.NextPageFetcher<T> {
@@ -56,9 +59,14 @@ public class AsyncPageImpl<T> extends PageImpl<T> implements AsyncPage<T> {
 
     @Override
     public Page<T> nextPage() {
+      return getNextPage();
+    }
+
+    @Override
+    public Page<T> getNextPage() {
       try {
         return asyncPageFetcher != null
-            ? Uninterruptibles.getUninterruptibly(asyncPageFetcher.nextPage()) : null;
+            ? Uninterruptibles.getUninterruptibly(asyncPageFetcher.getNextPage()) : null;
       } catch (ExecutionException ex) {
         throw Throwables.propagate(ex.getCause());
       }
@@ -74,10 +82,16 @@ public class AsyncPageImpl<T> extends PageImpl<T> implements AsyncPage<T> {
   }
 
   @Override
+  @Deprecated
   public Future<AsyncPage<T>> nextPageAsync() {
-    if (nextPageCursor() == null || asyncPageFetcher == null) {
+    return getNextPageAsync();
+  }
+
+  @Override
+  public Future<AsyncPage<T>> getNextPageAsync() {
+    if (getNextPageCursor() == null || asyncPageFetcher == null) {
       return Futures.immediateCheckedFuture(null);
     }
-    return asyncPageFetcher.nextPage();
+    return asyncPageFetcher.getNextPage();
   }
 }

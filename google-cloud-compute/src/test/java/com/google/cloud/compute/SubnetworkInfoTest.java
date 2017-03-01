@@ -32,20 +32,27 @@ public class SubnetworkInfoTest {
   private static final NetworkId NETWORK_ID = NetworkId.of("project", "network");
   private static final String IP_RANGE = "192.168.0.0/16";
   private static final SubnetworkInfo SUBNETWORK_INFO =
+      SubnetworkInfo.newBuilder(SUBNETWORK_ID, NETWORK_ID, IP_RANGE)
+          .setGeneratedId(GENERATED_ID)
+          .setCreationTimestamp(CREATION_TIMESTAMP)
+          .setDescription(DESCRIPTION)
+          .setGatewayAddress(GATEWAY_ADDRESS)
+          .build();
+  private static final SubnetworkInfo DEPRECATED_SUBNETWORK_INFO =
       SubnetworkInfo.builder(SUBNETWORK_ID, NETWORK_ID, IP_RANGE)
-          .generatedId(GENERATED_ID)
-          .creationTimestamp(CREATION_TIMESTAMP)
+          .setGeneratedId(GENERATED_ID)
+          .setCreationTimestamp(CREATION_TIMESTAMP)
           .description(DESCRIPTION)
-          .gatewayAddress(GATEWAY_ADDRESS)
+          .setGatewayAddress(GATEWAY_ADDRESS)
           .build();
 
   @Test
   public void testToBuilder() {
     compareSubnetworkInfo(SUBNETWORK_INFO, SUBNETWORK_INFO.toBuilder().build());
     SubnetworkInfo subnetworkInfo =
-        SUBNETWORK_INFO.toBuilder().description("newDescription").build();
-    assertEquals("newDescription", subnetworkInfo.description());
-    subnetworkInfo = subnetworkInfo.toBuilder().description("description").build();
+        SUBNETWORK_INFO.toBuilder().setDescription("newDescription").build();
+    assertEquals("newDescription", subnetworkInfo.getDescription());
+    subnetworkInfo = subnetworkInfo.toBuilder().setDescription("description").build();
     compareSubnetworkInfo(SUBNETWORK_INFO, subnetworkInfo);
   }
 
@@ -57,25 +64,36 @@ public class SubnetworkInfoTest {
 
   @Test
   public void testBuilder() {
-    assertEquals(GENERATED_ID, SUBNETWORK_INFO.generatedId());
-    assertEquals(SUBNETWORK_ID, SUBNETWORK_INFO.subnetworkId());
-    assertEquals(CREATION_TIMESTAMP, SUBNETWORK_INFO.creationTimestamp());
-    assertEquals(DESCRIPTION, SUBNETWORK_INFO.description());
-    assertEquals(GATEWAY_ADDRESS, SUBNETWORK_INFO.gatewayAddress());
-    assertEquals(NETWORK_ID, SUBNETWORK_INFO.network());
-    assertEquals(IP_RANGE, SUBNETWORK_INFO.ipRange());
+    assertEquals(GENERATED_ID, SUBNETWORK_INFO.getGeneratedId());
+    assertEquals(SUBNETWORK_ID, SUBNETWORK_INFO.getSubnetworkId());
+    assertEquals(CREATION_TIMESTAMP, SUBNETWORK_INFO.getCreationTimestamp());
+    assertEquals(DESCRIPTION, SUBNETWORK_INFO.getDescription());
+    assertEquals(GATEWAY_ADDRESS, SUBNETWORK_INFO.getGatewayAddress());
+    assertEquals(NETWORK_ID, SUBNETWORK_INFO.getNetwork());
+    assertEquals(IP_RANGE, SUBNETWORK_INFO.getIpRange());
+  }
+
+  @Test
+  public void testBuilderDeprecated() {
+    assertEquals(GENERATED_ID, DEPRECATED_SUBNETWORK_INFO.generatedId());
+    assertEquals(SUBNETWORK_ID, DEPRECATED_SUBNETWORK_INFO.subnetworkId());
+    assertEquals(CREATION_TIMESTAMP, DEPRECATED_SUBNETWORK_INFO.creationTimestamp());
+    assertEquals(DESCRIPTION, DEPRECATED_SUBNETWORK_INFO.description());
+    assertEquals(GATEWAY_ADDRESS, DEPRECATED_SUBNETWORK_INFO.gatewayAddress());
+    assertEquals(NETWORK_ID, DEPRECATED_SUBNETWORK_INFO.network());
+    assertEquals(IP_RANGE, DEPRECATED_SUBNETWORK_INFO.ipRange());
   }
 
   @Test
   public void testOf() {
     SubnetworkInfo subnetworkInfo = SubnetworkInfo.of(SUBNETWORK_ID, NETWORK_ID, IP_RANGE);
-    assertNull(subnetworkInfo.generatedId());
-    assertEquals(SUBNETWORK_ID, subnetworkInfo.subnetworkId());
-    assertNull(subnetworkInfo.creationTimestamp());
-    assertNull(subnetworkInfo.description());
-    assertNull(subnetworkInfo.gatewayAddress());
-    assertEquals(NETWORK_ID, subnetworkInfo.network());
-    assertEquals(IP_RANGE, subnetworkInfo.ipRange());
+    assertNull(subnetworkInfo.getGeneratedId());
+    assertEquals(SUBNETWORK_ID, subnetworkInfo.getSubnetworkId());
+    assertNull(subnetworkInfo.getCreationTimestamp());
+    assertNull(subnetworkInfo.getDescription());
+    assertNull(subnetworkInfo.getGatewayAddress());
+    assertEquals(NETWORK_ID, subnetworkInfo.getNetwork());
+    assertEquals(IP_RANGE, subnetworkInfo.getIpRange());
   }
 
   @Test
@@ -88,21 +106,21 @@ public class SubnetworkInfoTest {
   @Test
   public void testSetProjectId() {
     SubnetworkInfo subnetworkInfo = SUBNETWORK_INFO.toBuilder()
-        .subnetworkId(SubnetworkId.of("region", "subnetwork"))
-        .network(NetworkId.of("network"))
+        .setSubnetworkId(SubnetworkId.of("region", "subnetwork"))
+        .setNetwork(NetworkId.of("network"))
         .build();
     compareSubnetworkInfo(SUBNETWORK_INFO, subnetworkInfo.setProjectId("project"));
   }
 
   public void compareSubnetworkInfo(SubnetworkInfo expected, SubnetworkInfo value) {
     assertEquals(expected, value);
-    assertEquals(expected.generatedId(), value.generatedId());
-    assertEquals(expected.subnetworkId(), value.subnetworkId());
-    assertEquals(expected.creationTimestamp(), value.creationTimestamp());
-    assertEquals(expected.description(), value.description());
-    assertEquals(expected.gatewayAddress(), value.gatewayAddress());
-    assertEquals(expected.network(), value.network());
-    assertEquals(expected.ipRange(), value.ipRange());
+    assertEquals(expected.getGeneratedId(), value.getGeneratedId());
+    assertEquals(expected.getSubnetworkId(), value.getSubnetworkId());
+    assertEquals(expected.getCreationTimestamp(), value.getCreationTimestamp());
+    assertEquals(expected.getDescription(), value.getDescription());
+    assertEquals(expected.getGatewayAddress(), value.getGatewayAddress());
+    assertEquals(expected.getNetwork(), value.getNetwork());
+    assertEquals(expected.getIpRange(), value.getIpRange());
     assertEquals(expected.hashCode(), value.hashCode());
   }
 }

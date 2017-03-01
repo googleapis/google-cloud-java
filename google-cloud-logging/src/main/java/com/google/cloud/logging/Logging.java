@@ -196,7 +196,7 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    * Creates a new sink.
    *
    * <p>Example of creating a sink to export logs to a BigQuery dataset (in the
-   * {@link LoggingOptions#projectId()} project).
+   * {@link LoggingOptions#getProjectId()} project).
    * <pre> {@code
    * String sinkName = "my_sink_name";
    * String datasetName = "my_dataset";
@@ -214,7 +214,7 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    * result. {@link Future#get()} returns the created sink.
    *
    * <p>Example of asynchronously creating a sink to export logs to a BigQuery dataset (in the
-   * {@link LoggingOptions#projectId()} project).
+   * {@link LoggingOptions#getProjectId()} project).
    * <pre> {@code
    * String sinkName = "my_sink_name";
    * String datasetName = "my_dataset";
@@ -234,9 +234,9 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    * <pre> {@code
    * String sinkName = "my_sink_name";
    * String datasetName = "my_dataset";
-   * SinkInfo sinkInfo = SinkInfo.builder(sinkName, DatasetDestination.of(datasetName))
-   *     .versionFormat(SinkInfo.VersionFormat.V2)
-   *     .filter("severity>=ERROR")
+   * SinkInfo sinkInfo = SinkInfo.newBuilder(sinkName, DatasetDestination.of(datasetName))
+   *     .setVersionFormat(SinkInfo.VersionFormat.V2)
+   *     .setFilter("severity>=ERROR")
    *     .build();
    * Sink sink = logging.update(sinkInfo);
    * }</pre>
@@ -255,9 +255,9 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    * <pre> {@code
    * String sinkName = "my_sink_name";
    * String datasetName = "my_dataset";
-   * SinkInfo sinkInfo = SinkInfo.builder(sinkName, DatasetDestination.of(datasetName))
-   *     .versionFormat(SinkInfo.VersionFormat.V2)
-   *     .filter("severity>=ERROR")
+   * SinkInfo sinkInfo = SinkInfo.newBuilder(sinkName, DatasetDestination.of(datasetName))
+   *     .setVersionFormat(SinkInfo.VersionFormat.V2)
+   *     .setFilter("severity>=ERROR")
    *     .build();
    * Future<Sink> future = logging.updateAsync(sinkInfo);
    * // ...
@@ -274,7 +274,7 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    * <pre> {@code
    * String sinkName = "my_sink_name";
    * Sink sink = logging.getSink(sinkName);
-   * if (sink != null) {
+   * if (sink == null) {
    *   // sink was not found
    * }
    * }</pre>
@@ -293,7 +293,7 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    * Future<Sink> future = logging.getSinkAsync(sinkName);
    * // ...
    * Sink sink = future.get();
-   * if (sink != null) {
+   * if (sink == null) {
    *   // sink was not found
    * }
    * }</pre>
@@ -501,8 +501,8 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    * <p>Example of updating a metric.
    * <pre> {@code
    * String metricName = "my_metric_name";
-   * MetricInfo metricInfo = MetricInfo.builder(metricName, "severity>=ERROR")
-   *     .description("new description")
+   * MetricInfo metricInfo = MetricInfo.newBuilder(metricName, "severity>=ERROR")
+   *     .setDescription("new description")
    *     .build();
    * Metric metric = logging.update(metricInfo);
    * }</pre>
@@ -520,8 +520,8 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    * <p>Example of asynchronously updating a metric.
    * <pre> {@code
    * String metricName = "my_metric_name";
-   * MetricInfo metricInfo = MetricInfo.builder(metricName, "severity>=ERROR")
-   *     .description("new description")
+   * MetricInfo metricInfo = MetricInfo.newBuilder(metricName, "severity>=ERROR")
+   *     .setDescription("new description")
    *     .build();
    * Future<Metric> future = logging.updateAsync(metricInfo);
    * // ...
@@ -538,7 +538,7 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    * <pre> {@code
    * String metricName = "my_metric_name";
    * Metric metric = logging.getMetric(metricName);
-   * if (metric != null) {
+   * if (metric == null) {
    *   // metric was not found
    * }
    * }</pre>
@@ -557,7 +557,7 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    * Future<Metric> future = logging.getMetricAsync(metricName);
    * // ...
    * Metric metric = future.get();
-   * if (metric != null) {
+   * if (metric == null) {
    *   // metric was not found
    * }
    * }</pre>
@@ -662,7 +662,7 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    * entries.add(LogEntry.of(JsonPayload.of(jsonMap)));
    * logging.write(entries,
    *     WriteOption.logName(logName),
-   *     WriteOption.resource(MonitoredResource.builder("global").build()));
+   *     WriteOption.resource(MonitoredResource.newBuilder("global").build()));
    * }</pre>
    *
    */
@@ -688,7 +688,7 @@ public interface Logging extends AutoCloseable, Service<LoggingOptions> {
    * Future<Void> future = logging.writeAsync(
    *     entries,
    *     WriteOption.logName(logName),
-   *     WriteOption.resource(MonitoredResource.builder("global").build()));
+   *     WriteOption.resource(MonitoredResource.newBuilder("global").build()));
    * }</pre>
    *
    */

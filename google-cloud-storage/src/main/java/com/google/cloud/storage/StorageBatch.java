@@ -60,22 +60,22 @@ public class StorageBatch {
 
   StorageBatch(StorageOptions options) {
     this.options = options;
-    this.storageRpc = options.rpc();
+    this.storageRpc = options.getRpc();
     this.batch = storageRpc.createBatch();
   }
 
   @VisibleForTesting
-  Object batch() {
+  Object getBatch() {
     return batch;
   }
 
   @VisibleForTesting
-  StorageRpc storageRpc() {
+  StorageRpc getStorageRpc() {
     return storageRpc;
   }
 
   @VisibleForTesting
-  StorageOptions options() {
+  StorageOptions getOptions() {
     return options;
   }
 
@@ -161,7 +161,7 @@ public class StorageBatch {
       @Override
       public void onFailure(GoogleJsonError googleJsonError) {
         StorageException serviceException = new StorageException(googleJsonError);
-        if (serviceException.code() == HTTP_NOT_FOUND) {
+        if (serviceException.getCode() == HTTP_NOT_FOUND) {
           result.success(false);
         } else {
           result.error(serviceException);
@@ -175,13 +175,14 @@ public class StorageBatch {
     return new RpcBatch.Callback<StorageObject>() {
       @Override
       public void onSuccess(StorageObject response) {
-        result.success(response == null ? null : Blob.fromPb(serviceOptions.service(), response));
+        result.success(
+            response == null ? null : Blob.fromPb(serviceOptions.getService(), response));
       }
 
       @Override
       public void onFailure(GoogleJsonError googleJsonError) {
         StorageException serviceException = new StorageException(googleJsonError);
-        if (serviceException.code() == HTTP_NOT_FOUND) {
+        if (serviceException.getCode() == HTTP_NOT_FOUND) {
           result.success(null);
         } else {
           result.error(serviceException);
@@ -195,7 +196,8 @@ public class StorageBatch {
     return new RpcBatch.Callback<StorageObject>() {
       @Override
       public void onSuccess(StorageObject response) {
-        result.success(response == null ? null : Blob.fromPb(serviceOptions.service(), response));
+        result.success(
+            response == null ? null : Blob.fromPb(serviceOptions.getService(), response));
       }
 
       @Override

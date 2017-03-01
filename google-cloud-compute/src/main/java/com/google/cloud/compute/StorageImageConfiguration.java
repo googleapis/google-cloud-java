@@ -77,7 +77,16 @@ public class StorageImageConfiguration extends ImageConfiguration {
      * Sets the format used to encode and transmit the block device. The only supported value is
      * {@code TAR}. This is just a container and transmission format, not a runtime format.
      */
+    @Deprecated
     public Builder containerType(ContainerType containerType) {
+      return setContainerType(containerType);
+    }
+
+    /**
+     * Sets the format used to encode and transmit the block device. The only supported value is
+     * {@code TAR}. This is just a container and transmission format, not a runtime format.
+     */
+    public Builder setContainerType(ContainerType containerType) {
       this.containerType = containerType;
       return this;
     }
@@ -85,7 +94,15 @@ public class StorageImageConfiguration extends ImageConfiguration {
     /**
      * Sets the SHA1 checksum of the disk image before unpackaging.
      */
+    @Deprecated
     public Builder sha1(String sha1) {
+      return setSha1(sha1);
+    }
+
+    /**
+     * Sets the SHA1 checksum of the disk image before unpackaging.
+     */
+    public Builder setSha1(String sha1) {
       this.sha1 = sha1;
       return this;
     }
@@ -94,7 +111,16 @@ public class StorageImageConfiguration extends ImageConfiguration {
      * Sets the full Google Cloud Storage URL where the disk image is stored (e.g.
      * {@code gs://bucket/file}).
      */
+    @Deprecated
     public Builder source(String source) {
+      return setSource(source);
+    }
+
+    /**
+     * Sets the full Google Cloud Storage URL where the disk image is stored (e.g.
+     * {@code gs://bucket/file}).
+     */
+    public Builder setSource(String source) {
       this.source = checkNotNull(source);
       return this;
     }
@@ -119,14 +145,31 @@ public class StorageImageConfiguration extends ImageConfiguration {
    * Returns the format used to encode and transmit the block device. This is just a container and
    * transmission format, not a runtime format.
    */
+  @Deprecated
   public ContainerType containerType() {
+    return getContainerType();
+  }
+
+  /**
+   * Returns the format used to encode and transmit the block device. This is just a container and
+   * transmission format, not a runtime format.
+   */
+  public ContainerType getContainerType() {
     return containerType;
   }
 
   /**
    * Returns the SHA1 checksum of the disk image before unpackaging.
    */
+  @Deprecated
   public String sha1() {
+    return getSha1();
+  }
+
+  /**
+   * Returns the SHA1 checksum of the disk image before unpackaging.
+   */
+  public String getSha1() {
     return sha1;
   }
 
@@ -134,7 +177,16 @@ public class StorageImageConfiguration extends ImageConfiguration {
    * Returns the full Google Cloud Storage URL where the disk image is stored (e.g.
    * {@code gs://bucket/file}).
    */
+  @Deprecated
   public String source() {
+    return getSource();
+  }
+
+  /**
+   * Returns the full Google Cloud Storage URL where the disk image is stored (e.g.
+   * {@code gs://bucket/file}).
+   */
+  public String getSource() {
     return source;
   }
 
@@ -185,8 +237,17 @@ public class StorageImageConfiguration extends ImageConfiguration {
    * Creates a {@code StorageImageConfiguration} builder given the full Google Cloud Storage URL
    * where the disk image is stored.
    */
+  @Deprecated
   public static Builder builder(String source) {
-    return new Builder().source(source);
+    return newBuilder(source);
+  }
+
+  /**
+   * Creates a {@code StorageImageConfiguration} builder given the full Google Cloud Storage URL
+   * where the disk image is stored.
+   */
+  public static Builder newBuilder(String source) {
+    return new Builder().setSource(source);
   }
 
   /**
@@ -194,7 +255,7 @@ public class StorageImageConfiguration extends ImageConfiguration {
    * where the disk image is stored.
    */
   public static StorageImageConfiguration of(String source) {
-    return builder(source).build();
+    return newBuilder(source).build();
   }
 
   @SuppressWarnings("unchecked")

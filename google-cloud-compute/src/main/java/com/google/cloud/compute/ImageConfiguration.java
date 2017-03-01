@@ -92,17 +92,17 @@ public abstract class ImageConfiguration implements Serializable {
       return (B) this;
     }
 
-    B type(Type type) {
+    B setType(Type type) {
       this.type = type;
       return self();
     }
 
-    B sourceType(SourceType sourceType) {
+    B setSourceType(SourceType sourceType) {
       this.sourceType = sourceType;
       return self();
     }
 
-    B archiveSizeBytes(Long archiveSizeBytes) {
+    B setArchiveSizeBytes(Long archiveSizeBytes) {
       this.archiveSizeBytes = archiveSizeBytes;
       return self();
     }
@@ -124,21 +124,47 @@ public abstract class ImageConfiguration implements Serializable {
    * an existing disk. This method returns {@link Type#STORAGE} if this image was created from a
    * file in Google Cloud Storage.
    */
+  @Deprecated
   public Type type() {
+    return getType();
+  }
+
+  /**
+   * Returns the image's type. This method returns {@link Type#DISK} if this image was created from
+   * an existing disk. This method returns {@link Type#STORAGE} if this image was created from a
+   * file in Google Cloud Storage.
+   */
+  public Type getType() {
     return type;
   }
 
   /**
    * Returns the source type of the disk. The default and only value is {@link SourceType#RAW}.
    */
+  @Deprecated
   public SourceType sourceType() {
+    return getSourceType();
+  }
+
+  /**
+   * Returns the source type of the disk. The default and only value is {@link SourceType#RAW}.
+   */
+  public SourceType getSourceType() {
     return sourceType;
   }
 
   /**
    * Returns the size of the image archive stored in Google Cloud Storage (in bytes).
    */
+  @Deprecated
   public Long archiveSizeBytes() {
+    return getArchiveSizeBytes();
+  }
+
+  /**
+   * Returns the size of the image archive stored in Google Cloud Storage (in bytes).
+   */
+  public Long getArchiveSizeBytes() {
     return archiveSizeBytes;
   }
 

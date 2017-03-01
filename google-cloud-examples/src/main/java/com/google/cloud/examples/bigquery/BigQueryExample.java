@@ -237,7 +237,7 @@ public class BigQueryExample {
   private static class CreateDatasetAction extends DatasetAction {
     @Override
     public void run(BigQuery bigquery, DatasetId datasetId) {
-      bigquery.create(DatasetInfo.builder(datasetId).build());
+      bigquery.create(DatasetInfo.newBuilder(datasetId).build());
       System.out.println("Created dataset " + datasetId);
     }
   }
@@ -396,7 +396,7 @@ public class BigQueryExample {
     }
 
     static Schema parseSchema(String[] args, int start, int end) {
-      Schema.Builder builder = Schema.builder();
+      Schema.Builder builder = Schema.newBuilder();
       for (int i = start; i < end; i++) {
         String[] fieldsArray = args[i].split(":");
         if (fieldsArray.length != 2) {
@@ -523,15 +523,15 @@ public class BigQueryExample {
       System.out.println("Creating job");
       Job startedJob = bigquery.create(job);
       while (!startedJob.isDone()) {
-        System.out.println("Waiting for job " + startedJob.jobId().job() + " to complete");
+        System.out.println("Waiting for job " + startedJob.getJobId().getJob() + " to complete");
         Thread.sleep(1000L);
       }
       startedJob = startedJob.reload();
-      if (startedJob.status().error() == null) {
-        System.out.println("Job " + startedJob.jobId().job() + " succeeded");
+      if (startedJob.getStatus().getError() == null) {
+        System.out.println("Job " + startedJob.getJobId().getJob() + " succeeded");
       } else {
-        System.out.println("Job " + startedJob.jobId().job() + " failed");
-        System.out.println("Error: " + startedJob.status().error());
+        System.out.println("Job " + startedJob.getJobId().getJob() + " failed");
+        System.out.println("Error: " + startedJob.getStatus().getError());
       }
     }
   }
@@ -627,19 +627,19 @@ public class BigQueryExample {
       System.out.println("Running query");
       QueryResponse queryResponse = bigquery.query(queryRequest);
       while (!queryResponse.jobCompleted()) {
-        System.out.println("Waiting for query job " + queryResponse.jobId() + " to complete");
+        System.out.println("Waiting for query job " + queryResponse.getJobId() + " to complete");
         Thread.sleep(1000L);
-        queryResponse = bigquery.getQueryResults(queryResponse.jobId());
+        queryResponse = bigquery.getQueryResults(queryResponse.getJobId());
       }
       if (!queryResponse.hasErrors()) {
         System.out.println("Query succeeded. Results:");
-        Iterator<List<FieldValue>> iterator = queryResponse.result().iterateAll();
+        Iterator<List<FieldValue>> iterator = queryResponse.getResult().iterateAll();
         while (iterator.hasNext()) {
           System.out.println(iterator.next());
         }
       } else {
         System.out.println("Query completed with errors. Errors:");
-        for (BigQueryError err : queryResponse.executionErrors()) {
+        for (BigQueryError err : queryResponse.getExecutionErrors()) {
           System.out.println(err);
         }
       }
@@ -755,12 +755,12 @@ public class BigQueryExample {
       printUsage();
       return;
     }
-    BigQueryOptions.Builder optionsBuilder = BigQueryOptions.builder();
+    BigQueryOptions.Builder optionsBuilder = BigQueryOptions.newBuilder();
     BigQueryAction action;
     String actionName;
     if (args.length >= 2 && !ACTIONS.containsKey(args[0])) {
       actionName = args[1];
-      optionsBuilder.projectId(args[0]);
+      optionsBuilder.setProjectId(args[0]);
       action = ACTIONS.get(args[1]);
       args = Arrays.copyOfRange(args, 2, args.length);
     } else {
@@ -773,7 +773,7 @@ public class BigQueryExample {
       printUsage();
       return;
     }
-    BigQuery bigquery = optionsBuilder.build().service();
+    BigQuery bigquery = optionsBuilder.build().getService();
     Object arg;
     try {
       arg = action.parse(args);

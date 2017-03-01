@@ -71,22 +71,22 @@ public class Bucket extends BucketInfo {
     }
 
     private Storage.BucketSourceOption toSourceOption(BucketInfo bucketInfo) {
-      switch (rpcOption()) {
+      switch (getRpcOption()) {
         case IF_METAGENERATION_MATCH:
-          return Storage.BucketSourceOption.metagenerationMatch(bucketInfo.metageneration());
+          return Storage.BucketSourceOption.metagenerationMatch(bucketInfo.getMetageneration());
         case IF_METAGENERATION_NOT_MATCH:
-          return Storage.BucketSourceOption.metagenerationNotMatch(bucketInfo.metageneration());
+          return Storage.BucketSourceOption.metagenerationNotMatch(bucketInfo.getMetageneration());
         default:
           throw new AssertionError("Unexpected enum value");
       }
     }
 
     private Storage.BucketGetOption toGetOption(BucketInfo bucketInfo) {
-      switch (rpcOption()) {
+      switch (getRpcOption()) {
         case IF_METAGENERATION_MATCH:
-          return Storage.BucketGetOption.metagenerationMatch(bucketInfo.metageneration());
+          return Storage.BucketGetOption.metagenerationMatch(bucketInfo.getMetageneration());
         case IF_METAGENERATION_NOT_MATCH:
-          return Storage.BucketGetOption.metagenerationNotMatch(bucketInfo.metageneration());
+          return Storage.BucketGetOption.metagenerationNotMatch(bucketInfo.getMetageneration());
         default:
           throw new AssertionError("Unexpected enum value");
       }
@@ -139,7 +139,7 @@ public class Bucket extends BucketInfo {
         new Function<BlobTargetOption, StorageRpc.Option>() {
           @Override
           public StorageRpc.Option apply(BlobTargetOption blobTargetOption) {
-            return blobTargetOption.rpcOption();
+            return blobTargetOption.getRpcOption();
           }
         };
     private static final long serialVersionUID = 8345296337342509425L;
@@ -149,28 +149,30 @@ public class Bucket extends BucketInfo {
     }
 
     private StorageRpc.Tuple<BlobInfo, Storage.BlobTargetOption> toTargetOption(BlobInfo blobInfo) {
-      BlobId blobId = blobInfo.blobId();
-      switch (rpcOption()) {
+      BlobId blobId = blobInfo.getBlobId();
+      switch (getRpcOption()) {
         case PREDEFINED_ACL:
           return StorageRpc.Tuple.of(blobInfo,
-              Storage.BlobTargetOption.predefinedAcl((Storage.PredefinedAcl) value()));
+              Storage.BlobTargetOption.predefinedAcl((Storage.PredefinedAcl) getValue()));
         case IF_GENERATION_MATCH:
-          blobId = BlobId.of(blobId.bucket(), blobId.name(), (Long) value());
-          return StorageRpc.Tuple.of(blobInfo.toBuilder().blobId(blobId).build(),
+          blobId = BlobId.of(blobId.getBucket(), blobId.getName(), (Long) getValue());
+          return StorageRpc.Tuple.of(blobInfo.toBuilder().setBlobId(blobId).build(),
               Storage.BlobTargetOption.generationMatch());
         case IF_GENERATION_NOT_MATCH:
-          blobId = BlobId.of(blobId.bucket(), blobId.name(), (Long) value());
-          return StorageRpc.Tuple.of(blobInfo.toBuilder().blobId(blobId).build(),
+          blobId = BlobId.of(blobId.getBucket(), blobId.getName(), (Long) getValue());
+          return StorageRpc.Tuple.of(blobInfo.toBuilder().setBlobId(blobId).build(),
               Storage.BlobTargetOption.generationNotMatch());
         case IF_METAGENERATION_MATCH:
-          return StorageRpc.Tuple.of(blobInfo.toBuilder().metageneration((Long) value()).build(),
+          return StorageRpc.Tuple.of(
+              blobInfo.toBuilder().setMetageneration((Long) getValue()).build(),
               Storage.BlobTargetOption.metagenerationMatch());
         case IF_METAGENERATION_NOT_MATCH:
-          return StorageRpc.Tuple.of(blobInfo.toBuilder().metageneration((Long) value()).build(),
+          return StorageRpc.Tuple.of(
+              blobInfo.toBuilder().setMetageneration((Long) getValue()).build(),
               Storage.BlobTargetOption.metagenerationNotMatch());
         case CUSTOMER_SUPPLIED_KEY:
           return StorageRpc.Tuple.of(blobInfo,
-              Storage.BlobTargetOption.encryptionKey((String) value()));
+              Storage.BlobTargetOption.encryptionKey((String) getValue()));
         default:
           throw new AssertionError("Unexpected enum value");
       }
@@ -288,30 +290,30 @@ public class Bucket extends BucketInfo {
     private final Object value;
 
     private StorageRpc.Tuple<BlobInfo, Storage.BlobWriteOption> toWriteOption(BlobInfo blobInfo) {
-      BlobId blobId = blobInfo.blobId();
+      BlobId blobId = blobInfo.getBlobId();
       switch (option) {
         case PREDEFINED_ACL:
           return StorageRpc.Tuple.of(blobInfo,
               Storage.BlobWriteOption.predefinedAcl((Storage.PredefinedAcl) value));
         case IF_GENERATION_MATCH:
-          blobId = BlobId.of(blobId.bucket(), blobId.name(), (Long) value);
-          return StorageRpc.Tuple.of(blobInfo.toBuilder().blobId(blobId).build(),
+          blobId = BlobId.of(blobId.getBucket(), blobId.getName(), (Long) value);
+          return StorageRpc.Tuple.of(blobInfo.toBuilder().setBlobId(blobId).build(),
               Storage.BlobWriteOption.generationMatch());
         case IF_GENERATION_NOT_MATCH:
-          blobId = BlobId.of(blobId.bucket(), blobId.name(), (Long) value);
-          return StorageRpc.Tuple.of(blobInfo.toBuilder().blobId(blobId).build(),
+          blobId = BlobId.of(blobId.getBucket(), blobId.getName(), (Long) value);
+          return StorageRpc.Tuple.of(blobInfo.toBuilder().setBlobId(blobId).build(),
               Storage.BlobWriteOption.generationNotMatch());
         case IF_METAGENERATION_MATCH:
-          return StorageRpc.Tuple.of(blobInfo.toBuilder().metageneration((Long) value).build(),
+          return StorageRpc.Tuple.of(blobInfo.toBuilder().setMetageneration((Long) value).build(),
               Storage.BlobWriteOption.metagenerationMatch());
         case IF_METAGENERATION_NOT_MATCH:
-          return StorageRpc.Tuple.of(blobInfo.toBuilder().metageneration((Long) value).build(),
+          return StorageRpc.Tuple.of(blobInfo.toBuilder().setMetageneration((Long) value).build(),
               Storage.BlobWriteOption.metagenerationNotMatch());
         case IF_MD5_MATCH:
-          return StorageRpc.Tuple.of(blobInfo.toBuilder().md5((String) value).build(),
+          return StorageRpc.Tuple.of(blobInfo.toBuilder().setMd5((String) value).build(),
               Storage.BlobWriteOption.md5Match());
         case IF_CRC32C_MATCH:
-          return StorageRpc.Tuple.of(blobInfo.toBuilder().crc32c((String) value).build(),
+          return StorageRpc.Tuple.of(blobInfo.toBuilder().setCrc32c((String) value).build(),
               Storage.BlobWriteOption.crc32cMatch());
         case CUSTOMER_SUPPLIED_KEY:
           return StorageRpc.Tuple.of(blobInfo,
@@ -468,98 +470,158 @@ public class Bucket extends BucketInfo {
     }
 
     @Override
+    @Deprecated
     public Builder name(String name) {
-      infoBuilder.name(name);
+      return setName(name);
+    }
+
+    @Override
+    public Builder setName(String name) {
+      infoBuilder.setName(name);
       return this;
     }
 
     @Override
-    Builder generatedId(String generatedId) {
-      infoBuilder.generatedId(generatedId);
+    Builder setGeneratedId(String generatedId) {
+      infoBuilder.setGeneratedId(generatedId);
       return this;
     }
 
     @Override
-    Builder owner(Entity owner) {
-      infoBuilder.owner(owner);
+    Builder setOwner(Entity owner) {
+      infoBuilder.setOwner(owner);
       return this;
     }
 
     @Override
-    Builder selfLink(String selfLink) {
-      infoBuilder.selfLink(selfLink);
+    Builder setSelfLink(String selfLink) {
+      infoBuilder.setSelfLink(selfLink);
       return this;
     }
 
     @Override
+    @Deprecated
     public Builder versioningEnabled(Boolean enable) {
-      infoBuilder.versioningEnabled(enable);
+      return setVersioningEnabled(enable);
+    }
+
+    @Override
+    public Builder setVersioningEnabled(Boolean enable) {
+      infoBuilder.setVersioningEnabled(enable);
       return this;
     }
 
     @Override
+    @Deprecated
     public Builder indexPage(String indexPage) {
-      infoBuilder.indexPage(indexPage);
+      return setIndexPage(indexPage);
+    }
+
+    @Override
+    public Builder setIndexPage(String indexPage) {
+      infoBuilder.setIndexPage(indexPage);
       return this;
     }
 
     @Override
+    @Deprecated
     public Builder notFoundPage(String notFoundPage) {
-      infoBuilder.notFoundPage(notFoundPage);
+      return setNotFoundPage(notFoundPage);
+    }
+
+    @Override
+    public Builder setNotFoundPage(String notFoundPage) {
+      infoBuilder.setNotFoundPage(notFoundPage);
       return this;
     }
 
     @Override
+    @Deprecated
     public Builder deleteRules(Iterable<? extends DeleteRule> rules) {
-      infoBuilder.deleteRules(rules);
+      return setDeleteRules(rules);
+    }
+
+    @Override
+    public Builder setDeleteRules(Iterable<? extends DeleteRule> rules) {
+      infoBuilder.setDeleteRules(rules);
       return this;
     }
 
     @Override
+    @Deprecated
     public Builder storageClass(String storageClass) {
-      infoBuilder.storageClass(storageClass);
+      return setStorageClass(storageClass);
+    }
+
+    @Override
+    public Builder setStorageClass(String storageClass) {
+      infoBuilder.setStorageClass(storageClass);
       return this;
     }
 
     @Override
+    @Deprecated
     public Builder location(String location) {
-      infoBuilder.location(location);
+      return setLocation(location);
+    }
+
+    @Override
+    public Builder setLocation(String location) {
+      infoBuilder.setLocation(location);
       return this;
     }
 
     @Override
-    Builder etag(String etag) {
-      infoBuilder.etag(etag);
+    Builder setEtag(String etag) {
+      infoBuilder.setEtag(etag);
       return this;
     }
 
     @Override
-    Builder createTime(Long createTime) {
-      infoBuilder.createTime(createTime);
+    Builder setCreateTime(Long createTime) {
+      infoBuilder.setCreateTime(createTime);
       return this;
     }
 
     @Override
-    Builder metageneration(Long metageneration) {
-      infoBuilder.metageneration(metageneration);
+    Builder setMetageneration(Long metageneration) {
+      infoBuilder.setMetageneration(metageneration);
       return this;
     }
 
     @Override
+    @Deprecated
     public Builder cors(Iterable<Cors> cors) {
-      infoBuilder.cors(cors);
+      return setCors(cors);
+    }
+
+    @Override
+    public Builder setCors(Iterable<Cors> cors) {
+      infoBuilder.setCors(cors);
       return this;
     }
 
     @Override
+    @Deprecated
     public Builder acl(Iterable<Acl> acl) {
-      infoBuilder.acl(acl);
+      return setAcl(acl);
+    }
+
+    @Override
+    public Builder setAcl(Iterable<Acl> acl) {
+      infoBuilder.setAcl(acl);
       return this;
     }
 
     @Override
+    @Deprecated
     public Builder defaultAcl(Iterable<Acl> acl) {
-      infoBuilder.defaultAcl(acl);
+      return setDefaultAcl(acl);
+    }
+
+    @Override
+    public Builder setDefaultAcl(Iterable<Acl> acl) {
+      infoBuilder.setDefaultAcl(acl);
       return this;
     }
 
@@ -572,7 +634,7 @@ public class Bucket extends BucketInfo {
   Bucket(Storage storage, BucketInfo.BuilderImpl infoBuilder) {
     super(infoBuilder);
     this.storage = checkNotNull(storage);
-    this.options = storage.options();
+    this.options = storage.getOptions();
   }
 
   /**
@@ -595,7 +657,7 @@ public class Bucket extends BucketInfo {
     int length = options.length;
     Storage.BucketGetOption[] getOptions = Arrays.copyOf(toGetOptions(this, options), length + 1);
     getOptions[length] = Storage.BucketGetOption.fields();
-    return storage.get(name(), getOptions) != null;
+    return storage.get(getName(), getOptions) != null;
   }
 
   /**
@@ -615,7 +677,7 @@ public class Bucket extends BucketInfo {
    * @throws StorageException upon failure
    */
   public Bucket reload(BucketSourceOption... options) {
-    return storage.get(name(), toGetOptions(this, options));
+    return storage.get(getName(), toGetOptions(this, options));
   }
 
   /**
@@ -627,7 +689,7 @@ public class Bucket extends BucketInfo {
    *
    * <p>Example of updating the bucket's information.
    * <pre> {@code
-   * Bucket updatedBucket = bucket.toBuilder().versioningEnabled(true).build().update();
+   * Bucket updatedBucket = bucket.toBuilder().setVersioningEnabled(true).build().update();
    * }</pre>
    *
    * @param options update options
@@ -657,7 +719,7 @@ public class Bucket extends BucketInfo {
    * @throws StorageException upon failure
    */
   public boolean delete(BucketSourceOption... options) {
-    return storage.delete(name(), toSourceOptions(this, options));
+    return storage.delete(getName(), toSourceOptions(this, options));
   }
 
   /**
@@ -677,7 +739,7 @@ public class Bucket extends BucketInfo {
    * @throws StorageException upon failure
    */
   public Page<Blob> list(BlobListOption... options) {
-    return storage.list(name(), options);
+    return storage.list(getName(), options);
   }
 
   /**
@@ -696,7 +758,7 @@ public class Bucket extends BucketInfo {
    * @throws StorageException upon failure
    */
   public Blob get(String blob, BlobGetOption... options) {
-    return storage.get(BlobId.of(name(), blob), options);
+    return storage.get(BlobId.of(getName(), blob), options);
   }
 
   /**
@@ -722,10 +784,10 @@ public class Bucket extends BucketInfo {
    */
   public List<Blob> get(String blobName1, String blobName2, String... blobNames) {
     List<BlobId> blobIds = Lists.newArrayListWithCapacity(blobNames.length + 2);
-    blobIds.add(BlobId.of(name(), blobName1));
-    blobIds.add(BlobId.of(name(), blobName2));
+    blobIds.add(BlobId.of(getName(), blobName1));
+    blobIds.add(BlobId.of(getName(), blobName2));
     for (String blobName : blobNames) {
-      blobIds.add(BlobId.of(name(), blobName));
+      blobIds.add(BlobId.of(getName(), blobName));
     }
     return storage.get(blobIds);
   }
@@ -755,7 +817,7 @@ public class Bucket extends BucketInfo {
   public List<Blob> get(Iterable<String> blobNames) {
     ImmutableList.Builder<BlobId> builder = ImmutableList.builder();
     for (String blobName : blobNames) {
-      builder.add(BlobId.of(name(), blobName));
+      builder.add(BlobId.of(getName(), blobName));
     }
     return storage.get(builder.build());
   }
@@ -780,7 +842,8 @@ public class Bucket extends BucketInfo {
    * @throws StorageException upon failure
    */
   public Blob create(String blob, byte[] content, String contentType, BlobTargetOption... options) {
-    BlobInfo blobInfo = BlobInfo.builder(BlobId.of(name(), blob)).contentType(contentType).build();
+    BlobInfo blobInfo =
+        BlobInfo.newBuilder(BlobId.of(getName(), blob)).setContentType(contentType).build();
     StorageRpc.Tuple<BlobInfo, Storage.BlobTargetOption[]> target =
         BlobTargetOption.toTargetOptions(blobInfo, options);
     return storage.create(target.x(), content, target.y());
@@ -807,7 +870,8 @@ public class Bucket extends BucketInfo {
    */
   public Blob create(String blob, InputStream content, String contentType,
       BlobWriteOption... options) {
-    BlobInfo blobInfo = BlobInfo.builder(BlobId.of(name(), blob)).contentType(contentType).build();
+    BlobInfo blobInfo =
+        BlobInfo.newBuilder(BlobId.of(getName(), blob)).setContentType(contentType).build();
     StorageRpc.Tuple<BlobInfo, Storage.BlobWriteOption[]> write =
         BlobWriteOption.toWriteOptions(blobInfo, options);
     return storage.create(write.x(), content, write.y());
@@ -832,7 +896,7 @@ public class Bucket extends BucketInfo {
    * @throws StorageException upon failure
    */
   public Blob create(String blob, byte[] content, BlobTargetOption... options) {
-    BlobInfo blobInfo = BlobInfo.builder(BlobId.of(name(), blob)).build();
+    BlobInfo blobInfo = BlobInfo.newBuilder(BlobId.of(getName(), blob)).build();
     StorageRpc.Tuple<BlobInfo, Storage.BlobTargetOption[]> target =
         BlobTargetOption.toTargetOptions(blobInfo, options);
     return storage.create(target.x(), content, target.y());
@@ -857,7 +921,7 @@ public class Bucket extends BucketInfo {
    * @throws StorageException upon failure
    */
   public Blob create(String blob, InputStream content, BlobWriteOption... options) {
-    BlobInfo blobInfo = BlobInfo.builder(BlobId.of(name(), blob)).build();
+    BlobInfo blobInfo = BlobInfo.newBuilder(BlobId.of(getName(), blob)).build();
     StorageRpc.Tuple<BlobInfo, Storage.BlobWriteOption[]> write =
         BlobWriteOption.toWriteOptions(blobInfo, options);
     return storage.create(write.x(), content, write.y());
@@ -874,7 +938,7 @@ public class Bucket extends BucketInfo {
    * @throws StorageException upon failure
    */
   public Acl getAcl(Entity entity) {
-    return storage.getAcl(name(), entity);
+    return storage.getAcl(getName(), entity);
   }
 
   /**
@@ -894,7 +958,7 @@ public class Bucket extends BucketInfo {
    * @throws StorageException upon failure
    */
   public boolean deleteAcl(Entity entity) {
-    return storage.deleteAcl(name(), entity);
+    return storage.deleteAcl(getName(), entity);
   }
 
   /**
@@ -908,7 +972,7 @@ public class Bucket extends BucketInfo {
    * @throws StorageException upon failure
    */
   public Acl createAcl(Acl acl) {
-    return storage.createAcl(name(), acl);
+    return storage.createAcl(getName(), acl);
   }
 
   /**
@@ -922,7 +986,7 @@ public class Bucket extends BucketInfo {
    * @throws StorageException upon failure
    */
   public Acl updateAcl(Acl acl) {
-    return storage.updateAcl(name(), acl);
+    return storage.updateAcl(getName(), acl);
   }
 
   /**
@@ -939,7 +1003,7 @@ public class Bucket extends BucketInfo {
    * @throws StorageException upon failure
    */
   public List<Acl> listAcls() {
-    return storage.listAcls(name());
+    return storage.listAcls(getName());
   }
 
   /**
@@ -957,7 +1021,7 @@ public class Bucket extends BucketInfo {
    * @throws StorageException upon failure
    */
   public Acl getDefaultAcl(Entity entity) {
-    return storage.getDefaultAcl(name(), entity);
+    return storage.getDefaultAcl(getName(), entity);
   }
 
   /**
@@ -980,7 +1044,7 @@ public class Bucket extends BucketInfo {
    * @throws StorageException upon failure
    */
   public boolean deleteDefaultAcl(Entity entity) {
-    return storage.deleteDefaultAcl(name(), entity);
+    return storage.deleteDefaultAcl(getName(), entity);
   }
 
   /**
@@ -997,7 +1061,7 @@ public class Bucket extends BucketInfo {
    * @throws StorageException upon failure
    */
   public Acl createDefaultAcl(Acl acl) {
-    return storage.createDefaultAcl(name(), acl);
+    return storage.createDefaultAcl(getName(), acl);
   }
 
   /**
@@ -1014,7 +1078,7 @@ public class Bucket extends BucketInfo {
    * @throws StorageException upon failure
    */
   public Acl updateDefaultAcl(Acl acl) {
-    return storage.updateDefaultAcl(name(), acl);
+    return storage.updateDefaultAcl(getName(), acl);
   }
 
   /**
@@ -1034,13 +1098,21 @@ public class Bucket extends BucketInfo {
    * @throws StorageException upon failure
    */
   public List<Acl> listDefaultAcls() {
-    return storage.listDefaultAcls(name());
+    return storage.listDefaultAcls(getName());
   }
 
   /**
    * Returns the bucket's {@code Storage} object used to issue requests.
    */
+  @Deprecated
   public Storage storage() {
+    return getStorage();
+  }
+
+  /**
+   * Returns the bucket's {@code Storage} object used to issue requests.
+   */
+  public Storage getStorage() {
     return storage;
   }
 
@@ -1054,7 +1126,7 @@ public class Bucket extends BucketInfo {
     if (obj == this) {
       return true;
     }
-    if (obj != null && !obj.getClass().equals(Bucket.class)) {
+    if (obj == null || !obj.getClass().equals(Bucket.class)) {
       return false;
     }
     Bucket other = (Bucket) obj;
@@ -1069,7 +1141,7 @@ public class Bucket extends BucketInfo {
 
   private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
     in.defaultReadObject();
-    this.storage = options.service();
+    this.storage = options.getService();
   }
 
   static Bucket fromPb(Storage storage, com.google.api.services.storage.model.Bucket bucketPb) {

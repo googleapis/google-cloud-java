@@ -23,7 +23,6 @@
 package com.google.cloud.examples.bigquery.snippets;
 
 import com.google.api.client.util.Charsets;
-import com.google.cloud.BaseWriteChannel;
 import com.google.cloud.Page;
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQuery.DatasetDeleteOption;
@@ -33,7 +32,6 @@ import com.google.cloud.bigquery.BigQuery.TableDataListOption;
 import com.google.cloud.bigquery.BigQuery.TableListOption;
 import com.google.cloud.bigquery.BigQueryError;
 import com.google.cloud.bigquery.BigQueryException;
-import com.google.cloud.bigquery.BigQueryOptions;
 import com.google.cloud.bigquery.Dataset;
 import com.google.cloud.bigquery.DatasetId;
 import com.google.cloud.bigquery.DatasetInfo;
@@ -46,25 +44,33 @@ import com.google.cloud.bigquery.Job;
 import com.google.cloud.bigquery.JobConfiguration;
 import com.google.cloud.bigquery.JobId;
 import com.google.cloud.bigquery.JobInfo;
+import com.google.cloud.bigquery.JobStatistics.LoadStatistics;
 import com.google.cloud.bigquery.QueryJobConfiguration;
+import com.google.cloud.bigquery.QueryParameterValue;
 import com.google.cloud.bigquery.QueryRequest;
 import com.google.cloud.bigquery.QueryResponse;
 import com.google.cloud.bigquery.QueryResult;
 import com.google.cloud.bigquery.Schema;
 import com.google.cloud.bigquery.StandardTableDefinition;
 import com.google.cloud.bigquery.Table;
+import com.google.cloud.bigquery.TableDataWriteChannel;
 import com.google.cloud.bigquery.TableDefinition;
 import com.google.cloud.bigquery.TableId;
 import com.google.cloud.bigquery.TableInfo;
 import com.google.cloud.bigquery.WriteChannelConfiguration;
 
 import java.io.IOException;
+import java.io.OutputStream;
 import java.nio.ByteBuffer;
+import java.nio.channels.Channels;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.concurrent.TimeoutException;
 
 /**
  * This class contains a number of snippets for the {@link BigQuery} interface.
@@ -85,7 +91,7 @@ public class BigQuerySnippets {
   public Dataset createDataset(String datasetName) {
     // [START createDataset]
     Dataset dataset = null;
-    DatasetInfo datasetInfo = DatasetInfo.builder(datasetName).build();
+    DatasetInfo datasetInfo = DatasetInfo.newBuilder(datasetName).build();
     try {
       // the dataset was created
       dataset = bigquery.create(datasetInfo);
@@ -105,7 +111,7 @@ public class BigQuerySnippets {
   public Dataset updateDataset(String datasetName, String newFriendlyName) {
     // [START updateDataset]
     Dataset oldDataset = bigquery.getDataset(datasetName);
-    DatasetInfo datasetInfo = oldDataset.toBuilder().friendlyName(newFriendlyName).build();
+    DatasetInfo datasetInfo = oldDataset.toBuilder().setFriendlyName(newFriendlyName).build();
     Dataset newDataset = bigquery.update(datasetInfo);
     // [END updateDataset]
     return newDataset;
@@ -121,7 +127,7 @@ public class BigQuerySnippets {
   public Table updateTable(String datasetName, String tableName, String newFriendlyName) {
     // [START updateTable]
     Table oldTable = bigquery.getTable(datasetName, tableName);
-    TableInfo tableInfo = oldTable.toBuilder().friendlyName(newFriendlyName).build();
+    TableInfo tableInfo = oldTable.toBuilder().setFriendlyName(newFriendlyName).build();
     Table newTable = bigquery.update(tableInfo);
     // [END updateTable]
     return newTable;
@@ -332,23 +338,55 @@ public class BigQuerySnippets {
   // [VARIABLE "my_dataset_name"]
   // [VARIABLE "my_table_name"]
   // [VARIABLE "StringValue1\nStringValue2\n"]
-  public BaseWriteChannel<BigQueryOptions, WriteChannelConfiguration> writeToTable(
-      String datasetName, String tableName, String csvData) throws IOException {
+  public long writeToTable(String datasetName, String tableName, String csvData)
+      throws IOException, InterruptedException, TimeoutException {
     // [START writeToTable]
     TableId tableId = TableId.of(datasetName, tableName);
     WriteChannelConfiguration writeChannelConfiguration =
-        WriteChannelConfiguration.builder(tableId).formatOptions(FormatOptions.csv()).build();
-    BaseWriteChannel<BigQueryOptions, WriteChannelConfiguration> writer =
-        bigquery.writer(writeChannelConfiguration);
-    // Write data to writer
-    try {
-      writer.write(ByteBuffer.wrap(csvData.getBytes(Charsets.UTF_8)));
-    } catch (IOException e) {
-      // Unable to write data
+        WriteChannelConfiguration.newBuilder(tableId)
+            .setFormatOptions(FormatOptions.csv())
+            .build();
+    TableDataWriteChannel writer = bigquery.writer(writeChannelConfiguration);
+      // Write data to writer
+     try {
+        writer.write(ByteBuffer.wrap(csvData.getBytes(Charsets.UTF_8)));
+      } finally {
+        writer.close();
+      }
+      // Get load job
+      Job job = writer.getJob();
+      job = job.waitFor();
+      LoadStatistics stats = job.getStatistics();
+      return stats.getOutputRows();
+      // [END writeToTable]
     }
-    writer.close();
-    // [END writeToTable]
-    return writer;
+
+  /**
+   * Example of writing a local file to a table.
+   */
+  // [TARGET writer(WriteChannelConfiguration)]
+  // [VARIABLE "my_dataset_name"]
+  // [VARIABLE "my_table_name"]
+  // [VARIABLE FileSystems.getDefault().getPath(".", "my-data.csv")]
+  public long writeFileToTable(String datasetName, String tableName, Path csvPath)
+      throws IOException, InterruptedException, TimeoutException {
+    // [START writeFileToTable]
+    TableId tableId = TableId.of(datasetName, tableName);
+    WriteChannelConfiguration writeChannelConfiguration =
+        WriteChannelConfiguration.newBuilder(tableId)
+            .setFormatOptions(FormatOptions.csv())
+            .build();
+    TableDataWriteChannel writer = bigquery.writer(writeChannelConfiguration);
+    // Write data to writer
+    try (OutputStream stream = Channels.newOutputStream(writer)) {
+      Files.copy(csvPath, stream);
+    }
+    // Get load job
+    Job job = writer.getJob();
+    job = job.waitFor();
+    LoadStatistics stats = job.getStatistics();
+    return stats.getOutputRows();
+    // [END writeFileToTable]
   }
 
   /**
@@ -364,14 +402,18 @@ public class BigQuerySnippets {
     Map<String, Object> rowContent = new HashMap<>();
     rowContent.put("booleanField", true);
     // Bytes are passed in base64
-    rowContent.put("bytesField", "DQ4KDQ==");
-    InsertAllResponse response = bigquery.insertAll(InsertAllRequest.builder(tableId)
+    rowContent.put("bytesField", "Cg0NDg0="); // 0xA, 0xD, 0xD, 0xE, 0xD in base64
+    // Records are passed as a map
+    Map<String, Object> recordsContent = new HashMap<>();
+    recordsContent.put("stringField", "Hello, World!");
+    rowContent.put("recordField", recordsContent);
+    InsertAllResponse response = bigquery.insertAll(InsertAllRequest.newBuilder(tableId)
         .addRow("rowId", rowContent)
         // More rows can be added in the same RPC by invoking .addRow() on the builder
         .build());
     if (response.hasErrors()) {
       // If any of the insertions failed, this lets you inspect the errors
-      for (Entry<Long, List<BigQueryError>> entry : response.insertErrors().entrySet()) {
+      for (Entry<Long, List<BigQueryError>> entry : response.getInsertErrors().entrySet()) {
         // inspect row error
       }
     }
@@ -394,7 +436,7 @@ public class BigQuerySnippets {
     // Table schema definition
     Schema schema = Schema.of(field);
     TableDefinition tableDefinition = StandardTableDefinition.of(schema);
-    TableInfo tableInfo = TableInfo.builder(tableId, tableDefinition).build();
+    TableInfo tableInfo = TableInfo.newBuilder(tableId, tableDefinition).build();
     Table table = bigquery.create(tableInfo);
     // [END createTable]
     return table;
@@ -553,18 +595,48 @@ public class BigQuerySnippets {
     // Wait for things to finish
     while (!response.jobCompleted()) {
       Thread.sleep(1000);
-      response = bigquery.getQueryResults(response.jobId());
+      response = bigquery.getQueryResults(response.getJobId());
     }
     if (response.hasErrors()) {
       // handle errors
     }
-    QueryResult result = response.result();
+    QueryResult result = response.getResult();
     Iterator<List<FieldValue>> rowIterator = result.iterateAll();
     while (rowIterator.hasNext()) {
       List<FieldValue> row = rowIterator.next();
       // do something with the data
     }
     // [END runQuery]
+    return response;
+  }
+
+  /**
+   * Example of running a query with query parameters.
+   */
+  // [TARGET query(QueryRequest)]
+  // [VARIABLE "SELECT distinct(corpus) FROM `bigquery-public-data.samples.shakespeare` where word_count > @wordCount"]
+  public QueryResponse runQueryWithParameters(String query) throws InterruptedException {
+    // [START runQueryWithParameters]
+    QueryRequest request = QueryRequest.newBuilder(query)
+        .setUseLegacySql(false) // standard SQL is required to use query parameters
+        .addNamedParameter("wordCount", QueryParameterValue.int64(5))
+        .build();
+    QueryResponse response = bigquery.query(request);
+    // Wait for things to finish
+    while (!response.jobCompleted()) {
+      Thread.sleep(1000);
+      response = bigquery.getQueryResults(response.getJobId());
+    }
+    if (response.hasErrors()) {
+      // handle errors
+    }
+    QueryResult result = response.getResult();
+    Iterator<List<FieldValue>> rowIterator = result.iterateAll();
+    while (rowIterator.hasNext()) {
+      List<FieldValue> row = rowIterator.next();
+      // do something with the data
+    }
+    // [END runQueryWithParameters]
     return response;
   }
 
@@ -580,12 +652,12 @@ public class BigQuerySnippets {
     // Wait for things to finish
     while (!response.jobCompleted()) {
       Thread.sleep(1000);
-      response = bigquery.getQueryResults(response.jobId());
+      response = bigquery.getQueryResults(response.getJobId());
     }
     if (response.hasErrors()) {
       // handle errors
     }
-    QueryResult result = response.result();
+    QueryResult result = response.getResult();
     Iterator<List<FieldValue>> rowIterator = result.iterateAll();
     while (rowIterator.hasNext()) {
       List<FieldValue> row = rowIterator.next();

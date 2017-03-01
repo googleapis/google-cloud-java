@@ -30,7 +30,6 @@ public class BooleanValueTest {
     assertEquals(value, value.toBuilder().build());
   }
 
-  @SuppressWarnings("deprecation")
   @Test
   public void testOf() throws Exception {
     BooleanValue value = BooleanValue.of(false);
@@ -41,6 +40,15 @@ public class BooleanValueTest {
   @SuppressWarnings("deprecation")
   @Test
   public void testBuilder() throws Exception {
+    BooleanValue.Builder builder = BooleanValue.newBuilder(true);
+    BooleanValue value = builder.setMeaning(1).setExcludeFromIndexes(true).build();
+    assertTrue(value.get());
+    assertEquals(1, value.getMeaning());
+    assertTrue(value.excludeFromIndexes());
+  }
+
+  @Test
+  public void testBuilderDeprecated() throws Exception {
     BooleanValue.Builder builder = BooleanValue.builder(true);
     BooleanValue value = builder.meaning(1).excludeFromIndexes(true).build();
     assertTrue(value.get());

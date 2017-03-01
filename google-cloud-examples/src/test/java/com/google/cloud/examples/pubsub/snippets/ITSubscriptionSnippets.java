@@ -25,22 +25,20 @@ import static org.junit.Assert.assertTrue;
 import com.google.cloud.Identity;
 import com.google.cloud.Policy;
 import com.google.cloud.Role;
-import com.google.cloud.pubsub.Message;
-import com.google.cloud.pubsub.PubSub;
-import com.google.cloud.pubsub.PubSubOptions;
-import com.google.cloud.pubsub.ReceivedMessage;
-import com.google.cloud.pubsub.Subscription;
-import com.google.cloud.pubsub.SubscriptionInfo;
-import com.google.cloud.pubsub.Topic;
-import com.google.cloud.pubsub.TopicInfo;
-
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
-import org.junit.Test;
-
+import com.google.cloud.pubsub.deprecated.Message;
+import com.google.cloud.pubsub.deprecated.PubSub;
+import com.google.cloud.pubsub.deprecated.PubSubOptions;
+import com.google.cloud.pubsub.deprecated.ReceivedMessage;
+import com.google.cloud.pubsub.deprecated.Subscription;
+import com.google.cloud.pubsub.deprecated.SubscriptionInfo;
+import com.google.cloud.pubsub.deprecated.Topic;
+import com.google.cloud.pubsub.deprecated.TopicInfo;
 import java.util.Iterator;
 import java.util.UUID;
 import java.util.concurrent.ExecutionException;
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
+import org.junit.Test;
 
 public class ITSubscriptionSnippets {
 
@@ -57,7 +55,7 @@ public class ITSubscriptionSnippets {
 
   @BeforeClass
   public static void beforeClass() {
-    pubsub = PubSubOptions.defaultInstance().service();
+    pubsub = PubSubOptions.getDefaultInstance().getService();
     topic = pubsub.create(TopicInfo.of(TOPIC));
     subscription = pubsub.create(SubscriptionInfo.of(TOPIC, SUBSCRIPTION));
   }
@@ -74,19 +72,19 @@ public class ITSubscriptionSnippets {
   @Test
   public void testPushConfig() throws ExecutionException, InterruptedException {
     SubscriptionSnippets subscriptionSnippets = new SubscriptionSnippets(subscription);
-    String endpoint = "https://" + pubsub.options().projectId() + ".appspot.com/push";
+    String endpoint = "https://" + pubsub.getOptions().getProjectId() + ".appspot.com/push";
     subscriptionSnippets.replacePushConfig(endpoint);
     Subscription updatedSubscription = pubsub.getSubscription(SUBSCRIPTION);
-    assertEquals(endpoint, updatedSubscription.pushConfig().endpoint());
+    assertEquals(endpoint, updatedSubscription.getPushConfig().getEndpoint());
     subscriptionSnippets.replacePushConfigToPull();
     updatedSubscription = pubsub.getSubscription(SUBSCRIPTION);
-    assertNull(updatedSubscription.pushConfig());
+    assertNull(updatedSubscription.getPushConfig());
     subscriptionSnippets.replacePushConfigAsync(endpoint);
     updatedSubscription = pubsub.getSubscription(SUBSCRIPTION);
-    assertEquals(endpoint, updatedSubscription.pushConfig().endpoint());
+    assertEquals(endpoint, updatedSubscription.getPushConfig().getEndpoint());
     subscriptionSnippets.replacePushConfigToPullAsync();
     updatedSubscription = pubsub.getSubscription(SUBSCRIPTION);
-    assertNull(updatedSubscription.pushConfig());
+    assertNull(updatedSubscription.getPushConfig());
   }
 
   @Test
@@ -112,13 +110,13 @@ public class ITSubscriptionSnippets {
     assertNotNull(policy);
     assertEquals(policy, subscriptionSnippets.getPolicyAsync());
     policy = subscriptionSnippets.replacePolicy();
-    assertTrue(policy.bindings().get(Role.viewer()).contains(Identity.allAuthenticatedUsers()));
+    assertTrue(policy.getBindings().get(Role.viewer()).contains(Identity.allAuthenticatedUsers()));
     policy = subscription.replacePolicy(policy.toBuilder()
         .removeIdentity(Role.viewer(), Identity.allAuthenticatedUsers())
         .build());
-    assertFalse(policy.bindings().containsKey(Role.viewer()));
+    assertFalse(policy.getBindings().containsKey(Role.viewer()));
     policy = subscriptionSnippets.replacePolicyAsync();
-    assertTrue(policy.bindings().get(Role.viewer()).contains(Identity.allAuthenticatedUsers()));
+    assertTrue(policy.getBindings().get(Role.viewer()).contains(Identity.allAuthenticatedUsers()));
     assertTrue(subscriptionSnippets.delete());
     assertFalse(subscriptionSnippets.deleteAsync());
   }

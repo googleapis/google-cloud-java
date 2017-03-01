@@ -25,18 +25,34 @@ public class FormatOptionsTest {
   @Test
   public void testConstructor() {
     FormatOptions options = new FormatOptions(FormatOptions.CSV);
+    assertEquals(FormatOptions.CSV, options.getType());
+    options = new FormatOptions(FormatOptions.JSON);
+    assertEquals(FormatOptions.JSON, options.getType());
+    options = new FormatOptions(FormatOptions.DATASTORE_BACKUP);
+    assertEquals(FormatOptions.DATASTORE_BACKUP, options.getType());
+    options = new FormatOptions(FormatOptions.AVRO);
+    assertEquals(FormatOptions.AVRO, options.getType());
+  }
+
+  @Test
+  @SuppressWarnings("deprecation")
+  public void testConstructorDeprecated() {
+    FormatOptions options = new FormatOptions(FormatOptions.CSV);
     assertEquals(FormatOptions.CSV, options.type());
     options = new FormatOptions(FormatOptions.JSON);
     assertEquals(FormatOptions.JSON, options.type());
     options = new FormatOptions(FormatOptions.DATASTORE_BACKUP);
     assertEquals(FormatOptions.DATASTORE_BACKUP, options.type());
+    options = new FormatOptions(FormatOptions.AVRO);
+    assertEquals(FormatOptions.AVRO, options.type());
   }
 
   @Test
   public void testFactoryMethods() {
-    assertEquals(FormatOptions.CSV, FormatOptions.csv().type());
-    assertEquals(FormatOptions.JSON, FormatOptions.json().type());
-    assertEquals(FormatOptions.DATASTORE_BACKUP, FormatOptions.datastoreBackup().type());
+    assertEquals(FormatOptions.CSV, FormatOptions.csv().getType());
+    assertEquals(FormatOptions.JSON, FormatOptions.json().getType());
+    assertEquals(FormatOptions.DATASTORE_BACKUP, FormatOptions.datastoreBackup().getType());
+    assertEquals(FormatOptions.AVRO, FormatOptions.avro().getType());
   }
 
   @Test

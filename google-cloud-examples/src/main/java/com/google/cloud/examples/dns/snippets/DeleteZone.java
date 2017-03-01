@@ -39,7 +39,7 @@ public class DeleteZone {
   public static void main(String... args) {
     // Create a service object.
     // The project ID and credentials will be inferred from the environment.
-    Dns dns = DnsOptions.defaultInstance().service();
+    Dns dns = DnsOptions.getDefaultInstance().getService();
 
     // Change this to a zone name that exists within your project and that you want to delete.
     String zoneName = "my-unique-zone";
@@ -48,18 +48,19 @@ public class DeleteZone {
     Iterator<RecordSet> recordIterator = dns.listRecordSets(zoneName).iterateAll();
 
     // Make a change for deleting the records
-    ChangeRequestInfo.Builder changeBuilder = ChangeRequestInfo.builder();
+    ChangeRequestInfo.Builder changeBuilder = ChangeRequestInfo.newBuilder();
     while (recordIterator.hasNext()) {
       RecordSet current = recordIterator.next();
       // SOA and NS records cannot be deleted
-      if (!RecordSet.Type.SOA.equals(current.type()) && !RecordSet.Type.NS.equals(current.type())) {
+      if (!RecordSet.Type.SOA.equals(current.getType())
+          && !RecordSet.Type.NS.equals(current.getType())) {
         changeBuilder.delete(current);
       }
     }
 
     // Build and apply the change request to our zone if it contains records to delete
     ChangeRequestInfo changeRequest = changeBuilder.build();
-    if (!changeRequest.deletions().isEmpty()) {
+    if (!changeRequest.getDeletions().isEmpty()) {
       ChangeRequest pendingRequest = dns.applyChangeRequest(zoneName, changeRequest);
 
       // Wait for the change request to complete

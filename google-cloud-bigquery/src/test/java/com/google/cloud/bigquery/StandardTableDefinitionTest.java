@@ -27,19 +27,19 @@ import org.junit.Test;
 public class StandardTableDefinitionTest {
 
   private static final Field FIELD_SCHEMA1 =
-      Field.builder("StringField", Field.Type.string())
-          .mode(Field.Mode.NULLABLE)
-          .description("FieldDescription1")
+      Field.newBuilder("StringField", Field.Type.string())
+          .setMode(Field.Mode.NULLABLE)
+          .setDescription("FieldDescription1")
           .build();
   private static final Field FIELD_SCHEMA2 =
-      Field.builder("IntegerField", Field.Type.integer())
-          .mode(Field.Mode.REPEATED)
-          .description("FieldDescription2")
+      Field.newBuilder("IntegerField", Field.Type.integer())
+          .setMode(Field.Mode.REPEATED)
+          .setDescription("FieldDescription2")
           .build();
   private static final Field FIELD_SCHEMA3 =
-      Field.builder("RecordField", Field.Type.record(FIELD_SCHEMA1, FIELD_SCHEMA2))
-          .mode(Field.Mode.REQUIRED)
-          .description("FieldDescription3")
+      Field.newBuilder("RecordField", Field.Type.record(FIELD_SCHEMA1, FIELD_SCHEMA2))
+          .setMode(Field.Mode.REQUIRED)
+          .setDescription("FieldDescription3")
           .build();
   private static final Schema TABLE_SCHEMA = Schema.of(FIELD_SCHEMA1, FIELD_SCHEMA2, FIELD_SCHEMA3);
   private static final Long NUM_BYTES = 42L;
@@ -49,11 +49,20 @@ public class StandardTableDefinitionTest {
   private static final TimePartitioning TIME_PARTITIONING =
       TimePartitioning.of(TimePartitioning.Type.DAY, 42);
   private static final StandardTableDefinition TABLE_DEFINITION =
+      StandardTableDefinition.newBuilder()
+          .setLocation(LOCATION)
+          .setNumBytes(NUM_BYTES)
+          .setNumRows(NUM_ROWS)
+          .setStreamingBuffer(STREAMING_BUFFER)
+          .setSchema(TABLE_SCHEMA)
+          .setTimePartitioning(TIME_PARTITIONING)
+          .build();
+  private static final StandardTableDefinition DEPRECATED_TABLE_DEFINITION =
       StandardTableDefinition.builder()
-          .location(LOCATION)
-          .numBytes(NUM_BYTES)
-          .numRows(NUM_ROWS)
-          .streamingBuffer(STREAMING_BUFFER)
+          .setLocation(LOCATION)
+          .setNumBytes(NUM_BYTES)
+          .setNumRows(NUM_ROWS)
+          .setStreamingBuffer(STREAMING_BUFFER)
           .schema(TABLE_SCHEMA)
           .timePartitioning(TIME_PARTITIONING)
           .build();
@@ -61,10 +70,11 @@ public class StandardTableDefinitionTest {
   @Test
   public void testToBuilder() {
     compareStandardTableDefinition(TABLE_DEFINITION, TABLE_DEFINITION.toBuilder().build());
-    StandardTableDefinition tableDefinition = TABLE_DEFINITION.toBuilder().location("EU").build();
-    assertEquals("EU", tableDefinition.location());
+    StandardTableDefinition tableDefinition =
+        TABLE_DEFINITION.toBuilder().setLocation("EU").build();
+    assertEquals("EU", tableDefinition.getLocation());
     tableDefinition = tableDefinition.toBuilder()
-        .location(LOCATION)
+        .setLocation(LOCATION)
         .build();
     compareStandardTableDefinition(TABLE_DEFINITION, tableDefinition);
   }
@@ -77,25 +87,36 @@ public class StandardTableDefinitionTest {
 
   @Test
   public void testBuilder() {
-    assertEquals(TableDefinition.Type.TABLE, TABLE_DEFINITION.type());
-    assertEquals(TABLE_SCHEMA, TABLE_DEFINITION.schema());
-    assertEquals(LOCATION, TABLE_DEFINITION.location());
-    assertEquals(NUM_BYTES, TABLE_DEFINITION.numBytes());
-    assertEquals(NUM_ROWS, TABLE_DEFINITION.numRows());
-    assertEquals(STREAMING_BUFFER, TABLE_DEFINITION.streamingBuffer());
-    assertEquals(TIME_PARTITIONING, TABLE_DEFINITION.timePartitioning());
+    assertEquals(TableDefinition.Type.TABLE, TABLE_DEFINITION.getType());
+    assertEquals(TABLE_SCHEMA, TABLE_DEFINITION.getSchema());
+    assertEquals(LOCATION, TABLE_DEFINITION.getLocation());
+    assertEquals(NUM_BYTES, TABLE_DEFINITION.getNumBytes());
+    assertEquals(NUM_ROWS, TABLE_DEFINITION.getNumRows());
+    assertEquals(STREAMING_BUFFER, TABLE_DEFINITION.getStreamingBuffer());
+    assertEquals(TIME_PARTITIONING, TABLE_DEFINITION.getTimePartitioning());
+  }
+
+  @Test
+  public void testBuilderDeprecated() {
+    assertEquals(TableDefinition.Type.TABLE, DEPRECATED_TABLE_DEFINITION.type());
+    assertEquals(TABLE_SCHEMA, DEPRECATED_TABLE_DEFINITION.schema());
+    assertEquals(LOCATION, DEPRECATED_TABLE_DEFINITION.location());
+    assertEquals(NUM_BYTES, DEPRECATED_TABLE_DEFINITION.numBytes());
+    assertEquals(NUM_ROWS, DEPRECATED_TABLE_DEFINITION.numRows());
+    assertEquals(STREAMING_BUFFER, DEPRECATED_TABLE_DEFINITION.streamingBuffer());
+    assertEquals(TIME_PARTITIONING, DEPRECATED_TABLE_DEFINITION.timePartitioning());
   }
 
   @Test
   public void testOf() {
     StandardTableDefinition definition = StandardTableDefinition.of(TABLE_SCHEMA);
-    assertEquals(TableDefinition.Type.TABLE, TABLE_DEFINITION.type());
-    assertEquals(TABLE_SCHEMA, TABLE_DEFINITION.schema());
-    assertNull(definition.location());
-    assertNull(definition.numBytes());
-    assertNull(definition.numRows());
-    assertNull(definition.streamingBuffer());
-    assertNull(definition.timePartitioning());
+    assertEquals(TableDefinition.Type.TABLE, TABLE_DEFINITION.getType());
+    assertEquals(TABLE_SCHEMA, TABLE_DEFINITION.getSchema());
+    assertNull(definition.getLocation());
+    assertNull(definition.getNumBytes());
+    assertNull(definition.getNumRows());
+    assertNull(definition.getStreamingBuffer());
+    assertNull(definition.getTimePartitioning());
   }
 
   @Test
@@ -112,14 +133,14 @@ public class StandardTableDefinitionTest {
   private void compareStandardTableDefinition(StandardTableDefinition expected,
       StandardTableDefinition value) {
     assertEquals(expected, value);
-    assertEquals(expected.schema(), value.schema());
-    assertEquals(expected.type(), value.type());
-    assertEquals(expected.numBytes(), value.numBytes());
-    assertEquals(expected.numRows(), value.numRows());
-    assertEquals(expected.location(), value.location());
-    assertEquals(expected.streamingBuffer(), value.streamingBuffer());
-    assertEquals(expected.type(), value.type());
-    assertEquals(expected.timePartitioning(), value.timePartitioning());
+    assertEquals(expected.getSchema(), value.getSchema());
+    assertEquals(expected.getType(), value.getType());
+    assertEquals(expected.getNumBytes(), value.getNumBytes());
+    assertEquals(expected.getNumRows(), value.getNumRows());
+    assertEquals(expected.getLocation(), value.getLocation());
+    assertEquals(expected.getStreamingBuffer(), value.getStreamingBuffer());
+    assertEquals(expected.getType(), value.getType());
+    assertEquals(expected.getTimePartitioning(), value.getTimePartitioning());
     assertEquals(expected.hashCode(), value.hashCode());
   }
 }

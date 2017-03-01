@@ -87,11 +87,11 @@ public final class Policy implements Serializable {
             ImmutableSet.copyOf(
                 Lists.transform(bindingPb.getMembersList(), IDENTITY_VALUE_OF_FUNCTION)));
       }
-      return builder()
-          .bindings(bindings)
-          .etag(policyPb.getEtag().isEmpty() ? null
+      return newBuilder()
+          .setBindings(bindings)
+          .setEtag(policyPb.getEtag().isEmpty() ? null
               : BaseEncoding.base64().encode(policyPb.getEtag().toByteArray()))
-          .version(policyPb.getVersion())
+          .setVersion(policyPb.getVersion())
           .build();
     }
 
@@ -99,9 +99,9 @@ public final class Policy implements Serializable {
     protected com.google.iam.v1.Policy toPb(Policy policy) {
       com.google.iam.v1.Policy.Builder policyBuilder = com.google.iam.v1.Policy.newBuilder();
       List<com.google.iam.v1.Binding> bindingPbList = new LinkedList<>();
-      for (Map.Entry<Role, Set<Identity>> binding : policy.bindings().entrySet()) {
+      for (Map.Entry<Role, Set<Identity>> binding : policy.getBindings().entrySet()) {
         com.google.iam.v1.Binding.Builder bindingBuilder = com.google.iam.v1.Binding.newBuilder();
-        bindingBuilder.setRole(binding.getKey().value());
+        bindingBuilder.setRole(binding.getKey().getValue());
         bindingBuilder.addAllMembers(
             Lists.transform(new ArrayList<>(binding.getValue()), IDENTITY_STR_VALUE_FUNCTION));
         bindingPbList.add(bindingBuilder.build());
@@ -127,9 +127,9 @@ public final class Policy implements Serializable {
     protected Builder() {}
 
     protected Builder(Policy policy) {
-      bindings(policy.bindings);
-      etag(policy.etag);
-      version(policy.version);
+      setBindings(policy.bindings);
+      setEtag(policy.etag);
+      setVersion(policy.version);
     }
 
     /**
@@ -138,7 +138,18 @@ public final class Policy implements Serializable {
      * @throws NullPointerException if the given map is null or contains any null keys or values
      * @throws IllegalArgumentException if any identities in the given map are null
      */
+    @Deprecated
     public final Builder bindings(Map<Role, Set<Identity>> bindings) {
+      return setBindings(bindings);
+    }
+
+    /**
+     * Replaces the builder's map of bindings with the given map of bindings.
+     *
+     * @throws NullPointerException if the given map is null or contains any null keys or values
+     * @throws IllegalArgumentException if any identities in the given map are null
+     */
+    public final Builder setBindings(Map<Role, Set<Identity>> bindings) {
       checkNotNull(bindings, "The provided map of bindings cannot be null.");
       for (Map.Entry<Role, Set<Identity>> binding : bindings.entrySet()) {
         checkNotNull(binding.getKey(), "The role cannot be null.");
@@ -212,7 +223,23 @@ public final class Policy implements Serializable {
      * applied to the same version of the policy.  If no etag is provided in the call to
      * setIamPolicy, then the existing policy is overwritten blindly.
      */
+    @Deprecated
     protected final Builder etag(String etag) {
+      return setEtag(etag);
+    }
+
+    /**
+     * Sets the policy's etag.
+     *
+     * <p>Etags are used for optimistic concurrency control as a way to help prevent simultaneous
+     * updates of a policy from overwriting each other. It is strongly suggested that systems make
+     * use of the etag in the read-modify-write cycle to perform policy updates in order to avoid
+     * race conditions. An etag is returned in the response to getIamPolicy, and systems are
+     * expected to put that etag in the request to setIamPolicy to ensure that their change will be
+     * applied to the same version of the policy.  If no etag is provided in the call to
+     * setIamPolicy, then the existing policy is overwritten blindly.
+     */
+    protected final Builder setEtag(String etag) {
       this.etag = etag;
       return this;
     }
@@ -221,7 +248,16 @@ public final class Policy implements Serializable {
      * Sets the version of the policy. The default version is 0, meaning only the "owner", "editor",
      * and "viewer" roles are permitted. If the version is 1, you may also use other roles.
      */
+    @Deprecated
     protected final Builder version(int version) {
+      return setVersion(version);
+    }
+
+    /**
+     * Sets the version of the policy. The default version is 0, meaning only the "owner", "editor",
+     * and "viewer" roles are permitted. If the version is 1, you may also use other roles.
+     */
+    protected final Builder setVersion(int version) {
       this.version = version;
       return this;
     }
@@ -254,7 +290,15 @@ public final class Policy implements Serializable {
   /**
    * Returns the map of bindings that comprises the policy.
    */
+  @Deprecated
   public Map<Role, Set<Identity>> bindings() {
+    return getBindings();
+  }
+
+  /**
+   * Returns the map of bindings that comprises the policy.
+   */
+  public Map<Role, Set<Identity>> getBindings() {
     return bindings;
   }
 
@@ -269,7 +313,23 @@ public final class Policy implements Serializable {
    * applied to the same version of the policy.  If no etag is provided in the call to
    * setIamPolicy, then the existing policy is overwritten blindly.
    */
+  @Deprecated
   public String etag() {
+    return getEtag();
+  }
+
+  /**
+   * Returns the policy's etag.
+   *
+   * <p>Etags are used for optimistic concurrency control as a way to help prevent simultaneous
+   * updates of a policy from overwriting each other. It is strongly suggested that systems make
+   * use of the etag in the read-modify-write cycle to perform policy updates in order to avoid
+   * race conditions. An etag is returned in the response to getIamPolicy, and systems are
+   * expected to put that etag in the request to setIamPolicy to ensure that their change will be
+   * applied to the same version of the policy.  If no etag is provided in the call to
+   * setIamPolicy, then the existing policy is overwritten blindly.
+   */
+  public String getEtag() {
     return etag;
   }
 
@@ -277,7 +337,16 @@ public final class Policy implements Serializable {
    * Returns the version of the policy. The default version is 0, meaning only the "owner",
    * "editor", and "viewer" roles are permitted. If the version is 1, you may also use other roles.
    */
+  @Deprecated
   public int version() {
+    return getVersion();
+  }
+
+  /**
+   * Returns the version of the policy. The default version is 0, meaning only the "owner",
+   * "editor", and "viewer" roles are permitted. If the version is 1, you may also use other roles.
+   */
+  public int getVersion() {
     return version;
   }
 
@@ -304,15 +373,23 @@ public final class Policy implements Serializable {
       return false;
     }
     Policy other = (Policy) obj;
-    return Objects.equals(bindings, other.bindings())
-        && Objects.equals(etag, other.etag())
-        && Objects.equals(version, other.version());
+    return Objects.equals(bindings, other.getBindings())
+        && Objects.equals(etag, other.getEtag())
+        && Objects.equals(version, other.getVersion());
   }
 
   /**
    * Returns a builder for {@code Policy} objects.
    */
+  @Deprecated
   public static Builder builder() {
+    return newBuilder();
+  }
+
+  /**
+   * Returns a builder for {@code Policy} objects.
+   */
+  public static Builder newBuilder() {
     return new Builder();
   }
 }

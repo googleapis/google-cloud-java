@@ -54,14 +54,26 @@ public class Project extends ProjectInfo {
     }
 
     @Override
+    @Deprecated
     public Builder name(String name) {
-      infoBuilder.name(name);
+      return setName(name);
+    }
+
+    @Override
+    public Builder setName(String name) {
+      infoBuilder.setName(name);
       return this;
     }
 
     @Override
+    @Deprecated
     public Builder projectId(String projectId) {
-      infoBuilder.projectId(projectId);
+      return setProjectId(projectId);
+    }
+
+    @Override
+    public Builder setProjectId(String projectId) {
+      infoBuilder.setProjectId(projectId);
       return this;
     }
 
@@ -84,32 +96,38 @@ public class Project extends ProjectInfo {
     }
 
     @Override
+    @Deprecated
     public Builder labels(Map<String, String> labels) {
-      infoBuilder.labels(labels);
+      return setLabels(labels);
+    }
+
+    @Override
+    public Builder setLabels(Map<String, String> labels) {
+      infoBuilder.setLabels(labels);
       return this;
     }
 
     @Override
-    Builder projectNumber(Long projectNumber) {
-      infoBuilder.projectNumber(projectNumber);
+    Builder setProjectNumber(Long projectNumber) {
+      infoBuilder.setProjectNumber(projectNumber);
       return this;
     }
 
     @Override
-    Builder state(State state) {
-      infoBuilder.state(state);
+    Builder setState(State state) {
+      infoBuilder.setState(state);
       return this;
     }
 
     @Override
-    Builder createTimeMillis(Long createTimeMillis) {
-      infoBuilder.createTimeMillis(createTimeMillis);
+    Builder setCreateTimeMillis(Long createTimeMillis) {
+      infoBuilder.setCreateTimeMillis(createTimeMillis);
       return this;
     }
 
     @Override
-    Builder parent(ResourceId parent) {
-      infoBuilder.parent(parent);
+    Builder setParent(ResourceId parent) {
+      infoBuilder.setParent(parent);
       return this;
     }
 
@@ -122,13 +140,21 @@ public class Project extends ProjectInfo {
   Project(ResourceManager resourceManager, ProjectInfo.BuilderImpl infoBuilder) {
     super(infoBuilder);
     this.resourceManager = checkNotNull(resourceManager);
-    this.options = resourceManager.options();
+    this.options = resourceManager.getOptions();
   }
 
   /**
    * Returns the {@link ResourceManager} service object associated with this Project.
    */
+  @Deprecated
   public ResourceManager resourceManager() {
+    return getResourceManager();
+  }
+
+  /**
+   * Returns the {@link ResourceManager} service object associated with this Project.
+   */
+  public ResourceManager getResourceManager() {
     return resourceManager;
   }
 
@@ -140,7 +166,7 @@ public class Project extends ProjectInfo {
    * @throws ResourceManagerException upon failure
    */
   public Project reload() {
-    return resourceManager.get(projectId());
+    return resourceManager.get(getProjectId());
   }
 
   /**
@@ -166,7 +192,7 @@ public class Project extends ProjectInfo {
    *     Resource Manager delete</a>
    */
   public void delete() {
-    resourceManager.delete(projectId());
+    resourceManager.delete(getProjectId());
   }
 
   /**
@@ -183,7 +209,7 @@ public class Project extends ProjectInfo {
    *     Resource Manager undelete</a>
    */
   public void undelete() {
-    resourceManager.undelete(projectId());
+    resourceManager.undelete(getProjectId());
   }
 
   /**
@@ -212,7 +238,7 @@ public class Project extends ProjectInfo {
    *     Resource Manager getIamPolicy</a>
    */
   public Policy getPolicy() {
-    return resourceManager.getPolicy(projectId());
+    return resourceManager.getPolicy(getProjectId());
   }
 
   /**
@@ -227,7 +253,7 @@ public class Project extends ProjectInfo {
    *     Resource Manager setIamPolicy</a>
    */
   public Policy replacePolicy(Policy newPolicy) {
-    return resourceManager.replacePolicy(projectId(), newPolicy);
+    return resourceManager.replacePolicy(getProjectId(), newPolicy);
   }
 
   /**
@@ -250,7 +276,7 @@ public class Project extends ProjectInfo {
    *     Services</a>
    */
   List<Boolean> testPermissions(List<String> permissions) {
-    return resourceManager.testPermissions(projectId(), permissions);
+    return resourceManager.testPermissions(getProjectId(), permissions);
   }
 
   @Override
@@ -278,7 +304,7 @@ public class Project extends ProjectInfo {
 
   private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
     in.defaultReadObject();
-    this.resourceManager = options.service();
+    this.resourceManager = options.getService();
   }
 
   static Project fromPb(ResourceManager resourceManager,

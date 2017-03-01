@@ -22,16 +22,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-datastore</artifactId>
-  <version>0.4.0</version>
+  <version>0.9.3-beta</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-datastore:0.4.0'
+compile 'com.google.cloud:google-cloud-datastore:0.9.3-beta'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-datastore" % "0.4.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-datastore" % "0.9.3-beta"
 ```
 
 Example Application
@@ -73,7 +73,7 @@ To make authenticated requests to Google Cloud Datastore, you must create a serv
 import com.google.cloud.datastore.Datastore;
 import com.google.cloud.datastore.DatastoreOptions;
 
-Datastore datastore = DatastoreOptions.defaultInstance().service();
+Datastore datastore = DatastoreOptions.getDefaultInstance().getService();
 ```
 
 For other authentication options, see the [Authentication](https://github.com/GoogleCloudPlatform/google-cloud-java#authentication) page.
@@ -90,9 +90,9 @@ import com.google.cloud.datastore.KeyFactory;
 Then add the following code to put an entity in Datastore.
 
 ```java
-KeyFactory keyFactory = datastore.newKeyFactory().kind("Person");
+KeyFactory keyFactory = datastore.newKeyFactory().setKind("Person");
 Key key = keyFactory.newKey("john.doe@gmail.com");
-Entity entity = Entity.builder(key)
+Entity entity = Entity.newBuilder(key)
     .set("name", "John Doe")
     .set("age", 51)
     .set("favorite_food", "pizza")
@@ -126,9 +126,9 @@ import com.google.cloud.datastore.StructuredQuery.PropertyFilter;
 Then add the following code to your program:
 
 ```java
-Query<Entity> query = Query.entityQueryBuilder()
-    .kind("Person")
-    .filter(PropertyFilter.eq("favorite_food", "pizza"))
+Query<Entity> query = Query.newEntityQueryBuilder()
+    .setKind("Person")
+    .setFilter(PropertyFilter.eq("favorite_food", "pizza"))
     .build();
 QueryResults<Entity> results = datastore.run(query);
 while (results.hasNext()) {

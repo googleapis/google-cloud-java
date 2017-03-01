@@ -21,6 +21,7 @@ import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
 
 import java.io.Serializable;
+import java.util.List;
 import java.util.Objects;
 
 /**
@@ -43,16 +44,26 @@ public class Translation implements Serializable {
 
   private final String translatedText;
   private final String sourceLanguage;
+  private final String model;
 
-  private Translation(String translatedText, String sourceLanguage) {
+  private Translation(String translatedText, String sourceLanguage, String model) {
     this.translatedText = translatedText;
     this.sourceLanguage = sourceLanguage;
+    this.model = model;
   }
 
   /**
    * Returns the translated text.
    */
+  @Deprecated
   public String translatedText() {
+    return translatedText;
+  }
+
+  /**
+   * Returns the translated text.
+   */
+  public String getTranslatedText() {
     return translatedText;
   }
 
@@ -60,8 +71,29 @@ public class Translation implements Serializable {
    * Returns the language code of the source text. If no source language was provided this value is
    * the source language as detected by the Google Translate service.
    */
+  @Deprecated
   public String sourceLanguage() {
+    return getSourceLanguage();
+  }
+
+  /**
+   * Returns the language code of the source text. If no source language was provided this value is
+   * the source language as detected by the Google Translate service.
+   */
+  public String getSourceLanguage() {
     return sourceLanguage;
+  }
+
+  /**
+   * Returns the translation model used to translate the text. This value is only available if
+   * {@link Translate.TranslateOption#model(String)} was passed to
+   * {@link Translate#translate(List, Translate.TranslateOption...)}.
+   *
+   * <p>Please notice that you must be whitelisted to use the
+   * {@link Translate.TranslateOption#model(String)} option, otherwise translation will fail.
+   */
+  public String getModel() {
+    return model;
   }
 
   @Override
@@ -91,7 +123,8 @@ public class Translation implements Serializable {
   }
 
   static Translation fromPb(TranslationsResource translationPb) {
+    // TODO remove get("model") as soon as REST apiary supports model
     return new Translation(translationPb.getTranslatedText(),
-        translationPb.getDetectedSourceLanguage());
+        translationPb.getDetectedSourceLanguage(), (String) translationPb.get("model"));
   }
 }

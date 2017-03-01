@@ -125,36 +125,54 @@ public class SnapshotInfo implements Serializable {
    */
   public abstract static class Builder {
 
-    abstract Builder generatedId(String generatedId);
+    abstract Builder setGeneratedId(String generatedId);
 
-    abstract Builder creationTimestamp(Long creationTimestamp);
+    abstract Builder setCreationTimestamp(Long creationTimestamp);
 
     /**
      * Sets the snapshot identity.
      */
+    @Deprecated
     public abstract Builder snapshotId(SnapshotId snapshotId);
+
+    /**
+     * Sets the snapshot identity.
+     */
+    public abstract Builder setSnapshotId(SnapshotId snapshotId);
 
     /**
      * Sets an optional textual description of the snapshot.
      */
+    @Deprecated
     public abstract Builder description(String description);
 
-    abstract Builder status(Status status);
+    /**
+     * Sets an optional textual description of the snapshot.
+     */
+    public abstract Builder setDescription(String description);
 
-    abstract Builder diskSizeGb(Long diskSizeGb);
+    abstract Builder setStatus(Status status);
 
-    abstract Builder licenses(List<LicenseId> licenses);
+    abstract Builder setDiskSizeGb(Long diskSizeGb);
+
+    abstract Builder setLicenses(List<LicenseId> licenses);
 
     /**
      * Sets the identity of the source disk used to create the snapshot.
      */
+    @Deprecated
     public abstract Builder sourceDisk(DiskId sourceDisk);
 
-    abstract Builder sourceDiskId(String sourceDiskId);
+    /**
+     * Sets the identity of the source disk used to create the snapshot.
+     */
+    public abstract Builder setSourceDisk(DiskId sourceDisk);
 
-    abstract Builder storageBytes(Long storageBytes);
+    abstract Builder setSourceDiskId(String sourceDiskId);
 
-    abstract Builder storageBytesStatus(StorageBytesStatus storageBytesStatus);
+    abstract Builder setStorageBytes(Long storageBytes);
+
+    abstract Builder setStorageBytesStatus(StorageBytesStatus storageBytesStatus);
 
     /**
      * Creates a {@code SnapshotInfo} object.
@@ -219,67 +237,85 @@ public class SnapshotInfo implements Serializable {
     }
 
     @Override
-    BuilderImpl generatedId(String generatedId) {
+    BuilderImpl setGeneratedId(String generatedId) {
       this.generatedId = generatedId;
       return this;
     }
 
     @Override
-    BuilderImpl creationTimestamp(Long creationTimestamp) {
+    BuilderImpl setCreationTimestamp(Long creationTimestamp) {
       this.creationTimestamp = creationTimestamp;
       return this;
     }
 
     @Override
+    @Deprecated
     public BuilderImpl snapshotId(SnapshotId snapshotId) {
+      return setSnapshotId(snapshotId);
+    }
+
+    @Override
+    public BuilderImpl setSnapshotId(SnapshotId snapshotId) {
       this.snapshotId = checkNotNull(snapshotId);
       return this;
     }
 
     @Override
+    @Deprecated
     public BuilderImpl description(String description) {
+      return setDescription(description);
+    }
+
+    @Override
+    public BuilderImpl setDescription(String description) {
       this.description = description;
       return this;
     }
 
     @Override
-    BuilderImpl status(Status status) {
+    BuilderImpl setStatus(Status status) {
       this.status = status;
       return this;
     }
 
     @Override
-    BuilderImpl diskSizeGb(Long diskSizeGb) {
+    BuilderImpl setDiskSizeGb(Long diskSizeGb) {
       this.diskSizeGb = diskSizeGb;
       return this;
     }
 
     @Override
-    BuilderImpl licenses(List<LicenseId> licenses) {
+    BuilderImpl setLicenses(List<LicenseId> licenses) {
       this.licenses = licenses != null ? ImmutableList.copyOf(licenses) : null;
       return this;
     }
 
     @Override
+    @Deprecated
     public BuilderImpl sourceDisk(DiskId sourceDisk) {
+      return setSourceDisk(sourceDisk);
+    }
+
+    @Override
+    public BuilderImpl setSourceDisk(DiskId sourceDisk) {
       this.sourceDisk = checkNotNull(sourceDisk);
       return this;
     }
 
     @Override
-    BuilderImpl sourceDiskId(String sourceDiskId) {
+    BuilderImpl setSourceDiskId(String sourceDiskId) {
       this.sourceDiskId = sourceDiskId;
       return this;
     }
 
     @Override
-    BuilderImpl storageBytes(Long storageBytes) {
+    BuilderImpl setStorageBytes(Long storageBytes) {
       this.storageBytes = storageBytes;
       return this;
     }
 
     @Override
-    BuilderImpl storageBytesStatus(StorageBytesStatus storageBytesStatus) {
+    BuilderImpl setStorageBytesStatus(StorageBytesStatus storageBytesStatus) {
       this.storageBytesStatus = storageBytesStatus;
       return this;
     }
@@ -307,35 +343,75 @@ public class SnapshotInfo implements Serializable {
   /**
    * Returns the service-generated unique identifier for the snapshot.
    */
+  @Deprecated
   public String generatedId() {
+    return getGeneratedId();
+  }
+
+  /**
+   * Returns the service-generated unique identifier for the snapshot.
+   */
+  public String getGeneratedId() {
     return generatedId;
   }
 
   /**
    * Returns the creation timestamp in milliseconds since epoch.
    */
+  @Deprecated
   public Long creationTimestamp() {
+    return getCreationTimestamp();
+  }
+
+  /**
+   * Returns the creation timestamp in milliseconds since epoch.
+   */
+  public Long getCreationTimestamp() {
     return creationTimestamp;
   }
 
   /**
    * Returns the snapshot identity.
    */
+  @Deprecated
   public SnapshotId snapshotId() {
+    return getSnapshotId();
+  }
+
+  /**
+   * Returns the snapshot identity.
+   */
+  public SnapshotId getSnapshotId() {
     return snapshotId;
   }
 
   /**
    * Returns a textual description of the snapshot.
    */
+  @Deprecated
   public String description() {
+    return getDescription();
+  }
+
+  /**
+   * Returns a textual description of the snapshot.
+   */
+  public String getDescription() {
     return description;
   }
 
   /**
    * Returns all applicable publicly visible licenses.
    */
+  @Deprecated
   public List<LicenseId> licenses() {
+    return getLicenses();
+  }
+
+  /**
+   * Returns all applicable publicly visible licenses.
+   */
+  public List<LicenseId> getLicenses() {
     return licenses;
   }
 
@@ -344,21 +420,47 @@ public class SnapshotInfo implements Serializable {
    * disks, only after the snapshot has been successfully created and the status is set to
    * {@code READY}.
    */
+  @Deprecated
   public Status status() {
+    return getStatus();
+  }
+
+  /**
+   * Returns the status of the snapshot. A snapshot can be used to create other resources, such as
+   * disks, only after the snapshot has been successfully created and the status is set to
+   * {@code READY}.
+   */
+  public Status getStatus() {
     return status;
   }
 
   /**
    * Returns the size of the snapshot (in GB).
    */
+  @Deprecated
   public Long diskSizeGb() {
+    return getDiskSizeGb();
+  }
+
+  /**
+   * Returns the size of the snapshot (in GB).
+   */
+  public Long getDiskSizeGb() {
     return diskSizeGb;
   }
 
   /**
    * Returns the identity of the source disk used to create this snapshot.
    */
+  @Deprecated
   public DiskId sourceDisk() {
+    return getSourceDisk();
+  }
+
+  /**
+   * Returns the identity of the source disk used to create this snapshot.
+   */
+  public DiskId getSourceDisk() {
     return sourceDisk;
   }
 
@@ -367,7 +469,17 @@ public class SnapshotInfo implements Serializable {
    * may be used to determine whether the snapshot was taken from the current or a previous instance
    * of a given disk name.
    */
+  @Deprecated
   public String sourceDiskId() {
+    return getSourceDiskId();
+  }
+
+  /**
+   * Returns the service-generated unique id of the disk used to create this snapshot. This value
+   * may be used to determine whether the snapshot was taken from the current or a previous instance
+   * of a given disk name.
+   */
+  public String getSourceDiskId() {
     return sourceDiskId;
   }
 
@@ -375,7 +487,16 @@ public class SnapshotInfo implements Serializable {
    * Returns the size of the the storage used by the snapshot. As snapshots share storage, this
    * number is expected to change with snapshot creation/deletion.
    */
+  @Deprecated
   public Long storageBytes() {
+    return getStorageBytes();
+  }
+
+  /**
+   * Returns the size of the the storage used by the snapshot. As snapshots share storage, this
+   * number is expected to change with snapshot creation/deletion.
+   */
+  public Long getStorageBytes() {
     return storageBytes;
   }
 
@@ -385,7 +506,18 @@ public class SnapshotInfo implements Serializable {
    * indicates that the size of the snapshot is being updated. {@link StorageBytesStatus#UP_TO_DATE}
    * indicates that the size of the snapshot is up-to-date.
    */
+  @Deprecated
   public StorageBytesStatus storageBytesStatus() {
+    return getStorageBytesStatus();
+  }
+
+  /**
+   * Indicates whether {@link SnapshotInfo#storageBytes()} is in a stable state or it is being
+   * adjusted as a result of shared storage reallocation. {@link StorageBytesStatus#UPDATING}
+   * indicates that the size of the snapshot is being updated. {@link StorageBytesStatus#UP_TO_DATE}
+   * indicates that the size of the snapshot is up-to-date.
+   */
+  public StorageBytesStatus getStorageBytesStatus() {
     return storageBytesStatus;
   }
 
@@ -429,8 +561,8 @@ public class SnapshotInfo implements Serializable {
 
   SnapshotInfo setProjectId(String projectId) {
     return toBuilder()
-        .snapshotId(snapshotId.setProjectId(projectId))
-        .sourceDisk(sourceDisk.setProjectId(projectId))
+        .setSnapshotId(snapshotId.setProjectId(projectId))
+        .setSourceDisk(sourceDisk.setProjectId(projectId))
         .build();
   }
 
@@ -442,9 +574,9 @@ public class SnapshotInfo implements Serializable {
     if (creationTimestamp != null) {
       snapshotPb.setCreationTimestamp(TIMESTAMP_FORMATTER.print(creationTimestamp));
     }
-    snapshotPb.setName(snapshotId.snapshot());
+    snapshotPb.setName(snapshotId.getSnapshot());
     snapshotPb.setDescription(description);
-    snapshotPb.setSelfLink(snapshotId.selfLink());
+    snapshotPb.setSelfLink(snapshotId.getSelfLink());
     if (status != null) {
       snapshotPb.setStatus(status.name());
     }
@@ -453,7 +585,7 @@ public class SnapshotInfo implements Serializable {
       snapshotPb.setLicenses(Lists.transform(licenses, LicenseId.TO_URL_FUNCTION));
     }
     if (sourceDisk != null) {
-      snapshotPb.setSourceDisk(sourceDisk.selfLink());
+      snapshotPb.setSourceDisk(sourceDisk.getSelfLink());
     }
     snapshotPb.setSourceDiskId(sourceDiskId);
     snapshotPb.setStorageBytes(storageBytes);
@@ -467,15 +599,24 @@ public class SnapshotInfo implements Serializable {
    * Returns a builder for a {@code SnapshotInfo} object given the snapshot identity and a source
    * disk identity.
    */
+  @Deprecated
   public static Builder builder(SnapshotId snapshotId, DiskId source) {
-    return new BuilderImpl().snapshotId(snapshotId).sourceDisk(source);
+    return newBuilder(snapshotId, source);
+  }
+
+  /**
+   * Returns a builder for a {@code SnapshotInfo} object given the snapshot identity and a source
+   * disk identity.
+   */
+  public static Builder newBuilder(SnapshotId snapshotId, DiskId source) {
+    return new BuilderImpl().setSnapshotId(snapshotId).setSourceDisk(source);
   }
 
   /**
    * Returns a {@code SnapshotInfo} object given the snapshot identity and a source disk identity.
    */
   public static SnapshotInfo of(SnapshotId snapshotId, DiskId source) {
-    return builder(snapshotId, source).build();
+    return newBuilder(snapshotId, source).build();
   }
 
   static SnapshotInfo fromPb(Snapshot snapshotPb) {

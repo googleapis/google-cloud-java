@@ -100,7 +100,7 @@ public class StructsTest {
   }
 
   private void checkStructField(Struct struct, String key, Value expected) {
-    Map<String, Value> map = struct.getFields();
+    Map<String, Value> map = struct.getFieldsMap();
     checkMapField(map, key, expected);
   }
 
@@ -158,7 +158,7 @@ public class StructsTest {
   @Test
   public void testNewStructEmpty() {
     Struct struct = Structs.newStruct(EMPTY_MAP);
-    assertTrue(struct.getFields().isEmpty());
+    assertTrue(struct.getFieldsMap().isEmpty());
   }
 
   @Test

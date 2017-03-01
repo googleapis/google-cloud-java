@@ -55,7 +55,7 @@ public class CopyWriter implements Restorable<CopyWriter> {
   CopyWriter(StorageOptions serviceOptions, RewriteResponse rewriteResponse) {
     this.serviceOptions = serviceOptions;
     this.rewriteResponse = rewriteResponse;
-    this.storageRpc = serviceOptions.rpc();
+    this.storageRpc = serviceOptions.getRpc();
   }
 
   /**
@@ -71,17 +71,43 @@ public class CopyWriter implements Restorable<CopyWriter> {
    *
    * @throws StorageException upon failure
    */
+  @Deprecated
   public Blob result() {
+    return getResult();
+  }
+
+  /**
+   * Returns the updated information for the written blob. Calling this method when {@code isDone()}
+   * is {@code false} will block until all pending chunks are copied.
+   *
+   * <p>This method has the same effect of doing:
+   * <pre> {@code
+   * while (!copyWriter.isDone()) {
+   *    copyWriter.copyChunk();
+   * }}
+   * </pre>
+   *
+   * @throws StorageException upon failure
+   */
+  public Blob getResult() {
     while (!isDone()) {
       copyChunk();
     }
-    return Blob.fromPb(serviceOptions.service(), rewriteResponse.result);
+    return Blob.fromPb(serviceOptions.getService(), rewriteResponse.result);
   }
 
   /**
    * Returns the size of the blob being copied.
    */
+  @Deprecated
   public long blobSize() {
+    return getBlobSize();
+  }
+
+  /**
+   * Returns the size of the blob being copied.
+   */
+  public long getBlobSize() {
     return rewriteResponse.blobSize;
   }
 
@@ -95,7 +121,15 @@ public class CopyWriter implements Restorable<CopyWriter> {
   /**
    * Returns the number of bytes copied.
    */
+  @Deprecated
   public long totalBytesCopied() {
+    return getTotalBytesCopied();
+  }
+
+  /**
+   * Returns the number of bytes copied.
+   */
+  public long getTotalBytesCopied() {
     return rewriteResponse.totalBytesRewritten;
   }
 
@@ -113,7 +147,8 @@ public class CopyWriter implements Restorable<CopyWriter> {
           public RewriteResponse call() {
             return storageRpc.continueRewrite(rewriteResponse);
           }
-        }, serviceOptions.retryParams(), StorageImpl.EXCEPTION_HANDLER, serviceOptions.clock());
+        }, serviceOptions.getRetryParams(), StorageImpl.EXCEPTION_HANDLER,
+            serviceOptions.getClock());
       } catch (RetryHelper.RetryHelperException e) {
         throw StorageException.translateAndThrow(e);
       }
@@ -122,19 +157,19 @@ public class CopyWriter implements Restorable<CopyWriter> {
 
   @Override
   public RestorableState<CopyWriter> capture() {
-    return StateImpl.builder(
+    return StateImpl.newBuilder(
         serviceOptions,
         BlobId.fromPb(rewriteResponse.rewriteRequest.source),
         rewriteResponse.rewriteRequest.sourceOptions,
         rewriteResponse.rewriteRequest.overrideInfo,
         BlobInfo.fromPb(rewriteResponse.rewriteRequest.target),
         rewriteResponse.rewriteRequest.targetOptions)
-        .result(rewriteResponse.result != null ? BlobInfo.fromPb(rewriteResponse.result) : null)
-        .blobSize(blobSize())
-        .isDone(isDone())
-        .megabytesCopiedPerChunk(rewriteResponse.rewriteRequest.megabytesRewrittenPerCall)
-        .rewriteToken(rewriteResponse.rewriteToken)
-        .totalBytesRewritten(totalBytesCopied())
+        .setResult(rewriteResponse.result != null ? BlobInfo.fromPb(rewriteResponse.result) : null)
+        .setBlobSize(getBlobSize())
+        .setIsDone(isDone())
+        .setMegabytesCopiedPerChunk(rewriteResponse.rewriteRequest.megabytesRewrittenPerCall)
+        .setRewriteToken(rewriteResponse.rewriteToken)
+        .setTotalBytesRewritten(getTotalBytesCopied())
         .build();
   }
 
@@ -196,32 +231,32 @@ public class CopyWriter implements Restorable<CopyWriter> {
         this.targetOptions = targetOptions;
       }
 
-      Builder result(BlobInfo result) {
+      Builder setResult(BlobInfo result) {
         this.result = result;
         return this;
       }
 
-      Builder blobSize(long blobSize) {
+      Builder setBlobSize(long blobSize) {
         this.blobSize = blobSize;
         return this;
       }
 
-      Builder isDone(boolean isDone) {
+      Builder setIsDone(boolean isDone) {
         this.isDone = isDone;
         return this;
       }
 
-      Builder rewriteToken(String rewriteToken) {
+      Builder setRewriteToken(String rewriteToken) {
         this.rewriteToken = rewriteToken;
         return this;
       }
 
-      Builder totalBytesRewritten(long totalBytesRewritten) {
+      Builder setTotalBytesRewritten(long totalBytesRewritten) {
         this.totalBytesCopied = totalBytesRewritten;
         return this;
       }
 
-      Builder megabytesCopiedPerChunk(Long megabytesCopiedPerChunk) {
+      Builder setMegabytesCopiedPerChunk(Long megabytesCopiedPerChunk) {
         this.megabytesCopiedPerChunk = megabytesCopiedPerChunk;
         return this;
       }
@@ -231,7 +266,7 @@ public class CopyWriter implements Restorable<CopyWriter> {
       }
     }
 
-    static Builder builder(StorageOptions options, BlobId source,
+    static Builder newBuilder(StorageOptions options, BlobId source,
         Map<StorageRpc.Option, ?> sourceOptions, boolean overrideInfo, BlobInfo target,
         Map<StorageRpc.Option, ?> targetOptions) {
       return new Builder(options, source, sourceOptions, overrideInfo, target, targetOptions);

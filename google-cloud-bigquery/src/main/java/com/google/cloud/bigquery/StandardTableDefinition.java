@@ -64,14 +64,30 @@ public class StandardTableDefinition extends TableDefinition {
     /**
      * Returns a lower-bound estimate of the number of rows currently in the streaming buffer.
      */
+    @Deprecated
     public long estimatedRows() {
+      return getEstimatedRows();
+    }
+
+    /**
+     * Returns a lower-bound estimate of the number of rows currently in the streaming buffer.
+     */
+    public long getEstimatedRows() {
       return estimatedRows;
     }
 
     /**
      * Returns a lower-bound estimate of the number of bytes currently in the streaming buffer.
      */
+    @Deprecated
     public long estimatedBytes() {
+      return getEstimatedBytes();
+    }
+
+    /**
+     * Returns a lower-bound estimate of the number of bytes currently in the streaming buffer.
+     */
+    public long getEstimatedBytes() {
       return estimatedBytes;
     }
 
@@ -79,7 +95,16 @@ public class StandardTableDefinition extends TableDefinition {
      * Returns the timestamp of the oldest entry in the streaming buffer, in milliseconds since
      * epoch. Returns {@code null} if the streaming buffer is empty.
      */
+    @Deprecated
     public Long oldestEntryTime() {
+      return getOldestEntryTime();
+    }
+
+    /**
+     * Returns the timestamp of the oldest entry in the streaming buffer, in milliseconds since
+     * epoch. Returns {@code null} if the streaming buffer is empty.
+     */
+    public Long getOldestEntryTime() {
       return oldestEntryTime;
     }
 
@@ -146,7 +171,7 @@ public class StandardTableDefinition extends TableDefinition {
     private Builder(Table tablePb) {
       super(tablePb);
       if (tablePb.getNumRows() != null) {
-        this.numRows(tablePb.getNumRows().longValue());
+        this.setNumRows(tablePb.getNumRows().longValue());
       }
       this.numBytes = tablePb.getNumBytes();
       this.location = tablePb.getLocation();
@@ -158,22 +183,22 @@ public class StandardTableDefinition extends TableDefinition {
       }
     }
 
-    Builder numBytes(Long numBytes) {
+    Builder setNumBytes(Long numBytes) {
       this.numBytes = numBytes;
       return self();
     }
 
-    Builder numRows(Long numRows) {
+    Builder setNumRows(Long numRows) {
       this.numRows = numRows;
       return self();
     }
 
-    Builder location(String location) {
+    Builder setLocation(String location) {
       this.location = location;
       return self();
     }
 
-    Builder streamingBuffer(StreamingBuffer streamingBuffer) {
+    Builder setStreamingBuffer(StreamingBuffer streamingBuffer) {
       this.streamingBuffer = streamingBuffer;
       return self();
     }
@@ -182,7 +207,16 @@ public class StandardTableDefinition extends TableDefinition {
      * Sets the time partitioning configuration for the table. If not set, the table is not
      * time-partitioned.
      */
+    @Deprecated
     public Builder timePartitioning(TimePartitioning timePartitioning) {
+      return setTimePartitioning(timePartitioning);
+    }
+
+    /**
+     * Sets the time partitioning configuration for the table. If not set, the table is not
+     * time-partitioned.
+     */
+    public Builder setTimePartitioning(TimePartitioning timePartitioning) {
       this.timePartitioning = timePartitioning;
       return this;
     }
@@ -208,14 +242,30 @@ public class StandardTableDefinition extends TableDefinition {
   /**
    * Returns the size of this table in bytes, excluding any data in the streaming buffer.
    */
+  @Deprecated
   public Long numBytes() {
+    return getNumBytes();
+  }
+
+  /**
+   * Returns the size of this table in bytes, excluding any data in the streaming buffer.
+   */
+  public Long getNumBytes() {
     return numBytes;
   }
 
   /**
    * Returns the number of rows in this table, excluding any data in the streaming buffer.
    */
+  @Deprecated
   public Long numRows() {
+    return getNumRows();
+  }
+
+  /**
+   * Returns the number of rows in this table, excluding any data in the streaming buffer.
+   */
+  public Long getNumRows() {
     return numRows;
   }
 
@@ -226,7 +276,19 @@ public class StandardTableDefinition extends TableDefinition {
    * @see <a href="https://cloud.google.com/bigquery/docs/managing_jobs_datasets_projects#dataset-location">
    *     Dataset Location</a>
    */
+  @Deprecated
   public String location() {
+    return getLocation();
+  }
+
+  /**
+   * Returns the geographic location where the table should reside. This value is inherited from the
+   * dataset.
+   *
+   * @see <a href="https://cloud.google.com/bigquery/docs/managing_jobs_datasets_projects#dataset-location">
+   *     Dataset Location</a>
+   */
+  public String getLocation() {
     return location;
   }
 
@@ -234,14 +296,48 @@ public class StandardTableDefinition extends TableDefinition {
    * Returns information on the table's streaming buffer if any exists. Returns {@code null} if no
    * streaming buffer exists.
    */
+  @Deprecated
   public StreamingBuffer streamingBuffer() {
+    return getStreamingBuffer();
+  }
+
+  /**
+   * Returns information on the table's streaming buffer if any exists. Returns {@code null} if no
+   * streaming buffer exists.
+   */
+  public StreamingBuffer getStreamingBuffer() {
     return streamingBuffer;
+  }
+
+  /**
+   * Returns the time partitioning configuration for this table. If {@code null}, the table is not
+   * time-partitioned.
+   */
+  @Deprecated
+  public TimePartitioning timePartitioning() {
+    return getTimePartitioning();
+  }
+
+  /**
+   * Returns the time partitioning configuration for this table. If {@code null}, the table is not
+   * time-partitioned.
+   */
+  public TimePartitioning getTimePartitioning() {
+    return timePartitioning;
   }
 
   /**
    * Returns a builder for a BigQuery standard table definition.
    */
+  @Deprecated
   public static Builder builder() {
+    return newBuilder();
+  }
+
+  /**
+   * Returns a builder for a BigQuery standard table definition.
+   */
+  public static Builder newBuilder() {
     return new Builder();
   }
 
@@ -251,15 +347,7 @@ public class StandardTableDefinition extends TableDefinition {
    * @param schema the schema of the table
    */
   public static StandardTableDefinition of(Schema schema) {
-    return builder().schema(schema).build();
-  }
-
-  /**
-   * Returns the time partitioning configuration for this table. If {@code null}, the table is not
-   * time-partitioned.
-   */
-  public TimePartitioning timePartitioning() {
-    return timePartitioning;
+    return newBuilder().setSchema(schema).build();
   }
 
   /**

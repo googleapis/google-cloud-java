@@ -30,6 +30,14 @@ public class UserDefinedFunctionTest {
 
   @Test
   public void testConstructor() {
+    assertEquals(INLINE, INLINE_FUNCTION.getContent());
+    assertEquals(UserDefinedFunction.Type.INLINE, INLINE_FUNCTION.getType());
+    assertEquals(URI, URI_FUNCTION.getContent());
+    assertEquals(UserDefinedFunction.Type.FROM_URI, URI_FUNCTION.getType());
+  }
+
+  @Test
+  public void testConstructorDeprecated() {
     assertEquals(INLINE, INLINE_FUNCTION.content());
     assertEquals(UserDefinedFunction.Type.INLINE, INLINE_FUNCTION.type());
     assertEquals(URI, URI_FUNCTION.content());
@@ -50,7 +58,7 @@ public class UserDefinedFunctionTest {
 
   private void compareUserDefinedFunction(UserDefinedFunction expected, UserDefinedFunction value) {
     assertEquals(expected, value);
-    assertEquals(expected.type(), value.type());
-    assertEquals(expected.content(), value.content());
+    assertEquals(expected.getType(), value.getType());
+    assertEquals(expected.getContent(), value.getContent());
   }
 }

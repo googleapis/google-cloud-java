@@ -41,17 +41,40 @@ public class AsyncPageImplTest {
       .addAll(VALUES3)
       .build();
 
+  private static class TestPageFetcher implements AsyncPageImpl.NextPageFetcher<String> {
+    private static final long serialVersionUID = 4703765400378593176L;
+
+    private final AsyncPageImpl<String> nextResult;
+
+    TestPageFetcher(AsyncPageImpl<String> nextResult) {
+      this.nextResult = nextResult;
+    }
+
+    @Override
+    public Future<AsyncPage<String>> nextPage() {
+      return getNextPage();
+    }
+
+    @Override
+    public Future<AsyncPage<String>> getNextPage() {
+      return Futures.<AsyncPage<String>>immediateFuture(nextResult);
+    }
+  }
+
   @Test
   public void testPage() {
     final AsyncPageImpl<String> nextResult = new AsyncPageImpl<>(null, "c", VALUES2);
-    AsyncPageImpl.NextPageFetcher<String> fetcher = new AsyncPageImpl.NextPageFetcher<String>() {
-      private static final long serialVersionUID = 4703765400378593176L;
+    AsyncPageImpl.NextPageFetcher<String> fetcher = new TestPageFetcher(nextResult);
+    AsyncPageImpl<String> result = new AsyncPageImpl<>(fetcher, "c", VALUES1);
+    assertEquals(nextResult, result.getNextPage());
+    assertEquals("c", result.getNextPageCursor());
+    assertEquals(VALUES1, result.getValues());
+  }
 
-      @Override
-      public Future<AsyncPage<String>> nextPage() {
-        return Futures.<AsyncPage<String>>immediateFuture(nextResult);
-      }
-    };
+  @Test
+  public void testPageDeprecated() {
+    final AsyncPageImpl<String> nextResult = new AsyncPageImpl<>(null, "c", VALUES2);
+    AsyncPageImpl.NextPageFetcher<String> fetcher = new TestPageFetcher(nextResult);
     AsyncPageImpl<String> result = new AsyncPageImpl<>(fetcher, "c", VALUES1);
     assertEquals(nextResult, result.nextPage());
     assertEquals("c", result.nextPageCursor());
@@ -61,14 +84,17 @@ public class AsyncPageImplTest {
   @Test
   public void testPageAsync() throws ExecutionException, InterruptedException {
     final AsyncPageImpl<String> nextResult = new AsyncPageImpl<>(null, "c", VALUES2);
-    AsyncPageImpl.NextPageFetcher<String> fetcher = new AsyncPageImpl.NextPageFetcher<String>() {
-      private static final long serialVersionUID = 4703765400378593176L;
+    AsyncPageImpl.NextPageFetcher<String> fetcher = new TestPageFetcher(nextResult);
+    AsyncPageImpl<String> result = new AsyncPageImpl<>(fetcher, "c", VALUES1);
+    assertEquals(nextResult, result.getNextPageAsync().get());
+    assertEquals("c", result.getNextPageCursor());
+    assertEquals(VALUES1, result.getValues());
+  }
 
-      @Override
-      public Future<AsyncPage<String>> nextPage() {
-        return Futures.<AsyncPage<String>>immediateFuture(nextResult);
-      }
-    };
+  @Test
+  public void testPageAsyncDeprecated() throws ExecutionException, InterruptedException {
+    final AsyncPageImpl<String> nextResult = new AsyncPageImpl<>(null, "c", VALUES2);
+    AsyncPageImpl.NextPageFetcher<String> fetcher = new TestPageFetcher(nextResult);
     AsyncPageImpl<String> result = new AsyncPageImpl<>(fetcher, "c", VALUES1);
     assertEquals(nextResult, result.nextPageAsync().get());
     assertEquals("c", result.nextPageCursor());
@@ -78,23 +104,9 @@ public class AsyncPageImplTest {
   @Test
   public void testIterateAll() {
     final AsyncPageImpl<String> nextResult2 = new AsyncPageImpl<>(null, "c3", VALUES3);
-    AsyncPageImpl.NextPageFetcher<String> fetcher2 = new AsyncPageImpl.NextPageFetcher<String>() {
-      private static final long serialVersionUID = -9203621430631884026L;
-
-      @Override
-      public Future<AsyncPage<String>> nextPage() {
-        return Futures.<AsyncPage<String>>immediateFuture(nextResult2);
-      }
-    };
+    AsyncPageImpl.NextPageFetcher<String> fetcher2 = new TestPageFetcher(nextResult2);
     final AsyncPageImpl<String> nextResult1 = new AsyncPageImpl<>(fetcher2, "c2", VALUES2);
-    AsyncPageImpl.NextPageFetcher<String> fetcher1 = new AsyncPageImpl.NextPageFetcher<String>() {
-      private static final long serialVersionUID = -9203621430631884026L;
-
-      @Override
-      public Future<AsyncPage<String>> nextPage() {
-        return Futures.<AsyncPage<String>>immediateFuture(nextResult1);
-      }
-    };
+    AsyncPageImpl.NextPageFetcher<String> fetcher1 = new TestPageFetcher(nextResult1);
     AsyncPageImpl<String> result = new AsyncPageImpl<>(fetcher1, "c1", VALUES1);
     assertEquals(ALL_VALUES, ImmutableList.copyOf(result.iterateAll()));
   }
@@ -102,27 +114,13 @@ public class AsyncPageImplTest {
   @Test
   public void testAsyncPageAndIterateAll() throws ExecutionException, InterruptedException {
     final AsyncPageImpl<String> nextResult2 = new AsyncPageImpl<>(null, "c3", VALUES3);
-    AsyncPageImpl.NextPageFetcher<String> fetcher2 = new AsyncPageImpl.NextPageFetcher<String>() {
-      private static final long serialVersionUID = -9203621430631884026L;
-
-      @Override
-      public Future<AsyncPage<String>> nextPage() {
-        return Futures.<AsyncPage<String>>immediateFuture(nextResult2);
-      }
-    };
+    AsyncPageImpl.NextPageFetcher<String> fetcher2 = new TestPageFetcher(nextResult2);
     final AsyncPageImpl<String> nextResult1 = new AsyncPageImpl<>(fetcher2, "c2", VALUES2);
-    AsyncPageImpl.NextPageFetcher<String> fetcher1 = new AsyncPageImpl.NextPageFetcher<String>() {
-      private static final long serialVersionUID = -9203621430631884026L;
-
-      @Override
-      public Future<AsyncPage<String>> nextPage() {
-        return Futures.<AsyncPage<String>>immediateFuture(nextResult1);
-      }
-    };
+    AsyncPageImpl.NextPageFetcher<String> fetcher1 = new TestPageFetcher(nextResult1);
     AsyncPageImpl<String> result = new AsyncPageImpl<>(fetcher1, "c1", VALUES1);
-    assertEquals(nextResult1, result.nextPageAsync().get());
-    assertEquals("c1", result.nextPageCursor());
-    assertEquals(VALUES1, result.values());
-    assertEquals(SOME_VALUES, ImmutableList.copyOf(result.nextPageAsync().get().iterateAll()));
+    assertEquals(nextResult1, result.getNextPageAsync().get());
+    assertEquals("c1", result.getNextPageCursor());
+    assertEquals(VALUES1, result.getValues());
+    assertEquals(SOME_VALUES, ImmutableList.copyOf(result.getNextPageAsync().get().iterateAll()));
   }
 }

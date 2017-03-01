@@ -60,62 +60,80 @@ public class Disk extends DiskInfo {
     }
 
     @Override
-    Builder generatedId(String generatedId) {
-      infoBuilder.generatedId(generatedId);
+    Builder setGeneratedId(String generatedId) {
+      infoBuilder.setGeneratedId(generatedId);
       return this;
     }
 
     @Override
+    @Deprecated
     public Builder configuration(DiskConfiguration configuration) {
-      infoBuilder.configuration(configuration);
+      return setConfiguration(configuration);
+    }
+
+    @Override
+    public Builder setConfiguration(DiskConfiguration configuration) {
+      infoBuilder.setConfiguration(configuration);
       return this;
     }
 
     @Override
+    @Deprecated
     public Builder diskId(DiskId diskId) {
-      infoBuilder.diskId(diskId);
+      return setDiskId(diskId);
+    }
+
+    @Override
+    public Builder setDiskId(DiskId diskId) {
+      infoBuilder.setDiskId(diskId);
       return this;
     }
 
     @Override
-    Builder creationTimestamp(Long creationTimestamp) {
-      infoBuilder.creationTimestamp(creationTimestamp);
+    Builder setCreationTimestamp(Long creationTimestamp) {
+      infoBuilder.setCreationTimestamp(creationTimestamp);
       return this;
     }
 
     @Override
-    Builder creationStatus(CreationStatus creationStatus) {
-      infoBuilder.creationStatus(creationStatus);
+    Builder setCreationStatus(CreationStatus creationStatus) {
+      infoBuilder.setCreationStatus(creationStatus);
       return this;
     }
 
     @Override
+    @Deprecated
     public Builder description(String description) {
-      infoBuilder.description(description);
+      return setDescription(description);
+    }
+
+    @Override
+    public Builder setDescription(String description) {
+      infoBuilder.setDescription(description);
       return this;
     }
 
     @Override
-    Builder licenses(List<LicenseId> licenses) {
-      infoBuilder.licenses(licenses);
+    Builder setLicenses(List<LicenseId> licenses) {
+      infoBuilder.setLicenses(licenses);
       return this;
     }
 
     @Override
-    Builder attachedInstances(List<InstanceId> attachedInstances) {
-      infoBuilder.attachedInstances(attachedInstances);
+    Builder setAttachedInstances(List<InstanceId> attachedInstances) {
+      infoBuilder.setAttachedInstances(attachedInstances);
       return this;
     }
 
     @Override
-    Builder lastAttachTimestamp(Long lastAttachTimestamp) {
-      infoBuilder.lastAttachTimestamp(lastAttachTimestamp);
+    Builder setLastAttachTimestamp(Long lastAttachTimestamp) {
+      infoBuilder.setLastAttachTimestamp(lastAttachTimestamp);
       return this;
     }
 
     @Override
-    Builder lastDetachTimestamp(Long lastDetachTimestamp) {
-      infoBuilder.lastDetachTimestamp(lastDetachTimestamp);
+    Builder setLastDetachTimestamp(Long lastDetachTimestamp) {
+      infoBuilder.setLastDetachTimestamp(lastDetachTimestamp);
       return this;
     }
 
@@ -128,7 +146,7 @@ public class Disk extends DiskInfo {
   Disk(Compute compute, DiskInfo.BuilderImpl infoBuilder) {
     super(infoBuilder);
     this.compute = checkNotNull(compute);
-    this.options = compute.options();
+    this.options = compute.getOptions();
   }
 
   /**
@@ -149,7 +167,7 @@ public class Disk extends DiskInfo {
    * @throws ComputeException upon failure
    */
   public Disk reload(DiskOption... options) {
-    return compute.getDisk(diskId(), options);
+    return compute.getDisk(getDiskId(), options);
   }
 
   /**
@@ -160,7 +178,7 @@ public class Disk extends DiskInfo {
    * @throws ComputeException upon failure
    */
   public Operation delete(OperationOption... options) {
-    return compute.deleteDisk(diskId(), options);
+    return compute.deleteDisk(getDiskId(), options);
   }
 
   /**
@@ -170,7 +188,7 @@ public class Disk extends DiskInfo {
    * @throws ComputeException upon failure
    */
   public Operation createSnapshot(String snapshot, OperationOption... options) {
-    return compute.create(SnapshotInfo.of(SnapshotId.of(snapshot), diskId()), options);
+    return compute.create(SnapshotInfo.of(SnapshotId.of(snapshot), getDiskId()), options);
   }
 
   /**
@@ -180,8 +198,8 @@ public class Disk extends DiskInfo {
    * @throws ComputeException upon failure
    */
   public Operation createSnapshot(String snapshot, String description, OperationOption... options) {
-    SnapshotInfo snapshotInfo = SnapshotInfo.builder(SnapshotId.of(snapshot), diskId())
-        .description(description)
+    SnapshotInfo snapshotInfo = SnapshotInfo.newBuilder(SnapshotId.of(snapshot), getDiskId())
+        .setDescription(description)
         .build();
     return compute.create(snapshotInfo, options);
   }
@@ -193,7 +211,7 @@ public class Disk extends DiskInfo {
    * @throws ComputeException upon failure
    */
   public Operation createImage(String image, OperationOption... options) {
-    ImageInfo imageInfo = ImageInfo.of(ImageId.of(image), DiskImageConfiguration.of(diskId()));
+    ImageInfo imageInfo = ImageInfo.of(ImageId.of(image), DiskImageConfiguration.of(getDiskId()));
     return compute.create(imageInfo, options);
   }
 
@@ -204,9 +222,10 @@ public class Disk extends DiskInfo {
    * @throws ComputeException upon failure
    */
   public Operation createImage(String image, String description, OperationOption... options) {
-    ImageInfo imageInfo = ImageInfo.builder(ImageId.of(image), DiskImageConfiguration.of(diskId()))
-        .description(description)
-        .build();
+    ImageInfo imageInfo =
+        ImageInfo.newBuilder(ImageId.of(image), DiskImageConfiguration.of(getDiskId()))
+            .setDescription(description)
+            .build();
     return compute.create(imageInfo, options);
   }
 
@@ -218,13 +237,21 @@ public class Disk extends DiskInfo {
    * @throws ComputeException upon failure or if the new disk size is smaller than the previous one
    */
   public Operation resize(long sizeGb, OperationOption... options) {
-    return compute.resize(diskId(), sizeGb, options);
+    return compute.resize(getDiskId(), sizeGb, options);
   }
 
   /**
    * Returns the disk's {@code Compute} object used to issue requests.
    */
+  @Deprecated
   public Compute compute() {
+    return getCompute();
+  }
+
+  /**
+   * Returns the disk's {@code Compute} object used to issue requests.
+   */
+  public Compute getCompute() {
     return compute;
   }
 
@@ -252,7 +279,7 @@ public class Disk extends DiskInfo {
 
   private void readObject(ObjectInputStream input) throws IOException, ClassNotFoundException {
     input.defaultReadObject();
-    this.compute = options.service();
+    this.compute = options.getService();
   }
 
   static Disk fromPb(Compute compute, com.google.api.services.compute.model.Disk diskPb) {

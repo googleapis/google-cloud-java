@@ -59,7 +59,13 @@ public interface ResourceManager extends Service<ResourceManagerOptions> {
     }
 
     @Override
+    @Deprecated
     public String selector() {
+      return getSelector();
+    }
+
+    @Override
+    public String getSelector() {
       return selector;
     }
   }

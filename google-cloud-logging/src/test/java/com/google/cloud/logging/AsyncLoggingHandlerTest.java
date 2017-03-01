@@ -59,12 +59,13 @@ public class AsyncLoggingHandlerTest {
 
   @Test
   public void testPublish() {
-    EasyMock.expect(options.projectId()).andReturn(PROJECT).anyTimes();
-    EasyMock.expect(options.service()).andReturn(logging);
-    LogEntry entry = LogEntry.builder(Payload.StringPayload.of(MESSAGE))
-        .severity(Severity.DEBUG)
+    EasyMock.expect(options.getProjectId()).andReturn(PROJECT).anyTimes();
+    EasyMock.expect(options.getService()).andReturn(logging);
+    LogEntry entry = LogEntry.newBuilder(Payload.StringPayload.of(MESSAGE))
+        .setSeverity(Severity.DEBUG)
         .addLabel("levelName", "FINEST")
         .addLabel("levelValue", String.valueOf(Level.FINEST.intValue()))
+        .setTimestamp(123456789L)
         .build();
     EasyMock.expect(logging.writeAsync(ImmutableList.of(entry), WriteOption.logName(LOG_NAME),
         WriteOption.resource(DEFAULT_RESOURCE))).andReturn(FUTURE);
@@ -72,6 +73,8 @@ public class AsyncLoggingHandlerTest {
     Handler handler = new AsyncLoggingHandler(LOG_NAME, options);
     handler.setLevel(Level.ALL);
     handler.setFormatter(new TestFormatter());
-    handler.publish(new LogRecord(Level.FINEST, MESSAGE));
+    LogRecord record = new LogRecord(Level.FINEST, MESSAGE);
+    record.setMillis(123456789L);
+    handler.publish(record);
   }
 }

@@ -22,9 +22,9 @@
  * <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/src/main/java/com/google/cloud/examples/storage/snippets/GetOrCreateBlob.java">
  * CreateBlob.java</a>.
  * <pre> {@code
- * Storage storage = StorageOptions.defaultInstance().service();
+ * Storage storage = StorageOptions.getDefaultInstance().getService();
  * BlobId blobId = BlobId.of("bucket", "blob_name");
- * BlobInfo blobInfo = BlobInfo.builder(blobId).contentType("text/plain").build();
+ * BlobInfo blobInfo = BlobInfo.newBuilder(blobId).setContentType("text/plain").build();
  * Blob blob = storage.create(blobInfo, "Hello, Cloud Storage!".getBytes(UTF_8));
  * }</pre>
  * <p>
@@ -33,11 +33,11 @@
  * <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/src/main/java/com/google/cloud/examples/storage/snippets/UpdateBlob.java">
  * UpdateBlob.java</a>.
  * <pre> {@code
- * Storage storage = StorageOptions.defaultInstance().service();
+ * Storage storage = StorageOptions.getDefaultInstance().getService();
  * BlobId blobId = BlobId.of("bucket", "blob_name");
  * Blob blob = storage.get(blobId);
  * if (blob != null) {
- *   byte[] prevContent = blob.content();
+ *   byte[] prevContent = blob.getContent();
  *   System.out.println(new String(prevContent, UTF_8));
  *   WritableByteChannel channel = blob.writer();
  *   channel.write(ByteBuffer.wrap("Updated content".getBytes(UTF_8)));

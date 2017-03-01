@@ -187,11 +187,11 @@ public class DefaultDnsRpc implements DnsRpc {
    * Constructs an instance of this rpc client with provided {@link DnsOptions}.
    */
   public DefaultDnsRpc(DnsOptions options) {
-    HttpTransport transport = options.httpTransportFactory().create();
-    HttpRequestInitializer initializer = options.httpRequestInitializer();
+    HttpTransport transport = options.getHttpTransportFactory().create();
+    HttpRequestInitializer initializer = options.getHttpRequestInitializer();
     this.dns = new Dns.Builder(transport, new JacksonFactory(), initializer)
-        .setRootUrl(options.host())
-        .setApplicationName(options.applicationName())
+        .setRootUrl(options.getHost())
+        .setApplicationName(options.getApplicationName())
         .build();
     this.options = options;
   }
@@ -209,7 +209,7 @@ public class DefaultDnsRpc implements DnsRpc {
   private Dns.ManagedZones.Create createZoneCall(ManagedZone zone, Map<Option, ?> options)
       throws IOException {
     return dns.managedZones()
-        .create(this.options.projectId(), zone)
+        .create(this.options.getProjectId(), zone)
         .setFields(FIELDS.getString(options));
   }
 
@@ -220,7 +220,7 @@ public class DefaultDnsRpc implements DnsRpc {
       return getZoneCall(zoneName, options).execute();
     } catch (IOException ex) {
       DnsException serviceException = translate(ex, true);
-      if (serviceException.code() == HTTP_NOT_FOUND) {
+      if (serviceException.getCode() == HTTP_NOT_FOUND) {
         return null;
       }
       throw serviceException;
@@ -230,7 +230,7 @@ public class DefaultDnsRpc implements DnsRpc {
   private Dns.ManagedZones.Get getZoneCall(String zoneName, Map<Option, ?> options)
       throws IOException {
     return dns.managedZones()
-        .get(this.options.projectId(), zoneName)
+        .get(this.options.getProjectId(), zoneName)
         .setFields(FIELDS.getString(options));
   }
 
@@ -246,7 +246,7 @@ public class DefaultDnsRpc implements DnsRpc {
   }
 
   private Dns.ManagedZones.List listZonesCall(Map<DnsRpc.Option, ?> options) throws IOException {
-    return dns.managedZones().list(this.options.projectId())
+    return dns.managedZones().list(this.options.getProjectId())
         .setFields(FIELDS.getString(options))
         .setMaxResults(PAGE_SIZE.getInt(options))
         .setDnsName(DNS_NAME.getString(options))
@@ -260,7 +260,7 @@ public class DefaultDnsRpc implements DnsRpc {
       return true;
     } catch (IOException ex) {
       DnsException serviceException = translate(ex, false);
-      if (serviceException.code() == HTTP_NOT_FOUND) {
+      if (serviceException.getCode() == HTTP_NOT_FOUND) {
         return false;
       }
       throw serviceException;
@@ -268,7 +268,7 @@ public class DefaultDnsRpc implements DnsRpc {
   }
 
   private Dns.ManagedZones.Delete deleteZoneCall(String zoneName) throws IOException {
-    return dns.managedZones().delete(this.options.projectId(), zoneName);
+    return dns.managedZones().delete(this.options.getProjectId(), zoneName);
   }
 
   @Override
@@ -286,7 +286,7 @@ public class DefaultDnsRpc implements DnsRpc {
       throws IOException {
     // options are fields, page token, dns name, type
     return dns.resourceRecordSets()
-        .list(this.options.projectId(), zoneName)
+        .list(this.options.getProjectId(), zoneName)
         .setFields(FIELDS.getString(options))
         .setPageToken(PAGE_TOKEN.getString(options))
         .setMaxResults(PAGE_SIZE.getInt(options))
@@ -304,7 +304,7 @@ public class DefaultDnsRpc implements DnsRpc {
   }
 
   private Dns.Projects.Get getProjectCall(Map<Option, ?> options) throws IOException {
-    return dns.projects().get(this.options.projectId()).setFields(FIELDS.getString(options));
+    return dns.projects().get(this.options.getProjectId()).setFields(FIELDS.getString(options));
   }
 
   @Override
@@ -320,7 +320,7 @@ public class DefaultDnsRpc implements DnsRpc {
   private Dns.Changes.Create applyChangeRequestCall(String zoneName, Change changeRequest,
       Map<Option, ?> options) throws IOException {
     return dns.changes()
-        .create(this.options.projectId(), zoneName, changeRequest)
+        .create(this.options.getProjectId(), zoneName, changeRequest)
         .setFields(FIELDS.getString(options));
   }
 
@@ -331,8 +331,8 @@ public class DefaultDnsRpc implements DnsRpc {
       return getChangeRequestCall(zoneName, changeRequestId, options).execute();
     } catch (IOException ex) {
       DnsException serviceException = translate(ex, true);
-      if (serviceException.code() == HTTP_NOT_FOUND) {
-        if ("entity.parameters.changeId".equals(serviceException.location())
+      if (serviceException.getCode() == HTTP_NOT_FOUND) {
+        if ("entity.parameters.changeId".equals(serviceException.getLocation())
             || (serviceException.getMessage() != null
             && serviceException.getMessage().contains("parameters.changeId"))) {
           // the change id was not found, but the zone exists
@@ -347,7 +347,7 @@ public class DefaultDnsRpc implements DnsRpc {
   private Dns.Changes.Get getChangeRequestCall(String zoneName, String changeRequestId,
       Map<Option, ?> options) throws IOException {
     return dns.changes()
-        .get(this.options.projectId(), zoneName, changeRequestId)
+        .get(this.options.getProjectId(), zoneName, changeRequestId)
         .setFields(FIELDS.getString(options));
   }
 
@@ -365,7 +365,7 @@ public class DefaultDnsRpc implements DnsRpc {
   private Dns.Changes.List listChangeRequestsCall(String zoneName, Map<Option, ?> options)
       throws IOException {
     // options are fields, page token, page size, sort order
-    Dns.Changes.List request = dns.changes().list(this.options.projectId(), zoneName)
+    Dns.Changes.List request = dns.changes().list(this.options.getProjectId(), zoneName)
         .setFields(FIELDS.getString(options))
         .setMaxResults(PAGE_SIZE.getInt(options))
         .setPageToken(PAGE_TOKEN.getString(options));

@@ -45,9 +45,9 @@ public class ITMetricSnippets {
   @BeforeClass
   public static void beforeClass() {
     RemoteLoggingHelper helper = RemoteLoggingHelper.create();
-    logging = helper.options().service();
-    MetricInfo metricInfo = MetricInfo.builder(METRIC_NAME, METRIC_FILTER)
-        .description(DESCRIPTION)
+    logging = helper.getOptions().getService();
+    MetricInfo metricInfo = MetricInfo.newBuilder(METRIC_NAME, METRIC_FILTER)
+        .setDescription(DESCRIPTION)
         .build();
     metricSnippets = new MetricSnippets(logging.create(metricInfo));
   }
@@ -64,13 +64,13 @@ public class ITMetricSnippets {
     Metric metric = metricSnippets.reload();
     assertNotNull(metric);
     Metric updatedMetric = metricSnippets.update();
-    assertEquals(UPDATED_DESCRIPTION, updatedMetric.description());
+    assertEquals(UPDATED_DESCRIPTION, updatedMetric.getDescription());
     updatedMetric = metricSnippets.reloadAsync();
     assertNotNull(updatedMetric);
-    assertEquals(UPDATED_DESCRIPTION, updatedMetric.description());
+    assertEquals(UPDATED_DESCRIPTION, updatedMetric.getDescription());
     metric.update();
     updatedMetric = metricSnippets.updateAsync();
-    assertEquals(UPDATED_DESCRIPTION, updatedMetric.description());
+    assertEquals(UPDATED_DESCRIPTION, updatedMetric.getDescription());
     assertTrue(metricSnippets.delete());
     assertFalse(metricSnippets.deleteAsync());
   }

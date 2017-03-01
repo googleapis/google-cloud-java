@@ -96,6 +96,21 @@ public class PayloadTest {
 
   @Test
   public void testOf() {
+    assertEquals(Type.STRING, STRING_PAYLOAD.getType());
+    assertEquals(STRING_DATA, STRING_PAYLOAD.getData());
+    assertEquals(Type.JSON, JSON_PAYLOAD.getType());
+    assertEquals(STRUCT_DATA, JSON_PAYLOAD.getData());
+    assertEquals(JSON_DATA, JSON_PAYLOAD.getDataAsMap());
+    assertEquals(Type.PROTO, PROTO_PAYLOAD.getType());
+    assertEquals(PROTO_DATA, PROTO_PAYLOAD.getData());
+    JsonPayload jsonPayload = JsonPayload.of(STRUCT_DATA);
+    assertEquals(Type.JSON, jsonPayload.getType());
+    assertEquals(STRUCT_DATA, jsonPayload.getData());
+    assertEquals(JSON_DATA, jsonPayload.getDataAsMap());
+  }
+
+  @Test
+  public void testOfDeprecated() {
     assertEquals(Type.STRING, STRING_PAYLOAD.type());
     assertEquals(STRING_DATA, STRING_PAYLOAD.data());
     assertEquals(Type.JSON, JSON_PAYLOAD.type());
@@ -124,8 +139,8 @@ public class PayloadTest {
 
   private void comparePayload(Payload<?> expected, Payload<?> value) {
     assertEquals(expected, value);
-    assertEquals(expected.type(), value.type());
-    assertEquals(expected.data(), value.data());
+    assertEquals(expected.getType(), value.getType());
+    assertEquals(expected.getData(), value.getData());
     assertEquals(expected.hashCode(), value.hashCode());
   }
 }

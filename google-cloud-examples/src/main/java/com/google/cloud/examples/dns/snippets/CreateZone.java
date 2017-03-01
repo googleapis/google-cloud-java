@@ -36,7 +36,7 @@ public class CreateZone {
   public static void main(String... args) {
     // Create a service object
     // The project ID and credentials will be inferred from the environment.
-    Dns dns = DnsOptions.defaultInstance().service();
+    Dns dns = DnsOptions.getDefaultInstance().getService();
 
     // Create a zone metadata object
     String zoneName = "my-unique-zone"; // Change this zone name which is unique within your project
@@ -46,6 +46,6 @@ public class CreateZone {
 
     // Create zone in Google Cloud DNS
     Zone zone = dns.create(zoneInfo);
-    System.out.printf("Zone was created and assigned ID %s.%n", zone.generatedId());
+    System.out.printf("Zone was created and assigned ID %s.%n", zone.getGeneratedId());
   }
 }

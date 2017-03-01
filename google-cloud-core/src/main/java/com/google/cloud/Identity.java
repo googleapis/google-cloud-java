@@ -86,7 +86,12 @@ public final class Identity implements Serializable {
     this.value = value;
   }
 
+  @Deprecated
   public Type type() {
+    return getType();
+  }
+
+  public Type getType() {
     return type;
   }
 
@@ -100,7 +105,22 @@ public final class Identity implements Serializable {
    *       {@code ALL_AUTHENTICATED_USERS})
    * </ul>
    */
+  @Deprecated
   public String value() {
+    return getValue();
+  }
+
+  /**
+   * Returns the string identifier for this identity. The value corresponds to:
+   * <ul>
+   *   <li>email address (for identities of type {@code USER}, {@code SERVICE_ACCOUNT}, and
+   *       {@code GROUP})
+   *   <li>domain (for identities of type {@code DOMAIN})
+   *   <li>{@code null} (for identities of type {@code ALL_USERS} and
+   *       {@code ALL_AUTHENTICATED_USERS})
+   * </ul>
+   */
+  public String getValue() {
     return value;
   }
 
@@ -176,7 +196,7 @@ public final class Identity implements Serializable {
       return false;
     }
     Identity other = (Identity) obj;
-    return Objects.equals(value, other.value()) && Objects.equals(type, other.type());
+    return Objects.equals(value, other.getValue()) && Objects.equals(type, other.getType());
   }
 
   /**

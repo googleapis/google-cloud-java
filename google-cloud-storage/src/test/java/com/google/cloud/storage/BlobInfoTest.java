@@ -66,36 +66,69 @@ public class BlobInfoTest {
   private static final String KEY_SHA256 = "keySha";
   private static final CustomerEncryption CUSTOMER_ENCRYPTION =
       new CustomerEncryption(ENCRYPTION_ALGORITHM, KEY_SHA256);
-  private static final BlobInfo BLOB_INFO = BlobInfo.builder("b", "n", GENERATION)
+  private static final BlobInfo BLOB_INFO = BlobInfo.newBuilder("b", "n", GENERATION)
+      .setAcl(ACL)
+      .setComponentCount(COMPONENT_COUNT)
+      .setContentType(CONTENT_TYPE)
+      .setCacheControl(CACHE_CONTROL)
+      .setContentDisposition(CONTENT_DISPOSITION)
+      .setContentEncoding(CONTENT_ENCODING)
+      .setContentLanguage(CONTENT_LANGUAGE)
+      .setCustomerEncryption(CUSTOMER_ENCRYPTION)
+      .setCrc32c(CRC32)
+      .setDeleteTime(DELETE_TIME)
+      .setEtag(ETAG)
+      .setGeneratedId(GENERATED_ID)
+      .setMd5(MD5)
+      .setMediaLink(MEDIA_LINK)
+      .setMetadata(METADATA)
+      .setMetageneration(META_GENERATION)
+      .setOwner(OWNER)
+      .setSelfLink(SELF_LINK)
+      .setSize(SIZE)
+      .setUpdateTime(UPDATE_TIME)
+      .setCreateTime(CREATE_TIME)
+      .build();
+  private static final BlobInfo DIRECTORY_INFO = BlobInfo.newBuilder("b", "n/")
+      .setSize(0L)
+      .setIsDirectory(true)
+      .build();
+  private static final BlobInfo DEPRECATED_BLOB_INFO = BlobInfo.builder("b", "n", GENERATION)
       .acl(ACL)
-      .componentCount(COMPONENT_COUNT)
+      .setComponentCount(COMPONENT_COUNT)
       .contentType(CONTENT_TYPE)
       .cacheControl(CACHE_CONTROL)
       .contentDisposition(CONTENT_DISPOSITION)
       .contentEncoding(CONTENT_ENCODING)
       .contentLanguage(CONTENT_LANGUAGE)
-      .customerEncryption(CUSTOMER_ENCRYPTION)
+      .setCustomerEncryption(CUSTOMER_ENCRYPTION)
       .crc32c(CRC32)
-      .deleteTime(DELETE_TIME)
-      .etag(ETAG)
-      .generatedId(GENERATED_ID)
+      .setDeleteTime(DELETE_TIME)
+      .setEtag(ETAG)
+      .setGeneratedId(GENERATED_ID)
       .md5(MD5)
-      .mediaLink(MEDIA_LINK)
+      .setMediaLink(MEDIA_LINK)
       .metadata(METADATA)
-      .metageneration(META_GENERATION)
-      .owner(OWNER)
-      .selfLink(SELF_LINK)
-      .size(SIZE)
-      .updateTime(UPDATE_TIME)
-      .createTime(CREATE_TIME)
+      .setMetageneration(META_GENERATION)
+      .setOwner(OWNER)
+      .setSelfLink(SELF_LINK)
+      .setSize(SIZE)
+      .setUpdateTime(UPDATE_TIME)
+      .setCreateTime(CREATE_TIME)
       .build();
-  private static final BlobInfo DIRECTORY_INFO = BlobInfo.builder("b", "n/")
-      .size(0L)
-      .isDirectory(true)
+  private static final BlobInfo DEPRECATED_DIRECTORY_INFO = BlobInfo.builder("b", "n/")
+      .setSize(0L)
+      .setIsDirectory(true)
       .build();
 
   @Test
   public void testCustomerEncryption() {
+    assertEquals(ENCRYPTION_ALGORITHM, CUSTOMER_ENCRYPTION.getEncryptionAlgorithm());
+    assertEquals(KEY_SHA256, CUSTOMER_ENCRYPTION.getKeySha256());
+  }
+
+  @Test
+  public void testCustomerEncryptionDeprecated() {
     assertEquals(ENCRYPTION_ALGORITHM, CUSTOMER_ENCRYPTION.encryptionAlgorithm());
     assertEquals(KEY_SHA256, CUSTOMER_ENCRYPTION.keySha256());
   }
@@ -103,106 +136,172 @@ public class BlobInfoTest {
   @Test
   public void testToBuilder() {
     compareBlobs(BLOB_INFO, BLOB_INFO.toBuilder().build());
-    BlobInfo blobInfo = BLOB_INFO.toBuilder().blobId(BlobId.of("b2", "n2")).size(200L).build();
-    assertEquals("n2", blobInfo.name());
-    assertEquals("b2", blobInfo.bucket());
-    assertEquals(Long.valueOf(200), blobInfo.size());
-    blobInfo = blobInfo.toBuilder().blobId(BlobId.of("b", "n", GENERATION)).size(SIZE).build();
+    BlobInfo blobInfo = BLOB_INFO.toBuilder()
+        .setBlobId(BlobId.of("b2", "n2"))
+        .setSize(200L)
+        .build();
+    assertEquals("n2", blobInfo.getName());
+    assertEquals("b2", blobInfo.getBucket());
+    assertEquals(Long.valueOf(200), blobInfo.getSize());
+    blobInfo = blobInfo.toBuilder()
+        .setBlobId(BlobId.of("b", "n", GENERATION))
+        .setSize(SIZE)
+        .build();
     compareBlobs(BLOB_INFO, blobInfo);
   }
 
   @Test
   public void testToBuilderIncomplete() {
+    BlobInfo incompleteBlobInfo = BlobInfo.newBuilder(BlobId.of("b2", "n2")).build();
+    compareBlobs(incompleteBlobInfo, incompleteBlobInfo.toBuilder().build());
+  }
+
+  @Test
+  public void testToBuilderIncompleteDeprecated() {
     BlobInfo incompleteBlobInfo = BlobInfo.builder(BlobId.of("b2", "n2")).build();
     compareBlobs(incompleteBlobInfo, incompleteBlobInfo.toBuilder().build());
   }
 
   @Test
   public void testBuilder() {
-    assertEquals("b", BLOB_INFO.bucket());
-    assertEquals("n", BLOB_INFO.name());
-    assertEquals(ACL, BLOB_INFO.acl());
-    assertEquals(COMPONENT_COUNT, BLOB_INFO.componentCount());
-    assertEquals(CONTENT_TYPE, BLOB_INFO.contentType());
-    assertEquals(CACHE_CONTROL, BLOB_INFO.cacheControl());
-    assertEquals(CONTENT_DISPOSITION, BLOB_INFO.contentDisposition());
-    assertEquals(CONTENT_ENCODING, BLOB_INFO.contentEncoding());
-    assertEquals(CONTENT_LANGUAGE, BLOB_INFO.contentLanguage());
-    assertEquals(CUSTOMER_ENCRYPTION, BLOB_INFO.customerEncryption());
-    assertEquals(CRC32, BLOB_INFO.crc32c());
-    assertEquals(DELETE_TIME, BLOB_INFO.deleteTime());
-    assertEquals(ETAG, BLOB_INFO.etag());
-    assertEquals(GENERATION, BLOB_INFO.generation());
-    assertEquals(GENERATED_ID, BLOB_INFO.generatedId());
-    assertEquals(MD5, BLOB_INFO.md5());
-    assertEquals(MEDIA_LINK, BLOB_INFO.mediaLink());
-    assertEquals(METADATA, BLOB_INFO.metadata());
-    assertEquals(META_GENERATION, BLOB_INFO.metageneration());
-    assertEquals(OWNER, BLOB_INFO.owner());
-    assertEquals(SELF_LINK, BLOB_INFO.selfLink());
-    assertEquals(SIZE, BLOB_INFO.size());
-    assertEquals(UPDATE_TIME, BLOB_INFO.updateTime());
-    assertEquals(CREATE_TIME, BLOB_INFO.createTime());
+    assertEquals("b", BLOB_INFO.getBucket());
+    assertEquals("n", BLOB_INFO.getName());
+    assertEquals(ACL, BLOB_INFO.getAcl());
+    assertEquals(COMPONENT_COUNT, BLOB_INFO.getComponentCount());
+    assertEquals(CONTENT_TYPE, BLOB_INFO.getContentType());
+    assertEquals(CACHE_CONTROL, BLOB_INFO.getCacheControl());
+    assertEquals(CONTENT_DISPOSITION, BLOB_INFO.getContentDisposition());
+    assertEquals(CONTENT_ENCODING, BLOB_INFO.getContentEncoding());
+    assertEquals(CONTENT_LANGUAGE, BLOB_INFO.getContentLanguage());
+    assertEquals(CUSTOMER_ENCRYPTION, BLOB_INFO.getCustomerEncryption());
+    assertEquals(CRC32, BLOB_INFO.getCrc32c());
+    assertEquals(DELETE_TIME, BLOB_INFO.getDeleteTime());
+    assertEquals(ETAG, BLOB_INFO.getEtag());
+    assertEquals(GENERATION, BLOB_INFO.getGeneration());
+    assertEquals(GENERATED_ID, BLOB_INFO.getGeneratedId());
+    assertEquals(MD5, BLOB_INFO.getMd5());
+    assertEquals(MEDIA_LINK, BLOB_INFO.getMediaLink());
+    assertEquals(METADATA, BLOB_INFO.getMetadata());
+    assertEquals(META_GENERATION, BLOB_INFO.getMetageneration());
+    assertEquals(OWNER, BLOB_INFO.getOwner());
+    assertEquals(SELF_LINK, BLOB_INFO.getSelfLink());
+    assertEquals(SIZE, BLOB_INFO.getSize());
+    assertEquals(UPDATE_TIME, BLOB_INFO.getUpdateTime());
+    assertEquals(CREATE_TIME, BLOB_INFO.getCreateTime());
     assertFalse(BLOB_INFO.isDirectory());
-    assertEquals("b", DIRECTORY_INFO.bucket());
-    assertEquals("n/", DIRECTORY_INFO.name());
-    assertNull(DIRECTORY_INFO.acl());
-    assertNull(DIRECTORY_INFO.componentCount());
-    assertNull(DIRECTORY_INFO.contentType());
-    assertNull(DIRECTORY_INFO.cacheControl());
-    assertNull(DIRECTORY_INFO.contentDisposition());
-    assertNull(DIRECTORY_INFO.contentEncoding());
-    assertNull(DIRECTORY_INFO.contentLanguage());
-    assertNull(DIRECTORY_INFO.customerEncryption());
-    assertNull(DIRECTORY_INFO.crc32c());
-    assertNull(DIRECTORY_INFO.createTime());
-    assertNull(DIRECTORY_INFO.deleteTime());
-    assertNull(DIRECTORY_INFO.etag());
-    assertNull(DIRECTORY_INFO.generation());
-    assertNull(DIRECTORY_INFO.generatedId());
-    assertNull(DIRECTORY_INFO.md5());
-    assertNull(DIRECTORY_INFO.mediaLink());
-    assertNull(DIRECTORY_INFO.metadata());
-    assertNull(DIRECTORY_INFO.metageneration());
-    assertNull(DIRECTORY_INFO.owner());
-    assertNull(DIRECTORY_INFO.selfLink());
-    assertEquals(0L, (long) DIRECTORY_INFO.size());
-    assertNull(DIRECTORY_INFO.updateTime());
+    assertEquals("b", DIRECTORY_INFO.getBucket());
+    assertEquals("n/", DIRECTORY_INFO.getName());
+    assertNull(DIRECTORY_INFO.getAcl());
+    assertNull(DIRECTORY_INFO.getComponentCount());
+    assertNull(DIRECTORY_INFO.getContentType());
+    assertNull(DIRECTORY_INFO.getCacheControl());
+    assertNull(DIRECTORY_INFO.getContentDisposition());
+    assertNull(DIRECTORY_INFO.getContentEncoding());
+    assertNull(DIRECTORY_INFO.getContentLanguage());
+    assertNull(DIRECTORY_INFO.getCustomerEncryption());
+    assertNull(DIRECTORY_INFO.getCrc32c());
+    assertNull(DIRECTORY_INFO.getCreateTime());
+    assertNull(DIRECTORY_INFO.getDeleteTime());
+    assertNull(DIRECTORY_INFO.getEtag());
+    assertNull(DIRECTORY_INFO.getGeneration());
+    assertNull(DIRECTORY_INFO.getGeneratedId());
+    assertNull(DIRECTORY_INFO.getMd5());
+    assertNull(DIRECTORY_INFO.getMediaLink());
+    assertNull(DIRECTORY_INFO.getMetadata());
+    assertNull(DIRECTORY_INFO.getMetageneration());
+    assertNull(DIRECTORY_INFO.getOwner());
+    assertNull(DIRECTORY_INFO.getSelfLink());
+    assertEquals(0L, (long) DIRECTORY_INFO.getSize());
+    assertNull(DIRECTORY_INFO.getUpdateTime());
     assertTrue(DIRECTORY_INFO.isDirectory());
+  }
+
+  @Test
+  public void testBuilderDeprecated() {
+    assertEquals("b", DEPRECATED_BLOB_INFO.bucket());
+    assertEquals("n", DEPRECATED_BLOB_INFO.name());
+    assertEquals(ACL, DEPRECATED_BLOB_INFO.acl());
+    assertEquals(COMPONENT_COUNT, DEPRECATED_BLOB_INFO.componentCount());
+    assertEquals(CONTENT_TYPE, DEPRECATED_BLOB_INFO.contentType());
+    assertEquals(CACHE_CONTROL, DEPRECATED_BLOB_INFO.cacheControl());
+    assertEquals(CONTENT_DISPOSITION, DEPRECATED_BLOB_INFO.contentDisposition());
+    assertEquals(CONTENT_ENCODING, DEPRECATED_BLOB_INFO.contentEncoding());
+    assertEquals(CONTENT_LANGUAGE, DEPRECATED_BLOB_INFO.contentLanguage());
+    assertEquals(CUSTOMER_ENCRYPTION, DEPRECATED_BLOB_INFO.customerEncryption());
+    assertEquals(CRC32, DEPRECATED_BLOB_INFO.crc32c());
+    assertEquals(DELETE_TIME, DEPRECATED_BLOB_INFO.deleteTime());
+    assertEquals(ETAG, DEPRECATED_BLOB_INFO.etag());
+    assertEquals(GENERATION, DEPRECATED_BLOB_INFO.generation());
+    assertEquals(GENERATED_ID, DEPRECATED_BLOB_INFO.generatedId());
+    assertEquals(MD5, DEPRECATED_BLOB_INFO.md5());
+    assertEquals(MEDIA_LINK, DEPRECATED_BLOB_INFO.mediaLink());
+    assertEquals(METADATA, DEPRECATED_BLOB_INFO.metadata());
+    assertEquals(META_GENERATION, DEPRECATED_BLOB_INFO.metageneration());
+    assertEquals(OWNER, DEPRECATED_BLOB_INFO.owner());
+    assertEquals(SELF_LINK, DEPRECATED_BLOB_INFO.selfLink());
+    assertEquals(SIZE, DEPRECATED_BLOB_INFO.size());
+    assertEquals(UPDATE_TIME, DEPRECATED_BLOB_INFO.updateTime());
+    assertEquals(CREATE_TIME, DEPRECATED_BLOB_INFO.createTime());
+    assertFalse(DEPRECATED_BLOB_INFO.isDirectory());
+    assertEquals("b", DEPRECATED_DIRECTORY_INFO.bucket());
+    assertEquals("n/", DEPRECATED_DIRECTORY_INFO.name());
+    assertNull(DEPRECATED_DIRECTORY_INFO.acl());
+    assertNull(DEPRECATED_DIRECTORY_INFO.componentCount());
+    assertNull(DEPRECATED_DIRECTORY_INFO.contentType());
+    assertNull(DEPRECATED_DIRECTORY_INFO.cacheControl());
+    assertNull(DEPRECATED_DIRECTORY_INFO.contentDisposition());
+    assertNull(DEPRECATED_DIRECTORY_INFO.contentEncoding());
+    assertNull(DEPRECATED_DIRECTORY_INFO.contentLanguage());
+    assertNull(DEPRECATED_DIRECTORY_INFO.customerEncryption());
+    assertNull(DEPRECATED_DIRECTORY_INFO.crc32c());
+    assertNull(DEPRECATED_DIRECTORY_INFO.createTime());
+    assertNull(DEPRECATED_DIRECTORY_INFO.deleteTime());
+    assertNull(DEPRECATED_DIRECTORY_INFO.etag());
+    assertNull(DEPRECATED_DIRECTORY_INFO.generation());
+    assertNull(DEPRECATED_DIRECTORY_INFO.generatedId());
+    assertNull(DEPRECATED_DIRECTORY_INFO.md5());
+    assertNull(DEPRECATED_DIRECTORY_INFO.mediaLink());
+    assertNull(DEPRECATED_DIRECTORY_INFO.metadata());
+    assertNull(DEPRECATED_DIRECTORY_INFO.metageneration());
+    assertNull(DEPRECATED_DIRECTORY_INFO.owner());
+    assertNull(DEPRECATED_DIRECTORY_INFO.selfLink());
+    assertEquals(0L, (long) DEPRECATED_DIRECTORY_INFO.size());
+    assertNull(DEPRECATED_DIRECTORY_INFO.updateTime());
+    assertTrue(DEPRECATED_DIRECTORY_INFO.isDirectory());
   }
 
   private void compareBlobs(BlobInfo expected, BlobInfo value) {
     assertEquals(expected, value);
-    assertEquals(expected.bucket(), value.bucket());
-    assertEquals(expected.name(), value.name());
-    assertEquals(expected.acl(), value.acl());
-    assertEquals(expected.componentCount(), value.componentCount());
-    assertEquals(expected.contentType(), value.contentType());
-    assertEquals(expected.cacheControl(), value.cacheControl());
-    assertEquals(expected.contentDisposition(), value.contentDisposition());
-    assertEquals(expected.contentEncoding(), value.contentEncoding());
-    assertEquals(expected.contentLanguage(), value.contentLanguage());
-    assertEquals(expected.customerEncryption(), value.customerEncryption());
-    assertEquals(expected.crc32c(), value.crc32c());
-    assertEquals(expected.createTime(), value.createTime());
-    assertEquals(expected.deleteTime(), value.deleteTime());
-    assertEquals(expected.etag(), value.etag());
-    assertEquals(expected.generation(), value.generation());
-    assertEquals(expected.generatedId(), value.generatedId());
-    assertEquals(expected.md5(), value.md5());
-    assertEquals(expected.mediaLink(), value.mediaLink());
-    assertEquals(expected.metadata(), value.metadata());
-    assertEquals(expected.metageneration(), value.metageneration());
-    assertEquals(expected.owner(), value.owner());
-    assertEquals(expected.selfLink(), value.selfLink());
-    assertEquals(expected.size(), value.size());
-    assertEquals(expected.updateTime(), value.updateTime());
+    assertEquals(expected.getBucket(), value.getBucket());
+    assertEquals(expected.getName(), value.getName());
+    assertEquals(expected.getAcl(), value.getAcl());
+    assertEquals(expected.getComponentCount(), value.getComponentCount());
+    assertEquals(expected.getContentType(), value.getContentType());
+    assertEquals(expected.getCacheControl(), value.getCacheControl());
+    assertEquals(expected.getContentDisposition(), value.getContentDisposition());
+    assertEquals(expected.getContentEncoding(), value.getContentEncoding());
+    assertEquals(expected.getContentLanguage(), value.getContentLanguage());
+    assertEquals(expected.getCustomerEncryption(), value.getCustomerEncryption());
+    assertEquals(expected.getCrc32c(), value.getCrc32c());
+    assertEquals(expected.getCreateTime(), value.getCreateTime());
+    assertEquals(expected.getDeleteTime(), value.getDeleteTime());
+    assertEquals(expected.getEtag(), value.getEtag());
+    assertEquals(expected.getGeneration(), value.getGeneration());
+    assertEquals(expected.getGeneratedId(), value.getGeneratedId());
+    assertEquals(expected.getMd5(), value.getMd5());
+    assertEquals(expected.getMediaLink(), value.getMediaLink());
+    assertEquals(expected.getMetadata(), value.getMetadata());
+    assertEquals(expected.getMetageneration(), value.getMetageneration());
+    assertEquals(expected.getOwner(), value.getOwner());
+    assertEquals(expected.getSelfLink(), value.getSelfLink());
+    assertEquals(expected.getSize(), value.getSize());
+    assertEquals(expected.getUpdateTime(), value.getUpdateTime());
   }
 
   private void compareCustomerEncryptions(CustomerEncryption expected, CustomerEncryption value) {
     assertEquals(expected, value);
-    assertEquals(expected.encryptionAlgorithm(), value.encryptionAlgorithm());
-    assertEquals(expected.keySha256(), value.keySha256());
+    assertEquals(expected.getEncryptionAlgorithm(), value.getEncryptionAlgorithm());
+    assertEquals(expected.getKeySha256(), value.getKeySha256());
     assertEquals(expected.hashCode(), value.hashCode());
   }
 
@@ -210,8 +309,8 @@ public class BlobInfoTest {
   public void testToPbAndFromPb() {
     compareCustomerEncryptions(CUSTOMER_ENCRYPTION,
         CustomerEncryption.fromPb(CUSTOMER_ENCRYPTION.toPb()));
-    compareBlobs(BLOB_INFO, BlobInfo.fromPb(BLOB_INFO.toPb()));
-    BlobInfo blobInfo = BlobInfo.builder(BlobId.of("b", "n")).build();
+    compareBlobs(DEPRECATED_BLOB_INFO, BlobInfo.fromPb(DEPRECATED_BLOB_INFO.toPb()));
+    BlobInfo blobInfo = BlobInfo.newBuilder(BlobId.of("b", "n")).build();
     compareBlobs(blobInfo, BlobInfo.fromPb(blobInfo.toPb()));
     StorageObject object = new StorageObject()
         .setName("n/")
@@ -219,35 +318,35 @@ public class BlobInfoTest {
         .setSize(BigInteger.ZERO)
         .set("isDirectory", true);
     blobInfo = BlobInfo.fromPb(object);
-    assertEquals("b", blobInfo.bucket());
-    assertEquals("n/", blobInfo.name());
-    assertNull(blobInfo.acl());
-    assertNull(blobInfo.componentCount());
-    assertNull(blobInfo.contentType());
-    assertNull(blobInfo.cacheControl());
-    assertNull(blobInfo.contentDisposition());
-    assertNull(blobInfo.contentEncoding());
-    assertNull(blobInfo.contentLanguage());
-    assertNull(blobInfo.customerEncryption());
-    assertNull(blobInfo.crc32c());
-    assertNull(blobInfo.createTime());
-    assertNull(blobInfo.deleteTime());
-    assertNull(blobInfo.etag());
-    assertNull(blobInfo.generation());
-    assertNull(blobInfo.generatedId());
-    assertNull(blobInfo.md5());
-    assertNull(blobInfo.mediaLink());
-    assertNull(blobInfo.metadata());
-    assertNull(blobInfo.metageneration());
-    assertNull(blobInfo.owner());
-    assertNull(blobInfo.selfLink());
-    assertEquals(0L, (long) blobInfo.size());
-    assertNull(blobInfo.updateTime());
+    assertEquals("b", blobInfo.getBucket());
+    assertEquals("n/", blobInfo.getName());
+    assertNull(blobInfo.getAcl());
+    assertNull(blobInfo.getComponentCount());
+    assertNull(blobInfo.getContentType());
+    assertNull(blobInfo.getCacheControl());
+    assertNull(blobInfo.getContentDisposition());
+    assertNull(blobInfo.getContentEncoding());
+    assertNull(blobInfo.getContentLanguage());
+    assertNull(blobInfo.getCustomerEncryption());
+    assertNull(blobInfo.getCrc32c());
+    assertNull(blobInfo.getCreateTime());
+    assertNull(blobInfo.getDeleteTime());
+    assertNull(blobInfo.getEtag());
+    assertNull(blobInfo.getGeneration());
+    assertNull(blobInfo.getGeneratedId());
+    assertNull(blobInfo.getMd5());
+    assertNull(blobInfo.getMediaLink());
+    assertNull(blobInfo.getMetadata());
+    assertNull(blobInfo.getMetageneration());
+    assertNull(blobInfo.getOwner());
+    assertNull(blobInfo.getSelfLink());
+    assertEquals(0L, (long) blobInfo.getSize());
+    assertNull(blobInfo.getUpdateTime());
     assertTrue(blobInfo.isDirectory());
   }
 
   @Test
   public void testBlobId() {
-    assertEquals(BlobId.of("b", "n", GENERATION), BLOB_INFO.blobId());
+    assertEquals(BlobId.of("b", "n", GENERATION), BLOB_INFO.getBlobId());
   }
 }

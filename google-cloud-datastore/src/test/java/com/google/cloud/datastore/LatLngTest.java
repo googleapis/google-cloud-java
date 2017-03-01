@@ -37,6 +37,18 @@ public class LatLngTest {
       "latitude must be in the range [-180, 180] degrees";
 
   @Test
+  public void testLatLng() {
+    assertEquals(37.422035, gp1.getLatitude(), 0);
+    assertEquals(-122.084124, gp1.getLongitude(), 0);
+  }
+
+  @Test
+  public void testLatLngDeprecated() {
+    assertEquals(37.422035, gp1.latitude(), 0);
+    assertEquals(-122.084124, gp1.longitude(), 0);
+  }
+
+  @Test
   public void testEquals() {
     assertEquals(gp1, gp1);
     assertNotEquals(gp1, gp2);
@@ -74,4 +86,3 @@ public class LatLngTest {
     new LatLng(0, -181);
   }
 }
-

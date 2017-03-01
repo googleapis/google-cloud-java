@@ -162,8 +162,9 @@ import com.google.cloud.datastore.KeyFactory;
 
 // Authentication is automatic inside Google Compute Engine
 // and Google App Engine.
-Datastore datastore = DatastoreOptions.defaultInstance().service();
-KeyFactory keyFactory = datastore.newKeyFactory().kind(<span class="hljs-string">KIND</span>);
+Datastore datastore =
+  DatastoreOptions.getDefaultInstance().getService();
+KeyFactory keyFactory = datastore.newKeyFactory().setKind(<span class="hljs-string">KIND</span>);
 Key key = keyFactory.newKey(keyName);
 Entity entity = datastore.get(key);
 
@@ -178,12 +179,12 @@ import com.google.cloud.datastore.Entity;
 import com.google.cloud.datastore.Key;
 import com.google.cloud.datastore.KeyFactory;
 
-DatastoreOptions options = DatastoreOptions.builder()
-  .projectId(<span class="hljs-string">PROJECT_ID</span>)
-  .authCredentials(AuthCredentials.createForJson(
+DatastoreOptions options = DatastoreOptions.newBuilder()
+  .setProjectId(<span class="hljs-string">PROJECT_ID</span>)
+  .setAuthCredentials(AuthCredentials.createForJson(
     new FileInputStream(<span class="hljs-string">PATH_TO_JSON_KEY</span>))).build();
-Datastore datastore = options.service();
-KeyFactory keyFactory = datastore.newKeyFactory().kind(<span class="hljs-string">KIND</span>);
+Datastore datastore = options.getService();
+KeyFactory keyFactory = datastore.newKeyFactory().setKind(<span class="hljs-string">KIND</span>);
 Key key = keyFactory.newKey(keyName);
 Entity entity = datastore.get(key);
 </code></pre></div>
@@ -201,16 +202,19 @@ Entity entity = datastore.get(key);
                         </li>
 
                         <li>
-                            <a href="https://github.com/GoogleCloudPlatform/java-docs-samples/tree/master/managed_vms/datastore"><code>Flexible Environment/Datastore example</code></a> - A simple app that uses Cloud Datastore to list the last 10 IP addresses that visited your site.  Read about how to run the application <a href="https://github.com/GoogleCloudPlatform/java-docs-samples/blob/master/managed_vms/README.md">here</a>.
+                            <a href="https://github.com/GoogleCloudPlatform/java-docs-samples/tree/master/flexible/datastore"><code>Flexible Environment/Datastore example</code></a> - A simple app that uses Cloud Datastore to list the last 10 IP addresses that visited your site.  Read about how to run the application <a href="https://github.com/GoogleCloudPlatform/java-docs-samples/blob/master/flexible/README.md">here</a>.
                         </li>
                         <li>
-                            <a href="https://github.com/GoogleCloudPlatform/java-docs-samples/tree/master/managed_vms/cloudstorage"><code>Flexible Environment/Storage example</code></a> - An app that uploads files to a public Cloud Storage bucket on the App Engine Flexible Environment runtime.
+                            <a href="https://github.com/GoogleCloudPlatform/java-docs-samples/tree/master/flexible/cloudstorage"><code>Flexible Environment/Storage example</code></a> - An app that uploads files to a public Cloud Storage bucket on the App Engine Flexible Environment runtime.
                         </li>
                         <li>
-                            <a href="https://github.com/GoogleCloudPlatform/java-docs-samples/tree/master/managed_vms/sparkjava"><code>SparkJava demo</code></a> - Uses google-cloud with App Engine Flexible Environment, Datastore, and SparkJava.
+                            <a href="https://github.com/GoogleCloudPlatform/java-docs-samples/tree/master/appengine/guestbook-cloud-datastore"><code>GuestBook</code></a> - An App Engine Standard guestbook that uses Cloud Datastore.
                         </li>
                         <li>
-                            <a href="https://github.com/GoogleCloudPlatform/java-docs-samples/tree/master/datastore"><code>TaskList</code></a> - An command line app that manages a to-do list using Cloud Datastore.
+                            <a href="https://github.com/GoogleCloudPlatform/java-docs-samples/tree/master/flexible/sparkjava"><code>SparkJava demo</code></a> - Uses google-cloud with App Engine Flexible Environment, Datastore, and SparkJava.
+                        </li>
+                        <li>
+                            <a href="https://github.com/GoogleCloudPlatform/java-docs-samples/tree/master/datastore"><code>TaskList</code></a> - A command line app that manages a to-do list using Cloud Datastore.
                         </li>
                     </ul>
                 </div>

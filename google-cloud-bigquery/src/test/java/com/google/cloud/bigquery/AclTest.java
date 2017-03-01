@@ -34,6 +34,15 @@ public class AclTest {
   @Test
   public void testDomainEntity() {
     Domain entity = new Domain("d1");
+    assertEquals("d1", entity.getDomain());
+    assertEquals(Type.DOMAIN, entity.getType());
+    Dataset.Access pb = entity.toPb();
+    assertEquals(entity, Entity.fromPb(pb));
+  }
+
+  @Test
+  public void testDomainEntityDeprecated() {
+    Domain entity = new Domain("d1");
     assertEquals("d1", entity.domain());
     assertEquals(Type.DOMAIN, entity.type());
     Dataset.Access pb = entity.toPb();
@@ -43,6 +52,15 @@ public class AclTest {
   @Test
   public void testGroupEntity() {
     Group entity = new Group("g1");
+    assertEquals("g1", entity.getIdentifier());
+    assertEquals(Type.GROUP, entity.getType());
+    Dataset.Access pb = entity.toPb();
+    assertEquals(entity, Entity.fromPb(pb));
+  }
+
+  @Test
+  public void testGroupEntityDeprecated() {
+    Group entity = new Group("g1");
     assertEquals("g1", entity.identifier());
     assertEquals(Type.GROUP, entity.type());
     Dataset.Access pb = entity.toPb();
@@ -51,6 +69,18 @@ public class AclTest {
 
   @Test
   public void testSpecialGroupEntity() {
+    Group entity = Group.ofAllAuthenticatedUsers();
+    assertEquals("allAuthenticatedUsers", entity.getIdentifier());
+    entity = Group.ofProjectWriters();
+    assertEquals("projectWriters", entity.getIdentifier());
+    entity = Group.ofProjectReaders();
+    assertEquals("projectReaders", entity.getIdentifier());
+    entity = Group.ofProjectOwners();
+    assertEquals("projectOwners", entity.getIdentifier());
+  }
+
+  @Test
+  public void testSpecialGroupEntityDeprecated() {
     Group entity = Group.ofAllAuthenticatedUsers();
     assertEquals("allAuthenticatedUsers", entity.identifier());
     entity = Group.ofProjectWriters();
@@ -64,6 +94,15 @@ public class AclTest {
   @Test
   public void testUserEntity() {
     User entity = new User("u1");
+    assertEquals("u1", entity.getEmail());
+    assertEquals(Type.USER, entity.getType());
+    Dataset.Access pb = entity.toPb();
+    assertEquals(entity, Entity.fromPb(pb));
+  }
+
+  @Test
+  public void testUserEntityDeprecated() {
+    User entity = new User("u1");
     assertEquals("u1", entity.email());
     assertEquals(Type.USER, entity.type());
     Dataset.Access pb = entity.toPb();
@@ -74,6 +113,16 @@ public class AclTest {
   public void testViewEntity() {
     TableId viewId = TableId.of("project", "dataset", "view");
     View entity = new View(viewId);
+    assertEquals(viewId, entity.getId());
+    assertEquals(Type.VIEW, entity.getType());
+    Dataset.Access pb = entity.toPb();
+    assertEquals(entity, Entity.fromPb(pb));
+  }
+
+  @Test
+  public void testViewEntityDeprecated() {
+    TableId viewId = TableId.of("project", "dataset", "view");
+    View entity = new View(viewId);
     assertEquals(viewId, entity.id());
     assertEquals(Type.VIEW, entity.type());
     Dataset.Access pb = entity.toPb();
@@ -82,6 +131,19 @@ public class AclTest {
 
   @Test
   public void testOf() {
+    Acl acl = Acl.of(Group.ofAllAuthenticatedUsers(), Role.READER);
+    assertEquals(Group.ofAllAuthenticatedUsers(), acl.getEntity());
+    assertEquals(Role.READER, acl.getRole());
+    Dataset.Access pb = acl.toPb();
+    assertEquals(acl, Acl.fromPb(pb));
+    View view = new View(TableId.of("project", "dataset", "view"));
+    acl = Acl.of(view);
+    assertEquals(view, acl.getEntity());
+    assertEquals(null, acl.getRole());
+  }
+
+  @Test
+  public void testOfDeprecated() {
     Acl acl = Acl.of(Group.ofAllAuthenticatedUsers(), Role.READER);
     assertEquals(Group.ofAllAuthenticatedUsers(), acl.entity());
     assertEquals(Role.READER, acl.role());

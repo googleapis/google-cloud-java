@@ -55,7 +55,7 @@ public class ITDatastoreSnippets {
 
   @BeforeClass
   public static void beforeClass() {
-    datastore = DatastoreOptions.defaultInstance().service();
+    datastore = DatastoreOptions.getDefaultInstance().getService();
     datastoreSnippets = new DatastoreSnippets(datastore);
   }
 
@@ -69,22 +69,22 @@ public class ITDatastoreSnippets {
   }
 
   private String registerKey(String keyName, String kind) {
-    Key key = datastore.newKeyFactory().kind(kind).newKey(keyName);
+    Key key = datastore.newKeyFactory().setKind(kind).newKey(keyName);
     registeredKeys.add(key);
-    return key.name();
+    return key.getName();
   }
 
   private Map<String, Entity> createEntityMap(List<Entity> entities) {
     Map<String, Entity> entityMap = new HashMap<>();
     for (Entity entity : entities) {
-      entityMap.put(entity.key().name(), entity);
+      entityMap.put(entity.getKey().getName(), entity);
     }
     return entityMap;
   }
 
   private void addEntity(String keyName, String keyClass, String property, String value) {
-    Key key = datastore.newKeyFactory().kind(keyClass).newKey(keyName);
-    Entity.Builder entityBuilder = Entity.builder(key);
+    Key key = datastore.newKeyFactory().setKind(keyClass).newKey(keyName);
+    Entity.Builder entityBuilder = Entity.newBuilder(key);
     entityBuilder.set(property, value);
     Entity entity = entityBuilder.build();
     datastore.put(entity);
@@ -118,8 +118,16 @@ public class ITDatastoreSnippets {
   }
 
   @Test
+  public void testEntityAddGet() {
+    String key = registerKey("my_single_key_add");
+    datastoreSnippets.addSingleEntity(key);
+    Entity entity = datastoreSnippets.getEntityWithKey(key);
+    assertEquals("value", entity.getString("propertyName"));
+  }
+
+  @Test
   public void testEntityPutGet() {
-    String key = registerKey("my_single_key");
+    String key = registerKey("my_single_key_put");
     datastoreSnippets.putSingleEntity(key);
     Entity entity = datastoreSnippets.getEntityWithKey(key);
     assertEquals("value", entity.getString("propertyName"));
@@ -129,6 +137,17 @@ public class ITDatastoreSnippets {
   public void testBatchEntityCrud() {
     String key1 = registerKey("batch_key1");
     String key2 = registerKey("batch_key2");
+
+    datastoreSnippets.batchAddEntities(key1, key2);
+
+    assertNotNull(datastoreSnippets.getEntityWithKey(key1));
+    assertNotNull(datastoreSnippets.getEntityWithKey(key2));
+
+    datastoreSnippets.batchDeleteEntities(key1, key2);
+
+    assertNull(datastoreSnippets.getEntityWithKey(key1));
+    assertNull(datastoreSnippets.getEntityWithKey(key2));
+
     datastoreSnippets.batchPutEntities(key1, key2);
 
     assertNotNull(datastoreSnippets.getEntityWithKey(key1));

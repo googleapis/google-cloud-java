@@ -85,7 +85,7 @@ public class ProjectInfo implements Serializable {
       this.type = checkNotNull(type);
     }
 
-    String id() {
+    String getId() {
       return id;
     }
 
@@ -129,7 +129,17 @@ public class ProjectInfo implements Serializable {
      * uppercase letters, numbers, hyphen, single-quote, double-quote, space, and exclamation point.
      * This field can be changed after project creation.
      */
+    @Deprecated
     public abstract Builder name(String name);
+
+    /**
+     * Set the user-assigned name of the project.
+     *
+     * <p>This field is optional and can remain unset. Allowed characters are: lowercase and
+     * uppercase letters, numbers, hyphen, single-quote, double-quote, space, and exclamation point.
+     * This field can be changed after project creation.
+     */
+    public abstract Builder setName(String name);
 
     /**
      * Set the unique, user-assigned ID of the project.
@@ -138,7 +148,17 @@ public class ProjectInfo implements Serializable {
      * Trailing hyphens are prohibited. This field cannot be changed after the server creates the
      * project.
      */
+    @Deprecated
     public abstract Builder projectId(String projectId);
+
+    /**
+     * Set the unique, user-assigned ID of the project.
+     *
+     * <p>The ID must be 6 to 30 lowercase letters, digits, or hyphens. It must start with a letter.
+     * Trailing hyphens are prohibited. This field cannot be changed after the server creates the
+     * project.
+     */
+    public abstract Builder setProjectId(String projectId);
 
     /**
      * Add a label associated with this project.
@@ -166,15 +186,27 @@ public class ProjectInfo implements Serializable {
      * more than 256 labels can be associated with a given resource. This field can be changed after
      * project creation.
      */
+    @Deprecated
     public abstract Builder labels(Map<String, String> labels);
 
-    abstract Builder projectNumber(Long projectNumber);
+    /**
+     * Set the labels associated with this project.
+     *
+     * <p>Label keys must be between 1 and 63 characters long and must conform to the following
+     * regular expression: [a-z]([-a-z0-9]*[a-z0-9])?. Label values must be between 0 and 63
+     * characters long and must conform to the regular expression ([a-z]([-a-z0-9]*[a-z0-9])?)?. No
+     * more than 256 labels can be associated with a given resource. This field can be changed after
+     * project creation.
+     */
+    public abstract Builder setLabels(Map<String, String> labels);
 
-    abstract Builder state(State state);
+    abstract Builder setProjectNumber(Long projectNumber);
 
-    abstract Builder createTimeMillis(Long createTimeMillis);
+    abstract Builder setState(State state);
 
-    abstract Builder parent(ResourceId parent);
+    abstract Builder setCreateTimeMillis(Long createTimeMillis);
+
+    abstract Builder setParent(ResourceId parent);
 
     public abstract ProjectInfo build();
   }
@@ -204,13 +236,25 @@ public class ProjectInfo implements Serializable {
     }
 
     @Override
+    @Deprecated
     public Builder name(String name) {
+      return setName(name);
+    }
+
+    @Override
+    public Builder setName(String name) {
       this.name = firstNonNull(name, Data.<String>nullOf(String.class));
       return this;
     }
 
     @Override
+    @Deprecated
     public Builder projectId(String projectId) {
+      return setProjectId(projectId);
+    }
+
+    @Override
+    public Builder setProjectId(String projectId) {
       this.projectId = checkNotNull(projectId);
       return this;
     }
@@ -234,31 +278,37 @@ public class ProjectInfo implements Serializable {
     }
 
     @Override
+    @Deprecated
     public Builder labels(Map<String, String> labels) {
+      return setLabels(labels);
+    }
+
+    @Override
+    public Builder setLabels(Map<String, String> labels) {
       this.labels = Maps.newHashMap(checkNotNull(labels));
       return this;
     }
 
     @Override
-    Builder projectNumber(Long projectNumber) {
+    Builder setProjectNumber(Long projectNumber) {
       this.projectNumber = projectNumber;
       return this;
     }
 
     @Override
-    Builder state(State state) {
+    Builder setState(State state) {
       this.state = state;
       return this;
     }
 
     @Override
-    Builder createTimeMillis(Long createTimeMillis) {
+    Builder setCreateTimeMillis(Long createTimeMillis) {
       this.createTimeMillis = createTimeMillis;
       return this;
     }
 
     @Override
-    Builder parent(ResourceId parent) {
+    Builder setParent(ResourceId parent) {
       this.parent = parent;
       return this;
     }
@@ -284,7 +334,17 @@ public class ProjectInfo implements Serializable {
    *
    * <p>This field cannot be changed after the server creates the project.
    */
+  @Deprecated
   public String projectId() {
+    return getProjectId();
+  }
+
+  /**
+   * Get the unique, user-assigned ID of the project.
+   *
+   * <p>This field cannot be changed after the server creates the project.
+   */
+  public String getProjectId() {
     return projectId;
   }
 
@@ -293,7 +353,17 @@ public class ProjectInfo implements Serializable {
    *
    * <p>This field is optional, can remain unset, and can be changed after project creation.
    */
+  @Deprecated
   public String name() {
+    return getName();
+  }
+
+  /**
+   * Get the user-assigned name of the project.
+   *
+   * <p>This field is optional, can remain unset, and can be changed after project creation.
+   */
+  public String getName() {
     return Data.isNull(name) ? null : name;
   }
 
@@ -302,14 +372,32 @@ public class ProjectInfo implements Serializable {
    *
    * <p>This field is set by the server and is read-only.
    */
+  @Deprecated
   public Long projectNumber() {
+    return getProjectNumber();
+  }
+
+  /**
+   * Get number uniquely identifying the project.
+   *
+   * <p>This field is set by the server and is read-only.
+   */
+  public Long getProjectNumber() {
     return projectNumber;
   }
 
   /**
    * Get the immutable map of labels associated with this project.
    */
+  @Deprecated
   public Map<String, String> labels() {
+    return getLabels();
+  }
+
+  /**
+   * Get the immutable map of labels associated with this project.
+   */
+  public Map<String, String> getLabels() {
     return labels;
   }
 
@@ -319,11 +407,22 @@ public class ProjectInfo implements Serializable {
    * <p>This is a read-only field. To change the lifecycle state of your project, use the
    * {@code delete} or {@code undelete} method.
    */
+  @Deprecated
   public State state() {
     return state;
   }
 
-  ResourceId parent() {
+  /**
+   * Get the project's lifecycle state.
+   *
+   * <p>This is a read-only field. To change the lifecycle state of your project, use the
+   * {@code delete} or {@code undelete} method.
+   */
+  public State getState() {
+    return state;
+  }
+
+  ResourceId getParent() {
     return parent;
   }
 
@@ -332,7 +431,17 @@ public class ProjectInfo implements Serializable {
    *
    * <p>This field is set by the server and is read-only.
    */
+  @Deprecated
   public Long createTimeMillis() {
+    return getCreateTimeMillis();
+  }
+
+  /**
+   * Get the project's creation time (in milliseconds).
+   *
+   * <p>This field is set by the server and is read-only.
+   */
+  public Long getCreateTimeMillis() {
     return createTimeMillis;
   }
 
@@ -349,7 +458,12 @@ public class ProjectInfo implements Serializable {
     return Objects.hash(name, projectId, labels, projectNumber, state, createTimeMillis, parent);
   }
 
+  @Deprecated
   public static Builder builder(String id) {
+    return newBuilder(id);
+  }
+
+  public static Builder newBuilder(String id) {
     return new BuilderImpl(id);
   }
 
@@ -377,21 +491,22 @@ public class ProjectInfo implements Serializable {
   }
 
   static ProjectInfo fromPb(com.google.api.services.cloudresourcemanager.model.Project projectPb) {
-    Builder builder = builder(projectPb.getProjectId()).projectNumber(projectPb.getProjectNumber());
+    Builder builder = newBuilder(projectPb.getProjectId())
+        .setProjectNumber(projectPb.getProjectNumber());
     if (projectPb.getName() != null && !projectPb.getName().equals("Unnamed")) {
-      builder.name(projectPb.getName());
+      builder.setName(projectPb.getName());
     }
     if (projectPb.getLabels() != null) {
-      builder.labels(projectPb.getLabels());
+      builder.setLabels(projectPb.getLabels());
     }
     if (projectPb.getLifecycleState() != null) {
-      builder.state(State.valueOf(projectPb.getLifecycleState()));
+      builder.setState(State.valueOf(projectPb.getLifecycleState()));
     }
     if (projectPb.getCreateTime() != null) {
-      builder.createTimeMillis(DateTime.parse(projectPb.getCreateTime()).getMillis());
+      builder.setCreateTimeMillis(DateTime.parse(projectPb.getCreateTime()).getMillis());
     }
     if (projectPb.getParent() != null) {
-      builder.parent(ResourceId.fromPb(projectPb.getParent()));
+      builder.setParent(ResourceId.fromPb(projectPb.getParent()));
     }
     return builder.build();
   }

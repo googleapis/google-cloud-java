@@ -22,26 +22,24 @@ import static org.junit.Assert.assertTrue;
 import com.google.cloud.Identity;
 import com.google.cloud.Policy;
 import com.google.cloud.Role;
-import com.google.cloud.pubsub.BaseSystemTest;
-import com.google.cloud.pubsub.PubSub;
-import com.google.cloud.pubsub.PubSubOptions;
-import com.google.cloud.pubsub.Subscription;
-import com.google.cloud.pubsub.SubscriptionInfo;
-import com.google.cloud.pubsub.Topic;
-import com.google.cloud.pubsub.TopicInfo;
+import com.google.cloud.pubsub.deprecated.BaseSystemTest;
+import com.google.cloud.pubsub.deprecated.PubSub;
+import com.google.cloud.pubsub.deprecated.PubSubOptions;
+import com.google.cloud.pubsub.deprecated.Subscription;
+import com.google.cloud.pubsub.deprecated.SubscriptionInfo;
+import com.google.cloud.pubsub.deprecated.Topic;
+import com.google.cloud.pubsub.deprecated.TopicInfo;
 import com.google.common.collect.ImmutableList;
-
+import java.util.List;
+import java.util.UUID;
+import java.util.concurrent.ExecutionException;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.Timeout;
 
-import java.util.List;
-import java.util.UUID;
-import java.util.concurrent.ExecutionException;
-
 public class ITPubSubTest extends BaseSystemTest {
 
-  private static final PubSub PUB_SUB = PubSubOptions.defaultInstance().service();
+  private static final PubSub PUB_SUB = PubSubOptions.getDefaultInstance().getService();
   private static final String NAME_SUFFIX = UUID.randomUUID().toString();
 
   @Rule
@@ -68,8 +66,8 @@ public class ITPubSubTest extends BaseSystemTest {
     policy = pubsub().replaceTopicPolicy(topicName, policy.toBuilder()
         .addIdentity(Role.viewer(), Identity.allAuthenticatedUsers())
         .build());
-    assertTrue(policy.bindings().containsKey(Role.viewer()));
-    assertTrue(policy.bindings().get(Role.viewer()).contains(Identity.allAuthenticatedUsers()));
+    assertTrue(policy.getBindings().containsKey(Role.viewer()));
+    assertTrue(policy.getBindings().get(Role.viewer()).contains(Identity.allAuthenticatedUsers()));
     List<Boolean> permissions =
         pubsub().testTopicPermissions(topicName, ImmutableList.of("pubsub.topics.get"));
     assertTrue(permissions.get(0));
@@ -90,8 +88,8 @@ public class ITPubSubTest extends BaseSystemTest {
     policy = pubsub().replaceTopicPolicyAsync(topicName, policy.toBuilder()
         .addIdentity(Role.viewer(), Identity.allAuthenticatedUsers())
         .build()).get();
-    assertTrue(policy.bindings().containsKey(Role.viewer()));
-    assertTrue(policy.bindings().get(Role.viewer()).contains(Identity.allAuthenticatedUsers()));
+    assertTrue(policy.getBindings().containsKey(Role.viewer()));
+    assertTrue(policy.getBindings().get(Role.viewer()).contains(Identity.allAuthenticatedUsers()));
     List<Boolean> permissions =
         pubsub().testTopicPermissionsAsync(topicName, ImmutableList.of("pubsub.topics.get")).get();
     assertTrue(permissions.get(0));
@@ -108,8 +106,8 @@ public class ITPubSubTest extends BaseSystemTest {
     policy = pubsub().replaceSubscriptionPolicy(subscriptionName, policy.toBuilder()
         .addIdentity(Role.viewer(), Identity.allAuthenticatedUsers())
         .build());
-    assertTrue(policy.bindings().containsKey(Role.viewer()));
-    assertTrue(policy.bindings().get(Role.viewer()).contains(Identity.allAuthenticatedUsers()));
+    assertTrue(policy.getBindings().containsKey(Role.viewer()));
+    assertTrue(policy.getBindings().get(Role.viewer()).contains(Identity.allAuthenticatedUsers()));
     List<Boolean> permissions = pubsub().testSubscriptionPermissions(subscriptionName,
         ImmutableList.of("pubsub.subscriptions.get"));
     assertTrue(permissions.get(0));
@@ -127,8 +125,8 @@ public class ITPubSubTest extends BaseSystemTest {
     policy = pubsub().replaceSubscriptionPolicyAsync(subscriptionName, policy.toBuilder()
         .addIdentity(Role.viewer(), Identity.allAuthenticatedUsers())
         .build()).get();
-    assertTrue(policy.bindings().containsKey(Role.viewer()));
-    assertTrue(policy.bindings().get(Role.viewer()).contains(Identity.allAuthenticatedUsers()));
+    assertTrue(policy.getBindings().containsKey(Role.viewer()));
+    assertTrue(policy.getBindings().get(Role.viewer()).contains(Identity.allAuthenticatedUsers()));
     List<Boolean> permissions = pubsub().testSubscriptionPermissionsAsync(subscriptionName,
         ImmutableList.of("pubsub.subscriptions.get")).get();
     assertTrue(permissions.get(0));

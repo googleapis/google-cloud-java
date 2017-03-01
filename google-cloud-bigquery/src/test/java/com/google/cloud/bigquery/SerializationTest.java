@@ -16,8 +16,8 @@
 
 package com.google.cloud.bigquery;
 
-import com.google.cloud.AuthCredentials;
 import com.google.cloud.BaseSerializationTest;
+import com.google.cloud.NoCredentials;
 import com.google.cloud.Restorable;
 import com.google.cloud.bigquery.StandardTableDefinition.StreamingBuffer;
 import com.google.common.collect.ImmutableList;
@@ -49,111 +49,111 @@ public class SerializationTest extends BaseSerializationTest {
   private static final String LOCATION = "";
   private static final String SELF_LINK = "http://bigquery/p/d";
   private static final DatasetId DATASET_ID = DatasetId.of("project", "dataset");
-  private static final DatasetInfo DATASET_INFO = DatasetInfo.builder(DATASET_ID)
-      .acl(ACCESS_RULES)
-      .creationTime(CREATION_TIME)
-      .defaultTableLifetime(DEFAULT_TABLE_EXPIRATION)
-      .description(DESCRIPTION)
-      .etag(ETAG)
-      .friendlyName(FRIENDLY_NAME)
-      .generatedId(GENERATED_ID)
-      .lastModified(LAST_MODIFIED)
-      .location(LOCATION)
-      .selfLink(SELF_LINK)
+  private static final DatasetInfo DATASET_INFO = DatasetInfo.newBuilder(DATASET_ID)
+      .setAcl(ACCESS_RULES)
+      .setCreationTime(CREATION_TIME)
+      .setDefaultTableLifetime(DEFAULT_TABLE_EXPIRATION)
+      .setDescription(DESCRIPTION)
+      .setEtag(ETAG)
+      .setFriendlyName(FRIENDLY_NAME)
+      .setGeneratedId(GENERATED_ID)
+      .setLastModified(LAST_MODIFIED)
+      .setLocation(LOCATION)
+      .setSelfLink(SELF_LINK)
       .build();
   private static final TableId TABLE_ID = TableId.of("project", "dataset", "table");
-  private static final CsvOptions CSV_OPTIONS = CsvOptions.builder()
-      .allowJaggedRows(true)
-      .allowQuotedNewLines(false)
-      .encoding(StandardCharsets.ISO_8859_1)
-      .fieldDelimiter(",")
-      .quote("\"")
-      .skipLeadingRows(42L)
+  private static final CsvOptions CSV_OPTIONS = CsvOptions.newBuilder()
+      .setAllowJaggedRows(true)
+      .setAllowQuotedNewLines(false)
+      .setEncoding(StandardCharsets.ISO_8859_1)
+      .setFieldDelimiter(",")
+      .setQuote("\"")
+      .setSkipLeadingRows(42L)
       .build();
   private static final Field FIELD_SCHEMA1 =
-      Field.builder("StringField", Field.Type.string())
-          .mode(Field.Mode.NULLABLE)
-          .description("FieldDescription1")
+      Field.newBuilder("StringField", Field.Type.string())
+          .setMode(Field.Mode.NULLABLE)
+          .setDescription("FieldDescription1")
           .build();
   private static final Field FIELD_SCHEMA2 =
-      Field.builder("IntegerField", Field.Type.integer())
-          .mode(Field.Mode.REPEATED)
-          .description("FieldDescription2")
+      Field.newBuilder("IntegerField", Field.Type.integer())
+          .setMode(Field.Mode.REPEATED)
+          .setDescription("FieldDescription2")
           .build();
   private static final Field FIELD_SCHEMA3 =
-      Field.builder("RecordField", Field.Type.record(FIELD_SCHEMA1, FIELD_SCHEMA2))
-          .mode(Field.Mode.REQUIRED)
-          .description("FieldDescription3")
+      Field.newBuilder("RecordField", Field.Type.record(FIELD_SCHEMA1, FIELD_SCHEMA2))
+          .setMode(Field.Mode.REQUIRED)
+          .setDescription("FieldDescription3")
           .build();
   private static final Schema TABLE_SCHEMA = Schema.of(FIELD_SCHEMA1, FIELD_SCHEMA2, FIELD_SCHEMA3);
   private static final StreamingBuffer STREAMING_BUFFER = new StreamingBuffer(1L, 2L, 3L);
   private static final List<String> SOURCE_URIS = ImmutableList.of("uri1", "uri2");
   private static final ExternalTableDefinition EXTERNAL_TABLE_DEFINITION =
-      ExternalTableDefinition.builder(SOURCE_URIS, TABLE_SCHEMA, CSV_OPTIONS)
-          .ignoreUnknownValues(true)
-          .maxBadRecords(42)
+      ExternalTableDefinition.newBuilder(SOURCE_URIS, TABLE_SCHEMA, CSV_OPTIONS)
+          .setIgnoreUnknownValues(true)
+          .setMaxBadRecords(42)
           .build();
   private static final UserDefinedFunction INLINE_FUNCTION =
       new UserDefinedFunction.InlineFunction("inline");
   private static final UserDefinedFunction URI_FUNCTION =
       new UserDefinedFunction.UriFunction("URI");
-  private static final TableDefinition TABLE_DEFINITION = StandardTableDefinition.builder()
-      .schema(TABLE_SCHEMA)
-      .location(LOCATION)
-      .streamingBuffer(STREAMING_BUFFER)
+  private static final TableDefinition TABLE_DEFINITION = StandardTableDefinition.newBuilder()
+      .setSchema(TABLE_SCHEMA)
+      .setLocation(LOCATION)
+      .setStreamingBuffer(STREAMING_BUFFER)
       .build();
-  private static final TableInfo TABLE_INFO = TableInfo.builder(TABLE_ID, TABLE_DEFINITION)
-      .creationTime(CREATION_TIME)
-      .description(DESCRIPTION)
-      .etag(ETAG)
-      .generatedId(GENERATED_ID)
+  private static final TableInfo TABLE_INFO = TableInfo.newBuilder(TABLE_ID, TABLE_DEFINITION)
+      .setCreationTime(CREATION_TIME)
+      .setDescription(DESCRIPTION)
+      .setEtag(ETAG)
+      .setGeneratedId(GENERATED_ID)
       .build();
   private static final TableDefinition VIEW_DEFINITION = ViewDefinition.of("QUERY");
-  private static final TableInfo VIEW_INFO = TableInfo.builder(TABLE_ID, VIEW_DEFINITION)
-      .creationTime(CREATION_TIME)
-      .description(DESCRIPTION)
-      .etag(ETAG)
-      .generatedId(GENERATED_ID)
+  private static final TableInfo VIEW_INFO = TableInfo.newBuilder(TABLE_ID, VIEW_DEFINITION)
+      .setCreationTime(CREATION_TIME)
+      .setDescription(DESCRIPTION)
+      .setEtag(ETAG)
+      .setGeneratedId(GENERATED_ID)
       .build();
   private static final TableInfo EXTERNAL_TABLE_INFO =
-      TableInfo.builder(TABLE_ID, EXTERNAL_TABLE_DEFINITION)
-          .creationTime(CREATION_TIME)
-          .description(DESCRIPTION)
-          .etag(ETAG)
-          .generatedId(GENERATED_ID)
+      TableInfo.newBuilder(TABLE_ID, EXTERNAL_TABLE_DEFINITION)
+          .setCreationTime(CREATION_TIME)
+          .setDescription(DESCRIPTION)
+          .setEtag(ETAG)
+          .setGeneratedId(GENERATED_ID)
           .build();
   private static final JobStatistics.CopyStatistics COPY_STATISTICS =
-      JobStatistics.CopyStatistics.builder()
-          .creationTime(1L)
-          .endTime(3L)
-          .startTime(2L)
+      JobStatistics.CopyStatistics.newBuilder()
+          .setCreationTimestamp(1L)
+          .setEndTime(3L)
+          .setStartTime(2L)
           .build();
   private static final JobStatistics.ExtractStatistics EXTRACT_STATISTICS =
-      JobStatistics.ExtractStatistics.builder()
-          .creationTime(1L)
-          .endTime(3L)
-          .startTime(2L)
-          .destinationUriFileCounts(ImmutableList.of(42L))
+      JobStatistics.ExtractStatistics.newBuilder()
+          .setCreationTimestamp(1L)
+          .setEndTime(3L)
+          .setStartTime(2L)
+          .setDestinationUriFileCounts(ImmutableList.of(42L))
           .build();
   private static final JobStatistics.LoadStatistics LOAD_STATISTICS =
-      JobStatistics.LoadStatistics.builder()
-          .creationTime(1L)
-          .endTime(3L)
-          .startTime(2L)
-          .inputFiles(42L)
-          .outputBytes(1024L)
-          .inputBytes(2048L)
-          .outputRows(24L)
+      JobStatistics.LoadStatistics.newBuilder()
+          .setCreationTimestamp(1L)
+          .setEndTime(3L)
+          .setStartTime(2L)
+          .setInputFiles(42L)
+          .setOutputBytes(1024L)
+          .setInputBytes(2048L)
+          .setOutputRows(24L)
           .build();
   private static final JobStatistics.QueryStatistics QUERY_STATISTICS =
-      JobStatistics.QueryStatistics.builder()
-          .creationTime(1L)
-          .endTime(3L)
-          .startTime(2L)
-          .totalBytesProcessed(2048L)
-          .totalBytesBilled(1024L)
-          .cacheHit(false)
-          .billingTier(42)
+      JobStatistics.QueryStatistics.newBuilder()
+          .setCreationTimestamp(1L)
+          .setEndTime(3L)
+          .setStartTime(2L)
+          .setTotalBytesProcessed(2048L)
+          .setTotalBytesBilled(1024L)
+          .setCacheHit(false)
+          .setBillingTier(42)
           .build();
   private static final BigQueryError BIGQUERY_ERROR =
       new BigQueryError("reason", "location", "message", "debugInfo");
@@ -165,13 +165,13 @@ public class SerializationTest extends BaseSerializationTest {
   private static final ExtractJobConfiguration EXTRACT_JOB_CONFIGURATION =
       ExtractJobConfiguration.of(TABLE_ID, SOURCE_URIS);
   private static final WriteChannelConfiguration LOAD_CONFIGURATION =
-      WriteChannelConfiguration.builder(TABLE_ID)
-          .createDisposition(JobInfo.CreateDisposition.CREATE_IF_NEEDED)
-          .writeDisposition(JobInfo.WriteDisposition.WRITE_APPEND)
-          .formatOptions(CSV_OPTIONS)
-          .ignoreUnknownValues(true)
-          .maxBadRecords(10)
-          .schema(TABLE_SCHEMA)
+      WriteChannelConfiguration.newBuilder(TABLE_ID)
+          .setCreateDisposition(JobInfo.CreateDisposition.CREATE_IF_NEEDED)
+          .setWriteDisposition(JobInfo.WriteDisposition.WRITE_APPEND)
+          .setFormatOptions(CSV_OPTIONS)
+          .setIgnoreUnknownValues(true)
+          .setMaxBadRecords(10)
+          .setSchema(TABLE_SCHEMA)
           .build();
   private static final LoadJobConfiguration LOAD_JOB_CONFIGURATION =
       LoadJobConfiguration.of(TABLE_ID, SOURCE_URIS);
@@ -182,40 +182,40 @@ public class SerializationTest extends BaseSerializationTest {
       ImmutableMap.<String, Object>of("key", "val1");
   private static final Map<String, Object> CONTENT2 =
       ImmutableMap.<String, Object>of("key", "val2");
-  private static final InsertAllRequest INSERT_ALL_REQUEST = InsertAllRequest.builder(TABLE_ID)
+  private static final InsertAllRequest INSERT_ALL_REQUEST = InsertAllRequest.newBuilder(TABLE_ID)
       .addRow(CONTENT1)
       .addRow(CONTENT2)
-      .ignoreUnknownValues(true)
-      .skipInvalidRows(false)
+      .setIgnoreUnknownValues(true)
+      .setSkipInvalidRows(false)
       .build();
   private static final Map<Long, List<BigQueryError>> ERRORS_MAP =
       ImmutableMap.<Long, List<BigQueryError>>of(0L, ImmutableList.of(BIGQUERY_ERROR));
   private static final InsertAllResponse INSERT_ALL_RESPONSE = new InsertAllResponse(ERRORS_MAP);
   private static final FieldValue FIELD_VALUE =
       new FieldValue(FieldValue.Attribute.PRIMITIVE, "value");
-  private static final QueryRequest QUERY_REQUEST = QueryRequest.builder("query")
-      .useQueryCache(true)
-      .defaultDataset(DATASET_ID)
-      .dryRun(false)
-      .pageSize(42L)
-      .maxWaitTime(10L)
+  private static final QueryRequest QUERY_REQUEST = QueryRequest.newBuilder("query")
+      .setUseQueryCache(true)
+      .setDefaultDataset(DATASET_ID)
+      .setDryRun(false)
+      .setPageSize(42L)
+      .setMaxWaitTime(10L)
       .build();
-  private static final QueryResult QUERY_RESULT = QueryResult.builder()
-      .schema(TABLE_SCHEMA)
-      .totalRows(1L)
-      .totalBytesProcessed(42L)
-      .cursor("cursor")
-      .pageFetcher(null)
-      .results(ImmutableList.<List<FieldValue>>of())
+  private static final QueryResult QUERY_RESULT = QueryResult.newBuilder()
+      .setSchema(TABLE_SCHEMA)
+      .setTotalRows(1L)
+      .setTotalBytesProcessed(42L)
+      .setCursor("cursor")
+      .setPageFetcher(null)
+      .setResults(ImmutableList.<List<FieldValue>>of())
       .build();
-  private static final QueryResponse QUERY_RESPONSE = QueryResponse.builder()
-      .etag(ETAG)
-      .jobId(JOB_ID)
-      .jobCompleted(true)
-      .result(QUERY_RESULT)
+  private static final QueryResponse QUERY_RESPONSE = QueryResponse.newBuilder()
+      .setEtag(ETAG)
+      .setJobId(JOB_ID)
+      .setJobCompleted(true)
+      .setResult(QUERY_RESULT)
       .build();
   private static final BigQuery BIGQUERY =
-      BigQueryOptions.builder().projectId("p1").build().service();
+      BigQueryOptions.newBuilder().setProjectId("p1").build().getService();
   private static final Dataset DATASET =
       new Dataset(BIGQUERY, new DatasetInfo.BuilderImpl(DATASET_INFO));
   private static final Table TABLE = new Table(BIGQUERY, new TableInfo.BuilderImpl(TABLE_INFO));
@@ -227,14 +227,11 @@ public class SerializationTest extends BaseSerializationTest {
 
   @Override
   protected Serializable[] serializableObjects() {
-    BigQueryOptions options = BigQueryOptions.builder()
-        .projectId("p1")
-        .authCredentials(AuthCredentials.createForAppEngine())
+    BigQueryOptions options = BigQueryOptions.newBuilder()
+        .setProjectId("p1")
+        .setCredentials(NoCredentials.getInstance())
         .build();
-    BigQueryOptions otherOptions = options.toBuilder()
-        .projectId("p2")
-        .authCredentials(null)
-        .build();
+    BigQueryOptions otherOptions = options.toBuilder().setProjectId("p2").build();
     return new Serializable[]{DOMAIN_ACCESS, GROUP_ACCESS, USER_ACCESS, VIEW_ACCESS, DATASET_ID,
         DATASET_INFO, TABLE_ID, CSV_OPTIONS, STREAMING_BUFFER, TABLE_DEFINITION,
         EXTERNAL_TABLE_DEFINITION, VIEW_DEFINITION, TABLE_SCHEMA, TABLE_INFO, VIEW_INFO,
@@ -252,7 +249,7 @@ public class SerializationTest extends BaseSerializationTest {
 
   @Override
   protected Restorable<?>[] restorableObjects() {
-    BigQueryOptions options = BigQueryOptions.builder().projectId("p2").build();
+    BigQueryOptions options = BigQueryOptions.newBuilder().setProjectId("p2").build();
     // avoid closing when you don't want partial writes upon failure
     @SuppressWarnings("resource")
     TableDataWriteChannel writer =

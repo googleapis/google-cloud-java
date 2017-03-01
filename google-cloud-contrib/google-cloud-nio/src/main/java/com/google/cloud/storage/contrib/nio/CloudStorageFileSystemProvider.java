@@ -106,7 +106,7 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
     @Override
     protected Path computeNext() {
       while (blobIterator.hasNext()) {
-        Path path = fileSystem.getPath(blobIterator.next().name());
+        Path path = fileSystem.getPath(blobIterator.next().getName());
         try {
           if (filter.accept(path)) {
             return path;
@@ -149,9 +149,9 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
       return;
     }
     if (storageOptions == null) {
-      this.storage = StorageOptions.defaultInstance().service();
+      this.storage = StorageOptions.getDefaultInstance().getService();
     } else {
-      this.storage = storageOptions.service();
+      this.storage = storageOptions.getService();
     }
   }
 
@@ -170,14 +170,15 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
   }
 
   /**
-   * Returns Cloud Storage file system, provided a URI with no path, e.g. {@code gs://bucket}.
+   * Returns Cloud Storage file system, provided a URI, e.g. {@code gs://bucket}.
+   * The URI can include a path component (that will be ignored).
    *
    * @param uri bucket and current working directory, e.g. {@code gs://bucket}
    * @param env map of configuration options, whose keys correspond to the method names of
    *     {@link CloudStorageConfiguration.Builder}. However you are not allowed to set the working
    *     directory, as that should be provided in the {@code uri}
-   * @throws IllegalArgumentException if {@code uri} specifies a user, query, fragment, or scheme is
-   *     not {@value CloudStorageFileSystem#URI_SCHEME}
+   * @throws IllegalArgumentException if {@code uri} specifies a port, user, query, or fragment, or
+   *     if scheme is not {@value CloudStorageFileSystem#URI_SCHEME}
    */
   @Override
   public CloudStorageFileSystem newFileSystem(URI uri, Map<String, ?> env) {
@@ -191,11 +192,10 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
         CloudStorageFileSystem.URI_SCHEME, uri);
     checkArgument(
         uri.getPort() == -1
-            && isNullOrEmpty(uri.getPath())
             && isNullOrEmpty(uri.getQuery())
             && isNullOrEmpty(uri.getFragment())
             && isNullOrEmpty(uri.getUserInfo()),
-        "GCS FileSystem URIs mustn't have: port, userinfo, path, query, or fragment: %s",
+        "GCS FileSystem URIs mustn't have: port, userinfo, query, or fragment: %s",
         uri);
     CloudStorageUtil.checkBucket(uri.getHost());
     initStorage();
@@ -266,20 +266,20 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
       throw new CloudStoragePseudoDirectoryException(cloudPath);
     }
     BlobId file = cloudPath.getBlobId();
-    BlobInfo.Builder infoBuilder = BlobInfo.builder(file);
+    BlobInfo.Builder infoBuilder = BlobInfo.newBuilder(file);
     List<Storage.BlobWriteOption> writeOptions = new ArrayList<>();
     List<Acl> acls = new ArrayList<>();
 
     HashMap<String, String> metas = new HashMap<>();
     for (OpenOption option : options) {
       if (option instanceof OptionMimeType) {
-        infoBuilder.contentType(((OptionMimeType) option).mimeType());
+        infoBuilder.setContentType(((OptionMimeType) option).mimeType());
       } else if (option instanceof OptionCacheControl) {
-        infoBuilder.cacheControl(((OptionCacheControl) option).cacheControl());
+        infoBuilder.setCacheControl(((OptionCacheControl) option).cacheControl());
       } else if (option instanceof OptionContentDisposition) {
-        infoBuilder.contentDisposition(((OptionContentDisposition) option).contentDisposition());
+        infoBuilder.setContentDisposition(((OptionContentDisposition) option).contentDisposition());
       } else if (option instanceof OptionContentEncoding) {
-        infoBuilder.contentEncoding(((OptionContentEncoding) option).contentEncoding());
+        infoBuilder.setContentEncoding(((OptionContentEncoding) option).contentEncoding());
       } else if (option instanceof OptionUserMetadata) {
         OptionUserMetadata opMeta = (OptionUserMetadata) option;
         metas.put(opMeta.key(), opMeta.value());
@@ -317,10 +317,10 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
     }
 
     if (!metas.isEmpty()) {
-      infoBuilder.metadata(metas);
+      infoBuilder.setMetadata(metas);
     }
     if (!acls.isEmpty()) {
-      infoBuilder.acl(acls);
+      infoBuilder.setAcl(acls);
     }
 
     try {
@@ -391,7 +391,7 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
     boolean setContentDisposition = false;
 
     CloudStoragePath toPath = CloudStorageUtil.checkPath(target);
-    BlobInfo.Builder tgtInfoBuilder = BlobInfo.builder(toPath.getBlobId()).contentType("");
+    BlobInfo.Builder tgtInfoBuilder = BlobInfo.newBuilder(toPath.getBlobId()).setContentType("");
 
     int blockSize = -1;
     for (CopyOption option : options) {
@@ -411,16 +411,16 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
         if (option instanceof OptionBlockSize) {
           blockSize = ((OptionBlockSize) option).size();
         } else if (option instanceof OptionMimeType) {
-          tgtInfoBuilder.contentType(((OptionMimeType) option).mimeType());
+          tgtInfoBuilder.setContentType(((OptionMimeType) option).mimeType());
           setContentType = true;
         } else if (option instanceof OptionCacheControl) {
-          tgtInfoBuilder.cacheControl(((OptionCacheControl) option).cacheControl());
+          tgtInfoBuilder.setCacheControl(((OptionCacheControl) option).cacheControl());
           setCacheControl = true;
         } else if (option instanceof OptionContentEncoding) {
-          tgtInfoBuilder.contentEncoding(((OptionContentEncoding) option).contentEncoding());
+          tgtInfoBuilder.setContentEncoding(((OptionContentEncoding) option).contentEncoding());
           setContentEncoding = true;
         } else if (option instanceof OptionContentDisposition) {
-          tgtInfoBuilder.contentDisposition(
+          tgtInfoBuilder.setContentDisposition(
               ((OptionContentDisposition) option).contentDisposition());
           setContentDisposition = true;
         } else {
@@ -467,31 +467,31 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
           throw new NoSuchFileException(fromPath.toString());
         }
         if (!setCacheControl) {
-          tgtInfoBuilder.cacheControl(blobInfo.cacheControl());
+          tgtInfoBuilder.setCacheControl(blobInfo.getCacheControl());
         }
         if (!setContentType) {
-          tgtInfoBuilder.contentType(blobInfo.contentType());
+          tgtInfoBuilder.setContentType(blobInfo.getContentType());
         }
         if (!setContentEncoding) {
-          tgtInfoBuilder.contentEncoding(blobInfo.contentEncoding());
+          tgtInfoBuilder.setContentEncoding(blobInfo.getContentEncoding());
         }
         if (!setContentDisposition) {
-          tgtInfoBuilder.contentDisposition(blobInfo.contentDisposition());
+          tgtInfoBuilder.setContentDisposition(blobInfo.getContentDisposition());
         }
-        tgtInfoBuilder.acl(blobInfo.acl());
-        tgtInfoBuilder.metadata(blobInfo.metadata());
+        tgtInfoBuilder.setAcl(blobInfo.getAcl());
+        tgtInfoBuilder.setMetadata(blobInfo.getMetadata());
       }
 
       BlobInfo tgtInfo = tgtInfoBuilder.build();
       Storage.CopyRequest.Builder copyReqBuilder =
-          Storage.CopyRequest.builder().source(fromPath.getBlobId());
+          Storage.CopyRequest.newBuilder().setSource(fromPath.getBlobId());
       if (wantReplaceExisting) {
-        copyReqBuilder = copyReqBuilder.target(tgtInfo);
+        copyReqBuilder = copyReqBuilder.setTarget(tgtInfo);
       } else {
-        copyReqBuilder = copyReqBuilder.target(tgtInfo, Storage.BlobTargetOption.doesNotExist());
+        copyReqBuilder = copyReqBuilder.setTarget(tgtInfo, Storage.BlobTargetOption.doesNotExist());
       }
       CopyWriter copyWriter = storage.copy(copyReqBuilder.build());
-      copyWriter.result();
+      copyWriter.getResult();
     } catch (StorageException oops) {
       throw asIoException(oops);
     }
@@ -551,9 +551,9 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
     }
     BlobInfo blobInfo = storage.get(cloudPath.getBlobId());
     // null size indicate a file that we haven't closed yet, so GCS treats it as not there yet.
-    if (null == blobInfo || blobInfo.size() == null) {
+    if (null == blobInfo || blobInfo.getSize() == null) {
       throw new NoSuchFileException(
-          cloudPath.getBlobId().bucket() + "/" + cloudPath.getBlobId().name());
+          cloudPath.getBlobId().getBucket() + "/" + cloudPath.getBlobId().getName());
     }
     CloudStorageObjectAttributes ret;
     ret = new CloudStorageObjectAttributes(blobInfo);
@@ -598,7 +598,7 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
     final CloudStoragePath cloudPath = CloudStorageUtil.checkPath(dir);
     checkNotNull(filter);
     initStorage();
-    String prefix = cloudPath.toString();
+    String prefix = cloudPath.toRealPath().toString();
     final Iterator<Blob> blobIterator = storage.list(cloudPath.bucket(),
         Storage.BlobListOption.prefix(prefix), Storage.BlobListOption.currentDirectory(),
         Storage.BlobListOption.fields()).iterateAll();
@@ -653,8 +653,8 @@ public final class CloudStorageFileSystemProvider extends FileSystemProvider {
     // RPC API can only throw StorageException, but CloudStorageFileSystemProvider
     // can only throw IOException. Square peg, round hole.
     // TODO(#810): Research if other codes should be translated similarly.
-    if (oops.code() == 404) {
-      return new NoSuchFileException(oops.reason());
+    if (oops.getCode() == 404) {
+      return new NoSuchFileException(oops.getReason());
     }
 
     Throwable cause = oops.getCause();

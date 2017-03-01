@@ -74,7 +74,15 @@ public final class Schema implements Serializable {
     /**
      * Sets table's schema fields.
      */
+    @Deprecated
     public Builder fields(Iterable<Field> fields) {
+      return setFields(fields);
+    }
+
+    /**
+     * Sets table's schema fields.
+     */
+    public Builder setFields(Iterable<Field> fields) {
       this.fields = Lists.newArrayList(checkNotNull(fields));
       return this;
     }
@@ -82,7 +90,15 @@ public final class Schema implements Serializable {
     /**
      * Sets table's schema fields.
      */
+    @Deprecated
     public Builder fields(Field... fields) {
+      return setFields(fields);
+    }
+
+    /**
+     * Sets table's schema fields.
+     */
+    public Builder setFields(Field... fields) {
       this.fields = Lists.newArrayList(fields);
       return this;
     }
@@ -103,7 +119,15 @@ public final class Schema implements Serializable {
   /**
    * Returns the fields in the current table schema.
    */
+  @Deprecated
   public List<Field> fields() {
+    return getFields();
+  }
+
+  /**
+   * Returns the fields in the current table schema.
+   */
+  public List<Field> getFields() {
     return fields;
   }
 
@@ -111,7 +135,7 @@ public final class Schema implements Serializable {
    * Returns a builder for the {@code Schema} object.
    */
   public Builder toBuilder() {
-    return builder().fields(fields);
+    return newBuilder().setFields(fields);
   }
 
   @Override
@@ -143,16 +167,33 @@ public final class Schema implements Serializable {
     return tableSchemaPb;
   }
 
+  /**
+   * Creates a builder for a {@code Schema} object.
+   */
+  @Deprecated
   public static Builder builder() {
+    return newBuilder();
+  }
+
+  /**
+   * Creates a builder for a {@code Schema} object.
+   */
+  public static Builder newBuilder() {
     return new Builder();
   }
 
+  /**
+   * Creates a {@code Schema} object given a list of fields.
+   */
   public static Schema of(Iterable<Field> fields) {
-    return builder().fields(fields).build();
+    return newBuilder().setFields(fields).build();
   }
 
+  /**
+   * Creates a {@code Schema} object given some fields.
+   */
   public static Schema of(Field... fields) {
-    return builder().fields(fields).build();
+    return newBuilder().setFields(fields).build();
   }
 
   static Schema fromPb(com.google.api.services.bigquery.model.TableSchema tableSchemaPb) {

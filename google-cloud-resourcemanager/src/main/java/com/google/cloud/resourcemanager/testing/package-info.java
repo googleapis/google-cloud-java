@@ -22,7 +22,7 @@
  * <pre> {@code
  * LocalResourceManagerHelper resourceManagerHelper = LocalResourceManagerHelper.create();
  * resourceManagerHelper.start();
- * ResourceManager resourceManager = resourceManagerHelper.options().service();
+ * ResourceManager resourceManager = resourceManagerHelper.getOptions().getService();
  * }</pre>
  *
  * <p>After the test:

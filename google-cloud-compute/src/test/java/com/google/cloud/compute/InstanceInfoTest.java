@@ -44,7 +44,7 @@ public class InstanceInfoTest {
   private static final AttachedDisk ATTACHED_DISK =
       AttachedDisk.of(AttachedDisk.PersistentDiskConfiguration.of(DISK_ID));
   private static final List<AttachedDisk> ATTACHED_DISKS = ImmutableList.of(ATTACHED_DISK);
-  private static final Metadata METADATA = Metadata.builder()
+  private static final Metadata METADATA = Metadata.newBuilder()
       .add("key1", "value1")
       .add("key2", "value2")
       .build();
@@ -53,28 +53,45 @@ public class InstanceInfoTest {
   private static final List<ServiceAccount> SERVICE_ACCOUNTS = ImmutableList.of(SERVICE_ACCOUNT);
   private static final SchedulingOptions SCHEDULING_OPTIONS = SchedulingOptions.preemptible();
   private static final String CPU_PLATFORM = "cpuPlatform";
-  private static final InstanceInfo INSTANCE_INFO = InstanceInfo.builder(INSTANCE_ID, MACHINE_TYPE)
-      .generatedId(GENERATED_ID)
-      .creationTimestamp(CREATION_TIMESTAMP)
-      .description(DESCRIPTION)
-      .status(STATUS)
-      .statusMessage(STATUS_MESSAGE)
-      .tags(TAGS)
-      .canIpForward(CAN_IP_FORWARD)
-      .networkInterfaces(NETWORK_INTERFACES)
-      .attachedDisks(ATTACHED_DISKS)
-      .metadata(METADATA)
-      .serviceAccounts(SERVICE_ACCOUNTS)
-      .schedulingOptions(SCHEDULING_OPTIONS)
-      .cpuPlatform(CPU_PLATFORM)
-      .build();
+  private static final InstanceInfo INSTANCE_INFO =
+      InstanceInfo.newBuilder(INSTANCE_ID, MACHINE_TYPE)
+          .setGeneratedId(GENERATED_ID)
+          .setCreationTimestamp(CREATION_TIMESTAMP)
+          .setDescription(DESCRIPTION)
+          .setStatus(STATUS)
+          .setStatusMessage(STATUS_MESSAGE)
+          .setTags(TAGS)
+          .setCanIpForward(CAN_IP_FORWARD)
+          .setNetworkInterfaces(NETWORK_INTERFACES)
+          .setAttachedDisks(ATTACHED_DISKS)
+          .setMetadata(METADATA)
+          .setServiceAccounts(SERVICE_ACCOUNTS)
+          .setSchedulingOptions(SCHEDULING_OPTIONS)
+          .setCpuPlatform(CPU_PLATFORM)
+          .build();
+  private static final InstanceInfo DEPRECATED_INSTANCE_INFO =
+      InstanceInfo.newBuilder(INSTANCE_ID, MACHINE_TYPE)
+          .setGeneratedId(GENERATED_ID)
+          .setCreationTimestamp(CREATION_TIMESTAMP)
+          .description(DESCRIPTION)
+          .setStatus(STATUS)
+          .setStatusMessage(STATUS_MESSAGE)
+          .tags(TAGS)
+          .canIpForward(CAN_IP_FORWARD)
+          .networkInterfaces(NETWORK_INTERFACES)
+          .attachedDisks(ATTACHED_DISKS)
+          .metadata(METADATA)
+          .serviceAccounts(SERVICE_ACCOUNTS)
+          .schedulingOptions(SCHEDULING_OPTIONS)
+          .setCpuPlatform(CPU_PLATFORM)
+          .build();
 
   @Test
   public void testToBuilder() {
     compareInstanceInfo(INSTANCE_INFO, INSTANCE_INFO.toBuilder().build());
-    InstanceInfo instance = INSTANCE_INFO.toBuilder().description("newDescription").build();
-    assertEquals("newDescription", instance.description());
-    instance = instance.toBuilder().description(DESCRIPTION).build();
+    InstanceInfo instance = INSTANCE_INFO.toBuilder().setDescription("newDescription").build();
+    assertEquals("newDescription", instance.getDescription());
+    instance = instance.toBuilder().setDescription(DESCRIPTION).build();
     compareInstanceInfo(INSTANCE_INFO, instance);
   }
 
@@ -87,27 +104,62 @@ public class InstanceInfoTest {
 
   @Test
   public void testBuilder() {
-    assertEquals(GENERATED_ID, INSTANCE_INFO.generatedId());
-    assertEquals(INSTANCE_ID, INSTANCE_INFO.instanceId());
-    assertEquals(CREATION_TIMESTAMP, INSTANCE_INFO.creationTimestamp());
-    assertEquals(DESCRIPTION, INSTANCE_INFO.description());
-    assertEquals(STATUS, INSTANCE_INFO.status());
-    assertEquals(STATUS_MESSAGE, INSTANCE_INFO.statusMessage());
-    assertEquals(TAGS, INSTANCE_INFO.tags());
-    assertEquals(MACHINE_TYPE, INSTANCE_INFO.machineType());
+    assertEquals(GENERATED_ID, INSTANCE_INFO.getGeneratedId());
+    assertEquals(INSTANCE_ID, INSTANCE_INFO.getInstanceId());
+    assertEquals(CREATION_TIMESTAMP, INSTANCE_INFO.getCreationTimestamp());
+    assertEquals(DESCRIPTION, INSTANCE_INFO.getDescription());
+    assertEquals(STATUS, INSTANCE_INFO.getStatus());
+    assertEquals(STATUS_MESSAGE, INSTANCE_INFO.getStatusMessage());
+    assertEquals(TAGS, INSTANCE_INFO.getTags());
+    assertEquals(MACHINE_TYPE, INSTANCE_INFO.getMachineType());
     assertEquals(CAN_IP_FORWARD, INSTANCE_INFO.canIpForward());
-    assertEquals(NETWORK_INTERFACES, INSTANCE_INFO.networkInterfaces());
-    assertEquals(ATTACHED_DISKS, INSTANCE_INFO.attachedDisks());
-    assertEquals(METADATA, INSTANCE_INFO.metadata());
-    assertEquals(SERVICE_ACCOUNTS, INSTANCE_INFO.serviceAccounts());
-    assertEquals(SCHEDULING_OPTIONS, INSTANCE_INFO.schedulingOptions());
-    assertEquals(CPU_PLATFORM, INSTANCE_INFO.cpuPlatform());
+    assertEquals(NETWORK_INTERFACES, INSTANCE_INFO.getNetworkInterfaces());
+    assertEquals(ATTACHED_DISKS, INSTANCE_INFO.getAttachedDisks());
+    assertEquals(METADATA, INSTANCE_INFO.getMetadata());
+    assertEquals(SERVICE_ACCOUNTS, INSTANCE_INFO.getServiceAccounts());
+    assertEquals(SCHEDULING_OPTIONS, INSTANCE_INFO.getSchedulingOptions());
+    assertEquals(CPU_PLATFORM, INSTANCE_INFO.getCpuPlatform());
+    InstanceInfo instanceInfo = InstanceInfo.newBuilder(INSTANCE_ID, MACHINE_TYPE)
+        .setGeneratedId(GENERATED_ID)
+        .setCreationTimestamp(CREATION_TIMESTAMP)
+        .setDescription(DESCRIPTION)
+        .setStatus(STATUS)
+        .setStatusMessage(STATUS_MESSAGE)
+        .setTags(TAGS)
+        .setCanIpForward(CAN_IP_FORWARD)
+        .setNetworkInterfaces(NETWORK_INTERFACE)
+        .setAttachedDisks(ATTACHED_DISK)
+        .setMetadata(METADATA)
+        .setServiceAccounts(SERVICE_ACCOUNTS)
+        .setSchedulingOptions(SCHEDULING_OPTIONS)
+        .setCpuPlatform(CPU_PLATFORM)
+        .build();
+    compareInstanceInfo(INSTANCE_INFO, instanceInfo);
+  }
+
+  @Test
+  public void testBuilderDeprecated() {
+    assertEquals(GENERATED_ID, DEPRECATED_INSTANCE_INFO.generatedId());
+    assertEquals(INSTANCE_ID, DEPRECATED_INSTANCE_INFO.instanceId());
+    assertEquals(CREATION_TIMESTAMP, DEPRECATED_INSTANCE_INFO.creationTimestamp());
+    assertEquals(DESCRIPTION, DEPRECATED_INSTANCE_INFO.description());
+    assertEquals(STATUS, DEPRECATED_INSTANCE_INFO.status());
+    assertEquals(STATUS_MESSAGE, DEPRECATED_INSTANCE_INFO.statusMessage());
+    assertEquals(TAGS, DEPRECATED_INSTANCE_INFO.tags());
+    assertEquals(MACHINE_TYPE, DEPRECATED_INSTANCE_INFO.machineType());
+    assertEquals(CAN_IP_FORWARD, DEPRECATED_INSTANCE_INFO.canIpForward());
+    assertEquals(NETWORK_INTERFACES, DEPRECATED_INSTANCE_INFO.networkInterfaces());
+    assertEquals(ATTACHED_DISKS, DEPRECATED_INSTANCE_INFO.attachedDisks());
+    assertEquals(METADATA, DEPRECATED_INSTANCE_INFO.metadata());
+    assertEquals(SERVICE_ACCOUNTS, DEPRECATED_INSTANCE_INFO.serviceAccounts());
+    assertEquals(SCHEDULING_OPTIONS, DEPRECATED_INSTANCE_INFO.schedulingOptions());
+    assertEquals(CPU_PLATFORM, DEPRECATED_INSTANCE_INFO.cpuPlatform());
     InstanceInfo instanceInfo = InstanceInfo.builder(INSTANCE_ID, MACHINE_TYPE)
-        .generatedId(GENERATED_ID)
-        .creationTimestamp(CREATION_TIMESTAMP)
+        .setGeneratedId(GENERATED_ID)
+        .setCreationTimestamp(CREATION_TIMESTAMP)
         .description(DESCRIPTION)
-        .status(STATUS)
-        .statusMessage(STATUS_MESSAGE)
+        .setStatus(STATUS)
+        .setStatusMessage(STATUS_MESSAGE)
         .tags(TAGS)
         .canIpForward(CAN_IP_FORWARD)
         .networkInterfaces(NETWORK_INTERFACE)
@@ -115,7 +167,7 @@ public class InstanceInfoTest {
         .metadata(METADATA)
         .serviceAccounts(SERVICE_ACCOUNTS)
         .schedulingOptions(SCHEDULING_OPTIONS)
-        .cpuPlatform(CPU_PLATFORM)
+        .setCpuPlatform(CPU_PLATFORM)
         .build();
     compareInstanceInfo(INSTANCE_INFO, instanceInfo);
   }
@@ -124,21 +176,21 @@ public class InstanceInfoTest {
   public void testOf() {
     InstanceInfo instance =
         InstanceInfo.of(INSTANCE_ID, MACHINE_TYPE, ATTACHED_DISK, NETWORK_INTERFACE);
-    assertNull(instance.generatedId());
-    assertEquals(INSTANCE_ID, instance.instanceId());
-    assertNull(instance.creationTimestamp());
-    assertNull(instance.description());
-    assertNull(instance.status());
-    assertNull(instance.statusMessage());
-    assertNull(instance.tags());
-    assertEquals(MACHINE_TYPE, instance.machineType());
+    assertNull(instance.getGeneratedId());
+    assertEquals(INSTANCE_ID, instance.getInstanceId());
+    assertNull(instance.getCreationTimestamp());
+    assertNull(instance.getDescription());
+    assertNull(instance.getStatus());
+    assertNull(instance.getStatusMessage());
+    assertNull(instance.getTags());
+    assertEquals(MACHINE_TYPE, instance.getMachineType());
     assertNull(instance.canIpForward());
-    assertEquals(NETWORK_INTERFACES, instance.networkInterfaces());
-    assertEquals(ATTACHED_DISKS, instance.attachedDisks());
-    assertNull(instance.metadata());
-    assertNull(instance.serviceAccounts());
-    assertNull(instance.schedulingOptions());
-    assertNull(instance.cpuPlatform());
+    assertEquals(NETWORK_INTERFACES, instance.getNetworkInterfaces());
+    assertEquals(ATTACHED_DISKS, instance.getAttachedDisks());
+    assertNull(instance.getMetadata());
+    assertNull(instance.getServiceAccounts());
+    assertNull(instance.getSchedulingOptions());
+    assertNull(instance.getCpuPlatform());
   }
 
   @Test
@@ -163,21 +215,21 @@ public class InstanceInfoTest {
 
   public void compareInstanceInfo(InstanceInfo expected, InstanceInfo value) {
     assertEquals(expected, value);
-    assertEquals(expected.generatedId(), value.generatedId());
-    assertEquals(expected.instanceId(), value.instanceId());
-    assertEquals(expected.creationTimestamp(), value.creationTimestamp());
-    assertEquals(expected.description(), value.description());
-    assertEquals(expected.status(), value.status());
-    assertEquals(expected.statusMessage(), value.statusMessage());
-    assertEquals(expected.tags(), value.tags());
-    assertEquals(expected.machineType(), value.machineType());
+    assertEquals(expected.getGeneratedId(), value.getGeneratedId());
+    assertEquals(expected.getInstanceId(), value.getInstanceId());
+    assertEquals(expected.getCreationTimestamp(), value.getCreationTimestamp());
+    assertEquals(expected.getDescription(), value.getDescription());
+    assertEquals(expected.getStatus(), value.getStatus());
+    assertEquals(expected.getStatusMessage(), value.getStatusMessage());
+    assertEquals(expected.getTags(), value.getTags());
+    assertEquals(expected.getMachineType(), value.getMachineType());
     assertEquals(expected.canIpForward(), value.canIpForward());
-    assertEquals(expected.networkInterfaces(), value.networkInterfaces());
-    assertEquals(expected.attachedDisks(), value.attachedDisks());
-    assertEquals(expected.metadata(), value.metadata());
-    assertEquals(expected.serviceAccounts(), value.serviceAccounts());
-    assertEquals(expected.schedulingOptions(), value.schedulingOptions());
-    assertEquals(expected.cpuPlatform(), value.cpuPlatform());
+    assertEquals(expected.getNetworkInterfaces(), value.getNetworkInterfaces());
+    assertEquals(expected.getAttachedDisks(), value.getAttachedDisks());
+    assertEquals(expected.getMetadata(), value.getMetadata());
+    assertEquals(expected.getServiceAccounts(), value.getServiceAccounts());
+    assertEquals(expected.getSchedulingOptions(), value.getSchedulingOptions());
+    assertEquals(expected.getCpuPlatform(), value.getCpuPlatform());
     assertEquals(expected.hashCode(), value.hashCode());
   }
 }

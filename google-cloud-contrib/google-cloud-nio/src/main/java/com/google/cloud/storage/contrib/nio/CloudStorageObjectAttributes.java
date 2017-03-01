@@ -45,15 +45,15 @@ final class CloudStorageObjectAttributes implements CloudStorageFileAttributes {
 
   @Override
   public long size() {
-    return info.size();
+    return info.getSize();
   }
 
   @Override
   public FileTime creationTime() {
-    if (info.updateTime() == null) {
+    if (info.getUpdateTime() == null) {
       return CloudStorageFileSystem.FILE_TIME_UNKNOWN;
     }
-    return FileTime.fromMillis(info.updateTime());
+    return FileTime.fromMillis(info.getUpdateTime());
   }
 
   @Override
@@ -63,40 +63,40 @@ final class CloudStorageObjectAttributes implements CloudStorageFileAttributes {
 
   @Override
   public Optional<String> etag() {
-    return Optional.fromNullable(info.etag());
+    return Optional.fromNullable(info.getEtag());
   }
 
   @Override
   public Optional<String> mimeType() {
-    return Optional.fromNullable(info.contentType());
+    return Optional.fromNullable(info.getContentType());
   }
 
   @Override
   public Optional<List<Acl>> acl() {
-    return Optional.fromNullable(info.acl());
+    return Optional.fromNullable(info.getAcl());
   }
 
   @Override
   public Optional<String> cacheControl() {
-    return Optional.fromNullable(info.cacheControl());
+    return Optional.fromNullable(info.getCacheControl());
   }
 
   @Override
   public Optional<String> contentEncoding() {
-    return Optional.fromNullable(info.contentEncoding());
+    return Optional.fromNullable(info.getContentEncoding());
   }
 
   @Override
   public Optional<String> contentDisposition() {
-    return Optional.fromNullable(info.contentDisposition());
+    return Optional.fromNullable(info.getContentDisposition());
   }
 
   @Override
   public ImmutableMap<String, String> userMetadata() {
-    if (null == info.metadata()) {
+    if (null == info.getMetadata()) {
       return ImmutableMap.of();
     }
-    return ImmutableMap.copyOf(info.metadata());
+    return ImmutableMap.copyOf(info.getMetadata());
   }
 
   @Override
@@ -126,7 +126,9 @@ final class CloudStorageObjectAttributes implements CloudStorageFileAttributes {
 
   @Override
   public Object fileKey() {
-    return info.blobId().bucket() + info.blobId().name() + info.blobId().generation();
+    return info.getBlobId().getBucket()
+        + info.getBlobId().getName()
+        + info.getBlobId().getGeneration();
   }
 
   @Override

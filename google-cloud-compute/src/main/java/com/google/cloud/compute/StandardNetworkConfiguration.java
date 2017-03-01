@@ -49,7 +49,18 @@ public class StandardNetworkConfiguration extends NetworkConfiguration {
    *
    * @see <a href="https://wikipedia.org/wiki/Classless_Inter-Domain_Routing">CIDR</a>
    */
+  @Deprecated
   public String ipRange() {
+    return getIpRange();
+  }
+
+  /**
+   * Returns the range of internal IPv4 addresses that are legal on this network. This range is a
+   * CIDR specification, for example: {@code 192.168.0.0/16}.
+   *
+   * @see <a href="https://wikipedia.org/wiki/Classless_Inter-Domain_Routing">CIDR</a>
+   */
+  public String getIpRange() {
     return ipRange;
   }
 
@@ -57,7 +68,16 @@ public class StandardNetworkConfiguration extends NetworkConfiguration {
    * Returns the gateway IPv4 address for this networks. This value is read only and is selected by
    * Google Compute Engine, typically as the first usable address in {@code ipRange}.
    */
+  @Deprecated
   public String gatewayAddress() {
+    return getGatewayAddress();
+  }
+
+  /**
+   * Returns the gateway IPv4 address for this networks. This value is read only and is selected by
+   * Google Compute Engine, typically as the first usable address in {@code ipRange}.
+   */
+  public String getGatewayAddress() {
     return gatewayAddress;
   }
 

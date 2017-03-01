@@ -43,6 +43,15 @@ private static final LatLng CONTENT = new LatLng(37.4, -122.1);
   @SuppressWarnings("deprecation")
   @Test
   public void testBuilder() throws Exception {
+    LatLngValue.Builder builder = LatLngValue.newBuilder(CONTENT);
+    LatLngValue value = builder.setMeaning(1).setExcludeFromIndexes(true).build();
+    assertEquals(CONTENT, value.get());
+    assertEquals(1, value.getMeaning());
+    assertTrue(value.excludeFromIndexes());
+  }
+
+  @Test
+  public void testBuilderDeprecated() throws Exception {
     LatLngValue.Builder builder = LatLngValue.builder(CONTENT);
     LatLngValue value = builder.meaning(1).excludeFromIndexes(true).build();
     assertEquals(CONTENT, value.get());

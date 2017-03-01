@@ -41,8 +41,8 @@ public final class NetworkId extends ResourceId {
   }
 
   private NetworkId(NetworkId networkId) {
-    super(networkId.project());
-    this.network = checkNotNull(networkId.network());
+    super(networkId.getProject());
+    this.network = checkNotNull(networkId.getNetwork());
   }
 
   /**
@@ -54,13 +54,33 @@ public final class NetworkId extends ResourceId {
    *
    * @see <a href="https://www.ietf.org/rfc/rfc1035.txt">RFC1035</a>
    */
+  @Deprecated
   public String network() {
     return network;
   }
 
+  /**
+   * Returns the name of the network. The network name must be 1-63 characters long and comply with
+   * RFC1035. Specifically, the name must match the regular expression
+   * {@code [a-z]([-a-z0-9]*[a-z0-9])?} which means the first character must be a lowercase letter,
+   * and all following characters must be a dash, lowercase letter, or digit, except the last
+   * character, which cannot be a dash.
+   *
+   * @see <a href="https://www.ietf.org/rfc/rfc1035.txt">RFC1035</a>
+   */
+  public String getNetwork() {
+    return network;
+  }
+
   @Override
+  @Deprecated
   public String selfLink() {
-    return super.selfLink() + "/global/networks/" + network;
+    return getSelfLink();
+  }
+
+  @Override
+  public String getSelfLink() {
+    return super.getSelfLink() + "/global/networks/" + network;
   }
 
   @Override
@@ -87,7 +107,7 @@ public final class NetworkId extends ResourceId {
 
   @Override
   NetworkId setProjectId(String projectId) {
-    if (project() != null) {
+    if (getProject() != null) {
       return this;
     }
     return NetworkId.of(projectId, network);

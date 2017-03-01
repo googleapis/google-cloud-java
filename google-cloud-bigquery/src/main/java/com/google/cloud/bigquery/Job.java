@@ -56,7 +56,7 @@ public class Job extends JobInfo {
     Builder(BigQuery bigquery, JobConfiguration configuration) {
       this.bigquery = bigquery;
       this.infoBuilder = new JobInfo.BuilderImpl();
-      this.infoBuilder.configuration(configuration);
+      this.infoBuilder.setConfiguration(configuration);
     }
 
     Builder(Job job) {
@@ -65,50 +65,62 @@ public class Job extends JobInfo {
     }
 
     @Override
-    Builder etag(String etag) {
-      infoBuilder.etag(etag);
+    Builder setEtag(String etag) {
+      infoBuilder.setEtag(etag);
       return this;
     }
 
     @Override
-    Builder generatedId(String generatedId) {
-      infoBuilder.generatedId(generatedId);
+    Builder setGeneratedId(String generatedId) {
+      infoBuilder.setGeneratedId(generatedId);
       return this;
     }
 
     @Override
+    @Deprecated
     public Builder jobId(JobId jobId) {
-      infoBuilder.jobId(jobId);
+      return setJobId(jobId);
+    }
+
+    @Override
+    public Builder setJobId(JobId jobId) {
+      infoBuilder.setJobId(jobId);
       return this;
     }
 
     @Override
-    Builder selfLink(String selfLink) {
-      infoBuilder.selfLink(selfLink);
+    Builder setSelfLink(String selfLink) {
+      infoBuilder.setSelfLink(selfLink);
       return this;
     }
 
     @Override
-    Builder status(JobStatus status) {
-      infoBuilder.status(status);
+    Builder setStatus(JobStatus status) {
+      infoBuilder.setStatus(status);
       return this;
     }
 
     @Override
-    Builder statistics(JobStatistics statistics) {
-      infoBuilder.statistics(statistics);
+    Builder setStatistics(JobStatistics statistics) {
+      infoBuilder.setStatistics(statistics);
       return this;
     }
 
     @Override
-    Builder userEmail(String userEmail) {
-      infoBuilder.userEmail(userEmail);
+    Builder setUserEmail(String userEmail) {
+      infoBuilder.setUserEmail(userEmail);
       return this;
     }
 
     @Override
+    @Deprecated
     public Builder configuration(JobConfiguration configuration) {
-      infoBuilder.configuration(configuration);
+      return setConfiguration(configuration);
+    }
+
+    @Override
+    public Builder setConfiguration(JobConfiguration configuration) {
+      infoBuilder.setConfiguration(configuration);
       return this;
     }
 
@@ -121,7 +133,7 @@ public class Job extends JobInfo {
   Job(BigQuery bigquery, JobInfo.BuilderImpl infoBuilder) {
     super(infoBuilder);
     this.bigquery = checkNotNull(bigquery);
-    this.options = bigquery.options();
+    this.options = bigquery.getOptions();
   }
 
   /**
@@ -138,7 +150,7 @@ public class Job extends JobInfo {
    * @throws BigQueryException upon failure
    */
   public boolean exists() {
-    return bigquery.getJob(jobId(), JobOption.fields()) != null;
+    return bigquery.getJob(getJobId(), JobOption.fields()) != null;
   }
 
   /**
@@ -157,8 +169,8 @@ public class Job extends JobInfo {
    * @throws BigQueryException upon failure
    */
   public boolean isDone() {
-    Job job = bigquery.getJob(jobId(), JobOption.fields(BigQuery.JobField.STATUS));
-    return job == null || job.status().state() == JobStatus.State.DONE;
+    Job job = bigquery.getJob(getJobId(), JobOption.fields(BigQuery.JobField.STATUS));
+    return job == null || job.getStatus().getState() == JobStatus.State.DONE;
   }
 
   /**
@@ -173,7 +185,7 @@ public class Job extends JobInfo {
    * Job completedJob = job.waitFor();
    * if (completedJob == null) {
    *   // job no longer exists
-   * } else if (completedJob.status().error() != null) {
+   * } else if (completedJob.getStatus().getError() != null) {
    *   // job failed, handle error
    * } else {
    *   // job completed successfully
@@ -188,7 +200,7 @@ public class Job extends JobInfo {
    *         WaitForOption.timeout(60, TimeUnit.SECONDS));
    * if (completedJob == null) {
    *   // job no longer exists
-   * } else if (completedJob.status().error() != null) {
+   * } else if (completedJob.getStatus().getError() != null) {
    *   // job failed, handle error
    * } else {
    *   // job completed successfully
@@ -206,8 +218,8 @@ public class Job extends JobInfo {
   public Job waitFor(WaitForOption... waitOptions) throws InterruptedException, TimeoutException {
     Timeout timeout = Timeout.getOrDefault(waitOptions);
     CheckingPeriod checkingPeriod = CheckingPeriod.getOrDefault(waitOptions);
-    long timeoutMillis = timeout.timeoutMillis();
-    Clock clock = options.clock();
+    long timeoutMillis = timeout.getTimeoutMillis();
+    Clock clock = options.getClock();
     long startTime = clock.millis();
     while (!isDone()) {
       if (timeoutMillis  != -1 && (clock.millis() - startTime)  >= timeoutMillis) {
@@ -223,7 +235,7 @@ public class Job extends JobInfo {
    *
    * <p>Example of reloading all fields until job status is DONE.
    * <pre> {@code
-   * while (job.status().state() != JobStatus.State.DONE) {
+   * while (job.getStatus().getState() != JobStatus.State.DONE) {
    *   Thread.sleep(1000L);
    *   job = job.reload();
    * }
@@ -231,7 +243,7 @@ public class Job extends JobInfo {
    *
    * <p>Example of reloading status field until job status is DONE.
    * <pre> {@code
-   * while (job.status().state() != JobStatus.State.DONE) {
+   * while (job.getStatus().getState() != JobStatus.State.DONE) {
    *   Thread.sleep(1000L);
    *   job = job.reload(BigQuery.JobOption.fields(BigQuery.JobField.STATUS));
    * }
@@ -242,7 +254,7 @@ public class Job extends JobInfo {
    * @throws BigQueryException upon failure
    */
   public Job reload(JobOption... options) {
-    return bigquery.getJob(jobId(), options);
+    return bigquery.getJob(getJobId(), options);
   }
 
   /**
@@ -262,13 +274,21 @@ public class Job extends JobInfo {
    * @throws BigQueryException upon failure
    */
   public boolean cancel() {
-    return bigquery.cancel(jobId());
+    return bigquery.cancel(getJobId());
   }
 
   /**
    * Returns the job's {@code BigQuery} object used to issue requests.
    */
+  @Deprecated
   public BigQuery bigquery() {
+    return getBigquery();
+  }
+
+  /**
+   * Returns the job's {@code BigQuery} object used to issue requests.
+   */
+  public BigQuery getBigquery() {
     return bigquery;
   }
 
@@ -297,7 +317,7 @@ public class Job extends JobInfo {
 
   private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
     in.defaultReadObject();
-    this.bigquery = options.service();
+    this.bigquery = options.getService();
   }
 
   static Job fromPb(BigQuery bigquery, com.google.api.services.bigquery.model.Job jobPb) {

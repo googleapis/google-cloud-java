@@ -22,19 +22,19 @@
  * <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/src/main/java/com/google/cloud/examples/logging/snippets/WriteAndListLogEntries.java">
  * WriteAndListLogEntries.java</a>.
  * <pre> {@code
- * LoggingOptions options = LoggingOptions.defaultInstance();
- * try(Logging logging = options.service()) {
+ * LoggingOptions options = LoggingOptions.getDefaultInstance();
+ * try(Logging logging = options.getService()) {
  *
- *   LogEntry firstEntry = LogEntry.builder(StringPayload.of("message"))
- *       .logName("test-log")
- *       .resource(MonitoredResource.builder("global")
- *           .addLabel("project_id", options.projectId())
+ *   LogEntry firstEntry = LogEntry.newBuilder(StringPayload.of("message"))
+ *       .setLogName("test-log")
+ *       .setResource(MonitoredResource.builder("global")
+ *           .addLabel("project_id", options.getProjectId())
  *           .build())
  *       .build();
  *   logging.write(Collections.singleton(firstEntry));
  *
  *   Page<LogEntry> entries = logging.listLogEntries(
- *   EntryListOption.filter("logName=projects/" + options.projectId() + "/logs/test-log"));
+ *   EntryListOption.filter("logName=projects/" + options.getProjectId() + "/logs/test-log"));
  *   Iterator<LogEntry> entryIterator = entries.iterateAll();
  *   while (entryIterator.hasNext()) {
  *     System.out.println(entryIterator.next());

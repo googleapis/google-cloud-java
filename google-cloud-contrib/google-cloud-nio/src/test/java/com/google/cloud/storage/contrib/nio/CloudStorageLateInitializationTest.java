@@ -47,14 +47,14 @@ public class CloudStorageLateInitializationTest {
   public void before() {
     mockOptions = mock(StorageOptions.class);
     Storage mockStorage = mock(Storage.class);
-    when(mockOptions.service()).thenReturn(mockStorage);
+    when(mockOptions.getService()).thenReturn(mockStorage);
     CloudStorageFileSystemProvider.setStorageOptions(mockOptions);
   }
 
   @Test
   public void ctorDoesNotCreateStorage() {
     new CloudStorageFileSystemProvider();
-    verify(mockOptions, never()).service();
+    verify(mockOptions, never()).getService();
   }
 
   @Test
@@ -62,7 +62,7 @@ public class CloudStorageLateInitializationTest {
     CloudStorageFileSystemProvider provider = new CloudStorageFileSystemProvider();
     provider.getPath(URI.create("gs://bucket1/wat"));
     provider.getPath(URI.create("gs://bucket2/wat"));
-    verify(mockOptions, times(1)).service();
+    verify(mockOptions, times(1)).getService();
   }
 
   @Test
@@ -70,7 +70,7 @@ public class CloudStorageLateInitializationTest {
     CloudStorageFileSystemProvider provider = new CloudStorageFileSystemProvider();
     provider.getFileSystem(URI.create("gs://bucket1"));
     provider.getFileSystem(URI.create("gs://bucket2"));
-    verify(mockOptions, times(1)).service();
+    verify(mockOptions, times(1)).getService();
   }
 
 }

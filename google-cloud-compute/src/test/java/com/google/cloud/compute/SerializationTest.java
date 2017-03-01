@@ -16,8 +16,8 @@
 
 package com.google.cloud.compute;
 
-import com.google.cloud.AuthCredentials;
 import com.google.cloud.BaseSerializationTest;
+import com.google.cloud.NoCredentials;
 import com.google.cloud.Restorable;
 import com.google.cloud.RetryParams;
 import com.google.cloud.compute.AttachedDisk.CreateDiskConfiguration;
@@ -32,18 +32,18 @@ import java.util.List;
 
 public class SerializationTest extends BaseSerializationTest {
 
-  private static final Compute COMPUTE = ComputeOptions.builder().projectId("p").build().service();
+  private static final Compute COMPUTE = ComputeOptions.newBuilder().setProjectId("p").build().getService();
   private static final Long CREATION_TIMESTAMP = 1453293540000L;
   private static final String DESCRIPTION = "description";
   private static final String VALID_DISK_SIZE = "10GB-10TB";
   private static final Long DEFAULT_DISK_SIZE_GB = 10L;
   private static final DiskTypeId DISK_TYPE_ID = DiskTypeId.of("project", "zone", "diskType");
-  private static final DiskType DISK_TYPE = DiskType.builder()
-      .diskTypeId(DISK_TYPE_ID)
-      .creationTimestamp(CREATION_TIMESTAMP)
-      .description(DESCRIPTION)
-      .validDiskSize(VALID_DISK_SIZE)
-      .defaultDiskSizeGb(DEFAULT_DISK_SIZE_GB)
+  private static final DiskType DISK_TYPE = DiskType.newBuilder()
+      .setDiskTypeId(DISK_TYPE_ID)
+      .setCreationTimestamp(CREATION_TIMESTAMP)
+      .setDescription(DESCRIPTION)
+      .setValidDiskSize(VALID_DISK_SIZE)
+      .setDefaultDiskSizeGb(DEFAULT_DISK_SIZE_GB)
       .build();
   private static final MachineTypeId MACHINE_TYPE_ID = MachineTypeId.of("project", "zone", "type");
   private static final Integer GUEST_CPUS = 1;
@@ -51,15 +51,15 @@ public class SerializationTest extends BaseSerializationTest {
   private static final List<Integer> SCRATCH_DISKS = ImmutableList.of(3);
   private static final Integer MAXIMUM_PERSISTENT_DISKS = 4;
   private static final Long MAXIMUM_PERSISTENT_DISKS_SIZE_GB = 5L;
-  private static final MachineType MACHINE_TYPE = MachineType.builder()
-      .machineTypeId(MACHINE_TYPE_ID)
-      .creationTimestamp(CREATION_TIMESTAMP)
-      .description(DESCRIPTION)
-      .cpus(GUEST_CPUS)
-      .memoryMb(MEMORY_MB)
-      .scratchDisksSizeGb(SCRATCH_DISKS)
-      .maximumPersistentDisks(MAXIMUM_PERSISTENT_DISKS)
-      .maximumPersistentDisksSizeGb(MAXIMUM_PERSISTENT_DISKS_SIZE_GB)
+  private static final MachineType MACHINE_TYPE = MachineType.newBuilder()
+      .setMachineTypeId(MACHINE_TYPE_ID)
+      .setCreationTimestamp(CREATION_TIMESTAMP)
+      .setDescription(DESCRIPTION)
+      .setCpus(GUEST_CPUS)
+      .setMemoryMb(MEMORY_MB)
+      .setScratchDisksSizeGb(SCRATCH_DISKS)
+      .setMaximumPersistentDisks(MAXIMUM_PERSISTENT_DISKS)
+      .setMaximumPersistentDisksSizeGb(MAXIMUM_PERSISTENT_DISKS_SIZE_GB)
       .build();
   private static final RegionId REGION_ID = RegionId.of("project", "region");
   private static final Region.Status REGION_STATUS = Region.Status.DOWN;
@@ -72,21 +72,21 @@ public class SerializationTest extends BaseSerializationTest {
       new Region.Quota("METRIC2", 4, 3);
   private static final List<Region.Quota> QUOTAS = ImmutableList.of(QUOTA1, QUOTA2);
   private static final Region REGION = Region.builder()
-      .regionId(REGION_ID)
-      .creationTimestamp(CREATION_TIMESTAMP)
-      .description(DESCRIPTION)
-      .status(REGION_STATUS)
-      .zones(ZONES)
-      .quotas(QUOTAS)
+      .setRegionId(REGION_ID)
+      .setCreationTimestamp(CREATION_TIMESTAMP)
+      .setDescription(DESCRIPTION)
+      .setStatus(REGION_STATUS)
+      .setZones(ZONES)
+      .setQuotas(QUOTAS)
       .build();
   private static final ZoneId ZONE_ID = ZoneId.of("project", "zone");
   private static final Zone.Status ZONE_STATUS = Zone.Status.DOWN;
   private static final Zone ZONE = Zone.builder()
-      .zoneId(ZONE_ID)
-      .creationTimestamp(CREATION_TIMESTAMP)
-      .description(DESCRIPTION)
-      .status(ZONE_STATUS)
-      .region(REGION_ID)
+      .setZoneId(ZONE_ID)
+      .setCreationTimestamp(CREATION_TIMESTAMP)
+      .setDescription(DESCRIPTION)
+      .setStatus(ZONE_STATUS)
+      .setRegion(REGION_ID)
       .build();
   private static final DeprecationStatus<MachineTypeId> DEPRECATION_STATUS =
       DeprecationStatus.of(DeprecationStatus.Status.DELETED, MACHINE_TYPE_ID);
@@ -100,11 +100,11 @@ public class SerializationTest extends BaseSerializationTest {
   private static final RegionOperationId REGION_OPERATION_ID =
       RegionOperationId.of("project", "region", "op");
   private static final Operation GLOBAL_OPERATION =
-      new Operation.Builder(COMPUTE).operationId(GLOBAL_OPERATION_ID).build();
+      new Operation.Builder(COMPUTE).setOperationId(GLOBAL_OPERATION_ID).build();
   private static final Operation ZONE_OPERATION =
-      new Operation.Builder(COMPUTE).operationId(ZONE_OPERATION_ID).build();
+      new Operation.Builder(COMPUTE).setOperationId(ZONE_OPERATION_ID).build();
   private static final Operation REGION_OPERATION =
-      new Operation.Builder(COMPUTE).operationId(REGION_OPERATION_ID).build();
+      new Operation.Builder(COMPUTE).setOperationId(REGION_OPERATION_ID).build();
   private static final InstanceId INSTANCE_ID = InstanceId.of("project", "zone", "instance");
   private static final GlobalForwardingRuleId GLOBAL_FORWARDING_RULE_ID =
       GlobalForwardingRuleId.of("project", "rule");
@@ -119,10 +119,10 @@ public class SerializationTest extends BaseSerializationTest {
       new AddressInfo.GlobalForwardingUsage(ImmutableList.of(GLOBAL_FORWARDING_RULE_ID));
   private static final AddressInfo.RegionForwardingUsage REGION_FORWARDING_USAGE =
       new AddressInfo.RegionForwardingUsage(ImmutableList.of(REGION_FORWARDING_RULE_ID));
-  private static final AddressInfo ADDRESS_INFO = AddressInfo.builder(REGION_ADDRESS_ID)
-      .creationTimestamp(CREATION_TIMESTAMP)
-      .description(DESCRIPTION)
-      .usage(INSTANCE_USAGE)
+  private static final AddressInfo ADDRESS_INFO = AddressInfo.newBuilder(REGION_ADDRESS_ID)
+      .setCreationTimestamp(CREATION_TIMESTAMP)
+      .setDescription(DESCRIPTION)
+      .setUsage(INSTANCE_USAGE)
       .build();
   private static final Address ADDRESS = new Address.Builder(COMPUTE, REGION_ADDRESS_ID).build();
   private static final DiskId DISK_ID = DiskId.of("project", "zone", "disk");
@@ -163,8 +163,8 @@ public class SerializationTest extends BaseSerializationTest {
   private static final Network NETWORK =
       new Network.Builder(COMPUTE, NETWORK_ID, STANDARD_NETWORK_CONFIGURATION).build();
   private static final AccessConfig ACCESS_CONFIG = AccessConfig.of("192.168.1.1");
-  private static final NetworkInterface NETWORK_INTERFACE = NetworkInterface.builder(NETWORK_ID)
-      .accessConfigurations(ACCESS_CONFIG)
+  private static final NetworkInterface NETWORK_INTERFACE = NetworkInterface.newBuilder(NETWORK_ID)
+      .setAccessConfigurations(ACCESS_CONFIG)
       .build();
   private static final CreateDiskConfiguration CREATE_DISK_CONFIGURATION =
       CreateDiskConfiguration.of(IMAGE_ID);
@@ -263,14 +263,13 @@ public class SerializationTest extends BaseSerializationTest {
 
   @Override
   protected Serializable[] serializableObjects() {
-    ComputeOptions options = ComputeOptions.builder()
-        .projectId("p1")
-        .authCredentials(AuthCredentials.createForAppEngine())
+    ComputeOptions options = ComputeOptions.newBuilder()
+        .setProjectId("p1")
+        .setCredentials(NoCredentials.getInstance())
         .build();
     ComputeOptions otherOptions = options.toBuilder()
-        .projectId("p2")
-        .retryParams(RetryParams.defaultInstance())
-        .authCredentials(null)
+        .setProjectId("p2")
+        .setRetryParams(RetryParams.getDefaultInstance())
         .build();
     return new Serializable[]{DISK_TYPE_ID, DISK_TYPE, MACHINE_TYPE_ID, MACHINE_TYPE, REGION_ID,
         REGION, ZONE_ID, ZONE, LICENSE_ID, LICENSE, DEPRECATION_STATUS, GLOBAL_OPERATION_ID,

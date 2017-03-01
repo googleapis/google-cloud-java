@@ -45,7 +45,7 @@ import java.util.Objects;
  *
  * <p>A simple query that returns all entities for a specific kind
  * <pre> {@code
- * Query<Entity> query = Query.entityQueryBuilder().kind(kind).build();
+ * Query<Entity> query = Query.newEntityQueryBuilder().setKind(kind).build();
  * QueryResults<Entity> results = datastore.run(query);
  * while (results.hasNext()) {
  *   Entity entity = results.next();
@@ -55,7 +55,7 @@ import java.util.Objects;
  *
  * <p>A simple key-only query of all entities for a specific kind
  * <pre> {@code
- * Query<Key> keyOnlyQuery =  Query.keyQueryBuilder().kind(KIND1).build();
+ * Query<Key> keyOnlyQuery =  Query.newKeyQueryBuilder().setKind(KIND1).build();
  * QueryResults<Key> results = datastore.run(keyOnlyQuery);
  * ...
  * }</pre>
@@ -63,13 +63,13 @@ import java.util.Objects;
  * <p>A less trivial example of a projection query that returns the first 10 results
  * of "age" and "name" properties (sorted and grouped by "age") with an age greater than 18
  * <pre> {@code
- * Query<ProjectionEntity> query = Query.projectionEntityQueryBuilder()
- *     .kind(kind)
- *     .projection(Projection.property("age"), Projection.first("name"))
- *     .filter(PropertyFilter.gt("age", 18))
- *     .groupBy("age")
- *     .orderBy(OrderBy.asc("age"))
- *     .limit(10)
+ * Query<ProjectionEntity> query = Query.newProjectionEntityQueryBuilder()
+ *     .setKind(kind)
+ *     .setProjection(Projection.property("age"), Projection.first("name"))
+ *     .setFilter(PropertyFilter.gt("age", 18))
+ *     .setGroupBy("age")
+ *     .setOrderBy(OrderBy.asc("age"))
+ *     .setLimit(10)
  *     .build();
  * QueryResults<ProjectionEntity> results = datastore.run(query);
  * ...
@@ -497,11 +497,33 @@ public abstract class StructuredQuery<V> extends Query<V> {
           && direction == other.direction;
     }
 
+    /**
+     * Returns the property according to which the query result should be ordered.
+     */
+    @Deprecated
     public String property() {
+      return getProperty();
+    }
+
+    /**
+     * Returns the property according to which the query result should be ordered.
+     */
+    public String getProperty() {
       return property;
     }
 
+    /**
+     * Returns the order's direction.
+     */
+    @Deprecated
     public Direction direction() {
+      return getDirection();
+    }
+
+    /**
+     * Returns the order's direction.
+     */
+    public Direction getDirection() {
       return direction;
     }
 
@@ -534,26 +556,96 @@ public abstract class StructuredQuery<V> extends Query<V> {
    * @param <V> the type of result the query returns.
    */
   public interface Builder<V> {
+
+    /**
+     * Sets the namespace for the query.
+     */
+    @Deprecated
     Builder<V> namespace(String namespace);
 
+    /**
+     * Sets the namespace for the query.
+     */
+    Builder<V> setNamespace(String namespace);
+
+    /**
+     * Sets the kind for the query.
+     */
+    @Deprecated
     Builder<V> kind(String kind);
 
+    /**
+     * Sets the kind for the query.
+     */
+    Builder<V> setKind(String kind);
+
+    /**
+     * Sets the start cursor for the query.
+     */
+    @Deprecated
     Builder<V> startCursor(Cursor startCursor);
 
+    /**
+     * Sets the start cursor for the query.
+     */
+    Builder<V> setStartCursor(Cursor startCursor);
+
+    /**
+     * Sets the end cursor for the query.
+     */
+    @Deprecated
     Builder<V> endCursor(Cursor endCursor);
 
+    /**
+     * Sets the end cursor for the query.
+     */
+    Builder<V> setEndCursor(Cursor endCursor);
+
+    /**
+     * Sets the offset for the query.
+     */
+    @Deprecated
     Builder<V> offset(int offset);
 
+    /**
+     * Sets the offset for the query.
+     */
+    Builder<V> setOffset(int offset);
+
+    /**
+     * Sets the limit for the query.
+     */
+    @Deprecated
     Builder<V> limit(Integer limit);
 
+    /**
+     * Sets the limit for the query.
+     */
+    Builder<V> setLimit(Integer limit);
+
+    /**
+     * Sets a filter for the query.
+     */
+    @Deprecated
     Builder<V> filter(Filter filter);
 
+    Builder<V> setFilter(Filter filter);
+
+    /**
+     * Clears any previously specified order by settings.
+     */
     Builder<V> clearOrderBy();
 
     /**
-     * Sets the query's order by clause (clearing any previously specified OrderBy settings).
+     * Sets the query's order by clause (clearing any previously specified order by settings).
      */
+    @Deprecated
     Builder<V> orderBy(OrderBy orderBy, OrderBy... others);
+
+    /**
+     * Sets the query's order by clause (clearing any previously specified order by settings).
+     */
+    Builder<V> setOrderBy(OrderBy orderBy, OrderBy... others);
 
     /**
      * Adds settings to the existing order by clause.
@@ -588,8 +680,8 @@ public abstract class StructuredQuery<V> extends Query<V> {
     }
 
     BuilderImpl(StructuredQuery<V> query) {
-      this(query.type());
-      namespace = query.namespace();
+      this(query.getType());
+      namespace = query.getNamespace();
       kind = query.kind;
       projection.addAll(query.projection);
       filter = query.filter;
@@ -607,45 +699,87 @@ public abstract class StructuredQuery<V> extends Query<V> {
     }
 
     @Override
+    @Deprecated
     public B namespace(String namespace) {
+      return setNamespace(namespace);
+    }
+
+    @Override
+    public B setNamespace(String namespace) {
       this.namespace = namespace;
       return self();
     }
 
     @Override
+    @Deprecated
     public B kind(String kind) {
+      return setKind(kind);
+    }
+
+    @Override
+    public B setKind(String kind) {
       this.kind = kind;
       return self();
     }
 
     @Override
+    @Deprecated
     public B startCursor(Cursor startCursor) {
+      return setStartCursor(startCursor);
+    }
+
+    @Override
+    public B setStartCursor(Cursor startCursor) {
       this.startCursor = startCursor;
       return self();
     }
 
     @Override
+    @Deprecated
     public B endCursor(Cursor endCursor) {
+      return setEndCursor(endCursor);
+    }
+
+    @Override
+    public B setEndCursor(Cursor endCursor) {
       this.endCursor = endCursor;
       return self();
     }
 
     @Override
+    @Deprecated
     public B offset(int offset) {
+      return setOffset(offset);
+    }
+
+    @Override
+    public B setOffset(int offset) {
       Preconditions.checkArgument(offset >= 0, "offset must not be negative");
       this.offset = offset;
       return self();
     }
 
     @Override
+    @Deprecated
     public B limit(Integer limit) {
+      return setLimit(limit);
+    }
+
+    @Override
+    public B setLimit(Integer limit) {
       Preconditions.checkArgument(limit == null || limit > 0, "limit must be positive");
       this.limit = limit;
       return self();
     }
 
     @Override
+    @Deprecated
     public B filter(Filter filter) {
+      return setFilter(filter);
+    }
+
+    @Override
+    public B setFilter(Filter filter) {
       this.filter = filter;
       return self();
     }
@@ -657,7 +791,13 @@ public abstract class StructuredQuery<V> extends Query<V> {
     }
 
     @Override
+    @Deprecated
     public B orderBy(OrderBy orderBy, OrderBy... others) {
+      return setOrderBy(orderBy, others);
+    }
+
+    @Override
+    public B setOrderBy(OrderBy orderBy, OrderBy... others) {
       clearOrderBy();
       addOrderBy(orderBy, others);
       return self();
@@ -675,7 +815,12 @@ public abstract class StructuredQuery<V> extends Query<V> {
       return self();
     }
 
+    @Deprecated
     B projection(String projection, String... others) {
+      return setProjection(projection, others);
+    }
+
+    B setProjection(String projection, String... others) {
       clearProjection();
       addProjection(projection, others);
       return self();
@@ -692,7 +837,12 @@ public abstract class StructuredQuery<V> extends Query<V> {
       return self();
     }
 
+    @Deprecated
     B distinctOn(String property, String... others) {
+      return setDistinctOn(property, others);
+    }
+
+    B setDistinctOn(String property, String... others) {
       clearDistinctOn();
       addDistinctOn(property, others);
       return self();
@@ -706,22 +856,22 @@ public abstract class StructuredQuery<V> extends Query<V> {
 
     B mergeFrom(com.google.datastore.v1.Query queryPb) {
       if (queryPb.getKindCount() > 0) {
-        kind(queryPb.getKind(0).getName());
+        setKind(queryPb.getKind(0).getName());
       }
       if (!queryPb.getStartCursor().isEmpty()) {
-        startCursor(new Cursor(queryPb.getStartCursor()));
+        setStartCursor(new Cursor(queryPb.getStartCursor()));
       }
       if (!queryPb.getEndCursor().isEmpty()) {
-        endCursor(new Cursor(queryPb.getEndCursor()));
+        setEndCursor(new Cursor(queryPb.getEndCursor()));
       }
-      offset(queryPb.getOffset());
+      setOffset(queryPb.getOffset());
       if (queryPb.hasLimit()) {
-        limit(queryPb.getLimit().getValue());
+        setLimit(queryPb.getLimit().getValue());
       }
       if (queryPb.hasFilter()) {
         Filter currFilter = Filter.fromPb(queryPb.getFilter());
         if (currFilter != null) {
-          filter(currFilter);
+          setFilter(currFilter);
         }
       }
       for (com.google.datastore.v1.PropertyOrder orderByPb : queryPb.getOrderList()) {
@@ -767,8 +917,8 @@ public abstract class StructuredQuery<V> extends Query<V> {
 
   @Override
   public int hashCode() {
-    return Objects.hash(namespace(), kind, startCursor, endCursor, offset, limit, filter, orderBy,
-        projection, distinctOn);
+    return Objects.hash(getNamespace(), kind, startCursor, endCursor, offset, limit, filter,
+        orderBy, projection, distinctOn);
   }
 
   @Override
@@ -780,7 +930,7 @@ public abstract class StructuredQuery<V> extends Query<V> {
       return false;
     }
     StructuredQuery<?> other = (StructuredQuery<?>) obj;
-    return Objects.equals(namespace(), other.namespace())
+    return Objects.equals(getNamespace(), other.getNamespace())
         && Objects.equals(kind, other.kind)
         && Objects.equals(startCursor, other.startCursor)
         && Objects.equals(endCursor, other.endCursor)
@@ -793,43 +943,142 @@ public abstract class StructuredQuery<V> extends Query<V> {
 
   }
 
+  /**
+   * Returns the kind for this query.
+   */
+  @Deprecated
   public String kind() {
+    return getKind();
+  }
+
+  /**
+   * Returns the kind for this query.
+   */
+  public String getKind() {
     return kind;
   }
 
-  boolean keyOnly() {
+  boolean isKeyOnly() {
     return projection.size() == 1 && KEY_PROPERTY_NAME.equals(projection.get(0));
   }
 
+  /**
+   * Returns the projection for this query.
+   */
+  @Deprecated
   public List<String> projection() {
+    return getProjection();
+  }
+
+  /**
+   * Returns the projection for this query.
+   */
+  public List<String> getProjection() {
     return projection;
   }
 
+  /**
+   * Returns the filter for this query.
+   */
+  @Deprecated
   public Filter filter() {
+    return getFilter();
+  }
+
+  /**
+   * Returns the filter for this query.
+   */
+  public Filter getFilter() {
     return filter;
   }
 
+  /**
+   * Returns the distinct on clause for this query.
+   */
+  @Deprecated
   public List<String> distinctOn() {
+    return getDistinctOn();
+  }
+
+  /**
+   * Returns the distinct on clause for this query.
+   */
+  public List<String> getDistinctOn() {
     return distinctOn;
   }
 
+  /**
+   * Returns the order by clause for this query.
+   */
+  @Deprecated
   public ImmutableList<OrderBy> orderBy() {
+    return getOrderBy();
+  }
+
+  /**
+   * Returns the order by clause for this query.
+   */
+  public ImmutableList<OrderBy> getOrderBy() {
     return orderBy;
   }
 
+  /**
+   * Returns the start cursor for this query.
+   */
+  @Deprecated
   public Cursor startCursor() {
+    return getStartCursor();
+  }
+
+  /**
+   * Returns the start cursor for this query.
+   */
+  public Cursor getStartCursor() {
     return startCursor;
   }
 
+  /**
+   * Returns the end cursor for this query.
+   */
+  @Deprecated
   public Cursor endCursor() {
+    return getEndCursor();
+  }
+
+  /**
+   * Returns the end cursor for this query.
+   */
+  public Cursor getEndCursor() {
     return endCursor;
   }
 
+  /**
+   * Returns the offset for this query.
+   */
+  @Deprecated
   public int offset() {
+    return getOffset();
+  }
+
+  /**
+   * Returns the offset for this query.
+   */
+  public int getOffset() {
     return offset;
   }
 
+  /**
+   * Returns the limit for this query.
+   */
+  @Deprecated
   public Integer limit() {
+    return getLimit();
+  }
+
+  /**
+   * Returns the limit for this query.
+   */
+  public Integer getLimit() {
     return limit;
   }
 
@@ -843,13 +1092,13 @@ public abstract class StructuredQuery<V> extends Query<V> {
   @Override
   StructuredQuery<V> nextQuery(com.google.datastore.v1.RunQueryResponse responsePb) {
     Builder<V> builder = toBuilder();
-    builder.startCursor(new Cursor(responsePb.getBatch().getEndCursor()));
+    builder.setStartCursor(new Cursor(responsePb.getBatch().getEndCursor()));
     if (offset > 0 && responsePb.getBatch().getSkippedResults() < offset) {
-      builder.offset(offset - responsePb.getBatch().getSkippedResults());
+      builder.setOffset(offset - responsePb.getBatch().getSkippedResults());
     } else {
-      builder.offset(0);
+      builder.setOffset(0);
       if (limit != null) {
-        builder.limit(limit - responsePb.getBatch().getEntityResultsCount());
+        builder.setLimit(limit - responsePb.getBatch().getEntityResultsCount());
       }
     }
     return builder.build();
@@ -861,10 +1110,10 @@ public abstract class StructuredQuery<V> extends Query<V> {
       queryPb.addKindBuilder().setName(kind);
     }
     if (startCursor != null) {
-      queryPb.setStartCursor(startCursor.byteString());
+      queryPb.setStartCursor(startCursor.getByteString());
     }
     if (endCursor != null) {
-      queryPb.setEndCursor(endCursor.byteString());
+      queryPb.setEndCursor(endCursor.getByteString());
     }
     if (offset > 0) {
       queryPb.setOffset(offset);
@@ -903,6 +1152,6 @@ public abstract class StructuredQuery<V> extends Query<V> {
     } else {
       builder = new ProjectionEntityQuery.Builder();
     }
-    return (StructuredQuery<V>) builder.namespace(namespace).mergeFrom(queryPb).build();
+    return (StructuredQuery<V>) builder.setNamespace(namespace).mergeFrom(queryPb).build();
   }
 }

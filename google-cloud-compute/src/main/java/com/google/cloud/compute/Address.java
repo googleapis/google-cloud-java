@@ -56,7 +56,7 @@ public class Address extends AddressInfo {
     Builder(Compute compute, AddressId addressId) {
       this.compute = compute;
       this.infoBuilder = new AddressInfo.BuilderImpl();
-      this.infoBuilder.addressId(addressId);
+      this.infoBuilder.setAddressId(addressId);
     }
 
     Builder(Address address) {
@@ -65,44 +65,62 @@ public class Address extends AddressInfo {
     }
 
     @Override
+    @Deprecated
     public Builder address(String address) {
-      infoBuilder.address(address);
+      return setAddress(address);
+    }
+
+    @Override
+    public Builder setAddress(String address) {
+      infoBuilder.setAddress(address);
       return this;
     }
 
     @Override
-    Builder creationTimestamp(Long creationTimestamp) {
-      infoBuilder.creationTimestamp(creationTimestamp);
+    Builder setCreationTimestamp(Long creationTimestamp) {
+      infoBuilder.setCreationTimestamp(creationTimestamp);
       return this;
     }
 
     @Override
+    @Deprecated
     public Builder description(String description) {
-      infoBuilder.description(description);
+      return setDescription(description);
+    }
+
+    @Override
+    public Builder setDescription(String description) {
+      infoBuilder.setDescription(description);
       return this;
     }
 
     @Override
-    Builder generatedId(String generatedId) {
-      infoBuilder.generatedId(generatedId);
+    Builder setGeneratedId(String generatedId) {
+      infoBuilder.setGeneratedId(generatedId);
       return this;
     }
 
     @Override
+    @Deprecated
     public Builder addressId(AddressId addressId) {
-      infoBuilder.addressId(addressId);
+      return setAddressId(addressId);
+    }
+
+    @Override
+    public Builder setAddressId(AddressId addressId) {
+      infoBuilder.setAddressId(addressId);
       return this;
     }
 
     @Override
-    Builder status(Status status) {
-      infoBuilder.status(status);
+    Builder setStatus(Status status) {
+      infoBuilder.setStatus(status);
       return this;
     }
 
     @Override
-    Builder usage(Usage usage) {
-      infoBuilder.usage(usage);
+    Builder setUsage(Usage usage) {
+      infoBuilder.setUsage(usage);
       return this;
     }
 
@@ -115,7 +133,7 @@ public class Address extends AddressInfo {
   Address(Compute compute, AddressInfo.BuilderImpl infoBuilder) {
     super(infoBuilder);
     this.compute = checkNotNull(compute);
-    this.options = compute.options();
+    this.options = compute.getOptions();
   }
 
   /**
@@ -137,7 +155,7 @@ public class Address extends AddressInfo {
    * @throws ComputeException upon failure
    */
   public Address reload(AddressOption... options) {
-    return compute.getAddress(addressId(), options);
+    return compute.getAddress(getAddressId(), options);
   }
 
   /**
@@ -148,13 +166,21 @@ public class Address extends AddressInfo {
    * @throws ComputeException upon failure
    */
   public Operation delete(OperationOption... options) {
-    return compute.deleteAddress(addressId(), options);
+    return compute.deleteAddress(getAddressId(), options);
   }
 
   /**
    * Returns the address's {@code Compute} object used to issue requests.
    */
+  @Deprecated
   public Compute compute() {
+    return getCompute();
+  }
+
+  /**
+   * Returns the address's {@code Compute} object used to issue requests.
+   */
+  public Compute getCompute() {
     return compute;
   }
 
@@ -182,7 +208,7 @@ public class Address extends AddressInfo {
 
   private void readObject(ObjectInputStream input) throws IOException, ClassNotFoundException {
     input.defaultReadObject();
-    this.compute = options.service();
+    this.compute = options.getService();
   }
 
   static Address fromPb(Compute compute, com.google.api.services.compute.model.Address addressPb) {

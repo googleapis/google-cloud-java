@@ -72,19 +72,15 @@ public final class Field implements Serializable {
 
     private static final long serialVersionUID = 2841484762609576959L;
 
-    public enum Value {
-      BYTES, STRING, INTEGER, FLOAT, BOOLEAN, TIMESTAMP, RECORD
-    }
-
-    private final Value value;
+    private final LegacySQLTypeName value;
     private final List<Field> fields;
 
-    private Type(Value value) {
+    private Type(LegacySQLTypeName value) {
       this.value = checkNotNull(value);
       this.fields = null;
     }
 
-    private Type(Value value, List<Field> fields) {
+    private Type(LegacySQLTypeName value, List<Field> fields) {
       checkArgument(fields.size() > 0, "Record must have at least one field");
       this.value = value;
       this.fields = fields;
@@ -96,72 +92,92 @@ public final class Field implements Serializable {
      * @see <a href="https://cloud.google.com/bigquery/preparing-data-for-bigquery#datatypes">
      *     Data Types</a>
      */
-    public Value value() {
+    @Deprecated
+    public LegacySQLTypeName value() {
+      return getValue();
+    }
+
+    /**
+     * Returns the value identifier.
+     *
+     * @see <a href="https://cloud.google.com/bigquery/preparing-data-for-bigquery#datatypes">
+     *     Data Types</a>
+     */
+    public LegacySQLTypeName getValue() {
       return value;
     }
 
     /**
-     * Returns the list of sub-fields if {@link #value()} is set to {@link Value#RECORD}. Returns
-     * {@code null} otherwise.
+     * Returns the list of sub-fields if {@link #value()} is set to {@link
+     * LegacySQLTypeName#RECORD}. Returns {@code null} otherwise.
      */
+    @Deprecated
     public List<Field> fields() {
+      return getFields();
+    }
+
+    /**
+     * Returns the list of sub-fields if {@link #value()} is set to {@link
+     * LegacySQLTypeName#RECORD}. Returns {@code null} otherwise.
+     */
+    public List<Field> getFields() {
       return fields;
     }
 
     /**
-     * Returns a {@link Value#BYTES} field value.
+     * Returns a {@link LegacySQLTypeName#BYTES} field value.
      */
     public static Type bytes() {
-      return new Type(Value.BYTES);
+      return new Type(LegacySQLTypeName.BYTES);
     }
 
     /**
-     * Returns a {@link Value#STRING} field value.
+     * Returns a {@link LegacySQLTypeName#STRING} field value.
      */
     public static Type string() {
-      return new Type(Value.STRING);
+      return new Type(LegacySQLTypeName.STRING);
     }
 
     /**
-     * Returns an {@link Value#INTEGER} field value.
+     * Returns an {@link LegacySQLTypeName#INTEGER} field value.
      */
     public static Type integer() {
-      return new Type(Value.INTEGER);
+      return new Type(LegacySQLTypeName.INTEGER);
     }
 
     /**
-     * Returns a {@link Value#FLOAT} field value.
+     * Returns a {@link LegacySQLTypeName#FLOAT} field value.
      */
     public static Type floatingPoint() {
-      return new Type(Value.FLOAT);
+      return new Type(LegacySQLTypeName.FLOAT);
     }
 
     /**
-     * Returns a {@link Value#BOOLEAN} field value.
+     * Returns a {@link LegacySQLTypeName#BOOLEAN} field value.
      */
     public static Type bool() {
-      return new Type(Value.BOOLEAN);
+      return new Type(LegacySQLTypeName.BOOLEAN);
     }
 
     /**
-     * Returns a {@link Value#TIMESTAMP} field value.
+     * Returns a {@link LegacySQLTypeName#TIMESTAMP} field value.
      */
     public static Type timestamp() {
-      return new Type(Value.TIMESTAMP);
+      return new Type(LegacySQLTypeName.TIMESTAMP);
     }
 
     /**
-     * Returns a {@link Value#RECORD} field value with associated list of sub-fields.
+     * Returns a {@link LegacySQLTypeName#RECORD} field value with associated list of sub-fields.
      */
     public static Type record(Field... fields) {
-      return new Type(Value.RECORD, ImmutableList.copyOf(fields));
+      return new Type(LegacySQLTypeName.RECORD, ImmutableList.copyOf(fields));
     }
 
     /**
-     * Returns a {@link Value#RECORD} field value with associated list of sub-fields.
+     * Returns a {@link LegacySQLTypeName#RECORD} field value with associated list of sub-fields.
      */
     public static Type record(List<Field> fields) {
-      return new Type(Value.RECORD, ImmutableList.copyOf(checkNotNull(fields)));
+      return new Type(LegacySQLTypeName.RECORD, ImmutableList.copyOf(checkNotNull(fields)));
     }
 
     @Override
@@ -218,7 +234,17 @@ public final class Field implements Serializable {
      * underscores (_), and must start with a letter or underscore. The maximum length is 128
      * characters.
      */
+    @Deprecated
     public Builder name(String name) {
+      return setName(name);
+    }
+
+    /**
+     * Sets the field name. The name must contain only letters (a-z, A-Z), numbers (0-9), or
+     * underscores (_), and must start with a letter or underscore. The maximum length is 128
+     * characters.
+     */
+    public Builder setName(String name) {
       this.name = checkNotNull(name);
       return this;
     }
@@ -229,7 +255,18 @@ public final class Field implements Serializable {
      * @see <a href="https://cloud.google.com/bigquery/preparing-data-for-bigquery#datatypes">
      *     Data Types</a>
      */
+    @Deprecated
     public Builder type(Type type) {
+      return setType(type);
+    }
+
+    /**
+     * Sets the value of the field.
+     *
+     * @see <a href="https://cloud.google.com/bigquery/preparing-data-for-bigquery#datatypes">
+     *     Data Types</a>
+     */
+    public Builder setType(Type type) {
       this.type = checkNotNull(type);
       return this;
     }
@@ -237,7 +274,15 @@ public final class Field implements Serializable {
     /**
      * Sets the mode of the field. When not specified {@link Mode#NULLABLE} is used.
      */
+    @Deprecated
     public Builder mode(Mode mode) {
+      return setMode(mode);
+    }
+
+    /**
+     * Sets the mode of the field. When not specified {@link Mode#NULLABLE} is used.
+     */
+    public Builder setMode(Mode mode) {
       this.mode = mode != null ? mode.name() : Data.<String>nullOf(String.class);
       return this;
     }
@@ -245,7 +290,15 @@ public final class Field implements Serializable {
     /**
      * Sets the field description. The maximum length is 16K characters.
      */
+    @Deprecated
     public Builder description(String description) {
+      return setDescription(description);
+    }
+
+    /**
+     * Sets the field description. The maximum length is 16K characters.
+     */
+    public Builder setDescription(String description) {
       this.description = firstNonNull(description, Data.<String>nullOf(String.class));
       return this;
     }
@@ -268,7 +321,15 @@ public final class Field implements Serializable {
   /**
    * Returns the field name.
    */
+  @Deprecated
   public String name() {
+    return getName();
+  }
+
+  /**
+   * Returns the field name.
+   */
+  public String getName() {
     return name;
   }
 
@@ -278,30 +339,66 @@ public final class Field implements Serializable {
    * @see <a href="https://cloud.google.com/bigquery/preparing-data-for-bigquery#datatypes">
    *     Data Types</a>
    */
+  @Deprecated
   public Type type() {
+    return getType();
+  }
+
+  /**
+   * Returns the field value.
+   *
+   * @see <a href="https://cloud.google.com/bigquery/preparing-data-for-bigquery#datatypes">
+   *     Data Types</a>
+   */
+  public Type getType() {
     return type;
   }
 
   /**
    * Returns the field mode. By default {@link Mode#NULLABLE} is used.
    */
+  @Deprecated
   public Mode mode() {
+    return getMode();
+  }
+
+  /**
+   * Returns the field mode. By default {@link Mode#NULLABLE} is used.
+   */
+  public Mode getMode() {
     return mode != null ? Mode.valueOf(mode) : null;
   }
 
   /**
    * Returns the field description.
    */
+  @Deprecated
   public String description() {
+    return getDescription();
+  }
+
+  /**
+   * Returns the field description.
+   */
+  public String getDescription() {
     return Data.isNull(description) ? null : description;
   }
 
   /**
-   * Returns the list of sub-fields if {@link #type()} is a {@link Type.Value#RECORD}. Returns
-   * {@code null} otherwise.
+   * Returns the list of sub-fields if {@link #type()} is a {@link LegacySQLTypeName#RECORD}.
+   * Returns {@code null} otherwise.
    */
+  @Deprecated
   public List<Field> fields() {
-    return type.fields();
+    return getFields();
+  }
+
+  /**
+   * Returns the list of sub-fields if {@link #type()} is a {@link LegacySQLTypeName#RECORD}.
+   * Returns {@code null} otherwise.
+   */
+  public List<Field> getFields() {
+    return type.getFields();
   }
 
   /**
@@ -334,15 +431,15 @@ public final class Field implements Serializable {
   TableFieldSchema toPb() {
     TableFieldSchema fieldSchemaPb = new TableFieldSchema();
     fieldSchemaPb.setName(name);
-    fieldSchemaPb.setType(type.value().name());
+    fieldSchemaPb.setType(type.getValue().name());
     if (mode != null) {
       fieldSchemaPb.setMode(mode);
     }
     if (description != null) {
       fieldSchemaPb.setDescription(description);
     }
-    if (fields() != null) {
-      List<TableFieldSchema> fieldsPb = Lists.transform(fields(), TO_PB_FUNCTION);
+    if (getFields() != null) {
+      List<TableFieldSchema> fieldsPb = Lists.transform(getFields(), TO_PB_FUNCTION);
       fieldSchemaPb.setFields(fieldsPb);
     }
     return fieldSchemaPb;
@@ -352,30 +449,39 @@ public final class Field implements Serializable {
    * Returns a Field object with given name and value.
    */
   public static Field of(String name, Type type) {
-    return builder(name, type).build();
+    return newBuilder(name, type).build();
   }
 
   /**
    * Returns a builder for a Field object with given name and value.
    */
+  @Deprecated
   public static Builder builder(String name, Type type) {
-    return new Builder().name(name).type(type);
+    return newBuilder(name, type);
+  }
+
+  /**
+   * Returns a builder for a Field object with given name and value.
+   */
+  public static Builder newBuilder(String name, Type type) {
+    return new Builder().setName(name).setType(type);
   }
 
   static Field fromPb(TableFieldSchema fieldSchemaPb) {
     Builder fieldBuilder = new Builder();
-    fieldBuilder.name(fieldSchemaPb.getName());
-    Type.Value enumValue = Type.Value.valueOf(fieldSchemaPb.getType());
+    fieldBuilder.setName(fieldSchemaPb.getName());
+    LegacySQLTypeName enumValue = LegacySQLTypeName.valueOf(fieldSchemaPb.getType());
     if (fieldSchemaPb.getMode() != null) {
-      fieldBuilder.mode(Mode.valueOf(fieldSchemaPb.getMode()));
+      fieldBuilder.setMode(Mode.valueOf(fieldSchemaPb.getMode()));
     }
     if (fieldSchemaPb.getDescription() != null) {
-      fieldBuilder.description(fieldSchemaPb.getDescription());
+      fieldBuilder.setDescription(fieldSchemaPb.getDescription());
     }
     if (fieldSchemaPb.getFields() != null) {
-      fieldBuilder.type(Type.record(Lists.transform(fieldSchemaPb.getFields(), FROM_PB_FUNCTION)));
+      fieldBuilder.setType(
+          Type.record(Lists.transform(fieldSchemaPb.getFields(), FROM_PB_FUNCTION)));
     } else {
-      fieldBuilder.type(new Type(enumValue));
+      fieldBuilder.setType(new Type(enumValue));
     }
     return fieldBuilder.build();
   }

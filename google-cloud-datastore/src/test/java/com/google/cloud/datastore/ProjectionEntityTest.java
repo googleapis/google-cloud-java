@@ -26,15 +26,15 @@ import org.junit.Test;
 
 public class ProjectionEntityTest {
 
-  private static final Key KEY = Key.builder("ds1", "k1", "n1").build();
+  private static final Key KEY = Key.newBuilder("ds1", "k1", "n1").build();
   private static final StringValue STRING_INDEX_VALUE =
-      StringValue.builder("foo").meaning(18).build();
+      StringValue.newBuilder("foo").setMeaning(18).build();
   private static final BlobValue BLOB_VALUE = BlobValue.of(Blob.copyFrom(new byte[]{1}));
   private static final DateTimeValue DATE_TIME_VALUE = DateTimeValue.of(DateTime.now());
   private static final LongValue LONG_INDEX_VALUE =
-      LongValue.builder(DATE_TIME_VALUE.get().timestampMicroseconds()).meaning(18).build();
+      LongValue.newBuilder(DATE_TIME_VALUE.get().getTimestampMicroseconds()).setMeaning(18).build();
   private static final ProjectionEntity ENTITY1 =
-      new ProjectionEntity.Builder().key(KEY).set("a", "b").build();
+      new ProjectionEntity.Builder().setKey(KEY).set("a", "b").build();
   private static final ProjectionEntity ENTITY2 = new ProjectionEntity.Builder()
       .set("a", STRING_INDEX_VALUE)
       .set("b", BLOB_VALUE)
@@ -50,8 +50,8 @@ public class ProjectionEntityTest {
 
   @Test
   public void testKey() throws Exception {
-    assertEquals(KEY, ENTITY1.key());
-    assertNull(ENTITY2.key());
+    assertEquals(KEY, ENTITY1.getKey());
+    assertNull(ENTITY2.getKey());
   }
 
   @Test

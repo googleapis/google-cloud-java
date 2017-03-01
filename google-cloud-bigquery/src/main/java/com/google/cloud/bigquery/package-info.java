@@ -22,7 +22,7 @@
  * <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-examples/src/main/java/com/google/cloud/examples/bigquery/snippets/CreateTableAndLoadData.java">
  * CreateTableAndLoadData.java</a>.
  * <pre> {@code
- * BigQuery bigquery = BigQueryOptions.defaultInstance().service();
+ * BigQuery bigquery = BigQueryOptions.getDefaultInstance().getService();
  * TableId tableId = TableId.of("dataset", "table");
  * Table table = bigquery.getTable(tableId);
  * if (table == null) {
@@ -34,7 +34,7 @@
  * System.out.println("Loading data into table " + tableId);
  * Job loadJob = table.load(FormatOptions.csv(), "gs://bucket/path");
  * loadJob = loadJob.waitFor();
- * if (loadJob.status().error() != null) {
+ * if (loadJob.getStatus().getError() != null) {
  *   System.out.println("Job completed with errors");
  * } else {
  *   System.out.println("Job succeeded");

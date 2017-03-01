@@ -81,12 +81,12 @@ public class DefaultComputeRpc implements ComputeRpc {
   private final Compute compute;
 
   public DefaultComputeRpc(ComputeOptions options) {
-    HttpTransport transport = options.httpTransportFactory().create();
-    HttpRequestInitializer initializer = options.httpRequestInitializer();
+    HttpTransport transport = options.getHttpTransportFactory().create();
+    HttpRequestInitializer initializer = options.getHttpRequestInitializer();
     this.options = options;
     compute = new Compute.Builder(transport, new JacksonFactory(), initializer)
-        .setRootUrl(options.host())
-        .setApplicationName(options.applicationName())
+        .setRootUrl(options.getHost())
+        .setApplicationName(options.getApplicationName())
         .build();
   }
 
@@ -98,7 +98,7 @@ public class DefaultComputeRpc implements ComputeRpc {
   public DiskType getDiskType(String zone, String diskType, Map<Option, ?> options) {
     try {
       return compute.diskTypes()
-          .get(this.options.projectId(), zone, diskType)
+          .get(this.options.getProjectId(), zone, diskType)
           .setFields(Option.FIELDS.getString(options))
           .execute();
     } catch (IOException ex) {
@@ -110,7 +110,7 @@ public class DefaultComputeRpc implements ComputeRpc {
   public Tuple<String, Iterable<DiskType>> listDiskTypes(String zone, Map<Option, ?> options) {
     try {
       DiskTypeList diskTypesList = compute.diskTypes()
-          .list(this.options.projectId(), zone)
+          .list(this.options.getProjectId(), zone)
           .setFilter(Option.FILTER.getString(options))
           .setMaxResults(Option.MAX_RESULTS.getLong(options))
           .setPageToken(Option.PAGE_TOKEN.getString(options))
@@ -127,7 +127,7 @@ public class DefaultComputeRpc implements ComputeRpc {
   public Tuple<String, Iterable<DiskType>> listDiskTypes(Map<Option, ?> options) {
     try {
       DiskTypeAggregatedList aggregatedList = compute.diskTypes()
-          .aggregatedList(this.options.projectId())
+          .aggregatedList(this.options.getProjectId())
           .setFilter(Option.FILTER.getString(options))
           .setMaxResults(Option.MAX_RESULTS.getLong(options))
           .setPageToken(Option.PAGE_TOKEN.getString(options))
@@ -154,7 +154,7 @@ public class DefaultComputeRpc implements ComputeRpc {
   public MachineType getMachineType(String zone, String machineType, Map<Option, ?> options) {
     try {
       return compute.machineTypes()
-          .get(this.options.projectId(), zone, machineType)
+          .get(this.options.getProjectId(), zone, machineType)
           .setFields(Option.FIELDS.getString(options))
           .execute();
     } catch (IOException ex) {
@@ -167,7 +167,7 @@ public class DefaultComputeRpc implements ComputeRpc {
       Map<Option, ?> options) {
     try {
       MachineTypeList machineTypesList = compute.machineTypes()
-          .list(this.options.projectId(), zone)
+          .list(this.options.getProjectId(), zone)
           .setFilter(Option.FILTER.getString(options))
           .setMaxResults(Option.MAX_RESULTS.getLong(options))
           .setPageToken(Option.PAGE_TOKEN.getString(options))
@@ -184,7 +184,7 @@ public class DefaultComputeRpc implements ComputeRpc {
   public Tuple<String, Iterable<MachineType>> listMachineTypes(Map<Option, ?> options) {
     try {
       MachineTypeAggregatedList aggregatedList = compute.machineTypes()
-          .aggregatedList(this.options.projectId())
+          .aggregatedList(this.options.getProjectId())
           .setFilter(Option.FILTER.getString(options))
           .setMaxResults(Option.MAX_RESULTS.getLong(options))
           .setPageToken(Option.PAGE_TOKEN.getString(options))
@@ -211,7 +211,7 @@ public class DefaultComputeRpc implements ComputeRpc {
   public Region getRegion(String region, Map<Option, ?> options) {
     try {
       return compute.regions()
-          .get(this.options.projectId(), region)
+          .get(this.options.getProjectId(), region)
           .setFields(Option.FIELDS.getString(options))
           .execute();
     } catch (IOException ex) {
@@ -223,7 +223,7 @@ public class DefaultComputeRpc implements ComputeRpc {
   public Tuple<String, Iterable<Region>> listRegions(Map<Option, ?> options) {
     try {
       RegionList regionsList = compute.regions()
-          .list(this.options.projectId())
+          .list(this.options.getProjectId())
           .setFilter(Option.FILTER.getString(options))
           .setMaxResults(Option.MAX_RESULTS.getLong(options))
           .setPageToken(Option.PAGE_TOKEN.getString(options))
@@ -240,7 +240,7 @@ public class DefaultComputeRpc implements ComputeRpc {
   public Zone getZone(String zone, Map<Option, ?> options) {
     try {
       return compute.zones()
-          .get(this.options.projectId(), zone)
+          .get(this.options.getProjectId(), zone)
           .setFields(Option.FIELDS.getString(options))
           .execute();
     } catch (IOException ex) {
@@ -252,7 +252,7 @@ public class DefaultComputeRpc implements ComputeRpc {
   public Tuple<String, Iterable<Zone>> listZones(Map<Option, ?> options) {
     try {
       ZoneList zonesList = compute.zones()
-          .list(this.options.projectId())
+          .list(this.options.getProjectId())
           .setFilter(Option.FILTER.getString(options))
           .setMaxResults(Option.MAX_RESULTS.getLong(options))
           .setPageToken(Option.PAGE_TOKEN.getString(options))
@@ -281,7 +281,7 @@ public class DefaultComputeRpc implements ComputeRpc {
   public Operation getGlobalOperation(String operation, Map<Option, ?> options) {
     try {
       return compute.globalOperations()
-          .get(this.options.projectId(), operation)
+          .get(this.options.getProjectId(), operation)
           .setFields(Option.FIELDS.getString(options))
           .execute();
     } catch (IOException ex) {
@@ -293,7 +293,7 @@ public class DefaultComputeRpc implements ComputeRpc {
   public Tuple<String, Iterable<Operation>> listGlobalOperations(Map<Option, ?> options) {
     try {
       OperationList operationsList = compute.globalOperations()
-          .list(this.options.projectId())
+          .list(this.options.getProjectId())
           .setFilter(Option.FILTER.getString(options))
           .setMaxResults(Option.MAX_RESULTS.getLong(options))
           .setPageToken(Option.PAGE_TOKEN.getString(options))
@@ -309,7 +309,7 @@ public class DefaultComputeRpc implements ComputeRpc {
   @Override
   public boolean deleteGlobalOperation(String operation) {
     try {
-      compute.globalOperations().delete(this.options.projectId(), operation).execute();
+      compute.globalOperations().delete(this.options.getProjectId(), operation).execute();
       return true;
     } catch (IOException ex) {
       return falseForNotFound(ex);
@@ -320,7 +320,7 @@ public class DefaultComputeRpc implements ComputeRpc {
   public Operation getRegionOperation(String region, String operation, Map<Option, ?> options) {
     try {
       return compute.regionOperations()
-          .get(this.options.projectId(), region, operation)
+          .get(this.options.getProjectId(), region, operation)
           .setFields(Option.FIELDS.getString(options))
           .execute();
     } catch (IOException ex) {
@@ -333,7 +333,7 @@ public class DefaultComputeRpc implements ComputeRpc {
       Map<Option, ?> options) {
     try {
       OperationList operationsList = compute.regionOperations()
-          .list(this.options.projectId(), region)
+          .list(this.options.getProjectId(), region)
           .setFilter(Option.FILTER.getString(options))
           .setMaxResults(Option.MAX_RESULTS.getLong(options))
           .setPageToken(Option.PAGE_TOKEN.getString(options))
@@ -349,7 +349,7 @@ public class DefaultComputeRpc implements ComputeRpc {
   @Override
   public boolean deleteRegionOperation(String region, String operation) {
     try {
-      compute.regionOperations().delete(this.options.projectId(), region, operation).execute();
+      compute.regionOperations().delete(this.options.getProjectId(), region, operation).execute();
       return true;
     } catch (IOException ex) {
       return falseForNotFound(ex);
@@ -360,7 +360,7 @@ public class DefaultComputeRpc implements ComputeRpc {
   public Operation getZoneOperation(String zone, String operation, Map<Option, ?> options) {
     try {
       return compute.zoneOperations()
-          .get(this.options.projectId(), zone, operation)
+          .get(this.options.getProjectId(), zone, operation)
           .setFields(Option.FIELDS.getString(options))
           .execute();
     } catch (IOException ex) {
@@ -373,7 +373,7 @@ public class DefaultComputeRpc implements ComputeRpc {
       Map<Option, ?> options) {
     try {
       OperationList operationsList = compute.zoneOperations()
-          .list(this.options.projectId(), zone)
+          .list(this.options.getProjectId(), zone)
           .setFilter(Option.FILTER.getString(options))
           .setMaxResults(Option.MAX_RESULTS.getLong(options))
           .setPageToken(Option.PAGE_TOKEN.getString(options))
@@ -389,7 +389,7 @@ public class DefaultComputeRpc implements ComputeRpc {
   @Override
   public boolean deleteZoneOperation(String zone, String operation) {
     try {
-      compute.zoneOperations().delete(this.options.projectId(), zone, operation).execute();
+      compute.zoneOperations().delete(this.options.getProjectId(), zone, operation).execute();
       return true;
     } catch (IOException ex) {
       return falseForNotFound(ex);
@@ -400,7 +400,7 @@ public class DefaultComputeRpc implements ComputeRpc {
   public Address getGlobalAddress(String address, Map<Option, ?> options) {
     try {
       return compute.globalAddresses()
-          .get(this.options.projectId(), address)
+          .get(this.options.getProjectId(), address)
           .setFields(Option.FIELDS.getString(options))
           .execute();
     } catch (IOException ex) {
@@ -412,7 +412,7 @@ public class DefaultComputeRpc implements ComputeRpc {
   public Operation createGlobalAddress(Address address, Map<Option, ?> options) {
     try {
       return compute.globalAddresses()
-          .insert(this.options.projectId(), address)
+          .insert(this.options.getProjectId(), address)
           .setFields(Option.FIELDS.getString(options))
           .execute();
     } catch (IOException ex) {
@@ -424,7 +424,7 @@ public class DefaultComputeRpc implements ComputeRpc {
   public Tuple<String, Iterable<Address>> listGlobalAddresses(Map<Option, ?> options) {
     try {
       AddressList addressList = compute.globalAddresses()
-          .list(this.options.projectId())
+          .list(this.options.getProjectId())
           .setFilter(Option.FILTER.getString(options))
           .setMaxResults(Option.MAX_RESULTS.getLong(options))
           .setPageToken(Option.PAGE_TOKEN.getString(options))
@@ -441,7 +441,7 @@ public class DefaultComputeRpc implements ComputeRpc {
   public Operation deleteGlobalAddress(String address, Map<Option, ?> options) {
     try {
       return compute.globalAddresses()
-          .delete(this.options.projectId(), address)
+          .delete(this.options.getProjectId(), address)
           .setFields(Option.FIELDS.getString(options))
           .execute();
     } catch (IOException ex) {
@@ -453,7 +453,7 @@ public class DefaultComputeRpc implements ComputeRpc {
   public Address getRegionAddress(String region, String address, Map<Option, ?> options) {
     try {
       return compute.addresses()
-          .get(this.options.projectId(), region, address)
+          .get(this.options.getProjectId(), region, address)
           .setFields(Option.FIELDS.getString(options))
           .execute();
     } catch (IOException ex) {
@@ -465,7 +465,7 @@ public class DefaultComputeRpc implements ComputeRpc {
   public Operation createRegionAddress(String region, Address address, Map<Option, ?> options) {
     try {
       return compute.addresses()
-          .insert(this.options.projectId(), region, address)
+          .insert(this.options.getProjectId(), region, address)
           .setFields(Option.FIELDS.getString(options))
           .execute();
     } catch (IOException ex) {
@@ -478,7 +478,7 @@ public class DefaultComputeRpc implements ComputeRpc {
       Map<Option, ?> options) {
     try {
       AddressList addressList = compute.addresses()
-          .list(this.options.projectId(), region)
+          .list(this.options.getProjectId(), region)
           .setFilter(Option.FILTER.getString(options))
           .setMaxResults(Option.MAX_RESULTS.getLong(options))
           .setPageToken(Option.PAGE_TOKEN.getString(options))
@@ -495,7 +495,7 @@ public class DefaultComputeRpc implements ComputeRpc {
   public Tuple<String, Iterable<Address>> listAddresses(Map<Option, ?> options) {
     try {
       AddressAggregatedList aggregatedList = compute.addresses()
-          .aggregatedList(this.options.projectId())
+          .aggregatedList(this.options.getProjectId())
           .setFilter(Option.FILTER.getString(options))
           .setMaxResults(Option.MAX_RESULTS.getLong(options))
           .setPageToken(Option.PAGE_TOKEN.getString(options))
@@ -522,7 +522,7 @@ public class DefaultComputeRpc implements ComputeRpc {
   public Operation deleteRegionAddress(String region, String address, Map<Option, ?> options) {
     try {
       return compute.addresses()
-          .delete(this.options.projectId(), region, address)
+          .delete(this.options.getProjectId(), region, address)
           .setFields(Option.FIELDS.getString(options))
           .execute();
     } catch (IOException ex) {
@@ -536,7 +536,7 @@ public class DefaultComputeRpc implements ComputeRpc {
     Snapshot snapshotObject = new Snapshot().setName(snapshot).setDescription(description);
     try {
       return compute.disks()
-          .createSnapshot(this.options.projectId(), zone, disk, snapshotObject)
+          .createSnapshot(this.options.getProjectId(), zone, disk, snapshotObject)
           .setFields(Option.FIELDS.getString(options))
           .execute();
     } catch (IOException ex) {
@@ -548,7 +548,7 @@ public class DefaultComputeRpc implements ComputeRpc {
   public Snapshot getSnapshot(String snapshot, Map<Option, ?> options) {
     try {
       return compute.snapshots()
-          .get(this.options.projectId(), snapshot)
+          .get(this.options.getProjectId(), snapshot)
           .setFields(Option.FIELDS.getString(options))
           .execute();
     } catch (IOException ex) {
@@ -560,7 +560,7 @@ public class DefaultComputeRpc implements ComputeRpc {
   public Tuple<String, Iterable<Snapshot>> listSnapshots(Map<Option, ?> options) {
     try {
       SnapshotList snapshotList = compute.snapshots()
-          .list(this.options.projectId())
+          .list(this.options.getProjectId())
           .setFilter(Option.FILTER.getString(options))
           .setMaxResults(Option.MAX_RESULTS.getLong(options))
           .setPageToken(Option.PAGE_TOKEN.getString(options))
@@ -577,7 +577,7 @@ public class DefaultComputeRpc implements ComputeRpc {
   public Operation deleteSnapshot(String snapshot, Map<Option, ?> options) {
     try {
       return compute.snapshots()
-          .delete(this.options.projectId(), snapshot)
+          .delete(this.options.getProjectId(), snapshot)
           .setFields(Option.FIELDS.getString(options))
           .execute();
     } catch (IOException ex) {
@@ -589,7 +589,7 @@ public class DefaultComputeRpc implements ComputeRpc {
   public Operation createImage(Image image, Map<Option, ?> options) {
     try {
       return compute.images()
-          .insert(this.options.projectId(), image)
+          .insert(this.options.getProjectId(), image)
           .setFields(Option.FIELDS.getString(options))
           .execute();
     } catch (IOException ex) {
@@ -655,7 +655,7 @@ public class DefaultComputeRpc implements ComputeRpc {
   public Disk getDisk(String zone, String disk, Map<Option, ?> options) {
     try {
       return compute.disks()
-          .get(this.options.projectId(), zone, disk)
+          .get(this.options.getProjectId(), zone, disk)
           .setFields(Option.FIELDS.getString(options))
           .execute();
     } catch (IOException ex) {
@@ -667,7 +667,7 @@ public class DefaultComputeRpc implements ComputeRpc {
   public Operation createDisk(String zone, Disk disk, Map<Option, ?> options) {
     try {
       return compute.disks()
-          .insert(this.options.projectId(), zone, disk)
+          .insert(this.options.getProjectId(), zone, disk)
           .setFields(Option.FIELDS.getString(options))
           .execute();
     } catch (IOException ex) {
@@ -679,7 +679,7 @@ public class DefaultComputeRpc implements ComputeRpc {
   public Tuple<String, Iterable<Disk>> listDisks(String zone, Map<Option, ?> options) {
     try {
       DiskList diskList = compute.disks()
-          .list(this.options.projectId(), zone)
+          .list(this.options.getProjectId(), zone)
           .setFilter(Option.FILTER.getString(options))
           .setMaxResults(Option.MAX_RESULTS.getLong(options))
           .setPageToken(Option.PAGE_TOKEN.getString(options))
@@ -696,7 +696,7 @@ public class DefaultComputeRpc implements ComputeRpc {
   public Tuple<String, Iterable<Disk>> listDisks(Map<Option, ?> options) {
     try {
       DiskAggregatedList aggregatedList = compute.disks()
-          .aggregatedList(this.options.projectId())
+          .aggregatedList(this.options.getProjectId())
           .setFilter(Option.FILTER.getString(options))
           .setMaxResults(Option.MAX_RESULTS.getLong(options))
           .setPageToken(Option.PAGE_TOKEN.getString(options))
@@ -723,7 +723,7 @@ public class DefaultComputeRpc implements ComputeRpc {
   public Operation deleteDisk(String zone, String disk, Map<Option, ?> options) {
     try {
       return compute.disks()
-          .delete(this.options.projectId(), zone, disk)
+          .delete(this.options.getProjectId(), zone, disk)
           .setFields(Option.FIELDS.getString(options))
           .execute();
     } catch (IOException ex) {
@@ -735,7 +735,7 @@ public class DefaultComputeRpc implements ComputeRpc {
   public Operation resizeDisk(String zone, String disk, long sizeGb, Map<Option, ?> options) {
     try {
       DisksResizeRequest resizeRequest = new DisksResizeRequest().setSizeGb(sizeGb);
-      return compute.disks().resize(this.options.projectId(), zone, disk, resizeRequest)
+      return compute.disks().resize(this.options.getProjectId(), zone, disk, resizeRequest)
           .setFields(Option.FIELDS.getString(options))
           .execute();
     } catch (IOException ex) {
@@ -746,7 +746,7 @@ public class DefaultComputeRpc implements ComputeRpc {
   public Operation createSubnetwork(String region, Subnetwork subnetwork, Map<Option, ?> options) {
     try {
       return compute.subnetworks()
-          .insert(this.options.projectId(), region, subnetwork)
+          .insert(this.options.getProjectId(), region, subnetwork)
           .setFields(Option.FIELDS.getString(options))
           .execute();
     } catch (IOException ex) {
@@ -758,7 +758,7 @@ public class DefaultComputeRpc implements ComputeRpc {
   public Subnetwork getSubnetwork(String region, String subnetwork, Map<Option, ?> options) {
     try {
       return compute.subnetworks()
-          .get(this.options.projectId(), region, subnetwork)
+          .get(this.options.getProjectId(), region, subnetwork)
           .setFields(Option.FIELDS.getString(options))
           .execute();
     } catch (IOException ex) {
@@ -771,7 +771,7 @@ public class DefaultComputeRpc implements ComputeRpc {
       Map<Option, ?> options) {
     try {
       SubnetworkList subnetworkList = compute.subnetworks()
-          .list(this.options.projectId(), region)
+          .list(this.options.getProjectId(), region)
           .setFilter(Option.FILTER.getString(options))
           .setMaxResults(Option.MAX_RESULTS.getLong(options))
           .setPageToken(Option.PAGE_TOKEN.getString(options))
@@ -788,7 +788,7 @@ public class DefaultComputeRpc implements ComputeRpc {
   public Tuple<String, Iterable<Subnetwork>> listSubnetworks(Map<Option, ?> options) {
     try {
       SubnetworkAggregatedList aggregatedList = compute.subnetworks()
-          .aggregatedList(this.options.projectId())
+          .aggregatedList(this.options.getProjectId())
           .setFilter(Option.FILTER.getString(options))
           .setMaxResults(Option.MAX_RESULTS.getLong(options))
           .setPageToken(Option.PAGE_TOKEN.getString(options))
@@ -815,7 +815,7 @@ public class DefaultComputeRpc implements ComputeRpc {
   public Operation deleteSubnetwork(String region, String subnetwork, Map<Option, ?> options) {
     try {
       return compute.subnetworks()
-          .delete(this.options.projectId(), region, subnetwork)
+          .delete(this.options.getProjectId(), region, subnetwork)
           .setFields(Option.FIELDS.getString(options))
           .execute();
     } catch (IOException ex) {
@@ -827,7 +827,7 @@ public class DefaultComputeRpc implements ComputeRpc {
   public Operation createNetwork(Network network, Map<Option, ?> options) {
     try {
       return compute.networks()
-          .insert(this.options.projectId(), network)
+          .insert(this.options.getProjectId(), network)
           .setFields(Option.FIELDS.getString(options))
           .execute();
     } catch (IOException ex) {
@@ -839,7 +839,7 @@ public class DefaultComputeRpc implements ComputeRpc {
   public Network getNetwork(String network, Map<Option, ?> options) {
     try {
       return compute.networks()
-          .get(this.options.projectId(), network)
+          .get(this.options.getProjectId(), network)
           .setFields(Option.FIELDS.getString(options))
           .execute();
     } catch (IOException ex) {
@@ -851,7 +851,7 @@ public class DefaultComputeRpc implements ComputeRpc {
   public Tuple<String, Iterable<Network>> listNetworks(Map<Option, ?> options) {
     try {
       NetworkList networkList = compute.networks()
-          .list(this.options.projectId())
+          .list(this.options.getProjectId())
           .setFilter(Option.FILTER.getString(options))
           .setMaxResults(Option.MAX_RESULTS.getLong(options))
           .setPageToken(Option.PAGE_TOKEN.getString(options))
@@ -868,7 +868,7 @@ public class DefaultComputeRpc implements ComputeRpc {
   public Operation deleteNetwork(String network, Map<Option, ?> options) {
     try {
       return compute.networks()
-          .delete(this.options.projectId(), network)
+          .delete(this.options.getProjectId(), network)
           .setFields(Option.FIELDS.getString(options))
           .execute();
     } catch (IOException ex) {
@@ -880,7 +880,7 @@ public class DefaultComputeRpc implements ComputeRpc {
   public Operation createInstance(String zone, Instance instance, Map<Option, ?> options) {
     try {
       return compute.instances()
-          .insert(this.options.projectId(), zone, instance)
+          .insert(this.options.getProjectId(), zone, instance)
           .setFields(Option.FIELDS.getString(options))
           .execute();
     } catch (IOException ex) {
@@ -892,7 +892,7 @@ public class DefaultComputeRpc implements ComputeRpc {
   public Instance getInstance(String zone, String instance, Map<Option, ?> options) {
     try {
       return compute.instances()
-          .get(this.options.projectId(), zone, instance)
+          .get(this.options.getProjectId(), zone, instance)
           .setFields(Option.FIELDS.getString(options))
           .execute();
     } catch (IOException ex) {
@@ -904,7 +904,7 @@ public class DefaultComputeRpc implements ComputeRpc {
   public Tuple<String, Iterable<Instance>> listInstances(String zone, Map<Option, ?> options) {
     try {
       InstanceList instanceList = compute.instances()
-          .list(this.options.projectId(), zone)
+          .list(this.options.getProjectId(), zone)
           .setFilter(Option.FILTER.getString(options))
           .setMaxResults(Option.MAX_RESULTS.getLong(options))
           .setPageToken(Option.PAGE_TOKEN.getString(options))
@@ -921,7 +921,7 @@ public class DefaultComputeRpc implements ComputeRpc {
   public Tuple<String, Iterable<Instance>> listInstances(Map<Option, ?> options) {
     try {
       InstanceAggregatedList aggregatedList = compute.instances()
-          .aggregatedList(this.options.projectId())
+          .aggregatedList(this.options.getProjectId())
           .setFilter(Option.FILTER.getString(options))
           .setMaxResults(Option.MAX_RESULTS.getLong(options))
           .setPageToken(Option.PAGE_TOKEN.getString(options))
@@ -948,7 +948,7 @@ public class DefaultComputeRpc implements ComputeRpc {
   public Operation deleteInstance(String zone, String instance, Map<Option, ?> options) {
     try {
       return compute.instances()
-          .delete(this.options.projectId(), zone, instance)
+          .delete(this.options.getProjectId(), zone, instance)
           .setFields(Option.FIELDS.getString(options))
           .execute();
     } catch (IOException ex) {
@@ -961,7 +961,8 @@ public class DefaultComputeRpc implements ComputeRpc {
       AccessConfig accessConfig, Map<Option, ?> options) {
     try {
       return compute.instances()
-          .addAccessConfig(this.options.projectId(), zone, instance, networkInterface, accessConfig)
+          .addAccessConfig(
+              this.options.getProjectId(), zone, instance, networkInterface, accessConfig)
           .setFields(Option.FIELDS.getString(options))
           .execute();
     } catch (IOException ex) {
@@ -974,7 +975,7 @@ public class DefaultComputeRpc implements ComputeRpc {
       Map<Option, ?> options) {
     try {
       return compute.instances()
-          .attachDisk(this.options.projectId(), zone, instance, attachedDisk)
+          .attachDisk(this.options.getProjectId(), zone, instance, attachedDisk)
           .setFields(Option.FIELDS.getString(options))
           .execute();
     } catch (IOException ex) {
@@ -987,7 +988,7 @@ public class DefaultComputeRpc implements ComputeRpc {
       String accessConfig, Map<Option, ?> options) {
     try {
       return compute.instances()
-          .deleteAccessConfig(this.options.projectId(), zone, instance, accessConfig,
+          .deleteAccessConfig(this.options.getProjectId(), zone, instance, accessConfig,
               networkInterface)
           .setFields(Option.FIELDS.getString(options))
           .execute();
@@ -1001,7 +1002,7 @@ public class DefaultComputeRpc implements ComputeRpc {
       Map<Option, ?> options) {
     try {
       return compute.instances()
-          .detachDisk(this.options.projectId(), zone, instance, deviceName)
+          .detachDisk(this.options.getProjectId(), zone, instance, deviceName)
           .setFields(Option.FIELDS.getString(options))
           .execute();
     } catch (IOException ex) {
@@ -1014,7 +1015,7 @@ public class DefaultComputeRpc implements ComputeRpc {
       Map<Option, ?> options) {
     try {
       SerialPortOutput portOutput = compute.instances()
-          .getSerialPortOutput(this.options.projectId(), zone, instance)
+          .getSerialPortOutput(this.options.getProjectId(), zone, instance)
           .setPort(port)
           .setFields(Option.FIELDS.getString(options))
           .execute();
@@ -1028,7 +1029,7 @@ public class DefaultComputeRpc implements ComputeRpc {
   public Operation reset(String zone, String instance, Map<Option, ?> options) {
     try {
       return compute.instances()
-          .reset(this.options.projectId(), zone, instance)
+          .reset(this.options.getProjectId(), zone, instance)
           .setFields(Option.FIELDS.getString(options))
           .execute();
     } catch (IOException ex) {
@@ -1041,7 +1042,7 @@ public class DefaultComputeRpc implements ComputeRpc {
       boolean autoDelete, Map<Option, ?> options) {
     try {
       return compute.instances()
-          .setDiskAutoDelete(this.options.projectId(), zone, instance, autoDelete, deviceName)
+          .setDiskAutoDelete(this.options.getProjectId(), zone, instance, autoDelete, deviceName)
           .setFields(Option.FIELDS.getString(options))
           .execute();
     } catch (IOException ex) {
@@ -1056,7 +1057,7 @@ public class DefaultComputeRpc implements ComputeRpc {
       InstancesSetMachineTypeRequest request =
           new InstancesSetMachineTypeRequest().setMachineType(machineTypeUrl);
       return compute.instances()
-          .setMachineType(this.options.projectId(), zone, instance, request)
+          .setMachineType(this.options.getProjectId(), zone, instance, request)
           .setFields(Option.FIELDS.getString(options))
           .execute();
     } catch (IOException ex) {
@@ -1069,7 +1070,7 @@ public class DefaultComputeRpc implements ComputeRpc {
       Map<Option, ?> options) {
     try {
       return compute.instances()
-          .setMetadata(this.options.projectId(), zone, instance, metadata)
+          .setMetadata(this.options.getProjectId(), zone, instance, metadata)
           .setFields(Option.FIELDS.getString(options))
           .execute();
     } catch (IOException ex) {
@@ -1082,7 +1083,7 @@ public class DefaultComputeRpc implements ComputeRpc {
       Map<Option, ?> options) {
     try {
       return compute.instances()
-          .setScheduling(this.options.projectId(), zone, instance, scheduling)
+          .setScheduling(this.options.getProjectId(), zone, instance, scheduling)
           .setFields(Option.FIELDS.getString(options))
           .execute();
     } catch (IOException ex) {
@@ -1094,7 +1095,7 @@ public class DefaultComputeRpc implements ComputeRpc {
   public Operation setTags(String zone, String instance, Tags tags, Map<Option, ?> options) {
     try {
       return compute.instances()
-          .setTags(this.options.projectId(), zone, instance, tags)
+          .setTags(this.options.getProjectId(), zone, instance, tags)
           .setFields(Option.FIELDS.getString(options))
           .execute();
     } catch (IOException ex) {
@@ -1106,7 +1107,7 @@ public class DefaultComputeRpc implements ComputeRpc {
   public Operation start(String zone, String instance, Map<Option, ?> options) {
     try {
       return compute.instances()
-          .start(this.options.projectId(), zone, instance)
+          .start(this.options.getProjectId(), zone, instance)
           .setFields(Option.FIELDS.getString(options))
           .execute();
     } catch (IOException ex) {
@@ -1118,7 +1119,7 @@ public class DefaultComputeRpc implements ComputeRpc {
   public Operation stop(String zone, String instance, Map<Option, ?> options) {
     try {
       return compute.instances()
-          .stop(this.options.projectId(), zone, instance)
+          .stop(this.options.getProjectId(), zone, instance)
           .setFields(Option.FIELDS.getString(options))
           .execute();
     } catch (IOException ex) {
@@ -1134,7 +1135,7 @@ public class DefaultComputeRpc implements ComputeRpc {
    */
   private static <T> T nullForNotFound(IOException exception) {
     ComputeException serviceException = translate(exception);
-    if (serviceException.code() == HTTP_NOT_FOUND) {
+    if (serviceException.getCode() == HTTP_NOT_FOUND) {
       return null;
     }
     throw serviceException;
@@ -1148,7 +1149,7 @@ public class DefaultComputeRpc implements ComputeRpc {
    */
   private static boolean falseForNotFound(IOException exception) {
     ComputeException serviceException = translate(exception);
-    if (serviceException.code() == HTTP_NOT_FOUND) {
+    if (serviceException.getCode() == HTTP_NOT_FOUND) {
       return false;
     }
     throw serviceException;

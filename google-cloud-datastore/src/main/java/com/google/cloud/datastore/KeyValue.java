@@ -34,7 +34,7 @@ public final class KeyValue extends Value<Key> {
 
         @Override
         public Builder newBuilder(Key key) {
-          return builder(key);
+          return KeyValue.newBuilder(key);
         }
 
         @Override
@@ -61,7 +61,7 @@ public final class KeyValue extends Value<Key> {
   }
 
   public KeyValue(Key key) {
-    this(builder(key));
+    this(newBuilder(key));
   }
 
   private KeyValue(Builder builder) {
@@ -77,7 +77,12 @@ public final class KeyValue extends Value<Key> {
     return new KeyValue(key);
   }
 
+  @Deprecated
   public static Builder builder(Key key) {
+    return newBuilder(key);
+  }
+
+  public static Builder newBuilder(Key key) {
     return new Builder().set(key);
   }
 }

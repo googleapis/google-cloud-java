@@ -37,13 +37,27 @@ public class ExtractJobConfigurationTest {
   private static final Boolean PRINT_HEADER = true;
   private static final String COMPRESSION = "GZIP";
   private static final ExtractJobConfiguration EXTRACT_CONFIGURATION =
+      ExtractJobConfiguration.newBuilder(TABLE_ID, DESTINATION_URIS)
+          .setPrintHeader(PRINT_HEADER)
+          .setFieldDelimiter(FIELD_DELIMITER)
+          .setCompression(COMPRESSION)
+          .setFormat(FORMAT)
+          .build();
+  private static final ExtractJobConfiguration EXTRACT_CONFIGURATION_ONE_URI =
+      ExtractJobConfiguration.newBuilder(TABLE_ID, DESTINATION_URI)
+          .setPrintHeader(PRINT_HEADER)
+          .setFieldDelimiter(FIELD_DELIMITER)
+          .setCompression(COMPRESSION)
+          .setFormat(FORMAT)
+          .build();
+  private static final ExtractJobConfiguration DEPRECATED_EXTRACT_CONFIGURATION =
       ExtractJobConfiguration.builder(TABLE_ID, DESTINATION_URIS)
           .printHeader(PRINT_HEADER)
           .fieldDelimiter(FIELD_DELIMITER)
           .compression(COMPRESSION)
           .format(FORMAT)
           .build();
-  private static final ExtractJobConfiguration EXTRACT_CONFIGURATION_ONE_URI =
+  private static final ExtractJobConfiguration DEPRECATED_EXTRACT_CONFIGURATION_ONE_URI =
       ExtractJobConfiguration.builder(TABLE_ID, DESTINATION_URI)
           .printHeader(PRINT_HEADER)
           .fieldDelimiter(FIELD_DELIMITER)
@@ -56,29 +70,29 @@ public class ExtractJobConfigurationTest {
     compareExtractJobConfiguration(
         EXTRACT_CONFIGURATION, EXTRACT_CONFIGURATION.toBuilder().build());
     ExtractJobConfiguration job = EXTRACT_CONFIGURATION.toBuilder()
-        .sourceTable(TableId.of("dataset", "newTable"))
+        .setSourceTable(TableId.of("dataset", "newTable"))
         .build();
-    assertEquals("newTable", job.sourceTable().table());
-    job = job.toBuilder().sourceTable(TABLE_ID).build();
+    assertEquals("newTable", job.getSourceTable().getTable());
+    job = job.toBuilder().setSourceTable(TABLE_ID).build();
     compareExtractJobConfiguration(EXTRACT_CONFIGURATION, job);
   }
 
   @Test
   public void testOf() {
     ExtractJobConfiguration job = ExtractJobConfiguration.of(TABLE_ID, DESTINATION_URIS);
-    assertEquals(TABLE_ID, job.sourceTable());
-    assertEquals(DESTINATION_URIS, job.destinationUris());
+    assertEquals(TABLE_ID, job.getSourceTable());
+    assertEquals(DESTINATION_URIS, job.getDestinationUris());
     job = ExtractJobConfiguration.of(TABLE_ID, DESTINATION_URI);
-    assertEquals(TABLE_ID, job.sourceTable());
-    assertEquals(ImmutableList.of(DESTINATION_URI), job.destinationUris());
+    assertEquals(TABLE_ID, job.getSourceTable());
+    assertEquals(ImmutableList.of(DESTINATION_URI), job.getDestinationUris());
     job = ExtractJobConfiguration.of(TABLE_ID, DESTINATION_URIS, JSON_FORMAT);
-    assertEquals(TABLE_ID, job.sourceTable());
-    assertEquals(DESTINATION_URIS, job.destinationUris());
-    assertEquals(JSON_FORMAT, job.format());
+    assertEquals(TABLE_ID, job.getSourceTable());
+    assertEquals(DESTINATION_URIS, job.getDestinationUris());
+    assertEquals(JSON_FORMAT, job.getFormat());
     job = ExtractJobConfiguration.of(TABLE_ID, DESTINATION_URI, JSON_FORMAT);
-    assertEquals(TABLE_ID, job.sourceTable());
-    assertEquals(ImmutableList.of(DESTINATION_URI), job.destinationUris());
-    assertEquals(JSON_FORMAT, job.format());
+    assertEquals(TABLE_ID, job.getSourceTable());
+    assertEquals(ImmutableList.of(DESTINATION_URI), job.getDestinationUris());
+    assertEquals(JSON_FORMAT, job.getFormat());
   }
 
   @Test
@@ -89,19 +103,36 @@ public class ExtractJobConfigurationTest {
 
   @Test
   public void testBuilder() {
-    assertEquals(TABLE_ID, EXTRACT_CONFIGURATION.sourceTable());
-    assertEquals(DESTINATION_URIS, EXTRACT_CONFIGURATION.destinationUris());
-    assertEquals(FIELD_DELIMITER, EXTRACT_CONFIGURATION.fieldDelimiter());
-    assertEquals(COMPRESSION, EXTRACT_CONFIGURATION.compression());
+    assertEquals(TABLE_ID, EXTRACT_CONFIGURATION.getSourceTable());
+    assertEquals(DESTINATION_URIS, EXTRACT_CONFIGURATION.getDestinationUris());
+    assertEquals(FIELD_DELIMITER, EXTRACT_CONFIGURATION.getFieldDelimiter());
+    assertEquals(COMPRESSION, EXTRACT_CONFIGURATION.getCompression());
     assertEquals(PRINT_HEADER, EXTRACT_CONFIGURATION.printHeader());
-    assertEquals(FORMAT, EXTRACT_CONFIGURATION.format());
-    assertEquals(TABLE_ID, EXTRACT_CONFIGURATION_ONE_URI.sourceTable());
+    assertEquals(FORMAT, EXTRACT_CONFIGURATION.getFormat());
+    assertEquals(TABLE_ID, EXTRACT_CONFIGURATION_ONE_URI.getSourceTable());
     assertEquals(ImmutableList.of(DESTINATION_URI),
-        EXTRACT_CONFIGURATION_ONE_URI.destinationUris());
-    assertEquals(FIELD_DELIMITER, EXTRACT_CONFIGURATION_ONE_URI.fieldDelimiter());
-    assertEquals(COMPRESSION, EXTRACT_CONFIGURATION_ONE_URI.compression());
+        EXTRACT_CONFIGURATION_ONE_URI.getDestinationUris());
+    assertEquals(FIELD_DELIMITER, EXTRACT_CONFIGURATION_ONE_URI.getFieldDelimiter());
+    assertEquals(COMPRESSION, EXTRACT_CONFIGURATION_ONE_URI.getCompression());
     assertEquals(PRINT_HEADER, EXTRACT_CONFIGURATION_ONE_URI.printHeader());
-    assertEquals(FORMAT, EXTRACT_CONFIGURATION_ONE_URI.format());
+    assertEquals(FORMAT, EXTRACT_CONFIGURATION_ONE_URI.getFormat());
+  }
+
+  @Test
+  public void testBuilderDeprecated() {
+    assertEquals(TABLE_ID, DEPRECATED_EXTRACT_CONFIGURATION.sourceTable());
+    assertEquals(DESTINATION_URIS, DEPRECATED_EXTRACT_CONFIGURATION.destinationUris());
+    assertEquals(FIELD_DELIMITER, DEPRECATED_EXTRACT_CONFIGURATION.fieldDelimiter());
+    assertEquals(COMPRESSION, DEPRECATED_EXTRACT_CONFIGURATION.compression());
+    assertEquals(PRINT_HEADER, DEPRECATED_EXTRACT_CONFIGURATION.printHeader());
+    assertEquals(FORMAT, DEPRECATED_EXTRACT_CONFIGURATION.format());
+    assertEquals(TABLE_ID, DEPRECATED_EXTRACT_CONFIGURATION_ONE_URI.sourceTable());
+    assertEquals(ImmutableList.of(DESTINATION_URI),
+        DEPRECATED_EXTRACT_CONFIGURATION_ONE_URI.destinationUris());
+    assertEquals(FIELD_DELIMITER, DEPRECATED_EXTRACT_CONFIGURATION_ONE_URI.fieldDelimiter());
+    assertEquals(COMPRESSION, DEPRECATED_EXTRACT_CONFIGURATION_ONE_URI.compression());
+    assertEquals(PRINT_HEADER, DEPRECATED_EXTRACT_CONFIGURATION_ONE_URI.printHeader());
+    assertEquals(FORMAT, DEPRECATED_EXTRACT_CONFIGURATION_ONE_URI.format());
   }
 
   @Test
@@ -121,7 +152,7 @@ public class ExtractJobConfigurationTest {
   @Test
   public void testSetProjectId() {
     ExtractJobConfiguration configuration = EXTRACT_CONFIGURATION.setProjectId("p");
-    assertEquals("p", configuration.sourceTable().project());
+    assertEquals("p", configuration.getSourceTable().getProject());
   }
 
   private void compareExtractJobConfiguration(ExtractJobConfiguration expected,
@@ -129,11 +160,11 @@ public class ExtractJobConfigurationTest {
     assertEquals(expected, value);
     assertEquals(expected.hashCode(), value.hashCode());
     assertEquals(expected.toString(), value.toString());
-    assertEquals(expected.sourceTable(), value.sourceTable());
-    assertEquals(expected.destinationUris(), value.destinationUris());
-    assertEquals(expected.compression(), value.compression());
+    assertEquals(expected.getSourceTable(), value.getSourceTable());
+    assertEquals(expected.getDestinationUris(), value.getDestinationUris());
+    assertEquals(expected.getCompression(), value.getCompression());
     assertEquals(expected.printHeader(), value.printHeader());
-    assertEquals(expected.fieldDelimiter(), value.fieldDelimiter());
-    assertEquals(expected.format(), value.format());
+    assertEquals(expected.getFieldDelimiter(), value.getFieldDelimiter());
+    assertEquals(expected.getFormat(), value.getFormat());
   }
 }

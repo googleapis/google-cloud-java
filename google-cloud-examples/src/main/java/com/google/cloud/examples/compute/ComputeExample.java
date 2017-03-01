@@ -308,7 +308,7 @@ public class ComputeExample {
     public void run(Compute compute, ZoneId zone) {
       Iterator<DiskType> diskTypeIterator;
       if (zone != null) {
-        diskTypeIterator = compute.listDiskTypes(zone.zone()).iterateAll();
+        diskTypeIterator = compute.listDiskTypes(zone.getZone()).iterateAll();
       } else {
         diskTypeIterator = compute.listDiskTypes().iterateAll();
       }
@@ -363,7 +363,7 @@ public class ComputeExample {
     public void run(Compute compute, ZoneId zone) {
       Iterator<MachineType> machineTypeIterator;
       if (zone != null) {
-        machineTypeIterator = compute.listMachineTypes(zone.zone()).iterateAll();
+        machineTypeIterator = compute.listMachineTypes(zone.getZone()).iterateAll();
       } else {
         machineTypeIterator = compute.listMachineTypes().iterateAll();
       }
@@ -429,7 +429,7 @@ public class ComputeExample {
   private static class RegionInfoAction extends ComputeAction<RegionId> {
     @Override
     public void run(Compute compute, RegionId region) {
-      System.out.printf("Region info: %s%n", compute.getRegion(region.region()));
+      System.out.printf("Region info: %s%n", compute.getRegion(region.getRegion()));
     }
 
     @Override
@@ -475,7 +475,7 @@ public class ComputeExample {
   private static class ZoneInfoAction extends ComputeAction<ZoneId> {
     @Override
     public void run(Compute compute, ZoneId zone) {
-      System.out.printf("Zone info: %s%n", compute.getZone(zone.zone()));
+      System.out.printf("Zone info: %s%n", compute.getZone(zone.getZone()));
     }
 
     @Override
@@ -506,7 +506,7 @@ public class ComputeExample {
   private static class LicenseInfoAction extends ComputeAction<LicenseId> {
     @Override
     public void run(Compute compute, LicenseId license) {
-      System.out.printf("License info: %s%n", compute.getLicense(license.license()));
+      System.out.printf("License info: %s%n", compute.getLicense(license.getLicense()));
     }
 
     @Override
@@ -553,7 +553,8 @@ public class ComputeExample {
   private static class ListZoneOperationsAction extends ComputeAction<ZoneId> {
     @Override
     public void run(Compute compute, ZoneId zone) {
-      Iterator<Operation> operationIterator = compute.listZoneOperations(zone.zone()).iterateAll();
+      Iterator<Operation> operationIterator =
+          compute.listZoneOperations(zone.getZone()).iterateAll();
       while (operationIterator.hasNext()) {
         System.out.println(operationIterator.next());
       }
@@ -588,7 +589,7 @@ public class ComputeExample {
     @Override
     public void run(Compute compute, RegionId region) {
       Iterator<Operation> operationIterator =
-          compute.listRegionOperations(region.region()).iterateAll();
+          compute.listRegionOperations(region.getRegion()).iterateAll();
       while (operationIterator.hasNext()) {
         System.out.println(operationIterator.next());
       }
@@ -776,7 +777,7 @@ public class ComputeExample {
     public void run(Compute compute, RegionId region) {
       Iterator<Address> addressIterator;
       if (region != null) {
-        addressIterator = compute.listRegionAddresses(region.region()).iterateAll();
+        addressIterator = compute.listRegionAddresses(region.getRegion()).iterateAll();
       } else {
         addressIterator = compute.listAddresses().iterateAll();
       }
@@ -841,15 +842,15 @@ public class ComputeExample {
       }
       while (!operation.isDone()) {
         System.out.printf(
-            "Waiting for operation %s to complete%n", operation.operationId().operation());
+            "Waiting for operation %s to complete%n", operation.getOperationId().getOperation());
         Thread.sleep(1000L);
       }
       operation = operation.reload();
-      if (operation.errors() == null) {
+      if (operation.getErrors() == null) {
         System.out.printf("Address %s was deleted%n", address);
       } else {
         System.out.printf("Deletion of address %s failed%n", address);
-        System.out.printf("Error: %s%n", operation.errors());
+        System.out.printf("Error: %s%n", operation.getErrors());
       }
     }
   }
@@ -868,15 +869,15 @@ public class ComputeExample {
       Operation operation = compute.create(AddressInfo.of(address));
       while (!operation.isDone()) {
         System.out.printf(
-            "Waiting for operation %s to complete%n", operation.operationId().operation());
+            "Waiting for operation %s to complete%n", operation.getOperationId().getOperation());
         Thread.sleep(1000L);
       }
       operation = operation.reload();
-      if (operation.errors() == null) {
+      if (operation.getErrors() == null) {
         System.out.printf("Address %s was created%n", address);
       } else {
         System.out.printf("Creation of address %s failed%n", address);
-        System.out.printf("Error: %s%n", operation.errors());
+        System.out.printf("Error: %s%n", operation.getErrors());
       }
     }
   }
@@ -926,7 +927,7 @@ public class ComputeExample {
   private static class SnapshotInfoAction extends SnapshotAction {
     @Override
     public void run(Compute compute, SnapshotId snapshot) {
-      System.out.printf("Snapshot info: %s%n", compute.getSnapshot(snapshot.snapshot()));
+      System.out.printf("Snapshot info: %s%n", compute.getSnapshot(snapshot.getSnapshot()));
     }
   }
 
@@ -939,22 +940,22 @@ public class ComputeExample {
   private static class DeleteSnapshotAction extends SnapshotAction {
     @Override
     public void run(Compute compute, SnapshotId snapshot) throws InterruptedException {
-      Operation operation = compute.deleteSnapshot(snapshot.snapshot());
+      Operation operation = compute.deleteSnapshot(snapshot.getSnapshot());
       if (operation == null) {
         System.out.printf("Snapshot %s does not exist%n", snapshot);
         return;
       }
       while (!operation.isDone()) {
         System.out.printf(
-            "Waiting for operation %s to complete%n", operation.operationId().operation());
+            "Waiting for operation %s to complete%n", operation.getOperationId().getOperation());
         Thread.sleep(1000L);
       }
       operation = operation.reload();
-      if (operation.errors() == null) {
+      if (operation.getErrors() == null) {
         System.out.printf("Snapshot %s was deleted%n", snapshot);
       } else {
         System.out.printf("Deletion of snapshot %s failed%n", snapshot);
-        System.out.printf("Error: %s%n", operation.errors());
+        System.out.printf("Error: %s%n", operation.getErrors());
       }
     }
   }
@@ -971,15 +972,15 @@ public class ComputeExample {
       Operation operation = compute.create(snapshot);
       while (!operation.isDone()) {
         System.out.printf(
-            "Waiting for operation %s to complete%n", operation.operationId().operation());
+            "Waiting for operation %s to complete%n", operation.getOperationId().getOperation());
         Thread.sleep(1000L);
       }
       operation = operation.reload();
-      if (operation.errors() == null) {
-        System.out.printf("Snapshot %s was created%n", snapshot.snapshotId());
+      if (operation.getErrors() == null) {
+        System.out.printf("Snapshot %s was created%n", snapshot.getSnapshotId());
       } else {
-        System.out.printf("Creation of snapshot %s failed%n", snapshot.snapshotId());
-        System.out.printf("Error: %s%n", operation.errors());
+        System.out.printf("Creation of snapshot %s failed%n", snapshot.getSnapshotId());
+        System.out.printf("Error: %s%n", operation.getErrors());
       }
     }
 
@@ -1070,15 +1071,15 @@ public class ComputeExample {
       }
       while (!operation.isDone()) {
         System.out.printf(
-            "Waiting for operation %s to complete%n", operation.operationId().operation());
+            "Waiting for operation %s to complete%n", operation.getOperationId().getOperation());
         Thread.sleep(1000L);
       }
       operation = operation.reload();
-      if (operation.errors() == null) {
+      if (operation.getErrors() == null) {
         System.out.printf("Image %s was deleted%n", image);
       } else {
         System.out.printf("Deletion of image %s failed%n", image);
-        System.out.printf("Error: %s%n", operation.errors());
+        System.out.printf("Error: %s%n", operation.getErrors());
       }
     }
   }
@@ -1095,15 +1096,15 @@ public class ComputeExample {
       Operation operation = compute.create(image);
       while (!operation.isDone()) {
         System.out.printf(
-            "Waiting for operation %s to complete%n", operation.operationId().operation());
+            "Waiting for operation %s to complete%n", operation.getOperationId().getOperation());
         Thread.sleep(1000L);
       }
       operation = operation.reload();
-      if (operation.errors() == null) {
-        System.out.printf("Image %s was created%n", image.imageId());
+      if (operation.getErrors() == null) {
+        System.out.printf("Image %s was created%n", image.getImageId());
       } else {
-        System.out.printf("Creation of image %s failed%n", image.imageId());
-        System.out.printf("Error: %s%n", operation.errors());
+        System.out.printf("Creation of image %s failed%n", image.getImageId());
+        System.out.printf("Error: %s%n", operation.getErrors());
       }
     }
 
@@ -1178,15 +1179,15 @@ public class ComputeExample {
       }
       while (!operation.isDone()) {
         System.out.printf(
-            "Waiting for operation %s to complete%n", operation.operationId().operation());
+            "Waiting for operation %s to complete%n", operation.getOperationId().getOperation());
         Thread.sleep(1000L);
       }
       operation = operation.reload();
-      if (operation.errors() == null) {
+      if (operation.getErrors() == null) {
         System.out.printf("Disk %s was deleted%n", disk);
       } else {
         System.out.printf("Deletion of disk %s failed%n", disk);
-        System.out.printf("Error: %s%n", operation.errors());
+        System.out.printf("Error: %s%n", operation.getErrors());
       }
     }
   }
@@ -1213,15 +1214,15 @@ public class ComputeExample {
       Operation operation = compute.create(disk);
       while (!operation.isDone()) {
         System.out.printf(
-            "Waiting for operation %s to complete%n", operation.operationId().operation());
+            "Waiting for operation %s to complete%n", operation.getOperationId().getOperation());
         Thread.sleep(1000L);
       }
       operation = operation.reload();
-      if (operation.errors() == null) {
-        System.out.printf("Disk %s was created%n", disk.diskId());
+      if (operation.getErrors() == null) {
+        System.out.printf("Disk %s was created%n", disk.getDiskId());
       } else {
-        System.out.printf("Creation of disk %s failed%n", disk.diskId());
-        System.out.printf("Error: %s%n", operation.errors());
+        System.out.printf("Creation of disk %s failed%n", disk.getDiskId());
+        System.out.printf("Error: %s%n", operation.getErrors());
       }
     }
 
@@ -1245,13 +1246,13 @@ public class ComputeExample {
         DiskConfiguration configuration;
         if (args.length == 4) {
           try {
-            configuration = StandardDiskConfiguration.of(DiskTypeId.of(diskId.zone(), diskType),
+            configuration = StandardDiskConfiguration.of(DiskTypeId.of(diskId.getZone(), diskType),
                 Integer.parseInt(args[3]));
           } catch (NumberFormatException ex) {
             throw new IllegalArgumentException("Error parsing disk size parameter.");
           }
         } else if (args.length == 3) {
-          configuration = StandardDiskConfiguration.of(DiskTypeId.of(diskId.zone(), diskType));
+          configuration = StandardDiskConfiguration.of(DiskTypeId.of(diskId.getZone(), diskType));
         } else {
           throw new IllegalArgumentException("Too many arguments.");
         }
@@ -1365,7 +1366,7 @@ public class ComputeExample {
   private static class NetworkInfoAction extends NetworkAction {
     @Override
     public void run(Compute compute, NetworkId network) {
-      System.out.printf("Network info: %s%n", compute.getNetwork(network.network()));
+      System.out.printf("Network info: %s%n", compute.getNetwork(network.getNetwork()));
     }
   }
 
@@ -1378,22 +1379,22 @@ public class ComputeExample {
   private static class DeleteNetworkAction extends NetworkAction {
     @Override
     public void run(Compute compute, NetworkId network) throws InterruptedException {
-      Operation operation = compute.deleteNetwork(network.network());
+      Operation operation = compute.deleteNetwork(network.getNetwork());
       if (operation == null) {
         System.out.printf("Network %s does not exist%n", network);
         return;
       }
       while (!operation.isDone()) {
         System.out.printf(
-            "Waiting for operation %s to complete%n", operation.operationId().operation());
+            "Waiting for operation %s to complete%n", operation.getOperationId().getOperation());
         Thread.sleep(1000L);
       }
       operation = operation.reload();
-      if (operation.errors() == null) {
+      if (operation.getErrors() == null) {
         System.out.printf("Network %s was deleted%n", network);
       } else {
         System.out.printf("Deletion of network %s failed%n", network);
-        System.out.printf("Error: %s%n", operation.errors());
+        System.out.printf("Error: %s%n", operation.getErrors());
       }
     }
   }
@@ -1404,15 +1405,15 @@ public class ComputeExample {
       Operation operation = compute.create(network);
       while (!operation.isDone()) {
         System.out.printf(
-            "Waiting for operation %s to complete%n", operation.operationId().operation());
+            "Waiting for operation %s to complete%n", operation.getOperationId().getOperation());
         Thread.sleep(1000L);
       }
       operation = operation.reload();
-      if (operation.errors() == null) {
-        System.out.printf("Network %s was created%n", network.networkId());
+      if (operation.getErrors() == null) {
+        System.out.printf("Network %s was created%n", network.getNetworkId());
       } else {
-        System.out.printf("Creation of network %s failed%n", network.networkId());
-        System.out.printf("Error: %s%n", operation.errors());
+        System.out.printf("Creation of network %s failed%n", network.getNetworkId());
+        System.out.printf("Error: %s%n", operation.getErrors());
       }
     }
   }
@@ -1491,7 +1492,7 @@ public class ComputeExample {
     public void run(Compute compute, RegionId region) {
       Iterator<Subnetwork> subnetworkIterator;
       if (region != null) {
-        subnetworkIterator = compute.listSubnetworks(region.region()).iterateAll();
+        subnetworkIterator = compute.listSubnetworks(region.getRegion()).iterateAll();
       } else {
         subnetworkIterator = compute.listSubnetworks().iterateAll();
       }
@@ -1550,15 +1551,15 @@ public class ComputeExample {
       }
       while (!operation.isDone()) {
         System.out.printf(
-            "Waiting for operation %s to complete%n", operation.operationId().operation());
+            "Waiting for operation %s to complete%n", operation.getOperationId().getOperation());
         Thread.sleep(1000L);
       }
       operation = operation.reload();
-      if (operation.errors() == null) {
+      if (operation.getErrors() == null) {
         System.out.printf("Subnetwork %s was deleted%n", subnetwork);
       } else {
         System.out.printf("Deletion of subnetwork %s failed%n", subnetwork);
-        System.out.printf("Error: %s%n", operation.errors());
+        System.out.printf("Error: %s%n", operation.getErrors());
       }
     }
   }
@@ -1575,15 +1576,15 @@ public class ComputeExample {
       Operation operation = compute.create(subnetwork);
       while (!operation.isDone()) {
         System.out.printf(
-            "Waiting for operation %s to complete%n", operation.operationId().operation());
+            "Waiting for operation %s to complete%n", operation.getOperationId().getOperation());
         Thread.sleep(1000L);
       }
       operation = operation.reload();
-      if (operation.errors() == null) {
-        System.out.printf("Subnetwork %s was created%n", subnetwork.subnetworkId());
+      if (operation.getErrors() == null) {
+        System.out.printf("Subnetwork %s was created%n", subnetwork.getSubnetworkId());
       } else {
-        System.out.printf("Creation of subnetwork %s failed%n", subnetwork.subnetworkId());
-        System.out.printf("Error: %s%n", operation.errors());
+        System.out.printf("Creation of subnetwork %s failed%n", subnetwork.getSubnetworkId());
+        System.out.printf("Error: %s%n", operation.getErrors());
       }
     }
 
@@ -1618,7 +1619,7 @@ public class ComputeExample {
     public void run(Compute compute, ZoneId zone) {
       Iterator<Instance> instanceIterator;
       if (zone != null) {
-        instanceIterator = compute.listInstances(zone.zone()).iterateAll();
+        instanceIterator = compute.listInstances(zone.getZone()).iterateAll();
       } else {
         instanceIterator = compute.listInstances().iterateAll();
       }
@@ -1677,15 +1678,15 @@ public class ComputeExample {
       }
       while (!operation.isDone()) {
         System.out.printf(
-            "Waiting for operation %s to complete%n", operation.operationId().operation());
+            "Waiting for operation %s to complete%n", operation.getOperationId().getOperation());
         Thread.sleep(1000L);
       }
       operation = operation.reload();
-      if (operation.errors() == null) {
+      if (operation.getErrors() == null) {
         System.out.printf("Instance %s was deleted%n", instance);
       } else {
         System.out.printf("Deletion of instance %s failed%n", instance);
-        System.out.printf("Error: %s%n", operation.errors());
+        System.out.printf("Error: %s%n", operation.getErrors());
       }
     }
   }
@@ -1702,15 +1703,15 @@ public class ComputeExample {
       Operation operation = compute.create(instance);
       while (!operation.isDone()) {
         System.out.printf(
-            "Waiting for operation %s to complete%n", operation.operationId().operation());
+            "Waiting for operation %s to complete%n", operation.getOperationId().getOperation());
         Thread.sleep(1000L);
       }
       operation = operation.reload();
-      if (operation.errors() == null) {
-        System.out.printf("Instance %s was created%n", instance.instanceId());
+      if (operation.getErrors() == null) {
+        System.out.printf("Instance %s was created%n", instance.getInstanceId());
       } else {
-        System.out.printf("Creation of instance %s failed%n", instance.instanceId());
-        System.out.printf("Error: %s%n", operation.errors());
+        System.out.printf("Creation of instance %s failed%n", instance.getInstanceId());
+        System.out.printf("Error: %s%n", operation.getErrors());
       }
     }
 
@@ -1724,7 +1725,7 @@ public class ComputeExample {
         MachineTypeId machineTypeId = MachineTypeId.of(zone, args[2]);
         DiskId diskId = DiskId.of(zone, args[3]);
         AttachedDisk disk =
-            AttachedDisk.of(PersistentDiskConfiguration.builder(diskId).boot(true).build());
+            AttachedDisk.of(PersistentDiskConfiguration.newBuilder(diskId).setBoot(true).build());
         NetworkInterface networkInterface = NetworkInterface.of(args[4]);
         return InstanceInfo.of(instanceId, machineTypeId, disk, networkInterface);
       } else if (args.length > 5) {
@@ -1813,17 +1814,17 @@ public class ComputeExample {
       }
       while (!operation.isDone()) {
         System.out.printf(
-            "Waiting for operation %s to complete%n", operation.operationId().operation());
+            "Waiting for operation %s to complete%n", operation.getOperationId().getOperation());
         Thread.sleep(1000L);
       }
       operation = operation.reload();
-      if (operation.errors() == null) {
+      if (operation.getErrors() == null) {
         System.out.printf("Access config added to network interface %s of instance %s%n",
             networkInterface, instance);
       } else {
         System.out.printf("Attempt to add access config to network interface %s of instance %s%n",
             networkInterface, instance);
-        System.out.printf("Error: %s%n", operation.errors());
+        System.out.printf("Error: %s%n", operation.getErrors());
       }
     }
 
@@ -1836,10 +1837,10 @@ public class ComputeExample {
         String accessConfig = args[3];
         if (args.length == 4) {
           return Triple.of(instance, networkInterface,
-              AccessConfig.builder().name(accessConfig).build());
+              AccessConfig.newBuilder().setName(accessConfig).build());
         } else if (args.length == 5) {
           return Triple.of(instance, networkInterface,
-              AccessConfig.builder().name(accessConfig).natIp(args[4]).build());
+              AccessConfig.newBuilder().setName(accessConfig).setNatIp(args[4]).build());
         } else {
           message = "Too many arguments.";
         }
@@ -1877,18 +1878,18 @@ public class ComputeExample {
       }
       while (!operation.isDone()) {
         System.out.printf(
-            "Waiting for operation %s to complete%n", operation.operationId().operation());
+            "Waiting for operation %s to complete%n", operation.getOperationId().getOperation());
         Thread.sleep(1000L);
       }
       operation = operation.reload();
-      if (operation.errors() == null) {
+      if (operation.getErrors() == null) {
         System.out.printf("Access config deleted from network interface %s of instance %s%n",
             networkInterface, instance);
       } else {
         System.out.printf(
             "Attempt to delete access config from network interface %s of instance %s failed%n",
             networkInterface, instance);
-        System.out.printf("Error: %s%n", operation.errors());
+        System.out.printf("Error: %s%n", operation.getErrors());
       }
     }
 
@@ -1935,15 +1936,15 @@ public class ComputeExample {
       }
       while (!operation.isDone()) {
         System.out.printf(
-            "Waiting for operation %s to complete%n", operation.operationId().operation());
+            "Waiting for operation %s to complete%n", operation.getOperationId().getOperation());
         Thread.sleep(1000L);
       }
       operation = operation.reload();
-      if (operation.errors() == null) {
+      if (operation.getErrors() == null) {
         System.out.printf("Disk attached to instance %s%n", instance);
       } else {
         System.out.printf("Attempt to attach disk to instance %s failed%n", instance);
-        System.out.printf("Error: %s%n", operation.errors());
+        System.out.printf("Error: %s%n", operation.getErrors());
       }
     }
 
@@ -1990,15 +1991,15 @@ public class ComputeExample {
       }
       while (!operation.isDone()) {
         System.out.printf(
-            "Waiting for operation %s to complete%n", operation.operationId().operation());
+            "Waiting for operation %s to complete%n", operation.getOperationId().getOperation());
         Thread.sleep(1000L);
       }
       operation = operation.reload();
-      if (operation.errors() == null) {
+      if (operation.getErrors() == null) {
         System.out.printf("Disk detached from instance %s%n", instance);
       } else {
         System.out.printf("Attempt to detach disk from instance %s failed%n", instance);
-        System.out.printf("Error: %s%n", operation.errors());
+        System.out.printf("Error: %s%n", operation.getErrors());
       }
     }
 
@@ -2046,16 +2047,16 @@ public class ComputeExample {
       }
       while (!operation.isDone()) {
         System.out.printf(
-            "Waiting for operation %s to complete%n", operation.operationId().operation());
+            "Waiting for operation %s to complete%n", operation.getOperationId().getOperation());
         Thread.sleep(1000L);
       }
       operation = operation.reload();
-      if (operation.errors() == null) {
+      if (operation.getErrors() == null) {
         System.out.printf("Auto-delete set for device %s of instance %s%n", deviceName, instance);
       } else {
         System.out.printf("Attempt to set auto-delete for device %s of instance %s failed%n",
             deviceName, instance);
-        System.out.printf("Error: %s%n", operation.errors());
+        System.out.printf("Error: %s%n", operation.getErrors());
       }
     }
 
@@ -2112,15 +2113,15 @@ public class ComputeExample {
       }
       while (!operation.isDone()) {
         System.out.printf(
-            "Waiting for operation %s to complete%n", operation.operationId().operation());
+            "Waiting for operation %s to complete%n", operation.getOperationId().getOperation());
         Thread.sleep(1000L);
       }
       operation = operation.reload();
-      if (operation.errors() == null) {
+      if (operation.getErrors() == null) {
         System.out.printf("Machine type set for instance %s%n", instance);
       } else {
         System.out.printf("Attempt to set machine type for instance %s failed%n", instance);
-        System.out.printf("Error: %s%n", operation.errors());
+        System.out.printf("Error: %s%n", operation.getErrors());
       }
     }
 
@@ -2166,15 +2167,15 @@ public class ComputeExample {
       Operation operation = instance.setTags(tags);
       while (!operation.isDone()) {
         System.out.printf(
-            "Waiting for operation %s to complete%n", operation.operationId().operation());
+            "Waiting for operation %s to complete%n", operation.getOperationId().getOperation());
         Thread.sleep(1000L);
       }
       operation = operation.reload();
-      if (operation.errors() == null) {
+      if (operation.getErrors() == null) {
         System.out.printf("Tags set for instance %s%n", instanceId);
       } else {
         System.out.printf("Attempt to set tags for instance %s failed%n", instanceId);
-        System.out.printf("Error: %s%n", operation.errors());
+        System.out.printf("Error: %s%n", operation.getErrors());
       }
     }
 
@@ -2217,15 +2218,15 @@ public class ComputeExample {
       Operation operation = instance.setMetadata(metadata);
       while (!operation.isDone()) {
         System.out.printf(
-            "Waiting for operation %s to complete%n", operation.operationId().operation());
+            "Waiting for operation %s to complete%n", operation.getOperationId().getOperation());
         Thread.sleep(1000L);
       }
       operation = operation.reload();
-      if (operation.errors() == null) {
+      if (operation.getErrors() == null) {
         System.out.printf("Metadata set for instance %s%n", instanceId);
       } else {
         System.out.printf("Attempt to set metadata for instance %s failed%n", instanceId);
-        System.out.printf("Error: %s%n", operation.errors());
+        System.out.printf("Error: %s%n", operation.getErrors());
       }
     }
 
@@ -2272,16 +2273,16 @@ public class ComputeExample {
       }
       while (!operation.isDone()) {
         System.out.printf(
-            "Waiting for operation %s to complete%n", operation.operationId().operation());
+            "Waiting for operation %s to complete%n", operation.getOperationId().getOperation());
         Thread.sleep(1000L);
       }
       operation = operation.reload();
-      if (operation.errors() == null) {
+      if (operation.getErrors() == null) {
         System.out.printf("Scheduling options set for instance %s%n", instanceId);
       } else {
         System.out.printf(
             "Attempt to set scheduling options for instance %s failed%n", instanceId);
-        System.out.printf("Error: %s%n", operation.errors());
+        System.out.printf("Error: %s%n", operation.getErrors());
       }
     }
 
@@ -2338,15 +2339,15 @@ public class ComputeExample {
       }
       while (!operation.isDone()) {
         System.out.printf(
-            "Waiting for operation %s to complete%n", operation.operationId().operation());
+            "Waiting for operation %s to complete%n", operation.getOperationId().getOperation());
         Thread.sleep(1000L);
       }
       operation = operation.reload();
-      if (operation.errors() == null) {
+      if (operation.getErrors() == null) {
         System.out.printf("Instance %s was reset%n", instance);
       } else {
         System.out.printf("Attempt to reset instance %s failed%n", instance);
-        System.out.printf("Error: %s%n", operation.errors());
+        System.out.printf("Error: %s%n", operation.getErrors());
       }
     }
   }
@@ -2367,15 +2368,15 @@ public class ComputeExample {
       }
       while (!operation.isDone()) {
         System.out.printf(
-            "Waiting for operation %s to complete%n", operation.operationId().operation());
+            "Waiting for operation %s to complete%n", operation.getOperationId().getOperation());
         Thread.sleep(1000L);
       }
       operation = operation.reload();
-      if (operation.errors() == null) {
+      if (operation.getErrors() == null) {
         System.out.printf("Instance %s was stopped%n", instance);
       } else {
         System.out.printf("Attempt to stop instance %s failed%n", instance);
-        System.out.printf("Error: %s%n", operation.errors());
+        System.out.printf("Error: %s%n", operation.getErrors());
       }
     }
   }
@@ -2396,15 +2397,15 @@ public class ComputeExample {
       }
       while (!operation.isDone()) {
         System.out.printf(
-            "Waiting for operation %s to complete%n", operation.operationId().operation());
+            "Waiting for operation %s to complete%n", operation.getOperationId().getOperation());
         Thread.sleep(1000L);
       }
       operation = operation.reload();
-      if (operation.errors() == null) {
+      if (operation.getErrors() == null) {
         System.out.printf("Instance %s was started%n", instance);
       } else {
         System.out.printf("Attempt to start instance %s failed%n", instance);
-        System.out.printf("Error: %s%n", operation.errors());
+        System.out.printf("Error: %s%n", operation.getErrors());
       }
     }
   }
@@ -2499,12 +2500,12 @@ public class ComputeExample {
       printUsage();
       return;
     }
-    ComputeOptions.Builder optionsBuilder = ComputeOptions.builder();
+    ComputeOptions.Builder optionsBuilder = ComputeOptions.newBuilder();
     ComputeAction action;
     String actionName;
     if (args.length >= 2 && !ACTIONS.containsKey(args[0])) {
       actionName = args[1];
-      optionsBuilder.projectId(args[0]);
+      optionsBuilder.setProjectId(args[0]);
       action = ACTIONS.get(args[1]);
       args = Arrays.copyOfRange(args, 2, args.length);
     } else {
@@ -2517,7 +2518,7 @@ public class ComputeExample {
       printUsage();
       return;
     }
-    Compute compute = optionsBuilder.build().service();
+    Compute compute = optionsBuilder.build().getService();
     Object arg;
     try {
       arg = action.parse(args);

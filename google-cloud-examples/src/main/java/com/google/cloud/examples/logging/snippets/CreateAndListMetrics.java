@@ -36,11 +36,11 @@ public class CreateAndListMetrics {
   public static void main(String... args) throws Exception {
     // Create a service object
     // Credentials are inferred from the environment
-    try(Logging logging = LoggingOptions.defaultInstance().service()) {
+    try(Logging logging = LoggingOptions.getDefaultInstance().getService()) {
 
       // Create a metric
-      MetricInfo metricInfo = MetricInfo.builder("test-metric", "severity >= ERROR")
-          .description("Log entries with severity higher or equal to ERROR")
+      MetricInfo metricInfo = MetricInfo.newBuilder("test-metric", "severity >= ERROR")
+          .setDescription("Log entries with severity higher or equal to ERROR")
           .build();
       logging.create(metricInfo);
 

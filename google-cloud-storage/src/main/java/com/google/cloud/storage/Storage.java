@@ -19,16 +19,13 @@ package com.google.cloud.storage;
 import static com.google.common.base.Preconditions.checkArgument;
 import static com.google.common.base.Preconditions.checkNotNull;
 
-import com.google.cloud.AuthCredentials;
-import com.google.cloud.AuthCredentials.AppEngineAuthCredentials;
-import com.google.cloud.AuthCredentials.ServiceAccountAuthCredentials;
+import com.google.auth.ServiceAccountSigner;
+import com.google.auth.ServiceAccountSigner.SigningException;
 import com.google.cloud.FieldSelector;
 import com.google.cloud.FieldSelector.Helper;
 import com.google.cloud.Page;
 import com.google.cloud.ReadChannel;
 import com.google.cloud.Service;
-import com.google.cloud.ServiceAccountSigner;
-import com.google.cloud.ServiceAccountSigner.SigningException;
 import com.google.cloud.WriteChannel;
 import com.google.cloud.storage.Acl.Entity;
 import com.google.cloud.storage.spi.StorageRpc;
@@ -74,7 +71,7 @@ public interface Storage extends Service<StorageOptions> {
       this.entry = entry;
     }
 
-    String entry() {
+    String getEntry() {
       return entry;
     }
   }
@@ -104,7 +101,13 @@ public interface Storage extends Service<StorageOptions> {
     }
 
     @Override
+    @Deprecated
     public String selector() {
+      return getSelector();
+    }
+
+    @Override
+    public String getSelector() {
       return selector;
     }
   }
@@ -144,7 +147,13 @@ public interface Storage extends Service<StorageOptions> {
     }
 
     @Override
+    @Deprecated
     public String selector() {
+      return getSelector();
+    }
+
+    @Override
+    public String getSelector() {
       return selector;
     }
   }
@@ -168,14 +177,15 @@ public interface Storage extends Service<StorageOptions> {
      * Returns an option for specifying bucket's predefined ACL configuration.
      */
     public static BucketTargetOption predefinedAcl(PredefinedAcl acl) {
-      return new BucketTargetOption(StorageRpc.Option.PREDEFINED_ACL, acl.entry());
+      return new BucketTargetOption(StorageRpc.Option.PREDEFINED_ACL, acl.getEntry());
     }
 
     /**
      * Returns an option for specifying bucket's default ACL configuration for blobs.
      */
     public static BucketTargetOption predefinedDefaultObjectAcl(PredefinedAcl acl) {
-      return new BucketTargetOption(StorageRpc.Option.PREDEFINED_DEFAULT_OBJECT_ACL, acl.entry());
+      return new BucketTargetOption(StorageRpc.Option.PREDEFINED_DEFAULT_OBJECT_ACL,
+          acl.getEntry());
     }
 
     /**
@@ -285,7 +295,7 @@ public interface Storage extends Service<StorageOptions> {
      * Returns an option for specifying blob's predefined ACL configuration.
      */
     public static BlobTargetOption predefinedAcl(PredefinedAcl acl) {
-      return new BlobTargetOption(StorageRpc.Option.PREDEFINED_ACL, acl.entry());
+      return new BlobTargetOption(StorageRpc.Option.PREDEFINED_ACL, acl.getEntry());
     }
 
     /**
@@ -347,15 +357,15 @@ public interface Storage extends Service<StorageOptions> {
     }
 
     static Tuple<BlobInfo, BlobTargetOption[]> convert(BlobInfo info, BlobWriteOption... options) {
-      BlobInfo.Builder infoBuilder = info.toBuilder().crc32c(null).md5(null);
+      BlobInfo.Builder infoBuilder = info.toBuilder().setCrc32c(null).setMd5(null);
       List<BlobTargetOption> targetOptions = Lists.newArrayListWithCapacity(options.length);
       for (BlobWriteOption option : options) {
         switch (option.option) {
           case IF_CRC32C_MATCH:
-            infoBuilder.crc32c(info.crc32c());
+            infoBuilder.setCrc32c(info.getCrc32c());
             break;
           case IF_MD5_MATCH:
-            infoBuilder.md5(info.md5());
+            infoBuilder.setMd5(info.getMd5());
             break;
           default:
             targetOptions.add(option.toTargetOption());
@@ -420,7 +430,7 @@ public interface Storage extends Service<StorageOptions> {
      * Returns an option for specifying blob's predefined ACL configuration.
      */
     public static BlobWriteOption predefinedAcl(PredefinedAcl acl) {
-      return new BlobWriteOption(Option.PREDEFINED_ACL, acl.entry());
+      return new BlobWriteOption(Option.PREDEFINED_ACL, acl.getEntry());
     }
 
     /**
@@ -797,11 +807,11 @@ public interface Storage extends Service<StorageOptions> {
       this.value = value;
     }
 
-    Option option() {
+    Option getOption() {
       return option;
     }
 
-    Object value() {
+    Object getValue() {
       return value;
     }
 
@@ -873,11 +883,21 @@ public interface Storage extends Service<StorageOptions> {
         this.generation = generation;
       }
 
+      @Deprecated
       public String name() {
+        return getName();
+      }
+
+      public String getName() {
         return name;
       }
 
+      @Deprecated
       public Long generation() {
+        return getGeneration();
+      }
+
+      public Long getGeneration() {
         return generation;
       }
     }
@@ -916,7 +936,15 @@ public interface Storage extends Service<StorageOptions> {
       /**
        * Sets compose operation's target blob.
        */
+      @Deprecated
       public Builder target(BlobInfo target) {
+        return setTarget(target);
+      }
+
+      /**
+       * Sets compose operation's target blob.
+       */
+      public Builder setTarget(BlobInfo target) {
         this.target = target;
         return this;
       }
@@ -924,7 +952,15 @@ public interface Storage extends Service<StorageOptions> {
       /**
        * Sets compose operation's target blob options.
        */
+      @Deprecated
       public Builder targetOptions(BlobTargetOption... options) {
+        return setTargetOptions(options);
+      }
+
+      /**
+       * Sets compose operation's target blob options.
+       */
+      public Builder setTargetOptions(BlobTargetOption... options) {
         Collections.addAll(targetOptions, options);
         return this;
       }
@@ -932,7 +968,15 @@ public interface Storage extends Service<StorageOptions> {
       /**
        * Sets compose operation's target blob options.
        */
+      @Deprecated
       public Builder targetOptions(Iterable<BlobTargetOption> options) {
+        return setTargetOptions(options);
+      }
+
+      /**
+       * Sets compose operation's target blob options.
+       */
+      public Builder setTargetOptions(Iterable<BlobTargetOption> options) {
         Iterables.addAll(targetOptions, options);
         return this;
       }
@@ -956,21 +1000,45 @@ public interface Storage extends Service<StorageOptions> {
     /**
      * Returns compose operation's source blobs.
      */
+    @Deprecated
     public List<SourceBlob> sourceBlobs() {
+      return getSourceBlobs();
+    }
+
+    /**
+     * Returns compose operation's source blobs.
+     */
+    public List<SourceBlob> getSourceBlobs() {
       return sourceBlobs;
     }
 
     /**
      * Returns compose operation's target blob.
      */
+    @Deprecated
     public BlobInfo target() {
+      return getTarget();
+    }
+
+    /**
+     * Returns compose operation's target blob.
+     */
+    public BlobInfo getTarget() {
       return target;
     }
 
     /**
      * Returns compose operation's target blob's options.
      */
+    @Deprecated
     public List<BlobTargetOption> targetOptions() {
+      return getTargetOptions();
+    }
+
+    /**
+     * Returns compose operation's target blob's options.
+     */
+    public List<BlobTargetOption> getTargetOptions() {
       return targetOptions;
     }
 
@@ -981,7 +1049,7 @@ public interface Storage extends Service<StorageOptions> {
      * @param target target blob
      */
     public static ComposeRequest of(Iterable<String> sources, BlobInfo target) {
-      return builder().target(target).addSource(sources).build();
+      return newBuilder().setTarget(target).addSource(sources).build();
     }
 
     /**
@@ -992,13 +1060,21 @@ public interface Storage extends Service<StorageOptions> {
      * @param target target blob name
      */
     public static ComposeRequest of(String bucket, Iterable<String> sources, String target) {
-      return of(sources, BlobInfo.builder(BlobId.of(bucket, target)).build());
+      return of(sources, BlobInfo.newBuilder(BlobId.of(bucket, target)).build());
     }
 
     /**
      * Returns a {@code ComposeRequest} builder.
      */
+    @Deprecated
     public static Builder builder() {
+      return newBuilder();
+    }
+
+    /**
+     * Returns a {@code ComposeRequest} builder.
+     */
+    public static Builder newBuilder() {
       return new Builder();
     }
   }
@@ -1031,7 +1107,17 @@ public interface Storage extends Service<StorageOptions> {
        *
        * @return the builder
        */
+      @Deprecated
       public Builder source(String bucket, String blob) {
+        return setSource(bucket, blob);
+      }
+
+      /**
+       * Sets the blob to copy given bucket and blob name.
+       *
+       * @return the builder
+       */
+      public Builder setSource(String bucket, String blob) {
         this.source = BlobId.of(bucket, blob);
         return this;
       }
@@ -1041,7 +1127,17 @@ public interface Storage extends Service<StorageOptions> {
        *
        * @return the builder
        */
+      @Deprecated
       public Builder source(BlobId source) {
+        return setSource(source);
+      }
+
+      /**
+       * Sets the blob to copy given a {@link BlobId}.
+       *
+       * @return the builder
+       */
+      public Builder setSource(BlobId source) {
         this.source = source;
         return this;
       }
@@ -1051,7 +1147,17 @@ public interface Storage extends Service<StorageOptions> {
        *
        * @return the builder
        */
+      @Deprecated
       public Builder sourceOptions(BlobSourceOption... options) {
+        return setSourceOptions(options);
+      }
+
+      /**
+       * Sets blob's source options.
+       *
+       * @return the builder
+       */
+      public Builder setSourceOptions(BlobSourceOption... options) {
         Collections.addAll(sourceOptions, options);
         return this;
       }
@@ -1061,7 +1167,17 @@ public interface Storage extends Service<StorageOptions> {
        *
        * @return the builder
        */
+      @Deprecated
       public Builder sourceOptions(Iterable<BlobSourceOption> options) {
+        return setSourceOptions(options);
+      }
+
+      /**
+       * Sets blob's source options.
+       *
+       * @return the builder
+       */
+      public Builder setSourceOptions(Iterable<BlobSourceOption> options) {
         Iterables.addAll(sourceOptions, options);
         return this;
       }
@@ -1071,9 +1187,19 @@ public interface Storage extends Service<StorageOptions> {
        *
        * @return the builder
        */
+      @Deprecated
       public Builder target(BlobId targetId) {
+        return setTarget(targetId);
+      }
+
+      /**
+       * Sets the copy target. Target blob information is copied from source.
+       *
+       * @return the builder
+       */
+      public Builder setTarget(BlobId targetId) {
         this.overrideInfo = false;
-        this.target = BlobInfo.builder(targetId).build();
+        this.target = BlobInfo.newBuilder(targetId).build();
         return this;
       }
 
@@ -1085,7 +1211,33 @@ public interface Storage extends Service<StorageOptions> {
        *
        * @return the builder
        */
+      @Deprecated
       public Builder target(BlobInfo target, BlobTargetOption... options) {
+        return setTarget(target, options);
+      }
+
+      /**
+       * Sets the copy target. Target blob information is copied from source, except for those
+       * options specified in {@code options}.
+       *
+       * @return the builder
+       */
+      public Builder setTarget(BlobId targetId, BlobTargetOption... options) {
+        this.overrideInfo = false;
+        this.target = BlobInfo.newBuilder(targetId).build();
+        Collections.addAll(targetOptions, options);
+        return this;
+      }
+
+      /**
+       * Sets the copy target and target options. {@code target} parameter is used to override
+       * source blob information (e.g. {@code contentType}, {@code contentLanguage}). Target blob
+       * information is set exactly to {@code target}, no information is inherited from the source
+       * blob.
+       *
+       * @return the builder
+       */
+      public Builder setTarget(BlobInfo target, BlobTargetOption... options) {
         this.overrideInfo = true;
         this.target = checkNotNull(target);
         Collections.addAll(targetOptions, options);
@@ -1100,9 +1252,35 @@ public interface Storage extends Service<StorageOptions> {
        *
        * @return the builder
        */
+      @Deprecated
       public Builder target(BlobInfo target, Iterable<BlobTargetOption> options) {
+        return setTarget(target, options);
+      }
+
+      /**
+       * Sets the copy target and target options. {@code target} parameter is used to override
+       * source blob information (e.g. {@code contentType}, {@code contentLanguage}). Target blob
+       * information is set exactly to {@code target}, no information is inherited from the source
+       * blob.
+       *
+       * @return the builder
+       */
+      public Builder setTarget(BlobInfo target, Iterable<BlobTargetOption> options) {
         this.overrideInfo = true;
         this.target = checkNotNull(target);
+        Iterables.addAll(targetOptions, options);
+        return this;
+      }
+
+      /**
+       * Sets the copy target and target options. Target blob information is copied from source,
+       * except for those options specified in {@code options}.
+       *
+       * @return the builder
+       */
+      public Builder setTarget(BlobId targetId, Iterable<BlobTargetOption> options) {
+        this.overrideInfo = false;
+        this.target = BlobInfo.newBuilder(targetId).build();
         Iterables.addAll(targetOptions, options);
         return this;
       }
@@ -1114,7 +1292,19 @@ public interface Storage extends Service<StorageOptions> {
        *
        * @return the builder
        */
+      @Deprecated
       public Builder megabytesCopiedPerChunk(Long megabytesCopiedPerChunk) {
+        return setMegabytesCopiedPerChunk(megabytesCopiedPerChunk);
+      }
+
+      /**
+       * Sets the maximum number of megabytes to copy for each RPC call. This parameter is ignored
+       * if source and target blob share the same location and storage class as copy is made with
+       * one single RPC.
+       *
+       * @return the builder
+       */
+      public Builder setMegabytesCopiedPerChunk(Long megabytesCopiedPerChunk) {
         this.megabytesCopiedPerChunk = megabytesCopiedPerChunk;
         return this;
       }
@@ -1139,21 +1329,45 @@ public interface Storage extends Service<StorageOptions> {
     /**
      * Returns the blob to copy, as a {@link BlobId}.
      */
+    @Deprecated
     public BlobId source() {
+      return getSource();
+    }
+
+    /**
+     * Returns the blob to copy, as a {@link BlobId}.
+     */
+    public BlobId getSource() {
       return source;
     }
 
     /**
      * Returns blob's source options.
      */
+    @Deprecated
     public List<BlobSourceOption> sourceOptions() {
+      return getSourceOptions();
+    }
+
+    /**
+     * Returns blob's source options.
+     */
+    public List<BlobSourceOption> getSourceOptions() {
       return sourceOptions;
     }
 
     /**
      * Returns the {@link BlobInfo} for the target blob.
      */
+    @Deprecated
     public BlobInfo target() {
+      return getTarget();
+    }
+
+    /**
+     * Returns the {@link BlobInfo} for the target blob.
+     */
+    public BlobInfo getTarget() {
       return target;
     }
 
@@ -1171,7 +1385,15 @@ public interface Storage extends Service<StorageOptions> {
     /**
      * Returns blob's target options.
      */
+    @Deprecated
     public List<BlobTargetOption> targetOptions() {
+      return getTargetOptions();
+    }
+
+    /**
+     * Returns blob's target options.
+     */
+    public List<BlobTargetOption> getTargetOptions() {
       return targetOptions;
     }
 
@@ -1180,7 +1402,17 @@ public interface Storage extends Service<StorageOptions> {
      * if source and target blob share the same location and storage class as copy is made with
      * one single RPC.
      */
+    @Deprecated
     public Long megabytesCopiedPerChunk() {
+      return getMegabytesCopiedPerChunk();
+    }
+
+    /**
+     * Returns the maximum number of megabytes to copy for each RPC call. This parameter is ignored
+     * if source and target blob share the same location and storage class as copy is made with
+     * one single RPC.
+     */
+    public Long getMegabytesCopiedPerChunk() {
       return megabytesCopiedPerChunk;
     }
 
@@ -1194,7 +1426,7 @@ public interface Storage extends Service<StorageOptions> {
      * @return a copy request
      */
     public static CopyRequest of(String sourceBucket, String sourceBlob, BlobInfo target) {
-      return builder().source(sourceBucket, sourceBlob).target(target).build();
+      return newBuilder().setSource(sourceBucket, sourceBlob).setTarget(target).build();
     }
 
     /**
@@ -1207,7 +1439,7 @@ public interface Storage extends Service<StorageOptions> {
      * @return a copy request
      */
     public static CopyRequest of(BlobId sourceBlobId, BlobInfo target) {
-      return builder().source(sourceBlobId).target(target).build();
+      return newBuilder().setSource(sourceBlobId).setTarget(target).build();
     }
 
     /**
@@ -1219,9 +1451,9 @@ public interface Storage extends Service<StorageOptions> {
      * @return a copy request
      */
     public static CopyRequest of(String sourceBucket, String sourceBlob, String targetBlob) {
-      return CopyRequest.builder()
-          .source(sourceBucket, sourceBlob)
-          .target(BlobId.of(sourceBucket, targetBlob))
+      return CopyRequest.newBuilder()
+          .setSource(sourceBucket, sourceBlob)
+          .setTarget(BlobId.of(sourceBucket, targetBlob))
           .build();
     }
 
@@ -1234,7 +1466,7 @@ public interface Storage extends Service<StorageOptions> {
      * @return a copy request
      */
     public static CopyRequest of(String sourceBucket, String sourceBlob, BlobId target) {
-      return builder().source(sourceBucket, sourceBlob).target(target).build();
+      return newBuilder().setSource(sourceBucket, sourceBlob).setTarget(target).build();
     }
 
     /**
@@ -1245,9 +1477,9 @@ public interface Storage extends Service<StorageOptions> {
      * @return a copy request
      */
     public static CopyRequest of(BlobId sourceBlobId, String targetBlob) {
-      return CopyRequest.builder()
-          .source(sourceBlobId)
-          .target(BlobId.of(sourceBlobId.bucket(), targetBlob))
+      return CopyRequest.newBuilder()
+          .setSource(sourceBlobId)
+          .setTarget(BlobId.of(sourceBlobId.getBucket(), targetBlob))
           .build();
     }
 
@@ -1259,13 +1491,24 @@ public interface Storage extends Service<StorageOptions> {
      * @return a copy request
      */
     public static CopyRequest of(BlobId sourceBlobId, BlobId targetBlobId) {
-      return CopyRequest.builder()
-          .source(sourceBlobId)
-          .target(targetBlobId)
+      return CopyRequest.newBuilder()
+          .setSource(sourceBlobId)
+          .setTarget(targetBlobId)
           .build();
     }
 
+    /**
+     * Creates a builder for {@code CopyRequest} objects.
+     */
+    @Deprecated
     public static Builder builder() {
+      return newBuilder();
+    }
+
+    /**
+     * Creates a builder for {@code CopyRequest} objects.
+     */
+    public static Builder newBuilder() {
       return new Builder();
     }
   }
@@ -1277,6 +1520,17 @@ public interface Storage extends Service<StorageOptions> {
    * <pre> {@code
    * String bucketName = "my_unique_bucket";
    * Bucket bucket = storage.create(BucketInfo.of(bucketName));
+   * }</pre>
+   *
+   * <p>Example of creating a bucket with storage class and location.
+   * <pre> {@code
+   * String bucketName = "my_unique_bucket";
+   * Bucket bucket = storage.create(BucketInfo.newBuilder(bucketName)
+   *     // See here for possible values: http://g.co/cloud/storage/docs/storage-classes
+   *     .setStorageClass("COLDLINE")
+   *     // Possible values: http://g.co/cloud/storage/docs/bucket-locations#location-mr
+   *     .setLocation("asia")
+   *     .build());
    * }</pre>
    *
    * @return a complete bucket
@@ -1292,7 +1546,7 @@ public interface Storage extends Service<StorageOptions> {
    * String bucketName = "my_unique_bucket";
    * String blobName = "my_blob_name";
    * BlobId blobId = BlobId.of(bucketName, blobName);
-   * BlobInfo blobInfo = BlobInfo.builder(blobId).contentType("text/plain").build();
+   * BlobInfo blobInfo = BlobInfo.newBuilder(blobId).setContentType("text/plain").build();
    * Blob blob = storage.create(blobInfo);
    * }</pre>
    *
@@ -1311,7 +1565,7 @@ public interface Storage extends Service<StorageOptions> {
    * String bucketName = "my_unique_bucket";
    * String blobName = "my_blob_name";
    * BlobId blobId = BlobId.of(bucketName, blobName);
-   * BlobInfo blobInfo = BlobInfo.builder(blobId).contentType("text/plain").build();
+   * BlobInfo blobInfo = BlobInfo.newBuilder(blobId).setContentType("text/plain").build();
    * Blob blob = storage.create(blobInfo, "Hello, World!".getBytes(UTF_8));
    * }</pre>
    *
@@ -1334,8 +1588,22 @@ public interface Storage extends Service<StorageOptions> {
    * String blobName = "my_blob_name";
    * InputStream content = new ByteArrayInputStream("Hello, World!".getBytes(UTF_8));
    * BlobId blobId = BlobId.of(bucketName, blobName);
-   * BlobInfo blobInfo = BlobInfo.builder(blobId).contentType("text/plain").build();
+   * BlobInfo blobInfo = BlobInfo.newBuilder(blobId).setContentType("text/plain").build();
    * Blob blob = storage.create(blobInfo, content);
+   * }</pre>
+   *
+   * <p>Example of uploading an encrypted blob.
+   * <pre> {@code
+   * String bucketName = "my_unique_bucket";
+   * String blobName = "my_blob_name";
+   * String encryptionKey = "my_encryption_key";
+   * InputStream content = new ByteArrayInputStream("Hello, World!".getBytes(UTF_8));
+   * 
+   * BlobId blobId = BlobId.of(bucketName, blobName);
+   * BlobInfo blobInfo = BlobInfo.newBuilder(blobId)
+   *     .setContentType("text/plain")
+   *     .build();
+   * Blob blob = storage.create(blobInfo, content, BlobWriteOption.encryptionKey(encryptionKey));
    * }</pre>
    *
    * @return a [@code Blob} with complete information
@@ -1454,7 +1722,7 @@ public interface Storage extends Service<StorageOptions> {
    * <p>Example of updating bucket information.
    * <pre> {@code
    * String bucketName = "my_unique_bucket";
-   * BucketInfo bucketInfo = BucketInfo.builder(bucketName).versioningEnabled(true).build();
+   * BucketInfo bucketInfo = BucketInfo.newBuilder(bucketName).setVersioningEnabled(true).build();
    * Bucket bucket = storage.update(bucketInfo);
    * }</pre>
    *
@@ -1474,7 +1742,7 @@ public interface Storage extends Service<StorageOptions> {
    * String bucketName = "my_unique_bucket";
    * String blobName = "my_blob_name";
    * Blob blob = storage.get(bucketName, blobName);
-   * BlobInfo updatedInfo = blob.toBuilder().contentType("text/plain").build();
+   * BlobInfo updatedInfo = blob.toBuilder().setContentType("text/plain").build();
    * storage.update(updatedInfo, BlobTargetOption.metagenerationMatch());
    * }</pre>
    *
@@ -1494,9 +1762,9 @@ public interface Storage extends Service<StorageOptions> {
    * String blobName = "my_blob_name";
    * Map<String, String> newMetadata = new HashMap<>();
    * newMetadata.put("key", "value");
-   * storage.update(BlobInfo.builder(bucketName, blobName).metadata(null).build());
-   * Blob blob = storage.update(BlobInfo.builder(bucketName, blobName)
-   *     .metadata(newMetadata)
+   * storage.update(BlobInfo.newBuilder(bucketName, blobName).setMetadata(null).build());
+   * Blob blob = storage.update(BlobInfo.newBuilder(bucketName, blobName)
+   *     .setMetadata(newMetadata)
    *     .build());
    * }</pre>
    *
@@ -1604,9 +1872,9 @@ public interface Storage extends Service<StorageOptions> {
    * String sourceBlob1 = "source_blob_1";
    * String sourceBlob2 = "source_blob_2";
    * BlobId blobId = BlobId.of(bucketName, blobName);
-   * BlobInfo blobInfo = BlobInfo.builder(blobId).contentType("text/plain").build();
-   * ComposeRequest request = ComposeRequest.builder()
-   *     .target(blobInfo)
+   * BlobInfo blobInfo = BlobInfo.newBuilder(blobId).setContentType("text/plain").build();
+   * ComposeRequest request = ComposeRequest.newBuilder()
+   *     .setTarget(blobInfo)
    *     .addSource(sourceBlob1)
    *     .addSource(sourceBlob2)
    *     .build();
@@ -1637,11 +1905,11 @@ public interface Storage extends Service<StorageOptions> {
    * String bucketName = "my_unique_bucket";
    * String blobName = "my_blob_name";
    * String copyBlobName = "copy_blob_name";
-   * CopyRequest request = CopyRequest.builder()
-   *     .source(BlobId.of(bucketName, blobName))
-   *     .target(BlobId.of(bucketName, copyBlobName))
+   * CopyRequest request = CopyRequest.newBuilder()
+   *     .setSource(BlobId.of(bucketName, blobName))
+   *     .setTarget(BlobId.of(bucketName, copyBlobName))
    *     .build();
-   * Blob blob = storage.copy(request).result();
+   * Blob blob = storage.copy(request).getResult();
    * }</pre>
    *
    * <p>Example of copying a blob in chunks.
@@ -1649,15 +1917,30 @@ public interface Storage extends Service<StorageOptions> {
    * String bucketName = "my_unique_bucket";
    * String blobName = "my_blob_name";
    * String copyBlobName = "copy_blob_name";
-   * CopyRequest request = CopyRequest.builder()
-   *     .source(BlobId.of(bucketName, blobName))
-   *     .target(BlobId.of(bucketName, copyBlobName))
+   * CopyRequest request = CopyRequest.newBuilder()
+   *     .setSource(BlobId.of(bucketName, blobName))
+   *     .setTarget(BlobId.of(bucketName, copyBlobName))
    *     .build();
    * CopyWriter copyWriter = storage.copy(request);
    * while (!copyWriter.isDone()) {
    *   copyWriter.copyChunk();
    * }
-   * Blob blob = copyWriter.result();
+   * Blob blob = copyWriter.getResult();
+   * }</pre>
+   *
+   * <p>Example of rotating the encryption key of a blob.
+   * <pre> {@code
+   * String bucketName = "my_unique_bucket";
+   * String blobName = "my_blob_name";
+   * String oldEncryptionKey = "old_encryption_key";
+   * String newEncryptionKey = "new_encryption_key";
+   * BlobId blobId = BlobId.of(bucketName, blobName);
+   * CopyRequest request = CopyRequest.newBuilder()
+   *     .setSource(blobId)
+   *     .setSourceOptions(BlobSourceOption.decryptionKey(oldEncryptionKey))
+   *     .setTarget(blobId, BlobTargetOption.encryptionKey(newEncryptionKey))
+   *     .build();
+   * Blob blob = storage.copy(request).getResult();
    * }</pre>
    *
    * @return a {@link CopyWriter} object that can be used to get information on the newly created
@@ -1693,9 +1976,18 @@ public interface Storage extends Service<StorageOptions> {
    * <pre> {@code
    * String bucketName = "my_unique_bucket";
    * String blobName = "my_blob_name";
-   * long blobGeneration = 42";
+   * long blobGeneration = 42;
    * BlobId blobId = BlobId.of(bucketName, blobName, blobGeneration);
    * byte[] content = storage.readAllBytes(blobId);
+   * }</pre>
+   *
+   * <p>Example of reading all bytes of an encrypted blob.
+   * <pre> {@code
+   * String bucketName = "my_unique_bucket";
+   * String blobName = "my_blob_name";
+   * String decryptionKey = "my_encryption_key";
+   * byte[] content = storage.readAllBytes(
+   *     bucketName, blobName, BlobSourceOption.decryptionKey(decryptionKey));
    * }</pre>
    *
    * @return the blob's content
@@ -1723,7 +2015,7 @@ public interface Storage extends Service<StorageOptions> {
    *     // delete failed
    *   }
    * });
-   * batch.update(BlobInfo.builder(secondBlob).contentType("text/plain").build());
+   * batch.update(BlobInfo.newBuilder(secondBlob).setContentType("text/plain").build());
    * StorageBatchResult<Blob> result = batch.get(secondBlob);
    * batch.submit();
    * Blob blob = result.get(); // returns get result or throws StorageException
@@ -1797,7 +2089,7 @@ public interface Storage extends Service<StorageOptions> {
    * String blobName = "my_blob_name";
    * BlobId blobId = BlobId.of(bucketName, blobName);
    * byte[] content = "Hello, World!".getBytes(UTF_8);
-   * BlobInfo blobInfo = BlobInfo.builder(blobId).contentType("text/plain").build();
+   * BlobInfo blobInfo = BlobInfo.newBuilder(blobId).setContentType("text/plain").build();
    * try (WriteChannel writer = storage.writer(blobInfo)) {
    *   try {
    *     writer.write(ByteBuffer.wrap(content, 0, content.length));
@@ -1816,20 +2108,21 @@ public interface Storage extends Service<StorageOptions> {
    * fixed amount of time, you can use this method to generate a URL that is only valid within a
    * certain time period. This is particularly useful if you don't want publicly accessible blobs,
    * but also don't want to require users to explicitly log in. Signing a URL requires
-   * a service account signer. If a {@link ServiceAccountAuthCredentials} or an
-   * {@link AppEngineAuthCredentials} was passed to
-   * {@link StorageOptions.Builder#authCredentials(AuthCredentials)} or the default credentials are
-   * being used and the environment variable {@code GOOGLE_APPLICATION_CREDENTIALS} is set, then
-   * {@code signUrl} will use that credentials to sign the URL. If the credentials passed to
-   * {@link StorageOptions} do not implement {@link ServiceAccountSigner} (this is the case for
-   * Compute Engine credentials and Google Cloud SDK credentials) then {@code signUrl} will throw an
-   * {@link IllegalStateException} unless an implementation of {@link ServiceAccountSigner} is
-   * passed using the {@link SignUrlOption#signWith(ServiceAccountSigner)} option.
+   * a service account signer. If an instance of {@link com.google.auth.ServiceAccountSigner} was
+   * passed to {@link StorageOptions}' builder via {@code setCredentials(Credentials)} or the
+   * default credentials are being used and the environment variable
+   * {@code GOOGLE_APPLICATION_CREDENTIALS} is set or your application is running in App Engine,
+   * then {@code signUrl} will use that credentials to sign the URL. If the credentials passed to
+   * {@link StorageOptions} do not implement {@link ServiceAccountSigner} (this is the case, for
+   * instance, for Compute Engine credentials and Google Cloud SDK credentials) then {@code signUrl}
+   * will throw an {@link IllegalStateException} unless an implementation of
+   * {@link ServiceAccountSigner} is passed using the
+   * {@link SignUrlOption#signWith(ServiceAccountSigner)} option.
    *
    * <p>A service account signer is looked for in the following order:
    * <ol>
    *   <li>The signer passed with the option {@link SignUrlOption#signWith(ServiceAccountSigner)}
-   *   <li>The credentials passed to {@link StorageOptions.Builder#authCredentials(AuthCredentials)}
+   *   <li>The credentials passed to {@link StorageOptions}
    *   <li>The default credentials, if no credentials were passed to {@link StorageOptions}
    * </ol>
    *
@@ -1838,7 +2131,7 @@ public interface Storage extends Service<StorageOptions> {
    * <pre> {@code
    * String bucketName = "my_unique_bucket";
    * String blobName = "my_blob_name";
-   * URL signedUrl = storage.signUrl(BlobInfo.builder(bucketName, blobName).build(), 14,
+   * URL signedUrl = storage.signUrl(BlobInfo.newBuilder(bucketName, blobName).build(), 14,
    *     TimeUnit.DAYS);
    * }</pre>
    *
@@ -1849,9 +2142,9 @@ public interface Storage extends Service<StorageOptions> {
    * String bucketName = "my_unique_bucket";
    * String blobName = "my_blob_name";
    * String keyPath = "/path/to/key.json";
-   * URL signedUrl = storage.signUrl(BlobInfo.builder(bucketName, blobName).build(),
+   * URL signedUrl = storage.signUrl(BlobInfo.newBuilder(bucketName, blobName).build(),
    *     14, TimeUnit.DAYS, SignUrlOption.signWith(
-   *         AuthCredentials.createForJson(new FileInputStream(keyPath))));
+   *         ServiceAccountCredentials.fromStream(new FileInputStream(keyPath))));
    * }</pre>
    *
    * @param blobInfo the blob associated with the signed URL
@@ -1928,8 +2221,8 @@ public interface Storage extends Service<StorageOptions> {
    * Blob firstBlob = storage.get(bucketName, blobName1);
    * Blob secondBlob = storage.get(bucketName, blobName2);
    * List<Blob> updatedBlobs = storage.update(
-   *     firstBlob.toBuilder().contentType("text/plain").build(),
-   *     secondBlob.toBuilder().contentType("text/plain").build());
+   *     firstBlob.toBuilder().setContentType("text/plain").build(),
+   *     secondBlob.toBuilder().setContentType("text/plain").build());
    * }</pre>
    *
    * @param blobInfos blobs to update
@@ -1954,8 +2247,8 @@ public interface Storage extends Service<StorageOptions> {
    * Blob firstBlob = storage.get(bucketName, blobName1);
    * Blob secondBlob = storage.get(bucketName, blobName2);
    * List<BlobInfo> blobs = new LinkedList<>();
-   * blobs.add(firstBlob.toBuilder().contentType("text/plain").build());
-   * blobs.add(secondBlob.toBuilder().contentType("text/plain").build());
+   * blobs.add(firstBlob.toBuilder().setContentType("text/plain").build());
+   * blobs.add(secondBlob.toBuilder().setContentType("text/plain").build());
    * List<Blob> updatedBlobs = storage.update(blobs);
    * }</pre>
    *
@@ -2017,6 +2310,13 @@ public interface Storage extends Service<StorageOptions> {
    * <pre> {@code
    * String bucketName = "my_unique_bucket";
    * Acl acl = storage.getAcl(bucketName, User.ofAllAuthenticatedUsers());
+   * }</pre>
+   *
+   * <p>Example of getting the ACL entry for a specific user on a bucket.
+   * <pre> {@code
+   * String bucketName = "my_unique_bucket";
+   * String userEmail = "google-cloud-java-tests@java-docs-samples-tests.iam.gserviceaccount.com";
+   * Acl acl = storage.getAcl(bucketName, new User(userEmail));
    * }</pre>
    *
    * @throws StorageException upon failure
@@ -2189,6 +2489,15 @@ public interface Storage extends Service<StorageOptions> {
    * Acl acl = storage.getAcl(blobId, User.ofAllAuthenticatedUsers());
    * }</pre>
    *
+   * <p>Example of getting the ACL entry for a specific user on a blob.
+   * <pre> {@code
+   * String bucketName = "my_unique_bucket";
+   * String blobName = "my_blob_name";
+   * String userEmail = "google-cloud-java-tests@java-docs-samples-tests.iam.gserviceaccount.com";
+   * BlobId blobId = BlobId.of(bucketName, blobName);
+   * Acl acl = storage.getAcl(blobId, new User(userEmail));
+   * }</pre>
+   *
    * @throws StorageException upon failure
    */
   Acl getAcl(BlobId blob, Entity entity);
@@ -2225,6 +2534,15 @@ public interface Storage extends Service<StorageOptions> {
    * long blobGeneration = 42;
    * BlobId blobId = BlobId.of(bucketName, blobName, blobGeneration);
    * Acl acl = storage.createAcl(blobId, Acl.of(User.ofAllAuthenticatedUsers(), Role.READER));
+   * }</pre>
+   *
+   * <p>Example of updating a blob to be public-read.
+   * <pre> {@code
+   * String bucketName = "my_unique_bucket";
+   * String blobName = "my_blob_name";
+   * long blobGeneration = 42;
+   * BlobId blobId = BlobId.of(bucketName, blobName, blobGeneration);
+   * Acl acl = storage.createAcl(blobId, Acl.of(User.ofAllUsers(), Role.READER));
    * }</pre>
    *
    * @throws StorageException upon failure

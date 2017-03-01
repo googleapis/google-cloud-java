@@ -28,16 +28,17 @@ import java.util.UUID;
 
 /**
  * Utility to create a remote datastore configuration for testing. Datastore options can be obtained
- * via the {@link #options()} method. Returned options use a randomly generated namespace
- * ({@link DatastoreOptions#namespace()}) that can be used to run the tests. Once the tests are run,
- * all entities in the namespace can be deleted using {@link #deleteNamespace()}. Returned options
- * also have custom {@link DatastoreOptions#retryParams()}: {@link RetryParams#retryMaxAttempts()}
- * is {@code 10}, {@link RetryParams#retryMinAttempts()} is {@code 6},
- * {@link RetryParams#maxRetryDelayMillis()} is {@code 30000},
- * {@link RetryParams#totalRetryPeriodMillis()} is {@code 120000} and
- * {@link RetryParams#initialRetryDelayMillis()} is {@code 250}.
- * {@link DatastoreOptions#connectTimeout()} and {@link DatastoreOptions#readTimeout()} are both set
- * to {@code 60000}.
+ * via the {@link #getOptions()} method. Returned options use a randomly generated namespace
+ * ({@link DatastoreOptions#getNamespace()}) that can be used to run the tests. Once the tests are
+ * run, all entities in the namespace can be deleted using {@link #deleteNamespace()}. Returned
+ * options also have custom {@link DatastoreOptions#getRetryParams()}:
+ * {@link RetryParams#getRetryMaxAttempts()} is {@code 10},
+ * {@link RetryParams#getRetryMinAttempts()} is {@code 6},
+ * {@link RetryParams#getMaxRetryDelayMillis()} is {@code 30000},
+ * {@link RetryParams#getTotalRetryPeriodMillis()} is {@code 120000} and
+ * {@link RetryParams#getInitialRetryDelayMillis()} is {@code 250}.
+ * {@link DatastoreOptions#getConnectTimeout()} and {@link DatastoreOptions#getReadTimeout()} are
+ * both set to {@code 60000}.
  */
 public class RemoteDatastoreHelper {
 
@@ -47,15 +48,24 @@ public class RemoteDatastoreHelper {
 
   private RemoteDatastoreHelper(DatastoreOptions options) {
     this.options = options;
-    this.datastore = options.service();
-    this.namespace = options.namespace();
+    this.datastore = options.getService();
+    this.namespace = options.getNamespace();
   }
 
   /**
    * Returns a {@link DatastoreOptions} object to be used for testing. The options are associated
    * to a randomly generated namespace.
    */
+  @Deprecated
   public DatastoreOptions options() {
+    return options;
+  }
+
+  /**
+   * Returns a {@link DatastoreOptions} object to be used for testing. The options are associated
+   * to a randomly generated namespace.
+   */
+  public DatastoreOptions getOptions() {
     return options;
   }
 
@@ -63,7 +73,7 @@ public class RemoteDatastoreHelper {
    * Deletes all entities in the namespace associated with this {@link RemoteDatastoreHelper}.
    */
   public void deleteNamespace() {
-    StructuredQuery<Key> query = Query.keyQueryBuilder().namespace(namespace).build();
+    StructuredQuery<Key> query = Query.newKeyQueryBuilder().setNamespace(namespace).build();
     QueryResults<Key> keys = datastore.run(query);
     while (keys.hasNext()) {
       datastore.delete(keys.next());
@@ -74,22 +84,22 @@ public class RemoteDatastoreHelper {
    * Creates a {@code RemoteStorageHelper} object.
    */
   public static RemoteDatastoreHelper create() {
-    DatastoreOptions datastoreOption = DatastoreOptions.builder()
-        .namespace(UUID.randomUUID().toString())
-        .retryParams(retryParams())
-        .connectTimeout(60000)
-        .readTimeout(60000)
+    DatastoreOptions datastoreOption = DatastoreOptions.newBuilder()
+        .setNamespace(UUID.randomUUID().toString())
+        .setRetryParams(retryParams())
+        .setConnectTimeout(60000)
+        .setReadTimeout(60000)
         .build();
     return new RemoteDatastoreHelper(datastoreOption);
   }
 
   private static RetryParams retryParams() {
-    return RetryParams.builder()
-        .retryMaxAttempts(10)
-        .retryMinAttempts(6)
-        .maxRetryDelayMillis(30000)
-        .totalRetryPeriodMillis(120000)
-        .initialRetryDelayMillis(250)
+    return RetryParams.newBuilder()
+        .setRetryMaxAttempts(10)
+        .setRetryMinAttempts(6)
+        .setMaxRetryDelayMillis(30000)
+        .setTotalRetryPeriodMillis(120000)
+        .setInitialRetryDelayMillis(250)
         .build();
   }
 }

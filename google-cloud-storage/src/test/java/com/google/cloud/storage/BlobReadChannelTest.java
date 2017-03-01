@@ -65,10 +65,10 @@ public class BlobReadChannelTest {
     storageRpcMock = createMock(StorageRpc.class);
     expect(rpcFactoryMock.create(anyObject(StorageOptions.class))).andReturn(storageRpcMock);
     replay(rpcFactoryMock);
-    options = StorageOptions.builder()
-        .projectId("projectId")
-        .serviceRpcFactory(rpcFactoryMock)
-        .retryParams(RetryParams.noRetries())
+    options = StorageOptions.newBuilder()
+        .setProjectId("projectId")
+        .setServiceRpcFactory(rpcFactoryMock)
+        .setRetryParams(RetryParams.noRetries())
         .build();
   }
 
@@ -105,7 +105,7 @@ public class BlobReadChannelTest {
   @Test
   public void testReadBig() throws IOException {
     reader = new BlobReadChannel(options, BLOB_ID, EMPTY_RPC_OPTIONS);
-    reader.chunkSize(CUSTOM_CHUNK_SIZE);
+    reader.setChunkSize(CUSTOM_CHUNK_SIZE);
     byte[] firstResult = randomByteArray(DEFAULT_CHUNK_SIZE);
     byte[] secondResult = randomByteArray(DEFAULT_CHUNK_SIZE);
     ByteBuffer firstReadBuffer = ByteBuffer.allocate(DEFAULT_CHUNK_SIZE);

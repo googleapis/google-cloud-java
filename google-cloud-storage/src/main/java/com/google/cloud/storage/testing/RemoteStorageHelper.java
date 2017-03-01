@@ -16,7 +16,7 @@
 
 package com.google.cloud.storage.testing;
 
-import com.google.cloud.AuthCredentials;
+import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.RetryParams;
 import com.google.cloud.storage.BlobInfo;
 import com.google.cloud.storage.Storage;
@@ -39,13 +39,14 @@ import java.util.logging.Logger;
 
 /**
  * Utility to create a remote storage configuration for testing. Storage options can be obtained via
- * the {@link #options()} method. Returned options have custom {@link StorageOptions#retryParams()}:
- * {@link RetryParams#retryMaxAttempts()} is {@code 10}, {@link RetryParams#retryMinAttempts()} is
- * {@code 6}, {@link RetryParams#maxRetryDelayMillis()} is {@code 30000},
- * {@link RetryParams#totalRetryPeriodMillis()} is {@code 120000} and
- * {@link RetryParams#initialRetryDelayMillis()} is {@code 250}.
- * {@link StorageOptions#connectTimeout()} and {@link StorageOptions#readTimeout()} are both set
- * to {@code 60000}.
+ * the {@link #getOptions()} ()} method. Returned options have custom
+ * {@link StorageOptions#getRetryParams()}: {@link RetryParams#getRetryMaxAttempts()} is {@code 10},
+ * {@link RetryParams#getRetryMinAttempts()} is {@code 6},
+ * {@link RetryParams#getMaxRetryDelayMillis()} is {@code 30000},
+ * {@link RetryParams#getTotalRetryPeriodMillis()} is {@code 120000} and
+ * {@link RetryParams#getInitialRetryDelayMillis()} is {@code 250}.
+ * {@link StorageOptions#getConnectTimeout()} and {@link StorageOptions#getReadTimeout()} are both
+ * set to {@code 60000}.
  */
 public class RemoteStorageHelper {
 
@@ -60,7 +61,15 @@ public class RemoteStorageHelper {
   /**
    * Returns a {@link StorageOptions} object to be used for testing.
    */
+  @Deprecated
   public StorageOptions options() {
+    return getOptions();
+  }
+
+  /**
+   * Returns a {@link StorageOptions} object to be used for testing.
+   */
+  public StorageOptions getOptions() {
     return options;
   }
 
@@ -123,12 +132,12 @@ public class RemoteStorageHelper {
   public static RemoteStorageHelper create(String projectId, InputStream keyStream)
       throws StorageHelperException {
     try {
-      StorageOptions storageOptions = StorageOptions.builder()
-          .authCredentials(AuthCredentials.createForJson(keyStream))
-          .projectId(projectId)
-          .retryParams(retryParams())
-          .connectTimeout(60000)
-          .readTimeout(60000)
+      StorageOptions storageOptions = StorageOptions.newBuilder()
+          .setCredentials(GoogleCredentials.fromStream(keyStream))
+          .setProjectId(projectId)
+          .setRetryParams(retryParams())
+          .setConnectTimeout(60000)
+          .setReadTimeout(60000)
           .build();
       return new RemoteStorageHelper(storageOptions);
     } catch (IOException ex) {
@@ -144,21 +153,21 @@ public class RemoteStorageHelper {
    * credentials.
    */
   public static RemoteStorageHelper create() throws StorageHelperException {
-    StorageOptions storageOptions = StorageOptions.builder()
-        .retryParams(retryParams())
-        .connectTimeout(60000)
-        .readTimeout(60000)
+    StorageOptions storageOptions = StorageOptions.newBuilder()
+        .setRetryParams(retryParams())
+        .setConnectTimeout(60000)
+        .setReadTimeout(60000)
         .build();
     return new RemoteStorageHelper(storageOptions);
   }
 
   private static RetryParams retryParams() {
-    return RetryParams.builder()
-        .retryMaxAttempts(10)
-        .retryMinAttempts(6)
-        .maxRetryDelayMillis(30000)
-        .totalRetryPeriodMillis(120000)
-        .initialRetryDelayMillis(250)
+    return RetryParams.newBuilder()
+        .setRetryMaxAttempts(10)
+        .setRetryMinAttempts(6)
+        .setMaxRetryDelayMillis(30000)
+        .setTotalRetryPeriodMillis(120000)
+        .setInitialRetryDelayMillis(250)
         .build();
   }
 
@@ -175,14 +184,14 @@ public class RemoteStorageHelper {
     @Override
     public Boolean call() {
       while (true) {
-        for (BlobInfo info : storage.list(bucket, BlobListOption.versions(true)).values()) {
-          storage.delete(info.blobId());
+        for (BlobInfo info : storage.list(bucket, BlobListOption.versions(true)).getValues()) {
+          storage.delete(info.getBlobId());
         }
         try {
           storage.delete(bucket);
           return true;
         } catch (StorageException e) {
-          if (e.code() == 409) {
+          if (e.getCode() == 409) {
             try {
               Thread.sleep(500);
             } catch (InterruptedException interruptedException) {

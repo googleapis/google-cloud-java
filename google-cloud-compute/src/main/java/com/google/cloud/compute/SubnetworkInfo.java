@@ -69,27 +69,46 @@ public class SubnetworkInfo implements Serializable {
    */
   public abstract static class Builder {
 
-    abstract Builder generatedId(String generatedId);
+    abstract Builder setGeneratedId(String generatedId);
 
-    abstract Builder creationTimestamp(Long creationTimestamp);
+    abstract Builder setCreationTimestamp(Long creationTimestamp);
 
     /**
      * Sets the identity of the subnework.
      */
+    @Deprecated
     public abstract Builder subnetworkId(SubnetworkId subnetworkId);
+
+    /**
+     * Sets the identity of the subnework.
+     */
+    public abstract Builder setSubnetworkId(SubnetworkId subnetworkId);
 
     /**
      * Sets an optional textual description of the subnetwork.
      */
+    @Deprecated
     public abstract Builder description(String description);
 
-    abstract Builder gatewayAddress(String gatewayAddress);
+    /**
+     * Sets an optional textual description of the subnetwork.
+     */
+    public abstract Builder setDescription(String description);
+
+    abstract Builder setGatewayAddress(String gatewayAddress);
 
     /**
      * Sets the identity of the network to which this subnetwork belongs. Only networks that are in
      * subnet mode can have subnetworks.
      */
+    @Deprecated
     public abstract Builder network(NetworkId network);
+
+    /**
+     * Sets the identity of the network to which this subnetwork belongs. Only networks that are in
+     * subnet mode can have subnetworks.
+     */
+    public abstract Builder setNetwork(NetworkId network);
 
     /**
      * Sets the range of internal IPv4 addresses that are owned by this subnetwork. This range must
@@ -98,7 +117,17 @@ public class SubnetworkInfo implements Serializable {
      *
      * @see <a href="https://wikipedia.org/wiki/Classless_Inter-Domain_Routing">CIDR</a>
      */
+    @Deprecated
     public abstract Builder ipRange(String ipRange);
+
+    /**
+     * Sets the range of internal IPv4 addresses that are owned by this subnetwork. This range must
+     * be a CIDR specification, for example: {@code 192.168.0.0/16}. Ranges must be unique and
+     * non-overlapping within a network.
+     *
+     * @see <a href="https://wikipedia.org/wiki/Classless_Inter-Domain_Routing">CIDR</a>
+     */
+    public abstract Builder setIpRange(String ipRange);
 
     /**
      * Creates a {@code SubnetworkInfo} object.
@@ -150,43 +179,67 @@ public class SubnetworkInfo implements Serializable {
     }
 
     @Override
-    BuilderImpl generatedId(String generatedId) {
+    BuilderImpl setGeneratedId(String generatedId) {
       this.generatedId = generatedId;
       return this;
     }
 
     @Override
-    BuilderImpl creationTimestamp(Long creationTimestamp) {
+    BuilderImpl setCreationTimestamp(Long creationTimestamp) {
       this.creationTimestamp = creationTimestamp;
       return this;
     }
 
     @Override
+    @Deprecated
     public BuilderImpl subnetworkId(SubnetworkId subnetworkId) {
+      return setSubnetworkId(subnetworkId);
+    }
+
+    @Override
+    public BuilderImpl setSubnetworkId(SubnetworkId subnetworkId) {
       this.subnetworkId = checkNotNull(subnetworkId);
       return this;
     }
 
     @Override
+    @Deprecated
     public BuilderImpl description(String description) {
+      return setDescription(description);
+    }
+
+    @Override
+    public BuilderImpl setDescription(String description) {
       this.description = description;
       return this;
     }
 
     @Override
-    BuilderImpl gatewayAddress(String gatewayAddress) {
+    BuilderImpl setGatewayAddress(String gatewayAddress) {
       this.gatewayAddress = gatewayAddress;
       return this;
     }
 
     @Override
+    @Deprecated
     public BuilderImpl network(NetworkId network) {
+      return setNetwork(network);
+    }
+
+    @Override
+    public BuilderImpl setNetwork(NetworkId network) {
       this.network = checkNotNull(network);
       return this;
     }
 
     @Override
+    @Deprecated
     public BuilderImpl ipRange(String ipRange) {
+      return setIpRange(ipRange);
+    }
+
+    @Override
+    public BuilderImpl setIpRange(String ipRange) {
       this.ipRange = checkNotNull(ipRange);
       return this;
     }
@@ -210,35 +263,75 @@ public class SubnetworkInfo implements Serializable {
   /**
    * Returns the service-generated unique identifier for the subnetwork.
    */
+  @Deprecated
   public String generatedId() {
+    return getGeneratedId();
+  }
+
+  /**
+   * Returns the service-generated unique identifier for the subnetwork.
+   */
+  public String getGeneratedId() {
     return generatedId;
   }
 
   /**
    * Returns the creation timestamp in milliseconds since epoch.
    */
+  @Deprecated
   public Long creationTimestamp() {
+    return getCreationTimestamp();
+  }
+
+  /**
+   * Returns the creation timestamp in milliseconds since epoch.
+   */
+  public Long getCreationTimestamp() {
     return creationTimestamp;
   }
 
   /**
    * Returns the subnetwork identity.
    */
+  @Deprecated
   public SubnetworkId subnetworkId() {
+    return getSubnetworkId();
+  }
+
+  /**
+   * Returns the subnetwork identity.
+   */
+  public SubnetworkId getSubnetworkId() {
     return subnetworkId;
   }
 
   /**
    * Returns a textual description of the subnetwork.
    */
+  @Deprecated
   public String description() {
+    return getDescription();
+  }
+
+  /**
+   * Returns a textual description of the subnetwork.
+   */
+  public String getDescription() {
     return description;
   }
 
   /**
    * Returns the gateway IPv4 address for this subnetwork, selected by the service.
    */
+  @Deprecated
   public String gatewayAddress() {
+    return getGatewayAddress();
+  }
+
+  /**
+   * Returns the gateway IPv4 address for this subnetwork, selected by the service.
+   */
+  public String getGatewayAddress() {
     return gatewayAddress;
   }
 
@@ -246,7 +339,16 @@ public class SubnetworkInfo implements Serializable {
    * Returns the identity of the network to which this subnetwork belongs. Only networks that are in
    * subnet mode can have subnetworks.
    */
+  @Deprecated
   public NetworkId network() {
+    return getNetwork();
+  }
+
+  /**
+   * Returns the identity of the network to which this subnetwork belongs. Only networks that are in
+   * subnet mode can have subnetworks.
+   */
+  public NetworkId getNetwork() {
     return network;
   }
 
@@ -257,7 +359,19 @@ public class SubnetworkInfo implements Serializable {
    *
    * @see <a href="https://wikipedia.org/wiki/Classless_Inter-Domain_Routing">CIDR</a>
    */
+  @Deprecated
   public String ipRange() {
+    return ipRange;
+  }
+
+  /**
+   * Returns the range of internal IPv4 addresses that are owned by this subnetwork. This range is a
+   * CIDR specification, for example: {@code 192.168.0.0/16}. Ranges must be unique and
+   * non-overlapping within a network.
+   *
+   * @see <a href="https://wikipedia.org/wiki/Classless_Inter-Domain_Routing">CIDR</a>
+   */
+  public String getIpRange() {
     return ipRange;
   }
 
@@ -297,8 +411,8 @@ public class SubnetworkInfo implements Serializable {
 
   SubnetworkInfo setProjectId(String projectId) {
     return toBuilder()
-        .subnetworkId(subnetworkId.setProjectId(projectId))
-        .network(network.setProjectId(projectId))
+        .setSubnetworkId(subnetworkId.setProjectId(projectId))
+        .setNetwork(network.setProjectId(projectId))
         .build();
   }
 
@@ -310,11 +424,11 @@ public class SubnetworkInfo implements Serializable {
     if (creationTimestamp != null) {
       subnetworkPb.setCreationTimestamp(TIMESTAMP_FORMATTER.print(creationTimestamp));
     }
-    subnetworkPb.setName(subnetworkId.subnetwork());
+    subnetworkPb.setName(subnetworkId.getSubnetwork());
     subnetworkPb.setDescription(description);
-    subnetworkPb.setSelfLink(subnetworkId.selfLink());
+    subnetworkPb.setSelfLink(subnetworkId.getSelfLink());
     subnetworkPb.setGatewayAddress(gatewayAddress);
-    subnetworkPb.setNetwork(network.selfLink());
+    subnetworkPb.setNetwork(network.getSelfLink());
     subnetworkPb.setIpCidrRange(ipRange);
     return subnetworkPb;
   }
@@ -327,7 +441,20 @@ public class SubnetworkInfo implements Serializable {
    *
    * @see <a href="https://wikipedia.org/wiki/Classless_Inter-Domain_Routing">CIDR</a>
    */
+  @Deprecated
   public static Builder builder(SubnetworkId subnetworkId, NetworkId network, String ipRange) {
+    return newBuilder(subnetworkId, network, ipRange);
+  }
+
+  /**
+   * Returns a builder for a {@code SubnetworkInfo} object given the identity of the subnetwork, the
+   * identity of the network this subnetwork belongs to and the range of IPv4 addresses owned by
+   * this subnetwork. {@code ipRange} must be a CIDR specification, for example:
+   * {@code 192.168.0.0/16}.
+   *
+   * @see <a href="https://wikipedia.org/wiki/Classless_Inter-Domain_Routing">CIDR</a>
+   */
+  public static Builder newBuilder(SubnetworkId subnetworkId, NetworkId network, String ipRange) {
     return new BuilderImpl(subnetworkId, network, ipRange);
   }
 
@@ -339,7 +466,7 @@ public class SubnetworkInfo implements Serializable {
    * @see <a href="https://wikipedia.org/wiki/Classless_Inter-Domain_Routing">CIDR</a>
    */
   public static SubnetworkInfo of(SubnetworkId subnetworkId, NetworkId network, String ipRange) {
-    return builder(subnetworkId, network, ipRange).build();
+    return newBuilder(subnetworkId, network, ipRange).build();
   }
 
   static SubnetworkInfo fromPb(Subnetwork subnetworkPb) {

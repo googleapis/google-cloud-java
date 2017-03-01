@@ -22,7 +22,7 @@
  * <p>Before the test:
  * <pre> {@code
  * RemoteLoggingHelper helper = RemoteLoggingHelper.create();
- * Logging logging = helper.options().service();
+ * Logging logging = helper.getOptions().getService();
  * } </pre>
  *
  * <p>Format resource names to avoid name clashes:

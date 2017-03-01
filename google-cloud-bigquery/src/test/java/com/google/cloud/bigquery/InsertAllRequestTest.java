@@ -48,95 +48,167 @@ public class InsertAllRequestTest {
   private static final boolean SKIP_INVALID_ROWS = true;
   private static final boolean IGNORE_UNKNOWN_VALUES = false;
   private static final String TEMPLATE_SUFFIX = "templateSuffix";
-  private static final InsertAllRequest INSERT_ALL_REQUEST1 = InsertAllRequest.builder(TABLE_ID)
+  private static final InsertAllRequest INSERT_ALL_REQUEST1 = InsertAllRequest.newBuilder(TABLE_ID)
       .addRow(CONTENT1)
       .addRow(CONTENT2)
-      .ignoreUnknownValues(IGNORE_UNKNOWN_VALUES)
-      .skipInvalidRows(SKIP_INVALID_ROWS)
+      .setIgnoreUnknownValues(IGNORE_UNKNOWN_VALUES)
+      .setSkipInvalidRows(SKIP_INVALID_ROWS)
       .build();
-  private static final InsertAllRequest INSERT_ALL_REQUEST2 = InsertAllRequest.builder(TABLE_ID)
-      .rows(ROWS)
-      .ignoreUnknownValues(IGNORE_UNKNOWN_VALUES)
-      .skipInvalidRows(SKIP_INVALID_ROWS)
+  private static final InsertAllRequest INSERT_ALL_REQUEST2 = InsertAllRequest.newBuilder(TABLE_ID)
+      .setRows(ROWS)
+      .setIgnoreUnknownValues(IGNORE_UNKNOWN_VALUES)
+      .setSkipInvalidRows(SKIP_INVALID_ROWS)
       .build();
   private static final InsertAllRequest INSERT_ALL_REQUEST3 =
-      InsertAllRequest.builder(TABLE_ID.dataset(), TABLE_ID.table())
+      InsertAllRequest.newBuilder(TABLE_ID.getDataset(), TABLE_ID.getTable())
+          .setRows(ROWS_WITH_ID)
+          .setIgnoreUnknownValues(IGNORE_UNKNOWN_VALUES)
+          .setSkipInvalidRows(SKIP_INVALID_ROWS)
+          .build();
+  private static final InsertAllRequest INSERT_ALL_REQUEST4 =
+      InsertAllRequest.newBuilder(TABLE_ID, ROWS)
+          .setIgnoreUnknownValues(IGNORE_UNKNOWN_VALUES)
+          .setSkipInvalidRows(SKIP_INVALID_ROWS)
+          .build();
+  private static final InsertAllRequest INSERT_ALL_REQUEST5 =
+      InsertAllRequest.newBuilder(TABLE_ID.getDataset(), TABLE_ID.getTable(), ROWS_WITH_ID)
+          .setIgnoreUnknownValues(IGNORE_UNKNOWN_VALUES)
+          .setSkipInvalidRows(SKIP_INVALID_ROWS)
+          .build();
+  private static final InsertAllRequest INSERT_ALL_REQUEST6 =
+      InsertAllRequest.newBuilder(TABLE_ID, ROWS.get(0), ROWS.get(1))
+          .setIgnoreUnknownValues(IGNORE_UNKNOWN_VALUES)
+          .setSkipInvalidRows(SKIP_INVALID_ROWS)
+          .build();
+  private static final InsertAllRequest INSERT_ALL_REQUEST7 =
+      InsertAllRequest.newBuilder(TABLE_ID.getDataset(), TABLE_ID.getTable(), ROWS_WITH_ID.get(0),
+          ROWS_WITH_ID.get(1))
+          .setIgnoreUnknownValues(IGNORE_UNKNOWN_VALUES)
+          .setSkipInvalidRows(SKIP_INVALID_ROWS)
+          .build();
+  private static final InsertAllRequest INSERT_ALL_REQUEST8 =
+      InsertAllRequest.newBuilder(TABLE_ID.getDataset(), TABLE_ID.getTable())
+          .addRow("id1", CONTENT1)
+          .addRow("id2", CONTENT2)
+          .setIgnoreUnknownValues(IGNORE_UNKNOWN_VALUES)
+          .setSkipInvalidRows(SKIP_INVALID_ROWS)
+          .build();
+  private static final InsertAllRequest INSERT_ALL_REQUEST9 =
+      InsertAllRequest.newBuilder(TABLE_INFO)
+          .addRow("id1", CONTENT1)
+          .addRow("id2", CONTENT2)
+          .setIgnoreUnknownValues(IGNORE_UNKNOWN_VALUES)
+          .setSkipInvalidRows(SKIP_INVALID_ROWS)
+          .build();
+  private static final InsertAllRequest INSERT_ALL_REQUEST10 =
+      InsertAllRequest.newBuilder(TABLE_INFO)
+          .addRow("id1", CONTENT1)
+          .addRow("id2", CONTENT2)
+          .setIgnoreUnknownValues(true)
+          .setSkipInvalidRows(false)
+          .build();
+  private static final InsertAllRequest INSERT_ALL_REQUEST11 =
+      InsertAllRequest.newBuilder(TABLE_INFO)
+          .addRow("id1", CONTENT1)
+          .addRow("id2", CONTENT2)
+          .setIgnoreUnknownValues(true)
+          .setSkipInvalidRows(false)
+          .setTemplateSuffix(TEMPLATE_SUFFIX)
+          .build();
+  private static final InsertAllRequest DEPRECATED_INSERT_ALL_REQUEST1 =
+      InsertAllRequest.builder(TABLE_ID)
+          .addRow(CONTENT1)
+          .addRow(CONTENT2)
+          .ignoreUnknownValues(IGNORE_UNKNOWN_VALUES)
+          .skipInvalidRows(SKIP_INVALID_ROWS)
+          .build();
+  private static final InsertAllRequest DEPRECATED_INSERT_ALL_REQUEST2 =
+      InsertAllRequest.builder(TABLE_ID)
+          .rows(ROWS)
+          .ignoreUnknownValues(IGNORE_UNKNOWN_VALUES)
+          .skipInvalidRows(SKIP_INVALID_ROWS)
+          .build();
+  private static final InsertAllRequest DEPRECATED_INSERT_ALL_REQUEST3 =
+      InsertAllRequest.builder(TABLE_ID.getDataset(), TABLE_ID.getTable())
           .rows(ROWS_WITH_ID)
           .ignoreUnknownValues(IGNORE_UNKNOWN_VALUES)
           .skipInvalidRows(SKIP_INVALID_ROWS)
           .build();
-  private static final InsertAllRequest INSERT_ALL_REQUEST4 =
+  private static final InsertAllRequest DEPRECATED_INSERT_ALL_REQUEST4 =
       InsertAllRequest.builder(TABLE_ID, ROWS)
           .ignoreUnknownValues(IGNORE_UNKNOWN_VALUES)
           .skipInvalidRows(SKIP_INVALID_ROWS)
           .build();
-  private static final InsertAllRequest INSERT_ALL_REQUEST5 =
-      InsertAllRequest.builder(TABLE_ID.dataset(), TABLE_ID.table(), ROWS_WITH_ID)
+  private static final InsertAllRequest DEPRECATED_INSERT_ALL_REQUEST5 =
+      InsertAllRequest.builder(TABLE_ID.getDataset(), TABLE_ID.getTable(), ROWS_WITH_ID)
           .ignoreUnknownValues(IGNORE_UNKNOWN_VALUES)
           .skipInvalidRows(SKIP_INVALID_ROWS)
           .build();
-  private static final InsertAllRequest INSERT_ALL_REQUEST6 =
+  private static final InsertAllRequest DEPRECATED_INSERT_ALL_REQUEST6 =
       InsertAllRequest.builder(TABLE_ID, ROWS.get(0), ROWS.get(1))
           .ignoreUnknownValues(IGNORE_UNKNOWN_VALUES)
           .skipInvalidRows(SKIP_INVALID_ROWS)
           .build();
-  private static final InsertAllRequest INSERT_ALL_REQUEST7 =
-      InsertAllRequest.builder(TABLE_ID.dataset(), TABLE_ID.table(), ROWS_WITH_ID.get(0),
+  private static final InsertAllRequest DEPRECATED_INSERT_ALL_REQUEST7 =
+      InsertAllRequest.builder(TABLE_ID.getDataset(), TABLE_ID.getTable(), ROWS_WITH_ID.get(0),
           ROWS_WITH_ID.get(1))
           .ignoreUnknownValues(IGNORE_UNKNOWN_VALUES)
           .skipInvalidRows(SKIP_INVALID_ROWS)
           .build();
-  private static final InsertAllRequest INSERT_ALL_REQUEST8 =
-      InsertAllRequest.builder(TABLE_ID.dataset(), TABLE_ID.table())
+  private static final InsertAllRequest DEPRECATED_INSERT_ALL_REQUEST8 =
+      InsertAllRequest.builder(TABLE_ID.getDataset(), TABLE_ID.getTable())
           .addRow("id1", CONTENT1)
           .addRow("id2", CONTENT2)
           .ignoreUnknownValues(IGNORE_UNKNOWN_VALUES)
           .skipInvalidRows(SKIP_INVALID_ROWS)
           .build();
-  private static final InsertAllRequest INSERT_ALL_REQUEST9 = InsertAllRequest.builder(TABLE_INFO)
-      .addRow("id1", CONTENT1)
-      .addRow("id2", CONTENT2)
-      .ignoreUnknownValues(IGNORE_UNKNOWN_VALUES)
-      .skipInvalidRows(SKIP_INVALID_ROWS)
-      .build();
-  private static final InsertAllRequest INSERT_ALL_REQUEST10 = InsertAllRequest.builder(TABLE_INFO)
-      .addRow("id1", CONTENT1)
-      .addRow("id2", CONTENT2)
-      .ignoreUnknownValues(true)
-      .skipInvalidRows(false)
-      .build();
-  private static final InsertAllRequest INSERT_ALL_REQUEST11 = InsertAllRequest.builder(TABLE_INFO)
-      .addRow("id1", CONTENT1)
-      .addRow("id2", CONTENT2)
-      .ignoreUnknownValues(true)
-      .skipInvalidRows(false)
-      .templateSuffix(TEMPLATE_SUFFIX)
-      .build();
+  private static final InsertAllRequest DEPRECATED_INSERT_ALL_REQUEST9 =
+      InsertAllRequest.builder(TABLE_INFO)
+          .addRow("id1", CONTENT1)
+          .addRow("id2", CONTENT2)
+          .ignoreUnknownValues(IGNORE_UNKNOWN_VALUES)
+          .skipInvalidRows(SKIP_INVALID_ROWS)
+          .build();
+  private static final InsertAllRequest DEPRECATED_INSERT_ALL_REQUEST10 =
+      InsertAllRequest.builder(TABLE_INFO)
+          .addRow("id1", CONTENT1)
+          .addRow("id2", CONTENT2)
+          .ignoreUnknownValues(true)
+          .skipInvalidRows(false)
+          .build();
+  private static final InsertAllRequest DEPRECATED_INSERT_ALL_REQUEST11 =
+      InsertAllRequest.builder(TABLE_INFO)
+          .addRow("id1", CONTENT1)
+          .addRow("id2", CONTENT2)
+          .ignoreUnknownValues(true)
+          .skipInvalidRows(false)
+          .templateSuffix(TEMPLATE_SUFFIX)
+          .build();
 
   @Test
   public void testBuilder() {
-    assertEquals(TABLE_ID, INSERT_ALL_REQUEST1.table());
-    assertEquals(TABLE_ID, INSERT_ALL_REQUEST2.table());
-    assertEquals(TABLE_ID, INSERT_ALL_REQUEST3.table());
-    assertEquals(TABLE_ID, INSERT_ALL_REQUEST4.table());
-    assertEquals(TABLE_ID, INSERT_ALL_REQUEST5.table());
-    assertEquals(TABLE_ID, INSERT_ALL_REQUEST6.table());
-    assertEquals(TABLE_ID, INSERT_ALL_REQUEST7.table());
-    assertEquals(TABLE_ID, INSERT_ALL_REQUEST8.table());
-    assertEquals(TABLE_ID, INSERT_ALL_REQUEST9.table());
-    assertEquals(TABLE_ID, INSERT_ALL_REQUEST10.table());
-    assertEquals(TABLE_ID, INSERT_ALL_REQUEST11.table());
-    assertEquals(ROWS, INSERT_ALL_REQUEST1.rows());
-    assertEquals(ROWS, INSERT_ALL_REQUEST2.rows());
-    assertEquals(ROWS, INSERT_ALL_REQUEST4.rows());
-    assertEquals(ROWS, INSERT_ALL_REQUEST6.rows());
-    assertEquals(ROWS_WITH_ID, INSERT_ALL_REQUEST3.rows());
-    assertEquals(ROWS_WITH_ID, INSERT_ALL_REQUEST5.rows());
-    assertEquals(ROWS_WITH_ID, INSERT_ALL_REQUEST7.rows());
-    assertEquals(ROWS_WITH_ID, INSERT_ALL_REQUEST8.rows());
-    assertEquals(ROWS_WITH_ID, INSERT_ALL_REQUEST9.rows());
-    assertEquals(ROWS_WITH_ID, INSERT_ALL_REQUEST10.rows());
-    assertEquals(ROWS_WITH_ID, INSERT_ALL_REQUEST11.rows());
+    assertEquals(TABLE_ID, INSERT_ALL_REQUEST1.getTable());
+    assertEquals(TABLE_ID, INSERT_ALL_REQUEST2.getTable());
+    assertEquals(TABLE_ID, INSERT_ALL_REQUEST3.getTable());
+    assertEquals(TABLE_ID, INSERT_ALL_REQUEST4.getTable());
+    assertEquals(TABLE_ID, INSERT_ALL_REQUEST5.getTable());
+    assertEquals(TABLE_ID, INSERT_ALL_REQUEST6.getTable());
+    assertEquals(TABLE_ID, INSERT_ALL_REQUEST7.getTable());
+    assertEquals(TABLE_ID, INSERT_ALL_REQUEST8.getTable());
+    assertEquals(TABLE_ID, INSERT_ALL_REQUEST9.getTable());
+    assertEquals(TABLE_ID, INSERT_ALL_REQUEST10.getTable());
+    assertEquals(TABLE_ID, INSERT_ALL_REQUEST11.getTable());
+    assertEquals(ROWS, INSERT_ALL_REQUEST1.getRows());
+    assertEquals(ROWS, INSERT_ALL_REQUEST2.getRows());
+    assertEquals(ROWS, INSERT_ALL_REQUEST4.getRows());
+    assertEquals(ROWS, INSERT_ALL_REQUEST6.getRows());
+    assertEquals(ROWS_WITH_ID, INSERT_ALL_REQUEST3.getRows());
+    assertEquals(ROWS_WITH_ID, INSERT_ALL_REQUEST5.getRows());
+    assertEquals(ROWS_WITH_ID, INSERT_ALL_REQUEST7.getRows());
+    assertEquals(ROWS_WITH_ID, INSERT_ALL_REQUEST8.getRows());
+    assertEquals(ROWS_WITH_ID, INSERT_ALL_REQUEST9.getRows());
+    assertEquals(ROWS_WITH_ID, INSERT_ALL_REQUEST10.getRows());
+    assertEquals(ROWS_WITH_ID, INSERT_ALL_REQUEST11.getRows());
     assertEquals(SKIP_INVALID_ROWS, INSERT_ALL_REQUEST1.skipInvalidRows());
     assertEquals(SKIP_INVALID_ROWS, INSERT_ALL_REQUEST2.skipInvalidRows());
     assertEquals(SKIP_INVALID_ROWS, INSERT_ALL_REQUEST3.skipInvalidRows());
@@ -159,42 +231,102 @@ public class InsertAllRequestTest {
     assertEquals(IGNORE_UNKNOWN_VALUES, INSERT_ALL_REQUEST9.ignoreUnknownValues());
     assertTrue(INSERT_ALL_REQUEST10.ignoreUnknownValues());
     assertTrue(INSERT_ALL_REQUEST11.ignoreUnknownValues());
-    assertNull(INSERT_ALL_REQUEST1.templateSuffix());
-    assertNull(INSERT_ALL_REQUEST2.templateSuffix());
-    assertNull(INSERT_ALL_REQUEST3.templateSuffix());
-    assertNull(INSERT_ALL_REQUEST4.templateSuffix());
-    assertNull(INSERT_ALL_REQUEST5.templateSuffix());
-    assertNull(INSERT_ALL_REQUEST6.templateSuffix());
-    assertNull(INSERT_ALL_REQUEST7.templateSuffix());
-    assertNull(INSERT_ALL_REQUEST8.templateSuffix());
-    assertNull(INSERT_ALL_REQUEST9.templateSuffix());
-    assertNull(INSERT_ALL_REQUEST10.templateSuffix());
-    assertEquals(TEMPLATE_SUFFIX, INSERT_ALL_REQUEST11.templateSuffix());
+    assertNull(INSERT_ALL_REQUEST1.getTemplateSuffix());
+    assertNull(INSERT_ALL_REQUEST2.getTemplateSuffix());
+    assertNull(INSERT_ALL_REQUEST3.getTemplateSuffix());
+    assertNull(INSERT_ALL_REQUEST4.getTemplateSuffix());
+    assertNull(INSERT_ALL_REQUEST5.getTemplateSuffix());
+    assertNull(INSERT_ALL_REQUEST6.getTemplateSuffix());
+    assertNull(INSERT_ALL_REQUEST7.getTemplateSuffix());
+    assertNull(INSERT_ALL_REQUEST8.getTemplateSuffix());
+    assertNull(INSERT_ALL_REQUEST9.getTemplateSuffix());
+    assertNull(INSERT_ALL_REQUEST10.getTemplateSuffix());
+    assertEquals(TEMPLATE_SUFFIX, INSERT_ALL_REQUEST11.getTemplateSuffix());
+  }
+
+  @Test
+  public void testBuilderDeprecated() {
+    assertEquals(TABLE_ID, DEPRECATED_INSERT_ALL_REQUEST1.getTable());
+    assertEquals(TABLE_ID, DEPRECATED_INSERT_ALL_REQUEST2.getTable());
+    assertEquals(TABLE_ID, DEPRECATED_INSERT_ALL_REQUEST3.getTable());
+    assertEquals(TABLE_ID, DEPRECATED_INSERT_ALL_REQUEST4.getTable());
+    assertEquals(TABLE_ID, DEPRECATED_INSERT_ALL_REQUEST5.getTable());
+    assertEquals(TABLE_ID, DEPRECATED_INSERT_ALL_REQUEST6.getTable());
+    assertEquals(TABLE_ID, DEPRECATED_INSERT_ALL_REQUEST7.getTable());
+    assertEquals(TABLE_ID, DEPRECATED_INSERT_ALL_REQUEST8.getTable());
+    assertEquals(TABLE_ID, DEPRECATED_INSERT_ALL_REQUEST9.getTable());
+    assertEquals(TABLE_ID, DEPRECATED_INSERT_ALL_REQUEST10.getTable());
+    assertEquals(TABLE_ID, DEPRECATED_INSERT_ALL_REQUEST11.getTable());
+    assertEquals(ROWS, DEPRECATED_INSERT_ALL_REQUEST1.rows());
+    assertEquals(ROWS, DEPRECATED_INSERT_ALL_REQUEST2.rows());
+    assertEquals(ROWS, DEPRECATED_INSERT_ALL_REQUEST4.rows());
+    assertEquals(ROWS, DEPRECATED_INSERT_ALL_REQUEST6.rows());
+    assertEquals(ROWS_WITH_ID, DEPRECATED_INSERT_ALL_REQUEST3.rows());
+    assertEquals(ROWS_WITH_ID, DEPRECATED_INSERT_ALL_REQUEST5.rows());
+    assertEquals(ROWS_WITH_ID, DEPRECATED_INSERT_ALL_REQUEST7.rows());
+    assertEquals(ROWS_WITH_ID, DEPRECATED_INSERT_ALL_REQUEST8.rows());
+    assertEquals(ROWS_WITH_ID, DEPRECATED_INSERT_ALL_REQUEST9.rows());
+    assertEquals(ROWS_WITH_ID, DEPRECATED_INSERT_ALL_REQUEST10.rows());
+    assertEquals(ROWS_WITH_ID, DEPRECATED_INSERT_ALL_REQUEST11.rows());
+    assertEquals(SKIP_INVALID_ROWS, DEPRECATED_INSERT_ALL_REQUEST1.skipInvalidRows());
+    assertEquals(SKIP_INVALID_ROWS, DEPRECATED_INSERT_ALL_REQUEST2.skipInvalidRows());
+    assertEquals(SKIP_INVALID_ROWS, DEPRECATED_INSERT_ALL_REQUEST3.skipInvalidRows());
+    assertEquals(SKIP_INVALID_ROWS, DEPRECATED_INSERT_ALL_REQUEST4.skipInvalidRows());
+    assertEquals(SKIP_INVALID_ROWS, DEPRECATED_INSERT_ALL_REQUEST5.skipInvalidRows());
+    assertEquals(SKIP_INVALID_ROWS, DEPRECATED_INSERT_ALL_REQUEST6.skipInvalidRows());
+    assertEquals(SKIP_INVALID_ROWS, DEPRECATED_INSERT_ALL_REQUEST7.skipInvalidRows());
+    assertEquals(SKIP_INVALID_ROWS, DEPRECATED_INSERT_ALL_REQUEST8.skipInvalidRows());
+    assertEquals(SKIP_INVALID_ROWS, DEPRECATED_INSERT_ALL_REQUEST9.skipInvalidRows());
+    assertFalse(DEPRECATED_INSERT_ALL_REQUEST10.skipInvalidRows());
+    assertFalse(DEPRECATED_INSERT_ALL_REQUEST11.skipInvalidRows());
+    assertEquals(IGNORE_UNKNOWN_VALUES, DEPRECATED_INSERT_ALL_REQUEST1.ignoreUnknownValues());
+    assertEquals(IGNORE_UNKNOWN_VALUES, DEPRECATED_INSERT_ALL_REQUEST2.ignoreUnknownValues());
+    assertEquals(IGNORE_UNKNOWN_VALUES, DEPRECATED_INSERT_ALL_REQUEST3.ignoreUnknownValues());
+    assertEquals(IGNORE_UNKNOWN_VALUES, DEPRECATED_INSERT_ALL_REQUEST4.ignoreUnknownValues());
+    assertEquals(IGNORE_UNKNOWN_VALUES, DEPRECATED_INSERT_ALL_REQUEST5.ignoreUnknownValues());
+    assertEquals(IGNORE_UNKNOWN_VALUES, DEPRECATED_INSERT_ALL_REQUEST6.ignoreUnknownValues());
+    assertEquals(IGNORE_UNKNOWN_VALUES, DEPRECATED_INSERT_ALL_REQUEST7.ignoreUnknownValues());
+    assertEquals(IGNORE_UNKNOWN_VALUES, DEPRECATED_INSERT_ALL_REQUEST8.ignoreUnknownValues());
+    assertEquals(IGNORE_UNKNOWN_VALUES, DEPRECATED_INSERT_ALL_REQUEST9.ignoreUnknownValues());
+    assertTrue(DEPRECATED_INSERT_ALL_REQUEST10.ignoreUnknownValues());
+    assertTrue(DEPRECATED_INSERT_ALL_REQUEST11.ignoreUnknownValues());
+    assertNull(DEPRECATED_INSERT_ALL_REQUEST1.templateSuffix());
+    assertNull(DEPRECATED_INSERT_ALL_REQUEST2.templateSuffix());
+    assertNull(DEPRECATED_INSERT_ALL_REQUEST3.templateSuffix());
+    assertNull(DEPRECATED_INSERT_ALL_REQUEST4.templateSuffix());
+    assertNull(DEPRECATED_INSERT_ALL_REQUEST5.templateSuffix());
+    assertNull(DEPRECATED_INSERT_ALL_REQUEST6.templateSuffix());
+    assertNull(DEPRECATED_INSERT_ALL_REQUEST7.templateSuffix());
+    assertNull(DEPRECATED_INSERT_ALL_REQUEST8.templateSuffix());
+    assertNull(DEPRECATED_INSERT_ALL_REQUEST9.templateSuffix());
+    assertNull(DEPRECATED_INSERT_ALL_REQUEST10.templateSuffix());
+    assertEquals(TEMPLATE_SUFFIX, DEPRECATED_INSERT_ALL_REQUEST11.templateSuffix());
   }
 
   @Test
   public void testOf() {
     InsertAllRequest request = InsertAllRequest.of(TABLE_ID, ROWS);
-    assertEquals(TABLE_ID, request.table());
-    assertEquals(ROWS, request.rows());
+    assertEquals(TABLE_ID, request.getTable());
+    assertEquals(ROWS, request.getRows());
     request = InsertAllRequest.of(TABLE_INFO, ROWS);
-    assertEquals(TABLE_ID, request.table());
-    assertEquals(ROWS, request.rows());
-    request = InsertAllRequest.of(TABLE_ID.dataset(), TABLE_ID.table(), ROWS);
-    assertEquals(TABLE_ID, request.table());
-    assertEquals(ROWS, request.rows());
-    request = InsertAllRequest.of(TABLE_ID.dataset(), TABLE_ID.table(), ROWS);
-    assertEquals(TABLE_ID, request.table());
-    assertEquals(ROWS, request.rows());
+    assertEquals(TABLE_ID, request.getTable());
+    assertEquals(ROWS, request.getRows());
+    request = InsertAllRequest.of(TABLE_ID.getDataset(), TABLE_ID.getTable(), ROWS);
+    assertEquals(TABLE_ID, request.getTable());
+    assertEquals(ROWS, request.getRows());
+    request = InsertAllRequest.of(TABLE_ID.getDataset(), TABLE_ID.getTable(), ROWS);
+    assertEquals(TABLE_ID, request.getTable());
+    assertEquals(ROWS, request.getRows());
     request = InsertAllRequest.of(TABLE_ID, ROWS.get(0), ROWS.get(1));
-    assertEquals(TABLE_ID, request.table());
-    assertEquals(ROWS, request.rows());
+    assertEquals(TABLE_ID, request.getTable());
+    assertEquals(ROWS, request.getRows());
     request = InsertAllRequest.of(TABLE_INFO, ROWS.get(0), ROWS.get(1));
-    assertEquals(TABLE_ID, request.table());
-    assertEquals(ROWS, request.rows());
-    request = InsertAllRequest.of(TABLE_ID.dataset(), TABLE_ID.table(), ROWS.get(0), ROWS.get(1));
-    assertEquals(TABLE_ID, request.table());
-    assertEquals(ROWS, request.rows());
+    assertEquals(TABLE_ID, request.getTable());
+    assertEquals(ROWS, request.getRows());
+    request =
+        InsertAllRequest.of(TABLE_ID.getDataset(), TABLE_ID.getTable(), ROWS.get(0), ROWS.get(1));
+    assertEquals(TABLE_ID, request.getTable());
+    assertEquals(ROWS, request.getRows());
   }
 
   @Test
@@ -214,10 +346,10 @@ public class InsertAllRequestTest {
     assertEquals(expected, value);
     assertEquals(expected.toString(), value.toString());
     assertEquals(expected.hashCode(), value.hashCode());
-    assertEquals(expected.table(), value.table());
-    assertEquals(expected.rows(), value.rows());
+    assertEquals(expected.getTable(), value.getTable());
+    assertEquals(expected.getRows(), value.getRows());
     assertEquals(expected.ignoreUnknownValues(), value.ignoreUnknownValues());
     assertEquals(expected.skipInvalidRows(), value.skipInvalidRows());
-    assertEquals(expected.templateSuffix(), value.templateSuffix());
+    assertEquals(expected.getTemplateSuffix(), value.getTemplateSuffix());
   }
 }

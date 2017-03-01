@@ -24,7 +24,8 @@ import java.util.List;
 public interface DatastoreWriter {
 
   /**
-   * Datastore add operation. This method will automatically allocate an id if necessary.
+   * Datastore add operation: inserts the provided entity. This method will automatically allocate
+   * an id if necessary.
    *
    * @param entity the entity to add
    * @return an {@code Entity} with the same properties and a key that is either newly allocated
@@ -35,8 +36,8 @@ public interface DatastoreWriter {
   Entity add(FullEntity<?> entity);
 
   /**
-   * Datastore add operation. This method will automatically allocate id for any entity with an
-   * incomplete key.
+   * Datastore add operation: inserts the provided entities. This method will automatically allocate
+   * id for any entity with an incomplete key.
    *
    * @return a list of {@code Entity} ordered by input with the same properties and a key that
    *     is either newly allocated or the same one if was already complete
@@ -53,8 +54,8 @@ public interface DatastoreWriter {
   void update(Entity... entities);
 
   /**
-   * A Datastore put (a.k.a upsert) operation. This method will automatically allocate an id if
-   * necessary.
+   * A Datastore put (a.k.a upsert) operation: inserts an entity if it does not exist, updates it
+   * otherwise. This method will automatically allocate an id if necessary.
    *
    * @param entity the entity to put
    * @return an {@code Entity} with the same properties and a key that is either newly allocated
@@ -65,8 +66,8 @@ public interface DatastoreWriter {
   Entity put(FullEntity<?> entity);
 
   /**
-   * A Datastore put (a.k.a upsert) operation. This method will automatically allocate id for any
-   * entity with an incomplete key.
+   * A Datastore put (a.k.a upsert) operation: creates an entity if it does not exist, updates it
+   * otherwise. This method will automatically allocate id for any entity with an incomplete key.
    *
    * @return a list of updated or inserted {@code Entity}, ordered by input. Returned keys are
    *     either newly allocated or the same one if was already complete.
@@ -76,7 +77,7 @@ public interface DatastoreWriter {
   List<Entity> put(FullEntity<?>... entities);
 
   /**
-   * A datastore delete operation. It is OK request a deletion of a non-existing entity.
+   * A datastore delete operation. It is OK to request the deletion of a non-existing key.
    */
   void delete(Key... keys);
 }

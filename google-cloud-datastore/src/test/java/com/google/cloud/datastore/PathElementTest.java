@@ -31,6 +31,13 @@ public class PathElementTest {
 
   @Test
   public void testKind() throws Exception {
+    assertEquals("k1", PE_1.getKind());
+    assertEquals("k2", PE_2.getKind());
+    assertEquals("k3", PE_3.getKind());
+  }
+
+  @Test
+  public void testKindDeprected() throws Exception {
     assertEquals("k1", PE_1.kind());
     assertEquals("k2", PE_2.kind());
     assertEquals("k3", PE_3.kind());
@@ -45,6 +52,13 @@ public class PathElementTest {
 
   @Test
   public void testId() throws Exception {
+    assertNull(PE_1.getId());
+    assertNull(PE_2.getId());
+    assertEquals(Long.valueOf(1), PE_3.getId());
+  }
+
+  @Test
+  public void testIdDeprecated() throws Exception {
     assertNull(PE_1.id());
     assertNull(PE_2.id());
     assertEquals(Long.valueOf(1), PE_3.id());
@@ -59,6 +73,13 @@ public class PathElementTest {
 
   @Test
   public void testName() throws Exception {
+    assertNull(PE_1.getName());
+    assertEquals("n", PE_2.getName());
+    assertNull(PE_3.getName());
+  }
+
+  @Test
+  public void testNameDeprecated() throws Exception {
     assertNull(PE_1.name());
     assertEquals("n", PE_2.name());
     assertNull(PE_3.name());
@@ -66,6 +87,13 @@ public class PathElementTest {
 
   @Test
   public void testNameOrId() throws Exception {
+    assertNull(PE_1.getNameOrId());
+    assertEquals("n", PE_2.getNameOrId());
+    assertEquals(Long.valueOf(1), PE_3.getNameOrId());
+  }
+
+  @Test
+  public void testNameOrIdDeprecated() throws Exception {
     assertNull(PE_1.nameOrId());
     assertEquals("n", PE_2.nameOrId());
     assertEquals(Long.valueOf(1), PE_3.nameOrId());

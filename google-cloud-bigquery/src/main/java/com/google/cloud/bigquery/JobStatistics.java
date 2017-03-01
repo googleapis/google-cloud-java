@@ -76,7 +76,7 @@ public abstract class JobStatistics implements Serializable {
       return baseHashCode();
     }
 
-    static Builder builder() {
+    static Builder newBuilder() {
       return new Builder();
     }
 
@@ -107,7 +107,7 @@ public abstract class JobStatistics implements Serializable {
         this.destinationUriFileCounts = statisticsPb.getExtract().getDestinationUriFileCounts();
       }
 
-      Builder destinationUriFileCounts(List<Long> destinationUriFileCounts) {
+      Builder setDestinationUriFileCounts(List<Long> destinationUriFileCounts) {
         this.destinationUriFileCounts = destinationUriFileCounts;
         return self();
       }
@@ -128,7 +128,17 @@ public abstract class JobStatistics implements Serializable {
      * These values will be in the same order as the URIs specified by
      * {@link ExtractJobConfiguration#destinationUris()}.
      */
+    @Deprecated
     public List<Long> destinationUriFileCounts() {
+      return getDestinationUriFileCounts();
+    }
+
+    /**
+     * Returns the number of files per destination URI or URI pattern specified in the extract job.
+     * These values will be in the same order as the URIs specified by
+     * {@link ExtractJobConfiguration#destinationUris()}.
+     */
+    public List<Long> getDestinationUriFileCounts() {
       return destinationUriFileCounts;
     }
 
@@ -157,7 +167,7 @@ public abstract class JobStatistics implements Serializable {
           new JobStatistics4().setDestinationUriFileCounts(destinationUriFileCounts));
     }
 
-    static Builder builder() {
+    static Builder newBuilder() {
       return new Builder();
     }
 
@@ -197,22 +207,22 @@ public abstract class JobStatistics implements Serializable {
         this.outputRows = statisticsPb.getLoad().getOutputRows();
       }
 
-      Builder inputBytes(Long inputBytes) {
+      Builder setInputBytes(Long inputBytes) {
         this.inputBytes = inputBytes;
         return self();
       }
 
-      Builder inputFiles(Long inputFiles) {
+      Builder setInputFiles(Long inputFiles) {
         this.inputFiles = inputFiles;
         return self();
       }
 
-      Builder outputBytes(Long outputBytes) {
+      Builder setOutputBytes(Long outputBytes) {
         this.outputBytes = outputBytes;
         return self();
       }
 
-      Builder outputRows(Long outputRows) {
+      Builder setOutputRows(Long outputRows) {
         this.outputRows = outputRows;
         return self();
       }
@@ -235,28 +245,60 @@ public abstract class JobStatistics implements Serializable {
     /**
      * Returns the number of bytes of source data in a load job.
      */
+    @Deprecated
     public Long inputBytes() {
+      return getInputBytes();
+    }
+
+    /**
+     * Returns the number of bytes of source data in a load job.
+     */
+    public Long getInputBytes() {
       return inputBytes;
     }
 
     /**
      * Returns the number of source files in a load job.
      */
+    @Deprecated
     public Long inputFiles() {
+      return getInputFiles();
+    }
+
+    /**
+     * Returns the number of source files in a load job.
+     */
+    public Long getInputFiles() {
       return inputFiles;
     }
 
     /**
      * Returns the size of the data loaded by a load job so far, in bytes.
      */
+    @Deprecated
     public Long outputBytes() {
+      return getOutputBytes();
+    }
+
+    /**
+     * Returns the size of the data loaded by a load job so far, in bytes.
+     */
+    public Long getOutputBytes() {
       return outputBytes;
     }
 
     /**
      * Returns the number of rows loaded by a load job so far.
      */
+    @Deprecated
     public Long outputRows() {
+      return getOutputRows();
+    }
+
+    /**
+     * Returns the number of rows loaded by a load job so far.
+     */
+    public Long getOutputRows() {
       return outputRows;
     }
 
@@ -292,7 +334,7 @@ public abstract class JobStatistics implements Serializable {
       return super.toPb().setLoad(loadStatisticsPb);
     }
 
-    static Builder builder() {
+    static Builder newBuilder() {
       return new Builder();
     }
 
@@ -337,27 +379,27 @@ public abstract class JobStatistics implements Serializable {
         }
       }
 
-      Builder billingTier(Integer billingTier) {
+      Builder setBillingTier(Integer billingTier) {
         this.billingTier = billingTier;
         return self();
       }
 
-      Builder cacheHit(Boolean cacheHit) {
+      Builder setCacheHit(Boolean cacheHit) {
         this.cacheHit = cacheHit;
         return self();
       }
 
-      Builder totalBytesBilled(Long totalBytesBilled) {
+      Builder setTotalBytesBilled(Long totalBytesBilled) {
         this.totalBytesBilled = totalBytesBilled;
         return self();
       }
 
-      Builder totalBytesProcessed(Long totalBytesProcessed) {
+      Builder setTotalBytesProcessed(Long totalBytesProcessed) {
         this.totalBytesProcessed = totalBytesProcessed;
         return self();
       }
 
-      Builder queryPlan(List<QueryStage> queryPlan) {
+      Builder setQueryPlan(List<QueryStage> queryPlan) {
         this.queryPlan = queryPlan;
         return self();
       }
@@ -380,7 +422,15 @@ public abstract class JobStatistics implements Serializable {
     /**
      * Returns the billing tier for the job.
      */
+    @Deprecated
     public Integer billingTier() {
+      return getBillingTier();
+    }
+
+    /**
+     * Returns the billing tier for the job.
+     */
+    public Integer getBillingTier() {
       return billingTier;
     }
 
@@ -390,21 +440,48 @@ public abstract class JobStatistics implements Serializable {
      * @see <a href="https://cloud.google.com/bigquery/querying-data#querycaching">
      *     Query Caching</a>
      */
+    @Deprecated
     public Boolean cacheHit() {
+      return getCacheHit();
+    }
+
+    /**
+     * Returns whether the query result was fetched from the query cache.
+     *
+     * @see <a href="https://cloud.google.com/bigquery/querying-data#querycaching">
+     *     Query Caching</a>
+     */
+    public Boolean getCacheHit() {
       return cacheHit;
     }
 
     /**
      * Returns the total number of bytes billed for the job.
      */
+    @Deprecated
     public Long totalBytesBilled() {
+      return getTotalBytesBilled();
+    }
+
+    /**
+     * Returns the total number of bytes billed for the job.
+     */
+    public Long getTotalBytesBilled() {
       return totalBytesBilled;
     }
 
     /**
      * Returns the total number of bytes processed by the job.
      */
+    @Deprecated
     public Long totalBytesProcessed() {
+      return getTotalBytesProcessed();
+    }
+
+    /**
+     * Returns the total number of bytes processed by the job.
+     */
+    public Long getTotalBytesProcessed() {
       return totalBytesProcessed;
     }
 
@@ -416,7 +493,20 @@ public abstract class JobStatistics implements Serializable {
      *
      * @see <a href="https://cloud.google.com/bigquery/query-plan-explanation">Query Plan</a>
      */
+    @Deprecated
     public List<QueryStage> queryPlan() {
+      return getQueryPlan();
+    }
+
+    /**
+     * Returns the query plan as a list of stages or {@code null} if a query plan is not available.
+     * Each stage involves a number of steps that read from data sources, perform a series of
+     * transformations on the input, and emit an output to a future stage (or the final result). The
+     * query plan is available for a completed query job and is retained for 7 days.
+     *
+     * @see <a href="https://cloud.google.com/bigquery/query-plan-explanation">Query Plan</a>
+     */
+    public List<QueryStage> getQueryPlan() {
       return queryPlan;
     }
 
@@ -457,7 +547,7 @@ public abstract class JobStatistics implements Serializable {
       return super.toPb().setQuery(queryStatisticsPb);
     }
 
-    static Builder builder() {
+    static Builder newBuilder() {
       return new Builder();
     }
 
@@ -487,17 +577,17 @@ public abstract class JobStatistics implements Serializable {
       return (B) this;
     }
 
-    B creationTime(Long creationTime) {
+    B setCreationTimestamp(Long creationTime) {
       this.creationTime = creationTime;
       return self();
     }
 
-    B endTime(Long endTime) {
+    B setEndTime(Long endTime) {
       this.endTime = endTime;
       return self();
     }
 
-    B startTime(Long startTime) {
+    B setStartTime(Long startTime) {
       this.startTime = startTime;
       return self();
     }
@@ -514,7 +604,15 @@ public abstract class JobStatistics implements Serializable {
   /**
    * Returns the creation time of the job in milliseconds since epoch.
    */
+  @Deprecated
   public Long creationTime() {
+    return getCreationTime();
+  }
+
+  /**
+   * Returns the creation time of the job in milliseconds since epoch.
+   */
+  public Long getCreationTime() {
     return creationTime;
   }
 
@@ -522,7 +620,16 @@ public abstract class JobStatistics implements Serializable {
    * Returns the end time of the job in milliseconds since epoch. Returns {@code null} if the
    * job has not finished yet.
    */
+  @Deprecated
   public Long endTime() {
+    return getEndTime();
+  }
+
+  /**
+   * Returns the end time of the job in milliseconds since epoch. Returns {@code null} if the
+   * job has not finished yet.
+   */
+  public Long getEndTime() {
     return endTime;
   }
 
@@ -530,7 +637,16 @@ public abstract class JobStatistics implements Serializable {
    * Returns the start time of the job in milliseconds since epoch. Returns {@code null} if the
    * job has not started yet.
    */
+  @Deprecated
   public Long startTime() {
+    return getStartTime();
+  }
+
+  /**
+   * Returns the start time of the job in milliseconds since epoch. Returns {@code null} if the
+   * job has not started yet.
+   */
+  public Long getStartTime() {
     return startTime;
   }
 

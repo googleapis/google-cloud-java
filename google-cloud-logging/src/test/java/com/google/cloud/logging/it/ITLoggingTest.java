@@ -35,7 +35,7 @@ public class ITLoggingTest extends BaseSystemTest {
   @BeforeClass
   public static void beforeClass() {
     RemoteLoggingHelper helper = RemoteLoggingHelper.create();
-    logging = helper.options().service();
+    logging = helper.getOptions().getService();
   }
 
   @AfterClass

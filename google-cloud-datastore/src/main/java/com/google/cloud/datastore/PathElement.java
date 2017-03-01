@@ -42,7 +42,18 @@ public final class PathElement implements Serializable {
     this.id = id;
   }
 
+  /**
+   * Returns the kind of this path element.
+   */
+  @Deprecated
   public String kind() {
+    return getKind();
+  }
+
+  /**
+   * Returns the kind of this path element.
+   */
+  public String getKind() {
     return kind;
   }
 
@@ -50,7 +61,18 @@ public final class PathElement implements Serializable {
     return id != null;
   }
 
+  /**
+   * Returns the ID of this path element.
+   */
+  @Deprecated
   public Long id() {
+    return getId();
+  }
+
+  /**
+   * Returns the ID of this path element.
+   */
+  public Long getId() {
     return id;
   }
 
@@ -58,11 +80,35 @@ public final class PathElement implements Serializable {
     return name != null;
   }
 
+  /**
+   * Returns the name of this path element.
+   */
+  @Deprecated
   public String name() {
+    return getName();
+  }
+
+  /**
+   * Returns the name of this path element.
+   */
+  public String getName() {
     return name;
   }
 
+  /**
+   * Returns the path element's ID (as {@link Long}) or name (as {@link String}). Never
+   * {@code null}.
+   */
+  @Deprecated
   public Object nameOrId() {
+    return getNameOrId();
+  }
+
+  /**
+   * Returns the path element's ID (as {@link Long}) or name (as {@link String}). Never
+   * {@code null}.
+   */
+  public Object getNameOrId() {
     return id == null ? name : id;
   }
 

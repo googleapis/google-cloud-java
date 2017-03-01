@@ -97,7 +97,7 @@ public final class DeprecationStatus<T extends ResourceId> implements Serializab
      * @see <a href="http://www.ietf.org/rfc/rfc3339.txt">RFC3339</a>
      */
     // Wrongly-formatted timestamps were allowed, we must still support them (see #732 for details)
-    Builder<T> deleted(String deleted) {
+    Builder<T> setDeleted(String deleted) {
       this.deleted = deleted;
       return this;
     }
@@ -109,7 +109,7 @@ public final class DeprecationStatus<T extends ResourceId> implements Serializab
      * @see <a href="http://www.ietf.org/rfc/rfc3339.txt">RFC3339</a>
      */
     // Wrongly-formatted timestamps were allowed, we must still support them (see #732 for details)
-    Builder<T> deprecated(String deprecated) {
+    Builder<T> setDeprecated(String deprecated) {
       this.deprecated = deprecated;
       return this;
     }
@@ -121,7 +121,7 @@ public final class DeprecationStatus<T extends ResourceId> implements Serializab
      * @see <a href="http://www.ietf.org/rfc/rfc3339.txt">RFC3339</a>
      */
     // Wrongly-formatted timestamps were allowed, we must still support them (see #732 for details)
-    Builder<T> obsolete(String obsolete) {
+    Builder<T> setObsolete(String obsolete) {
       this.obsolete = obsolete;
       return this;
     }
@@ -130,7 +130,16 @@ public final class DeprecationStatus<T extends ResourceId> implements Serializab
      * Sets the timestamp on or after which the deprecation state of this resource will be changed
      * to {@link Status#DELETED}. In milliseconds since epoch.
      */
+    @Deprecated
     public Builder<T> deleted(long deleted) {
+      return setDeleted(deleted);
+    }
+
+    /**
+     * Sets the timestamp on or after which the deprecation state of this resource will be changed
+     * to {@link Status#DELETED}. In milliseconds since epoch.
+     */
+    public Builder<T> setDeleted(long deleted) {
       this.deleted = TIMESTAMP_FORMATTER.print(deleted);
       return this;
     }
@@ -139,7 +148,16 @@ public final class DeprecationStatus<T extends ResourceId> implements Serializab
      * Sets the timestamp on or after which the deprecation state of this resource will be changed
      * to {@link Status#DEPRECATED}. In milliseconds since epoch.
      */
+    @Deprecated
     public Builder<T> deprecated(long deprecated) {
+      return setDeprecated(deprecated);
+    }
+
+    /**
+     * Sets the timestamp on or after which the deprecation state of this resource will be changed
+     * to {@link Status#DEPRECATED}. In milliseconds since epoch.
+     */
+    public Builder<T> setDeprecated(long deprecated) {
       this.deprecated = TIMESTAMP_FORMATTER.print(deprecated);
       return this;
     }
@@ -148,7 +166,16 @@ public final class DeprecationStatus<T extends ResourceId> implements Serializab
      * Sets the timestamp on or after which the deprecation state of this resource will be changed
      * to {@link Status#OBSOLETE}. In milliseconds since epoch.
      */
+    @Deprecated
     public Builder<T> obsolete(long obsolete) {
+      return setObsolete(obsolete);
+    }
+
+    /**
+     * Sets the timestamp on or after which the deprecation state of this resource will be changed
+     * to {@link Status#OBSOLETE}. In milliseconds since epoch.
+     */
+    public Builder<T> setObsolete(long obsolete) {
       this.obsolete = TIMESTAMP_FORMATTER.print(obsolete);
       return this;
     }
@@ -157,7 +184,16 @@ public final class DeprecationStatus<T extends ResourceId> implements Serializab
      * Sets the identity of the suggested replacement for a deprecated resource. The suggested
      * replacement resource must be the same kind of resource as the deprecated resource.
      */
+    @Deprecated
     public Builder<T> replacement(T replacement) {
+      return setReplacement(replacement);
+    }
+
+    /**
+     * Sets the identity of the suggested replacement for a deprecated resource. The suggested
+     * replacement resource must be the same kind of resource as the deprecated resource.
+     */
+    public Builder<T> setReplacement(T replacement) {
       this.replacement = replacement;
       return this;
     }
@@ -165,7 +201,15 @@ public final class DeprecationStatus<T extends ResourceId> implements Serializab
     /**
      * Sets the status of the deprecated resource.
      */
+    @Deprecated
     public Builder<T> status(Status status) {
+      return setStatus(status);
+    }
+
+    /**
+     * Sets the status of the deprecated resource.
+     */
+    public Builder<T> setStatus(Status status) {
       this.status = checkNotNull(status);
       return this;
     }
@@ -194,7 +238,20 @@ public final class DeprecationStatus<T extends ResourceId> implements Serializab
    * @see <a href="http://www.ietf.org/rfc/rfc3339.txt">RFC3339</a>
    */
   // Wrongly-formatted timestamps were allowed, we must still support them (see #732 for details)
+  @Deprecated
   public String deleted() {
+    return getDeleted();
+  }
+
+  /**
+   * Returns the timestamp on or after which the deprecation state of this resource will be changed
+   * to {@link Status#DELETED}. Returns {@code null} if not set. This value should be in RFC3339
+   * format.
+   *
+   * @see <a href="http://www.ietf.org/rfc/rfc3339.txt">RFC3339</a>
+   */
+  // Wrongly-formatted timestamps were allowed, we must still support them (see #732 for details)
+  public String getDeleted() {
     return deleted;
   }
 
@@ -206,7 +263,20 @@ public final class DeprecationStatus<T extends ResourceId> implements Serializab
    * @see <a href="http://www.ietf.org/rfc/rfc3339.txt">RFC3339</a>
    */
   // Wrongly-formatted timestamps were allowed, we must still support them (see #732 for details)
+  @Deprecated
   public String deprecated() {
+    return getDeprecated();
+  }
+
+  /**
+   * Returns the timestamp on or after which the deprecation state of this resource will be changed
+   * to {@link Status#DEPRECATED}. Returns {@code null} if not set. This value should be in RFC3339
+   * format.
+   *
+   * @see <a href="http://www.ietf.org/rfc/rfc3339.txt">RFC3339</a>
+   */
+  // Wrongly-formatted timestamps were allowed, we must still support them (see #732 for details)
+  public String getDeprecated() {
     return deprecated;
   }
 
@@ -218,7 +288,20 @@ public final class DeprecationStatus<T extends ResourceId> implements Serializab
    * @see <a href="http://www.ietf.org/rfc/rfc3339.txt">RFC3339</a>
    */
   // Wrongly-formatted timestamps were allowed, we must still support them (see #732 for details)
+  @Deprecated
   public String obsolete() {
+    return getObsolete();
+  }
+
+  /**
+   * Returns the timestamp on or after which the deprecation state of this resource will be changed
+   * to {@link Status#OBSOLETE}. Returns {@code null} if not set. This value should be in RFC3339
+   * format.
+   *
+   * @see <a href="http://www.ietf.org/rfc/rfc3339.txt">RFC3339</a>
+   */
+  // Wrongly-formatted timestamps were allowed, we must still support them (see #732 for details)
+  public String getObsolete() {
     return obsolete;
   }
 
@@ -228,7 +311,18 @@ public final class DeprecationStatus<T extends ResourceId> implements Serializab
    *
    * @throws IllegalStateException if {@link #deleted()} is not a valid date, time or datetime
    */
+  @Deprecated
   public Long deletedMillis() {
+    return getDeletedMillis();
+  }
+
+  /**
+   * Returns the timestamp (in milliseconds since epoch) on or after which the deprecation state of
+   * this resource will be changed to {@link Status#DELETED}. Returns {@code null} if not set.
+   *
+   * @throws IllegalStateException if {@link #deleted()} is not a valid date, time or datetime
+   */
+  public Long getDeletedMillis() {
     try {
       return deleted != null ? TIMESTAMP_PARSER.parseMillis(deleted) : null;
     } catch (IllegalArgumentException ex) {
@@ -242,7 +336,18 @@ public final class DeprecationStatus<T extends ResourceId> implements Serializab
    *
    * @throws IllegalStateException if {@link #deprecated()} is not a valid date, time or datetime
    */
+  @Deprecated
   public Long deprecatedMillis() {
+    return getDeprecatedMillis();
+  }
+
+  /**
+   * Returns the timestamp (in milliseconds since epoch) on or after which the deprecation state of
+   * this resource will be changed to {@link Status#DEPRECATED}. Returns {@code null} if not set.
+   *
+   * @throws IllegalStateException if {@link #deprecated()} is not a valid date, time or datetime
+   */
+  public Long getDeprecatedMillis() {
     try {
       return deprecated != null ? TIMESTAMP_PARSER.parseMillis(deprecated) : null;
     } catch (IllegalArgumentException ex) {
@@ -256,7 +361,18 @@ public final class DeprecationStatus<T extends ResourceId> implements Serializab
    *
    * @throws IllegalStateException if {@link #obsolete()} is not a valid date, time or datetime
    */
+  @Deprecated
   public Long obsoleteMillis() {
+    return getObsoleteMillis();
+  }
+
+  /**
+   * Returns the timestamp (in milliseconds since epoch) on or after which the deprecation state of
+   * this resource will be changed to {@link Status#OBSOLETE}. Returns {@code null} if not set.
+   *
+   * @throws IllegalStateException if {@link #obsolete()} is not a valid date, time or datetime
+   */
+  public Long getObsoleteMillis() {
     try {
       return obsolete != null ? TIMESTAMP_PARSER.parseMillis(obsolete) : null;
     } catch (IllegalArgumentException ex) {
@@ -268,14 +384,31 @@ public final class DeprecationStatus<T extends ResourceId> implements Serializab
    * Returns the identity of the suggested replacement for a deprecated resource. The suggested
    * replacement resource must be the same kind of resource as the deprecated resource.
    */
+  @Deprecated
   public T replacement() {
+    return getReplacement();
+  }
+
+  /**
+   * Returns the identity of the suggested replacement for a deprecated resource. The suggested
+   * replacement resource must be the same kind of resource as the deprecated resource.
+   */
+  public T getReplacement() {
     return replacement;
   }
 
   /**
    * Returns the deprecation state of this resource.
    */
+  @Deprecated
   public Status status() {
+    return getStatus();
+  }
+
+  /**
+   * Returns the deprecation state of this resource.
+   */
+  public Status getStatus() {
     return status;
   }
 
@@ -315,7 +448,7 @@ public final class DeprecationStatus<T extends ResourceId> implements Serializab
     deprecationStatusPb.setDeleted(deleted);
     deprecationStatusPb.setDeprecated(deprecated);
     deprecationStatusPb.setObsolete(obsolete);
-    deprecationStatusPb.setReplacement(replacement.selfLink());
+    deprecationStatusPb.setReplacement(replacement.getSelfLink());
     deprecationStatusPb.setState(status.name());
     return deprecationStatusPb;
   }
@@ -323,37 +456,54 @@ public final class DeprecationStatus<T extends ResourceId> implements Serializab
   /**
    * Returns the builder for a {@code DeprecationStatus} object given the status.
    */
+  @Deprecated
   public static <T extends ResourceId> Builder<T> builder(Status status) {
-    return new Builder<T>().status(status);
+    return newBuilder(status);
+  }
+
+  /**
+   * Returns the builder for a {@code DeprecationStatus} object given the status.
+   */
+  public static <T extends ResourceId> Builder<T> newBuilder(Status status) {
+    return new Builder<T>().setStatus(status);
   }
 
   /**
    * Returns the builder for a {@code DeprecationStatus} object given the status and replacement's
    * identity.
    */
+  @Deprecated
   public static <T extends ResourceId> Builder<T> builder(Status status, T replacement) {
-    return new Builder<T>().status(status).replacement(replacement);
+    return newBuilder(status, replacement);
+  }
+
+  /**
+   * Returns the builder for a {@code DeprecationStatus} object given the status and replacement's
+   * identity.
+   */
+  public static <T extends ResourceId> Builder<T> newBuilder(Status status, T replacement) {
+    return new Builder<T>().setStatus(status).setReplacement(replacement);
   }
 
   /**
    * Returns a {@code DeprecationStatus} object given the status and replacement's identity.
    */
   public static <T extends ResourceId> DeprecationStatus<T> of(Status status, T replacement) {
-    return builder(status, replacement).build();
+    return newBuilder(status, replacement).build();
   }
 
   static <T extends ResourceId> DeprecationStatus<T> fromPb(
       com.google.api.services.compute.model.DeprecationStatus deprecationStatusPb,
       Function<String, T> fromUrl) {
     Builder<T> builder = new Builder<>();
-    builder.deleted(deprecationStatusPb.getDeleted());
-    builder.deprecated(deprecationStatusPb.getDeprecated());
-    builder.obsolete(deprecationStatusPb.getObsolete());
+    builder.setDeleted(deprecationStatusPb.getDeleted());
+    builder.setDeprecated(deprecationStatusPb.getDeprecated());
+    builder.setObsolete(deprecationStatusPb.getObsolete());
     if (deprecationStatusPb.getReplacement() != null) {
-      builder.replacement(fromUrl.apply(deprecationStatusPb.getReplacement()));
+      builder.setReplacement(fromUrl.apply(deprecationStatusPb.getReplacement()));
     }
     if (deprecationStatusPb.getState() != null) {
-      builder.status(Status.valueOf(deprecationStatusPb.getState()));
+      builder.setStatus(Status.valueOf(deprecationStatusPb.getState()));
     }
     return builder.build();
   }

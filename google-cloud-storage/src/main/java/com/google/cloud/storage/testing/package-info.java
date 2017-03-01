@@ -22,7 +22,7 @@
  * <p>Before the test:
  * <pre> {@code
  * RemoteStorageHelper helper = RemoteStorageHelper.create();
- * Storage storage = helper.options().service();
+ * Storage storage = helper.getOptions().getService();
  * String bucket = RemoteStorageHelper.generateBucketName();
  * storage.create(BucketInfo.of(bucket));
  * } </pre>

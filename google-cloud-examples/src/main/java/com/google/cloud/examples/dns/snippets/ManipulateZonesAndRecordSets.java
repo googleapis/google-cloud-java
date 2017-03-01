@@ -41,7 +41,7 @@ import java.util.concurrent.TimeUnit;
 public class ManipulateZonesAndRecordSets {
 
   public static void main(String... args) {
-    Dns dns = DnsOptions.defaultInstance().service();
+    Dns dns = DnsOptions.getDefaultInstance().getService();
 
     // Create a zone metadata object
     String zoneName = "my-unique-zone"; // Change this zone name which is unique within your project
@@ -51,30 +51,31 @@ public class ManipulateZonesAndRecordSets {
 
     // Create zone in Google Cloud DNS
     Zone zone = dns.create(zoneInfo);
-    System.out.printf("Zone was created and assigned ID %s.%n", zone.generatedId());
+    System.out.printf("Zone was created and assigned ID %s.%n", zone.getGeneratedId());
 
     // Print assigned name servers
-    List<String> nameServers = zone.nameServers();
+    List<String> nameServers = zone.getNameServers();
     for (String nameServer : nameServers) {
       System.out.println(nameServer);
     }
 
     // Prepare a www.someexampledomain.com. type A record with ttl of 24 hours
     String ip = "12.13.14.15";
-    RecordSet toCreate = RecordSet.builder("www.someexampledomain.com.", RecordSet.Type.A)
-        .ttl(24, TimeUnit.HOURS)
+    RecordSet toCreate = RecordSet.newBuilder("www.someexampledomain.com.", RecordSet.Type.A)
+        .setTtl(24, TimeUnit.HOURS)
         .addRecord(ip)
         .build();
 
     // Make a change
-    ChangeRequestInfo.Builder changeBuilder = ChangeRequestInfo.builder().add(toCreate);
+    ChangeRequestInfo.Builder changeBuilder = ChangeRequestInfo.newBuilder().add(toCreate);
 
     // Verify the type A record does not exist yet.
     // If it does exist, we will overwrite it with our prepared record.
     Iterator<RecordSet> recordSetIterator = zone.listRecordSets().iterateAll();
     while (recordSetIterator.hasNext()) {
       RecordSet current = recordSetIterator.next();
-      if (toCreate.name().equals(current.name()) && toCreate.type().equals(current.type())) {
+      if (toCreate.getName().equals(current.getName())
+          && toCreate.getType().equals(current.getType())) {
         changeBuilder.delete(current);
       }
     }
@@ -89,7 +90,7 @@ public class ManipulateZonesAndRecordSets {
       } catch (InterruptedException e) {
         System.err.println("The thread was interrupted while waiting...");
       }
-      changeRequest = dns.getChangeRequest(zone.name(), changeRequest.generatedId());
+      changeRequest = dns.getChangeRequest(zone.getName(), changeRequest.getGeneratedId());
     }
     System.out.println("The change request has been applied.");
 
@@ -103,31 +104,32 @@ public class ManipulateZonesAndRecordSets {
 
     // List the record sets in a particular zone
     recordSetIterator = zone.listRecordSets().iterateAll();
-    System.out.println(String.format("Record sets inside %s:", zone.name()));
+    System.out.println(String.format("Record sets inside %s:", zone.getName()));
     while (recordSetIterator.hasNext()) {
       System.out.println(recordSetIterator.next());
     }
 
     // List the change requests applied to a particular zone
     Iterator<ChangeRequest> changeIterator = zone.listChangeRequests().iterateAll();
-    System.out.println(String.format("The history of changes in %s:", zone.name()));
+    System.out.println(String.format("The history of changes in %s:", zone.getName()));
     while (changeIterator.hasNext()) {
       System.out.println(changeIterator.next());
     }
 
     // Make a change for deleting the record sets
-    changeBuilder = ChangeRequestInfo.builder();
+    changeBuilder = ChangeRequestInfo.newBuilder();
     while (recordSetIterator.hasNext()) {
       RecordSet current = recordSetIterator.next();
       // SOA and NS records cannot be deleted
-      if (!RecordSet.Type.SOA.equals(current.type()) && !RecordSet.Type.NS.equals(current.type())) {
+      if (!RecordSet.Type.SOA.equals(current.getType())
+          && !RecordSet.Type.NS.equals(current.getType())) {
         changeBuilder.delete(current);
       }
     }
 
     // Build and apply the change request to our zone if it contains records to delete
     changeRequest = changeBuilder.build();
-    if (!changeRequest.deletions().isEmpty()) {
+    if (!changeRequest.getDeletions().isEmpty()) {
       ChangeRequest pendingRequest = dns.applyChangeRequest(zoneName, changeRequest);
 
       // Wait for the change request to complete

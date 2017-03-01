@@ -1,4 +1,4 @@
-NIO Filesystem Provider for Google Cloud Storage (Alpha)
+NIO Filesystem Provider for Google Cloud Storage
 ========================================================
 
 Implementation of Java 7 `java.nio.file.FileSystem` for
@@ -26,16 +26,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-nio</artifactId>
-  <version>0.4.0</version>
+  <version>0.9.3-alpha</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-nio:0.4.0'
+compile 'com.google.cloud:google-cloud-nio:0.9.3-alpha'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-nio" % "0.4.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-nio" % "0.9.3-alpha"
 ```
 
 Example Applications

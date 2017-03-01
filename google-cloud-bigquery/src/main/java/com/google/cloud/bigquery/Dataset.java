@@ -56,7 +56,7 @@ public class Dataset extends DatasetInfo {
     Builder(BigQuery bigquery, DatasetId datasetId) {
       this.bigquery = bigquery;
       this.infoBuilder = new DatasetInfo.BuilderImpl();
-      this.infoBuilder.datasetId(datasetId);
+      this.infoBuilder.setDatasetId(datasetId);
     }
 
     Builder(Dataset dataset) {
@@ -65,68 +65,104 @@ public class Dataset extends DatasetInfo {
     }
 
     @Override
+    @Deprecated
     public Builder datasetId(DatasetId datasetId) {
-      infoBuilder.datasetId(datasetId);
+      return setDatasetId(datasetId);
+    }
+
+    @Override
+    public Builder setDatasetId(DatasetId datasetId) {
+      infoBuilder.setDatasetId(datasetId);
       return this;
     }
 
     @Override
+    @Deprecated
     public Builder acl(List<Acl> acl) {
-      infoBuilder.acl(acl);
+      return setAcl(acl);
+    }
+
+    @Override
+    public Builder setAcl(List<Acl> acl) {
+      infoBuilder.setAcl(acl);
       return this;
     }
 
     @Override
-    Builder creationTime(Long creationTime) {
-      infoBuilder.creationTime(creationTime);
+    Builder setCreationTime(Long creationTime) {
+      infoBuilder.setCreationTime(creationTime);
       return this;
     }
 
     @Override
+    @Deprecated
     public Builder defaultTableLifetime(Long defaultTableLifetime) {
-      infoBuilder.defaultTableLifetime(defaultTableLifetime);
+      return setDefaultTableLifetime(defaultTableLifetime);
+    }
+
+    @Override
+    public Builder setDefaultTableLifetime(Long defaultTableLifetime) {
+      infoBuilder.setDefaultTableLifetime(defaultTableLifetime);
       return this;
     }
 
     @Override
+    @Deprecated
     public Builder description(String description) {
-      infoBuilder.description(description);
+      return setDescription(description);
+    }
+
+    @Override
+    public Builder setDescription(String description) {
+      infoBuilder.setDescription(description);
       return this;
     }
 
     @Override
-    Builder etag(String etag) {
-      infoBuilder.etag(etag);
+    Builder setEtag(String etag) {
+      infoBuilder.setEtag(etag);
       return this;
     }
 
     @Override
+    @Deprecated
     public Builder friendlyName(String friendlyName) {
-      infoBuilder.friendlyName(friendlyName);
+      return setFriendlyName(friendlyName);
+    }
+
+    @Override
+    public Builder setFriendlyName(String friendlyName) {
+      infoBuilder.setFriendlyName(friendlyName);
       return this;
     }
 
     @Override
-    Builder generatedId(String generatedId) {
-      infoBuilder.generatedId(generatedId);
+    Builder setGeneratedId(String generatedId) {
+      infoBuilder.setGeneratedId(generatedId);
       return this;
     }
 
     @Override
-    Builder lastModified(Long lastModified) {
-      infoBuilder.lastModified(lastModified);
+    Builder setLastModified(Long lastModified) {
+      infoBuilder.setLastModified(lastModified);
       return this;
     }
 
     @Override
+    @Deprecated
     public Builder location(String location) {
-      infoBuilder.location(location);
+      return setLocation(location);
+    }
+
+    @Override
+    public Builder setLocation(String location) {
+      infoBuilder.setLocation(location);
       return this;
     }
 
     @Override
-    Builder selfLink(String selfLink) {
-      infoBuilder.selfLink(selfLink);
+    Builder setSelfLink(String selfLink) {
+      infoBuilder.setSelfLink(selfLink);
       return this;
     }
 
@@ -139,7 +175,7 @@ public class Dataset extends DatasetInfo {
   Dataset(BigQuery bigquery, DatasetInfo.BuilderImpl infoBuilder) {
     super(infoBuilder);
     this.bigquery = checkNotNull(bigquery);
-    this.options = bigquery.options();
+    this.options = bigquery.getOptions();
   }
 
   /**
@@ -159,7 +195,7 @@ public class Dataset extends DatasetInfo {
    * @throws BigQueryException upon failure
    */
   public boolean exists() {
-    return bigquery.getDataset(datasetId(), DatasetOption.fields()) != null;
+    return bigquery.getDataset(getDatasetId(), DatasetOption.fields()) != null;
   }
 
   /**
@@ -179,7 +215,7 @@ public class Dataset extends DatasetInfo {
    * @throws BigQueryException upon failure
    */
   public Dataset reload(DatasetOption... options) {
-    return bigquery.getDataset(datasetId().dataset(), options);
+    return bigquery.getDataset(getDatasetId().getDataset(), options);
   }
 
   /**
@@ -190,7 +226,7 @@ public class Dataset extends DatasetInfo {
    * <pre> {@code
    * String friendlyName = "my_friendly_name";
    * Builder builder = dataset.toBuilder();
-   * builder.friendlyName(friendlyName);
+   * builder.setFriendlyName(friendlyName);
    * Dataset updatedDataset = builder.build().update();
    * }</pre>
    *
@@ -219,7 +255,7 @@ public class Dataset extends DatasetInfo {
    * @throws BigQueryException upon failure
    */
   public boolean delete(DatasetDeleteOption... options) {
-    return bigquery.delete(datasetId(), options);
+    return bigquery.delete(getDatasetId(), options);
   }
 
   /**
@@ -239,7 +275,7 @@ public class Dataset extends DatasetInfo {
    * @throws BigQueryException upon failure
    */
   public Page<Table> list(TableListOption... options) {
-    return bigquery.listTables(datasetId(), options);
+    return bigquery.listTables(getDatasetId(), options);
   }
 
   /**
@@ -256,7 +292,7 @@ public class Dataset extends DatasetInfo {
    * @throws BigQueryException upon failure
    */
   public Table get(String tableId, TableOption... options) {
-    return bigquery.getTable(TableId.of(datasetId().dataset(), tableId), options);
+    return bigquery.getTable(TableId.of(getDatasetId().getDataset(), tableId), options);
   }
 
   /**
@@ -267,9 +303,9 @@ public class Dataset extends DatasetInfo {
    * String tableName = “my_table”;
    * String fieldName = “my_field”;
    * Schema schema = Schema.of(Field.of(fieldName, Type.string()));
-   * StandardTableDefinition definition = StandardTableDefinition.builder()
-   *     .schema(schema)
-   *     .timePartitioning(TimePartitioning.of(TimePartitioning.Type.DAY))
+   * StandardTableDefinition definition = StandardTableDefinition.newBuilder()
+   *     .setSchema(schema)
+   *     .setTimePartitioning(TimePartitioning.of(TimePartitioning.Type.DAY))
    *     .build();
    * Table table = dataset.create(tableName, definition);
    * }</pre>
@@ -281,14 +317,23 @@ public class Dataset extends DatasetInfo {
    * @throws BigQueryException upon failure
    */
   public Table create(String tableId, TableDefinition definition, TableOption... options) {
-    TableInfo tableInfo = TableInfo.of(TableId.of(datasetId().dataset(), tableId), definition);
+    TableInfo tableInfo =
+        TableInfo.of(TableId.of(getDatasetId().getDataset(), tableId), definition);
     return bigquery.create(tableInfo, options);
   }
 
   /**
    * Returns the dataset's {@code BigQuery} object used to issue requests.
    */
+  @Deprecated
   public BigQuery bigquery() {
+    return getBigquery();
+  }
+
+  /**
+   * Returns the dataset's {@code BigQuery} object used to issue requests.
+   */
+  public BigQuery getBigquery() {
     return bigquery;
   }
 
@@ -317,7 +362,7 @@ public class Dataset extends DatasetInfo {
 
   private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException {
     in.defaultReadObject();
-    this.bigquery = options.service();
+    this.bigquery = options.getService();
   }
 
   static Dataset fromPb(BigQuery bigquery,

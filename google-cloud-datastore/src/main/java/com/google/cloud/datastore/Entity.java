@@ -42,13 +42,19 @@ public final class Entity extends FullEntity<Key> {
     }
 
     private Builder(Key key, FullEntity<?> entity) {
-      properties(entity.properties());
-      key(key);
+      setProperties(entity.getProperties());
+      setKey(key);
     }
 
     @Override
+    @Deprecated
     public Builder key(Key key) {
-      super.key(checkNotNull(key));
+      return setKey(key);
+    }
+
+    @Override
+    public Builder setKey(Key key) {
+      super.setKey(checkNotNull(key));
       return this;
     }
 
@@ -65,7 +71,7 @@ public final class Entity extends FullEntity<Key> {
 
   Entity(FullEntity<Key> from) {
     super(from);
-    Preconditions.checkArgument(from.key() != null);
+    Preconditions.checkArgument(from.getKey() != null);
   }
 
   static Entity convert(FullEntity<Key> from) {
@@ -75,15 +81,30 @@ public final class Entity extends FullEntity<Key> {
     return new Entity(from);
   }
 
+  @Deprecated
   public static Builder builder(Key key) {
+    return newBuilder(key);
+  }
+
+  public static Builder newBuilder(Key key) {
     return new Builder(key);
   }
 
+  @Deprecated
   public static Builder builder(Entity copyFrom) {
+    return newBuilder(copyFrom);
+  }
+
+  public static Builder newBuilder(Entity copyFrom) {
     return new Builder(copyFrom);
   }
 
+  @Deprecated
   public static Builder builder(Key key, FullEntity<?> copyFrom) {
+    return newBuilder(key, copyFrom);
+  }
+
+  public static Builder newBuilder(Key key, FullEntity<?> copyFrom) {
     return new Builder(key, copyFrom);
   }
 

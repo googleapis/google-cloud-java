@@ -17,37 +17,8 @@ if [ "${TRAVIS_JDK_VERSION}" == "oraclejdk7" ]; then
             echo "Could not determine the version, so we're exiting."
             exit 1
         fi
-        if [ "${SITE_VERSION##*-}" != "SNAPSHOT" ]; then
-            # Deploy Maven artifacts (if they don't exist yet) and update artifact version in READMEs.
-            URL=https://oss.sonatype.org/content/repositories/releases/com/google/cloud/google-cloud/$SITE_VERSION/
-            if curl --output /dev/null --silent --head --fail "$URL"; then
-                echo "Not deploying artifacts because it seems like they already exist."
-                echo "Existence was checked using the url $URL"
-            else
-                mvn clean deploy --quiet -Djava.util.logging.config.file=logging.properties -DskipITs --settings ~/.m2/settings.xml -P sign-deploy,release
-            fi
-            utilities/update_docs_version.sh
 
-            # Create website
-            git config --global user.name "travis-ci"
-            git config --global user.email "travis@travis-ci.org"
-            git clone --branch gh-pages --single-branch https://github.com/GoogleCloudPlatform/google-cloud-java/ tmp_gh-pages
-            mkdir -p tmp_gh-pages/$SITE_VERSION
-            mvn site -DskipTests=true --quiet -Djava.util.logging.config.file=logging.properties
-            mvn site:stage --quiet -Djava.util.logging.config.file=logging.properties -DtopSiteURL=http://googlecloudplatform.github.io/google-cloud-java/site/${SITE_VERSION}/
-            cd tmp_gh-pages
-            cp -r ../target/staging/$SITE_VERSION/* $SITE_VERSION/
-            sed -i "s/{{SITE_VERSION}}/$SITE_VERSION/g" ${SITE_VERSION}/index.html # Update "Quickstart with Maven" to reflect version change
-            git add $SITE_VERSION
-            echo "<html><head><meta http-equiv=\"refresh\" content=\"0; URL='http://GoogleCloudPlatform.github.io/google-cloud-java/${SITE_VERSION}/index.html'\" /></head><body></body></html>" > index.html
-            git add index.html
-            echo "<html><head><script>window.location.replace('/google-cloud-java/${SITE_VERSION}/apidocs' + location.search)</script></head><body></body></html>" > apidocs/index.html
-            git add apidocs/index.html
-            git commit --quiet -m "Added a new site for version $SITE_VERSION and updated the root directory's redirect. [ci skip]"
-            git config --global push.default simple
-            git push --quiet "https://${CI_DEPLOY_USERNAME}:${CI_DEPLOY_PASSWORD}@github.com/GoogleCloudPlatform/google-cloud-java.git" > /dev/null 2>&1
-        else
-            mvn clean deploy --quiet -Djava.util.logging.config.file=logging.properties -DskipTests=true -Dgpg.skip=true --settings ~/.m2/settings.xml -P release
+        mvn clean deploy --quiet -Djava.util.logging.config.file=logging.properties -DskipTests=true -Dgpg.skip=true --settings ~/.m2/settings.xml -P release
         fi
     else
         echo "Not deploying artifacts. This is only done with non-pull-request commits to master branch with Oracle Java 7 builds."

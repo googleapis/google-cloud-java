@@ -353,9 +353,9 @@ public class LoggingExample {
           default:
             throw new IllegalArgumentException("Second argument must be bucket|dataset|topic.");
         }
-        SinkInfo.Builder builder = SinkInfo.builder(name, destination);
+        SinkInfo.Builder builder = SinkInfo.newBuilder(name, destination);
         if (args.length == 4) {
-          builder.filter(args[3]);
+          builder.setFilter(args[3]);
         }
         return builder.build();
       }
@@ -395,10 +395,10 @@ public class LoggingExample {
 
     @Override
     public void run(Logging logging, LogEntry entry) {
-      MonitoredResource resource = MonitoredResource.builder("global")
-          .addLabel("project_id", logging.options().projectId())
+      MonitoredResource resource = MonitoredResource.newBuilder("global")
+          .addLabel("project_id", logging.getOptions().getProjectId())
           .build();
-      LogEntry entryWithResource = entry.toBuilder().resource(resource).build();
+      LogEntry entryWithResource = entry.toBuilder().setResource(resource).build();
       logging.write(Collections.singleton(entryWithResource));
       System.out.printf("Written entry %s%n", entryWithResource);
     }
@@ -416,10 +416,10 @@ public class LoggingExample {
         for (int i = 3; i < args.length; i += 2) {
           labels.put(args[i], args[i + 1]);
         }
-        return LogEntry.builder(StringPayload.of(message))
-            .logName(logName)
-            .severity(severity)
-            .labels(labels)
+        return LogEntry.newBuilder(StringPayload.of(message))
+            .setLogName(logName)
+            .setSeverity(severity)
+            .setLabels(labels)
             .build();
       } else {
         throw new IllegalArgumentException("Missing required arguments.");
@@ -540,12 +540,12 @@ public class LoggingExample {
       printUsage();
       return;
     }
-    LoggingOptions.Builder optionsBuilder = LoggingOptions.builder();
+    LoggingOptions.Builder optionsBuilder = LoggingOptions.newBuilder();
     LoggingAction action;
     String actionName;
     if (args.length >= 2 && !ACTIONS.containsKey(args[0])) {
       actionName = args[1];
-      optionsBuilder.projectId(args[0]);
+      optionsBuilder.setProjectId(args[0]);
       action = ACTIONS.get(args[1]);
       args = Arrays.copyOfRange(args, 2, args.length);
     } else {
@@ -558,7 +558,7 @@ public class LoggingExample {
       printUsage();
       return;
     }
-    try (Logging logging = optionsBuilder.build().service()) {
+    try (Logging logging = optionsBuilder.build().getService()) {
       Object arg;
       try {
         arg = action.parse(args);

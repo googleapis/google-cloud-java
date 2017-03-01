@@ -41,7 +41,7 @@ public class CreateAndListBucketsAndBlobs {
   public static void main(String... args) {
     // Create a service object
     // Credentials are inferred from the environment.
-    Storage storage = StorageOptions.defaultInstance().service();
+    Storage storage = StorageOptions.getDefaultInstance().getService();
 
     // Create a bucket
     String bucketName = "my_unique_bucket"; // Change this to something unique
@@ -51,7 +51,7 @@ public class CreateAndListBucketsAndBlobs {
     Blob blob = bucket.create("my_blob_name", "a simple blob".getBytes(UTF_8), "text/plain");
 
     // Read the blob content from the server
-    String blobContent = new String(blob.content(), UTF_8);
+    String blobContent = new String(blob.getContent(), UTF_8);
 
     // List all your buckets
     Iterator<Bucket> bucketIterator = storage.list().iterateAll();

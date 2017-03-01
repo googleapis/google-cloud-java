@@ -47,16 +47,16 @@ class BlobWriteChannel extends BaseWriteChannel<StorageOptions, BlobInfo> {
       runWithRetries(callable(new Runnable() {
         @Override
         public void run() {
-          options().rpc().write(uploadId(), buffer(), 0, position(), length, last);
+          getOptions().getRpc().write(getUploadId(), getBuffer(), 0, getPosition(), length, last);
         }
-      }), options().retryParams(), StorageImpl.EXCEPTION_HANDLER, options().clock());
+      }), getOptions().getRetryParams(), StorageImpl.EXCEPTION_HANDLER, getOptions().getClock());
     } catch (RetryHelper.RetryHelperException e) {
       throw StorageException.translateAndThrow(e);
     }
   }
 
   protected StateImpl.Builder stateBuilder() {
-    return StateImpl.builder(options(), entity(), uploadId());
+    return StateImpl.builder(getOptions(), getEntity(), getUploadId());
   }
 
   private static String open(final StorageOptions options, final BlobInfo blob,
@@ -65,9 +65,9 @@ class BlobWriteChannel extends BaseWriteChannel<StorageOptions, BlobInfo> {
       return runWithRetries(new Callable<String>() {
         @Override
         public String call() {
-          return options.rpc().open(blob.toPb(), optionsMap);
+          return options.getRpc().open(blob.toPb(), optionsMap);
         }
-      }, options.retryParams(), StorageImpl.EXCEPTION_HANDLER, options.clock());
+      }, options.getRetryParams(), StorageImpl.EXCEPTION_HANDLER, options.getClock());
     } catch (RetryHelper.RetryHelperException e) {
       throw StorageException.translateAndThrow(e);
     }

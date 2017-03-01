@@ -36,26 +36,52 @@ public class ProjectInfoTest {
   private static final ProjectInfo.State STATE = ProjectInfo.State.DELETE_REQUESTED;
   private static final ProjectInfo.ResourceId PARENT =
       new ProjectInfo.ResourceId("id", "organization");
-  private static final ProjectInfo FULL_PROJECT_INFO = ProjectInfo.builder(PROJECT_ID)
+  private static final ProjectInfo FULL_PROJECT_INFO = ProjectInfo.newBuilder(PROJECT_ID)
+      .setName(NAME)
+      .setLabels(LABELS)
+      .setProjectNumber(PROJECT_NUMBER)
+      .setCreateTimeMillis(CREATE_TIME_MILLIS)
+      .setState(STATE)
+      .setParent(PARENT)
+      .build();
+  private static final ProjectInfo PARTIAL_PROJECT_INFO =
+      ProjectInfo.newBuilder(PROJECT_ID).build();
+  private static final ProjectInfo UNNAMED_PROJECT_FROM_LIST =
+      PARTIAL_PROJECT_INFO.toBuilder().setName("Unnamed").build();
+  private static final ProjectInfo DEPRECATED_PROJECT_INFO = ProjectInfo.builder(PROJECT_ID)
       .name(NAME)
       .labels(LABELS)
-      .projectNumber(PROJECT_NUMBER)
-      .createTimeMillis(CREATE_TIME_MILLIS)
-      .state(STATE)
-      .parent(PARENT)
+      .setProjectNumber(PROJECT_NUMBER)
+      .setCreateTimeMillis(CREATE_TIME_MILLIS)
+      .setState(STATE)
+      .setParent(PARENT)
       .build();
-  private static final ProjectInfo PARTIAL_PROJECT_INFO = ProjectInfo.builder(PROJECT_ID).build();
-  private static final ProjectInfo UNNAMED_PROJECT_FROM_LIST =
-      PARTIAL_PROJECT_INFO.toBuilder().name("Unnamed").build();
 
   @Test
   public void testBuilder() {
-    assertEquals(PROJECT_ID, FULL_PROJECT_INFO.projectId());
-    assertEquals(NAME, FULL_PROJECT_INFO.name());
-    assertEquals(LABELS, FULL_PROJECT_INFO.labels());
-    assertEquals(PROJECT_NUMBER, FULL_PROJECT_INFO.projectNumber());
-    assertEquals(CREATE_TIME_MILLIS, FULL_PROJECT_INFO.createTimeMillis());
-    assertEquals(STATE, FULL_PROJECT_INFO.state());
+    assertEquals(PROJECT_ID, FULL_PROJECT_INFO.getProjectId());
+    assertEquals(NAME, FULL_PROJECT_INFO.getName());
+    assertEquals(LABELS, FULL_PROJECT_INFO.getLabels());
+    assertEquals(PROJECT_NUMBER, FULL_PROJECT_INFO.getProjectNumber());
+    assertEquals(CREATE_TIME_MILLIS, FULL_PROJECT_INFO.getCreateTimeMillis());
+    assertEquals(STATE, FULL_PROJECT_INFO.getState());
+
+    assertEquals(PROJECT_ID, PARTIAL_PROJECT_INFO.getProjectId());
+    assertEquals(null, PARTIAL_PROJECT_INFO.getName());
+    assertTrue(PARTIAL_PROJECT_INFO.getLabels().isEmpty());
+    assertEquals(null, PARTIAL_PROJECT_INFO.getProjectNumber());
+    assertEquals(null, PARTIAL_PROJECT_INFO.getCreateTimeMillis());
+    assertEquals(null, PARTIAL_PROJECT_INFO.getState());
+  }
+
+  @Test
+  public void testBuilderDeprecated() {
+    assertEquals(PROJECT_ID, DEPRECATED_PROJECT_INFO.projectId());
+    assertEquals(NAME, DEPRECATED_PROJECT_INFO.name());
+    assertEquals(LABELS, DEPRECATED_PROJECT_INFO.labels());
+    assertEquals(PROJECT_NUMBER, DEPRECATED_PROJECT_INFO.projectNumber());
+    assertEquals(CREATE_TIME_MILLIS, DEPRECATED_PROJECT_INFO.createTimeMillis());
+    assertEquals(STATE, DEPRECATED_PROJECT_INFO.state());
 
     assertEquals(PROJECT_ID, PARTIAL_PROJECT_INFO.projectId());
     assertEquals(null, PARTIAL_PROJECT_INFO.name());
@@ -83,27 +109,26 @@ public class ProjectInfoTest {
   public void testEquals() {
     compareProjects(
         FULL_PROJECT_INFO,
-        ProjectInfo.builder(PROJECT_ID)
-            .name(NAME)
-            .labels(LABELS)
-            .projectNumber(PROJECT_NUMBER)
-            .createTimeMillis(CREATE_TIME_MILLIS)
-            .state(STATE)
-            .parent(PARENT)
+        ProjectInfo.newBuilder(PROJECT_ID)
+            .setName(NAME)
+            .setLabels(LABELS)
+            .setProjectNumber(PROJECT_NUMBER)
+            .setCreateTimeMillis(CREATE_TIME_MILLIS)
+            .setState(STATE)
+            .setParent(PARENT)
             .build());
-    compareProjects(PARTIAL_PROJECT_INFO, ProjectInfo.builder(PROJECT_ID).build());
+    compareProjects(PARTIAL_PROJECT_INFO, ProjectInfo.newBuilder(PROJECT_ID).build());
     assertNotEquals(FULL_PROJECT_INFO, PARTIAL_PROJECT_INFO);
   }
 
   private void compareProjects(ProjectInfo expected, ProjectInfo value) {
     assertEquals(expected, value);
-    assertEquals(expected.projectId(), value.projectId());
-    assertEquals(expected.name(), value.name());
-    assertEquals(expected.labels(), value.labels());
-    assertEquals(expected.projectNumber(), value.projectNumber());
-    assertEquals(expected.createTimeMillis(), value.createTimeMillis());
-    assertEquals(expected.state(), value.state());
-    assertEquals(expected.parent(), value.parent());
+    assertEquals(expected.getProjectId(), value.getProjectId());
+    assertEquals(expected.getName(), value.getName());
+    assertEquals(expected.getLabels(), value.getLabels());
+    assertEquals(expected.getProjectNumber(), value.getProjectNumber());
+    assertEquals(expected.getCreateTimeMillis(), value.getCreateTimeMillis());
+    assertEquals(expected.getState(), value.getState());
+    assertEquals(expected.getParent(), value.getParent());
   }
 }
-

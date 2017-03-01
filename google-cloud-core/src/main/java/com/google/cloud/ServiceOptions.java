@@ -18,8 +18,11 @@ package com.google.cloud;
 
 import static com.google.common.base.MoreObjects.firstNonNull;
 import static com.google.common.base.Preconditions.checkArgument;
+import static com.google.common.base.Preconditions.checkNotNull;
 import static java.nio.charset.StandardCharsets.UTF_8;
 
+import com.google.auth.Credentials;
+import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.spi.ServiceRpcFactory;
 import com.google.common.collect.Iterables;
 import com.google.common.io.Files;
@@ -45,6 +48,7 @@ import java.nio.charset.Charset;
 import java.util.Enumeration;
 import java.util.Locale;
 import java.util.Objects;
+import java.util.Properties;
 import java.util.ServiceLoader;
 import java.util.Set;
 import java.util.jar.Attributes;
@@ -70,20 +74,23 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
   private static final String MANIFEST_VERSION_KEY = "Implementation-Version";
   private static final String ARTIFACT_ID = "google-cloud-core";
   private static final String LIBRARY_NAME = "gcloud-java";
-  private static final String LIBRARY_VERSION = getLibraryVersion();
+  private static final String X_GOOGLE_CLIENT_HEADER_NAME = "gccl";
+  private static final String LIBRARY_VERSION = defaultLibraryVersion();
   private static final String APPLICATION_NAME =
       LIBRARY_VERSION == null ? LIBRARY_NAME : LIBRARY_NAME + "/" + LIBRARY_VERSION;
-  private static final long serialVersionUID = 3049375916337507361L;
+  private static final long serialVersionUID = -5714029257168617973L;
+
+  private static final String META_FILE_ROOT = "/META-INF/maven/";
+  private static final String META_VERSION_KEY = "version";
 
   private final String projectId;
   private final String host;
-  private final RestorableState<AuthCredentials> authCredentialsState;
   private final RetryParams retryParams;
   private final String serviceRpcFactoryClassName;
   private final String serviceFactoryClassName;
   private final Clock clock;
+  private final Credentials credentials;
 
-  private transient AuthCredentials authCredentials;
   private transient ServiceRpcFactory<ServiceRpcT, OptionsT> serviceRpcFactory;
   private transient ServiceFactory<ServiceT, OptionsT> serviceFactory;
   private transient ServiceT service;
@@ -97,13 +104,13 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
    * @param <OptionsT> the {@code ServiceOptions} subclass corresponding to the service
    * @param <B> the {@code ServiceOptions} builder
    */
-  protected abstract static class Builder<ServiceT extends Service<OptionsT>, ServiceRpcT,
+  public abstract static class Builder<ServiceT extends Service<OptionsT>, ServiceRpcT,
       OptionsT extends ServiceOptions<ServiceT, ServiceRpcT, OptionsT>,
       B extends Builder<ServiceT, ServiceRpcT, OptionsT, B>> {
 
     private String projectId;
     private String host;
-    private AuthCredentials authCredentials;
+    private Credentials credentials;
     private RetryParams retryParams;
     private ServiceFactory<ServiceT, OptionsT> serviceFactory;
     private ServiceRpcFactory<ServiceRpcT, OptionsT> serviceRpcFactory;
@@ -114,7 +121,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
     protected Builder(ServiceOptions<ServiceT, ServiceRpcT, OptionsT> options) {
       projectId = options.projectId;
       host = options.host;
-      authCredentials = options.authCredentials;
+      credentials = options.credentials;
       retryParams = options.retryParams;
       serviceFactory = options.serviceFactory;
       serviceRpcFactory = options.serviceRpcFactory;
@@ -131,7 +138,15 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
     /**
      * Sets the service factory.
      */
+    @Deprecated
     public B serviceFactory(ServiceFactory<ServiceT, OptionsT> serviceFactory) {
+      return setServiceFactory(serviceFactory);
+    }
+
+    /**
+     * Sets the service factory.
+     */
+    public B setServiceFactory(ServiceFactory<ServiceT, OptionsT> serviceFactory) {
       this.serviceFactory = serviceFactory;
       return self();
     }
@@ -143,17 +158,41 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
      * @param clock the clock to set
      * @return the builder
      */
+    @Deprecated
     public B clock(Clock clock) {
+      return setClock(clock);
+    }
+
+    /**
+     * Sets the service's clock. The clock is mainly used for testing purpose. {@link Clock} will be
+     * replaced by Java8's {@code java.time.Clock}.
+     *
+     * @param clock the clock to set
+     * @return the builder
+     */
+    public B setClock(Clock clock) {
       this.clock = clock;
       return self();
     }
 
     /**
-     * Sets project id.
+     * Sets the project ID. If no project ID is set, {@link #getDefaultProjectId()} will be used to
+     * attempt getting the project ID from the environment.
      *
      * @return the builder
      */
+    @Deprecated
     public B projectId(String projectId) {
+      return setProjectId(projectId);
+    }
+
+    /**
+     * Sets the project ID. If no project ID is set, {@link #getDefaultProjectId()} will be used to
+     * attempt getting the project ID from the environment.
+     *
+     * @return the builder
+     */
+    public B setProjectId(String projectId) {
       this.projectId = projectId;
       return self();
     }
@@ -163,29 +202,57 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
      *
      * @return the builder
      */
+    @Deprecated
     public B host(String host) {
+      return setHost(host);
+    }
+
+    /**
+     * Sets service host.
+     *
+     * @return the builder
+     */
+    public B setHost(String host) {
       this.host = host;
       return self();
     }
 
     /**
-     * Sets the service authentication credentials.
+     * Sets the service authentication credentials. If no credentials are set,
+     * {@link GoogleCredentials#getApplicationDefault()} will be used to attempt getting credentials
+     * from the environment. Use {@link NoCredentials#getInstance()} to skip authentication, this is
+     * typically useful when using local service emulators.
      *
+     * @param credentials authentication credentials, should not be {@code null}
      * @return the builder
+     * @throws NullPointerException if {@code credentials} is {@code null}. To disable
+     *     authentication use {@link NoCredentials#getInstance()}
      */
-    public B authCredentials(AuthCredentials authCredentials) {
-      this.authCredentials = authCredentials;
+    public B setCredentials(Credentials credentials) {
+      this.credentials = checkNotNull(credentials);
       return self();
     }
 
     /**
      * Sets configuration parameters for request retries. If no configuration is set
-     * {@link RetryParams#defaultInstance()} is used. To disable retries, supply
+     * {@link RetryParams#getDefaultInstance()} is used. To disable retries, supply
      * {@link RetryParams#noRetries()} here.
      *
      * @return the builder
      */
+    @Deprecated
     public B retryParams(RetryParams retryParams) {
+      return setRetryParams(retryParams);
+    }
+
+    /**
+     * Sets configuration parameters for request retries. If no configuration is set
+     * {@link RetryParams#getDefaultInstance()} is used. To disable retries, supply
+     * {@link RetryParams#noRetries()} here.
+     *
+     * @return the builder
+     */
+    public B setRetryParams(RetryParams retryParams) {
       this.retryParams = retryParams;
       return self();
     }
@@ -195,7 +262,17 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
      *
      * @return the builder
      */
+    @Deprecated
     public B serviceRpcFactory(ServiceRpcFactory<ServiceRpcT, OptionsT> serviceRpcFactory) {
+      return setServiceRpcFactory(serviceRpcFactory);
+    }
+
+    /**
+     * Sets the factory for rpc services.
+     *
+     * @return the builder
+     */
+    public B setServiceRpcFactory(ServiceRpcFactory<ServiceRpcT, OptionsT> serviceRpcFactory) {
       this.serviceRpcFactory = serviceRpcFactory;
       return self();
     }
@@ -204,23 +281,21 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
   protected ServiceOptions(Class<? extends ServiceFactory<ServiceT, OptionsT>> serviceFactoryClass,
       Class<? extends ServiceRpcFactory<ServiceRpcT, OptionsT>> rpcFactoryClass,
       Builder<ServiceT, ServiceRpcT, OptionsT, ?> builder) {
-    projectId = builder.projectId != null ? builder.projectId : defaultProject();
+    projectId = builder.projectId != null ? builder.projectId : getDefaultProject();
     if (projectIdRequired()) {
       checkArgument(
           projectId != null,
           "A project ID is required for this service but could not be determined from the builder "
           + "or the environment.  Please set a project ID using the builder.");
     }
-    host = firstNonNull(builder.host, defaultHost());
-    authCredentials =
-        builder.authCredentials != null ? builder.authCredentials : defaultAuthCredentials();
-    authCredentialsState = authCredentials != null ? authCredentials.capture() : null;
+    host = firstNonNull(builder.host, getDefaultHost());
+    credentials = builder.credentials != null ? builder.credentials : defaultCredentials();
     retryParams = firstNonNull(builder.retryParams, defaultRetryParams());
     serviceFactory = firstNonNull(builder.serviceFactory,
-        getFromServiceLoader(serviceFactoryClass, defaultServiceFactory()));
+        getFromServiceLoader(serviceFactoryClass, getDefaultServiceFactory()));
     serviceFactoryClassName = serviceFactory.getClass().getName();
     serviceRpcFactory = firstNonNull(builder.serviceRpcFactory,
-        getFromServiceLoader(rpcFactoryClass, defaultRpcFactory()));
+        getFromServiceLoader(rpcFactoryClass, getDefaultRpcFactory()));
     serviceRpcFactoryClassName = serviceRpcFactory.getClass().getName();
     clock = firstNonNull(builder.clock, Clock.defaultClock());
   }
@@ -235,47 +310,64 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
     return true;
   }
 
-  private static AuthCredentials defaultAuthCredentials() {
-    // Consider App Engine.
-    if (appEngineAppId() != null) {
-      try {
-        return AuthCredentials.createForAppEngine();
-      } catch (Exception ignore) {
-        // Maybe not on App Engine
-      }
-    }
-
+  private static GoogleCredentials defaultCredentials() {
     try {
-      return AuthCredentials.createApplicationDefaults();
+      return GoogleCredentials.getApplicationDefault();
     } catch (Exception ex) {
       return null;
     }
   }
 
-  protected static String appEngineAppId() {
-    return System.getProperty("com.google.appengine.application.id");
+  @Deprecated
+  protected String defaultHost() {
+    return getDefaultHost();
   }
 
-  protected String defaultHost() {
+  protected String getDefaultHost() {
     return DEFAULT_HOST;
   }
 
+  @Deprecated
   protected String defaultProject() {
+    return getDefaultProject();
+  }
+
+  protected String getDefaultProject() {
+    return getDefaultProjectId();
+  }
+
+  /**
+   * Returns the default project ID, or {@code null} if no default project ID could be found. This
+   * method returns the first available project ID among the following sources:
+   * <ol>
+   *   <li>The project ID specified by the GOOGLE_CLOUD_PROJECT environment variable
+   *   <li>The App Engine project ID
+   *   <li>The project ID specified in the JSON credentials file pointed by the
+   *   {@code GOOGLE_APPLICATION_CREDENTIALS} environment variable
+   *   <li>The Google Cloud SDK project ID
+   *   <li>The Compute Engine project ID
+   * </ol>
+   */
+  public static String getDefaultProjectId() {
     String projectId = System.getProperty(PROJECT_ENV_NAME, System.getenv(PROJECT_ENV_NAME));
     if (projectId == null) {
       projectId =
           System.getProperty(LEGACY_PROJECT_ENV_NAME, System.getenv(LEGACY_PROJECT_ENV_NAME));
     }
     if (projectId == null) {
-      projectId = appEngineProjectId();
+      projectId = getAppEngineProjectId();
     }
     if (projectId == null) {
-      projectId = serviceAccountProjectId();
+      projectId = getServiceAccountProjectId();
     }
-    return projectId != null ? projectId : googleCloudProjectId();
+    return projectId != null ? projectId : getGoogleCloudProjectId();
   }
 
-  private static String activeGoogleCloudConfig(File configDir) {
+  protected static String getAppEngineAppId() {
+    return System.getProperty("com.google.appengine.application.id");
+  }
+
+  private static String getActiveGoogleCloudConfig(File configDir) {
     String activeGoogleCloudConfig = null;
     try {
       activeGoogleCloudConfig =
@@ -287,7 +379,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
     return firstNonNull(activeGoogleCloudConfig, "default");
   }
 
-  protected static String googleCloudProjectId() {
+  protected static String getGoogleCloudProjectId() {
     File configDir;
     if (System.getenv().containsKey("CLOUDSDK_CONFIG")) {
       configDir = new File(System.getenv("CLOUDSDK_CONFIG"));
@@ -296,7 +388,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
     } else {
       configDir = new File(System.getProperty("user.home"), ".config/gcloud");
     }
-    String activeConfig = activeGoogleCloudConfig(configDir);
+    String activeConfig = getActiveGoogleCloudConfig(configDir);
     FileReader fileReader = null;
     try {
       fileReader = new FileReader(new File(configDir, "configurations/config_" + activeConfig));
@@ -335,6 +427,8 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
     try {
       URL url = new URL("http://metadata/computeMetadata/v1/project/project-id");
       HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+      // TODO replace X-Google-Metadata-Request with:
+      // connection.setRequestProperty("Metadata-Flavor", "Google");
       connection.setRequestProperty("X-Google-Metadata-Request", "True");
       InputStream input = connection.getInputStream();
       if (connection.getResponseCode() == 200) {
@@ -353,7 +447,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
     return System.getProperty("os.name").toLowerCase(Locale.ENGLISH).contains("windows");
   }
 
-  protected static String appEngineProjectId() {
+  protected static String getAppEngineProjectId() {
     try {
       Class<?> factoryClass =
           Class.forName("com.google.appengine.api.appidentity.AppIdentityServiceFactory");
@@ -371,7 +465,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
     }
   }
 
-  protected static String serviceAccountProjectId() {
+  protected static String getServiceAccountProjectId() {
     String project = null;
     String credentialsPath = System.getenv("GOOGLE_APPLICATION_CREDENTIALS");
     if (credentialsPath != null) {
@@ -385,16 +479,26 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
     return project;
   }
 
-  @SuppressWarnings("unchecked")
+  @Deprecated
   public ServiceT service() {
+    return getService();
+  }
+
+  @SuppressWarnings("unchecked")
+  public ServiceT getService() {
     if (service == null) {
       service = serviceFactory.create((OptionsT) this);
     }
     return service;
   }
 
-  @SuppressWarnings("unchecked")
+  @Deprecated
   public ServiceRpcT rpc() {
+    return getRpc();
+  }
+
+  @SuppressWarnings("unchecked")
+  public ServiceRpcT getRpc() {
     if (rpc == null) {
       rpc = serviceRpcFactory.create((OptionsT) this);
     }
@@ -402,32 +506,70 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
   }
 
   /**
-   * Returns the project id. Return value can be null (for services that don't require a project
-   * id).
+   * Returns the project ID. Return value can be null (for services that don't require a project
+   * ID).
    */
+  @Deprecated
   public String projectId() {
+    return getProjectId();
+  }
+
+  /**
+   * Returns the project ID. Return value can be null (for services that don't require a project
+   * ID).
+   */
+  public String getProjectId() {
     return projectId;
   }
 
   /**
    * Returns the service host.
    */
+  @Deprecated
   public String host() {
+    return getHost();
+  }
+
+  /**
+   * Returns the service host.
+   */
+  public String getHost() {
     return host;
   }
 
   /**
    * Returns the authentication credentials.
    */
-  public AuthCredentials authCredentials() {
-    return authCredentials;
+  public Credentials getCredentials() {
+    return credentials;
+  }
+
+  /**
+   * Returns the authentication credentials. If required, credentials are scoped.
+   */
+  public Credentials getScopedCredentials() {
+    Credentials credentialsToReturn = credentials;
+    if (credentials instanceof GoogleCredentials
+        && ((GoogleCredentials) credentials).createScopedRequired()) {
+      credentialsToReturn = ((GoogleCredentials) credentials).createScoped(getScopes());
+    }
+    return credentialsToReturn;
   }
 
   /**
    * Returns configuration parameters for request retries. By default requests are retried:
-   * {@link RetryParams#defaultInstance()} is used.
+   * {@link RetryParams#getDefaultInstance()} is used.
    */
+  @Deprecated
   public RetryParams retryParams() {
+    return getRetryParams();
+  }
+
+  /**
+   * Returns configuration parameters for request retries. By default requests are retried:
+   * {@link RetryParams#getDefaultInstance()} is used.
+   */
+  public RetryParams getRetryParams() {
     return retryParams;
   }
 
@@ -435,40 +577,79 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
    * Returns the service's clock. Default time source uses {@link System#currentTimeMillis()} to get
    * current time.
    */
+  @Deprecated
   public Clock clock() {
+    return getClock();
+  }
+
+  /**
+   * Returns the service's clock. Default time source uses {@link System#currentTimeMillis()} to get
+   * current time.
+   */
+  public Clock getClock() {
     return clock;
   }
 
   /**
    * Returns the application's name as a string in the format {@code gcloud-java/[version]}.
    */
+  @Deprecated
   public String applicationName() {
+    return getApplicationName();
+  }
+
+  /**
+   * Returns the application's name as a string in the format {@code gcloud-java/[version]}.
+   */
+  public String getApplicationName() {
     return APPLICATION_NAME;
   }
 
   /**
    * Returns the library's name, {@code gcloud-java}, as a string.
    */
+  @Deprecated
   public String libraryName() {
+    return getLibraryName();
+  }
+
+  /**
+   * Returns the library's name, {@code gcloud-java}, as a string.
+   */
+  public String getLibraryName() {
     return LIBRARY_NAME;
+  }
+
+  /**
+   * Returns the library's name used by x-goog-api-client header as a string.
+   */
+  public String getGoogApiClientLibName() {
+    return X_GOOGLE_CLIENT_HEADER_NAME;
   }
 
   /**
    * Returns the library's version as a string.
    */
   public String libraryVersion() {
+    return getLibraryVersion();
+  }
+
+  /**
+   * Returns the library's version as a string.
+   */
+  public String getLibraryVersion() {
     return LIBRARY_VERSION;
   }
 
   protected int baseHashCode() {
-    return Objects.hash(projectId, host, authCredentialsState, retryParams, serviceFactoryClassName,
+    return Objects.hash(projectId, host, credentials, retryParams, serviceFactoryClassName,
         serviceRpcFactoryClassName, clock);
   }
 
   protected boolean baseEquals(ServiceOptions<?, ?, ?> other) {
     return Objects.equals(projectId, other.projectId)
         && Objects.equals(host, other.host)
-        && Objects.equals(authCredentialsState, other.authCredentialsState)
+        && Objects.equals(credentials, other.credentials)
         && Objects.equals(retryParams, other.retryParams)
         && Objects.equals(serviceFactoryClassName, other.serviceFactoryClassName)
         && Objects.equals(serviceRpcFactoryClassName, other.serviceRpcFactoryClassName)
@@ -479,7 +660,6 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
     input.defaultReadObject();
     serviceFactory = newInstance(serviceFactoryClassName);
     serviceRpcFactory = newInstance(serviceRpcFactoryClassName);
-    authCredentials = authCredentialsState != null ? authCredentialsState.restore() : null;
   }
 
   @SuppressWarnings("unchecked")
@@ -491,11 +671,26 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
     }
   }
 
-  protected abstract ServiceFactory<ServiceT, OptionsT> defaultServiceFactory();
+  @Deprecated
+  protected ServiceFactory<ServiceT, OptionsT> defaultServiceFactory() {
+    return getDefaultServiceFactory();
+  }
 
-  protected abstract ServiceRpcFactory<ServiceRpcT, OptionsT> defaultRpcFactory();
+  protected abstract ServiceFactory<ServiceT, OptionsT> getDefaultServiceFactory();
 
-  protected abstract Set<String> scopes();
+  @Deprecated
+  protected ServiceRpcFactory<ServiceRpcT, OptionsT> defaultRpcFactory() {
+    return getDefaultRpcFactory();
+  }
+
+  protected abstract ServiceRpcFactory<ServiceRpcT, OptionsT> getDefaultRpcFactory();
+
+  @Deprecated
+  protected Set<String> scopes() {
+    return getScopes();
+  }
+
+  protected abstract Set<String> getScopes();
 
   public abstract <B extends Builder<ServiceT, ServiceRpcT, OptionsT, B>> B toBuilder();
 
@@ -505,14 +700,39 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
    * default parameters listed in {@link RetryParams}.
    */
   protected RetryParams defaultRetryParams() {
-    return RetryParams.defaultInstance();
+    return RetryParams.getDefaultInstance();
   }
 
   static <T> T getFromServiceLoader(Class<? extends T> clazz, T defaultInstance) {
     return Iterables.getFirst(ServiceLoader.load(clazz), defaultInstance);
   }
 
-  private static String getLibraryVersion() {
+  private static String defaultLibraryVersion() {
+    String version = getPomVersion();
+    if (version == null) {
+      version = getManifestVersion();
+    }
+    return version;
+  }
+
+  private static String getPomVersion() {
+    try {
+      Properties properties = new Properties();
+      String mavenPropertiesPath = META_FILE_ROOT
+          + ServiceOptions.class.getPackage().getName() + "/"
+          + ARTIFACT_ID + "/pom.properties";
+      InputStream inputStream = ServiceOptions.class.getResourceAsStream(mavenPropertiesPath);
+      if (inputStream != null) {
+        properties.load(inputStream);
+        return properties.getProperty(META_VERSION_KEY, "");
+      }
+    } catch (Exception e) {
+      // ignore
+    }
+    return null;
+  }
+
+  private static String getManifestVersion() {
     String version = null;
     try {
       Enumeration<URL> resources =

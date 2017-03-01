@@ -53,8 +53,8 @@ public class Network extends NetworkInfo {
     Builder(Compute compute, NetworkId networkId, NetworkConfiguration configuration) {
       this.compute = compute;
       this.infoBuilder = new NetworkInfo.BuilderImpl(networkId, configuration);
-      this.infoBuilder.networkId(networkId);
-      this.infoBuilder.configuration(configuration);
+      this.infoBuilder.setNetworkId(networkId);
+      this.infoBuilder.setConfiguration(configuration);
     }
 
     Builder(Network subnetwork) {
@@ -63,32 +63,50 @@ public class Network extends NetworkInfo {
     }
 
     @Override
-    Builder generatedId(String generatedId) {
-      infoBuilder.generatedId(generatedId);
+    Builder setGeneratedId(String generatedId) {
+      infoBuilder.setGeneratedId(generatedId);
       return this;
     }
 
     @Override
-    Builder creationTimestamp(Long creationTimestamp) {
-      infoBuilder.creationTimestamp(creationTimestamp);
+    Builder setCreationTimestamp(Long creationTimestamp) {
+      infoBuilder.setCreationTimestamp(creationTimestamp);
       return this;
     }
 
     @Override
+    @Deprecated
     public Builder networkId(NetworkId networkId) {
-      infoBuilder.networkId(networkId);
+      return setNetworkId(networkId);
+    }
+
+    @Override
+    public Builder setNetworkId(NetworkId networkId) {
+      infoBuilder.setNetworkId(networkId);
       return this;
     }
 
     @Override
+    @Deprecated
     public Builder description(String description) {
-      infoBuilder.description(description);
+      return setDescription(description);
+    }
+
+    @Override
+    public Builder setDescription(String description) {
+      infoBuilder.setDescription(description);
       return this;
     }
 
     @Override
+    @Deprecated
     public Builder configuration(NetworkConfiguration configuration) {
-      infoBuilder.configuration(configuration);
+      return setConfiguration(configuration);
+    }
+
+    @Override
+    public Builder setConfiguration(NetworkConfiguration configuration) {
+      infoBuilder.setConfiguration(configuration);
       return this;
     }
 
@@ -101,7 +119,7 @@ public class Network extends NetworkInfo {
   Network(Compute compute, NetworkInfo.BuilderImpl infoBuilder) {
     super(infoBuilder);
     this.compute = checkNotNull(compute);
-    this.options = compute.options();
+    this.options = compute.getOptions();
   }
 
   /**
@@ -123,7 +141,7 @@ public class Network extends NetworkInfo {
    * @throws ComputeException upon failure
    */
   public Network reload(NetworkOption... options) {
-    return compute.getNetwork(networkId().network(), options);
+    return compute.getNetwork(getNetworkId().getNetwork(), options);
   }
 
   /**
@@ -134,7 +152,7 @@ public class Network extends NetworkInfo {
    * @throws ComputeException upon failure
    */
   public Operation delete(OperationOption... options) {
-    return compute.deleteNetwork(networkId().network(), options);
+    return compute.deleteNetwork(getNetworkId().getNetwork(), options);
   }
 
   /**
@@ -150,13 +168,21 @@ public class Network extends NetworkInfo {
    */
   public Operation createSubnetwork(SubnetworkId subnetworkId, String ipRange,
       OperationOption... options) {
-    return compute.create(SubnetworkInfo.of(subnetworkId, networkId(), ipRange), options);
+    return compute.create(SubnetworkInfo.of(subnetworkId, getNetworkId(), ipRange), options);
   }
 
   /**
    * Returns the network's {@code Compute} object used to issue requests.
    */
+  @Deprecated
   public Compute compute() {
+    return getCompute();
+  }
+
+  /**
+   * Returns the network's {@code Compute} object used to issue requests.
+   */
+  public Compute getCompute() {
     return compute;
   }
 
@@ -184,7 +210,7 @@ public class Network extends NetworkInfo {
 
   private void readObject(ObjectInputStream input) throws IOException, ClassNotFoundException {
     input.defaultReadObject();
-    this.compute = options.service();
+    this.compute = options.getService();
   }
 
   static Network fromPb(Compute compute,

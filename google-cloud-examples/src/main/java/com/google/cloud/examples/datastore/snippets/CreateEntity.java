@@ -35,10 +35,10 @@ import com.google.cloud.datastore.KeyFactory;
 public class CreateEntity {
 
   public static void main(String... args) {
-    Datastore datastore = DatastoreOptions.defaultInstance().service();
-    KeyFactory keyFactory = datastore.newKeyFactory().kind("keyKind");
+    Datastore datastore = DatastoreOptions.getDefaultInstance().getService();
+    KeyFactory keyFactory = datastore.newKeyFactory().setKind("keyKind");
     Key key = keyFactory.newKey("keyName");
-    Entity entity = Entity.builder(key)
+    Entity entity = Entity.newBuilder(key)
         .set("name", "John Doe")
         .set("age", 30)
         .set("access_time", DateTime.now())

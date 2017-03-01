@@ -27,6 +27,8 @@ import static org.junit.Assert.fail;
 
 import com.google.cloud.Page;
 import com.google.cloud.storage.Acl;
+import com.google.cloud.storage.Acl.Role;
+import com.google.cloud.storage.Acl.User;
 import com.google.cloud.storage.Blob;
 import com.google.cloud.storage.BlobId;
 import com.google.cloud.storage.BlobInfo;
@@ -48,6 +50,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
@@ -61,9 +64,12 @@ public class ITStorageSnippets {
 
   private static final Logger log = Logger.getLogger(ITStorageSnippets.class.getName());
   private static final String BUCKET = RemoteStorageHelper.generateBucketName();
+  private static final String USER_EMAIL = "google-cloud-java-tests@"
+      + "java-docs-samples-tests.iam.gserviceaccount.com";
 
   private static Storage storage;
   private static StorageSnippets storageSnippets;
+  private static List<String> bucketsToCleanUp;
 
   @Rule
   public ExpectedException thrown = ExpectedException.none();
@@ -74,19 +80,34 @@ public class ITStorageSnippets {
   @BeforeClass
   public static void beforeClass() {
     RemoteStorageHelper helper = RemoteStorageHelper.create();
-    storage = helper.options().service();
+    storage = helper.getOptions().getService();
+    bucketsToCleanUp = new ArrayList<String>();
     storageSnippets = new StorageSnippets(storage);
     storageSnippets.createBucket(BUCKET);
+    bucketsToCleanUp.add(BUCKET);
   }
 
   @AfterClass
   public static void afterClass() throws ExecutionException, InterruptedException {
     if (storage != null) {
-      boolean wasDeleted = RemoteStorageHelper.forceDelete(storage, BUCKET, 5, TimeUnit.SECONDS);
-      if (!wasDeleted && log.isLoggable(Level.WARNING)) {
-        log.log(Level.WARNING, "Deletion of bucket {0} timed out, bucket is not empty", BUCKET);
+      for (String bucket : bucketsToCleanUp) {
+        boolean wasDeleted = RemoteStorageHelper.forceDelete(storage, bucket, 5, TimeUnit.SECONDS);
+        if (!wasDeleted && log.isLoggable(Level.WARNING)) {
+          log.log(Level.WARNING, "Deletion of bucket {0} timed out, bucket is not empty", bucket);
+        }
       }
     }
+  }
+
+  @Test
+  public void testCreateBucketWithStorageClassAndLocation()
+      throws ExecutionException, InterruptedException {
+    String tempBucket = RemoteStorageHelper.generateBucketName();
+    bucketsToCleanUp.add(tempBucket);
+
+    Bucket bucket = storageSnippets.createBucketWithStorageClassAndLocation(tempBucket);
+
+    assertNotNull(bucket);
   }
 
   @Test
@@ -110,7 +131,7 @@ public class ITStorageSnippets {
     Set<String> blobNames = new HashSet<>();
     Iterator<Blob> blobIterator = blobs.iterateAll();
     while (blobIterator.hasNext()) {
-      blobNames.add(blobIterator.next().name());
+      blobNames.add(blobIterator.next().getName());
     }
     assertTrue(blobNames.contains(blobName));
     assertTrue(blobNames.contains("directory/copy-blob"));
@@ -122,6 +143,34 @@ public class ITStorageSnippets {
     }
     assertTrue(storageSnippets.deleteBlob(BUCKET, blobName));
     copiedBlob.delete();
+  }
+
+  @Test
+  public void testCreateUpdateEncryptedBlob() throws InterruptedException {
+    // Note: DO NOT put your encryption key in your code, like it is here. Store it somewhere safe,
+    // and read it in when you need it. This key is just here to make the code easier to read.
+    String encryptionKey1 = "0mMWhFvQOdS4AmxRpo8SJxXn5MjFhbz7DkKBUdUIef8=";
+    String blobName = "encrypted-blob";
+
+    Blob blob = storageSnippets.createEncryptedBlob(BUCKET, blobName, encryptionKey1);
+
+    assertNotNull(blob);
+    assertEquals("text/plain", blob.getContentType());
+    byte[] encryptedContent = storageSnippets.readEncryptedBlob(BUCKET, blobName, encryptionKey1);
+    assertEquals("Hello, World!", new String(encryptedContent));
+    blob = storageSnippets.getBlobFromId(BUCKET, blobName);
+    assertEquals("text/plain", blob.getContentType());
+
+    String encryptionKey2 = "wnxMO0w+dmxribu7rICJ+Q2ES9TLpFRIDy3/L7HN5ZA=";
+
+    blob = storageSnippets.rotateBlobEncryptionKey(
+        BUCKET, blobName, encryptionKey1, encryptionKey2);
+
+    assertNotNull(blob);
+    encryptedContent = storageSnippets.readEncryptedBlob(BUCKET, blobName, encryptionKey2);
+    assertEquals("Hello, World!", new String(encryptedContent));
+    blob = storageSnippets.getBlobFromId(BUCKET, blobName);
+    assertEquals("text/plain", blob.getContentType());
   }
 
   @Test
@@ -137,7 +186,8 @@ public class ITStorageSnippets {
     } catch (StorageException ex) {
       // expected
     }
-    assertTrue(storageSnippets.deleteBlobFromIdWithGeneration(BUCKET, blobName, blob.generation()));
+    assertTrue(
+        storageSnippets.deleteBlobFromIdWithGeneration(BUCKET, blobName, blob.getGeneration()));
     copiedBlob.delete();
   }
 
@@ -147,7 +197,7 @@ public class ITStorageSnippets {
         storageSnippets.createBlobFromInputStream(BUCKET, "test-create-blob-from-input-stream");
     assertNotNull(blob);
     assertTrue(storageSnippets.deleteBlobFromIdWithGeneration(
-        BUCKET, "test-create-blob-from-input-stream", blob.generation()));
+        BUCKET, "test-create-blob-from-input-stream", blob.getGeneration()));
   }
 
   @Test
@@ -165,7 +215,7 @@ public class ITStorageSnippets {
     }
     Iterator<Bucket> bucketIterator = buckets.iterateAll();
     while (bucketIterator.hasNext()) {
-      assertTrue(bucketIterator.next().name().startsWith(BUCKET));
+      assertTrue(bucketIterator.next().getName().startsWith(BUCKET));
     }
   }
 
@@ -185,8 +235,8 @@ public class ITStorageSnippets {
     String blobName = "my_blob_name";
     String sourceBlobName1 = "source_blob_1";
     String sourceBlobName2 = "source_blob_2";
-    BlobInfo blobInfo1 = BlobInfo.builder(BUCKET, sourceBlobName1).build();
-    BlobInfo blobInfo2 = BlobInfo.builder(BUCKET, sourceBlobName2).build();
+    BlobInfo blobInfo1 = BlobInfo.newBuilder(BUCKET, sourceBlobName1).build();
+    BlobInfo blobInfo2 = BlobInfo.newBuilder(BUCKET, sourceBlobName2).build();
     storage.create(blobInfo1);
     storage.create(blobInfo2);
     assertNotNull(storageSnippets.composeBlobs(BUCKET, blobName, sourceBlobName1, sourceBlobName2));
@@ -197,10 +247,11 @@ public class ITStorageSnippets {
     String blobName = "text-read-write-sign-url";
     byte[] content = "Hello, World!".getBytes(UTF_8);
     Blob blob = storage.create(
-        BlobInfo.builder(BUCKET, blobName).build(), content);
-    assertArrayEquals(content, storageSnippets.readBlobFromId(BUCKET, blobName, blob.generation()));
+        BlobInfo.newBuilder(BUCKET, blobName).build(), content);
     assertArrayEquals(content,
-        storageSnippets.readBlobFromStringsWithGeneration(BUCKET, blobName, blob.generation()));
+        storageSnippets.readBlobFromId(BUCKET, blobName, blob.getGeneration()));
+    assertArrayEquals(content,
+        storageSnippets.readBlobFromStringsWithGeneration(BUCKET, blobName, blob.getGeneration()));
     storageSnippets.readerFromId(BUCKET, blobName);
     storageSnippets.readerFromStrings(BUCKET, blobName);
     storageSnippets.writer(BUCKET, blobName);
@@ -225,16 +276,16 @@ public class ITStorageSnippets {
   public void testBatch() throws IOException {
     String blobName1 = "test-batch1";
     String blobName2 = "test-batch2";
-    storage.create(BlobInfo.builder(BUCKET, blobName1).build());
-    storage.create(BlobInfo.builder(BUCKET, blobName2).build());
+    storage.create(BlobInfo.newBuilder(BUCKET, blobName1).build());
+    storage.create(BlobInfo.newBuilder(BUCKET, blobName2).build());
     List<Blob> blobs = storageSnippets.batchGet(BUCKET, blobName1, blobName2);
-    assertEquals(blobName1, blobs.get(0).name());
-    assertEquals(blobName2, blobs.get(1).name());
+    assertEquals(blobName1, blobs.get(0).getName());
+    assertEquals(blobName2, blobs.get(1).getName());
     blobs = storageSnippets.batchUpdate(BUCKET, blobName1, blobName2);
-    assertEquals(blobName1, blobs.get(0).name());
-    assertEquals(blobName2, blobs.get(1).name());
-    assertEquals("text/plain", blobs.get(0).contentType());
-    assertEquals("text/plain", blobs.get(1).contentType());
+    assertEquals(blobName1, blobs.get(0).getName());
+    assertEquals(blobName2, blobs.get(1).getName());
+    assertEquals("text/plain", blobs.get(0).getContentType());
+    assertEquals("text/plain", blobs.get(1).getContentType());
     assertNotNull(storageSnippets.batch(BUCKET, blobName1, blobName2));
     List<Boolean> deleted = storageSnippets.batchDelete(BUCKET, blobName1, blobName2);
     assertFalse(deleted.get(0));
@@ -245,16 +296,16 @@ public class ITStorageSnippets {
   public void testBatchIterable() throws IOException {
     String blobName1 = "test-batch-iterable1";
     String blobName2 = "test-batch-iterable2";
-    storage.create(BlobInfo.builder(BUCKET, blobName1).build());
-    storage.create(BlobInfo.builder(BUCKET, blobName2).build());
+    storage.create(BlobInfo.newBuilder(BUCKET, blobName1).build());
+    storage.create(BlobInfo.newBuilder(BUCKET, blobName2).build());
     List<Blob> blobs = storageSnippets.batchGetIterable(BUCKET, blobName1, blobName2);
-    assertEquals(blobName1, blobs.get(0).name());
-    assertEquals(blobName2, blobs.get(1).name());
+    assertEquals(blobName1, blobs.get(0).getName());
+    assertEquals(blobName2, blobs.get(1).getName());
     blobs = storageSnippets.batchUpdateIterable(BUCKET, blobName1, blobName2);
-    assertEquals(blobName1, blobs.get(0).name());
-    assertEquals(blobName2, blobs.get(1).name());
-    assertEquals("text/plain", blobs.get(0).contentType());
-    assertEquals("text/plain", blobs.get(1).contentType());
+    assertEquals(blobName1, blobs.get(0).getName());
+    assertEquals(blobName2, blobs.get(1).getName());
+    assertEquals("text/plain", blobs.get(0).getContentType());
+    assertEquals("text/plain", blobs.get(1).getContentType());
     assertNotNull(storageSnippets.batch(BUCKET, blobName1, blobName2));
     List<Boolean> deleted = storageSnippets.batchDeleteIterable(BUCKET, blobName1, blobName2);
     assertFalse(deleted.get(0));
@@ -267,9 +318,17 @@ public class ITStorageSnippets {
     assertFalse(storageSnippets.deleteBucketAcl(BUCKET));
     assertNotNull(storageSnippets.createBucketAcl(BUCKET));
     Acl updatedAcl = storageSnippets.updateBucketAcl(BUCKET);
-    assertEquals(Acl.Role.OWNER, updatedAcl.role());
+    assertEquals(Acl.Role.OWNER, updatedAcl.getRole());
     Set<Acl> acls = Sets.newHashSet(storageSnippets.listBucketAcls(BUCKET));
     assertTrue(acls.contains(updatedAcl));
+
+    assertNotNull(storageSnippets.getBucketAcl(BUCKET));
+    assertNull(storageSnippets.getBucketAcl(BUCKET, USER_EMAIL));
+    storage.createAcl(BUCKET, Acl.of(new User(USER_EMAIL), Role.READER));
+    Acl userAcl = storageSnippets.getBucketAcl(BUCKET, USER_EMAIL);
+    assertNotNull(userAcl);
+    assertEquals(USER_EMAIL, ((User)userAcl.getEntity()).getEmail());
+
     assertTrue(storageSnippets.deleteBucketAcl(BUCKET));
     assertNull(storageSnippets.getBucketAcl(BUCKET));
   }
@@ -280,7 +339,7 @@ public class ITStorageSnippets {
     assertFalse(storageSnippets.deleteDefaultBucketAcl(BUCKET));
     assertNotNull(storageSnippets.createDefaultBucketAcl(BUCKET));
     Acl updatedAcl = storageSnippets.updateDefaultBucketAcl(BUCKET);
-    assertEquals(Acl.Role.OWNER, updatedAcl.role());
+    assertEquals(Acl.Role.OWNER, updatedAcl.getRole());
     Set<Acl> acls = Sets.newHashSet(storageSnippets.listDefaultBucketAcls(BUCKET));
     assertTrue(acls.contains(updatedAcl));
     assertTrue(storageSnippets.deleteDefaultBucketAcl(BUCKET));
@@ -291,17 +350,32 @@ public class ITStorageSnippets {
   public void testBlobAcl() {
     String blobName = "test-blob-acl";
     BlobId blobId = BlobId.of(BUCKET, "test-blob-acl");
-    BlobInfo blob = BlobInfo.builder(blobId).build();
+    BlobInfo blob = BlobInfo.newBuilder(blobId).build();
     Blob createdBlob = storage.create(blob);
-    assertNull(storageSnippets.getBlobAcl(BUCKET, blobName, createdBlob.generation()));
-    assertNotNull(storageSnippets.createBlobAcl(BUCKET, blobName, createdBlob.generation()));
-    Acl updatedAcl = storageSnippets.updateBlobAcl(BUCKET, blobName, createdBlob.generation());
-    assertEquals(Acl.Role.OWNER, updatedAcl.role());
-    Set<Acl> acls =
-        Sets.newHashSet(storageSnippets.listBlobAcls(BUCKET, blobName, createdBlob.generation()));
+    assertNull(storageSnippets.getBlobAcl(BUCKET, blobName, createdBlob.getGeneration()));
+    assertNotNull(storageSnippets.createBlobAcl(BUCKET, blobName, createdBlob.getGeneration()));
+    Acl updatedAcl = storageSnippets.updateBlobAcl(BUCKET, blobName, createdBlob.getGeneration());
+    assertEquals(Acl.Role.OWNER, updatedAcl.getRole());
+    Set<Acl> acls = Sets.newHashSet(
+        storageSnippets.listBlobAcls(BUCKET, blobName, createdBlob.getGeneration()));
     assertTrue(acls.contains(updatedAcl));
-    assertTrue(storageSnippets.deleteBlobAcl(BUCKET, blobName, createdBlob.generation()));
-    assertNull(storageSnippets.getBlobAcl(BUCKET, blobName, createdBlob.generation()));
+
+    assertNull(storageSnippets.getBlobAcl(BUCKET, blobName, USER_EMAIL));
+    storage.createAcl(BlobId.of(BUCKET, blobName), Acl.of(new User(USER_EMAIL), Role.READER));
+    Acl userAcl = storageSnippets.getBlobAcl(BUCKET, blobName, USER_EMAIL);
+    assertNotNull(userAcl);
+    assertEquals(USER_EMAIL, ((User)userAcl.getEntity()).getEmail());
+
+    updatedAcl = storageSnippets.blobToPublicRead(BUCKET, blobName, createdBlob.getGeneration());
+    assertEquals(Acl.Role.READER, updatedAcl.getRole());
+    assertEquals(User.ofAllUsers(), updatedAcl.getEntity());
+    acls = Sets.newHashSet(
+        storageSnippets.listBlobAcls(BUCKET, blobName, createdBlob.getGeneration()));
+    assertTrue(acls.contains(updatedAcl));
+
+    assertNotNull(storageSnippets.getBlobAcl(BUCKET, blobName, createdBlob.getGeneration()));
+    assertTrue(storageSnippets.deleteBlobAcl(BUCKET, blobName, createdBlob.getGeneration()));
+    assertNull(storageSnippets.getBlobAcl(BUCKET, blobName, createdBlob.getGeneration()));
     // test non-existing blob
     String nonExistingBlob = "test-blob-acl";
     assertNull(storageSnippets.getBlobAcl(BUCKET, nonExistingBlob, -1L));

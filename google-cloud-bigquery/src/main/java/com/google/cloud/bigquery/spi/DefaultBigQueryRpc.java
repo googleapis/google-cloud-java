@@ -80,12 +80,12 @@ public class DefaultBigQueryRpc implements BigQueryRpc {
   private final Bigquery bigquery;
 
   public DefaultBigQueryRpc(BigQueryOptions options) {
-    HttpTransport transport = options.httpTransportFactory().create();
-    HttpRequestInitializer initializer = options.httpRequestInitializer();
+    HttpTransport transport = options.getHttpTransportFactory().create();
+    HttpRequestInitializer initializer = options.getHttpRequestInitializer();
     this.options = options;
     bigquery = new Bigquery.Builder(transport, new JacksonFactory(), initializer)
-        .setRootUrl(options.host())
-        .setApplicationName(options.applicationName())
+        .setRootUrl(options.getHost())
+        .setApplicationName(options.getApplicationName())
         .build();
   }
 
@@ -102,7 +102,7 @@ public class DefaultBigQueryRpc implements BigQueryRpc {
           .execute();
     } catch (IOException ex) {
       BigQueryException serviceException = translate(ex);
-      if (serviceException.code() == HTTP_NOT_FOUND) {
+      if (serviceException.getCode() == HTTP_NOT_FOUND) {
         return null;
       }
       throw serviceException;
@@ -168,7 +168,7 @@ public class DefaultBigQueryRpc implements BigQueryRpc {
   public Job create(Job job, Map<Option, ?> options) {
     try {
       String projectId = job.getJobReference() != null
-          ? job.getJobReference().getProjectId() : this.options.projectId();
+          ? job.getJobReference().getProjectId() : this.options.getProjectId();
       return bigquery.jobs()
           .insert(projectId, job)
           .setFields(FIELDS.getString(options))
@@ -187,7 +187,7 @@ public class DefaultBigQueryRpc implements BigQueryRpc {
       return true;
     } catch (IOException ex) {
       BigQueryException serviceException = translate(ex);
-      if (serviceException.code() == HTTP_NOT_FOUND) {
+      if (serviceException.getCode() == HTTP_NOT_FOUND) {
         return false;
       }
       throw serviceException;
@@ -232,7 +232,7 @@ public class DefaultBigQueryRpc implements BigQueryRpc {
           .execute();
     } catch (IOException ex) {
       BigQueryException serviceException = translate(ex);
-      if (serviceException.code() == HTTP_NOT_FOUND) {
+      if (serviceException.getCode() == HTTP_NOT_FOUND) {
         return null;
       }
       throw serviceException;
@@ -274,7 +274,7 @@ public class DefaultBigQueryRpc implements BigQueryRpc {
       return true;
     } catch (IOException ex) {
       BigQueryException serviceException = translate(ex);
-      if (serviceException.code() == HTTP_NOT_FOUND) {
+      if (serviceException.getCode() == HTTP_NOT_FOUND) {
         return false;
       }
       throw serviceException;
@@ -318,7 +318,7 @@ public class DefaultBigQueryRpc implements BigQueryRpc {
           .execute();
     } catch (IOException ex) {
       BigQueryException serviceException = translate(ex);
-      if (serviceException.code() == HTTP_NOT_FOUND) {
+      if (serviceException.getCode() == HTTP_NOT_FOUND) {
         return null;
       }
       throw serviceException;
@@ -373,7 +373,7 @@ public class DefaultBigQueryRpc implements BigQueryRpc {
       return true;
     } catch (IOException ex) {
       BigQueryException serviceException = translate(ex);
-      if (serviceException.code() == HTTP_NOT_FOUND) {
+      if (serviceException.getCode() == HTTP_NOT_FOUND) {
         return false;
       }
       throw serviceException;
@@ -393,7 +393,7 @@ public class DefaultBigQueryRpc implements BigQueryRpc {
           .execute();
     } catch (IOException ex) {
       BigQueryException serviceException = translate(ex);
-      if (serviceException.code() == HTTP_NOT_FOUND) {
+      if (serviceException.getCode() == HTTP_NOT_FOUND) {
         return null;
       }
       throw serviceException;
@@ -403,7 +403,7 @@ public class DefaultBigQueryRpc implements BigQueryRpc {
   @Override
   public QueryResponse query(QueryRequest request) {
     try {
-      return bigquery.jobs().query(this.options.projectId(), request).execute();
+      return bigquery.jobs().query(this.options.getProjectId(), request).execute();
     } catch (IOException ex) {
       throw translate(ex);
     }
@@ -415,7 +415,7 @@ public class DefaultBigQueryRpc implements BigQueryRpc {
       Job loadJob = new Job().setConfiguration(configuration);
       StringBuilder builder = new StringBuilder()
           .append(BASE_RESUMABLE_URI)
-          .append(options.projectId())
+          .append(options.getProjectId())
           .append("/jobs");
       GenericUrl url = new GenericUrl(builder.toString());
       url.set("uploadType", "resumable");
@@ -432,12 +432,13 @@ public class DefaultBigQueryRpc implements BigQueryRpc {
   }
 
   @Override
-  public void write(String uploadId, byte[] toWrite, int toWriteOffset, long destOffset, int length,
+  public Job write(String uploadId, byte[] toWrite, int toWriteOffset, long destOffset, int length,
       boolean last) {
     try {
       GenericUrl url = new GenericUrl(uploadId);
-      HttpRequest httpRequest = bigquery.getRequestFactory().buildPutRequest(url,
-          new ByteArrayContent(null, toWrite, toWriteOffset, length));
+      HttpRequest httpRequest = bigquery.getRequestFactory()
+          .buildPutRequest(url, new ByteArrayContent(null, toWrite, toWriteOffset, length));
+      httpRequest.setParser(bigquery.getObjectParser());
       long limit = destOffset + length;
       StringBuilder range = new StringBuilder("bytes ");
       range.append(destOffset).append('-').append(limit - 1).append('/');
@@ -450,8 +451,9 @@ public class DefaultBigQueryRpc implements BigQueryRpc {
       int code;
       String message;
       IOException exception = null;
+      HttpResponse response = null;
       try {
-        HttpResponse response = httpRequest.execute();
+        response = httpRequest.execute();
         code = response.getStatusCode();
         message = response.getStatusMessage();
       } catch (HttpResponseException ex) {
@@ -466,6 +468,7 @@ public class DefaultBigQueryRpc implements BigQueryRpc {
         }
         throw new BigQueryException(code, message);
       }
+      return last && response != null ? response.parseAs(Job.class) : null;
     } catch (IOException ex) {
       throw translate(ex);
     }

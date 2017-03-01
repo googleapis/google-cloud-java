@@ -87,7 +87,7 @@ public class BucketSnippets {
   // [TARGET update(BucketTargetOption...)]
   public Bucket update() {
     // [START update]
-    Bucket updatedBucket = bucket.toBuilder().versioningEnabled(true).build().update();
+    Bucket updatedBucket = bucket.toBuilder().setVersioningEnabled(true).build().update();
     // [END update]
     return updatedBucket;
   }

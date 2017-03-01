@@ -24,11 +24,11 @@ package com.google.cloud.examples.storage.snippets;
 
 import static java.nio.charset.StandardCharsets.UTF_8;
 
-import com.google.cloud.AuthCredentials;
+import com.google.auth.ServiceAccountSigner;
+import com.google.auth.oauth2.ServiceAccountCredentials;
 import com.google.cloud.BatchResult;
 import com.google.cloud.Page;
 import com.google.cloud.ReadChannel;
-import com.google.cloud.ServiceAccountSigner;
 import com.google.cloud.WriteChannel;
 import com.google.cloud.storage.Acl;
 import com.google.cloud.storage.Acl.Role;
@@ -44,6 +44,7 @@ import com.google.cloud.storage.Storage.BlobGetOption;
 import com.google.cloud.storage.Storage.BlobListOption;
 import com.google.cloud.storage.Storage.BlobSourceOption;
 import com.google.cloud.storage.Storage.BlobTargetOption;
+import com.google.cloud.storage.Storage.BlobWriteOption;
 import com.google.cloud.storage.Storage.BucketGetOption;
 import com.google.cloud.storage.Storage.BucketListOption;
 import com.google.cloud.storage.Storage.BucketSourceOption;
@@ -91,6 +92,23 @@ public class StorageSnippets {
   }
 
   /**
+   * Example of creating a bucket with storage class and location.
+   */
+  // [TARGET create(BucketInfo, BucketTargetOption...)]
+  // [VARIABLE "my_unique_bucket"]
+  public Bucket createBucketWithStorageClassAndLocation(String bucketName) {
+    // [START createBucketWithStorageClassAndLocation]
+    Bucket bucket = storage.create(BucketInfo.newBuilder(bucketName)
+        // See here for possible values: http://g.co/cloud/storage/docs/storage-classes
+        .setStorageClass("COLDLINE")
+        // Possible values: http://g.co/cloud/storage/docs/bucket-locations#location-mr
+        .setLocation("asia")
+        .build());
+    // [END createBucketWithStorageClassAndLocation]
+    return bucket;
+  }
+
+  /**
    * Example of creating a blob with no content.
    */
   // [TARGET create(BlobInfo, BlobTargetOption...)]
@@ -99,7 +117,7 @@ public class StorageSnippets {
   public Blob createBlob(String bucketName, String blobName) {
     // [START createBlob]
     BlobId blobId = BlobId.of(bucketName, blobName);
-    BlobInfo blobInfo = BlobInfo.builder(blobId).contentType("text/plain").build();
+    BlobInfo blobInfo = BlobInfo.newBuilder(blobId).setContentType("text/plain").build();
     Blob blob = storage.create(blobInfo);
     // [END createBlob]
     return blob;
@@ -114,7 +132,7 @@ public class StorageSnippets {
   public Blob createBlobFromByteArray(String bucketName, String blobName) {
     // [START createBlobFromByteArray]
     BlobId blobId = BlobId.of(bucketName, blobName);
-    BlobInfo blobInfo = BlobInfo.builder(blobId).contentType("text/plain").build();
+    BlobInfo blobInfo = BlobInfo.newBuilder(blobId).setContentType("text/plain").build();
     Blob blob = storage.create(blobInfo, "Hello, World!".getBytes(UTF_8));
     // [END createBlobFromByteArray]
     return blob;
@@ -130,9 +148,29 @@ public class StorageSnippets {
     // [START createBlobFromInputStream]
     InputStream content = new ByteArrayInputStream("Hello, World!".getBytes(UTF_8));
     BlobId blobId = BlobId.of(bucketName, blobName);
-    BlobInfo blobInfo = BlobInfo.builder(blobId).contentType("text/plain").build();
+    BlobInfo blobInfo = BlobInfo.newBuilder(blobId).setContentType("text/plain").build();
     Blob blob = storage.create(blobInfo, content);
     // [END createBlobFromInputStream]
+    return blob;
+  }
+
+  /**
+   * Example of uploading an encrypted blob.
+   */
+  // [TARGET create(BlobInfo, InputStream, BlobWriteOption...)]
+  // [VARIABLE "my_unique_bucket"]
+  // [VARIABLE "my_blob_name"]
+  // [VARIABLE "my_encryption_key"]
+  public Blob createEncryptedBlob(String bucketName, String blobName, String encryptionKey) {
+    // [START storageUploadEncryptedFile]
+    InputStream content = new ByteArrayInputStream("Hello, World!".getBytes(UTF_8));
+
+    BlobId blobId = BlobId.of(bucketName, blobName);
+    BlobInfo blobInfo = BlobInfo.newBuilder(blobId)
+        .setContentType("text/plain")
+        .build();
+    Blob blob = storage.create(blobInfo, content, BlobWriteOption.encryptionKey(encryptionKey));
+    // [END storageUploadEncryptedFile]
     return blob;
   }
 
@@ -243,7 +281,7 @@ public class StorageSnippets {
   // [VARIABLE "my_unique_bucket"]
   public Bucket updateBucket(String bucketName) {
     // [START updateBucket]
-    BucketInfo bucketInfo = BucketInfo.builder(bucketName).versioningEnabled(true).build();
+    BucketInfo bucketInfo = BucketInfo.newBuilder(bucketName).setVersioningEnabled(true).build();
     Bucket bucket = storage.update(bucketInfo);
     // [END updateBucket]
     return bucket;
@@ -259,9 +297,9 @@ public class StorageSnippets {
     // [START updateBlob]
     Map<String, String> newMetadata = new HashMap<>();
     newMetadata.put("key", "value");
-    storage.update(BlobInfo.builder(bucketName, blobName).metadata(null).build());
-    Blob blob = storage.update(BlobInfo.builder(bucketName, blobName)
-        .metadata(newMetadata)
+    storage.update(BlobInfo.newBuilder(bucketName, blobName).setMetadata(null).build());
+    Blob blob = storage.update(BlobInfo.newBuilder(bucketName, blobName)
+        .setMetadata(newMetadata)
         .build());
     // [END updateBlob]
     return blob;
@@ -277,7 +315,7 @@ public class StorageSnippets {
   public Blob updateBlobWithMetageneration(String bucketName, String blobName) {
     // [START updateBlobWithMetageneration]
     Blob blob = storage.get(bucketName, blobName);
-    BlobInfo updatedInfo = blob.toBuilder().contentType("text/plain").build();
+    BlobInfo updatedInfo = blob.toBuilder().setContentType("text/plain").build();
     storage.update(updatedInfo, BlobTargetOption.metagenerationMatch());
     // [END updateBlobWithMetageneration]
     return blob;
@@ -378,9 +416,9 @@ public class StorageSnippets {
       String sourceBlob2) {
     // [START composeBlobs]
     BlobId blobId = BlobId.of(bucketName, blobName);
-    BlobInfo blobInfo = BlobInfo.builder(blobId).contentType("text/plain").build();
-    ComposeRequest request = ComposeRequest.builder()
-        .target(blobInfo)
+    BlobInfo blobInfo = BlobInfo.newBuilder(blobId).setContentType("text/plain").build();
+    ComposeRequest request = ComposeRequest.newBuilder()
+        .setTarget(blobInfo)
         .addSource(sourceBlob1)
         .addSource(sourceBlob2)
         .build();
@@ -398,11 +436,11 @@ public class StorageSnippets {
   // [VARIABLE "copy_blob_name"]
   public Blob copyBlob(String bucketName, String blobName, String copyBlobName) {
     // [START copyBlob]
-    CopyRequest request = CopyRequest.builder()
-        .source(BlobId.of(bucketName, blobName))
-        .target(BlobId.of(bucketName, copyBlobName))
+    CopyRequest request = CopyRequest.newBuilder()
+        .setSource(BlobId.of(bucketName, blobName))
+        .setTarget(BlobId.of(bucketName, copyBlobName))
         .build();
-    Blob blob = storage.copy(request).result();
+    Blob blob = storage.copy(request).getResult();
     // [END copyBlob]
     return blob;
   }
@@ -416,16 +454,38 @@ public class StorageSnippets {
   // [VARIABLE "copy_blob_name"]
   public Blob copyBlobInChunks(String bucketName, String blobName, String copyBlobName) {
     // [START copyBlobInChunks]
-    CopyRequest request = CopyRequest.builder()
-        .source(BlobId.of(bucketName, blobName))
-        .target(BlobId.of(bucketName, copyBlobName))
+    CopyRequest request = CopyRequest.newBuilder()
+        .setSource(BlobId.of(bucketName, blobName))
+        .setTarget(BlobId.of(bucketName, copyBlobName))
         .build();
     CopyWriter copyWriter = storage.copy(request);
     while (!copyWriter.isDone()) {
       copyWriter.copyChunk();
     }
-    Blob blob = copyWriter.result();
+    Blob blob = copyWriter.getResult();
     // [END copyBlobInChunks]
+    return blob;
+  }
+
+  /**
+   * Example of rotating the encryption key of a blob.
+   */
+  // [TARGET copy(CopyRequest)]
+  // [VARIABLE "my_unique_bucket"]
+  // [VARIABLE "my_blob_name"]
+  // [VARIABLE "old_encryption_key"]
+  // [VARIABLE "new_encryption_key"]
+  public Blob rotateBlobEncryptionKey(
+      String bucketName, String blobName, String oldEncryptionKey, String newEncryptionKey) {
+    // [START storageRotateEncryptionKey]
+    BlobId blobId = BlobId.of(bucketName, blobName);
+    CopyRequest request = CopyRequest.newBuilder()
+        .setSource(blobId)
+        .setSourceOptions(BlobSourceOption.decryptionKey(oldEncryptionKey))
+        .setTarget(blobId, BlobTargetOption.encryptionKey(newEncryptionKey))
+        .build();
+    Blob blob = storage.copy(request).getResult();
+    // [END storageRotateEncryptionKey]
     return blob;
   }
 
@@ -453,12 +513,27 @@ public class StorageSnippets {
   // [TARGET readAllBytes(BlobId, BlobSourceOption...)]
   // [VARIABLE "my_unique_bucket"]
   // [VARIABLE "my_blob_name"]
-  // [VARIABLE 42"]
+  // [VARIABLE 42]
   public byte[] readBlobFromId(String bucketName, String blobName, long blobGeneration) {
     // [START readBlobFromId]
     BlobId blobId = BlobId.of(bucketName, blobName, blobGeneration);
     byte[] content = storage.readAllBytes(blobId);
     // [END readBlobFromId]
+    return content;
+  }
+
+  /**
+   * Example of reading all bytes of an encrypted blob.
+   */
+  // [TARGET readAllBytes(BlobId, BlobSourceOption...)]
+  // [VARIABLE "my_unique_bucket"]
+  // [VARIABLE "my_blob_name"]
+  // [VARIABLE "my_encryption_key"]
+  public byte[] readEncryptedBlob(String bucketName, String blobName, String decryptionKey) {
+    // [START readEncryptedBlob]
+    byte[] content = storage.readAllBytes(
+        bucketName, blobName, BlobSourceOption.decryptionKey(decryptionKey));
+    // [END readEncryptedBlob]
     return content;
   }
 
@@ -483,7 +558,7 @@ public class StorageSnippets {
         // delete failed
       }
     });
-    batch.update(BlobInfo.builder(secondBlob).contentType("text/plain").build());
+    batch.update(BlobInfo.newBuilder(secondBlob).setContentType("text/plain").build());
     StorageBatchResult<Blob> result = batch.get(secondBlob);
     batch.submit();
     Blob blob = result.get(); // returns get result or throws StorageException
@@ -540,7 +615,7 @@ public class StorageSnippets {
     // [START writer]
     BlobId blobId = BlobId.of(bucketName, blobName);
     byte[] content = "Hello, World!".getBytes(UTF_8);
-    BlobInfo blobInfo = BlobInfo.builder(blobId).contentType("text/plain").build();
+    BlobInfo blobInfo = BlobInfo.newBuilder(blobId).setContentType("text/plain").build();
     try (WriteChannel writer = storage.writer(blobInfo)) {
       try {
         writer.write(ByteBuffer.wrap(content, 0, content.length));
@@ -560,7 +635,7 @@ public class StorageSnippets {
   // [VARIABLE "my_blob_name"]
   public URL signUrl(String bucketName, String blobName) {
     // [START signUrl]
-    URL signedUrl = storage.signUrl(BlobInfo.builder(bucketName, blobName).build(), 14,
+    URL signedUrl = storage.signUrl(BlobInfo.newBuilder(bucketName, blobName).build(), 14,
         TimeUnit.DAYS);
     // [END signUrl]
     return signedUrl;
@@ -578,9 +653,9 @@ public class StorageSnippets {
   public URL signUrlWithSigner(String bucketName, String blobName, String keyPath)
       throws IOException {
     // [START signUrlWithSigner]
-    URL signedUrl = storage.signUrl(BlobInfo.builder(bucketName, blobName).build(),
+    URL signedUrl = storage.signUrl(BlobInfo.newBuilder(bucketName, blobName).build(),
         14, TimeUnit.DAYS, SignUrlOption.signWith(
-            AuthCredentials.createForJson(new FileInputStream(keyPath))));
+            ServiceAccountCredentials.fromStream(new FileInputStream(keyPath))));
     // [END signUrlWithSigner]
     return signedUrl;
   }
@@ -630,8 +705,8 @@ public class StorageSnippets {
     Blob firstBlob = storage.get(bucketName, blobName1);
     Blob secondBlob = storage.get(bucketName, blobName2);
     List<Blob> updatedBlobs = storage.update(
-        firstBlob.toBuilder().contentType("text/plain").build(),
-        secondBlob.toBuilder().contentType("text/plain").build());
+        firstBlob.toBuilder().setContentType("text/plain").build(),
+        secondBlob.toBuilder().setContentType("text/plain").build());
     // [END batchUpdate]
     return updatedBlobs;
   }
@@ -648,8 +723,8 @@ public class StorageSnippets {
     Blob firstBlob = storage.get(bucketName, blobName1);
     Blob secondBlob = storage.get(bucketName, blobName2);
     List<BlobInfo> blobs = new LinkedList<>();
-    blobs.add(firstBlob.toBuilder().contentType("text/plain").build());
-    blobs.add(secondBlob.toBuilder().contentType("text/plain").build());
+    blobs.add(firstBlob.toBuilder().setContentType("text/plain").build());
+    blobs.add(secondBlob.toBuilder().setContentType("text/plain").build());
     List<Blob> updatedBlobs = storage.update(blobs);
     // [END batchUpdateIterable]
     return updatedBlobs;
@@ -697,6 +772,19 @@ public class StorageSnippets {
     // [START getBucketAcl]
     Acl acl = storage.getAcl(bucketName, User.ofAllAuthenticatedUsers());
     // [END getBucketAcl]
+    return acl;
+  }
+
+  /**
+   * Example of getting the ACL entry for a specific user on a bucket.
+   */
+  // [TARGET getAcl(String, Entity)]
+  // [VARIABLE "my_unique_bucket"]
+  // [VARIABLE "google-cloud-java-tests@java-docs-samples-tests.iam.gserviceaccount.com"]
+  public Acl getBucketAcl(String bucketName, String userEmail) {
+    // [START storagePrintBucketAclForUser]
+    Acl acl = storage.getAcl(bucketName, new User(userEmail));
+    // [END storagePrintBucketAclForUser]
     return acl;
   }
 
@@ -842,6 +930,21 @@ public class StorageSnippets {
   }
 
   /**
+   * Example of getting the ACL entry for a specific user on a blob.
+   */
+  // [TARGET getAcl(BlobId, Entity)]
+  // [VARIABLE "my_unique_bucket"]
+  // [VARIABLE "my_blob_name"]
+  // [VARIABLE "google-cloud-java-tests@java-docs-samples-tests.iam.gserviceaccount.com"]
+  public Acl getBlobAcl(String bucketName, String blobName, String userEmail) {
+    // [START storagePrintFileAclForUser]
+    BlobId blobId = BlobId.of(bucketName, blobName);
+    Acl acl = storage.getAcl(blobId, new User(userEmail));
+    // [END storagePrintFileAclForUser]
+    return acl;
+  }
+
+  /**
    * Example of deleting the ACL entry for an entity on a blob.
    */
   // [TARGET deleteAcl(BlobId, Entity)]
@@ -888,6 +991,21 @@ public class StorageSnippets {
     BlobId blobId = BlobId.of(bucketName, blobName, blobGeneration);
     Acl acl = storage.updateAcl(blobId, Acl.of(User.ofAllAuthenticatedUsers(), Role.OWNER));
     // [END updateBlobAcl]
+    return acl;
+  }
+
+  /**
+   * Example of updating a blob to be public-read.
+   */
+  // [TARGET createAcl(BlobId, Acl)]
+  // [VARIABLE "my_unique_bucket"]
+  // [VARIABLE "my_blob_name"]
+  // [VARIABLE 42]
+  public Acl blobToPublicRead(String bucketName, String blobName, long blobGeneration) {
+    // [START storageMakePublic]
+    BlobId blobId = BlobId.of(bucketName, blobName, blobGeneration);
+    Acl acl = storage.createAcl(blobId, Acl.of(User.ofAllUsers(), Role.READER));
+    // [END storageMakePublic]
     return acl;
   }
 

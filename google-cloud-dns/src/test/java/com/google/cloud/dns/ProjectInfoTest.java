@@ -29,30 +29,59 @@ public class ProjectInfoTest {
   private static final String ID = "project-id-123";
   private static final BigInteger NUMBER = new BigInteger("123");
   private static final ProjectInfo.Quota QUOTA = new ProjectInfo.Quota(1, 2, 3, 4, 5, 6);
-  private static final ProjectInfo PROJECT_INFO = ProjectInfo.builder()
-      .id(ID).number(NUMBER).quota(QUOTA).build();
+  private static final ProjectInfo PROJECT_INFO = ProjectInfo.newBuilder()
+      .setId(ID).setNumber(NUMBER).setQuota(QUOTA).build();
 
   @Test
   public void testBuilder() {
-    ProjectInfo withId = ProjectInfo.builder().id(ID).build();
+    ProjectInfo withId = ProjectInfo.newBuilder().setId(ID).build();
+    assertEquals(ID, withId.getId());
+    assertNull(withId.getNumber());
+    assertNull(withId.getQuota());
+    ProjectInfo withNumber = ProjectInfo.newBuilder().setNumber(NUMBER).build();
+    assertEquals(NUMBER, withNumber.getNumber());
+    assertNull(withNumber.getQuota());
+    assertNull(withNumber.getId());
+    ProjectInfo withQuota = ProjectInfo.newBuilder().setQuota(QUOTA).build();
+    assertEquals(QUOTA, withQuota.getQuota());
+    assertNull(withQuota.getId());
+    assertNull(withQuota.getNumber());
+    assertEquals(QUOTA, PROJECT_INFO.getQuota());
+    assertEquals(NUMBER, PROJECT_INFO.getNumber());
+    assertEquals(ID, PROJECT_INFO.getId());
+  }
+
+  @Test
+  public void testBuilderDeprecated() {
+    ProjectInfo withId = ProjectInfo.newBuilder().setId(ID).build();
     assertEquals(ID, withId.id());
-    assertNull(withId.number());
+    assertNull(withId.getNumber());
     assertNull(withId.quota());
-    ProjectInfo withNumber = ProjectInfo.builder().number(NUMBER).build();
-    assertEquals(NUMBER, withNumber.number());
+    ProjectInfo withNumber = ProjectInfo.newBuilder().setNumber(NUMBER).build();
+    assertEquals(NUMBER, withNumber.getNumber());
     assertNull(withNumber.quota());
     assertNull(withNumber.id());
-    ProjectInfo withQuota = ProjectInfo.builder().quota(QUOTA).build();
+    ProjectInfo withQuota = ProjectInfo.newBuilder().setQuota(QUOTA).build();
     assertEquals(QUOTA, withQuota.quota());
     assertNull(withQuota.id());
-    assertNull(withQuota.number());
+    assertNull(withQuota.getNumber());
     assertEquals(QUOTA, PROJECT_INFO.quota());
-    assertEquals(NUMBER, PROJECT_INFO.number());
+    assertEquals(NUMBER, PROJECT_INFO.getNumber());
     assertEquals(ID, PROJECT_INFO.id());
   }
 
   @Test
   public void testQuotaConstructor() {
+    assertEquals(1, QUOTA.getZones());
+    assertEquals(2, QUOTA.getResourceRecordsPerRrset());
+    assertEquals(3, QUOTA.getRrsetAdditionsPerChange());
+    assertEquals(4, QUOTA.getRrsetDeletionsPerChange());
+    assertEquals(5, QUOTA.getRrsetsPerZone());
+    assertEquals(6, QUOTA.getTotalRrdataSizePerChange());
+  }
+
+  @Test
+  public void testQuotaConstructorDeprecated() {
     assertEquals(1, QUOTA.zones());
     assertEquals(2, QUOTA.resourceRecordsPerRrset());
     assertEquals(3, QUOTA.rrsetAdditionsPerChange());
@@ -78,13 +107,22 @@ public class ProjectInfoTest {
 
   @Test
   public void testEqualsAndNotEquals() {
-    ProjectInfo clone = ProjectInfo.builder().build();
+    ProjectInfo clone = ProjectInfo.newBuilder().build();
     assertNotEquals(PROJECT_INFO, clone);
-    clone = ProjectInfo.builder().id(PROJECT_INFO.id()).number(PROJECT_INFO.number()).build();
+    clone = ProjectInfo.newBuilder()
+        .setId(PROJECT_INFO.getId())
+        .setNumber(PROJECT_INFO.getNumber())
+        .build();
     assertNotEquals(PROJECT_INFO, clone);
-    clone = ProjectInfo.builder().id(PROJECT_INFO.id()).quota(PROJECT_INFO.quota()).build();
+    clone = ProjectInfo.newBuilder()
+        .setId(PROJECT_INFO.getId())
+        .setQuota(PROJECT_INFO.getQuota())
+        .build();
     assertNotEquals(PROJECT_INFO, clone);
-    clone = ProjectInfo.builder().number(PROJECT_INFO.number()).quota(PROJECT_INFO.quota()).build();
+    clone = ProjectInfo.newBuilder()
+        .setNumber(PROJECT_INFO.getNumber())
+        .setQuota(PROJECT_INFO.getQuota())
+        .build();
     assertNotEquals(PROJECT_INFO, clone);
     clone = ProjectInfo.fromPb(PROJECT_INFO.toPb());
     assertEquals(PROJECT_INFO, clone);
@@ -100,11 +138,11 @@ public class ProjectInfoTest {
   @Test
   public void testToAndFromPb() {
     assertEquals(PROJECT_INFO, ProjectInfo.fromPb(PROJECT_INFO.toPb()));
-    ProjectInfo partial = ProjectInfo.builder().id(ID).build();
+    ProjectInfo partial = ProjectInfo.newBuilder().setId(ID).build();
     assertEquals(partial, ProjectInfo.fromPb(partial.toPb()));
-    partial = ProjectInfo.builder().number(NUMBER).build();
+    partial = ProjectInfo.newBuilder().setNumber(NUMBER).build();
     assertEquals(partial, ProjectInfo.fromPb(partial.toPb()));
-    partial = ProjectInfo.builder().quota(QUOTA).build();
+    partial = ProjectInfo.newBuilder().setQuota(QUOTA).build();
     assertEquals(partial, ProjectInfo.fromPb(partial.toPb()));
     assertNotEquals(PROJECT_INFO, partial);
   }

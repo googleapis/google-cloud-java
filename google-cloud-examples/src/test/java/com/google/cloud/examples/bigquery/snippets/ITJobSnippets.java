@@ -39,13 +39,14 @@ public class ITJobSnippets {
 
   @BeforeClass
   public static void beforeClass() {
-    bigquery = RemoteBigQueryHelper.create().options().service();
+    bigquery = RemoteBigQueryHelper.create().getOptions().getService();
   }
 
   @Test
   public void testExists() throws Exception {
-    JobConfiguration jobConfig = QueryJobConfiguration.builder(QUERY).useLegacySql(false).build();
-    JobInfo jobInfo = JobInfo.builder(jobConfig).build();
+    JobConfiguration jobConfig =
+        QueryJobConfiguration.newBuilder(QUERY).setUseLegacySql(false).build();
+    JobInfo jobInfo = JobInfo.newBuilder(jobConfig).build();
     Job job = bigquery.create(jobInfo);
     JobSnippets jobSnippets = new JobSnippets(job);
     boolean result = jobSnippets.exists();
@@ -54,8 +55,9 @@ public class ITJobSnippets {
 
   @Test
   public void testIsDone() throws Exception {
-    JobConfiguration jobConfig = QueryJobConfiguration.builder(QUERY).useLegacySql(false).build();
-    JobInfo jobInfo = JobInfo.builder(jobConfig).build();
+    JobConfiguration jobConfig =
+        QueryJobConfiguration.newBuilder(QUERY).setUseLegacySql(false).build();
+    JobInfo jobInfo = JobInfo.newBuilder(jobConfig).build();
     Job job = bigquery.create(jobInfo);
     JobSnippets jobSnippets = new JobSnippets(job);
     jobSnippets.isDone();
@@ -64,8 +66,9 @@ public class ITJobSnippets {
 
   @Test
   public void testWaitFor() throws Exception {
-    JobConfiguration jobConfig = QueryJobConfiguration.builder(QUERY).useLegacySql(false).build();
-    JobInfo jobInfo = JobInfo.builder(jobConfig).build();
+    JobConfiguration jobConfig =
+        QueryJobConfiguration.newBuilder(QUERY).setUseLegacySql(false).build();
+    JobInfo jobInfo = JobInfo.newBuilder(jobConfig).build();
     Job job = bigquery.create(jobInfo);
     JobSnippets jobSnippets = new JobSnippets(job);
     boolean result = jobSnippets.waitFor();
@@ -74,8 +77,9 @@ public class ITJobSnippets {
 
   @Test
   public void testWaitForWithOptions() throws Exception {
-    JobConfiguration jobConfig = QueryJobConfiguration.builder(QUERY).useLegacySql(false).build();
-    JobInfo jobInfo = JobInfo.builder(jobConfig).build();
+    JobConfiguration jobConfig =
+        QueryJobConfiguration.newBuilder(QUERY).setUseLegacySql(false).build();
+    JobInfo jobInfo = JobInfo.newBuilder(jobConfig).build();
     Job job = bigquery.create(jobInfo);
     JobSnippets jobSnippets = new JobSnippets(job);
     boolean result = jobSnippets.waitForWithOptions();
@@ -84,8 +88,9 @@ public class ITJobSnippets {
 
   @Test
   public void testReload() throws Exception {
-    JobConfiguration jobConfig = QueryJobConfiguration.builder(QUERY).useLegacySql(false).build();
-    JobInfo jobInfo = JobInfo.builder(jobConfig).build();
+    JobConfiguration jobConfig =
+        QueryJobConfiguration.newBuilder(QUERY).setUseLegacySql(false).build();
+    JobInfo jobInfo = JobInfo.newBuilder(jobConfig).build();
     Job job = bigquery.create(jobInfo);
     JobSnippets jobSnippets = new JobSnippets(job);
     JobStatus.State result = jobSnippets.reload();
@@ -94,8 +99,9 @@ public class ITJobSnippets {
 
   @Test
   public void testReloadStatus() throws Exception {
-    JobConfiguration jobConfig = QueryJobConfiguration.builder(QUERY).useLegacySql(false).build();
-    JobInfo jobInfo = JobInfo.builder(jobConfig).build();
+    JobConfiguration jobConfig =
+        QueryJobConfiguration.newBuilder(QUERY).setUseLegacySql(false).build();
+    JobInfo jobInfo = JobInfo.newBuilder(jobConfig).build();
     Job job = bigquery.create(jobInfo);
     JobSnippets jobSnippets = new JobSnippets(job);
     JobStatus.State result = jobSnippets.reloadStatus();
@@ -104,8 +110,9 @@ public class ITJobSnippets {
 
   @Test
   public void testCancel() {
-    JobConfiguration jobConfig = QueryJobConfiguration.builder(QUERY).useLegacySql(false).build();
-    JobInfo jobInfo = JobInfo.builder(jobConfig).build();
+    JobConfiguration jobConfig =
+        QueryJobConfiguration.newBuilder(QUERY).setUseLegacySql(false).build();
+    JobInfo jobInfo = JobInfo.newBuilder(jobConfig).build();
     Job job = bigquery.create(jobInfo);
     JobSnippets jobSnippets = new JobSnippets(job);
     boolean result = jobSnippets.cancel();

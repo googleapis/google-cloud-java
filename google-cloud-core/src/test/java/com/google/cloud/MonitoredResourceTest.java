@@ -29,21 +29,46 @@ public class MonitoredResourceTest {
   private static final String TYPE = "cloudsql_database";
   private static final Map<String, String> LABELS =
       ImmutableMap.of("dataset-id", "myDataset", "zone", "myZone");
-  private static final MonitoredResource MONITORED_RESOURCE = MonitoredResource.builder(TYPE)
-      .labels(LABELS)
+  private static final MonitoredResource MONITORED_RESOURCE = MonitoredResource.newBuilder(TYPE)
+      .setLabels(LABELS)
       .build();
+  private static final MonitoredResource DEPRECATED_MONITORED_RESOURCE =
+      MonitoredResource.builder(TYPE)
+          .labels(LABELS)
+          .build();
 
   @Test
   public void testBuilder() {
-    assertEquals(TYPE, MONITORED_RESOURCE.type());
-    assertEquals(LABELS, MONITORED_RESOURCE.labels());
+    assertEquals(TYPE, MONITORED_RESOURCE.getType());
+    assertEquals(LABELS, MONITORED_RESOURCE.getLabels());
+    MonitoredResource monitoredResource = MonitoredResource.newBuilder(TYPE)
+        .addLabel("dataset-id", "myDataset")
+        .addLabel("zone", "myZone")
+        .build();
+    assertEquals(TYPE, monitoredResource.getType());
+    assertEquals(LABELS, monitoredResource.getLabels());
+    compareMonitoredResource(MONITORED_RESOURCE, monitoredResource);
+    monitoredResource = MonitoredResource.newBuilder(TYPE)
+        .setType("global")
+        .addLabel("dataset-id", "myDataset")
+        .addLabel("zone", "myZone")
+        .clearLabels()
+        .build();
+    assertEquals("global", monitoredResource.getType());
+    assertEquals(ImmutableMap.of(), monitoredResource.getLabels());
+  }
+
+  @Test
+  public void testBuilderDeprecated() {
+    assertEquals(TYPE, DEPRECATED_MONITORED_RESOURCE.type());
+    assertEquals(LABELS, DEPRECATED_MONITORED_RESOURCE.labels());
     MonitoredResource monitoredResource = MonitoredResource.builder(TYPE)
         .addLabel("dataset-id", "myDataset")
         .addLabel("zone", "myZone")
         .build();
     assertEquals(TYPE, monitoredResource.type());
     assertEquals(LABELS, monitoredResource.labels());
-    compareMonitoredResource(MONITORED_RESOURCE, monitoredResource);
+    compareMonitoredResource(DEPRECATED_MONITORED_RESOURCE, monitoredResource);
     monitoredResource = MonitoredResource.builder(TYPE)
         .type("global")
         .addLabel("dataset-id", "myDataset")
@@ -58,14 +83,14 @@ public class MonitoredResourceTest {
   public void testToBuilder() {
     compareMonitoredResource(MONITORED_RESOURCE, MONITORED_RESOURCE.toBuilder().build());
     MonitoredResource monitoredResource = MONITORED_RESOURCE.toBuilder()
-        .type("global")
+        .setType("global")
         .clearLabels()
         .build();
-    assertEquals("global", monitoredResource.type());
-    assertEquals(ImmutableMap.of(), monitoredResource.labels());
+    assertEquals("global", monitoredResource.getType());
+    assertEquals(ImmutableMap.of(), monitoredResource.getLabels());
     monitoredResource = monitoredResource.toBuilder()
-        .type(TYPE)
-        .labels(ImmutableMap.of("dataset-id", "myDataset"))
+        .setType(TYPE)
+        .setLabels(ImmutableMap.of("dataset-id", "myDataset"))
         .addLabel("zone", "myZone")
         .build();
     compareMonitoredResource(MONITORED_RESOURCE, monitoredResource);
@@ -74,8 +99,8 @@ public class MonitoredResourceTest {
   @Test
   public void testOf() {
     MonitoredResource monitoredResource = MonitoredResource.of(TYPE, LABELS);
-    assertEquals(TYPE, monitoredResource.type());
-    assertEquals(LABELS, monitoredResource.labels());
+    assertEquals(TYPE, monitoredResource.getType());
+    assertEquals(LABELS, monitoredResource.getLabels());
     compareMonitoredResource(MONITORED_RESOURCE, monitoredResource);
   }
 
@@ -90,8 +115,8 @@ public class MonitoredResourceTest {
 
   private void compareMonitoredResource(MonitoredResource expected, MonitoredResource value) {
     assertEquals(expected, value);
-    assertEquals(expected.type(), value.type());
-    assertEquals(expected.labels(), value.labels());
+    assertEquals(expected.getType(), value.getType());
+    assertEquals(expected.getLabels(), value.getLabels());
     assertEquals(expected.hashCode(), value.hashCode());
   }
 }

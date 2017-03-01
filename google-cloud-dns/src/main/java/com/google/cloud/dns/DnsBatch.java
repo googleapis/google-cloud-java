@@ -48,22 +48,22 @@ public class DnsBatch {
 
   DnsBatch(DnsOptions options) {
     this.options = options;
-    this.dnsRpc = options.rpc();
+    this.dnsRpc = options.getRpc();
     this.batch = dnsRpc.createBatch();
   }
 
   @VisibleForTesting
-  Object batch() {
+  Object getBatch() {
     return batch;
   }
 
   @VisibleForTesting
-  DnsRpc dnsRpc() {
+  DnsRpc getDnsRpc() {
     return dnsRpc;
   }
 
   @VisibleForTesting
-  DnsOptions options() {
+  DnsOptions getOptions() {
     return options;
   }
 
@@ -247,7 +247,7 @@ public class DnsBatch {
       @Override
       public void onFailure(GoogleJsonError googleJsonError) {
         DnsException serviceException = new DnsException(googleJsonError, false);
-        if (serviceException.code() == HTTP_NOT_FOUND) {
+        if (serviceException.getCode() == HTTP_NOT_FOUND) {
           result.success(false);
         } else {
           result.error(serviceException);
@@ -264,13 +264,14 @@ public class DnsBatch {
     return new RpcBatch.Callback<ManagedZone>() {
       @Override
       public void onSuccess(ManagedZone response) {
-        result.success(response == null ? null : Zone.fromPb(serviceOptions.service(), response));
+        result.success(response == null
+            ? null : Zone.fromPb(serviceOptions.getService(), response));
       }
 
       @Override
       public void onFailure(GoogleJsonError googleJsonError) {
         DnsException serviceException = new DnsException(googleJsonError, idempotent);
-        if (nullForNotFound && serviceException.code() == HTTP_NOT_FOUND) {
+        if (nullForNotFound && serviceException.getCode() == HTTP_NOT_FOUND) {
           result.success(null);
         } else {
           result.error(serviceException);
@@ -327,7 +328,7 @@ public class DnsBatch {
             new DnsImpl.ChangeRequestPageFetcher(zoneName, options, response.getNextPageToken(),
                 optionMap),
             response.getNextPageToken(), changes == null ? ImmutableList.<ChangeRequest>of()
-            : Iterables.transform(changes, ChangeRequest.fromPbFunction(options.service(),
+            : Iterables.transform(changes, ChangeRequest.fromPbFunction(options.getService(),
             zoneName)));
         result.success(page);
       }
@@ -348,15 +349,15 @@ public class DnsBatch {
     return new RpcBatch.Callback<Change>() {
       @Override
       public void onSuccess(Change response) {
-        result.success(response == null ? null : ChangeRequest.fromPb(options.service(), zoneName,
-            response));
+        result.success(response == null
+            ? null : ChangeRequest.fromPb(options.getService(), zoneName, response));
       }
 
       @Override
       public void onFailure(GoogleJsonError googleJsonError) {
         DnsException serviceException = new DnsException(googleJsonError, idempotent);
-        if (serviceException.code() == HTTP_NOT_FOUND) {
-          if ("entity.parameters.changeId".equals(serviceException.location())
+        if (serviceException.getCode() == HTTP_NOT_FOUND) {
+          if ("entity.parameters.changeId".equals(serviceException.getLocation())
               || (serviceException.getMessage() != null
               && serviceException.getMessage().contains("parameters.changeId"))) {
             // the change id was not found, but the zone exists

@@ -42,10 +42,10 @@ public class RawValueTest {
   @SuppressWarnings("deprecation")
   @Test
   public void testBuilder() throws Exception {
-    RawValue.Builder builder = RawValue.builder(CONTENT);
-    RawValue value = builder.meaning(1).excludeFromIndexes(true).build();
+    RawValue.Builder builder = RawValue.newBuilder(CONTENT);
+    RawValue value = builder.setMeaning(1).setExcludeFromIndexes(true).build();
     assertEquals(CONTENT, value.get());
-    assertEquals(1, value.meaning());
+    assertEquals(1, value.getMeaning());
     assertTrue(value.excludeFromIndexes());
   }
 }

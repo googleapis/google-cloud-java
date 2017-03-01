@@ -37,6 +37,15 @@ public class TimePartitioningTest {
 
   @Test
   public void testOf() {
+    assertEquals(TYPE, TIME_PARTITIONING.getType());
+    assertEquals(EXPIRATION_MS, TIME_PARTITIONING.getExpirationMs().longValue());
+    TimePartitioning partitioning = TimePartitioning.of(TYPE);
+    assertEquals(TYPE, partitioning.getType());
+    assertNull(partitioning.getExpirationMs());
+  }
+
+  @Test
+  public void testOfDeprecated() {
     assertEquals(TYPE, TIME_PARTITIONING.type());
     assertEquals(EXPIRATION_MS, TIME_PARTITIONING.expirationMs().longValue());
     TimePartitioning partitioning = TimePartitioning.of(TYPE);
@@ -65,8 +74,8 @@ public class TimePartitioningTest {
 
   private void compareTimePartitioning(TimePartitioning expected, TimePartitioning value) {
     assertEquals(expected, value);
-    assertEquals(expected.type(), value.type());
-    assertEquals(expected.expirationMs(), value.expirationMs());
+    assertEquals(expected.getType(), value.getType());
+    assertEquals(expected.getExpirationMs(), value.getExpirationMs());
     assertEquals(expected.hashCode(), value.hashCode());
     assertEquals(expected.toString(), value.toString());
   }

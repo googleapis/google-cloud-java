@@ -62,12 +62,26 @@ public abstract class OperationId extends ResourceId {
   /**
    * Returns the type of this operation identity.
    */
+  @Deprecated
   public abstract Type type();
+
+  /**
+   * Returns the type of this operation identity.
+   */
+  public abstract Type getType();
 
   /**
    * Returns the name of the operation resource.
    */
+  @Deprecated
   public String operation() {
+    return getOperation();
+  }
+
+  /**
+   * Returns the name of the operation resource.
+   */
+  public String getOperation() {
     return operation;
   }
 

@@ -35,15 +35,15 @@ public class GetOrCreateProject {
   public static void main(String... args) {
     // Create Resource Manager service object.
     // By default, credentials are inferred from the runtime environment.
-    ResourceManager resourceManager = ResourceManagerOptions.defaultInstance().service();
+    ResourceManager resourceManager = ResourceManagerOptions.getDefaultInstance().getService();
 
     String projectId = "my-globally-unique-project-id"; // Change to a unique project ID.
     // Get a project from the server.
     Project project = resourceManager.get(projectId);
     if (project == null) {
       // Create a project.
-      project = resourceManager.create(ProjectInfo.builder(projectId).build());
+      project = resourceManager.create(ProjectInfo.newBuilder(projectId).build());
     }
-    System.out.println("Got project " + project.projectId() + " from the server.");
+    System.out.println("Got project " + project.getProjectId() + " from the server.");
   }
 }

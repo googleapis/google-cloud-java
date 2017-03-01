@@ -33,7 +33,7 @@ public final class KeyFactory extends BaseKey.Builder<KeyFactory> {
 
   public KeyFactory(String projectId, String namespace) {
     super(projectId);
-    namespace(namespace);
+    setNamespace(namespace);
     this.pi = projectId;
     this.ns = namespace;
   }
@@ -61,8 +61,8 @@ public final class KeyFactory extends BaseKey.Builder<KeyFactory> {
    * @return {@code this} for chaining
    */
   public KeyFactory reset() {
-    projectId(pi);
-    namespace(ns);
+    setProjectId(pi);
+    setNamespace(ns);
     kind = null;
     ancestors.clear();
     return this;

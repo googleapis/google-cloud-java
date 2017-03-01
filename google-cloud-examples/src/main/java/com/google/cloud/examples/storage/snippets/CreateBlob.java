@@ -36,9 +36,9 @@ import com.google.cloud.storage.StorageOptions;
 public class CreateBlob {
 
   public static void main(String... args) {
-    Storage storage = StorageOptions.defaultInstance().service();
+    Storage storage = StorageOptions.getDefaultInstance().getService();
     BlobId blobId = BlobId.of("bucket", "blob_name");
-    BlobInfo blobInfo = BlobInfo.builder(blobId).contentType("text/plain").build();
+    BlobInfo blobInfo = BlobInfo.newBuilder(blobId).setContentType("text/plain").build();
     Blob blob = storage.create(blobInfo, "Hello, Cloud Storage!".getBytes(UTF_8));
   }
 }

@@ -22,7 +22,7 @@
  * <p>Before the test:
  * <pre> {@code
  * RemoteComputeHelper computeHelper = RemoteComputeHelper.create();
- * Compute compute = computeHelper.options().service();
+ * Compute compute = computeHelper.getOptions().getService();
  * } </pre>
  *
  * @see <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/TESTING.md#testing-code-that-uses-compute">

@@ -38,37 +38,73 @@ public class DeprecationStatusTest {
       MachineTypeId.of("project", "zone", "machineType");
   private static final DeprecationStatus.Status STATUS = DeprecationStatus.Status.DELETED;
   private static final DeprecationStatus<DiskTypeId> DISK_TYPE_STATUS =
-      DeprecationStatus.<DiskTypeId>builder(STATUS)
-          .replacement(DISK_TYPE_ID)
-          .deprecated(DEPRECATED)
-          .obsolete(OBSOLETE)
-          .deleted(DELETED)
+      DeprecationStatus.<DiskTypeId>newBuilder(STATUS)
+          .setReplacement(DISK_TYPE_ID)
+          .setDeprecated(DEPRECATED)
+          .setObsolete(OBSOLETE)
+          .setDeleted(DELETED)
           .build();
   private static final DeprecationStatus<DiskTypeId> DISK_TYPE_STATUS_MILLIS =
+      DeprecationStatus.<DiskTypeId>newBuilder(STATUS)
+          .setReplacement(DISK_TYPE_ID)
+          .setDeprecated(DEPRECATED_MILLIS)
+          .setObsolete(OBSOLETE_MILLIS)
+          .setDeleted(DELETED_MILLIS)
+          .build();
+  private static final DeprecationStatus<MachineTypeId> MACHINE_TYPE_STATUS =
+      DeprecationStatus.newBuilder(STATUS, MACHINE_TYPE_ID)
+          .setDeprecated(DEPRECATED)
+          .setObsolete(OBSOLETE)
+          .setDeleted(DELETED)
+          .build();
+  private static final DeprecationStatus<DiskTypeId> DEPRECATED_STATUS =
       DeprecationStatus.<DiskTypeId>builder(STATUS)
           .replacement(DISK_TYPE_ID)
           .deprecated(DEPRECATED_MILLIS)
           .obsolete(OBSOLETE_MILLIS)
           .deleted(DELETED_MILLIS)
           .build();
-  private static final DeprecationStatus<MachineTypeId> MACHINE_TYPE_STATUS =
-      DeprecationStatus.builder(STATUS, MACHINE_TYPE_ID)
-          .deprecated(DEPRECATED)
-          .obsolete(OBSOLETE)
-          .deleted(DELETED)
-          .build();
 
   @Test
   public void testBuilder() {
     compareDeprecationStatus(DISK_TYPE_STATUS, DISK_TYPE_STATUS_MILLIS);
-    assertEquals(DELETED, DISK_TYPE_STATUS.deleted());
-    assertEquals(DEPRECATED, DISK_TYPE_STATUS.deprecated());
-    assertEquals(OBSOLETE, DISK_TYPE_STATUS.obsolete());
-    assertEquals(DISK_TYPE_ID, DISK_TYPE_STATUS.replacement());
-    assertEquals(DEPRECATED_MILLIS, DISK_TYPE_STATUS.deprecatedMillis());
-    assertEquals(DELETED_MILLIS, DISK_TYPE_STATUS.deletedMillis());
-    assertEquals(OBSOLETE_MILLIS, DISK_TYPE_STATUS.obsoleteMillis());
-    assertEquals(STATUS, DISK_TYPE_STATUS.status());
+    assertEquals(DELETED, DISK_TYPE_STATUS.getDeleted());
+    assertEquals(DEPRECATED, DISK_TYPE_STATUS.getDeprecated());
+    assertEquals(OBSOLETE, DISK_TYPE_STATUS.getObsolete());
+    assertEquals(DISK_TYPE_ID, DISK_TYPE_STATUS.getReplacement());
+    assertEquals(DEPRECATED_MILLIS, DISK_TYPE_STATUS.getDeprecatedMillis());
+    assertEquals(DELETED_MILLIS, DISK_TYPE_STATUS.getDeletedMillis());
+    assertEquals(OBSOLETE_MILLIS, DISK_TYPE_STATUS.getObsoleteMillis());
+    assertEquals(STATUS, DISK_TYPE_STATUS.getStatus());
+    assertEquals(DELETED, DISK_TYPE_STATUS_MILLIS.getDeleted());
+    assertEquals(DEPRECATED, DISK_TYPE_STATUS_MILLIS.getDeprecated());
+    assertEquals(OBSOLETE, DISK_TYPE_STATUS_MILLIS.getObsolete());
+    assertEquals(DISK_TYPE_ID, DISK_TYPE_STATUS_MILLIS.getReplacement());
+    assertEquals(DEPRECATED_MILLIS, DISK_TYPE_STATUS_MILLIS.getDeprecatedMillis());
+    assertEquals(DELETED_MILLIS, DISK_TYPE_STATUS_MILLIS.getDeletedMillis());
+    assertEquals(OBSOLETE_MILLIS, DISK_TYPE_STATUS_MILLIS.getObsoleteMillis());
+    assertEquals(STATUS, DISK_TYPE_STATUS.getStatus());
+    assertEquals(DELETED, MACHINE_TYPE_STATUS.getDeleted());
+    assertEquals(DEPRECATED, MACHINE_TYPE_STATUS.getDeprecated());
+    assertEquals(OBSOLETE, MACHINE_TYPE_STATUS.getObsolete());
+    assertEquals(DEPRECATED_MILLIS, MACHINE_TYPE_STATUS.getDeprecatedMillis());
+    assertEquals(DELETED_MILLIS, MACHINE_TYPE_STATUS.getDeletedMillis());
+    assertEquals(OBSOLETE_MILLIS, MACHINE_TYPE_STATUS.getObsoleteMillis());
+    assertEquals(MACHINE_TYPE_ID, MACHINE_TYPE_STATUS.getReplacement());
+    assertEquals(STATUS, MACHINE_TYPE_STATUS.getStatus());
+  }
+
+  @Test
+  public void testBuilderDeprecated() {
+    compareDeprecationStatus(DISK_TYPE_STATUS, DISK_TYPE_STATUS_MILLIS);
+    assertEquals(DELETED, DEPRECATED_STATUS.deleted());
+    assertEquals(DEPRECATED, DEPRECATED_STATUS.deprecated());
+    assertEquals(OBSOLETE, DEPRECATED_STATUS.obsolete());
+    assertEquals(DISK_TYPE_ID, DEPRECATED_STATUS.replacement());
+    assertEquals(DEPRECATED_MILLIS, DEPRECATED_STATUS.deprecatedMillis());
+    assertEquals(DELETED_MILLIS, DEPRECATED_STATUS.deletedMillis());
+    assertEquals(OBSOLETE_MILLIS, DEPRECATED_STATUS.obsoleteMillis());
+    assertEquals(STATUS, DEPRECATED_STATUS.status());
     assertEquals(DELETED, DISK_TYPE_STATUS_MILLIS.deleted());
     assertEquals(DEPRECATED, DISK_TYPE_STATUS_MILLIS.deprecated());
     assertEquals(OBSOLETE, DISK_TYPE_STATUS_MILLIS.obsolete());
@@ -90,28 +126,28 @@ public class DeprecationStatusTest {
   @Test
   public void testGettersIllegalArgument() {
     DeprecationStatus<MachineTypeId> deprecationStatus =
-        DeprecationStatus.builder(STATUS, MACHINE_TYPE_ID)
-            .deprecated("deprecated")
-            .obsolete("obsolete")
-            .deleted("delete")
+        DeprecationStatus.newBuilder(STATUS, MACHINE_TYPE_ID)
+            .setDeprecated("deprecated")
+            .setObsolete("obsolete")
+            .setDeleted("delete")
             .build();
-    assertEquals("deprecated", deprecationStatus.deprecated());
+    assertEquals("deprecated", deprecationStatus.getDeprecated());
     try {
-      deprecationStatus.deprecatedMillis();
+      deprecationStatus.getDeprecatedMillis();
       fail("Expected IllegalArgumentException");
     } catch (IllegalStateException ex) {
       // never reached
     }
-    assertEquals("obsolete", deprecationStatus.obsolete());
+    assertEquals("obsolete", deprecationStatus.getObsolete());
     try {
-      deprecationStatus.obsoleteMillis();
+      deprecationStatus.getObsoleteMillis();
       fail("Expected IllegalArgumentException");
     } catch (IllegalStateException ex) {
       // never reached
     }
-    assertEquals("delete", deprecationStatus.deleted());
+    assertEquals("delete", deprecationStatus.getDeleted());
     try {
-      deprecationStatus.deletedMillis();
+      deprecationStatus.getDeletedMillis();
       fail("Expected IllegalArgumentException");
     } catch (IllegalStateException ex) {
       // never reached
@@ -123,10 +159,10 @@ public class DeprecationStatusTest {
     compareDeprecationStatus(DISK_TYPE_STATUS, DISK_TYPE_STATUS.toBuilder().build());
     compareDeprecationStatus(MACHINE_TYPE_STATUS, MACHINE_TYPE_STATUS.toBuilder().build());
     DeprecationStatus<DiskTypeId> deprecationStatus = DISK_TYPE_STATUS.toBuilder()
-        .deleted(DEPRECATED)
+        .setDeleted(DEPRECATED)
         .build();
-    assertEquals(DEPRECATED, deprecationStatus.deleted());
-    deprecationStatus = deprecationStatus.toBuilder().deleted(DELETED).build();
+    assertEquals(DEPRECATED, deprecationStatus.getDeleted());
+    deprecationStatus = deprecationStatus.toBuilder().setDeleted(DELETED).build();
     compareDeprecationStatus(DISK_TYPE_STATUS, deprecationStatus);
   }
 
@@ -139,11 +175,11 @@ public class DeprecationStatusTest {
   @Test
   public void testOf() {
     DeprecationStatus<DiskTypeId> diskStatus = DeprecationStatus.of(STATUS, DISK_TYPE_ID);
-    assertNull(diskStatus.deleted());
-    assertNull(diskStatus.deprecated());
-    assertNull(diskStatus.obsolete());
-    assertEquals(DISK_TYPE_ID, diskStatus.replacement());
-    assertEquals(STATUS, diskStatus.status());
+    assertNull(diskStatus.getDeleted());
+    assertNull(diskStatus.getDeprecated());
+    assertNull(diskStatus.getObsolete());
+    assertEquals(DISK_TYPE_ID, diskStatus.getReplacement());
+    assertEquals(STATUS, diskStatus.getStatus());
   }
 
   @Test
@@ -154,11 +190,13 @@ public class DeprecationStatusTest {
     DeprecationStatus<MachineTypeId> machineStatus =
         DeprecationStatus.fromPb(MACHINE_TYPE_STATUS.toPb(), MachineTypeId.FROM_URL_FUNCTION);
     compareDeprecationStatus(MACHINE_TYPE_STATUS, machineStatus);
-    diskStatus = DeprecationStatus.builder(STATUS, DISK_TYPE_ID).deprecated(DEPRECATED).build();
+    diskStatus = DeprecationStatus.newBuilder(STATUS, DISK_TYPE_ID)
+        .setDeprecated(DEPRECATED)
+        .build();
     assertEquals(diskStatus,
         DeprecationStatus.fromPb(diskStatus.toPb(), DiskTypeId.FROM_URL_FUNCTION));
     machineStatus =
-        DeprecationStatus.builder(STATUS, MACHINE_TYPE_ID).deprecated(DEPRECATED).build();
+        DeprecationStatus.newBuilder(STATUS, MACHINE_TYPE_ID).setDeprecated(DEPRECATED).build();
     assertEquals(machineStatus,
         DeprecationStatus.fromPb(machineStatus.toPb(), MachineTypeId.FROM_URL_FUNCTION));
     diskStatus = DeprecationStatus.of(STATUS, DISK_TYPE_ID);
@@ -168,14 +206,14 @@ public class DeprecationStatusTest {
 
   private void compareDeprecationStatus(DeprecationStatus expected, DeprecationStatus value) {
     assertEquals(expected, value);
-    assertEquals(expected.deleted(), value.deleted());
-    assertEquals(expected.deprecated(), value.deprecated());
-    assertEquals(expected.obsolete(), value.obsolete());
-    assertEquals(expected.deletedMillis(), value.deletedMillis());
-    assertEquals(expected.deprecatedMillis(), value.deprecatedMillis());
-    assertEquals(expected.obsoleteMillis(), value.obsoleteMillis());
-    assertEquals(expected.replacement(), value.replacement());
-    assertEquals(expected.status(), value.status());
+    assertEquals(expected.getDeleted(), value.getDeleted());
+    assertEquals(expected.getDeprecated(), value.getDeprecated());
+    assertEquals(expected.getObsolete(), value.getObsolete());
+    assertEquals(expected.getDeletedMillis(), value.getDeletedMillis());
+    assertEquals(expected.getDeprecatedMillis(), value.getDeprecatedMillis());
+    assertEquals(expected.getObsoleteMillis(), value.getObsoleteMillis());
+    assertEquals(expected.getReplacement(), value.getReplacement());
+    assertEquals(expected.getStatus(), value.getStatus());
     assertEquals(expected.hashCode(), value.hashCode());
   }
 }

@@ -16,24 +16,45 @@
 
 package com.google.cloud.examples.pubsub.snippets;
 
-import com.google.cloud.pubsub.Message;
-import com.google.cloud.pubsub.PubSub;
-import com.google.cloud.pubsub.PubSubOptions;
-import com.google.cloud.pubsub.Topic;
-import com.google.cloud.pubsub.TopicInfo;
+import com.google.api.gax.core.RpcFuture;
+import com.google.cloud.pubsub.spi.v1.Publisher;
+import com.google.cloud.pubsub.spi.v1.PublisherClient;
+import com.google.protobuf.ByteString;
+import com.google.pubsub.v1.PubsubMessage;
+import com.google.pubsub.v1.TopicName;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * A snippet for Google Cloud Pub/Sub showing how to create a Pub/Sub topic and asynchronously
  * publish messages to it.
  */
 public class CreateTopicAndPublishMessages {
-
   public static void main(String... args) throws Exception {
-    try (PubSub pubsub = PubSubOptions.defaultInstance().service()) {
-      Topic topic = pubsub.create(TopicInfo.of("test-topic"));
-      Message message1 = Message.of("First message");
-      Message message2 = Message.of("Second message");
-      topic.publishAsync(message1, message2);
+    TopicName topic = TopicName.create("test-project", "test-topic");
+    try (PublisherClient publisherClient = PublisherClient.create()) {
+      publisherClient.createTopic(topic);
+    }
+
+    Publisher publisher = null;
+    try {
+      publisher = Publisher.newBuilder(topic).build();
+      List<String> messages = Arrays.asList("first message", "second message");
+      List<RpcFuture<String>> messageIds = new ArrayList<>();
+      for (String message : messages) {
+        ByteString data = ByteString.copyFromUtf8(message);
+        PubsubMessage pubsubMessage = PubsubMessage.newBuilder().setData(data).build();
+        RpcFuture<String> messageIdFuture = publisher.publish(pubsubMessage);
+        messageIds.add(messageIdFuture);
+      }
+      for (RpcFuture<String> messageId : messageIds) {
+        System.out.println("published with message ID: " + messageId.get());
+      }
+    } finally {
+      if (publisher != null) {
+        publisher.shutdown();
+      }
     }
   }
 }

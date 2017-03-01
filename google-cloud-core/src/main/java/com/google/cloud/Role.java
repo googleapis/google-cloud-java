@@ -44,7 +44,16 @@ public final class Role implements Serializable {
    * Returns the string identifier for this role. For example, {@code "roles/viewer"},
    * {@code "roles/editor"}, or {@code "roles/owner"}.
    */
+  @Deprecated
   public String value() {
+    return getValue();
+  }
+
+  /**
+   * Returns the string identifier for this role. For example, {@code "roles/viewer"},
+   * {@code "roles/editor"}, or {@code "roles/owner"}.
+   */
+  public String getValue() {
     return value;
   }
 
@@ -104,6 +113,6 @@ public final class Role implements Serializable {
 
   @Override
   public boolean equals(Object obj) {
-    return obj instanceof Role && Objects.equals(value, ((Role) obj).value());
+    return obj instanceof Role && Objects.equals(value, ((Role) obj).getValue());
   }
 }

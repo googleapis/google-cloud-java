@@ -11,7 +11,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-pom</artifactId>
-    <version>0.4.1-SNAPSHOT</version>
+    <version>0.9.4-alpha-SNAPSHOT</version>
   </parent>
   <properties>
     <site.installationModule>google-cloud-compute</site.installationModule>
@@ -20,7 +20,7 @@
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>google-cloud-core</artifactId>
-      <version>${project.version}</version>
+      <version>${core.version}</version>
     </dependency>
     <dependency>
       <groupId>com.google.apis</groupId>
@@ -37,7 +37,7 @@
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>google-cloud-core</artifactId>
-      <version>${project.version}</version>
+      <version>${core.version}</version>
       <type>test-jar</type>
       <scope>test</scope>
     </dependency>

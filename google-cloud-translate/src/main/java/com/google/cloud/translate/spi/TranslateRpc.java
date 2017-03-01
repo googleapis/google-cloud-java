@@ -27,7 +27,8 @@ public interface TranslateRpc {
 
   enum Option {
     SOURCE_LANGUAGE("source"),
-    TARGET_LANGUAGE("target");
+    TARGET_LANGUAGE("target"),
+    MODEL("model");
 
     private final String value;
 

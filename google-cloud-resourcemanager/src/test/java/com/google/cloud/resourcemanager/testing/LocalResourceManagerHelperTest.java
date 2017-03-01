@@ -55,7 +55,7 @@ public class LocalResourceManagerHelperTest {
   private static final LocalResourceManagerHelper RESOURCE_MANAGER_HELPER =
       LocalResourceManagerHelper.create();
   private static final ResourceManagerRpc rpc =
-      new DefaultResourceManagerRpc(RESOURCE_MANAGER_HELPER.options());
+      new DefaultResourceManagerRpc(RESOURCE_MANAGER_HELPER.getOptions());
   private static final com.google.api.services.cloudresourcemanager.model.Project PARTIAL_PROJECT =
       new com.google.api.services.cloudresourcemanager.model.Project().setProjectId(
           "partial-project");
@@ -129,7 +129,7 @@ public class LocalResourceManagerHelperTest {
       rpc.create(PARTIAL_PROJECT);
       fail("Should fail, project already exists.");
     } catch (ResourceManagerException e) {
-      assertEquals(409, e.code());
+      assertEquals(409, e.getCode());
       assertTrue(e.getMessage().startsWith("A project with the same project ID")
           && e.getMessage().endsWith("already exists."));
       assertEquals(
@@ -170,7 +170,7 @@ public class LocalResourceManagerHelperTest {
       rpc.create(project);
       fail("Should fail because of an invalid argument.");
     } catch (ResourceManagerException e) {
-      assertEquals(400, e.code());
+      assertEquals(400, e.getCode());
       assertTrue(e.getMessage().contains(errorMessageSubstring));
     }
   }
@@ -192,7 +192,7 @@ public class LocalResourceManagerHelperTest {
       rpc.create(project);
       fail("Should fail because of invalid project name.");
     } catch (ResourceManagerException e) {
-      assertEquals(400, e.code());
+      assertEquals(400, e.getCode());
       assertTrue(e.getMessage().contains("invalid name"));
     }
   }
@@ -249,7 +249,7 @@ public class LocalResourceManagerHelperTest {
       rpc.delete("some-nonexistant-project-id");
       fail("Should fail because the project doesn't exist.");
     } catch (ResourceManagerException e) {
-      assertEquals(403, e.code());
+      assertEquals(403, e.getCode());
       assertTrue(e.getMessage().contains("not found."));
     }
   }
@@ -263,7 +263,7 @@ public class LocalResourceManagerHelperTest {
       rpc.delete(COMPLETE_PROJECT.getProjectId());
       fail("Should fail because the project is not ACTIVE.");
     } catch (ResourceManagerException e) {
-      assertEquals(400, e.code());
+      assertEquals(400, e.getCode());
       assertTrue(e.getMessage().contains("the lifecycle state was not ACTIVE"));
     }
   }
@@ -277,7 +277,7 @@ public class LocalResourceManagerHelperTest {
       rpc.delete(COMPLETE_PROJECT.getProjectId());
       fail("Should fail because the project is not ACTIVE.");
     } catch (ResourceManagerException e) {
-      assertEquals(400, e.code());
+      assertEquals(400, e.getCode());
       assertTrue(e.getMessage().contains("the lifecycle state was not ACTIVE"));
     }
   }
@@ -522,7 +522,7 @@ public class LocalResourceManagerHelperTest {
       rpc.replace(nonexistantProject);
       fail("Should fail because the project doesn't exist.");
     } catch (ResourceManagerException e) {
-      assertEquals(403, e.code());
+      assertEquals(403, e.getCode());
       assertTrue(e.getMessage().contains("the project was not found"));
     }
   }
@@ -538,7 +538,7 @@ public class LocalResourceManagerHelperTest {
       rpc.replace(anotherProject);
       fail("Should fail because the project is not ACTIVE.");
     } catch (ResourceManagerException e) {
-      assertEquals(400, e.code());
+      assertEquals(400, e.getCode());
       assertTrue(e.getMessage().contains("the lifecycle state was not ACTIVE"));
     }
   }
@@ -555,7 +555,7 @@ public class LocalResourceManagerHelperTest {
       rpc.replace(anotherProject);
       fail("Should fail because the project is not ACTIVE.");
     } catch (ResourceManagerException e) {
-      assertEquals(400, e.code());
+      assertEquals(400, e.getCode());
       assertTrue(e.getMessage().contains("the lifecycle state was not ACTIVE"));
     }
   }
@@ -571,7 +571,7 @@ public class LocalResourceManagerHelperTest {
       rpc.replace(anotherProject);
       fail("Should fail because the project's parent was modified after creation.");
     } catch (ResourceManagerException e) {
-      assertEquals(400, e.code());
+      assertEquals(400, e.getCode());
       assertEquals(
           "The server currently only supports setting the parent once "
           + "and does not allow unsetting it.",
@@ -589,7 +589,7 @@ public class LocalResourceManagerHelperTest {
       rpc.replace(anotherProject);
       fail("Should fail because the project's parent was unset.");
     } catch (ResourceManagerException e) {
-      assertEquals(400, e.code());
+      assertEquals(400, e.getCode());
       assertEquals(
           "The server currently only supports setting the parent once "
           + "and does not allow unsetting it.",
@@ -613,7 +613,7 @@ public class LocalResourceManagerHelperTest {
       rpc.undelete("invalid-project-id");
       fail("Should fail because the project doesn't exist.");
     } catch (ResourceManagerException e) {
-      assertEquals(403, e.code());
+      assertEquals(403, e.getCode());
       assertTrue(e.getMessage().contains("the project was not found"));
     }
   }
@@ -625,7 +625,7 @@ public class LocalResourceManagerHelperTest {
       rpc.undelete(COMPLETE_PROJECT.getProjectId());
       fail("Should fail because the project is not deleted.");
     } catch (ResourceManagerException e) {
-      assertEquals(400, e.code());
+      assertEquals(400, e.getCode());
       assertTrue(e.getMessage().contains("lifecycle state was not DELETE_REQUESTED"));
     }
   }
@@ -639,7 +639,7 @@ public class LocalResourceManagerHelperTest {
       rpc.undelete(COMPLETE_PROJECT.getProjectId());
       fail("Should fail because the project is in the process of being deleted.");
     } catch (ResourceManagerException e) {
-      assertEquals(400, e.code());
+      assertEquals(400, e.getCode());
       assertTrue(e.getMessage().contains("lifecycle state was not DELETE_REQUESTED"));
     }
   }
@@ -660,7 +660,7 @@ public class LocalResourceManagerHelperTest {
       rpc.replacePolicy("nonexistent-project", POLICY);
       fail("Project doesn't exist.");
     } catch (ResourceManagerException e) {
-      assertEquals(403, e.code());
+      assertEquals(403, e.getCode());
       assertTrue(e.getMessage().contains("project was not found"));
     }
     rpc.create(PARTIAL_PROJECT);
@@ -670,7 +670,7 @@ public class LocalResourceManagerHelperTest {
       rpc.replacePolicy(PARTIAL_PROJECT.getProjectId(), invalidPolicy);
       fail("Invalid etag.");
     } catch (ResourceManagerException e) {
-      assertEquals(409, e.code());
+      assertEquals(409, e.getCode());
       assertTrue(e.getMessage().startsWith("Policy etag mismatch"));
     }
     String originalEtag = rpc.getPolicy(PARTIAL_PROJECT.getProjectId()).getEtag();
@@ -688,7 +688,7 @@ public class LocalResourceManagerHelperTest {
       rpc.testPermissions("nonexistent-project", permissions);
       fail("Nonexistent project.");
     } catch (ResourceManagerException e) {
-      assertEquals(403, e.code());
+      assertEquals(403, e.getCode());
       assertEquals("Project nonexistent-project not found.", e.getMessage());
     }
     rpc.create(PARTIAL_PROJECT);

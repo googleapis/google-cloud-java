@@ -84,52 +84,52 @@ public class MachineType implements Serializable {
 
     private Builder() {}
 
-    Builder machineTypeId(MachineTypeId machineTypeId) {
+    Builder setMachineTypeId(MachineTypeId machineTypeId) {
       this.machineTypeId = machineTypeId;
       return this;
     }
 
-    Builder generatedId(String generatedId) {
+    Builder setGeneratedId(String generatedId) {
       this.generatedId = generatedId;
       return this;
     }
 
-    Builder creationTimestamp(Long creationTimestamp) {
+    Builder setCreationTimestamp(Long creationTimestamp) {
       this.creationTimestamp = creationTimestamp;
       return this;
     }
 
-    Builder description(String description) {
+    Builder setDescription(String description) {
       this.description = description;
       return this;
     }
 
-    Builder cpus(Integer cpus) {
+    Builder setCpus(Integer cpus) {
       this.cpus = cpus;
       return this;
     }
 
-    Builder memoryMb(Integer memoryMb) {
+    Builder setMemoryMb(Integer memoryMb) {
       this.memoryMb = memoryMb;
       return this;
     }
 
-    Builder scratchDisksSizeGb(List<Integer> scratchDisksSizeGb) {
+    Builder setScratchDisksSizeGb(List<Integer> scratchDisksSizeGb) {
       this.scratchDisksSizeGb = scratchDisksSizeGb;
       return this;
     }
 
-    Builder maximumPersistentDisks(Integer maximumPersistentDisks) {
+    Builder setMaximumPersistentDisks(Integer maximumPersistentDisks) {
       this.maximumPersistentDisks = maximumPersistentDisks;
       return this;
     }
 
-    Builder maximumPersistentDisksSizeGb(Long maximumPersistentDisksSizeGb) {
+    Builder setMaximumPersistentDisksSizeGb(Long maximumPersistentDisksSizeGb) {
       this.maximumPersistentDisksSizeGb = maximumPersistentDisksSizeGb;
       return this;
     }
 
-    Builder deprecationStatus(DeprecationStatus<MachineTypeId> deprecationStatus) {
+    Builder setDeprecationStatus(DeprecationStatus<MachineTypeId> deprecationStatus) {
       this.deprecationStatus = deprecationStatus;
       return this;
     }
@@ -155,63 +155,135 @@ public class MachineType implements Serializable {
   /**
    * Returns the machine type's identity.
    */
+  @Deprecated
   public MachineTypeId machineTypeId() {
+    return getMachineTypeId();
+  }
+
+  /**
+   * Returns the machine type's identity.
+   */
+  public MachineTypeId getMachineTypeId() {
     return machineTypeId;
   }
 
   /**
    * Returns the service-generated unique identifier for the machine type.
    */
+  @Deprecated
   public String generatedId() {
+    return getGeneratedId();
+  }
+
+  /**
+   * Returns the service-generated unique identifier for the machine type.
+   */
+  public String getGeneratedId() {
     return generatedId;
   }
 
   /**
    * Returns the creation timestamp in milliseconds since epoch.
    */
+  @Deprecated
   public Long creationTimestamp() {
+    return getCreationTimestamp();
+  }
+
+  /**
+   * Returns the creation timestamp in milliseconds since epoch.
+   */
+  public Long getCreationTimestamp() {
     return creationTimestamp;
   }
 
   /**
    * Returns an optional textual description of the machine type.
    */
+  @Deprecated
   public String description() {
+    return getDescription();
+  }
+
+  /**
+   * Returns an optional textual description of the machine type.
+   */
+  public String getDescription() {
     return description;
   }
 
   /**
    * Returns the number of virtual CPUs that are available to the instance.
    */
+  @Deprecated
   public Integer cpus() {
+    return getCpus();
+  }
+
+  /**
+   * Returns the number of virtual CPUs that are available to the instance.
+   */
+  public Integer getCpus() {
     return cpus;
   }
 
   /**
    * Returns the amount of physical memory available to the instance, defined in MB.
    */
+  @Deprecated
   public Integer memoryMb() {
+    return getMemoryMb();
+  }
+
+  /**
+   * Returns the amount of physical memory available to the instance, defined in MB.
+   */
+  public Integer getMemoryMb() {
     return memoryMb;
   }
 
   /**
    * Returns the size of all extended scratch disks assigned to the instance, defined in GB.
    */
+  @Deprecated
   public List<Integer> scratchDisksSizeGb() {
+    return getScratchDisksSizeGb();
+  }
+
+  /**
+   * Returns the size of all extended scratch disks assigned to the instance, defined in GB.
+   */
+  public List<Integer> getScratchDisksSizeGb() {
     return scratchDisksSizeGb;
   }
 
   /**
    * Returns the maximum number of persistent disks allowed by this instance type.
    */
+  @Deprecated
   public Integer maximumPersistentDisks() {
+    return getMaximumPersistentDisks();
+  }
+
+  /**
+   * Returns the maximum number of persistent disks allowed by this instance type.
+   */
+  public Integer getMaximumPersistentDisks() {
     return maximumPersistentDisks;
   }
 
   /**
    * Returns the maximum total persistent disks size allowed, defined in GB.
    */
+  @Deprecated
   public Long maximumPersistentDisksSizeGb() {
+    return getMaximumPersistentDisksSizeGb();
+  }
+
+  /**
+   * Returns the maximum total persistent disks size allowed, defined in GB.
+   */
+  public Long getMaximumPersistentDisksSizeGb() {
     return maximumPersistentDisksSizeGb;
   }
 
@@ -221,7 +293,18 @@ public class MachineType implements Serializable {
    * the machine type should not be used. Returns {@code null} if the machine type is not
    * deprecated.
    */
+  @Deprecated
   public DeprecationStatus<MachineTypeId> deprecationStatus() {
+    return getDeprecationStatus();
+  }
+
+  /**
+   * Returns the deprecation status of the machine type. If {@link DeprecationStatus#status()} is
+   * either {@link DeprecationStatus.Status#DELETED} or {@link DeprecationStatus.Status#OBSOLETE}
+   * the machine type should not be used. Returns {@code null} if the machine type is not
+   * deprecated.
+   */
+  public DeprecationStatus<MachineTypeId> getDeprecationStatus() {
     return deprecationStatus;
   }
 
@@ -263,9 +346,9 @@ public class MachineType implements Serializable {
     if (creationTimestamp != null) {
       machineTypePb.setCreationTimestamp(TIMESTAMP_FORMATTER.print(creationTimestamp));
     }
-    machineTypePb.setName(machineTypeId.type());
+    machineTypePb.setName(machineTypeId.getType());
     machineTypePb.setDescription(description);
-    machineTypePb.setSelfLink(machineTypeId.selfLink());
+    machineTypePb.setSelfLink(machineTypeId.getSelfLink());
     machineTypePb.setGuestCpus(cpus);
     machineTypePb.setMemoryMb(memoryMb);
     if (scratchDisksSizeGb != null) {
@@ -279,32 +362,32 @@ public class MachineType implements Serializable {
     }
     machineTypePb.setMaximumPersistentDisks(maximumPersistentDisks);
     machineTypePb.setMaximumPersistentDisksSizeGb(maximumPersistentDisksSizeGb);
-    machineTypePb.setZone(machineTypeId.zoneId().zone());
+    machineTypePb.setZone(machineTypeId.getZoneId().getZone());
     if (deprecationStatus != null) {
       machineTypePb.setDeprecated(deprecationStatus.toPb());
     }
     return machineTypePb;
   }
 
-  static Builder builder() {
+  static Builder newBuilder() {
     return new Builder();
   }
 
   static MachineType fromPb(com.google.api.services.compute.model.MachineType machineTypePb) {
-    Builder builder = builder();
-    builder.machineTypeId(MachineTypeId.fromUrl(machineTypePb.getSelfLink()));
+    Builder builder = newBuilder();
+    builder.setMachineTypeId(MachineTypeId.fromUrl(machineTypePb.getSelfLink()));
     if (machineTypePb.getId() != null) {
-      builder.generatedId(machineTypePb.getId().toString());
+      builder.setGeneratedId(machineTypePb.getId().toString());
     }
     if (machineTypePb.getCreationTimestamp() != null) {
-      builder.creationTimestamp(
+      builder.setCreationTimestamp(
           TIMESTAMP_FORMATTER.parseMillis(machineTypePb.getCreationTimestamp()));
     }
-    builder.description(machineTypePb.getDescription());
-    builder.cpus(machineTypePb.getGuestCpus());
-    builder.memoryMb(machineTypePb.getMemoryMb());
+    builder.setDescription(machineTypePb.getDescription());
+    builder.setCpus(machineTypePb.getGuestCpus());
+    builder.setMemoryMb(machineTypePb.getMemoryMb());
     if (machineTypePb.getScratchDisks() != null) {
-      builder.scratchDisksSizeGb(
+      builder.setScratchDisksSizeGb(
           Lists.transform(machineTypePb.getScratchDisks(), new Function<ScratchDisks, Integer>() {
             @Override
             public Integer apply(ScratchDisks scratchDiskPb) {
@@ -312,10 +395,10 @@ public class MachineType implements Serializable {
             }
           }));
     }
-    builder.maximumPersistentDisks(machineTypePb.getMaximumPersistentDisks());
-    builder.maximumPersistentDisksSizeGb(machineTypePb.getMaximumPersistentDisksSizeGb());
+    builder.setMaximumPersistentDisks(machineTypePb.getMaximumPersistentDisks());
+    builder.setMaximumPersistentDisksSizeGb(machineTypePb.getMaximumPersistentDisksSizeGb());
     if (machineTypePb.getDeprecated() != null) {
-      builder.deprecationStatus(
+      builder.setDeprecationStatus(
           DeprecationStatus.fromPb(machineTypePb.getDeprecated(), MachineTypeId.FROM_URL_FUNCTION));
     }
     return builder.build();

@@ -34,10 +34,10 @@ import java.util.Set;
 
 public class ValueTest {
 
-  private static final Key KEY = Key.builder("ds", "kind", 1).build();
+  private static final Key KEY = Key.newBuilder("ds", "kind", 1).build();
   private static final Blob BLOB = Blob.copyFrom(new byte[]{});
   private static final DateTime DATE_TIME = DateTime.now();
-  private static final Entity ENTITY = Entity.builder(KEY).set("FOO", "BAR").build();
+  private static final Entity ENTITY = Entity.newBuilder(KEY).set("FOO", "BAR").build();
   private static final NullValue NULL_VALUE = NullValue.of();
   private static final StringValue STRING_VALUE = StringValue.of("hello");
   private static final RawValue RAW_VALUE = RawValue.of(STRING_VALUE.toPb());
@@ -116,12 +116,30 @@ public class ValueTest {
   @Test
   public void testType() throws Exception {
     for (Map.Entry<ValueType, Value<?>> entry : typeToValue.entrySet()) {
+      assertEquals(entry.getKey(), entry.getValue().getType());
+    }
+  }
+
+  @Test
+  public void testTypeDeprecated() throws Exception {
+    for (Map.Entry<ValueType, Value<?>> entry : typeToValue.entrySet()) {
       assertEquals(entry.getKey(), entry.getValue().type());
     }
   }
 
   @Test
   public void testExcludeFromIndexes() throws Exception {
+    for (Map.Entry<ValueType, Value<?>> entry : typeToValue.entrySet()) {
+      assertFalse(entry.getValue().excludeFromIndexes());
+    }
+    TestBuilder builder = new TestBuilder();
+    assertFalse(builder.build().excludeFromIndexes());
+    assertTrue(builder.setExcludeFromIndexes(true).build().excludeFromIndexes());
+    assertFalse(builder.setExcludeFromIndexes(false).build().excludeFromIndexes());
+  }
+
+  @Test
+  public void testExcludeFromIndexesDeprecated() throws Exception {
     for (Map.Entry<ValueType, Value<?>> entry : typeToValue.entrySet()) {
       assertFalse(entry.getValue().excludeFromIndexes());
     }
@@ -134,6 +152,12 @@ public class ValueTest {
   @SuppressWarnings("deprecation")
   @Test
   public void testMeaning() throws Exception {
+    TestBuilder builder = new TestBuilder();
+    assertEquals(10, builder.setMeaning(10).build().getMeaning());
+  }
+
+  @Test
+  public void testMeaningDeprecated() throws Exception {
     TestBuilder builder = new TestBuilder();
     assertEquals(10, builder.meaning(10).build().meaning());
   }
@@ -157,12 +181,12 @@ public class ValueTest {
     Set<String> content = Collections.singleton("bla");
     @SuppressWarnings("rawtypes")
     ValueBuilder builder = new TestBuilder();
-    builder.meaning(1).set(content).excludeFromIndexes(true);
+    builder.setMeaning(1).set(content).setExcludeFromIndexes(true);
     Value<?> value = builder.build();
     builder = value.toBuilder();
-    assertEquals(1, value.meaning());
+    assertEquals(1, value.getMeaning());
     assertTrue(value.excludeFromIndexes());
-    assertEquals(ValueType.LIST, value.type());
+    assertEquals(ValueType.LIST, value.getType());
     assertEquals(content, value.get());
     assertEquals(value, builder.build());
   }

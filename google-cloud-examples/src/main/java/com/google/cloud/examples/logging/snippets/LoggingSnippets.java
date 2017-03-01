@@ -58,7 +58,7 @@ public class LoggingSnippets {
 
   /**
    * Example of creating a sink to export logs to a BigQuery dataset (in the
-   * {@link LoggingOptions#projectId()} project).
+   * {@link LoggingOptions#getProjectId()} project).
    */
   // [TARGET create(SinkInfo)]
   // [VARIABLE "my_sink_name"]
@@ -73,7 +73,7 @@ public class LoggingSnippets {
 
   /**
    * Example of asynchronously creating a sink to export logs to a BigQuery dataset (in the
-   * {@link LoggingOptions#projectId()} project).
+   * {@link LoggingOptions#getProjectId()} project).
    */
   // [TARGET createAsync(SinkInfo)]
   // [VARIABLE "my_sink_name"]
@@ -97,9 +97,9 @@ public class LoggingSnippets {
   // [VARIABLE "my_dataset"]
   public Sink updateSink(String sinkName, String datasetName) {
     // [START updateSink]
-    SinkInfo sinkInfo = SinkInfo.builder(sinkName, DatasetDestination.of(datasetName))
-        .versionFormat(SinkInfo.VersionFormat.V2)
-        .filter("severity>=ERROR")
+    SinkInfo sinkInfo = SinkInfo.newBuilder(sinkName, DatasetDestination.of(datasetName))
+        .setVersionFormat(SinkInfo.VersionFormat.V2)
+        .setFilter("severity>=ERROR")
         .build();
     Sink sink = logging.update(sinkInfo);
     // [END updateSink]
@@ -115,9 +115,9 @@ public class LoggingSnippets {
   public Sink updateSinkAsync(String sinkName, String datasetName)
       throws ExecutionException, InterruptedException {
     // [START updateSinkAsync]
-    SinkInfo sinkInfo = SinkInfo.builder(sinkName, DatasetDestination.of(datasetName))
-        .versionFormat(SinkInfo.VersionFormat.V2)
-        .filter("severity>=ERROR")
+    SinkInfo sinkInfo = SinkInfo.newBuilder(sinkName, DatasetDestination.of(datasetName))
+        .setVersionFormat(SinkInfo.VersionFormat.V2)
+        .setFilter("severity>=ERROR")
         .build();
     Future<Sink> future = logging.updateAsync(sinkInfo);
     // ...
@@ -337,8 +337,8 @@ public class LoggingSnippets {
   // [VARIABLE "my_metric_name"]
   public Metric updateMetric(String metricName) {
     // [START updateMetric]
-    MetricInfo metricInfo = MetricInfo.builder(metricName, "severity>=ERROR")
-        .description("new description")
+    MetricInfo metricInfo = MetricInfo.newBuilder(metricName, "severity>=ERROR")
+        .setDescription("new description")
         .build();
     Metric metric = logging.update(metricInfo);
     // [END updateMetric]
@@ -353,8 +353,8 @@ public class LoggingSnippets {
   public Metric updateMetricAsync(String metricName)
       throws ExecutionException, InterruptedException {
     // [START updateMetricAsync]
-    MetricInfo metricInfo = MetricInfo.builder(metricName, "severity>=ERROR")
-        .description("new description")
+    MetricInfo metricInfo = MetricInfo.newBuilder(metricName, "severity>=ERROR")
+        .setDescription("new description")
         .build();
     Future<Metric> future = logging.updateAsync(metricInfo);
     // ...
@@ -480,7 +480,7 @@ public class LoggingSnippets {
     entries.add(LogEntry.of(JsonPayload.of(jsonMap)));
     logging.write(entries,
         WriteOption.logName(logName),
-        WriteOption.resource(MonitoredResource.builder("global").build()));
+        WriteOption.resource(MonitoredResource.newBuilder("global").build()));
     // [END write]
   }
 
@@ -500,7 +500,7 @@ public class LoggingSnippets {
     Future<Void> future = logging.writeAsync(
         entries,
         WriteOption.logName(logName),
-        WriteOption.resource(MonitoredResource.builder("global").build()));
+        WriteOption.resource(MonitoredResource.newBuilder("global").build()));
     // [END writeAsync]
     return future;
   }

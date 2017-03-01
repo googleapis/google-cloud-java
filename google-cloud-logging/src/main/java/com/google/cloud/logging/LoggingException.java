@@ -38,7 +38,7 @@ public final class LoggingException extends BaseServiceException {
   }
 
   @Override
-  protected Set<Error> retryableErrors() {
+  protected Set<Error> getRetryableErrors() {
     return null;
   }
 }

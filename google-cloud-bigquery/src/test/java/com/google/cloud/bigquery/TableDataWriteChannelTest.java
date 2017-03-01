@@ -22,11 +22,11 @@ import static org.easymock.EasyMock.captureLong;
 import static org.easymock.EasyMock.createMock;
 import static org.easymock.EasyMock.eq;
 import static org.easymock.EasyMock.expect;
-import static org.easymock.EasyMock.expectLastCall;
 import static org.easymock.EasyMock.replay;
 import static org.easymock.EasyMock.verify;
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
@@ -54,17 +54,20 @@ public class TableDataWriteChannelTest {
   private static final String UPLOAD_ID = "uploadid";
   private static final TableId TABLE_ID = TableId.of("dataset", "table");
   private static final WriteChannelConfiguration LOAD_CONFIGURATION =
-      WriteChannelConfiguration.builder(TABLE_ID)
-          .createDisposition(JobInfo.CreateDisposition.CREATE_IF_NEEDED)
-          .writeDisposition(JobInfo.WriteDisposition.WRITE_APPEND)
-          .formatOptions(FormatOptions.json())
-          .ignoreUnknownValues(true)
-          .maxBadRecords(10)
+      WriteChannelConfiguration.newBuilder(TABLE_ID)
+          .setCreateDisposition(JobInfo.CreateDisposition.CREATE_IF_NEEDED)
+          .setWriteDisposition(JobInfo.WriteDisposition.WRITE_APPEND)
+          .setFormatOptions(FormatOptions.json())
+          .setIgnoreUnknownValues(true)
+          .setMaxBadRecords(10)
           .build();
   private static final int MIN_CHUNK_SIZE = 256 * 1024;
   private static final int DEFAULT_CHUNK_SIZE = 8 * MIN_CHUNK_SIZE;
   private static final int CUSTOM_CHUNK_SIZE = 4 * MIN_CHUNK_SIZE;
   private static final Random RANDOM = new Random();
+  private static final LoadJobConfiguration JOB_CONFIGURATION =
+      LoadJobConfiguration.of(TABLE_ID, "URI");
+  private static final JobInfo JOB_INFO = JobInfo.of(JOB_CONFIGURATION);
 
   @Rule
   public ExpectedException thrown = ExpectedException.none();
@@ -72,23 +75,35 @@ public class TableDataWriteChannelTest {
   private BigQueryOptions options;
   private BigQueryRpcFactory rpcFactoryMock;
   private BigQueryRpc bigqueryRpcMock;
+  private BigQueryFactory bigqueryFactoryMock;
+  private BigQuery bigqueryMock;
+  private Job job;
+
   private TableDataWriteChannel writer;
 
   @Before
   public void setUp() {
     rpcFactoryMock = createMock(BigQueryRpcFactory.class);
     bigqueryRpcMock = createMock(BigQueryRpc.class);
+    bigqueryFactoryMock = createMock(BigQueryFactory.class);
+    bigqueryMock = createMock(BigQuery.class);
+    expect(bigqueryMock.getOptions()).andReturn(options).anyTimes();
+    replay(bigqueryMock);
+    job = new Job(bigqueryMock, new JobInfo.BuilderImpl(JOB_INFO));
     expect(rpcFactoryMock.create(anyObject(BigQueryOptions.class))).andReturn(bigqueryRpcMock);
-    replay(rpcFactoryMock);
-    options = BigQueryOptions.builder()
-        .projectId("projectid")
-        .serviceRpcFactory(rpcFactoryMock)
+    expect(bigqueryFactoryMock.create(anyObject(BigQueryOptions.class))).andReturn(bigqueryMock)
+        .anyTimes();
+    replay(rpcFactoryMock, bigqueryFactoryMock);
+    options = BigQueryOptions.newBuilder()
+        .setProjectId("projectid")
+        .setServiceRpcFactory(rpcFactoryMock)
+        .setServiceFactory(bigqueryFactoryMock)
         .build();
   }
 
   @After
   public void tearDown() throws Exception {
-    verify(rpcFactoryMock, bigqueryRpcMock);
+    verify(rpcFactoryMock, bigqueryRpcMock, bigqueryFactoryMock, bigqueryMock);
   }
 
   @Test
@@ -97,6 +112,7 @@ public class TableDataWriteChannelTest {
     replay(bigqueryRpcMock);
     writer = new TableDataWriteChannel(options, LOAD_CONFIGURATION);
     assertTrue(writer.isOpen());
+    assertNull(writer.getJob());
   }
 
   @Test
@@ -107,6 +123,7 @@ public class TableDataWriteChannelTest {
     replay(bigqueryRpcMock);
     writer = new TableDataWriteChannel(options, LOAD_CONFIGURATION);
     assertTrue(writer.isOpen());
+    assertNull(writer.getJob());
   }
 
   @Test
@@ -123,28 +140,30 @@ public class TableDataWriteChannelTest {
     replay(bigqueryRpcMock);
     writer = new TableDataWriteChannel(options, LOAD_CONFIGURATION);
     assertEquals(MIN_CHUNK_SIZE, writer.write(ByteBuffer.allocate(MIN_CHUNK_SIZE)));
+    assertNull(writer.getJob());
   }
 
   @Test
   public void testWriteWithFlush() throws IOException {
     expect(bigqueryRpcMock.open(LOAD_CONFIGURATION.toPb())).andReturn(UPLOAD_ID);
     Capture<byte[]> capturedBuffer = Capture.newInstance();
-    bigqueryRpcMock.write(eq(UPLOAD_ID), capture(capturedBuffer), eq(0), eq(0L),
-        eq(CUSTOM_CHUNK_SIZE), eq(false));
+    expect(bigqueryRpcMock.write(eq(UPLOAD_ID), capture(capturedBuffer), eq(0), eq(0L),
+        eq(CUSTOM_CHUNK_SIZE), eq(false))).andReturn(null);
     replay(bigqueryRpcMock);
     writer = new TableDataWriteChannel(options, LOAD_CONFIGURATION);
-    writer.chunkSize(CUSTOM_CHUNK_SIZE);
+    writer.setChunkSize(CUSTOM_CHUNK_SIZE);
     ByteBuffer buffer = randomBuffer(CUSTOM_CHUNK_SIZE);
     assertEquals(CUSTOM_CHUNK_SIZE, writer.write(buffer));
     assertArrayEquals(buffer.array(), capturedBuffer.getValue());
+    assertNull(writer.getJob());
   }
 
   @Test
   public void testWritesAndFlush() throws IOException {
     expect(bigqueryRpcMock.open(LOAD_CONFIGURATION.toPb())).andReturn(UPLOAD_ID);
     Capture<byte[]> capturedBuffer = Capture.newInstance();
-    bigqueryRpcMock.write(eq(UPLOAD_ID), capture(capturedBuffer), eq(0), eq(0L),
-        eq(DEFAULT_CHUNK_SIZE), eq(false));
+    expect(bigqueryRpcMock.write(eq(UPLOAD_ID), capture(capturedBuffer), eq(0), eq(0L),
+        eq(DEFAULT_CHUNK_SIZE), eq(false))).andReturn(null);
     replay(bigqueryRpcMock);
     writer = new TableDataWriteChannel(options, LOAD_CONFIGURATION);
     ByteBuffer[] buffers = new ByteBuffer[DEFAULT_CHUNK_SIZE / MIN_CHUNK_SIZE];
@@ -158,19 +177,23 @@ public class TableDataWriteChannelTest {
           Arrays.copyOfRange(
               capturedBuffer.getValue(), MIN_CHUNK_SIZE * i, MIN_CHUNK_SIZE * (i + 1)));
     }
+    assertNull(writer.getJob());
   }
 
   @Test
   public void testCloseWithoutFlush() throws IOException {
     expect(bigqueryRpcMock.open(LOAD_CONFIGURATION.toPb())).andReturn(UPLOAD_ID);
     Capture<byte[]> capturedBuffer = Capture.newInstance();
-    bigqueryRpcMock.write(eq(UPLOAD_ID), capture(capturedBuffer), eq(0), eq(0L), eq(0), eq(true));
+    expect(bigqueryRpcMock.write(
+        eq(UPLOAD_ID), capture(capturedBuffer), eq(0), eq(0L), eq(0), eq(true)))
+        .andReturn(job.toPb());
     replay(bigqueryRpcMock);
     writer = new TableDataWriteChannel(options, LOAD_CONFIGURATION);
     assertTrue(writer.isOpen());
     writer.close();
     assertArrayEquals(new byte[0], capturedBuffer.getValue());
     assertTrue(!writer.isOpen());
+    assertEquals(job, writer.getJob());
   }
 
   @Test
@@ -178,8 +201,9 @@ public class TableDataWriteChannelTest {
     expect(bigqueryRpcMock.open(LOAD_CONFIGURATION.toPb())).andReturn(UPLOAD_ID);
     Capture<byte[]> capturedBuffer = Capture.newInstance();
     ByteBuffer buffer = randomBuffer(MIN_CHUNK_SIZE);
-    bigqueryRpcMock.write(eq(UPLOAD_ID), capture(capturedBuffer), eq(0), eq(0L), eq(MIN_CHUNK_SIZE),
-        eq(true));
+    expect(bigqueryRpcMock.write(
+        eq(UPLOAD_ID), capture(capturedBuffer), eq(0), eq(0L), eq(MIN_CHUNK_SIZE), eq(true)))
+        .andReturn(job.toPb());
     replay(bigqueryRpcMock);
     writer = new TableDataWriteChannel(options, LOAD_CONFIGURATION);
     assertTrue(writer.isOpen());
@@ -188,16 +212,20 @@ public class TableDataWriteChannelTest {
     assertEquals(DEFAULT_CHUNK_SIZE, capturedBuffer.getValue().length);
     assertArrayEquals(buffer.array(), Arrays.copyOf(capturedBuffer.getValue(), MIN_CHUNK_SIZE));
     assertTrue(!writer.isOpen());
+    assertEquals(job, writer.getJob());
   }
 
   @Test
   public void testWriteClosed() throws IOException {
     expect(bigqueryRpcMock.open(LOAD_CONFIGURATION.toPb())).andReturn(UPLOAD_ID);
     Capture<byte[]> capturedBuffer = Capture.newInstance();
-    bigqueryRpcMock.write(eq(UPLOAD_ID), capture(capturedBuffer), eq(0), eq(0L), eq(0), eq(true));
+    expect(bigqueryRpcMock.write(
+        eq(UPLOAD_ID), capture(capturedBuffer), eq(0), eq(0L), eq(0), eq(true)))
+        .andReturn(job.toPb());
     replay(bigqueryRpcMock);
     writer = new TableDataWriteChannel(options, LOAD_CONFIGURATION);
     writer.close();
+    assertEquals(job, writer.getJob());
     try {
       writer.write(ByteBuffer.allocate(MIN_CHUNK_SIZE));
       fail("Expected TableDataWriteChannel write to throw IOException");
@@ -211,9 +239,8 @@ public class TableDataWriteChannelTest {
     expect(bigqueryRpcMock.open(LOAD_CONFIGURATION.toPb())).andReturn(UPLOAD_ID);
     Capture<byte[]> capturedBuffer = Capture.newInstance(CaptureType.ALL);
     Capture<Long> capturedPosition = Capture.newInstance(CaptureType.ALL);
-    bigqueryRpcMock.write(eq(UPLOAD_ID), capture(capturedBuffer), eq(0),
-        captureLong(capturedPosition), eq(DEFAULT_CHUNK_SIZE), eq(false));
-    expectLastCall().times(2);
+    expect(bigqueryRpcMock.write(eq(UPLOAD_ID), capture(capturedBuffer), eq(0),
+        captureLong(capturedPosition), eq(DEFAULT_CHUNK_SIZE), eq(false))).andReturn(null).times(2);
     replay(bigqueryRpcMock);
     ByteBuffer buffer1 = randomBuffer(DEFAULT_CHUNK_SIZE);
     ByteBuffer buffer2 = randomBuffer(DEFAULT_CHUNK_SIZE);
@@ -221,6 +248,7 @@ public class TableDataWriteChannelTest {
     assertEquals(DEFAULT_CHUNK_SIZE, writer.write(buffer1));
     assertArrayEquals(buffer1.array(), capturedBuffer.getValues().get(0));
     assertEquals(new Long(0L), capturedPosition.getValues().get(0));
+    assertNull(writer.getJob());
     RestorableState<WriteChannel> writerState = writer.capture();
     WriteChannel restoredWriter = writerState.restore();
     assertEquals(DEFAULT_CHUNK_SIZE, restoredWriter.write(buffer2));
@@ -232,17 +260,20 @@ public class TableDataWriteChannelTest {
   public void testSaveAndRestoreClosed() throws IOException {
     expect(bigqueryRpcMock.open(LOAD_CONFIGURATION.toPb())).andReturn(UPLOAD_ID);
     Capture<byte[]> capturedBuffer = Capture.newInstance();
-    bigqueryRpcMock.write(eq(UPLOAD_ID), capture(capturedBuffer), eq(0), eq(0L), eq(0), eq(true));
+    expect(bigqueryRpcMock.write(
+        eq(UPLOAD_ID), capture(capturedBuffer), eq(0), eq(0L), eq(0), eq(true)))
+        .andReturn(job.toPb());
     replay(bigqueryRpcMock);
     writer = new TableDataWriteChannel(options, LOAD_CONFIGURATION);
     writer.close();
+    assertEquals(job, writer.getJob());
     RestorableState<WriteChannel> writerState = writer.capture();
     RestorableState<WriteChannel> expectedWriterState =
-        TableDataWriteChannel.StateImpl.builder(options, LOAD_CONFIGURATION, UPLOAD_ID)
-            .buffer(null)
-            .chunkSize(DEFAULT_CHUNK_SIZE)
-            .isOpen(false)
-            .position(0)
+        TableDataWriteChannel.StateImpl.builder(options, LOAD_CONFIGURATION, UPLOAD_ID, job)
+            .setBuffer(null)
+            .setChunkSize(DEFAULT_CHUNK_SIZE)
+            .setIsOpen(false)
+            .setPosition(0)
             .build();
     WriteChannel restoredWriter = writerState.restore();
     assertArrayEquals(new byte[0], capturedBuffer.getValue());

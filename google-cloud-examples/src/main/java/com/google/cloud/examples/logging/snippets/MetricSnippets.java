@@ -75,7 +75,7 @@ public class MetricSnippets {
   public Metric update() {
     // [START update]
     Metric updatedMetric = metric.toBuilder()
-        .description("A more detailed description")
+        .setDescription("A more detailed description")
         .build()
         .update();
     // [END update]
@@ -89,7 +89,7 @@ public class MetricSnippets {
   public Metric updateAsync() throws ExecutionException, InterruptedException {
     // [START updateAsync]
     Future<Metric> future = metric.toBuilder()
-        .description("A more detailed description")
+        .setDescription("A more detailed description")
         .build()
         .updateAsync();
     // ...

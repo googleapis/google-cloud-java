@@ -33,6 +33,18 @@ public class StandardNetworkConfigurationTest {
 
   @Test
   public void testConstructor() {
+    assertEquals(Type.STANDARD, NETWORK_CONFIGURATION.getType());
+    assertEquals(IP_RANGE, NETWORK_CONFIGURATION.getIpRange());
+    assertEquals(GATEWAY_ADDRESS, NETWORK_CONFIGURATION.getGatewayAddress());
+    StandardNetworkConfiguration networkConfiguration =
+        new StandardNetworkConfiguration(IP_RANGE, null);
+    assertEquals(Type.STANDARD, networkConfiguration.getType());
+    assertEquals(IP_RANGE, networkConfiguration.getIpRange());
+    assertNull(networkConfiguration.getGatewayAddress());
+  }
+
+  @Test
+  public void testConstructorDeprecated() {
     assertEquals(Type.STANDARD, NETWORK_CONFIGURATION.type());
     assertEquals(IP_RANGE, NETWORK_CONFIGURATION.ipRange());
     assertEquals(GATEWAY_ADDRESS, NETWORK_CONFIGURATION.gatewayAddress());
@@ -60,17 +72,17 @@ public class StandardNetworkConfigurationTest {
   @Test
   public void testOf() {
     StandardNetworkConfiguration configuration = StandardNetworkConfiguration.of(IP_RANGE);
-    assertEquals(Type.STANDARD, configuration.type());
-    assertEquals(IP_RANGE, configuration.ipRange());
-    assertNull(configuration.gatewayAddress());
+    assertEquals(Type.STANDARD, configuration.getType());
+    assertEquals(IP_RANGE, configuration.getIpRange());
+    assertNull(configuration.getGatewayAddress());
   }
 
   private void compareNetworkConfiguration(StandardNetworkConfiguration expected,
       StandardNetworkConfiguration value) {
     assertEquals(expected, value);
-    assertEquals(expected.ipRange(), value.ipRange());
-    assertEquals(expected.gatewayAddress(), value.gatewayAddress());
-    assertEquals(expected.type(), value.type());
+    assertEquals(expected.getIpRange(), value.getIpRange());
+    assertEquals(expected.getGatewayAddress(), value.getGatewayAddress());
+    assertEquals(expected.getType(), value.getType());
     assertEquals(expected.hashCode(), value.hashCode());
   }
 }

@@ -70,7 +70,15 @@ public class ViewDefinition extends TableDefinition {
     /**
      * Sets the query used to create the view.
      */
+    @Deprecated
     public Builder query(String query) {
+      return setQuery(query);
+    }
+
+    /**
+     * Sets the query used to create the view.
+     */
+    public Builder setQuery(String query) {
       this.query = checkNotNull(query);
       return self();
     }
@@ -81,7 +89,18 @@ public class ViewDefinition extends TableDefinition {
      * @see <a href="https://cloud.google.com/bigquery/user-defined-functions">User-Defined
      *     Functions</a>
      */
+    @Deprecated
     public Builder userDefinedFunctions(List<UserDefinedFunction> userDefinedFunctions) {
+      return setUserDefinedFunctions(userDefinedFunctions);
+    }
+
+    /**
+     * Sets user defined functions that can be used by {@link #query()}.
+     *
+     * @see <a href="https://cloud.google.com/bigquery/user-defined-functions">User-Defined
+     *     Functions</a>
+     */
+    public Builder setUserDefinedFunctions(List<UserDefinedFunction> userDefinedFunctions) {
       this.userDefinedFunctions = ImmutableList.copyOf(checkNotNull(userDefinedFunctions));
       return self();
     }
@@ -92,7 +111,18 @@ public class ViewDefinition extends TableDefinition {
      * @see <a href="https://cloud.google.com/bigquery/user-defined-functions">User-Defined
      *     Functions</a>
      */
+    @Deprecated
     public Builder userDefinedFunctions(UserDefinedFunction... userDefinedFunctions) {
+      return setUserDefinedFunctions(userDefinedFunctions);
+    }
+
+    /**
+     * Sets user defined functions that can be used by {@link #query()}.
+     *
+     * @see <a href="https://cloud.google.com/bigquery/user-defined-functions">User-Defined
+     *     Functions</a>
+     */
+    public Builder setUserDefinedFunctions(UserDefinedFunction... userDefinedFunctions) {
       this.userDefinedFunctions = ImmutableList.copyOf(userDefinedFunctions);
       return self();
     }
@@ -115,7 +145,15 @@ public class ViewDefinition extends TableDefinition {
   /**
    * Returns the query used to create the view.
    */
+  @Deprecated
   public String query() {
+    return getQuery();
+  }
+
+  /**
+   * Returns the query used to create the view.
+   */
+  public String getQuery() {
     return query;
   }
 
@@ -126,7 +164,19 @@ public class ViewDefinition extends TableDefinition {
    * @see <a href="https://cloud.google.com/bigquery/user-defined-functions">User-Defined Functions
    *     </a>
    */
+  @Deprecated
   public List<UserDefinedFunction> userDefinedFunctions() {
+    return getUserDefinedFunctions();
+  }
+
+  /**
+   * Returns user defined functions that can be used by {@link #query()}. Returns {@code null} if
+   * not set.
+   *
+   * @see <a href="https://cloud.google.com/bigquery/user-defined-functions">User-Defined Functions
+   *     </a>
+   */
+  public List<UserDefinedFunction> getUserDefinedFunctions() {
     return userDefinedFunctions;
   }
 
@@ -176,8 +226,18 @@ public class ViewDefinition extends TableDefinition {
    *
    * @param query the query used to generate the view
    */
+  @Deprecated
   public static Builder builder(String query) {
-    return new Builder().query(query);
+    return newBuilder(query);
+  }
+
+  /**
+   * Returns a builder for a BigQuery view definition.
+   *
+   * @param query the query used to generate the view
+   */
+  public static Builder newBuilder(String query) {
+    return new Builder().setQuery(query);
   }
 
   /**
@@ -186,8 +246,9 @@ public class ViewDefinition extends TableDefinition {
    * @param query the query used to generate the table
    * @param functions user-defined functions that can be used by the query
    */
+  @Deprecated
   public static Builder builder(String query, List<UserDefinedFunction> functions) {
-    return new Builder().type(Type.VIEW).userDefinedFunctions(functions).query(query);
+    return newBuilder(query, functions);
   }
 
   /**
@@ -196,8 +257,29 @@ public class ViewDefinition extends TableDefinition {
    * @param query the query used to generate the table
    * @param functions user-defined functions that can be used by the query
    */
+  public static Builder newBuilder(String query, List<UserDefinedFunction> functions) {
+    return newBuilder(query).setUserDefinedFunctions(functions);
+  }
+
+  /**
+   * Returns a builder for a BigQuery view definition.
+   *
+   * @param query the query used to generate the table
+   * @param functions user-defined functions that can be used by the query
+   */
+  @Deprecated
   public static Builder builder(String query, UserDefinedFunction... functions) {
-    return new Builder().type(Type.VIEW).userDefinedFunctions(functions).query(query);
+    return newBuilder(query, functions);
+  }
+
+  /**
+   * Returns a builder for a BigQuery view definition.
+   *
+   * @param query the query used to generate the table
+   * @param functions user-defined functions that can be used by the query
+   */
+  public static Builder newBuilder(String query, UserDefinedFunction... functions) {
+    return newBuilder(query).setUserDefinedFunctions(functions);
   }
 
   /**
@@ -206,7 +288,7 @@ public class ViewDefinition extends TableDefinition {
    * @param query the query used to generate the table
    */
   public static ViewDefinition of(String query) {
-    return builder(query).build();
+    return newBuilder(query).build();
   }
 
   /**
@@ -216,7 +298,7 @@ public class ViewDefinition extends TableDefinition {
    * @param functions user-defined functions that can be used by the query
    */
   public static ViewDefinition of(String query, List<UserDefinedFunction> functions) {
-    return builder(query, functions).build();
+    return newBuilder(query, functions).build();
   }
 
   /**
@@ -226,7 +308,7 @@ public class ViewDefinition extends TableDefinition {
    * @param functions user-defined functions that can be used by the query
    */
   public static ViewDefinition of(String query, UserDefinedFunction... functions) {
-    return builder(query, functions).build();
+    return newBuilder(query, functions).build();
   }
 
   @SuppressWarnings("unchecked")

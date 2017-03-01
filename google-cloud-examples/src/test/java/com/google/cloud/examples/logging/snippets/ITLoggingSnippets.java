@@ -25,7 +25,6 @@ import com.google.cloud.logging.Logging;
 import com.google.cloud.logging.Metric;
 import com.google.cloud.logging.Sink;
 import com.google.cloud.logging.testing.RemoteLoggingHelper;
-import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Iterators;
 import com.google.common.collect.Sets;
 
@@ -36,7 +35,6 @@ import org.junit.Test;
 import org.junit.rules.ExpectedException;
 import org.junit.rules.Timeout;
 
-import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 import java.util.concurrent.ExecutionException;
@@ -44,13 +42,6 @@ import java.util.concurrent.ExecutionException;
 public class ITLoggingSnippets {
 
   private static final String DATASET = "dataset";
-  private static final Set<String> DESCRIPTOR_TYPES = ImmutableSet.of("gce_instance", "gae_app",
-      "cloudsql_database", "api", "gcs_bucket", "global", "dataflow_step", "build",
-      "app_script_function", "dataproc_cluster", "ml_job", "bigquery_resource", "container",
-      "gke_cluster", "cloud_debugger_resource", "http_load_balancer", "aws_ec2_instance",
-      "client_auth_config_brand", "client_auth_config_client", "logging_log", "logging_sink",
-      "metric", "project", "testservice_matrix", "service_account", "deployment",
-      "dns_managed_zone");
 
   private static Logging logging;
   private static LoggingSnippets loggingSnippets;
@@ -64,7 +55,7 @@ public class ITLoggingSnippets {
   @BeforeClass
   public static void beforeClass() {
     RemoteLoggingHelper helper = RemoteLoggingHelper.create();
-    logging = helper.options().service();
+    logging = helper.getOptions().getService();
     loggingSnippets = new LoggingSnippets(logging);
   }
 
@@ -135,27 +126,25 @@ public class ITLoggingSnippets {
   public void testMonitoredResourceDescriptor() throws ExecutionException, InterruptedException {
     Iterator<MonitoredResourceDescriptor> iterator =
         loggingSnippets.listMonitoredResourceDescriptors().iterateAll();
-    Set<String> descriptorTypes = new HashSet<>();
+    int count = 0;
     while (iterator.hasNext()) {
-      descriptorTypes.add(iterator.next().type());
+      assertNotNull(iterator.next().getType());
+      count += 1;
     }
-    for (String type : DESCRIPTOR_TYPES) {
-      assertTrue(descriptorTypes.contains(type));
-    }
+    assertTrue(count > 0);
     iterator = loggingSnippets.listMonitoredResourceDescriptorsAsync().iterateAll();
-    descriptorTypes.clear();
+    count = 0;
     while (iterator.hasNext()) {
-      descriptorTypes.add(iterator.next().type());
+      assertNotNull(iterator.next().getType());
+      count += 1;
     }
-    for (String type : DESCRIPTOR_TYPES) {
-      assertTrue(descriptorTypes.contains(type));
-    }
+    assertTrue(count > 0);
   }
 
   @Test
   public void testWriteAndListLogEntries() throws InterruptedException {
     String logName = RemoteLoggingHelper.formatForTest("log_name");
-    String filter = "logName=projects/" + logging.options().projectId() + "/logs/" + logName;
+    String filter = "logName=projects/" + logging.getOptions().getProjectId() + "/logs/" + logName;
     loggingSnippets.write(logName);
     Iterator<LogEntry> iterator = loggingSnippets.listLogEntries(filter).iterateAll();
     while (Iterators.size(iterator) < 2) {
@@ -168,7 +157,7 @@ public class ITLoggingSnippets {
   @Test
   public void testWriteAndListLogEntriesAsync() throws ExecutionException, InterruptedException {
     String logName = RemoteLoggingHelper.formatForTest("log_name");
-    String filter = "logName=projects/" + logging.options().projectId() + "/logs/" + logName;
+    String filter = "logName=projects/" + logging.getOptions().getProjectId() + "/logs/" + logName;
     loggingSnippets.writeAsync(logName).get();
     Iterator<LogEntry> iterator = loggingSnippets.listLogEntriesAsync(filter).iterateAll();
     while (Iterators.size(iterator) < 2) {

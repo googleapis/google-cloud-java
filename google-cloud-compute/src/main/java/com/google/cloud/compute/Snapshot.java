@@ -55,8 +55,8 @@ public class Snapshot extends SnapshotInfo {
     Builder(Compute compute, SnapshotId snapshotId, DiskId sourceDisk) {
       this.compute = compute;
       this.infoBuilder = new SnapshotInfo.BuilderImpl();
-      this.infoBuilder.snapshotId(snapshotId);
-      this.infoBuilder.sourceDisk(sourceDisk);
+      this.infoBuilder.setSnapshotId(snapshotId);
+      this.infoBuilder.setSourceDisk(sourceDisk);
     }
 
     Builder(Snapshot snapshot) {
@@ -65,68 +65,86 @@ public class Snapshot extends SnapshotInfo {
     }
 
     @Override
-    Builder generatedId(String generatedId) {
-      infoBuilder.generatedId(generatedId);
+    Builder setGeneratedId(String generatedId) {
+      infoBuilder.setGeneratedId(generatedId);
       return this;
     }
 
     @Override
-    Builder creationTimestamp(Long creationTimestamp) {
-      infoBuilder.creationTimestamp(creationTimestamp);
+    Builder setCreationTimestamp(Long creationTimestamp) {
+      infoBuilder.setCreationTimestamp(creationTimestamp);
       return this;
     }
 
     @Override
+    @Deprecated
     public Builder snapshotId(SnapshotId snapshotId) {
-      infoBuilder.snapshotId(snapshotId);
+      return setSnapshotId(snapshotId);
+    }
+
+    @Override
+    public Builder setSnapshotId(SnapshotId snapshotId) {
+      infoBuilder.setSnapshotId(snapshotId);
       return this;
     }
 
     @Override
+    @Deprecated
     public Builder description(String description) {
-      infoBuilder.description(description);
+      return setDescription(description);
+    }
+
+    @Override
+    public Builder setDescription(String description) {
+      infoBuilder.setDescription(description);
       return this;
     }
 
     @Override
-    Builder status(Status status) {
-      infoBuilder.status(status);
+    Builder setStatus(Status status) {
+      infoBuilder.setStatus(status);
       return this;
     }
 
     @Override
-    Builder diskSizeGb(Long diskSizeGb) {
-      infoBuilder.diskSizeGb(diskSizeGb);
+    Builder setDiskSizeGb(Long diskSizeGb) {
+      infoBuilder.setDiskSizeGb(diskSizeGb);
       return this;
     }
 
     @Override
-    Builder licenses(List<LicenseId> licenses) {
-      infoBuilder.licenses(licenses);
+    Builder setLicenses(List<LicenseId> licenses) {
+      infoBuilder.setLicenses(licenses);
       return this;
     }
 
     @Override
+    @Deprecated
     public Builder sourceDisk(DiskId sourceDisk) {
-      infoBuilder.sourceDisk(sourceDisk);
+      return setSourceDisk(sourceDisk);
+    }
+
+    @Override
+    public Builder setSourceDisk(DiskId sourceDisk) {
+      infoBuilder.setSourceDisk(sourceDisk);
       return this;
     }
 
     @Override
-    Builder sourceDiskId(String sourceDiskId) {
-      infoBuilder.sourceDiskId(sourceDiskId);
+    Builder setSourceDiskId(String sourceDiskId) {
+      infoBuilder.setSourceDiskId(sourceDiskId);
       return this;
     }
 
     @Override
-    Builder storageBytes(Long storageBytes) {
-      infoBuilder.storageBytes(storageBytes);
+    Builder setStorageBytes(Long storageBytes) {
+      infoBuilder.setStorageBytes(storageBytes);
       return this;
     }
 
     @Override
-    Builder storageBytesStatus(StorageBytesStatus storageBytesStatus) {
-      infoBuilder.storageBytesStatus(storageBytesStatus);
+    Builder setStorageBytesStatus(StorageBytesStatus storageBytesStatus) {
+      infoBuilder.setStorageBytesStatus(storageBytesStatus);
       return this;
     }
 
@@ -139,7 +157,7 @@ public class Snapshot extends SnapshotInfo {
   Snapshot(Compute compute, SnapshotInfo.BuilderImpl infoBuilder) {
     super(infoBuilder);
     this.compute = checkNotNull(compute);
-    this.options = compute.options();
+    this.options = compute.getOptions();
   }
 
   /**
@@ -161,7 +179,7 @@ public class Snapshot extends SnapshotInfo {
    * @throws ComputeException upon failure
    */
   public Snapshot reload(SnapshotOption... options) {
-    return compute.getSnapshot(snapshotId().snapshot(), options);
+    return compute.getSnapshot(getSnapshotId().getSnapshot(), options);
   }
 
   /**
@@ -172,13 +190,21 @@ public class Snapshot extends SnapshotInfo {
    * @throws ComputeException upon failure
    */
   public Operation delete(OperationOption... options) {
-    return compute.deleteSnapshot(snapshotId(), options);
+    return compute.deleteSnapshot(getSnapshotId(), options);
   }
 
   /**
    * Returns the snapshot's {@code Compute} object used to issue requests.
    */
+  @Deprecated
   public Compute compute() {
+    return getCompute();
+  }
+
+  /**
+   * Returns the snapshot's {@code Compute} object used to issue requests.
+   */
+  public Compute getCompute() {
     return compute;
   }
 
@@ -206,7 +232,7 @@ public class Snapshot extends SnapshotInfo {
 
   private void readObject(ObjectInputStream input) throws IOException, ClassNotFoundException {
     input.defaultReadObject();
-    this.compute = options.service();
+    this.compute = options.getService();
   }
 
   static Snapshot fromPb(Compute compute,

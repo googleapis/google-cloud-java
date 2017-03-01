@@ -75,7 +75,7 @@ public class SinkSnippets {
   public Sink update() {
     // [START update]
     Sink updatedSink = sink.toBuilder()
-        .filter("severity<=ERROR")
+        .setFilter("severity<=ERROR")
         .build()
         .update();
     // [END update]
@@ -89,7 +89,7 @@ public class SinkSnippets {
   public Sink updateAsync() throws ExecutionException, InterruptedException {
     // [START updateAsync]
     Future<Sink> future = sink.toBuilder()
-        .filter("severity<=ERROR")
+        .setFilter("severity<=ERROR")
         .build()
         .updateAsync();
     // ...

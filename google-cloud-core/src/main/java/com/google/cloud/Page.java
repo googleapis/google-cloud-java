@@ -34,10 +34,10 @@ import java.util.Iterator;
  * <pre> {@code
  * Page<T> page = ...; // get a Page<T> instance
  * while (page != null) {
- *   for (T value : page.values()) {
+ *   for (T value : page.getValues()) {
  *     // do something with value
  *   }
- *   page = page.nextPage();
+ *   page = page.getNextPage();
  * }}</pre>
  *
  * @param <T> the value type that the page holds
@@ -47,7 +47,13 @@ public interface Page<T> {
   /**
    * Returns the values contained in this page.
    */
+  @Deprecated
   Iterable<T> values();
+
+  /**
+   * Returns the values contained in this page.
+   */
+  Iterable<T> getValues();
 
   /**
    * Returns an iterator for all values, possibly also in the next pages. Once current page's values
@@ -58,11 +64,22 @@ public interface Page<T> {
   /**
    * Returns the cursor for the nextPage or {@code null} if no more results.
    */
+  @Deprecated
   String nextPageCursor();
+
+  /**
+   * Returns the cursor for the nextPage or {@code null} if no more results.
+   */
+  String getNextPageCursor();
 
   /**
    * Returns the next page of results or {@code null} if no more result.
    */
+  @Deprecated
   Page<T> nextPage();
 
+  /**
+   * Returns the next page of results or {@code null} if no more result.
+   */
+  Page<T> getNextPage();
 }

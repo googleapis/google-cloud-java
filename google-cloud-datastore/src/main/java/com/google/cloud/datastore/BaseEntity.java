@@ -65,7 +65,7 @@ public abstract class BaseEntity<K extends IncompleteKey> implements Serializabl
     }
 
     Builder(K key) {
-      key(key);
+      setKey(key);
     }
 
     Builder(BaseEntity<K> entity) {
@@ -73,15 +73,15 @@ public abstract class BaseEntity<K extends IncompleteKey> implements Serializabl
     }
 
     Builder(K key, BaseEntity<?> entity) {
-      key(key);
-      properties(entity.properties);
+      setKey(key);
+      setProperties(entity.properties);
     }
 
     protected K key() {
       return key;
     }
 
-    protected Map<String, Value<?>> properties() {
+    protected Map<String, Value<?>> setProperties() {
       return properties;
     }
 
@@ -94,22 +94,33 @@ public abstract class BaseEntity<K extends IncompleteKey> implements Serializabl
     B fill(com.google.datastore.v1.Entity entityPb) {
       Map<String, Value<?>> copiedProperties = Maps.newHashMap();
       for (Map.Entry<String, com.google.datastore.v1.Value> entry :
-          entityPb.getProperties().entrySet()) {
+          entityPb.getPropertiesMap().entrySet()) {
         copiedProperties.put(entry.getKey(), Value.fromPb(entry.getValue()));
       }
-      properties(copiedProperties);
+      setProperties(copiedProperties);
       if (entityPb.hasKey()) {
-        key((K) IncompleteKey.fromPb(entityPb.getKey()));
+        setKey((K) IncompleteKey.fromPb(entityPb.getKey()));
       }
       return self();
     }
 
-    protected B properties(Map<String, Value<?>> properties) {
+    protected B setProperties(Map<String, Value<?>> properties) {
       this.properties.putAll(properties);
       return self();
     }
 
+    /**
+     * Sets the key for the entity.
+     */
+    @Deprecated
     public B key(K key) {
+      return setKey(key);
+    }
+
+    /**
+     * Sets the key for the entity.
+     */
+    public B setKey(K key) {
       this.key = key;
       return self();
     }
@@ -401,7 +412,7 @@ public abstract class BaseEntity<K extends IncompleteKey> implements Serializabl
      * @param others other values in the list
      */
     public B set(String name, Value<?> first, Value<?> second, Value<?>... others) {
-      properties.put(name, ListValue.builder().addValue(first).addValue(second, others).build());
+      properties.put(name, ListValue.newBuilder().addValue(first).addValue(second, others).build());
       return self();
     }
 
@@ -454,7 +465,7 @@ public abstract class BaseEntity<K extends IncompleteKey> implements Serializabl
   }
 
   BaseEntity(BaseEntity<K> from) {
-    this.key = from.key();
+    this.key = from.getKey();
     this.properties = from.properties;
   }
 
@@ -494,7 +505,15 @@ public abstract class BaseEntity<K extends IncompleteKey> implements Serializabl
   /**
    * Returns the associated key or null if it does not have one.
    */
+  @Deprecated
   public K key() {
+    return getKey();
+  }
+
+  /**
+   * Returns the associated key or null if it does not have one.
+   */
+  public K getKey() {
     return key;
   }
 
@@ -642,19 +661,26 @@ public abstract class BaseEntity<K extends IncompleteKey> implements Serializabl
   /**
    * Returns the properties name.
    */
+  @Deprecated
   public Set<String> names() {
+    return getNames();
+  }
+
+  /**
+   * Returns the properties name.
+   */
+  public Set<String> getNames() {
     return properties.keySet();
   }
 
-  ImmutableSortedMap<String, Value<?>> properties() {
+  ImmutableSortedMap<String, Value<?>> getProperties() {
     return properties;
   }
 
   final com.google.datastore.v1.Entity toPb() {
     com.google.datastore.v1.Entity.Builder entityPb = com.google.datastore.v1.Entity.newBuilder();
-    Map<String, com.google.datastore.v1.Value> propertiesPb = entityPb.getMutableProperties();
     for (Map.Entry<String, Value<?>> entry : properties.entrySet()) {
-      propertiesPb.put(entry.getKey(), entry.getValue().toPb());
+      entityPb.putProperties(entry.getKey(), entry.getValue().toPb());
     }
     if (key != null) {
       entityPb.setKey(key.toPb());

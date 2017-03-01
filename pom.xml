@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-pom</artifactId>
   <packaging>pom</packaging>
-  <version>0.4.1-SNAPSHOT</version>
+  <version>0.9.4-alpha-SNAPSHOT</version>
   <name>Google Cloud</name>
   <url>https://github.com/GoogleCloudPlatform/google-cloud-java</url>
   <description>
@@ -90,6 +90,13 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <github.global.server>github</github.global.server>
+    <google.auth.version>0.6.0</google.auth.version>
+    <grpc.version>1.0.3</grpc.version>
+    <gax.version>0.1.2</gax.version>
+    <generatedProto.version>0.1.5</generatedProto.version>
+    <core.version>0.9.4-alpha-SNAPSHOT</core.version>
+    <beta.version>0.9.4-beta-SNAPSHOT</beta.version>
+    <storage.version>${beta.version}</storage.version>
     <site.installationModule>google-cloud</site.installationModule>
   </properties>
   <modules>
@@ -107,6 +114,7 @@
     <module>google-cloud-monitoring</module>
     <module>google-cloud-pubsub</module>
     <module>google-cloud-resourcemanager</module>
+    <module>google-cloud-spanner</module>
     <module>google-cloud-speech</module>
     <module>google-cloud-storage</module>
     <module>google-cloud-trace</module>
@@ -170,7 +178,7 @@
                 <requireJavaVersion>
                   <version>[1.7,)</version>
                 </requireJavaVersion>
-              </rules>    
+              </rules>
             </configuration>
           </execution>
         </executions>
@@ -266,7 +274,7 @@
         <configuration>
           <serverId>sonatype-nexus-staging</serverId>
           <nexusUrl>https://oss.sonatype.org/</nexusUrl>
-          <autoReleaseAfterClose>true</autoReleaseAfterClose>
+          <autoReleaseAfterClose>false</autoReleaseAfterClose>
         </configuration>
       </plugin>
       <plugin>
@@ -416,9 +424,23 @@
                   </group>
                   <group>
                     <title>SPI packages</title>
-                    <packages>com.google.cloud.spi:com.google.cloud.bigquery.spi:com.google.cloud.compute.spi:com.google.cloud.datastore.spi:com.google.cloud.dns.spi:com.google.cloud.errorreporting.spi:com.google.cloud.errorreporting.spi.*:com.google.cloud.language.spi:com.google.cloud.language.spi.*:com.google.cloud.logging.spi:com.google.cloud.logging.spi.*:com.google.cloud.pubsub.spi:com.google.cloud.pubsub.spi.*:com.google.cloud.resourcemanager.spi:com.google.cloud.speech.spi:com.google.cloud.speech.spi.*:com.google.cloud.storage.spi:com.google.cloud.trace.spi:com.google.cloud.trace.spi.*:com.google.cloud.translate.spi:com.google.cloud.vision.spi:com.google.cloud.vision.spi.*</packages>
+                    <packages>com.google.cloud.spi:com.google.cloud.bigquery.spi:com.google.cloud.compute.spi:com.google.cloud.datastore.spi:com.google.cloud.dns.spi:com.google.cloud.errorreporting.spi:com.google.cloud.errorreporting.spi.*:com.google.cloud.language.spi:com.google.cloud.language.spi.*:com.google.cloud.logging.spi:com.google.cloud.monitoring.spi:com.google.cloud.monitoring.spi.*:com.google.cloud.logging.spi.*:com.google.cloud.pubsub.spi:com.google.cloud.pubsub.spi.*:com.google.cloud.resourcemanager.spi:com.google.cloud.speech.spi:com.google.cloud.speech.spi.*:com.google.cloud.storage.spi:com.google.cloud.trace.spi:com.google.cloud.trace.spi.*:com.google.cloud.translate.spi:com.google.cloud.vision.spi:com.google.cloud.vision.spi.*</packages>
                   </group>
                 </groups>
+                <links>
+                  <link>https://developers.google.com/protocol-buffers/docs/reference/java/</link>
+                  <link>http://google.github.io/google-auth-library-java/releases/${google.auth.version}/apidocs/</link>
+                  <link>http://googleapis.github.io/gax-java/${gax.version}/apidocs/</link>
+                  <link>http://googleapis.github.io/googleapis/java/grpc-google-iam-v1/${generatedProto.version}/apidocs/</link>
+                  <link>http://googleapis.github.io/googleapis/java/grpc-google-cloud-error-reporting-v1beta1/${generatedProto.version}/apidocs/</link>
+                  <link>http://googleapis.github.io/googleapis/java/grpc-google-cloud-language-v1/${generatedProto.version}/apidocs/</link>
+                  <link>http://googleapis.github.io/googleapis/java/grpc-google-cloud-logging-v2/${generatedProto.version}/apidocs/</link>
+                  <link>http://googleapis.github.io/googleapis/java/grpc-google-cloud-monitoring-v3/${generatedProto.version}/apidocs/</link>
+                  <link>http://googleapis.github.io/googleapis/java/grpc-google-cloud-pubsub-v1/${generatedProto.version}/apidocs/</link>
+                  <link>http://googleapis.github.io/googleapis/java/grpc-google-cloud-speech-v1beta1/${generatedProto.version}/apidocs/</link>
+                  <link>http://googleapis.github.io/googleapis/java/grpc-google-cloud-trace-v1/${generatedProto.version}/apidocs/</link>
+                  <link>http://googleapis.github.io/googleapis/java/grpc-google-cloud-vision-v1/${generatedProto.version}/apidocs/</link>
+                </links>
               </configuration>
             </plugin>
             <plugin>
@@ -483,6 +505,11 @@
                 </goals>
               </execution>
             </executions>
+            <configuration>
+              <links>
+                <link>http://google.github.io/google-auth-library-java/releases/${google.auth.version}/apidocs/</link>
+              </links>
+            </configuration>
           </plugin>
         </plugins>
       </build>

@@ -52,7 +52,7 @@ public abstract class BaseDatastoreBatchWriter implements DatastoreBatchWriter {
   public final void addWithDeferredIdAllocation(FullEntity<?>... entities) {
     validateActive();
     for (FullEntity<?> entity : entities) {
-      IncompleteKey key = entity.key();
+      IncompleteKey key = entity.getKey();
       Preconditions.checkArgument(key != null, "Entity must have a key");
       if (key instanceof Key) {
         addInternal((FullEntity<Key>) entity);
@@ -63,10 +63,10 @@ public abstract class BaseDatastoreBatchWriter implements DatastoreBatchWriter {
   }
 
   private void addInternal(FullEntity<Key> entity) {
-    Key key = entity.key();
+    Key key = entity.getKey();
     if (toAdd.containsKey(key) || toUpdate.containsKey(key) || toPut.containsKey(key)) {
       throw newInvalidRequest("Entity with the key %s was already added or updated in this %s",
-          entity.key(), name);
+          entity.getKey(), name);
     }
     if (toDelete.remove(key)) {
       toPut.put(key, entity);
@@ -86,7 +86,7 @@ public abstract class BaseDatastoreBatchWriter implements DatastoreBatchWriter {
     validateActive();
     List<IncompleteKey> incompleteKeys = Lists.newArrayListWithExpectedSize(entities.length);
     for (FullEntity<?> entity : entities) {
-      IncompleteKey key = entity.key();
+      IncompleteKey key = entity.getKey();
       Preconditions.checkArgument(key != null, "Entity must have a key");
       if (!(key instanceof Key)) {
         incompleteKeys.add(key);
@@ -95,17 +95,17 @@ public abstract class BaseDatastoreBatchWriter implements DatastoreBatchWriter {
     Iterator<Key> allocated;
     if (!incompleteKeys.isEmpty()) {
       IncompleteKey[] toAllocate = Iterables.toArray(incompleteKeys, IncompleteKey.class);
-      allocated = datastore().allocateId(toAllocate).iterator();
+      allocated = getDatastore().allocateId(toAllocate).iterator();
     } else {
       allocated = Collections.emptyIterator();
     }
     List<Entity> answer = Lists.newArrayListWithExpectedSize(entities.length);
     for (FullEntity<?> entity : entities) {
-      if (entity.key() instanceof Key) {
+      if (entity.getKey() instanceof Key) {
         addInternal((FullEntity<Key>) entity);
         answer.add(Entity.convert((FullEntity<Key>) entity));
       } else {
-        Entity entityWithAllocatedId = Entity.builder(allocated.next(), entity).build();
+        Entity entityWithAllocatedId = Entity.newBuilder(allocated.next(), entity).build();
         addInternal(entityWithAllocatedId);
         answer.add(entityWithAllocatedId);
       }
@@ -118,10 +118,10 @@ public abstract class BaseDatastoreBatchWriter implements DatastoreBatchWriter {
   public final void update(Entity... entities) {
     validateActive();
     for (Entity entity : entities) {
-      Key key = entity.key();
+      Key key = entity.getKey();
       if (toDelete.contains(key)) {
         throw newInvalidRequest("Entity with the key %s was already deleted in this %s",
-            entity.key(), name);
+            entity.getKey(), name);
       }
       if (toAdd.remove(key) != null || toPut.containsKey(key)) {
         toPut.put(key, entity);
@@ -132,7 +132,7 @@ public abstract class BaseDatastoreBatchWriter implements DatastoreBatchWriter {
   }
 
   private void putInternal(FullEntity<Key> entity) {
-    Key key = entity.key();
+    Key key = entity.getKey();
     toAdd.remove(key);
     toUpdate.remove(key);
     toDelete.remove(key);
@@ -149,7 +149,7 @@ public abstract class BaseDatastoreBatchWriter implements DatastoreBatchWriter {
   public final void putWithDeferredIdAllocation(FullEntity<?>... entities) {
     validateActive();
     for (FullEntity<?> entity : entities) {
-      IncompleteKey key = entity.key();
+      IncompleteKey key = entity.getKey();
       Preconditions.checkArgument(key != null, "Entity must have a key");
       if (key instanceof Key) {
         putInternal(Entity.convert((FullEntity<Key>) entity));
@@ -165,7 +165,7 @@ public abstract class BaseDatastoreBatchWriter implements DatastoreBatchWriter {
     validateActive();
     List<IncompleteKey> incompleteKeys = Lists.newArrayListWithExpectedSize(entities.length);
     for (FullEntity<?> entity : entities) {
-      IncompleteKey key = entity.key();
+      IncompleteKey key = entity.getKey();
       Preconditions.checkArgument(key != null, "Entity must have a key");
       if (!(key instanceof Key)) {
         incompleteKeys.add(key);
@@ -174,17 +174,17 @@ public abstract class BaseDatastoreBatchWriter implements DatastoreBatchWriter {
     Iterator<Key> allocated;
     if (!incompleteKeys.isEmpty()) {
       IncompleteKey[] toAllocate = Iterables.toArray(incompleteKeys, IncompleteKey.class);
-      allocated = datastore().allocateId(toAllocate).iterator();
+      allocated = getDatastore().allocateId(toAllocate).iterator();
     } else {
       allocated = Collections.emptyIterator();
     }
     List<Entity> answer = Lists.newArrayListWithExpectedSize(entities.length);
     for (FullEntity<?> entity : entities) {
-      if (entity.key() instanceof Key) {
+      if (entity.getKey() instanceof Key) {
         putInternal((FullEntity<Key>) entity);
         answer.add(Entity.convert((FullEntity<Key>) entity));
       } else {
-        Entity entityWithAllocatedId = Entity.builder(allocated.next(), entity).build();
+        Entity entityWithAllocatedId = Entity.newBuilder(allocated.next(), entity).build();
         putInternal(entityWithAllocatedId);
         answer.add(entityWithAllocatedId);
       }
@@ -204,11 +204,17 @@ public abstract class BaseDatastoreBatchWriter implements DatastoreBatchWriter {
   }
 
   @Override
+  @Deprecated
   public boolean active() {
+    return isActive();
+  }
+
+  @Override
+  public boolean isActive() {
     return active;
   }
 
-  protected String name() {
+  protected String getName() {
     return name;
   }
 
@@ -270,5 +276,8 @@ public abstract class BaseDatastoreBatchWriter implements DatastoreBatchWriter {
     return mutationsPb;
   }
 
+  @Deprecated
   protected abstract Datastore datastore();
+
+  protected abstract Datastore getDatastore();
 }

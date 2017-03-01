@@ -36,7 +36,7 @@ import java.util.concurrent.TimeoutException;
 public class CreateInstance {
 
   public static void main(String... args) throws InterruptedException, TimeoutException {
-    Compute compute = ComputeOptions.defaultInstance().service();
+    Compute compute = ComputeOptions.getDefaultInstance().getService();
     ImageId imageId = ImageId.of("debian-cloud", "debian-8-jessie-v20160329");
     NetworkId networkId = NetworkId.of("default");
     AttachedDisk attachedDisk = AttachedDisk.of(AttachedDisk.CreateDiskConfiguration.of(imageId));
@@ -46,7 +46,7 @@ public class CreateInstance {
     Operation operation =
         compute.create(InstanceInfo.of(instanceId, machineTypeId, attachedDisk, networkInterface));
     operation = operation.waitFor();
-    if (operation.errors() == null) {
+    if (operation.getErrors() == null) {
       // use instance
       Instance instance = compute.getInstance(instanceId);
     }

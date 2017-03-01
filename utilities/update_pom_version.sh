@@ -8,20 +8,37 @@
 # x.y.z+1-SNAPSHOT if the current version is x.y.z OR to x.y.z if the
 # current version is x.y.z-SNAPSHOT.
 
+set -e
+
 # Get the previous maven project version.
 CURRENT_VERSION=$(mvn org.apache.maven.plugins:maven-help-plugin:2.1.1:evaluate -Dexpression=project.version | grep -Ev '(^\[|\w+:)')
+CURRENT_VERSION_BASE=$(mvn org.apache.maven.plugins:maven-help-plugin:2.1.1:evaluate -Dexpression=project.version | grep -Ev '(^\[|\w+:)' | grep -Eo '[0-9]+\.[0-9]+\.[0-9]+')
+
 # Get list of directories for which pom.xml must be updated
 module_folders=($(find . -maxdepth 2 -type d | sed -E -n "/^\.\/(google-cloud-contrib\/)?google-cloud(-[a-z]+)+$/p") . ./google-cloud)
-if [ $# -eq 1 ]; then
-    NEW_VERSION=$1
-elif [ "${CURRENT_VERSION##*-}" != "SNAPSHOT" ]; then
-    NEW_VERSION="${CURRENT_VERSION%.*}.$((${CURRENT_VERSION##*.}+1))-SNAPSHOT"
-else
-    NEW_VERSION=${CURRENT_VERSION%%-*}
+
+CURRENT_SNAPSHOT=""
+if [ "${CURRENT_VERSION##*-}" == "SNAPSHOT" ]; then
+    CURRENT_SNAPSHOT="-SNAPSHOT"
 fi
 
-echo "Changing version from $CURRENT_VERSION to $NEW_VERSION in pom.xml files"
+NEW_SNAPSHOT=""
+if [ $# -eq 1 ]; then
+    NEW_VERSION_BASE=$1
+    if [ "${NEW_VERSION_BASE##*-}" == "SNAPSHOT" ]; then
+        NEW_SNAPSHOT="-SNAPSHOT"
+    fi
+elif [ "${CURRENT_VERSION##*-}" != "SNAPSHOT" ]; then
+    NEW_VERSION_BASE="${CURRENT_VERSION%.*}.$((${CURRENT_VERSION##*.}+1))"
+    NEW_SNAPSHOT="-SNAPSHOT"
+else
+    NEW_VERSION_BASE=${CURRENT_VERSION%%-*}
+fi
+
+echo "Changing version from ${CURRENT_VERSION_BASE}-*${CURRENT_SNAPSHOT} to ${NEW_VERSION_BASE}-*${NEW_SNAPSHOT} in pom.xml files"
 for item in ${module_folders[*]}
 do
-    sed -i "0,/<version>$CURRENT_VERSION/s/<version>$CURRENT_VERSION/<version>$NEW_VERSION/" ${item}/pom.xml
+    sed -ri "0,/<version>$CURRENT_VERSION_BASE/s/<version>${CURRENT_VERSION_BASE}(-[a-z]+)?[^<]*/<version>${NEW_VERSION_BASE}\1${NEW_SNAPSHOT}/" ${item}/pom.xml
 done
+sed -ri "0,/<core.version>$CURRENT_VERSION_BASE/s/<core.version>${CURRENT_VERSION_BASE}(-[a-z]+)?[^<]*/<core.version>${NEW_VERSION_BASE}\1${NEW_SNAPSHOT}/" pom.xml
+sed -ri "0,/<beta.version>$CURRENT_VERSION_BASE/s/<beta.version>${CURRENT_VERSION_BASE}(-[a-z]+)?[^<]*/<beta.version>${NEW_VERSION_BASE}\1${NEW_SNAPSHOT}/" pom.xml

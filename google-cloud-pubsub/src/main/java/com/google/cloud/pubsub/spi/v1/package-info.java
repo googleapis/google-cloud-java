@@ -1,53 +1,59 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2017, Google Inc. All rights reserved.
  *
- * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
- * in compliance with the License. You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- * http://www.apache.org/licenses/LICENSE-2.0
+ *     http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing, software distributed under the License
- * is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
- * or implied. See the License for the specific language governing permissions and limitations under
- * the License.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
 
 /**
  * A client to Google Cloud Pub/Sub API.
  *
- * <p>The interfaces provided are listed below, along with a usage sample
+ * <p>The interfaces provided are listed below, along with usage samples.
  *
- * <p>============ PublisherApi ============
+ * <p>=============== PublisherClient ===============
  *
  * <p>Service Description: The service that an application uses to manipulate topics, and to send
  * messages to a topic.
  *
- * <p>Sample for PublisherApi:
+ * <p>To publish messages to a topic, see the Publisher class.
+ *
+ * <p>Sample for PublisherClient:
  *
  * <pre>
  * <code>
- * try (PublisherApi publisherApi = PublisherApi.create()) {
- *   String formattedName = PublisherApi.formatTopicName("[PROJECT]", "[TOPIC]");
- *   Topic response = publisherApi.createTopic(formattedName);
+ * try (PublisherClient publisherClient = PublisherClient.create()) {
+ *   TopicName name = TopicName.create("[PROJECT]", "[TOPIC]");
+ *   Topic response = publisherClient.createTopic(name);
  * }
  * </code>
  * </pre>
  *
- * ============= SubscriberApi =============
+ * ================ SubscriberClient ================
  *
  * <p>Service Description: The service that an application uses to manipulate subscriptions and to
  * consume messages from a subscription via the `Pull` method.
  *
- * <p>Sample for SubscriberApi:
+ * <p>To retrieve messages from a subscription, see the Subscriber class.
+ *
+ * <p>Sample for SubscriberClient:
  *
  * <pre>
  * <code>
- * try (SubscriberApi subscriberApi = SubscriberApi.create()) {
- *   String formattedName = SubscriberApi.formatSubscriptionName("[PROJECT]", "[SUBSCRIPTION]");
- *   String formattedTopic = SubscriberApi.formatTopicName("[PROJECT]", "[TOPIC]");
+ * try (SubscriberClient subscriberClient = SubscriberClient.create()) {
+ *   SubscriptionName name = SubscriptionName.create("[PROJECT]", "[SUBSCRIPTION]");
+ *   TopicName topic = TopicName.create("[PROJECT]", "[TOPIC]");
  *   PushConfig pushConfig = PushConfig.newBuilder().build();
  *   int ackDeadlineSeconds = 0;
- *   Subscription response = subscriberApi.createSubscription(formattedName, formattedTopic, pushConfig, ackDeadlineSeconds);
+ *   Subscription response = subscriberClient.createSubscription(name, topic, pushConfig, ackDeadlineSeconds);
  * }
  * </code>
  * </pre>

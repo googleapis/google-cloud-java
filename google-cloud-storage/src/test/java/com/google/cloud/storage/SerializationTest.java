@@ -16,8 +16,8 @@
 
 package com.google.cloud.storage;
 
-import com.google.cloud.AuthCredentials;
 import com.google.cloud.BaseSerializationTest;
+import com.google.cloud.NoCredentials;
 import com.google.cloud.PageImpl;
 import com.google.cloud.ReadChannel;
 import com.google.cloud.Restorable;
@@ -31,20 +31,20 @@ import java.util.Map;
 
 public class SerializationTest extends BaseSerializationTest {
 
-  private static final Storage STORAGE = StorageOptions.builder().projectId("p").build().service();
+  private static final Storage STORAGE = StorageOptions.newBuilder().setProjectId("p").build().getService();
   private static final Acl.Domain ACL_DOMAIN = new Acl.Domain("domain");
   private static final Acl.Group ACL_GROUP = new Acl.Group("group");
   private static final Acl.Project ACL_PROJECT_ = new Acl.Project(ProjectRole.VIEWERS, "pid");
   private static final Acl.User ACL_USER = new Acl.User("user");
   private static final Acl.RawEntity ACL_RAW = new Acl.RawEntity("raw");
   private static final Acl ACL = Acl.of(ACL_DOMAIN, Acl.Role.OWNER);
-  private static final BlobInfo BLOB_INFO = BlobInfo.builder("b", "n").build();
+  private static final BlobInfo BLOB_INFO = BlobInfo.newBuilder("b", "n").build();
   private static final BucketInfo BUCKET_INFO = BucketInfo.of("b");
   private static final Blob BLOB = new Blob(STORAGE, new BlobInfo.BuilderImpl(BLOB_INFO));
   private static final Bucket BUCKET = new Bucket(STORAGE, new BucketInfo.BuilderImpl(BUCKET_INFO));
   private static final Cors.Origin ORIGIN = Cors.Origin.any();
   private static final Cors CORS =
-      Cors.builder().maxAgeSeconds(1).origins(Collections.singleton(ORIGIN)).build();
+      Cors.newBuilder().setMaxAgeSeconds(1).setOrigins(Collections.singleton(ORIGIN)).build();
   private static final PageImpl<Blob> PAGE_RESULT =
       new PageImpl<>(null, "c", Collections.singletonList(BLOB));
   private static final StorageException STORAGE_EXCEPTION = new StorageException(42, "message");
@@ -64,14 +64,11 @@ public class SerializationTest extends BaseSerializationTest {
 
   @Override
   protected Serializable[] serializableObjects() {
-    StorageOptions options = StorageOptions.builder()
-        .projectId("p1")
-        .authCredentials(AuthCredentials.createForAppEngine())
+    StorageOptions options = StorageOptions.newBuilder()
+        .setProjectId("p1")
+        .setCredentials(NoCredentials.getInstance())
         .build();
-    StorageOptions otherOptions = options.toBuilder()
-        .projectId("p2")
-        .authCredentials(null)
-        .build();
+    StorageOptions otherOptions = options.toBuilder().setProjectId("p2").build();
     return new Serializable[]{ACL_DOMAIN, ACL_GROUP, ACL_PROJECT_, ACL_USER, ACL_RAW, ACL,
         BLOB_INFO, BLOB, BUCKET_INFO, BUCKET, ORIGIN, CORS, PAGE_RESULT, BLOB_LIST_OPTIONS,
         BLOB_SOURCE_OPTIONS, BLOB_TARGET_OPTIONS, BUCKET_LIST_OPTIONS, BUCKET_SOURCE_OPTIONS,
@@ -80,13 +77,13 @@ public class SerializationTest extends BaseSerializationTest {
 
   @Override
   protected Restorable<?>[] restorableObjects() {
-    StorageOptions options = StorageOptions.builder().projectId("p2").build();
+    StorageOptions options = StorageOptions.newBuilder().setProjectId("p2").build();
     ReadChannel reader =
         new BlobReadChannel(options, BlobId.of("b", "n"), EMPTY_RPC_OPTIONS);
     // avoid closing when you don't want partial writes to GCS upon failure
     @SuppressWarnings("resource")
-    BlobWriteChannel writer =
-        new BlobWriteChannel(options, BlobInfo.builder(BlobId.of("b", "n")).build(), "upload-id");
+    BlobWriteChannel writer = new BlobWriteChannel(options,
+        BlobInfo.newBuilder(BlobId.of("b", "n")).build(), "upload-id");
     return new Restorable<?>[]{reader, writer};
   }
 }

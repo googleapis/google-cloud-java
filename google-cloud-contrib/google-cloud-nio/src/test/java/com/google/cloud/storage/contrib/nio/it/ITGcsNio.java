@@ -98,8 +98,8 @@ public class ITGcsNio {
   public static void beforeClass() throws IOException {
     // loads the credentials from local disk as par README
     RemoteStorageHelper gcsHelper = RemoteStorageHelper.create();
-    storageOptions = gcsHelper.options();
-    storage = storageOptions.service();
+    storageOptions = gcsHelper.getOptions();
+    storage = storageOptions.getService();
     // create and populate test bucket
     storage.create(BucketInfo.of(BUCKET));
     fillFile(storage, SML_FILE, SML_SIZE);
@@ -121,7 +121,7 @@ public class ITGcsNio {
   }
 
   private static void fillFile(Storage storage, String fname, int size) throws IOException {
-    storage.create(BlobInfo.builder(BUCKET, fname).build(), randomContents(size));
+    storage.create(BlobInfo.newBuilder(BUCKET, fname).build(), randomContents(size));
   }
 
   @Test
@@ -347,6 +347,13 @@ public class ITGcsNio {
       }
 
       List<Path> got = new ArrayList<>();
+      for (Path path : Files.newDirectoryStream(fs.getPath("/dir/"))) {
+        got.add(path);
+      }
+      assertThat(got).containsExactlyElementsIn(goodPaths);
+
+      // Must also work with relative path
+      got.clear();
       for (Path path : Files.newDirectoryStream(fs.getPath("dir/"))) {
         got.add(path);
       }

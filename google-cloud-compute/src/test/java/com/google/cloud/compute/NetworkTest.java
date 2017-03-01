@@ -58,28 +58,28 @@ public class NetworkTest {
   private Network subnetNetwork;
 
   private void initializeExpectedNetwork(int optionsCalls) {
-    expect(serviceMockReturnsOptions.options()).andReturn(mockOptions).times(optionsCalls);
+    expect(serviceMockReturnsOptions.getOptions()).andReturn(mockOptions).times(optionsCalls);
     replay(serviceMockReturnsOptions);
     standardNetwork =
         new Network.Builder(serviceMockReturnsOptions, NETWORK_ID, NETWORK_CONFIGURATION)
-            .generatedId(GENERATED_ID)
-            .creationTimestamp(CREATION_TIMESTAMP)
-            .description(DESCRIPTION)
+            .setGeneratedId(GENERATED_ID)
+            .setCreationTimestamp(CREATION_TIMESTAMP)
+            .setDescription(DESCRIPTION)
             .build();
     subnetNetwork =
         new Network.Builder(serviceMockReturnsOptions, NETWORK_ID, SUBNET_NETWORK_CONFIGURATION)
-            .generatedId(GENERATED_ID)
-            .creationTimestamp(CREATION_TIMESTAMP)
-            .description(DESCRIPTION)
+            .setGeneratedId(GENERATED_ID)
+            .setCreationTimestamp(CREATION_TIMESTAMP)
+            .setDescription(DESCRIPTION)
             .build();
     compute = createStrictMock(Compute.class);
   }
 
   private void initializeNetwork() {
     network = new Network.Builder(compute, NETWORK_ID, NETWORK_CONFIGURATION)
-        .generatedId(GENERATED_ID)
-        .creationTimestamp(CREATION_TIMESTAMP)
-        .description(DESCRIPTION)
+        .setGeneratedId(GENERATED_ID)
+        .setCreationTimestamp(CREATION_TIMESTAMP)
+        .setDescription(DESCRIPTION)
         .build();
   }
 
@@ -87,9 +87,9 @@ public class NetworkTest {
   public void testToBuilder() {
     initializeExpectedNetwork(9);
     compareNetwork(standardNetwork, standardNetwork.toBuilder().build());
-    Network newNetwork = standardNetwork.toBuilder().description("newDescription").build();
-    assertEquals("newDescription", newNetwork.description());
-    newNetwork = newNetwork.toBuilder().description("description").build();
+    Network newNetwork = standardNetwork.toBuilder().setDescription("newDescription").build();
+    assertEquals("newDescription", newNetwork.getDescription());
+    newNetwork = newNetwork.toBuilder().setDescription("description").build();
     compareNetwork(standardNetwork, newNetwork);
   }
 
@@ -104,6 +104,23 @@ public class NetworkTest {
 
   @Test
   public void testBuilder() {
+    initializeExpectedNetwork(2);
+    assertEquals(GENERATED_ID, standardNetwork.getGeneratedId());
+    assertEquals(NETWORK_ID, standardNetwork.getNetworkId());
+    assertEquals(CREATION_TIMESTAMP, standardNetwork.getCreationTimestamp());
+    assertEquals(DESCRIPTION, standardNetwork.getDescription());
+    assertEquals(NETWORK_CONFIGURATION, standardNetwork.getConfiguration());
+    assertSame(serviceMockReturnsOptions, standardNetwork.getCompute());
+    assertEquals(GENERATED_ID, subnetNetwork.getGeneratedId());
+    assertEquals(NETWORK_ID, subnetNetwork.getNetworkId());
+    assertEquals(CREATION_TIMESTAMP, subnetNetwork.getCreationTimestamp());
+    assertEquals(DESCRIPTION, subnetNetwork.getDescription());
+    assertEquals(SUBNET_NETWORK_CONFIGURATION, subnetNetwork.getConfiguration());
+    assertSame(serviceMockReturnsOptions, subnetNetwork.getCompute());
+  }
+
+  @Test
+  public void testBuilderDeprecated() {
     initializeExpectedNetwork(2);
     assertEquals(GENERATED_ID, standardNetwork.generatedId());
     assertEquals(NETWORK_ID, standardNetwork.networkId());
@@ -134,11 +151,11 @@ public class NetworkTest {
   @Test
   public void testDeleteOperation() {
     initializeExpectedNetwork(3);
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     Operation operation = new Operation.Builder(serviceMockReturnsOptions)
-        .operationId(GlobalOperationId.of("project", "op"))
+        .setOperationId(GlobalOperationId.of("project", "op"))
         .build();
-    expect(compute.deleteNetwork(NETWORK_ID.network())).andReturn(operation);
+    expect(compute.deleteNetwork(NETWORK_ID.getNetwork())).andReturn(operation);
     replay(compute);
     initializeNetwork();
     assertSame(operation, network.delete());
@@ -147,8 +164,8 @@ public class NetworkTest {
   @Test
   public void testDeleteNull() {
     initializeExpectedNetwork(2);
-    expect(compute.options()).andReturn(mockOptions);
-    expect(compute.deleteNetwork(NETWORK_ID.network())).andReturn(null);
+    expect(compute.getOptions()).andReturn(mockOptions);
+    expect(compute.deleteNetwork(NETWORK_ID.getNetwork())).andReturn(null);
     replay(compute);
     initializeNetwork();
     assertNull(network.delete());
@@ -158,8 +175,8 @@ public class NetworkTest {
   public void testExists_True() throws Exception {
     initializeExpectedNetwork(2);
     Compute.NetworkOption[] expectedOptions = {Compute.NetworkOption.fields()};
-    expect(compute.options()).andReturn(mockOptions);
-    expect(compute.getNetwork(NETWORK_ID.network(), expectedOptions))
+    expect(compute.getOptions()).andReturn(mockOptions);
+    expect(compute.getNetwork(NETWORK_ID.getNetwork(), expectedOptions))
         .andReturn(standardNetwork);
     replay(compute);
     initializeNetwork();
@@ -171,8 +188,8 @@ public class NetworkTest {
   public void testExists_False() throws Exception {
     initializeExpectedNetwork(2);
     Compute.NetworkOption[] expectedOptions = {Compute.NetworkOption.fields()};
-    expect(compute.options()).andReturn(mockOptions);
-    expect(compute.getNetwork(NETWORK_ID.network(), expectedOptions)).andReturn(null);
+    expect(compute.getOptions()).andReturn(mockOptions);
+    expect(compute.getNetwork(NETWORK_ID.getNetwork(), expectedOptions)).andReturn(null);
     replay(compute);
     initializeNetwork();
     assertFalse(network.exists());
@@ -182,8 +199,8 @@ public class NetworkTest {
   @Test
   public void testReload() throws Exception {
     initializeExpectedNetwork(4);
-    expect(compute.options()).andReturn(mockOptions);
-    expect(compute.getNetwork(NETWORK_ID.network())).andReturn(standardNetwork);
+    expect(compute.getOptions()).andReturn(mockOptions);
+    expect(compute.getNetwork(NETWORK_ID.getNetwork())).andReturn(standardNetwork);
     replay(compute);
     initializeNetwork();
     Network updatedNetwork = network.reload();
@@ -194,8 +211,8 @@ public class NetworkTest {
   @Test
   public void testReloadNull() throws Exception {
     initializeExpectedNetwork(2);
-    expect(compute.options()).andReturn(mockOptions);
-    expect(compute.getNetwork(NETWORK_ID.network())).andReturn(null);
+    expect(compute.getOptions()).andReturn(mockOptions);
+    expect(compute.getNetwork(NETWORK_ID.getNetwork())).andReturn(null);
     replay(compute);
     initializeNetwork();
     assertNull(network.reload());
@@ -205,8 +222,8 @@ public class NetworkTest {
   @Test
   public void testReloadWithOptions() throws Exception {
     initializeExpectedNetwork(4);
-    expect(compute.options()).andReturn(mockOptions);
-    expect(compute.getNetwork(NETWORK_ID.network(), Compute.NetworkOption.fields()))
+    expect(compute.getOptions()).andReturn(mockOptions);
+    expect(compute.getNetwork(NETWORK_ID.getNetwork(), Compute.NetworkOption.fields()))
         .andReturn(standardNetwork);
     replay(compute);
     initializeNetwork();
@@ -219,9 +236,9 @@ public class NetworkTest {
   public void testCreateSubnetwork() throws Exception {
     initializeExpectedNetwork(3);
     Operation operation = new Operation.Builder(serviceMockReturnsOptions)
-        .operationId(RegionOperationId.of(SUBNETWORK1.regionId(), "op"))
+        .setOperationId(RegionOperationId.of(SUBNETWORK1.getRegionId(), "op"))
         .build();
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     expect(compute.create(SubnetworkInfo.of(SUBNETWORK1, NETWORK_ID, IP_RANGE)))
         .andReturn(operation);
     replay(compute);
@@ -234,9 +251,9 @@ public class NetworkTest {
   public void testCreateSubnetworkWithOptions() throws Exception {
     initializeExpectedNetwork(3);
     Operation operation = new Operation.Builder(serviceMockReturnsOptions)
-        .operationId(RegionOperationId.of(SUBNETWORK1.regionId(), "op"))
+        .setOperationId(RegionOperationId.of(SUBNETWORK1.getRegionId(), "op"))
         .build();
-    expect(compute.options()).andReturn(mockOptions);
+    expect(compute.getOptions()).andReturn(mockOptions);
     expect(compute.create(SubnetworkInfo.of(SUBNETWORK1, NETWORK_ID, IP_RANGE),
         Compute.OperationOption.fields())).andReturn(operation);
     replay(compute);
@@ -248,12 +265,12 @@ public class NetworkTest {
 
   public void compareNetwork(Network expected, Network value) {
     assertEquals(expected, value);
-    assertEquals(expected.compute().options(), value.compute().options());
-    assertEquals(expected.generatedId(), value.generatedId());
-    assertEquals(expected.networkId(), value.networkId());
-    assertEquals(expected.creationTimestamp(), value.creationTimestamp());
-    assertEquals(expected.description(), value.description());
-    assertEquals(expected.configuration(), value.configuration());
+    assertEquals(expected.getCompute().getOptions(), value.getCompute().getOptions());
+    assertEquals(expected.getGeneratedId(), value.getGeneratedId());
+    assertEquals(expected.getNetworkId(), value.getNetworkId());
+    assertEquals(expected.getCreationTimestamp(), value.getCreationTimestamp());
+    assertEquals(expected.getDescription(), value.getDescription());
+    assertEquals(expected.getConfiguration(), value.getConfiguration());
     assertEquals(expected.hashCode(), value.hashCode());
   }
 }

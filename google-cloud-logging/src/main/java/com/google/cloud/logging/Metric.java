@@ -58,20 +58,38 @@ public class Metric extends MetricInfo {
     }
 
     @Override
+    @Deprecated
     public Builder name(String name) {
-      delegate.name(name);
+      return setName(name);
+    }
+
+    @Override
+    public Builder setName(String name) {
+      delegate.setName(name);
       return this;
     }
 
     @Override
+    @Deprecated
     public Builder description(String description) {
-      delegate.description(description);
+      return setDescription(description);
+    }
+
+    @Override
+    public Builder setDescription(String description) {
+      delegate.setDescription(description);
       return this;
     }
 
     @Override
+    @Deprecated
     public Builder filter(String filter) {
-      delegate.filter(filter);
+      return setFilter(filter);
+    }
+
+    @Override
+    public Builder setFilter(String filter) {
+      delegate.setFilter(filter);
       return this;
     }
 
@@ -84,7 +102,7 @@ public class Metric extends MetricInfo {
   Metric(Logging logging, BuilderImpl builder) {
     super(builder);
     this.logging = checkNotNull(logging);
-    options = logging.options();
+    options = logging.getOptions();
   }
 
   @Override
@@ -112,7 +130,15 @@ public class Metric extends MetricInfo {
   /**
    * Returns the metrics's {@code Logging} object used to issue requests.
    */
+  @Deprecated
   public Logging logging() {
+    return getLogging();
+  }
+
+  /**
+   * Returns the metrics's {@code Logging} object used to issue requests.
+   */
+  public Logging getLogging() {
     return logging;
   }
 
@@ -133,7 +159,7 @@ public class Metric extends MetricInfo {
    * @throws LoggingException upon failure
    */
   public boolean delete() {
-    return logging.deleteMetric(name());
+    return logging.deleteMetric(getName());
   }
 
   /**
@@ -156,7 +182,7 @@ public class Metric extends MetricInfo {
    * @throws LoggingException upon failure
    */
   public Future<Boolean> deleteAsync() {
-    return logging.deleteMetricAsync(name());
+    return logging.deleteMetricAsync(getName());
   }
 
   /**
@@ -174,7 +200,7 @@ public class Metric extends MetricInfo {
    * @throws LoggingException upon failure
    */
   public Metric reload() {
-    return logging.getMetric(name());
+    return logging.getMetric(getName());
   }
 
   /**
@@ -195,7 +221,7 @@ public class Metric extends MetricInfo {
    * @throws LoggingException upon failure
    */
   public Future<Metric> reloadAsync() {
-    return logging.getMetricAsync(name());
+    return logging.getMetricAsync(getName());
   }
 
   /**
@@ -204,7 +230,7 @@ public class Metric extends MetricInfo {
    * <p>Example of updating the metric's information.
    * <pre> {@code
    * Metric updatedMetric = metric.toBuilder()
-   *     .description("A more detailed description")
+   *     .setDescription("A more detailed description")
    *     .build()
    *     .update();
    * }</pre>
@@ -224,7 +250,7 @@ public class Metric extends MetricInfo {
    * <p>Example of asynchronously updating the metric's information.
    * <pre> {@code
    * Future<Metric> future = metric.toBuilder()
-   *     .description("A more detailed description")
+   *     .setDescription("A more detailed description")
    *     .build()
    *     .updateAsync();
    * // ...
@@ -239,7 +265,7 @@ public class Metric extends MetricInfo {
 
   private void readObject(ObjectInputStream input) throws IOException, ClassNotFoundException {
     input.defaultReadObject();
-    this.logging = options.service();
+    this.logging = options.getService();
   }
 
   static Metric fromPb(Logging logging, LogMetric metricPb) {

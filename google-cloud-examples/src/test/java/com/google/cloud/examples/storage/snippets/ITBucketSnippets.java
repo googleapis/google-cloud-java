@@ -66,7 +66,7 @@ public class ITBucketSnippets {
   @BeforeClass
   public static void beforeClass() {
     RemoteStorageHelper helper = RemoteStorageHelper.create();
-    storage = helper.options().service();
+    storage = helper.getOptions().getService();
     bucketSnippets = new BucketSnippets(storage.create(BucketInfo.of(BUCKET)));
   }
 
@@ -104,19 +104,19 @@ public class ITBucketSnippets {
     assertTrue(blobSet.contains(blob2));
     assertTrue(blobSet.contains(blob3));
     assertTrue(blobSet.contains(blob4));
-    blob1 = bucketSnippets.getBlob(BLOB1, blob1.generation());
-    assertEquals(BLOB1, blob1.name());
+    blob1 = bucketSnippets.getBlob(BLOB1, blob1.getGeneration());
+    assertEquals(BLOB1, blob1.getName());
     List<Blob> blobs = bucketSnippets.getBlobFromStrings(BLOB2, BLOB3);
-    assertEquals(BLOB2, blobs.get(0).name());
-    assertEquals(BLOB3, blobs.get(1).name());
+    assertEquals(BLOB2, blobs.get(0).getName());
+    assertEquals(BLOB3, blobs.get(1).getName());
     blobs = bucketSnippets.getBlobFromStringIterable(BLOB3, BLOB4);
-    assertEquals(BLOB3, blobs.get(0).name());
-    assertEquals(BLOB4, blobs.get(1).name());
+    assertEquals(BLOB3, blobs.get(0).getName());
+    assertEquals(BLOB4, blobs.get(1).getName());
     // test ACLs
     assertNull(bucketSnippets.getAcl());
     assertNotNull(bucketSnippets.createAcl());
     Acl updatedAcl = bucketSnippets.updateAcl();
-    assertEquals(Role.OWNER, updatedAcl.role());
+    assertEquals(Role.OWNER, updatedAcl.getRole());
     Set<Acl> acls = Sets.newHashSet(bucketSnippets.listAcls());
     assertTrue(acls.contains(updatedAcl));
     assertTrue(bucketSnippets.deleteAcl());
@@ -125,7 +125,7 @@ public class ITBucketSnippets {
     assertNull(bucketSnippets.getDefaultAcl());
     assertNotNull(bucketSnippets.createDefaultAcl());
     updatedAcl = bucketSnippets.updateDefaultAcl();
-    assertEquals(Role.OWNER, updatedAcl.role());
+    assertEquals(Role.OWNER, updatedAcl.getRole());
     acls = Sets.newHashSet(bucketSnippets.listDefaultAcls());
     assertTrue(acls.contains(updatedAcl));
     assertTrue(bucketSnippets.deleteDefaultAcl());

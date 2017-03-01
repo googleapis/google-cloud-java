@@ -16,7 +16,7 @@
 
 package com.google.cloud.logging.testing;
 
-import com.google.cloud.AuthCredentials;
+import com.google.auth.oauth2.ServiceAccountCredentials;
 import com.google.cloud.RetryParams;
 import com.google.cloud.logging.LoggingOptions;
 
@@ -28,12 +28,13 @@ import java.util.logging.Logger;
 
 /**
  * Utility to create a remote logging configuration for testing. Logging options can be obtained via
- * the {@link #options()} method. Returned options have custom {@link LoggingOptions#retryParams()}:
- * {@link RetryParams#maxRetryDelayMillis()} is {@code 30000},
- * {@link RetryParams#totalRetryPeriodMillis()} is {@code 120000} and
- * {@link RetryParams#initialRetryDelayMillis()} is {@code 250}.
- * {@link LoggingOptions#initialTimeout()} is set to 60000, {@link LoggingOptions#maxTimeout()} is
- * set to {@code 240000} and {@link LoggingOptions#timeoutMultiplier()} is set to {@code 1.5}.
+ * the {@link #getOptions()} method. Returned options have custom
+ * {@link LoggingOptions#getRetryParams()}: {@link RetryParams#getMaxRetryDelayMillis()} is
+ * {@code 30000}, {@link RetryParams#getTotalRetryPeriodMillis()} is {@code 120000} and
+ * {@link RetryParams#getInitialRetryDelayMillis()} is {@code 250}.
+ * {@link LoggingOptions#getInitialTimeout()} is set to 60000,
+ * {@link LoggingOptions#getMaxTimeout()} is set to {@code 240000} and
+ * {@link LoggingOptions#getTimeoutMultiplier()} is set to {@code 1.5}.
  */
 public class RemoteLoggingHelper {
 
@@ -47,7 +48,15 @@ public class RemoteLoggingHelper {
   /**
    * Returns a {@link LoggingOptions} object to be used for testing.
    */
+  @Deprecated
   public LoggingOptions options() {
+    return getOptions();
+  }
+
+  /**
+   * Returns a {@link LoggingOptions} object to be used for testing.
+   */
+  public LoggingOptions getOptions() {
     return options;
   }
 
@@ -64,13 +73,13 @@ public class RemoteLoggingHelper {
   public static RemoteLoggingHelper create(String projectId, InputStream keyStream)
       throws LoggingHelperException {
     try {
-      LoggingOptions storageOptions = LoggingOptions.builder()
-          .authCredentials(AuthCredentials.createForJson(keyStream))
-          .projectId(projectId)
-          .retryParams(retryParams())
-          .initialTimeout(60000)
-          .maxTimeout(120000)
-          .timeoutMultiplier(1.5)
+      LoggingOptions storageOptions = LoggingOptions.newBuilder()
+          .setCredentials(ServiceAccountCredentials.fromStream(keyStream))
+          .setProjectId(projectId)
+          .setRetryParams(retryParams())
+          .setInitialTimeout(60000)
+          .setMaxTimeout(120000)
+          .setTimeoutMultiplier(1.5)
           .build();
       return new RemoteLoggingHelper(storageOptions);
     } catch (IOException ex) {
@@ -86,11 +95,11 @@ public class RemoteLoggingHelper {
    * credentials.
    */
   public static RemoteLoggingHelper create() throws LoggingHelperException {
-    LoggingOptions loggingOptions = LoggingOptions.builder()
-        .retryParams(retryParams())
-        .initialTimeout(60000)
-        .maxTimeout(240000)
-        .timeoutMultiplier(1.5)
+    LoggingOptions loggingOptions = LoggingOptions.newBuilder()
+        .setRetryParams(retryParams())
+        .setInitialTimeout(60000)
+        .setMaxTimeout(240000)
+        .setTimeoutMultiplier(1.5)
         .build();
     return new RemoteLoggingHelper(loggingOptions);
   }
@@ -104,10 +113,10 @@ public class RemoteLoggingHelper {
   }
 
   private static RetryParams retryParams() {
-    return RetryParams.builder()
-        .maxRetryDelayMillis(30000)
-        .totalRetryPeriodMillis(120000)
-        .initialRetryDelayMillis(250)
+    return RetryParams.newBuilder()
+        .setMaxRetryDelayMillis(30000)
+        .setTotalRetryPeriodMillis(120000)
+        .setInitialRetryDelayMillis(250)
         .build();
   }
 

@@ -64,7 +64,7 @@ public class ResourceManagerExample {
         }
       }
       Project project =
-          resourceManager.create(ProjectInfo.builder(projectId).labels(labels).build());
+          resourceManager.create(ProjectInfo.newBuilder(projectId).setLabels(labels).build());
       System.out.printf(
           "Successfully created project '%s': %s.%n", projectId, projectDetails(project));
     }
@@ -134,7 +134,7 @@ public class ResourceManagerExample {
     @Override
     public void run(ResourceManager resourceManager, String... args) {
       System.out.println("Projects you can view:");
-      for (ProjectInfo project : resourceManager.list().values()) {
+      for (ProjectInfo project : resourceManager.list().getValues()) {
         System.out.println(projectDetails(project));
       }
     }
@@ -160,15 +160,15 @@ public class ResourceManagerExample {
   private static String projectDetails(ProjectInfo project) {
     return new StringBuilder()
         .append("{projectId:")
-        .append(project.projectId())
+        .append(project.getProjectId())
         .append(", projectNumber:")
-        .append(project.projectNumber())
+        .append(project.getProjectNumber())
         .append(", createTimeMillis:")
-        .append(project.createTimeMillis())
+        .append(project.getCreateTimeMillis())
         .append(", state:")
-        .append(project.state())
+        .append(project.getState())
         .append(", labels:")
-        .append(project.labels())
+        .append(project.getLabels())
         .append("}")
         .toString();
   }
@@ -207,8 +207,8 @@ public class ResourceManagerExample {
 
     // If you want to access a local Resource Manager emulator (after creating and starting the
     // LocalResourceManagerHelper), use the following code instead:
-    // ResourceManager resourceManager = LocalResourceManagerHelper.options().service();
-    ResourceManager resourceManager = ResourceManagerOptions.defaultInstance().service();
+    // ResourceManager resourceManager = LocalResourceManagerHelper.getOptions().getService();
+    ResourceManager resourceManager = ResourceManagerOptions.getDefaultInstance().getService();
     args = args.length > 1 ? Arrays.copyOfRange(args, 1, args.length) : new String[] {};
     if (args.length < action.getRequiredParams().length) {
       StringBuilder usage = new StringBuilder();

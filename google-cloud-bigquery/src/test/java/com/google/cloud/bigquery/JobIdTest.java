@@ -27,6 +27,14 @@ public class JobIdTest {
 
   @Test
   public void testOf() {
+    assertEquals(null, JOB.getProject());
+    assertEquals("job", JOB.getJob());
+    assertEquals("project", JOB_COMPLETE.getProject());
+    assertEquals("job", JOB_COMPLETE.getJob());
+  }
+
+  @Test
+  public void testOfDeprecated() {
     assertEquals(null, JOB.project());
     assertEquals("job", JOB.job());
     assertEquals("project", JOB_COMPLETE.project());
@@ -54,8 +62,8 @@ public class JobIdTest {
     assertEquals(expected, value);
     assertEquals(expected.hashCode(), value.hashCode());
     assertEquals(expected.toString(), value.toString());
-    assertEquals(expected.project(), value.project());
-    assertEquals(expected.job(), value.job());
+    assertEquals(expected.getProject(), value.getProject());
+    assertEquals(expected.getJob(), value.getJob());
     assertEquals(expected.hashCode(), value.hashCode());
   }
 }

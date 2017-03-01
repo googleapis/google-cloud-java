@@ -28,23 +28,30 @@ public class OperationTest {
   private static final String PRODUCER = "producer";
   private static final Boolean FIRST = true;
   private static final Boolean LAST = false;
-  private static final Operation OPERATION = Operation.builder(ID, PRODUCER)
+  private static final Operation OPERATION = Operation.newBuilder(ID, PRODUCER)
+      .setFirst(FIRST)
+      .setLast(LAST)
+      .build();
+  private static final Operation DEPRECATED_OPERATION = Operation.builder(ID, PRODUCER)
       .first(FIRST)
       .last(LAST)
       .build();
 
   @Test
   public void testBuilder() {
-    assertEquals(ID, OPERATION.id());
-    assertEquals(PRODUCER, OPERATION.producer());
+    assertEquals(ID, OPERATION.getId());
+    assertEquals(PRODUCER, OPERATION.getProducer());
     assertTrue(OPERATION.first());
     assertFalse(OPERATION.last());
   }
 
   @Test
-  public void testToBuilder() {
-    compareLogOperation(OPERATION, OPERATION.toBuilder().build());
-    Operation operation = OPERATION.toBuilder()
+  public void testBuilderDeprecated() {
+    assertEquals(ID, DEPRECATED_OPERATION.id());
+    assertEquals(PRODUCER, DEPRECATED_OPERATION.producer());
+    assertTrue(DEPRECATED_OPERATION.first());
+    assertFalse(DEPRECATED_OPERATION.last());
+    Operation operation = DEPRECATED_OPERATION.toBuilder()
         .id("newId")
         .producer("newProducer")
         .first(false)
@@ -54,11 +61,26 @@ public class OperationTest {
     assertEquals("newProducer", operation.producer());
     assertFalse(operation.first());
     assertTrue(operation.last());
+  }
+
+  @Test
+  public void testToBuilder() {
+    compareLogOperation(OPERATION, OPERATION.toBuilder().build());
+    Operation operation = OPERATION.toBuilder()
+        .setId("newId")
+        .setProducer("newProducer")
+        .setFirst(false)
+        .setLast(true)
+        .build();
+    assertEquals("newId", operation.getId());
+    assertEquals("newProducer", operation.getProducer());
+    assertFalse(operation.first());
+    assertTrue(operation.last());
     operation = operation.toBuilder()
-        .id(ID)
-        .producer(PRODUCER)
-        .first(FIRST)
-        .last(LAST)
+        .setId(ID)
+        .setProducer(PRODUCER)
+        .setFirst(FIRST)
+        .setLast(LAST)
         .build();
     compareLogOperation(OPERATION, operation);
   }
@@ -66,8 +88,8 @@ public class OperationTest {
   @Test
   public void testOf() {
     Operation operation = Operation.of(ID, PRODUCER);
-    assertEquals(ID, operation.id());
-    assertEquals(PRODUCER, operation.producer());
+    assertEquals(ID, operation.getId());
+    assertEquals(PRODUCER, operation.getProducer());
     assertFalse(operation.first());
     assertFalse(operation.last());
   }
@@ -81,8 +103,8 @@ public class OperationTest {
 
   private void compareLogOperation(Operation expected, Operation value) {
     assertEquals(expected, value);
-    assertEquals(expected.id(), value.id());
-    assertEquals(expected.producer(), value.producer());
+    assertEquals(expected.getId(), value.getId());
+    assertEquals(expected.getProducer(), value.getProducer());
     assertEquals(expected.first(), value.first());
     assertEquals(expected.last(), value.last());
     assertEquals(expected.hashCode(), value.hashCode());

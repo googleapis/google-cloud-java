@@ -46,17 +46,17 @@ public class CreateAddressDiskAndInstance {
   public static void main(String... args) throws InterruptedException, TimeoutException {
     // Create a service object
     // Credentials are inferred from the environment.
-    Compute compute = ComputeOptions.defaultInstance().service();
+    Compute compute = ComputeOptions.getDefaultInstance().getService();
 
     // Create an external region address
     RegionAddressId addressId = RegionAddressId.of("us-central1", "test-address");
     Operation operation = compute.create(AddressInfo.of(addressId));
     // Wait for operation to complete
     operation = operation.waitFor();
-    if (operation.errors() == null) {
+    if (operation.getErrors() == null) {
       System.out.println("Address " + addressId + " was successfully created");
     } else {
-      // inspect operation.errors()
+      // inspect operation.getErrors()
       throw new RuntimeException("Address creation failed");
     }
 
@@ -68,10 +68,10 @@ public class CreateAddressDiskAndInstance {
     operation = compute.create(disk);
     // Wait for operation to complete
     operation = operation.waitFor();
-    if (operation.errors() == null) {
+    if (operation.getErrors() == null) {
       System.out.println("Disk " + diskId + " was successfully created");
     } else {
-      // inspect operation.errors()
+      // inspect operation.getErrors()
       throw new RuntimeException("Disk creation failed");
     }
 
@@ -80,10 +80,10 @@ public class CreateAddressDiskAndInstance {
     InstanceId instanceId = InstanceId.of("us-central1-a", "test-instance");
     NetworkId networkId = NetworkId.of("default");
     PersistentDiskConfiguration attachConfiguration =
-        PersistentDiskConfiguration.builder(diskId).boot(true).build();
+        PersistentDiskConfiguration.newBuilder(diskId).setBoot(true).build();
     AttachedDisk attachedDisk = AttachedDisk.of("dev0", attachConfiguration);
-    NetworkInterface networkInterface = NetworkInterface.builder(networkId)
-        .accessConfigurations(AccessConfig.of(externalIp.address()))
+    NetworkInterface networkInterface = NetworkInterface.newBuilder(networkId)
+        .setAccessConfigurations(AccessConfig.of(externalIp.getAddress()))
         .build();
     MachineTypeId machineTypeId = MachineTypeId.of("us-central1-a", "n1-standard-1");
     InstanceInfo instance =
@@ -91,10 +91,10 @@ public class CreateAddressDiskAndInstance {
     operation = compute.create(instance);
     // Wait for operation to complete
     operation = operation.waitFor();
-    if (operation.errors() == null) {
+    if (operation.getErrors() == null) {
       System.out.println("Instance " + instanceId + " was successfully created");
     } else {
-      // inspect operation.errors()
+      // inspect operation.getErrors()
       throw new RuntimeException("Instance creation failed");
     }
   }

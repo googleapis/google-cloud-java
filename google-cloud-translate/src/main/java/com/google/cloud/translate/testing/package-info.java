@@ -21,7 +21,7 @@
  * <p>Before the test:
  * <pre> {@code
  * RemoteTranslateHelper helper = RemoteTranslateHelper.create();
- * Translate translate = helper.options().service();
+ * Translate translate = helper.getOptions().getService();
  * } </pre>
  *
  * @see <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/TESTING.md#testing-code-that-uses-translate">

@@ -62,12 +62,20 @@ public class DiskImageConfiguration extends ImageConfiguration {
     /**
      * Sets the identity of the source disk used to create the image.
      */
+    @Deprecated
     public Builder sourceDisk(DiskId sourceDisk) {
+      return setSourceDisk(sourceDisk);
+    }
+
+    /**
+     * Sets the identity of the source disk used to create the image.
+     */
+    public Builder setSourceDisk(DiskId sourceDisk) {
       this.sourceDisk = checkNotNull(sourceDisk);
       return this;
     }
 
-    Builder sourceDiskId(String sourceDiskId) {
+    Builder setSourceDiskId(String sourceDiskId) {
       this.sourceDiskId = sourceDiskId;
       return this;
     }
@@ -90,7 +98,15 @@ public class DiskImageConfiguration extends ImageConfiguration {
   /**
    * Returns the identity of the source disk used to create this image.
    */
+  @Deprecated
   public DiskId sourceDisk() {
+    return getSourceDisk();
+  }
+
+  /**
+   * Returns the identity of the source disk used to create this image.
+   */
+  public DiskId getSourceDisk() {
     return sourceDisk;
   }
 
@@ -99,7 +115,17 @@ public class DiskImageConfiguration extends ImageConfiguration {
    * be used to determine whether the image was taken from the current or a previous instance of a
    * given disk name.
    */
+  @Deprecated
   public String sourceDiskId() {
+    return getSourceDiskId();
+  }
+
+  /**
+   * Returns the service-generated unique id of the disk used to create this image. This value may
+   * be used to determine whether the image was taken from the current or a previous instance of a
+   * given disk name.
+   */
+  public String getSourceDiskId() {
     return sourceDiskId;
   }
 
@@ -130,16 +156,16 @@ public class DiskImageConfiguration extends ImageConfiguration {
 
   @Override
   DiskImageConfiguration setProjectId(String projectId) {
-    if (sourceDisk.project() != null) {
+    if (sourceDisk.getProject() != null) {
       return this;
     }
-    return toBuilder().sourceDisk(sourceDisk.setProjectId(projectId)).build();
+    return toBuilder().setSourceDisk(sourceDisk.setProjectId(projectId)).build();
   }
 
   @Override
   Image toPb() {
     Image imagePb = super.toPb();
-    imagePb.setSourceDisk(sourceDisk.selfLink());
+    imagePb.setSourceDisk(sourceDisk.getSelfLink());
     imagePb.setSourceDiskId(sourceDiskId);
     return imagePb;
   }
@@ -147,15 +173,23 @@ public class DiskImageConfiguration extends ImageConfiguration {
   /**
    * Creates a builder for a {@code DiskImageConfiguration} given the source disk identity.
    */
+  @Deprecated
   public static Builder builder(DiskId sourceDisk) {
-    return new Builder().sourceDisk(sourceDisk);
+    return newBuilder(sourceDisk);
+  }
+
+  /**
+   * Creates a builder for a {@code DiskImageConfiguration} given the source disk identity.
+   */
+  public static Builder newBuilder(DiskId sourceDisk) {
+    return new Builder().setSourceDisk(sourceDisk);
   }
 
   /**
    * Creates a {@code DiskImageConfiguration} object given the source disk identity.
    */
   public static DiskImageConfiguration of(DiskId sourceId) {
-    return builder(sourceId).build();
+    return newBuilder(sourceId).build();
   }
 
   @SuppressWarnings("unchecked")

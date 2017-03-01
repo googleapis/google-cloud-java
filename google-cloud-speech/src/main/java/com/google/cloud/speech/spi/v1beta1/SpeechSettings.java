@@ -1,26 +1,36 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2017, Google Inc. All rights reserved.
  *
- * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
- * in compliance with the License. You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- * http://www.apache.org/licenses/LICENSE-2.0
+ *     http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing, software distributed under the License
- * is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
- * or implied. See the License for the specific language governing permissions and limitations under
- * the License.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
 package com.google.cloud.speech.spi.v1beta1;
 
-import com.google.api.gax.core.ConnectionSettings;
+import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.RetrySettings;
-import com.google.api.gax.grpc.ApiCallSettings;
-import com.google.api.gax.grpc.ServiceApiSettings;
+import com.google.api.gax.grpc.ChannelProvider;
+import com.google.api.gax.grpc.ClientSettings;
+import com.google.api.gax.grpc.ExecutorProvider;
+import com.google.api.gax.grpc.InstantiatingChannelProvider;
+import com.google.api.gax.grpc.InstantiatingExecutorProvider;
+import com.google.api.gax.grpc.OperationCallSettings;
 import com.google.api.gax.grpc.SimpleCallSettings;
-import com.google.auth.Credentials;
+import com.google.api.gax.grpc.StreamingCallSettings;
+import com.google.api.gax.grpc.UnaryCallSettings;
 import com.google.cloud.speech.v1beta1.AsyncRecognizeRequest;
+import com.google.cloud.speech.v1beta1.AsyncRecognizeResponse;
 import com.google.cloud.speech.v1beta1.SpeechGrpc;
+import com.google.cloud.speech.v1beta1.StreamingRecognizeRequest;
+import com.google.cloud.speech.v1beta1.StreamingRecognizeResponse;
 import com.google.cloud.speech.v1beta1.SyncRecognizeRequest;
 import com.google.cloud.speech.v1beta1.SyncRecognizeResponse;
 import com.google.common.collect.ImmutableList;
@@ -28,17 +38,15 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
-import com.google.longrunning.Operation;
-import io.grpc.ManagedChannel;
+import com.google.protobuf.ExperimentalApi;
 import io.grpc.Status;
 import java.io.IOException;
-import java.util.List;
-import java.util.concurrent.ScheduledExecutorService;
+import javax.annotation.Generated;
 import org.joda.time.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 /**
- * Settings class to configure an instance of {@link SpeechApi}.
+ * Settings class to configure an instance of {@link SpeechClient}.
  *
  * <p>The default instance has everything set to sensible defaults:
  *
@@ -62,8 +70,9 @@ import org.joda.time.Duration;
  * </code>
  * </pre>
  */
-@javax.annotation.Generated("by GAPIC")
-public class SpeechSettings extends ServiceApiSettings {
+@Generated("by GAPIC")
+@ExperimentalApi
+public class SpeechSettings extends ClientSettings {
   /** The default address of the service. */
   private static final String DEFAULT_SERVICE_ADDRESS = "speech.googleapis.com";
 
@@ -74,17 +83,15 @@ public class SpeechSettings extends ServiceApiSettings {
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
       ImmutableList.<String>builder().add("https://www.googleapis.com/auth/cloud-platform").build();
 
-  /** The default connection settings of the service. */
-  public static final ConnectionSettings DEFAULT_CONNECTION_SETTINGS =
-      ConnectionSettings.newBuilder()
-          .setServiceAddress(DEFAULT_SERVICE_ADDRESS)
-          .setPort(DEFAULT_SERVICE_PORT)
-          .provideCredentialsWith(DEFAULT_SERVICE_SCOPES)
-          .build();
+  private static final String DEFAULT_GENERATOR_NAME = "gapic";
+  private static final String DEFAULT_GENERATOR_VERSION = "0.0.5";
 
   private final SimpleCallSettings<SyncRecognizeRequest, SyncRecognizeResponse>
       syncRecognizeSettings;
-  private final SimpleCallSettings<AsyncRecognizeRequest, Operation> asyncRecognizeSettings;
+  private final OperationCallSettings<AsyncRecognizeRequest, AsyncRecognizeResponse>
+      asyncRecognizeSettings;
+  private final StreamingCallSettings<StreamingRecognizeRequest, StreamingRecognizeResponse>
+      streamingRecognizeSettings;
 
   /** Returns the object with the settings used for calls to syncRecognize. */
   public SimpleCallSettings<SyncRecognizeRequest, SyncRecognizeResponse> syncRecognizeSettings() {
@@ -92,8 +99,20 @@ public class SpeechSettings extends ServiceApiSettings {
   }
 
   /** Returns the object with the settings used for calls to asyncRecognize. */
-  public SimpleCallSettings<AsyncRecognizeRequest, Operation> asyncRecognizeSettings() {
+  public OperationCallSettings<AsyncRecognizeRequest, AsyncRecognizeResponse>
+      asyncRecognizeSettings() {
     return asyncRecognizeSettings;
+  }
+
+  /** Returns the object with the settings used for calls to streamingRecognize. */
+  public StreamingCallSettings<StreamingRecognizeRequest, StreamingRecognizeResponse>
+      streamingRecognizeSettings() {
+    return streamingRecognizeSettings;
+  }
+
+  /** Returns a builder for the default ExecutorProvider for this service. */
+  public static InstantiatingExecutorProvider.Builder defaultExecutorProviderBuilder() {
+    return InstantiatingExecutorProvider.newBuilder();
   }
 
   /** Returns the default service address. */
@@ -109,6 +128,20 @@ public class SpeechSettings extends ServiceApiSettings {
   /** Returns the default service scopes. */
   public static ImmutableList<String> getDefaultServiceScopes() {
     return DEFAULT_SERVICE_SCOPES;
+  }
+
+  /** Returns a builder for the default credentials for this service. */
+  public static GoogleCredentialsProvider.Builder defaultCredentialsProviderBuilder() {
+    return GoogleCredentialsProvider.newBuilder().setScopesToApply(DEFAULT_SERVICE_SCOPES);
+  }
+
+  /** Returns a builder for the default ChannelProvider for this service. */
+  public static InstantiatingChannelProvider.Builder defaultChannelProviderBuilder() {
+    return InstantiatingChannelProvider.newBuilder()
+        .setServiceAddress(DEFAULT_SERVICE_ADDRESS)
+        .setPort(DEFAULT_SERVICE_PORT)
+        .setGeneratorHeader(DEFAULT_GENERATOR_NAME, DEFAULT_GENERATOR_VERSION)
+        .setCredentialsProvider(defaultCredentialsProviderBuilder().build());
   }
 
   /** Returns a builder for this class with recommended defaults. */
@@ -127,26 +160,24 @@ public class SpeechSettings extends ServiceApiSettings {
   }
 
   private SpeechSettings(Builder settingsBuilder) throws IOException {
-    super(
-        settingsBuilder.getChannelProvider(),
-        settingsBuilder.getExecutorProvider(),
-        settingsBuilder.getGeneratorName(),
-        settingsBuilder.getGeneratorVersion(),
-        settingsBuilder.getClientLibName(),
-        settingsBuilder.getClientLibVersion());
+    super(settingsBuilder.getExecutorProvider(), settingsBuilder.getChannelProvider());
 
     syncRecognizeSettings = settingsBuilder.syncRecognizeSettings().build();
     asyncRecognizeSettings = settingsBuilder.asyncRecognizeSettings().build();
+    streamingRecognizeSettings = settingsBuilder.streamingRecognizeSettings().build();
   }
 
   /** Builder for SpeechSettings. */
-  public static class Builder extends ServiceApiSettings.Builder {
-    private final ImmutableList<ApiCallSettings.Builder> methodSettingsBuilders;
+  public static class Builder extends ClientSettings.Builder {
+    private final ImmutableList<UnaryCallSettings.Builder> unaryMethodSettingsBuilders;
 
     private final SimpleCallSettings.Builder<SyncRecognizeRequest, SyncRecognizeResponse>
         syncRecognizeSettings;
-    private final SimpleCallSettings.Builder<AsyncRecognizeRequest, Operation>
+    private final OperationCallSettings.Builder<AsyncRecognizeRequest, AsyncRecognizeResponse>
         asyncRecognizeSettings;
+    private final StreamingCallSettings.Builder<
+            StreamingRecognizeRequest, StreamingRecognizeResponse>
+        streamingRecognizeSettings;
 
     private static final ImmutableMap<String, ImmutableSet<Status.Code>> RETRYABLE_CODE_DEFINITIONS;
 
@@ -180,14 +211,19 @@ public class SpeechSettings extends ServiceApiSettings {
     }
 
     private Builder() {
-      super(DEFAULT_CONNECTION_SETTINGS);
+      super(defaultChannelProviderBuilder().build());
 
       syncRecognizeSettings = SimpleCallSettings.newBuilder(SpeechGrpc.METHOD_SYNC_RECOGNIZE);
 
-      asyncRecognizeSettings = SimpleCallSettings.newBuilder(SpeechGrpc.METHOD_ASYNC_RECOGNIZE);
+      asyncRecognizeSettings =
+          OperationCallSettings.newBuilder(
+              SpeechGrpc.METHOD_ASYNC_RECOGNIZE, AsyncRecognizeResponse.class);
 
-      methodSettingsBuilders =
-          ImmutableList.<ApiCallSettings.Builder>of(syncRecognizeSettings, asyncRecognizeSettings);
+      streamingRecognizeSettings =
+          StreamingCallSettings.newBuilder(SpeechGrpc.METHOD_STREAMING_RECOGNIZE);
+
+      unaryMethodSettingsBuilders =
+          ImmutableList.<UnaryCallSettings.Builder>of(syncRecognizeSettings);
     }
 
     private static Builder createDefault() {
@@ -197,9 +233,9 @@ public class SpeechSettings extends ServiceApiSettings {
           .syncRecognizeSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettingsBuilder(RETRY_PARAM_DEFINITIONS.get("default"));
-
       builder
           .asyncRecognizeSettings()
+          .getInitialCallSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettingsBuilder(RETRY_PARAM_DEFINITIONS.get("default"));
 
@@ -211,64 +247,33 @@ public class SpeechSettings extends ServiceApiSettings {
 
       syncRecognizeSettings = settings.syncRecognizeSettings.toBuilder();
       asyncRecognizeSettings = settings.asyncRecognizeSettings.toBuilder();
+      streamingRecognizeSettings = settings.streamingRecognizeSettings.toBuilder();
 
-      methodSettingsBuilders =
-          ImmutableList.<ApiCallSettings.Builder>of(syncRecognizeSettings, asyncRecognizeSettings);
+      unaryMethodSettingsBuilders =
+          ImmutableList.<UnaryCallSettings.Builder>of(syncRecognizeSettings);
     }
 
     @Override
-    protected ConnectionSettings getDefaultConnectionSettings() {
-      return DEFAULT_CONNECTION_SETTINGS;
-    }
-
-    @Override
-    public Builder provideExecutorWith(ScheduledExecutorService executor, boolean shouldAutoClose) {
-      super.provideExecutorWith(executor, shouldAutoClose);
+    public Builder setExecutorProvider(ExecutorProvider executorProvider) {
+      super.setExecutorProvider(executorProvider);
       return this;
     }
 
     @Override
-    public Builder provideChannelWith(ManagedChannel channel, boolean shouldAutoClose) {
-      super.provideChannelWith(channel, shouldAutoClose);
-      return this;
-    }
-
-    @Override
-    public Builder provideChannelWith(ConnectionSettings settings) {
-      super.provideChannelWith(settings);
-      return this;
-    }
-
-    @Override
-    public Builder provideChannelWith(Credentials credentials) {
-      super.provideChannelWith(credentials);
-      return this;
-    }
-
-    @Override
-    public Builder provideChannelWith(List<String> scopes) {
-      super.provideChannelWith(scopes);
-      return this;
-    }
-
-    @Override
-    public Builder setGeneratorHeader(String name, String version) {
-      super.setGeneratorHeader(name, version);
-      return this;
-    }
-
-    @Override
-    public Builder setClientLibHeader(String name, String version) {
-      super.setClientLibHeader(name, version);
+    public Builder setChannelProvider(ChannelProvider channelProvider) {
+      super.setChannelProvider(channelProvider);
       return this;
     }
 
     /**
-     * Applies the given settings to all of the API methods in this service. Only values that are
-     * non-null will be applied, so this method is not capable of un-setting any values.
+     * Applies the given settings to all of the unary API methods in this service. Only values that
+     * are non-null will be applied, so this method is not capable of un-setting any values.
+     *
+     * <p>Note: This method does not support applying settings to streaming methods.
      */
-    public Builder applyToAllApiMethods(ApiCallSettings.Builder apiCallSettings) throws Exception {
-      super.applyToAllApiMethods(methodSettingsBuilders, apiCallSettings);
+    public Builder applyToAllUnaryMethods(UnaryCallSettings.Builder unaryCallSettings)
+        throws Exception {
+      super.applyToAllUnaryMethods(unaryMethodSettingsBuilders, unaryCallSettings);
       return this;
     }
 
@@ -279,8 +284,15 @@ public class SpeechSettings extends ServiceApiSettings {
     }
 
     /** Returns the builder for the settings used for calls to asyncRecognize. */
-    public SimpleCallSettings.Builder<AsyncRecognizeRequest, Operation> asyncRecognizeSettings() {
+    public OperationCallSettings.Builder<AsyncRecognizeRequest, AsyncRecognizeResponse>
+        asyncRecognizeSettings() {
       return asyncRecognizeSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to streamingRecognize. */
+    public StreamingCallSettings.Builder<StreamingRecognizeRequest, StreamingRecognizeResponse>
+        streamingRecognizeSettings() {
+      return streamingRecognizeSettings;
     }
 
     @Override

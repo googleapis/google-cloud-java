@@ -65,7 +65,13 @@ public interface BigQuery extends Service<BigQueryOptions> {
     }
 
     @Override
+    @Deprecated
     public String selector() {
+      return getSelector();
+    }
+
+    @Override
+    public String getSelector() {
       return selector;
     }
   }
@@ -106,7 +112,13 @@ public interface BigQuery extends Service<BigQueryOptions> {
     }
 
     @Override
+    @Deprecated
     public String selector() {
+      return getSelector();
+    }
+
+    @Override
+    public String getSelector() {
       return selector;
     }
   }
@@ -137,7 +149,13 @@ public interface BigQuery extends Service<BigQueryOptions> {
     }
 
     @Override
+    @Deprecated
     public String selector() {
+      return getSelector();
+    }
+
+    @Override
+    public String getSelector() {
       return selector;
     }
   }
@@ -443,7 +461,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * <pre> {@code
    * String datasetName = "my_dataset_name";
    * Dataset dataset = null;
-   * DatasetInfo datasetInfo = DatasetInfo.builder(datasetName).build();
+   * DatasetInfo datasetInfo = DatasetInfo.newBuilder(datasetName).build();
    * try {
    *   // the dataset was created
    *   dataset = bigquery.create(datasetInfo);
@@ -470,7 +488,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * // Table schema definition
    * Schema schema = Schema.of(field);
    * TableDefinition tableDefinition = StandardTableDefinition.of(schema);
-   * TableInfo tableInfo = TableInfo.builder(tableId, tableDefinition).build();
+   * TableInfo tableInfo = TableInfo.newBuilder(tableId, tableDefinition).build();
    * Table table = bigquery.create(tableInfo);
    * }</pre>
    *
@@ -659,7 +677,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * String datasetName = "my_dataset_name";
    * String newFriendlyName = "some_new_friendly_name";
    * Dataset oldDataset = bigquery.getDataset(datasetName);
-   * DatasetInfo datasetInfo = oldDataset.toBuilder().friendlyName(newFriendlyName).build();
+   * DatasetInfo datasetInfo = oldDataset.toBuilder().setFriendlyName(newFriendlyName).build();
    * Dataset newDataset = bigquery.update(datasetInfo);
    * }</pre>
    *
@@ -676,7 +694,7 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * String tableName = "my_table_name";
    * String newFriendlyName = "new_friendly_name";
    * Table oldTable = bigquery.getTable(datasetName, tableName);
-   * TableInfo tableInfo = oldTable.toBuilder().friendlyName(newFriendlyName).build();
+   * TableInfo tableInfo = oldTable.toBuilder().setFriendlyName(newFriendlyName).build();
    * Table newTable = bigquery.update(tableInfo);
    * }</pre>
    *
@@ -772,14 +790,18 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * Map<String, Object> rowContent = new HashMap<>();
    * rowContent.put("booleanField", true);
    * // Bytes are passed in base64
-   * rowContent.put("bytesField", "DQ4KDQ==");
-   * InsertAllResponse response = bigquery.insertAll(InsertAllRequest.builder(tableId)
+   * rowContent.put("bytesField", "Cg0NDg0="); // 0xA, 0xD, 0xD, 0xE, 0xD in base64
+   * // Records are passed as a map
+   * Map<String, Object> recordsContent = new HashMap<>();
+   * recordsContent.put("stringField", "Hello, World!");
+   * rowContent.put("recordField", recordsContent);
+   * InsertAllResponse response = bigquery.insertAll(InsertAllRequest.newBuilder(tableId)
    *     .addRow("rowId", rowContent)
    *     // More rows can be added in the same RPC by invoking .addRow() on the builder
    *     .build());
    * if (response.hasErrors()) {
    *   // If any of the insertions failed, this lets you inspect the errors
-   *   for (Entry<Long, List<BigQueryError>> entry : response.insertErrors().entrySet()) {
+   *   for (Entry<Long, List<BigQueryError>> entry : response.getInsertErrors().entrySet()) {
    *     // inspect row error
    *   }
    * }
@@ -937,12 +959,36 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * // Wait for things to finish
    * while (!response.jobCompleted()) {
    *   Thread.sleep(1000);
-   *   response = bigquery.getQueryResults(response.jobId());
+   *   response = bigquery.getQueryResults(response.getJobId());
    * }
    * if (response.hasErrors()) {
    *   // handle errors
    * }
-   * QueryResult result = response.result();
+   * QueryResult result = response.getResult();
+   * Iterator<List<FieldValue>> rowIterator = result.iterateAll();
+   * while (rowIterator.hasNext()) {
+   *   List<FieldValue> row = rowIterator.next();
+   *   // do something with the data
+   * }
+   * }</pre>
+   *
+   * <p>Example of running a query with query parameters.
+   * <pre> {@code
+   * String query = "SELECT distinct(corpus) FROM `bigquery-public-data.samples.shakespeare` where word_count > ?";
+   * QueryRequest request = QueryRequest.newBuilder(query)
+   *     .setUseLegacySql(false) // standard SQL is required to use query parameters
+   *     .addPositionalParameter(QueryParameterValue.int64(5))
+   *     .build();
+   * QueryResponse response = bigquery.query(request);
+   * // Wait for things to finish
+   * while (!response.jobCompleted()) {
+   *   Thread.sleep(1000);
+   *   response = bigquery.getQueryResults(response.getJobId());
+   * }
+   * if (response.hasErrors()) {
+   *   // handle errors
+   * }
+   * QueryResult result = response.getResult();
    * Iterator<List<FieldValue>> rowIterator = result.iterateAll();
    * while (rowIterator.hasNext()) {
    *   List<FieldValue> row = rowIterator.next();
@@ -965,12 +1011,12 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * // Wait for things to finish
    * while (!response.jobCompleted()) {
    *   Thread.sleep(1000);
-   *   response = bigquery.getQueryResults(response.jobId());
+   *   response = bigquery.getQueryResults(response.getJobId());
    * }
    * if (response.hasErrors()) {
    *   // handle errors
    * }
-   * QueryResult result = response.result();
+   * QueryResult result = response.getResult();
    * Iterator<List<FieldValue>> rowIterator = result.iterateAll();
    * while (rowIterator.hasNext()) {
    *   List<FieldValue> row = rowIterator.next();
@@ -993,16 +1039,43 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * String csvData = "StringValue1\nStringValue2\n";
    * TableId tableId = TableId.of(datasetName, tableName);
    * WriteChannelConfiguration writeChannelConfiguration =
-   *     WriteChannelConfiguration.builder(tableId).formatOptions(FormatOptions.csv()).build();
-   * BaseWriteChannel<BigQueryOptions, WriteChannelConfiguration> writer =
-   *     bigquery.writer(writeChannelConfiguration);
+   *     WriteChannelConfiguration.newBuilder(tableId)
+   *         .setFormatOptions(FormatOptions.csv())
+   *         .build();
+   * TableDataWriteChannel writer = bigquery.writer(writeChannelConfiguration);
+   *   // Write data to writer
+   *  try {
+   *     writer.write(ByteBuffer.wrap(csvData.getBytes(Charsets.UTF_8)));
+   *   } finally {
+   *     writer.close();
+   *   }
+   *   // Get load job
+   *   Job job = writer.getJob();
+   *   job = job.waitFor();
+   *   LoadStatistics stats = job.getStatistics();
+   *   return stats.getOutputRows();
+   * }</pre>
+   *
+   * <p>Example of writing a local file to a table.
+   * <pre> {@code
+   * String datasetName = "my_dataset_name";
+   * String tableName = "my_table_name";
+   * Path csvPath = FileSystems.getDefault().getPath(".", "my-data.csv");
+   * TableId tableId = TableId.of(datasetName, tableName);
+   * WriteChannelConfiguration writeChannelConfiguration =
+   *     WriteChannelConfiguration.newBuilder(tableId)
+   *         .setFormatOptions(FormatOptions.csv())
+   *         .build();
+   * TableDataWriteChannel writer = bigquery.writer(writeChannelConfiguration);
    * // Write data to writer
-   * try {
-   *   writer.write(ByteBuffer.wrap(csvData.getBytes(Charsets.UTF_8)));
-   * } catch (IOException e) {
-   *   // Unable to write data
+   * try (OutputStream stream = Channels.newOutputStream(writer)) {
+   *   Files.copy(csvPath, stream);
    * }
-   * writer.close();
+   * // Get load job
+   * Job job = writer.getJob();
+   * job = job.waitFor();
+   * LoadStatistics stats = job.getStatistics();
+   * return stats.getOutputRows();
    * }</pre>
    *
    * @throws BigQueryException upon failure

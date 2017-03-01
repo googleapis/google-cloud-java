@@ -35,8 +35,8 @@ import java.util.Objects;
 /**
  * Google Cloud BigQuery insert all response. Objects of this class possibly contain errors for an
  * {@link InsertAllRequest}. If a row failed to be inserted, the non-empty list of errors associated
- * to that row's index can be obtained with {@link InsertAllResponse#errorsFor(long)}.
- * {@link InsertAllResponse#insertErrors()} can be used to return all errors caused by a
+ * to that row's index can be obtained with {@link InsertAllResponse#getErrorsFor(long)}.
+ * {@link InsertAllResponse#getInsertErrors()} can be used to return all errors caused by a
  * {@link InsertAllRequest} as a map.
  */
 public class InsertAllResponse implements Serializable {
@@ -54,14 +54,31 @@ public class InsertAllResponse implements Serializable {
    * Returns all insertion errors as a map whose keys are indexes of rows that failed to insert.
    * Each failed row index is associated with a non-empty list of {@link BigQueryError}.
    */
+  @Deprecated
   public Map<Long, List<BigQueryError>> insertErrors() {
+    return getInsertErrors();
+  }
+
+  /**
+   * Returns all insertion errors as a map whose keys are indexes of rows that failed to insert.
+   * Each failed row index is associated with a non-empty list of {@link BigQueryError}.
+   */
+  public Map<Long, List<BigQueryError>> getInsertErrors() {
     return insertErrors;
   }
 
   /**
    * Returns errors for the provided row index. If no error exists returns {@code null}.
    */
+  @Deprecated
   public List<BigQueryError> errorsFor(long index) {
+    return getErrorsFor(index);
+  }
+
+  /**
+   * Returns errors for the provided row index. If no error exists returns {@code null}.
+   */
+  public List<BigQueryError> getErrorsFor(long index) {
     return insertErrors.get(index);
   }
 

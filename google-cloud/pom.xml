@@ -11,13 +11,13 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-pom</artifactId>
-    <version>0.4.1-SNAPSHOT</version>
+    <version>0.9.4-alpha-SNAPSHOT</version>
   </parent>
   <dependencies>
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>google-cloud-bigquery</artifactId>
-      <version>${project.version}</version>
+      <version>${beta.version}</version>
     </dependency>
     <dependency>
       <groupId>${project.groupId}</groupId>
@@ -32,7 +32,7 @@
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>google-cloud-datastore</artifactId>
-      <version>${project.version}</version>
+      <version>${beta.version}</version>
     </dependency>
     <dependency>
       <groupId>${project.groupId}</groupId>
@@ -52,7 +52,7 @@
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>google-cloud-logging</artifactId>
-      <version>${project.version}</version>
+      <version>${beta.version}</version>
     </dependency>
     <dependency>
       <groupId>${project.groupId}</groupId>
@@ -77,7 +77,7 @@
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>google-cloud-storage</artifactId>
-      <version>${project.version}</version>
+      <version>${storage.version}</version>
     </dependency>
     <dependency>
       <groupId>${project.groupId}</groupId>

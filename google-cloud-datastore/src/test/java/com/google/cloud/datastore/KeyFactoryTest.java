@@ -29,20 +29,25 @@ public class KeyFactoryTest {
   private static final String PROJECT_ID = "projectid";
 
   private KeyFactory keyFactory;
+  private KeyFactory deprecatedKeyFactory;
 
   @Before
   public void setUp() {
-    keyFactory = new KeyFactory(PROJECT_ID).kind("k");
+    keyFactory = new KeyFactory(PROJECT_ID).setKind("k");
+    deprecatedKeyFactory = new KeyFactory(PROJECT_ID).kind("k");
   }
 
   @Test
   public void testReset() {
-    IncompleteKey key =
-        keyFactory.projectId("ds1").namespace("ns1").ancestors(PathElement.of("p", 1)).build();
-    assertEquals("k", key.kind());
-    assertEquals("ds1", key.projectId());
-    assertEquals("ns1", key.namespace());
-    assertEquals(1, key.ancestors().size());
+    IncompleteKey key = keyFactory
+        .setProjectId("ds1")
+        .setNamespace("ns1")
+        .addAncestor(PathElement.of("p", 1))
+        .build();
+    assertEquals("k", key.getKind());
+    assertEquals("ds1", key.getProjectId());
+    assertEquals("ns1", key.getNamespace());
+    assertEquals(1, key.getAncestors().size());
 
     keyFactory.reset();
     try {
@@ -50,22 +55,61 @@ public class KeyFactoryTest {
     } catch (NullPointerException ex) {
       assertEquals("kind must not be null", ex.getMessage());
     }
-    keyFactory.kind("k1");
+    keyFactory.setKind("k1");
     key = keyFactory.newKey();
+    assertEquals("k1", key.getKind());
+    assertEquals(PROJECT_ID, key.getProjectId());
+    assertTrue(key.getNamespace().isEmpty());
+    assertTrue(key.getAncestors().isEmpty());
+
+    keyFactory = new KeyFactory(PROJECT_ID, "ns1").setKind("k");
+    key = keyFactory.newKey();
+    assertEquals(PROJECT_ID, key.getProjectId());
+    assertEquals("ns1", key.getNamespace());
+    key = keyFactory.setProjectId("bla1").setNamespace("bla2").build();
+    assertEquals("bla1", key.getProjectId());
+    assertEquals("bla2", key.getNamespace());
+    keyFactory.reset().setKind("kind");
+    key = keyFactory.newKey();
+    assertEquals(PROJECT_ID, key.getProjectId());
+    assertEquals("ns1", key.getNamespace());
+    assertEquals("kind", key.getKind());
+  }
+
+  @Test
+  public void testResetDeprecated() {
+    IncompleteKey key = deprecatedKeyFactory
+        .projectId("ds1")
+        .namespace("ns1")
+        .ancestors(PathElement.of("p", 1))
+        .build();
+    assertEquals("k", key.kind());
+    assertEquals("ds1", key.projectId());
+    assertEquals("ns1", key.namespace());
+    assertEquals(1, key.ancestors().size());
+
+    deprecatedKeyFactory.reset();
+    try {
+      deprecatedKeyFactory.newKey(1);
+    } catch (NullPointerException ex) {
+      assertEquals("kind must not be null", ex.getMessage());
+    }
+    deprecatedKeyFactory.kind("k1");
+    key = deprecatedKeyFactory.newKey();
     assertEquals("k1", key.kind());
     assertEquals(PROJECT_ID, key.projectId());
     assertTrue(key.namespace().isEmpty());
     assertTrue(key.ancestors().isEmpty());
 
-    keyFactory = new KeyFactory(PROJECT_ID, "ns1").kind("k");
-    key = keyFactory.newKey();
+    deprecatedKeyFactory = new KeyFactory(PROJECT_ID, "ns1").kind("k");
+    key = deprecatedKeyFactory.newKey();
     assertEquals(PROJECT_ID, key.projectId());
     assertEquals("ns1", key.namespace());
-    key = keyFactory.projectId("bla1").namespace("bla2").build();
+    key = deprecatedKeyFactory.projectId("bla1").namespace("bla2").build();
     assertEquals("bla1", key.projectId());
     assertEquals("bla2", key.namespace());
-    keyFactory.reset().kind("kind");
-    key = keyFactory.newKey();
+    deprecatedKeyFactory.reset().kind("kind");
+    key = deprecatedKeyFactory.newKey();
     assertEquals(PROJECT_ID, key.projectId());
     assertEquals("ns1", key.namespace());
     assertEquals("kind", key.kind());
@@ -79,7 +123,19 @@ public class KeyFactoryTest {
     verifyKey(key, "n", "");
     PathElement p1 = PathElement.of("k1", "n");
     PathElement p2 = PathElement.of("k2", 10);
-    key = keyFactory.namespace("ns").ancestors(p1, p2).newKey("k3");
+    key = keyFactory.setNamespace("ns").addAncestors(p1, p2).newKey("k3");
+    verifyKey(key, "k3", "ns", p1, p2);
+  }
+
+  @Test
+  public void testNewKeyDeprecated() throws Exception {
+    Key key = keyFactory.newKey(1);
+    verifyKey(key, 1L, "");
+    key = deprecatedKeyFactory.newKey("n");
+    verifyKey(key, "n", "");
+    PathElement p1 = PathElement.of("k1", "n");
+    PathElement p2 = PathElement.of("k2", 10);
+    key = deprecatedKeyFactory.namespace("ns").ancestors(p1, p2).newKey("k3");
     verifyKey(key, "k3", "ns", p1, p2);
   }
 
@@ -89,7 +145,17 @@ public class KeyFactoryTest {
     verifyIncompleteKey(key, "");
     PathElement p1 = PathElement.of("k1", "n");
     PathElement p2 = PathElement.of("k2", 10);
-    key = keyFactory.namespace("ns").ancestors(p1, p2).newKey();
+    key = keyFactory.setNamespace("ns").addAncestors(p1, p2).newKey();
+    verifyIncompleteKey(key, "ns", p1, p2);
+  }
+
+  @Test
+  public void testNewIncompleteKeyDeprecated() throws Exception {
+    IncompleteKey key = deprecatedKeyFactory.newKey();
+    verifyIncompleteKey(key, "");
+    PathElement p1 = PathElement.of("k1", "n");
+    PathElement p2 = PathElement.of("k2", 10);
+    key = deprecatedKeyFactory.namespace("ns").ancestors(p1, p2).newKey();
     verifyIncompleteKey(key, "ns", p1, p2);
   }
 
@@ -99,21 +165,21 @@ public class KeyFactoryTest {
   }
 
   private void verifyKey(Key key, String name, String namespace, PathElement... ancestors) {
-    assertEquals(name, key.name());
+    assertEquals(name, key.getName());
     verifyIncompleteKey(key, namespace, ancestors);
   }
 
   private void verifyKey(Key key, Long id, String namespace, PathElement... ancestors) {
-    assertEquals(id, key.id());
+    assertEquals(id, key.getId());
     verifyIncompleteKey(key, namespace, ancestors);
   }
 
   private void verifyIncompleteKey(IncompleteKey key, String namespace, PathElement... ancestors) {
-    assertEquals("k", key.kind());
-    assertEquals(PROJECT_ID, key.projectId());
-    assertEquals(namespace, key.namespace());
-    assertEquals(ancestors.length, key.ancestors().size());
-    Iterator<PathElement> iter = key.ancestors().iterator();
+    assertEquals("k", key.getKind());
+    assertEquals(PROJECT_ID, key.getProjectId());
+    assertEquals(namespace, key.getNamespace());
+    assertEquals(ancestors.length, key.getAncestors().size());
+    Iterator<PathElement> iter = key.getAncestors().iterator();
     for (PathElement ancestor : ancestors) {
       assertEquals(ancestor, iter.next());
     }

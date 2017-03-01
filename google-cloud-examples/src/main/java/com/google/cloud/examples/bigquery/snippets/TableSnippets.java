@@ -97,7 +97,7 @@ public class TableSnippets {
   // [TARGET update(TableOption...)]
   public Table update() {
     // [START update]
-    Table updatedTable = table.toBuilder().description("new description").build().update();
+    Table updatedTable = table.toBuilder().setDescription("new description").build().update();
     // [END update]
     return updatedTable;
   }
@@ -193,7 +193,7 @@ public class TableSnippets {
     try {
       Job completedJob = job.waitFor(WaitForOption.checkEvery(1, TimeUnit.SECONDS),
           WaitForOption.timeout(3, TimeUnit.MINUTES));
-      if (completedJob != null && completedJob.status().error() == null) {
+      if (completedJob != null && completedJob.getStatus().getError() == null) {
         // Job completed successfully
       } else {
         // Handle error case
@@ -220,7 +220,7 @@ public class TableSnippets {
     try {
       Job completedJob = job.waitFor(WaitForOption.checkEvery(1, TimeUnit.SECONDS),
           WaitForOption.timeout(3, TimeUnit.MINUTES));
-      if (completedJob != null && completedJob.status().error() == null) {
+      if (completedJob != null && completedJob.getStatus().getError() == null) {
         // Job completed successfully.
       } else {
         // Handle error case.
@@ -249,7 +249,7 @@ public class TableSnippets {
     try {
       Job completedJob = job.waitFor(WaitForOption.checkEvery(1, TimeUnit.SECONDS),
           WaitForOption.timeout(3, TimeUnit.MINUTES));
-      if (completedJob != null && completedJob.status().error() == null) {
+      if (completedJob != null && completedJob.getStatus().getError() == null) {
         // Job completed successfully
       } else {
         // Handle error case
@@ -274,7 +274,7 @@ public class TableSnippets {
     try {
       Job completedJob = job.waitFor(WaitForOption.checkEvery(1, TimeUnit.SECONDS),
           WaitForOption.timeout(3, TimeUnit.MINUTES));
-      if (completedJob != null && completedJob.status().error() == null) {
+      if (completedJob != null && completedJob.getStatus().getError() == null) {
         // Job completed successfully
       } else {
         // Handle error case
@@ -302,7 +302,7 @@ public class TableSnippets {
     try {
       Job completedJob = job.waitFor(WaitForOption.checkEvery(1, TimeUnit.SECONDS),
           WaitForOption.timeout(3, TimeUnit.MINUTES));
-      if (completedJob != null && completedJob.status().error() == null) {
+      if (completedJob != null && completedJob.getStatus().getError() == null) {
         // Job completed successfully
       } else {
         // Handle error case
@@ -326,7 +326,7 @@ public class TableSnippets {
     try {
       Job completedJob = job.waitFor(WaitForOption.checkEvery(1, TimeUnit.SECONDS),
           WaitForOption.timeout(3, TimeUnit.MINUTES));
-      if (completedJob != null && completedJob.status().error() == null) {
+      if (completedJob != null && completedJob.getStatus().getError() == null) {
         // Job completed successfully
       } else {
         // Handle error case

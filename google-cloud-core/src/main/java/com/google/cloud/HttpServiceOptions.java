@@ -23,7 +23,9 @@ import com.google.api.client.http.HttpRequest;
 import com.google.api.client.http.HttpRequestInitializer;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.http.javanet.NetHttpTransport;
+import com.google.auth.Credentials;
 import com.google.auth.http.HttpCredentialsAdapter;
+import com.google.auth.http.HttpTransportFactory;
 import com.google.cloud.spi.ServiceRpcFactory;
 
 import java.io.IOException;
@@ -42,22 +44,12 @@ public abstract class HttpServiceOptions<ServiceT extends Service<OptionsT>, Ser
     OptionsT extends HttpServiceOptions<ServiceT, ServiceRpcT, OptionsT>>
     extends ServiceOptions<ServiceT, ServiceRpcT, OptionsT> {
 
-  private static final long serialVersionUID = 3652819407083815771L;
+  private static final long serialVersionUID = 4765436436821178975L;
   private final int connectTimeout;
   private final int readTimeout;
   private final String httpTransportFactoryClassName;
 
   private transient HttpTransportFactory httpTransportFactory;
-
-  /**
-   * A base interface for all {@link HttpTransport} factories.
-   *
-   * <p>Implementation must provide a public no-arg constructor. Loading of a factory implementation
-   * is done via {@link java.util.ServiceLoader}.
-   */
-  public interface HttpTransportFactory {
-    HttpTransport create();
-  }
 
   public static class DefaultHttpTransportFactory implements HttpTransportFactory {
 
@@ -66,7 +58,7 @@ public abstract class HttpServiceOptions<ServiceT extends Service<OptionsT>, Ser
     @Override
     public HttpTransport create() {
       // Consider App Engine
-      if (appEngineAppId() != null) {
+      if (getAppEngineAppId() != null) {
         try {
           return new UrlFetchTransport();
         } catch (Exception ignore) {
@@ -116,7 +108,17 @@ public abstract class HttpServiceOptions<ServiceT extends Service<OptionsT>, Ser
      *
      * @return the builder
      */
+    @Deprecated
     public B httpTransportFactory(HttpTransportFactory httpTransportFactory) {
+      return setHttpTransportFactory(httpTransportFactory);
+    }
+
+    /**
+     * Sets the HTTP transport factory.
+     *
+     * @return the builder
+     */
+    public B setHttpTransportFactory(HttpTransportFactory httpTransportFactory) {
       this.httpTransportFactory = httpTransportFactory;
       return self();
     }
@@ -128,7 +130,19 @@ public abstract class HttpServiceOptions<ServiceT extends Service<OptionsT>, Ser
      *        negative number for the default value (20000).
      * @return the builder
      */
+    @Deprecated
     public B connectTimeout(int connectTimeout) {
+      return setConnectTimeout(connectTimeout);
+    }
+
+    /**
+     * Sets the timeout in milliseconds to establish a connection.
+     *
+     * @param connectTimeout connection timeout in milliseconds. 0 for an infinite timeout, a
+     *        negative number for the default value (20000).
+     * @return the builder
+     */
+    public B setConnectTimeout(int connectTimeout) {
       this.connectTimeout = connectTimeout;
       return self();
     }
@@ -140,7 +154,19 @@ public abstract class HttpServiceOptions<ServiceT extends Service<OptionsT>, Ser
      *        for the default value (20000).
      * @return the builder
      */
+    @Deprecated
     public B readTimeout(int readTimeout) {
+      return setReadTimeout(readTimeout);
+    }
+
+    /**
+     * Sets the timeout in milliseconds to read data from an established connection.
+     *
+     * @param readTimeout read timeout in milliseconds. 0 for an infinite timeout, a negative number
+     *        for the default value (20000).
+     * @return the builder
+     */
+    public B setReadTimeout(int readTimeout) {
       this.readTimeout = readTimeout;
       return self();
     }
@@ -161,20 +187,36 @@ public abstract class HttpServiceOptions<ServiceT extends Service<OptionsT>, Ser
   /**
    * Returns the HTTP transport factory.
    */
+  @Deprecated
   public HttpTransportFactory httpTransportFactory() {
-    return httpTransportFactory;
+    return getHttpTransportFactory();
   }
 
+  /**
+   * Returns the HTTP transport factory.
+   */
+  public HttpTransportFactory getHttpTransportFactory() {
+    return httpTransportFactory;
+  }
 
   /**
    * Returns a request initializer responsible for initializing requests according to service
    * options.
    */
+  @Deprecated
   public HttpRequestInitializer httpRequestInitializer() {
+    return getHttpRequestInitializer();
+  }
+
+  /**
+   * Returns a request initializer responsible for initializing requests according to service
+   * options.
+   */
+  public HttpRequestInitializer getHttpRequestInitializer() {
+    Credentials scopedCredentials = getScopedCredentials();
     final HttpRequestInitializer delegate =
-        authCredentials() != null && authCredentials().credentials() != null
-            ? new HttpCredentialsAdapter(authCredentials().credentials().createScoped(scopes()))
-            : null;
+        scopedCredentials != null && scopedCredentials != NoCredentials.getInstance()
+            ? new HttpCredentialsAdapter(scopedCredentials) : null;
     return new HttpRequestInitializer() {
       @Override
       public void initialize(HttpRequest httpRequest) throws IOException {
@@ -196,6 +238,14 @@ public abstract class HttpServiceOptions<ServiceT extends Service<OptionsT>, Ser
    * negative number is the default value (20000).
    */
   public int connectTimeout() {
+    return getConnectTimeout();
+  }
+
+  /**
+   * Returns the timeout in milliseconds to establish a connection. 0 is an infinite timeout, a
+   * negative number is the default value (20000).
+   */
+  public int getConnectTimeout() {
     return connectTimeout;
   }
 
@@ -203,7 +253,16 @@ public abstract class HttpServiceOptions<ServiceT extends Service<OptionsT>, Ser
    * Returns the timeout in milliseconds to read from an established connection. 0 is an infinite
    * timeout, a negative number is the default value (20000).
    */
+  @Deprecated
   public int readTimeout() {
+    return getReadTimeout();
+  }
+
+  /**
+   * Returns the timeout in milliseconds to read from an established connection. 0 is an infinite
+   * timeout, a negative number is the default value (20000).
+   */
+  public int getReadTimeout() {
     return readTimeout;
   }
 

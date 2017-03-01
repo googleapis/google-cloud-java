@@ -19,8 +19,9 @@ package com.google.cloud.translate;
 import static com.google.common.base.MoreObjects.firstNonNull;
 import static com.google.common.base.Preconditions.checkArgument;
 
-import com.google.cloud.AuthCredentials;
+import com.google.auth.Credentials;
 import com.google.cloud.HttpServiceOptions;
+import com.google.cloud.NoCredentials;
 import com.google.cloud.translate.Translate.TranslateOption;
 import com.google.cloud.translate.spi.DefaultTranslateRpc;
 import com.google.cloud.translate.spi.TranslateRpc;
@@ -29,14 +30,17 @@ import com.google.common.collect.ImmutableSet;
 
 import java.util.List;
 import java.util.Locale;
+import java.util.Objects;
 import java.util.Set;
 
 public class TranslateOptions extends
     HttpServiceOptions<Translate, TranslateRpc, TranslateOptions> {
 
-  private static final long serialVersionUID = 5997441123713672886L;
+  private static final long serialVersionUID = -572597134540398216L;
+  private static final String DEFAULT_HOST = "https://translation.googleapis.com";
   private static final String API_KEY_ENV_NAME = "GOOGLE_API_KEY";
-  private static final Set<String> SCOPES = ImmutableSet.of();
+  private static final Set<String> SCOPES =
+      ImmutableSet.of("https://www.googleapis.com/auth/cloud-platform");
 
   private final String apiKey;
   private final String targetLanguage;
@@ -80,19 +84,19 @@ public class TranslateOptions extends
      * @return the builder
      */
     @Override
+    @Deprecated
     public Builder projectId(String projectId) {
-      super.projectId(projectId);
-      return self();
+      return setProjectId(projectId);
     }
 
     /**
-     * Sets the service authentication credentials. Setting credentials has no impact on the
-     * {@link Translate} service.
+     * Sets project id. Setting a project id has no impact on the {@link Translate} service.
      *
      * @return the builder
      */
-    public Builder authCredentials(AuthCredentials authCredentials) {
-      super.authCredentials(authCredentials);
+    @Override
+    public Builder setProjectId(String projectId) {
+      super.setProjectId(projectId);
       return self();
     }
 
@@ -101,7 +105,17 @@ public class TranslateOptions extends
      * {@code GOOGLE_API_KEY} environment variable. For instructions on how to get an API key see
      * <a href="https://cloud.google.com/translate/v2/quickstart">Translate quickstart</a>.
      */
+    @Deprecated
     public Builder apiKey(String apiKey) {
+      return setApiKey(apiKey);
+    }
+
+    /**
+     * Sets the API key used to issue requets. If not set, the API key is looked for in the
+     * {@code GOOGLE_API_KEY} environment variable. For instructions on how to get an API key see
+     * <a href="https://cloud.google.com/translate/v2/quickstart">Translate quickstart</a>.
+     */
+    public Builder setApiKey(String apiKey) {
       this.apiKey = apiKey;
       return this;
     }
@@ -115,35 +129,44 @@ public class TranslateOptions extends
      *
      * @return the builder
      */
+    @Deprecated
     public Builder targetLanguage(String targetLanguage) {
+      return setTargetLanguage(targetLanguage);
+    }
+
+    /**
+     * Sets the code for the default target language. If not set, english ({@code en}) is used.
+     * {@link Translate#translate(List, TranslateOption...)} and
+     * {@link Translate#translate(String, TranslateOption...)} calls will use this
+     * value unless a {@link TranslateOption#targetLanguage(String)} option is explicitly
+     * provided.
+     *
+     * @return the builder
+     */
+    public Builder setTargetLanguage(String targetLanguage) {
       this.targetLanguage = targetLanguage;
       return self();
     }
 
     @Override
     public TranslateOptions build() {
-      // Auth credentials are not used by Translate
-      authCredentials(AuthCredentials.noAuth());
       return new TranslateOptions(this);
     }
   }
 
   private TranslateOptions(Builder builder) {
     super(TranslateFactory.class, TranslateRpcFactory.class, builder);
-    this.apiKey = builder.apiKey != null ? builder.apiKey : defaultApiKey();
-    checkArgument(this.apiKey != null,
-        "An API key is required for this service but could not be determined from the builder "
-            + "or the environment. Please set an API key using the builder.");
+    this.apiKey = builder.apiKey != null ? builder.apiKey : getDefaultApiKey();
     this.targetLanguage = firstNonNull(builder.targetLanguage, Locale.ENGLISH.getLanguage());
   }
 
   @Override
-  protected TranslateFactory defaultServiceFactory() {
+  protected TranslateFactory getDefaultServiceFactory() {
     return DefaultTranslateFactory.INSTANCE;
   }
 
   @Override
-  protected TranslateRpcFactory defaultRpcFactory() {
+  protected TranslateRpcFactory getDefaultRpcFactory() {
     return DefaultTranslateRpcFactory.INSTANCE;
   }
 
@@ -153,25 +176,51 @@ public class TranslateOptions extends
   }
 
   @Override
-  protected Set<String> scopes() {
+  protected Set<String> getScopes() {
     return SCOPES;
   }
 
+  @Override
+  protected String getDefaultHost() {
+    return DEFAULT_HOST;
+  }
+
+  @Deprecated
   protected String defaultApiKey() {
+    return getDefaultApiKey();
+  }
+
+  protected String getDefaultApiKey() {
     return System.getProperty(API_KEY_ENV_NAME, System.getenv(API_KEY_ENV_NAME));
   }
 
   /**
    * Returns the API key, to be used used to send requests.
    */
+  @Deprecated
   public String apiKey() {
+    return getApiKey();
+  }
+
+  /**
+   * Returns the API key, to be used used to send requests.
+   */
+  public String getApiKey() {
     return apiKey;
   }
 
   /**
    * Returns the code for the default target language.
    */
+  @Deprecated
   public String targetLanguage() {
+    return getTargetLanguage();
+  }
+
+  /**
+   * Returns the code for the default target language.
+   */
+  public String getTargetLanguage() {
     return targetLanguage;
   }
 
@@ -193,21 +242,37 @@ public class TranslateOptions extends
     }
     TranslateOptions options = (TranslateOptions) obj;
     return baseEquals(options)
-        && apiKey.equals(options.apiKey)
-        && targetLanguage.equals(options.targetLanguage);
+        && Objects.equals(apiKey, options.apiKey)
+        && Objects.equals(targetLanguage, options.targetLanguage);
   }
 
   /**
    * Returns a default {@code TranslateOptions} instance.
    */
+  @Deprecated
   public static TranslateOptions defaultInstance() {
-    return builder().build();
+    return getDefaultInstance();
+  }
+
+  /**
+   * Returns a default {@code TranslateOptions} instance.
+   */
+  public static TranslateOptions getDefaultInstance() {
+    return newBuilder().build();
   }
 
   /**
    * Returns a builder for {@code TranslateOptions} objects.
    */
+  @Deprecated
   public static Builder builder() {
+    return newBuilder();
+  }
+
+  /**
+   * Returns a builder for {@code TranslateOptions} objects.
+   */
+  public static Builder newBuilder() {
     return new Builder();
   }
 }

@@ -51,7 +51,7 @@ final class TranslateImpl extends BaseService<TranslateOptions> implements Trans
 
   TranslateImpl(TranslateOptions options) {
     super(options);
-    translateRpc = options.rpc();
+    translateRpc = options.getRpc();
   }
 
   @Override
@@ -62,7 +62,8 @@ final class TranslateImpl extends BaseService<TranslateOptions> implements Trans
         public List<LanguagesResource> call() {
           return translateRpc.listSupportedLanguages(optionMap(options));
         }
-      }, options().retryParams(), EXCEPTION_HANDLER, options().clock()), Language.FROM_PB_FUNCTION);
+      }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock()),
+          Language.FROM_PB_FUNCTION);
     } catch (RetryHelperException e) {
       throw TranslateException.translateAndThrow(e);
     }
@@ -77,7 +78,7 @@ final class TranslateImpl extends BaseService<TranslateOptions> implements Trans
             public List<List<DetectionsResourceItems>> call() {
               return translateRpc.detect(texts);
             }
-          }, options().retryParams(), EXCEPTION_HANDLER, options().clock());
+          }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock());
       Iterator<List<DetectionsResourceItems>> detectionIterator = detectionsPb.iterator();
       Iterator<String> textIterator = texts.iterator();
       while (detectionIterator.hasNext() && textIterator.hasNext()) {
@@ -111,7 +112,7 @@ final class TranslateImpl extends BaseService<TranslateOptions> implements Trans
         public List<TranslationsResource> call() {
           return translateRpc.translate(texts, optionMap(options));
         }
-      }, options().retryParams(), EXCEPTION_HANDLER, options().clock()),
+      }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock()),
           Translation.FROM_PB_FUNCTION);
     } catch (RetryHelperException e) {
       throw TranslateException.translateAndThrow(e);
@@ -126,7 +127,7 @@ final class TranslateImpl extends BaseService<TranslateOptions> implements Trans
   private Map<TranslateRpc.Option, ?> optionMap(Option... options) {
     Map<TranslateRpc.Option, Object> optionMap = Maps.newEnumMap(TranslateRpc.Option.class);
     for (Option option : options) {
-      Object prev = optionMap.put(option.rpcOption(), option.value());
+      Object prev = optionMap.put(option.getRpcOption(), option.getValue());
       checkArgument(prev == null, "Duplicate option %s", option);
     }
     return optionMap;

@@ -51,11 +51,11 @@ public class OptionTest {
 
   @Test
   public void testConstructor() {
-    assertEquals(RPC_OPTION, OPTION.rpcOption());
-    assertEquals(VALUE, OPTION.value());
+    assertEquals(RPC_OPTION, OPTION.getRpcOption());
+    assertEquals(VALUE, OPTION.getValue());
     Option option = new Option(RPC_OPTION, null) {};
-    assertEquals(RPC_OPTION, option.rpcOption());
-    assertNull(option.value());
+    assertEquals(RPC_OPTION, option.getRpcOption());
+    assertNull(option.getValue());
     thrown.expect(NullPointerException.class);
     new Option(null, VALUE) {};
   }

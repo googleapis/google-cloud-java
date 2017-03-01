@@ -38,21 +38,21 @@ public class WriteAndListLogEntries {
   public static void main(String... args) throws Exception {
     // Create a service object
     // Credentials are inferred from the environment
-    LoggingOptions options = LoggingOptions.defaultInstance();
-    try(Logging logging = options.service()) {
+    LoggingOptions options = LoggingOptions.getDefaultInstance();
+    try(Logging logging = options.getService()) {
 
       // Create a log entry
-      LogEntry firstEntry = LogEntry.builder(StringPayload.of("message"))
-          .logName("test-log")
-          .resource(MonitoredResource.builder("global")
-              .addLabel("project_id", options.projectId())
+      LogEntry firstEntry = LogEntry.newBuilder(StringPayload.of("message"))
+          .setLogName("test-log")
+          .setResource(MonitoredResource.newBuilder("global")
+              .addLabel("project_id", options.getProjectId())
               .build())
           .build();
       logging.write(Collections.singleton(firstEntry));
 
       // List log entries
       Page<LogEntry> entries = logging.listLogEntries(
-          EntryListOption.filter("logName=projects/" + options.projectId() + "/logs/test-log"));
+          EntryListOption.filter("logName=projects/" + options.getProjectId() + "/logs/test-log"));
       Iterator<LogEntry> entryIterator = entries.iterateAll();
       while (entryIterator.hasNext()) {
         System.out.println(entryIterator.next());

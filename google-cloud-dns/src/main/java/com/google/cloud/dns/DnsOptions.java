@@ -26,7 +26,7 @@ import java.util.Set;
 
 public class DnsOptions extends HttpServiceOptions<Dns, DnsRpc, DnsOptions> {
 
-  private static final long serialVersionUID = -8639966476950724880L;
+  private static final long serialVersionUID = -2501790264435912627L;
   private static final String GC_DNS_RW = "https://www.googleapis.com/auth/ndev.clouddns.readwrite";
   private static final Set<String> SCOPES = ImmutableSet.of(GC_DNS_RW);
 
@@ -70,17 +70,17 @@ public class DnsOptions extends HttpServiceOptions<Dns, DnsRpc, DnsOptions> {
   }
 
   @Override
-  protected DnsFactory defaultServiceFactory() {
+  protected DnsFactory getDefaultServiceFactory() {
     return DefaultDnsFactory.INSTANCE;
   }
 
   @Override
-  protected DnsRpcFactory defaultRpcFactory() {
+  protected DnsRpcFactory getDefaultRpcFactory() {
     return DefaultDnsRpcFactory.INSTANCE;
   }
 
   @Override
-  protected Set<String> scopes() {
+  protected Set<String> getScopes() {
     return SCOPES;
   }
 
@@ -90,7 +90,12 @@ public class DnsOptions extends HttpServiceOptions<Dns, DnsRpc, DnsOptions> {
     return new Builder(this);
   }
 
+  @Deprecated
   public static Builder builder() {
+    return newBuilder();
+  }
+
+  public static Builder newBuilder() {
     return new Builder();
   }
 
@@ -98,8 +103,17 @@ public class DnsOptions extends HttpServiceOptions<Dns, DnsRpc, DnsOptions> {
    * Creates a default instance of {@code DnsOptions} with the project ID and credentials inferred
    * from the environment.
    */
+  @Deprecated
   public static DnsOptions defaultInstance() {
-    return builder().build();
+    return getDefaultInstance();
+  }
+
+  /**
+   * Creates a default instance of {@code DnsOptions} with the project ID and credentials inferred
+   * from the environment.
+   */
+  public static DnsOptions getDefaultInstance() {
+    return newBuilder().build();
   }
 
   @Override

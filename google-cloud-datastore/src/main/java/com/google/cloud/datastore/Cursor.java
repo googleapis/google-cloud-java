@@ -59,7 +59,7 @@ public final class Cursor implements Serializable {
     return toStringHelper.add("bytes", stBuilder.toString()).toString();
   }
 
-  ByteString byteString() {
+  ByteString getByteString() {
     return byteString;
   }
 

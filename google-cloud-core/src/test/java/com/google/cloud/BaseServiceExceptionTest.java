@@ -56,7 +56,7 @@ public class BaseServiceExceptionTest {
     }
 
     @Override
-    protected Set<Error> retryableErrors() {
+    protected Set<Error> getRetryableErrors() {
       return ImmutableSet.of(new Error(CODE, REASON), new Error(null, REASON),
           new Error(CODE_NO_REASON, null));
     }
@@ -64,6 +64,94 @@ public class BaseServiceExceptionTest {
 
   @Test
   public void testBaseServiceException() {
+    BaseServiceException serviceException = new BaseServiceException(CODE, MESSAGE, REASON,
+        IDEMPOTENT);
+    assertEquals(CODE, serviceException.getCode());
+    assertEquals(MESSAGE, serviceException.getMessage());
+    assertEquals(REASON, serviceException.getReason());
+    assertFalse(serviceException.isRetryable());
+    assertEquals(IDEMPOTENT, serviceException.isIdempotent());
+    assertNull(serviceException.getCause());
+
+    serviceException = new BaseServiceException(CODE, MESSAGE, REASON, IDEMPOTENT);
+    assertEquals(CODE, serviceException.getCode());
+    assertEquals(MESSAGE, serviceException.getMessage());
+    assertEquals(REASON, serviceException.getReason());
+    assertFalse(serviceException.isRetryable());
+    assertEquals(IDEMPOTENT, serviceException.isIdempotent());
+    assertNull(serviceException.getCause());
+
+    Exception cause = new RuntimeException();
+    serviceException = new BaseServiceException(CODE, MESSAGE, REASON, IDEMPOTENT, cause);
+    assertEquals(CODE, serviceException.getCode());
+    assertEquals(MESSAGE, serviceException.getMessage());
+    assertEquals(REASON, serviceException.getReason());
+    assertFalse(serviceException.isRetryable());
+    assertEquals(IDEMPOTENT, serviceException.isIdempotent());
+    assertEquals(cause, serviceException.getCause());
+
+    serviceException = new BaseServiceException(CODE, MESSAGE, REASON, false, cause);
+    assertEquals(CODE, serviceException.getCode());
+    assertEquals(MESSAGE, serviceException.getMessage());
+    assertEquals(REASON, serviceException.getReason());
+    assertFalse(serviceException.isRetryable());
+    assertFalse(serviceException.isIdempotent());
+    assertEquals(cause, serviceException.getCause());
+
+    IOException exception = new SocketTimeoutException();
+    serviceException = new BaseServiceException(exception, true);
+    assertTrue(serviceException.isRetryable());
+    assertTrue(serviceException.isIdempotent());
+    assertNull(serviceException.getMessage());
+    assertEquals(exception, serviceException.getCause());
+
+    exception = new SocketException();
+    serviceException = new BaseServiceException(exception, true);
+    assertTrue(serviceException.isRetryable());
+    assertTrue(serviceException.isIdempotent());
+    assertNull(serviceException.getMessage());
+    assertEquals(exception, serviceException.getCause());
+
+    exception = new IOException("insufficient data written");
+    serviceException = new BaseServiceException(exception, true);
+    assertTrue(serviceException.isRetryable());
+    assertTrue(serviceException.isIdempotent());
+    assertEquals("insufficient data written", serviceException.getMessage());
+    assertEquals(exception, serviceException.getCause());
+
+    GoogleJsonError error = new GoogleJsonError();
+    error.setCode(CODE);
+    error.setMessage(MESSAGE);
+    serviceException = new BaseServiceException(error, true);
+    assertEquals(CODE, serviceException.getCode());
+    assertEquals(MESSAGE, serviceException.getMessage());
+    assertFalse(serviceException.isRetryable());
+    assertTrue(serviceException.isIdempotent());
+
+    serviceException = new CustomServiceException(CODE, MESSAGE, REASON, IDEMPOTENT);
+    assertEquals(CODE, serviceException.getCode());
+    assertEquals(MESSAGE, serviceException.getMessage());
+    assertEquals(REASON, serviceException.getReason());
+    assertEquals(RETRYABLE, serviceException.isRetryable());
+    assertEquals(IDEMPOTENT, serviceException.isIdempotent());
+
+    serviceException = new CustomServiceException(CODE_NO_REASON, MESSAGE, null, IDEMPOTENT);
+    assertEquals(CODE_NO_REASON, serviceException.getCode());
+    assertEquals(MESSAGE, serviceException.getMessage());
+    assertNull(serviceException.getReason());
+    assertEquals(RETRYABLE, serviceException.isRetryable());
+    assertEquals(IDEMPOTENT, serviceException.isIdempotent());
+
+    serviceException = new CustomServiceException(UNKNOWN_CODE, MESSAGE, REASON, IDEMPOTENT);
+    assertEquals(UNKNOWN_CODE, serviceException.getCode());
+    assertEquals(MESSAGE, serviceException.getMessage());
+    assertEquals(REASON, serviceException.getReason());
+    assertEquals(RETRYABLE, serviceException.isRetryable());
+    assertEquals(IDEMPOTENT, serviceException.isIdempotent());
+  }
+
+  @Test
+  public void testBaseServiceExceptionDeprecated() {
     BaseServiceException serviceException = new BaseServiceException(CODE, MESSAGE, REASON,
          IDEMPOTENT);
     assertEquals(CODE, serviceException.code());
@@ -160,10 +248,10 @@ public class BaseServiceExceptionTest {
     try {
       BaseServiceException.translateAndPropagateIfPossible(exceptionMock);
     } catch (BaseServiceException ex) {
-      assertEquals(CODE, ex.code());
+      assertEquals(CODE, ex.getCode());
       assertEquals(MESSAGE, ex.getMessage());
-      assertFalse(ex.retryable());
-      assertEquals(IDEMPOTENT, ex.idempotent());
+      assertFalse(ex.isRetryable());
+      assertEquals(IDEMPOTENT, ex.isIdempotent());
     } finally {
       verify(exceptionMock);
     }

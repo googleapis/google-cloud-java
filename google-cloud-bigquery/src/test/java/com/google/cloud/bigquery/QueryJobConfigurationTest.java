@@ -39,30 +39,30 @@ public class QueryJobConfigurationTest {
   private static final TableId TABLE_ID = TableId.of("dataset", "table");
   private static final List<String> SOURCE_URIS = ImmutableList.of("uri1", "uri2");
   private static final Field FIELD_SCHEMA1 =
-      Field.builder("StringField", Field.Type.string())
-          .mode(Field.Mode.NULLABLE)
-          .description("FieldDescription1")
+      Field.newBuilder("StringField", Field.Type.string())
+          .setMode(Field.Mode.NULLABLE)
+          .setDescription("FieldDescription1")
           .build();
   private static final Field FIELD_SCHEMA2 =
-      Field.builder("IntegerField", Field.Type.integer())
-          .mode(Field.Mode.REPEATED)
-          .description("FieldDescription2")
+      Field.newBuilder("IntegerField", Field.Type.integer())
+          .setMode(Field.Mode.REPEATED)
+          .setDescription("FieldDescription2")
           .build();
   private static final Field FIELD_SCHEMA3 =
-      Field.builder("RecordField", Field.Type.record(FIELD_SCHEMA1, FIELD_SCHEMA2))
-          .mode(Field.Mode.REQUIRED)
-          .description("FieldDescription3")
+      Field.newBuilder("RecordField", Field.Type.record(FIELD_SCHEMA1, FIELD_SCHEMA2))
+          .setMode(Field.Mode.REQUIRED)
+          .setDescription("FieldDescription3")
           .build();
   private static final Schema TABLE_SCHEMA = Schema.of(FIELD_SCHEMA1, FIELD_SCHEMA2, FIELD_SCHEMA3);
   private static final Integer MAX_BAD_RECORDS = 42;
   private static final Boolean IGNORE_UNKNOWN_VALUES = true;
   private static final String COMPRESSION = "GZIP";
-  private static final CsvOptions CSV_OPTIONS = CsvOptions.builder().build();
+  private static final CsvOptions CSV_OPTIONS = CsvOptions.newBuilder().build();
   private static final ExternalTableDefinition TABLE_CONFIGURATION =
-      ExternalTableDefinition.builder(SOURCE_URIS, TABLE_SCHEMA, CSV_OPTIONS)
-          .compression(COMPRESSION)
-          .ignoreUnknownValues(IGNORE_UNKNOWN_VALUES)
-          .maxBadRecords(MAX_BAD_RECORDS)
+      ExternalTableDefinition.newBuilder(SOURCE_URIS, TABLE_SCHEMA, CSV_OPTIONS)
+          .setCompression(COMPRESSION)
+          .setIgnoreUnknownValues(IGNORE_UNKNOWN_VALUES)
+          .setMaxBadRecords(MAX_BAD_RECORDS)
           .build();
   private static final Map<String, ExternalTableDefinition> TABLE_DEFINITIONS =
       ImmutableMap.of("tableName", TABLE_CONFIGURATION);
@@ -76,6 +76,21 @@ public class QueryJobConfigurationTest {
   private static final List<UserDefinedFunction> USER_DEFINED_FUNCTIONS = ImmutableList.of(
       UserDefinedFunction.inline("Function"), UserDefinedFunction.fromUri("URI"));
   private static final QueryJobConfiguration QUERY_JOB_CONFIGURATION =
+      QueryJobConfiguration.newBuilder(QUERY)
+          .setUseQueryCache(USE_QUERY_CACHE)
+          .setTableDefinitions(TABLE_DEFINITIONS)
+          .setAllowLargeResults(ALLOW_LARGE_RESULTS)
+          .setCreateDisposition(CREATE_DISPOSITION)
+          .setDefaultDataset(DATASET_ID)
+          .setDestinationTable(TABLE_ID)
+          .setWriteDisposition(WRITE_DISPOSITION)
+          .setPriority(PRIORITY)
+          .setFlattenResults(FLATTEN_RESULTS)
+          .setUserDefinedFunctions(USER_DEFINED_FUNCTIONS)
+          .setDryRun(true)
+          .setUseLegacySql(USE_LEGACY_SQL)
+          .build();
+  private static final QueryJobConfiguration DEPRECATED_QUERY_JOB_CONFIGURATION =
       QueryJobConfiguration.builder(QUERY)
           .useQueryCache(USE_QUERY_CACHE)
           .tableDefinitions(TABLE_DEFINITIONS)
@@ -96,17 +111,17 @@ public class QueryJobConfigurationTest {
     compareQueryJobConfiguration(QUERY_JOB_CONFIGURATION,
         QUERY_JOB_CONFIGURATION.toBuilder().build());
     QueryJobConfiguration job = QUERY_JOB_CONFIGURATION.toBuilder()
-        .query("New BigQuery SQL")
+        .setQuery("New BigQuery SQL")
         .build();
-    assertEquals("New BigQuery SQL", job.query());
-    job = job.toBuilder().query(QUERY).build();
+    assertEquals("New BigQuery SQL", job.getQuery());
+    job = job.toBuilder().setQuery(QUERY).build();
     compareQueryJobConfiguration(QUERY_JOB_CONFIGURATION, job);
   }
 
   @Test
   public void testOf() {
     QueryJobConfiguration job = QueryJobConfiguration.of(QUERY);
-    assertEquals(QUERY, job.query());
+    assertEquals(QUERY, job.getQuery());
   }
 
   @Test
@@ -117,6 +132,24 @@ public class QueryJobConfigurationTest {
 
   @Test
   public void testBuilder() {
+    assertEquals(ALLOW_LARGE_RESULTS, DEPRECATED_QUERY_JOB_CONFIGURATION.allowLargeResults());
+    assertEquals(CREATE_DISPOSITION, DEPRECATED_QUERY_JOB_CONFIGURATION.getCreateDisposition());
+    assertEquals(DATASET_ID, DEPRECATED_QUERY_JOB_CONFIGURATION.getDefaultDataset());
+    assertEquals(TABLE_ID, DEPRECATED_QUERY_JOB_CONFIGURATION.getDestinationTable());
+    assertEquals(FLATTEN_RESULTS, DEPRECATED_QUERY_JOB_CONFIGURATION.flattenResults());
+    assertEquals(PRIORITY, DEPRECATED_QUERY_JOB_CONFIGURATION.getPriority());
+    assertEquals(QUERY, DEPRECATED_QUERY_JOB_CONFIGURATION.getQuery());
+    assertEquals(TABLE_DEFINITIONS, DEPRECATED_QUERY_JOB_CONFIGURATION.getTableDefinitions());
+    assertEquals(USE_QUERY_CACHE, DEPRECATED_QUERY_JOB_CONFIGURATION.useQueryCache());
+    assertEquals(USER_DEFINED_FUNCTIONS,
+        DEPRECATED_QUERY_JOB_CONFIGURATION.getUserDefinedFunctions());
+    assertEquals(WRITE_DISPOSITION, DEPRECATED_QUERY_JOB_CONFIGURATION.getWriteDisposition());
+    assertTrue(DEPRECATED_QUERY_JOB_CONFIGURATION.dryRun());
+    assertTrue(DEPRECATED_QUERY_JOB_CONFIGURATION.useLegacySql());
+  }
+
+  @Test
+  public void testBuilderDeprecated() {
     assertEquals(ALLOW_LARGE_RESULTS, QUERY_JOB_CONFIGURATION.allowLargeResults());
     assertEquals(CREATE_DISPOSITION, QUERY_JOB_CONFIGURATION.createDisposition());
     assertEquals(DATASET_ID, QUERY_JOB_CONFIGURATION.defaultDataset());
@@ -147,8 +180,8 @@ public class QueryJobConfigurationTest {
   @Test
   public void testSetProjectId() {
     QueryJobConfiguration configuration = QUERY_JOB_CONFIGURATION.setProjectId("p");
-    assertEquals("p", configuration.defaultDataset().project());
-    assertEquals("p", configuration.destinationTable().project());
+    assertEquals("p", configuration.getDefaultDataset().getProject());
+    assertEquals("p", configuration.getDestinationTable().getProject());
   }
 
   private void compareQueryJobConfiguration(QueryJobConfiguration expected,
@@ -158,16 +191,16 @@ public class QueryJobConfigurationTest {
     assertEquals(expected.toString(), value.toString());
     assertEquals(expected.dryRun(), value.dryRun());
     assertEquals(expected.allowLargeResults(), value.allowLargeResults());
-    assertEquals(expected.createDisposition(), value.createDisposition());
-    assertEquals(expected.defaultDataset(), value.defaultDataset());
-    assertEquals(expected.destinationTable(), value.destinationTable());
+    assertEquals(expected.getCreateDisposition(), value.getCreateDisposition());
+    assertEquals(expected.getDefaultDataset(), value.getDefaultDataset());
+    assertEquals(expected.getDestinationTable(), value.getDestinationTable());
     assertEquals(expected.flattenResults(), value.flattenResults());
-    assertEquals(expected.priority(), value.priority());
-    assertEquals(expected.query(), value.query());
-    assertEquals(expected.tableDefinitions(), value.tableDefinitions());
+    assertEquals(expected.getPriority(), value.getPriority());
+    assertEquals(expected.getQuery(), value.getQuery());
+    assertEquals(expected.getTableDefinitions(), value.getTableDefinitions());
     assertEquals(expected.useQueryCache(), value.useQueryCache());
-    assertEquals(expected.userDefinedFunctions(), value.userDefinedFunctions());
-    assertEquals(expected.writeDisposition(), value.writeDisposition());
+    assertEquals(expected.getUserDefinedFunctions(), value.getUserDefinedFunctions());
+    assertEquals(expected.getWriteDisposition(), value.getWriteDisposition());
     assertEquals(expected.useLegacySql(), value.useLegacySql());
   }
 }

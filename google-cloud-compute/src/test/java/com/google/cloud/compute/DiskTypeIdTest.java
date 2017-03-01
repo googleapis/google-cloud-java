@@ -40,6 +40,19 @@ public class DiskTypeIdTest {
   @Test
   public void testOf() {
     DiskTypeId diskTypeId = DiskTypeId.of(PROJECT, ZONE, DISK_TYPE);
+    assertEquals(PROJECT, diskTypeId.getProject());
+    assertEquals(ZONE, diskTypeId.getZone());
+    assertEquals(DISK_TYPE, diskTypeId.getType());
+    assertEquals(URL, diskTypeId.getSelfLink());
+    diskTypeId = DiskTypeId.of(ZONE, DISK_TYPE);
+    assertNull(diskTypeId.getProject());
+    assertEquals(ZONE, diskTypeId.getZone());
+    assertEquals(DISK_TYPE, diskTypeId.getType());
+  }
+
+  @Test
+  public void testOfDeprecated() {
+    DiskTypeId diskTypeId = DiskTypeId.of(PROJECT, ZONE, DISK_TYPE);
     assertEquals(PROJECT, diskTypeId.project());
     assertEquals(ZONE, diskTypeId.zone());
     assertEquals(DISK_TYPE, diskTypeId.type());
@@ -54,7 +67,7 @@ public class DiskTypeIdTest {
   public void testToAndFromUrl() {
     DiskTypeId diskTypeId = DiskTypeId.of(PROJECT, ZONE, DISK_TYPE);
     assertSame(diskTypeId, diskTypeId.setProjectId(PROJECT));
-    compareDiskTypeId(diskTypeId, DiskTypeId.fromUrl(diskTypeId.selfLink()));
+    compareDiskTypeId(diskTypeId, DiskTypeId.fromUrl(diskTypeId.getSelfLink()));
     thrown.expect(IllegalArgumentException.class);
     thrown.expectMessage("notMatchingUrl is not a valid disk type URL");
     DiskTypeId.fromUrl("notMatchingUrl");
@@ -69,16 +82,16 @@ public class DiskTypeIdTest {
 
   @Test
   public void testMatchesUrl() {
-    assertTrue(DiskTypeId.matchesUrl(DiskTypeId.of(PROJECT, ZONE, DISK_TYPE).selfLink()));
+    assertTrue(DiskTypeId.matchesUrl(DiskTypeId.of(PROJECT, ZONE, DISK_TYPE).getSelfLink()));
     assertFalse(DiskTypeId.matchesUrl("notMatchingUrl"));
   }
 
   private void compareDiskTypeId(DiskTypeId expected, DiskTypeId value) {
     assertEquals(expected, value);
-    assertEquals(expected.project(), expected.project());
-    assertEquals(expected.zone(), expected.zone());
-    assertEquals(expected.type(), expected.type());
-    assertEquals(expected.selfLink(), expected.selfLink());
+    assertEquals(expected.getProject(), expected.getProject());
+    assertEquals(expected.getZone(), expected.getZone());
+    assertEquals(expected.getType(), expected.getType());
+    assertEquals(expected.getSelfLink(), expected.getSelfLink());
     assertEquals(expected.hashCode(), expected.hashCode());
   }
 }

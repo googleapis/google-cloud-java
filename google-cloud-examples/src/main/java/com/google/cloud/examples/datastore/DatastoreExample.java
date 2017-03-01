@@ -80,10 +80,10 @@ public class DatastoreExample {
         System.out.println("Nothing to delete, user does not exist.");
         return;
       }
-      Query<Key> query = Query.keyQueryBuilder()
-          .namespace(NAMESPACE)
-          .kind(COMMENT_KIND)
-          .filter(PropertyFilter.hasAncestor(userKey))
+      Query<Key> query = Query.newKeyQueryBuilder()
+          .setNamespace(NAMESPACE)
+          .setKind(COMMENT_KIND)
+          .setFilter(PropertyFilter.hasAncestor(userKey))
           .build();
       QueryResults<Key> comments = tx.run(query);
       int count = 0;
@@ -92,7 +92,7 @@ public class DatastoreExample {
         count++;
       }
       tx.delete(userKey);
-      System.out.printf("Deleting user '%s' and %d comment[s].%n", userKey.name(), count);
+      System.out.printf("Deleting user '%s' and %d comment[s].%n", userKey.getName(), count);
     }
 
     @Override
@@ -110,7 +110,7 @@ public class DatastoreExample {
     public void run(Transaction tx, Key userKey, Void arg) {
       Entity user = tx.get(userKey);
       if (user == null) {
-        System.out.printf("User '%s' does not exist.%n", userKey.name());
+        System.out.printf("User '%s' does not exist.%n", userKey.getName());
         return;
       }
       if (user.contains("contact")) {
@@ -118,17 +118,17 @@ public class DatastoreExample {
         String email = contact.getString("email");
         String phone = contact.getString("phone");
         System.out.printf("User '%s' email is '%s', phone is '%s'.%n",
-            userKey.name(), email, phone);
+            userKey.getName(), email, phone);
       }
-      System.out.printf("User '%s' has %d comment[s].%n", userKey.name(), user.getLong("count"));
+      System.out.printf("User '%s' has %d comment[s].%n", userKey.getName(), user.getLong("count"));
       int limit = 200;
       Map<DateTime, String> sortedComments = new TreeMap<>();
       StructuredQuery<Entity> query =
-          Query.entityQueryBuilder()
-              .namespace(NAMESPACE)
-              .kind(COMMENT_KIND)
-              .filter(PropertyFilter.hasAncestor(userKey))
-              .limit(limit)
+          Query.newEntityQueryBuilder()
+              .setNamespace(NAMESPACE)
+              .setKind(COMMENT_KIND)
+              .setFilter(PropertyFilter.hasAncestor(userKey))
+              .setLimit(limit)
               .build();
       while (true) {
         QueryResults<Entity> results = tx.run(query);
@@ -141,7 +141,7 @@ public class DatastoreExample {
         if (resultCount < limit) {
           break;
         }
-        query = query.toBuilder().startCursor(results.cursorAfter()).build();
+        query = query.toBuilder().setStartCursor(results.getCursorAfter()).build();
       }
       // We could have added "ORDER BY timestamp" to the query to avoid sorting, but that would
       // require adding an ancestor index for timestamp.
@@ -166,19 +166,19 @@ public class DatastoreExample {
       Entity user = tx.get(userKey);
       if (user == null) {
         System.out.println("Adding a new user.");
-        user = Entity.builder(userKey).set("count", 1).build();
+        user = Entity.newBuilder(userKey).set("count", 1).build();
         tx.add(user);
       } else {
-        user = Entity.builder(user).set("count", user.getLong("count") + 1L).build();
+        user = Entity.newBuilder(user).set("count", user.getLong("count") + 1L).build();
         tx.update(user);
       }
-      IncompleteKey commentKey = IncompleteKey.builder(userKey, COMMENT_KIND).build();
-      FullEntity<IncompleteKey> comment = FullEntity.builder(commentKey)
+      IncompleteKey commentKey = IncompleteKey.newBuilder(userKey, COMMENT_KIND).build();
+      FullEntity<IncompleteKey> comment = FullEntity.newBuilder(commentKey)
           .set("content", content)
           .set("timestamp", DateTime.now())
           .build();
       tx.addWithDeferredIdAllocation(comment);
-      System.out.printf("Adding a comment to user '%s'.%n", userKey.name());
+      System.out.printf("Adding a comment to user '%s'.%n", userKey.getName());
     }
 
     @Override
@@ -231,15 +231,15 @@ public class DatastoreExample {
       Entity user = tx.get(userKey);
       if (user == null) {
         System.out.println("Adding a new user.");
-        user = Entity.builder(userKey).set("count", 0L).build();
+        user = Entity.newBuilder(userKey).set("count", 0L).build();
         tx.add(user);
       }
-      FullEntity<IncompleteKey> contactEntity = FullEntity.builder()
+      FullEntity<IncompleteKey> contactEntity = FullEntity.newBuilder()
           .set("email", contact.email())
           .set("phone", contact.phone())
           .build();
-      tx.update(Entity.builder(user).set("contact", contactEntity).build());
-      System.out.printf("Setting contact for user '%s'.%n", userKey.name());
+      tx.update(Entity.newBuilder(user).set("contact", contactEntity).build());
+      System.out.printf("Setting contact for user '%s'.%n", userKey.getName());
     }
 
     @Override
@@ -286,16 +286,17 @@ public class DatastoreExample {
   public static void main(String... args) throws Exception {
     String projectId = args.length > 0 ? args[0] : null;
     // If you want to access a local Datastore running via the Google Cloud SDK, do
-    //   DatastoreOptions options = DatastoreOptions.builder()
-    //       .projectId(projectId)
-    //       .namespace(NAMESPACE)
-    //       .host("http://localhost:8080") // change 8080 to the port that the emulator listens to
+    //   DatastoreOptions options = DatastoreOptions.newBuilder()
+    //       .setProjectId(projectId)
+    //       .setNamespace(NAMESPACE)
+    //       // change 8080 to the port that the emulator listens to
+    //       .setHost("http://localhost:8080")
     //       .build();
     DatastoreOptions options =
-        DatastoreOptions.builder().projectId(projectId).namespace(NAMESPACE).build();
-    String name = args.length > 1 ? args[1] : System.getProperty("user.name");
-    Datastore datastore = options.service();
-    KeyFactory keyFactory = datastore.newKeyFactory().kind(USER_KIND);
+        DatastoreOptions.newBuilder().setProjectId(projectId).setNamespace(NAMESPACE).build();
+    String name = args.length > 1 ? args[1] : System.getProperty("user.getName");
+    Datastore datastore = options.getService();
+    KeyFactory keyFactory = datastore.newKeyFactory().setKind(USER_KIND);
     Key key = keyFactory.newKey(name);
     String actionName = args.length > 2 ? args[2].toLowerCase() : DEFAULT_ACTION;
     DatastoreAction action = ACTIONS.get(actionName);
@@ -322,7 +323,7 @@ public class DatastoreExample {
       action.run(tx, key, request);
       tx.commit();
     } finally {
-      if (tx.active()) {
+      if (tx.isActive()) {
         tx.rollback();
       }
     }

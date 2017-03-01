@@ -50,27 +50,60 @@ public class StructuredQueryTest {
   private static final String DISTINCT_ON1 = "p6";
   private static final String DISTINCT_ON2 = "p7";
   private static final List<String> DISTINCT_ON = ImmutableList.of(DISTINCT_ON1, DISTINCT_ON2);
-  private static final EntityQuery ENTITY_QUERY = Query.entityQueryBuilder()
-      .namespace(NAMESPACE)
-      .kind(KIND)
-      .startCursor(START_CURSOR)
-      .endCursor(END_CURSOR)
-      .offset(OFFSET)
-      .limit(LIMIT)
-      .filter(FILTER)
-      .orderBy(ORDER_BY_1, ORDER_BY_2)
+  private static final EntityQuery ENTITY_QUERY = Query.newEntityQueryBuilder()
+      .setNamespace(NAMESPACE)
+      .setKind(KIND)
+      .setStartCursor(START_CURSOR)
+      .setEndCursor(END_CURSOR)
+      .setOffset(OFFSET)
+      .setLimit(LIMIT)
+      .setFilter(FILTER)
+      .setOrderBy(ORDER_BY_1, ORDER_BY_2)
       .build();
-  private static final KeyQuery KEY_QUERY = Query.keyQueryBuilder()
-      .namespace(NAMESPACE)
-      .kind(KIND)
-      .startCursor(START_CURSOR)
-      .endCursor(END_CURSOR)
-      .offset(OFFSET)
-      .limit(LIMIT)
-      .filter(FILTER)
-      .orderBy(ORDER_BY_1, ORDER_BY_2)
+  private static final KeyQuery KEY_QUERY = Query.newKeyQueryBuilder()
+      .setNamespace(NAMESPACE)
+      .setKind(KIND)
+      .setStartCursor(START_CURSOR)
+      .setEndCursor(END_CURSOR)
+      .setOffset(OFFSET)
+      .setLimit(LIMIT)
+      .setFilter(FILTER)
+      .setOrderBy(ORDER_BY_1, ORDER_BY_2)
       .build();
   private static final ProjectionEntityQuery PROJECTION_QUERY =
+      Query.newProjectionEntityQueryBuilder()
+          .setNamespace(NAMESPACE)
+          .setKind(KIND)
+          .setStartCursor(START_CURSOR)
+          .setEndCursor(END_CURSOR)
+          .setOffset(OFFSET)
+          .setLimit(LIMIT)
+          .setFilter(FILTER)
+          .setOrderBy(ORDER_BY_1, ORDER_BY_2)
+          .setProjection(PROJECTION1, PROJECTION2)
+          .setDistinctOn(DISTINCT_ON1, DISTINCT_ON2)
+          .build();
+  private static final EntityQuery DEPRECATED_ENTITY_QUERY = Query.entityQueryBuilder()
+      .namespace(NAMESPACE)
+      .kind(KIND)
+      .startCursor(START_CURSOR)
+      .endCursor(END_CURSOR)
+      .offset(OFFSET)
+      .limit(LIMIT)
+      .filter(FILTER)
+      .orderBy(ORDER_BY_1, ORDER_BY_2)
+      .build();
+  private static final KeyQuery DEPRECATED_KEY_QUERY = Query.keyQueryBuilder()
+      .namespace(NAMESPACE)
+      .kind(KIND)
+      .startCursor(START_CURSOR)
+      .endCursor(END_CURSOR)
+      .offset(OFFSET)
+      .limit(LIMIT)
+      .filter(FILTER)
+      .orderBy(ORDER_BY_1, ORDER_BY_2)
+      .build();
+  private static final ProjectionEntityQuery DEPRECATED_PROJECTION_QUERY =
       Query.projectionEntityQueryBuilder()
           .namespace(NAMESPACE)
           .kind(KIND)
@@ -87,26 +120,59 @@ public class StructuredQueryTest {
   @Test
   public void testEntityQueryBuilder() {
     compareBaseBuilderFields(ENTITY_QUERY);
-    assertTrue(ENTITY_QUERY.projection().isEmpty());
-    assertTrue(ENTITY_QUERY.distinctOn().isEmpty());
+    assertTrue(ENTITY_QUERY.getProjection().isEmpty());
+    assertTrue(ENTITY_QUERY.getDistinctOn().isEmpty());
+  }
+
+  @Test
+  public void testEntityQueryBuilderDeprecated() {
+    compareBaseBuilderFieldsDeprecated(ENTITY_QUERY);
+    assertTrue(DEPRECATED_ENTITY_QUERY.projection().isEmpty());
+    assertTrue(DEPRECATED_ENTITY_QUERY.distinctOn().isEmpty());
   }
 
   @Test
   public void testKeyQueryBuilder() {
     compareBaseBuilderFields(KEY_QUERY);
-    assertEquals(ImmutableList.of(StructuredQuery.KEY_PROPERTY_NAME), KEY_QUERY.projection());
-    assertTrue(KEY_QUERY.distinctOn().isEmpty());
+    assertEquals(ImmutableList.of(StructuredQuery.KEY_PROPERTY_NAME), KEY_QUERY.getProjection());
+    assertTrue(KEY_QUERY.getDistinctOn().isEmpty());
+  }
+
+  @Test
+  public void testKeyQueryBuilderDeprecated() {
+    compareBaseBuilderFieldsDeprecated(DEPRECATED_KEY_QUERY);
+    assertEquals(ImmutableList.of(StructuredQuery.KEY_PROPERTY_NAME),
+        DEPRECATED_KEY_QUERY.projection());
+    assertTrue(DEPRECATED_KEY_QUERY.distinctOn().isEmpty());
   }
 
   @Test
   public void testProjectionEntityQueryBuilder() {
     compareBaseBuilderFields(PROJECTION_QUERY);
-    assertEquals(PROJECTION, PROJECTION_QUERY.projection());
-    assertEquals(DISTINCT_ON, PROJECTION_QUERY.distinctOn());
+    assertEquals(PROJECTION, PROJECTION_QUERY.getProjection());
+    assertEquals(DISTINCT_ON, PROJECTION_QUERY.getDistinctOn());
+  }
+
+  @Test
+  public void testProjectionEntityQueryBuilderDeprecated() {
+    compareBaseBuilderFieldsDeprecated(DEPRECATED_PROJECTION_QUERY);
+    assertEquals(PROJECTION, DEPRECATED_PROJECTION_QUERY.projection());
+    assertEquals(DISTINCT_ON, DEPRECATED_PROJECTION_QUERY.distinctOn());
   }
 
   private void compareBaseBuilderFields(StructuredQuery<?> query) {
-    assertEquals(NAMESPACE, query.namespace());
+    assertEquals(NAMESPACE, query.getNamespace());
+    assertEquals(KIND, query.getKind());
+    assertEquals(START_CURSOR, query.getStartCursor());
+    assertEquals(END_CURSOR, query.getEndCursor());
+    assertEquals(OFFSET, query.getOffset());
+    assertEquals(LIMIT, query.getLimit());
+    assertEquals(FILTER, query.getFilter());
+    assertEquals(ORDER_BY, query.getOrderBy());
+  }
+
+  private void compareBaseBuilderFieldsDeprecated(StructuredQuery<?> query) {
+    assertEquals(NAMESPACE, query.getNamespace());
     assertEquals(KIND, query.kind());
     assertEquals(START_CURSOR, query.startCursor());
     assertEquals(END_CURSOR, query.endCursor());
@@ -127,28 +193,31 @@ public class StructuredQueryTest {
   }
 
   private void compareMergedQuery(StructuredQuery<?> expected, StructuredQuery<?> actual) {
-    assertEquals(expected.kind(), actual.kind());
-    assertEquals(expected.startCursor(), actual.startCursor());
-    assertEquals(expected.endCursor(), actual.endCursor());
-    assertEquals(expected.offset(), actual.offset());
-    assertEquals(expected.limit(), actual.limit());
-    assertEquals(expected.filter(), actual.filter());
-    assertEquals(expected.orderBy(), actual.orderBy());
-    assertEquals(expected.projection(), actual.projection());
-    assertEquals(expected.distinctOn(), actual.distinctOn());
+    assertEquals(expected.getKind(), actual.getKind());
+    assertEquals(expected.getStartCursor(), actual.getStartCursor());
+    assertEquals(expected.getEndCursor(), actual.getEndCursor());
+    assertEquals(expected.getOffset(), actual.getOffset());
+    assertEquals(expected.getLimit(), actual.getLimit());
+    assertEquals(expected.getFilter(), actual.getFilter());
+    assertEquals(expected.getOrderBy(), actual.getOrderBy());
+    assertEquals(expected.getProjection(), actual.getProjection());
+    assertEquals(expected.getDistinctOn(), actual.getDistinctOn());
   }
 
   @Test
   public void testToAndFromPb() {
     assertEquals(
         ENTITY_QUERY,
-        StructuredQuery.fromPb(ResultType.ENTITY, ENTITY_QUERY.namespace(), ENTITY_QUERY.toPb()));
+        StructuredQuery.fromPb(ResultType.ENTITY, ENTITY_QUERY.getNamespace(),
+            ENTITY_QUERY.toPb()));
     assertEquals(
-        KEY_QUERY, StructuredQuery.fromPb(ResultType.KEY, KEY_QUERY.namespace(), KEY_QUERY.toPb()));
+        KEY_QUERY, StructuredQuery.fromPb(ResultType.KEY, KEY_QUERY.getNamespace(),
+            KEY_QUERY.toPb()));
     assertEquals(
         PROJECTION_QUERY,
         StructuredQuery.fromPb(
-            ResultType.PROJECTION_ENTITY, PROJECTION_QUERY.namespace(), PROJECTION_QUERY.toPb()));
+            ResultType.PROJECTION_ENTITY, PROJECTION_QUERY.getNamespace(),
+            PROJECTION_QUERY.toPb()));
   }
 
   @Test
@@ -162,8 +231,8 @@ public class StructuredQueryTest {
 
   @Test
   public void testKeyOnly() {
-    assertTrue(KEY_QUERY.keyOnly());
-    assertFalse(ENTITY_QUERY.keyOnly());
-    assertFalse(PROJECTION_QUERY.keyOnly());
+    assertTrue(KEY_QUERY.isKeyOnly());
+    assertFalse(ENTITY_QUERY.isKeyOnly());
+    assertFalse(PROJECTION_QUERY.isKeyOnly());
   }
 }

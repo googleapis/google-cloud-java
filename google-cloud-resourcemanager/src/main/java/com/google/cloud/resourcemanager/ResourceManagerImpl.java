@@ -44,7 +44,7 @@ final class ResourceManagerImpl
 
   ResourceManagerImpl(ResourceManagerOptions options) {
     super(options);
-    resourceManagerRpc = options.rpc();
+    resourceManagerRpc = options.getRpc();
   }
 
   @Override
@@ -56,7 +56,7 @@ final class ResourceManagerImpl
             public com.google.api.services.cloudresourcemanager.model.Project call() {
               return resourceManagerRpc.create(project.toPb());
             }
-          }, options().retryParams(), EXCEPTION_HANDLER, options().clock()));
+          }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock()));
     } catch (RetryHelperException ex) {
       throw ResourceManagerException.translateAndThrow(ex);
     }
@@ -71,7 +71,7 @@ final class ResourceManagerImpl
           resourceManagerRpc.delete(projectId);
           return null;
         }
-      }, options().retryParams(), EXCEPTION_HANDLER, options().clock());
+      }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock());
     } catch (RetryHelperException ex) {
       throw ResourceManagerException.translateAndThrow(ex);
     }
@@ -87,7 +87,7 @@ final class ResourceManagerImpl
             public com.google.api.services.cloudresourcemanager.model.Project call() {
               return resourceManagerRpc.get(projectId, optionsMap);
             }
-          }, options().retryParams(), EXCEPTION_HANDLER, options().clock());
+          }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock());
       return answer == null ? null : Project.fromPb(this, answer);
     } catch (RetryHelperException ex) {
       throw ResourceManagerException.translateAndThrow(ex);
@@ -108,14 +108,20 @@ final class ResourceManagerImpl
     }
 
     @Override
+    @Deprecated
     public Page<Project> nextPage() {
+      return getNextPage();
+    }
+
+    @Override
+    public Page<Project> getNextPage() {
       return listProjects(serviceOptions, requestOptions);
     }
   }
 
   @Override
   public Page<Project> list(ProjectListOption... options) {
-    return listProjects(options(), optionMap(options));
+    return listProjects(getOptions(), optionMap(options));
   }
 
   private static Page<Project> listProjects(final ResourceManagerOptions serviceOptions,
@@ -127,10 +133,10 @@ final class ResourceManagerImpl
                 @Override
                 public Tuple<String,
                     Iterable<com.google.api.services.cloudresourcemanager.model.Project>> call() {
-                  return serviceOptions.rpc().list(optionsMap);
+                  return serviceOptions.getRpc().list(optionsMap);
                 }
               },
-              serviceOptions.retryParams(), EXCEPTION_HANDLER, serviceOptions.clock());
+              serviceOptions.getRetryParams(), EXCEPTION_HANDLER, serviceOptions.getClock());
       String cursor = result.x();
       Iterable<Project> projects =
           result.y() == null
@@ -142,7 +148,7 @@ final class ResourceManagerImpl
                     public Project apply(
                         com.google.api.services.cloudresourcemanager.model.Project projectPb) {
                       return new Project(
-                          serviceOptions.service(),
+                          serviceOptions.getService(),
                           new ProjectInfo.BuilderImpl(ProjectInfo.fromPb(projectPb)));
                     }
                   });
@@ -162,7 +168,7 @@ final class ResourceManagerImpl
             public com.google.api.services.cloudresourcemanager.model.Project call() {
               return resourceManagerRpc.replace(newProject.toPb());
             }
-          }, options().retryParams(), EXCEPTION_HANDLER, options().clock()));
+          }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock()));
     } catch (RetryHelperException ex) {
       throw ResourceManagerException.translateAndThrow(ex);
     }
@@ -177,7 +183,7 @@ final class ResourceManagerImpl
           resourceManagerRpc.undelete(projectId);
           return null;
         }
-      }, options().retryParams(), EXCEPTION_HANDLER, options().clock());
+      }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock());
     } catch (RetryHelperException ex) {
       throw ResourceManagerException.translateAndThrow(ex);
     }
@@ -193,7 +199,7 @@ final class ResourceManagerImpl
                 public com.google.api.services.cloudresourcemanager.model.Policy call() {
                   return resourceManagerRpc.getPolicy(projectId);
                 }
-              }, options().retryParams(), EXCEPTION_HANDLER, options().clock());
+              }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock());
       return answer == null ? null : PolicyMarshaller.INSTANCE.fromPb(answer);
     } catch (RetryHelperException ex) {
       throw ResourceManagerException.translateAndThrow(ex);
@@ -210,7 +216,7 @@ final class ResourceManagerImpl
               return resourceManagerRpc.replacePolicy(projectId,
                   PolicyMarshaller.INSTANCE.toPb(newPolicy));
             }
-          }, options().retryParams(), EXCEPTION_HANDLER, options().clock()));
+          }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock()));
     } catch (RetryHelperException ex) {
       throw ResourceManagerException.translateAndThrow(ex);
     }
@@ -225,7 +231,7 @@ final class ResourceManagerImpl
             public List<Boolean> call() {
               return resourceManagerRpc.testPermissions(projectId, permissions);
             }
-          }, options().retryParams(), EXCEPTION_HANDLER, options().clock());
+          }, getOptions().getRetryParams(), EXCEPTION_HANDLER, getOptions().getClock());
     } catch (RetryHelperException ex) {
       throw ResourceManagerException.translateAndThrow(ex);
     }
@@ -234,7 +240,7 @@ final class ResourceManagerImpl
   private Map<ResourceManagerRpc.Option, ?> optionMap(Option... options) {
     Map<ResourceManagerRpc.Option, Object> temp = Maps.newEnumMap(ResourceManagerRpc.Option.class);
     for (Option option : options) {
-      Object prev = temp.put(option.rpcOption(), option.value());
+      Object prev = temp.put(option.getRpcOption(), option.getValue());
       checkArgument(prev == null, "Duplicate option %s", option);
     }
     return ImmutableMap.copyOf(temp);

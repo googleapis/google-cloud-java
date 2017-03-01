@@ -39,7 +39,7 @@ public final class InstanceId extends ResourceId  {
   static final Function<InstanceId, String> TO_URL_FUNCTION = new Function<InstanceId, String>() {
     @Override
     public String apply(InstanceId instanceId) {
-      return instanceId.selfLink();
+      return instanceId.getSelfLink();
     }
   };
 
@@ -65,27 +65,63 @@ public final class InstanceId extends ResourceId  {
    *
    * @see <a href="https://www.ietf.org/rfc/rfc1035.txt">RFC1035</a>
    */
+  @Deprecated
   public String instance() {
+    return getInstance();
+  }
+
+  /**
+   * Returns the name of the instance. The name must be 1-63 characters long and comply with
+   * RFC1035. Specifically, the name must match the regular expression
+   * {@code [a-z]([-a-z0-9]*[a-z0-9])?} which means the first character must be a lowercase letter,
+   * and all following characters must be a dash, lowercase letter, or digit, except the last
+   * character, which cannot be a dash.
+   *
+   * @see <a href="https://www.ietf.org/rfc/rfc1035.txt">RFC1035</a>
+   */
+  public String getInstance() {
     return instance;
   }
 
   /**
    * Returns the name of the zone this instance belongs to.
    */
+  @Deprecated
   public String zone() {
+    return getZone();
+  }
+
+  /**
+   * Returns the name of the zone this instance belongs to.
+   */
+  public String getZone() {
     return zone;
   }
 
   /**
    * Returns the identity of the zone this instance belongs to.
    */
+  @Deprecated
   public ZoneId zoneId() {
-    return ZoneId.of(project(), zone);
+    return getZoneId();
+  }
+
+  /**
+   * Returns the identity of the zone this instance belongs to.
+   */
+  public ZoneId getZoneId() {
+    return ZoneId.of(getProject(), zone);
   }
 
   @Override
+  @Deprecated
   public String selfLink() {
-    return super.selfLink() + "/zones/" + zone + "/instances/" + instance;
+    return getSelfLink();
+  }
+
+  @Override
+  public String getSelfLink() {
+    return super.getSelfLink() + "/zones/" + zone + "/instances/" + instance;
   }
 
   @Override
@@ -114,7 +150,7 @@ public final class InstanceId extends ResourceId  {
 
   @Override
   InstanceId setProjectId(String projectId) {
-    if (project() != null) {
+    if (getProject() != null) {
       return this;
     }
     return InstanceId.of(projectId, zone, instance);
@@ -130,7 +166,7 @@ public final class InstanceId extends ResourceId  {
    * @see <a href="https://www.ietf.org/rfc/rfc1035.txt">RFC1035</a>
    */
   public static InstanceId of(ZoneId zoneId, String instance) {
-    return new InstanceId(zoneId.project(), zoneId.zone(), instance);
+    return new InstanceId(zoneId.getProject(), zoneId.getZone(), instance);
   }
 
   /**

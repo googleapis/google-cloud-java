@@ -16,7 +16,7 @@
 
 package com.google.cloud.compute.testing;
 
-import com.google.cloud.AuthCredentials;
+import com.google.auth.oauth2.ServiceAccountCredentials;
 import com.google.cloud.RetryParams;
 import com.google.cloud.compute.ComputeOptions;
 
@@ -29,12 +29,13 @@ import java.util.logging.Logger;
 /**
  * Utility to create a remote Compute configuration for testing. Compute options can be obtained
  * via the {@link #options()} method. Returned options have custom
- * {@link ComputeOptions#retryParams()}: {@link RetryParams#retryMaxAttempts()} is {@code 10},
- * {@link RetryParams#retryMinAttempts()} is {@code 6}, {@link RetryParams#maxRetryDelayMillis()} is
- * {@code 30000}, {@link RetryParams#totalRetryPeriodMillis()} is {@code 120000} and
- * {@link RetryParams#initialRetryDelayMillis()} is {@code 250}.
- * {@link ComputeOptions#connectTimeout()} and {@link ComputeOptions#readTimeout()} are both set to
- * {@code 60000}.
+ * {@link ComputeOptions#getRetryParams()}: {@link RetryParams#getRetryMaxAttempts()} is {@code 10},
+ * {@link RetryParams#getRetryMinAttempts()} is {@code 6},
+ * {@link RetryParams#getMaxRetryDelayMillis()} is {@code 30000},
+ * {@link RetryParams#getTotalRetryPeriodMillis()} is {@code 120000} and
+ * {@link RetryParams#getInitialRetryDelayMillis()} is {@code 250}.
+ * {@link ComputeOptions#getConnectTimeout()} and {@link ComputeOptions#getReadTimeout()} are both
+ * set to {@code 60000}.
  */
 public class RemoteComputeHelper {
 
@@ -48,7 +49,15 @@ public class RemoteComputeHelper {
   /**
    * Returns a {@link ComputeOptions} object to be used for testing.
    */
+  @Deprecated
   public ComputeOptions options() {
+    return getOptions();
+  }
+
+  /**
+   * Returns a {@link ComputeOptions} object to be used for testing.
+   */
+  public ComputeOptions getOptions() {
     return options;
   }
 
@@ -73,12 +82,12 @@ public class RemoteComputeHelper {
    */
   public static RemoteComputeHelper create(String projectId, InputStream keyStream) {
     try {
-      ComputeOptions computeOptions = ComputeOptions.builder()
-          .authCredentials(AuthCredentials.createForJson(keyStream))
-          .projectId(projectId)
-          .retryParams(retryParams())
-          .connectTimeout(60000)
-          .readTimeout(60000)
+      ComputeOptions computeOptions = ComputeOptions.newBuilder()
+          .setCredentials(ServiceAccountCredentials.fromStream(keyStream))
+          .setProjectId(projectId)
+          .setRetryParams(retryParams())
+          .setConnectTimeout(60000)
+          .setReadTimeout(60000)
           .build();
       return new RemoteComputeHelper(computeOptions);
     } catch (IOException ex) {
@@ -94,21 +103,21 @@ public class RemoteComputeHelper {
    * credentials.
    */
   public static RemoteComputeHelper create() {
-    ComputeOptions computeOptions = ComputeOptions.builder()
-        .retryParams(retryParams())
-        .connectTimeout(60000)
-        .readTimeout(60000)
+    ComputeOptions computeOptions = ComputeOptions.newBuilder()
+        .setRetryParams(retryParams())
+        .setConnectTimeout(60000)
+        .setReadTimeout(60000)
         .build();
     return new RemoteComputeHelper(computeOptions);
   }
 
   private static RetryParams retryParams() {
-    return RetryParams.builder()
-        .retryMaxAttempts(10)
-        .retryMinAttempts(6)
-        .maxRetryDelayMillis(30000)
-        .totalRetryPeriodMillis(120000)
-        .initialRetryDelayMillis(250)
+    return RetryParams.newBuilder()
+        .setRetryMaxAttempts(10)
+        .setRetryMinAttempts(6)
+        .setMaxRetryDelayMillis(30000)
+        .setTotalRetryPeriodMillis(120000)
+        .setInitialRetryDelayMillis(250)
         .build();
   }
 

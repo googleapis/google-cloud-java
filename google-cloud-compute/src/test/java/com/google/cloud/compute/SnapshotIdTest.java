@@ -39,6 +39,17 @@ public class SnapshotIdTest {
   @Test
   public void testOf() {
     SnapshotId snapshotId = SnapshotId.of(PROJECT, NAME);
+    assertEquals(PROJECT, snapshotId.getProject());
+    assertEquals(NAME, snapshotId.getSnapshot());
+    assertEquals(URL, snapshotId.getSelfLink());
+    snapshotId = SnapshotId.of(NAME);
+    assertNull(snapshotId.getProject());
+    assertEquals(NAME, snapshotId.getSnapshot());
+  }
+
+  @Test
+  public void testOfDeprecated() {
+    SnapshotId snapshotId = SnapshotId.of(PROJECT, NAME);
     assertEquals(PROJECT, snapshotId.project());
     assertEquals(NAME, snapshotId.snapshot());
     assertEquals(URL, snapshotId.selfLink());
@@ -50,7 +61,7 @@ public class SnapshotIdTest {
   @Test
   public void testToAndFromUrl() {
     SnapshotId snapshotId = SnapshotId.of(PROJECT, NAME);
-    compareSnapshotId(snapshotId, SnapshotId.fromUrl(snapshotId.selfLink()));
+    compareSnapshotId(snapshotId, SnapshotId.fromUrl(snapshotId.getSelfLink()));
     thrown.expect(IllegalArgumentException.class);
     thrown.expectMessage("notMatchingUrl is not a valid snapshot URL");
     SnapshotId.fromUrl("notMatchingUrl");
@@ -65,15 +76,15 @@ public class SnapshotIdTest {
 
   @Test
   public void testMatchesUrl() {
-    assertTrue(SnapshotId.matchesUrl(SnapshotId.of(PROJECT, NAME).selfLink()));
+    assertTrue(SnapshotId.matchesUrl(SnapshotId.of(PROJECT, NAME).getSelfLink()));
     assertFalse(SnapshotId.matchesUrl("notMatchingUrl"));
   }
 
   private void compareSnapshotId(SnapshotId expected, SnapshotId value) {
     assertEquals(expected, value);
-    assertEquals(expected.project(), expected.project());
-    assertEquals(expected.snapshot(), expected.snapshot());
-    assertEquals(expected.selfLink(), expected.selfLink());
+    assertEquals(expected.getProject(), expected.getProject());
+    assertEquals(expected.getSnapshot(), expected.getSnapshot());
+    assertEquals(expected.getSelfLink(), expected.getSelfLink());
     assertEquals(expected.hashCode(), expected.hashCode());
   }
 }

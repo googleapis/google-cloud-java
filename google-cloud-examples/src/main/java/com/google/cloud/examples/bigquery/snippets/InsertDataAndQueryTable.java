@@ -49,11 +49,11 @@ public class InsertDataAndQueryTable {
 
   public static void main(String... args) throws InterruptedException {
     // Create a service instance
-    BigQuery bigquery = BigQueryOptions.defaultInstance().service();
+    BigQuery bigquery = BigQueryOptions.getDefaultInstance().getService();
 
     // Create a dataset
     String datasetId = "my_dataset_id";
-    bigquery.create(DatasetInfo.builder(datasetId).build());
+    bigquery.create(DatasetInfo.newBuilder(datasetId).build());
 
     TableId tableId = TableId.of(datasetId, "my_table_id");
     // Table field definition
@@ -71,7 +71,7 @@ public class InsertDataAndQueryTable {
     secondRow.put("StringField", "value2");
     // Create an insert request
     InsertAllRequest insertRequest =
-        InsertAllRequest.builder(tableId).addRow(firstRow).addRow(secondRow).build();
+        InsertAllRequest.newBuilder(tableId).addRow(firstRow).addRow(secondRow).build();
     // Insert rows
     InsertAllResponse insertResponse = bigquery.insertAll(insertRequest);
     // Check if errors occurred
@@ -81,18 +81,18 @@ public class InsertDataAndQueryTable {
 
     // Create a query request
     QueryRequest queryRequest =
-        QueryRequest.builder("SELECT * FROM my_dataset_id.my_table_id")
-            .maxWaitTime(60000L)
-            .pageSize(1000L)
+        QueryRequest.newBuilder("SELECT * FROM my_dataset_id.my_table_id")
+            .setMaxWaitTime(60000L)
+            .setPageSize(1000L)
             .build();
     // Request query to be executed and wait for results
     QueryResponse queryResponse = bigquery.query(queryRequest);
     while (!queryResponse.jobCompleted()) {
       Thread.sleep(1000L);
-      queryResponse = bigquery.getQueryResults(queryResponse.jobId());
+      queryResponse = bigquery.getQueryResults(queryResponse.getJobId());
     }
     // Read rows
-    Iterator<List<FieldValue>> rowIterator = queryResponse.result().iterateAll();
+    Iterator<List<FieldValue>> rowIterator = queryResponse.getResult().iterateAll();
     System.out.println("Table rows:");
     while (rowIterator.hasNext()) {
       System.out.println(rowIterator.next());

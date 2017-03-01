@@ -56,44 +56,62 @@ public class Zone extends ZoneInfo {
     }
 
     @Override
+    @Deprecated
     public Builder name(String name) {
-      infoBuilder.name(name);
+      return setName(name);
+    }
+
+    @Override
+    public Builder setName(String name) {
+      infoBuilder.setName(name);
       return this;
     }
 
     @Override
-    Builder generatedId(String generatedId) {
-      infoBuilder.generatedId(generatedId);
+    Builder setGeneratedId(String generatedId) {
+      infoBuilder.setGeneratedId(generatedId);
       return this;
     }
 
     @Override
-    Builder creationTimeMillis(long creationTimeMillis) {
-      infoBuilder.creationTimeMillis(creationTimeMillis);
+    Builder setCreationTimeMillis(long creationTimeMillis) {
+      infoBuilder.setCreationTimeMillis(creationTimeMillis);
       return this;
     }
 
     @Override
+    @Deprecated
     public Builder dnsName(String dnsName) {
-      infoBuilder.dnsName(dnsName);
+      return setDnsName(dnsName);
+    }
+
+    @Override
+    public Builder setDnsName(String dnsName) {
+      infoBuilder.setDnsName(dnsName);
       return this;
     }
 
     @Override
+    @Deprecated
     public Builder description(String description) {
-      infoBuilder.description(description);
+      return setDescription(description);
+    }
+
+    @Override
+    public Builder setDescription(String description) {
+      infoBuilder.setDescription(description);
       return this;
     }
 
     @Override
-    Builder nameServerSet(String nameServerSet) {
-      infoBuilder.nameServerSet(nameServerSet);
+    Builder setNameServerSet(String nameServerSet) {
+      infoBuilder.setNameServerSet(nameServerSet);
       return this;
     }
 
     @Override
-    Builder nameServers(List<String> nameServers) {
-      infoBuilder.nameServers(nameServers); // infoBuilder makes a copy
+    Builder setNameServers(List<String> nameServers) {
+      infoBuilder.setNameServers(nameServers); // infoBuilder makes a copy
       return this;
     }
 
@@ -106,7 +124,7 @@ public class Zone extends ZoneInfo {
   Zone(Dns dns, ZoneInfo.BuilderImpl infoBuilder) {
     super(infoBuilder);
     this.dns = dns;
-    this.options = dns.options();
+    this.options = dns.getOptions();
   }
 
   @Override
@@ -122,7 +140,7 @@ public class Zone extends ZoneInfo {
    * @throws DnsException upon failure
    */
   public Zone reload(Dns.ZoneOption... options) {
-    return dns.getZone(name(), options);
+    return dns.getZone(getName(), options);
   }
 
   /**
@@ -132,7 +150,7 @@ public class Zone extends ZoneInfo {
    * @throws DnsException upon failure
    */
   public boolean delete() {
-    return dns.delete(name());
+    return dns.delete(getName());
   }
 
   /**
@@ -143,7 +161,7 @@ public class Zone extends ZoneInfo {
    * @throws DnsException upon failure or if the zone is not found
    */
   public Page<RecordSet> listRecordSets(Dns.RecordSetListOption... options) {
-    return dns.listRecordSets(name(), options);
+    return dns.listRecordSets(getName(), options);
   }
 
   /**
@@ -157,7 +175,7 @@ public class Zone extends ZoneInfo {
   public ChangeRequest applyChangeRequest(ChangeRequestInfo changeRequest,
       Dns.ChangeRequestOption... options) {
     checkNotNull(changeRequest);
-    return dns.applyChangeRequest(name(), changeRequest, options);
+    return dns.applyChangeRequest(getName(), changeRequest, options);
   }
 
   /**
@@ -173,7 +191,7 @@ public class Zone extends ZoneInfo {
   public ChangeRequest getChangeRequest(String changeRequestId,
       Dns.ChangeRequestOption... options) {
     checkNotNull(changeRequestId);
-    return dns.getChangeRequest(name(), changeRequestId, options);
+    return dns.getChangeRequest(getName(), changeRequestId, options);
   }
 
   /**
@@ -185,13 +203,21 @@ public class Zone extends ZoneInfo {
    * @throws DnsException upon failure or if the zone is not found
    */
   public Page<ChangeRequest> listChangeRequests(Dns.ChangeRequestListOption... options) {
-    return dns.listChangeRequests(name(), options);
+    return dns.listChangeRequests(getName(), options);
   }
 
   /**
    * Returns the {@link Dns} service object associated with this zone.
    */
+  @Deprecated
   public Dns dns() {
+    return getDns();
+  }
+
+  /**
+   * Returns the {@link Dns} service object associated with this zone.
+   */
+  public Dns getDns() {
     return this.dns;
   }
 
@@ -215,7 +241,7 @@ public class Zone extends ZoneInfo {
 
   private void readObject(ObjectInputStream stream) throws IOException, ClassNotFoundException {
     stream.defaultReadObject();
-    this.dns = options.service();
+    this.dns = options.getService();
   }
 
   static Zone fromPb(Dns dns, ManagedZone zone) {

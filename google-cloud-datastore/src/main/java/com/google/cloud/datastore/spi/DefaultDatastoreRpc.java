@@ -41,13 +41,13 @@ public class DefaultDatastoreRpc implements DatastoreRpc {
   private final com.google.datastore.v1.client.Datastore client;
 
   public DefaultDatastoreRpc(DatastoreOptions options) {
-    HttpTransport transport = options.httpTransportFactory().create();
+    HttpTransport transport = options.getHttpTransportFactory().create();
     com.google.datastore.v1.client.DatastoreOptions.Builder clientBuilder =
         new com.google.datastore.v1.client.DatastoreOptions.Builder()
-            .projectId(options.projectId())
-            .initializer(options.httpRequestInitializer())
+            .projectId(options.getProjectId())
+            .initializer(options.getHttpRequestInitializer())
             .transport(transport);
-    String normalizedHost = options.host() != null ? options.host().toLowerCase() : "";
+    String normalizedHost = options.getHost() != null ? options.getHost().toLowerCase() : "";
     if (isLocalHost(normalizedHost)) {
       clientBuilder = clientBuilder.localHost(removeScheme(normalizedHost));
     } else if (!removeScheme(com.google.datastore.v1.client.DatastoreFactory.DEFAULT_HOST)
@@ -60,7 +60,7 @@ public class DefaultDatastoreRpc implements DatastoreRpc {
       fullUrl = fullUrl
           + com.google.datastore.v1.client.DatastoreFactory.VERSION
           + "/projects/"
-          + options.projectId();
+          + options.getProjectId();
       clientBuilder = clientBuilder.projectId(null).projectEndpoint(fullUrl);
     }
     client = com.google.datastore.v1.client.DatastoreFactory.get()

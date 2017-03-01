@@ -32,7 +32,6 @@ public class DateTimeValueTest {
     assertEquals(value, value.toBuilder().build());
   }
 
-  @SuppressWarnings("deprecation")
   @Test
   public void testOf() throws Exception {
     DateTimeValue value = DateTimeValue.of(CONTENT);
@@ -43,6 +42,15 @@ public class DateTimeValueTest {
   @SuppressWarnings("deprecation")
   @Test
   public void testBuilder() throws Exception {
+    DateTimeValue.Builder builder = DateTimeValue.newBuilder(CONTENT);
+    DateTimeValue value = builder.setMeaning(1).setExcludeFromIndexes(true).build();
+    assertEquals(CONTENT, value.get());
+    assertEquals(1, value.getMeaning());
+    assertTrue(value.excludeFromIndexes());
+  }
+
+  @Test
+  public void testBuilderDeprecated() throws Exception {
     DateTimeValue.Builder builder = DateTimeValue.builder(CONTENT);
     DateTimeValue value = builder.meaning(1).excludeFromIndexes(true).build();
     assertEquals(CONTENT, value.get());

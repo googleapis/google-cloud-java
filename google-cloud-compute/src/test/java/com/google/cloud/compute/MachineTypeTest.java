@@ -37,21 +37,35 @@ public class MachineTypeTest {
   private static final Long MAXIMUM_PERSISTENT_DISKS_SIZE_GB = 5L;
   private static final DeprecationStatus<MachineTypeId> DEPRECATION_STATUS =
       DeprecationStatus.of(DeprecationStatus.Status.DELETED, MACHINE_TYPE_ID);
-  private static final MachineType MACHINE_TYPE = MachineType.builder()
-      .generatedId(GENERATED_ID)
-      .machineTypeId(MACHINE_TYPE_ID)
-      .creationTimestamp(CREATION_TIMESTAMP)
-      .description(DESCRIPTION)
-      .cpus(CPUS)
-      .memoryMb(MEMORY_MB)
-      .scratchDisksSizeGb(SCRATCH_DISKS)
-      .maximumPersistentDisks(MAXIMUM_PERSISTENT_DISKS)
-      .maximumPersistentDisksSizeGb(MAXIMUM_PERSISTENT_DISKS_SIZE_GB)
-      .deprecationStatus(DEPRECATION_STATUS)
+  private static final MachineType MACHINE_TYPE = MachineType.newBuilder()
+      .setGeneratedId(GENERATED_ID)
+      .setMachineTypeId(MACHINE_TYPE_ID)
+      .setCreationTimestamp(CREATION_TIMESTAMP)
+      .setDescription(DESCRIPTION)
+      .setCpus(CPUS)
+      .setMemoryMb(MEMORY_MB)
+      .setScratchDisksSizeGb(SCRATCH_DISKS)
+      .setMaximumPersistentDisks(MAXIMUM_PERSISTENT_DISKS)
+      .setMaximumPersistentDisksSizeGb(MAXIMUM_PERSISTENT_DISKS_SIZE_GB)
+      .setDeprecationStatus(DEPRECATION_STATUS)
       .build();
 
   @Test
   public void testBuilder() {
+    assertEquals(GENERATED_ID, MACHINE_TYPE.getGeneratedId());
+    assertEquals(MACHINE_TYPE_ID, MACHINE_TYPE.getMachineTypeId());
+    assertEquals(CREATION_TIMESTAMP, MACHINE_TYPE.getCreationTimestamp());
+    assertEquals(DESCRIPTION, MACHINE_TYPE.getDescription());
+    assertEquals(CPUS, MACHINE_TYPE.getCpus());
+    assertEquals(MEMORY_MB, MACHINE_TYPE.getMemoryMb());
+    assertEquals(SCRATCH_DISKS, MACHINE_TYPE.getScratchDisksSizeGb());
+    assertEquals(MAXIMUM_PERSISTENT_DISKS, MACHINE_TYPE.getMaximumPersistentDisks());
+    assertEquals(MAXIMUM_PERSISTENT_DISKS_SIZE_GB, MACHINE_TYPE.getMaximumPersistentDisksSizeGb());
+    assertEquals(DEPRECATION_STATUS, MACHINE_TYPE.getDeprecationStatus());
+  }
+
+  @Test
+  public void testBuilderDeprecated() {
     assertEquals(GENERATED_ID, MACHINE_TYPE.generatedId());
     assertEquals(MACHINE_TYPE_ID, MACHINE_TYPE.machineTypeId());
     assertEquals(CREATION_TIMESTAMP, MACHINE_TYPE.creationTimestamp());
@@ -67,22 +81,23 @@ public class MachineTypeTest {
   @Test
   public void testToPbAndFromPb() {
     compareMachineTypes(MACHINE_TYPE, MachineType.fromPb(MACHINE_TYPE.toPb()));
-    MachineType machineType = MachineType.builder().machineTypeId(MACHINE_TYPE_ID).build();
+    MachineType machineType = MachineType.newBuilder().setMachineTypeId(MACHINE_TYPE_ID).build();
     compareMachineTypes(machineType, MachineType.fromPb(machineType.toPb()));
   }
 
   private void compareMachineTypes(MachineType expected, MachineType value) {
     assertEquals(expected, value);
-    assertEquals(expected.machineTypeId(), value.machineTypeId());
-    assertEquals(expected.generatedId(), value.generatedId());
-    assertEquals(expected.creationTimestamp(), value.creationTimestamp());
-    assertEquals(expected.description(), value.description());
-    assertEquals(expected.cpus(), value.cpus());
-    assertEquals(expected.memoryMb(), value.memoryMb());
-    assertEquals(expected.scratchDisksSizeGb(), value.scratchDisksSizeGb());
-    assertEquals(expected.maximumPersistentDisks(), value.maximumPersistentDisks());
-    assertEquals(expected.maximumPersistentDisksSizeGb(), value.maximumPersistentDisksSizeGb());
-    assertEquals(expected.deprecationStatus(), value.deprecationStatus());
+    assertEquals(expected.getMachineTypeId(), value.getMachineTypeId());
+    assertEquals(expected.getGeneratedId(), value.getGeneratedId());
+    assertEquals(expected.getCreationTimestamp(), value.getCreationTimestamp());
+    assertEquals(expected.getDescription(), value.getDescription());
+    assertEquals(expected.getCpus(), value.getCpus());
+    assertEquals(expected.getMemoryMb(), value.getMemoryMb());
+    assertEquals(expected.getScratchDisksSizeGb(), value.getScratchDisksSizeGb());
+    assertEquals(expected.getMaximumPersistentDisks(), value.getMaximumPersistentDisks());
+    assertEquals(expected.getMaximumPersistentDisksSizeGb(),
+        value.getMaximumPersistentDisksSizeGb());
+    assertEquals(expected.getDeprecationStatus(), value.getDeprecationStatus());
     assertEquals(expected.hashCode(), value.hashCode());
   }
 }

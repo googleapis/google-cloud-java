@@ -99,34 +99,52 @@ public class DiskInfo implements Serializable {
    */
   public abstract static class Builder {
 
-    abstract Builder generatedId(String generatedId);
+    abstract Builder setGeneratedId(String generatedId);
 
     /**
      * Sets the disk configuration.
      */
+    @Deprecated
     public abstract Builder configuration(DiskConfiguration configuration);
+
+    /**
+     * Sets the disk configuration.
+     */
+    public abstract Builder setConfiguration(DiskConfiguration configuration);
 
     /**
      * Sets the disk identity.
      */
+    @Deprecated
     public abstract Builder diskId(DiskId diskId);
 
-    abstract Builder creationTimestamp(Long creationTimestamp);
+    /**
+     * Sets the disk identity.
+     */
+    public abstract Builder setDiskId(DiskId diskId);
 
-    abstract Builder creationStatus(CreationStatus creationStatus);
+    abstract Builder setCreationTimestamp(Long creationTimestamp);
+
+    abstract Builder setCreationStatus(CreationStatus creationStatus);
 
     /**
      * Sets an optional textual description of the resource.
      */
+    @Deprecated
     public abstract Builder description(String description);
 
-    abstract Builder licenses(List<LicenseId> licenses);
+    /**
+     * Sets an optional textual description of the resource.
+     */
+    public abstract Builder setDescription(String description);
 
-    abstract Builder attachedInstances(List<InstanceId> attachedInstances);
+    abstract Builder setLicenses(List<LicenseId> licenses);
 
-    abstract Builder lastAttachTimestamp(Long lastAttachTimestamp);
+    abstract Builder setAttachedInstances(List<InstanceId> attachedInstances);
 
-    abstract Builder lastDetachTimestamp(Long lastDetachTimestamp);
+    abstract Builder setLastAttachTimestamp(Long lastAttachTimestamp);
+
+    abstract Builder setLastDetachTimestamp(Long lastDetachTimestamp);
 
     /**
      * Creates a {@code DiskInfo} object.
@@ -193,62 +211,80 @@ public class DiskInfo implements Serializable {
     }
 
     @Override
-    BuilderImpl generatedId(String generatedId) {
+    BuilderImpl setGeneratedId(String generatedId) {
       this.generatedId = generatedId;
       return this;
     }
 
     @Override
+    @Deprecated
     public BuilderImpl configuration(DiskConfiguration configuration) {
+      return setConfiguration(configuration);
+    }
+
+    @Override
+    public BuilderImpl setConfiguration(DiskConfiguration configuration) {
       this.configuration = checkNotNull(configuration);
       return this;
     }
 
     @Override
+    @Deprecated
     public BuilderImpl diskId(DiskId diskId) {
+      return setDiskId(diskId);
+    }
+
+    @Override
+    public BuilderImpl setDiskId(DiskId diskId) {
       this.diskId = checkNotNull(diskId);
       return this;
     }
 
     @Override
-    BuilderImpl creationTimestamp(Long creationTimestamp) {
+    BuilderImpl setCreationTimestamp(Long creationTimestamp) {
       this.creationTimestamp = creationTimestamp;
       return this;
     }
 
     @Override
-    BuilderImpl creationStatus(CreationStatus creationStatus) {
+    BuilderImpl setCreationStatus(CreationStatus creationStatus) {
       this.creationStatus = creationStatus;
       return this;
     }
 
     @Override
+    @Deprecated
     public BuilderImpl description(String description) {
+      return setDescription(description);
+    }
+
+    @Override
+    public BuilderImpl setDescription(String description) {
       this.description = description;
       return this;
     }
 
     @Override
-    BuilderImpl licenses(List<LicenseId> licenses) {
+    BuilderImpl setLicenses(List<LicenseId> licenses) {
       this.licenses = licenses != null ? ImmutableList.copyOf(licenses) : null;
       return this;
     }
 
     @Override
-    BuilderImpl attachedInstances(List<InstanceId> attachedInstances) {
+    BuilderImpl setAttachedInstances(List<InstanceId> attachedInstances) {
       this.attachedInstances =
           attachedInstances != null ? ImmutableList.copyOf(attachedInstances) : null;
       return this;
     }
 
     @Override
-    BuilderImpl lastAttachTimestamp(Long lastAttachTimestamp) {
+    BuilderImpl setLastAttachTimestamp(Long lastAttachTimestamp) {
       this.lastAttachTimestamp = lastAttachTimestamp;
       return this;
     }
 
     @Override
-    BuilderImpl lastDetachTimestamp(Long lastDetachTimestamp) {
+    BuilderImpl setLastDetachTimestamp(Long lastDetachTimestamp) {
       this.lastDetachTimestamp = lastDetachTimestamp;
       return this;
     }
@@ -275,14 +311,30 @@ public class DiskInfo implements Serializable {
   /**
    * Returns the creation timestamp in milliseconds since epoch.
    */
+  @Deprecated
   public Long creationTimestamp() {
+    return getCreationTimestamp();
+  }
+
+  /**
+   * Returns the creation timestamp in milliseconds since epoch.
+   */
+  public Long getCreationTimestamp() {
     return creationTimestamp;
   }
 
   /**
    * Returns the service-generated unique identifier for the disk.
    */
+  @Deprecated
   public String generatedId() {
+    return getGeneratedId();
+  }
+
+  /**
+   * Returns the service-generated unique identifier for the disk.
+   */
+  public String getGeneratedId() {
     return generatedId;
   }
 
@@ -290,56 +342,121 @@ public class DiskInfo implements Serializable {
    * Returns the disk configuration.
    */
   @SuppressWarnings("unchecked")
+  @Deprecated
   public <T extends DiskConfiguration> T configuration() {
+    return getConfiguration();
+  }
+
+  /**
+   * Returns the disk configuration.
+   */
+  @SuppressWarnings("unchecked")
+  public <T extends DiskConfiguration> T getConfiguration() {
     return (T) configuration;
   }
 
   /**
    * Returns the disk identity.
    */
+  @Deprecated
   public DiskId diskId() {
+    return getDiskId();
+  }
+
+  /**
+   * Returns the disk identity.
+   */
+  public DiskId getDiskId() {
     return diskId;
   }
 
   /**
    * Returns the creation status of the disk.
    */
+  @Deprecated
   public CreationStatus creationStatus() {
+    return getCreationStatus();
+  }
+
+  /**
+   * Returns the creation status of the disk.
+   */
+  public CreationStatus getCreationStatus() {
     return creationStatus;
   }
 
   /**
    * Returns a textual description of the disk.
    */
+  @Deprecated
   public String description() {
+    return getDescription();
+  }
+
+  /**
+   * Returns a textual description of the disk.
+   */
+  public String getDescription() {
     return description;
   }
 
   /**
    * Returns all applicable publicly visible licenses for the disk.
    */
+  @Deprecated
   public List<LicenseId> licenses() {
+    return getLicenses();
+  }
+
+  /**
+   * Returns all applicable publicly visible licenses for the disk.
+   */
+  public List<LicenseId> getLicenses() {
     return licenses;
   }
 
   /**
    * Returns all the identities of the instances this disk is attached to.
    */
+  @Deprecated
   public List<InstanceId> attachedInstances() {
+    return getAttachedInstances();
+  }
+
+  /**
+   * Returns all the identities of the instances this disk is attached to.
+   */
+  public List<InstanceId> getAttachedInstances() {
     return attachedInstances;
   }
 
   /**
    * Returns the last attach timestamp in milliseconds since epoch.
    */
+  @Deprecated
   public Long lastAttachTimestamp() {
+    return getLastAttachTimestamp();
+  }
+
+  /**
+   * Returns the last attach timestamp in milliseconds since epoch.
+   */
+  public Long getLastAttachTimestamp() {
     return lastAttachTimestamp;
   }
 
   /**
    * Returns the last detach timestamp in milliseconds since epoch.
    */
+  @Deprecated
   public Long lastDetachTimestamp() {
+    return getLastDetachTimestamp();
+  }
+
+  /**
+   * Returns the last detach timestamp in milliseconds since epoch.
+   */
+  public Long getLastDetachTimestamp() {
     return lastDetachTimestamp;
   }
 
@@ -386,7 +503,18 @@ public class DiskInfo implements Serializable {
    * {@link SnapshotDiskConfiguration} to create a disk from a snapshot. Use
    * {@link ImageDiskConfiguration} to create a disk from a disk image.
    */
+  @Deprecated
   public static Builder builder(DiskId diskId, DiskConfiguration configuration) {
+    return newBuilder(diskId, configuration);
+  }
+
+  /**
+   * Returns a builder for a {@code DiskInfo} object given its identity and configuration. Use
+   * {@link StandardDiskConfiguration} to create a simple disk given its type and size. Use
+   * {@link SnapshotDiskConfiguration} to create a disk from a snapshot. Use
+   * {@link ImageDiskConfiguration} to create a disk from a disk image.
+   */
+  public static Builder newBuilder(DiskId diskId, DiskConfiguration configuration) {
     return new BuilderImpl(diskId, configuration);
   }
 
@@ -397,13 +525,13 @@ public class DiskInfo implements Serializable {
    * {@link ImageDiskConfiguration} to create a disk from a disk image.
    */
   public static DiskInfo of(DiskId diskId, DiskConfiguration configuration) {
-    return builder(diskId, configuration).build();
+    return newBuilder(diskId, configuration).build();
   }
 
   DiskInfo setProjectId(String projectId) {
     return toBuilder()
-        .diskId(diskId.setProjectId(projectId))
-        .configuration(configuration.setProjectId(projectId))
+        .setDiskId(diskId.setProjectId(projectId))
+        .setConfiguration(configuration.setProjectId(projectId))
         .build();
   }
 
@@ -415,13 +543,13 @@ public class DiskInfo implements Serializable {
     if (creationTimestamp != null) {
       diskPb.setCreationTimestamp(TIMESTAMP_FORMATTER.print(creationTimestamp));
     }
-    diskPb.setZone(diskId.zoneId().selfLink());
+    diskPb.setZone(diskId.getZoneId().getSelfLink());
     if (creationStatus != null) {
       diskPb.setStatus(creationStatus.toString());
     }
-    diskPb.setName(diskId.disk());
+    diskPb.setName(diskId.getDisk());
     diskPb.setDescription(description);
-    diskPb.setSelfLink(diskId.selfLink());
+    diskPb.setSelfLink(diskId.getSelfLink());
     if (licenses != null) {
       diskPb.setLicenses(Lists.transform(licenses, LicenseId.TO_URL_FUNCTION));
     }

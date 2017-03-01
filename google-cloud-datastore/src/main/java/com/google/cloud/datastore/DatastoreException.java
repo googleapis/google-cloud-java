@@ -57,7 +57,7 @@ public final class DatastoreException extends BaseServiceException {
   }
 
   @Override
-  protected Set<Error> retryableErrors() {
+  protected Set<Error> getRetryableErrors() {
     return RETRYABLE_ERRORS;
   }
 

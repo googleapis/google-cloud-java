@@ -40,30 +40,61 @@ public class SinkInfoTest {
       DatasetDestination.of("project", "dataset");
   private static final TopicDestination TOPIC_DESTINATION =
       TopicDestination.of("project", "topic");
-  private static final SinkInfo BUCKET_SINK_INFO = SinkInfo.builder(NAME, BUCKET_DESTINATION)
-      .filter(FILTER)
-      .versionFormat(VERSION)
+  private static final SinkInfo BUCKET_SINK_INFO = SinkInfo.newBuilder(NAME, BUCKET_DESTINATION)
+      .setFilter(FILTER)
+      .setVersionFormat(VERSION)
       .build();
-  private static final SinkInfo DATASET_SINK_INFO = SinkInfo.builder(NAME, DATASET_DESTINATION)
-      .filter(FILTER)
-      .versionFormat(VERSION)
+  private static final SinkInfo DATASET_SINK_INFO = SinkInfo.newBuilder(NAME, DATASET_DESTINATION)
+      .setFilter(FILTER)
+      .setVersionFormat(VERSION)
       .build();
-  private static final SinkInfo TOPIC_SINK_INFO = SinkInfo.builder(NAME, TOPIC_DESTINATION)
-      .filter(FILTER)
-      .versionFormat(VERSION)
+  private static final SinkInfo TOPIC_SINK_INFO = SinkInfo.newBuilder(NAME, TOPIC_DESTINATION)
+      .setFilter(FILTER)
+      .setVersionFormat(VERSION)
       .build();
+  private static final SinkInfo DEPRECATED_BUCKET_SINK_INFO =
+      SinkInfo.builder(NAME, BUCKET_DESTINATION)
+          .filter(FILTER)
+          .versionFormat(VERSION)
+          .build();
+  private static final SinkInfo DEPRECATED_DATASET_SINK_INFO =
+      SinkInfo.builder(NAME, DATASET_DESTINATION)
+          .filter(FILTER)
+          .versionFormat(VERSION)
+          .build();
+  private static final SinkInfo DEPRECATED_TOPIC_SINK_INFO =
+      SinkInfo.builder(NAME, TOPIC_DESTINATION)
+          .filter(FILTER)
+          .versionFormat(VERSION)
+          .build();
 
   @Rule
   public ExpectedException thrown = ExpectedException.none();
 
   @Test
   public void testOfBucketDestination() {
+    assertEquals(Destination.Type.BUCKET, BUCKET_DESTINATION.getType());
+    assertEquals("bucket", BUCKET_DESTINATION.getBucket());
+  }
+
+  @Test
+  public void testOfBucketDestinationDeprecated() {
     assertEquals(Destination.Type.BUCKET, BUCKET_DESTINATION.type());
     assertEquals("bucket", BUCKET_DESTINATION.bucket());
   }
 
   @Test
   public void testOfDatasetDestination() {
+    assertEquals(Destination.Type.DATASET, DATASET_DESTINATION.getType());
+    assertEquals("project", DATASET_DESTINATION.getProject());
+    assertEquals("dataset", DATASET_DESTINATION.getDataset());
+    DatasetDestination datasetDestination = DatasetDestination.of("dataset");
+    assertNull(datasetDestination.getProject());
+    assertEquals("dataset", datasetDestination.getDataset());
+  }
+
+  @Test
+  public void testOfDatasetDestinationDeprecated() {
     assertEquals(Destination.Type.DATASET, DATASET_DESTINATION.type());
     assertEquals("project", DATASET_DESTINATION.project());
     assertEquals("dataset", DATASET_DESTINATION.dataset());
@@ -74,6 +105,16 @@ public class SinkInfoTest {
 
   @Test
   public void testOfTopicDestination() {
+    assertEquals(Destination.Type.TOPIC, TOPIC_DESTINATION.getType());
+    assertEquals("project", TOPIC_DESTINATION.getProject());
+    assertEquals("topic", TOPIC_DESTINATION.getTopic());
+    TopicDestination topicDestination = TopicDestination.of("topic");
+    assertNull(topicDestination.getProject());
+    assertEquals("topic", topicDestination.getTopic());
+  }
+
+  @Test
+  public void testOfTopicDestinationDeprecated() {
     assertEquals(Destination.Type.TOPIC, TOPIC_DESTINATION.type());
     assertEquals("project", TOPIC_DESTINATION.project());
     assertEquals("topic", TOPIC_DESTINATION.topic());
@@ -85,18 +126,18 @@ public class SinkInfoTest {
   @Test
   public void testToAndFromPbDestination() {
     BucketDestination bucketDestination = Destination.fromPb(BUCKET_DESTINATION.toPb("other"));
-    assertEquals(Destination.Type.BUCKET, bucketDestination.type());
-    assertEquals("bucket", bucketDestination.bucket());
+    assertEquals(Destination.Type.BUCKET, bucketDestination.getType());
+    assertEquals("bucket", bucketDestination.getBucket());
     compareBucketDestination(BUCKET_DESTINATION, bucketDestination);
     DatasetDestination datasetDestination = Destination.fromPb(DATASET_DESTINATION.toPb("other"));
-    assertEquals(Destination.Type.DATASET, datasetDestination.type());
-    assertEquals("project", datasetDestination.project());
-    assertEquals("dataset", datasetDestination.dataset());
+    assertEquals(Destination.Type.DATASET, datasetDestination.getType());
+    assertEquals("project", datasetDestination.getProject());
+    assertEquals("dataset", datasetDestination.getDataset());
     compareDatasetDestination(DATASET_DESTINATION, datasetDestination);
     TopicDestination topicDestination = Destination.fromPb(TOPIC_DESTINATION.toPb("other"));
-    assertEquals(Destination.Type.TOPIC, topicDestination.type());
-    assertEquals("project", topicDestination.project());
-    assertEquals("topic", topicDestination.topic());
+    assertEquals(Destination.Type.TOPIC, topicDestination.getType());
+    assertEquals("project", topicDestination.getProject());
+    assertEquals("topic", topicDestination.getTopic());
     compareTopicDestination(TOPIC_DESTINATION, topicDestination);
     thrown.expect(IllegalArgumentException.class);
     thrown.expectMessage("wrongDestination is not a valid sink destination");
@@ -108,35 +149,44 @@ public class SinkInfoTest {
     DatasetDestination datasetDestination =
         DatasetDestination.fromPb(DatasetDestination.of("dataset").toPb("project"));
     compareDatasetDestination(DATASET_DESTINATION, datasetDestination);
-    assertEquals("project", datasetDestination.project());
+    assertEquals("project", datasetDestination.getProject());
     TopicDestination topicDestination =
         TopicDestination.fromPb(TopicDestination.of("topic").toPb("project"));
-    assertEquals("project", topicDestination.project());
+    assertEquals("project", topicDestination.getProject());
     compareTopicDestination(TOPIC_DESTINATION, topicDestination);
   }
 
   @Test
   public void testBuilder() {
-    assertEquals(NAME, BUCKET_SINK_INFO.name());
-    assertEquals(BUCKET_DESTINATION, BUCKET_SINK_INFO.destination());
-    assertEquals(FILTER, BUCKET_SINK_INFO.filter());
-    assertEquals(VERSION, BUCKET_SINK_INFO.versionFormat());
-    assertEquals(NAME, DATASET_SINK_INFO.name());
-    assertEquals(DATASET_DESTINATION, DATASET_SINK_INFO.destination());
-    assertEquals(FILTER, DATASET_SINK_INFO.filter());
-    assertEquals(VERSION, DATASET_SINK_INFO.versionFormat());
-    assertEquals(NAME, TOPIC_SINK_INFO.name());
-    assertEquals(TOPIC_DESTINATION, TOPIC_SINK_INFO.destination());
-    assertEquals(FILTER, TOPIC_SINK_INFO.filter());
-    assertEquals(VERSION, TOPIC_SINK_INFO.versionFormat());
+    assertEquals(NAME, BUCKET_SINK_INFO.getName());
+    assertEquals(BUCKET_DESTINATION, BUCKET_SINK_INFO.getDestination());
+    assertEquals(FILTER, BUCKET_SINK_INFO.getFilter());
+    assertEquals(VERSION, BUCKET_SINK_INFO.getVersionFormat());
+    assertEquals(NAME, DATASET_SINK_INFO.getName());
+    assertEquals(DATASET_DESTINATION, DATASET_SINK_INFO.getDestination());
+    assertEquals(FILTER, DATASET_SINK_INFO.getFilter());
+    assertEquals(VERSION, DATASET_SINK_INFO.getVersionFormat());
+    assertEquals(NAME, TOPIC_SINK_INFO.getName());
+    assertEquals(TOPIC_DESTINATION, TOPIC_SINK_INFO.getDestination());
+    assertEquals(FILTER, TOPIC_SINK_INFO.getFilter());
+    assertEquals(VERSION, TOPIC_SINK_INFO.getVersionFormat());
   }
 
   @Test
-  public void testToBuilder() {
-    compareSinkInfo(BUCKET_SINK_INFO, BUCKET_SINK_INFO.toBuilder().build());
-    compareSinkInfo(DATASET_SINK_INFO, DATASET_SINK_INFO.toBuilder().build());
-    compareSinkInfo(TOPIC_SINK_INFO, TOPIC_SINK_INFO.toBuilder().build());
-    SinkInfo updatedSinkInfo = BUCKET_SINK_INFO.toBuilder()
+  public void testBuilderDeprecated() {
+    assertEquals(NAME, DEPRECATED_BUCKET_SINK_INFO.name());
+    assertEquals(BUCKET_DESTINATION, DEPRECATED_BUCKET_SINK_INFO.destination());
+    assertEquals(FILTER, DEPRECATED_BUCKET_SINK_INFO.filter());
+    assertEquals(VERSION, DEPRECATED_BUCKET_SINK_INFO.versionFormat());
+    assertEquals(NAME, DEPRECATED_DATASET_SINK_INFO.name());
+    assertEquals(DATASET_DESTINATION, DEPRECATED_DATASET_SINK_INFO.destination());
+    assertEquals(FILTER, DEPRECATED_DATASET_SINK_INFO.filter());
+    assertEquals(VERSION, DEPRECATED_DATASET_SINK_INFO.versionFormat());
+    assertEquals(NAME, DEPRECATED_TOPIC_SINK_INFO.name());
+    assertEquals(TOPIC_DESTINATION, DEPRECATED_TOPIC_SINK_INFO.destination());
+    assertEquals(FILTER, DEPRECATED_TOPIC_SINK_INFO.filter());
+    assertEquals(VERSION, DEPRECATED_TOPIC_SINK_INFO.versionFormat());
+    SinkInfo updatedSinkInfo = DEPRECATED_BUCKET_SINK_INFO.toBuilder()
         .destination(TOPIC_DESTINATION)
         .name("newName")
         .filter("logName=projects/my-projectid/logs/syslog")
@@ -146,11 +196,28 @@ public class SinkInfoTest {
     assertEquals(TOPIC_DESTINATION, updatedSinkInfo.destination());
     assertEquals("logName=projects/my-projectid/logs/syslog", updatedSinkInfo.filter());
     assertEquals(VersionFormat.V2, updatedSinkInfo.versionFormat());
+  }
+
+  @Test
+  public void testToBuilder() {
+    compareSinkInfo(BUCKET_SINK_INFO, BUCKET_SINK_INFO.toBuilder().build());
+    compareSinkInfo(DATASET_SINK_INFO, DATASET_SINK_INFO.toBuilder().build());
+    compareSinkInfo(TOPIC_SINK_INFO, TOPIC_SINK_INFO.toBuilder().build());
+    SinkInfo updatedSinkInfo = BUCKET_SINK_INFO.toBuilder()
+        .setDestination(TOPIC_DESTINATION)
+        .setName("newName")
+        .setFilter("logName=projects/my-projectid/logs/syslog")
+        .setVersionFormat(VersionFormat.V2)
+        .build();
+    assertEquals("newName", updatedSinkInfo.getName());
+    assertEquals(TOPIC_DESTINATION, updatedSinkInfo.getDestination());
+    assertEquals("logName=projects/my-projectid/logs/syslog", updatedSinkInfo.getFilter());
+    assertEquals(VersionFormat.V2, updatedSinkInfo.getVersionFormat());
     updatedSinkInfo = BUCKET_SINK_INFO.toBuilder()
-        .destination(BUCKET_DESTINATION)
-        .name(NAME)
-        .filter(FILTER)
-        .versionFormat(VersionFormat.V1)
+        .setDestination(BUCKET_DESTINATION)
+        .setName(NAME)
+        .setFilter(FILTER)
+        .setVersionFormat(VersionFormat.V1)
         .build();
     assertEquals(BUCKET_SINK_INFO, updatedSinkInfo);
   }
@@ -182,33 +249,33 @@ public class SinkInfoTest {
 
   private void compareBucketDestination(BucketDestination expected, BucketDestination value) {
     assertEquals(expected, value);
-    assertEquals(expected.bucket(), value.bucket());
+    assertEquals(expected.getBucket(), value.getBucket());
     assertEquals(expected.hashCode(), value.hashCode());
     assertEquals(expected.toString(), value.toString());
   }
 
   private void compareDatasetDestination(DatasetDestination expected, DatasetDestination value) {
     assertEquals(expected, value);
-    assertEquals(expected.project(), value.project());
-    assertEquals(expected.dataset(), value.dataset());
+    assertEquals(expected.getProject(), value.getProject());
+    assertEquals(expected.getDataset(), value.getDataset());
     assertEquals(expected.hashCode(), value.hashCode());
     assertEquals(expected.toString(), value.toString());
   }
 
   private void compareTopicDestination(TopicDestination expected, TopicDestination value) {
     assertEquals(expected, value);
-    assertEquals(expected.project(), value.project());
-    assertEquals(expected.topic(), value.topic());
+    assertEquals(expected.getProject(), value.getProject());
+    assertEquals(expected.getTopic(), value.getTopic());
     assertEquals(expected.hashCode(), value.hashCode());
     assertEquals(expected.toString(), value.toString());
   }
 
   private void compareSinkInfo(SinkInfo expected, SinkInfo value) {
     assertEquals(expected, value);
-    assertEquals(expected.name(), value.name());
-    assertEquals(expected.destination(), value.destination());
-    assertEquals(expected.filter(), value.filter());
-    assertEquals(expected.versionFormat(), value.versionFormat());
+    assertEquals(expected.getName(), value.getName());
+    assertEquals(expected.getDestination(), value.getDestination());
+    assertEquals(expected.getFilter(), value.getFilter());
+    assertEquals(expected.getVersionFormat(), value.getVersionFormat());
     assertEquals(expected.hashCode(), value.hashCode());
     assertEquals(expected.toString(), value.toString());
   }

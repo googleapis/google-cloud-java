@@ -45,30 +45,54 @@ public final class BlobId implements Serializable {
   /**
    * Returns the name of the bucket containing the blob.
    */
+  @Deprecated
   public String bucket() {
+    return getBucket();
+  }
+
+    /**
+   * Returns the name of the bucket containing the blob.
+   */
+  public String getBucket() {
     return bucket;
   }
 
   /**
    * Returns the name of the blob.
    */
+  @Deprecated
   public String name() {
+    return getName();
+  }
+
+    /**
+   * Returns the name of the blob.
+   */
+  public String getName() {
     return name;
   }
 
   /**
    * Returns blob's data generation. Used for versioning.
    */
+  @Deprecated
   public Long generation() {
+    return getGeneration();
+  }
+
+    /**
+   * Returns blob's data generation. Used for versioning.
+   */
+  public Long getGeneration() {
     return generation;
   }
 
   @Override
   public String toString() {
     return MoreObjects.toStringHelper(this)
-        .add("bucket", bucket())
-        .add("name", name())
-        .add("generation", generation())
+        .add("bucket", getBucket())
+        .add("name", getName())
+        .add("generation", getGeneration())
         .toString();
   }
 

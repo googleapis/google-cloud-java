@@ -56,7 +56,7 @@ class DatastoreHelper {
   }
 
   static KeyFactory newKeyFactory(DatastoreOptions options) {
-    return new KeyFactory(options.projectId(), options.namespace());
+    return new KeyFactory(options.getProjectId(), options.getNamespace());
   }
 
   /**
@@ -79,7 +79,7 @@ class DatastoreHelper {
     Map<Key, Entity> map = Maps.newHashMapWithExpectedSize(keys.length);
     while (entities.hasNext()) {
       Entity entity = entities.next();
-      map.put(entity.key(), entity);
+      map.put(entity.getKey(), entity);
     }
     List<Entity> list = new ArrayList<>(keys.length);
     for (Key key : keys) {
@@ -99,7 +99,7 @@ class DatastoreHelper {
       transaction.rollback();
       throw DatastoreException.propagateUserException(ex);
     } finally {
-      if (transaction.active()) {
+      if (transaction.isActive()) {
         transaction.rollback();
       }
     }

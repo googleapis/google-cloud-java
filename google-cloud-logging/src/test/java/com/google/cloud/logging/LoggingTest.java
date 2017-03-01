@@ -44,46 +44,46 @@ public class LoggingTest {
   public void testListOption() {
     // page token
     ListOption listOption = ListOption.pageToken(PAGE_TOKEN);
-    assertEquals(PAGE_TOKEN, listOption.value());
-    assertEquals(ListOption.OptionType.PAGE_TOKEN, listOption.optionType());
+    assertEquals(PAGE_TOKEN, listOption.getValue());
+    assertEquals(ListOption.OptionType.PAGE_TOKEN, listOption.getOptionType());
     // page size
     listOption = ListOption.pageSize(PAGE_SIZE);
-    assertEquals(PAGE_SIZE, listOption.value());
-    assertEquals(ListOption.OptionType.PAGE_SIZE, listOption.optionType());
+    assertEquals(PAGE_SIZE, listOption.getValue());
+    assertEquals(ListOption.OptionType.PAGE_SIZE, listOption.getOptionType());
   }
 
   @Test
   public void testEntryListOption() {
     EntryListOption listOption = EntryListOption.pageToken(PAGE_TOKEN);
-    assertEquals(PAGE_TOKEN, listOption.value());
-    assertEquals(EntryListOption.OptionType.PAGE_TOKEN, listOption.optionType());
+    assertEquals(PAGE_TOKEN, listOption.getValue());
+    assertEquals(EntryListOption.OptionType.PAGE_TOKEN, listOption.getOptionType());
     // page size
     listOption = EntryListOption.pageSize(PAGE_SIZE);
-    assertEquals(PAGE_SIZE, listOption.value());
-    assertEquals(EntryListOption.OptionType.PAGE_SIZE, listOption.optionType());
+    assertEquals(PAGE_SIZE, listOption.getValue());
+    assertEquals(EntryListOption.OptionType.PAGE_SIZE, listOption.getOptionType());
     // filter
     listOption = EntryListOption.filter(FILTER);
-    assertEquals(FILTER, listOption.value());
-    assertEquals(EntryListOption.OptionType.FILTER, listOption.optionType());
+    assertEquals(FILTER, listOption.getValue());
+    assertEquals(EntryListOption.OptionType.FILTER, listOption.getOptionType());
     // sort order
     listOption = EntryListOption.sortOrder(SortingField.TIMESTAMP, SortingOrder.ASCENDING);
-    assertEquals("timestamp asc", listOption.value());
-    assertEquals(EntryListOption.OptionType.ORDER_BY, listOption.optionType());
+    assertEquals("timestamp asc", listOption.getValue());
+    assertEquals(EntryListOption.OptionType.ORDER_BY, listOption.getOptionType());
     listOption = EntryListOption.sortOrder(SortingField.TIMESTAMP, SortingOrder.DESCENDING);
-    assertEquals("timestamp desc", listOption.value());
-    assertEquals(EntryListOption.OptionType.ORDER_BY, listOption.optionType());
+    assertEquals("timestamp desc", listOption.getValue());
+    assertEquals(EntryListOption.OptionType.ORDER_BY, listOption.getOptionType());
   }
 
   @Test
   public void testWriteOption() {
     WriteOption writeOption = WriteOption.labels(LABELS);
-    assertEquals(LABELS, writeOption.value());
-    assertEquals(WriteOption.OptionType.LABELS, writeOption.optionType());
+    assertEquals(LABELS, writeOption.getValue());
+    assertEquals(WriteOption.OptionType.LABELS, writeOption.getOptionType());
     writeOption = WriteOption.logName(LOG_NAME);
-    assertEquals(LOG_NAME, writeOption.value());
-    assertEquals(WriteOption.OptionType.LOG_NAME, writeOption.optionType());
+    assertEquals(LOG_NAME, writeOption.getValue());
+    assertEquals(WriteOption.OptionType.LOG_NAME, writeOption.getOptionType());
     writeOption = WriteOption.resource(RESOURCE);
-    assertEquals(RESOURCE, writeOption.value());
-    assertEquals(WriteOption.OptionType.RESOURCE, writeOption.optionType());
+    assertEquals(RESOURCE, writeOption.getValue());
+    assertEquals(WriteOption.OptionType.RESOURCE, writeOption.getOptionType());
   }
 }

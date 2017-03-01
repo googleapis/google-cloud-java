@@ -36,12 +36,13 @@ public class DetectLanguageAndTranslate {
 
   public static void main(String... args) {
     // Create a service object
-    // API key is read from the GOOGLE_API_KEY environment variable
-    Translate translate = TranslateOptions.defaultInstance().service();
+    // Default application credentials or an API key from the GOOGLE_API_KEY environment variable
+    // are used to authenticate requests
+    Translate translate = TranslateOptions.getDefaultInstance().getService();
 
     // Detect the language of some text
     Detection detection = translate.detect("Hola");
-    String detectedLanguage = detection.language();
+    String detectedLanguage = detection.getLanguage();
 
     // Translate some text
     Translation translation = translate.translate(
@@ -49,6 +50,6 @@ public class DetectLanguageAndTranslate {
         TranslateOption.sourceLanguage("en"),
         TranslateOption.targetLanguage(detectedLanguage));
 
-    System.out.printf("Hola %s%n", translation.translatedText());
+    System.out.printf("Hola %s%n", translation.getTranslatedText());
   }
 }

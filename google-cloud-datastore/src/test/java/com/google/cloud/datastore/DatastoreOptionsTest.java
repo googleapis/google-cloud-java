@@ -39,10 +39,10 @@ public class DatastoreOptionsTest {
   public void setUp() {
     datastoreRpcFactory = EasyMock.createMock(DatastoreRpcFactory.class);
     datastoreRpc = EasyMock.createMock(DatastoreRpc.class);
-    options = DatastoreOptions.builder()
-        .serviceRpcFactory(datastoreRpcFactory)
-        .projectId(PROJECT_ID)
-        .host("http://localhost:" + PORT);
+    options = DatastoreOptions.newBuilder()
+        .setServiceRpcFactory(datastoreRpcFactory)
+        .setProjectId(PROJECT_ID)
+        .setHost("http://localhost:" + PORT);
     EasyMock.expect(datastoreRpcFactory.create(EasyMock.anyObject(DatastoreOptions.class)))
         .andReturn(datastoreRpc)
         .anyTimes();
@@ -51,33 +51,33 @@ public class DatastoreOptionsTest {
 
   @Test
   public void testProjectId() throws Exception {
-    assertEquals(PROJECT_ID, options.build().projectId());
+    assertEquals(PROJECT_ID, options.build().getProjectId());
   }
 
   @Test
   public void testHost() throws Exception {
-    assertEquals("http://localhost:" + PORT, options.build().host());
+    assertEquals("http://localhost:" + PORT, options.build().getHost());
   }
 
   @Test
   public void testNamespace() throws Exception {
-    assertTrue(options.build().namespace().isEmpty());
-    assertEquals("ns1", options.namespace("ns1").build().namespace());
+    assertTrue(options.build().getNamespace().isEmpty());
+    assertEquals("ns1", options.setNamespace("ns1").build().getNamespace());
   }
 
   @Test
   public void testDatastore() throws Exception {
-    assertSame(datastoreRpc, options.build().rpc());
+    assertSame(datastoreRpc, options.build().getRpc());
   }
 
   @Test
   public void testToBuilder() throws Exception {
-    DatastoreOptions original = options.namespace("ns1").build();
+    DatastoreOptions original = options.setNamespace("ns1").build();
     DatastoreOptions copy = original.toBuilder().build();
-    assertEquals(original.projectId(), copy.projectId());
-    assertEquals(original.namespace(), copy.namespace());
-    assertEquals(original.host(), copy.host());
-    assertEquals(original.retryParams(), copy.retryParams());
-    assertEquals(original.authCredentials(), copy.authCredentials());
+    assertEquals(original.getProjectId(), copy.getProjectId());
+    assertEquals(original.getNamespace(), copy.getNamespace());
+    assertEquals(original.getHost(), copy.getHost());
+    assertEquals(original.getRetryParams(), copy.getRetryParams());
+    assertEquals(original.getCredentials(), copy.getCredentials());
   }
 }

@@ -35,9 +35,9 @@ import org.junit.Test;
 public class ChangeRequestTest {
 
   private static final String ZONE_NAME = "dns-zone-name";
-  private static final ChangeRequestInfo CHANGE_REQUEST_INFO = ChangeRequest.builder()
-      .add(RecordSet.builder("name", RecordSet.Type.A).build())
-      .delete(RecordSet.builder("othername", RecordSet.Type.AAAA).build())
+  private static final ChangeRequestInfo CHANGE_REQUEST_INFO = ChangeRequest.newBuilder()
+      .add(RecordSet.newBuilder("name", RecordSet.Type.A).build())
+      .delete(RecordSet.newBuilder("othername", RecordSet.Type.AAAA).build())
       .build();
   private static final DnsOptions OPTIONS = createStrictMock(DnsOptions.class);
 
@@ -49,19 +49,19 @@ public class ChangeRequestTest {
   @Before
   public void setUp() throws Exception {
     dns = createStrictMock(Dns.class);
-    expect(dns.options()).andReturn(OPTIONS).times(3);
+    expect(dns.getOptions()).andReturn(OPTIONS).times(3);
     replay(dns);
     changeRequest = new ChangeRequest(dns, ZONE_NAME, new ChangeRequestInfo.BuilderImpl(
         CHANGE_REQUEST_INFO.toBuilder()
-            .startTimeMillis(132L)
-            .generatedId("12")
-            .status(ChangeRequest.Status.DONE)
+            .setStartTime(132L)
+            .setGeneratedId("12")
+            .setStatus(ChangeRequest.Status.DONE)
             .build()));
     changeRequestPending = new ChangeRequest(dns, ZONE_NAME, new ChangeRequestInfo.BuilderImpl(
         CHANGE_REQUEST_INFO.toBuilder()
-            .startTimeMillis(132L)
-            .generatedId("12")
-            .status(ChangeRequest.Status.PENDING)
+            .setStartTime(132L)
+            .setGeneratedId("12")
+            .setStatus(ChangeRequest.Status.PENDING)
             .build()));
     changeRequestPartial = new ChangeRequest(dns, ZONE_NAME,
         new ChangeRequest.BuilderImpl(CHANGE_REQUEST_INFO));
@@ -75,7 +75,19 @@ public class ChangeRequestTest {
 
   @Test
   public void testConstructor() {
-    expect(dns.options()).andReturn(OPTIONS);
+    expect(dns.getOptions()).andReturn(OPTIONS);
+    replay(dns);
+    assertEquals(new ChangeRequest(dns, ZONE_NAME,
+        new ChangeRequestInfo.BuilderImpl(CHANGE_REQUEST_INFO)), changeRequestPartial);
+    assertNotNull(changeRequest.getDns());
+    assertEquals(ZONE_NAME, changeRequest.getZone());
+    assertSame(dns, changeRequestPartial.getDns());
+    assertEquals(ZONE_NAME, changeRequestPartial.getZone());
+  }
+
+  @Test
+  public void testConstructorDeprecated() {
+    expect(dns.getOptions()).andReturn(OPTIONS);
     replay(dns);
     assertEquals(new ChangeRequest(dns, ZONE_NAME,
         new ChangeRequestInfo.BuilderImpl(CHANGE_REQUEST_INFO)), changeRequestPartial);
@@ -87,7 +99,7 @@ public class ChangeRequestTest {
 
   @Test
   public void testFromPb() {
-    expect(dns.options()).andReturn(OPTIONS).times(2);
+    expect(dns.getOptions()).andReturn(OPTIONS).times(2);
     replay(dns);
     assertEquals(changeRequest, ChangeRequest.fromPb(dns, ZONE_NAME, changeRequest.toPb()));
     assertEquals(changeRequestPartial,
@@ -96,7 +108,7 @@ public class ChangeRequestTest {
 
   @Test
   public void testEqualsAndToBuilder() {
-    expect(dns.options()).andReturn(OPTIONS).times(2);
+    expect(dns.getOptions()).andReturn(OPTIONS).times(2);
     replay(dns);
     ChangeRequest compare = changeRequest.toBuilder().build();
     assertEquals(changeRequest, compare);
@@ -106,15 +118,43 @@ public class ChangeRequestTest {
     assertEquals(changeRequestPartial.hashCode(), compare.hashCode());
   }
 
+
   @Test
   public void testBuilder() {
     // one for each build() call because it invokes a constructor
-    expect(dns.options()).andReturn(OPTIONS).times(9);
+    expect(dns.getOptions()).andReturn(OPTIONS).times(9);
+    replay(dns);
+    String id = changeRequest.getGeneratedId() + "aaa";
+    assertEquals(id, changeRequest.toBuilder().setGeneratedId(id).build().getGeneratedId());
+    ChangeRequest modified =
+        changeRequest.toBuilder().setStatus(ChangeRequest.Status.PENDING).build();
+    assertEquals(ChangeRequest.Status.PENDING, modified.status());
+    modified = changeRequest.toBuilder().clearDeletions().build();
+    assertTrue(modified.getDeletions().isEmpty());
+    modified = changeRequest.toBuilder().clearAdditions().build();
+    assertTrue(modified.getAdditions().isEmpty());
+    modified = changeRequest.toBuilder().setAdditions(ImmutableList.<RecordSet>of()).build();
+    assertTrue(modified.getAdditions().isEmpty());
+    modified = changeRequest.toBuilder().setDeletions(ImmutableList.<RecordSet>of()).build();
+    assertTrue(modified.getDeletions().isEmpty());
+    RecordSet cname = RecordSet.newBuilder("last", RecordSet.Type.CNAME).build();
+    modified = changeRequest.toBuilder().add(cname).build();
+    assertTrue(modified.getAdditions().contains(cname));
+    modified = changeRequest.toBuilder().delete(cname).build();
+    assertTrue(modified.getDeletions().contains(cname));
+    modified = changeRequest.toBuilder().setStartTime(0L).build();
+    assertEquals(Long.valueOf(0), modified.getStartTimeMillis());
+  }
+
+  @Test
+  public void testBuilderDeprecated() {
+    // one for each build() call because it invokes a constructor
+    expect(dns.getOptions()).andReturn(OPTIONS).times(9);
     replay(dns);
     String id = changeRequest.generatedId() + "aaa";
-    assertEquals(id, changeRequest.toBuilder().generatedId(id).build().generatedId());
+    assertEquals(id, changeRequest.toBuilder().setGeneratedId(id).build().generatedId());
     ChangeRequest modified =
-        changeRequest.toBuilder().status(ChangeRequest.Status.PENDING).build();
+        changeRequest.toBuilder().setStatus(ChangeRequest.Status.PENDING).build();
     assertEquals(ChangeRequest.Status.PENDING, modified.status());
     modified = changeRequest.toBuilder().clearDeletions().build();
     assertTrue(modified.deletions().isEmpty());
@@ -129,7 +169,7 @@ public class ChangeRequestTest {
     assertTrue(modified.additions().contains(cname));
     modified = changeRequest.toBuilder().delete(cname).build();
     assertTrue(modified.deletions().contains(cname));
-    modified = changeRequest.toBuilder().startTimeMillis(0L).build();
+    modified = changeRequest.toBuilder().setStartTime(0L).build();
     assertEquals(Long.valueOf(0), modified.startTimeMillis());
   }
 
@@ -147,8 +187,9 @@ public class ChangeRequestTest {
 
   @Test
   public void testReload() {
-    expect(dns.getChangeRequest(ZONE_NAME, changeRequest.generatedId())).andReturn(changeRequest);
-    expect(dns.getChangeRequest(ZONE_NAME, changeRequest.generatedId(),
+    expect(dns.getChangeRequest(ZONE_NAME, changeRequest.getGeneratedId()))
+        .andReturn(changeRequest);
+    expect(dns.getChangeRequest(ZONE_NAME, changeRequest.getGeneratedId(),
         Dns.ChangeRequestOption.fields(Dns.ChangeRequestField.START_TIME)))
         .andReturn(changeRequest);
     replay(dns);
@@ -163,7 +204,7 @@ public class ChangeRequestTest {
     assertTrue(changeRequest.isDone());
     verify(dns);
     reset(dns);
-    expect(dns.getChangeRequest(ZONE_NAME, changeRequest.generatedId(),
+    expect(dns.getChangeRequest(ZONE_NAME, changeRequest.getGeneratedId(),
         Dns.ChangeRequestOption.fields(Dns.ChangeRequestField.STATUS)))
         .andReturn(changeRequest);
     replay(dns);

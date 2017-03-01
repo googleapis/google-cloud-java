@@ -16,13 +16,16 @@
 
 package com.google.cloud.examples.pubsub.snippets;
 
-import com.google.cloud.pubsub.Message;
-import com.google.cloud.pubsub.PubSub;
-import com.google.cloud.pubsub.PubSub.MessageConsumer;
-import com.google.cloud.pubsub.PubSub.MessageProcessor;
-import com.google.cloud.pubsub.PubSubOptions;
-import com.google.cloud.pubsub.Subscription;
-import com.google.cloud.pubsub.SubscriptionInfo;
+import com.google.cloud.pubsub.spi.v1.AckReply;
+import com.google.cloud.pubsub.spi.v1.AckReplyConsumer;
+import com.google.cloud.pubsub.spi.v1.MessageReceiver;
+import com.google.cloud.pubsub.spi.v1.Subscriber;
+import com.google.cloud.pubsub.spi.v1.SubscriberClient;
+import com.google.common.util.concurrent.MoreExecutors;
+import com.google.pubsub.v1.PubsubMessage;
+import com.google.pubsub.v1.PushConfig;
+import com.google.pubsub.v1.SubscriptionName;
+import com.google.pubsub.v1.TopicName;
 
 /**
  * A snippet for Google Cloud Pub/Sub showing how to create a Pub/Sub pull subscription and
@@ -31,18 +34,38 @@ import com.google.cloud.pubsub.SubscriptionInfo;
 public class CreateSubscriptionAndPullMessages {
 
   public static void main(String... args) throws Exception {
-    try (PubSub pubsub = PubSubOptions.defaultInstance().service()) {
-      Subscription subscription =
-          pubsub.create(SubscriptionInfo.of("test-topic", "test-subscription"));
-      MessageProcessor callback = new MessageProcessor() {
-        @Override
-        public void process(Message message) throws Exception {
-          System.out.printf("Received message \"%s\"%n", message.payloadAsString());
-        }
-      };
-      // Create a message consumer and pull messages (for 60 seconds)
-      try (MessageConsumer consumer = subscription.pullAsync(callback)) {
-        Thread.sleep(60_000);
+    TopicName topic = TopicName.create("test-project", "test-topic");
+    SubscriptionName subscription = SubscriptionName.create("test-project", "test-subscription");
+
+    try (SubscriberClient subscriberClient = SubscriberClient.create()) {
+      subscriberClient.createSubscription(subscription, topic, PushConfig.getDefaultInstance(), 0);
+    }
+
+    MessageReceiver receiver =
+        new MessageReceiver() {
+          @Override
+          public void receiveMessage(PubsubMessage message, AckReplyConsumer consumer) {
+            System.out.println("got message: " + message.getData().toStringUtf8());
+            consumer.accept(AckReply.ACK, null);
+          }
+        };
+    Subscriber subscriber = null;
+    try {
+      subscriber = Subscriber.newBuilder(subscription, receiver).build();
+      subscriber.addListener(
+          new Subscriber.SubscriberListener() {
+            @Override
+            public void failed(Subscriber.State from, Throwable failure) {
+              // Handle failure. This is called when the Subscriber encountered a fatal error and is shutting down.
+              System.err.println(failure);
+            }
+          },
+          MoreExecutors.directExecutor());
+      subscriber.startAsync().awaitRunning();
+      Thread.sleep(60000);
+    } finally {
+      if (subscriber != null) {
+        subscriber.stopAsync();
       }
     }
   }

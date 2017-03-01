@@ -45,7 +45,7 @@ public class ComputeException extends BaseServiceException {
   }
 
   @Override
-  protected Set<Error> retryableErrors() {
+  protected Set<Error> getRetryableErrors() {
     return RETRYABLE_ERRORS;
   }
 

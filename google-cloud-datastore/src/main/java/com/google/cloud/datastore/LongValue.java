@@ -34,7 +34,7 @@ public final class LongValue extends Value<Long> {
 
         @Override
         public Builder newBuilder(Long value) {
-          return builder(value);
+          return LongValue.newBuilder(value);
         }
 
         @Override
@@ -61,7 +61,7 @@ public final class LongValue extends Value<Long> {
   }
 
   public LongValue(long value) {
-    this(builder(value));
+    this(newBuilder(value));
   }
 
   private LongValue(Builder builder) {
@@ -77,7 +77,12 @@ public final class LongValue extends Value<Long> {
     return new LongValue(value);
   }
 
+  @Deprecated
   public static Builder builder(long value) {
+    return newBuilder(value);
+  }
+
+  public static Builder newBuilder(long value) {
     return new Builder().set(value);
   }
 }

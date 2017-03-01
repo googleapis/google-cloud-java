@@ -10,6 +10,7 @@ This library provides tools to help write tests for code that uses the following
 -  [PubSub] (#testing-code-that-uses-pubsub)
 -  [Resource Manager] (#testing-code-that-uses-resource-manager)
 -  [Storage] (#testing-code-that-uses-storage)
+-  [Spanner] (#testing-code-that-uses-cloud-spanner)
 
 ### Testing code that uses BigQuery
 
@@ -27,9 +28,9 @@ Here is an example that uses the `RemoteBigQueryHelper` to create a dataset.
   ```java
   RemoteBigQueryHelper bigqueryHelper =
       RemoteBigQueryHelper.create(PROJECT_ID, new FileInputStream("/path/to/my/JSON/key.json"));
-  BigQuery bigquery = bigqueryHelper.options().service();
+  BigQuery bigquery = bigqueryHelper.getOptions().getService();
   String dataset = RemoteBigQueryHelper.generateDatasetName();
-  bigquery.create(DatasetInfo.builder(dataset).build());
+  bigquery.create(DatasetInfo.newBuilder(dataset).build());
   ```
 
 4. Run your tests.
@@ -56,7 +57,7 @@ uses the `RemoteComputeHelper` to create an address.
   ```java
   RemoteComputeHelper computeHelper =
       RemoteBigQueryHelper.create(PROJECT_ID, new FileInputStream("/path/to/my/JSON/key.json"));
-  Compute compute = computeHelper.options().service();
+  Compute compute = computeHelper.getOptions().getService();
   // Pick a name for the resource with low probability of clashing
   String addressName = RemoteComputeHelper.baseResourceName() + "address";
   AddressId addressId = RegionAddressId.of(REGION, addressName);
@@ -84,7 +85,7 @@ You can test against a temporary local Datastore by following these steps:
 
 2. Create and use a `Datastore` object with the options given by the `LocalDatastoreHelper` instance.  For example:
   ```java
-  Datastore localDatastore = helper.options().service();
+  Datastore localDatastore = helper.getOptions().getService();
   ```
 
 3. Run your tests.
@@ -99,12 +100,12 @@ You can test against a temporary local Datastore by following these steps:
 You can test against a remote Datastore emulator as well.  To do this, set the `DatastoreOptions` project endpoint to the hostname of the remote machine, like the example below.
 
   ```java
-  DatastoreOptions options = DatastoreOptions.builder()
-      .projectId("my-project-id") // must match project ID specified on remote machine
-      .host("http://<hostname of machine>:<port>")
-      .authCredentials(AuthCredentials.noAuth())
+  DatastoreOptions options = DatastoreOptions.newBuilder()
+      .setProjectId("my-project-id") // must match project ID specified on remote machine
+      .setHost("http://<hostname of machine>:<port>")
+      .setCredentials(NoCredentials.getInstance())
       .build();
-  Datastore localDatastore = options.service();
+  Datastore localDatastore = options.getService();
   ```
 
 We recommend that you start the emulator on the remote machine using the [Google Cloud SDK](https://cloud.google.com/sdk/gcloud/reference/beta/emulators/datastore/) from command line, as shown below:
@@ -115,37 +116,7 @@ gcloud beta emulators datastore start --host-port <hostname of machine>:<port>
 
 ### Testing code that uses DNS
 
-#### On your machine
-
-You can test against an in-memory local DNS by following these steps:
-
-1. Before running your testing code, start the DNS emulator `LocalDnsHelper`. This can be done as follows:
-
-  ```java
-  long delay = 0;
-  LocalDnsHelper helper = LocalDnsHelper.create(delay);
-  helper.start();
-  ```
-
-  This will spawn a server thread that listens to `localhost` at an ephemeral port for DNS requests.
-  The `delay` parameter determines if change requests should be processed synchronously
-  (value `0`) or in a separate thread with a minimum of delay of `delay` milliseconds.
-
-2. In your program, create the DNS service by using the helper's `options()` method.  For example:
-
-  ```java
-  Dns dns = LocalDnsHelper.options().service();
-  ```
-
-3. Run your tests.
-
-4. Stop the DNS emulator.
-
-  ```java
-  helper.stop();
-  ```
-
-  This method will block until the server thread has been terminated.
+Currently, there isn't an emulator for DNS. An alternative is to create a test project.
 
 ### Testing code that uses Logging
 
@@ -163,7 +134,7 @@ uses the `RemoteLoggingHelper` to create a metric.
   ```java
   RemoteLoggingHelper loggingHelper =
       RemoteLoggingHelper.create(PROJECT_ID, new FileInputStream("/path/to/my/JSON/key.json"));
-  Logging logging = loggingHelper.options().service();
+  Logging logging = loggingHelper.getOptions().getService();
   // Pick a name for the resource with low probability of clashing
   String metricName = RemoteLoggingHelper.formatForTest("test-metric");
   MetricInfo metricInfo = MetricInfo.of(name, "logName:syslog");
@@ -189,7 +160,7 @@ and `start` methods. This will bind a port for communication with the local Pub/
 2. Create and use a `PubSub` object with the options given by the `LocalPubSubHelper` instance. For
 example:
   ```java
-  PubSub localPubsub = helper.options().service();
+  PubSub localPubsub = helper.getOptions().getService();
   ```
 
 3. Run your tests.
@@ -205,12 +176,12 @@ You can test against a remote Pub/Sub emulator as well. To do this, set the `Pub
 endpoint to the hostname of the remote machine, like the example below.
 
   ```java
-  PubSubOptions options = PubSubOptions.builder()
-      .projectId("my-project-id") // must match project ID specified on remote machine
-      .host("<hostname of machine>:<port>")
-      .authCredentials(AuthCredentials.noAuth())
+  PubSubOptions options = PubSubOptions.newBuilder()
+      .setProjectId("my-project-id") // must match project ID specified on remote machine
+      .setHost("<hostname of machine>:<port>")
+      .setCredentials(NoCredentials.getInstance())
       .build();
-  PubSub localPubsub= options.service();
+  PubSub localPubsub = options.getService();
   ```
 
 ### Testing code that uses Resource Manager
@@ -231,7 +202,7 @@ You can test against an in-memory local Resource Manager by following these step
 2. In your program, create and use a Resource Manager service object whose host is set to `localhost` at the appropriate port.  For example:
 
   ```java
-  ResourceManager resourceManager = LocalResourceManagerHelper.options().service();
+  ResourceManager resourceManager = LocalResourceManagerHelper.getOptions().getService();
   ```
 
 3. Run your tests.
@@ -250,14 +221,14 @@ Currently, there isn't an emulator for Google Cloud Storage, so an alternative i
 
 1. Create a test Google Cloud project.
 
-2. Download a JSON service account credentials file from the Google Developer's Console.  See more about this on the [Google Cloud Platform Storage Authentication page][cloud-platform-storage-authentication]. 
+2. Download a JSON service account credentials file from the Google Developer's Console.  See more about this on the [Google Cloud Platform Storage Authentication page][cloud-platform-storage-authentication].
 
 3. Create a `RemoteStorageHelper` object using your project ID and JSON key.
 Here is an example that uses the `RemoteStorageHelper` to create a bucket.
   ```java
   RemoteStorageHelper helper =
       RemoteStorageHelper.create(PROJECT_ID, new FileInputStream("/path/to/my/JSON/key.json"));
-  Storage storage = helper.options().service();
+  Storage storage = helper.getOptions().getService();
   String bucket = RemoteStorageHelper.generateBucketName();
   storage.create(BucketInfo.of(bucket));
   ```
@@ -284,11 +255,41 @@ key.
 that uses the `RemoteTranslateHelper` to list supported languages.
   ```java
   RemoteTranslateHelper translateHelper = RemoteTranslateHelper.create(PROJECT_ID, API_KEY);
-  Translate translate = translateHelper.options().service();
+  Translate translate = translateHelper.getOptions().getService();
   List<Language> languages = translate.listSupportedLanguages();
   ```
 
 4. Run your tests.
+
+### Testing code that uses Cloud Spanner
+
+Currently, there isn't an emulator for Cloud Spanner, so an alternative is to create a test project.  `RemoteSpannerHelper` contains convenience methods to make setting up and cleaning up the test project easier.  To use this class, follow the steps below:
+
+1. Create a test Google Cloud project.
+
+2. Download a JSON service account credentials file from the Google Developer's Console.  See more about this on the [Google Cloud Platform Storage Authentication page][cloud-platform-storage-authentication].
+
+3. Create or use an existing Cloud Spanner Instance.
+
+4. Create a `RemoteSpannerHelper` object using your instance ID and
+   `SpannerOptions` pointing to the credentials file.
+Here is an example that uses the `RemoteSpannerHelper` to create a database.
+  ```java
+  SpannerOptions options = SpannerOptions.newBuilder()
+      .setCredentials(GoogleCredentials.fromStream(new FileInputStream("/path/to/my/JSON/key.json")))
+      .build()
+  RemoteSpannerHelper helper =
+      RemoteSpannerHelper.create(options, InstanceId.of(options.getProjectId(), INSTANCE_ID),
+        new FileInputStream("/path/to/my/JSON/key.json"));
+  Database db = RemoteSpannerHelper.createTestDatabase("my ddl statements"...);
+  DatabaseClient client = RemoteSpannerHelper.getDatabaseClient(db);
+  ```
+
+5. Run your tests.
+
+6. Clean up the test project by using `cleanUp` to clear any databases created.
+  ```java
+  RemoteSpannerHelper.cleanUp();
 
 [cloud-platform-storage-authentication]:https://cloud.google.com/storage/docs/authentication?hl=en#service_accounts
 [create-service-account]:https://developers.google.com/identity/protocols/OAuth2ServiceAccount#creatinganaccount

@@ -17,6 +17,7 @@
 package com.google.cloud.bigquery;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 import com.google.common.collect.ImmutableList;
@@ -31,17 +32,19 @@ public class ViewDefinitionTest {
   private static final List<UserDefinedFunction> USER_DEFINED_FUNCTIONS =
       ImmutableList.of(UserDefinedFunction.inline("Function"), UserDefinedFunction.fromUri("URI"));
   private static final ViewDefinition VIEW_DEFINITION =
+      ViewDefinition.newBuilder(VIEW_QUERY, USER_DEFINED_FUNCTIONS).build();
+  private static final ViewDefinition DEPRECATED_VIEW_DEFINITION =
       ViewDefinition.builder(VIEW_QUERY, USER_DEFINED_FUNCTIONS).build();
 
   @Test
   public void testToBuilder() {
     compareViewDefinition(VIEW_DEFINITION, VIEW_DEFINITION.toBuilder().build());
     ViewDefinition viewDefinition = VIEW_DEFINITION.toBuilder()
-        .query("NEW QUERY")
+        .setQuery("NEW QUERY")
         .build();
-    assertEquals("NEW QUERY", viewDefinition.query());
+    assertEquals("NEW QUERY", viewDefinition.getQuery());
     viewDefinition = viewDefinition.toBuilder()
-        .query(VIEW_QUERY)
+        .setQuery(VIEW_QUERY)
         .build();
     compareViewDefinition(VIEW_DEFINITION, viewDefinition);
   }
@@ -54,9 +57,48 @@ public class ViewDefinitionTest {
 
   @Test
   public void testBuilder() {
-    assertEquals(VIEW_QUERY, VIEW_DEFINITION.query());
-    assertEquals(TableDefinition.Type.VIEW, VIEW_DEFINITION.type());
-    assertEquals(USER_DEFINED_FUNCTIONS, VIEW_DEFINITION.userDefinedFunctions());
+    assertEquals(VIEW_QUERY, VIEW_DEFINITION.getQuery());
+    assertEquals(TableDefinition.Type.VIEW, VIEW_DEFINITION.getType());
+    assertEquals(USER_DEFINED_FUNCTIONS, VIEW_DEFINITION.getUserDefinedFunctions());
+    ViewDefinition viewDefinition = ViewDefinition.newBuilder(VIEW_QUERY)
+        .setUserDefinedFunctions(UserDefinedFunction.inline("Function"),
+            UserDefinedFunction.fromUri("URI"))
+        .build();
+    assertEquals(VIEW_QUERY, viewDefinition.getQuery());
+    assertEquals(TableDefinition.Type.VIEW, viewDefinition.getType());
+    assertEquals(USER_DEFINED_FUNCTIONS, viewDefinition.getUserDefinedFunctions());
+    viewDefinition = ViewDefinition.newBuilder(VIEW_QUERY,
+        UserDefinedFunction.inline("Function"), UserDefinedFunction.fromUri("URI")).build();
+    assertEquals(VIEW_QUERY, viewDefinition.getQuery());
+    assertEquals(TableDefinition.Type.VIEW, viewDefinition.getType());
+    assertEquals(USER_DEFINED_FUNCTIONS, viewDefinition.getUserDefinedFunctions());
+    viewDefinition = ViewDefinition.newBuilder(VIEW_QUERY).build();
+    assertEquals(VIEW_QUERY, viewDefinition.getQuery());
+    assertEquals(TableDefinition.Type.VIEW, viewDefinition.getType());
+    assertNull(viewDefinition.getUserDefinedFunctions());
+  }
+
+  @Test
+  public void testBuilderDeprecated() {
+    assertEquals(VIEW_QUERY, DEPRECATED_VIEW_DEFINITION.query());
+    assertEquals(TableDefinition.Type.VIEW, DEPRECATED_VIEW_DEFINITION.type());
+    assertEquals(USER_DEFINED_FUNCTIONS, DEPRECATED_VIEW_DEFINITION.userDefinedFunctions());
+    ViewDefinition viewDefinition = ViewDefinition.builder(VIEW_QUERY)
+        .userDefinedFunctions(UserDefinedFunction.inline("Function"),
+            UserDefinedFunction.fromUri("URI"))
+        .build();
+    assertEquals(VIEW_QUERY, viewDefinition.query());
+    assertEquals(TableDefinition.Type.VIEW, viewDefinition.type());
+    assertEquals(USER_DEFINED_FUNCTIONS, viewDefinition.userDefinedFunctions());
+    viewDefinition = ViewDefinition.builder(VIEW_QUERY,
+        UserDefinedFunction.inline("Function"), UserDefinedFunction.fromUri("URI")).build();
+    assertEquals(VIEW_QUERY, viewDefinition.query());
+    assertEquals(TableDefinition.Type.VIEW, viewDefinition.type());
+    assertEquals(USER_DEFINED_FUNCTIONS, viewDefinition.userDefinedFunctions());
+    viewDefinition = ViewDefinition.builder(VIEW_QUERY).build();
+    assertEquals(VIEW_QUERY, viewDefinition.query());
+    assertEquals(TableDefinition.Type.VIEW, viewDefinition.type());
+    assertNull(viewDefinition.userDefinedFunctions());
   }
 
   @Test
@@ -68,8 +110,8 @@ public class ViewDefinitionTest {
 
   private void compareViewDefinition(ViewDefinition expected, ViewDefinition value) {
     assertEquals(expected, value);
-    assertEquals(expected.query(), value.query());
-    assertEquals(expected.userDefinedFunctions(), value.userDefinedFunctions());
+    assertEquals(expected.getQuery(), value.getQuery());
+    assertEquals(expected.getUserDefinedFunctions(), value.getUserDefinedFunctions());
     assertEquals(expected.hashCode(), value.hashCode());
   }
 }

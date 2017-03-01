@@ -38,19 +38,19 @@ public class TableInfoTest {
   private static final Long LAST_MODIFIED_TIME = 20L;
 
   private static final Field FIELD_SCHEMA1 =
-      Field.builder("StringField", Field.Type.string())
-          .mode(Field.Mode.NULLABLE)
-          .description("FieldDescription1")
+      Field.newBuilder("StringField", Field.Type.string())
+          .setMode(Field.Mode.NULLABLE)
+          .setDescription("FieldDescription1")
           .build();
   private static final Field FIELD_SCHEMA2 =
-      Field.builder("IntegerField", Field.Type.integer())
-          .mode(Field.Mode.REPEATED)
-          .description("FieldDescription2")
+      Field.newBuilder("IntegerField", Field.Type.integer())
+          .setMode(Field.Mode.REPEATED)
+          .setDescription("FieldDescription2")
           .build();
   private static final Field FIELD_SCHEMA3 =
-      Field.builder("RecordField", Field.Type.record(FIELD_SCHEMA1, FIELD_SCHEMA2))
-          .mode(Field.Mode.REQUIRED)
-          .description("FieldDescription3")
+      Field.newBuilder("RecordField", Field.Type.record(FIELD_SCHEMA1, FIELD_SCHEMA2))
+          .setMode(Field.Mode.REQUIRED)
+          .setDescription("FieldDescription3")
           .build();
   private static final Schema TABLE_SCHEMA = Schema.of(FIELD_SCHEMA1, FIELD_SCHEMA2, FIELD_SCHEMA3);
   private static final Long NUM_BYTES = 42L;
@@ -58,24 +58,25 @@ public class TableInfoTest {
   private static final String LOCATION = "US";
   private static final StandardTableDefinition.StreamingBuffer STREAMING_BUFFER =
       new StandardTableDefinition.StreamingBuffer(1L, 2L, 3L);
-  private static final StandardTableDefinition TABLE_DEFINITION = StandardTableDefinition.builder()
-      .location(LOCATION)
-      .numBytes(NUM_BYTES)
-      .numRows(NUM_ROWS)
-      .streamingBuffer(STREAMING_BUFFER)
-      .schema(TABLE_SCHEMA)
-      .build();
+  private static final StandardTableDefinition TABLE_DEFINITION =
+      StandardTableDefinition.newBuilder()
+          .setLocation(LOCATION)
+          .setNumBytes(NUM_BYTES)
+          .setNumRows(NUM_ROWS)
+          .setStreamingBuffer(STREAMING_BUFFER)
+          .setSchema(TABLE_SCHEMA)
+          .build();
 
   private static final List<String> SOURCE_URIS = ImmutableList.of("uri1", "uri2");
   private static final Integer MAX_BAD_RECORDS = 42;
   private static final Boolean IGNORE_UNKNOWN_VALUES = true;
   private static final String COMPRESSION = "GZIP";
-  private static final CsvOptions CSV_OPTIONS = CsvOptions.builder().build();
+  private static final CsvOptions CSV_OPTIONS = CsvOptions.newBuilder().build();
   private static final ExternalTableDefinition EXTERNAL_TABLE_DEFINITION =
-      ExternalTableDefinition.builder(SOURCE_URIS, TABLE_SCHEMA, CSV_OPTIONS)
-          .compression(COMPRESSION)
-          .ignoreUnknownValues(IGNORE_UNKNOWN_VALUES)
-          .maxBadRecords(MAX_BAD_RECORDS)
+      ExternalTableDefinition.newBuilder(SOURCE_URIS, TABLE_SCHEMA, CSV_OPTIONS)
+          .setCompression(COMPRESSION)
+          .setIgnoreUnknownValues(IGNORE_UNKNOWN_VALUES)
+          .setMaxBadRecords(MAX_BAD_RECORDS)
           .build();
 
   private static final String VIEW_QUERY = "VIEW QUERY";
@@ -84,36 +85,47 @@ public class TableInfoTest {
   private static final ViewDefinition VIEW_DEFINITION =
       ViewDefinition.builder(VIEW_QUERY, USER_DEFINED_FUNCTIONS).build();
 
-  private static final TableInfo TABLE_INFO = TableInfo.builder(TABLE_ID, TABLE_DEFINITION)
-      .creationTime(CREATION_TIME)
-      .description(DESCRIPTION)
-      .etag(ETAG)
-      .expirationTime(EXPIRATION_TIME)
-      .friendlyName(FRIENDLY_NAME)
-      .generatedId(GENERATED_ID)
-      .lastModifiedTime(LAST_MODIFIED_TIME)
-      .selfLink(SELF_LINK)
+  private static final TableInfo TABLE_INFO = TableInfo.newBuilder(TABLE_ID, TABLE_DEFINITION)
+      .setCreationTime(CREATION_TIME)
+      .setDescription(DESCRIPTION)
+      .setEtag(ETAG)
+      .setExpirationTime(EXPIRATION_TIME)
+      .setFriendlyName(FRIENDLY_NAME)
+      .setGeneratedId(GENERATED_ID)
+      .setLastModifiedTime(LAST_MODIFIED_TIME)
+      .setSelfLink(SELF_LINK)
       .build();
-  private static final TableInfo VIEW_INFO = TableInfo.builder(TABLE_ID, VIEW_DEFINITION)
-      .creationTime(CREATION_TIME)
-      .description(DESCRIPTION)
-      .etag(ETAG)
-      .expirationTime(EXPIRATION_TIME)
-      .friendlyName(FRIENDLY_NAME)
-      .generatedId(GENERATED_ID)
-      .lastModifiedTime(LAST_MODIFIED_TIME)
-      .selfLink(SELF_LINK)
+  private static final TableInfo VIEW_INFO = TableInfo.newBuilder(TABLE_ID, VIEW_DEFINITION)
+      .setCreationTime(CREATION_TIME)
+      .setDescription(DESCRIPTION)
+      .setEtag(ETAG)
+      .setExpirationTime(EXPIRATION_TIME)
+      .setFriendlyName(FRIENDLY_NAME)
+      .setGeneratedId(GENERATED_ID)
+      .setLastModifiedTime(LAST_MODIFIED_TIME)
+      .setSelfLink(SELF_LINK)
       .build();
   private static final TableInfo EXTERNAL_TABLE_INFO =
-      TableInfo.builder(TABLE_ID, EXTERNAL_TABLE_DEFINITION)
-          .creationTime(CREATION_TIME)
+      TableInfo.newBuilder(TABLE_ID, EXTERNAL_TABLE_DEFINITION)
+          .setCreationTime(CREATION_TIME)
+          .setDescription(DESCRIPTION)
+          .setEtag(ETAG)
+          .setExpirationTime(EXPIRATION_TIME)
+          .setFriendlyName(FRIENDLY_NAME)
+          .setGeneratedId(GENERATED_ID)
+          .setLastModifiedTime(LAST_MODIFIED_TIME)
+          .setSelfLink(SELF_LINK)
+          .build();
+  private static final TableInfo DEPRECATED_TABLE_INFO =
+      TableInfo.builder(TABLE_ID, TABLE_DEFINITION)
+          .setCreationTime(CREATION_TIME)
           .description(DESCRIPTION)
-          .etag(ETAG)
+          .setEtag(ETAG)
           .expirationTime(EXPIRATION_TIME)
           .friendlyName(FRIENDLY_NAME)
-          .generatedId(GENERATED_ID)
-          .lastModifiedTime(LAST_MODIFIED_TIME)
-          .selfLink(SELF_LINK)
+          .setGeneratedId(GENERATED_ID)
+          .setLastModifiedTime(LAST_MODIFIED_TIME)
+          .setSelfLink(SELF_LINK)
           .build();
 
   @Test
@@ -122,11 +134,11 @@ public class TableInfoTest {
     compareTableInfo(VIEW_INFO, VIEW_INFO.toBuilder().build());
     compareTableInfo(EXTERNAL_TABLE_INFO, EXTERNAL_TABLE_INFO.toBuilder().build());
     TableInfo tableInfo = TABLE_INFO.toBuilder()
-        .description("newDescription")
+        .setDescription("newDescription")
         .build();
-    assertEquals("newDescription", tableInfo.description());
+    assertEquals("newDescription", tableInfo.getDescription());
     tableInfo = tableInfo.toBuilder()
-        .description("description")
+        .setDescription("description")
         .build();
     compareTableInfo(TABLE_INFO, tableInfo);
   }
@@ -143,74 +155,88 @@ public class TableInfoTest {
 
   @Test
   public void testBuilder() {
-    assertEquals(TABLE_ID, TABLE_INFO.tableId());
-    assertEquals(CREATION_TIME, TABLE_INFO.creationTime());
-    assertEquals(DESCRIPTION, TABLE_INFO.description());
-    assertEquals(ETAG, TABLE_INFO.etag());
-    assertEquals(EXPIRATION_TIME, TABLE_INFO.expirationTime());
-    assertEquals(FRIENDLY_NAME, TABLE_INFO.friendlyName());
-    assertEquals(GENERATED_ID, TABLE_INFO.generatedId());
-    assertEquals(LAST_MODIFIED_TIME, TABLE_INFO.lastModifiedTime());
-    assertEquals(TABLE_DEFINITION, TABLE_INFO.definition());
-    assertEquals(SELF_LINK, TABLE_INFO.selfLink());
-    assertEquals(TABLE_ID, VIEW_INFO.tableId());
-    assertEquals(VIEW_DEFINITION, VIEW_INFO.definition());
-    assertEquals(CREATION_TIME, VIEW_INFO.creationTime());
-    assertEquals(DESCRIPTION, VIEW_INFO.description());
-    assertEquals(ETAG, VIEW_INFO.etag());
-    assertEquals(EXPIRATION_TIME, VIEW_INFO.expirationTime());
-    assertEquals(FRIENDLY_NAME, VIEW_INFO.friendlyName());
-    assertEquals(GENERATED_ID, VIEW_INFO.generatedId());
-    assertEquals(LAST_MODIFIED_TIME, VIEW_INFO.lastModifiedTime());
-    assertEquals(VIEW_DEFINITION, VIEW_INFO.definition());
-    assertEquals(SELF_LINK, VIEW_INFO.selfLink());
-    assertEquals(TABLE_ID, EXTERNAL_TABLE_INFO.tableId());
-    assertEquals(CREATION_TIME, EXTERNAL_TABLE_INFO.creationTime());
-    assertEquals(DESCRIPTION, EXTERNAL_TABLE_INFO.description());
-    assertEquals(ETAG, EXTERNAL_TABLE_INFO.etag());
-    assertEquals(EXPIRATION_TIME, EXTERNAL_TABLE_INFO.expirationTime());
-    assertEquals(FRIENDLY_NAME, EXTERNAL_TABLE_INFO.friendlyName());
-    assertEquals(GENERATED_ID, EXTERNAL_TABLE_INFO.generatedId());
-    assertEquals(LAST_MODIFIED_TIME, EXTERNAL_TABLE_INFO.lastModifiedTime());
-    assertEquals(EXTERNAL_TABLE_DEFINITION, EXTERNAL_TABLE_INFO.definition());
-    assertEquals(SELF_LINK, EXTERNAL_TABLE_INFO.selfLink());
+    assertEquals(TABLE_ID, TABLE_INFO.getTableId());
+    assertEquals(CREATION_TIME, TABLE_INFO.getCreationTime());
+    assertEquals(DESCRIPTION, TABLE_INFO.getDescription());
+    assertEquals(ETAG, TABLE_INFO.getEtag());
+    assertEquals(EXPIRATION_TIME, TABLE_INFO.getExpirationTime());
+    assertEquals(FRIENDLY_NAME, TABLE_INFO.getFriendlyName());
+    assertEquals(GENERATED_ID, TABLE_INFO.getGeneratedId());
+    assertEquals(LAST_MODIFIED_TIME, TABLE_INFO.getLastModifiedTime());
+    assertEquals(TABLE_DEFINITION, TABLE_INFO.getDefinition());
+    assertEquals(SELF_LINK, TABLE_INFO.getSelfLink());
+    assertEquals(TABLE_ID, VIEW_INFO.getTableId());
+    assertEquals(VIEW_DEFINITION, VIEW_INFO.getDefinition());
+    assertEquals(CREATION_TIME, VIEW_INFO.getCreationTime());
+    assertEquals(DESCRIPTION, VIEW_INFO.getDescription());
+    assertEquals(ETAG, VIEW_INFO.getEtag());
+    assertEquals(EXPIRATION_TIME, VIEW_INFO.getExpirationTime());
+    assertEquals(FRIENDLY_NAME, VIEW_INFO.getFriendlyName());
+    assertEquals(GENERATED_ID, VIEW_INFO.getGeneratedId());
+    assertEquals(LAST_MODIFIED_TIME, VIEW_INFO.getLastModifiedTime());
+    assertEquals(VIEW_DEFINITION, VIEW_INFO.getDefinition());
+    assertEquals(SELF_LINK, VIEW_INFO.getSelfLink());
+    assertEquals(TABLE_ID, EXTERNAL_TABLE_INFO.getTableId());
+    assertEquals(CREATION_TIME, EXTERNAL_TABLE_INFO.getCreationTime());
+    assertEquals(DESCRIPTION, EXTERNAL_TABLE_INFO.getDescription());
+    assertEquals(ETAG, EXTERNAL_TABLE_INFO.getEtag());
+    assertEquals(EXPIRATION_TIME, EXTERNAL_TABLE_INFO.getExpirationTime());
+    assertEquals(FRIENDLY_NAME, EXTERNAL_TABLE_INFO.getFriendlyName());
+    assertEquals(GENERATED_ID, EXTERNAL_TABLE_INFO.getGeneratedId());
+    assertEquals(LAST_MODIFIED_TIME, EXTERNAL_TABLE_INFO.getLastModifiedTime());
+    assertEquals(EXTERNAL_TABLE_DEFINITION, EXTERNAL_TABLE_INFO.getDefinition());
+    assertEquals(SELF_LINK, EXTERNAL_TABLE_INFO.getSelfLink());
+  }
+
+  @Test
+  public void testBuilderDeprecated() {
+    assertEquals(TABLE_ID, DEPRECATED_TABLE_INFO.tableId());
+    assertEquals(CREATION_TIME, DEPRECATED_TABLE_INFO.creationTime());
+    assertEquals(DESCRIPTION, DEPRECATED_TABLE_INFO.description());
+    assertEquals(ETAG, DEPRECATED_TABLE_INFO.etag());
+    assertEquals(EXPIRATION_TIME, DEPRECATED_TABLE_INFO.expirationTime());
+    assertEquals(FRIENDLY_NAME, DEPRECATED_TABLE_INFO.friendlyName());
+    assertEquals(GENERATED_ID, DEPRECATED_TABLE_INFO.generatedId());
+    assertEquals(LAST_MODIFIED_TIME, DEPRECATED_TABLE_INFO.lastModifiedTime());
+    assertEquals(TABLE_DEFINITION, DEPRECATED_TABLE_INFO.definition());
+    assertEquals(SELF_LINK, DEPRECATED_TABLE_INFO.selfLink());
   }
 
   @Test
   public void testOf() {
     TableInfo tableInfo = TableInfo.of(TABLE_ID, TABLE_DEFINITION);
-    assertEquals(TABLE_ID, tableInfo.tableId());
-    assertNull(tableInfo.creationTime());
-    assertNull(tableInfo.description());
-    assertNull(tableInfo.etag());
-    assertNull(tableInfo.expirationTime());
-    assertNull(tableInfo.friendlyName());
-    assertNull(tableInfo.generatedId());
-    assertNull(tableInfo.lastModifiedTime());
-    assertEquals(TABLE_DEFINITION, tableInfo.definition());
-    assertNull(tableInfo.selfLink());
+    assertEquals(TABLE_ID, tableInfo.getTableId());
+    assertNull(tableInfo.getCreationTime());
+    assertNull(tableInfo.getDescription());
+    assertNull(tableInfo.getEtag());
+    assertNull(tableInfo.getExpirationTime());
+    assertNull(tableInfo.getFriendlyName());
+    assertNull(tableInfo.getGeneratedId());
+    assertNull(tableInfo.getLastModifiedTime());
+    assertEquals(TABLE_DEFINITION, tableInfo.getDefinition());
+    assertNull(tableInfo.getSelfLink());
     tableInfo = TableInfo.of(TABLE_ID, VIEW_DEFINITION);
-    assertEquals(TABLE_ID, tableInfo.tableId());
-    assertNull(tableInfo.creationTime());
-    assertNull(tableInfo.description());
-    assertNull(tableInfo.etag());
-    assertNull(tableInfo.expirationTime());
-    assertNull(tableInfo.friendlyName());
-    assertNull(tableInfo.generatedId());
-    assertNull(tableInfo.lastModifiedTime());
-    assertEquals(VIEW_DEFINITION, tableInfo.definition());
-    assertNull(tableInfo.selfLink());
+    assertEquals(TABLE_ID, tableInfo.getTableId());
+    assertNull(tableInfo.getCreationTime());
+    assertNull(tableInfo.getDescription());
+    assertNull(tableInfo.getEtag());
+    assertNull(tableInfo.getExpirationTime());
+    assertNull(tableInfo.getFriendlyName());
+    assertNull(tableInfo.getGeneratedId());
+    assertNull(tableInfo.getLastModifiedTime());
+    assertEquals(VIEW_DEFINITION, tableInfo.getDefinition());
+    assertNull(tableInfo.getSelfLink());
     tableInfo = TableInfo.of(TABLE_ID, EXTERNAL_TABLE_DEFINITION);
-    assertEquals(TABLE_ID, tableInfo.tableId());
-    assertNull(tableInfo.creationTime());
-    assertNull(tableInfo.description());
-    assertNull(tableInfo.etag());
-    assertNull(tableInfo.expirationTime());
-    assertNull(tableInfo.friendlyName());
-    assertNull(tableInfo.generatedId());
-    assertNull(tableInfo.lastModifiedTime());
-    assertEquals(EXTERNAL_TABLE_DEFINITION, tableInfo.definition());
-    assertNull(tableInfo.selfLink());
+    assertEquals(TABLE_ID, tableInfo.getTableId());
+    assertNull(tableInfo.getCreationTime());
+    assertNull(tableInfo.getDescription());
+    assertNull(tableInfo.getEtag());
+    assertNull(tableInfo.getExpirationTime());
+    assertNull(tableInfo.getFriendlyName());
+    assertNull(tableInfo.getGeneratedId());
+    assertNull(tableInfo.getLastModifiedTime());
+    assertEquals(EXTERNAL_TABLE_DEFINITION, tableInfo.getDefinition());
+    assertNull(tableInfo.getSelfLink());
   }
 
   @Test
@@ -222,24 +248,24 @@ public class TableInfoTest {
 
   @Test
   public void testSetProjectId() {
-    assertEquals("project", TABLE_INFO.setProjectId("project").tableId().project());
-    assertEquals("project", EXTERNAL_TABLE_INFO.setProjectId("project").tableId().project());
-    assertEquals("project", VIEW_INFO.setProjectId("project").tableId().project());
+    assertEquals("project", TABLE_INFO.setProjectId("project").getTableId().getProject());
+    assertEquals("project", EXTERNAL_TABLE_INFO.setProjectId("project").getTableId().getProject());
+    assertEquals("project", VIEW_INFO.setProjectId("project").getTableId().getProject());
   }
 
   private void compareTableInfo(TableInfo expected, TableInfo value) {
     assertEquals(expected, value);
-    assertEquals(expected.tableId(), value.tableId());
-    assertEquals(expected.definition(), value.definition());
-    assertEquals(expected.creationTime(), value.creationTime());
-    assertEquals(expected.description(), value.description());
-    assertEquals(expected.etag(), value.etag());
-    assertEquals(expected.expirationTime(), value.expirationTime());
-    assertEquals(expected.friendlyName(), value.friendlyName());
-    assertEquals(expected.generatedId(), value.generatedId());
-    assertEquals(expected.lastModifiedTime(), value.lastModifiedTime());
-    assertEquals(expected.selfLink(), value.selfLink());
-    assertEquals(expected.definition(), value.definition());
+    assertEquals(expected.getTableId(), value.getTableId());
+    assertEquals(expected.getDefinition(), value.getDefinition());
+    assertEquals(expected.getCreationTime(), value.getCreationTime());
+    assertEquals(expected.getDescription(), value.getDescription());
+    assertEquals(expected.getEtag(), value.getEtag());
+    assertEquals(expected.getExpirationTime(), value.getExpirationTime());
+    assertEquals(expected.getFriendlyName(), value.getFriendlyName());
+    assertEquals(expected.getGeneratedId(), value.getGeneratedId());
+    assertEquals(expected.getLastModifiedTime(), value.getLastModifiedTime());
+    assertEquals(expected.getSelfLink(), value.getSelfLink());
+    assertEquals(expected.getDefinition(), value.getDefinition());
     assertEquals(expected.hashCode(), value.hashCode());
   }
 }

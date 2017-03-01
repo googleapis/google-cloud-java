@@ -1,23 +1,25 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2017, Google Inc. All rights reserved.
  *
- * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
- * in compliance with the License. You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- * http://www.apache.org/licenses/LICENSE-2.0
+ *     http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing, software distributed under the License
- * is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
- * or implied. See the License for the specific language governing permissions and limitations under
- * the License.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
 
 /**
  * A client to Stackdriver Monitoring API.
  *
- * <p>The interfaces provided are listed below, along with a usage sample
+ * <p>The interfaces provided are listed below, along with usage samples.
  *
- * <p>=============== GroupServiceApi ===============
+ * <p>================== GroupServiceClient ==================
  *
  * <p>Service Description: The Group API lets you inspect and manage your
  * [groups](google.monitoring.v3.Group).
@@ -29,49 +31,29 @@
  * example, an alert policy, the target of that alert policy is updated automatically as monitored
  * resources are added and removed from the infrastructure.
  *
- * <p>Sample for GroupServiceApi:
+ * <p>Sample for GroupServiceClient:
  *
  * <pre>
  * <code>
- * try (GroupServiceApi groupServiceApi = GroupServiceApi.create()) {
- *   String formattedName = GroupServiceApi.formatGroupName("[PROJECT]", "[GROUP]");
- *   Group response = groupServiceApi.getGroup(formattedName);
+ * try (GroupServiceClient groupServiceClient = GroupServiceClient.create()) {
+ *   GroupName name = GroupName.create("[PROJECT]", "[GROUP]");
+ *   Group response = groupServiceClient.getGroup(name);
  * }
  * </code>
  * </pre>
  *
- * ================ MetricServiceApi ================
+ * =================== MetricServiceClient ===================
  *
  * <p>Service Description: Manages metric descriptors, monitored resource descriptors, and time
  * series data.
  *
- * <p>Sample for MetricServiceApi:
+ * <p>Sample for MetricServiceClient:
  *
  * <pre>
  * <code>
- * try (MetricServiceApi metricServiceApi = MetricServiceApi.create()) {
- *   String formattedName = MetricServiceApi.formatMonitoredResourceDescriptorName("[PROJECT]", "[MONITORED_RESOURCE_DESCRIPTOR]");
- *   MonitoredResourceDescriptor response = metricServiceApi.getMonitoredResourceDescriptor(formattedName);
- * }
- * </code>
- * </pre>
- *
- * ========================== AgentTranslationServiceApi ==========================
- *
- * <p>Service Description: The AgentTranslation API allows `collectd`-based agents to write time
- * series data to Cloud Monitoring. See [google.monitoring.v3.MetricService.CreateTimeSeries]
- * instead.
- *
- * <p>Sample for AgentTranslationServiceApi:
- *
- * <pre>
- * <code>
- * try (AgentTranslationServiceApi agentTranslationServiceApi = AgentTranslationServiceApi.create()) {
- *   String formattedName = AgentTranslationServiceApi.formatProjectName("[PROJECT]");
- *   MonitoredResource resource = MonitoredResource.newBuilder().build();
- *   String collectdVersion = "";
- *   List&lt;CollectdPayload&gt; collectdPayloads = new ArrayList&lt;&gt;();
- *   agentTranslationServiceApi.createCollectdTimeSeries(formattedName, resource, collectdVersion, collectdPayloads);
+ * try (MetricServiceClient metricServiceClient = MetricServiceClient.create()) {
+ *   MonitoredResourceDescriptorName name = MonitoredResourceDescriptorName.create("[PROJECT]", "[MONITORED_RESOURCE_DESCRIPTOR]");
+ *   MonitoredResourceDescriptor response = metricServiceClient.getMonitoredResourceDescriptor(name);
  * }
  * </code>
  * </pre>

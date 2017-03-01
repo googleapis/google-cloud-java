@@ -22,16 +22,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-translate</artifactId>
-  <version>0.4.0</version>
+  <version>0.9.3-alpha</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-translate:0.4.0'
+compile 'com.google.cloud:google-cloud-translate:0.9.3-alpha'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-translate" % "0.4.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-translate" % "0.9.3-alpha"
 ```
 
 Example Application
@@ -64,31 +64,40 @@ Getting Started
 ---------------
 #### Prerequisites
 For this tutorial, you need a [Google Developers Console](https://console.developers.google.com/)
-project with "Translate API" enabled via the console's API Manager. You will also need a to enable
-billing via the [Google Developers Console](https://console.developers.google.com/) project and to
-retrieve an API key. See [Translate quickstart](https://cloud.google.com/translate/v2/quickstart)
-for more details.
+project with "Translate API" enabled via the console's API Manager. You also need to enable
+billing via the [Google Developers Console](https://console.developers.google.com/).
+
+Finally, you must set up the local development environment by
+[installing the Google Cloud SDK](https://cloud.google.com/sdk/) and running the following command
+in command line: `gcloud auth application-default login`. Alternatively, you can authenticate
+Translate requests using an API key. See
+[Translate quickstart](https://cloud.google.com/translate/v2/quickstart) for more details.
 
 #### Installation and setup
 You'll need to obtain the `google-cloud-translate` library. See the [Quickstart](#quickstart)
 section to add `google-cloud-translate` as a dependency in your code.
 
 #### Creating an authorized service object
-To make authenticated requests to Google Translates, you must create a service object with an API
-key. By default, API key is looked for in the `GOOGLE_API_KEY` environment variable. Once the API
-key is set, you can make API calls by invoking methods on the Translate service object. To create a
-service object, given that `GOOGLE_API_KEY` is set, use the following code:
+To make authenticated requests to Google Translate, you must create a service object with
+credentials or with an API key. The simplest way to authenticate is to use
+[Application Default Credentials](https://developers.google.com/identity/protocols/application-default-credentials).
+These credentials are automatically inferred from your environment, so you only need the following
+code to create your service object:
 
 ```java
 import com.google.cloud.translate.Translate;
 import com.google.cloud.translate.TranslateOptions;
 
-Translate translate = TranslateOptions.defaultInstance().service();
+Translate translate = TranslateOptions.getDefaultInstance().getService();
 ```
 
-Or you can explicitly set the API key as follows:
+Notice that this code can be also used with an API key. By default, an API key is looked for in the
+`GOOGLE_API_KEY` environment variable. Once the API key is set, you can make API calls by invoking
+methods on the Translate service created via `TranslateOptions.getDefaultInstance().getService()`.
+
+You can also explicitly set the API key as follows:
 ```java
-Translate translate = TranslateOptions.builder().apiKey("myKey").service();
+Translate translate = TranslateOptions.newBuilder().setApiKey("myKey").getService();
 ```
 
 #### Detecting language
@@ -104,7 +113,7 @@ import com.google.cloud.translate.Detection;
 Then add the following code to detect the text's language:
 
 ```java
-String detectedLanguage = detection.language();
+String detectedLanguage = detection.getLanguage();
 ```
 #### Translating text
 
@@ -131,8 +140,8 @@ Translation translation = translate.translate(
 
 In
 [DetectLanguageAndTranslate.java](../google-cloud-examples/src/main/java/com/google/cloud/examples/translate/snippets/DetectLanguageAndTranslate.java)
-we put together all the code shown above into one program. The program assumes that a valid api key
-is available.
+we put together all the code shown above into one program. The program assumes that either default
+application credentials or a valid api key are available.
 
 Troubleshooting
 ---------------

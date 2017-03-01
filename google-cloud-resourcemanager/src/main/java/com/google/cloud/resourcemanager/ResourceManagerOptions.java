@@ -27,7 +27,7 @@ import java.util.Set;
 public class ResourceManagerOptions
     extends HttpServiceOptions<ResourceManager, ResourceManagerRpc, ResourceManagerOptions> {
 
-  private static final long serialVersionUID = -109855112863688882L;
+  private static final long serialVersionUID = 624147474447836183L;
   private static final String GCRM_SCOPE = "https://www.googleapis.com/auth/cloud-platform";
   private static final Set<String> SCOPES = ImmutableSet.of(GCRM_SCOPE);
   private static final String DEFAULT_HOST = "https://cloudresourcemanager.googleapis.com";
@@ -44,8 +44,16 @@ public class ResourceManagerOptions
   /**
    * Returns a default {@code ResourceManagerOptions} instance.
    */
+  @Deprecated
   public static ResourceManagerOptions defaultInstance() {
-    return builder().build();
+    return getDefaultInstance();
+  }
+
+  /**
+   * Returns a default {@code ResourceManagerOptions} instance.
+   */
+  public static ResourceManagerOptions getDefaultInstance() {
+    return newBuilder().build();
   }
 
   public static class DefaultResourceManagerRpcFactory implements ResourceManagerRpcFactory {
@@ -59,7 +67,7 @@ public class ResourceManagerOptions
   }
 
   @Override
-  protected String defaultHost() {
+  protected String getDefaultHost() {
     return DEFAULT_HOST;
   }
 
@@ -88,17 +96,17 @@ public class ResourceManagerOptions
   }
 
   @Override
-  protected ResourceManagerFactory defaultServiceFactory() {
+  protected ResourceManagerFactory getDefaultServiceFactory() {
     return DefaultResourceManagerFactory.INSTANCE;
   }
 
   @Override
-  protected ResourceManagerRpcFactory defaultRpcFactory() {
+  protected ResourceManagerRpcFactory getDefaultRpcFactory() {
     return DefaultResourceManagerRpcFactory.INSTANCE;
   }
 
   @Override
-  protected Set<String> scopes() {
+  protected Set<String> getScopes() {
     return SCOPES;
   }
 
@@ -118,7 +126,12 @@ public class ResourceManagerOptions
     return new Builder(this);
   }
 
+  @Deprecated
   public static Builder builder() {
+    return newBuilder();
+  }
+
+  public static Builder newBuilder() {
     return new Builder();
   }
 }

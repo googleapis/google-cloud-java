@@ -44,14 +44,14 @@ class QueryResultsImpl<T> extends AbstractIterator<T> implements QueryResults<T>
     this.datastore = datastore;
     this.readOptionsPb = readOptionsPb;
     this.query = query;
-    queryResultType = query.type();
+    queryResultType = query.getType();
     com.google.datastore.v1.PartitionId.Builder pbBuilder =
          com.google.datastore.v1.PartitionId.newBuilder();
-    pbBuilder.setProjectId(datastore.options().projectId());
-    if (query.namespace() != null) {
-      pbBuilder.setNamespaceId(query.namespace());
-    } else if (datastore.options().namespace() != null) {
-      pbBuilder.setNamespaceId(datastore.options().namespace());
+    pbBuilder.setProjectId(datastore.getOptions().getProjectId());
+    if (query.getNamespace() != null) {
+      pbBuilder.setNamespaceId(query.getNamespace());
+    } else if (datastore.getOptions().getNamespace() != null) {
+      pbBuilder.setNamespaceId(datastore.getOptions().getNamespace());
     }
     partitionIdPb = pbBuilder.build();
     sendRequest();
@@ -104,12 +104,24 @@ class QueryResultsImpl<T> extends AbstractIterator<T> implements QueryResults<T>
   }
 
   @Override
+  @Deprecated
   public Class<?> resultClass() {
+    return getResultClass();
+  }
+
+  @Override
+  public Class<?> getResultClass() {
     return actualResultType.resultClass();
   }
 
   @Override
+  @Deprecated
   public Cursor cursorAfter() {
+    return getCursorAfter();
+  }
+
+  @Override
+  public Cursor getCursorAfter() {
     return new Cursor(cursor);
   }
 }

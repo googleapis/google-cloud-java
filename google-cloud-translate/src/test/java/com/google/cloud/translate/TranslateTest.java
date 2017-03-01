@@ -32,19 +32,19 @@ public class TranslateTest {
   public void testListOptions() {
     // target language
     LanguageListOption listOption = LanguageListOption.targetLanguage(LANGUAGE);
-    assertEquals(TranslateRpc.Option.TARGET_LANGUAGE, listOption.rpcOption());
-    assertEquals(LANGUAGE, listOption.value());
+    assertEquals(TranslateRpc.Option.TARGET_LANGUAGE, listOption.getRpcOption());
+    assertEquals(LANGUAGE, listOption.getValue());
   }
 
   @Test
   public void testTranslateOptions() {
     // target language
     TranslateOption translateOption = TranslateOption.targetLanguage(LANGUAGE);
-    assertEquals(TranslateRpc.Option.TARGET_LANGUAGE, translateOption.rpcOption());
-    assertEquals(LANGUAGE, translateOption.value());
+    assertEquals(TranslateRpc.Option.TARGET_LANGUAGE, translateOption.getRpcOption());
+    assertEquals(LANGUAGE, translateOption.getValue());
     // source language
     translateOption = TranslateOption.sourceLanguage(LANGUAGE);
-    assertEquals(TranslateRpc.Option.SOURCE_LANGUAGE, translateOption.rpcOption());
-    assertEquals(LANGUAGE, translateOption.value());
+    assertEquals(TranslateRpc.Option.SOURCE_LANGUAGE, translateOption.getRpcOption());
+    assertEquals(LANGUAGE, translateOption.getValue());
   }
 }

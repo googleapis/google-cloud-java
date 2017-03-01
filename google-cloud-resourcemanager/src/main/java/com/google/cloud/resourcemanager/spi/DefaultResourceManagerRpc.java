@@ -50,12 +50,12 @@ public class DefaultResourceManagerRpc implements ResourceManagerRpc {
   private final Cloudresourcemanager resourceManager;
 
   public DefaultResourceManagerRpc(ResourceManagerOptions options) {
-    HttpTransport transport = options.httpTransportFactory().create();
-    HttpRequestInitializer initializer = options.httpRequestInitializer();
+    HttpTransport transport = options.getHttpTransportFactory().create();
+    HttpRequestInitializer initializer = options.getHttpRequestInitializer();
     resourceManager =
         new Cloudresourcemanager.Builder(transport, new JacksonFactory(), initializer)
-            .setRootUrl(options.host())
-            .setApplicationName(options.applicationName())
+            .setRootUrl(options.getHost())
+            .setApplicationName(options.getApplicationName())
             .build();
   }
 
@@ -90,7 +90,7 @@ public class DefaultResourceManagerRpc implements ResourceManagerRpc {
           .execute();
     } catch (IOException ex) {
       ResourceManagerException translated = translate(ex);
-      if (translated.code() == HTTP_FORBIDDEN || translated.code() == HTTP_NOT_FOUND) {
+      if (translated.getCode() == HTTP_FORBIDDEN || translated.getCode() == HTTP_NOT_FOUND) {
         // Service can return either 403 or 404 to signify that the project doesn't exist.
         return null;
       } else {
@@ -142,7 +142,7 @@ public class DefaultResourceManagerRpc implements ResourceManagerRpc {
           .execute();
     } catch (IOException ex) {
       ResourceManagerException translated = translate(ex);
-      if (translated.code() == HTTP_FORBIDDEN) {
+      if (translated.getCode() == HTTP_FORBIDDEN) {
         // Service returns permission denied if policy doesn't exist.
         return null;
       } else {

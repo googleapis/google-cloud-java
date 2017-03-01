@@ -30,7 +30,7 @@ public final class NullValue extends Value<Void> {
 
         @Override
         public Builder newBuilder(Void value) {
-          return builder();
+          return NullValue.newBuilder();
         }
 
         @Override
@@ -69,7 +69,7 @@ public final class NullValue extends Value<Void> {
   }
 
   public NullValue() {
-    this(builder());
+    this(newBuilder());
   }
 
   private NullValue(Builder builder) {
@@ -85,7 +85,12 @@ public final class NullValue extends Value<Void> {
     return new NullValue();
   }
 
+  @Deprecated
   public static Builder builder() {
+    return newBuilder();
+  }
+
+  public static Builder newBuilder() {
     return new Builder();
   }
 }

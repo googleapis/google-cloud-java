@@ -16,12 +16,10 @@
 
 package com.google.cloud.dns;
 
-import com.google.cloud.AuthCredentials;
 import com.google.cloud.BaseSerializationTest;
+import com.google.cloud.NoCredentials;
 import com.google.cloud.Restorable;
 import com.google.cloud.RetryParams;
-import com.google.common.collect.ImmutableList;
-
 import com.google.common.collect.ImmutableList;
 
 import java.io.Serializable;
@@ -32,18 +30,19 @@ public class SerializationTest extends BaseSerializationTest {
 
   private static final ZoneInfo FULL_ZONE_INFO = Zone.of("some zone name", "www.example.com",
       "some descriptions").toBuilder()
-      .creationTimeMillis(132L)
-      .generatedId("123333")
-      .nameServers(ImmutableList.of("server 1", "server 2"))
-      .nameServerSet("specificationstring")
+      .setCreationTimeMillis(132L)
+      .setGeneratedId("123333")
+      .setNameServers(ImmutableList.of("server 1", "server 2"))
+      .setNameServerSet("specificationstring")
       .build();
   private static final ZoneInfo PARTIAL_ZONE_INFO = Zone.of("some zone name", "www.example.com",
       "some descriptions").toBuilder().build();
-  private static final ProjectInfo PARTIAL_PROJECT_INFO = ProjectInfo.builder().id("13").build();
-  private static final ProjectInfo FULL_PROJECT_INFO = ProjectInfo.builder()
-      .id("342")
-      .number(new BigInteger("2343245"))
-      .quota(new ProjectInfo.Quota(12, 13, 14, 15, 16, 17))
+  private static final ProjectInfo PARTIAL_PROJECT_INFO =
+      ProjectInfo.newBuilder().setId("13").build();
+  private static final ProjectInfo FULL_PROJECT_INFO = ProjectInfo.newBuilder()
+      .setId("342")
+      .setNumber(new BigInteger("2343245"))
+      .setQuota(new ProjectInfo.Quota(12, 13, 14, 15, 16, 17))
       .build();
   private static final Dns.ZoneListOption ZONE_LIST_OPTION =
       Dns.ZoneListOption.dnsName("www.example.com.");
@@ -57,44 +56,43 @@ public class SerializationTest extends BaseSerializationTest {
       Dns.ChangeRequestOption.fields(Dns.ChangeRequestField.STATUS);
   private static final Dns.ProjectOption PROJECT_OPTION =
       Dns.ProjectOption.fields(Dns.ProjectField.QUOTA);
-  private static final DnsOptions OPTIONS = DnsOptions.builder()
-      .projectId("some-unnecessary-project-ID")
-      .retryParams(RetryParams.defaultInstance())
+  private static final DnsOptions OPTIONS = DnsOptions.newBuilder()
+      .setProjectId("some-unnecessary-project-ID")
+      .setRetryParams(RetryParams.getDefaultInstance())
       .build();
-  private static final Dns DNS = OPTIONS.service();
+  private static final Dns DNS = OPTIONS.getService();
   private static final Zone FULL_ZONE = new Zone(DNS, new ZoneInfo.BuilderImpl(FULL_ZONE_INFO));
   private static final Zone PARTIAL_ZONE =
       new Zone(DNS, new ZoneInfo.BuilderImpl(PARTIAL_ZONE_INFO));
   private static final ChangeRequestInfo CHANGE_REQUEST_INFO_PARTIAL =
-      ChangeRequest.builder().build();
+      ChangeRequest.newBuilder().build();
   private static final ChangeRequest CHANGE_REQUEST_PARTIAL = new ChangeRequest(DNS, "name",
       new ChangeRequestInfo.BuilderImpl(CHANGE_REQUEST_INFO_PARTIAL));
   private static final RecordSet RECORD_SET_PARTIAL =
-      RecordSet.builder("www.www.com", RecordSet.Type.AAAA).build();
+      RecordSet.newBuilder("www.www.com", RecordSet.Type.AAAA).build();
   private static final RecordSet RECORD_SET_COMPLETE =
-      RecordSet.builder("www.sadfa.com", RecordSet.Type.A)
-          .ttl(12, TimeUnit.HOURS)
+      RecordSet.newBuilder("www.sadfa.com", RecordSet.Type.A)
+          .setTtl(12, TimeUnit.HOURS)
           .addRecord("record")
           .build();
-  private static final ChangeRequestInfo CHANGE_REQUEST_INFO_COMPLETE = ChangeRequestInfo.builder()
-      .add(RECORD_SET_COMPLETE)
-      .delete(RECORD_SET_PARTIAL)
-      .status(ChangeRequest.Status.PENDING)
-      .generatedId("some id")
-      .startTimeMillis(132L)
-      .build();
+  private static final ChangeRequestInfo CHANGE_REQUEST_INFO_COMPLETE =
+      ChangeRequestInfo.newBuilder()
+          .add(RECORD_SET_COMPLETE)
+          .delete(RECORD_SET_PARTIAL)
+          .setStatus(ChangeRequest.Status.PENDING)
+          .setGeneratedId("some id")
+          .setStartTime(132L)
+          .build();
   private static final ChangeRequest CHANGE_REQUEST_COMPLETE = new ChangeRequest(DNS, "name",
       new ChangeRequestInfo.BuilderImpl(CHANGE_REQUEST_INFO_COMPLETE));
 
   @Override
   protected Serializable[] serializableObjects() {
-    DnsOptions options = DnsOptions.builder()
-        .authCredentials(AuthCredentials.createForAppEngine())
-        .projectId("id1")
+    DnsOptions options = DnsOptions.newBuilder()
+        .setCredentials(NoCredentials.getInstance())
+        .setProjectId("id1")
         .build();
-    DnsOptions otherOptions = options.toBuilder()
-        .authCredentials(null)
-        .build();
+    DnsOptions otherOptions = options.toBuilder().build();
     return new Serializable[]{FULL_ZONE_INFO, PARTIAL_ZONE_INFO, ZONE_LIST_OPTION,
         RECORD_SET_LIST_OPTION, CHANGE_REQUEST_LIST_OPTION, ZONE_OPTION, CHANGE_REQUEST_OPTION,
         PROJECT_OPTION, PARTIAL_PROJECT_INFO, FULL_PROJECT_INFO, OPTIONS, FULL_ZONE, PARTIAL_ZONE,

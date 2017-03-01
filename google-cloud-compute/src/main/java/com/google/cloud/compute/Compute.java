@@ -65,7 +65,13 @@ public interface Compute extends Service<ComputeOptions> {
     }
 
     @Override
+    @Deprecated
     public String selector() {
+      return getSelector();
+    }
+
+    @Override
+    public String getSelector() {
       return selector;
     }
   }
@@ -100,7 +106,13 @@ public interface Compute extends Service<ComputeOptions> {
     }
 
     @Override
+    @Deprecated
     public String selector() {
+      return getSelector();
+    }
+
+    @Override
+    public String getSelector() {
       return selector;
     }
   }
@@ -131,7 +143,13 @@ public interface Compute extends Service<ComputeOptions> {
     }
 
     @Override
+    @Deprecated
     public String selector() {
+      return getSelector();
+    }
+
+    @Override
+    public String getSelector() {
       return selector;
     }
   }
@@ -161,7 +179,13 @@ public interface Compute extends Service<ComputeOptions> {
     }
 
     @Override
+    @Deprecated
     public String selector() {
+      return getSelector();
+    }
+
+    @Override
+    public String getSelector() {
       return selector;
     }
   }
@@ -186,7 +210,13 @@ public interface Compute extends Service<ComputeOptions> {
     }
 
     @Override
+    @Deprecated
     public String selector() {
+      return getSelector();
+    }
+
+    @Override
+    public String getSelector() {
       return selector;
     }
   }
@@ -235,7 +265,13 @@ public interface Compute extends Service<ComputeOptions> {
     }
 
     @Override
+    @Deprecated
     public String selector() {
+      return getSelector();
+    }
+
+    @Override
+    public String getSelector() {
       return selector;
     }
   }
@@ -268,7 +304,13 @@ public interface Compute extends Service<ComputeOptions> {
     }
 
     @Override
+    @Deprecated
     public String selector() {
+      return getSelector();
+    }
+
+    @Override
+    public String getSelector() {
       return selector;
     }
   }
@@ -309,7 +351,13 @@ public interface Compute extends Service<ComputeOptions> {
     }
 
     @Override
+    @Deprecated
     public String selector() {
+      return getSelector();
+    }
+
+    @Override
+    public String getSelector() {
       return selector;
     }
   }
@@ -343,7 +391,13 @@ public interface Compute extends Service<ComputeOptions> {
     }
 
     @Override
+    @Deprecated
     public String selector() {
+      return getSelector();
+    }
+
+    @Override
+    public String getSelector() {
       return selector;
     }
   }
@@ -379,7 +433,13 @@ public interface Compute extends Service<ComputeOptions> {
     }
 
     @Override
+    @Deprecated
     public String selector() {
+      return getSelector();
+    }
+
+    @Override
+    public String getSelector() {
       return selector;
     }
   }
@@ -410,7 +470,13 @@ public interface Compute extends Service<ComputeOptions> {
     }
 
     @Override
+    @Deprecated
     public String selector() {
+      return getSelector();
+    }
+
+    @Override
+    public String getSelector() {
       return selector;
     }
   }
@@ -442,7 +508,13 @@ public interface Compute extends Service<ComputeOptions> {
     }
 
     @Override
+    @Deprecated
     public String selector() {
+      return getSelector();
+    }
+
+    @Override
+    public String getSelector() {
       return selector;
     }
   }
@@ -481,7 +553,13 @@ public interface Compute extends Service<ComputeOptions> {
     }
 
     @Override
+    @Deprecated
     public String selector() {
+      return getSelector();
+    }
+
+    @Override
+    public String getSelector() {
       return selector;
     }
   }
@@ -547,7 +625,7 @@ public interface Compute extends Service<ComputeOptions> {
     private static final long serialVersionUID = 4847837203592234453L;
 
     private DiskTypeFilter(DiskTypeField field, ComparisonOperator operator, Object value) {
-      super(field.selector(), operator, value);
+      super(field.getSelector(), operator, value);
     }
 
     /**
@@ -595,7 +673,7 @@ public interface Compute extends Service<ComputeOptions> {
     private static final long serialVersionUID = 7346062041571853235L;
 
     private MachineTypeFilter(MachineTypeField field, ComparisonOperator operator, Object value) {
-      super(field.selector(), operator, value);
+      super(field.getSelector(), operator, value);
     }
 
     /**
@@ -643,7 +721,7 @@ public interface Compute extends Service<ComputeOptions> {
     private static final long serialVersionUID = 4464892812442567172L;
 
     private RegionFilter(RegionField field, ComparisonOperator operator, Object value) {
-      super(field.selector(), operator, value);
+      super(field.getSelector(), operator, value);
     }
 
     /**
@@ -677,7 +755,7 @@ public interface Compute extends Service<ComputeOptions> {
     private static final long serialVersionUID = -3927428278548808737L;
 
     private ZoneFilter(ZoneField field, ComparisonOperator operator, Object value) {
-      super(field.selector(), operator, value);
+      super(field.getSelector(), operator, value);
     }
 
     /**
@@ -711,7 +789,7 @@ public interface Compute extends Service<ComputeOptions> {
     private static final long serialVersionUID = -3202249202748346427L;
 
     private OperationFilter(OperationField field, ComparisonOperator operator, Object value) {
-      super(field.selector(), operator, value);
+      super(field.getSelector(), operator, value);
     }
 
     /**
@@ -759,7 +837,7 @@ public interface Compute extends Service<ComputeOptions> {
     private static final long serialVersionUID = -227481644259653765L;
 
     private AddressFilter(AddressField field, ComparisonOperator operator, Object value) {
-      super(field.selector(), operator, value);
+      super(field.getSelector(), operator, value);
     }
 
     /**
@@ -793,7 +871,7 @@ public interface Compute extends Service<ComputeOptions> {
     private static final long serialVersionUID = 8757711630092406747L;
 
     private SnapshotFilter(SnapshotField field, ComparisonOperator operator, Object value) {
-      super(field.selector(), operator, value);
+      super(field.getSelector(), operator, value);
     }
 
     /**
@@ -841,7 +919,7 @@ public interface Compute extends Service<ComputeOptions> {
     private static final long serialVersionUID = -3601427417234098397L;
 
     private ImageFilter(ImageField field, ComparisonOperator operator, Object value) {
-      super(field.selector(), operator, value);
+      super(field.getSelector(), operator, value);
     }
 
     /**
@@ -889,7 +967,7 @@ public interface Compute extends Service<ComputeOptions> {
     private static final long serialVersionUID = 5856790665396877913L;
 
     private DiskFilter(DiskField field, ComparisonOperator operator, Object value) {
-      super(field.selector(), operator, value);
+      super(field.getSelector(), operator, value);
     }
 
     /**
@@ -937,7 +1015,7 @@ public interface Compute extends Service<ComputeOptions> {
     private static final long serialVersionUID = 979448583739105481L;
 
     private SubnetworkFilter(SubnetworkField field, ComparisonOperator operator, Object value) {
-      super(field.selector(), operator, value);
+      super(field.getSelector(), operator, value);
     }
 
     /**
@@ -971,7 +1049,7 @@ public interface Compute extends Service<ComputeOptions> {
     private static final long serialVersionUID = 7921406498804130930L;
 
     private NetworkFilter(NetworkField field, ComparisonOperator operator, Object value) {
-      super(field.selector(), operator, value);
+      super(field.getSelector(), operator, value);
     }
 
     /**
@@ -1019,7 +1097,7 @@ public interface Compute extends Service<ComputeOptions> {
     private static final long serialVersionUID = 679008888882025686L;
 
     private InstanceFilter(InstanceField field, ComparisonOperator operator, Object value) {
-      super(field.selector(), operator, value);
+      super(field.getSelector(), operator, value);
     }
 
     /**

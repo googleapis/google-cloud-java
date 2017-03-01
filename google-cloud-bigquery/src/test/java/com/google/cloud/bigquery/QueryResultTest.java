@@ -28,36 +28,58 @@ public class QueryResultTest {
 
   private static final String CURSOR = "cursor";
   private static final Field FIELD_SCHEMA1 =
-      Field.builder("StringField", Field.Type.string())
-          .mode(Field.Mode.NULLABLE)
-          .description("FieldDescription1")
+      Field.newBuilder("StringField", Field.Type.string())
+          .setMode(Field.Mode.NULLABLE)
+          .setDescription("FieldDescription1")
           .build();
   private static final Schema SCHEMA = Schema.of(FIELD_SCHEMA1);
   private static final long TOTAL_ROWS = 42L;
   private static final QueryResult.QueryResultsPageFetcher FETCHER =
       new QueryResult.QueryResultsPageFetcher() {
         @Override
+        @Deprecated
         public QueryResult nextPage() {
+          return getNextPage();
+        }
+
+        @Override
+        public QueryResult getNextPage() {
           return null;
         }
       };
   private static final long TOTAL_BYTES_PROCESSED = 4200L;
   private static final boolean CACHE_HIT = false;
-  private static final QueryResult QUERY_RESULT = QueryResult.builder()
-      .schema(SCHEMA)
-      .totalRows(TOTAL_ROWS)
-      .totalBytesProcessed(TOTAL_BYTES_PROCESSED)
-      .cursor(CURSOR)
-      .pageFetcher(FETCHER)
-      .results(ImmutableList.<List<FieldValue>>of())
-      .cacheHit(CACHE_HIT)
+  private static final QueryResult QUERY_RESULT = QueryResult.newBuilder()
+      .setSchema(SCHEMA)
+      .setTotalRows(TOTAL_ROWS)
+      .setTotalBytesProcessed(TOTAL_BYTES_PROCESSED)
+      .setCursor(CURSOR)
+      .setPageFetcher(FETCHER)
+      .setResults(ImmutableList.<List<FieldValue>>of())
+      .setCacheHit(CACHE_HIT)
       .build();
-  private static final QueryResult QUERY_RESULT_INCOMPLETE = QueryResult.builder()
-      .totalBytesProcessed(TOTAL_BYTES_PROCESSED)
+  private static final QueryResult QUERY_RESULT_INCOMPLETE = QueryResult.newBuilder()
+      .setTotalBytesProcessed(TOTAL_BYTES_PROCESSED)
       .build();
 
   @Test
   public void testBuilder() {
+    assertEquals(SCHEMA, QUERY_RESULT.getSchema());
+    assertEquals(TOTAL_ROWS, QUERY_RESULT.getTotalRows());
+    assertEquals(TOTAL_BYTES_PROCESSED, QUERY_RESULT.getTotalBytesProcessed());
+    assertEquals(CACHE_HIT, QUERY_RESULT.cacheHit());
+    assertEquals(CURSOR, QUERY_RESULT.getNextPageCursor());
+    assertEquals(null, QUERY_RESULT.getNextPage());
+    assertEquals(null, QUERY_RESULT_INCOMPLETE.getSchema());
+    assertEquals(0L, QUERY_RESULT_INCOMPLETE.getTotalRows());
+    assertEquals(TOTAL_BYTES_PROCESSED, QUERY_RESULT_INCOMPLETE.getTotalBytesProcessed());
+    assertEquals(false, QUERY_RESULT_INCOMPLETE.cacheHit());
+    assertEquals(null, QUERY_RESULT_INCOMPLETE.getNextPageCursor());
+    assertEquals(null, QUERY_RESULT_INCOMPLETE.getNextPage());
+  }
+
+  @Test
+  public void testBuilderDeprecated() {
     assertEquals(SCHEMA, QUERY_RESULT.schema());
     assertEquals(TOTAL_ROWS, QUERY_RESULT.totalRows());
     assertEquals(TOTAL_BYTES_PROCESSED, QUERY_RESULT.totalBytesProcessed());
@@ -80,12 +102,12 @@ public class QueryResultTest {
 
   private void compareQueryResult(QueryResult expected, QueryResult value) {
     assertEquals(expected, value);
-    assertEquals(expected.nextPage(), value.nextPage());
-    assertEquals(expected.nextPageCursor(), value.nextPageCursor());
-    assertEquals(expected.values(), value.values());
-    assertEquals(expected.schema(), value.schema());
-    assertEquals(expected.totalRows(), value.totalRows());
-    assertEquals(expected.totalBytesProcessed(), value.totalBytesProcessed());
+    assertEquals(expected.getNextPage(), value.getNextPage());
+    assertEquals(expected.getNextPageCursor(), value.getNextPageCursor());
+    assertEquals(expected.getValues(), value.getValues());
+    assertEquals(expected.getSchema(), value.getSchema());
+    assertEquals(expected.getTotalRows(), value.getTotalRows());
+    assertEquals(expected.getTotalBytesProcessed(), value.getTotalBytesProcessed());
     assertEquals(expected.cacheHit(), value.cacheHit());
   }
 }

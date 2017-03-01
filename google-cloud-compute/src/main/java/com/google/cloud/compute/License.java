@@ -44,7 +44,15 @@ public class License implements Serializable {
   /**
    * Returns the identity of the license.
    */
+  @Deprecated
   public LicenseId licenseId() {
+    return licenseId;
+  }
+
+  /**
+   * Returns the identity of the license.
+   */
+  public LicenseId getLicenseId() {
     return licenseId;
   }
 
@@ -80,9 +88,9 @@ public class License implements Serializable {
   com.google.api.services.compute.model.License toPb() {
     com.google.api.services.compute.model.License licensePb =
         new com.google.api.services.compute.model.License();
-    licensePb.setName(licenseId.license());
+    licensePb.setName(licenseId.getLicense());
     licensePb.setChargesUseFee(chargesUseFee);
-    licensePb.setSelfLink(licenseId.selfLink());
+    licensePb.setSelfLink(licenseId.getSelfLink());
     return licensePb;
   }
 

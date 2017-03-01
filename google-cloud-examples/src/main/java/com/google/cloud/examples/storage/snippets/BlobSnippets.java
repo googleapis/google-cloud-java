@@ -24,9 +24,9 @@ package com.google.cloud.examples.storage.snippets;
 
 import static java.nio.charset.StandardCharsets.UTF_8;
 
-import com.google.cloud.AuthCredentials;
+import com.google.auth.ServiceAccountSigner;
+import com.google.auth.oauth2.ServiceAccountCredentials;
 import com.google.cloud.ReadChannel;
-import com.google.cloud.ServiceAccountSigner;
 import com.google.cloud.WriteChannel;
 import com.google.cloud.storage.Acl;
 import com.google.cloud.storage.Acl.User;
@@ -77,11 +77,11 @@ public class BlobSnippets {
    * Example of reading all bytes of the blob, if its generation matches the
    * {@link Blob#generation()} value, otherwise a {@link StorageException} is thrown.
    */
-  // [TARGET content(BlobSourceOption...)]
-  public byte[] content() {
-    // [START content]
-    byte[] content = blob.content(BlobSourceOption.generationMatch());
-    // [END content]
+  // [TARGET getContent(BlobSourceOption...)]
+  public byte[] getContent() {
+    // [START getContent]
+    byte[] content = blob.getContent(BlobSourceOption.generationMatch());
+    // [END getContent]
     return content;
   }
 
@@ -108,8 +108,8 @@ public class BlobSnippets {
     // [START update]
     Map<String, String> newMetadata = new HashMap<>();
     newMetadata.put("key", "value");
-    blob.toBuilder().metadata(null).build().update();
-    Blob updatedBlob = blob.toBuilder().metadata(newMetadata).build().update();
+    blob.toBuilder().setMetadata(null).build().update();
+    Blob updatedBlob = blob.toBuilder().setMetadata(newMetadata).build().update();
     // [END update]
     return updatedBlob;
   }
@@ -140,7 +140,7 @@ public class BlobSnippets {
   public Blob copyToId(String bucketName, String blobName) {
     // [START copyToId]
     CopyWriter copyWriter = blob.copyTo(BlobId.of(bucketName, blobName));
-    Blob copiedBlob = copyWriter.result();
+    Blob copiedBlob = copyWriter.getResult();
     // [END copyToId]
     return copiedBlob;
   }
@@ -153,7 +153,7 @@ public class BlobSnippets {
   public Blob copyToBucket(String bucketName) {
     // [START copyToBucket]
     CopyWriter copyWriter = blob.copyTo(bucketName);
-    Blob copiedBlob = copyWriter.result();
+    Blob copiedBlob = copyWriter.getResult();
     // [END copyToBucket]
     return copiedBlob;
   }
@@ -167,9 +167,28 @@ public class BlobSnippets {
   public Blob copyToStrings(String bucketName, String blobName) {
     // [START copyToStrings]
     CopyWriter copyWriter = blob.copyTo(bucketName, blobName);
-    Blob copiedBlob = copyWriter.result();
+    Blob copiedBlob = copyWriter.getResult();
     // [END copyToStrings]
     return copiedBlob;
+  }
+
+  /**
+   * Example of moving a blob to a different bucket with a different name.
+   */
+  // [TARGET copyTo(String, String, BlobSourceOption...)]
+  // [VARIABLE "my_unique_bucket"]
+  // [VARIABLE "move_blob_name"]
+  public Blob moveTo(String destBucket, String destBlob) {
+    // [START storageMoveFile]
+    CopyWriter copyWriter = blob.copyTo(destBucket, destBlob);
+    Blob copiedBlob = copyWriter.getResult();
+    boolean deleted = blob.delete();
+    // [END storageMoveFile]
+    if (deleted) {
+      return copiedBlob;
+    } else {
+      return null;
+    }
   }
 
   /**
@@ -187,6 +206,23 @@ public class BlobSnippets {
       }
     }
     // [END reader]
+  }
+
+  /**
+   * Example of reading just a portion of the blob's content.
+   */
+  // [TARGET reader(BlobSourceOption...)]
+  // [VARIABLE 1]
+  // [VARIABLE 8]
+  public byte[] readContentRange(int start, int end) throws IOException {
+    // [START readContentRange]
+    try (ReadChannel reader = blob.reader()) {
+      reader.seek(start);
+      ByteBuffer bytes = ByteBuffer.allocate(end - start);
+      reader.read(bytes);
+      return bytes.array();
+    }
+    // [END readContentRange]
   }
 
   /**
@@ -227,7 +263,7 @@ public class BlobSnippets {
   public URL signUrlWithSigner(String keyPath) throws IOException {
     // [START signUrlWithSigner]
     URL signedUrl = blob.signUrl(14, TimeUnit.DAYS, SignUrlOption.signWith(
-        AuthCredentials.createForJson(new FileInputStream(keyPath))));
+        ServiceAccountCredentials.fromStream(new FileInputStream(keyPath))));
     // [END signUrlWithSigner]
     return signedUrl;
   }

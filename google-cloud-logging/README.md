@@ -1,4 +1,4 @@
-Google Cloud Java Client for Logging (Alpha)
+Google Cloud Java Client for Logging
 ====================================
 
 Java idiomatic client for [Stackdriver Logging][stackdriver-logging].
@@ -24,18 +24,18 @@ Standard. `google-cloud-logging` will work on App Engine Flexible.
 Add this to your pom.xml file
 ```xml
 <dependency>
-  <groupId>com.google.gcloud</groupId>
+  <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-logging</artifactId>
-  <version>0.4.0</version>
+  <version>0.9.3-beta</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-logging:0.4.0'
+compile 'com.google.cloud:google-cloud-logging:0.9.3-beta'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-logging" % "0.4.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-logging" % "0.9.3-beta"
 ```
 
 Example Application
@@ -92,8 +92,8 @@ code to create your service object:
 import com.google.cloud.logging.Logging;
 import com.google.cloud.logging.LoggingOptions;
 
-LoggingOptions options = LoggingOptions.defaultInstance();
-try(Logging logging = options.service()) {
+LoggingOptions options = LoggingOptions.getDefaultInstance();
+try(Logging logging = options.getService()) {
   // use logging here
 }
 ```
@@ -112,8 +112,8 @@ import com.google.cloud.logging.MetricInfo;
 Then, to create the metric, use the following code:
 
 ```java
-MetricInfo metricInfo = MetricInfo.builder("test-metric", "severity >= ERROR")
-    .description("Log entries with severity higher or equal to ERROR")
+MetricInfo metricInfo = MetricInfo.newBuilder("test-metric", "severity >= ERROR")
+    .setDescription("Log entries with severity higher or equal to ERROR")
     .build();
 logging.create(metricInfo);
 ```
@@ -131,10 +131,10 @@ import java.util.Collections;
 ```
 Then, to write the log entries, use the following code:
 ```java
-LogEntry firstEntry = LogEntry.builder(StringPayload.of("message"))
-    .logName("test-log")
-    .resource(MonitoredResource.builder("global")
-        .addLabel("project_id", options.projectId())
+LogEntry firstEntry = LogEntry.newBuilder(StringPayload.of("message"))
+    .setLogName("test-log")
+    .setResource(MonitoredResource.newBuilder("global")
+        .addLabel("project_id", options.getProjectId())
         .build())
     .build();
 logging.write(Collections.singleton(firstEntry));

@@ -62,7 +62,17 @@ public abstract class NetworkConfiguration implements Serializable {
    * with no subnetworks. This method returns {@link Type#SUBNET} for a network that supports the
    * creation of subnetworks (either automatic or manual).
    */
+  @Deprecated
   public Type type() {
+    return getType();
+  }
+
+  /**
+   * Returns the network's type. This method returns {@link Type#STANDARD} for a standard networks
+   * with no subnetworks. This method returns {@link Type#SUBNET} for a network that supports the
+   * creation of subnetworks (either automatic or manual).
+   */
+  public Type getType() {
     return type;
   }
 

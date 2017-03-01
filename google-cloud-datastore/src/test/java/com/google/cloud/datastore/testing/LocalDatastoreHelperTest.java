@@ -22,13 +22,14 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
-import com.google.cloud.AuthCredentials;
+import com.google.cloud.NoCredentials;
 import com.google.cloud.datastore.Datastore;
 import com.google.cloud.datastore.DatastoreException;
 import com.google.cloud.datastore.DatastoreOptions;
 import com.google.cloud.datastore.Entity;
 import com.google.cloud.datastore.Key;
 
+import org.joda.time.Duration;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
@@ -36,6 +37,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
 import java.io.IOException;
+import java.util.concurrent.TimeoutException;
 
 @RunWith(JUnit4.class)
 public class LocalDatastoreHelperTest {
@@ -50,6 +52,16 @@ public class LocalDatastoreHelperTest {
   @Test
   public void testCreate() {
     LocalDatastoreHelper helper = LocalDatastoreHelper.create(0.75);
+    assertTrue(Math.abs(0.75 - helper.getConsistency()) < TOLERANCE);
+    assertTrue(helper.getProjectId().startsWith(PROJECT_ID_PREFIX));
+    helper = LocalDatastoreHelper.create();
+    assertTrue(Math.abs(0.9 - helper.getConsistency()) < TOLERANCE);
+    assertTrue(helper.getProjectId().startsWith(PROJECT_ID_PREFIX));
+  }
+
+  @Test
+  public void testCreateDeprecated() {
+    LocalDatastoreHelper helper = LocalDatastoreHelper.create(0.75);
     assertTrue(Math.abs(0.75 - helper.consistency()) < TOLERANCE);
     assertTrue(helper.projectId().startsWith(PROJECT_ID_PREFIX));
     helper = LocalDatastoreHelper.create();
@@ -60,28 +72,28 @@ public class LocalDatastoreHelperTest {
   @Test
   public void testOptions() {
     LocalDatastoreHelper helper = LocalDatastoreHelper.create();
-    DatastoreOptions options = helper.options();
-    assertTrue(options.projectId().startsWith(PROJECT_ID_PREFIX));
-    assertTrue(options.host().startsWith("localhost:"));
-    assertSame(AuthCredentials.noAuth(), options.authCredentials());
-    options = helper.options(NAMESPACE);
-    assertTrue(options.projectId().startsWith(PROJECT_ID_PREFIX));
-    assertTrue(options.host().startsWith("localhost:"));
-    assertSame(AuthCredentials.noAuth(), options.authCredentials());
-    assertEquals(NAMESPACE, options.namespace());
+    DatastoreOptions options = helper.getOptions();
+    assertTrue(options.getProjectId().startsWith(PROJECT_ID_PREFIX));
+    assertTrue(options.getHost().startsWith("localhost:"));
+    assertSame(NoCredentials.getInstance(), options.getCredentials());
+    options = helper.getOptions(NAMESPACE);
+    assertTrue(options.getProjectId().startsWith(PROJECT_ID_PREFIX));
+    assertTrue(options.getHost().startsWith("localhost:"));
+    assertSame(NoCredentials.getInstance(), options.getCredentials());
+    assertEquals(NAMESPACE, options.getNamespace());
   }
 
   @Test
-  public void testStartStopReset() throws IOException, InterruptedException {
+  public void testStartStopReset() throws IOException, InterruptedException, TimeoutException {
     LocalDatastoreHelper helper = LocalDatastoreHelper.create();
     helper.start();
-    Datastore datastore = helper.options().service();
-    Key key = datastore.newKeyFactory().kind("kind").newKey("name");
-    datastore.put(Entity.builder(key).build());
+    Datastore datastore = helper.getOptions().getService();
+    Key key = datastore.newKeyFactory().setKind("kind").newKey("name");
+    datastore.put(Entity.newBuilder(key).build());
     assertNotNull(datastore.get(key));
     helper.reset();
     assertNull(datastore.get(key));
-    helper.stop();
+    helper.stop(Duration.standardMinutes(1));
     thrown.expect(DatastoreException.class);
     datastore.get(key);
   }

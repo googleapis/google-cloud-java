@@ -41,27 +41,55 @@ public final class RegionAddressId extends AddressId {
   }
 
   @Override
+  @Deprecated
   public Type type() {
+    return getType();
+  }
+
+  @Override
+  public Type getType() {
     return Type.REGION;
   }
 
   /**
    * Returns the name of the region this address belongs to.
    */
+  @Deprecated
   public String region() {
+    return region;
+  }
+
+  /**
+   * Returns the name of the region this address belongs to.
+   */
+  public String getRegion() {
     return region;
   }
 
   /**
    * Returns the identity of the region this address belongs to.
    */
+  @Deprecated
   public RegionId regionId() {
-    return RegionId.of(project(), region);
+    return RegionId.of(getProject(), region);
+  }
+
+  /**
+   * Returns the identity of the region this address belongs to.
+   */
+  public RegionId getRegionId() {
+    return RegionId.of(getProject(), region);
   }
 
   @Override
+  @Deprecated
   public String selfLink() {
-    return super.selfLink() + "/regions/" + region + "/addresses/" + address();
+    return getSelfLink();
+  }
+
+  @Override
+  public String getSelfLink() {
+    return super.getSelfLink() + "/regions/" + region + "/addresses/" + getAddress();
   }
 
   @Override
@@ -88,10 +116,10 @@ public final class RegionAddressId extends AddressId {
 
   @Override
   RegionAddressId setProjectId(String projectId) {
-    if (project() != null) {
+    if (getProject() != null) {
       return this;
     }
-    return RegionAddressId.of(projectId, region, address());
+    return RegionAddressId.of(projectId, region, getAddress());
   }
 
   /**
@@ -104,7 +132,7 @@ public final class RegionAddressId extends AddressId {
    * @see <a href="https://www.ietf.org/rfc/rfc1035.txt">RFC1035</a>
    */
   public static RegionAddressId of(RegionId regionId, String address) {
-    return new RegionAddressId(regionId.project(), regionId.region(), address);
+    return new RegionAddressId(regionId.getProject(), regionId.getRegion(), address);
   }
 
   /**

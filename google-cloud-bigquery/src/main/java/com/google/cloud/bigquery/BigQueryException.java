@@ -53,15 +53,15 @@ public final class BigQueryException extends BaseServiceException {
   }
 
   public BigQueryException(int code, String message, BigQueryError error) {
-    super(code, message, error != null ? error.reason() : null, true);
+    super(code, message, error != null ? error.getReason() : null, true);
     this.error = error;
   }
 
   public BigQueryException(IOException exception) {
     super(exception, true);
     BigQueryError error = null;
-    if (reason() != null) {
-      error = new BigQueryError(reason(), location(), getMessage(), debugInfo());
+    if (getReason() != null) {
+      error = new BigQueryError(getReason(), getLocation(), getMessage(), getDebugInfo());
     }
     this.error = error;
   }
@@ -70,12 +70,21 @@ public final class BigQueryException extends BaseServiceException {
    * Returns the {@link BigQueryError} that caused this exception. Returns {@code null} if none
    * exists.
    */
+  @Deprecated
   public BigQueryError error() {
+    return getError();
+  }
+
+  /**
+   * Returns the {@link BigQueryError} that caused this exception. Returns {@code null} if none
+   * exists.
+   */
+  public BigQueryError getError() {
     return error;
   }
 
   @Override
-  protected Set<Error> retryableErrors() {
+  protected Set<Error> getRetryableErrors() {
     return RETRYABLE_ERRORS;
   }
 

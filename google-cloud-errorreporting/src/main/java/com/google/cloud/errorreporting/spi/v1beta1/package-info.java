@@ -1,65 +1,67 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2017, Google Inc. All rights reserved.
  *
- * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
- * in compliance with the License. You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- * http://www.apache.org/licenses/LICENSE-2.0
+ *     http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing, software distributed under the License
- * is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
- * or implied. See the License for the specific language governing permissions and limitations under
- * the License.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
 
 /**
  * A client to Stackdriver Error Reporting API.
  *
- * <p>The interfaces provided are listed below, along with a usage sample
+ * <p>The interfaces provided are listed below, along with usage samples.
  *
- * <p>==================== ErrorGroupServiceApi ====================
+ * <p>======================= ErrorGroupServiceClient =======================
  *
  * <p>Service Description: Service for retrieving and updating individual error groups.
  *
- * <p>Sample for ErrorGroupServiceApi:
+ * <p>Sample for ErrorGroupServiceClient:
  *
  * <pre>
  * <code>
- * try (ErrorGroupServiceApi errorGroupServiceApi = ErrorGroupServiceApi.create()) {
- *   String formattedGroupName = ErrorGroupServiceApi.formatGroupName("[PROJECT]", "[GROUP]");
- *   ErrorGroup response = errorGroupServiceApi.getGroup(formattedGroupName);
+ * try (ErrorGroupServiceClient errorGroupServiceClient = ErrorGroupServiceClient.create()) {
+ *   GroupName groupName = GroupName.create("[PROJECT]", "[GROUP]");
+ *   ErrorGroup response = errorGroupServiceClient.getGroup(groupName);
  * }
  * </code>
  * </pre>
  *
- * ==================== ErrorStatsServiceApi ====================
+ * ======================= ErrorStatsServiceClient =======================
  *
  * <p>Service Description: An API for retrieving and managing error statistics as well as data for
  * individual events.
  *
- * <p>Sample for ErrorStatsServiceApi:
+ * <p>Sample for ErrorStatsServiceClient:
  *
  * <pre>
  * <code>
- * try (ErrorStatsServiceApi errorStatsServiceApi = ErrorStatsServiceApi.create()) {
- *   String formattedProjectName = ErrorStatsServiceApi.formatProjectName("[PROJECT]");
- *   DeleteEventsResponse response = errorStatsServiceApi.deleteEvents(formattedProjectName);
+ * try (ErrorStatsServiceClient errorStatsServiceClient = ErrorStatsServiceClient.create()) {
+ *   ProjectName projectName = ProjectName.create("[PROJECT]");
+ *   DeleteEventsResponse response = errorStatsServiceClient.deleteEvents(projectName);
  * }
  * </code>
  * </pre>
  *
- * ====================== ReportErrorsServiceApi ======================
+ * ========================= ReportErrorsServiceClient =========================
  *
  * <p>Service Description: An API for reporting error events.
  *
- * <p>Sample for ReportErrorsServiceApi:
+ * <p>Sample for ReportErrorsServiceClient:
  *
  * <pre>
  * <code>
- * try (ReportErrorsServiceApi reportErrorsServiceApi = ReportErrorsServiceApi.create()) {
- *   String formattedProjectName = ReportErrorsServiceApi.formatProjectName("[PROJECT]");
+ * try (ReportErrorsServiceClient reportErrorsServiceClient = ReportErrorsServiceClient.create()) {
+ *   ProjectName projectName = ProjectName.create("[PROJECT]");
  *   ReportedErrorEvent event = ReportedErrorEvent.newBuilder().build();
- *   ReportErrorEventResponse response = reportErrorsServiceApi.reportErrorEvent(formattedProjectName, event);
+ *   ReportErrorEventResponse response = reportErrorsServiceClient.reportErrorEvent(projectName, event);
  * }
  * </code>
  * </pre>

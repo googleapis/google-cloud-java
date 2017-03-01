@@ -22,7 +22,7 @@
  * <pre> {@code
  * LocalDatastoreHelper helper = LocalDatastoreHelper.create();
  * helper.start();
- * Datastore localDatastore = helper.options().service();
+ * Datastore localDatastore = helper.getOptions().getService();
  * } </pre>
  *
  * <p>After the test:

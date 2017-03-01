@@ -54,7 +54,9 @@ import java.nio.file.NoSuchFileException;
 import java.nio.file.OpenOption;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Unit tests for {@link CloudStorageFileSystemProvider}.
@@ -89,7 +91,7 @@ public class CloudStorageFileSystemProviderTest {
 
   @Before
   public void before() {
-    CloudStorageFileSystemProvider.setStorageOptions(LocalStorageHelper.options());
+    CloudStorageFileSystemProvider.setStorageOptions(LocalStorageHelper.getOptions());
   }
 
   @Test
@@ -642,6 +644,12 @@ public class CloudStorageFileSystemProviderTest {
     Path path3 = Paths.get("tmp");
     assertThat(path1.getFileSystem().provider()).isEqualTo(path2.getFileSystem().provider());
     assertThat(path1.getFileSystem().provider()).isNotEqualTo(path3.getFileSystem().provider());
+  }
+
+  @Test
+  public void testNewFileSystem() throws IOException {
+    Map<String,String> env = new HashMap<>();
+    FileSystems.newFileSystem(URI.create("gs://bucket/path/to/file"), env);
   }
 
   private static CloudStorageConfiguration permitEmptyPathComponents(boolean value) {

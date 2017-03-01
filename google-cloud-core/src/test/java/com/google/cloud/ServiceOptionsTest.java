@@ -22,9 +22,12 @@ import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
+import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.spi.ServiceRpcFactory;
 
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -61,29 +64,50 @@ public class ServiceOptionsTest {
       + "  \"type\": \"service_account\"\n"
       + "}";
   private static final InputStream JSON_KEY_STREAM = new ByteArrayInputStream(JSON_KEY.getBytes());
-  private static AuthCredentials authCredentials;
+  private static GoogleCredentials credentials;
   static {
     try {
-      authCredentials = AuthCredentials.createForJson(JSON_KEY_STREAM);
+      credentials = GoogleCredentials.fromStream(JSON_KEY_STREAM);
     } catch (IOException e) {
       fail("Couldn't create fake JSON credentials.");
     }
   }
   private static final Clock TEST_CLOCK = new TestClock();
   private static final TestServiceOptions OPTIONS =
-      TestServiceOptions.builder()
-          .authCredentials(authCredentials)
+      TestServiceOptions.newBuilder()
+          .setCredentials(credentials)
+          .setClock(TEST_CLOCK)
+          .setHost("host")
+          .setProjectId("project-id")
+          .setRetryParams(RetryParams.noRetries())
+          .build();
+  private static final TestServiceOptions OPTIONS_NO_CREDENTIALS =
+      TestServiceOptions.newBuilder()
+          .setCredentials(NoCredentials.getInstance())
+          .setClock(TEST_CLOCK)
+          .setHost("host")
+          .setProjectId("project-id")
+          .setRetryParams(RetryParams.noRetries())
+          .build();
+  private static final TestServiceOptions DEPRECATED_OPTIONS =
+      TestServiceOptions.newBuilder()
+          .setCredentials(credentials)
           .clock(TEST_CLOCK)
           .host("host")
           .projectId("project-id")
           .retryParams(RetryParams.noRetries())
           .build();
   private static final TestServiceOptions DEFAULT_OPTIONS =
-      TestServiceOptions.builder().projectId("project-id").build();
+      TestServiceOptions.newBuilder().setProjectId("project-id").build();
+  private static final TestServiceOptions DEPRECATED_DEFAULT_OPTIONS =
+      TestServiceOptions.newBuilder().projectId("project-id").build();
   private static final TestServiceOptions OPTIONS_COPY = OPTIONS.toBuilder().build();
   private static final String LIBRARY_NAME = "gcloud-java";
   private static final Pattern APPLICATION_NAME_PATTERN =
       Pattern.compile(LIBRARY_NAME + "(/[0-9]+.[0-9]+.[0-9]+)?");
+
+  @Rule
+  public ExpectedException thrown = ExpectedException.none();
 
   private static class TestClock extends Clock {
     @Override
@@ -151,17 +175,17 @@ public class ServiceOptionsTest {
     }
 
     @Override
-    protected TestServiceFactory defaultServiceFactory() {
+    protected TestServiceFactory getDefaultServiceFactory() {
       return DefaultTestServiceFactory.INSTANCE;
     }
 
     @Override
-    protected TestServiceRpcFactory defaultRpcFactory() {
+    protected TestServiceRpcFactory getDefaultRpcFactory() {
       return DefaultTestServiceRpcFactory.INSTANCE;
     }
 
     @Override
-    protected Set<String> scopes() {
+    protected Set<String> getScopes() {
       return null;
     }
 
@@ -170,7 +194,7 @@ public class ServiceOptionsTest {
       return new Builder(this);
     }
 
-    private static Builder builder() {
+    private static Builder newBuilder() {
       return new Builder();
     }
 
@@ -187,14 +211,41 @@ public class ServiceOptionsTest {
 
   @Test
   public void testBuilder() {
-    assertSame(authCredentials, OPTIONS.authCredentials());
-    assertSame(TEST_CLOCK, OPTIONS.clock());
-    assertEquals("host", OPTIONS.host());
-    assertEquals("project-id", OPTIONS.projectId());
-    assertSame(RetryParams.noRetries(), OPTIONS.retryParams());
-    assertSame(Clock.defaultClock(), DEFAULT_OPTIONS.clock());
-    assertEquals("https://www.googleapis.com", DEFAULT_OPTIONS.host());
-    assertSame(RetryParams.defaultInstance(), DEFAULT_OPTIONS.retryParams());
+    assertSame(credentials, OPTIONS.getCredentials());
+    assertSame(TEST_CLOCK, OPTIONS.getClock());
+    assertEquals("host", OPTIONS.getHost());
+    assertEquals("project-id", OPTIONS.getProjectId());
+    assertSame(RetryParams.noRetries(), OPTIONS.getRetryParams());
+    assertSame(Clock.defaultClock(), DEFAULT_OPTIONS.getClock());
+    assertEquals("https://www.googleapis.com", DEFAULT_OPTIONS.getHost());
+    assertSame(RetryParams.getDefaultInstance(), DEFAULT_OPTIONS.getRetryParams());
+  }
+
+  @Test
+  public void testBuilderNoCredentials() {
+    assertEquals(NoCredentials.getInstance(), OPTIONS_NO_CREDENTIALS.getCredentials());
+    assertSame(TEST_CLOCK, OPTIONS_NO_CREDENTIALS.getClock());
+    assertEquals("host", OPTIONS_NO_CREDENTIALS.getHost());
+    assertEquals("project-id", OPTIONS_NO_CREDENTIALS.getProjectId());
+    assertSame(RetryParams.noRetries(), OPTIONS_NO_CREDENTIALS.getRetryParams());
+  }
+
+  @Test
+  public void testBuilderNullCredentials() {
+    thrown.expect(NullPointerException.class);
+    TestServiceOptions.newBuilder().setCredentials(null).build();
+  }
+
+  @Test
+  public void testBuilderDeprecated() {
+    assertSame(credentials, DEPRECATED_OPTIONS.getCredentials());
+    assertSame(TEST_CLOCK, DEPRECATED_OPTIONS.clock());
+    assertEquals("host", DEPRECATED_OPTIONS.host());
+    assertEquals("project-id", DEPRECATED_OPTIONS.projectId());
+    assertSame(RetryParams.noRetries(), DEPRECATED_OPTIONS.retryParams());
+    assertSame(Clock.defaultClock(), DEPRECATED_DEFAULT_OPTIONS.clock());
+    assertEquals("https://www.googleapis.com", DEPRECATED_DEFAULT_OPTIONS.host());
+    assertSame(RetryParams.getDefaultInstance(), DEPRECATED_DEFAULT_OPTIONS.retryParams());
   }
 
   @Test
@@ -204,12 +255,12 @@ public class ServiceOptionsTest {
 
   @Test
   public void testService() {
-    assertTrue(OPTIONS.service() instanceof TestServiceImpl);
+    assertTrue(OPTIONS.getService() instanceof TestServiceImpl);
   }
 
   @Test
   public void testRpc() {
-    assertTrue(OPTIONS.rpc() instanceof DefaultTestServiceRpc);
+    assertTrue(OPTIONS.getRpc() instanceof DefaultTestServiceRpc);
   }
 
   @Test
@@ -220,12 +271,12 @@ public class ServiceOptionsTest {
 
   @Test
   public void testLibraryName() {
-    assertEquals(LIBRARY_NAME, OPTIONS.libraryName());
+    assertEquals(LIBRARY_NAME, OPTIONS.getLibraryName());
   }
 
   @Test
   public void testApplicationName() {
-    assertTrue(APPLICATION_NAME_PATTERN.matcher(OPTIONS.applicationName()).matches());
+    assertTrue(APPLICATION_NAME_PATTERN.matcher(OPTIONS.getApplicationName()).matches());
   }
 
   @Test

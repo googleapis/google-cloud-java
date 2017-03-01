@@ -16,7 +16,6 @@
 
 package com.google.cloud;
 
-import com.google.cloud.BaseWriteChannel.BaseState;
 import com.google.common.base.MoreObjects;
 
 import java.io.IOException;
@@ -42,60 +41,111 @@ public abstract class BaseWriteChannel<
   private final ServiceOptionsT options;
   private final EntityT entity;
   private final String uploadId;
-  private int position;
+  private long position;
   private byte[] buffer = new byte[0];
   private int limit;
   private boolean isOpen = true;
-  private int chunkSize = defaultChunkSize();
+  private int chunkSize = getDefaultChunkSize();
 
+  @Deprecated
   protected int minChunkSize() {
+    return getMinChunkSize();
+  }
+
+  protected int getMinChunkSize() {
     return MIN_CHUNK_SIZE;
   }
 
+  @Deprecated
   protected int defaultChunkSize() {
+    return getDefaultChunkSize();
+  }
+
+  protected int getDefaultChunkSize() {
     return DEFAULT_CHUNK_SIZE;
   }
 
   /**
-   * Writes {@code length} bytes of {@link #buffer()} to the {@link #uploadId()} URL.
+   * Writes {@code length} bytes of {@link #getBuffer()} to the {@link #getUploadId()} URL.
    *
-   * @param length the number of bytes to write from {@link #buffer()}
+   * @param length the number of bytes to write from {@link #getBuffer()}
    * @param last if {@code true} the resumable session is closed
    */
   protected abstract void flushBuffer(int length, boolean last);
 
+  @Deprecated
   protected ServiceOptionsT options() {
     return options;
   }
 
+  protected ServiceOptionsT getOptions() {
+    return options;
+  }
+
+  @Deprecated
   protected EntityT entity() {
+    return getEntity();
+  }
+
+  protected EntityT getEntity() {
     return entity;
   }
 
+  @Deprecated
   protected String uploadId() {
+    return getUploadId();
+  }
+
+  protected String getUploadId() {
     return uploadId;
   }
 
-  protected int position() {
+  @Deprecated
+  protected long position() {
+    return getPosition();
+  }
+
+  protected long getPosition() {
     return position;
   }
 
+  @Deprecated
   protected byte[] buffer() {
+    return getBuffer();
+  }
+
+  protected byte[] getBuffer() {
     return buffer;
   }
 
-  protected int limit() {
+  @Deprecated
+  protected long limit() {
+    return getLimit();
+  }
+
+  protected int getLimit() {
     return limit;
   }
 
+  @Deprecated
   protected int chunkSize() {
+    return getChunkSize();
+  }
+
+  protected int getChunkSize() {
     return chunkSize;
   }
 
   @Override
+  @Deprecated
   public final void chunkSize(int chunkSize) {
-    chunkSize = (chunkSize / minChunkSize()) * minChunkSize();
-    this.chunkSize = Math.max(minChunkSize(), chunkSize);
+    setChunkSize(chunkSize);
+  }
+
+  @Override
+  public final void setChunkSize(int chunkSize) {
+    chunkSize = (chunkSize / getMinChunkSize()) * getMinChunkSize();
+    this.chunkSize = Math.max(getMinChunkSize(), chunkSize);
   }
 
   protected BaseWriteChannel(ServiceOptionsT options, EntityT entity, String uploadId) {
@@ -106,7 +156,7 @@ public abstract class BaseWriteChannel<
 
   private void flush() {
     if (limit >= chunkSize) {
-      final int length = limit - limit % minChunkSize();
+      final int length = limit - limit % getMinChunkSize();
       flushBuffer(length, false);
       position += length;
       limit -= length;
@@ -166,10 +216,10 @@ public abstract class BaseWriteChannel<
       bufferToSave = Arrays.copyOf(buffer, limit);
     }
     return stateBuilder()
-        .position(position)
-        .buffer(bufferToSave)
-        .isOpen(isOpen)
-        .chunkSize(chunkSize)
+        .setPosition(position)
+        .setBuffer(bufferToSave)
+        .setIsOpen(isOpen)
+        .setChunkSize(chunkSize)
         .build();
   }
 
@@ -195,7 +245,7 @@ public abstract class BaseWriteChannel<
     protected final ServiceOptionsT serviceOptions;
     protected final EntityT entity;
     protected final String uploadId;
-    protected final int position;
+    protected final long position;
     protected final byte[] buffer;
     protected final boolean isOpen;
     protected final int chunkSize;
@@ -224,7 +274,7 @@ public abstract class BaseWriteChannel<
       private final ServiceOptionsT serviceOptions;
       private final EntityT entity;
       private final String uploadId;
-      private int position;
+      private long position;
       private byte[] buffer;
       private boolean isOpen;
       private int chunkSize;
@@ -235,22 +285,42 @@ public abstract class BaseWriteChannel<
         this.uploadId = uploadId;
       }
 
+      @Deprecated
       public Builder<ServiceOptionsT, EntityT> position(int position) {
+        return setPosition(position);
+      }
+
+      public Builder<ServiceOptionsT, EntityT> setPosition(long position) {
         this.position = position;
         return this;
       }
 
+      @Deprecated
       public Builder<ServiceOptionsT, EntityT> buffer(byte[] buffer) {
+        return setBuffer(buffer);
+      }
+
+      public Builder<ServiceOptionsT, EntityT> setBuffer(byte[] buffer) {
         this.buffer = buffer;
         return this;
       }
 
+      @Deprecated
       public Builder<ServiceOptionsT, EntityT> isOpen(boolean isOpen) {
+        return setIsOpen(isOpen);
+      }
+
+      public Builder<ServiceOptionsT, EntityT> setIsOpen(boolean isOpen) {
         this.isOpen = isOpen;
         return this;
       }
 
+      @Deprecated
       public Builder<ServiceOptionsT, EntityT> chunkSize(int chunkSize) {
+        return setChunkSize(chunkSize);
+      }
+
+      public Builder<ServiceOptionsT, EntityT> setChunkSize(int chunkSize) {
         this.chunkSize = chunkSize;
         return this;
       }
@@ -282,14 +352,17 @@ public abstract class BaseWriteChannel<
           && this.chunkSize == other.chunkSize;
     }
 
-    @Override
-    public String toString() {
+    protected MoreObjects.ToStringHelper toStringHelper() {
       return MoreObjects.toStringHelper(this)
           .add("entity", entity)
           .add("uploadId", uploadId)
           .add("position", position)
-          .add("isOpen", isOpen)
-          .toString();
+          .add("isOpen", isOpen);
+    }
+
+    @Override
+    public String toString() {
+      return toStringHelper().toString();
     }
   }
 }

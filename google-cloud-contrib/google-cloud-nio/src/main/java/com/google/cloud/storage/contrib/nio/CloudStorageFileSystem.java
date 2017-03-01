@@ -27,6 +27,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.nio.file.FileStore;
 import java.nio.file.FileSystem;
+import java.nio.file.FileSystems;
 import java.nio.file.Path;
 import java.nio.file.PathMatcher;
 import java.nio.file.WatchService;
@@ -210,13 +211,9 @@ public final class CloudStorageFileSystem extends FileSystem {
     return SUPPORTED_VIEWS;
   }
 
-  /**
-   * Throws {@link UnsupportedOperationException} because this feature hasn't been implemented yet.
-   */
   @Override
   public PathMatcher getPathMatcher(String syntaxAndPattern) {
-    // TODO(#813): Implement me.
-    throw new UnsupportedOperationException();
+    return FileSystems.getDefault().getPathMatcher(syntaxAndPattern);
   }
 
   /**

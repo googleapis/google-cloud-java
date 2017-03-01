@@ -1,28 +1,40 @@
 /*
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2017, Google Inc. All rights reserved.
  *
- * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
- * in compliance with the License. You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- * http://www.apache.org/licenses/LICENSE-2.0
+ *     http://www.apache.org/licenses/LICENSE-2.0
  *
- * Unless required by applicable law or agreed to in writing, software distributed under the License
- * is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
- * or implied. See the License for the specific language governing permissions and limitations under
- * the License.
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
 package com.google.cloud.monitoring.spi.v3;
 
+import static com.google.cloud.monitoring.spi.v3.PagedResponseWrappers.ListMetricDescriptorsPagedResponse;
+import static com.google.cloud.monitoring.spi.v3.PagedResponseWrappers.ListMonitoredResourceDescriptorsPagedResponse;
+import static com.google.cloud.monitoring.spi.v3.PagedResponseWrappers.ListTimeSeriesPagedResponse;
+
 import com.google.api.MetricDescriptor;
 import com.google.api.MonitoredResourceDescriptor;
-import com.google.api.gax.core.ConnectionSettings;
+import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.RetrySettings;
-import com.google.api.gax.grpc.ApiCallSettings;
-import com.google.api.gax.grpc.PageStreamingCallSettings;
-import com.google.api.gax.grpc.PageStreamingDescriptor;
-import com.google.api.gax.grpc.ServiceApiSettings;
+import com.google.api.gax.grpc.CallContext;
+import com.google.api.gax.grpc.ChannelProvider;
+import com.google.api.gax.grpc.ClientSettings;
+import com.google.api.gax.grpc.ExecutorProvider;
+import com.google.api.gax.grpc.InstantiatingChannelProvider;
+import com.google.api.gax.grpc.InstantiatingExecutorProvider;
+import com.google.api.gax.grpc.PagedCallSettings;
+import com.google.api.gax.grpc.PagedListDescriptor;
+import com.google.api.gax.grpc.PagedListResponseFactory;
 import com.google.api.gax.grpc.SimpleCallSettings;
-import com.google.auth.Credentials;
+import com.google.api.gax.grpc.UnaryCallSettings;
+import com.google.api.gax.grpc.UnaryCallable;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -42,16 +54,15 @@ import com.google.monitoring.v3.ListTimeSeriesResponse;
 import com.google.monitoring.v3.MetricServiceGrpc;
 import com.google.monitoring.v3.TimeSeries;
 import com.google.protobuf.Empty;
-import io.grpc.ManagedChannel;
+import com.google.protobuf.ExperimentalApi;
 import io.grpc.Status;
 import java.io.IOException;
-import java.util.List;
-import java.util.concurrent.ScheduledExecutorService;
+import javax.annotation.Generated;
 import org.joda.time.Duration;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 /**
- * Settings class to configure an instance of {@link MetricServiceApi}.
+ * Settings class to configure an instance of {@link MetricServiceClient}.
  *
  * <p>The default instance has everything set to sensible defaults:
  *
@@ -75,8 +86,9 @@ import org.joda.time.Duration;
  * </code>
  * </pre>
  */
-@javax.annotation.Generated("by GAPIC")
-public class MetricServiceSettings extends ServiceApiSettings {
+@Generated("by GAPIC")
+@ExperimentalApi
+public class MetricServiceSettings extends ClientSettings {
   /** The default address of the service. */
   private static final String DEFAULT_SERVICE_ADDRESS = "monitoring.googleapis.com";
 
@@ -85,25 +97,26 @@ public class MetricServiceSettings extends ServiceApiSettings {
 
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
-      ImmutableList.<String>builder().build();
-
-  /** The default connection settings of the service. */
-  public static final ConnectionSettings DEFAULT_CONNECTION_SETTINGS =
-      ConnectionSettings.newBuilder()
-          .setServiceAddress(DEFAULT_SERVICE_ADDRESS)
-          .setPort(DEFAULT_SERVICE_PORT)
-          .provideCredentialsWith(DEFAULT_SERVICE_SCOPES)
+      ImmutableList.<String>builder()
+          .add("https://www.googleapis.com/auth/cloud-platform")
+          .add("https://www.googleapis.com/auth/monitoring")
+          .add("https://www.googleapis.com/auth/monitoring.read")
+          .add("https://www.googleapis.com/auth/monitoring.write")
           .build();
 
-  private final PageStreamingCallSettings<
+  private static final String DEFAULT_GENERATOR_NAME = "gapic";
+  private static final String DEFAULT_GENERATOR_VERSION = "0.0.5";
+
+  private final PagedCallSettings<
           ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse,
-          MonitoredResourceDescriptor>
+          ListMonitoredResourceDescriptorsPagedResponse>
       listMonitoredResourceDescriptorsSettings;
   private final SimpleCallSettings<
           GetMonitoredResourceDescriptorRequest, MonitoredResourceDescriptor>
       getMonitoredResourceDescriptorSettings;
-  private final PageStreamingCallSettings<
-          ListMetricDescriptorsRequest, ListMetricDescriptorsResponse, MetricDescriptor>
+  private final PagedCallSettings<
+          ListMetricDescriptorsRequest, ListMetricDescriptorsResponse,
+          ListMetricDescriptorsPagedResponse>
       listMetricDescriptorsSettings;
   private final SimpleCallSettings<GetMetricDescriptorRequest, MetricDescriptor>
       getMetricDescriptorSettings;
@@ -111,14 +124,15 @@ public class MetricServiceSettings extends ServiceApiSettings {
       createMetricDescriptorSettings;
   private final SimpleCallSettings<DeleteMetricDescriptorRequest, Empty>
       deleteMetricDescriptorSettings;
-  private final PageStreamingCallSettings<ListTimeSeriesRequest, ListTimeSeriesResponse, TimeSeries>
+  private final PagedCallSettings<
+          ListTimeSeriesRequest, ListTimeSeriesResponse, ListTimeSeriesPagedResponse>
       listTimeSeriesSettings;
   private final SimpleCallSettings<CreateTimeSeriesRequest, Empty> createTimeSeriesSettings;
 
   /** Returns the object with the settings used for calls to listMonitoredResourceDescriptors. */
-  public PageStreamingCallSettings<
+  public PagedCallSettings<
           ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse,
-          MonitoredResourceDescriptor>
+          ListMonitoredResourceDescriptorsPagedResponse>
       listMonitoredResourceDescriptorsSettings() {
     return listMonitoredResourceDescriptorsSettings;
   }
@@ -130,8 +144,9 @@ public class MetricServiceSettings extends ServiceApiSettings {
   }
 
   /** Returns the object with the settings used for calls to listMetricDescriptors. */
-  public PageStreamingCallSettings<
-          ListMetricDescriptorsRequest, ListMetricDescriptorsResponse, MetricDescriptor>
+  public PagedCallSettings<
+          ListMetricDescriptorsRequest, ListMetricDescriptorsResponse,
+          ListMetricDescriptorsPagedResponse>
       listMetricDescriptorsSettings() {
     return listMetricDescriptorsSettings;
   }
@@ -154,7 +169,8 @@ public class MetricServiceSettings extends ServiceApiSettings {
   }
 
   /** Returns the object with the settings used for calls to listTimeSeries. */
-  public PageStreamingCallSettings<ListTimeSeriesRequest, ListTimeSeriesResponse, TimeSeries>
+  public PagedCallSettings<
+          ListTimeSeriesRequest, ListTimeSeriesResponse, ListTimeSeriesPagedResponse>
       listTimeSeriesSettings() {
     return listTimeSeriesSettings;
   }
@@ -162,6 +178,11 @@ public class MetricServiceSettings extends ServiceApiSettings {
   /** Returns the object with the settings used for calls to createTimeSeries. */
   public SimpleCallSettings<CreateTimeSeriesRequest, Empty> createTimeSeriesSettings() {
     return createTimeSeriesSettings;
+  }
+
+  /** Returns a builder for the default ExecutorProvider for this service. */
+  public static InstantiatingExecutorProvider.Builder defaultExecutorProviderBuilder() {
+    return InstantiatingExecutorProvider.newBuilder();
   }
 
   /** Returns the default service address. */
@@ -177,6 +198,20 @@ public class MetricServiceSettings extends ServiceApiSettings {
   /** Returns the default service scopes. */
   public static ImmutableList<String> getDefaultServiceScopes() {
     return DEFAULT_SERVICE_SCOPES;
+  }
+
+  /** Returns a builder for the default credentials for this service. */
+  public static GoogleCredentialsProvider.Builder defaultCredentialsProviderBuilder() {
+    return GoogleCredentialsProvider.newBuilder().setScopesToApply(DEFAULT_SERVICE_SCOPES);
+  }
+
+  /** Returns a builder for the default ChannelProvider for this service. */
+  public static InstantiatingChannelProvider.Builder defaultChannelProviderBuilder() {
+    return InstantiatingChannelProvider.newBuilder()
+        .setServiceAddress(DEFAULT_SERVICE_ADDRESS)
+        .setPort(DEFAULT_SERVICE_PORT)
+        .setGeneratorHeader(DEFAULT_GENERATOR_NAME, DEFAULT_GENERATOR_VERSION)
+        .setCredentialsProvider(defaultCredentialsProviderBuilder().build());
   }
 
   /** Returns a builder for this class with recommended defaults. */
@@ -195,13 +230,7 @@ public class MetricServiceSettings extends ServiceApiSettings {
   }
 
   private MetricServiceSettings(Builder settingsBuilder) throws IOException {
-    super(
-        settingsBuilder.getChannelProvider(),
-        settingsBuilder.getExecutorProvider(),
-        settingsBuilder.getGeneratorName(),
-        settingsBuilder.getGeneratorVersion(),
-        settingsBuilder.getClientLibName(),
-        settingsBuilder.getClientLibVersion());
+    super(settingsBuilder.getExecutorProvider(), settingsBuilder.getChannelProvider());
 
     listMonitoredResourceDescriptorsSettings =
         settingsBuilder.listMonitoredResourceDescriptorsSettings().build();
@@ -215,11 +244,11 @@ public class MetricServiceSettings extends ServiceApiSettings {
     createTimeSeriesSettings = settingsBuilder.createTimeSeriesSettings().build();
   }
 
-  private static final PageStreamingDescriptor<
+  private static final PagedListDescriptor<
           ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse,
           MonitoredResourceDescriptor>
       LIST_MONITORED_RESOURCE_DESCRIPTORS_PAGE_STR_DESC =
-          new PageStreamingDescriptor<
+          new PagedListDescriptor<
               ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse,
               MonitoredResourceDescriptor>() {
             @Override
@@ -260,10 +289,10 @@ public class MetricServiceSettings extends ServiceApiSettings {
             }
           };
 
-  private static final PageStreamingDescriptor<
+  private static final PagedListDescriptor<
           ListMetricDescriptorsRequest, ListMetricDescriptorsResponse, MetricDescriptor>
       LIST_METRIC_DESCRIPTORS_PAGE_STR_DESC =
-          new PageStreamingDescriptor<
+          new PagedListDescriptor<
               ListMetricDescriptorsRequest, ListMetricDescriptorsResponse, MetricDescriptor>() {
             @Override
             public Object emptyToken() {
@@ -301,10 +330,10 @@ public class MetricServiceSettings extends ServiceApiSettings {
             }
           };
 
-  private static final PageStreamingDescriptor<
+  private static final PagedListDescriptor<
           ListTimeSeriesRequest, ListTimeSeriesResponse, TimeSeries>
       LIST_TIME_SERIES_PAGE_STR_DESC =
-          new PageStreamingDescriptor<ListTimeSeriesRequest, ListTimeSeriesResponse, TimeSeries>() {
+          new PagedListDescriptor<ListTimeSeriesRequest, ListTimeSeriesResponse, TimeSeries>() {
             @Override
             public Object emptyToken() {
               return "";
@@ -337,19 +366,72 @@ public class MetricServiceSettings extends ServiceApiSettings {
             }
           };
 
-  /** Builder for MetricServiceSettings. */
-  public static class Builder extends ServiceApiSettings.Builder {
-    private final ImmutableList<ApiCallSettings.Builder> methodSettingsBuilders;
+  private static final PagedListResponseFactory<
+          ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse,
+          ListMonitoredResourceDescriptorsPagedResponse>
+      LIST_MONITORED_RESOURCE_DESCRIPTORS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse,
+              ListMonitoredResourceDescriptorsPagedResponse>() {
+            @Override
+            public ListMonitoredResourceDescriptorsPagedResponse createPagedListResponse(
+                UnaryCallable<
+                        ListMonitoredResourceDescriptorsRequest,
+                        ListMonitoredResourceDescriptorsResponse>
+                    callable,
+                ListMonitoredResourceDescriptorsRequest request,
+                CallContext context) {
+              return new ListMonitoredResourceDescriptorsPagedResponse(
+                  callable, LIST_MONITORED_RESOURCE_DESCRIPTORS_PAGE_STR_DESC, request, context);
+            }
+          };
 
-    private final PageStreamingCallSettings.Builder<
+  private static final PagedListResponseFactory<
+          ListMetricDescriptorsRequest, ListMetricDescriptorsResponse,
+          ListMetricDescriptorsPagedResponse>
+      LIST_METRIC_DESCRIPTORS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListMetricDescriptorsRequest, ListMetricDescriptorsResponse,
+              ListMetricDescriptorsPagedResponse>() {
+            @Override
+            public ListMetricDescriptorsPagedResponse createPagedListResponse(
+                UnaryCallable<ListMetricDescriptorsRequest, ListMetricDescriptorsResponse> callable,
+                ListMetricDescriptorsRequest request,
+                CallContext context) {
+              return new ListMetricDescriptorsPagedResponse(
+                  callable, LIST_METRIC_DESCRIPTORS_PAGE_STR_DESC, request, context);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListTimeSeriesRequest, ListTimeSeriesResponse, ListTimeSeriesPagedResponse>
+      LIST_TIME_SERIES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListTimeSeriesRequest, ListTimeSeriesResponse, ListTimeSeriesPagedResponse>() {
+            @Override
+            public ListTimeSeriesPagedResponse createPagedListResponse(
+                UnaryCallable<ListTimeSeriesRequest, ListTimeSeriesResponse> callable,
+                ListTimeSeriesRequest request,
+                CallContext context) {
+              return new ListTimeSeriesPagedResponse(
+                  callable, LIST_TIME_SERIES_PAGE_STR_DESC, request, context);
+            }
+          };
+
+  /** Builder for MetricServiceSettings. */
+  public static class Builder extends ClientSettings.Builder {
+    private final ImmutableList<UnaryCallSettings.Builder> unaryMethodSettingsBuilders;
+
+    private final PagedCallSettings.Builder<
             ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse,
-            MonitoredResourceDescriptor>
+            ListMonitoredResourceDescriptorsPagedResponse>
         listMonitoredResourceDescriptorsSettings;
     private final SimpleCallSettings.Builder<
             GetMonitoredResourceDescriptorRequest, MonitoredResourceDescriptor>
         getMonitoredResourceDescriptorSettings;
-    private final PageStreamingCallSettings.Builder<
-            ListMetricDescriptorsRequest, ListMetricDescriptorsResponse, MetricDescriptor>
+    private final PagedCallSettings.Builder<
+            ListMetricDescriptorsRequest, ListMetricDescriptorsResponse,
+            ListMetricDescriptorsPagedResponse>
         listMetricDescriptorsSettings;
     private final SimpleCallSettings.Builder<GetMetricDescriptorRequest, MetricDescriptor>
         getMetricDescriptorSettings;
@@ -357,8 +439,8 @@ public class MetricServiceSettings extends ServiceApiSettings {
         createMetricDescriptorSettings;
     private final SimpleCallSettings.Builder<DeleteMetricDescriptorRequest, Empty>
         deleteMetricDescriptorSettings;
-    private final PageStreamingCallSettings.Builder<
-            ListTimeSeriesRequest, ListTimeSeriesResponse, TimeSeries>
+    private final PagedCallSettings.Builder<
+            ListTimeSeriesRequest, ListTimeSeriesResponse, ListTimeSeriesPagedResponse>
         listTimeSeriesSettings;
     private final SimpleCallSettings.Builder<CreateTimeSeriesRequest, Empty>
         createTimeSeriesSettings;
@@ -395,20 +477,20 @@ public class MetricServiceSettings extends ServiceApiSettings {
     }
 
     private Builder() {
-      super(DEFAULT_CONNECTION_SETTINGS);
+      super(defaultChannelProviderBuilder().build());
 
       listMonitoredResourceDescriptorsSettings =
-          PageStreamingCallSettings.newBuilder(
+          PagedCallSettings.newBuilder(
               MetricServiceGrpc.METHOD_LIST_MONITORED_RESOURCE_DESCRIPTORS,
-              LIST_MONITORED_RESOURCE_DESCRIPTORS_PAGE_STR_DESC);
+              LIST_MONITORED_RESOURCE_DESCRIPTORS_PAGE_STR_FACT);
 
       getMonitoredResourceDescriptorSettings =
           SimpleCallSettings.newBuilder(MetricServiceGrpc.METHOD_GET_MONITORED_RESOURCE_DESCRIPTOR);
 
       listMetricDescriptorsSettings =
-          PageStreamingCallSettings.newBuilder(
+          PagedCallSettings.newBuilder(
               MetricServiceGrpc.METHOD_LIST_METRIC_DESCRIPTORS,
-              LIST_METRIC_DESCRIPTORS_PAGE_STR_DESC);
+              LIST_METRIC_DESCRIPTORS_PAGE_STR_FACT);
 
       getMetricDescriptorSettings =
           SimpleCallSettings.newBuilder(MetricServiceGrpc.METHOD_GET_METRIC_DESCRIPTOR);
@@ -420,14 +502,14 @@ public class MetricServiceSettings extends ServiceApiSettings {
           SimpleCallSettings.newBuilder(MetricServiceGrpc.METHOD_DELETE_METRIC_DESCRIPTOR);
 
       listTimeSeriesSettings =
-          PageStreamingCallSettings.newBuilder(
-              MetricServiceGrpc.METHOD_LIST_TIME_SERIES, LIST_TIME_SERIES_PAGE_STR_DESC);
+          PagedCallSettings.newBuilder(
+              MetricServiceGrpc.METHOD_LIST_TIME_SERIES, LIST_TIME_SERIES_PAGE_STR_FACT);
 
       createTimeSeriesSettings =
           SimpleCallSettings.newBuilder(MetricServiceGrpc.METHOD_CREATE_TIME_SERIES);
 
-      methodSettingsBuilders =
-          ImmutableList.<ApiCallSettings.Builder>of(
+      unaryMethodSettingsBuilders =
+          ImmutableList.<UnaryCallSettings.Builder>of(
               listMonitoredResourceDescriptorsSettings,
               getMonitoredResourceDescriptorSettings,
               listMetricDescriptorsSettings,
@@ -498,8 +580,8 @@ public class MetricServiceSettings extends ServiceApiSettings {
       listTimeSeriesSettings = settings.listTimeSeriesSettings.toBuilder();
       createTimeSeriesSettings = settings.createTimeSeriesSettings.toBuilder();
 
-      methodSettingsBuilders =
-          ImmutableList.<ApiCallSettings.Builder>of(
+      unaryMethodSettingsBuilders =
+          ImmutableList.<UnaryCallSettings.Builder>of(
               listMonitoredResourceDescriptorsSettings,
               getMonitoredResourceDescriptorSettings,
               listMetricDescriptorsSettings,
@@ -511,65 +593,33 @@ public class MetricServiceSettings extends ServiceApiSettings {
     }
 
     @Override
-    protected ConnectionSettings getDefaultConnectionSettings() {
-      return DEFAULT_CONNECTION_SETTINGS;
-    }
-
-    @Override
-    public Builder provideExecutorWith(ScheduledExecutorService executor, boolean shouldAutoClose) {
-      super.provideExecutorWith(executor, shouldAutoClose);
+    public Builder setExecutorProvider(ExecutorProvider executorProvider) {
+      super.setExecutorProvider(executorProvider);
       return this;
     }
 
     @Override
-    public Builder provideChannelWith(ManagedChannel channel, boolean shouldAutoClose) {
-      super.provideChannelWith(channel, shouldAutoClose);
-      return this;
-    }
-
-    @Override
-    public Builder provideChannelWith(ConnectionSettings settings) {
-      super.provideChannelWith(settings);
-      return this;
-    }
-
-    @Override
-    public Builder provideChannelWith(Credentials credentials) {
-      super.provideChannelWith(credentials);
-      return this;
-    }
-
-    @Override
-    public Builder provideChannelWith(List<String> scopes) {
-      super.provideChannelWith(scopes);
-      return this;
-    }
-
-    @Override
-    public Builder setGeneratorHeader(String name, String version) {
-      super.setGeneratorHeader(name, version);
-      return this;
-    }
-
-    @Override
-    public Builder setClientLibHeader(String name, String version) {
-      super.setClientLibHeader(name, version);
+    public Builder setChannelProvider(ChannelProvider channelProvider) {
+      super.setChannelProvider(channelProvider);
       return this;
     }
 
     /**
-     * Applies the given settings to all of the API methods in this service. Only values that are
-     * non-null will be applied, so this method is not capable of un-setting any values.
+     * Applies the given settings to all of the unary API methods in this service. Only values that
+     * are non-null will be applied, so this method is not capable of un-setting any values.
+     *
+     * <p>Note: This method does not support applying settings to streaming methods.
      */
-    public Builder applyToAllApiMethods(ApiCallSettings.Builder apiCallSettings) throws Exception {
-      super.applyToAllApiMethods(methodSettingsBuilders, apiCallSettings);
+    public Builder applyToAllUnaryMethods(UnaryCallSettings.Builder unaryCallSettings)
+        throws Exception {
+      super.applyToAllUnaryMethods(unaryMethodSettingsBuilders, unaryCallSettings);
       return this;
     }
 
     /** Returns the builder for the settings used for calls to listMonitoredResourceDescriptors. */
-    public PageStreamingCallSettings.Builder<
+    public PagedCallSettings.Builder<
             ListMonitoredResourceDescriptorsRequest, ListMonitoredResourceDescriptorsResponse,
-            MonitoredResourceDescriptor>
+            ListMonitoredResourceDescriptorsPagedResponse>
         listMonitoredResourceDescriptorsSettings() {
       return listMonitoredResourceDescriptorsSettings;
     }
@@ -582,8 +632,9 @@ public class MetricServiceSettings extends ServiceApiSettings {
     }
 
     /** Returns the builder for the settings used for calls to listMetricDescriptors. */
-    public PageStreamingCallSettings.Builder<
-            ListMetricDescriptorsRequest, ListMetricDescriptorsResponse, MetricDescriptor>
+    public PagedCallSettings.Builder<
+            ListMetricDescriptorsRequest, ListMetricDescriptorsResponse,
+            ListMetricDescriptorsPagedResponse>
         listMetricDescriptorsSettings() {
       return listMetricDescriptorsSettings;
     }
@@ -607,8 +658,8 @@ public class MetricServiceSettings extends ServiceApiSettings {
     }
 
     /** Returns the builder for the settings used for calls to listTimeSeries. */
-    public PageStreamingCallSettings.Builder<
-            ListTimeSeriesRequest, ListTimeSeriesResponse, TimeSeries>
+    public PagedCallSettings.Builder<
+            ListTimeSeriesRequest, ListTimeSeriesResponse, ListTimeSeriesPagedResponse>
         listTimeSeriesSettings() {
       return listTimeSeriesSettings;
     }

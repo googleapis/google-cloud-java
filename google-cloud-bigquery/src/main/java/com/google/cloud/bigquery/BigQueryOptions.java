@@ -28,7 +28,7 @@ public class BigQueryOptions extends HttpServiceOptions<BigQuery, BigQueryRpc, B
 
   private static final String BIGQUERY_SCOPE = "https://www.googleapis.com/auth/bigquery";
   private static final Set<String> SCOPES = ImmutableSet.of(BIGQUERY_SCOPE);
-  private static final long serialVersionUID = -8592198255032667206L;
+  private static final long serialVersionUID = -2437598817433266049L;
 
   public static class DefaultBigqueryFactory implements BigQueryFactory {
 
@@ -71,17 +71,17 @@ public class BigQueryOptions extends HttpServiceOptions<BigQuery, BigQueryRpc, B
   }
 
   @Override
-  protected BigQueryFactory defaultServiceFactory() {
+  protected BigQueryFactory getDefaultServiceFactory() {
     return DefaultBigqueryFactory.INSTANCE;
   }
 
   @Override
-  protected BigQueryRpcFactory defaultRpcFactory() {
+  protected BigQueryRpcFactory getDefaultRpcFactory() {
     return DefaultBigQueryRpcFactory.INSTANCE;
   }
 
   @Override
-  protected Set<String> scopes() {
+  protected Set<String> getScopes() {
     return SCOPES;
   }
 
@@ -105,11 +105,21 @@ public class BigQueryOptions extends HttpServiceOptions<BigQuery, BigQueryRpc, B
     return baseEquals(other);
   }
 
+  @Deprecated
   public static BigQueryOptions defaultInstance() {
-    return builder().build();
+    return getDefaultInstance();
   }
 
+  public static BigQueryOptions getDefaultInstance() {
+    return newBuilder().build();
+  }
+
+  @Deprecated
   public static Builder builder() {
+    return newBuilder();
+  }
+
+  public static Builder newBuilder() {
     return new Builder();
   }
 }

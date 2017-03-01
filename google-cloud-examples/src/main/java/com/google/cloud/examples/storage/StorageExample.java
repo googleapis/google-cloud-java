@@ -16,8 +16,7 @@
 
 package com.google.cloud.examples.storage;
 
-import com.google.cloud.AuthCredentials;
-import com.google.cloud.AuthCredentials.ServiceAccountAuthCredentials;
+import com.google.auth.oauth2.ServiceAccountCredentials;
 import com.google.cloud.ReadChannel;
 import com.google.cloud.WriteChannel;
 import com.google.cloud.storage.Acl;
@@ -54,7 +53,6 @@ import java.security.cert.CertificateException;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Iterator;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
@@ -182,9 +180,9 @@ public class StorageExample {
     @Override
     public void run(Storage storage, BlobId... blobIds) {
       if (blobIds.length == 1) {
-        if (blobIds[0].name().isEmpty()) {
+        if (blobIds[0].getName().isEmpty()) {
           // get Bucket
-          Bucket bucket = storage.get(blobIds[0].bucket());
+          Bucket bucket = storage.get(blobIds[0].getBucket());
           if (bucket == null) {
             System.out.println("No such bucket");
             return;
@@ -229,7 +227,8 @@ public class StorageExample {
    * If more than one blob is supplied a Batch operation would be used to delete all requested
    * blobs in a single RPC.
    *
-   * @see <a href="https://cloud.google.com/storage/docs/json_api/v1/objects/delete">Objects: delete</a>
+   * @see <a href="https://cloud.google.com/storage/docs/json_api/v1/objects/delete">
+   *     Objects: delete</a>
    */
   private static class DeleteAction extends BlobsAction {
     @Override
@@ -296,7 +295,8 @@ public class StorageExample {
   /**
    * This class demonstrates how to create a new Blob or to update its content.
    *
-   * @see <a href="https://cloud.google.com/storage/docs/json_api/v1/objects/insert">Objects: insert</a>
+   * @see <a href="https://cloud.google.com/storage/docs/json_api/v1/objects/insert">
+   *     Objects: insert</a>
    */
   private static class UploadAction extends StorageAction<Tuple<Path, BlobInfo>> {
     @Override
@@ -337,7 +337,7 @@ public class StorageExample {
       Path path = Paths.get(args[0]);
       String contentType = Files.probeContentType(path);
       String blob = args.length < 3 ? path.getFileName().toString() : args[2];
-      return Tuple.of(path, BlobInfo.builder(args[1], blob).contentType(contentType).build());
+      return Tuple.of(path, BlobInfo.newBuilder(args[1], blob).setContentType(contentType).build());
     }
 
     @Override
@@ -370,9 +370,9 @@ public class StorageExample {
       if (downloadTo != null) {
         writeTo = new PrintStream(new FileOutputStream(downloadTo.toFile()));
       }
-      if (blob.size() < 1_000_000) {
+      if (blob.getSize() < 1_000_000) {
         // Blob is small read all its content in one request
-        byte[] content = blob.content();
+        byte[] content = blob.getContent();
         writeTo.write(content);
       } else {
         // When Blob size is big or unknown use the blob's channel reader.
@@ -425,7 +425,7 @@ public class StorageExample {
     @Override
     public void run(Storage storage, CopyRequest request) {
       CopyWriter copyWriter = storage.copy(request);
-      System.out.printf("Copied %s%n", copyWriter.result());
+      System.out.printf("Copied %s%n", copyWriter.getResult());
     }
 
     @Override
@@ -445,7 +445,8 @@ public class StorageExample {
   /**
    * This class demonstrates how to use the compose command.
    *
-   * @see <a href="https://cloud.google.com/storage/docs/json_api/v1/objects/compose">Objects: compose</a>
+   * @see <a href="https://cloud.google.com/storage/docs/json_api/v1/objects/compose">
+   *     Objects: compose</a>
    */
   private static class ComposeAction extends StorageAction<ComposeRequest> {
     @Override
@@ -459,8 +460,8 @@ public class StorageExample {
       if (args.length < 3) {
         throw new IllegalArgumentException();
       }
-      ComposeRequest.Builder request = ComposeRequest.builder();
-      request.target(BlobInfo.builder(args[0], args[args.length - 1]).build());
+      ComposeRequest.Builder request = ComposeRequest.newBuilder();
+      request.setTarget(BlobInfo.newBuilder(args[0], args[args.length - 1]).build());
       for (int i = 1; i < args.length - 1; i++) {
         request.addSource(args[i]);
       }
@@ -476,7 +477,8 @@ public class StorageExample {
   /**
    * This class demonstrates how to update a blob's metadata.
    *
-   * @see <a href="https://cloud.google.com/storage/docs/json_api/v1/objects/update">Objects: update</a>
+   * @see <a href="https://cloud.google.com/storage/docs/json_api/v1/objects/update">
+   *     Objects: update</a>
    */
   private static class UpdateMetadataAction extends
       StorageAction<Tuple<BlobId, Map<String, String>>> {
@@ -493,7 +495,7 @@ public class StorageExample {
         System.out.println("No such object");
         return;
       }
-      Blob updateBlob = blob.toBuilder().metadata(metadata).build().update();
+      Blob updateBlob = blob.toBuilder().setMetadata(metadata).build().update();
       System.out.printf("Updated %s%n", updateBlob);
     }
 
@@ -528,24 +530,24 @@ public class StorageExample {
    * @see <a href="https://cloud.google.com/storage/docs/access-control#Signed-URLs">Signed URLs</a>
    */
   private static class SignUrlAction extends
-      StorageAction<Tuple<ServiceAccountAuthCredentials, BlobInfo>> {
+      StorageAction<Tuple<ServiceAccountCredentials, BlobInfo>> {
 
     private static final char[] PASSWORD = "notasecret".toCharArray();
 
     @Override
-    public void run(Storage storage, Tuple<ServiceAccountAuthCredentials, BlobInfo> tuple)
+    public void run(Storage storage, Tuple<ServiceAccountCredentials, BlobInfo> tuple)
         throws Exception {
       run(storage, tuple.x(), tuple.y());
     }
 
-    private void run(Storage storage, ServiceAccountAuthCredentials cred, BlobInfo blobInfo) {
-      Blob blob = storage.get(blobInfo.blobId());
+    private void run(Storage storage, ServiceAccountCredentials cred, BlobInfo blobInfo) {
+      Blob blob = storage.get(blobInfo.getBlobId());
       System.out.printf("Signed URL: %s%n",
           blob.signUrl(1, TimeUnit.DAYS, SignUrlOption.signWith(cred)));
     }
 
     @Override
-    Tuple<ServiceAccountAuthCredentials, BlobInfo> parse(String... args) throws IOException,
+    Tuple<ServiceAccountCredentials, BlobInfo> parse(String... args) throws IOException,
         KeyStoreException, CertificateException, NoSuchAlgorithmException,
         UnrecoverableKeyException {
       if (args.length != 4) {
@@ -554,8 +556,9 @@ public class StorageExample {
       KeyStore keystore = KeyStore.getInstance("PKCS12");
       keystore.load(Files.newInputStream(Paths.get(args[0])), PASSWORD);
       PrivateKey privateKey = (PrivateKey) keystore.getKey("privatekey", PASSWORD);
-      ServiceAccountAuthCredentials cred = AuthCredentials.createFor(args[1], privateKey);
-      return Tuple.of(cred, BlobInfo.builder(BlobId.of(args[2], args[3])).build());
+      ServiceAccountCredentials credentials =
+          new ServiceAccountCredentials(null, args[1], privateKey, null, null);
+      return Tuple.of(credentials, BlobInfo.newBuilder(BlobId.of(args[2], args[3])).build());
     }
 
     @Override
@@ -576,14 +579,14 @@ public class StorageExample {
     public void run(Storage storage, Tuple<BlobId, Acl> params) {
       BlobId blobId = params.x();
       Acl acl = params.y();
-      if (blobId.name().isEmpty()) {
-        Bucket bucket = storage.get(blobId.bucket());
+      if (blobId.getName().isEmpty()) {
+        Bucket bucket = storage.get(blobId.getBucket());
         if (bucket == null) {
-          System.out.printf("Bucket %s does not exist%n", blobId.bucket());
+          System.out.printf("Bucket %s does not exist%n", blobId.getBucket());
           return;
         }
         acl = bucket.createAcl(acl);
-        System.out.printf("Added ACL %s to bucket %s%n", acl, blobId.bucket());
+        System.out.printf("Added ACL %s to bucket %s%n", acl, blobId.getBucket());
       } else {
         Blob blob = storage.get(blobId);
         if (blob == null) {
@@ -785,12 +788,12 @@ public class StorageExample {
       printUsage();
       return;
     }
-    StorageOptions.Builder optionsBuilder = StorageOptions.builder();
+    StorageOptions.Builder optionsBuilder = StorageOptions.newBuilder();
     StorageAction action;
     String actionName;
     if (args.length >= 2 && !ACTIONS.containsKey(args[0])) {
       actionName = args[1];
-      optionsBuilder.projectId(args[0]);
+      optionsBuilder.setProjectId(args[0]);
       action = ACTIONS.get(args[1]);
       args = Arrays.copyOfRange(args, 2, args.length);
     } else {
@@ -803,7 +806,7 @@ public class StorageExample {
       printUsage();
       return;
     }
-    Storage storage = optionsBuilder.build().service();
+    Storage storage = optionsBuilder.build().getService();
     Object arg;
     try {
       arg = action.parse(args);

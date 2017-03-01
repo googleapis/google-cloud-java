@@ -1,4 +1,4 @@
-Google Cloud Java Client for BigQuery (Alpha)
+Google Cloud Java Client for BigQuery
 ====================================
 
 Java idiomatic client for [Google Cloud BigQuery] (https://cloud.google.com/bigquery).
@@ -22,16 +22,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-bigquery</artifactId>
-  <version>0.4.0</version>
+  <version>0.9.3-beta</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-bigquery:0.4.0'
+compile 'com.google.cloud:google-cloud-bigquery:0.9.3-beta'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-bigquery" % "0.4.0"
+libraryDependencies += "com.google.cloud" % "google-cloud-bigquery" % "0.9.3-beta"
 ```
 
 Example Application
@@ -85,7 +85,7 @@ code to create your service object:
 import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQueryOptions;
 
-BigQuery bigquery = BigQueryOptions.defaultInstance().service();
+BigQuery bigquery = BigQueryOptions.getDefaultInstance().getService();
 ```
 
 For other authentication options, see the
@@ -103,7 +103,7 @@ Then, to create the dataset, use the following code:
 ```java
 // Create a dataset
 String datasetId = "my_dataset_id";
-bigquery.create(DatasetInfo.builder(datasetId).build());
+bigquery.create(DatasetInfo.newBuilder(datasetId).build());
 ```
 
 #### Creating a table
@@ -153,7 +153,7 @@ Map<String, Object> secondRow = new HashMap<>();
 firstRow.put("StringField", "value1");
 secondRow.put("StringField", "value2");
 // Create an insert request
-InsertAllRequest insertRequest = InsertAllRequest.builder(tableId)
+InsertAllRequest insertRequest = InsertAllRequest.newBuilder(tableId)
     .addRow(firstRow)
     .addRow(secondRow)
     .build();
@@ -183,18 +183,18 @@ Then add the following code to run the query and wait for the result:
 ```java
 // Create a query request
 QueryRequest queryRequest =
-    QueryRequest.builder("SELECT * FROM my_dataset_id.my_table_id")
-        .maxWaitTime(60000L)
-        .pageSize(1000L)
+    QueryRequest.newBuilder("SELECT * FROM my_dataset_id.my_table_id")
+        .setMaxWaitTime(60000L)
+        .setPageSize(1000L)
         .build();
 // Request query to be executed and wait for results
 QueryResponse queryResponse = bigquery.query(queryRequest);
-while (!queryResponse.jobComplete()) {
+while (!queryResponse.jobCompleted()) {
   Thread.sleep(1000L);
-  queryResponse = bigquery.getQueryResults(queryResponse.jobId());
+  queryResponse = bigquery.getQueryResults(queryResponse.getJobId());
 }
 // Read rows
-Iterator<List<FieldValue>> rowIterator = queryResponse.result().iterateAll();
+Iterator<List<FieldValue>> rowIterator = queryResponse.getResult().iterateAll();
 System.out.println("Table rows:");
 while (rowIterator.hasNext()) {
   System.out.println(rowIterator.next());

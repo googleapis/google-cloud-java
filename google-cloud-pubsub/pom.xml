@@ -11,7 +11,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-pom</artifactId>
-    <version>0.4.1-SNAPSHOT</version>
+    <version>0.9.4-alpha-SNAPSHOT</version>
   </parent>
   <properties>
     <site.installationModule>google-cloud-pubsub</site.installationModule>
@@ -25,22 +25,38 @@
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>google-cloud-core</artifactId>
-      <version>${project.version}</version>
+      <version>${core.version}</version>
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
-      <artifactId>grpc-google-pubsub-v1</artifactId>
-      <version>0.1.0</version>
+      <artifactId>grpc-google-cloud-pubsub-v1</artifactId>
+      <version>0.1.5</version>
+      <exclusions>
+        <exclusion>
+          <groupId>io.grpc</groupId>
+          <artifactId>grpc-all</artifactId>
+        </exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>io.grpc</groupId>
-      <artifactId>grpc-all</artifactId>
-      <version>1.0.1</version>
+      <artifactId>grpc-netty</artifactId>
+      <version>${grpc.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>io.grpc</groupId>
+      <artifactId>grpc-stub</artifactId>
+      <version>${grpc.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>io.grpc</groupId>
+      <artifactId>grpc-auth</artifactId>
+      <version>${grpc.version}</version>
     </dependency>
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>google-cloud-core</artifactId>
-      <version>${project.version}</version>
+      <version>${core.version}</version>
       <type>test-jar</type>
       <scope>test</scope>
     </dependency>
@@ -55,6 +71,12 @@
       <artifactId>easymock</artifactId>
       <version>3.4</version>
       <scope>test</scope>
+    </dependency>
+    <dependency>
+        <groupId>org.mockito</groupId>
+        <artifactId>mockito-all</artifactId>
+        <version>1.9.5</version>
+        <scope>test</scope>
     </dependency>
   </dependencies>
   <profiles>
@@ -105,10 +127,7 @@
       </plugin>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
-        <!-- Downgrading to 3.1 because of https://issues.apache.org/jira/browse/MCOMPILER-236 -->
-        <!-- Upgrade to 3.5.1 which fixes the problem when available -->
-        <!-- <version>3.5.1</version> -->
-        <version>3.1</version>
+        <version>3.5.1</version>
         <configuration>
           <source>1.7</source>
           <target>1.7</target>

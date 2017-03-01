@@ -34,14 +34,20 @@ public class ServiceAccountTest {
   }
 
   @Test
+  public void testOfDeprecated() {
+    assertEquals("email", SERVICE_ACCOUNT.email());
+    assertEquals(ImmutableList.of("scope1"), SERVICE_ACCOUNT.scopes());
+  }
+
+  @Test
   public void testToAndFromPb() {
     compareServiceAccount(SERVICE_ACCOUNT, ServiceAccount.fromPb(SERVICE_ACCOUNT.toPb()));
   }
 
   public void compareServiceAccount(ServiceAccount expected, ServiceAccount value) {
     assertEquals(expected, value);
-    assertEquals(expected.email(), value.email());
-    assertEquals(expected.scopes(), value.scopes());
+    assertEquals(expected.getEmail(), value.getEmail());
+    assertEquals(expected.getScopes(), value.getScopes());
     assertEquals(expected.hashCode(), value.hashCode());
   }
 }

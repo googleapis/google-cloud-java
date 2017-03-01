@@ -61,20 +61,20 @@ class BlobReadChannel implements ReadChannel {
     this.blob = blob;
     this.requestOptions = requestOptions;
     isOpen = true;
-    storageRpc = serviceOptions.rpc();
+    storageRpc = serviceOptions.getRpc();
     storageObject = blob.toPb();
   }
 
   @Override
   public RestorableState<ReadChannel> capture() {
     StateImpl.Builder builder = StateImpl.builder(serviceOptions, blob, requestOptions)
-        .position(position)
-        .isOpen(isOpen)
-        .endOfStream(endOfStream)
-        .chunkSize(chunkSize);
+        .setPosition(position)
+        .setIsOpen(isOpen)
+        .setEndOfStream(endOfStream)
+        .setChunkSize(chunkSize);
     if (buffer != null) {
-      builder.position(position + bufferPos);
-      builder.endOfStream(false);
+      builder.setPosition(position + bufferPos);
+      builder.setEndOfStream(false);
     }
     return builder.build();
   }
@@ -108,7 +108,13 @@ class BlobReadChannel implements ReadChannel {
   }
 
   @Override
+  @Deprecated
   public void chunkSize(int chunkSize) {
+    setChunkSize(chunkSize);
+  }
+
+  @Override
+  public void setChunkSize(int chunkSize) {
     this.chunkSize = chunkSize <= 0 ? DEFAULT_CHUNK_SIZE : chunkSize;
   }
 
@@ -126,7 +132,8 @@ class BlobReadChannel implements ReadChannel {
           public Tuple<String, byte[]> call() {
             return storageRpc.read(storageObject, requestOptions, position, toRead);
           }
-        }, serviceOptions.retryParams(), StorageImpl.EXCEPTION_HANDLER, serviceOptions.clock());
+        }, serviceOptions.getRetryParams(), StorageImpl.EXCEPTION_HANDLER,
+            serviceOptions.getClock());
         if (result.y().length > 0 && lastEtag != null && !Objects.equals(result.x(), lastEtag)) {
           StringBuilder messageBuilder = new StringBuilder();
           messageBuilder.append("Blob ").append(blob).append(" was updated while reading");
@@ -196,27 +203,27 @@ class BlobReadChannel implements ReadChannel {
         this.requestOptions = reqOptions;
       }
 
-      Builder lastEtag(String lastEtag) {
+      Builder setLastEtag(String lastEtag) {
         this.lastEtag = lastEtag;
         return this;
       }
 
-      Builder position(long position) {
+      Builder setPosition(long position) {
         this.position = position;
         return this;
       }
 
-      Builder isOpen(boolean isOpen) {
+      Builder setIsOpen(boolean isOpen) {
         this.isOpen = isOpen;
         return this;
       }
 
-      Builder endOfStream(boolean endOfStream) {
+      Builder setEndOfStream(boolean endOfStream) {
         this.endOfStream = endOfStream;
         return this;
       }
 
-      Builder chunkSize(int chunkSize) {
+      Builder setChunkSize(int chunkSize) {
         this.chunkSize = chunkSize;
         return this;
       }

@@ -79,16 +79,18 @@ public class TranslateImplTest {
   private static final LanguageListOption LANGUAGE_LIST_OPTION =
       LanguageListOption.targetLanguage(TARGET_LANGUAGE);
   private static final Map<TranslateRpc.Option, ?> LANGUAGE_LIST_OPTIONS = ImmutableMap.of(
-      TranslateRpc.Option.TARGET_LANGUAGE, LANGUAGE_LIST_OPTION.value());
+      TranslateRpc.Option.TARGET_LANGUAGE, LANGUAGE_LIST_OPTION.getValue());
 
   // Translate options
   private static final TranslateOption TARGET_LANGUAGE_OPTION =
       TranslateOption.targetLanguage("en");
   private static final TranslateOption SOURCE_LANGUAGE_OPTION =
       TranslateOption.sourceLanguage("de");
+  private static final TranslateOption MODEL_OPTION = TranslateOption.model("nmt");
   private static final Map<TranslateRpc.Option, ?> TRANSLATE_OPTIONS = ImmutableMap.of(
-      TranslateRpc.Option.TARGET_LANGUAGE, TARGET_LANGUAGE_OPTION.value(),
-      TranslateRpc.Option.SOURCE_LANGUAGE, SOURCE_LANGUAGE_OPTION.value());
+      TranslateRpc.Option.TARGET_LANGUAGE, TARGET_LANGUAGE_OPTION.getValue(),
+      TranslateRpc.Option.SOURCE_LANGUAGE, SOURCE_LANGUAGE_OPTION.getValue(),
+      TranslateRpc.Option.MODEL, "nmt");
 
   private TranslateOptions options;
   private TranslateRpcFactory rpcFactoryMock;
@@ -105,10 +107,10 @@ public class TranslateImplTest {
     EasyMock.expect(rpcFactoryMock.create(EasyMock.anyObject(TranslateOptions.class)))
         .andReturn(translateRpcMock);
     EasyMock.replay(rpcFactoryMock);
-    options = TranslateOptions.builder()
-        .apiKey(API_KEY)
-        .serviceRpcFactory(rpcFactoryMock)
-        .retryParams(RetryParams.noRetries())
+    options = TranslateOptions.newBuilder()
+        .setApiKey(API_KEY)
+        .setServiceRpcFactory(rpcFactoryMock)
+        .setRetryParams(RetryParams.noRetries())
         .build();
   }
 
@@ -118,14 +120,14 @@ public class TranslateImplTest {
   }
 
   private void initializeService() {
-    translate = options.service();
+    translate = options.getService();
   }
 
   @Test
   public void testGetOptions() {
     EasyMock.replay(translateRpcMock);
     initializeService();
-    assertSame(options, translate.options());
+    assertSame(options, translate.getOptions());
   }
 
   @Test
@@ -285,7 +287,7 @@ public class TranslateImplTest {
     EasyMock.replay(translateRpcMock);
     initializeService();
     assertEquals(TRANSLATION2,
-        translate.translate(text, TARGET_LANGUAGE_OPTION, SOURCE_LANGUAGE_OPTION));
+        translate.translate(text, TARGET_LANGUAGE_OPTION, SOURCE_LANGUAGE_OPTION, MODEL_OPTION));
   }
 
   @Test
@@ -309,7 +311,7 @@ public class TranslateImplTest {
     EasyMock.replay(translateRpcMock);
     initializeService();
     assertEquals(ImmutableList.of(TRANSLATION2),
-        translate.translate(texts, TARGET_LANGUAGE_OPTION, SOURCE_LANGUAGE_OPTION));
+        translate.translate(texts, TARGET_LANGUAGE_OPTION, SOURCE_LANGUAGE_OPTION, MODEL_OPTION));
   }
 
   @Test
@@ -318,7 +320,8 @@ public class TranslateImplTest {
         .andThrow(new TranslateException(500, "internalError"))
         .andReturn(ImmutableList.of(LANGUAGE1_PB, LANGUAGE2_PB));
     EasyMock.replay(translateRpcMock);
-    translate = options.toBuilder().retryParams(RetryParams.defaultInstance()).build().service();
+    translate =
+        options.toBuilder().setRetryParams(RetryParams.getDefaultInstance()).build().getService();
     assertEquals(LANGUAGES1, translate.listSupportedLanguages());
   }
 
@@ -328,7 +331,8 @@ public class TranslateImplTest {
     EasyMock.expect(translateRpcMock.listSupportedLanguages(EMPTY_RPC_OPTIONS))
         .andThrow(new TranslateException(501, exceptionMessage));
     EasyMock.replay(translateRpcMock);
-    translate = options.toBuilder().retryParams(RetryParams.defaultInstance()).build().service();
+    translate =
+        options.toBuilder().setRetryParams(RetryParams.getDefaultInstance()).build().getService();
     thrown.expect(TranslateException.class);
     thrown.expectMessage(exceptionMessage);
     translate.listSupportedLanguages();
@@ -340,7 +344,8 @@ public class TranslateImplTest {
     EasyMock.expect(translateRpcMock.listSupportedLanguages(EMPTY_RPC_OPTIONS))
         .andThrow(new RuntimeException(exceptionMessage));
     EasyMock.replay(translateRpcMock);
-    translate = options.toBuilder().retryParams(RetryParams.defaultInstance()).build().service();
+    translate =
+        options.toBuilder().setRetryParams(RetryParams.getDefaultInstance()).build().getService();
     thrown.expect(TranslateException.class);
     thrown.expectMessage(exceptionMessage);
     translate.listSupportedLanguages();
