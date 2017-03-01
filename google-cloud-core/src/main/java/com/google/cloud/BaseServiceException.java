@@ -161,16 +161,7 @@ public class BaseServiceException extends RuntimeException {
         // In cases where an exception is an instance of HttpResponseException but not
         // an instance of GoogleJsonResponseException, check the status code to determine whether it's retryable
         code = ((HttpResponseException) exception).getStatusCode();
-        Set<Error> retryableErrors = getRetryableErrors();
-        if (retryableErrors != null && !retryableErrors.isEmpty()) {
-          for (Error e : retryableErrors) {
-            if (e.getCode() != null && e.getCode().equals(code)) {
-              Error error = new Error(code, null);
-              retryable = isRetryable(idempotent, error);
-              break;
-            }
-          }
-        }
+        retryable = isRetryable(idempotent, new Error(code, null));
       }
     }
     this.retryable = MoreObjects.firstNonNull(retryable, isRetryable(idempotent, exception));
