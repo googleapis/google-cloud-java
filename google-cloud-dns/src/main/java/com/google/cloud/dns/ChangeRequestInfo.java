@@ -70,12 +70,6 @@ public class ChangeRequestInfo implements Serializable {
    */
   public abstract static class Builder {
 
-    /**
-     * Sets a collection of {@link RecordSet}s which are to be added to the zone upon executing this
-     * {@code ChangeRequestInfo}.
-     */
-    @Deprecated
-    public abstract Builder additions(List<RecordSet> additions);
 
     /**
      * Sets a collection of {@link RecordSet}s which are to be added to the zone upon executing this
@@ -83,12 +77,6 @@ public class ChangeRequestInfo implements Serializable {
      */
     public abstract Builder setAdditions(List<RecordSet> additions);
 
-    /**
-     * Sets a collection of {@link RecordSet}s which are to be deleted from the zone upon executing
-     * this {@code ChangeRequestInfo}.
-     */
-    @Deprecated
-    public abstract Builder deletions(List<RecordSet> deletions);
 
     /**
      * Sets a collection of {@link RecordSet}s which are to be deleted from the zone upon executing
@@ -174,11 +162,6 @@ public class ChangeRequestInfo implements Serializable {
       this.status = info.status;
     }
 
-    @Override
-    @Deprecated
-    public Builder additions(List<RecordSet> additions) {
-      return setAdditions(additions);
-    }
 
     @Override
     public Builder setAdditions(List<RecordSet> additions) {
@@ -186,11 +169,6 @@ public class ChangeRequestInfo implements Serializable {
       return this;
     }
 
-    @Override
-    @Deprecated
-    public Builder deletions(List<RecordSet> deletions) {
-      return setDeletions(deletions);
-    }
 
     @Override
     public Builder setDeletions(List<RecordSet> deletions) {
@@ -266,13 +244,6 @@ public class ChangeRequestInfo implements Serializable {
     this.status = builder.status;
   }
 
-  /**
-   * Returns an empty builder for the {@code ChangeRequestInfo} class.
-   */
-  @Deprecated
-  public static Builder builder() {
-    return newBuilder();
-  }
 
   /**
    * Returns an empty builder for the {@code ChangeRequestInfo} class.
@@ -288,14 +259,6 @@ public class ChangeRequestInfo implements Serializable {
     return new BuilderImpl(this);
   }
 
-  /**
-   * Returns the list of {@link RecordSet}s to be added to the zone upon submitting this change
-   * request.
-   */
-  @Deprecated
-  public List<RecordSet> additions() {
-    return getAdditions();
-  }
 
     /**
    * Returns the list of {@link RecordSet}s to be added to the zone upon submitting this change
@@ -305,14 +268,6 @@ public class ChangeRequestInfo implements Serializable {
     return additions;
   }
 
-  /**
-   * Returns the list of {@link RecordSet}s to be deleted from the zone upon submitting this change
-   * request.
-   */
-  @Deprecated
-  public List<RecordSet> deletions() {
-    return getDeletions();
-  }
 
     /**
    * Returns the list of {@link RecordSet}s to be deleted from the zone upon submitting this change
@@ -322,13 +277,6 @@ public class ChangeRequestInfo implements Serializable {
     return deletions;
   }
 
-  /**
-   * Returns the service-generated id for this change request.
-   */
-  @Deprecated
-  public String generatedId() {
-    return getGeneratedId();
-  }
 
   /**
    * Returns the service-generated id for this change request.
@@ -337,13 +285,6 @@ public class ChangeRequestInfo implements Serializable {
     return generatedId;
   }
 
-  /**
-   * Returns the time when this change request was started by the server.
-   */
-  @Deprecated
-  public Long startTimeMillis() {
-    return getStartTimeMillis();
-  }
 
   /**
    * Returns the time when this change request was started by the server.

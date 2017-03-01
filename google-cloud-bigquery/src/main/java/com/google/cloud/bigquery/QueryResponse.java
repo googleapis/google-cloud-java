@@ -108,14 +108,6 @@ public class QueryResponse implements Serializable {
       : ImmutableList.<BigQueryError>of();
   }
 
-  /**
-   * Returns the result of the query. Returns {@code null} if {@link #jobCompleted()} is {@code
-   * false}.
-   */
-  @Deprecated
-  public QueryResult result() {
-    return getResult();
-  }
 
   /**
    * Returns the result of the query. Returns {@code null} if {@link #jobCompleted()} is {@code
@@ -125,13 +117,6 @@ public class QueryResponse implements Serializable {
     return result;
   }
 
-  /**
-   * Returns the hash of the {@code QueryResponse} resource or {@code null} if not set.
-   */
-  @Deprecated
-  public String etag() {
-    return getEtag();
-  }
 
   /**
    * Returns the hash of the {@code QueryResponse} resource or {@code null} if not set.
@@ -140,14 +125,6 @@ public class QueryResponse implements Serializable {
     return etag;
   }
 
-  /**
-   * Returns the identity of the BigQuery Job that was created to run the query. This field will be
-   * present even if the original request timed out.
-   */
-  @Deprecated
-  public JobId jobId() {
-    return getJobId();
-  }
 
   /**
    * Returns the identity of the BigQuery Job that was created to run the query. This field will be
@@ -176,14 +153,6 @@ public class QueryResponse implements Serializable {
     return !executionErrors.isEmpty();
   }
 
-  /**
-   * Returns errors and warnings encountered during the running of the job, if any. Errors here do
-   * not necessarily mean that the job has completed or was unsuccessful.
-   */
-  @Deprecated
-  public List<BigQueryError> executionErrors() {
-    return getExecutionErrors();
-  }
 
   /**
    * Returns errors and warnings encountered during the running of the job, if any. Errors here do

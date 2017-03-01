@@ -65,12 +65,6 @@ public interface Compute extends Service<ComputeOptions> {
     }
 
     @Override
-    @Deprecated
-    public String selector() {
-      return getSelector();
-    }
-
-    @Override
     public String getSelector() {
       return selector;
     }
@@ -106,12 +100,6 @@ public interface Compute extends Service<ComputeOptions> {
     }
 
     @Override
-    @Deprecated
-    public String selector() {
-      return getSelector();
-    }
-
-    @Override
     public String getSelector() {
       return selector;
     }
@@ -140,12 +128,6 @@ public interface Compute extends Service<ComputeOptions> {
 
     RegionField(String selector) {
       this.selector = selector;
-    }
-
-    @Override
-    @Deprecated
-    public String selector() {
-      return getSelector();
     }
 
     @Override
@@ -179,12 +161,6 @@ public interface Compute extends Service<ComputeOptions> {
     }
 
     @Override
-    @Deprecated
-    public String selector() {
-      return getSelector();
-    }
-
-    @Override
     public String getSelector() {
       return selector;
     }
@@ -207,12 +183,6 @@ public interface Compute extends Service<ComputeOptions> {
 
     LicenseField(String selector) {
       this.selector = selector;
-    }
-
-    @Override
-    @Deprecated
-    public String selector() {
-      return getSelector();
     }
 
     @Override
@@ -265,12 +235,6 @@ public interface Compute extends Service<ComputeOptions> {
     }
 
     @Override
-    @Deprecated
-    public String selector() {
-      return getSelector();
-    }
-
-    @Override
     public String getSelector() {
       return selector;
     }
@@ -301,12 +265,6 @@ public interface Compute extends Service<ComputeOptions> {
 
     AddressField(String selector) {
       this.selector = selector;
-    }
-
-    @Override
-    @Deprecated
-    public String selector() {
-      return getSelector();
     }
 
     @Override
@@ -351,12 +309,6 @@ public interface Compute extends Service<ComputeOptions> {
     }
 
     @Override
-    @Deprecated
-    public String selector() {
-      return getSelector();
-    }
-
-    @Override
     public String getSelector() {
       return selector;
     }
@@ -388,12 +340,6 @@ public interface Compute extends Service<ComputeOptions> {
 
     SnapshotField(String selector) {
       this.selector = selector;
-    }
-
-    @Override
-    @Deprecated
-    public String selector() {
-      return getSelector();
     }
 
     @Override
@@ -433,12 +379,6 @@ public interface Compute extends Service<ComputeOptions> {
     }
 
     @Override
-    @Deprecated
-    public String selector() {
-      return getSelector();
-    }
-
-    @Override
     public String getSelector() {
       return selector;
     }
@@ -467,12 +407,6 @@ public interface Compute extends Service<ComputeOptions> {
 
     SubnetworkField(String selector) {
       this.selector = selector;
-    }
-
-    @Override
-    @Deprecated
-    public String selector() {
-      return getSelector();
     }
 
     @Override
@@ -505,12 +439,6 @@ public interface Compute extends Service<ComputeOptions> {
 
     NetworkField(String selector) {
       this.selector = selector;
-    }
-
-    @Override
-    @Deprecated
-    public String selector() {
-      return getSelector();
     }
 
     @Override
@@ -550,12 +478,6 @@ public interface Compute extends Service<ComputeOptions> {
 
     InstanceField(String selector) {
       this.selector = selector;
-    }
-
-    @Override
-    @Deprecated
-    public String selector() {
-      return getSelector();
     }
 
     @Override

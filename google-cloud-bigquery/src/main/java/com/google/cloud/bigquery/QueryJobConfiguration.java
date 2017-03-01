@@ -148,13 +148,6 @@ public final class QueryJobConfiguration extends JobConfiguration {
       }
     }
 
-    /**
-     * Sets the BigQuery SQL query to execute.
-     */
-    @Deprecated
-    public Builder query(String query) {
-      return setQuery(query);
-    }
 
     /**
      * Sets the BigQuery SQL query to execute.
@@ -164,14 +157,6 @@ public final class QueryJobConfiguration extends JobConfiguration {
       return this;
     }
 
-    /**
-     * Sets the table where to put query results. If not provided a new table is created. This value
-     * is required if {@link Builder#allowLargeResults(Boolean)} is set to {@code true}.
-     */
-    @Deprecated
-    public Builder destinationTable(TableId destinationTable) {
-      return setDestinationTable(destinationTable);
-    }
 
     /**
      * Sets the table where to put query results. If not provided a new table is created. This value
@@ -182,16 +167,6 @@ public final class QueryJobConfiguration extends JobConfiguration {
       return this;
     }
 
-    /**
-     * Sets the external tables definitions. If querying external data sources outside of BigQuery,
-     * this value describes the data format, location and other properties of the data
-     * sources. By defining these properties, the data sources can be queried as if they were
-     * standard BigQuery tables.
-     */
-    @Deprecated
-    public Builder tableDefinitions(Map<String, ExternalTableDefinition> tableDefinitions) {
-      return setTableDefinitions(tableDefinitions);
-    }
 
     /**
      * Sets the external tables definitions. If querying external data sources outside of BigQuery,
@@ -219,15 +194,6 @@ public final class QueryJobConfiguration extends JobConfiguration {
       return this;
     }
 
-    /**
-     * Sets user defined function resources that can be used by this query. Function resources
-     * can either be defined inline ({@link UserDefinedFunction#inline(String)}) or loaded from
-     * a Google Cloud Storage URI ({@link UserDefinedFunction#fromUri(String)}.
-     */
-    @Deprecated
-    public Builder userDefinedFunctions(List<UserDefinedFunction> userDefinedFunctions) {
-      return setUserDefinedFunctions(userDefinedFunctions);
-    }
 
     /**
      * Sets user defined function resources that can be used by this query. Function resources
@@ -240,16 +206,6 @@ public final class QueryJobConfiguration extends JobConfiguration {
       return this;
     }
 
-    /**
-     * Sets whether the job is allowed to create tables.
-     *
-     * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/jobs#configuration.query.createDisposition">
-     *     Create Disposition</a>
-     */
-    @Deprecated
-    public Builder createDisposition(CreateDisposition createDisposition) {
-      return setCreateDisposition(createDisposition);
-    }
 
     /**
      * Sets whether the job is allowed to create tables.
@@ -262,16 +218,6 @@ public final class QueryJobConfiguration extends JobConfiguration {
       return this;
     }
 
-    /**
-     * Sets the action that should occur if the destination table already exists.
-     *
-     * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/jobs#configuration.query.writeDisposition">
-     *     Write Disposition</a>
-     */
-    @Deprecated
-    public Builder writeDisposition(WriteDisposition writeDisposition) {
-      return setWriteDisposition(writeDisposition);
-    }
 
     /**
      * Sets the action that should occur if the destination table already exists.
@@ -284,14 +230,6 @@ public final class QueryJobConfiguration extends JobConfiguration {
       return this;
     }
 
-    /**
-     * Sets the default dataset. This dataset is used for all unqualified table names used in the
-     * query.
-     */
-    @Deprecated
-    public Builder defaultDataset(DatasetId defaultDataset) {
-      return setDefaultDataset(defaultDataset);
-    }
 
     /**
      * Sets the default dataset. This dataset is used for all unqualified table names used in the
@@ -302,14 +240,6 @@ public final class QueryJobConfiguration extends JobConfiguration {
       return this;
     }
 
-    /**
-     * Sets the default dataset. This dataset is used for all unqualified table names used in the
-     * query.
-     */
-    @Deprecated
-    public Builder defaultDataset(String defaultDataset) {
-      return setDefaultDataset(DatasetId.of(defaultDataset));
-    }
 
     /**
      * Sets the default dataset. This dataset is used for all unqualified table names used in the
@@ -319,14 +249,6 @@ public final class QueryJobConfiguration extends JobConfiguration {
       return setDefaultDataset(DatasetId.of(defaultDataset));
     }
 
-    /**
-     * Sets a priority for the query. If not specified the priority is assumed to be
-     * {@link Priority#INTERACTIVE}.
-     */
-    @Deprecated
-    public Builder priority(Priority priority) {
-      return setPriority(priority);
-    }
 
     /**
      * Sets a priority for the query. If not specified the priority is assumed to be
@@ -337,18 +259,6 @@ public final class QueryJobConfiguration extends JobConfiguration {
       return this;
     }
 
-    /**
-     * Sets whether the job is enabled to create arbitrarily large results. If {@code true}
-     * the query is allowed to create large results at a slight cost in performance. If {@code true}
-     * {@link Builder#destinationTable(TableId)} must be provided.
-     *
-     * @see <a href="https://cloud.google.com/bigquery/querying-data#largequeryresults">
-     *     Returning Large Query Results</a>
-     */
-    @Deprecated
-    public Builder allowLargeResults(Boolean allowLargeResults) {
-      return setAllowLargeResults(allowLargeResults);
-    }
 
     /**
      * Sets whether the job is enabled to create arbitrarily large results. If {@code true}
@@ -363,17 +273,6 @@ public final class QueryJobConfiguration extends JobConfiguration {
       return this;
     }
 
-    /**
-     * Sets whether to look for the result in the query cache. The query cache is a best-effort
-     * cache that will be flushed whenever tables in the query are modified. Moreover, the query
-     * cache is only available when {@link Builder#destinationTable(TableId)} is not set.
-     *
-     * @see <a href="https://cloud.google.com/bigquery/querying-data#querycaching">Query Caching</a>
-     */
-    @Deprecated
-    public Builder useQueryCache(Boolean useQueryCache) {
-      return setUseQueryCache(useQueryCache);
-    }
 
     /**
      * Sets whether to look for the result in the query cache. The query cache is a best-effort
@@ -387,17 +286,6 @@ public final class QueryJobConfiguration extends JobConfiguration {
       return this;
     }
 
-    /**
-     * Sets whether nested and repeated fields should be flattened. If set to {@code false}
-     * {@link Builder#allowLargeResults(Boolean)} must be {@code true}. By default results are
-     * flattened.
-     *
-     * @see <a href="https://cloud.google.com/bigquery/docs/data#flatten">Flatten</a>
-     */
-    @Deprecated
-    public Builder flattenResults(Boolean flattenResults) {
-      return setFlattenResults(flattenResults);
-    }
 
     /**
      * Sets whether nested and repeated fields should be flattened. If set to {@code false}
@@ -411,15 +299,6 @@ public final class QueryJobConfiguration extends JobConfiguration {
       return this;
     }
 
-    /**
-     * Sets whether the job has to be dry run or not. If set, the job is not executed. A valid query
-     * will return a mostly empty response with some processing statistics, while an invalid query
-     * will return the same error it would if it wasn't a dry run.
-     */
-    @Deprecated
-    public Builder dryRun(Boolean dryRun) {
-      return setDryRun(dryRun);
-    }
 
     /**
      * Sets whether the job has to be dry run or not. If set, the job is not executed. A valid query
@@ -431,19 +310,6 @@ public final class QueryJobConfiguration extends JobConfiguration {
       return this;
     }
 
-    /**
-     * Sets whether to use BigQuery's legacy SQL dialect for this query. If set to {@code false},
-     * the query will use BigQuery's <a href="https://cloud.google.com/bigquery/sql-reference/">
-     * Standard SQL</a>. When set to {@code false}, the values of
-     * {@link #allowLargeResults(Boolean)} and {@link #flattenResults(Boolean)} are ignored; query
-     * will be run as if {@link #allowLargeResults(Boolean)} is {@code true} and
-     * {@link #flattenResults(Boolean)} is {@code false}. If not set, legacy SQL dialect is used.
-     * This property is experimental and might be subject to change.
-     */
-    @Deprecated
-    public Builder useLegacySql(Boolean useLegacySql) {
-      return setUseLegacySql(useLegacySql);
-    }
 
     /**
      * Sets whether to use BigQuery's legacy SQL dialect for this query. If set to {@code false},
@@ -494,16 +360,6 @@ public final class QueryJobConfiguration extends JobConfiguration {
     return allowLargeResults;
   }
 
-  /**
-   * Returns whether the job is allowed to create new tables.
-   *
-   * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/jobs#configuration.query.createDisposition">
-   *     Create Disposition</a>
-   */
-  @Deprecated
-  public CreateDisposition createDisposition() {
-    return getCreateDisposition();
-  }
 
   /**
    * Returns whether the job is allowed to create new tables.
@@ -515,14 +371,6 @@ public final class QueryJobConfiguration extends JobConfiguration {
     return createDisposition;
   }
 
-  /**
-   * Returns the default dataset. This dataset is used for all unqualified table names used in the
-   * query.
-   */
-  @Deprecated
-  public DatasetId defaultDataset() {
-    return getDefaultDataset();
-  }
 
   /**
    * Returns the default dataset. This dataset is used for all unqualified table names used in the
@@ -532,14 +380,6 @@ public final class QueryJobConfiguration extends JobConfiguration {
     return defaultDataset;
   }
 
-  /**
-   * Returns the table where to put query results. If not provided a new table is created. This
-   * value is required if {@link #allowLargeResults()} is {@code true}.
-   */
-  @Deprecated
-  public TableId destinationTable() {
-    return getDestinationTable();
-  }
 
   /**
    * Returns the table where to put query results. If not provided a new table is created. This
@@ -559,13 +399,6 @@ public final class QueryJobConfiguration extends JobConfiguration {
     return flattenResults;
   }
 
-  /**
-   * Returns the query priority.
-   */
-  @Deprecated
-  public Priority priority() {
-    return getPriority();
-  }
 
   /**
    * Returns the query priority.
@@ -574,13 +407,6 @@ public final class QueryJobConfiguration extends JobConfiguration {
     return priority;
   }
 
-  /**
-   * Returns the Google BigQuery SQL query.
-   */
-  @Deprecated
-  public String query() {
-    return getQuery();
-  }
 
   /**
    * Returns the Google BigQuery SQL query.
@@ -589,16 +415,6 @@ public final class QueryJobConfiguration extends JobConfiguration {
     return query;
   }
 
-  /**
-   * Returns the external tables definitions. If querying external data sources outside of BigQuery,
-   * this value describes the data format, location and other properties of the data
-   * sources. By defining these properties, the data sources can be queried as if they were
-   * standard BigQuery tables.
-   */
-  @Deprecated
-  public Map<String, ExternalTableDefinition> tableDefinitions() {
-    return getTableDefinitions();
-  }
 
   /**
    * Returns the external tables definitions. If querying external data sources outside of BigQuery,
@@ -621,15 +437,6 @@ public final class QueryJobConfiguration extends JobConfiguration {
     return useQueryCache;
   }
 
-  /**
-   * Returns user defined function resources that can be used by this query. Function resources
-   * can either be defined inline ({@link UserDefinedFunction.Type#INLINE}) or loaded from
-   * a Google Cloud Storage URI ({@link UserDefinedFunction.Type#FROM_URI}.
-   */
-  @Deprecated
-  public List<UserDefinedFunction> userDefinedFunctions() {
-    return getUserDefinedFunctions();
-  }
 
   /**
    * Returns user defined function resources that can be used by this query. Function resources
@@ -640,16 +447,6 @@ public final class QueryJobConfiguration extends JobConfiguration {
     return userDefinedFunctions;
   }
 
-  /**
-   * Returns the action that should occur if the destination table already exists.
-   *
-   * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/jobs#configuration.query.writeDisposition">
-   *     Write Disposition</a>
-   */
-  @Deprecated
-  public WriteDisposition writeDisposition() {
-    return getWriteDisposition();
-  }
 
   /**
    * Returns the action that should occur if the destination table already exists.
@@ -776,13 +573,6 @@ public final class QueryJobConfiguration extends JobConfiguration {
     return configurationPb.setQuery(queryConfigurationPb);
   }
 
-  /**
-   * Creates a builder for a BigQuery Query Job given the query to be run.
-   */
-  @Deprecated
-  public static Builder builder(String query) {
-    return newBuilder(query);
-  }
 
   /**
    * Creates a builder for a BigQuery Query Job given the query to be run.

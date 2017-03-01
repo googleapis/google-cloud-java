@@ -109,20 +109,6 @@ public class PayloadTest {
     assertEquals(JSON_DATA, jsonPayload.getDataAsMap());
   }
 
-  @Test
-  public void testOfDeprecated() {
-    assertEquals(Type.STRING, STRING_PAYLOAD.type());
-    assertEquals(STRING_DATA, STRING_PAYLOAD.data());
-    assertEquals(Type.JSON, JSON_PAYLOAD.type());
-    assertEquals(STRUCT_DATA, JSON_PAYLOAD.data());
-    assertEquals(JSON_DATA, JSON_PAYLOAD.dataAsMap());
-    assertEquals(Type.PROTO, PROTO_PAYLOAD.type());
-    assertEquals(PROTO_DATA, PROTO_PAYLOAD.data());
-    JsonPayload jsonPayload = JsonPayload.of(STRUCT_DATA);
-    assertEquals(Type.JSON, jsonPayload.type());
-    assertEquals(STRUCT_DATA, jsonPayload.data());
-    assertEquals(JSON_DATA, jsonPayload.dataAsMap());
-  }
 
   @Test
   public void testToAndFromPb() {

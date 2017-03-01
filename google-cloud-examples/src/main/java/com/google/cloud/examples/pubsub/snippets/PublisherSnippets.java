@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.google.cloud.examples.pubsub;
+package com.google.cloud.examples.pubsub.snippets;
 
 import com.google.api.gax.core.RpcFuture;
 import com.google.api.gax.core.RpcFutureCallback;
@@ -41,10 +41,12 @@ public class PublisherSnippets {
     PubsubMessage pubsubMessage = PubsubMessage.newBuilder().setData(data).build();
     RpcFuture<String> messageIdFuture = publisher.publish(pubsubMessage);
     messageIdFuture.addCallback(new RpcFutureCallback<String>() {
+      @Override
       public void onSuccess(String messageId) {
         System.out.println("published with message id: " + messageId);
       }
 
+      @Override
       public void onFailure(Throwable t) {
         System.out.println("failed to publish: " + t);
       }

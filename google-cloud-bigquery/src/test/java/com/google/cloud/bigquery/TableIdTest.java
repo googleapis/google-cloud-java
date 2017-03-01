@@ -35,15 +35,6 @@ public class TableIdTest {
     assertEquals("table", TABLE_COMPLETE.getTable());
   }
 
-  @Test
-  public void testOfDeprecated() {
-    assertEquals(null, TABLE.project());
-    assertEquals("dataset", TABLE.dataset());
-    assertEquals("table", TABLE.table());
-    assertEquals("project", TABLE_COMPLETE.project());
-    assertEquals("dataset", TABLE_COMPLETE.dataset());
-    assertEquals("table", TABLE_COMPLETE.table());
-  }
 
   @Test
   public void testEquals() {

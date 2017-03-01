@@ -55,19 +55,10 @@ public class PolicyTest {
       .addIdentity(VIEWER, USER, SERVICE_ACCOUNT, ALL_USERS)
       .addIdentity(EDITOR, ALL_AUTH_USERS, GROUP, DOMAIN)
       .build();
-  private static final Policy DEPRECATED_SIMPLE_POLICY = Policy.builder()
-      .addIdentity(VIEWER, USER, SERVICE_ACCOUNT, ALL_USERS)
-      .addIdentity(EDITOR, ALL_AUTH_USERS, GROUP, DOMAIN)
-      .build();
   private static final Policy FULL_POLICY = Policy.newBuilder()
       .setBindings(SIMPLE_POLICY.getBindings())
       .setEtag("etag")
       .setVersion(1)
-      .build();
-  private static final Policy DEPRECATED_FULL_POLICY = Policy.builder()
-      .bindings(SIMPLE_POLICY.getBindings())
-      .etag("etag")
-      .version(1)
       .build();
 
   @Test
@@ -106,43 +97,6 @@ public class PolicyTest {
         policy.getBindings());
     assertNull(policy.getEtag());
     assertEquals(0, policy.getVersion());
-  }
-
-  @Test
-  public void testBuilderDeprecated() {
-    assertEquals(BINDINGS, DEPRECATED_SIMPLE_POLICY.bindings());
-    assertEquals(null, DEPRECATED_SIMPLE_POLICY.etag());
-    assertEquals(0, DEPRECATED_SIMPLE_POLICY.version());
-    assertEquals(BINDINGS, DEPRECATED_FULL_POLICY.bindings());
-    assertEquals("etag", DEPRECATED_FULL_POLICY.etag());
-    assertEquals(1, DEPRECATED_FULL_POLICY.version());
-    Map<Role, Set<Identity>> editorBinding =
-        ImmutableMap.<Role, Set<Identity>>builder().put(EDITOR, BINDINGS.get(EDITOR)).build();
-    Policy policy = DEPRECATED_FULL_POLICY.toBuilder().bindings(editorBinding).build();
-    assertEquals(editorBinding, policy.bindings());
-    assertEquals("etag", policy.etag());
-    assertEquals(1, policy.version());
-    policy = DEPRECATED_SIMPLE_POLICY.toBuilder().removeRole(EDITOR).build();
-    assertEquals(ImmutableMap.of(VIEWER, BINDINGS.get(VIEWER)), policy.bindings());
-    assertNull(policy.etag());
-    assertEquals(0, policy.version());
-    policy = policy.toBuilder()
-        .removeIdentity(VIEWER, USER, ALL_USERS)
-        .addIdentity(VIEWER, DOMAIN, GROUP)
-        .build();
-    assertEquals(ImmutableMap.of(VIEWER, ImmutableSet.of(SERVICE_ACCOUNT, DOMAIN, GROUP)),
-        policy.bindings());
-    assertNull(policy.etag());
-    assertEquals(0, policy.version());
-    policy = Policy.builder()
-        .removeIdentity(VIEWER, USER)
-        .addIdentity(OWNER, USER, SERVICE_ACCOUNT)
-        .addIdentity(EDITOR, GROUP)
-        .removeIdentity(EDITOR, GROUP)
-        .build();
-    assertEquals(ImmutableMap.of(OWNER, ImmutableSet.of(USER, SERVICE_ACCOUNT)), policy.bindings());
-    assertNull(policy.etag());
-    assertEquals(0, policy.version());
   }
 
   @Test

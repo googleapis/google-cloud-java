@@ -32,25 +32,12 @@ public interface LoadConfiguration {
 
   interface Builder {
 
-    /**
-     * Sets the destination table to load the data into.
-     */
-    @Deprecated
-    Builder destinationTable(TableId destinationTable);
 
     /**
      * Sets the destination table to load the data into.
      */
     Builder setDestinationTable(TableId destinationTable);
 
-    /**
-     * Sets whether the job is allowed to create new tables.
-     *
-     * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/jobs#configuration.load.createDisposition">
-     *     Create Disposition</a>
-     */
-    @Deprecated
-    Builder createDisposition(CreateDisposition createDisposition);
 
     /**
      * Sets whether the job is allowed to create new tables.
@@ -60,14 +47,6 @@ public interface LoadConfiguration {
      */
     Builder setCreateDisposition(CreateDisposition createDisposition);
 
-    /**
-     * Sets the action that should occur if the destination table already exists.
-     *
-     * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/jobs#configuration.load.writeDisposition">
-     *     Write Disposition</a>
-     */
-    @Deprecated
-    Builder writeDisposition(WriteDisposition writeDisposition);
 
     /**
      * Sets the action that should occur if the destination table already exists.
@@ -77,16 +56,6 @@ public interface LoadConfiguration {
      */
     Builder setWriteDisposition(WriteDisposition writeDisposition);
 
-    /**
-     * Sets the source format, and possibly some parsing options, of the external data. Supported
-     * formats are {@code CSV}, {@code NEWLINE_DELIMITED_JSON} and {@code DATASTORE_BACKUP}. If not
-     * specified, {@code CSV} format is assumed.
-     *
-     * <a href="https://cloud.google.com/bigquery/docs/reference/v2/tables#externalDataConfiguration.sourceFormat">
-     *     Source Format</a>
-     */
-    @Deprecated
-    Builder formatOptions(FormatOptions formatOptions);
 
     /**
      * Sets the source format, and possibly some parsing options, of the external data. Supported
@@ -98,13 +67,6 @@ public interface LoadConfiguration {
      */
     Builder setFormatOptions(FormatOptions formatOptions);
 
-    /**
-     * Sets the maximum number of bad records that BigQuery can ignore when running the job. If the
-     * number of bad records exceeds this value, an invalid error is returned in the job result.
-     * By default no bad record is ignored.
-     */
-    @Deprecated
-    Builder maxBadRecords(Integer maxBadRecords);
 
     /**
      * Sets the maximum number of bad records that BigQuery can ignore when running the job. If the
@@ -113,13 +75,6 @@ public interface LoadConfiguration {
      */
     Builder setMaxBadRecords(Integer maxBadRecords);
 
-    /**
-     * Sets the schema for the destination table. The schema can be omitted if the destination table
-     * already exists, or if you're loading data from a Google Cloud Datastore backup (i.e.
-     * {@code DATASTORE_BACKUP} format option).
-     */
-    @Deprecated
-    Builder schema(Schema schema);
 
     /**
      * Sets the schema for the destination table. The schema can be omitted if the destination table
@@ -128,14 +83,6 @@ public interface LoadConfiguration {
      */
     Builder setSchema(Schema schema);
 
-    /**
-     * Sets whether BigQuery should allow extra values that are not represented in the table schema.
-     * If {@code true}, the extra values are ignored. If {@code false}, records with extra columns
-     * are treated as bad records, and if there are too many bad records, an invalid error is
-     * returned in the job result. By default unknown values are not allowed.
-     */
-    @Deprecated
-    Builder ignoreUnknownValues(Boolean ignoreUnknownValues);
 
     /**
      * Sets whether BigQuery should allow extra values that are not represented in the table schema.
@@ -145,15 +92,6 @@ public interface LoadConfiguration {
      */
     Builder setIgnoreUnknownValues(Boolean ignoreUnknownValues);
 
-    /**
-     * Sets which entity properties to load into BigQuery from a Cloud Datastore backup. This field
-     * is only used if the source format is set to {@code DATASTORE_BACKUP}. Property names are case
-     * sensitive and must be top-level properties. If no properties are specified, BigQuery loads
-     * all properties. If any named property isn't found in the Cloud Datastore backup, an invalid
-     * error is returned in the job result.
-     */
-    @Deprecated
-    Builder projectionFields(List<String> projectionFields);
 
     /**
      * Sets which entity properties to load into BigQuery from a Cloud Datastore backup. This field
@@ -167,25 +105,12 @@ public interface LoadConfiguration {
     LoadConfiguration build();
   }
 
-  /**
-   * Returns the destination table to load the data into.
-   */
-  @Deprecated
-  TableId destinationTable();
 
   /**
    * Returns the destination table to load the data into.
    */
   TableId getDestinationTable();
 
-  /**
-   * Returns whether the job is allowed to create new tables.
-   *
-   * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/jobs#configuration.load.createDisposition">
-   *     Create Disposition</a>
-   */
-  @Deprecated
-  CreateDisposition createDisposition();
 
   /**
    * Returns whether the job is allowed to create new tables.
@@ -195,14 +120,6 @@ public interface LoadConfiguration {
    */
   CreateDisposition getCreateDisposition();
 
-  /**
-   * Returns the action that should occur if the destination table already exists.
-   *
-   * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/jobs#configuration.load.writeDisposition">
-   *     Write Disposition</a>
-   */
-  @Deprecated
-  WriteDisposition writeDisposition();
 
   /**
    * Returns the action that should occur if the destination table already exists.
@@ -212,12 +129,6 @@ public interface LoadConfiguration {
    */
   WriteDisposition getWriteDisposition();
 
-  /**
-   * Returns additional properties used to parse CSV data (used when {@link #format()} is set
-   * to CSV). Returns {@code null} if not set.
-   */
-  @Deprecated
-  CsvOptions csvOptions();
 
   /**
    * Returns additional properties used to parse CSV data (used when {@link #format()} is set
@@ -225,13 +136,6 @@ public interface LoadConfiguration {
    */
   CsvOptions getCsvOptions();
 
-  /**
-   * Returns the maximum number of bad records that BigQuery can ignore when running the job. If the
-   * number of bad records exceeds this value, an invalid error is returned in the job result.
-   * By default no bad record is ignored.
-   */
-  @Deprecated
-  Integer maxBadRecords();
 
   /**
    * Returns the maximum number of bad records that BigQuery can ignore when running the job. If the
@@ -240,22 +144,12 @@ public interface LoadConfiguration {
    */
   Integer getMaxBadRecords();
 
-  /**
-   * Returns the schema for the destination table, if set. Returns {@code null} otherwise.
-   */
-  @Deprecated
-  Schema schema();
 
   /**
    * Returns the schema for the destination table, if set. Returns {@code null} otherwise.
    */
   Schema getSchema();
 
-  /**
-   * Returns the format of the data files.
-   */
-  @Deprecated
-  String format();
 
   /**
    * Returns the format of the data files.
@@ -270,15 +164,6 @@ public interface LoadConfiguration {
    */
   Boolean ignoreUnknownValues();
 
-  /**
-   * Returns which entity properties to load into BigQuery from a Cloud Datastore backup. This field
-   * is only used if the source format is set to {@code DATASTORE_BACKUP}. Property names are case
-   * sensitive and must be top-level properties. If no properties are specified, BigQuery loads
-   * all properties. If any named property isn't found in the Cloud Datastore backup, an invalid
-   * error is returned in the job result.
-   */
-  @Deprecated
-  List<String> projectionFields();
 
   /**
    * Returns which entity properties to load into BigQuery from a Cloud Datastore backup. This field

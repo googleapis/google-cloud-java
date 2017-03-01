@@ -41,15 +41,6 @@ public class LanguageTest {
     compareLanguage(LANGUAGE, Language.fromPb(LANGUAGE_PB));
   }
 
-  @Test
-  public void testFromPbDeprecated() {
-    assertEquals(CODE, LANGUAGE.code());
-    assertEquals(NAME, LANGUAGE.name());
-    Language language = Language.fromPb(new LanguagesResource().setLanguage(CODE));
-    assertEquals(CODE, language.code());
-    assertNull(language.name());
-    compareLanguage(LANGUAGE, Language.fromPb(LANGUAGE_PB));
-  }
 
   private void compareLanguage(Language expected, Language value) {
     assertEquals(expected, value);

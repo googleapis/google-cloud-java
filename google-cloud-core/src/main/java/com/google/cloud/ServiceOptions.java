@@ -135,13 +135,6 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
       return (B) this;
     }
 
-    /**
-     * Sets the service factory.
-     */
-    @Deprecated
-    public B serviceFactory(ServiceFactory<ServiceT, OptionsT> serviceFactory) {
-      return setServiceFactory(serviceFactory);
-    }
 
     /**
      * Sets the service factory.
@@ -151,17 +144,6 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
       return self();
     }
 
-    /**
-     * Sets the service's clock. The clock is mainly used for testing purpose. {@link Clock} will be
-     * replaced by Java8's {@code java.time.Clock}.
-     *
-     * @param clock the clock to set
-     * @return the builder
-     */
-    @Deprecated
-    public B clock(Clock clock) {
-      return setClock(clock);
-    }
 
     /**
      * Sets the service's clock. The clock is mainly used for testing purpose. {@link Clock} will be
@@ -175,16 +157,6 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
       return self();
     }
 
-    /**
-     * Sets the project ID. If no project ID is set, {@link #getDefaultProjectId()} will be used to
-     * attempt getting the project ID from the environment.
-     *
-     * @return the builder
-     */
-    @Deprecated
-    public B projectId(String projectId) {
-      return setProjectId(projectId);
-    }
 
     /**
      * Sets the project ID. If no project ID is set, {@link #getDefaultProjectId()} will be used to
@@ -197,15 +169,6 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
       return self();
     }
 
-    /**
-     * Sets service host.
-     *
-     * @return the builder
-     */
-    @Deprecated
-    public B host(String host) {
-      return setHost(host);
-    }
 
     /**
      * Sets service host.
@@ -233,17 +196,6 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
       return self();
     }
 
-    /**
-     * Sets configuration parameters for request retries. If no configuration is set
-     * {@link RetryParams#getDefaultInstance()} is used. To disable retries, supply
-     * {@link RetryParams#noRetries()} here.
-     *
-     * @return the builder
-     */
-    @Deprecated
-    public B retryParams(RetryParams retryParams) {
-      return setRetryParams(retryParams);
-    }
 
     /**
      * Sets configuration parameters for request retries. If no configuration is set
@@ -257,15 +209,6 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
       return self();
     }
 
-    /**
-     * Sets the factory for rpc services.
-     *
-     * @return the builder
-     */
-    @Deprecated
-    public B serviceRpcFactory(ServiceRpcFactory<ServiceRpcT, OptionsT> serviceRpcFactory) {
-      return setServiceRpcFactory(serviceRpcFactory);
-    }
 
     /**
      * Sets the factory for rpc services.
@@ -318,19 +261,11 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
     }
   }
 
-  @Deprecated
-  protected String defaultHost() {
-    return getDefaultHost();
-  }
 
   protected String getDefaultHost() {
     return DEFAULT_HOST;
   }
 
-  @Deprecated
-  protected String defaultProject() {
-    return getDefaultProject();
-  }
 
   protected String getDefaultProject() {
     return getDefaultProjectId();
@@ -479,10 +414,6 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
     return project;
   }
 
-  @Deprecated
-  public ServiceT service() {
-    return getService();
-  }
 
   @SuppressWarnings("unchecked")
   public ServiceT getService() {
@@ -492,10 +423,6 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
     return service;
   }
 
-  @Deprecated
-  public ServiceRpcT rpc() {
-    return getRpc();
-  }
 
   @SuppressWarnings("unchecked")
   public ServiceRpcT getRpc() {
@@ -505,14 +432,6 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
     return rpc;
   }
 
-  /**
-   * Returns the project ID. Return value can be null (for services that don't require a project
-   * ID).
-   */
-  @Deprecated
-  public String projectId() {
-    return getProjectId();
-  }
 
   /**
    * Returns the project ID. Return value can be null (for services that don't require a project
@@ -522,13 +441,6 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
     return projectId;
   }
 
-  /**
-   * Returns the service host.
-   */
-  @Deprecated
-  public String host() {
-    return getHost();
-  }
 
   /**
    * Returns the service host.
@@ -556,14 +468,6 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
     return credentialsToReturn;
   }
 
-  /**
-   * Returns configuration parameters for request retries. By default requests are retried:
-   * {@link RetryParams#getDefaultInstance()} is used.
-   */
-  @Deprecated
-  public RetryParams retryParams() {
-    return getRetryParams();
-  }
 
   /**
    * Returns configuration parameters for request retries. By default requests are retried:
@@ -573,14 +477,6 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
     return retryParams;
   }
 
-  /**
-   * Returns the service's clock. Default time source uses {@link System#currentTimeMillis()} to get
-   * current time.
-   */
-  @Deprecated
-  public Clock clock() {
-    return getClock();
-  }
 
   /**
    * Returns the service's clock. Default time source uses {@link System#currentTimeMillis()} to get
@@ -590,13 +486,6 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
     return clock;
   }
 
-  /**
-   * Returns the application's name as a string in the format {@code gcloud-java/[version]}.
-   */
-  @Deprecated
-  public String applicationName() {
-    return getApplicationName();
-  }
 
   /**
    * Returns the application's name as a string in the format {@code gcloud-java/[version]}.
@@ -605,13 +494,6 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
     return APPLICATION_NAME;
   }
 
-  /**
-   * Returns the library's name, {@code gcloud-java}, as a string.
-   */
-  @Deprecated
-  public String libraryName() {
-    return getLibraryName();
-  }
 
   /**
    * Returns the library's name, {@code gcloud-java}, as a string.
@@ -671,24 +553,12 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
     }
   }
 
-  @Deprecated
-  protected ServiceFactory<ServiceT, OptionsT> defaultServiceFactory() {
-    return getDefaultServiceFactory();
-  }
 
   protected abstract ServiceFactory<ServiceT, OptionsT> getDefaultServiceFactory();
 
-  @Deprecated
-  protected ServiceRpcFactory<ServiceRpcT, OptionsT> defaultRpcFactory() {
-    return getDefaultRpcFactory();
-  }
 
   protected abstract ServiceRpcFactory<ServiceRpcT, OptionsT> getDefaultRpcFactory();
 
-  @Deprecated
-  protected Set<String> scopes() {
-    return getScopes();
-  }
 
   protected abstract Set<String> getScopes();
 

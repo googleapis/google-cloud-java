@@ -94,33 +94,18 @@ public class RemoteStorageHelperTest {
     blob2 = EasyMock.createMock(Blob.class);
     blobList = ImmutableList.of(blob1, blob2);
     blobPage = new Page<Blob>() {
-      @Override
-      @Deprecated
-      public String nextPageCursor() {
-        return "nextPageCursor";
-      }
 
       @Override
       public String getNextPageCursor() {
         return "nextPageCursor";
       }
 
-      @Override
-      @Deprecated
-      public Page<Blob> nextPage() {
-        return null;
-      }
 
       @Override
       public Page<Blob> getNextPage() {
         return null;
       }
 
-      @Override
-      @Deprecated
-      public Iterable<Blob> values() {
-        return blobList;
-      }
 
       @Override
       public Iterable<Blob> getValues() {

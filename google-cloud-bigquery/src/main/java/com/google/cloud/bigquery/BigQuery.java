@@ -64,11 +64,6 @@ public interface BigQuery extends Service<BigQueryOptions> {
       this.selector = selector;
     }
 
-    @Override
-    @Deprecated
-    public String selector() {
-      return getSelector();
-    }
 
     @Override
     public String getSelector() {
@@ -111,11 +106,6 @@ public interface BigQuery extends Service<BigQueryOptions> {
       this.selector = selector;
     }
 
-    @Override
-    @Deprecated
-    public String selector() {
-      return getSelector();
-    }
 
     @Override
     public String getSelector() {
@@ -148,11 +138,6 @@ public interface BigQuery extends Service<BigQueryOptions> {
       this.selector = selector;
     }
 
-    @Override
-    @Deprecated
-    public String selector() {
-      return getSelector();
-    }
 
     @Override
     public String getSelector() {

@@ -80,13 +80,6 @@ public final class CopyJobConfiguration extends JobConfiguration {
       }
     }
 
-    /**
-     * Sets the source tables to copy.
-     */
-    @Deprecated
-    public Builder sourceTables(List<TableId> sourceTables) {
-      return setSourceTables(sourceTables);
-    }
 
     /**
      * Sets the source tables to copy.
@@ -96,13 +89,6 @@ public final class CopyJobConfiguration extends JobConfiguration {
       return this;
     }
 
-    /**
-     * Sets the destination table of the copy job.
-     */
-    @Deprecated
-    public Builder destinationTable(TableId destinationTable) {
-      return setDestinationTable(destinationTable);
-    }
 
     /**
      * Sets the destination table of the copy job.
@@ -112,16 +98,6 @@ public final class CopyJobConfiguration extends JobConfiguration {
       return this;
     }
 
-    /**
-     * Sets whether the job is allowed to create new tables.
-     *
-     * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/jobs#configuration.copy.createDisposition">
-     *     Create Disposition</a>
-     */
-    @Deprecated
-    public Builder createDisposition(JobInfo.CreateDisposition createDisposition) {
-      return setCreateDisposition(createDisposition);
-    }
 
     /**
      * Sets whether the job is allowed to create new tables.
@@ -134,16 +110,6 @@ public final class CopyJobConfiguration extends JobConfiguration {
       return this;
     }
 
-    /**
-     * Sets the action that should occur if the destination table already exists.
-     *
-     * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/jobs#configuration.copy.writeDisposition">
-     *     Write Disposition</a>
-     */
-    @Deprecated
-    public Builder writeDisposition(JobInfo.WriteDisposition writeDisposition) {
-      return setWriteDisposition(writeDisposition);
-    }
 
     /**
      * Sets the action that should occur if the destination table already exists.
@@ -169,13 +135,6 @@ public final class CopyJobConfiguration extends JobConfiguration {
     this.writeDisposition = builder.writeDisposition;
   }
 
-  /**
-   * Returns the source tables to copy.
-   */
-  @Deprecated
-  public List<TableId> sourceTables() {
-    return getSourceTables();
-  }
 
   /**
    * Returns the source tables to copy.
@@ -184,13 +143,6 @@ public final class CopyJobConfiguration extends JobConfiguration {
     return sourceTables;
   }
 
-  /**
-   * Returns the destination table to load the data into.
-   */
-  @Deprecated
-  public TableId destinationTable() {
-    return getDestinationTable();
-  }
 
   /**
    * Returns the destination table to load the data into.
@@ -199,16 +151,6 @@ public final class CopyJobConfiguration extends JobConfiguration {
     return destinationTable;
   }
 
-  /**
-   * Returns whether the job is allowed to create new tables.
-   *
-   * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/jobs#configuration.copy.createDisposition">
-   *     Create Disposition</a>
-   */
-  @Deprecated
-  public JobInfo.CreateDisposition createDisposition() {
-    return this.getCreateDisposition();
-  }
 
   /**
    * Returns whether the job is allowed to create new tables.
@@ -220,16 +162,6 @@ public final class CopyJobConfiguration extends JobConfiguration {
     return this.createDisposition;
   }
 
-  /**
-   * Returns the action that should occur if the destination table already exists.
-   *
-   * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/jobs#configuration.copy.writeDisposition">
-   *     Write Disposition</a>
-   */
-  @Deprecated
-  public JobInfo.WriteDisposition writeDisposition() {
-    return getWriteDisposition();
-  }
 
   /**
    * Returns the action that should occur if the destination table already exists.
@@ -300,13 +232,6 @@ public final class CopyJobConfiguration extends JobConfiguration {
     return new com.google.api.services.bigquery.model.JobConfiguration().setCopy(configurationPb);
   }
 
-  /**
-   * Creates a builder for a BigQuery Copy Job configuration given destination and source table.
-   */
-  @Deprecated
-  public static Builder builder(TableId destinationTable, TableId sourceTable) {
-    return newBuilder(destinationTable, sourceTable);
-  }
 
   /**
    * Creates a builder for a BigQuery Copy Job configuration given destination and source table.
@@ -315,13 +240,6 @@ public final class CopyJobConfiguration extends JobConfiguration {
     return newBuilder(destinationTable, ImmutableList.of(checkNotNull(sourceTable)));
   }
 
-  /**
-   * Creates a builder for a BigQuery Copy Job configuration given destination and source tables.
-   */
-  @Deprecated
-  public static Builder builder(TableId destinationTable, List<TableId> sourceTables) {
-    return newBuilder(destinationTable, sourceTables);
-  }
 
   /**
    * Creates a builder for a BigQuery Copy Job configuration given destination and source tables.

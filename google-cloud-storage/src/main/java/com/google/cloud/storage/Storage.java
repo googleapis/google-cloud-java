@@ -104,13 +104,8 @@ public interface Storage extends Service<StorageOptions> {
     public String getSelector() {
       return selector;
     }
-
-    @Deprecated
-    @Override
-    public String selector() {
-      return selector;
-    }
   }
+
 
   enum BlobField implements FieldSelector {
     ACL("acl"),
@@ -150,13 +145,8 @@ public interface Storage extends Service<StorageOptions> {
     public String getSelector() {
       return selector;
     }
-
-    @Deprecated
-    @Override
-    public String selector() {
-      return selector;
-    }
   }
+
 
   /**
    * Class for specifying bucket target options.

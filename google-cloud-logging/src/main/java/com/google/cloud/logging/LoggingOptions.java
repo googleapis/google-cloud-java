@@ -44,13 +44,6 @@ public class LoggingOptions extends GrpcServiceOptions<Logging, LoggingRpc, Logg
     }
   }
 
-  /**
-   * Returns a default {@code LoggingOptions} instance.
-   */
-  @Deprecated
-  public static LoggingOptions defaultInstance() {
-    return getDefaultInstance();
-  }
 
   /**
    * Returns a default {@code LoggingOptions} instance.
@@ -132,10 +125,6 @@ public class LoggingOptions extends GrpcServiceOptions<Logging, LoggingRpc, Logg
     return new Builder(this);
   }
 
-  @Deprecated
-  public static Builder builder() {
-    return newBuilder();
-  }
 
   public static Builder newBuilder() {
     return new Builder();

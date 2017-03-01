@@ -55,11 +55,6 @@ public abstract class BaseService<OptionsT extends ServiceOptions<?, ?, OptionsT
     this.options = options;
   }
 
-  @Override
-  @Deprecated
-  public OptionsT options() {
-    return options;
-  }
 
   @Override
   public OptionsT getOptions() {

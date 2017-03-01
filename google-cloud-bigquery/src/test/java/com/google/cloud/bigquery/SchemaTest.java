@@ -44,7 +44,6 @@ public class SchemaTest {
   private static final List<Field> FIELDS = ImmutableList.of(FIELD_SCHEMA1, FIELD_SCHEMA2,
       FIELD_SCHEMA3);
   private static final Schema TABLE_SCHEMA = Schema.newBuilder().setFields(FIELDS).build();
-  private static final Schema DEPRECATED_TABLE_SCHEMA = Schema.builder().fields(FIELDS).build();
 
   @Test
   public void testToBuilder() {
@@ -59,16 +58,6 @@ public class SchemaTest {
         .addField(FIELD_SCHEMA3)
         .build();
     compareTableSchema(TABLE_SCHEMA, schema);
-  }
-
-  @Test
-  public void testBuilderDepreacated() {
-    assertEquals(FIELDS, DEPRECATED_TABLE_SCHEMA.fields());
-    Schema schema = DEPRECATED_TABLE_SCHEMA.toBuilder()
-        .fields(FIELD_SCHEMA1, FIELD_SCHEMA2)
-        .addField(FIELD_SCHEMA3)
-        .build();
-    compareTableSchema(DEPRECATED_TABLE_SCHEMA, schema);
   }
 
   @Test

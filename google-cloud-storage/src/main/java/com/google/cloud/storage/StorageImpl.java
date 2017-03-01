@@ -215,13 +215,8 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
     public Page<Bucket> getNextPage() {
       return listBuckets(serviceOptions, requestOptions);
     }
-
-    @Deprecated
-    @Override
-    public Page<Bucket> nextPage() {
-      return listBuckets(serviceOptions, requestOptions);
-    }
   }
+
 
   private static class BlobPageFetcher implements NextPageFetcher<Blob> {
 
@@ -242,14 +237,8 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
     public Page<Blob> getNextPage() {
       return listBlobs(bucket, serviceOptions, requestOptions);
     }
-
-    @Deprecated
-    @Override
-    public Page<Blob> nextPage() {
-      // TODO(shinfan): Auto-generated method stub
-      return null;
-    }
   }
+
 
   @Override
   public Page<Bucket> list(BucketListOption... options) {

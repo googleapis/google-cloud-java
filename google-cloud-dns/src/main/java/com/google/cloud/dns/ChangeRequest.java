@@ -54,11 +54,6 @@ public class ChangeRequest extends ChangeRequestInfo {
       this.infoBuilder = new ChangeRequestInfo.BuilderImpl(cr);
     }
 
-    @Override
-    @Deprecated
-    public Builder additions(List<RecordSet> additions) {
-      return setAdditions(additions);
-    }
 
     @Override
     public Builder setAdditions(List<RecordSet> additions) {
@@ -66,11 +61,6 @@ public class ChangeRequest extends ChangeRequestInfo {
       return this;
     }
 
-    @Override
-    @Deprecated
-    public Builder deletions(List<RecordSet> deletions) {
-      return setDeletions(deletions);
-    }
 
     @Override
     public Builder setDeletions(List<RecordSet> deletions) {
@@ -145,13 +135,6 @@ public class ChangeRequest extends ChangeRequestInfo {
     this.options = dns.getOptions();
   }
 
-  /**
-   * Returns the name of the {@link Zone} associated with this change request.
-   */
-  @Deprecated
-  public String zone() {
-    return getZone();
-  }
 
   /**
    * Returns the name of the {@link Zone} associated with this change request.
@@ -160,13 +143,6 @@ public class ChangeRequest extends ChangeRequestInfo {
     return this.zone;
   }
 
-  /**
-   * Returns the change request's {@code Dns} object used to issue requests.
-   */
-  @Deprecated
-  public Dns dns() {
-    return getDns();
-  }
 
   /**
    * Returns the change request's {@code Dns} object used to issue requests.

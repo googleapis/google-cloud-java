@@ -60,22 +60,6 @@ public class DatasetInfoTest {
       .setDatasetId(DATASET_ID_COMPLETE)
       .setAcl(ACCESS_RULES_COMPLETE)
       .build();
-  private static final DatasetInfo DEPRECATED_DATASET_INFO = DatasetInfo.builder(DATASET_ID)
-      .acl(ACCESS_RULES)
-      .setCreationTime(CREATION_TIME)
-      .defaultTableLifetime(DEFAULT_TABLE_EXPIRATION)
-      .description(DESCRIPTION)
-      .setEtag(ETAG)
-      .friendlyName(FRIENDLY_NAME)
-      .setGeneratedId(GENERATED_ID)
-      .setLastModified(LAST_MODIFIED)
-      .location(LOCATION)
-      .setSelfLink(SELF_LINK)
-      .build();
-  private static final DatasetInfo DEPRECATED_DATASET_INFO_COMPLETE = DATASET_INFO.toBuilder()
-      .datasetId(DATASET_ID_COMPLETE)
-      .acl(ACCESS_RULES_COMPLETE)
-      .build();
 
   @Test
   public void testToBuilder() {
@@ -124,32 +108,6 @@ public class DatasetInfoTest {
     assertEquals(SELF_LINK, DATASET_INFO_COMPLETE.getSelfLink());
   }
 
-  @Test
-  public void testBuilderDeprecated() {
-    assertNull(DEPRECATED_DATASET_INFO.datasetId().getProject());
-    assertEquals(DATASET_ID, DEPRECATED_DATASET_INFO.datasetId());
-    assertEquals(ACCESS_RULES, DEPRECATED_DATASET_INFO.acl());
-    assertEquals(CREATION_TIME, DEPRECATED_DATASET_INFO.creationTime());
-    assertEquals(DEFAULT_TABLE_EXPIRATION, DEPRECATED_DATASET_INFO.defaultTableLifetime());
-    assertEquals(DESCRIPTION, DEPRECATED_DATASET_INFO.description());
-    assertEquals(ETAG, DEPRECATED_DATASET_INFO.etag());
-    assertEquals(FRIENDLY_NAME, DEPRECATED_DATASET_INFO.friendlyName());
-    assertEquals(GENERATED_ID, DEPRECATED_DATASET_INFO.generatedId());
-    assertEquals(LAST_MODIFIED, DEPRECATED_DATASET_INFO.lastModified());
-    assertEquals(LOCATION, DEPRECATED_DATASET_INFO.location());
-    assertEquals(SELF_LINK, DEPRECATED_DATASET_INFO.selfLink());
-    assertEquals(DATASET_ID_COMPLETE, DEPRECATED_DATASET_INFO_COMPLETE.datasetId());
-    assertEquals(ACCESS_RULES_COMPLETE, DEPRECATED_DATASET_INFO_COMPLETE.acl());
-    assertEquals(CREATION_TIME, DEPRECATED_DATASET_INFO_COMPLETE.creationTime());
-    assertEquals(DEFAULT_TABLE_EXPIRATION, DEPRECATED_DATASET_INFO_COMPLETE.defaultTableLifetime());
-    assertEquals(DESCRIPTION, DEPRECATED_DATASET_INFO_COMPLETE.description());
-    assertEquals(ETAG, DEPRECATED_DATASET_INFO_COMPLETE.etag());
-    assertEquals(FRIENDLY_NAME, DEPRECATED_DATASET_INFO_COMPLETE.friendlyName());
-    assertEquals(GENERATED_ID, DEPRECATED_DATASET_INFO_COMPLETE.generatedId());
-    assertEquals(LAST_MODIFIED, DEPRECATED_DATASET_INFO_COMPLETE.lastModified());
-    assertEquals(LOCATION, DEPRECATED_DATASET_INFO_COMPLETE.location());
-    assertEquals(SELF_LINK, DEPRECATED_DATASET_INFO_COMPLETE.selfLink());
-  }
 
   @Test
   public void testOf() {

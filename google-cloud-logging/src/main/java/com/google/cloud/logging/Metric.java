@@ -57,11 +57,6 @@ public class Metric extends MetricInfo {
       delegate = new BuilderImpl(metric);
     }
 
-    @Override
-    @Deprecated
-    public Builder name(String name) {
-      return setName(name);
-    }
 
     @Override
     public Builder setName(String name) {
@@ -69,11 +64,6 @@ public class Metric extends MetricInfo {
       return this;
     }
 
-    @Override
-    @Deprecated
-    public Builder description(String description) {
-      return setDescription(description);
-    }
 
     @Override
     public Builder setDescription(String description) {
@@ -81,11 +71,6 @@ public class Metric extends MetricInfo {
       return this;
     }
 
-    @Override
-    @Deprecated
-    public Builder filter(String filter) {
-      return setFilter(filter);
-    }
 
     @Override
     public Builder setFilter(String filter) {
@@ -127,13 +112,6 @@ public class Metric extends MetricInfo {
     return baseEquals(other) && Objects.equals(options, other.options);
   }
 
-  /**
-   * Returns the metrics's {@code Logging} object used to issue requests.
-   */
-  @Deprecated
-  public Logging logging() {
-    return getLogging();
-  }
 
   /**
    * Returns the metrics's {@code Logging} object used to issue requests.

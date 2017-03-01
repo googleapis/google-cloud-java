@@ -70,16 +70,6 @@ public final class BigQueryError implements Serializable {
     this.debugInfo = null;
   }
 
-  /**
-   * Returns short error code that summarizes the error.
-   *
-   * @see <a href="https://cloud.google.com/bigquery/troubleshooting-errors">Troubleshooting
-   *     Errors</a>
-   */
-  @Deprecated
-  public String reason() {
-    return getReason();
-  }
 
   /**
    * Returns short error code that summarizes the error.
@@ -91,13 +81,6 @@ public final class BigQueryError implements Serializable {
     return reason;
   }
 
-  /**
-   * Returns where the error occurred, if present.
-   */
-  @Deprecated
-  public String location() {
-    return getLocation();
-  }
 
   /**
    * Returns where the error occurred, if present.
@@ -110,13 +93,6 @@ public final class BigQueryError implements Serializable {
     return debugInfo;
   }
 
-  /**
-   * Returns a human-readable description of the error.
-   */
-  @Deprecated
-  public String message() {
-    return getMessage();
-  }
 
   /**
    * Returns a human-readable description of the error.

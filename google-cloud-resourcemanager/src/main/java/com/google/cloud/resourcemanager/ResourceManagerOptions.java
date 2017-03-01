@@ -41,13 +41,6 @@ public class ResourceManagerOptions
     }
   }
 
-  /**
-   * Returns a default {@code ResourceManagerOptions} instance.
-   */
-  @Deprecated
-  public static ResourceManagerOptions defaultInstance() {
-    return getDefaultInstance();
-  }
 
   /**
    * Returns a default {@code ResourceManagerOptions} instance.
@@ -126,10 +119,6 @@ public class ResourceManagerOptions
     return new Builder(this);
   }
 
-  @Deprecated
-  public static Builder builder() {
-    return newBuilder();
-  }
 
   public static Builder newBuilder() {
     return new Builder();
