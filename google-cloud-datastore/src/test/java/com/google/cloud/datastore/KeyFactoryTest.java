@@ -34,7 +34,6 @@ public class KeyFactoryTest {
   @Before
   public void setUp() {
     keyFactory = new KeyFactory(PROJECT_ID).setKind("k");
-    deprecatedKeyFactory = new KeyFactory(PROJECT_ID).kind("k");
   }
 
   @Test
@@ -77,45 +76,6 @@ public class KeyFactoryTest {
   }
 
   @Test
-  public void testResetDeprecated() {
-    IncompleteKey key = deprecatedKeyFactory
-        .projectId("ds1")
-        .namespace("ns1")
-        .ancestors(PathElement.of("p", 1))
-        .build();
-    assertEquals("k", key.kind());
-    assertEquals("ds1", key.projectId());
-    assertEquals("ns1", key.namespace());
-    assertEquals(1, key.ancestors().size());
-
-    deprecatedKeyFactory.reset();
-    try {
-      deprecatedKeyFactory.newKey(1);
-    } catch (NullPointerException ex) {
-      assertEquals("kind must not be null", ex.getMessage());
-    }
-    deprecatedKeyFactory.kind("k1");
-    key = deprecatedKeyFactory.newKey();
-    assertEquals("k1", key.kind());
-    assertEquals(PROJECT_ID, key.projectId());
-    assertTrue(key.namespace().isEmpty());
-    assertTrue(key.ancestors().isEmpty());
-
-    deprecatedKeyFactory = new KeyFactory(PROJECT_ID, "ns1").kind("k");
-    key = deprecatedKeyFactory.newKey();
-    assertEquals(PROJECT_ID, key.projectId());
-    assertEquals("ns1", key.namespace());
-    key = deprecatedKeyFactory.projectId("bla1").namespace("bla2").build();
-    assertEquals("bla1", key.projectId());
-    assertEquals("bla2", key.namespace());
-    deprecatedKeyFactory.reset().kind("kind");
-    key = deprecatedKeyFactory.newKey();
-    assertEquals(PROJECT_ID, key.projectId());
-    assertEquals("ns1", key.namespace());
-    assertEquals("kind", key.kind());
-  }
-
-  @Test
   public void testNewKey() throws Exception {
     Key key = keyFactory.newKey(1);
     verifyKey(key, 1L, "");
@@ -127,17 +87,6 @@ public class KeyFactoryTest {
     verifyKey(key, "k3", "ns", p1, p2);
   }
 
-  @Test
-  public void testNewKeyDeprecated() throws Exception {
-    Key key = keyFactory.newKey(1);
-    verifyKey(key, 1L, "");
-    key = deprecatedKeyFactory.newKey("n");
-    verifyKey(key, "n", "");
-    PathElement p1 = PathElement.of("k1", "n");
-    PathElement p2 = PathElement.of("k2", 10);
-    key = deprecatedKeyFactory.namespace("ns").ancestors(p1, p2).newKey("k3");
-    verifyKey(key, "k3", "ns", p1, p2);
-  }
 
   @Test
   public void testNewIncompleteKey() throws Exception {
@@ -149,15 +98,6 @@ public class KeyFactoryTest {
     verifyIncompleteKey(key, "ns", p1, p2);
   }
 
-  @Test
-  public void testNewIncompleteKeyDeprecated() throws Exception {
-    IncompleteKey key = deprecatedKeyFactory.newKey();
-    verifyIncompleteKey(key, "");
-    PathElement p1 = PathElement.of("k1", "n");
-    PathElement p2 = PathElement.of("k2", 10);
-    key = deprecatedKeyFactory.namespace("ns").ancestors(p1, p2).newKey();
-    verifyIncompleteKey(key, "ns", p1, p2);
-  }
 
   @Test(expected = NullPointerException.class)
   public void testNewIncompleteWithNoKind() {

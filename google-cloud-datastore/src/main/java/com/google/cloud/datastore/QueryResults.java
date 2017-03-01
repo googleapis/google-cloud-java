@@ -30,36 +30,12 @@ import java.util.Iterator;
  */
 public interface QueryResults<V> extends Iterator<V> {
 
-  /**
-   * Returns the actual class of the result's values.
-   */
-  @Deprecated
-  Class<?> resultClass();
 
   /**
    * Returns the actual class of the result's values.
    */
   Class<?> getResultClass();
 
-  /**
-   * Returns the Cursor for the point after the value returned in the last {@link #next} call. This
-   * cursor can be used to issue subsequent queries (with the same constraints) that may return
-   * additional results.
-   *
-   * <p>A simple use case:
-   * <pre> {@code
-   * Query<Entity> query = Query.newEntityQueryBuilder()
-   *     .setKind("Person")
-   *     .setFilter(PropertyFilter.eq("favoriteFood", "pizza"))
-   *     .build();
-   * QueryResults<Entity> results = datastore.run(query);
-   * // Consume some results (using results.next()) and do any other actions as necessary.
-   * query = query.toBuilder().setStartCursor(results.getCursorAfter()).build();
-   * results = datastore.run(query); // now we will iterate over all entities not yet consumed
-   * }</pre>
-   */
-  @Deprecated
-  Cursor cursorAfter();
 
   /**
    * Returns the Cursor for the point after the value returned in the last {@link #next} call. This

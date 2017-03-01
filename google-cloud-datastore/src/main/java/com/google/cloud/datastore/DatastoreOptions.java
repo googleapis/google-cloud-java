@@ -79,13 +79,6 @@ public class DatastoreOptions
       return new DatastoreOptions(this);
     }
 
-    /**
-     * Sets the default namespace to be used by the datastore service.
-     */
-    @Deprecated
-    public Builder namespace(String namespace) {
-      return setNamespace(namespace);
-    }
 
     /**
      * Sets the default namespace to be used by the datastore service.
@@ -139,13 +132,6 @@ public class DatastoreOptions
     return DefaultDatastoreRpcFactory.INSTANCE;
   }
 
-  /**
-   * Returns the default namespace to be used by the datastore service.
-   */
-  @Deprecated
-  public String namespace() {
-    return getNamespace();
-  }
 
   /**
    * Returns the default namespace to be used by the datastore service.
@@ -154,13 +140,6 @@ public class DatastoreOptions
     return namespace;
   }
 
-  /**
-   * Returns a default {@code DatastoreOptions} instance.
-   */
-  @Deprecated
-  public static DatastoreOptions defaultInstance() {
-    return getDefaultInstance();
-  }
 
   /**
    * Returns a default {@code DatastoreOptions} instance.
@@ -206,10 +185,6 @@ public class DatastoreOptions
     return baseEquals(other) && Objects.equals(namespace, other.namespace);
   }
 
-  @Deprecated
-  public static Builder builder() {
-    return newBuilder();
-  }
 
   public static Builder newBuilder() {
     return new Builder();

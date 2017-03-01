@@ -59,15 +59,6 @@ public class LocalDatastoreHelperTest {
     assertTrue(helper.getProjectId().startsWith(PROJECT_ID_PREFIX));
   }
 
-  @Test
-  public void testCreateDeprecated() {
-    LocalDatastoreHelper helper = LocalDatastoreHelper.create(0.75);
-    assertTrue(Math.abs(0.75 - helper.consistency()) < TOLERANCE);
-    assertTrue(helper.projectId().startsWith(PROJECT_ID_PREFIX));
-    helper = LocalDatastoreHelper.create();
-    assertTrue(Math.abs(0.9 - helper.consistency()) < TOLERANCE);
-    assertTrue(helper.projectId().startsWith(PROJECT_ID_PREFIX));
-  }
 
   @Test
   public void testOptions() {
