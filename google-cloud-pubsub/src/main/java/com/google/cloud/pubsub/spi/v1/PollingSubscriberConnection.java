@@ -185,6 +185,7 @@ final class PollingSubscriberConnection extends AbstractService implements AckPr
                   TimeUnit.MILLISECONDS);
               return;
             }
+            messageDispatcher.stop();
             notifyFailed(cause);
           }
         });
