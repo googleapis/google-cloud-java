@@ -24,6 +24,7 @@ import com.google.auth.Credentials;
 import com.google.cloud.Clock;
 import com.google.cloud.pubsub.spi.v1.MessageDispatcher.AckProcessor;
 import com.google.cloud.pubsub.spi.v1.MessageDispatcher.PendingModifyAckDeadline;
+import com.google.common.annotations.VisibleForTesting;
 import com.google.common.collect.Lists;
 import com.google.common.util.concurrent.AbstractService;
 import com.google.common.util.concurrent.FutureCallback;
@@ -39,7 +40,6 @@ import io.grpc.auth.MoreCallCredentials;
 import io.grpc.stub.ClientCallStreamObserver;
 import io.grpc.stub.ClientCalls;
 import io.grpc.stub.ClientResponseObserver;
-import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
@@ -211,35 +211,45 @@ final class StreamingSubscriberConnection extends AbstractService implements Ack
   @Override
   public void sendAckOperations(
       List<String> acksToSend, List<PendingModifyAckDeadline> ackDeadlineExtensions) {
-
-    // Send the modify ack deadlines in batches as not to exceed the max request
-    // size.
-    List<List<String>> ackChunks = Lists.partition(acksToSend, MAX_PER_REQUEST_CHANGES);
-    List<List<PendingModifyAckDeadline>> modifyAckDeadlineChunks =
-        Lists.partition(ackDeadlineExtensions, MAX_PER_REQUEST_CHANGES);
-    Iterator<List<String>> ackChunksIt = ackChunks.iterator();
-    Iterator<List<PendingModifyAckDeadline>> modifyAckDeadlineChunksIt =
-        modifyAckDeadlineChunks.iterator();
-
-    while (ackChunksIt.hasNext() || modifyAckDeadlineChunksIt.hasNext()) {
-      StreamingPullRequest.Builder requestBuilder =
-          StreamingPullRequest.newBuilder();
-      if (modifyAckDeadlineChunksIt.hasNext()) {
-        List<PendingModifyAckDeadline> modAckChunk = modifyAckDeadlineChunksIt.next();
-        for (PendingModifyAckDeadline modifyAckDeadline : modAckChunk) {
-          for (String ackId : modifyAckDeadline.ackIds) {
-            requestBuilder
-                .addModifyDeadlineSeconds(modifyAckDeadline.deadlineExtensionSeconds)
-                .addModifyDeadlineAckIds(ackId);
-          }
-        }
-      }
-      if (ackChunksIt.hasNext()) {
-        List<String> ackChunk = ackChunksIt.next();
-        requestBuilder.addAllAckIds(ackChunk);
-      }
-      requestObserver.onNext(requestBuilder.build());
+    StreamingPullRequest.Builder[] requests =
+        partitionAckOperations(acksToSend, ackDeadlineExtensions, MAX_PER_REQUEST_CHANGES);
+    for (StreamingPullRequest.Builder request : requests) {
+      requestObserver.onNext(request.build());
     }
+  }
+
+  @VisibleForTesting
+  static StreamingPullRequest.Builder[] partitionAckOperations(
+      List<String> acksToSend, List<PendingModifyAckDeadline> ackDeadlineExtensions, int size) {
+    int numExtensions = 0;
+    for (PendingModifyAckDeadline modify : ackDeadlineExtensions) {
+      numExtensions += modify.ackIds.size();
+    }
+    int numRequests = Math.max(numExtensions, acksToSend.size());
+    numRequests = numRequests / size + (numRequests % size == 0 ? 0 : 1);
+
+    StreamingPullRequest.Builder[] requests = new StreamingPullRequest.Builder[numRequests];
+    for (int i = 0; i < numRequests; i++) {
+      requests[i] = StreamingPullRequest.newBuilder();
+    }
+
+    int count = 0;
+    for (List<String> acksChunk : Lists.partition(acksToSend, size)) {
+      requests[count].addAllAckIds(acksChunk);
+      count++;
+    }
+
+    count = 0;
+    for (PendingModifyAckDeadline modify : ackDeadlineExtensions) {
+      for (String ackId : modify.ackIds) {
+        requests[count / size]
+            .addModifyDeadlineSeconds(modify.deadlineExtensionSeconds)
+            .addModifyDeadlineAckIds(ackId);
+        count++;
+      }
+    }
+
+    return requests;
   }
 
   public void updateStreamAckDeadline(int newAckDeadlineSeconds) {

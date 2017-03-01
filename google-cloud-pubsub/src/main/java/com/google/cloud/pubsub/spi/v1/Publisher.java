@@ -321,7 +321,7 @@ public class Publisher {
   private void setupDurationBasedPublishAlarm() {
     if (!activeAlarm.getAndSet(true)) {
       long delayThresholdMs = getBundlingSettings().getDelayThreshold().getMillis();
-      logger.log(Level.INFO, "Setting up alarm for the next %d ms.", delayThresholdMs);
+      logger.log(Level.INFO, "Setting up alarm for the next " + delayThresholdMs + " ms.");
       currentAlarmFuture =
           executor.schedule(
               new Runnable() {

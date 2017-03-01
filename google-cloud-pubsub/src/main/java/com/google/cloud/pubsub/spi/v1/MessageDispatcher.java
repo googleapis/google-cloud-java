@@ -125,14 +125,12 @@ class MessageDispatcher {
     final List<String> ackIds;
     final int deadlineExtensionSeconds;
 
-    PendingModifyAckDeadline(int deadlineExtensionSeconds) {
+    PendingModifyAckDeadline(int deadlineExtensionSeconds, String... ackIds) {
       this.ackIds = new ArrayList<String>();
       this.deadlineExtensionSeconds = deadlineExtensionSeconds;
-    }
-
-    PendingModifyAckDeadline(String ackId, int deadlineExtensionSeconds) {
-      this(deadlineExtensionSeconds);
-      addAckId(ackId);
+      for (String ackId : ackIds) {
+        addAckId(ackId);
+      }
     }
 
     public void addAckId(String ackId) {
@@ -463,7 +461,7 @@ class MessageDispatcher {
   }
 
   private void processOutstandingAckOperations() {
-    processOutstandingAckOperations(new ArrayList<PendingModifyAckDeadline>());
+    processOutstandingAckOperations(Collections.<PendingModifyAckDeadline>emptyList());
   }
 
   private void processOutstandingAckOperations(
@@ -475,7 +473,7 @@ class MessageDispatcher {
       if (!pendingAcks.isEmpty()) {
         try {
           acksToSend = new ArrayList<>(pendingAcks);
-          logger.log(Level.INFO, "Sending {} acks", acksToSend.size());
+          logger.log(Level.INFO, "Sending " + acksToSend.size() + " acks");
         } finally {
           pendingAcks.clear();
         }
@@ -488,7 +486,7 @@ class MessageDispatcher {
           for (String ackId : pendingNacks) {
             nacksToSend.addAckId(ackId);
           }
-          logger.log(Level.INFO, "Sending {} nacks", pendingNacks.size());
+          logger.log(Level.INFO, "Sending " + pendingNacks.size() + " nacks");
         } finally {
           pendingNacks.clear();
         }
