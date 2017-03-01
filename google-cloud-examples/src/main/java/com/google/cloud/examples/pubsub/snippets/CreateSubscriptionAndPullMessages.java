@@ -56,6 +56,7 @@ public class CreateSubscriptionAndPullMessages {
           new Subscriber.SubscriberListener() {
             @Override
             public void failed(Subscriber.State from, Throwable failure) {
+              // Handle failure. This is called when the Subscriber encountered a fatal error and is shutting down.
               System.err.println(failure);
             }
           },
