@@ -83,6 +83,8 @@ public class RemoteStorageHelperTest {
   private List<Blob> blobList;
   private Page<Blob> blobPage;
 
+
+
   @Rule
   public ExpectedException thrown = ExpectedException.none();
 
@@ -220,7 +222,6 @@ public class RemoteStorageHelperTest {
   public void testCreateFromStream() {
     RemoteStorageHelper helper = RemoteStorageHelper.create(PROJECT_ID, JSON_KEY_STREAM);
     StorageOptions options = helper.getOptions();
-    assertEquals(options, helper.options());
     assertEquals(PROJECT_ID, options.getProjectId());
     assertEquals(60000, options.getConnectTimeout());
     assertEquals(60000, options.getReadTimeout());

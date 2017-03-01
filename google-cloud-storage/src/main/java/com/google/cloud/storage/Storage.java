@@ -101,13 +101,13 @@ public interface Storage extends Service<StorageOptions> {
     }
 
     @Override
-    @Deprecated
-    public String selector() {
-      return getSelector();
+    public String getSelector() {
+      return selector;
     }
 
+    @Deprecated
     @Override
-    public String getSelector() {
+    public String selector() {
       return selector;
     }
   }
@@ -147,13 +147,13 @@ public interface Storage extends Service<StorageOptions> {
     }
 
     @Override
-    @Deprecated
-    public String selector() {
-      return getSelector();
+    public String getSelector() {
+      return selector;
     }
 
+    @Deprecated
     @Override
-    public String getSelector() {
+    public String selector() {
       return selector;
     }
   }
@@ -883,18 +883,8 @@ public interface Storage extends Service<StorageOptions> {
         this.generation = generation;
       }
 
-      @Deprecated
-      public String name() {
-        return getName();
-      }
-
       public String getName() {
         return name;
-      }
-
-      @Deprecated
-      public Long generation() {
-        return getGeneration();
       }
 
       public Long getGeneration() {
@@ -936,14 +926,6 @@ public interface Storage extends Service<StorageOptions> {
       /**
        * Sets compose operation's target blob.
        */
-      @Deprecated
-      public Builder target(BlobInfo target) {
-        return setTarget(target);
-      }
-
-      /**
-       * Sets compose operation's target blob.
-       */
       public Builder setTarget(BlobInfo target) {
         this.target = target;
         return this;
@@ -952,25 +934,9 @@ public interface Storage extends Service<StorageOptions> {
       /**
        * Sets compose operation's target blob options.
        */
-      @Deprecated
-      public Builder targetOptions(BlobTargetOption... options) {
-        return setTargetOptions(options);
-      }
-
-      /**
-       * Sets compose operation's target blob options.
-       */
       public Builder setTargetOptions(BlobTargetOption... options) {
         Collections.addAll(targetOptions, options);
         return this;
-      }
-
-      /**
-       * Sets compose operation's target blob options.
-       */
-      @Deprecated
-      public Builder targetOptions(Iterable<BlobTargetOption> options) {
-        return setTargetOptions(options);
       }
 
       /**
@@ -1000,14 +966,6 @@ public interface Storage extends Service<StorageOptions> {
     /**
      * Returns compose operation's source blobs.
      */
-    @Deprecated
-    public List<SourceBlob> sourceBlobs() {
-      return getSourceBlobs();
-    }
-
-    /**
-     * Returns compose operation's source blobs.
-     */
     public List<SourceBlob> getSourceBlobs() {
       return sourceBlobs;
     }
@@ -1015,24 +973,8 @@ public interface Storage extends Service<StorageOptions> {
     /**
      * Returns compose operation's target blob.
      */
-    @Deprecated
-    public BlobInfo target() {
-      return getTarget();
-    }
-
-    /**
-     * Returns compose operation's target blob.
-     */
     public BlobInfo getTarget() {
       return target;
-    }
-
-    /**
-     * Returns compose operation's target blob's options.
-     */
-    @Deprecated
-    public List<BlobTargetOption> targetOptions() {
-      return getTargetOptions();
     }
 
     /**
@@ -1061,14 +1003,6 @@ public interface Storage extends Service<StorageOptions> {
      */
     public static ComposeRequest of(String bucket, Iterable<String> sources, String target) {
       return of(sources, BlobInfo.newBuilder(BlobId.of(bucket, target)).build());
-    }
-
-    /**
-     * Returns a {@code ComposeRequest} builder.
-     */
-    @Deprecated
-    public static Builder builder() {
-      return newBuilder();
     }
 
     /**
@@ -1107,29 +1041,9 @@ public interface Storage extends Service<StorageOptions> {
        *
        * @return the builder
        */
-      @Deprecated
-      public Builder source(String bucket, String blob) {
-        return setSource(bucket, blob);
-      }
-
-      /**
-       * Sets the blob to copy given bucket and blob name.
-       *
-       * @return the builder
-       */
       public Builder setSource(String bucket, String blob) {
         this.source = BlobId.of(bucket, blob);
         return this;
-      }
-
-      /**
-       * Sets the blob to copy given a {@link BlobId}.
-       *
-       * @return the builder
-       */
-      @Deprecated
-      public Builder source(BlobId source) {
-        return setSource(source);
       }
 
       /**
@@ -1147,29 +1061,9 @@ public interface Storage extends Service<StorageOptions> {
        *
        * @return the builder
        */
-      @Deprecated
-      public Builder sourceOptions(BlobSourceOption... options) {
-        return setSourceOptions(options);
-      }
-
-      /**
-       * Sets blob's source options.
-       *
-       * @return the builder
-       */
       public Builder setSourceOptions(BlobSourceOption... options) {
         Collections.addAll(sourceOptions, options);
         return this;
-      }
-
-      /**
-       * Sets blob's source options.
-       *
-       * @return the builder
-       */
-      @Deprecated
-      public Builder sourceOptions(Iterable<BlobSourceOption> options) {
-        return setSourceOptions(options);
       }
 
       /**
@@ -1187,33 +1081,10 @@ public interface Storage extends Service<StorageOptions> {
        *
        * @return the builder
        */
-      @Deprecated
-      public Builder target(BlobId targetId) {
-        return setTarget(targetId);
-      }
-
-      /**
-       * Sets the copy target. Target blob information is copied from source.
-       *
-       * @return the builder
-       */
       public Builder setTarget(BlobId targetId) {
         this.overrideInfo = false;
         this.target = BlobInfo.newBuilder(targetId).build();
         return this;
-      }
-
-      /**
-       * Sets the copy target and target options. {@code target} parameter is used to override
-       * source blob information (e.g. {@code contentType}, {@code contentLanguage}). Target blob
-       * information is set exactly to {@code target}, no information is inherited from the source
-       * blob.
-       *
-       * @return the builder
-       */
-      @Deprecated
-      public Builder target(BlobInfo target, BlobTargetOption... options) {
-        return setTarget(target, options);
       }
 
       /**
@@ -1252,19 +1123,6 @@ public interface Storage extends Service<StorageOptions> {
        *
        * @return the builder
        */
-      @Deprecated
-      public Builder target(BlobInfo target, Iterable<BlobTargetOption> options) {
-        return setTarget(target, options);
-      }
-
-      /**
-       * Sets the copy target and target options. {@code target} parameter is used to override
-       * source blob information (e.g. {@code contentType}, {@code contentLanguage}). Target blob
-       * information is set exactly to {@code target}, no information is inherited from the source
-       * blob.
-       *
-       * @return the builder
-       */
       public Builder setTarget(BlobInfo target, Iterable<BlobTargetOption> options) {
         this.overrideInfo = true;
         this.target = checkNotNull(target);
@@ -1283,18 +1141,6 @@ public interface Storage extends Service<StorageOptions> {
         this.target = BlobInfo.newBuilder(targetId).build();
         Iterables.addAll(targetOptions, options);
         return this;
-      }
-
-      /**
-       * Sets the maximum number of megabytes to copy for each RPC call. This parameter is ignored
-       * if source and target blob share the same location and storage class as copy is made with
-       * one single RPC.
-       *
-       * @return the builder
-       */
-      @Deprecated
-      public Builder megabytesCopiedPerChunk(Long megabytesCopiedPerChunk) {
-        return setMegabytesCopiedPerChunk(megabytesCopiedPerChunk);
       }
 
       /**
@@ -1329,14 +1175,6 @@ public interface Storage extends Service<StorageOptions> {
     /**
      * Returns the blob to copy, as a {@link BlobId}.
      */
-    @Deprecated
-    public BlobId source() {
-      return getSource();
-    }
-
-    /**
-     * Returns the blob to copy, as a {@link BlobId}.
-     */
     public BlobId getSource() {
       return source;
     }
@@ -1344,24 +1182,8 @@ public interface Storage extends Service<StorageOptions> {
     /**
      * Returns blob's source options.
      */
-    @Deprecated
-    public List<BlobSourceOption> sourceOptions() {
-      return getSourceOptions();
-    }
-
-    /**
-     * Returns blob's source options.
-     */
     public List<BlobSourceOption> getSourceOptions() {
       return sourceOptions;
-    }
-
-    /**
-     * Returns the {@link BlobInfo} for the target blob.
-     */
-    @Deprecated
-    public BlobInfo target() {
-      return getTarget();
     }
 
     /**
@@ -1385,26 +1207,8 @@ public interface Storage extends Service<StorageOptions> {
     /**
      * Returns blob's target options.
      */
-    @Deprecated
-    public List<BlobTargetOption> targetOptions() {
-      return getTargetOptions();
-    }
-
-    /**
-     * Returns blob's target options.
-     */
     public List<BlobTargetOption> getTargetOptions() {
       return targetOptions;
-    }
-
-    /**
-     * Returns the maximum number of megabytes to copy for each RPC call. This parameter is ignored
-     * if source and target blob share the same location and storage class as copy is made with
-     * one single RPC.
-     */
-    @Deprecated
-    public Long megabytesCopiedPerChunk() {
-      return getMegabytesCopiedPerChunk();
     }
 
     /**
@@ -1500,14 +1304,6 @@ public interface Storage extends Service<StorageOptions> {
     /**
      * Creates a builder for {@code CopyRequest} objects.
      */
-    @Deprecated
-    public static Builder builder() {
-      return newBuilder();
-    }
-
-    /**
-     * Creates a builder for {@code CopyRequest} objects.
-     */
     public static Builder newBuilder() {
       return new Builder();
     }
@@ -1598,7 +1394,7 @@ public interface Storage extends Service<StorageOptions> {
    * String blobName = "my_blob_name";
    * String encryptionKey = "my_encryption_key";
    * InputStream content = new ByteArrayInputStream("Hello, World!".getBytes(UTF_8));
-   * 
+   *
    * BlobId blobId = BlobId.of(bucketName, blobName);
    * BlobInfo blobInfo = BlobInfo.newBuilder(blobId)
    *     .setContentType("text/plain")
@@ -2010,7 +1806,7 @@ public interface Storage extends Service<StorageOptions> {
    *   public void success(Boolean result) {
    *     // deleted successfully
    *   }
-   * 
+   *
    *   public void error(StorageException exception) {
    *     // delete failed
    *   }

@@ -42,14 +42,6 @@ public final class BlobId implements Serializable {
     this.generation = generation;
   }
 
-  /**
-   * Returns the name of the bucket containing the blob.
-   */
-  @Deprecated
-  public String bucket() {
-    return getBucket();
-  }
-
     /**
    * Returns the name of the bucket containing the blob.
    */
@@ -57,27 +49,11 @@ public final class BlobId implements Serializable {
     return bucket;
   }
 
-  /**
-   * Returns the name of the blob.
-   */
-  @Deprecated
-  public String name() {
-    return getName();
-  }
-
     /**
    * Returns the name of the blob.
    */
   public String getName() {
     return name;
-  }
-
-  /**
-   * Returns blob's data generation. Used for versioning.
-   */
-  @Deprecated
-  public Long generation() {
-    return getGeneration();
   }
 
     /**

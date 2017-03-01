@@ -71,37 +71,11 @@ public class CopyWriter implements Restorable<CopyWriter> {
    *
    * @throws StorageException upon failure
    */
-  @Deprecated
-  public Blob result() {
-    return getResult();
-  }
-
-  /**
-   * Returns the updated information for the written blob. Calling this method when {@code isDone()}
-   * is {@code false} will block until all pending chunks are copied.
-   *
-   * <p>This method has the same effect of doing:
-   * <pre> {@code
-   * while (!copyWriter.isDone()) {
-   *    copyWriter.copyChunk();
-   * }}
-   * </pre>
-   *
-   * @throws StorageException upon failure
-   */
   public Blob getResult() {
     while (!isDone()) {
       copyChunk();
     }
     return Blob.fromPb(serviceOptions.getService(), rewriteResponse.result);
-  }
-
-  /**
-   * Returns the size of the blob being copied.
-   */
-  @Deprecated
-  public long blobSize() {
-    return getBlobSize();
   }
 
   /**
@@ -116,14 +90,6 @@ public class CopyWriter implements Restorable<CopyWriter> {
    */
   public boolean isDone() {
     return rewriteResponse.isDone;
-  }
-
-  /**
-   * Returns the number of bytes copied.
-   */
-  @Deprecated
-  public long totalBytesCopied() {
-    return getTotalBytesCopied();
   }
 
   /**
