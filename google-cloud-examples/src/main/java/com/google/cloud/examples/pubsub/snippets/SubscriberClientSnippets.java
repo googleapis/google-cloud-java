@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google Inc.
+ * Copyright 2017 Google Inc. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -51,7 +51,7 @@ public class SubscriberClientSnippets {
   public String getProjectId() {
     return projectId;
   }
-  
+
   /** Example of creating a pull subscription for a topic. */
   public Subscription createSubscription(String topic, String subscriptionId) throws Exception {
     try (SubscriberClient subscriberClient = SubscriberClient.create()) {
