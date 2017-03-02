@@ -211,15 +211,15 @@ final class StreamingSubscriberConnection extends AbstractService implements Ack
   @Override
   public void sendAckOperations(
       List<String> acksToSend, List<PendingModifyAckDeadline> ackDeadlineExtensions) {
-    StreamingPullRequest.Builder[] requests =
+    StreamingPullRequest[] requests =
         partitionAckOperations(acksToSend, ackDeadlineExtensions, MAX_PER_REQUEST_CHANGES);
-    for (StreamingPullRequest.Builder request : requests) {
-      requestObserver.onNext(request.build());
+    for (StreamingPullRequest request : requests) {
+      requestObserver.onNext(request);
     }
   }
 
   @VisibleForTesting
-  static StreamingPullRequest.Builder[] partitionAckOperations(
+  static StreamingPullRequest[] partitionAckOperations(
       List<String> acksToSend, List<PendingModifyAckDeadline> ackDeadlineExtensions, int size) {
     int numExtensions = 0;
     for (PendingModifyAckDeadline modify : ackDeadlineExtensions) {
@@ -233,23 +233,32 @@ final class StreamingSubscriberConnection extends AbstractService implements Ack
       requests[i] = StreamingPullRequest.newBuilder();
     }
 
-    int count = 0;
+    int reqCount = 0;
     for (List<String> acksChunk : Lists.partition(acksToSend, size)) {
-      requests[count].addAllAckIds(acksChunk);
-      count++;
+      requests[reqCount].addAllAckIds(acksChunk);
+      reqCount++;
     }
 
-    count = 0;
+    reqCount = 0;
+    int ackCount = 0;
     for (PendingModifyAckDeadline modify : ackDeadlineExtensions) {
       for (String ackId : modify.ackIds) {
-        requests[count / size]
+        requests[reqCount]
             .addModifyDeadlineSeconds(modify.deadlineExtensionSeconds)
             .addModifyDeadlineAckIds(ackId);
-        count++;
+        ackCount++;
+        if (ackCount == size) {
+          reqCount++;
+          ackCount = 0;
+        }
       }
     }
 
-    return requests;
+    StreamingPullRequest[] ret = new StreamingPullRequest[requests.length];
+    for (int i = 0; i < requests.length; i++) {
+      ret[i] = requests[i].build();
+    }
+    return ret;
   }
 
   public void updateStreamAckDeadline(int newAckDeadlineSeconds) {

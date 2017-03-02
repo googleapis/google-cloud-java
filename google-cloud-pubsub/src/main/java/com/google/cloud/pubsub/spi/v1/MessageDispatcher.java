@@ -473,7 +473,7 @@ class MessageDispatcher {
       if (!pendingAcks.isEmpty()) {
         try {
           acksToSend = new ArrayList<>(pendingAcks);
-          logger.log(Level.INFO, "Sending " + acksToSend.size() + " acks");
+          logger.log(Level.INFO, "Sending {0} acks", acksToSend.size());
         } finally {
           pendingAcks.clear();
         }
@@ -486,7 +486,7 @@ class MessageDispatcher {
           for (String ackId : pendingNacks) {
             nacksToSend.addAckId(ackId);
           }
-          logger.log(Level.INFO, "Sending " + pendingNacks.size() + " nacks");
+          logger.log(Level.INFO, "Sending {0} nacks", pendingNacks.size());
         } finally {
           pendingNacks.clear();
         }
