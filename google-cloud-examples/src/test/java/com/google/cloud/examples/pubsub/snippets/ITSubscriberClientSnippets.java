@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google Inc. All Rights Reserved.
+ * Copyright 2017 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,6 @@ import static org.junit.Assert.assertTrue;
 import com.google.api.gax.grpc.ApiException;
 import com.google.cloud.Identity;
 import com.google.cloud.Role;
-import com.google.cloud.ServiceOptions;
 import com.google.cloud.pubsub.spi.v1.PagedResponseWrappers.ListSubscriptionsPagedResponse;
 import com.google.cloud.pubsub.spi.v1.Publisher;
 import com.google.cloud.pubsub.spi.v1.PublisherClient;
@@ -74,8 +73,8 @@ public class ITSubscriberClientSnippets {
 
   @BeforeClass
   public static void beforeClass() {
-    projectId = ServiceOptions.getDefaultProjectId();
-    subscriberClientSnippets = new SubscriberClientSnippets(projectId);
+    subscriberClientSnippets = new SubscriberClientSnippets();
+    projectId = subscriberClientSnippets.getProjectId();
   }
 
   @Before

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google Inc. All Rights Reserved.
+ * Copyright 2017 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,6 +20,7 @@ package com.google.cloud.examples.pubsub.snippets;
 
 import com.google.cloud.Identity;
 import com.google.cloud.Role;
+import com.google.cloud.ServiceOptions;
 import com.google.cloud.pubsub.spi.v1.PagedResponseWrappers.ListSubscriptionsPagedResponse;
 import com.google.cloud.pubsub.spi.v1.PublisherClient;
 import com.google.cloud.pubsub.spi.v1.SubscriberClient;
@@ -43,10 +44,14 @@ public class SubscriberClientSnippets {
 
   private final String projectId;
 
-  public SubscriberClientSnippets(String projectId) {
-    this.projectId = projectId;
+  public SubscriberClientSnippets() {
+    this.projectId = ServiceOptions.getDefaultProjectId();
   }
 
+  public String getProjectId() {
+    return projectId;
+  }
+  
   /** Example of creating a pull subscription for a topic. */
   public Subscription createSubscription(String topic, String subscriptionId) throws Exception {
     try (SubscriberClient subscriberClient = SubscriberClient.create()) {

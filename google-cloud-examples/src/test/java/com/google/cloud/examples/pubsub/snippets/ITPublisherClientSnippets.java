@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google Inc. All Rights Reserved.
+ * Copyright 2017 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +23,6 @@ import static org.junit.Assert.assertTrue;
 import com.google.api.gax.grpc.ApiException;
 import com.google.cloud.Identity;
 import com.google.cloud.Role;
-import com.google.cloud.ServiceOptions;
 import com.google.cloud.pubsub.spi.v1.PagedResponseWrappers.ListTopicSubscriptionsPagedResponse;
 import com.google.cloud.pubsub.spi.v1.PagedResponseWrappers.ListTopicsPagedResponse;
 import com.google.cloud.pubsub.spi.v1.SubscriberClient;
@@ -71,15 +70,14 @@ public class ITPublisherClientSnippets {
 
   @BeforeClass
   public static void beforeClass() {
-    projectId = ServiceOptions.getDefaultProjectId();
-    publisherClientSnippets = new PublisherClientSnippets(projectId);
+    publisherClientSnippets = new PublisherClientSnippets();
+    projectId = publisherClientSnippets.getProjectId();
   }
 
   @Before
   public void setUp() throws Exception {
     Cleanup.deleteTestTopicsAndSubscriptions(projectId, topics, subscriptions);
   }
-
 
   @Test
   public void topicAddedIsSameAsRetrieved() throws Exception {
