@@ -75,7 +75,7 @@ import org.joda.time.Duration;
  * </code>
  * </pre>
  */
-@Generated("by GAPIC")
+@Generated("by GAPIC v0.0.5")
 @ExperimentalApi
 public class TraceServiceSettings extends ClientSettings {
   /** The default address of the service. */
@@ -92,8 +92,8 @@ public class TraceServiceSettings extends ClientSettings {
           .add("https://www.googleapis.com/auth/trace.readonly")
           .build();
 
-  private static final String DEFAULT_GENERATOR_NAME = "gapic";
-  private static final String DEFAULT_GENERATOR_VERSION = "0.0.5";
+  private static final String DEFAULT_GAPIC_NAME = "gapic";
+  private static final String DEFAULT_GAPIC_VERSION = "";
 
   private final SimpleCallSettings<PatchTracesRequest, Empty> patchTracesSettings;
   private final SimpleCallSettings<GetTraceRequest, Trace> getTraceSettings;
@@ -146,8 +146,13 @@ public class TraceServiceSettings extends ClientSettings {
     return InstantiatingChannelProvider.newBuilder()
         .setServiceAddress(DEFAULT_SERVICE_ADDRESS)
         .setPort(DEFAULT_SERVICE_PORT)
-        .setGeneratorHeader(DEFAULT_GENERATOR_NAME, DEFAULT_GENERATOR_VERSION)
+        .setGeneratorHeader(DEFAULT_GAPIC_NAME, getGapicVersion())
         .setCredentialsProvider(defaultCredentialsProviderBuilder().build());
+  }
+
+  private static String getGapicVersion() {
+    String packageVersion = TraceServiceSettings.class.getPackage().getImplementationVersion();
+    return packageVersion != null ? packageVersion : DEFAULT_GAPIC_VERSION;
   }
 
   /** Returns a builder for this class with recommended defaults. */
@@ -243,7 +248,9 @@ public class TraceServiceSettings extends ClientSettings {
           Sets.immutableEnumSet(
               Lists.<Status.Code>newArrayList(
                   Status.Code.DEADLINE_EXCEEDED, Status.Code.UNAVAILABLE)));
-      definitions.put("non_idempotent", Sets.immutableEnumSet(Lists.<Status.Code>newArrayList()));
+      definitions.put(
+          "non_idempotent",
+          Sets.immutableEnumSet(Lists.<Status.Code>newArrayList(Status.Code.UNAVAILABLE)));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
