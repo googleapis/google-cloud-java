@@ -18,7 +18,7 @@ package com.google.cloud.storage;
 /**
  * String constants for the names of the storage classes.
  */
-public class StorageClass {
+public class StorageClasses {
   /**
    * Name for the multi-regional storage class.
    */

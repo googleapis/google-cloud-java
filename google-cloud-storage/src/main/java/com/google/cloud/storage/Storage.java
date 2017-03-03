@@ -1527,7 +1527,7 @@ public interface Storage extends Service<StorageOptions> {
    * String bucketName = "my_unique_bucket";
    * Bucket bucket = storage.create(BucketInfo.newBuilder(bucketName)
    *     // See here for possible values: http://g.co/cloud/storage/docs/storage-classes
-   *     .setStorageClass(StorageClass.COLDLINE)
+   *     .setStorageClass(StorageClasses.COLDLINE)
    *     // Possible values: http://g.co/cloud/storage/docs/bucket-locations#location-mr
    *     .setLocation("asia")
    *     .build());
