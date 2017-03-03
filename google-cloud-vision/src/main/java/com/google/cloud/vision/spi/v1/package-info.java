@@ -21,9 +21,9 @@
  *
  * <p>==================== ImageAnnotatorClient ====================
  *
- * <p>Service Description: Service that performs Google Cloud Vision API detection tasks, such as
- * face, landmark, logo, label, and text detection, over client images, and returns detected
- * entities from the images.
+ * <p>Service Description: Service that performs Google Cloud Vision API detection tasks over client
+ * images, such as face, landmark, logo, label, and text detection. The ImageAnnotator service
+ * returns detected entities from the images.
  *
  * <p>Sample for ImageAnnotatorClient:
  *

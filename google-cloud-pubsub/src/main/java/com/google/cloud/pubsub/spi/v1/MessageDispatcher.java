@@ -16,7 +16,7 @@
 
 package com.google.cloud.pubsub.spi.v1;
 
-import com.google.api.gax.grpc.FlowController;
+import com.google.api.gax.core.FlowController;
 import com.google.api.stats.Distribution;
 import com.google.cloud.Clock;
 import com.google.common.annotations.VisibleForTesting;

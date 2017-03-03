@@ -16,9 +16,9 @@
 
 package com.google.cloud.pubsub.spi.v1;
 
+import com.google.api.gax.core.FlowControlSettings;
+import com.google.api.gax.core.FlowController;
 import com.google.api.gax.grpc.ExecutorProvider;
-import com.google.api.gax.grpc.FlowControlSettings;
-import com.google.api.gax.grpc.FlowController;
 import com.google.api.gax.grpc.InstantiatingExecutorProvider;
 import com.google.api.stats.Distribution;
 import com.google.auth.Credentials;
@@ -283,7 +283,7 @@ public class Subscriber {
               Ints.saturatedCast(ackExpirationPadding.getStandardSeconds()));
       clock = builder.clock.isPresent() ? builder.clock.get() : Clock.defaultClock();
 
-      flowController = new FlowController(builder.flowControlSettings, false);
+      flowController = new FlowController(builder.flowControlSettings);
 
       executor = builder.executorProvider.getExecutor();
       if (builder.executorProvider.shouldAutoClose()) {

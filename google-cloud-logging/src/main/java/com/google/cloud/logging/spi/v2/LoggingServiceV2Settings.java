@@ -20,11 +20,13 @@ import static com.google.cloud.logging.spi.v2.PagedResponseWrappers.ListLogsPage
 import static com.google.cloud.logging.spi.v2.PagedResponseWrappers.ListMonitoredResourceDescriptorsPagedResponse;
 
 import com.google.api.MonitoredResourceDescriptor;
+import com.google.api.gax.bundling.BundlingSettings;
+import com.google.api.gax.core.FlowControlSettings;
+import com.google.api.gax.core.FlowController.LimitExceededBehavior;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.RetrySettings;
 import com.google.api.gax.grpc.BundlingCallSettings;
 import com.google.api.gax.grpc.BundlingDescriptor;
-import com.google.api.gax.grpc.BundlingSettings;
 import com.google.api.gax.grpc.CallContext;
 import com.google.api.gax.grpc.ChannelProvider;
 import com.google.api.gax.grpc.ClientSettings;
@@ -558,7 +560,11 @@ public class LoggingServiceV2Settings extends ClientSettings {
           .getBundlingSettingsBuilder()
           .setElementCountThreshold(100)
           .setRequestByteThreshold(1024)
-          .setDelayThreshold(Duration.millis(10));
+          .setDelayThreshold(Duration.millis(10))
+          .setFlowControlSettings(
+              FlowControlSettings.newBuilder()
+                  .setLimitExceededBehavior(LimitExceededBehavior.Ignore)
+                  .build());
       builder
           .writeLogEntriesSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))

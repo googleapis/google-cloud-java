@@ -18,11 +18,13 @@ package com.google.cloud.pubsub.spi.v1;
 import static com.google.cloud.pubsub.spi.v1.PagedResponseWrappers.ListTopicSubscriptionsPagedResponse;
 import static com.google.cloud.pubsub.spi.v1.PagedResponseWrappers.ListTopicsPagedResponse;
 
+import com.google.api.gax.bundling.BundlingSettings;
+import com.google.api.gax.core.FlowControlSettings;
+import com.google.api.gax.core.FlowController.LimitExceededBehavior;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.RetrySettings;
 import com.google.api.gax.grpc.BundlingCallSettings;
 import com.google.api.gax.grpc.BundlingDescriptor;
-import com.google.api.gax.grpc.BundlingSettings;
 import com.google.api.gax.grpc.CallContext;
 import com.google.api.gax.grpc.ChannelProvider;
 import com.google.api.gax.grpc.ClientSettings;
@@ -539,7 +541,11 @@ public class PublisherSettings extends ClientSettings {
           .getBundlingSettingsBuilder()
           .setElementCountThreshold(10)
           .setRequestByteThreshold(1024)
-          .setDelayThreshold(Duration.millis(10));
+          .setDelayThreshold(Duration.millis(10))
+          .setFlowControlSettings(
+              FlowControlSettings.newBuilder()
+                  .setLimitExceededBehavior(LimitExceededBehavior.Ignore)
+                  .build());
       builder
           .publishSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("one_plus_delivery"))
