@@ -196,15 +196,14 @@ final class PollingSubscriberConnection extends AbstractService implements AckPr
       List<String> acksToSend, List<PendingModifyAckDeadline> ackDeadlineExtensions) {
     // Send the modify ack deadlines in bundles as not to exceed the max request
     // size.
-    List<List<PendingModifyAckDeadline>> modifyAckDeadlineChunks =
-        Lists.partition(ackDeadlineExtensions, MAX_PER_REQUEST_CHANGES);
-    for (List<PendingModifyAckDeadline> modAckChunk : modifyAckDeadlineChunks) {
-      for (PendingModifyAckDeadline modifyAckDeadline : modAckChunk) {
+    for (PendingModifyAckDeadline modifyAckDeadline : ackDeadlineExtensions) {
+      for (List<String> ackIdChunk :
+          Lists.partition(modifyAckDeadline.ackIds, MAX_PER_REQUEST_CHANGES)) {
         stub.withDeadlineAfter(DEFAULT_TIMEOUT.getMillis(), TimeUnit.MILLISECONDS)
             .modifyAckDeadline(
                 ModifyAckDeadlineRequest.newBuilder()
                     .setSubscription(subscription)
-                    .addAllAckIds(modifyAckDeadline.ackIds)
+                    .addAllAckIds(ackIdChunk)
                     .setAckDeadlineSeconds(modifyAckDeadline.deadlineExtensionSeconds)
                     .build());
       }
