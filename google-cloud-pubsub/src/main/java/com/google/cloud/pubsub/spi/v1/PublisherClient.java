@@ -265,7 +265,7 @@ public class PublisherClient implements AutoCloseable {
    *   Topic request = Topic.newBuilder()
    *     .setNameWithTopicName(name)
    *     .build();
-   *   RpcFuture&lt;Topic&gt; future = publisherClient.createTopicCallable().futureCall(request);
+   *   ApiFuture&lt;Topic&gt; future = publisherClient.createTopicCallable().futureCall(request);
    *   // Do something
    *   Topic response = future.get();
    * }
@@ -360,7 +360,7 @@ public class PublisherClient implements AutoCloseable {
    *     .setTopicWithTopicName(topic)
    *     .addAllMessages(messages)
    *     .build();
-   *   RpcFuture&lt;PublishResponse&gt; future = publisherClient.publishCallable().futureCall(request);
+   *   ApiFuture&lt;PublishResponse&gt; future = publisherClient.publishCallable().futureCall(request);
    *   // Do something
    *   PublishResponse response = future.get();
    * }
@@ -428,7 +428,7 @@ public class PublisherClient implements AutoCloseable {
    *   GetTopicRequest request = GetTopicRequest.newBuilder()
    *     .setTopicWithTopicName(topic)
    *     .build();
-   *   RpcFuture&lt;Topic&gt; future = publisherClient.getTopicCallable().futureCall(request);
+   *   ApiFuture&lt;Topic&gt; future = publisherClient.getTopicCallable().futureCall(request);
    *   // Do something
    *   Topic response = future.get();
    * }
@@ -500,7 +500,7 @@ public class PublisherClient implements AutoCloseable {
    *   ListTopicsRequest request = ListTopicsRequest.newBuilder()
    *     .setProjectWithProjectName(project)
    *     .build();
-   *   RpcFuture&lt;ListTopicsPagedResponse&gt; future = publisherClient.listTopicsPagedCallable().futureCall(request);
+   *   ApiFuture&lt;ListTopicsPagedResponse&gt; future = publisherClient.listTopicsPagedCallable().futureCall(request);
    *   // Do something
    *   for (Topic element : future.get().iterateAllElements()) {
    *     // doThingsWith(element);
@@ -606,7 +606,7 @@ public class PublisherClient implements AutoCloseable {
    *   ListTopicSubscriptionsRequest request = ListTopicSubscriptionsRequest.newBuilder()
    *     .setTopicWithTopicName(topic)
    *     .build();
-   *   RpcFuture&lt;ListTopicSubscriptionsPagedResponse&gt; future = publisherClient.listTopicSubscriptionsPagedCallable().futureCall(request);
+   *   ApiFuture&lt;ListTopicSubscriptionsPagedResponse&gt; future = publisherClient.listTopicSubscriptionsPagedCallable().futureCall(request);
    *   // Do something
    *   for (SubscriptionName element : future.get().iterateAllAsSubscriptionName()) {
    *     // doThingsWith(element);
@@ -718,7 +718,7 @@ public class PublisherClient implements AutoCloseable {
    *   DeleteTopicRequest request = DeleteTopicRequest.newBuilder()
    *     .setTopicWithTopicName(topic)
    *     .build();
-   *   RpcFuture&lt;Void&gt; future = publisherClient.deleteTopicCallable().futureCall(request);
+   *   ApiFuture&lt;Void&gt; future = publisherClient.deleteTopicCallable().futureCall(request);
    *   // Do something
    *   future.get();
    * }
@@ -796,7 +796,7 @@ public class PublisherClient implements AutoCloseable {
    *     .setResource(formattedResource)
    *     .setPolicy(policy)
    *     .build();
-   *   RpcFuture&lt;Policy&gt; future = publisherClient.setIamPolicyCallable().futureCall(request);
+   *   ApiFuture&lt;Policy&gt; future = publisherClient.setIamPolicyCallable().futureCall(request);
    *   // Do something
    *   Policy response = future.get();
    * }
@@ -868,7 +868,7 @@ public class PublisherClient implements AutoCloseable {
    *   GetIamPolicyRequest request = GetIamPolicyRequest.newBuilder()
    *     .setResource(formattedResource)
    *     .build();
-   *   RpcFuture&lt;Policy&gt; future = publisherClient.getIamPolicyCallable().futureCall(request);
+   *   ApiFuture&lt;Policy&gt; future = publisherClient.getIamPolicyCallable().futureCall(request);
    *   // Do something
    *   Policy response = future.get();
    * }
@@ -953,7 +953,7 @@ public class PublisherClient implements AutoCloseable {
    *     .setResource(formattedResource)
    *     .addAllPermissions(permissions)
    *     .build();
-   *   RpcFuture&lt;TestIamPermissionsResponse&gt; future = publisherClient.testIamPermissionsCallable().futureCall(request);
+   *   ApiFuture&lt;TestIamPermissionsResponse&gt; future = publisherClient.testIamPermissionsCallable().futureCall(request);
    *   // Do something
    *   TestIamPermissionsResponse response = future.get();
    * }
