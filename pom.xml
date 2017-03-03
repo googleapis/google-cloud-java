@@ -439,7 +439,8 @@
                   <link>http://googleapis.github.io/googleapis/java/grpc-google-cloud-pubsub-v1/${generatedProto.version}/apidocs/</link>
                   <link>http://googleapis.github.io/googleapis/java/grpc-google-cloud-speech-v1beta1/${generatedProto.version}/apidocs/</link>
                   <link>http://googleapis.github.io/googleapis/java/grpc-google-cloud-trace-v1/${generatedProto.version}/apidocs/</link>
-                  <link>http://googleapis.github.io/googleapis/java/grpc-google-cloud-vision-v1/${generatedProto.version}/apidocs/</link>
+                  <!-- TODO: Vision version is hardcoaded for now, please remove hardcoaded version once it is possible -->
+                  <link>http://googleapis.github.io/googleapis/java/grpc-google-cloud-vision-v1/1.6/apidocs/</link>
                 </links>
               </configuration>
             </plugin>
