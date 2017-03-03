@@ -549,12 +549,12 @@ public class Bucket extends BucketInfo {
 
     @Override
     @Deprecated
-    public Builder storageClass(String storageClass) {
+    public Builder storageClass(StorageClass storageClass) {
       return setStorageClass(storageClass);
     }
 
     @Override
-    public Builder setStorageClass(String storageClass) {
+    public Builder setStorageClass(StorageClass storageClass) {
       infoBuilder.setStorageClass(storageClass);
       return this;
     }

@@ -24,6 +24,7 @@ import com.google.api.client.util.DateTime;
 import com.google.api.services.storage.model.ObjectAccessControl;
 import com.google.api.services.storage.model.StorageObject;
 import com.google.api.services.storage.model.StorageObject.Owner;
+import com.google.cloud.storage.Blob.Builder;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
@@ -78,7 +79,7 @@ public class BlobInfo implements Serializable {
   private final String contentEncoding;
   private final String contentDisposition;
   private final String contentLanguage;
-  private final String storageClass;
+  private final StorageClass storageClass;
   private final Integer componentCount;
   private final boolean isDirectory;
   private final CustomerEncryption customerEncryption;
@@ -344,7 +345,7 @@ public class BlobInfo implements Serializable {
     /**
      * Sets the blob's storage class.
      */
-    public abstract Builder setStorageClass(String storageClass);
+    public abstract Builder setStorageClass(StorageClass storageClass);
 
     /**
      * Sets the blob's user provided metadata.
@@ -394,7 +395,7 @@ public class BlobInfo implements Serializable {
     private Long createTime;
     private Boolean isDirectory;
     private CustomerEncryption customerEncryption;
-    private String storageClass;
+    private StorageClass storageClass;
 
     BuilderImpl(BlobId blobId) {
       this.blobId = blobId;
@@ -591,7 +592,7 @@ public class BlobInfo implements Serializable {
     }
 
     @Override
-    public Builder setStorageClass(String storageClass) {
+    public Builder setStorageClass(StorageClass storageClass) {
       this.storageClass = storageClass;
       return this;
     }
@@ -1124,7 +1125,7 @@ public class BlobInfo implements Serializable {
   /**
    * Returns the storage class of the blob.
    */
-  public String getStorageClass() {
+  public StorageClass getStorageClass() {
     return storageClass;
   }
 
@@ -1186,7 +1187,7 @@ public class BlobInfo implements Serializable {
       storageObject.setOwner(new Owner().setEntity(owner.toPb()));
     }
     if (storageClass != null) {
-      storageObject.setStorageClass(storageClass);
+      storageObject.setStorageClass(storageClass.toString());
     }
 
     Map<String, String> pbMetadata = metadata;
@@ -1368,7 +1369,7 @@ public class BlobInfo implements Serializable {
           CustomerEncryption.fromPb(storageObject.getCustomerEncryption()));
     }
     if (storageObject.getStorageClass() != null) {
-      builder.setStorageClass(storageObject.getStorageClass());
+      builder.setStorageClass(StorageClass.valueOf(storageObject.getStorageClass()));
     }
     return builder.build();
   }

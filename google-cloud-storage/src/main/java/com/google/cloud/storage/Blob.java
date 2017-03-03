@@ -362,7 +362,7 @@ public class Blob extends BlobInfo {
     }
 
     @Override
-    public Builder setStorageClass(String storageClass) {
+    public Builder setStorageClass(StorageClass storageClass) {
       infoBuilder.setStorageClass(storageClass);
       return this;
     }

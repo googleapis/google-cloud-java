@@ -57,7 +57,7 @@ public class BucketInfoTest {
   private static final String INDEX_PAGE = "index.html";
   private static final String NOT_FOUND_PAGE = "error.html";
   private static final String LOCATION = "ASIA";
-  private static final String STORAGE_CLASS = "STANDARD";
+  private static final StorageClass STORAGE_CLASS = StorageClass.STANDARD;
   private static final Boolean VERSIONING_ENABLED = true;
   private static final BucketInfo BUCKET_INFO = BucketInfo.newBuilder("b")
       .setAcl(ACL)

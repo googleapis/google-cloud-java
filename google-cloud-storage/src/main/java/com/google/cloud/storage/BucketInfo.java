@@ -80,7 +80,7 @@ public class BucketInfo implements Serializable {
   private final List<Acl> acl;
   private final List<Acl> defaultAcl;
   private final String location;
-  private final String storageClass;
+  private final StorageClass storageClass;
 
   /**
    * Base class for bucket's delete rules. Allows to configure automatic deletion of blobs and blobs
@@ -416,14 +416,14 @@ public class BucketInfo implements Serializable {
      * <a href="https://cloud.google.com/storage/docs/storage-classes">here</a>.
      */
     @Deprecated
-    public abstract Builder storageClass(String storageClass);
+    public abstract Builder storageClass(StorageClass storageClass);
 
     /**
      * Sets the bucket's storage class. This defines how blobs in the bucket are stored and
      * determines the SLA and the cost of storage. A list of supported values is available
      * <a href="https://cloud.google.com/storage/docs/storage-classes">here</a>.
      */
-    public abstract Builder setStorageClass(String storageClass);
+    public abstract Builder setStorageClass(StorageClass storageClass);
 
     /**
      * Sets the bucket's location. Data for blobs in the bucket resides in physical storage within
@@ -519,7 +519,7 @@ public class BucketInfo implements Serializable {
     private String indexPage;
     private String notFoundPage;
     private List<DeleteRule> deleteRules;
-    private String storageClass;
+    private StorageClass storageClass;
     private String location;
     private String etag;
     private Long createTime;
@@ -631,12 +631,12 @@ public class BucketInfo implements Serializable {
 
     @Override
     @Deprecated
-    public Builder storageClass(String storageClass) {
+    public Builder storageClass(StorageClass storageClass) {
       return setStorageClass(storageClass);
     }
 
     @Override
-    public Builder setStorageClass(String storageClass) {
+    public Builder setStorageClass(StorageClass storageClass) {
       this.storageClass = storageClass;
       return this;
     }
@@ -928,7 +928,7 @@ public class BucketInfo implements Serializable {
    * @see <a href="https://cloud.google.com/storage/docs/storage-classes">Storage Classes</a>
    */
   @Deprecated
-  public String storageClass() {
+  public StorageClass storageClass() {
     return getStorageClass();
   }
 
@@ -938,7 +938,7 @@ public class BucketInfo implements Serializable {
    *
    * @see <a href="https://cloud.google.com/storage/docs/storage-classes">Storage Classes</a>
    */
-  public String getStorageClass() {
+  public StorageClass getStorageClass() {
     return storageClass;
   }
 
@@ -1048,7 +1048,7 @@ public class BucketInfo implements Serializable {
       bucketPb.setLocation(location);
     }
     if (storageClass != null) {
-      bucketPb.setStorageClass(storageClass);
+      bucketPb.setStorageClass(storageClass.toString());
     }
     if (cors != null) {
       bucketPb.setCors(transform(cors, Cors.TO_PB_FUNCTION));
@@ -1138,7 +1138,7 @@ public class BucketInfo implements Serializable {
       builder.setLocation(bucketPb.getLocation());
     }
     if (bucketPb.getStorageClass() != null) {
-      builder.setStorageClass(bucketPb.getStorageClass());
+      builder.setStorageClass(StorageClass.valueOf(bucketPb.getStorageClass()));
     }
     if (bucketPb.getCors() != null) {
       builder.setCors(transform(bucketPb.getCors(), Cors.FROM_PB_FUNCTION));
