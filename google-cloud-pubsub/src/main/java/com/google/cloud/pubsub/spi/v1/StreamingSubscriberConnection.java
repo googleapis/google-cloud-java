@@ -40,6 +40,7 @@ import io.grpc.auth.MoreCallCredentials;
 import io.grpc.stub.ClientCallStreamObserver;
 import io.grpc.stub.ClientCalls;
 import io.grpc.stub.ClientResponseObserver;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
@@ -211,7 +212,7 @@ final class StreamingSubscriberConnection extends AbstractService implements Ack
   @Override
   public void sendAckOperations(
       List<String> acksToSend, List<PendingModifyAckDeadline> ackDeadlineExtensions) {
-    StreamingPullRequest[] requests =
+    List<StreamingPullRequest> requests =
         partitionAckOperations(acksToSend, ackDeadlineExtensions, MAX_PER_REQUEST_CHANGES);
     for (StreamingPullRequest request : requests) {
       requestObserver.onNext(request);
@@ -219,23 +220,23 @@ final class StreamingSubscriberConnection extends AbstractService implements Ack
   }
 
   @VisibleForTesting
-  static StreamingPullRequest[] partitionAckOperations(
+  static List<StreamingPullRequest> partitionAckOperations(
       List<String> acksToSend, List<PendingModifyAckDeadline> ackDeadlineExtensions, int size) {
     int numExtensions = 0;
     for (PendingModifyAckDeadline modify : ackDeadlineExtensions) {
       numExtensions += modify.ackIds.size();
     }
-    int numRequests = Math.max(numExtensions, acksToSend.size());
-    numRequests = numRequests / size + (numRequests % size == 0 ? 0 : 1);
+    int numChanges = Math.max(numExtensions, acksToSend.size());
+    int numRequests = numChanges / size + (numChanges % size == 0 ? 0 : 1);
 
-    StreamingPullRequest.Builder[] requests = new StreamingPullRequest.Builder[numRequests];
+    List<StreamingPullRequest.Builder> requests = new ArrayList<>(numRequests);
     for (int i = 0; i < numRequests; i++) {
-      requests[i] = StreamingPullRequest.newBuilder();
+      requests.add(StreamingPullRequest.newBuilder());
     }
 
     int reqCount = 0;
     for (List<String> acksChunk : Lists.partition(acksToSend, size)) {
-      requests[reqCount].addAllAckIds(acksChunk);
+      requests.get(reqCount).addAllAckIds(acksChunk);
       reqCount++;
     }
 
@@ -243,7 +244,8 @@ final class StreamingSubscriberConnection extends AbstractService implements Ack
     int ackCount = 0;
     for (PendingModifyAckDeadline modify : ackDeadlineExtensions) {
       for (String ackId : modify.ackIds) {
-        requests[reqCount]
+        requests
+            .get(reqCount)
             .addModifyDeadlineSeconds(modify.deadlineExtensionSeconds)
             .addModifyDeadlineAckIds(ackId);
         ackCount++;
@@ -254,9 +256,9 @@ final class StreamingSubscriberConnection extends AbstractService implements Ack
       }
     }
 
-    StreamingPullRequest[] ret = new StreamingPullRequest[requests.length];
-    for (int i = 0; i < requests.length; i++) {
-      ret[i] = requests[i].build();
+    List<StreamingPullRequest> ret = new ArrayList<>(requests.size());
+    for (StreamingPullRequest.Builder builder : requests) {
+      ret.add(builder.build());
     }
     return ret;
   }

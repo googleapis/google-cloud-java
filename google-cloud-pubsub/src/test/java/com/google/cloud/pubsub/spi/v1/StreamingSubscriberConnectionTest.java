@@ -19,102 +19,93 @@ package com.google.cloud.pubsub.spi.v1;
 import com.google.cloud.pubsub.spi.v1.MessageDispatcher.PendingModifyAckDeadline;
 import com.google.common.truth.Truth;
 import com.google.pubsub.v1.StreamingPullRequest;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import org.junit.Test;
 
 public class StreamingSubscriberConnectionTest {
-  private static List<StreamingPullRequest> partitionAckOperations(
-      List<String> acksToSend, List<PendingModifyAckDeadline> ackDeadlineExtensions, int size) {
-    List<StreamingPullRequest> requests = new ArrayList<>();
-    for (StreamingPullRequest req :
-        StreamingSubscriberConnection.partitionAckOperations(
-            acksToSend, ackDeadlineExtensions, size)) {
-      requests.add(req);
-    }
-    return requests;
-  }
-
   @Test
   public void testPartitionAckOperations() {
     List<StreamingPullRequest> requests;
 
     requests =
-        partitionAckOperations(
+        StreamingSubscriberConnection.partitionAckOperations(
             Collections.<String>emptyList(), Collections.<PendingModifyAckDeadline>emptyList(), 3);
     Truth.assertThat(requests).isEmpty();
 
     requests =
-        partitionAckOperations(
+        StreamingSubscriberConnection.partitionAckOperations(
             Arrays.asList("a", "b", "c"), Collections.<PendingModifyAckDeadline>emptyList(), 3);
     Truth.assertThat(requests)
-        .contains(
-            StreamingPullRequest.newBuilder().addAckIds("a").addAckIds("b").addAckIds("c").build());
+        .containsExactly(
+            StreamingPullRequest.newBuilder().addAckIds("a").addAckIds("b").addAckIds("c").build())
+        .inOrder();
 
     requests =
-        partitionAckOperations(
+        StreamingSubscriberConnection.partitionAckOperations(
             Arrays.asList("a", "b", "c", "d"),
             Collections.<PendingModifyAckDeadline>emptyList(),
             3);
     Truth.assertThat(requests)
-        .contains(
-            StreamingPullRequest.newBuilder().addAckIds("a").addAckIds("b").addAckIds("c").build());
-    Truth.assertThat(requests).contains(StreamingPullRequest.newBuilder().addAckIds("d").build());
+        .containsExactly(
+            StreamingPullRequest.newBuilder().addAckIds("a").addAckIds("b").addAckIds("c").build(),
+            StreamingPullRequest.newBuilder().addAckIds("d").build())
+        .inOrder();
 
     requests =
-        partitionAckOperations(
+        StreamingSubscriberConnection.partitionAckOperations(
             Arrays.asList("a", "b", "c", "d"),
-            Arrays.asList(new PendingModifyAckDeadline(42, "A")),
+            Arrays.asList(new PendingModifyAckDeadline(42, "w")),
             3);
     Truth.assertThat(requests)
-        .contains(
+        .containsExactly(
             StreamingPullRequest.newBuilder()
                 .addAckIds("a")
                 .addAckIds("b")
                 .addAckIds("c")
-                .addModifyDeadlineAckIds("A")
+                .addModifyDeadlineAckIds("w")
                 .addModifyDeadlineSeconds(42)
-                .build());
-    Truth.assertThat(requests).contains(StreamingPullRequest.newBuilder().addAckIds("d").build());
+                .build(),
+            StreamingPullRequest.newBuilder().addAckIds("d").build())
+        .inOrder();
 
     requests =
-        partitionAckOperations(
-            Arrays.asList("a"), Arrays.asList(new PendingModifyAckDeadline(42, "A", "B")), 3);
+        StreamingSubscriberConnection.partitionAckOperations(
+            Arrays.asList("a"), Arrays.asList(new PendingModifyAckDeadline(42, "w", "x")), 3);
     Truth.assertThat(requests)
-        .contains(
+        .containsExactly(
             StreamingPullRequest.newBuilder()
                 .addAckIds("a")
-                .addModifyDeadlineAckIds("A")
+                .addModifyDeadlineAckIds("w")
                 .addModifyDeadlineSeconds(42)
-                .addModifyDeadlineAckIds("B")
+                .addModifyDeadlineAckIds("x")
                 .addModifyDeadlineSeconds(42)
-                .build());
+                .build())
+        .inOrder();
 
     requests =
-        partitionAckOperations(
+        StreamingSubscriberConnection.partitionAckOperations(
             Arrays.asList("a"),
             Arrays.asList(
-                new PendingModifyAckDeadline(42, "A", "B"),
-                new PendingModifyAckDeadline(43, "C", "D")),
+                new PendingModifyAckDeadline(42, "w", "x"),
+                new PendingModifyAckDeadline(43, "y", "z")),
             3);
     Truth.assertThat(requests)
-        .contains(
+        .containsExactly(
             StreamingPullRequest.newBuilder()
                 .addAckIds("a")
-                .addModifyDeadlineAckIds("A")
+                .addModifyDeadlineAckIds("w")
                 .addModifyDeadlineSeconds(42)
-                .addModifyDeadlineAckIds("B")
+                .addModifyDeadlineAckIds("x")
                 .addModifyDeadlineSeconds(42)
-                .addModifyDeadlineAckIds("C")
+                .addModifyDeadlineAckIds("y")
                 .addModifyDeadlineSeconds(43)
-                .build());
-    Truth.assertThat(requests)
-        .contains(
+                .build(),
             StreamingPullRequest.newBuilder()
-                .addModifyDeadlineAckIds("D")
+                .addModifyDeadlineAckIds("z")
                 .addModifyDeadlineSeconds(43)
-                .build());
+                .build())
+        .inOrder();
   }
 }
