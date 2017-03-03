@@ -44,6 +44,7 @@ import com.google.cloud.storage.Storage.BlobField;
 import com.google.cloud.storage.Storage.BucketField;
 import com.google.cloud.storage.StorageBatch;
 import com.google.cloud.storage.StorageBatchResult;
+import com.google.cloud.storage.StorageClass;
 import com.google.cloud.storage.StorageException;
 import com.google.cloud.storage.testing.RemoteStorageHelper;
 import com.google.common.collect.ImmutableList;
@@ -100,8 +101,6 @@ public class ITStorageTest {
       new SecretKeySpec(BaseEncoding.base64().decode(BASE64_KEY), "AES256");
   private static final byte[] COMPRESSED_CONTENT = BaseEncoding.base64()
       .decode("H4sIAAAAAAAAAPNIzcnJV3DPz0/PSVVwzskvTVEILskvSkxPVQQA/LySchsAAAA=");
-  private static final String STORAGE_CLASS_COLDLINE = "COLDLINE";
-  private static final String STORAGE_CLASS_STANDARD = "STANDARD";
 
   @BeforeClass
   public static void beforeClass() throws NoSuchAlgorithmException, InvalidKeySpecException {
@@ -796,19 +795,19 @@ public class ITStorageTest {
     String sourceBlobName = "test-copy-blob-update-storage-class-source";
     BlobId source = BlobId.of(BUCKET, sourceBlobName);
     BlobInfo sourceInfo =
-        BlobInfo.newBuilder(source).setStorageClass(STORAGE_CLASS_STANDARD).build();
+        BlobInfo.newBuilder(source).setStorageClass(StorageClass.STANDARD).build();
     Blob remoteSourceBlob = storage.create(sourceInfo, BLOB_BYTE_CONTENT);
     assertNotNull(remoteSourceBlob);
-    assertEquals(STORAGE_CLASS_STANDARD, remoteSourceBlob.getStorageClass());
+    assertEquals(StorageClass.STANDARD, remoteSourceBlob.getStorageClass());
 
     String targetBlobName = "test-copy-blob-update-storage-class-target";
     BlobInfo targetInfo = BlobInfo
-        .newBuilder(BUCKET, targetBlobName).setStorageClass(STORAGE_CLASS_COLDLINE).build();
+        .newBuilder(BUCKET, targetBlobName).setStorageClass(StorageClass.COLDLINE).build();
     Storage.CopyRequest req = Storage.CopyRequest.of(source, targetInfo);
     CopyWriter copyWriter = storage.copy(req);
     assertEquals(BUCKET, copyWriter.getResult().getBucket());
     assertEquals(targetBlobName, copyWriter.getResult().getName());
-    assertEquals(STORAGE_CLASS_COLDLINE, copyWriter.getResult().getStorageClass());
+    assertEquals(StorageClass.COLDLINE, copyWriter.getResult().getStorageClass());
     assertTrue(copyWriter.isDone());
     assertTrue(remoteSourceBlob.delete());
     assertTrue(storage.delete(BUCKET, targetBlobName));

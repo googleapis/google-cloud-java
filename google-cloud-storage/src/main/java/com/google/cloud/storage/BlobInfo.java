@@ -363,7 +363,6 @@ public class BlobInfo implements Serializable {
 
     abstract Builder setCustomerEncryption(CustomerEncryption customerEncryption);
 
-
     /**
      * Creates a {@code BlobInfo} object.
      */

@@ -66,7 +66,7 @@ public class BlobInfoTest {
   private static final String KEY_SHA256 = "keySha";
   private static final CustomerEncryption CUSTOMER_ENCRYPTION =
       new CustomerEncryption(ENCRYPTION_ALGORITHM, KEY_SHA256);
-  private static final String STORAGE_CLASS = "COLDLINE";
+  private static final String STORAGE_CLASS = StorageClass.COLDLINE;
 
   private static final BlobInfo BLOB_INFO = BlobInfo.newBuilder("b", "n", GENERATION)
       .setAcl(ACL)
