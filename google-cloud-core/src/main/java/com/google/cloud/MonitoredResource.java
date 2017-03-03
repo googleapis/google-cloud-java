@@ -64,7 +64,7 @@ public final class MonitoredResource implements Serializable {
 
     /**
      * Sets the monitored resource type. This value must match the one of
-     * {@link MonitoredResourceDescriptor#type()} of a {@code MonitoredResourceDescriptor} object.
+     * {@link MonitoredResourceDescriptor#getType()} of a {@code MonitoredResourceDescriptor} object.
      * For example, the type {@code cloudsql_database} represent databases in Google Cloud SQL.
      */
     public Builder setType(String type) {
@@ -75,7 +75,7 @@ public final class MonitoredResource implements Serializable {
 
     /**
      * Sets the values for all the labels required by the corresponding monitored resource
-     * descriptor (see {@link MonitoredResourceDescriptor#labels()}. For example, Google Compute
+     * descriptor (see {@link MonitoredResourceDescriptor#getLabels()}. For example, Google Compute
      * Engine VM instances use the labels {@code instance_id} and {@code zone}.
      */
     public Builder setLabels(Map<String, String> labels) {
@@ -112,7 +112,7 @@ public final class MonitoredResource implements Serializable {
 
   /**
    * Returns the monitored resource type. This value must match the one of
-   * {@link MonitoredResourceDescriptor#type()} of a {@code MonitoredResourceDescriptor} object.
+   * {@link MonitoredResourceDescriptor#getType()} of a {@code MonitoredResourceDescriptor} object.
    * For example, the type {@code cloudsql_database} represent databases in Google Cloud SQL.
    */
   public String getType() {
@@ -122,7 +122,7 @@ public final class MonitoredResource implements Serializable {
 
   /**
    * Returns the values for all the labels required by the corresponding monitored resource
-   * descriptor (see {@link MonitoredResourceDescriptor#labels()}. For example, Google Compute
+   * descriptor (see {@link MonitoredResourceDescriptor#getLabels()}. For example, Google Compute
    * Engine VM instances use the labels {@code instance_id} and {@code zone}.
    */
   public Map<String, String> getLabels() {
