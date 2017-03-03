@@ -22,7 +22,7 @@ package com.google.cloud.storage;
 public enum StorageClass {
   
   /**
-   * Multi-regional storage class.
+   * Regional storage class.
    */
   REGIONAL,
   
