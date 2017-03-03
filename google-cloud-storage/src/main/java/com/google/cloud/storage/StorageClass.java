@@ -22,25 +22,25 @@ public class StorageClass {
   /**
    * Name for the multi-regional storage class.
    */
-  public static String MULTI_REGIONAL = "MULTI_REGIONAL";
+  public static final String MULTI_REGIONAL = "MULTI_REGIONAL";
   
   /**
    * Name for the regional storage class.
    */
-  public static String REGIONAL = "REGIONAL";
+  public static final String REGIONAL = "REGIONAL";
   
   /**
    * Name for the Nearline storage class.
    */
-  public static String NEARLINE = "NEARLINE";
+  public static final String NEARLINE = "NEARLINE";
   
   /**
    * Name for the Codeline storage class.
    */
-  public static String COLDLINE = "COLDLINE";
+  public static final String COLDLINE = "COLDLINE";
   
   /**
    * Name for the standard storage class.
    */
-  public static String STANDARD = "STANDARD";
+  public static final String STANDARD = "STANDARD";
 }
