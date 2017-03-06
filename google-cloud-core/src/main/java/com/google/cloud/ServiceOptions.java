@@ -104,7 +104,7 @@ public abstract class ServiceOptions<ServiceT extends Service<OptionsT>, Service
    * @param <OptionsT> the {@code ServiceOptions} subclass corresponding to the service
    * @param <B> the {@code ServiceOptions} builder
    */
-  protected abstract static class Builder<ServiceT extends Service<OptionsT>, ServiceRpcT,
+  public abstract static class Builder<ServiceT extends Service<OptionsT>, ServiceRpcT,
       OptionsT extends ServiceOptions<ServiceT, ServiceRpcT, OptionsT>,
       B extends Builder<ServiceT, ServiceRpcT, OptionsT, B>> {
 

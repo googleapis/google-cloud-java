@@ -30,7 +30,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-pom</artifactId>
-    <version>0.9.4-alpha-SNAPSHOT</version>
+    <version>0.9.4-alpha</version>
   </parent>
   <properties>
     <site.installationModule>google-cloud-spanner</site.installationModule>
@@ -129,7 +129,7 @@
     <dependency>
       <groupId>com.google.api</groupId>
       <artifactId>gax</artifactId>
-      <version>0.0.25</version>
+      <version>${gax.version}</version>
       <exclusions>
         <exclusion>
           <groupId>io.grpc</groupId>

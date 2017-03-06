@@ -25,7 +25,7 @@ public interface MessageReceiver {
    * Called when a message is received by the subscriber. The implementation must arrange for {@link
    * AckReplyConsumer#accept} to be called after processing the {@code message}.
    *
-   * <p>This {@code MessageReceiver} passes all messages to a {@link BlockingQueue}.
+   * <p>This {@code MessageReceiver} passes all messages to a {@code BlockingQueue}.
    * This method can be called concurrently from multiple threads,
    * so it is important that the queue be thread-safe.
    *

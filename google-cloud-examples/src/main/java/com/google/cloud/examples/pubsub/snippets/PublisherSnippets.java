@@ -14,6 +14,11 @@
  * limitations under the License.
  */
 
+/*
+ * EDITING INSTRUCTIONS
+ * This file is referenced in Publisher's javadoc. Any change to this file should be reflected in
+ * Publisher's javadoc.
+ */
 package com.google.cloud.examples.pubsub.snippets;
 
 import com.google.api.gax.core.RpcFuture;
@@ -23,6 +28,7 @@ import com.google.protobuf.ByteString;
 import com.google.pubsub.v1.PubsubMessage;
 import com.google.pubsub.v1.TopicName;
 
+/** This class contains snippets for the {@link Publisher} interface. */
 public class PublisherSnippets {
   private final Publisher publisher;
 
@@ -30,33 +36,29 @@ public class PublisherSnippets {
     this.publisher = publisher;
   }
 
-  /**
-   * Example of publishing a message.
-   */
+  /** Example of publishing a message. */
   // [TARGET publish(PubsubMessage)]
   // [VARIABLE "my_message"]
-  public void publish(String message) {
+  public RpcFuture<String> publish(String message) {
     // [START publish]
     ByteString data = ByteString.copyFromUtf8(message);
     PubsubMessage pubsubMessage = PubsubMessage.newBuilder().setData(data).build();
     RpcFuture<String> messageIdFuture = publisher.publish(pubsubMessage);
-    messageIdFuture.addCallback(new RpcFutureCallback<String>() {
-      @Override
-      public void onSuccess(String messageId) {
-        System.out.println("published with message id: " + messageId);
-      }
+    messageIdFuture.addCallback(
+        new RpcFutureCallback<String>() {
+          public void onSuccess(String messageId) {
+            System.out.println("published with message id: " + messageId);
+          }
 
-      @Override
-      public void onFailure(Throwable t) {
-        System.out.println("failed to publish: " + t);
-      }
-    });
+          public void onFailure(Throwable t) {
+            System.out.println("failed to publish: " + t);
+          }
+        });
     // [END publish]
+    return messageIdFuture;
   }
 
-  /**
-   * Example of creating a {@code Publisher}.
-   */
+  /** Example of creating a {@code Publisher}. */
   // [TARGET newBuilder(TopicName)]
   // [VARIABLE "my_project"]
   // [VARIABLE "my_topic"]
