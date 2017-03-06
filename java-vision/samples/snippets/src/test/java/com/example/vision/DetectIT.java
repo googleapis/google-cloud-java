@@ -29,9 +29,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
 
-/**
- * Tests for vision "Detect" sample.
- */
+/** Tests for vision "Detect" sample. */
 @RunWith(JUnit4.class)
 @SuppressWarnings("checkstyle:abbreviationaswordinname")
 public class DetectIT {
@@ -53,18 +51,6 @@ public class DetectIT {
   }
 
   @Test
-  public void testDetectEmptyArgs() throws Exception {
-    // Act
-    String[] args = {};
-    Detect.argsHelper(args, out);
-
-    // Assert
-    String got = bout.toString();
-    assertThat(got).contains("all-local | faces | labels | landmarks |"
-        + " logos | text | safe-search | properties");
-  }
-
-  @Test
   public void testFaces() throws Exception {
     // Act
     String[] args = {"faces", "./resources/face_no_surprise.jpg"};
@@ -76,7 +62,7 @@ public class DetectIT {
     assertThat(got).contains("joy: POSSIBLE");
     assertThat(got).contains("surprise: UNLIKELY");
   }
-  
+
   @Test
   public void testFacesGcs() throws Exception {
     // Act
@@ -100,7 +86,7 @@ public class DetectIT {
     String got = bout.toString();
     assertThat(got).contains("whiskers");
   }
-  
+
   @Test
   public void testLabelsGcs() throws Exception {
     // Act
@@ -127,6 +113,17 @@ public class DetectIT {
   public void testLandmarksGcs() throws Exception {
     // Act
     String[] args = {"landmarks", "gs://cloud-samples-tests/vision/landmark.jpg"};
+    Detect.argsHelper(args, out);
+
+    // Assert
+    String got = bout.toString();
+    assertThat(got).contains("Palace of Fine Arts");
+  }
+
+  @Test
+  public void testLandmarksUrl() throws Exception {
+    // Act
+    String[] args = {"landmarks", "https://pbs.twimg.com/media/C4wfMOhVcAAUAgq.jpg"};
     Detect.argsHelper(args, out);
 
     // Assert
@@ -213,7 +210,7 @@ public class DetectIT {
     assertThat(got).contains("g:");
     assertThat(got).contains("b:");
   }
-  
+
   @Test
   public void testPropertiesGcs() throws Exception {
     // Act
@@ -226,5 +223,79 @@ public class DetectIT {
     assertThat(got).contains("r:");
     assertThat(got).contains("g:");
     assertThat(got).contains("b:");
+  }
+
+  @Test
+  public void detectWebAnnotations() throws Exception {
+    // Act
+    String[] args = {"web", "./resources/landmark.jpg"};
+    Detect.argsHelper(args, out);
+
+    // Assert
+    String got = bout.toString();
+    assertThat(got).contains("Palace");
+    assertThat(got).contains("Rom"); // Matches Rome and Roman
+  }
+
+  @Test
+  public void detectWebAnnotationsGcs() throws Exception {
+    // Act
+    String[] args = {"web", "gs://cloud-samples-tests/vision/landmark.jpg"};
+    Detect.argsHelper(args, out);
+
+    // Assert
+    String got = bout.toString();
+    assertThat(got).contains("Palace");
+    assertThat(got).contains("Rom"); // Matches Rome and Roman
+  }
+
+  @Test
+  public void testCropHints() throws Exception {
+    // Act
+    String[] args = {"crop", "./resources/wakeupcat.jpg"};
+    Detect.argsHelper(args, out);
+
+    // Assert
+    String got = bout.toString();
+    assertThat(got).contains("vertices {");
+    assertThat(got).contains("x: 599");
+    assertThat(got).contains("y: 475");
+  }
+
+  @Test
+  public void testCropHintsGcs() throws Exception {
+    // Act
+    String[] args = {"crop", "gs://cloud-samples-tests/vision/wakeupcat.jpg"};
+    Detect.argsHelper(args, out);
+
+    // Assert
+    String got = bout.toString();
+    assertThat(got).contains("vertices {");
+    assertThat(got).contains("x: 599");
+    assertThat(got).contains("y: 475");
+  }
+
+  @Test
+  public void testDocumentText() throws Exception {
+    // Act
+    String[] args = {"fulltext", "./resources/text.jpg"};
+    Detect.argsHelper(args, out);
+
+    // Assert
+    String got = bout.toString();
+    assertThat(got).contains("After preparation is complete, the ");
+    assertThat(got).contains("37%");
+  }
+
+  @Test
+  public void testDocumentTextGcs() throws Exception {
+    // Act
+    String[] args = {"fulltext", "gs://cloud-samples-tests/vision/text.jpg"};
+    Detect.argsHelper(args, out);
+
+    // Assert
+    String got = bout.toString();
+    assertThat(got).contains("After preparation is complete, the ");
+    assertThat(got).contains("37%");
   }
 }
