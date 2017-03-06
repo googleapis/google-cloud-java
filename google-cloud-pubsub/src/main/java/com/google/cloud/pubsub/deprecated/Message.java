@@ -75,7 +75,7 @@ public class Message implements Serializable {
     }
 
     @Override
-    public ByteString getByteString() {
+    protected ByteString getByteString() {
       return super.getByteString();
     }
   }
