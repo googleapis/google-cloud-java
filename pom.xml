@@ -92,7 +92,7 @@
     <github.global.server>github</github.global.server>
     <google.auth.version>0.6.0</google.auth.version>
     <grpc.version>1.0.3</grpc.version>
-    <gax.version>0.1.2</gax.version>
+    <gax.version>0.1.4</gax.version>
     <generatedProto.version>0.1.5</generatedProto.version>
     <core.version>0.9.4-alpha-SNAPSHOT</core.version>
     <beta.version>0.9.4-beta-SNAPSHOT</beta.version>
@@ -549,7 +549,8 @@
                   <link>http://googleapis.github.io/googleapis/java/grpc-google-cloud-pubsub-v1/${generatedProto.version}/apidocs/</link>
                   <link>http://googleapis.github.io/googleapis/java/grpc-google-cloud-speech-v1beta1/${generatedProto.version}/apidocs/</link>
                   <link>http://googleapis.github.io/googleapis/java/grpc-google-cloud-trace-v1/${generatedProto.version}/apidocs/</link>
-                  <link>http://googleapis.github.io/googleapis/java/grpc-google-cloud-vision-v1/${generatedProto.version}/apidocs/</link>
+                  <!-- TODO: Vision version is hardcoded for now, please remove the hardcoded version once it is possible -->
+                  <link>http://googleapis.github.io/googleapis/java/grpc-google-cloud-vision-v1/0.1.6/apidocs/</link>
                 </links>
               </configuration>
             </plugin>
