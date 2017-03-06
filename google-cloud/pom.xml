@@ -92,7 +92,7 @@
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>google-cloud-vision</artifactId>
-      <version>${project.version}</version>
+      <version>${beta.version}</version>
     </dependency>
   </dependencies>
 </project>

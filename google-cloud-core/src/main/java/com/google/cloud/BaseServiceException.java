@@ -18,6 +18,7 @@ package com.google.cloud;
 
 import com.google.api.client.googleapis.json.GoogleJsonError;
 import com.google.api.client.googleapis.json.GoogleJsonResponseException;
+import com.google.api.client.http.HttpResponseException;
 import com.google.api.gax.grpc.ApiException;
 import com.google.common.base.MoreObjects;
 
@@ -140,20 +141,27 @@ public class BaseServiceException extends RuntimeException {
     String location = null;
     String debugInfo = null;
     Boolean retryable = null;
-    if (exception instanceof GoogleJsonResponseException) {
-      GoogleJsonError jsonError = ((GoogleJsonResponseException) exception).getDetails();
-      if (jsonError != null) {
-        Error error = new Error(jsonError.getCode(), reason(jsonError));
-        code = error.code;
-        reason = error.reason;
-        retryable = isRetryable(idempotent, error);
-        if (reason != null) {
-          GoogleJsonError.ErrorInfo errorInfo = jsonError.getErrors().get(0);
-          location = errorInfo.getLocation();
-          debugInfo = (String) errorInfo.get("debugInfo");
+    if (exception instanceof HttpResponseException) {
+      if (exception instanceof GoogleJsonResponseException) {
+        GoogleJsonError jsonError = ((GoogleJsonResponseException) exception).getDetails();
+        if (jsonError != null) {
+          Error error = new Error(jsonError.getCode(), reason(jsonError));
+          code = error.code;
+          reason = error.reason;
+          retryable = isRetryable(idempotent, error);
+          if (reason != null) {
+            GoogleJsonError.ErrorInfo errorInfo = jsonError.getErrors().get(0);
+            location = errorInfo.getLocation();
+            debugInfo = (String) errorInfo.get("debugInfo");
+          }
+        } else {
+          code = ((GoogleJsonResponseException) exception).getStatusCode();
         }
       } else {
-        code = ((GoogleJsonResponseException) exception).getStatusCode();
+        // In cases where an exception is an instance of HttpResponseException but not
+        // an instance of GoogleJsonResponseException, check the status code to determine whether it's retryable
+        code = ((HttpResponseException) exception).getStatusCode();
+        retryable = isRetryable(idempotent, new Error(code, null));
       }
     }
     this.retryable = MoreObjects.firstNonNull(retryable, isRetryable(idempotent, exception));
