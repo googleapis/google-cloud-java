@@ -109,6 +109,7 @@ class MessageDispatcher {
       return expiration.compareTo(other.expiration);
     }
 
+    @Override
     public String toString() {
       ArrayList<String> ackIds = new ArrayList<>();
       for (AckHandler ah : ackHandlers) {
@@ -139,6 +140,7 @@ class MessageDispatcher {
       ackIds.add(ackId);
     }
 
+    @Override
     public String toString() {
       return String.format(
           "PendingModifyAckDeadline{extension: %d sec, ackIds: %s}",
@@ -148,7 +150,7 @@ class MessageDispatcher {
 
   /**
    * Handles callbacks for acking/nacking messages from the {@link
-   * com.google.cloud.pubsub.deprecated.MessageReceiver}.
+   * com.google.cloud.pubsub.spi.v1.MessageReceiver}.
    */
   private class AckHandler implements FutureCallback<AckReply> {
     private final String ackId;

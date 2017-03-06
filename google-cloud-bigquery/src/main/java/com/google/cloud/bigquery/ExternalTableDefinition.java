@@ -147,7 +147,7 @@ public class ExternalTableDefinition extends TableDefinition {
      * Sets whether BigQuery should allow extra values that are not represented in the table schema.
      * If true, the extra values are ignored. If false, records with extra columns are treated as
      * bad records, and if there are too many bad records, an invalid error is returned in the job
-     * result. The default value is false. The value set with {@link #formatOptions(FormatOptions)}
+     * result. The default value is false. The value set with {@link #setFormatOptions(FormatOptions)}
      * property determines what BigQuery treats as an extra value.
      *
      * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/tables#externalDataConfiguration.ignoreUnknownValues">
@@ -203,7 +203,7 @@ public class ExternalTableDefinition extends TableDefinition {
    * Returns whether BigQuery should allow extra values that are not represented in the table
    * schema. If true, the extra values are ignored. If false, records with extra columns are treated
    * as bad records, and if there are too many bad records, an invalid error is returned in the job
-   * result. The default value is false. The value of {@link #formatOptions()} determines what
+   * result. The default value is false. The value of {@link #getFormatOptions()} determines what
    * BigQuery treats as an extra value.
    *
    * @see <a href="https://cloud.google.com/bigquery/docs/reference/v2/tables#externalDataConfiguration.ignoreUnknownValues">

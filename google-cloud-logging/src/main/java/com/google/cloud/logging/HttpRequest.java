@@ -207,7 +207,7 @@ public final class HttpRequest implements Serializable {
 
     /**
      * Sets whether or not the response was validated with the origin server before being served
-     * from cache. This field is only meaningful if {@link #cacheHit(boolean)} is set to
+     * from cache. This field is only meaningful if {@link #setCacheHit(boolean)} is set to
      * {@code true}. If not set, {@code false} is used.
      */
     public Builder setCacheValidatedWithOriginServer(boolean cacheValidatedWithOriginServer) {

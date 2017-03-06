@@ -78,7 +78,7 @@ public class ViewDefinition extends TableDefinition {
 
 
     /**
-     * Sets user defined functions that can be used by {@link #query()}.
+     * Sets user defined functions that can be used by {@link #getQuery()}.
      *
      * @see <a href="https://cloud.google.com/bigquery/user-defined-functions">User-Defined
      *     Functions</a>
@@ -90,7 +90,7 @@ public class ViewDefinition extends TableDefinition {
 
 
     /**
-     * Sets user defined functions that can be used by {@link #query()}.
+     * Sets user defined functions that can be used by {@link #getQuery()}.
      *
      * @see <a href="https://cloud.google.com/bigquery/user-defined-functions">User-Defined
      *     Functions</a>
@@ -125,7 +125,7 @@ public class ViewDefinition extends TableDefinition {
 
 
   /**
-   * Returns user defined functions that can be used by {@link #query()}. Returns {@code null} if
+   * Returns user defined functions that can be used by {@link #getQuery()}. Returns {@code null} if
    * not set.
    *
    * @see <a href="https://cloud.google.com/bigquery/user-defined-functions">User-Defined Functions

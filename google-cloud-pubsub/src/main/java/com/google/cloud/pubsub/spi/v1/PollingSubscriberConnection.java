@@ -48,7 +48,7 @@ import java.util.logging.Logger;
 import org.joda.time.Duration;
 
 /**
- * Implementation of {@link AbstractSubscriberConnection} based on Cloud Pub/Sub pull and
+ * Implementation of {@link AckProcessor} based on Cloud Pub/Sub pull and
  * acknowledge operations.
  */
 final class PollingSubscriberConnection extends AbstractService implements AckProcessor {

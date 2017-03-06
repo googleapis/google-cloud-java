@@ -1073,7 +1073,7 @@ public interface Compute extends Service<ComputeOptions> {
     /**
      * Returns an option to specify the disk type's fields to be returned by the RPC call. If this
      * option is not provided, all disk type's fields are returned. {@code DiskTypeOption.fields}
-     * can be used to specify only the fields of interest. {@link DiskType#diskTypeId()} is always
+     * can be used to specify only the fields of interest. {@link DiskType#getDiskTypeId()} is always
      * returned, even if not specified.
      */
     public static DiskTypeOption fields(DiskTypeField... fields) {
@@ -1119,7 +1119,7 @@ public interface Compute extends Service<ComputeOptions> {
      * Returns an option to specify the disk type's fields to be returned by the RPC call. If this
      * option is not provided, all disk type's fields are returned.
      * {@code DiskTypeListOption.fields} can be used to specify only the fields of interest.
-     * {@link DiskType#diskTypeId()} is always returned, even if not specified.
+     * {@link DiskType#getDiskTypeId()} is always returned, even if not specified.
      */
     public static DiskTypeListOption fields(DiskTypeField... fields) {
       return new DiskTypeListOption(ComputeRpc.Option.FIELDS,
@@ -1176,7 +1176,7 @@ public interface Compute extends Service<ComputeOptions> {
      * Returns an option to specify the machine type's fields to be returned by the RPC call. If
      * this option is not provided, all machine type's fields are returned.
      * {@code MachineTypeOption.fields} can be used to specify only the fields of interest.
-     * {@link MachineType#machineTypeId()} is always returned, even if not specified.
+     * {@link MachineType#getMachineTypeId()} is always returned, even if not specified.
      */
     public static MachineTypeOption fields(MachineTypeField... fields) {
       return new MachineTypeOption(ComputeRpc.Option.FIELDS,
@@ -1221,7 +1221,7 @@ public interface Compute extends Service<ComputeOptions> {
      * Returns an option to specify the machine type's fields to be returned by the RPC call. If
      * this option is not provided, all machine type's fields are returned.
      * {@code MachineTypeListOption.fields} can be used to specify only the fields of interest.
-     * {@link MachineType#machineTypeId()} is always returned, even if not specified.
+     * {@link MachineType#getMachineTypeId()} is always returned, even if not specified.
      */
     public static MachineTypeListOption fields(MachineTypeField... fields) {
       return new MachineTypeListOption(ComputeRpc.Option.FIELDS,
@@ -1277,7 +1277,7 @@ public interface Compute extends Service<ComputeOptions> {
     /**
      * Returns an option to specify the region's fields to be returned by the RPC call. If this
      * option is not provided, all region's fields are returned. {@code RegionOption.fields} can be
-     * used to specify only the fields of interest. {@link Region#regionId()} is always
+     * used to specify only the fields of interest. {@link Region#getRegionId()} is always
      * returned, even if not specified.
      */
     public static RegionOption fields(RegionField... fields) {
@@ -1322,7 +1322,7 @@ public interface Compute extends Service<ComputeOptions> {
     /**
      * Returns an option to specify the region's fields to be returned by the RPC call. If this
      * option is not provided, all region's fields are returned. {@code RegionListOption.fields} can
-     * be used to specify only the fields of interest. {@link Region#regionId()} is always
+     * be used to specify only the fields of interest. {@link Region#getRegionId()} is always
      * returned, even if not specified.
      */
     public static RegionListOption fields(RegionField... fields) {
@@ -1345,7 +1345,7 @@ public interface Compute extends Service<ComputeOptions> {
     /**
      * Returns an option to specify the zone's fields to be returned by the RPC call. If this option
      * is not provided, all zone's fields are returned. {@code ZoneOption.fields} can be used to
-     * specify only the fields of interest. {@link Zone#zoneId()} is always returned, even if
+     * specify only the fields of interest. {@link Zone#getZoneId()} is always returned, even if
      * not specified.
      */
     public static ZoneOption fields(ZoneField... fields) {
@@ -1390,7 +1390,7 @@ public interface Compute extends Service<ComputeOptions> {
     /**
      * Returns an option to specify the zone's fields to be returned by the RPC call. If this option
      * is not provided, all zone's fields are returned. {@code ZoneListOption.fields} can be used to
-     * specify only the fields of interest. {@link Zone#zoneId()} is always returned, even if
+     * specify only the fields of interest. {@link Zone#getZoneId()} is always returned, even if
      * not specified.
      */
     public static ZoneListOption fields(ZoneField... fields) {
@@ -1413,7 +1413,7 @@ public interface Compute extends Service<ComputeOptions> {
     /**
      * Returns an option to specify the license's fields to be returned by the RPC call. If this
      * option is not provided, all license's fields are returned. {@code LicenseOption.fields} can
-     * be used to specify only the fields of interest. {@link License#licenseId()} is always
+     * be used to specify only the fields of interest. {@link License#getLicenseId()} is always
      * returned, even if not specified.
      */
     public static LicenseOption fields(LicenseField... fields) {
@@ -1436,7 +1436,7 @@ public interface Compute extends Service<ComputeOptions> {
     /**
      * Returns an option to specify the operation's fields to be returned by the RPC call. If this
      * option is not provided, all operation's fields are returned. {@code OperationOption.fields}
-     * can be used to specify only the fields of interest. {@link Operation#operationId()} is
+     * can be used to specify only the fields of interest. {@link Operation#getOperationId()} is
      * always returned, even if not specified.
      */
     public static OperationOption fields(OperationField... fields) {
@@ -1482,7 +1482,7 @@ public interface Compute extends Service<ComputeOptions> {
      * Returns an option to specify the operation's fields to be returned by the RPC call. If this
      * option is not provided, all operation's fields are returned.
      * {@code OperationListOption.fields} can be used to specify only the fields of interest.
-     * {@link Operation#operationId()} is always returned, even if not specified.
+     * {@link Operation#getOperationId()} is always returned, even if not specified.
      */
     public static OperationListOption fields(OperationField... fields) {
       return new OperationListOption(ComputeRpc.Option.FIELDS,
@@ -1504,7 +1504,7 @@ public interface Compute extends Service<ComputeOptions> {
     /**
      * Returns an option to specify the address' fields to be returned by the RPC call. If this
      * option is not provided, all address' fields are returned. {@code AddressOption.fields} can be
-     * used to specify only the fields of interest. {@link Address#addressId()} is always
+     * used to specify only the fields of interest. {@link Address#getAddressId()} is always
      * returned, even if not specified.
      */
     public static AddressOption fields(AddressField... fields) {
@@ -1549,7 +1549,7 @@ public interface Compute extends Service<ComputeOptions> {
     /**
      * Returns an option to specify the address' fields to be returned by the RPC call. If this
      * option is not provided, all address' fields are returned. {@code AddressListOption.fields}
-     * can be used to specify only the fields of interest. {@link Address#addressId()} is always
+     * can be used to specify only the fields of interest. {@link Address#getAddressId()} is always
      * returned, even if not specified.
      */
     public static AddressListOption fields(AddressField... fields) {
@@ -1606,7 +1606,7 @@ public interface Compute extends Service<ComputeOptions> {
     /**
      * Returns an option to specify the snapshot's fields to be returned by the RPC call. If this
      * option is not provided, all the snapshot's fields are returned. {@code SnapshotOption.fields}
-     * can be used to specify only the fields of interest. {@link Snapshot#snapshotId()} is always
+     * can be used to specify only the fields of interest. {@link Snapshot#getSnapshotId()} is always
      * returned, even if not specified.
      */
     public static SnapshotOption fields(SnapshotField... fields) {
@@ -1652,7 +1652,7 @@ public interface Compute extends Service<ComputeOptions> {
      * Returns an option to specify the snapshot's fields to be returned by the RPC call. If this
      * option is not provided, all the snapshot's fields are returned.
      * {@code SnapshotListOption.fields} can be used to specify only the fields of interest.
-     * {@link Snapshot#snapshotId()} is always returned, even if not specified.
+     * {@link Snapshot#getSnapshotId()} is always returned, even if not specified.
      */
     public static SnapshotListOption fields(SnapshotField... fields) {
       return new SnapshotListOption(ComputeRpc.Option.FIELDS,

@@ -55,7 +55,7 @@ public final class ProjectionEntity extends BaseEntity<Key> {
   @Override
   public DateTime getDateTime(String name) {
     Value<?> value = getValue(name);
-    if (value.meaning() == 18 && value instanceof LongValue) {
+    if (value.getMeaning() == 18 && value instanceof LongValue) {
       return new DateTime(getLong(name));
     }
     return ((Value<DateTime>) value).get();

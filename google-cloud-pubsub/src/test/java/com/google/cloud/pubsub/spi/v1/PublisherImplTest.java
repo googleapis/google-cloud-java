@@ -56,7 +56,7 @@ import org.mockito.Captor;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 
-/** Tests for {@link PublisherImpl}. */
+/** Tests for {@link Publisher}. */
 @RunWith(JUnit4.class)
 public class PublisherImplTest {
 

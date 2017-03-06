@@ -47,8 +47,8 @@ public class JobStatus implements Serializable {
     RUNNING,
 
     /**
-     * The BigQuery Job has completed either succeeding or failing. If failed {@link #error()} will
-     * be non-null.
+     * The BigQuery Job has completed either succeeding or failing. If failed {@link #getError()}
+     * will be non-null.
      */
     DONE
   }
@@ -73,7 +73,7 @@ public class JobStatus implements Serializable {
   /**
    * Returns the state of the job. A {@link State#PENDING} job is waiting to be executed. A
    * {@link State#RUNNING} is being executed. A {@link State#DONE} job has completed either
-   * succeeding or failing. If failed {@link #error()} will be non-null.
+   * succeeding or failing. If failed {@link #getError()} will be non-null.
    */
   public State getState() {
     return state;

@@ -131,7 +131,7 @@ public interface LoadConfiguration {
 
 
   /**
-   * Returns additional properties used to parse CSV data (used when {@link #format()} is set
+   * Returns additional properties used to parse CSV data (used when {@link #getFormat()} is set
    * to CSV). Returns {@code null} if not set.
    */
   CsvOptions getCsvOptions();

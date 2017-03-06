@@ -128,7 +128,7 @@ public class QueryResult extends PageImpl<List<FieldValue>> {
 
   /**
    * Returns the total number of rows in the complete query result set, which can be more than the
-   * number of rows in the first page of results returned by {@link #values()}. Returns {@code 0}
+   * number of rows in the first page of results returned by {@link #getValues()}. Returns {@code 0}
    * if the query was a dry run.
    */
   public long getTotalRows() {

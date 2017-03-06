@@ -604,7 +604,7 @@ public class Bucket extends BucketInfo {
    * Fetches current bucket's latest information. Returns {@code null} if the bucket does not exist.
    *
    * <p>Example of getting the bucket's latest information, if its generation does not match the
-   * {@link Bucket#metageneration()} value, otherwise a {@link StorageException} is thrown.
+   * {@link Bucket#getMetageneration()} value, otherwise a {@link StorageException} is thrown.
    * <pre> {@code
    * Bucket latestBucket = bucket.reload(BucketSourceOption.metagenerationMatch());
    * if (latestBucket == null) {
@@ -644,7 +644,7 @@ public class Bucket extends BucketInfo {
    * Deletes this bucket.
    *
    * <p>Example of deleting the bucket, if its metageneration matches the
-   * {@link Bucket#metageneration()} value, otherwise a {@link StorageException} is thrown.
+   * {@link Bucket#getMetageneration()} value, otherwise a {@link StorageException} is thrown.
    * <pre> {@code
    * boolean deleted = bucket.delete(BucketSourceOption.metagenerationMatch());
    * if (deleted) {

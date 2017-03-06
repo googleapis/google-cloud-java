@@ -378,7 +378,7 @@ public class Blob extends BlobInfo {
    * Returns this blob's content.
    *
    * <p>Example of reading all bytes of the blob, if its generation matches the
-   * {@link Blob#generation()} value, otherwise a {@link StorageException} is thrown.
+   * {@link Blob#getGeneration()} value, otherwise a {@link StorageException} is thrown.
    * <pre> {@code
    * byte[] content = blob.getContent(BlobSourceOption.generationMatch());
    * }</pre>
@@ -394,7 +394,7 @@ public class Blob extends BlobInfo {
    * Fetches current blob's latest information. Returns {@code null} if the blob does not exist.
    *
    * <p>Example of getting the blob's latest information, if its generation does not match the
-   * {@link Blob#generation()} value, otherwise a {@link StorageException} is thrown.
+   * {@link Blob#getGeneration()} value, otherwise a {@link StorageException} is thrown.
    * <pre> {@code
    * Blob latestBlob = blob.reload(BlobSourceOption.generationNotMatch());
    * if (latestBlob == null) {
@@ -442,8 +442,8 @@ public class Blob extends BlobInfo {
   /**
    * Deletes this blob.
    *
-   * <p>Example of deleting the blob, if its generation matches the {@link Blob#generation()} value,
-   * otherwise a {@link StorageException} is thrown.
+   * <p>Example of deleting the blob, if its generation matches the {@link Blob#getGeneration()}
+   * value, otherwise a {@link StorageException} is thrown.
    * <pre> {@code
    * boolean deleted = blob.delete(BlobSourceOption.generationMatch());
    * if (deleted) {

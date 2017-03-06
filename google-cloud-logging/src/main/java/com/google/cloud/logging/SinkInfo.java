@@ -442,7 +442,7 @@ public class SinkInfo implements Serializable {
     /**
      * Sets an advanced logs filter. Only log entries matching that filter are exported. The filter
      * must be consistent with the log entry format specified with
-     * {@link #versionFormat(VersionFormat)}, regardless of the format of the log entry that was
+     * {@link #setVersionFormat(VersionFormat)}, regardless of the format of the log entry that was
      * originally written to Stackdriver Logging. Example (V2 format):
      * {@code logName=projects/my-projectid/logs/syslog AND severity>=ERROR}.
      *
@@ -554,9 +554,9 @@ public class SinkInfo implements Serializable {
 
   /**
    * Returns an advanced logs filter. Only log entries matching that filter are exported. The filter
-   * must be consistent with the log entry format specified in {@link #versionFormat()}, regardless
-   * of the format of the log entry that wa originally written to Stackdriver Logging. Example (V2
-   * format): {@code logName=projects/my-projectid/logs/syslog AND severity>=ERROR}.
+   * must be consistent with the log entry format specified in {@link #getVersionFormat()},
+   * regardless of the format of the log entry that wa originally written to Stackdriver Logging.
+   * Example (V2 format): {@code logName=projects/my-projectid/logs/syslog AND severity>=ERROR}.
    *
    * @see <a href="https://cloud.google.com/logging/docs/view/advanced_filters">Advanced Log
    *     Filters</a>

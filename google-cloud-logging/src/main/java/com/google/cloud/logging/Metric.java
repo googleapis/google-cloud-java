@@ -28,7 +28,7 @@ import java.util.concurrent.Future;
 
 /**
  * Stackdriver Logging metrics describe logs-based metric. The value of the metric is the number of
- * log entries that match a logs filter (see {@link #filter()}).
+ * log entries that match a logs filter (see {@link #getFilter()}).
  *
  * <p>{@code Metric} adds a layer of service-related functionality over {@link MetricInfo}. Objects
  * of this class are immutable. To get a {@code Metric} object with the most recent information use

@@ -36,8 +36,8 @@ import java.util.Objects;
  * entries can have different type of payloads: an UTF-8 string (see
  * {@link Payload.StringPayload}), a JSON object (see {@link Payload.JsonPayload}, or a protobuf
  * object (see {@link Payload.ProtoPayload}). Entries can also store additional information about
- * the operation or the HTTP request that generated the log (see {@link LogEntry#operation()} and
- * {@link LogEntry#httpRequest()}, respectively).
+ * the operation or the HTTP request that generated the log (see {@link LogEntry#getOperation()} and
+ * {@link LogEntry#getHttpRequest()}, respectively).
  *
  * @see <a href="https://cloud.google.com/logging/docs/view/logs_index">Log Entries and Logs</a>
  */

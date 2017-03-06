@@ -207,7 +207,7 @@ public class FieldValue implements Serializable {
 
   /**
    * Returns this field's value as a list of {@link FieldValue}. This method should only be used if
-   * the corresponding field has {@link Field.Mode#REPEATED} mode (i.e. {@link #attribute()} is
+   * the corresponding field has {@link Field.Mode#REPEATED} mode (i.e. {@link #getAttribute()} is
    * {@link Attribute#REPEATED}).
    *
    * @throws ClassCastException if the field has not {@link Field.Mode#REPEATED} mode
@@ -222,8 +222,8 @@ public class FieldValue implements Serializable {
 
   /**
    * Returns this field's value as a list of {@link FieldValue}. This method should only be used if
-   * the corresponding field has {@link Field.Type#record(Field...)} type (i.e. {@link #attribute()}
-   * is {@link Attribute#RECORD}).
+   * the corresponding field has {@link Field.Type#record(Field...)} type (i.e.
+   * {@link #getAttribute()} is {@link Attribute#RECORD}).
    *
    * @throws ClassCastException if the field is not a {@link Field.Type#record(Field...)} type
    * @throws NullPointerException if {@link #isNull()} returns {@code true}

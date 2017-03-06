@@ -21,7 +21,7 @@ import java.util.Iterator;
 /**
  * The result of a Google Cloud Datastore query submission.
  * When the result is not typed it is possible to cast it to its appropriate type according to
- * the {@link #resultClass} value.
+ * the {@link #getResultClass} value.
  * Results are loaded lazily in batches, where batch size is set by Cloud Datastore. As a result, it
  * is possible to get a {@code DatastoreException} upon {@link Iterator#hasNext hasNext} or
  * {@link Iterator#next next} calls.

@@ -513,7 +513,7 @@ public interface Storage extends Service<StorageOptions> {
      * Returns an option for blob's data generation match. If this option is used the request will
      * fail if blob's generation does not match. The generation value to compare with the actual
      * blob's generation is taken from a source {@link BlobId} object. When this option is passed
-     * to a {@link Storage} method and {@link BlobId#generation()} is {@code null} or no
+     * to a {@link Storage} method and {@link BlobId#getGeneration()} is {@code null} or no
      * {@link BlobId} is provided an exception is thrown.
      */
     public static BlobSourceOption generationMatch() {
@@ -532,7 +532,7 @@ public interface Storage extends Service<StorageOptions> {
      * Returns an option for blob's data generation mismatch. If this option is used the request
      * will fail if blob's generation matches. The generation value to compare with the actual
      * blob's generation is taken from a source {@link BlobId} object. When this option is passed
-     * to a {@link Storage} method and {@link BlobId#generation()} is {@code null} or no
+     * to a {@link Storage} method and {@link BlobId#getGeneration()} is {@code null} or no
      * {@link BlobId} is provided an exception is thrown.
      */
     public static BlobSourceOption generationNotMatch() {
@@ -602,7 +602,7 @@ public interface Storage extends Service<StorageOptions> {
      * Returns an option for blob's data generation match. If this option is used the request will
      * fail if blob's generation does not match. The generation value to compare with the actual
      * blob's generation is taken from a source {@link BlobId} object. When this option is passed
-     * to a {@link Storage} method and {@link BlobId#generation()} is {@code null} or no
+     * to a {@link Storage} method and {@link BlobId#getGeneration()} is {@code null} or no
      * {@link BlobId} is provided an exception is thrown.
      */
     public static BlobGetOption generationMatch() {
@@ -621,7 +621,7 @@ public interface Storage extends Service<StorageOptions> {
      * Returns an option for blob's data generation mismatch. If this option is used the request
      * will fail if blob's generation matches. The generation value to compare with the actual
      * blob's generation is taken from a source {@link BlobId} object. When this option is passed
-     * to a {@link Storage} method and {@link BlobId#generation()} is {@code null} or no
+     * to a {@link Storage} method and {@link BlobId#getGeneration()} is {@code null} or no
      * {@link BlobId} is provided an exception is thrown.
      */
     public static BlobGetOption generationNotMatch() {
@@ -748,10 +748,10 @@ public interface Storage extends Service<StorageOptions> {
      * possible {@link #prefix(String)}, do not contain the '/' delimiter are returned as is. Blobs
      * whose names, after a possible {@link #prefix(String)}, contain the '/' delimiter, will have
      * their name truncated after the delimiter and will be returned as {@link Blob} objects where
-     * only {@link Blob#blobId()}, {@link Blob#size()} and {@link Blob#isDirectory()} are set. For
-     * such directory blobs, ({@link BlobId#generation()} returns {@code null}), {@link Blob#size()}
-     * returns {@code 0} while {@link Blob#isDirectory()} returns {@code true}. Duplicate directory
-     * blobs are omitted.
+     * only {@link Blob#getBlobId()}, {@link Blob#getSize()} and {@link Blob#isDirectory()} are set.
+     * For such directory blobs, ({@link BlobId#getGeneration()} returns {@code null}),
+     * {@link Blob#getSize()} returns {@code 0} while {@link Blob#isDirectory()} returns
+     * {@code true}. Duplicate directory blobs are omitted.
      */
     public static BlobListOption currentDirectory() {
       return new BlobListOption(StorageRpc.Option.DELIMITER, true);
@@ -1184,8 +1184,8 @@ public interface Storage extends Service<StorageOptions> {
     }
 
     /**
-     * Returns whether to override the target blob information with {@link #target()}.
-     * If {@code true}, the value of {@link #target()} is used to replace source blob information
+     * Returns whether to override the target blob information with {@link #getTarget()}.
+     * If {@code true}, the value of {@link #getTarget()} is used to replace source blob information
      * (e.g. {@code contentType}, {@code contentLanguage}). Target blob information is set exactly
      * to this value, no information is inherited from the source blob. If {@code false}, target
      * blob information is inherited from the source blob.
@@ -1676,15 +1676,15 @@ public interface Storage extends Service<StorageOptions> {
    * Sends a copy request. This method copies both blob's data and information. To override source
    * blob's information supply a {@code BlobInfo} to the
    * {@code CopyRequest} using either
-   * {@link Storage.CopyRequest.Builder#target(BlobInfo, Storage.BlobTargetOption...)} or
-   * {@link Storage.CopyRequest.Builder#target(BlobInfo, Iterable)}.
+   * {@link Storage.CopyRequest.Builder#setTarget(BlobInfo, Storage.BlobTargetOption...)} or
+   * {@link Storage.CopyRequest.Builder#setTarget(BlobInfo, Iterable)}.
    *
    * <p>This method returns a {@link CopyWriter} object for the provided {@code CopyRequest}. If
    * source and destination objects share the same location and storage class the source blob is
-   * copied with one request and {@link CopyWriter#result()} immediately returns, regardless of the
-   * {@link CopyRequest#megabytesCopiedPerChunk} parameter. If source and destination have different
-   * location or storage class {@link CopyWriter#result()} might issue multiple RPC calls depending
-   * on blob's size.
+   * copied with one request and {@link CopyWriter#getResult()} immediately returns, regardless of
+   * the {@link CopyRequest#megabytesCopiedPerChunk} parameter. If source and destination have
+   * different location or storage class {@link CopyWriter#getResult()} might issue multiple RPC
+   * calls depending on blob's size.
    *
    * <p>Example of copying a blob.
    * <pre> {@code
@@ -1812,7 +1812,7 @@ public interface Storage extends Service<StorageOptions> {
 
   /**
    * Returns a channel for reading the blob's content. The blob's latest generation is read. If the
-   * blob changes while reading (i.e. {@link BlobInfo#etag()} changes), subsequent calls to
+   * blob changes while reading (i.e. {@link BlobInfo#getEtag()} changes), subsequent calls to
    * {@code blobReadChannel.read(ByteBuffer)} may throw {@link StorageException}.
    *
    * <p>Example of reading a blob's content through a reader.
@@ -1837,7 +1837,7 @@ public interface Storage extends Service<StorageOptions> {
    * Returns a channel for reading the blob's content. If {@code blob.generation()} is set
    * data corresponding to that generation is read. If {@code blob.generation()} is {@code null}
    * the blob's latest generation is read. If the blob changes while reading (i.e.
-   * {@link BlobInfo#etag()} changes), subsequent calls to {@code blobReadChannel.read(ByteBuffer)}
+   * {@link BlobInfo#getEtag()} changes), subsequent calls to {@code blobReadChannel.read(ByteBuffer)}
    * may throw {@link StorageException}.
    *
    * <p>The {@link BlobSourceOption#generationMatch()} and

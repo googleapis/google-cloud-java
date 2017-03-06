@@ -135,9 +135,9 @@ public class QueryResponse implements Serializable {
   }
 
   /**
-   * Returns whether the job running the query has completed or not. If {@link #result()} is not
+   * Returns whether the job running the query has completed or not. If {@link #getResult()} is not
    * {@code null}, this method will always return {@code true}. If this method returns {@code false}
-   * {@link #result()} returns {@code null}. This method can be used to check if query execution
+   * {@link #getResult()} returns {@code null}. This method can be used to check if query execution
    * completed and results are available.
    */
   public boolean jobCompleted() {

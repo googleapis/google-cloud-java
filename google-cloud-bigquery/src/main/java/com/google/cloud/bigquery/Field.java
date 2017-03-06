@@ -99,7 +99,7 @@ public final class Field implements Serializable {
 
 
     /**
-     * Returns the list of sub-fields if {@link #value()} is set to {@link
+     * Returns the list of sub-fields if {@link #getValue()} is set to {@link
      * LegacySQLTypeName#RECORD}. Returns {@code null} otherwise.
      */
     public List<Field> getFields() {
@@ -304,7 +304,7 @@ public final class Field implements Serializable {
 
 
   /**
-   * Returns the list of sub-fields if {@link #type()} is a {@link LegacySQLTypeName#RECORD}.
+   * Returns the list of sub-fields if {@link #getType()} is a {@link LegacySQLTypeName#RECORD}.
    * Returns {@code null} otherwise.
    */
   public List<Field> getFields() {

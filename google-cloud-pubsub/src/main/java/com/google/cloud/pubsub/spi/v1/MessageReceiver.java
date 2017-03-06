@@ -17,6 +17,7 @@
 package com.google.cloud.pubsub.spi.v1;
 
 import com.google.pubsub.v1.PubsubMessage;
+import java.util.concurrent.BlockingQueue;
 
 /** This interface can be implemented by users of {@link Subscriber} to receive messages. */
 public interface MessageReceiver {
@@ -27,7 +28,7 @@ public interface MessageReceiver {
    * <p>This {@code MessageReceiver} passes all messages to a {@link BlockingQueue}.
    * This method can be called concurrently from multiple threads,
    * so it is important that the queue be thread-safe.
-   * 
+   *
    * This example is for illustration. Implementations may directly process messages
    * instead of sending them to queues.
    * <pre> {@code

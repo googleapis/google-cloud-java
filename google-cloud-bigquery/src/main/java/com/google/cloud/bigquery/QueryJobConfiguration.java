@@ -160,7 +160,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
 
     /**
      * Sets the table where to put query results. If not provided a new table is created. This value
-     * is required if {@link Builder#allowLargeResults(Boolean)} is set to {@code true}.
+     * is required if {@link Builder#setAllowLargeResults(Boolean)} is set to {@code true}.
      */
     public Builder setDestinationTable(TableId destinationTable) {
       this.destinationTable = destinationTable;
@@ -263,7 +263,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
     /**
      * Sets whether the job is enabled to create arbitrarily large results. If {@code true}
      * the query is allowed to create large results at a slight cost in performance. If {@code true}
-     * {@link Builder#destinationTable(TableId)} must be provided.
+     * {@link Builder#setDestinationTable(TableId)} must be provided.
      *
      * @see <a href="https://cloud.google.com/bigquery/querying-data#largequeryresults">
      *     Returning Large Query Results</a>
@@ -277,7 +277,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
     /**
      * Sets whether to look for the result in the query cache. The query cache is a best-effort
      * cache that will be flushed whenever tables in the query are modified. Moreover, the query
-     * cache is only available when {@link Builder#destinationTable(TableId)} is not set.
+     * cache is only available when {@link Builder#setDestinationTable(TableId)} is not set.
      *
      * @see <a href="https://cloud.google.com/bigquery/querying-data#querycaching">Query Caching</a>
      */
@@ -289,7 +289,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
 
     /**
      * Sets whether nested and repeated fields should be flattened. If set to {@code false}
-     * {@link Builder#allowLargeResults(Boolean)} must be {@code true}. By default results are
+     * {@link Builder#setAllowLargeResults(Boolean)} must be {@code true}. By default results are
      * flattened.
      *
      * @see <a href="https://cloud.google.com/bigquery/docs/data#flatten">Flatten</a>
@@ -315,9 +315,9 @@ public final class QueryJobConfiguration extends JobConfiguration {
      * Sets whether to use BigQuery's legacy SQL dialect for this query. If set to {@code false},
      * the query will use BigQuery's <a href="https://cloud.google.com/bigquery/sql-reference/">
      * Standard SQL</a>. When set to {@code false}, the values of
-     * {@link #allowLargeResults(Boolean)} and {@link #flattenResults(Boolean)} are ignored; query
-     * will be run as if {@link #allowLargeResults(Boolean)} is {@code true} and
-     * {@link #flattenResults(Boolean)} is {@code false}. If not set, legacy SQL dialect is used.
+     * {@link #setAllowLargeResults(Boolean)} and {@link #setFlattenResults(Boolean)} are ignored; query
+     * will be run as if {@link #setAllowLargeResults(Boolean)} is {@code true} and
+     * {@link #setFlattenResults(Boolean)} is {@code false}. If not set, legacy SQL dialect is used.
      * This property is experimental and might be subject to change.
      */
     public Builder setUseLegacySql(Boolean useLegacySql) {
@@ -391,7 +391,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
 
   /**
    * Returns whether nested and repeated fields should be flattened. If set to {@code false}
-   * {@link Builder#allowLargeResults(Boolean)} must be {@code true}.
+   * {@link Builder#setAllowLargeResults(Boolean)} must be {@code true}.
    *
    * @see <a href="https://cloud.google.com/bigquery/docs/data#flatten">Flatten</a>
    */
@@ -429,7 +429,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
   /**
    * Returns whether to look for the result in the query cache. The query cache is a best-effort
    * cache that will be flushed whenever tables in the query are modified. Moreover, the query
-   * cache is only available when {@link Builder#destinationTable(TableId)} is not set.
+   * cache is only available when {@link Builder#setDestinationTable(TableId)} is not set.
    *
    * @see <a href="https://cloud.google.com/bigquery/querying-data#querycaching">Query Caching</a>
    */

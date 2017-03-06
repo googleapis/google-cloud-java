@@ -69,7 +69,7 @@ public class InsertAllResponse implements Serializable {
 
   /**
    * Returns {@code true} if no row insertion failed, {@code false} otherwise. If {@code false}
-   * {@link #insertErrors()} returns an empty map.
+   * {@link #getInsertErrors()} returns an empty map.
    */
   public boolean hasErrors() {
     return !insertErrors.isEmpty();

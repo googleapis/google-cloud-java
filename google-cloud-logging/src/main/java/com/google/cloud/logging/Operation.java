@@ -122,8 +122,8 @@ public final class Operation implements Serializable {
 
   /**
    * Returns the operation identifier. Log entries with the same identifier are assumed to be part
-   * of the same operation. The combination of this value and {@link #producer()} must be globally
-   * unique.
+   * of the same operation. The combination of this value and {@link #getProducer()} must be
+   * globally unique.
    */
   public String getId() {
     return id;
@@ -131,7 +131,7 @@ public final class Operation implements Serializable {
 
 
   /**
-   * Returns an arbitrary producer identifier. The combination of this value and {@link #id()}
+   * Returns an arbitrary producer identifier. The combination of this value and {@link #getId()}
    * must be globally unique. Examples: {@code MyDivision.MyBigCompany.com},
    * {@code github.com/MyProject/MyApplication}.
    */

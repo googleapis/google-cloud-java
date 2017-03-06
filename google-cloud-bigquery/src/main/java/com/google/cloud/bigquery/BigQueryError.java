@@ -26,12 +26,12 @@ import java.util.Objects;
 /**
  * Google Cloud BigQuery Error. Objects of this class represent errors encountered by the BigQuery
  * service while executing a request. A BigQuery Job that terminated with an error has a non-null
- * {@link JobStatus#error()}. A job can also encounter errors during its execution that do not cause
- * the whole job to fail (see {@link JobStatus#executionErrors()}). Similarly, queries and insert
- * all requests can cause BigQuery errors that do not mean the whole operation failed (see
- * {@link QueryResponse#executionErrors()} and {@link InsertAllResponse#insertErrors()}). When a
- * {@link BigQueryException} is thrown the BigQuery Error that caused it, if any, can be accessed
- * with {@link BigQueryException#error()}.
+ * {@link JobStatus#getError()}. A job can also encounter errors during its execution that do not
+ * cause the whole job to fail (see {@link JobStatus#getExecutionErrors()}). Similarly, queries and
+ * insert all requests can cause BigQuery errors that do not mean the whole operation failed (see
+ * {@link QueryResponse#getExecutionErrors()} and {@link InsertAllResponse#getInsertErrors()}).
+ * When a {@link BigQueryException} is thrown the BigQuery Error that caused it, if any, can be
+ * accessed with {@link BigQueryException#getError()}.
  */
 public final class BigQueryError implements Serializable {
 

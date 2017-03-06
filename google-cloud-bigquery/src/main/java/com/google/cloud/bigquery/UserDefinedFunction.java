@@ -78,8 +78,9 @@ public abstract class UserDefinedFunction implements Serializable {
 
 
   /**
-   * If {@link #type()} is {@link Type#INLINE} this method returns a code blob. If {@link #type()}
-   * is {@link Type#FROM_URI} the method returns a Google Cloud Storage URI (e.g. gs://bucket/path).
+   * If {@link #getType()} is {@link Type#INLINE} this method returns a code blob. If
+   * {@link #getType()} is {@link Type#FROM_URI} the method returns a Google Cloud Storage
+   * URI (e.g. gs://bucket/path).
    */
   public String getContent() {
     return content;
