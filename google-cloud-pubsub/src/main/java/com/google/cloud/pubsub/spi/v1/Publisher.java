@@ -17,16 +17,16 @@
 package com.google.cloud.pubsub.spi.v1;
 
 import com.google.api.gax.bundling.BundlingSettings;
+import com.google.api.gax.core.ApiFuture;
+import com.google.api.gax.core.ApiFutureCallback;
+import com.google.api.gax.core.ApiFutures;
 import com.google.api.gax.core.FlowControlSettings;
 import com.google.api.gax.core.FlowController;
 import com.google.api.gax.core.Function;
 import com.google.api.gax.core.RetrySettings;
-import com.google.api.gax.core.RpcFuture;
-import com.google.api.gax.core.RpcFutureCallback;
 import com.google.api.gax.grpc.ChannelProvider;
 import com.google.api.gax.grpc.ExecutorProvider;
 import com.google.api.gax.grpc.InstantiatingExecutorProvider;
-import com.google.api.gax.grpc.RpcFutures;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
@@ -182,8 +182,8 @@ public class Publisher {
    * String message = "my_message";
    * ByteString data = ByteString.copyFromUtf8(message);
    * PubsubMessage pubsubMessage = PubsubMessage.newBuilder().setData(data).build();
-   * RpcFuture<String> messageIdFuture = publisher.publish(pubsubMessage);
-   * messageIdFuture.addCallback(new RpcFutureCallback<String>() {
+   * ApiFuture<String> messageIdFuture = publisher.publish(pubsubMessage);
+   * messageIdFuture.addCallback(new ApiFutureCallback<String>() {
    *   public void onSuccess(String messageId) {
    *     System.out.println("published with message id: " + messageId);
    *   }
@@ -197,7 +197,7 @@ public class Publisher {
    * @param message the message to publish.
    * @return the message ID wrapped in a future.
    */
-  public RpcFuture<String> publish(PubsubMessage message) {
+  public ApiFuture<String> publish(PubsubMessage message) {
     if (shutdown.get()) {
       throw new IllegalStateException("Cannot publish on a shut-down publisher.");
     }
@@ -206,7 +206,7 @@ public class Publisher {
     try {
       flowController.reserve(1, messageSize);
     } catch (FlowController.FlowControlException e) {
-      return RpcFutures.immediateFailedFuture(e);
+      return ApiFutures.immediateFailedFuture(e);
     }
     OutstandingBundle bundleToSend = null;
     SettableFuture<String> publishResult = SettableFuture.create();
@@ -282,12 +282,12 @@ public class Publisher {
   }
 
   private static class ListenableFutureDelegate<V> extends SimpleForwardingListenableFuture<V>
-      implements RpcFuture<V> {
+      implements ApiFuture<V> {
     ListenableFutureDelegate(ListenableFuture<V> delegate) {
       super(delegate);
     }
 
-    public void addCallback(final RpcFutureCallback<? super V> callback) {
+    public void addCallback(final ApiFutureCallback<? super V> callback) {
       Futures.addCallback(
           this,
           new FutureCallback<V>() {
@@ -303,7 +303,7 @@ public class Publisher {
           });
     }
 
-    public <X extends Throwable> RpcFuture catching(
+    public <X extends Throwable> ApiFuture catching(
         Class<X> exceptionType, final Function<? super X, ? extends V> callback) {
       return new ListenableFutureDelegate<V>(
           Futures.catching(

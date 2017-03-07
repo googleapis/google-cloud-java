@@ -4,7 +4,7 @@
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-pom</artifactId>
   <packaging>pom</packaging>
-  <version>0.9.4-alpha-SNAPSHOT</version>
+  <version>0.9.5-alpha-SNAPSHOT</version>
   <name>Google Cloud</name>
   <url>https://github.com/GoogleCloudPlatform/google-cloud-java</url>
   <description>
@@ -83,7 +83,7 @@
   <licenses>
     <license>
       <name>Google Cloud Software License</name>
-      <url>https://raw.githubusercontent.com/GoogleCloudPlatform/google-cloud/master/LICENSE</url>
+      <url>https://raw.githubusercontent.com/GoogleCloudPlatform/google-cloud-java/master/LICENSE</url>
     </license>
   </licenses>
   <properties>
@@ -94,8 +94,8 @@
     <grpc.version>1.0.3</grpc.version>
     <gax.version>0.2.0</gax.version>
     <generatedProto.version>0.1.5</generatedProto.version>
-    <core.version>0.9.4-alpha-SNAPSHOT</core.version>
-    <beta.version>0.9.4-beta-SNAPSHOT</beta.version>
+    <core.version>0.9.5-alpha-SNAPSHOT</core.version>
+    <beta.version>0.9.5-beta-SNAPSHOT</beta.version>
     <storage.version>${beta.version}</storage.version>
     <site.installationModule>google-cloud</site.installationModule>
   </properties>
