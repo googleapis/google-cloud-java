@@ -26,10 +26,10 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
+import com.google.api.gax.core.ApiFutures;
 import com.google.cloud.logging.SinkInfo.Destination.BucketDestination;
 import com.google.cloud.logging.SinkInfo.Destination.DatasetDestination;
 import com.google.cloud.logging.SinkInfo.VersionFormat;
-import com.google.common.util.concurrent.Futures;
 
 import org.junit.After;
 import org.junit.Test;
@@ -129,7 +129,7 @@ public class SinkTest {
     Sink expectedSink = new Sink(serviceMockReturnsOptions, new SinkInfo.BuilderImpl(updatedInfo));
     expect(logging.getOptions()).andReturn(mockOptions);
     expect(logging.getSinkAsync(NAME))
-        .andReturn(Futures.immediateFuture(expectedSink));
+        .andReturn(ApiFutures.immediateFuture(expectedSink));
     replay(logging);
     initializeSink();
     Sink updatedSink = sink.reloadAsync().get();
@@ -140,7 +140,7 @@ public class SinkTest {
   public void testReloadAsyncNull() throws ExecutionException, InterruptedException {
     initializeExpectedSink(1);
     expect(logging.getOptions()).andReturn(mockOptions);
-    expect(logging.getSinkAsync(NAME)).andReturn(Futures.<Sink>immediateFuture(null));
+    expect(logging.getSinkAsync(NAME)).andReturn(ApiFutures.<Sink>immediateFuture(null));
     replay(logging);
     initializeSink();
     assertNull(sink.reloadAsync().get());
@@ -165,7 +165,7 @@ public class SinkTest {
     SinkInfo updatedInfo = SINK_INFO.toBuilder().setFilter(NEW_FILTER).build();
     Sink expectedSink = new Sink(serviceMockReturnsOptions, new SinkInfo.BuilderImpl(updatedInfo));
     expect(logging.getOptions()).andReturn(mockOptions).times(2);
-    expect(logging.updateAsync(expectedSink)).andReturn(Futures.immediateFuture(expectedSink));
+    expect(logging.updateAsync(expectedSink)).andReturn(ApiFutures.immediateFuture(expectedSink));
     replay(logging);
     initializeSink();
     Sink updatedSink = sink.toBuilder().setFilter(NEW_FILTER).build().updateAsync().get();
@@ -196,7 +196,7 @@ public class SinkTest {
   public void testDeleteAsyncTrue() throws ExecutionException, InterruptedException {
     initializeExpectedSink(1);
     expect(logging.getOptions()).andReturn(mockOptions);
-    expect(logging.deleteSinkAsync(NAME)).andReturn(Futures.immediateFuture(true));
+    expect(logging.deleteSinkAsync(NAME)).andReturn(ApiFutures.immediateFuture(true));
     replay(logging);
     initializeSink();
     assertTrue(sink.deleteAsync().get());
@@ -206,7 +206,7 @@ public class SinkTest {
   public void testDeleteAsyncFalse() throws ExecutionException, InterruptedException {
     initializeExpectedSink(1);
     expect(logging.getOptions()).andReturn(mockOptions);
-    expect(logging.deleteSinkAsync(NAME)).andReturn(Futures.immediateFuture(false));
+    expect(logging.deleteSinkAsync(NAME)).andReturn(ApiFutures.immediateFuture(false));
     replay(logging);
     initializeSink();
     assertFalse(sink.deleteAsync().get());
