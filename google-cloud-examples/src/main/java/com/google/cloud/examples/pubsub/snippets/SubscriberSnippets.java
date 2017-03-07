@@ -22,7 +22,7 @@
 
 package com.google.cloud.examples.pubsub.snippets;
 
-import com.google.api.gax.core.RpcFuture;
+import com.google.api.gax.core.ApiFuture;
 import com.google.cloud.pubsub.spi.v1.MessageReceiver;
 import com.google.cloud.pubsub.spi.v1.Subscriber;
 import com.google.pubsub.v1.SubscriptionName;
@@ -33,13 +33,13 @@ public class SubscriberSnippets {
 
   private final SubscriptionName subscription;
   private final MessageReceiver receiver;
-  private final RpcFuture<Void> done;
+  private final ApiFuture<Void> done;
   private final Executor executor;
 
   public SubscriberSnippets(
       SubscriptionName subscription,
       MessageReceiver receiver,
-      RpcFuture<Void> done,
+      ApiFuture<Void> done,
       Executor executor) {
     this.subscription = subscription;
     this.receiver = receiver;

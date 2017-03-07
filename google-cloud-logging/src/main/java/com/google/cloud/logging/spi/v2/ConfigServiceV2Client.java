@@ -231,7 +231,7 @@ public class ConfigServiceV2Client implements AutoCloseable {
    *   ListSinksRequest request = ListSinksRequest.newBuilder()
    *     .setParentWithParentNameOneof(parent)
    *     .build();
-   *   RpcFuture&lt;ListSinksPagedResponse&gt; future = configServiceV2Client.listSinksPagedCallable().futureCall(request);
+   *   ApiFuture&lt;ListSinksPagedResponse&gt; future = configServiceV2Client.listSinksPagedCallable().futureCall(request);
    *   // Do something
    *   for (LogSink element : future.get().iterateAllElements()) {
    *     // doThingsWith(element);
@@ -335,7 +335,7 @@ public class ConfigServiceV2Client implements AutoCloseable {
    *   GetSinkRequest request = GetSinkRequest.newBuilder()
    *     .setSinkNameWithSinkNameOneof(sinkName)
    *     .build();
-   *   RpcFuture&lt;LogSink&gt; future = configServiceV2Client.getSinkCallable().futureCall(request);
+   *   ApiFuture&lt;LogSink&gt; future = configServiceV2Client.getSinkCallable().futureCall(request);
    *   // Do something
    *   LogSink response = future.get();
    * }
@@ -421,7 +421,7 @@ public class ConfigServiceV2Client implements AutoCloseable {
    *     .setParentWithParentNameOneof(parent)
    *     .setSink(sink)
    *     .build();
-   *   RpcFuture&lt;LogSink&gt; future = configServiceV2Client.createSinkCallable().futureCall(request);
+   *   ApiFuture&lt;LogSink&gt; future = configServiceV2Client.createSinkCallable().futureCall(request);
    *   // Do something
    *   LogSink response = future.get();
    * }
@@ -515,7 +515,7 @@ public class ConfigServiceV2Client implements AutoCloseable {
    *     .setSinkNameWithSinkNameOneof(sinkName)
    *     .setSink(sink)
    *     .build();
-   *   RpcFuture&lt;LogSink&gt; future = configServiceV2Client.updateSinkCallable().futureCall(request);
+   *   ApiFuture&lt;LogSink&gt; future = configServiceV2Client.updateSinkCallable().futureCall(request);
    *   // Do something
    *   LogSink response = future.get();
    * }
@@ -591,7 +591,7 @@ public class ConfigServiceV2Client implements AutoCloseable {
    *   DeleteSinkRequest request = DeleteSinkRequest.newBuilder()
    *     .setSinkNameWithSinkNameOneof(sinkName)
    *     .build();
-   *   RpcFuture&lt;Void&gt; future = configServiceV2Client.deleteSinkCallable().futureCall(request);
+   *   ApiFuture&lt;Void&gt; future = configServiceV2Client.deleteSinkCallable().futureCall(request);
    *   // Do something
    *   future.get();
    * }

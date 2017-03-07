@@ -208,7 +208,7 @@ public class ImageAnnotatorClient implements AutoCloseable {
    *   BatchAnnotateImagesRequest request = BatchAnnotateImagesRequest.newBuilder()
    *     .addAllRequests(requests)
    *     .build();
-   *   RpcFuture&lt;BatchAnnotateImagesResponse&gt; future = imageAnnotatorClient.batchAnnotateImagesCallable().futureCall(request);
+   *   ApiFuture&lt;BatchAnnotateImagesResponse&gt; future = imageAnnotatorClient.batchAnnotateImagesCallable().futureCall(request);
    *   // Do something
    *   BatchAnnotateImagesResponse response = future.get();
    * }

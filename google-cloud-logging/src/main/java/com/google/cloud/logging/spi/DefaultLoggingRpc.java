@@ -16,8 +16,9 @@
 
 package com.google.cloud.logging.spi;
 
+import com.google.api.gax.core.ApiFuture;
+import com.google.api.gax.core.ApiFutures;
 import com.google.api.gax.core.Function;
-import com.google.api.gax.core.RpcFuture;
 import com.google.api.gax.grpc.ApiException;
 import com.google.api.gax.grpc.ChannelProvider;
 import com.google.api.gax.grpc.ExecutorProvider;
@@ -147,14 +148,15 @@ public class DefaultLoggingRpc implements LoggingRpc {
   }
 
   private static <V> Future<V> translate(
-      RpcFuture<V> from, final boolean idempotent, Code... returnNullOn) {
+      ApiFuture<V> from, final boolean idempotent, Code... returnNullOn) {
     final Set<Code> returnNullOnSet;
     if (returnNullOn.length > 0) {
       returnNullOnSet = EnumSet.of(returnNullOn[0], returnNullOn);
     } else {
       returnNullOnSet = Collections.<Code>emptySet();
     }
-    return from.catching(
+    return ApiFutures.catching(
+        from,
         ApiException.class,
         new Function<ApiException, V>() {
           @Override
