@@ -187,14 +187,6 @@ public abstract class HttpServiceOptions<ServiceT extends Service<OptionsT>, Ser
    * Returns the timeout in milliseconds to establish a connection. 0 is an infinite timeout, a
    * negative number is the default value (20000).
    */
-  public int connectTimeout() {
-    return getConnectTimeout();
-  }
-
-  /**
-   * Returns the timeout in milliseconds to establish a connection. 0 is an infinite timeout, a
-   * negative number is the default value (20000).
-   */
   public int getConnectTimeout() {
     return connectTimeout;
   }
