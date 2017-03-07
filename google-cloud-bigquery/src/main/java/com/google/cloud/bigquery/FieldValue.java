@@ -77,21 +77,6 @@ public class FieldValue implements Serializable {
     this.value = value;
   }
 
-  /**
-   * Returns the attribute of this Field Value.
-   *
-   * @return {@link Attribute#PRIMITIVE} if the field is a primitive type
-   *     ({@link Field.Type#bytes()}, {@link Field.Type#bool()}, {@link Field.Type#string()},
-   *     {@link Field.Type#floatingPoint()}, {@link Field.Type#integer()},
-   *     {@link Field.Type#timestamp()}) or is {@code null}. Returns {@link Attribute#REPEATED} if
-   *     the corresponding field has ({@link Field.Mode#REPEATED}) mode. Returns
-   *     {@link Attribute#RECORD} if the corresponding field is a
-   *     {@link Field.Type#record(Field...)} type.
-   */
-  @Deprecated
-  public Attribute attribute() {
-    return getAttribute();
-  }
 
   /**
    * Returns the attribute of this Field Value.
@@ -115,14 +100,6 @@ public class FieldValue implements Serializable {
     return value == null;
   }
 
-  /**
-   * Returns this field's value as an {@link Object}. If {@link #isNull()} is {@code true} this
-   * method returns {@code null}.
-   */
-  @Deprecated
-  public Object value() {
-    return getValue();
-  }
 
   /**
    * Returns this field's value as an {@link Object}. If {@link #isNull()} is {@code true} this
@@ -132,20 +109,6 @@ public class FieldValue implements Serializable {
     return value;
   }
 
-  /**
-   * Returns this field's value as a {@link String}. This method should only be used if the
-   * corresponding field has primitive type ({@link Field.Type#bytes()}, {@link Field.Type#bool()},
-   * {@link Field.Type#string()}, {@link Field.Type#floatingPoint()}, {@link Field.Type#integer()},
-   * {@link Field.Type#timestamp()}).
-   *
-   * @throws ClassCastException if the field is not a primitive type
-   * @throws NullPointerException if {@link #isNull()} returns {@code true}
-   */
-  @SuppressWarnings("unchecked")
-  @Deprecated
-  public String stringValue() {
-    return getStringValue();
-  }
 
   /**
    * Returns this field's value as a {@link String}. This method should only be used if the
@@ -162,18 +125,6 @@ public class FieldValue implements Serializable {
     return (String) value;
   }
 
-  /**
-   * Returns this field's value as a byte array. This method should only be used if the
-   * corresponding field has primitive type ({@link Field.Type#bytes()}.
-   *
-   * @throws ClassCastException if the field is not a primitive type
-   * @throws NullPointerException if {@link #isNull()} returns {@code true}
-   * @throws IllegalStateException if the field value is not encoded in base64
-   */
-  @Deprecated
-  public byte[] bytesValue() {
-    return getBytesValue();
-  }
 
   /**
    * Returns this field's value as a byte array. This method should only be used if the
@@ -191,19 +142,6 @@ public class FieldValue implements Serializable {
     }
   }
 
-  /**
-   * Returns this field's value as a {@code long}. This method should only be used if the
-   * corresponding field has {@link Field.Type#integer()} type.
-   *
-   * @throws ClassCastException if the field is not a primitive type
-   * @throws NumberFormatException if the field's value could not be converted to {@link Integer}
-   * @throws NullPointerException if {@link #isNull()} returns {@code true}
-   */
-  @SuppressWarnings("unchecked")
-  @Deprecated
-  public long longValue() {
-    return getLongValue();
-  }
 
   /**
    * Returns this field's value as a {@code long}. This method should only be used if the
@@ -218,19 +156,6 @@ public class FieldValue implements Serializable {
     return Long.parseLong(getStringValue());
   }
 
-  /**
-   * Returns this field's value as a {@link Double}. This method should only be used if the
-   * corresponding field has {@link Field.Type#floatingPoint()} type.
-   *
-   * @throws ClassCastException if the field is not a primitive type
-   * @throws NumberFormatException if the field's value could not be converted to {@link Double}
-   * @throws NullPointerException if {@link #isNull()} returns {@code true}
-   */
-  @SuppressWarnings("unchecked")
-  @Deprecated
-  public double doubleValue() {
-    return getDoubleValue();
-  }
 
   /**
    * Returns this field's value as a {@link Double}. This method should only be used if the
@@ -245,19 +170,6 @@ public class FieldValue implements Serializable {
     return Double.parseDouble(getStringValue());
   }
 
-  /**
-   * Returns this field's value as a {@link Boolean}. This method should only be used if the
-   * corresponding field has {@link Field.Type#bool()} type.
-   *
-   * @throws ClassCastException if the field is not a primitive type
-   * @throws IllegalStateException if the field's value could not be converted to {@link Boolean}
-   * @throws NullPointerException if {@link #isNull()} returns {@code true}
-   */
-  @SuppressWarnings("unchecked")
-  @Deprecated
-  public boolean booleanValue() {
-    return getBooleanValue();
-  }
 
   /**
    * Returns this field's value as a {@link Boolean}. This method should only be used if the
@@ -275,20 +187,6 @@ public class FieldValue implements Serializable {
     return Boolean.parseBoolean(stringValue);
   }
 
-  /**
-   * Returns this field's value as a {@code long}, representing a timestamp in microseconds since
-   * epoch (UNIX time). This method should only be used if the corresponding field has
-   * {@link Field.Type#timestamp()} type.
-   *
-   * @throws ClassCastException if the field is not a primitive type
-   * @throws NumberFormatException if the field's value could not be converted to {@link Long}
-   * @throws NullPointerException if {@link #isNull()} returns {@code true}
-   */
-  @SuppressWarnings("unchecked")
-  @Deprecated
-  public long timestampValue() {
-    return getTimestampValue();
-  }
 
   /**
    * Returns this field's value as a {@code long}, representing a timestamp in microseconds since
@@ -306,23 +204,10 @@ public class FieldValue implements Serializable {
     return new Double(Double.valueOf(getStringValue()) * MICROSECONDS).longValue();
   }
 
-  /**
-   * Returns this field's value as a list of {@link FieldValue}. This method should only be used if
-   * the corresponding field has {@link Field.Mode#REPEATED} mode (i.e. {@link #attribute()} is
-   * {@link Attribute#REPEATED}).
-   *
-   * @throws ClassCastException if the field has not {@link Field.Mode#REPEATED} mode
-   * @throws NullPointerException if {@link #isNull()} returns {@code true}
-   */
-  @SuppressWarnings("unchecked")
-  @Deprecated
-  public List<FieldValue> repeatedValue() {
-    return getRepeatedValue();
-  }
 
   /**
    * Returns this field's value as a list of {@link FieldValue}. This method should only be used if
-   * the corresponding field has {@link Field.Mode#REPEATED} mode (i.e. {@link #attribute()} is
+   * the corresponding field has {@link Field.Mode#REPEATED} mode (i.e. {@link #getAttribute()} is
    * {@link Attribute#REPEATED}).
    *
    * @throws ClassCastException if the field has not {@link Field.Mode#REPEATED} mode
@@ -334,24 +219,11 @@ public class FieldValue implements Serializable {
     return (List<FieldValue>) value;
   }
 
-  /**
-   * Returns this field's value as a list of {@link FieldValue}. This method should only be used if
-   * the corresponding field has {@link Field.Type#record(Field...)} type (i.e. {@link #attribute()}
-   * is {@link Attribute#RECORD}).
-   *
-   * @throws ClassCastException if the field is not a {@link Field.Type#record(Field...)} type
-   * @throws NullPointerException if {@link #isNull()} returns {@code true}
-   */
-  @SuppressWarnings("unchecked")
-  @Deprecated
-  public List<FieldValue> recordValue() {
-    return getRecordValue();
-  }
 
   /**
    * Returns this field's value as a list of {@link FieldValue}. This method should only be used if
-   * the corresponding field has {@link Field.Type#record(Field...)} type (i.e. {@link #attribute()}
-   * is {@link Attribute#RECORD}).
+   * the corresponding field has {@link Field.Type#record(Field...)} type (i.e.
+   * {@link #getAttribute()} is {@link Attribute#RECORD}).
    *
    * @throws ClassCastException if the field is not a {@link Field.Type#record(Field...)} type
    * @throws NullPointerException if {@link #isNull()} returns {@code true}

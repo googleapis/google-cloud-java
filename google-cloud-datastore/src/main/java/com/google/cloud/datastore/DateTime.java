@@ -63,13 +63,6 @@ public final class DateTime implements Comparable<DateTime>, Serializable {
             && timestampMicroseconds == ((DateTime) obj).timestampMicroseconds);
   }
 
-  /**
-   * Returns the value of this timestamp in microseconds.
-   */
-  @Deprecated
-  public long timestampMicroseconds() {
-    return getTimestampMicroseconds();
-  }
 
   /**
    * Returns the value of this timestamp in microseconds.
@@ -78,13 +71,6 @@ public final class DateTime implements Comparable<DateTime>, Serializable {
     return timestampMicroseconds;
   }
 
-  /**
-   * Returns the value of this timestamp in milliseconds.
-   */
-  @Deprecated
-  public long timestampMillis() {
-    return getTimestampMillis();
-  }
 
   /**
    * Returns the value of this timestamp in milliseconds.

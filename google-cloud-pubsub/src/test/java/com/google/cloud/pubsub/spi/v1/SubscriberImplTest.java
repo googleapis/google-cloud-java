@@ -56,7 +56,7 @@ import org.junit.runners.Parameterized.Parameters;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 
-/** Tests for {@link SubscriberImpl}. */
+/** Tests for {@link Subscriber}. */
 @RunWith(Parameterized.class)
 public class SubscriberImplTest {
 

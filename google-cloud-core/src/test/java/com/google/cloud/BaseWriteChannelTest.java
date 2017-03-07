@@ -93,17 +93,6 @@ public class BaseWriteChannelTest {
     assertEquals(DEFAULT_CHUNK_SIZE, channel.getChunkSize());
   }
 
-  @Test
-  public void testConstructorDeprecated() {
-    assertEquals(null, channel.options());
-    assertEquals(ENTITY, channel.entity());
-    assertEquals(0, channel.position());
-    assertEquals(UPLOAD_ID, channel.uploadId());
-    assertEquals(0, channel.limit());
-    assertTrue(channel.isOpen());
-    assertArrayEquals(new byte[0], channel.buffer());
-    assertEquals(DEFAULT_CHUNK_SIZE, channel.chunkSize());
-  }
 
   @Test
   public void testClose() throws IOException {

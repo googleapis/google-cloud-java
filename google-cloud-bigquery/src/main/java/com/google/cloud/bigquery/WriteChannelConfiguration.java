@@ -113,11 +113,6 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
       this.projectionFields = loadConfigurationPb.getProjectionFields();
     }
 
-    @Override
-    @Deprecated
-    public Builder destinationTable(TableId destinationTable) {
-      return setDestinationTable(destinationTable);
-    }
 
     @Override
     public Builder setDestinationTable(TableId destinationTable) {
@@ -125,11 +120,6 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
       return this;
     }
 
-    @Override
-    @Deprecated
-    public Builder createDisposition(CreateDisposition createDisposition) {
-      return setCreateDisposition(createDisposition);
-    }
 
     @Override
     public Builder setCreateDisposition(CreateDisposition createDisposition) {
@@ -137,11 +127,6 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
       return this;
     }
 
-    @Override
-    @Deprecated
-    public Builder writeDisposition(WriteDisposition writeDisposition) {
-      return setWriteDisposition(writeDisposition);
-    }
 
     @Override
     public Builder setWriteDisposition(WriteDisposition writeDisposition) {
@@ -149,11 +134,6 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
       return this;
     }
 
-    @Override
-    @Deprecated
-    public Builder formatOptions(FormatOptions formatOptions) {
-      return setFormatOptions(formatOptions);
-    }
 
     @Override
     public Builder setFormatOptions(FormatOptions formatOptions) {
@@ -161,11 +141,6 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
       return this;
     }
 
-    @Override
-    @Deprecated
-    public Builder maxBadRecords(Integer maxBadRecords) {
-      return setMaxBadRecords(maxBadRecords);
-    }
 
     @Override
     public Builder setMaxBadRecords(Integer maxBadRecords) {
@@ -173,11 +148,6 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
       return this;
     }
 
-    @Override
-    @Deprecated
-    public Builder schema(Schema schema) {
-      return setSchema(schema);
-    }
 
     @Override
     public Builder setSchema(Schema schema) {
@@ -185,11 +155,6 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
       return this;
     }
 
-    @Override
-    @Deprecated
-    public Builder ignoreUnknownValues(Boolean ignoreUnknownValues) {
-      return setIgnoreUnknownValues(ignoreUnknownValues);
-    }
 
     @Override
     public Builder setIgnoreUnknownValues(Boolean ignoreUnknownValues) {
@@ -197,11 +162,6 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
       return this;
     }
 
-    @Override
-    @Deprecated
-    public Builder projectionFields(List<String> projectionFields) {
-      return setProjectionFields(projectionFields);
-    }
 
     @Override
     public Builder setProjectionFields(List<String> projectionFields) {
@@ -227,77 +187,42 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
     this.projectionFields = builder.projectionFields;
   }
 
-  @Override
-  @Deprecated
-  public TableId destinationTable() {
-    return getDestinationTable();
-  }
 
   @Override
   public TableId getDestinationTable() {
     return destinationTable;
   }
 
-  @Override
-  @Deprecated
-  public CreateDisposition createDisposition() {
-    return this.getCreateDisposition();
-  }
 
   @Override
   public CreateDisposition getCreateDisposition() {
     return this.createDisposition;
   }
 
-  @Override
-  @Deprecated
-  public WriteDisposition writeDisposition() {
-    return getWriteDisposition();
-  }
 
   @Override
   public WriteDisposition getWriteDisposition() {
     return writeDisposition;
   }
 
-  @Override
-  @Deprecated
-  public CsvOptions csvOptions() {
-    return getCsvOptions();
-  }
 
   @Override
   public CsvOptions getCsvOptions() {
     return formatOptions instanceof CsvOptions ? (CsvOptions) formatOptions : null;
   }
 
-  @Override
-  @Deprecated
-  public Integer maxBadRecords() {
-    return getMaxBadRecords();
-  }
 
   @Override
   public Integer getMaxBadRecords() {
     return maxBadRecords;
   }
 
-  @Override
-  @Deprecated
-  public Schema schema() {
-    return getSchema();
-  }
 
   @Override
   public Schema getSchema() {
     return schema;
   }
 
-  @Override
-  @Deprecated
-  public String format() {
-    return getFormat();
-  }
 
   @Override
   public String getFormat() {
@@ -309,11 +234,6 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
     return ignoreUnknownValues;
   }
 
-  @Override
-  @Deprecated
-  public List<String> projectionFields() {
-    return getProjectionFields();
-  }
 
   @Override
   public List<String> getProjectionFields() {
@@ -398,13 +318,6 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
     return new Builder(configurationPb).build();
   }
 
-  /**
-   * Creates a builder for a BigQuery Load Configuration given the destination table.
-   */
-  @Deprecated
-  public static Builder builder(TableId destinationTable) {
-    return newBuilder(destinationTable);
-  }
 
   /**
    * Creates a builder for a BigQuery Load Configuration given the destination table.
@@ -413,13 +326,6 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
     return new Builder().setDestinationTable(destinationTable);
   }
 
-  /**
-   * Creates a builder for a BigQuery Load Configuration given the destination table and format.
-   */
-  @Deprecated
-  public static Builder builder(TableId destinationTable, FormatOptions format) {
-    return newBuilder(destinationTable, format);
-  }
 
   /**
    * Creates a builder for a BigQuery Load Configuration given the destination table and format.

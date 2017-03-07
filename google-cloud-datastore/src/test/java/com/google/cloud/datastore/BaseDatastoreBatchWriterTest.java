@@ -60,11 +60,6 @@ public class BaseDatastoreBatchWriterTest {
       replay(datastore);
     }
 
-    @Override
-    @Deprecated
-    protected Datastore datastore() {
-      return datastore;
-    }
 
     @Override
     protected Datastore getDatastore() {

@@ -51,11 +51,6 @@ public class AsyncPageImplTest {
     }
 
     @Override
-    public Future<AsyncPage<String>> nextPage() {
-      return getNextPage();
-    }
-
-    @Override
     public Future<AsyncPage<String>> getNextPage() {
       return Futures.<AsyncPage<String>>immediateFuture(nextResult);
     }
@@ -71,15 +66,6 @@ public class AsyncPageImplTest {
     assertEquals(VALUES1, result.getValues());
   }
 
-  @Test
-  public void testPageDeprecated() {
-    final AsyncPageImpl<String> nextResult = new AsyncPageImpl<>(null, "c", VALUES2);
-    AsyncPageImpl.NextPageFetcher<String> fetcher = new TestPageFetcher(nextResult);
-    AsyncPageImpl<String> result = new AsyncPageImpl<>(fetcher, "c", VALUES1);
-    assertEquals(nextResult, result.nextPage());
-    assertEquals("c", result.nextPageCursor());
-    assertEquals(VALUES1, result.values());
-  }
 
   @Test
   public void testPageAsync() throws ExecutionException, InterruptedException {
@@ -91,15 +77,6 @@ public class AsyncPageImplTest {
     assertEquals(VALUES1, result.getValues());
   }
 
-  @Test
-  public void testPageAsyncDeprecated() throws ExecutionException, InterruptedException {
-    final AsyncPageImpl<String> nextResult = new AsyncPageImpl<>(null, "c", VALUES2);
-    AsyncPageImpl.NextPageFetcher<String> fetcher = new TestPageFetcher(nextResult);
-    AsyncPageImpl<String> result = new AsyncPageImpl<>(fetcher, "c", VALUES1);
-    assertEquals(nextResult, result.nextPageAsync().get());
-    assertEquals("c", result.nextPageCursor());
-    assertEquals(VALUES1, result.values());
-  }
 
   @Test
   public void testIterateAll() {

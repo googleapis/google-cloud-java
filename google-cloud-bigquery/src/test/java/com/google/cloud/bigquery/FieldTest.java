@@ -50,19 +50,6 @@ public class FieldTest {
       .setMode(FIELD_MODE3)
       .setDescription(FIELD_DESCRIPTION3)
       .build();
-  private static final Field DEPRECATED_FIELD_SCHEMA1 = Field.builder(FIELD_NAME1, FIELD_TYPE1)
-      .mode(FIELD_MODE1)
-      .description(FIELD_DESCRIPTION1)
-      .build();
-  private static final Field DEPRECATED_FIELD_SCHEMA2 = Field.builder(FIELD_NAME2, FIELD_TYPE2)
-      .mode(FIELD_MODE2)
-      .description(FIELD_DESCRIPTION2)
-      .build();
-  private static final Field DEPRECATED_FIELD_SCHEMA3 = Field
-      .builder(FIELD_NAME3, FIELD_TYPE3)
-      .mode(FIELD_MODE3)
-      .description(FIELD_DESCRIPTION3)
-      .build();
 
   @Test
   public void testToBuilder() {
@@ -99,20 +86,6 @@ public class FieldTest {
     assertEquals(ImmutableList.of(FIELD_SCHEMA1, FIELD_SCHEMA2), FIELD_SCHEMA3.getFields());
   }
 
-  @Test
-  public void testBuilderDeprecated() {
-    assertEquals(FIELD_NAME1, DEPRECATED_FIELD_SCHEMA1.name());
-    assertEquals(FIELD_TYPE1, DEPRECATED_FIELD_SCHEMA1.type());
-    assertEquals(FIELD_MODE1, DEPRECATED_FIELD_SCHEMA1.mode());
-    assertEquals(FIELD_DESCRIPTION1, DEPRECATED_FIELD_SCHEMA1.description());
-    assertEquals(null, DEPRECATED_FIELD_SCHEMA1.fields());
-    assertEquals(FIELD_NAME3, DEPRECATED_FIELD_SCHEMA3.name());
-    assertEquals(FIELD_TYPE3, DEPRECATED_FIELD_SCHEMA3.type());
-    assertEquals(FIELD_MODE3, DEPRECATED_FIELD_SCHEMA3.mode());
-    assertEquals(FIELD_DESCRIPTION3, DEPRECATED_FIELD_SCHEMA3.description());
-    assertEquals(ImmutableList.of(DEPRECATED_FIELD_SCHEMA1, DEPRECATED_FIELD_SCHEMA2),
-        DEPRECATED_FIELD_SCHEMA3.fields());
-  }
 
   @Test
   public void testToAndFromPb() {

@@ -174,8 +174,8 @@ public class Publisher {
    * be delayed based on the publisher bundling options.
    *
    * <p>Depending on chosen flow control {@link #failOnFlowControlLimits option}, the returned
-   * future might immediately fail with a {@link FlowController.FlowControlException} or block the
-   * current thread until there are more resources available to publish.
+   * future might immediately fail with a {@link com.google.api.gax.grpc.FlowController.FlowControlException}
+   * or block the current thread until there are more resources available to publish.
    *
    * <p>Example of publishing a message.
    * <pre> {@code
@@ -485,9 +485,9 @@ public class Publisher {
    * #getFlowControlSettings()}).
    *
    * <p>If set to false, a publish call will fail with either {@link
-   * FlowController.MaxOutstandingRequestBytesReachedException} or {@link
-   * FlowController.MaxOutstandingElementCountReachedException}, as appropriate, when flow control
-   * limits are reached.
+   * com.google.api.gax.grpc.FlowController.MaxOutstandingRequestBytesReachedException} or {@link
+   * com.google.api.gax.grpc.FlowController.MaxOutstandingElementCountReachedException}, as
+   * appropriate, when flow contro limits are reached.
    */
   public boolean failOnFlowControlLimits() {
     return failOnFlowControlLimits;
@@ -667,8 +667,9 @@ public class Publisher {
 
     /**
      * Whether to fail publish when reaching any of the flow control limits, with either a {@link
-     * FlowController.MaxOutstandingRequestBytesReachedException} or {@link
-     * FlowController.MaxOutstandingElementCountReachedException} as appropriate.
+     * com.google.api.gax.grpc.FlowController.MaxOutstandingRequestBytesReachedException} or {@link
+     * com.google.api.gax.grpc.FlowController.MaxOutstandingElementCountReachedException} as
+     * appropriate.
      *
      * <p>If set to false, then publish operations will block the current thread until the
      * outstanding requests go under the limits.

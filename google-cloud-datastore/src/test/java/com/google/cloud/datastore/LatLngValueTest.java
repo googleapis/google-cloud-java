@@ -49,13 +49,4 @@ private static final LatLng CONTENT = new LatLng(37.4, -122.1);
     assertEquals(1, value.getMeaning());
     assertTrue(value.excludeFromIndexes());
   }
-
-  @Test
-  public void testBuilderDeprecated() throws Exception {
-    LatLngValue.Builder builder = LatLngValue.builder(CONTENT);
-    LatLngValue value = builder.meaning(1).excludeFromIndexes(true).build();
-    assertEquals(CONTENT, value.get());
-    assertEquals(1, value.meaning());
-    assertTrue(value.excludeFromIndexes());
-  }
 }

@@ -46,13 +46,5 @@ public class BooleanValueTest {
     assertEquals(1, value.getMeaning());
     assertTrue(value.excludeFromIndexes());
   }
-
-  @Test
-  public void testBuilderDeprecated() throws Exception {
-    BooleanValue.Builder builder = BooleanValue.builder(true);
-    BooleanValue value = builder.meaning(1).excludeFromIndexes(true).build();
-    assertTrue(value.get());
-    assertEquals(1, value.meaning());
-    assertTrue(value.excludeFromIndexes());
-  }
 }
+

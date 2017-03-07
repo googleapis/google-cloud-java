@@ -85,17 +85,6 @@ public class ChangeRequestTest {
     assertEquals(ZONE_NAME, changeRequestPartial.getZone());
   }
 
-  @Test
-  public void testConstructorDeprecated() {
-    expect(dns.getOptions()).andReturn(OPTIONS);
-    replay(dns);
-    assertEquals(new ChangeRequest(dns, ZONE_NAME,
-        new ChangeRequestInfo.BuilderImpl(CHANGE_REQUEST_INFO)), changeRequestPartial);
-    assertNotNull(changeRequest.dns());
-    assertEquals(ZONE_NAME, changeRequest.zone());
-    assertSame(dns, changeRequestPartial.dns());
-    assertEquals(ZONE_NAME, changeRequestPartial.zone());
-  }
 
   @Test
   public void testFromPb() {
@@ -146,32 +135,6 @@ public class ChangeRequestTest {
     assertEquals(Long.valueOf(0), modified.getStartTimeMillis());
   }
 
-  @Test
-  public void testBuilderDeprecated() {
-    // one for each build() call because it invokes a constructor
-    expect(dns.getOptions()).andReturn(OPTIONS).times(9);
-    replay(dns);
-    String id = changeRequest.generatedId() + "aaa";
-    assertEquals(id, changeRequest.toBuilder().setGeneratedId(id).build().generatedId());
-    ChangeRequest modified =
-        changeRequest.toBuilder().setStatus(ChangeRequest.Status.PENDING).build();
-    assertEquals(ChangeRequest.Status.PENDING, modified.status());
-    modified = changeRequest.toBuilder().clearDeletions().build();
-    assertTrue(modified.deletions().isEmpty());
-    modified = changeRequest.toBuilder().clearAdditions().build();
-    assertTrue(modified.additions().isEmpty());
-    modified = changeRequest.toBuilder().additions(ImmutableList.<RecordSet>of()).build();
-    assertTrue(modified.additions().isEmpty());
-    modified = changeRequest.toBuilder().deletions(ImmutableList.<RecordSet>of()).build();
-    assertTrue(modified.deletions().isEmpty());
-    RecordSet cname = RecordSet.builder("last", RecordSet.Type.CNAME).build();
-    modified = changeRequest.toBuilder().add(cname).build();
-    assertTrue(modified.additions().contains(cname));
-    modified = changeRequest.toBuilder().delete(cname).build();
-    assertTrue(modified.deletions().contains(cname));
-    modified = changeRequest.toBuilder().setStartTime(0L).build();
-    assertEquals(Long.valueOf(0), modified.startTimeMillis());
-  }
 
   @Test
   public void testApplyTo() {

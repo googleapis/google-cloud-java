@@ -44,8 +44,6 @@ public class PageImpl<T> implements Page<T>, Serializable {
    * @param <T> the value type that the page holds
    */
   public interface NextPageFetcher<T> extends Serializable {
-    @Deprecated
-    Page<T> nextPage();
 
     Page<T> getNextPage();
   }
@@ -83,11 +81,6 @@ public class PageImpl<T> implements Page<T>, Serializable {
     this.results = results;
   }
 
-  @Override
-  @Deprecated
-  public Iterable<T> values() {
-    return getValues();
-  }
 
   @Override
   public Iterable<T> getValues() {
@@ -99,22 +92,12 @@ public class PageImpl<T> implements Page<T>, Serializable {
     return new PageIterator<>(this);
   }
 
-  @Override
-  @Deprecated
-  public String nextPageCursor() {
-    return getNextPageCursor();
-  }
 
   @Override
   public String getNextPageCursor() {
     return cursor;
   }
 
-  @Override
-  @Deprecated
-  public Page<T> nextPage() {
-    return getNextPage();
-  }
 
   @Override
   public Page<T> getNextPage() {

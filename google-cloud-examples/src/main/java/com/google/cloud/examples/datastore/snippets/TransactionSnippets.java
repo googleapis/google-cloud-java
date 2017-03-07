@@ -369,8 +369,8 @@ public class TransactionSnippets {
       transaction.commit();
     } finally {
       // if committing succeeded
-      // then transaction.active() will be false
-      if (transaction.active()) {
+      // then transaction.isActive() will be false
+      if (transaction.isActive()) {
         // otherwise it's true and we need to rollback
         transaction.rollback();
       }

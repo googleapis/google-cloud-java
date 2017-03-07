@@ -49,7 +49,7 @@ import java.util.logging.Logger;
 import javax.annotation.Nullable;
 import org.joda.time.Duration;
 
-/** Implementation of {@link AbstractSubscriberConnection} based on Cloud Pub/Sub streaming pull. */
+/** Implementation of {@link AckProcessor} based on Cloud Pub/Sub streaming pull. */
 final class StreamingSubscriberConnection extends AbstractService implements AckProcessor {
   private static final Logger logger =
       Logger.getLogger(StreamingSubscriberConnection.class.getName());

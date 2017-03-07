@@ -30,32 +30,17 @@ public class FieldSelectorHelperTest {
 
   private static final FieldSelector FIELD1 = new FieldSelector() {
     @Override
-    public String selector() {
-      return getSelector();
-    }
-
-    @Override
     public String getSelector() {
       return "field1";
     }
   };
   private static final FieldSelector FIELD2 = new FieldSelector() {
     @Override
-    public String selector() {
-      return getSelector();
-    }
-
-    @Override
     public String getSelector() {
       return "field2";
     }
   };
   private static final FieldSelector FIELD3 = new FieldSelector() {
-    @Override
-    public String selector() {
-      return getSelector();
-    }
-
     @Override
     public String getSelector() {
       return "field3";

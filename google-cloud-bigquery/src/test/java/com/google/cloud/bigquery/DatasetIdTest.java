@@ -33,13 +33,6 @@ public class DatasetIdTest {
     assertEquals("dataset", DATASET_COMPLETE.getDataset());
   }
 
-  @Test
-  public void testOfDeprecated() {
-    assertEquals(null, DATASET.project());
-    assertEquals("dataset", DATASET.dataset());
-    assertEquals("project", DATASET_COMPLETE.project());
-    assertEquals("dataset", DATASET_COMPLETE.dataset());
-  }
 
   @Test
   public void testEquals() {

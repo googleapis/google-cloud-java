@@ -97,13 +97,6 @@ public abstract class Payload<T> implements Serializable {
       super(Type.JSON, jsonData);
     }
 
-    /**
-     * Returns the log entry's JSON data as an unmodifiable map.
-     */
-    @Deprecated
-    public Map<String, ?> dataAsMap() {
-      return getDataAsMap();
-    }
 
     /**
      * Returns the log entry's JSON data as an unmodifiable map.
@@ -188,14 +181,6 @@ public abstract class Payload<T> implements Serializable {
     this.data = checkNotNull(data);
   }
 
-  /**
-   * Returns the payload type. Payload can be an UTF-8 string ({@link Type#STRING}), a JSON object
-   * ({@link Type#JSON}) or a protobuf object ({@link Type#PROTO}).
-   */
-  @Deprecated
-  public Type type() {
-    return getType();
-  }
 
   /**
    * Returns the payload type. Payload can be an UTF-8 string ({@link Type#STRING}), a JSON object
@@ -205,13 +190,6 @@ public abstract class Payload<T> implements Serializable {
     return type;
   }
 
-  /**
-   * Returns the log entry payload's data.
-   */
-  @Deprecated
-  public T data() {
-    return getData();
-  }
 
   /**
    * Returns the log entry payload's data.
