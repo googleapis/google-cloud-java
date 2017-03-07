@@ -20,11 +20,15 @@ import static com.google.cloud.logging.spi.v2.PagedResponseWrappers.ListLogsPage
 import static com.google.cloud.logging.spi.v2.PagedResponseWrappers.ListMonitoredResourceDescriptorsPagedResponse;
 
 import com.google.api.MonitoredResourceDescriptor;
+import com.google.api.gax.bundling.BundlingSettings;
+import com.google.api.gax.bundling.RequestBuilder;
+import com.google.api.gax.core.FlowControlSettings;
+import com.google.api.gax.core.FlowController.LimitExceededBehavior;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.RetrySettings;
+import com.google.api.gax.grpc.BundledRequestIssuer;
 import com.google.api.gax.grpc.BundlingCallSettings;
 import com.google.api.gax.grpc.BundlingDescriptor;
-import com.google.api.gax.grpc.BundlingSettings;
 import com.google.api.gax.grpc.CallContext;
 import com.google.api.gax.grpc.ChannelProvider;
 import com.google.api.gax.grpc.ClientSettings;
@@ -34,7 +38,6 @@ import com.google.api.gax.grpc.InstantiatingExecutorProvider;
 import com.google.api.gax.grpc.PagedCallSettings;
 import com.google.api.gax.grpc.PagedListDescriptor;
 import com.google.api.gax.grpc.PagedListResponseFactory;
-import com.google.api.gax.grpc.RequestIssuer;
 import com.google.api.gax.grpc.SimpleCallSettings;
 import com.google.api.gax.grpc.UnaryCallSettings;
 import com.google.api.gax.grpc.UnaryCallable;
@@ -58,9 +61,7 @@ import com.google.protobuf.Empty;
 import com.google.protobuf.ExperimentalApi;
 import io.grpc.Status;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
 import javax.annotation.Generated;
 import org.joda.time.Duration;
 
@@ -398,33 +399,32 @@ public class LoggingServiceV2Settings extends ClientSettings {
             }
 
             @Override
-            public WriteLogEntriesRequest mergeRequests(
-                Collection<WriteLogEntriesRequest> requests) {
-              WriteLogEntriesRequest firstRequest = requests.iterator().next();
+            public RequestBuilder<WriteLogEntriesRequest> getRequestBuilder() {
+              return new RequestBuilder<WriteLogEntriesRequest>() {
+                private WriteLogEntriesRequest.Builder builder;
 
-              List<LogEntry> elements = new ArrayList<>();
-              for (WriteLogEntriesRequest request : requests) {
-                elements.addAll(request.getEntriesList());
-              }
+                @Override
+                public void appendRequest(WriteLogEntriesRequest request) {
+                  if (builder == null) {
+                    builder = request.toBuilder();
+                  } else {
+                    builder.addAllEntries(request.getEntriesList());
+                  }
+                }
 
-              WriteLogEntriesRequest bundleRequest =
-                  WriteLogEntriesRequest.newBuilder()
-                      .setLogName(firstRequest.getLogName())
-                      .setResource(firstRequest.getResource())
-                      .putAllLabels(firstRequest.getLabels())
-                      .addAllEntries(elements)
-                      .build();
-              return bundleRequest;
+                @Override
+                public WriteLogEntriesRequest build() {
+                  return builder.build();
+                }
+              };
             }
 
             @Override
             public void splitResponse(
                 WriteLogEntriesResponse bundleResponse,
-                Collection<? extends RequestIssuer<WriteLogEntriesRequest, WriteLogEntriesResponse>>
-                    bundle) {
+                Collection<? extends BundledRequestIssuer<WriteLogEntriesResponse>> bundle) {
               int bundleMessageIndex = 0;
-              for (RequestIssuer<WriteLogEntriesRequest, WriteLogEntriesResponse> responder :
-                  bundle) {
+              for (BundledRequestIssuer<WriteLogEntriesResponse> responder : bundle) {
                 WriteLogEntriesResponse response = WriteLogEntriesResponse.newBuilder().build();
                 responder.setResponse(response);
               }
@@ -433,10 +433,8 @@ public class LoggingServiceV2Settings extends ClientSettings {
             @Override
             public void splitException(
                 Throwable throwable,
-                Collection<? extends RequestIssuer<WriteLogEntriesRequest, WriteLogEntriesResponse>>
-                    bundle) {
-              for (RequestIssuer<WriteLogEntriesRequest, WriteLogEntriesResponse> responder :
-                  bundle) {
+                Collection<? extends BundledRequestIssuer<WriteLogEntriesResponse>> bundle) {
+              for (BundledRequestIssuer<WriteLogEntriesResponse> responder : bundle) {
                 responder.setException(throwable);
               }
             }
@@ -556,9 +554,15 @@ public class LoggingServiceV2Settings extends ClientSettings {
       builder
           .writeLogEntriesSettings()
           .getBundlingSettingsBuilder()
-          .setElementCountThreshold(100)
-          .setRequestByteThreshold(1024)
-          .setDelayThreshold(Duration.millis(10));
+          .setElementCountThreshold(1000)
+          .setRequestByteThreshold(1048576)
+          .setDelayThreshold(Duration.millis(50))
+          .setFlowControlSettings(
+              FlowControlSettings.newBuilder()
+                  .setMaxOutstandingElementCount(100000)
+                  .setMaxOutstandingRequestBytes(10485760)
+                  .setLimitExceededBehavior(LimitExceededBehavior.ThrowException)
+                  .build());
       builder
           .writeLogEntriesSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))

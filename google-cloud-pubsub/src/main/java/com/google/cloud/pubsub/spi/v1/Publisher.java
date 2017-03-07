@@ -16,16 +16,16 @@
 
 package com.google.cloud.pubsub.spi.v1;
 
+import com.google.api.gax.bundling.BundlingSettings;
 import com.google.api.gax.core.ApiFuture;
 import com.google.api.gax.core.ApiFutureCallback;
 import com.google.api.gax.core.ApiFutures;
+import com.google.api.gax.core.FlowControlSettings;
+import com.google.api.gax.core.FlowController;
 import com.google.api.gax.core.Function;
 import com.google.api.gax.core.RetrySettings;
-import com.google.api.gax.grpc.BundlingSettings;
 import com.google.api.gax.grpc.ChannelProvider;
 import com.google.api.gax.grpc.ExecutorProvider;
-import com.google.api.gax.grpc.FlowControlSettings;
-import com.google.api.gax.grpc.FlowController;
 import com.google.api.gax.grpc.InstantiatingExecutorProvider;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.common.annotations.VisibleForTesting;
@@ -88,7 +88,6 @@ public class Publisher {
   private final LongRandom longRandom;
 
   private final FlowControlSettings flowControlSettings;
-  private final boolean failOnFlowControlLimits;
 
   private final Lock messagesBundleLock;
   private List<OutstandingPublish> messagesBundle;
@@ -125,8 +124,7 @@ public class Publisher {
     this.longRandom = builder.longRandom;
 
     flowControlSettings = builder.flowControlSettings;
-    failOnFlowControlLimits = builder.failOnFlowControlLimits;
-    this.flowController = new FlowController(flowControlSettings, failOnFlowControlLimits);
+    this.flowController = new FlowController(flowControlSettings);
 
     messagesBundle = new LinkedList<>();
     messagesBundleLock = new ReentrantLock();
@@ -173,12 +171,14 @@ public class Publisher {
    * Schedules the publishing of a message. The publishing of the message may occur immediately or
    * be delayed based on the publisher bundling options.
    *
-   * <p>Depending on chosen flow control {@link #failOnFlowControlLimits option}, the returned
-   * future might immediately fail with a {@link com.google.api.gax.grpc.FlowController.FlowControlException}
-   * or block the current thread until there are more resources available to publish.
+   * <p>Depending on chosen flow control {@link FlowControlSettings#getLimitExceededBehavior
+   * option}, the returned future might immediately fail with a {@link
+   * FlowController.FlowControlException} or block the current thread until there are more resources
+   * available to publish.
    *
    * <p>Example of publishing a message.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String message = "my_message";
    * ByteString data = ByteString.copyFromUtf8(message);
    * PubsubMessage pubsubMessage = PubsubMessage.newBuilder().setData(data).build();
@@ -473,24 +473,17 @@ public class Publisher {
   }
 
   /**
-   * The bundling settings configured on this {@code Publisher}. See {@link
-   * #failOnFlowControlLimits()}.
+   * The bundling settings configured on this {@code Publisher}, including whether to block publish
+   * calls when reaching flow control limits.
+   *
+   * <p>If {@link FlowControlSettings#getLimitExceededBehavior()} is set to {@link
+   * FlowController.LimitExceededBehavior#ThrowException}, a publish call will fail with either
+   * {@link FlowController.MaxOutstandingRequestBytesReachedException} or {@link
+   * FlowController.MaxOutstandingElementCountReachedException}, as appropriate, when flow control
+   * limits are reached.
    */
   public FlowControlSettings getFlowControlSettings() {
     return flowControlSettings;
-  }
-
-  /**
-   * Whether to block publish calls when reaching flow control limits (see {@link
-   * #getFlowControlSettings()}).
-   *
-   * <p>If set to false, a publish call will fail with either {@link
-   * com.google.api.gax.grpc.FlowController.MaxOutstandingRequestBytesReachedException} or {@link
-   * com.google.api.gax.grpc.FlowController.MaxOutstandingElementCountReachedException}, as
-   * appropriate, when flow contro limits are reached.
-   */
-  public boolean failOnFlowControlLimits() {
-    return failOnFlowControlLimits;
   }
 
   /**
@@ -619,7 +612,6 @@ public class Publisher {
 
     // Client-side flow control options
     FlowControlSettings flowControlSettings = FlowControlSettings.getDefaultInstance();
-    boolean failOnFlowControlLimits;
 
     RetrySettings retrySettings = DEFAULT_RETRY_SETTINGS;
     LongRandom longRandom = DEFAULT_LONG_RANDOM;
@@ -662,20 +654,6 @@ public class Publisher {
     /** Sets the flow control settings. */
     public Builder setFlowControlSettings(FlowControlSettings flowControlSettings) {
       this.flowControlSettings = Preconditions.checkNotNull(flowControlSettings);
-      return this;
-    }
-
-    /**
-     * Whether to fail publish when reaching any of the flow control limits, with either a {@link
-     * com.google.api.gax.grpc.FlowController.MaxOutstandingRequestBytesReachedException} or {@link
-     * com.google.api.gax.grpc.FlowController.MaxOutstandingElementCountReachedException} as
-     * appropriate.
-     *
-     * <p>If set to false, then publish operations will block the current thread until the
-     * outstanding requests go under the limits.
-     */
-    public Builder setFailOnFlowControlLimits(boolean fail) {
-      failOnFlowControlLimits = fail;
       return this;
     }
 

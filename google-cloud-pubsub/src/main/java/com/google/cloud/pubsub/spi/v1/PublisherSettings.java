@@ -18,11 +18,15 @@ package com.google.cloud.pubsub.spi.v1;
 import static com.google.cloud.pubsub.spi.v1.PagedResponseWrappers.ListTopicSubscriptionsPagedResponse;
 import static com.google.cloud.pubsub.spi.v1.PagedResponseWrappers.ListTopicsPagedResponse;
 
+import com.google.api.gax.bundling.BundlingSettings;
+import com.google.api.gax.bundling.RequestBuilder;
+import com.google.api.gax.core.FlowControlSettings;
+import com.google.api.gax.core.FlowController.LimitExceededBehavior;
 import com.google.api.gax.core.GoogleCredentialsProvider;
 import com.google.api.gax.core.RetrySettings;
+import com.google.api.gax.grpc.BundledRequestIssuer;
 import com.google.api.gax.grpc.BundlingCallSettings;
 import com.google.api.gax.grpc.BundlingDescriptor;
-import com.google.api.gax.grpc.BundlingSettings;
 import com.google.api.gax.grpc.CallContext;
 import com.google.api.gax.grpc.ChannelProvider;
 import com.google.api.gax.grpc.ClientSettings;
@@ -32,7 +36,6 @@ import com.google.api.gax.grpc.InstantiatingExecutorProvider;
 import com.google.api.gax.grpc.PagedCallSettings;
 import com.google.api.gax.grpc.PagedListDescriptor;
 import com.google.api.gax.grpc.PagedListResponseFactory;
-import com.google.api.gax.grpc.RequestIssuer;
 import com.google.api.gax.grpc.SimpleCallSettings;
 import com.google.api.gax.grpc.UnaryCallSettings;
 import com.google.api.gax.grpc.UnaryCallable;
@@ -58,7 +61,6 @@ import com.google.pubsub.v1.ListTopicsResponse;
 import com.google.pubsub.v1.PublishRequest;
 import com.google.pubsub.v1.PublishResponse;
 import com.google.pubsub.v1.PublisherGrpc;
-import com.google.pubsub.v1.PubsubMessage;
 import com.google.pubsub.v1.Topic;
 import io.grpc.Status;
 import java.io.IOException;
@@ -363,30 +365,34 @@ public class PublisherSettings extends ClientSettings {
         }
 
         @Override
-        public PublishRequest mergeRequests(Collection<PublishRequest> requests) {
-          PublishRequest firstRequest = requests.iterator().next();
+        public RequestBuilder<PublishRequest> getRequestBuilder() {
+          return new RequestBuilder<PublishRequest>() {
+            private PublishRequest.Builder builder;
 
-          List<PubsubMessage> elements = new ArrayList<>();
-          for (PublishRequest request : requests) {
-            elements.addAll(request.getMessagesList());
-          }
+            @Override
+            public void appendRequest(PublishRequest request) {
+              if (builder == null) {
+                builder = request.toBuilder();
+              } else {
+                builder.addAllMessages(request.getMessagesList());
+              }
+            }
 
-          PublishRequest bundleRequest =
-              PublishRequest.newBuilder()
-                  .setTopic(firstRequest.getTopic())
-                  .addAllMessages(elements)
-                  .build();
-          return bundleRequest;
+            @Override
+            public PublishRequest build() {
+              return builder.build();
+            }
+          };
         }
 
         @Override
         public void splitResponse(
             PublishResponse bundleResponse,
-            Collection<? extends RequestIssuer<PublishRequest, PublishResponse>> bundle) {
+            Collection<? extends BundledRequestIssuer<PublishResponse>> bundle) {
           int bundleMessageIndex = 0;
-          for (RequestIssuer<PublishRequest, PublishResponse> responder : bundle) {
+          for (BundledRequestIssuer<PublishResponse> responder : bundle) {
             List<String> subresponseElements = new ArrayList<>();
-            int subresponseCount = responder.getRequest().getMessagesCount();
+            long subresponseCount = responder.getMessageCount();
             for (int i = 0; i < subresponseCount; i++) {
               subresponseElements.add(bundleResponse.getMessageIds(bundleMessageIndex));
               bundleMessageIndex += 1;
@@ -400,8 +406,8 @@ public class PublisherSettings extends ClientSettings {
         @Override
         public void splitException(
             Throwable throwable,
-            Collection<? extends RequestIssuer<PublishRequest, PublishResponse>> bundle) {
-          for (RequestIssuer<PublishRequest, PublishResponse> responder : bundle) {
+            Collection<? extends BundledRequestIssuer<PublishResponse>> bundle) {
+          for (BundledRequestIssuer<PublishResponse> responder : bundle) {
             responder.setException(throwable);
           }
         }
@@ -539,7 +545,11 @@ public class PublisherSettings extends ClientSettings {
           .getBundlingSettingsBuilder()
           .setElementCountThreshold(10)
           .setRequestByteThreshold(1024)
-          .setDelayThreshold(Duration.millis(10));
+          .setDelayThreshold(Duration.millis(10))
+          .setFlowControlSettings(
+              FlowControlSettings.newBuilder()
+                  .setLimitExceededBehavior(LimitExceededBehavior.Ignore)
+                  .build());
       builder
           .publishSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("one_plus_delivery"))
